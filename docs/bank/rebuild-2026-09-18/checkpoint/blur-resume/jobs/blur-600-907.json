@@ -1,0 +1,35 @@
+{
+  "id": "blur-600-907",
+  "kind": "question",
+  "pack": "blur",
+  "a": "رماية بالقوس",
+  "p": 600,
+  "topic": "رياضة",
+  "prompt": "Use case: precise-object-edit. Edit the supplied archery photograph. Preserve the adult archer, two natural arms and hands, recurve bow, outdoor range, target, colors and realistic photography. Correct one structural issue: the thin black ARROW SHAFT at the level of his draw hand (with red fletching beside his face) must extend straight horizontally through the arrow rest and at least 10 cm beyond the front of the wooden bow riser, ending in a clearly visible small metal target point. Keep it a single continuous arrow; do not confuse it with the thicker stabilizer rod lower down. Preserve that lower stabilizer separately. Also widen the framing just enough to include the top tip of the bow with a small sky margin. Maintain landscape 4:3, no text or logos. Keep the arrow and the image sharply focused; the game applies blur later.",
+  "question": {
+    "p": 600,
+    "q": "ما الرياضة التي تدل عليها الصورة الضبابية؟",
+    "a": "رماية بالقوس",
+    "qid": "blur-600-907",
+    "type": "image",
+    "effect": "blur",
+    "alt": [],
+    "topic": "رياضة",
+    "difficultyTarget": 0.4,
+    "verified": false,
+    "sourceUrl": "docs/bank/rebuild-2026-09-18/review-blur-generated.json",
+    "media": {
+      "src": "blur-600-907.webp",
+      "type": "image",
+      "title": "لغز بصري مولّد",
+      "author": "Maydan / OpenAI image generation",
+      "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
+      "provenance": {
+        "kind": "ai-generated",
+        "tool": "OpenAI image generation",
+        "createdAt": "2026-09-23",
+        "record": "docs/bank/rebuild-2026-09-18/generated-records/blur-600-907.json"
+      }
+    }
+  }
+}

@@ -5,3060 +5,557 @@
   "style": "story",
   "qs": [
     {
+      "qid": "jujutsu-200-901",
       "p": 200,
-      "q": "من الطالب الذي ابتلع إصبعًا ملعونًا فتغيّر مصيره إلى الأبد؟",
+      "q": "من بطل جوجوتسو كايسن الذي أصبح وعاء سوكونا بابتلاع إصبعه؟",
       "a": "يوجي إيتادوري",
       "alt": [
         "يوجي",
-        "إيتادوري يوجي"
+        "Yuji Itadori"
       ],
-      "topic": "الشخصيات الرئيسية",
+      "topic": "البدايات",
       "verified": true,
-      "qid": "jujutsu-200-049",
-      "sourceUrl": "https://en.wikipedia.org/wiki/Yuji_Itadori"
+      "sourceUrl": "https://jujutsukaisen.jp/character/category4.php",
+      "difficultyTarget": 0.8
     },
     {
+      "qid": "jujutsu-200-902",
       "p": 200,
-      "q": "من اللعنة القديمة التي سكنت جسد يوجي بعد ابتلاعه الإصبع؟",
+      "q": "من ملك اللعنات الذي يسكن جسد يوجي في بداية القصة؟",
       "a": "ريومن سوكونا",
       "alt": [
         "سوكونا",
-        "ريومين سوكونا"
+        "Sukuna"
       ],
-      "topic": "الشخصيات الرئيسية",
+      "topic": "اللعنات",
       "verified": true,
-      "qid": "jujutsu-200-050",
-      "sourceUrl": "https://en.wikipedia.org/wiki/Jujutsu_Kaisen"
+      "sourceUrl": "https://jujutsukaisen.jp/character/category4.php",
+      "difficultyTarget": 0.8
     },
     {
+      "qid": "jujutsu-200-903",
       "p": 200,
-      "q": "من المعلّم الذي يُوصف بأقوى ساحر في زمانه ويدرّس الصفّ الأول؟",
+      "q": "من معلّم يوجي الذي يُعرف بأنه أقوى ساحر؟",
       "a": "ساتورو غوجو",
       "alt": [
         "غوجو",
-        "ساتورو جوجو",
-        "غوجو ساتورو"
+        "جوجو",
+        "Satoru Gojo"
       ],
-      "topic": "الشخصيات الرئيسية",
+      "topic": "مدرسة طوكيو",
       "verified": true,
-      "qid": "jujutsu-200-051",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Satoru_Gojo"
+      "sourceUrl": "https://jujutsukaisen.jp/character/shibuyajihen.php",
+      "difficultyTarget": 0.8
     },
     {
+      "qid": "jujutsu-200-904",
       "p": 200,
-      "q": "من زميل يوجي الهادئ الذي يستدعي كلبين من ظلّه؟",
-      "a": "ميغومي فوشيغورو",
-      "alt": [
-        "ميغومي",
-        "ميجومي فوشيجورو"
-      ],
-      "topic": "الشخصيات الرئيسية",
-      "verified": true,
-      "qid": "jujutsu-200-052",
-      "sourceUrl": "https://en.wikipedia.org/wiki/Megumi_Fushiguro"
-    },
-    {
-      "p": 200,
-      "q": "من زميلة يوجي التي تقاتل بالمسامير والدمى؟",
-      "a": "نوبارا كوغيساكي",
-      "alt": [
-        "نوبارا",
-        "نوبارا كوجيساكي"
-      ],
-      "topic": "الشخصيات الرئيسية",
-      "verified": true,
-      "qid": "jujutsu-200-053",
-      "sourceUrl": "https://en.wikipedia.org/wiki/Nobara_Kugisaki"
-    },
-    {
-      "p": 200,
-      "q": "من الطالب الذي هيئته دبّ ويدرس في السنة الثانية بمدرسة طوكيو؟",
-      "a": "باندا",
-      "alt": [
-        "الباندا",
-        "بندا"
-      ],
-      "topic": "الشخصيات الرئيسية",
-      "verified": true,
-      "qid": "jujutsu-200-054",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Cursed_Corpse"
-    },
-    {
-      "p": 200,
-      "q": "من الطالب الذي لا ينطق إلا بأسماء حشوات كرات الأرز؟",
+      "q": "من طالب السحرة الذي يتحدث بحشوات كرات الأرز كي يتجنب لعن الآخرين؟",
       "a": "توغي إينوماكي",
       "alt": [
-        "توغي",
-        "إينوماكي توغي"
+        "إينوماكي",
+        "Toge Inumaki"
       ],
-      "topic": "الشخصيات الرئيسية",
+      "topic": "القدرات",
       "verified": true,
-      "qid": "jujutsu-200-055",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Toge_Inumaki"
+      "sourceUrl": "https://jujutsukaisen.jp/character/shibuyajihen.php",
+      "difficultyTarget": 0.8
     },
     {
+      "qid": "jujutsu-200-905",
       "p": 200,
-      "q": "من الطالبة التي وُلدت بلا طاقة ملعونة فاعتمدت على قوّتها البدنية؟",
-      "a": "ماكي زينين",
-      "alt": [
-        "ماكي",
-        "ماكي زنين"
-      ],
-      "topic": "الشخصيات الرئيسية",
-      "verified": true,
-      "qid": "jujutsu-200-056",
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Jujutsu_Kaisen_characters"
-    },
-    {
-      "p": 200,
-      "q": "من الساحر الأشقر صاحب البدلة وربطة العنق الذي يرافق يوجي في مهمّاته؟",
-      "a": "كينتو نانامي",
-      "alt": [
-        "نانامي",
-        "نانامي كينتو"
-      ],
-      "topic": "الشخصيات الرئيسية",
-      "verified": true,
-      "qid": "jujutsu-200-057",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Ratio_Technique"
-    },
-    {
-      "p": 200,
-      "q": "من صديق غوجو أيام الدراسة الذي انقلب على السحرة؟",
-      "a": "سوغورو غيتو",
-      "alt": [
-        "غيتو",
-        "سوجورو جيتو"
-      ],
-      "topic": "الشخصيات الرئيسية",
-      "verified": true,
-      "qid": "jujutsu-200-058",
-      "sourceUrl": "https://en.wikipedia.org/wiki/Jujutsu_Kaisen"
-    },
-    {
-      "p": 200,
-      "q": "ما لون شعر غوجو؟",
-      "a": "أبيض",
-      "alt": [
-        "الأبيض",
-        "فضي"
-      ],
-      "topic": "الشخصيات الرئيسية",
-      "verified": true,
-      "qid": "jujutsu-200-059",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Satoru_Gojo"
-    },
-    {
-      "p": 200,
-      "q": "من الطالب الذي ترافقه روح فتاة ملعونة اسمها ريكا؟",
-      "a": "يوتا أوكوتسو",
-      "alt": [
-        "يوتا",
-        "أوكوتسو يوتا"
-      ],
-      "topic": "طلاب المدرستين",
-      "verified": true,
-      "qid": "jujutsu-200-060",
-      "sourceUrl": "https://en.wikipedia.org/wiki/Jujutsu_Kaisen_0"
-    },
-    {
-      "p": 200,
-      "q": "من طالب كيوتو الضخم الذي صار صديق يوجي المقرّب؟",
-      "a": "آوي تودو",
-      "alt": [
-        "تودو",
-        "أوي تودو"
-      ],
-      "topic": "طلاب المدرستين",
-      "verified": true,
-      "qid": "jujutsu-200-061",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Aoi_Todo"
-    },
-    {
-      "p": 200,
-      "q": "بأي لقب ينادي تودو صديقه يوجي دائمًا؟",
-      "a": "أخي",
-      "alt": [
-        "يا أخي",
-        "أخي الصغير"
-      ],
-      "topic": "طلاب المدرستين",
-      "verified": true,
-      "qid": "jujutsu-200-062",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Aoi_Todo"
-    },
-    {
-      "p": 200,
-      "q": "ما الكلمة التي يقولها توغي حين يقصد «نعم»؟",
-      "a": "سلمون",
-      "alt": [
-        "السلمون"
-      ],
-      "topic": "طلاب المدرستين",
-      "verified": true,
-      "qid": "jujutsu-200-063",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Toge_Inumaki"
-    },
-    {
-      "p": 200,
-      "q": "في أي صفّ دراسي التحق يوجي بمدرسة السحرة؟",
-      "a": "السنة الأولى",
-      "alt": [
-        "الأولى",
-        "أولى"
-      ],
-      "topic": "طلاب المدرستين",
-      "verified": true,
-      "qid": "jujutsu-200-064",
-      "sourceUrl": "https://en.wikipedia.org/wiki/Jujutsu_Kaisen"
-    },
-    {
-      "p": 200,
-      "q": "كم طالبًا في الصفّ الأول بمدرسة طوكيو بعد انضمام يوجي؟",
-      "a": "ثلاثة",
-      "alt": [
-        "٣",
-        "ثلاثة طلاب"
-      ],
-      "topic": "طلاب المدرستين",
-      "verified": true,
-      "qid": "jujutsu-200-065",
-      "sourceUrl": "https://en.wikipedia.org/wiki/Jujutsu_Kaisen"
-    },
-    {
-      "p": 200,
-      "q": "ما لون شعر يوجي؟",
-      "a": "وردي",
-      "alt": [
-        "زهري"
-      ],
-      "topic": "طلاب المدرستين",
-      "verified": true,
-      "qid": "jujutsu-200-066",
-      "sourceUrl": "https://en.wikipedia.org/wiki/Yuji_Itadori"
-    },
-    {
-      "p": 200,
-      "q": "أي عبارة يصيح بها الساحر لحظة حبس خصمه داخل عالمه الخاص؟",
-      "a": "بسط المجال",
-      "alt": [
-        "توسيع المجال",
-        "فتح المجال",
-        "نشر المجال"
-      ],
-      "topic": "التقنيات والقدرات",
-      "verified": true,
-      "qid": "jujutsu-200-067",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Malevolent_Shrine"
-    },
-    {
-      "p": 200,
-      "q": "ما اسم تقنية غوجو الموروثة التي يتحكّم بها في المسافة؟",
-      "a": "اللامحدود",
-      "alt": [
-        "لا محدود",
-        "ليمتلس"
-      ],
-      "topic": "التقنيات والقدرات",
-      "verified": true,
-      "qid": "jujutsu-200-068",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Satoru_Gojo"
-    },
-    {
-      "p": 200,
-      "q": "ما اسم العينين النادرتين اللتين وُلد بهما غوجو؟",
-      "a": "العيون الست",
-      "alt": [
-        "الأعين الست",
-        "العيون الستة"
-      ],
-      "topic": "التقنيات والقدرات",
-      "verified": true,
-      "qid": "jujutsu-200-069",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Six_Eyes"
-    },
-    {
-      "p": 200,
-      "q": "ما اسم تقنية ميغومي التي يستدعي بها مخلوقات من ظلّه؟",
-      "a": "تقنية الظلال العشرة",
-      "alt": [
-        "الظلال العشرة"
-      ],
-      "topic": "التقنيات والقدرات",
-      "verified": true,
-      "qid": "jujutsu-200-070",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Ten_Shadows_Technique"
-    },
-    {
-      "p": 200,
-      "q": "ما اسم تقنية نوبارا التي تعمل بدُمى من القش؟",
-      "a": "تقنية الدمية القشية",
-      "alt": [
-        "الدمية القشية",
-        "دمية القش"
-      ],
-      "topic": "التقنيات والقدرات",
-      "verified": true,
-      "qid": "jujutsu-200-071",
-      "sourceUrl": "https://en.wikipedia.org/wiki/Nobara_Kugisaki"
-    },
-    {
-      "p": 200,
-      "q": "ماذا تُسمّى الضربة التي تومض فيها طاقة الساحر باللون الأسود؟",
-      "a": "الوميض الأسود",
-      "alt": [
-        "الومضة السوداء",
-        "البرق الأسود"
-      ],
-      "topic": "التقنيات والقدرات",
-      "verified": true,
-      "qid": "jujutsu-200-072",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Black_Flash"
-    },
-    {
-      "p": 200,
-      "q": "ما الذي يميّز يوجي عن زملائه فلا يقاتل بتقنية موروثة؟",
-      "a": "لا يملك تقنية ملعونة",
-      "alt": [
-        "بلا تقنية",
-        "لا تقنية له"
-      ],
-      "topic": "التقنيات والقدرات",
-      "verified": true,
-      "qid": "jujutsu-200-073",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori"
-    },
-    {
-      "p": 200,
-      "q": "ما القدرة التي تجعل أوامر توغي الصوتية تُنفَّذ رغمًا عن سامعها؟",
-      "a": "الكلام الملعون",
-      "alt": [
-        "كلام ملعون",
-        "الصوت الملعون"
-      ],
-      "topic": "التقنيات والقدرات",
-      "verified": true,
-      "qid": "jujutsu-200-074",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Toge_Inumaki"
-    },
-    {
-      "p": 200,
-      "q": "ممّ تتولّد اللعنات في هذا العالم؟",
-      "a": "المشاعر السلبية",
-      "alt": [
-        "مشاعر البشر السلبية",
-        "الطاقة السلبية"
-      ],
-      "topic": "اللعنات والأرواح الملعونة",
-      "verified": true,
-      "qid": "jujutsu-200-075",
-      "sourceUrl": "https://en.wikipedia.org/wiki/Jujutsu_Kaisen"
-    },
-    {
-      "p": 200,
-      "q": "ما التسمية العامة للوحوش التي يطاردها سحرة الجوجوتسو؟",
-      "a": "الأرواح الملعونة",
-      "alt": [
-        "اللعنات",
-        "الروح الملعونة"
-      ],
-      "topic": "اللعنات والأرواح الملعونة",
-      "verified": true,
-      "qid": "jujutsu-200-076",
-      "sourceUrl": "https://en.wikipedia.org/wiki/Jujutsu_Kaisen"
-    },
-    {
-      "p": 200,
-      "q": "بأي لقب يُعرف سوكونا بين اللعنات؟",
-      "a": "ملك اللعنات",
-      "alt": [
-        "ملك اللعنة",
-        "ملك الشياطين"
-      ],
-      "topic": "اللعنات والأرواح الملعونة",
-      "verified": true,
-      "qid": "jujutsu-200-077",
-      "sourceUrl": "https://en.wikipedia.org/wiki/Jujutsu_Kaisen"
-    },
-    {
-      "p": 200,
-      "q": "ما اسم الروح الملعونة التي ترافق يوتا منذ طفولته؟",
-      "a": "ريكا أوريموتو",
-      "alt": [
-        "ريكا",
-        "أوريموتو ريكا"
-      ],
-      "topic": "اللعنات والأرواح الملعونة",
-      "verified": true,
-      "qid": "jujutsu-200-078",
-      "sourceUrl": "https://en.wikipedia.org/wiki/Jujutsu_Kaisen_0"
-    },
-    {
-      "p": 200,
-      "q": "ما الشيء الذي يغطي به غوجو عينيه في معظم الأوقات؟",
-      "a": "عصابة العينين",
-      "alt": [
-        "العصابة",
-        "عصابة سوداء"
-      ],
-      "topic": "الأدوات الملعونة",
-      "verified": true,
-      "qid": "jujutsu-200-079",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Satoru_Gojo"
-    },
-    {
-      "p": 200,
-      "q": "ماذا تُسمّى الأسلحة التي تحمل طاقة ملعونة ويقاتل بها السحرة؟",
-      "a": "الأدوات الملعونة",
-      "alt": [
-        "الأداة الملعونة",
-        "أسلحة ملعونة"
-      ],
-      "topic": "الأدوات الملعونة",
-      "verified": true,
-      "qid": "jujutsu-200-080",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Playful_Cloud"
-    },
-    {
-      "p": 200,
-      "q": "ما الحاجز الذي ينصبه السحرة حول موقع المعركة ليخفوه عن الناس؟",
-      "a": "الستار",
-      "alt": [
-        "الحجاب",
-        "الستارة"
-      ],
-      "topic": "قواعد عالم الجوجوتسو",
-      "verified": true,
-      "qid": "jujutsu-200-081",
-      "sourceUrl": "https://en.wikipedia.org/wiki/Jujutsu_Kaisen"
-    },
-    {
-      "p": 200,
-      "q": "ما الأداة التي تدقّ بها نوبارا مساميرها؟",
+      "q": "بأي أداة تضرب نوبارا المسامير في قتالها؟",
       "a": "المطرقة",
       "alt": [
-        "مطرقة",
-        "الشاكوش"
+        "مطرقة"
       ],
-      "topic": "الأدوات الملعونة",
+      "topic": "الأدوات",
       "verified": true,
-      "qid": "jujutsu-200-082",
-      "sourceUrl": "https://en.wikipedia.org/wiki/Nobara_Kugisaki"
+      "sourceUrl": "https://en.wikipedia.org/wiki/Nobara_Kugisaki#Powers_and_abilities",
+      "difficultyTarget": 0.8
     },
     {
+      "qid": "jujutsu-200-906",
       "p": 200,
-      "q": "ما اسم المدرسة الشقيقة التي تنافس مدرسة طوكيو كل عام؟",
-      "a": "مدرسة كيوتو",
+      "q": "ما صلة قرابة ماي بماكي في جوجوتسو كايسن؟",
+      "a": "أختها التوأم",
       "alt": [
-        "ثانوية كيوتو",
-        "مدرسة كيوتو للجوجوتسو"
+        "توأمها",
+        "أخت توأم"
       ],
-      "topic": "الأماكن والمدارس",
+      "topic": "العائلات",
       "verified": true,
-      "qid": "jujutsu-200-083",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Kyoto_Metropolitan_Curse_Technical_College"
+      "sourceUrl": "https://jujutsukaisen.jp/character/category2.php",
+      "difficultyTarget": 0.8
     },
     {
+      "qid": "jujutsu-200-907",
       "p": 200,
-      "q": "في أي بلد يخفي السحرة حربهم مع اللعنات عن عيون الناس؟",
-      "a": "اليابان",
-      "alt": [
-        "يابان"
-      ],
-      "topic": "الأماكن والمدارس",
-      "verified": true,
-      "qid": "jujutsu-200-084",
-      "sourceUrl": "https://en.wikipedia.org/wiki/Jujutsu_Kaisen"
-    },
-    {
-      "p": 200,
-      "q": "ما اللقب الذي يُطلق على يوجي لأنه يحمل سوكونا في جسده؟",
-      "a": "وعاء سوكونا",
-      "alt": [
-        "الوعاء",
-        "وعاء سوكونا الحيّ"
-      ],
-      "topic": "قواعد عالم الجوجوتسو",
-      "verified": true,
-      "qid": "jujutsu-200-085",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori"
-    },
-    {
-      "p": 200,
-      "q": "بأي سلاح يقاتل يوتا في أحداث قصة البداية؟",
-      "a": "الكاتانا",
-      "alt": [
-        "سيف",
-        "سيف ملعون",
-        "كاتانا ملعونة"
-      ],
-      "topic": "الأدوات الملعونة",
-      "verified": true,
-      "qid": "jujutsu-200-086",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Yuta_Okkotsu"
-    },
-    {
-      "p": 200,
-      "q": "ما اسم الحادثة الكبرى التي وقعت ليلة الهالوين؟",
-      "a": "حادثة شيبويا",
-      "alt": [
-        "كارثة شيبويا"
-      ],
-      "topic": "الأحداث والمواجهات",
-      "verified": true,
-      "qid": "jujutsu-200-087",
-      "sourceUrl": "https://en.wikipedia.org/wiki/Jujutsu_Kaisen"
-    },
-    {
-      "p": 200,
-      "q": "ما المسابقة السنوية التي تجمع مدرستي السحرة؟",
-      "a": "حدث التبادل الودي",
-      "alt": [
-        "التبادل الودي",
-        "مسابقة التبادل"
-      ],
-      "topic": "الأحداث والمواجهات",
-      "verified": true,
-      "qid": "jujutsu-200-088",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Kyoto_Goodwill_Event_Arc"
-    },
-    {
-      "p": 200,
-      "q": "بأي لعبة رياضية اختُتمت مسابقة المدرستين؟",
+      "q": "بأي رياضة حُسم اليوم الثاني من لقاء مدرستي السحرة بعد هجوم اللعنات؟",
       "a": "البيسبول",
       "alt": [
         "كرة القاعدة",
-        "بيسبول"
+        "Baseball"
       ],
-      "topic": "الأحداث والمواجهات",
+      "topic": "المنافسات",
       "verified": true,
-      "qid": "jujutsu-200-089",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Baseball_Game"
+      "sourceUrl": "https://jujutsukaisen.jp/episodes/21.php",
+      "difficultyTarget": 0.8
     },
     {
+      "qid": "jujutsu-200-908",
       "p": 200,
-      "q": "ما النادي المدرسي الذي كان يوجي عضوًا فيه قبل دخوله عالم السحرة؟",
-      "a": "نادي الخوارق",
-      "alt": [
-        "نادي البحث في الخوارق",
-        "نادي الغموض"
-      ],
-      "topic": "الأحداث والمواجهات",
-      "verified": true,
-      "qid": "jujutsu-200-090",
-      "sourceUrl": "https://en.wikipedia.org/wiki/Yuji_Itadori"
-    },
-    {
-      "p": 200,
-      "q": "ما الحكم الذي صدر على يوجي ثم أُجّل تنفيذه؟",
+      "q": "ما العقوبة التي أُجّلت ليوجي حتى يجمع أصابع سوكونا؟",
       "a": "الإعدام",
       "alt": [
         "حكم الإعدام"
       ],
-      "topic": "الأحداث والمواجهات",
+      "topic": "البدايات",
       "verified": true,
-      "qid": "jujutsu-200-091",
-      "sourceUrl": "https://en.wikipedia.org/wiki/Jujutsu_Kaisen"
+      "sourceUrl": "https://jujutsukaisen.jp/episodes/02.php",
+      "difficultyTarget": 0.8
     },
     {
-      "p": 200,
-      "q": "ما اسم الطاقة التي يقاتل بها السحرة واللعنات؟",
-      "a": "الطاقة الملعونة",
-      "alt": [
-        "طاقة اللعنة"
-      ],
-      "topic": "قواعد عالم الجوجوتسو",
-      "verified": true,
-      "qid": "jujutsu-200-092",
-      "sourceUrl": "https://en.wikipedia.org/wiki/Jujutsu_Kaisen"
-    },
-    {
-      "p": 200,
-      "q": "ما أعلى درجة في سلّم تصنيف السحرة؟",
-      "a": "الدرجة الخاصة",
-      "alt": [
-        "درجة خاصة",
-        "الخاصة"
-      ],
-      "topic": "قواعد عالم الجوجوتسو",
-      "verified": true,
-      "qid": "jujutsu-200-093",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Grade"
-    },
-    {
-      "p": 200,
-      "q": "كم إصبعًا لسوكونا موزّعة في أنحاء البلاد؟",
-      "a": "عشرون إصبعًا",
-      "alt": [
-        "عشرون",
-        "٢٠"
-      ],
-      "topic": "قواعد عالم الجوجوتسو",
-      "verified": true,
-      "qid": "jujutsu-200-094",
-      "sourceUrl": "https://en.wikipedia.org/wiki/Jujutsu_Kaisen"
-    },
-    {
-      "p": 200,
-      "q": "ماذا يسمّى من يرى اللعنات ويقاتلها في هذا العالم؟",
-      "a": "ساحر جوجوتسو",
-      "alt": [
-        "ساحر",
-        "ساحر لعنات"
-      ],
-      "topic": "قواعد عالم الجوجوتسو",
-      "verified": true,
-      "qid": "jujutsu-200-095",
-      "sourceUrl": "https://en.wikipedia.org/wiki/Jujutsu_Kaisen"
-    },
-    {
-      "p": 200,
-      "q": "ما الطعام الذي يُعرف غوجو بولعه الشديد به؟",
-      "a": "الحلويات",
-      "alt": [
-        "الحلوى",
-        "السكريات"
-      ],
-      "topic": "المعلمون والسحرة",
-      "verified": true,
-      "qid": "jujutsu-200-096",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Satoru_Gojo"
-    },
-    {
+      "qid": "jujutsu-400-901",
       "p": 400,
-      "q": "ما اسم هجوم غوجو الذي يجذب كل ما حوله إلى مركز واحد؟",
-      "a": "الأزرق",
-      "alt": [
-        "أزرق",
-        "بلو"
-      ],
-      "topic": "التقنيات والقدرات",
-      "verified": true,
-      "qid": "jujutsu-400-049",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Satoru_Gojo"
-    },
-    {
-      "p": 400,
-      "q": "ما اسم هجوم غوجو الذي يدفع كل ما أمامه بعيدًا؟",
-      "a": "الأحمر",
-      "alt": [
-        "أحمر",
-        "ريد"
-      ],
-      "topic": "التقنيات والقدرات",
-      "verified": true,
-      "qid": "jujutsu-400-050",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Satoru_Gojo"
-    },
-    {
-      "p": 400,
-      "q": "ما اسم مجال غوجو الذي يغرق من يدخله بسيل من المعلومات؟",
-      "a": "الفراغ اللامحدود",
-      "alt": [
-        "الفراغ اللانهائي",
-        "الخواء اللامحدود"
-      ],
-      "topic": "التقنيات والقدرات",
-      "verified": true,
-      "qid": "jujutsu-400-051",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Satoru_Gojo"
-    },
-    {
-      "p": 400,
-      "q": "ما اسم تقنية نانامي التي تصنع نقطة ضعف في جسد الخصم؟",
-      "a": "تقنية النسبة",
-      "alt": [
-        "النسبة"
-      ],
-      "topic": "التقنيات والقدرات",
-      "verified": true,
-      "qid": "jujutsu-400-052",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Ratio_Technique"
-    },
-    {
-      "p": 400,
-      "q": "ما اسم التقنية التي يحرّك بها طالب كيوتو دُمى آلية من بعيد؟",
-      "a": "التلاعب بالدمى",
-      "alt": [
-        "التحكم بالدمى",
-        "تقنية الدمى"
-      ],
-      "topic": "التقنيات والقدرات",
-      "verified": true,
-      "qid": "jujutsu-400-053",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Puppet_Manipulation"
-    },
-    {
-      "p": 400,
-      "q": "ما اسم تقنية تودو التي تبدّل مواقع الأشخاص والأشياء؟",
-      "a": "بوغي ووغي",
-      "alt": [
-        "البوغي ووغي"
-      ],
-      "topic": "التقنيات والقدرات",
-      "verified": true,
-      "qid": "jujutsu-400-054",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Aoi_Todo"
-    },
-    {
-      "p": 400,
-      "q": "ما الحركة التي يؤدّيها تودو ليفعّل تقنيته؟",
-      "a": "التصفيق",
-      "alt": [
-        "تصفيقة",
-        "يصفّق بيديه"
-      ],
-      "topic": "التقنيات والقدرات",
-      "verified": true,
-      "qid": "jujutsu-400-055",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Aoi_Todo"
-    },
-    {
-      "p": 400,
-      "q": "ما التقنية التي يشفي بها الساحر جروحه بعكس مسار طاقته؟",
-      "a": "التقنية العكسية",
-      "alt": [
-        "التقنية الملعونة العكسية",
-        "الشفاء العكسي"
-      ],
-      "topic": "التقنيات والقدرات",
-      "verified": true,
-      "qid": "jujutsu-400-056",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Satoru_Gojo"
-    },
-    {
-      "p": 400,
-      "q": "ما اسم مجال سوكونا الذي يتجسّد معبدًا حوله؟",
-      "a": "الضريح الخبيث",
-      "alt": [
-        "معبد الشر",
-        "الضريح الشرير"
-      ],
-      "topic": "التقنيات والقدرات",
-      "verified": true,
-      "qid": "jujutsu-400-057",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Malevolent_Shrine"
-    },
-    {
-      "p": 400,
-      "q": "ما تقنية غيتو التي تمكّنه من ابتلاع اللعنات ثم استدعائها؟",
-      "a": "التحكم بالأرواح الملعونة",
-      "alt": [
-        "التلاعب باللعنات",
-        "استحضار اللعنات"
-      ],
-      "topic": "التقنيات والقدرات",
-      "verified": true,
-      "qid": "jujutsu-400-058",
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Jujutsu_Kaisen_characters"
-    },
-    {
-      "p": 400,
-      "q": "ما القدرة التي تتيح ليوتا استعمال تقنيات غيره؟",
-      "a": "تقنية النسخ",
-      "alt": [
-        "النسخ",
-        "المحاكاة"
-      ],
-      "topic": "التقنيات والقدرات",
-      "verified": true,
-      "qid": "jujutsu-400-059",
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Jujutsu_Kaisen_characters"
-    },
-    {
-      "p": 400,
-      "q": "ما اسم هجوم غوجو الذي يولد من دمج هجومَيه الأساسيين؟",
-      "a": "البنفسجي الأجوف",
-      "alt": [
-        "البنفسجي",
-        "هولو بيربل"
-      ],
-      "topic": "التقنيات والقدرات",
-      "verified": true,
-      "qid": "jujutsu-400-060",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Satoru_Gojo"
-    },
-    {
-      "p": 400,
-      "q": "ما العمل الذي تركه نانامي ليعود إلى عالم السحرة؟",
+      "q": "ما العمل الذي تركه نانامي قبل عودته إلى ممارسة الجوجوتسو؟",
       "a": "موظف شركة",
       "alt": [
-        "موظف مكتب",
-        "موظف"
+        "موظف مكتبي",
+        "موظف في شركة"
       ],
-      "topic": "المعلمون والسحرة",
+      "topic": "مدرسة طوكيو",
       "verified": true,
-      "qid": "jujutsu-400-061",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Ratio_Technique"
+      "sourceUrl": "https://jujutsukaisen.jp/character/category3.php",
+      "difficultyTarget": 0.6
     },
     {
+      "qid": "jujutsu-400-902",
       "p": 400,
-      "q": "من مدير مدرسة طوكيو الذي يصنع الجثث الملعونة؟",
+      "q": "من اللعنة التي تغيّر هيئة البشر بلمس أرواحهم؟",
+      "a": "ماهيتو",
+      "alt": [
+        "Mahito"
+      ],
+      "topic": "اللعنات",
+      "verified": true,
+      "sourceUrl": "https://jujutsukaisen.jp/character/category4.php",
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "jujutsu-400-903",
+      "p": 400,
+      "q": "ما حقيقة باندا، الطالب المتكلم في مدرسة السحرة؟",
+      "a": "جثة ملعونة",
+      "alt": [
+        "جثة ملعونة متحورة",
+        "Cursed Corpse"
+      ],
+      "topic": "مدرسة طوكيو",
+      "verified": true,
+      "sourceUrl": "https://jujutsukaisen.jp/character/shibuyajihen.php",
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "jujutsu-400-904",
+      "p": 400,
+      "q": "ما اسم مدرسة السحرة المنافسة لطوكيو في اللقاء الودي؟",
+      "a": "مدرسة كيوتو",
+      "alt": [
+        "كيوتو",
+        "Kyoto Jujutsu High"
+      ],
+      "topic": "مدرسة كيوتو",
+      "verified": true,
+      "sourceUrl": "https://jujutsukaisen.jp/character/category2.php",
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "jujutsu-400-905",
+      "p": 400,
+      "q": "ما اسم تقنية غوجو الموروثة للتحكم بالمسافة؟",
+      "a": "اللامحدود",
+      "alt": [
+        "لا محدود",
+        "Limitless"
+      ],
+      "topic": "القدرات",
+      "verified": true,
+      "sourceUrl": "https://jujutsukaisen.jp/character/category6.php",
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "jujutsu-400-906",
+      "p": 400,
+      "q": "ما اسم التقنية الموروثة التي يستعملها ميغومي لاستدعاء مخلوقات الظلال؟",
+      "a": "الظلال العشرة",
+      "alt": [
+        "تقنية الظلال العشرة",
+        "Ten Shadows Technique"
+      ],
+      "topic": "القدرات",
+      "verified": true,
+      "sourceUrl": "https://jujutsukaisen.jp/character/",
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "jujutsu-400-907",
+      "p": 400,
+      "q": "من صديقة طفولة يوتا التي تحولت إلى روح ملعونة مرتبطة به؟",
+      "a": "ريكا أوريموتو",
+      "alt": [
+        "ريكا",
+        "Rika Orimoto"
+      ],
+      "topic": "اللعنات",
+      "verified": true,
+      "sourceUrl": "https://jujutsukaisen-movie.jp/character/",
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "jujutsu-400-908",
+      "p": 400,
+      "q": "ما اسم أخت ميغومي الكبرى التي أُصيبت بلعنة غامضة؟",
+      "a": "تسوميكي فوشيغورو",
+      "alt": [
+        "تسوميكي",
+        "Tsumiki Fushiguro"
+      ],
+      "topic": "العائلات",
+      "verified": true,
+      "sourceUrl": "https://jujutsukaisen.jp/character/category5.php",
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "jujutsu-600-901",
+      "p": 600,
+      "q": "من مدير مدرسة السحرة الذي صنع باندا؟",
       "a": "ماساميتشي ياغا",
       "alt": [
         "ياغا",
-        "ماساميتشي ياجا"
+        "Masamichi Yaga"
       ],
-      "topic": "المعلمون والسحرة",
+      "topic": "مدرسة طوكيو",
       "verified": true,
-      "qid": "jujutsu-400-062",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Cursed_Corpse"
+      "sourceUrl": "https://jujutsukaisen.jp/character/shibuyajihen.php",
+      "difficultyTarget": 0.4
     },
     {
-      "p": 400,
-      "q": "من الساحرة التي تعالج جراح السحرة داخل المدرسة؟",
+      "qid": "jujutsu-600-902",
+      "p": 600,
+      "q": "من طبيبة مدرسة السحرة التي تشفي الآخرين بالتقنية العكسية؟",
       "a": "شوكو إييري",
       "alt": [
         "شوكو",
-        "شوكو إيئيري"
+        "Shoko Ieiri"
       ],
-      "topic": "المعلمون والسحرة",
+      "topic": "مدرسة طوكيو",
       "verified": true,
-      "qid": "jujutsu-400-063",
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Jujutsu_Kaisen_characters"
+      "sourceUrl": "https://jujutsukaisen.jp/character/shibuyajihen.php",
+      "difficultyTarget": 0.4
     },
     {
-      "p": 400,
-      "q": "من المعلّمة التي تشرف على فريق كيوتو في المسابقة؟",
+      "qid": "jujutsu-600-903",
+      "p": 600,
+      "q": "من أي خوف بشري وُلدت هانامي؟",
+      "a": "الخوف من الغابات",
+      "alt": [
+        "الغابات",
+        "خوف الغابات"
+      ],
+      "topic": "اللعنات",
+      "verified": true,
+      "sourceUrl": "https://jujutsukaisen.jp/character/category4.php",
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "jujutsu-600-904",
+      "p": 600,
+      "q": "من كبير إخوة لوحات الموت الذي اعتبر يوجي أخًا له؟",
+      "a": "تشوسو",
+      "alt": [
+        "Choso"
+      ],
+      "topic": "العائلات",
+      "verified": true,
+      "sourceUrl": "https://jujutsukaisen.jp/character/",
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "jujutsu-600-905",
+      "p": 600,
+      "q": "ما الاسم الحقيقي لطالب السحرة الذي يتحكم بميكامارو عن بُعد؟",
+      "a": "كوكيتشي موتا",
+      "alt": [
+        "موتا",
+        "Kokichi Muta"
+      ],
+      "topic": "مدرسة كيوتو",
+      "verified": true,
+      "sourceUrl": "https://jujutsukaisen.jp/character/category2.php",
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "jujutsu-600-906",
+      "p": 600,
+      "q": "بأي لقب اشتهر توجي، منفّذ مهمة اغتيال وعاء البلازما النجمية؟",
+      "a": "قاتل السحرة",
+      "alt": [
+        "Sorcerer Killer"
+      ],
+      "topic": "ماضي السحرة",
+      "verified": true,
+      "sourceUrl": "https://jujutsukaisen.jp/character/category6.php",
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "jujutsu-600-907",
+      "p": 600,
+      "q": "ما هجوم نوبارا الذي ينقل الأذى عبر جزء من جسد الخصم ودمية قش؟",
+      "a": "الرنين",
+      "alt": [
+        "Resonance"
+      ],
+      "topic": "القدرات",
+      "verified": true,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Nobara_Kugisaki#Powers_and_abilities",
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "jujutsu-600-908",
+      "p": 600,
+      "q": "من الفتاة التي كُلّف غوجو وغيتو بحمايتها تمهيدًا لاندماجها مع تينغن؟",
+      "a": "ريكو أماناي",
+      "alt": [
+        "ريكو",
+        "Riko Amanai"
+      ],
+      "topic": "ماضي السحرة",
+      "verified": true,
+      "sourceUrl": "https://jujutsukaisen.jp/character/category6.php",
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "jujutsu-800-901",
+      "p": 800,
+      "q": "من صاحب تقنية تبديل الأجساد الذي دبّر لعبة الإبادة داخل جسد غيتو؟",
+      "a": "كينجاكو",
+      "alt": [
+        "Kenjaku"
+      ],
+      "topic": "لعبة الإبادة",
+      "verified": true,
+      "sourceUrl": "https://jujutsukaisen.jp/character/",
+      "difficultyTarget": 0.25
+    },
+    {
+      "qid": "jujutsu-800-902",
+      "p": 800,
+      "q": "ما مهنة هيغوروما قبل إيقاظ قوته ودخوله لعبة الإبادة؟",
+      "a": "محامٍ",
+      "alt": [
+        "محامي",
+        "المحاماة"
+      ],
+      "topic": "لعبة الإبادة",
+      "verified": true,
+      "sourceUrl": "https://jujutsukaisen.jp/character/",
+      "difficultyTarget": 0.25
+    },
+    {
+      "qid": "jujutsu-800-903",
+      "p": 800,
+      "q": "ما القدرة التي تمنح تينغن استمرار حياته عبر القرون؟",
+      "a": "الخلود",
+      "alt": [
+        "عدم الموت",
+        "Immortality"
+      ],
+      "topic": "القدرات",
+      "verified": true,
+      "sourceUrl": "https://jujutsukaisen.jp/character/",
+      "difficultyTarget": 0.25
+    },
+    {
+      "qid": "jujutsu-800-904",
+      "p": 800,
+      "q": "من المعلّمة التي تشرف على طلاب كيوتو ويتعمد غوجو إزعاجها؟",
       "a": "أوتاهيمي إيوري",
       "alt": [
         "أوتاهيمي",
-        "أوتاهيمي أيوري"
+        "Utahime Iori"
       ],
-      "topic": "المعلمون والسحرة",
+      "topic": "مدرسة كيوتو",
       "verified": true,
-      "qid": "jujutsu-400-064",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Kyoto_Goodwill_Event_Arc"
+      "sourceUrl": "https://jujutsukaisen.jp/character/category2.php",
+      "difficultyTarget": 0.25
     },
     {
-      "p": 400,
-      "q": "ما اسم اللعنة ذات الرأس البركاني التي تقاتل بالنار؟",
-      "a": "جوغو",
-      "alt": [
-        "جوغوو"
-      ],
-      "topic": "اللعنات والأرواح الملعونة",
-      "verified": true,
-      "qid": "jujutsu-400-065",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Dagon"
-    },
-    {
-      "p": 400,
-      "q": "ما اسم اللعنة ذات الجسد المرقّع التي تعبث بأرواح البشر؟",
-      "a": "ماهيتو",
-      "alt": [
-        "ماهيتوو"
-      ],
-      "topic": "اللعنات والأرواح الملعونة",
-      "verified": true,
-      "qid": "jujutsu-400-066",
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Jujutsu_Kaisen_characters"
-    },
-    {
-      "p": 400,
-      "q": "ما اسم اللعنة التي تقاتل بالأشجار والنباتات؟",
-      "a": "هانامي",
-      "alt": [
-        "هانامى"
-      ],
-      "topic": "اللعنات والأرواح الملعونة",
-      "verified": true,
-      "qid": "jujutsu-400-067",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Kyoto_Goodwill_Event_Arc"
-    },
-    {
-      "p": 400,
-      "q": "ما اسم اللعنة التي تقاتل بالأمواج والمياه؟",
-      "a": "داغون",
-      "alt": [
-        "داجون"
-      ],
-      "topic": "اللعنات والأرواح الملعونة",
-      "verified": true,
-      "qid": "jujutsu-400-068",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Dagon"
-    },
-    {
-      "p": 400,
-      "q": "ما حقيقة الطالب الذي يظهر في هيئة دبّ؟",
-      "a": "جثة ملعونة",
-      "alt": [
-        "جثة ملعونة واعية"
-      ],
-      "topic": "اللعنات والأرواح الملعونة",
-      "verified": true,
-      "qid": "jujutsu-400-069",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Cursed_Corpse"
-    },
-    {
-      "p": 400,
-      "q": "ما التسمية التي تجمع اللعنات المولودة من الخوف من الكوارث الطبيعية؟",
-      "a": "لعنات الكوارث",
-      "alt": [
-        "أرواح الكوارث"
-      ],
-      "topic": "اللعنات والأرواح الملعونة",
-      "verified": true,
-      "qid": "jujutsu-400-070",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Dagon"
-    },
-    {
-      "p": 400,
-      "q": "من طالبة كيوتو التي تقاتل بالسيف وتسعى لكسب المال لإعالة إخوتها؟",
-      "a": "كاسومي ميوا",
-      "alt": [
-        "ميوا",
-        "كاسومي ميوة"
-      ],
-      "topic": "طلاب المدرستين",
-      "verified": true,
-      "qid": "jujutsu-400-071",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Kyoto_Metropolitan_Curse_Technical_College"
-    },
-    {
-      "p": 400,
-      "q": "من طالب كيوتو الذي ورث تقنية عشيرته في التحكم بالدم؟",
-      "a": "نوريتوشي كامو",
-      "alt": [
-        "كامو",
-        "نوريتوشي كامُو"
-      ],
-      "topic": "طلاب المدرستين",
-      "verified": true,
-      "qid": "jujutsu-400-072",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Kyoto_Metropolitan_Curse_Technical_College"
-    },
-    {
-      "p": 400,
-      "q": "من طالبة كيوتو التي تطير على مكنسة؟",
-      "a": "مومو نيشيميا",
-      "alt": [
-        "مومو",
-        "مومو نيشيمية"
-      ],
-      "topic": "طلاب المدرستين",
-      "verified": true,
-      "qid": "jujutsu-400-073",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Kyoto_Metropolitan_Curse_Technical_College"
-    },
-    {
-      "p": 400,
-      "q": "ما اسم الدمية المدرّعة التي تمثّل كيوتو في المسابقة؟",
-      "a": "ميكامارو",
-      "alt": [
-        "ميتشامارو",
-        "ميكامارو الفائق"
-      ],
-      "topic": "طلاب المدرستين",
-      "verified": true,
-      "qid": "jujutsu-400-074",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Kyoto_Metropolitan_Curse_Technical_College"
-    },
-    {
-      "p": 400,
-      "q": "من الأخت التوأم لماكي التي تقاتل في صفّ كيوتو؟",
-      "a": "ماي زينين",
-      "alt": [
-        "ماي",
-        "ماي زنين"
-      ],
-      "topic": "طلاب المدرستين",
-      "verified": true,
-      "qid": "jujutsu-400-075",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Kyoto_Metropolitan_Curse_Technical_College"
-    },
-    {
-      "p": 400,
-      "q": "كم طالبًا مثّل فريق كيوتو في المواجهة السنوية بين المدرستين؟",
-      "a": "ستة طلاب",
-      "alt": [
-        "ستة",
-        "٦"
-      ],
-      "topic": "طلاب المدرستين",
-      "verified": true,
-      "qid": "jujutsu-400-076",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Kyoto_Goodwill_Event_Arc"
-    },
-    {
-      "p": 400,
-      "q": "ما نوع السيف الذي يقاتل به نانامي؟",
-      "a": "سيف غير حادّ",
-      "alt": [
-        "سيف كليل",
-        "ساطور غير حاد"
-      ],
-      "topic": "الأدوات الملعونة",
-      "verified": true,
-      "qid": "jujutsu-400-077",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Ratio_Technique"
-    },
-    {
-      "p": 400,
-      "q": "ما اسم الصندوق الملعون الذي خُتم فيه غوجو ليلة الهالوين؟",
-      "a": "عالم السجن",
-      "alt": [
-        "سجن العالم",
-        "صندوق السجن",
-        "بوابة السجن"
-      ],
-      "topic": "الأدوات الملعونة",
-      "verified": true,
-      "qid": "jujutsu-400-078",
-      "sourceUrl": "https://en.wikipedia.org/wiki/Jujutsu_Kaisen"
-    },
-    {
-      "p": 400,
-      "q": "ما اسم العصا ثلاثية المقاطع التي تقاتل بها ماكي؟",
-      "a": "سحابة اللعب",
-      "alt": [
-        "سحابة اللهو",
-        "بلايفل كلاود"
-      ],
-      "topic": "الأدوات الملعونة",
-      "verified": true,
-      "qid": "jujutsu-400-079",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Playful_Cloud"
-    },
-    {
-      "p": 400,
-      "q": "ما اسم الاتفاق الذي يزيد قوة الساحر مقابل شرط يلتزم به؟",
-      "a": "العهد المقيّد",
-      "alt": [
-        "القيد",
-        "العهد الملزم"
-      ],
-      "topic": "قواعد عالم الجوجوتسو",
-      "verified": true,
-      "qid": "jujutsu-400-080",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Ratio_Technique"
-    },
-    {
-      "p": 400,
-      "q": "ما أدنى درجة في تصنيف السحرة؟",
-      "a": "الدرجة الرابعة",
-      "alt": [
-        "الرابعة",
-        "درجة رابعة"
-      ],
-      "topic": "قواعد عالم الجوجوتسو",
-      "verified": true,
-      "qid": "jujutsu-400-081",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Grade"
-    },
-    {
-      "p": 400,
-      "q": "ماذا يُطلق على الإنسان الذي يوجّه اللعنات ضدّ الناس؟",
-      "a": "مستخدم اللعنات",
-      "alt": [
-        "مستعمل اللعنات",
-        "ساحر لعنات شرير"
-      ],
-      "topic": "قواعد عالم الجوجوتسو",
-      "verified": true,
-      "qid": "jujutsu-400-082",
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Jujutsu_Kaisen_characters"
-    },
-    {
-      "p": 400,
-      "q": "كم عائلة كبرى تتحكّم في عالم السحرة؟",
-      "a": "ثلاث عائلات",
-      "alt": [
-        "ثلاث",
-        "ثلاثة"
-      ],
-      "topic": "قواعد عالم الجوجوتسو",
-      "verified": true,
-      "qid": "jujutsu-400-083",
-      "sourceUrl": "https://en.wikipedia.org/wiki/Jujutsu_Kaisen"
-    },
-    {
-      "p": 400,
-      "q": "ما الحالة الفطرية التي تمنح صاحبها جسدًا خارقًا مقابل انعدام طاقته الملعونة؟",
-      "a": "القيد السماوي",
-      "alt": [
-        "التقييد السماوي",
-        "الحظر السماوي"
-      ],
-      "topic": "قواعد عالم الجوجوتسو",
-      "verified": true,
-      "qid": "jujutsu-400-084",
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Jujutsu_Kaisen_characters"
-    },
-    {
-      "p": 400,
-      "q": "في أي ليلة نفّذ غيتو هجومه الكبير في قصة البداية؟",
-      "a": "ليلة عيد الميلاد",
-      "alt": [
-        "عيد الميلاد",
-        "ليلة الميلاد"
-      ],
-      "topic": "الأحداث والمواجهات",
-      "verified": true,
-      "qid": "jujutsu-400-085",
-      "sourceUrl": "https://en.wikipedia.org/wiki/Jujutsu_Kaisen_0"
-    },
-    {
-      "p": 400,
-      "q": "بم أوصى جدّ يوجي حفيده قبل رحيله؟",
-      "a": "مساعدة الآخرين",
-      "alt": [
-        "أن يساعد الناس",
-        "إنقاذ الناس"
-      ],
-      "topic": "الأحداث والمواجهات",
-      "verified": true,
-      "qid": "jujutsu-400-086",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Wasuke_Itadori"
-    },
-    {
-      "p": 400,
-      "q": "من الساحر القديم الذي أطلق لعبة الإبادة وجمع السحرة في مناطق مغلقة؟",
-      "a": "كينجاكو",
-      "alt": [
-        "كينجاكوو"
-      ],
-      "topic": "الأحداث والمواجهات",
-      "verified": true,
-      "qid": "jujutsu-400-087",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Culling_Game"
-    },
-    {
-      "p": 400,
-      "q": "أي فريق فاز في المباراة الختامية بين المدرستين؟",
-      "a": "فريق طوكيو",
-      "alt": [
-        "طلاب طوكيو"
-      ],
-      "topic": "الأحداث والمواجهات",
-      "verified": true,
-      "qid": "jujutsu-400-088",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Baseball_Game"
-    },
-    {
-      "p": 400,
-      "q": "ما نوع الجماعة التي استولى عليها غيتو وجعلها ستارًا لجمع اللعنات؟",
-      "a": "جماعة دينية",
-      "alt": [
-        "طائفة دينية",
-        "منظمة دينية"
-      ],
-      "topic": "الأحداث والمواجهات",
-      "verified": true,
-      "qid": "jujutsu-400-089",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Time_Vessel_Association"
-    },
-    {
-      "p": 400,
-      "q": "ما الذي يظهر على وجنة يوجي حين يتكلم سوكونا؟",
-      "a": "فم",
-      "alt": [
-        "فم إضافي",
-        "فم على الوجنة"
-      ],
-      "topic": "الشخصيات الرئيسية",
-      "verified": true,
-      "qid": "jujutsu-400-090",
-      "sourceUrl": "https://en.wikipedia.org/wiki/Jujutsu_Kaisen"
-    },
-    {
-      "p": 400,
-      "q": "كم ذراعًا لسوكونا في هيئته الحقيقية؟",
-      "a": "أربع أذرع",
-      "alt": [
-        "أربعة",
-        "أربع"
-      ],
-      "topic": "الشخصيات الرئيسية",
-      "verified": true,
-      "qid": "jujutsu-400-091",
-      "sourceUrl": "https://en.wikipedia.org/wiki/Jujutsu_Kaisen"
-    },
-    {
-      "p": 400,
-      "q": "ما اسم أخت ميغومي الكبرى بالتبنّي؟",
-      "a": "تسوميكي فوشيغورو",
-      "alt": [
-        "تسوميكي"
-      ],
-      "topic": "الشخصيات الرئيسية",
-      "verified": true,
-      "qid": "jujutsu-400-092",
-      "sourceUrl": "https://en.wikipedia.org/wiki/Megumi_Fushiguro"
-    },
-    {
-      "p": 400,
-      "q": "بأي لقب عُرفت ريكا بين اللعنات؟",
-      "a": "ملكة اللعنات",
-      "alt": [
-        "ملكة اللعنة"
-      ],
-      "topic": "الشخصيات الرئيسية",
-      "verified": true,
-      "qid": "jujutsu-400-093",
-      "sourceUrl": "https://en.wikipedia.org/wiki/Jujutsu_Kaisen_0"
-    },
-    {
-      "p": 400,
-      "q": "من والد ميغومي الذي هزم أقوى السحرة رغم انعدام طاقته الملعونة؟",
-      "a": "توجي فوشيغورو",
-      "alt": [
-        "توجي",
-        "توجي زينين"
-      ],
-      "topic": "الشخصيات الرئيسية",
-      "verified": true,
-      "qid": "jujutsu-400-094",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Riko_Amanai"
-    },
-    {
-      "p": 400,
-      "q": "ما المكان الذي واجه فيه طلاب الصفّ الأول لعنةً خاصة في أول مهمة لهم؟",
-      "a": "إصلاحية الأحداث",
-      "alt": [
-        "سجن الأحداث",
-        "دار الأحداث"
-      ],
-      "topic": "الأماكن والمدارس",
-      "verified": true,
-      "qid": "jujutsu-400-095",
-      "sourceUrl": "https://en.wikipedia.org/wiki/Jujutsu_Kaisen"
-    },
-    {
-      "p": 400,
-      "q": "في أي مدينة كان يعيش يوجي مع جدّه؟",
-      "a": "سينداي",
-      "alt": [
-        "مدينة سينداي"
-      ],
-      "topic": "الأماكن والمدارس",
-      "verified": true,
-      "qid": "jujutsu-400-096",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Wasuke_Itadori"
-    },
-    {
-      "p": 600,
-      "q": "ما اسم أقوى مخلوق في ظلال ميغومي ولم يتمكّن من ترويضه؟",
-      "a": "ماهوراغا",
-      "alt": [
-        "ماهوراجا"
-      ],
-      "topic": "التقنيات والقدرات",
-      "verified": true,
-      "qid": "jujutsu-600-049",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Ten_Shadows_Technique"
-    },
-    {
-      "p": 600,
-      "q": "ما اسم المخلوق المجنّح الذي يستدعيه ميغومي ويصعق به خصومه؟",
-      "a": "نوي",
-      "alt": [
-        "النوي"
-      ],
-      "topic": "التقنيات والقدرات",
-      "verified": true,
-      "qid": "jujutsu-600-050",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Ten_Shadows_Technique"
-    },
-    {
-      "p": 600,
-      "q": "ما اسم الدائرة الدفاعية التي يرسمها الساحر ليبطل أثر مجال خصمه؟",
-      "a": "النطاق البسيط",
-      "alt": [
-        "المجال البسيط"
-      ],
-      "topic": "التقنيات والقدرات",
-      "verified": true,
-      "qid": "jujutsu-600-051",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Simple_Domain"
-    },
-    {
-      "p": 600,
-      "q": "ما اسم ضربة يوجي التي تصيب مرتين بلكمة واحدة؟",
-      "a": "القبضة المتباينة",
-      "alt": [
-        "الضربة المنشطرة",
-        "اللكمة المتباينة"
-      ],
-      "topic": "التقنيات والقدرات",
-      "verified": true,
-      "qid": "jujutsu-600-052",
-      "sourceUrl": "https://en.wikipedia.org/wiki/Yuji_Itadori"
-    },
-    {
-      "p": 600,
-      "q": "ما العضو الذي يزرعه الساحر القديم في أجساد ضحاياه ليستولي عليها؟",
-      "a": "دماغه",
-      "alt": [
-        "مخّه",
-        "الدماغ"
-      ],
-      "topic": "الشخصيات الرئيسية",
-      "verified": true,
-      "qid": "jujutsu-600-053",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
-    },
-    {
-      "p": 600,
-      "q": "ما الميزة التي تجعل كل هجوم داخل المجال يصيب هدفه دون أن يخطئ؟",
-      "a": "الإصابة المؤكدة",
-      "alt": [
-        "الإصابة الحتمية",
-        "ضمان الإصابة"
-      ],
-      "topic": "التقنيات والقدرات",
-      "verified": true,
-      "qid": "jujutsu-600-054",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Domain_Expansion"
-    },
-    {
-      "p": 600,
-      "q": "ما اسم الأسلوب الذي يلفّ به الساحر جسده بمجاله ليبطل تقنية خصمه؟",
-      "a": "تضخيم المجال",
-      "alt": [
-        "تعزيز المجال"
-      ],
-      "topic": "التقنيات والقدرات",
-      "verified": true,
-      "qid": "jujutsu-600-055",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Simple_Domain"
-    },
-    {
-      "p": 600,
-      "q": "ما اسم تقنية اللعنة ذات الجسد المرقّع التي تعيد تشكيل الأرواح؟",
-      "a": "التحويل الخامل",
-      "alt": [
-        "تحوير الروح",
-        "التحوير الخامل"
-      ],
-      "topic": "التقنيات والقدرات",
-      "verified": true,
-      "qid": "jujutsu-600-056",
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Jujutsu_Kaisen_characters"
-    },
-    {
-      "p": 600,
-      "q": "ما اسم هجوم نوبارا الذي ينقل الأذى إلى الخصم عبر دميتها؟",
-      "a": "الرنين",
-      "alt": [
-        "رنين",
-        "صدى الرنين"
-      ],
-      "topic": "التقنيات والقدرات",
-      "verified": true,
-      "qid": "jujutsu-600-057",
-      "sourceUrl": "https://en.wikipedia.org/wiki/Nobara_Kugisaki"
-    },
-    {
-      "p": 600,
-      "q": "ما اسم هجوم نوبارا الذي تطلقه بمسمار واحد مشحون بطاقتها؟",
-      "a": "دبوس الشعر",
-      "alt": [
-        "الدبوس"
-      ],
-      "topic": "التقنيات والقدرات",
-      "verified": true,
-      "qid": "jujutsu-600-058",
-      "sourceUrl": "https://en.wikipedia.org/wiki/Nobara_Kugisaki"
-    },
-    {
-      "p": 600,
-      "q": "من الموظف الذي ينصب الستائر وينقل الطلاب إلى مهمّاتهم؟",
-      "a": "كيوتاكا إيجيتشي",
-      "alt": [
-        "إيجيتشي"
-      ],
-      "topic": "المعلمون والسحرة",
-      "verified": true,
-      "qid": "jujutsu-600-059",
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Jujutsu_Kaisen_characters"
-    },
-    {
-      "p": 600,
-      "q": "من مدير المدرسة الشقيقة في كيوتو الذي يقاتل بآلة موسيقية؟",
-      "a": "يوشينوبو غاكوغانجي",
-      "alt": [
-        "غاكوغانجي",
-        "جاكوجانجي"
-      ],
-      "topic": "المعلمون والسحرة",
-      "verified": true,
-      "qid": "jujutsu-600-060",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Kyoto_Metropolitan_Curse_Technical_College"
-    },
-    {
-      "p": 600,
-      "q": "من الساحرة التي لا تقبل مهمة إلا بأجر وتقيس كل شيء بالمال؟",
-      "a": "ماي ماي",
-      "alt": [
-        "مي مي"
-      ],
-      "topic": "المعلمون والسحرة",
-      "verified": true,
-      "qid": "jujutsu-600-061",
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Jujutsu_Kaisen_characters"
-    },
-    {
-      "p": 600,
-      "q": "من الساحرة من أعلى الدرجات التي تبحث عن أصل اللعنات؟",
-      "a": "يوكي تسوكومو",
-      "alt": [
-        "يوكي"
-      ],
-      "topic": "المعلمون والسحرة",
-      "verified": true,
-      "qid": "jujutsu-600-062",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Star_Rage"
-    },
-    {
-      "p": 600,
-      "q": "من كبير إخوة أرحام اللوحات الملعونة الذي يقاتل بدمه؟",
-      "a": "تشوسو",
-      "alt": [
-        "تشوسوو"
-      ],
-      "topic": "الشخصيات الرئيسية",
-      "verified": true,
-      "qid": "jujutsu-600-063",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Cursed_Womb:_Death_Painting"
-    },
-    {
-      "p": 600,
-      "q": "من الفتى المولع بالأفلام الذي خدعته اللعنة ذات الجسد المرقّع؟",
-      "a": "جونبي يوشينو",
-      "alt": [
-        "جونبي",
-        "يوشينو جونبي"
-      ],
-      "topic": "الشخصيات الرئيسية",
-      "verified": true,
-      "qid": "jujutsu-600-064",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Junpei_Yoshino"
-    },
-    {
-      "p": 600,
-      "q": "ما اسم المغنّية التي يعشقها تودو؟",
-      "a": "تاكادا تشان",
-      "alt": [
-        "تاكادا"
-      ],
-      "topic": "الشخصيات الرئيسية",
-      "verified": true,
-      "qid": "jujutsu-600-065",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Nobuko_Takada"
-    },
-    {
-      "p": 600,
-      "q": "بأي لقب عُرف والد ميغومي بين السحرة؟",
-      "a": "قاتل السحرة",
-      "alt": [
-        "صائد السحرة"
-      ],
-      "topic": "الشخصيات الرئيسية",
-      "verified": true,
-      "qid": "jujutsu-600-066",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Riko_Amanai"
-    },
-    {
-      "p": 600,
-      "q": "من الساحر الذي تدرّب معه يوتا في الخارج بعد قصة البداية؟",
-      "a": "ميغيل",
-      "alt": [
-        "ميجيل"
-      ],
-      "topic": "الشخصيات الرئيسية",
-      "verified": true,
-      "qid": "jujutsu-600-067",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Yuta_Okkotsu"
-    },
-    {
-      "p": 600,
-      "q": "ما الكلمة التي يقولها توغي حين يقصد «لا»؟",
-      "a": "رقائق البونيتو",
-      "alt": [
-        "كاتسوبوشي",
-        "بونيتو"
-      ],
-      "topic": "طلاب المدرستين",
-      "verified": true,
-      "qid": "jujutsu-600-068",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Toge_Inumaki"
-    },
-    {
-      "p": 600,
-      "q": "من الذي علّم نوبارا تقنيتها وأوصى بقبولها في المدرسة؟",
-      "a": "جدّتها",
-      "alt": [
-        "جدّتها الساحرة",
-        "جدّة نوبارا"
-      ],
-      "topic": "طلاب المدرستين",
-      "verified": true,
-      "qid": "jujutsu-600-069",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Straw_Doll_Technique"
-    },
-    {
-      "p": 600,
-      "q": "كم نواة في جسد الطالب ذي هيئة الدبّ؟",
-      "a": "ثلاث نوى",
-      "alt": [
-        "ثلاث",
-        "ثلاثة نوى"
-      ],
-      "topic": "طلاب المدرستين",
-      "verified": true,
-      "qid": "jujutsu-600-070",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Gorilla_Mode"
-    },
-    {
-      "p": 600,
-      "q": "ما الأمر الذي يسأل عنه تودو كل من يقابله؟",
-      "a": "نوع النساء المفضّل",
-      "alt": [
-        "ذوقه في النساء"
-      ],
-      "topic": "طلاب المدرستين",
-      "verified": true,
-      "qid": "jujutsu-600-071",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Aoi_Todo"
-    },
-    {
-      "p": 600,
-      "q": "ما الدرجة التي كان يحملها ميغومي حين التقى يوجي؟",
-      "a": "الدرجة الثانية",
-      "alt": [
-        "الثانية",
-        "درجة ثانية"
-      ],
-      "topic": "طلاب المدرستين",
-      "verified": true,
-      "qid": "jujutsu-600-072",
-      "sourceUrl": "https://en.wikipedia.org/wiki/Megumi_Fushiguro"
-    },
-    {
-      "p": 600,
-      "q": "ما الدرجة التي كانت تحملها نوبارا حين التحقت بالمدرسة؟",
-      "a": "الدرجة الثالثة",
-      "alt": [
-        "الثالثة",
-        "درجة ثالثة"
-      ],
-      "topic": "طلاب المدرستين",
-      "verified": true,
-      "qid": "jujutsu-600-073",
-      "sourceUrl": "https://en.wikipedia.org/wiki/Nobara_Kugisaki"
-    },
-    {
-      "p": 600,
-      "q": "ما الشيء الذي يرتديه يوتا في إصبعه تذكارًا من ريكا؟",
-      "a": "خاتم",
-      "alt": [
-        "الخاتم",
-        "خاتم الخطوبة"
-      ],
-      "topic": "طلاب المدرستين",
-      "verified": true,
-      "qid": "jujutsu-600-074",
-      "sourceUrl": "https://en.wikipedia.org/wiki/Jujutsu_Kaisen_0"
-    },
-    {
-      "p": 600,
-      "q": "ما الحيوان الذي يتّخذ الطالب ذو هيئة الدبّ شكله حين يحتاج قوة أكبر؟",
-      "a": "الغوريلا",
-      "alt": [
-        "غوريلا"
-      ],
-      "topic": "طلاب المدرستين",
-      "verified": true,
-      "qid": "jujutsu-600-075",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Gorilla_Mode"
-    },
-    {
-      "p": 600,
-      "q": "ما الاسم الذي يطلقه غيتو على البشر غير السحرة؟",
-      "a": "القرود",
-      "alt": [
-        "قرود"
-      ],
-      "topic": "اللعنات والأرواح الملعونة",
-      "verified": true,
-      "qid": "jujutsu-600-076",
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Jujutsu_Kaisen_characters"
-    },
-    {
-      "p": 600,
-      "q": "كم رحمًا من أرحام اللوحات الملعونة صُنع في تلك التجربة؟",
-      "a": "تسعة أرحام",
-      "alt": [
-        "تسعة",
-        "٩"
-      ],
-      "topic": "اللعنات والأرواح الملعونة",
-      "verified": true,
-      "qid": "jujutsu-600-077",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Cursed_Womb:_Death_Painting"
-    },
-    {
-      "p": 600,
-      "q": "ما الكائن البحري الذي يشبهه المخلوق الذي استدعاه جونبي؟",
-      "a": "قنديل البحر",
-      "alt": [
-        "قنديل"
-      ],
-      "topic": "اللعنات والأرواح الملعونة",
-      "verified": true,
-      "qid": "jujutsu-600-078",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Moon_Dregs"
-    },
-    {
-      "p": 600,
-      "q": "ما التسمية التي تُطلق على اللعنة التي ابتلعت أحد أصابع سوكونا؟",
-      "a": "حامل الإصبع",
-      "alt": [
-        "حاملة الإصبع"
-      ],
-      "topic": "اللعنات والأرواح الملعونة",
-      "verified": true,
-      "qid": "jujutsu-600-079",
-      "sourceUrl": "https://en.wikipedia.org/wiki/Jujutsu_Kaisen"
-    },
-    {
-      "p": 600,
-      "q": "من أي خوف وُلدت اللعنة التي تقاتل بالنباتات؟",
-      "a": "الخوف من الغابات",
-      "alt": [
-        "الخوف من الأشجار",
-        "الخوف من كوارث الأرض"
-      ],
-      "topic": "اللعنات والأرواح الملعونة",
-      "verified": true,
-      "qid": "jujutsu-600-080",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Kyoto_Goodwill_Event_Arc"
-    },
-    {
-      "p": 600,
-      "q": "ما اسم السلاح الذي يُبطل أي تقنية ملعونة يلمسها نصله؟",
-      "a": "رمح السماء المقلوب",
-      "alt": [
-        "الرمح المقلوب",
-        "رمح الجنة المقلوب"
-      ],
-      "topic": "الأدوات الملعونة",
-      "verified": true,
-      "qid": "jujutsu-600-081",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Playful_Cloud"
-    },
-    {
-      "p": 600,
-      "q": "ما الكائن الذي خزّن فيه توجي أسلحته ليبقى خفيًا عن السحرة؟",
-      "a": "لعنة دودية",
-      "alt": [
-        "روح ملعونة تشبه الدودة",
-        "لعنة المخزن"
-      ],
-      "topic": "الأدوات الملعونة",
-      "verified": true,
-      "qid": "jujutsu-600-082",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Toji_Fushiguro"
-    },
-    {
-      "p": 600,
-      "q": "ما اسم السيف الملعون الذي يقطع الروح ذاتها؟",
-      "a": "كاتانا شقّ الروح",
-      "alt": [
-        "سيف شق الروح",
-        "كاتانا الروح"
-      ],
-      "topic": "الأدوات الملعونة",
-      "verified": true,
-      "qid": "jujutsu-600-083",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Playful_Cloud"
-    },
-    {
-      "p": 600,
-      "q": "ما الأداة الملعونة التي ترتديها ماكي كي ترى اللعنات؟",
-      "a": "النظارة",
-      "alt": [
-        "نظارتها",
-        "نظارة"
-      ],
-      "topic": "الأدوات الملعونة",
-      "verified": true,
-      "qid": "jujutsu-600-084",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Maki_Zenin"
-    },
-    {
-      "p": 600,
-      "q": "ما اسم الثانوية التي كان يوجي طالبًا فيها قبل انتقاله؟",
-      "a": "ثانوية سوغيساوا",
-      "alt": [
-        "سوغيساوا",
-        "سوغيساوا الثالثة"
-      ],
-      "topic": "الأماكن والمدارس",
-      "verified": true,
-      "qid": "jujutsu-600-085",
-      "sourceUrl": "https://en.wikipedia.org/wiki/Yuji_Itadori"
-    },
-    {
-      "p": 600,
-      "q": "أين كان يرقد الجسد الحقيقي لمشغّل الدمية من طلاب كيوتو؟",
-      "a": "في حوض ماء",
-      "alt": [
-        "حوض استحمام",
-        "مغطس"
-      ],
-      "topic": "الأماكن والمدارس",
-      "verified": true,
-      "qid": "jujutsu-600-086",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Kokichi_Muta"
-    },
-    {
-      "p": 600,
-      "q": "أين جرت أول مهمة جمعت يوجي بنانامي؟",
-      "a": "دار سينما",
-      "alt": [
-        "سينما",
-        "صالة سينما"
-      ],
-      "topic": "الأماكن والمدارس",
-      "verified": true,
-      "qid": "jujutsu-600-087",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Junpei_Yoshino"
-    },
-    {
-      "p": 600,
-      "q": "إلى أي قارة سافر يوتا للتدريب بعد قصة البداية؟",
-      "a": "أفريقيا",
-      "alt": [
-        "إفريقيا"
-      ],
-      "topic": "الأماكن والمدارس",
-      "verified": true,
-      "qid": "jujutsu-600-088",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Yuta_Okkotsu"
-    },
-    {
-      "p": 600,
-      "q": "ما اسم أول منافسة في المواجهة السنوية قبل أن تقاطعها اللعنات؟",
-      "a": "المعركة الجماعية",
-      "alt": [
-        "القتال الجماعي"
-      ],
-      "topic": "الأحداث والمواجهات",
-      "verified": true,
-      "qid": "jujutsu-600-089",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Kyoto_Goodwill_Event_Arc"
-    },
-    {
-      "p": 600,
-      "q": "كم ومضة سوداء متتالية سجّلها يوجي في معركته أمام اللعنة النباتية؟",
-      "a": "أربع ومضات",
-      "alt": [
-        "أربع",
-        "أربعة"
-      ],
-      "topic": "الأحداث والمواجهات",
-      "verified": true,
-      "qid": "jujutsu-600-090",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Black_Flash"
-    },
-    {
-      "p": 600,
-      "q": "ما الذي منحه يوجي لسوكونا في العهد الذي أبرماه بينهما؟",
-      "a": "دقيقة واحدة",
-      "alt": [
-        "دقيقة",
-        "دقيقة من السيطرة"
-      ],
-      "topic": "الأحداث والمواجهات",
-      "verified": true,
-      "qid": "jujutsu-600-091",
-      "sourceUrl": "https://en.wikipedia.org/wiki/Jujutsu_Kaisen"
-    },
-    {
-      "p": 600,
-      "q": "قبل كم من الزمن عاش سوكونا في عصره الذهبي؟",
-      "a": "ألف عام",
-      "alt": [
-        "ألف سنة",
-        "١٠٠٠ عام"
-      ],
-      "topic": "الأحداث والمواجهات",
-      "verified": true,
-      "qid": "jujutsu-600-092",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Sukuna/Synopsis"
-    },
-    {
-      "p": 600,
-      "q": "ما العشيرة التي تتوارث تقنية استدعاء المخلوقات من الظلال؟",
-      "a": "عشيرة زينين",
-      "alt": [
-        "آل زينين",
-        "زينين"
-      ],
-      "topic": "قواعد عالم الجوجوتسو",
-      "verified": true,
-      "qid": "jujutsu-600-093",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Ten_Shadows_Technique"
-    },
-    {
-      "p": 600,
-      "q": "ما الاسم الحقيقي لطالب كيوتو الذي يقاتل بدمية آلية؟",
-      "a": "كوكيتشي موتا",
-      "alt": [
-        "كوكيتشي",
-        "موتا كوكيتشي"
-      ],
-      "topic": "طلاب المدرستين",
-      "verified": true,
-      "qid": "jujutsu-600-094",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Kokichi_Muta"
-    },
-    {
-      "p": 600,
-      "q": "من الجهة التي تحكم عالم السحرة وتصدر أوامرها للمدرستين؟",
-      "a": "كبار السحرة",
-      "alt": [
-        "مجلس السحرة",
-        "قادة الجوجوتسو"
-      ],
-      "topic": "قواعد عالم الجوجوتسو",
-      "verified": true,
-      "qid": "jujutsu-600-095",
-      "sourceUrl": "https://en.wikipedia.org/wiki/Jujutsu_Kaisen"
-    },
-    {
-      "p": 600,
-      "q": "كم قرويًا قتلهم غيتو في الليلة التي هجر فيها عالم السحرة؟",
-      "a": "مئة واثنا عشر",
-      "alt": [
-        "١١٢",
-        "مئة واثني عشر"
-      ],
-      "topic": "الأحداث والمواجهات",
-      "verified": true,
-      "qid": "jujutsu-600-096",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Suguru_Geto"
-    },
-    {
+      "qid": "jujutsu-800-905",
       "p": 800,
-      "q": "ما اسم مجال ميغومي الذي يحوّل الأرض كلها إلى ظلّ؟",
-      "a": "حديقة الظلّ الكيميرية",
-      "alt": [
-        "حديقة الظلال",
-        "حديقة الظل"
-      ],
-      "topic": "التقنيات والقدرات",
-      "verified": true,
-      "qid": "jujutsu-800-049",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Ten_Shadows_Technique"
-    },
-    {
-      "p": 800,
-      "q": "ما اسم مجال اللعنة التي تتلاعب بأرواح البشر؟",
-      "a": "تجسيد الكمال الذاتي",
-      "alt": [
-        "تجسيد الكمال",
-        "التجسيد الذاتي للكمال"
-      ],
-      "topic": "التقنيات والقدرات",
-      "verified": true,
-      "qid": "jujutsu-800-050",
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Jujutsu_Kaisen_characters"
-    },
-    {
-      "p": 800,
-      "q": "ما اسم مجال اللعنة البركانية؟",
-      "a": "تابوت الجبل الحديدي",
-      "alt": [
-        "تابوت الجبل",
-        "نعش الجبل الحديدي"
-      ],
-      "topic": "التقنيات والقدرات",
-      "verified": true,
-      "qid": "jujutsu-800-051",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Dagon"
-    },
-    {
-      "p": 800,
-      "q": "ما اسم العهد الذي يرفع طاقة نانامي بعد انتهاء ساعات عمله؟",
-      "a": "العمل الإضافي",
-      "alt": [
-        "الدوام الإضافي",
-        "أوفر تايم"
-      ],
-      "topic": "التقنيات والقدرات",
-      "verified": true,
-      "qid": "jujutsu-800-052",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Ratio_Technique"
-    },
-    {
-      "p": 800,
-      "q": "ما اسم الختم الموروث الذي يظهر على لسان توغي وطرفي فمه؟",
-      "a": "الأفعى والأنياب",
-      "alt": [
-        "الأفعى وأنيابها",
-        "ختم الأفعى"
-      ],
-      "topic": "التقنيات والقدرات",
-      "verified": true,
-      "qid": "jujutsu-800-053",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Toge_Inumaki"
-    },
-    {
-      "p": 800,
-      "q": "كم ضعفًا تبلغ قوة الضربة حين تتحوّل إلى ومضة سوداء؟",
-      "a": "مرتان ونصف",
-      "alt": [
-        "2.5",
-        "اثنان ونصف"
-      ],
-      "topic": "التقنيات والقدرات",
-      "verified": true,
-      "qid": "jujutsu-800-054",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Black_Flash"
-    },
-    {
-      "p": 800,
-      "q": "ما اسم تقنية ماي التي تصنع الأشياء من طاقتها الملعونة؟",
-      "a": "تقنية الإنشاء",
-      "alt": [
-        "الإنشاء",
-        "تقنية البناء"
-      ],
-      "topic": "التقنيات والقدرات",
-      "verified": true,
-      "qid": "jujutsu-800-055",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Kyoto_Metropolitan_Curse_Technical_College"
-    },
-    {
-      "p": 800,
-      "q": "ما اسم المخلوق الذي يخرج من الأرض ويبتلع الخصم في ظلال ميغومي؟",
-      "a": "الأفعى العظمى",
-      "alt": [
-        "الثعبان العملاق",
-        "الأفعى الكبرى"
-      ],
-      "topic": "التقنيات والقدرات",
-      "verified": true,
-      "qid": "jujutsu-800-056",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Ten_Shadows_Technique"
-    },
-    {
-      "p": 800,
-      "q": "أي حيوان برمائي يستدعيه ميغومي ليقيّد خصمه بلسانه؟",
-      "a": "الضفدع",
-      "alt": [
-        "ضفدع"
-      ],
-      "topic": "التقنيات والقدرات",
-      "verified": true,
-      "qid": "jujutsu-800-057",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Ten_Shadows_Technique"
-    },
-    {
-      "p": 800,
-      "q": "ما لونا الكلبين اللذين يستدعيهما ميغومي؟",
-      "a": "أبيض وأسود",
-      "alt": [
-        "الأبيض والأسود"
-      ],
-      "topic": "التقنيات والقدرات",
-      "verified": true,
-      "qid": "jujutsu-800-058",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Ten_Shadows_Technique"
-    },
-    {
-      "p": 800,
-      "q": "ما العضو الذي يتأذّى عند توغي إذا أفرط في استعمال تقنيته؟",
-      "a": "الحلق",
-      "alt": [
-        "حلقه",
-        "حنجرته"
-      ],
-      "topic": "التقنيات والقدرات",
-      "verified": true,
-      "qid": "jujutsu-800-059",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Toge_Inumaki"
-    },
-    {
-      "p": 800,
-      "q": "ما اسم جدّ يوجي الذي ربّاه؟",
-      "a": "واسوكي إيتادوري",
-      "alt": [
-        "واسوكي"
-      ],
-      "topic": "الشخصيات الرئيسية",
-      "verified": true,
-      "qid": "jujutsu-800-060",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Wasuke_Itadori"
-    },
-    {
-      "p": 800,
-      "q": "ما اسم الفتاة التي حرسها غوجو وغيتو في شبابهما لتندمج مع الخالد؟",
-      "a": "ريكو أماناي",
-      "alt": [
-        "ريكو"
-      ],
-      "topic": "الشخصيات الرئيسية",
-      "verified": true,
-      "qid": "jujutsu-800-061",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Riko_Amanai"
-    },
-    {
-      "p": 800,
-      "q": "من الكائن الخالد الذي تقوم عليه حواجز عالم السحرة؟",
-      "a": "تينغن",
-      "alt": [
-        "تينجن",
-        "المعلم تينغن"
-      ],
-      "topic": "الشخصيات الرئيسية",
-      "verified": true,
-      "qid": "jujutsu-800-062",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Tengen"
-    },
-    {
-      "p": 800,
-      "q": "ما اسم النواة التي تمنح الطالب ذا هيئة الدبّ قوّته القتالية ويعدّها أخًا له؟",
-      "a": "نواة الأخ",
-      "alt": [
-        "نواة الأخ الأكبر"
-      ],
-      "topic": "الشخصيات الرئيسية",
-      "verified": true,
-      "qid": "jujutsu-800-063",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Gorilla_Mode"
-    },
-    {
-      "p": 800,
-      "q": "ما اسم الطفلتين التوأم اللتين تبعتا غيتو؟",
-      "a": "ميميكو وناناكو",
-      "alt": [
-        "ميميكو",
-        "ناناكو"
-      ],
-      "topic": "الشخصيات الرئيسية",
-      "verified": true,
-      "qid": "jujutsu-800-064",
-      "sourceUrl": "https://en.wikipedia.org/wiki/Jujutsu_Kaisen_0"
-    },
-    {
-      "p": 800,
-      "q": "ما العلامة التي تظهر في أعلى رأس كل جسد يسكنه الساحر القديم؟",
-      "a": "خيوط الخياطة",
-      "alt": [
-        "الخيوط",
-        "خيوط في الجبهة"
-      ],
-      "topic": "الشخصيات الرئيسية",
-      "verified": true,
-      "qid": "jujutsu-800-065",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Culling_Game"
-    },
-    {
-      "p": 800,
-      "q": "من الساحر الذي يخدم سوكونا ويتقن تجميد كل شيء؟",
-      "a": "أوراومي",
-      "alt": [
-        "أوراومى"
-      ],
-      "topic": "الشخصيات الرئيسية",
-      "verified": true,
-      "qid": "jujutsu-800-066",
-      "sourceUrl": "https://en.wikipedia.org/wiki/Jujutsu_Kaisen"
-    },
-    {
-      "p": 800,
-      "q": "من زميل نانامي في أيام الدراسة الذي بقي ذكره يلازمه؟",
-      "a": "يو هايبارا",
-      "alt": [
-        "هايبارا"
-      ],
-      "topic": "المعلمون والسحرة",
-      "verified": true,
-      "qid": "jujutsu-800-067",
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Jujutsu_Kaisen_characters"
-    },
-    {
-      "p": 800,
-      "q": "كم سنة مضت على فراق يوتا لريكا حين التحق بالمدرسة؟",
-      "a": "ست سنوات",
-      "alt": [
-        "ست",
-        "٦ سنوات"
-      ],
-      "topic": "طلاب المدرستين",
-      "verified": true,
-      "qid": "jujutsu-800-068",
-      "sourceUrl": "https://en.wikipedia.org/wiki/Jujutsu_Kaisen_0"
-    },
-    {
-      "p": 800,
-      "q": "من الطالب الوحيد في الصفّ الأول بالمدرسة الشقيقة في كيوتو؟",
-      "a": "أراتا نيتا",
-      "alt": [
-        "نيتا",
-        "أراتا"
-      ],
-      "topic": "طلاب المدرستين",
-      "verified": true,
-      "qid": "jujutsu-800-069",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Kyoto_Metropolitan_Curse_Technical_College"
-    },
-    {
-      "p": 800,
-      "q": "ما اسم المدرسة السيفية القديمة التي تتدرّب عليها طالبة كيوتو صاحبة السيف؟",
-      "a": "أسلوب الظل الجديد",
-      "alt": [
-        "الظل الجديد"
-      ],
-      "topic": "طلاب المدرستين",
-      "verified": true,
-      "qid": "jujutsu-800-070",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Simple_Domain"
-    },
-    {
-      "p": 800,
-      "q": "ما العشيرة التي يتوارث أبناؤها تقنية الصوت الآمر؟",
-      "a": "عشيرة إينوماكي",
-      "alt": [
-        "آل إينوماكي"
-      ],
-      "topic": "طلاب المدرستين",
-      "verified": true,
-      "qid": "jujutsu-800-071",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Toge_Inumaki"
-    },
-    {
-      "p": 800,
-      "q": "كم زميلًا كان مع يوجي في نادي مدرسته الثانوية؟",
-      "a": "اثنان",
-      "alt": [
-        "٢",
-        "صديقان"
-      ],
-      "topic": "طلاب المدرستين",
-      "verified": true,
-      "qid": "jujutsu-800-072",
-      "sourceUrl": "https://en.wikipedia.org/wiki/Yuji_Itadori"
-    },
-    {
-      "p": 800,
-      "q": "ما الشكل الذي يتّخذه مجال اللعنة البحرية؟",
-      "a": "جزيرة استوائية",
-      "alt": [
-        "جزيرة",
-        "شاطئ استوائي"
-      ],
-      "topic": "اللعنات والأرواح الملعونة",
-      "verified": true,
-      "qid": "jujutsu-800-073",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Dagon"
-    },
-    {
-      "p": 800,
-      "q": "ما اسم أخوَي كبير أرحام اللوحات اللذين واجههما يوجي ونوبارا؟",
-      "a": "إيسو وكيتشيزو",
-      "alt": [
-        "إيسو",
-        "كيتشيزو"
-      ],
-      "topic": "اللعنات والأرواح الملعونة",
-      "verified": true,
-      "qid": "jujutsu-800-074",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Cursed_Womb:_Death_Painting"
-    },
-    {
-      "p": 800,
-      "q": "ما الاسم الذي يُطلق على البشر الذين غيّرت اللعنة أشكال أرواحهم؟",
-      "a": "الأجساد المحوَّرة",
-      "alt": [
-        "المحوَّرون",
-        "البشر المحوَّرون"
-      ],
-      "topic": "اللعنات والأرواح الملعونة",
-      "verified": true,
-      "qid": "jujutsu-800-075",
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Jujutsu_Kaisen_characters"
-    },
-    {
-      "p": 800,
-      "q": "من أي خوف وُلدت اللعنة صاحبة الرأس البركاني؟",
-      "a": "الخوف من البراكين",
-      "alt": [
-        "الخوف من النار",
-        "الخوف من كوارث الأرض"
-      ],
-      "topic": "اللعنات والأرواح الملعونة",
-      "verified": true,
-      "qid": "jujutsu-800-076",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Dagon"
-    },
-    {
-      "p": 800,
-      "q": "كم سنة قضت أرحام اللوحات الملعونة مختومة قبل أن تُستخرج؟",
-      "a": "مئة وخمسون سنة",
-      "alt": [
-        "١٥٠ سنة",
-        "قرن ونصف"
-      ],
-      "topic": "اللعنات والأرواح الملعونة",
-      "verified": true,
-      "qid": "jujutsu-800-077",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Cursed_Womb:_Death_Painting"
-    },
-    {
-      "p": 800,
-      "q": "ما الذي تضاعفه العصا الملعونة ثلاثية المقاطع لمن يحملها؟",
-      "a": "قوّته البدنية",
-      "alt": [
-        "قوته الجسدية",
-        "القوة البدنية"
-      ],
-      "topic": "الأدوات الملعونة",
-      "verified": true,
-      "qid": "jujutsu-800-078",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Playful_Cloud"
-    },
-    {
-      "p": 800,
-      "q": "ما الأداة الملعونة التي صمد بها رفيق غيتو أمام غوجو؟",
-      "a": "الحبل الأسود",
-      "alt": [
-        "حبل أسود"
-      ],
-      "topic": "الأدوات الملعونة",
-      "verified": true,
-      "qid": "jujutsu-800-079",
-      "sourceUrl": "https://en.wikipedia.org/wiki/Jujutsu_Kaisen_0"
-    },
-    {
-      "p": 800,
-      "q": "ما اسم ثانوية جونبي التي عانى فيها من رفاقه؟",
-      "a": "ثانوية ساتوزاكورا",
-      "alt": [
-        "ساتوزاكورا"
-      ],
-      "topic": "الأماكن والمدارس",
-      "verified": true,
-      "qid": "jujutsu-800-080",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Junpei_Yoshino"
-    },
-    {
-      "p": 800,
-      "q": "ما القدرة التي تملكها شوكو ويعجز عنها غوجو نفسه؟",
-      "a": "شفاء الآخرين",
-      "alt": [
-        "مداواة غيرها",
-        "شفاء جروح الآخرين"
-      ],
-      "topic": "المعلمون والسحرة",
-      "verified": true,
-      "qid": "jujutsu-800-081",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Shoko_Ieiri"
-    },
-    {
-      "p": 800,
-      "q": "إلى جانب شينجوكو، ما المدينة الأخرى التي استهدفها غيتو في هجومه؟",
-      "a": "مدينة كيوتو",
-      "alt": [
-        "كيوتو القديمة"
-      ],
-      "topic": "الأماكن والمدارس",
-      "verified": true,
-      "qid": "jujutsu-800-082",
-      "sourceUrl": "https://en.wikipedia.org/wiki/Jujutsu_Kaisen_0"
-    },
-    {
-      "p": 800,
-      "q": "كم نقطة يساوي الساحر في حساب نقاط لعبة الإبادة؟",
-      "a": "خمس نقاط",
-      "alt": [
-        "خمسة",
-        "٥ نقاط"
-      ],
-      "topic": "الأحداث والمواجهات",
-      "verified": true,
-      "qid": "jujutsu-800-083",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Culling_Game"
-    },
-    {
-      "p": 800,
-      "q": "كم يومًا يُمهل المشارك في لعبة الإبادة قبل أن تُسلب تقنيته؟",
-      "a": "تسعة عشر يومًا",
-      "alt": [
-        "١٩ يومًا",
-        "تسعة عشر"
-      ],
-      "topic": "الأحداث والمواجهات",
-      "verified": true,
-      "qid": "jujutsu-800-084",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Culling_Game"
-    },
-    {
-      "p": 800,
-      "q": "ما الذي طلبه سوكونا من ميغومي ليكشف له أقصى قوة الظلال؟",
-      "a": "أن يستدعي ماهوراغا",
-      "alt": [
-        "استدعاء ماهوراغا"
-      ],
-      "topic": "الأحداث والمواجهات",
-      "verified": true,
-      "qid": "jujutsu-800-085",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Ten_Shadows_Technique"
-    },
-    {
-      "p": 800,
-      "q": "في أي رياضة سجّل يوجي رمية قياسية أمام معلّمه في المدرسة؟",
-      "a": "رمي الجلة",
-      "alt": [
-        "دفع الجلة",
-        "ألعاب القوى"
-      ],
-      "topic": "الأحداث والمواجهات",
-      "verified": true,
-      "qid": "jujutsu-800-086",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Takagi"
-    },
-    {
-      "p": 800,
-      "q": "كم عدد المناطق المغلقة التي قُسمت إليها لعبة الإبادة؟",
-      "a": "عشر مناطق",
-      "alt": [
-        "عشرة",
-        "١٠ مناطق"
-      ],
-      "topic": "قواعد عالم الجوجوتسو",
-      "verified": true,
-      "qid": "jujutsu-800-087",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Culling_Game"
-    },
-    {
-      "p": 800,
-      "q": "كم نقطة يحتاجها اللاعب ليضيف قاعدة جديدة إلى لعبة الإبادة؟",
-      "a": "مئة نقطة",
-      "alt": [
-        "١٠٠ نقطة",
-        "مائة"
-      ],
-      "topic": "قواعد عالم الجوجوتسو",
-      "verified": true,
-      "qid": "jujutsu-800-088",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Culling_Game"
-    },
-    {
-      "p": 800,
-      "q": "ما الاسم الذي يُطلق على الفتاة المختارة للاندماج مع الكائن الخالد؟",
-      "a": "وعاء النجم",
-      "alt": [
-        "الوعاء النجمي",
-        "وعاء البلازما النجمية"
-      ],
-      "topic": "قواعد عالم الجوجوتسو",
-      "verified": true,
-      "qid": "jujutsu-800-089",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Riko_Amanai"
-    },
-    {
-      "p": 800,
-      "q": "ما الاسم الذي يُطلق على كل منطقة مغلقة من مناطق لعبة الإبادة؟",
-      "a": "مستعمرة",
-      "alt": [
-        "المستعمرات",
-        "منطقة مستعمرة"
-      ],
-      "topic": "قواعد عالم الجوجوتسو",
-      "verified": true,
-      "qid": "jujutsu-800-090",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Culling_Game"
-    },
-    {
-      "p": 800,
-      "q": "ما ثالثة العائلات الكبرى الثلاث في عالم السحرة إلى جانب آل غوجو؟",
-      "a": "عشيرة كامو",
-      "alt": [
-        "آل كامو"
-      ],
-      "topic": "قواعد عالم الجوجوتسو",
-      "verified": true,
-      "qid": "jujutsu-800-091",
-      "sourceUrl": "https://en.wikipedia.org/wiki/Jujutsu_Kaisen"
-    },
-    {
-      "p": 800,
-      "q": "ما العقوبة التي فُرضت على غوجو بعد ليلة الهالوين؟",
-      "a": "النفي",
-      "alt": [
-        "الإبعاد",
-        "نفيه"
-      ],
-      "topic": "الأحداث والمواجهات",
-      "verified": true,
-      "qid": "jujutsu-800-092",
-      "sourceUrl": "https://en.wikipedia.org/wiki/Jujutsu_Kaisen"
-    },
-    {
-      "p": 800,
-      "q": "ماذا يحدث لمخلوق ميغومي إذا أُبيد تمامًا في القتال؟",
-      "a": "لا يُستدعى مجددًا",
-      "alt": [
-        "يفقده للأبد",
-        "لا يعود"
-      ],
-      "topic": "التقنيات والقدرات",
-      "verified": true,
-      "qid": "jujutsu-800-093",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Ten_Shadows_Technique"
-    },
-    {
-      "p": 800,
-      "q": "ما الشكل الذي تتحوّل إليه اللعنة كي يلتهمها غيتو؟",
-      "a": "كرة",
-      "alt": [
-        "كرة صغيرة",
-        "كرة سوداء"
-      ],
-      "topic": "اللعنات والأرواح الملعونة",
-      "verified": true,
-      "qid": "jujutsu-800-094",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Cursed_Spirit_Manipulation"
-    },
-    {
-      "p": 800,
-      "q": "كم كان عمر غيتو حين هجر مدرسة السحرة ومضى في طريقه؟",
-      "a": "سبعة عشر عامًا",
-      "alt": [
-        "١٧",
-        "سبعة عشر"
-      ],
-      "topic": "الشخصيات الرئيسية",
-      "verified": true,
-      "qid": "jujutsu-800-095",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Suguru_Geto"
-    },
-    {
-      "p": 800,
-      "q": "كم مترًا رمى معلّم الرياضة الجلة قبل أن يحطّم يوجي رميته؟",
-      "a": "أربعة عشر مترًا",
-      "alt": [
-        "١٤ مترًا",
-        "أربعة عشر"
-      ],
-      "topic": "الأحداث والمواجهات",
-      "verified": true,
-      "qid": "jujutsu-800-096",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Takagi"
-    },
-    {
-      "p": 1000,
-      "q": "ما اسم والد يوجي؟",
-      "a": "جين إيتادوري",
-      "alt": [
-        "جين"
-      ],
-      "topic": "الشخصيات الرئيسية",
-      "verified": true,
-      "qid": "jujutsu-1000-049",
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Jujutsu_Kaisen_characters"
-    },
-    {
-      "p": 1000,
-      "q": "من الشخصية التاريخية التي يتحدّر منها يوتا وغوجو؟",
-      "a": "سوغاوارا نو ميتشيزاني",
-      "alt": [
-        "ميتشيزاني",
-        "سوغاوارا"
-      ],
-      "topic": "الشخصيات الرئيسية",
-      "verified": true,
-      "qid": "jujutsu-1000-050",
-      "sourceUrl": "https://en.wikipedia.org/wiki/Jujutsu_Kaisen_0"
-    },
-    {
-      "p": 1000,
-      "q": "من الساحر الذي عاد من الماضي البعيد ويقاتل بالكهرباء في لعبة الإبادة؟",
-      "a": "هاجيمي كاشيمو",
-      "alt": [
-        "كاشيمو"
-      ],
-      "topic": "الشخصيات الرئيسية",
-      "verified": true,
-      "qid": "jujutsu-1000-051",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Idle_Death_Gamble"
-    },
-    {
-      "p": 1000,
-      "q": "من المحامي الذي صار ساحرًا ومجاله قاعة محكمة؟",
-      "a": "هيرومي هيغوروما",
-      "alt": [
-        "هيغوروما"
-      ],
-      "topic": "الشخصيات الرئيسية",
-      "verified": true,
-      "qid": "jujutsu-1000-052",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Idle_Death_Gamble"
-    },
-    {
-      "p": 1000,
-      "q": "من الساحر المولع بالمقامرة الذي يضمن طاقة لا تنفد داخل مجاله؟",
-      "a": "كينجي هاكاري",
-      "alt": [
-        "هاكاري"
-      ],
-      "topic": "الشخصيات الرئيسية",
-      "verified": true,
-      "qid": "jujutsu-1000-053",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Idle_Death_Gamble"
-    },
-    {
-      "p": 1000,
-      "q": "ما اسم المربّية التي رافقت ريكو في رحلتها؟",
+      "q": "من اعتنت بريكو منذ وفاة والديها في طفولتها؟",
       "a": "ميساتو كوروي",
       "alt": [
-        "كوروي"
+        "كوروي",
+        "Misato Kuroi"
       ],
-      "topic": "الشخصيات الرئيسية",
+      "topic": "ماضي السحرة",
       "verified": true,
-      "qid": "jujutsu-1000-054",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Misato_Kuroi"
+      "sourceUrl": "https://jujutsukaisen.jp/character/category6.php",
+      "difficultyTarget": 0.25
     },
     {
-      "p": 1000,
-      "q": "ما اسم زميل يوجي في نادي مدرسته الذي كان معه ليلة الإصبع؟",
-      "a": "تاكيشي إيغوتشي",
-      "alt": [
-        "إيغوتشي"
-      ],
-      "topic": "الشخصيات الرئيسية",
-      "verified": true,
-      "qid": "jujutsu-1000-055",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Takeshi_Iguchi"
-    },
-    {
-      "p": 1000,
-      "q": "ما اسم معلّم الرياضة الذي حاول ضمّ يوجي إلى فريقه؟",
-      "a": "تاكاغي",
-      "alt": [
-        "الأستاذ تاكاغي"
-      ],
-      "topic": "الشخصيات الرئيسية",
-      "verified": true,
-      "qid": "jujutsu-1000-056",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Takagi"
-    },
-    {
-      "p": 1000,
-      "q": "بأي وصف تشتهر المغنّية المفضّلة لدى تودو بين المغنّيات؟",
-      "a": "المغنّية الطويلة",
-      "alt": [
-        "الطويلة",
-        "المغنية طويلة القامة"
-      ],
-      "topic": "الشخصيات الرئيسية",
-      "verified": true,
-      "qid": "jujutsu-1000-057",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Nobuko_Takada"
-    },
-    {
-      "p": 1000,
-      "q": "ما اسم التقنية التي يستدعي بها ميغومي أرانب كثيرة ليهرب؟",
-      "a": "هروب الأرنب",
-      "alt": [
-        "الأرانب",
-        "هروب الأرانب"
-      ],
-      "topic": "التقنيات والقدرات",
-      "verified": true,
-      "qid": "jujutsu-1000-058",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Rabbit_Escape"
-    },
-    {
-      "p": 1000,
-      "q": "ما الشيء الذي يدور فوق رأس أقوى مخلوقات الظلال كلما تكيّف مع هجوم؟",
-      "a": "عجلة",
-      "alt": [
-        "العجلة",
-        "عجلة التكيف"
-      ],
-      "topic": "التقنيات والقدرات",
-      "verified": true,
-      "qid": "jujutsu-1000-059",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Eight-Handled_Sword_Divergent_Sila_Divine_General_Mahoraga"
-    },
-    {
-      "p": 1000,
-      "q": "ما اسم المخلوق ذي الأجنحة الثمانية الذي تستدعيه يوكي؟",
-      "a": "غارودا",
-      "alt": [
-        "جارودا"
-      ],
-      "topic": "التقنيات والقدرات",
-      "verified": true,
-      "qid": "jujutsu-1000-060",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Garuda"
-    },
-    {
-      "p": 1000,
-      "q": "ما اسم تقنية يوكي التي تضيف كتلة وهمية إلى هدفها؟",
-      "a": "غضب النجم",
-      "alt": [
-        "ستار ريج",
-        "ثورة النجم"
-      ],
-      "topic": "التقنيات والقدرات",
-      "verified": true,
-      "qid": "jujutsu-1000-061",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Star_Rage"
-    },
-    {
-      "p": 1000,
-      "q": "ما اسم مجال الساحر المقامر الذي يظهر على هيئة صالة ألعاب؟",
-      "a": "قمار الموت الكسول",
-      "alt": [
-        "قمار الموت",
-        "آيدل ديث غامبل"
-      ],
-      "topic": "التقنيات والقدرات",
-      "verified": true,
-      "qid": "jujutsu-1000-062",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Idle_Death_Gamble"
-    },
-    {
-      "p": 1000,
-      "q": "كم دقيقة تمنح الجائزة الكبرى صاحب مجال المقامرة من طاقة لا تنفد؟",
-      "a": "أربع دقائق",
-      "alt": [
-        "أربع دقائق وإحدى عشرة ثانية"
-      ],
-      "topic": "التقنيات والقدرات",
-      "verified": true,
-      "qid": "jujutsu-1000-063",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Idle_Death_Gamble"
-    },
-    {
-      "p": 1000,
-      "q": "ما اسم المخلوق الذي يحاكم الخصم داخل مجال المحامي؟",
-      "a": "القاضي",
-      "alt": [
-        "قاضي المحكمة",
-        "جادجمان"
-      ],
-      "topic": "التقنيات والقدرات",
-      "verified": true,
-      "qid": "jujutsu-1000-064",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Idle_Death_Gamble"
-    },
-    {
-      "p": 1000,
-      "q": "ما السلاح الذي يمنحه مجال المحامي لصاحبه عند صدور الحكم؟",
-      "a": "سيف الحكم",
-      "alt": [
-        "سيف القضاء",
-        "سيف الجلاد"
-      ],
-      "topic": "الأدوات الملعونة",
-      "verified": true,
-      "qid": "jujutsu-1000-065",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Idle_Death_Gamble"
-    },
-    {
-      "p": 1000,
-      "q": "في كم جزء من الثانية يجب أن تصيب طاقة الساحر ضربته كي تصير ومضة سوداء؟",
-      "a": "جزء من مليون",
-      "alt": [
-        "واحد على مليون",
-        "0.000001 ثانية"
-      ],
-      "topic": "التقنيات والقدرات",
-      "verified": true,
-      "qid": "jujutsu-1000-066",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Black_Flash"
-    },
-    {
-      "p": 1000,
-      "q": "ما اسم هجوم سوكونا الذي يشقّ كل ما أمامه بضربات متقاطعة؟",
-      "a": "التفكيك",
-      "alt": [
-        "التقطيع",
-        "ديسمانتل"
-      ],
-      "topic": "التقنيات والقدرات",
-      "verified": true,
-      "qid": "jujutsu-1000-067",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Malevolent_Shrine"
-    },
-    {
-      "p": 1000,
-      "q": "ما اسم المخلوق الضخم الذي ينفث الماء من خرطومه في ظلال ميغومي؟",
-      "a": "الفيل الأقصى",
-      "alt": [
-        "ماكس إليفانت",
-        "الفيل العملاق"
-      ],
-      "topic": "التقنيات والقدرات",
-      "verified": true,
-      "qid": "jujutsu-1000-068",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Ten_Shadows_Technique"
-    },
-    {
-      "p": 1000,
-      "q": "ماذا يحدث للكلب الباقي من كلبي ميغومي إذا قُتل توأمه؟",
-      "a": "يرث قوّته",
-      "alt": [
-        "يورث قوّته",
-        "يصير أقوى"
-      ],
-      "topic": "التقنيات والقدرات",
-      "verified": true,
-      "qid": "jujutsu-1000-069",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Ten_Shadows_Technique"
-    },
-    {
-      "p": 1000,
-      "q": "بم يشعر كبير إخوة اللوحات الملعونة بإخوته وهم بعيدون؟",
-      "a": "رابطة الدم",
-      "alt": [
-        "صلة الدم"
-      ],
-      "topic": "اللعنات والأرواح الملعونة",
-      "verified": true,
-      "qid": "jujutsu-1000-070",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Cursed_Womb:_Death_Painting"
-    },
-    {
-      "p": 1000,
-      "q": "كم مترًا يبلغ نصف قطر الدائرة الدفاعية عند طالبة كيوتو صاحبة السيف؟",
-      "a": "متران وربع",
-      "alt": [
-        "2.21 متر",
-        "مترين تقريبًا"
-      ],
-      "topic": "التقنيات والقدرات",
-      "verified": true,
-      "qid": "jujutsu-1000-071",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Simple_Domain"
-    },
-    {
-      "p": 1000,
-      "q": "ما اسم الموتشي الذي سافر غوجو إلى مدينة بعيدة خصيصًا ليشتريه؟",
-      "a": "كيكوفوكو",
-      "alt": [
-        "موتشي كيكوفوكو"
-      ],
-      "topic": "المعلمون والسحرة",
-      "verified": true,
-      "qid": "jujutsu-1000-072",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Satoru_Gojo"
-    },
-    {
-      "p": 1000,
-      "q": "ما النواة الثالثة التي تخفيها هيئة الطالب الدبّ وتُعدّ أختًا له؟",
-      "a": "نواة الترايسيراتوبس",
-      "alt": [
-        "الترايسيراتوبس",
-        "نواة الأخت"
-      ],
-      "topic": "طلاب المدرستين",
-      "verified": true,
-      "qid": "jujutsu-1000-073",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Gorilla_Mode"
-    },
-    {
-      "p": 1000,
-      "q": "ما اسم صديقة نوبارا التي انتقلت من المدينة إلى قريتها؟",
+      "qid": "jujutsu-800-906",
+      "p": 800,
+      "q": "ما اسم صديقة نوبارا التي أُجبرت على مغادرة قريتها وتتمنى لقاءها مجددًا؟",
       "a": "ساوري",
       "alt": [
-        "ساؤوري"
+        "Saori"
       ],
-      "topic": "طلاب المدرستين",
+      "topic": "مدرسة طوكيو",
       "verified": true,
-      "qid": "jujutsu-1000-074",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Saori"
+      "sourceUrl": "https://en.wikipedia.org/wiki/Nobara_Kugisaki#In_Jujutsu_Kaisen",
+      "difficultyTarget": 0.25
     },
     {
-      "p": 1000,
-      "q": "ما الذي كان يفعله غوجو حقًا في سفره الخارجي أثناء قوس الأرحام الملعونة؟",
-      "a": "يزور يوتا",
+      "qid": "jujutsu-800-907",
+      "p": 800,
+      "q": "ما الجهاز الذي تستخدمه ناناكو هاسابا في تقنيتها الملعونة؟",
+      "a": "الهاتف الذكي",
       "alt": [
-        "زيارة يوتا",
-        "كان مع يوتا"
+        "هاتف ذكي",
+        "الهاتف المحمول"
       ],
-      "topic": "المعلمون والسحرة",
+      "topic": "الأدوات",
       "verified": true,
-      "qid": "jujutsu-1000-075",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Satoru_Gojo"
+      "sourceUrl": "https://jujutsukaisen.jp/character/category4.php",
+      "difficultyTarget": 0.25
     },
     {
-      "p": 1000,
-      "q": "ما الآلة الموسيقية التي يقاتل بها مدير المدرسة الشقيقة؟",
-      "a": "الغيتار الكهربائي",
+      "qid": "jujutsu-800-908",
+      "p": 800,
+      "q": "ما اسم النجمة الغنائية التي يعشقها تودو؟",
+      "a": "تاكادا تشان",
       "alt": [
-        "غيتار كهربائي",
-        "الجيتار"
+        "تاكادا",
+        "Takada-chan"
       ],
-      "topic": "المعلمون والسحرة",
+      "topic": "مدرسة كيوتو",
       "verified": true,
-      "qid": "jujutsu-1000-076",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Kyoto_Metropolitan_Curse_Technical_College"
+      "sourceUrl": "https://jujutsukaisen.jp/character/category2.php",
+      "difficultyTarget": 0.25
     },
     {
+      "qid": "jujutsu-1000-901",
       "p": 1000,
-      "q": "ما الطيور التي تستعملها الساحرة المولعة بالمال في مهماتها؟",
-      "a": "الغربان",
+      "q": "من كان الرئيس السادس والعشرين لعشيرة زينين؟",
+      "a": "ناوبيتو زينين",
       "alt": [
-        "غربان",
-        "الغراب"
+        "ناوبيتو",
+        "Naobito Zenin"
       ],
-      "topic": "المعلمون والسحرة",
+      "topic": "العائلات",
       "verified": true,
-      "qid": "jujutsu-1000-077",
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Jujutsu_Kaisen_characters"
+      "sourceUrl": "https://jujutsukaisen.jp/character/category3.php",
+      "difficultyTarget": 0.15
     },
     {
+      "qid": "jujutsu-1000-902",
       "p": 1000,
-      "q": "ما الذي يكفي وحده لإحراق جلد مشغّل الدمية الهشّ؟",
-      "a": "ضوء القمر",
+      "q": "من الوسيط الذي عرض على توجي مهمة اغتيال وعاء البلازما النجمية؟",
+      "a": "شيو كونغ",
       "alt": [
-        "نور القمر",
-        "القمر"
+        "كونغ شيو",
+        "Shiu Kong"
       ],
-      "topic": "الشخصيات الرئيسية",
+      "topic": "ماضي السحرة",
       "verified": true,
-      "qid": "jujutsu-1000-078",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Kokichi_Muta"
+      "sourceUrl": "https://jujutsukaisen.jp/character/category6.php",
+      "difficultyTarget": 0.15
     },
     {
+      "qid": "jujutsu-1000-903",
       "p": 1000,
-      "q": "ما اسم موكب اللعنات الذي أطلقه غيتو في هجومه الكبير؟",
-      "a": "موكب المئة شيطان",
+      "q": "أي كوكبة تستوحي منها تقنية كيرارا ترتيب نجومها؟",
+      "a": "الصليب الجنوبي",
       "alt": [
-        "مسيرة المئة شيطان"
+        "كوكبة الصليب الجنوبي",
+        "Southern Cross"
       ],
-      "topic": "اللعنات والأرواح الملعونة",
+      "topic": "القدرات",
       "verified": true,
-      "qid": "jujutsu-1000-079",
-      "sourceUrl": "https://en.wikipedia.org/wiki/Jujutsu_Kaisen_0"
+      "sourceUrl": "https://jujutsukaisen.jp/character/",
+      "difficultyTarget": 0.15
     },
     {
+      "qid": "jujutsu-1000-904",
       "p": 1000,
-      "q": "كم نقطة يساوي غير الساحر في حساب لعبة الإبادة؟",
-      "a": "نقطة واحدة",
+      "q": "ما اسم الشيكيغامي الذي يصل كل لاعب بقواعد لعبة الإبادة؟",
+      "a": "كوغاني",
       "alt": [
-        "واحدة",
-        "١"
+        "كوجاني",
+        "Kogane"
       ],
-      "topic": "الأحداث والمواجهات",
+      "topic": "لعبة الإبادة",
       "verified": true,
-      "qid": "jujutsu-1000-080",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Culling_Game"
+      "sourceUrl": "https://jujutsukaisen.jp/character/",
+      "difficultyTarget": 0.15
     },
     {
+      "qid": "jujutsu-1000-905",
       "p": 1000,
-      "q": "ما الأمر النادر الذي فعله يوجي بعد ابتلاع الإصبع فأدهش غوجو؟",
-      "a": "احتفظ بوعيه",
+      "q": "من لاعب لعبة الإبادة الذي يحوّل أجزاء جسده إلى قنابل؟",
+      "a": "إيوري هازينوكي",
       "alt": [
-        "بقي واعيًا",
-        "سيطر على جسده"
+        "هازينوكي",
+        "Iori Hazenoki"
       ],
-      "topic": "الأحداث والمواجهات",
+      "topic": "القدرات",
       "verified": true,
-      "qid": "jujutsu-1000-081",
-      "sourceUrl": "https://en.wikipedia.org/wiki/Yuji_Itadori"
+      "sourceUrl": "https://jujutsukaisen.jp/character/",
+      "difficultyTarget": 0.15
     },
     {
+      "qid": "jujutsu-1000-906",
       "p": 1000,
-      "q": "ما العصر الياباني القديم الذي عاش فيه سوكونا وأقرانه من السحرة؟",
-      "a": "عصر هيان",
+      "q": "من قائدة فرقة اغتيال آل فوجيوارا السابقة التي تتلاعب بالسماء؟",
+      "a": "تاكاكو أورو",
       "alt": [
-        "الهيان",
-        "حقبة هيان"
+        "أورو",
+        "Takako Uro"
       ],
-      "topic": "الأحداث والمواجهات",
+      "topic": "ماضي السحرة",
       "verified": true,
-      "qid": "jujutsu-1000-082",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Sukuna/Synopsis"
+      "sourceUrl": "https://jujutsukaisen.jp/character/",
+      "difficultyTarget": 0.15
     },
     {
+      "qid": "jujutsu-1000-907",
       "p": 1000,
-      "q": "بم قُيّدت حركة غوجو داخل الحاجز في المحطة فلم يستعمل كامل قوته؟",
-      "a": "وجود المدنيين",
+      "q": "من طالب كيوتو الذي تكون أكاري نيتا أخته الكبرى؟",
+      "a": "أراتا نيتا",
       "alt": [
-        "المدنيون",
-        "الناس المحاصرون"
+        "أراتا",
+        "Arata Nitta"
       ],
-      "topic": "الأحداث والمواجهات",
+      "topic": "مدرسة كيوتو",
       "verified": true,
-      "qid": "jujutsu-1000-083",
-      "sourceUrl": "https://en.wikipedia.org/wiki/Jujutsu_Kaisen"
+      "sourceUrl": "https://jujutsukaisen.jp/character/category2.php",
+      "difficultyTarget": 0.15
     },
     {
+      "qid": "jujutsu-1000-908",
       "p": 1000,
-      "q": "في أي مدينة ماليزية كان نانامي ينوي أن يستقرّ بعد التقاعد؟",
-      "a": "كوانتان",
+      "q": "ما اسم لعنة الصرصور من الدرجة الخاصة في مستعمرة سينداي؟",
+      "a": "كوروروشي",
       "alt": [
-        "مدينة كوانتان"
+        "Kurourushi",
+        "كورورووشي"
       ],
-      "topic": "الأماكن والمدارس",
+      "topic": "لعبة الإبادة",
       "verified": true,
-      "qid": "jujutsu-1000-084",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami"
-    },
-    {
-      "p": 1000,
-      "q": "ما اسم الحجرة التي يقيم فيها الكائن الخالد ليعزّز الحواجز؟",
-      "a": "مقبرة ممرّ النجم",
-      "alt": [
-        "مقبرة النجم",
-        "قبر ممر النجم"
-      ],
-      "topic": "الأماكن والمدارس",
-      "verified": true,
-      "qid": "jujutsu-1000-085",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Tengen"
-    },
-    {
-      "p": 1000,
-      "q": "كم يومًا تستمر مسابقة المدرستين السنوية؟",
-      "a": "يومان",
-      "alt": [
-        "يومين",
-        "اثنان"
-      ],
-      "topic": "الأحداث والمواجهات",
-      "verified": true,
-      "qid": "jujutsu-1000-086",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Kyoto_Goodwill_Event_Arc"
-    },
-    {
-      "p": 1000,
-      "q": "ماذا فعل سوكونا ليوجي مقابل ما نالَه في العهد بينهما؟",
-      "a": "أعاد إليه الحياة",
-      "alt": [
-        "أحياه",
-        "شفى جسده"
-      ],
-      "topic": "الأحداث والمواجهات",
-      "verified": true,
-      "qid": "jujutsu-1000-087",
-      "sourceUrl": "https://en.wikipedia.org/wiki/Jujutsu_Kaisen"
-    },
-    {
-      "p": 1000,
-      "q": "ما الشرط الذي عُلِّق عليه تأجيل تنفيذ الحكم على يوجي؟",
-      "a": "التهام كل الأصابع",
-      "alt": [
-        "أن يلتهم الأصابع"
-      ],
-      "topic": "قواعد عالم الجوجوتسو",
-      "verified": true,
-      "qid": "jujutsu-1000-088",
-      "sourceUrl": "https://en.wikipedia.org/wiki/Jujutsu_Kaisen"
-    },
-    {
-      "p": 1000,
-      "q": "ما الذي يرثه الساحر القديم من كل جسد يسكنه إلى جانب ذكرياته؟",
-      "a": "تقنيته الملعونة",
-      "alt": [
-        "تقنية صاحب الجسد",
-        "قدرته الملعونة"
-      ],
-      "topic": "الشخصيات الرئيسية",
-      "verified": true,
-      "qid": "jujutsu-1000-089",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
-    },
-    {
-      "p": 1000,
-      "q": "كم بابًا يخلطه الحاجز الذي يحمي حجرة الكائن الخالد؟",
-      "a": "ألف باب أو أكثر",
-      "alt": [
-        "أكثر من ألف باب",
-        "ألف باب"
-      ],
-      "topic": "الأماكن والمدارس",
-      "verified": true,
-      "qid": "jujutsu-1000-090",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Tengen"
-    },
-    {
-      "p": 1000,
-      "q": "كم مترًا بلغ نصف قطر الحاجز الذي أُسدل على المحطة ليلة الهالوين؟",
-      "a": "أربع مئة متر",
-      "alt": [
-        "٤٠٠ متر",
-        "أربعمئة متر"
-      ],
-      "topic": "الأحداث والمواجهات",
-      "verified": true,
-      "qid": "jujutsu-1000-091",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Shibuya_Incident"
-    },
-    {
-      "p": 1000,
-      "q": "كم دام مجال غوجو في المحطة حتى أوقع كل من على الرصيف؟",
-      "a": "خُمس ثانية",
-      "alt": [
-        "0.2 ثانية",
-        "خمس ثانية"
-      ],
-      "topic": "الأحداث والمواجهات",
-      "verified": true,
-      "qid": "jujutsu-1000-092",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Shibuya_Incident"
-    },
-    {
-      "p": 1000,
-      "q": "كم رحمًا من أرحام اللوحات الملعونة بلغ هيئته البشرية؟",
-      "a": "ثلاثة أرحام",
-      "alt": [
-        "ثلاثة",
-        "٣"
-      ],
-      "topic": "اللعنات والأرواح الملعونة",
-      "verified": true,
-      "qid": "jujutsu-1000-093",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Cursed_Womb:_Death_Painting"
-    },
-    {
-      "p": 1000,
-      "q": "كيف تلقّى أتباع الطائفة خبر مقتل الفتاة التي حرسها غوجو وغيتو؟",
-      "a": "هتفوا فرحًا",
-      "alt": [
-        "صفّقوا فرحًا",
-        "احتفلوا بموتها"
-      ],
-      "topic": "الأحداث والمواجهات",
-      "verified": true,
-      "qid": "jujutsu-1000-094",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Suguru_Geto"
-    },
-    {
-      "p": 1000,
-      "q": "في أي مكان كانت أرحام اللوحات الملعونة محفوظة قبل سرقتها؟",
-      "a": "مخزن مدرسة طوكيو",
-      "alt": [
-        "مخزن المدرسة",
-        "قبو مدرسة طوكيو"
-      ],
-      "topic": "الأماكن والمدارس",
-      "verified": true,
-      "qid": "jujutsu-1000-095",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Cursed_Womb:_Death_Painting"
-    },
-    {
-      "p": 1000,
-      "q": "بأي تقنية يقاتل إخوة أرحام اللوحات الملعونة؟",
-      "a": "التلاعب بالدم",
-      "alt": [
-        "التحكم في الدم",
-        "تقنية الدم"
-      ],
-      "topic": "اللعنات والأرواح الملعونة",
-      "verified": true,
-      "qid": "jujutsu-1000-096",
-      "sourceUrl": "https://jujutsu-kaisen.fandom.com/wiki/Cursed_Womb:_Death_Painting"
+      "sourceUrl": "https://jujutsukaisen.jp/character/",
+      "difficultyTarget": 0.15
     }
   ]
 }

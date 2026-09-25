@@ -1,0 +1,19 @@
+{
+  "id": "flags-400-906",
+  "kind": "question",
+  "pack": "flags",
+  "file": "media/flags/flags-400-906.webp",
+  "asset": "media/flags/flags-400-906.webp",
+  "prompt": "Accurate educational national flag. Completely OPAQUE rectangular canvas, every pixel opaque, all color fields stay visible including white. Flat straight-on diagram with crisp solid color edges. Entire image is the flag, exact aspect ratio. No transparency or cutout, no labels, no words, no folds, no pole, no border, no shading. Pakistan. Width:height3:2. Leftmost one-quarter width vertical white band, remaining three-quarters dark green #01411C. In center of green portion, white crescent tilted so its opening points upper RIGHT, and a white five-pointed star above-right inside opening. Standard Pakistani national flag. All flag fields fully opaque.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-09-23",
+  "width": 1280,
+  "height": 853,
+  "bytes": 13916,
+  "sha256": "62a0997982709e58fbc7fe9410d994a81cae46dfad8942e40d9d487ca73f40d7",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "pending",
+    "note": "Generation and file checks do not imply subject or gameplay verification."
+  }
+}

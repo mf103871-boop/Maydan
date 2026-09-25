@@ -1,0 +1,5401 @@
+{
+  "status": "paused_by_user",
+  "date": "2026-09-23",
+  "userInstruction": "اريدك ان تتوقف هنا وتحفظ التقدم في المستودع لانني ساكمل من حساب اخر",
+  "repository": "mf103871-boop/Maydan",
+  "branch": "codex/badeeha-curated-bank-2026-09-18",
+  "releasable": false,
+  "priorLocalCommit": "e2f38b230529436b38e2e35903a0cc3974e1a395",
+  "remoteBaseBeforeCheckpoint": "54e4e8ba8fda069d4287fd71efa328a21ddc8475",
+  "handoff": "CONTINUE_FROM_ANOTHER_ACCOUNT.md",
+  "completedValidation": {
+    "packs": 69,
+    "questions": 2760,
+    "report": "docs/bank/rebuild-2026-09-18/validation-2026-09-23.json",
+    "note": "Report predates draft sound replacement; full bank validation/build/mobile/offline gate remains incomplete."
+  },
+  "categories": [
+    {
+      "id": "actors",
+      "questionCount": 40,
+      "tierCounts": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "newIdCount": 40,
+      "verifiedTrueCount": 40,
+      "includedIn69PackValidation": true
+    },
+    {
+      "id": "animals",
+      "questionCount": 40,
+      "tierCounts": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "newIdCount": 40,
+      "verifiedTrueCount": 40,
+      "includedIn69PackValidation": true
+    },
+    {
+      "id": "anime",
+      "questionCount": 40,
+      "tierCounts": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "newIdCount": 40,
+      "verifiedTrueCount": 40,
+      "includedIn69PackValidation": true
+    },
+    {
+      "id": "aot",
+      "questionCount": 40,
+      "tierCounts": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "newIdCount": 40,
+      "verifiedTrueCount": 40,
+      "includedIn69PackValidation": true
+    },
+    {
+      "id": "apps",
+      "questionCount": 40,
+      "tierCounts": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "newIdCount": 40,
+      "verifiedTrueCount": 40,
+      "includedIn69PackValidation": true
+    },
+    {
+      "id": "arabart",
+      "questionCount": 40,
+      "tierCounts": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "newIdCount": 40,
+      "verifiedTrueCount": 40,
+      "includedIn69PackValidation": true
+    },
+    {
+      "id": "arabcelebs",
+      "questionCount": 40,
+      "tierCounts": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "newIdCount": 40,
+      "verifiedTrueCount": 40,
+      "includedIn69PackValidation": true
+    },
+    {
+      "id": "arabic",
+      "questionCount": 40,
+      "tierCounts": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "newIdCount": 40,
+      "verifiedTrueCount": 40,
+      "includedIn69PackValidation": true
+    },
+    {
+      "id": "arabliterature",
+      "questionCount": 40,
+      "tierCounts": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "newIdCount": 40,
+      "verifiedTrueCount": 40,
+      "includedIn69PackValidation": true
+    },
+    {
+      "id": "arabmovies",
+      "questionCount": 40,
+      "tierCounts": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "newIdCount": 40,
+      "verifiedTrueCount": 40,
+      "includedIn69PackValidation": true
+    },
+    {
+      "id": "arabmusic",
+      "questionCount": 40,
+      "tierCounts": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "newIdCount": 40,
+      "verifiedTrueCount": 40,
+      "includedIn69PackValidation": true
+    },
+    {
+      "id": "arabseries",
+      "questionCount": 40,
+      "tierCounts": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "newIdCount": 40,
+      "verifiedTrueCount": 40,
+      "includedIn69PackValidation": true
+    },
+    {
+      "id": "babalhara",
+      "questionCount": 40,
+      "tierCounts": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "newIdCount": 40,
+      "verifiedTrueCount": 40,
+      "includedIn69PackValidation": true
+    },
+    {
+      "id": "beforeafter",
+      "questionCount": 40,
+      "tierCounts": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "newIdCount": 40,
+      "verifiedTrueCount": 40,
+      "includedIn69PackValidation": true
+    },
+    {
+      "id": "blur",
+      "questionCount": 240,
+      "tierCounts": {
+        "200": 48,
+        "400": 48,
+        "600": 48,
+        "800": 48,
+        "1000": 48
+      },
+      "newIdCount": 0,
+      "verifiedTrueCount": 240,
+      "includedIn69PackValidation": false
+    },
+    {
+      "id": "books",
+      "questionCount": 40,
+      "tierCounts": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "newIdCount": 40,
+      "verifiedTrueCount": 40,
+      "includedIn69PackValidation": true
+    },
+    {
+      "id": "brands",
+      "questionCount": 40,
+      "tierCounts": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "newIdCount": 40,
+      "verifiedTrueCount": 40,
+      "includedIn69PackValidation": true
+    },
+    {
+      "id": "breakingbad",
+      "questionCount": 40,
+      "tierCounts": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "newIdCount": 40,
+      "verifiedTrueCount": 40,
+      "includedIn69PackValidation": true
+    },
+    {
+      "id": "capitals",
+      "questionCount": 40,
+      "tierCounts": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "newIdCount": 40,
+      "verifiedTrueCount": 40,
+      "includedIn69PackValidation": true
+    },
+    {
+      "id": "cars",
+      "questionCount": 40,
+      "tierCounts": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "newIdCount": 40,
+      "verifiedTrueCount": 40,
+      "includedIn69PackValidation": true
+    },
+    {
+      "id": "cartoon",
+      "questionCount": 40,
+      "tierCounts": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "newIdCount": 40,
+      "verifiedTrueCount": 40,
+      "includedIn69PackValidation": true
+    },
+    {
+      "id": "code",
+      "questionCount": 40,
+      "tierCounts": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "newIdCount": 40,
+      "verifiedTrueCount": 40,
+      "includedIn69PackValidation": true
+    },
+    {
+      "id": "commonbond",
+      "questionCount": 40,
+      "tierCounts": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "newIdCount": 40,
+      "verifiedTrueCount": 40,
+      "includedIn69PackValidation": true
+    },
+    {
+      "id": "completeproverb",
+      "questionCount": 40,
+      "tierCounts": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "newIdCount": 40,
+      "verifiedTrueCount": 40,
+      "includedIn69PackValidation": true
+    },
+    {
+      "id": "deathnote",
+      "questionCount": 40,
+      "tierCounts": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "newIdCount": 40,
+      "verifiedTrueCount": 40,
+      "includedIn69PackValidation": true
+    },
+    {
+      "id": "demonslayer",
+      "questionCount": 40,
+      "tierCounts": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "newIdCount": 40,
+      "verifiedTrueCount": 40,
+      "includedIn69PackValidation": true
+    },
+    {
+      "id": "dialects",
+      "questionCount": 40,
+      "tierCounts": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "newIdCount": 40,
+      "verifiedTrueCount": 40,
+      "includedIn69PackValidation": true
+    },
+    {
+      "id": "dragonball",
+      "questionCount": 40,
+      "tierCounts": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "newIdCount": 40,
+      "verifiedTrueCount": 40,
+      "includedIn69PackValidation": true
+    },
+    {
+      "id": "egyptdrama",
+      "questionCount": 40,
+      "tierCounts": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "newIdCount": 40,
+      "verifiedTrueCount": 40,
+      "includedIn69PackValidation": true
+    },
+    {
+      "id": "emoji",
+      "questionCount": 40,
+      "tierCounts": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "newIdCount": 40,
+      "verifiedTrueCount": 40,
+      "includedIn69PackValidation": true
+    },
+    {
+      "id": "ertugrul",
+      "questionCount": 40,
+      "tierCounts": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "newIdCount": 40,
+      "verifiedTrueCount": 40,
+      "includedIn69PackValidation": true
+    },
+    {
+      "id": "flags",
+      "questionCount": 240,
+      "tierCounts": {
+        "200": 48,
+        "400": 48,
+        "600": 48,
+        "800": 48,
+        "1000": 48
+      },
+      "newIdCount": 0,
+      "verifiedTrueCount": 240,
+      "includedIn69PackValidation": false
+    },
+    {
+      "id": "food",
+      "questionCount": 40,
+      "tierCounts": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "newIdCount": 40,
+      "verifiedTrueCount": 40,
+      "includedIn69PackValidation": true
+    },
+    {
+      "id": "football",
+      "questionCount": 40,
+      "tierCounts": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "newIdCount": 40,
+      "verifiedTrueCount": 40,
+      "includedIn69PackValidation": true
+    },
+    {
+      "id": "foreignseries",
+      "questionCount": 40,
+      "tierCounts": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "newIdCount": 40,
+      "verifiedTrueCount": 40,
+      "includedIn69PackValidation": true
+    },
+    {
+      "id": "fruitsveg",
+      "questionCount": 40,
+      "tierCounts": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "newIdCount": 40,
+      "verifiedTrueCount": 40,
+      "includedIn69PackValidation": true
+    },
+    {
+      "id": "general",
+      "questionCount": 40,
+      "tierCounts": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "newIdCount": 40,
+      "verifiedTrueCount": 40,
+      "includedIn69PackValidation": true
+    },
+    {
+      "id": "geo",
+      "questionCount": 40,
+      "tierCounts": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "newIdCount": 40,
+      "verifiedTrueCount": 40,
+      "includedIn69PackValidation": true
+    },
+    {
+      "id": "guesscar",
+      "questionCount": 238,
+      "tierCounts": {
+        "200": 48,
+        "400": 48,
+        "600": 48,
+        "800": 48,
+        "1000": 46
+      },
+      "newIdCount": 0,
+      "verifiedTrueCount": 238,
+      "includedIn69PackValidation": false
+    },
+    {
+      "id": "hidden",
+      "questionCount": 40,
+      "tierCounts": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "newIdCount": 40,
+      "verifiedTrueCount": 40,
+      "includedIn69PackValidation": true
+    },
+    {
+      "id": "hints",
+      "questionCount": 40,
+      "tierCounts": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "newIdCount": 40,
+      "verifiedTrueCount": 40,
+      "includedIn69PackValidation": true
+    },
+    {
+      "id": "history",
+      "questionCount": 40,
+      "tierCounts": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "newIdCount": 40,
+      "verifiedTrueCount": 40,
+      "includedIn69PackValidation": true
+    },
+    {
+      "id": "hunterxhunter",
+      "questionCount": 40,
+      "tierCounts": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "newIdCount": 40,
+      "verifiedTrueCount": 40,
+      "includedIn69PackValidation": true
+    },
+    {
+      "id": "islamiyat",
+      "questionCount": 40,
+      "tierCounts": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "newIdCount": 40,
+      "verifiedTrueCount": 40,
+      "includedIn69PackValidation": true
+    },
+    {
+      "id": "jujutsu",
+      "questionCount": 40,
+      "tierCounts": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "newIdCount": 40,
+      "verifiedTrueCount": 40,
+      "includedIn69PackValidation": true
+    },
+    {
+      "id": "movies",
+      "questionCount": 40,
+      "tierCounts": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "newIdCount": 40,
+      "verifiedTrueCount": 40,
+      "includedIn69PackValidation": true
+    },
+    {
+      "id": "naruto",
+      "questionCount": 40,
+      "tierCounts": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "newIdCount": 40,
+      "verifiedTrueCount": 40,
+      "includedIn69PackValidation": true
+    },
+    {
+      "id": "onepiece",
+      "questionCount": 40,
+      "tierCounts": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "newIdCount": 40,
+      "verifiedTrueCount": 40,
+      "includedIn69PackValidation": true
+    },
+    {
+      "id": "placefinder",
+      "questionCount": 226,
+      "tierCounts": {
+        "200": 43,
+        "400": 45,
+        "600": 47,
+        "800": 45,
+        "1000": 46
+      },
+      "newIdCount": 0,
+      "verifiedTrueCount": 226,
+      "includedIn69PackValidation": false
+    },
+    {
+      "id": "premier",
+      "questionCount": 40,
+      "tierCounts": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "newIdCount": 40,
+      "verifiedTrueCount": 40,
+      "includedIn69PackValidation": true
+    },
+    {
+      "id": "prophets",
+      "questionCount": 40,
+      "tierCounts": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "newIdCount": 40,
+      "verifiedTrueCount": 40,
+      "includedIn69PackValidation": true
+    },
+    {
+      "id": "proverbs",
+      "questionCount": 40,
+      "tierCounts": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "newIdCount": 40,
+      "verifiedTrueCount": 40,
+      "includedIn69PackValidation": true
+    },
+    {
+      "id": "puzzles",
+      "questionCount": 40,
+      "tierCounts": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "newIdCount": 40,
+      "verifiedTrueCount": 40,
+      "includedIn69PackValidation": true
+    },
+    {
+      "id": "quotes",
+      "questionCount": 40,
+      "tierCounts": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "newIdCount": 40,
+      "verifiedTrueCount": 40,
+      "includedIn69PackValidation": true
+    },
+    {
+      "id": "quran",
+      "questionCount": 40,
+      "tierCounts": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "newIdCount": 40,
+      "verifiedTrueCount": 40,
+      "includedIn69PackValidation": true
+    },
+    {
+      "id": "ramadan",
+      "questionCount": 40,
+      "tierCounts": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "newIdCount": 40,
+      "verifiedTrueCount": 40,
+      "includedIn69PackValidation": true
+    },
+    {
+      "id": "ramadanseries",
+      "questionCount": 40,
+      "tierCounts": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "newIdCount": 40,
+      "verifiedTrueCount": 40,
+      "includedIn69PackValidation": true
+    },
+    {
+      "id": "reveal",
+      "questionCount": 240,
+      "tierCounts": {
+        "200": 48,
+        "400": 48,
+        "600": 48,
+        "800": 48,
+        "1000": 48
+      },
+      "newIdCount": 0,
+      "verifiedTrueCount": 240,
+      "includedIn69PackValidation": false
+    },
+    {
+      "id": "science",
+      "questionCount": 40,
+      "tierCounts": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "newIdCount": 40,
+      "verifiedTrueCount": 40,
+      "includedIn69PackValidation": true
+    },
+    {
+      "id": "seerah",
+      "questionCount": 40,
+      "tierCounts": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "newIdCount": 40,
+      "verifiedTrueCount": 40,
+      "includedIn69PackValidation": true
+    },
+    {
+      "id": "shopping",
+      "questionCount": 40,
+      "tierCounts": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "newIdCount": 40,
+      "verifiedTrueCount": 40,
+      "includedIn69PackValidation": true
+    },
+    {
+      "id": "silhouette",
+      "questionCount": 240,
+      "tierCounts": {
+        "200": 48,
+        "400": 48,
+        "600": 48,
+        "800": 48,
+        "1000": 48
+      },
+      "newIdCount": 0,
+      "verifiedTrueCount": 240,
+      "includedIn69PackValidation": false
+    },
+    {
+      "id": "sound",
+      "questionCount": 40,
+      "tierCounts": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "newIdCount": 40,
+      "verifiedTrueCount": 0,
+      "includedIn69PackValidation": false
+    },
+    {
+      "id": "spacetoon",
+      "questionCount": 40,
+      "tierCounts": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "newIdCount": 40,
+      "verifiedTrueCount": 40,
+      "includedIn69PackValidation": true
+    },
+    {
+      "id": "sports",
+      "questionCount": 40,
+      "tierCounts": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "newIdCount": 40,
+      "verifiedTrueCount": 40,
+      "includedIn69PackValidation": true
+    },
+    {
+      "id": "spotdiff",
+      "questionCount": 240,
+      "tierCounts": {
+        "200": 48,
+        "400": 48,
+        "600": 48,
+        "800": 48,
+        "1000": 48
+      },
+      "newIdCount": 0,
+      "verifiedTrueCount": 240,
+      "includedIn69PackValidation": false
+    },
+    {
+      "id": "squidgame",
+      "questionCount": 40,
+      "tierCounts": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "newIdCount": 40,
+      "verifiedTrueCount": 40,
+      "includedIn69PackValidation": true
+    },
+    {
+      "id": "syriandrama",
+      "questionCount": 40,
+      "tierCounts": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "newIdCount": 40,
+      "verifiedTrueCount": 40,
+      "includedIn69PackValidation": true
+    },
+    {
+      "id": "tarab",
+      "questionCount": 40,
+      "tierCounts": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "newIdCount": 40,
+      "verifiedTrueCount": 40,
+      "includedIn69PackValidation": true
+    },
+    {
+      "id": "tech",
+      "questionCount": 40,
+      "tierCounts": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "newIdCount": 40,
+      "verifiedTrueCount": 40,
+      "includedIn69PackValidation": true
+    },
+    {
+      "id": "theater",
+      "questionCount": 40,
+      "tierCounts": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "newIdCount": 40,
+      "verifiedTrueCount": 40,
+      "includedIn69PackValidation": true
+    },
+    {
+      "id": "tilepuzzle",
+      "questionCount": 225,
+      "tierCounts": {
+        "200": 42,
+        "400": 47,
+        "600": 47,
+        "800": 47,
+        "1000": 42
+      },
+      "newIdCount": 0,
+      "verifiedTrueCount": 225,
+      "includedIn69PackValidation": false
+    },
+    {
+      "id": "turkishdrama",
+      "questionCount": 40,
+      "tierCounts": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "newIdCount": 40,
+      "verifiedTrueCount": 40,
+      "includedIn69PackValidation": true
+    },
+    {
+      "id": "ucl",
+      "questionCount": 40,
+      "tierCounts": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "newIdCount": 40,
+      "verifiedTrueCount": 40,
+      "includedIn69PackValidation": true
+    },
+    {
+      "id": "videogames",
+      "questionCount": 40,
+      "tierCounts": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "newIdCount": 40,
+      "verifiedTrueCount": 40,
+      "includedIn69PackValidation": true
+    },
+    {
+      "id": "worldcup",
+      "questionCount": 40,
+      "tierCounts": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "newIdCount": 40,
+      "verifiedTrueCount": 40,
+      "includedIn69PackValidation": true
+    },
+    {
+      "id": "youtubers",
+      "questionCount": 40,
+      "tierCounts": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "newIdCount": 40,
+      "verifiedTrueCount": 40,
+      "includedIn69PackValidation": true
+    },
+    {
+      "id": "zoom",
+      "questionCount": 40,
+      "tierCounts": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "newIdCount": 40,
+      "verifiedTrueCount": 40,
+      "includedIn69PackValidation": true
+    }
+  ],
+  "generatedRecords": [
+    {
+      "id": "anime",
+      "pack": "anime",
+      "path": "public/media/badeeha-covers/anime.webp",
+      "bytes": 44730,
+      "sha256": "4d22dc844c9e23db2f651560100d90dc350d71047d7df97204ce3d9360e0b681",
+      "dimensions": [
+        640,
+        480
+      ],
+      "review": {
+        "status": "passed",
+        "reviewedAt": "2026-09-23",
+        "method": "Visual review of original, built-in generated result, installed WebP and a 150px-wide thumbnail.",
+        "checks": [
+          "Original character portrait has clear anime eyes, spiky hair and inked cel-style outlines; replaces abstract swoosh.",
+          "Paper fan, brass fastener, two purple pencils, ivory background and photographic materials retained.",
+          "Viewed installed 640×480 WebP and 150px-wide thumbnail; anime face remains legible."
+        ],
+        "dimensions": "640x480 (4:3)",
+        "within256KiBBudget": true,
+        "textOrWatermarkDetected": false
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/anime.json"
+    },
+    {
+      "id": "blur-200-901",
+      "pack": "blur",
+      "path": "media/blur/blur-200-901.webp",
+      "bytes": 221742,
+      "sha256": "0032b39fcbd8ddc9ae9a867cd40cc7e2ff294130e2de5d4b5ccab8081e433245",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "review": {
+        "status": "passed",
+        "reviewedAt": "2026-09-23",
+        "fullImage": "فيل كامل ذو خرطوم طويل وأذنين واسعتين ونابين؛ التشريح الظاهر متماسك.",
+        "blurredGameplay": "Visually checked both static mobile/desktop approximations; identifying overall shape remains visible, fine details are hidden.",
+        "previewMode": "static-approximation-not-browser",
+        "sigma": 16,
+        "saturation": 1.3
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/blur-200-901.json"
+    },
+    {
+      "id": "blur-200-902",
+      "pack": "blur",
+      "path": "media/blur/blur-200-902.webp",
+      "bytes": 219964,
+      "sha256": "3dc3d05fd01b821ad7a50ddab45e4bc7f845328cd6bfaaefb56d58051f8cd911",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "review": {
+        "status": "passed",
+        "reviewedAt": "2026-09-23",
+        "fullImage": "قرص بيتزا كامل بقشرة مرتفعة وطماطم وجبن؛ لا يطلب السؤال تحديد وصفتها.",
+        "blurredGameplay": "Visually checked both static mobile/desktop approximations; identifying overall shape remains visible, fine details are hidden.",
+        "previewMode": "static-approximation-not-browser",
+        "sigma": 16,
+        "saturation": 1.3
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/blur-200-902.json"
+    },
+    {
+      "id": "blur-200-903",
+      "pack": "blur",
+      "path": "media/blur/blur-200-903.webp",
+      "bytes": 134256,
+      "sha256": "731a1f537d277ed4c97b62d85243ede6a371a7d472c22b5e2400931bf5c157eb",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "review": {
+        "status": "passed",
+        "reviewedAt": "2026-09-23",
+        "fullImage": "إبريق شاي معدني كامل بغطاء وفوهة صب ومقبض جانبي واضح.",
+        "blurredGameplay": "Visually checked both static mobile/desktop approximations; identifying overall shape remains visible, fine details are hidden.",
+        "previewMode": "static-approximation-not-browser",
+        "sigma": 16,
+        "saturation": 1.3
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/blur-200-903.json"
+    },
+    {
+      "id": "blur-200-904",
+      "pack": "blur",
+      "path": "media/blur/blur-200-904.webp",
+      "bytes": 161674,
+      "sha256": "3585c16d5681b0832cbe18ddb60ccbd29dbba9df113e5ab45707a7480ca94490",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "review": {
+        "status": "passed",
+        "reviewedAt": "2026-09-23",
+        "fullImage": "بيانو جناح أسود بغطاء مرفوع ولوحة مفاتيح ودواسات؛ لا يطلب عدد المفاتيح.",
+        "blurredGameplay": "Visually checked both static mobile/desktop approximations; identifying overall shape remains visible, fine details are hidden.",
+        "previewMode": "static-approximation-not-browser",
+        "sigma": 16,
+        "saturation": 1.3
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/blur-200-904.json"
+    },
+    {
+      "id": "blur-200-905",
+      "pack": "blur",
+      "path": "media/blur/blur-200-905.webp",
+      "bytes": 106790,
+      "sha256": "e4f17b88fdef95caf969ddaf886f2f86199a7565a20cb0d5227749d372bce4a5",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "review": {
+        "status": "passed",
+        "reviewedAt": "2026-09-23",
+        "fullImage": "طائرة ركاب بيضاء ذات جناحين وذيل ومحركين؛ دون علامة تجارية.",
+        "blurredGameplay": "Visually checked both static mobile/desktop approximations; identifying overall shape remains visible, fine details are hidden.",
+        "previewMode": "static-approximation-not-browser",
+        "sigma": 16,
+        "saturation": 1.3
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/blur-200-905.json"
+    },
+    {
+      "id": "blur-200-906",
+      "pack": "blur",
+      "path": "media/blur/blur-200-906.webp",
+      "bytes": 202744,
+      "sha256": "53cc9e7f009e9527550582f64d9ba2989d088d0e42b14f1a135ac5b1f3e6b0ca",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "review": {
+        "status": "passed",
+        "reviewedAt": "2026-09-23",
+        "fullImage": "توضيح مولد لبرج إيفل؛ البنية الشبكية والقاعدة المقوسة والطوابق المتدرجة واضحة، وليس صورة توثيقية.",
+        "blurredGameplay": "Visually checked both static mobile/desktop approximations; identifying overall shape remains visible, fine details are hidden.",
+        "previewMode": "static-approximation-not-browser",
+        "sigma": 16,
+        "saturation": 1.3
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/blur-200-906.json"
+    },
+    {
+      "id": "blur-200-907",
+      "pack": "blur",
+      "path": "media/blur/blur-200-907.webp",
+      "bytes": 245066,
+      "sha256": "e5e33fe680740f384f2c054207ba4aaaf3c3447370aeeb3f798a1f2d41c7d25a",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "review": {
+        "status": "passed",
+        "reviewedAt": "2026-09-23",
+        "fullImage": "سباح بالغ بقبعة ونظارات يؤدي حركة سباحة حرة في حارة مسبح؛ السؤال عن الرياضة.",
+        "blurredGameplay": "Visually checked both static mobile/desktop approximations; identifying overall shape remains visible, fine details are hidden.",
+        "previewMode": "static-approximation-not-browser",
+        "sigma": 16,
+        "saturation": 1.3
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/blur-200-907.json"
+    },
+    {
+      "id": "blur-200-908",
+      "pack": "blur",
+      "path": "media/blur/blur-200-908.webp",
+      "bytes": 254286,
+      "sha256": "8c036a0298fb4bcde5f5b2ade601b3e4ffdb5cc7f62853d2b7367b2072111bd8",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "review": {
+        "status": "passed",
+        "reviewedAt": "2026-09-23",
+        "fullImage": "شلال واسع ينساب من حافة صخرية إلى حوض مائي؛ السؤال عن الظاهرة العامة لا عن موقع محدد.",
+        "blurredGameplay": "Visually checked both static mobile/desktop approximations; identifying overall shape remains visible, fine details are hidden.",
+        "previewMode": "static-approximation-not-browser",
+        "sigma": 16,
+        "saturation": 1.3
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/blur-200-908.json"
+    },
+    {
+      "id": "blur-400-901",
+      "pack": "blur",
+      "path": "media/blur/blur-400-901.webp",
+      "bytes": 123252,
+      "sha256": "0d34a7e1e1ce7dc9376467ae53e8e550cdae9dfffd0f1651aaa70e3790aa89ac",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "review": {
+        "status": "passed",
+        "reviewedAt": "2026-09-23",
+        "fullImage": "بطريق كامل بريش داكن وواجهة بيضاء وزعانف جانبية على الجليد؛ لا يطلب السؤال تحديد النوع.",
+        "blurredGameplay": "Visually checked both static mobile/desktop approximations; identifying overall shape remains visible, fine details are hidden.",
+        "previewMode": "static-approximation-not-browser",
+        "sigma": 16,
+        "saturation": 1.3
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/blur-400-901.json"
+    },
+    {
+      "id": "blur-400-902",
+      "pack": "blur",
+      "path": "media/blur/blur-400-902.webp",
+      "bytes": 205636,
+      "sha256": "fb001a47a62cf25ca25ff4a2a0ec350b034abb342c0f4a51ba059d6d61fdf5be",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "review": {
+        "status": "passed",
+        "reviewedAt": "2026-09-23",
+        "fullImage": "كرواسون هلالي كامل بطبقات عجين ذهبية واضحة.",
+        "blurredGameplay": "Visually checked both static mobile/desktop approximations; identifying overall shape remains visible, fine details are hidden.",
+        "previewMode": "static-approximation-not-browser",
+        "sigma": 16,
+        "saturation": 1.3
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/blur-400-902.json"
+    },
+    {
+      "id": "blur-400-903",
+      "pack": "blur",
+      "path": "media/blur/blur-400-903.webp",
+      "bytes": 142676,
+      "sha256": "26983ebf381e36d9fb3e1c6bcf6a830656ed94216047298f0c0a28534ceaf88e",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "review": {
+        "status": "passed",
+        "reviewedAt": "2026-09-23",
+        "fullImage": "مظلة صفراء مفتوحة ذات قبة وقضبان ومقبض معقوف؛ الشكل متماسك.",
+        "blurredGameplay": "Visually checked both static mobile/desktop approximations; identifying overall shape remains visible, fine details are hidden.",
+        "previewMode": "static-approximation-not-browser",
+        "sigma": 16,
+        "saturation": 1.3
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/blur-400-903.json"
+    },
+    {
+      "id": "blur-400-904",
+      "pack": "blur",
+      "path": "media/blur/blur-400-904.webp",
+      "bytes": 154790,
+      "sha256": "6a755f7bba9281cdc5bbc6c942b6494f58ca48aae97b0ea2d29e1452d0e47762",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "review": {
+        "status": "passed",
+        "reviewedAt": "2026-09-23",
+        "fullImage": "بوق نحاسي أفقي بفوهة واسعة وثلاثة صمامات ظاهرة؛ ليس ترومبون ذا منزلق طويل.",
+        "blurredGameplay": "Visually checked both static mobile/desktop approximations; identifying overall shape remains visible, fine details are hidden.",
+        "previewMode": "static-approximation-not-browser",
+        "sigma": 16,
+        "saturation": 1.3
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/blur-400-904.json"
+    },
+    {
+      "id": "blur-400-905",
+      "pack": "blur",
+      "path": "media/blur/blur-400-905.webp",
+      "bytes": 117274,
+      "sha256": "95dee0df052156ac425c2f6f50ffce837a56af667d80130fdf2090a41e84a4d0",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "review": {
+        "status": "passed",
+        "reviewedAt": "2026-09-23",
+        "fullImage": "قارب شراعي ذو بدن وصارية وشراعين مثلثين؛ لا يطلب اسم طراز معين.",
+        "blurredGameplay": "Visually checked both static mobile/desktop approximations; identifying overall shape remains visible, fine details are hidden.",
+        "previewMode": "static-approximation-not-browser",
+        "sigma": 16,
+        "saturation": 1.3
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/blur-400-905.json"
+    },
+    {
+      "id": "blur-400-906",
+      "pack": "blur",
+      "path": "media/blur/blur-400-906.webp",
+      "bytes": 242376,
+      "sha256": "c9330f97e4fad79aa0aeb06b6b5328426d63d3d56b805e34195121190117edb5",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "review": {
+        "status": "passed",
+        "reviewedAt": "2026-09-23",
+        "fullImage": "طاحونة هوائية تقليدية بأربع شفرات كبيرة؛ لا يطلب موقع المنشأة.",
+        "blurredGameplay": "Visually checked both static mobile/desktop approximations; identifying overall shape remains visible, fine details are hidden.",
+        "previewMode": "static-approximation-not-browser",
+        "sigma": 16,
+        "saturation": 1.3
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/blur-400-906.json"
+    },
+    {
+      "id": "blur-400-907",
+      "pack": "blur",
+      "path": "media/blur/blur-400-907.webp",
+      "bytes": 148552,
+      "sha256": "7ce58b0d00a7879553b8cc9a605d431551d6c96be2aded47b7692cf1b7561ede",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "review": {
+        "status": "passed",
+        "reviewedAt": "2026-09-23",
+        "fullImage": "زوج قفازات ملاكمة حمراء؛ السؤال صريح بأنه يطلب الرياضة التي تدل عليها الأدوات.",
+        "blurredGameplay": "Visually checked both static mobile/desktop approximations; identifying overall shape remains visible, fine details are hidden.",
+        "previewMode": "static-approximation-not-browser",
+        "sigma": 16,
+        "saturation": 1.3
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/blur-400-907.json"
+    },
+    {
+      "id": "blur-400-908",
+      "pack": "blur",
+      "path": "media/blur/blur-400-908.webp",
+      "bytes": 214844,
+      "sha256": "b5e230a76e468b5a0eeffe1ecc47c0e8941a535ada69a2a613afdb9c56485592",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "review": {
+        "status": "passed",
+        "reviewedAt": "2026-09-23",
+        "fullImage": "بركان مخروطي تخرج من فوهته حمم ورماد؛ لا يطلب اسم بركان حقيقي.",
+        "blurredGameplay": "Visually checked both static mobile/desktop approximations; identifying overall shape remains visible, fine details are hidden.",
+        "previewMode": "static-approximation-not-browser",
+        "sigma": 16,
+        "saturation": 1.3
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/blur-400-908.json"
+    },
+    {
+      "id": "blur-600-901",
+      "pack": "blur",
+      "path": "media/blur/blur-600-901.webp",
+      "bytes": 222136,
+      "sha256": "b6891f3686ca4923f0d8f2f0f1715f23796766525b014b9736340bc0a5d88e4d",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/blur-600-901.json"
+    },
+    {
+      "id": "blur-600-902",
+      "pack": "blur",
+      "path": "media/blur/blur-600-902.webp",
+      "bytes": 249744,
+      "sha256": "b9dc51955536e009312ac8b4d15b217072b133484da9fa5533c96eea674be569",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/blur-600-902.json"
+    },
+    {
+      "id": "blur-600-903",
+      "pack": "blur",
+      "path": "media/blur/blur-600-903.webp",
+      "bytes": 85068,
+      "sha256": "1352033a952c3807dd76a61e5b4287797c2fe70118cec8e931a310be310559f0",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/blur-600-903.json"
+    },
+    {
+      "id": "blur-600-904",
+      "pack": "blur",
+      "path": "media/blur/blur-600-904.webp",
+      "bytes": 200112,
+      "sha256": "7407cc8f24a3aa11d1a40ade2f1251dbcf111850ef44a3cc489afbf603bafcba",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/blur-600-904.json"
+    },
+    {
+      "id": "blur-600-905",
+      "pack": "blur",
+      "path": "media/blur/blur-600-905.webp",
+      "bytes": 224340,
+      "sha256": "bb57ec694604aca2fa7197ae1ac850a56da1cff2a49b923e9aa5966d6ad68c6f",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/blur-600-905.json"
+    },
+    {
+      "id": "blur-600-906",
+      "pack": "blur",
+      "path": "media/blur/blur-600-906.webp",
+      "bytes": 182412,
+      "sha256": "aa779ba0202791af06a37dff24e763b8d72821943f24f100e3ee8432dcd8c357",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/blur-600-906.json"
+    },
+    {
+      "id": "blur-600-907",
+      "pack": "blur",
+      "path": "media/blur/blur-600-907.webp",
+      "bytes": 153056,
+      "sha256": "836d2c3a3d64fea543dc83fe0681adcaf6f7d52f6b92e3d72e9b1738ad5cc1eb",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/blur-600-907.json"
+    },
+    {
+      "id": "blur-600-908",
+      "pack": "blur",
+      "path": "media/blur/blur-600-908.webp",
+      "bytes": 142806,
+      "sha256": "9201319dae196ca85171c227e36ba7950ff8fd386b822bf3a2bae865f9780894",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/blur-600-908.json"
+    },
+    {
+      "id": "blur",
+      "pack": "blur",
+      "path": "public/media/badeeha-covers/blur.webp",
+      "bytes": 27342,
+      "sha256": "43b4e0ea512ac70cba4fefed7c3f8afa966486365d4ec51dac0bce8e923c15db",
+      "dimensions": [
+        640,
+        480
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/blur.json"
+    },
+    {
+      "id": "dragonball",
+      "pack": "dragonball",
+      "path": "public/media/badeeha-covers/dragonball.webp",
+      "bytes": 58104,
+      "sha256": "f26e3739007a277865652e29d05322b76c8c6271abdf98bd0761dfb6aa5eeb78",
+      "dimensions": [
+        640,
+        480
+      ],
+      "review": {
+        "status": "passed",
+        "reviewedAt": "2026-09-23",
+        "method": "Visual review of original, built-in generated result, installed WebP and a 150px-wide thumbnail.",
+        "checks": [
+          "Exactly four red five-pointed stars counted visually in a two-by-two cluster inside the orange sphere.",
+          "No duplicated stars from reflections; belt, orange cloth and warm ivory background retained.",
+          "Viewed installed 640×480 WebP and 150px-wide thumbnail; all four stars remain individually visible."
+        ],
+        "dimensions": "640x480 (4:3)",
+        "within256KiBBudget": true,
+        "textOrWatermarkDetected": false
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/dragonball.json"
+    },
+    {
+      "id": "flags-1000-901",
+      "pack": "flags",
+      "path": "media/flags/flags-1000-901.webp",
+      "bytes": 10110,
+      "sha256": "7f22e9f1cb09a53c2e23817e0efacac725ba050c455737b80c21117ab24a56fd",
+      "dimensions": [
+        1280,
+        801
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-1000-901.json"
+    },
+    {
+      "id": "flags-1000-902",
+      "pack": "flags",
+      "path": "media/flags/flags-1000-902.webp",
+      "bytes": 9288,
+      "sha256": "24c10ec2d333ed51a91e2ae3547ce12f2aa01fefd7ccb2df325092bd9c77459c",
+      "dimensions": [
+        1280,
+        640
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-1000-902.json"
+    },
+    {
+      "id": "flags-1000-903",
+      "pack": "flags",
+      "path": "media/flags/flags-1000-903.webp",
+      "bytes": 13762,
+      "sha256": "3fd7e61fa8997a1e9896138086b365edebb3efd5255ae8d2aeb507293891f6e2",
+      "dimensions": [
+        1280,
+        640
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-1000-903.json"
+    },
+    {
+      "id": "flags-1000-904",
+      "pack": "flags",
+      "path": "media/flags/flags-1000-904.webp",
+      "bytes": 14540,
+      "sha256": "6353f19422a4e9906b235e1a5b753d0d4489c6f7a627580baacbeeaf13252e86",
+      "dimensions": [
+        1280,
+        853
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-1000-904.json"
+    },
+    {
+      "id": "flags-1000-905",
+      "pack": "flags",
+      "path": "media/flags/flags-1000-905.webp",
+      "bytes": 5790,
+      "sha256": "ceca3c1c2f9007412b3caa27d1dc9a2b8049bbc87a6a3eb9402d1e3742262ce7",
+      "dimensions": [
+        1280,
+        853
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-1000-905.json"
+    },
+    {
+      "id": "flags-1000-906",
+      "pack": "flags",
+      "path": "media/flags/flags-1000-906.webp",
+      "bytes": 6730,
+      "sha256": "7e12c5d5fcf52b72e3dc8ca7ee8932e91b165fbe3fff8a2ec4398a48160e88d3",
+      "dimensions": [
+        1280,
+        853
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-1000-906.json"
+    },
+    {
+      "id": "flags-1000-907",
+      "pack": "flags",
+      "path": "media/flags/flags-1000-907.webp",
+      "bytes": 13476,
+      "sha256": "4a1d76a05be69f4b46179e8cf8fbc49266ed1255f2f1b8f8372c43c8ff6de623",
+      "dimensions": [
+        1280,
+        853
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-1000-907.json"
+    },
+    {
+      "id": "flags-1000-908",
+      "pack": "flags",
+      "path": "media/flags/flags-1000-908.webp",
+      "bytes": 32628,
+      "sha256": "c712f4517ceacca3e96129ec252cdc4ecde19d11117a4d2bca7180262bf90eee",
+      "dimensions": [
+        1280,
+        768
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-1000-908.json"
+    },
+    {
+      "id": "flags-200-901",
+      "pack": "flags",
+      "path": "media/flags/flags-200-901.webp",
+      "bytes": 4114,
+      "sha256": "5fbff646a5fe8a66fec097552f9e61aab93561996cbaf96fc89765ba2dfebdbc",
+      "dimensions": [
+        1280,
+        640
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-200-901.json"
+    },
+    {
+      "id": "flags-200-902",
+      "pack": "flags",
+      "path": "media/flags/flags-200-902.webp",
+      "bytes": 7532,
+      "sha256": "a40ced95b9fc9ec07a88e722df7d8c4269ecd0459208eff5c9f3f1366b2aed57",
+      "dimensions": [
+        1280,
+        640
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-200-902.json"
+    },
+    {
+      "id": "flags-200-903",
+      "pack": "flags",
+      "path": "media/flags/flags-200-903.webp",
+      "bytes": 10978,
+      "sha256": "10c4f4c76bdd240c0979c25517c71eea08c5dc1bd972308ef8b94270cb677db3",
+      "dimensions": [
+        1280,
+        853
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-200-903.json"
+    },
+    {
+      "id": "flags-200-904",
+      "pack": "flags",
+      "path": "media/flags/flags-200-904.webp",
+      "bytes": 14564,
+      "sha256": "468b7c9f744d6ed1fed959bcabfeadd9ee5ce7847f8dfe0589e2798885777fdb",
+      "dimensions": [
+        1280,
+        853
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-200-904.json"
+    },
+    {
+      "id": "flags-200-905",
+      "pack": "flags",
+      "path": "media/flags/flags-200-905.webp",
+      "bytes": 6028,
+      "sha256": "d423dc2fbcac072529ca3d098a9a368648837c6f63e1a69496ca4ba20f127c57",
+      "dimensions": [
+        1280,
+        853
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-200-905.json"
+    },
+    {
+      "id": "flags-200-906",
+      "pack": "flags",
+      "path": "media/flags/flags-200-906.webp",
+      "bytes": 4558,
+      "sha256": "affe5d138c9bfb9a6d5123bb4441512fa2a328f618c259ecb166299bc7292e33",
+      "dimensions": [
+        1280,
+        768
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-200-906.json"
+    },
+    {
+      "id": "flags-200-907",
+      "pack": "flags",
+      "path": "media/flags/flags-200-907.webp",
+      "bytes": 15940,
+      "sha256": "1d2fc9745dc3074c7ecfb188c06677ebaa5d22566149ced59928f672346e3314",
+      "dimensions": [
+        1280,
+        640
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-200-907.json"
+    },
+    {
+      "id": "flags-200-908",
+      "pack": "flags",
+      "path": "media/flags/flags-200-908.webp",
+      "bytes": 12820,
+      "sha256": "517fb5c7e60b065efd71affa5bd7a686b85f1a70acb82720d56ac116bd0a48ca",
+      "dimensions": [
+        1280,
+        768
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-200-908.json"
+    },
+    {
+      "id": "flags-400-901",
+      "pack": "flags",
+      "path": "media/flags/flags-400-901.webp",
+      "bytes": 12626,
+      "sha256": "23c5dc05889c539cda1032f378c1e2e0f36e4c3f12a2792b9610ac728daee7d4",
+      "dimensions": [
+        1280,
+        853
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-400-901.json"
+    },
+    {
+      "id": "flags-400-902",
+      "pack": "flags",
+      "path": "media/flags/flags-400-902.webp",
+      "bytes": 15204,
+      "sha256": "17e8fde582fabf56396914b6fedcecfc85c7252681edd929d17e7e827cb1473f",
+      "dimensions": [
+        1280,
+        853
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-400-902.json"
+    },
+    {
+      "id": "flags-400-903",
+      "pack": "flags",
+      "path": "media/flags/flags-400-903.webp",
+      "bytes": 6350,
+      "sha256": "1e08fbd932172b908995d9637527108aec82d0e270b38dd339a59ff7d36b4cf8",
+      "dimensions": [
+        1280,
+        801
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-400-903.json"
+    },
+    {
+      "id": "flags-400-904",
+      "pack": "flags",
+      "path": "media/flags/flags-400-904.webp",
+      "bytes": 10030,
+      "sha256": "993c343197302baef43a35fb0fc4114ea329768338520cf8c9657081924ae99f",
+      "dimensions": [
+        1280,
+        932
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-400-904.json"
+    },
+    {
+      "id": "flags-400-905",
+      "pack": "flags",
+      "path": "media/flags/flags-400-905.webp",
+      "bytes": 9132,
+      "sha256": "c433f0b26e9db7c81f7070b35c4296306c4442cf7e960b113bd131d995ae443a",
+      "dimensions": [
+        1280,
+        853
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-400-905.json"
+    },
+    {
+      "id": "flags-400-906",
+      "pack": "flags",
+      "path": "media/flags/flags-400-906.webp",
+      "bytes": 13916,
+      "sha256": "62a0997982709e58fbc7fe9410d994a81cae46dfad8942e40d9d487ca73f40d7",
+      "dimensions": [
+        1280,
+        853
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-400-906.json"
+    },
+    {
+      "id": "flags-400-907",
+      "pack": "flags",
+      "path": "media/flags/flags-400-907.webp",
+      "bytes": 7950,
+      "sha256": "70b57cc17bde4b10917bbe6642710fdfbff2e49e444e96ff249700cf3f736a4e",
+      "dimensions": [
+        1280,
+        853
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-400-907.json"
+    },
+    {
+      "id": "flags-400-908",
+      "pack": "flags",
+      "path": "media/flags/flags-400-908.webp",
+      "bytes": 9124,
+      "sha256": "a49253c6ce96d2d1801eead3528d15e839ce5bc781e17f677a06e157feacb09b",
+      "dimensions": [
+        1280,
+        853
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-400-908.json"
+    },
+    {
+      "id": "flags-600-901",
+      "pack": "flags",
+      "path": "media/flags/flags-600-901.webp",
+      "bytes": 6770,
+      "sha256": "724b48ef6fc1b1040d2a0b596b24c8b1b105a3c89c9149aa35af86e3c4f473f8",
+      "dimensions": [
+        1280,
+        853
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-600-901.json"
+    },
+    {
+      "id": "flags-600-902",
+      "pack": "flags",
+      "path": "media/flags/flags-600-902.webp",
+      "bytes": 4416,
+      "sha256": "c1ab08c27f792b624604befd40ec706e6fe270f21ef51055eed2b2bc123b0690",
+      "dimensions": [
+        1280,
+        816
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-600-902.json"
+    },
+    {
+      "id": "flags-600-903",
+      "pack": "flags",
+      "path": "media/flags/flags-600-903.webp",
+      "bytes": 4524,
+      "sha256": "3276dcab2c5b03df9b8e401fe689255e7071a518aaaa6d32398fdd53494c265e",
+      "dimensions": [
+        1280,
+        640
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-600-903.json"
+    },
+    {
+      "id": "flags-600-904",
+      "pack": "flags",
+      "path": "media/flags/flags-600-904.webp",
+      "bytes": 11520,
+      "sha256": "dfca9f78cd2aafbb7ba9e19adde9b983e1cfc4ef0ad63ce50148014cdcce272c",
+      "dimensions": [
+        1280,
+        853
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-600-904.json"
+    },
+    {
+      "id": "flags-600-905",
+      "pack": "flags",
+      "path": "media/flags/flags-600-905.webp",
+      "bytes": 8766,
+      "sha256": "64e214795f92a12c9c5b06a0b0be873ec273b0a565d5ba4ccd15121c571a4545",
+      "dimensions": [
+        1280,
+        853
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-600-905.json"
+    },
+    {
+      "id": "flags-600-906",
+      "pack": "flags",
+      "path": "media/flags/flags-600-906.webp",
+      "bytes": 31726,
+      "sha256": "8919cb9adb968a21469852daad84a0639cce20abd563bf9eb7927599bfd2f512",
+      "dimensions": [
+        1280,
+        853
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-600-906.json"
+    },
+    {
+      "id": "flags-600-907",
+      "pack": "flags",
+      "path": "media/flags/flags-600-907.webp",
+      "bytes": 14664,
+      "sha256": "5ea3c36dcf72c3365682894eb8f700af0968c54b342cffcc8574963fdca23972",
+      "dimensions": [
+        1280,
+        853
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-600-907.json"
+    },
+    {
+      "id": "flags-600-908",
+      "pack": "flags",
+      "path": "media/flags/flags-600-908.webp",
+      "bytes": 11776,
+      "sha256": "232ff61a691c9810ae62b92d82f409198128af8de1151cc51156ce3523060c55",
+      "dimensions": [
+        1280,
+        853
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-600-908.json"
+    },
+    {
+      "id": "flags-800-901",
+      "pack": "flags",
+      "path": "media/flags/flags-800-901.webp",
+      "bytes": 12340,
+      "sha256": "e87dde839677b19cef13875e7382fa3fbc0cda1de8e51065895bc4b68d1b78d8",
+      "dimensions": [
+        1280,
+        791
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-800-901.json"
+    },
+    {
+      "id": "flags-800-902",
+      "pack": "flags",
+      "path": "media/flags/flags-800-902.webp",
+      "bytes": 6988,
+      "sha256": "4961d4c0d57644d0dd86e83c0ffb22a675172d1a4b28d027d61024b0dd63109d",
+      "dimensions": [
+        1280,
+        853
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-800-902.json"
+    },
+    {
+      "id": "flags-800-903",
+      "pack": "flags",
+      "path": "media/flags/flags-800-903.webp",
+      "bytes": 8080,
+      "sha256": "9fd01df4b28c332914e2f4eaa1a31a7e26ccf417a951dd3c39fc0b91bffeee0e",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-800-903.json"
+    },
+    {
+      "id": "flags-800-904",
+      "pack": "flags",
+      "path": "media/flags/flags-800-904.webp",
+      "bytes": 19158,
+      "sha256": "35cc9f56060d697d57ebd099a80bd3e174c6b79f363eca4149f7d4aa7b30bfeb",
+      "dimensions": [
+        1280,
+        853
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-800-904.json"
+    },
+    {
+      "id": "flags-800-905",
+      "pack": "flags",
+      "path": "media/flags/flags-800-905.webp",
+      "bytes": 10490,
+      "sha256": "3d3202b446dc464fb3d5480c435d0604e231907ee9ea062903c0c65d68ff5f31",
+      "dimensions": [
+        1280,
+        640
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-800-905.json"
+    },
+    {
+      "id": "flags-800-906",
+      "pack": "flags",
+      "path": "media/flags/flags-800-906.webp",
+      "bytes": 20794,
+      "sha256": "fbc1c2d8edddd530a03abe6e5c5a76e18c3c65ba65061a6eefba176e853b8c35",
+      "dimensions": [
+        1280,
+        768
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-800-906.json"
+    },
+    {
+      "id": "flags-800-907",
+      "pack": "flags",
+      "path": "media/flags/flags-800-907.webp",
+      "bytes": 26756,
+      "sha256": "99c42a19e6c976b031fb32470edb4126542a096b8b18bf2cdd10d360d67cd2ea",
+      "dimensions": [
+        1280,
+        640
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-800-907.json"
+    },
+    {
+      "id": "flags-800-908",
+      "pack": "flags",
+      "path": "media/flags/flags-800-908.webp",
+      "bytes": 11732,
+      "sha256": "05f8a74b38412118548e750a68259efe29d0564d4e5734f3d7588dbf5a7aaad8",
+      "dimensions": [
+        1280,
+        640
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-800-908.json"
+    },
+    {
+      "id": "flags",
+      "pack": "flags",
+      "path": "public/media/badeeha-covers/flags.webp",
+      "bytes": 25748,
+      "sha256": "3ce6ce8583112de3abaa14a4ff2cbfd5021142bfd709bdfce4aabcccf4a13bec",
+      "dimensions": [
+        640,
+        480
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/flags.json"
+    },
+    {
+      "id": "guesscar-200-901",
+      "pack": "guesscar",
+      "path": "media/guesscar/guesscar-200-901.webp",
+      "bytes": 102112,
+      "sha256": "2551e19b65484a18bfb293142b83866566234eafdbc4c76cd9deecd6a2973364",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/guesscar-200-901.json"
+    },
+    {
+      "id": "guesscar-200-902",
+      "pack": "guesscar",
+      "path": "media/guesscar/guesscar-200-902.webp",
+      "bytes": 121500,
+      "sha256": "1ff316dc616054591ead5b5c524c5091051cf507646f59bec8fa78b315722ed9",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/guesscar-200-902.json"
+    },
+    {
+      "id": "guesscar-200-903",
+      "pack": "guesscar",
+      "path": "media/guesscar/guesscar-200-903.webp",
+      "bytes": 114988,
+      "sha256": "fc9a4c7de7b274aba154424b0605d97a7f9db6c6c855f63536faf3a55432b1e5",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/guesscar-200-903.json"
+    },
+    {
+      "id": "guesscar-200-904",
+      "pack": "guesscar",
+      "path": "media/guesscar/guesscar-200-904.webp",
+      "bytes": 92204,
+      "sha256": "539dc96d74c4a2117fc85e9104d7d6f933a650679cf88d6cfc9a6ddff96fcde1",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/guesscar-200-904.json"
+    },
+    {
+      "id": "guesscar-200-905",
+      "pack": "guesscar",
+      "path": "media/guesscar/guesscar-200-905.webp",
+      "bytes": 106784,
+      "sha256": "e0ffbb2450d446c8f753e962cce97497e7a0d53e4151177a761bcdbb071e9927",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/guesscar-200-905.json"
+    },
+    {
+      "id": "guesscar-200-906",
+      "pack": "guesscar",
+      "path": "media/guesscar/guesscar-200-906.webp",
+      "bytes": 91616,
+      "sha256": "6ddf0437304ec919e808e5c15990b3a51683bee502eee5d0101e2a27b425cb95",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/guesscar-200-906.json"
+    },
+    {
+      "id": "guesscar-200-907",
+      "pack": "guesscar",
+      "path": "media/guesscar/guesscar-200-907.webp",
+      "bytes": 97570,
+      "sha256": "35f6a459e36e644fe25322458973f53a6f23c793ef63c5da9824eed7decc669d",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/guesscar-200-907.json"
+    },
+    {
+      "id": "guesscar-200-908",
+      "pack": "guesscar",
+      "path": "media/guesscar/guesscar-200-908.webp",
+      "bytes": 86678,
+      "sha256": "da670d7b759c2c0c16272e559cc3c30c6ce45212685b7b5febd9b50d048dfa32",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/guesscar-200-908.json"
+    },
+    {
+      "id": "guesscar-400-901",
+      "pack": "guesscar",
+      "path": "media/guesscar/guesscar-400-901.webp",
+      "bytes": 106096,
+      "sha256": "bff3028211fec1fb1aca99695b7a08b0d8c9ec6624facaf9cf3f054be7ba2075",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/guesscar-400-901.json"
+    },
+    {
+      "id": "guesscar-400-902",
+      "pack": "guesscar",
+      "path": "media/guesscar/guesscar-400-902.webp",
+      "bytes": 111748,
+      "sha256": "b3ff7876cb79f1412f9d1f07efdb52ca622245cbe6fa128dce300f37e9ff3d6a",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/guesscar-400-902.json"
+    },
+    {
+      "id": "guesscar-400-903",
+      "pack": "guesscar",
+      "path": "media/guesscar/guesscar-400-903.webp",
+      "bytes": 118314,
+      "sha256": "d260cd5d7255b6203434931c67950399dfd84bd534718aaf0c7db274777e9a9a",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/guesscar-400-903.json"
+    },
+    {
+      "id": "guesscar-400-904",
+      "pack": "guesscar",
+      "path": "media/guesscar/guesscar-400-904.webp",
+      "bytes": 90572,
+      "sha256": "5e67e8c5da18e3e027ce63682f753df82a00ad62d91199b5625d2a8085cc1fa2",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/guesscar-400-904.json"
+    },
+    {
+      "id": "guesscar-400-905",
+      "pack": "guesscar",
+      "path": "media/guesscar/guesscar-400-905.webp",
+      "bytes": 85638,
+      "sha256": "7c74ed59219053ae42feddf83686498a1aa3eb2098d9115b416cda010eec6f6b",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/guesscar-400-905.json"
+    },
+    {
+      "id": "guesscar-400-906",
+      "pack": "guesscar",
+      "path": "media/guesscar/guesscar-400-906.webp",
+      "bytes": 108822,
+      "sha256": "69346691495026dc89635442dddb5643f229324afb54e45400049365425b0580",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/guesscar-400-906.json"
+    },
+    {
+      "id": "guesscar-400-907",
+      "pack": "guesscar",
+      "path": "media/guesscar/guesscar-400-907.webp",
+      "bytes": 90818,
+      "sha256": "efe26ba0ec07f44ad81c1c764498c3a449790823025a8926289114f6121c28f0",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/guesscar-400-907.json"
+    },
+    {
+      "id": "guesscar-400-908",
+      "pack": "guesscar",
+      "path": "media/guesscar/guesscar-400-908.webp",
+      "bytes": 86352,
+      "sha256": "fca530b22956afdad298999fca11dfa397d1613c65749c039bcb7ac5e4294d96",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/guesscar-400-908.json"
+    },
+    {
+      "id": "guesscar-600-901",
+      "pack": "guesscar",
+      "path": "media/guesscar/guesscar-600-901.webp",
+      "bytes": 99868,
+      "sha256": "3c67f92462671ca4efe6b7c7964eb4e3a2e9ceef1b87a60dc5e0823ea6afd369",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/guesscar-600-901.json"
+    },
+    {
+      "id": "guesscar-600-902",
+      "pack": "guesscar",
+      "path": "media/guesscar/guesscar-600-902.webp",
+      "bytes": 118276,
+      "sha256": "4a2b0500aaceb31331a2a7c1be5a33c69b43bbf785fdbc50efbd7100383e04c7",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/guesscar-600-902.json"
+    },
+    {
+      "id": "guesscar",
+      "pack": "guesscar",
+      "path": "public/media/badeeha-covers/guesscar.webp",
+      "bytes": 27492,
+      "sha256": "341dcf43c6fb9c3f786d8f11235118d9a94eb0f2e4d44008937750566b78adf4",
+      "dimensions": [
+        640,
+        480
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/guesscar.json"
+    },
+    {
+      "id": "hints",
+      "pack": "hints",
+      "path": "public/media/badeeha-covers/hints.webp",
+      "bytes": 15312,
+      "sha256": "53301ce21b356f55dc67ee6df4601159c410b1c19c873e0881c79a40ac363b1c",
+      "dimensions": [
+        640,
+        480
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/hints.json"
+    },
+    {
+      "id": "onepiece",
+      "pack": "onepiece",
+      "path": "public/media/badeeha-covers/onepiece.webp",
+      "bytes": 55990,
+      "sha256": "3667b353e5f09487a80cd0dd3bc13c71b5ce9853f52057addc65ef5319699dae",
+      "dimensions": [
+        640,
+        480
+      ],
+      "review": {
+        "status": "passed",
+        "reviewedAt": "2026-09-23",
+        "method": "Visual review of original, built-in generated result, installed WebP and a 150px-wide thumbnail.",
+        "checks": [
+          "Hat band, knot and both loose ribbon tails are red; no purple ribbon remains.",
+          "Straw texture, ship model, cream sails, lighting and original composition retained.",
+          "Viewed installed 640×480 WebP and 150px-wide thumbnail; red-banded straw hat remains recognizable."
+        ],
+        "dimensions": "640x480 (4:3)",
+        "within256KiBBudget": true,
+        "textOrWatermarkDetected": false
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/onepiece.json"
+    },
+    {
+      "id": "placefinder-200-901",
+      "pack": "placefinder",
+      "path": "media/placefinder/placefinder-200-901.webp",
+      "bytes": 232266,
+      "sha256": "739108414749dc4559d49c76e345b2b89717229acc460fd3348a734ea5e35eed",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "review": {
+        "status": "reviewed",
+        "reviewedAt": "2026-09-23",
+        "note": "Viewed generated output: complete iron lattice tower, broad base arch, splayed legs, two lower decks and tapering upper shaft; recognizable Eiffel silhouette, no answer text.",
+        "notDocumentaryPhoto": true
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/placefinder-200-901.json"
+    },
+    {
+      "id": "placefinder-200-902",
+      "pack": "placefinder",
+      "path": "media/placefinder/placefinder-200-902.webp",
+      "bytes": 254602,
+      "sha256": "a59997d2f51f367f3cf5bdf0f132d8db1d097ae358349b8d20c5ecadc02071be",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "review": {
+        "status": "reviewed",
+        "reviewedAt": "2026-09-23",
+        "note": "Viewed generated output: physically leaning white cylindrical campanile, repeated arcaded galleries and smaller belfry; recognizable Pisa tower, no answer text.",
+        "notDocumentaryPhoto": true
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/placefinder-200-902.json"
+    },
+    {
+      "id": "placefinder-200-903",
+      "pack": "placefinder",
+      "path": "media/placefinder/placefinder-200-903.webp",
+      "bytes": 167708,
+      "sha256": "a6287fd9487de7c88aa86974dfa1bb68f8368459632619f91b4cbc5da52c5f83",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "review": {
+        "status": "reviewed",
+        "reviewedAt": "2026-09-23",
+        "note": "Viewed full generated image: silvery bundled wings with stepped setbacks taper to the needle spire; dominant tower over lakeside skyline clearly identifies Burj Khalifa. Background buildings are illustrative, not a documented skyline.",
+        "notDocumentaryPhoto": true
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/placefinder-200-903.json"
+    },
+    {
+      "id": "placefinder-200-904",
+      "pack": "placefinder",
+      "path": "media/placefinder/placefinder-200-904.webp",
+      "bytes": 239424,
+      "sha256": "3514d9269622f204a18fec844d40b8f06469f7db46681de042f85b37b60d3b10",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "review": {
+        "status": "reviewed",
+        "reviewedAt": "2026-09-23",
+        "note": "Viewed full generated image: three limestone pyramidal forms on arid plateau, Khafre-like remaining upper casing, weathered blocks and lower ruins; Giza identity is clear. Illustration does not assert surveyed spacing or heights.",
+        "notDocumentaryPhoto": true
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/placefinder-200-904.json"
+    },
+    {
+      "id": "placefinder-200-905",
+      "pack": "placefinder",
+      "path": "media/placefinder/placefinder-200-905.webp",
+      "bytes": 221002,
+      "sha256": "58a401b4d11e792a8ca9c6d1bb85484f89e070196e0ccb11e5450ef737f313ec",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "review": {
+        "status": "reviewed",
+        "reviewedAt": "2026-09-23",
+        "note": "Viewed generated image: continuous crenellated masonry walkway bends across mountain ridges through rectangular watchtowers; Great Wall identity clear, no answer text. Illustrates characteristic architecture rather than one surveyed section.",
+        "notDocumentaryPhoto": true
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/placefinder-200-905.json"
+    },
+    {
+      "id": "placefinder-200-906",
+      "pack": "placefinder",
+      "path": "media/placefinder/placefinder-200-906.webp",
+      "bytes": 201314,
+      "sha256": "6532a1ca825e1b3a4279f6a40998893df2f14b938ae474617f89ad941919d340",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "review": {
+        "status": "reviewed",
+        "reviewedAt": "2026-09-23",
+        "note": "Viewed generated image: white marble central onion dome, pointed entrance arch, smaller pavilions, four distinct minarets and central reflecting pool; Taj Mahal is unambiguous, no answer text.",
+        "notDocumentaryPhoto": true
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/placefinder-200-906.json"
+    },
+    {
+      "id": "placefinder-200-907",
+      "pack": "placefinder",
+      "path": "media/placefinder/placefinder-200-907.webp",
+      "bytes": 198788,
+      "sha256": "d3303c41a316aa83950578049146b671a4facb8fdebcb9803ae7600e13c2277c",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/placefinder-200-907.json"
+    },
+    {
+      "id": "placefinder-200-908",
+      "pack": "placefinder",
+      "path": "media/placefinder/placefinder-200-908.webp",
+      "bytes": 229508,
+      "sha256": "de4d86a04e3ee405b663738bd1158d9d524d6fcd1ed192b7751c3aab7522598f",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/placefinder-200-908.json"
+    },
+    {
+      "id": "placefinder",
+      "pack": "placefinder",
+      "path": "public/media/badeeha-covers/placefinder.webp",
+      "bytes": 53272,
+      "sha256": "2bd6e793fe7ca88005a3c0ef5dc88c00fa53307885f94549a2c07b088689b718",
+      "dimensions": [
+        640,
+        480
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/placefinder.json"
+    },
+    {
+      "id": "reveal-200-901",
+      "pack": "reveal",
+      "path": "media/reveal/reveal-200-901.webp",
+      "bytes": 204084,
+      "sha256": "a18a5e62f6808fa19614cdc02d36e533cc18951104652172fdfccefdaeeb73de",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/reveal-200-901.json"
+    },
+    {
+      "id": "reveal-200-902",
+      "pack": "reveal",
+      "path": "media/reveal/reveal-200-902.webp",
+      "bytes": 241452,
+      "sha256": "d89cf242ccec5d8ac93c71ead2ad8569f974b89b84db3c04ae5d435c51943b00",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/reveal-200-902.json"
+    },
+    {
+      "id": "reveal-200-903",
+      "pack": "reveal",
+      "path": "media/reveal/reveal-200-903.webp",
+      "bytes": 170106,
+      "sha256": "701b19806f9e791dc06ff7cb833fef075fe9df74ffd125eaf7bc221ca723c76c",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/reveal-200-903.json"
+    },
+    {
+      "id": "reveal-200-904",
+      "pack": "reveal",
+      "path": "media/reveal/reveal-200-904.webp",
+      "bytes": 259042,
+      "sha256": "eac88d640e4b69270544d6e7e0f45c328f154cc631f43a68b8f8317981d7a1c8",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/reveal-200-904.json"
+    },
+    {
+      "id": "reveal-200-905",
+      "pack": "reveal",
+      "path": "media/reveal/reveal-200-905.webp",
+      "bytes": 219608,
+      "sha256": "6f10f8c6e350aed0df875441e00a6fd5ec9768e032b2fad3c6f4ba2dcb103952",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/reveal-200-905.json"
+    },
+    {
+      "id": "reveal-200-906",
+      "pack": "reveal",
+      "path": "media/reveal/reveal-200-906.webp",
+      "bytes": 236386,
+      "sha256": "2fe97be774dd2c5650196905276d5122caf47233892385496229def08fb7347d",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/reveal-200-906.json"
+    },
+    {
+      "id": "reveal-200-907",
+      "pack": "reveal",
+      "path": "media/reveal/reveal-200-907.webp",
+      "bytes": 173072,
+      "sha256": "d1b04a24e1e5723391ec8d8bf6ecef46d3a38e01f392156b3ac29bc4684ae98f",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/reveal-200-907.json"
+    },
+    {
+      "id": "reveal-200-908",
+      "pack": "reveal",
+      "path": "media/reveal/reveal-200-908.webp",
+      "bytes": 184570,
+      "sha256": "1a6f375e88c1a3e369368214d5a69e387517e03e20308d176eb2beaaad4f32fa",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/reveal-200-908.json"
+    },
+    {
+      "id": "reveal-400-901",
+      "pack": "reveal",
+      "path": "media/reveal/reveal-400-901.webp",
+      "bytes": 232106,
+      "sha256": "96154a53701b68709480bdbb6c226ba138141bdd10e22752ba33a4ddbf3849e7",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/reveal-400-901.json"
+    },
+    {
+      "id": "reveal-400-902",
+      "pack": "reveal",
+      "path": "media/reveal/reveal-400-902.webp",
+      "bytes": 192964,
+      "sha256": "c407fc5b6f71b2b0ffddfee19e249bf7ef9414d87b6e33d64679e58d8baa852c",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/reveal-400-902.json"
+    },
+    {
+      "id": "reveal-400-903",
+      "pack": "reveal",
+      "path": "media/reveal/reveal-400-903.webp",
+      "bytes": 242946,
+      "sha256": "14e65fd26e8b8e7e3e149510f11c6976abaedf1e131437a7ee4d02322ac41d7f",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/reveal-400-903.json"
+    },
+    {
+      "id": "reveal-400-904",
+      "pack": "reveal",
+      "path": "media/reveal/reveal-400-904.webp",
+      "bytes": 198840,
+      "sha256": "8b0bd4d1d567739ea7e212c2686e824ff9730ad1563aaf0feb834ee2d3c76941",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/reveal-400-904.json"
+    },
+    {
+      "id": "reveal-400-905",
+      "pack": "reveal",
+      "path": "media/reveal/reveal-400-905.webp",
+      "bytes": 227182,
+      "sha256": "90bbd42f5bec6303bc8be25cca8b768457355939bed36e36337571132898d34d",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/reveal-400-905.json"
+    },
+    {
+      "id": "reveal-400-906",
+      "pack": "reveal",
+      "path": "media/reveal/reveal-400-906.webp",
+      "bytes": 242564,
+      "sha256": "a9ba39bff872beb1779e76f9f622b14474d586828cc12277b921e96cdcf25613",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/reveal-400-906.json"
+    },
+    {
+      "id": "reveal-400-907",
+      "pack": "reveal",
+      "path": "media/reveal/reveal-400-907.webp",
+      "bytes": 243818,
+      "sha256": "331ec2331f4adb1d35180bf33b77f082b49d55fe5cde083c624b85e99ba803a8",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/reveal-400-907.json"
+    },
+    {
+      "id": "reveal-400-908",
+      "pack": "reveal",
+      "path": "media/reveal/reveal-400-908.webp",
+      "bytes": 253608,
+      "sha256": "cb8c5d074b4d1ad2e1142aef6eda5803cd60920a871c82c91407b8afbfe3f25d",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/reveal-400-908.json"
+    },
+    {
+      "id": "reveal-600-901",
+      "pack": "reveal",
+      "path": "media/reveal/reveal-600-901.webp",
+      "bytes": 229532,
+      "sha256": "56b2e10413becf41c169ac2951a06e74737f2481ae1ad19630358b0161398dbe",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/reveal-600-901.json"
+    },
+    {
+      "id": "reveal-600-902",
+      "pack": "reveal",
+      "path": "media/reveal/reveal-600-902.webp",
+      "bytes": 220028,
+      "sha256": "8d886b6d8850ac61c99151794f4981e843d857301dee089fe9ce7855f3f19fdf",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/reveal-600-902.json"
+    },
+    {
+      "id": "reveal-600-903",
+      "pack": "reveal",
+      "path": "media/reveal/reveal-600-903.webp",
+      "bytes": 215478,
+      "sha256": "813ac878e874bea68be55208202793d400cd2be62aeee7f54506dc3384901c42",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/reveal-600-903.json"
+    },
+    {
+      "id": "reveal-600-905",
+      "pack": "reveal",
+      "path": "media/reveal/reveal-600-905.webp",
+      "bytes": 200830,
+      "sha256": "b7bf4e634ff65b1b622e620fe39e6abaa65709d084eb4fe934a51863359e0f68",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/reveal-600-905.json"
+    },
+    {
+      "id": "reveal-600-906",
+      "pack": "reveal",
+      "path": "media/reveal/reveal-600-906.webp",
+      "bytes": 228954,
+      "sha256": "6f6289a1aa562efcb24b2e7865f654a133b2ceb531c785d7318bcc2295606363",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/reveal-600-906.json"
+    },
+    {
+      "id": "reveal-600-907",
+      "pack": "reveal",
+      "path": "media/reveal/reveal-600-907.webp",
+      "bytes": 182194,
+      "sha256": "895a6a1f9a2fb4814e101ae8abcb6eb0995275eea756e40658a166b1a79e254a",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/reveal-600-907.json"
+    },
+    {
+      "id": "reveal-800-901",
+      "pack": "reveal",
+      "path": "media/reveal/reveal-800-901.webp",
+      "bytes": 242518,
+      "sha256": "d7e7fd6e7eafe94647492870b9f38f11aa1325ee10d8441cac40ec3ab2378c0e",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/reveal-800-901.json"
+    },
+    {
+      "id": "reveal",
+      "pack": "reveal",
+      "path": "public/media/badeeha-covers/reveal.webp",
+      "bytes": 17042,
+      "sha256": "6122a4ac3faf240034f603edcfb3497037f686abef9236547381d785d55391c8",
+      "dimensions": [
+        640,
+        480
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/reveal.json"
+    },
+    {
+      "id": "silhouette-200-901",
+      "pack": "silhouette",
+      "path": "media/silhouette/silhouette-200-901.webp",
+      "bytes": 258168,
+      "sha256": "3309be76268f26393680b4b84c36c79e6a770cf1d34c77c5bf8a435b2775e5a6",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "review": {
+        "status": "visual-subject-reviewed",
+        "reviewedAt": "2026-09-23",
+        "note": "Generated output visually reviewed: subject matches answer; true alpha measured. Final silhouette/reveal gameplay review still pending.",
+        "answer": "قط",
+        "alpha": {
+          "pixels": 1228800,
+          "alpha0": 769020,
+          "alpha255": 35,
+          "partialAlpha": 459745,
+          "nearOpaque250to255": 393247,
+          "transparentFraction": 0.62583,
+          "bboxAlphaOver128": [
+            140,
+            35,
+            1245,
+            889
+          ]
+        },
+        "gameplayReview": "pending"
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-200-901.json"
+    },
+    {
+      "id": "silhouette-200-902",
+      "pack": "silhouette",
+      "path": "media/silhouette/silhouette-200-902.webp",
+      "bytes": 160426,
+      "sha256": "a0a91adddaa86a549b330a2a96cb081799bf6e004a250f3023825de540731adb",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "review": {
+        "status": "visual-subject-reviewed",
+        "reviewedAt": "2026-09-23",
+        "note": "Generated output visually reviewed: subject matches answer; true alpha measured. Final silhouette/reveal gameplay review still pending.",
+        "answer": "مطرقة",
+        "alpha": {
+          "pixels": 1228800,
+          "alpha0": 959466,
+          "alpha255": 1073,
+          "partialAlpha": 268261,
+          "nearOpaque250to255": 249861,
+          "transparentFraction": 0.780815,
+          "bboxAlphaOver128": [
+            38,
+            32,
+            1250,
+            935
+          ]
+        },
+        "gameplayReview": "pending"
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-200-902.json"
+    },
+    {
+      "id": "silhouette-200-903",
+      "pack": "silhouette",
+      "path": "media/silhouette/silhouette-200-903.webp",
+      "bytes": 104576,
+      "sha256": "94e555e1f9102a9f5b0adc647dff22d15db4e1dac9e0d557a55c0ab840e4b3d3",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "review": {
+        "status": "visual-subject-reviewed",
+        "reviewedAt": "2026-09-23",
+        "note": "Generated output visually reviewed: subject matches answer; true alpha measured. Final silhouette/reveal gameplay review still pending.",
+        "answer": "مظلة",
+        "alpha": {
+          "pixels": 1228800,
+          "alpha0": 723947,
+          "alpha255": 1688,
+          "partialAlpha": 503165,
+          "nearOpaque250to255": 484946,
+          "transparentFraction": 0.58915,
+          "bboxAlphaOver128": [
+            77,
+            14,
+            1214,
+            944
+          ]
+        },
+        "gameplayReview": "pending"
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-200-903.json"
+    },
+    {
+      "id": "silhouette-200-904",
+      "pack": "silhouette",
+      "path": "media/silhouette/silhouette-200-904.webp",
+      "bytes": 188134,
+      "sha256": "85a56e90ec2f160aa9366b21d9a0b78dd2ce1fb984d56a4a7791dd9dcd028fa9",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "review": {
+        "status": "visual-subject-reviewed",
+        "reviewedAt": "2026-09-23",
+        "note": "Generated output visually reviewed: subject matches answer; true alpha measured. Final silhouette/reveal gameplay review still pending.",
+        "answer": "مروحية",
+        "alpha": {
+          "pixels": 1228800,
+          "alpha0": 865598,
+          "alpha255": 2666,
+          "partialAlpha": 360536,
+          "nearOpaque250to255": 288129,
+          "transparentFraction": 0.704425,
+          "bboxAlphaOver128": [
+            13,
+            192,
+            1274,
+            778
+          ]
+        },
+        "gameplayReview": "pending"
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-200-904.json"
+    },
+    {
+      "id": "silhouette-200-905",
+      "pack": "silhouette",
+      "path": "media/silhouette/silhouette-200-905.webp",
+      "bytes": 238634,
+      "sha256": "53e6d44640a01a09136187e763f78ebb341d5f39030e29229ab2eae39789a0eb",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "review": {
+        "status": "needs-regeneration",
+        "reviewedAt": "2026-09-23",
+        "note": "Regenerate: cactus base touches lower canvas border; request complete plant with ample transparent padding.",
+        "answer": "صبار",
+        "alpha": {
+          "pixels": 1228800,
+          "alpha0": 862923,
+          "alpha255": 373,
+          "partialAlpha": 365504,
+          "nearOpaque250to255": 289463,
+          "transparentFraction": 0.702249,
+          "bboxAlphaOver128": [
+            305,
+            8,
+            977,
+            960
+          ]
+        },
+        "gameplayReview": "pending"
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-200-905.json"
+    },
+    {
+      "id": "silhouette-200-906",
+      "pack": "silhouette",
+      "path": "media/silhouette/silhouette-200-906.webp",
+      "bytes": 229504,
+      "sha256": "f6f761490a784768f524e5b85a803f03d6d5b4ffdd2340855e5d039b47b0a57e",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "review": {
+        "status": "visual-subject-reviewed",
+        "reviewedAt": "2026-09-23",
+        "note": "Generated output visually reviewed: subject matches answer; true alpha measured. Final silhouette/reveal gameplay review still pending.",
+        "answer": "كمثرى",
+        "alpha": {
+          "pixels": 1228800,
+          "alpha0": 724299,
+          "alpha255": 1118,
+          "partialAlpha": 503383,
+          "nearOpaque250to255": 483664,
+          "transparentFraction": 0.589436,
+          "bboxAlphaOver128": [
+            297,
+            5,
+            1104,
+            955
+          ]
+        },
+        "gameplayReview": "pending"
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-200-906.json"
+    },
+    {
+      "id": "silhouette-200-907",
+      "pack": "silhouette",
+      "path": "media/silhouette/silhouette-200-907.webp",
+      "bytes": 154788,
+      "sha256": "761a2f69e0b8f4b35f6e3f6e36bb25d7a1086ffc2129bb925985d7ca94875759",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "review": {
+        "status": "visual-subject-reviewed",
+        "reviewedAt": "2026-09-23",
+        "note": "Generated output visually reviewed: subject matches answer; true alpha measured. Final silhouette/reveal gameplay review still pending.",
+        "answer": "ساكسفون",
+        "alpha": {
+          "pixels": 1228800,
+          "alpha0": 1019407,
+          "alpha255": 661,
+          "partialAlpha": 208732,
+          "nearOpaque250to255": 168431,
+          "transparentFraction": 0.829596,
+          "bboxAlphaOver128": [
+            245,
+            4,
+            1035,
+            959
+          ]
+        },
+        "gameplayReview": "pending"
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-200-907.json"
+    },
+    {
+      "id": "silhouette-200-908",
+      "pack": "silhouette",
+      "path": "media/silhouette/silhouette-200-908.webp",
+      "bytes": 231428,
+      "sha256": "94be1fedcb09cfc22f905a660946dbed238d8fcd07bc9adfb31d55a04a792cbf",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "review": {
+        "status": "needs-regeneration",
+        "reviewedAt": "2026-09-23",
+        "note": "Regenerate: rocking chair top and rocker edge touch canvas; request complete outline with ample transparent padding.",
+        "answer": "كرسي هزاز",
+        "alpha": {
+          "pixels": 1228800,
+          "alpha0": 892242,
+          "alpha255": 4259,
+          "partialAlpha": 332299,
+          "nearOpaque250to255": 263587,
+          "transparentFraction": 0.726108,
+          "bboxAlphaOver128": [
+            213,
+            0,
+            1068,
+            960
+          ]
+        },
+        "gameplayReview": "pending"
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-200-908.json"
+    },
+    {
+      "id": "silhouette-400-901",
+      "pack": "silhouette",
+      "path": "media/silhouette/silhouette-400-901.webp",
+      "bytes": 163452,
+      "sha256": "4b50dc7f7e26d807f20b79fc4e4b1b2bdc9fcde00c0296bd98753a70d886b92e",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "review": {
+        "status": "visual-subject-reviewed",
+        "reviewedAt": "2026-09-23",
+        "note": "Generated output visually reviewed: subject matches answer; true alpha measured. Final silhouette/reveal gameplay review still pending.",
+        "answer": "أرنب",
+        "alpha": {
+          "pixels": 1228800,
+          "alpha0": 968437,
+          "alpha255": 210,
+          "partialAlpha": 260153,
+          "nearOpaque250to255": 227268,
+          "transparentFraction": 0.788116,
+          "bboxAlphaOver128": [
+            315,
+            88,
+            973,
+            847
+          ]
+        },
+        "gameplayReview": "pending"
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-400-901.json"
+    },
+    {
+      "id": "silhouette-400-902",
+      "pack": "silhouette",
+      "path": "media/silhouette/silhouette-400-902.webp",
+      "bytes": 68556,
+      "sha256": "45ad90cc21e28343e0d908821dda8c2906e65af0c14980dec8ad67af25a49c38",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "review": {
+        "status": "visual-subject-reviewed",
+        "reviewedAt": "2026-09-23",
+        "note": "Generated output visually reviewed: subject matches answer; true alpha measured. Final silhouette/reveal gameplay review still pending.",
+        "answer": "مفتاح ربط",
+        "alpha": {
+          "pixels": 1228800,
+          "alpha0": 1112606,
+          "alpha255": 767,
+          "partialAlpha": 115427,
+          "nearOpaque250to255": 103273,
+          "transparentFraction": 0.905441,
+          "bboxAlphaOver128": [
+            180,
+            236,
+            1101,
+            764
+          ]
+        },
+        "gameplayReview": "pending"
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-400-902.json"
+    },
+    {
+      "id": "silhouette-400-903",
+      "pack": "silhouette",
+      "path": "media/silhouette/silhouette-400-903.webp",
+      "bytes": 61278,
+      "sha256": "40b2a550c3d31dc1c4be326370b0bde99cf92f29ef9746693cb1115ede19fe4b",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "review": {
+        "status": "visual-subject-reviewed",
+        "reviewedAt": "2026-09-23",
+        "note": "Generated output visually reviewed: subject matches answer; true alpha measured. Final silhouette/reveal gameplay review still pending.",
+        "answer": "مجفف شعر",
+        "alpha": {
+          "pixels": 1228800,
+          "alpha0": 1021826,
+          "alpha255": 886,
+          "partialAlpha": 206088,
+          "nearOpaque250to255": 191532,
+          "transparentFraction": 0.831564,
+          "bboxAlphaOver128": [
+            274,
+            104,
+            1014,
+            884
+          ]
+        },
+        "gameplayReview": "pending"
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-400-903.json"
+    },
+    {
+      "id": "silhouette-400-904",
+      "pack": "silhouette",
+      "path": "media/silhouette/silhouette-400-904.webp",
+      "bytes": 93766,
+      "sha256": "bea692257df255fd7b9c11b9722a4daf9d15881e403dd5bd8be60e87d55b90e2",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "review": {
+        "status": "visual-subject-reviewed",
+        "reviewedAt": "2026-09-23",
+        "note": "Generated output visually reviewed: subject matches answer; true alpha measured. Final silhouette/reveal gameplay review still pending.",
+        "answer": "قارب سريع",
+        "alpha": {
+          "pixels": 1228800,
+          "alpha0": 970625,
+          "alpha255": 509,
+          "partialAlpha": 257666,
+          "nearOpaque250to255": 220343,
+          "transparentFraction": 0.789897,
+          "bboxAlphaOver128": [
+            82,
+            265,
+            1219,
+            682
+          ]
+        },
+        "gameplayReview": "pending"
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-400-904.json"
+    },
+    {
+      "id": "silhouette-400-905",
+      "pack": "silhouette",
+      "path": "media/silhouette/silhouette-400-905.webp",
+      "bytes": 256690,
+      "sha256": "a961c8f26080ecf76594685231a6c4c652e1d0899ef8c50c8f2957b7425e57a4",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "review": {
+        "status": "visual-subject-reviewed",
+        "reviewedAt": "2026-09-23",
+        "note": "Generated output visually reviewed: subject matches answer; true alpha measured. Final silhouette/reveal gameplay review still pending.",
+        "answer": "نخلة",
+        "alpha": {
+          "pixels": 1228800,
+          "alpha0": 879564,
+          "alpha255": 121,
+          "partialAlpha": 349115,
+          "nearOpaque250to255": 136371,
+          "transparentFraction": 0.715791,
+          "bboxAlphaOver128": [
+            271,
+            41,
+            1028,
+            918
+          ]
+        },
+        "gameplayReview": "pending"
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-400-905.json"
+    },
+    {
+      "id": "silhouette-400-906",
+      "pack": "silhouette",
+      "path": "media/silhouette/silhouette-400-906.webp",
+      "bytes": 65252,
+      "sha256": "000c3a8f9ae481a8ce9cbdf20bf45866100cbe48fa262fca02cfbd670ffa6430",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "review": {
+        "status": "visual-subject-reviewed",
+        "reviewedAt": "2026-09-23",
+        "note": "Generated output visually reviewed: subject matches answer; true alpha measured. Final silhouette/reveal gameplay review still pending.",
+        "answer": "فلفل حار",
+        "alpha": {
+          "pixels": 1228800,
+          "alpha0": 1108839,
+          "alpha255": 792,
+          "partialAlpha": 119169,
+          "nearOpaque250to255": 108886,
+          "transparentFraction": 0.902375,
+          "bboxAlphaOver128": [
+            156,
+            218,
+            1124,
+            727
+          ]
+        },
+        "gameplayReview": "pending"
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-400-906.json"
+    },
+    {
+      "id": "silhouette-400-907",
+      "pack": "silhouette",
+      "path": "media/silhouette/silhouette-400-907.webp",
+      "bytes": 85186,
+      "sha256": "162d494222dfd9d790d6b3db7c57cef27043762ec6e01495718a11c4ed3e0e8e",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "review": {
+        "status": "visual-subject-reviewed",
+        "reviewedAt": "2026-09-23",
+        "note": "Generated output visually reviewed: subject matches answer; true alpha measured. Final silhouette/reveal gameplay review still pending.",
+        "answer": "تشيلو",
+        "alpha": {
+          "pixels": 1228800,
+          "alpha0": 1067116,
+          "alpha255": 1105,
+          "partialAlpha": 160579,
+          "nearOpaque250to255": 133909,
+          "transparentFraction": 0.868421,
+          "bboxAlphaOver128": [
+            462,
+            15,
+            879,
+            945
+          ]
+        },
+        "gameplayReview": "pending"
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-400-907.json"
+    },
+    {
+      "id": "silhouette-400-908",
+      "pack": "silhouette",
+      "path": "media/silhouette/silhouette-400-908.webp",
+      "bytes": 86302,
+      "sha256": "2a02a902e069e5971ec33605e1abbbef5b12a70c5f5cf25780ad076f0fdd683d",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "review": {
+        "status": "visual-subject-reviewed",
+        "reviewedAt": "2026-09-23",
+        "note": "Generated output visually reviewed: subject matches answer; true alpha measured. Final silhouette/reveal gameplay review still pending.",
+        "answer": "مرش ماء",
+        "alpha": {
+          "pixels": 1228800,
+          "alpha0": 997773,
+          "alpha255": 1246,
+          "partialAlpha": 229781,
+          "nearOpaque250to255": 204653,
+          "transparentFraction": 0.81199,
+          "bboxAlphaOver128": [
+            199,
+            185,
+            1082,
+            805
+          ]
+        },
+        "gameplayReview": "pending"
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-400-908.json"
+    },
+    {
+      "id": "silhouette-600-901",
+      "pack": "silhouette",
+      "path": "media/silhouette/silhouette-600-901.webp",
+      "bytes": 102432,
+      "sha256": "9dd74758fc7b9b022c4abcf0ac68b25d49fc6908d18ac55d0069cbfba96dfa8b",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "review": {
+        "status": "visual-subject-reviewed",
+        "reviewedAt": "2026-09-23",
+        "note": "Generated output visually reviewed: subject matches answer; true alpha measured. Final silhouette/reveal gameplay review still pending.",
+        "answer": "كنغر",
+        "alpha": {
+          "pixels": 1228800,
+          "alpha0": 1067364,
+          "alpha255": 654,
+          "partialAlpha": 160782,
+          "nearOpaque250to255": 137402,
+          "transparentFraction": 0.868623,
+          "bboxAlphaOver128": [
+            289,
+            103,
+            990,
+            839
+          ]
+        },
+        "gameplayReview": "pending"
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-600-901.json"
+    },
+    {
+      "id": "silhouette-600-902",
+      "pack": "silhouette",
+      "path": "media/silhouette/silhouette-600-902.webp",
+      "bytes": 98954,
+      "sha256": "27ae4fa1ab2b6540c4de1203d89616da716b4f3d3fe430b977d5ae5afa03d47c",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "review": {
+        "status": "visual-subject-reviewed",
+        "reviewedAt": "2026-09-23",
+        "note": "Generated output visually reviewed: subject matches answer; true alpha measured. Final silhouette/reveal gameplay review still pending.",
+        "answer": "فتاحة فلين",
+        "alpha": {
+          "pixels": 1228800,
+          "alpha0": 1077473,
+          "alpha255": 1298,
+          "partialAlpha": 150029,
+          "nearOpaque250to255": 116982,
+          "transparentFraction": 0.87685,
+          "bboxAlphaOver128": [
+            227,
+            93,
+            1054,
+            862
+          ]
+        },
+        "gameplayReview": "pending"
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-600-902.json"
+    },
+    {
+      "id": "silhouette-600-903",
+      "pack": "silhouette",
+      "path": "media/silhouette/silhouette-600-903.webp",
+      "bytes": 169996,
+      "sha256": "f0d32cae423a796846be277fe96c779394c96d9429ba2c6a8ecacc9dee865c57",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "review": {
+        "status": "visual-subject-reviewed",
+        "reviewedAt": "2026-09-23",
+        "note": "Generated output visually reviewed: subject matches answer; true alpha measured. Final silhouette/reveal gameplay review still pending.",
+        "answer": "زجاجة عطر",
+        "alpha": {
+          "pixels": 1228800,
+          "alpha0": 988363,
+          "alpha255": 373,
+          "partialAlpha": 240064,
+          "nearOpaque250to255": 220423,
+          "transparentFraction": 0.804332,
+          "bboxAlphaOver128": [
+            351,
+            147,
+            1128,
+            820
+          ]
+        },
+        "gameplayReview": "pending"
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-600-903.json"
+    },
+    {
+      "id": "silhouette-600-904",
+      "pack": "silhouette",
+      "path": "media/silhouette/silhouette-600-904.webp",
+      "bytes": 88252,
+      "sha256": "80c8c7951f9a9a0ccfc14a2a675eb0cfefea95e7039a41120b2cf1123d8b8c74",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "review": {
+        "status": "visual-subject-reviewed",
+        "reviewedAt": "2026-09-23",
+        "note": "Generated output visually reviewed: subject matches answer; true alpha measured. Final silhouette/reveal gameplay review still pending.",
+        "answer": "غواصة",
+        "alpha": {
+          "pixels": 1228800,
+          "alpha0": 1012235,
+          "alpha255": 744,
+          "partialAlpha": 215821,
+          "nearOpaque250to255": 188971,
+          "transparentFraction": 0.823759,
+          "bboxAlphaOver128": [
+            113,
+            249,
+            1216,
+            683
+          ]
+        },
+        "gameplayReview": "pending"
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-600-904.json"
+    },
+    {
+      "id": "silhouette-600-905",
+      "pack": "silhouette",
+      "path": "media/silhouette/silhouette-600-905.webp",
+      "bytes": 135388,
+      "sha256": "81215c41c7a30eb8157144967b9be7efc7d6b32aa9fc4210166e4ce97b28ee12",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "review": {
+        "status": "visual-subject-reviewed",
+        "reviewedAt": "2026-09-23",
+        "note": "Generated output visually reviewed: subject matches answer; true alpha measured. Final silhouette/reveal gameplay review still pending.",
+        "answer": "ورقة بلوط",
+        "alpha": {
+          "pixels": 1228800,
+          "alpha0": 976004,
+          "alpha255": 923,
+          "partialAlpha": 251873,
+          "nearOpaque250to255": 230646,
+          "transparentFraction": 0.794274,
+          "bboxAlphaOver128": [
+            266,
+            183,
+            1058,
+            781
+          ]
+        },
+        "gameplayReview": "pending"
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-600-905.json"
+    },
+    {
+      "id": "silhouette-600-906",
+      "pack": "silhouette",
+      "path": "media/silhouette/silhouette-600-906.webp",
+      "bytes": 186430,
+      "sha256": "368818d404903ea9e31c8a0487316ba3d9d2da9db856214e22794b458a6db4d1",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "review": {
+        "status": "visual-subject-reviewed",
+        "reviewedAt": "2026-09-23",
+        "note": "Generated output visually reviewed: subject matches answer; true alpha measured. Final silhouette/reveal gameplay review still pending.",
+        "answer": "أناناس",
+        "alpha": {
+          "pixels": 1228800,
+          "alpha0": 972236,
+          "alpha255": 345,
+          "partialAlpha": 256219,
+          "nearOpaque250to255": 198791,
+          "transparentFraction": 0.791208,
+          "bboxAlphaOver128": [
+            431,
+            72,
+            866,
+            904
+          ]
+        },
+        "gameplayReview": "pending"
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-600-906.json"
+    },
+    {
+      "id": "silhouette-600-907",
+      "pack": "silhouette",
+      "path": "media/silhouette/silhouette-600-907.webp",
+      "bytes": 61330,
+      "sha256": "02eaa7d950349fe0139530218c87e4bc87a57a3a05d9871e8ba2eca5817229a7",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "review": {
+        "status": "visual-subject-reviewed",
+        "reviewedAt": "2026-09-23",
+        "note": "Generated output visually reviewed: subject matches answer; true alpha measured. Final silhouette/reveal gameplay review still pending.",
+        "answer": "غيتار كهربائي",
+        "alpha": {
+          "pixels": 1228800,
+          "alpha0": 1094771,
+          "alpha255": 694,
+          "partialAlpha": 133335,
+          "nearOpaque250to255": 118501,
+          "transparentFraction": 0.890927,
+          "bboxAlphaOver128": [
+            478,
+            21,
+            802,
+            938
+          ]
+        },
+        "gameplayReview": "pending"
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-600-907.json"
+    },
+    {
+      "id": "silhouette-600-908",
+      "pack": "silhouette",
+      "path": "media/silhouette/silhouette-600-908.webp",
+      "bytes": 216480,
+      "sha256": "80c0fb184e1822b2837a57ffccee9a09ac7bb84b9cafe7d9746600ed6f987f22",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "review": {
+        "status": "visual-subject-reviewed",
+        "reviewedAt": "2026-09-23",
+        "note": "Generated output visually reviewed: subject matches answer; true alpha measured. Final silhouette/reveal gameplay review still pending.",
+        "answer": "مروحة",
+        "alpha": {
+          "pixels": 1228800,
+          "alpha0": 942652,
+          "alpha255": 341,
+          "partialAlpha": 285807,
+          "nearOpaque250to255": 168777,
+          "transparentFraction": 0.767132,
+          "bboxAlphaOver128": [
+            431,
+            79,
+            918,
+            884
+          ]
+        },
+        "gameplayReview": "pending"
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-600-908.json"
+    },
+    {
+      "id": "silhouette-800-901",
+      "pack": "silhouette",
+      "path": "media/silhouette/silhouette-800-901.webp",
+      "bytes": 110122,
+      "sha256": "b6e5ede03192f90d45855e7062d8e6a2bbec21c6b08ab0cc05a6937c921e7bc9",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "review": {
+        "status": "visual-subject-reviewed",
+        "reviewedAt": "2026-09-23",
+        "note": "Generated output visually reviewed: subject matches answer; true alpha measured. Final silhouette/reveal gameplay review still pending.",
+        "answer": "مالك الحزين",
+        "alpha": {
+          "pixels": 1228800,
+          "alpha0": 1085106,
+          "alpha255": 529,
+          "partialAlpha": 143165,
+          "nearOpaque250to255": 103133,
+          "transparentFraction": 0.883062,
+          "bboxAlphaOver128": [
+            370,
+            93,
+            937,
+            887
+          ]
+        },
+        "gameplayReview": "pending"
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-800-901.json"
+    },
+    {
+      "id": "silhouette-800-902",
+      "pack": "silhouette",
+      "path": "media/silhouette/silhouette-800-902.webp",
+      "bytes": 118224,
+      "sha256": "bb3df69b002f9dc10892a8b267519dda28e195b9acf9f5186c94719d7bd181f9",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "review": {
+        "status": "visual-subject-reviewed",
+        "reviewedAt": "2026-09-23",
+        "note": "Generated output visually reviewed: subject matches answer; true alpha measured. Final silhouette/reveal gameplay review still pending.",
+        "answer": "مثقاب يدوي",
+        "alpha": {
+          "pixels": 1228800,
+          "alpha0": 1048460,
+          "alpha255": 993,
+          "partialAlpha": 179347,
+          "nearOpaque250to255": 156607,
+          "transparentFraction": 0.853239,
+          "bboxAlphaOver128": [
+            69,
+            282,
+            1216,
+            744
+          ]
+        },
+        "gameplayReview": "pending"
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-800-902.json"
+    },
+    {
+      "id": "silhouette-800-903",
+      "pack": "silhouette",
+      "path": "media/silhouette/silhouette-800-903.webp",
+      "bytes": 75524,
+      "sha256": "247d747d6ef8f7e2b5a0896378b92af46e7aa3b72a16e57e637b3456f9b55178",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "review": {
+        "status": "visual-subject-reviewed",
+        "reviewedAt": "2026-09-23",
+        "note": "Generated output visually reviewed: subject matches answer; true alpha measured. Final silhouette/reveal gameplay review still pending.",
+        "answer": "إبرة خياطة",
+        "alpha": {
+          "pixels": 1228800,
+          "alpha0": 1167408,
+          "alpha255": 533,
+          "partialAlpha": 60859,
+          "nearOpaque250to255": 33513,
+          "transparentFraction": 0.950039,
+          "bboxAlphaOver128": [
+            259,
+            182,
+            1080,
+            816
+          ]
+        },
+        "gameplayReview": "pending"
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-800-903.json"
+    },
+    {
+      "id": "silhouette-800-904",
+      "pack": "silhouette",
+      "path": "media/silhouette/silhouette-800-904.webp",
+      "bytes": 158936,
+      "sha256": "aae475c12a3e58c1f69bcde0390cf6da516099585607f116c452bbac1e7d1cd1",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "review": {
+        "status": "visual-subject-reviewed",
+        "reviewedAt": "2026-09-23",
+        "note": "Generated output visually reviewed: subject matches answer; true alpha measured. Final silhouette/reveal gameplay review still pending.",
+        "answer": "طائرة ثنائية السطح",
+        "alpha": {
+          "pixels": 1228800,
+          "alpha0": 959582,
+          "alpha255": 1487,
+          "partialAlpha": 267731,
+          "nearOpaque250to255": 216642,
+          "transparentFraction": 0.78091,
+          "bboxAlphaOver128": [
+            147,
+            260,
+            1217,
+            762
+          ]
+        },
+        "gameplayReview": "pending"
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-800-904.json"
+    },
+    {
+      "id": "silhouette-800-905",
+      "pack": "silhouette",
+      "path": "media/silhouette/silhouette-800-905.webp",
+      "bytes": 174244,
+      "sha256": "a8f74f34f89b652e1bee5800105b23ad1c69ff9f772f0e8025047002c5c52f52",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "review": {
+        "status": "needs-regeneration",
+        "reviewedAt": "2026-09-23",
+        "note": "Regenerate: petiole appears joined to the leaf apex rather than heart-shaped basal notch. Correct Monstera anatomy; preserve split/perforated leaf.",
+        "answer": "مونستيرا",
+        "alpha": {
+          "pixels": 1228800,
+          "alpha0": 916508,
+          "alpha255": 1976,
+          "partialAlpha": 310316,
+          "nearOpaque250to255": 266165,
+          "transparentFraction": 0.745856,
+          "bboxAlphaOver128": [
+            295,
+            155,
+            994,
+            837
+          ]
+        },
+        "gameplayReview": "pending"
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-800-905.json"
+    },
+    {
+      "id": "silhouette-800-906",
+      "pack": "silhouette",
+      "path": "media/silhouette/silhouette-800-906.webp",
+      "bytes": 200336,
+      "sha256": "e9aa172449ca14ecadab6809150d7ab6cbc74392d93c9cf872ddc246a6377173",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "review": {
+        "status": "visual-subject-reviewed",
+        "reviewedAt": "2026-09-23",
+        "note": "Generated output visually reviewed: subject matches answer; true alpha measured. Final silhouette/reveal gameplay review still pending.",
+        "answer": "زنجبيل",
+        "alpha": {
+          "pixels": 1228800,
+          "alpha0": 901714,
+          "alpha255": 396,
+          "partialAlpha": 326690,
+          "nearOpaque250to255": 294174,
+          "transparentFraction": 0.733817,
+          "bboxAlphaOver128": [
+            221,
+            166,
+            1070,
+            794
+          ]
+        },
+        "gameplayReview": "pending"
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-800-906.json"
+    },
+    {
+      "id": "silhouette-800-907",
+      "pack": "silhouette",
+      "path": "media/silhouette/silhouette-800-907.webp",
+      "bytes": 204688,
+      "sha256": "4dddd125c4ccd75e78685045e34bba50c5eaab728c9bf8591504ceb67780f0e0",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "review": {
+        "status": "visual-subject-reviewed",
+        "reviewedAt": "2026-09-23",
+        "note": "Generated output visually reviewed: subject matches answer; true alpha measured. Final silhouette/reveal gameplay review still pending.",
+        "answer": "هورن",
+        "alpha": {
+          "pixels": 1228800,
+          "alpha0": 956019,
+          "alpha255": 1415,
+          "partialAlpha": 271366,
+          "nearOpaque250to255": 214674,
+          "transparentFraction": 0.77801,
+          "bboxAlphaOver128": [
+            237,
+            121,
+            1044,
+            808
+          ]
+        },
+        "gameplayReview": "pending"
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-800-907.json"
+    },
+    {
+      "id": "silhouette-800-908",
+      "pack": "silhouette",
+      "path": "media/silhouette/silhouette-800-908.webp",
+      "bytes": 81820,
+      "sha256": "cb79c991227a52c89bce67b66146546be05752e81e6005e6a9b020a1a4951fb9",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "review": {
+        "status": "visual-subject-reviewed",
+        "reviewedAt": "2026-09-23",
+        "note": "Generated output visually reviewed: subject matches answer; true alpha measured. Final silhouette/reveal gameplay review still pending.",
+        "answer": "مصباح زيت",
+        "alpha": {
+          "pixels": 1228800,
+          "alpha0": 1068596,
+          "alpha255": 548,
+          "partialAlpha": 159656,
+          "nearOpaque250to255": 140493,
+          "transparentFraction": 0.869626,
+          "bboxAlphaOver128": [
+            487,
+            95,
+            883,
+            867
+          ]
+        },
+        "gameplayReview": "pending"
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-800-908.json"
+    },
+    {
+      "id": "silhouette",
+      "pack": "silhouette",
+      "path": "public/media/badeeha-covers/silhouette.webp",
+      "bytes": 28340,
+      "sha256": "b7748ef1e3992552f4d9557e7974ff81c432dd45f0ac6dc02e4e01321871d53b",
+      "dimensions": [
+        640,
+        480
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette.json"
+    },
+    {
+      "id": "sound",
+      "pack": "sound",
+      "path": "public/media/badeeha-covers/sound.webp",
+      "bytes": 23812,
+      "sha256": "bfefc68ccbd71fd5b328e88bbabb3cc23bfa8c7801346047035c4c7f8de08c75",
+      "dimensions": [
+        640,
+        480
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/sound.json"
+    },
+    {
+      "id": "spotdiff",
+      "pack": "spotdiff",
+      "path": "public/media/badeeha-covers/spotdiff.webp",
+      "bytes": 18244,
+      "sha256": "21e39f138948bc362989a3eb89997ffc1390b2f9c9b7847d9398cace861948f8",
+      "dimensions": [
+        640,
+        480
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff.json"
+    },
+    {
+      "id": "tilepuzzle-200-901",
+      "pack": "tilepuzzle",
+      "path": "media/tilepuzzle/tilepuzzle-200-901.webp",
+      "bytes": 223584,
+      "sha256": "caa05c33834684f30e8f467fa1cdd01af3fff013e34da70cebc42455430fc1d7",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/tilepuzzle-200-901.json"
+    },
+    {
+      "id": "tilepuzzle-200-902",
+      "pack": "tilepuzzle",
+      "path": "media/tilepuzzle/tilepuzzle-200-902.webp",
+      "bytes": 243276,
+      "sha256": "4cf713cc9337c3750a883a7282dd06e4071e9e2bcd2ece51162c5f79793f47b9",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/tilepuzzle-200-902.json"
+    },
+    {
+      "id": "tilepuzzle-200-903",
+      "pack": "tilepuzzle",
+      "path": "media/tilepuzzle/tilepuzzle-200-903.webp",
+      "bytes": 100952,
+      "sha256": "b0b1fa3f3db8f886cd018a369db092335ab29b52dabd54250ace708b9689cd0a",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/tilepuzzle-200-903.json"
+    },
+    {
+      "id": "tilepuzzle-200-904",
+      "pack": "tilepuzzle",
+      "path": "media/tilepuzzle/tilepuzzle-200-904.webp",
+      "bytes": 240738,
+      "sha256": "b6b0e0957e810088e5fab3e5ca806d36e31ba79f74e2e03d204fa07a30154d26",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/tilepuzzle-200-904.json"
+    },
+    {
+      "id": "tilepuzzle-200-905",
+      "pack": "tilepuzzle",
+      "path": "media/tilepuzzle/tilepuzzle-200-905.webp",
+      "bytes": 212148,
+      "sha256": "42e7b953f337ac004dd1f96fb1468e295828669725ca80a652dd3634f86702a5",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/tilepuzzle-200-905.json"
+    },
+    {
+      "id": "tilepuzzle-200-906",
+      "pack": "tilepuzzle",
+      "path": "media/tilepuzzle/tilepuzzle-200-906.webp",
+      "bytes": 247110,
+      "sha256": "7fdac8e625ea6ebcb86cd4b11a550714ca2533f5792785335e2018c84b7e1b40",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/tilepuzzle-200-906.json"
+    },
+    {
+      "id": "tilepuzzle-200-907",
+      "pack": "tilepuzzle",
+      "path": "media/tilepuzzle/tilepuzzle-200-907.webp",
+      "bytes": 218400,
+      "sha256": "9277c5a6346f92008015209e8922beed5aebd3c0fbbae19a47d08906ba2679d0",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/tilepuzzle-200-907.json"
+    },
+    {
+      "id": "tilepuzzle-200-908",
+      "pack": "tilepuzzle",
+      "path": "media/tilepuzzle/tilepuzzle-200-908.webp",
+      "bytes": 213668,
+      "sha256": "e4938640b3b2701fe0265a54e4c2ed7233ab790ca1ca0abcc4d0354c63dabebc",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/tilepuzzle-200-908.json"
+    },
+    {
+      "id": "tilepuzzle-400-901",
+      "pack": "tilepuzzle",
+      "path": "media/tilepuzzle/tilepuzzle-400-901.webp",
+      "bytes": 209854,
+      "sha256": "8f156a9771c9fc7291145abfdeaaa825bbbcf2be9d77cf776416ef0654118f12",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/tilepuzzle-400-901.json"
+    },
+    {
+      "id": "tilepuzzle-400-902",
+      "pack": "tilepuzzle",
+      "path": "media/tilepuzzle/tilepuzzle-400-902.webp",
+      "bytes": 226204,
+      "sha256": "d9640f05e674853db3c3f899841b7b31b2b14de40d3cd38a72221f71ce4a6716",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/tilepuzzle-400-902.json"
+    },
+    {
+      "id": "tilepuzzle-400-903",
+      "pack": "tilepuzzle",
+      "path": "media/tilepuzzle/tilepuzzle-400-903.webp",
+      "bytes": 177402,
+      "sha256": "5fc55f46f84c75afde24a7d3ab9a7ad9994729b83b67cc5d938c8028a1ee1118",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/tilepuzzle-400-903.json"
+    },
+    {
+      "id": "tilepuzzle-400-904",
+      "pack": "tilepuzzle",
+      "path": "media/tilepuzzle/tilepuzzle-400-904.webp",
+      "bytes": 175402,
+      "sha256": "15acd95f0206017b698c3a8a162f131a0df94b637f74080b2880b800796b41aa",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/tilepuzzle-400-904.json"
+    },
+    {
+      "id": "tilepuzzle-400-905",
+      "pack": "tilepuzzle",
+      "path": "media/tilepuzzle/tilepuzzle-400-905.webp",
+      "bytes": 222908,
+      "sha256": "b50fa155c8913ea3c1a45afe11d066e4806d8de137f12a9ece344a22846cc476",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/tilepuzzle-400-905.json"
+    },
+    {
+      "id": "tilepuzzle-400-906",
+      "pack": "tilepuzzle",
+      "path": "media/tilepuzzle/tilepuzzle-400-906.webp",
+      "bytes": 236196,
+      "sha256": "cb11a58c861078838c9d3855b479bb63c62c7e1732d04edfb6dfa8e8b7804611",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/tilepuzzle-400-906.json"
+    },
+    {
+      "id": "tilepuzzle-400-907",
+      "pack": "tilepuzzle",
+      "path": "media/tilepuzzle/tilepuzzle-400-907.webp",
+      "bytes": 164902,
+      "sha256": "ffeedae6bf14c9089c6dacc29deef361dc6fdc70226a01dbf7bd69f1b6bbbce4",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/tilepuzzle-400-907.json"
+    },
+    {
+      "id": "tilepuzzle-400-908",
+      "pack": "tilepuzzle",
+      "path": "media/tilepuzzle/tilepuzzle-400-908.webp",
+      "bytes": 234578,
+      "sha256": "97993702b93c7eb3183f0a5e0149c0155d877edd4202fdcbf871adadffe7aefc",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/tilepuzzle-400-908.json"
+    },
+    {
+      "id": "tilepuzzle-600-901",
+      "pack": "tilepuzzle",
+      "path": "media/tilepuzzle/tilepuzzle-600-901.webp",
+      "bytes": 221478,
+      "sha256": "a6e46c24975f6e575a128ce944cd3c55bed4bb9e1a35d2d7982a6469fa89a505",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/tilepuzzle-600-901.json"
+    },
+    {
+      "id": "tilepuzzle-600-902",
+      "pack": "tilepuzzle",
+      "path": "media/tilepuzzle/tilepuzzle-600-902.webp",
+      "bytes": 252766,
+      "sha256": "de78cccae5b7d3e9ca90b104a3601026a38f22aaff6d24201153eed6b60052c7",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/tilepuzzle-600-902.json"
+    },
+    {
+      "id": "tilepuzzle-600-903",
+      "pack": "tilepuzzle",
+      "path": "media/tilepuzzle/tilepuzzle-600-903.webp",
+      "bytes": 232420,
+      "sha256": "233f287461ee98e6ddae11c17f0a73f97c00baca6404069df464315b465720f7",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/tilepuzzle-600-903.json"
+    },
+    {
+      "id": "tilepuzzle-600-904",
+      "pack": "tilepuzzle",
+      "path": "media/tilepuzzle/tilepuzzle-600-904.webp",
+      "bytes": 217448,
+      "sha256": "dd71a37898a1dda619da693a6d7cba4aa817f59637deca3c75ccd761244efad7",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/tilepuzzle-600-904.json"
+    },
+    {
+      "id": "tilepuzzle-600-905",
+      "pack": "tilepuzzle",
+      "path": "media/tilepuzzle/tilepuzzle-600-905.webp",
+      "bytes": 235310,
+      "sha256": "664fdebc6333cdc207502951aa3fc2649a1a8111bea38b2c7bd146714a50e2f6",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/tilepuzzle-600-905.json"
+    },
+    {
+      "id": "tilepuzzle-600-906",
+      "pack": "tilepuzzle",
+      "path": "media/tilepuzzle/tilepuzzle-600-906.webp",
+      "bytes": 209904,
+      "sha256": "a66034d5920c98e8c4258baf21219de9c5dc41df9585007806df052e8c84d364",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/tilepuzzle-600-906.json"
+    },
+    {
+      "id": "tilepuzzle-600-907",
+      "pack": "tilepuzzle",
+      "path": "media/tilepuzzle/tilepuzzle-600-907.webp",
+      "bytes": 216108,
+      "sha256": "f84ced51ff13519a640b3c320efab3b81bf8cb40ba2ef4ce9913b5f94f681aa9",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/tilepuzzle-600-907.json"
+    },
+    {
+      "id": "tilepuzzle-600-908",
+      "pack": "tilepuzzle",
+      "path": "media/tilepuzzle/tilepuzzle-600-908.webp",
+      "bytes": 209122,
+      "sha256": "19cf0929c4103f4afe03083f569f2dbeeb54d31c32d1ecb0e57efebd6ab6feed",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/tilepuzzle-600-908.json"
+    },
+    {
+      "id": "tilepuzzle-800-901",
+      "pack": "tilepuzzle",
+      "path": "media/tilepuzzle/tilepuzzle-800-901.webp",
+      "bytes": 239230,
+      "sha256": "d673f6f6b91a8067d3d05c50f72978870e97a61651500b85c35c5a86438f456f",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/tilepuzzle-800-901.json"
+    },
+    {
+      "id": "tilepuzzle-800-902",
+      "pack": "tilepuzzle",
+      "path": "media/tilepuzzle/tilepuzzle-800-902.webp",
+      "bytes": 204878,
+      "sha256": "57d240ecd353caec8dcf44aae9a1394e7175d5e58a79df0442cb311fe9f9a0f7",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/tilepuzzle-800-902.json"
+    },
+    {
+      "id": "tilepuzzle-800-903",
+      "pack": "tilepuzzle",
+      "path": "media/tilepuzzle/tilepuzzle-800-903.webp",
+      "bytes": 218768,
+      "sha256": "c1e0ab627d98ad373187d3f0ce4e32664d0d0c3e3c75db077f3c204bb99c8670",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/tilepuzzle-800-903.json"
+    },
+    {
+      "id": "tilepuzzle-800-904",
+      "pack": "tilepuzzle",
+      "path": "media/tilepuzzle/tilepuzzle-800-904.webp",
+      "bytes": 205824,
+      "sha256": "3b1b78cbcf18142981a4e0e5f83a24bd3d11547d5f051303d8a3fd7b3c759036",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/tilepuzzle-800-904.json"
+    },
+    {
+      "id": "tilepuzzle-800-905",
+      "pack": "tilepuzzle",
+      "path": "media/tilepuzzle/tilepuzzle-800-905.webp",
+      "bytes": 223726,
+      "sha256": "9afb257e5681183aec90104bad1297d67c300a977eb2e326fa1e6fe702066154",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/tilepuzzle-800-905.json"
+    },
+    {
+      "id": "tilepuzzle-800-906",
+      "pack": "tilepuzzle",
+      "path": "media/tilepuzzle/tilepuzzle-800-906.webp",
+      "bytes": 216672,
+      "sha256": "1d07d925e62b25da8f47141f2736e359d9ebb090888b97e249c36e6606de5864",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/tilepuzzle-800-906.json"
+    },
+    {
+      "id": "tilepuzzle-800-908",
+      "pack": "tilepuzzle",
+      "path": "media/tilepuzzle/tilepuzzle-800-908.webp",
+      "bytes": 256004,
+      "sha256": "b7330922458be4f4a02b308cb861ac1add41e85770bc9458eeff57286f1df1b3",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/tilepuzzle-800-908.json"
+    },
+    {
+      "id": "tilepuzzle",
+      "pack": "tilepuzzle",
+      "path": "public/media/badeeha-covers/tilepuzzle.webp",
+      "bytes": 34692,
+      "sha256": "b51d6bc245b825694e306c47f501112a7642a082e495edcce528796b1a12abd4",
+      "dimensions": [
+        640,
+        480
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/tilepuzzle.json"
+    },
+    {
+      "id": "zoom-1000-901",
+      "pack": "zoom",
+      "path": "media/zoom/zoom-1000-901.webp",
+      "bytes": 174942,
+      "sha256": "c76cbb00ad9fd4ba6430152dbf35dcab1f5ea50f5ecc0648eda996db2ac0be8a",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/zoom-1000-901.json"
+    },
+    {
+      "id": "zoom-1000-902",
+      "pack": "zoom",
+      "path": "media/zoom/zoom-1000-902.webp",
+      "bytes": 84500,
+      "sha256": "736712e4b3b1291f7ef0c82e47a410c27bd9960aaf2f7caa6cc7da2d07174ba2",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/zoom-1000-902.json"
+    },
+    {
+      "id": "zoom-1000-903",
+      "pack": "zoom",
+      "path": "media/zoom/zoom-1000-903.webp",
+      "bytes": 182210,
+      "sha256": "b3b27bcd7e8ebe7093b7fa5b836e68da85432aad4c8938339c5f1869c80275d5",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/zoom-1000-903.json"
+    },
+    {
+      "id": "zoom-1000-904",
+      "pack": "zoom",
+      "path": "media/zoom/zoom-1000-904.webp",
+      "bytes": 175066,
+      "sha256": "7bc7b2633afb82feacb9b551cb4b68937f72bf2a58a0be32206f2acd6534d592",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/zoom-1000-904.json"
+    },
+    {
+      "id": "zoom-1000-905",
+      "pack": "zoom",
+      "path": "media/zoom/zoom-1000-905.webp",
+      "bytes": 211710,
+      "sha256": "67a718bcc8c2c1cc84381aa848375aa2e68aea4d29e1558e1efc0c421033da22",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/zoom-1000-905.json"
+    },
+    {
+      "id": "zoom-1000-906",
+      "pack": "zoom",
+      "path": "media/zoom/zoom-1000-906.webp",
+      "bytes": 52824,
+      "sha256": "7f3b72e46c986365f66389b82b972808d9761d4cf9f9d2a2e2f8323ec4ba8c7c",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/zoom-1000-906.json"
+    },
+    {
+      "id": "zoom-1000-907",
+      "pack": "zoom",
+      "path": "media/zoom/zoom-1000-907.webp",
+      "bytes": 163066,
+      "sha256": "5c2badeaf0ff2be7f9218c6f27c363885c817ad568eaf5e126c60eaa500f7c13",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/zoom-1000-907.json"
+    },
+    {
+      "id": "zoom-1000-908",
+      "pack": "zoom",
+      "path": "media/zoom/zoom-1000-908.webp",
+      "bytes": 180096,
+      "sha256": "199f1a02789fe31d7d17398eab8540b0e54fd7de25b08e680aa70a74d4e6d7ee",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/zoom-1000-908.json"
+    },
+    {
+      "id": "zoom-800-901",
+      "pack": "zoom",
+      "path": "media/zoom/zoom-800-901.webp",
+      "bytes": 217592,
+      "sha256": "2adf27f1a172504227a406312f416ef3579727bf3ef8c3e971a3f9bf9bc7e91c",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/zoom-800-901.json"
+    },
+    {
+      "id": "zoom-800-902",
+      "pack": "zoom",
+      "path": "media/zoom/zoom-800-902.webp",
+      "bytes": 98448,
+      "sha256": "bb7c92e1f2ffb1bdda4c30c57b7d2b52feddba6885f5d3ac179728b3c1e38553",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/zoom-800-902.json"
+    },
+    {
+      "id": "zoom-800-903",
+      "pack": "zoom",
+      "path": "media/zoom/zoom-800-903.webp",
+      "bytes": 72874,
+      "sha256": "7dd209e6d3de76a45fe262707f5f81053ca2d6826e7ab5891aac60f193b500e7",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/zoom-800-903.json"
+    },
+    {
+      "id": "zoom-800-904",
+      "pack": "zoom",
+      "path": "media/zoom/zoom-800-904.webp",
+      "bytes": 110978,
+      "sha256": "3e01b794a94569005a9741e79981dd2a39e7831a241db27e313c021eed81f60d",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/zoom-800-904.json"
+    },
+    {
+      "id": "zoom-800-905",
+      "pack": "zoom",
+      "path": "media/zoom/zoom-800-905.webp",
+      "bytes": 45728,
+      "sha256": "f3b4ae2e6d3316a029a0fe13d74c195b2dac1afbc82dff613d9fcb5d98b271a1",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/zoom-800-905.json"
+    },
+    {
+      "id": "zoom-800-906",
+      "pack": "zoom",
+      "path": "media/zoom/zoom-800-906.webp",
+      "bytes": 253224,
+      "sha256": "b5b5747bdca3e29eeda90bf7874b38901c1efa48b4a57632bef67a8092093747",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/zoom-800-906.json"
+    },
+    {
+      "id": "zoom-800-907",
+      "pack": "zoom",
+      "path": "media/zoom/zoom-800-907.webp",
+      "bytes": 162318,
+      "sha256": "1deaf7a3d5f6e2b86f861fdc7226277fc9a4e26642ea08704a611de7e3416500",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/zoom-800-907.json"
+    },
+    {
+      "id": "zoom-800-908",
+      "pack": "zoom",
+      "path": "media/zoom/zoom-800-908.webp",
+      "bytes": 150032,
+      "sha256": "a3e082c5de23f9eede150f305813b4f8e9aa4379a4e40f60a21033cfebe55bcf",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/zoom-800-908.json"
+    },
+    {
+      "id": "zoom",
+      "pack": "zoom",
+      "path": "public/media/badeeha-covers/zoom.webp",
+      "bytes": 50762,
+      "sha256": "0b0c78a72d8d2f50565ba731ce785cd9412fa3b2a298eed05758bc9221818cdf",
+      "dimensions": [
+        640,
+        480
+      ],
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      },
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/zoom.json"
+    }
+  ],
+  "generatedRecordCountsByPack": {
+    "anime": 1,
+    "blur": 25,
+    "dragonball": 1,
+    "flags": 41,
+    "guesscar": 19,
+    "hints": 1,
+    "onepiece": 1,
+    "placefinder": 9,
+    "reveal": 24,
+    "silhouette": 33,
+    "sound": 1,
+    "spotdiff": 1,
+    "tilepuzzle": 32,
+    "zoom": 17
+  },
+  "soundDraft": [
+    {
+      "qid": "sound-200-901",
+      "path": "media/sound/sound-200-901.mp3",
+      "bytes": 97010,
+      "sha256": "89c5ac0ad2f2d7f3b6e4cbb4f16a112b796fd89d320ce67e70012bf4d2289d4d",
+      "verified": false
+    },
+    {
+      "qid": "sound-200-902",
+      "path": "media/sound/sound-200-902.mp3",
+      "bytes": 56886,
+      "sha256": "cfae30c0c17168dd957b809c56ee8a4b583e720ce16e615b1c8507ec14ada9fc",
+      "verified": false
+    },
+    {
+      "qid": "sound-200-903",
+      "path": "media/sound/sound-200-903.mp3",
+      "bytes": 73186,
+      "sha256": "548f2712e93914a616670c0a488bec3febae9f74bc579aa31e3097bf82051c4c",
+      "verified": false
+    },
+    {
+      "qid": "sound-200-904",
+      "path": "media/sound/sound-200-904.mp3",
+      "bytes": 56886,
+      "sha256": "3c3c0879835da5e8eb3bea873b48f1924e21e7b63df84f79d285f5a3461a530d",
+      "verified": false
+    },
+    {
+      "qid": "sound-200-905",
+      "path": "media/sound/sound-200-905.mp3",
+      "bytes": 81128,
+      "sha256": "7fe6da4612125b62bb5d2a7cad49ae4f29eded6b6864d86ce49b2052eb17c678",
+      "verified": false
+    },
+    {
+      "qid": "sound-200-906",
+      "path": "media/sound/sound-200-906.mp3",
+      "bytes": 65245,
+      "sha256": "f668cf314486c33baebf9c2dcc99e7d25ca6e2909e0f6d4f11738c01208919e5",
+      "verified": false
+    },
+    {
+      "qid": "sound-200-907",
+      "path": "media/sound/sound-200-907.mp3",
+      "bytes": 61484,
+      "sha256": "c44eb465edb544f356e6638bd956cba5fa792e584ca0db2e1516a147e106d2c0",
+      "verified": false
+    },
+    {
+      "qid": "sound-200-908",
+      "path": "media/sound/sound-200-908.mp3",
+      "bytes": 65245,
+      "sha256": "e4e6105a3c017d2d8f0b36741a470b8dbc3b86d410a0db38683ac6b1e265f909",
+      "verified": false
+    },
+    {
+      "qid": "sound-400-901",
+      "path": "media/sound/sound-400-901.mp3",
+      "bytes": 65245,
+      "sha256": "a592e3819e0425ca9f45ce6ca18fedb53b96c02b360c737237a55abfa3262704",
+      "verified": false
+    },
+    {
+      "qid": "sound-400-902",
+      "path": "media/sound/sound-400-902.mp3",
+      "bytes": 81128,
+      "sha256": "e52cef1268d82fe8a34957a75a970e740deabff1a873f23a211d1ae37be68bbb",
+      "verified": false
+    },
+    {
+      "qid": "sound-400-903",
+      "path": "media/sound/sound-400-903.mp3",
+      "bytes": 37242,
+      "sha256": "03154c52a0b77bb2093131893f71b262ad1aa4beb3f648e6cb7cfd0ac99a23bf",
+      "verified": false
+    },
+    {
+      "qid": "sound-400-904",
+      "path": "media/sound/sound-400-904.mp3",
+      "bytes": 73186,
+      "sha256": "98ebfb9a063a3c08ffe8a8fe270b8c779f799959649f824c5b9bc1cc44459fc5",
+      "verified": false
+    },
+    {
+      "qid": "sound-400-905",
+      "path": "media/sound/sound-400-905.mp3",
+      "bytes": 42257,
+      "sha256": "4cd3d2b3c10cabf8cebd36a385a00c8f0a827c17d35b70272ff8a498d2850b47",
+      "verified": false
+    },
+    {
+      "qid": "sound-400-906",
+      "path": "media/sound/sound-400-906.mp3",
+      "bytes": 73186,
+      "sha256": "e9996aa6a04f144af35437ab8083bac6c5004b1adc06944e46f4f28ff8ef2a0a",
+      "verified": false
+    },
+    {
+      "qid": "sound-400-907",
+      "path": "media/sound/sound-400-907.mp3",
+      "bytes": 73186,
+      "sha256": "2b2b1d2546153503d783adb710ef515b29c160f90927c8154aa729b5ecec9e68",
+      "verified": false
+    },
+    {
+      "qid": "sound-400-908",
+      "path": "media/sound/sound-400-908.mp3",
+      "bytes": 97010,
+      "sha256": "09749f04cc0ed7fb0186c82b5c2da4afb93a9d5e0007eac8d54533bb47be02f6",
+      "verified": false
+    },
+    {
+      "qid": "sound-600-901",
+      "path": "media/sound/sound-600-901.mp3",
+      "bytes": 71515,
+      "sha256": "0ed26f214ab75d3983c5b0136085220d1eda144ee272978a9b5e9cb38a19636c",
+      "verified": false
+    },
+    {
+      "qid": "sound-600-902",
+      "path": "media/sound/sound-600-902.mp3",
+      "bytes": 81128,
+      "sha256": "72fc53d2e3ddaea296ce136b8abf8e5aeb08d764cb2b9f0236e6d906c55d0795",
+      "verified": false
+    },
+    {
+      "qid": "sound-600-903",
+      "path": "media/sound/sound-600-903.mp3",
+      "bytes": 97010,
+      "sha256": "ee88fabb93ef2a2045a821c1ebd4415c010cd67ca3163646a4b573ef404cf805",
+      "verified": false
+    },
+    {
+      "qid": "sound-600-904",
+      "path": "media/sound/sound-600-904.mp3",
+      "bytes": 56886,
+      "sha256": "924b5768ca9ea4b380f251179ae2c0f0af8668cf8242340404f526b9782b4e38",
+      "verified": false
+    },
+    {
+      "qid": "sound-600-905",
+      "path": "media/sound/sound-600-905.mp3",
+      "bytes": 73186,
+      "sha256": "9bf8914594d06ba678b5ed71d71017540953c174e8b92aa67863426a09b4b30c",
+      "verified": false
+    },
+    {
+      "qid": "sound-600-906",
+      "path": "media/sound/sound-600-906.mp3",
+      "bytes": 73186,
+      "sha256": "2140d0124a3bd882d35e4bdd3a4764a16c2d195159964447965ced83c6e1bbfc",
+      "verified": false
+    },
+    {
+      "qid": "sound-600-907",
+      "path": "media/sound/sound-600-907.mp3",
+      "bytes": 97010,
+      "sha256": "69d8dbe9f0ba8a5d0afcfa9a5e0ebdd36189ca99cc2d2e07f871c7495e987dd3",
+      "verified": false
+    },
+    {
+      "qid": "sound-600-908",
+      "path": "media/sound/sound-600-908.mp3",
+      "bytes": 97010,
+      "sha256": "84bd2002f2058dfbbbec8f23c19944ca1919ae1be6cff55378155cde90a82a4a",
+      "verified": false
+    },
+    {
+      "qid": "sound-800-901",
+      "path": "media/sound/sound-800-901.mp3",
+      "bytes": 97010,
+      "sha256": "51ed3175afefb27be9b30f7dfa384ba8f076c814b5095a2a4cfe8bc46246166b",
+      "verified": false
+    },
+    {
+      "qid": "sound-800-902",
+      "path": "media/sound/sound-800-902.mp3",
+      "bytes": 97010,
+      "sha256": "9e053a728ebd55640fe152d00bd04d184efdd5dad705d62e42ca0f9c05019d9f",
+      "verified": false
+    },
+    {
+      "qid": "sound-800-903",
+      "path": "media/sound/sound-800-903.mp3",
+      "bytes": 97010,
+      "sha256": "9af8a71e0cbab95528f6e6aa8ba5ce7208285355fb22b47bcbf9e25552aad20a",
+      "verified": false
+    },
+    {
+      "qid": "sound-800-904",
+      "path": "media/sound/sound-800-904.mp3",
+      "bytes": 97010,
+      "sha256": "0c77c0970f8fe75c3717a8d9c861f507485be85a368a20ef63cbcd3b0721d36e",
+      "verified": false
+    },
+    {
+      "qid": "sound-800-905",
+      "path": "media/sound/sound-800-905.mp3",
+      "bytes": 68171,
+      "sha256": "f2591b629e438c28a70fcf5037c858343e5756cfc0a30c92e1ff590b104c74cc",
+      "verified": false
+    },
+    {
+      "qid": "sound-800-906",
+      "path": "media/sound/sound-800-906.mp3",
+      "bytes": 97010,
+      "sha256": "0c85e8aa9f2b1c43b39435062886b2f79018707a475443938e3322e042c8de63",
+      "verified": false
+    },
+    {
+      "qid": "sound-800-907",
+      "path": "media/sound/sound-800-907.mp3",
+      "bytes": 97010,
+      "sha256": "d3659f8f4c892d1e0adf2cc5f8607dda02cc065ead8e125f69f42480d7f8cb8d",
+      "verified": false
+    },
+    {
+      "qid": "sound-800-908",
+      "path": "media/sound/sound-800-908.mp3",
+      "bytes": 71097,
+      "sha256": "8db26a4476113524c4b90d0d34c522bc951941fd8dfd3c63ce98a4ca7651ba82",
+      "verified": false
+    },
+    {
+      "qid": "sound-1000-901",
+      "path": "media/sound/sound-1000-901.mp3",
+      "bytes": 73186,
+      "sha256": "a29bff7a3ac7343503fa7ef1502b9927ec7d0727a4254b0ca8f236868078a2ad",
+      "verified": false
+    },
+    {
+      "qid": "sound-1000-902",
+      "path": "media/sound/sound-1000-902.mp3",
+      "bytes": 97010,
+      "sha256": "9396e66859681dada825326b9f73ea8b85c0af7def5c75b85d2f9d9a3b660f1a",
+      "verified": false
+    },
+    {
+      "qid": "sound-1000-903",
+      "path": "media/sound/sound-1000-903.mp3",
+      "bytes": 97010,
+      "sha256": "9e98d6d8dc74b9effe65d2c4ab961c2bb493f848c28751de1345d2fbd6a8f51e",
+      "verified": false
+    },
+    {
+      "qid": "sound-1000-904",
+      "path": "media/sound/sound-1000-904.mp3",
+      "bytes": 97010,
+      "sha256": "99d9b25267779605da5d8bb4955adf82fed098fdb85b26b08ad92274480653eb",
+      "verified": false
+    },
+    {
+      "qid": "sound-1000-905",
+      "path": "media/sound/sound-1000-905.mp3",
+      "bytes": 97010,
+      "sha256": "0896efd7bd0cd433f0896d657072837adf8b261398116b87206ace43c584cd81",
+      "verified": false
+    },
+    {
+      "qid": "sound-1000-906",
+      "path": "media/sound/sound-1000-906.mp3",
+      "bytes": 97010,
+      "sha256": "ef71ae6150d543123d478b38cd03cc736e12d06fd2ae56fbb3ac0b88b990730c",
+      "verified": false
+    },
+    {
+      "qid": "sound-1000-907",
+      "path": "media/sound/sound-1000-907.mp3",
+      "bytes": 97010,
+      "sha256": "71dfd327015a43f50f201da510680de5a31cce518b631b8b0784632e66dde8c8",
+      "verified": false
+    },
+    {
+      "qid": "sound-1000-908",
+      "path": "media/sound/sound-1000-908.mp3",
+      "bytes": 97010,
+      "sha256": "2e803817230117d1aa7dfced938b7fe1229a7e7765188df43639802da87fcd8c",
+      "verified": false
+    }
+  ],
+  "handoffFiles": [
+    "docs/bank/rebuild-2026-09-18/checkpoint/blur-resume/RESUME.md",
+    "docs/bank/rebuild-2026-09-18/checkpoint/cars-resume/RESUME.md",
+    "docs/bank/rebuild-2026-09-18/checkpoint/flags-resume/README.md",
+    "docs/bank/rebuild-2026-09-18/checkpoint/placefinder-resume/README.md",
+    "docs/bank/rebuild-2026-09-18/checkpoint/reveal-resume/README.md",
+    "docs/bank/rebuild-2026-09-18/checkpoint/silhouette-resume/RESUME.md",
+    "docs/bank/rebuild-2026-09-18/checkpoint/tilepuzzle-resume/README.md"
+  ],
+  "checksAtPause": {
+    "jsonSyntax": "passed",
+    "generatedAssetHashes": "passed",
+    "generatedImagesDecode": "passed",
+    "soundFilesExistAndNonempty": "passed"
+  },
+  "remaining": "Read each handoff: rejected or pending assets are not approved; preserve old media until replacements integrate; do not rerun old plan builders over refined plans.",
+  "installedNewQuestionImageCounts": {
+    "tilepuzzle": 31,
+    "flags": 40,
+    "guesscar": 18,
+    "silhouette": 32,
+    "zoom": 40,
+    "placefinder": 8,
+    "reveal": 23,
+    "blur": 24
+  },
+  "integratedGeneratedArtManifest": "docs/bank/rebuild-2026-09-18/generated-art.json",
+  "integratedGeneratedArtCounts": {
+    "covers": 78,
+    "zoomQuestionImages": 40
+  }
+}

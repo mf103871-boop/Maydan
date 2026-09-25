@@ -1,0 +1,505 @@
+{
+  "pack": "completeproverb",
+  "reviewedAt": "2026-09-23",
+  "scope": "Only the 40 written questions in the current pack; stable IDs and tier counts preserved.",
+  "method": "Replaced all generic Wikiquote/Wikisource and whole-book PDF links with opened book passages or precise chapters. Classical collections are direct witnesses of the recorded proverbs. Modern literary texts and transcribed speech are direct witnesses of their wording, not proof of original authorship or earliest date. No story of origin, medical claim or legal judgment is asked.",
+  "limits": [
+    "No empirical player calibration. Difficulty targets remain editorial estimates.",
+    "No claim that the source hosting mirrors are original publishers or manuscript facsimiles. Islamport and Islamicbook reproduce named historical books; Hindawi/Safahat provides edited literary texts.",
+    "Some attempted Islamport pages failed with Unicode decoding errors or access errors; they were not retained. The inaccessible Wikisource stub and generic Wikiquote aggregate are not evidence.",
+    "The sayings الحاجة أم الاختراع and آخر الدواء الكي may be easier than their assigned tiers for many groups. Source verification alone cannot establish the intended success rates."
+  ],
+  "questions": [
+    {
+      "qid": "completeproverb-200-901",
+      "q": "أكمل: من جدّ ___",
+      "a": "وجد",
+      "sourceUrl": "https://www.hindawi.org/books/68042963/1/",
+      "sourceTitle": "الفارس الملثم",
+      "reviewedAt": "2026-09-23",
+      "access": "Opened source text through web retrieval; relevant passage read.",
+      "support": "Dialogue explicitly uses من جد وجد; a literary witness of wording, not an origin attribution."
+    },
+    {
+      "qid": "completeproverb-200-902",
+      "q": "أكمل: الصبر مفتاح ___",
+      "a": "الفرج",
+      "sourceUrl": "https://islamport.com/l/adb/5494/2253.htm",
+      "sourceTitle": "مجمع الأمثال",
+      "reviewedAt": "2026-09-23",
+      "access": "Opened source text through web retrieval; relevant passage read.",
+      "support": "Exact proverb الصبر مفتاح الفرج appears in the collected entries."
+    },
+    {
+      "qid": "completeproverb-200-903",
+      "q": "أكمل: يد واحدة لا ___",
+      "a": "تصفق",
+      "sourceUrl": "https://www.safahat.org/books/75241938/1/",
+      "sourceTitle": "الأمثال العامية — حرف الألف",
+      "reviewedAt": "2026-09-23",
+      "access": "Opened source text through web retrieval; relevant passage read.",
+      "support": "Entry إيد واحدة ما تسقفش explicitly glosses the saying in formal Arabic as يد واحدة لا تصفق."
+    },
+    {
+      "qid": "completeproverb-200-904",
+      "q": "أكمل: الوقاية خير من ___",
+      "a": "العلاج",
+      "sourceUrl": "https://www.safahat.org/books/41496247/3/",
+      "sourceTitle": "في الريف المصري — فلاحنا",
+      "reviewedAt": "2026-09-23",
+      "access": "Opened source text through web retrieval; relevant passage read.",
+      "support": "The author introduces the exact saying الوقاية خير من العلاج as an old saying; wording only, not medical guidance."
+    },
+    {
+      "qid": "completeproverb-200-905",
+      "q": "أكمل: الطيور على أشكالها ___",
+      "a": "تقع",
+      "sourceUrl": "https://www.safahat.org/books/80272839/3/",
+      "sourceTitle": "عبرة التاريخ — البولاندية الحسناء",
+      "reviewedAt": "2026-09-23",
+      "access": "Opened source text through web retrieval; relevant passage read.",
+      "support": "The narrative quotes الطيور على أشكالها تقع and identifies it as an Arabic proverb."
+    },
+    {
+      "qid": "completeproverb-200-906",
+      "q": "أكمل: خير الكلام ما قلّ و___",
+      "a": "دلّ",
+      "sourceUrl": "https://www.safahat.org/books/79708060/10/",
+      "sourceTitle": "مطالعات في اللغة والأدب — لكل مقام مقال",
+      "reviewedAt": "2026-09-23",
+      "access": "Opened source text through web retrieval; relevant passage read.",
+      "support": "The author cites both خير الكلام ما قل ودل and لكل مقام مقال as established expressions."
+    },
+    {
+      "qid": "completeproverb-200-907",
+      "q": "أكمل: الوقت كالسيف إن لم تقطعه ___",
+      "a": "قطعك",
+      "sourceUrl": "https://books.islam-db.com/book/جامع_تراث_العلامه_الالباني_في_الفقه/8163",
+      "sourceTitle": "جامع تراث العلامة الألباني في الفقه — صفحة 8163",
+      "reviewedAt": "2026-09-23",
+      "access": "Opened source text through web retrieval; relevant passage read.",
+      "support": "The transcribed speech explicitly quotes الوقت كالسيف إن لم تقطعه قطعك as a saying. Only this wording is used; no legal judgment from the surrounding discussion is adopted."
+    },
+    {
+      "qid": "completeproverb-200-908",
+      "q": "أكمل: لكل جواد ___",
+      "a": "كبوة",
+      "sourceUrl": "https://islamport.com/l/adb/5497/19.htm",
+      "sourceTitle": "الأمثال لأبي عبيد — ص51",
+      "reviewedAt": "2026-09-23",
+      "access": "Opened source text through web retrieval; relevant passage read.",
+      "support": "Exact saying لكل جواد كبوة occurs with related sayings about occasional mistakes."
+    },
+    {
+      "qid": "completeproverb-400-901",
+      "q": "أكمل: على قدّ لحافك مدّ ___",
+      "a": "رجلك",
+      "sourceUrl": "https://www.safahat.org/books/75241938/17/",
+      "sourceTitle": "الأمثال العامية — حرف العين",
+      "reviewedAt": "2026-09-23",
+      "access": "Opened source text through web retrieval; relevant passage read.",
+      "support": "Entry على قد لحافك مد رجلك. Primary answer changed to the attested singular; regional plural retained as a narrow equivalent.",
+      "previous": {
+        "q": "أكمل: على قدّ لحافك مدّ ___",
+        "a": "رجليك",
+        "alt": [
+          "رجلك"
+        ],
+        "sourceUrl": "https://downloads.hindawi.org/books/75241938.pdf"
+      }
+    },
+    {
+      "qid": "completeproverb-400-902",
+      "q": "أكمل: اللي بيته من قزاز ما يرميش الناس بـ___",
+      "a": "الحجارة",
+      "sourceUrl": "https://www.safahat.org/books/75241938/1/",
+      "sourceTitle": "الأمثال العامية — حرف الألف",
+      "reviewedAt": "2026-09-23",
+      "access": "Opened source text through web retrieval; relevant passage read.",
+      "support": "Entry اللي بيته من قزاز ما يرميش الناس بالحجاره. Stem aligned with the documented dialect; answer uses conventional spelling.",
+      "previous": {
+        "q": "أكمل: اللي بيته من زجاج لا يرمي الناس بـ___",
+        "a": "الحجارة",
+        "alt": [
+          "حجارة"
+        ],
+        "sourceUrl": "https://downloads.hindawi.org/books/75241938.pdf"
+      }
+    },
+    {
+      "qid": "completeproverb-400-903",
+      "q": "أكمل: من حفر حفرة لأخيه ___",
+      "a": "وقع فيها",
+      "sourceUrl": "https://www.safahat.org/books/73918028/16/",
+      "sourceTitle": "أورشليم الجديدة — بين أستير وأرميا وإيليا",
+      "reviewedAt": "2026-09-23",
+      "access": "Opened source text through web retrieval; relevant passage read.",
+      "support": "Narrative explicitly quotes من حفر حفرة لأخيه وقع فيها; literary witness of the wording."
+    },
+    {
+      "qid": "completeproverb-400-904",
+      "q": "أكمل: لسانك حصانك إن صنته ___",
+      "a": "صانك",
+      "sourceUrl": "https://www.safahat.org/books/75241938/22/",
+      "sourceTitle": "الأمثال العامية — حرف اللام",
+      "reviewedAt": "2026-09-23",
+      "access": "Opened source text through web retrieval; relevant passage read.",
+      "support": "Entry لسانك حصانك إن صنته صانك continues with the converse. Completion asks only the first clause."
+    },
+    {
+      "qid": "completeproverb-400-905",
+      "q": "أكمل: عصفور في اليد أفضل من عشرة على ___",
+      "a": "الشجرة",
+      "sourceUrl": "https://www.safahat.org/books/30903814/43/",
+      "sourceTitle": "فن التفكير الواضح — الصياغة والتأطير",
+      "reviewedAt": "2026-09-23",
+      "access": "Opened source text through web retrieval; relevant passage read.",
+      "support": "Arabic edition explicitly quotes عصفور في اليد أفضل من عشرة على الشجرة. Stem uses the witnessed أفضل variant.",
+      "previous": {
+        "q": "أكمل: عصفور في اليد خير من عشرة على ___",
+        "a": "الشجرة",
+        "alt": [],
+        "sourceUrl": "https://ar.wikiquote.org/wiki/أمثال_عربية"
+      }
+    },
+    {
+      "qid": "completeproverb-400-906",
+      "q": "أكمل: دخول الحمّام موش زي ___",
+      "a": "طلوعه",
+      "sourceUrl": "https://www.safahat.org/books/75241938/7/",
+      "sourceTitle": "الأمثال العامية — حرف الدال",
+      "reviewedAt": "2026-09-23",
+      "access": "Opened source text through web retrieval; relevant passage read.",
+      "support": "Entry دخول الحمام موش زي طلوعه; explanation defines the contrast as entry versus exit. طلوعه is primary, خروجه accepted for the same completion.",
+      "previous": {
+        "q": "أكمل: دخول الحمّام مش زي ___",
+        "a": "خروجه",
+        "alt": [],
+        "sourceUrl": "https://downloads.hindawi.org/books/75241938.pdf"
+      }
+    },
+    {
+      "qid": "completeproverb-400-907",
+      "q": "أكمل: لكل مقام ___",
+      "a": "مقال",
+      "sourceUrl": "https://www.safahat.org/books/79708060/10/",
+      "sourceTitle": "مطالعات في اللغة والأدب — لكل مقام مقال",
+      "reviewedAt": "2026-09-23",
+      "access": "Opened source text through web retrieval; relevant passage read.",
+      "support": "Exact expression is the chapter title and is discussed explicitly in the text."
+    },
+    {
+      "qid": "completeproverb-400-908",
+      "q": "أكمل: من سار على الدرب ___",
+      "a": "وصل",
+      "sourceUrl": "https://www.hindawi.org/books/68042963/1/",
+      "sourceTitle": "الفارس الملثم",
+      "reviewedAt": "2026-09-23",
+      "access": "Opened source text through web retrieval; relevant passage read.",
+      "support": "The same passage explicitly uses كل من سار على الدرب وصل. Replaces ما ضاع حق وراءه مطالب, for which this pass did not locate a suitable opened book witness.",
+      "previous": {
+        "q": "أكمل: ما ضاع حقّ وراءه ___",
+        "a": "مطالب",
+        "alt": [],
+        "sourceUrl": "https://ar.wikiquote.org/wiki/أمثال_عربية"
+      }
+    },
+    {
+      "qid": "completeproverb-600-901",
+      "q": "أكمل: الباب اللي يجي لك منه الريح سدّه و___",
+      "a": "استريح",
+      "sourceUrl": "https://www.safahat.org/books/75241938/2/",
+      "sourceTitle": "الأمثال العامية — حرف الباء",
+      "reviewedAt": "2026-09-23",
+      "access": "Opened source text through web retrieval; relevant passage read.",
+      "support": "Entry الباب اللي يجي لك منه الريح سده واستريح. Stem aligned with attested wording; formal imperative استرح retained as a narrow grammatical equivalent.",
+      "previous": {
+        "q": "أكمل: الباب اللي يجيك منه الريح سدّه و___",
+        "a": "استريح",
+        "alt": [
+          "استرح"
+        ],
+        "sourceUrl": "https://downloads.hindawi.org/books/75241938.pdf"
+      }
+    },
+    {
+      "qid": "completeproverb-600-902",
+      "q": "أكمل: الحاجة أمّ ___",
+      "a": "الاختراع",
+      "sourceUrl": "https://www.safahat.org/books/39574813/34/",
+      "sourceTitle": "أحاديث إلى الشباب — كيف يخترع الاختراع",
+      "reviewedAt": "2026-09-23",
+      "access": "Opened source text through web retrieval; relevant passage read.",
+      "support": "The author explicitly uses الحاجة أم الاختراع. Literary witness only; no claim of earliest origin."
+    },
+    {
+      "qid": "completeproverb-600-903",
+      "q": "أكمل: إذا كان الكلام من فضة كان السكوت من ___",
+      "a": "ذهب",
+      "sourceUrl": "https://www.safahat.org/books/95095863/19/",
+      "sourceTitle": "مصر التي في خاطري — مصر العمل",
+      "reviewedAt": "2026-09-23",
+      "access": "Opened source text through web retrieval; relevant passage read.",
+      "support": "Text states إذا كان الكلام من فضة كان السكوت من ذهب. Stem aligned with this variant.",
+      "previous": {
+        "q": "أكمل: إذا كان الكلام من فضة فالسكوت من ___",
+        "a": "ذهب",
+        "alt": [],
+        "sourceUrl": "https://ar.wikiquote.org/wiki/أمثال_عربية"
+      }
+    },
+    {
+      "qid": "completeproverb-600-904",
+      "q": "أكمل: رُبّ ضارّة ___",
+      "a": "نافعة",
+      "sourceUrl": "https://www.safahat.org/books/57949396/33/",
+      "sourceTitle": "امرأة تحدق في الشمس — سحابة صيف في أعالي جبل لبنان",
+      "reviewedAt": "2026-09-23",
+      "access": "Opened source text through web retrieval; relevant passage read.",
+      "support": "Author quotes رب ضارة نافعة as a saying heard from her father; exact-wording witness."
+    },
+    {
+      "qid": "completeproverb-600-905",
+      "q": "أكمل: خد الكتاب من ___",
+      "a": "عنوانه",
+      "sourceUrl": "https://www.safahat.org/books/75241938/4/",
+      "sourceTitle": "الأمثال العامية — حرف الجيم",
+      "reviewedAt": "2026-09-23",
+      "access": "Opened source text through web retrieval; relevant passage read.",
+      "support": "Entry الجواب ينقري من علوانه explicitly gives the alternative خد الكتاب من عنوانه. The stem now uses that attested alternative.",
+      "previous": {
+        "q": "أكمل: الجواب يبان من ___",
+        "a": "عنوانه",
+        "alt": [],
+        "sourceUrl": "https://downloads.hindawi.org/books/75241938.pdf"
+      }
+    },
+    {
+      "qid": "completeproverb-600-906",
+      "q": "أكمل: رُبّ أخٍ لك لم تلده ___",
+      "a": "أمك",
+      "sourceUrl": "https://islamport.com/l/adb/5497/143.htm",
+      "sourceTitle": "الأمثال لأبي عبيد — ص175",
+      "reviewedAt": "2026-09-23",
+      "access": "Opened source text through web retrieval; relevant passage read.",
+      "support": "Exact saying رب أخ لك لم تلده أمك is included under companionship. No disputed origin story is used."
+    },
+    {
+      "qid": "completeproverb-600-907",
+      "q": "أكمل: أهل مكة أعرف بـ___",
+      "a": "شعابها",
+      "sourceUrl": "https://www.islamicbook.ws/adab/zhr-alakm-fi-alamthal-w-alhkm-001.html",
+      "sourceTitle": "زهر الأكم في الأمثال والحكم — أهل مكة أعرف بشعابها",
+      "reviewedAt": "2026-09-23",
+      "access": "Opened source text through web retrieval; relevant passage read.",
+      "support": "The exact heading uses أعرف, and the explanation calls it a widely used saying. Stem changed from أدرى to أعرف.",
+      "previous": {
+        "q": "أكمل: أهل مكة أدرى بـ___",
+        "a": "شعابها",
+        "alt": [],
+        "sourceUrl": "https://ar.wikisource.org/wiki/مجمع_الأمثال"
+      }
+    },
+    {
+      "qid": "completeproverb-600-908",
+      "q": "أكمل: تجري الرياح بما لا تشتهي ___",
+      "a": "السفن",
+      "sourceUrl": "https://www.safahat.org/books/82959503/22/",
+      "sourceTitle": "شرح ديوان المتنبي — قافية النون",
+      "reviewedAt": "2026-09-23",
+      "access": "Opened source text through web retrieval; relevant passage read.",
+      "support": "The original poetic hemistich تجري الرياح بما لا تشتهي السفن appears after ما كل ما يتمنى المرء يدركه. This is proverbial verse, not anonymous prose."
+    },
+    {
+      "qid": "completeproverb-800-901",
+      "q": "أكمل: وافق شنّ ___",
+      "a": "طبقة",
+      "sourceUrl": "https://islamport.com/l/adb/5494/4439.htm",
+      "sourceTitle": "مجمع الأمثال — المثل4340",
+      "reviewedAt": "2026-09-23",
+      "access": "Opened source text through web retrieval; relevant passage read.",
+      "support": "Exact entry وافق شن طبقة; completion does not rely on the narrated origin story."
+    },
+    {
+      "qid": "completeproverb-800-902",
+      "q": "أكمل: بلغ السيل ___",
+      "a": "الزُّبى",
+      "sourceUrl": "https://islamport.com/l/adb/5494/447.htm",
+      "sourceTitle": "مجمع الأمثال — المثل436",
+      "reviewedAt": "2026-09-23",
+      "access": "Opened source text through web retrieval; relevant passage read.",
+      "support": "Exact entry بلغ السيل الزبى; explanation defines الزبى and excessive flooding."
+    },
+    {
+      "qid": "completeproverb-800-903",
+      "q": "أكمل: عند جهينة الخبر ___",
+      "a": "اليقين",
+      "sourceUrl": "https://islamport.com/l/adb/5494/2452.htm",
+      "sourceTitle": "مجمع الأمثال — المثل2383",
+      "reviewedAt": "2026-09-23",
+      "access": "Opened source text through web retrieval; relevant passage read.",
+      "support": "Exact heading عند جهينة الخبر اليقين. Alternative historical reports do not affect this attested spelling."
+    },
+    {
+      "qid": "completeproverb-800-904",
+      "q": "أكمل: رجع بخُفّي ___",
+      "a": "حنين",
+      "sourceUrl": "https://islamport.com/l/adb/5494/1605.htm",
+      "sourceTitle": "مجمع الأمثال — المثل1568",
+      "reviewedAt": "2026-09-23",
+      "access": "Opened source text through web retrieval; relevant passage read.",
+      "support": "Exact heading رجع بخفي حنين and explanation of disappointed return."
+    },
+    {
+      "qid": "completeproverb-800-905",
+      "q": "أكمل: أعطِ القوس ___",
+      "a": "باريها",
+      "sourceUrl": "https://islamport.com/l/adb/5494/2514.htm",
+      "sourceTitle": "مجمع الأمثال — المثل2445",
+      "reviewedAt": "2026-09-23",
+      "access": "Opened source text through web retrieval; relevant passage read.",
+      "support": "Exact heading أعط القوس باريها."
+    },
+    {
+      "qid": "completeproverb-800-906",
+      "q": "أكمل: الصيف ضيّعتِ ___",
+      "a": "اللبن",
+      "sourceUrl": "https://islamport.com/l/adb/5494/2801.htm",
+      "sourceTitle": "مجمع الأمثال — المثل2725",
+      "reviewedAt": "2026-09-23",
+      "access": "Opened source text through web retrieval; relevant passage read.",
+      "support": "Entry في الصيف ضيعت اللبن explicitly records الصيف ضيعت اللبن as a variant and preserves feminine kasra on ضيعتِ."
+    },
+    {
+      "qid": "completeproverb-800-907",
+      "q": "أكمل: سبق السيف ___",
+      "a": "العذل",
+      "sourceUrl": "https://islamport.com/l/adb/5494/1807.htm",
+      "sourceTitle": "مجمع الأمثال — المثل1763",
+      "reviewedAt": "2026-09-23",
+      "access": "Opened source text through web retrieval; relevant passage read.",
+      "support": "Exact heading سبق السيف العذل. No assertion of a definitive original speaker."
+    },
+    {
+      "qid": "completeproverb-800-908",
+      "q": "أكمل: زمّار الحيّ لا ___",
+      "a": "يطرب",
+      "sourceUrl": "https://www.safahat.org/books/37938293/6/",
+      "sourceTitle": "على هامش السيرة الهلالية — زمار الحي لا يطرب",
+      "reviewedAt": "2026-09-23",
+      "access": "Opened source text through web retrieval; relevant passage read.",
+      "support": "Exact formal-Arabic wording is the chapter title; primary literary witness, not an authorship claim."
+    },
+    {
+      "qid": "completeproverb-1000-901",
+      "q": "أكمل: رُبّ رمية من غير ___",
+      "a": "رامٍ",
+      "sourceUrl": "https://islamport.com/l/adb/5497/19.htm",
+      "sourceTitle": "الأمثال لأبي عبيد — ص51",
+      "reviewedAt": "2026-09-23",
+      "access": "Opened source text through web retrieval; relevant passage read.",
+      "support": "Exact saying رب رمية من غير رام. رام/رامي are narrowly equivalent orthographic/inflectional responses."
+    },
+    {
+      "qid": "completeproverb-1000-902",
+      "q": "أكمل: جزاء ___",
+      "a": "سنمّار",
+      "sourceUrl": "https://islamport.com/l/adb/5494/845.htm",
+      "sourceTitle": "مجمع الأمثال — المثل828",
+      "reviewedAt": "2026-09-23",
+      "access": "Opened source text through web retrieval; relevant passage read.",
+      "support": "Heading جزاء سنمار. Removed the unnecessary جازاه introductory wording.",
+      "previous": {
+        "q": "أكمل: جازاه جزاء ___",
+        "a": "سنمّار",
+        "alt": [
+          "سنمار"
+        ],
+        "sourceUrl": "https://ar.wikisource.org/wiki/مجمع_الأمثال"
+      }
+    },
+    {
+      "qid": "completeproverb-1000-903",
+      "q": "أكمل: في خلف الوعود يقال: مواعيد ___",
+      "a": "عرقوب",
+      "sourceUrl": "https://islamport.com/l/adb/5494/4161.htm",
+      "sourceTitle": "مجمع الأمثال — المثل4070",
+      "reviewedAt": "2026-09-23",
+      "access": "Opened source text through web retrieval; relevant passage read.",
+      "support": "Heading مواعيد عرقوب and the entry explains repeated unfulfilled promises, supporting the short contextual clue."
+    },
+    {
+      "qid": "completeproverb-1000-904",
+      "q": "أكمل: قطعت جهيزة قول كل ___",
+      "a": "خطيب",
+      "sourceUrl": "https://islamport.com/l/adb/5494/2910.htm",
+      "sourceTitle": "مجمع الأمثال — المثل2830",
+      "reviewedAt": "2026-09-23",
+      "access": "Opened source text through web retrieval; relevant passage read.",
+      "support": "Exact heading قطعت جهيزة قول كل خطيب."
+    },
+    {
+      "qid": "completeproverb-1000-905",
+      "q": "أكمل: تسمع بالمُعَيْدي خير من أن ___",
+      "a": "تراه",
+      "sourceUrl": "https://islamport.com/l/adb/5494/668.htm",
+      "sourceTitle": "مجمع الأمثال — المثل655",
+      "reviewedAt": "2026-09-23",
+      "access": "Opened source text through web retrieval; relevant passage read.",
+      "support": "Exact heading تسمع بالمعيدي خير من أن تراه; recorded wording verified, without claiming the origin tale is historical fact."
+    },
+    {
+      "qid": "completeproverb-1000-906",
+      "q": "أكمل: أحشفًا وسوء ___",
+      "a": "كِيلة",
+      "sourceUrl": "https://www.safahat.org/books/92480704/1/",
+      "sourceTitle": "أشهر الأمثال — حرف الألف",
+      "reviewedAt": "2026-09-23",
+      "access": "Opened source text through web retrieval; relevant passage read.",
+      "support": "Exact entry أحشفا وسوء كيلة, with a lexical explanation and explicit kasra in كِيلة.",
+      "previous": {
+        "q": "أكمل: أحشفًا وسوء ___",
+        "a": "كيلة",
+        "alt": [],
+        "sourceUrl": "https://ar.wikisource.org/wiki/مجمع_الأمثال"
+      }
+    },
+    {
+      "qid": "completeproverb-1000-907",
+      "q": "أكمل: يداك أوكتا وفوك ___",
+      "a": "نفخ",
+      "sourceUrl": "https://islamport.com/l/adb/5497/293.htm",
+      "sourceTitle": "الأمثال لأبي عبيد — ص331",
+      "reviewedAt": "2026-09-23",
+      "access": "Opened source text through web retrieval; relevant passage read.",
+      "support": "Exact heading يداك أوكتا وفوك نفخ. Uses the actual entry rather than an unrelated neighbouring proverb."
+    },
+    {
+      "qid": "completeproverb-1000-908",
+      "q": "أكمل: آخر الدواء ___",
+      "a": "الكيّ",
+      "sourceUrl": "https://islamport.com/l/adb/5454/69.htm",
+      "sourceTitle": "الأمثال للهاشمي — المثل317، ص66",
+      "reviewedAt": "2026-09-23",
+      "access": "Opened source text through web retrieval; relevant passage read.",
+      "support": "Entry gives الكي and explicitly records آخر الدواء as a variant. Completion verifies a traditional phrase, not medical advice."
+    }
+  ],
+  "validation": {
+    "command": "npm run bank:validate -- completeproverb",
+    "exitCode": 0,
+    "errors": 0,
+    "warnings": [
+      "One permitted cross-category normalized answer overlap: رام in silhouette and completeproverb."
+    ],
+    "counts": {
+      "200": 8,
+      "400": 8,
+      "600": 8,
+      "800": 8,
+      "1000": 8
+    },
+    "topics": 8,
+    "diffCheck": "Passed for owned files."
+  }
+}

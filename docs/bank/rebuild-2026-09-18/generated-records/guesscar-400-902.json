@@ -1,0 +1,19 @@
+{
+  "id": "guesscar-400-902",
+  "kind": "question",
+  "pack": "guesscar",
+  "file": "media/guesscar/guesscar-400-902.webp",
+  "asset": "media/guesscar/guesscar-400-902.webp",
+  "prompt": "Use case: product-mockup.\nAsset: one AI-generated car-identification illustration for an Arabic family quiz.\nSubject: 1987 Lada Niva 1600 three-door, light green.\nGenerate a new high-quality realistic studio rendering of precisely this vehicle model and generation. Match its real proportions, characteristic body shape, grille, headlights, windows and wheel layout accurately; do not invent a hybrid car.\nComposition: full vehicle from front three-quarter angle (rear three-quarter angle for Tatra 87), centered, wheels and roof wholly visible, landscape 4:3. Soft ivory seamless studio floor and background, subtle contact shadow, natural materials and paint.\nDo not reproduce the described original photograph or its environment. No people, scenery, border, watermark or captions. The license plate must be blank. Omit readable model-name lettering that would reveal the answer. Brand emblems may retain their simple graphic shapes. This is a faithful visual illustration, not a document photograph.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-09-23",
+  "width": 1280,
+  "height": 960,
+  "bytes": 111748,
+  "sha256": "b3ff7876cb79f1412f9d1f07efdb52ca622245cbe6fa128dce300f37e9ff3d6a",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "pending",
+    "note": "Generation and file checks do not imply subject or gameplay verification."
+  }
+}

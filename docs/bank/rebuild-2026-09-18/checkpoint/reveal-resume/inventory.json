@@ -1,0 +1,192 @@
+{
+  "status": "paused_by_user",
+  "savedOn": "2026-09-23",
+  "planned": 40,
+  "installed": 23,
+  "activePackRetained": true,
+  "installedIds": [
+    "reveal-200-901",
+    "reveal-200-902",
+    "reveal-200-903",
+    "reveal-200-904",
+    "reveal-200-905",
+    "reveal-200-906",
+    "reveal-200-907",
+    "reveal-200-908",
+    "reveal-400-901",
+    "reveal-400-902",
+    "reveal-400-903",
+    "reveal-400-904",
+    "reveal-400-905",
+    "reveal-400-906",
+    "reveal-400-907",
+    "reveal-400-908",
+    "reveal-600-901",
+    "reveal-600-902",
+    "reveal-600-903",
+    "reveal-600-905",
+    "reveal-600-906",
+    "reveal-600-907",
+    "reveal-800-901"
+  ],
+  "nextIds": [
+    "reveal-600-904",
+    "reveal-600-908",
+    "reveal-800-902",
+    "reveal-800-903",
+    "reveal-800-904",
+    "reveal-800-905",
+    "reveal-800-906",
+    "reveal-800-907",
+    "reveal-800-908",
+    "reveal-1000-901",
+    "reveal-1000-902",
+    "reveal-1000-903",
+    "reveal-1000-904",
+    "reveal-1000-905",
+    "reveal-1000-906",
+    "reveal-1000-907",
+    "reveal-1000-908"
+  ],
+  "reviewStatus": "Initial visual screening only; final direct comparison with source portraits, source verification, difficulty and gameplay QA pending",
+  "assets": [
+    {
+      "id": "reveal-200-901",
+      "file": "media/reveal/reveal-200-901.webp",
+      "bytes": 204084,
+      "sha256": "a18a5e62f6808fa19614cdc02d36e533cc18951104652172fdfccefdaeeb73de"
+    },
+    {
+      "id": "reveal-200-902",
+      "file": "media/reveal/reveal-200-902.webp",
+      "bytes": 241452,
+      "sha256": "d89cf242ccec5d8ac93c71ead2ad8569f974b89b84db3c04ae5d435c51943b00"
+    },
+    {
+      "id": "reveal-200-903",
+      "file": "media/reveal/reveal-200-903.webp",
+      "bytes": 170106,
+      "sha256": "701b19806f9e791dc06ff7cb833fef075fe9df74ffd125eaf7bc221ca723c76c"
+    },
+    {
+      "id": "reveal-200-904",
+      "file": "media/reveal/reveal-200-904.webp",
+      "bytes": 259042,
+      "sha256": "eac88d640e4b69270544d6e7e0f45c328f154cc631f43a68b8f8317981d7a1c8"
+    },
+    {
+      "id": "reveal-200-905",
+      "file": "media/reveal/reveal-200-905.webp",
+      "bytes": 219608,
+      "sha256": "6f10f8c6e350aed0df875441e00a6fd5ec9768e032b2fad3c6f4ba2dcb103952"
+    },
+    {
+      "id": "reveal-200-906",
+      "file": "media/reveal/reveal-200-906.webp",
+      "bytes": 236386,
+      "sha256": "2fe97be774dd2c5650196905276d5122caf47233892385496229def08fb7347d"
+    },
+    {
+      "id": "reveal-200-907",
+      "file": "media/reveal/reveal-200-907.webp",
+      "bytes": 173072,
+      "sha256": "d1b04a24e1e5723391ec8d8bf6ecef46d3a38e01f392156b3ac29bc4684ae98f"
+    },
+    {
+      "id": "reveal-200-908",
+      "file": "media/reveal/reveal-200-908.webp",
+      "bytes": 184570,
+      "sha256": "1a6f375e88c1a3e369368214d5a69e387517e03e20308d176eb2beaaad4f32fa"
+    },
+    {
+      "id": "reveal-400-901",
+      "file": "media/reveal/reveal-400-901.webp",
+      "bytes": 232106,
+      "sha256": "96154a53701b68709480bdbb6c226ba138141bdd10e22752ba33a4ddbf3849e7"
+    },
+    {
+      "id": "reveal-400-902",
+      "file": "media/reveal/reveal-400-902.webp",
+      "bytes": 192964,
+      "sha256": "c407fc5b6f71b2b0ffddfee19e249bf7ef9414d87b6e33d64679e58d8baa852c"
+    },
+    {
+      "id": "reveal-400-903",
+      "file": "media/reveal/reveal-400-903.webp",
+      "bytes": 242946,
+      "sha256": "14e65fd26e8b8e7e3e149510f11c6976abaedf1e131437a7ee4d02322ac41d7f"
+    },
+    {
+      "id": "reveal-400-904",
+      "file": "media/reveal/reveal-400-904.webp",
+      "bytes": 198840,
+      "sha256": "8b0bd4d1d567739ea7e212c2686e824ff9730ad1563aaf0feb834ee2d3c76941"
+    },
+    {
+      "id": "reveal-400-905",
+      "file": "media/reveal/reveal-400-905.webp",
+      "bytes": 227182,
+      "sha256": "90bbd42f5bec6303bc8be25cca8b768457355939bed36e36337571132898d34d"
+    },
+    {
+      "id": "reveal-400-906",
+      "file": "media/reveal/reveal-400-906.webp",
+      "bytes": 242564,
+      "sha256": "a9ba39bff872beb1779e76f9f622b14474d586828cc12277b921e96cdcf25613"
+    },
+    {
+      "id": "reveal-400-907",
+      "file": "media/reveal/reveal-400-907.webp",
+      "bytes": 243818,
+      "sha256": "331ec2331f4adb1d35180bf33b77f082b49d55fe5cde083c624b85e99ba803a8"
+    },
+    {
+      "id": "reveal-400-908",
+      "file": "media/reveal/reveal-400-908.webp",
+      "bytes": 253608,
+      "sha256": "cb8c5d074b4d1ad2e1142aef6eda5803cd60920a871c82c91407b8afbfe3f25d"
+    },
+    {
+      "id": "reveal-600-901",
+      "file": "media/reveal/reveal-600-901.webp",
+      "bytes": 229532,
+      "sha256": "56b2e10413becf41c169ac2951a06e74737f2481ae1ad19630358b0161398dbe"
+    },
+    {
+      "id": "reveal-600-902",
+      "file": "media/reveal/reveal-600-902.webp",
+      "bytes": 220028,
+      "sha256": "8d886b6d8850ac61c99151794f4981e843d857301dee089fe9ce7855f3f19fdf"
+    },
+    {
+      "id": "reveal-600-903",
+      "file": "media/reveal/reveal-600-903.webp",
+      "bytes": 215478,
+      "sha256": "813ac878e874bea68be55208202793d400cd2be62aeee7f54506dc3384901c42"
+    },
+    {
+      "id": "reveal-600-905",
+      "file": "media/reveal/reveal-600-905.webp",
+      "bytes": 200830,
+      "sha256": "b7bf4e634ff65b1b622e620fe39e6abaa65709d084eb4fe934a51863359e0f68"
+    },
+    {
+      "id": "reveal-600-906",
+      "file": "media/reveal/reveal-600-906.webp",
+      "bytes": 228954,
+      "sha256": "6f6289a1aa562efcb24b2e7865f654a133b2ceb531c785d7318bcc2295606363"
+    },
+    {
+      "id": "reveal-600-907",
+      "file": "media/reveal/reveal-600-907.webp",
+      "bytes": 182194,
+      "sha256": "895a6a1f9a2fb4814e101ae8abcb6eb0995275eea756e40658a166b1a79e254a"
+    },
+    {
+      "id": "reveal-800-901",
+      "file": "media/reveal/reveal-800-901.webp",
+      "bytes": 242518,
+      "sha256": "d7e7fd6e7eafe94647492870b9f38f11aa1325ee10d8441cac40ec3ab2378c0e"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "id": "placefinder-200-904",
+  "kind": "question",
+  "pack": "placefinder",
+  "file": "media/placefinder/placefinder-200-904.webp",
+  "asset": "media/placefinder/placefinder-200-904.webp",
+  "prompt": "Use case: scientific-educational. Asset: landscape 4:3 architectural landmark recognition card for an Arabic family quiz. Create one original, carefully observed architectural illustration of the real landmark, with realistic proportions and fine material detail, clear daylight, restrained natural colours, clean composition. Show the real defining architecture accurately, not a fantasy redesign. No captions, words, numerals, maps, logos, watermark, border or inset. No people close enough to distract. The entire landmark must be recognizable at phone size. The three great Giza pyramids on their real sandy plateau: Khufu and Khafre large, Menkaure visibly smaller; weathered limestone blocks, remaining pale casing near Khafre apex; viewpoint across desert with the three principal pyramids separated, no invented giant sphinx, no Nile beside them, no lush jungle.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-09-23",
+  "width": 1280,
+  "height": 960,
+  "bytes": 239424,
+  "sha256": "3514d9269622f204a18fec844d40b8f06469f7db46681de042f85b37b60d3b10",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "reviewed",
+    "reviewedAt": "2026-09-23",
+    "note": "Viewed full generated image: three limestone pyramidal forms on arid plateau, Khafre-like remaining upper casing, weathered blocks and lower ruins; Giza identity is clear. Illustration does not assert surveyed spacing or heights.",
+    "notDocumentaryPhoto": true
+  }
+}

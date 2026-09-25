@@ -1,0 +1,39 @@
+{
+  "id": "tilepuzzle-600-906",
+  "kind": "question",
+  "pack": "tilepuzzle",
+  "a": "نافورة حارة",
+  "p": 600,
+  "topic": "طبيعة",
+  "prompt": "Use case: photorealistic-natural.\nAsset type: one standalone professional image for an Arabic family visual guessing game (age 16+).\nSubject: a natural geyser erupting a plume of hot water and steam.\nStyle: realistic high quality photography with correct anatomy and object geometry, clean natural textures.\nComposition: landscape 4:3, the complete subject fills about 75% of the frame; centered with ample margins, immediately recognizable when revealed.  Spread meaningful details across the frame because it will be shuffled into twelve tiles.\nBackground: simple uncluttered setting appropriate to the subject, natural lighting.\nConstraints: exactly the stated subject; no label, caption, watermark, collage, borders or readable words.  ",
+  "question": {
+    "p": 600,
+    "q": "ما الشيء الذي تكوّنه القطع المبعثرة؟",
+    "a": "نافورة حارة",
+    "qid": "tilepuzzle-600-906",
+    "type": "image",
+    "effect": "jumble",
+    "alt": [
+      "ينبوع حار",
+      "سخان أرضي"
+    ],
+    "topic": "طبيعة",
+    "difficultyTarget": 0.4,
+    "verified": false,
+    "source": "مشهد توضيحي أصلي؛ تُراجع مطابقة الصورة للإجابة قبل اعتمادها",
+    "sourceUrl": "docs/bank/rebuild-2026-09-18/visual-evidence.md",
+    "media": {
+      "src": "tilepuzzle-600-906.webp",
+      "type": "image",
+      "title": "لغز بصري مولّد",
+      "author": "Maydan / OpenAI image generation",
+      "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
+      "provenance": {
+        "kind": "ai-generated",
+        "tool": "OpenAI image generation",
+        "createdAt": "2026-09-18",
+        "record": "docs/bank/rebuild-2026-09-18/generated-art.json"
+      }
+    }
+  }
+}

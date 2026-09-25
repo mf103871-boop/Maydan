@@ -1,0 +1,347 @@
+{
+  "category": "blur",
+  "reviewedAt": "2026-09-23",
+  "status": "in-progress",
+  "expectedCount": 40,
+  "difficultyCalibration": "editorial-not-measured",
+  "method": "Every sharp built-in generated image is viewed individually. Installed assets receive paired static previews at320x240 mobile and491x368 desktop sizes, Gaussian sigma16 for200/400 and14.4 for600+, saturation1.3. This approximates the current CSS filter and is not browser QA: Chromium was unavailable and its download failed. No measured audience success rates.",
+  "items": [
+    {
+      "qid": "blur-200-901",
+      "answer": "فيل",
+      "tier": 200,
+      "topic": "حيوانات",
+      "image": "media/blur/blur-200-901.webp",
+      "generationRecord": "docs/bank/rebuild-2026-09-18/generated-records/blur-200-901.json",
+      "sha256": "0032b39fcbd8ddc9ae9a867cd40cc7e2ff294130e2de5d4b5ccab8081e433245",
+      "width": 1280,
+      "height": 960,
+      "bytes": 221742,
+      "review": {
+        "status": "passed",
+        "reviewedAt": "2026-09-23",
+        "fullImage": "فيل كامل ذو خرطوم طويل وأذنين واسعتين ونابين؛ التشريح الظاهر متماسك.",
+        "blurredGameplay": "Visually checked both static mobile/desktop approximations; identifying overall shape remains visible, fine details are hidden.",
+        "previewMode": "static-approximation-not-browser",
+        "sigma": 16,
+        "saturation": 1.3
+      }
+    },
+    {
+      "qid": "blur-200-902",
+      "answer": "بيتزا",
+      "tier": 200,
+      "topic": "أطعمة",
+      "image": "media/blur/blur-200-902.webp",
+      "generationRecord": "docs/bank/rebuild-2026-09-18/generated-records/blur-200-902.json",
+      "sha256": "3dc3d05fd01b821ad7a50ddab45e4bc7f845328cd6bfaaefb56d58051f8cd911",
+      "width": 1280,
+      "height": 960,
+      "bytes": 219964,
+      "review": {
+        "status": "passed",
+        "reviewedAt": "2026-09-23",
+        "fullImage": "قرص بيتزا كامل بقشرة مرتفعة وطماطم وجبن؛ لا يطلب السؤال تحديد وصفتها.",
+        "blurredGameplay": "Visually checked both static mobile/desktop approximations; identifying overall shape remains visible, fine details are hidden.",
+        "previewMode": "static-approximation-not-browser",
+        "sigma": 16,
+        "saturation": 1.3
+      }
+    },
+    {
+      "qid": "blur-200-903",
+      "answer": "إبريق شاي",
+      "tier": 200,
+      "topic": "البيت",
+      "image": "media/blur/blur-200-903.webp",
+      "generationRecord": "docs/bank/rebuild-2026-09-18/generated-records/blur-200-903.json",
+      "sha256": "731a1f537d277ed4c97b62d85243ede6a371a7d472c22b5e2400931bf5c157eb",
+      "width": 1280,
+      "height": 960,
+      "bytes": 134256,
+      "review": {
+        "status": "passed",
+        "reviewedAt": "2026-09-23",
+        "fullImage": "إبريق شاي معدني كامل بغطاء وفوهة صب ومقبض جانبي واضح.",
+        "blurredGameplay": "Visually checked both static mobile/desktop approximations; identifying overall shape remains visible, fine details are hidden.",
+        "previewMode": "static-approximation-not-browser",
+        "sigma": 16,
+        "saturation": 1.3
+      }
+    },
+    {
+      "qid": "blur-200-904",
+      "answer": "بيانو",
+      "tier": 200,
+      "topic": "موسيقى",
+      "image": "media/blur/blur-200-904.webp",
+      "generationRecord": "docs/bank/rebuild-2026-09-18/generated-records/blur-200-904.json",
+      "sha256": "3585c16d5681b0832cbe18ddb60ccbd29dbba9df113e5ab45707a7480ca94490",
+      "width": 1280,
+      "height": 960,
+      "bytes": 161674,
+      "review": {
+        "status": "passed",
+        "reviewedAt": "2026-09-23",
+        "fullImage": "بيانو جناح أسود بغطاء مرفوع ولوحة مفاتيح ودواسات؛ لا يطلب عدد المفاتيح.",
+        "blurredGameplay": "Visually checked both static mobile/desktop approximations; identifying overall shape remains visible, fine details are hidden.",
+        "previewMode": "static-approximation-not-browser",
+        "sigma": 16,
+        "saturation": 1.3
+      }
+    },
+    {
+      "qid": "blur-200-905",
+      "answer": "طائرة",
+      "tier": 200,
+      "topic": "وسائل نقل",
+      "image": "media/blur/blur-200-905.webp",
+      "generationRecord": "docs/bank/rebuild-2026-09-18/generated-records/blur-200-905.json",
+      "sha256": "e4f17b88fdef95caf969ddaf886f2f86199a7565a20cb0d5227749d372bce4a5",
+      "width": 1280,
+      "height": 960,
+      "bytes": 106790,
+      "review": {
+        "status": "passed",
+        "reviewedAt": "2026-09-23",
+        "fullImage": "طائرة ركاب بيضاء ذات جناحين وذيل ومحركين؛ دون علامة تجارية.",
+        "blurredGameplay": "Visually checked both static mobile/desktop approximations; identifying overall shape remains visible, fine details are hidden.",
+        "previewMode": "static-approximation-not-browser",
+        "sigma": 16,
+        "saturation": 1.3
+      }
+    },
+    {
+      "qid": "blur-200-906",
+      "answer": "برج إيفل",
+      "tier": 200,
+      "topic": "معالم ومنشآت",
+      "image": "media/blur/blur-200-906.webp",
+      "generationRecord": "docs/bank/rebuild-2026-09-18/generated-records/blur-200-906.json",
+      "sha256": "53cc9e7f009e9527550582f64d9ba2989d088d0e42b14f1a135ac5b1f3e6b0ca",
+      "width": 1280,
+      "height": 960,
+      "bytes": 202744,
+      "review": {
+        "status": "passed",
+        "reviewedAt": "2026-09-23",
+        "fullImage": "توضيح مولد لبرج إيفل؛ البنية الشبكية والقاعدة المقوسة والطوابق المتدرجة واضحة، وليس صورة توثيقية.",
+        "blurredGameplay": "Visually checked both static mobile/desktop approximations; identifying overall shape remains visible, fine details are hidden.",
+        "previewMode": "static-approximation-not-browser",
+        "sigma": 16,
+        "saturation": 1.3
+      }
+    },
+    {
+      "qid": "blur-200-907",
+      "answer": "سباحة",
+      "tier": 200,
+      "topic": "رياضة",
+      "image": "media/blur/blur-200-907.webp",
+      "generationRecord": "docs/bank/rebuild-2026-09-18/generated-records/blur-200-907.json",
+      "sha256": "e5e33fe680740f384f2c054207ba4aaaf3c3447370aeeb3f798a1f2d41c7d25a",
+      "width": 1280,
+      "height": 960,
+      "bytes": 245066,
+      "review": {
+        "status": "passed",
+        "reviewedAt": "2026-09-23",
+        "fullImage": "سباح بالغ بقبعة ونظارات يؤدي حركة سباحة حرة في حارة مسبح؛ السؤال عن الرياضة.",
+        "blurredGameplay": "Visually checked both static mobile/desktop approximations; identifying overall shape remains visible, fine details are hidden.",
+        "previewMode": "static-approximation-not-browser",
+        "sigma": 16,
+        "saturation": 1.3
+      }
+    },
+    {
+      "qid": "blur-200-908",
+      "answer": "شلال",
+      "tier": 200,
+      "topic": "طبيعة",
+      "image": "media/blur/blur-200-908.webp",
+      "generationRecord": "docs/bank/rebuild-2026-09-18/generated-records/blur-200-908.json",
+      "sha256": "8c036a0298fb4bcde5f5b2ade601b3e4ffdb5cc7f62853d2b7367b2072111bd8",
+      "width": 1280,
+      "height": 960,
+      "bytes": 254286,
+      "review": {
+        "status": "passed",
+        "reviewedAt": "2026-09-23",
+        "fullImage": "شلال واسع ينساب من حافة صخرية إلى حوض مائي؛ السؤال عن الظاهرة العامة لا عن موقع محدد.",
+        "blurredGameplay": "Visually checked both static mobile/desktop approximations; identifying overall shape remains visible, fine details are hidden.",
+        "previewMode": "static-approximation-not-browser",
+        "sigma": 16,
+        "saturation": 1.3
+      }
+    },
+    {
+      "qid": "blur-400-901",
+      "answer": "بطريق",
+      "tier": 400,
+      "topic": "حيوانات",
+      "image": "media/blur/blur-400-901.webp",
+      "generationRecord": "docs/bank/rebuild-2026-09-18/generated-records/blur-400-901.json",
+      "sha256": "0d34a7e1e1ce7dc9376467ae53e8e550cdae9dfffd0f1651aaa70e3790aa89ac",
+      "width": 1280,
+      "height": 960,
+      "bytes": 123252,
+      "review": {
+        "status": "passed",
+        "reviewedAt": "2026-09-23",
+        "fullImage": "بطريق كامل بريش داكن وواجهة بيضاء وزعانف جانبية على الجليد؛ لا يطلب السؤال تحديد النوع.",
+        "blurredGameplay": "Visually checked both static mobile/desktop approximations; identifying overall shape remains visible, fine details are hidden.",
+        "previewMode": "static-approximation-not-browser",
+        "sigma": 16,
+        "saturation": 1.3
+      }
+    },
+    {
+      "qid": "blur-400-902",
+      "answer": "كرواسون",
+      "tier": 400,
+      "topic": "أطعمة",
+      "image": "media/blur/blur-400-902.webp",
+      "generationRecord": "docs/bank/rebuild-2026-09-18/generated-records/blur-400-902.json",
+      "sha256": "fb001a47a62cf25ca25ff4a2a0ec350b034abb342c0f4a51ba059d6d61fdf5be",
+      "width": 1280,
+      "height": 960,
+      "bytes": 205636,
+      "review": {
+        "status": "passed",
+        "reviewedAt": "2026-09-23",
+        "fullImage": "كرواسون هلالي كامل بطبقات عجين ذهبية واضحة.",
+        "blurredGameplay": "Visually checked both static mobile/desktop approximations; identifying overall shape remains visible, fine details are hidden.",
+        "previewMode": "static-approximation-not-browser",
+        "sigma": 16,
+        "saturation": 1.3
+      }
+    },
+    {
+      "qid": "blur-400-903",
+      "answer": "مظلة",
+      "tier": 400,
+      "topic": "البيت",
+      "image": "media/blur/blur-400-903.webp",
+      "generationRecord": "docs/bank/rebuild-2026-09-18/generated-records/blur-400-903.json",
+      "sha256": "26983ebf381e36d9fb3e1c6bcf6a830656ed94216047298f0c0a28534ceaf88e",
+      "width": 1280,
+      "height": 960,
+      "bytes": 142676,
+      "review": {
+        "status": "passed",
+        "reviewedAt": "2026-09-23",
+        "fullImage": "مظلة صفراء مفتوحة ذات قبة وقضبان ومقبض معقوف؛ الشكل متماسك.",
+        "blurredGameplay": "Visually checked both static mobile/desktop approximations; identifying overall shape remains visible, fine details are hidden.",
+        "previewMode": "static-approximation-not-browser",
+        "sigma": 16,
+        "saturation": 1.3
+      }
+    },
+    {
+      "qid": "blur-400-904",
+      "answer": "بوق",
+      "tier": 400,
+      "topic": "موسيقى",
+      "image": "media/blur/blur-400-904.webp",
+      "generationRecord": "docs/bank/rebuild-2026-09-18/generated-records/blur-400-904.json",
+      "sha256": "6a755f7bba9281cdc5bbc6c942b6494f58ca48aae97b0ea2d29e1452d0e47762",
+      "width": 1280,
+      "height": 960,
+      "bytes": 154790,
+      "review": {
+        "status": "passed",
+        "reviewedAt": "2026-09-23",
+        "fullImage": "بوق نحاسي أفقي بفوهة واسعة وثلاثة صمامات ظاهرة؛ ليس ترومبون ذا منزلق طويل.",
+        "blurredGameplay": "Visually checked both static mobile/desktop approximations; identifying overall shape remains visible, fine details are hidden.",
+        "previewMode": "static-approximation-not-browser",
+        "sigma": 16,
+        "saturation": 1.3
+      }
+    },
+    {
+      "qid": "blur-400-905",
+      "answer": "قارب شراعي",
+      "tier": 400,
+      "topic": "وسائل نقل",
+      "image": "media/blur/blur-400-905.webp",
+      "generationRecord": "docs/bank/rebuild-2026-09-18/generated-records/blur-400-905.json",
+      "sha256": "95dee0df052156ac425c2f6f50ffce837a56af667d80130fdf2090a41e84a4d0",
+      "width": 1280,
+      "height": 960,
+      "bytes": 117274,
+      "review": {
+        "status": "passed",
+        "reviewedAt": "2026-09-23",
+        "fullImage": "قارب شراعي ذو بدن وصارية وشراعين مثلثين؛ لا يطلب اسم طراز معين.",
+        "blurredGameplay": "Visually checked both static mobile/desktop approximations; identifying overall shape remains visible, fine details are hidden.",
+        "previewMode": "static-approximation-not-browser",
+        "sigma": 16,
+        "saturation": 1.3
+      }
+    },
+    {
+      "qid": "blur-400-906",
+      "answer": "طاحونة هواء",
+      "tier": 400,
+      "topic": "معالم ومنشآت",
+      "image": "media/blur/blur-400-906.webp",
+      "generationRecord": "docs/bank/rebuild-2026-09-18/generated-records/blur-400-906.json",
+      "sha256": "c9330f97e4fad79aa0aeb06b6b5328426d63d3d56b805e34195121190117edb5",
+      "width": 1280,
+      "height": 960,
+      "bytes": 242376,
+      "review": {
+        "status": "passed",
+        "reviewedAt": "2026-09-23",
+        "fullImage": "طاحونة هوائية تقليدية بأربع شفرات كبيرة؛ لا يطلب موقع المنشأة.",
+        "blurredGameplay": "Visually checked both static mobile/desktop approximations; identifying overall shape remains visible, fine details are hidden.",
+        "previewMode": "static-approximation-not-browser",
+        "sigma": 16,
+        "saturation": 1.3
+      }
+    },
+    {
+      "qid": "blur-400-907",
+      "answer": "ملاكمة",
+      "tier": 400,
+      "topic": "رياضة",
+      "image": "media/blur/blur-400-907.webp",
+      "generationRecord": "docs/bank/rebuild-2026-09-18/generated-records/blur-400-907.json",
+      "sha256": "7ce58b0d00a7879553b8cc9a605d431551d6c96be2aded47b7692cf1b7561ede",
+      "width": 1280,
+      "height": 960,
+      "bytes": 148552,
+      "review": {
+        "status": "passed",
+        "reviewedAt": "2026-09-23",
+        "fullImage": "زوج قفازات ملاكمة حمراء؛ السؤال صريح بأنه يطلب الرياضة التي تدل عليها الأدوات.",
+        "blurredGameplay": "Visually checked both static mobile/desktop approximations; identifying overall shape remains visible, fine details are hidden.",
+        "previewMode": "static-approximation-not-browser",
+        "sigma": 16,
+        "saturation": 1.3
+      }
+    },
+    {
+      "qid": "blur-400-908",
+      "answer": "بركان",
+      "tier": 400,
+      "topic": "طبيعة",
+      "image": "media/blur/blur-400-908.webp",
+      "generationRecord": "docs/bank/rebuild-2026-09-18/generated-records/blur-400-908.json",
+      "sha256": "b5e230a76e468b5a0eeffe1ecc47c0e8941a535ada69a2a613afdb9c56485592",
+      "width": 1280,
+      "height": 960,
+      "bytes": 214844,
+      "review": {
+        "status": "passed",
+        "reviewedAt": "2026-09-23",
+        "fullImage": "بركان مخروطي تخرج من فوهته حمم ورماد؛ لا يطلب اسم بركان حقيقي.",
+        "blurredGameplay": "Visually checked both static mobile/desktop approximations; identifying overall shape remains visible, fine details are hidden.",
+        "previewMode": "static-approximation-not-browser",
+        "sigma": 16,
+        "saturation": 1.3
+      }
+    }
+  ],
+  "completedCount": 16
+}

@@ -1,0 +1,19 @@
+{
+  "id": "placefinder-200-901",
+  "kind": "question",
+  "pack": "placefinder",
+  "p": 200,
+  "a": "برج إيفل",
+  "alt": [
+    "إيفل",
+    "Eiffel Tower"
+  ],
+  "topic": "أوروبا الغربية",
+  "q": "ما اسم هذا البرج الحديدي الشهير؟",
+  "sourceUrl": "https://www.toureiffel.paris/en/news/history-and-culture/iron-lady-nicknaming-eiffel-tower",
+  "prompt": "Use case: scientific-educational. Asset: landscape 4:3 architectural landmark recognition card for an Arabic family quiz. Create one original, carefully observed architectural illustration of the real landmark, with realistic proportions and fine material detail, clear daylight, restrained natural colours, clean composition. Show the real defining architecture accurately, not a fantasy redesign. No captions, words, numerals, maps, logos, watermark, border or inset. No people close enough to distract. The entire landmark must be recognizable at phone size. Eiffel Tower, Paris: full tower from Champ de Mars in daylight, four splayed lattice-iron legs, broad decorative arch at base, first and second horizontal observation platforms, tapering lattice shaft and antenna. A brown iron tower, no night lighting. Full feet and tip visible.",
+  "referenceFile": "media/placefinder/placefinder-200-024.webp",
+  "sourceEvidence": "Official tower page identifies puddled iron, four pillars and decorative arches.",
+  "sourceReviewed": true,
+  "visualReviewStatus": "pending"
+}

@@ -1,0 +1,19 @@
+{
+  "id": "flags-1000-903",
+  "kind": "question",
+  "pack": "flags",
+  "file": "media/flags/flags-1000-903.webp",
+  "asset": "media/flags/flags-1000-903.webp",
+  "prompt": "Accurate educational national flag. Completely OPAQUE rectangular canvas, every pixel opaque, all color fields stay visible including white. Flat straight-on diagram with crisp solid color edges. Entire image is the flag, exact aspect ratio. No transparency or cutout, no labels, no words, no folds, no pole, no border, no shading. Saint Lucia. Width:height2:1. Light ceruleanBLUE #66CCFF field. Centered triangular emblem: tall isosceles WHITEoutertriangle apexat(50%width,12%height), baseends(33.333%width,88%height),(66.667%width,88%height). BLACKinnertriangle withsamebase andapexat(50%width,23%height), leaving narrow WHITE bordersalongtwoslopesat top. GOLD-yellow #FCD116 smallertriangle superimposed overlowerpart, apexat(50%width,50%height), SAMEbaseendsasoutertriangle. StandardSaintLucian flagemblem:blackabovegoldwithwhiteoutline, noothermark.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-09-23",
+  "width": 1280,
+  "height": 640,
+  "bytes": 13762,
+  "sha256": "3fd7e61fa8997a1e9896138086b365edebb3efd5255ae8d2aeb507293891f6e2",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "pending",
+    "note": "Generation and file checks do not imply subject or gameplay verification."
+  }
+}

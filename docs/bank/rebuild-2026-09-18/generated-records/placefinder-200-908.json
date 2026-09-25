@@ -1,0 +1,19 @@
+{
+  "id": "placefinder-200-908",
+  "kind": "question",
+  "pack": "placefinder",
+  "file": "media/placefinder/placefinder-200-908.webp",
+  "asset": "media/placefinder/placefinder-200-908.webp",
+  "prompt": "Use case: scientific-educational. Asset: landscape 4:3 architectural landmark recognition card for an Arabic family quiz. Create one original, carefully observed architectural illustration of the real landmark, with realistic proportions and fine material detail, clear daylight, restrained natural colours, clean composition. Show the real defining architecture accurately, not a fantasy redesign. No captions, words, numerals, maps, logos, watermark, border or inset. No people close enough to distract. The entire landmark must be recognizable at phone size. Sydney Opera House seen across Sydney Harbour: actual interlocking white tiled vaulted shell roofs arranged in three groups atop a broad low pink-brown podium at Bennelong Point, two large halls and smaller restaurant shell group. Real shell proportions and dark glass end walls, blue water foreground; no generic smooth tent or extra skyscrapers.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-09-23",
+  "width": 1280,
+  "height": 960,
+  "bytes": 229508,
+  "sha256": "de4d86a04e3ee405b663738bd1158d9d524d6fcd1ed192b7751c3aab7522598f",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "pending",
+    "note": "Generation and file checks do not imply subject or gameplay verification."
+  }
+}

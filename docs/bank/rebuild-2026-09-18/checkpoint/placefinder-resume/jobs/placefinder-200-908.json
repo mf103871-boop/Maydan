@@ -1,0 +1,19 @@
+{
+  "id": "placefinder-200-908",
+  "kind": "question",
+  "pack": "placefinder",
+  "p": 200,
+  "a": "دار أوبرا سيدني",
+  "alt": [
+    "أوبرا سيدني",
+    "Sydney Opera House"
+  ],
+  "topic": "أوقيانوسيا",
+  "q": "ما اسم هذا المبنى الأسترالي ذي الأسقف الشبيهة بالأشرعة؟",
+  "sourceUrl": "https://whc.unesco.org/en/list/166/",
+  "prompt": "Use case: scientific-educational. Asset: landscape 4:3 architectural landmark recognition card for an Arabic family quiz. Create one original, carefully observed architectural illustration of the real landmark, with realistic proportions and fine material detail, clear daylight, restrained natural colours, clean composition. Show the real defining architecture accurately, not a fantasy redesign. No captions, words, numerals, maps, logos, watermark, border or inset. No people close enough to distract. The entire landmark must be recognizable at phone size. Sydney Opera House seen across Sydney Harbour: actual interlocking white tiled vaulted shell roofs arranged in three groups atop a broad low pink-brown podium at Bennelong Point, two large halls and smaller restaurant shell group. Real shell proportions and dark glass end walls, blue water foreground; no generic smooth tent or extra skyscrapers.",
+  "referenceFile": "media/placefinder/placefinder-200-028.webp",
+  "sourceEvidence": "UNESCO specifies three groups of interlocking vaulted shells on a peninsula podium.",
+  "sourceReviewed": true,
+  "visualReviewStatus": "pending"
+}

@@ -1,0 +1,19 @@
+{
+  "id": "tilepuzzle-200-902",
+  "kind": "question",
+  "pack": "tilepuzzle",
+  "file": "media/tilepuzzle/tilepuzzle-200-902.webp",
+  "asset": "media/tilepuzzle/tilepuzzle-200-902.webp",
+  "prompt": "Use case: photorealistic-natural.\nAsset type: one standalone professional image for an Arabic family visual guessing game (age 16+).\nSubject: a hamburger on a plate with visible bun, lettuce, tomato and patty.\nStyle: realistic high quality photography with correct anatomy and object geometry, clean natural textures.\nComposition: landscape 4:3, the complete subject fills about 75% of the frame; centered with ample margins, immediately recognizable when revealed.  Spread meaningful details across the frame because it will be shuffled into twelve tiles.\nBackground: simple uncluttered setting appropriate to the subject, natural lighting.\nConstraints: exactly the stated subject; no label, caption, watermark, collage, borders or readable words.  ",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-09-23",
+  "width": 1280,
+  "height": 960,
+  "bytes": 243276,
+  "sha256": "4cf713cc9337c3750a883a7282dd06e4071e9e2bcd2ece51162c5f79793f47b9",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "pending",
+    "note": "Generation and file checks do not imply subject or gameplay verification."
+  }
+}

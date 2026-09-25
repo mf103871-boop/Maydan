@@ -1,0 +1,24 @@
+{
+  "id": "blur-200-904",
+  "kind": "question",
+  "pack": "blur",
+  "file": "media/blur/blur-200-904.webp",
+  "asset": "media/blur/blur-200-904.webp",
+  "prompt": "Use case: photorealistic-natural.\nAsset type: one standalone professional image for an Arabic family visual guessing game (age 16+).\nSubject: a black grand piano with keyboard and lid open.\nStyle: realistic high quality photography with correct anatomy and object geometry, clean natural textures.\nComposition: landscape 4:3, the complete subject fills about 75% of the frame; centered with ample margins, immediately recognizable when revealed.  \nBackground: simple uncluttered setting appropriate to the subject, natural lighting.\nConstraints: exactly the stated subject; no label, caption, watermark, collage, borders or readable words. Create a sharp original, not a blurred image; the game applies the blur.  The subject must be visually unambiguous, with a strong clear outline and identifying features large enough to survive a moderate blur. Do not add any text or split-panel layout. Keep the entire subject in frame.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-09-23",
+  "width": 1280,
+  "height": 960,
+  "bytes": 161674,
+  "sha256": "3585c16d5681b0832cbe18ddb60ccbd29dbba9df113e5ab45707a7480ca94490",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "passed",
+    "reviewedAt": "2026-09-23",
+    "fullImage": "بيانو جناح أسود بغطاء مرفوع ولوحة مفاتيح ودواسات؛ لا يطلب عدد المفاتيح.",
+    "blurredGameplay": "Visually checked both static mobile/desktop approximations; identifying overall shape remains visible, fine details are hidden.",
+    "previewMode": "static-approximation-not-browser",
+    "sigma": 16,
+    "saturation": 1.3
+  }
+}

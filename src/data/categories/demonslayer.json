@@ -6,1007 +6,245 @@
   "qs": [
     {
       "p": 200,
-      "topic": "تانجيرو ونيزوكو",
+      "topic": "عائلة كامادو",
       "q": "من أخت تانجيرو التي تحوّلت إلى شيطانة؟",
       "a": "نيزوكو كامادو",
       "alt": [
         "نيزوكو",
         "نزوكو"
       ],
-      "source": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters",
       "verified": true,
-      "qid": "demonslayer-200-049"
+      "qid": "demonslayer-200-901",
+      "sourceUrl": "https://demonslayer-anime.com/mugentrainarc/character/?chara=02",
+      "difficultyTarget": 0.8
     },
     {
       "p": 200,
-      "topic": "تانجيرو ونيزوكو",
+      "topic": "عائلة كامادو",
       "q": "ماذا يحمل تانجيرو على ظهره ليخبّئ أخته الصغرى؟",
       "a": "صندوق خشبي",
       "alt": [
         "الصندوق الخشبي",
         "صندوق على ظهره"
       ],
-      "source": "https://en.wikipedia.org/wiki/Demon_Slayer:_Kimetsu_no_Yaiba",
       "verified": true,
-      "qid": "demonslayer-200-050"
+      "qid": "demonslayer-200-902",
+      "sourceUrl": "https://demonslayer-anime.com/mugentrainarc/character/?chara=02",
+      "difficultyTarget": 0.8
     },
     {
       "p": 200,
-      "topic": "تانجيرو ونيزوكو",
-      "q": "ما الذي تعضّه نيزوكو بين أسنانها دائمًا؟",
-      "a": "عود خيزران",
-      "alt": [
-        "البامبو",
-        "عود بامبو",
-        "خيزران"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Nezuko_Kamado",
-      "verified": true,
-      "qid": "demonslayer-200-051"
-    },
-    {
-      "p": 200,
-      "topic": "تانجيرو ونيزوكو",
-      "q": "ماذا كانت أسرة تانجيرو تبيع لتعيش؟",
-      "a": "الفحم",
-      "alt": [
-        "بيع الفحم",
-        "فحم"
-      ],
-      "source": "https://en.wikipedia.org/wiki/Demon_Slayer:_Kimetsu_no_Yaiba",
-      "verified": true,
-      "qid": "demonslayer-200-052"
-    },
-    {
-      "p": 200,
-      "topic": "تانجيرو ونيزوكو",
-      "q": "ما الحاسّة التي يتفوّق بها تانجيرو على كل من حوله؟",
-      "a": "حاسة الشم",
-      "alt": [
-        "الشم",
-        "الشمّ"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Tanjiro_Kamado",
-      "verified": true,
-      "qid": "demonslayer-200-053"
-    },
-    {
-      "p": 200,
-      "topic": "تانجيرو ونيزوكو",
-      "q": "ما الذي يعلّقه تانجيرو في أذنيه ولا يفارقه أبدًا؟",
-      "a": "القرطان",
-      "alt": [
-        "الأقراط",
-        "قرطا الأذن"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Tanjiro_Kamado",
-      "verified": true,
-      "qid": "demonslayer-200-054"
-    },
-    {
-      "p": 200,
-      "topic": "تانجيرو ونيزوكو",
-      "q": "بم تستعيد نيزوكو قوّتها بدل الطعام؟",
-      "a": "بالنوم",
-      "alt": [
-        "النوم",
-        "بنومها الطويل"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Nezuko_Kamado",
-      "verified": true,
-      "qid": "demonslayer-200-055"
-    },
-    {
-      "p": 200,
-      "topic": "تانجيرو ونيزوكو",
-      "q": "ما اسم أسرة تانجيرو ونيزوكو؟",
-      "a": "كامادو",
-      "alt": [
-        "آل كامادو",
-        "عائلة كامادو"
-      ],
-      "source": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters",
-      "verified": true,
-      "qid": "demonslayer-200-056"
-    },
-    {
-      "p": 200,
-      "topic": "تانجيرو ونيزوكو",
-      "q": "ما لون عينَي نيزوكو بعد أن صارت شيطانة؟",
-      "a": "وردي",
-      "alt": [
-        "زهري",
-        "الوردي"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Nezuko_Kamado",
-      "verified": true,
-      "qid": "demonslayer-200-057"
-    },
-    {
-      "p": 200,
-      "topic": "موزان والكيزوكي",
-      "q": "ما الذي يحدث لجسد الشيطان لحظة موته؟",
-      "a": "يتحلّل ويتلاشى",
-      "alt": [
-        "يتفتّت",
-        "يذوب",
-        "يتبخّر"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Hashira",
-      "verified": true,
-      "qid": "demonslayer-200-058"
-    },
-    {
-      "p": 200,
-      "topic": "الهاشيرا وألقابهم",
-      "q": "من عمود الماء؟",
-      "a": "غيو توميوكا",
-      "alt": [
-        "غيو",
-        "جيو توميوكا",
-        "توميوكا"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Hashira",
-      "verified": true,
-      "qid": "demonslayer-200-059"
-    },
-    {
-      "p": 200,
-      "topic": "الهاشيرا وألقابهم",
-      "q": "من عمود اللهب؟",
-      "a": "كيوجورو رينغوكو",
-      "alt": [
-        "رينغوكو",
-        "كيوجيرو رينغوكو"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Hashira",
-      "verified": true,
-      "qid": "demonslayer-200-060"
-    },
-    {
-      "p": 200,
-      "topic": "الهاشيرا وألقابهم",
-      "q": "من عمود الحشرة؟",
-      "a": "شينوبو كوتشو",
-      "alt": [
-        "شينوبو",
-        "شنوبو كوتشو"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Hashira",
-      "verified": true,
-      "qid": "demonslayer-200-061"
-    },
-    {
-      "p": 200,
-      "topic": "الهاشيرا وألقابهم",
-      "q": "من عمود الحب؟",
-      "a": "ميتسوري كانروجي",
-      "alt": [
-        "ميتسوري",
-        "متسوري كانروجي"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Hashira",
-      "verified": true,
-      "qid": "demonslayer-200-062"
-    },
-    {
-      "p": 200,
-      "topic": "الهاشيرا وألقابهم",
-      "q": "من عمود الصوت؟",
-      "a": "تينغن أوزوي",
-      "alt": [
-        "أوزوي",
-        "تنغن أوزوي"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Hashira",
-      "verified": true,
-      "qid": "demonslayer-200-063"
-    },
-    {
-      "p": 200,
-      "topic": "الهاشيرا وألقابهم",
-      "q": "كم عدد الهاشيرا، أي أعمدة الفيلق؟",
-      "a": "تسعة",
-      "alt": [
-        "9",
-        "تسعة أعمدة"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Hashira",
-      "verified": true,
-      "qid": "demonslayer-200-064"
-    },
-    {
-      "p": 200,
-      "topic": "أساليب التنفس",
-      "q": "ما التقنية التي يضاعف بها المحارب قوّة جسده أثناء القتال؟",
-      "a": "التنفس الكلّي",
-      "alt": [
-        "التركيز الكلّي",
-        "التنفس الكامل",
-        "التنفس التام"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Breathing_Style",
-      "verified": true,
-      "qid": "demonslayer-200-065"
-    },
-    {
-      "p": 200,
-      "topic": "موزان والكيزوكي",
-      "q": "بم تتغذّى الشياطين في هذه الحكاية؟",
-      "a": "بلحم البشر",
-      "alt": [
-        "أكل البشر",
-        "لحوم البشر",
-        "لحم البشر"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Breathing_Style",
-      "verified": true,
-      "qid": "demonslayer-200-066"
-    },
-    {
-      "p": 200,
-      "topic": "أساليب التنفس",
-      "q": "ما أسلوب التنفس الذي ابتكره إينوسكي لنفسه؟",
-      "a": "تنفس الوحش",
-      "alt": [
-        "تنفس الوحوش",
-        "تنفس البهيمة"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Breathing_Style",
-      "verified": true,
-      "qid": "demonslayer-200-067"
-    },
-    {
-      "p": 200,
-      "topic": "فيلق قتلة الشياطين",
-      "q": "أي موضع من جسد الشيطان يقطعه المحارب حتى يموت؟",
-      "a": "الرقبة",
-      "alt": [
-        "رقبته",
-        "العنق",
-        "عنقه"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Breathing_Style",
-      "verified": true,
-      "qid": "demonslayer-200-068"
-    },
-    {
-      "p": 200,
-      "topic": "فيلق قتلة الشياطين",
-      "q": "في أي وقت من اليوم يخرج محاربو الفيلق لمطاردة الشياطين؟",
-      "a": "ليلًا",
-      "alt": [
-        "في الليل",
-        "الليل",
-        "بالليل"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Breathing_Style",
-      "verified": true,
-      "qid": "demonslayer-200-069"
-    },
-    {
-      "p": 200,
-      "topic": "موزان والكيزوكي",
-      "q": "ما القدرة التي تجعل جروح الشياطين تُشفى في لحظات؟",
-      "a": "التجدّد",
-      "alt": [
-        "تجدّد الجسد",
-        "الشفاء الفوري",
-        "التعافي السريع"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Breathing_Style",
-      "verified": true,
-      "qid": "demonslayer-200-070"
-    },
-    {
-      "p": 200,
-      "topic": "موزان والكيزوكي",
-      "q": "ما الشيء المنقوش في أعين شياطين موزان المقرّبين؟",
-      "a": "أرقام رتبهم",
-      "alt": [
-        "أرقام",
-        "رقم الرتبة",
-        "أرقام في أعينهم"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Demon_Slayer_Corps",
-      "verified": true,
-      "qid": "demonslayer-200-071"
-    },
-    {
-      "p": 200,
-      "topic": "فيلق قتلة الشياطين",
-      "q": "ما الطائر الذي ينقل أوامر المهمّات إلى المحاربين؟",
-      "a": "الغراب",
-      "alt": [
-        "الغربان",
-        "غربان"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Demon_Slayer_Corps",
-      "verified": true,
-      "qid": "demonslayer-200-072"
-    },
-    {
-      "p": 200,
-      "topic": "فيلق قتلة الشياطين",
-      "q": "ما اسم الاختبار الذي يجتازه المتقدّمون للانضمام إلى الفيلق؟",
-      "a": "الاختيار النهائي",
-      "alt": [
-        "الانتقاء النهائي",
-        "الاختبار النهائي"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Final_Selection",
-      "verified": true,
-      "qid": "demonslayer-200-073"
-    },
-    {
-      "p": 200,
-      "topic": "موزان والكيزوكي",
+      "topic": "الشياطين",
       "q": "من زعيم الشياطين الذي يطارده الفيلق كلّه؟",
       "a": "موزان كيبوتسوجي",
       "alt": [
         "موزان",
         "كيبوتسوجي"
       ],
-      "source": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters",
       "verified": true,
-      "qid": "demonslayer-200-074"
+      "qid": "demonslayer-200-903",
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters#Muzan_Kibutsuji",
+      "difficultyTarget": 0.8
     },
     {
       "p": 200,
-      "topic": "موزان والكيزوكي",
-      "q": "ما الذي يحترق منه كل شيطان فلا يظهر نهارًا؟",
-      "a": "أشعة الشمس",
+      "topic": "الفيلق",
+      "q": "ما الطائر الذي ينقل أوامر المهمّات إلى المحاربين؟",
+      "a": "الغراب",
       "alt": [
-        "ضوء الشمس",
-        "الشمس"
+        "الغربان",
+        "غربان"
       ],
-      "source": "https://en.wikipedia.org/wiki/Demon_Slayer:_Kimetsu_no_Yaiba",
       "verified": true,
-      "qid": "demonslayer-200-075"
+      "qid": "demonslayer-200-904",
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters#Supporting_characters",
+      "difficultyTarget": 0.8
     },
     {
       "p": 200,
-      "topic": "تانجيرو ونيزوكو",
-      "q": "في أي فصل من السنة هُوجمت أسرة تانجيرو؟",
-      "a": "الشتاء",
-      "alt": [
-        "في الشتاء",
-        "شتاء",
-        "ليلة شتاء"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Twelve_Kizuki",
-      "verified": true,
-      "qid": "demonslayer-200-076"
-    },
-    {
-      "p": 200,
-      "topic": "موزان والكيزوكي",
-      "q": "ما اسم المجموعة التي تضمّ أقوى شياطين موزان؟",
-      "a": "الكيزوكي",
-      "alt": [
-        "كيزوكي",
-        "الأقمار الاثنا عشر",
-        "أقمار موزان"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Twelve_Kizuki",
-      "verified": true,
-      "qid": "demonslayer-200-077"
-    },
-    {
-      "p": 200,
-      "topic": "الرفاق والمدرّبون",
-      "q": "من الفتى الأشقر الجبان في فريق تانجيرو؟",
-      "a": "زينيتسو أغاتسوما",
-      "alt": [
-        "زينيتسو",
-        "زنيتسو"
-      ],
-      "source": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters",
-      "verified": true,
-      "qid": "demonslayer-200-078"
-    },
-    {
-      "p": 200,
-      "topic": "الرفاق والمدرّبون",
-      "q": "من الفتى الذي لا يخلع رأس الخنزير عن وجهه؟",
+      "topic": "الرفاق والمعلمون",
+      "q": "من رفيق تانجيرو الذي يرتدي قناع رأس خنزير بري؟",
       "a": "إينوسكي هاشيبيرا",
       "alt": [
         "إينوسكي",
         "إنوسكي"
       ],
-      "source": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters",
       "verified": true,
-      "qid": "demonslayer-200-079"
+      "qid": "demonslayer-200-905",
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters#Inosuke_Hashibira",
+      "difficultyTarget": 0.8
     },
     {
       "p": 200,
-      "topic": "الرفاق والمدرّبون",
-      "q": "من المعلّم العجوز الذي درّب تانجيرو في الجبل؟",
-      "a": "ساكونجي أوروكوداكي",
+      "topic": "الرفاق والمعلمون",
+      "q": "في أي حالة يقاتل زينيتسو ببراعة رغم خوفه أثناء اليقظة؟",
+      "a": "فاقد الوعي",
       "alt": [
-        "أوروكوداكي",
-        "ساكونجي"
-      ],
-      "source": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters",
-      "verified": true,
-      "qid": "demonslayer-200-080"
-    },
-    {
-      "p": 200,
-      "topic": "الرفاق والمدرّبون",
-      "q": "ما اسم الشيطانة الطبيبة التي تحالفت مع تانجيرو؟",
-      "a": "تامايو",
-      "alt": [
-        "السيدة تامايو"
-      ],
-      "source": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters",
-      "verified": true,
-      "qid": "demonslayer-200-081"
-    },
-    {
-      "p": 200,
-      "topic": "الرفاق والمدرّبون",
-      "q": "من الفتاة الصامتة التي تدرّبت عند عمود الحشرة؟",
-      "a": "كاناو تسويوري",
-      "alt": [
-        "كاناو",
-        "كانااو تسويوري"
-      ],
-      "source": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters",
-      "verified": true,
-      "qid": "demonslayer-200-082"
-    },
-    {
-      "p": 200,
-      "topic": "الرفاق والمدرّبون",
-      "q": "في أي حال يقاتل زينيتسو بأقوى ما عنده؟",
-      "a": "وهو نائم",
-      "alt": [
+        "وهو نائم",
         "نائمًا",
-        "أثناء نومه"
+        "مغمى عليه"
       ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Zenitsu_Agatsuma",
       "verified": true,
-      "qid": "demonslayer-200-083"
+      "qid": "demonslayer-200-906",
+      "sourceUrl": "https://demonslayer-anime.com/mugentrainarc/character/?chara=03",
+      "difficultyTarget": 0.8
     },
     {
       "p": 200,
-      "topic": "تانجيرو ونيزوكو",
-      "q": "بم يعامل تانجيرو الشياطين وهي تموت بين يديه؟",
-      "a": "بالرحمة",
+      "topic": "الهاشيرا",
+      "q": "من عمود اللهب؟",
+      "a": "كيوجورو رينغوكو",
       "alt": [
-        "يواسيها",
-        "بالشفقة",
-        "بالحنان"
+        "رينغوكو",
+        "كيوجيرو رينغوكو"
       ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Zenitsu_Agatsuma",
       "verified": true,
-      "qid": "demonslayer-200-084"
+      "qid": "demonslayer-200-907",
+      "sourceUrl": "https://demonslayer-anime.com/mugentrainarc/character/?chara=05",
+      "difficultyTarget": 0.8
     },
     {
       "p": 200,
-      "topic": "أماكن ومهمّات",
-      "q": "ما اسم القطار الذي تدور فيه أشهر مهمّات تانجيرو؟",
-      "a": "القطار اللانهائي",
-      "alt": [
-        "موغن ترين",
-        "قطار موغن"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Mugen_Train_(locomotive)",
-      "verified": true,
-      "qid": "demonslayer-200-085"
-    },
-    {
-      "p": 200,
-      "topic": "أماكن ومهمّات",
-      "q": "ما اسم القرية الخفيّة التي تُصنع فيها سيوف الفيلق؟",
-      "a": "قرية الحدّادين",
-      "alt": [
-        "قرية صانعي السيوف",
-        "قرية الحدادين"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Swordsmith_Village",
-      "verified": true,
-      "qid": "demonslayer-200-086"
-    },
-    {
-      "p": 200,
-      "topic": "الرفاق والمدرّبون",
-      "q": "ماذا يفعل زينيتسو كلّما أحسّ بخطر قريب؟",
-      "a": "يصرخ ويبكي",
-      "alt": [
-        "يبكي",
-        "يصرخ خوفًا",
-        "يهرب باكيًا"
-      ],
-      "source": "https://en.wikipedia.org/wiki/Demon_Slayer:_Kimetsu_no_Yaiba",
-      "verified": true,
-      "qid": "demonslayer-200-087"
-    },
-    {
-      "p": 200,
-      "topic": "أماكن ومهمّات",
-      "q": "ما اسم القصر الذي يتعافى فيه المحاربون الجرحى؟",
-      "a": "قصر الفراشة",
-      "alt": [
-        "بيت الفراشة",
-        "قصر الفراشات"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Butterfly_Mansion",
-      "verified": true,
-      "qid": "demonslayer-200-088"
-    },
-    {
-      "p": 200,
-      "topic": "سيوف وأدوات",
-      "q": "ما اسم السيوف التي يقاتل بها محاربو الفيلق؟",
-      "a": "سيوف النيتشيرين",
-      "alt": [
-        "النيتشيرين",
-        "نصال النيتشيرين"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Nichirin_Sword",
-      "verified": true,
-      "qid": "demonslayer-200-089"
-    },
-    {
-      "p": 200,
-      "topic": "سيوف وأدوات",
+      "topic": "الأسلحة والحدادون",
       "q": "ما لون نصل تانجيرو الذي أدهش الجميع؟",
       "a": "أسود",
       "alt": [
         "الأسود"
       ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Nichirin_Sword",
       "verified": true,
-      "qid": "demonslayer-200-090"
-    },
-    {
-      "p": 200,
-      "topic": "سيوف وأدوات",
-      "q": "ما لون نصل زينيتسو؟",
-      "a": "أصفر",
-      "alt": [
-        "الأصفر",
-        "ذهبي"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Nichirin_Sword",
-      "verified": true,
-      "qid": "demonslayer-200-091"
-    },
-    {
-      "p": 200,
-      "topic": "سيوف وأدوات",
-      "q": "ما لون نصل عمود الماء؟",
-      "a": "أزرق",
-      "alt": [
-        "الأزرق"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Nichirin_Sword",
-      "verified": true,
-      "qid": "demonslayer-200-092"
-    },
-    {
-      "p": 200,
-      "topic": "سيوف وأدوات",
-      "q": "أي زهرة تنفر منها الشياطين ولا تقربها؟",
-      "a": "الوستارية",
-      "alt": [
-        "الويستيريا",
-        "الفوجي"
-      ],
-      "source": "https://en.wikipedia.org/wiki/Demon_Slayer:_Kimetsu_no_Yaiba",
-      "verified": true,
-      "qid": "demonslayer-200-093"
-    },
-    {
-      "p": 200,
-      "topic": "سيوف وأدوات",
-      "q": "كم نصلًا يحمل إينوسكي في قتاله؟",
-      "a": "نصلان",
-      "alt": [
-        "سيفان",
-        "اثنان"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Inosuke_Hashibira",
-      "verified": true,
-      "qid": "demonslayer-200-094"
-    },
-    {
-      "p": 200,
-      "topic": "سيوف وأدوات",
-      "q": "ما القناع الذي يضعه أوروكوداكي على وجهه؟",
-      "a": "قناع التينغو",
-      "alt": [
-        "قناع تينغو",
-        "التينغو"
-      ],
-      "source": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters",
-      "verified": true,
-      "qid": "demonslayer-200-095"
-    },
-    {
-      "p": 200,
-      "topic": "سيوف وأدوات",
-      "q": "ما القناع الذي يعطيه أوروكوداكي لتلاميذه ليحميهم؟",
-      "a": "قناع الثعلب",
-      "alt": [
-        "قناع ثعلب",
-        "أقنعة الثعالب"
-      ],
-      "source": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters",
-      "verified": true,
-      "qid": "demonslayer-200-096"
+      "qid": "demonslayer-200-908",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Tanjiro_Kamado#In_Demon_Slayer:_Kimetsu_no_Yaiba",
+      "difficultyTarget": 0.8
     },
     {
       "p": 400,
-      "topic": "تانجيرو ونيزوكو",
+      "topic": "التنفس والقدرات",
       "q": "ما اسم الرقصة التي ورثها تانجيرو عن أبيه؟",
       "a": "رقصة إله النار",
       "alt": [
         "هينوكامي كاغورا",
         "رقصة إله النيران"
       ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Tanjiro_Kamado",
       "verified": true,
-      "qid": "demonslayer-400-049"
+      "qid": "demonslayer-400-901",
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters#Tanjiro_Kamado",
+      "difficultyTarget": 0.6
     },
     {
       "p": 400,
-      "topic": "تانجيرو ونيزوكو",
-      "q": "ما أصل الأثر الأحمر على جبين تانجيرو؟",
-      "a": "حرق",
-      "alt": [
-        "أثر حرق",
-        "ندبة حرق"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Tanjiro_Kamado",
-      "verified": true,
-      "qid": "demonslayer-400-050"
-    },
-    {
-      "p": 400,
-      "topic": "تانجيرو ونيزوكو",
-      "q": "بم تقاتل نيزوكو الشياطين بدل السيف؟",
-      "a": "بالركل",
-      "alt": [
-        "الركلات",
-        "بقدميها"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Nezuko_Kamado",
-      "verified": true,
-      "qid": "demonslayer-400-051"
-    },
-    {
-      "p": 400,
-      "topic": "تانجيرو ونيزوكو",
-      "q": "ما اسم قدرة نيزوكو التي تشعل الدم؟",
-      "a": "الدم المتفجّر",
-      "alt": [
-        "دم الانفجار",
-        "تفجير الدم"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Nezuko_Kamado",
-      "verified": true,
-      "qid": "demonslayer-400-052"
-    },
-    {
-      "p": 400,
-      "topic": "تانجيرو ونيزوكو",
-      "q": "ما اسم والد تانجيرو الذي علّمه الرقصة؟",
-      "a": "تانجورو",
-      "alt": [
-        "تانجورو الأب"
-      ],
-      "source": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters",
-      "verified": true,
-      "qid": "demonslayer-400-053"
-    },
-    {
-      "p": 400,
-      "topic": "الهاشيرا وألقابهم",
-      "q": "من عمود الصخر؟",
-      "a": "غيومي هيميجيما",
-      "alt": [
-        "غيومي",
-        "غيومي هيميجما"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Hashira",
-      "verified": true,
-      "qid": "demonslayer-400-054"
-    },
-    {
-      "p": 400,
-      "topic": "الهاشيرا وألقابهم",
-      "q": "من عمود الريح؟",
-      "a": "سانيمي شينازوغاوا",
-      "alt": [
-        "سانيمي",
-        "سانمي شينازوغاوا"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Hashira",
-      "verified": true,
-      "qid": "demonslayer-400-055"
-    },
-    {
-      "p": 400,
-      "topic": "الهاشيرا وألقابهم",
-      "q": "من عمود الأفعى؟",
-      "a": "أوباناي إيغورو",
-      "alt": [
-        "أوباناي",
-        "أوباناي إجورو"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Hashira",
-      "verified": true,
-      "qid": "demonslayer-400-056"
-    },
-    {
-      "p": 400,
-      "topic": "الهاشيرا وألقابهم",
-      "q": "من عمود الضباب؟",
-      "a": "مويتشيرو توكيتو",
-      "alt": [
-        "مويتشيرو",
-        "موئيتشيرو توكيتو"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Hashira",
-      "verified": true,
-      "qid": "demonslayer-400-057"
-    },
-    {
-      "p": 400,
-      "topic": "الهاشيرا وألقابهم",
-      "q": "بأي سلاح يقاتل عمود الصخر بدل السيف؟",
-      "a": "فأس وكرة شائكة",
-      "alt": [
-        "فأس وسلسلة",
-        "كرة شائكة وفأس"
-      ],
-      "source": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters",
-      "verified": true,
-      "qid": "demonslayer-400-058"
-    },
-    {
-      "p": 400,
-      "topic": "الهاشيرا وألقابهم",
-      "q": "ما اللونان في شعر عمود الحب؟",
-      "a": "وردي وأخضر",
-      "alt": [
-        "الوردي والأخضر",
-        "زهري وأخضر"
-      ],
-      "source": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters",
-      "verified": true,
-      "qid": "demonslayer-400-059"
-    },
-    {
-      "p": 400,
-      "topic": "أساليب التنفس",
-      "q": "لماذا لا تستطيع شينوبو قتل الشياطين بضربة سيف كبقية الأعمدة؟",
-      "a": "ضعف قوّتها الجسدية",
-      "alt": [
-        "ضعف جسدها",
-        "لا تقوى جسديًا",
-        "قوّتها الجسدية ضعيفة"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Breathing_Style",
-      "verified": true,
-      "qid": "demonslayer-400-060"
-    },
-    {
-      "p": 400,
-      "topic": "موزان والكيزوكي",
-      "q": "بأي هيئة بشرية تنكّر موزان وهو يمشي بين الناس؟",
-      "a": "زوج وأب لطفلة",
-      "alt": [
-        "رجل مع أسرته",
-        "أب لأسرة بشرية",
-        "رجل أنيق وأب"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Breathing_Style",
-      "verified": true,
-      "qid": "demonslayer-400-061"
-    },
-    {
-      "p": 400,
-      "topic": "الرفاق والمدرّبون",
-      "q": "ما الدواء الذي تعمل عليه الشيطانة الطبيبة في مختبرها؟",
-      "a": "دواء يعيد الشياطين بشرًا",
-      "alt": [
-        "دواء لعلاج الشياطين",
-        "علاج يردّهم بشرًا",
-        "دواء يعيد البشرية"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Breathing_Style",
-      "verified": true,
-      "qid": "demonslayer-400-062"
-    },
-    {
-      "p": 400,
-      "topic": "فيلق قتلة الشياطين",
-      "q": "ما موقف الحكومة اليابانية من فيلق قتلة الشياطين؟",
-      "a": "لا تعترف به",
-      "alt": [
-        "غير معترف به",
-        "لا تعرف بوجوده",
-        "تتجاهله"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Breathing_Style",
-      "verified": true,
-      "qid": "demonslayer-400-063"
-    },
-    {
-      "p": 400,
-      "topic": "الهاشيرا وألقابهم",
-      "q": "ما الذي فعله سانيمي أمام الأعمدة ليثبت أن نيزوكو خطر؟",
-      "a": "جرح ذراعه أمامها",
-      "alt": [
-        "شقّ ذراعه",
-        "أسال دمه أمامها",
-        "جرح نفسه"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Breathing_Style",
-      "verified": true,
-      "qid": "demonslayer-400-064"
-    },
-    {
-      "p": 400,
-      "topic": "أساليب التنفس",
-      "q": "ما أسلوب التنفس الذي تقاتل به كاناو؟",
-      "a": "تنفس الزهرة",
-      "alt": [
-        "تنفس الأزهار",
-        "تنفس الزهور"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Breathing_Style",
-      "verified": true,
-      "qid": "demonslayer-400-065"
-    },
-    {
-      "p": 400,
-      "topic": "فيلق قتلة الشياطين",
+      "topic": "الفيلق",
       "q": "من قائد الفيلق الذي يوقّره المحاربون جميعًا؟",
       "a": "كاغايا أوبوياشيكي",
       "alt": [
         "كاغايا",
         "أوبوياشيكي"
       ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Demon_Slayer_Corps",
       "verified": true,
-      "qid": "demonslayer-400-066"
+      "qid": "demonslayer-400-902",
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters#Ubuyashiki_family",
+      "difficultyTarget": 0.6
     },
     {
       "p": 400,
-      "topic": "فيلق قتلة الشياطين",
-      "q": "بم يخاطب المحاربون قائدهم احترامًا؟",
-      "a": "أوياكاتا ساما",
+      "topic": "الفيلق",
+      "q": "كم يومًا يجب أن يصمد المرشح في اختبار الانضمام إلى الفيلق؟",
+      "a": "سبعة أيام",
       "alt": [
-        "أوياكاتا",
-        "سيّدنا"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Demon_Slayer_Corps",
-      "verified": true,
-      "qid": "demonslayer-400-067"
-    },
-    {
-      "p": 400,
-      "topic": "فيلق قتلة الشياطين",
-      "q": "كم ليلة يجب أن يصمد المتقدّم في جبل الاختبار؟",
-      "a": "سبع ليالٍ",
-      "alt": [
-        "سبعة أيام",
+        "7 أيام",
         "سبع ليال"
       ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Final_Selection",
       "verified": true,
-      "qid": "demonslayer-400-068"
+      "qid": "demonslayer-400-903",
+      "sourceUrl": "https://demonslayer-anime.com/risshihen/story/04.html",
+      "difficultyTarget": 0.6
     },
     {
       "p": 400,
-      "topic": "فيلق قتلة الشياطين",
-      "q": "ما اسم الفرقة التي تُسعف الجرحى وتنظّف بعد المعارك؟",
-      "a": "الكاكوشي",
-      "alt": [
-        "كاكوشي",
-        "المخفيّون"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Demon_Slayer_Corps",
-      "verified": true,
-      "qid": "demonslayer-400-069"
-    },
-    {
-      "p": 400,
-      "topic": "فيلق قتلة الشياطين",
-      "q": "ما اسم الجبل الذي يُقام عليه اختبار القبول؟",
-      "a": "جبل فوجيكاساني",
-      "alt": [
-        "فوجيكاساني",
-        "جبل فوجي كاساني"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Final_Selection",
-      "verified": true,
-      "qid": "demonslayer-400-070"
-    },
-    {
-      "p": 400,
-      "topic": "موزان والكيزوكي",
+      "topic": "الشياطين",
       "q": "ما اسم الشيطان الذي يسيطر على أحلام ركّاب القطار؟",
       "a": "إنمو",
       "alt": [
         "أنمو",
         "إينمو"
       ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Twelve_Kizuki",
       "verified": true,
-      "qid": "demonslayer-400-071"
+      "qid": "demonslayer-400-904",
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters#Lower_Ranks",
+      "difficultyTarget": 0.6
     },
     {
       "p": 400,
-      "topic": "موزان والكيزوكي",
-      "q": "ما رتبة شيطان القطار بين شياطين موزان؟",
-      "a": "القمر السفلي الأول",
-      "alt": [
-        "الرتبة السفلى الأولى",
-        "السفلي الأول"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Twelve_Kizuki",
-      "verified": true,
-      "qid": "demonslayer-400-072"
-    },
-    {
-      "p": 400,
-      "topic": "موزان والكيزوكي",
-      "q": "ما اسم الشيطان الذي واجه عمود اللهب بعد معركة القطار؟",
+      "topic": "الشياطين",
+      "q": "من الشيطان الذي واجه عمود اللهب بعد هزيمة شيطان القطار؟",
       "a": "أكازا",
       "alt": [
         "أكاذا",
         "أكازا القوي"
       ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Twelve_Kizuki",
       "verified": true,
-      "qid": "demonslayer-400-073"
+      "qid": "demonslayer-400-905",
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters#Hashira",
+      "difficultyTarget": 0.6
     },
     {
       "p": 400,
-      "topic": "موزان والكيزوكي",
-      "q": "ما رتبة الشيطان الذي يقاتل بقبضتيه بلا سلاح؟",
-      "a": "القمر العلوي الثالث",
+      "topic": "الرفاق والمعلمون",
+      "q": "ما الذي تستعمله كاناو لتقرّر ما تفعل؟",
+      "a": "عملة معدنية",
       "alt": [
-        "الرتبة العليا الثالثة",
-        "العلوي الثالث"
+        "قطعة نقود",
+        "نقود معدنية"
       ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Twelve_Kizuki",
       "verified": true,
-      "qid": "demonslayer-400-074"
+      "qid": "demonslayer-400-906",
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters#Butterfly_Mansion",
+      "difficultyTarget": 0.6
     },
     {
       "p": 400,
-      "topic": "موزان والكيزوكي",
-      "q": "ما اسم الشيطانة التي جعلت من الأحزمة سلاحها؟",
-      "a": "داكي",
+      "topic": "الأماكن والرحلات",
+      "q": "ما اسم القصر الذي يتعافى فيه المحاربون الجرحى؟",
+      "a": "قصر الفراشة",
       "alt": [
-        "دائكي"
+        "بيت الفراشة",
+        "قصر الفراشات"
       ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Twelve_Kizuki",
       "verified": true,
-      "qid": "demonslayer-400-075"
+      "qid": "demonslayer-400-907",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Tanjiro_Kamado#In_Demon_Slayer:_Kimetsu_no_Yaiba",
+      "difficultyTarget": 0.6
     },
     {
       "p": 400,
-      "topic": "موزان والكيزوكي",
-      "q": "من أخو شيطانة الأحزمة الذي واجه عمود الصوت؟",
-      "a": "غيوتارو",
+      "topic": "الأسلحة والحدادون",
+      "q": "أي زهرة تنفر منها الشياطين ولا تقربها؟",
+      "a": "الوستارية",
       "alt": [
-        "جيوتارو"
+        "الويستيريا",
+        "الفوجي"
       ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Twelve_Kizuki",
       "verified": true,
-      "qid": "demonslayer-400-076"
+      "qid": "demonslayer-400-908",
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters#Demons",
+      "difficultyTarget": 0.6
     },
     {
-      "p": 400,
-      "topic": "موزان والكيزوكي",
+      "p": 600,
+      "topic": "عائلة كامادو",
+      "q": "ما اسم قدرة نيزوكو التي تشعل الدم؟",
+      "a": "الدم المتفجّر",
+      "alt": [
+        "دم الانفجار",
+        "تفجير الدم"
+      ],
+      "verified": true,
+      "qid": "demonslayer-600-901",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Nezuko_Kamado#In_Demon_Slayer:_Kimetsu_no_Yaiba",
+      "difficultyTarget": 0.4
+    },
+    {
+      "p": 600,
+      "topic": "الشياطين",
       "q": "ما النبتة النادرة التي بحث عنها موزان قرونًا؟",
       "a": "الزنبقة العنكبوتية الزرقاء",
       "alt": [
@@ -1014,2104 +252,305 @@
         "الزنبقة الزرقاء",
         "الزنبق الأزرق"
       ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Muzan_Kibutsuji",
       "verified": true,
-      "qid": "demonslayer-400-077"
+      "qid": "demonslayer-600-902",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Demon_Slayer:_Kimetsu_no_Yaiba_%E2%80%93_Swordsmith_Village_Arc#ep45",
+      "difficultyTarget": 0.4
     },
     {
-      "p": 400,
-      "topic": "موزان والكيزوكي",
-      "q": "ما اسم الشيطان الذي يقاتل بالطبول المغروسة في جسده؟",
-      "a": "كيوغاي",
+      "p": 600,
+      "topic": "الأسلحة والحدادون",
+      "q": "ما السم الذي تستخدمه شينوبو لقتل الشياطين؟",
+      "a": "سمّ الوستارية",
       "alt": [
-        "كيوجاي",
-        "شيطان الطبول"
+        "سمّ الويستيريا",
+        "سمّ زهر الوستارية"
       ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Twelve_Kizuki",
       "verified": true,
-      "qid": "demonslayer-400-078"
+      "qid": "demonslayer-600-903",
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters#Hashira",
+      "difficultyTarget": 0.4
     },
     {
-      "p": 400,
-      "topic": "موزان والكيزوكي",
-      "q": "ما اسم الشيطانة التي تقاتل بكرات التماري؟",
-      "a": "سوسامارو",
+      "p": 600,
+      "topic": "الأسلحة والحدادون",
+      "q": "من الحداد الذي يصنع سيوف تانجيرو ويغضب عندما يكسرها؟",
+      "a": "هاغانيزوكا",
       "alt": [
-        "سوساماروا"
+        "هوتارو هاغانيزوكا"
       ],
-      "source": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters",
       "verified": true,
-      "qid": "demonslayer-400-079"
+      "qid": "demonslayer-600-904",
+      "sourceUrl": "https://demonslayer-anime.com/sva/character/",
+      "difficultyTarget": 0.4
     },
     {
-      "p": 400,
-      "topic": "الرفاق والمدرّبون",
-      "q": "من أخو عمود الريح الذي انضمّ إلى الفيلق أيضًا؟",
-      "a": "غينيا شينازوغاوا",
+      "p": 600,
+      "topic": "الرفاق والمعلمون",
+      "q": "من الفتى ذو قناع الثعلب الذي ساعد تانجيرو على قطع الصخرة أثناء تدريبه؟",
+      "a": "سابيتو",
       "alt": [
-        "غينيا",
-        "جينيا"
+        "سابيطو"
       ],
-      "source": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters",
       "verified": true,
-      "qid": "demonslayer-400-080"
+      "qid": "demonslayer-600-905",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Tanjiro_Kamado#In_Demon_Slayer:_Kimetsu_no_Yaiba",
+      "difficultyTarget": 0.4
     },
     {
-      "p": 400,
-      "topic": "الرفاق والمدرّبون",
-      "q": "ما اسم الشيطان الشاب الذي يعيش مع الطبيبة ويساعدها؟",
-      "a": "يوشيرو",
+      "p": 600,
+      "topic": "الأماكن والرحلات",
+      "q": "في أي حيّ التقى تانجيرو بموزان أول مرة؟",
+      "a": "أساكوسا",
       "alt": [
-        "يوشيرّو"
+        "حي أساكوسا"
       ],
-      "source": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters",
       "verified": true,
-      "qid": "demonslayer-400-081"
+      "qid": "demonslayer-600-906",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Tanjiro_Kamado#In_Demon_Slayer:_Kimetsu_no_Yaiba",
+      "difficultyTarget": 0.4
     },
     {
-      "p": 400,
-      "topic": "الرفاق والمدرّبون",
-      "q": "ما الذي تستعمله كاناو لتقرّر ما تفعل؟",
-      "a": "عملة معدنية",
-      "alt": [
-        "قطعة نقود",
-        "نقود معدنية"
-      ],
-      "source": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters",
-      "verified": true,
-      "qid": "demonslayer-400-082"
-    },
-    {
-      "p": 400,
-      "topic": "الرفاق والمدرّبون",
-      "q": "ما القدرة الجسدية الغريبة التي يتمتّع بها إينوسكي؟",
-      "a": "مرونة مفاصله",
-      "alt": [
-        "ليونة مفاصله",
-        "تفكيك مفاصله"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Inosuke_Hashibira",
-      "verified": true,
-      "qid": "demonslayer-400-083"
-    },
-    {
-      "p": 400,
-      "topic": "الرفاق والمدرّبون",
-      "q": "ما الحاسّة التي يتميّز بها زينيتسو؟",
-      "a": "السمع",
-      "alt": [
-        "حاسة السمع"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Zenitsu_Agatsuma",
-      "verified": true,
-      "qid": "demonslayer-400-084"
-    },
-    {
-      "p": 400,
-      "topic": "الرفاق والمدرّبون",
-      "q": "بأي حاسّة يستشعر إينوسكي ما حوله أكثر من غيره؟",
-      "a": "اللمس",
-      "alt": [
-        "حاسة اللمس"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Inosuke_Hashibira",
-      "verified": true,
-      "qid": "demonslayer-400-085"
-    },
-    {
-      "p": 400,
-      "topic": "أماكن ومهمّات",
-      "q": "في أي حيّ تدور مهمّة عمود الصوت؟",
-      "a": "يوشيوارا",
-      "alt": [
-        "حي يوشيوارا"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Yoshiwara",
-      "verified": true,
-      "qid": "demonslayer-400-086"
-    },
-    {
-      "p": 400,
-      "topic": "أماكن ومهمّات",
-      "q": "أين تدرّب تانجيرو عند معلّمه قبل الاختبار؟",
-      "a": "جبل ساغيري",
-      "alt": [
-        "ساغيري",
-        "جبل ساجيري"
-      ],
-      "source": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters",
-      "verified": true,
-      "qid": "demonslayer-400-087"
-    },
-    {
-      "p": 400,
-      "topic": "أماكن ومهمّات",
+      "p": 600,
+      "topic": "الأماكن والرحلات",
       "q": "ما اسم الجبل الذي تعيش فيه عائلة شياطين العناكب؟",
       "a": "جبل ناتاغومو",
       "alt": [
         "ناتاغومو",
         "جبل ناتاجومو"
       ],
-      "source": "https://en.wikipedia.org/wiki/Demon_Slayer:_Kimetsu_no_Yaiba",
       "verified": true,
-      "qid": "demonslayer-400-088"
-    },
-    {
-      "p": 400,
-      "topic": "أماكن ومهمّات",
-      "q": "ما اسم القصر الذي تتبدّل غرفه ويسكنه موزان؟",
-      "a": "قلعة اللانهاية",
-      "alt": [
-        "القلعة اللانهائية",
-        "قصر اللانهاية"
-      ],
-      "source": "https://en.wikipedia.org/wiki/Demon_Slayer:_Kimetsu_no_Yaiba",
-      "verified": true,
-      "qid": "demonslayer-400-089"
-    },
-    {
-      "p": 400,
-      "topic": "سيوف وأدوات",
-      "q": "ما لون نصلَي إينوسكي؟",
-      "a": "رمادي",
-      "alt": [
-        "الرمادي",
-        "رمادي نيلي"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Nichirin_Sword",
-      "verified": true,
-      "qid": "demonslayer-400-090"
-    },
-    {
-      "p": 400,
-      "topic": "سيوف وأدوات",
-      "q": "ما الذي يميّز سيف شينوبو عن بقية السيوف؟",
-      "a": "نصل كالإبرة",
-      "alt": [
-        "رأس كالإبرة",
-        "نصل رفيع"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Nichirin_Sword",
-      "verified": true,
-      "qid": "demonslayer-400-091"
-    },
-    {
-      "p": 400,
-      "topic": "سيوف وأدوات",
-      "q": "ما المادّة التي تحقن بها شينوبو الشياطين؟",
-      "a": "سمّ الوستارية",
-      "alt": [
-        "سمّ الويستيريا",
-        "سمّ زهر الوستارية"
-      ],
-      "source": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters",
-      "verified": true,
-      "qid": "demonslayer-400-092"
-    },
-    {
-      "p": 400,
-      "topic": "سيوف وأدوات",
-      "q": "ما نوع السيف الذي تحمله ميتسوري ويشبه السوط؟",
-      "a": "سيف مرن",
-      "alt": [
-        "نصل مرن",
-        "سيف كالسوط"
-      ],
-      "source": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters",
-      "verified": true,
-      "qid": "demonslayer-400-093"
-    },
-    {
-      "p": 400,
-      "topic": "سيوف وأدوات",
-      "q": "ما القناع الذي يخفي به حدّادو القرية وجوههم؟",
-      "a": "قناع هيوتوكو",
-      "alt": [
-        "هيوتوكو",
-        "قناع الهيوتوكو"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Swordsmith_Village",
-      "verified": true,
-      "qid": "demonslayer-400-094"
-    },
-    {
-      "p": 400,
-      "topic": "سيوف وأدوات",
-      "q": "ما السلاح الغريب الذي يقاتل به غينيا بدل السيف؟",
-      "a": "بندقية",
-      "alt": [
-        "بندقية صيد",
-        "بندقية نيتشيرين",
-        "البندقية"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Nichirin_Sword",
-      "verified": true,
-      "qid": "demonslayer-400-095"
-    },
-    {
-      "p": 400,
-      "topic": "سيوف وأدوات",
-      "q": "ما نوع النقش الياباني الذي يزيّن ما يتدلّى من أذنَي تانجيرو؟",
-      "a": "هانافودا",
-      "alt": [
-        "أقراط هانافودا",
-        "الهانافودا"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Tanjiro_Kamado",
-      "verified": true,
-      "qid": "demonslayer-400-096"
+      "qid": "demonslayer-600-907",
+      "sourceUrl": "https://demonslayer-anime.com/risshihen/story/15.html",
+      "difficultyTarget": 0.4
     },
     {
       "p": 600,
-      "topic": "تانجيرو ونيزوكو",
-      "q": "ما اسم أمّ تانجيرو ونيزوكو؟",
-      "a": "كيي",
+      "topic": "الهاشيرا",
+      "q": "ماذا فقد أوزوي في معركة حي الملاهي قبل اعتزاله؟",
+      "a": "يده اليسرى وعينه اليسرى",
       "alt": [
-        "كييه",
-        "كيي الأم"
+        "اليد اليسرى والعين اليسرى"
       ],
-      "source": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters",
       "verified": true,
-      "qid": "demonslayer-600-049"
+      "qid": "demonslayer-600-908",
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters#Hashira",
+      "difficultyTarget": 0.4
     },
     {
-      "p": 600,
-      "topic": "تانجيرو ونيزوكو",
-      "q": "ما اسم أصغر إخوة تانجيرو؟",
-      "a": "روكوتا",
-      "alt": [
-        "روكوتا الصغير"
-      ],
-      "source": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters",
-      "verified": true,
-      "qid": "demonslayer-600-050"
-    },
-    {
-      "p": 600,
-      "topic": "تانجيرو ونيزوكو",
-      "q": "كم أخًا وأختًا لتانجيرو؟",
-      "a": "خمسة",
-      "alt": [
-        "5",
-        "خمسة إخوة"
-      ],
-      "source": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters",
-      "verified": true,
-      "qid": "demonslayer-600-051"
-    },
-    {
-      "p": 600,
-      "topic": "تانجيرو ونيزوكو",
-      "q": "ما لون أطراف شعر نيزوكو بعد التحوّل؟",
-      "a": "برتقالي",
-      "alt": [
-        "أحمر برتقالي",
-        "البرتقالي"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Nezuko_Kamado",
-      "verified": true,
-      "qid": "demonslayer-600-052"
-    },
-    {
-      "p": 600,
-      "topic": "تانجيرو ونيزوكو",
-      "q": "في أي ليلة من السنة كان أبو تانجيرو يؤدّي رقصته المقدّسة؟",
-      "a": "ليلة رأس السنة",
-      "alt": [
-        "رأس السنة",
-        "ليلة السنة الجديدة"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Tanjiro_Kamado",
-      "verified": true,
-      "qid": "demonslayer-600-053"
-    },
-    {
-      "p": 600,
-      "topic": "تانجيرو ونيزوكو",
-      "q": "بم يضرب تانجيرو خصمه حين يعجز عن رفع سيفه؟",
-      "a": "برأسه",
-      "alt": [
-        "بجبهته",
-        "نطحة رأسه"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Tanjiro_Kamado",
-      "verified": true,
-      "qid": "demonslayer-600-054"
-    },
-    {
-      "p": 600,
-      "topic": "الهاشيرا وألقابهم",
-      "q": "من أخت شينوبو الكبرى التي كانت من الأعمدة قبلها؟",
-      "a": "كاناي كوتشو",
-      "alt": [
-        "كاناي",
-        "كانايه كوتشو"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Hashira",
-      "verified": true,
-      "qid": "demonslayer-600-055"
-    },
-    {
-      "p": 600,
-      "topic": "الهاشيرا وألقابهم",
-      "q": "كم كان عمر مويتشيرو حين صار من الأعمدة؟",
-      "a": "أربعة عشر",
-      "alt": [
-        "14",
-        "أربعة عشر عامًا"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Hashira",
-      "verified": true,
-      "qid": "demonslayer-600-056"
-    },
-    {
-      "p": 600,
-      "topic": "الهاشيرا وألقابهم",
-      "q": "ما اسم أفعى أوباناي؟",
-      "a": "كابورامارو",
-      "alt": [
-        "كابرامارو"
-      ],
-      "source": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters",
-      "verified": true,
-      "qid": "demonslayer-600-057"
-    },
-    {
-      "p": 600,
-      "topic": "الهاشيرا وألقابهم",
-      "q": "بأي سلاح يقاتل أوزوي بدل السيف المعتاد؟",
-      "a": "ساطوران ضخمان",
-      "alt": [
-        "ساطوران",
-        "سيفان عريضان"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Nichirin_Sword",
-      "verified": true,
-      "qid": "demonslayer-600-058"
-    },
-    {
-      "p": 600,
-      "topic": "الهاشيرا وألقابهم",
-      "q": "ما الذي يحمله عمود الصخر في يده وهو يصلّي؟",
-      "a": "مسبحة",
-      "alt": [
-        "سبحة",
-        "حبات المسبحة"
-      ],
-      "source": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters",
-      "verified": true,
-      "qid": "demonslayer-600-059"
-    },
-    {
-      "p": 600,
-      "topic": "الهاشيرا وألقابهم",
-      "q": "ما الحاسّة التي يفتقدها عمود الصخر؟",
-      "a": "البصر",
-      "alt": [
-        "بصره",
-        "فقد بصره"
-      ],
-      "source": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters",
-      "verified": true,
-      "qid": "demonslayer-600-060"
-    },
-    {
-      "p": 600,
-      "topic": "أساليب التنفس",
-      "q": "ما اسم الحركة الوحيدة التي أتقنها زينيتسو؟",
-      "a": "الصاعقة والوميض",
-      "alt": [
-        "البرق والوميض",
-        "صاعقة ووميض"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Zenitsu_Agatsuma",
-      "verified": true,
-      "qid": "demonslayer-600-061"
-    },
-    {
-      "p": 600,
-      "topic": "أساليب التنفس",
-      "q": "ما الذي يعتمد عليه غينيا في القتال بدل أساليب التنفس؟",
-      "a": "أكل لحم الشياطين",
-      "alt": [
-        "أكل الشياطين",
-        "التغذّي على الشياطين",
-        "لحم الشياطين"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Breathing_Style",
-      "verified": true,
-      "qid": "demonslayer-600-062"
-    },
-    {
-      "p": 600,
-      "topic": "أساليب التنفس",
-      "q": "ما أسلوب التنفس الذي يقاتل به كوكوشيبو؟",
-      "a": "تنفس القمر",
-      "alt": [
-        "نفَس القمر"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Breathing_Style",
-      "verified": true,
-      "qid": "demonslayer-600-063"
-    },
-    {
-      "p": 600,
-      "topic": "أساليب التنفس",
-      "q": "كم شكلًا لأسلوب الماء قبل أن يضيف غيو شكله؟",
-      "a": "عشرة",
-      "alt": [
-        "10",
-        "عشرة أشكال"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Breathing_Style",
-      "verified": true,
-      "qid": "demonslayer-600-064"
-    },
-    {
-      "p": 600,
-      "topic": "أساليب التنفس",
-      "q": "كم شكلًا لأسلوب الضباب قبل أن يضيف مويتشيرو شكله؟",
-      "a": "ستة أشكال",
-      "alt": [
-        "6",
-        "ستّة"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Mist_Breathing",
-      "verified": true,
-      "qid": "demonslayer-600-065"
-    },
-    {
-      "p": 600,
-      "topic": "أساليب التنفس",
-      "q": "ما اسم الشكل الأول من أسلوب الماء؟",
-      "a": "قطع سطح الماء",
-      "alt": [
-        "شقّ سطح الماء",
-        "ضربة سطح الماء"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Breathing_Style",
-      "verified": true,
-      "qid": "demonslayer-600-066"
-    },
-    {
-      "p": 600,
-      "topic": "فيلق قتلة الشياطين",
-      "q": "ما اسم العائلة التي تقود الفيلق منذ أجيال؟",
-      "a": "آل أوبوياشيكي",
-      "alt": [
-        "عائلة أوبوياشيكي"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Demon_Slayer_Corps",
-      "verified": true,
-      "qid": "demonslayer-600-067"
-    },
-    {
-      "p": 600,
-      "topic": "فيلق قتلة الشياطين",
-      "q": "ما الاسم الذي يُعرف به طير البريد في الفيلق؟",
-      "a": "كاسوغاي",
-      "alt": [
-        "كاسوجاي",
-        "طيور كاسوغاي"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Demon_Slayer_Corps",
-      "verified": true,
-      "qid": "demonslayer-600-068"
-    },
-    {
-      "p": 600,
-      "topic": "فيلق قتلة الشياطين",
-      "q": "ما اسم أدنى رتبة في الفيلق؟",
-      "a": "ميزونوتو",
-      "alt": [
-        "مزونوتو"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Demon_Slayer_Corps",
-      "verified": true,
-      "qid": "demonslayer-600-069"
-    },
-    {
-      "p": 600,
-      "topic": "فيلق قتلة الشياطين",
-      "q": "كم رتبة في الفيلق من أدناها إلى أعلاها؟",
-      "a": "عشر",
-      "alt": [
-        "عشر رتب",
-        "10"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Demon_Slayer_Corps",
-      "verified": true,
-      "qid": "demonslayer-600-070"
-    },
-    {
-      "p": 600,
-      "topic": "فيلق قتلة الشياطين",
-      "q": "ما اسم الحدّاد الغاضب الذي يصنع سيوف تانجيرو؟",
-      "a": "هاغانيزوكا",
-      "alt": [
-        "هوتارو هاغانيزوكا"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Swordsmith_Village",
-      "verified": true,
-      "qid": "demonslayer-600-071"
-    },
-    {
-      "p": 600,
-      "topic": "فيلق قتلة الشياطين",
-      "q": "ما اسم البيوت التي تستضيف المحاربين وتحمل شعار الزهرة؟",
-      "a": "بيوت الوستارية",
-      "alt": [
-        "بيت الوستارية",
-        "دار الوستارية"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Demon_Slayer_Corps",
-      "verified": true,
-      "qid": "demonslayer-600-072"
-    },
-    {
-      "p": 600,
-      "topic": "فيلق قتلة الشياطين",
+      "p": 800,
+      "topic": "الفيلق",
       "q": "ما اسم الفتى الذي خلف كاغايا في قيادة الفيلق؟",
       "a": "كيريا",
       "alt": [
         "كيريا أوبوياشيكي"
       ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Demon_Slayer_Corps",
       "verified": true,
-      "qid": "demonslayer-600-073"
+      "qid": "demonslayer-800-901",
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters#Ubuyashiki_family",
+      "difficultyTarget": 0.25
     },
     {
-      "p": 600,
-      "topic": "موزان والكيزوكي",
-      "q": "ما رتبة روي بين شياطين موزان؟",
-      "a": "القمر السفلي الخامس",
-      "alt": [
-        "الرتبة السفلى الخامسة"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Twelve_Kizuki",
-      "verified": true,
-      "qid": "demonslayer-600-074"
-    },
-    {
-      "p": 600,
-      "topic": "موزان والكيزوكي",
-      "q": "ما اسم الشيطان الذي يقود طائفة ويقاتل بالجليد؟",
-      "a": "دوما",
-      "alt": [
-        "دوماه",
-        "دومه"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Twelve_Kizuki",
-      "verified": true,
-      "qid": "demonslayer-600-075"
-    },
-    {
-      "p": 600,
-      "topic": "موزان والكيزوكي",
-      "q": "ما رتبة كوكوشيبو بين شياطين موزان؟",
-      "a": "القمر العلوي الأول",
-      "alt": [
-        "الرتبة العليا الأولى"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Twelve_Kizuki",
-      "verified": true,
-      "qid": "demonslayer-600-076"
-    },
-    {
-      "p": 600,
-      "topic": "موزان والكيزوكي",
-      "q": "ما اسم الشيطان الذي ينقسم إلى نسخ كلّما ضُرب؟",
-      "a": "هانتينغو",
-      "alt": [
-        "هانتنغو"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Twelve_Kizuki",
-      "verified": true,
-      "qid": "demonslayer-600-077"
-    },
-    {
-      "p": 600,
-      "topic": "موزان والكيزوكي",
-      "q": "ما اسم الشيطان الذي يقاتل بالأباريق الخزفية؟",
-      "a": "غيوكو",
-      "alt": [
-        "جيوكو",
-        "غيوكّو"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Twelve_Kizuki",
-      "verified": true,
-      "qid": "demonslayer-600-078"
-    },
-    {
-      "p": 600,
-      "topic": "موزان والكيزوكي",
-      "q": "ما اسم الشيطانة التي تحرّك غرف قلعة موزان بعزفها؟",
-      "a": "ناكيمي",
-      "alt": [
-        "ناكيمه"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Twelve_Kizuki",
-      "verified": true,
-      "qid": "demonslayer-600-079"
-    },
-    {
-      "p": 600,
-      "topic": "موزان والكيزوكي",
-      "q": "ما الاسم الذي يُطلق على قدرات الشياطين الخاصة؟",
-      "a": "فنون الدم الشيطانية",
-      "alt": [
-        "فن الدم الشيطاني",
-        "فنون الدم"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Twelve_Kizuki",
-      "verified": true,
-      "qid": "demonslayer-600-080"
-    },
-    {
-      "p": 600,
-      "topic": "موزان والكيزوكي",
-      "q": "كم شيطانًا في الرتب العليا عند موزان؟",
-      "a": "ستة",
-      "alt": [
-        "6",
-        "ستة شياطين"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Twelve_Kizuki",
-      "verified": true,
-      "qid": "demonslayer-600-081"
-    },
-    {
-      "p": 600,
-      "topic": "الرفاق والمدرّبون",
+      "p": 800,
+      "topic": "الرفاق والمعلمون",
       "q": "من المعلّم الذي ربّى زينيتسو ودرّبه؟",
       "a": "جيغورو كواجيما",
       "alt": [
         "جيغورو",
         "كواجيما"
       ],
-      "source": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters",
       "verified": true,
-      "qid": "demonslayer-600-082"
-    },
-    {
-      "p": 600,
-      "topic": "الرفاق والمدرّبون",
-      "q": "ما اسم الفتى ذي القناع الذي درّب تانجيرو في الضباب؟",
-      "a": "سابيتو",
-      "alt": [
-        "سابيطو"
-      ],
-      "source": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters",
-      "verified": true,
-      "qid": "demonslayer-600-083"
-    },
-    {
-      "p": 600,
-      "topic": "الرفاق والمدرّبون",
-      "q": "ما اسم الفتاة الصغيرة التي صحّحت حركات تانجيرو في الجبل؟",
-      "a": "ماكومو",
-      "alt": [
-        "ماكومو الصغيرة"
-      ],
-      "source": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters",
-      "verified": true,
-      "qid": "demonslayer-600-084"
-    },
-    {
-      "p": 600,
-      "topic": "الرفاق والمدرّبون",
-      "q": "من الفتاة التي تشرف على تدريب التعافي عند شينوبو؟",
-      "a": "آوي كانزاكي",
-      "alt": [
-        "آوي",
-        "أوي كانزاكي"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Butterfly_Mansion",
-      "verified": true,
-      "qid": "demonslayer-600-085"
-    },
-    {
-      "p": 600,
-      "topic": "الرفاق والمدرّبون",
-      "q": "كم فتاة صغيرة تساعد شينوبو في قصرها؟",
-      "a": "ثلاث فتيات",
-      "alt": [
-        "ثلاث",
-        "3"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Butterfly_Mansion",
-      "verified": true,
-      "qid": "demonslayer-600-086"
-    },
-    {
-      "p": 600,
-      "topic": "الرفاق والمدرّبون",
-      "q": "ما اسم أسرة إينوسكي؟",
-      "a": "هاشيبيرا",
-      "alt": [
-        "هاشيبرا"
-      ],
-      "source": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters",
-      "verified": true,
-      "qid": "demonslayer-600-087"
-    },
-    {
-      "p": 600,
-      "topic": "أماكن ومهمّات",
-      "q": "في أي حيّ التقى تانجيرو بموزان أول مرة؟",
-      "a": "أساكوسا",
-      "alt": [
-        "حي أساكوسا"
-      ],
-      "source": "https://en.wikipedia.org/wiki/Demon_Slayer:_Kimetsu_no_Yaiba",
-      "verified": true,
-      "qid": "demonslayer-600-088"
-    },
-    {
-      "p": 600,
-      "topic": "أماكن ومهمّات",
-      "q": "ما اسم القصر الذي التقى فيه تانجيرو بإينوسكي أول مرة؟",
-      "a": "قصر الطبول",
-      "alt": [
-        "بيت الطبول",
-        "قصر تسوزومي"
-      ],
-      "source": "https://en.wikipedia.org/wiki/Demon_Slayer:_Kimetsu_no_Yaiba",
-      "verified": true,
-      "qid": "demonslayer-600-089"
-    },
-    {
-      "p": 600,
-      "topic": "أماكن ومهمّات",
-      "q": "في أي عصر ياباني تدور أحداث الحكاية؟",
-      "a": "عصر تايشو",
-      "alt": [
-        "تايشو",
-        "حقبة تايشو"
-      ],
-      "source": "https://en.wikipedia.org/wiki/Demon_Slayer:_Kimetsu_no_Yaiba",
-      "verified": true,
-      "qid": "demonslayer-600-090"
-    },
-    {
-      "p": 600,
-      "topic": "الهاشيرا وألقابهم",
-      "q": "لماذا يقول غيو إنه ليس مثل بقيّة الأعمدة؟",
-      "a": "يرى نفسه غير مستحقّ",
-      "alt": [
-        "لا يعدّ نفسه مستحقًّا",
-        "يشعر بالذنب",
-        "يحتقر نفسه"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Final_Selection",
-      "verified": true,
-      "qid": "demonslayer-600-091"
-    },
-    {
-      "p": 600,
-      "topic": "سيوف وأدوات",
-      "q": "ما المادّة التي تُصنع منها نصال الفيلق؟",
-      "a": "الرمل القرمزي",
-      "alt": [
-        "رمل الحديد القرمزي",
-        "الخام القرمزي"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Nichirin_Sword",
-      "verified": true,
-      "qid": "demonslayer-600-092"
-    },
-    {
-      "p": 600,
-      "topic": "سيوف وأدوات",
-      "q": "ما اسم المعطف الذي يرتديه المحاربون فوق زيّهم؟",
-      "a": "الهاوري",
-      "alt": [
-        "هاوري",
-        "معطف الهاوري"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Hashira",
-      "verified": true,
-      "qid": "demonslayer-600-093"
-    },
-    {
-      "p": 600,
-      "topic": "سيوف وأدوات",
-      "q": "ما الذي فعله إينوسكي بنصليه ليجعل حدّهما مسنّنًا؟",
-      "a": "كسرهما بالصخر",
-      "alt": [
-        "ضربهما بالحجر",
-        "طرقهما على الصخر"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Inosuke_Hashibira",
-      "verified": true,
-      "qid": "demonslayer-600-094"
-    },
-    {
-      "p": 600,
-      "topic": "سيوف وأدوات",
-      "q": "ما الذي يربط ساطورَي أوزوي ببعضهما؟",
-      "a": "سلسلة",
-      "alt": [
-        "سلسلة معدنية",
-        "جنزير"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Nichirin_Sword",
-      "verified": true,
-      "qid": "demonslayer-600-095"
-    },
-    {
-      "p": 600,
-      "topic": "سيوف وأدوات",
-      "q": "ما لون نصل مويتشيرو؟",
-      "a": "أبيض",
-      "alt": [
-        "الأبيض"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Nichirin_Sword",
-      "verified": true,
-      "qid": "demonslayer-600-096"
+      "qid": "demonslayer-800-902",
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters#Supporting_characters",
+      "difficultyTarget": 0.25
     },
     {
       "p": 800,
-      "topic": "تانجيرو ونيزوكو",
-      "q": "كم كان عمر نيزوكو ليلة تحوّلها إلى شيطانة؟",
-      "a": "اثنتا عشرة سنة",
+      "topic": "الهاشيرا",
+      "q": "ما اسم أفعى أوباناي؟",
+      "a": "كابورامارو",
       "alt": [
-        "12",
-        "اثنتا عشرة"
+        "كابرامارو"
       ],
-      "source": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters",
       "verified": true,
-      "qid": "demonslayer-800-049"
+      "qid": "demonslayer-800-903",
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters#Hashira",
+      "difficultyTarget": 0.25
     },
     {
       "p": 800,
-      "topic": "الهاشيرا وألقابهم",
-      "q": "ما الذي كشفه أوباناي لميتسوري في لحظاته الأخيرة؟",
-      "a": "حبّه لها",
-      "alt": [
-        "أنه يحبّها",
-        "مشاعره نحوها",
-        "أنه أحبّها"
-      ],
-      "source": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters",
-      "verified": true,
-      "qid": "demonslayer-800-050"
-    },
-    {
-      "p": 800,
-      "topic": "الهاشيرا وألقابهم",
-      "q": "ما الذي فقده أوزوي في معركة حيّ الملاهي فاعتزل بعدها؟",
-      "a": "يده اليسرى وعينه",
-      "alt": [
-        "يدًا وعينًا",
-        "ذراعه وعينه",
-        "يده وعينه اليسرى"
-      ],
-      "source": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters",
-      "verified": true,
-      "qid": "demonslayer-800-051"
-    },
-    {
-      "p": 800,
-      "topic": "أساليب التنفس",
-      "q": "كم شكلًا لأسلوب الرياح الذي يقاتل به سانيمي؟",
-      "a": "تسعة أشكال",
-      "alt": [
-        "9",
-        "تسعة"
-      ],
-      "source": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters",
-      "verified": true,
-      "qid": "demonslayer-800-052"
-    },
-    {
-      "p": 800,
-      "topic": "فيلق قتلة الشياطين",
-      "q": "ما اللعنة التي تلاحق أسرة قائد الفيلق جيلًا بعد جيل؟",
-      "a": "الموت قبل الثلاثين",
-      "alt": [
-        "موت الرجال مبكرًا",
-        "لا يعيشون بعد الثلاثين",
-        "عمر قصير"
-      ],
-      "source": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters",
-      "verified": true,
-      "qid": "demonslayer-800-053"
-    },
-    {
-      "p": 800,
-      "topic": "موزان والكيزوكي",
-      "q": "ما اسم الفتاة التي أحبّها الشيطان المقاتل بقبضتيه قبل تحوّله؟",
-      "a": "كويوكي",
-      "alt": [
-        "كوييوكي",
-        "كويوكي الصغيرة"
-      ],
-      "source": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters",
-      "verified": true,
-      "qid": "demonslayer-800-054"
-    },
-    {
-      "p": 800,
-      "topic": "تانجيرو ونيزوكو",
-      "q": "ما اسم أخي تانجيرو الذي يلي نيزوكو في العمر؟",
-      "a": "تاكيو",
-      "alt": [
-        "تاكيو الأخ"
-      ],
-      "source": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters",
-      "verified": true,
-      "qid": "demonslayer-800-055"
-    },
-    {
-      "p": 800,
-      "topic": "تانجيرو ونيزوكو",
-      "q": "ما اسم الخيط الذي يراه تانجيرو فيدلّه على موضع الضربة؟",
-      "a": "خيط الفرصة",
-      "alt": [
-        "الخيط الشفاف",
-        "خيط الفتحة"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Tanjiro_Kamado",
-      "verified": true,
-      "qid": "demonslayer-800-056"
-    },
-    {
-      "p": 800,
-      "topic": "تانجيرو ونيزوكو",
-      "q": "ما الإنجاز الذي حقّقته نيزوكو ولم يسبقها إليه شيطان؟",
-      "a": "قهرت الشمس",
-      "alt": [
-        "تحمّلت الشمس",
-        "مقاومة الشمس"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Nezuko_Kamado",
-      "verified": true,
-      "qid": "demonslayer-800-057"
-    },
-    {
-      "p": 800,
-      "topic": "تانجيرو ونيزوكو",
-      "q": "ما اسم جدّ تانجيرو الأعلى الذي تعلّم الرقصة من يوريتشي؟",
-      "a": "سوميوشي",
-      "alt": [
-        "سوميوشي الجد"
-      ],
-      "source": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters",
-      "verified": true,
-      "qid": "demonslayer-800-058"
-    },
-    {
-      "p": 800,
-      "topic": "تانجيرو ونيزوكو",
-      "q": "ما اسم النقش المشهور على ثوب نيزوكو؟",
-      "a": "الأسانوها",
-      "alt": [
-        "أسانوها",
-        "نقش أوراق القنّب"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Nezuko_Kamado",
-      "verified": true,
-      "qid": "demonslayer-800-059"
-    },
-    {
-      "p": 800,
-      "topic": "الهاشيرا وألقابهم",
-      "q": "ما اللقب الذي حمله معلّم زينيتسو قبل اعتزاله؟",
-      "a": "عمود الرعد",
-      "alt": [
-        "العمود الراعد",
-        "عمود البرق"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Hashira",
-      "verified": true,
-      "qid": "demonslayer-800-060"
-    },
-    {
-      "p": 800,
-      "topic": "الهاشيرا وألقابهم",
-      "q": "كم زوجة لعمود الصوت؟",
-      "a": "ثلاث",
-      "alt": [
-        "3",
-        "ثلاث زوجات"
-      ],
-      "source": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters",
-      "verified": true,
-      "qid": "demonslayer-800-061"
-    },
-    {
-      "p": 800,
-      "topic": "الهاشيرا وألقابهم",
-      "q": "من أي طائفة محاربين ينحدر أوزوي؟",
-      "a": "النينجا",
-      "alt": [
-        "الشينوبي",
-        "عشيرة النينجا"
-      ],
-      "source": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters",
-      "verified": true,
-      "qid": "demonslayer-800-062"
-    },
-    {
-      "p": 800,
-      "topic": "الهاشيرا وألقابهم",
-      "q": "ما اسم والد رينغوكو؟",
+      "topic": "الهاشيرا",
+      "q": "ما اسم والد عمود اللهب الذي حمل المنصب قبله؟",
       "a": "شينجورو",
       "alt": [
         "شنجورو"
       ],
-      "source": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters",
       "verified": true,
-      "qid": "demonslayer-800-063"
+      "qid": "demonslayer-800-904",
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters#Rengoku_family",
+      "difficultyTarget": 0.25
     },
     {
       "p": 800,
-      "topic": "الهاشيرا وألقابهم",
-      "q": "ما اسم أخي رينغوكو الأصغر؟",
-      "a": "سينجورو",
+      "topic": "التنفس والقدرات",
+      "q": "ما أسلوب التنفس الذي يقاتل به كوكوشيبو؟",
+      "a": "تنفس القمر",
       "alt": [
-        "سنجورو"
+        "نفَس القمر"
       ],
-      "source": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters",
       "verified": true,
-      "qid": "demonslayer-800-064"
+      "qid": "demonslayer-800-905",
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters#Upper_Ranks",
+      "difficultyTarget": 0.25
     },
     {
       "p": 800,
-      "topic": "الهاشيرا وألقابهم",
-      "q": "ما سرّ قوّة ميتسوري الجسدية الخارقة؟",
-      "a": "كثافة عضلاتها",
+      "topic": "الشياطين",
+      "q": "من القمر العلوي الرابع الذي تتكاثر تجسداته عند قطع رأسه؟",
+      "a": "هانتينغو",
       "alt": [
-        "عضلاتها الكثيفة",
-        "كثافة العضل"
+        "هانتنغو"
       ],
-      "source": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters",
       "verified": true,
-      "qid": "demonslayer-800-065"
+      "qid": "demonslayer-800-906",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Demon_Slayer:_Kimetsu_no_Yaiba_%E2%80%93_Swordsmith_Village_Arc#Episodes",
+      "difficultyTarget": 0.25
     },
     {
       "p": 800,
-      "topic": "أساليب التنفس",
-      "q": "ما اسم الشكل الحادي عشر لأسلوب الماء الذي ابتكره غيو؟",
-      "a": "السكون التام",
+      "topic": "الشياطين",
+      "q": "من الشيطان الذي يتنقل بين جرار خزفية في معركة قرية الحدادين؟",
+      "a": "غيوكو",
       "alt": [
-        "ناغي",
-        "الهدوء التام"
+        "جيوكو",
+        "غيوكّو"
       ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Breathing_Style",
       "verified": true,
-      "qid": "demonslayer-800-066"
+      "qid": "demonslayer-800-907",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Demon_Slayer:_Kimetsu_no_Yaiba_%E2%80%93_Swordsmith_Village_Arc#Episodes",
+      "difficultyTarget": 0.25
     },
     {
       "p": 800,
-      "topic": "أساليب التنفس",
-      "q": "ما اسم الشكل السابع الذي ابتكره زينيتسو وحده؟",
-      "a": "إله الرعد الملتهب",
-      "alt": [
-        "هونوإيكازوتشي",
-        "إله البرق الناري"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Zenitsu_Agatsuma",
-      "verified": true,
-      "qid": "demonslayer-800-067"
-    },
-    {
-      "p": 800,
-      "topic": "أساليب التنفس",
-      "q": "ما اسم الشكل السابع لأسلوب الضباب الذي ابتكره مويتشيرو؟",
-      "a": "الغيوم الحاجبة",
-      "alt": [
-        "سحب حاجبة",
-        "الغيوم الساترة"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Mist_Breathing",
-      "verified": true,
-      "qid": "demonslayer-800-068"
-    },
-    {
-      "p": 800,
-      "topic": "موزان والكيزوكي",
-      "q": "ما الذي فعله موزان بأقماره الدنيا في آخر اجتماع معها؟",
-      "a": "قتلها كلّها إلا واحدًا",
-      "alt": [
-        "أفناها",
-        "أبادها",
-        "قتل معظمها"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Breathing_Style",
-      "verified": true,
-      "qid": "demonslayer-800-069"
-    },
-    {
-      "p": 800,
-      "topic": "أساليب التنفس",
-      "q": "من ابتكر أساليب التنفس الأولى كلّها؟",
-      "a": "يوريتشي تسوغيكوني",
-      "alt": [
-        "يوريتشي",
-        "يوريئيتشي"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Breathing_Style",
-      "verified": true,
-      "qid": "demonslayer-800-070"
-    },
-    {
-      "p": 800,
-      "topic": "أساليب التنفس",
-      "q": "ما اسم المهارة التي تُبقي تركيز المحارب مشتعلًا في كل الأوقات؟",
-      "a": "التنفس الدائم",
-      "alt": [
-        "التركيز الدائم",
-        "جوتشو"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Breathing_Style",
-      "verified": true,
-      "qid": "demonslayer-800-071"
-    },
-    {
-      "p": 800,
-      "topic": "فيلق قتلة الشياطين",
-      "q": "ما اسم أعلى رتبة في الفيلق؟",
-      "a": "كينوي",
-      "alt": [
-        "كينوئه"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Demon_Slayer_Corps",
-      "verified": true,
-      "qid": "demonslayer-800-072"
-    },
-    {
-      "p": 800,
-      "topic": "أساليب التنفس",
-      "q": "ما اسم الشكل الذي يحسّ به إينوسكي بخصومه من خلف الجدران؟",
-      "a": "الاستشعار المكاني",
-      "alt": [
-        "استشعار الفراغ",
-        "الإحساس المكاني",
-        "استشعار المحيط"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Demon_Slayer_Corps",
-      "verified": true,
-      "qid": "demonslayer-800-073"
-    },
-    {
-      "p": 800,
-      "topic": "فيلق قتلة الشياطين",
-      "q": "كم شيطانًا يقتل المحارب ليُرشَّح لمرتبة الأعمدة؟",
-      "a": "خمسين",
-      "alt": [
-        "50",
-        "خمسين شيطانًا"
-      ],
-      "source": "https://en.wikipedia.org/wiki/Demon_Slayer:_Kimetsu_no_Yaiba",
-      "verified": true,
-      "qid": "demonslayer-800-074"
-    },
-    {
-      "p": 800,
-      "topic": "فيلق قتلة الشياطين",
-      "q": "كم عدد أبناء كاغايا؟",
-      "a": "خمسة أبناء",
-      "alt": [
-        "5",
-        "خمسة"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Demon_Slayer_Corps",
-      "verified": true,
-      "qid": "demonslayer-800-075"
-    },
-    {
-      "p": 800,
-      "topic": "فيلق قتلة الشياطين",
+      "topic": "الأسلحة والحدادون",
       "q": "ما اسم الدمية الخشبية التي يتدرّب عليها المحاربون؟",
       "a": "يوريتشي النموذج صفر",
       "alt": [
         "الدمية يوريتشي",
         "يوريتشي تايب زيرو"
       ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Yoriichi_Type_Zero",
       "verified": true,
-      "qid": "demonslayer-800-076"
-    },
-    {
-      "p": 800,
-      "topic": "موزان والكيزوكي",
-      "q": "ما الاسم البشري للشيطان الذي يقاتل بقبضتيه؟",
-      "a": "هاكوجي",
-      "alt": [
-        "هاكوجي الشاب"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Twelve_Kizuki",
-      "verified": true,
-      "qid": "demonslayer-800-077"
-    },
-    {
-      "p": 800,
-      "topic": "موزان والكيزوكي",
-      "q": "ما اسم الطائفة التي يقودها شيطان الجليد؟",
-      "a": "طائفة الفردوس الأبدي",
-      "alt": [
-        "الفردوس الأبدي",
-        "طائفة النعيم الأبدي"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Twelve_Kizuki",
-      "verified": true,
-      "qid": "demonslayer-800-078"
-    },
-    {
-      "p": 800,
-      "topic": "موزان والكيزوكي",
-      "q": "ما صلة كوكوشيبو بيوريتشي؟",
-      "a": "أخوه التوأم",
-      "alt": [
-        "توأمه",
-        "أخوه الأكبر"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Twelve_Kizuki",
-      "verified": true,
-      "qid": "demonslayer-800-079"
-    },
-    {
-      "p": 800,
-      "topic": "موزان والكيزوكي",
-      "q": "ما اسم كوكوشيبو حين كان إنسانًا؟",
-      "a": "ميتشيكاتسو",
-      "alt": [
-        "ميتشيكاتسو تسوغيكوني"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Twelve_Kizuki",
-      "verified": true,
-      "qid": "demonslayer-800-080"
-    },
-    {
-      "p": 800,
-      "topic": "موزان والكيزوكي",
-      "q": "إلى كم شيطان ينقسم القمر العلوي الرابع؟",
-      "a": "أربعة",
-      "alt": [
-        "4",
-        "أربعة شياطين"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Twelve_Kizuki",
-      "verified": true,
-      "qid": "demonslayer-800-081"
-    },
-    {
-      "p": 800,
-      "topic": "موزان والكيزوكي",
-      "q": "ما الشيء الذي يرفض القمر الثالث فعله مهما حدث؟",
-      "a": "قتال النساء",
-      "alt": [
-        "محاربة النساء",
-        "مبارزة النساء"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Twelve_Kizuki",
-      "verified": true,
-      "qid": "demonslayer-800-082"
-    },
-    {
-      "p": 800,
-      "topic": "الرفاق والمدرّبون",
-      "q": "ما اسم أمّ إينوسكي؟",
-      "a": "كوتوها",
-      "alt": [
-        "كوتوها هاشيبيرا"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Inosuke_Hashibira",
-      "verified": true,
-      "qid": "demonslayer-800-083"
-    },
-    {
-      "p": 800,
-      "topic": "الرفاق والمدرّبون",
-      "q": "ما اسم رفيق زينيتسو في التدريب الذي صار شيطانًا؟",
-      "a": "كايغاكو",
-      "alt": [
-        "كايجاكو"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Twelve_Kizuki",
-      "verified": true,
-      "qid": "demonslayer-800-084"
-    },
-    {
-      "p": 800,
-      "topic": "الرفاق والمدرّبون",
-      "q": "ما اسم توأم مويتشيرو؟",
-      "a": "يوئيتشيرو",
-      "alt": [
-        "يويتشيرو",
-        "يوئيتشيرو توكيتو"
-      ],
-      "source": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters",
-      "verified": true,
-      "qid": "demonslayer-800-085"
-    },
-    {
-      "p": 800,
-      "topic": "الرفاق والمدرّبون",
-      "q": "ما اسم الصبي الحدّاد الذي ورث الدمية عن أجداده؟",
-      "a": "كوتيتسو",
-      "alt": [
-        "كوتتسو"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Swordsmith_Village",
-      "verified": true,
-      "qid": "demonslayer-800-086"
-    },
-    {
-      "p": 800,
-      "topic": "الرفاق والمدرّبون",
-      "q": "ما اسم أمّ رينغوكو؟",
-      "a": "روكا",
-      "alt": [
-        "روكا رينغوكو"
-      ],
-      "source": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters",
-      "verified": true,
-      "qid": "demonslayer-800-087"
-    },
-    {
-      "p": 800,
-      "topic": "أماكن ومهمّات",
-      "q": "ما اسم الجبل الذي يُستخرج منه خام نصال الفيلق؟",
-      "a": "جبل يوكو",
-      "alt": [
-        "يوكو",
-        "جبل الشمس"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Nichirin_Sword",
-      "verified": true,
-      "qid": "demonslayer-800-088"
-    },
-    {
-      "p": 800,
-      "topic": "أماكن ومهمّات",
-      "q": "كم راكبًا كان على متن القطار في تلك المهمّة؟",
-      "a": "مئتان",
-      "alt": [
-        "200",
-        "مئتا راكب"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Mugen_Train_(locomotive)",
-      "verified": true,
-      "qid": "demonslayer-800-089"
-    },
-    {
-      "p": 800,
-      "topic": "أماكن ومهمّات",
-      "q": "ما اسم الدار التي كانت تعمل فيها شيطانة الأحزمة؟",
-      "a": "دار كيوغوكو",
-      "alt": [
-        "كيوغوكو",
-        "بيت كيوغوكو"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Yoshiwara",
-      "verified": true,
-      "qid": "demonslayer-800-090"
-    },
-    {
-      "p": 800,
-      "topic": "أماكن ومهمّات",
-      "q": "ما الاسم الذي تنكّرت به شيطانة الأحزمة بين أهل الحيّ؟",
-      "a": "وارابي هيمي",
-      "alt": [
-        "وارابيهيمي",
-        "الأميرة وارابي"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Yoshiwara",
-      "verified": true,
-      "qid": "demonslayer-800-091"
-    },
-    {
-      "p": 800,
-      "topic": "سيوف وأدوات",
-      "q": "كم عمر الدمية القتالية التي تدرّب عليها تانجيرو؟",
-      "a": "ثلاثمئة سنة",
-      "alt": [
-        "300 سنة",
-        "أكثر من ثلاثمئة سنة"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Yoriichi_Type_Zero",
-      "verified": true,
-      "qid": "demonslayer-800-092"
-    },
-    {
-      "p": 800,
-      "topic": "سيوف وأدوات",
-      "q": "كم ذراعًا للدمية القتالية التي تحمل سيوفًا؟",
-      "a": "ستة أذرع",
-      "alt": [
-        "6",
-        "ست أذرع"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Yoriichi_Type_Zero",
-      "verified": true,
-      "qid": "demonslayer-800-093"
-    },
-    {
-      "p": 800,
-      "topic": "سيوف وأدوات",
-      "q": "ما اللون الذي يتحوّل إليه النصل حين ترتفع حرارة صاحبه؟",
-      "a": "قرمزي",
-      "alt": [
-        "الأحمر القاني",
-        "أحمر قانٍ"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Nichirin_Sword",
-      "verified": true,
-      "qid": "demonslayer-800-094"
-    },
-    {
-      "p": 800,
-      "topic": "سيوف وأدوات",
-      "q": "ما نوع الدم النادر الذي تتلهّف عليه الشياطين؟",
-      "a": "دم ماريتشي",
-      "alt": [
-        "الماريتشي",
-        "ماريتشي"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Twelve_Kizuki",
-      "verified": true,
-      "qid": "demonslayer-800-095"
-    },
-    {
-      "p": 800,
-      "topic": "سيوف وأدوات",
-      "q": "ما العبارة المنقوشة على نصال الأعمدة؟",
-      "a": "إبادة الشياطين",
-      "alt": [
-        "أكّي ميتساتسو",
-        "إبادة الشيطان"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Nichirin_Sword",
-      "verified": true,
-      "qid": "demonslayer-800-096"
+      "qid": "demonslayer-800-908",
+      "sourceUrl": "https://demonslayer-anime.com/sva/story/02.html",
+      "difficultyTarget": 0.25
     },
     {
       "p": 1000,
-      "topic": "فيلق قتلة الشياطين",
-      "q": "بم يكشف المحارب رتبته المخفيّة حين يُسأل عنها؟",
-      "a": "بكلمة سرّ",
+      "topic": "الأسلحة والحدادون",
+      "q": "ما اسم زعيم القرية التي تُصنع فيها السيوف؟",
+      "a": "تيتشين",
       "alt": [
-        "كلمة سرّ",
-        "كلمة مرور",
-        "كلمة السرّ"
+        "تيتشيكاواهارا تيتشين"
       ],
-      "source": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters",
       "verified": true,
-      "qid": "demonslayer-1000-049"
+      "qid": "demonslayer-1000-901",
+      "sourceUrl": "https://demonslayer-anime.com/sva/story/05.html",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "ما اسم الحداد الراحل الذي صنع سيوف مويتشيرو قبل كاناموري؟",
+      "a": "تيتسويدو",
+      "alt": [
+        "Tetsuido"
+      ],
+      "p": 1000,
+      "topic": "الأسلحة والحدادون",
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters#Swordsmith_Village",
+      "verified": true,
+      "qid": "demonslayer-1000-902",
+      "difficultyTarget": 0.15
     },
     {
       "p": 1000,
-      "topic": "سيوف وأدوات",
-      "q": "كم كيلوغرامًا من السمّ حوّلت شينوبو جسدها كلّه إليه؟",
-      "a": "سبعة وثلاثون كيلوغرامًا",
-      "alt": [
-        "37",
-        "سبعة وثلاثون",
-        "37 كيلوغرامًا"
-      ],
-      "source": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters",
-      "verified": true,
-      "qid": "demonslayer-1000-050"
-    },
-    {
-      "p": 1000,
-      "topic": "أماكن ومهمّات",
-      "q": "كيف يُنقل المحارب إلى القرية السرّية كي لا يعرف طريقها؟",
-      "a": "معصوب العينين",
-      "alt": [
-        "مغمض العينين",
-        "وعيناه مغطّاتان",
-        "معصوبًا"
-      ],
-      "source": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters",
-      "verified": true,
-      "qid": "demonslayer-1000-051"
-    },
-    {
-      "p": 1000,
-      "topic": "أساليب التنفس",
-      "q": "كم شكلًا لأسلوب كوكوشيبو، وهو أكثر الأساليب أشكالًا؟",
-      "a": "ستة عشر شكلًا",
-      "alt": [
-        "16",
-        "ستة عشر"
-      ],
-      "source": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters",
-      "verified": true,
-      "qid": "demonslayer-1000-052"
-    },
-    {
-      "p": 1000,
-      "topic": "أساليب التنفس",
-      "q": "إلى أي سنّ يعيش المحارب الذي استيقظت علامته؟",
-      "a": "الخامسة والعشرين",
-      "alt": [
-        "25",
-        "قبل الخامسة والعشرين"
-      ],
-      "source": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters",
-      "verified": true,
-      "qid": "demonslayer-1000-053"
-    },
-    {
-      "p": 1000,
-      "topic": "الهاشيرا وألقابهم",
-      "q": "كم كان عمر رينغوكو حين استشهد في مهمّة القطار؟",
-      "a": "عشرون عامًا",
-      "alt": [
-        "20",
-        "عشرون"
-      ],
-      "source": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters",
-      "verified": true,
-      "qid": "demonslayer-1000-054"
-    },
-    {
-      "p": 1000,
-      "topic": "تانجيرو ونيزوكو",
-      "q": "ما اسم غراب تانجيرو؟",
-      "a": "ماتسوإيمون",
-      "alt": [
-        "ماتسوإيمون تينوجي",
-        "ماتسويمون"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Demon_Slayer_Corps",
-      "verified": true,
-      "qid": "demonslayer-1000-055"
-    },
-    {
-      "p": 1000,
-      "topic": "تانجيرو ونيزوكو",
-      "q": "ما اسم زوجة جدّ تانجيرو الأعلى؟",
-      "a": "سوياكو",
-      "alt": [
-        "سوياكو الجدة"
-      ],
-      "source": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters",
-      "verified": true,
-      "qid": "demonslayer-1000-056"
-    },
-    {
-      "p": 1000,
-      "topic": "تانجيرو ونيزوكو",
-      "q": "ما الذي فعله أوروكوداكي بنيزوكو كي ترى البشر كأفراد أسرتها؟",
-      "a": "نوّمها مغناطيسيًا",
-      "alt": [
-        "تنويم مغناطيسي",
-        "أوحى إليها"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Nezuko_Kamado",
-      "verified": true,
-      "qid": "demonslayer-1000-057"
-    },
-    {
-      "p": 1000,
-      "topic": "تانجيرو ونيزوكو",
-      "q": "ما اسم أخت تانجيرو الصغرى غير نيزوكو؟",
-      "a": "هاناكو",
-      "alt": [
-        "هاناكو الصغيرة"
-      ],
-      "source": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters",
-      "verified": true,
-      "qid": "demonslayer-1000-058"
-    },
-    {
-      "p": 1000,
-      "topic": "تانجيرو ونيزوكو",
-      "q": "ما اسم الحالة التي يرى فيها المقاتل جسد خصمه من الداخل؟",
-      "a": "العالم الشفّاف",
-      "alt": [
-        "الرؤية الشفافة",
-        "العالم الشفاف"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Tanjiro_Kamado",
-      "verified": true,
-      "qid": "demonslayer-1000-059"
-    },
-    {
-      "p": 1000,
-      "topic": "تانجيرو ونيزوكو",
-      "q": "كم كان عمر تانجيرو في بداية الحكاية؟",
-      "a": "ثلاثة عشر",
-      "alt": [
-        "13",
-        "ثلاثة عشر عامًا"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Tanjiro_Kamado",
-      "verified": true,
-      "qid": "demonslayer-1000-060"
-    },
-    {
-      "p": 1000,
-      "topic": "الهاشيرا وألقابهم",
-      "q": "ما سبب لونَي شعر ميتسوري الغريبين؟",
-      "a": "أكلها الساكوراموتشي",
-      "alt": [
-        "الساكوراموتشي",
-        "حلوى الساكوراموتشي"
-      ],
-      "source": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters",
-      "verified": true,
-      "qid": "demonslayer-1000-061"
-    },
-    {
-      "p": 1000,
-      "topic": "الهاشيرا وألقابهم",
-      "q": "كم شهرًا احتاج مويتشيرو ليصير من الأعمدة؟",
-      "a": "شهران",
-      "alt": [
-        "شهرين",
-        "2"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Hashira",
-      "verified": true,
-      "qid": "demonslayer-1000-062"
-    },
-    {
-      "p": 1000,
-      "topic": "الهاشيرا وألقابهم",
-      "q": "ما الوصية التي تركتها أمّ رينغوكو لابنها؟",
-      "a": "حماية الضعفاء",
-      "alt": [
-        "أن يحمي الضعفاء",
-        "حماية الضعيف"
-      ],
-      "source": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters",
-      "verified": true,
-      "qid": "demonslayer-1000-063"
-    },
-    {
-      "p": 1000,
-      "topic": "الهاشيرا وألقابهم",
-      "q": "ما الكلمة التي يردّدها رينغوكو كلّما ذاق طعامًا؟",
-      "a": "لذيذ",
-      "alt": [
-        "أوماي",
-        "شهيّ"
-      ],
-      "source": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters",
-      "verified": true,
-      "qid": "demonslayer-1000-064"
-    },
-    {
-      "p": 1000,
-      "topic": "الهاشيرا وألقابهم",
-      "q": "بم يتميّز رداء غيو عن أردية بقية الأعمدة؟",
-      "a": "نصفاه مختلفان",
-      "alt": [
-        "نصفان مختلفان",
-        "شقّان مختلفان"
-      ],
-      "source": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters",
-      "verified": true,
-      "qid": "demonslayer-1000-065"
-    },
-    {
-      "p": 1000,
-      "topic": "الهاشيرا وألقابهم",
-      "q": "كم امرأة بين الأعمدة؟",
-      "a": "اثنتان",
-      "alt": [
-        "2",
-        "امرأتان"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Hashira",
-      "verified": true,
-      "qid": "demonslayer-1000-066"
-    },
-    {
-      "p": 1000,
-      "topic": "أساليب التنفس",
-      "q": "ما ترتيب الشكل الذي يجمع أشكال أسلوب الشمس كلّها؟",
-      "a": "الثالث عشر",
-      "alt": [
-        "13",
-        "الشكل الثالث عشر"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Breathing_Style",
-      "verified": true,
-      "qid": "demonslayer-1000-067"
-    },
-    {
-      "p": 1000,
-      "topic": "أساليب التنفس",
-      "q": "كم نبضة في الدقيقة يحتاجها قلب المحارب لإيقاظ علامته؟",
-      "a": "مئتا نبضة",
-      "alt": [
-        "200",
-        "مئتان"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Demon_Slayer_Mark",
-      "verified": true,
-      "qid": "demonslayer-1000-068"
-    },
-    {
-      "p": 1000,
-      "topic": "أساليب التنفس",
-      "q": "كم درجة يجب أن تبلغ حرارة جسد المحارب لتظهر عليه العلامة؟",
-      "a": "تسع وثلاثون",
-      "alt": [
-        "39",
-        "تسع وثلاثون درجة"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Demon_Slayer_Mark",
-      "verified": true,
-      "qid": "demonslayer-1000-069"
-    },
-    {
-      "p": 1000,
-      "topic": "أساليب التنفس",
-      "q": "ما اسم العلامة التي تضاعف قوّة المحارب وتقصّر عمره؟",
-      "a": "علامة قاتل الشياطين",
-      "alt": [
-        "علامة الصيّاد",
-        "وسم قاتل الشياطين"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Demon_Slayer_Mark",
-      "verified": true,
-      "qid": "demonslayer-1000-070"
-    },
-    {
-      "p": 1000,
-      "topic": "فيلق قتلة الشياطين",
-      "q": "ما اسم النقش الذي يحمل رتبة المحارب على يده؟",
-      "a": "نقش زهرة الوستارية",
-      "alt": [
-        "وشم الوستارية",
-        "نقش الوستارية"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Demon_Slayer_Corps",
-      "verified": true,
-      "qid": "demonslayer-1000-071"
-    },
-    {
-      "p": 1000,
-      "topic": "موزان والكيزوكي",
-      "q": "ما الذي يستطيع موزان قراءته في شياطينه بمجرّد النظر؟",
-      "a": "ذكرياتهم",
-      "alt": [
-        "ما يرونه",
-        "أفكارهم",
-        "كل ما شاهدوه"
-      ],
-      "source": "https://en.wikipedia.org/wiki/Demon_Slayer:_Kimetsu_no_Yaiba",
-      "verified": true,
-      "qid": "demonslayer-1000-072"
-    },
-    {
-      "p": 1000,
-      "topic": "فيلق قتلة الشياطين",
-      "q": "ما اللقب الذي يحمله تلميذ العمود الذي يُعدّ لخلافته؟",
-      "a": "تسوغوكو",
-      "alt": [
-        "التسوغوكو",
-        "تسوغوكّو"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Demon_Slayer_Corps",
-      "verified": true,
-      "qid": "demonslayer-1000-073"
-    },
-    {
-      "p": 1000,
-      "topic": "موزان والكيزوكي",
-      "q": "كم قلبًا في جسد موزان؟",
-      "a": "سبعة قلوب",
-      "alt": [
-        "7",
-        "سبعة"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Muzan_Kibutsuji",
-      "verified": true,
-      "qid": "demonslayer-1000-074"
-    },
-    {
-      "p": 1000,
-      "topic": "موزان والكيزوكي",
-      "q": "كم دماغًا في جسد موزان؟",
-      "a": "خمسة أدمغة",
-      "alt": [
-        "5",
-        "خمسة"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Muzan_Kibutsuji",
-      "verified": true,
-      "qid": "demonslayer-1000-075"
-    },
-    {
-      "p": 1000,
-      "topic": "موزان والكيزوكي",
+      "topic": "الشياطين",
       "q": "في أي عصر ياباني تحوّل موزان إلى شيطان؟",
       "a": "عصر هييآن",
       "alt": [
         "هييآن",
         "حقبة هييآن"
       ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Muzan_Kibutsuji",
       "verified": true,
-      "qid": "demonslayer-1000-076"
+      "qid": "demonslayer-1000-903",
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters#Muzan_Kibutsuji",
+      "difficultyTarget": 0.15
     },
     {
       "p": 1000,
-      "topic": "موزان والكيزوكي",
-      "q": "ما الذي كان موزان يتناوله فتحوّل إلى شيطان؟",
-      "a": "دواء لمرضه",
+      "topic": "الشياطين",
+      "q": "ما اسم كوكوشيبو حين كان إنسانًا؟",
+      "a": "ميتشيكاتسو",
       "alt": [
-        "دواء لعلاج مرضه",
-        "علاج مرضه"
+        "ميتشيكاتسو تسوغيكوني"
       ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Muzan_Kibutsuji",
       "verified": true,
-      "qid": "demonslayer-1000-077"
+      "qid": "demonslayer-1000-904",
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters#Upper_Ranks",
+      "difficultyTarget": 0.15
     },
     {
       "p": 1000,
-      "topic": "موزان والكيزوكي",
-      "q": "كم قرنًا عاش موزان قبل أن يقضي عليه الفيلق؟",
-      "a": "نحو عشرة قرون",
+      "topic": "الهاشيرا",
+      "q": "ما اسم توأم مويتشيرو؟",
+      "a": "يوئيتشيرو",
       "alt": [
-        "ألف سنة",
-        "أكثر من ألف سنة",
-        "عشرة قرون"
+        "يويتشيرو",
+        "يوئيتشيرو توكيتو"
       ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Twelve_Kizuki",
       "verified": true,
-      "qid": "demonslayer-1000-078"
+      "qid": "demonslayer-1000-905",
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters#Hashira",
+      "difficultyTarget": 0.15
     },
     {
       "p": 1000,
-      "topic": "موزان والكيزوكي",
-      "q": "أين كان أخو شيطانة الأحزمة مختبئًا قبل أن يظهر؟",
-      "a": "داخل حزام أخته",
+      "topic": "الرفاق والمعلمون",
+      "q": "ما الاسم الأصلي لعصفور زينيتسو الملقب تشونتارو؟",
+      "a": "أوكوغي",
       "alt": [
-        "في حزامها",
-        "داخل الحزام"
+        "Ukogi",
+        "أوكيغي",
+        "أوكوجي"
       ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Twelve_Kizuki",
       "verified": true,
-      "qid": "demonslayer-1000-079"
+      "qid": "demonslayer-1000-906",
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters#Supporting_characters",
+      "difficultyTarget": 0.15
     },
     {
-      "p": 1000,
-      "topic": "موزان والكيزوكي",
-      "q": "كم سنة مضت دون أن تتغيّر الرتب العليا قبل زمن تانجيرو؟",
-      "a": "أكثر من مئة سنة",
+      "q": "من الرجل الذي استضاف تانجيرو ليلة الهجوم على أسرته؟",
+      "a": "سابورو",
       "alt": [
-        "مئة سنة",
-        "113 سنة"
+        "Saburo"
       ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Twelve_Kizuki",
+      "p": 1000,
+      "topic": "عائلة كامادو",
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters#Minor_characters",
       "verified": true,
-      "qid": "demonslayer-1000-080"
+      "qid": "demonslayer-1000-907",
+      "difficultyTarget": 0.15
     },
     {
-      "p": 1000,
-      "topic": "الرفاق والمدرّبون",
-      "q": "ما اسم زعيم القرية التي تُصنع فيها السيوف؟",
-      "a": "تيتشين",
+      "q": "ما اسم بائع الأودون الذي غضب من تانجيرو عندما ترك طعامه؟",
+      "a": "تويو",
       "alt": [
-        "تيتشيكاواهارا تيتشين"
+        "Toyo"
       ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Swordsmith_Village",
-      "verified": true,
-      "qid": "demonslayer-1000-081"
-    },
-    {
       "p": 1000,
-      "topic": "الرفاق والمدرّبون",
-      "q": "ما اسم عصفور زينيتسو؟",
-      "a": "تشونتارو",
-      "alt": [
-        "شونتارو"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Zenitsu_Agatsuma",
+      "topic": "الأماكن والرحلات",
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters#Minor_characters",
       "verified": true,
-      "qid": "demonslayer-1000-082"
-    },
-    {
-      "p": 1000,
-      "topic": "الرفاق والمدرّبون",
-      "q": "بأي اسم خاطئ ينادي إينوسكي رفيقه تانجيرو غالبًا؟",
-      "a": "مونجيرو",
-      "alt": [
-        "غونباتشيرو",
-        "كامابوكو غونباتشيرو"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Inosuke_Hashibira",
-      "verified": true,
-      "qid": "demonslayer-1000-083"
-    },
-    {
-      "p": 1000,
-      "topic": "الرفاق والمدرّبون",
-      "q": "ما اللقب الذي يطلقه إينوسكي على نفسه؟",
-      "a": "ملك الجبل",
-      "alt": [
-        "سيّد الجبل",
-        "ملك الجبال"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Inosuke_Hashibira",
-      "verified": true,
-      "qid": "demonslayer-1000-084"
-    },
-    {
-      "p": 1000,
-      "topic": "الرفاق والمدرّبون",
-      "q": "ما الذي غيّر لون شعر زينيتسو في صباه؟",
-      "a": "صاعقة أصابته",
-      "alt": [
-        "صاعقة",
-        "ضربة برق"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Zenitsu_Agatsuma",
-      "verified": true,
-      "qid": "demonslayer-1000-085"
-    },
-    {
-      "p": 1000,
-      "topic": "الرفاق والمدرّبون",
-      "q": "أي حيوان ربّى إينوسكي صغيرًا في الجبل؟",
-      "a": "خنزيرة برية",
-      "alt": [
-        "خنزير بري",
-        "أمّ الخنازير"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Inosuke_Hashibira",
-      "verified": true,
-      "qid": "demonslayer-1000-086"
-    },
-    {
-      "p": 1000,
-      "topic": "الرفاق والمدرّبون",
-      "q": "بم ينادي زينيتسو أخت تانجيرو دائمًا؟",
-      "a": "نيزوكو تشان",
-      "alt": [
-        "نيزوكو تشـان",
-        "تشان"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Zenitsu_Agatsuma",
-      "verified": true,
-      "qid": "demonslayer-1000-087"
-    },
-    {
-      "p": 1000,
-      "topic": "الرفاق والمدرّبون",
-      "q": "إلى أي سنّ عاش يوريتشي؟",
-      "a": "خمسة وثمانين",
-      "alt": [
-        "85",
-        "خمسة وثمانين عامًا"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Demon_Slayer_Mark",
-      "verified": true,
-      "qid": "demonslayer-1000-088"
-    },
-    {
-      "p": 1000,
-      "topic": "أماكن ومهمّات",
-      "q": "ما اسم الشيء الذي يحطّمه الشياطين داخل الأحلام كي لا يستيقظ صاحبها؟",
-      "a": "النواة الروحية",
-      "alt": [
-        "نواة الروح",
-        "جوهر الروح"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Mugen_Train_(locomotive)",
-      "verified": true,
-      "qid": "demonslayer-1000-089"
-    },
-    {
-      "p": 1000,
-      "topic": "أماكن ومهمّات",
-      "q": "كم دارًا أرسل أوزوي زوجاته للتحرّي فيها؟",
-      "a": "ثلاث دور",
-      "alt": [
-        "3",
-        "ثلاثة بيوت"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Yoshiwara",
-      "verified": true,
-      "qid": "demonslayer-1000-090"
-    },
-    {
-      "p": 1000,
-      "topic": "أماكن ومهمّات",
-      "q": "كم سنة تدرّب تانجيرو عند معلّمه قبل الاختبار؟",
-      "a": "سنتان",
-      "alt": [
-        "سنتين",
-        "عامان"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Tanjiro_Kamado",
-      "verified": true,
-      "qid": "demonslayer-1000-091"
-    },
-    {
-      "p": 1000,
-      "topic": "أساليب التنفس",
-      "q": "كم أسلوب تنفّس تفرّع مباشرة من أسلوب الشمس؟",
-      "a": "خمسة أساليب",
-      "alt": [
-        "5",
-        "خمسة"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Breathing_Style",
-      "verified": true,
-      "qid": "demonslayer-1000-092"
-    },
-    {
-      "p": 1000,
-      "topic": "موزان والكيزوكي",
-      "q": "ما الرتبة التي شغرت بعد الشيطانة صاحبة الأحزمة وأخيها؟",
-      "a": "القمر العلوي السادس",
-      "alt": [
-        "الرتبة العليا السادسة"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Twelve_Kizuki",
-      "verified": true,
-      "qid": "demonslayer-1000-093"
-    },
-    {
-      "p": 1000,
-      "topic": "الرفاق والمدرّبون",
-      "q": "ما الذي يخفيه إينوسكي تحت قناعه ويفاجئ من يراه؟",
-      "a": "وجه جميل",
-      "alt": [
-        "وجهًا جميلًا",
-        "ملامح جميلة"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Inosuke_Hashibira",
-      "verified": true,
-      "qid": "demonslayer-1000-094"
-    },
-    {
-      "p": 1000,
-      "topic": "سيوف وأدوات",
-      "q": "ما الذي وجده تانجيرو داخل الدمية المحطّمة في القرية؟",
-      "a": "سيفًا صدئًا",
-      "alt": [
-        "سيف صدئ",
-        "نصل قديم"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Yoriichi_Type_Zero",
-      "verified": true,
-      "qid": "demonslayer-1000-095"
-    },
-    {
-      "p": 1000,
-      "topic": "سيوف وأدوات",
-      "q": "ما الآلة الموسيقية التي تعزف عليها شيطانة القلعة؟",
-      "a": "البيوا",
-      "alt": [
-        "بيوا",
-        "آلة البيوا"
-      ],
-      "source": "https://kimetsu-no-yaiba.fandom.com/wiki/Twelve_Kizuki",
-      "verified": true,
-      "qid": "demonslayer-1000-096"
+      "qid": "demonslayer-1000-908",
+      "difficultyTarget": 0.15
     }
   ]
 }

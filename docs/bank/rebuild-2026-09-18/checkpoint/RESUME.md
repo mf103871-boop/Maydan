@@ -1,3 +1,5 @@
+> HISTORICAL CHECKPOINT. Latest owner-requested pause: 2026-09-23. Read `/CONTINUE_FROM_ANOTHER_ACCOUNT.md` and `checkpoint-2026-09-23.json` first; counts below are obsolete.
+
 # Badeeha rebuild — paused by owner
 
 User requested saving the work and continuing later. Stop content writing and image generation until asked to resume. This is a work-in-progress checkpoint, NOT a releasable bank. Do not deploy or merge it as complete.

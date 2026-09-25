@@ -1,0 +1,19 @@
+{
+  "id": "reveal-600-903",
+  "kind": "question",
+  "pack": "reveal",
+  "file": "media/reveal/reveal-600-903.webp",
+  "asset": "media/reveal/reveal-600-903.webp",
+  "prompt": "Use case: illustration-story.\nAsset type: one standalone portrait illustration for an Arabic family portrait-recognition game, age 16+.\nPrimary request: a clearly recognizable faithful portrait of the real public figure Achraf Hakimi. Identity accuracy is essential; do not substitute a generic lookalike.\nSubject details: Moroccan footballer Achraf Hakimi, short dark fade haircut, close-trimmed goatee beard, distinctive narrow youthful face, brown eyes and friendly smile, plain red athletic top.\nStyle: polished realistic hand-painted editorial portrait, very subtle visible painted texture, natural human facial proportions, authentic familiar appearance; this is an illustration, not a documentary photograph.\nComposition: square 1:1 head and upper shoulders portrait facing the viewer, face centered occupying 65% of height, complete hair and head inside frame with margin. Clear even soft lighting, muted warm grey studio backdrop. Only this one person.\nConstraints: no written name, no lettering, captions, logos, signature, watermark, frame, collage, other people, or added symbolic props. Do not exaggerate or caricature the face.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-09-23",
+  "width": 1254,
+  "height": 1254,
+  "bytes": 215478,
+  "sha256": "813ac878e874bea68be55208202793d400cd2be62aeee7f54506dc3384901c42",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "pending",
+    "note": "Generation and file checks do not imply subject or gameplay verification."
+  }
+}

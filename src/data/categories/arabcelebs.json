@@ -5,2453 +5,485 @@
   "qs": [
     {
       "p": 200,
+      "q": "من نجم الكرة المصري الذي عرفته جماهير ليفربول بلقب «الملك المصري»؟",
+      "a": "محمد صلاح",
+      "alt": [],
       "topic": "رياضيون",
-      "q": "من حارس مرمى مصر الذي توّج بأربع بطولات لكأس أمم أفريقيا؟",
-      "a": "عصام الحضري",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/عصام_الحضري",
       "verified": true,
-      "qid": "arabcelebs-200-049"
+      "sourceUrl": "https://www.liverpoolfc.com/news/thank-you-mo-salah-fond-farewell-egyptian-king",
+      "difficultyTarget": 0.8,
+      "qid": "arabcelebs-200-901"
     },
     {
       "p": 200,
+      "q": "من قائد الجزائر عندما أحرزت كأس أمم أفريقيا لكرة القدم عام 2019؟",
+      "a": "رياض محرز",
+      "alt": [],
       "topic": "رياضيون",
-      "q": "من المدرب الذي قاد منتخب مصر إلى ثلاث بطولات أفريقية متتالية؟",
-      "a": "حسن شحاتة",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/حسن_شحاتة",
       "verified": true,
-      "qid": "arabcelebs-200-050"
+      "sourceUrl": "https://www.cafonline.com/news/riyad-mahrez-at-100-caps-a-century-of-brilliance-for-algeria/",
+      "difficultyTarget": 0.8,
+      "qid": "arabcelebs-200-902"
     },
     {
       "p": 200,
-      "topic": "رياضيون",
-      "q": "من اللاعب السعودي الذي اختير أفضل لاعب في آسيا عام 1994؟",
-      "a": "سعيد العويران",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/سعيد_العويران",
-      "verified": true,
-      "qid": "arabcelebs-200-051"
-    },
-    {
-      "p": 200,
-      "topic": "رياضيون",
-      "q": "من قائد العراق الذي سجّل هدف التتويج بكأس آسيا 2007؟",
-      "a": "يونس محمود",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/يونس_محمود",
-      "verified": true,
-      "qid": "arabcelebs-200-052"
-    },
-    {
-      "p": 200,
-      "topic": "رياضيون",
-      "q": "من أول مدرب عربي يبلغ بمنتخبه الدور نصف النهائي في كأس العالم؟",
-      "a": "وليد الركراكي",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/وليد_الركراكي",
-      "verified": true,
-      "qid": "arabcelebs-200-053"
-    },
-    {
-      "p": 200,
-      "topic": "رياضيون",
-      "q": "من القطري الفائز بذهبية الوثب العالي في أولمبياد طوكيو؟",
-      "a": "معتز برشم",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/معتز_برشم",
-      "verified": true,
-      "qid": "arabcelebs-200-054"
-    },
-    {
-      "p": 200,
-      "topic": "رياضيون",
-      "q": "من نجم الكرة المصرية الذي انتُخب رئيسًا للنادي الأهلي عام 2017؟",
-      "a": "محمود الخطيب",
-      "alt": [
-        "بيبو"
-      ],
-      "sourceUrl": "https://www.efa.com.eg/ar/",
-      "verified": true,
-      "qid": "arabcelebs-200-055"
-    },
-    {
-      "p": 200,
-      "topic": "رياضيون",
-      "q": "من سجّل هدف مصر الوحيد في نهائي كأس أمم أفريقيا 2008؟",
-      "a": "محمد أبو تريكة",
-      "alt": [
-        "أبو تريكة"
-      ],
-      "sourceUrl": "https://www.efa.com.eg/ar/",
-      "verified": true,
-      "qid": "arabcelebs-200-056"
-    },
-    {
-      "p": 200,
-      "topic": "رياضيون",
-      "q": "من أول مصرية تفوز بميدالية ذهبية في الألعاب الأولمبية؟",
-      "a": "فريال أشرف",
-      "alt": [],
-      "sourceUrl": "https://gate.ahram.org.eg/News/2887673.aspx",
-      "verified": true,
-      "qid": "arabcelebs-200-057"
-    },
-    {
-      "p": 200,
-      "topic": "رياضيون",
-      "q": "من المهاجم السعودي الفائز بجائزة أفضل لاعب في آسيا عام 2007؟",
-      "a": "ياسر القحطاني",
-      "alt": [],
-      "sourceUrl": "https://www.spa.gov.sa/504062",
-      "verified": true,
-      "qid": "arabcelebs-200-058"
-    },
-    {
-      "p": 200,
-      "topic": "رياضيون",
-      "q": "من القطري الذي سجّل ثلاثية في نهائي كأس آسيا 2023؟",
-      "a": "أكرم عفيف",
-      "alt": [],
-      "sourceUrl": "https://www.the-afc.com/ar/",
-      "verified": true,
-      "qid": "arabcelebs-200-059"
-    },
-    {
-      "p": 200,
-      "topic": "رياضيون",
-      "q": "من المدرب الذي قاد الجزائر إلى لقب كأس أمم أفريقيا 2019؟",
-      "a": "جمال بلماضي",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/جمال_بلماضي",
-      "verified": true,
-      "qid": "arabcelebs-200-060"
-    },
-    {
-      "p": 200,
-      "topic": "إعلام وصحافة",
-      "q": "من الإعلامية المصرية مقدمة برنامج «معكم»؟",
-      "a": "منى الشاذلي",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/منى_الشاذلي",
-      "verified": true,
-      "qid": "arabcelebs-200-061"
-    },
-    {
-      "p": 200,
-      "topic": "إعلام وصحافة",
-      "q": "من الإعلامي اللبناني الذي قدّم «من سيربح المليون» بنسخته العربية؟",
-      "a": "جورج قرداحي",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/جورج_قرداحي",
-      "verified": true,
-      "qid": "arabcelebs-200-062"
-    },
-    {
-      "p": 200,
-      "topic": "إعلام وصحافة",
-      "q": "من الطبيب المصري الذي صار مقدّم أشهر برنامج ساخر بعد 2011؟",
-      "a": "باسم يوسف",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/باسم_يوسف",
-      "verified": true,
-      "qid": "arabcelebs-200-063"
-    },
-    {
-      "p": 200,
-      "topic": "إعلام وصحافة",
-      "q": "من الإعلامي المصري مقدّم برنامج «الحكاية»؟",
-      "a": "عمرو أديب",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/عمرو_أديب",
-      "verified": true,
-      "qid": "arabcelebs-200-064"
-    },
-    {
-      "p": 200,
-      "topic": "إعلام وصحافة",
-      "q": "من الإعلامية المصرية التي قدّمت برنامج «هنا العاصمة»؟",
-      "a": "لميس الحديدي",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/لميس_الحديدي",
-      "verified": true,
-      "qid": "arabcelebs-200-065"
-    },
-    {
-      "p": 200,
-      "topic": "إعلام وصحافة",
-      "q": "من الإعلامي السعودي صاحب برنامج «خواطر» الرمضاني؟",
-      "a": "أحمد الشقيري",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/خواطر_(برنامج)",
-      "verified": true,
-      "qid": "arabcelebs-200-066"
-    },
-    {
-      "p": 200,
-      "topic": "إعلام وصحافة",
-      "q": "من المذيع السوري الذي يقدّم برنامج «الاتجاه المعاكس»؟",
-      "a": "فيصل القاسم",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/فيصل_القاسم",
-      "verified": true,
-      "qid": "arabcelebs-200-067"
-    },
-    {
-      "p": 200,
-      "topic": "إعلام وصحافة",
-      "q": "من المعلق الجزائري الأشهر في قنوات «بي إن سبورتس»؟",
-      "a": "حفيظ دراجي",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/حفيظ_دراجي",
-      "verified": true,
-      "qid": "arabcelebs-200-068"
-    },
-    {
-      "p": 200,
-      "topic": "إعلام وصحافة",
-      "q": "من الصحفي المصري الذي ترأس تحرير الأهرام وكتب «خريف الغضب»؟",
-      "a": "محمد حسنين هيكل",
-      "alt": [
-        "هيكل"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/محمد_حسنين_هيكل",
-      "verified": true,
-      "qid": "arabcelebs-200-069"
-    },
-    {
-      "p": 200,
-      "topic": "إعلام وصحافة",
-      "q": "من الفنانة المصرية التي تقدّم برنامج «صاحبة السعادة»؟",
-      "a": "إسعاد يونس",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/إسعاد_يونس",
-      "verified": true,
-      "qid": "arabcelebs-200-070"
-    },
-    {
-      "p": 200,
-      "topic": "أعمال وريادة",
-      "q": "من رائدة الأعمال العراقية الأمريكية مؤسِّسة علامة «هدى بيوتي»؟",
-      "a": "هدى قطان",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/هدى_قطان",
-      "verified": true,
-      "qid": "arabcelebs-200-071"
-    },
-    {
-      "p": 200,
-      "topic": "أعمال وريادة",
-      "q": "من الأمير السعودي رجل الأعمال صاحب شركة المملكة القابضة؟",
-      "a": "الوليد بن طلال",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الوليد_بن_طلال",
-      "verified": true,
-      "qid": "arabcelebs-200-072"
-    },
-    {
-      "p": 200,
-      "topic": "أعمال وريادة",
-      "q": "من رجل الأعمال الإماراتي الذي تحمل أكبر مجموعة مراكز تجارية عربية اسمه؟",
-      "a": "ماجد الفطيم",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/ماجد_الفطيم",
-      "verified": true,
-      "qid": "arabcelebs-200-073"
-    },
-    {
-      "p": 200,
-      "topic": "أعمال وريادة",
-      "q": "من رجل الأعمال المصري من عائلة ساويرس الذي أسّس قناة «أون تي في»؟",
-      "a": "نجيب ساويرس",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/نجيب_ساويرس",
-      "verified": true,
-      "qid": "arabcelebs-200-074"
-    },
-    {
-      "p": 200,
-      "topic": "أعمال وريادة",
-      "q": "ما اسم المنتجع المصري على البحر الأحمر الذي بناه سميح ساويرس؟",
-      "a": "الجونة",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الجونة",
-      "verified": true,
-      "qid": "arabcelebs-200-075"
-    },
-    {
-      "p": 200,
-      "topic": "أعمال وريادة",
-      "q": "من رجل الأعمال السعودي الذي أسّس أكبر مصرف إسلامي في المملكة؟",
-      "a": "سليمان الراجحي",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/سليمان_الراجحي",
-      "verified": true,
-      "qid": "arabcelebs-200-076"
-    },
-    {
-      "p": 200,
-      "topic": "أعمال وريادة",
-      "q": "ما اسم أكبر مركز تجاري في العالم مساحةً ويقع في دبي؟",
-      "a": "دبي مول",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/دبي_مول",
-      "verified": true,
-      "qid": "arabcelebs-200-077"
-    },
-    {
-      "p": 200,
-      "topic": "أعمال وريادة",
-      "q": "من رجل الأعمال الإماراتي مؤسّس شركة «داماك» العقارية؟",
-      "a": "حسين سجواني",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/حسين_سجواني",
-      "verified": true,
-      "qid": "arabcelebs-200-078"
-    },
-    {
-      "p": 200,
-      "topic": "علوم وفضاء",
-      "q": "من أول رائد فضاء عربي يخرج للسير خارج محطة الفضاء الدولية؟",
-      "a": "سلطان النيادي",
-      "alt": [],
-      "sourceUrl": "https://arabic.euronews.com/2023/04/29/emirati-sultan-al-neyadi-becomes-the-first-arab-astronaut-to-walk-in-space",
-      "verified": true,
-      "qid": "arabcelebs-200-079"
-    },
-    {
-      "p": 200,
-      "topic": "علوم وفضاء",
-      "q": "من أول رائد فضاء إماراتي صعد إلى محطة الفضاء الدولية عام 2019؟",
-      "a": "هزاع المنصوري",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/هزاع_المنصوري",
-      "verified": true,
-      "qid": "arabcelebs-200-080"
-    },
-    {
-      "p": 200,
-      "topic": "علوم وفضاء",
-      "q": "من العالم المصري الحائز جائزة نوبل في الكيمياء عام 1999؟",
+      "q": "من العالم المصري الذي نال نوبل الكيمياء لأبحاثه في كيمياء الفيمتو؟",
       "a": "أحمد زويل",
       "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/أحمد_زويل",
+      "topic": "علوم وفضاء",
       "verified": true,
-      "qid": "arabcelebs-200-081"
+      "sourceUrl": "https://www.nobelprize.org/laureate/292",
+      "difficultyTarget": 0.8,
+      "qid": "arabcelebs-200-903"
     },
     {
       "p": 200,
-      "topic": "علوم وفضاء",
-      "q": "من جرّاح القلب المصري البريطاني صاحب مركز أسوان للقلب؟",
+      "q": "من جراح القلب المصري الذي أنشأت مؤسسته مركز أسوان للقلب؟",
       "a": "مجدي يعقوب",
       "alt": [],
-      "sourceUrl": "https://myf-egypt.org/ar/",
+      "topic": "علوم وفضاء",
       "verified": true,
-      "qid": "arabcelebs-200-082"
+      "sourceUrl": "https://www.myf-egypt.org/about//",
+      "difficultyTarget": 0.8,
+      "qid": "arabcelebs-200-904"
     },
     {
       "p": 200,
+      "q": "من الأديب المصري الذي أصبح أول كاتب بالعربية ينال نوبل الأدب؟",
+      "a": "نجيب محفوظ",
+      "alt": [],
+      "topic": "أدباء",
+      "verified": true,
+      "sourceUrl": "https://www.nobelprize.org/prizes/literature/1988/mahfouz/article/",
+      "difficultyTarget": 0.8,
+      "qid": "arabcelebs-200-905"
+    },
+    {
+      "p": 200,
+      "q": "من الإعلامي السعودي الذي يقدم برنامج «سين»؟",
+      "a": "أحمد الشقيري",
+      "alt": [],
+      "topic": "إعلام وصحافة",
+      "verified": true,
+      "sourceUrl": "https://shahid.mbc.net/ar/shows/Seen/show-874715",
+      "difficultyTarget": 0.8,
+      "qid": "arabcelebs-200-906"
+    },
+    {
+      "p": 200,
+      "q": "من نجم الكوميديا المصري الذي عيّنته مفوضية اللاجئين سفيرًا للنوايا الحسنة عام 2000؟",
+      "a": "عادل إمام",
+      "alt": [
+        "عادل امام"
+      ],
+      "topic": "سينما ومسرح",
+      "verified": true,
+      "sourceUrl": "https://www.unhcr.org/eg/goodwill-ambassador-adel-imam",
+      "difficultyTarget": 0.8,
+      "qid": "arabcelebs-200-907"
+    },
+    {
+      "p": 200,
+      "q": "من خبيرة التجميل التي أسست علامة «Huda Beauty»؟",
+      "a": "هدى قطان",
+      "alt": [
+        "هدي قطان"
+      ],
+      "topic": "أعمال وريادة",
+      "verified": true,
+      "sourceUrl": "https://hudabeauty.com/",
+      "difficultyTarget": 0.8,
+      "qid": "arabcelebs-200-908"
+    },
+    {
+      "p": 400,
+      "q": "من لاعبة التنس التونسية التي أصبحت أول عربية تبلغ نهائي ويمبلدون للفردي؟",
+      "a": "أنس جابر",
+      "alt": [
+        "انس جابر"
+      ],
+      "topic": "رياضيون",
+      "verified": true,
+      "sourceUrl": "https://www.wimbledon.com/amp/en_GB/news/articles/2023-07-08/jabeur_passes_tough_test_from_andreescu.html",
+      "difficultyTarget": 0.6,
+      "qid": "arabcelebs-400-901"
+    },
+    {
+      "p": 400,
+      "q": "من القطري الذي تقاسم ذهبية الوثب العالي في طوكيو مع الإيطالي تامبيري؟",
+      "a": "معتز برشم",
+      "alt": [
+        "معتز عيسى برشم"
+      ],
+      "topic": "رياضيون",
+      "verified": true,
+      "sourceUrl": "https://worldathletics.org/news/feature/barshim-tamberi-friendship-tokyo-olympics-gold",
+      "difficultyTarget": 0.6,
+      "qid": "arabcelebs-400-902"
+    },
+    {
+      "p": 400,
+      "q": "من صاحب الرحلة الأولى لرائد فضاء إماراتي إلى محطة الفضاء الدولية؟",
+      "a": "هزاع المنصوري",
+      "alt": [],
       "topic": "علوم وفضاء",
-      "q": "من عالم ناسا المصري الذي اختار مواقع هبوط مركبات أبولو على القمر؟",
+      "verified": true,
+      "sourceUrl": "https://www.mbrsc.ae/hazzaa-almansoori/",
+      "difficultyTarget": 0.6,
+      "qid": "arabcelebs-400-903"
+    },
+    {
+      "p": 400,
+      "q": "من الباحثة السعودية التي أصبحت أول امرأة سعودية تصل إلى الفضاء؟",
+      "a": "ريانة برناوي",
+      "alt": [
+        "ريانه برناوي"
+      ],
+      "topic": "علوم وفضاء",
+      "verified": true,
+      "sourceUrl": "https://www.axiomspace.com/astronaut/rayyanah-barnawi",
+      "difficultyTarget": 0.6,
+      "qid": "arabcelebs-400-904"
+    },
+    {
+      "p": 400,
+      "q": "من الشاعر الفلسطيني صاحب ديوان «جدارية»؟",
+      "a": "محمود درويش",
+      "alt": [],
+      "topic": "أدباء",
+      "verified": true,
+      "sourceUrl": "https://www.bibliotheque.nat.tn/BNT/detailstatic.aspx?RSC_BASE=SYRACUSE&RSC_DOCID=5713209&TITLE=&_lg=ar-TN",
+      "difficultyTarget": 0.6,
+      "qid": "arabcelebs-400-905"
+    },
+    {
+      "p": 400,
+      "q": "من الإعلامية المصرية التي تقدم برنامج المنوعات «معكم»؟",
+      "a": "منى الشاذلي",
+      "alt": [
+        "منى الشاذلى"
+      ],
+      "topic": "إعلام وصحافة",
+      "verified": true,
+      "sourceUrl": "https://www.watchit.com/watch/en/shows/Maakom/shows-37",
+      "difficultyTarget": 0.6,
+      "qid": "arabcelebs-400-906"
+    },
+    {
+      "p": 400,
+      "q": "من الممثل المصري الذي جسّد الطبيب يوري في فيلم «دكتور جيفاغو»؟",
+      "a": "عمر الشريف",
+      "alt": [],
+      "topic": "سينما ومسرح",
+      "verified": true,
+      "sourceUrl": "https://goldenglobes.com/articles/1966-drama-doctor-zhivago/",
+      "difficultyTarget": 0.6,
+      "qid": "arabcelebs-400-907"
+    },
+    {
+      "p": 400,
+      "q": "من رائد الأعمال الأردني الذي شارك في تأسيس شركة الشحن «أرامكس»؟",
+      "a": "فادي غندور",
+      "alt": [],
+      "topic": "أعمال وريادة",
+      "verified": true,
+      "sourceUrl": "https://www.aramex.com/content/uploads/109/200/38482/Fadi-Ghandour-profile-in-English.pdf",
+      "difficultyTarget": 0.6,
+      "qid": "arabcelebs-400-908"
+    },
+    {
+      "p": 600,
+      "q": "من لاعب التايكوندو الذي منح الأردن أول ميدالية أولمبية رسمية وكانت ذهبية؟",
+      "a": "أحمد أبو غوش",
+      "alt": [
+        "احمد ابو غوش"
+      ],
+      "topic": "رياضيون",
+      "verified": true,
+      "sourceUrl": "https://www.anocolympic.org/noc-highlights/jordan-wins-first-ever-olympic-medal/",
+      "difficultyTarget": 0.4,
+      "qid": "arabcelebs-600-901"
+    },
+    {
+      "p": 600,
+      "q": "من لاعبة الكاراتيه التي أصبحت أول مصرية تحرز ذهبية أولمبية؟",
+      "a": "فريال أشرف",
+      "alt": [
+        "فريال عبد العزيز",
+        "فريال عبدالعزيز"
+      ],
+      "topic": "رياضيون",
+      "verified": true,
+      "sourceUrl": "https://www.olympedia.org/results/18000275",
+      "difficultyTarget": 0.4,
+      "qid": "arabcelebs-600-902"
+    },
+    {
+      "p": 600,
+      "q": "من العالم المصري الذي شارك في اختيار مواقع هبوط بعثات أبولو على القمر؟",
       "a": "فاروق الباز",
       "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/فاروق_الباز",
-      "verified": true,
-      "qid": "arabcelebs-200-083"
-    },
-    {
-      "p": 200,
       "topic": "علوم وفضاء",
-      "q": "من أول امرأة عربية تصعد إلى الفضاء؟",
-      "a": "ريانة برناوي",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/ريانة_برناوي",
       "verified": true,
-      "qid": "arabcelebs-200-084"
+      "sourceUrl": "https://siarchives.si.edu/collections/siris_arc_217570",
+      "difficultyTarget": 0.4,
+      "qid": "arabcelebs-600-903"
     },
     {
-      "p": 200,
-      "topic": "علوم وفضاء",
-      "q": "من عالم الآثار المصري الأشهر عالميًا وقد اشتُهر بقبعته الاستكشافية؟",
-      "a": "زاهي حواس",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/زاهي_حواس",
-      "verified": true,
-      "qid": "arabcelebs-200-085"
-    },
-    {
-      "p": 200,
-      "topic": "عمل إنساني",
-      "q": "من الداعية المصري صاحب مشروع «صنّاع الحياة»؟",
-      "a": "عمرو خالد",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/صناع_الحياة",
-      "verified": true,
-      "qid": "arabcelebs-200-086"
-    },
-    {
-      "p": 200,
-      "topic": "عمل إنساني",
-      "q": "من الصحفية اليمنية التي نالت جائزة نوبل للسلام عام 2011؟",
-      "a": "توكل كرمان",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/توكل_كرمان",
-      "verified": true,
-      "qid": "arabcelebs-200-087"
-    },
-    {
-      "p": 200,
-      "topic": "عمل إنساني",
-      "q": "من الدبلوماسي المصري الذي نال نوبل للسلام مع الوكالة الدولية للطاقة الذرية؟",
-      "a": "محمد البرادعي",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/محمد_البرادعي",
-      "verified": true,
-      "qid": "arabcelebs-200-088"
-    },
-    {
-      "p": 200,
-      "topic": "عمل إنساني",
-      "q": "من الناشطة الإيزيدية العراقية الحائزة جائزة نوبل للسلام عام 2018؟",
-      "a": "نادية مراد",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/نادية_مراد",
-      "verified": true,
-      "qid": "arabcelebs-200-089"
-    },
-    {
-      "p": 200,
-      "topic": "عمل إنساني",
-      "q": "من ملكة الأردن المعروفة بمبادراتها في التعليم وحقوق الطفل؟",
-      "a": "الملكة رانيا",
-      "alt": [
-        "رانيا العبد الله"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/رانيا_العبد_الله",
-      "verified": true,
-      "qid": "arabcelebs-200-090"
-    },
-    {
-      "p": 200,
-      "topic": "مغنون عرب",
-      "q": "من المطرب الفلسطيني الذي عيّنته الأونروا سفيرًا لشباب اللاجئين؟",
-      "a": "محمد عساف",
-      "alt": [],
-      "sourceUrl": "https://www.unrwa.org/Assaf",
-      "verified": true,
-      "qid": "arabcelebs-200-091"
-    },
-    {
-      "p": 200,
-      "topic": "مغنون عرب",
-      "q": "من المطربة اللبنانية التي قلّدها الرئيس الفرنسي وسام جوقة الشرف؟",
-      "a": "فيروز",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/فيروز",
-      "verified": true,
-      "qid": "arabcelebs-200-092"
-    },
-    {
-      "p": 200,
-      "topic": "مغنون عرب",
-      "q": "من المطربة الخليجية التي جلست في لجنة تحكيم «أراب آيدول»؟",
-      "a": "أحلام",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/أحلام_(مطربة)",
-      "verified": true,
-      "qid": "arabcelebs-200-093"
-    },
-    {
-      "p": 200,
-      "topic": "ألقاب وشعارات",
-      "q": "ما اللقب الذي رددته جماهير ليفربول للنجم محمد صلاح؟",
-      "a": "الملك المصري",
-      "alt": [
-        "المصري الملك"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/محمد_صلاح",
-      "verified": true,
-      "qid": "arabcelebs-200-094"
-    },
-    {
-      "p": 200,
-      "topic": "ألقاب وشعارات",
-      "q": "ما اللقب الذي اشتهر به لاعب الزمالك محمود عبد الرازق؟",
-      "a": "شيكابالا",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/محمود_عبد_الرازق",
-      "verified": true,
-      "qid": "arabcelebs-200-095"
-    },
-    {
-      "p": 200,
-      "topic": "أزياء وتصميم",
-      "q": "من مصمّم الأزياء اللبناني الذي كسا نجمات هوليوود وعرض في باريس؟",
-      "a": "إيلي صعب",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/إيلي_صعب",
-      "verified": true,
-      "qid": "arabcelebs-200-096"
-    },
-    {
-      "p": 400,
-      "topic": "رياضيون",
-      "q": "من أكثر لاعبي منتخب مصر مشاركة في المباريات الدولية؟",
-      "a": "أحمد حسن",
-      "alt": [],
-      "sourceUrl": "https://www.efa.com.eg/ar/",
-      "verified": true,
-      "qid": "arabcelebs-400-049"
-    },
-    {
-      "p": 400,
-      "topic": "رياضيون",
-      "q": "من الحارس المغربي الذي فاز بجائزة أفضل لاعب في أفريقيا عام 1986؟",
-      "a": "بادو الزاكي",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/بادو_الزاكي",
-      "verified": true,
-      "qid": "arabcelebs-400-050"
-    },
-    {
-      "p": 400,
-      "topic": "رياضيون",
-      "q": "من التونسي الذي فاز بجائزة أفضل لاعب في أفريقيا عام 1977؟",
-      "a": "طارق ذياب",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/طارق_ذياب",
-      "verified": true,
-      "qid": "arabcelebs-400-051"
-    },
-    {
-      "p": 400,
-      "topic": "رياضيون",
-      "q": "من أول لاعب عربي يتوّج بلقب دوري أبطال أوروبا؟",
-      "a": "رابح ماجر",
-      "alt": [],
-      "sourceUrl": "https://al-kas.com/131298/",
-      "verified": true,
-      "qid": "arabcelebs-400-052"
-    },
-    {
-      "p": 400,
-      "topic": "رياضيون",
-      "q": "من السائق السعودي الذي توّج بلقب رالي داكار عام 2025؟",
-      "a": "يزيد الراجحي",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/يزيد_الراجحي",
-      "verified": true,
-      "qid": "arabcelebs-400-053"
-    },
-    {
-      "p": 400,
-      "topic": "رياضيون",
-      "q": "من أول لاعبة مصرية تفوز ببطولة العالم للإسكواش؟",
-      "a": "نور الشربيني",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/نور_الشربيني",
-      "verified": true,
-      "qid": "arabcelebs-400-054"
-    },
-    {
-      "p": 400,
-      "topic": "رياضيون",
-      "q": "من أول لاعب مصري يتصدّر التصنيف العالمي للإسكواش؟",
-      "a": "عمرو شبانة",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/عمرو_شبانة",
-      "verified": true,
-      "qid": "arabcelebs-400-055"
-    },
-    {
-      "p": 400,
-      "topic": "رياضيون",
-      "q": "من المصري الذي أحرز ذهبية المصارعة في أولمبياد أثينا 2004؟",
-      "a": "كرم جابر",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/كرم_جابر",
-      "verified": true,
-      "qid": "arabcelebs-400-056"
-    },
-    {
-      "p": 400,
-      "topic": "رياضيون",
-      "q": "من حارس المرمى العماني الذي لعب لبولتون وويغان في إنجلترا؟",
-      "a": "علي الحبسي",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/علي_الحبسي",
-      "verified": true,
-      "qid": "arabcelebs-400-057"
-    },
-    {
-      "p": 400,
-      "topic": "رياضيون",
-      "q": "من العدّاء المغربي الفائز بذهبية خمسة آلاف متر في أولمبياد 1984؟",
-      "a": "سعيد عويطة",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/سعيد_عويطة",
-      "verified": true,
-      "qid": "arabcelebs-400-058"
-    },
-    {
-      "p": 400,
-      "topic": "رياضيون",
-      "q": "من الهدّاف التاريخي لمنتخب العراق لكرة القدم؟",
-      "a": "حسين سعيد",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/حسين_سعيد",
-      "verified": true,
-      "qid": "arabcelebs-400-059"
-    },
-    {
-      "p": 400,
-      "topic": "رياضيون",
-      "q": "من سجّل هدف تأهّل الإمارات إلى كأس العالم لأول مرة في تاريخها؟",
-      "a": "عدنان الطلياني",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/عدنان_الطلياني",
-      "verified": true,
-      "qid": "arabcelebs-400-060"
-    },
-    {
-      "p": 400,
-      "topic": "إعلام وصحافة",
-      "q": "من الإعلامية الجزائرية التي اشتهرت بتقديم نشرات قناة الجزيرة؟",
-      "a": "خديجة بن قنة",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/خديجة_بن_قنة",
-      "verified": true,
-      "qid": "arabcelebs-400-061"
-    },
-    {
-      "p": 400,
-      "topic": "إعلام وصحافة",
-      "q": "من الإعلامي المصري الذي قدّم برنامج «بلا حدود» على الجزيرة؟",
-      "a": "أحمد منصور",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/أحمد_منصور_(إعلامي)",
-      "verified": true,
-      "qid": "arabcelebs-400-062"
-    },
-    {
-      "p": 400,
-      "topic": "إعلام وصحافة",
-      "q": "من المعلق التونسي المعروف بتعليقه الأدبي على المباريات الكبرى؟",
-      "a": "عصام الشوالي",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/عصام_الشوالي",
-      "verified": true,
-      "qid": "arabcelebs-400-063"
-    },
-    {
-      "p": 400,
-      "topic": "إعلام وصحافة",
-      "q": "من الإعلامي المصري الذي قدّم «سري للغاية» ثم «آخر كلام»؟",
-      "a": "يسري فودة",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/يسري_فودة",
-      "verified": true,
-      "qid": "arabcelebs-400-064"
-    },
-    {
-      "p": 400,
-      "topic": "إعلام وصحافة",
-      "q": "من الإعلامي المصري صاحب برنامج «مصر النهاردة»؟",
-      "a": "محمود سعد",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/محمود_سعد",
-      "verified": true,
-      "qid": "arabcelebs-400-065"
-    },
-    {
-      "p": 400,
-      "topic": "إعلام وصحافة",
-      "q": "من الإعلامي المصري الذي قدّم «العاشرة مساءً» على قناة دريم؟",
-      "a": "وائل الإبراشي",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/وائل_الإبراشي",
-      "verified": true,
-      "qid": "arabcelebs-400-066"
-    },
-    {
-      "p": 400,
-      "topic": "إعلام وصحافة",
-      "q": "من مقدّمة البرامج اللبنانية التي قدّمت «عرب غوت تالنت»؟",
-      "a": "ريا أبي راشد",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/ريا_أبي_راشد",
-      "verified": true,
-      "qid": "arabcelebs-400-067"
-    },
-    {
-      "p": 400,
-      "topic": "إعلام وصحافة",
-      "q": "من رجل الأعمال السعودي الذي أسّس مجموعة «إم بي سي» في لندن؟",
-      "a": "وليد الإبراهيم",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/وليد_الإبراهيم",
-      "verified": true,
-      "qid": "arabcelebs-400-068"
-    },
-    {
-      "p": 400,
-      "topic": "إعلام وصحافة",
-      "q": "من الصحفي المصري الذي أسّس دار «أخبار اليوم» مع شقيقه التوأم؟",
-      "a": "مصطفى أمين",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/مصطفى_أمين",
-      "verified": true,
-      "qid": "arabcelebs-400-069"
-    },
-    {
-      "p": 400,
-      "topic": "إعلام وصحافة",
-      "q": "من الكاتب والإعلامي المصري مقدّم برنامج «حديث القاهرة»؟",
-      "a": "إبراهيم عيسى",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/إبراهيم_عيسى",
-      "verified": true,
-      "qid": "arabcelebs-400-070"
-    },
-    {
-      "p": 400,
-      "topic": "أعمال وريادة",
-      "q": "من رائد الأعمال الأردني الذي أسّس موقع «مكتوب» واشترته ياهو؟",
-      "a": "سميح طوقان",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/مكتوب_(موقع_ويب)",
-      "verified": true,
-      "qid": "arabcelebs-400-071"
-    },
-    {
-      "p": 400,
-      "topic": "أعمال وريادة",
-      "q": "من رائد الأعمال المصري الذي أسّس تطبيق النقل «سويفل»؟",
-      "a": "مصطفى قنديل",
-      "alt": [],
-      "sourceUrl": "https://www.aucegypt.edu/news/stories/mostafa-kandil-15-achieves-largest-round-venture-capital-funding-egypt",
-      "verified": true,
-      "qid": "arabcelebs-400-072"
-    },
-    {
-      "p": 400,
-      "topic": "أعمال وريادة",
-      "q": "من رجل الأعمال الكويتي الذي عرّب الحاسوب بشركة «صخر»؟",
-      "a": "محمد الشارخ",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/محمد_الشارخ",
-      "verified": true,
-      "qid": "arabcelebs-400-073"
-    },
-    {
-      "p": 400,
-      "topic": "أعمال وريادة",
-      "q": "من أول سيدة سعودية ترأس مجلس إدارة بنك في المملكة؟",
-      "a": "لبنى العليان",
-      "alt": [],
-      "sourceUrl": "https://www.alarabiya.net/aswaq/banks/2018/10/04/",
-      "verified": true,
-      "qid": "arabcelebs-400-074"
-    },
-    {
-      "p": 400,
-      "topic": "أعمال وريادة",
-      "q": "من رجل الأعمال السعودي مؤسّس مجموعة «دلة البركة»؟",
-      "a": "صالح كامل",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/صالح_كامل",
-      "verified": true,
-      "qid": "arabcelebs-400-075"
-    },
-    {
-      "p": 400,
-      "topic": "أعمال وريادة",
-      "q": "من رجل الأعمال الأردني الفلسطيني صاحب أكبر شركة عربية للمحاسبة والملكية الفكرية؟",
-      "a": "طلال أبو غزالة",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/طلال_أبو_غزالة",
-      "verified": true,
-      "qid": "arabcelebs-400-076"
-    },
-    {
-      "p": 400,
-      "topic": "أعمال وريادة",
-      "q": "من رجل الأعمال الإماراتي صاحب مجموعة الحبتور؟",
-      "a": "خلف الحبتور",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/خلف_الحبتور",
-      "verified": true,
-      "qid": "arabcelebs-400-077"
-    },
-    {
-      "p": 400,
-      "topic": "أعمال وريادة",
-      "q": "ما اسم أكبر منصة عربية لتوصيل الطعام وقد انطلقت من الكويت؟",
-      "a": "طلبات",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/طلبات",
-      "verified": true,
-      "qid": "arabcelebs-400-078"
-    },
-    {
-      "p": 400,
-      "topic": "علوم وفضاء",
-      "q": "من ثاني عالم عربي يفوز بجائزة نوبل في الكيمياء؟",
-      "a": "عمر ياغي",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/encyclopedia/2025/10/9/",
-      "verified": true,
-      "qid": "arabcelebs-400-079"
-    },
-    {
-      "p": 400,
-      "topic": "علوم وفضاء",
-      "q": "من رائد الفضاء السوري الذي صعد إلى الفضاء عام 1987؟",
-      "a": "محمد فارس",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/محمد_فارس",
-      "verified": true,
-      "qid": "arabcelebs-400-080"
-    },
-    {
-      "p": 400,
-      "topic": "علوم وفضاء",
-      "q": "من العالمة السعودية التي صارت أول سفيرة للنوايا الحسنة للعلوم في اليونسكو؟",
+      "p": 600,
+      "q": "من عالمة التقنية الحيوية السعودية التي عيّنتها اليونسكو سفيرة للعلوم والابتكار؟",
       "a": "حياة سندي",
       "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/حياة_سندي",
+      "topic": "علوم وفضاء",
       "verified": true,
-      "qid": "arabcelebs-400-081"
+      "sourceUrl": "https://www.unesco.org/en/articles/hayat-sindi-calls-inclusive-sti-investment-and-gender-responsive-financing-ffd4-seville",
+      "difficultyTarget": 0.4,
+      "qid": "arabcelebs-600-904"
     },
     {
-      "p": 400,
-      "topic": "علوم وفضاء",
-      "q": "من العالمة الأردنية صاحبة مبادرة «نحن نحب القراءة»؟",
+      "p": 600,
+      "q": "من الروائية الجزائرية التي كتبت «ذاكرة الجسد»؟",
+      "a": "أحلام مستغانمي",
+      "alt": [],
+      "topic": "أدباء",
+      "verified": true,
+      "sourceUrl": "https://www.neelwafurat.com/itempage.aspx?id=lbb223144-199427&search=books",
+      "difficultyTarget": 0.4,
+      "qid": "arabcelebs-600-905"
+    },
+    {
+      "p": 600,
+      "q": "من الإعلامية اللبنانية التي قدمت البرنامج السينمائي «سكووب»؟",
+      "a": "ريا أبي راشد",
+      "alt": [
+        "ريا ابي راشد"
+      ],
+      "topic": "إعلام وصحافة",
+      "verified": true,
+      "sourceUrl": "https://www.unhcr.org/uk/news/news-releases/raya-abirached-appointed-unhcr-goodwill-ambassador-mena-region",
+      "difficultyTarget": 0.4,
+      "qid": "arabcelebs-600-906"
+    },
+    {
+      "p": 600,
+      "q": "من الممثلة التونسية التي عيّنها برنامج الأغذية العالمي سفيرة عام 2010؟",
+      "a": "هند صبري",
+      "alt": [],
+      "topic": "سينما ومسرح",
+      "verified": true,
+      "sourceUrl": "https://www.wfp.org/news/arab-film-star-hend-sabry-marks-ten-years-wfp-goodwill-ambassador",
+      "difficultyTarget": 0.4,
+      "qid": "arabcelebs-600-907"
+    },
+    {
+      "p": 600,
+      "q": "من رجل الأعمال الكويتي الذي أسس مشروع «صخر» لتعريب الحاسوب؟",
+      "a": "محمد الشارخ",
+      "alt": [],
+      "topic": "أعمال وريادة",
+      "verified": true,
+      "sourceUrl": "https://kingfaisalprize.org/mohamed-bin-abdulrahman-al-sharekh/",
+      "difficultyTarget": 0.4,
+      "qid": "arabcelebs-600-908"
+    },
+    {
+      "p": 800,
+      "q": "من العداء التونسي صاحب فضية عشرة آلاف متر في أولمبياد طوكيو 1964؟",
+      "a": "محمد القمودي",
+      "alt": [
+        "محمد الغمودي"
+      ],
+      "topic": "رياضيون",
+      "verified": true,
+      "sourceUrl": "https://www.olympedia.org/athletes/76964",
+      "difficultyTarget": 0.25,
+      "qid": "arabcelebs-800-901"
+    },
+    {
+      "p": 800,
+      "q": "من العداءة الجزائرية التي نالت ذهبية 1500 متر في أولمبياد برشلونة؟",
+      "a": "حسيبة بولمرقة",
+      "alt": [],
+      "topic": "رياضيون",
+      "verified": true,
+      "sourceUrl": "https://worldathletics.org/news/news/boulmerka-bubka-crooks-and-zelezny-elected-io",
+      "difficultyTarget": 0.25,
+      "qid": "arabcelebs-800-902"
+    },
+    {
+      "p": 800,
+      "q": "من عالمة الأحياء الأردنية التي أسست مبادرة «نحن نحب القراءة»؟",
       "a": "رنا الدجاني",
       "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/رنا_الدجاني",
-      "verified": true,
-      "qid": "arabcelebs-400-082"
-    },
-    {
-      "p": 400,
       "topic": "علوم وفضاء",
-      "q": "ما اسم المسبار الإماراتي الذي دخل مدار المريخ عام 2021؟",
-      "a": "مسبار الأمل",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/مسبار_الأمل",
       "verified": true,
-      "qid": "arabcelebs-400-083"
+      "sourceUrl": "https://welovereading.org/about/story/",
+      "difficultyTarget": 0.25,
+      "qid": "arabcelebs-800-903"
     },
     {
-      "p": 400,
-      "topic": "علوم وفضاء",
-      "q": "من الطبيب الجزائري الأمريكي الذي ترأس المعاهد الوطنية للصحة الأمريكية؟",
-      "a": "إلياس زرهوني",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/إلياس_زرهوني",
-      "verified": true,
-      "qid": "arabcelebs-400-084"
-    },
-    {
-      "p": 400,
-      "topic": "علوم وفضاء",
-      "q": "من الجرّاح المصري الذي أسّس مركز المنصورة لأمراض الكلى؟",
-      "a": "محمد غنيم",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/محمد_غنيم",
-      "verified": true,
-      "qid": "arabcelebs-400-085"
-    },
-    {
-      "p": 400,
-      "topic": "عمل إنساني",
-      "q": "من الطبيب الكويتي الذي كرّس حياته للعمل الإغاثي في أفريقيا؟",
-      "a": "عبد الرحمن السميط",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/عبد_الرحمن_السميط",
-      "verified": true,
-      "qid": "arabcelebs-400-086"
-    },
-    {
-      "p": 400,
-      "topic": "عمل إنساني",
-      "q": "ما رقم مستشفى سرطان الأطفال المصري الذي بُني بتبرعات الناس؟",
-      "a": "57357",
-      "alt": [
-        "خمسة سبعة ثلاثة خمسة سبعة"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/مستشفى_سرطان_الأطفال_57357",
-      "verified": true,
-      "qid": "arabcelebs-400-087"
-    },
-    {
-      "p": 400,
-      "topic": "عمل إنساني",
-      "q": "من الشيخة القطرية التي ترأس مؤسسة قطر للتربية والعلوم؟",
-      "a": "موزا بنت ناصر",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/موزا_بنت_ناصر_المسند",
-      "verified": true,
-      "qid": "arabcelebs-400-088"
-    },
-    {
-      "p": 400,
-      "topic": "عمل إنساني",
-      "q": "من رجل الأعمال الإماراتي الذي خصّص مليارات لمؤسسة تعليمية تحمل اسمه؟",
-      "a": "عبد الله الغرير",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/عبد_الله_الغرير",
-      "verified": true,
-      "qid": "arabcelebs-400-089"
-    },
-    {
-      "p": 400,
-      "topic": "عمل إنساني",
-      "q": "من الرئيس المصري الذي نال جائزة نوبل للسلام عام 1978؟",
-      "a": "أنور السادات",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/أنور_السادات",
-      "verified": true,
-      "qid": "arabcelebs-400-090"
-    },
-    {
-      "p": 400,
-      "topic": "مغنون عرب",
-      "q": "من المطرب العراقي الذي عيّنته اليونيسف سفيرًا للنوايا الحسنة؟",
-      "a": "كاظم الساهر",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/كاظم_الساهر",
-      "verified": true,
-      "qid": "arabcelebs-400-091"
-    },
-    {
-      "p": 400,
-      "topic": "مغنون عرب",
-      "q": "من الفنانة اللبنانية التي صارت سفيرة للنوايا الحسنة لمنظمة الفاو؟",
-      "a": "ماجدة الرومي",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/ماجدة_الرومي",
-      "verified": true,
-      "qid": "arabcelebs-400-092"
-    },
-    {
-      "p": 400,
-      "topic": "مغنون عرب",
-      "q": "من المطربة المصرية التي جلست مدرّبةً في برنامج «ذا فويس» العربي؟",
-      "a": "شيرين عبد الوهاب",
-      "alt": [
-        "شيرين"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/شيرين_عبد_الوهاب",
-      "verified": true,
-      "qid": "arabcelebs-400-093"
-    },
-    {
-      "p": 400,
-      "topic": "ألقاب وشعارات",
-      "q": "ما اللقب الذي أُطلق على لاعبة التنس التونسية أنس جابر؟",
-      "a": "وزيرة السعادة",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/أنس_جابر",
-      "verified": true,
-      "qid": "arabcelebs-400-094"
-    },
-    {
-      "p": 400,
-      "topic": "ألقاب وشعارات",
-      "q": "ما اللقب الذي عُرف به العالم المصري علي مصطفى مشرفة؟",
-      "a": "أينشتاين العرب",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/علي_مصطفى_مشرفة",
-      "verified": true,
-      "qid": "arabcelebs-400-095"
-    },
-    {
-      "p": 400,
-      "topic": "أزياء وتصميم",
-      "q": "من مصمّم الأزياء التونسي الذي صار أيقونة في باريس واسمه علية؟",
-      "a": "عز الدين علية",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/عز_الدين_علية",
-      "verified": true,
-      "qid": "arabcelebs-400-096"
-    },
-    {
-      "p": 600,
-      "topic": "رياضيون",
-      "q": "من صانع ألعاب نادي العين الفائز بجائزة أفضل لاعب في آسيا 2016؟",
-      "a": "عمر عبد الرحمن",
-      "alt": [
-        "عموري"
-      ],
-      "sourceUrl": "https://www.the-afc.com/ar/",
-      "verified": true,
-      "qid": "arabcelebs-600-049"
-    },
-    {
-      "p": 600,
-      "topic": "رياضيون",
-      "q": "من لاعب الهلال السعودي الذي اختير أفضل لاعب في آسيا عام 2000؟",
-      "a": "نواف التمياط",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/نواف_التمياط",
-      "verified": true,
-      "qid": "arabcelebs-600-050"
-    },
-    {
-      "p": 600,
-      "topic": "رياضيون",
-      "q": "من سجّل تسعة أهداف في نسخة واحدة من كأس آسيا محطّمًا الرقم القياسي؟",
-      "a": "المعز علي",
-      "alt": [],
-      "sourceUrl": "https://www.the-afc.com/ar/",
-      "verified": true,
-      "qid": "arabcelebs-600-051"
-    },
-    {
-      "p": 600,
-      "topic": "رياضيون",
-      "q": "من صاحبة الميدالية الذهبية الأولمبية الوحيدة في تاريخ سوريا؟",
-      "a": "غادة شعاع",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/غادة_شعاع",
-      "verified": true,
-      "qid": "arabcelebs-600-052"
-    },
-    {
-      "p": 600,
-      "topic": "رياضيون",
-      "q": "من الأردني الذي أهدى بلاده أول ذهبية أولمبية في التايكوندو؟",
-      "a": "أحمد أبو غوش",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/أحمد_أبو_غوش",
-      "verified": true,
-      "qid": "arabcelebs-600-053"
-    },
-    {
-      "p": 600,
-      "topic": "رياضيون",
-      "q": "من أول سبّاحة مصرية تفوز بميدالية في بطولة العالم للسباحة؟",
-      "a": "فريدة عثمان",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/فريدة_عثمان",
-      "verified": true,
-      "qid": "arabcelebs-600-054"
-    },
-    {
-      "p": 600,
-      "topic": "رياضيون",
-      "q": "من الجزائري الفائز بذهبية سباق 1500 متر في أولمبياد لندن 2012؟",
-      "a": "توفيق مخلوفي",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/توفيق_مخلوفي",
-      "verified": true,
-      "qid": "arabcelebs-600-055"
-    },
-    {
-      "p": 600,
-      "topic": "رياضيون",
-      "q": "من التونسية الفائزة بذهبية 3000 متر موانع في أولمبياد لندن؟",
-      "a": "حبيبة الغريبي",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/حبيبة_الغريبي",
-      "verified": true,
-      "qid": "arabcelebs-600-056"
-    },
-    {
-      "p": 600,
-      "topic": "رياضيون",
-      "q": "من الكويتي الذي فاز بذهبية الرماية في أولمبياد ريو 2016؟",
-      "a": "فهيد الديحاني",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/فهيد_الديحاني",
-      "verified": true,
-      "qid": "arabcelebs-600-057"
-    },
-    {
-      "p": 600,
-      "topic": "رياضيون",
-      "q": "من الرامي الذي أحرز أول ذهبية أولمبية للإمارات عام 2004؟",
-      "a": "أحمد بن حشر آل مكتوم",
-      "alt": [
-        "أحمد المكتوم"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/أحمد_بن_حشر_آل_مكتوم",
-      "verified": true,
-      "qid": "arabcelebs-600-058"
-    },
-    {
-      "p": 600,
-      "topic": "رياضيون",
-      "q": "من المصرية صاحبة برونزيتين أولمبيتين متتاليتين في التايكوندو؟",
-      "a": "هداية ملاك",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/هداية_ملاك",
-      "verified": true,
-      "qid": "arabcelebs-600-059"
-    },
-    {
-      "p": 600,
-      "topic": "رياضيون",
-      "q": "من الكويتي الذي صار ثاني أكثر لاعب مشاركة دولية في تاريخ اللعبة؟",
-      "a": "بدر المطوع",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/بدر_المطوع",
-      "verified": true,
-      "qid": "arabcelebs-600-060"
-    },
-    {
-      "p": 600,
-      "topic": "إعلام وصحافة",
-      "q": "من الإعلامي التونسي اللبناني الذي ترك الجزيرة وأسّس قناة الميادين؟",
-      "a": "غسان بن جدو",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/غسان_بن_جدو",
-      "verified": true,
-      "qid": "arabcelebs-600-061"
-    },
-    {
-      "p": 600,
-      "topic": "إعلام وصحافة",
-      "q": "من المذيع الأردني الفلسطيني الأشهر في نشرات قناة الجزيرة؟",
-      "a": "جمال ريان",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/جمال_ريان",
-      "verified": true,
-      "qid": "arabcelebs-600-062"
-    },
-    {
-      "p": 600,
-      "topic": "إعلام وصحافة",
-      "q": "من الإعلامي السعودي الذي قدّم برنامج «إضاءات» على قناة العربية؟",
-      "a": "تركي الدخيل",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/تركي_الدخيل",
-      "verified": true,
-      "qid": "arabcelebs-600-063"
-    },
-    {
-      "p": 600,
-      "topic": "إعلام وصحافة",
-      "q": "من الإعلامي المصري الذي قدّم برنامج «يحدث في مصر»؟",
-      "a": "شريف عامر",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/شريف_عامر",
-      "verified": true,
-      "qid": "arabcelebs-600-064"
-    },
-    {
-      "p": 600,
-      "topic": "إعلام وصحافة",
-      "q": "من الإعلامي اللبناني الأرمني الأصل الذي قدّم برنامج «أبشر» على إم بي سي؟",
-      "a": "نيشان",
-      "alt": [
-        "نيشان دير هاروتيونيان"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/نيشان_(إعلامي)",
-      "verified": true,
-      "qid": "arabcelebs-600-065"
-    },
-    {
-      "p": 600,
-      "topic": "إعلام وصحافة",
-      "q": "ما اسم وكالة الأنباء الرسمية في مصر؟",
-      "a": "وكالة أنباء الشرق الأوسط",
-      "alt": [
-        "أ ش أ"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/وكالة_أنباء_الشرق_الأوسط",
-      "verified": true,
-      "qid": "arabcelebs-600-066"
-    },
-    {
-      "p": 600,
-      "topic": "إعلام وصحافة",
-      "q": "من الصحفي اللبناني الذي أسّس مجلة «الحوادث» واغتيل عام 1980؟",
-      "a": "سليم اللوزي",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/سليم_اللوزي",
-      "verified": true,
-      "qid": "arabcelebs-600-067"
-    },
-    {
-      "p": 600,
-      "topic": "إعلام وصحافة",
-      "q": "من الإعلامي اللبناني الساخر مقدّم برنامج «لهون وبس»؟",
-      "a": "هشام حداد",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/هشام_حداد",
-      "verified": true,
-      "qid": "arabcelebs-600-068"
-    },
-    {
-      "p": 600,
-      "topic": "إعلام وصحافة",
-      "q": "من المعلق الرياضي المصري الأشهر في نقل مباريات الدوري المحلي؟",
-      "a": "مدحت شلبي",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/مدحت_شلبي",
-      "verified": true,
-      "qid": "arabcelebs-600-069"
-    },
-    {
-      "p": 600,
-      "topic": "إعلام وصحافة",
-      "q": "من الإعلامي اللبناني مقدّم برنامج «كلام الناس» الحواري؟",
-      "a": "مارسيل غانم",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/مارسيل_غانم",
-      "verified": true,
-      "qid": "arabcelebs-600-070"
-    },
-    {
-      "p": 600,
-      "topic": "أعمال وريادة",
-      "q": "من مهندس البرمجيات اللبناني الذي شارك في تأسيس أشهر منصة عربية لبثّ الأغاني؟",
-      "a": "إيلي حبيب",
-      "alt": [],
-      "sourceUrl": "https://hbrarabic.com/شخصيات/إيلي-حبيب/",
-      "verified": true,
-      "qid": "arabcelebs-600-071"
-    },
-    {
-      "p": 600,
-      "topic": "أعمال وريادة",
-      "q": "من رجل الأعمال المصري الذي يقود مجموعة منصور وكيلة جنرال موتورز؟",
-      "a": "محمد منصور",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/محمد_منصور",
-      "verified": true,
-      "qid": "arabcelebs-600-072"
-    },
-    {
-      "p": 600,
-      "topic": "أعمال وريادة",
-      "q": "من رجل الأعمال المصري الذي يقود «أوراسكوم للإنشاء والصناعة»؟",
-      "a": "ناصف ساويرس",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/ناصف_ساويرس",
-      "verified": true,
-      "qid": "arabcelebs-600-073"
-    },
-    {
-      "p": 600,
-      "topic": "أعمال وريادة",
-      "q": "من رائد الأعمال المصري مؤسّس شركة «جهينة» للألبان والعصائر؟",
-      "a": "صفوان ثابت",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/صفوان_ثابت",
-      "verified": true,
-      "qid": "arabcelebs-600-074"
-    },
-    {
-      "p": 600,
-      "topic": "أعمال وريادة",
-      "q": "ما اسم المنطقة الحرة في دبي التي تضم كبريات المؤسسات الإعلامية؟",
-      "a": "مدينة دبي للإعلام",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/مدينة_دبي_للإعلام",
-      "verified": true,
-      "qid": "arabcelebs-600-075"
-    },
-    {
-      "p": 600,
-      "topic": "أعمال وريادة",
-      "q": "ما اسم المجموعة السعودية التي تمثّل تويوتا في المملكة وتحمل اسم مؤسّسها؟",
-      "a": "عبد اللطيف جميل",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/عبد_اللطيف_جميل",
-      "verified": true,
-      "qid": "arabcelebs-600-076"
-    },
-    {
-      "p": 600,
-      "topic": "أعمال وريادة",
-      "q": "ما اسم موقع الإعلانات المبوّبة الذي انطلق من دبي وانتشر عربيًا؟",
-      "a": "دوبيزل",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/دوبيزل",
-      "verified": true,
-      "qid": "arabcelebs-600-077"
-    },
-    {
-      "p": 600,
-      "topic": "أعمال وريادة",
-      "q": "ما اسم الفندق الإماراتي على شكل شراع الذي وُصف بأفخم فندق في العالم؟",
-      "a": "برج العرب",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/برج_العرب_(فندق)",
-      "verified": true,
-      "qid": "arabcelebs-600-078"
-    },
-    {
-      "p": 600,
-      "topic": "علوم وفضاء",
-      "q": "من عالم الكيمياء المصري الرائد في استخدام الذهب النانوي لعلاج الأورام؟",
+      "p": 800,
+      "q": "من العالم المصري بجامعة جورجيا تك الذي درس استخدام جسيمات الذهب النانوية ضد السرطان؟",
       "a": "مصطفى السيد",
       "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/مصطفى_السيد",
-      "verified": true,
-      "qid": "arabcelebs-600-079"
-    },
-    {
-      "p": 600,
       "topic": "علوم وفضاء",
-      "q": "من العالمة اللبنانية الأمريكية الحائزة جوائز كبرى في أبحاث الجينات والأعصاب؟",
-      "a": "هدى الزغبي",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/هدى_الزغبي",
       "verified": true,
-      "qid": "arabcelebs-600-080"
-    },
-    {
-      "p": 600,
-      "topic": "علوم وفضاء",
-      "q": "من المهندس المصري الذي لُقّب في ألمانيا بمهندس الأنفاق؟",
-      "a": "هاني عازر",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/هاني_عازر",
-      "verified": true,
-      "qid": "arabcelebs-600-081"
-    },
-    {
-      "p": 600,
-      "topic": "علوم وفضاء",
-      "q": "من رائد الفضاء السعودي الذي رافق أول عربية في رحلتها عام 2023؟",
-      "a": "علي القرني",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/علي_القرني",
-      "verified": true,
-      "qid": "arabcelebs-600-082"
-    },
-    {
-      "p": 600,
-      "topic": "علوم وفضاء",
-      "q": "من أول عربية تلتحق ببرنامج تدريب رواد الفضاء في ناسا؟",
-      "a": "نورا المطروشي",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/نورا_المطروشي",
-      "verified": true,
-      "qid": "arabcelebs-600-083"
-    },
-    {
-      "p": 600,
-      "topic": "علوم وفضاء",
-      "q": "من الوزيرة الإماراتية التي قادت الفريق العلمي لمهمة بلادها إلى المريخ؟",
-      "a": "سارة الأميري",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/سارة_الأميري",
-      "verified": true,
-      "qid": "arabcelebs-600-084"
-    },
-    {
-      "p": 600,
-      "topic": "علوم وفضاء",
-      "q": "من أول مدير لمكتبة الإسكندرية بعد إحيائها؟",
-      "a": "إسماعيل سراج الدين",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/إسماعيل_سراج_الدين",
-      "verified": true,
-      "qid": "arabcelebs-600-085"
-    },
-    {
-      "p": 600,
-      "topic": "عمل إنساني",
-      "q": "من المفكر المصري صاحب برنامج «العلم والإيمان» الذي أنشأ مسجدًا ومستشفى خيريًا؟",
-      "a": "مصطفى محمود",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/مصطفى_محمود",
-      "verified": true,
-      "qid": "arabcelebs-600-086"
-    },
-    {
-      "p": 600,
-      "topic": "عمل إنساني",
-      "q": "من الزعيم الفلسطيني الذي نال جائزة نوبل للسلام عام 1994؟",
-      "a": "ياسر عرفات",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/ياسر_عرفات",
-      "verified": true,
-      "qid": "arabcelebs-600-087"
-    },
-    {
-      "p": 600,
-      "topic": "عمل إنساني",
-      "q": "ما اسم المبادرة الأردنية لتطوير المدارس الحكومية التي أطلقتها الملكة؟",
-      "a": "مدرستي",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/مدرستي",
-      "verified": true,
-      "qid": "arabcelebs-600-088"
-    },
-    {
-      "p": 600,
-      "topic": "عمل إنساني",
-      "q": "ما اسم المنظمة الإغاثية العربية التي تعمل تحت شعار الهلال؟",
-      "a": "الهلال الأحمر",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الهلال_الأحمر",
-      "verified": true,
-      "qid": "arabcelebs-600-089"
-    },
-    {
-      "p": 600,
-      "topic": "عمل إنساني",
-      "q": "ما اسم الجائزة السعودية العالمية التي تُمنح لخدمة الإسلام والعلوم والطب؟",
-      "a": "جائزة الملك فيصل",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/جائزة_الملك_فيصل",
-      "verified": true,
-      "qid": "arabcelebs-600-090"
-    },
-    {
-      "p": 600,
-      "topic": "مغنون عرب",
-      "q": "من الفنان القطري الذي شارك في أغنية افتتاح مونديال 2022؟",
-      "a": "فهد الكبيسي",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/فهد_الكبيسي",
-      "verified": true,
-      "qid": "arabcelebs-600-091"
-    },
-    {
-      "p": 600,
-      "topic": "مغنون عرب",
-      "q": "من الملحّن المصري الذي وضع ألحان أوبريت «الحلم العربي»؟",
-      "a": "حلمي بكر",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/حلمي_بكر",
-      "verified": true,
-      "qid": "arabcelebs-600-092"
-    },
-    {
-      "p": 600,
-      "topic": "مغنون عرب",
-      "q": "من المطرب المصري الذي تولّى نقابة المهن الموسيقية؟",
-      "a": "هاني شاكر",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/هاني_شاكر",
-      "verified": true,
-      "qid": "arabcelebs-600-093"
-    },
-    {
-      "p": 600,
-      "topic": "ألقاب وشعارات",
-      "q": "ما اللقب الذي عُرفت به عالمة الذرّة المصرية سميرة موسى؟",
-      "a": "ميس كوري الشرق",
-      "alt": [
-        "ميس كوري المصرية"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/سميرة_موسى",
-      "verified": true,
-      "qid": "arabcelebs-600-094"
-    },
-    {
-      "p": 600,
-      "topic": "أزياء وتصميم",
-      "q": "من مصمّم الأزياء السوري الذي عرض مجموعاته في أسبوع الموضة بباريس؟",
-      "a": "رامي العلي",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/رامي_العلي",
-      "verified": true,
-      "qid": "arabcelebs-600-095"
-    },
-    {
-      "p": 600,
-      "topic": "أزياء وتصميم",
-      "q": "من المعماري الأردني الذي صمّم جامع قصر الحكم في الرياض؟",
-      "a": "راسم بدران",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/راسم_بدران",
-      "verified": true,
-      "qid": "arabcelebs-600-096"
+      "sourceUrl": "https://chemistry.gatech.edu/people/mostafa-el-sayed",
+      "difficultyTarget": 0.25,
+      "qid": "arabcelebs-800-904"
     },
     {
       "p": 800,
-      "topic": "رياضيون",
-      "q": "من لاعبة الإسكواش المصرية التي تصدّرت التصنيف العالمي لمئة أسبوع وأكثر؟",
-      "a": "نوران جوهر",
+      "q": "من الأديب الفلسطيني الذي ألّف رواية «رجال في الشمس»؟",
+      "a": "غسان كنفاني",
       "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/نوران_جوهر",
+      "topic": "أدباء",
       "verified": true,
-      "qid": "arabcelebs-800-049"
+      "sourceUrl": "https://www.rienner.com/title/Men_in_the_Sun_and_Other_Palestinian_Stories",
+      "difficultyTarget": 0.25,
+      "qid": "arabcelebs-800-905"
     },
     {
       "p": 800,
-      "topic": "رياضيون",
-      "q": "من المصري الذي توّج ببطولة العالم للإسكواش في القاهرة عام 2016؟",
-      "a": "كريم عبد الجواد",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/كريم_عبد_الجواد",
-      "verified": true,
-      "qid": "arabcelebs-800-050"
-    },
-    {
-      "p": 800,
-      "topic": "رياضيون",
-      "q": "من المصري الذي أحرز برونزية التايكوندو في أولمبياد طوكيو؟",
-      "a": "سيف عيسى",
-      "alt": [],
-      "sourceUrl": "https://gate.ahram.org.eg/News/2876420.aspx",
-      "verified": true,
-      "qid": "arabcelebs-800-051"
-    },
-    {
-      "p": 800,
-      "topic": "رياضيون",
-      "q": "من الرباع المصري الذي نال ميدالية رفع الأثقال في أولمبياد ريو؟",
-      "a": "محمد إيهاب",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/محمد_إيهاب",
-      "verified": true,
-      "qid": "arabcelebs-800-052"
-    },
-    {
-      "p": 800,
-      "topic": "رياضيون",
-      "q": "من المهاجم السوري الذي صار هدّافًا بارزًا في الدوري السعودي؟",
-      "a": "عمر السومة",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/عمر_السومة",
-      "verified": true,
-      "qid": "arabcelebs-800-053"
-    },
-    {
-      "p": 800,
-      "topic": "رياضيون",
-      "q": "من لاعب المنتخب الأردني الذي احترف في نادي مونبلييه الفرنسي؟",
-      "a": "موسى التعمري",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/موسى_التعمري",
-      "verified": true,
-      "qid": "arabcelebs-800-054"
-    },
-    {
-      "p": 800,
-      "topic": "رياضيون",
-      "q": "من السعودي الذي شارك في أربع نهائيات لكأس العالم مع الأخضر؟",
-      "a": "سامي الجابر",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/سامي_الجابر",
-      "verified": true,
-      "qid": "arabcelebs-800-055"
-    },
-    {
-      "p": 800,
-      "topic": "رياضيون",
-      "q": "من حارس مرمى المنتخب السعودي الأشهر في التسعينيات ومطلع الألفية؟",
-      "a": "محمد الدعيع",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/محمد_الدعيع",
-      "verified": true,
-      "qid": "arabcelebs-800-056"
-    },
-    {
-      "p": 800,
-      "topic": "رياضيون",
-      "q": "من لاعب الوسط المصري الذي احترف في سلتيك الإسكتلندي وتوتنهام؟",
-      "a": "حسام غالي",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/حسام_غالي",
-      "verified": true,
-      "qid": "arabcelebs-800-057"
-    },
-    {
-      "p": 800,
-      "topic": "رياضيون",
-      "q": "من صانع ألعاب نادي الزمالك ومنتخب مصر في تسعينيات القرن الماضي؟",
-      "a": "حازم إمام",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/حازم_إمام",
-      "verified": true,
-      "qid": "arabcelebs-800-058"
-    },
-    {
-      "p": 800,
-      "topic": "رياضيون",
-      "q": "من هدّاف المنتخب السعودي التاريخي ونجم نادي النصر؟",
-      "a": "ماجد عبد الله",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/ماجد_عبد_الله",
-      "verified": true,
-      "qid": "arabcelebs-800-059"
-    },
-    {
-      "p": 800,
-      "topic": "رياضيون",
-      "q": "من لاعب الوسط العراقي الذي كان نجم منتخب بلاده في كأس آسيا 2007؟",
-      "a": "نشأت أكرم",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/نشأت_أكرم",
-      "verified": true,
-      "qid": "arabcelebs-800-060"
-    },
-    {
-      "p": 800,
-      "topic": "إعلام وصحافة",
-      "q": "من مؤسِّسة مجلة «روز اليوسف» المصرية؟",
+      "q": "من الممثلة التي أسست مجلة مصرية تحمل اسمها الفني عام 1925؟",
       "a": "فاطمة اليوسف",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/فاطمة_اليوسف",
+      "alt": [
+        "روز اليوسف",
+        "روزا اليوسف"
+      ],
+      "topic": "إعلام وصحافة",
       "verified": true,
-      "qid": "arabcelebs-800-061"
+      "sourceUrl": "https://www.library.dartmouth.edu/digital/digital-collections/rose-el-youssef",
+      "difficultyTarget": 0.25,
+      "qid": "arabcelebs-800-906"
     },
     {
       "p": 800,
-      "topic": "إعلام وصحافة",
-      "q": "من الصحفي اللبناني الذي أسّس مع أخيه جريدة الأهرام بالإسكندرية؟",
-      "a": "سليم تقلا",
+      "q": "من المخرجة اللبنانية التي قدّمت فيلم «كفرناحوم» الفائز بجائزة لجنة التحكيم في كان؟",
+      "a": "نادين لبكي",
       "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/سليم_تقلا",
+      "topic": "سينما ومسرح",
       "verified": true,
-      "qid": "arabcelebs-800-062"
+      "sourceUrl": "https://www.festival-cannes.com/en/2024/meeting-nadine-labaki-member-of-the-jury-for-feature-films/",
+      "difficultyTarget": 0.25,
+      "qid": "arabcelebs-800-907"
     },
     {
       "p": 800,
-      "topic": "إعلام وصحافة",
-      "q": "من الصحفي اللبناني الذي أسّس جريدة «النهار» عام 1933؟",
-      "a": "جبران تويني",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/جبران_تويني_(الجد)",
+      "q": "من رائد الأعمال السعودي الذي انضم مؤسسًا ثالثًا لتطبيق «كريم»؟",
+      "a": "عبد الله إلياس",
+      "alt": [
+        "عبدالله إلياس",
+        "عبد الله الياس"
+      ],
+      "topic": "أعمال وريادة",
       "verified": true,
-      "qid": "arabcelebs-800-063"
+      "sourceUrl": "https://www.careem.com/ar-KW/about-us/",
+      "difficultyTarget": 0.25,
+      "qid": "arabcelebs-800-908"
     },
     {
-      "p": 800,
-      "topic": "إعلام وصحافة",
-      "q": "من الصحفي السعودي الذي ترأس تحرير «الشرق الأوسط» ثم قناة العربية؟",
-      "a": "عبد الرحمن الراشد",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/عبد_الرحمن_الراشد",
+      "p": 1000,
+      "q": "من التونسي الذي نال فضية وزن 58 كيلوغرامًا في تايكوندو أولمبياد طوكيو؟",
+      "a": "محمد خليل الجندوبي",
+      "alt": [
+        "خليل الجندوبي"
+      ],
+      "topic": "رياضيون",
       "verified": true,
-      "qid": "arabcelebs-800-064"
+      "sourceUrl": "https://results.worldtaekwondo.org/competitions/tokyo-2020-og/medalists",
+      "difficultyTarget": 0.15,
+      "qid": "arabcelebs-1000-901"
     },
     {
-      "p": 800,
-      "topic": "إعلام وصحافة",
-      "q": "من المذيع التونسي البارز في قناة الجزيرة منذ سنواتها الأولى؟",
-      "a": "محمد كريشان",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/محمد_كريشان",
+      "p": 1000,
+      "q": "من السباح التونسي الذي أحرز ذهبية ماراثون عشرة كيلومترات في أولمبياد لندن؟",
+      "a": "أسامة الملولي",
+      "alt": [
+        "اسامة الملولي"
+      ],
+      "topic": "رياضيون",
       "verified": true,
-      "qid": "arabcelebs-800-065"
+      "sourceUrl": "https://www.worldaquatics.com/athletes/1000445/ous-mellouli/medals",
+      "difficultyTarget": 0.15,
+      "qid": "arabcelebs-1000-902"
     },
     {
-      "p": 800,
-      "topic": "إعلام وصحافة",
-      "q": "من المذيعة العراقية التي قدّمت نشرات الجزيرة لسنوات طويلة؟",
-      "a": "ليلى الشيخلي",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/ليلى_الشيخلي",
+      "p": 1000,
+      "q": "من الطبيب الجزائري الذي أدار المعاهد الوطنية الأمريكية للصحة بين 2002 و2008؟",
+      "a": "إلياس زرهوني",
+      "alt": [
+        "الياس زرهوني"
+      ],
+      "topic": "علوم وفضاء",
       "verified": true,
-      "qid": "arabcelebs-800-066"
+      "sourceUrl": "https://www.nih.gov/about-nih/nih-almanac/elias-zerhouni-md",
+      "difficultyTarget": 0.15,
+      "qid": "arabcelebs-1000-903"
     },
     {
-      "p": 800,
-      "topic": "إعلام وصحافة",
-      "q": "من المذيعة السورية التي قدّمت برنامج «الشارع العربي»؟",
-      "a": "زينة يازجي",
-      "alt": [],
-      "sourceUrl": "https://www.alkhaleej.ae/",
+      "p": 1000,
+      "q": "من العالم المغربي الذي اخترع أنود الغرافيت المستخدم في بطاريات الليثيوم أيون؟",
+      "a": "رشيد اليزمي",
+      "alt": [
+        "رشيد يزمي",
+        "Rachid Yazami"
+      ],
+      "topic": "علوم وفضاء",
       "verified": true,
-      "qid": "arabcelebs-800-067"
+      "sourceUrl": "https://www.nae.edu/105813/Rachid-Yazami",
+      "difficultyTarget": 0.15,
+      "qid": "arabcelebs-1000-904"
     },
     {
-      "p": 800,
-      "topic": "إعلام وصحافة",
-      "q": "من الإعلامي المصري الذي قدّم برنامج «حديث المدينة»؟",
-      "a": "مفيد فوزي",
+      "p": 1000,
+      "q": "من الروائية الفلسطينية صاحبة رواية «الصبار»؟",
+      "a": "سحر خليفة",
       "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/مفيد_فوزي",
+      "topic": "أدباء",
       "verified": true,
-      "qid": "arabcelebs-800-068"
+      "sourceUrl": "https://ci.nii.ac.jp/ncid/BA51544870",
+      "difficultyTarget": 0.15,
+      "qid": "arabcelebs-1000-905"
     },
     {
-      "p": 800,
-      "topic": "إعلام وصحافة",
-      "q": "من الإعلامية المصرية صاحبة برنامج «هالة شو»؟",
-      "a": "هالة سرحان",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/هالة_سرحان",
-      "verified": true,
-      "qid": "arabcelebs-800-069"
-    },
-    {
-      "p": 800,
-      "topic": "إعلام وصحافة",
-      "q": "من الكاتب المصري صاحب عمود «صندوق الدنيا» في جريدة الأهرام؟",
+      "p": 1000,
+      "q": "من الكاتب المصري صاحب عمود «صندوق الدنيا» في الأهرام؟",
       "a": "أحمد بهجت",
       "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/أحمد_بهجت",
+      "topic": "إعلام وصحافة",
       "verified": true,
-      "qid": "arabcelebs-800-070"
+      "sourceUrl": "https://gate.ahram.org.eg/daily/WriterArticles/08/2002/70.aspx",
+      "difficultyTarget": 0.15,
+      "qid": "arabcelebs-1000-906"
     },
     {
-      "p": 800,
-      "topic": "أعمال وريادة",
-      "q": "ما اسم أشهر موقع توظيف في الشرق الأوسط انطلق من دبي؟",
-      "a": "بيت.كوم",
+      "p": 1000,
+      "q": "من المخرجة الفلسطينية التي جمعت محمد وصالح بكري في فيلم «واجب»؟",
+      "a": "آن ماري جاسر",
       "alt": [
-        "بيت دوت كوم"
+        "آن ماري جاصر",
+        "أن ماري جاسر",
+        "Annemarie Jacir"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/بيت.كوم",
+      "topic": "سينما ومسرح",
       "verified": true,
-      "qid": "arabcelebs-800-071"
-    },
-    {
-      "p": 800,
-      "topic": "أعمال وريادة",
-      "q": "من رائد الأعمال السعودي الألماني الذي شارك في تأسيس تطبيق «كريم»؟",
-      "a": "عبد الله الياس",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/كريم_(شركة)",
-      "verified": true,
-      "qid": "arabcelebs-800-072"
-    },
-    {
-      "p": 800,
-      "topic": "أعمال وريادة",
-      "q": "ما اسم الشركة المصرية الرائدة في صناعة الكابلات الكهربائية؟",
-      "a": "السويدي إليكتريك",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/السويدي_إليكتريك",
-      "verified": true,
-      "qid": "arabcelebs-800-073"
-    },
-    {
-      "p": 800,
-      "topic": "أعمال وريادة",
-      "q": "ما اسم أكبر شركة حديد خاصة في مصر وتحمل اسم عائلة صاحبها؟",
-      "a": "حديد عز",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/حديد_عز",
-      "verified": true,
-      "qid": "arabcelebs-800-074"
-    },
-    {
-      "p": 800,
-      "topic": "أعمال وريادة",
-      "q": "ما اسم الناقل الوطني القطري الذي انطلق عام 1994؟",
-      "a": "الخطوط الجوية القطرية",
-      "alt": [
-        "القطرية"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الخطوط_الجوية_القطرية",
-      "verified": true,
-      "qid": "arabcelebs-800-075"
-    },
-    {
-      "p": 800,
-      "topic": "أعمال وريادة",
-      "q": "ما اسم منصة بيع الأزياء الفاخرة التي انطلقت من دبي عام 2011؟",
-      "a": "نمشي",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/نمشي",
-      "verified": true,
-      "qid": "arabcelebs-800-076"
-    },
-    {
-      "p": 800,
-      "topic": "أعمال وريادة",
-      "q": "ما اسم أول شركة طيران في العالم العربي وقد تأسّست عام 1932؟",
-      "a": "مصر للطيران",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/مصر_للطيران",
-      "verified": true,
-      "qid": "arabcelebs-800-077"
-    },
-    {
-      "p": 800,
-      "topic": "أعمال وريادة",
-      "q": "ما اسم المجموعة اللبنانية الأصل التي توزّع العلامات الفاخرة في الخليج؟",
-      "a": "مجموعة شلهوب",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/مجموعة_شلهوب",
-      "verified": true,
-      "qid": "arabcelebs-800-078"
-    },
-    {
-      "p": 800,
-      "topic": "علوم وفضاء",
-      "q": "من عالم الذرّة المصري الذي اغتيل في باريس أثناء عمله بالمشروع النووي العراقي؟",
-      "a": "يحيى المشد",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/يحيى_المشد",
-      "verified": true,
-      "qid": "arabcelebs-800-079"
-    },
-    {
-      "p": 800,
-      "topic": "علوم وفضاء",
-      "q": "من العالم المصري الرائد في معالجة اللغة العربية آليًا؟",
-      "a": "نبيل علي",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/نبيل_علي",
-      "verified": true,
-      "qid": "arabcelebs-800-080"
-    },
-    {
-      "p": 800,
-      "topic": "علوم وفضاء",
-      "q": "من عالم الجيولوجيا المصري صاحب المرجع الشهير عن نهر النيل؟",
-      "a": "رشدي سعيد",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/رشدي_سعيد",
-      "verified": true,
-      "qid": "arabcelebs-800-081"
-    },
-    {
-      "p": 800,
-      "topic": "علوم وفضاء",
-      "q": "من عالم الفضاء المصري في ناسا المتخصص في رادارات كشف المياه الجوفية؟",
-      "a": "عصام حجي",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/عصام_حجي",
-      "verified": true,
-      "qid": "arabcelebs-800-082"
-    },
-    {
-      "p": 800,
-      "topic": "علوم وفضاء",
-      "q": "من الطبيب المصري الذي ترأس الجمعية العالمية للطب النفسي؟",
-      "a": "أحمد عكاشة",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/أحمد_عكاشة",
-      "verified": true,
-      "qid": "arabcelebs-800-083"
-    },
-    {
-      "p": 800,
-      "topic": "علوم وفضاء",
-      "q": "من عالم الوراثة المصري الذي جمع بين البحث العلمي وترجمة الشعر؟",
-      "a": "أحمد مستجير",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/أحمد_مستجير",
-      "verified": true,
-      "qid": "arabcelebs-800-084"
-    },
-    {
-      "p": 800,
-      "topic": "علوم وفضاء",
-      "q": "ما اسم أول قمر صناعي صنعه مهندسون إماراتيون بالكامل؟",
-      "a": "خليفة سات",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/خليفة_سات",
-      "verified": true,
-      "qid": "arabcelebs-800-085"
-    },
-    {
-      "p": 800,
-      "topic": "عمل إنساني",
-      "q": "من مؤسِّس دولة الإمارات الذي عُرف بأعماله الخيرية داخل بلاده وخارجها؟",
-      "a": "زايد بن سلطان",
-      "alt": [
-        "الشيخ زايد"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/زايد_بن_سلطان_آل_نهيان",
-      "verified": true,
-      "qid": "arabcelebs-800-086"
-    },
-    {
-      "p": 800,
-      "topic": "عمل إنساني",
-      "q": "من الطبيبة السعودية الرائدة في حملات التوعية بسرطان الثدي؟",
-      "a": "سامية العمودي",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/سامية_العمودي",
-      "verified": true,
-      "qid": "arabcelebs-800-087"
-    },
-    {
-      "p": 800,
-      "topic": "عمل إنساني",
-      "q": "ما اسم الجمعية المصرية الخيرية الأشهر في كفالة الأيتام وتنمية القرى؟",
-      "a": "الأورمان",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/جمعية_الأورمان",
-      "verified": true,
-      "qid": "arabcelebs-800-088"
-    },
-    {
-      "p": 800,
-      "topic": "عمل إنساني",
-      "q": "من العالم الأزهري الذي أسّس مؤسسة «مصر الخير»؟",
-      "a": "علي جمعة",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/علي_جمعة",
-      "verified": true,
-      "qid": "arabcelebs-800-089"
-    },
-    {
-      "p": 800,
-      "topic": "عمل إنساني",
-      "q": "ما اسم المبادرة الإماراتية لتوفير المياه النظيفة للمحتاجين حول العالم؟",
-      "a": "سقيا الإمارات",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/سقيا_الإمارات",
-      "verified": true,
-      "qid": "arabcelebs-800-090"
-    },
-    {
-      "p": 800,
-      "topic": "مغنون عرب",
-      "q": "من الفنان السوداني الأشهر الذي غنّى للوطن ورحل عام 2012؟",
-      "a": "محمد وردي",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/محمد_وردي",
-      "verified": true,
-      "qid": "arabcelebs-800-091"
-    },
-    {
-      "p": 800,
-      "topic": "مغنون عرب",
-      "q": "من المطربة الفلسطينية التي غنّت للتراث والمقاومة ورحلت عام 2018؟",
-      "a": "ريم بنا",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/ريم_بنا",
-      "verified": true,
-      "qid": "arabcelebs-800-092"
-    },
-    {
-      "p": 800,
-      "topic": "مغنون عرب",
-      "q": "من مغني الراي الجزائري الذي اغتيل في وهران عام 1994؟",
-      "a": "الشاب حسني",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الشاب_حسني",
-      "verified": true,
-      "qid": "arabcelebs-800-093"
-    },
-    {
-      "p": 800,
-      "topic": "ألقاب وشعارات",
-      "q": "ما اللقب الذي اشتهر به مغني الراي الجزائري خالد حاج إبراهيم؟",
-      "a": "ملك الراي",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الشاب_خالد",
-      "verified": true,
-      "qid": "arabcelebs-800-094"
-    },
-    {
-      "p": 800,
-      "topic": "أزياء وتصميم",
-      "q": "من مصمّم الأزياء اللبناني الذي افتتح داره عام 1997 واشتهر بفساتين السهرة؟",
-      "a": "زهير مراد",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/زهير_مراد",
-      "verified": true,
-      "qid": "arabcelebs-800-095"
-    },
-    {
-      "p": 800,
-      "topic": "أزياء وتصميم",
-      "q": "من المعماري العراقي الذي صمّم جامع الخلفاء في بغداد؟",
-      "a": "محمد مكية",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/محمد_مكية",
-      "verified": true,
-      "qid": "arabcelebs-800-096"
+      "sourceUrl": "https://www.bam.org/film/2026/of-father-and-sons-wajib",
+      "difficultyTarget": 0.15,
+      "qid": "arabcelebs-1000-907"
     },
     {
       "p": 1000,
-      "topic": "رياضيون",
-      "q": "من الرباع المصري الذي أحرز ذهبية أولمبياد برلين 1936؟",
-      "a": "خضر التوني",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/خضر_التوني",
-      "verified": true,
-      "qid": "arabcelebs-1000-049"
-    },
-    {
-      "p": 1000,
-      "topic": "رياضيون",
-      "q": "من الرباع المصري الفائز بذهبية أولمبياد لندن 1948؟",
-      "a": "محمود فياض",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/محمود_فياض",
-      "verified": true,
-      "qid": "arabcelebs-1000-050"
-    },
-    {
-      "p": 1000,
-      "topic": "رياضيون",
-      "q": "من سجّل هدف الكويت الوحيد في نهائيات كأس العالم 1982؟",
-      "a": "فيصل الدخيل",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/فيصل_الدخيل",
-      "verified": true,
-      "qid": "arabcelebs-1000-051"
-    },
-    {
-      "p": 1000,
-      "topic": "رياضيون",
-      "q": "من الهدّاف التاريخي لمنتخب مصر لكرة القدم؟",
-      "a": "حسام حسن",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/حسام_حسن",
-      "verified": true,
-      "qid": "arabcelebs-1000-052"
-    },
-    {
-      "p": 1000,
-      "topic": "رياضيون",
-      "q": "من لاعب الإسكواش المصري الذي توّج ببطولة العالم ثلاث مرات وتصدّر التصنيف؟",
-      "a": "رامي عاشور",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/رامي_عاشور",
-      "verified": true,
-      "qid": "arabcelebs-1000-053"
-    },
-    {
-      "p": 1000,
-      "topic": "رياضيون",
-      "q": "من أول لاعبة إسكواش مصرية تتصدّر التصنيف العالمي للسيدات؟",
-      "a": "رنيم الوليلي",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/رنيم_الوليلي",
-      "verified": true,
-      "qid": "arabcelebs-1000-054"
-    },
-    {
-      "p": 1000,
-      "topic": "رياضيون",
-      "q": "من السبّاحة السورية التي انتقلت بقارب لاجئين ثم شاركت في الأولمبياد؟",
-      "a": "يسرى مارديني",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/يسرى_مارديني",
-      "verified": true,
-      "qid": "arabcelebs-1000-055"
-    },
-    {
-      "p": 1000,
-      "topic": "رياضيون",
-      "q": "من لاعب الشطرنج المصري الأعلى تصنيفًا في قارة أفريقيا؟",
-      "a": "بسام أمين",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/بسام_أمين",
-      "verified": true,
-      "qid": "arabcelebs-1000-056"
-    },
-    {
-      "p": 1000,
-      "topic": "رياضيون",
-      "q": "من أشهر لاعب كرة سلة لبناني في العقدين الأخيرين؟",
-      "a": "فادي الخطيب",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/فادي_الخطيب",
-      "verified": true,
-      "qid": "arabcelebs-1000-057"
-    },
-    {
-      "p": 1000,
-      "topic": "رياضيون",
-      "q": "من سجّل أول هدف لمنتخب قطر في نهائيات كأس العالم؟",
-      "a": "محمد مونتاري",
-      "alt": [
-        "مونتاري"
-      ],
-      "sourceUrl": "https://www.filgoal.com/articles/447995",
-      "verified": true,
-      "qid": "arabcelebs-1000-058"
-    },
-    {
-      "p": 1000,
-      "topic": "رياضيون",
-      "q": "من أول رياضية سعودية تشارك في دورة الألعاب الأولمبية؟",
-      "a": "وجدان شهرخاني",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/وجدان_شهرخاني",
-      "verified": true,
-      "qid": "arabcelebs-1000-059"
-    },
-    {
-      "p": 1000,
-      "topic": "رياضيون",
-      "q": "من البحريني الذي يرأس الاتحاد الآسيوي لكرة القدم منذ 2013؟",
-      "a": "سلمان بن إبراهيم آل خليفة",
-      "alt": [
-        "سلمان بن إبراهيم"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/سلمان_بن_إبراهيم_آل_خليفة",
-      "verified": true,
-      "qid": "arabcelebs-1000-060"
-    },
-    {
-      "p": 1000,
-      "topic": "إعلام وصحافة",
-      "q": "من الصحفي اللبناني الذي أسّس جريدة «الحياة» عام 1946؟",
-      "a": "كامل مروة",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/كامل_مروة",
-      "verified": true,
-      "qid": "arabcelebs-1000-061"
-    },
-    {
-      "p": 1000,
-      "topic": "إعلام وصحافة",
-      "q": "ما اسم أول محطة إذاعة رسمية في مصر وقد انطلقت عام 1934؟",
-      "a": "الإذاعة المصرية",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الإذاعة_المصرية",
-      "verified": true,
-      "qid": "arabcelebs-1000-062"
-    },
-    {
-      "p": 1000,
-      "topic": "إعلام وصحافة",
-      "q": "من الصحفي المصري الذي أسّس مجلة «آخر ساعة»؟",
-      "a": "محمد التابعي",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/محمد_التابعي",
-      "verified": true,
-      "qid": "arabcelebs-1000-063"
-    },
-    {
-      "p": 1000,
-      "topic": "إعلام وصحافة",
-      "q": "من رئيس تحرير صحيفة «القدس العربي» الصادرة من لندن؟",
-      "a": "عبد الباري عطوان",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/عبد_الباري_عطوان",
-      "verified": true,
-      "qid": "arabcelebs-1000-064"
-    },
-    {
-      "p": 1000,
-      "topic": "إعلام وصحافة",
-      "q": "من الصحفية الفلسطينية الأمريكية التي قُتلت أثناء تغطيتها في جنين؟",
-      "a": "شيرين أبو عاقلة",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/شيرين_أبو_عاقلة",
-      "verified": true,
-      "qid": "arabcelebs-1000-065"
-    },
-    {
-      "p": 1000,
-      "topic": "إعلام وصحافة",
-      "q": "ما اسم أول شبكة قنوات رياضية عربية مشفّرة؟",
-      "a": "إيه آر تي",
-      "alt": [
-        "ART"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/راديو_وتلفزيون_العرب",
-      "verified": true,
-      "qid": "arabcelebs-1000-066"
-    },
-    {
-      "p": 1000,
-      "topic": "إعلام وصحافة",
-      "q": "ما اسم أول صحيفة صدرت في مصر في القرن التاسع عشر؟",
-      "a": "الوقائع المصرية",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الوقائع_المصرية",
-      "verified": true,
-      "qid": "arabcelebs-1000-067"
-    },
-    {
-      "p": 1000,
-      "topic": "إعلام وصحافة",
-      "q": "من الصحفي اللبناني الذي أسّس دار الصياد ومجلة «الشبكة»؟",
-      "a": "سعيد فريحة",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/سعيد_فريحة",
-      "verified": true,
-      "qid": "arabcelebs-1000-068"
-    },
-    {
-      "p": 1000,
-      "topic": "إعلام وصحافة",
-      "q": "من مذيع إذاعة «صوت العرب» الأشهر في ستينيات القرن الماضي؟",
-      "a": "أحمد سعيد",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/أحمد_سعيد_(إعلامي)",
-      "verified": true,
-      "qid": "arabcelebs-1000-069"
-    },
-    {
-      "p": 1000,
-      "topic": "إعلام وصحافة",
-      "q": "ما اسم أول إذاعة أجنبية بدأت البث بالعربية عام 1938؟",
-      "a": "بي بي سي عربي",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/بي_بي_سي_عربي",
-      "verified": true,
-      "qid": "arabcelebs-1000-070"
-    },
-    {
-      "p": 1000,
-      "topic": "أعمال وريادة",
-      "q": "من رجل الأعمال الفلسطيني الذي شارك في تأسيس شركة اتحاد المقاولين؟",
-      "a": "حسيب صباغ",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/حسيب_صباغ",
-      "verified": true,
-      "qid": "arabcelebs-1000-071"
-    },
-    {
-      "p": 1000,
-      "topic": "أعمال وريادة",
-      "q": "من رجل الأعمال الفلسطيني مؤسّس مجموعة «باديكو» الاستثمارية في نابلس؟",
-      "a": "منيب المصري",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/منيب_المصري",
-      "verified": true,
-      "qid": "arabcelebs-1000-072"
-    },
-    {
-      "p": 1000,
-      "topic": "أعمال وريادة",
-      "q": "من مؤسِّس أكبر مجموعة مقاولات سعودية تحمل اسم عائلته؟",
-      "a": "محمد بن لادن",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/محمد_بن_عوض_بن_لادن",
-      "verified": true,
-      "qid": "arabcelebs-1000-073"
-    },
-    {
-      "p": 1000,
-      "topic": "أعمال وريادة",
-      "q": "ما اسم أقدم بنك عربي وقد تأسّس في القدس عام 1930؟",
-      "a": "البنك العربي",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/البنك_العربي",
-      "verified": true,
-      "qid": "arabcelebs-1000-074"
-    },
-    {
-      "p": 1000,
-      "topic": "أعمال وريادة",
-      "q": "من رجل الأعمال السعودي الذي أسّس مجموعة العليان للأعمال؟",
-      "a": "سليمان العليان",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/سليمان_العليان",
-      "verified": true,
-      "qid": "arabcelebs-1000-075"
-    },
-    {
-      "p": 1000,
-      "topic": "أعمال وريادة",
-      "q": "من الشيخة الإماراتية التي أسّست دار «كلمات» لنشر كتب الأطفال؟",
+      "q": "من الناشرة الإماراتية التي أسست مجموعة «كلمات» المتخصصة في كتب الأطفال العربية؟",
       "a": "بدور القاسمي",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/بدور_القاسمي",
-      "verified": true,
-      "qid": "arabcelebs-1000-076"
-    },
-    {
-      "p": 1000,
+      "alt": [
+        "بدور بنت سلطان القاسمي"
+      ],
       "topic": "أعمال وريادة",
-      "q": "ما اسم الصندوق السيادي السعودي الذي استحوذ على نادي نيوكاسل؟",
-      "a": "صندوق الاستثمارات العامة",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/صندوق_الاستثمارات_العامة",
       "verified": true,
-      "qid": "arabcelebs-1000-077"
-    },
-    {
-      "p": 1000,
-      "topic": "أعمال وريادة",
-      "q": "ما اسم المعرض الدولي الكبير الذي استضافته دبي عام 2021؟",
-      "a": "إكسبو دبي",
-      "alt": [
-        "إكسبو 2020 دبي"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/إكسبو_2020",
-      "verified": true,
-      "qid": "arabcelebs-1000-078"
-    },
-    {
-      "p": 1000,
-      "topic": "علوم وفضاء",
-      "q": "ما اسم المستكشف القمري الإماراتي الذي أُطلق عام 2023؟",
-      "a": "راشد",
-      "alt": [
-        "المستكشف راشد"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/المستكشف_راشد",
-      "verified": true,
-      "qid": "arabcelebs-1000-079"
-    },
-    {
-      "p": 1000,
-      "topic": "علوم وفضاء",
-      "q": "ما اسم الجامعة البحثية السعودية المطلّة على البحر الأحمر واختصارها كاوست؟",
-      "a": "جامعة الملك عبد الله للعلوم والتقنية",
-      "alt": [
-        "كاوست"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/جامعة_الملك_عبد_الله_للعلوم_والتقنية",
-      "verified": true,
-      "qid": "arabcelebs-1000-080"
-    },
-    {
-      "p": 1000,
-      "topic": "علوم وفضاء",
-      "q": "ما اسم المركز الإماراتي الذي يشرف على برامج الفضاء ويقع في دبي؟",
-      "a": "مركز محمد بن راشد للفضاء",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/مركز_محمد_بن_راشد_للفضاء",
-      "verified": true,
-      "qid": "arabcelebs-1000-081"
-    },
-    {
-      "p": 1000,
-      "topic": "علوم وفضاء",
-      "q": "ما اسم المدينة العلمية المصرية التي تحمل اسم عالم نوبل المصري؟",
-      "a": "مدينة زويل",
-      "alt": [
-        "مدينة زويل للعلوم والتكنولوجيا"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/مدينة_زويل",
-      "verified": true,
-      "qid": "arabcelebs-1000-082"
-    },
-    {
-      "p": 1000,
-      "topic": "علوم وفضاء",
-      "q": "ما اسم أول محطة للطاقة النووية السلمية في العالم العربي؟",
-      "a": "محطة براكة",
-      "alt": [
-        "براكة"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/محطة_براكة_للطاقة_النووية",
-      "verified": true,
-      "qid": "arabcelebs-1000-083"
-    },
-    {
-      "p": 1000,
-      "topic": "علوم وفضاء",
-      "q": "ما اسم أكبر مجمّع للطاقة الشمسية في المغرب؟",
-      "a": "نور ورزازات",
-      "alt": [
-        "نور"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/محطة_نور_للطاقة_الشمسية",
-      "verified": true,
-      "qid": "arabcelebs-1000-084"
-    },
-    {
-      "p": 1000,
-      "topic": "علوم وفضاء",
-      "q": "ما اسم المرصد الفلكي المصري الذي يضم أكبر تلسكوب في المنطقة؟",
-      "a": "مرصد القطامية",
-      "alt": [
-        "القطامية"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/مرصد_القطامية",
-      "verified": true,
-      "qid": "arabcelebs-1000-085"
-    },
-    {
-      "p": 1000,
-      "topic": "عمل إنساني",
-      "q": "من الطبيب الفلسطيني الذي فقد بناته في القصف وكتب «لن أكره»؟",
-      "a": "عز الدين أبو العيش",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/عز_الدين_أبو_العيش",
-      "verified": true,
-      "qid": "arabcelebs-1000-086"
-    },
-    {
-      "p": 1000,
-      "topic": "عمل إنساني",
-      "q": "من رئيس منظمة الدفاع المدني السوري المعروفة بالخوذ البيضاء؟",
-      "a": "رائد الصالح",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/رائد_الصالح",
-      "verified": true,
-      "qid": "arabcelebs-1000-087"
-    },
-    {
-      "p": 1000,
-      "topic": "عمل إنساني",
-      "q": "من أستاذ الهندسة المصري الذي أسّس جمعية «رسالة» الخيرية؟",
-      "a": "شريف عبد العظيم",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/جمعية_رسالة",
-      "verified": true,
-      "qid": "arabcelebs-1000-088"
-    },
-    {
-      "p": 1000,
-      "topic": "عمل إنساني",
-      "q": "ما اسم أكبر مخيم للاجئين السوريين في الأردن؟",
-      "a": "الزعتري",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/مخيم_الزعتري",
-      "verified": true,
-      "qid": "arabcelebs-1000-089"
-    },
-    {
-      "p": 1000,
-      "topic": "عمل إنساني",
-      "q": "ما اسم الجائزة التي تمنحها مفوضية اللاجئين تكريمًا للعمل الإنساني؟",
-      "a": "جائزة نانسن",
-      "alt": [],
-      "sourceUrl": "https://www.unhcr.org/jo/ar/",
-      "verified": true,
-      "qid": "arabcelebs-1000-090"
-    },
-    {
-      "p": 1000,
-      "topic": "مغنون عرب",
-      "q": "من الموسيقار اللبناني الذي وضع لحن النشيد الوطني اللبناني؟",
-      "a": "وديع صبرا",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/وديع_صبرا",
-      "verified": true,
-      "qid": "arabcelebs-1000-091"
-    },
-    {
-      "p": 1000,
-      "topic": "مغنون عرب",
-      "q": "من الفنان اليمني الذي لحّن النشيد الوطني اليمني؟",
-      "a": "أيوب طارش",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/أيوب_طارش",
-      "verified": true,
-      "qid": "arabcelebs-1000-092"
-    },
-    {
-      "p": 1000,
-      "topic": "مغنون عرب",
-      "q": "ما اسم الفرقة المغربية التي اشتهرت في السبعينيات بأغاني التراث والاحتجاج؟",
-      "a": "ناس الغيوان",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/ناس_الغيوان",
-      "verified": true,
-      "qid": "arabcelebs-1000-093"
-    },
-    {
-      "p": 1000,
-      "topic": "ألقاب وشعارات",
-      "q": "ما اللقب الذي عُرف به المخترع اللبناني حسن كامل الصباح؟",
-      "a": "أديسون الشرق",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/حسن_كامل_الصباح",
-      "verified": true,
-      "qid": "arabcelebs-1000-094"
-    },
-    {
-      "p": 1000,
-      "topic": "ألقاب وشعارات",
-      "q": "ما اللقب الذي اشتهر به شاعر العامية المصري أحمد فؤاد نجم؟",
-      "a": "الفاجومي",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/أحمد_فؤاد_نجم",
-      "verified": true,
-      "qid": "arabcelebs-1000-095"
-    },
-    {
-      "p": 1000,
-      "topic": "أزياء وتصميم",
-      "q": "من المعماري العراقي الذي وثّق العمارة العراقية وصمّم مبانيها الحداثية؟",
-      "a": "رفعت الجادرجي",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/رفعت_الجادرجي",
-      "verified": true,
-      "qid": "arabcelebs-1000-096"
+      "sourceUrl": "https://www.zayedaward.ae/en/previous-editions/winners/kalimat-group-uae",
+      "difficultyTarget": 0.15,
+      "qid": "arabcelebs-1000-908"
     }
   ]
 }

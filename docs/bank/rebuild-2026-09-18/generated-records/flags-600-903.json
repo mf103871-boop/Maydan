@@ -1,0 +1,19 @@
+{
+  "id": "flags-600-903",
+  "kind": "question",
+  "pack": "flags",
+  "file": "media/flags/flags-600-903.webp",
+  "asset": "media/flags/flags-600-903.webp",
+  "prompt": "Accurate educational national flag. Completely OPAQUE rectangular canvas, every pixel opaque, all color fields stay visible including white. Flat straight-on diagram with crisp solid color edges. Entire image is the flag, exact aspect ratio. No transparency or cutout, no labels, no words, no folds, no pole, no border, no shading. Nigeria. Width:height2:1. THREE equal VERTICAL bands left to right: green #008751, WHITE, green #008751. No emblem.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-09-23",
+  "width": 1280,
+  "height": 640,
+  "bytes": 4524,
+  "sha256": "3276dcab2c5b03df9b8e401fe689255e7071a518aaaa6d32398fdd53494c265e",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "pending",
+    "note": "Generation and file checks do not imply subject or gameplay verification."
+  }
+}

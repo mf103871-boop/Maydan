@@ -1,0 +1,19 @@
+{
+  "id": "flags-800-907",
+  "kind": "question",
+  "pack": "flags",
+  "file": "media/flags/flags-800-907.webp",
+  "asset": "media/flags/flags-800-907.webp",
+  "prompt": "Accurate educational national flag. Completely OPAQUE rectangular canvas, every pixel opaque, all color fields stay visible including white. Flat straight-on diagram with crisp solid color edges. Entire image is the flag, exact aspect ratio. No transparency or cutout, no labels, no words, no folds, no pole, no border, no shading. Solomon Islands. Width:height2:1. Diagonal narrow YELLOW #FCD116 stripe from BOTTOMLEFT to TOPRIGHT. UpperLEFT triangle BLUE #0051BA, lowerRIGHTtriangleGREEN #215B33. FIVE WHITE uprightfivepointstars arranged X at upperLEFTblue: fourcornerstars and onecenterstar. Centerstar at(20%width,25%height); fourat(10%,12%),(30%,12%),(10%,38%),(30%,38%); eachstardiameter10%imageheight. StandardSolomonIslandsflag.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-09-23",
+  "width": 1280,
+  "height": 640,
+  "bytes": 26756,
+  "sha256": "99c42a19e6c976b031fb32470edb4126542a096b8b18bf2cdd10d360d67cd2ea",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "pending",
+    "note": "Generation and file checks do not imply subject or gameplay verification."
+  }
+}

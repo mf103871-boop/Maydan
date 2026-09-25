@@ -1,0 +1,19 @@
+{
+  "id": "blur",
+  "kind": "cover",
+  "pack": "blur",
+  "file": "public/media/badeeha-covers/blur.webp",
+  "asset": "public/media/badeeha-covers/blur.webp",
+  "prompt": "Create one premium photorealistic editorial product photograph for an Arabic social trivia game category cover. Landscape 4:3 composition. Real believable materials and proportions; carefully crafted physical miniatures only where the subject requires architecture. Seamless warm ivory background (#FFF7E7), soft daylight from upper left, one restrained group accent color, gentle contact shadow, no busy scenery. One dominant subject with at most two supporting objects; large shapes remain legible at 150px wide. Center all important subject details in the middle 60%, leave generous breathing room and both top corners clear for UI badges. No text, letters, numbers, pseudo-writing, readable labels, watermarks, logos, framed app UI, pictograms, SVG-style graphics, emoji rendering, plastic cartoon gloss, collage, or unnecessary objects. Category title is added by the game UI. Use an original cover composition, never a screenshot, trivia question illustration or answer reveal.\nGroup accent: #159FAB, used sparingly without overriding natural object colors.\nSubject: One small frosted glass panel with a clear circular patch in front of one simple turquoise ceramic form; show the shift from blur to clarity, not a recognizable quiz subject.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-09-18",
+  "width": 640,
+  "height": 480,
+  "bytes": 27342,
+  "sha256": "43b4e0ea512ac70cba4fefed7c3f8afa966486365d4ec51dac0bce8e923c15db",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "pending",
+    "note": "Generation and file checks do not imply subject or gameplay verification."
+  }
+}

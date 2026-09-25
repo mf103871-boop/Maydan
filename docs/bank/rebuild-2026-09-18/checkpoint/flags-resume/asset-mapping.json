@@ -1,0 +1,402 @@
+[
+  {
+    "id": "flags-200-901",
+    "kind": "question",
+    "pack": "flags",
+    "prompt": "Create accurate official national flag of the United Arab Emirates as a perfectly flat 2:1 landscape raster graphic. FULL BLEED: the flag fills absolutely the entire 2:1 image edge to edge. NO margins, NO background surrounding the flag, NO border, NO shadows, NO fabric, NO text. Canvas is 2 wide for 1 high. Leftmost exactly 25 percent of total canvas is full-height red #C8102E. Remaining rightmost 75 percent has exactly three horizontal bands of equal height: top green #00843D, middle white #FFFFFF, bottom black #000000. Perfectly straight edges. No coat of arms, no symbols. This is an accurate educational national-flag reference, not decorative design.",
+    "asset": "media/flags/flags-200-901.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-200-901.json",
+    "originalGeneratedFilename": "exec-ce552329-4399-421b-91f8-c9e4c9a92b56.png",
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "flags-200-902",
+    "kind": "question",
+    "pack": "flags",
+    "prompt": "Create a flat national flag illustration on a completely OPAQUE rectangular image. Every pixel must have an opaque colored surface, including white and green areas. Keep the background flag field visible. Solid flat colors with crisp straight edges. No transparency, no alpha cutout. The flag occupies the entire canvas. Kuwait. Canvas width:height 2:1. Three equal horizontal bands: green top #007A3D, white middle, red bottom #CE1126. Solid BLACK TRAPEZOID at left hoist, with its long vertical base spanning the full left edge; short vertical side at x=25% canvas width, from y=one-third to y=two-thirds. Top slanted edge joins top-left corner to (25%,33.333%), lower slanted edge joins bottom-left to (25%,66.667%). Black shape is a trapezoid, not a triangle. No emblem.",
+    "asset": "media/flags/flags-200-902.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-200-902.json",
+    "originalGeneratedFilename": "exec-3ccac331-72ad-4669-b2a3-d034c0810ca3.png",
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "flags-200-903",
+    "kind": "question",
+    "pack": "flags",
+    "prompt": "Create a flat national flag illustration on a completely OPAQUE rectangular image. Every pixel must have an opaque colored surface, including white and green areas. Keep the background flag field visible. Solid flat colors with crisp straight edges. No transparency, no alpha cutout. The flag occupies the entire canvas. Japan. Canvas width:height 3:2. Pure white full background. Exactly ONE crimson-red circle #BC002D centered exactly both horizontally and vertically. Circle diameter exactly 60 percent of total image HEIGHT (40 percent of width), truly circular. No other marks.",
+    "asset": "media/flags/flags-200-903.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-200-903.json",
+    "originalGeneratedFilename": "exec-17c6e613-6358-4c0e-8b7d-996c0085e110.png",
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "flags-200-904",
+    "kind": "question",
+    "pack": "flags",
+    "prompt": "Accurate educational national flag. Completely OPAQUE rectangular canvas, every pixel opaque, all color fields stay visible including white. Flat straight-on diagram with crisp solid color edges. Entire image is the flag, exact aspect ratio. No transparency or cutout, no labels, no words, no folds, no pole, no border, no shading. People's Republic of China. Canvas width:height exactly 3:2, red #EE1C25. Exactly FIVE yellow #FFFF00 five-pointed stars in upper left. Large star upright centered at x=1/6 width,y=1/4 height, outer radius .15 height. FOUR small stars radius .05 height centered at (x=1/3 width,y=.10 height),(.40 width,.20 height),(.40 width,.35 height),(1/3 width,.45 height). Each small star rotated so ONE point aims exactly at large-star center. Large star is upright. Large clean remaining red field. No other symbols.",
+    "asset": "media/flags/flags-200-904.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-200-904.json",
+    "originalGeneratedFilename": "exec-71194448-88a1-4387-ba8d-f7617db8fd79.png",
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "flags-200-905",
+    "kind": "question",
+    "pack": "flags",
+    "prompt": "Create a flat national flag illustration on a completely OPAQUE rectangular image. Every pixel must have an opaque colored surface, including white and green areas. Keep the background flag field visible. Solid flat colors with crisp straight edges. No transparency, no alpha cutout. The flag occupies the entire canvas. France. Canvas width:height exactly 3:2. Exactly THREE equal-width VERTICAL rectangles, from viewer's LEFT to RIGHT: dark navy-blue #002654, pure white #FFFFFF, red #ED2939. All panels span full height. Absolutely no emblems.",
+    "asset": "media/flags/flags-200-905.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-200-905.json",
+    "originalGeneratedFilename": "exec-31a76fc2-5080-474d-a5f3-a9dd479a1897.png",
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "flags-200-906",
+    "kind": "question",
+    "pack": "flags",
+    "prompt": "Accurate educational national flag. Completely OPAQUE rectangular canvas, every pixel opaque, all color fields stay visible including white. Flat straight-on diagram with crisp solid color edges. Entire image is the flag, exact aspect ratio. No transparency or cutout, no labels, no words, no folds, no pole, no border, no shading. Germany, civil national flag, without eagle. Canvas width:height exactly 5:3. THREE exactly equal-height HORIZONTAL bands, from TOP to BOTTOM: pure black #000000, bright red #DD0000, gold-yellow #FFCE00. Absolutely no emblems.",
+    "asset": "media/flags/flags-200-906.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-200-906.json",
+    "originalGeneratedFilename": "exec-7cd64222-0589-49f2-bdb6-0a37220f47fe.png",
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "flags-200-907",
+    "kind": "question",
+    "pack": "flags",
+    "prompt": "Create a flat national flag illustration on a completely OPAQUE rectangular image. Every pixel must have an opaque colored surface, including white and green areas. Keep the background flag field visible. Solid flat colors with crisp straight edges. No transparency, no alpha cutout. The flag occupies the entire canvas. Canada. Canvas width:height exactly 2:1. Red vertical band left quarter width, white central SQUARE exactly half total width, red right quarter width. Red #FF0000 white #FFFFFF. Center the exact official stylized Canadian ELEVEN-POINT maple leaf, solid red, with short vertical stem down. Eleven sharp points: single tall central tip; matched upper, outer and lower pointed side lobes in the recognizable official maple leaf silhouette. Bilaterally symmetric, neither a natural leaf drawing nor a generic five-point leaf. Leaf and stem fit inside the white center with generous space above and below. Standard official Canadian maple-leaf national flag; no veins, no extra leaves.",
+    "asset": "media/flags/flags-200-907.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-200-907.json",
+    "originalGeneratedFilename": "exec-ddccda1e-be31-4722-93c1-a73ace22f986.png",
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "flags-200-908",
+    "kind": "question",
+    "pack": "flags",
+    "prompt": "Create a flat national flag illustration on a completely OPAQUE rectangular image. Every pixel must have an opaque colored surface, including white and green areas. Keep the background flag field visible. Solid flat colors with crisp straight edges. No transparency, no alpha cutout. The flag occupies the entire canvas. Bangladesh. Canvas width:height exactly 5:3. Entire field deep bottle green #006A4E. Exactly ONE red #F42A41 circle. Circle center x=45% of full image width (slightly LEFT of center), y=50% height. Radius exactly20% of full image width, meaning diameter 2/3 total image height. Circle truly circular, not ellipse. No symbols inside circle, no text.",
+    "asset": "media/flags/flags-200-908.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-200-908.json",
+    "originalGeneratedFilename": "exec-d6d3325b-d791-4354-b290-0d0746b964b2.png",
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "flags-400-901",
+    "kind": "question",
+    "pack": "flags",
+    "prompt": "Accurate educational national flag. Completely OPAQUE rectangular canvas, every pixel opaque, all color fields stay visible including white. Flat straight-on diagram with crisp solid color edges. Entire image is the flag, exact aspect ratio. No transparency or cutout, no labels, no words, no folds, no pole, no border, no shading. Morocco. Width:height3:2. Crimson red field #C1272D. At exact center a green #006233 OPEN five-pointed interlaced pentagram (five straight crossing line strokes), one point upright. The inside central pentagon remains RED, not filled green. Pentagram outer radius one-sixth of flag WIDTH. No other symbols.",
+    "asset": "media/flags/flags-400-901.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-400-901.json",
+    "originalGeneratedFilename": "exec-2144e1de-ffb6-4fa3-b91b-31fe87953568.png",
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "flags-400-902",
+    "kind": "question",
+    "pack": "flags",
+    "prompt": "Accurate educational national flag. Completely OPAQUE rectangular canvas, every pixel opaque, all color fields stay visible including white. Flat straight-on diagram with crisp solid color edges. Entire image is the flag, exact aspect ratio. No transparency or cutout, no labels, no words, no folds, no pole, no border, no shading. Algeria. Width:height3:2. Two equal vertical halves: deep green #006633 on LEFT, white on RIGHT. Exactly centered red #D21034 crescent with its opening facing RIGHT and one red five-pointed star nestled in the crescent opening. Crescent and star straddle boundary; star mainly right white half. Standard Algerian national flag, accurate crescent and five-point star geometry.",
+    "asset": "media/flags/flags-400-902.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-400-902.json",
+    "originalGeneratedFilename": "exec-af0d8b4a-411c-455b-86b1-386adaa41b98.png",
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "flags-400-903",
+    "kind": "question",
+    "pack": "flags",
+    "prompt": "Accurate educational national flag. Completely OPAQUE rectangular canvas, every pixel opaque, all color fields stay visible including white. Flat straight-on diagram with crisp solid color edges. Entire image is the flag, exact aspect ratio. No transparency or cutout, no labels, no words, no folds, no pole, no border, no shading. Sweden. Width:height8:5. Blue #006AA7 field with golden yellow #FECC00 Scandinavian cross offset LEFT. Exact construction: across width blue5 yellow2 blue9 units; vertically blue4 yellow2 blue4 units. Cross fills to all four edges.",
+    "asset": "media/flags/flags-400-903.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-400-903.json",
+    "originalGeneratedFilename": "exec-47c4a660-8e3d-46c1-b670-749cb896bc36.png",
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "flags-400-904",
+    "kind": "question",
+    "pack": "flags",
+    "prompt": "Accurate educational national flag. Completely OPAQUE rectangular canvas, every pixel opaque, all color fields stay visible including white. Flat straight-on diagram with crisp solid color edges. Entire image is the flag, exact aspect ratio. No transparency or cutout, no labels, no words, no folds, no pole, no border, no shading. Norway civil flag. Width:height22:16. Red #BA0C2F field with dark blue #00205B Nordic cross bordered WHITE. Exact widths across: red6 white1 blue2 white1 red12 units; vertically red6 white1 blue2 white1 red6 units. No swallowtail, no extra symbols.",
+    "asset": "media/flags/flags-400-904.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-400-904.json",
+    "originalGeneratedFilename": "exec-3c657c61-b231-4865-a07c-abe8853549a7.png",
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "flags-400-905",
+    "kind": "question",
+    "pack": "flags",
+    "prompt": "Accurate educational national flag. Completely OPAQUE rectangular canvas, every pixel opaque, all color fields stay visible including white. Flat straight-on diagram with crisp solid color edges. Entire image is the flag, exact aspect ratio. No transparency or cutout, no labels, no words, no folds, no pole, no border, no shading. Thailand. Width:height3:2. Five horizontal flat bands from TOP: red #A51931, white #F4F5F8, dark navy blue #2D2A4A, white, red. Relative band heights1:1:2:1:1. Center blue band TWICE each other band's height. No symbols.",
+    "asset": "media/flags/flags-400-905.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-400-905.json",
+    "originalGeneratedFilename": "exec-aba675dd-1c1a-4cab-aac5-5b0a078fb079.png",
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "flags-400-906",
+    "kind": "question",
+    "pack": "flags",
+    "prompt": "Accurate educational national flag. Completely OPAQUE rectangular canvas, every pixel opaque, all color fields stay visible including white. Flat straight-on diagram with crisp solid color edges. Entire image is the flag, exact aspect ratio. No transparency or cutout, no labels, no words, no folds, no pole, no border, no shading. Pakistan. Width:height3:2. Leftmost one-quarter width vertical white band, remaining three-quarters dark green #01411C. In center of green portion, white crescent tilted so its opening points upper RIGHT, and a white five-pointed star above-right inside opening. Standard Pakistani national flag. All flag fields fully opaque.",
+    "asset": "media/flags/flags-400-906.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-400-906.json",
+    "originalGeneratedFilename": "exec-3b774a14-d29d-4751-8e3e-e4d884ba3931.png",
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "flags-400-907",
+    "kind": "question",
+    "pack": "flags",
+    "prompt": "Accurate educational national flag. Completely OPAQUE rectangular canvas, every pixel opaque, all color fields stay visible including white. Flat straight-on diagram with crisp solid color edges. Entire image is the flag, exact aspect ratio. No transparency or cutout, no labels, no words, no folds, no pole, no border, no shading. Colombia civil national flag WITHOUT coat of arms. Width:height3:2. Three horizontal bands from TOP: yellow #FCD116 occupying entire TOP HALF of height; blue #003893 next QUARTER; red #CE1126 bottom QUARTER. No emblem, no star.",
+    "asset": "media/flags/flags-400-907.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-400-907.json",
+    "originalGeneratedFilename": "exec-3a364dbb-c0ed-4ded-8cd0-efc72635bdc3.png",
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "flags-400-908",
+    "kind": "question",
+    "pack": "flags",
+    "prompt": "Accurate educational national flag. Completely OPAQUE rectangular canvas, every pixel opaque, all color fields stay visible including white. Flat straight-on diagram with crisp solid color edges. Entire image is the flag, exact aspect ratio. No transparency or cutout, no labels, no words, no folds, no pole, no border, no shading. Chile. Width:height3:2. Bottom HALF all red #D52B1E. Top half: square blue #0039A6 canton at LEFT of width one-third total image width and height half totalimageheight; remaining top right WHITE. One white upright five-point star centered in blue square, diameter half canton height. No extra stars.",
+    "asset": "media/flags/flags-400-908.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-400-908.json",
+    "originalGeneratedFilename": "exec-9a8efa30-1441-45a0-a1bf-2f73a81ab0b9.png",
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "flags-600-901",
+    "kind": "question",
+    "pack": "flags",
+    "prompt": "Accurate educational national flag. Completely OPAQUE rectangular canvas, every pixel opaque, all color fields stay visible including white. Flat straight-on diagram with crisp solid color edges. Entire image is the flag, exact aspect ratio. No transparency or cutout, no labels, no words, no folds, no pole, no border, no shading. Romania civil national flag. Width:height3:2. THREE equal VERTICAL bands left to right: cobalt blue #002B7F, yellow #FCD116, red #CE1126. Blue at left must be medium cobalt BLUE, not near-black. No emblem.",
+    "asset": "media/flags/flags-600-901.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-600-901.json",
+    "originalGeneratedFilename": "exec-2e9f716a-4cf1-43bb-8b61-78121938fdb6.png",
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "flags-600-902",
+    "kind": "question",
+    "pack": "flags",
+    "prompt": "Accurate educational national flag. Completely OPAQUE rectangular canvas, every pixel opaque, all color fields stay visible including white. Flat straight-on diagram with crisp solid color edges. Entire image is the flag, exact aspect ratio. No transparency or cutout, no labels, no words, no folds, no pole, no border, no shading. Estonia national flag. Width:height11:7. THREE equal HORIZONTAL bands top to bottom: blue #0072CE, BLACK, WHITE. Absolutely no symbols.",
+    "asset": "media/flags/flags-600-902.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-600-902.json",
+    "originalGeneratedFilename": "exec-03af83b0-019d-4853-ad36-706b82646ba1.png",
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "flags-600-903",
+    "kind": "question",
+    "pack": "flags",
+    "prompt": "Accurate educational national flag. Completely OPAQUE rectangular canvas, every pixel opaque, all color fields stay visible including white. Flat straight-on diagram with crisp solid color edges. Entire image is the flag, exact aspect ratio. No transparency or cutout, no labels, no words, no folds, no pole, no border, no shading. Nigeria. Width:height2:1. THREE equal VERTICAL bands left to right: green #008751, WHITE, green #008751. No emblem.",
+    "asset": "media/flags/flags-600-903.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-600-903.json",
+    "originalGeneratedFilename": "exec-5b174fbd-f2f5-4ed0-a82f-3cc7d969aabb.png",
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "flags-600-904",
+    "kind": "question",
+    "pack": "flags",
+    "prompt": "Accurate educational national flag. Completely OPAQUE rectangular canvas, every pixel opaque, all color fields stay visible including white. Flat straight-on diagram with crisp solid color edges. Entire image is the flag, exact aspect ratio. No transparency or cutout, no labels, no words, no folds, no pole, no border, no shading. Ghana. Width:height3:2. THREE equal HORIZONTAL bands top to bottom: red #CE1126, golden yellow #FCD116, green #006B3F. Exactly ONE solid BLACK upright five-pointed star, centered in yellow band, with top tip touching upper edge of yellow band and bottom two tips touching lower edge of yellow band. No other symbols.",
+    "asset": "media/flags/flags-600-904.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-600-904.json",
+    "originalGeneratedFilename": "exec-24dd7bd1-4ed7-4706-9cc2-40cf0ff95d9e.png",
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "flags-600-905",
+    "kind": "question",
+    "pack": "flags",
+    "prompt": "Accurate educational national flag. Completely OPAQUE rectangular canvas, every pixel opaque, all color fields stay visible including white. Flat straight-on diagram with crisp solid color edges. Entire image is the flag, exact aspect ratio. No transparency or cutout, no labels, no words, no folds, no pole, no border, no shading. Botswana. Width:height3:2. Light blue #75AADB field with central HORIZONTAL black band and thin WHITE borders above and below black. From TOP to BOTTOM band heights are blue9, white1, black4, white1, blue9 units. No other symbols.",
+    "asset": "media/flags/flags-600-905.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-600-905.json",
+    "originalGeneratedFilename": "exec-3a523d66-39af-43cf-ad5a-ec4333604f55.png",
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "flags-600-906",
+    "kind": "question",
+    "pack": "flags",
+    "prompt": "Accurate educational national flag. Completely OPAQUE rectangular canvas, every pixel opaque, all color fields stay visible including white. Flat straight-on diagram with crisp solid color edges. Entire image is the flag, exact aspect ratio. No transparency or cutout, no labels, no words, no folds, no pole, no border, no shading. Tanzania. Width:height3:2. Large green #1EB53A upper LEFT triangle and blue #00A3DD lower RIGHT triangle separated by thick black diagonal band bordered by narrow golden yellow #FCD116 strips. The diagonal rises from BOTTOM LEFT corner to TOP RIGHT corner. Black thickness one-quarter image height, each yellow border one-sixteenth image height. No emblem.",
+    "asset": "media/flags/flags-600-906.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-600-906.json",
+    "originalGeneratedFilename": "exec-13ab8225-30e9-489b-aa86-a82ebd8d4fdf.png",
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "flags-600-907",
+    "kind": "question",
+    "pack": "flags",
+    "prompt": "Accurate educational national flag. Completely OPAQUE rectangular canvas, every pixel opaque, all color fields stay visible including white. Flat straight-on diagram with crisp solid color edges. Entire image is the flag, exact aspect ratio. No transparency or cutout, no labels, no words, no folds, no pole, no border, no shading. Vietnam. Width:height3:2. Bright RED #DA251D entire field. ONE large yellow #FFFF00 upright solid five-pointed star exactly centered, outer radius30% imageHEIGHT. Star centered geometrically, one point upright, no other markings.",
+    "asset": "media/flags/flags-600-907.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-600-907.json",
+    "originalGeneratedFilename": "exec-59cbb18b-9efd-44b0-aa7a-1e6408c121c4.png",
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "flags-600-908",
+    "kind": "question",
+    "pack": "flags",
+    "prompt": "Accurate educational national flag. Completely OPAQUE rectangular canvas, every pixel opaque, all color fields stay visible including white. Flat straight-on diagram with crisp solid color edges. Entire image is the flag, exact aspect ratio. No transparency or cutout, no labels, no words, no folds, no pole, no border, no shading. Laos. Width:height3:2. THREE horizontal stripes: red #CE1126 top QUARTER height, dark blue #002868 central HALF height, red bottom QUARTER. ONE WHITE circle centered in blue band, diameter40% of totalheight (80% of blue stripe height), truly circular. No other marks.",
+    "asset": "media/flags/flags-600-908.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-600-908.json",
+    "originalGeneratedFilename": "exec-d9e8e170-c1a5-4c0d-8743-2720971efceb.png",
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "flags-800-901",
+    "kind": "question",
+    "pack": "flags",
+    "prompt": "Accurate educational national flag. Completely OPAQUE rectangular canvas, every pixel opaque, all color fields stay visible including white. Flat straight-on diagram with crisp solid color edges. Entire image is the flag, exact aspect ratio. No transparency or cutout, no labels, no words, no folds, no pole, no border, no shading. Togo. Width:height approximately1.618:1. FIVE equal horizontal stripes from TOP: green #006A4E, yellow #FFCE00, green, yellow, green. In TOP LEFT a red #D21034 SQUARE canton, its side60% of imageHEIGHT, covers topTHREEstripes only. Centered in square is one WHITE upright five-pointed star, diameter40%imageHEIGHT. Noothermarks.",
+    "asset": "media/flags/flags-800-901.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-800-901.json",
+    "originalGeneratedFilename": "exec-d3384951-0b13-42e5-8200-e92187030ba2.png",
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "flags-800-902",
+    "kind": "question",
+    "pack": "flags",
+    "prompt": "Accurate educational national flag. Completely OPAQUE rectangular canvas, every pixel opaque, all color fields stay visible including white. Flat straight-on diagram with crisp solid color edges. Entire image is the flag, exact aspect ratio. No transparency or cutout, no labels, no words, no folds, no pole, no border, no shading. Benin. Width:height3:2. Leftmost40% fullwidth is a solid green #008751 VERTICAL rectangle entire height. Remaining right60% divided into TWO equal-height horizontal rectangles, yellow #FCD116 above and red #E8112D below. Noothermarks.",
+    "asset": "media/flags/flags-800-902.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-800-902.json",
+    "originalGeneratedFilename": "exec-62c5cd96-1183-4e83-aed2-3593318bd68c.png",
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "flags-800-903",
+    "kind": "question",
+    "pack": "flags",
+    "prompt": "Accurate educational national flag. Completely OPAQUE rectangular canvas, every pixel opaque, all color fields stay visible including white. Flat straight-on diagram with crisp solid color edges. Entire image is the flag, exact aspect ratio. No transparency or cutout, no labels, no words, no folds, no pole, no border, no shading. Gabon. Width:height4:3. THREE equal HORIZONTAL bands top to bottom: green #009E60, yellow #FCD116, blue #3A75C4. Noothermarks.",
+    "asset": "media/flags/flags-800-903.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-800-903.json",
+    "originalGeneratedFilename": "exec-c7b9fe16-c2b4-45b5-b6b9-e72dbde3dc71.png",
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "flags-800-904",
+    "kind": "question",
+    "pack": "flags",
+    "prompt": "Accurate educational national flag. Completely OPAQUE rectangular canvas, every pixel opaque, all color fields stay visible including white. Flat straight-on diagram with crisp solid color edges. Entire image is the flag, exact aspect ratio. No transparency or cutout, no labels, no words, no folds, no pole, no border, no shading. Republic of the Congo (Congo-Brazzaville). Width:height3:2. Flag divided diagonally by wide YELLOW #FBDE4A band rising from BOTTOMLEFT to TOPRIGHT. Green #009543 upperLEFT triangle, red #DC241F lowerRIGHT triangle. Yellow band edges intersect left edge at75%height, bottomedge at25%width, topedge at75%width, rightedge at25%height. NO star and NO blue.",
+    "asset": "media/flags/flags-800-904.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-800-904.json",
+    "originalGeneratedFilename": "exec-e345903b-2ccc-4a63-beb7-1f0c63ada5a0.png",
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "flags-800-905",
+    "kind": "question",
+    "pack": "flags",
+    "prompt": "Accurate educational national flag. Completely OPAQUE rectangular canvas, every pixel opaque, all color fields stay visible including white. Flat straight-on diagram with crisp solid color edges. Entire image is the flag, exact aspect ratio. No transparency or cutout, no labels, no words, no folds, no pole, no border, no shading. The Bahamas. Width:height2:1. THREEequalHORIZONTALstripes from TOP: aquamarine #00778B, golden yellow #FFC72C, aquamarine. Solid BLACK equilateral triangle on LEFT whosebase entireleftedge andtipx43.3%totalwidth,y50%height. Noothermarks.",
+    "asset": "media/flags/flags-800-905.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-800-905.json",
+    "originalGeneratedFilename": "exec-b956ac78-39d3-46a6-9815-80d273496b3c.png",
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "flags-800-906",
+    "kind": "question",
+    "pack": "flags",
+    "prompt": "Accurate educational national flag. Completely OPAQUE rectangular canvas, every pixel opaque, all color fields stay visible including white. Flat straight-on diagram with crisp solid color edges. Entire image is the flag, exact aspect ratio. No transparency or cutout, no labels, no words, no folds, no pole, no border, no shading. Trinidad and Tobago. Width:height5:3. RED #DA1A35 field, broad BLACK diagonal band from TOPLEFT to BOTTOMRIGHT, bordered on bothsides by narrow WHITE stripes. Blackstripe perpendicular thickness20%imageheight, eachwhiteborder3.33%height. No emblem.",
+    "asset": "media/flags/flags-800-906.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-800-906.json",
+    "originalGeneratedFilename": "exec-a0f697c0-0d0e-4791-b2ab-629aff2110d3.png",
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "flags-800-907",
+    "kind": "question",
+    "pack": "flags",
+    "prompt": "Accurate educational national flag. Completely OPAQUE rectangular canvas, every pixel opaque, all color fields stay visible including white. Flat straight-on diagram with crisp solid color edges. Entire image is the flag, exact aspect ratio. No transparency or cutout, no labels, no words, no folds, no pole, no border, no shading. Solomon Islands. Width:height2:1. Diagonal narrow YELLOW #FCD116 stripe from BOTTOMLEFT to TOPRIGHT. UpperLEFT triangle BLUE #0051BA, lowerRIGHTtriangleGREEN #215B33. FIVE WHITE uprightfivepointstars arranged X at upperLEFTblue: fourcornerstars and onecenterstar. Centerstar at(20%width,25%height); fourat(10%,12%),(30%,12%),(10%,38%),(30%,38%); eachstardiameter10%imageheight. StandardSolomonIslandsflag.",
+    "asset": "media/flags/flags-800-907.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-800-907.json",
+    "originalGeneratedFilename": "exec-3c7932b8-a020-42ee-ac47-d8cb26cafd9c.png",
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "flags-800-908",
+    "kind": "question",
+    "pack": "flags",
+    "prompt": "Accurate educational national flag. Completely OPAQUE rectangular canvas, every pixel opaque, all color fields stay visible including white. Flat straight-on diagram with crisp solid color edges. Entire image is the flag, exact aspect ratio. No transparency or cutout, no labels, no words, no folds, no pole, no border, no shading. Samoa national flag. Width:height2:1. Solid red #CE1126 field. Blue #002B7F rectangular canton in TOPLEFT occupies half width and half height. Within blue canton exactly FIVE WHITE five-pointed stars representing Southern Cross: four larger stars top, left, right and bottom of constellation, plus smaller fifth star lower-right between right and bottom stars. Large star centers at(25%fullwidth,8%fullheight),(12%width,23%height),(37%width,18%height),(25%width,41%height); small fifth at(33%width,31%height). Large star diameter11%fullheight, small7%height. Allstarsremaininsidebluecanton. Noextraemblem.",
+    "asset": "media/flags/flags-800-908.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-800-908.json",
+    "originalGeneratedFilename": "exec-fbfbd4cc-0eb3-4ba9-bd75-5a21e9479a4a.png",
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "flags-1000-901",
+    "kind": "question",
+    "pack": "flags",
+    "prompt": "Accurate educational national flag. Completely OPAQUE rectangular canvas, every pixel opaque, all color fields stay visible including white. Flat straight-on diagram with crisp solid color edges. Entire image is the flag, exact aspect ratio. No transparency or cutout, no labels, no words, no folds, no pole, no border, no shading. Palau. Width:height8:5. Entire field lightblue #4AADD6. ONE golden-yellow #FFDE00 circle, radius30% imageHEIGHT, centerat43.75%imageWIDTH,50%imageHEIGHT (slightly LEFT of center). Truly circular. Noothermarks.",
+    "asset": "media/flags/flags-1000-901.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-1000-901.json",
+    "originalGeneratedFilename": "exec-011f4f86-2c4e-475b-8aa7-9e52ec3cf2ee.png",
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "flags-1000-902",
+    "kind": "question",
+    "pack": "flags",
+    "prompt": "Accurate educational national flag. Completely OPAQUE rectangular canvas, every pixel opaque, all color fields stay visible including white. Flat straight-on diagram with crisp solid color edges. Entire image is the flag, exact aspect ratio. No transparency or cutout, no labels, no words, no folds, no pole, no border, no shading. Nauru. Width:height2:1. Entire field navyblue #002B7F. Thin GOLD #FFC61E horizontal line centered halfway down, height1/12 of totalimageheight. One WHITE regular TWELVE-POINTED star below the line at x25%imagewidth,y75%imageheight, outerradius1/6ofimageHEIGHT. Exactly12sharpidenticalwhitepoints arranged every30degrees, onepointstraightup, oneatright,onebottom,oneleft; TWOintermediatepoints in eachquadrant. 12pointsNOT8NOT16. Nootherstars.",
+    "asset": "media/flags/flags-1000-902.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-1000-902.json",
+    "originalGeneratedFilename": "exec-9041be87-3f1e-4ce5-9fb2-01adb7c37051.png",
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "flags-1000-903",
+    "kind": "question",
+    "pack": "flags",
+    "prompt": "Accurate educational national flag. Completely OPAQUE rectangular canvas, every pixel opaque, all color fields stay visible including white. Flat straight-on diagram with crisp solid color edges. Entire image is the flag, exact aspect ratio. No transparency or cutout, no labels, no words, no folds, no pole, no border, no shading. Saint Lucia. Width:height2:1. Light ceruleanBLUE #66CCFF field. Centered triangular emblem: tall isosceles WHITEoutertriangle apexat(50%width,12%height), baseends(33.333%width,88%height),(66.667%width,88%height). BLACKinnertriangle withsamebase andapexat(50%width,23%height), leaving narrow WHITE bordersalongtwoslopesat top. GOLD-yellow #FCD116 smallertriangle superimposed overlowerpart, apexat(50%width,50%height), SAMEbaseendsasoutertriangle. StandardSaintLucian flagemblem:blackabovegoldwithwhiteoutline, noothermark.",
+    "asset": "media/flags/flags-1000-903.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-1000-903.json",
+    "originalGeneratedFilename": "exec-f85d58d4-d325-4b7c-8dcc-09437748c583.png",
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "flags-1000-904",
+    "kind": "question",
+    "pack": "flags",
+    "prompt": "Accurate educational national flag. Completely OPAQUE rectangular canvas, every pixel opaque, all color fields stay visible including white. Flat straight-on diagram with crisp solid color edges. Entire image is the flag, exact aspect ratio. No transparency or cutout, no labels, no words, no folds, no pole, no border, no shading. Saint Vincent and the Grenadines. Width:height3:2. Three vertical panels LEFT toRIGHT:BLUE #0072C6 quarterwidth, YELLOW #FCD116 centralhalfwidth, GREEN #009E60 quarterwidth. Exactly THREEgreen solid DIAMONDS inyellowpanel arranged inV: two upperdiamondcenters at(42%width,45%height),(58%width,45%height);one lowercenterat(50%width,65%height). Eachdiamondhasfourpoints topbottomleftright, height26%imageheight,width9%imagewidth. Diamondsseparate andNOTtouching. Noothermark.",
+    "asset": "media/flags/flags-1000-904.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-1000-904.json",
+    "originalGeneratedFilename": "exec-fae712f3-87b9-46b8-b000-89a2d2868046.png",
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "flags-1000-905",
+    "kind": "question",
+    "pack": "flags",
+    "prompt": "Accurate educational national flag. Completely OPAQUE rectangular canvas, every pixel opaque, all color fields stay visible including white. Flat straight-on diagram with crisp solid color edges. Entire image is the flag, exact aspect ratio. No transparency or cutout, no labels, no words, no folds, no pole, no border, no shading. Sierra Leone. Width:height3:2. THREEequalHORIZONTALstripes TOP toBOTTOM: green #1EB53A, WHITE, blue #0072C6. Noothermark.",
+    "asset": "media/flags/flags-1000-905.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-1000-905.json",
+    "originalGeneratedFilename": "exec-1ac3e0aa-c828-4bda-bb79-72a162720043.png",
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "flags-1000-906",
+    "kind": "question",
+    "pack": "flags",
+    "prompt": "Accurate educational national flag. Completely OPAQUE rectangular canvas, every pixel opaque, all color fields stay visible including white. Flat straight-on diagram with crisp solid color edges. Entire image is the flag, exact aspect ratio. No transparency or cutout, no labels, no words, no folds, no pole, no border, no shading. The Gambia. Width:height3:2. Fivehorizontalstripes TOPtoBOTTOM: RED #CE1126, thin WHITE, royalBLUE #0C1C8C, thinWHITE, GREEN #3A7728. Relativebandheights6:1:4:1:6. Redandgreen equallyhigh, centralblue narrower thanred, white lines thin. Noothermark.",
+    "asset": "media/flags/flags-1000-906.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-1000-906.json",
+    "originalGeneratedFilename": "exec-2e9c19a7-d19a-451d-a610-130c86c522e6.png",
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "flags-1000-907",
+    "kind": "question",
+    "pack": "flags",
+    "prompt": "Accurate educational national flag. Completely OPAQUE rectangular canvas, every pixel opaque, all color fields stay visible including white. Flat straight-on diagram with crisp solid color edges. Entire image is the flag, exact aspect ratio. No transparency or cutout, no labels, no words, no folds, no pole, no border, no shading. Suriname. Width:height3:2. FIVEhorizontalstripes TOPtoBOTTOM: GREEN #377E3F, WHITE, RED #B40A2D, WHITE, GREEN. Relativebandheights2:1:4:1:2. ONEgoldyellow #ECC81D regularfivepointedstar exactlycentered inredstripe. Starouterradius20%fullimageHEIGHT;onepointupright;topandbottompointshave equal smallgapfromredbandedges. Noothermark.",
+    "asset": "media/flags/flags-1000-907.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-1000-907.json",
+    "originalGeneratedFilename": "exec-8de2bd4c-d24b-44e4-9618-cbbfcf7386af.png",
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "flags-1000-908",
+    "kind": "question",
+    "pack": "flags",
+    "prompt": "Accurate educational national flag. Completely OPAQUE rectangular canvas, every pixel opaque, all color fields stay visible including white. Flat straight-on diagram with crisp solid color edges. Entire image is the flag, exact aspect ratio. No transparency or cutout, no labels, no words, no folds, no pole, no border, no shading. Guyana land national flag. Width:height5:3. EntirefieldGREEN #009E49. HugeGOLD-yellow #FCD116 elongatedtriangle points from fullLEFTedge towardtipatRIGHTedgecenter; narrow WHITEborderalongtwo diagonals separatesyellowfromgreen. Overlay a shorter RED #CE1126 isoscelestriangle onleft, basethefullleftedgeandtipatCENTERofimage, narrow BLACKborderalong its twodiagonals separatingredfromgold. StandardGoldenArrowhead:greentopandbottomright,whiteedgearoundlonggoldarrow,blackedgearoundshortredarrow. TrianglebasesatLEFTedge,noverticalwhiteorblackborder. Noothermarks.",
+    "asset": "media/flags/flags-1000-908.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-1000-908.json",
+    "originalGeneratedFilename": "exec-bbdc1eea-f3f3-4661-bc0d-1bfb4ac36376.png",
+    "reviewStatus": "pending"
+  }
+]

@@ -1,0 +1,19 @@
+{
+  "id": "reveal-400-907",
+  "kind": "question",
+  "pack": "reveal",
+  "file": "media/reveal/reveal-400-907.webp",
+  "asset": "media/reveal/reveal-400-907.webp",
+  "prompt": "Use case: illustration-story.\nAsset type: one standalone portrait illustration for an Arabic family portrait-recognition game, age 16+.\nPrimary request: a clearly recognizable faithful portrait of the real public figure Fairuz. Identity accuracy is essential; do not substitute a generic lookalike.\nSubject details: Lebanese singer Fairuz in her familiar mature concert-era appearance, dark brown swept-back hair, distinctive long narrow face, high cheekbones, expressive dark almond eyes, long straight nose, subtle makeup and elegant dark high-neck blouse.\nStyle: polished realistic hand-painted editorial portrait, very subtle visible painted texture, natural human facial proportions, authentic familiar appearance; this is an illustration, not a documentary photograph.\nComposition: square 1:1 head and upper shoulders portrait facing the viewer, face centered occupying 65% of height, complete hair and head inside frame with margin. Clear even soft lighting, muted warm grey studio backdrop. Only this one person.\nConstraints: no written name, no lettering, captions, logos, signature, watermark, frame, collage, other people, or added symbolic props. Do not exaggerate or caricature the face.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-09-23",
+  "width": 1254,
+  "height": 1254,
+  "bytes": 243818,
+  "sha256": "331ec2331f4adb1d35180bf33b77f082b49d55fe5cde083c624b85e99ba803a8",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "pending",
+    "note": "Generation and file checks do not imply subject or gameplay verification."
+  }
+}

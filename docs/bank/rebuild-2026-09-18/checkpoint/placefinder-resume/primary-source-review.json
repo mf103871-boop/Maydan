@@ -1,0 +1,111 @@
+{
+  "reviewDate": "2026-09-23",
+  "tier200": [
+    {
+      "id": "placefinder-200-901",
+      "answer": "برج إيفل",
+      "sourceUrl": "https://www.toureiffel.paris/en/news/history-and-culture/iron-lady-nicknaming-eiffel-tower",
+      "status": "read",
+      "note": "Official tower page identifies puddled iron, four pillars and decorative arches."
+    },
+    {
+      "id": "placefinder-200-902",
+      "answer": "برج بيزا المائل",
+      "sourceUrl": "https://whc.unesco.org/en/list/395/",
+      "status": "read",
+      "note": "UNESCO identifies the leaning campanile and its marble and arched galleries."
+    },
+    {
+      "id": "placefinder-200-903",
+      "answer": "برج خليفة",
+      "sourceUrl": "https://www.burjkhalifa.ae/the-tower/architecture-design/",
+      "status": "read",
+      "note": "Official owner describes three wings around a core, Y plan, setbacks and spire."
+    },
+    {
+      "id": "placefinder-200-904",
+      "answer": "أهرامات الجيزة",
+      "sourceUrl": "https://whc.unesco.org/en/list/86/",
+      "status": "read",
+      "note": "UNESCO identifies the three Giza pyramids within the Memphis necropolis."
+    },
+    {
+      "id": "placefinder-200-905",
+      "answer": "سور الصين العظيم",
+      "sourceUrl": "https://whc.unesco.org/en/list/438/",
+      "status": "read",
+      "note": "UNESCO describes walls, tracks and watchtowers integrated into mountain terrain."
+    },
+    {
+      "id": "placefinder-200-906",
+      "answer": "تاج محل",
+      "sourceUrl": "https://whc.unesco.org/en/list/252/",
+      "status": "read",
+      "note": "UNESCO describes the Agra white-marble mausoleum and four free-standing minarets."
+    },
+    {
+      "id": "placefinder-200-907",
+      "answer": "تمثال الحرية",
+      "sourceUrl": "https://whc.unesco.org/en/list/307/",
+      "status": "read",
+      "note": "UNESCO identifies the monumental statue in New York harbour, torch and tablet."
+    },
+    {
+      "id": "placefinder-200-908",
+      "answer": "دار أوبرا سيدني",
+      "sourceUrl": "https://whc.unesco.org/en/list/166/",
+      "status": "read",
+      "note": "UNESCO specifies three groups of interlocking vaulted shells on a peninsula podium."
+    }
+  ],
+  "tier400": [
+    {
+      "answer": "الكولوسيوم",
+      "url": "https://colosseo.it/en/area/the-colosseum/",
+      "status": "unavailable",
+      "note": "Exact URL returned internal error; find a working official identity source before authoring."
+    },
+    {
+      "answer": "البتراء",
+      "url": "https://whc.unesco.org/en/list/326/",
+      "status": "read",
+      "note": "UNESCO identifies Nabataean rock-cut city, rock-cut tomb and temple architecture, red sandstone and gorges."
+    },
+    {
+      "answer": "جسر البرج",
+      "url": "https://www.towerbridge.org.uk/discover/history",
+      "status": "read",
+      "note": "Bridge operator describes bridge history, lifting road, Thames location; historic image caption identifies Gothic towers and suspension chains. Do not accept London Bridge as alias."
+    },
+    {
+      "answer": "جسر البوابة الذهبية",
+      "url": "https://www.goldengate.org/bridge/history-research/statistics-data/design-construction-stats/",
+      "status": "read",
+      "note": "Bridge operator identifies two main towers, two main cables and vertical suspenders."
+    },
+    {
+      "answer": "تمثال المسيح الفادي",
+      "url": "https://whc.unesco.org/en/list/1100/",
+      "status": "read",
+      "note": "UNESCO Rio landscape page identifies Christ the Redeemer statue on Corcovado."
+    },
+    {
+      "answer": "متحف اللوفر",
+      "url": "https://www.louvre.fr/en/explore/the-palace/the-pyramid",
+      "status": "404",
+      "note": "Exact pyramid URL returned 404; find a working Louvre official page before authoring."
+    },
+    {
+      "answer": "جبل فوجي",
+      "url": "https://whc.unesco.org/en/list/1418/",
+      "status": "read",
+      "note": "UNESCO identifies solitary often snow-capped stratovolcano and surrounding lakes."
+    },
+    {
+      "answer": "معبد أبو سمبل",
+      "url": "https://whc.unesco.org/en/list/88/",
+      "status": "read",
+      "note": "UNESCO identifies Ramses II temples and Great Temple rock-cut escarpment with four colossal facade figures."
+    }
+  ]
+}

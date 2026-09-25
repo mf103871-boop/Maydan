@@ -1,0 +1,19 @@
+{
+  "id": "flags-600-908",
+  "kind": "question",
+  "pack": "flags",
+  "file": "media/flags/flags-600-908.webp",
+  "asset": "media/flags/flags-600-908.webp",
+  "prompt": "Accurate educational national flag. Completely OPAQUE rectangular canvas, every pixel opaque, all color fields stay visible including white. Flat straight-on diagram with crisp solid color edges. Entire image is the flag, exact aspect ratio. No transparency or cutout, no labels, no words, no folds, no pole, no border, no shading. Laos. Width:height3:2. THREE horizontal stripes: red #CE1126 top QUARTER height, dark blue #002868 central HALF height, red bottom QUARTER. ONE WHITE circle centered in blue band, diameter40% of totalheight (80% of blue stripe height), truly circular. No other marks.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-09-23",
+  "width": 1280,
+  "height": 853,
+  "bytes": 11776,
+  "sha256": "232ff61a691c9810ae62b92d82f409198128af8de1151cc51156ce3523060c55",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "pending",
+    "note": "Generation and file checks do not imply subject or gameplay verification."
+  }
+}

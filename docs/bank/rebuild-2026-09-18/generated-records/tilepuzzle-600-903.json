@@ -1,0 +1,19 @@
+{
+  "id": "tilepuzzle-600-903",
+  "kind": "question",
+  "pack": "tilepuzzle",
+  "file": "media/tilepuzzle/tilepuzzle-600-903.webp",
+  "asset": "media/tilepuzzle/tilepuzzle-600-903.webp",
+  "prompt": "Use case: photorealistic-natural.\nAsset type: one standalone professional image for an Arabic family visual guessing game (age 16+).\nSubject: a vintage gramophone with a large brass horn and record.\nStyle: realistic high quality photography with correct anatomy and object geometry, clean natural textures.\nComposition: landscape 4:3, the complete subject fills about 75% of the frame; centered with ample margins, immediately recognizable when revealed.  Spread meaningful details across the frame because it will be shuffled into twelve tiles.\nBackground: simple uncluttered setting appropriate to the subject, natural lighting.\nConstraints: exactly the stated subject; no label, caption, watermark, collage, borders or readable words.  ",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-09-23",
+  "width": 1280,
+  "height": 960,
+  "bytes": 232420,
+  "sha256": "233f287461ee98e6ddae11c17f0a73f97c00baca6404069df464315b465720f7",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "pending",
+    "note": "Generation and file checks do not imply subject or gameplay verification."
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "id": "flags-800-904",
+  "kind": "question",
+  "pack": "flags",
+  "file": "media/flags/flags-800-904.webp",
+  "asset": "media/flags/flags-800-904.webp",
+  "prompt": "Accurate educational national flag. Completely OPAQUE rectangular canvas, every pixel opaque, all color fields stay visible including white. Flat straight-on diagram with crisp solid color edges. Entire image is the flag, exact aspect ratio. No transparency or cutout, no labels, no words, no folds, no pole, no border, no shading. Republic of the Congo (Congo-Brazzaville). Width:height3:2. Flag divided diagonally by wide YELLOW #FBDE4A band rising from BOTTOMLEFT to TOPRIGHT. Green #009543 upperLEFT triangle, red #DC241F lowerRIGHT triangle. Yellow band edges intersect left edge at75%height, bottomedge at25%width, topedge at75%width, rightedge at25%height. NO star and NO blue.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-09-23",
+  "width": 1280,
+  "height": 853,
+  "bytes": 19158,
+  "sha256": "35cc9f56060d697d57ebd099a80bd3e174c6b79f363eca4149f7d4aa7b30bfeb",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "pending",
+    "note": "Generation and file checks do not imply subject or gameplay verification."
+  }
+}

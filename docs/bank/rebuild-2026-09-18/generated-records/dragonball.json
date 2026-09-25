@@ -1,0 +1,56 @@
+{
+  "id": "dragonball",
+  "kind": "cover",
+  "pack": "dragonball",
+  "file": "public/media/badeeha-covers/dragonball.webp",
+  "asset": "public/media/badeeha-covers/dragonball.webp",
+  "prompt": "Use case: precise-object-edit. Asset type: Dragon Ball trivia category cover. Edit target: the attached local product photograph. Keep the existing composition, warm ivory background, orange fabric, folded deep blue martial-arts belt, soft natural lighting, reflections, proportions, and 4:3 landscape framing. Change only the sphere so it is unmistakably the iconic orange FOUR-STAR Dragon Ball: a vivid translucent orange glass orb with exactly FOUR crisp red five-pointed stars clearly visible through its front face. Arrange those four stars as a balanced 2-by-2 cluster, evenly spaced and entirely inside the sphere, facing the viewer so all four can be counted at small thumbnail size. There must be exactly four stars total, not three, five, or any reflected duplicate stars; no additional markings. Preserve realistic glass depth and highlights but keep glare away from the star cluster. The sphere remains the same position and size; no new objects, characters, text, logos, letters, digits, watermark, or screenshots. Output one finished landscape 4:3 image.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-09-23",
+  "width": 640,
+  "height": 480,
+  "bytes": 58104,
+  "sha256": "f26e3739007a277865652e29d05322b76c8c6271abdf98bd0761dfb6aa5eeb78",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "passed",
+    "reviewedAt": "2026-09-23",
+    "method": "Visual review of original, built-in generated result, installed WebP and a 150px-wide thumbnail.",
+    "checks": [
+      "Exactly four red five-pointed stars counted visually in a two-by-two cluster inside the orange sphere.",
+      "No duplicated stars from reflections; belt, orange cloth and warm ivory background retained.",
+      "Viewed installed 640×480 WebP and 150px-wide thumbnail; all four stars remain individually visible."
+    ],
+    "dimensions": "640x480 (4:3)",
+    "within256KiBBudget": true,
+    "textOrWatermarkDetected": false
+  },
+  "generationMode": "edit",
+  "sourceOutput": {
+    "file": "exec-b1c22193-4f0e-4332-a3b8-76f4f54793d4.png",
+    "sha256": "8bc7cdbfcdb23682083cbfbf3ae0afdea93608da57e950a57fbb79be2aa88202"
+  },
+  "editInput": {
+    "asset": "public/media/badeeha-covers/dragonball.webp",
+    "sha256": "2c36eb672c81b0671b198b68b50b9f52ec6ed8def221d3bf2f1890fe7aadc59f",
+    "provenanceArchive": "docs/bank/rebuild-2026-09-18/checkpoint/asset-records.json",
+    "originalCreatedAt": "2026-09-18"
+  },
+  "previousGenerations": [
+    {
+      "id": "dragonball",
+      "kind": "cover",
+      "pack": "dragonball",
+      "asset": "public/media/badeeha-covers/dragonball.webp",
+      "prompt": "Use case: product-mockup.\nCreate one premium photorealistic editorial product photograph for an Arabic social trivia game category cover. Landscape 4:3 composition. Real believable materials and proportions; carefully crafted physical miniatures only where the subject requires architecture. Seamless warm ivory background (#FFF7E7), soft daylight from upper left, one restrained group accent color, gentle contact shadow, no busy scenery. One dominant subject with at most two supporting objects; large shapes remain legible at 150px wide. Center all important subject details in the middle 60%, leave generous breathing room and both top corners clear for UI badges. No text, letters, numbers, pseudo-writing, readable labels, watermarks, logos, framed app UI, pictograms, SVG-style graphics, emoji rendering, plastic cartoon gloss, collage, or unnecessary objects. Category title is added by the game UI. Use an original cover composition, never a screenshot, trivia question illustration or answer reveal.\nGroup accent: #8A57AD, used sparingly without overriding natural object colors.\nSubject: One translucent amber glass sphere with no stars or markings beside one neatly folded deep blue martial-arts belt, on warm orange cloth.",
+      "tool": "OpenAI image generation",
+      "createdAt": "2026-09-18",
+      "width": 1448,
+      "height": 1086,
+      "bytes": 222774,
+      "sha256": "2c36eb672c81b0671b198b68b50b9f52ec6ed8def221d3bf2f1890fe7aadc59f",
+      "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي"
+    }
+  ],
+  "installCommand": "node scripts/bank-install-generated.mjs /tmp/cover-dragonball-job.json /workspace/scratch/63296ecfa764/generated_images/exec-b1c22193-4f0e-4332-a3b8-76f4f54793d4.png --replace"
+}

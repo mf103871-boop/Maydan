@@ -1,0 +1,36 @@
+{
+  "id": "silhouette-600-906",
+  "kind": "question",
+  "pack": "silhouette",
+  "file": "media/silhouette/silhouette-600-906.webp",
+  "asset": "media/silhouette/silhouette-600-906.webp",
+  "prompt": "Use case: product-mockup.\nAsset type: one standalone professional image for an Arabic family visual guessing game (age 16+).\nSubject: a whole pineapple with a spiky crown.\nStyle: realistic high quality photography with correct anatomy and object geometry, clean natural textures.\nComposition: landscape 4:3, the complete subject occupies only the central 55% of the frame, leaving at least 20% completely transparent margin on ALL FOUR sides; centered with ample margins, immediately recognizable when revealed.  \nBackground: genuinely transparent background with alpha channel; isolated cutout; no shadow backdrop; no checkerboard; color subject will become a silhouette inside the game.\nConstraints: exactly the stated subject; no label, caption, watermark, collage, borders or readable words.  Do not create a black silhouette; render the full natural-color cutout with transparent surroundings. Output must be a PNG cutout with actual alpha=0 pixels outside the subject, fully transparent canvas. Do not paint white, gray, black or checkerboard behind it. Keep the entire outline visible. Natural color, no ground plane or cast shadow. Every tip, leaf, antenna, extremity and protruding part must be well inside the canvas, with broad transparent padding. Zoom out. Do not crop any part of the object.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-09-23",
+  "width": 1280,
+  "height": 960,
+  "bytes": 186430,
+  "sha256": "368818d404903ea9e31c8a0487316ba3d9d2da9db856214e22794b458a6db4d1",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "visual-subject-reviewed",
+    "reviewedAt": "2026-09-23",
+    "note": "Generated output visually reviewed: subject matches answer; true alpha measured. Final silhouette/reveal gameplay review still pending.",
+    "answer": "أناناس",
+    "alpha": {
+      "pixels": 1228800,
+      "alpha0": 972236,
+      "alpha255": 345,
+      "partialAlpha": 256219,
+      "nearOpaque250to255": 198791,
+      "transparentFraction": 0.791208,
+      "bboxAlphaOver128": [
+        431,
+        72,
+        866,
+        904
+      ]
+    },
+    "gameplayReview": "pending"
+  }
+}

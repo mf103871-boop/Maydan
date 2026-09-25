@@ -1,0 +1,15 @@
+# Cars checkpoint — user pause, 23 September 2026
+
+Do not generate or edit more content until the user asks to resume. This is a partial bank, not releasable.
+
+- Root installed 18 individually generated images: all `guesscar-200-901`–`908`, all `guesscar-400-901`–`908`, and `guesscar-600-901`–`902`. Each was viewed and matches the intended broad model. Final independent comparison and category integration remain pending.
+- Next asset: `guesscar-600-903` (Audi R8); 22 planned images remain. The original 238-question category is unchanged; none of the new images is active yet.
+- The authoritative 40-job plan is `docs/bank/rebuild-2026-09-18/cars-generation-plan.json`. It contains prompts, proposed questions, original reference captions/URLs and previous IDs. Do not rerun `scripts/bank-plan-generated-cars.mjs` over it: that initial builder predates refined prompts/source replacements.
+- Every installed image has a generation record in `generated-records/guesscar-*.json`; optimized WebPs are in `media/guesscar/`. The originals do not need to be downloaded again. No reference photograph was supplied as an image input: the new images were generated from model descriptions, and the retained old photos served for visual identity review.
+- All forty original reference pages were opened during the review. Most are original-photographer Commons caption pages, not manufacturer specifications. No question asks for model year, trim, performance, or mechanical details. Old source photos remain in the repository and can be inspected using each job's `identityReference.src`.
+- More precise source replacements are already in `question.sourceUrl`: Nissan's 2017 LEAF design gallery for `400-908`; original photographer's Citroën DS image/caption for `800-901`; Toyota's 2000GT heritage page for `800-904`; Pagani's Huayra page for `1000-904`; Louwman Museum's KR200 collection page for `1000-906` (only its indexed title was accessible; direct open returned403). Do not claim that last full page was read.
+- The first16 images show complete vehicles with blank plates and no readable model names. F40's wedge, pop-up housings and rear wing and Chiron's C-side contour and horseshoe grille match their references. The E-Class image is accepted provisionally at model-family level; recheck against the retained W214 reference before marking verified. Do not treat fine trim/year fidelity as established.
+- Generation is built-in `image_gen` only, one call per asset. Use `scripts/bank-install-generated.mjs JOB.json OUTPUT.png`; the tool result normally gives the PNG path in `output_hint`. If absent, its data-URL image must be decoded for the required project asset. No API/CLI fallback was authorized.
+- Finish all40, review likeness and alternative answers, write real evidence, set verified only after review, replace category questions, update counts/index, and validate. Keep the old media until all replacement packs are complete.
+
+The proposed new questions already use `ما طراز المركبة في الصورة؟` to include the Actros truck. Tatra87's refined prompt requests a front three-quarter view, making its three headlights visible.

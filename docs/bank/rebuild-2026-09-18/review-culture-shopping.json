@@ -1,0 +1,307 @@
+{
+  "category": "shopping",
+  "reviewedAt": "2026-09-23",
+  "oldCount": 240,
+  "newCount": 40,
+  "method": "Independent source-led rebuilding of the 40 questions; no automatic first-eight truncation. Search-index excerpts are explicitly distinguished from full page text. Cambridge direct opens returned 403; its actual indexed dictionary definitions were reviewed, not corpus examples.",
+  "difficultyCalibration": "editorial-not-measured",
+  "topics": [
+    "ألياف وأنسجة",
+    "تجميل وأدواته",
+    "تصميم وعرض الأزياء",
+    "حقائب وأحذية",
+    "حلي وأحجار",
+    "خياطة وزخرفة",
+    "ملابس وقصات"
+  ],
+  "tierRationale": {
+    "200": "Familiar everyday garments, tools and materials.",
+    "400": "Common named fabrics, a traditional garment, accessories and beauty vocabulary.",
+    "600": "Named cuts, processes and products familiar to enthusiasts.",
+    "800": "More specialized materials and craft terminology.",
+    "1000": "Textile finishing, historic footwear, cutting and jewelry techniques."
+  },
+  "retiredPolicy": "All 240 original IDs replaced by the approved 901–908 range; the shared retired registry is owned by integration.",
+  "corrections": [
+    {
+      "oldQid": "shopping-200-037",
+      "issue": "Jasmine question accepted الفل indiscriminately and used broad flowering/geographical clues; omitted."
+    },
+    {
+      "oldQid": "shopping-200-038",
+      "issue": "الحقيبة الكبيرة was a vague synonym for suitcase; omitted."
+    },
+    {
+      "oldQid": "shopping-800-022",
+      "issue": "Generic البليد and كاروهات were overbroad aliases for tartan; omitted."
+    },
+    {
+      "oldQid": "shopping-1000-025",
+      "issue": "Burnt sienna is not interchangeable with unqualified sienna; omitted."
+    },
+    {
+      "oldQid": "shopping-800-004",
+      "issue": "Organza re-reviewed and moved to 600 by answer familiarity, rather than keeping inflated legacy tier."
+    }
+  ],
+  "items": [
+    {
+      "qid": "shopping-200-901",
+      "sourceUrl": "https://dictionary.cambridge.org/dictionary/english/wool",
+      "evidence": "Dictionary definition: wool is the soft thick hair of sheep and some other animals.",
+      "reviewMode": "indexed-definition"
+    },
+    {
+      "qid": "shopping-200-902",
+      "sourceUrl": "https://dictionary.cambridge.org/dictionary/english/silk",
+      "evidence": "Dictionary definition identifies silk as cloth or thread produced by silkworms.",
+      "reviewMode": "indexed-definition"
+    },
+    {
+      "qid": "shopping-200-903",
+      "sourceUrl": "https://dictionary.cambridge.org/dictionary/english/jeans",
+      "evidence": "Dictionary defines jeans as informal trousers made from denim.",
+      "reviewMode": "indexed-definition"
+    },
+    {
+      "qid": "shopping-200-904",
+      "sourceUrl": "https://dictionary.cambridge.org/dictionary/english/sandal",
+      "evidence": "Dictionary defines a sandal as a light shoe whose sole is held by straps.",
+      "reviewMode": "indexed-definition"
+    },
+    {
+      "qid": "shopping-200-905",
+      "sourceUrl": "https://dictionary.cambridge.org/dictionary/english/mascara",
+      "evidence": "Dictionary identifies the cosmetic used to darken, thicken and lengthen eyelashes.",
+      "reviewMode": "indexed-definition"
+    },
+    {
+      "qid": "shopping-200-906",
+      "sourceUrl": "https://dictionary.cambridge.org/us/dictionary/english/ring",
+      "evidence": "Dictionary definition: a circular piece of jewelry worn on a finger.",
+      "reviewMode": "indexed-definition"
+    },
+    {
+      "qid": "shopping-200-907",
+      "sourceUrl": "https://dictionary.cambridge.org/us/dictionary/english/needle",
+      "evidence": "Dictionary specifies a pointed metal sewing tool with a hole for thread.",
+      "reviewMode": "indexed-definition"
+    },
+    {
+      "qid": "shopping-200-908",
+      "sourceUrl": "https://dictionary.cambridge.org/dictionary/english/model",
+      "evidence": "Dictionary defines a model as a person wearing clothing to be photographed or shown to buyers.",
+      "reviewMode": "indexed-definition"
+    },
+    {
+      "qid": "shopping-400-901",
+      "sourceUrl": "https://dictionary.cambridge.org/us/dictionary/english/velvet",
+      "evidence": "Dictionary defines velvet as fabric with a thick soft surface; Arabic equivalent reviewed editorially.",
+      "reviewMode": "indexed-definition"
+    },
+    {
+      "qid": "shopping-400-902",
+      "sourceUrl": "https://dictionary.cambridge.org/dictionary/english/satin",
+      "evidence": "Dictionary distinguishes the smooth shiny face from the non-shiny reverse.",
+      "reviewMode": "indexed-definition"
+    },
+    {
+      "qid": "shopping-400-903",
+      "sourceUrl": "https://dictionary.cambridge.org/dictionary/english/kimono",
+      "evidence": "Dictionary identifies the long loose Japanese garment with very wide sleeves.",
+      "reviewMode": "indexed-definition"
+    },
+    {
+      "qid": "shopping-400-904",
+      "sourceUrl": "https://dictionary.cambridge.org/us/dictionary/english/clutch-bag",
+      "evidence": "Dictionary defines a small flat bag without a handle, used especially on formal occasions.",
+      "reviewMode": "indexed-definition"
+    },
+    {
+      "qid": "shopping-400-905",
+      "sourceUrl": "https://www.maybelline.com/makeup-tips/face/foundation-vs-concealer",
+      "evidence": "Sections What Is Concealer and Difference describe targeted coverage, versus whole-face foundation.",
+      "reviewMode": "page-text"
+    },
+    {
+      "qid": "shopping-400-906",
+      "sourceUrl": "https://www.gia.edu/pearl-description",
+      "evidence": "GIA Natural Pearls describes formation inside mollusks; earlier paragraph describes necklaces.",
+      "reviewMode": "page-text"
+    },
+    {
+      "qid": "shopping-400-907",
+      "sourceUrl": "https://dictionary.cambridge.org/dictionary/english/embroidery",
+      "evidence": "Dictionary defines decorating cloth with patterns or pictures sewn onto it.",
+      "reviewMode": "indexed-definition"
+    },
+    {
+      "qid": "shopping-400-908",
+      "sourceUrl": "https://dictionary.cambridge.org/de/worterbuch/englisch/catwalk",
+      "evidence": "English dictionary definition describes a long narrow stage used by fashion models.",
+      "reviewMode": "indexed-definition"
+    },
+    {
+      "qid": "shopping-600-901",
+      "sourceUrl": "https://www.ahdictionary.com/word/search.html?q=organza",
+      "evidence": "American Heritage defines sheer stiff silk/synthetic fabric used in evening dresses.",
+      "reviewMode": "indexed-definition"
+    },
+    {
+      "qid": "shopping-600-902",
+      "sourceUrl": "https://www.agmrc.org/commodities-products/livestock-dairy-poultry/goats/goats-for-fiber",
+      "evidence": "Introduction identifies cashmere as goat undercoat; distinguishes it from Angora-goat mohair.",
+      "reviewMode": "page-text"
+    },
+    {
+      "qid": "shopping-600-903",
+      "sourceUrl": "https://dictionary.cambridge.org/dictionary/english/cardigan?q=cardigans",
+      "evidence": "Dictionary describes a knitted upper garment fastened at the front with buttons.",
+      "reviewMode": "indexed-definition"
+    },
+    {
+      "qid": "shopping-600-904",
+      "sourceUrl": "https://dictionary.cambridge.org/dictionary/english/stiletto",
+      "evidence": "Dictionary identifies the narrow high heel; accepted Arabic transliterations reviewed.",
+      "reviewMode": "indexed-definition"
+    },
+    {
+      "qid": "shopping-600-905",
+      "sourceUrl": "https://www.maybelline.com/makeup-tips/face/what-is-makeup-primer",
+      "evidence": "Introduction and application steps establish primer before foundation and longer makeup wear.",
+      "reviewMode": "page-text"
+    },
+    {
+      "qid": "shopping-600-906",
+      "sourceUrl": "https://4cs.gia.edu/en-us/diamond-carat-weight/",
+      "evidence": "GIA defines a metric carat as 200 milligrams.",
+      "reviewMode": "page-text"
+    },
+    {
+      "qid": "shopping-600-907",
+      "sourceUrl": "https://dictionary.cambridge.org/dictionary/english/applique",
+      "evidence": "Dictionary describes decorative fabric pieces sewn or fixed onto other fabric.",
+      "reviewMode": "indexed-definition"
+    },
+    {
+      "qid": "shopping-600-908",
+      "sourceUrl": "https://dictionary.cambridge.org/dictionary/english/haute-couture?topic=clothing-general-words",
+      "evidence": "Dictionary describes handmade expensive clothing, especially for individual customers in Paris fashion houses.",
+      "reviewMode": "indexed-definition"
+    },
+    {
+      "qid": "shopping-800-901",
+      "sourceUrl": "https://www.agmrc.org/commodities-products/livestock-dairy-poultry/goats/goats-for-fiber",
+      "evidence": "Introduction and Production explicitly identify Angora goats as the source of mohair.",
+      "reviewMode": "page-text"
+    },
+    {
+      "qid": "shopping-800-902",
+      "sourceUrl": "https://www.lenzing.com/products/textile-fibers/tenceltm-lyocell/",
+      "evidence": "About the fiber identifies regenerated cellulose, wood pulp and closed-loop solvent recovery for TENCEL Lyocell.",
+      "reviewMode": "page-text"
+    },
+    {
+      "qid": "shopping-800-903",
+      "sourceUrl": "https://dictionary.cambridge.org/dictionary/english/peplum?topic=parts-of-clothes",
+      "evidence": "Dictionary defines decorative material attached around the waist; Getty corroborates short skirtlike extension.",
+      "reviewMode": "indexed-definition"
+    },
+    {
+      "qid": "shopping-800-904",
+      "sourceUrl": "https://dictionary.cambridge.org/us/dictionary/english/espadrille",
+      "evidence": "Dictionary defines strong cloth shoes with rope soles.",
+      "reviewMode": "indexed-definition"
+    },
+    {
+      "qid": "shopping-800-905",
+      "sourceUrl": "https://www.maybelline.com/makeup-tips/face/what-is-makeup-primer",
+      "evidence": "Color Correcting Primer section states that green tint counteracts redness.",
+      "reviewMode": "page-text"
+    },
+    {
+      "qid": "shopping-800-906",
+      "sourceUrl": "https://www.gia.edu/gia-news-research-value-factors-gem-cutting-styles-definitions",
+      "evidence": "Cabochons: Simple and Double identifies the simple form as rounded top and flat bottom.",
+      "reviewMode": "page-text"
+    },
+    {
+      "qid": "shopping-800-907",
+      "sourceUrl": "https://dictionary.cambridge.org/dictionary/english/smocking",
+      "evidence": "Dictionary defines tight folds held with decorative stitches; not generic gathering or elastic shirring.",
+      "reviewMode": "indexed-definition"
+    },
+    {
+      "qid": "shopping-800-908",
+      "sourceUrl": "https://dictionary.cambridge.org/dictionary/english/pret-a-porter",
+      "evidence": "Dictionary defines clothes produced in standard sizes, rather than to fit an individual.",
+      "reviewMode": "indexed-definition"
+    },
+    {
+      "qid": "shopping-1000-901",
+      "sourceUrl": "https://cottonworks.com/encyclopedia-item/mercerization/",
+      "evidence": "CottonWorks specifies concentrated caustic soda under tension, increased dye affinity and luster.",
+      "reviewMode": "page-text"
+    },
+    {
+      "qid": "shopping-1000-902",
+      "sourceUrl": "https://dictionary.cambridge.org/dictionary/english/seersucker",
+      "evidence": "Dictionary describes light cloth with alternating raised and flat strips.",
+      "reviewMode": "indexed-definition"
+    },
+    {
+      "qid": "shopping-1000-903",
+      "sourceUrl": "https://fashionhistory.fitnyc.edu/leg-of-mutton-sleeves/",
+      "evidence": "FIT definition gives shoulder fullness, fitted wrist and gigot synonym; details explain French leg-of-lamb name.",
+      "reviewMode": "page-text"
+    },
+    {
+      "qid": "shopping-1000-904",
+      "sourceUrl": "https://fashionhistory.fitnyc.edu/chopines/",
+      "evidence": "FIT defines high platform shoes mostly worn in Venice during the 16th and 17th centuries.",
+      "reviewMode": "page-text"
+    },
+    {
+      "qid": "shopping-1000-905",
+      "sourceUrl": "https://www.lorealparisusa.com/beauty-magazine/makeup/face-makeup/strobing-tips-for-every-skin-tone",
+      "evidence": "L’Oreal explains name from strobe lights, highlighting alone, and contrast with contouring.",
+      "reviewMode": "page-text"
+    },
+    {
+      "qid": "shopping-1000-906",
+      "sourceUrl": "https://www.gia.edu/gia-news-research/metalwork-takes-bow-techniques-enhance-gemstone-jewelry",
+      "evidence": "Filigree and Granulation section defines soldered fine wires and the resulting lace-like openwork.",
+      "reviewMode": "page-text"
+    },
+    {
+      "qid": "shopping-1000-907",
+      "sourceUrl": "https://www.vam.ac.uk/articles/madeleine-vionnet-an-introduction",
+      "evidence": "V&A describes Vionnet championing bias cutting across the grain for draping that follows the body.",
+      "reviewMode": "page-text"
+    },
+    {
+      "qid": "shopping-1000-908",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/157240",
+      "evidence": "Met entry credits Elsa Schiaparelli and describes hand-knit sweaters and the reputation-making trompe-l’oeil bowknot; wording avoids claiming paint.",
+      "reviewMode": "page-text"
+    }
+  ],
+  "validation": {
+    "command": "npm run bank:validate -- shopping",
+    "exitCode": 1,
+    "substantivePackErrors": 0,
+    "remainingErrors": [
+      "bank-status tier 200: recorded 48, actual 8",
+      "bank-status tier 400: recorded 48, actual 8",
+      "bank-status tier 600: recorded 48, actual 8",
+      "bank-status tier 800: recorded 48, actual 8",
+      "bank-status tier 1000: recorded 48, actual 8"
+    ],
+    "warnings": 0,
+    "note": "Shared bank-status belongs to integration and was not modified. All content checks and cross-bank checks run by this command had no other errors."
+  },
+  "limitations": [
+    "Difficulty targets are editorial and have not been measured with players.",
+    "Full-bank integration and shared count synchronization are separate checks."
+  ]
+}

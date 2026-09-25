@@ -1,0 +1,18 @@
+{
+  "id": "placefinder-200-903",
+  "kind": "question",
+  "pack": "placefinder",
+  "p": 200,
+  "a": "برج خليفة",
+  "alt": [
+    "Burj Khalifa"
+  ],
+  "topic": "العالم العربي",
+  "q": "ما اسم ناطحة السحاب المصوّرة في دبي؟",
+  "sourceUrl": "https://www.burjkhalifa.ae/the-tower/architecture-design/",
+  "prompt": "Use case: scientific-educational. Asset: landscape 4:3 architectural landmark recognition card for an Arabic family quiz. Create one original, carefully observed architectural illustration of the real landmark, with realistic proportions and fine material detail, clear daylight, restrained natural colours, clean composition. Show the real defining architecture accurately, not a fantasy redesign. No captions, words, numerals, maps, logos, watermark, border or inset. No people close enough to distract. The entire landmark must be recognizable at phone size. Burj Khalifa in Dubai: extremely slender silvery glass tower with its true bundled three-wing form, many staggered setbacks tapering upward in a spiral to a central needle spire. Full silhouette from base to tip, surrounding buildings much lower, turquoise artificial lake foreground, blue sky. Do not confuse with Shanghai Tower or generic skyscrapers.",
+  "referenceFile": null,
+  "sourceEvidence": "Official owner describes three wings around a core, Y plan, setbacks and spire.",
+  "sourceReviewed": true,
+  "visualReviewStatus": "pending"
+}

@@ -5,2774 +5,539 @@
   "qs": [
     {
       "p": 200,
-      "topic": "النسب والمولد",
-      "q": "ما اسم والدة النبي محمد؟",
-      "a": "آمنة بنت وهب",
+      "topic": "النشأة والأسرة",
+      "q": "من الزوجة التي طمأنت النبي عند رجوعه من أول لقاء بملك الوحي؟",
+      "a": "خديجة بنت خويلد",
       "alt": [
-        "آمنة"
+        "خديجة"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/آمنة_بنت_وهب",
+      "sourceUrl": "https://sunnah.com/bukhari:3",
       "verified": true,
-      "qid": "seerah-200-001"
+      "qid": "seerah-200-901",
+      "difficultyTarget": 0.8
     },
     {
       "p": 200,
-      "topic": "النسب والمولد",
-      "q": "ما اسم والد النبي محمد؟",
-      "a": "عبد الله بن عبد المطلب",
-      "alt": [
-        "عبد الله"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/عبد_الله_بن_عبد_المطلب",
-      "verified": true,
-      "qid": "seerah-200-002"
-    },
-    {
-      "p": 200,
-      "topic": "النسب والمولد",
-      "q": "من الجدّ الذي كفل النبي بعد وفاة أمه؟",
-      "a": "عبد المطلب",
-      "alt": [
-        "شيبة"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/عبد_المطلب_بن_هاشم",
-      "verified": true,
-      "qid": "seerah-200-003"
-    },
-    {
-      "p": 200,
-      "topic": "النسب والمولد",
-      "q": "من العمّ الذي كفل النبي بعد وفاة جدّه؟",
-      "a": "أبو طالب",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/أبو_طالب_بن_عبد_المطلب",
-      "verified": true,
-      "qid": "seerah-200-004"
-    },
-    {
-      "p": 200,
-      "topic": "النسب والمولد",
-      "q": "في أي مدينة وُلد النبي محمد؟",
-      "a": "مكة",
-      "alt": [
-        "مكة المكرمة"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/محمد",
-      "verified": true,
-      "qid": "seerah-200-005"
-    },
-    {
-      "p": 200,
-      "topic": "النسب والمولد",
-      "q": "بأي اسم يُعرف العام الذي وُلد فيه النبي محمد؟",
-      "a": "عام الفيل",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/عام_الفيل",
-      "verified": true,
-      "qid": "seerah-200-006"
-    },
-    {
-      "p": 200,
-      "topic": "النسب والمولد",
-      "q": "من السيدة التي أرضعت النبي في البادية؟",
-      "a": "حليمة السعدية",
-      "alt": [
-        "حليمة"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/حليمة_السعدية",
-      "verified": true,
-      "qid": "seerah-200-007"
-    },
-    {
-      "p": 200,
-      "topic": "النسب والمولد",
-      "q": "في أي شهر هجري وُلد النبي محمد؟",
-      "a": "ربيع الأول",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/محمد",
-      "verified": true,
-      "qid": "seerah-200-008"
-    },
-    {
-      "p": 200,
-      "topic": "النسب والمولد",
-      "q": "ما العمل الذي عمله النبي في شبابه مع قوافل الشام؟",
-      "a": "التجارة",
-      "alt": [
-        "التجارة مع الشام"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/محمد",
-      "verified": true,
-      "qid": "seerah-200-009"
-    },
-    {
-      "p": 200,
-      "topic": "مكة والبعثة",
-      "q": "في أي غار كان النبي يتعبّد ونزل عليه الوحي أول مرة؟",
+      "topic": "بداية الدعوة",
+      "q": "في أي غار بدأ نزول الوحي على النبي؟",
       "a": "غار حراء",
       "alt": [
         "حراء"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/غار_حراء",
+      "sourceUrl": "https://sunnah.com/bukhari:3",
       "verified": true,
-      "qid": "seerah-200-010"
+      "qid": "seerah-200-902",
+      "difficultyTarget": 0.8
     },
     {
       "p": 200,
-      "topic": "مكة والبعثة",
-      "q": "من الملَك الذي نزل بالوحي على النبي؟",
-      "a": "جبريل",
-      "alt": [
-        "جبرائيل",
-        "جبريل عليه السلام"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/جبريل",
-      "verified": true,
-      "qid": "seerah-200-011"
-    },
-    {
-      "p": 200,
-      "topic": "مكة والبعثة",
-      "q": "بأي لقب عرفته قريش قبل البعثة لصدقه وأمانته؟",
-      "a": "الصادق الأمين",
-      "alt": [
-        "الأمين"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/محمد",
-      "verified": true,
-      "qid": "seerah-200-012"
-    },
-    {
-      "p": 200,
-      "topic": "مكة والبعثة",
-      "q": "إلى أي بلد كانت هجرة المسلمين الأولى؟",
-      "a": "بلاد الحبشة",
-      "alt": [
-        "الحبشة",
-        "أرض الحبشة"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الهجرة_إلى_الحبشة",
-      "verified": true,
-      "qid": "seerah-200-013"
-    },
-    {
-      "p": 200,
-      "topic": "مكة والبعثة",
-      "q": "كم سنة دعا النبي في مكة قبل خروجه منها؟",
-      "a": "ثلاث عشرة سنة",
-      "alt": [
-        "13"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/محمد",
-      "verified": true,
-      "qid": "seerah-200-014"
-    },
-    {
-      "p": 200,
-      "topic": "مكة والبعثة",
-      "q": "كم كان عمر النبي حين نزل عليه الوحي؟",
-      "a": "أربعون سنة",
-      "alt": [
-        "40"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/محمد",
-      "verified": true,
-      "qid": "seerah-200-015"
-    },
-    {
-      "p": 200,
-      "topic": "مكة والبعثة",
-      "q": "بم لُقّب أهل مكة الذين تركوا ديارهم ولحقوا بالنبي؟",
-      "a": "المهاجرون",
-      "alt": [
-        "المهاجرين"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/المهاجرون",
-      "verified": true,
-      "qid": "seerah-200-016"
-    },
-    {
-      "p": 200,
-      "topic": "الهجرة وقباء",
-      "q": "ما الاسم القديم للمدينة التي هاجر إليها النبي؟",
-      "a": "يثرب",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/المدينة_المنورة",
-      "verified": true,
-      "qid": "seerah-200-017"
-    },
-    {
-      "p": 200,
-      "topic": "الهجرة وقباء",
-      "q": "من صاحَبَ النبيَّ في رحلة الهجرة؟",
+      "topic": "الهجرة",
+      "q": "من رافق النبي في هجرته من مكة إلى المدينة؟",
       "a": "أبو بكر الصديق",
       "alt": [
-        "أبو بكر"
+        "أبو بكر",
+        "أبوبكر"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الهجرة_النبوية",
+      "sourceUrl": "https://sunnah.com/bukhari:3905",
       "verified": true,
-      "qid": "seerah-200-018"
+      "qid": "seerah-200-903",
+      "difficultyTarget": 0.8
     },
     {
       "p": 200,
-      "topic": "الهجرة وقباء",
-      "q": "في أي غار اختبأ النبي وصاحبه في طريق خروجهما من مكة؟",
-      "a": "غار ثور",
+      "topic": "المدينة",
+      "q": "إلى أي مدينة هاجر النبي من مكة؟",
+      "a": "المدينة المنورة",
       "alt": [
-        "ثور",
-        "جبل ثور"
+        "المدينة",
+        "يثرب"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/غار_ثور",
+      "sourceUrl": "https://sunnah.com/bukhari:3905",
       "verified": true,
-      "qid": "seerah-200-019"
-    },
-    {
-      "p": 200,
-      "topic": "الهجرة وقباء",
-      "q": "ما أول مسجد بناه النبي بعد خروجه من مكة؟",
-      "a": "مسجد قباء",
-      "alt": [
-        "قباء"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/مسجد_قباء",
-      "verified": true,
-      "qid": "seerah-200-020"
-    },
-    {
-      "p": 200,
-      "topic": "الهجرة وقباء",
-      "q": "بم لُقّب أهل المدينة الذين آووا النبي ونصروه؟",
-      "a": "الأنصار",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الأنصار",
-      "verified": true,
-      "qid": "seerah-200-021"
-    },
-    {
-      "p": 200,
-      "topic": "الهجرة وقباء",
-      "q": "ما الحدث الذي جُعل بدايةً للتقويم الإسلامي؟",
-      "a": "الهجرة النبوية",
-      "alt": [
-        "الهجرة"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الهجرة_النبوية",
-      "verified": true,
-      "qid": "seerah-200-022"
+      "qid": "seerah-200-904",
+      "difficultyTarget": 0.8
     },
     {
       "p": 200,
       "topic": "الغزوات",
-      "q": "ما أول غزوة كبرى خاضها المسلمون؟",
+      "q": "ما الغزوة المذكورة في آية «ولقد نصركم الله» من سورة آل عمران؟",
       "a": "بدر",
       "alt": [
         "غزوة بدر",
         "بدر الكبرى"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/غزوة_بدر",
+      "sourceUrl": "https://quran.com/3/123",
       "verified": true,
-      "qid": "seerah-200-023"
+      "qid": "seerah-200-905",
+      "difficultyTarget": 0.8
     },
     {
       "p": 200,
-      "topic": "الغزوات",
-      "q": "ما الغزوة التي سُمّيت باسم جبل شمال المدينة؟",
-      "a": "أحد",
-      "alt": [
-        "غزوة أحد"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/غزوة_أحد",
-      "verified": true,
-      "qid": "seerah-200-024"
-    },
-    {
-      "p": 200,
-      "topic": "الغزوات",
-      "q": "ما الغزوة التي حُفر فيها خندق حول المدينة؟",
-      "a": "غزوة الخندق",
-      "alt": [
-        "الخندق",
-        "الأحزاب"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/غزوة_الخندق",
-      "verified": true,
-      "qid": "seerah-200-025"
-    },
-    {
-      "p": 200,
-      "topic": "الغزوات",
-      "q": "ما اسم الحدث الذي دخل فيه المسلمون مكة دون قتال؟",
-      "a": "فتح مكة",
-      "alt": [
-        "الفتح"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/فتح_مكة",
-      "verified": true,
-      "qid": "seerah-200-026"
-    },
-    {
-      "p": 200,
-      "topic": "الغزوات",
-      "q": "ما اسم الواحة التي فتح المسلمون حصونها شمال المدينة؟",
-      "a": "خيبر",
-      "alt": [
-        "غزوة خيبر"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/غزوة_خيبر",
-      "verified": true,
-      "qid": "seerah-200-027"
-    },
-    {
-      "p": 200,
-      "topic": "الغزوات",
-      "q": "ما الغزوة التي دارت في وادٍ قرب مكة بعد فتحها؟",
-      "a": "حنين",
-      "alt": [
-        "غزوة حنين"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/غزوة_حنين",
-      "verified": true,
-      "qid": "seerah-200-028"
-    },
-    {
-      "p": 200,
-      "topic": "عهود ووفود",
-      "q": "ما اسم الصلح الذي عُقد بين النبي وأهل مكة قرب الحرم؟",
-      "a": "صلح الحديبية",
-      "alt": [
-        "الحديبية"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/صلح_الحديبية",
-      "verified": true,
-      "qid": "seerah-200-029"
-    },
-    {
-      "p": 200,
-      "topic": "عهود ووفود",
-      "q": "ما اسم الحجّة الوحيدة التي حجّها النبي؟",
-      "a": "حجة الوداع",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/حجة_الوداع",
-      "verified": true,
-      "qid": "seerah-200-030"
-    },
-    {
-      "p": 200,
-      "topic": "عهود ووفود",
-      "q": "ماذا تُسمّى الخطبة التي ألقاها النبي على الناس في حجّته؟",
-      "a": "خطبة الوداع",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/حجة_الوداع",
-      "verified": true,
-      "qid": "seerah-200-031"
-    },
-    {
-      "p": 200,
-      "topic": "عهود ووفود",
-      "q": "ما اسم البيعة التي بايع بها أهل المدينة النبيَّ قبل الهجرة؟",
-      "a": "بيعة العقبة",
-      "alt": [
-        "العقبة"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/بيعة_العقبة_الثانية",
-      "verified": true,
-      "qid": "seerah-200-032"
-    },
-    {
-      "p": 200,
-      "topic": "أهل البيت",
-      "q": "من أولى زوجات النبي محمد؟",
-      "a": "خديجة بنت خويلد",
-      "alt": [
-        "خديجة"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/خديجة_بنت_خويلد",
-      "verified": true,
-      "qid": "seerah-200-033"
-    },
-    {
-      "p": 200,
-      "topic": "أهل البيت",
-      "q": "ما اللقب الذي يُطلق على زوجات النبي؟",
-      "a": "أمهات المؤمنين",
-      "alt": [
-        "أمهات المؤمنين رضي الله عنهن"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/أمهات_المؤمنين",
-      "verified": true,
-      "qid": "seerah-200-034"
-    },
-    {
-      "p": 200,
-      "topic": "أهل البيت",
-      "q": "من ابنة النبي التي تزوّجها عليّ؟",
-      "a": "فاطمة الزهراء",
-      "alt": [
-        "فاطمة"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/فاطمة_الزهراء",
-      "verified": true,
-      "qid": "seerah-200-035"
-    },
-    {
-      "p": 200,
-      "topic": "أهل البيت",
-      "q": "من ابن عمّ النبي الذي نشأ في بيته؟",
-      "a": "علي",
-      "alt": [
-        "علي بن أبي طالب"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/علي_بن_أبي_طالب",
-      "verified": true,
-      "qid": "seerah-200-036"
-    },
-    {
-      "p": 200,
-      "topic": "أهل البيت",
-      "q": "من عمّ النبي الذي استُشهد في أحد؟",
-      "a": "حمزة بن عبد المطلب",
-      "alt": [
-        "حمزة"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/حمزة_بن_عبد_المطلب",
-      "verified": true,
-      "qid": "seerah-200-037"
-    },
-    {
-      "p": 200,
-      "topic": "أهل البيت",
-      "q": "من زوجة النبي ابنة أبي بكر؟",
-      "a": "عائشة",
-      "alt": [
-        "عائشة بنت أبي بكر"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/عائشة_بنت_أبي_بكر",
-      "verified": true,
-      "qid": "seerah-200-038"
-    },
-    {
-      "p": 200,
-      "topic": "أهل البيت",
-      "q": "من أكبر سِبطَي النبي من فاطمة؟",
-      "a": "الحسن",
-      "alt": [
-        "الحسن بن علي"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الحسن_بن_علي",
-      "verified": true,
-      "qid": "seerah-200-039"
-    },
-    {
-      "p": 200,
-      "topic": "الصحابة وألقابهم",
-      "q": "ما اللقب الذي اشتُهر به أبو بكر؟",
-      "a": "الصديق",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/أبو_بكر_الصديق",
-      "verified": true,
-      "qid": "seerah-200-040"
-    },
-    {
-      "p": 200,
-      "topic": "الصحابة وألقابهم",
-      "q": "ما لقب عمر بن الخطاب؟",
-      "a": "الفاروق",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/عمر_بن_الخطاب",
-      "verified": true,
-      "qid": "seerah-200-041"
-    },
-    {
-      "p": 200,
-      "topic": "الصحابة وألقابهم",
-      "q": "بأي لقب وصف النبي قائدَه خالدًا؟",
-      "a": "سيف الله المسلول",
-      "alt": [
-        "سيف الله"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/خالد_بن_الوليد",
-      "verified": true,
-      "qid": "seerah-200-042"
-    },
-    {
-      "p": 200,
-      "topic": "الصحابة وألقابهم",
-      "q": "ما لقب حمزة عمّ النبي؟",
-      "a": "أسد الله",
-      "alt": [
-        "أسد الله وأسد رسوله"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/حمزة_بن_عبد_المطلب",
-      "verified": true,
-      "qid": "seerah-200-043"
-    },
-    {
-      "p": 200,
-      "topic": "الصحابة وألقابهم",
-      "q": "من كان يؤذّن للنبي في المدينة؟",
+      "topic": "الصحابة",
+      "q": "من الصحابي الذي أمره النبي أن يقوم فينادي للصلاة عند بدء الأذان؟",
       "a": "بلال بن رباح",
       "alt": [
         "بلال"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/بلال_بن_رباح",
+      "sourceUrl": "https://sunnah.com/bukhari:604",
       "verified": true,
-      "qid": "seerah-200-044"
+      "qid": "seerah-200-906",
+      "difficultyTarget": 0.8
     },
     {
       "p": 200,
-      "topic": "الصحابة وألقابهم",
-      "q": "ما اللقب الذي عُرف به عثمان بن عفان؟",
-      "a": "ذو النورين",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/عثمان_بن_عفان",
-      "verified": true,
-      "qid": "seerah-200-045"
-    },
-    {
-      "p": 200,
-      "topic": "مواضع وأشياء",
-      "q": "ما اسم المسجد الذي بناه النبي في المدينة؟",
-      "a": "المسجد النبوي",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/المسجد_النبوي",
-      "verified": true,
-      "qid": "seerah-200-046"
-    },
-    {
-      "p": 200,
-      "topic": "مواضع وأشياء",
-      "q": "ما اسم ناقة النبي المشهورة؟",
-      "a": "القصواء",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/القصواء",
-      "verified": true,
-      "qid": "seerah-200-047"
-    },
-    {
-      "p": 200,
-      "topic": "مواضع وأشياء",
-      "q": "في أي مدينة توفّي النبي ودُفن؟",
-      "a": "المدينة المنورة",
+      "topic": "النشأة والأسرة",
+      "q": "من ابنة النبي التي قال عنها إنها بضعة منه؟",
+      "a": "فاطمة الزهراء",
       "alt": [
-        "المدينة"
+        "فاطمة",
+        "فاطمة بنت محمد"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/المدينة_المنورة",
+      "sourceUrl": "https://sunnah.com/bukhari:3714",
       "verified": true,
-      "qid": "seerah-200-048"
+      "qid": "seerah-200-907",
+      "difficultyTarget": 0.8
+    },
+    {
+      "p": 200,
+      "topic": "الحياة اليومية",
+      "q": "ما العمل الذي مارسه النبي لأهل مكة مقابل قراريط، بحسب حديثه؟",
+      "a": "رعي الغنم",
+      "alt": [
+        "رعاية الأغنام",
+        "رعي الأغنام"
+      ],
+      "sourceUrl": "https://sunnah.com/bukhari:2262",
+      "verified": true,
+      "qid": "seerah-200-908",
+      "difficultyTarget": 0.8
     },
     {
       "p": 400,
-      "topic": "النسب والمولد",
-      "q": "ما البطن الذي ينتمي إليه النبي من قريش؟",
+      "topic": "النشأة والأسرة",
+      "q": "إلى أي بطن من قريش ينتمي نسب النبي؟",
       "a": "بنو هاشم",
       "alt": [
-        "هاشم"
+        "بني هاشم",
+        "بنوهاشم"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/بنو_هاشم",
+      "sourceUrl": "https://sunnah.com/muslim:2276",
       "verified": true,
-      "qid": "seerah-400-001"
+      "qid": "seerah-400-901",
+      "difficultyTarget": 0.6
     },
     {
       "p": 400,
-      "topic": "النسب والمولد",
-      "q": "كم كان عمر النبي حين توفّيت أمه؟",
-      "a": "ست سنوات",
+      "topic": "بداية الدعوة",
+      "q": "كم كان عمر النبي عند بعثته، بحسب رواية ابن عباس في البخاري؟",
+      "a": "أربعون سنة",
       "alt": [
-        "6"
+        "40",
+        "أربعون",
+        "40 سنة"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/آمنة_بنت_وهب",
+      "sourceUrl": "https://sunnah.com/bukhari:3902",
       "verified": true,
-      "qid": "seerah-400-002"
+      "qid": "seerah-400-902",
+      "difficultyTarget": 0.6
     },
     {
       "p": 400,
-      "topic": "النسب والمولد",
-      "q": "ما كنية عمّ النبي الذي آذاه وأنزل الله فيه سورة؟",
-      "a": "أبو لهب",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/أبو_لهب",
-      "verified": true,
-      "qid": "seerah-400-003"
-    },
-    {
-      "p": 400,
-      "topic": "النسب والمولد",
-      "q": "ما اسم القبيلة التي أرضعت النبي في باديتها؟",
-      "a": "بنو سعد",
+      "topic": "الهجرة",
+      "q": "في أي غار مكث النبي وصاحبه ثلاث ليال خلال الهجرة؟",
+      "a": "غار ثور",
       "alt": [
-        "بنو سعد بن بكر"
+        "ثور"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/حليمة_السعدية",
+      "sourceUrl": "https://sunnah.com/bukhari:3905",
       "verified": true,
-      "qid": "seerah-400-004"
+      "qid": "seerah-400-903",
+      "difficultyTarget": 0.6
     },
     {
       "p": 400,
-      "topic": "النسب والمولد",
-      "q": "كم كان عمر النبي حين تزوّج خديجة؟",
-      "a": "خمس وعشرون سنة",
+      "topic": "المدينة",
+      "q": "ما المسجد الذي أسسه النبي عند نزوله في بني عمرو بن عوف أثناء الهجرة؟",
+      "a": "مسجد قباء",
       "alt": [
-        "25"
+        "قباء"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/خديجة_بنت_خويلد",
+      "sourceUrl": "https://sunnah.com/bukhari:3906",
       "verified": true,
-      "qid": "seerah-400-005"
-    },
-    {
-      "p": 400,
-      "topic": "النسب والمولد",
-      "q": "ما البئر التي أعاد جدّ النبي حفرها في مكة؟",
-      "a": "زمزم",
-      "alt": [
-        "بئر زمزم"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/عبد_المطلب_بن_هاشم",
-      "verified": true,
-      "qid": "seerah-400-006"
-    },
-    {
-      "p": 400,
-      "topic": "النسب والمولد",
-      "q": "ما كنية النبي محمد؟",
-      "a": "أبو القاسم",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/محمد",
-      "verified": true,
-      "qid": "seerah-400-007"
-    },
-    {
-      "p": 400,
-      "topic": "مكة والبعثة",
-      "q": "بأي اسم عُرف العام الذي فقد فيه النبي زوجته وعمّه؟",
-      "a": "عام الحزن",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/عام_الحزن",
-      "verified": true,
-      "qid": "seerah-400-008"
-    },
-    {
-      "p": 400,
-      "topic": "مكة والبعثة",
-      "q": "ما اسم الدار التي اجتمع فيها النبي بأصحابه سرًّا في أول الدعوة؟",
-      "a": "دار الأرقم",
-      "alt": [
-        "الأرقم"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/دار_الأرقم",
-      "verified": true,
-      "qid": "seerah-400-009"
-    },
-    {
-      "p": 400,
-      "topic": "مكة والبعثة",
-      "q": "ما اسم الدابة التي رَكِبها النبي ليلة الإسراء؟",
-      "a": "البراق",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/البراق",
-      "verified": true,
-      "qid": "seerah-400-010"
-    },
-    {
-      "p": 400,
-      "topic": "الهجرة وقباء",
-      "q": "أين اجتمعت قريش تدبّر أمر النبي قبل هجرته؟",
-      "a": "دار الندوة",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/دار_الندوة",
-      "verified": true,
-      "qid": "seerah-400-011"
-    },
-    {
-      "p": 400,
-      "topic": "مكة والبعثة",
-      "q": "ما المدينة التي قصدها النبي يطلب نصرة ثقيف؟",
-      "a": "الطائف",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/غزوة_الطائف",
-      "verified": true,
-      "qid": "seerah-400-012"
-    },
-    {
-      "p": 400,
-      "topic": "مكة والبعثة",
-      "q": "إلى أين كان المسلمون يتوجّهون في صلاتهم قبل تحويل القبلة؟",
-      "a": "بيت المقدس",
-      "alt": [
-        "المسجد الأقصى",
-        "القدس"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/تحويل_القبلة",
-      "verified": true,
-      "qid": "seerah-400-013"
-    },
-    {
-      "p": 400,
-      "topic": "الهجرة وقباء",
-      "q": "من الصحابي الذي نزل النبي في بيته حين قدم المدينة؟",
-      "a": "أبو أيوب الأنصاري",
-      "alt": [
-        "أبو أيوب"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/أبو_أيوب_الأنصاري",
-      "verified": true,
-      "qid": "seerah-400-014"
-    },
-    {
-      "p": 400,
-      "topic": "الهجرة وقباء",
-      "q": "ما اسم العهد الذي آخى به النبي بين المهاجرين وأهل المدينة؟",
-      "a": "المؤاخاة",
-      "alt": [
-        "المؤاخاة بين المهاجرين والأنصار"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/المؤاخاة_بين_المهاجرين_والأنصار",
-      "verified": true,
-      "qid": "seerah-400-015"
-    },
-    {
-      "p": 400,
-      "topic": "الهجرة وقباء",
-      "q": "ما القبيلتان اللتان كانتا تسكنان المدينة قبل قدوم النبي؟",
-      "a": "الأوس والخزرج",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الأنصار",
-      "verified": true,
-      "qid": "seerah-400-016"
-    },
-    {
-      "p": 400,
-      "topic": "الهجرة وقباء",
-      "q": "كم سنة أقام النبي في المدينة بعد قدومه إليها؟",
-      "a": "عشر سنوات",
-      "alt": [
-        "10"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الهجرة_النبوية",
-      "verified": true,
-      "qid": "seerah-400-017"
-    },
-    {
-      "p": 400,
-      "topic": "الهجرة وقباء",
-      "q": "من ابنة أبي بكر التي كانت تحمل الطعام إلى الغار؟",
-      "a": "أسماء",
-      "alt": [
-        "أسماء بنت أبي بكر",
-        "ذات النطاقين"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/أسماء_بنت_أبي_بكر",
-      "verified": true,
-      "qid": "seerah-400-018"
-    },
-    {
-      "p": 400,
-      "topic": "الهجرة وقباء",
-      "q": "كم كان عمر النبي يوم خرج مهاجرًا من مكة؟",
-      "a": "ثلاث وخمسون سنة",
-      "alt": [
-        "53"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الهجرة_النبوية",
-      "verified": true,
-      "qid": "seerah-400-019"
+      "qid": "seerah-400-904",
+      "difficultyTarget": 0.6
     },
     {
       "p": 400,
       "topic": "الغزوات",
-      "q": "من قائد قريش الذي قُتل في غزوة بدر؟",
-      "a": "أبو جهل",
+      "q": "في أي غزوة ترك بعض الرماة مواقعهم بحثًا عن الغنائم؟",
+      "a": "أحد",
       "alt": [
-        "عمرو بن هشام"
+        "غزوة أحد"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/أبو_جهل",
+      "sourceUrl": "https://sunnah.com/bukhari:3039",
       "verified": true,
-      "qid": "seerah-400-020"
+      "qid": "seerah-400-905",
+      "difficultyTarget": 0.6
     },
     {
       "p": 400,
-      "topic": "الغزوات",
-      "q": "من الصحابي الذي أشار بحفر الخندق حول المدينة؟",
-      "a": "سلمان الفارسي",
-      "alt": [
-        "سلمان"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/سلمان_الفارسي",
-      "verified": true,
-      "qid": "seerah-400-021"
-    },
-    {
-      "p": 400,
-      "topic": "الغزوات",
-      "q": "ما آخر غزوة خرج إليها النبي بنفسه؟",
-      "a": "تبوك",
-      "alt": [
-        "غزوة تبوك",
-        "غزوة العسرة"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/غزوة_تبوك",
-      "verified": true,
-      "qid": "seerah-400-022"
-    },
-    {
-      "p": 400,
-      "topic": "الغزوات",
-      "q": "من الصحابي الذي تولّى قيادة الجيش بعد استشهاد الأمراء الثلاثة؟",
-      "a": "خالد بن الوليد",
-      "alt": [
-        "خالد"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/معركة_مؤتة",
-      "verified": true,
-      "qid": "seerah-400-023"
-    },
-    {
-      "p": 400,
-      "topic": "الغزوات",
-      "q": "ما اسم أول معركة خاضها المسلمون خارج جزيرة العرب؟",
-      "a": "مؤتة",
-      "alt": [
-        "غزوة مؤتة"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/معركة_مؤتة",
-      "verified": true,
-      "qid": "seerah-400-024"
-    },
-    {
-      "p": 400,
-      "topic": "الغزوات",
-      "q": "ما اسم القبيلة التي حاربت المسلمين بقيادة مالك بن عوف؟",
-      "a": "هوازن",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/غزوة_حنين",
-      "verified": true,
-      "qid": "seerah-400-025"
-    },
-    {
-      "p": 400,
-      "topic": "الغزوات",
-      "q": "من الصحابي الذي وقى النبيَّ بيده يوم أحد فشُلّت؟",
-      "a": "طلحة بن عبيد الله",
-      "alt": [
-        "طلحة"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/طلحة_بن_عبيد_الله",
-      "verified": true,
-      "qid": "seerah-400-026"
-    },
-    {
-      "p": 400,
-      "topic": "عهود ووفود",
-      "q": "من ملك الروم الذي أرسل إليه النبي كتابًا يدعوه إلى الإسلام؟",
-      "a": "هرقل",
-      "alt": [
-        "هرقل ملك الروم"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/هرقل",
-      "verified": true,
-      "qid": "seerah-400-027"
-    },
-    {
-      "p": 400,
-      "topic": "عهود ووفود",
-      "q": "من الملك الذي آوى المسلمين المهاجرين إلى بلاده؟",
-      "a": "النجاشي",
-      "alt": [
-        "أصحمة"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/أصحمة_بن_أبجر",
-      "verified": true,
-      "qid": "seerah-400-028"
-    },
-    {
-      "p": 400,
-      "topic": "عهود ووفود",
-      "q": "كم سنة نصّت هدنة الحديبية على وضع الحرب بين الطرفين؟",
-      "a": "عشر سنين",
-      "alt": [
-        "10"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/صلح_الحديبية",
-      "verified": true,
-      "qid": "seerah-400-029"
-    },
-    {
-      "p": 400,
-      "topic": "عهود ووفود",
-      "q": "ما اسم البيعة التي بايع فيها الصحابة النبي تحت الشجرة؟",
-      "a": "بيعة الرضوان",
-      "alt": [
-        "الرضوان"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/بيعة_الرضوان",
-      "verified": true,
-      "qid": "seerah-400-030"
-    },
-    {
-      "p": 400,
-      "topic": "عهود ووفود",
-      "q": "إلى أي ملك من ملوك الفرس أرسل النبي كتابًا؟",
-      "a": "كسرى",
-      "alt": [
-        "كسرى أبرويز"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/رسائل_النبي_محمد_إلى_الملوك_والأمراء",
-      "verified": true,
-      "qid": "seerah-400-031"
-    },
-    {
-      "p": 400,
-      "topic": "عهود ووفود",
-      "q": "من عظيم مصر الذي أهدى مارية إلى النبي؟",
-      "a": "المقوقس",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/المقوقس",
-      "verified": true,
-      "qid": "seerah-400-032"
-    },
-    {
-      "p": 400,
-      "topic": "أهل البيت",
-      "q": "من ابن النبي الذي وُلد له في المدينة؟",
-      "a": "إبراهيم",
-      "alt": [
-        "إبراهيم ابن رسول الله"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/إبراهيم_بن_محمد",
-      "verified": true,
-      "qid": "seerah-400-033"
-    },
-    {
-      "p": 400,
-      "topic": "أهل البيت",
-      "q": "من زوجة النبي ابنة عمر؟",
-      "a": "حفصة",
-      "alt": [
-        "حفصة بنت عمر"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/حفصة_بنت_عمر",
-      "verified": true,
-      "qid": "seerah-400-034"
-    },
-    {
-      "p": 400,
-      "topic": "أهل البيت",
-      "q": "من الصحابي الذي كان يُنادى قبل الإسلام باسم «زيد بن محمد»؟",
-      "a": "زيد بن حارثة",
-      "alt": [
-        "زيد"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/زيد_بن_حارثة",
-      "verified": true,
-      "qid": "seerah-400-035"
-    },
-    {
-      "p": 400,
-      "topic": "أهل البيت",
-      "q": "من ابن عمّ النبي الذي لُقّب بذي الجناحين؟",
-      "a": "جعفر بن أبي طالب",
-      "alt": [
-        "جعفر",
-        "جعفر الطيار"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/جعفر_بن_أبي_طالب",
-      "verified": true,
-      "qid": "seerah-400-036"
-    },
-    {
-      "p": 400,
-      "topic": "أهل البيت",
-      "q": "من السبط الأصغر للنبي من ابنته فاطمة؟",
-      "a": "الحسين",
-      "alt": [
-        "الحسين بن علي"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الحسين_بن_علي",
-      "verified": true,
-      "qid": "seerah-400-037"
-    },
-    {
-      "p": 400,
-      "topic": "أهل البيت",
-      "q": "من ابنة النبي التي هاجرت مع زوجها إلى الحبشة؟",
-      "a": "رقية",
-      "alt": [
-        "رقية بنت محمد"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/رقية_بنت_محمد",
-      "verified": true,
-      "qid": "seerah-400-038"
-    },
-    {
-      "p": 400,
-      "topic": "الصحابة وألقابهم",
-      "q": "من شاعر النبي الذي كان يردّ على شعراء قريش؟",
-      "a": "حسان بن ثابت",
-      "alt": [
-        "حسان"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/حسان_بن_ثابت",
-      "verified": true,
-      "qid": "seerah-400-039"
-    },
-    {
-      "p": 400,
-      "topic": "الصحابة وألقابهم",
-      "q": "من الغلام الذي خدم النبي في المدينة ولازمه منذ صغره؟",
+      "topic": "الصحابة",
+      "q": "من الصحابي الذي روى أنه خدم النبي عشر سنين دون أن يقول له أف؟",
       "a": "أنس بن مالك",
       "alt": [
         "أنس"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/أنس_بن_مالك",
+      "sourceUrl": "https://sunnah.com/bukhari:6038",
       "verified": true,
-      "qid": "seerah-400-040"
+      "qid": "seerah-400-906",
+      "difficultyTarget": 0.6
     },
     {
       "p": 400,
-      "topic": "الصحابة وألقابهم",
-      "q": "من الصحابي الذي لقّبه النبي بأمين هذه الأمة؟",
-      "a": "أبو عبيدة بن الجراح",
+      "topic": "بداية الدعوة",
+      "q": "ما اسم الدابة التي ركبها النبي ليلة الإسراء؟",
+      "a": "البراق",
       "alt": [
-        "أبو عبيدة"
+        "براق"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/أبو_عبيدة_بن_الجراح",
+      "sourceUrl": "https://sunnah.com/muslim:162a",
       "verified": true,
-      "qid": "seerah-400-041"
+      "qid": "seerah-400-907",
+      "difficultyTarget": 0.6
     },
     {
       "p": 400,
-      "topic": "الصحابة وألقابهم",
-      "q": "من الصحابي الذي لُقّب بحواريّ الرسول؟",
-      "a": "الزبير بن العوام",
+      "topic": "النشأة والأسرة",
+      "q": "بأي كنية اشتهر النبي محمد؟",
+      "a": "أبو القاسم",
       "alt": [
-        "الزبير"
+        "أبا القاسم"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الزبير_بن_العوام",
+      "sourceUrl": "https://sunnah.com/bukhari:3537",
       "verified": true,
-      "qid": "seerah-400-042"
-    },
-    {
-      "p": 400,
-      "topic": "الصحابة وألقابهم",
-      "q": "من الصحابي الذي بعثه النبي يعلّم أهل المدينة قبل الهجرة؟",
-      "a": "مصعب بن عمير",
-      "alt": [
-        "مصعب"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/مصعب_بن_عمير",
-      "verified": true,
-      "qid": "seerah-400-043"
-    },
-    {
-      "p": 400,
-      "topic": "الصحابة وألقابهم",
-      "q": "من الشاب الذي أمّره النبي على جيش إلى الشام؟",
-      "a": "أسامة بن زيد",
-      "alt": [
-        "أسامة"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/أسامة_بن_زيد",
-      "verified": true,
-      "qid": "seerah-400-044"
-    },
-    {
-      "p": 400,
-      "topic": "مواضع وأشياء",
-      "q": "على أي جبل يقع الغار الذي نزل فيه الوحي؟",
-      "a": "جبل النور",
-      "alt": [
-        "النور"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/غار_حراء",
-      "verified": true,
-      "qid": "seerah-400-045"
-    },
-    {
-      "p": 400,
-      "topic": "مواضع وأشياء",
-      "q": "ما اسم المقبرة التي دُفن فيها أهل المدينة في عهد النبي؟",
-      "a": "البقيع",
-      "alt": [
-        "بقيع الغرقد"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/البقيع",
-      "verified": true,
-      "qid": "seerah-400-046"
-    },
-    {
-      "p": 400,
-      "topic": "مواضع وأشياء",
-      "q": "ما الاسم الذي يُطلق على العلامة التي كانت بين كتفَي النبي؟",
-      "a": "خاتم النبوة",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/خاتم_النبوة",
-      "verified": true,
-      "qid": "seerah-400-047"
-    },
-    {
-      "p": 400,
-      "topic": "مواضع وأشياء",
-      "q": "ما اسم المسجد الذي تحوّلت فيه القبلة أثناء الصلاة؟",
-      "a": "مسجد القبلتين",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/مسجد_القبلتين",
-      "verified": true,
-      "qid": "seerah-400-048"
+      "qid": "seerah-400-908",
+      "difficultyTarget": 0.6
     },
     {
       "p": 600,
-      "topic": "النسب والمولد",
-      "q": "من قائد الحملة التي قصدت هدم الكعبة عام مولد النبي؟",
-      "a": "أبرهة الأشرم",
-      "alt": [
-        "أبرهة"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/عام_الفيل",
-      "verified": true,
-      "qid": "seerah-600-001"
-    },
-    {
-      "p": 600,
-      "topic": "النسب والمولد",
-      "q": "أين دُفنت آمنة أمّ النبي؟",
-      "a": "الأبواء",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/آمنة_بنت_وهب",
-      "verified": true,
-      "qid": "seerah-600-002"
-    },
-    {
-      "p": 600,
-      "topic": "النسب والمولد",
-      "q": "ما اسم قبيلة أمّ النبي في قريش؟",
-      "a": "بنو زهرة",
-      "alt": [
-        "زهرة"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/آمنة_بنت_وهب",
-      "verified": true,
-      "qid": "seerah-600-003"
-    },
-    {
-      "p": 600,
-      "topic": "النسب والمولد",
-      "q": "كم كان عمر النبي حين توفّي جدّه؟",
-      "a": "ثماني سنوات",
-      "alt": [
-        "8"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/محمد",
-      "verified": true,
-      "qid": "seerah-600-004"
-    },
-    {
-      "p": 600,
-      "topic": "النسب والمولد",
-      "q": "من أخت النبي من الرضاعة؟",
-      "a": "الشيماء",
-      "alt": [
-        "حذافة"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الشيماء_بنت_الحارث",
-      "verified": true,
-      "qid": "seerah-600-005"
-    },
-    {
-      "p": 600,
-      "topic": "النسب والمولد",
-      "q": "من أخوال جدّ النبي الذين نشأ بينهم قبل قدومه مكة؟",
-      "a": "بنو النجار",
-      "alt": [
-        "النجار"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/عبد_المطلب_بن_هاشم",
-      "verified": true,
-      "qid": "seerah-600-006"
-    },
-    {
-      "p": 600,
-      "topic": "مكة والبعثة",
-      "q": "من ابن عمّ خديجة الذي قال للنبي إن ما جاءه هو الناموس؟",
+      "topic": "بداية الدعوة",
+      "q": "من ابن عم خديجة الذي استمع إلى خبر لقاء النبي بملك الوحي؟",
       "a": "ورقة بن نوفل",
       "alt": [
         "ورقة"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/ورقة_بن_نوفل",
+      "sourceUrl": "https://sunnah.com/bukhari:3",
       "verified": true,
-      "qid": "seerah-600-007"
+      "qid": "seerah-600-901",
+      "difficultyTarget": 0.4
     },
     {
       "p": 600,
-      "topic": "مكة والبعثة",
-      "q": "ما اسم الشِّعب الذي حُوصر فيه النبي وأهله بمكة؟",
-      "a": "شعب أبي طالب",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/أبو_طالب_بن_عبد_المطلب",
-      "verified": true,
-      "qid": "seerah-600-008"
-    },
-    {
-      "p": 600,
-      "topic": "مكة والبعثة",
-      "q": "من سيّد قريش الذي أجار النبيَّ لمّا رجع من ديار ثقيف؟",
-      "a": "المطعم بن عدي",
+      "topic": "الهجرة",
+      "q": "من التي شقت نطاقها لتربط به جراب زاد الهجرة؟",
+      "a": "أسماء بنت أبي بكر",
       "alt": [
-        "المطعم"
+        "أسماء",
+        "ذات النطاقين"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/المطعم_بن_عدي",
+      "sourceUrl": "https://sunnah.com/bukhari:3905",
       "verified": true,
-      "qid": "seerah-600-009"
+      "qid": "seerah-600-902",
+      "difficultyTarget": 0.4
     },
     {
       "p": 600,
-      "topic": "مكة والبعثة",
-      "q": "من أول شهيدة في الإسلام؟",
-      "a": "سمية",
+      "topic": "الصحابة",
+      "q": "من كاتب الوحي الذي كلّفه الخليفة الأول بجمع القرآن؟",
+      "a": "زيد بن ثابت",
       "alt": [
-        "سمية بنت خياط"
+        "زيد"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/سمية_بنت_خياط",
+      "sourceUrl": "https://sunnah.com/bukhari:4986",
       "verified": true,
-      "qid": "seerah-600-010"
-    },
-    {
-      "p": 600,
-      "topic": "مكة والبعثة",
-      "q": "كم سنة بقيت الدعوة سرّية في مكة قبل الجهر بها؟",
-      "a": "ثلاث سنوات",
-      "alt": [
-        "3"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/محمد",
-      "verified": true,
-      "qid": "seerah-600-011"
-    },
-    {
-      "p": 600,
-      "topic": "مكة والبعثة",
-      "q": "ما اسم صنم قريش الأشهر الذي كان عند الكعبة؟",
-      "a": "هبل",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/هبل",
-      "verified": true,
-      "qid": "seerah-600-012"
-    },
-    {
-      "p": 600,
-      "topic": "الهجرة وقباء",
-      "q": "من الفارس الذي لحق بالنبي في طريق هجرته فساخت قوائم فرسه؟",
-      "a": "سراقة بن مالك",
-      "alt": [
-        "سراقة"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/سراقة_بن_مالك",
-      "verified": true,
-      "qid": "seerah-600-013"
-    },
-    {
-      "p": 600,
-      "topic": "الهجرة وقباء",
-      "q": "كم ليلة مكث النبي وصاحبه في الغار؟",
-      "a": "ثلاث ليال",
-      "alt": [
-        "3"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الهجرة_النبوية",
-      "verified": true,
-      "qid": "seerah-600-014"
-    },
-    {
-      "p": 600,
-      "topic": "الهجرة وقباء",
-      "q": "ما اسم الوثيقة التي نظّم بها النبي شؤون أهل المدينة؟",
-      "a": "صحيفة المدينة",
-      "alt": [
-        "وثيقة المدينة",
-        "دستور المدينة"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/صحيفة_المدينة",
-      "verified": true,
-      "qid": "seerah-600-015"
-    },
-    {
-      "p": 600,
-      "topic": "الهجرة وقباء",
-      "q": "ماذا تخلّف عليٌّ في مكة ليؤدّيه للناس بعد خروج النبي؟",
-      "a": "الودائع",
-      "alt": [
-        "الأمانات"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الهجرة_النبوية",
-      "verified": true,
-      "qid": "seerah-600-016"
-    },
-    {
-      "p": 600,
-      "topic": "الهجرة وقباء",
-      "q": "من مولى أبي بكر الذي كان يرعى الغنم ويأتي الغار مساءً؟",
-      "a": "عامر بن فهيرة",
-      "alt": [
-        "عامر"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/عامر_بن_فهيرة",
-      "verified": true,
-      "qid": "seerah-600-017"
-    },
-    {
-      "p": 600,
-      "topic": "الهجرة وقباء",
-      "q": "ما اسم المرأة التي نزل النبي بخيمتها في طريق هجرته؟",
-      "a": "أم معبد",
-      "alt": [
-        "عاتكة"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/أم_معبد",
-      "verified": true,
-      "qid": "seerah-600-018"
+      "qid": "seerah-600-903",
+      "difficultyTarget": 0.4
     },
     {
       "p": 600,
       "topic": "الغزوات",
-      "q": "ما اسم التلّ الذي أمر النبي الرماة بالثبات عليه في أحد؟",
-      "a": "جبل الرماة",
+      "q": "من أخذ راية المسلمين في مؤتة بعد استشهاد الأمراء الثلاثة؟",
+      "a": "خالد بن الوليد",
       "alt": [
-        "عينين"
+        "خالد"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/جبل_الرماة",
+      "sourceUrl": "https://sunnah.com/bukhari:4262",
       "verified": true,
-      "qid": "seerah-600-019"
+      "qid": "seerah-600-904",
+      "difficultyTarget": 0.4
     },
     {
       "p": 600,
-      "topic": "الغزوات",
-      "q": "كم كان عدد المسلمين في غزوة بدر؟",
-      "a": "ثلاثمئة وبضعة عشر",
-      "alt": [
-        "ثلاثمئة وثلاثة عشر",
-        "ثلاثمئة وأربعة عشر",
-        "313",
-        "314"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/غزوة_بدر",
-      "verified": true,
-      "qid": "seerah-600-020"
-    },
-    {
-      "p": 600,
-      "topic": "الغزوات",
-      "q": "كم بلغ جيش المسلمين يوم دخولهم مكة فاتحين؟",
-      "a": "عشرة آلاف",
-      "alt": [
-        "10000"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/فتح_مكة",
-      "verified": true,
-      "qid": "seerah-600-021"
-    },
-    {
-      "p": 600,
-      "topic": "الغزوات",
-      "q": "في أي شهر وقعت غزوة بدر الكبرى؟",
-      "a": "رمضان",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/غزوة_بدر",
-      "verified": true,
-      "qid": "seerah-600-022"
-    },
-    {
-      "p": 600,
-      "topic": "الغزوات",
-      "q": "من الطائفة اليهودية التي حاصرها النبي بعد انصراف المتحالفين؟",
-      "a": "بنو قريظة",
-      "alt": [
-        "قريظة"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/غزوة_بني_قريظة",
-      "verified": true,
-      "qid": "seerah-600-023"
-    },
-    {
-      "p": 600,
-      "topic": "الغزوات",
-      "q": "من الصحابي الذي حُكّم في أمر بني قريظة؟",
-      "a": "سعد بن معاذ",
-      "alt": [
-        "سعد"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/سعد_بن_معاذ",
-      "verified": true,
-      "qid": "seerah-600-024"
-    },
-    {
-      "p": 600,
-      "topic": "عهود ووفود",
-      "q": "ماذا تُسمّى السنة التي توافدت فيها قبائل العرب على النبي؟",
-      "a": "عام الوفود",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/عام_الوفود",
-      "verified": true,
-      "qid": "seerah-600-025"
-    },
-    {
-      "p": 600,
-      "topic": "عهود ووفود",
-      "q": "ما اسم العمرة التي أدّاها النبي في العام التالي للصلح؟",
-      "a": "عمرة القضاء",
-      "alt": [
-        "عمرة القضية"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/عمرة_القضاء",
-      "verified": true,
-      "qid": "seerah-600-026"
-    },
-    {
-      "p": 600,
-      "topic": "عهود ووفود",
-      "q": "من أي بلدة جاء الوفد النصراني الذي قدم على النبي؟",
-      "a": "نجران",
-      "alt": [
-        "وفد نجران"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/عام_الوفود",
-      "verified": true,
-      "qid": "seerah-600-027"
-    },
-    {
-      "p": 600,
-      "topic": "عهود ووفود",
-      "q": "من مفاوض قريش الذي كُتبت معه وثيقة الصلح؟",
+      "topic": "العهود والوفود",
+      "q": "من مفاوض قريش الذي اتفق مع النبي على نص صلح الحديبية؟",
       "a": "سهيل بن عمرو",
       "alt": [
         "سهيل"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/صلح_الحديبية",
+      "sourceUrl": "https://sunnah.com/bukhari:2731",
       "verified": true,
-      "qid": "seerah-600-028"
+      "qid": "seerah-600-905",
+      "difficultyTarget": 0.4
     },
     {
       "p": 600,
-      "topic": "عهود ووفود",
-      "q": "في أي شهر حرام خرج النبي معتمرًا فصُدّ عن البيت؟",
-      "a": "ذو القعدة",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/صلح_الحديبية",
-      "verified": true,
-      "qid": "seerah-600-029"
-    },
-    {
-      "p": 600,
-      "topic": "عهود ووفود",
-      "q": "كم كان عدد الصحابة الذين بايعوا النبي تحت الشجرة؟",
-      "a": "ألف وأربعمئة",
+      "topic": "الصحابة",
+      "q": "من الشاعر الذي دعا له النبي أن يؤيده الله بروح القدس؟",
+      "a": "حسان بن ثابت",
       "alt": [
-        "1400"
+        "حسان"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/بيعة_الرضوان",
+      "sourceUrl": "https://sunnah.com/bukhari:3212",
       "verified": true,
-      "qid": "seerah-600-030"
+      "qid": "seerah-600-906",
+      "difficultyTarget": 0.4
     },
     {
       "p": 600,
-      "topic": "أهل البيت",
-      "q": "من عمّ النبي الذي كانت إليه سقاية الحاجّ؟",
-      "a": "العباس",
+      "topic": "الحياة اليومية",
+      "q": "من أي معدن كان خاتم النبي المنقوش عليه «محمد رسول الله» في رواية أنس؟",
+      "a": "الفضة",
       "alt": [
-        "العباس بن عبد المطلب"
+        "فضة"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/العباس_بن_عبد_المطلب",
+      "sourceUrl": "https://sunnah.com/bukhari:5877",
       "verified": true,
-      "qid": "seerah-600-031"
+      "qid": "seerah-600-907",
+      "difficultyTarget": 0.4
     },
     {
       "p": 600,
-      "topic": "أهل البيت",
-      "q": "من حاضنة النبي التي ورثها عن أبيه ثم أعتقها؟",
-      "a": "أم أيمن",
+      "topic": "الحياة اليومية",
+      "q": "ما اسم ناقة النبي التي بركت أثناء مسيره إلى الحديبية؟",
+      "a": "القصواء",
       "alt": [
-        "بركة"
+        "قصواء"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/أم_أيمن",
+      "sourceUrl": "https://sunnah.com/bukhari:2731",
       "verified": true,
-      "qid": "seerah-600-032"
-    },
-    {
-      "p": 600,
-      "topic": "أهل البيت",
-      "q": "من أكبر أبناء النبي من خديجة؟",
-      "a": "القاسم",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/القاسم_بن_محمد",
-      "verified": true,
-      "qid": "seerah-600-033"
-    },
-    {
-      "p": 600,
-      "topic": "أهل البيت",
-      "q": "من زوجة النبي ابنة حُيَيّ بن أخطب؟",
-      "a": "صفية",
-      "alt": [
-        "صفية بنت حيي"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/صفية_بنت_حيي",
-      "verified": true,
-      "qid": "seerah-600-034"
-    },
-    {
-      "p": 600,
-      "topic": "أهل البيت",
-      "q": "من زوجة النبي التي لُقّبت بأمّ المساكين؟",
-      "a": "زينب بنت خزيمة",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/زينب_بنت_خزيمة",
-      "verified": true,
-      "qid": "seerah-600-035"
-    },
-    {
-      "p": 600,
-      "topic": "أهل البيت",
-      "q": "من زوجة النبي التي تزوّجها بعد وفاة خديجة؟",
-      "a": "سودة بنت زمعة",
-      "alt": [
-        "سودة"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/سودة_بنت_زمعة",
-      "verified": true,
-      "qid": "seerah-600-036"
-    },
-    {
-      "p": 600,
-      "topic": "الصحابة وألقابهم",
-      "q": "ما اللقب الذي عُرف به فقراء المهاجرين الذين سكنوا المسجد؟",
-      "a": "أهل الصفة",
-      "alt": [
-        "الصفة"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الصفة_(المسجد_النبوي)",
-      "verified": true,
-      "qid": "seerah-600-037"
-    },
-    {
-      "p": 600,
-      "topic": "الصحابة وألقابهم",
-      "q": "من المؤذّن الأعمى الذي كان يؤذّن مع بلال في المدينة؟",
-      "a": "ابن أم مكتوم",
-      "alt": [
-        "عبد الله بن أم مكتوم"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/عبد_الله_بن_أم_مكتوم",
-      "verified": true,
-      "qid": "seerah-600-038"
-    },
-    {
-      "p": 600,
-      "topic": "الصحابة وألقابهم",
-      "q": "من أول من جهر بالقرآن أمام قريش في مكة؟",
-      "a": "عبد الله بن مسعود",
-      "alt": [
-        "ابن مسعود"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/عبد_الله_بن_مسعود",
-      "verified": true,
-      "qid": "seerah-600-039"
-    },
-    {
-      "p": 600,
-      "topic": "الصحابة وألقابهم",
-      "q": "من الصحابي الذي بعثه النبي إلى اليمن معلّمًا وقاضيًا؟",
-      "a": "معاذ بن جبل",
-      "alt": [
-        "معاذ"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/معاذ_بن_جبل",
-      "verified": true,
-      "qid": "seerah-600-040"
-    },
-    {
-      "p": 600,
-      "topic": "الصحابة وألقابهم",
-      "q": "من سيد قريش الذي قال النبي: من دخل داره فهو آمن؟",
-      "a": "أبو سفيان",
-      "alt": [
-        "أبو سفيان بن حرب"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/فتح_مكة",
-      "verified": true,
-      "qid": "seerah-600-041"
-    },
-    {
-      "p": 600,
-      "topic": "الصحابة وألقابهم",
-      "q": "من الصحابي الشابّ الذي كان يكتب الوحي للنبي في المدينة؟",
-      "a": "زيد بن ثابت",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/زيد_بن_ثابت",
-      "verified": true,
-      "qid": "seerah-600-042"
-    },
-    {
-      "p": 600,
-      "topic": "مواضع وأشياء",
-      "q": "ما الاسم الذي وُصف به يوم بدر في القرآن؟",
-      "a": "يوم الفرقان",
-      "alt": [
-        "الفرقان"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/غزوة_بدر",
-      "verified": true,
-      "qid": "seerah-600-043"
-    },
-    {
-      "p": 600,
-      "topic": "مواضع وأشياء",
-      "q": "بأي اسم سُمّيت مدينة النبي في الحديث الشريف؟",
-      "a": "طابة",
-      "alt": [
-        "طيبة"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/المدينة_المنورة",
-      "verified": true,
-      "qid": "seerah-600-044"
-    },
-    {
-      "p": 600,
-      "topic": "مواضع وأشياء",
-      "q": "مِمّ كان سقف المسجد الذي بناه النبي في المدينة؟",
-      "a": "جريد النخل",
-      "alt": [
-        "الجريد",
-        "سعف النخل"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/المسجد_النبوي",
-      "verified": true,
-      "qid": "seerah-600-045"
-    },
-    {
-      "p": 600,
-      "topic": "عهود ووفود",
-      "q": "ماذا صنع ملك الفرس بكتاب النبي حين وصله؟",
-      "a": "مزّقه",
-      "alt": [
-        "مزقه"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/محمد",
-      "verified": true,
-      "qid": "seerah-600-046"
-    },
-    {
-      "p": 600,
-      "topic": "مواضع وأشياء",
-      "q": "ما اسم بغلة النبي البيضاء؟",
-      "a": "دلدل",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/دلدل",
-      "verified": true,
-      "qid": "seerah-600-047"
-    },
-    {
-      "p": 600,
-      "topic": "مواضع وأشياء",
-      "q": "كم صنمًا كان حول الكعبة يوم الفتح؟",
-      "a": "ثلاثمئة وستون",
-      "alt": [
-        "360"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/فتح_مكة",
-      "verified": true,
-      "qid": "seerah-600-048"
+      "qid": "seerah-600-908",
+      "difficultyTarget": 0.4
     },
     {
       "p": 800,
-      "topic": "النسب والمولد",
-      "q": "ما اسم الفيل الذي كان في مقدمة جيش أبرهة؟",
-      "a": "محمود",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/عام_الفيل",
-      "verified": true,
-      "qid": "seerah-800-001"
-    },
-    {
-      "p": 800,
-      "topic": "النسب والمولد",
-      "q": "ما اسم الكنيسة التي بناها أبرهة في اليمن؟",
-      "a": "القليس",
-      "alt": [
-        "القُلَّيس"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/عام_الفيل",
-      "verified": true,
-      "qid": "seerah-800-002"
-    },
-    {
-      "p": 800,
-      "topic": "النسب والمولد",
-      "q": "ما اسم الحلف الذي شهده النبي في شبابه لنصرة المظلوم؟",
-      "a": "حلف الفضول",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/حلف_الفضول",
-      "verified": true,
-      "qid": "seerah-800-003"
-    },
-    {
-      "p": 800,
-      "topic": "النسب والمولد",
-      "q": "في دار أي رجل من قريش عُقد حلف نصرة المظلوم؟",
-      "a": "عبد الله بن جدعان",
-      "alt": [
-        "ابن جدعان"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/حلف_الفضول",
-      "verified": true,
-      "qid": "seerah-800-004"
-    },
-    {
-      "p": 800,
-      "topic": "النسب والمولد",
-      "q": "من الجدّ الذي سنّ لقريش رحلتي الشتاء والصيف؟",
-      "a": "هاشم",
-      "alt": [
-        "هاشم بن عبد مناف"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/هاشم_بن_عبد_مناف",
-      "verified": true,
-      "qid": "seerah-800-005"
-    },
-    {
-      "p": 800,
-      "topic": "النسب والمولد",
-      "q": "من أول امرأة أرضعت النبي قبل حليمة؟",
+      "topic": "النشأة والأسرة",
+      "q": "من مرضعة النبي التي كانت مولاة لعمه أبي لهب؟",
       "a": "ثويبة",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/ثويبة",
-      "verified": true,
-      "qid": "seerah-800-006"
-    },
-    {
-      "p": 800,
-      "topic": "مكة والبعثة",
-      "q": "كم رجلًا خرج في الهجرة الأولى إلى الحبشة؟",
-      "a": "أحد عشر رجلًا",
       "alt": [
-        "11"
+        "ثويبة الأسلمية"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الهجرة_إلى_الحبشة",
+      "sourceUrl": "https://sunnah.com/bukhari:5101",
       "verified": true,
-      "qid": "seerah-800-007"
+      "qid": "seerah-800-901",
+      "difficultyTarget": 0.25
     },
     {
       "p": 800,
-      "topic": "مكة والبعثة",
-      "q": "من أمير المسلمين في هجرتهم الأولى إلى الحبشة؟",
-      "a": "عثمان بن مظعون",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الهجرة_إلى_الحبشة",
-      "verified": true,
-      "qid": "seerah-800-008"
-    },
-    {
-      "p": 800,
-      "topic": "مكة والبعثة",
-      "q": "على سفح أي جبل تقع الدار التي كان يجتمع فيها النبي سرًّا؟",
-      "a": "الصفا",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/دار_الأرقم",
-      "verified": true,
-      "qid": "seerah-800-009"
-    },
-    {
-      "p": 800,
-      "topic": "مكة والبعثة",
-      "q": "من زعيم قريش الذي قال عن القرآن: إن له لحلاوة وإن عليه لطلاوة؟",
-      "a": "الوليد بن المغيرة",
+      "topic": "بداية الدعوة",
+      "q": "بأي صورة بدأ الوحي للنبي قبل لقاء الملك، بحسب رواية عائشة؟",
+      "a": "الرؤيا الصالحة",
       "alt": [
-        "الوليد"
+        "الرؤيا الصادقة",
+        "الأحلام الصادقة"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الوليد_بن_المغيرة",
+      "sourceUrl": "https://sunnah.com/bukhari:3",
       "verified": true,
-      "qid": "seerah-800-010"
+      "qid": "seerah-800-902",
+      "difficultyTarget": 0.25
     },
     {
       "p": 800,
-      "topic": "مكة والبعثة",
-      "q": "ما اسم الغلام النصراني الذي قدّم عنبًا للنبي في بستان؟",
-      "a": "عداس",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/عداس",
-      "verified": true,
-      "qid": "seerah-800-011"
-    },
-    {
-      "p": 800,
-      "topic": "مكة والبعثة",
-      "q": "في أي شهر خرج المسلمون هجرتهم الأولى من مكة؟",
-      "a": "رجب",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الهجرة_إلى_الحبشة",
-      "verified": true,
-      "qid": "seerah-800-012"
-    },
-    {
-      "p": 800,
-      "topic": "الهجرة وقباء",
-      "q": "من الرجل الذي استأجره النبي دليلًا في طريق هجرته؟",
-      "a": "عبد الله بن أريقط",
+      "topic": "الهجرة",
+      "q": "من مولى رفيق الهجرة الذي كان يأتي بالغنم إلى الغار ليلًا؟",
+      "a": "عامر بن فهيرة",
       "alt": [
-        "ابن أريقط"
+        "عامر"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الهجرة_النبوية",
+      "sourceUrl": "https://sunnah.com/bukhari:3905",
       "verified": true,
-      "qid": "seerah-800-013"
+      "qid": "seerah-800-903",
+      "difficultyTarget": 0.25
     },
     {
       "p": 800,
-      "topic": "الهجرة وقباء",
-      "q": "ما الذي عيّن موضع بناء المسجد حين قدم النبي المدينة؟",
-      "a": "بروك ناقته",
+      "topic": "المدينة",
+      "q": "عند بيت أي صحابي نزل النبي حين قدم إلى المدينة؟",
+      "a": "أبو أيوب الأنصاري",
       "alt": [
-        "مبرك ناقته",
-        "حيث بركت ناقته"
+        "أبو أيوب",
+        "خالد بن زيد"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/المسجد_النبوي",
+      "sourceUrl": "https://sunnah.com/bukhari:3932",
       "verified": true,
-      "qid": "seerah-800-014"
+      "qid": "seerah-800-904",
+      "difficultyTarget": 0.25
     },
     {
       "p": 800,
-      "topic": "الهجرة وقباء",
-      "q": "ما الجائزة التي جعلتها قريش لمن يردّ النبي إليها؟",
-      "a": "مئة ناقة",
+      "topic": "الغزوات",
+      "q": "من قائد الرماة الذين أمرهم النبي بلزوم مواقعهم يوم أحد؟",
+      "a": "عبد الله بن جبير",
       "alt": [
-        "100 ناقة"
+        "عبدالله بن جبير",
+        "ابن جبير"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الهجرة_النبوية",
+      "sourceUrl": "https://sunnah.com/bukhari:3039",
       "verified": true,
-      "qid": "seerah-800-015"
+      "qid": "seerah-800-905",
+      "difficultyTarget": 0.25
     },
     {
       "p": 800,
-      "topic": "الهجرة وقباء",
-      "q": "من أول أصحاب النبي قدومًا إلى المدينة مهاجرًا؟",
+      "topic": "العهود والوفود",
+      "q": "من زوجة النبي التي أشارت عليه أن يبدأ بالنحر والحلق بعد صلح الحديبية؟",
+      "a": "أم سلمة",
+      "alt": [
+        "هند بنت أبي أمية"
+      ],
+      "sourceUrl": "https://sunnah.com/bukhari:2731",
+      "verified": true,
+      "qid": "seerah-800-906",
+      "difficultyTarget": 0.25
+    },
+    {
+      "p": 800,
+      "topic": "الصحابة",
+      "q": "من الصحابي الذي بعثه النبي مع وفد نجران ووصفه بأمين الأمة؟",
+      "a": "أبو عبيدة بن الجراح",
+      "alt": [
+        "أبو عبيدة",
+        "عامر بن الجراح"
+      ],
+      "sourceUrl": "https://sunnah.com/bukhari:4380",
+      "verified": true,
+      "qid": "seerah-800-907",
+      "difficultyTarget": 0.25
+    },
+    {
+      "p": 800,
+      "topic": "الحياة اليومية",
+      "q": "ما الخضار الذي كان النبي يتتبعه من جوانب القصعة في طعام الخياط؟",
+      "a": "الدباء",
+      "alt": [
+        "القرع",
+        "اليقطين"
+      ],
+      "sourceUrl": "https://sunnah.com/bukhari:5439",
+      "verified": true,
+      "qid": "seerah-800-908",
+      "difficultyTarget": 0.25
+    },
+    {
+      "p": 1000,
+      "topic": "النشأة والأسرة",
+      "q": "من الصحابي الذي كان أخًا للنبي من الرضاعة وأصبحت ابنته ربيبته؟",
       "a": "أبو سلمة",
       "alt": [
-        "أبو سلمة بن عبد الأسد"
+        "عبد الله بن عبد الأسد",
+        "عبدالله بن عبدالأسد"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الهجرة_النبوية",
+      "sourceUrl": "https://sunnah.com/bukhari:5101",
       "verified": true,
-      "qid": "seerah-800-016"
+      "qid": "seerah-1000-901",
+      "difficultyTarget": 0.15
     },
     {
-      "p": 800,
-      "topic": "الهجرة وقباء",
-      "q": "ما اسم الغلامين اليتيمين اللذين كانت لهما أرض المسجد؟",
+      "p": 1000,
+      "topic": "بداية الدعوة",
+      "q": "بأي لقب وصف ابن عم خديجة ملك الوحي حين سمع خبر النبي؟",
+      "a": "الناموس",
+      "alt": [
+        "الناموس الأكبر"
+      ],
+      "sourceUrl": "https://sunnah.com/bukhari:3",
+      "verified": true,
+      "qid": "seerah-1000-902",
+      "difficultyTarget": 0.15
+    },
+    {
+      "p": 1000,
+      "topic": "الهجرة",
+      "q": "من سيد القارة الذي أجار رفيق الهجرة بمكة قبل هجرة النبي؟",
+      "a": "ابن الدغنة",
+      "alt": [
+        "ابن الدغنة سيد القارة"
+      ],
+      "sourceUrl": "https://sunnah.com/bukhari:3905",
+      "verified": true,
+      "qid": "seerah-1000-903",
+      "difficultyTarget": 0.15
+    },
+    {
+      "p": 1000,
+      "topic": "المدينة",
+      "q": "ما اسما اليتيمين اللذين كانت لهما أرض بناء مسجد النبي؟",
       "a": "سهل وسهيل",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/المسجد_النبوي",
-      "verified": true,
-      "qid": "seerah-800-017"
-    },
-    {
-      "p": 800,
-      "topic": "الهجرة وقباء",
-      "q": "ما اسم الوادي الذي صلّى فيه النبي أول جمعة؟",
-      "a": "رانوناء",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/مسجد_الجمعة",
-      "verified": true,
-      "qid": "seerah-800-018"
-    },
-    {
-      "p": 800,
-      "topic": "الغزوات",
-      "q": "من أول الطوائف اليهودية التي نقضت عهدها مع النبي؟",
-      "a": "بنو قينقاع",
       "alt": [
-        "قينقاع"
+        "سهيل وسهل"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/غزوة_بني_قينقاع",
+      "sourceUrl": "https://sunnah.com/bukhari:3906",
       "verified": true,
-      "qid": "seerah-800-019"
+      "qid": "seerah-1000-904",
+      "difficultyTarget": 0.15
     },
     {
-      "p": 800,
+      "p": 1000,
       "topic": "الغزوات",
-      "q": "في أي سنة هجرية أُجلي بنو النضير عن المدينة؟",
-      "a": "السنة الرابعة",
-      "alt": [
-        "4 هـ"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/غزوة_بني_النضير",
-      "verified": true,
-      "qid": "seerah-800-020"
-    },
-    {
-      "p": 800,
-      "topic": "الغزوات",
-      "q": "كم بلغ جيش قريش يوم بدر؟",
-      "a": "ألف مقاتل",
-      "alt": [
-        "1000"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/غزوة_بدر",
-      "verified": true,
-      "qid": "seerah-800-021"
-    },
-    {
-      "p": 800,
-      "topic": "الغزوات",
-      "q": "كم استُشهد من المسلمين يوم أحد؟",
-      "a": "سبعون",
-      "alt": [
-        "70"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/غزوة_أحد",
-      "verified": true,
-      "qid": "seerah-800-022"
-    },
-    {
-      "p": 800,
-      "topic": "الغزوات",
-      "q": "من الصحابية التي قاتلت يوم أحد دفاعًا عن النبي؟",
-      "a": "أم عمارة",
-      "alt": [
-        "نسيبة بنت كعب",
-        "نسيبة"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/نسيبة_بنت_كعب",
-      "verified": true,
-      "qid": "seerah-800-023"
-    },
-    {
-      "p": 800,
-      "topic": "الغزوات",
-      "q": "ما اسم البئر التي قُتل عندها القُرّاء من أصحاب النبي؟",
+      "q": "ما اسم البئر التي قُتل عندها القراء من أصحاب النبي؟",
       "a": "بئر معونة",
       "alt": [
         "معونة"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/سرية_بئر_معونة",
+      "sourceUrl": "https://sunnah.com/bukhari:4090",
       "verified": true,
-      "qid": "seerah-800-024"
-    },
-    {
-      "p": 800,
-      "topic": "عهود ووفود",
-      "q": "كم رجلًا من أهل المدينة بايع النبي عند العقبة قبل الهجرة؟",
-      "a": "ثلاثة وسبعون رجلًا",
-      "alt": [
-        "73"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/بيعة_العقبة",
-      "verified": true,
-      "qid": "seerah-800-025"
-    },
-    {
-      "p": 800,
-      "topic": "عهود ووفود",
-      "q": "من الصحابي الذي حمل كتاب النبي إلى عظيم الروم؟",
-      "a": "دحية الكلبي",
-      "alt": [
-        "دحية بن خليفة"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/دحية_الكلبي",
-      "verified": true,
-      "qid": "seerah-800-026"
-    },
-    {
-      "p": 800,
-      "topic": "عهود ووفود",
-      "q": "من صاحب البحرين الذي كتب إليه النبي يدعوه إلى الإسلام؟",
-      "a": "المنذر بن ساوى",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/المنذر_بن_ساوى",
-      "verified": true,
-      "qid": "seerah-800-027"
-    },
-    {
-      "p": 800,
-      "topic": "عهود ووفود",
-      "q": "من صاحب اليمامة الذي أرسل إليه النبي كتابًا؟",
-      "a": "هوذة بن علي",
-      "alt": [
-        "هوذة",
-        "هوذة الحنفي"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/محمد",
-      "verified": true,
-      "qid": "seerah-800-028"
-    },
-    {
-      "p": 800,
-      "topic": "عهود ووفود",
-      "q": "في أي سنة هجرية حجّ النبي حجّته الوحيدة؟",
-      "a": "السنة العاشرة",
-      "alt": [
-        "10 هـ"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/حجة_الوداع",
-      "verified": true,
-      "qid": "seerah-800-029"
-    },
-    {
-      "p": 800,
-      "topic": "عهود ووفود",
-      "q": "من الرجل الذي كتب إلى النبي يزعم أنه أُشرك معه في النبوة؟",
-      "a": "مسيلمة الكذاب",
-      "alt": [
-        "مسيلمة"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/مسيلمة_الكذاب",
-      "verified": true,
-      "qid": "seerah-800-030"
-    },
-    {
-      "p": 800,
-      "topic": "أهل البيت",
-      "q": "من زوجة النبي التي كانت ابنة أبي سفيان؟",
-      "a": "أم حبيبة",
-      "alt": [
-        "رملة"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/أم_حبيبة_بنت_أبي_سفيان",
-      "verified": true,
-      "qid": "seerah-800-031"
-    },
-    {
-      "p": 800,
-      "topic": "أهل البيت",
-      "q": "من زوجة النبي التي كانت قبله عند زيد؟",
-      "a": "زينب بنت جحش",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/زينب_بنت_جحش",
-      "verified": true,
-      "qid": "seerah-800-032"
-    },
-    {
-      "p": 800,
-      "topic": "أهل البيت",
-      "q": "من ابنة النبي التي تزوّجها عثمان بعد وفاة أختها؟",
-      "a": "أم كلثوم",
-      "alt": [
-        "أم كلثوم بنت محمد"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/أم_كلثوم_بنت_محمد",
-      "verified": true,
-      "qid": "seerah-800-033"
-    },
-    {
-      "p": 800,
-      "topic": "أهل البيت",
-      "q": "من زوجة النبي التي كانت من سبي بني المصطلق؟",
-      "a": "جويرية",
-      "alt": [
-        "جويرية بنت الحارث"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/جويرية_بنت_الحارث",
-      "verified": true,
-      "qid": "seerah-800-034"
-    },
-    {
-      "p": 800,
-      "topic": "أهل البيت",
-      "q": "من عمّة النبي التي كانت أمًّا للزبير بن العوام؟",
-      "a": "صفية بنت عبد المطلب",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/صفية_بنت_عبد_المطلب",
-      "verified": true,
-      "qid": "seerah-800-035"
-    },
-    {
-      "p": 800,
-      "topic": "أهل البيت",
-      "q": "من زوج ابنة النبي الذي وقع أسيرًا يوم بدر؟",
-      "a": "أبو العاص بن الربيع",
-      "alt": [
-        "أبو العاص"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/أبو_العاص_بن_الربيع",
-      "verified": true,
-      "qid": "seerah-800-036"
-    },
-    {
-      "p": 800,
-      "topic": "الصحابة وألقابهم",
-      "q": "من ابن عمّ النبي الذي لُقّب بحبر الأمة؟",
-      "a": "عبد الله بن عباس",
-      "alt": [
-        "ابن عباس"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/عبد_الله_بن_عباس",
-      "verified": true,
-      "qid": "seerah-800-037"
-    },
-    {
-      "p": 800,
-      "topic": "الصحابة وألقابهم",
-      "q": "ما كنية عمر بن الخطاب؟",
-      "a": "أبو حفص",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/عمر_بن_الخطاب",
-      "verified": true,
-      "qid": "seerah-800-038"
-    },
-    {
-      "p": 800,
-      "topic": "الصحابة وألقابهم",
-      "q": "من الصحابي الذي عُرف بصاحب سرّ رسول الله؟",
-      "a": "حذيفة بن اليمان",
-      "alt": [
-        "حذيفة"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/حذيفة_بن_اليمان",
-      "verified": true,
-      "qid": "seerah-800-039"
-    },
-    {
-      "p": 800,
-      "topic": "الصحابة وألقابهم",
-      "q": "من الصحابي الذي قال له النبي يوم أحد: ارمِ فداك أبي وأمي؟",
-      "a": "سعد بن أبي وقاص",
-      "alt": [
-        "سعد"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/سعد_بن_أبي_وقاص",
-      "verified": true,
-      "qid": "seerah-800-040"
-    },
-    {
-      "p": 800,
-      "topic": "الصحابة وألقابهم",
-      "q": "من الصحابي الذي كان اسمه قبل الإسلام عبد عمرو؟",
-      "a": "عبد الرحمن بن عوف",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/عبد_الرحمن_بن_عوف",
-      "verified": true,
-      "qid": "seerah-800-041"
-    },
-    {
-      "p": 800,
-      "topic": "الصحابة وألقابهم",
-      "q": "من الصحابي الذي قال له النبي: أوتيتَ مزمارًا من مزامير آل داود؟",
-      "a": "أبو موسى الأشعري",
-      "alt": [
-        "أبو موسى"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/أبو_موسى_الأشعري",
-      "verified": true,
-      "qid": "seerah-800-042"
-    },
-    {
-      "p": 800,
-      "topic": "مواضع وأشياء",
-      "q": "ما اسم أول فرس ملكه النبي؟",
-      "a": "السكب",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/السكب",
-      "verified": true,
-      "qid": "seerah-800-043"
-    },
-    {
-      "p": 800,
-      "topic": "مواضع وأشياء",
-      "q": "بماذا وصف النبي ما بين بيته ومنبره؟",
-      "a": "روضة من رياض الجنة",
-      "alt": [
-        "روضة"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/المسجد_النبوي",
-      "verified": true,
-      "qid": "seerah-800-044"
-    },
-    {
-      "p": 800,
-      "topic": "مواضع وأشياء",
-      "q": "مِمّ بُنيت جدران المسجد الذي أقامه النبي؟",
-      "a": "اللبن",
-      "alt": [
-        "الطوب النيء"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/المسجد_النبوي",
-      "verified": true,
-      "qid": "seerah-800-045"
-    },
-    {
-      "p": 800,
-      "topic": "مواضع وأشياء",
-      "q": "كم بابًا جعل النبي لمسجده يوم بناه؟",
-      "a": "ثلاثة أبواب",
-      "alt": [
-        "3"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/المسجد_النبوي",
-      "verified": true,
-      "qid": "seerah-800-046"
-    },
-    {
-      "p": 800,
-      "topic": "مواضع وأشياء",
-      "q": "مِمّ كانت أعمدة المسجد الذي بناه النبي؟",
-      "a": "جذوع النخل",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/المسجد_النبوي",
-      "verified": true,
-      "qid": "seerah-800-047"
-    },
-    {
-      "p": 800,
-      "topic": "مواضع وأشياء",
-      "q": "ما اسم البئر التي اشتراها أحد الصحابة وسبّلها لأهل المدينة؟",
-      "a": "بئر رومة",
-      "alt": [
-        "رومة"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/بئر_رومة",
-      "verified": true,
-      "qid": "seerah-800-048"
+      "qid": "seerah-1000-905",
+      "difficultyTarget": 0.15
     },
     {
       "p": 1000,
-      "topic": "النسب والمولد",
-      "q": "من الرجل الذي أمسك بأذن فيل أبرهة وأمره بالرجوع؟",
-      "a": "نفيل بن حبيب",
+      "topic": "العهود والوفود",
+      "q": "من الخزاعي الذي نقل للنبي استعداد قريش لمنعه من دخول مكة أثناء الحديبية؟",
+      "a": "بديل بن ورقاء",
       "alt": [
-        "نفيل"
+        "بديل بن ورقاء الخزاعي"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/عام_الفيل",
+      "sourceUrl": "https://sunnah.com/bukhari:2731",
       "verified": true,
-      "qid": "seerah-1000-001"
+      "qid": "seerah-1000-906",
+      "difficultyTarget": 0.15
     },
     {
       "p": 1000,
-      "topic": "النسب والمولد",
-      "q": "بأي لقب عُرف جدّ النبي لجوده وشيبه؟",
-      "a": "شيبة الحمد",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/عبد_المطلب_بن_هاشم",
-      "verified": true,
-      "qid": "seerah-1000-002"
-    },
-    {
-      "p": 1000,
-      "topic": "النسب والمولد",
-      "q": "ما اسم زوج حليمة الذي كفل النبي معها في البادية؟",
-      "a": "الحارث بن عبد العزى",
+      "topic": "الحياة اليومية",
+      "q": "ما اسم فرس أبي طلحة الذي استعاره النبي حين فزع أهل المدينة؟",
+      "a": "مندوب",
       "alt": [
-        "الحارث"
+        "المندوب"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/حليمة_السعدية",
+      "sourceUrl": "https://sunnah.com/bukhari:2862",
       "verified": true,
-      "qid": "seerah-1000-003"
+      "qid": "seerah-1000-907",
+      "difficultyTarget": 0.15
     },
     {
       "p": 1000,
-      "topic": "النسب والمولد",
-      "q": "من جدّ النبي الأعلى الذي جمع قريشًا وأسكنهم حول الكعبة؟",
-      "a": "قصي بن كلاب",
+      "topic": "الحياة اليومية",
+      "q": "في أي موضع قرب مكة بات النبي قبل دخولها، بحسب رواية ابن عمر؟",
+      "a": "ذو طوى",
       "alt": [
-        "قصي"
+        "ذي طوى",
+        "طوى"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/قصي_بن_كلاب",
+      "sourceUrl": "https://sunnah.com/bukhari:1573",
       "verified": true,
-      "qid": "seerah-1000-004"
-    },
-    {
-      "p": 1000,
-      "topic": "النسب والمولد",
-      "q": "ما اسم أمّ جدّ النبي التي نشأ في بيت قومها؟",
-      "a": "سلمى بنت عمرو",
-      "alt": [
-        "سلمى"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/عبد_المطلب_بن_هاشم",
-      "verified": true,
-      "qid": "seerah-1000-005"
-    },
-    {
-      "p": 1000,
-      "topic": "النسب والمولد",
-      "q": "ما الاسم الذي وُلد به جدّ النبي الأعلى قصيّ؟",
-      "a": "زيد",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/قصي_بن_كلاب",
-      "verified": true,
-      "qid": "seerah-1000-006"
-    },
-    {
-      "p": 1000,
-      "topic": "مكة والبعثة",
-      "q": "ما اسم الراهب الذي رأى علامة النبوة في النبي وهو صبي؟",
-      "a": "بحيرى",
-      "alt": [
-        "بحيرا"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/بحيرى_الراهب",
-      "verified": true,
-      "qid": "seerah-1000-007"
-    },
-    {
-      "p": 1000,
-      "topic": "مكة والبعثة",
-      "q": "ما أشهر أسواق العرب التي كان النبي يعرض فيها دعوته؟",
-      "a": "عكاظ",
-      "alt": [
-        "سوق عكاظ"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/سوق_عكاظ",
-      "verified": true,
-      "qid": "seerah-1000-008"
-    },
-    {
-      "p": 1000,
-      "topic": "مكة والبعثة",
-      "q": "أين علّقت قريش صحيفة مقاطعتها للمسلمين؟",
-      "a": "جوف الكعبة",
-      "alt": [
-        "داخل الكعبة"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/أبو_طالب_بن_عبد_المطلب",
-      "verified": true,
-      "qid": "seerah-1000-009"
-    },
-    {
-      "p": 1000,
-      "topic": "مكة والبعثة",
-      "q": "ما الذي أكل صحيفة المقاطعة التي كتبتها قريش؟",
-      "a": "الأرضة",
-      "alt": [
-        "الأرَضَة"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/أبو_طالب_بن_عبد_المطلب",
-      "verified": true,
-      "qid": "seerah-1000-010"
-    },
-    {
-      "p": 1000,
-      "topic": "مكة والبعثة",
-      "q": "كم امرأة شهدت البيعة الثانية عند العقبة؟",
-      "a": "امرأتان",
-      "alt": [
-        "2"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/بيعة_العقبة_الثانية",
-      "verified": true,
-      "qid": "seerah-1000-011"
-    },
-    {
-      "p": 1000,
-      "topic": "مكة والبعثة",
-      "q": "من المشرك الذي ألقى سلا الجزور على ظهر النبي وهو ساجد؟",
-      "a": "عقبة بن أبي معيط",
-      "alt": [
-        "عقبة"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/عقبة_بن_أبي_معيط",
-      "verified": true,
-      "qid": "seerah-1000-012"
-    },
-    {
-      "p": 1000,
-      "topic": "الهجرة وقباء",
-      "q": "ما اسم الأنصاري الذي نزل النبي عنده في قباء؟",
-      "a": "كلثوم بن الهدم",
-      "alt": [
-        "كلثوم بن هدم"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الهجرة_النبوية",
-      "verified": true,
-      "qid": "seerah-1000-013"
-    },
-    {
-      "p": 1000,
-      "topic": "الهجرة وقباء",
-      "q": "من ابن أبي بكر الذي كان ينقل أخبار قريش إلى الغار؟",
-      "a": "عبد الله بن أبي بكر",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الهجرة_النبوية",
-      "verified": true,
-      "qid": "seerah-1000-014"
-    },
-    {
-      "p": 1000,
-      "topic": "الهجرة وقباء",
-      "q": "من الصحابي الذي رأى الأذان في منامه فأقرّه النبي؟",
-      "a": "عبد الله بن زيد",
-      "alt": [
-        "عبد الله بن زيد الأنصاري"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/عبد_الله_بن_زيد_الأنصاري",
-      "verified": true,
-      "qid": "seerah-1000-015"
-    },
-    {
-      "p": 1000,
-      "topic": "الهجرة وقباء",
-      "q": "من أول مولود وُلد للمهاجرين بعد قدومهم المدينة؟",
-      "a": "عبد الله بن الزبير",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/عبد_الله_بن_الزبير",
-      "verified": true,
-      "qid": "seerah-1000-016"
-    },
-    {
-      "p": 1000,
-      "topic": "الهجرة وقباء",
-      "q": "بم يوصف الصحابي الذي هاجر إلى الحبشة ثم إلى المدينة؟",
-      "a": "ذو الهجرتين",
-      "alt": [
-        "صاحب الهجرتين",
-        "ذوو الهجرتين"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/عبد_الله_بن_مسعود",
-      "verified": true,
-      "qid": "seerah-1000-017"
-    },
-    {
-      "p": 1000,
-      "topic": "الهجرة وقباء",
-      "q": "من الأنصاري الذي عرض على أخيه المهاجر أن يقاسمه ماله؟",
-      "a": "سعد بن الربيع",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/عبد_الرحمن_بن_عوف",
-      "verified": true,
-      "qid": "seerah-1000-018"
-    },
-    {
-      "p": 1000,
-      "topic": "الغزوات",
-      "q": "كم جملًا كان مع المسلمين يوم بدر؟",
-      "a": "سبعون جملًا",
-      "alt": [
-        "70"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/غزوة_بدر",
-      "verified": true,
-      "qid": "seerah-1000-019"
-    },
-    {
-      "p": 1000,
-      "topic": "الغزوات",
-      "q": "من المشرك الوحيد الذي قتله النبي بيده يوم أحد؟",
-      "a": "أبيّ بن خلف",
-      "alt": [
-        "أبي بن خلف"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/أبي_بن_خلف",
-      "verified": true,
-      "qid": "seerah-1000-020"
-    },
-    {
-      "p": 1000,
-      "topic": "الغزوات",
-      "q": "كم بلغ جيش المسلمين في آخر غزوة خرج إليها النبي؟",
-      "a": "ثلاثون ألفًا",
-      "alt": [
-        "30000"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/غزوة_تبوك",
-      "verified": true,
-      "qid": "seerah-1000-021"
-    },
-    {
-      "p": 1000,
-      "topic": "الغزوات",
-      "q": "أي غزوة تُسمّى أيضًا غزوة المريسيع؟",
-      "a": "غزوة بني المصطلق",
-      "alt": [
-        "بنو المصطلق"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/غزوة_بني_المصطلق",
-      "verified": true,
-      "qid": "seerah-1000-022"
-    },
-    {
-      "p": 1000,
-      "topic": "الغزوات",
-      "q": "كم استُشهد من المسلمين يوم بدر؟",
-      "a": "أربعة عشر",
-      "alt": [
-        "14"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/غزوة_بدر",
-      "verified": true,
-      "qid": "seerah-1000-023"
-    },
-    {
-      "p": 1000,
-      "topic": "الغزوات",
-      "q": "ما اسم الجبل الذي جعله النبي خلف ظهره حين حفر الخندق؟",
-      "a": "سلع",
-      "alt": [
-        "جبل سلع"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/غزوة_الخندق",
-      "verified": true,
-      "qid": "seerah-1000-024"
-    },
-    {
-      "p": 1000,
-      "topic": "عهود ووفود",
-      "q": "ما اسم القبيلة التي دخلت في عهد النبي بعد صلحه مع قريش؟",
-      "a": "خزاعة",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/صلح_الحديبية",
-      "verified": true,
-      "qid": "seerah-1000-025"
-    },
-    {
-      "p": 1000,
-      "topic": "عهود ووفود",
-      "q": "من الصحابي الذي قال النبي في قومه: اللهم اهدِ دوسًا؟",
-      "a": "الطفيل بن عمرو",
-      "alt": [
-        "الطفيل بن عمرو الدوسي",
-        "الطفيل"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الطفيل_بن_عمرو_الدوسي",
-      "verified": true,
-      "qid": "seerah-1000-026"
-    },
-    {
-      "p": 1000,
-      "topic": "عهود ووفود",
-      "q": "من الصحابي الذي أفلت من قريش بعد الصلح وأقام على ساحل البحر؟",
-      "a": "أبو بصير",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/صلح_الحديبية",
-      "verified": true,
-      "qid": "seerah-1000-027"
-    },
-    {
-      "p": 1000,
-      "topic": "عهود ووفود",
-      "q": "من رسول النبي الذي قتله شرحبيل الغساني؟",
-      "a": "الحارث بن عمير",
-      "alt": [
-        "الحارث بن عمير الأزدي"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/معركة_مؤتة",
-      "verified": true,
-      "qid": "seerah-1000-028"
-    },
-    {
-      "p": 1000,
-      "topic": "عهود ووفود",
-      "q": "من الصحابي الذي حمل كتاب النبي إلى عظيم مصر؟",
-      "a": "حاطب بن أبي بلتعة",
-      "alt": [
-        "حاطب"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/المقوقس",
-      "verified": true,
-      "qid": "seerah-1000-029"
-    },
-    {
-      "p": 1000,
-      "topic": "عهود ووفود",
-      "q": "من الصحابي الذي بعثه النبي بكتابه إلى ملك الحبشة؟",
-      "a": "عمرو بن أمية الضمري",
-      "alt": [
-        "عمرو بن أمية"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/عمرو_بن_أمية_الضمري",
-      "verified": true,
-      "qid": "seerah-1000-030"
-    },
-    {
-      "p": 1000,
-      "topic": "أهل البيت",
-      "q": "من الصحابية التي أشارت على النبي بالزواج من سودة؟",
-      "a": "خولة بنت حكيم",
-      "alt": [
-        "خولة"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/سودة_بنت_زمعة",
-      "verified": true,
-      "qid": "seerah-1000-031"
-    },
-    {
-      "p": 1000,
-      "topic": "أهل البيت",
-      "q": "ما اسم أخت مارية التي قدمت معها من مصر؟",
-      "a": "سيرين",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/مارية_القبطية",
-      "verified": true,
-      "qid": "seerah-1000-032"
-    },
-    {
-      "p": 1000,
-      "topic": "أهل البيت",
-      "q": "بم كانت تُكنّى زوجُ النبي ابنةُ أبي بكر؟",
-      "a": "أم عبد الله",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/عائشة_بنت_أبي_بكر",
-      "verified": true,
-      "qid": "seerah-1000-033"
-    },
-    {
-      "p": 1000,
-      "topic": "أهل البيت",
-      "q": "ما اسم حفيدة النبي ابنة زينب التي كان يحملها في صلاته؟",
-      "a": "أمامة",
-      "alt": [
-        "أمامة بنت أبي العاص"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/أمامة_بنت_أبي_العاص",
-      "verified": true,
-      "qid": "seerah-1000-034"
-    },
-    {
-      "p": 1000,
-      "topic": "أهل البيت",
-      "q": "ما الاسم الذي تُعرف به أمّ سلمة زوج النبي؟",
-      "a": "هند بنت أبي أمية",
-      "alt": [
-        "هند"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/أم_سلمة",
-      "verified": true,
-      "qid": "seerah-1000-035"
-    },
-    {
-      "p": 1000,
-      "topic": "أهل البيت",
-      "q": "ما اسم والد مارية التي أهداها عظيم مصر للنبي؟",
-      "a": "شمعون",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/مارية_القبطية",
-      "verified": true,
-      "qid": "seerah-1000-036"
-    },
-    {
-      "p": 1000,
-      "topic": "الصحابة وألقابهم",
-      "q": "ما اسم أمّ بلال المؤذّن؟",
-      "a": "حمامة",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/بلال_بن_رباح",
-      "verified": true,
-      "qid": "seerah-1000-037"
-    },
-    {
-      "p": 1000,
-      "topic": "الصحابة وألقابهم",
-      "q": "من الصحابية التي كانت لها خيمة لتمريض الجرحى في المسجد؟",
-      "a": "رفيدة الأسلمية",
-      "alt": [
-        "رفيدة"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/رفيدة_الأسلمية",
-      "verified": true,
-      "qid": "seerah-1000-038"
-    },
-    {
-      "p": 1000,
-      "topic": "الصحابة وألقابهم",
-      "q": "«أبو بكر» كنية، فما اسمُه؟",
-      "a": "عبد الله بن عثمان",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/أبو_بكر_الصديق",
-      "verified": true,
-      "qid": "seerah-1000-039"
-    },
-    {
-      "p": 1000,
-      "topic": "الصحابة وألقابهم",
-      "q": "من الرجل الذي قتل حمزة يوم أحد ثم أسلم بعد ذلك؟",
-      "a": "وحشي بن حرب",
-      "alt": [
-        "وحشي"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/وحشي_بن_حرب",
-      "verified": true,
-      "qid": "seerah-1000-040"
-    },
-    {
-      "p": 1000,
-      "topic": "الصحابة وألقابهم",
-      "q": "من الصحابي الذي غسّلته الملائكة بعد استشهاده في أحد؟",
-      "a": "حنظلة بن أبي عامر",
-      "alt": [
-        "حنظلة",
-        "غسيل الملائكة"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/حنظلة_بن_أبي_عامر",
-      "verified": true,
-      "qid": "seerah-1000-041"
-    },
-    {
-      "p": 1000,
-      "topic": "الصحابة وألقابهم",
-      "q": "من الصحابي الذي بعثه النبي في نفرٍ لقتل كعب بن الأشرف؟",
-      "a": "محمد بن مسلمة",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/محمد_بن_مسلمة",
-      "verified": true,
-      "qid": "seerah-1000-042"
-    },
-    {
-      "p": 1000,
-      "topic": "النسب والمولد",
-      "q": "ماذا استخرج جدّ النبي من البئر التي حفرها في مكة؟",
-      "a": "غزالتا ذهب",
-      "alt": [
-        "غزالتان من ذهب"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/عبد_المطلب_بن_هاشم",
-      "verified": true,
-      "qid": "seerah-1000-043"
-    },
-    {
-      "p": 1000,
-      "topic": "مواضع وأشياء",
-      "q": "بمَ شُبّهت العلامة التي كانت بين كتفَي النبي في وصف الصحابة؟",
-      "a": "بيضة الحمامة",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/خاتم_النبوة",
-      "verified": true,
-      "qid": "seerah-1000-044"
-    },
-    {
-      "p": 1000,
-      "topic": "مواضع وأشياء",
-      "q": "ماذا كان منقوشًا على خاتم النبي الذي يختم به كتبه؟",
-      "a": "محمد رسول الله",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/محمد",
-      "verified": true,
-      "qid": "seerah-1000-045"
-    },
-    {
-      "p": 1000,
-      "topic": "مواضع وأشياء",
-      "q": "على أي شيء كان النبي يخطب قبل أن يُصنع له المنبر؟",
-      "a": "جذع النخلة",
-      "alt": [
-        "جذع نخلة"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/المسجد_النبوي",
-      "verified": true,
-      "qid": "seerah-1000-046"
-    },
-    {
-      "p": 1000,
-      "topic": "مواضع وأشياء",
-      "q": "ما اسم المسجد الذي بناه المنافقون وأمر النبي بهدمه؟",
-      "a": "مسجد الضرار",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/غزوة_تبوك",
-      "verified": true,
-      "qid": "seerah-1000-047"
-    },
-    {
-      "p": 1000,
-      "topic": "مواضع وأشياء",
-      "q": "ما اسم مقبرة مكة التي دُفنت فيها خديجة؟",
-      "a": "الحجون",
-      "alt": [
-        "المعلاة",
-        "مقبرة المعلاة"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/خديجة_بنت_خويلد",
-      "verified": true,
-      "qid": "seerah-1000-048"
+      "qid": "seerah-1000-908",
+      "difficultyTarget": 0.15
     }
   ]
 }

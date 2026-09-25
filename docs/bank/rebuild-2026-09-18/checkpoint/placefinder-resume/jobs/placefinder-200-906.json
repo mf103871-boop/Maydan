@@ -1,0 +1,19 @@
+{
+  "id": "placefinder-200-906",
+  "kind": "question",
+  "pack": "placefinder",
+  "p": 200,
+  "a": "تاج محل",
+  "alt": [
+    "تاج مهَل",
+    "Taj Mahal"
+  ],
+  "topic": "جنوب وجنوب شرق آسيا",
+  "q": "ما اسم هذا الضريح الرخامي الأبيض؟",
+  "sourceUrl": "https://whc.unesco.org/en/list/252/",
+  "prompt": "Use case: scientific-educational. Asset: landscape 4:3 architectural landmark recognition card for an Arabic family quiz. Create one original, carefully observed architectural illustration of the real landmark, with realistic proportions and fine material detail, clear daylight, restrained natural colours, clean composition. Show the real defining architecture accurately, not a fantasy redesign. No captions, words, numerals, maps, logos, watermark, border or inset. No people close enough to distract. The entire landmark must be recognizable at phone size. Taj Mahal in Agra, frontal garden-axis view: white marble square mausoleum with large onion dome, four smaller domed corner pavilions, tall central pointed arch, exactly four separate minarets at platform corners, long narrow reflecting pool and cypress garden in foreground. Real proportions, no extra minarets or mixed mosque architecture.",
+  "referenceFile": "media/placefinder/placefinder-200-032.webp",
+  "sourceEvidence": "UNESCO describes the Agra white-marble mausoleum and four free-standing minarets.",
+  "sourceReviewed": true,
+  "visualReviewStatus": "pending"
+}

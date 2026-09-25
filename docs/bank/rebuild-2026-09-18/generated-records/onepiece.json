@@ -1,0 +1,56 @@
+{
+  "id": "onepiece",
+  "kind": "cover",
+  "pack": "onepiece",
+  "file": "public/media/badeeha-covers/onepiece.webp",
+  "asset": "public/media/badeeha-covers/onepiece.webp",
+  "prompt": "Use case: precise-object-edit. Asset type: One Piece trivia category cover. Edit target: the attached local product photograph. Change only the straw hat ribbon/band from purple to a saturated warm red, so the straw hat reads immediately as a One Piece reference. The entire band around the hat, its knot, and both loose ribbon tails must all become red; no purple remains on the band. Preserve the straw weave, hat shape, ribbon material and folds, wooden sailing ship and cream sails, tabletop, warm ivory background, natural lighting, shadows, positions, scale, and exact 4:3 landscape composition. Retain realistic material texture, not a flat painted overlay. Do not add characters, skulls, logos, text, numbers, labels, watermarks or any new objects. Output one finished landscape 4:3 image.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-09-23",
+  "width": 640,
+  "height": 480,
+  "bytes": 55990,
+  "sha256": "3667b353e5f09487a80cd0dd3bc13c71b5ce9853f52057addc65ef5319699dae",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "passed",
+    "reviewedAt": "2026-09-23",
+    "method": "Visual review of original, built-in generated result, installed WebP and a 150px-wide thumbnail.",
+    "checks": [
+      "Hat band, knot and both loose ribbon tails are red; no purple ribbon remains.",
+      "Straw texture, ship model, cream sails, lighting and original composition retained.",
+      "Viewed installed 640×480 WebP and 150px-wide thumbnail; red-banded straw hat remains recognizable."
+    ],
+    "dimensions": "640x480 (4:3)",
+    "within256KiBBudget": true,
+    "textOrWatermarkDetected": false
+  },
+  "generationMode": "edit",
+  "sourceOutput": {
+    "file": "exec-39e9c007-51e7-47b9-a017-dda1c5f99bfd.png",
+    "sha256": "23f300a18b3112a3fb5c0b7c16df66f425632e55a4716ea0ff85bef1a82e8390"
+  },
+  "editInput": {
+    "asset": "public/media/badeeha-covers/onepiece.webp",
+    "sha256": "2ab3f2dfb6beb8361fe3a1479d11c1587c29bc584fd55296e84908076fc49129",
+    "provenanceArchive": "docs/bank/rebuild-2026-09-18/checkpoint/asset-records.json",
+    "originalCreatedAt": "2026-09-18"
+  },
+  "previousGenerations": [
+    {
+      "id": "onepiece",
+      "kind": "cover",
+      "pack": "onepiece",
+      "asset": "public/media/badeeha-covers/onepiece.webp",
+      "prompt": "Use case: product-mockup.\nCreate one premium photorealistic editorial product photograph for an Arabic social trivia game category cover. Landscape 4:3 composition. Real believable materials and proportions; carefully crafted physical miniatures only where the subject requires architecture. Seamless warm ivory background (#FFF7E7), soft daylight from upper left, one restrained group accent color, gentle contact shadow, no busy scenery. One dominant subject with at most two supporting objects; large shapes remain legible at 150px wide. Center all important subject details in the middle 60%, leave generous breathing room and both top corners clear for UI badges. No text, letters, numbers, pseudo-writing, readable labels, watermarks, logos, framed app UI, pictograms, SVG-style graphics, emoji rendering, plastic cartoon gloss, collage, or unnecessary objects. Category title is added by the game UI. Use an original cover composition, never a screenshot, trivia question illustration or answer reveal.\nGroup accent: #8A57AD, used sparingly without overriding natural object colors.\nSubject: One natural woven straw hat and one small original wooden sailing ship model with plain cream sails, no skull flag or named character.",
+      "tool": "OpenAI image generation",
+      "createdAt": "2026-09-18",
+      "width": 1448,
+      "height": 1086,
+      "bytes": 221090,
+      "sha256": "2ab3f2dfb6beb8361fe3a1479d11c1587c29bc584fd55296e84908076fc49129",
+      "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي"
+    }
+  ],
+  "installCommand": "node scripts/bank-install-generated.mjs /tmp/cover-onepiece-job.json /workspace/scratch/63296ecfa764/generated_images/exec-39e9c007-51e7-47b9-a017-dda1c5f99bfd.png --replace"
+}

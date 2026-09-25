@@ -1,0 +1,36 @@
+{
+  "id": "tilepuzzle-200-908",
+  "kind": "question",
+  "pack": "tilepuzzle",
+  "a": "لوحة ألوان",
+  "p": 200,
+  "topic": "هوايات وأدوات",
+  "prompt": "Use case: photorealistic-natural.\nAsset type: one standalone professional image for an Arabic family visual guessing game (age 16+).\nSubject: a wooden painters palette with colorful paint blobs and brushes.\nStyle: realistic high quality photography with correct anatomy and object geometry, clean natural textures.\nComposition: landscape 4:3, the complete subject fills about 75% of the frame; centered with ample margins, immediately recognizable when revealed.  Spread meaningful details across the frame because it will be shuffled into twelve tiles.\nBackground: simple uncluttered setting appropriate to the subject, natural lighting.\nConstraints: exactly the stated subject; no label, caption, watermark, collage, borders or readable words.  ",
+  "question": {
+    "p": 200,
+    "q": "ما الشيء الذي تكوّنه القطع المبعثرة؟",
+    "a": "لوحة ألوان",
+    "qid": "tilepuzzle-200-908",
+    "type": "image",
+    "effect": "jumble",
+    "alt": [],
+    "topic": "هوايات وأدوات",
+    "difficultyTarget": 0.8,
+    "verified": false,
+    "source": "مشهد توضيحي أصلي؛ تُراجع مطابقة الصورة للإجابة قبل اعتمادها",
+    "sourceUrl": "docs/bank/rebuild-2026-09-18/visual-evidence.md",
+    "media": {
+      "src": "tilepuzzle-200-908.webp",
+      "type": "image",
+      "title": "لغز بصري مولّد",
+      "author": "Maydan / OpenAI image generation",
+      "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
+      "provenance": {
+        "kind": "ai-generated",
+        "tool": "OpenAI image generation",
+        "createdAt": "2026-09-18",
+        "record": "docs/bank/rebuild-2026-09-18/generated-art.json"
+      }
+    }
+  }
+}

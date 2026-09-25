@@ -1,0 +1,21 @@
+{
+  "id": "placefinder-200-901",
+  "kind": "question",
+  "pack": "placefinder",
+  "file": "media/placefinder/placefinder-200-901.webp",
+  "asset": "media/placefinder/placefinder-200-901.webp",
+  "prompt": "Use case: scientific-educational. Asset: landscape 4:3 architectural landmark recognition card for an Arabic family quiz. Create one original, carefully observed architectural illustration of the real landmark, with realistic proportions and fine material detail, clear daylight, restrained natural colours, clean composition. Show the real defining architecture accurately, not a fantasy redesign. No captions, words, numerals, maps, logos, watermark, border or inset. No people close enough to distract. The entire landmark must be recognizable at phone size. Eiffel Tower, Paris: full tower from Champ de Mars in daylight, four splayed lattice-iron legs, broad decorative arch at base, first and second horizontal observation platforms, tapering lattice shaft and antenna. A brown iron tower, no night lighting. Full feet and tip visible.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-09-23",
+  "width": 1280,
+  "height": 960,
+  "bytes": 232266,
+  "sha256": "739108414749dc4559d49c76e345b2b89717229acc460fd3348a734ea5e35eed",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "reviewed",
+    "reviewedAt": "2026-09-23",
+    "note": "Viewed generated output: complete iron lattice tower, broad base arch, splayed legs, two lower decks and tapering upper shaft; recognizable Eiffel silhouette, no answer text.",
+    "notDocumentaryPhoto": true
+  }
+}

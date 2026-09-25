@@ -1,0 +1,19 @@
+{
+  "id": "tilepuzzle-800-903",
+  "kind": "question",
+  "pack": "tilepuzzle",
+  "file": "media/tilepuzzle/tilepuzzle-800-903.webp",
+  "asset": "media/tilepuzzle/tilepuzzle-800-903.webp",
+  "prompt": "Use case: photorealistic-natural.\nAsset type: one standalone professional image for an Arabic family visual guessing game (age 16+).\nSubject: a vintage typewriter with paper and round keys, no legible text.\nStyle: realistic high quality photography with correct anatomy and object geometry, clean natural textures.\nComposition: landscape 4:3, the complete subject fills about 75% of the frame; centered with ample margins, immediately recognizable when revealed.  Spread meaningful details across the frame because it will be shuffled into twelve tiles.\nBackground: simple uncluttered setting appropriate to the subject, natural lighting.\nConstraints: exactly the stated subject; no label, caption, watermark, collage, borders or readable words.  ",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-09-23",
+  "width": 1280,
+  "height": 960,
+  "bytes": 218768,
+  "sha256": "c1e0ab627d98ad373187d3f0ce4e32664d0d0c3e3c75db077f3c204bb99c8670",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "pending",
+    "note": "Generation and file checks do not imply subject or gameplay verification."
+  }
+}

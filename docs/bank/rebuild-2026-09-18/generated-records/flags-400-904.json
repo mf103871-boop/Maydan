@@ -1,0 +1,19 @@
+{
+  "id": "flags-400-904",
+  "kind": "question",
+  "pack": "flags",
+  "file": "media/flags/flags-400-904.webp",
+  "asset": "media/flags/flags-400-904.webp",
+  "prompt": "Accurate educational national flag. Completely OPAQUE rectangular canvas, every pixel opaque, all color fields stay visible including white. Flat straight-on diagram with crisp solid color edges. Entire image is the flag, exact aspect ratio. No transparency or cutout, no labels, no words, no folds, no pole, no border, no shading. Norway civil flag. Width:height22:16. Red #BA0C2F field with dark blue #00205B Nordic cross bordered WHITE. Exact widths across: red6 white1 blue2 white1 red12 units; vertically red6 white1 blue2 white1 red6 units. No swallowtail, no extra symbols.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-09-23",
+  "width": 1280,
+  "height": 932,
+  "bytes": 10030,
+  "sha256": "993c343197302baef43a35fb0fc4114ea329768338520cf8c9657081924ae99f",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "pending",
+    "note": "Generation and file checks do not imply subject or gameplay verification."
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "id": "silhouette-600-905",
+  "kind": "question",
+  "pack": "silhouette",
+  "file": "media/silhouette/silhouette-600-905.webp",
+  "asset": "media/silhouette/silhouette-600-905.webp",
+  "prompt": "Use case: product-mockup.\nAsset type: one standalone professional image for an Arabic family visual guessing game (age 16+).\nSubject: one lobed oak leaf with stem.\nStyle: realistic high quality photography with correct anatomy and object geometry, clean natural textures.\nComposition: landscape 4:3, the complete subject occupies only the central 55% of the frame, leaving at least 20% completely transparent margin on ALL FOUR sides; centered with ample margins, immediately recognizable when revealed.  \nBackground: genuinely transparent background with alpha channel; isolated cutout; no shadow backdrop; no checkerboard; color subject will become a silhouette inside the game.\nConstraints: exactly the stated subject; no label, caption, watermark, collage, borders or readable words.  Do not create a black silhouette; render the full natural-color cutout with transparent surroundings. Output must be a PNG cutout with actual alpha=0 pixels outside the subject, fully transparent canvas. Do not paint white, gray, black or checkerboard behind it. Keep the entire outline visible. Natural color, no ground plane or cast shadow. Every tip, leaf, antenna, extremity and protruding part must be well inside the canvas, with broad transparent padding. Zoom out. Do not crop any part of the object.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-09-23",
+  "width": 1280,
+  "height": 960,
+  "bytes": 135388,
+  "sha256": "81215c41c7a30eb8157144967b9be7efc7d6b32aa9fc4210166e4ce97b28ee12",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "visual-subject-reviewed",
+    "reviewedAt": "2026-09-23",
+    "note": "Generated output visually reviewed: subject matches answer; true alpha measured. Final silhouette/reveal gameplay review still pending.",
+    "answer": "ورقة بلوط",
+    "alpha": {
+      "pixels": 1228800,
+      "alpha0": 976004,
+      "alpha255": 923,
+      "partialAlpha": 251873,
+      "nearOpaque250to255": 230646,
+      "transparentFraction": 0.794274,
+      "bboxAlphaOver128": [
+        266,
+        183,
+        1058,
+        781
+      ]
+    },
+    "gameplayReview": "pending"
+  }
+}

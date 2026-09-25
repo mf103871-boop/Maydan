@@ -1,0 +1,19 @@
+{
+  "id": "flags-200-901",
+  "kind": "question",
+  "pack": "flags",
+  "file": "media/flags/flags-200-901.webp",
+  "asset": "media/flags/flags-200-901.webp",
+  "prompt": "Create accurate official national flag of the United Arab Emirates as a perfectly flat 2:1 landscape raster graphic. FULL BLEED: the flag fills absolutely the entire 2:1 image edge to edge. NO margins, NO background surrounding the flag, NO border, NO shadows, NO fabric, NO text. Canvas is 2 wide for 1 high. Leftmost exactly 25 percent of total canvas is full-height red #C8102E. Remaining rightmost 75 percent has exactly three horizontal bands of equal height: top green #00843D, middle white #FFFFFF, bottom black #000000. Perfectly straight edges. No coat of arms, no symbols. This is an accurate educational national-flag reference, not decorative design.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-09-23",
+  "width": 1280,
+  "height": 640,
+  "bytes": 4114,
+  "sha256": "5fbff646a5fe8a66fec097552f9e61aab93561996cbaf96fc89765ba2dfebdbc",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "pending",
+    "note": "Generation and file checks do not imply subject or gameplay verification."
+  }
+}

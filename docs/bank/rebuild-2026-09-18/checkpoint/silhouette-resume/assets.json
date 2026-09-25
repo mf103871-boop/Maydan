@@ -1,0 +1,802 @@
+[
+  {
+    "id": "silhouette-200-901",
+    "answer": "قط",
+    "asset": "media/silhouette/silhouette-200-901.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-200-901.json",
+    "job": "docs/bank/rebuild-2026-09-18/checkpoint/silhouette-resume/jobs/silhouette-200-901.json",
+    "reviewStatus": "visual-subject-reviewed",
+    "note": "Generated output visually reviewed: subject matches answer; true alpha measured. Final silhouette/reveal gameplay review still pending.",
+    "alpha": {
+      "pixels": 1228800,
+      "alpha0": 769020,
+      "alpha255": 35,
+      "partialAlpha": 459745,
+      "nearOpaque250to255": 393247,
+      "transparentFraction": 0.62583,
+      "bboxAlphaOver128": [
+        140,
+        35,
+        1245,
+        889
+      ]
+    },
+    "sha256": "3309be76268f26393680b4b84c36c79e6a770cf1d34c77c5bf8a435b2775e5a6",
+    "originalGenerationBasename": "exec-df7d3652-7b00-41c4-9db3-abdaf1630786.png"
+  },
+  {
+    "id": "silhouette-200-902",
+    "answer": "مطرقة",
+    "asset": "media/silhouette/silhouette-200-902.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-200-902.json",
+    "job": "docs/bank/rebuild-2026-09-18/checkpoint/silhouette-resume/jobs/silhouette-200-902.json",
+    "reviewStatus": "visual-subject-reviewed",
+    "note": "Generated output visually reviewed: subject matches answer; true alpha measured. Final silhouette/reveal gameplay review still pending.",
+    "alpha": {
+      "pixels": 1228800,
+      "alpha0": 959466,
+      "alpha255": 1073,
+      "partialAlpha": 268261,
+      "nearOpaque250to255": 249861,
+      "transparentFraction": 0.780815,
+      "bboxAlphaOver128": [
+        38,
+        32,
+        1250,
+        935
+      ]
+    },
+    "sha256": "a0a91adddaa86a549b330a2a96cb081799bf6e004a250f3023825de540731adb",
+    "originalGenerationBasename": "exec-a234a4a1-515e-4fcc-a5b1-d1dd4fc10f6a.png"
+  },
+  {
+    "id": "silhouette-200-903",
+    "answer": "مظلة",
+    "asset": "media/silhouette/silhouette-200-903.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-200-903.json",
+    "job": "docs/bank/rebuild-2026-09-18/checkpoint/silhouette-resume/jobs/silhouette-200-903.json",
+    "reviewStatus": "visual-subject-reviewed",
+    "note": "Generated output visually reviewed: subject matches answer; true alpha measured. Final silhouette/reveal gameplay review still pending.",
+    "alpha": {
+      "pixels": 1228800,
+      "alpha0": 723947,
+      "alpha255": 1688,
+      "partialAlpha": 503165,
+      "nearOpaque250to255": 484946,
+      "transparentFraction": 0.58915,
+      "bboxAlphaOver128": [
+        77,
+        14,
+        1214,
+        944
+      ]
+    },
+    "sha256": "94e555e1f9102a9f5b0adc647dff22d15db4e1dac9e0d557a55c0ab840e4b3d3",
+    "originalGenerationBasename": "exec-b624659b-7c84-48c6-868e-c24d34e501ad.png"
+  },
+  {
+    "id": "silhouette-200-904",
+    "answer": "مروحية",
+    "asset": "media/silhouette/silhouette-200-904.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-200-904.json",
+    "job": "docs/bank/rebuild-2026-09-18/checkpoint/silhouette-resume/jobs/silhouette-200-904.json",
+    "reviewStatus": "visual-subject-reviewed",
+    "note": "Generated output visually reviewed: subject matches answer; true alpha measured. Final silhouette/reveal gameplay review still pending.",
+    "alpha": {
+      "pixels": 1228800,
+      "alpha0": 865598,
+      "alpha255": 2666,
+      "partialAlpha": 360536,
+      "nearOpaque250to255": 288129,
+      "transparentFraction": 0.704425,
+      "bboxAlphaOver128": [
+        13,
+        192,
+        1274,
+        778
+      ]
+    },
+    "sha256": "85a56e90ec2f160aa9366b21d9a0b78dd2ce1fb984d56a4a7791dd9dcd028fa9",
+    "originalGenerationBasename": "exec-09139329-4456-4ae9-ba61-a9f91ab68bbc.png"
+  },
+  {
+    "id": "silhouette-200-905",
+    "answer": "صبار",
+    "asset": "media/silhouette/silhouette-200-905.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-200-905.json",
+    "job": "docs/bank/rebuild-2026-09-18/checkpoint/silhouette-resume/jobs/silhouette-200-905.json",
+    "reviewStatus": "needs-regeneration",
+    "note": "Regenerate: cactus base touches lower canvas border; request complete plant with ample transparent padding.",
+    "alpha": {
+      "pixels": 1228800,
+      "alpha0": 862923,
+      "alpha255": 373,
+      "partialAlpha": 365504,
+      "nearOpaque250to255": 289463,
+      "transparentFraction": 0.702249,
+      "bboxAlphaOver128": [
+        305,
+        8,
+        977,
+        960
+      ]
+    },
+    "sha256": "53e6d44640a01a09136187e763f78ebb341d5f39030e29229ab2eae39789a0eb",
+    "originalGenerationBasename": "exec-32a95604-8eff-47e0-8b1f-19a5d82fede0.png"
+  },
+  {
+    "id": "silhouette-200-906",
+    "answer": "كمثرى",
+    "asset": "media/silhouette/silhouette-200-906.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-200-906.json",
+    "job": "docs/bank/rebuild-2026-09-18/checkpoint/silhouette-resume/jobs/silhouette-200-906.json",
+    "reviewStatus": "visual-subject-reviewed",
+    "note": "Generated output visually reviewed: subject matches answer; true alpha measured. Final silhouette/reveal gameplay review still pending.",
+    "alpha": {
+      "pixels": 1228800,
+      "alpha0": 724299,
+      "alpha255": 1118,
+      "partialAlpha": 503383,
+      "nearOpaque250to255": 483664,
+      "transparentFraction": 0.589436,
+      "bboxAlphaOver128": [
+        297,
+        5,
+        1104,
+        955
+      ]
+    },
+    "sha256": "f6f761490a784768f524e5b85a803f03d6d5b4ffdd2340855e5d039b47b0a57e",
+    "originalGenerationBasename": "exec-4c2608a1-b7ce-4959-be83-91de0e09bf0d.png"
+  },
+  {
+    "id": "silhouette-200-907",
+    "answer": "ساكسفون",
+    "asset": "media/silhouette/silhouette-200-907.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-200-907.json",
+    "job": "docs/bank/rebuild-2026-09-18/checkpoint/silhouette-resume/jobs/silhouette-200-907.json",
+    "reviewStatus": "visual-subject-reviewed",
+    "note": "Generated output visually reviewed: subject matches answer; true alpha measured. Final silhouette/reveal gameplay review still pending.",
+    "alpha": {
+      "pixels": 1228800,
+      "alpha0": 1019407,
+      "alpha255": 661,
+      "partialAlpha": 208732,
+      "nearOpaque250to255": 168431,
+      "transparentFraction": 0.829596,
+      "bboxAlphaOver128": [
+        245,
+        4,
+        1035,
+        959
+      ]
+    },
+    "sha256": "761a2f69e0b8f4b35f6e3f6e36bb25d7a1086ffc2129bb925985d7ca94875759",
+    "originalGenerationBasename": "exec-8eb8f7bd-22a5-49d8-95fe-1e63b1856896.png"
+  },
+  {
+    "id": "silhouette-200-908",
+    "answer": "كرسي هزاز",
+    "asset": "media/silhouette/silhouette-200-908.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-200-908.json",
+    "job": "docs/bank/rebuild-2026-09-18/checkpoint/silhouette-resume/jobs/silhouette-200-908.json",
+    "reviewStatus": "needs-regeneration",
+    "note": "Regenerate: rocking chair top and rocker edge touch canvas; request complete outline with ample transparent padding.",
+    "alpha": {
+      "pixels": 1228800,
+      "alpha0": 892242,
+      "alpha255": 4259,
+      "partialAlpha": 332299,
+      "nearOpaque250to255": 263587,
+      "transparentFraction": 0.726108,
+      "bboxAlphaOver128": [
+        213,
+        0,
+        1068,
+        960
+      ]
+    },
+    "sha256": "94be1fedcb09cfc22f905a660946dbed238d8fcd07bc9adfb31d55a04a792cbf",
+    "originalGenerationBasename": "exec-8d427e2f-2f23-4865-8be5-335763edf0db.png"
+  },
+  {
+    "id": "silhouette-400-901",
+    "answer": "أرنب",
+    "asset": "media/silhouette/silhouette-400-901.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-400-901.json",
+    "job": "docs/bank/rebuild-2026-09-18/checkpoint/silhouette-resume/jobs/silhouette-400-901.json",
+    "reviewStatus": "visual-subject-reviewed",
+    "note": "Generated output visually reviewed: subject matches answer; true alpha measured. Final silhouette/reveal gameplay review still pending.",
+    "alpha": {
+      "pixels": 1228800,
+      "alpha0": 968437,
+      "alpha255": 210,
+      "partialAlpha": 260153,
+      "nearOpaque250to255": 227268,
+      "transparentFraction": 0.788116,
+      "bboxAlphaOver128": [
+        315,
+        88,
+        973,
+        847
+      ]
+    },
+    "sha256": "4b50dc7f7e26d807f20b79fc4e4b1b2bdc9fcde00c0296bd98753a70d886b92e",
+    "originalGenerationBasename": "exec-905d5b3b-af98-4ba3-8f5c-1b11ec90ffb6.png"
+  },
+  {
+    "id": "silhouette-400-902",
+    "answer": "مفتاح ربط",
+    "asset": "media/silhouette/silhouette-400-902.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-400-902.json",
+    "job": "docs/bank/rebuild-2026-09-18/checkpoint/silhouette-resume/jobs/silhouette-400-902.json",
+    "reviewStatus": "visual-subject-reviewed",
+    "note": "Generated output visually reviewed: subject matches answer; true alpha measured. Final silhouette/reveal gameplay review still pending.",
+    "alpha": {
+      "pixels": 1228800,
+      "alpha0": 1112606,
+      "alpha255": 767,
+      "partialAlpha": 115427,
+      "nearOpaque250to255": 103273,
+      "transparentFraction": 0.905441,
+      "bboxAlphaOver128": [
+        180,
+        236,
+        1101,
+        764
+      ]
+    },
+    "sha256": "45ad90cc21e28343e0d908821dda8c2906e65af0c14980dec8ad67af25a49c38",
+    "originalGenerationBasename": "exec-51789f0d-20e2-4346-997f-73245df62790.png"
+  },
+  {
+    "id": "silhouette-400-903",
+    "answer": "مجفف شعر",
+    "asset": "media/silhouette/silhouette-400-903.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-400-903.json",
+    "job": "docs/bank/rebuild-2026-09-18/checkpoint/silhouette-resume/jobs/silhouette-400-903.json",
+    "reviewStatus": "visual-subject-reviewed",
+    "note": "Generated output visually reviewed: subject matches answer; true alpha measured. Final silhouette/reveal gameplay review still pending.",
+    "alpha": {
+      "pixels": 1228800,
+      "alpha0": 1021826,
+      "alpha255": 886,
+      "partialAlpha": 206088,
+      "nearOpaque250to255": 191532,
+      "transparentFraction": 0.831564,
+      "bboxAlphaOver128": [
+        274,
+        104,
+        1014,
+        884
+      ]
+    },
+    "sha256": "40b2a550c3d31dc1c4be326370b0bde99cf92f29ef9746693cb1115ede19fe4b",
+    "originalGenerationBasename": "exec-d9341c02-91c0-44b2-a73e-fbd55582fefb.png"
+  },
+  {
+    "id": "silhouette-400-904",
+    "answer": "قارب سريع",
+    "asset": "media/silhouette/silhouette-400-904.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-400-904.json",
+    "job": "docs/bank/rebuild-2026-09-18/checkpoint/silhouette-resume/jobs/silhouette-400-904.json",
+    "reviewStatus": "visual-subject-reviewed",
+    "note": "Generated output visually reviewed: subject matches answer; true alpha measured. Final silhouette/reveal gameplay review still pending.",
+    "alpha": {
+      "pixels": 1228800,
+      "alpha0": 970625,
+      "alpha255": 509,
+      "partialAlpha": 257666,
+      "nearOpaque250to255": 220343,
+      "transparentFraction": 0.789897,
+      "bboxAlphaOver128": [
+        82,
+        265,
+        1219,
+        682
+      ]
+    },
+    "sha256": "bea692257df255fd7b9c11b9722a4daf9d15881e403dd5bd8be60e87d55b90e2",
+    "originalGenerationBasename": "exec-962cb8de-02aa-4a9d-b0e0-bf63efff5164.png"
+  },
+  {
+    "id": "silhouette-400-905",
+    "answer": "نخلة",
+    "asset": "media/silhouette/silhouette-400-905.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-400-905.json",
+    "job": "docs/bank/rebuild-2026-09-18/checkpoint/silhouette-resume/jobs/silhouette-400-905.json",
+    "reviewStatus": "visual-subject-reviewed",
+    "note": "Generated output visually reviewed: subject matches answer; true alpha measured. Final silhouette/reveal gameplay review still pending.",
+    "alpha": {
+      "pixels": 1228800,
+      "alpha0": 879564,
+      "alpha255": 121,
+      "partialAlpha": 349115,
+      "nearOpaque250to255": 136371,
+      "transparentFraction": 0.715791,
+      "bboxAlphaOver128": [
+        271,
+        41,
+        1028,
+        918
+      ]
+    },
+    "sha256": "a961c8f26080ecf76594685231a6c4c652e1d0899ef8c50c8f2957b7425e57a4",
+    "originalGenerationBasename": "exec-39c4dcc4-a5fd-4ed0-9626-7f8d36699e36.png"
+  },
+  {
+    "id": "silhouette-400-906",
+    "answer": "فلفل حار",
+    "asset": "media/silhouette/silhouette-400-906.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-400-906.json",
+    "job": "docs/bank/rebuild-2026-09-18/checkpoint/silhouette-resume/jobs/silhouette-400-906.json",
+    "reviewStatus": "visual-subject-reviewed",
+    "note": "Generated output visually reviewed: subject matches answer; true alpha measured. Final silhouette/reveal gameplay review still pending.",
+    "alpha": {
+      "pixels": 1228800,
+      "alpha0": 1108839,
+      "alpha255": 792,
+      "partialAlpha": 119169,
+      "nearOpaque250to255": 108886,
+      "transparentFraction": 0.902375,
+      "bboxAlphaOver128": [
+        156,
+        218,
+        1124,
+        727
+      ]
+    },
+    "sha256": "000c3a8f9ae481a8ce9cbdf20bf45866100cbe48fa262fca02cfbd670ffa6430",
+    "originalGenerationBasename": "exec-93a8c7fe-8a1c-4ee6-a00e-0f3efe5a6f9d.png"
+  },
+  {
+    "id": "silhouette-400-907",
+    "answer": "تشيلو",
+    "asset": "media/silhouette/silhouette-400-907.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-400-907.json",
+    "job": "docs/bank/rebuild-2026-09-18/checkpoint/silhouette-resume/jobs/silhouette-400-907.json",
+    "reviewStatus": "visual-subject-reviewed",
+    "note": "Generated output visually reviewed: subject matches answer; true alpha measured. Final silhouette/reveal gameplay review still pending.",
+    "alpha": {
+      "pixels": 1228800,
+      "alpha0": 1067116,
+      "alpha255": 1105,
+      "partialAlpha": 160579,
+      "nearOpaque250to255": 133909,
+      "transparentFraction": 0.868421,
+      "bboxAlphaOver128": [
+        462,
+        15,
+        879,
+        945
+      ]
+    },
+    "sha256": "162d494222dfd9d790d6b3db7c57cef27043762ec6e01495718a11c4ed3e0e8e",
+    "originalGenerationBasename": "exec-ce3439e1-2169-46d4-ab89-79330a70e0bf.png"
+  },
+  {
+    "id": "silhouette-400-908",
+    "answer": "مرش ماء",
+    "asset": "media/silhouette/silhouette-400-908.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-400-908.json",
+    "job": "docs/bank/rebuild-2026-09-18/checkpoint/silhouette-resume/jobs/silhouette-400-908.json",
+    "reviewStatus": "visual-subject-reviewed",
+    "note": "Generated output visually reviewed: subject matches answer; true alpha measured. Final silhouette/reveal gameplay review still pending.",
+    "alpha": {
+      "pixels": 1228800,
+      "alpha0": 997773,
+      "alpha255": 1246,
+      "partialAlpha": 229781,
+      "nearOpaque250to255": 204653,
+      "transparentFraction": 0.81199,
+      "bboxAlphaOver128": [
+        199,
+        185,
+        1082,
+        805
+      ]
+    },
+    "sha256": "2a02a902e069e5971ec33605e1abbbef5b12a70c5f5cf25780ad076f0fdd683d",
+    "originalGenerationBasename": "exec-922bef37-2fd8-4135-8695-92ab6863c1cf.png"
+  },
+  {
+    "id": "silhouette-600-901",
+    "answer": "كنغر",
+    "asset": "media/silhouette/silhouette-600-901.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-600-901.json",
+    "job": "docs/bank/rebuild-2026-09-18/checkpoint/silhouette-resume/jobs/silhouette-600-901.json",
+    "reviewStatus": "visual-subject-reviewed",
+    "note": "Generated output visually reviewed: subject matches answer; true alpha measured. Final silhouette/reveal gameplay review still pending.",
+    "alpha": {
+      "pixels": 1228800,
+      "alpha0": 1067364,
+      "alpha255": 654,
+      "partialAlpha": 160782,
+      "nearOpaque250to255": 137402,
+      "transparentFraction": 0.868623,
+      "bboxAlphaOver128": [
+        289,
+        103,
+        990,
+        839
+      ]
+    },
+    "sha256": "9dd74758fc7b9b022c4abcf0ac68b25d49fc6908d18ac55d0069cbfba96dfa8b",
+    "originalGenerationBasename": "exec-13761dad-321f-44b7-9c38-203add33e708.png"
+  },
+  {
+    "id": "silhouette-600-902",
+    "answer": "فتاحة فلين",
+    "asset": "media/silhouette/silhouette-600-902.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-600-902.json",
+    "job": "docs/bank/rebuild-2026-09-18/checkpoint/silhouette-resume/jobs/silhouette-600-902.json",
+    "reviewStatus": "visual-subject-reviewed",
+    "note": "Generated output visually reviewed: subject matches answer; true alpha measured. Final silhouette/reveal gameplay review still pending.",
+    "alpha": {
+      "pixels": 1228800,
+      "alpha0": 1077473,
+      "alpha255": 1298,
+      "partialAlpha": 150029,
+      "nearOpaque250to255": 116982,
+      "transparentFraction": 0.87685,
+      "bboxAlphaOver128": [
+        227,
+        93,
+        1054,
+        862
+      ]
+    },
+    "sha256": "27ae4fa1ab2b6540c4de1203d89616da716b4f3d3fe430b977d5ae5afa03d47c",
+    "originalGenerationBasename": "exec-46f23e38-8ada-4bfc-8f4d-6c0b72cac13e.png"
+  },
+  {
+    "id": "silhouette-600-903",
+    "answer": "زجاجة عطر",
+    "asset": "media/silhouette/silhouette-600-903.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-600-903.json",
+    "job": "docs/bank/rebuild-2026-09-18/checkpoint/silhouette-resume/jobs/silhouette-600-903.json",
+    "reviewStatus": "visual-subject-reviewed",
+    "note": "Generated output visually reviewed: subject matches answer; true alpha measured. Final silhouette/reveal gameplay review still pending.",
+    "alpha": {
+      "pixels": 1228800,
+      "alpha0": 988363,
+      "alpha255": 373,
+      "partialAlpha": 240064,
+      "nearOpaque250to255": 220423,
+      "transparentFraction": 0.804332,
+      "bboxAlphaOver128": [
+        351,
+        147,
+        1128,
+        820
+      ]
+    },
+    "sha256": "f0d32cae423a796846be277fe96c779394c96d9429ba2c6a8ecacc9dee865c57",
+    "originalGenerationBasename": "exec-8913db68-55e2-4df2-87dd-3d3300af00b9.png"
+  },
+  {
+    "id": "silhouette-600-904",
+    "answer": "غواصة",
+    "asset": "media/silhouette/silhouette-600-904.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-600-904.json",
+    "job": "docs/bank/rebuild-2026-09-18/checkpoint/silhouette-resume/jobs/silhouette-600-904.json",
+    "reviewStatus": "visual-subject-reviewed",
+    "note": "Generated output visually reviewed: subject matches answer; true alpha measured. Final silhouette/reveal gameplay review still pending.",
+    "alpha": {
+      "pixels": 1228800,
+      "alpha0": 1012235,
+      "alpha255": 744,
+      "partialAlpha": 215821,
+      "nearOpaque250to255": 188971,
+      "transparentFraction": 0.823759,
+      "bboxAlphaOver128": [
+        113,
+        249,
+        1216,
+        683
+      ]
+    },
+    "sha256": "80c8c7951f9a9a0ccfc14a2a675eb0cfefea95e7039a41120b2cf1123d8b8c74",
+    "originalGenerationBasename": "exec-f732c5c2-9aec-4e43-8c08-7e78f66342d8.png"
+  },
+  {
+    "id": "silhouette-600-905",
+    "answer": "ورقة بلوط",
+    "asset": "media/silhouette/silhouette-600-905.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-600-905.json",
+    "job": "docs/bank/rebuild-2026-09-18/checkpoint/silhouette-resume/jobs/silhouette-600-905.json",
+    "reviewStatus": "visual-subject-reviewed",
+    "note": "Generated output visually reviewed: subject matches answer; true alpha measured. Final silhouette/reveal gameplay review still pending.",
+    "alpha": {
+      "pixels": 1228800,
+      "alpha0": 976004,
+      "alpha255": 923,
+      "partialAlpha": 251873,
+      "nearOpaque250to255": 230646,
+      "transparentFraction": 0.794274,
+      "bboxAlphaOver128": [
+        266,
+        183,
+        1058,
+        781
+      ]
+    },
+    "sha256": "81215c41c7a30eb8157144967b9be7efc7d6b32aa9fc4210166e4ce97b28ee12",
+    "originalGenerationBasename": "exec-a56b89fa-2d01-4e2e-8004-a4a74aa842f5.png"
+  },
+  {
+    "id": "silhouette-600-906",
+    "answer": "أناناس",
+    "asset": "media/silhouette/silhouette-600-906.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-600-906.json",
+    "job": "docs/bank/rebuild-2026-09-18/checkpoint/silhouette-resume/jobs/silhouette-600-906.json",
+    "reviewStatus": "visual-subject-reviewed",
+    "note": "Generated output visually reviewed: subject matches answer; true alpha measured. Final silhouette/reveal gameplay review still pending.",
+    "alpha": {
+      "pixels": 1228800,
+      "alpha0": 972236,
+      "alpha255": 345,
+      "partialAlpha": 256219,
+      "nearOpaque250to255": 198791,
+      "transparentFraction": 0.791208,
+      "bboxAlphaOver128": [
+        431,
+        72,
+        866,
+        904
+      ]
+    },
+    "sha256": "368818d404903ea9e31c8a0487316ba3d9d2da9db856214e22794b458a6db4d1",
+    "originalGenerationBasename": "exec-c85264af-8217-4154-8a25-465d801484f4.png"
+  },
+  {
+    "id": "silhouette-600-907",
+    "answer": "غيتار كهربائي",
+    "asset": "media/silhouette/silhouette-600-907.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-600-907.json",
+    "job": "docs/bank/rebuild-2026-09-18/checkpoint/silhouette-resume/jobs/silhouette-600-907.json",
+    "reviewStatus": "visual-subject-reviewed",
+    "note": "Generated output visually reviewed: subject matches answer; true alpha measured. Final silhouette/reveal gameplay review still pending.",
+    "alpha": {
+      "pixels": 1228800,
+      "alpha0": 1094771,
+      "alpha255": 694,
+      "partialAlpha": 133335,
+      "nearOpaque250to255": 118501,
+      "transparentFraction": 0.890927,
+      "bboxAlphaOver128": [
+        478,
+        21,
+        802,
+        938
+      ]
+    },
+    "sha256": "02eaa7d950349fe0139530218c87e4bc87a57a3a05d9871e8ba2eca5817229a7",
+    "originalGenerationBasename": "exec-9445fc03-ca49-4015-986c-8cc548450bde.png"
+  },
+  {
+    "id": "silhouette-600-908",
+    "answer": "مروحة",
+    "asset": "media/silhouette/silhouette-600-908.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-600-908.json",
+    "job": "docs/bank/rebuild-2026-09-18/checkpoint/silhouette-resume/jobs/silhouette-600-908.json",
+    "reviewStatus": "visual-subject-reviewed",
+    "note": "Generated output visually reviewed: subject matches answer; true alpha measured. Final silhouette/reveal gameplay review still pending.",
+    "alpha": {
+      "pixels": 1228800,
+      "alpha0": 942652,
+      "alpha255": 341,
+      "partialAlpha": 285807,
+      "nearOpaque250to255": 168777,
+      "transparentFraction": 0.767132,
+      "bboxAlphaOver128": [
+        431,
+        79,
+        918,
+        884
+      ]
+    },
+    "sha256": "80c0fb184e1822b2837a57ffccee9a09ac7bb84b9cafe7d9746600ed6f987f22",
+    "originalGenerationBasename": "exec-fd04533f-ab33-4327-a549-01624cd81b01.png"
+  },
+  {
+    "id": "silhouette-800-901",
+    "answer": "مالك الحزين",
+    "asset": "media/silhouette/silhouette-800-901.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-800-901.json",
+    "job": "docs/bank/rebuild-2026-09-18/checkpoint/silhouette-resume/jobs/silhouette-800-901.json",
+    "reviewStatus": "visual-subject-reviewed",
+    "note": "Generated output visually reviewed: subject matches answer; true alpha measured. Final silhouette/reveal gameplay review still pending.",
+    "alpha": {
+      "pixels": 1228800,
+      "alpha0": 1085106,
+      "alpha255": 529,
+      "partialAlpha": 143165,
+      "nearOpaque250to255": 103133,
+      "transparentFraction": 0.883062,
+      "bboxAlphaOver128": [
+        370,
+        93,
+        937,
+        887
+      ]
+    },
+    "sha256": "b6e5ede03192f90d45855e7062d8e6a2bbec21c6b08ab0cc05a6937c921e7bc9",
+    "originalGenerationBasename": "exec-6d01994d-c224-4d83-aecb-bc5583010922.png"
+  },
+  {
+    "id": "silhouette-800-902",
+    "answer": "مثقاب يدوي",
+    "asset": "media/silhouette/silhouette-800-902.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-800-902.json",
+    "job": "docs/bank/rebuild-2026-09-18/checkpoint/silhouette-resume/jobs/silhouette-800-902.json",
+    "reviewStatus": "visual-subject-reviewed",
+    "note": "Generated output visually reviewed: subject matches answer; true alpha measured. Final silhouette/reveal gameplay review still pending.",
+    "alpha": {
+      "pixels": 1228800,
+      "alpha0": 1048460,
+      "alpha255": 993,
+      "partialAlpha": 179347,
+      "nearOpaque250to255": 156607,
+      "transparentFraction": 0.853239,
+      "bboxAlphaOver128": [
+        69,
+        282,
+        1216,
+        744
+      ]
+    },
+    "sha256": "bb3df69b002f9dc10892a8b267519dda28e195b9acf9f5186c94719d7bd181f9",
+    "originalGenerationBasename": "exec-92ee5219-ae67-4e9f-8b02-bbff5e195f8c.png"
+  },
+  {
+    "id": "silhouette-800-903",
+    "answer": "إبرة خياطة",
+    "asset": "media/silhouette/silhouette-800-903.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-800-903.json",
+    "job": "docs/bank/rebuild-2026-09-18/checkpoint/silhouette-resume/jobs/silhouette-800-903.json",
+    "reviewStatus": "visual-subject-reviewed",
+    "note": "Generated output visually reviewed: subject matches answer; true alpha measured. Final silhouette/reveal gameplay review still pending.",
+    "alpha": {
+      "pixels": 1228800,
+      "alpha0": 1167408,
+      "alpha255": 533,
+      "partialAlpha": 60859,
+      "nearOpaque250to255": 33513,
+      "transparentFraction": 0.950039,
+      "bboxAlphaOver128": [
+        259,
+        182,
+        1080,
+        816
+      ]
+    },
+    "sha256": "247d747d6ef8f7e2b5a0896378b92af46e7aa3b72a16e57e637b3456f9b55178",
+    "originalGenerationBasename": "exec-9e813a53-1e71-4a8d-9b29-f123783dc0d8.png"
+  },
+  {
+    "id": "silhouette-800-904",
+    "answer": "طائرة ثنائية السطح",
+    "asset": "media/silhouette/silhouette-800-904.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-800-904.json",
+    "job": "docs/bank/rebuild-2026-09-18/checkpoint/silhouette-resume/jobs/silhouette-800-904.json",
+    "reviewStatus": "visual-subject-reviewed",
+    "note": "Generated output visually reviewed: subject matches answer; true alpha measured. Final silhouette/reveal gameplay review still pending.",
+    "alpha": {
+      "pixels": 1228800,
+      "alpha0": 959582,
+      "alpha255": 1487,
+      "partialAlpha": 267731,
+      "nearOpaque250to255": 216642,
+      "transparentFraction": 0.78091,
+      "bboxAlphaOver128": [
+        147,
+        260,
+        1217,
+        762
+      ]
+    },
+    "sha256": "aae475c12a3e58c1f69bcde0390cf6da516099585607f116c452bbac1e7d1cd1",
+    "originalGenerationBasename": "exec-2ed07c4b-50fa-416c-9ba6-985d09b6d699.png"
+  },
+  {
+    "id": "silhouette-800-905",
+    "answer": "مونستيرا",
+    "asset": "media/silhouette/silhouette-800-905.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-800-905.json",
+    "job": "docs/bank/rebuild-2026-09-18/checkpoint/silhouette-resume/jobs/silhouette-800-905.json",
+    "reviewStatus": "needs-regeneration",
+    "note": "Regenerate: petiole appears joined to the leaf apex rather than heart-shaped basal notch. Correct Monstera anatomy; preserve split/perforated leaf.",
+    "alpha": {
+      "pixels": 1228800,
+      "alpha0": 916508,
+      "alpha255": 1976,
+      "partialAlpha": 310316,
+      "nearOpaque250to255": 266165,
+      "transparentFraction": 0.745856,
+      "bboxAlphaOver128": [
+        295,
+        155,
+        994,
+        837
+      ]
+    },
+    "sha256": "a8f74f34f89b652e1bee5800105b23ad1c69ff9f772f0e8025047002c5c52f52",
+    "originalGenerationBasename": "exec-68f94d77-a988-414d-9337-c368882effd8.png"
+  },
+  {
+    "id": "silhouette-800-906",
+    "answer": "زنجبيل",
+    "asset": "media/silhouette/silhouette-800-906.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-800-906.json",
+    "job": "docs/bank/rebuild-2026-09-18/checkpoint/silhouette-resume/jobs/silhouette-800-906.json",
+    "reviewStatus": "visual-subject-reviewed",
+    "note": "Generated output visually reviewed: subject matches answer; true alpha measured. Final silhouette/reveal gameplay review still pending.",
+    "alpha": {
+      "pixels": 1228800,
+      "alpha0": 901714,
+      "alpha255": 396,
+      "partialAlpha": 326690,
+      "nearOpaque250to255": 294174,
+      "transparentFraction": 0.733817,
+      "bboxAlphaOver128": [
+        221,
+        166,
+        1070,
+        794
+      ]
+    },
+    "sha256": "e9aa172449ca14ecadab6809150d7ab6cbc74392d93c9cf872ddc246a6377173",
+    "originalGenerationBasename": "exec-8e579aca-e68a-46ff-9ba3-30b07fb83091.png"
+  },
+  {
+    "id": "silhouette-800-907",
+    "answer": "هورن",
+    "asset": "media/silhouette/silhouette-800-907.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-800-907.json",
+    "job": "docs/bank/rebuild-2026-09-18/checkpoint/silhouette-resume/jobs/silhouette-800-907.json",
+    "reviewStatus": "visual-subject-reviewed",
+    "note": "Generated output visually reviewed: subject matches answer; true alpha measured. Final silhouette/reveal gameplay review still pending.",
+    "alpha": {
+      "pixels": 1228800,
+      "alpha0": 956019,
+      "alpha255": 1415,
+      "partialAlpha": 271366,
+      "nearOpaque250to255": 214674,
+      "transparentFraction": 0.77801,
+      "bboxAlphaOver128": [
+        237,
+        121,
+        1044,
+        808
+      ]
+    },
+    "sha256": "4dddd125c4ccd75e78685045e34bba50c5eaab728c9bf8591504ceb67780f0e0",
+    "originalGenerationBasename": "exec-7f2c757a-5734-4f44-82b7-c693ea6ce5f8.png"
+  },
+  {
+    "id": "silhouette-800-908",
+    "answer": "مصباح زيت",
+    "asset": "media/silhouette/silhouette-800-908.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-800-908.json",
+    "job": "docs/bank/rebuild-2026-09-18/checkpoint/silhouette-resume/jobs/silhouette-800-908.json",
+    "reviewStatus": "visual-subject-reviewed",
+    "note": "Generated output visually reviewed: subject matches answer; true alpha measured. Final silhouette/reveal gameplay review still pending.",
+    "alpha": {
+      "pixels": 1228800,
+      "alpha0": 1068596,
+      "alpha255": 548,
+      "partialAlpha": 159656,
+      "nearOpaque250to255": 140493,
+      "transparentFraction": 0.869626,
+      "bboxAlphaOver128": [
+        487,
+        95,
+        883,
+        867
+      ]
+    },
+    "sha256": "cb79c991227a52c89bce67b66146546be05752e81e6005e6a9b020a1a4951fb9",
+    "originalGenerationBasename": "exec-7e966cb4-bc1c-44be-aecb-ec5e14188f1e.png"
+  }
+]

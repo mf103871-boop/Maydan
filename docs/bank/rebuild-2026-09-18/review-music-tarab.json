@@ -1,0 +1,576 @@
+{
+  "category": "tarab",
+  "reviewedAt": "2026-09-23",
+  "reviewType": "Independent editorial and source QA of the actual 40-question rebuild, not the obsolete 240-question pack.",
+  "questionCount": 40,
+  "tierCounts": {
+    "200": 8,
+    "400": 8,
+    "600": 8,
+    "800": 8,
+    "1000": 8
+  },
+  "topicCount": 7,
+  "difficulty": "Editorial targets80/60/40/25/15 percent only; no player success-rate measurement.",
+  "method": "Read precise MaqamWorld teaching pages, official artist/cultural-institution biographies, institutional archival material, and publisher or licensed release catalogues. Indexed source extracts counted as such, not as a successful full-page fetch. No lyrics reproduced.",
+  "accessCaveats": [],
+  "items": [
+    {
+      "qid": "tarab-200-901",
+      "p": 200,
+      "topic": "نجوم مصر",
+      "question": "من المطربة الملقبة بكوكب الشرق؟",
+      "answer": "أم كلثوم",
+      "sourceUrl": "https://www.bibalex.org/ar/news/details?documentid=45460&page=11&related=center_31&searching=1",
+      "evidence": "Bibliotheca Alexandrina own commemorative event announcement identifies Umm Kulthum as Kawkab al-Sharq.",
+      "review": "supported"
+    },
+    {
+      "qid": "tarab-200-902",
+      "p": 200,
+      "topic": "نجوم مصر",
+      "question": "من المطرب المصري الملقب بالعندليب الأسمر؟",
+      "answer": "عبد الحليم حافظ",
+      "sourceUrl": "https://sis.gov.eg/ar/مصر/المجتمع/أعلام-وشخصيات-مصرية/عبد-الحليم-حافظ-1/",
+      "evidence": "Egypt State Information Service biography heading identifies Abdel Halim as al-Andalib al-Asmar.",
+      "review": "supported"
+    },
+    {
+      "qid": "tarab-200-903",
+      "p": 200,
+      "topic": "نجوم الشام",
+      "question": "من المطربة اللبنانية الملقبة بجارة القمر؟",
+      "answer": "فيروز",
+      "sourceUrl": "https://www.gocp.gov.eg/articles.aspx?ArticleID=183980",
+      "evidence": "Egypt General Organization for Cultural Palaces own Fairuz celebration identifies Jarat al-Qamar.",
+      "review": "supported"
+    },
+    {
+      "qid": "tarab-200-904",
+      "p": 200,
+      "topic": "نجوم الشام",
+      "question": "من المطرب صاحب «الربيع» الذي اشتهر بلقب ملك العود؟",
+      "answer": "فريد الأطرش",
+      "sourceUrl": "https://www.maqamworld.com/en/instr/oud.php",
+      "evidence": "MaqamWorld oud, Farid al-Atrash caption names King of Oud and al-Rabi.",
+      "review": "supported"
+    },
+    {
+      "qid": "tarab-200-905",
+      "p": 200,
+      "topic": "آلات وعازفون",
+      "question": "ما الآلة الوترية ذات الجسم الكمثري والرقبة القصيرة التي تُعزف بريشة؟",
+      "answer": "العود",
+      "sourceUrl": "https://www.maqamworld.com/en/instr/oud.php",
+      "evidence": "MaqamWorld oud body/neck and plectrum descriptions.",
+      "review": "supported"
+    },
+    {
+      "qid": "tarab-200-906",
+      "p": 200,
+      "topic": "آلات وعازفون",
+      "question": "ما آلة النفخ المصنوعة من القصب والمستخدمة في التخت الشرقي؟",
+      "answer": "الناي",
+      "sourceUrl": "https://www.maqamworld.com/en/instr/nay.php",
+      "evidence": "MaqamWorld nay opening definition: cane flute; instrument index includes it in takht.",
+      "review": "supported"
+    },
+    {
+      "qid": "tarab-200-907",
+      "p": 200,
+      "topic": "قوالب موسيقية",
+      "question": "ماذا يسمى العمل الغنائي الذي يشترك في أدائه مطربان؟",
+      "answer": "دويتو",
+      "sourceUrl": "https://www.maqamworld.com/en/form/vocal_comp.php",
+      "evidence": "MaqamWorld vocal forms, Duet definition: two singers.",
+      "review": "supported"
+    },
+    {
+      "qid": "tarab-200-908",
+      "p": 200,
+      "topic": "محطات الطرب",
+      "question": "إلى أي مدينة سورية تُنسب القدود؟",
+      "answer": "حلب",
+      "sourceUrl": "https://www.maqamworld.com/en/form/vocal_comp.php",
+      "evidence": "MaqamWorld vocal forms, Qadd section identifies flourishing in Aleppo.",
+      "review": "supported"
+    },
+    {
+      "qid": "tarab-400-901",
+      "p": 400,
+      "topic": "التلحين",
+      "question": "من وضع لحن «ألف ليلة وليلة»؟",
+      "answer": "بليغ حمدي",
+      "sourceUrl": "https://www.maqamworld.com/en/form/instr_comp.php",
+      "evidence": "MaqamWorld instrumental forms, Alf Leila w Leila caption credits Baligh Hamdi.",
+      "review": "supported"
+    },
+    {
+      "qid": "tarab-400-902",
+      "p": 400,
+      "topic": "التلحين",
+      "question": "من لحّن قصيدة «الأطلال»؟",
+      "answer": "رياض السنباطي",
+      "sourceUrl": "https://www.maqamworld.com/en/form/vocal_comp.php",
+      "evidence": "MaqamWorld vocal forms, al-Atlal caption credits Riyad al-Sunbati.",
+      "review": "supported"
+    },
+    {
+      "qid": "tarab-400-903",
+      "p": 400,
+      "topic": "نجوم مصر",
+      "question": "من المطربة المصرية صاحبة أغنية «حيرانة ليه»؟",
+      "answer": "ليلى مراد",
+      "sourceUrl": "https://www.maqamworld.com/en/form/vocal_comp.php",
+      "evidence": "MaqamWorld vocal forms, Hayrana Leh caption identifies Leila Murad.",
+      "review": "supported"
+    },
+    {
+      "qid": "tarab-400-904",
+      "p": 400,
+      "topic": "نجوم الشام",
+      "question": "من المطربة اللبنانية صاحبة أغنية «يا دلع دلع»؟",
+      "answer": "صباح",
+      "sourceUrl": "https://www.maqamworld.com/en/form/vocal_comp.php",
+      "evidence": "MaqamWorld vocal forms, Ya Dala Dalla caption identifies Sabah. Unnecessary nickname removed.",
+      "review": "supported"
+    },
+    {
+      "qid": "tarab-400-905",
+      "p": 400,
+      "topic": "شعر الأغنية",
+      "question": "من صاحب قصيدة «المواكب» التي اقتُطفت منها أغنية «أعطني الناي وغنّ»؟",
+      "answer": "جبران خليل جبران",
+      "sourceUrl": "https://poetry.dct.gov.ae/poems/141719-الخير-في-الناس-مصنوع-إذا-جبروا",
+      "evidence": "Abu Dhabi DCT primary poem text, Gibran byline and repeated Aatini al-nay refrain; publication note identifies al-Mawakib. Hindawi contemporary book review confirms title/author.",
+      "review": "supported"
+    },
+    {
+      "qid": "tarab-400-906",
+      "p": 400,
+      "topic": "محطات الطرب",
+      "question": "في أي موعد شهري اشتهرت كوكب الشرق بتقديم حفلتها الإذاعية؟",
+      "answer": "أول خميس",
+      "sourceUrl": "https://streetstory.gov.eg/اسماء-الشوارع/أم-كلثوم/",
+      "evidence": "Government Street Story biography, monthly concert paragraph explicitly first Thursday.",
+      "review": "supported"
+    },
+    {
+      "qid": "tarab-400-907",
+      "p": 400,
+      "topic": "آلات وعازفون",
+      "question": "ما الآلة ذات الصندوق شبه المنحرف التي ينقر العازف أوتارها بريشتين مثبتتين بسبابتيه؟",
+      "answer": "القانون",
+      "sourceUrl": "https://www.maqamworld.com/en/instr/qanun.php",
+      "evidence": "MaqamWorld qanun body shape and two forefinger plectra description.",
+      "review": "supported"
+    },
+    {
+      "qid": "tarab-400-908",
+      "p": 400,
+      "topic": "قوالب موسيقية",
+      "question": "ماذا يسمى الارتجال الغنائي المنفرد المبني على أبيات بالعامية؟",
+      "answer": "الموال",
+      "sourceUrl": "https://www.maqamworld.com/en/form/improv.php",
+      "evidence": "MaqamWorld improvised forms, Mawwal definition: colloquial poem, solo vocal improvisation.",
+      "review": "supported"
+    },
+    {
+      "qid": "tarab-600-901",
+      "p": 600,
+      "topic": "نجوم مصر",
+      "question": "من المطرب الذي اشتهر بتسجيل «ليه يا بنفسج»؟",
+      "answer": "صالح عبد الحي",
+      "sourceUrl": "https://www.maqamworld.com/en/form/improv.php",
+      "evidence": "MaqamWorld improvised forms, Leh Ya Banafseg caption identifies Saleh Abdel Hayy.",
+      "review": "supported"
+    },
+    {
+      "qid": "tarab-600-902",
+      "p": 600,
+      "topic": "شعر الأغنية",
+      "question": "من الشاعر صاحب قصيدة «الأطلال»؟",
+      "answer": "إبراهيم ناجي",
+      "sourceUrl": "https://www.bibalex.org/libraries/Presentation/Static/Om_Koulthoum_ara.pdf",
+      "evidence": "Bibliotheca Alexandrina Umm Kulthum bibliography, page2 credits al-Atlal to Ibrahim Naji. Its unrelated date is not used.",
+      "review": "supported"
+    },
+    {
+      "qid": "tarab-600-903",
+      "p": 600,
+      "topic": "التلحين",
+      "question": "من وضع لحن «قارئة الفنجان»؟",
+      "answer": "محمد الموجي",
+      "sourceUrl": "https://www.maqamworld.com/en/form/instr_comp.php",
+      "evidence": "MaqamWorld instrumental forms, Qariat al-Fingan caption credits Muhammad al-Mugi.",
+      "review": "supported"
+    },
+    {
+      "qid": "tarab-600-904",
+      "p": 600,
+      "topic": "التلحين",
+      "question": "من الملحن اللبناني صاحب لحن «ورقو الأصفر»؟",
+      "answer": "فيلمون وهبي",
+      "sourceUrl": "https://www.maqamworld.com/en/form/vocal_comp.php",
+      "evidence": "MaqamWorld vocal forms, Waraqu al-Asfar caption credits Philemon Wehbe.",
+      "review": "supported"
+    },
+    {
+      "qid": "tarab-600-905",
+      "p": 600,
+      "topic": "قوالب موسيقية",
+      "question": "ماذا يسمى الارتجال الغنائي على عبارة «يا ليل يا عين»؟",
+      "answer": "الليالي",
+      "sourceUrl": "https://www.maqamworld.com/en/form/improv.php",
+      "evidence": "MaqamWorld improvised forms, Layali definition.",
+      "review": "supported"
+    },
+    {
+      "qid": "tarab-600-906",
+      "p": 600,
+      "topic": "آلات وعازفون",
+      "question": "ما الآلة الشامية ذات الرقبة الطويلة والدساتين المتحركة والأوتار المعدنية؟",
+      "answer": "البزق",
+      "sourceUrl": "https://www.maqamworld.com/en/instr/buzuq.php",
+      "evidence": "MaqamWorld buzuq definition, metal strings, movable frets and long neck.",
+      "review": "supported"
+    },
+    {
+      "qid": "tarab-600-907",
+      "p": 600,
+      "topic": "محطات الطرب",
+      "question": "ما القاعة الباريسية التي غنّت فيها جارة القمر خلال جولاتها الأوروبية؟",
+      "answer": "الأولمبيا",
+      "sourceUrl": "https://music.apple.com/us/album/the-olympia-paris-concert-1979-live/1420594903",
+      "evidence": "Apple Music licensed live album title explicitly The Olympia Paris Concert 1979 by Fairouz.",
+      "review": "supported"
+    },
+    {
+      "qid": "tarab-600-908",
+      "p": 600,
+      "topic": "نجوم الشام",
+      "question": "ما الاسم الأصلي لصاحبة لقب جارة القمر؟",
+      "answer": "نهاد حداد",
+      "sourceUrl": "https://www.aub.edu.lb/doctorates/recipients/Pages/fairuz-profile.aspx",
+      "evidence": "AUB honorary degree profile identifies Nouhad Haddad and Fairuz.",
+      "review": "supported"
+    },
+    {
+      "qid": "tarab-800-901",
+      "p": 800,
+      "topic": "التلحين",
+      "question": "من وضع لحن المونولوج الغنائي «يا طيور»؟",
+      "answer": "محمد القصبجي",
+      "sourceUrl": "https://www.maqamworld.com/en/form/vocal_comp.php",
+      "evidence": "MaqamWorld vocal forms, Ya Tuyur monologue example credits Muhammad al-Qasabgi.",
+      "review": "supported"
+    },
+    {
+      "qid": "tarab-800-902",
+      "p": 800,
+      "topic": "التلحين",
+      "question": "من لحّن «يا مسهرني» لكوكب الشرق؟",
+      "answer": "سيد مكاوي",
+      "sourceUrl": "https://www.maqamworld.com/en/instr/accordion.php",
+      "evidence": "MaqamWorld accordion Ya Msahharni caption credits Sayyed Makkawi; year discrepancies on page excluded.",
+      "review": "supported"
+    },
+    {
+      "qid": "tarab-800-903",
+      "p": 800,
+      "topic": "قوالب موسيقية",
+      "question": "ما القالب المصري القديم الذي يتبادل فيه المطرب والبطانة غناء الآهات؟",
+      "answer": "الدور",
+      "sourceUrl": "https://www.maqamworld.com/en/form/vocal_comp.php",
+      "evidence": "MaqamWorld vocal forms, Dawr description and ahat exchange.",
+      "review": "supported"
+    },
+    {
+      "qid": "tarab-800-904",
+      "p": 800,
+      "topic": "آلات وعازفون",
+      "question": "ما آلة الإيقاع الصغيرة ذات الجلد والصنوج التي تضبط إيقاع التخت التقليدي؟",
+      "answer": "الرق",
+      "sourceUrl": "https://www.maqamworld.com/en/instr/riqq.php",
+      "evidence": "MaqamWorld riqq body/cymbals and takht rhythm-player description.",
+      "review": "supported"
+    },
+    {
+      "qid": "tarab-800-905",
+      "p": 800,
+      "topic": "شعر الأغنية",
+      "question": "من ترجم رباعيات الخيام إلى العربية في النسخة التي غنّتها كوكب الشرق؟",
+      "answer": "أحمد رامي",
+      "sourceUrl": "https://www.bibalex.org/libraries/Presentation/Static/ramy.pdf",
+      "evidence": "Bibliotheca Alexandrina Rami bibliography, translation entry page3 and performed Rubaiyat cassette credit page5.",
+      "review": "supported"
+    },
+    {
+      "qid": "tarab-800-906",
+      "p": 800,
+      "topic": "نجوم الشام",
+      "question": "من المطرب اللبناني الذي شارك جارة القمر مسرحيات «بياع الخواتم» و«ميس الريم» و«بترا»؟",
+      "answer": "نصري شمس الدين",
+      "sourceUrl": "https://nasrishamseddine.com/about-nasri-shamseddine",
+      "evidence": "Artist archive biography lists all three productions with Fairuz/Rahbanis. Replaced misleading since-the-sixties clue; archive dates early collaboration1954 and festival1957.",
+      "review": "supported"
+    },
+    {
+      "qid": "tarab-800-907",
+      "p": 800,
+      "topic": "محطات الطرب",
+      "question": "ماذا تسمى الفرقة الشرقية الصغيرة التقليدية التي تجمع الآلات اللحنية مع ضابط الإيقاع؟",
+      "answer": "التخت",
+      "sourceUrl": "https://www.maqamworld.com/en/instr.php",
+      "evidence": "MaqamWorld instrument index, opening paragraph defines takht and its instruments.",
+      "review": "supported"
+    },
+    {
+      "qid": "tarab-800-908",
+      "p": 800,
+      "topic": "محطات الطرب",
+      "question": "في أي مدينة لبنانية غنّت جارة القمر عام 1957 قرب أعمدة معبد جوبيتر؟",
+      "answer": "بعلبك",
+      "sourceUrl": "https://www.aub.edu.lb/doctorates/recipients/Pages/fairuz-profile.aspx",
+      "evidence": "AUB honorary degree profile:1957 first outdoor concert by Jupiter columns in Baalbek. Narrowed question to exact supported event.",
+      "review": "supported"
+    },
+    {
+      "qid": "tarab-1000-901",
+      "p": 1000,
+      "topic": "آلات وعازفون",
+      "question": "من عازف الأكورديون المصري الذي عزف مقدمة «يا مسهرني»؟",
+      "answer": "فاروق سلامة",
+      "sourceUrl": "https://www.maqamworld.com/en/instr/accordion.php",
+      "evidence": "MaqamWorld accordion, Ya Msahharni performance caption: Faruq Salama.",
+      "review": "supported"
+    },
+    {
+      "qid": "tarab-1000-902",
+      "p": 1000,
+      "topic": "آلات وعازفون",
+      "question": "من عازف القانون الذي رافق كوكب الشرق عقودًا؟",
+      "answer": "محمد عبده صالح",
+      "sourceUrl": "https://www.maqamworld.com/en/instr/qanun.php",
+      "evidence": "MaqamWorld qanun, Muhammad Abdu Saleh caption: Umm Kulthum player for decades.",
+      "review": "supported"
+    },
+    {
+      "qid": "tarab-1000-903",
+      "p": 1000,
+      "topic": "قوالب موسيقية",
+      "question": "ماذا تسمى اللازمة التي تعود بين خانات السماعي والبشرف؟",
+      "answer": "التسليم",
+      "sourceUrl": "https://www.maqamworld.com/en/form/ottoman.php",
+      "evidence": "MaqamWorld Ottoman forms: repeated taslim between khanas.",
+      "review": "supported"
+    },
+    {
+      "qid": "tarab-1000-904",
+      "p": 1000,
+      "topic": "قوالب موسيقية",
+      "question": "ما القالب الآلي الذي تتبادل فيه الفرقة لازمة جماعية مع ارتجال كل عازف؟",
+      "answer": "التحميلة",
+      "sourceUrl": "https://www.maqamworld.com/en/form/instr_comp.php",
+      "evidence": "MaqamWorld instrumental forms, Tahmila definition and alternating ensemble/solo structure.",
+      "review": "supported"
+    },
+    {
+      "qid": "tarab-1000-905",
+      "p": 1000,
+      "topic": "التلحين",
+      "question": "من المؤلف المصري لسماعي بياتي الشهير الذي يحمل اسم عائلته؟",
+      "answer": "إبراهيم العريان",
+      "sourceUrl": "https://www.maqamworld.com/en/form/ottoman.php",
+      "evidence": "MaqamWorld Ottoman forms, Samai Bayati by Egyptian Ibrahim al-Aryan.",
+      "review": "supported"
+    },
+    {
+      "qid": "tarab-1000-906",
+      "p": 1000,
+      "topic": "التلحين",
+      "question": "من الموسيقار الذي اختار لجارة القمر اسمها الفني أثناء عملها في الإذاعة؟",
+      "answer": "حليم الرومي",
+      "sourceUrl": "https://www.aub.edu.lb/doctorates/recipients/Pages/fairuz-profile.aspx",
+      "evidence": "AUB honorary degree profile explicitly credits Halim al-Rumi with suggested stage name.",
+      "review": "supported"
+    },
+    {
+      "qid": "tarab-1000-907",
+      "p": 1000,
+      "topic": "شعر الأغنية",
+      "question": "من الشاعر السوداني صاحب قصيدة «أغدًا ألقاك»؟",
+      "answer": "الهادي آدم",
+      "sourceUrl": "https://www.mfa.gov.eg/ar/Ministers/Details/MissionsNews/4441",
+      "evidence": "Egypt Foreign Ministry report of its own consular celebration explicitly attributes Aghadan Alqak to Sudanese poet al-Hadi Adam.",
+      "review": "supported"
+    },
+    {
+      "qid": "tarab-1000-908",
+      "p": 1000,
+      "topic": "نجوم الشام",
+      "question": "من الموسيقي السوري الذي اشتهر بلقب أمير البزق؟",
+      "answer": "محمد عبد الكريم",
+      "sourceUrl": "https://www.maqamworld.com/en/instr/buzuq.php",
+      "evidence": "MaqamWorld buzuq, Muhammad Abdel Karim caption identifies Syrian and Prince of Buzuq.",
+      "review": "supported"
+    }
+  ],
+  "validation": {
+    "command": "npm run bank:validate -- --cat tarab",
+    "exitCode": 0,
+    "contentErrors": 0,
+    "reviewedWarnings": "Single-word instrument mentions in other artist clues are incidental; cross-category entity answers are allowed with distinct clues. No within-pack normalized answer duplicates or multiword answer leaks.",
+    "gitDiffCheckExitCode": 0
+  },
+  "changes": [
+    {
+      "qid": "tarab-200-901",
+      "before": {
+        "sourceUrl": "https://en.wikipedia.org/wiki/Umm_Kulthum"
+      },
+      "after": {
+        "sourceUrl": "https://www.bibalex.org/ar/news/details?documentid=45460&page=11&related=center_31&searching=1"
+      }
+    },
+    {
+      "qid": "tarab-200-902",
+      "before": {
+        "sourceUrl": "https://en.wikipedia.org/wiki/Abdel_Halim_Hafez"
+      },
+      "after": {
+        "sourceUrl": "https://sis.gov.eg/ar/مصر/المجتمع/أعلام-وشخصيات-مصرية/عبد-الحليم-حافظ-1/"
+      }
+    },
+    {
+      "qid": "tarab-200-903",
+      "before": {
+        "sourceUrl": "https://en.wikipedia.org/wiki/Fairuz"
+      },
+      "after": {
+        "sourceUrl": "https://www.gocp.gov.eg/articles.aspx?ArticleID=183980"
+      }
+    },
+    {
+      "qid": "tarab-400-904",
+      "before": {
+        "q": "من المطربة اللبنانية صاحبة «يا دلع دلع» والملقبة بالشحرورة؟"
+      },
+      "after": {
+        "q": "من المطربة اللبنانية صاحبة أغنية «يا دلع دلع»؟"
+      }
+    },
+    {
+      "qid": "tarab-400-905",
+      "before": {
+        "sourceUrl": "https://en.wikipedia.org/wiki/Fairuz"
+      },
+      "after": {
+        "sourceUrl": "https://poetry.dct.gov.ae/poems/141719-الخير-في-الناس-مصنوع-إذا-جبروا"
+      }
+    },
+    {
+      "qid": "tarab-400-906",
+      "before": {
+        "sourceUrl": "https://en.wikipedia.org/wiki/Umm_Kulthum"
+      },
+      "after": {
+        "sourceUrl": "https://streetstory.gov.eg/اسماء-الشوارع/أم-كلثوم/"
+      }
+    },
+    {
+      "qid": "tarab-600-902",
+      "before": {
+        "sourceUrl": "https://en.wikipedia.org/wiki/Umm_Kulthum"
+      },
+      "after": {
+        "sourceUrl": "https://www.bibalex.org/libraries/Presentation/Static/Om_Koulthoum_ara.pdf"
+      }
+    },
+    {
+      "qid": "tarab-600-907",
+      "before": {
+        "sourceUrl": "https://en.wikipedia.org/wiki/Fairuz"
+      },
+      "after": {
+        "sourceUrl": "https://music.apple.com/us/album/the-olympia-paris-concert-1979-live/1420594903"
+      }
+    },
+    {
+      "qid": "tarab-600-908",
+      "before": {
+        "sourceUrl": "https://en.wikipedia.org/wiki/Fairuz"
+      },
+      "after": {
+        "sourceUrl": "https://www.aub.edu.lb/doctorates/recipients/Pages/fairuz-profile.aspx"
+      }
+    },
+    {
+      "qid": "tarab-800-908",
+      "before": {
+        "sourceUrl": "https://en.wikipedia.org/wiki/Fairuz"
+      },
+      "after": {
+        "sourceUrl": "https://www.aub.edu.lb/doctorates/recipients/Pages/fairuz-profile.aspx"
+      }
+    },
+    {
+      "qid": "tarab-1000-906",
+      "before": {
+        "sourceUrl": "https://en.wikipedia.org/wiki/Fairuz"
+      },
+      "after": {
+        "sourceUrl": "https://www.aub.edu.lb/doctorates/recipients/Pages/fairuz-profile.aspx"
+      }
+    },
+    {
+      "qid": "tarab-800-905",
+      "before": {
+        "sourceUrl": "https://en.wikipedia.org/wiki/Umm_Kulthum"
+      },
+      "after": {
+        "sourceUrl": "https://www.bibalex.org/libraries/Presentation/Static/ramy.pdf"
+      }
+    },
+    {
+      "qid": "tarab-800-906",
+      "before": {
+        "sourceUrl": "https://en.wikipedia.org/wiki/Nasri_Shamseddine"
+      },
+      "after": {
+        "sourceUrl": "https://nasrishamseddine.com/about-nasri-shamseddine"
+      }
+    },
+    {
+      "qid": "tarab-800-906",
+      "before": {
+        "q": "من المطرب اللبناني الذي تعاون مع الرحابنة ورافق جارة القمر منذ الستينيات؟"
+      },
+      "after": {
+        "q": "من المطرب اللبناني الذي شارك فيروز مسرحيات «بياع الخواتم» و«ميس الريم» و«بترا»؟"
+      }
+    },
+    {
+      "qid": "tarab-800-908",
+      "before": {
+        "q": "في أي مدينة لبنانية قدّمت جارة القمر أول ظهور كبير لها في مهرجان دولي؟"
+      },
+      "after": {
+        "q": "في أي مدينة لبنانية غنّت جارة القمر عام 1957 قرب أعمدة معبد جوبيتر؟"
+      }
+    },
+    {
+      "qid": "tarab-1000-907",
+      "before": {
+        "sourceUrl": "https://en.wikipedia.org/wiki/Umm_Kulthum"
+      },
+      "after": {
+        "sourceUrl": "https://www.mfa.gov.eg/ar/Ministers/Details/MissionsNews/4441"
+      }
+    }
+  ],
+  "packSha256": "5e587cdd921e5a313f5783a79507b2ee5958e2fb220b72b1f7f0639a55476dbd",
+  "maxQuestionWords": 13,
+  "maxAnswerWords": 3,
+  "maxTopicCountPerTier": 2
+}

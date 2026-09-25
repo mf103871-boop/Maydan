@@ -5,2563 +5,548 @@
   "qs": [
     {
       "p": 200,
-      "topic": "الكعبة والحرم",
-      "q": "ما اسم البناء المكعّب الذي يتوسّط صحن المسجد الحرام؟",
+      "topic": "معالم الحرم",
+      "q": "ما البناء المكعب الذي يتوسط المسجد الحرام؟",
       "a": "الكعبة المشرفة",
       "alt": [
         "الكعبة"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الكعبة",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Kaaba",
       "verified": true,
-      "qid": "islamiyat-200-001"
+      "qid": "islamiyat-200-901",
+      "difficultyTarget": 0.8
     },
     {
       "p": 200,
-      "topic": "الكعبة والحرم",
-      "q": "ما اسم البئر الشهيرة التي تقع داخل المسجد الحرام في مكة؟",
+      "topic": "معالم الحرم",
+      "q": "ما اسم البئر الشهيرة بجوار البيت الحرام في مكة؟",
       "a": "بئر زمزم",
       "alt": [
         "زمزم"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/بئر_زمزم",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Zamzam_Well",
       "verified": true,
-      "qid": "islamiyat-200-002"
+      "qid": "islamiyat-200-902",
+      "difficultyTarget": 0.8
     },
     {
       "p": 200,
-      "topic": "الكعبة والحرم",
-      "q": "ما اسم الحجر المثبّت في أحد أركان الكعبة ويقصده الطائفون؟",
-      "a": "الحجر الأسود",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الحجر_الأسود",
-      "verified": true,
-      "qid": "islamiyat-200-003"
-    },
-    {
-      "p": 200,
-      "topic": "الكعبة والحرم",
-      "q": "ما اسم الثوب الحريري الذي تُغطّى به الكعبة ويُجدَّد كل عام؟",
-      "a": "الكسوة",
-      "alt": [
-        "كسوة الكعبة"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/كسوة_الكعبة",
-      "verified": true,
-      "qid": "islamiyat-200-004"
-    },
-    {
-      "p": 200,
-      "topic": "الكعبة والحرم",
-      "q": "ما اسم الممشى الممتد بين الصفا والمروة داخل المسجد الحرام؟",
-      "a": "المسعى",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الصفا_والمروة",
-      "verified": true,
-      "qid": "islamiyat-200-005"
-    },
-    {
-      "p": 200,
-      "topic": "الكعبة والحرم",
-      "q": "في أي مدينة يقع المسجد الحرام؟",
-      "a": "مكة المكرمة",
-      "alt": [
-        "مكة"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/المسجد_الحرام",
-      "verified": true,
-      "qid": "islamiyat-200-006"
-    },
-    {
-      "p": 200,
-      "topic": "الكعبة والحرم",
-      "q": "ما اسم الحجر المحفوظ في قبة زجاجية قرب الكعبة وفيه أثر قدمين؟",
-      "a": "مقام إبراهيم",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/مقام_إبراهيم",
-      "verified": true,
-      "qid": "islamiyat-200-007"
-    },
-    {
-      "p": 200,
-      "topic": "الكعبة والحرم",
-      "q": "كم بابًا للكعبة؟",
-      "a": "باب واحد",
-      "alt": [
-        "واحد"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الكعبة",
-      "verified": true,
-      "qid": "islamiyat-200-008"
-    },
-    {
-      "p": 200,
-      "topic": "الكعبة والحرم",
-      "q": "بم يُلقّب المسجد الحرام والمسجد النبوي معًا؟",
-      "a": "الحرمان الشريفان",
-      "alt": [
-        "الحرمين الشريفين"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الحرمان_الشريفان",
-      "verified": true,
-      "qid": "islamiyat-200-009"
-    },
-    {
-      "p": 200,
-      "topic": "مشاعر ومواضع",
-      "q": "في أي دولة تقع مدينتا مكة والمدينة المنورة؟",
-      "a": "السعودية",
-      "alt": [
-        "المملكة العربية السعودية"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/مكة_المكرمة",
-      "verified": true,
-      "qid": "islamiyat-200-010"
-    },
-    {
-      "p": 200,
-      "topic": "مشاعر ومواضع",
-      "q": "ما اسم المشعر الذي يقع بين منى وعرفة؟",
-      "a": "مزدلفة",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/مزدلفة",
-      "verified": true,
-      "qid": "islamiyat-200-011"
-    },
-    {
-      "p": 200,
-      "topic": "مشاعر ومواضع",
-      "q": "ما اسم الصعيد الواسع الذي يجتمع فيه الحجاج في تاسع ذي الحجة؟",
+      "topic": "المشاعر",
+      "q": "ما الصعيد الذي يجتمع فيه الحجاج في اليوم التاسع من ذي الحجة؟",
       "a": "عرفات",
       "alt": [
-        "عرفة"
+        "عرفة",
+        "صعيد عرفات"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/عرفات",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Mount_Arafat",
       "verified": true,
-      "qid": "islamiyat-200-012"
+      "qid": "islamiyat-200-903",
+      "difficultyTarget": 0.8
     },
     {
       "p": 200,
-      "topic": "مشاعر ومواضع",
-      "q": "في أي مدينة يقع المسجد الأقصى؟",
-      "a": "القدس",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/المسجد_الأقصى",
-      "verified": true,
-      "qid": "islamiyat-200-013"
-    },
-    {
-      "p": 200,
-      "topic": "مساجد وعمارة",
-      "q": "ماذا يسمى البرج المرتفع الذي يُرفع منه الأذان في المسجد؟",
-      "a": "المئذنة",
-      "alt": [
-        "المنارة"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/مئذنة",
-      "verified": true,
-      "qid": "islamiyat-200-014"
-    },
-    {
-      "p": 200,
-      "topic": "مساجد وعمارة",
-      "q": "ماذا يسمى التجويف المقوّس في جدار المسجد الذي يبيّن اتجاه الكعبة؟",
-      "a": "المحراب",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/محراب",
-      "verified": true,
-      "qid": "islamiyat-200-015"
-    },
-    {
-      "p": 200,
-      "topic": "مساجد وعمارة",
-      "q": "ماذا يسمى الدرج المرتفع في المسجد الذي يُلقي عليه الخطيب خطبته؟",
-      "a": "المنبر",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/منبر",
-      "verified": true,
-      "qid": "islamiyat-200-016"
-    },
-    {
-      "p": 200,
-      "topic": "مساجد وعمارة",
-      "q": "في أي مدينة يقع الجامع الأزهر؟",
-      "a": "القاهرة",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الجامع_الأزهر",
-      "verified": true,
-      "qid": "islamiyat-200-017"
-    },
-    {
-      "p": 200,
-      "topic": "مساجد وعمارة",
-      "q": "في أي دولة يقع المسجد الأزرق المشهور بمآذنه الست؟",
-      "a": "تركيا",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/مسجد_السلطان_أحمد",
-      "verified": true,
-      "qid": "islamiyat-200-018"
-    },
-    {
-      "p": 200,
-      "topic": "مساجد وعمارة",
-      "q": "في أي مدينة إماراتية يقع جامع الشيخ زايد الكبير؟",
-      "a": "أبوظبي",
-      "alt": [
-        "أبو ظبي"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/جامع_الشيخ_زايد_الكبير",
-      "verified": true,
-      "qid": "islamiyat-200-019"
-    },
-    {
-      "p": 200,
-      "topic": "مساجد وعمارة",
-      "q": "ما اسم المبنى المثمّن ذي القبة الذهبية داخل باحة المسجد الأقصى؟",
-      "a": "قبة الصخرة",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/قبة_الصخرة",
-      "verified": true,
-      "qid": "islamiyat-200-020"
-    },
-    {
-      "p": 200,
-      "topic": "التقويم الهجري",
-      "q": "ما الشهر الهجري الذي سُمّي بهذا الاسم لتحريم القتال فيه؟",
-      "a": "المحرم",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/التقويم_الهجري",
-      "verified": true,
-      "qid": "islamiyat-200-021"
-    },
-    {
-      "p": 200,
-      "topic": "التقويم الهجري",
-      "q": "في أي شهر هجري يقصد الحجاج مكة لأداء الحج؟",
-      "a": "ذو الحجة",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/التقويم_الهجري",
-      "verified": true,
-      "qid": "islamiyat-200-022"
-    },
-    {
-      "p": 200,
-      "topic": "التقويم الهجري",
-      "q": "ما الحدث الذي جعله المسلمون بداية للتقويم الهجري؟",
-      "a": "الهجرة",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/التقويم_الهجري",
-      "verified": true,
-      "qid": "islamiyat-200-023"
-    },
-    {
-      "p": 200,
-      "topic": "التقويم الهجري",
-      "q": "ما الشهر الهجري الذي يأتي مباشرة بعد شهر الصيام؟",
-      "a": "شوال",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/شوال",
-      "verified": true,
-      "qid": "islamiyat-200-024"
-    },
-    {
-      "p": 200,
-      "topic": "التقويم الهجري",
-      "q": "ما الشهر الهجري الذي يسبق شهر الصيام؟",
-      "a": "شعبان",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/شعبان",
-      "verified": true,
-      "qid": "islamiyat-200-025"
-    },
-    {
-      "p": 200,
-      "topic": "التقويم الهجري",
-      "q": "ماذا يسمى أول يوم من أيام الشهر العربي؟",
-      "a": "الغرّة",
-      "alt": [
-        "غرة الشهر"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/هلال",
-      "verified": true,
-      "qid": "islamiyat-200-026"
-    },
-    {
-      "p": 200,
-      "topic": "التقويم الهجري",
-      "q": "على حركة أي جرم سماوي يقوم التقويم الهجري؟",
+      "topic": "التقويم",
+      "q": "على دورة أي جرم سماوي تعتمد الشهور الهجرية؟",
       "a": "القمر",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/التقويم_الهجري",
-      "verified": true,
-      "qid": "islamiyat-200-027"
-    },
-    {
-      "p": 200,
-      "topic": "التقويم الهجري",
-      "q": "ما اسم القوس النحيل الذي يظهر في السماء أول ليلة من الشهر العربي؟",
-      "a": "الهلال",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/هلال",
-      "verified": true,
-      "qid": "islamiyat-200-028"
-    },
-    {
-      "p": 200,
-      "topic": "مصطلحات ومعانٍ",
-      "q": "ماذا تسمى النسخة المجموعة من القرآن كاملًا بين دفتين؟",
-      "a": "المصحف",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/مصحف",
-      "verified": true,
-      "qid": "islamiyat-200-029"
-    },
-    {
-      "p": 200,
-      "topic": "مصطلحات ومعانٍ",
-      "q": "ماذا يسمى من لقي النبيَّ مؤمنًا به وصحبه؟",
-      "a": "الصحابي",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/صحابة",
-      "verified": true,
-      "qid": "islamiyat-200-030"
-    },
-    {
-      "p": 200,
-      "topic": "مصطلحات ومعانٍ",
-      "q": "ماذا تسمى الجهة التي يتّجه إليها المسلمون في صلاتهم؟",
-      "a": "القبلة",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/قبلة",
-      "verified": true,
-      "qid": "islamiyat-200-031"
-    },
-    {
-      "p": 200,
-      "topic": "مصطلحات ومعانٍ",
-      "q": "ما اسم العيد الذي يأتي في شهر ذي الحجة؟",
-      "a": "عيد الأضحى",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/عيد_الأضحى",
-      "verified": true,
-      "qid": "islamiyat-200-032"
-    },
-    {
-      "p": 200,
-      "topic": "مصطلحات ومعانٍ",
-      "q": "ماذا يسمى الرجل الذي ينادي الناس إلى الصلاة في المسجد؟",
-      "a": "المؤذن",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/مؤذن",
-      "verified": true,
-      "qid": "islamiyat-200-033"
-    },
-    {
-      "p": 200,
-      "topic": "مصطلحات ومعانٍ",
-      "q": "ماذا تسمى زيارة الكعبة التي يؤدّيها المسلمون في أي وقت من العام؟",
-      "a": "العمرة",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/عمرة",
-      "verified": true,
-      "qid": "islamiyat-200-034"
-    },
-    {
-      "p": 200,
-      "topic": "مصطلحات ومعانٍ",
-      "q": "ما اللقب الذي يُطلق على من حفظ القرآن كله عن ظهر قلب؟",
-      "a": "الحافظ",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/حفظ_القرآن",
-      "verified": true,
-      "qid": "islamiyat-200-035"
-    },
-    {
-      "p": 200,
-      "topic": "مصطلحات ومعانٍ",
-      "q": "ماذا يسمى المكان الذي تُدفن فيه الموتى عند المسلمين؟",
-      "a": "المقبرة",
       "alt": [
-        "الجبانة"
+        "دورة القمر"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/مقبرة",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Islamic_calendar",
       "verified": true,
-      "qid": "islamiyat-200-036"
+      "qid": "islamiyat-200-904",
+      "difficultyTarget": 0.8
     },
     {
       "p": 200,
-      "topic": "علماء ورحّالة",
-      "q": "من الرحالة المغربي الذي طاف العالم ولُقّب بأمير الرحالة المسلمين؟",
-      "a": "ابن بطوطة",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/ابن_بطوطة",
+      "topic": "مصطلحات",
+      "q": "ماذا يسمى الشخص الذي يرفع الأذان في المسجد؟",
+      "a": "المؤذن",
+      "alt": [
+        "مؤذن"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Muezzin",
       "verified": true,
-      "qid": "islamiyat-200-037"
+      "qid": "islamiyat-200-905",
+      "difficultyTarget": 0.8
     },
     {
       "p": 200,
-      "topic": "علماء ورحّالة",
-      "q": "من العالم المسلم الذي يُنسب إليه وضع علم الجبر؟",
+      "topic": "العلماء",
+      "q": "من الطبيب صاحب كتاب «القانون في الطب»؟",
+      "a": "ابن سينا",
+      "alt": [
+        "أبو علي ابن سينا"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Avicenna",
+      "verified": true,
+      "qid": "islamiyat-200-906",
+      "difficultyTarget": 0.8
+    },
+    {
+      "p": 200,
+      "topic": "مدن التراث",
+      "q": "ما الاسم التاريخي للأراضي التي حكمها المسلمون في شبه الجزيرة الأيبيرية؟",
+      "a": "الأندلس",
+      "alt": [
+        "بلاد الأندلس"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Al-Andalus",
+      "verified": true,
+      "qid": "islamiyat-200-907",
+      "difficultyTarget": 0.8
+    },
+    {
+      "p": 200,
+      "topic": "الفنون",
+      "q": "ما الخط العربي ذو الحروف الزاوية الذي يحمل اسم مدينة عراقية؟",
+      "a": "الخط الكوفي",
+      "alt": [
+        "الكوفي",
+        "كوفي"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Kufic",
+      "verified": true,
+      "qid": "islamiyat-200-908",
+      "difficultyTarget": 0.8
+    },
+    {
+      "p": 400,
+      "topic": "معالم الحرم",
+      "q": "ما اسم ركن الكعبة الواقع باتجاه اليمن؟",
+      "a": "الركن اليماني",
+      "alt": [
+        "اليماني",
+        "الركن اليمني"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Kaaba",
+      "verified": true,
+      "qid": "islamiyat-400-901",
+      "difficultyTarget": 0.6
+    },
+    {
+      "p": 400,
+      "topic": "المشاعر",
+      "q": "ما المشعر الواقع على الطريق بين منى وعرفة؟",
+      "a": "مزدلفة",
+      "alt": [
+        "المزدلفة"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Muzdalifah",
+      "verified": true,
+      "qid": "islamiyat-400-902",
+      "difficultyTarget": 0.6
+    },
+    {
+      "p": 400,
+      "topic": "المساجد",
+      "q": "في أي مدينة مصرية يقع الجامع الأزهر؟",
+      "a": "القاهرة",
+      "alt": [
+        "مدينة القاهرة"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Al-Azhar_Mosque",
+      "verified": true,
+      "qid": "islamiyat-400-903",
+      "difficultyTarget": 0.6
+    },
+    {
+      "p": 400,
+      "topic": "التقويم",
+      "q": "ما الشهر الحرام الذي يقع بين جمادى الآخرة وشعبان؟",
+      "a": "رجب",
+      "alt": [
+        "شهر رجب",
+        "رجب مضر"
+      ],
+      "sourceUrl": "https://sunnah.com/bukhari:3197",
+      "verified": true,
+      "qid": "islamiyat-400-904",
+      "difficultyTarget": 0.6
+    },
+    {
+      "p": 400,
+      "topic": "مصطلحات",
+      "q": "بأي اسم تُعرف عبارة «بسم الله الرحمن الرحيم»؟",
+      "a": "البسملة",
+      "alt": [
+        "التسمية"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Basmala",
+      "verified": true,
+      "qid": "islamiyat-400-905",
+      "difficultyTarget": 0.6
+    },
+    {
+      "p": 400,
+      "topic": "العلماء",
+      "q": "من العالم صاحب كتاب «المختصر في حساب الجبر والمقابلة»؟",
       "a": "الخوارزمي",
       "alt": [
         "محمد بن موسى الخوارزمي"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الخوارزمي",
+      "sourceUrl": "https://mathshistory.st-andrews.ac.uk/Biographies/Al-Khwarizmi/",
       "verified": true,
-      "qid": "islamiyat-200-038"
+      "qid": "islamiyat-400-906",
+      "difficultyTarget": 0.6
     },
     {
-      "p": 200,
-      "topic": "علماء ورحّالة",
-      "q": "من الطبيب المسلم صاحب كتاب القانون في الطب؟",
-      "a": "ابن سينا",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/ابن_سينا",
-      "verified": true,
-      "qid": "islamiyat-200-039"
-    },
-    {
-      "p": 200,
-      "topic": "علماء ورحّالة",
-      "q": "من الأندلسي الذي حاول الطيران بجناحين صنعهما بنفسه؟",
-      "a": "عباس بن فرناس",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/عباس_بن_فرناس",
-      "verified": true,
-      "qid": "islamiyat-200-040"
-    },
-    {
-      "p": 200,
-      "topic": "علماء ورحّالة",
-      "q": "من صاحب كتاب المقدمة الذي يُعدّ من مؤسسي علم الاجتماع؟",
-      "a": "ابن خلدون",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/ابن_خلدون",
-      "verified": true,
-      "qid": "islamiyat-200-041"
-    },
-    {
-      "p": 200,
-      "topic": "علماء ورحّالة",
-      "q": "من العالم المسلم الذي اشتهر بدراسة الضوء والبصريات؟",
-      "a": "ابن الهيثم",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/ابن_الهيثم",
-      "verified": true,
-      "qid": "islamiyat-200-042"
-    },
-    {
-      "p": 200,
-      "topic": "حواضر ومدن",
-      "q": "ما الاسم الذي عُرفت به بلاد إسبانيا في العهد الإسلامي؟",
-      "a": "الأندلس",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الأندلس",
-      "verified": true,
-      "qid": "islamiyat-200-043"
-    },
-    {
-      "p": 200,
-      "topic": "حواضر ومدن",
-      "q": "في أي دولة تقع مدينة القيروان؟",
-      "a": "تونس",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/القيروان",
-      "verified": true,
-      "qid": "islamiyat-200-044"
-    },
-    {
-      "p": 200,
-      "topic": "حواضر ومدن",
-      "q": "ما المدينة التي بناها الخليفة المنصور على نهر دجلة؟",
-      "a": "بغداد",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/بغداد",
-      "verified": true,
-      "qid": "islamiyat-200-045"
-    },
-    {
-      "p": 200,
-      "topic": "حواضر ومدن",
-      "q": "في أي دولة تقع مدينة فاس التي يقوم فيها جامع القرويين؟",
-      "a": "المغرب",
-      "sourceUrl": "https://ar.wikipedia.org/wiki/فاس",
-      "verified": true,
-      "alt": [],
-      "qid": "islamiyat-200-046"
-    },
-    {
-      "p": 200,
-      "topic": "حواضر ومدن",
-      "q": "ما المدينة الأندلسية التي يقوم فيها قصر الحمراء؟",
-      "a": "غرناطة",
-      "sourceUrl": "https://ar.wikipedia.org/wiki/قصر_الحمراء",
-      "verified": true,
-      "alt": [],
-      "qid": "islamiyat-200-047"
-    },
-    {
-      "p": 200,
-      "topic": "كتب وفنون",
-      "q": "ما اسم الخط العربي الذي سُمّي باسم مدينة الكوفة؟",
-      "a": "الخط الكوفي",
-      "sourceUrl": "https://ar.wikipedia.org/wiki/خط_كوفي",
-      "verified": true,
+      "p": 400,
+      "topic": "مدن التراث",
+      "q": "ما المدينة التونسية المشهورة بجامعها الكبير وأحواض الأغالبة؟",
+      "a": "القيروان",
       "alt": [
-        "الكوفي"
+        "مدينة القيروان"
       ],
-      "qid": "islamiyat-200-048"
+      "sourceUrl": "https://whc.unesco.org/en/list/499/",
+      "verified": true,
+      "qid": "islamiyat-400-907",
+      "difficultyTarget": 0.6
     },
     {
       "p": 400,
-      "topic": "الكعبة والحرم",
-      "q": "ما اسم الجدار نصف الدائري الملاصق للكعبة من جهتها الشمالية؟",
-      "a": "حجر إسماعيل",
+      "topic": "الفنون",
+      "q": "ماذا يسمى برج المسجد الذي كان يُرفع الأذان من أعلاه؟",
+      "a": "المئذنة",
       "alt": [
-        "الحطيم",
-        "الحِجر"
+        "المنارة",
+        "الصومعة"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الكعبة",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Muezzin",
       "verified": true,
-      "qid": "islamiyat-400-001"
+      "qid": "islamiyat-400-908",
+      "difficultyTarget": 0.6
     },
     {
-      "p": 400,
-      "topic": "الكعبة والحرم",
-      "q": "ما اسم ركن الكعبة الذي سُمّي باسم جهة اليمن؟",
-      "a": "الركن اليماني",
-      "alt": [
-        "اليماني"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الكعبة",
-      "verified": true,
-      "qid": "islamiyat-400-002"
-    },
-    {
-      "p": 400,
-      "topic": "الكعبة والحرم",
-      "q": "ماذا تسمى الساحة المحيطة بالكعبة التي يدور فيها الطائفون؟",
-      "a": "المطاف",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/المسجد_الحرام",
-      "verified": true,
-      "qid": "islamiyat-400-003"
-    },
-    {
-      "p": 400,
-      "topic": "الكعبة والحرم",
-      "q": "ما اسم القناة الذهبية المثبتة في سطح الكعبة لتصريف مياه المطر؟",
-      "a": "ميزاب الرحمة",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الكعبة",
-      "verified": true,
-      "qid": "islamiyat-400-004"
-    },
-    {
-      "p": 400,
-      "topic": "الكعبة والحرم",
-      "q": "ما الاسم الآخر لمكة الذي ورد في القرآن الكريم؟",
-      "a": "بكة",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/مكة_المكرمة",
-      "verified": true,
-      "qid": "islamiyat-400-005"
-    },
-    {
-      "p": 400,
-      "topic": "الكعبة والحرم",
-      "q": "ما اسم الموضع الملاصق لجدار الكعبة بين بابها وركنها الشرقي؟",
+      "p": 600,
+      "topic": "معالم الحرم",
+      "q": "ما اسم المساحة من جدار الكعبة بين بابها والحجر الأسود؟",
       "a": "الملتزم",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الكعبة",
-      "verified": true,
-      "qid": "islamiyat-400-006"
-    },
-    {
-      "p": 400,
-      "topic": "مشاعر ومواضع",
-      "q": "ما اسم الجبل الصغير الذي يقوم في وسط صعيد عرفة؟",
-      "a": "جبل الرحمة",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/جبل_الرحمة",
-      "verified": true,
-      "qid": "islamiyat-400-007"
-    },
-    {
-      "p": 400,
-      "topic": "مشاعر ومواضع",
-      "q": "كم عدد الجمرات في منى؟",
-      "a": "ثلاث جمرات",
       "alt": [
-        "ثلاث"
+        "ملتزم الكعبة"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الجمرات",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Kaaba",
       "verified": true,
-      "qid": "islamiyat-400-008"
+      "qid": "islamiyat-600-901",
+      "difficultyTarget": 0.4
     },
     {
-      "p": 400,
-      "topic": "مشاعر ومواضع",
-      "q": "ما اسم المسجد التاريخي الذي يقع في منى قرب الجمرة الصغرى؟",
-      "a": "مسجد الخيف",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/مسجد_الخيف",
-      "verified": true,
-      "qid": "islamiyat-400-009"
-    },
-    {
-      "p": 400,
-      "topic": "مشاعر ومواضع",
-      "q": "ما اسم الميقات الذي يقع جنوب المدينة المنورة ويُعرف اليوم بآبار علي؟",
-      "a": "ذو الحليفة",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/ذو_الحليفة",
-      "verified": true,
-      "qid": "islamiyat-400-010"
-    },
-    {
-      "p": 400,
-      "topic": "مشاعر ومواضع",
-      "q": "ماذا تسمى الأيام الثلاثة التي تلي يوم النحر من ذي الحجة؟",
-      "a": "أيام التشريق",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/أيام_التشريق",
-      "verified": true,
-      "qid": "islamiyat-400-011"
-    },
-    {
-      "p": 400,
-      "topic": "مشاعر ومواضع",
-      "q": "ما اسم المسجد التاريخي الذي يقوم على طرف صعيد عرفة؟",
+      "p": 600,
+      "topic": "المشاعر",
+      "q": "ما المسجد الكبير الذي تُلقى منه خطبة يوم عرفة ويقع على الطرف الغربي للمشعر؟",
       "a": "مسجد نمرة",
-      "alt": [],
+      "alt": [
+        "نمرة",
+        "مسجد عرنة"
+      ],
       "sourceUrl": "https://ar.wikipedia.org/wiki/مسجد_نمرة",
       "verified": true,
-      "qid": "islamiyat-400-012"
+      "qid": "islamiyat-600-902",
+      "difficultyTarget": 0.4
     },
     {
-      "p": 400,
-      "topic": "مساجد وعمارة",
-      "q": "في أي مدينة يقع الجامع الأموي الكبير؟",
-      "a": "دمشق",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الجامع_الأموي_(دمشق)",
-      "verified": true,
-      "qid": "islamiyat-400-013"
-    },
-    {
-      "p": 400,
-      "topic": "مساجد وعمارة",
-      "q": "من الخليفة الأموي الذي أمر ببناء الجامع الأموي الكبير؟",
-      "a": "الوليد بن عبد الملك",
+      "p": 600,
+      "topic": "المساجد",
+      "q": "في أي مدينة عُمانية يوجد جامع السلطان قابوس الأكبر؟",
+      "a": "مسقط",
       "alt": [
-        "الوليد"
+        "مدينة مسقط"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الجامع_الأموي_(دمشق)",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Sultan_Qaboos_Grand_Mosque",
       "verified": true,
-      "qid": "islamiyat-400-014"
+      "qid": "islamiyat-600-903",
+      "difficultyTarget": 0.4
     },
     {
-      "p": 400,
-      "topic": "مساجد وعمارة",
-      "q": "في أي مدينة مغربية يقوم مسجد الحسن الثاني الذي بُني نصفه فوق ماء المحيط؟",
-      "a": "الدار البيضاء",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/مسجد_الحسن_الثاني",
-      "verified": true,
-      "qid": "islamiyat-400-015"
-    },
-    {
-      "p": 400,
-      "topic": "مساجد وعمارة",
-      "q": "ما اللقب الذي اشتهر به جامع عمرو بن العاص أقدم جوامع مصر؟",
-      "a": "تاج الجوامع",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/مسجد_عمرو_بن_العاص_(القاهرة)",
-      "verified": true,
-      "qid": "islamiyat-400-016"
-    },
-    {
-      "p": 400,
-      "topic": "مساجد وعمارة",
-      "q": "من المرأة التي أنشأت جامع القرويين بمالها في مدينة فاس؟",
-      "a": "فاطمة الفهرية",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/جامع_القرويين",
-      "verified": true,
-      "qid": "islamiyat-400-017"
-    },
-    {
-      "p": 400,
-      "topic": "مساجد وعمارة",
-      "q": "من الوالي الذي بنى في مصر جامعًا مئذنتُه ذات سلّم خارجي ملتف؟",
-      "a": "أحمد بن طولون",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/جامع_ابن_طولون",
-      "verified": true,
-      "qid": "islamiyat-400-018"
-    },
-    {
-      "p": 400,
-      "topic": "مساجد وعمارة",
-      "q": "ماذا تسمى الساحة المكشوفة التي تتوسط المسجد؟",
-      "a": "الصحن",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/مسجد",
-      "verified": true,
-      "qid": "islamiyat-400-019"
-    },
-    {
-      "p": 400,
-      "topic": "التقويم الهجري",
-      "q": "كم شهرًا حرامًا في السنة الهجرية؟",
-      "a": "أربعة",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الأشهر_الحرم",
-      "verified": true,
-      "qid": "islamiyat-400-020"
-    },
-    {
-      "p": 400,
-      "topic": "التقويم الهجري",
-      "q": "ماذا تسمى الشهور التي حرّم العرب القتال فيها؟",
-      "a": "الأشهر الحرم",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الأشهر_الحرم",
-      "verified": true,
-      "qid": "islamiyat-400-021"
-    },
-    {
-      "p": 400,
-      "topic": "التقويم الهجري",
-      "q": "ما الشهر الهجري الذي يسبق ذا الحجة مباشرة؟",
-      "a": "ذو القعدة",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/التقويم_الهجري",
-      "verified": true,
-      "qid": "islamiyat-400-022"
-    },
-    {
-      "p": 400,
-      "topic": "التقويم الهجري",
-      "q": "كم يومًا في السنة الهجرية تقريبًا؟",
+      "p": 600,
+      "topic": "التقويم",
+      "q": "كم يومًا تضم السنة الهجرية القمرية غير الكبيسة؟",
       "a": "ثلاثمئة وأربعة وخمسون",
       "alt": [
-        "354"
+        "354",
+        "ثلاثمائة وأربعة وخمسون",
+        "354 يومًا"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/التقويم_الهجري",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Islamic_calendar",
       "verified": true,
-      "qid": "islamiyat-400-023"
+      "qid": "islamiyat-600-904",
+      "difficultyTarget": 0.4
     },
     {
-      "p": 400,
-      "topic": "التقويم الهجري",
-      "q": "من الخليفة الذي اعتمد التقويم الهجري وجعل خروج النبي إلى المدينة مبدأً له؟",
-      "a": "عمر بن الخطاب",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/التقويم_الهجري",
-      "verified": true,
-      "qid": "islamiyat-400-024"
-    },
-    {
-      "p": 400,
-      "topic": "التقويم الهجري",
-      "q": "ما الشهر الحرام الذي يأتي منفردًا بعيدًا عن الثلاثة المتتالية؟",
-      "a": "رجب",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الأشهر_الحرم",
-      "verified": true,
-      "qid": "islamiyat-400-025"
-    },
-    {
-      "p": 400,
-      "topic": "التقويم الهجري",
-      "q": "ما الشهر الهجري الذي يعني اسمه خلوّ الديار من أهلها؟",
-      "a": "صفر",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/التقويم_الهجري",
-      "verified": true,
-      "qid": "islamiyat-400-026"
-    },
-    {
-      "p": 400,
-      "topic": "مصطلحات ومعانٍ",
-      "q": "ماذا يسمى من لقي الصحابة وروى عنهم ولم ير النبي؟",
-      "a": "التابعي",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/تابعون",
-      "verified": true,
-      "qid": "islamiyat-400-027"
-    },
-    {
-      "p": 400,
-      "topic": "مصطلحات ومعانٍ",
-      "q": "ما معنى كلمة «مسجد» في أصل اللغة؟",
-      "a": "موضع السجود",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/مسجد",
-      "verified": true,
-      "qid": "islamiyat-400-028"
-    },
-    {
-      "p": 400,
-      "topic": "مصطلحات ومعانٍ",
-      "q": "ما اللقب الذي يُنادى به المسلم بعد أدائه الحج؟",
-      "a": "الحاج",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/حج",
-      "verified": true,
-      "qid": "islamiyat-400-029"
-    },
-    {
-      "p": 400,
-      "topic": "مصطلحات ومعانٍ",
-      "q": "ماذا يسمى من يؤمّ المصلين في المسجد؟",
-      "a": "الإمام",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/إمام",
-      "verified": true,
-      "qid": "islamiyat-400-030"
-    },
-    {
-      "p": 400,
-      "topic": "مصطلحات ومعانٍ",
-      "q": "ماذا يسمى برج الأذان في مساجد شمال أفريقيا؟",
-      "a": "الصومعة",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/مئذنة",
-      "verified": true,
-      "qid": "islamiyat-400-031"
-    },
-    {
-      "p": 400,
-      "topic": "مصطلحات ومعانٍ",
-      "q": "ما الاسم الذي تُعرف به عبارة «بسم الله الرحمن الرحيم»؟",
-      "a": "البسملة",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/بسملة",
-      "verified": true,
-      "qid": "islamiyat-400-032"
-    },
-    {
-      "p": 400,
-      "topic": "علماء ورحّالة",
-      "q": "من الطبيب المسلم صاحب الموسوعة الطبية «الحاوي»؟",
-      "a": "الرازي",
+      "p": 600,
+      "topic": "مصطلحات",
+      "q": "ماذا تسمى مهنة العناية بالكعبة وفتحها وإغلاقها وحفظ مفتاحها؟",
+      "a": "السدانة",
       "alt": [
-        "أبو بكر الرازي"
+        "سدانة الكعبة",
+        "الحجابة"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/أبو_بكر_الرازي",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/سدانة_الكعبة",
       "verified": true,
-      "qid": "islamiyat-400-033"
+      "qid": "islamiyat-600-905",
+      "difficultyTarget": 0.4
     },
     {
-      "p": 400,
-      "topic": "علماء ورحّالة",
-      "q": "من العالم الذي يُعدّ رائد علم الكيمياء عند المسلمين؟",
-      "a": "جابر بن حيان",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/جابر_بن_حيان",
-      "verified": true,
-      "qid": "islamiyat-400-034"
-    },
-    {
-      "p": 400,
-      "topic": "علماء ورحّالة",
-      "q": "من الجغرافي الذي رسم خريطة العالم للملك روجر الثاني؟",
+      "p": 600,
+      "topic": "العلماء",
+      "q": "من الجغرافي الذي وضع خريطة العالم لروجر الثاني ملك صقلية؟",
       "a": "الإدريسي",
       "alt": [
+        "محمد الإدريسي",
         "الشريف الإدريسي"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الشريف_الإدريسي",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Al-Idrisi",
       "verified": true,
-      "qid": "islamiyat-400-035"
-    },
-    {
-      "p": 400,
-      "topic": "علماء ورحّالة",
-      "q": "من الطبيب الأندلسي الملقب بأبي الجراحة وصاحب كتاب التصريف؟",
-      "a": "الزهراوي",
-      "alt": [
-        "أبو القاسم الزهراوي"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/أبو_القاسم_الزهراوي",
-      "verified": true,
-      "qid": "islamiyat-400-036"
-    },
-    {
-      "p": 400,
-      "topic": "علماء ورحّالة",
-      "q": "من واضع علم العروض وصاحب أول معجم في العربية؟",
-      "a": "الخليل بن أحمد",
-      "alt": [
-        "الفراهيدي",
-        "الخليل بن أحمد الفراهيدي"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الخليل_بن_أحمد_الفراهيدي",
-      "verified": true,
-      "qid": "islamiyat-400-037"
-    },
-    {
-      "p": 400,
-      "topic": "علماء ورحّالة",
-      "q": "من مؤلف معجم «لسان العرب»؟",
-      "a": "ابن منظور",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/ابن_منظور",
-      "verified": true,
-      "qid": "islamiyat-400-038"
-    },
-    {
-      "p": 400,
-      "topic": "حواضر ومدن",
-      "q": "ما الاسم الذي كانت تُعرف به مدينة إسطنبول قبل الفتح العثماني؟",
-      "a": "القسطنطينية",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/القسطنطينية",
-      "verified": true,
-      "qid": "islamiyat-400-039"
-    },
-    {
-      "p": 400,
-      "topic": "حواضر ومدن",
-      "q": "من القائد الذي أسّس مدينة القيروان؟",
-      "a": "عقبة بن نافع",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/عقبة_بن_نافع",
-      "verified": true,
-      "qid": "islamiyat-400-040"
-    },
-    {
-      "p": 400,
-      "topic": "حواضر ومدن",
-      "q": "ما أول مدينة بناها المسلمون في مصر واتخذوها عاصمة؟",
-      "a": "الفسطاط",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الفسطاط",
-      "verified": true,
-      "qid": "islamiyat-400-041"
-    },
-    {
-      "p": 400,
-      "topic": "حواضر ومدن",
-      "q": "في أي دولة تقع مدينة سمرقند؟",
-      "a": "أوزبكستان",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/سمرقند",
-      "verified": true,
-      "qid": "islamiyat-400-042"
-    },
-    {
-      "p": 400,
-      "topic": "حواضر ومدن",
-      "q": "ما اللقب الذي سُمّيت به عاصمة العباسيين على نهر دجلة يوم بنائها؟",
-      "a": "مدينة السلام",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/بغداد",
-      "verified": true,
-      "qid": "islamiyat-400-043"
-    },
-    {
-      "p": 400,
-      "topic": "حواضر ومدن",
-      "q": "في أي دولة أفريقية تقع مدينة تمبكتو المشهورة بمخطوطاتها؟",
-      "a": "مالي",
-      "sourceUrl": "https://ar.wikipedia.org/wiki/تمبكتو",
-      "verified": true,
-      "alt": [],
-      "qid": "islamiyat-400-044"
-    },
-    {
-      "p": 400,
-      "topic": "كتب وفنون",
-      "q": "ما اسم الآلة الفلكية التي استعملها المسلمون لمعرفة مواقع النجوم وأوقات النهار؟",
-      "a": "الإسطرلاب",
-      "sourceUrl": "https://ar.wikipedia.org/wiki/إسطرلاب",
-      "verified": true,
-      "alt": [],
-      "qid": "islamiyat-400-045"
-    },
-    {
-      "p": 400,
-      "topic": "كتب وفنون",
-      "q": "ماذا يسمى الزخرف النباتي المتشابك الذي يزيّن جدران المساجد والمخطوطات؟",
-      "a": "الأرابيسك",
-      "sourceUrl": "https://ar.wikipedia.org/wiki/أرابيسك",
-      "verified": true,
-      "alt": [
-        "التوريق"
-      ],
-      "qid": "islamiyat-400-046"
-    },
-    {
-      "p": 400,
-      "topic": "كتب وفنون",
-      "q": "ما اسم الخط العربي المستدير الذي تُطبع به المصاحف اليوم؟",
-      "a": "خط النسخ",
-      "sourceUrl": "https://ar.wikipedia.org/wiki/خط_النسخ",
-      "verified": true,
-      "alt": [
-        "النسخ"
-      ],
-      "qid": "islamiyat-400-047"
-    },
-    {
-      "p": 400,
-      "topic": "كتب وفنون",
-      "q": "من مؤلف معجم «القاموس المحيط»؟",
-      "a": "الفيروزآبادي",
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الفيروزآبادي",
-      "verified": true,
-      "alt": [],
-      "qid": "islamiyat-400-048"
+      "qid": "islamiyat-600-906",
+      "difficultyTarget": 0.4
     },
     {
       "p": 600,
-      "topic": "الكعبة والحرم",
-      "q": "ما القبيلة القرشية التي تتوارث حفظ مفتاح الكعبة منذ الفتح؟",
-      "a": "بنو شيبة",
-      "alt": [
-        "آل الشيبي"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الكعبة",
-      "verified": true,
-      "qid": "islamiyat-600-001"
-    },
-    {
-      "p": 600,
-      "topic": "الكعبة والحرم",
-      "q": "ماذا يسمى الجزء المائل المبني بالرخام حول قاعدة جدار الكعبة؟",
-      "a": "الشاذروان",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الكعبة",
-      "verified": true,
-      "qid": "islamiyat-600-002"
-    },
-    {
-      "p": 600,
-      "topic": "الكعبة والحرم",
-      "q": "كم مترًا يبلغ ارتفاع الكعبة تقريبًا؟",
-      "a": "خمسة عشر مترًا",
-      "alt": [
-        "15"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الكعبة",
-      "verified": true,
-      "qid": "islamiyat-600-003"
-    },
-    {
-      "p": 600,
-      "topic": "الكعبة والحرم",
-      "q": "ما اسم ركن الكعبة الشمالي الذي سُمّي باسم جهة العراق؟",
-      "a": "الركن العراقي",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الكعبة",
-      "verified": true,
-      "qid": "islamiyat-600-004"
-    },
-    {
-      "p": 600,
-      "topic": "الكعبة والحرم",
-      "q": "ما اسم ركن الكعبة الغربي الذي سُمّي باسم بلاد الشام؟",
-      "a": "الركن الشامي",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الكعبة",
-      "verified": true,
-      "qid": "islamiyat-600-005"
-    },
-    {
-      "p": 600,
-      "topic": "الكعبة والحرم",
-      "q": "كم مترًا يبلغ عمق بئر ماء زمزم تقريبًا؟",
-      "a": "ثلاثون مترًا",
-      "alt": [
-        "30"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/بئر_زمزم",
-      "verified": true,
-      "qid": "islamiyat-600-006"
-    },
-    {
-      "p": 600,
-      "topic": "مشاعر ومواضع",
-      "q": "ما اسم الجمرة الكبرى التي تقع في طرف وادي منى؟",
-      "a": "جمرة العقبة",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الجمرات",
-      "verified": true,
-      "qid": "islamiyat-600-007"
-    },
-    {
-      "p": 600,
-      "topic": "مشاعر ومواضع",
-      "q": "ما اسم الميقات الذي يقع قرب رابغ ويقصده القادمون من الشام ومصر؟",
-      "a": "الجحفة",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/مواقيت_الحج",
-      "verified": true,
-      "qid": "islamiyat-600-008"
-    },
-    {
-      "p": 600,
-      "topic": "مشاعر ومواضع",
-      "q": "ما اسم ميقات أهل نجد الذي يُعرف اليوم بالسيل الكبير؟",
-      "a": "قرن المنازل",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/مواقيت_الحج",
-      "verified": true,
-      "qid": "islamiyat-600-009"
-    },
-    {
-      "p": 600,
-      "topic": "مشاعر ومواضع",
-      "q": "كم عدد المواقيت المكانية الرئيسة للحج؟",
-      "a": "خمسة مواقيت",
-      "alt": [
-        "خمسة"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/مواقيت_الحج",
-      "verified": true,
-      "qid": "islamiyat-600-010"
-    },
-    {
-      "p": 600,
-      "topic": "مشاعر ومواضع",
-      "q": "ما اسم المسجد الذي يقع غرب مكة ويُعرف أيضًا بمسجد السيدة عائشة؟",
-      "a": "مسجد التنعيم",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/مسجد_التنعيم",
-      "verified": true,
-      "qid": "islamiyat-600-011"
-    },
-    {
-      "p": 600,
-      "topic": "مشاعر ومواضع",
-      "q": "ما اسم الجبل المطل على المسجد الحرام من الشرق ويقوم عند سفحه الصفا؟",
-      "a": "أبو قبيس",
-      "alt": [
-        "جبل أبي قبيس"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/جبل_أبي_قبيس",
-      "verified": true,
-      "qid": "islamiyat-600-012"
-    },
-    {
-      "p": 600,
-      "topic": "مساجد وعمارة",
-      "q": "كم قبة تعلو جامع الشيخ زايد الكبير؟",
-      "a": "اثنتان وثمانون",
-      "alt": [
-        "82"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/جامع_الشيخ_زايد_الكبير",
-      "verified": true,
-      "qid": "islamiyat-600-013"
-    },
-    {
-      "p": 600,
-      "topic": "مساجد وعمارة",
-      "q": "ما اسم أقدم مآذن الجامع الأموي الثلاث؟",
-      "a": "مئذنة العروس",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الجامع_الأموي_(دمشق)",
-      "verified": true,
-      "qid": "islamiyat-600-014"
-    },
-    {
-      "p": 600,
-      "topic": "مساجد وعمارة",
-      "q": "في أي مدينة عُمانية يقوم جامع السلطان قابوس الأكبر؟",
-      "a": "مسقط",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/جامع_السلطان_قابوس_الأكبر",
-      "verified": true,
-      "qid": "islamiyat-600-015"
-    },
-    {
-      "p": 600,
-      "topic": "مساجد وعمارة",
-      "q": "ما اسم المسجد الأفريقي الذي يعيد أهل مدينته طلاءه بالطين في احتفال سنوي؟",
-      "a": "الجامع الكبير في جينيه",
-      "alt": [
-        "مسجد جينيه",
-        "جامع جينيه"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الجامع_الكبير_في_جينيه",
-      "verified": true,
-      "qid": "islamiyat-600-016"
-    },
-    {
-      "p": 600,
-      "topic": "مساجد وعمارة",
-      "q": "ما المدينة الأندلسية التي يقوم فيها الجامع الكبير الذي حُوّل بعد سقوطها إلى كاتدرائية؟",
+      "topic": "مدن التراث",
+      "q": "ما المدينة الإسبانية التي يضم مركزها التاريخي جامعًا كبيرًا تحوّل إلى كاتدرائية؟",
       "a": "قرطبة",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/كاتدرائية_قرطبة_وجامعها",
-      "verified": true,
-      "qid": "islamiyat-600-017"
-    },
-    {
-      "p": 600,
-      "topic": "مساجد وعمارة",
-      "q": "ما اسم المنارة الحلزونية الشهيرة في العراق التي يلتف سلّمها حول بدنها؟",
-      "a": "الملوية",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/جامع_الملوية_(سامراء)",
-      "verified": true,
-      "qid": "islamiyat-600-018"
-    },
-    {
-      "p": 600,
-      "topic": "مساجد وعمارة",
-      "q": "من كبير معماريي الدولة العثمانية الذي بنى مسجد السليمانية في إسطنبول؟",
-      "a": "معمار سنان",
       "alt": [
-        "سنان"
+        "كوردوبا",
+        "Cordoba"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/معمار_سنان",
+      "sourceUrl": "https://whc.unesco.org/en/list/313/",
       "verified": true,
-      "qid": "islamiyat-600-019"
+      "qid": "islamiyat-600-907",
+      "difficultyTarget": 0.4
     },
     {
       "p": 600,
-      "topic": "مساجد وعمارة",
-      "q": "ما اسم القبة التي تعلو الحجرة الشريفة في المسجد النبوي؟",
-      "a": "القبة الخضراء",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/المسجد_النبوي",
-      "verified": true,
-      "qid": "islamiyat-600-020"
-    },
-    {
-      "p": 600,
-      "topic": "كتب وفنون",
-      "q": "ما اسم الخط العربي البسيط الذي يُكتب به اليوم في الدفاتر والصحف؟",
-      "a": "خط الرقعة",
-      "alt": [
-        "الرقعة"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/خط_الرقعة",
-      "verified": true,
-      "qid": "islamiyat-600-022"
-    },
-    {
-      "p": 600,
-      "topic": "التقويم الهجري",
-      "q": "ماذا يسمى أول يوم في العام الهجري الجديد؟",
-      "a": "رأس السنة الهجرية",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/رأس_السنة_الهجرية",
-      "verified": true,
-      "qid": "islamiyat-600-023"
-    },
-    {
-      "p": 600,
-      "topic": "التقويم الهجري",
-      "q": "ما اسم التقويم الهجري الرسمي المعتمد في بلاد الحرمين؟",
-      "a": "تقويم أم القرى",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/تقويم_أم_القرى",
-      "verified": true,
-      "qid": "islamiyat-600-024"
-    },
-    {
-      "p": 600,
-      "topic": "التقويم الهجري",
-      "q": "كم يومًا تزيد السنة الميلادية على السنة القمرية تقريبًا؟",
-      "a": "أحد عشر يومًا",
-      "alt": [
-        "11"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/التقويم_الهجري",
-      "verified": true,
-      "qid": "islamiyat-600-025"
-    },
-    {
-      "p": 600,
-      "topic": "التقويم الهجري",
-      "q": "ماذا تسمى السنة الهجرية التي تبلغ خمسة وخمسين وثلاثمئة يوم؟",
-      "a": "السنة الكبيسة",
-      "alt": [
-        "كبيسة"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/التقويم_الهجري",
-      "verified": true,
-      "qid": "islamiyat-600-026"
-    },
-    {
-      "p": 600,
-      "topic": "مصطلحات ومعانٍ",
-      "q": "ماذا يسمى المكان المخصص للوضوء في المسجد؟",
-      "a": "الميضأة",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/مسجد",
-      "verified": true,
-      "qid": "islamiyat-600-027"
-    },
-    {
-      "p": 600,
-      "topic": "مصطلحات ومعانٍ",
-      "q": "ماذا تسمى خدمة الكعبة وحمل مفتاحها وفتحها وإغلاقها؟",
-      "a": "السدانة",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الكعبة",
-      "verified": true,
-      "qid": "islamiyat-600-028"
-    },
-    {
-      "p": 600,
-      "topic": "مصطلحات ومعانٍ",
-      "q": "ما معنى كلمة «الأذان» في أصل اللغة؟",
-      "a": "الإعلام",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/أذان",
-      "verified": true,
-      "qid": "islamiyat-600-029"
-    },
-    {
-      "p": 600,
-      "topic": "مصطلحات ومعانٍ",
-      "q": "ماذا يسمى العالم الذي يشتغل برواية الحديث النبوي وحفظه؟",
-      "a": "المحدّث",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/محدث",
-      "verified": true,
-      "qid": "islamiyat-600-030"
-    },
-    {
-      "p": 600,
-      "topic": "مصطلحات ومعانٍ",
-      "q": "ماذا يسمى البناء الموقوف لسقيا المارّة في المدن الإسلامية القديمة؟",
-      "a": "السبيل",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/سبيل",
-      "verified": true,
-      "qid": "islamiyat-600-031"
-    },
-    {
-      "p": 600,
-      "topic": "علماء ورحّالة",
-      "q": "من العالم الذي قاس محيط الأرض وألّف «تحقيق ما للهند من مقولة»؟",
-      "a": "البيروني",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/البيروني",
-      "verified": true,
-      "qid": "islamiyat-600-032"
-    },
-    {
-      "p": 600,
-      "topic": "علماء ورحّالة",
-      "q": "من الطبيب العربي الذي وصف الدورة الدموية الصغرى قبل الأوروبيين؟",
-      "a": "ابن النفيس",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/ابن_النفيس",
-      "verified": true,
-      "qid": "islamiyat-600-033"
-    },
-    {
-      "p": 600,
-      "topic": "علماء ورحّالة",
-      "q": "من الفيلسوف المسلم الملقب بالمعلم الثاني؟",
-      "a": "الفارابي",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الفارابي",
-      "verified": true,
-      "qid": "islamiyat-600-034"
-    },
-    {
-      "p": 600,
-      "topic": "علماء ورحّالة",
-      "q": "من الرحالة الأندلسي الذي دوّن رحلته إلى المشرق في القرن السادس الهجري؟",
-      "a": "ابن جبير",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/ابن_جبير",
-      "verified": true,
-      "qid": "islamiyat-600-035"
-    },
-    {
-      "p": 600,
-      "topic": "علماء ورحّالة",
-      "q": "من المؤرخ صاحب كتاب «مروج الذهب»؟",
-      "a": "المسعودي",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/المسعودي",
-      "verified": true,
-      "qid": "islamiyat-600-036"
-    },
-    {
-      "p": 600,
-      "topic": "علماء ورحّالة",
-      "q": "من مؤلف «معجم البلدان» الذي جمع فيه أسماء المدن والبلدان؟",
-      "a": "ياقوت الحموي",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/ياقوت_الحموي",
-      "verified": true,
-      "qid": "islamiyat-600-037"
-    },
-    {
-      "p": 600,
-      "topic": "حواضر ومدن",
-      "q": "ما اسم المدينة التي بناها عبد الرحمن الناصر قرب حاضرة ملكه واتخذها مقرًّا؟",
-      "a": "مدينة الزهراء",
-      "alt": [
-        "الزهراء"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الزهراء_(مدينة)",
-      "verified": true,
-      "qid": "islamiyat-600-038"
-    },
-    {
-      "p": 600,
-      "topic": "حواضر ومدن",
-      "q": "ما اسم دار العلم والترجمة التي ازدهرت في عاصمة العباسيين أيام المأمون؟",
-      "a": "بيت الحكمة",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/بيت_الحكمة",
-      "verified": true,
-      "qid": "islamiyat-600-039"
-    },
-    {
-      "p": 600,
-      "topic": "حواضر ومدن",
-      "q": "ما المدينة التي بناها الخليفة المعتصم على دجلة واتخذها عاصمة جديدة؟",
-      "a": "سامراء",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/سامراء",
-      "verified": true,
-      "qid": "islamiyat-600-040"
-    },
-    {
-      "p": 600,
-      "topic": "حواضر ومدن",
-      "q": "في أي مدينة مغربية يقوم مسجد الكتبية؟",
-      "a": "مراكش",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/مسجد_الكتبية",
-      "verified": true,
-      "qid": "islamiyat-600-041"
-    },
-    {
-      "p": 600,
-      "topic": "حواضر ومدن",
-      "q": "ما المدينة اليمنية القديمة المدرجة في التراث العالمي ببيوتها المزخرفة؟",
-      "a": "صنعاء",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/صنعاء_القديمة",
-      "verified": true,
-      "qid": "islamiyat-600-042"
-    },
-    {
-      "p": 600,
-      "topic": "حواضر ومدن",
-      "q": "ما المدينة الإيرانية التي تشتهر بساحة نقش جهان ومساجدها المزخرفة؟",
-      "a": "أصفهان",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/أصفهان",
-      "verified": true,
-      "qid": "islamiyat-600-043"
-    },
-    {
-      "p": 600,
-      "topic": "كتب وفنون",
-      "q": "ماذا يسمى تزيين المخطوطات بماء الذهب والألوان؟",
-      "a": "التذهيب",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/تذهيب",
-      "verified": true,
-      "qid": "islamiyat-600-044"
-    },
-    {
-      "p": 600,
-      "topic": "كتب وفنون",
-      "q": "ماذا تسمى الحليات المعمارية المتدلية كخلايا النحل في أسقف العمارة الإسلامية؟",
+      "topic": "الفنون",
+      "q": "ما اسم الزخارف المتدرجة ذات الخلايا الصغيرة التي تتدلى من قباب العمارة الإسلامية؟",
       "a": "المقرنصات",
       "alt": [
-        "مقرنص"
+        "المقرنص",
+        "المقرنصة"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/مقرنص",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Muqarnas",
       "verified": true,
-      "qid": "islamiyat-600-045"
+      "qid": "islamiyat-600-908",
+      "difficultyTarget": 0.4
     },
     {
-      "p": 600,
-      "topic": "كتب وفنون",
-      "q": "ما اسم الخط العربي الذي يُلقّب بسيد الخطوط لصعوبته وجماله؟",
-      "a": "خط الثلث",
+      "p": 800,
+      "topic": "معالم الحرم",
+      "q": "ماذا يسمى البناء المائل المحيط بأسفل ثلاثة جوانب من الكعبة؟",
+      "a": "الشاذروان",
       "alt": [
-        "الثلث"
+        "شاذروان الكعبة"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/خط_الثلث",
+      "sourceUrl": [
+        "https://alharamain.gov.sa/public/?page=shadrawan-ar",
+        "https://en.wikipedia.org/wiki/Kaaba"
+      ],
       "verified": true,
-      "qid": "islamiyat-600-046"
-    },
-    {
-      "p": 600,
-      "topic": "كتب وفنون",
-      "q": "من الأديب الأندلسي الذي دوّن رحلة أمير الرحالة المغربي بأمر سلطان فاس؟",
-      "a": "ابن جزي",
-      "sourceUrl": "https://ar.wikipedia.org/wiki/ابن_بطوطة",
-      "verified": true,
-      "alt": [],
-      "qid": "islamiyat-600-047"
-    },
-    {
-      "p": 600,
-      "topic": "كتب وفنون",
-      "q": "ما اسم كتاب الجاحظ الذي جمع فيه طرائف من يشحّون بالمال وأخبارهم؟",
-      "a": "البخلاء",
-      "sourceUrl": "https://ar.wikipedia.org/wiki/البخلاء",
-      "verified": true,
-      "alt": [],
-      "qid": "islamiyat-600-048"
-    },
-    {
-      "p": 600,
-      "topic": "عبادات ومناسك",
-      "q": "ماذا يسمى خروج الحجاج المتعجلين من منى في اليوم الثاني عشر من ذي الحجة؟",
-      "a": "النفر الأول",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الحج_في_الإسلام",
-      "verified": true,
-      "qid": "islamiyat-600-049"
+      "qid": "islamiyat-800-901",
+      "difficultyTarget": 0.25
     },
     {
       "p": 800,
-      "topic": "الكعبة والحرم",
-      "q": "كم كيلوغرامًا من الذهب استُعمل في صنع باب الكعبة الحالي؟",
-      "a": "مئتان وثمانون",
+      "topic": "المشاعر",
+      "q": "ما اسم ميقات أهل نجد المذكور في حديث ابن عباس؟",
+      "a": "قرن المنازل",
       "alt": [
-        "280"
+        "قرن"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الكعبة",
+      "sourceUrl": "https://sunnah.com/bukhari:1524",
       "verified": true,
-      "qid": "islamiyat-800-001"
+      "qid": "islamiyat-800-902",
+      "difficultyTarget": 0.25
     },
     {
       "p": 800,
-      "topic": "الكعبة والحرم",
-      "q": "ما المعدن الذي صُنع منه الإطار المحيط بحجر الكعبة الأسود؟",
-      "a": "الفضة",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الحجر_الأسود",
-      "verified": true,
-      "qid": "islamiyat-800-002"
-    },
-    {
-      "p": 800,
-      "topic": "الكعبة والحرم",
-      "q": "كم قطعة يتكوّن منها حجر الكعبة الأسود اليوم؟",
-      "a": "ثماني قطع",
+      "topic": "المساجد",
+      "q": "من المعماري الذي صمم جامع السليمية في أدرنة؟",
+      "a": "معمار سنان",
       "alt": [
-        "ثمان"
+        "سنان",
+        "سنان آغا"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الحجر_الأسود",
+      "sourceUrl": "https://whc.unesco.org/en/list/1366/",
       "verified": true,
-      "qid": "islamiyat-800-003"
+      "qid": "islamiyat-800-903",
+      "difficultyTarget": 0.25
     },
     {
       "p": 800,
-      "topic": "الكعبة والحرم",
-      "q": "كم مترًا يرتفع حجر الكعبة الأسود عن الأرض؟",
-      "a": "متر ونصف",
+      "topic": "التقويم",
+      "q": "ما اسم التقويم الهجري السعودي المبني على حسابات فلكية والمستخدم للأغراض الإدارية؟",
+      "a": "تقويم أم القرى",
       "alt": [
-        "مترا ونصفا"
+        "أم القرى"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الحجر_الأسود",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Islamic_calendar",
       "verified": true,
-      "qid": "islamiyat-800-004"
+      "qid": "islamiyat-800-904",
+      "difficultyTarget": 0.25
     },
     {
       "p": 800,
-      "topic": "الكعبة والحرم",
-      "q": "كم مترًا يبلغ طول جدار الكعبة الشرقي؟",
-      "a": "اثنا عشر مترًا",
+      "topic": "مصطلحات",
+      "q": "ماذا يسمى المبنى الخيري الذي يوزع ماء الشرب مجانًا على المارة في المدن الإسلامية؟",
+      "a": "السبيل",
       "alt": [
-        "12"
+        "سبيل الماء",
+        "السبيل الخيري"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الكعبة",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Sabil_(fountain)",
       "verified": true,
-      "qid": "islamiyat-800-005"
+      "qid": "islamiyat-800-905",
+      "difficultyTarget": 0.25
     },
     {
       "p": 800,
-      "topic": "الكعبة والحرم",
-      "q": "كم مترًا يبلغ طول جدار الكعبة الشمالي؟",
-      "a": "عشرة أمتار",
+      "topic": "العلماء",
+      "q": "من الطبيب الذي وصف مرور الدم بين القلب والرئتين في شرحه لتشريح القانون؟",
+      "a": "ابن النفيس",
       "alt": [
-        "10"
+        "علاء الدين ابن النفيس"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الكعبة",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Ibn_al-Nafis",
       "verified": true,
-      "qid": "islamiyat-800-006"
+      "qid": "islamiyat-800-906",
+      "difficultyTarget": 0.25
     },
     {
       "p": 800,
-      "topic": "الكعبة والحرم",
-      "q": "كم عينًا جوفية تغذّي بئر ماء زمزم؟",
-      "a": "ثلاث عيون",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/بئر_زمزم",
+      "topic": "مدن التراث",
+      "q": "ما المدينة المالية التي اشتهرت بمدارس سنكوري وتجارة المخطوطات؟",
+      "a": "تمبكتو",
+      "alt": [
+        "تومبكتو",
+        "Timbuktu"
+      ],
+      "sourceUrl": "https://whc.unesco.org/en/list/119/",
       "verified": true,
-      "qid": "islamiyat-800-007"
+      "qid": "islamiyat-800-907",
+      "difficultyTarget": 0.25
     },
     {
       "p": 800,
-      "topic": "مشاعر ومواضع",
-      "q": "ما اسم الميقات الذي يقصده القادمون من جهة اليمن؟",
+      "topic": "الفنون",
+      "q": "ما الخط العربي المستدير الواضح الذي شاع في نسخ المصاحف والكتب؟",
+      "a": "خط النسخ",
+      "alt": [
+        "النسخ",
+        "النسخي"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Naskh_(script)",
+      "verified": true,
+      "qid": "islamiyat-800-908",
+      "difficultyTarget": 0.25
+    },
+    {
+      "p": 1000,
+      "topic": "معالم الحرم",
+      "q": "بأي اسم تُعرف قناة تصريف المطر الذهبية الخارجة من سطح الكعبة؟",
+      "a": "ميزاب الرحمة",
+      "alt": [
+        "الميزاب",
+        "ميزاب الكعبة"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Kaaba",
+      "verified": true,
+      "qid": "islamiyat-1000-901",
+      "difficultyTarget": 0.15
+    },
+    {
+      "p": 1000,
+      "topic": "المشاعر",
+      "q": "ما اسم ميقات أهل اليمن المذكور في حديث ابن عباس؟",
       "a": "يلملم",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/مواقيت_الحج",
-      "verified": true,
-      "qid": "islamiyat-800-008"
-    },
-    {
-      "p": 800,
-      "topic": "مشاعر ومواضع",
-      "q": "ما اسم الميقات الذي يقصده القادمون من جهة العراق؟",
-      "a": "ذات عرق",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/مواقيت_الحج",
-      "verified": true,
-      "qid": "islamiyat-800-009"
-    },
-    {
-      "p": 800,
-      "topic": "مشاعر ومواضع",
-      "q": "ما الاسم القديم الذي عُرف به المسجد التاريخي في منى؟",
-      "a": "مسجد العيشومة",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/مسجد_الخيف",
-      "verified": true,
-      "qid": "islamiyat-800-011"
-    },
-    {
-      "p": 800,
-      "topic": "مشاعر ومواضع",
-      "q": "ما اسم الوادي الذي يفصل بين منى والمشعر الحرام؟",
-      "a": "وادي محسر",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/وادي_محسر",
-      "verified": true,
-      "qid": "islamiyat-800-012"
-    },
-    {
-      "p": 800,
-      "topic": "مشاعر ومواضع",
-      "q": "ما اسم الجبل الذي يقع غرب مكة وتقوم المروة عند سفحه؟",
-      "a": "قعيقعان",
       "alt": [
-        "جبل قعيقعان"
+        "ألملم"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/جبل_قعيقعان",
+      "sourceUrl": "https://sunnah.com/bukhari:1524",
       "verified": true,
-      "qid": "islamiyat-800-013"
+      "qid": "islamiyat-1000-902",
+      "difficultyTarget": 0.15
     },
     {
-      "p": 800,
-      "topic": "مساجد وعمارة",
-      "q": "في أي مدينة تركية يقوم مسجد السليمية الذي عدّه بانيه العثماني تحفته؟",
-      "a": "أدرنة",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/معمار_سنان",
-      "verified": true,
-      "qid": "islamiyat-800-014"
-    },
-    {
-      "p": 800,
-      "topic": "مساجد وعمارة",
-      "q": "من القائد الذي بنى الجامع الأزهر في عهد الفاطميين؟",
-      "a": "جوهر الصقلي",
+      "p": 1000,
+      "topic": "المساجد",
+      "q": "في أي بلدة كان مسجد عبد القيس الذي أُقيمت فيه أول جمعة بعد مسجد النبي، وفق البخاري؟",
+      "a": "جواثى",
       "alt": [
-        "جوهر القائد"
+        "جواثا",
+        "جواثاء"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الجامع_الأزهر",
+      "sourceUrl": "https://sunnah.com/bukhari:892",
       "verified": true,
-      "qid": "islamiyat-800-015"
+      "qid": "islamiyat-1000-903",
+      "difficultyTarget": 0.15
     },
     {
-      "p": 800,
-      "topic": "مساجد وعمارة",
-      "q": "في أي بلدة سعودية تقوم أقدم منارة أذان في الإسلام؟",
-      "a": "دومة الجندل",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/مئذنة",
-      "verified": true,
-      "qid": "islamiyat-800-016"
-    },
-    {
-      "p": 800,
-      "topic": "مساجد وعمارة",
-      "q": "كم مترًا يبلغ ارتفاع المنارة الحلزونية الملتفة في العراق؟",
-      "a": "اثنان وخمسون مترًا",
+      "p": 1000,
+      "topic": "العلماء",
+      "q": "من مؤلف المعجم اللغوي «القاموس المحيط»؟",
+      "a": "الفيروزآبادي",
       "alt": [
-        "52"
+        "مجد الدين الفيروزآبادي",
+        "الفيروز أبادي"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/جامع_الملوية_(سامراء)",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Firuzabadi",
       "verified": true,
-      "qid": "islamiyat-800-017"
+      "qid": "islamiyat-1000-904",
+      "difficultyTarget": 0.15
     },
     {
-      "p": 800,
-      "topic": "مساجد وعمارة",
-      "q": "كم مترًا يبلغ ارتفاع منارة مسجد الحسن الثاني؟",
-      "a": "مئتان وعشرة أمتار",
+      "p": 1000,
+      "topic": "الكتب",
+      "q": "ما اسم معجم الخليل بن أحمد المرتب بحسب مخارج الحروف؟",
+      "a": "كتاب العين",
       "alt": [
-        "210"
+        "العين",
+        "معجم العين"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/مسجد_الحسن_الثاني",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Kitab_al-Ayn",
       "verified": true,
-      "qid": "islamiyat-800-018"
+      "qid": "islamiyat-1000-905",
+      "difficultyTarget": 0.15
     },
     {
-      "p": 800,
-      "topic": "مساجد وعمارة",
-      "q": "ما اسم الجامع الضخم الذي بناه السلطان أورنكزيب في مدينة لاهور؟",
-      "a": "مسجد بادشاهي",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/مسجد_بادشاهي",
-      "verified": true,
-      "qid": "islamiyat-800-019"
-    },
-    {
-      "p": 800,
-      "topic": "كتب وفنون",
-      "q": "من الوزير الخطاط الذي وضع قواعد الخط العربي المنسوب؟",
-      "a": "ابن مقلة",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/ابن_مقلة",
-      "verified": true,
-      "qid": "islamiyat-800-020"
-    },
-    {
-      "p": 800,
-      "topic": "التقويم الهجري",
-      "q": "في أي سنة ميلادية يبدأ التأريخ الهجري؟",
-      "a": "ستمئة واثنتان وعشرون",
+      "p": 1000,
+      "topic": "الكتب",
+      "q": "ما العنوان العربي لأطلس «كتاب روجر» الذي أُلّف لملك صقلية؟",
+      "a": "نزهة المشتاق في اختراق الآفاق",
       "alt": [
-        "622"
+        "نزهة المشتاق"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/التقويم_الهجري",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Tabula_Rogeriana",
       "verified": true,
-      "qid": "islamiyat-800-021"
+      "qid": "islamiyat-1000-906",
+      "difficultyTarget": 0.15
     },
     {
-      "p": 800,
-      "topic": "التقويم الهجري",
-      "q": "ماذا كان يسمى تأخير عرب الجاهلية للشهور التي يحرم فيها القتال؟",
-      "a": "النسيء",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/النسيء",
-      "verified": true,
-      "qid": "islamiyat-800-022"
-    },
-    {
-      "p": 800,
-      "topic": "التقويم الهجري",
-      "q": "كم شهرًا حرامًا يأتي متتاليًا في السنة الهجرية؟",
-      "a": "ثلاثة أشهر",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الأشهر_الحرم",
-      "verified": true,
-      "qid": "islamiyat-800-023"
-    },
-    {
-      "p": 800,
-      "topic": "مصطلحات ومعانٍ",
-      "q": "ماذا تسمى الممرات المسقوفة المحيطة بساحة المسجد الداخلية؟",
-      "a": "الأروقة",
+      "p": 1000,
+      "topic": "مدن التراث",
+      "q": "ما الاسم الفارسي لساحة أصفهان التاريخية الذي يعني «صورة العالم»؟",
+      "a": "نقش جهان",
       "alt": [
-        "الرواق"
+        "نقش جيهان",
+        "ميدان نقش جهان"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/مسجد",
+      "sourceUrl": "https://whc.unesco.org/en/list/115/",
       "verified": true,
-      "qid": "islamiyat-800-024"
-    },
-    {
-      "p": 800,
-      "topic": "مصطلحات ومعانٍ",
-      "q": "ماذا يسمى البناء الذي كان ينزل فيه المسافرون والقوافل في المدن الإسلامية؟",
-      "a": "الخان",
-      "alt": [
-        "الكاروانسراي"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/خان",
-      "verified": true,
-      "qid": "islamiyat-800-025"
-    },
-    {
-      "p": 800,
-      "topic": "مصطلحات ومعانٍ",
-      "q": "ما اسم المدارس التي أنشأها الوزير نظام الملك وصارت نموذجًا للتعليم؟",
-      "a": "المدارس النظامية",
-      "alt": [
-        "النظامية"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/المدرسة_النظامية",
-      "verified": true,
-      "qid": "islamiyat-800-026"
-    },
-    {
-      "p": 800,
-      "topic": "مصطلحات ومعانٍ",
-      "q": "ماذا يسمى حبس العقار أو المال على جهة خيرية دائمة؟",
-      "a": "الوقف",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/وقف",
-      "verified": true,
-      "qid": "islamiyat-800-027"
-    },
-    {
-      "p": 800,
-      "topic": "مصطلحات ومعانٍ",
-      "q": "ما اسم الموكب الذي كان يخرج من مصر سنويًا بثوب الكعبة إلى مكة؟",
-      "a": "المحمل",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/المحمل_المصري",
-      "verified": true,
-      "qid": "islamiyat-800-028"
-    },
-    {
-      "p": 800,
-      "topic": "مصطلحات ومعانٍ",
-      "q": "ما اسم سكة الحديد التي مدّها العثمانيون من بلاد الشام إلى المدينة المنورة؟",
-      "a": "سكة حديد الحجاز",
-      "alt": [
-        "خط الحجاز"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/سكة_حديد_الحجاز",
-      "verified": true,
-      "qid": "islamiyat-800-029"
-    },
-    {
-      "p": 800,
-      "topic": "علماء ورحّالة",
-      "q": "من المهندس المسلم الذي ابتكر ساعة الفيل وأبدع في صناعة الحِيَل؟",
-      "a": "الجزري",
-      "alt": [
-        "بديع الزمان الجزري"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الجزري",
-      "verified": true,
-      "qid": "islamiyat-800-030"
-    },
-    {
-      "p": 800,
-      "topic": "علماء ورحّالة",
-      "q": "من الفلكي المسلم الذي حسب طول السنة الشمسية وسُمّيت فوهة قمرية باسمه؟",
-      "a": "البتاني",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/البتاني",
-      "verified": true,
-      "qid": "islamiyat-800-031"
-    },
-    {
-      "p": 800,
-      "topic": "علماء ورحّالة",
-      "q": "من الرحالة الذي أرسله الخليفة المقتدر إلى ملك البلغار ودوّن رسالته الشهيرة؟",
-      "a": "ابن فضلان",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/أحمد_بن_فضلان",
-      "verified": true,
-      "qid": "islamiyat-800-032"
-    },
-    {
-      "p": 800,
-      "topic": "علماء ورحّالة",
-      "q": "من الفيلسوف الذي لُقّب بفيلسوف العرب وكان أول فلاسفة الإسلام؟",
-      "a": "الكندي",
-      "alt": [
-        "يعقوب بن إسحاق الكندي"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الكندي",
-      "verified": true,
-      "qid": "islamiyat-800-033"
-    },
-    {
-      "p": 800,
-      "topic": "علماء ورحّالة",
-      "q": "من الفيلسوف الأندلسي الذي عُرف في أوروبا باسم أفيروس؟",
-      "a": "ابن رشد",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/ابن_رشد",
-      "verified": true,
-      "qid": "islamiyat-800-034"
-    },
-    {
-      "p": 800,
-      "topic": "علماء ورحّالة",
-      "q": "من صاحب قصة «حي بن يقظان» الفلسفية؟",
-      "a": "ابن طفيل",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/ابن_طفيل",
-      "verified": true,
-      "qid": "islamiyat-800-035"
-    },
-    {
-      "p": 800,
-      "topic": "علماء ورحّالة",
-      "q": "من النحوي الفارسي الأصل الذي وضع أقدم كتب النحو العربي؟",
-      "a": "سيبويه",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/سيبويه",
-      "verified": true,
-      "qid": "islamiyat-800-036"
-    },
-    {
-      "p": 800,
-      "topic": "حواضر ومدن",
-      "q": "ما المدينة الإسبانية التي يقوم فيها برج الخيرالدا الذي كان منارة لمسجد الموحدين؟",
-      "a": "إشبيلية",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الخيرالدا",
-      "verified": true,
-      "qid": "islamiyat-800-037"
-    },
-    {
-      "p": 800,
-      "topic": "حواضر ومدن",
-      "q": "ما اسم أقدم جامعة لا تزال قائمة وتعمل في العالم؟",
-      "a": "جامعة القرويين",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/جامع_القرويين",
-      "verified": true,
-      "qid": "islamiyat-800-038"
-    },
-    {
-      "p": 800,
-      "topic": "حواضر ومدن",
-      "q": "في أي دولة تقع مدينة تلمسان التاريخية؟",
-      "a": "الجزائر",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/تلمسان",
-      "verified": true,
-      "qid": "islamiyat-800-039"
-    },
-    {
-      "p": 800,
-      "topic": "حواضر ومدن",
-      "q": "ما المدينة الهندية التي يقوم فيها ضريح تاج محل؟",
-      "a": "أغرا",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/تاج_محل",
-      "verified": true,
-      "qid": "islamiyat-800-040"
-    },
-    {
-      "p": 800,
-      "topic": "حواضر ومدن",
-      "q": "ما المدينة السورية التي تشتهر بقلعتها الشامخة وأسواقها المسقوفة القديمة؟",
-      "a": "حلب",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/حلب",
-      "verified": true,
-      "qid": "islamiyat-800-041"
-    },
-    {
-      "p": 800,
-      "topic": "حواضر ومدن",
-      "q": "ما الاسم الذي عُرفت به مدينة بيت المقدس في العهد الروماني؟",
-      "a": "إيلياء",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/القدس",
-      "verified": true,
-      "qid": "islamiyat-800-042"
-    },
-    {
-      "p": 800,
-      "topic": "كتب وفنون",
-      "q": "ما اسم الخط العربي الذي ابتكره العثمانيون لمراسلات الدولة الرسمية؟",
-      "a": "الخط الديواني",
-      "alt": [
-        "الديواني"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/خط_ديواني",
-      "verified": true,
-      "qid": "islamiyat-800-043"
-    },
-    {
-      "p": 800,
-      "topic": "كتب وفنون",
-      "q": "ما اسم التوقيع المزخرف الذي كان يتصدّر المراسيم العثمانية؟",
-      "a": "الطغراء",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/طغراء",
-      "verified": true,
-      "qid": "islamiyat-800-044"
-    },
-    {
-      "p": 800,
-      "topic": "كتب وفنون",
-      "q": "ما اسم الموسوعة الفلسفية الكبرى التي ألّفها صاحب القانون في الطب؟",
-      "a": "كتاب الشفاء",
-      "alt": [
-        "الشفاء"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/كتاب_الشفاء",
-      "verified": true,
-      "qid": "islamiyat-800-045"
-    },
-    {
-      "p": 800,
-      "topic": "كتب وفنون",
-      "q": "ما اسم الكتاب الذي وضعه عالم الرياضيات المسلم وأخذ علم الجبر اسمه منه؟",
-      "a": "الجبر والمقابلة",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الخوارزمي",
-      "verified": true,
-      "qid": "islamiyat-800-046"
-    },
-    {
-      "p": 800,
-      "topic": "كتب وفنون",
-      "q": "ما اسم الكتاب الذي وضع فيه الحسن بن الهيثم أصول علم الضوء؟",
-      "a": "كتاب المناظر",
-      "alt": [
-        "المناظر"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/ابن_الهيثم",
-      "verified": true,
-      "qid": "islamiyat-800-047"
-    },
-    {
-      "p": 800,
-      "topic": "كتب وفنون",
-      "q": "ما العنوان الأصلي لرحلة أمير الرحالة المسلمين؟",
-      "a": "تحفة النظار",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/ابن_بطوطة",
-      "verified": true,
-      "qid": "islamiyat-800-048"
-    },
-    {
-      "p": 800,
-      "topic": "عبادات ومناسك",
-      "q": "ماذا يسمى إسراع الطائف في الأشواط الثلاثة الأولى من طوافه؟",
-      "a": "الرَّمَل",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/طواف",
-      "verified": true,
-      "qid": "islamiyat-800-049"
+      "qid": "islamiyat-1000-907",
+      "difficultyTarget": 0.15
     },
     {
       "p": 1000,
-      "topic": "الكعبة والحرم",
-      "q": "في أي حيّ من أحياء مكة يقع مصنع ثوب الكعبة؟",
-      "a": "أم الجود",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/كسوة_الكعبة",
-      "verified": true,
-      "qid": "islamiyat-1000-001"
-    },
-    {
-      "p": 1000,
-      "topic": "الكعبة والحرم",
-      "q": "كم كيلوغرامًا من الحرير الطبيعي يُنسج منه ثوب الكعبة كل عام؟",
-      "a": "نحو ستمئة وسبعين",
-      "alt": [
-        "670"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/كسوة_الكعبة",
-      "verified": true,
-      "qid": "islamiyat-1000-002"
-    },
-    {
-      "p": 1000,
-      "topic": "الكعبة والحرم",
-      "q": "كم مترًا يبلغ عرض باب الكعبة تقريبًا؟",
-      "a": "متر وسبعون سنتيمترًا",
-      "alt": [
-        "1.71"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الكعبة",
-      "verified": true,
-      "qid": "islamiyat-1000-003"
-    },
-    {
-      "p": 1000,
-      "topic": "الكعبة والحرم",
-      "q": "في أي يوم من العام الهجري يُبدَّل ثوب الكعبة اليوم؟",
-      "a": "أول يوم من المحرم",
-      "alt": [
-        "غرة المحرم"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/كسوة_الكعبة",
-      "verified": true,
-      "qid": "islamiyat-1000-004"
-    },
-    {
-      "p": 1000,
-      "topic": "الكعبة والحرم",
-      "q": "ماذا يسمى قماش الحرير الثقيل الذي كانت تُكسى به الكعبة قديمًا؟",
-      "a": "الديباج",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/كسوة_الكعبة",
-      "verified": true,
-      "qid": "islamiyat-1000-005"
-    },
-    {
-      "p": 1000,
-      "topic": "الكعبة والحرم",
-      "q": "كم مترًا يبلغ ارتفاع باب الكعبة تقريبًا؟",
-      "a": "ثلاثة أمتار",
-      "alt": [
-        "3"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الكعبة",
-      "verified": true,
-      "qid": "islamiyat-1000-006"
-    },
-    {
-      "p": 1000,
-      "topic": "الكعبة والحرم",
-      "q": "ما أحد الأسماء القديمة لبئر ماء زمزم ومعناه المخفيّة؟",
-      "a": "المكتومة",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/بئر_زمزم",
-      "verified": true,
-      "qid": "islamiyat-1000-007"
-    },
-    {
-      "p": 1000,
-      "topic": "مشاعر ومواضع",
-      "q": "ما اسم الجمرة التي تقع بين الصغرى والكبرى؟",
-      "a": "الجمرة الوسطى",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الجمرات",
-      "verified": true,
-      "qid": "islamiyat-1000-008"
-    },
-    {
-      "p": 1000,
-      "topic": "مشاعر ومواضع",
-      "q": "ما اسم أشهر مقابر مكة التي تقع قرب المسجد الحرام؟",
-      "a": "المعلاة",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/مقبرة_المعلاة",
-      "verified": true,
-      "qid": "islamiyat-1000-009"
-    },
-    {
-      "p": 1000,
-      "topic": "مشاعر ومواضع",
-      "q": "ما اسم الجبل المشرف على منى الذي يذكره العرب في أمثالهم القديمة؟",
-      "a": "ثبير",
-      "alt": [
-        "جبال ثبير"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/جبال_ثبير",
-      "verified": true,
-      "qid": "islamiyat-1000-010"
-    },
-    {
-      "p": 1000,
-      "topic": "مشاعر ومواضع",
-      "q": "ما اسم طريق الحج القديم الذي كان يمتد من الكوفة إلى مكة؟",
-      "a": "درب زبيدة",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/درب_زبيدة",
-      "verified": true,
-      "qid": "islamiyat-1000-011"
-    },
-    {
-      "p": 1000,
-      "topic": "مشاعر ومواضع",
-      "q": "ما اسم العين التي جُلب بها الماء إلى مكة في العصر العباسي؟",
-      "a": "عين زبيدة",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/درب_زبيدة",
-      "verified": true,
-      "qid": "islamiyat-1000-012"
-    },
-    {
-      "p": 1000,
-      "topic": "مساجد وعمارة",
-      "q": "كم منارة للمسجد النبوي اليوم؟",
-      "a": "عشر منارات",
-      "alt": [
-        "10"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/المسجد_النبوي",
-      "verified": true,
-      "qid": "islamiyat-1000-014"
-    },
-    {
-      "p": 1000,
-      "topic": "مساجد وعمارة",
-      "q": "كم مترًا يبلغ ارتفاع أعلى منارات المسجد النبوي؟",
-      "a": "مئة وأربعة أمتار",
-      "alt": [
-        "104"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/المسجد_النبوي",
-      "verified": true,
-      "qid": "islamiyat-1000-015"
-    },
-    {
-      "p": 1000,
-      "topic": "مساجد وعمارة",
-      "q": "كم مظلة متحركة تظلّل ساحات المسجد النبوي؟",
-      "a": "مئتان وخمسون",
-      "alt": [
-        "250"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/المسجد_النبوي",
-      "verified": true,
-      "qid": "islamiyat-1000-016"
-    },
-    {
-      "p": 1000,
-      "topic": "مساجد وعمارة",
-      "q": "كم مترًا يبلغ ارتفاع القبة الذهبية المثمّنة في المسجد الأقصى؟",
-      "a": "خمسة وثلاثون مترًا",
-      "alt": [
-        "35"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/قبة_الصخرة",
-      "verified": true,
-      "qid": "islamiyat-1000-017"
-    },
-    {
-      "p": 1000,
-      "topic": "مساجد وعمارة",
-      "q": "من السلطان العثماني الذي بنى المسجد المعروف عند الأجانب بالأزرق؟",
-      "a": "أحمد الأول",
-      "alt": [
-        "السلطان أحمد الأول"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/مسجد_السلطان_أحمد",
-      "verified": true,
-      "qid": "islamiyat-1000-018"
-    },
-    {
-      "p": 1000,
-      "topic": "مساجد وعمارة",
-      "q": "كم سنة استغرق بناء الجامع الأموي الكبير؟",
-      "a": "عشر سنوات",
-      "alt": [
-        "10"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الجامع_الأموي_(دمشق)",
-      "verified": true,
-      "qid": "islamiyat-1000-019"
-    },
-    {
-      "p": 1000,
-      "topic": "مساجد وعمارة",
-      "q": "ما اسم المسجد الضخم الذي بناه تيمورلنك وسمّاه باسم زوجته؟",
-      "a": "بيبي خانم",
-      "alt": [
-        "مسجد بيبي خانم"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/مسجد_بيبي_خانم",
-      "verified": true,
-      "qid": "islamiyat-1000-020"
-    },
-    {
-      "p": 1000,
-      "topic": "مساجد وعمارة",
-      "q": "كم مترًا يبلغ ارتفاع منارة جامع القيروان تقريبًا؟",
-      "a": "واحد وثلاثون مترًا",
-      "alt": [
-        "31.5"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/جامع_عقبة_بن_نافع",
-      "verified": true,
-      "qid": "islamiyat-1000-021"
-    },
-    {
-      "p": 1000,
-      "topic": "التقويم الهجري",
-      "q": "ماذا كانت العرب في الجاهلية تسمي شهر رمضان؟",
-      "a": "ناتق",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/تقويم_هجري",
-      "verified": true,
-      "qid": "islamiyat-1000-022"
-    },
-    {
-      "p": 1000,
-      "topic": "التقويم الهجري",
-      "q": "في أي شهر ميلادي وقع أول يوم من السنة الهجرية الأولى؟",
-      "a": "تموز",
-      "alt": [
-        "يوليو"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/تقويم_هجري",
-      "verified": true,
-      "qid": "islamiyat-1000-023"
-    },
-    {
-      "p": 1000,
-      "topic": "التقويم الهجري",
-      "q": "في أي يوم من أيام الأسبوع وقع أول يوم في التأريخ الهجري؟",
-      "a": "الجمعة",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/تقويم_هجري",
-      "verified": true,
-      "qid": "islamiyat-1000-024"
-    },
-    {
-      "p": 1000,
-      "topic": "التقويم الهجري",
-      "q": "كم سنة شمسية تعادل مئة سنة هجرية تقريبًا؟",
-      "a": "سبع وتسعون سنة",
-      "alt": [
-        "97"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/تقويم_هجري",
-      "verified": true,
-      "qid": "islamiyat-1000-025"
-    },
-    {
-      "p": 1000,
-      "topic": "التقويم الهجري",
-      "q": "بعد كم سنة يعود الشهر القمري إلى الفصل نفسه من السنة؟",
-      "a": "ثلاث وثلاثون سنة",
-      "alt": [
-        "33"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/تقويم_هجري",
-      "verified": true,
-      "qid": "islamiyat-1000-026"
-    },
-    {
-      "p": 1000,
-      "topic": "مصطلحات ومعانٍ",
-      "q": "ماذا يسمى كتاب الجداول الفلكية عند علماء المسلمين؟",
-      "a": "الزيج",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/زيج",
-      "verified": true,
-      "qid": "islamiyat-1000-027"
-    },
-    {
-      "p": 1000,
-      "topic": "مصطلحات ومعانٍ",
-      "q": "ماذا كان يسمى الموظف الفلكي الذي يضبط أوقات الصلاة في المساجد الكبرى؟",
-      "a": "المؤقّت",
-      "alt": [
-        "الموقت"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/علم_المواقيت",
-      "verified": true,
-      "qid": "islamiyat-1000-028"
-    },
-    {
-      "p": 1000,
-      "topic": "مصطلحات ومعانٍ",
-      "q": "ماذا يسمى العلم الذي يحدد أوقات النهار واتجاه الكعبة بالحساب الفلكي؟",
-      "a": "علم المواقيت",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/علم_المواقيت",
-      "verified": true,
-      "qid": "islamiyat-1000-029"
-    },
-    {
-      "p": 1000,
-      "topic": "مصطلحات ومعانٍ",
-      "q": "ماذا تسمى الشبكة الخشبية المزخرفة في نوافذ البيوت الإسلامية القديمة؟",
-      "a": "المشربية",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/مشربية",
-      "verified": true,
-      "qid": "islamiyat-1000-030"
-    },
-    {
-      "p": 1000,
-      "topic": "علماء ورحّالة",
-      "q": "من أشهر من نقل كتب الطب اليونانية إلى العربية في العصر العباسي؟",
-      "a": "حنين بن إسحاق",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/حنين_بن_إسحاق",
-      "verified": true,
-      "qid": "islamiyat-1000-031"
-    },
-    {
-      "p": 1000,
-      "topic": "علماء ورحّالة",
-      "q": "من المؤرخ صاحب كتاب «الكامل في التاريخ»؟",
-      "a": "ابن الأثير",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/ابن_الأثير",
-      "verified": true,
-      "qid": "islamiyat-1000-032"
-    },
-    {
-      "p": 1000,
-      "topic": "علماء ورحّالة",
-      "q": "من الجغرافي صاحب كتاب «صورة الأرض»؟",
-      "a": "ابن حوقل",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/ابن_حوقل",
-      "verified": true,
-      "qid": "islamiyat-1000-033"
-    },
-    {
-      "p": 1000,
-      "topic": "علماء ورحّالة",
-      "q": "من الرياضي المسلم الذي طوّر حساب المثلثات ولُقّب بأبي الوفا؟",
-      "a": "البوزجاني",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/أبو_الوفا_البوزجاني",
-      "verified": true,
-      "qid": "islamiyat-1000-034"
-    },
-    {
-      "p": 1000,
-      "topic": "علماء ورحّالة",
-      "q": "من الأمير الفلكي الذي بنى مرصدًا كبيرًا في بلاد ما وراء النهر؟",
-      "a": "ألغ بك",
-      "alt": [
-        "ألغ بيك",
-        "أولوغ بيك"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/ألغ_بك",
-      "verified": true,
-      "qid": "islamiyat-1000-035"
-    },
-    {
-      "p": 1000,
-      "topic": "علماء ورحّالة",
-      "q": "من الأديب الذي نقل «كليلة ودمنة» إلى العربية؟",
-      "a": "ابن المقفع",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/ابن_المقفع",
-      "verified": true,
-      "qid": "islamiyat-1000-036"
-    },
-    {
-      "p": 1000,
-      "topic": "علماء ورحّالة",
-      "q": "من الشاعر صاحب «الكواكب الدرية» المعروفة بقصيدة البردة في مدح النبي؟",
-      "a": "البوصيري",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/البوصيري",
-      "verified": true,
-      "qid": "islamiyat-1000-037"
-    },
-    {
-      "p": 1000,
-      "topic": "حواضر ومدن",
-      "q": "ما أول مدينة بناها المسلمون في أرض العراق؟",
-      "a": "البصرة",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/البصرة",
-      "verified": true,
-      "qid": "islamiyat-1000-038"
-    },
-    {
-      "p": 1000,
-      "topic": "حواضر ومدن",
-      "q": "في أي دولة تقع مدينة شنقيط المشهورة بمكتبات المخطوطات؟",
-      "a": "موريتانيا",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/شنقيط",
-      "verified": true,
-      "qid": "islamiyat-1000-039"
-    },
-    {
-      "p": 1000,
-      "topic": "حواضر ومدن",
-      "q": "ما اسم المدينة اليمنية التاريخية التي اشتهرت بمساجدها ومدارسها العلمية؟",
-      "a": "زبيد",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/زبيد",
-      "verified": true,
-      "qid": "islamiyat-1000-040"
-    },
-    {
-      "p": 1000,
-      "topic": "حواضر ومدن",
-      "q": "ما اسم الجزيرة التي اتخذ المسلمون مدينة بالرمو حاضرة لها؟",
-      "a": "صقلية",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/صقلية",
-      "verified": true,
-      "qid": "islamiyat-1000-041"
-    },
-    {
-      "p": 1000,
-      "topic": "حواضر ومدن",
-      "q": "ما المدينة الهندية التي يقوم فيها الجامع الكبير الذي بناه شاه جهان؟",
-      "a": "دلهي",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/المسجد_الجامع_(دلهي)",
-      "verified": true,
-      "qid": "islamiyat-1000-042"
-    },
-    {
-      "p": 1000,
-      "topic": "حواضر ومدن",
-      "q": "في أي دولة تقع مدينة غدامس التاريخية؟",
-      "a": "ليبيا",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/غدامس",
-      "verified": true,
-      "qid": "islamiyat-1000-043"
-    },
-    {
-      "p": 1000,
-      "topic": "كتب وفنون",
-      "q": "ما اسم كتاب المقريزي الذي وصف فيه خطط مصر وآثارها؟",
-      "a": "الخطط",
-      "alt": [
-        "الخطط المقريزية"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/المقريزي",
-      "verified": true,
-      "qid": "islamiyat-1000-044"
-    },
-    {
-      "p": 1000,
-      "topic": "كتب وفنون",
-      "q": "ما اسم الخط الفارسي المائل الذي يُكتب به الشعر الفارسي؟",
+      "topic": "الفنون",
+      "q": "ما اسم الخط الفارسي الذي يعني اسمه «النسخ المعلق»؟",
       "a": "النستعليق",
       "alt": [
-        "التعليق"
+        "نستعليق",
+        "خط النستعليق"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/خط_نستعليق",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Nastaliq",
       "verified": true,
-      "qid": "islamiyat-1000-045"
-    },
-    {
-      "p": 1000,
-      "topic": "كتب وفنون",
-      "q": "ما اسم كتاب ابن حزم في الحب والألفة؟",
-      "a": "طوق الحمامة",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/طوق_الحمامة",
-      "verified": true,
-      "qid": "islamiyat-1000-046"
-    },
-    {
-      "p": 1000,
-      "topic": "كتب وفنون",
-      "q": "ما اسم الموسوعة التي وضعها القلقشندي في صناعة الكتابة والإنشاء؟",
-      "a": "صبح الأعشى",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/صبح_الأعشى",
-      "verified": true,
-      "qid": "islamiyat-1000-047"
-    },
-    {
-      "p": 1000,
-      "topic": "كتب وفنون",
-      "q": "ما اسم الكتاب الذي أحصى فيه ابن النديم مؤلفات العرب وكتبهم؟",
-      "a": "الفهرست",
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الفهرست",
-      "verified": true,
-      "alt": [],
-      "qid": "islamiyat-1000-048"
-    },
-    {
-      "p": 1000,
-      "topic": "عبادات ومناسك",
-      "q": "ماذا يسمى كشف الطائف كتفه الأيمن وجعل طرفي ردائه على كتفه الأيسر؟",
-      "a": "الاضطباع",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/طواف",
-      "verified": true,
-      "qid": "islamiyat-1000-049"
+      "qid": "islamiyat-1000-908",
+      "difficultyTarget": 0.15
     }
   ]
 }

@@ -1,0 +1,35 @@
+{
+  "id": "blur-200-902",
+  "kind": "question",
+  "pack": "blur",
+  "a": "بيتزا",
+  "p": 200,
+  "topic": "أطعمة",
+  "prompt": "Use case: photorealistic-natural.\nAsset type: one standalone professional image for an Arabic family visual guessing game (age 16+).\nSubject: a round margherita pizza viewed at a slight top-down angle.\nStyle: realistic high quality photography with correct anatomy and object geometry, clean natural textures.\nComposition: landscape 4:3, the complete subject fills about 75% of the frame; centered with ample margins, immediately recognizable when revealed.  \nBackground: simple uncluttered setting appropriate to the subject, natural lighting.\nConstraints: exactly the stated subject; no label, caption, watermark, collage, borders or readable words. Create a sharp original, not a blurred image; the game applies the blur.  The subject must be visually unambiguous, with a strong clear outline and identifying features large enough to survive a moderate blur. Do not add any text or split-panel layout. Keep the entire subject in frame.",
+  "question": {
+    "p": 200,
+    "q": "ما اسم الطعام الظاهر في الصورة الضبابية؟",
+    "a": "بيتزا",
+    "qid": "blur-200-902",
+    "type": "image",
+    "effect": "blur",
+    "alt": [],
+    "topic": "أطعمة",
+    "difficultyTarget": 0.8,
+    "verified": true,
+    "sourceUrl": "docs/bank/rebuild-2026-09-18/review-blur-generated.json",
+    "media": {
+      "src": "blur-200-902.webp",
+      "type": "image",
+      "title": "لغز بصري مولّد",
+      "author": "Maydan / OpenAI image generation",
+      "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
+      "provenance": {
+        "kind": "ai-generated",
+        "tool": "OpenAI image generation",
+        "createdAt": "2026-09-23",
+        "record": "docs/bank/rebuild-2026-09-18/generated-records/blur-200-902.json"
+      }
+    }
+  }
+}

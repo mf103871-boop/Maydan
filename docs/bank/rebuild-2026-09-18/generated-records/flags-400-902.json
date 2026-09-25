@@ -1,0 +1,19 @@
+{
+  "id": "flags-400-902",
+  "kind": "question",
+  "pack": "flags",
+  "file": "media/flags/flags-400-902.webp",
+  "asset": "media/flags/flags-400-902.webp",
+  "prompt": "Accurate educational national flag. Completely OPAQUE rectangular canvas, every pixel opaque, all color fields stay visible including white. Flat straight-on diagram with crisp solid color edges. Entire image is the flag, exact aspect ratio. No transparency or cutout, no labels, no words, no folds, no pole, no border, no shading. Algeria. Width:height3:2. Two equal vertical halves: deep green #006633 on LEFT, white on RIGHT. Exactly centered red #D21034 crescent with its opening facing RIGHT and one red five-pointed star nestled in the crescent opening. Crescent and star straddle boundary; star mainly right white half. Standard Algerian national flag, accurate crescent and five-point star geometry.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-09-23",
+  "width": 1280,
+  "height": 853,
+  "bytes": 15204,
+  "sha256": "17e8fde582fabf56396914b6fedcecfc85c7252681edd929d17e7e827cb1473f",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "pending",
+    "note": "Generation and file checks do not imply subject or gameplay verification."
+  }
+}

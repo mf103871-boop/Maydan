@@ -1,0 +1,19 @@
+{
+  "id": "flags-200-907",
+  "kind": "question",
+  "pack": "flags",
+  "file": "media/flags/flags-200-907.webp",
+  "asset": "media/flags/flags-200-907.webp",
+  "prompt": "Create a flat national flag illustration on a completely OPAQUE rectangular image. Every pixel must have an opaque colored surface, including white and green areas. Keep the background flag field visible. Solid flat colors with crisp straight edges. No transparency, no alpha cutout. The flag occupies the entire canvas. Canada. Canvas width:height exactly 2:1. Red vertical band left quarter width, white central SQUARE exactly half total width, red right quarter width. Red #FF0000 white #FFFFFF. Center the exact official stylized Canadian ELEVEN-POINT maple leaf, solid red, with short vertical stem down. Eleven sharp points: single tall central tip; matched upper, outer and lower pointed side lobes in the recognizable official maple leaf silhouette. Bilaterally symmetric, neither a natural leaf drawing nor a generic five-point leaf. Leaf and stem fit inside the white center with generous space above and below. Standard official Canadian maple-leaf national flag; no veins, no extra leaves.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-09-23",
+  "width": 1280,
+  "height": 640,
+  "bytes": 15940,
+  "sha256": "1d2fc9745dc3074c7ecfb188c06677ebaa5d22566149ced59928f672346e3314",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "pending",
+    "note": "Generation and file checks do not imply subject or gameplay verification."
+  }
+}

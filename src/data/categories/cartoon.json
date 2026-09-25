@@ -7,2895 +7,557 @@
     {
       "p": 200,
       "topic": "أماكن ومدن",
-      "q": "في «سبونج بوب»، داخل أي ثمرة يسكن البطل في قاع البحر؟",
+      "q": "داخل أي ثمرة يسكن سبونج بوب في قاع البحر؟",
       "a": "أناناس",
-      "alt": [],
-      "sourceUrl": "https://en.wikipedia.org/wiki/SpongeBob_SquarePants",
+      "alt": [
+        "أناناسة"
+      ],
+      "sourceUrl": "https://www.paramountpressexpress.com/nickelodeon/shows/spongebob-squarepants",
       "verified": true,
-      "qid": "cartoon-200-001"
+      "qid": "cartoon-200-901",
+      "difficultyTarget": 0.8
     },
     {
       "p": 200,
-      "topic": "أصدقاء ورفاق",
-      "q": "من نجم البحر الوردي صديق سبونج بوب؟",
+      "topic": "أصدقاء وعائلات",
+      "q": "ما اسم نجم البحر الوردي الذي يرافق سبونج بوب في مغامراته؟",
       "a": "باتريك",
-      "alt": [],
-      "sourceUrl": "https://en.wikipedia.org/wiki/SpongeBob_SquarePants",
-      "verified": true,
-      "qid": "cartoon-200-002"
-    },
-    {
-      "p": 200,
-      "topic": "أشياء وأدوات",
-      "q": "في «توم وجيري»، ما الطعام الذي يعشق الفأر سرقته؟",
-      "a": "الجبن",
-      "alt": [],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Tom_and_Jerry",
-      "verified": true,
-      "qid": "cartoon-200-003"
-    },
-    {
-      "p": 200,
-      "topic": "أشياء وأدوات",
-      "q": "في «توم وجيري»، ما الأداة التي ينصبها القط ليمسك الفأر؟",
-      "a": "مصيدة الفئران",
       "alt": [
-        "المصيدة"
+        "بسيط",
+        "Patrick Star"
       ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Tom_and_Jerry",
+      "sourceUrl": "https://www.paramountpressexpress.com/nickelodeon/shows/spongebob-squarepants",
       "verified": true,
-      "qid": "cartoon-200-004"
+      "qid": "cartoon-200-902",
+      "difficultyTarget": 0.8
     },
     {
       "p": 200,
-      "topic": "أشياء وأدوات",
-      "q": "ما الخضار الذي يقضمه أرنب «لوني تونز» الشهير في كل مشهد؟",
-      "a": "الجزرة",
-      "alt": [
-        "جزرة"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Looney_Tunes",
-      "verified": true,
-      "qid": "cartoon-200-005"
-    },
-    {
-      "p": 200,
-      "topic": "شخصيات رئيسية",
-      "q": "من الأرنب الرمادي الذي يسأل دائمًا: «ما الأمر يا دكتور؟»",
-      "a": "باغز باني",
-      "alt": [
-        "باغز",
-        "بوجز باني"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Looney_Tunes",
-      "verified": true,
-      "qid": "cartoon-200-006"
-    },
-    {
-      "p": 200,
-      "topic": "أصدقاء ورفاق",
-      "q": "ما اسم كلب ميكي الأصفر الوفي؟",
-      "a": "بلوتو",
-      "alt": [],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Mickey_Mouse",
-      "verified": true,
-      "qid": "cartoon-200-009"
-    },
-    {
-      "p": 200,
-      "topic": "عائلات وقرابات",
-      "q": "من الفأرة صاحبة الشريطة الحمراء التي تحب ميكي؟",
-      "a": "ميني",
-      "alt": [
-        "ميني ماوس"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Mickey_Mouse",
-      "verified": true,
-      "qid": "cartoon-200-010"
-    },
-    {
-      "p": 200,
-      "topic": "أحداث ومواقف",
-      "q": "في «سكوبي دو»، ما الكائنات التي يطاردها الأصدقاء في كل حلقة؟",
-      "a": "الأشباح",
-      "alt": [
-        "أشباح"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Scooby-Doo",
-      "verified": true,
-      "qid": "cartoon-200-011"
-    },
-    {
-      "p": 200,
-      "topic": "جمل شهيرة",
-      "q": "في «سبونج بوب»، ما العبارة التي يرددها البطل بحماس قبل العمل؟",
-      "a": "أنا جاهز",
-      "alt": [
-        "جاهز"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/SpongeBob_SquarePants",
-      "verified": true,
-      "qid": "cartoon-200-012"
-    },
-    {
-      "p": 200,
-      "topic": "شخصيات رئيسية",
-      "q": "من زعيم السنافر ذو اللحية البيضاء والسروال الأحمر؟",
-      "a": "بابا سنفور",
-      "alt": [],
-      "sourceUrl": "https://en.wikipedia.org/wiki/The_Smurfs",
-      "verified": true,
-      "qid": "cartoon-200-014"
-    },
-    {
-      "p": 200,
-      "topic": "عائلات وقرابات",
-      "q": "كم سلحفاة في فريق «سلاحف النينجا»؟",
-      "a": "أربع",
-      "alt": [
-        "أربعة"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Teenage_Mutant_Ninja_Turtles",
-      "verified": true,
-      "qid": "cartoon-200-020"
-    },
-    {
-      "p": 200,
-      "topic": "أشياء وأدوات",
-      "q": "ما الطعام الذي تعشقه سلاحف النينجا؟",
-      "a": "البيتزا",
-      "alt": [
-        "بيتزا"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Teenage_Mutant_Ninja_Turtles",
-      "verified": true,
-      "qid": "cartoon-200-021"
-    },
-    {
-      "p": 200,
-      "topic": "أشياء وأدوات",
-      "q": "ما الطعام الذي يمنح بوباي قوته الخارقة؟",
+      "topic": "أطعمة وموارد",
+      "q": "ما الخضار المعلب الذي يأكله بوباي ليستعيد قوته؟",
       "a": "السبانخ",
       "alt": [
         "سبانخ"
       ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Popeye",
+      "sourceUrl": "https://popeye.com/About/",
       "verified": true,
-      "qid": "cartoon-200-022"
+      "qid": "cartoon-200-903",
+      "difficultyTarget": 0.8
     },
     {
       "p": 200,
-      "topic": "أشياء وأدوات",
-      "q": "في «العصر الجليدي»، ما الثمرة التي يطاردها السنجاب سكرات؟",
-      "a": "البلوطة",
+      "topic": "أبطال وشخصيات",
+      "q": "من كبير قرية السنافر الذي يرشدهم ويصنع الجرعات السحرية؟",
+      "a": "بابا سنفور",
       "alt": [
-        "حبة البلوط",
-        "الجوزة"
+        "Papa Smurf"
       ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Ice_Age_(franchise)",
+      "sourceUrl": "https://www.smurf.com/",
       "verified": true,
-      "qid": "cartoon-200-023"
+      "qid": "cartoon-200-904",
+      "difficultyTarget": 0.8
     },
     {
       "p": 200,
-      "topic": "أحداث ومواقف",
-      "q": "ماذا يحدث لأنف بينوكيو كلما كذب؟",
-      "a": "يطول",
+      "topic": "أصدقاء وعائلات",
+      "q": "ما اسم كلب ميكي ماوس الأليف؟",
+      "a": "بلوتو",
       "alt": [
-        "يكبر",
-        "يستطيل"
+        "Pluto"
       ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Pinocchio_(1940_film)",
+      "sourceUrl": "https://d23.com/a-to-z/pluto/",
       "verified": true,
-      "qid": "cartoon-200-024"
+      "qid": "cartoon-200-905",
+      "difficultyTarget": 0.8
     },
     {
       "p": 200,
-      "topic": "عائلات وقرابات",
-      "q": "كم قزمًا يعيش مع «سنو وايت» في بيت الغابة؟",
-      "a": "سبعة",
-      "alt": [
-        "سبعة أقزام"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Snow_White_and_the_Seven_Dwarfs_(1937_film)",
-      "verified": true,
-      "qid": "cartoon-200-025"
-    },
-    {
-      "p": 200,
-      "topic": "أشياء وأدوات",
-      "q": "ما الشيء الذي يفركه علاء الدين ليظهر الجني؟",
-      "a": "المصباح",
-      "alt": [
-        "مصباح"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Aladdin_(1992_Disney_film)",
-      "verified": true,
-      "qid": "cartoon-200-026"
-    },
-    {
-      "p": 200,
-      "topic": "عائلات وقرابات",
-      "q": "كم فتاة في فريق «الفتيات الخارقات»؟",
-      "a": "ثلاث",
-      "alt": [
-        "ثلاثة"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/The_Powerpuff_Girls",
-      "verified": true,
-      "qid": "cartoon-200-029"
-    },
-    {
-      "p": 200,
-      "topic": "أصدقاء ورفاق",
-      "q": "في «سبونج بوب»، من صاحب المطعم البخيل ذو المخالب؟",
-      "a": "مستر كرابس",
-      "alt": [
-        "كرابس"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/SpongeBob_SquarePants",
-      "verified": true,
-      "qid": "cartoon-200-030"
-    },
-    {
-      "p": 200,
-      "topic": "جمل شهيرة",
-      "q": "في «الأسد الملك»، ما معنى عبارة «هاكونا ماتاتا»؟",
-      "a": "لا مشاكل",
-      "alt": [
-        "لا توجد مشاكل",
-        "لا تقلق"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/The_Lion_King",
-      "verified": true,
-      "qid": "cartoon-200-031"
-    },
-    {
-      "p": 200,
-      "topic": "أماكن ومدن",
-      "q": "في «سبونج بوب»، ما اسم المدينة الواقعة في قاع البحر؟",
-      "a": "بيكيني بوتوم",
-      "alt": [],
-      "sourceUrl": "https://en.wikipedia.org/wiki/SpongeBob_SquarePants",
-      "verified": true,
-      "qid": "cartoon-200-032"
-    },
-    {
-      "p": 200,
-      "topic": "أصدقاء ورفاق",
-      "q": "في «سكوبي دو»، ما اسم الشاب النحيل الجائع صديق الكلب؟",
-      "a": "شاغي",
-      "alt": [
-        "شاجي"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Scooby-Doo",
-      "verified": true,
-      "qid": "cartoon-200-033"
-    },
-    {
-      "p": 200,
-      "topic": "شخصيات رئيسية",
-      "q": "في «كتاب الأدغال»، ما اسم الفتى الذي ربّته الذئاب؟",
-      "a": "موغلي",
-      "alt": [
-        "ماوكلي"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/The_Jungle_Book_(1967_film)",
-      "verified": true,
-      "qid": "cartoon-200-035"
-    },
-    {
-      "p": 200,
-      "topic": "أصدقاء ورفاق",
-      "q": "ما اسم الكائن الفضائي الأزرق الذي تتبنّاه الطفلة ليلو؟",
-      "a": "ستيتش",
-      "alt": [],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Lilo_%26_Stitch",
-      "verified": true,
-      "qid": "cartoon-200-038"
-    },
-    {
-      "p": 200,
-      "topic": "أشرار وخصوم",
-      "q": "في «لوني تونز»، من القط الأسود والأبيض المتلعثم الذي يطارد الطيور؟",
-      "a": "سيلفستر",
-      "alt": [
-        "سلفستر"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Looney_Tunes",
-      "verified": true,
-      "qid": "cartoon-200-039"
-    },
-    {
-      "p": 200,
-      "topic": "أشرار وخصوم",
-      "q": "من الصياد الأصلع الذي يطارد الأرنب باغز؟",
-      "a": "إلمر فد",
-      "alt": [
-        "إلمر"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Looney_Tunes",
-      "verified": true,
-      "qid": "cartoon-200-040"
-    },
-    {
-      "p": 200,
-      "topic": "شخصيات رئيسية",
-      "q": "في «عائلة سمبسون»، ما اسم الابن الشقي صاحب اللوح المتزلج؟",
-      "a": "بارت",
-      "alt": [],
-      "sourceUrl": "https://en.wikipedia.org/wiki/The_Simpsons",
-      "verified": true,
-      "qid": "cartoon-200-041"
-    },
-    {
-      "p": 200,
-      "topic": "أصدقاء ورفاق",
-      "q": "من صديق ميكي الطويل الأخرق صاحب القبعة والأسنان البارزة؟",
-      "a": "غوفي",
-      "alt": [
-        "بندق",
-        "جوفي"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Mickey_Mouse",
-      "verified": true,
-      "qid": "cartoon-200-043"
-    },
-    {
-      "p": 200,
-      "topic": "أصدقاء ورفاق",
-      "q": "ما اسم الحلزون الأليف الذي يربّيه سبونج بوب؟",
-      "a": "غاري",
-      "alt": [
-        "جاري"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/SpongeBob_SquarePants",
-      "verified": true,
-      "qid": "cartoon-200-044"
-    },
-    {
-      "p": 200,
-      "topic": "أصدقاء ورفاق",
-      "q": "في «سبونج بوب»، من الجار الحبّار سيئ المزاج عازف الكلارينيت؟",
-      "a": "سكويدورد",
-      "alt": [
-        "سكويدوارد"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/SpongeBob_SquarePants",
-      "verified": true,
-      "qid": "cartoon-200-045"
-    },
-    {
-      "p": 200,
-      "topic": "أصدقاء ورفاق",
-      "q": "في «العصر الجليدي»، ما نوع حيوان سيد الثرثار؟",
-      "a": "كسلان",
-      "alt": [
-        "حيوان الكسلان"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Ice_Age_(franchise)",
-      "verified": true,
-      "qid": "cartoon-200-046"
-    },
-    {
-      "p": 200,
-      "topic": "أشرار وخصوم",
-      "q": "في «بيتر بان»، من القرصان صاحب الخطاف الحديدي؟",
-      "a": "الكابتن هوك",
-      "alt": [
-        "كابتن هوك",
-        "هوك"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Peter_Pan_(1953_film)",
-      "verified": true,
-      "qid": "cartoon-200-047"
-    },
-    {
-      "p": 200,
-      "topic": "أحداث ومواقف",
-      "q": "في «بيتر بان»، ما القدرة التي يمنحها غبار الجنيات للأطفال؟",
-      "a": "الطيران",
-      "alt": [
-        "أن يطيروا"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Peter_Pan_(1953_film)",
-      "verified": true,
-      "qid": "cartoon-200-048"
-    },
-    {
-      "p": 200,
-      "topic": "أماكن ومدن",
-      "q": "في «توم وجيري»، أين يختبئ الفأر جيري داخل البيت هربًا من القط؟",
-      "a": "ثقب في الجدار",
-      "alt": [
-        "جحر في الجدار",
-        "ثقب الجدار",
-        "الجحر"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Tom_and_Jerry",
-      "verified": true,
-      "qid": "cartoon-200-049"
-    },
-    {
-      "p": 200,
-      "topic": "جمل شهيرة",
-      "q": "في «عائلة سمبسون»، ما الصيحة القصيرة التي يطلقها الأب كلما وقع في خطأ؟",
-      "a": "دوه",
-      "alt": [
-        "دوه!",
-        "داه"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/The_Simpsons",
-      "verified": true,
-      "qid": "cartoon-200-050"
-    },
-    {
-      "p": 200,
-      "topic": "أحداث ومواقف",
-      "q": "في «سكوبي دو»، ماذا يتبيّن أن الشبح في نهاية كل لغز؟",
-      "a": "إنسان متنكر",
-      "alt": [
-        "شخص متنكر",
-        "إنسان يرتدي قناعًا"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Scooby-Doo",
-      "verified": true,
-      "qid": "cartoon-200-051"
-    },
-    {
-      "p": 200,
-      "topic": "شخصيات رئيسية",
-      "q": "في «سبونج بوب»، ما الكائن البحري الذي يمثّله البطل المربع؟",
-      "a": "إسفنجة",
-      "alt": [
-        "إسفنج",
-        "الإسفنج",
-        "سفنجة"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/SpongeBob_SquarePants",
-      "verified": true,
-      "qid": "cartoon-200-052"
-    },
-    {
-      "p": 200,
-      "topic": "أشياء وأدوات",
-      "q": "في «عائلة فلينستون»، بأي شيء يحرّك رب الأسرة سيارته الحجرية؟",
-      "a": "بقدميه",
-      "alt": [
-        "قدماه",
-        "برجليه",
-        "يدفعها بقدميه"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/The_Flintstones",
-      "verified": true,
-      "qid": "cartoon-200-053"
-    },
-    {
-      "p": 200,
-      "topic": "شخصيات رئيسية",
-      "q": "ما اسم الشبح الصغير الودود بطل الرسوم المتحركة الكلاسيكية؟",
-      "a": "كاسبر",
-      "alt": [
-        "كاسبر الشبح الودود",
-        "كاسبور"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Casper_the_Friendly_Ghost",
-      "verified": true,
-      "qid": "cartoon-200-054"
-    },
-    {
-      "p": 200,
-      "topic": "شخصيات رئيسية",
-      "q": "من الطائر الأحمر صاحب الضحكة الشهيرة في الرسوم الكلاسيكية؟",
-      "a": "نقّار الخشب وودي",
-      "alt": [
-        "وودي وودبيكر",
-        "نقار الخشب",
-        "وودي ودبيكر"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Woody_Woodpecker",
-      "verified": true,
-      "qid": "cartoon-200-055"
-    },
-    {
-      "p": 200,
-      "topic": "أحداث ومواقف",
-      "q": "في «بينوكيو»، ما الأمنية التي يتمناها النجار العجوز لدميته الخشبية؟",
-      "a": "أن تصير طفلًا حقيقيًا",
-      "alt": [
-        "أن يصبح طفلًا حقيقيًا",
-        "طفل حقيقي"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Pinocchio_(1940_film)",
-      "verified": true,
-      "qid": "cartoon-200-056"
-    },
-    {
-      "p": 200,
-      "topic": "أحداث ومواقف",
-      "q": "في «أليس في بلاد العجائب»، ماذا يحدث لحجم الفتاة حين تشرب من القارورة؟",
-      "a": "يصغر",
-      "alt": [
-        "تصغر",
-        "يصغر حجمها",
-        "تتقلص"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Alice_in_Wonderland_(1951_film)",
-      "verified": true,
-      "qid": "cartoon-200-057"
-    },
-    {
-      "p": 200,
-      "topic": "أماكن ومدن",
-      "q": "في «سلاحف النينجا»، في أي مدينة أمريكية تدور مغامرات السلاحف؟",
-      "a": "نيويورك",
-      "alt": [
-        "مدينة نيويورك"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Teenage_Mutant_Ninja_Turtles",
-      "verified": true,
-      "qid": "cartoon-200-058"
-    },
-    {
-      "p": 200,
-      "topic": "شخصيات رئيسية",
-      "q": "ما اسم الدب الأصفر ذي القميص الأحمر الذي يعشق العسل؟",
-      "a": "ويني الدبدوب",
-      "alt": [
-        "الدب ويني",
-        "ويني بوه",
-        "ويني"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Winnie-the-Pooh",
-      "verified": true,
-      "qid": "cartoon-200-059"
-    },
-    {
-      "p": 200,
-      "topic": "أشياء وأدوات",
-      "q": "ما الشيء الذي يضعه البحّار بوباي في فمه دائمًا؟",
-      "a": "غليون",
-      "alt": [
-        "الغليون",
-        "بايب",
-        "پايب"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Popeye",
-      "verified": true,
-      "qid": "cartoon-200-060"
-    },
-    {
-      "p": 200,
-      "topic": "أشياء وأدوات",
-      "q": "في «علاء الدين»، على أي شيء يطير البطل والأميرة في السماء؟",
-      "a": "البساط السحري",
-      "alt": [
-        "بساط سحري",
-        "السجادة الطائرة"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Aladdin_(1992_Disney_film)",
-      "verified": true,
-      "qid": "cartoon-200-061"
-    },
-    {
-      "p": 200,
-      "topic": "أماكن ومدن",
-      "q": "في «كتاب الأدغال»، في أي بلد تدور أحداث القصة؟",
-      "a": "الهند",
-      "alt": [
-        "في الهند"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/The_Jungle_Book_(1967_film)",
-      "verified": true,
-      "qid": "cartoon-200-062"
-    },
-    {
-      "p": 400,
-      "topic": "أشياء وأدوات",
-      "q": "في «سبونج بوب»، ما اسم الشطيرة الشهيرة التي يقليها البطل في المطعم؟",
-      "a": "برغر السلطعون",
-      "alt": [
-        "كرابي باتي",
-        "الكرابي باتي"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/SpongeBob_SquarePants",
-      "verified": true,
-      "qid": "cartoon-400-001"
-    },
-    {
-      "p": 400,
-      "topic": "أصدقاء ورفاق",
-      "q": "في «سبونج بوب»، ما اسم السنجاب الذي يعيش تحت الماء داخل قبة زجاجية؟",
-      "a": "ساندي",
-      "alt": [
-        "ساندي شيكس"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/SpongeBob_SquarePants",
-      "verified": true,
-      "qid": "cartoon-400-002"
-    },
-    {
-      "p": 400,
-      "topic": "أصدقاء ورفاق",
-      "q": "في «توم وجيري»، ما اسم الكلب البلدغ الذي يحمي الفأر من القط؟",
-      "a": "سبايك",
-      "alt": [],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Tom_and_Jerry",
-      "verified": true,
-      "qid": "cartoon-400-003"
-    },
-    {
-      "p": 400,
-      "topic": "أشرار وخصوم",
-      "q": "من البطة السوداء غريمة الأرنب باغز في «لوني تونز»؟",
-      "a": "دافي داك",
-      "alt": [
-        "دافي"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Looney_Tunes",
-      "verified": true,
-      "qid": "cartoon-400-004"
-    },
-    {
-      "p": 400,
-      "topic": "أصدقاء ورفاق",
-      "q": "في «لوني تونز»، ما اسم الطائر الأصفر الصغير الذي يفلت دائمًا من القط؟",
-      "a": "تويتي",
-      "alt": [
-        "تويتي بيرد"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Looney_Tunes",
-      "verified": true,
-      "qid": "cartoon-400-005"
-    },
-    {
-      "p": 400,
-      "topic": "شخصيات رئيسية",
-      "q": "من الشيطان التسماني الذي يدور كالإعصار في «لوني تونز»؟",
-      "a": "تاز",
-      "alt": [
-        "تازمانيا"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Looney_Tunes",
-      "verified": true,
-      "qid": "cartoon-400-006"
-    },
-    {
-      "p": 400,
-      "topic": "أصدقاء ورفاق",
-      "q": "في «سكوبي دو»، ما اسم الفتاة الذكية صاحبة النظارة؟",
-      "a": "فيلما",
-      "alt": [
-        "ڤيلما"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Scooby-Doo",
-      "verified": true,
-      "qid": "cartoon-400-007"
-    },
-    {
-      "p": 400,
-      "topic": "عائلات وقرابات",
-      "q": "في «عائلة سمبسون»، ما اسم الأب الأصلع رب الأسرة؟",
-      "a": "هومر",
-      "alt": [
-        "هومر سمبسون"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/The_Simpsons",
-      "verified": true,
-      "qid": "cartoon-400-008"
-    },
-    {
-      "p": 400,
-      "topic": "أشياء وأدوات",
-      "q": "في «عائلة سمبسون»، ما الحلوى المستديرة التي يعشقها رب الأسرة؟",
-      "a": "الدونات",
-      "alt": [
-        "دونات",
-        "الكعك المحلى"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/The_Simpsons",
-      "verified": true,
-      "qid": "cartoon-400-009"
-    },
-    {
-      "p": 400,
-      "topic": "شخصيات رئيسية",
-      "q": "في «العصر الجليدي»، ما اسم الماموث الضخم بطل القصة؟",
-      "a": "مانفريد",
-      "alt": [
-        "ماني"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Ice_Age_(franchise)",
-      "verified": true,
-      "qid": "cartoon-400-010"
-    },
-    {
-      "p": 400,
-      "topic": "أصدقاء ورفاق",
-      "q": "في «شركة المرعبين»، ما اسم الوحش الأخضر ذي العين الواحدة؟",
-      "a": "مايك",
-      "alt": [
-        "مايك وازوفسكي"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Monsters,_Inc.",
-      "verified": true,
-      "qid": "cartoon-400-012"
-    },
-    {
-      "p": 400,
-      "topic": "أماكن ومدن",
-      "q": "في «السنافر»، ما شكل البيوت التي يسكن فيها السنافر؟",
-      "a": "فطر",
-      "alt": [
-        "عيش الغراب",
-        "بيوت فطر"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/The_Smurfs",
-      "verified": true,
-      "qid": "cartoon-400-014"
-    },
-    {
-      "p": 400,
-      "topic": "أشرار وخصوم",
-      "q": "من الساحر الشرير الذي يطارد السنافر ليمسك بهم؟",
-      "a": "شرشبيل",
-      "alt": [
-        "غارغامل"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/The_Smurfs",
-      "verified": true,
-      "qid": "cartoon-400-015"
-    },
-    {
-      "p": 400,
-      "topic": "أصدقاء ورفاق",
-      "q": "في «كتاب الأدغال»، ما اسم الدب المرح صديق الفتى؟",
-      "a": "بالو",
-      "alt": [],
-      "sourceUrl": "https://en.wikipedia.org/wiki/The_Jungle_Book_(1967_film)",
-      "verified": true,
-      "qid": "cartoon-400-016"
-    },
-    {
-      "p": 400,
-      "topic": "أشياء وأدوات",
-      "q": "ما الطبق الإيطالي الذي يعشقه القط غارفيلد؟",
-      "a": "اللازانيا",
-      "alt": [
-        "لازانيا"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Garfield",
-      "verified": true,
-      "qid": "cartoon-400-019"
-    },
-    {
-      "p": 400,
-      "topic": "أماكن ومدن",
-      "q": "في «عائلة فلينستون»، في أي عصر تعيش العائلة؟",
-      "a": "العصر الحجري",
-      "alt": [
-        "عصر الحجر"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/The_Flintstones",
-      "verified": true,
-      "qid": "cartoon-400-020"
-    },
-    {
-      "p": 400,
-      "topic": "أصدقاء ورفاق",
-      "q": "في «الأسد الملك»، ما اسم السرقاط الصغير رفيق الخنزير بومبا؟",
-      "a": "تيمون",
-      "alt": [],
-      "sourceUrl": "https://en.wikipedia.org/wiki/The_Lion_King",
-      "verified": true,
-      "qid": "cartoon-400-021"
-    },
-    {
-      "p": 400,
-      "topic": "أشرار وخصوم",
-      "q": "في «سبونج بوب»، من الكائن الأخضر الصغير الذي يسعى لسرقة وصفة الشطيرة؟",
-      "a": "بلانكتون",
-      "alt": [
-        "شلدون بلانكتون"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/SpongeBob_SquarePants",
-      "verified": true,
-      "qid": "cartoon-400-022"
-    },
-    {
-      "p": 400,
-      "topic": "أشياء وأدوات",
-      "q": "في فيلم «أب»، ما الذي رفع بيت كارل في الهواء؟",
+      "topic": "أدوات وأشياء",
+      "q": "في فيلم «أب»، ماذا يربط كارل ببيته كي يرتفع في الهواء؟",
       "a": "بالونات",
       "alt": [
-        "البالونات",
-        "بالونات ملونة"
+        "البالونات"
       ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Up_(2009_film)",
+      "sourceUrl": "https://www.pixar.com/upfilm",
       "verified": true,
-      "qid": "cartoon-400-024"
+      "qid": "cartoon-200-906",
+      "difficultyTarget": 0.8
     },
     {
-      "p": 400,
-      "topic": "أصدقاء ورفاق",
-      "q": "في «الحورية الصغيرة»، ما اسم السرطان الذي يرعى الحورية ويغني لها؟",
-      "a": "سيباستيان",
-      "alt": [],
-      "sourceUrl": "https://en.wikipedia.org/wiki/The_Little_Mermaid_(1989_film)",
-      "verified": true,
-      "qid": "cartoon-400-026"
-    },
-    {
-      "p": 400,
-      "topic": "أشرار وخصوم",
-      "q": "في «101 كلب مرقّط»، من المرأة التي تطارد الجراء لتصنع معطفًا من فرائها؟",
-      "a": "كرويلا",
+      "p": 200,
+      "topic": "أحداث ومهمات",
+      "q": "في «خلطبيطة بالصلصة»، ما المهنة التي يحلم الفأر ريمي بممارستها؟",
+      "a": "الطبخ",
       "alt": [
-        "كرويلا دي فيل"
+        "طاه",
+        "طباخ",
+        "أن يصبح طاهيًا"
       ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/One_Hundred_and_One_Dalmatians",
+      "sourceUrl": "https://www.pixar.com/ratatouille",
       "verified": true,
-      "qid": "cartoon-400-028"
+      "qid": "cartoon-200-907",
+      "difficultyTarget": 0.8
     },
     {
-      "p": 400,
-      "topic": "شخصيات رئيسية",
-      "q": "في «101 كلب مرقّط»، ما نوع الكلاب المرقّطة؟",
-      "a": "دلماسي",
+      "p": 200,
+      "topic": "قدرات وتحولات",
+      "q": "في «الخارقون»، ما قدرة الأم هيلين التي تجعل جسمها كالمطاط؟",
+      "a": "التمدد",
       "alt": [
-        "الدلماسي",
-        "دلماشن"
+        "مط جسمها",
+        "المرونة"
       ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/One_Hundred_and_One_Dalmatians",
+      "sourceUrl": "https://www.pixar.com/the-incredibles",
       "verified": true,
-      "qid": "cartoon-400-029"
+      "qid": "cartoon-200-908",
+      "difficultyTarget": 0.8
     },
     {
       "p": 400,
-      "topic": "جمل شهيرة",
-      "q": "في «سكوبي دو»، ما العبارة التي يهتف بها الكلب في نهاية المغامرة؟",
-      "a": "سكوبي دوبي دو",
-      "alt": [],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Scooby-Doo",
-      "verified": true,
-      "qid": "cartoon-400-030"
-    },
-    {
-      "p": 400,
-      "topic": "جمل شهيرة",
-      "q": "ما الصيحة التي يطلقها رب أسرة فلينستون عند الفرح؟",
-      "a": "يابا دابا دو",
+      "topic": "أصدقاء وعائلات",
+      "q": "ما اسم الحلزون الأليف الذي يعيش مع سبونج بوب؟",
+      "a": "غاري",
       "alt": [
-        "يابادابادو"
+        "Gary",
+        "جاري"
       ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/The_Flintstones",
+      "sourceUrl": "https://www.nick.com/info-page/xe31fl/spongebob-squarepants",
       "verified": true,
-      "qid": "cartoon-400-031"
+      "qid": "cartoon-400-901",
+      "difficultyTarget": 0.6
     },
     {
       "p": 400,
-      "topic": "شخصيات رئيسية",
-      "q": "في «سلاحف النينجا»، ما اسم الجرذ الذي يدرّب السلاحف؟",
-      "a": "سبلينتر",
+      "topic": "خصوم ومنافسون",
+      "q": "من الساحر البشري الذي يحاول اصطياد السنافر؟",
+      "a": "شرشبيل",
       "alt": [
-        "المعلم سبلينتر"
+        "غارغامل",
+        "Gargamel"
       ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Teenage_Mutant_Ninja_Turtles",
+      "sourceUrl": "https://www.smurf.com/",
       "verified": true,
-      "qid": "cartoon-400-032"
+      "qid": "cartoon-400-902",
+      "difficultyTarget": 0.6
     },
     {
       "p": 400,
-      "topic": "أشرار وخصوم",
-      "q": "في «الفتيات الخارقات»، من القرد الشرير عدوّهن الأول؟",
-      "a": "موجو جوجو",
-      "alt": [],
-      "sourceUrl": "https://en.wikipedia.org/wiki/The_Powerpuff_Girls",
-      "verified": true,
-      "qid": "cartoon-400-033"
-    },
-    {
-      "p": 400,
-      "topic": "عائلات وقرابات",
-      "q": "في عالم ميكي، ما اسم البطة صديقة دونالد؟",
-      "a": "ديزي",
-      "alt": [
-        "ديزي داك"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Mickey_Mouse",
-      "verified": true,
-      "qid": "cartoon-400-036"
-    },
-    {
-      "p": 400,
-      "topic": "عائلات وقرابات",
-      "q": "ما اسم عم دونالد الثري الذي يسبح في خزنة نقوده؟",
-      "a": "عم دهب",
-      "alt": [
-        "سكروج",
-        "عم سكروج"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Scrooge_McDuck",
-      "verified": true,
-      "qid": "cartoon-400-037"
-    },
-    {
-      "p": 400,
-      "topic": "أشياء وأدوات",
-      "q": "في «سكوبي دو»، ما اسم العربة الملوّنة التي تتنقل بها العصابة؟",
-      "a": "عربة الغموض",
-      "alt": [
-        "آلة الغموض",
-        "ميستري ماشين"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Scooby-Doo",
-      "verified": true,
-      "qid": "cartoon-400-039"
-    },
-    {
-      "p": 400,
-      "topic": "شخصيات رئيسية",
-      "q": "في «العصر الجليدي»، ما اسم النمر ذي الأنياب السيفية؟",
-      "a": "دييغو",
-      "alt": [
-        "ديجو"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Ice_Age_(franchise)",
-      "verified": true,
-      "qid": "cartoon-400-040"
-    },
-    {
-      "p": 400,
-      "topic": "أصدقاء ورفاق",
-      "q": "في «علاء الدين»، ما اسم القرد الصغير رفيق البطل؟",
-      "a": "أبو",
-      "alt": [],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Aladdin_(1992_Disney_film)",
-      "verified": true,
-      "qid": "cartoon-400-041"
-    },
-    {
-      "p": 400,
-      "topic": "شخصيات رئيسية",
-      "q": "من الفتاة الوحيدة التي تعيش في قرية السنافر؟",
-      "a": "سنفورة",
-      "alt": [
-        "السنفورة"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/The_Smurfs",
-      "verified": true,
-      "qid": "cartoon-400-042"
-    },
-    {
-      "p": 400,
-      "topic": "أحداث ومواقف",
-      "q": "في «سندريلا»، ما الذي تفقده الفتاة على درج القصر عند منتصف الليل؟",
-      "a": "فردة حذاء",
-      "alt": [
-        "حذاءها",
-        "الحذاء الزجاجي"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Cinderella_(1950_film)",
-      "verified": true,
-      "qid": "cartoon-400-043"
-    },
-    {
-      "p": 400,
-      "topic": "أشرار وخصوم",
-      "q": "في «الجميلة والوحش»، من الصياد المغرور الذي يريد الزواج من بيل؟",
-      "a": "غاستون",
-      "alt": [],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Beauty_and_the_Beast_(1991_film)",
-      "verified": true,
-      "qid": "cartoon-400-044"
-    },
-    {
-      "p": 400,
-      "topic": "أشرار وخصوم",
-      "q": "في «بيتر بان»، ما الحيوان الذي يخافه القرصان ويبتلع ساعة؟",
-      "a": "التمساح",
-      "alt": [
-        "تمساح"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Peter_Pan_(1953_film)",
-      "verified": true,
-      "qid": "cartoon-400-045"
-    },
-    {
-      "p": 400,
-      "topic": "أحداث ومواقف",
-      "q": "في «أليس في بلاد العجائب»، ما الحيوان الذي تلاحقه الفتاة فتسقط في الجحر؟",
-      "a": "أرنب أبيض",
-      "alt": [
-        "الأرنب الأبيض",
-        "أرنب"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Alice_in_Wonderland_(1951_film)",
-      "verified": true,
-      "qid": "cartoon-400-046"
-    },
-    {
-      "p": 400,
-      "topic": "عائلات وقرابات",
-      "q": "في «عائلة سمبسون»، ما اسم الأم صاحبة الشعر الطويل المرفوع؟",
-      "a": "مارج",
-      "alt": [
-        "مارچ"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/The_Simpsons",
-      "verified": true,
-      "qid": "cartoon-400-047"
-    },
-    {
-      "p": 400,
-      "topic": "أحداث ومواقف",
-      "q": "في «الحورية الصغيرة»، ما الذي تتنازل عنه الحورية للساحرة مقابل قدمين بشريتين؟",
-      "a": "صوتها",
-      "alt": [
-        "الصوت"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/The_Little_Mermaid_(1989_film)",
-      "verified": true,
-      "qid": "cartoon-400-048"
-    },
-    {
-      "p": 400,
-      "topic": "أشرار وخصوم",
-      "q": "في «السنافر»، ما اسم القط الذي يرافق الساحر في مطاردة السنافر؟",
+      "topic": "أصدقاء وعائلات",
+      "q": "ما اسم القط الذي يرافق الساحر الشرير في مطاردة السنافر؟",
       "a": "عزرائيل",
       "alt": [
-        "أزرائيل",
-        "آزرائيل"
+        "هرهور",
+        "Azrael"
       ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/The_Smurfs",
+      "sourceUrl": "https://www.smurf.com/",
       "verified": true,
-      "qid": "cartoon-400-049"
+      "qid": "cartoon-400-903",
+      "difficultyTarget": 0.6
     },
     {
       "p": 400,
-      "topic": "أشياء وأدوات",
-      "q": "في عالم ميكي، ما الذي يرتديه الفأر في يديه في كل ظهور؟",
-      "a": "قفازات بيضاء",
+      "topic": "أدوات وأشياء",
+      "q": "في «السنافر»، ماذا تخبئ هدايا سنفور المازح فتفاجئ من يفتحها؟",
+      "a": "انفجار",
       "alt": [
-        "قفازات",
-        "القفازات البيضاء"
+        "قنبلة",
+        "مفرقعة",
+        "تنفجر"
       ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Mickey_Mouse",
+      "sourceUrl": "https://www.smurf.com/",
       "verified": true,
-      "qid": "cartoon-400-050"
+      "qid": "cartoon-400-904",
+      "difficultyTarget": 0.6
     },
     {
       "p": 400,
-      "topic": "أحداث ومواقف",
-      "q": "في «عائلة سمبسون»، بأي مشهد ثابت تنتهي مقدمة كل حلقة؟",
-      "a": "جلوس الأسرة على الأريكة",
+      "topic": "أحداث ومهمات",
+      "q": "ماذا يضغط الروبوت «وول إي» في مكعبات خلال عمله على الأرض؟",
+      "a": "النفايات",
       "alt": [
-        "مشهد الأريكة",
-        "الأريكة"
+        "القمامة",
+        "الزبالة"
       ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/The_Simpsons",
+      "sourceUrl": "https://www.pixar.com/wall-e",
       "verified": true,
-      "qid": "cartoon-400-051"
+      "qid": "cartoon-400-905",
+      "difficultyTarget": 0.6
     },
     {
       "p": 400,
       "topic": "أماكن ومدن",
-      "q": "في «هرقل»، على أي جبل تعيش الآلهة في القصة؟",
-      "a": "جبل الأوليمب",
+      "q": "في «قلبًا وقالبًا»، إلى أي مدينة تنتقل رايلي مع عائلتها؟",
+      "a": "سان فرانسيسكو",
       "alt": [
-        "الأوليمب",
-        "أوليمبوس",
-        "جبل أوليمبوس"
+        "San Francisco"
       ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Hercules_(1997_film)",
+      "sourceUrl": "https://www.pixar.com/inside-out",
       "verified": true,
-      "qid": "cartoon-400-052"
+      "qid": "cartoon-400-906",
+      "difficultyTarget": 0.6
     },
     {
       "p": 400,
-      "topic": "أحداث ومواقف",
-      "q": "في «مولان»، لماذا تتنكر الفتاة في زي جندي وتلتحق بالجيش؟",
-      "a": "لتحل محل والدها",
+      "topic": "أطعمة وموارد",
+      "q": "في بداية «شركة المرعبين المحدودة»، ما أصوات الأطفال التي تجمعها الشركة لإنتاج الطاقة؟",
+      "a": "الصرخات",
       "alt": [
-        "بدلًا من أبيها",
-        "لتنقذ أباها"
+        "الصراخ",
+        "صرخات الأطفال"
       ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Mulan_(1998_film)",
+      "sourceUrl": "https://www.pixar.com/monsters-inc",
       "verified": true,
-      "qid": "cartoon-400-053"
+      "qid": "cartoon-400-907",
+      "difficultyTarget": 0.6
     },
     {
       "p": 400,
-      "topic": "أشياء وأدوات",
-      "q": "في «أفاتار: آخر سادة الهواء»، ما العناصر الأربعة التي يسخّرها الأبطال؟",
-      "a": "الماء والنار والأرض والهواء",
+      "topic": "قدرات وتحولات",
+      "q": "في «الخارقون»، ما القدرة التي يتميز بها الابن داش أثناء الجري؟",
+      "a": "السرعة الخارقة",
       "alt": [
-        "العناصر الأربعة",
-        "ماء ونار وأرض وهواء"
+        "سرعة خارقة",
+        "سرعة فائقة"
       ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Avatar:_The_Last_Airbender",
+      "sourceUrl": "https://www.pixar.com/the-incredibles",
       "verified": true,
-      "qid": "cartoon-400-054"
-    },
-    {
-      "p": 400,
-      "topic": "شخصيات رئيسية",
-      "q": "في «سلاحف النينجا»، ما اسم السلحفاة ذات القناع الأحمر الأسرع غضبًا؟",
-      "a": "رافاييل",
-      "alt": [
-        "رفاييل",
-        "رافاييلو",
-        "راف"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Teenage_Mutant_Ninja_Turtles",
-      "verified": true,
-      "qid": "cartoon-400-055"
-    },
-    {
-      "p": 400,
-      "topic": "شخصيات رئيسية",
-      "q": "في «أفاتار: آخر سادة الهواء»، ما اسم الفتى الأخير من قبيلة الهواء؟",
-      "a": "آنغ",
-      "alt": [
-        "آنج",
-        "أنغ",
-        "انج"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Avatar:_The_Last_Airbender",
-      "verified": true,
-      "qid": "cartoon-400-056"
-    },
-    {
-      "p": 400,
-      "topic": "أحداث ومواقف",
-      "q": "في «الفتيات الخارقات»، من يستدعي الفتيات عبر الهاتف الساخن عند وقوع خطر؟",
-      "a": "العمدة",
-      "alt": [
-        "عمدة تاونزفيل",
-        "المحافظ"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/The_Powerpuff_Girls",
-      "verified": true,
-      "qid": "cartoon-400-057"
-    },
-    {
-      "p": 400,
-      "topic": "شخصيات رئيسية",
-      "q": "في «عالم غامبول المدهش»، ما اسم السمكة التي صارت أخًا لغامبول بالتبنّي؟",
-      "a": "داروين",
-      "alt": [
-        "داروين واترسون"
-      ],
-      "sourceUrl": "https://theamazingworldofgumball.fandom.com/wiki/Darwin_Watterson",
-      "verified": true,
-      "qid": "cartoon-400-058"
+      "qid": "cartoon-400-908",
+      "difficultyTarget": 0.6
     },
     {
       "p": 600,
-      "topic": "أشياء وأدوات",
-      "q": "في «سكوبي دو»، ما اسم قطع الحلوى التي تُغري الكلب لدخول المغامرة؟",
-      "a": "سكوبي سناكس",
+      "topic": "أدوات وأشياء",
+      "q": "في «سبونج بوب»، ما الآلة الموسيقية التي يعزف عليها شفيق؟",
+      "a": "الكلارينيت",
       "alt": [
-        "بسكويت سكوبي"
+        "كلارينيت",
+        "Clarinet"
       ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Scooby-Doo",
+      "sourceUrl": "https://www.nick.com/info-page/c2e5s0/squidward-j-q-tentacles",
       "verified": true,
-      "qid": "cartoon-600-001"
-    },
-    {
-      "p": 600,
-      "topic": "أصدقاء ورفاق",
-      "q": "في «سكوبي دو»، ما اسم الفتاة ذات الشعر الأحمر في العصابة؟",
-      "a": "دافني",
-      "alt": [],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Scooby-Doo",
-      "verified": true,
-      "qid": "cartoon-600-002"
-    },
-    {
-      "p": 600,
-      "topic": "شخصيات رئيسية",
-      "q": "في «سكوبي دو»، ما اسم قائد العصابة صاحب الرباط البرتقالي؟",
-      "a": "فريد",
-      "alt": [
-        "فريدي"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Scooby-Doo",
-      "verified": true,
-      "qid": "cartoon-600-003"
-    },
-    {
-      "p": 600,
-      "topic": "شخصيات رئيسية",
-      "q": "في «لوني تونز»، ما اسم الطائر السريع الذي يعجز الذئب عن الإمساك به؟",
-      "a": "رود رانر",
-      "alt": [
-        "الطائر السريع",
-        "بيب بيب"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Looney_Tunes",
-      "verified": true,
-      "qid": "cartoon-600-004"
-    },
-    {
-      "p": 600,
-      "topic": "جمل شهيرة",
-      "q": "ما العبارة التي تُختم بها حلقات «لوني تونز»؟",
-      "a": "هذا كل شيء يا أصدقاء",
-      "alt": [
-        "ذاتس أول فوكس"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Looney_Tunes",
-      "verified": true,
-      "qid": "cartoon-600-005"
-    },
-    {
-      "p": 600,
-      "topic": "أشياء وأدوات",
-      "q": "في «بن تن»، ما اسم الساعة التي تحوّل بن إلى كائنات فضائية؟",
-      "a": "أومنيتريكس",
-      "alt": [
-        "الأومنيتريكس"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Ben_10_(2005_TV_series)",
-      "verified": true,
-      "qid": "cartoon-600-008"
+      "qid": "cartoon-600-901",
+      "difficultyTarget": 0.4
     },
     {
       "p": 600,
       "topic": "أماكن ومدن",
-      "q": "في «عائلة سمبسون»، ما اسم المدينة التي تعيش فيها العائلة؟",
-      "a": "سبرينغفيلد",
+      "q": "في «سبونج بوب»، من أي ولاية أمريكية جاءت ساندي؟",
+      "a": "تكساس",
       "alt": [
-        "سبرينجفيلد"
+        "Texas"
       ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/The_Simpsons",
+      "sourceUrl": "https://www.nick.com/info-page/zj5lyn/sandy-cheeks",
       "verified": true,
-      "qid": "cartoon-600-009"
+      "qid": "cartoon-600-902",
+      "difficultyTarget": 0.4
     },
     {
       "p": 600,
-      "topic": "شخصيات رئيسية",
-      "q": "في «عائلة سمبسون»، ما اسم الأخت الصغيرة الذكية ذات الشعر المدبب؟",
-      "a": "ليزا",
-      "alt": [],
-      "sourceUrl": "https://en.wikipedia.org/wiki/The_Simpsons",
-      "verified": true,
-      "qid": "cartoon-600-010"
-    },
-    {
-      "p": 600,
-      "topic": "أحداث ومواقف",
-      "q": "في «عائلة سمبسون»، في أي منشأة يعمل رب الأسرة؟",
-      "a": "محطة نووية",
+      "topic": "أبطال وشخصيات",
+      "q": "أي سنفور يكثر من ترديد أقوال كبير القرية ويعتبر نفسه أذكى الجميع؟",
+      "a": "سنفور مفكر",
       "alt": [
-        "المحطة النووية"
+        "مفكر",
+        "Brainy Smurf",
+        "بريني"
       ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/The_Simpsons",
+      "sourceUrl": "https://www.smurf.com/",
       "verified": true,
-      "qid": "cartoon-600-011"
+      "qid": "cartoon-600-903",
+      "difficultyTarget": 0.4
     },
     {
       "p": 600,
-      "topic": "أشرار وخصوم",
-      "q": "في «سلاحف النينجا»، من العدو الذي يرتدي درعًا مليئًا بالشفرات؟",
-      "a": "شريدر",
-      "alt": [],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Teenage_Mutant_Ninja_Turtles",
-      "verified": true,
-      "qid": "cartoon-600-012"
-    },
-    {
-      "p": 600,
-      "topic": "أصدقاء ورفاق",
-      "q": "ما اسم حبيبة بوباي النحيلة الطويلة؟",
-      "a": "زيتونة",
-      "alt": [
-        "أوليف",
-        "أوليف أويل"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Popeye",
-      "verified": true,
-      "qid": "cartoon-600-013"
-    },
-    {
-      "p": 600,
-      "topic": "أحداث ومواقف",
-      "q": "في «بينوكيو»، إلى أي حيوان يتحوّل الأولاد الكسالى في جزيرة الملذات؟",
-      "a": "حمير",
-      "alt": [
-        "حمار",
-        "الحمير"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Pinocchio_(1940_film)",
-      "verified": true,
-      "qid": "cartoon-600-015"
-    },
-    {
-      "p": 600,
-      "topic": "أصدقاء ورفاق",
-      "q": "ما اسم القرد الصغير الذي يرافق دورا في مغامراتها؟",
-      "a": "بوتس",
-      "alt": [
-        "بوتس القرد"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Dora_the_Explorer",
-      "verified": true,
-      "qid": "cartoon-600-017"
-    },
-    {
-      "p": 600,
-      "topic": "أصدقاء ورفاق",
-      "q": "في «هرقل»، ما اسم الحصان المجنّح رفيق البطل؟",
-      "a": "بيغاسوس",
-      "alt": [
-        "بيجاسوس"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Hercules_(1997_film)",
-      "verified": true,
-      "qid": "cartoon-600-018"
-    },
-    {
-      "p": 600,
-      "topic": "أحداث ومواقف",
-      "q": "في «رابونزل»، ما القدرة التي يملكها شعر الفتاة الذهبي الطويل؟",
-      "a": "الشفاء",
-      "alt": [
-        "يشفي الجروح",
-        "شفاء المرضى"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Tangled",
-      "verified": true,
-      "qid": "cartoon-600-019"
-    },
-    {
-      "p": 600,
-      "topic": "أماكن ومدن",
-      "q": "في «سبونج بوب»، تحت أي شيء يسكن نجم البحر الوردي؟",
-      "a": "صخرة",
-      "alt": [
-        "الصخرة"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/SpongeBob_SquarePants",
-      "verified": true,
-      "qid": "cartoon-600-020"
-    },
-    {
-      "p": 600,
-      "topic": "عائلات وقرابات",
-      "q": "في «عائلة سمبسون»، ما اسم الرضيعة صاحبة اللهّاية؟",
-      "a": "ماغي",
-      "alt": [
-        "ماجي"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/The_Simpsons",
-      "verified": true,
-      "qid": "cartoon-600-021"
-    },
-    {
-      "p": 600,
-      "topic": "أصدقاء ورفاق",
-      "q": "في «الجميلة والوحش»، ما اسم الشمعدان الناطق في القصر؟",
-      "a": "لوميير",
-      "alt": [
-        "لوميه"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Beauty_and_the_Beast_(1991_film)",
-      "verified": true,
-      "qid": "cartoon-600-022"
-    },
-    {
-      "p": 600,
-      "topic": "أصدقاء ورفاق",
-      "q": "في «كتاب الأدغال»، ما اسم النمر الأسود الذي يرافق الفتى ويحميه؟",
-      "a": "باغيرا",
-      "alt": [
-        "باجيرا"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/The_Jungle_Book_(1967_film)",
-      "verified": true,
-      "qid": "cartoon-600-023"
-    },
-    {
-      "p": 600,
-      "topic": "أصدقاء ورفاق",
-      "q": "في «ويني»، ما اسم الحمار الحزين صديق الدب؟",
-      "a": "إيور",
-      "alt": [
-        "ايور"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Winnie-the-Pooh",
-      "verified": true,
-      "qid": "cartoon-600-025"
-    },
-    {
-      "p": 600,
-      "topic": "أصدقاء ورفاق",
-      "q": "في «ويني»، ما اسم النمر المرح الذي يقفز على ذيله؟",
-      "a": "تيغر",
-      "alt": [
-        "تيجر"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Winnie-the-Pooh",
-      "verified": true,
-      "qid": "cartoon-600-026"
-    },
-    {
-      "p": 600,
-      "topic": "أصدقاء ورفاق",
-      "q": "في «توي ستوري»، ما اسم راعية البقر ذات الضفيرة الحمراء؟",
-      "a": "جيسي",
-      "alt": [],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Toy_Story",
-      "verified": true,
-      "qid": "cartoon-600-027"
-    },
-    {
-      "p": 600,
-      "topic": "أشرار وخصوم",
-      "q": "في «فروزن»، من الأمير الذي يخون آنا ويكشف نواياه في النهاية؟",
-      "a": "هانز",
-      "alt": [],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Frozen_(2013_film)",
-      "verified": true,
-      "qid": "cartoon-600-028"
-    },
-    {
-      "p": 600,
-      "topic": "أحداث ومواقف",
-      "q": "في «العصر الجليدي»، ما الذي يعيده الثلاثي إلى أهله عبر الجليد؟",
-      "a": "طفلًا بشريًا",
-      "alt": [
-        "طفل",
-        "رضيع بشري"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Ice_Age_(franchise)",
-      "verified": true,
-      "qid": "cartoon-600-029"
-    },
-    {
-      "p": 600,
-      "topic": "شخصيات رئيسية",
-      "q": "في فيلم «أب»، ما اسم الفتى الكشّاف الذي يرافق كارل؟",
+      "topic": "أبطال وشخصيات",
+      "q": "في «أب»، ما اسم الكشاف الصغير الذي يرافق كارل في رحلته؟",
       "a": "راسل",
-      "alt": [],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Up_(2009_film)",
-      "verified": true,
-      "qid": "cartoon-600-031"
-    },
-    {
-      "p": 600,
-      "topic": "شخصيات رئيسية",
-      "q": "في «كونغ فو باندا»، ما اسم المعلّم الصغير الذي يدرّب الباندا؟",
-      "a": "شيفو",
       "alt": [
-        "المعلم شيفو"
+        "رسل",
+        "Russell"
       ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Kung_Fu_Panda_(film)",
+      "sourceUrl": "https://www.pixar.com/upfilm",
       "verified": true,
-      "qid": "cartoon-600-032"
+      "qid": "cartoon-600-904",
+      "difficultyTarget": 0.4
     },
     {
       "p": 600,
-      "topic": "شخصيات رئيسية",
-      "q": "في «أليس في بلاد العجائب»، ما اسم القط الذي يختفي وتبقى ابتسامته؟",
-      "a": "قط شيشاير",
+      "topic": "أصدقاء وعائلات",
+      "q": "في «شركة المرعبين المحدودة»، ما الاسم الذي يطلقه سولي على الطفلة البشرية التي يحميها؟",
+      "a": "بو",
       "alt": [
-        "شيشاير"
+        "Boo"
       ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Alice_in_Wonderland_(1951_film)",
+      "sourceUrl": "https://www.pixar.com/monsters-inc",
       "verified": true,
-      "qid": "cartoon-600-033"
+      "qid": "cartoon-600-905",
+      "difficultyTarget": 0.4
     },
     {
       "p": 600,
-      "topic": "عائلات وقرابات",
-      "q": "في «عائلة فلينستون»، ما اسم الديناصور الأليف في البيت؟",
-      "a": "دينو",
-      "alt": [],
-      "sourceUrl": "https://en.wikipedia.org/wiki/The_Flintstones",
-      "verified": true,
-      "qid": "cartoon-600-034"
-    },
-    {
-      "p": 600,
-      "topic": "أشرار وخصوم",
-      "q": "في «دورا»، من الثعلب الذي يحاول سرقة الأشياء في كل حلقة؟",
-      "a": "سويبر",
+      "topic": "أحداث ومهمات",
+      "q": "في «كوكو»، ما الفن الذي تمنعه عائلة ميغيل رغم شغفه به؟",
+      "a": "الموسيقى",
       "alt": [
-        "سوايبر"
+        "ممارسة الموسيقى",
+        "العزف والغناء"
       ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Dora_the_Explorer",
+      "sourceUrl": "https://www.pixar.com/coco",
       "verified": true,
-      "qid": "cartoon-600-035"
+      "qid": "cartoon-600-906",
+      "difficultyTarget": 0.4
     },
     {
       "p": 600,
-      "topic": "شخصيات رئيسية",
-      "q": "في «لوني تونز»، من الخنزير المتلعثم الذي يودّع الجمهور في الختام؟",
-      "a": "بوركي",
+      "topic": "قدرات وتحولات",
+      "q": "في «الخارقون»، ماذا تكوّن فايوليت حولها لحماية نفسها إضافة إلى الاختفاء؟",
+      "a": "حقول قوة",
       "alt": [
-        "بوركي بيغ"
+        "حقل قوة",
+        "دروع طاقة",
+        "Force fields"
       ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Looney_Tunes",
+      "sourceUrl": "https://www.pixar.com/the-incredibles",
       "verified": true,
-      "qid": "cartoon-600-036"
+      "qid": "cartoon-600-907",
+      "difficultyTarget": 0.4
     },
     {
       "p": 600,
-      "topic": "أشياء وأدوات",
-      "q": "في «سكوبي دو»، ما الشيء الذي تفقده الفتاة الذكية فتعجز عن الرؤية؟",
-      "a": "نظارتها",
+      "topic": "أحداث ومهمات",
+      "q": "في «الخارقون»، ما تخصص إدنا مود الذي يحتاجه الأبطال عند تجديد بدلاتهم؟",
+      "a": "تصميم أزياء الأبطال",
       "alt": [
-        "النظارة",
-        "نظارتي"
+        "تصميم الأزياء",
+        "تصميم البدلات"
       ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Scooby-Doo",
+      "sourceUrl": "https://www.pixar.com/the-incredibles",
       "verified": true,
-      "qid": "cartoon-600-037"
-    },
-    {
-      "p": 600,
-      "topic": "أحداث ومواقف",
-      "q": "في «سنو وايت»، ما الذي أيقظ الأميرة من نومها العميق؟",
-      "a": "قبلة الأمير",
-      "alt": [
-        "قبلة"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Snow_White_and_the_Seven_Dwarfs_(1937_film)",
-      "verified": true,
-      "qid": "cartoon-600-038"
-    },
-    {
-      "p": 600,
-      "topic": "أماكن ومدن",
-      "q": "في «مختبر دكستر»، أين يقع المدخل السري إلى المختبر؟",
-      "a": "خلف مكتبة غرفته",
-      "alt": [
-        "خلف رف الكتب",
-        "في غرفة نومه"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Dexter%27s_Laboratory",
-      "verified": true,
-      "qid": "cartoon-600-040"
-    },
-    {
-      "p": 600,
-      "topic": "شخصيات رئيسية",
-      "q": "ما اسم الكلب الوردي الجبان الذي يحمي عجوزين في مزرعة معزولة؟",
-      "a": "كوردج",
-      "alt": [
-        "شجاع",
-        "كورج",
-        "كوراج"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Courage_the_Cowardly_Dog",
-      "verified": true,
-      "qid": "cartoon-600-041"
-    },
-    {
-      "p": 600,
-      "topic": "أشياء وأدوات",
-      "q": "في «توم وجيري»، ما الآلة التي يعزف عليها القط في حفل موسيقي شهير؟",
-      "a": "البيانو",
-      "alt": [
-        "بيانو"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Tom_and_Jerry",
-      "verified": true,
-      "qid": "cartoon-600-042"
-    },
-    {
-      "p": 600,
-      "topic": "أماكن ومدن",
-      "q": "في «سبونج بوب»، ما اسم المطعم الذي يعمل فيه البطل؟",
-      "a": "الكرستي كراب",
-      "alt": [
-        "كرستي كراب",
-        "مطعم السلطعون المقرمش"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/SpongeBob_SquarePants",
-      "verified": true,
-      "qid": "cartoon-600-043"
-    },
-    {
-      "p": 600,
-      "topic": "أحداث ومواقف",
-      "q": "في «فروزن»، ما الذي أذاب قلب آنا المتجمد في النهاية؟",
-      "a": "فعل حب حقيقي",
-      "alt": [
-        "الحب الحقيقي"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Frozen_(2013_film)",
-      "verified": true,
-      "qid": "cartoon-600-044"
-    },
-    {
-      "p": 600,
-      "topic": "شخصيات رئيسية",
-      "q": "ما نوع الحيوان الذي ينتمي إليه بامبي؟",
-      "a": "غزال",
-      "alt": [
-        "أيل",
-        "ظبي"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Bambi",
-      "verified": true,
-      "qid": "cartoon-600-045"
-    },
-    {
-      "p": 600,
-      "topic": "أماكن ومدن",
-      "q": "في «سلاحف النينجا»، أين يقع مخبأ السلاحف في المدينة؟",
-      "a": "في المجاري",
-      "alt": [
-        "المجاري",
-        "تحت الأرض"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Teenage_Mutant_Ninja_Turtles",
-      "verified": true,
-      "qid": "cartoon-600-046"
-    },
-    {
-      "p": 600,
-      "topic": "أشرار وخصوم",
-      "q": "في «كتاب الأدغال»، ما اسم الثعبان الذي ينوّم الفتى بعينيه؟",
-      "a": "كا",
-      "alt": [
-        "كاا"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/The_Jungle_Book_(1967_film)",
-      "verified": true,
-      "qid": "cartoon-600-048"
-    },
-    {
-      "p": 600,
-      "topic": "شخصيات رئيسية",
-      "q": "في «أفاتار: آخر سادة الهواء»، ما اسم الأمير المطارَد صاحب الندبة على وجهه؟",
-      "a": "زوكو",
-      "alt": [
-        "زكو",
-        "الأمير زوكو"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Avatar:_The_Last_Airbender",
-      "verified": true,
-      "qid": "cartoon-600-049"
-    },
-    {
-      "p": 600,
-      "topic": "عائلات وقرابات",
-      "q": "في «بامبي»، من يفقده البطل الصغير في أقسى مشاهد القصة؟",
-      "a": "والدته",
-      "alt": [
-        "أمه",
-        "أمّه"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Bambi",
-      "verified": true,
-      "qid": "cartoon-600-050"
-    },
-    {
-      "p": 600,
-      "topic": "أحداث ومواقف",
-      "q": "في «هرقل»، ما الوحش الذي تنبت له ثلاثة رؤوس كلما قُطع رأس منه؟",
-      "a": "الهيدرا",
-      "alt": [
-        "هيدرا",
-        "الأفعى هيدرا"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Hercules_(1997_film)",
-      "verified": true,
-      "qid": "cartoon-600-051"
-    },
-    {
-      "p": 600,
-      "topic": "أشرار وخصوم",
-      "q": "في «بن تن»، من الفضائي الشرير الذي يسعى للاستيلاء على ساعة الفتى؟",
-      "a": "فيلغاكس",
-      "alt": [
-        "فلغاكس",
-        "فيلجاكس"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Ben_10_(2005_TV_series)",
-      "verified": true,
-      "qid": "cartoon-600-052"
-    },
-    {
-      "p": 600,
-      "topic": "أصدقاء ورفاق",
-      "q": "ما اسم المرأة العجوز الحنونة التي أنقذت الكلب الوردي الجبان وربّته؟",
-      "a": "مورييل",
-      "alt": [
-        "موريل",
-        "ميوريل"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Courage_the_Cowardly_Dog",
-      "verified": true,
-      "qid": "cartoon-600-053"
-    },
-    {
-      "p": 600,
-      "topic": "أماكن ومدن",
-      "q": "في «101 كلب مرقّط»، في أي مدينة تدور أحداث القصة؟",
-      "a": "لندن",
-      "alt": [
-        "في لندن"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/One_Hundred_and_One_Dalmatians",
-      "verified": true,
-      "qid": "cartoon-600-054"
-    },
-    {
-      "p": 600,
-      "topic": "أشياء وأدوات",
-      "q": "في «سلاحف النينجا»، ما السلاح الذي يميّز مايكل أنجلو المرح؟",
-      "a": "النانشاكو",
-      "alt": [
-        "نانشاكو",
-        "النونشاكو",
-        "العصا المزدوجة"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Teenage_Mutant_Ninja_Turtles",
-      "verified": true,
-      "qid": "cartoon-600-055"
-    },
-    {
-      "p": 600,
-      "topic": "شخصيات رئيسية",
-      "q": "في «الفتيات الخارقات»، ما اسم الزعيمة ذات الشعر البرتقالي والشريطة الحمراء؟",
-      "a": "بلوسوم",
-      "alt": [
-        "بلوسم",
-        "بلوسوم الزعيمة"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/The_Powerpuff_Girls",
-      "verified": true,
-      "qid": "cartoon-600-056"
+      "qid": "cartoon-600-908",
+      "difficultyTarget": 0.4
     },
     {
       "p": 800,
-      "topic": "أصدقاء ورفاق",
-      "q": "في «توم وجيري»، ما اسم الفأر الصغير ذي المريلة الذي يرافق جيري؟",
-      "a": "تافي",
+      "topic": "خصوم ومنافسون",
+      "q": "في «سبونج بوب»، ما اسم منافس شفيق المتباهي الذي يتحداه في الحفلات؟",
+      "a": "سكويليام فانسي سن",
       "alt": [
-        "نيبلز"
+        "سكويليام",
+        "Squilliam Fancyson"
       ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Tom_and_Jerry",
+      "sourceUrl": "https://www.nick.com/info-page/c2e5s0/squidward-j-q-tentacles",
       "verified": true,
-      "qid": "cartoon-800-001"
+      "qid": "cartoon-800-901",
+      "difficultyTarget": 0.25
     },
     {
       "p": 800,
-      "topic": "أشياء وأدوات",
-      "q": "في «لوني تونز»، من أي شركة يطلب الذئب أدواته العجيبة لاصطياد الطائر السريع؟",
-      "a": "أكمي",
+      "topic": "أصدقاء وعائلات",
+      "q": "في «كوكو»، ما اسم الكلب شبه الخالي من الشعر الذي يرافق ميغيل؟",
+      "a": "دانتي",
       "alt": [
-        "شركة أكمي",
-        "ACME"
+        "Dante"
       ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Looney_Tunes",
+      "sourceUrl": "https://www.pixar.com/coco",
       "verified": true,
-      "qid": "cartoon-800-002"
+      "qid": "cartoon-800-902",
+      "difficultyTarget": 0.25
     },
     {
       "p": 800,
-      "topic": "شخصيات رئيسية",
-      "q": "في «لوني تونز»، من الفأر المكسيكي الذي يلقّب بأسرع فأر في المكسيك؟",
-      "a": "سبيدي غونزاليس",
-      "alt": [
-        "سبيدي"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Looney_Tunes",
-      "verified": true,
-      "qid": "cartoon-800-003"
-    },
-    {
-      "p": 800,
-      "topic": "أشياء وأدوات",
-      "q": "ما الآلة الموسيقية التي تعزف اللحن الشهير في «النمر الوردي»؟",
-      "a": "الساكسفون",
-      "alt": [
-        "ساكسفون"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/The_Pink_Panther_Theme",
-      "verified": true,
-      "qid": "cartoon-800-004"
-    },
-    {
-      "p": 800,
-      "topic": "أصدقاء ورفاق",
-      "q": "في «عائلة فلينستون»، ما اسم الجار القصير صديق رب الأسرة المقرّب؟",
-      "a": "بارني",
-      "alt": [
-        "بارني روبل"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/The_Flintstones",
-      "verified": true,
-      "qid": "cartoon-800-005"
-    },
-    {
-      "p": 800,
-      "topic": "أصدقاء ورفاق",
-      "q": "في «ويني»، ما اسم الخنزير الصغير الخجول صديق الدب؟",
-      "a": "بيغليت",
-      "alt": [
-        "بيجلت",
-        "خنوص"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Winnie-the-Pooh",
-      "verified": true,
-      "qid": "cartoon-800-007"
-    },
-    {
-      "p": 800,
-      "topic": "أماكن ومدن",
-      "q": "في «الفتيات الخارقات»، ما اسم المدينة التي تحميها الفتيات؟",
-      "a": "تاونزفيل",
-      "alt": [
-        "تاونزفيلي"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/The_Powerpuff_Girls",
-      "verified": true,
-      "qid": "cartoon-800-008"
-    },
-    {
-      "p": 800,
-      "topic": "أشياء وأدوات",
-      "q": "في «الفتيات الخارقات»، ما المادة التي سقطت في الخلطة فمنحت الفتيات قواهن؟",
-      "a": "المادة إكس",
-      "alt": [
-        "مادة إكس",
-        "الكيماوي إكس"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/The_Powerpuff_Girls",
-      "verified": true,
-      "qid": "cartoon-800-009"
-    },
-    {
-      "p": 800,
-      "topic": "شخصيات رئيسية",
-      "q": "في «الفتيات الخارقات»، ما اسم العالم الذي صنع الفتيات في مختبره؟",
-      "a": "البروفيسور يوتونيوم",
-      "alt": [
-        "يوتونيوم"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/The_Powerpuff_Girls",
-      "verified": true,
-      "qid": "cartoon-800-010"
-    },
-    {
-      "p": 800,
-      "topic": "عائلات وقرابات",
-      "q": "في «بن تن»، ما اسم ابنة عم بن التي ترافقه في الرحلة؟",
-      "a": "غوين",
-      "alt": [
-        "جوين"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Ben_10_(2005_TV_series)",
-      "verified": true,
-      "qid": "cartoon-800-011"
-    },
-    {
-      "p": 800,
-      "topic": "عائلات وقرابات",
-      "q": "في «بن تن»، ما اسم الجد الذي يجوب البلاد مع بن في سيارته؟",
-      "a": "الجد ماكس",
-      "alt": [
-        "ماكس"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Ben_10_(2005_TV_series)",
-      "verified": true,
-      "qid": "cartoon-800-012"
-    },
-    {
-      "p": 800,
-      "topic": "عائلات وقرابات",
-      "q": "في «مختبر دكستر»، ما اسم الأخت التي تفسد تجارب أخيها؟",
-      "a": "دي دي",
-      "alt": [
-        "ديدي"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Dexter%27s_Laboratory",
-      "verified": true,
-      "qid": "cartoon-800-013"
-    },
-    {
-      "p": 800,
-      "topic": "أصدقاء ورفاق",
-      "q": "ما اسم الكلب الطيّب الساذج الذي يشارك غارفيلد البيت؟",
-      "a": "أودي",
-      "alt": [],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Garfield",
-      "verified": true,
-      "qid": "cartoon-800-014"
-    },
-    {
-      "p": 800,
-      "topic": "أشرار وخصوم",
-      "q": "في «أليس في بلاد العجائب»، من الملكة التي تصرخ: «اقطعوا رأسه»؟",
-      "a": "ملكة القلوب",
-      "alt": [
-        "الملكة الحمراء"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Alice_in_Wonderland_(1951_film)",
-      "verified": true,
-      "qid": "cartoon-800-016"
-    },
-    {
-      "p": 800,
-      "topic": "أصدقاء ورفاق",
-      "q": "في «مولان»، ما اسم التنين الصغير الذي يرافق البطلة؟",
-      "a": "مشو",
-      "alt": [
-        "موشو"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Mulan_(1998_film)",
-      "verified": true,
-      "qid": "cartoon-800-017"
-    },
-    {
-      "p": 800,
-      "topic": "عائلات وقرابات",
-      "q": "في «طرزان»، ما اسم أنثى الغوريلا التي ربّت الفتى كابنها؟",
-      "a": "كالا",
-      "alt": [],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Tarzan_(1999_film)",
-      "verified": true,
-      "qid": "cartoon-800-018"
-    },
-    {
-      "p": 800,
-      "topic": "أماكن ومدن",
-      "q": "في «الأسد الملك»، ما اسم المرتفع الذي يقف عليه ملك الأدغال؟",
-      "a": "صخرة الفخر",
-      "alt": [
-        "صخرة الكبرياء"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/The_Lion_King",
-      "verified": true,
-      "qid": "cartoon-800-020"
-    },
-    {
-      "p": 800,
-      "topic": "أحداث ومواقف",
-      "q": "في «شركة المرعبين»، ما الذي اكتشفت الشركة أنه أقوى من الصراخ في توليد الطاقة؟",
-      "a": "الضحك",
-      "alt": [
-        "ضحك الأطفال"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Monsters,_Inc.",
-      "verified": true,
-      "qid": "cartoon-800-021"
-    },
-    {
-      "p": 800,
-      "topic": "شخصيات رئيسية",
-      "q": "في «إنسايد آوت»، كم شعورًا يدير مركز التحكم في عقل الفتاة؟",
-      "a": "خمسة",
-      "alt": [
-        "خمس مشاعر",
-        "5"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Inside_Out_(2015_film)",
-      "verified": true,
-      "qid": "cartoon-800-024"
-    },
-    {
-      "p": 800,
-      "topic": "أصدقاء ورفاق",
-      "q": "في فيلم «أب»، ما اسم الكلب الذي يتكلم بفضل طوق خاص؟",
-      "a": "دَغ",
-      "alt": [
-        "دق",
-        "دوغ"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Up_(2009_film)",
-      "verified": true,
-      "qid": "cartoon-800-025"
-    },
-    {
-      "p": 800,
-      "topic": "أصدقاء ورفاق",
-      "q": "في فيلم «أب»، ما اسم الطائر الضخم الملوّن الذي يرافق كارل والفتى؟",
+      "topic": "أصدقاء وعائلات",
+      "q": "في «أب»، ما الاسم الذي يعطيه الكشاف للطائر النادر الذي يجده في الغابة؟",
       "a": "كيفن",
-      "alt": [],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Up_(2009_film)",
-      "verified": true,
-      "qid": "cartoon-800-026"
-    },
-    {
-      "p": 800,
-      "topic": "أشياء وأدوات",
-      "q": "ما الطبق الذي يتشاركه الكلبان في مشهد ديزني الرومانسي الشهير؟",
-      "a": "السباغيتي",
       "alt": [
-        "سباغيتي",
-        "المعكرونة"
+        "Kevin",
+        "كيفين"
       ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Lady_and_the_Tramp",
+      "sourceUrl": "https://www.pixar.com/upfilm",
       "verified": true,
-      "qid": "cartoon-800-027"
+      "qid": "cartoon-800-903",
+      "difficultyTarget": 0.25
     },
     {
       "p": 800,
       "topic": "أماكن ومدن",
-      "q": "أين يعيش الدب ويني وأصدقاؤه؟",
-      "a": "غابة المئة فدان",
+      "q": "ما اسم مدينة الوحوش التي تدخلها الطفلة البشرية في «شركة المرعبين المحدودة»؟",
+      "a": "مونستروبوليس",
       "alt": [
-        "غابة المئة أكر"
+        "Monstropolis",
+        "مونستربوليس"
       ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Winnie-the-Pooh",
+      "sourceUrl": "https://www.pixar.com/monsters-inc",
       "verified": true,
-      "qid": "cartoon-800-028"
-    },
-    {
-      "p": 800,
-      "topic": "أصدقاء ورفاق",
-      "q": "في «بامبي»، ما اسم الأرنب الصغير صديق البطل؟",
-      "a": "ثامبر",
-      "alt": [
-        "ثمبر"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Bambi",
-      "verified": true,
-      "qid": "cartoon-800-029"
-    },
-    {
-      "p": 800,
-      "topic": "أحداث ومواقف",
-      "q": "في «علاء الدين»، كم أمنية يمنح الجني لمن يحرره؟",
-      "a": "ثلاث أمنيات",
-      "alt": [
-        "ثلاثة"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Aladdin_(1992_Disney_film)",
-      "verified": true,
-      "qid": "cartoon-800-031"
-    },
-    {
-      "p": 800,
-      "topic": "أشرار وخصوم",
-      "q": "في «هرقل»، من إله العالم السفلي الذي يتآمر على البطل؟",
-      "a": "هاديس",
-      "alt": [
-        "هيديز"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Hercules_(1997_film)",
-      "verified": true,
-      "qid": "cartoon-800-032"
-    },
-    {
-      "p": 800,
-      "topic": "جمل شهيرة",
-      "q": "في «سكوبي دو»، ما الجملة التي يرددها الشرير لحظة كشف قناعه؟",
-      "a": "لولا هؤلاء الأولاد المتطفلون",
-      "alt": [
-        "لولا هؤلاء الأطفال"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Scooby-Doo",
-      "verified": true,
-      "qid": "cartoon-800-033"
-    },
-    {
-      "p": 800,
-      "topic": "شخصيات رئيسية",
-      "q": "في «سبونج بوب»، ما اسم معلّمة القيادة التي يرسب البطل في اختبارها؟",
-      "a": "السيدة بف",
-      "alt": [
-        "مسز بف"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/SpongeBob_SquarePants",
-      "verified": true,
-      "qid": "cartoon-800-034"
-    },
-    {
-      "p": 800,
-      "topic": "أحداث ومواقف",
-      "q": "مِمَّ استُوحيت أسماء سلاحف النينجا؟",
-      "a": "أسماء رسامين إيطاليين",
-      "alt": [
-        "فناني عصر النهضة"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Teenage_Mutant_Ninja_Turtles",
-      "verified": true,
-      "qid": "cartoon-800-035"
-    },
-    {
-      "p": 800,
-      "topic": "أشرار وخصوم",
-      "q": "في «توم وجيري»، ما اسم القط الأسود الشرير الذي ينافس توم؟",
-      "a": "بوتش",
-      "alt": [],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Tom_and_Jerry",
-      "verified": true,
-      "qid": "cartoon-800-036"
-    },
-    {
-      "p": 800,
-      "topic": "شخصيات رئيسية",
-      "q": "في «العصر الجليدي»، ما اسم الطفل البشري الذي يحمله القطيع؟",
-      "a": "روشان",
-      "alt": [],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Ice_Age_(franchise)",
-      "verified": true,
-      "qid": "cartoon-800-037"
-    },
-    {
-      "p": 800,
-      "topic": "شخصيات رئيسية",
-      "q": "في «كونغ فو باندا»، من السلحفاة العجوز الحكيمة في معبد اليشم؟",
-      "a": "أوغواي",
-      "alt": [
-        "المعلم أوغواي"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Kung_Fu_Panda_(film)",
-      "verified": true,
-      "qid": "cartoon-800-039"
-    },
-    {
-      "p": 800,
-      "topic": "عائلات وقرابات",
-      "q": "في «الجميلة والوحش»، ما اسم الفنجان الصغير ابن إبريق الشاي؟",
-      "a": "تشيب",
-      "alt": [],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Beauty_and_the_Beast_(1991_film)",
-      "verified": true,
-      "qid": "cartoon-800-040"
+      "qid": "cartoon-800-904",
+      "difficultyTarget": 0.25
     },
     {
       "p": 800,
       "topic": "أماكن ومدن",
-      "q": "في «فروزن»، فوق أي جبل يُبنى قصر الجليد؟",
-      "a": "الجبل الشمالي",
+      "q": "في «وول إي»، ما اسم السفينة الفضائية التي يعيش على متنها البشر؟",
+      "a": "أكسيوم",
       "alt": [
-        "جبل الشمال"
+        "Axiom",
+        "اكسيوم"
       ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Frozen_(2013_film)",
+      "sourceUrl": "https://www.pixar.com/wall-e",
       "verified": true,
-      "qid": "cartoon-800-041"
+      "qid": "cartoon-800-905",
+      "difficultyTarget": 0.25
     },
     {
       "p": 800,
-      "topic": "أصدقاء ورفاق",
-      "q": "في «دمبو»، ما الحيوان الصغير الذي يصادق الفيل ويشجعه؟",
-      "a": "الفأر تيموثي",
+      "topic": "خصوم ومنافسون",
+      "q": "في «خلطبيطة بالصلصة»، ما اسم ناقد الطعام الصارم الذي تخشاه المطاعم؟",
+      "a": "أنطون إيغو",
       "alt": [
-        "تيموثي"
+        "Anton Ego",
+        "أنتون إيجو"
       ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Dumbo",
+      "sourceUrl": "https://www.pixar.com/ratatouille",
       "verified": true,
-      "qid": "cartoon-800-042"
+      "qid": "cartoon-800-906",
+      "difficultyTarget": 0.25
     },
     {
       "p": 800,
-      "topic": "أصوات الشخصيات",
-      "q": "من الممثل الأمريكي الذي أدّى صوت وودي في «توي ستوري»؟",
-      "a": "توم هانكس",
-      "alt": [],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Toy_Story",
-      "verified": true,
-      "qid": "cartoon-800-043"
-    },
-    {
-      "p": 800,
-      "topic": "أصوات الشخصيات",
-      "q": "من الممثل الكوميدي الذي أدّى صوت الجني في «علاء الدين»؟",
-      "a": "روبن ويليامز",
-      "alt": [],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Aladdin_(1992_Disney_film)",
-      "verified": true,
-      "qid": "cartoon-800-044"
-    },
-    {
-      "p": 800,
-      "topic": "أحداث ومواقف",
-      "q": "في «مولان»، بأي وسيلة تدفن الفتاة جيش الهون تحت الجبال؟",
-      "a": "انهيار ثلجي",
+      "topic": "أبطال وشخصيات",
+      "q": "في «خلطبيطة بالصلصة»، ما اسم الطاهية التي تُكلّف بتدريب لينغويني؟",
+      "a": "كوليت",
       "alt": [
-        "بانهيار ثلجي",
-        "الانهيار الثلجي"
+        "Colette"
       ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Mulan_(1998_film)",
+      "sourceUrl": "https://www.pixar.com/ratatouille",
       "verified": true,
-      "qid": "cartoon-800-045"
+      "qid": "cartoon-800-907",
+      "difficultyTarget": 0.25
     },
     {
       "p": 800,
-      "topic": "أشياء وأدوات",
-      "q": "في «الحورية الصغيرة»، ما الاسم الذي تطلقه الحورية على الشوكة في مجموعتها؟",
-      "a": "دينغلهوبر",
+      "topic": "أدوات وأشياء",
+      "q": "في «كوكو»، من بتلات أي زهرة يتكون الجسر الذي يعبره الموتى نحو عالم الأحياء؟",
+      "a": "القطيفة",
       "alt": [
-        "دنجلهوبر"
+        "زهرة القطيفة",
+        "Marigold",
+        "سيمباسوتشيل"
       ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/The_Little_Mermaid_(1989_film)",
+      "sourceUrl": "https://www.pixar.com/coco",
       "verified": true,
-      "qid": "cartoon-800-046"
-    },
-    {
-      "p": 800,
-      "topic": "عائلات وقرابات",
-      "q": "في «سبونج بوب»، ما اسم الحوت الصغيرة ابنة صاحب المطعم؟",
-      "a": "بيرل",
-      "alt": [],
-      "sourceUrl": "https://en.wikipedia.org/wiki/SpongeBob_SquarePants",
-      "verified": true,
-      "qid": "cartoon-800-047"
-    },
-    {
-      "p": 800,
-      "topic": "أشرار وخصوم",
-      "q": "في «عائلة سمبسون»، من المليونير العجوز مالك المحطة التي يعمل فيها الأب؟",
-      "a": "مستر بيرنز",
-      "alt": [
-        "بيرنز"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/The_Simpsons",
-      "verified": true,
-      "qid": "cartoon-800-048"
-    },
-    {
-      "p": 800,
-      "topic": "عائلات وقرابات",
-      "q": "في «101 كلب مرقّط»، ما اسم الأم في عائلة الكلاب المرقّطة؟",
-      "a": "بيرديتا",
-      "alt": [
-        "برديتا",
-        "بيرديتا الكلبة"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/One_Hundred_and_One_Dalmatians",
-      "verified": true,
-      "qid": "cartoon-800-049"
-    },
-    {
-      "p": 800,
-      "topic": "أصدقاء ورفاق",
-      "q": "في «بامبي»، ما اسم الظربان الصغير الذي ينضم إلى ثلاثي الأصدقاء؟",
-      "a": "فلاور",
-      "alt": [
-        "زهرة",
-        "فلور"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Bambi",
-      "verified": true,
-      "qid": "cartoon-800-050"
-    },
-    {
-      "p": 800,
-      "topic": "أشياء وأدوات",
-      "q": "في «أليس في بلاد العجائب»، ما العبارة المكتوبة على القارورة التي تشربها الفتاة؟",
-      "a": "اشربني",
-      "alt": [
-        "اشرَبني",
-        "اشرب مني"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Alice_in_Wonderland_(1951_film)",
-      "verified": true,
-      "qid": "cartoon-800-051"
-    },
-    {
-      "p": 800,
-      "topic": "أماكن ومدن",
-      "q": "في «أفاتار: آخر سادة الهواء»، ما اسم العاصمة المحصّنة لمملكة الأرض؟",
-      "a": "با سينغ سي",
-      "alt": [
-        "باسينغ سي",
-        "با سنغ سي"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Avatar:_The_Last_Airbender",
-      "verified": true,
-      "qid": "cartoon-800-052"
-    },
-    {
-      "p": 800,
-      "topic": "شخصيات رئيسية",
-      "q": "في «عائلة فلينستون»، ما اسم صاحب المحجر ورئيس رب الأسرة في العمل؟",
-      "a": "مستر سليت",
-      "alt": [
-        "السيد سليت",
-        "سليت"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/The_Flintstones",
-      "verified": true,
-      "qid": "cartoon-800-053"
-    },
-    {
-      "p": 800,
-      "topic": "أشرار وخصوم",
-      "q": "في «سلاحف النينجا»، ما اسم عصابة النينجا الشريرة التي تحارب السلاحف؟",
-      "a": "عشيرة القدم",
-      "alt": [
-        "قبيلة القدم",
-        "عصابة القدم",
-        "فوت كلان"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Teenage_Mutant_Ninja_Turtles",
-      "verified": true,
-      "qid": "cartoon-800-054"
-    },
-    {
-      "p": 800,
-      "topic": "أحداث ومواقف",
-      "q": "في «عائلة سمبسون»، ما اسم المسلسل الكرتوني العنيف الذي يشاهده الأطفال داخل الحلقات؟",
-      "a": "إيتشي وسكراتشي",
-      "alt": [
-        "إتشي آند سكراتشي",
-        "إيتشي آند سكراتشي"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/The_Simpsons",
-      "verified": true,
-      "qid": "cartoon-800-055"
+      "qid": "cartoon-800-908",
+      "difficultyTarget": 0.25
     },
     {
       "p": 1000,
-      "topic": "شخصيات رئيسية",
-      "q": "في «لوني تونز»، من راعي البقر قصير القامة كثيف الشاربين سريع الغضب؟",
-      "a": "يوسمايت سام",
+      "topic": "أطعمة وموارد",
+      "q": "في «سبونج بوب»، ما المكوّن الرخيص الذي يُكشف أنه يشكّل معظم شطائر السلطعون المجمدة؟",
+      "a": "الرمل",
       "alt": [
-        "يوسيميتي سام"
+        "رمل"
       ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Looney_Tunes",
+      "sourceUrl": "https://www.nick.com/info-page/0vq4xx/mr-krabs",
       "verified": true,
-      "qid": "cartoon-1000-001"
+      "qid": "cartoon-1000-901",
+      "difficultyTarget": 0.15
     },
     {
       "p": 1000,
-      "topic": "شخصيات رئيسية",
-      "q": "في «لوني تونز»، من الكائن الفضائي الصغير ذو الخوذة الرومانية؟",
-      "a": "مارفن المريخي",
+      "topic": "أدوات وأشياء",
+      "q": "في «السنافر»، ما الحجر الذي أراد الساحر صنعه ليحوّل الرصاص إلى ذهب؟",
+      "a": "حجر الفلاسفة",
       "alt": [
-        "مارفن"
+        "حجر الفيلسوف",
+        "Philosopher’s stone"
       ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Looney_Tunes",
+      "sourceUrl": "https://www.smurf.com/",
       "verified": true,
-      "qid": "cartoon-1000-002"
+      "qid": "cartoon-1000-902",
+      "difficultyTarget": 0.15
     },
     {
       "p": 1000,
-      "topic": "شخصيات رئيسية",
-      "q": "في «لوني تونز»، ما اسم الديك الجنوبي الضخم كثير الكلام؟",
-      "a": "فوغهورن ليغهورن",
+      "topic": "أصدقاء وعائلات",
+      "q": "في «خلطبيطة بالصلصة»، ما اسم شقيق ريمي الذي يحب أكل كل شيء؟",
+      "a": "إيميل",
       "alt": [
-        "فوغهورن"
+        "Emile",
+        "إميل"
       ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Looney_Tunes",
+      "sourceUrl": "https://www.pixar.com/ratatouille",
       "verified": true,
-      "qid": "cartoon-1000-003"
-    },
-    {
-      "p": 1000,
-      "topic": "شخصيات رئيسية",
-      "q": "في «لوني تونز»، ما اسم الظربان الفرنسي الذي يطارد القطط حبًّا؟",
-      "a": "بيبي لوبيو",
-      "alt": [
-        "بيبي"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Looney_Tunes",
-      "verified": true,
-      "qid": "cartoon-1000-004"
-    },
-    {
-      "p": 1000,
-      "topic": "عائلات وقرابات",
-      "q": "في «توم وجيري»، ما اسم الجرو الصغير ابن الكلب البلدغ؟",
-      "a": "تايك",
-      "alt": [],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Tom_and_Jerry",
-      "verified": true,
-      "qid": "cartoon-1000-005"
-    },
-    {
-      "p": 1000,
-      "topic": "شخصيات رئيسية",
-      "q": "في «سكوبي دو»، ما الاسم الكامل للكلب صاحب المغامرات؟",
-      "a": "سكوبرت دو",
-      "alt": [
-        "سكوبرت"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Scooby-Doo",
-      "verified": true,
-      "qid": "cartoon-1000-006"
-    },
-    {
-      "p": 1000,
-      "topic": "عائلات وقرابات",
-      "q": "في «سكوبي دو»، ما اسم ابن أخ الكلب الصغير الذي يحب العراك؟",
-      "a": "سكرابي دو",
-      "alt": [
-        "سكرابي"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Scooby-Doo",
-      "verified": true,
-      "qid": "cartoon-1000-007"
+      "qid": "cartoon-1000-903",
+      "difficultyTarget": 0.15
     },
     {
       "p": 1000,
       "topic": "أماكن ومدن",
-      "q": "في «عائلة فلينستون»، ما اسم المدينة الحجرية التي تعيش فيها العائلة؟",
-      "a": "بيدروك",
+      "q": "في «كوكو»، ما اسم البلدة التي تعيش فيها عائلة ميغيل؟",
+      "a": "سانتا سيسيليا",
       "alt": [
-        "بدروك"
+        "Santa Cecilia",
+        "سانتا سيسيليّا"
       ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/The_Flintstones",
+      "sourceUrl": "https://www.pixar.com/coco",
       "verified": true,
-      "qid": "cartoon-1000-008"
+      "qid": "cartoon-1000-904",
+      "difficultyTarget": 0.15
     },
     {
       "p": 1000,
-      "topic": "عائلات وقرابات",
-      "q": "في «عائلة فلينستون»، ما اسم زوجة رب الأسرة؟",
-      "a": "ويلما",
-      "alt": [],
-      "sourceUrl": "https://en.wikipedia.org/wiki/The_Flintstones",
-      "verified": true,
-      "qid": "cartoon-1000-009"
-    },
-    {
-      "p": 1000,
-      "topic": "عائلات وقرابات",
-      "q": "في «عائلة فلينستون»، ما اسم الطفلة الوحيدة في الأسرة؟",
-      "a": "بيبلز",
+      "topic": "أطعمة وموارد",
+      "q": "في «شركة المرعبين المحدودة»، بأي نكهة يصنع رجل الثلج المنفي حلوى الثلج؟",
+      "a": "الليمون",
       "alt": [
-        "بيبلز فلينستون"
+        "ليمون"
       ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/The_Flintstones",
+      "sourceUrl": "https://www.pixar.com/monsters-inc",
       "verified": true,
-      "qid": "cartoon-1000-010"
+      "qid": "cartoon-1000-905",
+      "difficultyTarget": 0.15
     },
     {
       "p": 1000,
-      "topic": "أصدقاء ورفاق",
-      "q": "في «عائلة سمبسون»، ما اسم الجار المرح الذي يحيّي جيرانه دائمًا؟",
-      "a": "نيد فلاندرز",
+      "topic": "أصدقاء وعائلات",
+      "q": "في «قلبًا وقالبًا»، ما اسم صديق رايلي الخيالي صاحب خرطوم الفيل؟",
+      "a": "بينغ بونغ",
       "alt": [
-        "فلاندرز"
+        "Bing Bong",
+        "بينج بونج"
       ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/The_Simpsons",
+      "sourceUrl": "https://www.pixar.com/inside-out",
       "verified": true,
-      "qid": "cartoon-1000-011"
+      "qid": "cartoon-1000-906",
+      "difficultyTarget": 0.15
     },
     {
       "p": 1000,
-      "topic": "أصدقاء ورفاق",
-      "q": "في «عائلة سمبسون»، ما اسم كلب العائلة؟",
-      "a": "مساعد سانتا الصغير",
+      "topic": "أبطال وشخصيات",
+      "q": "في «وول إي»، ما اسم روبوت التنظيف الصغير الذي يلاحق الملوثات الأجنبية على السفينة؟",
+      "a": "مو",
       "alt": [
-        "سانتاز ليتل هيلبر"
+        "M-O",
+        "إم أو",
+        "موو"
       ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/The_Simpsons",
+      "sourceUrl": "https://www.pixar.com/wall-e",
       "verified": true,
-      "qid": "cartoon-1000-012"
+      "qid": "cartoon-1000-907",
+      "difficultyTarget": 0.15
     },
     {
       "p": 1000,
-      "topic": "أشياء وأدوات",
-      "q": "ما رقم التجربة الذي يحمله الكائن الفضائي رفيق الطفلة ليلو؟",
-      "a": "626",
+      "topic": "أبطال وشخصيات",
+      "q": "في «خلطبيطة بالصلصة»، ما اسم والد ريمي وزعيم مستعمرة الجرذان؟",
+      "a": "دجانغو",
       "alt": [
-        "تجربة 626"
+        "Django",
+        "جانغو",
+        "جانجو"
       ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Lilo_%26_Stitch",
+      "sourceUrl": "https://www.pixar.com/ratatouille",
       "verified": true,
-      "qid": "cartoon-1000-013"
-    },
-    {
-      "p": 1000,
-      "topic": "أشرار وخصوم",
-      "q": "في «كتاب الأدغال»، ما اسم ملك القرود الذي يريد سرّ النار؟",
-      "a": "الملك لوي",
-      "alt": [
-        "لوي"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/The_Jungle_Book_(1967_film)",
-      "verified": true,
-      "qid": "cartoon-1000-015"
-    },
-    {
-      "p": 1000,
-      "topic": "أشياء وأدوات",
-      "q": "في «بيتر بان»، ما اسم سفينة القرصان هوك؟",
-      "a": "جولي روجر",
-      "alt": [
-        "الجولي روجر"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Peter_Pan_(1953_film)",
-      "verified": true,
-      "qid": "cartoon-1000-016"
-    },
-    {
-      "p": 1000,
-      "topic": "شخصيات رئيسية",
-      "q": "في «101 كلب مرقّط»، ما اسم الكلب الأب في العائلة؟",
-      "a": "بونغو",
-      "alt": [
-        "بونجو"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/One_Hundred_and_One_Dalmatians",
-      "verified": true,
-      "qid": "cartoon-1000-017"
-    },
-    {
-      "p": 1000,
-      "topic": "أصدقاء ورفاق",
-      "q": "في «طرزان»، ما اسم القردة المرحة صديقة الفتى منذ الصغر؟",
-      "a": "تيرك",
-      "alt": [
-        "ترك"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Tarzan_(1999_film)",
-      "verified": true,
-      "qid": "cartoon-1000-018"
-    },
-    {
-      "p": 1000,
-      "topic": "أصدقاء ورفاق",
-      "q": "في «مولان»، ما اسم الصرصور الذي يرافق البطلة كجالب للحظ؟",
-      "a": "كري كي",
-      "alt": [
-        "كريكي"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Mulan_(1998_film)",
-      "verified": true,
-      "qid": "cartoon-1000-019"
-    },
-    {
-      "p": 1000,
-      "topic": "أماكن ومدن",
-      "q": "في «كيف تروّض تنينك»، ما اسم جزيرة الفايكنغ في القصة؟",
-      "a": "بيرك",
-      "alt": [],
-      "sourceUrl": "https://en.wikipedia.org/wiki/How_to_Train_Your_Dragon_(2010_film)",
-      "verified": true,
-      "qid": "cartoon-1000-022"
-    },
-    {
-      "p": 1000,
-      "topic": "أشياء وأدوات",
-      "q": "في «سيارات»، ما اسم الكأس التي يتنافس عليها أبطال السباق؟",
-      "a": "كأس البستون",
-      "alt": [
-        "بيستون كاب"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Cars_(film)",
-      "verified": true,
-      "qid": "cartoon-1000-023"
-    },
-    {
-      "p": 1000,
-      "topic": "أشرار وخصوم",
-      "q": "في «كونغ فو باندا»، ما اسم النمر الشرير الذي يهرب من السجن؟",
-      "a": "تاي لونغ",
-      "alt": [
-        "تاي لانغ"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Kung_Fu_Panda_(film)",
-      "verified": true,
-      "qid": "cartoon-1000-025"
-    },
-    {
-      "p": 1000,
-      "topic": "أصوات الشخصيات",
-      "q": "من الممثل الذي يؤدي صوت رب أسرة سمبسون؟",
-      "a": "دان كاستيلانيتا",
-      "alt": [
-        "كاستيلانيتا"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/The_Simpsons",
-      "verified": true,
-      "qid": "cartoon-1000-026"
-    },
-    {
-      "p": 1000,
-      "topic": "أصوات الشخصيات",
-      "q": "من الممثل الذي يؤدي صوت السنجاب سكرات في «العصر الجليدي»؟",
-      "a": "كريس ويدج",
-      "alt": [
-        "ويدج"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Ice_Age_(franchise)",
-      "verified": true,
-      "qid": "cartoon-1000-027"
-    },
-    {
-      "p": 1000,
-      "topic": "أماكن ومدن",
-      "q": "في «سبونج بوب»، ما اسم المطعم المنافس الصغير في الجهة المقابلة؟",
-      "a": "تشوم باكيت",
-      "alt": [
-        "دلو الطعم"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/SpongeBob_SquarePants",
-      "verified": true,
-      "qid": "cartoon-1000-028"
-    },
-    {
-      "p": 1000,
-      "topic": "أصدقاء ورفاق",
-      "q": "في «توم وجيري»، ما اسم القطة البيضاء التي يقع توم في حبها؟",
-      "a": "توديلز",
-      "alt": [
-        "توديلز غالور"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Tom_and_Jerry",
-      "verified": true,
-      "qid": "cartoon-1000-029"
-    },
-    {
-      "p": 1000,
-      "topic": "عائلات وقرابات",
-      "q": "في «العصر الجليدي»، ما اسم أنثى الماموث التي تنضم إلى القطيع؟",
-      "a": "إيلي",
-      "alt": [],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Ice_Age_(franchise)",
-      "verified": true,
-      "qid": "cartoon-1000-030"
-    },
-    {
-      "p": 1000,
-      "topic": "أماكن ومدن",
-      "q": "في فيلم «أب»، ما اسم الشلال الذي يحلم كارل بالوصول إليه؟",
-      "a": "شلالات الجنة",
-      "alt": [
-        "شلالات الفردوس"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Up_(2009_film)",
-      "verified": true,
-      "qid": "cartoon-1000-032"
-    },
-    {
-      "p": 1000,
-      "topic": "أصدقاء ورفاق",
-      "q": "في «الحورية الصغيرة»، ما اسم النورس الذي يشرح للحورية أدوات البشر؟",
-      "a": "سكاتل",
-      "alt": [],
-      "sourceUrl": "https://en.wikipedia.org/wiki/The_Little_Mermaid_(1989_film)",
-      "verified": true,
-      "qid": "cartoon-1000-033"
-    },
-    {
-      "p": 1000,
-      "topic": "أصدقاء ورفاق",
-      "q": "في «بيتر بان»، ما اسم القرصان القصير مساعد هوك؟",
-      "a": "سمي",
-      "alt": [
-        "مستر سمي"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Peter_Pan_(1953_film)",
-      "verified": true,
-      "qid": "cartoon-1000-034"
-    },
-    {
-      "p": 1000,
-      "topic": "أحداث ومواقف",
-      "q": "في «101 كلب مرقّط»، كم جروًا أنجبت الكلبة الأم في أول القصة؟",
-      "a": "خمسة عشر",
-      "alt": [
-        "15"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/One_Hundred_and_One_Dalmatians",
-      "verified": true,
-      "qid": "cartoon-1000-035"
-    },
-    {
-      "p": 1000,
-      "topic": "أصدقاء ورفاق",
-      "q": "في «سلاحف النينجا»، ما اسم الصحفية صديقة السلاحف؟",
-      "a": "أبريل",
-      "alt": [
-        "أبريل أونيل"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Teenage_Mutant_Ninja_Turtles",
-      "verified": true,
-      "qid": "cartoon-1000-036"
-    },
-    {
-      "p": 1000,
-      "topic": "عائلات وقرابات",
-      "q": "ما اسم الطفل الرضيع الذي يتبنّاه بوباي ويرعاه؟",
-      "a": "سويبي",
-      "alt": [
-        "سوي بي"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Popeye",
-      "verified": true,
-      "qid": "cartoon-1000-037"
-    },
-    {
-      "p": 1000,
-      "topic": "شخصيات رئيسية",
-      "q": "ما اسم صاحب القط غارفيلد الذي يعيش معه؟",
-      "a": "جون",
-      "alt": [
-        "جون أربكل"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Garfield",
-      "verified": true,
-      "qid": "cartoon-1000-038"
-    },
-    {
-      "p": 1000,
-      "topic": "أشرار وخصوم",
-      "q": "في «بينوكيو»، ما اسم الحوت الضخم الذي يبتلع الدمية وصانعها؟",
-      "a": "مونسترو",
-      "alt": [],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Pinocchio_(1940_film)",
-      "verified": true,
-      "qid": "cartoon-1000-039"
-    },
-    {
-      "p": 1000,
-      "topic": "شخصيات رئيسية",
-      "q": "في «سنو وايت»، ما اسم القزم الوحيد الذي لا ينطق بكلمة؟",
-      "a": "دوبي",
-      "alt": [
-        "دوبي الأخرس"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Snow_White_and_the_Seven_Dwarfs_(1937_film)",
-      "verified": true,
-      "qid": "cartoon-1000-040"
-    },
-    {
-      "p": 1000,
-      "topic": "شخصيات رئيسية",
-      "q": "في «كتاب الأدغال»، ما رتبة الفيل الذي يقود استعراض القطيع؟",
-      "a": "كولونيل",
-      "alt": [
-        "الكولونيل هاتي"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/The_Jungle_Book_(1967_film)",
-      "verified": true,
-      "qid": "cartoon-1000-041"
-    },
-    {
-      "p": 1000,
-      "topic": "عائلات وقرابات",
-      "q": "في «العصر الجليدي»، ما اسم صغيرة الماموث في الأجزاء الأخيرة؟",
-      "a": "بيتش",
-      "alt": [
-        "بيتشز"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Ice_Age_(franchise)",
-      "verified": true,
-      "qid": "cartoon-1000-042"
-    },
-    {
-      "p": 1000,
-      "topic": "عائلات وقرابات",
-      "q": "في «كيف تروّض تنينك»، ما اسم والد البطل زعيم القرية؟",
-      "a": "ستويك",
-      "alt": [
-        "ستويك الواسع"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/How_to_Train_Your_Dragon_(2010_film)",
-      "verified": true,
-      "qid": "cartoon-1000-043"
-    },
-    {
-      "p": 1000,
-      "topic": "أحداث ومواقف",
-      "q": "في «فروزن»، ما الفصل الذي يحلم به رجل الثلج رغم أنه من ثلج؟",
-      "a": "الصيف",
-      "alt": [
-        "فصل الصيف"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Frozen_(2013_film)",
-      "verified": true,
-      "qid": "cartoon-1000-044"
-    },
-    {
-      "p": 1000,
-      "topic": "أشياء وأدوات",
-      "q": "في «سيارات»، ما الرقم المرسوم على جانب سيارة ماكوين؟",
-      "a": "95",
-      "alt": [
-        "رقم 95"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Cars_(film)",
-      "verified": true,
-      "qid": "cartoon-1000-046"
-    },
-    {
-      "p": 1000,
-      "topic": "شخصيات رئيسية",
-      "q": "في «هرقل»، ما اسم المدرّب الصغير الذي يدرّب البطل على البطولة؟",
-      "a": "فيل",
-      "alt": [
-        "فيلوكتيتس"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Hercules_(1997_film)",
-      "verified": true,
-      "qid": "cartoon-1000-047"
-    },
-    {
-      "p": 1000,
-      "topic": "أشرار وخصوم",
-      "q": "في «الفتيات الخارقات»، ما اسم الشيطان الأحمر خصم الفتيات الأقوى؟",
-      "a": "هيم",
-      "alt": [
-        "هيم الشرير"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/The_Powerpuff_Girls",
-      "verified": true,
-      "qid": "cartoon-1000-048"
-    },
-    {
-      "p": 1000,
-      "topic": "عائلات وقرابات",
-      "q": "في «عائلة سمبسون»، ما اسما شقيقتَي الأم التوأم الغليظتَي الصوت؟",
-      "a": "باتي وسلمى",
-      "alt": [
-        "باتي وسيلما",
-        "باتي وسلما"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/The_Simpsons",
-      "verified": true,
-      "qid": "cartoon-1000-049"
-    },
-    {
-      "p": 1000,
-      "topic": "أصدقاء ورفاق",
-      "q": "في «توم وجيري»، ما اسم البطة الصغيرة الصفراء التي يحميها جيري؟",
-      "a": "كواكر",
-      "alt": [
-        "كوكر",
-        "كواكِر"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Tom_and_Jerry",
-      "verified": true,
-      "qid": "cartoon-1000-050"
-    },
-    {
-      "p": 1000,
-      "topic": "شخصيات رئيسية",
-      "q": "ما اسم الزوج العجوز البخيل صاحب المزرعة الذي يضايق الكلب الوردي الجبان؟",
-      "a": "يوستس",
-      "alt": [
-        "أوستاس",
-        "يوستاس",
-        "يوستس باغ"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Courage_the_Cowardly_Dog",
-      "verified": true,
-      "qid": "cartoon-1000-051"
-    },
-    {
-      "p": 1000,
-      "topic": "أشرار وخصوم",
-      "q": "في «مولان»، ما اسم زعيم الهون الذي يغزو الصين؟",
-      "a": "شان يو",
-      "alt": [
-        "شانيو",
-        "شان-يو"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Mulan_(1998_film)",
-      "verified": true,
-      "qid": "cartoon-1000-052"
-    },
-    {
-      "p": 1000,
-      "topic": "أماكن ومدن",
-      "q": "في «هرقل»، ما اسم المدينة التي يصبح فيها البطل نجمًا مشهورًا؟",
-      "a": "طيبة",
-      "alt": [
-        "ثيفا",
-        "ثيبس",
-        "طيبة اليونانية"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Hercules_(1997_film)",
-      "verified": true,
-      "qid": "cartoon-1000-053"
-    },
-    {
-      "p": 1000,
-      "topic": "أصدقاء ورفاق",
-      "q": "في «أفاتار: آخر سادة الهواء»، ما اسم الليمور المجنّح الذي يرافق الأبطال؟",
-      "a": "مومو",
-      "alt": [
-        "ممو",
-        "مومو الليمور"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Avatar:_The_Last_Airbender",
-      "verified": true,
-      "qid": "cartoon-1000-054"
+      "qid": "cartoon-1000-908",
+      "difficultyTarget": 0.15
     }
   ]
 }

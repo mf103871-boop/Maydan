@@ -1,0 +1,19 @@
+{
+  "id": "placefinder-200-905",
+  "kind": "question",
+  "pack": "placefinder",
+  "p": 200,
+  "a": "سور الصين العظيم",
+  "alt": [
+    "سور الصين",
+    "السور العظيم"
+  ],
+  "topic": "شرق آسيا",
+  "q": "ما اسم هذا التحصين الممتد فوق التلال؟",
+  "sourceUrl": "https://whc.unesco.org/en/list/438/",
+  "prompt": "Use case: scientific-educational. Asset: landscape 4:3 architectural landmark recognition card for an Arabic family quiz. Create one original, carefully observed architectural illustration of the real landmark, with realistic proportions and fine material detail, clear daylight, restrained natural colours, clean composition. Show the real defining architecture accurately, not a fantasy redesign. No captions, words, numerals, maps, logos, watermark, border or inset. No people close enough to distract. The entire landmark must be recognizable at phone size. Great Wall of China, well-preserved Ming masonry section: grey stone and brick crenellated wall with broad walkway and rectangular watchtowers winding continuously along rugged green mountain ridges, clear raised perspective. No moat, no European castles, no writing.",
+  "referenceFile": "media/placefinder/placefinder-200-009.webp",
+  "sourceEvidence": "UNESCO describes walls, tracks and watchtowers integrated into mountain terrain.",
+  "sourceReviewed": true,
+  "visualReviewStatus": "pending"
+}

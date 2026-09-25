@@ -1,0 +1,1049 @@
+{
+  "reviewedAt": "2026-09-23T22:13:52.100608+00:00",
+  "packSHA256": "3e76f90238b69c13b9081332ee3033695ba966a18744d49c5e8479fb5b9009cd",
+  "method": "CSS scale/origin inverse mapping; rounded to nearest source pixel; static Sharp, not browser",
+  "questions": [
+    {
+      "qid": "zoom-200-901",
+      "answer": "موز",
+      "origin": "50% 60%",
+      "scale": 3.4,
+      "source": {
+        "width": 1280,
+        "height": 960,
+        "bytes": 44236
+      },
+      "exact": {
+        "left": 451.7647058823529,
+        "top": 406.5882352941176,
+        "width": 376.47058823529414,
+        "height": 282.3529411764706
+      },
+      "rounded": {
+        "left": 452,
+        "top": 407,
+        "width": 376,
+        "height": 282
+      },
+      "entropy": 4.950512614974286,
+      "sharpness": 0.4138752843992984,
+      "visualReview": "reviewed: intended object detail present; no blank or wrong-object crop"
+    },
+    {
+      "qid": "zoom-200-902",
+      "answer": "مقص",
+      "origin": "50% 45%",
+      "scale": 3.4,
+      "source": {
+        "width": 1280,
+        "height": 960,
+        "bytes": 58584
+      },
+      "exact": {
+        "left": 451.7647058823529,
+        "top": 304.94117647058823,
+        "width": 376.47058823529414,
+        "height": 282.3529411764706
+      },
+      "rounded": {
+        "left": 452,
+        "top": 305,
+        "width": 376,
+        "height": 282
+      },
+      "entropy": 6.538189490849618,
+      "sharpness": 2.3257613063879576,
+      "visualReview": "reviewed: intended object detail present; no blank or wrong-object crop"
+    },
+    {
+      "qid": "zoom-200-903",
+      "answer": "فرشاة أسنان",
+      "origin": "20% 60%",
+      "scale": 3.4,
+      "source": {
+        "width": 1280,
+        "height": 960,
+        "bytes": 40874
+      },
+      "exact": {
+        "left": 180.70588235294116,
+        "top": 406.5882352941176,
+        "width": 376.47058823529414,
+        "height": 282.3529411764706
+      },
+      "rounded": {
+        "left": 181,
+        "top": 407,
+        "width": 376,
+        "height": 282
+      },
+      "entropy": 6.701907940674573,
+      "sharpness": 2.2003197692309726,
+      "visualReview": "reviewed: intended object detail present; no blank or wrong-object crop"
+    },
+    {
+      "qid": "zoom-200-904",
+      "answer": "لوحة مفاتيح",
+      "origin": "50% 45%",
+      "scale": 3.4,
+      "source": {
+        "width": 1280,
+        "height": 960,
+        "bytes": 50014
+      },
+      "exact": {
+        "left": 451.7647058823529,
+        "top": 304.94117647058823,
+        "width": 376.47058823529414,
+        "height": 282.3529411764706
+      },
+      "rounded": {
+        "left": 452,
+        "top": 305,
+        "width": 376,
+        "height": 282
+      },
+      "entropy": 6.4774302560254,
+      "sharpness": 2.9486818770920387,
+      "visualReview": "reviewed: intended object detail present; no blank or wrong-object crop"
+    },
+    {
+      "qid": "zoom-200-905",
+      "answer": "كرة قدم",
+      "origin": "50% 50%",
+      "scale": 3.4,
+      "source": {
+        "width": 1280,
+        "height": 960,
+        "bytes": 61400
+      },
+      "exact": {
+        "left": 451.7647058823529,
+        "top": 338.8235294117647,
+        "width": 376.47058823529414,
+        "height": 282.3529411764706
+      },
+      "rounded": {
+        "left": 452,
+        "top": 339,
+        "width": 376,
+        "height": 282
+      },
+      "entropy": 6.618058746797033,
+      "sharpness": 2.6807234684803207,
+      "visualReview": "reviewed: intended object detail present; no blank or wrong-object crop"
+    },
+    {
+      "qid": "zoom-200-906",
+      "answer": "غيتار",
+      "origin": "40% 50%",
+      "scale": 3.4,
+      "source": {
+        "width": 1280,
+        "height": 960,
+        "bytes": 82834
+      },
+      "exact": {
+        "left": 361.4117647058823,
+        "top": 338.8235294117647,
+        "width": 376.47058823529414,
+        "height": 282.3529411764706
+      },
+      "rounded": {
+        "left": 361,
+        "top": 339,
+        "width": 376,
+        "height": 282
+      },
+      "entropy": 6.9504711693152785,
+      "sharpness": 4.724911637274238,
+      "visualReview": "reviewed: intended object detail present; no blank or wrong-object crop"
+    },
+    {
+      "qid": "zoom-200-907",
+      "answer": "دراجة هوائية",
+      "origin": "45% 66%",
+      "scale": 3.4,
+      "source": {
+        "width": 1280,
+        "height": 960,
+        "bytes": 138448
+      },
+      "exact": {
+        "left": 406.5882352941176,
+        "top": 447.2470588235294,
+        "width": 376.47058823529414,
+        "height": 282.3529411764706
+      },
+      "rounded": {
+        "left": 407,
+        "top": 447,
+        "width": 376,
+        "height": 282
+      },
+      "entropy": 6.289698018459603,
+      "sharpness": 4.83756334484676,
+      "visualReview": "reviewed: intended object detail present; no blank or wrong-object crop"
+    },
+    {
+      "qid": "zoom-200-908",
+      "answer": "دوار الشمس",
+      "origin": "50% 50%",
+      "scale": 3.4,
+      "source": {
+        "width": 1280,
+        "height": 960,
+        "bytes": 161150
+      },
+      "exact": {
+        "left": 451.7647058823529,
+        "top": 338.8235294117647,
+        "width": 376.47058823529414,
+        "height": 282.3529411764706
+      },
+      "rounded": {
+        "left": 452,
+        "top": 339,
+        "width": 376,
+        "height": 282
+      },
+      "entropy": 7.426158000831492,
+      "sharpness": 6.196978682646827,
+      "visualReview": "reviewed: intended object detail present; no blank or wrong-object crop"
+    },
+    {
+      "qid": "zoom-400-901",
+      "answer": "برتقال",
+      "origin": "65% 50%",
+      "scale": 3.4,
+      "source": {
+        "width": 1280,
+        "height": 960,
+        "bytes": 136590
+      },
+      "exact": {
+        "left": 587.2941176470588,
+        "top": 338.8235294117647,
+        "width": 376.47058823529414,
+        "height": 282.3529411764706
+      },
+      "rounded": {
+        "left": 587,
+        "top": 339,
+        "width": 376,
+        "height": 282
+      },
+      "entropy": 6.108143586665392,
+      "sharpness": 2.2997662850146763,
+      "visualReview": "reviewed: intended object detail present; no blank or wrong-object crop"
+    },
+    {
+      "qid": "zoom-400-902",
+      "answer": "فتاحة علب",
+      "origin": "25% 65%",
+      "scale": 3.4,
+      "source": {
+        "width": 1280,
+        "height": 960,
+        "bytes": 73516
+      },
+      "exact": {
+        "left": 225.88235294117646,
+        "top": 440.4705882352941,
+        "width": 376.47058823529414,
+        "height": 282.3529411764706
+      },
+      "rounded": {
+        "left": 226,
+        "top": 440,
+        "width": 376,
+        "height": 282
+      },
+      "entropy": 7.6025047050789,
+      "sharpness": 4.383626885014902,
+      "visualReview": "reviewed: intended object detail present; no blank or wrong-object crop"
+    },
+    {
+      "qid": "zoom-400-903",
+      "answer": "مشط",
+      "origin": "50% 63%",
+      "scale": 3.4,
+      "source": {
+        "width": 1280,
+        "height": 960,
+        "bytes": 84134
+      },
+      "exact": {
+        "left": 451.7647058823529,
+        "top": 426.91764705882343,
+        "width": 376.47058823529414,
+        "height": 282.3529411764706
+      },
+      "rounded": {
+        "left": 452,
+        "top": 427,
+        "width": 376,
+        "height": 282
+      },
+      "entropy": 7.5400320971384645,
+      "sharpness": 7.040925584063836,
+      "visualReview": "reviewed: intended object detail present; no blank or wrong-object crop"
+    },
+    {
+      "qid": "zoom-400-904",
+      "answer": "جهاز تحكم",
+      "origin": "50% 50%",
+      "scale": 3.4,
+      "source": {
+        "width": 1280,
+        "height": 960,
+        "bytes": 41168
+      },
+      "exact": {
+        "left": 451.7647058823529,
+        "top": 338.8235294117647,
+        "width": 376.47058823529414,
+        "height": 282.3529411764706
+      },
+      "rounded": {
+        "left": 452,
+        "top": 339,
+        "width": 376,
+        "height": 282
+      },
+      "entropy": 6.533003064803779,
+      "sharpness": 3.3786494799057483,
+      "visualReview": "reviewed: intended object detail present; no blank or wrong-object crop"
+    },
+    {
+      "qid": "zoom-400-905",
+      "answer": "مضرب تنس",
+      "origin": "32% 45%",
+      "scale": 3.4,
+      "source": {
+        "width": 1280,
+        "height": 960,
+        "bytes": 78256
+      },
+      "exact": {
+        "left": 289.1294117647059,
+        "top": 304.94117647058823,
+        "width": 376.47058823529414,
+        "height": 282.3529411764706
+      },
+      "rounded": {
+        "left": 289,
+        "top": 305,
+        "width": 376,
+        "height": 282
+      },
+      "entropy": 4.694317745161243,
+      "sharpness": 3.379198234032643,
+      "visualReview": "reviewed: intended object detail present; no blank or wrong-object crop"
+    },
+    {
+      "qid": "zoom-400-906",
+      "answer": "طبل",
+      "origin": "50% 60%",
+      "scale": 3.4,
+      "source": {
+        "width": 1280,
+        "height": 960,
+        "bytes": 125154
+      },
+      "exact": {
+        "left": 451.7647058823529,
+        "top": 406.5882352941176,
+        "width": 376.47058823529414,
+        "height": 282.3529411764706
+      },
+      "rounded": {
+        "left": 452,
+        "top": 407,
+        "width": 376,
+        "height": 282
+      },
+      "entropy": 6.549698189483024,
+      "sharpness": 3.201247506923818,
+      "visualReview": "reviewed: intended object detail present; no blank or wrong-object crop"
+    },
+    {
+      "qid": "zoom-400-907",
+      "answer": "سكوتر",
+      "origin": "66% 80%",
+      "scale": 3.4,
+      "source": {
+        "width": 1280,
+        "height": 960,
+        "bytes": 42506
+      },
+      "exact": {
+        "left": 596.3294117647059,
+        "top": 542.1176470588234,
+        "width": 376.47058823529414,
+        "height": 282.3529411764706
+      },
+      "rounded": {
+        "left": 596,
+        "top": 542,
+        "width": 376,
+        "height": 282
+      },
+      "entropy": 5.596397160319611,
+      "sharpness": 4.72014855627848,
+      "visualReview": "reviewed: intended object detail present; no blank or wrong-object crop"
+    },
+    {
+      "qid": "zoom-400-908",
+      "answer": "مخروط صنوبر",
+      "origin": "50% 50%",
+      "scale": 3.4,
+      "source": {
+        "width": 1280,
+        "height": 960,
+        "bytes": 132024
+      },
+      "exact": {
+        "left": 451.7647058823529,
+        "top": 338.8235294117647,
+        "width": 376.47058823529414,
+        "height": 282.3529411764706
+      },
+      "rounded": {
+        "left": 452,
+        "top": 339,
+        "width": 376,
+        "height": 282
+      },
+      "entropy": 7.221024687925819,
+      "sharpness": 2.8386932734093238,
+      "visualReview": "reviewed: intended object detail present; no blank or wrong-object crop"
+    },
+    {
+      "qid": "zoom-600-901",
+      "answer": "رمان",
+      "origin": "50% 50%",
+      "scale": 3.16,
+      "source": {
+        "width": 1280,
+        "height": 960,
+        "bytes": 164982
+      },
+      "exact": {
+        "left": 437.4683544303798,
+        "top": 328.10126582278485,
+        "width": 405.0632911392405,
+        "height": 303.79746835443035
+      },
+      "rounded": {
+        "left": 437,
+        "top": 328,
+        "width": 405,
+        "height": 304
+      },
+      "entropy": 7.380558226956055,
+      "sharpness": 2.8045555884686006,
+      "visualReview": "reviewed: intended object detail present; no blank or wrong-object crop"
+    },
+    {
+      "qid": "zoom-600-902",
+      "answer": "خفاقة",
+      "origin": "35% 55%",
+      "scale": 3.16,
+      "source": {
+        "width": 1280,
+        "height": 960,
+        "bytes": 80796
+      },
+      "exact": {
+        "left": 306.22784810126586,
+        "top": 360.91139240506334,
+        "width": 405.0632911392405,
+        "height": 303.79746835443035
+      },
+      "rounded": {
+        "left": 306,
+        "top": 361,
+        "width": 405,
+        "height": 304
+      },
+      "entropy": 6.57462187751662,
+      "sharpness": 7.509730910931175,
+      "visualReview": "reviewed: intended object detail present; no blank or wrong-object crop"
+    },
+    {
+      "qid": "zoom-600-903",
+      "answer": "سحّاب",
+      "origin": "50% 50%",
+      "scale": 3.16,
+      "source": {
+        "width": 1280,
+        "height": 960,
+        "bytes": 163858
+      },
+      "exact": {
+        "left": 437.4683544303798,
+        "top": 328.10126582278485,
+        "width": 405.0632911392405,
+        "height": 303.79746835443035
+      },
+      "rounded": {
+        "left": 437,
+        "top": 328,
+        "width": 405,
+        "height": 304
+      },
+      "entropy": 6.954636070935521,
+      "sharpness": 4.711576864334716,
+      "visualReview": "reviewed: intended object detail present; no blank or wrong-object crop"
+    },
+    {
+      "qid": "zoom-600-904",
+      "answer": "سماعات رأس",
+      "origin": "25% 65%",
+      "scale": 3.16,
+      "source": {
+        "width": 1280,
+        "height": 960,
+        "bytes": 71474
+      },
+      "exact": {
+        "left": 218.7341772151899,
+        "top": 426.5316455696203,
+        "width": 405.0632911392405,
+        "height": 303.79746835443035
+      },
+      "rounded": {
+        "left": 219,
+        "top": 427,
+        "width": 405,
+        "height": 304
+      },
+      "entropy": 6.633952700300142,
+      "sharpness": 3.547929835284757,
+      "visualReview": "reviewed: intended object detail present; no blank or wrong-object crop"
+    },
+    {
+      "qid": "zoom-600-905",
+      "answer": "ريشة بادمنتون",
+      "origin": "35% 70%",
+      "scale": 3.16,
+      "source": {
+        "width": 1280,
+        "height": 960,
+        "bytes": 80978
+      },
+      "exact": {
+        "left": 306.22784810126586,
+        "top": 459.3417721518988,
+        "width": 405.0632911392405,
+        "height": 303.79746835443035
+      },
+      "rounded": {
+        "left": 306,
+        "top": 459,
+        "width": 405,
+        "height": 304
+      },
+      "entropy": 6.936168650339823,
+      "sharpness": 3.2858792970831145,
+      "visualReview": "reviewed: intended object detail present; no blank or wrong-object crop"
+    },
+    {
+      "qid": "zoom-600-906",
+      "answer": "كمان",
+      "origin": "45% 50%",
+      "scale": 3.16,
+      "source": {
+        "width": 1280,
+        "height": 960,
+        "bytes": 116306
+      },
+      "exact": {
+        "left": 393.7215189873418,
+        "top": 328.10126582278485,
+        "width": 405.0632911392405,
+        "height": 303.79746835443035
+      },
+      "rounded": {
+        "left": 394,
+        "top": 328,
+        "width": 405,
+        "height": 304
+      },
+      "entropy": 7.493314384308178,
+      "sharpness": 4.343171775022781,
+      "visualReview": "reviewed: intended object detail present; no blank or wrong-object crop"
+    },
+    {
+      "qid": "zoom-600-907",
+      "answer": "دراجة نارية",
+      "origin": "50% 60%",
+      "scale": 3.16,
+      "source": {
+        "width": 1280,
+        "height": 960,
+        "bytes": 152138
+      },
+      "exact": {
+        "left": 437.4683544303798,
+        "top": 393.7215189873418,
+        "width": 405.0632911392405,
+        "height": 303.79746835443035
+      },
+      "rounded": {
+        "left": 437,
+        "top": 394,
+        "width": 405,
+        "height": 304
+      },
+      "entropy": 7.6379066882655025,
+      "sharpness": 7.960981581640559,
+      "visualReview": "reviewed: intended object detail present; no blank or wrong-object crop"
+    },
+    {
+      "qid": "zoom-600-908",
+      "answer": "ريشة طائر",
+      "origin": "55% 50%",
+      "scale": 3.16,
+      "source": {
+        "width": 1280,
+        "height": 960,
+        "bytes": 164578
+      },
+      "exact": {
+        "left": 481.2151898734178,
+        "top": 328.10126582278485,
+        "width": 405.0632911392405,
+        "height": 303.79746835443035
+      },
+      "rounded": {
+        "left": 481,
+        "top": 328,
+        "width": 405,
+        "height": 304
+      },
+      "entropy": 7.501765808206983,
+      "sharpness": 8.666703383987393,
+      "visualReview": "reviewed: intended object detail present; no blank or wrong-object crop"
+    },
+    {
+      "qid": "zoom-800-901",
+      "answer": "كيوي",
+      "origin": "50% 50%",
+      "scale": 3.16,
+      "source": {
+        "width": 1280,
+        "height": 960,
+        "bytes": 217592
+      },
+      "exact": {
+        "left": 437.4683544303798,
+        "top": 328.10126582278485,
+        "width": 405.0632911392405,
+        "height": 303.79746835443035
+      },
+      "rounded": {
+        "left": 437,
+        "top": 328,
+        "width": 405,
+        "height": 304
+      },
+      "entropy": 7.612336669699289,
+      "sharpness": 5.40522635945316,
+      "visualReview": "reviewed: intended object detail present; no blank or wrong-object crop"
+    },
+    {
+      "qid": "zoom-800-902",
+      "answer": "مبشرة",
+      "origin": "50% 50%",
+      "scale": 3.16,
+      "source": {
+        "width": 1280,
+        "height": 960,
+        "bytes": 98448
+      },
+      "exact": {
+        "left": 437.4683544303798,
+        "top": 328.10126582278485,
+        "width": 405.0632911392405,
+        "height": 303.79746835443035
+      },
+      "rounded": {
+        "left": 437,
+        "top": 328,
+        "width": 405,
+        "height": 304
+      },
+      "entropy": 7.594379484187812,
+      "sharpness": 7.547204710242355,
+      "visualReview": "reviewed: intended object detail present; no blank or wrong-object crop"
+    },
+    {
+      "qid": "zoom-800-903",
+      "answer": "دبوس أمان",
+      "origin": "85% 62%",
+      "scale": 3.16,
+      "source": {
+        "width": 1280,
+        "height": 960,
+        "bytes": 72874
+      },
+      "exact": {
+        "left": 743.6962025316457,
+        "top": 406.84556962025323,
+        "width": 405.0632911392405,
+        "height": 303.79746835443035
+      },
+      "rounded": {
+        "left": 744,
+        "top": 407,
+        "width": 405,
+        "height": 304
+      },
+      "entropy": 6.0462091561057605,
+      "sharpness": 5.7101379552331055,
+      "visualReview": "reviewed: intended object detail present; no blank or wrong-object crop"
+    },
+    {
+      "qid": "zoom-800-904",
+      "answer": "كاميرا ويب",
+      "origin": "50% 30%",
+      "scale": 3.16,
+      "source": {
+        "width": 1280,
+        "height": 960,
+        "bytes": 110978
+      },
+      "exact": {
+        "left": 437.4683544303798,
+        "top": 196.8607594936709,
+        "width": 405.0632911392405,
+        "height": 303.79746835443035
+      },
+      "rounded": {
+        "left": 437,
+        "top": 197,
+        "width": 405,
+        "height": 304
+      },
+      "entropy": 6.526549218106084,
+      "sharpness": 4.9663315163971715,
+      "visualReview": "reviewed: intended object detail present; no blank or wrong-object crop"
+    },
+    {
+      "qid": "zoom-800-905",
+      "answer": "كرة غولف",
+      "origin": "50% 50%",
+      "scale": 3.16,
+      "source": {
+        "width": 1280,
+        "height": 960,
+        "bytes": 45728
+      },
+      "exact": {
+        "left": 437.4683544303798,
+        "top": 328.10126582278485,
+        "width": 405.0632911392405,
+        "height": 303.79746835443035
+      },
+      "rounded": {
+        "left": 437,
+        "top": 328,
+        "width": 405,
+        "height": 304
+      },
+      "entropy": 6.43563692009775,
+      "sharpness": 0.4942334131079325,
+      "visualReview": "reviewed: intended object detail present; no blank or wrong-object crop"
+    },
+    {
+      "qid": "zoom-800-906",
+      "answer": "أكورديون",
+      "origin": "50% 50%",
+      "scale": 3.16,
+      "source": {
+        "width": 1280,
+        "height": 960,
+        "bytes": 253224
+      },
+      "exact": {
+        "left": 437.4683544303798,
+        "top": 328.10126582278485,
+        "width": 405.0632911392405,
+        "height": 303.79746835443035
+      },
+      "rounded": {
+        "left": 437,
+        "top": 328,
+        "width": 405,
+        "height": 304
+      },
+      "entropy": 6.457955680554733,
+      "sharpness": 4.099635804545728,
+      "visualReview": "reviewed: intended object detail present; no blank or wrong-object crop"
+    },
+    {
+      "qid": "zoom-800-907",
+      "answer": "حذاء تزلج",
+      "origin": "55% 82%",
+      "scale": 3.16,
+      "source": {
+        "width": 1280,
+        "height": 960,
+        "bytes": 162318
+      },
+      "exact": {
+        "left": 481.2151898734178,
+        "top": 538.0860759493671,
+        "width": 405.0632911392405,
+        "height": 303.79746835443035
+      },
+      "rounded": {
+        "left": 481,
+        "top": 538,
+        "width": 405,
+        "height": 304
+      },
+      "entropy": 7.307333805365488,
+      "sharpness": 7.582514403486037,
+      "visualReview": "reviewed: intended object detail present; no blank or wrong-object crop"
+    },
+    {
+      "qid": "zoom-800-908",
+      "answer": "صدفة بحرية",
+      "origin": "50% 50%",
+      "scale": 3.16,
+      "source": {
+        "width": 1280,
+        "height": 960,
+        "bytes": 150032
+      },
+      "exact": {
+        "left": 437.4683544303798,
+        "top": 328.10126582278485,
+        "width": 405.0632911392405,
+        "height": 303.79746835443035
+      },
+      "rounded": {
+        "left": 437,
+        "top": 328,
+        "width": 405,
+        "height": 304
+      },
+      "entropy": 7.2129574287100695,
+      "sharpness": 2.2956526883128676,
+      "visualReview": "reviewed: intended object detail present; no blank or wrong-object crop"
+    },
+    {
+      "qid": "zoom-1000-901",
+      "answer": "خرشوف",
+      "origin": "50% 50%",
+      "scale": 3.16,
+      "source": {
+        "width": 1280,
+        "height": 960,
+        "bytes": 174942
+      },
+      "exact": {
+        "left": 437.4683544303798,
+        "top": 328.10126582278485,
+        "width": 405.0632911392405,
+        "height": 303.79746835443035
+      },
+      "rounded": {
+        "left": 437,
+        "top": 328,
+        "width": 405,
+        "height": 304
+      },
+      "entropy": 7.046024129842408,
+      "sharpness": 2.785372577109477,
+      "visualReview": "reviewed: intended object detail present; no blank or wrong-object crop"
+    },
+    {
+      "qid": "zoom-1000-902",
+      "answer": "عصارة ثوم",
+      "origin": "22% 68%",
+      "scale": 3.16,
+      "source": {
+        "width": 1280,
+        "height": 960,
+        "bytes": 84500
+      },
+      "exact": {
+        "left": 192.48607594936712,
+        "top": 446.21772151898745,
+        "width": 405.0632911392405,
+        "height": 303.79746835443035
+      },
+      "rounded": {
+        "left": 192,
+        "top": 446,
+        "width": 405,
+        "height": 304
+      },
+      "entropy": 7.524753259029239,
+      "sharpness": 5.906710378776686,
+      "visualReview": "reviewed: intended object detail present; no blank or wrong-object crop"
+    },
+    {
+      "qid": "zoom-1000-903",
+      "answer": "كشتبان",
+      "origin": "50% 50%",
+      "scale": 3.16,
+      "source": {
+        "width": 1280,
+        "height": 960,
+        "bytes": 182210
+      },
+      "exact": {
+        "left": 437.4683544303798,
+        "top": 328.10126582278485,
+        "width": 405.0632911392405,
+        "height": 303.79746835443035
+      },
+      "rounded": {
+        "left": 437,
+        "top": 328,
+        "width": 405,
+        "height": 304
+      },
+      "entropy": 7.787507926055696,
+      "sharpness": 7.329511363477296,
+      "visualReview": "reviewed: intended object detail present; no blank or wrong-object crop",
+      "editorialCaution": "Dense metal indentations; outline mostly outside crop. Deliberately difficult but not visually unique in isolation."
+    },
+    {
+      "qid": "zoom-1000-904",
+      "answer": "شريحة إلكترونية",
+      "origin": "18% 55%",
+      "scale": 3.16,
+      "source": {
+        "width": 1280,
+        "height": 960,
+        "bytes": 175066
+      },
+      "exact": {
+        "left": 157.48860759493672,
+        "top": 360.91139240506334,
+        "width": 405.0632911392405,
+        "height": 303.79746835443035
+      },
+      "rounded": {
+        "left": 157,
+        "top": 361,
+        "width": 405,
+        "height": 304
+      },
+      "entropy": 7.042926971334964,
+      "sharpness": 6.325030168819739,
+      "visualReview": "reviewed: intended object detail present; no blank or wrong-object crop"
+    },
+    {
+      "qid": "zoom-1000-905",
+      "answer": "كرة كريكيت",
+      "origin": "50% 50%",
+      "scale": 3.16,
+      "source": {
+        "width": 1280,
+        "height": 960,
+        "bytes": 211710
+      },
+      "exact": {
+        "left": 437.4683544303798,
+        "top": 328.10126582278485,
+        "width": 405.0632911392405,
+        "height": 303.79746835443035
+      },
+      "rounded": {
+        "left": 437,
+        "top": 328,
+        "width": 405,
+        "height": 304
+      },
+      "entropy": 7.142808928561863,
+      "sharpness": 4.764780716789121,
+      "visualReview": "reviewed: intended object detail present; no blank or wrong-object crop"
+    },
+    {
+      "qid": "zoom-1000-906",
+      "answer": "كلارينيت",
+      "origin": "50% 50%",
+      "scale": 3.16,
+      "source": {
+        "width": 1280,
+        "height": 960,
+        "bytes": 52824
+      },
+      "exact": {
+        "left": 437.4683544303798,
+        "top": 328.10126582278485,
+        "width": 405.0632911392405,
+        "height": 303.79746835443035
+      },
+      "rounded": {
+        "left": 437,
+        "top": 328,
+        "width": 405,
+        "height": 304
+      },
+      "entropy": 6.5162057497072965,
+      "sharpness": 8.375650419691661,
+      "visualReview": "reviewed: intended object detail present; no blank or wrong-object crop"
+    },
+    {
+      "qid": "zoom-1000-907",
+      "answer": "صمام إطار",
+      "origin": "50% 20%",
+      "scale": 3.16,
+      "source": {
+        "width": 1280,
+        "height": 960,
+        "bytes": 163066
+      },
+      "exact": {
+        "left": 437.4683544303798,
+        "top": 131.24050632911394,
+        "width": 405.0632911392405,
+        "height": 303.79746835443035
+      },
+      "rounded": {
+        "left": 437,
+        "top": 131,
+        "width": 405,
+        "height": 304
+      },
+      "entropy": 5.769535820989404,
+      "sharpness": 3.4225085039723915,
+      "visualReview": "reviewed: intended object detail present; no blank or wrong-object crop",
+      "editorialCaution": "Threaded brass and rubber dominate; full tire context outside crop. Deliberately difficult but ambiguous among similar fittings."
+    },
+    {
+      "qid": "zoom-1000-908",
+      "answer": "سرخس",
+      "origin": "50% 50%",
+      "scale": 3.16,
+      "source": {
+        "width": 1280,
+        "height": 960,
+        "bytes": 180096
+      },
+      "exact": {
+        "left": 437.4683544303798,
+        "top": 328.10126582278485,
+        "width": 405.0632911392405,
+        "height": 303.79746835443035
+      },
+      "rounded": {
+        "left": 437,
+        "top": 328,
+        "width": 405,
+        "height": 304
+      },
+      "entropy": 7.07717133325059,
+      "sharpness": 5.81957157953982,
+      "visualReview": "reviewed: intended object detail present; no blank or wrong-object crop"
+    }
+  ]
+}

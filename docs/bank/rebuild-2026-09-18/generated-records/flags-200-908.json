@@ -1,0 +1,19 @@
+{
+  "id": "flags-200-908",
+  "kind": "question",
+  "pack": "flags",
+  "file": "media/flags/flags-200-908.webp",
+  "asset": "media/flags/flags-200-908.webp",
+  "prompt": "Create a flat national flag illustration on a completely OPAQUE rectangular image. Every pixel must have an opaque colored surface, including white and green areas. Keep the background flag field visible. Solid flat colors with crisp straight edges. No transparency, no alpha cutout. The flag occupies the entire canvas. Bangladesh. Canvas width:height exactly 5:3. Entire field deep bottle green #006A4E. Exactly ONE red #F42A41 circle. Circle center x=45% of full image width (slightly LEFT of center), y=50% height. Radius exactly20% of full image width, meaning diameter 2/3 total image height. Circle truly circular, not ellipse. No symbols inside circle, no text.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-09-23",
+  "width": 1280,
+  "height": 768,
+  "bytes": 12820,
+  "sha256": "517fb5c7e60b065efd71affa5bd7a686b85f1a70acb82720d56ac116bd0a48ca",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "pending",
+    "note": "Generation and file checks do not imply subject or gameplay verification."
+  }
+}

@@ -5,2757 +5,555 @@
   "style": "story",
   "qs": [
     {
+      "qid": "spacetoon-200-901",
       "p": 200,
-      "topic": "أنمي الرياضة",
-      "q": "في «كابتن ماجد»، ما اللعبة التي يبرع فيها ماجد وأصدقاؤه؟",
-      "a": "كرة القدم",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/كابتن_ماجد",
-      "verified": true,
-      "qid": "spacetoon-200-049"
-    },
-    {
-      "p": 200,
-      "topic": "أنمي الرياضة",
-      "q": "في «سلام دانك»، ما اللعبة التي يتنافس فيها الأبطال؟",
-      "a": "كرة السلة",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/سبيستون",
-      "verified": true,
-      "qid": "spacetoon-200-050"
-    },
-    {
-      "p": 200,
-      "topic": "أنمي الرياضة",
-      "q": "في «الرمية الملتهبة»، ما اللعبة التي يبرع فيها سامي؟",
-      "a": "كرة اليد",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الرمية_الملتهبة",
-      "verified": true,
-      "qid": "spacetoon-200-051"
-    },
-    {
-      "p": 200,
-      "topic": "أنمي الرياضة",
-      "q": "في «كابتن ماجد»، ما البطولة التي يحلم ماجد برفعها مع منتخبه؟",
-      "a": "كأس العالم",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/كابتن_ماجد",
-      "verified": true,
-      "qid": "spacetoon-200-052"
-    },
-    {
-      "p": 200,
-      "topic": "أبطال وشخصيات",
-      "q": "في «عدنان ولينا»، أين وجد عدنان الفتاة لينا أول مرة؟",
+      "q": "أين عثر عدنان على لينا حين التقيا أول مرة؟",
       "a": "على الشاطئ",
       "alt": [
-        "على شاطئ الجزيرة"
+        "الشاطئ",
+        "شاطئ الجزيرة"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/عدنان_ولينا",
+      "topic": "عدنان ولينا",
       "verified": true,
-      "qid": "spacetoon-200-053"
+      "sourceUrl": "https://en.wikipedia.org/wiki/Future_Boy_Conan#Story",
+      "difficultyTarget": 0.8
     },
     {
+      "qid": "spacetoon-200-902",
       "p": 200,
-      "topic": "أبطال وشخصيات",
-      "q": "في «المحقق كونان»، ما اسم صديقة الطفولة التي يعيش كونان في بيت أبيها؟",
-      "a": "ران",
-      "alt": [
-        "ران موري"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/المحقق_كونان",
-      "verified": true,
-      "qid": "spacetoon-200-054"
-    },
-    {
-      "p": 200,
-      "topic": "أبطال وشخصيات",
-      "q": "في «جزيرة الكنز»، ما اسم الفتى الذي يساعد أمه في نزلها ثم يبحر في رحلة العمر؟",
-      "a": "جيم",
-      "alt": [
-        "جيم هوكينز"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/جزيرة_الكنز_(أنمي)",
-      "verified": true,
-      "qid": "spacetoon-200-055"
-    },
-    {
-      "p": 200,
-      "topic": "أبطال وشخصيات",
-      "q": "في «سالي»، ما العمل الذي أُجبرت عليه سالي في المدرسة بعد وفاة والدها؟",
+      "q": "ما العمل الذي أُجبرت سالي عليه في المدرسة بعد وفاة والدها؟",
       "a": "خادمة",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/سالي_(أنمي)",
-      "verified": true,
-      "qid": "spacetoon-200-056"
-    },
-    {
-      "p": 200,
-      "topic": "أبطال وشخصيات",
-      "q": "في «دروب ريمي»، عمّن تبحث ريمي في رحلتها الطويلة؟",
-      "a": "أمها",
       "alt": [
-        "والدتها"
+        "العمل خادمة",
+        "خادمة بالمدرسة"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/دروب_ريمي",
+      "topic": "سالي",
       "verified": true,
-      "qid": "spacetoon-200-057"
+      "sourceUrl": "https://ar.wikipedia.org/wiki/سالي_(أنمي)#القصة",
+      "difficultyTarget": 0.8
     },
     {
+      "qid": "spacetoon-200-903",
       "p": 200,
-      "topic": "أبطال وشخصيات",
-      "q": "في «غرندايزر»، من الشاب الذي يقود غرندايزر دفاعًا عن الأرض؟",
-      "a": "دايسكي",
+      "q": "أين بنت عائلة فلونة منزلها لتحتمي من الحيوانات على الجزيرة؟",
+      "a": "فوق شجرة",
       "alt": [
-        "دوق فليد",
-        "دايسكي آمون"
+        "بيت شجرة",
+        "على شجرة"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/جريندايزر",
+      "topic": "فلونة",
       "verified": true,
-      "qid": "spacetoon-200-058"
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Swiss_Family_Robinson:_Flone_of_the_Mysterious_Island#Plot",
+      "difficultyTarget": 0.8
     },
     {
+      "qid": "spacetoon-200-904",
       "p": 200,
-      "topic": "أبطال وشخصيات",
-      "q": "في «فلونة»، ما اسم العائلة التي عاشت على الجزيرة بعد تحطم سفينتها؟",
-      "a": "روبنسون",
-      "alt": [
-        "آل روبنسون",
-        "عائلة روبنسون"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/فلونة",
-      "verified": true,
-      "qid": "spacetoon-200-059"
-    },
-    {
-      "p": 200,
-      "topic": "أبطال وشخصيات",
-      "q": "في «المحقق كونان»، ما اسم طالب الثانوية الذي تحوّل إلى طفل؟",
-      "a": "سينشي كودو",
-      "alt": [
-        "شينيتشي كودو",
-        "سينشي"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/المحقق_كونان",
-      "verified": true,
-      "qid": "spacetoon-200-060"
-    },
-    {
-      "p": 200,
-      "topic": "أبطال وشخصيات",
-      "q": "في «عدنان ولينا»، من ربّى عدنان على الجزيرة قبل أن تصل إليها لينا؟",
-      "a": "جدّه",
-      "alt": [
-        "جده"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/عدنان_ولينا",
-      "verified": true,
-      "qid": "spacetoon-200-061"
-    },
-    {
-      "p": 200,
-      "topic": "حيوانات ورفاق",
-      "q": "في «بوكيمون»، ماذا يُطلق على من يربّي الكائنات ويخوض بها المعارك؟",
-      "a": "مدرّب",
-      "alt": [
-        "مدرب"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/بوكيمون",
-      "verified": true,
-      "qid": "spacetoon-200-062"
-    },
-    {
-      "p": 200,
-      "topic": "كواكب سبيستون",
-      "q": "ما اسم كوكب سبيستون الذي تُعرض عليه المسلسلات المضحكة؟",
-      "a": "كوميديا",
-      "alt": [
-        "كوكب كوميديا"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/سبيستون",
-      "verified": true,
-      "qid": "spacetoon-200-063"
-    },
-    {
-      "p": 200,
-      "topic": "كواكب سبيستون",
-      "q": "ما اسم كوكب سبيستون الذي يعلّم الصغار الحروف والأرقام؟",
-      "a": "أبجد",
-      "alt": [
-        "كوكب أبجد"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/سبيستون",
-      "verified": true,
-      "qid": "spacetoon-200-064"
-    },
-    {
-      "p": 200,
-      "topic": "الفضاء والروبوتات",
-      "q": "في «غرندايزر»، ما اسم الكوكب الذي تأتي منه قوات الشر؟",
-      "a": "فيغا",
-      "alt": [
-        "فيجا"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/جريندايزر",
-      "verified": true,
-      "qid": "spacetoon-200-068"
-    },
-    {
-      "p": 200,
-      "topic": "الفضاء والروبوتات",
-      "q": "في «أبطال الديجيتال»، إلى أي عالم انتقل الأطفال في بداية المغامرة؟",
-      "a": "العالم الرقمي",
-      "alt": [
-        "عالم الديجيتال"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/أبطال_الديجيتال",
-      "verified": true,
-      "qid": "spacetoon-200-069"
-    },
-    {
-      "p": 200,
-      "topic": "حيوانات ورفاق",
-      "q": "في «أبطال الديجيتال»، ماذا يُسمّى المخلوق الذي يرافق كل بطل؟",
-      "a": "ديجيمون",
-      "alt": [
-        "الديجيمون"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/أبطال_الديجيتال",
-      "verified": true,
-      "qid": "spacetoon-200-070"
-    },
-    {
-      "p": 200,
-      "topic": "الفضاء والروبوتات",
-      "q": "في «هزيم الرعد»، ما الذي يسعى هزيم إلى توحيده في الحكاية؟",
-      "a": "المجرة",
-      "alt": [
-        "مجرة"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/هزيم_الرعد",
-      "verified": true,
-      "qid": "spacetoon-200-071"
-    },
-    {
-      "p": 200,
-      "topic": "الفضاء والروبوتات",
-      "q": "في «عدنان ولينا»، ما الكارثة التي دمّرت الأرض قبل ولادة عدنان؟",
-      "a": "حرب عالمية",
-      "alt": [
-        "الحرب العالمية الثالثة"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/عدنان_ولينا",
-      "verified": true,
-      "qid": "spacetoon-200-072"
-    },
-    {
-      "p": 200,
-      "topic": "رحلات ومغامرات",
-      "q": "في «مغامرات سندباد»، من أي مدينة انطلق سندباد إلى أسفاره؟",
+      "q": "من أي مدينة عربية ينطلق الفتى في أنمي «مغامرات سندباد»؟",
       "a": "بغداد",
       "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/مغامرات_سندباد",
+      "topic": "سندباد",
       "verified": true,
-      "qid": "spacetoon-200-073"
+      "sourceUrl": "https://ar.wikipedia.org/wiki/مغامرات_سندباد#الشخصيات",
+      "difficultyTarget": 0.8
     },
     {
+      "qid": "spacetoon-200-905",
       "p": 200,
-      "topic": "رحلات ومغامرات",
-      "q": "في «مغامرات نيلز»، على ظهر أي طائر سافر نيلز؟",
+      "q": "بأي اسم يعيش دوق فليد على الأرض ويعمل في المزرعة؟",
+      "a": "دايسكي",
+      "alt": [
+        "دايسوكي",
+        "Daisuke"
+      ],
+      "topic": "غرندايزر",
+      "verified": true,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Grendizer#Plot",
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "spacetoon-200-906",
+      "p": 200,
+      "q": "ما اسم الفتى بطل أنمي «جزيرة الكنز» الذي يبحر مع سيلفر؟",
+      "a": "جيم",
+      "alt": [
+        "جيم هوكنز",
+        "Jim Hawkins"
+      ],
+      "topic": "جزيرة الكنز",
+      "verified": true,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Treasure_Island_(1978_TV_series)#Main_characters",
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "spacetoon-200-907",
+      "p": 200,
+      "q": "عن أي فرد من عائلتها تبحث ساندي بل وتلتقيه في نهاية رحلتها؟",
+      "a": "أمها",
+      "alt": [
+        "والدتها",
+        "الأم"
+      ],
+      "topic": "ساندي بل",
+      "verified": true,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Hello!_Sandybell#Plot",
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "spacetoon-200-908",
+      "p": 200,
+      "q": "على ظهر أي طائر يطير نيلز في مغامراته؟",
       "a": "إوزة",
       "alt": [
-        "أوزة",
-        "الإوز"
+        "الإوزة",
+        "وزة"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/مغامرات_نيلز",
+      "topic": "نيلز",
       "verified": true,
-      "qid": "spacetoon-200-074"
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Wonderful_Adventures_of_Nils_(TV_series)#Plot",
+      "difficultyTarget": 0.8
     },
     {
-      "p": 200,
-      "topic": "رحلات ومغامرات",
-      "q": "في «مغامرات نيلز»، ماذا أصاب نيلز حين أغضب القزم العجوز؟",
-      "a": "صار قزمًا صغيرًا",
-      "alt": [
-        "صغر حجمه",
-        "تحول إلى قزم"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/مغامرات_نيلز",
-      "verified": true,
-      "qid": "spacetoon-200-075"
-    },
-    {
-      "p": 200,
-      "topic": "رحلات ومغامرات",
-      "q": "في «سالي»، إلى أي مدينة سافرت سالي لتدرس في مدرسة داخلية؟",
-      "a": "لندن",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/سالي_(أنمي)",
-      "verified": true,
-      "qid": "spacetoon-200-076"
-    },
-    {
-      "p": 200,
-      "topic": "رحلات ومغامرات",
-      "q": "في «جزيرة الكنز»، ما الورقة التي ورثها جيم عن البحّار العجوز؟",
-      "a": "خريطة",
-      "alt": [
-        "الخريطة"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/جزيرة_الكنز_(أنمي)",
-      "verified": true,
-      "qid": "spacetoon-200-077"
-    },
-    {
-      "p": 200,
-      "topic": "رحلات ومغامرات",
-      "q": "في «صقور الأرض»، في أي بلد تدور أحداث المسلسل؟",
-      "a": "الصين",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/صقور_الأرض",
-      "verified": true,
-      "qid": "spacetoon-200-078"
-    },
-    {
-      "p": 200,
-      "topic": "رحلات ومغامرات",
-      "q": "في «المحقق كونان»، في أي بلد تجري أحداث المسلسل؟",
-      "a": "اليابان",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/المحقق_كونان",
-      "verified": true,
-      "qid": "spacetoon-200-079"
-    },
-    {
-      "p": 200,
-      "topic": "رحلات ومغامرات",
-      "q": "في «مغامرات سندباد»، ما الحكايات القديمة التي اقتُبست منها مغامرات سندباد؟",
-      "a": "ألف ليلة وليلة",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/مغامرات_سندباد",
-      "verified": true,
-      "qid": "spacetoon-200-080"
-    },
-    {
-      "p": 200,
-      "topic": "حيوانات ورفاق",
-      "q": "في «بوكيمون»، ما اسم الكائن الأصفر الذي يرافق آش في كل مكان؟",
-      "a": "بيكاتشو",
-      "alt": [
-        "بيكاشو"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/بوكيمون",
-      "verified": true,
-      "qid": "spacetoon-200-081"
-    },
-    {
-      "p": 200,
-      "topic": "حيوانات ورفاق",
-      "q": "في «دروب ريمي»، ما نوع الحيوان الذي يُدعى كابي؟",
-      "a": "كلب",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/دروب_ريمي",
-      "verified": true,
-      "qid": "spacetoon-200-082"
-    },
-    {
-      "p": 200,
-      "topic": "حيوانات ورفاق",
-      "q": "في «ساندي بل»، ما اسم كلب ساندي بل الكبير؟",
-      "a": "أوليفر",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/ساندي_بل",
-      "verified": true,
-      "qid": "spacetoon-200-083"
-    },
-    {
-      "p": 200,
-      "topic": "حيوانات ورفاق",
-      "q": "في «سنان»، ما نوع الحيوان الذي يمثّله سنان بطل المسلسل؟",
-      "a": "قندس",
-      "alt": [
-        "سمور",
-        "بيفر"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/سنان_(أنمي)",
-      "verified": true,
-      "qid": "spacetoon-200-084"
-    },
-    {
-      "p": 200,
-      "topic": "حيوانات ورفاق",
-      "q": "في «زينة ونحول»، أين تعيش زينة مع بقية النحل؟",
-      "a": "الخلية",
-      "alt": [
-        "خلية النحل"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/مغامرات_زينة_ونحول",
-      "verified": true,
-      "qid": "spacetoon-200-085"
-    },
-    {
-      "p": 200,
-      "topic": "حيوانات ورفاق",
-      "q": "في «مغامرات زينة ونحول»، ما نوع الحشرة التي تمثّلها زينة؟",
-      "a": "نحلة",
-      "alt": [
-        "النحلة"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/مغامرات_زينة_ونحول",
-      "verified": true,
-      "qid": "spacetoon-200-087"
-    },
-    {
-      "p": 200,
-      "topic": "حيوانات ورفاق",
-      "q": "في «فلونة»، ما اسم كلب العائلة الوفي؟",
-      "a": "جان",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/فلونة",
-      "verified": true,
-      "qid": "spacetoon-200-088"
-    },
-    {
-      "p": 200,
-      "topic": "أدوات وأسلحة",
-      "q": "في «المحقق كونان»، ما الشيء الذي يضعه كونان على عينيه في كل حلقة؟",
-      "a": "نظارة",
-      "alt": [
-        "النظارة",
-        "نظارته"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/المحقق_كونان",
-      "verified": true,
-      "qid": "spacetoon-200-089"
-    },
-    {
-      "p": 200,
-      "topic": "أدوات وأسلحة",
-      "q": "في «مغامرات حنين»، ما الأداة التي تتحوّل بها حنين إلى شخصيات الكبار؟",
-      "a": "عصا سحرية",
-      "alt": [
-        "العصا السحرية"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/مغامرات_حنين",
-      "verified": true,
-      "qid": "spacetoon-200-090"
-    },
-    {
-      "p": 200,
-      "topic": "أدوات وأسلحة",
-      "q": "في «كابتن ماجد»، ما الشيء الذي يرافق ماجد أينما ذهب حتى في نومه؟",
-      "a": "الكرة",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/كابتن_ماجد",
-      "verified": true,
-      "qid": "spacetoon-200-091"
-    },
-    {
-      "p": 200,
-      "topic": "أدوات وأسلحة",
-      "q": "في «هزيم الرعد»، ما نوع المركبات التي تخوض بها الجيوش معاركها؟",
-      "a": "سفن فضائية",
-      "alt": [
-        "سفن الفضاء"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/هزيم_الرعد",
-      "verified": true,
-      "qid": "spacetoon-200-092"
-    },
-    {
-      "p": 200,
-      "topic": "أسماء الدبلجة",
-      "q": "اسم «سبيستون» مركّب من كلمة «سبيس» وكلمة إنجليزية أخرى، ما هي؟",
-      "a": "كرتون",
-      "alt": [
-        "كارتون",
-        "cartoon"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/سبيستون",
-      "verified": true,
-      "qid": "spacetoon-200-093"
-    },
-    {
-      "p": 200,
-      "topic": "أسماء الدبلجة",
-      "q": "ما الاسم الذي عُرف به أنمي «كابتن تسوباسا» عند الجمهور العربي؟",
-      "a": "الكابتن ماجد",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/كابتن_ماجد",
-      "verified": true,
-      "qid": "spacetoon-200-094"
-    },
-    {
-      "p": 200,
-      "topic": "أسماء الدبلجة",
-      "q": "ماذا تعني كلمة «سبيس» في اسم القناة؟",
-      "a": "الفضاء",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/سبيستون",
-      "verified": true,
-      "qid": "spacetoon-200-095"
-    },
-    {
-      "p": 200,
-      "topic": "أسماء الدبلجة",
-      "q": "ما اللغة الأصلية لمعظم المسلسلات التي دبلجتها سبيستون؟",
-      "a": "اليابانية",
-      "alt": [
-        "يابانية"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/سبيستون",
-      "verified": true,
-      "qid": "spacetoon-200-096"
-    },
-    {
-      "p": 200,
-      "topic": "كواكب سبيستون",
-      "q": "أي كوكب في سبيستون يعرض مسلسلات مثل «كابتن ماجد» و«الرمية الملتهبة»؟",
-      "a": "كوكب رياضة",
-      "alt": [
-        "رياضة",
-        "الرياضة"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/سبيستون",
-      "verified": true,
-      "qid": "spacetoon-200-097"
-    },
-    {
-      "p": 200,
-      "topic": "رحلات ومغامرات",
-      "q": "في «فلونة»، ما المسكن العجيب الذي بنته العائلة على الجزيرة؟",
-      "a": "بيت فوق شجرة",
-      "alt": [
-        "بيت الشجرة",
-        "منزل على شجرة"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/فلونة",
-      "verified": true,
-      "qid": "spacetoon-200-098"
-    },
-    {
-      "p": 200,
-      "topic": "حيوانات ورفاق",
-      "q": "في «مغامرات سندباد»، ما اسم الطائر المتكلّم الذي يرافق سندباد في أسفاره؟",
-      "a": "ياسمينة",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/مغامرات_سندباد",
-      "verified": true,
-      "qid": "spacetoon-200-099"
-    },
-    {
-      "p": 200,
-      "topic": "أبطال وشخصيات",
-      "q": "في «عدنان ولينا»، بأي شيء يتشبّث عدنان ويحمل الأثقال غير يديه؟",
-      "a": "أصابع قدميه",
-      "alt": [
-        "قدماه",
-        "أصابع قدمه"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/عدنان_ولينا",
-      "verified": true,
-      "qid": "spacetoon-200-100"
-    },
-    {
+      "qid": "spacetoon-400-901",
       "p": 400,
-      "topic": "أنمي الرياضة",
-      "q": "في «كابتن ماجد»، ما اسم حارس المرمى الشهير صديق ماجد ومنافسه؟",
-      "a": "وليد",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/كابتن_ماجد",
-      "verified": true,
-      "qid": "spacetoon-400-049"
-    },
-    {
-      "p": 400,
-      "topic": "أنمي الرياضة",
-      "q": "في «كابتن رابح»، في أي بلد أوروبي يواصل رابح مشواره الكروي؟",
-      "a": "إيطاليا",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/كابتن_رابح",
-      "verified": true,
-      "qid": "spacetoon-400-050"
-    },
-    {
-      "p": 400,
-      "topic": "أنمي الرياضة",
-      "q": "في «أبطال الملاعب»، ما اسم الأستاذ الذي درّب فريق الثانوية؟",
-      "a": "مختار",
-      "alt": [
-        "الأستاذ مختار"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/أبطال_الملاعب",
-      "verified": true,
-      "qid": "spacetoon-400-051"
-    },
-    {
-      "p": 400,
-      "topic": "أنمي الرياضة",
-      "q": "في «الرمية الملتهبة»، ما اسم والد سامي البطل الراحل الذي ورث عنه موهبته؟",
-      "a": "رعد",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الرمية_الملتهبة",
-      "verified": true,
-      "qid": "spacetoon-400-052"
-    },
-    {
-      "p": 400,
-      "topic": "أنمي الرياضة",
-      "q": "في «أبطال الملاعب»، من الفتى العنيد الذي رفض الانضمام في البداية ثم صار نجم الفريق؟",
-      "a": "حميدو",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/أبطال_الملاعب",
-      "verified": true,
-      "qid": "spacetoon-400-053"
-    },
-    {
-      "p": 400,
-      "topic": "أنمي الرياضة",
-      "q": "في «الرمية الملتهبة»، ما اسم ابن خالة سامي وصديقه المقرّب في الفريق؟",
-      "a": "صفوان",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الرمية_الملتهبة",
-      "verified": true,
-      "qid": "spacetoon-400-054"
-    },
-    {
-      "p": 400,
-      "topic": "أبطال وشخصيات",
-      "q": "في «عدنان ولينا»، من الصديق الأول الذي التقاه عدنان بعد مغادرة جزيرته؟",
+      "q": "من صديق عدنان الذي يتعرف إليه بعد مغادرة جزيرته؟",
       "a": "عبسي",
       "alt": [
+        "Jimsy",
         "جيمسي"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/عدنان_ولينا",
+      "topic": "عدنان ولينا",
       "verified": true,
-      "qid": "spacetoon-400-055"
+      "sourceUrl": "https://ar.wikipedia.org/wiki/عدنان_ولينا#القصة",
+      "difficultyTarget": 0.6
     },
     {
+      "qid": "spacetoon-400-902",
       "p": 400,
-      "topic": "أبطال وشخصيات",
-      "q": "في «سالي»، من مديرة المدرسة القاسية التي جعلت حياة سالي جحيمًا؟",
+      "q": "من مديرة المعهد القاسية التي تحوّل حياة سالي بعد فقدان ثروتها؟",
       "a": "الآنسة منشن",
       "alt": [
         "منشن",
-        "ماريا منشن"
+        "مينشن",
+        "Miss Minchin"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/سالي_(أنمي)",
+      "topic": "سالي",
       "verified": true,
-      "qid": "spacetoon-400-056"
+      "sourceUrl": "https://ar.wikipedia.org/wiki/سالي_(أنمي)#الآنسة_منشن",
+      "difficultyTarget": 0.6
     },
     {
+      "qid": "spacetoon-400-903",
       "p": 400,
-      "topic": "أبطال وشخصيات",
-      "q": "في «ساندي بل»، في أي بلد تعيش ساندي في بداية المسلسل؟",
-      "a": "اسكتلندا",
-      "alt": [
-        "إسكتلندا"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/ساندي_بل",
-      "verified": true,
-      "qid": "spacetoon-400-057"
-    },
-    {
-      "p": 400,
-      "topic": "أبطال وشخصيات",
-      "q": "في «دروب ريمي»، ما اسم العجوز صاحب الفرقة الجوالة الذي رافقته ريمي؟",
-      "a": "فيتاليس",
-      "alt": [
-        "العم فيتاليس"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/دروب_ريمي",
-      "verified": true,
-      "qid": "spacetoon-400-058"
-    },
-    {
-      "p": 400,
-      "topic": "أبطال وشخصيات",
-      "q": "في «المحقق كونان»، من العالم المخترع الذي يصنع لكونان أدواته؟",
-      "a": "الدكتور أغاسا",
-      "alt": [
-        "أغاسا",
-        "هيروشي أغاسا"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/المحقق_كونان",
-      "verified": true,
-      "qid": "spacetoon-400-059"
-    },
-    {
-      "p": 400,
-      "topic": "أبطال وشخصيات",
-      "q": "في «سنان»، ما اسم القندسة الصغيرة صديقة سنان؟",
-      "a": "لالا",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/سنان_(أنمي)",
-      "verified": true,
-      "qid": "spacetoon-400-060"
-    },
-    {
-      "p": 400,
-      "topic": "أبطال وشخصيات",
-      "q": "في «صقور الأرض»، ما الاسم العربي لبطل المسلسل الذي سعى لتوحيد البلاد؟",
-      "a": "عبد الرحمن",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/صقور_الأرض",
-      "verified": true,
-      "qid": "spacetoon-400-062"
-    },
-    {
-      "p": 400,
-      "topic": "أبطال وشخصيات",
-      "q": "في «أبطال الديجيتال»، ما اسم قائد المجموعة في الجزء الأول؟",
-      "a": "أمجد",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/أبطال_الديجيتال",
-      "verified": true,
-      "qid": "spacetoon-400-063"
-    },
-    {
-      "p": 400,
-      "topic": "كواكب سبيستون",
-      "q": "ما اسم كوكب سبيستون المخصص لمسلسلات الفتيات؟",
-      "a": "زمردة",
-      "alt": [
-        "كوكب زمردة"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/سبيستون",
-      "verified": true,
-      "qid": "spacetoon-400-064"
-    },
-    {
-      "p": 400,
-      "topic": "كواكب سبيستون",
-      "q": "ما اسم كوكب سبيستون المخصص للأطفال دون السادسة؟",
-      "a": "بون بون",
-      "alt": [
-        "كوكب بون بون"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/سبيستون",
-      "verified": true,
-      "qid": "spacetoon-400-065"
-    },
-    {
-      "p": 400,
-      "topic": "كواكب سبيستون",
-      "q": "في أي مكان يظهر شعار سبيستون طوال البث؟",
-      "a": "زاوية الشاشة",
-      "alt": [
-        "في زاوية الشاشة"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/سبيستون",
-      "verified": true,
-      "qid": "spacetoon-400-068"
-    },
-    {
-      "p": 400,
-      "topic": "الفضاء والروبوتات",
-      "q": "في «غرندايزر»، ما اسم الكوكب الذي فرّ منه بطل المسلسل إلى الأرض؟",
-      "a": "فليد",
-      "alt": [
-        "كوكب فليد"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/جريندايزر",
-      "verified": true,
-      "qid": "spacetoon-400-069"
-    },
-    {
-      "p": 400,
-      "topic": "الفضاء والروبوتات",
-      "q": "في «عدنان ولينا»، ما اسم المدينة الصناعية التي يحكمها الأشرار؟",
-      "a": "القلعة",
-      "alt": [
-        "إندستريا"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/عدنان_ولينا",
-      "verified": true,
-      "qid": "spacetoon-400-070"
-    },
-    {
-      "p": 400,
-      "topic": "الفضاء والروبوتات",
-      "q": "في «عدنان ولينا»، ما اسم الجزيرة التي جاءت منها لينا ويعيش فيها أهلها؟",
-      "a": "جزيرة الأمل",
-      "alt": [
-        "أرض الأمل"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/عدنان_ولينا",
-      "verified": true,
-      "qid": "spacetoon-400-071"
-    },
-    {
-      "p": 400,
-      "topic": "الفضاء والروبوتات",
-      "q": "في «غرندايزر»، ما اسم زعيم الأشرار الذي يريد السيطرة على الكون؟",
-      "a": "فيغا الكبير",
-      "alt": [
-        "الملك فيغا"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/جريندايزر",
-      "verified": true,
-      "qid": "spacetoon-400-072"
-    },
-    {
-      "p": 400,
-      "topic": "الفضاء والروبوتات",
-      "q": "في «هزيم الرعد»، ما رتبة هزيم في بداية المسلسل قبل أن يصير قائدًا؟",
-      "a": "جندي",
-      "alt": [
-        "جندي عادي"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/هزيم_الرعد",
-      "verified": true,
-      "qid": "spacetoon-400-073"
-    },
-    {
-      "p": 400,
-      "topic": "الفضاء والروبوتات",
-      "q": "في «غرندايزر»، ما اسم البطل الثاني الذي جاء من مسلسل «مازنجر» لمساعدة غرندايزر؟",
-      "a": "كوجي",
-      "alt": [
-        "كوجي كابوتو"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/جريندايزر",
-      "verified": true,
-      "qid": "spacetoon-400-074"
-    },
-    {
-      "p": 400,
-      "topic": "رحلات ومغامرات",
-      "q": "في «فلونة»، إلى أي بلد بعيد كانت العائلة مسافرة حين تحطمت سفينتها؟",
+      "q": "إلى أي بلد كانت عائلة فلونة تبحر قبل تحطم السفينة؟",
       "a": "أستراليا",
       "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/فلونة",
+      "topic": "فلونة",
       "verified": true,
-      "qid": "spacetoon-400-075"
+      "sourceUrl": "https://ar.wikipedia.org/wiki/فلونة#القصة",
+      "difficultyTarget": 0.6
     },
     {
+      "qid": "spacetoon-400-904",
       "p": 400,
-      "topic": "رحلات ومغامرات",
-      "q": "في «مغامرات سندباد»، من الصديق الفقير الذي يوزّع جرار الماء ورافق سندباد؟",
-      "a": "حسن",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/مغامرات_سندباد",
+      "q": "ما اسم الطائر المتكلم المرافق لسندباد في الدبلجة العربية؟",
+      "a": "ياسمينة",
+      "alt": [
+        "شيرا",
+        "شيرا الطائر",
+        "Shera"
+      ],
+      "topic": "سندباد",
       "verified": true,
-      "qid": "spacetoon-400-076"
+      "sourceUrl": "https://ar.wikipedia.org/wiki/مغامرات_سندباد#الشخصيات",
+      "difficultyTarget": 0.6
     },
     {
+      "qid": "spacetoon-400-905",
       "p": 400,
-      "topic": "رحلات ومغامرات",
-      "q": "في «جزيرة الكنز»، ما مهنة جون سيلفر حين انضم إلى السفينة؟",
+      "q": "ما اسم الكوكب الذي فرّ منه دوق غرندايزر إلى الأرض؟",
+      "a": "فليد",
+      "alt": [
+        "Fleed"
+      ],
+      "topic": "غرندايزر",
+      "verified": true,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Grendizer#Plot",
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "spacetoon-400-906",
+      "p": 400,
+      "q": "ما وظيفة جون سيلفر على السفينة في أنمي «جزيرة الكنز»؟",
       "a": "طباخ",
       "alt": [
-        "الطباخ"
+        "الطاهي",
+        "طباخ السفينة"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/جزيرة_الكنز_(أنمي)",
+      "topic": "جزيرة الكنز",
       "verified": true,
-      "qid": "spacetoon-400-077"
+      "sourceUrl": "https://en.wikipedia.org/wiki/Treasure_Island_(1978_TV_series)#Main_characters",
+      "difficultyTarget": 0.6
     },
     {
+      "qid": "spacetoon-400-907",
       "p": 400,
-      "topic": "رحلات ومغامرات",
-      "q": "في «جزيرة الكنز»، ما العاهة التي يُعرف بها جون سيلفر؟",
-      "a": "ساق واحدة",
+      "q": "ما اسم الكلب الوفي الذي يرافق ساندي بل؟",
+      "a": "أوليفر",
       "alt": [
-        "ساقه مبتورة",
-        "أعرج"
+        "Oliver"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/جزيرة_الكنز_(أنمي)",
+      "topic": "ساندي بل",
       "verified": true,
-      "qid": "spacetoon-400-078"
+      "sourceUrl": "https://en.wikipedia.org/wiki/Hello!_Sandybell#Plot",
+      "difficultyTarget": 0.6
     },
     {
+      "qid": "spacetoon-400-908",
       "p": 400,
-      "topic": "رحلات ومغامرات",
-      "q": "في «مغامرات سندباد»، ما اسم اللص الشاب الذي ترك اللصوص وانضم إلى سندباد؟",
-      "a": "علي بابا",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/مغامرات_سندباد",
-      "verified": true,
-      "qid": "spacetoon-400-079"
-    },
-    {
-      "p": 400,
-      "topic": "رحلات ومغامرات",
-      "q": "في «مغامرات نيلز»، ما القدرة التي اكتسبها نيلز بعد أن صغُر حجمه؟",
+      "q": "ما القدرة الجديدة التي اكتسبها نيلز حين صغّره القزم؟",
       "a": "فهم لغة الحيوانات",
       "alt": [
-        "يفهم لغة الحيوانات"
+        "التحدث مع الحيوانات",
+        "التكلم مع الحيوانات"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/مغامرات_نيلز",
+      "topic": "نيلز",
       "verified": true,
-      "qid": "spacetoon-400-080"
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Wonderful_Adventures_of_Nils_(TV_series)#Plot",
+      "difficultyTarget": 0.6
     },
     {
-      "p": 400,
-      "topic": "رحلات ومغامرات",
-      "q": "في «سالي»، في أي بلد كانت سالي تعيش مع والدها قبل سفرها؟",
-      "a": "الهند",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/سالي_(أنمي)",
-      "verified": true,
-      "qid": "spacetoon-400-081"
-    },
-    {
-      "p": 400,
-      "topic": "حيوانات ورفاق",
-      "q": "في «دروب ريمي»، ما نوع الحيوان «جوليكور» في الفرقة الجوّالة؟",
-      "a": "قرد",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/دروب_ريمي",
-      "verified": true,
-      "qid": "spacetoon-400-082"
-    },
-    {
-      "p": 400,
-      "topic": "حيوانات ورفاق",
-      "q": "في «بوكيمون»، ما اسم الفريق الشرير الذي يطارد آش ليسرق منه بوكيمونه؟",
-      "a": "فريق الروكيت",
-      "alt": [
-        "الروكيت"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/بوكيمون",
-      "verified": true,
-      "qid": "spacetoon-400-083"
-    },
-    {
-      "p": 400,
-      "topic": "حيوانات ورفاق",
-      "q": "في «سنان»، ما نوع الحيوان «بنان» صديق سنان الذي يعشق العسل؟",
-      "a": "دب",
-      "alt": [
-        "دب صغير"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/سنان_(أنمي)",
-      "verified": true,
-      "qid": "spacetoon-400-084"
-    },
-    {
-      "p": 400,
-      "topic": "حيوانات ورفاق",
-      "q": "في «سنان»، في أي غابة تدور أحداث القرية؟",
-      "a": "غابة الصنوبر",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/سنان_(أنمي)",
-      "verified": true,
-      "qid": "spacetoon-400-085"
-    },
-    {
-      "p": 400,
-      "topic": "حيوانات ورفاق",
-      "q": "في «مغامرات زينة ونحول»، من الذي أرسل نحول للبحث عن زينة بعد خروجها؟",
-      "a": "الملكة",
-      "alt": [
-        "ملكة النحل"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/مغامرات_زينة_ونحول",
-      "verified": true,
-      "qid": "spacetoon-400-086"
-    },
-    {
-      "p": 400,
-      "topic": "حيوانات ورفاق",
-      "q": "في «فلونة»، ما الحيوانان اللذان أصرّت فلونة على اصطحابهما إلى الجزيرة؟",
-      "a": "الماعز",
-      "alt": [
-        "المعزتان",
-        "ماعزتان"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/فلونة",
-      "verified": true,
-      "qid": "spacetoon-400-087"
-    },
-    {
-      "p": 400,
-      "topic": "أدوات وأسلحة",
-      "q": "في «المحقق كونان»، ما اسم المنظمة التي أعطت سينشي العقار وقلبت حياته؟",
-      "a": "المنظمة السوداء",
-      "alt": [
-        "الرجال ذوو الثياب السوداء"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/المحقق_كونان",
-      "verified": true,
-      "qid": "spacetoon-400-088"
-    },
-    {
-      "p": 400,
-      "topic": "أدوات وأسلحة",
-      "q": "في «أبطال الديجيتال»، ماذا يُسمّى انتقال المخلوق الرقمي إلى شكل أقوى؟",
-      "a": "التطوّر",
-      "alt": [
-        "التطور"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/أبطال_الديجيتال",
-      "verified": true,
-      "qid": "spacetoon-400-089"
-    },
-    {
-      "p": 400,
-      "topic": "أدوات وأسلحة",
-      "q": "في «غرندايزر»، ماذا يُسمّى الوحش الطائر الذي يرسله الأعداء في كل حلقة؟",
-      "a": "الصحن المتوحش",
-      "alt": [
-        "الصحون المتوحشة"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/جريندايزر",
-      "verified": true,
-      "qid": "spacetoon-400-090"
-    },
-    {
-      "p": 400,
-      "topic": "أدوات وأسلحة",
-      "q": "في «صقور الأرض»، ما السلاح التقليدي الذي يقاتل به المحاربون؟",
-      "a": "السيف",
-      "alt": [
-        "السيوف"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/صقور_الأرض",
-      "verified": true,
-      "qid": "spacetoon-400-091"
-    },
-    {
-      "p": 400,
-      "topic": "أدوات وأسلحة",
-      "q": "في «مغامرات ساسوكي»، ما الفن القتالي الذي يتقنه ساسوكي؟",
-      "a": "النينجا",
-      "alt": [
-        "فن النينجا",
-        "النينجوتسو"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/مغامرات_ساسوكي",
-      "verified": true,
-      "qid": "spacetoon-400-092"
-    },
-    {
-      "p": 400,
-      "topic": "أسماء الدبلجة",
-      "q": "ما الاسم الذي حملته بطلة مسلسل «سالي» في الرواية الأصلية؟",
-      "a": "سارة",
-      "alt": [
-        "سارا",
-        "سارة كروي"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/سالي_(أنمي)",
-      "verified": true,
-      "qid": "spacetoon-400-093"
-    },
-    {
-      "p": 400,
-      "topic": "أسماء الدبلجة",
-      "q": "في «فلونة»، ما الرواية العالمية التي اقتُبس منها المسلسل؟",
-      "a": "عائلة روبنسون السويسرية",
-      "alt": [
-        "روبنسون السويسرية"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/فلونة",
-      "verified": true,
-      "qid": "spacetoon-400-094"
-    },
-    {
-      "p": 400,
-      "topic": "أسماء الدبلجة",
-      "q": "في «سالي»، ما الرواية التي اقتُبس منها المسلسل؟",
-      "a": "الأميرة الصغيرة",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/سالي_(أنمي)",
-      "verified": true,
-      "qid": "spacetoon-400-095"
-    },
-    {
-      "p": 400,
-      "topic": "رحلات ومغامرات",
-      "q": "في «مغامرات سندباد»، ما اسم العم الكبير المولع بالمغامرات الذي رافق سندباد؟",
-      "a": "علاء الدين",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/مغامرات_سندباد",
-      "verified": true,
-      "qid": "spacetoon-400-096"
-    },
-    {
-      "p": 400,
-      "topic": "أنمي الرياضة",
-      "q": "في «سلام دانك»، ما الذي دفع البطل إلى دخول فريق المدرسة أول مرة؟",
-      "a": "إعجابه بفتاة",
-      "alt": [
-        "حبّه لفتاة",
-        "ليعجب فتاة"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/سلام_دانك",
-      "verified": true,
-      "qid": "spacetoon-400-097"
-    },
-    {
-      "p": 400,
-      "topic": "أبطال وشخصيات",
-      "q": "في «سالي»، ما مصدر الثروة التي تركها والدها وأعادت إليها حياتها؟",
-      "a": "مناجم الألماس",
-      "alt": [
-        "مناجم ألماس",
-        "الألماس"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/سالي_(أنمي)",
-      "verified": true,
-      "qid": "spacetoon-400-098"
-    },
-    {
-      "p": 400,
-      "topic": "أنمي الرياضة",
-      "q": "في «كابتن ماجد»، ما العبارة الشهيرة التي يصف بها ماجد كرته؟",
-      "a": "الكرة صديقتي",
-      "alt": [
-        "الكرة هي صديقتي"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/كابتن_ماجد",
-      "verified": true,
-      "qid": "spacetoon-400-099"
-    },
-    {
+      "qid": "spacetoon-600-901",
       "p": 600,
-      "topic": "الفضاء والروبوتات",
-      "q": "في «عدنان ولينا»، ما اسم الجزيرة التي عاش فيها عدنان مع جده؟",
-      "a": "الجزيرة المفقودة",
-      "alt": [
-        "الجزيرة الباقية"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/عدنان_ولينا",
-      "verified": true,
-      "qid": "spacetoon-600-049"
-    },
-    {
-      "p": 600,
-      "topic": "الفضاء والروبوتات",
-      "q": "في «عدنان ولينا»، ما القدرة الغريبة التي تتمتع بها لينا؟",
+      "q": "ما القدرة التي تتيح للينا التواصل ذهنيًا مع جدّها والطيور؟",
       "a": "التخاطر",
       "alt": [
-        "قراءة الأفكار",
-        "التخاطر عن بعد"
+        "التواصل الذهني"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/عدنان_ولينا",
+      "topic": "عدنان ولينا",
       "verified": true,
-      "qid": "spacetoon-600-050"
+      "sourceUrl": "https://en.wikipedia.org/wiki/Future_Boy_Conan#Characters",
+      "difficultyTarget": 0.4
     },
     {
+      "qid": "spacetoon-600-902",
       "p": 600,
-      "topic": "الفضاء والروبوتات",
-      "q": "في «عدنان ولينا»، من زعيم المدينة الصناعية الطامع بالسيطرة على الطاقة الشمسية؟",
-      "a": "علام",
-      "alt": [
-        "ليبكا"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/عدنان_ولينا",
-      "verified": true,
-      "qid": "spacetoon-600-051"
-    },
-    {
-      "p": 600,
-      "topic": "الفضاء والروبوتات",
-      "q": "في «عدنان ولينا»، من العالم جدّ لينا الذي طوّر الطاقة الشمسية؟",
-      "a": "الدكتور رامي",
-      "alt": [
-        "رامي",
-        "لاو"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/عدنان_ولينا",
-      "verified": true,
-      "qid": "spacetoon-600-052"
-    },
-    {
-      "p": 600,
-      "topic": "الفضاء والروبوتات",
-      "q": "في «غرندايزر»، ما اسم العالم الذي عثر على بطل المسلسل وتبنّاه؟",
-      "a": "الدكتور آمون",
-      "alt": [
-        "آمون",
-        "أمون"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/جريندايزر",
-      "verified": true,
-      "qid": "spacetoon-600-053"
-    },
-    {
-      "p": 600,
-      "topic": "الفضاء والروبوتات",
-      "q": "في «غرندايزر»، ما اسم شقيقة البطل التي انضمت إلى فريق الأبطال؟",
-      "a": "ماريا",
-      "alt": [
-        "ماريا فليد"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/جريندايزر",
-      "verified": true,
-      "qid": "spacetoon-600-054"
-    },
-    {
-      "p": 600,
-      "topic": "الفضاء والروبوتات",
-      "q": "في «غرندايزر»، أين يعمل قائد غرندايزر في حياته اليومية بين المعارك؟",
-      "a": "في مزرعة",
-      "alt": [
-        "مزرعة",
-        "في المزرعة"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/جريندايزر",
-      "verified": true,
-      "qid": "spacetoon-600-055"
-    },
-    {
-      "p": 600,
-      "topic": "الفضاء والروبوتات",
-      "q": "في «هزيم الرعد»، ما اسم المخطط الحربي العبقري الذي رافق هزيم؟",
-      "a": "شاهين",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/هزيم_الرعد",
-      "verified": true,
-      "qid": "spacetoon-600-056"
-    },
-    {
-      "p": 600,
-      "topic": "الفضاء والروبوتات",
-      "q": "في «هزيم الرعد»، ما اسم القائدة التي اكتشفت موهبة هزيم ورقّته؟",
-      "a": "روجينا",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/هزيم_الرعد",
-      "verified": true,
-      "qid": "spacetoon-600-057"
-    },
-    {
-      "p": 600,
-      "topic": "أبطال وشخصيات",
-      "q": "في «المحقق كونان»، ما لقب المتحري موري الذي صار يحلّ القضايا وهو نائم؟",
-      "a": "المحقق النائم",
-      "alt": [
-        "المتحري النائم"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/المحقق_كونان",
-      "verified": true,
-      "qid": "spacetoon-600-058"
-    },
-    {
-      "p": 600,
-      "topic": "أبطال وشخصيات",
-      "q": "في «المحقق كونان»، ما اسم فريق الأطفال الذي انضم إليه كونان في مدرسته؟",
-      "a": "المتحرون الصغار",
-      "alt": [
-        "فريق المتحرين الصغار",
-        "المحققون الصغار"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/المحقق_كونان",
-      "verified": true,
-      "qid": "spacetoon-600-059"
-    },
-    {
-      "p": 600,
-      "topic": "أبطال وشخصيات",
-      "q": "في «صقور الأرض»، من الخصم الأكبر الذي يريد السيطرة على البلاد بأي ثمن؟",
-      "a": "تسو تسو",
-      "alt": [
-        "تساو تساو"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/صقور_الأرض",
-      "verified": true,
-      "qid": "spacetoon-600-060"
-    },
-    {
-      "p": 600,
-      "topic": "أبطال وشخصيات",
-      "q": "في «صقور الأرض»، ما اسم المخطط البارع الذي استعان به بطل المسلسل؟",
-      "a": "برهان",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/صقور_الأرض",
-      "verified": true,
-      "qid": "spacetoon-600-061"
-    },
-    {
-      "p": 600,
-      "topic": "أبطال وشخصيات",
-      "q": "في «سالي»، ما اسم الفتاة الصغيرة التي تكدح في المطبخ وصارت أعزّ صديقات سالي؟",
+      "q": "من صديقة سالي التي تعمل في المعهد وتأخذها معها بعد استعادة ثروتها؟",
       "a": "فيكي",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/سالي_(أنمي)",
-      "verified": true,
-      "qid": "spacetoon-600-062"
-    },
-    {
-      "p": 600,
-      "topic": "أبطال وشخصيات",
-      "q": "في «ساندي بل»، ما اسم الشاب الذي أحبّته ساندي وحلم بأن يصير رسّامًا؟",
-      "a": "مارك",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/ساندي_بل",
-      "verified": true,
-      "qid": "spacetoon-600-063"
-    },
-    {
-      "p": 600,
-      "topic": "أبطال وشخصيات",
-      "q": "في «ساندي بل»، ما اسم الفتاة الأرستقراطية المتعجرفة التي تنافس ساندي؟",
-      "a": "الآنسة كيتي",
       "alt": [
-        "كيتي"
+        "بيكي",
+        "Becky"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/ساندي_بل",
+      "topic": "سالي",
       "verified": true,
-      "qid": "spacetoon-600-064"
+      "sourceUrl": "https://ar.wikipedia.org/wiki/سالي_(أنمي)#فيكي",
+      "difficultyTarget": 0.4
     },
     {
+      "qid": "spacetoon-600-903",
       "p": 600,
-      "topic": "أبطال وشخصيات",
-      "q": "في «دروب ريمي»، ما اسم الرجل الشرير الذي استغلّ الأطفال المشرّدين؟",
-      "a": "كاسبر",
-      "alt": [
-        "غاسبر"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/دروب_ريمي",
-      "verified": true,
-      "qid": "spacetoon-600-065"
-    },
-    {
-      "p": 600,
-      "topic": "أبطال وشخصيات",
-      "q": "في «فلونة»، ما اسم الأخ الأكبر لفلونة الذي يحلم بالموسيقى؟",
+      "q": "ما اسم أخي فلونة الأكبر الذي يحلم بأن يصبح موسيقيًا؟",
       "a": "فرانس",
       "alt": [
-        "فرانز"
+        "فرانز",
+        "Franz"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/فلونة",
+      "topic": "فلونة",
       "verified": true,
-      "qid": "spacetoon-600-066"
+      "sourceUrl": "https://ar.wikipedia.org/wiki/فلونة#شخصيات_المسلسل",
+      "difficultyTarget": 0.4
     },
     {
+      "qid": "spacetoon-600-904",
       "p": 600,
-      "topic": "أبطال وشخصيات",
-      "q": "في «سنان»، ما اسم والد سنان الذي يساعد أهل القرية بخبرته؟",
-      "a": "رحمون",
+      "q": "من اللص الذي يترك رفاقه وينضم إلى سندباد في مغامراته؟",
+      "a": "علي بابا",
       "alt": [
-        "العم رحمون"
+        "Ali Baba"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/سنان_(أنمي)",
+      "topic": "سندباد",
       "verified": true,
-      "qid": "spacetoon-600-067"
+      "sourceUrl": "https://ar.wikipedia.org/wiki/مغامرات_سندباد#الشخصيات",
+      "difficultyTarget": 0.4
     },
     {
+      "qid": "spacetoon-600-905",
       "p": 600,
-      "topic": "أبطال وشخصيات",
-      "q": "في «سنان»، ما اسم طبيب القرية وصديق والد سنان؟",
-      "a": "نعمان",
+      "q": "من حليف غرندايزر الذي صنع المركبة الصغيرة «تيفو»؟",
+      "a": "كوجي كابوتو",
       "alt": [
-        "الدكتور نعمان"
+        "كوجي",
+        "Koji Kabuto"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/سنان_(أنمي)",
+      "topic": "غرندايزر",
       "verified": true,
-      "qid": "spacetoon-600-068"
+      "sourceUrl": "https://en.wikipedia.org/wiki/Grendizer#Plot",
+      "difficultyTarget": 0.4
     },
     {
+      "qid": "spacetoon-600-906",
       "p": 600,
-      "topic": "الفضاء والروبوتات",
-      "q": "في «مغامرات حنين»، من أين جاءت حنين إلى الأرض؟",
-      "a": "من كوكب بعيد",
-      "alt": [
-        "من كوكب آخر"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/مغامرات_حنين",
-      "verified": true,
-      "qid": "spacetoon-600-069"
-    },
-    {
-      "p": 600,
-      "topic": "أنمي الرياضة",
-      "q": "في «أبطال الملاعب»، ما اسم التسديدة التي ابتكرها نجم الفريق وتحمل اسم طائر جارح؟",
-      "a": "ضربة النسر",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/أبطال_الملاعب",
-      "verified": true,
-      "qid": "spacetoon-600-070"
-    },
-    {
-      "p": 600,
-      "topic": "أنمي الرياضة",
-      "q": "في «الرمية الملتهبة»، ما اسم الفريق الذي يلعب فيه سامي؟",
-      "a": "فريق البراعم",
-      "alt": [
-        "البراعم"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الرمية_الملتهبة",
-      "verified": true,
-      "qid": "spacetoon-600-071"
-    },
-    {
-      "p": 600,
-      "topic": "أنمي الرياضة",
-      "q": "في «الرمية الملتهبة»، ما اسم منافس سامي الغني الذي صار من أقرب أصدقائه؟",
-      "a": "وائل",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الرمية_الملتهبة",
-      "verified": true,
-      "qid": "spacetoon-600-072"
-    },
-    {
-      "p": 600,
-      "topic": "أنمي الرياضة",
-      "q": "في «كابتن ماجد»، ما اسم الرجل البرازيلي الذي درّب ماجد وصار مثله الأعلى؟",
-      "a": "رؤوف",
-      "alt": [
-        "روبرتو"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/كابتن_ماجد",
-      "verified": true,
-      "qid": "spacetoon-600-073"
-    },
-    {
-      "p": 600,
-      "topic": "أنمي الرياضة",
-      "q": "في «كابتن رابح»، ما اسم الطبيب اللاعب السابق الذي اكتشف موهبة رابح؟",
-      "a": "روبسون",
-      "alt": [
-        "الدكتور روبسون"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/كابتن_رابح",
-      "verified": true,
-      "qid": "spacetoon-600-074"
-    },
-    {
-      "p": 600,
-      "topic": "كواكب سبيستون",
-      "q": "كم كوكبًا خصّصت سبيستون لبرامجها عند انطلاقها؟",
-      "a": "عشرة",
-      "alt": [
-        "10",
-        "عشرة كواكب"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/سبيستون",
-      "verified": true,
-      "qid": "spacetoon-600-077"
-    },
-    {
-      "p": 600,
-      "topic": "كواكب سبيستون",
-      "q": "ما اسم القناة الشقيقة التي أغلقتها سبيستون مطلع عام 2011؟",
-      "a": "سبيستون الإنجليزية",
-      "alt": [
-        "سبيس تون الإنجليزية"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/سبيستون",
-      "verified": true,
-      "qid": "spacetoon-600-079"
-    },
-    {
-      "p": 600,
-      "topic": "رحلات ومغامرات",
-      "q": "في «جزيرة الكنز»، ما اسم الببغاء الذي يقف على كتف جون سيلفر؟",
-      "a": "القبطان فلينت",
-      "alt": [
-        "فلينت"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/جزيرة_الكنز_(أنمي)",
-      "verified": true,
-      "qid": "spacetoon-600-080"
-    },
-    {
-      "p": 600,
-      "topic": "رحلات ومغامرات",
-      "q": "في «جزيرة الكنز»، ما اسم الطبيب الذي رافق جيم في رحلته؟",
-      "a": "ليفزي",
-      "alt": [
-        "الدكتور ليفزي"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/جزيرة_الكنز_(أنمي)",
-      "verified": true,
-      "qid": "spacetoon-600-081"
-    },
-    {
-      "p": 600,
-      "topic": "رحلات ومغامرات",
-      "q": "في «مغامرات نيلز»، ما اسم الطائر الأبيض الذي حمل نيلز على ظهره؟",
-      "a": "مورتن",
-      "alt": [
-        "مورتون"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/مغامرات_نيلز",
-      "verified": true,
-      "qid": "spacetoon-600-082"
-    },
-    {
-      "p": 600,
-      "topic": "رحلات ومغامرات",
-      "q": "في «فلونة»، ما اسم أصغر أفراد العائلة الذي لا يفارق حيوانه الأليف؟",
-      "a": "جاك",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/فلونة",
-      "verified": true,
-      "qid": "spacetoon-600-083"
-    },
-    {
-      "p": 600,
-      "topic": "رحلات ومغامرات",
-      "q": "في «دروب ريمي»، في أي مدينة عثر جيروم على ريمي وهي رضيعة؟",
-      "a": "باريس",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/دروب_ريمي",
-      "verified": true,
-      "qid": "spacetoon-600-084"
-    },
-    {
-      "p": 600,
-      "topic": "رحلات ومغامرات",
-      "q": "في «دروب ريمي»، ما الآلة الموسيقية التي يبرع فيها أكبر الصبية المشرّدين؟",
-      "a": "الكمان",
-      "alt": [
-        "كمان"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/دروب_ريمي",
-      "verified": true,
-      "qid": "spacetoon-600-085"
-    },
-    {
-      "p": 600,
-      "topic": "رحلات ومغامرات",
-      "q": "في «سالي»، ما اسم أصغر تلميذات المعهد التي كانت تناديها «ماما سالي»؟",
-      "a": "لوتي",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/سالي_(أنمي)",
-      "verified": true,
-      "qid": "spacetoon-600-086"
-    },
-    {
-      "p": 600,
-      "topic": "حيوانات ورفاق",
-      "q": "في «مغامرات زينة ونحول»، ما نوع الحشرة «فرفور» صديق زينة الحكيم؟",
-      "a": "جندب",
-      "alt": [
-        "الجندب"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/مغامرات_زينة_ونحول",
-      "verified": true,
-      "qid": "spacetoon-600-087"
-    },
-    {
-      "p": 600,
-      "topic": "حيوانات ورفاق",
-      "q": "في «مغامرات نيلز»، ما اسم رفيق نيلز الصغير الذي اختبأ في قبعته؟",
-      "a": "رات",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/مغامرات_نيلز",
-      "verified": true,
-      "qid": "spacetoon-600-088"
-    },
-    {
-      "p": 600,
-      "topic": "حيوانات ورفاق",
-      "q": "في «ساندي بل»، ما نوع الزهرة التي زرعتها ساندي في حديقتها السرية؟",
-      "a": "النرجس",
-      "alt": [
-        "نرجس أبيض",
-        "النرجس الأبيض"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/ساندي_بل",
-      "verified": true,
-      "qid": "spacetoon-600-089"
-    },
-    {
-      "p": 600,
-      "topic": "حيوانات ورفاق",
-      "q": "في «دروب ريمي»، كم كلبًا كان في الفرقة الجوّالة؟",
-      "a": "ثلاثة",
-      "alt": [
-        "3",
-        "ثلاثة كلاب"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/دروب_ريمي",
-      "verified": true,
-      "qid": "spacetoon-600-090"
-    },
-    {
-      "p": 600,
-      "topic": "أدوات وأسلحة",
-      "q": "في «أبطال الديجيتال»، ما اسم القلادة التي يحملها قائد المجموعة؟",
-      "a": "قلادة الشجاعة",
-      "alt": [
-        "الشجاعة"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/أبطال_الديجيتال",
-      "verified": true,
-      "qid": "spacetoon-600-091"
-    },
-    {
-      "p": 600,
-      "topic": "أدوات وأسلحة",
-      "q": "في «أبطال الديجيتال»، ما القلادة التي يحملها يامن صاحب الطبع الهادئ؟",
-      "a": "قلادة الصداقة",
-      "alt": [
-        "الصداقة"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/أبطال_الديجيتال",
-      "verified": true,
-      "qid": "spacetoon-600-092"
-    },
-    {
-      "p": 600,
-      "topic": "أدوات وأسلحة",
-      "q": "في «هزيم الرعد»، ما اسم سفينة هزيم الحربية التي تحمل قرنين معدنيين؟",
-      "a": "الصاعقة",
-      "alt": [
-        "سفينة الصاعقة"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/هزيم_الرعد",
-      "verified": true,
-      "qid": "spacetoon-600-093"
-    },
-    {
-      "p": 600,
-      "topic": "أدوات وأسلحة",
-      "q": "في «غرندايزر»، ما اسم السلاح الذي أتاح لغرندايزر الغوص تحت الماء؟",
-      "a": "السلاح الملاحي",
-      "alt": [
-        "السلاح المائي",
-        "مارين سبيزر"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/جريندايزر",
-      "verified": true,
-      "qid": "spacetoon-600-094"
-    },
-    {
-      "p": 600,
-      "topic": "أسماء الدبلجة",
-      "q": "في «عدنان ولينا»، ما الاسم الياباني الأصلي لشخصية لينا؟",
-      "a": "لانا",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/عدنان_ولينا",
-      "verified": true,
-      "qid": "spacetoon-600-095"
-    },
-    {
-      "p": 600,
-      "topic": "أسماء الدبلجة",
-      "q": "في «صقور الأرض»، ما الاسم الذي أعيد عرض المسلسل به على سبيستون؟",
-      "a": "أسياد الشرق",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/صقور_الأرض",
-      "verified": true,
-      "qid": "spacetoon-600-096"
-    },
-    {
-      "p": 600,
-      "topic": "حيوانات ورفاق",
-      "q": "في «مغامرات سندباد»، ما اسم الطائر العملاق الذي واجهه سندباد في رحلاته؟",
-      "a": "العنقاء",
-      "alt": [
-        "طائر العنقاء",
-        "الرخ"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/مغامرات_سندباد",
-      "verified": true,
-      "qid": "spacetoon-600-097"
-    },
-    {
-      "p": 600,
-      "topic": "رحلات ومغامرات",
-      "q": "في «مغامرات نيلز»، في سماء أي بلد جرت رحلة نيلز مع السرب؟",
-      "a": "السويد",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/مغامرات_نيلز",
-      "verified": true,
-      "qid": "spacetoon-600-098"
-    },
-    {
-      "p": 600,
-      "topic": "رحلات ومغامرات",
-      "q": "في «سالي»، أين صارت تنام سالي بعد أن فقدت غرفتها الفاخرة؟",
-      "a": "العلّية",
-      "alt": [
-        "غرفة السطح",
-        "في العلية"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/سالي_(أنمي)",
-      "verified": true,
-      "qid": "spacetoon-600-099"
-    },
-    {
-      "p": 800,
-      "topic": "أسماء الدبلجة",
-      "q": "اختير اسم «ماجد» في الدبلجة العربية تكريمًا للاعب سعودي شهير، من هو؟",
-      "a": "ماجد عبد الله",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/كابتن_ماجد",
-      "verified": true,
-      "qid": "spacetoon-800-049"
-    },
-    {
-      "p": 800,
-      "topic": "أسماء الدبلجة",
-      "q": "في الدبلجة العربية لـ«عدنان ولينا»، ما العنوان الرسمي الذي حمله المسلسل؟",
-      "a": "مغامرات عدنان",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/عدنان_ولينا",
-      "verified": true,
-      "qid": "spacetoon-800-050"
-    },
-    {
-      "p": 800,
-      "topic": "أسماء الدبلجة",
-      "q": "في «المحقق كونان»، ما الاسم الذي حمله والد ران المتحري في الدبلجة العربية؟",
-      "a": "توغو موري",
-      "alt": [
-        "توغو"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/المحقق_كونان",
-      "verified": true,
-      "qid": "spacetoon-800-051"
-    },
-    {
-      "p": 800,
-      "topic": "أسماء الدبلجة",
-      "q": "في «كابتن ماجد»، ما اسم المنتخب الذي توّج باللقب في النسخة العربية؟",
-      "a": "منتخب العرب",
-      "alt": [
-        "العرب"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/كابتن_ماجد",
-      "verified": true,
-      "qid": "spacetoon-800-052"
-    },
-    {
-      "p": 800,
-      "topic": "أسماء الدبلجة",
-      "q": "في «كابتن ماجد»، ما اسم المدينة التي انتقل إليها ماجد في الدبلجة العربية؟",
-      "a": "مدينة المجد",
-      "alt": [
-        "المجد"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/كابتن_ماجد",
-      "verified": true,
-      "qid": "spacetoon-800-053"
-    },
-    {
-      "p": 800,
-      "topic": "كواكب سبيستون",
-      "q": "ما الشعار الذي حمله كوكب أكشن في سبيستون؟",
-      "a": "كوكب الإثارة والغموض",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/سبيستون",
-      "verified": true,
-      "qid": "spacetoon-800-054"
-    },
-    {
-      "p": 800,
-      "topic": "كواكب سبيستون",
-      "q": "ما الشعار الذي حمله كوكب سبيستون المخصص للأطفال الصغار؟",
-      "a": "كوكب الأبطال الكبار",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/سبيستون",
-      "verified": true,
-      "qid": "spacetoon-800-055"
-    },
-    {
-      "p": 800,
-      "topic": "كواكب سبيستون",
-      "q": "ما الشعار الذي حمله كوكب مغامرات في سبيستون؟",
-      "a": "كوكب الخيال والتشويق",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/سبيستون",
-      "verified": true,
-      "qid": "spacetoon-800-056"
-    },
-    {
-      "p": 800,
-      "topic": "كواكب سبيستون",
-      "q": "ما الشعار الذي حمله الكوكب الذي يعرض الألعاب الرياضية في سبيستون؟",
-      "a": "كوكب التحدي والقوة",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/سبيستون",
-      "verified": true,
-      "qid": "spacetoon-800-057"
-    },
-    {
-      "p": 800,
-      "topic": "كواكب سبيستون",
-      "q": "ما الشعار الذي حمله كوكب أفلام في سبيستون؟",
-      "a": "كوكب من كل الألوان",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/سبيستون",
-      "verified": true,
-      "qid": "spacetoon-800-058"
-    },
-    {
-      "p": 800,
-      "topic": "الفضاء والروبوتات",
-      "q": "في «غرندايزر»، ما اسم قاعدة الأعداء على سطح القمر؟",
-      "a": "جمجمة القمر",
-      "alt": [
-        "سكل مون"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/جريندايزر",
-      "verified": true,
-      "qid": "spacetoon-800-059"
-    },
-    {
-      "p": 800,
-      "topic": "الفضاء والروبوتات",
-      "q": "في «غرندايزر»، ما اسم الصحن الطائر الصغير الذي صنعه بطل «مازنجر» بنفسه؟",
-      "a": "التيفو",
-      "alt": [
-        "تيفو",
-        "تي إف أو"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/جريندايزر",
-      "verified": true,
-      "qid": "spacetoon-800-060"
-    },
-    {
-      "p": 800,
-      "topic": "الفضاء والروبوتات",
-      "q": "في «غرندايزر»، على أي جبل هبط غرندايزر حين وصل إلى الأرض؟",
-      "a": "جبل فوجي",
-      "alt": [
-        "فوجي"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/جريندايزر",
-      "verified": true,
-      "qid": "spacetoon-800-061"
-    },
-    {
-      "p": 800,
-      "topic": "الفضاء والروبوتات",
-      "q": "في «غرندايزر»، ما اسم الساعد الأيمن لزعيم الأشرار؟",
-      "a": "جاندال",
-      "alt": [
-        "غاندال"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/جريندايزر",
-      "verified": true,
-      "qid": "spacetoon-800-062"
-    },
-    {
-      "p": 800,
-      "topic": "الفضاء والروبوتات",
-      "q": "في «عدنان ولينا»، ما اسم قبطان السفينة الذي انقلب على حكّام المدينة وصار حليفًا لعدنان؟",
-      "a": "نامق",
-      "alt": [
-        "دايس"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/عدنان_ولينا",
-      "verified": true,
-      "qid": "spacetoon-800-063"
-    },
-    {
-      "p": 800,
-      "topic": "الفضاء والروبوتات",
-      "q": "في «عدنان ولينا»، ما اسم الضابطة التي تخلّت عن جيش الأشرار وانحازت إلى عدنان؟",
-      "a": "سميرة",
-      "alt": [
-        "مونسلي"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/عدنان_ولينا",
-      "verified": true,
-      "qid": "spacetoon-800-064"
-    },
-    {
-      "p": 800,
-      "topic": "الفضاء والروبوتات",
-      "q": "في «هزيم الرعد»، ما اسم الإمبراطورية التي بدأ فيها هزيم جنديًا ثم صار حاكمها؟",
-      "a": "قوجو",
-      "alt": [
-        "كوجو"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/هزيم_الرعد",
-      "verified": true,
-      "qid": "spacetoon-800-065"
-    },
-    {
-      "p": 800,
-      "topic": "الفضاء والروبوتات",
-      "q": "في «هزيم الرعد»، ما اسم المدفع الخارق الذي يدمّر أسطولًا كاملًا بطلقة؟",
-      "a": "مدفع الرعد",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/هزيم_الرعد",
-      "verified": true,
-      "qid": "spacetoon-800-066"
-    },
-    {
-      "p": 800,
-      "topic": "الفضاء والروبوتات",
-      "q": "في «هزيم الرعد»، ما اسم الكوكب التجاري الذي أُرسل هزيم ليحكمه؟",
-      "a": "ناكيرو",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/هزيم_الرعد",
-      "verified": true,
-      "qid": "spacetoon-800-067"
-    },
-    {
-      "p": 800,
-      "topic": "حيوانات ورفاق",
-      "q": "في «أبطال الديجيتال»، ما اسم المخلوق الرقمي المرافق ليامن؟",
-      "a": "كاسر",
-      "alt": [
-        "غابومون"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/أبطال_الديجيتال",
-      "verified": true,
-      "qid": "spacetoon-800-068"
-    },
-    {
-      "p": 800,
-      "topic": "حيوانات ورفاق",
-      "q": "في «أبطال الديجيتال»، ما اسم المخلوق الرقمي المرافق لزين أكبر الأبطال سنًا؟",
-      "a": "بحر",
-      "alt": [
-        "غومامون"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/أبطال_الديجيتال",
-      "verified": true,
-      "qid": "spacetoon-800-069"
-    },
-    {
-      "p": 800,
-      "topic": "أدوات وأسلحة",
-      "q": "في «غرندايزر»، ما اسم السلاح الذي يتيح لغرندايزر الحفر تحت الأرض؟",
-      "a": "السلاح الثاقب",
-      "alt": [
-        "دريل سبيزر"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/جريندايزر",
-      "verified": true,
-      "qid": "spacetoon-800-070"
-    },
-    {
-      "p": 800,
-      "topic": "أدوات وأسلحة",
-      "q": "في «غرندايزر»، ما اسم المركبة التي صنعها المركز لبطل «مازنجر» بعد تحطم مركبته؟",
-      "a": "سبيزر المزدوج",
-      "alt": [
-        "الطبق المزدوج"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/جريندايزر",
-      "verified": true,
-      "qid": "spacetoon-800-071"
-    },
-    {
-      "p": 800,
-      "topic": "أدوات وأسلحة",
-      "q": "في «المحقق كونان»، ما الأداة التي يستخدمها كونان ليتكلم بصوت والد ران؟",
-      "a": "ربطة العنق",
-      "alt": [
-        "ربطة عنق",
-        "البابيون"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/المحقق_كونان",
-      "verified": true,
-      "qid": "spacetoon-800-072"
-    },
-    {
-      "p": 800,
-      "topic": "أبطال وشخصيات",
-      "q": "في «جزيرة الكنز»، ما اسم النزل الذي تديره أم جيم؟",
-      "a": "الأميرال بنبو",
-      "alt": [
-        "نزل الأميرال بنبو"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/جزيرة_الكنز_(أنمي)",
-      "verified": true,
-      "qid": "spacetoon-800-073"
-    },
-    {
-      "p": 800,
-      "topic": "أبطال وشخصيات",
-      "q": "في «جزيرة الكنز»، ما اسم قبطان السفينة الصارم الذي رافق الرحلة؟",
+      "q": "ما اسم القبطان الصارم المسؤول عن رحلة السفينة في أنمي «جزيرة الكنز»؟",
       "a": "سموليت",
       "alt": [
-        "سمولت",
-        "القبطان سموليت"
+        "الكابتن سموليت",
+        "Smollett"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/جزيرة_الكنز_(أنمي)",
+      "topic": "جزيرة الكنز",
       "verified": true,
-      "qid": "spacetoon-800-074"
+      "sourceUrl": "https://en.wikipedia.org/wiki/Treasure_Island_(1978_TV_series)#Main_characters",
+      "difficultyTarget": 0.4
     },
     {
+      "qid": "spacetoon-600-907",
+      "p": 600,
+      "q": "في أي بلد تبدأ حياة ساندي بل قبل انتقالها إلى لندن؟",
+      "a": "اسكتلندا",
+      "alt": [
+        "إسكتلندا",
+        "Scotland"
+      ],
+      "topic": "ساندي بل",
+      "verified": true,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Hello!_Sandybell#Plot",
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "spacetoon-600-908",
+      "p": 600,
+      "q": "ما اسم إوزة المزرعة البيضاء التي تحمل نيلز في الرحلة؟",
+      "a": "مورتن",
+      "alt": [
+        "مورتون",
+        "Morten"
+      ],
+      "topic": "نيلز",
+      "verified": true,
+      "sourceUrl": "https://ar.wikipedia.org/wiki/مغامرات_نيلز#الشخصيات",
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "spacetoon-800-901",
       "p": 800,
-      "topic": "أبطال وشخصيات",
-      "q": "في «سالي»، ما اسم صديق والدها الذي أعاد إليها ثروتها؟",
+      "q": "أي مصدر للطاقة يسعى علام إلى انتزاع سرّه من جد لينا؟",
+      "a": "الطاقة الشمسية",
+      "alt": [
+        "طاقة الشمس"
+      ],
+      "topic": "عدنان ولينا",
+      "verified": true,
+      "sourceUrl": "https://ar.wikipedia.org/wiki/عدنان_ولينا#القصة",
+      "difficultyTarget": 0.25
+    },
+    {
+      "qid": "spacetoon-800-902",
+      "p": 800,
+      "q": "من صديق والد سالي الذي يبحث عنها ويعيد إليها نصيبها من الثروة؟",
       "a": "كريس فورد",
       "alt": [
-        "مستر كريف",
-        "كريف"
+        "كريسفورد",
+        "توماس كريسفورد",
+        "Carrisford"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/سالي_(أنمي)",
+      "topic": "سالي",
       "verified": true,
-      "qid": "spacetoon-800-075"
+      "sourceUrl": "https://ar.wikipedia.org/wiki/سالي_(أنمي)#توماس_كريسفورس",
+      "difficultyTarget": 0.25
     },
     {
+      "qid": "spacetoon-800-903",
       "p": 800,
-      "topic": "أبطال وشخصيات",
-      "q": "في «ساندي بل»، ما اسم الأستاذ الذي ربّى ساندي على أنها ابنته؟",
-      "a": "كريستي",
+      "q": "ما اسم البحار العجوز الذي يساعد عائلة فلونة على صنع قارب النجاة؟",
+      "a": "مورتون",
       "alt": [
-        "الأستاذ كريستي"
+        "السيد مورتون",
+        "Morton"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/ساندي_بل",
+      "topic": "فلونة",
       "verified": true,
-      "qid": "spacetoon-800-076"
+      "sourceUrl": "https://ar.wikipedia.org/wiki/فلونة#شخصيات_المسلسل",
+      "difficultyTarget": 0.25
     },
     {
+      "qid": "spacetoon-800-904",
       "p": 800,
-      "topic": "أبطال وشخصيات",
-      "q": "في «ساندي بل»، ما العمل الذي امتهنته ساندي بعد انتقالها إلى المدينة؟",
-      "a": "مراسلة صحفية",
-      "alt": [
-        "صحفية",
-        "مراسلة"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/ساندي_بل",
-      "verified": true,
-      "qid": "spacetoon-800-077"
-    },
-    {
-      "p": 800,
-      "topic": "أبطال وشخصيات",
-      "q": "في «دروب ريمي»، ما لقب والدة ريمي الحقيقية التي التقتها دون أن تعرفها؟",
-      "a": "السيدة ميليجان",
-      "alt": [
-        "ميليجان",
-        "ميليغان"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/دروب_ريمي",
-      "verified": true,
-      "qid": "spacetoon-800-078"
-    },
-    {
-      "p": 800,
-      "topic": "أبطال وشخصيات",
-      "q": "في «مغامرات ساسوكي»، ما اسم زعيم الساموراي الذي يخدمه ساسوكي؟",
-      "a": "سانادا",
-      "alt": [
-        "سانادا يوكيمورا"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/مغامرات_ساسوكي",
-      "verified": true,
-      "qid": "spacetoon-800-079"
-    },
-    {
-      "p": 800,
-      "topic": "أبطال وشخصيات",
-      "q": "في «صقور الأرض»، ما اسم المحارب الخطير الذي تحالف الخصمان للقضاء عليه؟",
-      "a": "لوبو",
-      "alt": [
-        "لو بو"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/صقور_الأرض",
-      "verified": true,
-      "qid": "spacetoon-800-080"
-    },
-    {
-      "p": 800,
-      "topic": "أبطال وشخصيات",
-      "q": "في «سنان»، ما أسماء الأشرار الذين يفتعلون المشاكل في الغابة؟",
-      "a": "زعبور وشرشور وفرفور",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/سنان_(أنمي)",
-      "verified": true,
-      "qid": "spacetoon-800-081"
-    },
-    {
-      "p": 800,
-      "topic": "أنمي الرياضة",
-      "q": "في «كابتن رابح»، ما اسم الفريق الذي جمع أمهر اللاعبين حول رابح؟",
-      "a": "فريق الأجنحة",
-      "alt": [
-        "الأجنحة"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/كابتن_رابح",
-      "verified": true,
-      "qid": "spacetoon-800-082"
-    },
-    {
-      "p": 800,
-      "topic": "أنمي الرياضة",
-      "q": "في «الرمية الملتهبة»، ما اسم قائد «فريق القوة الضاربة» وخصم سامي العنيد؟",
-      "a": "راجح",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الرمية_الملتهبة",
-      "verified": true,
-      "qid": "spacetoon-800-083"
-    },
-    {
-      "p": 800,
-      "topic": "أنمي الرياضة",
-      "q": "في «الرمية الملتهبة»، ما اسم الفتاة التي صارت رئيسة الفريق؟",
-      "a": "ميسون",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الرمية_الملتهبة",
-      "verified": true,
-      "qid": "spacetoon-800-084"
-    },
-    {
-      "p": 800,
-      "topic": "أنمي الرياضة",
-      "q": "في «أبطال الملاعب»، ما اسم زميل النجم العنيد الذي رافقه منذ البداية؟",
-      "a": "دبوس",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/أبطال_الملاعب",
-      "verified": true,
-      "qid": "spacetoon-800-085"
-    },
-    {
-      "p": 800,
-      "topic": "رحلات ومغامرات",
-      "q": "في «مغامرات سندباد»، ما الذي ظنّه البحارة جزيرة فرست عليه سفينتهم؟",
-      "a": "حوت",
-      "alt": [
-        "الحوت"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/مغامرات_سندباد",
-      "verified": true,
-      "qid": "spacetoon-800-086"
-    },
-    {
-      "p": 800,
-      "topic": "رحلات ومغامرات",
-      "q": "في «مغامرات سندباد»، من تكون رفيقة سندباد المسحورة في حقيقتها؟",
+      "q": "ما مكانة رفيقة سندباد الطائرة قبل أن يحوّلها السحرة إلى طائر؟",
       "a": "أميرة",
       "alt": [
-        "ابنة ملك"
+        "الأميرة"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/مغامرات_سندباد",
+      "topic": "سندباد",
       "verified": true,
-      "qid": "spacetoon-800-087"
+      "sourceUrl": "https://ar.wikipedia.org/wiki/مغامرات_سندباد#الشخصيات",
+      "difficultyTarget": 0.25
     },
     {
+      "qid": "spacetoon-800-905",
       "p": 800,
-      "topic": "رحلات ومغامرات",
-      "q": "في «فلونة»، ما اسم الفتى الغريب الذي انسجم مع العائلة وساعدها على الجزيرة؟",
-      "a": "تومي",
+      "q": "من شقيقة دوق فليد التي تنضم إلى فريق غرندايزر؟",
+      "a": "ماريا",
       "alt": [
-        "تام تام"
+        "ماريا فليد",
+        "Maria Fleed"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/فلونة",
+      "topic": "غرندايزر",
       "verified": true,
-      "qid": "spacetoon-800-088"
+      "sourceUrl": "https://ar.wikipedia.org/wiki/جريندايزر#الشخصيات_الرئيسية",
+      "difficultyTarget": 0.25
     },
     {
+      "qid": "spacetoon-800-906",
       "p": 800,
-      "topic": "رحلات ومغامرات",
-      "q": "في «مغامرات نيلز»، ما اسم الثعلب الذي يطارد سرب الإوز؟",
-      "a": "ريكس",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/مغامرات_نيلز",
-      "verified": true,
-      "qid": "spacetoon-800-089"
-    },
-    {
-      "p": 800,
-      "topic": "رحلات ومغامرات",
-      "q": "في «سالي»، ما اسم الصبي سائق العربة الذي صار من أصدقاء سالي بعد فقرها؟",
-      "a": "بيتر",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/سالي_(أنمي)",
-      "verified": true,
-      "qid": "spacetoon-800-090"
-    },
-    {
-      "p": 800,
-      "topic": "رحلات ومغامرات",
-      "q": "في «جزيرة الكنز»، ما اسم القط الأليف الذي يربّيه جيم في النزل؟",
-      "a": "بنبو",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/جزيرة_الكنز_(أنمي)",
-      "verified": true,
-      "qid": "spacetoon-800-091"
-    },
-    {
-      "p": 800,
-      "topic": "أدوات وأسلحة",
-      "q": "في «سالي»، ما اسم الدمية التي أهداها والدها إليها وكانت تحدّثها؟",
-      "a": "إيميلي",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/سالي_(أنمي)",
-      "verified": true,
-      "qid": "spacetoon-800-092"
-    },
-    {
-      "p": 800,
-      "topic": "أبطال وشخصيات",
-      "q": "في «دروب ريمي»، ما اسم الفتى الذي أحبّته ريمي وكان رئيس الصبية المشرّدين؟",
-      "a": "ماتيو",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/دروب_ريمي",
-      "verified": true,
-      "qid": "spacetoon-800-093"
-    },
-    {
-      "p": 800,
-      "topic": "حيوانات ورفاق",
-      "q": "في «مغامرات زينة ونحول»، ما اسم المعلّمة التي تدرّس الصغار في مملكة النحل؟",
-      "a": "سلمى",
-      "alt": [
-        "السيدة سلمى"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/مغامرات_زينة_ونحول",
-      "verified": true,
-      "qid": "spacetoon-800-094"
-    },
-    {
-      "p": 800,
-      "topic": "حيوانات ورفاق",
-      "q": "في «مغامرات نيلز»، ما اسم قائدة سرب الإوز الحكيمة؟",
-      "a": "أكسا",
-      "alt": [
-        "اكا",
-        "إكسا"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/مغامرات_نيلز",
-      "verified": true,
-      "qid": "spacetoon-800-095"
-    },
-    {
-      "p": 800,
-      "topic": "حيوانات ورفاق",
-      "q": "في «عدنان ولينا»، ما اسم الطائر البحري الذي تتخاطر معه لينا؟",
-      "a": "تيكي",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/عدنان_ولينا",
-      "verified": true,
-      "qid": "spacetoon-800-096"
-    },
-    {
-      "p": 1000,
-      "topic": "كواكب سبيستون",
-      "q": "«أولي لي أولي لي» مطلع أغنية أي كوكب في سبيستون؟",
-      "a": "رياضة",
-      "alt": [
-        "كوكب رياضة"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/سبيستون",
-      "verified": true,
-      "qid": "spacetoon-1000-049"
-    },
-    {
-      "p": 1000,
-      "topic": "كواكب سبيستون",
-      "q": "ما الشعار الذي حمله كوكب تاريخ في سبيستون؟",
-      "a": "كوكب من قديم الزمان",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/سبيستون",
-      "verified": true,
-      "qid": "spacetoon-1000-050"
-    },
-    {
-      "p": 1000,
-      "topic": "كواكب سبيستون",
-      "q": "ما الشعار الذي حمله كوكب علوم في سبيستون؟",
-      "a": "كوكب الاكتشاف والمعرفة",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/سبيستون",
-      "verified": true,
-      "qid": "spacetoon-1000-051"
-    },
-    {
-      "p": 1000,
-      "topic": "كواكب سبيستون",
-      "q": "ما الشكل المختصر الذي يظهر به شعار سبيستون أحيانًا؟",
-      "a": "ستون",
-      "alt": [
-        "Stoon"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/سبيستون",
-      "verified": true,
-      "qid": "spacetoon-1000-052"
-    },
-    {
-      "p": 1000,
-      "topic": "كواكب سبيستون",
-      "q": "ما اسم القناة الشقيقة لسبيستون التي توقف بثها عام 2014؟",
-      "a": "سبيس باور",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/سبيستون",
-      "verified": true,
-      "qid": "spacetoon-1000-053"
-    },
-    {
-      "p": 1000,
-      "topic": "كواكب سبيستون",
-      "q": "ما أول مسلسل عُرض على سبيستون مع إطلاق هويتها الثالثة؟",
-      "a": "الدببة الطيبون",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/سبيستون",
-      "verified": true,
-      "qid": "spacetoon-1000-054"
-    },
-    {
-      "p": 1000,
-      "topic": "الفضاء والروبوتات",
-      "q": "في «غرندايزر»، من أين يخرج غرندايزر من مركز الأبحاث في العادة؟",
-      "a": "من خلف شلال اصطناعي",
-      "alt": [
-        "من الشلال"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/جريندايزر",
-      "verified": true,
-      "qid": "spacetoon-1000-055"
-    },
-    {
-      "p": 1000,
-      "topic": "الفضاء والروبوتات",
-      "q": "في «غرندايزر»، كم مخرجًا سريًا إضافيًا لقاعدة غرندايزر تحت المركز؟",
-      "a": "سبعة",
-      "alt": [
-        "7",
-        "سبعة مخارج"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/جريندايزر",
-      "verified": true,
-      "qid": "spacetoon-1000-056"
-    },
-    {
-      "p": 1000,
-      "topic": "الفضاء والروبوتات",
-      "q": "في «غرندايزر»، ما اسم صاحب المزرعة الذي يصيح «يوفو» كلما رأى صحنًا طائرًا؟",
-      "a": "دامبي",
-      "alt": [
-        "العجوز دامبي"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/جريندايزر",
-      "verified": true,
-      "qid": "spacetoon-1000-057"
-    },
-    {
-      "p": 1000,
-      "topic": "الفضاء والروبوتات",
-      "q": "في «غرندايزر»، ما اسم مساعد رئيس المركز المكلّف بمراقبة الرادار؟",
-      "a": "هياشي",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/جريندايزر",
-      "verified": true,
-      "qid": "spacetoon-1000-058"
-    },
-    {
-      "p": 1000,
-      "topic": "الفضاء والروبوتات",
-      "q": "في «عدنان ولينا»، ما اسم الطائرة العملاقة التي فجّرها عدنان في النهاية؟",
-      "a": "جمانة",
-      "alt": [
-        "غيغانت",
-        "جيجانت"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/عدنان_ولينا",
-      "verified": true,
-      "qid": "spacetoon-1000-059"
-    },
-    {
-      "p": 1000,
-      "topic": "الفضاء والروبوتات",
-      "q": "في «عدنان ولينا»، ما اسم سفينة القبطان في الأصل الياباني؟",
-      "a": "باراكودا",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/عدنان_ولينا",
-      "verified": true,
-      "qid": "spacetoon-1000-060"
-    },
-    {
-      "p": 1000,
-      "topic": "الفضاء والروبوتات",
-      "q": "في «عدنان ولينا»، ما الاسم المستعار الذي تخفّى به جدّ لينا العالم؟",
-      "a": "بدر",
-      "alt": [
-        "باتش"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/عدنان_ولينا",
-      "verified": true,
-      "qid": "spacetoon-1000-061"
-    },
-    {
-      "p": 1000,
-      "topic": "الفضاء والروبوتات",
-      "q": "في «عدنان ولينا»، في أي عام اندلعت الحرب التي تذكرها مقدمة كل حلقة؟",
-      "a": "2008",
-      "alt": [
-        "ألفين وثمانية"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/عدنان_ولينا",
-      "verified": true,
-      "qid": "spacetoon-1000-062"
-    },
-    {
-      "p": 1000,
-      "topic": "الفضاء والروبوتات",
-      "q": "في «هزيم الرعد»، ما اسم سفينة روجو الضخمة ذات الرؤوس الحادة؟",
-      "a": "البركان",
-      "alt": [
-        "سفينة البركان"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/هزيم_الرعد",
-      "verified": true,
-      "qid": "spacetoon-1000-063"
-    },
-    {
-      "p": 1000,
-      "topic": "الفضاء والروبوتات",
-      "q": "في «هزيم الرعد»، ما الاسم الياباني الأصلي لبطل المسلسل؟",
-      "a": "راي ريوجا",
-      "alt": [
-        "ريوجا راي"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/هزيم_الرعد",
-      "verified": true,
-      "qid": "spacetoon-1000-064"
-    },
-    {
-      "p": 1000,
-      "topic": "الفضاء والروبوتات",
-      "q": "في «هزيم الرعد»، ما اسم العاصمة التي حكم منها هزيم إمبراطوريته؟",
-      "a": "بوت",
-      "alt": [
-        "مدينة بوت"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/هزيم_الرعد",
-      "verified": true,
-      "qid": "spacetoon-1000-065"
-    },
-    {
-      "p": 1000,
-      "topic": "أبطال وشخصيات",
-      "q": "في «هزيم الرعد»، ما اسم زوجة هزيم ابنة الإمبراطور التي قتل والدها؟",
-      "a": "سيموني",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/هزيم_الرعد",
-      "verified": true,
-      "qid": "spacetoon-1000-066"
-    },
-    {
-      "p": 1000,
-      "topic": "أدوات وأسلحة",
-      "q": "في «المحقق كونان»، ما الأداة التي ينوّم بها كونان المتحري قبل أن يحلّ القضية؟",
-      "a": "الساعة المخدرة",
-      "alt": [
-        "ساعة اليد",
-        "الساعة"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/المحقق_كونان",
-      "verified": true,
-      "qid": "spacetoon-1000-067"
-    },
-    {
-      "p": 1000,
-      "topic": "أبطال وشخصيات",
-      "q": "في «المحقق كونان»، ما اسم المدرسة الابتدائية التي التحق بها كونان؟",
-      "a": "تيتان",
-      "alt": [
-        "مدرسة تيتان"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/المحقق_كونان",
-      "verified": true,
-      "qid": "spacetoon-1000-068"
-    },
-    {
-      "p": 1000,
-      "topic": "أبطال وشخصيات",
-      "q": "في «المحقق كونان»، ما اسم الفتاة التي فرّت من المنظمة وانضمت إلى المتحرين الصغار؟",
-      "a": "آي هايبرا",
-      "alt": [
-        "هايبرا",
-        "آي"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/المحقق_كونان",
-      "verified": true,
-      "qid": "spacetoon-1000-069"
-    },
-    {
-      "p": 1000,
-      "topic": "حيوانات ورفاق",
-      "q": "في «أبطال الديجيتال»، ما اسم المخلوق الرقمي الطائر المرافق لسمر؟",
-      "a": "هديل",
-      "alt": [
-        "بيومون"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/أبطال_الديجيتال",
-      "verified": true,
-      "qid": "spacetoon-1000-070"
-    },
-    {
-      "p": 1000,
-      "topic": "أدوات وأسلحة",
-      "q": "في «أبطال الديجيتال»، ما القلادة التي يحملها شادي خبير الحاسوب؟",
-      "a": "قلادة المعرفة",
-      "alt": [
-        "المعرفة"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/أبطال_الديجيتال",
-      "verified": true,
-      "qid": "spacetoon-1000-071"
-    },
-    {
-      "p": 1000,
-      "topic": "أدوات وأسلحة",
-      "q": "في «أبطال الديجيتال»، ما القلادة التي يحملها وسيم أصغر الأبطال؟",
-      "a": "قلادة الأمل",
-      "alt": [
-        "الأمل"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/أبطال_الديجيتال",
-      "verified": true,
-      "qid": "spacetoon-1000-072"
-    },
-    {
-      "p": 1000,
-      "topic": "أدوات وأسلحة",
-      "q": "في «غرندايزر»، ما اسم الشعاع الذي يخرج من قرنَي غرندايزر ليجهز على العدو؟",
-      "a": "رعد الفضاء",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/جريندايزر",
-      "verified": true,
-      "qid": "spacetoon-1000-073"
-    },
-    {
-      "p": 1000,
-      "topic": "أسماء الدبلجة",
-      "q": "اختير اسم «رابح» في الدبلجة العربية تكريمًا للاعب جزائري، من هو؟",
-      "a": "رابح ماجر",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/كابتن_رابح",
-      "verified": true,
-      "qid": "spacetoon-1000-074"
-    },
-    {
-      "p": 1000,
-      "topic": "أنمي الرياضة",
-      "q": "في «أبطال الملاعب»، ما اسم أولى ضربات نجم الفريق قبل أن يبتكر ضربته الثانية؟",
-      "a": "الضربة القاصفة",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/أبطال_الملاعب",
-      "verified": true,
-      "qid": "spacetoon-1000-075"
-    },
-    {
-      "p": 1000,
-      "topic": "أنمي الرياضة",
-      "q": "في «الرمية الملتهبة»، ما اسم قائد الفريق الذي يلعب فيه سامي؟",
-      "a": "زياد",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الرمية_الملتهبة",
-      "verified": true,
-      "qid": "spacetoon-1000-076"
-    },
-    {
-      "p": 1000,
-      "topic": "أنمي الرياضة",
-      "q": "في «كابتن رابح»، ما اسم أول فريق لعب فيه رابح بعد اكتشاف موهبته؟",
-      "a": "كولمبوس",
-      "alt": [
-        "فريق كولمبوس"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/كابتن_رابح",
-      "verified": true,
-      "qid": "spacetoon-1000-077"
-    },
-    {
-      "p": 1000,
-      "topic": "رحلات ومغامرات",
-      "q": "ما الاسم الذي عُرض به مسلسل «جزيرة الكنز» على سبيستون؟",
-      "a": "البحث عن جزيرة الكنز",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/جزيرة_الكنز_(أنمي)",
-      "verified": true,
-      "qid": "spacetoon-1000-078"
-    },
-    {
-      "p": 1000,
-      "topic": "رحلات ومغامرات",
-      "q": "في «جزيرة الكنز»، ما اسم البحّار المتروك في الجزيرة الذي ساعد جيم؟",
+      "q": "من البحار المتروك على الجزيرة الذي يرشد جيم إلى قاربه المصنوع يدويًا؟",
       "a": "بن غان",
       "alt": [
-        "بينجان",
-        "بن جان"
+        "بن جن",
+        "Ben Gunn"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/جزيرة_الكنز_(أنمي)",
+      "topic": "جزيرة الكنز",
       "verified": true,
-      "qid": "spacetoon-1000-079"
+      "sourceUrl": "https://en.wikipedia.org/wiki/Treasure_Island_(1978_TV_series)#Main_characters",
+      "difficultyTarget": 0.25
     },
     {
-      "p": 1000,
-      "topic": "رحلات ومغامرات",
-      "q": "في «مغامرات سندباد»، ما اسم والد سندباد التاجر الثري؟",
-      "a": "هيثم",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/مغامرات_سندباد",
-      "verified": true,
-      "qid": "spacetoon-1000-080"
-    },
-    {
-      "p": 1000,
-      "topic": "رحلات ومغامرات",
-      "q": "في «فلونة»، ما اسم الحيوان الصغير الذي لا يفارق صغير العائلة؟",
-      "a": "ميركوري",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/فلونة",
-      "verified": true,
-      "qid": "spacetoon-1000-081"
-    },
-    {
-      "p": 1000,
-      "topic": "رحلات ومغامرات",
-      "q": "في «دروب ريمي»، ما اسم ابنة آن التي نشأت مع ريمي كأختها؟",
-      "a": "نانا",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/دروب_ريمي",
-      "verified": true,
-      "qid": "spacetoon-1000-082"
-    },
-    {
-      "p": 1000,
-      "topic": "رحلات ومغامرات",
-      "q": "في «سالي»، ما اسم التلميذة التي ساعدتها سالي في دروسها فصارت وفيّة لها؟",
-      "a": "آرمنغارد",
+      "qid": "spacetoon-800-907",
+      "p": 800,
+      "q": "ما اسم الفتاة المتعجرفة التي تنافس ساندي بل على حب مارك؟",
+      "a": "كيتي",
       "alt": [
-        "أرمينغارد"
+        "Kitty"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/سالي_(أنمي)",
+      "topic": "ساندي بل",
       "verified": true,
-      "qid": "spacetoon-1000-083"
+      "sourceUrl": "https://en.wikipedia.org/wiki/Hello!_Sandybell#Plot",
+      "difficultyTarget": 0.25
     },
     {
-      "p": 1000,
-      "topic": "رحلات ومغامرات",
-      "q": "في «ساندي بل»، أين عثرت ساندي على والدتها في نهاية المسلسل؟",
-      "a": "في دير بفرنسا",
+      "qid": "spacetoon-800-908",
+      "p": 800,
+      "q": "ما اسم قائد سرب الإوز الحكيم في دبلجة «مغامرات نيلز» العربية؟",
+      "a": "أكسا",
       "alt": [
-        "في دير",
-        "دير في فرنسا"
+        "إكسا",
+        "أكا",
+        "Akka"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/ساندي_بل",
+      "topic": "نيلز",
       "verified": true,
-      "qid": "spacetoon-1000-084"
+      "sourceUrl": "https://ar.wikipedia.org/wiki/مغامرات_نيلز#الشخصيات",
+      "difficultyTarget": 0.25
     },
     {
+      "qid": "spacetoon-1000-901",
       "p": 1000,
-      "topic": "رحلات ومغامرات",
-      "q": "في «مغامرات نيلز»، ما اسم أنثى الإوز السريعة التي تزوجت نائب قائد السرب؟",
-      "a": "إنجريد",
+      "q": "ما اسم طائرة علام العملاقة التي يدمّرها عدنان في النهاية، بالدبلجة العربية؟",
+      "a": "جمانة",
       "alt": [
-        "انجريد"
+        "جيغانتو",
+        "Giganto"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/مغامرات_نيلز",
+      "topic": "عدنان ولينا",
       "verified": true,
-      "qid": "spacetoon-1000-085"
+      "sourceUrl": "https://ar.wikipedia.org/wiki/عدنان_ولينا#القصة",
+      "difficultyTarget": 0.15
     },
     {
+      "qid": "spacetoon-1000-902",
       "p": 1000,
-      "topic": "أبطال وشخصيات",
-      "q": "في «فلونة»، كم كان عمر فلونة حين بدأت أحداث المسلسل؟",
-      "a": "عشر سنوات",
-      "alt": [
-        "10 سنوات",
-        "عشرة"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/فلونة",
-      "verified": true,
-      "qid": "spacetoon-1000-086"
-    },
-    {
-      "p": 1000,
-      "topic": "أسماء الدبلجة",
-      "q": "ما الاسم الياباني الأصلي لمسلسل «سنان»؟",
-      "a": "دون تشاك",
-      "alt": [
-        "دون تشاك موموغاتاري"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/سنان_(أنمي)",
-      "verified": true,
-      "qid": "spacetoon-1000-087"
-    },
-    {
-      "p": 1000,
-      "topic": "أسماء الدبلجة",
-      "q": "في «مغامرات ساسوكي»، ماذا يعني لقب «ساروتوبي» بالعربية؟",
-      "a": "قفزة القرد",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/مغامرات_ساسوكي",
-      "verified": true,
-      "qid": "spacetoon-1000-088"
-    },
-    {
-      "p": 1000,
-      "topic": "أسماء الدبلجة",
-      "q": "ما الاسم الأصلي لمسلسل «مغامرات حنين»؟",
-      "a": "مينكي مومو",
-      "alt": [
-        "الأميرة السحرية مينكي مومو"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/مغامرات_حنين",
-      "verified": true,
-      "qid": "spacetoon-1000-089"
-    },
-    {
-      "p": 1000,
-      "topic": "أسماء الدبلجة",
-      "q": "في «مغامرات زينة ونحول»، ما الاسم الأصلي لزينة في القصة الأوروبية؟",
-      "a": "مايا",
-      "alt": [
-        "النحلة مايا"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/مغامرات_زينة_ونحول",
-      "verified": true,
-      "qid": "spacetoon-1000-090"
-    },
-    {
-      "p": 1000,
-      "topic": "أبطال وشخصيات",
-      "q": "في «صقور الأرض»، ما اسم الأخوين اللذين عاهدا البطل على الأخوة الأبدية؟",
-      "a": "حمزة وحكمت",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/صقور_الأرض",
-      "verified": true,
-      "qid": "spacetoon-1000-091"
-    },
-    {
-      "p": 1000,
-      "topic": "أبطال وشخصيات",
-      "q": "في «صقور الأرض»، إلى كم مملكة انقسمت البلاد في القصة؟",
-      "a": "ثلاث",
-      "alt": [
-        "ثلاث ممالك",
-        "3"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/صقور_الأرض",
-      "verified": true,
-      "qid": "spacetoon-1000-092"
-    },
-    {
-      "p": 1000,
-      "topic": "أبطال وشخصيات",
-      "q": "في «عدنان ولينا»، ما اسم زعيم العصابة في الجزيرة الذي تحالف مع الغزاة؟",
-      "a": "نمرو",
-      "alt": [
-        "أورلو"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/عدنان_ولينا",
-      "verified": true,
-      "qid": "spacetoon-1000-093"
-    },
-    {
-      "p": 1000,
-      "topic": "أبطال وشخصيات",
-      "q": "في «سالي»، ما اسم شقيقة مديرة المعهد التي كانت ألطف منها؟",
+      "q": "ما اسم شقيقة مديرة معهد سالي التي كانت ألطف منها وتحاول الدفاع عن الفتاة؟",
       "a": "إيميليا",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/سالي_(أنمي)",
+      "alt": [
+        "أميليا",
+        "Amelia Minchin"
+      ],
+      "topic": "سالي",
       "verified": true,
-      "qid": "spacetoon-1000-094"
+      "sourceUrl": "https://ar.wikipedia.org/wiki/سالي_(أنمي)#الآنسة_إيميليا",
+      "difficultyTarget": 0.15
     },
     {
+      "qid": "spacetoon-1000-903",
       "p": 1000,
-      "topic": "أبطال وشخصيات",
-      "q": "في «مغامرات حنين»، ما الحيوانات التي ترافق حنين على الأرض؟",
-      "a": "طائر وكلب وقرد",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/مغامرات_حنين",
+      "q": "ما اسم الحيوان الصغير الذي يصبح رفيق جاك في «فلونة»؟",
+      "a": "ميركوري",
+      "alt": [
+        "Mercer",
+        "ميركور"
+      ],
+      "topic": "فلونة",
       "verified": true,
-      "qid": "spacetoon-1000-095"
+      "sourceUrl": "https://ar.wikipedia.org/wiki/فلونة#شخصيات_المسلسل",
+      "difficultyTarget": 0.15
     },
     {
+      "qid": "spacetoon-1000-904",
       "p": 1000,
-      "topic": "رحلات ومغامرات",
-      "q": "في «مغامرات سندباد»، ما اسم العجوز المشعوذة التي تواجه سندباد ورفاقه؟",
-      "a": "ميساء",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/مغامرات_سندباد",
+      "q": "إلى أي طائرين حوّل السحرة والدي الأميرة المرافقة لسندباد؟",
+      "a": "نسرين أبيضين",
+      "alt": [
+        "نسران أبيضان",
+        "نسور بيضاء"
+      ],
+      "topic": "سندباد",
       "verified": true,
-      "qid": "spacetoon-1000-096"
+      "sourceUrl": "https://ar.wikipedia.org/wiki/مغامرات_سندباد#الشخصيات",
+      "difficultyTarget": 0.15
+    },
+    {
+      "qid": "spacetoon-1000-905",
+      "p": 1000,
+      "q": "من صاحب المزرعة ووالد هيكارو الذي يصيح «يوفو» عند رؤية الأطباق الطائرة؟",
+      "a": "دامبي",
+      "alt": [
+        "دانبي",
+        "Danbei Makiba"
+      ],
+      "topic": "غرندايزر",
+      "verified": true,
+      "sourceUrl": "https://ar.wikipedia.org/wiki/جريندايزر#الشخصيات_الرئيسية",
+      "difficultyTarget": 0.15
+    },
+    {
+      "qid": "spacetoon-1000-906",
+      "p": 1000,
+      "q": "ما اسم شبل النمر الأليف الذي يرافق جيم في أنمي «جزيرة الكنز»؟",
+      "a": "بنبو",
+      "alt": [
+        "بنبَو",
+        "Benbow"
+      ],
+      "topic": "جزيرة الكنز",
+      "verified": true,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Treasure_Island_(1978_TV_series)#Main_characters",
+      "difficultyTarget": 0.15
+    },
+    {
+      "qid": "spacetoon-1000-907",
+      "p": 1000,
+      "q": "ما الزهرة البيضاء التي تزرعها ساندي بل وتربطها بذكرى أمها؟",
+      "a": "النرجس الأبيض",
+      "alt": [
+        "نرجس أبيض",
+        "زهرة النرجس"
+      ],
+      "topic": "ساندي بل",
+      "verified": true,
+      "sourceUrl": "https://ar.wikipedia.org/wiki/ساندي_بل#القصة",
+      "difficultyTarget": 0.15
+    },
+    {
+      "qid": "spacetoon-1000-908",
+      "p": 1000,
+      "q": "ما اسم الثعلب الذي يلاحق سرب الإوز في دبلجة «مغامرات نيلز» العربية؟",
+      "a": "ريكس",
+      "alt": [
+        "ريكس الثعلب",
+        "Smirre"
+      ],
+      "topic": "نيلز",
+      "verified": true,
+      "sourceUrl": "https://ar.wikipedia.org/wiki/مغامرات_نيلز#الشخصيات",
+      "difficultyTarget": 0.15
     }
   ]
 }

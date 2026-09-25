@@ -1,0 +1,18 @@
+{
+  "id": "placefinder-200-907",
+  "kind": "question",
+  "pack": "placefinder",
+  "p": 200,
+  "a": "تمثال الحرية",
+  "alt": [
+    "Statue of Liberty"
+  ],
+  "topic": "الأمريكتان",
+  "q": "ما اسم هذا التمثال ذي الشعلة المرفوعة؟",
+  "sourceUrl": "https://whc.unesco.org/en/list/307/",
+  "prompt": "Use case: scientific-educational. Asset: landscape 4:3 architectural landmark recognition card for an Arabic family quiz. Create one original, carefully observed architectural illustration of the real landmark, with realistic proportions and fine material detail, clear daylight, restrained natural colours, clean composition. Show the real defining architecture accurately, not a fantasy redesign. No captions, words, numerals, maps, logos, watermark, border or inset. No people close enough to distract. The entire landmark must be recognizable at phone size. Statue of Liberty on Liberty Island: full green copper robed female allegorical figure, seven-ray crown, torch raised high in her RIGHT hand, tablet held by LEFT arm close to body, stone pedestal on harbour island. Frontal three-quarter view with ocean and very distant skyline. Correct anatomy, no readable inscription.",
+  "referenceFile": "media/placefinder/placefinder-200-026.webp",
+  "sourceEvidence": "UNESCO identifies the monumental statue in New York harbour, torch and tablet.",
+  "sourceReviewed": true,
+  "visualReviewStatus": "pending"
+}

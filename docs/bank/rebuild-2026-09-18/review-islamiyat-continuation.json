@@ -1,0 +1,451 @@
+{
+  "oldCount": 240,
+  "newCount": 40,
+  "retiredQids": [
+    "islamiyat-200-001",
+    "islamiyat-200-002",
+    "islamiyat-200-003",
+    "islamiyat-200-004",
+    "islamiyat-200-005",
+    "islamiyat-200-006",
+    "islamiyat-200-007",
+    "islamiyat-200-008",
+    "islamiyat-200-009",
+    "islamiyat-200-010",
+    "islamiyat-200-011",
+    "islamiyat-200-012",
+    "islamiyat-200-013",
+    "islamiyat-200-014",
+    "islamiyat-200-015",
+    "islamiyat-200-016",
+    "islamiyat-200-017",
+    "islamiyat-200-018",
+    "islamiyat-200-019",
+    "islamiyat-200-020",
+    "islamiyat-200-021",
+    "islamiyat-200-022",
+    "islamiyat-200-023",
+    "islamiyat-200-024",
+    "islamiyat-200-025",
+    "islamiyat-200-026",
+    "islamiyat-200-027",
+    "islamiyat-200-028",
+    "islamiyat-200-029",
+    "islamiyat-200-030",
+    "islamiyat-200-031",
+    "islamiyat-200-032",
+    "islamiyat-200-033",
+    "islamiyat-200-034",
+    "islamiyat-200-035",
+    "islamiyat-200-036",
+    "islamiyat-200-037",
+    "islamiyat-200-038",
+    "islamiyat-200-039",
+    "islamiyat-200-040",
+    "islamiyat-200-041",
+    "islamiyat-200-042",
+    "islamiyat-200-043",
+    "islamiyat-200-044",
+    "islamiyat-200-045",
+    "islamiyat-200-046",
+    "islamiyat-200-047",
+    "islamiyat-200-048",
+    "islamiyat-400-001",
+    "islamiyat-400-002",
+    "islamiyat-400-003",
+    "islamiyat-400-004",
+    "islamiyat-400-005",
+    "islamiyat-400-006",
+    "islamiyat-400-007",
+    "islamiyat-400-008",
+    "islamiyat-400-009",
+    "islamiyat-400-010",
+    "islamiyat-400-011",
+    "islamiyat-400-012",
+    "islamiyat-400-013",
+    "islamiyat-400-014",
+    "islamiyat-400-015",
+    "islamiyat-400-016",
+    "islamiyat-400-017",
+    "islamiyat-400-018",
+    "islamiyat-400-019",
+    "islamiyat-400-020",
+    "islamiyat-400-021",
+    "islamiyat-400-022",
+    "islamiyat-400-023",
+    "islamiyat-400-024",
+    "islamiyat-400-025",
+    "islamiyat-400-026",
+    "islamiyat-400-027",
+    "islamiyat-400-028",
+    "islamiyat-400-029",
+    "islamiyat-400-030",
+    "islamiyat-400-031",
+    "islamiyat-400-032",
+    "islamiyat-400-033",
+    "islamiyat-400-034",
+    "islamiyat-400-035",
+    "islamiyat-400-036",
+    "islamiyat-400-037",
+    "islamiyat-400-038",
+    "islamiyat-400-039",
+    "islamiyat-400-040",
+    "islamiyat-400-041",
+    "islamiyat-400-042",
+    "islamiyat-400-043",
+    "islamiyat-400-044",
+    "islamiyat-400-045",
+    "islamiyat-400-046",
+    "islamiyat-400-047",
+    "islamiyat-400-048",
+    "islamiyat-600-001",
+    "islamiyat-600-002",
+    "islamiyat-600-003",
+    "islamiyat-600-004",
+    "islamiyat-600-005",
+    "islamiyat-600-006",
+    "islamiyat-600-007",
+    "islamiyat-600-008",
+    "islamiyat-600-009",
+    "islamiyat-600-010",
+    "islamiyat-600-011",
+    "islamiyat-600-012",
+    "islamiyat-600-013",
+    "islamiyat-600-014",
+    "islamiyat-600-015",
+    "islamiyat-600-016",
+    "islamiyat-600-017",
+    "islamiyat-600-018",
+    "islamiyat-600-019",
+    "islamiyat-600-020",
+    "islamiyat-600-022",
+    "islamiyat-600-023",
+    "islamiyat-600-024",
+    "islamiyat-600-025",
+    "islamiyat-600-026",
+    "islamiyat-600-027",
+    "islamiyat-600-028",
+    "islamiyat-600-029",
+    "islamiyat-600-030",
+    "islamiyat-600-031",
+    "islamiyat-600-032",
+    "islamiyat-600-033",
+    "islamiyat-600-034",
+    "islamiyat-600-035",
+    "islamiyat-600-036",
+    "islamiyat-600-037",
+    "islamiyat-600-038",
+    "islamiyat-600-039",
+    "islamiyat-600-040",
+    "islamiyat-600-041",
+    "islamiyat-600-042",
+    "islamiyat-600-043",
+    "islamiyat-600-044",
+    "islamiyat-600-045",
+    "islamiyat-600-046",
+    "islamiyat-600-047",
+    "islamiyat-600-048",
+    "islamiyat-600-049",
+    "islamiyat-800-001",
+    "islamiyat-800-002",
+    "islamiyat-800-003",
+    "islamiyat-800-004",
+    "islamiyat-800-005",
+    "islamiyat-800-006",
+    "islamiyat-800-007",
+    "islamiyat-800-008",
+    "islamiyat-800-009",
+    "islamiyat-800-011",
+    "islamiyat-800-012",
+    "islamiyat-800-013",
+    "islamiyat-800-014",
+    "islamiyat-800-015",
+    "islamiyat-800-016",
+    "islamiyat-800-017",
+    "islamiyat-800-018",
+    "islamiyat-800-019",
+    "islamiyat-800-020",
+    "islamiyat-800-021",
+    "islamiyat-800-022",
+    "islamiyat-800-023",
+    "islamiyat-800-024",
+    "islamiyat-800-025",
+    "islamiyat-800-026",
+    "islamiyat-800-027",
+    "islamiyat-800-028",
+    "islamiyat-800-029",
+    "islamiyat-800-030",
+    "islamiyat-800-031",
+    "islamiyat-800-032",
+    "islamiyat-800-033",
+    "islamiyat-800-034",
+    "islamiyat-800-035",
+    "islamiyat-800-036",
+    "islamiyat-800-037",
+    "islamiyat-800-038",
+    "islamiyat-800-039",
+    "islamiyat-800-040",
+    "islamiyat-800-041",
+    "islamiyat-800-042",
+    "islamiyat-800-043",
+    "islamiyat-800-044",
+    "islamiyat-800-045",
+    "islamiyat-800-046",
+    "islamiyat-800-047",
+    "islamiyat-800-048",
+    "islamiyat-800-049",
+    "islamiyat-1000-001",
+    "islamiyat-1000-002",
+    "islamiyat-1000-003",
+    "islamiyat-1000-004",
+    "islamiyat-1000-005",
+    "islamiyat-1000-006",
+    "islamiyat-1000-007",
+    "islamiyat-1000-008",
+    "islamiyat-1000-009",
+    "islamiyat-1000-010",
+    "islamiyat-1000-011",
+    "islamiyat-1000-012",
+    "islamiyat-1000-014",
+    "islamiyat-1000-015",
+    "islamiyat-1000-016",
+    "islamiyat-1000-017",
+    "islamiyat-1000-018",
+    "islamiyat-1000-019",
+    "islamiyat-1000-020",
+    "islamiyat-1000-021",
+    "islamiyat-1000-022",
+    "islamiyat-1000-023",
+    "islamiyat-1000-024",
+    "islamiyat-1000-025",
+    "islamiyat-1000-026",
+    "islamiyat-1000-027",
+    "islamiyat-1000-028",
+    "islamiyat-1000-029",
+    "islamiyat-1000-030",
+    "islamiyat-1000-031",
+    "islamiyat-1000-032",
+    "islamiyat-1000-033",
+    "islamiyat-1000-034",
+    "islamiyat-1000-035",
+    "islamiyat-1000-036",
+    "islamiyat-1000-037",
+    "islamiyat-1000-038",
+    "islamiyat-1000-039",
+    "islamiyat-1000-040",
+    "islamiyat-1000-041",
+    "islamiyat-1000-042",
+    "islamiyat-1000-043",
+    "islamiyat-1000-044",
+    "islamiyat-1000-045",
+    "islamiyat-1000-046",
+    "islamiyat-1000-047",
+    "islamiyat-1000-048",
+    "islamiyat-1000-049"
+  ],
+  "questions": [
+    {
+      "qid": "islamiyat-200-901",
+      "answer": "الكعبة المشرفة",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Kaaba"
+    },
+    {
+      "qid": "islamiyat-200-902",
+      "answer": "بئر زمزم",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Zamzam_Well"
+    },
+    {
+      "qid": "islamiyat-200-903",
+      "answer": "عرفات",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Mount_Arafat"
+    },
+    {
+      "qid": "islamiyat-200-904",
+      "answer": "القمر",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Islamic_calendar"
+    },
+    {
+      "qid": "islamiyat-200-905",
+      "answer": "المؤذن",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Muezzin"
+    },
+    {
+      "qid": "islamiyat-200-906",
+      "answer": "ابن سينا",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Avicenna"
+    },
+    {
+      "qid": "islamiyat-200-907",
+      "answer": "الأندلس",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Al-Andalus"
+    },
+    {
+      "qid": "islamiyat-200-908",
+      "answer": "الخط الكوفي",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Kufic"
+    },
+    {
+      "qid": "islamiyat-400-901",
+      "answer": "الركن اليماني",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Kaaba"
+    },
+    {
+      "qid": "islamiyat-400-902",
+      "answer": "مزدلفة",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Muzdalifah"
+    },
+    {
+      "qid": "islamiyat-400-903",
+      "answer": "القاهرة",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Al-Azhar_Mosque"
+    },
+    {
+      "qid": "islamiyat-400-904",
+      "answer": "رجب",
+      "sourceUrl": "https://sunnah.com/bukhari:3197"
+    },
+    {
+      "qid": "islamiyat-400-905",
+      "answer": "البسملة",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Basmala"
+    },
+    {
+      "qid": "islamiyat-400-906",
+      "answer": "الخوارزمي",
+      "sourceUrl": "https://mathshistory.st-andrews.ac.uk/Biographies/Al-Khwarizmi/"
+    },
+    {
+      "qid": "islamiyat-400-907",
+      "answer": "القيروان",
+      "sourceUrl": "https://whc.unesco.org/en/list/499/"
+    },
+    {
+      "qid": "islamiyat-400-908",
+      "answer": "المئذنة",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Muezzin"
+    },
+    {
+      "qid": "islamiyat-600-901",
+      "answer": "الملتزم",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Kaaba"
+    },
+    {
+      "qid": "islamiyat-600-902",
+      "answer": "مسجد نمرة",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/مسجد_نمرة"
+    },
+    {
+      "qid": "islamiyat-600-903",
+      "answer": "مسقط",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Sultan_Qaboos_Grand_Mosque"
+    },
+    {
+      "qid": "islamiyat-600-904",
+      "answer": "ثلاثمئة وأربعة وخمسون",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Islamic_calendar"
+    },
+    {
+      "qid": "islamiyat-600-905",
+      "answer": "السدانة",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/سدانة_الكعبة"
+    },
+    {
+      "qid": "islamiyat-600-906",
+      "answer": "الإدريسي",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Al-Idrisi"
+    },
+    {
+      "qid": "islamiyat-600-907",
+      "answer": "قرطبة",
+      "sourceUrl": "https://whc.unesco.org/en/list/313/"
+    },
+    {
+      "qid": "islamiyat-600-908",
+      "answer": "المقرنصات",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Muqarnas"
+    },
+    {
+      "qid": "islamiyat-800-901",
+      "answer": "الشاذروان",
+      "sourceUrl": [
+        "https://alharamain.gov.sa/public/?page=shadrawan-ar",
+        "https://en.wikipedia.org/wiki/Kaaba"
+      ]
+    },
+    {
+      "qid": "islamiyat-800-902",
+      "answer": "قرن المنازل",
+      "sourceUrl": "https://sunnah.com/bukhari:1524"
+    },
+    {
+      "qid": "islamiyat-800-903",
+      "answer": "معمار سنان",
+      "sourceUrl": "https://whc.unesco.org/en/list/1366/"
+    },
+    {
+      "qid": "islamiyat-800-904",
+      "answer": "تقويم أم القرى",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Islamic_calendar"
+    },
+    {
+      "qid": "islamiyat-800-905",
+      "answer": "السبيل",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Sabil_(fountain)"
+    },
+    {
+      "qid": "islamiyat-800-906",
+      "answer": "ابن النفيس",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Ibn_al-Nafis"
+    },
+    {
+      "qid": "islamiyat-800-907",
+      "answer": "تمبكتو",
+      "sourceUrl": "https://whc.unesco.org/en/list/119/"
+    },
+    {
+      "qid": "islamiyat-800-908",
+      "answer": "خط النسخ",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Naskh_(script)"
+    },
+    {
+      "qid": "islamiyat-1000-901",
+      "answer": "ميزاب الرحمة",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Kaaba"
+    },
+    {
+      "qid": "islamiyat-1000-902",
+      "answer": "يلملم",
+      "sourceUrl": "https://sunnah.com/bukhari:1524"
+    },
+    {
+      "qid": "islamiyat-1000-903",
+      "answer": "جواثى",
+      "sourceUrl": "https://sunnah.com/bukhari:892"
+    },
+    {
+      "qid": "islamiyat-1000-904",
+      "answer": "الفيروزآبادي",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Firuzabadi"
+    },
+    {
+      "qid": "islamiyat-1000-905",
+      "answer": "كتاب العين",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Kitab_al-Ayn"
+    },
+    {
+      "qid": "islamiyat-1000-906",
+      "answer": "نزهة المشتاق في اختراق الآفاق",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Tabula_Rogeriana"
+    },
+    {
+      "qid": "islamiyat-1000-907",
+      "answer": "نقش جهان",
+      "sourceUrl": "https://whc.unesco.org/en/list/115/"
+    },
+    {
+      "qid": "islamiyat-1000-908",
+      "answer": "النستعليق",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Nastaliq"
+    }
+  ]
+}

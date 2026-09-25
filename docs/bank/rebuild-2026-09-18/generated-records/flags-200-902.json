@@ -1,0 +1,19 @@
+{
+  "id": "flags-200-902",
+  "kind": "question",
+  "pack": "flags",
+  "file": "media/flags/flags-200-902.webp",
+  "asset": "media/flags/flags-200-902.webp",
+  "prompt": "Create a flat national flag illustration on a completely OPAQUE rectangular image. Every pixel must have an opaque colored surface, including white and green areas. Keep the background flag field visible. Solid flat colors with crisp straight edges. No transparency, no alpha cutout. The flag occupies the entire canvas. Kuwait. Canvas width:height 2:1. Three equal horizontal bands: green top #007A3D, white middle, red bottom #CE1126. Solid BLACK TRAPEZOID at left hoist, with its long vertical base spanning the full left edge; short vertical side at x=25% canvas width, from y=one-third to y=two-thirds. Top slanted edge joins top-left corner to (25%,33.333%), lower slanted edge joins bottom-left to (25%,66.667%). Black shape is a trapezoid, not a triangle. No emblem.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-09-23",
+  "width": 1280,
+  "height": 640,
+  "bytes": 7532,
+  "sha256": "a40ced95b9fc9ec07a88e722df7d8c4269ecd0459208eff5c9f3f1366b2aed57",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "pending",
+    "note": "Generation and file checks do not imply subject or gameplay verification."
+  }
+}

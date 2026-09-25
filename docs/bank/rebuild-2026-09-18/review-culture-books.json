@@ -1,0 +1,209 @@
+{
+  "pack": "books",
+  "reviewedAt": "2026-09-18",
+  "reviewer": "content editor",
+  "method": "Opened precise Project Gutenberg editions and author/title catalogue records; plot questions checked against full primary texts, not solely automatically generated summaries. Also checked Rowling and HarryPotter official pages, Booker Prize book page, and Hindawi/Safahat author/book pages. Excluded unsupported production anecdotes, volatile sole-winner claims, and inaccurate sole-author credit for The Three Musketeers (Dumas/Maquet). 9 genuine topics; exactly8 per tier, max2/topic/tier; Arabic accepted spellings included.",
+  "difficulty": "Editorial estimates for Arabic-speaking family groups16+; not measured with players.",
+  "questions": [
+    {
+      "qid": "books-200-901",
+      "sourceUrl": "https://www.gutenberg.org/files/11/11-h/11-h.htm",
+      "answerChecked": "أليس"
+    },
+    {
+      "qid": "books-200-902",
+      "sourceUrl": "https://www.gutenberg.org/files/500/500-h/500-h.htm",
+      "answerChecked": "بينوكيو"
+    },
+    {
+      "qid": "books-200-903",
+      "sourceUrl": "https://www.gutenberg.org/files/236/236-h/236-h.htm",
+      "answerChecked": "موكلي"
+    },
+    {
+      "qid": "books-200-904",
+      "sourceUrl": "https://www.gutenberg.org/files/1661/1661-h/1661-h.htm",
+      "answerChecked": "شرلوك هولمز"
+    },
+    {
+      "qid": "books-200-905",
+      "sourceUrl": "https://www.harrypotter.com/fact-file/locations/hogwarts",
+      "answerChecked": "هوغوورتس"
+    },
+    {
+      "qid": "books-200-906",
+      "sourceUrl": "https://www.safahat.org/contributors/71616385/",
+      "answerChecked": "نجيب محفوظ"
+    },
+    {
+      "qid": "books-200-907",
+      "sourceUrl": "https://www.gutenberg.org/files/128/128-h/128-h.htm",
+      "answerChecked": "علاء الدين"
+    },
+    {
+      "qid": "books-200-908",
+      "sourceUrl": "https://www.gutenberg.org/files/16/16-h/16-h.htm",
+      "answerChecked": "بيتر بان"
+    },
+    {
+      "qid": "books-400-901",
+      "sourceUrl": "https://www.gutenberg.org/ebooks/135",
+      "answerChecked": "فيكتور هوغو"
+    },
+    {
+      "qid": "books-400-902",
+      "sourceUrl": "https://www.gutenberg.org/files/1257/1257-h/1257-h.htm",
+      "answerChecked": "دارتانيان"
+    },
+    {
+      "qid": "books-400-903",
+      "sourceUrl": "https://www.gutenberg.org/ebooks/2600",
+      "answerChecked": "ليو تولستوي"
+    },
+    {
+      "qid": "books-400-904",
+      "sourceUrl": "https://www.gutenberg.org/ebooks/2701",
+      "answerChecked": "هيرمان ملفيل"
+    },
+    {
+      "qid": "books-400-905",
+      "sourceUrl": "https://www.jkrowling.com/about/",
+      "answerChecked": "ج. ك. رولينغ"
+    },
+    {
+      "qid": "books-400-906",
+      "sourceUrl": "https://www.gutenberg.org/files/1661/1661-h/1661-h.htm",
+      "answerChecked": "شارع بيكر"
+    },
+    {
+      "qid": "books-400-907",
+      "sourceUrl": "https://www.gutenberg.org/ebooks/35",
+      "answerChecked": "هربرت جورج ويلز"
+    },
+    {
+      "qid": "books-400-908",
+      "sourceUrl": "https://www.gutenberg.org/cache/epub/1448/pg1448-images.html",
+      "answerChecked": "سويسرا"
+    },
+    {
+      "qid": "books-600-901",
+      "sourceUrl": "https://www.gutenberg.org/ebooks/1342",
+      "answerChecked": "جين أوستن"
+    },
+    {
+      "qid": "books-600-902",
+      "sourceUrl": "https://www.gutenberg.org/ebooks/1260",
+      "answerChecked": "شارلوت برونتي"
+    },
+    {
+      "qid": "books-600-903",
+      "sourceUrl": "https://www.gutenberg.org/ebooks/2554",
+      "answerChecked": "فيودور دوستويفسكي"
+    },
+    {
+      "qid": "books-600-904",
+      "sourceUrl": "https://www.gutenberg.org/ebooks/2413",
+      "answerChecked": "غوستاف فلوبير"
+    },
+    {
+      "qid": "books-600-905",
+      "sourceUrl": "https://www.gutenberg.org/ebooks/174",
+      "answerChecked": "أوسكار وايلد"
+    },
+    {
+      "qid": "books-600-906",
+      "sourceUrl": "https://www.gutenberg.org/ebooks/84",
+      "answerChecked": "ماري شيلي"
+    },
+    {
+      "qid": "books-600-907",
+      "sourceUrl": "https://www.safahat.org/books/96468508/",
+      "answerChecked": "عباس محمود العقاد"
+    },
+    {
+      "qid": "books-600-908",
+      "sourceUrl": "https://www.safahat.org/contributors/59624258/",
+      "answerChecked": "طه حسين"
+    },
+    {
+      "qid": "books-800-901",
+      "sourceUrl": "https://www.gutenberg.org/ebooks/768",
+      "answerChecked": "إيميلي برونتي"
+    },
+    {
+      "qid": "books-800-902",
+      "sourceUrl": "https://www.gutenberg.org/files/164/164-h/164-h.htm",
+      "answerChecked": "الكابتن نيمو"
+    },
+    {
+      "qid": "books-800-903",
+      "sourceUrl": "https://www.gutenberg.org/files/120/120-h/120-h.htm",
+      "answerChecked": "لونغ جون سيلفر"
+    },
+    {
+      "qid": "books-800-904",
+      "sourceUrl": "https://www.gutenberg.org/files/2701/2701-h/2701-h.htm",
+      "answerChecked": "إسماعيل"
+    },
+    {
+      "qid": "books-800-905",
+      "sourceUrl": "https://www.safahat.org/books/62575295/",
+      "answerChecked": "حميدة"
+    },
+    {
+      "qid": "books-800-906",
+      "sourceUrl": "https://www.gutenberg.org/files/5200/5200-h/5200-h.htm",
+      "answerChecked": "غريغور سامسا"
+    },
+    {
+      "qid": "books-800-907",
+      "sourceUrl": "https://www.gutenberg.org/ebooks/1081",
+      "answerChecked": "نيكولاي غوغول"
+    },
+    {
+      "qid": "books-800-908",
+      "sourceUrl": "https://www.gutenberg.org/ebooks/345",
+      "answerChecked": "برام ستوكر"
+    },
+    {
+      "qid": "books-1000-901",
+      "sourceUrl": "https://www.gutenberg.org/files/4300/4300-h/4300-h.htm",
+      "answerChecked": "ليوبولد بلوم"
+    },
+    {
+      "qid": "books-1000-902",
+      "sourceUrl": "https://www.gutenberg.org/ebooks/155",
+      "answerChecked": "ويلكي كولينز"
+    },
+    {
+      "qid": "books-1000-903",
+      "sourceUrl": "https://www.gutenberg.org/files/1184/1184-h/1184-h.htm",
+      "answerChecked": "إدمون دانتيس"
+    },
+    {
+      "qid": "books-1000-904",
+      "sourceUrl": "https://www.gutenberg.org/files/3070/3070-h/3070-h.htm",
+      "answerChecked": "الفوسفور"
+    },
+    {
+      "qid": "books-1000-905",
+      "sourceUrl": "https://thebookerprizes.com/the-booker-library/books/midnights-children",
+      "answerChecked": "سليم سينائي"
+    },
+    {
+      "qid": "books-1000-906",
+      "sourceUrl": "https://www.gutenberg.org/ebooks/2500",
+      "answerChecked": "هرمان هسه"
+    },
+    {
+      "qid": "books-1000-907",
+      "sourceUrl": "https://www.gutenberg.org/files/1081/1081-h/1081-h.htm",
+      "answerChecked": "تشيتشيكوف"
+    },
+    {
+      "qid": "books-1000-908",
+      "sourceUrl": "https://www.safahat.org/contributors/19203514/",
+      "answerChecked": "محمد المويلحي"
+    }
+  ]
+}

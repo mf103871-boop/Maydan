@@ -1,0 +1,19 @@
+{
+  "id": "guesscar-200-906",
+  "kind": "question",
+  "pack": "guesscar",
+  "file": "media/guesscar/guesscar-200-906.webp",
+  "asset": "media/guesscar/guesscar-200-906.webp",
+  "prompt": "Use case: product-mockup.\nAsset: one AI-generated car-identification illustration for an Arabic family quiz.\nSubject: 2020 Toyota Corolla E210 five-door hatchback, white.\nGenerate a new high-quality realistic studio rendering of precisely this vehicle model and generation. Match its real proportions, characteristic body shape, grille, headlights, windows and wheel layout accurately; do not invent a hybrid car.\nComposition: full vehicle from front three-quarter angle (rear three-quarter angle for Tatra 87), centered, wheels and roof wholly visible, landscape 4:3. Soft ivory seamless studio floor and background, subtle contact shadow, natural materials and paint.\nDo not reproduce the described original photograph or its environment. No people, scenery, border, watermark or captions. The license plate must be blank. Omit readable model-name lettering that would reveal the answer. Brand emblems may retain their simple graphic shapes. This is a faithful visual illustration, not a document photograph.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-09-23",
+  "width": 1280,
+  "height": 960,
+  "bytes": 91616,
+  "sha256": "6ddf0437304ec919e808e5c15990b3a51683bee502eee5d0101e2a27b425cb95",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "pending",
+    "note": "Generation and file checks do not imply subject or gameplay verification."
+  }
+}

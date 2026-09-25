@@ -1,0 +1,19 @@
+{
+  "id": "flags-400-908",
+  "kind": "question",
+  "pack": "flags",
+  "file": "media/flags/flags-400-908.webp",
+  "asset": "media/flags/flags-400-908.webp",
+  "prompt": "Accurate educational national flag. Completely OPAQUE rectangular canvas, every pixel opaque, all color fields stay visible including white. Flat straight-on diagram with crisp solid color edges. Entire image is the flag, exact aspect ratio. No transparency or cutout, no labels, no words, no folds, no pole, no border, no shading. Chile. Width:height3:2. Bottom HALF all red #D52B1E. Top half: square blue #0039A6 canton at LEFT of width one-third total image width and height half totalimageheight; remaining top right WHITE. One white upright five-point star centered in blue square, diameter half canton height. No extra stars.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-09-23",
+  "width": 1280,
+  "height": 853,
+  "bytes": 9124,
+  "sha256": "a49253c6ce96d2d1801eead3528d15e839ce5bc781e17f677a06e157feacb09b",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "pending",
+    "note": "Generation and file checks do not imply subject or gameplay verification."
+  }
+}

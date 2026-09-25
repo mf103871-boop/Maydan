@@ -173,7 +173,6 @@ export function buildHiddenPack() {
         topic: theme.topic,
         verified: true,
         difficultyTarget: HIDDEN_CORRECT_TARGETS[tier.p],
-        source: 'لغز بصري أصلي؛ يُتحقق من الهدف وموقعه والتنوع آليًا',
         sourceUrl: 'docs/bank/rebuild-2026-09-18/interactive-evidence.md',
         target: TARGET,
         grid: createBoard(tier, tierIndex, theme, variant, qid, targetPositions[i]),

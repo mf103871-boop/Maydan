@@ -1,0 +1,19 @@
+{
+  "id": "flags-600-901",
+  "kind": "question",
+  "pack": "flags",
+  "file": "media/flags/flags-600-901.webp",
+  "asset": "media/flags/flags-600-901.webp",
+  "prompt": "Accurate educational national flag. Completely OPAQUE rectangular canvas, every pixel opaque, all color fields stay visible including white. Flat straight-on diagram with crisp solid color edges. Entire image is the flag, exact aspect ratio. No transparency or cutout, no labels, no words, no folds, no pole, no border, no shading. Romania civil national flag. Width:height3:2. THREE equal VERTICAL bands left to right: cobalt blue #002B7F, yellow #FCD116, red #CE1126. Blue at left must be medium cobalt BLUE, not near-black. No emblem.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-09-23",
+  "width": 1280,
+  "height": 853,
+  "bytes": 6770,
+  "sha256": "724b48ef6fc1b1040d2a0b596b24c8b1b105a3c89c9149aa35af86e3c4f473f8",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "pending",
+    "note": "Generation and file checks do not imply subject or gameplay verification."
+  }
+}

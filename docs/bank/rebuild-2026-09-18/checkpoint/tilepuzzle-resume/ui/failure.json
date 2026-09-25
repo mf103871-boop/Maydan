@@ -1,0 +1,322 @@
+{
+  "message": "browserType.launch: Executable doesn't exist at /root/.cache/ms-playwright/chromium_headless_shell-1243/chrome-headless-shell-linux64/chrome-headless-shell\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     npx playwright install                                 ║\n║                                                            ║\n║ <3 Playwright Team                                         ║\n╚════════════════════════════════════════════════════════════╝",
+  "checks": [
+    {
+      "name": "production application bundles without full-build bank/media gates",
+      "ok": true
+    },
+    {
+      "name": "general: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "geo: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "capitals: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "science: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "animals: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "history: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "food: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "fruitsveg: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "sports: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "football: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "worldcup: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "ucl: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "premier: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "tech: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "apps: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "brands: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "cars: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "shopping: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "arabic: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "proverbs: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "dialects: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "arabliterature: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "books: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "quotes: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "arabcelebs: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "youtubers: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "arabmusic: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "tarab: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "arabart: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "theater: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "ramadan: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "islamiyat: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "quran: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "seerah: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "prophets: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "arabseries: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "ramadanseries: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "babalhara: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "syriandrama: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "egyptdrama: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "turkishdrama: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "ertugrul: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "foreignseries: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "breakingbad: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "squidgame: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "movies: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "arabmovies: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "actors: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "anime: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "naruto: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "onepiece: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "dragonball: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "aot: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "deathnote: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "demonslayer: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "jujutsu: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "hunterxhunter: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "spacetoon: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "cartoon: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "videogames: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "puzzles: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "emoji: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "hidden: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "completeproverb: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "beforeafter: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "commonbond: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "code: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "hints: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "flags: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "zoom: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "blur: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "reveal: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "silhouette: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "guesscar: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "placefinder: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "spotdiff: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "sound: decodable 4:3 cover exists",
+      "ok": true
+    }
+  ],
+  "errors": []
+}

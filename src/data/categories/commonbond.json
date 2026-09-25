@@ -604,23 +604,24 @@
     },
     {
       "p": 1000,
-      "q": "سيمبيان وPalm OS وبلاكبيري 10: ما الوظيفة المشتركة لهذه البرمجيات؟",
-      "a": "أنظمة تشغيل للأجهزة المحمولة",
+      "q": "Ext4 وXFS وBtrfs: ما الفئة المشتركة التي تنظم تخزين البيانات على الأقراص؟",
+      "a": "أنظمة ملفات",
       "qid": "commonbond-1000-902",
       "type": "common",
       "items": [
-        "سيمبيان",
-        "Palm OS",
-        "بلاكبيري 10"
+        "Ext4",
+        "XFS",
+        "Btrfs"
       ],
       "topic": "تقنية",
       "alt": [
-        "أنظمة تشغيل",
-        "أنظمة تشغيل الهواتف"
+        "نظم الملفات",
+        "أنظمة الملفات",
+        "أنظمة إدارة الملفات"
       ],
       "difficultyTarget": 0.15,
       "verified": true,
-      "sourceUrl": "https://en.wikipedia.org/wiki/Mobile_operating_system"
+      "sourceUrl": "https://docs.kernel.org/filesystems/index.html"
     },
     {
       "p": 1000,

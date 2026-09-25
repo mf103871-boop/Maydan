@@ -4,2364 +4,414 @@
   "name": "أدب عربي",
   "qs": [
     {
+      "qid": "arabliterature-200-901",
+      "p": 200,
+      "q": "ما موطن الشاعر أبي القاسم الشابي في شمال أفريقيا؟",
       "a": "تونس",
-      "p": 200,
-      "q": "إلى أي بلد عربي ينتمي الشاعر الشابي؟",
-      "qid": "arabliterature-200-002",
-      "sourceUrl": "https://www.safahat.org/contributors/16361353/",
       "topic": "سير الأدباء وأماكنهم",
-      "verified": true
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://www.safahat.org/contributors/16361353/"
     },
     {
+      "qid": "arabliterature-200-902",
+      "p": 200,
+      "q": "ما اسم الصورة البلاغية في عبارة «وجهه مثل القمر»؟",
       "a": "التشبيه",
-      "p": 200,
-      "q": "ما الأسلوب الذي يقارن شيئين باستخدام «مثل» أو الكاف؟",
-      "qid": "arabliterature-200-004",
-      "sourceUrl": "https://www.safahat.org/books/85925824/2.1/",
       "topic": "المصطلحات والنقد",
-      "verified": true
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://www.safahat.org/books/85925824/2.1/"
     },
     {
+      "qid": "arabliterature-200-903",
+      "p": 200,
+      "q": "بأي أديب مصري ارتبط لقب «عميد الأدب العربي»؟",
       "a": "طه حسين",
-      "p": 200,
-      "q": "من الأديب المصري المشهور بلقب «عميد الأدب العربي»؟",
-      "qid": "arabliterature-200-005",
-      "sourceUrl": "https://www.safahat.org/contributors/59624258/",
       "topic": "الرواية والقصة",
-      "verified": true
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://www.safahat.org/contributors/59624258/"
     },
     {
+      "qid": "arabliterature-200-904",
+      "p": 200,
+      "q": "من الشاعر الذي لُقّب «شاعر النيل» وكتب قصيدة «الأم مدرسة»؟",
       "a": "حافظ إبراهيم",
-      "p": 200,
-      "q": "من الشاعر المصري المعروف بلقب «شاعر النيل»؟",
-      "qid": "arabliterature-200-006",
-      "sourceUrl": "https://www.safahat.org/contributors/71640270/",
       "topic": "الشعر الحديث",
-      "verified": true
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://www.safahat.org/contributors/71640270/"
     },
     {
-      "a": "لبنان",
+      "qid": "arabliterature-200-905",
       "p": 200,
-      "q": "ما البلد العربي الذي ينتمي إليه جبران؟",
-      "qid": "arabliterature-200-007",
-      "sourceUrl": "https://www.safahat.org/contributors/85274958/",
-      "topic": "سير الأدباء وأماكنهم",
-      "verified": true
-    },
-    {
+      "q": "لمن ينادي عنترة الديار بقوله «يا دار ... بالجواء تكلمي»؟",
       "a": "عبلة",
-      "p": 200,
-      "q": "ما اسم الفتاة التي ينادي عنترة دارها في مطلع معلقته؟",
-      "qid": "arabliterature-200-008",
-      "sourceUrl": "https://ar.wikisource.org/wiki/معلقة_عنترة_بن_شداد",
       "topic": "الحكايات والشخصيات",
-      "verified": true
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://ar.wikisource.org/wiki/معلقة_عنترة_بن_شداد"
     },
     {
-      "a": "التعاون",
+      "qid": "arabliterature-200-906",
       "p": 200,
-      "q": "في حكاية الحمامة المطوقة، ما السلوك الذي مكن الطيور من رفع الشبكة معًا؟",
-      "qid": "arabliterature-200-009",
-      "sourceUrl": "https://ar.wikisource.org/wiki/كليلة_ودمنة/باب_الحمامة_المطوقة",
-      "topic": "الحكايات والشخصيات",
-      "verified": true
-    },
-    {
+      "q": "ما اسم ابنة الوزير التي تروي الحكايات ثم تصمت عند الفجر في الليالي؟",
       "a": "شهرزاد",
-      "p": 200,
-      "q": "ما اسم الراوية التي تسكت عن الكلام المباح عند طلوع الصباح؟",
-      "qid": "arabliterature-200-011",
-      "sourceUrl": "https://ar.wikisource.org/wiki/ألف_ليلة_وليلة/الجزء_الأول",
       "topic": "الحكايات والشخصيات",
-      "verified": true
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://ar.wikisource.org/wiki/ألف_ليلة_وليلة/الجزء_الأول"
     },
     {
-      "a": "ألف ليلة وليلة",
+      "qid": "arabliterature-200-907",
       "p": 200,
-      "q": "ما مجموعة الحكايات التي ترويها ابنة الوزير لتؤجل مصيرها ليلة بعد ليلة؟",
-      "qid": "arabliterature-200-012",
-      "sourceUrl": "https://ar.wikisource.org/wiki/ألف_ليلة_وليلة/الجزء_الأول",
-      "topic": "النثر والكتب التراثية",
-      "verified": true
-    },
-    {
+      "q": "من صاحب الملحمة الروائية «الحرافيش»؟",
       "a": "نجيب محفوظ",
-      "p": 200,
-      "q": "من الروائي المصري صاحب «الحرافيش»؟",
-      "qid": "arabliterature-200-015",
-      "sourceUrl": "https://www.safahat.org/books/39429258/",
       "topic": "الرواية والقصة",
-      "verified": true
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://www.safahat.org/books/39429258/"
     },
     {
+      "qid": "arabliterature-200-908",
+      "p": 200,
+      "q": "إلى أي صاحب مهنة وجّه شوقي قوله «قم ... وفّه التبجيلا»؟",
       "a": "المعلم",
-      "p": 200,
-      "q": "بمن يأمر شوقي أن نحتفي في قوله «قم ... وفّه التبجيلا»؟",
-      "qid": "arabliterature-200-018",
+      "topic": "الشعر الحديث",
+      "verified": true,
+      "difficultyTarget": 0.8,
       "sourceUrl": "https://www.safahat.org/books/70706142/36/",
-      "topic": "الشعر الحديث",
-      "verified": true
-    },
-    {
-      "a": "الجبال",
-      "p": 200,
-      "q": "ما المرتفعات التي يربط الشابي صعودها بالطموح في قصيدته الشهيرة؟",
-      "qid": "arabliterature-200-019",
-      "sourceUrl": "https://ar.wikisource.org/wiki/إرادة_الحياة",
-      "topic": "الشعر الحديث",
-      "verified": true
-    },
-    {
-      "a": "الرياح",
-      "p": 200,
-      "q": "ما الذي يجري «بما لا تشتهي السفن» في بيت المتنبي؟",
-      "qid": "arabliterature-200-020",
-      "sourceUrl": "https://ar.wikisource.org/wiki/بم_التعلل_لا_أهل_ولا_وطن",
-      "topic": "الشعر القديم",
-      "verified": true
-    },
-    {
-      "a": "العربية",
-      "p": 200,
-      "q": "ما اللغة التي تتحدث بلسانها قصيدة حافظ «أنا البحر في أحشائه الدر كامن»؟",
-      "qid": "arabliterature-200-022",
-      "sourceUrl": "https://www.safahat.org/books/63795362/8/",
-      "topic": "الشعر الحديث",
-      "verified": true
-    },
-    {
-      "p": 200,
-      "topic": "الشعر الحديث",
-      "q": "من الشاعر الفلسطيني الملقب بشاعر الأرض المحتلة؟",
-      "a": "محمود درويش",
-      "alt": [],
-      "sourceUrl": "https://www.aldiwan.net/",
-      "verified": true,
-      "qid": "arabliterature-200-026"
-    },
-    {
-      "p": 200,
-      "topic": "الشعر الحديث",
-      "q": "من الشاعرة العراقية الرائدة في التفعيلة مع السياب؟",
-      "a": "نازك الملائكة",
-      "alt": [],
-      "sourceUrl": "https://www.aldiwan.net/",
-      "verified": true,
-      "qid": "arabliterature-200-027"
-    },
-    {
-      "p": 200,
-      "topic": "الشعر الحديث",
-      "q": "من شاعر المهجر صاحب قصيدة فلسفة الحياة؟",
-      "a": "إيليا أبو ماضي",
-      "alt": [],
-      "sourceUrl": "https://www.aldiwan.net/",
-      "verified": true,
-      "qid": "arabliterature-200-028"
-    },
-    {
-      "p": 200,
-      "topic": "الشعر الحديث",
-      "q": "من الشاعر المصري صاحب مأساة الحلاج شعرا؟",
-      "a": "صلاح عبد الصبور",
-      "alt": [],
-      "sourceUrl": "https://www.aldiwan.net/",
-      "verified": true,
-      "qid": "arabliterature-200-029"
-    },
-    {
-      "p": 200,
-      "topic": "الشعر القديم",
-      "q": "من الشاعرة المخضرمة الشهيرة برثاء أخيها صخر؟",
-      "a": "الخنساء",
-      "alt": [],
-      "sourceUrl": "https://www.aldiwan.net/",
-      "verified": true,
-      "qid": "arabliterature-200-030"
-    },
-    {
-      "p": 200,
-      "topic": "الشعر القديم",
-      "q": "من شاعر الخمر العباسي؟",
-      "a": "أبو نواس",
-      "alt": [],
-      "sourceUrl": "https://www.aldiwan.net/",
-      "verified": true,
-      "qid": "arabliterature-200-031"
-    },
-    {
-      "p": 200,
-      "topic": "الشعر القديم",
-      "q": "أي شاعر أموي عُرف بنقائضه مع الفرزدق؟",
-      "a": "جرير",
-      "alt": [],
-      "sourceUrl": "https://www.aldiwan.net/",
-      "verified": true,
-      "qid": "arabliterature-200-033"
-    },
-    {
-      "p": 200,
-      "topic": "الرواية والقصة",
-      "q": "من الروائي السوداني صاحب موسم الهجرة إلى الشمال؟",
-      "a": "الطيب صالح",
-      "alt": [],
-      "sourceUrl": "https://www.britannica.com/",
-      "verified": true,
-      "qid": "arabliterature-200-034"
-    },
-    {
-      "p": 200,
-      "topic": "الرواية والقصة",
-      "q": "من كاتب رجال في الشمس؟",
-      "a": "غسان كنفاني",
-      "alt": [],
-      "sourceUrl": "https://www.britannica.com/",
-      "verified": true,
-      "qid": "arabliterature-200-035"
-    },
-    {
-      "p": 200,
-      "topic": "الرواية والقصة",
-      "q": "من الروائي السوري صاحب الشراع والعاصفة؟",
-      "a": "حنا مينه",
-      "alt": [],
-      "sourceUrl": "https://www.britannica.com/",
-      "verified": true,
-      "qid": "arabliterature-200-036"
-    },
-    {
-      "p": 200,
-      "topic": "الرواية والقصة",
-      "q": "من الأديبة الجزائرية صاحبة ذاكرة الجسد؟",
-      "a": "أحلام مستغانمي",
-      "alt": [],
-      "sourceUrl": "https://www.britannica.com/",
-      "verified": true,
-      "qid": "arabliterature-200-037"
-    },
-    {
-      "p": 200,
-      "topic": "الرواية والقصة",
-      "q": "من الطبيب المصري الذي صار من أشهر كتّاب القصة القصيرة في الأدب الحديث؟",
-      "a": "يوسف إدريس",
-      "alt": [],
-      "sourceUrl": "https://www.britannica.com/",
-      "verified": true,
-      "qid": "arabliterature-200-038"
-    },
-    {
-      "p": 200,
-      "topic": "سير الأدباء وأماكنهم",
-      "q": "في أي بلد وُلد صاحب ديوان قالت لي السمراء؟",
-      "a": "سوريا",
       "alt": [
-        "سورية"
-      ],
-      "sourceUrl": "https://www.britannica.com/",
-      "verified": true,
-      "qid": "arabliterature-200-040"
+        "المدرس"
+      ]
     },
     {
-      "p": 200,
-      "topic": "المصطلحات والنقد",
-      "q": "ما اسم نقل المعنى بتشبيه محذوف الأداة؟",
-      "a": "الاستعارة",
-      "alt": [],
-      "sourceUrl": "https://www.britannica.com/",
-      "verified": true,
-      "qid": "arabliterature-200-042"
-    },
-    {
-      "p": 200,
-      "topic": "المصطلحات والنقد",
-      "q": "ما المحسن الذي يجمع الشيء وضده؟",
-      "a": "الطباق",
-      "alt": [],
-      "sourceUrl": "https://www.britannica.com/",
-      "verified": true,
-      "qid": "arabliterature-200-043"
-    },
-    {
-      "p": 200,
-      "topic": "المصطلحات والنقد",
-      "q": "ما الفن النثري العربي المسجوع الذي بطله بليغ متسوّل يتنقل بين المجالس؟",
-      "a": "المقامة",
-      "alt": [],
-      "sourceUrl": "https://ar.wikisource.org/",
-      "verified": true,
-      "qid": "arabliterature-200-044"
-    },
-    {
-      "p": 200,
-      "topic": "المصطلحات والنقد",
-      "q": "ما اللقب الذي يحمله كلٌّ من قصائد الجاهلية السبع المشهورة؟",
-      "a": "المعلقة",
-      "alt": [],
-      "sourceUrl": "https://www.britannica.com/",
-      "verified": true,
-      "qid": "arabliterature-200-045"
-    },
-    {
-      "p": 200,
-      "topic": "الحكايات والشخصيات",
-      "q": "من الشخصية الشعبية الشهيرة بطرائفها ونوادرها في التراث العربي؟",
-      "a": "جحا",
-      "alt": [],
-      "sourceUrl": "https://www.britannica.com/",
-      "verified": true,
-      "qid": "arabliterature-200-046"
-    },
-    {
-      "p": 200,
-      "topic": "الحكايات والشخصيات",
-      "q": "من الذي فتح المغارة بعبارة افتح يا سمسم؟",
-      "a": "علي بابا",
-      "alt": [],
-      "sourceUrl": "https://www.britannica.com/",
-      "verified": true,
-      "qid": "arabliterature-200-047"
-    },
-    {
-      "p": 200,
-      "topic": "الحكايات والشخصيات",
-      "q": "ما اسم الجارية الذكية في حكاية المغارة والكنوز؟",
-      "a": "مرجانة",
-      "alt": [],
-      "sourceUrl": "https://www.britannica.com/",
-      "verified": true,
-      "qid": "arabliterature-200-048"
-    },
-    {
-      "p": 200,
-      "topic": "المصطلحات والنقد",
-      "q": "ما الغرض الشعري الذي يفتخر فيه الشاعر بنفسه وقومه؟",
-      "a": "الفخر",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A3%D8%BA%D8%B1%D8%A7%D8%B6%20%D8%A7%D9%84%D8%B4%D8%B9%D8%B1%20%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A",
-      "verified": true,
-      "qid": "arabliterature-200-049"
-    },
-    {
-      "p": 200,
-      "topic": "النثر والكتب التراثية",
-      "q": "ما اسم المعجم الشهير الذي وضعه ابن منظور؟",
-      "a": "لسان العرب",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%84%D8%B3%D8%A7%D9%86%20%D8%A7%D9%84%D8%B9%D8%B1%D8%A8",
-      "verified": true,
-      "qid": "arabliterature-200-050"
-    },
-    {
-      "p": 200,
-      "topic": "الرواية والقصة",
-      "q": "من الكاتبة المصرية صاحبة «مذكرات طبيبة»؟",
-      "a": "نوال السعداوي",
-      "alt": [
-        "السعداوي"
-      ],
-      "sourceUrl": "https://www.hindawi.org/books/82913072/",
-      "verified": true,
-      "qid": "arabliterature-200-051"
-    },
-    {
-      "p": 200,
-      "topic": "الحكايات والشخصيات",
-      "q": "ما اسم السيرة الشعبية التي تروي رحلة بني هلال إلى المغرب؟",
-      "a": "السيرة الهلالية",
-      "alt": [
-        "سيرة بني هلال",
-        "الهلالية"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A7%D9%84%D8%B3%D9%8A%D8%B1%D8%A9%20%D8%A7%D9%84%D9%87%D9%84%D8%A7%D9%84%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "arabliterature-200-052"
-    },
-    {
-      "p": 200,
-      "topic": "المسرح والدراما",
-      "q": "من الشاعر المصري الذي كتب المسرحية الشعرية «مصرع كليوباترا»؟",
-      "a": "أحمد شوقي",
-      "alt": [
-        "شوقي"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A3%D8%AD%D9%85%D8%AF%20%D8%B4%D9%88%D9%82%D9%8A",
-      "verified": true,
-      "qid": "arabliterature-200-053"
-    },
-    {
-      "p": 200,
-      "topic": "المصطلحات والنقد",
-      "q": "ما الغرض الشعري الذي يذمّ فيه الشاعر خصمه ويعيّره؟",
-      "a": "الهجاء",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A3%D8%BA%D8%B1%D8%A7%D8%B6%20%D8%A7%D9%84%D8%B4%D8%B9%D8%B1%20%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A",
-      "verified": true,
-      "qid": "arabliterature-200-054"
-    },
-    {
-      "p": 200,
-      "topic": "سير الأدباء وأماكنهم",
-      "q": "أي حاسة فقدها عميد الأدب العربي في طفولته؟",
-      "a": "البصر",
-      "alt": [
-        "النظر",
-        "الإبصار"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B7%D9%87%20%D8%AD%D8%B3%D9%8A%D9%86",
-      "verified": true,
-      "qid": "arabliterature-200-055"
-    },
-    {
-      "p": 200,
-      "topic": "الشعر القديم",
-      "q": "من شاعر الجاهلية الذي صار كرمه مضرب المثل؟",
-      "a": "حاتم الطائي",
-      "alt": [
-        "حاتم"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AD%D8%A7%D8%AA%D9%85%20%D8%A7%D9%84%D8%B7%D8%A7%D8%A6%D9%8A",
-      "verified": true,
-      "qid": "arabliterature-200-056"
-    },
-    {
-      "p": 200,
-      "topic": "الشعر الحديث",
-      "q": "من الشاعر السوري الملقب بـ«شاعر المرأة»؟",
-      "a": "نزار قباني",
-      "alt": [
-        "نزار"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%86%D8%B2%D8%A7%D8%B1%20%D9%82%D8%A8%D8%A7%D9%86%D9%8A",
-      "verified": true,
-      "qid": "arabliterature-200-057"
-    },
-    {
-      "p": 200,
-      "topic": "سير الأدباء وأماكنهم",
-      "q": "في أي مدينة عاش المتنبي في بلاط سيف الدولة؟",
-      "a": "حلب",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A7%D9%84%D9%85%D8%AA%D9%86%D8%A8%D9%8A",
-      "verified": true,
-      "qid": "arabliterature-200-058"
-    },
-    {
-      "p": 200,
-      "topic": "الحكايات والشخصيات",
-      "q": "ما الحيوان الذي يرافق جحا في نوادره؟",
-      "a": "الحمار",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AC%D8%AD%D8%A7",
-      "verified": true,
-      "qid": "arabliterature-200-059"
-    },
-    {
-      "p": 200,
-      "topic": "الشعر القديم",
-      "q": "ما اسم الفن الشعري الأندلسي المغنّى الذي خرج عن نظام القصيدة؟",
-      "a": "الموشح",
-      "alt": [
-        "الموشحات",
-        "الموشح الأندلسي"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D9%88%D8%B4%D8%AD",
-      "verified": true,
-      "qid": "arabliterature-200-060"
-    },
-    {
-      "p": 200,
-      "topic": "الشعر الحديث",
-      "q": "ما الاسم الذي يُطلق على أدب العرب الذين هاجروا إلى الأمريكتين؟",
-      "a": "أدب المهجر",
-      "alt": [
-        "المهجر",
-        "شعر المهجر"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A3%D8%AF%D8%A8%20%D8%A7%D9%84%D9%85%D9%87%D8%AC%D8%B1",
-      "verified": true,
-      "qid": "arabliterature-200-061"
-    },
-    {
-      "p": 200,
-      "topic": "الشعر الحديث",
-      "q": "من الشاعر اللبناني الذي عاش في مصر ولُقّب بـ«شاعر القطرين»؟",
-      "a": "خليل مطران",
-      "alt": [
-        "مطران"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AE%D9%84%D9%8A%D9%84%20%D9%85%D8%B7%D8%B1%D8%A7%D9%86",
-      "verified": true,
-      "qid": "arabliterature-200-062"
-    },
-    {
+      "qid": "arabliterature-400-901",
+      "p": 400,
+      "q": "من الشاعر الذي جمع في لقب «رهين المحبسين» بين العمى ولزوم المنزل؟",
       "a": "أبو العلاء المعري",
-      "p": 400,
-      "q": "من الشاعر الذي اشتهر بلقب «رهين المحبسين»؟",
-      "qid": "arabliterature-400-001",
-      "sourceUrl": "https://www.safahat.org/contributors/47539208/",
       "topic": "الشعر القديم",
-      "verified": true
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://www.safahat.org/contributors/47539208/"
     },
     {
+      "qid": "arabliterature-400-902",
+      "p": 400,
+      "q": "ما العلم الذي وضعه الخليل لدراسة أوزان القصائد؟",
       "a": "العروض",
-      "p": 400,
-      "q": "ما العلم الذي يختبر صحة أوزان الشعر العربي؟",
-      "qid": "arabliterature-400-003",
-      "sourceUrl": "https://www.safahat.org/books/50259706/",
       "topic": "المصطلحات والنقد",
-      "verified": true
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://www.safahat.org/books/50259706/"
     },
     {
-      "a": "الصدر",
+      "qid": "arabliterature-400-903",
       "p": 400,
-      "q": "ما اسم الشطر الأول في الشعر العمودي؟",
-      "qid": "arabliterature-400-004",
-      "sourceUrl": "https://www.safahat.org/books/50259706/1.1/",
-      "topic": "المصطلحات والنقد",
-      "verified": true
-    },
-    {
-      "a": "العجز",
-      "p": 400,
-      "q": "ما اسم الشطر الثاني في الشعر العمودي؟",
-      "qid": "arabliterature-400-005",
-      "sourceUrl": "https://www.safahat.org/books/50259706/1.1/",
-      "topic": "المصطلحات والنقد",
-      "verified": true
-    },
-    {
-      "a": "الجناس",
-      "p": 400,
-      "q": "ما اسم تشابه كلمتين في النطق واختلافهما في المعنى؟",
-      "qid": "arabliterature-400-006",
-      "sourceUrl": "https://www.safahat.org/books/85925824/3.2/",
-      "topic": "المصطلحات والنقد",
-      "verified": true
-    },
-    {
-      "a": "السجع",
-      "p": 400,
-      "q": "ما اسم توافق نهايات الجمل النثرية في الحرف الأخير؟",
-      "qid": "arabliterature-400-007",
-      "sourceUrl": "https://www.safahat.org/books/85925824/3.2/",
-      "topic": "المصطلحات والنقد",
-      "verified": true
-    },
-    {
+      "q": "ما عنوان الكتاب الذي روى فيه صاحب «دعاء الكروان» سيرته الذاتية؟",
       "a": "الأيام",
-      "p": 400,
-      "q": "ما عنوان السيرة الذاتية لعميد الأدب العربي؟",
-      "qid": "arabliterature-400-008",
-      "sourceUrl": "https://www.safahat.org/contributors/59624258/",
       "topic": "الرواية والقصة",
-      "verified": true
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://www.safahat.org/contributors/59624258/"
     },
     {
+      "qid": "arabliterature-400-904",
+      "p": 400,
+      "q": "ما الفن التشكيلي الذي درسه جبران في أمريكا وفرنسا؟",
       "a": "الرسم",
-      "p": 400,
-      "q": "ما الفن البصري الذي مارسه جبران إلى جانب الكتابة؟",
-      "qid": "arabliterature-400-009",
-      "sourceUrl": "https://www.safahat.org/contributors/85274958/",
       "topic": "سير الأدباء وأماكنهم",
-      "verified": true
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://www.safahat.org/contributors/85274958/"
     },
     {
-      "a": "مي زيادة",
+      "qid": "arabliterature-400-905",
       "p": 400,
-      "q": "من الأديبة التي تبادلت رسائل شهيرة مع جبران؟",
-      "qid": "arabliterature-400-010",
-      "sourceUrl": "https://www.safahat.org/contributors/85274958/",
-      "topic": "الرواية والقصة",
-      "verified": true
-    },
-    {
-      "a": "امرؤ القيس",
-      "p": 400,
-      "q": "من الشاعر الذي افتتح معلقته بعبارة «قفا نبك»؟",
-      "qid": "arabliterature-400-011",
-      "sourceUrl": "https://ar.wikisource.org/wiki/معلقة_امرئ_القيس",
-      "topic": "الشعر القديم",
-      "verified": true
-    },
-    {
-      "a": "عنترة بن شداد",
-      "p": 400,
-      "q": "من صاحب المطلع «هل غادر الشعراء من متردم»؟",
-      "qid": "arabliterature-400-012",
-      "sourceUrl": "https://ar.wikisource.org/wiki/معلقة_عنترة_بن_شداد",
-      "topic": "الشعر القديم",
-      "verified": true
-    },
-    {
+      "q": "من ألّف مسرحية «أهل الكهف» العربية المنشورة عام1933؟",
       "a": "توفيق الحكيم",
-      "p": 400,
-      "q": "من صاحب مسرحية «أهل الكهف»؟",
-      "qid": "arabliterature-400-013",
-      "sourceUrl": "https://www.safahat.org/contributors/80628197/",
       "topic": "المسرح والدراما",
-      "verified": true
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://www.safahat.org/contributors/80628197/"
     },
     {
-      "a": "وكيل النيابة",
+      "qid": "arabliterature-400-906",
       "p": 400,
-      "q": "ما المهنة القضائية التي مارسها الحكيم وألهمته يومياته الروائية؟",
-      "qid": "arabliterature-400-014",
-      "sourceUrl": "https://www.safahat.org/contributors/80628197/",
-      "topic": "سير الأدباء وأماكنهم",
-      "verified": true
-    },
-    {
+      "q": "ما اسم الملك الذي تؤجّل الحكايات قراره بقتل زوجته في الليالي؟",
       "a": "شهريار",
-      "p": 400,
-      "q": "ما اسم الملك الذي يستمع إلى حكايات ابنة وزيره كل ليلة؟",
-      "qid": "arabliterature-400-015",
-      "sourceUrl": "https://ar.wikisource.org/wiki/ألف_ليلة_وليلة/الجزء_الأول",
       "topic": "الحكايات والشخصيات",
-      "verified": true
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://ar.wikisource.org/wiki/ألف_ليلة_وليلة/الجزء_الأول"
     },
     {
-      "a": "النحت",
+      "qid": "arabliterature-400-907",
       "p": 400,
-      "q": "ما الفن الذي يمارسه بطل «بجماليون» ليصنع تمثال امرأة؟",
-      "qid": "arabliterature-400-017",
-      "sourceUrl": "https://www.safahat.org/books/81957173/",
-      "topic": "المسرح والدراما",
-      "verified": true
-    },
-    {
-      "a": "الفلسفة",
-      "p": 400,
-      "q": "ما التخصص الجامعي الذي اختاره محفوظ قبل التفرغ للأدب؟",
-      "qid": "arabliterature-400-018",
-      "sourceUrl": "https://www.safahat.org/contributors/71616385/",
-      "topic": "سير الأدباء وأماكنهم",
-      "verified": true
-    },
-    {
+      "q": "بأي رواية تبدأ ثلاثية صاحب «الحرافيش»؟",
       "a": "بين القصرين",
-      "p": 400,
-      "q": "ما عنوان الجزء الأول من ثلاثية محفوظ؟",
-      "qid": "arabliterature-400-019",
-      "sourceUrl": "https://www.safahat.org/books/29179502/",
       "topic": "الرواية والقصة",
-      "verified": true
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://www.safahat.org/books/29179502/"
     },
     {
-      "a": "السيد أحمد عبد الجواد",
-      "alt": [
-        "أحمد عبد الجواد",
-        "سي السيد"
-      ],
+      "qid": "arabliterature-400-908",
       "p": 400,
-      "q": "ما اسم الأب صاحب السلطة على أسرته في ثلاثية محفوظ؟",
-      "qid": "arabliterature-400-020",
-      "sourceUrl": "https://www.safahat.org/books/29179502/",
-      "topic": "الرواية والقصة",
-      "verified": true
-    },
-    {
-      "a": "قيس بن الملوح",
-      "p": 400,
-      "q": "من الشاعر الذي حمل لقب «مجنون ليلى»؟",
-      "qid": "arabliterature-400-021",
-      "sourceUrl": "https://www.safahat.org/books/79283830/",
-      "topic": "الشعر القديم",
-      "verified": true
-    },
-    {
-      "a": "الغزل",
-      "p": 400,
-      "q": "ما الغرض الشعري الذي يعبّر عن الحب والشوق إلى المحبوب؟",
-      "qid": "arabliterature-400-022",
-      "sourceUrl": "https://www.safahat.org/books/79283830/",
-      "topic": "المصطلحات والنقد",
-      "verified": true
-    },
-    {
-      "a": "الرثاء",
-      "p": 400,
-      "q": "ما الغرض الشعري الذي يؤبّن الراحلين ويعبّر عن الحزن لفقدهم؟",
-      "qid": "arabliterature-400-023",
-      "sourceUrl": "https://www.safahat.org/books/70706142/",
-      "topic": "المصطلحات والنقد",
-      "verified": true
-    },
-    {
+      "q": "بأي عنوان جُمعت قصائد أمير الشعراء في ديوانه؟",
       "a": "الشوقيات",
-      "p": 400,
-      "q": "ما الاسم الجامع لديوان أمير الشعراء؟",
-      "qid": "arabliterature-400-024",
-      "sourceUrl": "https://www.safahat.org/books/70706142/",
       "topic": "الشعر الحديث",
-      "verified": true
-    },
-    {
-      "a": "رسولا",
-      "alt": [
-        "رسول"
-      ],
-      "p": 400,
-      "q": "بمن شبّه شوقي صاحب رسالة التعليم في مطلع قصيدته عن فضله؟",
-      "qid": "arabliterature-400-025",
-      "sourceUrl": "https://www.safahat.org/books/70706142/36/",
-      "topic": "الشعر الحديث",
-      "verified": true
-    },
-    {
-      "a": "أبو القاسم الشابي",
-      "p": 400,
-      "q": "من الشاعر التونسي صاحب «إرادة الحياة»؟",
-      "qid": "arabliterature-400-026",
-      "sourceUrl": "https://ar.wikisource.org/wiki/إرادة_الحياة",
-      "topic": "الشعر الحديث",
-      "verified": true
-    },
-    {
-      "a": "أبو تمام",
-      "p": 400,
-      "q": "من الشاعر العباسي الذي جمع مختارات الشعر في «ديوان الحماسة»؟",
-      "qid": "arabliterature-400-028",
-      "sourceUrl": "https://ar.wikisource.org/wiki/السيف_أصدق_أنباء_من_الكتب",
-      "topic": "الشعر القديم",
-      "verified": true
-    },
-    {
-      "p": 400,
-      "topic": "النثر والكتب التراثية",
-      "q": "من مؤلف كتاب الأغاني؟",
-      "a": "أبو الفرج الأصفهاني",
-      "alt": [
-        "أبو الفرج"
-      ],
-      "sourceUrl": "https://ar.wikisource.org/",
       "verified": true,
-      "qid": "arabliterature-400-029"
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://www.safahat.org/books/70706142/"
     },
     {
-      "p": 400,
-      "topic": "النثر والكتب التراثية",
-      "q": "ما كتاب الجاحظ في البيان وفصاحة الكلام؟",
-      "a": "البيان والتبيين",
-      "alt": [],
-      "sourceUrl": "https://ar.wikisource.org/",
-      "verified": true,
-      "qid": "arabliterature-400-030"
-    },
-    {
-      "p": 400,
-      "topic": "النثر والكتب التراثية",
-      "q": "من صاحب مقامات بطلها أبو الفتح الإسكندري؟",
-      "a": "بديع الزمان الهمذاني",
-      "alt": [
-        "الهمذاني"
-      ],
-      "sourceUrl": "https://ar.wikisource.org/",
-      "verified": true,
-      "qid": "arabliterature-400-031"
-    },
-    {
-      "p": 400,
-      "topic": "النثر والكتب التراثية",
-      "q": "من مؤلف كتاب عيون الأخبار؟",
-      "a": "ابن قتيبة",
-      "alt": [],
-      "sourceUrl": "https://ar.wikisource.org/",
-      "verified": true,
-      "qid": "arabliterature-400-032"
-    },
-    {
-      "p": 400,
-      "topic": "النثر والكتب التراثية",
-      "q": "ما كتاب ابن طفيل الفلسفي على لسان طفل جزيرة؟",
-      "a": "حي بن يقظان",
-      "alt": [],
-      "sourceUrl": "https://ar.wikisource.org/",
-      "verified": true,
-      "qid": "arabliterature-400-033"
-    },
-    {
-      "p": 400,
-      "topic": "النثر والكتب التراثية",
-      "q": "من مؤلف العقد الفريد؟",
-      "a": "ابن عبد ربه",
-      "alt": [],
-      "sourceUrl": "https://ar.wikisource.org/",
-      "verified": true,
-      "qid": "arabliterature-400-034"
-    },
-    {
-      "p": 400,
-      "topic": "الشعر الحديث",
-      "q": "من رائد الشعر الحر العراقي صاحب أنشودة المطر؟",
-      "a": "بدر شاكر السياب",
-      "alt": [],
-      "sourceUrl": "https://www.aldiwan.net/",
-      "verified": true,
-      "qid": "arabliterature-400-035"
-    },
-    {
-      "p": 400,
-      "topic": "الشعر الحديث",
-      "q": "من شاعر العراق الملقب بشاعر العرب الأكبر في عصره؟",
-      "a": "محمد مهدي الجواهري",
-      "alt": [
-        "الجواهري"
-      ],
-      "sourceUrl": "https://www.aldiwan.net/",
-      "verified": true,
-      "qid": "arabliterature-400-036"
-    },
-    {
-      "p": 400,
-      "topic": "الشعر الحديث",
-      "q": "من الشاعرة الفلسطينية صاحبة أمام الباب المغلق؟",
-      "a": "فدوى طوقان",
-      "alt": [],
-      "sourceUrl": "https://www.aldiwan.net/",
-      "verified": true,
-      "qid": "arabliterature-400-037"
-    },
-    {
-      "p": 400,
-      "topic": "الشعر الحديث",
-      "q": "من أشهر شعراء اليمن في القرن العشرين، وقد كان كفيفًا؟",
-      "a": "عبد الله البردوني",
-      "alt": [],
-      "sourceUrl": "https://www.aldiwan.net/",
-      "verified": true,
-      "qid": "arabliterature-400-038"
-    },
-    {
-      "p": 400,
-      "topic": "الرواية والقصة",
-      "q": "من صاحب خماسية مدن الملح؟",
-      "a": "عبد الرحمن منيف",
-      "alt": [],
-      "sourceUrl": "https://www.britannica.com/",
-      "verified": true,
-      "qid": "arabliterature-400-039"
-    },
-    {
-      "p": 400,
-      "topic": "الرواية والقصة",
-      "q": "من كاتب الزيني بركات؟",
-      "a": "جمال الغيطاني",
-      "alt": [],
-      "sourceUrl": "https://www.britannica.com/",
-      "verified": true,
-      "qid": "arabliterature-400-040"
-    },
-    {
-      "p": 400,
-      "topic": "الرواية والقصة",
-      "q": "من الأديبة المصرية صاحبة ثلاثية غرناطة؟",
-      "a": "رضوى عاشور",
-      "alt": [],
-      "sourceUrl": "https://www.britannica.com/",
-      "verified": true,
-      "qid": "arabliterature-400-042"
-    },
-    {
-      "p": 400,
-      "topic": "سير الأدباء وأماكنهم",
-      "q": "في أي مدينة مصرية وُلد يحيى حقي؟",
-      "a": "القاهرة",
-      "alt": [],
-      "sourceUrl": "https://www.britannica.com/",
-      "verified": true,
-      "qid": "arabliterature-400-044"
-    },
-    {
-      "p": 400,
-      "topic": "المصطلحات والنقد",
-      "q": "ما اسم ذكر لازم المعنى وإرادة لازمه؟",
-      "a": "الكناية",
-      "alt": [],
-      "sourceUrl": "https://www.britannica.com/",
-      "verified": true,
-      "qid": "arabliterature-400-045"
-    },
-    {
-      "p": 400,
-      "topic": "المصطلحات والنقد",
-      "q": "ما البحر الذي تفعيلته فعولن مفاعيلن؟",
-      "a": "الطويل",
-      "alt": [],
-      "sourceUrl": "https://www.britannica.com/",
-      "verified": true,
-      "qid": "arabliterature-400-046"
-    },
-    {
-      "p": 400,
-      "topic": "المصطلحات والنقد",
-      "q": "ما الغرض الشعري الذي يعدد مناقب الممدوح؟",
-      "a": "المديح",
-      "alt": [],
-      "sourceUrl": "https://www.britannica.com/",
-      "verified": true,
-      "qid": "arabliterature-400-047"
-    },
-    {
-      "p": 400,
-      "topic": "المسرح والدراما",
-      "q": "من صاحب مسرحية حلاق بغداد؟",
-      "a": "ألفريد فرج",
-      "alt": [],
-      "sourceUrl": "https://www.britannica.com/",
-      "verified": true,
-      "qid": "arabliterature-400-048"
-    },
-    {
-      "p": 400,
-      "topic": "سير الأدباء وأماكنهم",
-      "q": "إلى أي بلد أوروبي نفى الإنجليز أمير الشعراء إبان الحرب العالمية الأولى؟",
-      "a": "إسبانيا",
-      "alt": [
-        "أسبانيا",
-        "الأندلس"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A3%D8%AD%D9%85%D8%AF%20%D8%B4%D9%88%D9%82%D9%8A",
-      "verified": true,
-      "qid": "arabliterature-400-049"
-    },
-    {
-      "p": 400,
-      "topic": "الحكايات والشخصيات",
-      "q": "من الخليفة العباسي الذي يتردد اسمه كثيرًا في حكايات الليالي؟",
-      "a": "هارون الرشيد",
-      "alt": [
-        "الرشيد"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A3%D9%84%D9%81%20%D9%84%D9%8A%D9%84%D8%A9%20%D9%88%D9%84%D9%8A%D9%84%D8%A9",
-      "verified": true,
-      "qid": "arabliterature-400-050"
-    },
-    {
-      "p": 400,
-      "topic": "الشعر القديم",
-      "q": "من الشاعر الأندلسي صاحب مرثية الأندلس «لكل شيء إذا ما تم نقصان»؟",
-      "a": "أبو البقاء الرندي",
-      "alt": [
-        "الرندي"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A3%D8%A8%D9%88%20%D8%A7%D9%84%D8%A8%D9%82%D8%A7%D8%A1%20%D8%A7%D9%84%D8%B1%D9%86%D8%AF%D9%8A",
-      "verified": true,
-      "qid": "arabliterature-400-051"
-    },
-    {
-      "p": 400,
-      "topic": "الرواية والقصة",
-      "q": "من الروائي المصري صاحب «واحة الغروب» أول الفائزين بجائزة البوكر؟",
-      "a": "بهاء طاهر",
-      "alt": [
-        "طاهر"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%88%D8%A7%D8%AD%D8%A9%20%D8%A7%D9%84%D8%BA%D8%B1%D9%88%D8%A8",
-      "verified": true,
-      "qid": "arabliterature-400-052"
-    },
-    {
-      "p": 400,
-      "topic": "سير الأدباء وأماكنهم",
-      "q": "ما الوزارة التي تولاها عميد الأدب العربي ودافع فيها عن مجانية التعليم؟",
-      "a": "وزارة المعارف",
-      "alt": [
-        "المعارف",
-        "التربية والتعليم"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B7%D9%87%20%D8%AD%D8%B3%D9%8A%D9%86",
-      "verified": true,
-      "qid": "arabliterature-400-053"
-    },
-    {
-      "a": "معرة النعمان",
+      "qid": "arabliterature-600-901",
       "p": 600,
-      "q": "في أي مدينة سورية وُلد الشاعر الملقب بـ«رهين المحبسين»؟",
-      "qid": "arabliterature-600-001",
-      "sourceUrl": "https://www.safahat.org/contributors/47539208/",
-      "topic": "سير الأدباء وأماكنهم",
-      "verified": true
-    },
-    {
+      "q": "في أي كتاب تخيل صاحب «اللزوميات» رحلة ابن القارح إلى العالم الآخر؟",
       "a": "رسالة الغفران",
-      "p": 600,
-      "q": "ما الكتاب الذي جعل فيه المعري رحلة ابن القارح الخيالية وسيلة لمحاورة الشعراء؟",
-      "qid": "arabliterature-600-002",
-      "sourceUrl": "https://www.safahat.org/books/95904020/",
       "topic": "النثر والكتب التراثية",
-      "verified": true
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://www.safahat.org/books/95904020/"
     },
     {
-      "a": "الجدري",
+      "qid": "arabliterature-600-902",
       "p": 600,
-      "q": "ما المرض الذي أفقد المعري نظره في طفولته؟",
-      "qid": "arabliterature-600-003",
-      "sourceUrl": "https://www.safahat.org/contributors/47539208/",
-      "topic": "سير الأدباء وأماكنهم",
-      "verified": true
-    },
-    {
-      "a": "الإحياء والبعث",
-      "alt": [
-        "مدرسة الإحياء",
-        "البعث والإحياء"
-      ],
-      "p": 600,
-      "q": "إلى أي مدرسة شعرية ينتمي شوقي والبارودي؟",
-      "qid": "arabliterature-600-004",
-      "sourceUrl": "https://www.safahat.org/contributors/37094079/",
-      "topic": "الشعر الحديث",
-      "verified": true
-    },
-    {
+      "q": "ما الحرف الذي يجعل القصيدة تُسمّى نونية أو ميمية؟",
       "a": "الروي",
-      "p": 600,
-      "q": "ما اسم الحرف الذي تُنسب إليه القصيدة، كالنونية والميمية؟",
-      "qid": "arabliterature-600-005",
-      "sourceUrl": "https://www.safahat.org/books/50259706/2.1/",
       "topic": "المصطلحات والنقد",
-      "verified": true
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://www.safahat.org/books/50259706/2.1/"
     },
     {
-      "a": "التورية",
+      "qid": "arabliterature-600-903",
       "p": 600,
-      "q": "ما الأسلوب الذي يستعمل كلمة بمعنيين ويريد معناها الأبعد؟",
-      "qid": "arabliterature-600-006",
-      "sourceUrl": "https://www.safahat.org/books/85925824/3.1/",
-      "topic": "المصطلحات والنقد",
-      "verified": true
-    },
-    {
-      "a": "الاستطراد",
-      "p": 600,
-      "q": "ما اسم الانتقال إلى موضوع فرعي ثم العودة إلى الموضوع الأصلي؟",
-      "qid": "arabliterature-600-007",
-      "sourceUrl": "https://www.safahat.org/books/85925824/3.1/",
-      "topic": "المصطلحات والنقد",
-      "verified": true
-    },
-    {
-      "a": "سوزان بريسو",
-      "p": 600,
-      "q": "ما اسم الزوجة الفرنسية لعميد الأدب العربي؟",
-      "qid": "arabliterature-600-008",
-      "sourceUrl": "https://www.safahat.org/contributors/59624258/",
-      "topic": "سير الأدباء وأماكنهم",
-      "verified": true
-    },
-    {
-      "a": "دار الكتب",
-      "p": 600,
-      "q": "في أي مؤسسة شغل شاعر النيل رئاسة القسم الأدبي؟",
-      "qid": "arabliterature-600-009",
-      "sourceUrl": "https://www.safahat.org/contributors/71640270/",
-      "topic": "سير الأدباء وأماكنهم",
-      "verified": true
-    },
-    {
+      "q": "ما البلدة اللبنانية التي وُلد فيها صاحب «الأجنحة المتكسرة»؟",
       "a": "بشري",
-      "p": 600,
-      "q": "ما البلدة التي وُلد فيها جبران؟",
-      "qid": "arabliterature-600-010",
-      "sourceUrl": "https://www.safahat.org/contributors/85274958/",
       "topic": "سير الأدباء وأماكنهم",
-      "verified": true
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://www.safahat.org/contributors/85274958/"
     },
     {
+      "qid": "arabliterature-600-904",
+      "p": 600,
+      "q": "ما اسم جماعة أدباء المهجر التي انتخبت جبران عميدًا لها في نيويورك؟",
       "a": "الرابطة القلمية",
-      "p": 600,
-      "q": "ما الجمعية الأدبية التي ترأسها جبران في نيويورك؟",
-      "qid": "arabliterature-600-011",
-      "sourceUrl": "https://www.safahat.org/contributors/85274958/",
       "topic": "الشعر الحديث",
-      "verified": true
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://www.safahat.org/contributors/85274958/"
     },
     {
-      "a": "جرجي زيدان",
+      "qid": "arabliterature-600-905",
       "p": 600,
-      "q": "من الروائي اللبناني الذي أسس مجلة الهلال؟",
-      "qid": "arabliterature-600-012",
-      "sourceUrl": "https://www.safahat.org/contributors/40590249/",
-      "topic": "الرواية والقصة",
-      "verified": true
-    },
-    {
-      "a": "محمد المويلحي",
-      "p": 600,
-      "q": "من صاحب الكتاب السردي «حديث عيسى بن هشام»؟",
-      "qid": "arabliterature-600-013",
-      "sourceUrl": "https://www.safahat.org/contributors/19203514/",
-      "topic": "النثر والكتب التراثية",
-      "verified": true
-    },
-    {
-      "a": "زهير بن أبي سلمى",
-      "p": 600,
-      "q": "من صاحب الحكمة «ومن يجعل المعروف في غير أهله»؟",
-      "qid": "arabliterature-600-014",
-      "sourceUrl": "https://ar.wikisource.org/wiki/معلقة_زهير_بن_أبي_سلمى",
-      "topic": "الشعر القديم",
-      "verified": true
-    },
-    {
-      "a": "طرفة بن العبد",
-      "p": 600,
-      "q": "من صاحب المطلع «لخولة أطلال ببرقة ثهمد»؟",
-      "qid": "arabliterature-600-015",
-      "sourceUrl": "https://ar.wikisource.org/wiki/معلقة_طرفة_بن_العبد",
-      "topic": "الشعر القديم",
-      "verified": true
-    },
-    {
-      "a": "جلمود صخر",
-      "p": 600,
-      "q": "بماذا شبّه صاحب «قفا نبك» حصانه في وصفه «مكر مفر مقبل مدبر معًا»؟",
-      "qid": "arabliterature-600-016",
-      "sourceUrl": "https://ar.wikisource.org/wiki/معلقة_امرئ_القيس",
-      "topic": "الشعر القديم",
-      "verified": true
-    },
-    {
+      "q": "إلى أي حيوان ينتمي الأخوان اللذان سمّي باسميهما كتاب ابن المقفع؟",
       "a": "ابن آوى",
-      "p": 600,
-      "q": "ما نوع الحيوان الذي تنتمي إليه شخصيتا كليلة ودمنة؟",
-      "qid": "arabliterature-600-017",
-      "sourceUrl": "https://ar.wikisource.org/wiki/كليلة_ودمنة/باب_الأسد_والثور_وهو_أول_الكتاب",
       "topic": "الحكايات والشخصيات",
-      "verified": true
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://ar.wikisource.org/wiki/كليلة_ودمنة/باب_الأسد_والثور_وهو_أول_الكتاب",
+      "alt": [
+        "بنات آوى",
+        "ابنا آوى"
+      ]
     },
     {
-      "a": "كامل كيلاني",
+      "qid": "arabliterature-600-906",
       "p": 600,
-      "q": "من الكاتب المصري الملقب برائد أدب الطفل؟",
-      "qid": "arabliterature-600-019",
-      "sourceUrl": "https://www.safahat.org/contributors/82737073/",
-      "topic": "الرواية والقصة",
-      "verified": true
-    },
-    {
+      "q": "ما التيار الذي أقام الحكيم فيه الصراع بين الأفكار داخل ذهن القارئ؟",
       "a": "المسرح الذهني",
-      "p": 600,
-      "q": "ما التيار الذي أسسه الحكيم بمسرحيات تقوم على صراع الأفكار أكثر من الحركة؟",
-      "qid": "arabliterature-600-020",
-      "sourceUrl": "https://www.safahat.org/contributors/80628197/",
       "topic": "المسرح والدراما",
-      "verified": true
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://www.safahat.org/contributors/80628197/"
     },
     {
-      "a": "أدب الرحلات",
+      "qid": "arabliterature-600-907",
       "p": 600,
-      "q": "إلى أي جنس أدبي ينتمي كتاب زيدان عن زيارته أوروبا؟",
-      "qid": "arabliterature-600-021",
-      "sourceUrl": "https://www.safahat.org/books/35058486/",
-      "topic": "المصطلحات والنقد",
-      "verified": true
-    },
-    {
-      "a": "لبيد بن ربيعة",
-      "p": 600,
-      "q": "من صاحب المطلع «عفت الديار محلها فمقامها»؟",
-      "qid": "arabliterature-600-022",
-      "sourceUrl": "https://ar.wikisource.org/wiki/معلقة_لبيد_بن_ربيعة",
-      "topic": "الشعر القديم",
-      "verified": true
-    },
-    {
-      "a": "عمرو بن كلثوم",
-      "p": 600,
-      "q": "من القائل «ألا لا يجهلن أحد علينا»؟",
-      "qid": "arabliterature-600-023",
-      "sourceUrl": "https://ar.wikisource.org/wiki/معلقة_عمرو_بن_كلثوم",
-      "topic": "الشعر القديم",
-      "verified": true
-    },
-    {
+      "q": "ما الطائر الأسطوري الضخم الذي التقى به السندباد في سفرته الثانية؟",
       "a": "الرخ",
-      "p": 600,
-      "q": "ما اسم الطائر العملاق الذي يحجب الشمس في مغامرات السندباد؟",
-      "qid": "arabliterature-600-024",
-      "sourceUrl": "https://ar.wikisource.org/wiki/ألف_ليلة_وليلة/السندباد_البحري",
       "topic": "الحكايات والشخصيات",
-      "verified": true
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://ar.wikisource.org/wiki/ألف_ليلة_وليلة/السندباد_البحري"
     },
     {
-      "a": "الألماس",
+      "qid": "arabliterature-600-908",
       "p": 600,
-      "q": "ما الحجر الكريم الذي جمعه السندباد من وادي الحيات؟",
-      "qid": "arabliterature-600-025",
-      "sourceUrl": "https://ar.wikisource.org/wiki/ألف_ليلة_وليلة/السندباد_البحري",
-      "topic": "الحكايات والشخصيات",
-      "verified": true
-    },
-    {
-      "a": "الجمالية",
-      "p": 600,
-      "q": "ما الحي القاهري الذي وُلد فيه محفوظ وجعله فضاءً لثلاثيته؟",
-      "qid": "arabliterature-600-026",
-      "sourceUrl": "https://www.safahat.org/contributors/71616385/",
-      "topic": "سير الأدباء وأماكنهم",
-      "verified": true
-    },
-    {
-      "a": "قصر الشوق",
-      "p": 600,
-      "q": "ما عنوان الجزء الأوسط من ثلاثية محفوظ؟",
-      "qid": "arabliterature-600-027",
-      "sourceUrl": "https://www.safahat.org/books/85847308/",
-      "topic": "الرواية والقصة",
-      "verified": true
-    },
-    {
-      "a": "السكرية",
-      "p": 600,
-      "q": "ما عنوان الجزء الأخير من ثلاثية محفوظ؟",
-      "qid": "arabliterature-600-028",
-      "sourceUrl": "https://www.safahat.org/books/18636847/",
-      "topic": "الرواية والقصة",
-      "verified": true
-    },
-    {
+      "q": "ما اسم السجين الخارج للانتقام في رواية «اللص والكلاب»؟",
       "a": "سعيد مهران",
-      "p": 600,
-      "q": "من بطل رواية «اللص والكلاب»؟",
-      "qid": "arabliterature-600-029",
-      "sourceUrl": "https://www.safahat.org/books/85802403/",
       "topic": "الرواية والقصة",
-      "verified": true
-    },
-    {
-      "a": "حميدة",
-      "p": 600,
-      "q": "ما اسم الفتاة الطامحة إلى مغادرة الحارة في «زقاق المدق»؟",
-      "qid": "arabliterature-600-030",
-      "sourceUrl": "https://www.safahat.org/books/62575295/",
-      "topic": "الرواية والقصة",
-      "verified": true
-    },
-    {
-      "p": 600,
-      "topic": "المسرح والدراما",
-      "q": "من المسرحي السوري صاحب ضيعة تشرين؟",
-      "a": "محمد الماغوط",
-      "alt": [],
-      "sourceUrl": "https://www.britannica.com/",
       "verified": true,
-      "qid": "arabliterature-600-031"
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://www.safahat.org/books/85802403/"
     },
     {
-      "p": 600,
-      "topic": "المسرح والدراما",
-      "q": "ما مسرحية مصرية عن السيد والعبد على الخشبة؟",
-      "a": "الفرافير",
-      "alt": [],
-      "sourceUrl": "https://www.britannica.com/",
-      "verified": true,
-      "qid": "arabliterature-600-033"
-    },
-    {
-      "p": 600,
-      "topic": "الشعر الحديث",
-      "q": "من الشاعر المصري صاحب ديوان «أوراق الغرفة 8»؟",
-      "a": "أمل دنقل",
-      "alt": [],
-      "sourceUrl": "https://www.aldiwan.net/",
-      "verified": true,
-      "qid": "arabliterature-600-034"
-    },
-    {
-      "p": 600,
-      "topic": "الشعر الحديث",
-      "q": "ما الاسم الأدبي لعلي أحمد سعيد؟",
-      "a": "أدونيس",
-      "alt": [],
-      "sourceUrl": "https://www.britannica.com/",
-      "verified": true,
-      "qid": "arabliterature-600-036"
-    },
-    {
-      "p": 600,
-      "topic": "الشعر الحديث",
-      "q": "من رائد الإحياء الشعري المصري في القرن التاسع عشر؟",
-      "a": "محمود سامي البارودي",
-      "alt": [
-        "البارودي"
-      ],
-      "sourceUrl": "https://www.britannica.com/",
-      "verified": true,
-      "qid": "arabliterature-600-037"
-    },
-    {
-      "p": 600,
-      "topic": "النثر والكتب التراثية",
-      "q": "من صاحب كتاب الكامل في اللغة والأدب؟",
-      "a": "المبرد",
-      "alt": [],
-      "sourceUrl": "https://ar.wikisource.org/",
-      "verified": true,
-      "qid": "arabliterature-600-038"
-    },
-    {
-      "p": 600,
-      "topic": "النثر والكتب التراثية",
-      "q": "من صاحب المقامات التي بطلها أبو زيد السروجي؟",
-      "a": "الحريري",
-      "alt": [
-        "أبو محمد الحريري"
-      ],
-      "sourceUrl": "https://ar.wikisource.org/",
-      "verified": true,
-      "qid": "arabliterature-600-039"
-    },
-    {
-      "p": 600,
-      "topic": "الرواية والقصة",
-      "q": "ما رواية يحيى حقي عن الطبيب العائد إلى الحي؟",
-      "a": "قنديل أم هاشم",
-      "alt": [],
-      "sourceUrl": "https://www.britannica.com/",
-      "verified": true,
-      "qid": "arabliterature-600-040"
-    },
-    {
-      "p": 600,
-      "topic": "سير الأدباء وأماكنهم",
-      "q": "في أي بلد توفي جبران؟",
-      "a": "الولايات المتحدة",
-      "alt": [
-        "أمريكا"
-      ],
-      "sourceUrl": "https://www.britannica.com/",
-      "verified": true,
-      "qid": "arabliterature-600-041"
-    },
-    {
-      "p": 600,
-      "topic": "سير الأدباء وأماكنهم",
-      "q": "في أي مدينة مغربية عاش صاحب «الخبز الحافي» وجعلها فضاء سيرته؟",
-      "a": "طنجة",
-      "alt": [],
-      "sourceUrl": "https://www.britannica.com/",
-      "verified": true,
-      "qid": "arabliterature-600-042"
-    },
-    {
-      "p": 600,
-      "topic": "النثر والكتب التراثية",
-      "q": "ما الفن النثري الذي اشتهر به المنفلوطي في «النظرات»؟",
-      "a": "المقالة",
-      "alt": [],
-      "sourceUrl": "https://www.britannica.com/",
-      "verified": true,
-      "qid": "arabliterature-600-043"
-    },
-    {
-      "p": 600,
-      "topic": "المصطلحات والنقد",
-      "q": "ما عيب القافية الذي تختلف فيه حركة آخر حرف بين الضم والكسر؟",
-      "a": "الإقواء",
-      "alt": [],
-      "sourceUrl": "https://www.britannica.com/",
-      "verified": true,
-      "qid": "arabliterature-600-044"
-    },
-    {
-      "p": 600,
-      "topic": "الحكايات والشخصيات",
-      "q": "من بطل السيرة القاهرية صاحب الحيل على اللصوص؟",
-      "a": "علي الزيبق",
-      "alt": [],
-      "sourceUrl": "https://www.britannica.com/",
-      "verified": true,
-      "qid": "arabliterature-600-045"
-    },
-    {
-      "p": 600,
-      "topic": "الحكايات والشخصيات",
-      "q": "ما اسم فرس عنترة الأشهر في السيرة؟",
-      "a": "الأبجر",
-      "alt": [],
-      "sourceUrl": "https://www.britannica.com/",
-      "verified": true,
-      "qid": "arabliterature-600-046"
-    },
-    {
-      "p": 600,
-      "topic": "الشعر القديم",
-      "q": "من ثالث شعراء النقائض في العصر الأموي مع الفرزدق؟",
-      "a": "الأخطل",
-      "alt": [],
-      "sourceUrl": "https://www.aldiwan.net/",
-      "verified": true,
-      "qid": "arabliterature-600-047"
-    },
-    {
-      "p": 600,
-      "topic": "الشعر القديم",
-      "q": "من صاحب معلقة آذنتنا ببينها؟",
-      "a": "الحارث بن حلزة",
-      "alt": [],
-      "sourceUrl": "https://www.aldiwan.net/",
-      "verified": true,
-      "qid": "arabliterature-600-048"
-    },
-    {
-      "p": 600,
-      "topic": "الحكايات والشخصيات",
-      "q": "ما اسم الثور الذي دبّر دمنة مقتله في كتاب ابن المقفع؟",
-      "a": "شتربة",
-      "alt": [
-        "شتربه"
-      ],
-      "sourceUrl": "https://www.hindawi.org/books/29061736/4/",
-      "verified": true,
-      "qid": "arabliterature-600-049"
-    },
-    {
-      "p": 600,
-      "topic": "المسرح والدراما",
-      "q": "من رائد المسرح العربي الذي قدّم «البخيل» في بيروت سنة 1847؟",
-      "a": "مارون النقاش",
-      "alt": [
-        "النقاش"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D8%A7%D8%B1%D9%88%D9%86%20%D8%A7%D9%84%D9%86%D9%82%D8%A7%D8%B4",
-      "verified": true,
-      "qid": "arabliterature-600-050"
-    },
-    {
-      "p": 600,
-      "topic": "الشعر الحديث",
-      "q": "من الشاعر اللبناني الذي أسس مجلة «شعر» في بيروت سنة 1957؟",
-      "a": "يوسف الخال",
-      "alt": [
-        "الخال"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D8%AC%D9%84%D8%A9%20%D8%B4%D8%B9%D8%B1",
-      "verified": true,
-      "qid": "arabliterature-600-051"
-    },
-    {
-      "a": "عبث الوليد",
+      "qid": "arabliterature-800-901",
       "p": 800,
-      "q": "ما كتاب المعري الذي نقد فيه ديوان البحتري؟",
-      "qid": "arabliterature-800-001",
-      "sourceUrl": "https://www.safahat.org/contributors/47539208/",
-      "topic": "النثر والكتب التراثية",
-      "verified": true
-    },
-    {
-      "a": "تاج الحرة",
-      "p": 800,
-      "q": "ما كتاب المعري الذي تناول النساء وأخلاقهن ومواعظهن؟",
-      "qid": "arabliterature-800-002",
-      "sourceUrl": "https://www.safahat.org/contributors/47539208/",
-      "topic": "النثر والكتب التراثية",
-      "verified": true
-    },
-    {
-      "a": "الحنفي",
-      "p": 800,
-      "q": "بأي حي قاهري وُلد شوقي؟",
-      "qid": "arabliterature-800-003",
-      "sourceUrl": "https://www.safahat.org/contributors/37094079/",
-      "topic": "سير الأدباء وأماكنهم",
-      "verified": true
-    },
-    {
-      "a": "جامعة الزيتونة",
-      "p": 800,
-      "q": "ما الجامعة التونسية التي تخرج فيها الشابي؟",
-      "qid": "arabliterature-800-004",
-      "sourceUrl": "https://www.safahat.org/contributors/16361353/",
-      "topic": "سير الأدباء وأماكنهم",
-      "verified": true
-    },
-    {
-      "a": "توزر",
-      "p": 800,
-      "q": "في أي مدينة تونسية يقع ضريح الشابي؟",
-      "qid": "arabliterature-800-005",
-      "sourceUrl": "https://www.safahat.org/contributors/16361353/",
-      "topic": "سير الأدباء وأماكنهم",
-      "verified": true
-    },
-    {
+      "q": "من وضع كتاب تعليم الوزن الشعري «ميزان الذهب في صناعة شعر العرب»؟",
       "a": "أحمد الهاشمي",
-      "p": 800,
-      "q": "من مؤلف الكتاب التعليمي «ميزان الذهب في صناعة شعر العرب»؟",
-      "qid": "arabliterature-800-006",
-      "sourceUrl": "https://www.safahat.org/books/50259706/",
       "topic": "النثر والكتب التراثية",
-      "verified": true
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://www.safahat.org/books/50259706/"
     },
     {
-      "a": "الضرب",
+      "qid": "arabliterature-800-902",
       "p": 800,
-      "q": "ما اسم آخر تفعيلة في الشطر الثاني؟",
-      "qid": "arabliterature-800-007",
-      "sourceUrl": "https://www.safahat.org/books/50259706/1.1/",
-      "topic": "المصطلحات والنقد",
-      "verified": true
-    },
-    {
-      "a": "المدور",
-      "p": 800,
-      "q": "ما وصف السطر الشعري الذي تنقسم كلمة بين شطريه؟",
-      "qid": "arabliterature-800-008",
-      "sourceUrl": "https://www.safahat.org/books/50259706/1.1/",
-      "topic": "المصطلحات والنقد",
-      "verified": true
-    },
-    {
+      "q": "ما الفن البديعي الذي يستبدل السبب المعروف للظاهرة بسبب شعري لطيف؟",
       "a": "حسن التعليل",
-      "p": 800,
-      "q": "ما الاسم البلاغي لاختراع سبب خيالي جميل لظاهرة معروفة السبب؟",
-      "qid": "arabliterature-800-009",
-      "sourceUrl": "https://www.safahat.org/books/85925824/3.1/",
       "topic": "المصطلحات والنقد",
-      "verified": true
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://www.safahat.org/books/85925824/3.1/"
     },
     {
-      "a": "الكيلو",
+      "qid": "arabliterature-800-903",
       "p": 800,
-      "q": "ما القرية التي وُلد فيها عميد الأدب العربي؟",
-      "qid": "arabliterature-800-010",
-      "sourceUrl": "https://www.safahat.org/contributors/59624258/",
-      "topic": "سير الأدباء وأماكنهم",
-      "verified": true
-    },
-    {
-      "a": "مؤنس",
-      "p": 800,
-      "q": "ما اسم الابن الذكر لعميد الأدب العربي؟",
-      "qid": "arabliterature-800-011",
-      "sourceUrl": "https://www.safahat.org/contributors/59624258/",
-      "topic": "سير الأدباء وأماكنهم",
-      "verified": true
-    },
-    {
-      "a": "ماري هاسكل",
-      "p": 800,
-      "q": "من السيدة الأمريكية التي رعت موهبة جبران الفنية؟",
-      "qid": "arabliterature-800-012",
-      "sourceUrl": "https://www.safahat.org/contributors/85274958/",
-      "topic": "سير الأدباء وأماكنهم",
-      "verified": true
-    },
-    {
+      "q": "في أي صحيفة نُشرت مقالات «حديث عيسى بن هشام» قبل جمعها؟",
       "a": "مصباح الشرق",
-      "p": 800,
-      "q": "ما الصحيفة التي نشر فيها المويلحي «حديث عيسى بن هشام» أولًا؟",
-      "qid": "arabliterature-800-013",
-      "sourceUrl": "https://www.safahat.org/contributors/19203514/",
       "topic": "النثر والكتب التراثية",
-      "verified": true
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://www.safahat.org/contributors/19203514/"
     },
     {
+      "qid": "arabliterature-800-904",
+      "p": 800,
+      "q": "ما كنية صاحبة الديار التي يسأل عنها زهير في أول معلقته؟",
       "a": "أم أوفى",
-      "p": 800,
-      "q": "بأي كنية تُذكر صاحبة الديار في مطلع معلقة زهير؟",
-      "qid": "arabliterature-800-014",
-      "sourceUrl": "https://ar.wikisource.org/wiki/معلقة_زهير_بن_أبي_سلمى",
       "topic": "الحكايات والشخصيات",
-      "verified": true
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://ar.wikisource.org/wiki/معلقة_زهير_بن_أبي_سلمى"
     },
     {
+      "qid": "arabliterature-800-905",
+      "p": 800,
+      "q": "بأي شيء شبّه صاحب «قفا نبك» الليل في وصفه «أرخى سدوله»؟",
       "a": "موج البحر",
-      "p": 800,
-      "q": "بأي مشهد بحري شبّه صاحب «قفا نبك» ليله المهموم؟",
-      "qid": "arabliterature-800-015",
-      "sourceUrl": "https://ar.wikisource.org/wiki/معلقة_امرئ_القيس",
       "topic": "الشعر القديم",
-      "verified": true
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://ar.wikisource.org/wiki/معلقة_امرئ_القيس"
     },
     {
-      "a": "الوشم",
+      "qid": "arabliterature-800-906",
       "p": 800,
-      "q": "بماذا شبّه طرفة الأطلال في افتتاح معلقته؟",
-      "qid": "arabliterature-800-016",
-      "sourceUrl": "https://ar.wikisource.org/wiki/معلقة_طرفة_بن_العبد",
-      "topic": "الشعر القديم",
-      "verified": true
-    },
-    {
-      "a": "بيدبا",
-      "p": 800,
-      "q": "ما اسم الفيلسوف الذي يروي الحكايات للملك في كتاب ابن المقفع؟",
-      "qid": "arabliterature-800-017",
-      "sourceUrl": "https://ar.wikisource.org/wiki/كليلة_ودمنة/باب_الأسد_والثور_وهو_أول_الكتاب",
-      "topic": "الحكايات والشخصيات",
-      "verified": true
-    },
-    {
-      "a": "التين",
-      "p": 800,
-      "q": "ما الفاكهة التي جمعت القرد والغيلم في حكاية ابن المقفع؟",
-      "qid": "arabliterature-800-018",
-      "sourceUrl": "https://ar.wikisource.org/wiki/كليلة_ودمنة/باب_القرد_والغيلم",
-      "topic": "الحكايات والشخصيات",
-      "verified": true
-    },
-    {
-      "a": "القلب",
-      "p": 800,
-      "q": "ما العضو الذي زعم القرد أنه تركه على الشجرة لينجو من الغيلم؟",
-      "qid": "arabliterature-800-019",
-      "sourceUrl": "https://ar.wikisource.org/wiki/كليلة_ودمنة/باب_القرد_والغيلم",
-      "topic": "الحكايات والشخصيات",
-      "verified": true
-    },
-    {
-      "a": "غزالة",
-      "p": 800,
-      "q": "ما الحيوان الذي يصحب الشيخ الأول في حكاية التاجر والعفريت؟",
-      "qid": "arabliterature-800-020",
-      "sourceUrl": "https://www.safahat.org/books/61961973/1/",
-      "topic": "الحكايات والشخصيات",
-      "verified": true
-    },
-    {
-      "a": "دنيازاد",
-      "p": 800,
-      "q": "ما اسم أخت راوية الليالي التي تطلب منها مواصلة الحكاية؟",
-      "qid": "arabliterature-800-021",
-      "sourceUrl": "https://ar.wikisource.org/wiki/ألف_ليلة_وليلة/الجزء_الأول",
-      "topic": "الحكايات والشخصيات",
-      "verified": true
-    },
-    {
+      "q": "أي قطعة من لباسه استعملها السندباد ليربط نفسه بساق الطائر العملاق؟",
       "a": "العمامة",
-      "p": 800,
-      "q": "بماذا ربط السندباد نفسه بساق الطائر العملاق؟",
-      "qid": "arabliterature-800-022",
-      "sourceUrl": "https://ar.wikisource.org/wiki/ألف_ليلة_وليلة/السندباد_البحري",
       "topic": "الحكايات والشخصيات",
-      "verified": true
-    },
-    {
-      "a": "البصرة",
-      "p": 800,
-      "q": "من أي ميناء عراقي تنطلق رحلات السندباد؟",
-      "qid": "arabliterature-800-023",
+      "verified": true,
+      "difficultyTarget": 0.25,
       "sourceUrl": "https://ar.wikisource.org/wiki/ألف_ليلة_وليلة/السندباد_البحري",
-      "topic": "سير الأدباء وأماكنهم",
-      "verified": true
+      "alt": [
+        "عمامته"
+      ]
     },
     {
-      "a": "قطمير",
+      "qid": "arabliterature-800-907",
       "p": 800,
-      "q": "ما اسم الكلب المرافق للشخصيات النائمة في «أهل الكهف» للحكيم؟",
-      "qid": "arabliterature-800-024",
-      "sourceUrl": "https://www.safahat.org/books/18292682/",
-      "topic": "المسرح والدراما",
-      "verified": true
-    },
-    {
+      "q": "ما مسرحية الحكيم التي يخيّر القاضي بطلها بين القوة والاحتكام إلى القانون؟",
       "a": "السلطان الحائر",
-      "p": 800,
-      "q": "ما مسرحية الحكيم التي يحتار بطلها بين قوة السيف وسلطة القانون؟",
-      "qid": "arabliterature-800-025",
-      "sourceUrl": "https://www.safahat.org/books/24806246/",
       "topic": "المسرح والدراما",
-      "verified": true
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://www.safahat.org/books/24806246/"
     },
     {
-      "a": "ياسين",
+      "qid": "arabliterature-800-908",
       "p": 800,
-      "q": "من الابن البكر الذي يرث عن أمه بيتًا في الجزء الثاني من الثلاثية؟",
-      "qid": "arabliterature-800-026",
-      "sourceUrl": "https://www.safahat.org/books/85847308/",
-      "topic": "الرواية والقصة",
-      "verified": true
-    },
-    {
+      "q": "ما اسم الفتاة التي يقع كمال في حبها في «قصر الشوق»؟",
       "a": "عايدة",
-      "p": 800,
-      "q": "من الفتاة التي يحبها كمال في الجزء الثاني من ثلاثية محفوظ؟",
-      "qid": "arabliterature-800-027",
-      "sourceUrl": "https://www.safahat.org/books/85847308/",
       "topic": "الرواية والقصة",
-      "verified": true
-    },
-    {
-      "a": "رؤوف علوان",
-      "p": 800,
-      "q": "ما اسم الصحفي الذي يخيب ظن بطل «اللص والكلاب»؟",
-      "qid": "arabliterature-800-028",
-      "sourceUrl": "https://www.safahat.org/books/85802403/",
-      "topic": "الرواية والقصة",
-      "verified": true
-    },
-    {
-      "a": "أسواق الذهب",
-      "p": 800,
-      "q": "ما كتاب شوقي النثري الذي جمع فيه خواطر وحكمًا عن الحياة والمجتمع؟",
-      "qid": "arabliterature-800-029",
-      "sourceUrl": "https://www.safahat.org/books/81725259/",
-      "topic": "النثر والكتب التراثية",
-      "verified": true
-    },
-    {
-      "a": "ليالي سطيح",
-      "p": 800,
-      "q": "ما العمل النثري لشاعر النيل الذي يحاور فيه الراوي كاهنًا عربيًا قديمًا؟",
-      "qid": "arabliterature-800-030",
-      "sourceUrl": "https://www.safahat.org/books/39150590/",
-      "topic": "النثر والكتب التراثية",
-      "verified": true
-    },
-    {
-      "p": 800,
-      "topic": "الشعر القديم",
-      "q": "من صاحب لامية العرب؟",
-      "a": "الشنفرى",
-      "alt": [],
-      "sourceUrl": "https://www.aldiwan.net/",
       "verified": true,
-      "qid": "arabliterature-800-031"
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://www.safahat.org/books/85847308/"
     },
     {
-      "p": 800,
-      "topic": "الشعر القديم",
-      "q": "من صاحب لامية العجم؟",
-      "a": "الطغرائي",
-      "alt": [],
-      "sourceUrl": "https://www.aldiwan.net/",
-      "verified": true,
-      "qid": "arabliterature-800-032"
-    },
-    {
-      "p": 800,
-      "topic": "الشعر القديم",
-      "q": "من صاحب القصيدة التي مطلعها بانت سعاد؟",
-      "a": "كعب بن زهير",
-      "alt": [],
-      "sourceUrl": "https://www.aldiwan.net/",
-      "verified": true,
-      "qid": "arabliterature-800-033"
-    },
-    {
-      "p": 800,
-      "topic": "الشعر القديم",
-      "q": "ما لقب الشاعر العباسي إسماعيل بن القاسم الذي اشتهر بشعر الزهد؟",
-      "a": "أبو العتاهية",
-      "alt": [],
-      "sourceUrl": "https://www.aldiwan.net/",
-      "verified": true,
-      "qid": "arabliterature-800-034"
-    },
-    {
-      "p": 800,
-      "topic": "الشعر القديم",
-      "q": "من الأمير الشاعر الحمداني الذي أسره الروم ونظم «الروميات»؟",
-      "a": "أبو فراس الحمداني",
-      "alt": [
-        "أبو فراس"
-      ],
-      "sourceUrl": "https://www.aldiwan.net/",
-      "verified": true,
-      "qid": "arabliterature-800-035"
-    },
-    {
-      "p": 800,
-      "topic": "الشعر الحديث",
-      "q": "من الشاعر السوداني صاحب أغاني أفريقيا؟",
-      "a": "محمد الفيتوري",
-      "alt": [],
-      "sourceUrl": "https://www.aldiwan.net/",
-      "verified": true,
-      "qid": "arabliterature-800-036"
-    },
-    {
-      "p": 800,
-      "topic": "الرواية والقصة",
-      "q": "من صاحب رواية شرف؟",
-      "a": "صنع الله إبراهيم",
-      "alt": [],
-      "sourceUrl": "https://www.britannica.com/",
-      "verified": true,
-      "qid": "arabliterature-800-038"
-    },
-    {
-      "p": 800,
-      "topic": "سير الأدباء وأماكنهم",
-      "q": "في أي واحة ليبية وُلد إبراهيم الكوني؟",
-      "a": "غدامس",
-      "alt": [],
-      "sourceUrl": "https://www.britannica.com/",
-      "verified": true,
-      "qid": "arabliterature-800-039"
-    },
-    {
-      "p": 800,
-      "topic": "سير الأدباء وأماكنهم",
-      "q": "في أي مدينة جزائرية وُلدت صاحبة فوضى الحواس؟",
-      "a": "قسنطينة",
-      "alt": [],
-      "sourceUrl": "https://www.britannica.com/",
-      "verified": true,
-      "qid": "arabliterature-800-040"
-    },
-    {
-      "p": 800,
-      "topic": "سير الأدباء وأماكنهم",
-      "q": "في أي بلد أوروبي توفي صاحب رواية عرس الزين؟",
-      "a": "إنجلترا",
-      "alt": [
-        "بريطانيا"
-      ],
-      "sourceUrl": "https://www.britannica.com/",
-      "verified": true,
-      "qid": "arabliterature-800-041"
-    },
-    {
-      "p": 800,
-      "topic": "المصطلحات والنقد",
-      "q": "ما اسم تأدية المعنى الوافي بألفاظ أقل من المعتاد؟",
-      "a": "الإيجاز",
-      "alt": [],
-      "sourceUrl": "https://www.britannica.com/",
-      "verified": true,
-      "qid": "arabliterature-800-042"
-    },
-    {
-      "p": 800,
-      "topic": "المصطلحات والنقد",
-      "q": "ما اسم التطويل في العبارة لزيادة المعنى؟",
-      "a": "الإطناب",
-      "alt": [],
-      "sourceUrl": "https://www.britannica.com/",
-      "verified": true,
-      "qid": "arabliterature-800-043"
-    },
-    {
-      "p": 800,
-      "topic": "المصطلحات والنقد",
-      "q": "ما المذهب النقدي الذي يدرس النص بمعزل عن حياة صاحبه؟",
-      "a": "البنيوية",
-      "alt": [],
-      "sourceUrl": "https://www.britannica.com/",
-      "verified": true,
-      "qid": "arabliterature-800-044"
-    },
-    {
-      "p": 800,
-      "topic": "النثر والكتب التراثية",
-      "q": "من مؤلف يتيمة الدهر؟",
-      "a": "الثعالبي",
-      "alt": [],
-      "sourceUrl": "https://ar.wikisource.org/",
-      "verified": true,
-      "qid": "arabliterature-800-045"
-    },
-    {
-      "p": 800,
-      "topic": "النثر والكتب التراثية",
-      "q": "ما موسوعة النويري الأدبية الكبرى؟",
-      "a": "نهاية الأرب",
-      "alt": [],
-      "sourceUrl": "https://ar.wikisource.org/",
-      "verified": true,
-      "qid": "arabliterature-800-046"
-    },
-    {
-      "p": 800,
-      "topic": "النثر والكتب التراثية",
-      "q": "من صاحب كتاب زهر الآداب؟",
-      "a": "الحصري القيرواني",
-      "alt": [
-        "الحصري"
-      ],
-      "sourceUrl": "https://ar.wikisource.org/",
-      "verified": true,
-      "qid": "arabliterature-800-047"
-    },
-    {
-      "p": 800,
-      "topic": "المسرح والدراما",
-      "q": "ما مسرحية الحكيم التي تجري أحداثها في مصرف؟",
-      "a": "بنك القلق",
-      "alt": [],
-      "sourceUrl": "https://www.britannica.com/",
-      "verified": true,
-      "qid": "arabliterature-800-048"
-    },
-    {
-      "p": 800,
-      "topic": "الرواية والقصة",
-      "q": "من الروائي السعودي صاحب رواية «شقة الحرية»؟",
-      "a": "غازي القصيبي",
-      "alt": [
-        "القصيبي"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B4%D9%82%D8%A9%20%D8%A7%D9%84%D8%AD%D8%B1%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "arabliterature-800-049"
-    },
-    {
+      "qid": "arabliterature-1000-901",
+      "p": 1000,
+      "q": "ما الكتاب الأدبي الضخم للمعري الذي زاد على مائة جزء؟",
       "a": "الأيك والغصون",
-      "p": 1000,
-      "q": "ما موسوعة المعري الأدبية التي تجاوزت مائة جزء؟",
-      "qid": "arabliterature-1000-001",
-      "sourceUrl": "https://www.safahat.org/contributors/47539208/",
       "topic": "النثر والكتب التراثية",
-      "verified": true
+      "verified": true,
+      "difficultyTarget": 0.15,
+      "sourceUrl": "https://www.safahat.org/contributors/47539208/"
     },
     {
+      "qid": "arabliterature-1000-902",
+      "p": 1000,
+      "q": "بم يسمّى تسكين الحرف الثاني من تفعيلة «متفاعلن» في العروض؟",
       "a": "الإضمار",
-      "p": 1000,
-      "q": "ما اسم الزحاف الذي يسكن الحرف الثاني المتحرك؟",
-      "qid": "arabliterature-1000-002",
-      "sourceUrl": "https://www.safahat.org/books/50259706/1.1/",
       "topic": "المصطلحات والنقد",
-      "verified": true
+      "verified": true,
+      "difficultyTarget": 0.15,
+      "sourceUrl": "https://www.safahat.org/books/50259706/1.1/"
     },
     {
+      "qid": "arabliterature-1000-903",
+      "p": 1000,
+      "q": "ما الزحاف الذي يحوّل «فاعلن» إلى «فعلن» بحذف الثاني الساكن؟",
       "a": "الخبن",
-      "p": 1000,
-      "q": "ما اسم الزحاف الذي يحذف الحرف الثاني الساكن؟",
-      "qid": "arabliterature-1000-003",
-      "sourceUrl": "https://www.safahat.org/books/50259706/1.1/",
       "topic": "المصطلحات والنقد",
-      "verified": true
+      "verified": true,
+      "difficultyTarget": 0.15,
+      "sourceUrl": "https://www.safahat.org/books/50259706/1.1/"
     },
     {
-      "a": "المشطور",
+      "qid": "arabliterature-1000-904",
       "p": 1000,
-      "q": "ما وصف السطر الشعري الذي حُذف نصفه؟",
-      "qid": "arabliterature-1000-004",
-      "sourceUrl": "https://www.safahat.org/books/50259706/1.1/",
-      "topic": "المصطلحات والنقد",
-      "verified": true
-    },
-    {
-      "a": "نتفة",
-      "p": 1000,
-      "q": "ما اسم النص المؤلف من بيتين فقط في اصطلاح العروضيين؟",
-      "qid": "arabliterature-1000-005",
-      "sourceUrl": "https://www.safahat.org/books/50259706/1.1/",
-      "topic": "المصطلحات والنقد",
-      "verified": true
-    },
-    {
-      "a": "الدخيل",
-      "p": 1000,
-      "q": "ما اسم الحرف المتحرك الواقع بين ألف التأسيس وحرف التقفية؟",
-      "qid": "arabliterature-1000-006",
-      "sourceUrl": "https://www.safahat.org/books/50259706/2.1/",
-      "topic": "المصطلحات والنقد",
-      "verified": true
-    },
-    {
-      "a": "الردف",
-      "p": 1000,
-      "q": "ما اسم حرف المد أو اللين الذي يسبق حرف التقفية مباشرة؟",
-      "qid": "arabliterature-1000-007",
-      "sourceUrl": "https://www.safahat.org/books/50259706/2.1/",
-      "topic": "المصطلحات والنقد",
-      "verified": true
-    },
-    {
+      "q": "بأي عنوان نشر المويلحي المقالات التي جمعها لاحقًا باسم «حديث عيسى بن هشام»؟",
       "a": "فترة من الزمان",
-      "p": 1000,
-      "q": "ما العنوان الأول لمقالات المويلحي التي صارت «حديث عيسى بن هشام»؟",
-      "qid": "arabliterature-1000-008",
-      "sourceUrl": "https://www.safahat.org/contributors/19203514/",
       "topic": "النثر والكتب التراثية",
-      "verified": true
+      "verified": true,
+      "difficultyTarget": 0.15,
+      "sourceUrl": "https://www.safahat.org/contributors/19203514/"
     },
     {
+      "qid": "arabliterature-1000-905",
+      "p": 1000,
+      "q": "بأي جبل تخيّل امرؤ القيس نجوم الليل مربوطة بحبال محكمة؟",
       "a": "يذبل",
-      "p": 1000,
-      "q": "ما الجبل الذي تبدو النجوم مشدودة إليه في معلقة «قفا نبك»؟",
-      "qid": "arabliterature-1000-009",
-      "sourceUrl": "https://ar.wikisource.org/wiki/معلقة_امرئ_القيس",
       "topic": "الشعر القديم",
-      "verified": true
+      "verified": true,
+      "difficultyTarget": 0.15,
+      "sourceUrl": "https://ar.wikisource.org/wiki/معلقة_امرئ_القيس"
     },
     {
-      "a": "سقط اللوى",
+      "qid": "arabliterature-1000-906",
       "p": 1000,
-      "q": "ما الموضع الذي ترد فيه ديار الحبيبة بين الدخول وحومل؟",
-      "qid": "arabliterature-1000-010",
-      "sourceUrl": "https://ar.wikisource.org/wiki/معلقة_امرئ_القيس",
-      "topic": "الشعر القديم",
-      "verified": true
-    },
-    {
-      "a": "أم الهيثم",
-      "p": 1000,
-      "q": "ما كنية الفتاة التي يقول عنترة إن الطلل أقفر بعد رحيلها؟",
-      "qid": "arabliterature-1000-011",
-      "sourceUrl": "https://ar.wikisource.org/wiki/معلقة_عنترة_بن_شداد",
-      "topic": "الشعر القديم",
-      "verified": true
-    },
-    {
-      "a": "الجواء",
-      "p": 1000,
-      "q": "ما الموضع الذي تنزل به المحبوبة في مطلع معلقة عنترة؟",
-      "qid": "arabliterature-1000-012",
-      "sourceUrl": "https://ar.wikisource.org/wiki/معلقة_عنترة_بن_شداد",
-      "topic": "الشعر القديم",
-      "verified": true
-    },
-    {
-      "a": "دبشليم",
-      "p": 1000,
-      "q": "ما اسم الملك الذي يطلب الأمثال والحكايات من الفيلسوف في كتاب ابن المقفع؟",
-      "qid": "arabliterature-1000-013",
-      "sourceUrl": "https://ar.wikisource.org/wiki/كليلة_ودمنة/باب_الأسد_والثور_وهو_أول_الكتاب",
-      "topic": "الحكايات والشخصيات",
-      "verified": true
-    },
-    {
+      "q": "ما اسم الجرذ الذي فكّ شبكة الحمامة المطوقة ورفيقاتها؟",
       "a": "زيرك",
-      "p": 1000,
-      "q": "ما اسم صديق الحمامة المطوقة الذي قطع حبال شبكة الصياد؟",
-      "qid": "arabliterature-1000-014",
-      "sourceUrl": "https://ar.wikisource.org/wiki/كليلة_ودمنة/باب_الحمامة_المطوقة",
       "topic": "الحكايات والشخصيات",
-      "verified": true
+      "verified": true,
+      "difficultyTarget": 0.15,
+      "sourceUrl": "https://ar.wikisource.org/wiki/كليلة_ودمنة/باب_الحمامة_المطوقة"
     },
     {
-      "a": "ماهر",
+      "qid": "arabliterature-1000-907",
       "p": 1000,
-      "q": "ما اسم القرد في حكاية صداقته مع الغيلم عند ابن المقفع؟",
-      "qid": "arabliterature-1000-015",
-      "sourceUrl": "https://ar.wikisource.org/wiki/كليلة_ودمنة/باب_القرد_والغيلم",
-      "topic": "الحكايات والشخصيات",
-      "verified": true
-    },
-    {
-      "a": "نواة تمرة",
-      "p": 1000,
-      "q": "ماذا رمى التاجر بعد الأكل فتسبب في غضب العفريت في الليلة الأولى؟",
-      "qid": "arabliterature-1000-016",
-      "sourceUrl": "https://www.safahat.org/books/61961973/1/",
-      "topic": "الحكايات والشخصيات",
-      "verified": true
-    },
-    {
-      "a": "بغلة",
-      "p": 1000,
-      "q": "ما الحيوان الذي يصحب الشيخ الثالث في حكاية التاجر والعفريت؟",
-      "qid": "arabliterature-1000-017",
-      "sourceUrl": "https://www.safahat.org/books/61961973/1/",
-      "topic": "الحكايات والشخصيات",
-      "verified": true
-    },
-    {
-      "a": "نوار",
-      "p": 1000,
-      "q": "ما اسم المحبوبة التي يذكر لبيد أنها ابتعدت في معلقته؟",
-      "qid": "arabliterature-1000-018",
-      "sourceUrl": "https://ar.wikisource.org/wiki/معلقة_لبيد_بن_ربيعة",
-      "topic": "الشعر القديم",
-      "verified": true
-    },
-    {
-      "a": "شاه زمان",
-      "p": 1000,
-      "q": "ما اسم أخي الملك الذي يستمع إلى حكايات الليالي؟",
-      "qid": "arabliterature-1000-019",
-      "sourceUrl": "https://ar.wikisource.org/wiki/ألف_ليلة_وليلة/الجزء_الأول",
-      "topic": "الحكايات والشخصيات",
-      "verified": true
-    },
-    {
+      "q": "ما اسم الراعي صاحب الكلب قطمير في مسرحية الحكيم عن النائمين الثلاثة؟",
       "a": "يمليخا",
-      "p": 1000,
-      "q": "ما اسم الراعي الذي يستيقظ في عالم تغيّر في «أهل الكهف»؟",
-      "qid": "arabliterature-1000-020",
-      "sourceUrl": "https://www.safahat.org/books/18292682/",
       "topic": "المسرح والدراما",
-      "verified": true
+      "verified": true,
+      "difficultyTarget": 0.15,
+      "sourceUrl": "https://www.safahat.org/books/18292682/"
     },
     {
-      "a": "بريسكا",
+      "qid": "arabliterature-1000-908",
       "p": 1000,
-      "q": "ما اسم الفتاة التي تشبه جدتها في «أهل الكهف» للحكيم؟",
-      "qid": "arabliterature-1000-021",
-      "sourceUrl": "https://www.safahat.org/books/18292682/",
-      "topic": "المسرح والدراما",
-      "verified": true
-    },
-    {
-      "a": "جالاتيا",
-      "alt": [
-        "جلاتيا"
-      ],
-      "p": 1000,
-      "q": "ما اسم التمثال الذي يتحول إلى امرأة في «بجماليون» للحكيم؟",
-      "qid": "arabliterature-1000-022",
-      "sourceUrl": "https://www.safahat.org/books/81957173/",
-      "topic": "المسرح والدراما",
-      "verified": true
-    },
-    {
+      "q": "من الشخصية الورعة التي يقابل بها محفوظ مظاهر الانحراف في «زقاق المدق»؟",
       "a": "رضوان الحسيني",
-      "p": 1000,
-      "q": "ما الشخصية التي تمثل النقاء والفضيلة في «زقاق المدق»؟",
-      "qid": "arabliterature-1000-023",
-      "sourceUrl": "https://www.safahat.org/books/62575295/",
       "topic": "الرواية والقصة",
-      "verified": true
-    },
-    {
-      "a": "سؤال وجواب",
-      "p": 1000,
-      "q": "ما الكتاب النثري لحافظ الذي صاغ فيه حوارًا تربويًا مختصرًا بين أب وابنه؟",
-      "qid": "arabliterature-1000-024",
-      "sourceUrl": "https://www.safahat.org/books/53064173/",
-      "topic": "النثر والكتب التراثية",
-      "verified": true
-    },
-    {
-      "p": 1000,
-      "topic": "سير الأدباء وأماكنهم",
-      "q": "ما قرية السياب في قضاء أبي الخصيب؟",
-      "a": "جيكور",
-      "alt": [],
-      "sourceUrl": "https://www.britannica.com/",
       "verified": true,
-      "qid": "arabliterature-1000-025"
-    },
-    {
-      "p": 1000,
-      "topic": "سير الأدباء وأماكنهم",
-      "q": "في أي معهد واصل عميد الأدب درسه بعد مرحلة الكتّاب؟",
-      "a": "الأزهر",
-      "alt": [],
-      "sourceUrl": "https://www.britannica.com/",
-      "verified": true,
-      "qid": "arabliterature-1000-026"
-    },
-    {
-      "p": 1000,
-      "topic": "سير الأدباء وأماكنهم",
-      "q": "ما المدرسة العليا التي التحق بها عميد الأدب قبل بعثته إلى فرنسا؟",
-      "a": "الجامعة المصرية",
-      "alt": [],
-      "sourceUrl": "https://www.britannica.com/",
-      "verified": true,
-      "qid": "arabliterature-1000-028"
-    },
-    {
-      "p": 1000,
-      "topic": "سير الأدباء وأماكنهم",
-      "q": "في أي عاصمة أوروبية نوقشت أطروحة العميد عن المقدمة العمرانية؟",
-      "a": "باريس",
-      "alt": [],
-      "sourceUrl": "https://www.britannica.com/",
-      "verified": true,
-      "qid": "arabliterature-1000-029"
-    },
-    {
-      "p": 1000,
-      "topic": "النثر والكتب التراثية",
-      "q": "ما كتاب أبي العلاء الذي ألزم نفسه فيه قواف صعبة؟",
-      "a": "اللزوميات",
-      "alt": [],
-      "sourceUrl": "https://ar.wikisource.org/",
-      "verified": true,
-      "qid": "arabliterature-1000-030"
-    },
-    {
-      "p": 1000,
-      "topic": "النثر والكتب التراثية",
-      "q": "ما كتاب التنوخي في النوادر والمحاضرات؟",
-      "a": "نشوار المحاضرة",
-      "alt": [],
-      "sourceUrl": "https://ar.wikisource.org/",
-      "verified": true,
-      "qid": "arabliterature-1000-031"
-    },
-    {
-      "p": 1000,
-      "topic": "المصطلحات والنقد",
-      "q": "ما اسم اتفاق آخر تفعيلة في شطري البيت الأول وزنًا ورويًّا؟",
-      "a": "التصريع",
-      "alt": [],
-      "sourceUrl": "https://www.britannica.com/",
-      "verified": true,
-      "qid": "arabliterature-1000-032"
-    },
-    {
-      "p": 1000,
-      "topic": "المصطلحات والنقد",
-      "q": "ما اسم تقارب الفاصلتين وزنا في النثر دون سجع لازم؟",
-      "a": "الازدواج",
-      "alt": [],
-      "sourceUrl": "https://www.britannica.com/",
-      "verified": true,
-      "qid": "arabliterature-1000-033"
-    },
-    {
-      "p": 1000,
-      "topic": "المصطلحات والنقد",
-      "q": "ما اسم علم أواخر الأبيات وحروفها وحركاتها؟",
-      "a": "علم القافية",
-      "alt": [],
-      "sourceUrl": "https://www.britannica.com/",
-      "verified": true,
-      "qid": "arabliterature-1000-034"
-    },
-    {
-      "p": 1000,
-      "topic": "الحكايات والشخصيات",
-      "q": "من ملكة سبأ في الموروث الأدبي العربي؟",
-      "a": "بلقيس",
-      "alt": [],
-      "sourceUrl": "https://www.britannica.com/",
-      "verified": true,
-      "qid": "arabliterature-1000-035"
-    },
-    {
-      "p": 1000,
-      "topic": "الحكايات والشخصيات",
-      "q": "ما الجبل الأسطوري المحيط بالأرض في الموروث؟",
-      "a": "جبل قاف",
-      "alt": [
-        "قاف"
-      ],
-      "sourceUrl": "https://www.britannica.com/",
-      "verified": true,
-      "qid": "arabliterature-1000-036"
-    },
-    {
-      "p": 1000,
-      "topic": "المسرح والدراما",
-      "q": "ما مسرحية ونوس التي يُباع فيها الشعب دفعة واحدة؟",
-      "a": "الملك هو الملك",
-      "alt": [],
-      "sourceUrl": "https://www.britannica.com/",
-      "verified": true,
-      "qid": "arabliterature-1000-037"
-    },
-    {
-      "p": 1000,
-      "topic": "الرواية والقصة",
-      "q": "ما الجزء الأول من خماسية مدن الملح؟",
-      "a": "التيه",
-      "alt": [],
-      "sourceUrl": "https://www.britannica.com/",
-      "verified": true,
-      "qid": "arabliterature-1000-038"
-    },
-    {
-      "p": 1000,
-      "topic": "الرواية والقصة",
-      "q": "ما رواية غائب طعمة فرمان عن محلة بغدادية؟",
-      "a": "النخلة والجيران",
-      "alt": [],
-      "sourceUrl": "https://www.britannica.com/",
-      "verified": true,
-      "qid": "arabliterature-1000-039"
-    },
-    {
-      "p": 1000,
-      "topic": "الشعر القديم",
-      "q": "ما البحر الغالب على معلقة ألا هبي بصحنك فاصبحينا؟",
-      "a": "الوافر",
-      "alt": [],
-      "sourceUrl": "https://www.aldiwan.net/",
-      "verified": true,
-      "qid": "arabliterature-1000-041"
-    },
-    {
-      "p": 1000,
-      "topic": "الحكايات والشخصيات",
-      "q": "ما اسم مدينة علاء الدين في بعض طبعات الليالي؟",
-      "a": "الصين",
-      "alt": [],
-      "sourceUrl": "https://www.britannica.com/",
-      "verified": true,
-      "qid": "arabliterature-1000-042"
-    },
-    {
-      "p": 1000,
-      "topic": "الرواية والقصة",
-      "q": "من كاتبة رواية الوارفة؟",
-      "a": "أميمة الخميس",
-      "alt": [],
-      "sourceUrl": "https://www.britannica.com/",
-      "verified": true,
-      "qid": "arabliterature-1000-044"
-    },
-    {
-      "p": 1000,
-      "topic": "الشعر القديم",
-      "q": "ما القبيلة التي يُنسب إليها صاحب لامية العرب غالبًا؟",
-      "a": "الأزد",
-      "alt": [],
-      "sourceUrl": "https://www.britannica.com/",
-      "verified": true,
-      "qid": "arabliterature-1000-045"
-    },
-    {
-      "p": 1000,
-      "topic": "سير الأدباء وأماكنهم",
-      "q": "في أي مدينة عراقية نشأ الجواهري؟",
-      "a": "النجف",
-      "alt": [],
-      "sourceUrl": "https://www.britannica.com/",
-      "verified": true,
-      "qid": "arabliterature-1000-046"
-    },
-    {
-      "p": 1000,
-      "topic": "الشعر الحديث",
-      "q": "ما ديوان درويش الذي يحمل اسم جدار المشفى؟",
-      "a": "جدارية",
-      "alt": [],
-      "sourceUrl": "https://www.aldiwan.net/",
-      "verified": true,
-      "qid": "arabliterature-1000-047"
-    },
-    {
-      "p": 1000,
-      "topic": "المصطلحات والنقد",
-      "q": "ما اسم البيت الذي لا يستغني معناه عن البيت التالي؟",
-      "a": "التضمين",
-      "alt": [],
-      "sourceUrl": "https://www.britannica.com/",
-      "verified": true,
-      "qid": "arabliterature-1000-048"
-    },
-    {
-      "p": 1000,
-      "topic": "سير الأدباء وأماكنهم",
-      "q": "ما الكتاب الذي أثار ضجة سنة 1926 وحوكم بسببه عميد الأدب العربي؟",
-      "a": "في الشعر الجاهلي",
-      "alt": [
-        "الشعر الجاهلي"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%81%D9%8A%20%D8%A7%D9%84%D8%B4%D8%B9%D8%B1%20%D8%A7%D9%84%D8%AC%D8%A7%D9%87%D9%84%D9%8A",
-      "verified": true,
-      "qid": "arabliterature-1000-049"
-    },
-    {
-      "p": 1000,
-      "topic": "المصطلحات والنقد",
-      "q": "ما الكتاب النقدي الذي بسطت فيه شاعرة «الكوليرا» قواعد الشعر الحر؟",
-      "a": "قضايا الشعر المعاصر",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%86%D8%A7%D8%B2%D9%83%20%D8%A7%D9%84%D9%85%D9%84%D8%A7%D8%A6%D9%83%D8%A9",
-      "verified": true,
-      "qid": "arabliterature-1000-050"
-    },
-    {
-      "p": 1000,
-      "topic": "المسرح والدراما",
-      "q": "ما مسرحية الحكيم اللامعقول المستوحاة من أغنية شعبية عن شجرة؟",
-      "a": "يا طالع الشجرة",
-      "alt": [
-        "طالع الشجرة"
-      ],
-      "sourceUrl": "https://www.hindawi.org/books/15724926/",
-      "verified": true,
-      "qid": "arabliterature-1000-051"
+      "difficultyTarget": 0.15,
+      "sourceUrl": "https://www.safahat.org/books/62575295/"
     }
   ]
 }

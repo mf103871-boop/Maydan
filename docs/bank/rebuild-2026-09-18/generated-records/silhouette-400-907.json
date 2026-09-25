@@ -1,0 +1,36 @@
+{
+  "id": "silhouette-400-907",
+  "kind": "question",
+  "pack": "silhouette",
+  "file": "media/silhouette/silhouette-400-907.webp",
+  "asset": "media/silhouette/silhouette-400-907.webp",
+  "prompt": "Use case: product-mockup.\nAsset type: one standalone professional image for an Arabic family visual guessing game (age 16+).\nSubject: a full cello with endpin and bow beside it.\nStyle: realistic high quality photography with correct anatomy and object geometry, clean natural textures.\nComposition: landscape 4:3, the complete subject occupies only the central 55% of the frame, leaving at least 20% completely transparent margin on ALL FOUR sides; centered with ample margins, immediately recognizable when revealed.  \nBackground: genuinely transparent background with alpha channel; isolated cutout; no shadow backdrop; no checkerboard; color subject will become a silhouette inside the game.\nConstraints: exactly the stated subject; no label, caption, watermark, collage, borders or readable words.  Do not create a black silhouette; render the full natural-color cutout with transparent surroundings. Output must be a PNG cutout with actual alpha=0 pixels outside the subject, fully transparent canvas. Do not paint white, gray, black or checkerboard behind it. Keep the entire outline visible. Natural color, no ground plane or cast shadow. Every tip, leaf, antenna, extremity and protruding part must be well inside the canvas, with broad transparent padding. Zoom out. Do not crop any part of the object.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-09-23",
+  "width": 1280,
+  "height": 960,
+  "bytes": 85186,
+  "sha256": "162d494222dfd9d790d6b3db7c57cef27043762ec6e01495718a11c4ed3e0e8e",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "visual-subject-reviewed",
+    "reviewedAt": "2026-09-23",
+    "note": "Generated output visually reviewed: subject matches answer; true alpha measured. Final silhouette/reveal gameplay review still pending.",
+    "answer": "تشيلو",
+    "alpha": {
+      "pixels": 1228800,
+      "alpha0": 1067116,
+      "alpha255": 1105,
+      "partialAlpha": 160579,
+      "nearOpaque250to255": 133909,
+      "transparentFraction": 0.868421,
+      "bboxAlphaOver128": [
+        462,
+        15,
+        879,
+        945
+      ]
+    },
+    "gameplayReview": "pending"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "id": "flags-800-902",
+  "kind": "question",
+  "pack": "flags",
+  "file": "media/flags/flags-800-902.webp",
+  "asset": "media/flags/flags-800-902.webp",
+  "prompt": "Accurate educational national flag. Completely OPAQUE rectangular canvas, every pixel opaque, all color fields stay visible including white. Flat straight-on diagram with crisp solid color edges. Entire image is the flag, exact aspect ratio. No transparency or cutout, no labels, no words, no folds, no pole, no border, no shading. Benin. Width:height3:2. Leftmost40% fullwidth is a solid green #008751 VERTICAL rectangle entire height. Remaining right60% divided into TWO equal-height horizontal rectangles, yellow #FCD116 above and red #E8112D below. Noothermarks.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-09-23",
+  "width": 1280,
+  "height": 853,
+  "bytes": 6988,
+  "sha256": "4961d4c0d57644d0dd86e83c0ffb22a675172d1a4b28d027d61024b0dd63109d",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "pending",
+    "note": "Generation and file checks do not imply subject or gameplay verification."
+  }
+}

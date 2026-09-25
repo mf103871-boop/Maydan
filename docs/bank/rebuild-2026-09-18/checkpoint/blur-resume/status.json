@@ -1,0 +1,329 @@
+{
+  "pausedAt": "2026-09-23",
+  "reason": "User requested checkpoint and stop for another-account continuation.",
+  "installedCount": 24,
+  "reviewPassedCount": 16,
+  "reviewPendingCount": 8,
+  "notGeneratedCount": 16,
+  "packWritten": false,
+  "currentCategoryFile": "src/data/categories/blur.json remains old 240-question pack.",
+  "passedIds": [
+    "blur-200-901",
+    "blur-200-902",
+    "blur-200-903",
+    "blur-200-904",
+    "blur-200-905",
+    "blur-200-906",
+    "blur-200-907",
+    "blur-200-908",
+    "blur-400-901",
+    "blur-400-902",
+    "blur-400-903",
+    "blur-400-904",
+    "blur-400-905",
+    "blur-400-906",
+    "blur-400-907",
+    "blur-400-908"
+  ],
+  "pendingIds": [
+    "blur-600-901",
+    "blur-600-902",
+    "blur-600-903",
+    "blur-600-904",
+    "blur-600-905",
+    "blur-600-906",
+    "blur-600-907",
+    "blur-600-908"
+  ],
+  "nextGenerationIds": [
+    "blur-800-901",
+    "blur-800-902",
+    "blur-800-903",
+    "blur-800-904",
+    "blur-800-905",
+    "blur-800-906",
+    "blur-800-907",
+    "blur-800-908",
+    "blur-1000-901",
+    "blur-1000-902",
+    "blur-1000-903",
+    "blur-1000-904",
+    "blur-1000-905",
+    "blur-1000-906",
+    "blur-1000-907",
+    "blur-1000-908"
+  ],
+  "sharpReviewNotes": {
+    "blur-600-901": "Sloth: complete animal hanging from a branch, coherent limbs; sharp image and initial static blur viewed.",
+    "blur-600-902": "Pretzel: salted golden knot with three holes; sharp image and static blur viewed.",
+    "blur-600-903": "Sewing machine: coherent needle and body; sharp image and static blur viewed.",
+    "blur-600-904": "Oud: pear-shaped body, rosettes, fretless neck; sharp image and static blur viewed.",
+    "blur-600-905": "Tram: long yellow articulated rail vehicle with overhead collector; sharp image and static blur viewed.",
+    "blur-600-906": "Lighthouse: red and white striped coastal tower; sharp image and static blur viewed.",
+    "blur-600-907": "Revised archery image: complete bow and continuous arrow with visible point; revised sharp image viewed, revised static blur NOT viewed.",
+    "blur-600-908": "Aurora: broad green curtains across night sky, forest and snow below; new sharp image viewed, static blur NOT viewed."
+  },
+  "gameplayReview": "Static Gaussian approximations, NOT browser QA. Chromium absent and download failed; root instructed not to retry.",
+  "previewSettings": {
+    "mobile": [
+      320,
+      240
+    ],
+    "desktop": [
+      491,
+      368
+    ],
+    "sigma200400": 16,
+    "sigma600plus": 14.4,
+    "saturation": 1.3
+  },
+  "stalePreviews": "600 sheets predate final archery and aurora replacements; regenerate both sheets before completing 600 review.",
+  "subjectCorrections": {
+    "blur-600-901": "peacock → sloth for difficulty",
+    "blur-600-902": "doughnut → pretzel for difficulty",
+    "blur-600-908": "bamboo → aurora because bamboo became generic green blur"
+  },
+  "aliasRemainingIssue": "Remove primary-answer duplicate هوابط كلسية from blur-1000-908 alt; صواعد سقفية was already removed as incorrect.",
+  "inventory": [
+    {
+      "id": "blur-200-901",
+      "answer": "فيل",
+      "state": "passed",
+      "job": "docs/bank/rebuild-2026-09-18/checkpoint/blur-resume/jobs/blur-200-901.json"
+    },
+    {
+      "id": "blur-200-902",
+      "answer": "بيتزا",
+      "state": "passed",
+      "job": "docs/bank/rebuild-2026-09-18/checkpoint/blur-resume/jobs/blur-200-902.json"
+    },
+    {
+      "id": "blur-200-903",
+      "answer": "إبريق شاي",
+      "state": "passed",
+      "job": "docs/bank/rebuild-2026-09-18/checkpoint/blur-resume/jobs/blur-200-903.json"
+    },
+    {
+      "id": "blur-200-904",
+      "answer": "بيانو",
+      "state": "passed",
+      "job": "docs/bank/rebuild-2026-09-18/checkpoint/blur-resume/jobs/blur-200-904.json"
+    },
+    {
+      "id": "blur-200-905",
+      "answer": "طائرة",
+      "state": "passed",
+      "job": "docs/bank/rebuild-2026-09-18/checkpoint/blur-resume/jobs/blur-200-905.json"
+    },
+    {
+      "id": "blur-200-906",
+      "answer": "برج إيفل",
+      "state": "passed",
+      "job": "docs/bank/rebuild-2026-09-18/checkpoint/blur-resume/jobs/blur-200-906.json"
+    },
+    {
+      "id": "blur-200-907",
+      "answer": "سباحة",
+      "state": "passed",
+      "job": "docs/bank/rebuild-2026-09-18/checkpoint/blur-resume/jobs/blur-200-907.json"
+    },
+    {
+      "id": "blur-200-908",
+      "answer": "شلال",
+      "state": "passed",
+      "job": "docs/bank/rebuild-2026-09-18/checkpoint/blur-resume/jobs/blur-200-908.json"
+    },
+    {
+      "id": "blur-400-901",
+      "answer": "بطريق",
+      "state": "passed",
+      "job": "docs/bank/rebuild-2026-09-18/checkpoint/blur-resume/jobs/blur-400-901.json"
+    },
+    {
+      "id": "blur-400-902",
+      "answer": "كرواسون",
+      "state": "passed",
+      "job": "docs/bank/rebuild-2026-09-18/checkpoint/blur-resume/jobs/blur-400-902.json"
+    },
+    {
+      "id": "blur-400-903",
+      "answer": "مظلة",
+      "state": "passed",
+      "job": "docs/bank/rebuild-2026-09-18/checkpoint/blur-resume/jobs/blur-400-903.json"
+    },
+    {
+      "id": "blur-400-904",
+      "answer": "بوق",
+      "state": "passed",
+      "job": "docs/bank/rebuild-2026-09-18/checkpoint/blur-resume/jobs/blur-400-904.json"
+    },
+    {
+      "id": "blur-400-905",
+      "answer": "قارب شراعي",
+      "state": "passed",
+      "job": "docs/bank/rebuild-2026-09-18/checkpoint/blur-resume/jobs/blur-400-905.json"
+    },
+    {
+      "id": "blur-400-906",
+      "answer": "طاحونة هواء",
+      "state": "passed",
+      "job": "docs/bank/rebuild-2026-09-18/checkpoint/blur-resume/jobs/blur-400-906.json"
+    },
+    {
+      "id": "blur-400-907",
+      "answer": "ملاكمة",
+      "state": "passed",
+      "job": "docs/bank/rebuild-2026-09-18/checkpoint/blur-resume/jobs/blur-400-907.json"
+    },
+    {
+      "id": "blur-400-908",
+      "answer": "بركان",
+      "state": "passed",
+      "job": "docs/bank/rebuild-2026-09-18/checkpoint/blur-resume/jobs/blur-400-908.json"
+    },
+    {
+      "id": "blur-600-901",
+      "answer": "كسلان",
+      "state": "installed-review-pending",
+      "job": "docs/bank/rebuild-2026-09-18/checkpoint/blur-resume/jobs/blur-600-901.json"
+    },
+    {
+      "id": "blur-600-902",
+      "answer": "بريتزل",
+      "state": "installed-review-pending",
+      "job": "docs/bank/rebuild-2026-09-18/checkpoint/blur-resume/jobs/blur-600-902.json"
+    },
+    {
+      "id": "blur-600-903",
+      "answer": "آلة خياطة",
+      "state": "installed-review-pending",
+      "job": "docs/bank/rebuild-2026-09-18/checkpoint/blur-resume/jobs/blur-600-903.json"
+    },
+    {
+      "id": "blur-600-904",
+      "answer": "عود",
+      "state": "installed-review-pending",
+      "job": "docs/bank/rebuild-2026-09-18/checkpoint/blur-resume/jobs/blur-600-904.json"
+    },
+    {
+      "id": "blur-600-905",
+      "answer": "ترام",
+      "state": "installed-review-pending",
+      "job": "docs/bank/rebuild-2026-09-18/checkpoint/blur-resume/jobs/blur-600-905.json"
+    },
+    {
+      "id": "blur-600-906",
+      "answer": "منارة",
+      "state": "installed-review-pending",
+      "job": "docs/bank/rebuild-2026-09-18/checkpoint/blur-resume/jobs/blur-600-906.json"
+    },
+    {
+      "id": "blur-600-907",
+      "answer": "رماية بالقوس",
+      "state": "installed-review-pending",
+      "job": "docs/bank/rebuild-2026-09-18/checkpoint/blur-resume/jobs/blur-600-907.json"
+    },
+    {
+      "id": "blur-600-908",
+      "answer": "شفق قطبي",
+      "state": "installed-review-pending",
+      "job": "docs/bank/rebuild-2026-09-18/checkpoint/blur-resume/jobs/blur-600-908.json"
+    },
+    {
+      "id": "blur-800-901",
+      "answer": "مدرع",
+      "state": "not-generated",
+      "job": "docs/bank/rebuild-2026-09-18/checkpoint/blur-resume/jobs/blur-800-901.json"
+    },
+    {
+      "id": "blur-800-902",
+      "answer": "سوشي",
+      "state": "not-generated",
+      "job": "docs/bank/rebuild-2026-09-18/checkpoint/blur-resume/jobs/blur-800-902.json"
+    },
+    {
+      "id": "blur-800-903",
+      "answer": "مكبس قهوة",
+      "state": "not-generated",
+      "job": "docs/bank/rebuild-2026-09-18/checkpoint/blur-resume/jobs/blur-800-903.json"
+    },
+    {
+      "id": "blur-800-904",
+      "answer": "بانجو",
+      "state": "not-generated",
+      "job": "docs/bank/rebuild-2026-09-18/checkpoint/blur-resume/jobs/blur-800-904.json"
+    },
+    {
+      "id": "blur-800-905",
+      "answer": "عربة ثلج",
+      "state": "not-generated",
+      "job": "docs/bank/rebuild-2026-09-18/checkpoint/blur-resume/jobs/blur-800-905.json"
+    },
+    {
+      "id": "blur-800-906",
+      "answer": "مرصد فلكي",
+      "state": "not-generated",
+      "job": "docs/bank/rebuild-2026-09-18/checkpoint/blur-resume/jobs/blur-800-906.json"
+    },
+    {
+      "id": "blur-800-907",
+      "answer": "كيرلنغ",
+      "state": "not-generated",
+      "job": "docs/bank/rebuild-2026-09-18/checkpoint/blur-resume/jobs/blur-800-907.json"
+    },
+    {
+      "id": "blur-800-908",
+      "answer": "مرجان",
+      "state": "not-generated",
+      "job": "docs/bank/rebuild-2026-09-18/checkpoint/blur-resume/jobs/blur-800-908.json"
+    },
+    {
+      "id": "blur-1000-901",
+      "answer": "تابير",
+      "state": "not-generated",
+      "job": "docs/bank/rebuild-2026-09-18/checkpoint/blur-resume/jobs/blur-1000-901.json"
+    },
+    {
+      "id": "blur-1000-902",
+      "answer": "فاكهة التنين",
+      "state": "not-generated",
+      "job": "docs/bank/rebuild-2026-09-18/checkpoint/blur-resume/jobs/blur-1000-902.json"
+    },
+    {
+      "id": "blur-1000-903",
+      "answer": "مكواة فحم",
+      "state": "not-generated",
+      "job": "docs/bank/rebuild-2026-09-18/checkpoint/blur-resume/jobs/blur-1000-903.json"
+    },
+    {
+      "id": "blur-1000-904",
+      "answer": "مزمار القربة",
+      "state": "not-generated",
+      "job": "docs/bank/rebuild-2026-09-18/checkpoint/blur-resume/jobs/blur-1000-904.json"
+    },
+    {
+      "id": "blur-1000-905",
+      "answer": "قطار جبلي",
+      "state": "not-generated",
+      "job": "docs/bank/rebuild-2026-09-18/checkpoint/blur-resume/jobs/blur-1000-905.json"
+    },
+    {
+      "id": "blur-1000-906",
+      "answer": "برج مياه",
+      "state": "not-generated",
+      "job": "docs/bank/rebuild-2026-09-18/checkpoint/blur-resume/jobs/blur-1000-906.json"
+    },
+    {
+      "id": "blur-1000-907",
+      "answer": "رمي المطرقة",
+      "state": "not-generated",
+      "job": "docs/bank/rebuild-2026-09-18/checkpoint/blur-resume/jobs/blur-1000-907.json"
+    },
+    {
+      "id": "blur-1000-908",
+      "answer": "هوابط كلسية",
+      "state": "not-generated",
+      "job": "docs/bank/rebuild-2026-09-18/checkpoint/blur-resume/jobs/blur-1000-908.json"
+    }
+  ]
+}
