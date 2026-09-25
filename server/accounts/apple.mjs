@@ -18,6 +18,10 @@ export const urls = (env) => ({
 // مُعرّف الجمهور يختلف: Services ID على الويب، معرّف الحزمة داخل التطبيق.
 export const audienceFor = (env, client) => (client === 'ios' ? env.APPLE_BUNDLE_ID : env.APPLE_SERVICES_ID);
 export const configured = (env) => !!(env.APPLE_SERVICES_ID || env.APPLE_BUNDLE_ID);
+// This reports configuration presence only, separately from Apple sign-in.
+// Never return signing material or identifiers through the public billing API.
+export const purchasesConfigured = (env) => [env.APPLE_BUNDLE_ID, env.APPLE_IAP_PRIVATE_KEY, env.APPLE_IAP_ISSUER_ID, env.APPLE_IAP_KEY_ID]
+  .every((value) => typeof value === 'string' && value.trim().length > 0);
 
 export function authorizeUrl(env, { redirectUri, state, nonce }) {
   if (!env.APPLE_SERVICES_ID) failure('NOT_ELIGIBLE');
@@ -85,7 +89,7 @@ export function nameFromForm(value) {
 const STATUS_TEXT = { 1: 'active', 2: 'expired', 3: 'billing_retry', 4: 'grace', 5: 'revoked' };
 
 async function storeToken(env, now = Date.now()) {
-  if (!env.APPLE_IAP_PRIVATE_KEY || !env.APPLE_IAP_ISSUER_ID || !env.APPLE_IAP_KEY_ID) failure('NOT_ELIGIBLE');
+  if (!purchasesConfigured(env)) failure('NOT_ELIGIBLE');
   const issued = Math.floor(now / 1000);
   return signEs256({ kid: env.APPLE_IAP_KEY_ID }, {
     iss: env.APPLE_IAP_ISSUER_ID, iat: issued, exp: issued + 1800, aud: 'appstoreconnect-v1', bid: env.APPLE_BUNDLE_ID,

@@ -25,16 +25,22 @@
         "id": "plus.monthly",
         "type": "auto-renewable",
         "period": "P1M",
-        "referencePrice": "USD 2.99"
+        "referencePrice": "USD 5.00",
+        "appleId": "6815994891"
       },
       {
         "id": "plus.yearly",
         "type": "auto-renewable",
         "period": "P1Y",
-        "referencePrice": "USD 19.99"
+        "referencePrice": "USD 50.00",
+        "appleId": "6815995865"
       }
     ],
-    "note": "الأسعار تُضبط في App Store Connect لا في الكود؛ المعرّفان يطابقان PRODUCTS في src/shared/account/config.js."
+    "note": "الأسعار تُضبط في App Store Connect لا في الكود؛ المعرّفان يطابقان PRODUCTS في src/shared/account/config.js.",
+    "subscriptionGroupId": "22412444",
+    "pricingVerifiedAt": "2026-09-25",
+    "pricingBaseTerritory": "Jordan (USD); United States matches; other storefronts use Apple-calculated localized prices",
+    "storeStatus": "Prepare for Submission"
   },
   "capabilities": [
     "In-App Purchase",

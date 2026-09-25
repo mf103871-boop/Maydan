@@ -58,6 +58,7 @@ async function fresh(t, source, failed = false) {
     localStorage.setItem('maydan:account:session', JSON.stringify('unit-session'));
     localStorage.setItem('maydan:account:me', JSON.stringify({ data: cached, fetchedAt: Date.now() }));
     window.checkoutsOpened = [];
+    window.paddleEnvironment = 'production'; // Paddle defaults to production; only sandbox uses Environment.set.
     window.Paddle = {
       Environment: { set(environment) { window.paddleEnvironment = environment; } },
       Initialize(options) { window.paddleCallback = options.eventCallback; },
