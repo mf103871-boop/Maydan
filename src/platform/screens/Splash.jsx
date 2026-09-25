@@ -53,6 +53,7 @@ export function Splash({ onDone, visible = true, reducedMotion = false }) {
     setImages({ done: 0, total: startupImageUrls.length, ok: 0, failed: 0 });
     cacheStartupImages(startupImageUrls, {
       signal: abort.signal,
+      concurrency: 3, // Leave connections available for the active game's media.
       onProgress: (next) => { if (active) setImages(next); },
     }).then((result) => {
       if (!active || result.aborted) return;
