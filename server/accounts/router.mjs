@@ -75,6 +75,7 @@ export async function routeAccounts(request, env, url, charge) {
 function billingConfig(env) {
   return json({
     paddle: paddle.publicConfig(env),
+    apple: { purchasesConfigured: apple.purchasesConfigured(env) },
     products: PRODUCTS,
     providers: { apple: apple.configured(env), google: google.configured(env), dev: devFake(env) },
   });

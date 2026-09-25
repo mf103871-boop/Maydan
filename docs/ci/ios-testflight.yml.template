@@ -1,0 +1,160 @@
+name: iOS signed build and optional TestFlight upload
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'App version checked in App Store Connect (for example 1.5)'
+        required: true
+        type: string
+      build:
+        description: 'Unused build number checked in App Store Connect (1-9999)'
+        required: true
+        type: string
+      upload_to_testflight:
+        description: 'Upload the signed build to the existing App Store Connect app'
+        required: true
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+concurrency:
+  group: maydan-ios-release
+  cancel-in-progress: false
+
+jobs:
+  signed-build:
+    runs-on: macos-15
+    timeout-minutes: 45
+    env:
+      IOS_VERSION: ${{ inputs.version }}
+      IOS_BUILD: ${{ inputs.build }}
+      IOS_UPLOAD: ${{ inputs.upload_to_testflight }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Check explicit release inputs and required secrets
+        env:
+          IOS_DISTRIBUTION_P12_BASE64: ${{ secrets.IOS_DISTRIBUTION_P12_BASE64 }}
+          IOS_DISTRIBUTION_P12_PASSWORD: ${{ secrets.IOS_DISTRIBUTION_P12_PASSWORD }}
+          IOS_APP_STORE_PROFILE_BASE64: ${{ secrets.IOS_APP_STORE_PROFILE_BASE64 }}
+          ASC_KEY_ID: ${{ secrets.ASC_KEY_ID }}
+          ASC_ISSUER_ID: ${{ secrets.ASC_ISSUER_ID }}
+          ASC_PRIVATE_KEY_BASE64: ${{ secrets.ASC_PRIVATE_KEY_BASE64 }}
+        run: python3 scripts/ios/signing.py preflight
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - name: Select a stable Xcode 26 or newer
+        run: |
+          python3 - <<'PY'
+          import glob, os, re
+          candidates = []
+          for app in glob.glob('/Applications/Xcode_*.app'):
+              match = re.fullmatch(r'Xcode_(\d+(?:\.\d+)*)\.app', os.path.basename(app))
+              if match:
+                  version = tuple(map(int, match[1].split('.')))
+                  if version[0] >= 26:
+                      candidates.append((version, app))
+          if not candidates:
+              raise SystemExit('A stable Xcode 26 or newer is required.')
+          selected = max(candidates)[1] + '/Contents/Developer'
+          with open(os.environ['GITHUB_ENV'], 'a') as out:
+              out.write('DEVELOPER_DIR=' + selected + '\n')
+          print('Selected', selected)
+          PY
+      - name: Test and prepare the current game
+        run: |
+          npm ci --no-audit --no-fund
+          npm test
+          python3 -m unittest discover -s scripts/ios -p 'test_signing.py'
+          npm run ios:prepare
+      - name: Install and validate signing assets
+        env:
+          IOS_DISTRIBUTION_P12_BASE64: ${{ secrets.IOS_DISTRIBUTION_P12_BASE64 }}
+          IOS_DISTRIBUTION_P12_PASSWORD: ${{ secrets.IOS_DISTRIBUTION_P12_PASSWORD }}
+          IOS_APP_STORE_PROFILE_BASE64: ${{ secrets.IOS_APP_STORE_PROFILE_BASE64 }}
+        run: |
+          umask 077
+          SIGNING_DIR="$RUNNER_TEMP/maydan-signing"
+          mkdir -p "$SIGNING_DIR"
+          python3 - <<'PY'
+          import base64, os, pathlib
+          folder = pathlib.Path(os.environ['RUNNER_TEMP']) / 'maydan-signing'
+          for secret, name in [('IOS_DISTRIBUTION_P12_BASE64', 'certificate.p12'),
+                               ('IOS_APP_STORE_PROFILE_BASE64', 'profile.mobileprovision')]:
+              (folder / name).write_bytes(base64.b64decode(''.join(os.environ[secret].split()), validate=True))
+          PY
+          KEYCHAIN_PATH="$SIGNING_DIR/signing.keychain-db"
+          KEYCHAIN_PASSWORD="$(openssl rand -base64 32)"
+          echo "::add-mask::$KEYCHAIN_PASSWORD"
+          security create-keychain -p "$KEYCHAIN_PASSWORD" "$KEYCHAIN_PATH"
+          security set-keychain-settings -lut 3600 "$KEYCHAIN_PATH"
+          security unlock-keychain -p "$KEYCHAIN_PASSWORD" "$KEYCHAIN_PATH"
+          security import "$SIGNING_DIR/certificate.p12" -P "$IOS_DISTRIBUTION_P12_PASSWORD" -A -t cert -f pkcs12 -k "$KEYCHAIN_PATH" >/dev/null
+          security set-key-partition-list -S apple-tool:,apple: -k "$KEYCHAIN_PASSWORD" "$KEYCHAIN_PATH" >/dev/null
+          security list-keychains -d user -s "$KEYCHAIN_PATH"
+          security find-identity -v -p codesigning "$KEYCHAIN_PATH" > "$SIGNING_DIR/identities.txt"
+          security cms -D -i "$SIGNING_DIR/profile.mobileprovision" > "$SIGNING_DIR/profile.plist"
+          python3 scripts/ios/signing.py profile "$SIGNING_DIR"
+          PROFILE_UUID="$(cat "$SIGNING_DIR/profile-uuid.txt")"
+          PROFILE_DIR="$HOME/Library/Developer/Xcode/UserData/Provisioning Profiles"
+          mkdir -p "$PROFILE_DIR"
+          cp "$SIGNING_DIR/profile.mobileprovision" "$PROFILE_DIR/$PROFILE_UUID.mobileprovision"
+      - name: Archive the signed iPhone app
+        run: |
+          xcodebuild -version
+          xcodebuild -project ios/Maydan.xcodeproj -scheme Maydan \
+            -configuration Release -sdk iphoneos -destination 'generic/platform=iOS' \
+            -archivePath ios/build/Maydan.xcarchive \
+            "MARKETING_VERSION=$IOS_VERSION" "CURRENT_PROJECT_VERSION=$IOS_BUILD" \
+            PRODUCT_BUNDLE_IDENTIFIER=Maydan DEVELOPMENT_TEAM=96WJBK2MB2 \
+            CODE_SIGN_STYLE=Manual "CODE_SIGN_IDENTITY=$IOS_SIGNING_IDENTITY" \
+            "PROVISIONING_PROFILE_SPECIFIER=$IOS_PROFILE_UUID" archive
+          codesign --verify --deep --strict ios/build/Maydan.xcarchive/Products/Applications/Maydan.app
+          python3 scripts/ios/signing.py archive ios/build/Maydan.xcarchive/Products/Applications/Maydan.app/Info.plist
+      - name: Export the signed IPA without uploading
+        run: |
+          xcodebuild -exportArchive -archivePath ios/build/Maydan.xcarchive \
+            -exportOptionsPlist "$RUNNER_TEMP/maydan-signing/ExportOptions.plist" \
+            -exportPath ios/build/export
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Maydan-iOS-${{ inputs.version }}-${{ inputs.build }}
+          path: ios/build/export/*.ipa
+          if-no-files-found: error
+          retention-days: 7
+      - name: Upload to App Store Connect for TestFlight
+        if: ${{ inputs.upload_to_testflight }}
+        env:
+          ASC_KEY_ID: ${{ secrets.ASC_KEY_ID }}
+          ASC_ISSUER_ID: ${{ secrets.ASC_ISSUER_ID }}
+          ASC_PRIVATE_KEY_BASE64: ${{ secrets.ASC_PRIVATE_KEY_BASE64 }}
+        run: |
+          umask 077
+          python3 - <<'PY'
+          import base64, os, pathlib
+          key = pathlib.Path(os.environ['RUNNER_TEMP']) / 'maydan-signing' / 'AuthKey.p8'
+          key.write_bytes(base64.b64decode(''.join(os.environ['ASC_PRIVATE_KEY_BASE64'].split()), validate=True))
+          PY
+          xcodebuild -exportArchive -archivePath ios/build/Maydan.xcarchive \
+            -exportOptionsPlist "$RUNNER_TEMP/maydan-signing/UploadOptions.plist" \
+            -exportPath ios/build/upload \
+            -allowProvisioningUpdates \
+            -authenticationKeyPath "$RUNNER_TEMP/maydan-signing/AuthKey.p8" \
+            -authenticationKeyID "$ASC_KEY_ID" -authenticationKeyIssuerID "$ASC_ISSUER_ID"
+          echo 'Upload accepted; Apple processing and TestFlight device testing remain.' >> "$GITHUB_STEP_SUMMARY"
+      - name: Remove signing secrets and temporary keychain
+        if: ${{ always() }}
+        run: |
+          SIGNING_DIR="$RUNNER_TEMP/maydan-signing"
+          security delete-keychain "$SIGNING_DIR/signing.keychain-db" 2>/dev/null || true
+          if [[ -f "$SIGNING_DIR/profile-uuid.txt" ]]; then
+            PROFILE_UUID="$(cat "$SIGNING_DIR/profile-uuid.txt")"
+            rm -f "$HOME/Library/Developer/Xcode/UserData/Provisioning Profiles/$PROFILE_UUID.mobileprovision"
+          fi
+          rm -rf "$SIGNING_DIR"

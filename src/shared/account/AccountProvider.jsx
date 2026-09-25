@@ -337,6 +337,12 @@ export function AccountProvider({ children }) {
       applyMe(current, epoch);
       if (isPremium(current) && current.premium.source !== 'promo') throw new ClientError('ALREADY_SUBSCRIBED');
       if (native) {
+        // Do not open a payment sheet until this server can verify its result.
+        // Existing transactions still restore/replay independently of this gate.
+        const config = await getBillingConfig(options());
+        if (epoch !== authEpochRef.current) throw new ClientError('PURCHASE_CANCELLED');
+        setBilling(config || null);
+        if (config?.apple?.purchasesConfigured !== true) throw new ClientError('APPLE_PURCHASES_UNAVAILABLE');
         // appAccountToken = معرّف المستخدم: الخادم يرفض ربط المعاملة بحساب آخر.
         const userId = (meRef.current && meRef.current.user && meRef.current.user.id) || null;
         if (!sessionRef.current || !userId) throw new ClientError('AUTH_REQUIRED');
