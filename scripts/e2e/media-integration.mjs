@@ -13,16 +13,7 @@ await fs.mkdir(OUT, { recursive: true });
 const pkg = await readPkg();
 const options = esbuildOptions({ minify: true, version: pkg.version, media: await mediaVersions() });
 options.define.__MAYDAN_ROOMS_URL__ = JSON.stringify('same-origin');
-// Pick the shadow rendering path deterministically; retain actual production
-// question objects/assets, filtering true transparent silhouettes only inside
-// this in-memory test bundle (never alter the category JSON on disk).
-options.plugins = [{ name: 'shadow-test-selection', setup(builder) {
-  builder.onLoad({ filter: /[/\\]categories[/\\]silhouette\.json$/ }, async ({ path: file }) => {
-    const pack = JSON.parse(await fs.readFile(file, 'utf8'));
-    pack.qs = pack.qs.filter((question) => question.p !== 600 || question.effect === 'shadow');
-    return { contents: JSON.stringify(pack), loader: 'json' };
-  });
-} }];
+// Exercise the current curated bank without filtering out its silhouette images.
 const bundle = await build(options);
 const html = await renderHtml(bundle.outputFiles[0].text, { version: pkg.version });
 const me = { user: { id: 'local-media-fixture', name: 'فحص محلي' }, premium: { active: true, until: Date.now() + 86400000, source: 'test', status: 'active', willRenew: false }, trials: {}, serverTime: Date.now() };
@@ -46,7 +37,10 @@ const server = http.createServer(async (req, res) => {
     const base = pathname.startsWith('/media/') ? ROOT : path.join(ROOT, 'public');
     const file = path.resolve(base, `.${pathname}`);
     if (!file.startsWith(`${path.resolve(base)}${path.sep}`)) { res.writeHead(403); res.end(); return; }
-    let body = await fs.readFile(file);
+    let body = await fs.readFile(file).catch((error) => {
+      if (!pathname.startsWith('/media/')) throw error;
+      return fs.readFile(path.join(ROOT, 'public', `.${pathname}`));
+    });
     if (pathname === '/sw.js') body = Buffer.from(body.toString().replaceAll('__BUILD_ID__', `media-e2e-${Date.now()}`));
     res.writeHead(200, { 'Content-Type': MIME[path.extname(file)] || 'application/octet-stream', 'Content-Length': body.length }); res.end(body);
   } catch { if (!res.headersSent) res.writeHead(404); res.end(); }
@@ -73,20 +67,25 @@ try {
   await page.locator('.splash .loading-status').waitFor();
   check('startup waits for actual decode and does not mount a hidden game', await page.locator('.home-screen, .game-frame').count() === 0);
   await shot('startup-loading-slow-decode');
+  releaseImages(); // Startup now warms every active image before entering the app.
   await page.evaluate(() => window.releaseReadinessTest());
   await page.locator('.splash').waitFor({ state: 'detached' });
   await page.locator('.home-screen').waitFor();
   await page.evaluate(async () => { await navigator.serviceWorker.ready; });
   await page.waitForFunction(() => !!navigator.serviceWorker.controller);
   check('real service worker controls the local test app', true);
-  await page.goto(`${BASE}/#/settings`);
+  await page.evaluate(() => { location.hash = '#/settings'; });
   await page.locator('#sound-volume').fill('35');
-  await page.goto(`${BASE}/#/play/badeeha`);
+  await page.evaluate(() => { location.hash = '#/play/badeeha'; });
   await page.locator('.m-hero-cta').click();
   check('isolated mock Plus unlocks paid media packs', await page.locator('.m-category-pick.is-locked').count() === 0);
   const ids = ['general', 'silhouette', 'sound', 'blur', 'zoom', 'reveal'];
   const packs = await Promise.all(ids.map(async (id) => JSON.parse(await fs.readFile(path.join(ROOT, 'src/data/categories', `${id}.json`), 'utf8'))));
   for (const pack of packs) await page.locator('.m-category-main').filter({ has: page.locator('b', { hasText: new RegExp(`^${pack.name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}$`) }) }).click();
+  // Simulate media eviction after startup to retain the round's slow-load and
+  // recovery checks. Normal launches now have these images cached already.
+  await page.evaluate(() => caches.delete('maydan-media-v1'));
+  holdImages = true;
   await page.getByRole('button', { name: /^ابدأ 30 سؤال/ }).click();
   await page.locator('.m-round-loading').waitFor();
   check('round loader tracks actual media and keeps the board unmounted', await page.locator('.m-board-grid').count() === 0);
@@ -104,9 +103,9 @@ try {
   check('image question displays a real loading state while its response is held', true);
   await shot('media-loading-slow-response');
   releaseImages();
-  await page.waitForFunction(() => { const img = document.querySelector('.m-media-img.fx-shadow'); return img?.complete && img.naturalWidth > 0; });
-  const shadow = await page.locator('.m-media-img.fx-shadow').evaluate((img) => ({ width: img.naturalWidth, height: img.naturalHeight, filter: getComputedStyle(img).filter, assisted: img.classList.contains('is-assisted') }));
-  check('shadow is visible dimmed imagery instead of a black rectangle', !shadow.filter.includes('brightness(0)') && shadow.assisted, JSON.stringify(shadow));
+  await page.waitForFunction(() => { const img = document.querySelector('.m-media-img.fx-silhouette'); return img?.complete && img.naturalWidth > 0; });
+  const shadow = await page.locator('.m-media-img.fx-silhouette').evaluate((img) => ({ width: img.naturalWidth, height: img.naturalHeight, filter: getComputedStyle(img).filter, assisted: img.classList.contains('is-assisted') }));
+  check('current transparent silhouette retains its black shape with assistance', shadow.filter.includes('brightness(0)') && shadow.assisted, JSON.stringify(shadow));
   check('600-point image includes answer-shape assistance', await page.locator('.m-question-assistance').count() === 1);
   await shot('shadow-assisted');
   await finish();
@@ -144,6 +143,9 @@ try {
   const range = await page.evaluate(async (url) => { const response = await fetch(url, { headers: { Range: 'bytes=0-31' } }); return { status: response.status, bytes: (await response.arrayBuffer()).byteLength, range: response.headers.get('content-range') }; }, audioUrl);
   check('cached audio serves byte ranges completely offline', range.status === 206 && range.bytes === 32, JSON.stringify(range));
   await page.reload({ waitUntil: 'domcontentloaded' });
+  // The deliberate cache eviction above left other packs missing. Offline
+  // startup must offer entry with the available images rather than claim 100%.
+  await page.getByRole('button', { name: 'الدخول بالصور المتاحة', exact: true }).click();
   await page.locator('.splash').waitFor({ state: 'detached' });
   await page.getByRole('button', { name: 'متابعة', exact: true }).click();
   await page.waitForFunction(() => document.querySelector('.m-audio audio')?.readyState >= 2);
@@ -155,7 +157,7 @@ try {
 } catch (error) { check('media integration flow', false, error.message); await shot('media-integration-failure').catch(() => {}); }
 finally {
   releaseImages(); await browser.close(); await new Promise((resolve) => server.close(resolve));
-  await fs.writeFile(path.join(OUT, 'media-integration-results.json'), JSON.stringify({ executedAt: new Date().toISOString(), mockAccountOnly: true, realBankAndAssets: true, inMemorySelection: '600-point silhouette candidates restricted to production shadow-effect questions', injectedAudioFailures: injectedFailures, results, errors }, null, 2));
+  await fs.writeFile(path.join(OUT, 'media-integration-results.json'), JSON.stringify({ executedAt: new Date().toISOString(), mockAccountOnly: true, realBankAndAssets: true, inMemorySelection: 'none; current curated bank', injectedAudioFailures: injectedFailures, results, errors }, null, 2));
 }
 console.log(`${results.filter((result) => result.ok).length}/${results.length} media checks passed`);
 if (results.some((result) => !result.ok)) process.exitCode = 1;

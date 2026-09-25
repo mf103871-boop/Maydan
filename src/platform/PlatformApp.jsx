@@ -91,7 +91,8 @@ function Shell() {
   const route = useRoute();
   const { settings, setSettings, sound, confetti } = usePlatform();
   const [booted, setBooted] = useState(false);
-  // Assets settle before mounting a route: hidden games must not start timers.
+  // The shell becomes usable quickly; the mounted splash continues image work
+  // in the background without starting a hidden game's timers during startup.
   const finishSplash = useCallback(() => {
     setBooted(true);
     if (!settings.splashSeen) setSettings({ splashSeen: true });
@@ -105,7 +106,7 @@ function Shell() {
       <style>{uiCss}</style>
       <style>{setupCss}</style>
       <style>{platformCss}</style>
-      {!booted && <Splash onDone={finishSplash} reducedMotion={settings.reducedMotion} />}
+      <Splash visible={!booted} onDone={finishSplash} reducedMotion={settings.reducedMotion} />
       {/* حدّ خطأ حول الشاشات: خطأ تصيير واحد كان يُفرغ الصفحة بلا رجعة. */}
       {booted && <ErrorBoundary
         resetKey={route.path}
