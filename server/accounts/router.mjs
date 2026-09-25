@@ -16,6 +16,8 @@ import {
   requireSession, returnRedirect, safeReturn, signState, withRotation,
 } from './session.mjs';
 import { randomHex } from './jwt.mjs';
+import { friendIds } from '../social/db.mjs';
+import { forgetSocialUser, notifyUsers } from '../social/realtime.mjs';
 
 // مسارات لا تحمل Origin أصلًا: إعادة توجيه المزوّد وwebhooks الخوادم.
 export const PUBLIC_PATHS = new Set([
@@ -292,6 +294,7 @@ async function paddleWebhook(request, env, now) {
 // ── حذف الحساب ──────────────────────────────────────────────────────────────
 async function deleteAccount(request, env, now) {
   const { user } = await requireSession(env, request, { now, rotate: false });
+  const formerFriends = await friendIds(env, user.id);
   const deletionId = db.uuid();
   if (!await db.reserveAccountDeletion(env, user.id, deletionId)) failure('CHECKOUT_REVIEW');
   try {
@@ -309,6 +312,8 @@ async function deleteAccount(request, env, now) {
       if (identity.provider === 'apple' && identity.refresh_token) await apple.revokeToken(env, identity.refresh_token);
     }
     await db.deleteUser(env, user.id);
+    await forgetSocialUser(env, user.id);
+    await notifyUsers(env, formerFriends, { type: 'refresh' });
     return new Response(null, { status: 204, headers: { 'cache-control': 'no-store' } });
   } finally {
     // Failure keeps the checkout reservation, but does not strand account management.

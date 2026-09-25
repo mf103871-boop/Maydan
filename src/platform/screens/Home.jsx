@@ -4,6 +4,7 @@ import { Screen, IconButton, ripple } from '../../shared/ui/components.jsx';
 import { IconSettings, IconUsers, IconClock, IconInfo } from '../../shared/ui/icons.jsx';
 import { usePlatform } from '../context.js';
 import { useAccount } from '../../shared/account/context.js';
+import { useSocial } from '../../social/SocialProvider.jsx';
 import { PUBLIC_SITE_ORIGIN, LEGAL_ROUTES } from '../../shared/account/config.js';
 import { navigate, getDirection } from '../router.js';
 import { GAMES } from '../registry.js';
@@ -79,6 +80,7 @@ function GameCard({ game, index, launching, badge, onOpen }) {
 export function Home() {
   const { roster, sound, haptics, version } = usePlatform();
   const account = useAccount();
+  const social = useSocial() || { friends: [], incoming: [], unreadCount: 0 };
   // فتح لعبة: البطاقة تنطلق (is-launch) ثم الملاحة بعد 140ms (صفر تحت تقليل الحركة)؛ النقر المزدوج محروس بمرجع.
   const launching = useRef(false);
   const launchTimer = useRef(0);
@@ -109,6 +111,16 @@ export function Home() {
         <ClayStage className="clay-static"><GameArtwork game="meenfina" /></ClayStage>
         <span><strong>اللّمّة من كل جوال</strong><small>غرف «مين فينا؟» و«فبركة» · دخول برمز وتصويت سري</small></span>
         <span className="online-new">تجريبي</span>
+      </button>
+
+      <button type="button" className="card roster-card social-home-card" onClick={() => { sound.play('click'); navigate('/friends'); }} aria-label="الأصدقاء والمحادثات" onPointerDown={ripple}>
+        <span className="grow" style={{ textAlign: 'start' }}>
+          <span className="card-title" style={{ display: 'block' }}>الأصدقاء والمحادثات</span>
+          <span className="card-muted">{account.signedIn ? `${social.friends.filter(f => f.online).length} متصل الآن · تواصل مع أصحابك` : 'أضف أصحابك وخليك قريب منهم'}</span>
+        </span>
+        {social.unreadCount + social.incoming.length > 0
+          ? <span className="badge badge-accent" aria-label="تنبيهات الأصدقاء">{social.unreadCount + social.incoming.length}</span>
+          : <IconUsers style={{ width: 34, height: 34, color: 'var(--accent)' }} />}
       </button>
 
       <button type="button" className="card roster-card" onClick={() => { sound.play('click'); navigate('/players'); }} aria-label="دفتر اللاعبين" onPointerDown={ripple}>
