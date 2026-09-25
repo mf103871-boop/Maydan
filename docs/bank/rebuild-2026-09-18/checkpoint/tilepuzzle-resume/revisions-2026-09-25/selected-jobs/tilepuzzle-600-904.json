@@ -1,0 +1,6 @@
+{
+  "id": "tilepuzzle-600-904",
+  "kind": "question",
+  "pack": "tilepuzzle",
+  "prompt": "Use case: precise-object-edit.\nAsset type: one standalone 4:3 image for a visual guessing game.\nInput image 1: edit target, yellow tracked excavator on a construction site.\nPrimary request: widen the framing to show the complete same excavator including its highest boom joint and pivot with at least 8% clear sky above, and the full bucket and tracks with surrounding margin. Preserve correct connected hydraulic boom, arm, bucket, cab and tracked chassis, yellow paint, natural light, and construction-site background. Vehicle should occupy about 75% of image height.\nConstraints: no part of the vehicle cropped, no added equipment, text, logos, labels, watermark, tile cuts or borders."
+}

@@ -1109,15 +1109,15 @@
       "name": "وضّح شوي",
       "icon": "🌫️",
       "media": true,
-      "status": "pending",
+      "status": "done",
       "counts": {
-        "200": 48,
-        "400": 48,
-        "600": 48,
-        "800": 48,
-        "1000": 48
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
       },
-      "doneAt": null,
+      "doneAt": "2026-09-25T02:28:46.919789+00:00",
       "order": 71,
       "mediaKind": "image",
       "defaultType": "image:blur"
@@ -1160,15 +1160,15 @@
       "name": "خمن السيارة",
       "icon": "🚘",
       "media": true,
-      "status": "pending",
+      "status": "done",
       "counts": {
-        "200": 48,
-        "400": 48,
-        "600": 48,
-        "800": 48,
-        "1000": 46
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
       },
-      "doneAt": null,
+      "doneAt": "2026-09-25T02:43:16.481110+00:00",
       "order": 74,
       "mediaKind": "image",
       "defaultType": "image"
@@ -1194,15 +1194,15 @@
       "name": "ركّبها صح",
       "icon": "🧱",
       "media": true,
-      "status": "pending",
+      "status": "done",
       "counts": {
-        "200": 42,
-        "400": 47,
-        "600": 47,
-        "800": 47,
-        "1000": 42
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
       },
-      "doneAt": null,
+      "doneAt": "2026-09-25T02:43:16.233158+00:00",
       "order": 77,
       "mediaKind": "image",
       "defaultType": "image:jumble"

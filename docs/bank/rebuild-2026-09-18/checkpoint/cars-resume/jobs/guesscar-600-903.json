@@ -1,0 +1,51 @@
+{
+  "id": "guesscar-600-903",
+  "kind": "question",
+  "pack": "guesscar",
+  "p": 600,
+  "a": "أودي آر 8",
+  "topic": "رياضية",
+  "prompt": "Use case: product-mockup.\nAsset: one AI-generated car-identification illustration for an Arabic family quiz.\nSubject: 2018 Audi R8 V10 Plus coupe, silver.\nGenerate a new high-quality realistic studio rendering of precisely this vehicle model and generation. Match its real proportions, characteristic body shape, grille, headlights, windows and wheel layout accurately; do not invent a hybrid car.\nComposition: full vehicle from front three-quarter angle (rear three-quarter angle for Tatra 87), centered, wheels and roof wholly visible, landscape 4:3. Soft ivory seamless studio floor and background, subtle contact shadow, natural materials and paint.\nDo not reproduce the described original photograph or its environment. No people, scenery, border, watermark or captions. The license plate must be blank. Omit readable model-name lettering that would reveal the answer. Brand emblems may retain their simple graphic shapes. This is a faithful visual illustration, not a document photograph.",
+  "priorQid": "guesscar-600-016",
+  "identityReference": {
+    "src": "guesscar-600-016.webp",
+    "type": "image",
+    "title": "2018 Audi R8 Coupe V10 plus Front Taken in Stratford-upon-Avon",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:2018_Audi_R8_Coupe_V10_plus_Front.jpg",
+    "author": "Vauxford",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  "question": {
+    "p": 600,
+    "q": "ما اسم الكوبيه الفضية ذات اللوح الأسود خلف الباب؟",
+    "a": "أودي آر 8",
+    "alt": [
+      "ار 8",
+      "اودي ار8",
+      "أودي R8",
+      "Audi R8",
+      "R8"
+    ],
+    "qid": "guesscar-600-903",
+    "type": "image",
+    "topic": "رياضية",
+    "difficultyTarget": 0.4,
+    "verified": true,
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:2018_Audi_R8_Coupe_V10_plus_Front.jpg",
+    "media": {
+      "src": "guesscar-600-903.webp",
+      "type": "image",
+      "title": "سيارة — تصوير توضيحي مولّد",
+      "author": "Maydan / OpenAI image generation",
+      "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+      "provenance": {
+        "kind": "ai-generated",
+        "tool": "OpenAI image generation",
+        "createdAt": "2026-09-25",
+        "record": "docs/bank/rebuild-2026-09-18/generated-records/guesscar-600-903.json"
+      }
+    }
+  },
+  "model": "2018 Audi R8 V10 Plus coupe, silver"
+}

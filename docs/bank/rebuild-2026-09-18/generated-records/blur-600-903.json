@@ -13,7 +13,11 @@
   "sha256": "1352033a952c3807dd76a61e5b4287797c2fe70118cec8e931a310be310559f0",
   "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
   "review": {
-    "status": "pending",
-    "note": "Generation and file checks do not imply subject or gameplay verification."
+    "status": "approved",
+    "reviewedAt": "2026-09-25",
+    "note": "Home sewing machine with thread spool, needle/presser assembly, arm, base and side control. General identification is clear; tiny dial markings are incidental rather than answer-bearing.",
+    "gameplayReview": "approved",
+    "sourceReview": "docs/bank/rebuild-2026-09-18/review-blur-generated.json",
+    "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/blur/runtime.json"
   }
 }

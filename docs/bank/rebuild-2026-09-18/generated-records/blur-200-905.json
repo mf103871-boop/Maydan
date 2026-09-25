@@ -13,12 +13,11 @@
   "sha256": "e4f17b88fdef95caf969ddaf886f2f86199a7565a20cb0d5227749d372bce4a5",
   "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
   "review": {
-    "status": "passed",
-    "reviewedAt": "2026-09-23",
-    "fullImage": "طائرة ركاب بيضاء ذات جناحين وذيل ومحركين؛ دون علامة تجارية.",
-    "blurredGameplay": "Visually checked both static mobile/desktop approximations; identifying overall shape remains visible, fine details are hidden.",
-    "previewMode": "static-approximation-not-browser",
-    "sigma": 16,
-    "saturation": 1.3
+    "status": "approved",
+    "reviewedAt": "2026-09-25",
+    "note": "White passenger airplane with cabin windows, wings, engines and tail above clouds. Generic airplane identification is supported; model and airline are not.",
+    "gameplayReview": "approved",
+    "sourceReview": "docs/bank/rebuild-2026-09-18/review-blur-generated.json",
+    "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/blur/runtime.json"
   }
 }

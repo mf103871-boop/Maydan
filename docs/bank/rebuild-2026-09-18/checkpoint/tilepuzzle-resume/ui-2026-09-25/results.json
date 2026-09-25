@@ -1,0 +1,4383 @@
+{
+  "executedAt": "2026-09-25T02:29:36.136Z",
+  "sourcePackSha256": "6609d1e98ca7816bb288b28bbfaccd370479ae479e85f0748d4b50c45e78cf27",
+  "status": "passed",
+  "mockAccountOnly": true,
+  "selection": "8 isolated browser contexts; each test-only in-memory deck contains one untouched actual question per tier; all40 questions exercised",
+  "sourcePackQuestions": 40,
+  "checksPassed": 606,
+  "checksTotal": 606,
+  "questionsExercised": 40,
+  "viewports": [
+    390,
+    320
+  ],
+  "browser": "Installed Google Chrome via Playwright; no download",
+  "sourceCode": "Production app bundled in memory; only QA deck selection and local account endpoints use isolated fixtures. Production UI/game rules unchanged.",
+  "manualVisualReview": {
+    "status": "approved",
+    "reviewedAt": "2026-09-25",
+    "questions": 40,
+    "method": "Viewed5 final contact sheets showing all40 actual320px mobile jumbled stages beside revealed full images, plus a full320px astrolabe question screenshot. Originals were separately reviewed.",
+    "observations": [
+      "All40 grids show12 distinct pieces from their own source; dominant identity features are distributed across pieces and originals recover after reveal.",
+      "Corrected harp and excavator retain complete subject outlines; pan-flute corrected open-mouth/closed-tip geometry is visible.",
+      "Pottery-wheel wording identifies the tool rather than the pot. Roman theatre is a generic semicircular type, not a named site.",
+      "Uncommon answers remain recognition challenges supported by aliases; difficulty targets have not been measured with players.",
+      "Retained telescope image crops the low ends of tripod legs, while the complete optical tube/mount and three-leg structure remain identifiable; this does not introduce an alternate answer.",
+      "Astrolabe inscriptions, musical note counts and geological composition are illustrative; no calibrated instrument, exact model or measured real-site claim."
+    ]
+  },
+  "checks": [
+    {
+      "name": "all40 neutral media filenames",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-200-901: full source hidden before reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-200-901: twelve complete unique tiles",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-200-901: 4 columns 3 rows preserving image ratio",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-200-901: order is actually shuffled",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-200-901: generic alt and no answer leak before reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-200-901: enlargement unavailable before reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-200-901: pressing tiles cannot open original",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-200-901: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-200-901: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-200-901: complete source replaces tiles after reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-200-901: correct revealed answer",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-200-901: revealed screenshot differs from shuffled image",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-200-901: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-200-901: hide restores same twelve-tile permutation",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-200-901: hide restores neutral text and blocks enlarge",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-400-901: full source hidden before reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-400-901: twelve complete unique tiles",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-400-901: 4 columns 3 rows preserving image ratio",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-400-901: order is actually shuffled",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-400-901: generic alt and no answer leak before reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-400-901: enlargement unavailable before reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-400-901: pressing tiles cannot open original",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-400-901: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-400-901: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-400-901: complete source replaces tiles after reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-400-901: correct revealed answer",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-400-901: revealed screenshot differs from shuffled image",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-400-901: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-400-901: hide restores same twelve-tile permutation",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-400-901: hide restores neutral text and blocks enlarge",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-600-901: full source hidden before reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-600-901: twelve complete unique tiles",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-600-901: 4 columns 3 rows preserving image ratio",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-600-901: order is actually shuffled",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-600-901: generic alt and no answer leak before reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-600-901: enlargement unavailable before reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-600-901: pressing tiles cannot open original",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-600-901: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-600-901: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-600-901: complete source replaces tiles after reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-600-901: correct revealed answer",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-600-901: revealed screenshot differs from shuffled image",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-600-901: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-600-901: hide restores same twelve-tile permutation",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-600-901: hide restores neutral text and blocks enlarge",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-800-901: full source hidden before reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-800-901: twelve complete unique tiles",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-800-901: 4 columns 3 rows preserving image ratio",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-800-901: order is actually shuffled",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-800-901: generic alt and no answer leak before reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-800-901: enlargement unavailable before reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-800-901: pressing tiles cannot open original",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-800-901: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-800-901: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-800-901: complete source replaces tiles after reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-800-901: correct revealed answer",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-800-901: revealed screenshot differs from shuffled image",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-800-901: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-800-901: hide restores same twelve-tile permutation",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-800-901: hide restores neutral text and blocks enlarge",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-1000-901: full source hidden before reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-1000-901: twelve complete unique tiles",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-1000-901: 4 columns 3 rows preserving image ratio",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-1000-901: order is actually shuffled",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-1000-901: generic alt and no answer leak before reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-1000-901: enlargement unavailable before reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-1000-901: pressing tiles cannot open original",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-1000-901: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-1000-901: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-1000-901: complete source replaces tiles after reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-1000-901: correct revealed answer",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-1000-901: revealed screenshot differs from shuffled image",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-1000-901: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-1000-901: hide restores same twelve-tile permutation",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-1000-901: hide restores neutral text and blocks enlarge",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-200-902: full source hidden before reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-200-902: twelve complete unique tiles",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-200-902: 4 columns 3 rows preserving image ratio",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-200-902: order is actually shuffled",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-200-902: generic alt and no answer leak before reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-200-902: enlargement unavailable before reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-200-902: pressing tiles cannot open original",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-200-902: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-200-902: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-200-902: complete source replaces tiles after reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-200-902: correct revealed answer",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-200-902: revealed screenshot differs from shuffled image",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-200-902: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-200-902: hide restores same twelve-tile permutation",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-200-902: hide restores neutral text and blocks enlarge",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-400-902: full source hidden before reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-400-902: twelve complete unique tiles",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-400-902: 4 columns 3 rows preserving image ratio",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-400-902: order is actually shuffled",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-400-902: generic alt and no answer leak before reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-400-902: enlargement unavailable before reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-400-902: pressing tiles cannot open original",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-400-902: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-400-902: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-400-902: complete source replaces tiles after reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-400-902: correct revealed answer",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-400-902: revealed screenshot differs from shuffled image",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-400-902: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-400-902: hide restores same twelve-tile permutation",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-400-902: hide restores neutral text and blocks enlarge",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-600-902: full source hidden before reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-600-902: twelve complete unique tiles",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-600-902: 4 columns 3 rows preserving image ratio",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-600-902: order is actually shuffled",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-600-902: generic alt and no answer leak before reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-600-902: enlargement unavailable before reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-600-902: pressing tiles cannot open original",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-600-902: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-600-902: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-600-902: complete source replaces tiles after reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-600-902: correct revealed answer",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-600-902: revealed screenshot differs from shuffled image",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-600-902: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-600-902: hide restores same twelve-tile permutation",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-600-902: hide restores neutral text and blocks enlarge",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-800-902: full source hidden before reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-800-902: twelve complete unique tiles",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-800-902: 4 columns 3 rows preserving image ratio",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-800-902: order is actually shuffled",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-800-902: generic alt and no answer leak before reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-800-902: enlargement unavailable before reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-800-902: pressing tiles cannot open original",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-800-902: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-800-902: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-800-902: complete source replaces tiles after reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-800-902: correct revealed answer",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-800-902: revealed screenshot differs from shuffled image",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-800-902: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-800-902: hide restores same twelve-tile permutation",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-800-902: hide restores neutral text and blocks enlarge",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-1000-902: full source hidden before reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-1000-902: twelve complete unique tiles",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-1000-902: 4 columns 3 rows preserving image ratio",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-1000-902: order is actually shuffled",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-1000-902: generic alt and no answer leak before reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-1000-902: enlargement unavailable before reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-1000-902: pressing tiles cannot open original",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-1000-902: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-1000-902: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-1000-902: complete source replaces tiles after reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-1000-902: correct revealed answer",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-1000-902: revealed screenshot differs from shuffled image",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-1000-902: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-1000-902: hide restores same twelve-tile permutation",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-1000-902: hide restores neutral text and blocks enlarge",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-200-903: full source hidden before reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-200-903: twelve complete unique tiles",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-200-903: 4 columns 3 rows preserving image ratio",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-200-903: order is actually shuffled",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-200-903: generic alt and no answer leak before reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-200-903: enlargement unavailable before reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-200-903: pressing tiles cannot open original",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-200-903: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-200-903: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-200-903: complete source replaces tiles after reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-200-903: correct revealed answer",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-200-903: revealed screenshot differs from shuffled image",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-200-903: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-200-903: hide restores same twelve-tile permutation",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-200-903: hide restores neutral text and blocks enlarge",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-400-903: full source hidden before reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-400-903: twelve complete unique tiles",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-400-903: 4 columns 3 rows preserving image ratio",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-400-903: order is actually shuffled",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-400-903: generic alt and no answer leak before reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-400-903: enlargement unavailable before reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-400-903: pressing tiles cannot open original",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-400-903: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-400-903: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-400-903: complete source replaces tiles after reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-400-903: correct revealed answer",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-400-903: revealed screenshot differs from shuffled image",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-400-903: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-400-903: hide restores same twelve-tile permutation",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-400-903: hide restores neutral text and blocks enlarge",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-600-903: full source hidden before reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-600-903: twelve complete unique tiles",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-600-903: 4 columns 3 rows preserving image ratio",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-600-903: order is actually shuffled",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-600-903: generic alt and no answer leak before reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-600-903: enlargement unavailable before reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-600-903: pressing tiles cannot open original",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-600-903: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-600-903: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-600-903: complete source replaces tiles after reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-600-903: correct revealed answer",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-600-903: revealed screenshot differs from shuffled image",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-600-903: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-600-903: hide restores same twelve-tile permutation",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-600-903: hide restores neutral text and blocks enlarge",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-800-903: full source hidden before reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-800-903: twelve complete unique tiles",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-800-903: 4 columns 3 rows preserving image ratio",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-800-903: order is actually shuffled",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-800-903: generic alt and no answer leak before reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-800-903: enlargement unavailable before reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-800-903: pressing tiles cannot open original",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-800-903: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-800-903: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-800-903: complete source replaces tiles after reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-800-903: correct revealed answer",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-800-903: revealed screenshot differs from shuffled image",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-800-903: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-800-903: hide restores same twelve-tile permutation",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-800-903: hide restores neutral text and blocks enlarge",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-1000-903: full source hidden before reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-1000-903: twelve complete unique tiles",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-1000-903: 4 columns 3 rows preserving image ratio",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-1000-903: order is actually shuffled",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-1000-903: generic alt and no answer leak before reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-1000-903: enlargement unavailable before reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-1000-903: pressing tiles cannot open original",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-1000-903: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-1000-903: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-1000-903: complete source replaces tiles after reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-1000-903: correct revealed answer",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-1000-903: revealed screenshot differs from shuffled image",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-1000-903: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-1000-903: hide restores same twelve-tile permutation",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-1000-903: hide restores neutral text and blocks enlarge",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-200-904: full source hidden before reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-200-904: twelve complete unique tiles",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-200-904: 4 columns 3 rows preserving image ratio",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-200-904: order is actually shuffled",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-200-904: generic alt and no answer leak before reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-200-904: enlargement unavailable before reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-200-904: pressing tiles cannot open original",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-200-904: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-200-904: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-200-904: complete source replaces tiles after reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-200-904: correct revealed answer",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-200-904: revealed screenshot differs from shuffled image",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-200-904: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-200-904: hide restores same twelve-tile permutation",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-200-904: hide restores neutral text and blocks enlarge",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-400-904: full source hidden before reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-400-904: twelve complete unique tiles",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-400-904: 4 columns 3 rows preserving image ratio",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-400-904: order is actually shuffled",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-400-904: generic alt and no answer leak before reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-400-904: enlargement unavailable before reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-400-904: pressing tiles cannot open original",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-400-904: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-400-904: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-400-904: complete source replaces tiles after reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-400-904: correct revealed answer",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-400-904: revealed screenshot differs from shuffled image",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-400-904: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-400-904: hide restores same twelve-tile permutation",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-400-904: hide restores neutral text and blocks enlarge",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-600-904: full source hidden before reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-600-904: twelve complete unique tiles",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-600-904: 4 columns 3 rows preserving image ratio",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-600-904: order is actually shuffled",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-600-904: generic alt and no answer leak before reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-600-904: enlargement unavailable before reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-600-904: pressing tiles cannot open original",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-600-904: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-600-904: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-600-904: complete source replaces tiles after reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-600-904: correct revealed answer",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-600-904: revealed screenshot differs from shuffled image",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-600-904: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-600-904: hide restores same twelve-tile permutation",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-600-904: hide restores neutral text and blocks enlarge",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-800-904: full source hidden before reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-800-904: twelve complete unique tiles",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-800-904: 4 columns 3 rows preserving image ratio",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-800-904: order is actually shuffled",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-800-904: generic alt and no answer leak before reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-800-904: enlargement unavailable before reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-800-904: pressing tiles cannot open original",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-800-904: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-800-904: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-800-904: complete source replaces tiles after reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-800-904: correct revealed answer",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-800-904: revealed screenshot differs from shuffled image",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-800-904: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-800-904: hide restores same twelve-tile permutation",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-800-904: hide restores neutral text and blocks enlarge",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-1000-904: full source hidden before reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-1000-904: twelve complete unique tiles",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-1000-904: 4 columns 3 rows preserving image ratio",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-1000-904: order is actually shuffled",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-1000-904: generic alt and no answer leak before reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-1000-904: enlargement unavailable before reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-1000-904: pressing tiles cannot open original",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-1000-904: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-1000-904: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-1000-904: complete source replaces tiles after reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-1000-904: correct revealed answer",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-1000-904: revealed screenshot differs from shuffled image",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-1000-904: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-1000-904: hide restores same twelve-tile permutation",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-1000-904: hide restores neutral text and blocks enlarge",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-200-905: full source hidden before reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-200-905: twelve complete unique tiles",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-200-905: 4 columns 3 rows preserving image ratio",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-200-905: order is actually shuffled",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-200-905: generic alt and no answer leak before reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-200-905: enlargement unavailable before reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-200-905: pressing tiles cannot open original",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-200-905: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-200-905: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-200-905: complete source replaces tiles after reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-200-905: correct revealed answer",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-200-905: revealed screenshot differs from shuffled image",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-200-905: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-200-905: hide restores same twelve-tile permutation",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-200-905: hide restores neutral text and blocks enlarge",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-400-905: full source hidden before reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-400-905: twelve complete unique tiles",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-400-905: 4 columns 3 rows preserving image ratio",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-400-905: order is actually shuffled",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-400-905: generic alt and no answer leak before reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-400-905: enlargement unavailable before reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-400-905: pressing tiles cannot open original",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-400-905: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-400-905: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-400-905: complete source replaces tiles after reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-400-905: correct revealed answer",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-400-905: revealed screenshot differs from shuffled image",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-400-905: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-400-905: hide restores same twelve-tile permutation",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-400-905: hide restores neutral text and blocks enlarge",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-600-905: full source hidden before reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-600-905: twelve complete unique tiles",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-600-905: 4 columns 3 rows preserving image ratio",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-600-905: order is actually shuffled",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-600-905: generic alt and no answer leak before reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-600-905: enlargement unavailable before reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-600-905: pressing tiles cannot open original",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-600-905: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-600-905: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-600-905: complete source replaces tiles after reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-600-905: correct revealed answer",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-600-905: revealed screenshot differs from shuffled image",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-600-905: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-600-905: hide restores same twelve-tile permutation",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-600-905: hide restores neutral text and blocks enlarge",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-800-905: full source hidden before reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-800-905: twelve complete unique tiles",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-800-905: 4 columns 3 rows preserving image ratio",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-800-905: order is actually shuffled",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-800-905: generic alt and no answer leak before reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-800-905: enlargement unavailable before reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-800-905: pressing tiles cannot open original",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-800-905: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-800-905: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-800-905: complete source replaces tiles after reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-800-905: correct revealed answer",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-800-905: revealed screenshot differs from shuffled image",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-800-905: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-800-905: hide restores same twelve-tile permutation",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-800-905: hide restores neutral text and blocks enlarge",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-1000-905: full source hidden before reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-1000-905: twelve complete unique tiles",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-1000-905: 4 columns 3 rows preserving image ratio",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-1000-905: order is actually shuffled",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-1000-905: generic alt and no answer leak before reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-1000-905: enlargement unavailable before reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-1000-905: pressing tiles cannot open original",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-1000-905: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-1000-905: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-1000-905: complete source replaces tiles after reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-1000-905: correct revealed answer",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-1000-905: revealed screenshot differs from shuffled image",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-1000-905: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-1000-905: hide restores same twelve-tile permutation",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-1000-905: hide restores neutral text and blocks enlarge",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-200-906: full source hidden before reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-200-906: twelve complete unique tiles",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-200-906: 4 columns 3 rows preserving image ratio",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-200-906: order is actually shuffled",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-200-906: generic alt and no answer leak before reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-200-906: enlargement unavailable before reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-200-906: pressing tiles cannot open original",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-200-906: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-200-906: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-200-906: complete source replaces tiles after reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-200-906: correct revealed answer",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-200-906: revealed screenshot differs from shuffled image",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-200-906: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-200-906: hide restores same twelve-tile permutation",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-200-906: hide restores neutral text and blocks enlarge",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-400-906: full source hidden before reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-400-906: twelve complete unique tiles",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-400-906: 4 columns 3 rows preserving image ratio",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-400-906: order is actually shuffled",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-400-906: generic alt and no answer leak before reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-400-906: enlargement unavailable before reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-400-906: pressing tiles cannot open original",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-400-906: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-400-906: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-400-906: complete source replaces tiles after reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-400-906: correct revealed answer",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-400-906: revealed screenshot differs from shuffled image",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-400-906: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-400-906: hide restores same twelve-tile permutation",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-400-906: hide restores neutral text and blocks enlarge",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-600-906: full source hidden before reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-600-906: twelve complete unique tiles",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-600-906: 4 columns 3 rows preserving image ratio",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-600-906: order is actually shuffled",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-600-906: generic alt and no answer leak before reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-600-906: enlargement unavailable before reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-600-906: pressing tiles cannot open original",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-600-906: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-600-906: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-600-906: complete source replaces tiles after reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-600-906: correct revealed answer",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-600-906: revealed screenshot differs from shuffled image",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-600-906: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-600-906: hide restores same twelve-tile permutation",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-600-906: hide restores neutral text and blocks enlarge",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-800-906: full source hidden before reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-800-906: twelve complete unique tiles",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-800-906: 4 columns 3 rows preserving image ratio",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-800-906: order is actually shuffled",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-800-906: generic alt and no answer leak before reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-800-906: enlargement unavailable before reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-800-906: pressing tiles cannot open original",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-800-906: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-800-906: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-800-906: complete source replaces tiles after reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-800-906: correct revealed answer",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-800-906: revealed screenshot differs from shuffled image",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-800-906: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-800-906: hide restores same twelve-tile permutation",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-800-906: hide restores neutral text and blocks enlarge",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-1000-906: full source hidden before reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-1000-906: twelve complete unique tiles",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-1000-906: 4 columns 3 rows preserving image ratio",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-1000-906: order is actually shuffled",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-1000-906: generic alt and no answer leak before reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-1000-906: enlargement unavailable before reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-1000-906: pressing tiles cannot open original",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-1000-906: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-1000-906: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-1000-906: complete source replaces tiles after reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-1000-906: correct revealed answer",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-1000-906: revealed screenshot differs from shuffled image",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-1000-906: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-1000-906: hide restores same twelve-tile permutation",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-1000-906: hide restores neutral text and blocks enlarge",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-200-907: full source hidden before reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-200-907: twelve complete unique tiles",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-200-907: 4 columns 3 rows preserving image ratio",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-200-907: order is actually shuffled",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-200-907: generic alt and no answer leak before reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-200-907: enlargement unavailable before reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-200-907: pressing tiles cannot open original",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-200-907: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-200-907: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-200-907: complete source replaces tiles after reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-200-907: correct revealed answer",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-200-907: revealed screenshot differs from shuffled image",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-200-907: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-200-907: hide restores same twelve-tile permutation",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-200-907: hide restores neutral text and blocks enlarge",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-400-907: full source hidden before reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-400-907: twelve complete unique tiles",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-400-907: 4 columns 3 rows preserving image ratio",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-400-907: order is actually shuffled",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-400-907: generic alt and no answer leak before reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-400-907: enlargement unavailable before reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-400-907: pressing tiles cannot open original",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-400-907: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-400-907: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-400-907: complete source replaces tiles after reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-400-907: correct revealed answer",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-400-907: revealed screenshot differs from shuffled image",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-400-907: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-400-907: hide restores same twelve-tile permutation",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-400-907: hide restores neutral text and blocks enlarge",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-600-907: full source hidden before reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-600-907: twelve complete unique tiles",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-600-907: 4 columns 3 rows preserving image ratio",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-600-907: order is actually shuffled",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-600-907: generic alt and no answer leak before reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-600-907: enlargement unavailable before reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-600-907: pressing tiles cannot open original",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-600-907: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-600-907: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-600-907: complete source replaces tiles after reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-600-907: correct revealed answer",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-600-907: revealed screenshot differs from shuffled image",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-600-907: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-600-907: hide restores same twelve-tile permutation",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-600-907: hide restores neutral text and blocks enlarge",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-800-907: full source hidden before reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-800-907: twelve complete unique tiles",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-800-907: 4 columns 3 rows preserving image ratio",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-800-907: order is actually shuffled",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-800-907: generic alt and no answer leak before reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-800-907: enlargement unavailable before reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-800-907: pressing tiles cannot open original",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-800-907: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-800-907: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-800-907: complete source replaces tiles after reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-800-907: correct revealed answer",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-800-907: revealed screenshot differs from shuffled image",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-800-907: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-800-907: hide restores same twelve-tile permutation",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-800-907: hide restores neutral text and blocks enlarge",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-1000-907: full source hidden before reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-1000-907: twelve complete unique tiles",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-1000-907: 4 columns 3 rows preserving image ratio",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-1000-907: order is actually shuffled",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-1000-907: generic alt and no answer leak before reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-1000-907: enlargement unavailable before reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-1000-907: pressing tiles cannot open original",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-1000-907: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-1000-907: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-1000-907: complete source replaces tiles after reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-1000-907: correct revealed answer",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-1000-907: revealed screenshot differs from shuffled image",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-1000-907: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-1000-907: hide restores same twelve-tile permutation",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-1000-907: hide restores neutral text and blocks enlarge",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-200-908: full source hidden before reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-200-908: twelve complete unique tiles",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-200-908: 4 columns 3 rows preserving image ratio",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-200-908: order is actually shuffled",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-200-908: generic alt and no answer leak before reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-200-908: enlargement unavailable before reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-200-908: pressing tiles cannot open original",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-200-908: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-200-908: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-200-908: complete source replaces tiles after reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-200-908: correct revealed answer",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-200-908: revealed screenshot differs from shuffled image",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-200-908: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-200-908: hide restores same twelve-tile permutation",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-200-908: hide restores neutral text and blocks enlarge",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-400-908: full source hidden before reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-400-908: twelve complete unique tiles",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-400-908: 4 columns 3 rows preserving image ratio",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-400-908: order is actually shuffled",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-400-908: generic alt and no answer leak before reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-400-908: enlargement unavailable before reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-400-908: pressing tiles cannot open original",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-400-908: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-400-908: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-400-908: complete source replaces tiles after reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-400-908: correct revealed answer",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-400-908: revealed screenshot differs from shuffled image",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-400-908: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-400-908: hide restores same twelve-tile permutation",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-400-908: hide restores neutral text and blocks enlarge",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-600-908: full source hidden before reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-600-908: twelve complete unique tiles",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-600-908: 4 columns 3 rows preserving image ratio",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-600-908: order is actually shuffled",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-600-908: generic alt and no answer leak before reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-600-908: enlargement unavailable before reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-600-908: pressing tiles cannot open original",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-600-908: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-600-908: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-600-908: complete source replaces tiles after reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-600-908: correct revealed answer",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-600-908: revealed screenshot differs from shuffled image",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-600-908: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-600-908: hide restores same twelve-tile permutation",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-600-908: hide restores neutral text and blocks enlarge",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-800-908: full source hidden before reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-800-908: twelve complete unique tiles",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-800-908: 4 columns 3 rows preserving image ratio",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-800-908: order is actually shuffled",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-800-908: generic alt and no answer leak before reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-800-908: enlargement unavailable before reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-800-908: pressing tiles cannot open original",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-800-908: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-800-908: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-800-908: complete source replaces tiles after reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-800-908: correct revealed answer",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-800-908: revealed screenshot differs from shuffled image",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-800-908: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-800-908: hide restores same twelve-tile permutation",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-800-908: hide restores neutral text and blocks enlarge",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-1000-908: full source hidden before reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-1000-908: twelve complete unique tiles",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-1000-908: 4 columns 3 rows preserving image ratio",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-1000-908: order is actually shuffled",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-1000-908: generic alt and no answer leak before reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-1000-908: enlargement unavailable before reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-1000-908: pressing tiles cannot open original",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-1000-908: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-1000-908: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-1000-908: complete source replaces tiles after reveal",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-1000-908: correct revealed answer",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-1000-908: revealed screenshot differs from shuffled image",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-1000-908: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-1000-908: hide restores same twelve-tile permutation",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle-1000-908: hide restores neutral text and blocks enlarge",
+      "ok": true
+    },
+    {
+      "name": "all40 media decode in Chromium",
+      "ok": true
+    },
+    {
+      "name": "all40 own About rows disclose AI creation",
+      "ok": true
+    },
+    {
+      "name": "all40 individually exercised",
+      "ok": true
+    },
+    {
+      "name": "no browser runtime errors",
+      "ok": true
+    },
+    {
+      "name": "no missing assets",
+      "ok": true
+    }
+  ],
+  "questions": [
+    {
+      "qid": "tilepuzzle-200-901",
+      "tier": 200,
+      "ok": true,
+      "testedPositions": [
+        "66.6667% 100%",
+        "33.3333% 50%",
+        "0% 0%",
+        "0% 100%",
+        "33.3333% 100%",
+        "0% 50%",
+        "100% 50%",
+        "66.6667% 0%",
+        "100% 100%",
+        "33.3333% 0%",
+        "66.6667% 50%",
+        "100% 0%"
+      ],
+      "sizing": [
+        {
+          "box": {
+            "x": 32,
+            "y": 457.28125,
+            "width": 326,
+            "height": 244.5
+          },
+          "layout": {
+            "width": 390,
+            "scroll": 390,
+            "fit": "contain"
+          }
+        },
+        {
+          "box": {
+            "x": 32,
+            "y": 457.28125,
+            "width": 256,
+            "height": 192
+          },
+          "layout": {
+            "width": 320,
+            "scroll": 320,
+            "fit": "contain"
+          }
+        }
+      ],
+      "contactSheet": "contact-200.webp"
+    },
+    {
+      "qid": "tilepuzzle-400-901",
+      "tier": 400,
+      "ok": true,
+      "testedPositions": [
+        "66.6667% 0%",
+        "0% 50%",
+        "66.6667% 100%",
+        "0% 100%",
+        "33.3333% 100%",
+        "66.6667% 50%",
+        "33.3333% 0%",
+        "100% 50%",
+        "100% 0%",
+        "100% 100%",
+        "0% 0%",
+        "33.3333% 50%"
+      ],
+      "sizing": [
+        {
+          "box": {
+            "x": 32,
+            "y": 457.28125,
+            "width": 326,
+            "height": 244.5
+          },
+          "layout": {
+            "width": 390,
+            "scroll": 390,
+            "fit": "contain"
+          }
+        },
+        {
+          "box": {
+            "x": 32,
+            "y": 491.921875,
+            "width": 256,
+            "height": 192
+          },
+          "layout": {
+            "width": 320,
+            "scroll": 320,
+            "fit": "contain"
+          }
+        }
+      ],
+      "contactSheet": "contact-400.webp"
+    },
+    {
+      "qid": "tilepuzzle-600-901",
+      "tier": 600,
+      "ok": true,
+      "testedPositions": [
+        "0% 50%",
+        "0% 0%",
+        "66.6667% 0%",
+        "66.6667% 100%",
+        "100% 100%",
+        "33.3333% 100%",
+        "33.3333% 0%",
+        "100% 50%",
+        "66.6667% 50%",
+        "33.3333% 50%",
+        "0% 100%",
+        "100% 0%"
+      ],
+      "sizing": [
+        {
+          "box": {
+            "x": 32,
+            "y": 505.078125,
+            "width": 326,
+            "height": 244.5
+          },
+          "layout": {
+            "width": 390,
+            "scroll": 390,
+            "fit": "contain"
+          }
+        },
+        {
+          "box": {
+            "x": 32,
+            "y": 505.078125,
+            "width": 256,
+            "height": 192
+          },
+          "layout": {
+            "width": 320,
+            "scroll": 320,
+            "fit": "contain"
+          }
+        }
+      ],
+      "contactSheet": "contact-600.webp"
+    },
+    {
+      "qid": "tilepuzzle-800-901",
+      "tier": 800,
+      "ok": true,
+      "testedPositions": [
+        "66.6667% 0%",
+        "0% 100%",
+        "66.6667% 50%",
+        "0% 0%",
+        "33.3333% 100%",
+        "100% 100%",
+        "33.3333% 0%",
+        "100% 50%",
+        "100% 0%",
+        "0% 50%",
+        "66.6667% 100%",
+        "33.3333% 50%"
+      ],
+      "sizing": [
+        {
+          "box": {
+            "x": 32,
+            "y": 505.078125,
+            "width": 326,
+            "height": 244.5
+          },
+          "layout": {
+            "width": 390,
+            "scroll": 390,
+            "fit": "contain"
+          }
+        },
+        {
+          "box": {
+            "x": 32,
+            "y": 505.078125,
+            "width": 256,
+            "height": 192
+          },
+          "layout": {
+            "width": 320,
+            "scroll": 320,
+            "fit": "contain"
+          }
+        }
+      ],
+      "contactSheet": "contact-800.webp"
+    },
+    {
+      "qid": "tilepuzzle-1000-901",
+      "tier": 1000,
+      "ok": true,
+      "testedPositions": [
+        "100% 50%",
+        "0% 50%",
+        "100% 0%",
+        "33.3333% 100%",
+        "66.6667% 100%",
+        "0% 100%",
+        "0% 0%",
+        "100% 100%",
+        "33.3333% 50%",
+        "66.6667% 50%",
+        "33.3333% 0%",
+        "66.6667% 0%"
+      ],
+      "sizing": [
+        {
+          "box": {
+            "x": 32,
+            "y": 505.078125,
+            "width": 326,
+            "height": 244.5
+          },
+          "layout": {
+            "width": 390,
+            "scroll": 390,
+            "fit": "contain"
+          }
+        },
+        {
+          "box": {
+            "x": 32,
+            "y": 539.71875,
+            "width": 256,
+            "height": 192
+          },
+          "layout": {
+            "width": 320,
+            "scroll": 320,
+            "fit": "contain"
+          }
+        }
+      ],
+      "contactSheet": "contact-1000.webp"
+    },
+    {
+      "qid": "tilepuzzle-200-902",
+      "tier": 200,
+      "ok": true,
+      "testedPositions": [
+        "0% 100%",
+        "66.6667% 100%",
+        "100% 100%",
+        "0% 0%",
+        "100% 0%",
+        "33.3333% 0%",
+        "33.3333% 50%",
+        "33.3333% 100%",
+        "66.6667% 50%",
+        "0% 50%",
+        "66.6667% 0%",
+        "100% 50%"
+      ],
+      "sizing": [
+        {
+          "box": {
+            "x": 32,
+            "y": 457.28125,
+            "width": 326,
+            "height": 244.5
+          },
+          "layout": {
+            "width": 390,
+            "scroll": 390,
+            "fit": "contain"
+          }
+        },
+        {
+          "box": {
+            "x": 32,
+            "y": 457.28125,
+            "width": 256,
+            "height": 192
+          },
+          "layout": {
+            "width": 320,
+            "scroll": 320,
+            "fit": "contain"
+          }
+        }
+      ],
+      "contactSheet": "contact-200.webp"
+    },
+    {
+      "qid": "tilepuzzle-400-902",
+      "tier": 400,
+      "ok": true,
+      "testedPositions": [
+        "0% 0%",
+        "66.6667% 50%",
+        "66.6667% 100%",
+        "0% 100%",
+        "66.6667% 0%",
+        "33.3333% 0%",
+        "33.3333% 50%",
+        "0% 50%",
+        "33.3333% 100%",
+        "100% 100%",
+        "100% 0%",
+        "100% 50%"
+      ],
+      "sizing": [
+        {
+          "box": {
+            "x": 32,
+            "y": 457.28125,
+            "width": 326,
+            "height": 244.5
+          },
+          "layout": {
+            "width": 390,
+            "scroll": 390,
+            "fit": "contain"
+          }
+        },
+        {
+          "box": {
+            "x": 32,
+            "y": 457.28125,
+            "width": 256,
+            "height": 192
+          },
+          "layout": {
+            "width": 320,
+            "scroll": 320,
+            "fit": "contain"
+          }
+        }
+      ],
+      "contactSheet": "contact-400.webp"
+    },
+    {
+      "qid": "tilepuzzle-600-902",
+      "tier": 600,
+      "ok": true,
+      "testedPositions": [
+        "0% 0%",
+        "0% 50%",
+        "100% 100%",
+        "33.3333% 0%",
+        "33.3333% 50%",
+        "66.6667% 50%",
+        "100% 0%",
+        "0% 100%",
+        "100% 50%",
+        "33.3333% 100%",
+        "66.6667% 100%",
+        "66.6667% 0%"
+      ],
+      "sizing": [
+        {
+          "box": {
+            "x": 32,
+            "y": 505.078125,
+            "width": 326,
+            "height": 244.5
+          },
+          "layout": {
+            "width": 390,
+            "scroll": 390,
+            "fit": "contain"
+          }
+        },
+        {
+          "box": {
+            "x": 32,
+            "y": 505.078125,
+            "width": 256,
+            "height": 192
+          },
+          "layout": {
+            "width": 320,
+            "scroll": 320,
+            "fit": "contain"
+          }
+        }
+      ],
+      "contactSheet": "contact-600.webp"
+    },
+    {
+      "qid": "tilepuzzle-800-902",
+      "tier": 800,
+      "ok": true,
+      "testedPositions": [
+        "100% 0%",
+        "100% 50%",
+        "0% 100%",
+        "33.3333% 0%",
+        "66.6667% 0%",
+        "33.3333% 50%",
+        "0% 0%",
+        "66.6667% 100%",
+        "33.3333% 100%",
+        "100% 100%",
+        "0% 50%",
+        "66.6667% 50%"
+      ],
+      "sizing": [
+        {
+          "box": {
+            "x": 32,
+            "y": 539.71875,
+            "width": 326,
+            "height": 244.5
+          },
+          "layout": {
+            "width": 390,
+            "scroll": 390,
+            "fit": "contain"
+          }
+        },
+        {
+          "box": {
+            "x": 32,
+            "y": 539.71875,
+            "width": 256,
+            "height": 192
+          },
+          "layout": {
+            "width": 320,
+            "scroll": 320,
+            "fit": "contain"
+          }
+        }
+      ],
+      "contactSheet": "contact-800.webp"
+    },
+    {
+      "qid": "tilepuzzle-1000-902",
+      "tier": 1000,
+      "ok": true,
+      "testedPositions": [
+        "33.3333% 0%",
+        "66.6667% 50%",
+        "66.6667% 100%",
+        "100% 50%",
+        "0% 0%",
+        "33.3333% 100%",
+        "100% 100%",
+        "66.6667% 0%",
+        "100% 0%",
+        "0% 50%",
+        "0% 100%",
+        "33.3333% 50%"
+      ],
+      "sizing": [
+        {
+          "box": {
+            "x": 32,
+            "y": 505.078125,
+            "width": 326,
+            "height": 244.5
+          },
+          "layout": {
+            "width": 390,
+            "scroll": 390,
+            "fit": "contain"
+          }
+        },
+        {
+          "box": {
+            "x": 32,
+            "y": 539.71875,
+            "width": 256,
+            "height": 192
+          },
+          "layout": {
+            "width": 320,
+            "scroll": 320,
+            "fit": "contain"
+          }
+        }
+      ],
+      "contactSheet": "contact-1000.webp"
+    },
+    {
+      "qid": "tilepuzzle-200-903",
+      "tier": 200,
+      "ok": true,
+      "testedPositions": [
+        "33.3333% 0%",
+        "66.6667% 0%",
+        "100% 0%",
+        "100% 100%",
+        "0% 50%",
+        "100% 50%",
+        "66.6667% 50%",
+        "0% 0%",
+        "0% 100%",
+        "33.3333% 50%",
+        "33.3333% 100%",
+        "66.6667% 100%"
+      ],
+      "sizing": [
+        {
+          "box": {
+            "x": 32,
+            "y": 457.28125,
+            "width": 326,
+            "height": 244.5
+          },
+          "layout": {
+            "width": 390,
+            "scroll": 390,
+            "fit": "contain"
+          }
+        },
+        {
+          "box": {
+            "x": 32,
+            "y": 491.921875,
+            "width": 256,
+            "height": 192
+          },
+          "layout": {
+            "width": 320,
+            "scroll": 320,
+            "fit": "contain"
+          }
+        }
+      ],
+      "contactSheet": "contact-200.webp"
+    },
+    {
+      "qid": "tilepuzzle-400-903",
+      "tier": 400,
+      "ok": true,
+      "testedPositions": [
+        "33.3333% 50%",
+        "66.6667% 100%",
+        "100% 50%",
+        "100% 100%",
+        "66.6667% 50%",
+        "33.3333% 0%",
+        "66.6667% 0%",
+        "100% 0%",
+        "0% 100%",
+        "0% 0%",
+        "33.3333% 100%",
+        "0% 50%"
+      ],
+      "sizing": [
+        {
+          "box": {
+            "x": 32,
+            "y": 457.28125,
+            "width": 326,
+            "height": 244.5
+          },
+          "layout": {
+            "width": 390,
+            "scroll": 390,
+            "fit": "contain"
+          }
+        },
+        {
+          "box": {
+            "x": 32,
+            "y": 491.921875,
+            "width": 256,
+            "height": 192
+          },
+          "layout": {
+            "width": 320,
+            "scroll": 320,
+            "fit": "contain"
+          }
+        }
+      ],
+      "contactSheet": "contact-400.webp"
+    },
+    {
+      "qid": "tilepuzzle-600-903",
+      "tier": 600,
+      "ok": true,
+      "testedPositions": [
+        "100% 50%",
+        "0% 100%",
+        "33.3333% 50%",
+        "0% 50%",
+        "100% 100%",
+        "66.6667% 0%",
+        "66.6667% 50%",
+        "66.6667% 100%",
+        "33.3333% 0%",
+        "100% 0%",
+        "33.3333% 100%",
+        "0% 0%"
+      ],
+      "sizing": [
+        {
+          "box": {
+            "x": 32,
+            "y": 505.078125,
+            "width": 326,
+            "height": 244.5
+          },
+          "layout": {
+            "width": 390,
+            "scroll": 390,
+            "fit": "contain"
+          }
+        },
+        {
+          "box": {
+            "x": 32,
+            "y": 539.71875,
+            "width": 256,
+            "height": 192
+          },
+          "layout": {
+            "width": 320,
+            "scroll": 320,
+            "fit": "contain"
+          }
+        }
+      ],
+      "contactSheet": "contact-600.webp"
+    },
+    {
+      "qid": "tilepuzzle-800-903",
+      "tier": 800,
+      "ok": true,
+      "testedPositions": [
+        "33.3333% 0%",
+        "0% 100%",
+        "66.6667% 0%",
+        "66.6667% 100%",
+        "100% 0%",
+        "33.3333% 100%",
+        "100% 100%",
+        "33.3333% 50%",
+        "100% 50%",
+        "66.6667% 50%",
+        "0% 50%",
+        "0% 0%"
+      ],
+      "sizing": [
+        {
+          "box": {
+            "x": 32,
+            "y": 505.078125,
+            "width": 326,
+            "height": 244.5
+          },
+          "layout": {
+            "width": 390,
+            "scroll": 390,
+            "fit": "contain"
+          }
+        },
+        {
+          "box": {
+            "x": 32,
+            "y": 539.71875,
+            "width": 256,
+            "height": 192
+          },
+          "layout": {
+            "width": 320,
+            "scroll": 320,
+            "fit": "contain"
+          }
+        }
+      ],
+      "contactSheet": "contact-800.webp"
+    },
+    {
+      "qid": "tilepuzzle-1000-903",
+      "tier": 1000,
+      "ok": true,
+      "testedPositions": [
+        "66.6667% 100%",
+        "33.3333% 0%",
+        "100% 0%",
+        "100% 50%",
+        "33.3333% 100%",
+        "100% 100%",
+        "66.6667% 0%",
+        "0% 50%",
+        "33.3333% 50%",
+        "66.6667% 50%",
+        "0% 0%",
+        "0% 100%"
+      ],
+      "sizing": [
+        {
+          "box": {
+            "x": 32,
+            "y": 505.078125,
+            "width": 326,
+            "height": 244.5
+          },
+          "layout": {
+            "width": 390,
+            "scroll": 390,
+            "fit": "contain"
+          }
+        },
+        {
+          "box": {
+            "x": 32,
+            "y": 539.71875,
+            "width": 256,
+            "height": 192
+          },
+          "layout": {
+            "width": 320,
+            "scroll": 320,
+            "fit": "contain"
+          }
+        }
+      ],
+      "contactSheet": "contact-1000.webp"
+    },
+    {
+      "qid": "tilepuzzle-200-904",
+      "tier": 200,
+      "ok": true,
+      "testedPositions": [
+        "0% 100%",
+        "66.6667% 0%",
+        "100% 100%",
+        "100% 0%",
+        "66.6667% 50%",
+        "0% 50%",
+        "33.3333% 50%",
+        "100% 50%",
+        "33.3333% 0%",
+        "0% 0%",
+        "66.6667% 100%",
+        "33.3333% 100%"
+      ],
+      "sizing": [
+        {
+          "box": {
+            "x": 32,
+            "y": 457.28125,
+            "width": 326,
+            "height": 244.5
+          },
+          "layout": {
+            "width": 390,
+            "scroll": 390,
+            "fit": "contain"
+          }
+        },
+        {
+          "box": {
+            "x": 32,
+            "y": 491.921875,
+            "width": 256,
+            "height": 192
+          },
+          "layout": {
+            "width": 320,
+            "scroll": 320,
+            "fit": "contain"
+          }
+        }
+      ],
+      "contactSheet": "contact-200.webp"
+    },
+    {
+      "qid": "tilepuzzle-400-904",
+      "tier": 400,
+      "ok": true,
+      "testedPositions": [
+        "66.6667% 0%",
+        "100% 50%",
+        "0% 100%",
+        "100% 100%",
+        "33.3333% 50%",
+        "66.6667% 50%",
+        "66.6667% 100%",
+        "0% 0%",
+        "33.3333% 0%",
+        "33.3333% 100%",
+        "0% 50%",
+        "100% 0%"
+      ],
+      "sizing": [
+        {
+          "box": {
+            "x": 32,
+            "y": 457.28125,
+            "width": 326,
+            "height": 244.5
+          },
+          "layout": {
+            "width": 390,
+            "scroll": 390,
+            "fit": "contain"
+          }
+        },
+        {
+          "box": {
+            "x": 32,
+            "y": 457.28125,
+            "width": 256,
+            "height": 192
+          },
+          "layout": {
+            "width": 320,
+            "scroll": 320,
+            "fit": "contain"
+          }
+        }
+      ],
+      "contactSheet": "contact-400.webp"
+    },
+    {
+      "qid": "tilepuzzle-600-904",
+      "tier": 600,
+      "ok": true,
+      "testedPositions": [
+        "0% 0%",
+        "66.6667% 100%",
+        "100% 0%",
+        "100% 50%",
+        "33.3333% 100%",
+        "0% 100%",
+        "66.6667% 0%",
+        "0% 50%",
+        "33.3333% 0%",
+        "100% 100%",
+        "66.6667% 50%",
+        "33.3333% 50%"
+      ],
+      "sizing": [
+        {
+          "box": {
+            "x": 32,
+            "y": 505.078125,
+            "width": 326,
+            "height": 244.5
+          },
+          "layout": {
+            "width": 390,
+            "scroll": 390,
+            "fit": "contain"
+          }
+        },
+        {
+          "box": {
+            "x": 32,
+            "y": 505.078125,
+            "width": 256,
+            "height": 192
+          },
+          "layout": {
+            "width": 320,
+            "scroll": 320,
+            "fit": "contain"
+          }
+        }
+      ],
+      "contactSheet": "contact-600.webp"
+    },
+    {
+      "qid": "tilepuzzle-800-904",
+      "tier": 800,
+      "ok": true,
+      "testedPositions": [
+        "100% 0%",
+        "0% 0%",
+        "0% 50%",
+        "100% 100%",
+        "66.6667% 50%",
+        "0% 100%",
+        "33.3333% 0%",
+        "66.6667% 100%",
+        "100% 50%",
+        "33.3333% 50%",
+        "33.3333% 100%",
+        "66.6667% 0%"
+      ],
+      "sizing": [
+        {
+          "box": {
+            "x": 32,
+            "y": 505.078125,
+            "width": 326,
+            "height": 244.5
+          },
+          "layout": {
+            "width": 390,
+            "scroll": 390,
+            "fit": "contain"
+          }
+        },
+        {
+          "box": {
+            "x": 32,
+            "y": 505.078125,
+            "width": 256,
+            "height": 192
+          },
+          "layout": {
+            "width": 320,
+            "scroll": 320,
+            "fit": "contain"
+          }
+        }
+      ],
+      "contactSheet": "contact-800.webp"
+    },
+    {
+      "qid": "tilepuzzle-1000-904",
+      "tier": 1000,
+      "ok": true,
+      "testedPositions": [
+        "66.6667% 0%",
+        "0% 50%",
+        "0% 0%",
+        "33.3333% 0%",
+        "100% 50%",
+        "33.3333% 50%",
+        "100% 100%",
+        "100% 0%",
+        "66.6667% 100%",
+        "33.3333% 100%",
+        "0% 100%",
+        "66.6667% 50%"
+      ],
+      "sizing": [
+        {
+          "box": {
+            "x": 32,
+            "y": 505.078125,
+            "width": 326,
+            "height": 244.5
+          },
+          "layout": {
+            "width": 390,
+            "scroll": 390,
+            "fit": "contain"
+          }
+        },
+        {
+          "box": {
+            "x": 32,
+            "y": 539.71875,
+            "width": 256,
+            "height": 192
+          },
+          "layout": {
+            "width": 320,
+            "scroll": 320,
+            "fit": "contain"
+          }
+        }
+      ],
+      "contactSheet": "contact-1000.webp"
+    },
+    {
+      "qid": "tilepuzzle-200-905",
+      "tier": 200,
+      "ok": true,
+      "testedPositions": [
+        "66.6667% 100%",
+        "66.6667% 0%",
+        "100% 0%",
+        "0% 0%",
+        "100% 100%",
+        "100% 50%",
+        "0% 50%",
+        "33.3333% 50%",
+        "33.3333% 100%",
+        "33.3333% 0%",
+        "66.6667% 50%",
+        "0% 100%"
+      ],
+      "sizing": [
+        {
+          "box": {
+            "x": 32,
+            "y": 457.28125,
+            "width": 326,
+            "height": 244.5
+          },
+          "layout": {
+            "width": 390,
+            "scroll": 390,
+            "fit": "contain"
+          }
+        },
+        {
+          "box": {
+            "x": 32,
+            "y": 491.921875,
+            "width": 256,
+            "height": 192
+          },
+          "layout": {
+            "width": 320,
+            "scroll": 320,
+            "fit": "contain"
+          }
+        }
+      ],
+      "contactSheet": "contact-200.webp"
+    },
+    {
+      "qid": "tilepuzzle-400-905",
+      "tier": 400,
+      "ok": true,
+      "testedPositions": [
+        "33.3333% 0%",
+        "33.3333% 100%",
+        "66.6667% 50%",
+        "100% 100%",
+        "0% 50%",
+        "66.6667% 0%",
+        "66.6667% 100%",
+        "0% 0%",
+        "33.3333% 50%",
+        "100% 50%",
+        "0% 100%",
+        "100% 0%"
+      ],
+      "sizing": [
+        {
+          "box": {
+            "x": 32,
+            "y": 457.28125,
+            "width": 326,
+            "height": 244.5
+          },
+          "layout": {
+            "width": 390,
+            "scroll": 390,
+            "fit": "contain"
+          }
+        },
+        {
+          "box": {
+            "x": 32,
+            "y": 491.921875,
+            "width": 256,
+            "height": 192
+          },
+          "layout": {
+            "width": 320,
+            "scroll": 320,
+            "fit": "contain"
+          }
+        }
+      ],
+      "contactSheet": "contact-400.webp"
+    },
+    {
+      "qid": "tilepuzzle-600-905",
+      "tier": 600,
+      "ok": true,
+      "testedPositions": [
+        "0% 50%",
+        "100% 0%",
+        "66.6667% 50%",
+        "66.6667% 100%",
+        "33.3333% 0%",
+        "0% 100%",
+        "100% 100%",
+        "0% 0%",
+        "66.6667% 0%",
+        "33.3333% 100%",
+        "100% 50%",
+        "33.3333% 50%"
+      ],
+      "sizing": [
+        {
+          "box": {
+            "x": 32,
+            "y": 505.078125,
+            "width": 326,
+            "height": 244.5
+          },
+          "layout": {
+            "width": 390,
+            "scroll": 390,
+            "fit": "contain"
+          }
+        },
+        {
+          "box": {
+            "x": 32,
+            "y": 539.71875,
+            "width": 256,
+            "height": 192
+          },
+          "layout": {
+            "width": 320,
+            "scroll": 320,
+            "fit": "contain"
+          }
+        }
+      ],
+      "contactSheet": "contact-600.webp"
+    },
+    {
+      "qid": "tilepuzzle-800-905",
+      "tier": 800,
+      "ok": true,
+      "testedPositions": [
+        "66.6667% 50%",
+        "100% 50%",
+        "66.6667% 0%",
+        "0% 50%",
+        "100% 100%",
+        "100% 0%",
+        "0% 100%",
+        "66.6667% 100%",
+        "33.3333% 100%",
+        "0% 0%",
+        "33.3333% 50%",
+        "33.3333% 0%"
+      ],
+      "sizing": [
+        {
+          "box": {
+            "x": 32,
+            "y": 505.078125,
+            "width": 326,
+            "height": 244.5
+          },
+          "layout": {
+            "width": 390,
+            "scroll": 390,
+            "fit": "contain"
+          }
+        },
+        {
+          "box": {
+            "x": 32,
+            "y": 539.71875,
+            "width": 256,
+            "height": 192
+          },
+          "layout": {
+            "width": 320,
+            "scroll": 320,
+            "fit": "contain"
+          }
+        }
+      ],
+      "contactSheet": "contact-800.webp"
+    },
+    {
+      "qid": "tilepuzzle-1000-905",
+      "tier": 1000,
+      "ok": true,
+      "testedPositions": [
+        "33.3333% 50%",
+        "100% 100%",
+        "66.6667% 100%",
+        "33.3333% 100%",
+        "0% 50%",
+        "100% 50%",
+        "66.6667% 50%",
+        "0% 100%",
+        "66.6667% 0%",
+        "0% 0%",
+        "33.3333% 0%",
+        "100% 0%"
+      ],
+      "sizing": [
+        {
+          "box": {
+            "x": 32,
+            "y": 505.078125,
+            "width": 326,
+            "height": 244.5
+          },
+          "layout": {
+            "width": 390,
+            "scroll": 390,
+            "fit": "contain"
+          }
+        },
+        {
+          "box": {
+            "x": 32,
+            "y": 539.71875,
+            "width": 256,
+            "height": 192
+          },
+          "layout": {
+            "width": 320,
+            "scroll": 320,
+            "fit": "contain"
+          }
+        }
+      ],
+      "contactSheet": "contact-1000.webp"
+    },
+    {
+      "qid": "tilepuzzle-200-906",
+      "tier": 200,
+      "ok": true,
+      "testedPositions": [
+        "33.3333% 0%",
+        "66.6667% 0%",
+        "0% 100%",
+        "66.6667% 50%",
+        "33.3333% 50%",
+        "66.6667% 100%",
+        "0% 0%",
+        "100% 100%",
+        "100% 50%",
+        "33.3333% 100%",
+        "100% 0%",
+        "0% 50%"
+      ],
+      "sizing": [
+        {
+          "box": {
+            "x": 32,
+            "y": 457.28125,
+            "width": 326,
+            "height": 244.5
+          },
+          "layout": {
+            "width": 390,
+            "scroll": 390,
+            "fit": "contain"
+          }
+        },
+        {
+          "box": {
+            "x": 32,
+            "y": 491.921875,
+            "width": 256,
+            "height": 192
+          },
+          "layout": {
+            "width": 320,
+            "scroll": 320,
+            "fit": "contain"
+          }
+        }
+      ],
+      "contactSheet": "contact-200.webp"
+    },
+    {
+      "qid": "tilepuzzle-400-906",
+      "tier": 400,
+      "ok": true,
+      "testedPositions": [
+        "100% 100%",
+        "0% 100%",
+        "66.6667% 100%",
+        "66.6667% 50%",
+        "33.3333% 0%",
+        "0% 0%",
+        "0% 50%",
+        "100% 50%",
+        "66.6667% 0%",
+        "33.3333% 100%",
+        "100% 0%",
+        "33.3333% 50%"
+      ],
+      "sizing": [
+        {
+          "box": {
+            "x": 32,
+            "y": 457.28125,
+            "width": 326,
+            "height": 244.5
+          },
+          "layout": {
+            "width": 390,
+            "scroll": 390,
+            "fit": "contain"
+          }
+        },
+        {
+          "box": {
+            "x": 32,
+            "y": 491.921875,
+            "width": 256,
+            "height": 192
+          },
+          "layout": {
+            "width": 320,
+            "scroll": 320,
+            "fit": "contain"
+          }
+        }
+      ],
+      "contactSheet": "contact-400.webp"
+    },
+    {
+      "qid": "tilepuzzle-600-906",
+      "tier": 600,
+      "ok": true,
+      "testedPositions": [
+        "66.6667% 50%",
+        "33.3333% 50%",
+        "0% 0%",
+        "100% 100%",
+        "0% 100%",
+        "100% 50%",
+        "0% 50%",
+        "66.6667% 0%",
+        "66.6667% 100%",
+        "33.3333% 0%",
+        "33.3333% 100%",
+        "100% 0%"
+      ],
+      "sizing": [
+        {
+          "box": {
+            "x": 32,
+            "y": 505.078125,
+            "width": 326,
+            "height": 244.5
+          },
+          "layout": {
+            "width": 390,
+            "scroll": 390,
+            "fit": "contain"
+          }
+        },
+        {
+          "box": {
+            "x": 32,
+            "y": 539.71875,
+            "width": 256,
+            "height": 192
+          },
+          "layout": {
+            "width": 320,
+            "scroll": 320,
+            "fit": "contain"
+          }
+        }
+      ],
+      "contactSheet": "contact-600.webp"
+    },
+    {
+      "qid": "tilepuzzle-800-906",
+      "tier": 800,
+      "ok": true,
+      "testedPositions": [
+        "0% 100%",
+        "0% 0%",
+        "100% 0%",
+        "100% 50%",
+        "66.6667% 100%",
+        "33.3333% 0%",
+        "0% 50%",
+        "33.3333% 100%",
+        "66.6667% 0%",
+        "33.3333% 50%",
+        "66.6667% 50%",
+        "100% 100%"
+      ],
+      "sizing": [
+        {
+          "box": {
+            "x": 32,
+            "y": 505.078125,
+            "width": 326,
+            "height": 244.5
+          },
+          "layout": {
+            "width": 390,
+            "scroll": 390,
+            "fit": "contain"
+          }
+        },
+        {
+          "box": {
+            "x": 32,
+            "y": 539.71875,
+            "width": 256,
+            "height": 192
+          },
+          "layout": {
+            "width": 320,
+            "scroll": 320,
+            "fit": "contain"
+          }
+        }
+      ],
+      "contactSheet": "contact-800.webp"
+    },
+    {
+      "qid": "tilepuzzle-1000-906",
+      "tier": 1000,
+      "ok": true,
+      "testedPositions": [
+        "0% 100%",
+        "33.3333% 100%",
+        "33.3333% 0%",
+        "66.6667% 0%",
+        "100% 0%",
+        "0% 0%",
+        "0% 50%",
+        "100% 100%",
+        "33.3333% 50%",
+        "100% 50%",
+        "66.6667% 100%",
+        "66.6667% 50%"
+      ],
+      "sizing": [
+        {
+          "box": {
+            "x": 32,
+            "y": 505.078125,
+            "width": 326,
+            "height": 244.5
+          },
+          "layout": {
+            "width": 390,
+            "scroll": 390,
+            "fit": "contain"
+          }
+        },
+        {
+          "box": {
+            "x": 32,
+            "y": 539.71875,
+            "width": 256,
+            "height": 192
+          },
+          "layout": {
+            "width": 320,
+            "scroll": 320,
+            "fit": "contain"
+          }
+        }
+      ],
+      "contactSheet": "contact-1000.webp"
+    },
+    {
+      "qid": "tilepuzzle-200-907",
+      "tier": 200,
+      "ok": true,
+      "testedPositions": [
+        "33.3333% 50%",
+        "33.3333% 100%",
+        "66.6667% 100%",
+        "100% 100%",
+        "33.3333% 0%",
+        "0% 50%",
+        "100% 0%",
+        "0% 0%",
+        "0% 100%",
+        "66.6667% 50%",
+        "100% 50%",
+        "66.6667% 0%"
+      ],
+      "sizing": [
+        {
+          "box": {
+            "x": 32,
+            "y": 457.28125,
+            "width": 326,
+            "height": 244.5
+          },
+          "layout": {
+            "width": 390,
+            "scroll": 390,
+            "fit": "contain"
+          }
+        },
+        {
+          "box": {
+            "x": 32,
+            "y": 491.921875,
+            "width": 256,
+            "height": 192
+          },
+          "layout": {
+            "width": 320,
+            "scroll": 320,
+            "fit": "contain"
+          }
+        }
+      ],
+      "contactSheet": "contact-200.webp"
+    },
+    {
+      "qid": "tilepuzzle-400-907",
+      "tier": 400,
+      "ok": true,
+      "testedPositions": [
+        "33.3333% 100%",
+        "0% 0%",
+        "0% 50%",
+        "100% 100%",
+        "66.6667% 0%",
+        "66.6667% 100%",
+        "0% 100%",
+        "100% 50%",
+        "33.3333% 50%",
+        "33.3333% 0%",
+        "100% 0%",
+        "66.6667% 50%"
+      ],
+      "sizing": [
+        {
+          "box": {
+            "x": 32,
+            "y": 457.28125,
+            "width": 326,
+            "height": 244.5
+          },
+          "layout": {
+            "width": 390,
+            "scroll": 390,
+            "fit": "contain"
+          }
+        },
+        {
+          "box": {
+            "x": 32,
+            "y": 491.921875,
+            "width": 256,
+            "height": 192
+          },
+          "layout": {
+            "width": 320,
+            "scroll": 320,
+            "fit": "contain"
+          }
+        }
+      ],
+      "contactSheet": "contact-400.webp"
+    },
+    {
+      "qid": "tilepuzzle-600-907",
+      "tier": 600,
+      "ok": true,
+      "testedPositions": [
+        "100% 50%",
+        "0% 0%",
+        "0% 100%",
+        "100% 0%",
+        "33.3333% 0%",
+        "100% 100%",
+        "33.3333% 50%",
+        "0% 50%",
+        "66.6667% 100%",
+        "66.6667% 50%",
+        "33.3333% 100%",
+        "66.6667% 0%"
+      ],
+      "sizing": [
+        {
+          "box": {
+            "x": 32,
+            "y": 505.078125,
+            "width": 326,
+            "height": 244.5
+          },
+          "layout": {
+            "width": 390,
+            "scroll": 390,
+            "fit": "contain"
+          }
+        },
+        {
+          "box": {
+            "x": 32,
+            "y": 539.71875,
+            "width": 256,
+            "height": 192
+          },
+          "layout": {
+            "width": 320,
+            "scroll": 320,
+            "fit": "contain"
+          }
+        }
+      ],
+      "contactSheet": "contact-600.webp"
+    },
+    {
+      "qid": "tilepuzzle-800-907",
+      "tier": 800,
+      "ok": true,
+      "testedPositions": [
+        "0% 0%",
+        "33.3333% 0%",
+        "66.6667% 50%",
+        "100% 50%",
+        "33.3333% 100%",
+        "66.6667% 0%",
+        "100% 100%",
+        "0% 50%",
+        "66.6667% 100%",
+        "100% 0%",
+        "33.3333% 50%",
+        "0% 100%"
+      ],
+      "sizing": [
+        {
+          "box": {
+            "x": 32,
+            "y": 505.078125,
+            "width": 326,
+            "height": 244.5
+          },
+          "layout": {
+            "width": 390,
+            "scroll": 390,
+            "fit": "contain"
+          }
+        },
+        {
+          "box": {
+            "x": 32,
+            "y": 539.71875,
+            "width": 256,
+            "height": 192
+          },
+          "layout": {
+            "width": 320,
+            "scroll": 320,
+            "fit": "contain"
+          }
+        }
+      ],
+      "contactSheet": "contact-800.webp"
+    },
+    {
+      "qid": "tilepuzzle-1000-907",
+      "tier": 1000,
+      "ok": true,
+      "testedPositions": [
+        "33.3333% 100%",
+        "0% 100%",
+        "100% 50%",
+        "100% 100%",
+        "100% 0%",
+        "0% 0%",
+        "66.6667% 0%",
+        "33.3333% 0%",
+        "66.6667% 50%",
+        "0% 50%",
+        "33.3333% 50%",
+        "66.6667% 100%"
+      ],
+      "sizing": [
+        {
+          "box": {
+            "x": 32,
+            "y": 505.078125,
+            "width": 326,
+            "height": 244.5
+          },
+          "layout": {
+            "width": 390,
+            "scroll": 390,
+            "fit": "contain"
+          }
+        },
+        {
+          "box": {
+            "x": 32,
+            "y": 539.71875,
+            "width": 256,
+            "height": 192
+          },
+          "layout": {
+            "width": 320,
+            "scroll": 320,
+            "fit": "contain"
+          }
+        }
+      ],
+      "contactSheet": "contact-1000.webp"
+    },
+    {
+      "qid": "tilepuzzle-200-908",
+      "tier": 200,
+      "ok": true,
+      "testedPositions": [
+        "100% 100%",
+        "66.6667% 100%",
+        "100% 0%",
+        "66.6667% 0%",
+        "0% 0%",
+        "66.6667% 50%",
+        "100% 50%",
+        "33.3333% 50%",
+        "0% 50%",
+        "0% 100%",
+        "33.3333% 100%",
+        "33.3333% 0%"
+      ],
+      "sizing": [
+        {
+          "box": {
+            "x": 32,
+            "y": 457.28125,
+            "width": 326,
+            "height": 244.5
+          },
+          "layout": {
+            "width": 390,
+            "scroll": 390,
+            "fit": "contain"
+          }
+        },
+        {
+          "box": {
+            "x": 32,
+            "y": 457.28125,
+            "width": 256,
+            "height": 192
+          },
+          "layout": {
+            "width": 320,
+            "scroll": 320,
+            "fit": "contain"
+          }
+        }
+      ],
+      "contactSheet": "contact-200.webp"
+    },
+    {
+      "qid": "tilepuzzle-400-908",
+      "tier": 400,
+      "ok": true,
+      "testedPositions": [
+        "33.3333% 100%",
+        "0% 100%",
+        "66.6667% 100%",
+        "66.6667% 50%",
+        "66.6667% 0%",
+        "100% 100%",
+        "0% 50%",
+        "33.3333% 50%",
+        "100% 50%",
+        "0% 0%",
+        "100% 0%",
+        "33.3333% 0%"
+      ],
+      "sizing": [
+        {
+          "box": {
+            "x": 32,
+            "y": 457.28125,
+            "width": 326,
+            "height": 244.5
+          },
+          "layout": {
+            "width": 390,
+            "scroll": 390,
+            "fit": "contain"
+          }
+        },
+        {
+          "box": {
+            "x": 32,
+            "y": 491.921875,
+            "width": 256,
+            "height": 192
+          },
+          "layout": {
+            "width": 320,
+            "scroll": 320,
+            "fit": "contain"
+          }
+        }
+      ],
+      "contactSheet": "contact-400.webp"
+    },
+    {
+      "qid": "tilepuzzle-600-908",
+      "tier": 600,
+      "ok": true,
+      "testedPositions": [
+        "0% 0%",
+        "66.6667% 50%",
+        "0% 100%",
+        "100% 50%",
+        "33.3333% 100%",
+        "66.6667% 0%",
+        "33.3333% 50%",
+        "100% 0%",
+        "0% 50%",
+        "33.3333% 0%",
+        "66.6667% 100%",
+        "100% 100%"
+      ],
+      "sizing": [
+        {
+          "box": {
+            "x": 32,
+            "y": 505.078125,
+            "width": 326,
+            "height": 244.5
+          },
+          "layout": {
+            "width": 390,
+            "scroll": 390,
+            "fit": "contain"
+          }
+        },
+        {
+          "box": {
+            "x": 32,
+            "y": 505.078125,
+            "width": 256,
+            "height": 192
+          },
+          "layout": {
+            "width": 320,
+            "scroll": 320,
+            "fit": "contain"
+          }
+        }
+      ],
+      "contactSheet": "contact-600.webp"
+    },
+    {
+      "qid": "tilepuzzle-800-908",
+      "tier": 800,
+      "ok": true,
+      "testedPositions": [
+        "66.6667% 50%",
+        "66.6667% 100%",
+        "0% 0%",
+        "33.3333% 100%",
+        "33.3333% 0%",
+        "33.3333% 50%",
+        "66.6667% 0%",
+        "100% 100%",
+        "100% 0%",
+        "100% 50%",
+        "0% 100%",
+        "0% 50%"
+      ],
+      "sizing": [
+        {
+          "box": {
+            "x": 32,
+            "y": 505.078125,
+            "width": 326,
+            "height": 244.5
+          },
+          "layout": {
+            "width": 390,
+            "scroll": 390,
+            "fit": "contain"
+          }
+        },
+        {
+          "box": {
+            "x": 32,
+            "y": 539.71875,
+            "width": 256,
+            "height": 192
+          },
+          "layout": {
+            "width": 320,
+            "scroll": 320,
+            "fit": "contain"
+          }
+        }
+      ],
+      "contactSheet": "contact-800.webp"
+    },
+    {
+      "qid": "tilepuzzle-1000-908",
+      "tier": 1000,
+      "ok": true,
+      "testedPositions": [
+        "33.3333% 50%",
+        "100% 0%",
+        "100% 50%",
+        "66.6667% 50%",
+        "66.6667% 0%",
+        "100% 100%",
+        "33.3333% 100%",
+        "0% 50%",
+        "33.3333% 0%",
+        "0% 0%",
+        "66.6667% 100%",
+        "0% 100%"
+      ],
+      "sizing": [
+        {
+          "box": {
+            "x": 32,
+            "y": 505.078125,
+            "width": 326,
+            "height": 244.5
+          },
+          "layout": {
+            "width": 390,
+            "scroll": 390,
+            "fit": "contain"
+          }
+        },
+        {
+          "box": {
+            "x": 32,
+            "y": 539.71875,
+            "width": 256,
+            "height": 192
+          },
+          "layout": {
+            "width": 320,
+            "scroll": 320,
+            "fit": "contain"
+          }
+        }
+      ],
+      "contactSheet": "contact-1000.webp"
+    }
+  ],
+  "errors": [],
+  "networkErrors": [],
+  "initialHarnessCorrection": "Initial run passed582/606;24 false negatives resulted from parsing CSS aspect-ratio string4 /3 as4. Corrected rational parser; full40 replay passed606/606 without production changes.",
+  "screenshotEncoding": "Portable screenshots are WebP quality90 conversions of actual final browser PNG captures. Original PNGs remain in scratch and replay script creates PNG originals; no scene/content changes."
+}

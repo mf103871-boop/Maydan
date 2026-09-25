@@ -2,20 +2,17 @@
   "date": "2026-09-25",
   "releasable": false,
   "categoryCount": 78,
-  "totalQuestions": 4289,
-  "completedContentPacks": 71,
-  "completedContentQuestions": 2840,
+  "totalQuestions": 3706,
+  "completedContentPacks": 74,
+  "completedContentQuestions": 2960,
   "fullBank": {
     "passed": false,
-    "errorCount": 5709,
+    "errorCount": 2880,
     "errorsByPack": {
-      "blur": 965,
-      "guesscar": 958,
       "placefinder": 910,
       "reveal": 965,
       "sound": 40,
-      "spotdiff": 965,
-      "tilepuzzle": 906
+      "spotdiff": 965
     },
     "warnings": [
       "arabliterature: arabliterature-400-902: إجابته «العروض» مكشوفة في نص arabliterature-1000-902 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
@@ -124,7 +121,7 @@
       "worldcup: worldcup-400-901: إجابته «أوروغواي» مكشوفة في نص worldcup-1000-903 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
       "worldcup: worldcup-400-901: إجابته «أوروغواي» مكشوفة في نص worldcup-1000-907 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
       "worldcup: worldcup-400-908: إجابته «إسبانيا» مكشوفة في نص worldcup-400-902 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
-      "184 إجابة تتكرر في أكثر من فئة (مقبول، للعلم): «النمله» في animals،quran · «الحبر» في animals،arabart · «خلد الماء» في animals،emoji،silhouette · «بيكاتشو» في anime،videogames · «كره القدم» في anime،commonbond،emoji،hints،videogames · «هاكو» في anime،naruto · «حجر الفلاسفه» في anime،cartoon · «محمود مختار» في arabart،reveal …"
+      "174 إجابة تتكرر في أكثر من فئة (مقبول، للعلم): «النمله» في animals،quran · «الحبر» في animals،arabart · «خلد الماء» في animals،emoji،silhouette · «بيكاتشو» في anime،videogames · «كره القدم» في anime،commonbond،emoji،hints،videogames · «هاكو» في anime،naruto · «حجر الفلاسفه» في anime،cartoon · «محمود مختار» في arabart،reveal …"
     ],
     "placeholderCount": 0
   },
@@ -157,7 +154,7 @@
     "silhouette": {
       "errors": [],
       "warnings": [
-        "3 إجابة تتكرر في أكثر من فئة (مقبول، للعلم): «خلد الماء» في animals،emoji،silhouette · «اناناس» في cartoon،silhouette · «تشيلو» في sound،silhouette"
+        "4 إجابة تتكرر في أكثر من فئة (مقبول، للعلم): «خلد الماء» في animals،emoji،silhouette · «مظله» في blur،silhouette · «اناناس» في cartoon،silhouette · «تشيلو» في sound،silhouette"
       ],
       "placeholders": [],
       "categories": [
@@ -175,6 +172,79 @@
           "total": 40,
           "topics": 8,
           "mediaBytes": 5259002,
+          "media": true
+        }
+      ]
+    },
+    "blur": {
+      "errors": [],
+      "warnings": [
+        "11 إجابة تتكرر في أكثر من فئة (مقبول، للعلم): «بطريق» في code،blur · «بركان» في code،blur · «فيل» في emoji،blur · «بيتزا» في emoji،hints،blur · «فاكهه التنين» في fruitsveg،blur · «برج ايفل» في hints،history،placefinder،blur · «سوشي» في hints،blur · «كيرلنغ» في hints،blur …"
+      ],
+      "placeholders": [],
+      "categories": [
+        {
+          "id": "blur",
+          "name": "وضّح شوي",
+          "status": "done",
+          "counts": {
+            "200": 8,
+            "400": 8,
+            "600": 8,
+            "800": 8,
+            "1000": 8
+          },
+          "total": 40,
+          "topics": 8,
+          "mediaBytes": 7567332,
+          "media": true
+        }
+      ]
+    },
+    "guesscar": {
+      "errors": [],
+      "warnings": [],
+      "placeholders": [],
+      "categories": [
+        {
+          "id": "guesscar",
+          "name": "خمن السيارة",
+          "status": "done",
+          "counts": {
+            "200": 8,
+            "400": 8,
+            "600": 8,
+            "800": 8,
+            "1000": 8
+          },
+          "total": 40,
+          "topics": 9,
+          "mediaBytes": 4014350,
+          "media": true
+        }
+      ]
+    },
+    "tilepuzzle": {
+      "errors": [],
+      "warnings": [
+        "5 إجابة تتكرر في أكثر من فئة (مقبول، للعلم): «بريتزل» في blur،tilepuzzle · «شفق قطبي» في blur،tilepuzzle · «اكسولوتل» في hints،tilepuzzle · «اسطرلاب» في hints،tilepuzzle · «كاميرا» في sound،tilepuzzle"
+      ],
+      "placeholders": [],
+      "categories": [
+        {
+          "id": "tilepuzzle",
+          "name": "ركّبها صح",
+          "status": "done",
+          "counts": {
+            "200": 8,
+            "400": 8,
+            "600": 8,
+            "800": 8,
+            "1000": 8
+          },
+          "total": 40,
+          "topics": 8,
+          "mediaBytes": 8553940,
           "media": true
         }
       ]
@@ -310,11 +380,11 @@
     {
       "id": "blur",
       "name": "وضّح شوي",
-      "questions": 240,
-      "newIdCount": 0,
-      "verified": 240,
-      "errors": 965,
-      "sha256": "3da4bad772f909b173dc1901b27fd9c64c39136ae31e214c4f81e14b346fd98e"
+      "questions": 40,
+      "newIdCount": 40,
+      "verified": 40,
+      "errors": 0,
+      "sha256": "2ddfe52a59c017b0167055ab30a55be7fac2c2b3970016c4e9a2fccdec6cf8d9"
     },
     {
       "id": "books",
@@ -526,11 +596,11 @@
     {
       "id": "guesscar",
       "name": "خمن السيارة",
-      "questions": 238,
-      "newIdCount": 0,
-      "verified": 238,
-      "errors": 958,
-      "sha256": "f9a38ce83f1f3828ecc1be59da166ea0a52abb71528c3ba75dee1357daa3e717"
+      "questions": 40,
+      "newIdCount": 40,
+      "verified": 40,
+      "errors": 0,
+      "sha256": "7a1cd3fd4d4f947d19af7831914c121f0efe5464b64b2d10a44ea2bf81c3eec9"
     },
     {
       "id": "hidden",
@@ -823,11 +893,11 @@
     {
       "id": "tilepuzzle",
       "name": "ركّبها صح",
-      "questions": 225,
-      "newIdCount": 0,
-      "verified": 225,
-      "errors": 906,
-      "sha256": "274bee570c368ed75d0adcc61cfa4c8800db89c6929fec3c6c72e94828b1f145"
+      "questions": 40,
+      "newIdCount": 40,
+      "verified": 40,
+      "errors": 0,
+      "sha256": "6609d1e98ca7816bb288b28bbfaccd370479ae479e85f0748d4b50c45e78cf27"
     },
     {
       "id": "turkishdrama",
@@ -888,23 +958,22 @@
     "total": 463,
     "passed": 459,
     "failed": 4,
+    "cancelled": 0,
     "failures": [
-      "Every pack contains exactly8 per tier",
-      "All IDs follow the curated pattern",
-      "Spotdiff contains40 questions with valid target spots",
-      "Actual bank passes full bank validator"
+      "كل حزمة مسجّلة وتحتوي 8 أسئلة بالضبط لكل شريحة حسب طلب المالك",
+      "المعرّفات فريدة عبر البنك كله، ولا سؤال بلا نص أو إجابة",
+      "كل سؤال «اكتشف الفرق» يحمل spot داخل حدود الصورة",
+      "البنك الفعلي يجتاز bank:validate بلا أخطاء"
     ],
-    "note": "Same4 failures as recovered baseline; remaining6 legacy image packs and40 unlistened sound questions are unfinished. Prompt-only fixes were subsequently covered by final focused validation and all40 browser replay."
+    "note": "Final rerun after shared count synchronization. Remaining image packs and human audio listening are unfinished."
   },
   "build": {
     "passed": true,
-    "mediaFiles": 3010,
-    "mediaMegabytes": 97.9,
-    "scope": "Local production build; no deployment"
+    "scope": "Local production build with active packs; generated media in concurrent unfinished work may also be copied. No deployment."
   },
   "limits": [
-    "Difficulty rates are editorial targets, not measured player performance.",
-    "Human audio listening remains pending for all40 sound questions.",
+    "Difficulty rates are editorial targets, not measured.",
+    "All40 sound questions await actual human listening.",
     "No complete-bank release, production authentication or payment testing claimed."
   ]
 }

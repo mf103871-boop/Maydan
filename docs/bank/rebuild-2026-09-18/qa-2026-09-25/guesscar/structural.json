@@ -1,0 +1,34 @@
+{
+  "pack": "guesscar",
+  "questions": 40,
+  "uniqueQuestions": 40,
+  "perTier": {
+    "200": 8,
+    "400": 8,
+    "600": 8,
+    "800": 8,
+    "1000": 8
+  },
+  "topics": [
+    "دفع رباعي",
+    "رياضية",
+    "كلاسيكية",
+    "شعبية",
+    "بيك أب وشاحنات",
+    "كهربائية",
+    "فارهة",
+    "خارقة",
+    "سباقات"
+  ],
+  "maxSameTopicPerTier": 2,
+  "categorySha256": "7a1cd3fd4d4f947d19af7831914c121f0efe5464b64b2d10a44ea2bf81c3eec9",
+  "assetCount": 40,
+  "hashesMatch": true,
+  "allUnder256KiB": true,
+  "neutralMediaTitles": true,
+  "noAnswerInQuestion": true,
+  "scope": "Substantive focused validator passed; five shared bank-status count mismatches remain for root to update.",
+  "generationPlanMatchesRecords": true,
+  "recordDatesMatch": true,
+  "allRecordReviewsApproved": true
+}

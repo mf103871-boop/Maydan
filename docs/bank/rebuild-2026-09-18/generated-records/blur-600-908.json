@@ -13,8 +13,12 @@
   "sha256": "9201319dae196ca85171c227e36ba7950ff8fd386b822bf3a2bae865f9780894",
   "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
   "review": {
-    "status": "pending",
-    "note": "Generation and file checks do not imply subject or gameplay verification."
+    "status": "approved",
+    "reviewedAt": "2026-09-25",
+    "note": "Current aurora image shows broad green luminous curtains with violet edges in a starry night sky above forest and snow. This is the replacement, not the stale bamboo scene. Fresh approximate static blur retains green ribbons against dark sky; no exact location is implied.",
+    "gameplayReview": "approved",
+    "sourceReview": "docs/bank/rebuild-2026-09-18/review-blur-generated.json",
+    "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/blur/runtime.json"
   },
   "previousGenerations": [
     {

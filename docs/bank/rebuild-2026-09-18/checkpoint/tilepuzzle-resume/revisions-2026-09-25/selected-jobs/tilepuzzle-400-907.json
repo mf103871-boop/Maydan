@@ -1,0 +1,6 @@
+{
+  "id": "tilepuzzle-400-907",
+  "kind": "question",
+  "pack": "tilepuzzle",
+  "prompt": "Use case: precise-object-edit.\nAsset type: one standalone 4:3 image for a visual guessing game.\nInput image 1: edit target, an ornate concert harp in a sunlit room.\nPrimary request: widen the framing around the same harp so its entire upper decorative finial, frame, base, pedals and feet are clearly inside the image, with at least 8% clear margin above the finial and some floor below. Preserve the recognizable triangular harp frame, many strings, curved neck, wood and gold materials, room, light and perspective. The complete instrument should occupy about 75% of image height.\nConstraints: change only composition/framing as needed for complete visibility; no cropped instrument parts, no labels, writing, logos, watermark, tile lines or borders."
+}

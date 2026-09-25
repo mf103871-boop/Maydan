@@ -13,7 +13,11 @@
   "sha256": "aa779ba0202791af06a37dff24e763b8d72821943f24f100e3ee8432dcd8c357",
   "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
   "review": {
-    "status": "pending",
-    "note": "Generation and file checks do not imply subject or gameplay verification."
+    "status": "approved",
+    "reviewedAt": "2026-09-25",
+    "note": "Coastal red-and-white striped lighthouse with lantern room on top of a rocky base. Large stripes survive blur; no specific named lighthouse is established.",
+    "gameplayReview": "approved",
+    "sourceReview": "docs/bank/rebuild-2026-09-18/review-blur-generated.json",
+    "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/blur/runtime.json"
   }
 }

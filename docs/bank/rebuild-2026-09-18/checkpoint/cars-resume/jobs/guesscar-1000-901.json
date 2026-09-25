@@ -1,0 +1,48 @@
+{
+  "id": "guesscar-1000-901",
+  "kind": "question",
+  "pack": "guesscar",
+  "p": 1000,
+  "a": "بورشه 917",
+  "topic": "سباقات",
+  "prompt": "Use case: product-mockup.\nAsset: one AI-generated car-identification illustration for an Arabic family quiz.\nSubject: 1970 Porsche 917K short-tail endurance racing car, red, blank racing-number circles.\nGenerate a new high-quality realistic studio rendering of precisely this vehicle model and generation. Match its real proportions, characteristic body shape, grille, headlights, windows and wheel layout accurately; do not invent a hybrid car.\nComposition: full vehicle from front three-quarter angle (rear three-quarter angle for Tatra 87), centered, wheels and roof wholly visible, landscape 4:3. Soft ivory seamless studio floor and background, subtle contact shadow, natural materials and paint.\nDo not reproduce the described original photograph or its environment. No people, scenery, border, watermark or captions. The license plate must be blank. Omit readable model-name lettering that would reveal the answer. Brand emblems may retain their simple graphic shapes. This is a faithful visual illustration, not a document photograph.",
+  "priorQid": "guesscar-1000-001",
+  "identityReference": {
+    "src": "guesscar-1000-001.webp",
+    "type": "image",
+    "title": "A Porsche 917K taken at Hampton Court Concours 2022.",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:1969_Porsche_917K_Red.jpg",
+    "author": "MrWalkr",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  "question": {
+    "p": 1000,
+    "q": "ما اسم سيارة التحمل الحمراء ذات المقصورة الصغيرة والمصابيح المغطاة؟",
+    "a": "بورشه 917",
+    "alt": [
+      "917",
+      "Porsche 917"
+    ],
+    "qid": "guesscar-1000-901",
+    "type": "image",
+    "topic": "سباقات",
+    "difficultyTarget": 0.15,
+    "verified": true,
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:1969_Porsche_917K_Red.jpg",
+    "media": {
+      "src": "guesscar-1000-901.webp",
+      "type": "image",
+      "title": "سيارة — تصوير توضيحي مولّد",
+      "author": "Maydan / OpenAI image generation",
+      "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+      "provenance": {
+        "kind": "ai-generated",
+        "tool": "OpenAI image generation",
+        "createdAt": "2026-09-25",
+        "record": "docs/bank/rebuild-2026-09-18/generated-records/guesscar-1000-901.json"
+      }
+    }
+  },
+  "model": "1970 Porsche 917K short-tail endurance racing car, red, blank racing-number circles"
+}

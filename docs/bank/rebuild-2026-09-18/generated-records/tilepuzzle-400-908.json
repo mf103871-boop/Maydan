@@ -13,7 +13,22 @@
   "sha256": "97993702b93c7eb3183f0a5e0149c0155d877edd4202fdcbf871adadffe7aefc",
   "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
   "review": {
-    "status": "pending",
-    "note": "Generation and file checks do not imply subject or gameplay verification."
+    "status": "approved",
+    "reviewedAt": "2026-09-25",
+    "scope": "Source image identity/anatomy/framing and actual12-tile jumble/reveal/hide gameplay for this specific question.",
+    "note": "Pottery wheel turntable and clay-splattered catch tray are visible under a wet pot. Stem will specify the tool beneath the clay to avoid a competing pot answer.",
+    "sourceReviewRecord": "docs/bank/rebuild-2026-09-18/review-tilepuzzle-final.json",
+    "runtimeReview": {
+      "status": "approved",
+      "reviewedAt": "2026-09-25",
+      "checksPassed": 15,
+      "checksTotal": 15,
+      "viewports": [
+        390,
+        320
+      ],
+      "contactSheet": "docs/bank/rebuild-2026-09-18/checkpoint/tilepuzzle-resume/ui-2026-09-25/contact-400.webp"
+    },
+    "testedCategorySha256": "6609d1e98ca7816bb288b28bbfaccd370479ae479e85f0748d4b50c45e78cf27"
   }
 }

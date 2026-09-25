@@ -1,0 +1,51 @@
+{
+  "id": "guesscar-200-905",
+  "kind": "question",
+  "pack": "guesscar",
+  "p": 200,
+  "a": "فولكسفاغن الخنفساء",
+  "topic": "كلاسيكية",
+  "prompt": "Use case: product-mockup.\nAsset: one AI-generated car-identification illustration for an Arabic family quiz.\nSubject: 1966 Volkswagen Beetle, cream.\nGenerate a new high-quality realistic studio rendering of precisely this vehicle model and generation. Match its real proportions, characteristic body shape, grille, headlights, windows and wheel layout accurately; do not invent a hybrid car.\nComposition: full vehicle from front three-quarter angle (rear three-quarter angle for Tatra 87), centered, wheels and roof wholly visible, landscape 4:3. Soft ivory seamless studio floor and background, subtle contact shadow, natural materials and paint.\nDo not reproduce the described original photograph or its environment. No people, scenery, border, watermark or captions. The license plate must be blank. Omit readable model-name lettering that would reveal the answer. Brand emblems may retain their simple graphic shapes. This is a faithful visual illustration, not a document photograph.",
+  "priorQid": "guesscar-200-022",
+  "identityReference": {
+    "src": "guesscar-200-022.webp",
+    "type": "image",
+    "title": "VW Käfer Baujahr 1966 mit originalen Export-Stoßstangen",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:VW_K%C3%A4fer_Baujahr_1966.jpg",
+    "author": "Vwexport1300",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+  },
+  "question": {
+    "p": 200,
+    "q": "ما اسم السيارة الكلاسيكية الكريمية ذات السقف المقوس؟",
+    "a": "فولكسفاغن الخنفساء",
+    "alt": [
+      "الخنفساء",
+      "بيتل",
+      "فولكس واجن بيتل",
+      "Volkswagen Beetle",
+      "Beetle"
+    ],
+    "qid": "guesscar-200-905",
+    "type": "image",
+    "topic": "كلاسيكية",
+    "difficultyTarget": 0.8,
+    "verified": true,
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:VW_K%C3%A4fer_Baujahr_1966.jpg",
+    "media": {
+      "src": "guesscar-200-905.webp",
+      "type": "image",
+      "title": "سيارة — تصوير توضيحي مولّد",
+      "author": "Maydan / OpenAI image generation",
+      "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+      "provenance": {
+        "kind": "ai-generated",
+        "tool": "OpenAI image generation",
+        "createdAt": "2026-09-23",
+        "record": "docs/bank/rebuild-2026-09-18/generated-records/guesscar-200-905.json"
+      }
+    }
+  },
+  "model": "1966 Volkswagen Beetle, cream"
+}

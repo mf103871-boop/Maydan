@@ -1,0 +1,39 @@
+{
+  "id": "tilepuzzle-1000-907",
+  "kind": "question",
+  "pack": "tilepuzzle",
+  "file": "media/tilepuzzle/tilepuzzle-1000-907.webp",
+  "asset": "media/tilepuzzle/tilepuzzle-1000-907.webp",
+  "prompt": "Use case: photorealistic-natural.\nAsset type: one standalone professional image for an Arabic family visual guessing game (age 16+).\nSubject: a steel handpan drum with central dome and circular tone fields.\nStyle: realistic high quality photography with correct anatomy and object geometry, clean natural textures.\nComposition: landscape 4:3, the complete subject fills about 75% of the frame; centered with ample margins, immediately recognizable when revealed.  Spread meaningful details across the frame because it will be shuffled into twelve tiles.\nBackground: simple uncluttered setting appropriate to the subject, natural lighting.\nConstraints: exactly the stated subject; no label, caption, watermark, collage, borders or readable words.  ",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-09-25",
+  "width": 1280,
+  "height": 960,
+  "bytes": 207844,
+  "sha256": "d09f3470501008db00704f696bc139003a52d4281b97a58923246937e25bc148",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "approved",
+    "reviewedAt": "2026-09-25",
+    "scope": "Source image identity/anatomy/framing and actual12-tile jumble/reveal/hide gameplay for this specific question.",
+    "note": "Steel handpan has convex lenticular shell, raised central dome and surrounding struck-tone fields, no slit tongues, no tuning or brand claim.",
+    "sourceReviewRecord": "docs/bank/rebuild-2026-09-18/review-tilepuzzle-final.json",
+    "runtimeReview": {
+      "status": "approved",
+      "reviewedAt": "2026-09-25",
+      "checksPassed": 15,
+      "checksTotal": 15,
+      "viewports": [
+        390,
+        320
+      ],
+      "contactSheet": "docs/bank/rebuild-2026-09-18/checkpoint/tilepuzzle-resume/ui-2026-09-25/contact-1000.webp"
+    },
+    "testedCategorySha256": "6609d1e98ca7816bb288b28bbfaccd370479ae479e85f0748d4b50c45e78cf27"
+  },
+  "originalGeneration": {
+    "fileBasename": "exec-6bcaf95c-9a9c-410b-a81c-8e22146e14f8.png",
+    "sha256": "436ae51cd43a0419b7eb637f0d040da525b925ab90efc2ba87cde5a11653c955"
+  },
+  "generationMode": "generate"
+}

@@ -1,0 +1,40 @@
+{
+  "id": "tilepuzzle-1000-905",
+  "kind": "question",
+  "pack": "tilepuzzle",
+  "file": "media/tilepuzzle/tilepuzzle-1000-905.webp",
+  "asset": "media/tilepuzzle/tilepuzzle-1000-905.webp",
+  "prompt": "Use case: precise-object-edit.\nAsset type: one 4:3 landscape image for a visual guessing game.\nInput image 1 is the edit target: traditional Gulf windcatcher tower.\nPrimary request: zoom the camera out substantially so the whole tower, including its complete roof cornice, is visible with a wide clear band of sky above (at least 15% of image height). The tower's entire upper edge must be separated from the image border. Retain this tower's distinctive vertical ventilation openings, earthen plaster, projecting wooden beams and Gulf courtyard setting. Keep the original perspective, lighting and believable architecture. Tower should occupy no more than 65% of image height.\nConstraints: no cropped roof or upper tower; no captions, names, labels, signs, watermark or tile cuts.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-09-25",
+  "width": 1280,
+  "height": 960,
+  "bytes": 203914,
+  "sha256": "a26018d8da25bbda4902fa6825ccb60d04a70e83a190122acb3b215f9af6261c",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "approved",
+    "reviewedAt": "2026-09-25",
+    "scope": "Source image identity/anatomy/framing and actual12-tile jumble/reveal/hide gameplay for this specific question.",
+    "note": "Corrected windcatcher is fully framed with broad sky margin above cornice; vertical ventilation shafts/openings and projecting beams identify traditional passive-cooling tower. No exact building or surveyed design claimed.",
+    "sourceReviewRecord": "docs/bank/rebuild-2026-09-18/review-tilepuzzle-final.json",
+    "runtimeReview": {
+      "status": "approved",
+      "reviewedAt": "2026-09-25",
+      "checksPassed": 15,
+      "checksTotal": 15,
+      "viewports": [
+        390,
+        320
+      ],
+      "contactSheet": "docs/bank/rebuild-2026-09-18/checkpoint/tilepuzzle-resume/ui-2026-09-25/contact-1000.webp"
+    },
+    "testedCategorySha256": "6609d1e98ca7816bb288b28bbfaccd370479ae479e85f0748d4b50c45e78cf27"
+  },
+  "originalGeneration": {
+    "fileBasename": "exec-2a212d10-6fc0-4d52-8b7e-f8766a844fa8.png",
+    "sha256": "22f0fd97bd61d48edd93837664470e772b19d532caae9df3b6c5c955d362c109"
+  },
+  "generationMode": "edit",
+  "referenceSha256": "0f8a1b47b55b47a465adcd5b2c0135a7deef2c6ea7e5133391c34cc31602347f"
+}

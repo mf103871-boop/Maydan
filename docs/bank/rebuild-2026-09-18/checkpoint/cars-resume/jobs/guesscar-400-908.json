@@ -1,0 +1,46 @@
+{
+  "id": "guesscar-400-908",
+  "kind": "question",
+  "pack": "guesscar",
+  "p": 400,
+  "a": "نيسان ليف",
+  "topic": "كهربائية",
+  "prompt": "Use case: product-mockup.\nAsset: one AI-generated car-identification illustration for an Arabic family quiz.\nSubject: 2018 Nissan Leaf second-generation ZE1, white.\nGenerate a new high-quality realistic studio rendering of precisely this vehicle model and generation. Match its real proportions, characteristic body shape, grille, headlights, windows and wheel layout accurately; do not invent a hybrid car.\nComposition: full vehicle from front three-quarter angle (rear three-quarter angle for Tatra 87), centered, wheels and roof wholly visible, landscape 4:3. Soft ivory seamless studio floor and background, subtle contact shadow, natural materials and paint.\nDo not reproduce the described original photograph or its environment. No people, scenery, border, watermark or captions. The license plate must be blank. Omit readable model-name lettering that would reveal the answer. Brand emblems may retain their simple graphic shapes. This is a faithful visual illustration, not a document photograph.",
+  "priorQid": "guesscar-400-044",
+  "identityReference": {
+    "title": "Nissan LEAF second-generation design gallery (2017)",
+    "sourceUrl": "https://www.nissan-global.com/EN/INNOVATION/DESIGN/DESIGNWORKS/LEAF/",
+    "author": "Nissan Motor Corporation",
+    "role": "Identity/design review only; not an image input or redistributed asset"
+  },
+  "question": {
+    "p": 400,
+    "q": "ما طراز الهاتشباك الكهربائية البيضاء ذات المقدمة السوداء؟",
+    "a": "نيسان ليف",
+    "alt": [
+      "ليف",
+      "LEAF",
+      "Nissan Leaf"
+    ],
+    "qid": "guesscar-400-908",
+    "type": "image",
+    "topic": "كهربائية",
+    "difficultyTarget": 0.6,
+    "verified": true,
+    "sourceUrl": "https://www.nissan-global.com/EN/INNOVATION/DESIGN/DESIGNWORKS/LEAF/",
+    "media": {
+      "src": "guesscar-400-908.webp",
+      "type": "image",
+      "title": "سيارة — تصوير توضيحي مولّد",
+      "author": "Maydan / OpenAI image generation",
+      "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+      "provenance": {
+        "kind": "ai-generated",
+        "tool": "OpenAI image generation",
+        "createdAt": "2026-09-23",
+        "record": "docs/bank/rebuild-2026-09-18/generated-records/guesscar-400-908.json"
+      }
+    }
+  },
+  "model": "2018 Nissan Leaf second-generation ZE1, white"
+}

@@ -1,0 +1,51 @@
+{
+  "id": "guesscar-1000-906",
+  "kind": "question",
+  "pack": "guesscar",
+  "p": 1000,
+  "a": "مسرشميت كيه آر 200",
+  "topic": "كلاسيكية",
+  "prompt": "Edit this generated illustration of a Messerschmitt KR200 bubble car only. Preserve the red three-wheel microcar, two front wheels and single rear wheel, transparent tandem canopy, all proportions, complete framing, lighting and ivory studio background exactly. Remove the circular star-like emblem from the center front nose because it suggests an unrelated manufacturer. Replace it with a simple tiny plain silver oval without any symbol or text. Keep all other details, chrome strips and blank license plate. No readable lettering, numbers, captions or watermark.",
+  "priorQid": "guesscar-1000-031",
+  "identityReference": {
+    "src": "guesscar-1000-031.webp",
+    "type": "image",
+    "title": "Messerschmitt Kabinenroller in Heidelberg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Messerschmitt_Kabinenroller.jpg",
+    "author": "Stefan Kühn",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+  },
+  "question": {
+    "p": 1000,
+    "q": "ما طراز المركبة الحمراء الصغيرة ذات القبة الشفافة وثلاث عجلات؟",
+    "a": "مسرشميت كيه آر 200",
+    "alt": [
+      "مسرشميت KR200",
+      "Messerschmitt KR200",
+      "KR200"
+    ],
+    "qid": "guesscar-1000-906",
+    "type": "image",
+    "topic": "كلاسيكية",
+    "difficultyTarget": 0.15,
+    "verified": true,
+    "sourceUrl": "https://www.louwmanmuseum.nl/collecties/automobielen/messerschmitt-kr200-cabin-scooter-bubble-top",
+    "media": {
+      "src": "guesscar-1000-906.webp",
+      "type": "image",
+      "title": "سيارة — تصوير توضيحي مولّد",
+      "author": "Maydan / OpenAI image generation",
+      "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+      "provenance": {
+        "kind": "ai-generated",
+        "tool": "OpenAI image generation",
+        "createdAt": "2026-09-25",
+        "record": "docs/bank/rebuild-2026-09-18/generated-records/guesscar-1000-906.json"
+      }
+    }
+  },
+  "model": "1957 Messerschmitt KR200 three-wheel bubble microcar, red",
+  "initialPrompt": "Use case: product-mockup.\nAsset: one AI-generated car-identification illustration for an Arabic family quiz.\nSubject: 1957 Messerschmitt KR200 three-wheel bubble microcar, red.\nGenerate a new high-quality realistic studio rendering of precisely this vehicle model and generation. Match its real proportions, characteristic body shape, grille, headlights, windows and wheel layout accurately; do not invent a hybrid car.\nComposition: full vehicle from front three-quarter angle (rear three-quarter angle for Tatra 87), centered, wheels and roof wholly visible, landscape 4:3. Soft ivory seamless studio floor and background, subtle contact shadow, natural materials and paint.\nDo not reproduce the described original photograph or its environment. No people, scenery, border, watermark or captions. The license plate must be blank. Omit readable model-name lettering that would reveal the answer. Brand emblems may retain their simple graphic shapes. This is a faithful visual illustration, not a document photograph.",
+  "generationMethod": "Edit of original generated illustration; original prompt and hash retained in per-asset history."
+}

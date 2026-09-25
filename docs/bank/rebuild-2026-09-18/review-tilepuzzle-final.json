@@ -1,0 +1,1831 @@
+{
+  "reviewedAt": "2026-09-25",
+  "status": "approved",
+  "scope": {
+    "questions": 40,
+    "originalImagesInspected": 40,
+    "imageRecordsMatch": 40,
+    "nicheSubjectsWithOpenedPrimaryEvidence": 13,
+    "primaryReferencesOpened": 14,
+    "actualGameplayQuestionsReviewed": 40
+  },
+  "description": "All40 original generated recognition puzzles passed editorial, source/identity, and actual jumble gameplay review. Difficulty targets remain editorial and unmeasured.",
+  "categorySha256": "6609d1e98ca7816bb288b28bbfaccd370479ae479e85f0748d4b50c45e78cf27",
+  "generationSummary": {
+    "retainedInstalledImages": 29,
+    "newlyInstalledImages": 9,
+    "replacedInstalledImages": 2,
+    "builtInCalls": 13,
+    "new1000FramingCorrections": [
+      "tilepuzzle-1000-905",
+      "tilepuzzle-1000-908"
+    ],
+    "legacyMediaDeleted": false
+  },
+  "sourceReviewMethod": "Read all authoritative jobs and bank schema/rubric. Replaced repeated generic prompt with subject-specific natural Arabic questions and precise accepted aliases. Actually opened primary institutional/manufacturer pages for the 13 requested uncommon identities. This is source/editorial review only; the tilepuzzle lead owns actual asset and jumble-renderer review.",
+  "openedPrimaryReferences": [
+    {
+      "id": "pangolin",
+      "ids": [
+        "tilepuzzle-1000-901"
+      ],
+      "url": "https://animals.sandiegozoo.org/animals/tree-pangolin",
+      "publisher": "San Diego Zoo Wildlife Alliance",
+      "evidence": "The zoo describes a mammal covered in overlapping keratin scales, a small pointed head and long scaled tail. It explicitly distinguishes pangolins from true anteaters despite the common name scaly anteater.",
+      "limits": "Reference is a tree pangolin; use for generic pangolin recognition only. Do not infer exact species from generated image. آكل النمل alone and مدرع are not equivalent aliases.",
+      "reviewedAt": "2026-09-25",
+      "retrieval": "opened-and-read-primary-page",
+      "actualImageApproval": false
+    },
+    {
+      "id": "romanesco",
+      "ids": [
+        "tilepuzzle-1000-902"
+      ],
+      "url": "https://hort.extension.wisc.edu/articles/romanesco/",
+      "publisher": "University of Wisconsin–Madison Division of Extension",
+      "evidence": "Romanesco has light green heads composed of cone-shaped florets in repeated spiral arrangements. The article lists Romanesco broccoli and Roman cauliflower as common names and identifies it as a Brassica oleracea cultivar.",
+      "limits": "Do not assert that it is a broccoli–cauliflower hybrid. Generic broccoli/cauliflower alone would be too broad; qualified Romanesco aliases are fair.",
+      "reviewedAt": "2026-09-25",
+      "retrieval": "opened-and-read-primary-page",
+      "actualImageApproval": false
+    },
+    {
+      "id": "overhead-projector",
+      "ids": [
+        "tilepuzzle-1000-903"
+      ],
+      "url": "https://collection.sciencemuseumgroup.org.uk/objects/co4527/an-overhead-projector-master-view-graph-by-international-tutor-machines",
+      "publisher": "Science Museum Group",
+      "evidence": "The museum catalogues Master View-Graph, circa 1960, specifically as an overhead projector, with an object image and aluminium/glass materials.",
+      "limits": "Catalogue supports the object class, not every geometric detail in an unseen generated asset. The draft's raised arm/lit base comes from the authoritative generation job. No digital projector or document camera equivalence is claimed.",
+      "reviewedAt": "2026-09-25",
+      "retrieval": "opened-and-read-primary-page",
+      "actualImageApproval": false
+    },
+    {
+      "id": "hovercraft",
+      "ids": [
+        "tilepuzzle-1000-904"
+      ],
+      "url": "https://www.griffonhoverwork.com/products/hovercraft/how-hovercraft-work/",
+      "publisher": "Griffon Hoverwork / Griffon Marine",
+      "evidence": "The manufacturer explains that lift fans pressurize the space between hull, ground and flexible skirt; pressure raises the craft and thrust propellers move it over surfaces including water and sand.",
+      "limits": "Generic air-cushion-vehicle identity only. No exact model, fan count or dimensions claimed. مروحية is not an alias.",
+      "reviewedAt": "2026-09-25",
+      "retrieval": "opened-and-read-primary-page",
+      "actualImageApproval": false
+    },
+    {
+      "id": "windcatcher",
+      "ids": [
+        "tilepuzzle-1000-905"
+      ],
+      "url": "https://www.dubaidet.gov.ae/-/media/dotsite/migrated/pdfs/2019/01/january-2019/72-hours-in-dubai-ar.pdf?la=ar",
+      "publisher": "Dubai Department of Economy and Tourism",
+      "evidence": "Official Arabic guide page 3 (zero-based PDF page 2) identifies traditional wind towers as البراجيل and states they direct cool air into houses; it also uses برج رياح for a traditional Emirati house.",
+      "limits": "Text was opened/read; attempted screenshot could not render. Supports Arabic naming and ventilation function, not exact four-sided geometric layout. بادكير/بادغير are editorial regional transliterations, not terms verified in this Arabic guide.",
+      "reviewedAt": "2026-09-25",
+      "retrieval": "opened-and-read-primary-page",
+      "actualImageApproval": false
+    },
+    {
+      "id": "basalt-columns",
+      "ids": [
+        "tilepuzzle-1000-906"
+      ],
+      "url": "https://www.nps.gov/subjects/volcanoes/columnar-jointing.htm",
+      "publisher": "U.S. National Park Service",
+      "evidence": "Columnar jointing forms roughly prismatic parallel columns as cooling volcanic material contracts and fractures. Most columns are hexagonal, but three to seven sides occur; basalt is common but other volcanic rocks can also form columns.",
+      "limits": "Do not require every polygon to have six sides. Appearance alone cannot prove basalt composition; the planned scene specifies basalt. No identification of a particular real-world site.",
+      "reviewedAt": "2026-09-25",
+      "retrieval": "opened-and-read-primary-page",
+      "actualImageApproval": false
+    },
+    {
+      "id": "handpan",
+      "ids": [
+        "tilepuzzle-1000-907"
+      ],
+      "url": "https://meinlsonicenergy.com/en/wiki",
+      "publisher": "Meinl Sonic Energy",
+      "evidence": "Under Handpan, the manufacturer describes two joined hemispherical metal segments, a central field, surrounding fields on the upper side and a lower opening. Its Steel Tongue Drum entry separately describes cut-out tongues.",
+      "limits": "The English page mistranslates tone field as clay field; no claim of clay material is taken. Only steel construction/layout distinction used, not unrelated healing claims elsewhere on the page. Handpan is not a tongue drum.",
+      "reviewedAt": "2026-09-25",
+      "retrieval": "opened-and-read-primary-page",
+      "actualImageApproval": false
+    },
+    {
+      "id": "hang-name",
+      "ids": [
+        "tilepuzzle-1000-907"
+      ],
+      "url": "https://panart.ch/en/history/the-history-of-panart",
+      "publisher": "PANArt Hang Manufacturing",
+      "evidence": "The creator's history distinguishes its Hang instrument/name from later instruments and states that the Hang name was protected to avoid its becoming a generic name. Describes hand-played metal sound sculptures and tone-field development.",
+      "limits": "Used only to avoid equating a generic unbranded handpan with the specific Hang name. No legal conclusion or manufacturer identification of the planned asset. هانغ درام removed as an imprecise generic alias.",
+      "reviewedAt": "2026-09-25",
+      "retrieval": "opened-and-read-primary-page",
+      "actualImageApproval": false
+    },
+    {
+      "id": "astrolabe",
+      "ids": [
+        "tilepuzzle-1000-908"
+      ],
+      "url": "https://www.rmg.co.uk/collections/objects/rmgc-object-10720",
+      "publisher": "Royal Museums Greenwich",
+      "evidence": "The museum labels its brass circular instrument Astrolabe and describes its mater, plates, rete, degree/zodiac/calendar scales and alidade.",
+      "limits": "Supports the generic layered circular astronomical instrument and rete terminology; exact engraving, epoch, cultural origin and working calibration cannot be inferred from a generated visual. Not a sextant.",
+      "reviewedAt": "2026-09-25",
+      "retrieval": "opened-and-read-primary-page",
+      "actualImageApproval": false
+    },
+    {
+      "id": "pan-flute",
+      "ids": [
+        "tilepuzzle-800-907"
+      ],
+      "url": "https://www.metmuseum.org/art/collection/search/501913",
+      "publisher": "The Metropolitan Museum of Art",
+      "evidence": "The museum catalogues Panpipes made from cane or bamboo bound with twine, with seven pipes ranging from 11.2 to 5.7 cm, classified as a blow-hole aerophone.",
+      "limits": "Supports bundles of differing-length pipes. No requirement that a generic image reproduce this American historical example or exactly seven pipes.",
+      "reviewedAt": "2026-09-25",
+      "retrieval": "opened-and-read-primary-page",
+      "actualImageApproval": false
+    },
+    {
+      "id": "marimba",
+      "ids": [
+        "tilepuzzle-600-907"
+      ],
+      "url": "https://hub.yamaha.com/drums/percussion/anatomy-of-a-marimba/",
+      "publisher": "Yamaha",
+      "evidence": "Yamaha describes a marimba as struck wooden tone bars with resonator tubes suspended below; bar layout resembles a piano keyboard and tube lengths vary with pitch.",
+      "limits": "General marimba anatomy only, not exact tuning/note count. A small toy xylophone or metal-bar vibraphone is not automatically equivalent. Peer must still check the actual image.",
+      "reviewedAt": "2026-09-25",
+      "retrieval": "opened-and-read-primary-page",
+      "actualImageApproval": false
+    },
+    {
+      "id": "geyser",
+      "ids": [
+        "tilepuzzle-600-906"
+      ],
+      "url": "https://www.nps.gov/places/000/giantess-geyser.htm",
+      "publisher": "U.S. National Park Service",
+      "evidence": "The geyser explanation describes constrictions that allow steam pressure to build, then force water upward in an eruption; hot springs and geysers are separately mentioned.",
+      "limits": "Generic erupting geothermal water feature only, not identification as Giantess or another named geyser. Plain ينبوع حار includes non-erupting springs; removed. سخان أرضي is an unclear alias; removed.",
+      "reviewedAt": "2026-09-25",
+      "retrieval": "opened-and-read-primary-page",
+      "actualImageApproval": false
+    },
+    {
+      "id": "salt-flat",
+      "ids": [
+        "tilepuzzle-800-906"
+      ],
+      "url": "https://www.nps.gov/deva/learn/nature/salt-flats.htm",
+      "publisher": "U.S. National Park Service",
+      "evidence": "The salt-flats page describes evaporated salts in an enclosed dry basin, a salt crust, crystal growth through mudcracks and fresh white salt after rain.",
+      "limits": "No named location or exact mineral composition required. سبخة ملحية retained as a common Arabic recognition alias, not a claim that all salt flats are coastal sabkhas.",
+      "reviewedAt": "2026-09-25",
+      "retrieval": "opened-and-read-primary-page",
+      "actualImageApproval": false
+    },
+    {
+      "id": "axolotl",
+      "ids": [
+        "tilepuzzle-800-901"
+      ],
+      "url": "https://animals.sandiegozoo.org/animals/axolotl",
+      "publisher": "San Diego Zoo Wildlife Alliance",
+      "evidence": "The zoo identifies axolotl as an aquatic salamander retaining conspicuous external feathery gills, a tail and body fin; lizard-like limbs and several pale/pink forms are described.",
+      "limits": "Identification only. Not a fish, lizard or frog; neither exact morph nor medical/regeneration claims included.",
+      "reviewedAt": "2026-09-25",
+      "retrieval": "opened-and-read-primary-page",
+      "actualImageApproval": false
+    }
+  ],
+  "sourceRetrievalLimits": [
+    {
+      "url": "https://hovercraft-museum.org/explore/hoverfacts",
+      "outcome": "Indexed search excerpt exists; direct open failed repeatedly. Not used as an opened source; replaced by Griffon manufacturer page."
+    },
+    {
+      "url": "https://culturalmap.gov.ae/en/facilities/al-fahidi-historical-neighbourhood",
+      "outcome": "Indexed search excerpt; direct open failed. Replaced by opened official Dubai Arabic PDF."
+    },
+    {
+      "url": "https://gerber.meinlsonicenergy.com/meinlsonicenergy/en/wiki",
+      "outcome": "Timed out; canonical meinlsonicenergy.com/en/wiki opened successfully."
+    },
+    {
+      "url": "https://www.dubaidet.gov.ae/-/media/dotsite/migrated/pdfs/2019/01/january-2019/72-hours-in-dubai-ar.pdf?la=ar",
+      "outcome": "PDF text opened/read; screenshot rendering failed. No claim of visual PDF inspection."
+    }
+  ],
+  "items": [
+    {
+      "id": "tilepuzzle-200-901",
+      "answer": "زرافة",
+      "tier": 200,
+      "topic": "حيوانات",
+      "question": "ما الحيوان طويل الرقبة الذي تعيد هذه القطع صورته؟",
+      "alt": [
+        "Giraffe"
+      ],
+      "sourceUrl": null,
+      "sourceEvidence": [],
+      "sourceLimits": [
+        "Editorial wording follows the authoritative planned job. No external identity research was needed for this common subject."
+      ],
+      "visualReview": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "method": "All40 final installed originals viewed in5 labelled full-image contact sheets; generation/correction outputs also inspected individually.",
+        "note": "Giraffe has the long neck, patterned coat, legs and head visibly connected; tree context provides varied tile content."
+      },
+      "assetSha256": "caa05c33834684f30e8f467fa1cdd01af3fff013e34da70cebc42455430fc1d7",
+      "file": "media/tilepuzzle/tilepuzzle-200-901.webp",
+      "runtimeReview": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "checksPassed": 15,
+        "checksTotal": 15,
+        "viewports": [
+          390,
+          320
+        ],
+        "contactSheet": "docs/bank/rebuild-2026-09-18/checkpoint/tilepuzzle-resume/ui-2026-09-25/contact-200.webp"
+      }
+    },
+    {
+      "id": "tilepuzzle-200-902",
+      "answer": "برغر",
+      "tier": 200,
+      "topic": "أطعمة",
+      "question": "ما الشطيرة المستديرة التي تظهر بين قطع الصورة؟",
+      "alt": [
+        "همبرغر",
+        "هامبرغر",
+        "برجر",
+        "Hamburger",
+        "Burger"
+      ],
+      "sourceUrl": null,
+      "sourceEvidence": [],
+      "sourceLimits": [
+        "Editorial wording follows the authoritative planned job. No external identity research was needed for this common subject."
+      ],
+      "visualReview": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "method": "All40 final installed originals viewed in5 labelled full-image contact sheets; generation/correction outputs also inspected individually.",
+        "note": "Burger clearly shows sesame bun, lettuce, tomato and meat patty, with no label or text."
+      },
+      "assetSha256": "4cf713cc9337c3750a883a7282dd06e4071e9e2bcd2ece51162c5f79793f47b9",
+      "file": "media/tilepuzzle/tilepuzzle-200-902.webp",
+      "runtimeReview": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "checksPassed": 15,
+        "checksTotal": 15,
+        "viewports": [
+          390,
+          320
+        ],
+        "contactSheet": "docs/bank/rebuild-2026-09-18/checkpoint/tilepuzzle-resume/ui-2026-09-25/contact-200.webp"
+      }
+    },
+    {
+      "id": "tilepuzzle-200-903",
+      "answer": "حاسوب محمول",
+      "tier": 200,
+      "topic": "أجهزة",
+      "question": "ما الجهاز الذي يجمع شاشة ولوحة مفاتيح في هيكل قابل للطي؟",
+      "alt": [
+        "لابتوب",
+        "كمبيوتر محمول",
+        "Laptop"
+      ],
+      "sourceUrl": null,
+      "sourceEvidence": [],
+      "sourceLimits": [
+        "Editorial wording follows the authoritative planned job. No external identity research was needed for this common subject."
+      ],
+      "visualReview": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "method": "All40 final installed originals viewed in5 labelled full-image contact sheets; generation/correction outputs also inspected individually.",
+        "note": "Open laptop with plain dark screen, keyboard, hinge and touchpad visible; no brand or answer label."
+      },
+      "assetSha256": "b0b1fa3f3db8f886cd018a369db092335ab29b52dabd54250ace708b9689cd0a",
+      "file": "media/tilepuzzle/tilepuzzle-200-903.webp",
+      "runtimeReview": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "checksPassed": 15,
+        "checksTotal": 15,
+        "viewports": [
+          390,
+          320
+        ],
+        "contactSheet": "docs/bank/rebuild-2026-09-18/checkpoint/tilepuzzle-resume/ui-2026-09-25/contact-200.webp"
+      }
+    },
+    {
+      "id": "tilepuzzle-200-904",
+      "answer": "حافلة مدرسية",
+      "tier": 200,
+      "topic": "وسائل نقل",
+      "question": "ما المركبة الصفراء المخصصة لنقل الطلاب التي ترسمها القطع؟",
+      "alt": [
+        "باص مدرسي",
+        "باص المدرسة",
+        "أوتوبيس مدرسي",
+        "School bus"
+      ],
+      "sourceUrl": null,
+      "sourceEvidence": [],
+      "sourceLimits": [
+        "Editorial wording follows the authoritative planned job. No external identity research was needed for this common subject."
+      ],
+      "visualReview": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "method": "All40 final installed originals viewed in5 labelled full-image contact sheets; generation/correction outputs also inspected individually.",
+        "note": "Yellow school bus with windows, entry door, wheels and front grille visible; destination sign is blank."
+      },
+      "assetSha256": "b6b0e0957e810088e5fab3e5ca806d36e31ba79f74e2e03d204fa07a30154d26",
+      "file": "media/tilepuzzle/tilepuzzle-200-904.webp",
+      "runtimeReview": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "checksPassed": 15,
+        "checksTotal": 15,
+        "viewports": [
+          390,
+          320
+        ],
+        "contactSheet": "docs/bank/rebuild-2026-09-18/checkpoint/tilepuzzle-resume/ui-2026-09-25/contact-200.webp"
+      }
+    },
+    {
+      "id": "tilepuzzle-200-905",
+      "answer": "ملعب كرة قدم",
+      "tier": 200,
+      "topic": "أماكن",
+      "question": "ما المنشأة الرياضية ذات العشب والمدرجات التي تكوّنها هذه القطع؟",
+      "alt": [
+        "استاد كرة قدم",
+        "ستاد كرة قدم",
+        "Football stadium",
+        "Soccer stadium"
+      ],
+      "sourceUrl": null,
+      "sourceEvidence": [],
+      "sourceLimits": [
+        "Editorial wording follows the authoritative planned job. No external identity research was needed for this common subject."
+      ],
+      "visualReview": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "method": "All40 final installed originals viewed in5 labelled full-image contact sheets; generation/correction outputs also inspected individually.",
+        "note": "Football stadium shows grass pitch, goals, center circle and stands; intended as an object-identification illustration, not a regulation field diagram."
+      },
+      "assetSha256": "42e7b953f337ac004dd1f96fb1468e295828669725ca80a652dd3634f86702a5",
+      "file": "media/tilepuzzle/tilepuzzle-200-905.webp",
+      "runtimeReview": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "checksPassed": 15,
+        "checksTotal": 15,
+        "viewports": [
+          390,
+          320
+        ],
+        "contactSheet": "docs/bank/rebuild-2026-09-18/checkpoint/tilepuzzle-resume/ui-2026-09-25/contact-200.webp"
+      }
+    },
+    {
+      "id": "tilepuzzle-200-906",
+      "answer": "قوس قزح",
+      "tier": 200,
+      "topic": "طبيعة",
+      "question": "ما الظاهرة ذات الألوان المقوسة التي تظهر بعد المطر؟",
+      "alt": [
+        "قوس المطر",
+        "Rainbow"
+      ],
+      "sourceUrl": null,
+      "sourceEvidence": [],
+      "sourceLimits": [
+        "Editorial wording follows the authoritative planned job. No external identity research was needed for this common subject."
+      ],
+      "visualReview": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "method": "All40 final installed originals viewed in5 labelled full-image contact sheets; generation/correction outputs also inspected individually.",
+        "note": "Continuous multicolor rainbow arch above hills; identifiable colored segments span upper tiles."
+      },
+      "assetSha256": "7fdac8e625ea6ebcb86cd4b11a550714ca2533f5792785335e2018c84b7e1b40",
+      "file": "media/tilepuzzle/tilepuzzle-200-906.webp",
+      "runtimeReview": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "checksPassed": 15,
+        "checksTotal": 15,
+        "viewports": [
+          390,
+          320
+        ],
+        "contactSheet": "docs/bank/rebuild-2026-09-18/checkpoint/tilepuzzle-resume/ui-2026-09-25/contact-200.webp"
+      }
+    },
+    {
+      "id": "tilepuzzle-200-907",
+      "answer": "طقم طبول",
+      "tier": 200,
+      "topic": "موسيقى",
+      "question": "ما المجموعة الإيقاعية المزودة بصنوج التي تكشفها القطع؟",
+      "alt": [
+        "درامز",
+        "طقم درامز",
+        "مجموعة طبول",
+        "Drum kit",
+        "Drum set"
+      ],
+      "sourceUrl": null,
+      "sourceEvidence": [],
+      "sourceLimits": [
+        "Editorial wording follows the authoritative planned job. No external identity research was needed for this common subject."
+      ],
+      "visualReview": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "method": "All40 final installed originals viewed in5 labelled full-image contact sheets; generation/correction outputs also inspected individually.",
+        "note": "Complete drum kit with bass drum, toms, snare, cymbals and stands; clearly a set rather than one drum."
+      },
+      "assetSha256": "9277c5a6346f92008015209e8922beed5aebd3c0fbbae19a47d08906ba2679d0",
+      "file": "media/tilepuzzle/tilepuzzle-200-907.webp",
+      "runtimeReview": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "checksPassed": 15,
+        "checksTotal": 15,
+        "viewports": [
+          390,
+          320
+        ],
+        "contactSheet": "docs/bank/rebuild-2026-09-18/checkpoint/tilepuzzle-resume/ui-2026-09-25/contact-200.webp"
+      }
+    },
+    {
+      "id": "tilepuzzle-200-908",
+      "answer": "لوحة ألوان",
+      "tier": 200,
+      "topic": "هوايات وأدوات",
+      "question": "ما الأداة المسطحة التي يخلط عليها الرسام أصباغه؟",
+      "alt": [
+        "باليتة",
+        "باليت",
+        "بالتة",
+        "لوح مزج الألوان",
+        "لوحة مزج الألوان",
+        "Artist palette"
+      ],
+      "sourceUrl": null,
+      "sourceEvidence": [],
+      "sourceLimits": [
+        "Editorial wording follows the authoritative planned job. No external identity research was needed for this common subject."
+      ],
+      "visualReview": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "method": "All40 final installed originals viewed in5 labelled full-image contact sheets; generation/correction outputs also inspected individually.",
+        "note": "Wooden artist palette with thumb hole, multicolor paint and brushes; dominant object identifiable."
+      },
+      "assetSha256": "e4938640b3b2701fe0265a54e4c2ed7233ab790ca1ca0abcc4d0354c63dabebc",
+      "file": "media/tilepuzzle/tilepuzzle-200-908.webp",
+      "runtimeReview": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "checksPassed": 15,
+        "checksTotal": 15,
+        "viewports": [
+          390,
+          320
+        ],
+        "contactSheet": "docs/bank/rebuild-2026-09-18/checkpoint/tilepuzzle-resume/ui-2026-09-25/contact-200.webp"
+      }
+    },
+    {
+      "id": "tilepuzzle-400-901",
+      "answer": "نحام",
+      "tier": 400,
+      "topic": "حيوانات",
+      "question": "ما الطائر الوردي طويل الساقين الذي تعيد القطع صورته؟",
+      "alt": [
+        "فلامنغو",
+        "فلامنجو",
+        "النحام الوردي",
+        "Flamingo"
+      ],
+      "sourceUrl": null,
+      "sourceEvidence": [],
+      "sourceLimits": [
+        "Editorial wording follows the authoritative planned job. No external identity research was needed for this common subject."
+      ],
+      "visualReview": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "method": "All40 final installed originals viewed in5 labelled full-image contact sheets; generation/correction outputs also inspected individually.",
+        "note": "Pink flamingo with bent black-tipped bill, S-curved neck and two long legs visible in lagoon."
+      },
+      "assetSha256": "8f156a9771c9fc7291145abfdeaaa825bbbcf2be9d77cf776416ef0654118f12",
+      "file": "media/tilepuzzle/tilepuzzle-400-901.webp",
+      "runtimeReview": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "checksPassed": 15,
+        "checksTotal": 15,
+        "viewports": [
+          390,
+          320
+        ],
+        "contactSheet": "docs/bank/rebuild-2026-09-18/checkpoint/tilepuzzle-resume/ui-2026-09-25/contact-400.webp"
+      }
+    },
+    {
+      "id": "tilepuzzle-400-902",
+      "answer": "وافل",
+      "tier": 400,
+      "topic": "أطعمة",
+      "question": "ما الحلوى ذات التجاويف المربعة الظاهرة بين القطع؟",
+      "alt": [
+        "وافل بلجيكي",
+        "Waffle"
+      ],
+      "sourceUrl": null,
+      "sourceEvidence": [],
+      "sourceLimits": [
+        "Editorial wording follows the authoritative planned job. No external identity research was needed for this common subject."
+      ],
+      "visualReview": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "method": "All40 final installed originals viewed in5 labelled full-image contact sheets; generation/correction outputs also inspected individually.",
+        "note": "Golden square-grid waffle is dominant despite berry garnish; waffle pockets remain clear across tiles."
+      },
+      "assetSha256": "d9640f05e674853db3c3f899841b7b31b2b14de40d3cd38a72221f71ce4a6716",
+      "file": "media/tilepuzzle/tilepuzzle-400-902.webp",
+      "runtimeReview": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "checksPassed": 15,
+        "checksTotal": 15,
+        "viewports": [
+          390,
+          320
+        ],
+        "contactSheet": "docs/bank/rebuild-2026-09-18/checkpoint/tilepuzzle-resume/ui-2026-09-25/contact-400.webp"
+      }
+    },
+    {
+      "id": "tilepuzzle-400-903",
+      "answer": "كاميرا",
+      "tier": 400,
+      "topic": "أجهزة",
+      "question": "ما جهاز التقاط الصور ذو العدسة البارزة الذي تكشفه القطع؟",
+      "alt": [
+        "كاميرا تصوير",
+        "آلة تصوير",
+        "Camera"
+      ],
+      "sourceUrl": null,
+      "sourceEvidence": [],
+      "sourceLimits": [
+        "Editorial wording follows the authoritative planned job. No external identity research was needed for this common subject."
+      ],
+      "visualReview": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "method": "All40 final installed originals viewed in5 labelled full-image contact sheets; generation/correction outputs also inspected individually.",
+        "note": "Camera body and large detachable lens dominate; no answer caption or readable brand label."
+      },
+      "assetSha256": "5fc55f46f84c75afde24a7d3ab9a7ad9994729b83b67cc5d938c8028a1ee1118",
+      "file": "media/tilepuzzle/tilepuzzle-400-903.webp",
+      "runtimeReview": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "checksPassed": 15,
+        "checksTotal": 15,
+        "viewports": [
+          390,
+          320
+        ],
+        "contactSheet": "docs/bank/rebuild-2026-09-18/checkpoint/tilepuzzle-resume/ui-2026-09-25/contact-400.webp"
+      }
+    },
+    {
+      "id": "tilepuzzle-400-904",
+      "answer": "منطاد",
+      "tier": 400,
+      "topic": "وسائل نقل",
+      "question": "ما وسيلة التحليق ذات السلة المعلقة التي تتجمع صورتها؟",
+      "alt": [
+        "بالون هوائي",
+        "منطاد هواء ساخن",
+        "Hot air balloon"
+      ],
+      "sourceUrl": null,
+      "sourceEvidence": [],
+      "sourceLimits": [
+        "Editorial wording follows the authoritative planned job. No external identity research was needed for this common subject."
+      ],
+      "visualReview": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "method": "All40 final installed originals viewed in5 labelled full-image contact sheets; generation/correction outputs also inspected individually.",
+        "note": "Hot-air balloon with multicolor envelope, burner and suspended basket; full balloon framed."
+      },
+      "assetSha256": "15acd95f0206017b698c3a8a162f131a0df94b637f74080b2880b800796b41aa",
+      "file": "media/tilepuzzle/tilepuzzle-400-904.webp",
+      "runtimeReview": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "checksPassed": 15,
+        "checksTotal": 15,
+        "viewports": [
+          390,
+          320
+        ],
+        "contactSheet": "docs/bank/rebuild-2026-09-18/checkpoint/tilepuzzle-resume/ui-2026-09-25/contact-400.webp"
+      }
+    },
+    {
+      "id": "tilepuzzle-400-905",
+      "answer": "دوامة خيل",
+      "tier": 400,
+      "topic": "أماكن",
+      "question": "ما لعبة الملاهي التي تحمل مجسمات أحصنة على منصة دائرية؟",
+      "alt": [
+        "كاروسيل",
+        "دوامة",
+        "لعبة الخيل الدوارة",
+        "Carousel"
+      ],
+      "sourceUrl": null,
+      "sourceEvidence": [],
+      "sourceLimits": [
+        "Editorial wording follows the authoritative planned job. No external identity research was needed for this common subject."
+      ],
+      "visualReview": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "method": "All40 final installed originals viewed in5 labelled full-image contact sheets; generation/correction outputs also inspected individually.",
+        "note": "Carousel shows repeated mounted horses on poles, circular platform and decorated canopy; no signage."
+      },
+      "assetSha256": "b50fa155c8913ea3c1a45afe11d066e4806d8de137f12a9ece344a22846cc476",
+      "file": "media/tilepuzzle/tilepuzzle-400-905.webp",
+      "runtimeReview": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "checksPassed": 15,
+        "checksTotal": 15,
+        "viewports": [
+          390,
+          320
+        ],
+        "contactSheet": "docs/bank/rebuild-2026-09-18/checkpoint/tilepuzzle-resume/ui-2026-09-25/contact-400.webp"
+      }
+    },
+    {
+      "id": "tilepuzzle-400-906",
+      "answer": "شفق قطبي",
+      "tier": 400,
+      "topic": "طبيعة",
+      "question": "ما الظاهرة التي ترسم ستائر مضيئة في السماء قرب القطبين؟",
+      "alt": [
+        "الأضواء الشمالية",
+        "أورورا",
+        "الشفق الشمالي",
+        "Aurora"
+      ],
+      "sourceUrl": null,
+      "sourceEvidence": [],
+      "sourceLimits": [
+        "Editorial wording follows the authoritative planned job. No external identity research was needed for this common subject."
+      ],
+      "visualReview": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "method": "All40 final installed originals viewed in5 labelled full-image contact sheets; generation/correction outputs also inspected individually.",
+        "note": "Green auroral curtains against starry sky above snowy mountains; no location identification claimed."
+      },
+      "assetSha256": "cb11a58c861078838c9d3855b479bb63c62c7e1732d04edfb6dfa8e8b7804611",
+      "file": "media/tilepuzzle/tilepuzzle-400-906.webp",
+      "runtimeReview": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "checksPassed": 15,
+        "checksTotal": 15,
+        "viewports": [
+          390,
+          320
+        ],
+        "contactSheet": "docs/bank/rebuild-2026-09-18/checkpoint/tilepuzzle-resume/ui-2026-09-25/contact-400.webp"
+      }
+    },
+    {
+      "id": "tilepuzzle-400-907",
+      "answer": "قيثارة",
+      "tier": 400,
+      "topic": "موسيقى",
+      "question": "ما الآلة الوترية ذات الإطار المثلث والأوتار الكثيرة بين القطع؟",
+      "alt": [
+        "هارب",
+        "هارپ",
+        "Harp"
+      ],
+      "sourceUrl": null,
+      "sourceEvidence": [],
+      "sourceLimits": [
+        "Editorial wording follows the authoritative planned job. No external identity research was needed for this common subject."
+      ],
+      "visualReview": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "method": "All40 final installed originals viewed in5 labelled full-image contact sheets; generation/correction outputs also inspected individually.",
+        "note": "Corrected harp has full finial with clear room background above it, complete triangular frame, curved neck, string array, soundboard, pedestal and pedals. No printed answer."
+      },
+      "assetSha256": "274c90e525b4f4e80b5921e2905628feb62b7f372d7ec90b5fb585f0cc55e696",
+      "file": "media/tilepuzzle/tilepuzzle-400-907.webp",
+      "runtimeReview": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "checksPassed": 15,
+        "checksTotal": 15,
+        "viewports": [
+          390,
+          320
+        ],
+        "contactSheet": "docs/bank/rebuild-2026-09-18/checkpoint/tilepuzzle-resume/ui-2026-09-25/contact-400.webp"
+      }
+    },
+    {
+      "id": "tilepuzzle-400-908",
+      "answer": "دولاب فخار",
+      "tier": 400,
+      "topic": "هوايات وأدوات",
+      "question": "ما الأداة ذات القرص الدوار المستخدمة لتشكيل الأواني الطينية؟",
+      "alt": [
+        "عجلة فخار",
+        "دولاب الخزاف",
+        "عجلة الخزاف",
+        "Pottery wheel"
+      ],
+      "sourceUrl": null,
+      "sourceEvidence": [],
+      "sourceLimits": [
+        "Editorial wording follows the authoritative planned job. No external identity research was needed for this common subject."
+      ],
+      "visualReview": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "method": "All40 final installed originals viewed in5 labelled full-image contact sheets; generation/correction outputs also inspected individually.",
+        "note": "Pottery wheel turntable and clay-splattered catch tray are visible under a wet pot. Stem will specify the tool beneath the clay to avoid a competing pot answer."
+      },
+      "assetSha256": "97993702b93c7eb3183f0a5e0149c0155d877edd4202fdcbf871adadffe7aefc",
+      "file": "media/tilepuzzle/tilepuzzle-400-908.webp",
+      "runtimeReview": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "checksPassed": 15,
+        "checksTotal": 15,
+        "viewports": [
+          390,
+          320
+        ],
+        "contactSheet": "docs/bank/rebuild-2026-09-18/checkpoint/tilepuzzle-resume/ui-2026-09-25/contact-400.webp"
+      }
+    },
+    {
+      "id": "tilepuzzle-600-901",
+      "answer": "طوقان",
+      "tier": 600,
+      "topic": "حيوانات",
+      "question": "ما الطائر الاستوائي ذو المنقار الضخم الملون في هذه القطع؟",
+      "alt": [
+        "توكان",
+        "Toucan"
+      ],
+      "sourceUrl": null,
+      "sourceEvidence": [],
+      "sourceLimits": [
+        "Editorial wording follows the authoritative planned job. No external identity research was needed for this common subject."
+      ],
+      "visualReview": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "method": "All40 final installed originals viewed in5 labelled full-image contact sheets; generation/correction outputs also inspected individually.",
+        "note": "Toucan has an oversized orange black-tipped bill, white throat, black body and feet on branch; distinct from other birds."
+      },
+      "assetSha256": "a6e46c24975f6e575a128ce944cd3c55bed4bb9e1a35d2d7982a6469fa89a505",
+      "file": "media/tilepuzzle/tilepuzzle-600-901.webp",
+      "runtimeReview": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "checksPassed": 15,
+        "checksTotal": 15,
+        "viewports": [
+          390,
+          320
+        ],
+        "contactSheet": "docs/bank/rebuild-2026-09-18/checkpoint/tilepuzzle-resume/ui-2026-09-25/contact-600.webp"
+      }
+    },
+    {
+      "id": "tilepuzzle-600-902",
+      "answer": "بريتزل",
+      "tier": 600,
+      "topic": "أطعمة",
+      "question": "ما المخبوز المملح الملتف على هيئة عقدة في الصورة؟",
+      "alt": [
+        "بريتسل",
+        "بريتزيل",
+        "Pretzel"
+      ],
+      "sourceUrl": null,
+      "sourceEvidence": [],
+      "sourceLimits": [
+        "Editorial wording follows the authoritative planned job. No external identity research was needed for this common subject."
+      ],
+      "visualReview": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "method": "All40 final installed originals viewed in5 labelled full-image contact sheets; generation/correction outputs also inspected individually.",
+        "note": "Pretzel has brown salted crust and recognizable crossing knot with openings; whole pastry visible."
+      },
+      "assetSha256": "de78cccae5b7d3e9ca90b104a3601026a38f22aaff6d24201153eed6b60052c7",
+      "file": "media/tilepuzzle/tilepuzzle-600-902.webp",
+      "runtimeReview": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "checksPassed": 15,
+        "checksTotal": 15,
+        "viewports": [
+          390,
+          320
+        ],
+        "contactSheet": "docs/bank/rebuild-2026-09-18/checkpoint/tilepuzzle-resume/ui-2026-09-25/contact-600.webp"
+      }
+    },
+    {
+      "id": "tilepuzzle-600-903",
+      "answer": "غرامافون",
+      "tier": 600,
+      "topic": "أجهزة",
+      "question": "ما جهاز تشغيل الأسطوانات القديم ذو البوق الكبير بين القطع؟",
+      "alt": [
+        "جرامافون",
+        "غراموفون",
+        "غرامفون",
+        "جراموفون",
+        "Gramophone"
+      ],
+      "sourceUrl": null,
+      "sourceEvidence": [],
+      "sourceLimits": [
+        "Editorial wording follows the authoritative planned job. No external identity research was needed for this common subject."
+      ],
+      "visualReview": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "method": "All40 final installed originals viewed in5 labelled full-image contact sheets; generation/correction outputs also inspected individually.",
+        "note": "Gramophone has brass acoustic horn connected to disc record player, wooden case and winding crank; no answer label."
+      },
+      "assetSha256": "233f287461ee98e6ddae11c17f0a73f97c00baca6404069df464315b465720f7",
+      "file": "media/tilepuzzle/tilepuzzle-600-903.webp",
+      "runtimeReview": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "checksPassed": 15,
+        "checksTotal": 15,
+        "viewports": [
+          390,
+          320
+        ],
+        "contactSheet": "docs/bank/rebuild-2026-09-18/checkpoint/tilepuzzle-resume/ui-2026-09-25/contact-600.webp"
+      }
+    },
+    {
+      "id": "tilepuzzle-600-904",
+      "answer": "حفارة",
+      "tier": 600,
+      "topic": "وسائل نقل",
+      "question": "ما الآلة المجنزرة ذات الذراع الطويلة والدلو التي تظهر هنا؟",
+      "alt": [
+        "حفار",
+        "حفارة مجنزرة",
+        "Excavator"
+      ],
+      "sourceUrl": null,
+      "sourceEvidence": [],
+      "sourceLimits": [
+        "Editorial wording follows the authoritative planned job. No external identity research was needed for this common subject."
+      ],
+      "visualReview": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "method": "All40 final installed originals viewed in5 labelled full-image contact sheets; generation/correction outputs also inspected individually.",
+        "note": "Corrected yellow excavator shows connected hydraulic boom and upper pivot fully within frame, complete bucket, cab and tracks; no model-name label."
+      },
+      "assetSha256": "d37088f9d783f9789c2fa4eac35c4771757b960bd7d349b28817a623d081f021",
+      "file": "media/tilepuzzle/tilepuzzle-600-904.webp",
+      "runtimeReview": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "checksPassed": 15,
+        "checksTotal": 15,
+        "viewports": [
+          390,
+          320
+        ],
+        "contactSheet": "docs/bank/rebuild-2026-09-18/checkpoint/tilepuzzle-resume/ui-2026-09-25/contact-600.webp"
+      }
+    },
+    {
+      "id": "tilepuzzle-600-905",
+      "answer": "بيت زجاجي",
+      "tier": 600,
+      "topic": "أماكن",
+      "question": "ما المبنى الشفاف المخصص لزراعة النباتات الظاهر بين القطع؟",
+      "alt": [
+        "دفيئة",
+        "صوبة زراعية",
+        "دفيئة زجاجية",
+        "Greenhouse"
+      ],
+      "sourceUrl": null,
+      "sourceEvidence": [],
+      "sourceLimits": [
+        "Editorial wording follows the authoritative planned job. No external identity research was needed for this common subject."
+      ],
+      "visualReview": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "method": "All40 final installed originals viewed in5 labelled full-image contact sheets; generation/correction outputs also inspected individually.",
+        "note": "Glass greenhouse visibly encloses plants with transparent roof/walls, door and metal frame."
+      },
+      "assetSha256": "664fdebc6333cdc207502951aa3fc2649a1a8111bea38b2c7bd146714a50e2f6",
+      "file": "media/tilepuzzle/tilepuzzle-600-905.webp",
+      "runtimeReview": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "checksPassed": 15,
+        "checksTotal": 15,
+        "viewports": [
+          390,
+          320
+        ],
+        "contactSheet": "docs/bank/rebuild-2026-09-18/checkpoint/tilepuzzle-resume/ui-2026-09-25/contact-600.webp"
+      }
+    },
+    {
+      "id": "tilepuzzle-600-906",
+      "answer": "نافورة حارة",
+      "tier": 600,
+      "topic": "طبيعة",
+      "question": "ما الظاهرة الطبيعية التي تقذف الماء الساخن والبخار من باطن الأرض؟",
+      "alt": [
+        "فوارة حارة",
+        "ينبوع فوّار",
+        "نبع حار فوّار",
+        "جايزر",
+        "Geyser"
+      ],
+      "sourceUrl": "https://www.nps.gov/places/000/giantess-geyser.htm",
+      "sourceEvidence": [
+        {
+          "referenceId": "geyser",
+          "url": "https://www.nps.gov/places/000/giantess-geyser.htm",
+          "evidence": "The geyser explanation describes constrictions that allow steam pressure to build, then force water upward in an eruption; hot springs and geysers are separately mentioned.",
+          "retrieval": "opened-and-read-primary-page",
+          "reviewedAt": "2026-09-25"
+        }
+      ],
+      "sourceLimits": [
+        "Generic erupting geothermal water feature only, not identification as Giantess or another named geyser. Plain ينبوع حار includes non-erupting springs; removed. سخان أرضي is an unclear alias; removed."
+      ],
+      "visualReview": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "method": "All40 final installed originals viewed in5 labelled full-image contact sheets; generation/correction outputs also inspected individually.",
+        "note": "Natural water-and-steam eruption from mineral ground; no artificial fountain fixture. Broad hot-spring/heater aliases will be removed."
+      },
+      "assetSha256": "a66034d5920c98e8c4258baf21219de9c5dc41df9585007806df052e8c84d364",
+      "file": "media/tilepuzzle/tilepuzzle-600-906.webp",
+      "runtimeReview": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "checksPassed": 15,
+        "checksTotal": 15,
+        "viewports": [
+          390,
+          320
+        ],
+        "contactSheet": "docs/bank/rebuild-2026-09-18/checkpoint/tilepuzzle-resume/ui-2026-09-25/contact-600.webp"
+      }
+    },
+    {
+      "id": "tilepuzzle-600-907",
+      "answer": "ماريمبا",
+      "tier": 600,
+      "topic": "موسيقى",
+      "question": "ما الآلة الإيقاعية ذات القضبان الخشبية والأنابيب الرنانة أسفلها؟",
+      "alt": [
+        "Marimba"
+      ],
+      "sourceUrl": "https://hub.yamaha.com/drums/percussion/anatomy-of-a-marimba/",
+      "sourceEvidence": [
+        {
+          "referenceId": "marimba",
+          "url": "https://hub.yamaha.com/drums/percussion/anatomy-of-a-marimba/",
+          "evidence": "Yamaha describes a marimba as struck wooden tone bars with resonator tubes suspended below; bar layout resembles a piano keyboard and tube lengths vary with pitch.",
+          "retrieval": "opened-and-read-primary-page",
+          "reviewedAt": "2026-09-25"
+        }
+      ],
+      "sourceLimits": [
+        "General marimba anatomy only, not exact tuning/note count. A small toy xylophone or metal-bar vibraphone is not automatically equivalent. Peer must still check the actual image."
+      ],
+      "visualReview": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "method": "All40 final installed originals viewed in5 labelled full-image contact sheets; generation/correction outputs also inspected individually.",
+        "note": "Marimba illustration has two levels of wooden bars, long resonator tubes, stand and mallets; identification does not rely on exact bar count or tuning."
+      },
+      "assetSha256": "f84ced51ff13519a640b3c320efab3b81bf8cb40ba2ef4ce9913b5f94f681aa9",
+      "file": "media/tilepuzzle/tilepuzzle-600-907.webp",
+      "runtimeReview": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "checksPassed": 15,
+        "checksTotal": 15,
+        "viewports": [
+          390,
+          320
+        ],
+        "contactSheet": "docs/bank/rebuild-2026-09-18/checkpoint/tilepuzzle-resume/ui-2026-09-25/contact-600.webp"
+      }
+    },
+    {
+      "id": "tilepuzzle-600-908",
+      "answer": "عجلة غزل",
+      "tier": 600,
+      "topic": "هوايات وأدوات",
+      "question": "ما الأداة التقليدية التي تحول ألياف الصوف إلى خيوط؟",
+      "alt": [
+        "دولاب غزل",
+        "عجلة المغزل",
+        "دولاب الغزل",
+        "Spinning wheel"
+      ],
+      "sourceUrl": null,
+      "sourceEvidence": [],
+      "sourceLimits": [
+        "Editorial wording follows the authoritative planned job. No external identity research was needed for this common subject."
+      ],
+      "visualReview": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "method": "All40 final installed originals viewed in5 labelled full-image contact sheets; generation/correction outputs also inspected individually.",
+        "note": "Traditional spinning wheel with large wooden wheel, treadle, bobbin and wool; not a loom."
+      },
+      "assetSha256": "19cf0929c4103f4afe03083f569f2dbeeb54d31c32d1ecb0e57efebd6ab6feed",
+      "file": "media/tilepuzzle/tilepuzzle-600-908.webp",
+      "runtimeReview": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "checksPassed": 15,
+        "checksTotal": 15,
+        "viewports": [
+          390,
+          320
+        ],
+        "contactSheet": "docs/bank/rebuild-2026-09-18/checkpoint/tilepuzzle-resume/ui-2026-09-25/contact-600.webp"
+      }
+    },
+    {
+      "id": "tilepuzzle-800-901",
+      "answer": "أكسولوتل",
+      "tier": 800,
+      "topic": "حيوانات",
+      "question": "ما البرمائي المائي ذو الخياشيم الريشية حول رأسه في القطع؟",
+      "alt": [
+        "عفريت الماء",
+        "أكسولوتل مكسيكي",
+        "أكسلوتل",
+        "Axolotl"
+      ],
+      "sourceUrl": "https://animals.sandiegozoo.org/animals/axolotl",
+      "sourceEvidence": [
+        {
+          "referenceId": "axolotl",
+          "url": "https://animals.sandiegozoo.org/animals/axolotl",
+          "evidence": "The zoo identifies axolotl as an aquatic salamander retaining conspicuous external feathery gills, a tail and body fin; lizard-like limbs and several pale/pink forms are described.",
+          "retrieval": "opened-and-read-primary-page",
+          "reviewedAt": "2026-09-25"
+        }
+      ],
+      "sourceLimits": [
+        "Identification only. Not a fish, lizard or frog; neither exact morph nor medical/regeneration claims included."
+      ],
+      "visualReview": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "method": "All40 final installed originals viewed in5 labelled full-image contact sheets; generation/correction outputs also inspected individually.",
+        "note": "Pink axolotl has three feathery external gill branches on each side, broad head, limbs and finned tail; underwater setting matches subject."
+      },
+      "assetSha256": "d673f6f6b91a8067d3d05c50f72978870e97a61651500b85c35c5a86438f456f",
+      "file": "media/tilepuzzle/tilepuzzle-800-901.webp",
+      "runtimeReview": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "checksPassed": 15,
+        "checksTotal": 15,
+        "viewports": [
+          390,
+          320
+        ],
+        "contactSheet": "docs/bank/rebuild-2026-09-18/checkpoint/tilepuzzle-resume/ui-2026-09-25/contact-800.webp"
+      }
+    },
+    {
+      "id": "tilepuzzle-800-902",
+      "answer": "مانغوستين",
+      "tier": 800,
+      "topic": "أطعمة",
+      "question": "ما الفاكهة ذات القشرة البنفسجية والفصوص البيضاء التي تكشفها القطع؟",
+      "alt": [
+        "مانجوستين",
+        "منغوستين",
+        "Mangosteen"
+      ],
+      "sourceUrl": null,
+      "sourceEvidence": [],
+      "sourceLimits": [
+        "Editorial wording follows the authoritative planned job. No external identity research was needed for this common subject."
+      ],
+      "visualReview": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "method": "All40 final installed originals viewed in5 labelled full-image contact sheets; generation/correction outputs also inspected individually.",
+        "note": "Mangosteen has dark-purple rind, thick reddish shell and segmented white flesh; intact fruit shows persistent calyx."
+      },
+      "assetSha256": "57d240ecd353caec8dcf44aae9a1394e7175d5e58a79df0442cb311fe9f9a0f7",
+      "file": "media/tilepuzzle/tilepuzzle-800-902.webp",
+      "runtimeReview": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "checksPassed": 15,
+        "checksTotal": 15,
+        "viewports": [
+          390,
+          320
+        ],
+        "contactSheet": "docs/bank/rebuild-2026-09-18/checkpoint/tilepuzzle-resume/ui-2026-09-25/contact-800.webp"
+      }
+    },
+    {
+      "id": "tilepuzzle-800-903",
+      "answer": "آلة كاتبة",
+      "tier": 800,
+      "topic": "أجهزة",
+      "question": "ما الجهاز الميكانيكي ذو المفاتيح وبكرة الورق الظاهر بين القطع؟",
+      "alt": [
+        "ماكينة كتابة",
+        "آلة طباعة كاتبة",
+        "Typewriter"
+      ],
+      "sourceUrl": null,
+      "sourceEvidence": [],
+      "sourceLimits": [
+        "Editorial wording follows the authoritative planned job. No external identity research was needed for this common subject."
+      ],
+      "visualReview": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "method": "All40 final installed originals viewed in5 labelled full-image contact sheets; generation/correction outputs also inspected individually.",
+        "note": "Mechanical typewriter with round keys, type bars, ribbon, roller and blank paper; no typed clue."
+      },
+      "assetSha256": "c1e0ab627d98ad373187d3f0ce4e32664d0d0c3e3c75db077f3c204bb99c8670",
+      "file": "media/tilepuzzle/tilepuzzle-800-903.webp",
+      "runtimeReview": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "checksPassed": 15,
+        "checksTotal": 15,
+        "viewports": [
+          390,
+          320
+        ],
+        "contactSheet": "docs/bank/rebuild-2026-09-18/checkpoint/tilepuzzle-resume/ui-2026-09-25/contact-800.webp"
+      }
+    },
+    {
+      "id": "tilepuzzle-800-904",
+      "answer": "تلفريك",
+      "tier": 800,
+      "topic": "وسائل نقل",
+      "question": "ما وسيلة النقل المعلقة بكابل فوق الوادي التي تظهر هنا؟",
+      "alt": [
+        "تليفريك",
+        "عربة هوائية معلقة",
+        "عربة تلفريك",
+        "Aerial cable car"
+      ],
+      "sourceUrl": null,
+      "sourceEvidence": [],
+      "sourceLimits": [
+        "Editorial wording follows the authoritative planned job. No external identity research was needed for this common subject."
+      ],
+      "visualReview": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "method": "All40 final installed originals viewed in5 labelled full-image contact sheets; generation/correction outputs also inspected individually.",
+        "note": "Enclosed passenger cable-car cabin suspended from an overhead cable above mountain valley; no wheels or rails."
+      },
+      "assetSha256": "3b1b78cbcf18142981a4e0e5f83a24bd3d11547d5f051303d8a3fd7b3c759036",
+      "file": "media/tilepuzzle/tilepuzzle-800-904.webp",
+      "runtimeReview": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "checksPassed": 15,
+        "checksTotal": 15,
+        "viewports": [
+          390,
+          320
+        ],
+        "contactSheet": "docs/bank/rebuild-2026-09-18/checkpoint/tilepuzzle-resume/ui-2026-09-25/contact-800.webp"
+      }
+    },
+    {
+      "id": "tilepuzzle-800-905",
+      "answer": "مسرح روماني",
+      "tier": 800,
+      "topic": "أماكن",
+      "question": "ما المكان الأثري ذو المقاعد نصف الدائرية المواجهة لخشبة العروض؟",
+      "alt": [
+        "مسرح أثري روماني",
+        "Roman theatre",
+        "Roman theater"
+      ],
+      "sourceUrl": null,
+      "sourceEvidence": [],
+      "sourceLimits": [
+        "Editorial wording follows the authoritative planned job. No external identity research was needed for this common subject."
+      ],
+      "visualReview": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "method": "All40 final installed originals viewed in5 labelled full-image contact sheets; generation/correction outputs also inspected individually.",
+        "note": "Semicircular stone seating faces an ornate straight stage facade; Roman theatre type is identifiable without claiming a real site."
+      },
+      "assetSha256": "9afb257e5681183aec90104bad1297d67c300a977eb2e326fa1e6fe702066154",
+      "file": "media/tilepuzzle/tilepuzzle-800-905.webp",
+      "runtimeReview": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "checksPassed": 15,
+        "checksTotal": 15,
+        "viewports": [
+          390,
+          320
+        ],
+        "contactSheet": "docs/bank/rebuild-2026-09-18/checkpoint/tilepuzzle-resume/ui-2026-09-25/contact-800.webp"
+      }
+    },
+    {
+      "id": "tilepuzzle-800-906",
+      "answer": "مسطحات ملحية",
+      "tier": 800,
+      "topic": "طبيعة",
+      "question": "ما التكوين الطبيعي الأبيض المتشقق إلى أشكال مضلعة في الصورة؟",
+      "alt": [
+        "سبخة ملحية",
+        "مسطح ملحي",
+        "سهل ملحي",
+        "Salt flats"
+      ],
+      "sourceUrl": "https://www.nps.gov/deva/learn/nature/salt-flats.htm",
+      "sourceEvidence": [
+        {
+          "referenceId": "salt-flat",
+          "url": "https://www.nps.gov/deva/learn/nature/salt-flats.htm",
+          "evidence": "The salt-flats page describes evaporated salts in an enclosed dry basin, a salt crust, crystal growth through mudcracks and fresh white salt after rain.",
+          "retrieval": "opened-and-read-primary-page",
+          "reviewedAt": "2026-09-25"
+        }
+      ],
+      "sourceLimits": [
+        "No named location or exact mineral composition required. سبخة ملحية retained as a common Arabic recognition alias, not a claim that all salt flats are coastal sabkhas."
+      ],
+      "visualReview": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "method": "All40 final installed originals viewed in5 labelled full-image contact sheets; generation/correction outputs also inspected individually.",
+        "note": "White crystalline salt flat with polygonal ridges below blue sky; no snow scene or site-name claim."
+      },
+      "assetSha256": "1d07d925e62b25da8f47141f2736e359d9ebb090888b97e249c36e6606de5864",
+      "file": "media/tilepuzzle/tilepuzzle-800-906.webp",
+      "runtimeReview": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "checksPassed": 15,
+        "checksTotal": 15,
+        "viewports": [
+          390,
+          320
+        ],
+        "contactSheet": "docs/bank/rebuild-2026-09-18/checkpoint/tilepuzzle-resume/ui-2026-09-25/contact-800.webp"
+      }
+    },
+    {
+      "id": "tilepuzzle-800-907",
+      "answer": "ناي بان",
+      "tier": 800,
+      "topic": "موسيقى",
+      "question": "ما آلة النفخ المؤلفة من أنابيب قصب متدرجة الطول بين القطع؟",
+      "alt": [
+        "بان فلوت",
+        "بانفلوت",
+        "مزمار بان",
+        "Pan flute",
+        "Panpipes"
+      ],
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/501913",
+      "sourceEvidence": [
+        {
+          "referenceId": "pan-flute",
+          "url": "https://www.metmuseum.org/art/collection/search/501913",
+          "evidence": "The museum catalogues Panpipes made from cane or bamboo bound with twine, with seven pipes ranging from 11.2 to 5.7 cm, classified as a blow-hole aerophone.",
+          "retrieval": "opened-and-read-primary-page",
+          "reviewedAt": "2026-09-25"
+        }
+      ],
+      "sourceLimits": [
+        "Supports bundles of differing-length pipes. No requirement that a generic image reproduce this American historical example or exactly seven pipes."
+      ],
+      "visualReview": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "method": "All40 final installed originals viewed in5 labelled full-image contact sheets; generation/correction outputs also inspected individually.",
+        "note": "Corrected pan flute shows aligned open upper mouths, progressively shorter bamboo tubes, bound row and closed natural-node lower tips. Complete instrument visible."
+      },
+      "assetSha256": "0cd5d11690dda0516ea8cce4db417e5ecc707047ee2b588a3b5af70753db1455",
+      "file": "media/tilepuzzle/tilepuzzle-800-907.webp",
+      "runtimeReview": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "checksPassed": 15,
+        "checksTotal": 15,
+        "viewports": [
+          390,
+          320
+        ],
+        "contactSheet": "docs/bank/rebuild-2026-09-18/checkpoint/tilepuzzle-resume/ui-2026-09-25/contact-800.webp"
+      }
+    },
+    {
+      "id": "tilepuzzle-800-908",
+      "answer": "تلسكوب",
+      "tier": 800,
+      "topic": "هوايات وأدوات",
+      "question": "ما أداة رصد النجوم ذات الأنبوب والحامل الثلاثي التي تكشفها القطع؟",
+      "alt": [
+        "مقراب",
+        "منظار فلكي",
+        "Telescope"
+      ],
+      "sourceUrl": null,
+      "sourceEvidence": [],
+      "sourceLimits": [
+        "Editorial wording follows the authoritative planned job. No external identity research was needed for this common subject."
+      ],
+      "visualReview": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "method": "All40 final installed originals viewed in5 labelled full-image contact sheets; generation/correction outputs also inspected individually.",
+        "note": "Astronomical telescope has main optical tube, finder, eyepiece, equatorial mount and tripod beneath a night sky; lower tripod feet touch/crop the edge, but optical instrument is intact."
+      },
+      "assetSha256": "b7330922458be4f4a02b308cb861ac1add41e85770bc9458eeff57286f1df1b3",
+      "file": "media/tilepuzzle/tilepuzzle-800-908.webp",
+      "runtimeReview": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "checksPassed": 15,
+        "checksTotal": 15,
+        "viewports": [
+          390,
+          320
+        ],
+        "contactSheet": "docs/bank/rebuild-2026-09-18/checkpoint/tilepuzzle-resume/ui-2026-09-25/contact-800.webp"
+      }
+    },
+    {
+      "id": "tilepuzzle-1000-901",
+      "answer": "آكل النمل الحرشفي",
+      "tier": 1000,
+      "topic": "حيوانات",
+      "question": "ما الثديي ذو الحراشف المتراكبة والذيل الطويل الذي ترسمه القطع؟",
+      "alt": [
+        "بنغولين",
+        "بانغولين",
+        "بنغول",
+        "Pangolin"
+      ],
+      "sourceUrl": "https://animals.sandiegozoo.org/animals/tree-pangolin",
+      "sourceEvidence": [
+        {
+          "referenceId": "pangolin",
+          "url": "https://animals.sandiegozoo.org/animals/tree-pangolin",
+          "evidence": "The zoo describes a mammal covered in overlapping keratin scales, a small pointed head and long scaled tail. It explicitly distinguishes pangolins from true anteaters despite the common name scaly anteater.",
+          "retrieval": "opened-and-read-primary-page",
+          "reviewedAt": "2026-09-25"
+        }
+      ],
+      "sourceLimits": [
+        "Reference is a tree pangolin; use for generic pangolin recognition only. Do not infer exact species from generated image. آكل النمل alone and مدرع are not equivalent aliases."
+      ],
+      "visualReview": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "method": "All40 final installed originals viewed in5 labelled full-image contact sheets; generation/correction outputs also inspected individually.",
+        "note": "Pangolin has overlapping large scales, elongated snout, curved claws and long tapering scaled tail, walking on a log. Identification illustration; no species-level claim."
+      },
+      "assetSha256": "2c231dc8b6f2bc47fa78de8b8fc1d7102988698eac8307c3164117cae8487491",
+      "file": "media/tilepuzzle/tilepuzzle-1000-901.webp",
+      "runtimeReview": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "checksPassed": 15,
+        "checksTotal": 15,
+        "viewports": [
+          390,
+          320
+        ],
+        "contactSheet": "docs/bank/rebuild-2026-09-18/checkpoint/tilepuzzle-resume/ui-2026-09-25/contact-1000.webp"
+      }
+    },
+    {
+      "id": "tilepuzzle-1000-902",
+      "answer": "رومانسكو",
+      "tier": 1000,
+      "topic": "أطعمة",
+      "question": "ما الخضار ذات البراعم المخروطية المرتبة في لوالب متكررة؟",
+      "alt": [
+        "بروكلي رومانسكو",
+        "قرنبيط رومانسكو",
+        "Romanesco"
+      ],
+      "sourceUrl": "https://hort.extension.wisc.edu/articles/romanesco/",
+      "sourceEvidence": [
+        {
+          "referenceId": "romanesco",
+          "url": "https://hort.extension.wisc.edu/articles/romanesco/",
+          "evidence": "Romanesco has light green heads composed of cone-shaped florets in repeated spiral arrangements. The article lists Romanesco broccoli and Roman cauliflower as common names and identifies it as a Brassica oleracea cultivar.",
+          "retrieval": "opened-and-read-primary-page",
+          "reviewedAt": "2026-09-25"
+        }
+      ],
+      "sourceLimits": [
+        "Do not assert that it is a broccoli–cauliflower hybrid. Generic broccoli/cauliflower alone would be too broad; qualified Romanesco aliases are fair."
+      ],
+      "visualReview": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "method": "All40 final installed originals viewed in5 labelled full-image contact sheets; generation/correction outputs also inspected individually.",
+        "note": "Romanesco head has pale green nested conical spiral florets surrounded by leaves; complete distinctive edible head visible."
+      },
+      "assetSha256": "3143287c1dbc69c5b32809947fef4d4ea680ee35d1b02e2968a8fc77b59fc0c9",
+      "file": "media/tilepuzzle/tilepuzzle-1000-902.webp",
+      "runtimeReview": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "checksPassed": 15,
+        "checksTotal": 15,
+        "viewports": [
+          390,
+          320
+        ],
+        "contactSheet": "docs/bank/rebuild-2026-09-18/checkpoint/tilepuzzle-resume/ui-2026-09-25/contact-1000.webp"
+      }
+    },
+    {
+      "id": "tilepuzzle-1000-903",
+      "answer": "عارض شفافيات",
+      "tier": 1000,
+      "topic": "أجهزة",
+      "question": "ما جهاز العرض القديم ذو القاعدة المضيئة والذراع المرتفعة؟",
+      "alt": [
+        "بروجكتر شفافيات",
+        "جهاز عرض الشفافيات",
+        "جهاز الإسقاط العلوي",
+        "Overhead projector"
+      ],
+      "sourceUrl": "https://collection.sciencemuseumgroup.org.uk/objects/co4527/an-overhead-projector-master-view-graph-by-international-tutor-machines",
+      "sourceEvidence": [
+        {
+          "referenceId": "overhead-projector",
+          "url": "https://collection.sciencemuseumgroup.org.uk/objects/co4527/an-overhead-projector-master-view-graph-by-international-tutor-machines",
+          "evidence": "The museum catalogues Master View-Graph, circa 1960, specifically as an overhead projector, with an object image and aluminium/glass materials.",
+          "retrieval": "opened-and-read-primary-page",
+          "reviewedAt": "2026-09-25"
+        }
+      ],
+      "sourceLimits": [
+        "Catalogue supports the object class, not every geometric detail in an unseen generated asset. The draft's raised arm/lit base comes from the authoritative generation job. No digital projector or document camera equivalence is claimed."
+      ],
+      "visualReview": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "method": "All40 final installed originals viewed in5 labelled full-image contact sheets; generation/correction outputs also inspected individually.",
+        "note": "Overhead transparency projector has broad illuminated flat glass stage, upright support arm and raised lens/mirror head; complete device, no brand label."
+      },
+      "assetSha256": "0e3a099d83a00516b8403792d933bf246bbf2a4379a80109fb0c02ee10e93d14",
+      "file": "media/tilepuzzle/tilepuzzle-1000-903.webp",
+      "runtimeReview": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "checksPassed": 15,
+        "checksTotal": 15,
+        "viewports": [
+          390,
+          320
+        ],
+        "contactSheet": "docs/bank/rebuild-2026-09-18/checkpoint/tilepuzzle-resume/ui-2026-09-25/contact-1000.webp"
+      }
+    },
+    {
+      "id": "tilepuzzle-1000-904",
+      "answer": "حوامة",
+      "tier": 1000,
+      "topic": "وسائل نقل",
+      "question": "ما المركبة ذات الوسادة الهوائية والحافة المرنة التي تكشفها القطع؟",
+      "alt": [
+        "هوفركرافت",
+        "مركبة وسادة هوائية",
+        "Hovercraft"
+      ],
+      "sourceUrl": "https://www.griffonhoverwork.com/products/hovercraft/how-hovercraft-work/",
+      "sourceEvidence": [
+        {
+          "referenceId": "hovercraft",
+          "url": "https://www.griffonhoverwork.com/products/hovercraft/how-hovercraft-work/",
+          "evidence": "The manufacturer explains that lift fans pressurize the space between hull, ground and flexible skirt; pressure raises the craft and thrust propellers move it over surfaces including water and sand.",
+          "retrieval": "opened-and-read-primary-page",
+          "reviewedAt": "2026-09-25"
+        }
+      ],
+      "sourceLimits": [
+        "Generic air-cushion-vehicle identity only. No exact model, fan count or dimensions claimed. مروحية is not an alias."
+      ],
+      "visualReview": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "method": "All40 final installed originals viewed in5 labelled full-image contact sheets; generation/correction outputs also inspected individually.",
+        "note": "Hovercraft shows inflated black skirt around hull, passenger cabin and raised rear ducted propellers on beach; no wheels or name labels."
+      },
+      "assetSha256": "afb8993ca14a611ec42dcea8f94c7ee2c3f52377f195268eb4b591b58160ed2e",
+      "file": "media/tilepuzzle/tilepuzzle-1000-904.webp",
+      "runtimeReview": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "checksPassed": 15,
+        "checksTotal": 15,
+        "viewports": [
+          390,
+          320
+        ],
+        "contactSheet": "docs/bank/rebuild-2026-09-18/checkpoint/tilepuzzle-resume/ui-2026-09-25/contact-1000.webp"
+      }
+    },
+    {
+      "id": "tilepuzzle-1000-905",
+      "answer": "برج رياح",
+      "tier": 1000,
+      "topic": "أماكن",
+      "question": "ما البناء التقليدي المرتفع الذي يوجه الهواء لتبريد الغرف؟",
+      "alt": [
+        "بارجيل",
+        "بادكير",
+        "بادغير",
+        "ملقف هواء",
+        "برج تهوية تقليدي",
+        "Windcatcher"
+      ],
+      "sourceUrl": "https://www.dubaidet.gov.ae/-/media/dotsite/migrated/pdfs/2019/01/january-2019/72-hours-in-dubai-ar.pdf?la=ar",
+      "sourceEvidence": [
+        {
+          "referenceId": "windcatcher",
+          "url": "https://www.dubaidet.gov.ae/-/media/dotsite/migrated/pdfs/2019/01/january-2019/72-hours-in-dubai-ar.pdf?la=ar",
+          "evidence": "Official Arabic guide page 3 (zero-based PDF page 2) identifies traditional wind towers as البراجيل and states they direct cool air into houses; it also uses برج رياح for a traditional Emirati house.",
+          "retrieval": "opened-and-read-primary-page",
+          "reviewedAt": "2026-09-25"
+        }
+      ],
+      "sourceLimits": [
+        "Text was opened/read; attempted screenshot could not render. Supports Arabic naming and ventilation function, not exact four-sided geometric layout. بادكير/بادغير are editorial regional transliterations, not terms verified in this Arabic guide."
+      ],
+      "visualReview": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "method": "All40 final installed originals viewed in5 labelled full-image contact sheets; generation/correction outputs also inspected individually.",
+        "note": "Corrected windcatcher is fully framed with broad sky margin above cornice; vertical ventilation shafts/openings and projecting beams identify traditional passive-cooling tower. No exact building or surveyed design claimed."
+      },
+      "assetSha256": "a26018d8da25bbda4902fa6825ccb60d04a70e83a190122acb3b215f9af6261c",
+      "file": "media/tilepuzzle/tilepuzzle-1000-905.webp",
+      "runtimeReview": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "checksPassed": 15,
+        "checksTotal": 15,
+        "viewports": [
+          390,
+          320
+        ],
+        "contactSheet": "docs/bank/rebuild-2026-09-18/checkpoint/tilepuzzle-resume/ui-2026-09-25/contact-1000.webp"
+      }
+    },
+    {
+      "id": "tilepuzzle-1000-906",
+      "answer": "أعمدة بازلتية",
+      "tier": 1000,
+      "topic": "طبيعة",
+      "question": "ما التكوين الصخري المؤلف من منشورات داكنة متجاورة في الصورة؟",
+      "alt": [
+        "أعمدة بازلت",
+        "بازلت عمودي",
+        "تكوين بازلتي عمودي",
+        "Basalt columns"
+      ],
+      "sourceUrl": "https://www.nps.gov/subjects/volcanoes/columnar-jointing.htm",
+      "sourceEvidence": [
+        {
+          "referenceId": "basalt-columns",
+          "url": "https://www.nps.gov/subjects/volcanoes/columnar-jointing.htm",
+          "evidence": "Columnar jointing forms roughly prismatic parallel columns as cooling volcanic material contracts and fractures. Most columns are hexagonal, but three to seven sides occur; basalt is common but other volcanic rocks can also form columns.",
+          "retrieval": "opened-and-read-primary-page",
+          "reviewedAt": "2026-09-25"
+        }
+      ],
+      "sourceLimits": [
+        "Do not require every polygon to have six sides. Appearance alone cannot prove basalt composition; the planned scene specifies basalt. No identification of a particular real-world site."
+      ],
+      "visualReview": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "method": "All40 final installed originals viewed in5 labelled full-image contact sheets; generation/correction outputs also inspected individually.",
+        "note": "Coastal rock exposure has repeated tall polygonal columnar joints and broken column tops; intended basalt-column formation, not a particular site or exact hexagon count."
+      },
+      "assetSha256": "d131c44501c1a04feb38a5843f6d54467d78d09c9b94928fed4f541653efe6f3",
+      "file": "media/tilepuzzle/tilepuzzle-1000-906.webp",
+      "runtimeReview": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "checksPassed": 15,
+        "checksTotal": 15,
+        "viewports": [
+          390,
+          320
+        ],
+        "contactSheet": "docs/bank/rebuild-2026-09-18/checkpoint/tilepuzzle-resume/ui-2026-09-25/contact-1000.webp"
+      }
+    },
+    {
+      "id": "tilepuzzle-1000-907",
+      "answer": "هاندبان",
+      "tier": 1000,
+      "topic": "موسيقى",
+      "question": "ما الآلة المعدنية المحدبة ذات التجاويف النغمية حول مركز بارز؟",
+      "alt": [
+        "هاند بان",
+        "Handpan"
+      ],
+      "sourceUrl": "https://meinlsonicenergy.com/en/wiki",
+      "sourceEvidence": [
+        {
+          "referenceId": "handpan",
+          "url": "https://meinlsonicenergy.com/en/wiki",
+          "evidence": "Under Handpan, the manufacturer describes two joined hemispherical metal segments, a central field, surrounding fields on the upper side and a lower opening. Its Steel Tongue Drum entry separately describes cut-out tongues.",
+          "retrieval": "opened-and-read-primary-page",
+          "reviewedAt": "2026-09-25"
+        },
+        {
+          "referenceId": "hang-name",
+          "url": "https://panart.ch/en/history/the-history-of-panart",
+          "evidence": "The creator's history distinguishes its Hang instrument/name from later instruments and states that the Hang name was protected to avoid its becoming a generic name. Describes hand-played metal sound sculptures and tone-field development.",
+          "retrieval": "opened-and-read-primary-page",
+          "reviewedAt": "2026-09-25"
+        }
+      ],
+      "sourceLimits": [
+        "The English page mistranslates tone field as clay field; no claim of clay material is taken. Only steel construction/layout distinction used, not unrelated healing claims elsewhere on the page. Handpan is not a tongue drum.",
+        "Used only to avoid equating a generic unbranded handpan with the specific Hang name. No legal conclusion or manufacturer identification of the planned asset. هانغ درام removed as an imprecise generic alias."
+      ],
+      "visualReview": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "method": "All40 final installed originals viewed in5 labelled full-image contact sheets; generation/correction outputs also inspected individually.",
+        "note": "Steel handpan has convex lenticular shell, raised central dome and surrounding struck-tone fields, no slit tongues, no tuning or brand claim."
+      },
+      "assetSha256": "d09f3470501008db00704f696bc139003a52d4281b97a58923246937e25bc148",
+      "file": "media/tilepuzzle/tilepuzzle-1000-907.webp",
+      "runtimeReview": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "checksPassed": 15,
+        "checksTotal": 15,
+        "viewports": [
+          390,
+          320
+        ],
+        "contactSheet": "docs/bank/rebuild-2026-09-18/checkpoint/tilepuzzle-resume/ui-2026-09-25/contact-1000.webp"
+      }
+    },
+    {
+      "id": "tilepuzzle-1000-908",
+      "answer": "أسطرلاب",
+      "tier": 1000,
+      "topic": "هوايات وأدوات",
+      "question": "ما الأداة الفلكية القديمة ذات القرص المدرج والشبكة الدوارة؟",
+      "alt": [
+        "اسطرلاب فلكي",
+        "اصطرلاب",
+        "Astrolabe"
+      ],
+      "sourceUrl": "https://www.rmg.co.uk/collections/objects/rmgc-object-10720",
+      "sourceEvidence": [
+        {
+          "referenceId": "astrolabe",
+          "url": "https://www.rmg.co.uk/collections/objects/rmgc-object-10720",
+          "evidence": "The museum labels its brass circular instrument Astrolabe and describes its mater, plates, rete, degree/zodiac/calendar scales and alidade.",
+          "retrieval": "opened-and-read-primary-page",
+          "reviewedAt": "2026-09-25"
+        }
+      ],
+      "sourceLimits": [
+        "Supports the generic layered circular astronomical instrument and rete terminology; exact engraving, epoch, cultural origin and working calibration cannot be inferred from a generated visual. Not a sextant."
+      ],
+      "visualReview": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "method": "All40 final installed originals viewed in5 labelled full-image contact sheets; generation/correction outputs also inspected individually.",
+        "note": "Corrected brass astrolabe is entirely inside frame including top knob and suspension ring; openwork rete, central pivot, rotating straight rule and circular engraved scales are visible. Engraving is illustrative, not a usable calibrated astronomical instrument."
+      },
+      "assetSha256": "505817d10a5e9c3f3827fa56e1cffe55a61c41bc4d78b6f7b04a657ebe996192",
+      "file": "media/tilepuzzle/tilepuzzle-1000-908.webp",
+      "runtimeReview": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "checksPassed": 15,
+        "checksTotal": 15,
+        "viewports": [
+          390,
+          320
+        ],
+        "contactSheet": "docs/bank/rebuild-2026-09-18/checkpoint/tilepuzzle-resume/ui-2026-09-25/contact-1000.webp"
+      }
+    }
+  ],
+  "runtime": {
+    "status": "approved",
+    "questions": 40,
+    "checksPassed": 606,
+    "checksTotal": 606,
+    "testedCategorySha256": "6609d1e98ca7816bb288b28bbfaccd370479ae479e85f0748d4b50c45e78cf27",
+    "evidence": "docs/bank/rebuild-2026-09-18/checkpoint/tilepuzzle-resume/ui-2026-09-25/results.json",
+    "manualVisualReview": {
+      "status": "approved",
+      "reviewedAt": "2026-09-25",
+      "questions": 40,
+      "method": "Viewed5 final contact sheets showing all40 actual320px mobile jumbled stages beside revealed full images, plus a full320px astrolabe question screenshot. Originals were separately reviewed.",
+      "observations": [
+        "All40 grids show12 distinct pieces from their own source; dominant identity features are distributed across pieces and originals recover after reveal.",
+        "Corrected harp and excavator retain complete subject outlines; pan-flute corrected open-mouth/closed-tip geometry is visible.",
+        "Pottery-wheel wording identifies the tool rather than the pot. Roman theatre is a generic semicircular type, not a named site.",
+        "Uncommon answers remain recognition challenges supported by aliases; difficulty targets have not been measured with players.",
+        "Retained telescope image crops the low ends of tripod legs, while the complete optical tube/mount and three-leg structure remain identifiable; this does not introduce an alternate answer.",
+        "Astrolabe inscriptions, musical note counts and geological composition are illustrative; no calibrated instrument, exact model or measured real-site claim."
+      ]
+    }
+  },
+  "focusedValidation": {
+    "contentErrors": 0,
+    "expectedSharedStatusMismatches": 5,
+    "note": "Only bank-status recorded tier counts remain old; root owns synchronization. No shared files changed by this worker."
+  }
+}

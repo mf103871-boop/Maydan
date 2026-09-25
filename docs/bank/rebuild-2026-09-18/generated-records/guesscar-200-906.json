@@ -13,7 +13,14 @@
   "sha256": "6ddf0437304ec919e808e5c15990b3a51683bee502eee5d0101e2a27b425cb95",
   "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
   "review": {
-    "status": "pending",
-    "note": "Generation and file checks do not imply subject or gameplay verification."
+    "status": "approved",
+    "subjectReview": "approved",
+    "reviewedAt": "2026-09-25",
+    "sourceReview": "docs/bank/rebuild-2026-09-18/review-guesscar-final.json",
+    "note": "Corolla hatchback shape, hooked slim lamps and broad lower grille match E210 family.",
+    "gameplayReview": "approved",
+    "scope": "Broad model-family identification, complete framing and absence of readable model-name answers. Exact year, trim and fine engineering fidelity are not certified.",
+    "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/guesscar/runtime.json",
+    "runtimePackSha256": "7a1cd3fd4d4f947d19af7831914c121f0efe5464b64b2d10a44ea2bf81c3eec9"
   }
 }

@@ -4,16 +4,38 @@
   "pack": "tilepuzzle",
   "file": "media/tilepuzzle/tilepuzzle-600-904.webp",
   "asset": "media/tilepuzzle/tilepuzzle-600-904.webp",
-  "prompt": "Use case: photorealistic-natural.\nAsset type: one standalone professional image for an Arabic family visual guessing game (age 16+).\nSubject: a yellow excavator with tracked base, boom and bucket.\nStyle: realistic high quality photography with correct anatomy and object geometry, clean natural textures.\nComposition: landscape 4:3, the complete subject fills about 75% of the frame; centered with ample margins, immediately recognizable when revealed.  Spread meaningful details across the frame because it will be shuffled into twelve tiles.\nBackground: simple uncluttered setting appropriate to the subject, natural lighting.\nConstraints: exactly the stated subject; no label, caption, watermark, collage, borders or readable words.  ",
+  "prompt": "Use case: precise-object-edit.\nAsset type: one standalone 4:3 image for a visual guessing game.\nInput image 1: edit target, yellow tracked excavator on a construction site.\nPrimary request: widen the framing to show the complete same excavator including its highest boom joint and pivot with at least 8% clear sky above, and the full bucket and tracks with surrounding margin. Preserve correct connected hydraulic boom, arm, bucket, cab and tracked chassis, yellow paint, natural light, and construction-site background. Vehicle should occupy about 75% of image height.\nConstraints: no part of the vehicle cropped, no added equipment, text, logos, labels, watermark, tile cuts or borders.",
   "tool": "OpenAI image generation (built-in)",
-  "createdAt": "2026-09-23",
+  "createdAt": "2026-09-25",
   "width": 1280,
   "height": 960,
-  "bytes": 217448,
-  "sha256": "dd71a37898a1dda619da693a6d7cba4aa817f59637deca3c75ccd761244efad7",
+  "bytes": 226274,
+  "sha256": "d37088f9d783f9789c2fa4eac35c4771757b960bd7d349b28817a623d081f021",
   "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
   "review": {
-    "status": "pending",
-    "note": "Generation and file checks do not imply subject or gameplay verification."
-  }
+    "status": "approved",
+    "reviewedAt": "2026-09-25",
+    "scope": "Source image identity/anatomy/framing and actual12-tile jumble/reveal/hide gameplay for this specific question.",
+    "note": "Corrected yellow excavator shows connected hydraulic boom and upper pivot fully within frame, complete bucket, cab and tracks; no model-name label.",
+    "sourceReviewRecord": "docs/bank/rebuild-2026-09-18/review-tilepuzzle-final.json",
+    "runtimeReview": {
+      "status": "approved",
+      "reviewedAt": "2026-09-25",
+      "checksPassed": 15,
+      "checksTotal": 15,
+      "viewports": [
+        390,
+        320
+      ],
+      "contactSheet": "docs/bank/rebuild-2026-09-18/checkpoint/tilepuzzle-resume/ui-2026-09-25/contact-600.webp"
+    },
+    "testedCategorySha256": "6609d1e98ca7816bb288b28bbfaccd370479ae479e85f0748d4b50c45e78cf27"
+  },
+  "originalGeneration": {
+    "fileBasename": "exec-95f1ae78-a052-4d91-bba0-54a177b484c0.png",
+    "sha256": "bfc5313258d0a2f1aca851e361478d78ca866793b5446567183cbe3e586ed723"
+  },
+  "generationMode": "edit",
+  "referenceSha256": "dd71a37898a1dda619da693a6d7cba4aa817f59637deca3c75ccd761244efad7",
+  "referenceAsset": "docs/bank/rebuild-2026-09-18/checkpoint/tilepuzzle-resume/revisions-2026-09-25/before/tilepuzzle-600-904.webp"
 }

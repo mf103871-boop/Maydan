@@ -13,7 +13,22 @@
   "sha256": "c1e0ab627d98ad373187d3f0ce4e32664d0d0c3e3c75db077f3c204bb99c8670",
   "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
   "review": {
-    "status": "pending",
-    "note": "Generation and file checks do not imply subject or gameplay verification."
+    "status": "approved",
+    "reviewedAt": "2026-09-25",
+    "scope": "Source image identity/anatomy/framing and actual12-tile jumble/reveal/hide gameplay for this specific question.",
+    "note": "Mechanical typewriter with round keys, type bars, ribbon, roller and blank paper; no typed clue.",
+    "sourceReviewRecord": "docs/bank/rebuild-2026-09-18/review-tilepuzzle-final.json",
+    "runtimeReview": {
+      "status": "approved",
+      "reviewedAt": "2026-09-25",
+      "checksPassed": 15,
+      "checksTotal": 15,
+      "viewports": [
+        390,
+        320
+      ],
+      "contactSheet": "docs/bank/rebuild-2026-09-18/checkpoint/tilepuzzle-resume/ui-2026-09-25/contact-800.webp"
+    },
+    "testedCategorySha256": "6609d1e98ca7816bb288b28bbfaccd370479ae479e85f0748d4b50c45e78cf27"
   }
 }

@@ -13,7 +13,11 @@
   "sha256": "bb57ec694604aca2fa7197ae1ac850a56da1cff2a49b923e9aa5966d6ad68c6f",
   "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
   "review": {
-    "status": "pending",
-    "note": "Generation and file checks do not imply subject or gameplay verification."
+    "status": "approved",
+    "reviewedAt": "2026-09-25",
+    "note": "Yellow articulated street tram on rails with an overhead collector. Static blur can resemble a bus, so retaining the rail/city clue is useful. Exact tram model and city are unsupported.",
+    "gameplayReview": "approved",
+    "sourceReview": "docs/bank/rebuild-2026-09-18/review-blur-generated.json",
+    "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/blur/runtime.json"
   }
 }

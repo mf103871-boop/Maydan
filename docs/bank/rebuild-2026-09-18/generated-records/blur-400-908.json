@@ -13,12 +13,11 @@
   "sha256": "b5e230a76e468b5a0eeffe1ecc47c0e8941a535ada69a2a613afdb9c56485592",
   "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
   "review": {
-    "status": "passed",
-    "reviewedAt": "2026-09-23",
-    "fullImage": "بركان مخروطي تخرج من فوهته حمم ورماد؛ لا يطلب اسم بركان حقيقي.",
-    "blurredGameplay": "Visually checked both static mobile/desktop approximations; identifying overall shape remains visible, fine details are hidden.",
-    "previewMode": "static-approximation-not-browser",
-    "sigma": 16,
-    "saturation": 1.3
+    "status": "approved",
+    "reviewedAt": "2026-09-25",
+    "note": "Conical volcano with bright erupting summit and orange lava streams. A generic volcano answer is supported; no location or actual event claim.",
+    "gameplayReview": "approved",
+    "sourceReview": "docs/bank/rebuild-2026-09-18/review-blur-generated.json",
+    "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/blur/runtime.json"
   }
 }

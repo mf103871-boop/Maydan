@@ -5,18 +5,22 @@
   "a": "رمي المطرقة",
   "p": 1000,
   "topic": "رياضة",
-  "prompt": "Use case: photorealistic-natural.\nAsset type: one standalone professional image for an Arabic family visual guessing game (age 16+).\nSubject: an adult track athlete swinging a hammer throw implement, ball on a wire, in a throwing circle.\nStyle: realistic high quality photography with correct anatomy and object geometry, clean natural textures.\nComposition: landscape 4:3, the complete subject fills about 75% of the frame; centered with ample margins, immediately recognizable when revealed.  \nBackground: simple uncluttered setting appropriate to the subject, natural lighting.\nConstraints: exactly the stated subject; no label, caption, watermark, collage, borders or readable words. Create a sharp original, not a blurred image; the game applies the blur.  The subject must be visually unambiguous, with a strong clear outline and identifying features large enough to survive a moderate blur. Do not add any text or split-panel layout. Keep the entire subject in frame.",
+  "prompt": "Use case: precise-object-edit. The supplied image is the edit target. Remove ONLY the sports-brand logo on the athlete's shoes and any tiny clothing brand marks. Replace each logo with continuous plain white, gray or black fabric/leather matching the adjacent shoe or garment. Keep the exact athlete, hands, fingers, face, pose, feet, single handle held by both hands, taut wire, spherical hammer head, cage, throwing circle, grass, background, colors, framing and lighting unchanged. No added words, logos or symbols. This is an unbranded educational sports illustration.",
   "question": {
     "p": 1000,
-    "q": "ما الرياضة التي تدل عليها الصورة الضبابية؟",
+    "q": "ما مسابقة ألعاب القوى التي تستخدم كرة معدنية متصلة بسلك؟",
     "a": "رمي المطرقة",
     "qid": "blur-1000-907",
     "type": "image",
     "effect": "blur",
-    "alt": [],
+    "alt": [
+      "إطاحة المطرقة",
+      "قذف المطرقة",
+      "Hammer throw"
+    ],
     "topic": "رياضة",
     "difficultyTarget": 0.15,
-    "verified": false,
+    "verified": true,
     "sourceUrl": "docs/bank/rebuild-2026-09-18/review-blur-generated.json",
     "media": {
       "src": "blur-1000-907.webp",
@@ -26,8 +30,8 @@
       "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
       "provenance": {
         "kind": "ai-generated",
-        "tool": "OpenAI image generation",
-        "createdAt": "2026-09-18",
+        "tool": "OpenAI image generation (built-in)",
+        "createdAt": "2026-09-25",
         "record": "docs/bank/rebuild-2026-09-18/generated-records/blur-1000-907.json"
       }
     }

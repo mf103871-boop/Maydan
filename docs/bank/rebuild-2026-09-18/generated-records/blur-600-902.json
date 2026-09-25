@@ -13,7 +13,11 @@
   "sha256": "b9dc51955536e009312ac8b4d15b217072b133484da9fa5533c96eea674be569",
   "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
   "review": {
-    "status": "pending",
-    "note": "Generation and file checks do not imply subject or gameplay verification."
+    "status": "approved",
+    "reviewedAt": "2026-09-25",
+    "note": "Salted golden pretzel with the familiar crossing arms and three openings. Shape survives approximate blur; no regional or recipe subtype required.",
+    "gameplayReview": "approved",
+    "sourceReview": "docs/bank/rebuild-2026-09-18/review-blur-generated.json",
+    "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/blur/runtime.json"
   }
 }

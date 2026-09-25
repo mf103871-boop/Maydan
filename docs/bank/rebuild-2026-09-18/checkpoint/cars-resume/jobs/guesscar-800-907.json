@@ -1,0 +1,51 @@
+{
+  "id": "guesscar-800-907",
+  "kind": "question",
+  "pack": "guesscar",
+  "p": 800,
+  "a": "لامبورغيني إل إم 002",
+  "topic": "دفع رباعي",
+  "prompt": "Use case: product-mockup.\nAsset: one AI-generated car-identification illustration for an Arabic family quiz.\nSubject: 1988 Lamborghini LM002, red.\nGenerate a new high-quality realistic studio rendering of precisely this vehicle model and generation. Match its real proportions, characteristic body shape, grille, headlights, windows and wheel layout accurately; do not invent a hybrid car.\nComposition: full vehicle from front three-quarter angle (rear three-quarter angle for Tatra 87), centered, wheels and roof wholly visible, landscape 4:3. Soft ivory seamless studio floor and background, subtle contact shadow, natural materials and paint.\nDo not reproduce the described original photograph or its environment. No people, scenery, border, watermark or captions. The license plate must be blank. Omit readable model-name lettering that would reveal the answer. Brand emblems may retain their simple graphic shapes. This is a faithful visual illustration, not a document photograph.",
+  "priorQid": "guesscar-800-037",
+  "identityReference": {
+    "src": "guesscar-800-037.webp",
+    "type": "image",
+    "title": "Lamborghini LM 002, 1988, seen at CLASSIC REMISE, Duesseldorf, Germany",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lamborghini_LM002_Gen1_Type129_1986-1993_1988_frontleft_2013-03-17_U_(cropped).JPG",
+    "author": "Detectandpreserve",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+  },
+  "question": {
+    "p": 800,
+    "q": "ما اسم المركبة الحمراء الصندوقية ذات الإطارات الضخمة والصندوق الخلفي؟",
+    "a": "لامبورغيني إل إم 002",
+    "alt": [
+      "ال ام 002",
+      "رامبو لامبو",
+      "لامبورغيني LM002",
+      "Lamborghini LM002",
+      "LM002"
+    ],
+    "qid": "guesscar-800-907",
+    "type": "image",
+    "topic": "دفع رباعي",
+    "difficultyTarget": 0.25,
+    "verified": true,
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lamborghini_LM002_Gen1_Type129_1986-1993_1988_frontleft_2013-03-17_U_(cropped).JPG",
+    "media": {
+      "src": "guesscar-800-907.webp",
+      "type": "image",
+      "title": "سيارة — تصوير توضيحي مولّد",
+      "author": "Maydan / OpenAI image generation",
+      "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+      "provenance": {
+        "kind": "ai-generated",
+        "tool": "OpenAI image generation",
+        "createdAt": "2026-09-25",
+        "record": "docs/bank/rebuild-2026-09-18/generated-records/guesscar-800-907.json"
+      }
+    }
+  },
+  "model": "1988 Lamborghini LM002, red"
+}

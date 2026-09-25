@@ -13,7 +13,14 @@
   "sha256": "539dc96d74c4a2117fc85e9104d7d6f933a650679cf88d6cfc9a6ddff96fcde1",
   "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
   "review": {
-    "status": "pending",
-    "note": "Generation and file checks do not imply subject or gameplay verification."
+    "status": "approved",
+    "subjectReview": "approved",
+    "reviewedAt": "2026-09-25",
+    "sourceReview": "docs/bank/rebuild-2026-09-18/review-guesscar-final.json",
+    "note": "911 arched roofline, rear-biased cabin and round/oval raised lamps match model family.",
+    "gameplayReview": "approved",
+    "scope": "Broad model-family identification, complete framing and absence of readable model-name answers. Exact year, trim and fine engineering fidelity are not certified.",
+    "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/guesscar/runtime.json",
+    "runtimePackSha256": "7a1cd3fd4d4f947d19af7831914c121f0efe5464b64b2d10a44ea2bf81c3eec9"
   }
 }

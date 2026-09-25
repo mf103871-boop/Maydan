@@ -13,7 +13,14 @@
   "sha256": "bff3028211fec1fb1aca99695b7a08b0d8c9ec6624facaf9cf3f054be7ba2075",
   "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
   "review": {
-    "status": "pending",
-    "note": "Generation and file checks do not imply subject or gameplay verification."
+    "status": "approved",
+    "subjectReview": "approved",
+    "reviewedAt": "2026-09-25",
+    "sourceReview": "docs/bank/rebuild-2026-09-18/review-guesscar-final.json",
+    "note": "FJ Cruiser round lamps, short upright windshield and white roof match family.",
+    "gameplayReview": "approved",
+    "scope": "Broad model-family identification, complete framing and absence of readable model-name answers. Exact year, trim and fine engineering fidelity are not certified.",
+    "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/guesscar/runtime.json",
+    "runtimePackSha256": "7a1cd3fd4d4f947d19af7831914c121f0efe5464b64b2d10a44ea2bf81c3eec9"
   }
 }

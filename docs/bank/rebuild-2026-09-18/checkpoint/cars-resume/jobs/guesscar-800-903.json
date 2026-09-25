@@ -1,0 +1,49 @@
+{
+  "id": "guesscar-800-903",
+  "kind": "question",
+  "pack": "guesscar",
+  "p": 800,
+  "a": "لامبورغيني ميورا",
+  "topic": "رياضية",
+  "prompt": "Use case: product-mockup.\nAsset: one AI-generated car-identification illustration for an Arabic family quiz.\nSubject: 1971 Lamborghini Miura P400 SV, yellow.\nGenerate a new high-quality realistic studio rendering of precisely this vehicle model and generation. Match its real proportions, characteristic body shape, grille, headlights, windows and wheel layout accurately; do not invent a hybrid car.\nComposition: full vehicle from front three-quarter angle (rear three-quarter angle for Tatra 87), centered, wheels and roof wholly visible, landscape 4:3. Soft ivory seamless studio floor and background, subtle contact shadow, natural materials and paint.\nDo not reproduce the described original photograph or its environment. No people, scenery, border, watermark or captions. The license plate must be blank. Omit readable model-name lettering that would reveal the answer. Brand emblems may retain their simple graphic shapes. This is a faithful visual illustration, not a document photograph.",
+  "priorQid": "guesscar-800-014",
+  "identityReference": {
+    "src": "guesscar-800-014.webp",
+    "type": "image",
+    "title": "1971 Lamborghini Miura P400 SV Taken at the Concours d'Elegance Hampton Court 2019",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:1971_Lamborghini_Miura_P400_SV.jpg",
+    "author": "Chelsea Jay",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  "question": {
+    "p": 800,
+    "q": "ما اسم الكوبيه الصفراء ذات الزجاج الأمامي العريض وفتحات الغطاء السوداء؟",
+    "a": "لامبورغيني ميورا",
+    "alt": [
+      "ميورا",
+      "Lamborghini Miura",
+      "Miura"
+    ],
+    "qid": "guesscar-800-903",
+    "type": "image",
+    "topic": "رياضية",
+    "difficultyTarget": 0.25,
+    "verified": true,
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:1971_Lamborghini_Miura_P400_SV.jpg",
+    "media": {
+      "src": "guesscar-800-903.webp",
+      "type": "image",
+      "title": "سيارة — تصوير توضيحي مولّد",
+      "author": "Maydan / OpenAI image generation",
+      "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+      "provenance": {
+        "kind": "ai-generated",
+        "tool": "OpenAI image generation",
+        "createdAt": "2026-09-25",
+        "record": "docs/bank/rebuild-2026-09-18/generated-records/guesscar-800-903.json"
+      }
+    }
+  },
+  "model": "1971 Lamborghini Miura P400 SV, yellow"
+}

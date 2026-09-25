@@ -1,0 +1,50 @@
+{
+  "id": "guesscar-200-908",
+  "kind": "question",
+  "pack": "guesscar",
+  "p": 200,
+  "a": "تسلا سايبرتراك",
+  "topic": "كهربائية",
+  "prompt": "Use case: product-mockup.\nAsset: one AI-generated car-identification illustration for an Arabic family quiz.\nSubject: 2024 Tesla Cybertruck, stainless steel.\nGenerate a new high-quality realistic studio rendering of precisely this vehicle model and generation. Match its real proportions, characteristic body shape, grille, headlights, windows and wheel layout accurately; do not invent a hybrid car.\nComposition: full vehicle from front three-quarter angle (rear three-quarter angle for Tatra 87), centered, wheels and roof wholly visible, landscape 4:3. Soft ivory seamless studio floor and background, subtle contact shadow, natural materials and paint.\nDo not reproduce the described original photograph or its environment. No people, scenery, border, watermark or captions. The license plate must be blank. Omit readable model-name lettering that would reveal the answer. Brand emblems may retain their simple graphic shapes. This is a faithful visual illustration, not a document photograph.",
+  "priorQid": "guesscar-200-046",
+  "identityReference": {
+    "src": "guesscar-200-046.webp",
+    "type": "image",
+    "title": "A 2024 Tesla Cybertruck Foundation Series at the 2024 Greenwich Concours d'Elegance. I feel vaguely dirty for having ph…",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:2024_Tesla_Cybertruck_Foundation_Series,_front_left_(Greenwich).jpg",
+    "author": "Mr.choppers",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+  },
+  "question": {
+    "p": 200,
+    "q": "ما طراز البيك أب الفضية ذات الألواح المسطحة والزوايا الحادة؟",
+    "a": "تسلا سايبرتراك",
+    "alt": [
+      "سايبر تراك",
+      "تسلا سيبرتراك",
+      "Cybertruck",
+      "Tesla Cybertruck"
+    ],
+    "qid": "guesscar-200-908",
+    "type": "image",
+    "topic": "كهربائية",
+    "difficultyTarget": 0.8,
+    "verified": true,
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:2024_Tesla_Cybertruck_Foundation_Series,_front_left_(Greenwich).jpg",
+    "media": {
+      "src": "guesscar-200-908.webp",
+      "type": "image",
+      "title": "سيارة — تصوير توضيحي مولّد",
+      "author": "Maydan / OpenAI image generation",
+      "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+      "provenance": {
+        "kind": "ai-generated",
+        "tool": "OpenAI image generation",
+        "createdAt": "2026-09-23",
+        "record": "docs/bank/rebuild-2026-09-18/generated-records/guesscar-200-908.json"
+      }
+    }
+  },
+  "model": "2024 Tesla Cybertruck, stainless steel"
+}

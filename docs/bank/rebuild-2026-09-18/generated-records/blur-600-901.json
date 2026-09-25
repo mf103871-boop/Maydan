@@ -13,7 +13,11 @@
   "sha256": "b6891f3686ca4923f0d8f2f0f1715f23796766525b014b9736340bc0a5d88e4d",
   "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
   "review": {
-    "status": "pending",
-    "note": "Generation and file checks do not imply subject or gameplay verification."
+    "status": "approved",
+    "reviewedAt": "2026-09-25",
+    "note": "Full-size view shows a sloth hanging with four limbs, shaggy fur, pale round face with dark eye markings and curved claws. Three gripping claw sets are clearly exposed; the fourth is naturally partly obscured over the branch. No extra-limb defect observed. Static blur loses facial detail, so retain the hanging/claw wording.",
+    "gameplayReview": "approved",
+    "sourceReview": "docs/bank/rebuild-2026-09-18/review-blur-generated.json",
+    "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/blur/runtime.json"
   }
 }

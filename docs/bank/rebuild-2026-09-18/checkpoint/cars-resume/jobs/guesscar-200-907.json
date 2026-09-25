@@ -1,0 +1,50 @@
+{
+  "id": "guesscar-200-907",
+  "kind": "question",
+  "pack": "guesscar",
+  "p": 200,
+  "a": "تويوتا هايلكس",
+  "topic": "بيك أب وشاحنات",
+  "prompt": "Use case: product-mockup.\nAsset: one AI-generated car-identification illustration for an Arabic family quiz.\nSubject: 2016 Toyota Hilux Invincible double-cab pickup, white.\nGenerate a new high-quality realistic studio rendering of precisely this vehicle model and generation. Match its real proportions, characteristic body shape, grille, headlights, windows and wheel layout accurately; do not invent a hybrid car.\nComposition: full vehicle from front three-quarter angle (rear three-quarter angle for Tatra 87), centered, wheels and roof wholly visible, landscape 4:3. Soft ivory seamless studio floor and background, subtle contact shadow, natural materials and paint.\nDo not reproduce the described original photograph or its environment. No people, scenery, border, watermark or captions. The license plate must be blank. Omit readable model-name lettering that would reveal the answer. Brand emblems may retain their simple graphic shapes. This is a faithful visual illustration, not a document photograph.",
+  "priorQid": "guesscar-200-035",
+  "identityReference": {
+    "src": "guesscar-200-035.webp",
+    "type": "image",
+    "title": "2016 HiLux Invincible D-4D 4WD 2.4 Front Taken in Warwick",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:2016_Toyota_HiLux_Invincible_D-4D_4WD_2.4_Front.jpg",
+    "author": "Vauxford",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  "question": {
+    "p": 200,
+    "q": "ما اسم البيك أب البيضاء ذات المقصورة المزدوجة؟",
+    "a": "تويوتا هايلكس",
+    "alt": [
+      "هايلكس",
+      "هيلوكس",
+      "Toyota Hilux",
+      "Hilux"
+    ],
+    "qid": "guesscar-200-907",
+    "type": "image",
+    "topic": "بيك أب وشاحنات",
+    "difficultyTarget": 0.8,
+    "verified": true,
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:2016_Toyota_HiLux_Invincible_D-4D_4WD_2.4_Front.jpg",
+    "media": {
+      "src": "guesscar-200-907.webp",
+      "type": "image",
+      "title": "سيارة — تصوير توضيحي مولّد",
+      "author": "Maydan / OpenAI image generation",
+      "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+      "provenance": {
+        "kind": "ai-generated",
+        "tool": "OpenAI image generation",
+        "createdAt": "2026-09-23",
+        "record": "docs/bank/rebuild-2026-09-18/generated-records/guesscar-200-907.json"
+      }
+    }
+  },
+  "model": "2016 Toyota Hilux Invincible double-cab pickup, white"
+}

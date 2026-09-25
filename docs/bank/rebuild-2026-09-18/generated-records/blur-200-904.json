@@ -13,12 +13,11 @@
   "sha256": "3585c16d5681b0832cbe18ddb60ccbd29dbba9df113e5ab45707a7480ca94490",
   "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
   "review": {
-    "status": "passed",
-    "reviewedAt": "2026-09-23",
-    "fullImage": "بيانو جناح أسود بغطاء مرفوع ولوحة مفاتيح ودواسات؛ لا يطلب عدد المفاتيح.",
-    "blurredGameplay": "Visually checked both static mobile/desktop approximations; identifying overall shape remains visible, fine details are hidden.",
-    "previewMode": "static-approximation-not-browser",
-    "sigma": 16,
-    "saturation": 1.3
+    "status": "approved",
+    "reviewedAt": "2026-09-25",
+    "note": "Black grand piano, raised lid, keyboard, legs and pedals. General piano answer fits the sharp image and large blurred profile.",
+    "gameplayReview": "approved",
+    "sourceReview": "docs/bank/rebuild-2026-09-18/review-blur-generated.json",
+    "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/blur/runtime.json"
   }
 }
