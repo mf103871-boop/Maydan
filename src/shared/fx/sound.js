@@ -1,31 +1,30 @@
-import { BUBBLE_BANK, BUBBLE_RATE } from './bubble-bank.js';
+import { SAMPLE_BANK, SAMPLE_RATE } from './sample-bank.js';
 
-// Approved cartoon bubble samples, embedded for instant offline playback.
-const TAPS = ['tap', 'tap-2', 'tap-3'];
+// Approved option A, with a +6 dB tap master, embedded for offline playback.
 export const RECIPES = {
-  click: (c) => c.sample(c.nextTap()),
-  pop: (c) => c.sample('tap-3', { gain: 0.9 }),
-  tick: (c) => c.sample('tap-2', { gain: 0.32, rate: 0.94 }),
-  tickFast: (c) => c.sample('tap', { gain: 0.42, rate: 1.08 }),
+  click: (c) => c.sample('tap'),
+  pop: (c) => c.sample('tap', { gain: 0.9 }),
+  tick: (c) => c.sample('tap', { gain: 0.16 }),
+  tickFast: (c) => c.sample('tap', { gain: 0.25 }),
   correct: (c) => c.sample('correct'),
   wrong: (c) => c.sample('wrong'),
-  buzzer: (c) => c.sample('wrong', { rate: 0.9 }),
-  whoosh: (c) => c.sample('reveal', { gain: 0.65, rate: 1.1 }),
+  buzzer: (c) => c.sample('wrong'),
+  whoosh: (c) => c.sample('reveal', { gain: 0.55 }),
   fanfare: (c) => c.sample('win'),
   explosion: (c) => {
-    c.sample('wrong', { rate: 0.85 });
-    c.sample('tap-3', { at: 0.12, gain: 0.6, rate: 0.8 });
+    c.sample('wrong');
+    c.sample('tap', { at: 0.12, gain: 0.5 });
   },
   drumroll: (c) => {
     [0, 0.23, 0.44, 0.63, 0.8, 0.95, 1.08, 1.19].forEach((at, i) => {
-      c.sample(TAPS[i % TAPS.length], { at, gain: 0.28 + i * 0.035, rate: 0.9 + i * 0.035 });
+      c.sample('tap', { at, gain: 0.14 + i * 0.025 });
     });
   },
-  countdown: (c) => c.sample('tap-3', { gain: 0.55, rate: 0.9 }),
-  countdownGo: (c) => c.sample('correct'),
+  countdown: (c) => c.sample('tap', { gain: 0.45 }),
+  countdownGo: (c) => c.sample('start'),
   reveal: (c) => c.sample('reveal'),
-  pass: (c) => c.sample('tap-3', { gain: 0.7, rate: 0.85 }),
-  timeout: (c) => c.sample('wrong', { rate: 0.9 }),
+  pass: (c) => c.sample('tap', { gain: 0.65 }),
+  timeout: (c) => c.sample('wrong'),
 };
 
 const clampVolume = (value) => typeof value === 'number' && Number.isFinite(value) ? Math.min(1, Math.max(0, value)) : 0.75;
@@ -43,7 +42,6 @@ export function createSound({ enabled = true, volume = 0.75 } = {}) {
   let generation = 0;
   let ducked = false;
   let resumePromise = null;
-  let tapIndex = 0;
   const buffers = new Map();
   const voices = new Set();
   const lastPlayed = new Map();
@@ -79,9 +77,9 @@ export function createSound({ enabled = true, volume = 0.75 } = {}) {
   }
   function bufferFor(id) {
     if (buffers.has(id)) return buffers.get(id);
-    const entry = BUBBLE_BANK[id];
+    const entry = SAMPLE_BANK[id];
     const bytes = atob(entry.pcm);
-    const buffer = context.createBuffer(2, entry.frames, BUBBLE_RATE);
+    const buffer = context.createBuffer(2, entry.frames, SAMPLE_RATE);
     const channels = [buffer.getChannelData(0), buffer.getChannelData(1)];
     for (let frame = 0, offset = 0; frame < entry.frames; frame += 1) {
       for (let channel = 0; channel < 2; channel += 1, offset += 3) {
@@ -121,7 +119,7 @@ export function createSound({ enabled = true, volume = 0.75 } = {}) {
       compressor.release.value = 0.12;
       master.connect(compressor);
       compressor.connect(context.destination);
-      voiceContext = { sample, nextTap: () => TAPS[tapIndex++ % TAPS.length] };
+      voiceContext = { sample };
       master.gain.value = canPlay() ? level * level * (ducked ? 0.3 : 1) : 0;
       return context;
     } catch {
