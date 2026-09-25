@@ -13,7 +13,27 @@
   "sha256": "10c4f4c76bdd240c0979c25517c71eea08c5dc1bd972308ef8b94270cb677db3",
   "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
   "review": {
-    "status": "pending",
-    "note": "Generation and file checks do not imply subject or gameplay verification."
+    "status": "approved",
+    "reviewedAt": "2026-09-25",
+    "method": "Codex visual inspection of actual rendered contact sheets; China, Canada and Nauru additionally viewed full-size.",
+    "note": "Central red circular disc on an opaque white field.",
+    "limitations": "Disc is approximately 63% of height versus official 60%; identity is unambiguous, exact geometry is not certified.",
+    "pixelExactOfficialGeometry": false,
+    "sourceReview": "docs/bank/rebuild-2026-09-18/review-flags.json",
+    "gameplayReview": "not-individually-exercised",
+    "identityReview": "approved",
+    "runtimeReview": "approved",
+    "runtimeScope": {
+      "status": "approved",
+      "reviewedAt": "2026-09-25",
+      "browserDecode": "passed",
+      "decodedWidth": 1280,
+      "decodedHeight": 853,
+      "directGameplaySample": false,
+      "gameplayReview": "not-individually-exercised",
+      "scope": "This asset decoded in Chromium; shared gameplay and mobile behavior were approved using five other questions, one per tier. This question was not individually exercised in gameplay.",
+      "evidenceRecord": "docs/bank/rebuild-2026-09-18/review-flags.json"
+    },
+    "scope": "Approved as a generated flag-recognition illustration after source/identity review and pack runtime QA. Exact official print geometry is not certified."
   }
 }

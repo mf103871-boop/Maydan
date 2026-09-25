@@ -1075,15 +1075,15 @@
       "name": "أعلام",
       "icon": "🚩",
       "media": true,
-      "status": "pending",
+      "status": "done",
       "counts": {
-        "200": 48,
-        "400": 48,
-        "600": 48,
-        "800": 48,
-        "1000": 48
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
       },
-      "doneAt": null,
+      "doneAt": "2026-09-25T02:03:52.857691+00:00",
       "order": 69,
       "mediaKind": "image",
       "defaultType": "image"
@@ -1143,15 +1143,15 @@
       "name": "صور غامضة",
       "icon": "🌑",
       "media": true,
-      "status": "pending",
+      "status": "done",
       "counts": {
-        "200": 48,
-        "400": 48,
-        "600": 48,
-        "800": 48,
-        "1000": 48
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
       },
-      "doneAt": null,
+      "doneAt": "2026-09-25T02:03:52.857691+00:00",
       "order": 73,
       "mediaKind": "image",
       "defaultType": "image:silhouette"
@@ -1242,7 +1242,7 @@
       "defaultType": "audio"
     }
   },
-  "updatedAt": "2026-09-23",
+  "updatedAt": "2026-09-25",
   "contentVersion": "badeeha-curated-2026-09-18",
   "tierCount": 8,
   "qidRange": {

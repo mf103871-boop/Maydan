@@ -13,7 +13,27 @@
   "sha256": "4a1d76a05be69f4b46179e8cf8fbc49266ed1255f2f1b8f8372c43c8ff6de623",
   "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
   "review": {
-    "status": "pending",
-    "note": "Generation and file checks do not imply subject or gameplay verification."
+    "status": "approved",
+    "reviewedAt": "2026-09-25",
+    "method": "Codex visual inspection of actual rendered contact sheets; China, Canada and Nauru additionally viewed full-size.",
+    "note": "Green, white, wide red, white, green bands with one central yellow five-point star.",
+    "limitations": "Minor tonal texture remains in otherwise clear flag fields.",
+    "pixelExactOfficialGeometry": false,
+    "sourceReview": "docs/bank/rebuild-2026-09-18/review-flags.json",
+    "gameplayReview": "not-individually-exercised",
+    "identityReview": "approved",
+    "runtimeReview": "approved",
+    "runtimeScope": {
+      "status": "approved",
+      "reviewedAt": "2026-09-25",
+      "browserDecode": "passed",
+      "decodedWidth": 1280,
+      "decodedHeight": 853,
+      "directGameplaySample": false,
+      "gameplayReview": "not-individually-exercised",
+      "scope": "This asset decoded in Chromium; shared gameplay and mobile behavior were approved using five other questions, one per tier. This question was not individually exercised in gameplay.",
+      "evidenceRecord": "docs/bank/rebuild-2026-09-18/review-flags.json"
+    },
+    "scope": "Approved as a generated flag-recognition illustration after source/identity review and pack runtime QA. Exact official print geometry is not certified."
   }
 }

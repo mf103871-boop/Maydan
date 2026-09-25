@@ -8,15 +8,19 @@
   "prompt": "Use case: product-mockup. Create one standalone photographic cutout for an Arabic family visual guessing game. Subject: a standing domestic orange tabby cat in a clean side profile, head looking forward, ears upright, tail raised. Correct feline anatomy, clear separate feet, complete body and tail visible. Natural color fur with realistic texture. Centered in a landscape 4:3 frame, fills about 75%, ample margins. Background: genuinely fully transparent PNG alpha background. Every pixel outside the cat must be alpha 0. No floor, no cast shadow, no background color, no checkerboard printed in the image. This full-color cutout will be rendered black by the game. Do not create a black silhouette. No words, letters, logos, watermark, extra subjects or border.",
   "question": {
     "p": 200,
-    "q": "ما صاحب هذا الشكل؟",
+    "q": "ما الحيوان المنزلي الذي يوضحه هذا الظل؟",
     "a": "قط",
     "qid": "silhouette-200-901",
     "type": "image",
     "effect": "silhouette",
-    "alt": [],
+    "alt": [
+      "قطة",
+      "هر",
+      "Cat"
+    ],
     "topic": "حيوانات",
     "difficultyTarget": 0.8,
-    "verified": false,
+    "verified": true,
     "sourceUrl": "docs/bank/rebuild-2026-09-18/review-silhouette-final.json",
     "media": {
       "src": "silhouette-200-901.webp",
@@ -26,7 +30,7 @@
       "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
       "provenance": {
         "kind": "ai-generated",
-        "tool": "OpenAI image generation",
+        "tool": "OpenAI image generation (built-in)",
         "createdAt": "2026-09-23",
         "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-200-901.json"
       }

@@ -13,17 +13,20 @@
   "sha256": "81215c41c7a30eb8157144967b9be7efc7d6b32aa9fc4210166e4ce97b28ee12",
   "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
   "review": {
-    "status": "visual-subject-reviewed",
-    "reviewedAt": "2026-09-23",
-    "note": "Generated output visually reviewed: subject matches answer; true alpha measured. Final silhouette/reveal gameplay review still pending.",
-    "answer": "ورقة بلوط",
+    "status": "approved",
+    "reviewedAt": "2026-09-25",
+    "sourceReview": "docs/bank/rebuild-2026-09-18/review-silhouette-final.json",
+    "note": "Single leaf has rounded alternating lobes, a central midrib and visible stalk. A conventional oak leaf silhouette is supported at genus/common-name level, not a particular oak species.",
+    "gameplayReview": "approved",
     "alpha": {
-      "pixels": 1228800,
-      "alpha0": 976004,
-      "alpha255": 923,
-      "partialAlpha": 251873,
-      "nearOpaque250to255": 230646,
+      "size": [
+        1280,
+        960
+      ],
+      "bytes": 135388,
+      "sha256": "81215c41c7a30eb8157144967b9be7efc7d6b32aa9fc4210166e4ce97b28ee12",
       "transparentFraction": 0.794274,
+      "nearOpaqueFraction": 0.1877,
       "bboxAlphaOver128": [
         266,
         183,
@@ -31,6 +34,7 @@
         781
       ]
     },
-    "gameplayReview": "pending"
+    "independentVisualReview": "All40 installed assets rechecked on2026-09-25; visible outline and subject accepted.",
+    "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/runtime.json"
   }
 }

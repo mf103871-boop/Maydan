@@ -13,17 +13,20 @@
   "sha256": "a0a91adddaa86a549b330a2a96cb081799bf6e004a250f3023825de540731adb",
   "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
   "review": {
-    "status": "visual-subject-reviewed",
-    "reviewedAt": "2026-09-23",
-    "note": "Generated output visually reviewed: subject matches answer; true alpha measured. Final silhouette/reveal gameplay review still pending.",
-    "answer": "مطرقة",
+    "status": "approved",
+    "reviewedAt": "2026-09-25",
+    "sourceReview": "docs/bank/rebuild-2026-09-18/review-silhouette-final.json",
+    "note": "Claw hammer has a long wood handle, flat striking face and a split rear claw. Both tips of the claw and the entire handle remain visible in the outline.",
+    "gameplayReview": "approved",
     "alpha": {
-      "pixels": 1228800,
-      "alpha0": 959466,
-      "alpha255": 1073,
-      "partialAlpha": 268261,
-      "nearOpaque250to255": 249861,
+      "size": [
+        1280,
+        960
+      ],
+      "bytes": 160426,
+      "sha256": "a0a91adddaa86a549b330a2a96cb081799bf6e004a250f3023825de540731adb",
       "transparentFraction": 0.780815,
+      "nearOpaqueFraction": 0.203337,
       "bboxAlphaOver128": [
         38,
         32,
@@ -31,6 +34,7 @@
         935
       ]
     },
-    "gameplayReview": "pending"
+    "independentVisualReview": "All40 installed assets rechecked on2026-09-25; visible outline and subject accepted.",
+    "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/runtime.json"
   }
 }

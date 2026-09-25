@@ -13,7 +13,27 @@
   "sha256": "e87dde839677b19cef13875e7382fa3fbc0cda1de8e51065895bc4b68d1b78d8",
   "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
   "review": {
-    "status": "pending",
-    "note": "Generation and file checks do not imply subject or gameplay verification."
+    "status": "approved",
+    "reviewedAt": "2026-09-25",
+    "method": "Codex visual inspection of actual rendered contact sheets; China, Canada and Nauru additionally viewed full-size.",
+    "note": "Five alternating green/yellow bands with a white five-point star in a red canton.",
+    "limitations": "Canton is close to square but not exact; accepted only for identity recognition.",
+    "pixelExactOfficialGeometry": false,
+    "sourceReview": "docs/bank/rebuild-2026-09-18/review-flags.json",
+    "gameplayReview": "approved-sampled",
+    "identityReview": "approved",
+    "runtimeReview": "approved",
+    "runtimeScope": {
+      "status": "approved",
+      "reviewedAt": "2026-09-25",
+      "browserDecode": "passed",
+      "decodedWidth": 1280,
+      "decodedHeight": 791,
+      "directGameplaySample": true,
+      "gameplayReview": "approved-sampled",
+      "scope": "This asset decoded in Chromium; actual in-game interactions and mobile screenshots were checked for this question.",
+      "evidenceRecord": "docs/bank/rebuild-2026-09-18/review-flags.json"
+    },
+    "scope": "Approved as a generated flag-recognition illustration after source/identity review and pack runtime QA. Exact official print geometry is not certified."
   }
 }

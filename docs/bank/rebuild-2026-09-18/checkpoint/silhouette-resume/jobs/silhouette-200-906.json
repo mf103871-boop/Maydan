@@ -8,15 +8,19 @@
   "prompt": "Use case: product-mockup.\nAsset type: one standalone professional image for an Arabic family visual guessing game (age 16+).\nSubject: a pear with short stem and one leaf.\nStyle: realistic high quality photography with correct anatomy and object geometry, clean natural textures.\nComposition: landscape 4:3, the complete subject fills about 75% of the frame; centered with ample margins, immediately recognizable when revealed.  \nBackground: genuinely transparent background with alpha channel; isolated cutout; no shadow backdrop; no checkerboard; color subject will become a silhouette inside the game.\nConstraints: exactly the stated subject; no label, caption, watermark, collage, borders or readable words.  Do not create a black silhouette; render the full natural-color cutout with transparent surroundings. Output must be a PNG cutout with actual alpha=0 pixels outside the subject, fully transparent canvas. Do not paint white, gray, black or checkerboard behind it. Keep the entire outline visible. Natural color, no ground plane or cast shadow.",
   "question": {
     "p": 200,
-    "q": "ما صاحب هذا الشكل؟",
+    "q": "ما الفاكهة ذات العنق الضيق والقاعدة العريضة في الظل؟",
     "a": "كمثرى",
     "qid": "silhouette-200-906",
     "type": "image",
     "effect": "silhouette",
-    "alt": [],
+    "alt": [
+      "إجاص",
+      "عرموط",
+      "Pear"
+    ],
     "topic": "طعام",
     "difficultyTarget": 0.8,
-    "verified": false,
+    "verified": true,
     "sourceUrl": "docs/bank/rebuild-2026-09-18/review-silhouette-final.json",
     "media": {
       "src": "silhouette-200-906.webp",
@@ -26,7 +30,7 @@
       "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
       "provenance": {
         "kind": "ai-generated",
-        "tool": "OpenAI image generation",
+        "tool": "OpenAI image generation (built-in)",
         "createdAt": "2026-09-23",
         "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-200-906.json"
       }

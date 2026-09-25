@@ -1,37 +1,30 @@
-# Flags resume checkpoint — 2026-09-23
+# Flags resume state — 2026-09-25
 
-Stopped immediately at user request. No further research, generation, or question writing was done. The in-flight final generation batch had already completed; its outputs were installed as pending review.
+The user resumed work on 25 September. This replaces the stopped-state instructions from 23 September, whose history remains in Git. The forty-question flags pack is now integrated and reviewed for generated flag recognition; do not rebuild the old checkpoint plan over it.
 
-## State
+## Current result
 
-- Existing src/data/categories/flags.json remains the old 240-question pack. No new forty-question pack has been written.
-- Forty distinct new AI WebP assets are installed at media/flags/flags-{tier}-{901..908}.webp.
-- Forty per-asset prompt/provenance records are in docs/bank/rebuild-2026-09-18/generated-records/. All review statuses remain pending.
-- asset-mapping.json provides portable repository paths, original generated basenames, prompts, and record locations.
-- plan-and-sources.json contains the precise forty-country mapping, ten geographic topics, tier assignments, source URLs, actual retrieval modes, remaining evidence gaps, and caveats.
-- Installed assets, records, and this checkpoint suffice to resume from a repository checkout; no previous /workspace path is required. Original high-resolution scratch PNGs are not required to use the installed WebPs.
-- No new bank validation was run because the question pack was not rewritten.
+- `src/data/categories/flags.json` contains 40 current questions: eight in each tier 200/400/600/800/1000, IDs 901–908, ten geographic topics, and at most two questions from a topic per tier.
+- All 40 generated WebPs have actual opened primary identity evidence and independent visual review. All 40 installed files were checked for size and opacity and decoded successfully in Chromium.
+- Actual gameplay covered **five questions, one per tier**, specifically `flags-200-901`, `flags-400-901`, `flags-600-901`, `flags-800-901`, and `flags-1000-901`. The final run passed **41/41 checks**, including neutral pre-reveal text/attributes, enlargement, correct reveal, mobile layouts at 390 and 320 pixels, and disclosure in the five sampled About rows. This is not a claim of 40 full gameplay reviews.
+- Current per-asset records in `generated-records/flags-*.json` explicitly separate approved identity/runtime scope from direct gameplay sampling. Old media were retained.
 
-## Generation and review limits
+The authoritative review is [review-flags.json](../../review-flags.json), with its readable explanation in [review-flags.md](../../review-flags.md). Read the current [checkpoint](../checkpoint-2026-09-25.json) and [validation report](../../validation-2026-09-25.json) for the whole-bank state; this pack's review does not make the repository release-ready.
 
-All images were generated individually with the built-in OpenAI image generation tool. No manual SVG, synthetic flag drawing, or API fallback was used. The install script only resized/compressed generated raster outputs. Old assets were retained.
+Focused validation of the flags and silhouette packs finished with **zero errors**. Whole-bank validation still has **5,709 errors**, confined to the seven unfinished packs; the placeholder check found zero, and all 198 manifest asset hashes matched. See the final validation report for the per-pack breakdown.
 
-Initial prompts saying “no surrounding background” caused some flag field colors to become transparent. The affected first tier was re-generated. Exact affected candidate IDs: flags-200-901 through flags-200-907; flags-200-908 was the opaque Bangladesh output. Flags-200-904 (China) and flags-200-906 (Germany) initially looked plausible but a later alpha-channel audit found transparency; both were regenerated again during the tier-800 batch and the final installed files passed alpha <250 fraction = 0.0. The working prompt explicitly says completely OPAQUE, every pixel opaque, including white.
+## Source and geometry limits
 
-A further all-forty alpha and size audit remains recommended at resume. Previously checked final assets through tier 800 were opaque; the final eight were installed at checkpoint without a new alpha audit. Do not approve files solely because the generation preview looks correct.
+The indexed-only and recheck leads from the old plan were resolved with opened official evidence. Gabon uses the official embassy in Washington. The Solomon Islands government policy-document cover supplies primary identification evidence; because that reference is cropped and folded, it alone does not certify the complete star layout. The actual installed illustration was separately inspected and has five white stars in an X, blue upper hoist, green lower fly, and a rising yellow diagonal. These limitations remain recorded.
 
-Preliminary visual checks found the correct recognizable structures and star counts, including Canada eleven-point maple leaf, Nauru twelve-point star, Samoa four larger plus one smaller star, SVG three separate V-arranged diamonds. The last two output previews (Suriname and Guyana) show correct basic layouts but slight shading/texture despite the flat prompt. All files need final visual acceptance.
+All images are **generated recognition illustrations**, not certified official print constructions. The accepted review preserves known small differences in circle size, stripe/canton proportions, color and texture. Japan, Kuwait, Togo and Samoa retain explicit geometry caveats. Romania's prompt says Europe to exclude Chad; Congo means Republic of the Congo/Congo-Brazzaville; Samoa does not mean American Samoa.
 
-Known geometry approximations requiring deliberate acceptance or regeneration: Japan red disc about 63% rather than specified 60% height; Kuwait trapezoid about 26.7% rather than 25% width; Togo canton approximately 549x583 rather than precisely square; Samoa canton about 52.6% rather than 50% height. Some flag color fields show mild tone variation. No claim of pixel-exact official construction is justified.
+Each asset keeps truthful AI disclosure and its original generation provenance, including the actual 23 September creation dates. Generated media do not receive invented public-domain or CC photography licenses. Do not silently redraw symbols, replace provenance, or infer correctness from a generator preview.
 
-## Remaining work
+## Historical checkpoint files
 
-1. Read RUBRIC, SCHEMA and the rebuild checkpoint; inspect actual forty images and pending records. If exact geometry is required, regenerate the specific failures with official references using only the built-in image tool. Never silently flatten alpha or redraw symbols.
-2. Resolve Solomon Islands primary-source gap; verify all entries marked indexed-only/recheck-extract in plan-and-sources.json. Open official reference images for precise emblem/geometry checks. Do not mark verified based on a search lead or failed request.
-3. Write forty unique natural Arabic identification questions, eight each for tiers 200/400/600/800/1000 with IDs 901–908, difficulty targets .8/.6/.4/.25/.15. Use the ten topic groups in the plan, maximum two per tier. Avoid near-identical canned text; question <=22 words and answer <=6 words.
-4. Romania question must explicitly mention Europe to avoid Chad ambiguity. Use جمهورية الكونغو for Congo-Brazzaville; ساموا is not American Samoa. Keep country aliases precise, with unique normalized answers.
-5. Attach installed WebPs with truthful AI disclosure and provenance from the individual records (actual creation date 2026-09-23), not a public-domain or CC license. Preserve old media. Set verified true only after precise factual source review.
-6. Write review-flags.json/md with honest per-question evidence and limitations; update each asset record only after final visual acceptance.
-7. Run npm run bank:validate -- flags and address substantive issues; shared counts/index updates belong to root. Do not publish without the required user authorization.
+`asset-mapping.json` and `plan-and-sources.json` preserve the 23 September mapping, prompts, source leads and then-pending statuses. They are useful provenance/history, **not current approval status**. Earlier transparent flag candidates were replaced before this integration; final installed opacity and SHA-256 values are in the current review and generation records. A prior account's scratch PNGs or paths are unnecessary.
 
-Difficulty is an editorial estimate, not player-tested. Do not report this pack complete: generated assets are saved, but the source review and question rebuild remain unfinished.
+There is no remaining flags-generation task from that historical checklist. If a substantive new issue is found, inspect the specific installed asset and its evidence before changing it. Keep the forty-question structure, existing IDs, exact category name/order, question length at most 22 words, answer length at most six, and editorial difficulty targets `.8/.6/.4/.25/.15`. Difficulty was not measured with players. Preserve old assets.
+
+Next content work is `blur`, using its existing partial assets and [resume files](../blur-resume/). Whole-bank validation and remaining packs still block release. Do not merge or deploy automatically.

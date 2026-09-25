@@ -13,7 +13,27 @@
   "sha256": "7f22e9f1cb09a53c2e23817e0efacac725ba050c455737b80c21117ab24a56fd",
   "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
   "review": {
-    "status": "pending",
-    "note": "Generation and file checks do not imply subject or gameplay verification."
+    "status": "approved",
+    "reviewedAt": "2026-09-25",
+    "method": "Codex visual inspection of actual rendered contact sheets; China, Canada and Nauru additionally viewed full-size.",
+    "note": "Yellow disc offset toward the hoist on a light blue field.",
+    "limitations": "AI illustration; minor colour/edge/proportion variation is not a claim of official print accuracy.",
+    "pixelExactOfficialGeometry": false,
+    "sourceReview": "docs/bank/rebuild-2026-09-18/review-flags.json",
+    "gameplayReview": "approved-sampled",
+    "identityReview": "approved",
+    "runtimeReview": "approved",
+    "runtimeScope": {
+      "status": "approved",
+      "reviewedAt": "2026-09-25",
+      "browserDecode": "passed",
+      "decodedWidth": 1280,
+      "decodedHeight": 801,
+      "directGameplaySample": true,
+      "gameplayReview": "approved-sampled",
+      "scope": "This asset decoded in Chromium; actual in-game interactions and mobile screenshots were checked for this question.",
+      "evidenceRecord": "docs/bank/rebuild-2026-09-18/review-flags.json"
+    },
+    "scope": "Approved as a generated flag-recognition illustration after source/identity review and pack runtime QA. Exact official print geometry is not certified."
   }
 }

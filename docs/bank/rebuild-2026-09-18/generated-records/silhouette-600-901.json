@@ -13,17 +13,20 @@
   "sha256": "9dd74758fc7b9b022c4abcf0ac68b25d49fc6908d18ac55d0069cbfba96dfa8b",
   "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
   "review": {
-    "status": "visual-subject-reviewed",
-    "reviewedAt": "2026-09-23",
-    "note": "Generated output visually reviewed: subject matches answer; true alpha measured. Final silhouette/reveal gameplay review still pending.",
-    "answer": "كنغر",
+    "status": "approved",
+    "reviewedAt": "2026-09-25",
+    "sourceReview": "docs/bank/rebuild-2026-09-18/review-silhouette-final.json",
+    "note": "Kangaroo-like animal has a long supporting tail, large hind feet, small bent forearms and upright ears. Generic كنغر is supported; do not demand a particular species or sex.",
+    "gameplayReview": "approved",
     "alpha": {
-      "pixels": 1228800,
-      "alpha0": 1067364,
-      "alpha255": 654,
-      "partialAlpha": 160782,
-      "nearOpaque250to255": 137402,
+      "size": [
+        1280,
+        960
+      ],
+      "bytes": 102432,
+      "sha256": "9dd74758fc7b9b022c4abcf0ac68b25d49fc6908d18ac55d0069cbfba96dfa8b",
       "transparentFraction": 0.868623,
+      "nearOpaqueFraction": 0.111818,
       "bboxAlphaOver128": [
         289,
         103,
@@ -31,6 +34,7 @@
         839
       ]
     },
-    "gameplayReview": "pending"
+    "independentVisualReview": "All40 installed assets rechecked on2026-09-25; visible outline and subject accepted.",
+    "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/runtime.json"
   }
 }

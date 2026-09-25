@@ -1,0 +1,4085 @@
+{
+  "executedAt": "2026-09-25T02:01:32.486Z",
+  "sourcePackSha256": "109c9eb446071f059c5eb6e788c5cc0e71a18889fabdd67c29155988706e089a",
+  "mockAccountOnly": true,
+  "sourcePackQuestions": 40,
+  "selection": "8 isolated browser contexts; each test-only in-memory deck contains one untouched actual question per tier; all40 questions exercised",
+  "manualVisualReview": "All40 final black/color pairs and thin needle/thread native mobile view actually inspected; see visual-inspection.md.",
+  "questions": [
+    {
+      "qid": "silhouette-200-901",
+      "answer": "قط",
+      "tier": 200,
+      "batch": 0,
+      "ok": true,
+      "beforeFile": "C:\\Users\\user\\Documents\\Codex\\2026-09-25\\hg\\work\\silhouette-ui-qa\\stages\\silhouette-200-901-black.png",
+      "afterFile": "C:\\Users\\user\\Documents\\Codex\\2026-09-25\\hg\\work\\silhouette-ui-qa\\stages\\silhouette-200-901-color.png",
+      "beforePixels": {
+        "width": 256,
+        "height": 193,
+        "darkPixels": 16387,
+        "colorPixels": 0
+      },
+      "afterPixels": {
+        "width": 256,
+        "height": 193,
+        "darkPixels": 3,
+        "colorPixels": 15761
+      },
+      "sizing": [
+        {
+          "box": {
+            "x": 32,
+            "y": 457.28125,
+            "width": 326,
+            "height": 244.5
+          },
+          "layout": {
+            "width": 390,
+            "scroll": 390,
+            "fit": "contain"
+          }
+        },
+        {
+          "box": {
+            "x": 32,
+            "y": 457.28125,
+            "width": 256,
+            "height": 192
+          },
+          "layout": {
+            "width": 320,
+            "scroll": 320,
+            "fit": "contain"
+          }
+        }
+      ],
+      "visualEvidence": {
+        "contactSheet": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/contact-200.png",
+        "pairLabel": "silhouette-200-901"
+      }
+    },
+    {
+      "qid": "silhouette-400-901",
+      "answer": "أرنب",
+      "tier": 400,
+      "batch": 0,
+      "ok": true,
+      "beforeFile": "C:\\Users\\user\\Documents\\Codex\\2026-09-25\\hg\\work\\silhouette-ui-qa\\stages\\silhouette-400-901-black.png",
+      "afterFile": "C:\\Users\\user\\Documents\\Codex\\2026-09-25\\hg\\work\\silhouette-ui-qa\\stages\\silhouette-400-901-color.png",
+      "beforePixels": {
+        "width": 256,
+        "height": 193,
+        "darkPixels": 9389,
+        "colorPixels": 0
+      },
+      "afterPixels": {
+        "width": 256,
+        "height": 193,
+        "darkPixels": 112,
+        "colorPixels": 5829
+      },
+      "sizing": [
+        {
+          "box": {
+            "x": 32,
+            "y": 457.28125,
+            "width": 326,
+            "height": 244.5
+          },
+          "layout": {
+            "width": 390,
+            "scroll": 390,
+            "fit": "contain"
+          }
+        },
+        {
+          "box": {
+            "x": 32,
+            "y": 457.28125,
+            "width": 256,
+            "height": 192
+          },
+          "layout": {
+            "width": 320,
+            "scroll": 320,
+            "fit": "contain"
+          }
+        }
+      ],
+      "visualEvidence": {
+        "contactSheet": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/contact-400.png",
+        "pairLabel": "silhouette-400-901"
+      }
+    },
+    {
+      "qid": "silhouette-600-901",
+      "answer": "كنغر",
+      "tier": 600,
+      "batch": 0,
+      "ok": true,
+      "beforeFile": "C:\\Users\\user\\Documents\\Codex\\2026-09-25\\hg\\work\\silhouette-ui-qa\\stages\\silhouette-600-901-black.png",
+      "afterFile": "C:\\Users\\user\\Documents\\Codex\\2026-09-25\\hg\\work\\silhouette-ui-qa\\stages\\silhouette-600-901-color.png",
+      "beforePixels": {
+        "width": 256,
+        "height": 193,
+        "darkPixels": 5706,
+        "colorPixels": 0
+      },
+      "afterPixels": {
+        "width": 256,
+        "height": 193,
+        "darkPixels": 323,
+        "colorPixels": 4126
+      },
+      "sizing": [
+        {
+          "box": {
+            "x": 32,
+            "y": 505.078125,
+            "width": 326,
+            "height": 244.5
+          },
+          "layout": {
+            "width": 390,
+            "scroll": 390,
+            "fit": "contain"
+          }
+        },
+        {
+          "box": {
+            "x": 32,
+            "y": 505.078125,
+            "width": 256,
+            "height": 192
+          },
+          "layout": {
+            "width": 320,
+            "scroll": 320,
+            "fit": "contain"
+          }
+        }
+      ],
+      "visualEvidence": {
+        "contactSheet": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/contact-600.png",
+        "pairLabel": "silhouette-600-901"
+      }
+    },
+    {
+      "qid": "silhouette-800-901",
+      "answer": "مالك الحزين",
+      "tier": 800,
+      "batch": 0,
+      "ok": true,
+      "beforeFile": "C:\\Users\\user\\Documents\\Codex\\2026-09-25\\hg\\work\\silhouette-ui-qa\\stages\\silhouette-800-901-black.png",
+      "afterFile": "C:\\Users\\user\\Documents\\Codex\\2026-09-25\\hg\\work\\silhouette-ui-qa\\stages\\silhouette-800-901-color.png",
+      "beforePixels": {
+        "width": 256,
+        "height": 193,
+        "darkPixels": 4485,
+        "colorPixels": 0
+      },
+      "afterPixels": {
+        "width": 256,
+        "height": 193,
+        "darkPixels": 580,
+        "colorPixels": 424
+      },
+      "sizing": [
+        {
+          "box": {
+            "x": 32,
+            "y": 505.078125,
+            "width": 326,
+            "height": 244.5
+          },
+          "layout": {
+            "width": 390,
+            "scroll": 390,
+            "fit": "contain"
+          }
+        },
+        {
+          "box": {
+            "x": 32,
+            "y": 505.078125,
+            "width": 256,
+            "height": 192
+          },
+          "layout": {
+            "width": 320,
+            "scroll": 320,
+            "fit": "contain"
+          }
+        }
+      ],
+      "visualEvidence": {
+        "contactSheet": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/contact-800.png",
+        "pairLabel": "silhouette-800-901"
+      }
+    },
+    {
+      "qid": "silhouette-1000-901",
+      "answer": "خلد الماء",
+      "tier": 1000,
+      "batch": 0,
+      "ok": true,
+      "beforeFile": "C:\\Users\\user\\Documents\\Codex\\2026-09-25\\hg\\work\\silhouette-ui-qa\\stages\\silhouette-1000-901-black.png",
+      "afterFile": "C:\\Users\\user\\Documents\\Codex\\2026-09-25\\hg\\work\\silhouette-ui-qa\\stages\\silhouette-1000-901-color.png",
+      "beforePixels": {
+        "width": 256,
+        "height": 193,
+        "darkPixels": 7018,
+        "colorPixels": 0
+      },
+      "afterPixels": {
+        "width": 256,
+        "height": 193,
+        "darkPixels": 975,
+        "colorPixels": 2688
+      },
+      "sizing": [
+        {
+          "box": {
+            "x": 32,
+            "y": 505.078125,
+            "width": 326,
+            "height": 244.5
+          },
+          "layout": {
+            "width": 390,
+            "scroll": 390,
+            "fit": "contain"
+          }
+        },
+        {
+          "box": {
+            "x": 32,
+            "y": 505.078125,
+            "width": 256,
+            "height": 192
+          },
+          "layout": {
+            "width": 320,
+            "scroll": 320,
+            "fit": "contain"
+          }
+        }
+      ],
+      "visualEvidence": {
+        "contactSheet": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/contact-1000.png",
+        "pairLabel": "silhouette-1000-901"
+      }
+    },
+    {
+      "qid": "silhouette-200-902",
+      "answer": "مطرقة",
+      "tier": 200,
+      "batch": 1,
+      "ok": true,
+      "beforeFile": "C:\\Users\\user\\Documents\\Codex\\2026-09-25\\hg\\work\\silhouette-ui-qa\\stages\\silhouette-200-902-black.png",
+      "afterFile": "C:\\Users\\user\\Documents\\Codex\\2026-09-25\\hg\\work\\silhouette-ui-qa\\stages\\silhouette-200-902-color.png",
+      "beforePixels": {
+        "width": 256,
+        "height": 193,
+        "darkPixels": 10151,
+        "colorPixels": 0
+      },
+      "afterPixels": {
+        "width": 256,
+        "height": 193,
+        "darkPixels": 1306,
+        "colorPixels": 6111
+      },
+      "sizing": [
+        {
+          "box": {
+            "x": 32,
+            "y": 457.28125,
+            "width": 326,
+            "height": 244.5
+          },
+          "layout": {
+            "width": 390,
+            "scroll": 390,
+            "fit": "contain"
+          }
+        },
+        {
+          "box": {
+            "x": 32,
+            "y": 457.28125,
+            "width": 256,
+            "height": 192
+          },
+          "layout": {
+            "width": 320,
+            "scroll": 320,
+            "fit": "contain"
+          }
+        }
+      ],
+      "visualEvidence": {
+        "contactSheet": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/contact-200.png",
+        "pairLabel": "silhouette-200-902"
+      }
+    },
+    {
+      "qid": "silhouette-400-902",
+      "answer": "مفتاح ربط",
+      "tier": 400,
+      "batch": 1,
+      "ok": true,
+      "beforeFile": "C:\\Users\\user\\Documents\\Codex\\2026-09-25\\hg\\work\\silhouette-ui-qa\\stages\\silhouette-400-902-black.png",
+      "afterFile": "C:\\Users\\user\\Documents\\Codex\\2026-09-25\\hg\\work\\silhouette-ui-qa\\stages\\silhouette-400-902-color.png",
+      "beforePixels": {
+        "width": 256,
+        "height": 193,
+        "darkPixels": 4215,
+        "colorPixels": 0
+      },
+      "afterPixels": {
+        "width": 256,
+        "height": 193,
+        "darkPixels": 314,
+        "colorPixels": 0
+      },
+      "sizing": [
+        {
+          "box": {
+            "x": 32,
+            "y": 457.28125,
+            "width": 326,
+            "height": 244.5
+          },
+          "layout": {
+            "width": 390,
+            "scroll": 390,
+            "fit": "contain"
+          }
+        },
+        {
+          "box": {
+            "x": 32,
+            "y": 457.28125,
+            "width": 256,
+            "height": 192
+          },
+          "layout": {
+            "width": 320,
+            "scroll": 320,
+            "fit": "contain"
+          }
+        }
+      ],
+      "visualEvidence": {
+        "contactSheet": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/contact-400.png",
+        "pairLabel": "silhouette-400-902"
+      }
+    },
+    {
+      "qid": "silhouette-600-902",
+      "answer": "فتاحة فلين",
+      "tier": 600,
+      "batch": 1,
+      "ok": true,
+      "beforeFile": "C:\\Users\\user\\Documents\\Codex\\2026-09-25\\hg\\work\\silhouette-ui-qa\\stages\\silhouette-600-902-black.png",
+      "afterFile": "C:\\Users\\user\\Documents\\Codex\\2026-09-25\\hg\\work\\silhouette-ui-qa\\stages\\silhouette-600-902-color.png",
+      "beforePixels": {
+        "width": 256,
+        "height": 193,
+        "darkPixels": 4979,
+        "colorPixels": 0
+      },
+      "afterPixels": {
+        "width": 256,
+        "height": 193,
+        "darkPixels": 2302,
+        "colorPixels": 0
+      },
+      "sizing": [
+        {
+          "box": {
+            "x": 32,
+            "y": 505.078125,
+            "width": 326,
+            "height": 244.5
+          },
+          "layout": {
+            "width": 390,
+            "scroll": 390,
+            "fit": "contain"
+          }
+        },
+        {
+          "box": {
+            "x": 32,
+            "y": 505.078125,
+            "width": 256,
+            "height": 192
+          },
+          "layout": {
+            "width": 320,
+            "scroll": 320,
+            "fit": "contain"
+          }
+        }
+      ],
+      "visualEvidence": {
+        "contactSheet": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/contact-600.png",
+        "pairLabel": "silhouette-600-902"
+      }
+    },
+    {
+      "qid": "silhouette-800-902",
+      "answer": "مثقاب يدوي",
+      "tier": 800,
+      "batch": 1,
+      "ok": true,
+      "beforeFile": "C:\\Users\\user\\Documents\\Codex\\2026-09-25\\hg\\work\\silhouette-ui-qa\\stages\\silhouette-800-902-black.png",
+      "afterFile": "C:\\Users\\user\\Documents\\Codex\\2026-09-25\\hg\\work\\silhouette-ui-qa\\stages\\silhouette-800-902-color.png",
+      "beforePixels": {
+        "width": 256,
+        "height": 193,
+        "darkPixels": 6490,
+        "colorPixels": 0
+      },
+      "afterPixels": {
+        "width": 256,
+        "height": 193,
+        "darkPixels": 1985,
+        "colorPixels": 3132
+      },
+      "sizing": [
+        {
+          "box": {
+            "x": 32,
+            "y": 505.078125,
+            "width": 326,
+            "height": 244.5
+          },
+          "layout": {
+            "width": 390,
+            "scroll": 390,
+            "fit": "contain"
+          }
+        },
+        {
+          "box": {
+            "x": 32,
+            "y": 505.078125,
+            "width": 256,
+            "height": 192
+          },
+          "layout": {
+            "width": 320,
+            "scroll": 320,
+            "fit": "contain"
+          }
+        }
+      ],
+      "visualEvidence": {
+        "contactSheet": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/contact-800.png",
+        "pairLabel": "silhouette-800-902"
+      }
+    },
+    {
+      "qid": "silhouette-1000-902",
+      "answer": "السدس",
+      "tier": 1000,
+      "batch": 1,
+      "ok": true,
+      "beforeFile": "C:\\Users\\user\\Documents\\Codex\\2026-09-25\\hg\\work\\silhouette-ui-qa\\stages\\silhouette-1000-902-black.png",
+      "afterFile": "C:\\Users\\user\\Documents\\Codex\\2026-09-25\\hg\\work\\silhouette-ui-qa\\stages\\silhouette-1000-902-color.png",
+      "beforePixels": {
+        "width": 256,
+        "height": 193,
+        "darkPixels": 7741,
+        "colorPixels": 0
+      },
+      "afterPixels": {
+        "width": 256,
+        "height": 193,
+        "darkPixels": 3283,
+        "colorPixels": 4444
+      },
+      "sizing": [
+        {
+          "box": {
+            "x": 32,
+            "y": 505.078125,
+            "width": 326,
+            "height": 244.5
+          },
+          "layout": {
+            "width": 390,
+            "scroll": 390,
+            "fit": "contain"
+          }
+        },
+        {
+          "box": {
+            "x": 32,
+            "y": 505.078125,
+            "width": 256,
+            "height": 192
+          },
+          "layout": {
+            "width": 320,
+            "scroll": 320,
+            "fit": "contain"
+          }
+        }
+      ],
+      "visualEvidence": {
+        "contactSheet": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/contact-1000.png",
+        "pairLabel": "silhouette-1000-902"
+      }
+    },
+    {
+      "qid": "silhouette-200-903",
+      "answer": "مظلة",
+      "tier": 200,
+      "batch": 2,
+      "ok": true,
+      "beforeFile": "C:\\Users\\user\\Documents\\Codex\\2026-09-25\\hg\\work\\silhouette-ui-qa\\stages\\silhouette-200-903-black.png",
+      "afterFile": "C:\\Users\\user\\Documents\\Codex\\2026-09-25\\hg\\work\\silhouette-ui-qa\\stages\\silhouette-200-903-color.png",
+      "beforePixels": {
+        "width": 256,
+        "height": 193,
+        "darkPixels": 19526,
+        "colorPixels": 0
+      },
+      "afterPixels": {
+        "width": 256,
+        "height": 193,
+        "darkPixels": 6858,
+        "colorPixels": 17112
+      },
+      "sizing": [
+        {
+          "box": {
+            "x": 32,
+            "y": 457.28125,
+            "width": 326,
+            "height": 244.5
+          },
+          "layout": {
+            "width": 390,
+            "scroll": 390,
+            "fit": "contain"
+          }
+        },
+        {
+          "box": {
+            "x": 32,
+            "y": 491.921875,
+            "width": 256,
+            "height": 192
+          },
+          "layout": {
+            "width": 320,
+            "scroll": 320,
+            "fit": "contain"
+          }
+        }
+      ],
+      "visualEvidence": {
+        "contactSheet": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/contact-200.png",
+        "pairLabel": "silhouette-200-903"
+      }
+    },
+    {
+      "qid": "silhouette-400-903",
+      "answer": "مجفف شعر",
+      "tier": 400,
+      "batch": 2,
+      "ok": true,
+      "beforeFile": "C:\\Users\\user\\Documents\\Codex\\2026-09-25\\hg\\work\\silhouette-ui-qa\\stages\\silhouette-400-903-black.png",
+      "afterFile": "C:\\Users\\user\\Documents\\Codex\\2026-09-25\\hg\\work\\silhouette-ui-qa\\stages\\silhouette-400-903-color.png",
+      "beforePixels": {
+        "width": 256,
+        "height": 193,
+        "darkPixels": 7790,
+        "colorPixels": 0
+      },
+      "afterPixels": {
+        "width": 256,
+        "height": 193,
+        "darkPixels": 2138,
+        "colorPixels": 62
+      },
+      "sizing": [
+        {
+          "box": {
+            "x": 32,
+            "y": 457.28125,
+            "width": 326,
+            "height": 244.5
+          },
+          "layout": {
+            "width": 390,
+            "scroll": 390,
+            "fit": "contain"
+          }
+        },
+        {
+          "box": {
+            "x": 32,
+            "y": 491.921875,
+            "width": 256,
+            "height": 192
+          },
+          "layout": {
+            "width": 320,
+            "scroll": 320,
+            "fit": "contain"
+          }
+        }
+      ],
+      "visualEvidence": {
+        "contactSheet": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/contact-400.png",
+        "pairLabel": "silhouette-400-903"
+      }
+    },
+    {
+      "qid": "silhouette-600-903",
+      "answer": "زجاجة عطر",
+      "tier": 600,
+      "batch": 2,
+      "ok": true,
+      "beforeFile": "C:\\Users\\user\\Documents\\Codex\\2026-09-25\\hg\\work\\silhouette-ui-qa\\stages\\silhouette-600-903-black.png",
+      "afterFile": "C:\\Users\\user\\Documents\\Codex\\2026-09-25\\hg\\work\\silhouette-ui-qa\\stages\\silhouette-600-903-color.png",
+      "beforePixels": {
+        "width": 256,
+        "height": 193,
+        "darkPixels": 9066,
+        "colorPixels": 0
+      },
+      "afterPixels": {
+        "width": 256,
+        "height": 193,
+        "darkPixels": 135,
+        "colorPixels": 7725
+      },
+      "sizing": [
+        {
+          "box": {
+            "x": 32,
+            "y": 505.078125,
+            "width": 326,
+            "height": 244.5
+          },
+          "layout": {
+            "width": 390,
+            "scroll": 390,
+            "fit": "contain"
+          }
+        },
+        {
+          "box": {
+            "x": 32,
+            "y": 505.078125,
+            "width": 256,
+            "height": 192
+          },
+          "layout": {
+            "width": 320,
+            "scroll": 320,
+            "fit": "contain"
+          }
+        }
+      ],
+      "visualEvidence": {
+        "contactSheet": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/contact-600.png",
+        "pairLabel": "silhouette-600-903"
+      }
+    },
+    {
+      "qid": "silhouette-800-903",
+      "answer": "إبرة خياطة",
+      "tier": 800,
+      "batch": 2,
+      "ok": true,
+      "beforeFile": "C:\\Users\\user\\Documents\\Codex\\2026-09-25\\hg\\work\\silhouette-ui-qa\\stages\\silhouette-800-903-black.png",
+      "afterFile": "C:\\Users\\user\\Documents\\Codex\\2026-09-25\\hg\\work\\silhouette-ui-qa\\stages\\silhouette-800-903-color.png",
+      "beforePixels": {
+        "width": 256,
+        "height": 193,
+        "darkPixels": 1669,
+        "colorPixels": 0
+      },
+      "afterPixels": {
+        "width": 256,
+        "height": 193,
+        "darkPixels": 165,
+        "colorPixels": 1376
+      },
+      "sizing": [
+        {
+          "box": {
+            "x": 32,
+            "y": 505.078125,
+            "width": 326,
+            "height": 244.5
+          },
+          "layout": {
+            "width": 390,
+            "scroll": 390,
+            "fit": "contain"
+          }
+        },
+        {
+          "box": {
+            "x": 32,
+            "y": 505.078125,
+            "width": 256,
+            "height": 192
+          },
+          "layout": {
+            "width": 320,
+            "scroll": 320,
+            "fit": "contain"
+          }
+        }
+      ],
+      "visualEvidence": {
+        "contactSheet": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/contact-800.png",
+        "pairLabel": "silhouette-800-903"
+      }
+    },
+    {
+      "qid": "silhouette-1000-903",
+      "answer": "مكبس رموش",
+      "tier": 1000,
+      "batch": 2,
+      "ok": true,
+      "beforeFile": "C:\\Users\\user\\Documents\\Codex\\2026-09-25\\hg\\work\\silhouette-ui-qa\\stages\\silhouette-1000-903-black.png",
+      "afterFile": "C:\\Users\\user\\Documents\\Codex\\2026-09-25\\hg\\work\\silhouette-ui-qa\\stages\\silhouette-1000-903-color.png",
+      "beforePixels": {
+        "width": 256,
+        "height": 193,
+        "darkPixels": 2736,
+        "colorPixels": 0
+      },
+      "afterPixels": {
+        "width": 256,
+        "height": 193,
+        "darkPixels": 979,
+        "colorPixels": 302
+      },
+      "sizing": [
+        {
+          "box": {
+            "x": 32,
+            "y": 505.078125,
+            "width": 326,
+            "height": 244.5
+          },
+          "layout": {
+            "width": 390,
+            "scroll": 390,
+            "fit": "contain"
+          }
+        },
+        {
+          "box": {
+            "x": 32,
+            "y": 505.078125,
+            "width": 256,
+            "height": 192
+          },
+          "layout": {
+            "width": 320,
+            "scroll": 320,
+            "fit": "contain"
+          }
+        }
+      ],
+      "visualEvidence": {
+        "contactSheet": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/contact-1000.png",
+        "pairLabel": "silhouette-1000-903"
+      }
+    },
+    {
+      "qid": "silhouette-200-904",
+      "answer": "مروحية",
+      "tier": 200,
+      "batch": 3,
+      "ok": true,
+      "beforeFile": "C:\\Users\\user\\Documents\\Codex\\2026-09-25\\hg\\work\\silhouette-ui-qa\\stages\\silhouette-200-904-black.png",
+      "afterFile": "C:\\Users\\user\\Documents\\Codex\\2026-09-25\\hg\\work\\silhouette-ui-qa\\stages\\silhouette-200-904-color.png",
+      "beforePixels": {
+        "width": 256,
+        "height": 193,
+        "darkPixels": 12317,
+        "colorPixels": 0
+      },
+      "afterPixels": {
+        "width": 256,
+        "height": 193,
+        "darkPixels": 5279,
+        "colorPixels": 3299
+      },
+      "sizing": [
+        {
+          "box": {
+            "x": 32,
+            "y": 422.640625,
+            "width": 326,
+            "height": 244.5
+          },
+          "layout": {
+            "width": 390,
+            "scroll": 390,
+            "fit": "contain"
+          }
+        },
+        {
+          "box": {
+            "x": 32,
+            "y": 457.28125,
+            "width": 256,
+            "height": 192
+          },
+          "layout": {
+            "width": 320,
+            "scroll": 320,
+            "fit": "contain"
+          }
+        }
+      ],
+      "visualEvidence": {
+        "contactSheet": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/contact-200.png",
+        "pairLabel": "silhouette-200-904"
+      }
+    },
+    {
+      "qid": "silhouette-400-904",
+      "answer": "قارب بمحرك",
+      "tier": 400,
+      "batch": 3,
+      "ok": true,
+      "beforeFile": "C:\\Users\\user\\Documents\\Codex\\2026-09-25\\hg\\work\\silhouette-ui-qa\\stages\\silhouette-400-904-black.png",
+      "afterFile": "C:\\Users\\user\\Documents\\Codex\\2026-09-25\\hg\\work\\silhouette-ui-qa\\stages\\silhouette-400-904-color.png",
+      "beforePixels": {
+        "width": 256,
+        "height": 193,
+        "darkPixels": 9336,
+        "colorPixels": 0
+      },
+      "afterPixels": {
+        "width": 256,
+        "height": 193,
+        "darkPixels": 2912,
+        "colorPixels": 2791
+      },
+      "sizing": [
+        {
+          "box": {
+            "x": 32,
+            "y": 457.28125,
+            "width": 326,
+            "height": 244.5
+          },
+          "layout": {
+            "width": 390,
+            "scroll": 390,
+            "fit": "contain"
+          }
+        },
+        {
+          "box": {
+            "x": 32,
+            "y": 457.28125,
+            "width": 256,
+            "height": 192
+          },
+          "layout": {
+            "width": 320,
+            "scroll": 320,
+            "fit": "contain"
+          }
+        }
+      ],
+      "visualEvidence": {
+        "contactSheet": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/contact-400.png",
+        "pairLabel": "silhouette-400-904"
+      }
+    },
+    {
+      "qid": "silhouette-600-904",
+      "answer": "غواصة",
+      "tier": 600,
+      "batch": 3,
+      "ok": true,
+      "beforeFile": "C:\\Users\\user\\Documents\\Codex\\2026-09-25\\hg\\work\\silhouette-ui-qa\\stages\\silhouette-600-904-black.png",
+      "afterFile": "C:\\Users\\user\\Documents\\Codex\\2026-09-25\\hg\\work\\silhouette-ui-qa\\stages\\silhouette-600-904-color.png",
+      "beforePixels": {
+        "width": 256,
+        "height": 193,
+        "darkPixels": 7824,
+        "colorPixels": 0
+      },
+      "afterPixels": {
+        "width": 256,
+        "height": 193,
+        "darkPixels": 5331,
+        "colorPixels": 72
+      },
+      "sizing": [
+        {
+          "box": {
+            "x": 32,
+            "y": 505.078125,
+            "width": 326,
+            "height": 244.5
+          },
+          "layout": {
+            "width": 390,
+            "scroll": 390,
+            "fit": "contain"
+          }
+        },
+        {
+          "box": {
+            "x": 32,
+            "y": 505.078125,
+            "width": 256,
+            "height": 192
+          },
+          "layout": {
+            "width": 320,
+            "scroll": 320,
+            "fit": "contain"
+          }
+        }
+      ],
+      "visualEvidence": {
+        "contactSheet": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/contact-600.png",
+        "pairLabel": "silhouette-600-904"
+      }
+    },
+    {
+      "qid": "silhouette-800-904",
+      "answer": "طائرة ثنائية السطح",
+      "tier": 800,
+      "batch": 3,
+      "ok": true,
+      "beforeFile": "C:\\Users\\user\\Documents\\Codex\\2026-09-25\\hg\\work\\silhouette-ui-qa\\stages\\silhouette-800-904-black.png",
+      "afterFile": "C:\\Users\\user\\Documents\\Codex\\2026-09-25\\hg\\work\\silhouette-ui-qa\\stages\\silhouette-800-904-color.png",
+      "beforePixels": {
+        "width": 256,
+        "height": 193,
+        "darkPixels": 9103,
+        "colorPixels": 0
+      },
+      "afterPixels": {
+        "width": 256,
+        "height": 193,
+        "darkPixels": 4310,
+        "colorPixels": 3227
+      },
+      "sizing": [
+        {
+          "box": {
+            "x": 32,
+            "y": 505.078125,
+            "width": 326,
+            "height": 244.5
+          },
+          "layout": {
+            "width": 390,
+            "scroll": 390,
+            "fit": "contain"
+          }
+        },
+        {
+          "box": {
+            "x": 32,
+            "y": 505.078125,
+            "width": 256,
+            "height": 192
+          },
+          "layout": {
+            "width": 320,
+            "scroll": 320,
+            "fit": "contain"
+          }
+        }
+      ],
+      "visualEvidence": {
+        "contactSheet": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/contact-800.png",
+        "pairLabel": "silhouette-800-904"
+      }
+    },
+    {
+      "qid": "silhouette-1000-904",
+      "answer": "قاطرة بخارية",
+      "tier": 1000,
+      "batch": 3,
+      "ok": true,
+      "beforeFile": "C:\\Users\\user\\Documents\\Codex\\2026-09-25\\hg\\work\\silhouette-ui-qa\\stages\\silhouette-1000-904-black.png",
+      "afterFile": "C:\\Users\\user\\Documents\\Codex\\2026-09-25\\hg\\work\\silhouette-ui-qa\\stages\\silhouette-1000-904-color.png",
+      "beforePixels": {
+        "width": 256,
+        "height": 193,
+        "darkPixels": 9602,
+        "colorPixels": 0
+      },
+      "afterPixels": {
+        "width": 256,
+        "height": 193,
+        "darkPixels": 6305,
+        "colorPixels": 944
+      },
+      "sizing": [
+        {
+          "box": {
+            "x": 32,
+            "y": 505.078125,
+            "width": 326,
+            "height": 244.5
+          },
+          "layout": {
+            "width": 390,
+            "scroll": 390,
+            "fit": "contain"
+          }
+        },
+        {
+          "box": {
+            "x": 32,
+            "y": 505.078125,
+            "width": 256,
+            "height": 192
+          },
+          "layout": {
+            "width": 320,
+            "scroll": 320,
+            "fit": "contain"
+          }
+        }
+      ],
+      "visualEvidence": {
+        "contactSheet": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/contact-1000.png",
+        "pairLabel": "silhouette-1000-904"
+      }
+    },
+    {
+      "qid": "silhouette-200-905",
+      "answer": "صبار",
+      "tier": 200,
+      "batch": 4,
+      "ok": true,
+      "beforeFile": "C:\\Users\\user\\Documents\\Codex\\2026-09-25\\hg\\work\\silhouette-ui-qa\\stages\\silhouette-200-905-black.png",
+      "afterFile": "C:\\Users\\user\\Documents\\Codex\\2026-09-25\\hg\\work\\silhouette-ui-qa\\stages\\silhouette-200-905-color.png",
+      "beforePixels": {
+        "width": 256,
+        "height": 193,
+        "darkPixels": 8160,
+        "colorPixels": 0
+      },
+      "afterPixels": {
+        "width": 256,
+        "height": 193,
+        "darkPixels": 1411,
+        "colorPixels": 6438
+      },
+      "sizing": [
+        {
+          "box": {
+            "x": 32,
+            "y": 457.28125,
+            "width": 326,
+            "height": 244.5
+          },
+          "layout": {
+            "width": 390,
+            "scroll": 390,
+            "fit": "contain"
+          }
+        },
+        {
+          "box": {
+            "x": 32,
+            "y": 457.28125,
+            "width": 256,
+            "height": 192
+          },
+          "layout": {
+            "width": 320,
+            "scroll": 320,
+            "fit": "contain"
+          }
+        }
+      ],
+      "visualEvidence": {
+        "contactSheet": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/contact-200.png",
+        "pairLabel": "silhouette-200-905"
+      }
+    },
+    {
+      "qid": "silhouette-400-905",
+      "answer": "نخلة",
+      "tier": 400,
+      "batch": 4,
+      "ok": true,
+      "beforeFile": "C:\\Users\\user\\Documents\\Codex\\2026-09-25\\hg\\work\\silhouette-ui-qa\\stages\\silhouette-400-905-black.png",
+      "afterFile": "C:\\Users\\user\\Documents\\Codex\\2026-09-25\\hg\\work\\silhouette-ui-qa\\stages\\silhouette-400-905-color.png",
+      "beforePixels": {
+        "width": 256,
+        "height": 193,
+        "darkPixels": 9129,
+        "colorPixels": 0
+      },
+      "afterPixels": {
+        "width": 256,
+        "height": 193,
+        "darkPixels": 445,
+        "colorPixels": 7674
+      },
+      "sizing": [
+        {
+          "box": {
+            "x": 32,
+            "y": 457.28125,
+            "width": 326,
+            "height": 244.5
+          },
+          "layout": {
+            "width": 390,
+            "scroll": 390,
+            "fit": "contain"
+          }
+        },
+        {
+          "box": {
+            "x": 32,
+            "y": 457.28125,
+            "width": 256,
+            "height": 192
+          },
+          "layout": {
+            "width": 320,
+            "scroll": 320,
+            "fit": "contain"
+          }
+        }
+      ],
+      "visualEvidence": {
+        "contactSheet": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/contact-400.png",
+        "pairLabel": "silhouette-400-905"
+      }
+    },
+    {
+      "qid": "silhouette-600-905",
+      "answer": "ورقة بلوط",
+      "tier": 600,
+      "batch": 4,
+      "ok": true,
+      "beforeFile": "C:\\Users\\user\\Documents\\Codex\\2026-09-25\\hg\\work\\silhouette-ui-qa\\stages\\silhouette-600-905-black.png",
+      "afterFile": "C:\\Users\\user\\Documents\\Codex\\2026-09-25\\hg\\work\\silhouette-ui-qa\\stages\\silhouette-600-905-color.png",
+      "beforePixels": {
+        "width": 256,
+        "height": 193,
+        "darkPixels": 9360,
+        "colorPixels": 0
+      },
+      "afterPixels": {
+        "width": 256,
+        "height": 193,
+        "darkPixels": 1,
+        "colorPixels": 9594
+      },
+      "sizing": [
+        {
+          "box": {
+            "x": 32,
+            "y": 505.078125,
+            "width": 326,
+            "height": 244.5
+          },
+          "layout": {
+            "width": 390,
+            "scroll": 390,
+            "fit": "contain"
+          }
+        },
+        {
+          "box": {
+            "x": 32,
+            "y": 539.71875,
+            "width": 256,
+            "height": 192
+          },
+          "layout": {
+            "width": 320,
+            "scroll": 320,
+            "fit": "contain"
+          }
+        }
+      ],
+      "visualEvidence": {
+        "contactSheet": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/contact-600.png",
+        "pairLabel": "silhouette-600-905"
+      }
+    },
+    {
+      "qid": "silhouette-800-905",
+      "answer": "مونستيرا",
+      "tier": 800,
+      "batch": 4,
+      "ok": true,
+      "beforeFile": "C:\\Users\\user\\Documents\\Codex\\2026-09-25\\hg\\work\\silhouette-ui-qa\\stages\\silhouette-800-905-black.png",
+      "afterFile": "C:\\Users\\user\\Documents\\Codex\\2026-09-25\\hg\\work\\silhouette-ui-qa\\stages\\silhouette-800-905-color.png",
+      "beforePixels": {
+        "width": 256,
+        "height": 193,
+        "darkPixels": 11143,
+        "colorPixels": 0
+      },
+      "afterPixels": {
+        "width": 256,
+        "height": 193,
+        "darkPixels": 6107,
+        "colorPixels": 7443
+      },
+      "sizing": [
+        {
+          "box": {
+            "x": 32,
+            "y": 505.078125,
+            "width": 326,
+            "height": 244.5
+          },
+          "layout": {
+            "width": 390,
+            "scroll": 390,
+            "fit": "contain"
+          }
+        },
+        {
+          "box": {
+            "x": 32,
+            "y": 505.078125,
+            "width": 256,
+            "height": 192
+          },
+          "layout": {
+            "width": 320,
+            "scroll": 320,
+            "fit": "contain"
+          }
+        }
+      ],
+      "visualEvidence": {
+        "contactSheet": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/contact-800.png",
+        "pairLabel": "silhouette-800-905"
+      }
+    },
+    {
+      "qid": "silhouette-1000-905",
+      "answer": "ورقة جنكة",
+      "tier": 1000,
+      "batch": 4,
+      "ok": true,
+      "beforeFile": "C:\\Users\\user\\Documents\\Codex\\2026-09-25\\hg\\work\\silhouette-ui-qa\\stages\\silhouette-1000-905-black.png",
+      "afterFile": "C:\\Users\\user\\Documents\\Codex\\2026-09-25\\hg\\work\\silhouette-ui-qa\\stages\\silhouette-1000-905-color.png",
+      "beforePixels": {
+        "width": 256,
+        "height": 193,
+        "darkPixels": 8027,
+        "colorPixels": 0
+      },
+      "afterPixels": {
+        "width": 256,
+        "height": 193,
+        "darkPixels": 0,
+        "colorPixels": 8245
+      },
+      "sizing": [
+        {
+          "box": {
+            "x": 32,
+            "y": 505.078125,
+            "width": 326,
+            "height": 244.5
+          },
+          "layout": {
+            "width": 390,
+            "scroll": 390,
+            "fit": "contain"
+          }
+        },
+        {
+          "box": {
+            "x": 32,
+            "y": 505.078125,
+            "width": 256,
+            "height": 192
+          },
+          "layout": {
+            "width": 320,
+            "scroll": 320,
+            "fit": "contain"
+          }
+        }
+      ],
+      "visualEvidence": {
+        "contactSheet": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/contact-1000.png",
+        "pairLabel": "silhouette-1000-905"
+      }
+    },
+    {
+      "qid": "silhouette-200-906",
+      "answer": "كمثرى",
+      "tier": 200,
+      "batch": 5,
+      "ok": true,
+      "beforeFile": "C:\\Users\\user\\Documents\\Codex\\2026-09-25\\hg\\work\\silhouette-ui-qa\\stages\\silhouette-200-906-black.png",
+      "afterFile": "C:\\Users\\user\\Documents\\Codex\\2026-09-25\\hg\\work\\silhouette-ui-qa\\stages\\silhouette-200-906-color.png",
+      "beforePixels": {
+        "width": 256,
+        "height": 193,
+        "darkPixels": 19517,
+        "colorPixels": 0
+      },
+      "afterPixels": {
+        "width": 256,
+        "height": 193,
+        "darkPixels": 110,
+        "colorPixels": 19712
+      },
+      "sizing": [
+        {
+          "box": {
+            "x": 32,
+            "y": 457.28125,
+            "width": 326,
+            "height": 244.5
+          },
+          "layout": {
+            "width": 390,
+            "scroll": 390,
+            "fit": "contain"
+          }
+        },
+        {
+          "box": {
+            "x": 32,
+            "y": 457.28125,
+            "width": 256,
+            "height": 192
+          },
+          "layout": {
+            "width": 320,
+            "scroll": 320,
+            "fit": "contain"
+          }
+        }
+      ],
+      "visualEvidence": {
+        "contactSheet": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/contact-200.png",
+        "pairLabel": "silhouette-200-906"
+      }
+    },
+    {
+      "qid": "silhouette-400-906",
+      "answer": "فلفل",
+      "tier": 400,
+      "batch": 5,
+      "ok": true,
+      "beforeFile": "C:\\Users\\user\\Documents\\Codex\\2026-09-25\\hg\\work\\silhouette-ui-qa\\stages\\silhouette-400-906-black.png",
+      "afterFile": "C:\\Users\\user\\Documents\\Codex\\2026-09-25\\hg\\work\\silhouette-ui-qa\\stages\\silhouette-400-906-color.png",
+      "beforePixels": {
+        "width": 256,
+        "height": 193,
+        "darkPixels": 4436,
+        "colorPixels": 0
+      },
+      "afterPixels": {
+        "width": 256,
+        "height": 193,
+        "darkPixels": 2,
+        "colorPixels": 4564
+      },
+      "sizing": [
+        {
+          "box": {
+            "x": 32,
+            "y": 457.28125,
+            "width": 326,
+            "height": 244.5
+          },
+          "layout": {
+            "width": 390,
+            "scroll": 390,
+            "fit": "contain"
+          }
+        },
+        {
+          "box": {
+            "x": 32,
+            "y": 457.28125,
+            "width": 256,
+            "height": 192
+          },
+          "layout": {
+            "width": 320,
+            "scroll": 320,
+            "fit": "contain"
+          }
+        }
+      ],
+      "visualEvidence": {
+        "contactSheet": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/contact-400.png",
+        "pairLabel": "silhouette-400-906"
+      }
+    },
+    {
+      "qid": "silhouette-600-906",
+      "answer": "أناناس",
+      "tier": 600,
+      "batch": 5,
+      "ok": true,
+      "beforeFile": "C:\\Users\\user\\Documents\\Codex\\2026-09-25\\hg\\work\\silhouette-ui-qa\\stages\\silhouette-600-906-black.png",
+      "afterFile": "C:\\Users\\user\\Documents\\Codex\\2026-09-25\\hg\\work\\silhouette-ui-qa\\stages\\silhouette-600-906-color.png",
+      "beforePixels": {
+        "width": 256,
+        "height": 193,
+        "darkPixels": 8647,
+        "colorPixels": 0
+      },
+      "afterPixels": {
+        "width": 256,
+        "height": 193,
+        "darkPixels": 541,
+        "colorPixels": 7460
+      },
+      "sizing": [
+        {
+          "box": {
+            "x": 32,
+            "y": 505.078125,
+            "width": 326,
+            "height": 244.5
+          },
+          "layout": {
+            "width": 390,
+            "scroll": 390,
+            "fit": "contain"
+          }
+        },
+        {
+          "box": {
+            "x": 32,
+            "y": 505.078125,
+            "width": 256,
+            "height": 192
+          },
+          "layout": {
+            "width": 320,
+            "scroll": 320,
+            "fit": "contain"
+          }
+        }
+      ],
+      "visualEvidence": {
+        "contactSheet": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/contact-600.png",
+        "pairLabel": "silhouette-600-906"
+      }
+    },
+    {
+      "qid": "silhouette-800-906",
+      "answer": "زنجبيل",
+      "tier": 800,
+      "batch": 5,
+      "ok": true,
+      "beforeFile": "C:\\Users\\user\\Documents\\Codex\\2026-09-25\\hg\\work\\silhouette-ui-qa\\stages\\silhouette-800-906-black.png",
+      "afterFile": "C:\\Users\\user\\Documents\\Codex\\2026-09-25\\hg\\work\\silhouette-ui-qa\\stages\\silhouette-800-906-color.png",
+      "beforePixels": {
+        "width": 256,
+        "height": 193,
+        "darkPixels": 12118,
+        "colorPixels": 0
+      },
+      "afterPixels": {
+        "width": 256,
+        "height": 193,
+        "darkPixels": 73,
+        "colorPixels": 11959
+      },
+      "sizing": [
+        {
+          "box": {
+            "x": 32,
+            "y": 505.078125,
+            "width": 326,
+            "height": 244.5
+          },
+          "layout": {
+            "width": 390,
+            "scroll": 390,
+            "fit": "contain"
+          }
+        },
+        {
+          "box": {
+            "x": 32,
+            "y": 539.71875,
+            "width": 256,
+            "height": 192
+          },
+          "layout": {
+            "width": 320,
+            "scroll": 320,
+            "fit": "contain"
+          }
+        }
+      ],
+      "visualEvidence": {
+        "contactSheet": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/contact-800.png",
+        "pairLabel": "silhouette-800-906"
+      }
+    },
+    {
+      "qid": "silhouette-1000-906",
+      "answer": "فاكهة النجمة",
+      "tier": 1000,
+      "batch": 5,
+      "ok": true,
+      "beforeFile": "C:\\Users\\user\\Documents\\Codex\\2026-09-25\\hg\\work\\silhouette-ui-qa\\stages\\silhouette-1000-906-black.png",
+      "afterFile": "C:\\Users\\user\\Documents\\Codex\\2026-09-25\\hg\\work\\silhouette-ui-qa\\stages\\silhouette-1000-906-color.png",
+      "beforePixels": {
+        "width": 256,
+        "height": 193,
+        "darkPixels": 9972,
+        "colorPixels": 0
+      },
+      "afterPixels": {
+        "width": 256,
+        "height": 193,
+        "darkPixels": 49,
+        "colorPixels": 10127
+      },
+      "sizing": [
+        {
+          "box": {
+            "x": 32,
+            "y": 505.078125,
+            "width": 326,
+            "height": 244.5
+          },
+          "layout": {
+            "width": 390,
+            "scroll": 390,
+            "fit": "contain"
+          }
+        },
+        {
+          "box": {
+            "x": 32,
+            "y": 505.078125,
+            "width": 256,
+            "height": 192
+          },
+          "layout": {
+            "width": 320,
+            "scroll": 320,
+            "fit": "contain"
+          }
+        }
+      ],
+      "visualEvidence": {
+        "contactSheet": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/contact-1000.png",
+        "pairLabel": "silhouette-1000-906"
+      }
+    },
+    {
+      "qid": "silhouette-200-907",
+      "answer": "ساكسفون",
+      "tier": 200,
+      "batch": 6,
+      "ok": true,
+      "beforeFile": "C:\\Users\\user\\Documents\\Codex\\2026-09-25\\hg\\work\\silhouette-ui-qa\\stages\\silhouette-200-907-black.png",
+      "afterFile": "C:\\Users\\user\\Documents\\Codex\\2026-09-25\\hg\\work\\silhouette-ui-qa\\stages\\silhouette-200-907-color.png",
+      "beforePixels": {
+        "width": 256,
+        "height": 193,
+        "darkPixels": 4596,
+        "colorPixels": 0
+      },
+      "afterPixels": {
+        "width": 256,
+        "height": 193,
+        "darkPixels": 187,
+        "colorPixels": 4530
+      },
+      "sizing": [
+        {
+          "box": {
+            "x": 32,
+            "y": 457.28125,
+            "width": 326,
+            "height": 244.5
+          },
+          "layout": {
+            "width": 390,
+            "scroll": 390,
+            "fit": "contain"
+          }
+        },
+        {
+          "box": {
+            "x": 32,
+            "y": 457.28125,
+            "width": 256,
+            "height": 192
+          },
+          "layout": {
+            "width": 320,
+            "scroll": 320,
+            "fit": "contain"
+          }
+        }
+      ],
+      "visualEvidence": {
+        "contactSheet": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/contact-200.png",
+        "pairLabel": "silhouette-200-907"
+      }
+    },
+    {
+      "qid": "silhouette-400-907",
+      "answer": "تشيلو",
+      "tier": 400,
+      "batch": 6,
+      "ok": true,
+      "beforeFile": "C:\\Users\\user\\Documents\\Codex\\2026-09-25\\hg\\work\\silhouette-ui-qa\\stages\\silhouette-400-907-black.png",
+      "afterFile": "C:\\Users\\user\\Documents\\Codex\\2026-09-25\\hg\\work\\silhouette-ui-qa\\stages\\silhouette-400-907-color.png",
+      "beforePixels": {
+        "width": 256,
+        "height": 193,
+        "darkPixels": 5630,
+        "colorPixels": 0
+      },
+      "afterPixels": {
+        "width": 256,
+        "height": 193,
+        "darkPixels": 1040,
+        "colorPixels": 4585
+      },
+      "sizing": [
+        {
+          "box": {
+            "x": 32,
+            "y": 457.28125,
+            "width": 326,
+            "height": 244.5
+          },
+          "layout": {
+            "width": 390,
+            "scroll": 390,
+            "fit": "contain"
+          }
+        },
+        {
+          "box": {
+            "x": 32,
+            "y": 457.28125,
+            "width": 256,
+            "height": 192
+          },
+          "layout": {
+            "width": 320,
+            "scroll": 320,
+            "fit": "contain"
+          }
+        }
+      ],
+      "visualEvidence": {
+        "contactSheet": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/contact-400.png",
+        "pairLabel": "silhouette-400-907"
+      }
+    },
+    {
+      "qid": "silhouette-600-907",
+      "answer": "غيتار كهربائي",
+      "tier": 600,
+      "batch": 6,
+      "ok": true,
+      "beforeFile": "C:\\Users\\user\\Documents\\Codex\\2026-09-25\\hg\\work\\silhouette-ui-qa\\stages\\silhouette-600-907-black.png",
+      "afterFile": "C:\\Users\\user\\Documents\\Codex\\2026-09-25\\hg\\work\\silhouette-ui-qa\\stages\\silhouette-600-907-color.png",
+      "beforePixels": {
+        "width": 256,
+        "height": 193,
+        "darkPixels": 4875,
+        "colorPixels": 0
+      },
+      "afterPixels": {
+        "width": 256,
+        "height": 193,
+        "darkPixels": 606,
+        "colorPixels": 3327
+      },
+      "sizing": [
+        {
+          "box": {
+            "x": 32,
+            "y": 505.078125,
+            "width": 326,
+            "height": 244.5
+          },
+          "layout": {
+            "width": 390,
+            "scroll": 390,
+            "fit": "contain"
+          }
+        },
+        {
+          "box": {
+            "x": 32,
+            "y": 505.078125,
+            "width": 256,
+            "height": 192
+          },
+          "layout": {
+            "width": 320,
+            "scroll": 320,
+            "fit": "contain"
+          }
+        }
+      ],
+      "visualEvidence": {
+        "contactSheet": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/contact-600.png",
+        "pairLabel": "silhouette-600-907"
+      }
+    },
+    {
+      "qid": "silhouette-800-907",
+      "answer": "هورن",
+      "tier": 800,
+      "batch": 6,
+      "ok": true,
+      "beforeFile": "C:\\Users\\user\\Documents\\Codex\\2026-09-25\\hg\\work\\silhouette-ui-qa\\stages\\silhouette-800-907-black.png",
+      "afterFile": "C:\\Users\\user\\Documents\\Codex\\2026-09-25\\hg\\work\\silhouette-ui-qa\\stages\\silhouette-800-907-color.png",
+      "beforePixels": {
+        "width": 256,
+        "height": 193,
+        "darkPixels": 9213,
+        "colorPixels": 0
+      },
+      "afterPixels": {
+        "width": 256,
+        "height": 193,
+        "darkPixels": 448,
+        "colorPixels": 7714
+      },
+      "sizing": [
+        {
+          "box": {
+            "x": 32,
+            "y": 505.078125,
+            "width": 326,
+            "height": 244.5
+          },
+          "layout": {
+            "width": 390,
+            "scroll": 390,
+            "fit": "contain"
+          }
+        },
+        {
+          "box": {
+            "x": 32,
+            "y": 505.078125,
+            "width": 256,
+            "height": 192
+          },
+          "layout": {
+            "width": 320,
+            "scroll": 320,
+            "fit": "contain"
+          }
+        }
+      ],
+      "visualEvidence": {
+        "contactSheet": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/contact-800.png",
+        "pairLabel": "silhouette-800-907"
+      }
+    },
+    {
+      "qid": "silhouette-1000-907",
+      "answer": "بالالايكا",
+      "tier": 1000,
+      "batch": 6,
+      "ok": true,
+      "beforeFile": "C:\\Users\\user\\Documents\\Codex\\2026-09-25\\hg\\work\\silhouette-ui-qa\\stages\\silhouette-1000-907-black.png",
+      "afterFile": "C:\\Users\\user\\Documents\\Codex\\2026-09-25\\hg\\work\\silhouette-ui-qa\\stages\\silhouette-1000-907-color.png",
+      "beforePixels": {
+        "width": 256,
+        "height": 193,
+        "darkPixels": 5224,
+        "colorPixels": 0
+      },
+      "afterPixels": {
+        "width": 256,
+        "height": 193,
+        "darkPixels": 808,
+        "colorPixels": 4498
+      },
+      "sizing": [
+        {
+          "box": {
+            "x": 32,
+            "y": 505.078125,
+            "width": 326,
+            "height": 244.5
+          },
+          "layout": {
+            "width": 390,
+            "scroll": 390,
+            "fit": "contain"
+          }
+        },
+        {
+          "box": {
+            "x": 32,
+            "y": 505.078125,
+            "width": 256,
+            "height": 192
+          },
+          "layout": {
+            "width": 320,
+            "scroll": 320,
+            "fit": "contain"
+          }
+        }
+      ],
+      "visualEvidence": {
+        "contactSheet": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/contact-1000.png",
+        "pairLabel": "silhouette-1000-907"
+      }
+    },
+    {
+      "qid": "silhouette-200-908",
+      "answer": "كرسي هزاز",
+      "tier": 200,
+      "batch": 7,
+      "ok": true,
+      "beforeFile": "C:\\Users\\user\\Documents\\Codex\\2026-09-25\\hg\\work\\silhouette-ui-qa\\stages\\silhouette-200-908-black.png",
+      "afterFile": "C:\\Users\\user\\Documents\\Codex\\2026-09-25\\hg\\work\\silhouette-ui-qa\\stages\\silhouette-200-908-color.png",
+      "beforePixels": {
+        "width": 256,
+        "height": 193,
+        "darkPixels": 7234,
+        "colorPixels": 0
+      },
+      "afterPixels": {
+        "width": 256,
+        "height": 193,
+        "darkPixels": 41,
+        "colorPixels": 7792
+      },
+      "sizing": [
+        {
+          "box": {
+            "x": 32,
+            "y": 457.28125,
+            "width": 326,
+            "height": 244.5
+          },
+          "layout": {
+            "width": 390,
+            "scroll": 390,
+            "fit": "contain"
+          }
+        },
+        {
+          "box": {
+            "x": 32,
+            "y": 457.28125,
+            "width": 256,
+            "height": 192
+          },
+          "layout": {
+            "width": 320,
+            "scroll": 320,
+            "fit": "contain"
+          }
+        }
+      ],
+      "visualEvidence": {
+        "contactSheet": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/contact-200.png",
+        "pairLabel": "silhouette-200-908"
+      }
+    },
+    {
+      "qid": "silhouette-400-908",
+      "answer": "إبريق ري",
+      "tier": 400,
+      "batch": 7,
+      "ok": true,
+      "beforeFile": "C:\\Users\\user\\Documents\\Codex\\2026-09-25\\hg\\work\\silhouette-ui-qa\\stages\\silhouette-400-908-black.png",
+      "afterFile": "C:\\Users\\user\\Documents\\Codex\\2026-09-25\\hg\\work\\silhouette-ui-qa\\stages\\silhouette-400-908-color.png",
+      "beforePixels": {
+        "width": 256,
+        "height": 193,
+        "darkPixels": 8383,
+        "colorPixels": 0
+      },
+      "afterPixels": {
+        "width": 256,
+        "height": 193,
+        "darkPixels": 2713,
+        "colorPixels": 5565
+      },
+      "sizing": [
+        {
+          "box": {
+            "x": 32,
+            "y": 457.28125,
+            "width": 326,
+            "height": 244.5
+          },
+          "layout": {
+            "width": 390,
+            "scroll": 390,
+            "fit": "contain"
+          }
+        },
+        {
+          "box": {
+            "x": 32,
+            "y": 457.28125,
+            "width": 256,
+            "height": 192
+          },
+          "layout": {
+            "width": 320,
+            "scroll": 320,
+            "fit": "contain"
+          }
+        }
+      ],
+      "visualEvidence": {
+        "contactSheet": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/contact-400.png",
+        "pairLabel": "silhouette-400-908"
+      }
+    },
+    {
+      "qid": "silhouette-600-908",
+      "answer": "مروحة",
+      "tier": 600,
+      "batch": 7,
+      "ok": true,
+      "beforeFile": "C:\\Users\\user\\Documents\\Codex\\2026-09-25\\hg\\work\\silhouette-ui-qa\\stages\\silhouette-600-908-black.png",
+      "afterFile": "C:\\Users\\user\\Documents\\Codex\\2026-09-25\\hg\\work\\silhouette-ui-qa\\stages\\silhouette-600-908-color.png",
+      "beforePixels": {
+        "width": 256,
+        "height": 193,
+        "darkPixels": 7754,
+        "colorPixels": 0
+      },
+      "afterPixels": {
+        "width": 256,
+        "height": 193,
+        "darkPixels": 4175,
+        "colorPixels": 0
+      },
+      "sizing": [
+        {
+          "box": {
+            "x": 32,
+            "y": 505.078125,
+            "width": 326,
+            "height": 244.5
+          },
+          "layout": {
+            "width": 390,
+            "scroll": 390,
+            "fit": "contain"
+          }
+        },
+        {
+          "box": {
+            "x": 32,
+            "y": 505.078125,
+            "width": 256,
+            "height": 192
+          },
+          "layout": {
+            "width": 320,
+            "scroll": 320,
+            "fit": "contain"
+          }
+        }
+      ],
+      "visualEvidence": {
+        "contactSheet": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/contact-600.png",
+        "pairLabel": "silhouette-600-908"
+      }
+    },
+    {
+      "qid": "silhouette-800-908",
+      "answer": "مصباح زيت",
+      "tier": 800,
+      "batch": 7,
+      "ok": true,
+      "beforeFile": "C:\\Users\\user\\Documents\\Codex\\2026-09-25\\hg\\work\\silhouette-ui-qa\\stages\\silhouette-800-908-black.png",
+      "afterFile": "C:\\Users\\user\\Documents\\Codex\\2026-09-25\\hg\\work\\silhouette-ui-qa\\stages\\silhouette-800-908-color.png",
+      "beforePixels": {
+        "width": 256,
+        "height": 193,
+        "darkPixels": 5861,
+        "colorPixels": 0
+      },
+      "afterPixels": {
+        "width": 256,
+        "height": 193,
+        "darkPixels": 555,
+        "colorPixels": 2397
+      },
+      "sizing": [
+        {
+          "box": {
+            "x": 32,
+            "y": 505.078125,
+            "width": 326,
+            "height": 244.5
+          },
+          "layout": {
+            "width": 390,
+            "scroll": 390,
+            "fit": "contain"
+          }
+        },
+        {
+          "box": {
+            "x": 32,
+            "y": 505.078125,
+            "width": 256,
+            "height": 192
+          },
+          "layout": {
+            "width": 320,
+            "scroll": 320,
+            "fit": "contain"
+          }
+        }
+      ],
+      "visualEvidence": {
+        "contactSheet": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/contact-800.png",
+        "pairLabel": "silhouette-800-908"
+      }
+    },
+    {
+      "qid": "silhouette-1000-908",
+      "answer": "بابور كاز",
+      "tier": 1000,
+      "batch": 7,
+      "ok": true,
+      "beforeFile": "C:\\Users\\user\\Documents\\Codex\\2026-09-25\\hg\\work\\silhouette-ui-qa\\stages\\silhouette-1000-908-black.png",
+      "afterFile": "C:\\Users\\user\\Documents\\Codex\\2026-09-25\\hg\\work\\silhouette-ui-qa\\stages\\silhouette-1000-908-color.png",
+      "beforePixels": {
+        "width": 256,
+        "height": 193,
+        "darkPixels": 7043,
+        "colorPixels": 0
+      },
+      "afterPixels": {
+        "width": 256,
+        "height": 193,
+        "darkPixels": 1775,
+        "colorPixels": 4051
+      },
+      "sizing": [
+        {
+          "box": {
+            "x": 32,
+            "y": 505.078125,
+            "width": 326,
+            "height": 244.5
+          },
+          "layout": {
+            "width": 390,
+            "scroll": 390,
+            "fit": "contain"
+          }
+        },
+        {
+          "box": {
+            "x": 32,
+            "y": 539.71875,
+            "width": 256,
+            "height": 192
+          },
+          "layout": {
+            "width": 320,
+            "scroll": 320,
+            "fit": "contain"
+          }
+        }
+      ],
+      "visualEvidence": {
+        "contactSheet": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/contact-1000.png",
+        "pairLabel": "silhouette-1000-908"
+      }
+    }
+  ],
+  "errors": [],
+  "networkErrors": [],
+  "results": [
+    {
+      "name": "all40 neutral media filenames",
+      "ok": true
+    },
+    {
+      "name": "silhouette-200-901: black base and hidden color layer before reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-200-901: generic alt and no answer leak before reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-200-901: enlargement unavailable before reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-200-901: pressing silhouette does not open original",
+      "ok": true
+    },
+    {
+      "name": "silhouette-200-901: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "silhouette-200-901: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "silhouette-200-901: full-color layer after reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-200-901: answer matches after reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-200-901: screenshot contains visible black outline",
+      "ok": true
+    },
+    {
+      "name": "silhouette-200-901: revealed screenshot differs from black silhouette",
+      "ok": true
+    },
+    {
+      "name": "silhouette-200-901: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "silhouette-200-901: hiding answer restores silhouette and blocks enlarge",
+      "ok": true
+    },
+    {
+      "name": "silhouette-400-901: black base and hidden color layer before reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-400-901: generic alt and no answer leak before reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-400-901: enlargement unavailable before reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-400-901: pressing silhouette does not open original",
+      "ok": true
+    },
+    {
+      "name": "silhouette-400-901: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "silhouette-400-901: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "silhouette-400-901: full-color layer after reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-400-901: answer matches after reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-400-901: screenshot contains visible black outline",
+      "ok": true
+    },
+    {
+      "name": "silhouette-400-901: revealed screenshot differs from black silhouette",
+      "ok": true
+    },
+    {
+      "name": "silhouette-400-901: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "silhouette-400-901: hiding answer restores silhouette and blocks enlarge",
+      "ok": true
+    },
+    {
+      "name": "silhouette-600-901: black base and hidden color layer before reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-600-901: generic alt and no answer leak before reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-600-901: enlargement unavailable before reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-600-901: pressing silhouette does not open original",
+      "ok": true
+    },
+    {
+      "name": "silhouette-600-901: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "silhouette-600-901: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "silhouette-600-901: full-color layer after reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-600-901: answer matches after reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-600-901: screenshot contains visible black outline",
+      "ok": true
+    },
+    {
+      "name": "silhouette-600-901: revealed screenshot differs from black silhouette",
+      "ok": true
+    },
+    {
+      "name": "silhouette-600-901: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "silhouette-600-901: hiding answer restores silhouette and blocks enlarge",
+      "ok": true
+    },
+    {
+      "name": "silhouette-800-901: black base and hidden color layer before reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-800-901: generic alt and no answer leak before reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-800-901: enlargement unavailable before reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-800-901: pressing silhouette does not open original",
+      "ok": true
+    },
+    {
+      "name": "silhouette-800-901: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "silhouette-800-901: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "silhouette-800-901: full-color layer after reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-800-901: answer matches after reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-800-901: screenshot contains visible black outline",
+      "ok": true
+    },
+    {
+      "name": "silhouette-800-901: revealed screenshot differs from black silhouette",
+      "ok": true
+    },
+    {
+      "name": "silhouette-800-901: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "silhouette-800-901: hiding answer restores silhouette and blocks enlarge",
+      "ok": true
+    },
+    {
+      "name": "silhouette-1000-901: black base and hidden color layer before reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-1000-901: generic alt and no answer leak before reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-1000-901: enlargement unavailable before reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-1000-901: pressing silhouette does not open original",
+      "ok": true
+    },
+    {
+      "name": "silhouette-1000-901: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "silhouette-1000-901: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "silhouette-1000-901: full-color layer after reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-1000-901: answer matches after reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-1000-901: screenshot contains visible black outline",
+      "ok": true
+    },
+    {
+      "name": "silhouette-1000-901: revealed screenshot differs from black silhouette",
+      "ok": true
+    },
+    {
+      "name": "silhouette-1000-901: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "silhouette-1000-901: hiding answer restores silhouette and blocks enlarge",
+      "ok": true
+    },
+    {
+      "name": "silhouette-200-902: black base and hidden color layer before reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-200-902: generic alt and no answer leak before reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-200-902: enlargement unavailable before reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-200-902: pressing silhouette does not open original",
+      "ok": true
+    },
+    {
+      "name": "silhouette-200-902: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "silhouette-200-902: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "silhouette-200-902: full-color layer after reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-200-902: answer matches after reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-200-902: screenshot contains visible black outline",
+      "ok": true
+    },
+    {
+      "name": "silhouette-200-902: revealed screenshot differs from black silhouette",
+      "ok": true
+    },
+    {
+      "name": "silhouette-200-902: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "silhouette-200-902: hiding answer restores silhouette and blocks enlarge",
+      "ok": true
+    },
+    {
+      "name": "silhouette-400-902: black base and hidden color layer before reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-400-902: generic alt and no answer leak before reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-400-902: enlargement unavailable before reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-400-902: pressing silhouette does not open original",
+      "ok": true
+    },
+    {
+      "name": "silhouette-400-902: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "silhouette-400-902: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "silhouette-400-902: full-color layer after reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-400-902: answer matches after reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-400-902: screenshot contains visible black outline",
+      "ok": true
+    },
+    {
+      "name": "silhouette-400-902: revealed screenshot differs from black silhouette",
+      "ok": true
+    },
+    {
+      "name": "silhouette-400-902: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "silhouette-400-902: hiding answer restores silhouette and blocks enlarge",
+      "ok": true
+    },
+    {
+      "name": "silhouette-600-902: black base and hidden color layer before reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-600-902: generic alt and no answer leak before reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-600-902: enlargement unavailable before reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-600-902: pressing silhouette does not open original",
+      "ok": true
+    },
+    {
+      "name": "silhouette-600-902: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "silhouette-600-902: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "silhouette-600-902: full-color layer after reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-600-902: answer matches after reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-600-902: screenshot contains visible black outline",
+      "ok": true
+    },
+    {
+      "name": "silhouette-600-902: revealed screenshot differs from black silhouette",
+      "ok": true
+    },
+    {
+      "name": "silhouette-600-902: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "silhouette-600-902: hiding answer restores silhouette and blocks enlarge",
+      "ok": true
+    },
+    {
+      "name": "silhouette-800-902: black base and hidden color layer before reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-800-902: generic alt and no answer leak before reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-800-902: enlargement unavailable before reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-800-902: pressing silhouette does not open original",
+      "ok": true
+    },
+    {
+      "name": "silhouette-800-902: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "silhouette-800-902: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "silhouette-800-902: full-color layer after reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-800-902: answer matches after reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-800-902: screenshot contains visible black outline",
+      "ok": true
+    },
+    {
+      "name": "silhouette-800-902: revealed screenshot differs from black silhouette",
+      "ok": true
+    },
+    {
+      "name": "silhouette-800-902: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "silhouette-800-902: hiding answer restores silhouette and blocks enlarge",
+      "ok": true
+    },
+    {
+      "name": "silhouette-1000-902: black base and hidden color layer before reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-1000-902: generic alt and no answer leak before reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-1000-902: enlargement unavailable before reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-1000-902: pressing silhouette does not open original",
+      "ok": true
+    },
+    {
+      "name": "silhouette-1000-902: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "silhouette-1000-902: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "silhouette-1000-902: full-color layer after reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-1000-902: answer matches after reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-1000-902: screenshot contains visible black outline",
+      "ok": true
+    },
+    {
+      "name": "silhouette-1000-902: revealed screenshot differs from black silhouette",
+      "ok": true
+    },
+    {
+      "name": "silhouette-1000-902: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "silhouette-1000-902: hiding answer restores silhouette and blocks enlarge",
+      "ok": true
+    },
+    {
+      "name": "silhouette-200-903: black base and hidden color layer before reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-200-903: generic alt and no answer leak before reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-200-903: enlargement unavailable before reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-200-903: pressing silhouette does not open original",
+      "ok": true
+    },
+    {
+      "name": "silhouette-200-903: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "silhouette-200-903: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "silhouette-200-903: full-color layer after reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-200-903: answer matches after reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-200-903: screenshot contains visible black outline",
+      "ok": true
+    },
+    {
+      "name": "silhouette-200-903: revealed screenshot differs from black silhouette",
+      "ok": true
+    },
+    {
+      "name": "silhouette-200-903: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "silhouette-200-903: hiding answer restores silhouette and blocks enlarge",
+      "ok": true
+    },
+    {
+      "name": "silhouette-400-903: black base and hidden color layer before reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-400-903: generic alt and no answer leak before reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-400-903: enlargement unavailable before reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-400-903: pressing silhouette does not open original",
+      "ok": true
+    },
+    {
+      "name": "silhouette-400-903: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "silhouette-400-903: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "silhouette-400-903: full-color layer after reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-400-903: answer matches after reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-400-903: screenshot contains visible black outline",
+      "ok": true
+    },
+    {
+      "name": "silhouette-400-903: revealed screenshot differs from black silhouette",
+      "ok": true
+    },
+    {
+      "name": "silhouette-400-903: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "silhouette-400-903: hiding answer restores silhouette and blocks enlarge",
+      "ok": true
+    },
+    {
+      "name": "silhouette-600-903: black base and hidden color layer before reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-600-903: generic alt and no answer leak before reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-600-903: enlargement unavailable before reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-600-903: pressing silhouette does not open original",
+      "ok": true
+    },
+    {
+      "name": "silhouette-600-903: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "silhouette-600-903: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "silhouette-600-903: full-color layer after reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-600-903: answer matches after reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-600-903: screenshot contains visible black outline",
+      "ok": true
+    },
+    {
+      "name": "silhouette-600-903: revealed screenshot differs from black silhouette",
+      "ok": true
+    },
+    {
+      "name": "silhouette-600-903: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "silhouette-600-903: hiding answer restores silhouette and blocks enlarge",
+      "ok": true
+    },
+    {
+      "name": "silhouette-800-903: black base and hidden color layer before reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-800-903: generic alt and no answer leak before reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-800-903: enlargement unavailable before reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-800-903: pressing silhouette does not open original",
+      "ok": true
+    },
+    {
+      "name": "silhouette-800-903: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "silhouette-800-903: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "silhouette-800-903: full-color layer after reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-800-903: answer matches after reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-800-903: screenshot contains visible black outline",
+      "ok": true
+    },
+    {
+      "name": "silhouette-800-903: revealed screenshot differs from black silhouette",
+      "ok": true
+    },
+    {
+      "name": "silhouette-800-903: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "silhouette-800-903: hiding answer restores silhouette and blocks enlarge",
+      "ok": true
+    },
+    {
+      "name": "silhouette-1000-903: black base and hidden color layer before reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-1000-903: generic alt and no answer leak before reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-1000-903: enlargement unavailable before reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-1000-903: pressing silhouette does not open original",
+      "ok": true
+    },
+    {
+      "name": "silhouette-1000-903: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "silhouette-1000-903: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "silhouette-1000-903: full-color layer after reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-1000-903: answer matches after reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-1000-903: screenshot contains visible black outline",
+      "ok": true
+    },
+    {
+      "name": "silhouette-1000-903: revealed screenshot differs from black silhouette",
+      "ok": true
+    },
+    {
+      "name": "silhouette-1000-903: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "silhouette-1000-903: hiding answer restores silhouette and blocks enlarge",
+      "ok": true
+    },
+    {
+      "name": "silhouette-200-904: black base and hidden color layer before reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-200-904: generic alt and no answer leak before reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-200-904: enlargement unavailable before reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-200-904: pressing silhouette does not open original",
+      "ok": true
+    },
+    {
+      "name": "silhouette-200-904: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "silhouette-200-904: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "silhouette-200-904: full-color layer after reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-200-904: answer matches after reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-200-904: screenshot contains visible black outline",
+      "ok": true
+    },
+    {
+      "name": "silhouette-200-904: revealed screenshot differs from black silhouette",
+      "ok": true
+    },
+    {
+      "name": "silhouette-200-904: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "silhouette-200-904: hiding answer restores silhouette and blocks enlarge",
+      "ok": true
+    },
+    {
+      "name": "silhouette-400-904: black base and hidden color layer before reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-400-904: generic alt and no answer leak before reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-400-904: enlargement unavailable before reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-400-904: pressing silhouette does not open original",
+      "ok": true
+    },
+    {
+      "name": "silhouette-400-904: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "silhouette-400-904: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "silhouette-400-904: full-color layer after reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-400-904: answer matches after reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-400-904: screenshot contains visible black outline",
+      "ok": true
+    },
+    {
+      "name": "silhouette-400-904: revealed screenshot differs from black silhouette",
+      "ok": true
+    },
+    {
+      "name": "silhouette-400-904: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "silhouette-400-904: hiding answer restores silhouette and blocks enlarge",
+      "ok": true
+    },
+    {
+      "name": "silhouette-600-904: black base and hidden color layer before reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-600-904: generic alt and no answer leak before reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-600-904: enlargement unavailable before reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-600-904: pressing silhouette does not open original",
+      "ok": true
+    },
+    {
+      "name": "silhouette-600-904: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "silhouette-600-904: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "silhouette-600-904: full-color layer after reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-600-904: answer matches after reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-600-904: screenshot contains visible black outline",
+      "ok": true
+    },
+    {
+      "name": "silhouette-600-904: revealed screenshot differs from black silhouette",
+      "ok": true
+    },
+    {
+      "name": "silhouette-600-904: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "silhouette-600-904: hiding answer restores silhouette and blocks enlarge",
+      "ok": true
+    },
+    {
+      "name": "silhouette-800-904: black base and hidden color layer before reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-800-904: generic alt and no answer leak before reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-800-904: enlargement unavailable before reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-800-904: pressing silhouette does not open original",
+      "ok": true
+    },
+    {
+      "name": "silhouette-800-904: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "silhouette-800-904: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "silhouette-800-904: full-color layer after reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-800-904: answer matches after reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-800-904: screenshot contains visible black outline",
+      "ok": true
+    },
+    {
+      "name": "silhouette-800-904: revealed screenshot differs from black silhouette",
+      "ok": true
+    },
+    {
+      "name": "silhouette-800-904: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "silhouette-800-904: hiding answer restores silhouette and blocks enlarge",
+      "ok": true
+    },
+    {
+      "name": "silhouette-1000-904: black base and hidden color layer before reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-1000-904: generic alt and no answer leak before reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-1000-904: enlargement unavailable before reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-1000-904: pressing silhouette does not open original",
+      "ok": true
+    },
+    {
+      "name": "silhouette-1000-904: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "silhouette-1000-904: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "silhouette-1000-904: full-color layer after reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-1000-904: answer matches after reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-1000-904: screenshot contains visible black outline",
+      "ok": true
+    },
+    {
+      "name": "silhouette-1000-904: revealed screenshot differs from black silhouette",
+      "ok": true
+    },
+    {
+      "name": "silhouette-1000-904: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "silhouette-1000-904: hiding answer restores silhouette and blocks enlarge",
+      "ok": true
+    },
+    {
+      "name": "silhouette-200-905: black base and hidden color layer before reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-200-905: generic alt and no answer leak before reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-200-905: enlargement unavailable before reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-200-905: pressing silhouette does not open original",
+      "ok": true
+    },
+    {
+      "name": "silhouette-200-905: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "silhouette-200-905: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "silhouette-200-905: full-color layer after reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-200-905: answer matches after reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-200-905: screenshot contains visible black outline",
+      "ok": true
+    },
+    {
+      "name": "silhouette-200-905: revealed screenshot differs from black silhouette",
+      "ok": true
+    },
+    {
+      "name": "silhouette-200-905: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "silhouette-200-905: hiding answer restores silhouette and blocks enlarge",
+      "ok": true
+    },
+    {
+      "name": "silhouette-400-905: black base and hidden color layer before reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-400-905: generic alt and no answer leak before reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-400-905: enlargement unavailable before reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-400-905: pressing silhouette does not open original",
+      "ok": true
+    },
+    {
+      "name": "silhouette-400-905: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "silhouette-400-905: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "silhouette-400-905: full-color layer after reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-400-905: answer matches after reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-400-905: screenshot contains visible black outline",
+      "ok": true
+    },
+    {
+      "name": "silhouette-400-905: revealed screenshot differs from black silhouette",
+      "ok": true
+    },
+    {
+      "name": "silhouette-400-905: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "silhouette-400-905: hiding answer restores silhouette and blocks enlarge",
+      "ok": true
+    },
+    {
+      "name": "silhouette-600-905: black base and hidden color layer before reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-600-905: generic alt and no answer leak before reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-600-905: enlargement unavailable before reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-600-905: pressing silhouette does not open original",
+      "ok": true
+    },
+    {
+      "name": "silhouette-600-905: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "silhouette-600-905: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "silhouette-600-905: full-color layer after reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-600-905: answer matches after reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-600-905: screenshot contains visible black outline",
+      "ok": true
+    },
+    {
+      "name": "silhouette-600-905: revealed screenshot differs from black silhouette",
+      "ok": true
+    },
+    {
+      "name": "silhouette-600-905: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "silhouette-600-905: hiding answer restores silhouette and blocks enlarge",
+      "ok": true
+    },
+    {
+      "name": "silhouette-800-905: black base and hidden color layer before reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-800-905: generic alt and no answer leak before reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-800-905: enlargement unavailable before reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-800-905: pressing silhouette does not open original",
+      "ok": true
+    },
+    {
+      "name": "silhouette-800-905: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "silhouette-800-905: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "silhouette-800-905: full-color layer after reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-800-905: answer matches after reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-800-905: screenshot contains visible black outline",
+      "ok": true
+    },
+    {
+      "name": "silhouette-800-905: revealed screenshot differs from black silhouette",
+      "ok": true
+    },
+    {
+      "name": "silhouette-800-905: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "silhouette-800-905: hiding answer restores silhouette and blocks enlarge",
+      "ok": true
+    },
+    {
+      "name": "silhouette-1000-905: black base and hidden color layer before reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-1000-905: generic alt and no answer leak before reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-1000-905: enlargement unavailable before reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-1000-905: pressing silhouette does not open original",
+      "ok": true
+    },
+    {
+      "name": "silhouette-1000-905: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "silhouette-1000-905: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "silhouette-1000-905: full-color layer after reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-1000-905: answer matches after reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-1000-905: screenshot contains visible black outline",
+      "ok": true
+    },
+    {
+      "name": "silhouette-1000-905: revealed screenshot differs from black silhouette",
+      "ok": true
+    },
+    {
+      "name": "silhouette-1000-905: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "silhouette-1000-905: hiding answer restores silhouette and blocks enlarge",
+      "ok": true
+    },
+    {
+      "name": "silhouette-200-906: black base and hidden color layer before reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-200-906: generic alt and no answer leak before reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-200-906: enlargement unavailable before reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-200-906: pressing silhouette does not open original",
+      "ok": true
+    },
+    {
+      "name": "silhouette-200-906: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "silhouette-200-906: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "silhouette-200-906: full-color layer after reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-200-906: answer matches after reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-200-906: screenshot contains visible black outline",
+      "ok": true
+    },
+    {
+      "name": "silhouette-200-906: revealed screenshot differs from black silhouette",
+      "ok": true
+    },
+    {
+      "name": "silhouette-200-906: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "silhouette-200-906: hiding answer restores silhouette and blocks enlarge",
+      "ok": true
+    },
+    {
+      "name": "silhouette-400-906: black base and hidden color layer before reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-400-906: generic alt and no answer leak before reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-400-906: enlargement unavailable before reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-400-906: pressing silhouette does not open original",
+      "ok": true
+    },
+    {
+      "name": "silhouette-400-906: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "silhouette-400-906: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "silhouette-400-906: full-color layer after reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-400-906: answer matches after reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-400-906: screenshot contains visible black outline",
+      "ok": true
+    },
+    {
+      "name": "silhouette-400-906: revealed screenshot differs from black silhouette",
+      "ok": true
+    },
+    {
+      "name": "silhouette-400-906: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "silhouette-400-906: hiding answer restores silhouette and blocks enlarge",
+      "ok": true
+    },
+    {
+      "name": "silhouette-600-906: black base and hidden color layer before reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-600-906: generic alt and no answer leak before reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-600-906: enlargement unavailable before reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-600-906: pressing silhouette does not open original",
+      "ok": true
+    },
+    {
+      "name": "silhouette-600-906: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "silhouette-600-906: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "silhouette-600-906: full-color layer after reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-600-906: answer matches after reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-600-906: screenshot contains visible black outline",
+      "ok": true
+    },
+    {
+      "name": "silhouette-600-906: revealed screenshot differs from black silhouette",
+      "ok": true
+    },
+    {
+      "name": "silhouette-600-906: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "silhouette-600-906: hiding answer restores silhouette and blocks enlarge",
+      "ok": true
+    },
+    {
+      "name": "silhouette-800-906: black base and hidden color layer before reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-800-906: generic alt and no answer leak before reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-800-906: enlargement unavailable before reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-800-906: pressing silhouette does not open original",
+      "ok": true
+    },
+    {
+      "name": "silhouette-800-906: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "silhouette-800-906: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "silhouette-800-906: full-color layer after reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-800-906: answer matches after reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-800-906: screenshot contains visible black outline",
+      "ok": true
+    },
+    {
+      "name": "silhouette-800-906: revealed screenshot differs from black silhouette",
+      "ok": true
+    },
+    {
+      "name": "silhouette-800-906: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "silhouette-800-906: hiding answer restores silhouette and blocks enlarge",
+      "ok": true
+    },
+    {
+      "name": "silhouette-1000-906: black base and hidden color layer before reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-1000-906: generic alt and no answer leak before reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-1000-906: enlargement unavailable before reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-1000-906: pressing silhouette does not open original",
+      "ok": true
+    },
+    {
+      "name": "silhouette-1000-906: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "silhouette-1000-906: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "silhouette-1000-906: full-color layer after reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-1000-906: answer matches after reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-1000-906: screenshot contains visible black outline",
+      "ok": true
+    },
+    {
+      "name": "silhouette-1000-906: revealed screenshot differs from black silhouette",
+      "ok": true
+    },
+    {
+      "name": "silhouette-1000-906: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "silhouette-1000-906: hiding answer restores silhouette and blocks enlarge",
+      "ok": true
+    },
+    {
+      "name": "silhouette-200-907: black base and hidden color layer before reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-200-907: generic alt and no answer leak before reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-200-907: enlargement unavailable before reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-200-907: pressing silhouette does not open original",
+      "ok": true
+    },
+    {
+      "name": "silhouette-200-907: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "silhouette-200-907: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "silhouette-200-907: full-color layer after reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-200-907: answer matches after reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-200-907: screenshot contains visible black outline",
+      "ok": true
+    },
+    {
+      "name": "silhouette-200-907: revealed screenshot differs from black silhouette",
+      "ok": true
+    },
+    {
+      "name": "silhouette-200-907: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "silhouette-200-907: hiding answer restores silhouette and blocks enlarge",
+      "ok": true
+    },
+    {
+      "name": "silhouette-400-907: black base and hidden color layer before reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-400-907: generic alt and no answer leak before reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-400-907: enlargement unavailable before reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-400-907: pressing silhouette does not open original",
+      "ok": true
+    },
+    {
+      "name": "silhouette-400-907: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "silhouette-400-907: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "silhouette-400-907: full-color layer after reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-400-907: answer matches after reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-400-907: screenshot contains visible black outline",
+      "ok": true
+    },
+    {
+      "name": "silhouette-400-907: revealed screenshot differs from black silhouette",
+      "ok": true
+    },
+    {
+      "name": "silhouette-400-907: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "silhouette-400-907: hiding answer restores silhouette and blocks enlarge",
+      "ok": true
+    },
+    {
+      "name": "silhouette-600-907: black base and hidden color layer before reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-600-907: generic alt and no answer leak before reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-600-907: enlargement unavailable before reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-600-907: pressing silhouette does not open original",
+      "ok": true
+    },
+    {
+      "name": "silhouette-600-907: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "silhouette-600-907: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "silhouette-600-907: full-color layer after reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-600-907: answer matches after reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-600-907: screenshot contains visible black outline",
+      "ok": true
+    },
+    {
+      "name": "silhouette-600-907: revealed screenshot differs from black silhouette",
+      "ok": true
+    },
+    {
+      "name": "silhouette-600-907: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "silhouette-600-907: hiding answer restores silhouette and blocks enlarge",
+      "ok": true
+    },
+    {
+      "name": "silhouette-800-907: black base and hidden color layer before reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-800-907: generic alt and no answer leak before reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-800-907: enlargement unavailable before reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-800-907: pressing silhouette does not open original",
+      "ok": true
+    },
+    {
+      "name": "silhouette-800-907: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "silhouette-800-907: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "silhouette-800-907: full-color layer after reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-800-907: answer matches after reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-800-907: screenshot contains visible black outline",
+      "ok": true
+    },
+    {
+      "name": "silhouette-800-907: revealed screenshot differs from black silhouette",
+      "ok": true
+    },
+    {
+      "name": "silhouette-800-907: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "silhouette-800-907: hiding answer restores silhouette and blocks enlarge",
+      "ok": true
+    },
+    {
+      "name": "silhouette-1000-907: black base and hidden color layer before reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-1000-907: generic alt and no answer leak before reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-1000-907: enlargement unavailable before reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-1000-907: pressing silhouette does not open original",
+      "ok": true
+    },
+    {
+      "name": "silhouette-1000-907: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "silhouette-1000-907: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "silhouette-1000-907: full-color layer after reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-1000-907: answer matches after reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-1000-907: screenshot contains visible black outline",
+      "ok": true
+    },
+    {
+      "name": "silhouette-1000-907: revealed screenshot differs from black silhouette",
+      "ok": true
+    },
+    {
+      "name": "silhouette-1000-907: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "silhouette-1000-907: hiding answer restores silhouette and blocks enlarge",
+      "ok": true
+    },
+    {
+      "name": "silhouette-200-908: black base and hidden color layer before reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-200-908: generic alt and no answer leak before reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-200-908: enlargement unavailable before reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-200-908: pressing silhouette does not open original",
+      "ok": true
+    },
+    {
+      "name": "silhouette-200-908: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "silhouette-200-908: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "silhouette-200-908: full-color layer after reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-200-908: answer matches after reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-200-908: screenshot contains visible black outline",
+      "ok": true
+    },
+    {
+      "name": "silhouette-200-908: revealed screenshot differs from black silhouette",
+      "ok": true
+    },
+    {
+      "name": "silhouette-200-908: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "silhouette-200-908: hiding answer restores silhouette and blocks enlarge",
+      "ok": true
+    },
+    {
+      "name": "silhouette-400-908: black base and hidden color layer before reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-400-908: generic alt and no answer leak before reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-400-908: enlargement unavailable before reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-400-908: pressing silhouette does not open original",
+      "ok": true
+    },
+    {
+      "name": "silhouette-400-908: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "silhouette-400-908: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "silhouette-400-908: full-color layer after reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-400-908: answer matches after reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-400-908: screenshot contains visible black outline",
+      "ok": true
+    },
+    {
+      "name": "silhouette-400-908: revealed screenshot differs from black silhouette",
+      "ok": true
+    },
+    {
+      "name": "silhouette-400-908: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "silhouette-400-908: hiding answer restores silhouette and blocks enlarge",
+      "ok": true
+    },
+    {
+      "name": "silhouette-600-908: black base and hidden color layer before reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-600-908: generic alt and no answer leak before reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-600-908: enlargement unavailable before reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-600-908: pressing silhouette does not open original",
+      "ok": true
+    },
+    {
+      "name": "silhouette-600-908: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "silhouette-600-908: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "silhouette-600-908: full-color layer after reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-600-908: answer matches after reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-600-908: screenshot contains visible black outline",
+      "ok": true
+    },
+    {
+      "name": "silhouette-600-908: revealed screenshot differs from black silhouette",
+      "ok": true
+    },
+    {
+      "name": "silhouette-600-908: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "silhouette-600-908: hiding answer restores silhouette and blocks enlarge",
+      "ok": true
+    },
+    {
+      "name": "silhouette-800-908: black base and hidden color layer before reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-800-908: generic alt and no answer leak before reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-800-908: enlargement unavailable before reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-800-908: pressing silhouette does not open original",
+      "ok": true
+    },
+    {
+      "name": "silhouette-800-908: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "silhouette-800-908: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "silhouette-800-908: full-color layer after reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-800-908: answer matches after reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-800-908: screenshot contains visible black outline",
+      "ok": true
+    },
+    {
+      "name": "silhouette-800-908: revealed screenshot differs from black silhouette",
+      "ok": true
+    },
+    {
+      "name": "silhouette-800-908: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "silhouette-800-908: hiding answer restores silhouette and blocks enlarge",
+      "ok": true
+    },
+    {
+      "name": "silhouette-1000-908: black base and hidden color layer before reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-1000-908: generic alt and no answer leak before reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-1000-908: enlargement unavailable before reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-1000-908: pressing silhouette does not open original",
+      "ok": true
+    },
+    {
+      "name": "silhouette-1000-908: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "silhouette-1000-908: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "silhouette-1000-908: full-color layer after reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-1000-908: answer matches after reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-1000-908: screenshot contains visible black outline",
+      "ok": true
+    },
+    {
+      "name": "silhouette-1000-908: revealed screenshot differs from black silhouette",
+      "ok": true
+    },
+    {
+      "name": "silhouette-1000-908: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "silhouette-1000-908: hiding answer restores silhouette and blocks enlarge",
+      "ok": true
+    },
+    {
+      "name": "all40 media decode in Chromium",
+      "ok": true
+    },
+    {
+      "name": "all40 own About rows disclose AI creation",
+      "ok": true
+    },
+    {
+      "name": "all40 individually exercised",
+      "ok": true
+    },
+    {
+      "name": "no browser runtime errors",
+      "ok": true
+    },
+    {
+      "name": "no missing assets",
+      "ok": true
+    }
+  ],
+  "contactSheets": [
+    "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/contact-200.png",
+    "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/contact-400.png",
+    "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/contact-600.png",
+    "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/contact-800.png",
+    "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/contact-1000.png"
+  ]
+}

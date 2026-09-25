@@ -13,17 +13,20 @@
   "sha256": "000c3a8f9ae481a8ce9cbdf20bf45866100cbe48fa262fca02cfbd670ffa6430",
   "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
   "review": {
-    "status": "visual-subject-reviewed",
-    "reviewedAt": "2026-09-23",
-    "note": "Generated output visually reviewed: subject matches answer; true alpha measured. Final silhouette/reveal gameplay review still pending.",
-    "answer": "فلفل حار",
+    "status": "approved",
+    "reviewedAt": "2026-09-25",
+    "sourceReview": "docs/bank/rebuild-2026-09-18/review-silhouette-final.json",
+    "note": "A slender curved pepper pod with a stem is visible. The red color after reveal supports a familiar chili illustration, but heat level cannot be established from outline or color. Main answer broadened from فلفل حار to فلفل.",
+    "gameplayReview": "approved",
     "alpha": {
-      "pixels": 1228800,
-      "alpha0": 1108839,
-      "alpha255": 792,
-      "partialAlpha": 119169,
-      "nearOpaque250to255": 108886,
+      "size": [
+        1280,
+        960
+      ],
+      "bytes": 65252,
+      "sha256": "000c3a8f9ae481a8ce9cbdf20bf45866100cbe48fa262fca02cfbd670ffa6430",
       "transparentFraction": 0.902375,
+      "nearOpaqueFraction": 0.088612,
       "bboxAlphaOver128": [
         156,
         218,
@@ -31,6 +34,7 @@
         727
       ]
     },
-    "gameplayReview": "pending"
+    "independentVisualReview": "All40 installed assets rechecked on2026-09-25; visible outline and subject accepted.",
+    "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/runtime.json"
   }
 }

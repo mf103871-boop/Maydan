@@ -6,4757 +6,1178 @@
   "qs": [
     {
       "p": 200,
-      "q": "أي دولة خليجية ترفع هذا العلم؟",
-      "a": "السعودية",
-      "qid": "flags-200-001",
-      "type": "image",
-      "alt": [
-        "المملكة العربية السعودية"
-      ],
-      "topic": "كتابة ونقوش",
-      "verified": true,
-      "media": {
-        "src": "flags-200-001.webp",
-        "type": "image",
-        "title": "Flag of Saudi Arabia (obverse)",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Saudi_Arabia.svg",
-        "author": "The Shura Council",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 200,
-      "q": "لأي دولة عربية هذه الراية؟",
-      "a": "مصر",
-      "qid": "flags-200-002",
-      "type": "image",
-      "alt": [
-        "جمهورية مصر العربية"
-      ],
-      "topic": "نباتات وحيوانات",
-      "verified": true,
-      "media": {
-        "src": "flags-200-002.webp",
-        "type": "image",
-        "title": "Flag of Egypt",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Egypt.svg",
-        "author": "See File history below for details.",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 200,
-      "q": "راية أي دولة خليجية أمامك؟",
+      "q": "ما الدولة صاحبة هذا العلم ذي الشريط الأحمر العمودي؟",
       "a": "الإمارات",
-      "qid": "flags-200-003",
+      "qid": "flags-200-901",
       "type": "image",
+      "effect": "none",
       "alt": [
         "الإمارات العربية المتحدة",
-        "دولة الإمارات"
+        "United Arab Emirates",
+        "UAE"
       ],
-      "topic": "أشرطة وألوان",
+      "topic": "غرب آسيا وشمال أفريقيا",
+      "difficultyTarget": 0.8,
       "verified": true,
+      "sourceUrl": "https://vig.gmo.gov.ae/en/guideline/the-uae-flag",
       "media": {
-        "src": "flags-200-003.webp",
+        "src": "flags-200-901.webp",
         "type": "image",
-        "title": "Flag of the United Arab Emirates",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_the_United_Arab_Emirates.svg",
-        "author": "Abdulla Mohammed Al Maainah",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+        "title": "علم دولة — رسم توضيحي",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-200-901.json"
+        }
       }
     },
     {
       "p": 200,
-      "q": "لمن هذا العلم؟",
+      "q": "أي دولة يمثلها العلم المصوّر ذو شبه المنحرف الأسود؟",
       "a": "الكويت",
-      "qid": "flags-200-004",
+      "qid": "flags-200-902",
       "type": "image",
-      "topic": "أشكال هندسية",
-      "verified": true,
-      "media": {
-        "src": "flags-200-004.webp",
-        "type": "image",
-        "title": "flag of Kuwaitlabel QS:Les,\"Bandera de Kuwait\"label QS:Lis,\"Fáni Kúveit\"label QS:Lms,\"Bendera Kuwait\"label QS:Lbpy,\"কুয…",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Kuwait.svg",
-        "author": "Derivative works of this file: Standard of the Emir of Kuwait.svg: Flag of Kuwait, Saudi Arabia and United Arab Emirates.png:",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 200,
-      "q": "سمّ الدولة الخليجية صاحبة هذه الراية.",
-      "a": "قطر",
-      "qid": "flags-200-005",
-      "type": "image",
-      "topic": "أشكال هندسية",
-      "verified": true,
-      "media": {
-        "src": "flags-200-005.webp",
-        "type": "image",
-        "title": "The flag of Qatar.",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Qatar.svg",
-        "author": "See File history below for details.",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 200,
-      "q": "أي دولة خليجية ترفع هذه الراية؟",
-      "a": "البحرين",
-      "qid": "flags-200-006",
-      "type": "image",
-      "topic": "أشكال هندسية",
-      "verified": true,
-      "media": {
-        "src": "flags-200-006.webp",
-        "type": "image",
-        "title": "The flag of Bahrain",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Bahrain.svg",
-        "author": "Source: Drawn by SKopp, rewritten by Zscout370",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 200,
-      "q": "هذه راية أي دولة خليجية؟",
-      "a": "عُمان",
-      "qid": "flags-200-007",
-      "type": "image",
+      "effect": "none",
       "alt": [
-        "سلطنة عمان",
-        "عمان"
+        "دولة الكويت",
+        "Kuwait"
       ],
-      "topic": "شعارات ورموز",
+      "topic": "غرب آسيا وشمال أفريقيا",
+      "difficultyTarget": 0.8,
       "verified": true,
+      "sourceUrl": "https://www.kuwaitmission.ch/KUFacts.aspx",
       "media": {
-        "src": "flags-200-007.webp",
+        "src": "flags-200-902.webp",
         "type": "image",
-        "title": "This is the flag of the Sultanate of Oman, made in CGI.",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:CGI_Oman_Flag.png",
-        "author": "Aerra Carnicom",
-        "license": "CC BY-SA 4.0",
-        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+        "title": "علم دولة — رسم توضيحي",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-200-902.json"
+        }
       }
     },
     {
       "p": 200,
-      "q": "ما الدولة العربية صاحبة هذا العلم؟",
-      "a": "العراق",
-      "qid": "flags-200-008",
-      "type": "image",
-      "topic": "كتابة ونقوش",
-      "verified": true,
-      "media": {
-        "src": "flags-200-008.webp",
-        "type": "image",
-        "title": "Flag of Iraq",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Iraq.svg",
-        "author": "See File history below for details.",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 200,
-      "q": "ما الدولة العربية التي يمثلها هذا العلم؟",
-      "a": "الأردن",
-      "qid": "flags-200-009",
-      "type": "image",
-      "alt": [
-        "المملكة الأردنية الهاشمية"
-      ],
-      "topic": "نجوم",
-      "verified": true,
-      "media": {
-        "src": "flags-200-009.webp",
-        "type": "image",
-        "title": "Flag of Jordan",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Jordan.svg",
-        "author": "Unknown",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 200,
-      "q": "علم أي دولة عربية هذا؟",
-      "a": "فلسطين",
-      "qid": "flags-200-010",
-      "type": "image",
-      "alt": [
-        "دولة فلسطين"
-      ],
-      "topic": "أشكال هندسية",
-      "verified": true,
-      "media": {
-        "src": "flags-200-010.webp",
-        "type": "image",
-        "title": "The flag of State of Palestine",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Palestine.svg",
-        "author": "Orionist, previous versions by Makaristos, Mysid, etc.",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 200,
-      "q": "هذا علم أي دولة عربية؟",
-      "a": "لبنان",
-      "qid": "flags-200-011",
-      "type": "image",
-      "topic": "نباتات وحيوانات",
-      "verified": true,
-      "media": {
-        "src": "flags-200-011.webp",
-        "type": "image",
-        "title": "Flag of Lebanon.",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Lebanon.svg",
-        "author": "Henri Pharaon",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 200,
-      "q": "هذا العلم لأي دولة عربية؟",
-      "a": "سوريا",
-      "qid": "flags-200-012",
-      "type": "image",
-      "alt": [
-        "سورية"
-      ],
-      "topic": "نجوم",
-      "verified": true,
-      "media": {
-        "src": "flags-200-012.webp",
-        "type": "image",
-        "title": "Flag of Syria. Originally flag of the Syria Revolution (from 2011), de facto flag of Syria beginning December 2024, off…",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Syria_(2025-).svg",
-        "author": "Modification by AnonMoos of PD image File:Flag of Syria (1930–1958, 1961–1963).svg (previous non-vector versions were by Coup de crayon 2011)",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 200,
-      "q": "ما اسم الدولة العربية صاحبة هذا العلم؟",
-      "a": "اليمن",
-      "qid": "flags-200-013",
-      "type": "image",
-      "topic": "أشرطة وألوان",
-      "verified": true,
-      "media": {
-        "src": "flags-200-013.webp",
-        "type": "image",
-        "title": "The flag of Yemen.",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Yemen.svg",
-        "author": "Nightstallion et al., see File history below for details.",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 200,
-      "q": "ما الدولة العربية التي ترفع هذه الراية؟",
-      "a": "المغرب",
-      "qid": "flags-200-014",
-      "type": "image",
-      "alt": [
-        "المملكة المغربية"
-      ],
-      "topic": "نجوم",
-      "verified": true,
-      "media": {
-        "src": "flags-200-014.webp",
-        "type": "image",
-        "title": "Flag of Morocco",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Morocco.svg",
-        "author": "Denelson83, Zscout370",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 200,
-      "q": "راية أي دولة عربية هذه؟",
-      "a": "الجزائر",
-      "qid": "flags-200-015",
-      "type": "image",
-      "topic": "أهلة",
-      "verified": true,
-      "media": {
-        "src": "flags-200-015.webp",
-        "type": "image",
-        "title": "Flag of Algeria",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Algeria.svg",
-        "author": "Original: National Liberation Front of Algeria Vector: SKopp",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 200,
-      "q": "علم أي دولة عربية تراه أمامك؟",
-      "a": "تونس",
-      "qid": "flags-200-016",
-      "type": "image",
-      "topic": "أهلة",
-      "verified": true,
-      "media": {
-        "src": "flags-200-016.webp",
-        "type": "image",
-        "title": "Flag of Tunisia.",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Tunisia.svg",
-        "author": "Various Wikimedia Commons' contributors",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 200,
-      "q": "سمّ الدولة العربية صاحبة هذا العلم.",
-      "a": "ليبيا",
-      "qid": "flags-200-017",
-      "type": "image",
-      "topic": "أهلة",
-      "verified": true,
-      "media": {
-        "src": "flags-200-017.webp",
-        "type": "image",
-        "title": "The national flag of Libya.",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Libya.svg",
-        "author": "Various The SVG code is valid. This vector image was created with a text editor.",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 200,
-      "q": "ما اسم الدولة العربية التي ترفع هذه الراية؟",
-      "a": "السودان",
-      "qid": "flags-200-018",
-      "type": "image",
-      "topic": "أشكال هندسية",
-      "verified": true,
-      "media": {
-        "src": "flags-200-018.webp",
-        "type": "image",
-        "title": "Flag of Sudan",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Sudan.svg",
-        "author": "See File history below for details.",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 200,
-      "q": "لأي دولة آسيوية هذا العلم؟",
-      "a": "تركيا",
-      "qid": "flags-200-019",
-      "type": "image",
-      "topic": "أهلة",
-      "verified": true,
-      "media": {
-        "src": "flags-200-019.webp",
-        "type": "image",
-        "title": "National Flag of Turkey",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Turkey.svg",
-        "author": "David Benbennick (original author)",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 200,
-      "q": "أي دولة آسيوية يمثلها هذا العلم؟",
-      "a": "إيران",
-      "qid": "flags-200-020",
-      "type": "image",
-      "topic": "كتابة ونقوش",
-      "verified": true,
-      "media": {
-        "src": "flags-200-020.webp",
-        "type": "image",
-        "title": "The flag of Iran, created from scratch using the official geometric construction from ISIRI (translation at FotW). Note…",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Iran.svg",
-        "author": "SVG file: SiBr4Designer: Hamid NadimiConstruction: ISIRI",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 200,
-      "q": "لمن هذه الراية؟",
+      "q": "لأي دولة ينتمي العلم الأبيض الذي تتوسطه دائرة حمراء؟",
       "a": "اليابان",
-      "qid": "flags-200-021",
+      "qid": "flags-200-903",
       "type": "image",
-      "topic": "أشكال هندسية",
+      "effect": "none",
+      "alt": [
+        "Japan"
+      ],
+      "topic": "آسيا الشرقية",
+      "difficultyTarget": 0.8,
       "verified": true,
+      "sourceUrl": "https://web-japan.org/factsheet/en/pdf/11NFlagAnthem.pdf",
       "media": {
-        "src": "flags-200-021.webp",
+        "src": "flags-200-903.webp",
         "type": "image",
-        "title": "Flag of Japan",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Japan.svg",
-        "author": "Various",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+        "title": "علم دولة — رسم توضيحي",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-200-903.json"
+        }
       }
     },
     {
       "p": 200,
-      "q": "ما الدولة الآسيوية التي ترفع هذا العلم؟",
+      "q": "ما الدولة التي يحمل علمها المصوّر خمس نجوم صفراء؟",
       "a": "الصين",
-      "qid": "flags-200-022",
+      "qid": "flags-200-904",
       "type": "image",
+      "effect": "none",
       "alt": [
-        "جمهورية الصين الشعبية"
+        "جمهورية الصين الشعبية",
+        "China",
+        "People's Republic of China"
       ],
-      "topic": "نجوم",
+      "topic": "آسيا الشرقية",
+      "difficultyTarget": 0.8,
       "verified": true,
+      "sourceUrl": "https://english.court.gov.cn/2016-04/14/c_761456.htm",
       "media": {
-        "src": "flags-200-022.webp",
+        "src": "flags-200-904.webp",
         "type": "image",
-        "title": "Flag of the People's Republic of China",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_the_People%27s_Republic_of_China.svg",
-        "author": "Zeng Liansong",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+        "title": "علم دولة — رسم توضيحي",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-200-904.json"
+        }
       }
     },
     {
       "p": 200,
-      "q": "أي دولة آسيوية ترفع هذا العلم؟",
-      "a": "كوريا الجنوبية",
-      "qid": "flags-200-023",
-      "type": "image",
-      "topic": "شعارات ورموز",
-      "verified": true,
-      "media": {
-        "src": "flags-200-023.webp",
-        "type": "image",
-        "title": "Flag of the Republic of Korea (South Korea)",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_South_Korea.svg",
-        "author": "Original: Government of the Republic of Korea Vector: Great Brightstar and others",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 200,
-      "q": "لأي دولة آسيوية هذه الراية؟",
-      "a": "الهند",
-      "qid": "flags-200-024",
-      "type": "image",
-      "topic": "شعارات ورموز",
-      "verified": true,
-      "media": {
-        "src": "flags-200-024.webp",
-        "type": "image",
-        "title": "The Flag of India. The colours are saffron, white and green. The navy blue wheel in the center of the flag has a diamet…",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_India.svg",
-        "author": "Government of India",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 200,
-      "q": "راية أي دولة آسيوية أمامك؟",
-      "a": "باكستان",
-      "qid": "flags-200-025",
-      "type": "image",
-      "topic": "أهلة",
-      "verified": true,
-      "media": {
-        "src": "flags-200-025.webp",
-        "type": "image",
-        "title": "Flag of Pakistan",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Pakistan.svg",
-        "author": "User:Zscout370",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 200,
-      "q": "ما الدولة صاحبة هذه الراية؟",
-      "a": "الولايات المتحدة",
-      "qid": "flags-200-026",
-      "type": "image",
-      "alt": [
-        "أمريكا",
-        "الولايات المتحدة الأمريكية"
-      ],
-      "topic": "نجوم",
-      "verified": true,
-      "media": {
-        "src": "flags-200-026.webp",
-        "type": "image",
-        "title": "The Flag of the United States of America. Current RGB colors and geometric specifications follow the \"Design Guide\" pub…",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_the_United_States.svg",
-        "author": "Uploaded by Dbenbenn; edited by users such as Zscout370, Jacobolus, Indolences, and Technion.",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 200,
-      "q": "سمّ الدولة صاحبة هذه الراية.",
-      "a": "كندا",
-      "qid": "flags-200-027",
-      "type": "image",
-      "topic": "نباتات وحيوانات",
-      "verified": true,
-      "media": {
-        "src": "flags-200-027.webp",
-        "type": "image",
-        "title": "National flag of Canada. This file uses RGB specifications, resulting in a brighter red than the Pantone colors recomme…",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Canada.svg",
-        "author": "Created by George F. G. Stanley / E Pluribus Anthony / User:Mzajac",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 200,
-      "q": "لأي دولة في أمريكا الجنوبية هذه الراية؟",
-      "a": "البرازيل",
-      "qid": "flags-200-028",
-      "type": "image",
-      "topic": "نجوم",
-      "verified": true,
-      "media": {
-        "src": "flags-200-028.webp",
-        "type": "image",
-        "title": "Flag of Brazil",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Brazil.svg",
-        "author": "Raimundo Teixeira Mendes",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 200,
-      "q": "راية أي دولة في أمريكا الجنوبية أمامك؟",
-      "a": "الأرجنتين",
-      "qid": "flags-200-029",
-      "type": "image",
-      "topic": "شعارات ورموز",
-      "verified": true,
-      "media": {
-        "src": "flags-200-029.webp",
-        "type": "image",
-        "title": "The flag of Argentina.",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Argentina.svg",
-        "author": "Manuel Belgrano",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 200,
-      "q": "ما الدولة صاحبة هذا العلم؟",
-      "a": "المكسيك",
-      "qid": "flags-200-030",
-      "type": "image",
-      "topic": "نباتات وحيوانات",
-      "verified": true,
-      "media": {
-        "src": "flags-200-030.webp",
-        "type": "image",
-        "title": "Flag of Mexico Official version of the Flag of the United Mexican States or Mexico, adopted September 16th 1968 by Decr…",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Mexico.svg",
-        "author": "Alex Covarrubias, 9 April 2006. Based on the arms by Juan Manuel Gabino Villascán.",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 200,
-      "q": "ما الدولة الأوروبية التي يمثلها هذا العلم؟",
-      "a": "المملكة المتحدة",
-      "qid": "flags-200-031",
-      "type": "image",
-      "alt": [
-        "بريطانيا",
-        "بريطانيا العظمى"
-      ],
-      "topic": "صلبان",
-      "verified": true,
-      "media": {
-        "src": "flags-200-031.webp",
-        "type": "image",
-        "title": "The flag of the United Kingdom using a 3:5 ratio. This flag is the Union Flag in the 3:5 ratio exclusively used on land…",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_the_United_Kingdom_(3-5).svg",
-        "author": "Original: Acts of Union 1800 Vector: Yaddah",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 200,
-      "q": "علم أي دولة أوروبية هذا؟",
+      "q": "لأي دولة ينتمي هذا العلم ذو الأشرطة العمودية الزرقاء والبيضاء والحمراء؟",
       "a": "فرنسا",
-      "qid": "flags-200-032",
+      "qid": "flags-200-905",
       "type": "image",
-      "topic": "أشرطة وألوان",
+      "effect": "none",
+      "alt": [
+        "الجمهورية الفرنسية",
+        "France"
+      ],
+      "topic": "أوروبا",
+      "difficultyTarget": 0.8,
       "verified": true,
+      "sourceUrl": "https://www.elysee.fr/la-presidence/le-drapeau-francais",
       "media": {
-        "src": "flags-200-032.webp",
+        "src": "flags-200-905.webp",
         "type": "image",
-        "title": "Flag of France",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_France.svg",
-        "author": "Original: Unknown Vector: SKopp",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+        "title": "علم دولة — رسم توضيحي",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-200-905.json"
+        }
       }
     },
     {
       "p": 200,
-      "q": "هذا علم أي دولة أوروبية؟",
+      "q": "ما الدولة صاحبة العلم المكوّن من أشرطة أفقية سوداء وحمراء وذهبية؟",
       "a": "ألمانيا",
-      "qid": "flags-200-033",
+      "qid": "flags-200-906",
       "type": "image",
-      "topic": "أشرطة وألوان",
-      "verified": true,
-      "media": {
-        "src": "flags-200-033.webp",
-        "type": "image",
-        "title": "Flag of Germany, Commons page → Germany.",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Germany.svg",
-        "author": "User:SKopp, User:Madden, and other users",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 200,
-      "q": "هذا العلم لأي دولة أوروبية؟",
-      "a": "إيطاليا",
-      "qid": "flags-200-034",
-      "type": "image",
-      "topic": "أشرطة وألوان",
-      "verified": true,
-      "media": {
-        "src": "flags-200-034.webp",
-        "type": "image",
-        "title": "Flag of Italy",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Italy.svg",
-        "author": "See below.",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 200,
-      "q": "ما اسم الدولة الأوروبية صاحبة هذا العلم؟",
-      "a": "إسبانيا",
-      "qid": "flags-200-035",
-      "type": "image",
-      "topic": "دروع وتيجان",
-      "verified": true,
-      "media": {
-        "src": "flags-200-035.webp",
-        "type": "image",
-        "title": "Flag of Spain",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Spain.svg",
-        "author": "RelShot 263, Echando una mano; earlier version was Pedro A. Gracia Fajardo, escudo de Manual de Imagen Institucional de la Administración General del Estado",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 200,
-      "q": "ما الدولة الأوروبية التي ترفع هذه الراية؟",
-      "a": "البرتغال",
-      "qid": "flags-200-036",
-      "type": "image",
-      "topic": "دروع وتيجان",
-      "verified": true,
-      "media": {
-        "src": "flags-200-036.webp",
-        "type": "image",
-        "title": "Flag of Portugal, created by Columbano Bordalo Pinheiro (1857–1929), officially adopted by Portuguese government in Jun…",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Portugal.svg",
-        "author": "Original: Columbano Bordalo Pinheiro (1910; generic design) Vector: Vítor Luís Rodrigues; António Martins-Tuválkin (2004; this specific vector set: see sources)",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 200,
-      "q": "راية أي دولة أوروبية هذه؟",
-      "a": "هولندا",
-      "qid": "flags-200-037",
-      "type": "image",
+      "effect": "none",
       "alt": [
-        "الأراضي المنخفضة"
+        "جمهورية ألمانيا الاتحادية",
+        "Germany"
       ],
-      "topic": "أشرطة وألوان",
+      "topic": "أوروبا",
+      "difficultyTarget": 0.8,
       "verified": true,
+      "sourceUrl": "https://www.gesetze-im-internet.de/flaggano_1996/i_.html",
       "media": {
-        "src": "flags-200-037.webp",
+        "src": "flags-200-906.webp",
         "type": "image",
-        "title": "Flag of the Netherlands",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_the_Netherlands.svg",
-        "author": "Zscout370",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+        "title": "علم دولة — رسم توضيحي",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-200-906.json"
+        }
       }
     },
     {
       "p": 200,
-      "q": "من صاحب هذا العلم؟",
-      "a": "سويسرا",
-      "qid": "flags-200-038",
+      "q": "ما الدولة التي تتوسط علمها المصوّر ورقة قيقب حمراء؟",
+      "a": "كندا",
+      "qid": "flags-200-907",
       "type": "image",
-      "topic": "صلبان",
+      "effect": "none",
+      "alt": [
+        "Canada"
+      ],
+      "topic": "أمريكا الشمالية",
+      "difficultyTarget": 0.8,
       "verified": true,
+      "sourceUrl": "https://www.canada.ca/en/canadian-heritage/services/flag-canada-description.html",
       "media": {
-        "src": "flags-200-038.webp",
+        "src": "flags-200-907.webp",
         "type": "image",
-        "title": "Flag of Switzerland",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Switzerland.svg",
-        "author": "Original: Unknown Vector: User:Marc Mongenet Credits: User:-xfi- User:Zscout370",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+        "title": "علم دولة — رسم توضيحي",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-200-907.json"
+        }
       }
     },
     {
       "p": 200,
-      "q": "سمّ الدولة الإسكندنافية صاحبة هذا العلم.",
-      "a": "السويد",
-      "qid": "flags-200-039",
-      "type": "image",
-      "topic": "صلبان",
-      "verified": true,
-      "media": {
-        "src": "flags-200-039.webp",
-        "type": "image",
-        "title": "Flag of Sweden",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Sweden.svg",
-        "author": "Jon Harald Søby and others.",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 200,
-      "q": "ما اسم الدولة الأوروبية التي ترفع هذه الراية؟",
-      "a": "روسيا",
-      "qid": "flags-200-040",
-      "type": "image",
-      "alt": [
-        "الاتحاد الروسي"
-      ],
-      "topic": "أشرطة وألوان",
-      "verified": true,
-      "media": {
-        "src": "flags-200-040.webp",
-        "type": "image",
-        "title": "Flag of Russia",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Russia.svg",
-        "author": "Peter the Great",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 200,
-      "q": "لأي دولة أوروبية هذا العلم؟",
-      "a": "اليونان",
-      "qid": "flags-200-041",
-      "type": "image",
-      "topic": "صلبان",
-      "verified": true,
-      "media": {
-        "src": "flags-200-041.webp",
-        "type": "image",
-        "title": "Flag of Greece (since 1978) and Naval Ensign of Greece (since 1828)",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Greece.svg",
-        "author": "Unknown authorUnknown author",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 200,
-      "q": "راية أي دولة في المحيط الهادئ أمامك؟",
-      "a": "أستراليا",
-      "qid": "flags-200-042",
-      "type": "image",
-      "topic": "نجوم",
-      "verified": true,
-      "media": {
-        "src": "flags-200-042.webp",
-        "type": "image",
-        "title": "The flag of Australia.",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Australia.svg",
-        "author": "Original: Ivor Evans, Leslie John Hawkins, Egbert John Nuttall, Annie Dorrington and William Stevens Vector: Ian Fieggen",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 200,
-      "q": "أي دولة أفريقية صاحبة هذا العلم؟",
-      "a": "جنوب أفريقيا",
-      "qid": "flags-200-043",
-      "type": "image",
-      "topic": "أشكال هندسية",
-      "verified": true,
-      "media": {
-        "src": "flags-200-043.webp",
-        "type": "image",
-        "title": "Flag of South África Used color: National flag | Mzansi Government and Pantone Color Picker green rendered as RGB 000 1…",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_South_Africa.svg",
-        "author": "Flag design by Frederick Brownell, image by Wikimedia Commons users",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 200,
-      "q": "أي دولة في غرب أفريقيا يمثلها هذا العلم؟",
-      "a": "نيجيريا",
-      "qid": "flags-200-044",
-      "type": "image",
-      "topic": "أشرطة وألوان",
-      "verified": true,
-      "media": {
-        "src": "flags-200-044.webp",
-        "type": "image",
-        "title": "Flag of Nigeria",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Nigeria.svg",
-        "author": "Jon Harald Søby.",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 200,
-      "q": "أي دولة أوروبية ترفع هذا العلم؟",
-      "a": "أوكرانيا",
-      "qid": "flags-200-045",
-      "type": "image",
-      "topic": "أشرطة وألوان",
-      "verified": true,
-      "media": {
-        "src": "flags-200-045.webp",
-        "type": "image",
-        "title": "Flag of Ukraine",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Ukraine.svg",
-        "author": "Government of Ukraine",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 200,
-      "q": "لأي دولة إسكندنافية هذه الراية؟",
-      "a": "الدنمارك",
-      "qid": "flags-200-046",
-      "type": "image",
-      "topic": "صلبان",
-      "verified": true,
-      "media": {
-        "src": "flags-200-046.webp",
-        "type": "image",
-        "title": "Flag of Denmark (\"stutflag\" version)",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Denmark.svg",
-        "author": "Madden and others",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 200,
-      "q": "راية أي منظمة دولية أمامك؟",
-      "a": "الأمم المتحدة",
-      "qid": "flags-200-047",
-      "type": "image",
-      "alt": [
-        "هيئة الأمم المتحدة"
-      ],
-      "topic": "شعارات ورموز",
-      "verified": true,
-      "media": {
-        "src": "flags-200-047.webp",
-        "type": "image",
-        "title": "Flag of the United Nations",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_the_United_Nations.svg",
-        "author": "See File history below for details. Denelson83, Zscout370 ve Madden",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 200,
-      "q": "ما المنظمة الدولية صاحبة هذه الراية؟",
-      "a": "الاتحاد الأوروبي",
-      "qid": "flags-200-048",
-      "type": "image",
-      "alt": [
-        "أوروبا"
-      ],
-      "topic": "نجوم",
-      "verified": true,
-      "media": {
-        "src": "flags-200-048.webp",
-        "type": "image",
-        "title": "The Flag of Europe is the flag and emblem of the European Union (EU) and Council of Europe (CoE). It consists of a circ…",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Europe.svg",
-        "author": "User:Verdy p, User:-xfi-, User:Paddu, User:Nightstallion, User:Funakoshi, User:Jeltz, User:Dbenbenn, User:Zscout370",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 400,
-      "q": "سمّ الدولة العربية صاحبة هذه الراية.",
-      "a": "موريتانيا",
-      "qid": "flags-400-001",
-      "type": "image",
-      "topic": "أهلة",
-      "verified": true,
-      "media": {
-        "src": "flags-400-001.webp",
-        "type": "image",
-        "title": "Flag of Mauritania, adopted in 2017. The National Assembly added red stripes to the top and bottom edges to represent “…",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Mauritania.svg",
-        "author": "See File history below for details.",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 400,
-      "q": "أي دولة عربية ترفع هذه الراية؟",
-      "a": "الصومال",
-      "qid": "flags-400-002",
-      "type": "image",
-      "topic": "نجوم",
-      "verified": true,
-      "media": {
-        "src": "flags-400-002.webp",
-        "type": "image",
-        "title": "Flag of Somalia",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Somalia.svg",
-        "author": "see upload history",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 400,
-      "q": "هذه راية أي دولة عربية؟",
-      "a": "جيبوتي",
-      "qid": "flags-400-003",
-      "type": "image",
-      "topic": "نجوم",
-      "verified": true,
-      "media": {
-        "src": "flags-400-003.webp",
-        "type": "image",
-        "title": "Flag of Djibouti",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Djibouti.svg",
-        "author": "Unknown authorUnknown author",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 400,
-      "q": "ما الدولة الأوروبية صاحبة هذا العلم؟",
-      "a": "بلجيكا",
-      "qid": "flags-400-004",
-      "type": "image",
-      "topic": "أشرطة وألوان",
-      "verified": true,
-      "media": {
-        "src": "flags-400-004.webp",
-        "type": "image",
-        "title": "Flag of Belgium This is the national flag of Belgium, according to the Official Guide to Belgian Protocol. It has a 13:…",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Belgium.svg",
-        "author": "Dbenbenn and others",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 400,
-      "q": "ما الدولة الإسكندنافية التي يمثلها هذا العلم؟",
-      "a": "النرويج",
-      "qid": "flags-400-005",
-      "type": "image",
-      "topic": "صلبان",
-      "verified": true,
-      "media": {
-        "src": "flags-400-005.webp",
-        "type": "image",
-        "title": "Flag of Norway. The colors approximately correspond to Pantone 200 C (deep red) and 281 C (dark blue).",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Norway.svg",
-        "author": "Original: Fredrik Meltzer Vector: Gutten på Hemsen",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 400,
-      "q": "علم أي دولة إسكندنافية هذا؟",
-      "a": "فنلندا",
-      "qid": "flags-400-006",
-      "type": "image",
-      "topic": "صلبان",
-      "verified": true,
-      "media": {
-        "src": "flags-400-006.webp",
-        "type": "image",
-        "title": "Flag of Finland",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Finland.svg",
-        "author": "Unknown",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 400,
-      "q": "من يرفع هذا العلم؟",
-      "a": "آيسلندا",
-      "qid": "flags-400-007",
-      "type": "image",
-      "topic": "صلبان",
-      "verified": true,
-      "media": {
-        "src": "flags-400-007.webp",
-        "type": "image",
-        "title": "The Flag of Iceland. Horizontal aspect ratio: 7:1:2:1:14; Vertical aspect ratio: 7:1:2:1:7.",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Iceland.svg",
-        "author": "Original: Matthías Þórðarson Vector: Árni Dagur and Magasjukur2",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 400,
-      "q": "أي دولة أوروبية صاحبة هذا العلم؟",
-      "a": "أيرلندا",
-      "qid": "flags-400-008",
-      "type": "image",
-      "topic": "أشرطة وألوان",
-      "verified": true,
-      "media": {
-        "src": "flags-400-008.webp",
-        "type": "image",
-        "title": "Note that the green portion of the flag was designed to represent the majority Catholic residents of the island, the or…",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Ireland.svg",
-        "author": "Éire",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 400,
-      "q": "ما الدولة الأوروبية التي ترفع هذا العلم؟",
-      "a": "النمسا",
-      "qid": "flags-400-009",
-      "type": "image",
-      "topic": "أشرطة وألوان",
-      "verified": true,
-      "media": {
-        "src": "flags-400-009.webp",
-        "type": "image",
-        "title": "Flag of Austria with the red in the Austrian national colours which was official ordered within the Austrian Armed Forc…",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Austria.svg",
-        "author": "Bundesministerium für Landesverteidigung",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 400,
-      "q": "أي دولة أوروبية ترفع هذه الراية؟",
-      "a": "بولندا",
-      "qid": "flags-400-010",
-      "type": "image",
-      "topic": "أشرطة وألوان",
-      "verified": true,
-      "media": {
-        "src": "flags-400-010.webp",
-        "type": "image",
-        "title": "Flag of Poland",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Poland.svg",
-        "author": "See below.",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 400,
-      "q": "لأي دولة أوروبية هذه الراية؟",
-      "a": "التشيك",
-      "qid": "flags-400-011",
-      "type": "image",
-      "alt": [
-        "تشيكيا",
-        "جمهورية التشيك"
-      ],
-      "topic": "أشكال هندسية",
-      "verified": true,
-      "media": {
-        "src": "flags-400-011.webp",
-        "type": "image",
-        "title": "Flag of the Czech Republic",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_the_Czech_Republic.svg",
-        "author": "Jaroslav Kursa",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 400,
-      "q": "علم أي دولة أوروبية تراه أمامك؟",
-      "a": "المجر",
-      "qid": "flags-400-012",
-      "type": "image",
-      "alt": [
-        "هنغاريا"
-      ],
-      "topic": "أشرطة وألوان",
-      "verified": true,
-      "media": {
-        "src": "flags-400-012.webp",
-        "type": "image",
-        "title": "Flag of Hungary",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Hungary.svg",
-        "author": "SKopp",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 400,
-      "q": "سمّ الدولة البلقانية صاحبة هذا العلم.",
-      "a": "بلغاريا",
-      "qid": "flags-400-013",
-      "type": "image",
-      "topic": "أشرطة وألوان",
-      "verified": true,
-      "media": {
-        "src": "flags-400-013.webp",
-        "type": "image",
-        "title": "Flag of Bulgaria",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Bulgaria.svg",
-        "author": "SKopp",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 400,
-      "q": "ما اسم الدولة البلقانية التي ترفع هذه الراية؟",
-      "a": "صربيا",
-      "qid": "flags-400-014",
-      "type": "image",
-      "topic": "دروع وتيجان",
-      "verified": true,
-      "media": {
-        "src": "flags-400-014.webp",
-        "type": "image",
-        "title": "Flag of Serbia",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Serbia.svg",
-        "author": "See File history below for details.",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 400,
-      "q": "لأي دولة بلقانية هذا العلم؟",
-      "a": "كرواتيا",
-      "qid": "flags-400-015",
-      "type": "image",
-      "topic": "دروع وتيجان",
-      "verified": true,
-      "media": {
-        "src": "flags-400-015.webp",
-        "type": "image",
-        "title": "It is easy to put a border around this flag image",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Croatia.svg",
-        "author": "Nightstallion, Elephantus, Neoneo13, Denelson83, Rainman, R-41, Minestrone, Lupo, Zscout370,MaGa (based on Decision of the Parliament)",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 400,
-      "q": "أي إقليم يمثله هذا العلم؟",
-      "a": "اسكتلندا",
-      "qid": "flags-400-016",
-      "type": "image",
-      "alt": [
-        "إسكتلندا"
-      ],
-      "topic": "صلبان",
-      "verified": true,
-      "media": {
-        "src": "flags-400-016.webp",
-        "type": "image",
-        "title": "Flag of Scotland. Ratio 3:5. The blue used is \"royal\" blue (Pantone 300), following the Scottish Parliament's recommend…",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Scotland.svg",
-        "author": "none known",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 400,
-      "q": "أي إقليم صاحب هذا العلم؟",
-      "a": "ويلز",
-      "qid": "flags-400-017",
-      "type": "image",
-      "alt": [
-        "بلاد الغال"
-      ],
-      "topic": "نباتات وحيوانات",
-      "verified": true,
-      "media": {
-        "src": "flags-400-017.webp",
-        "type": "image",
-        "title": "Flag of Wales",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Wales.svg",
-        "author": "Unknown Vector graphics by Tobias Jakobs",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 400,
-      "q": "ما الإقليم الذي يرفع هذا العلم؟",
-      "a": "إنجلترا",
-      "qid": "flags-400-018",
-      "type": "image",
-      "alt": [
-        "انكلترا"
-      ],
-      "topic": "صلبان",
-      "verified": true,
-      "media": {
-        "src": "flags-400-018.webp",
-        "type": "image",
-        "title": "Flag of England. Saint George's cross (a red cross on a white background), used as the Flag of England, the Italian cit…",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_England.svg",
-        "author": "Original: traditional Vector: Nicholas Shanks",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 400,
-      "q": "هذا علم أي دولة في أمريكا الجنوبية؟",
-      "a": "كولومبيا",
-      "qid": "flags-400-019",
-      "type": "image",
-      "topic": "أشرطة وألوان",
-      "verified": true,
-      "media": {
-        "src": "flags-400-019.webp",
-        "type": "image",
-        "title": "The flag of Colombia.",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Colombia.svg",
-        "author": "See File history below for details.",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 400,
-      "q": "هذا العلم لأي دولة في أمريكا الجنوبية؟",
-      "a": "تشيلي",
-      "qid": "flags-400-020",
-      "type": "image",
-      "alt": [
-        "شيلي"
-      ],
-      "topic": "أشكال هندسية",
-      "verified": true,
-      "media": {
-        "src": "flags-400-020.webp",
-        "type": "image",
-        "title": "It is easy to put a border around this flag image",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Chile.svg",
-        "author": "See file history below for details.",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 400,
-      "q": "لأي دولة في أمريكا الجنوبية هذا العلم؟",
-      "a": "فنزويلا",
-      "qid": "flags-400-021",
-      "type": "image",
-      "topic": "نجوم",
-      "verified": true,
-      "media": {
-        "src": "flags-400-021.webp",
-        "type": "image",
-        "title": "The flag of Venezuela",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Venezuela.svg",
-        "author": "Various, see File history below for details.",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 400,
-      "q": "أي دولة في أمريكا الجنوبية يمثلها هذا العلم؟",
-      "a": "بيرو",
-      "qid": "flags-400-022",
-      "type": "image",
-      "topic": "أشرطة وألوان",
-      "verified": true,
-      "media": {
-        "src": "flags-400-022.webp",
-        "type": "image",
-        "title": "Flag of Peru",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Peru.svg",
-        "author": "David Benbennick",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 400,
-      "q": "سمّ الدولة الكاريبية صاحبة هذه الراية.",
-      "a": "كوبا",
-      "qid": "flags-400-023",
-      "type": "image",
-      "topic": "أشكال هندسية",
-      "verified": true,
-      "media": {
-        "src": "flags-400-023.webp",
-        "type": "image",
-        "title": "The flag of Cuba. Colors are from http://www.nacion.cult.cu/fr/sobrebandera.htm",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Cuba.svg",
-        "author": "Miguel Teurbe Tolón and Narciso López",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 400,
-      "q": "من يرفع هذه الراية؟",
-      "a": "أوروغواي",
-      "qid": "flags-400-024",
-      "type": "image",
-      "alt": [
-        "أوروجواي"
-      ],
-      "topic": "شعارات ورموز",
-      "verified": true,
-      "media": {
-        "src": "flags-400-024.webp",
-        "type": "image",
-        "title": "Flag of Uruguay",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Uruguay.svg",
-        "author": "See File history below for details.",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 400,
-      "q": "علم أي دولة في جنوب شرق آسيا تراه أمامك؟",
-      "a": "إندونيسيا",
-      "qid": "flags-400-025",
-      "type": "image",
-      "topic": "أشرطة وألوان",
-      "verified": true,
-      "media": {
-        "src": "flags-400-025.webp",
-        "type": "image",
-        "title": "bendera Indonesia",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Indonesia.svg",
-        "author": "Jayakatwang",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 400,
-      "q": "علم أي دولة في جنوب شرق آسيا هذا؟",
-      "a": "ماليزيا",
-      "qid": "flags-400-026",
-      "type": "image",
-      "topic": "أهلة",
-      "verified": true,
-      "media": {
-        "src": "flags-400-026.webp",
-        "type": "image",
-        "title": "Flag of Malaysia – Jalur Gemilang (Stripes of Glory)",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Malaysia.svg",
-        "author": "MapGrid (old version SKopp, Zscout370 and Ranking Update)",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 400,
-      "q": "هذا علم أي دولة في جنوب شرق آسيا؟",
-      "a": "تايلاند",
-      "qid": "flags-400-027",
-      "type": "image",
-      "alt": [
-        "تايلند"
-      ],
-      "topic": "أشرطة وألوان",
-      "verified": true,
-      "media": {
-        "src": "flags-400-027.webp",
-        "type": "image",
-        "title": "The national flag of Kingdom of Thailand; there are total of 3 colours: Red represents the blood spilt to protect Thail…",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Thailand.svg",
-        "author": "Zscout370",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 400,
-      "q": "هذا العلم لأي دولة في جنوب شرق آسيا؟",
-      "a": "فيتنام",
-      "qid": "flags-400-028",
-      "type": "image",
-      "topic": "نجوم",
-      "verified": true,
-      "media": {
-        "src": "flags-400-028.webp",
-        "type": "image",
-        "title": "Flag of Vietnam",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Vietnam.svg",
-        "author": "See File history below for details.",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 400,
-      "q": "أي دولة في جنوب شرق آسيا ترفع هذه الراية؟",
-      "a": "الفلبين",
-      "qid": "flags-400-029",
-      "type": "image",
-      "alt": [
-        "الفيليبين"
-      ],
-      "topic": "أشكال هندسية",
-      "verified": true,
-      "media": {
-        "src": "flags-400-029.webp",
-        "type": "image",
-        "title": "The National Flag of The Philippines",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_the_Philippines.svg",
-        "author": "See File history below for details.",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 400,
-      "q": "هذه راية أي دولة في جنوب شرق آسيا؟",
-      "a": "سنغافورة",
-      "qid": "flags-400-030",
-      "type": "image",
-      "alt": [
-        "سنغافورا"
-      ],
-      "topic": "أهلة",
-      "verified": true,
-      "media": {
-        "src": "flags-400-030.webp",
-        "type": "image",
-        "title": "Flag of Singapore",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Singapore.svg",
-        "author": "Original: Government of Singapore Vector: Zscout370",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 400,
-      "q": "ما اسم الدولة الآسيوية صاحبة هذا العلم؟",
-      "a": "كوريا الشمالية",
-      "qid": "flags-400-031",
-      "type": "image",
-      "topic": "نجوم",
-      "verified": true,
-      "media": {
-        "src": "flags-400-031.webp",
-        "type": "image",
-        "title": "Flag of North Korea",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_North_Korea.svg",
-        "author": "Original: Unknown author Vector: Zscout370",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 400,
-      "q": "ما الدولة الآسيوية التي ترفع هذه الراية؟",
+      "q": "أي دولة يمثلها هذا العلم الأخضر ذو الدائرة الحمراء؟",
       "a": "بنغلاديش",
-      "qid": "flags-400-032",
+      "qid": "flags-200-908",
       "type": "image",
+      "effect": "none",
       "alt": [
-        "بنجلاديش"
+        "بنجلاديش",
+        "Bangladesh"
       ],
-      "topic": "أشكال هندسية",
+      "topic": "جنوب وجنوب شرق آسيا",
+      "difficultyTarget": 0.8,
       "verified": true,
+      "sourceUrl": "https://bdlaws.minlaw.gov.bd/act-print-367/section-print-24551.html",
       "media": {
-        "src": "flags-400-032.webp",
+        "src": "flags-200-908.webp",
         "type": "image",
-        "title": "The flag of Bangladesh",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Bangladesh.svg",
-        "author": "See File history below for details.",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+        "title": "علم دولة — رسم توضيحي",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-200-908.json"
+        }
       }
     },
     {
       "p": 400,
-      "q": "راية أي دولة في شرق أفريقيا أمامك؟",
-      "a": "كينيا",
-      "qid": "flags-400-033",
+      "q": "لأي دولة ينتمي العلم الأحمر المصوّر ذو النجمة الخضراء؟",
+      "a": "المغرب",
+      "qid": "flags-400-901",
       "type": "image",
-      "topic": "دروع وتيجان",
-      "verified": true,
-      "media": {
-        "src": "flags-400-033.webp",
-        "type": "image",
-        "title": "Flag of Kenya",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Kenya.svg",
-        "author": "User:Pumbaa80",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 400,
-      "q": "لأي دولة في غرب أفريقيا هذا العلم؟",
-      "a": "غانا",
-      "qid": "flags-400-034",
-      "type": "image",
-      "topic": "نجوم",
-      "verified": true,
-      "media": {
-        "src": "flags-400-034.webp",
-        "type": "image",
-        "title": "Flag of Ghana",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Ghana.svg",
-        "author": "Theodosia Okoh",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 400,
-      "q": "أي دولة في شرق أفريقيا يمثلها هذا العلم؟",
-      "a": "إثيوبيا",
-      "qid": "flags-400-035",
-      "type": "image",
+      "effect": "none",
       "alt": [
-        "الحبشة"
+        "المملكة المغربية",
+        "Morocco"
       ],
-      "topic": "شعارات ورموز",
+      "topic": "غرب آسيا وشمال أفريقيا",
+      "difficultyTarget": 0.6,
       "verified": true,
+      "sourceUrl": "https://www.maroc.ma/fr/actualites/lhistoire-des-drapeaux-du-maroc-mise-en-avant-rabat",
       "media": {
-        "src": "flags-400-035.webp",
+        "src": "flags-400-901.webp",
         "type": "image",
-        "title": "Flag of Ethiopia",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Ethiopia.svg",
-        "author": "Drawn by User:SKopp",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+        "title": "علم دولة — رسم توضيحي",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-400-901.json"
+        }
       }
     },
     {
       "p": 400,
-      "q": "أي دولة في غرب أفريقيا صاحبة هذا العلم؟",
-      "a": "الكاميرون",
-      "qid": "flags-400-036",
+      "q": "ما الدولة صاحبة هذا العلم بنصفيه الأخضر والأبيض وهلاله الأحمر؟",
+      "a": "الجزائر",
+      "qid": "flags-400-902",
       "type": "image",
-      "topic": "نجوم",
-      "verified": true,
-      "media": {
-        "src": "flags-400-036.webp",
-        "type": "image",
-        "title": "The flag of Cameroon.",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Cameroon.svg",
-        "author": "(of code) -xfi-",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 400,
-      "q": "راية أي دولة في غرب أفريقيا هذه؟",
-      "a": "السنغال",
-      "qid": "flags-400-037",
-      "type": "image",
-      "topic": "نجوم",
-      "verified": true,
-      "media": {
-        "src": "flags-400-037.webp",
-        "type": "image",
-        "title": "Flag of Senegal",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Senegal.svg",
-        "author": "Original upload by Nightstallion",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 400,
-      "q": "علم أي دولة في المحيط الهادئ تراه أمامك؟",
-      "a": "نيوزيلندا",
-      "qid": "flags-400-038",
-      "type": "image",
+      "effect": "none",
       "alt": [
-        "نيوزيلاندا"
+        "الجمهورية الجزائرية الديمقراطية الشعبية",
+        "Algeria"
       ],
-      "topic": "نجوم",
+      "topic": "غرب آسيا وشمال أفريقيا",
+      "difficultyTarget": 0.6,
       "verified": true,
+      "sourceUrl": "https://embwashington.mfa.gov.dz/discover-algeria-1/state-symbols-1",
       "media": {
-        "src": "flags-400-038.webp",
+        "src": "flags-400-902.webp",
         "type": "image",
-        "title": "Flag of New Zealand. Specification: http://www.mch.govt.nz/nzflag/description.html , quoting New Zealand Gazette, 27 Ju…",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_New_Zealand.svg",
-        "author": "Original: Albert Hastings Markham Vector: Zscout370, Hugh Jass, s. File history",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+        "title": "علم دولة — رسم توضيحي",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-400-902.json"
+        }
       }
     },
     {
       "p": 400,
-      "q": "أي دولة بلقانية صاحبة هذا العلم؟",
+      "q": "أي دولة يمثلها هذا العلم الأزرق ذو الصليب الأصفر؟",
+      "a": "السويد",
+      "qid": "flags-400-903",
+      "type": "image",
+      "effect": "none",
+      "alt": [
+        "مملكة السويد",
+        "Sweden"
+      ],
+      "topic": "أوروبا",
+      "difficultyTarget": 0.6,
+      "verified": true,
+      "sourceUrl": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/lag-1982269-om-sveriges-flagga_sfs-1982-269/",
+      "media": {
+        "src": "flags-400-903.webp",
+        "type": "image",
+        "title": "علم دولة — رسم توضيحي",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-400-903.json"
+        }
+      }
+    },
+    {
+      "p": 400,
+      "q": "لأي دولة ينتمي العلم الأحمر بصليب أزرق تحيط به حواف بيضاء؟",
+      "a": "النرويج",
+      "qid": "flags-400-904",
+      "type": "image",
+      "effect": "none",
+      "alt": [
+        "مملكة النرويج",
+        "Norway"
+      ],
+      "topic": "أوروبا",
+      "difficultyTarget": 0.6,
+      "verified": true,
+      "sourceUrl": "https://www.regjeringen.no/no/dep/ud/dep/diplomatiske-forbindelser-og-protokoll/norges-flagg-forskrift/id449230/",
+      "media": {
+        "src": "flags-400-904.webp",
+        "type": "image",
+        "title": "علم دولة — رسم توضيحي",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-400-904.json"
+        }
+      }
+    },
+    {
+      "p": 400,
+      "q": "ما الدولة صاحبة هذا العلم ذي خمسة أشرطة وشريط أزرق عريض في الوسط؟",
+      "a": "تايلاند",
+      "qid": "flags-400-905",
+      "type": "image",
+      "effect": "none",
+      "alt": [
+        "تايلند",
+        "مملكة تايلاند",
+        "Thailand"
+      ],
+      "topic": "جنوب وجنوب شرق آسيا",
+      "difficultyTarget": 0.6,
+      "verified": true,
+      "sourceUrl": "https://www.boi.go.th/index.php?language=ko&page=social_and_culture",
+      "media": {
+        "src": "flags-400-905.webp",
+        "type": "image",
+        "title": "علم دولة — رسم توضيحي",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-400-905.json"
+        }
+      }
+    },
+    {
+      "p": 400,
+      "q": "أي دولة يمثلها العلم الأخضر ذو الهلال والنجمة والشريط الأبيض؟",
+      "a": "باكستان",
+      "qid": "flags-400-906",
+      "type": "image",
+      "effect": "none",
+      "alt": [
+        "جمهورية باكستان الإسلامية",
+        "Pakistan"
+      ],
+      "topic": "جنوب وجنوب شرق آسيا",
+      "difficultyTarget": 0.6,
+      "verified": true,
+      "sourceUrl": "https://pcgv.org/national-flag/",
+      "media": {
+        "src": "flags-400-906.webp",
+        "type": "image",
+        "title": "علم دولة — رسم توضيحي",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-400-906.json"
+        }
+      }
+    },
+    {
+      "p": 400,
+      "q": "ما الدولة المطلة على الكاريبي صاحبة هذا العلم الذي يحتل الأصفر نصفه العلوي؟",
+      "a": "كولومبيا",
+      "qid": "flags-400-907",
+      "type": "image",
+      "effect": "none",
+      "alt": [
+        "كولمبيا",
+        "Colombia"
+      ],
+      "topic": "أمريكا الجنوبية",
+      "difficultyTarget": 0.6,
+      "verified": true,
+      "sourceUrl": [
+        "https://www.cancilleria.gov.co/normograma/compilacion/docs/circular_minrelaciones_0036_2021.htm",
+        "https://cancilleria.gov.co/politica-exterior/asuntos-bilaterales/delimitacion-maritima-colombia-panama"
+      ],
+      "media": {
+        "src": "flags-400-907.webp",
+        "type": "image",
+        "title": "علم دولة — رسم توضيحي",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-400-907.json"
+        }
+      }
+    },
+    {
+      "p": 400,
+      "q": "ما الدولة صاحبة العلم بنجمة بيضاء داخل مربع أزرق في الزاوية العليا؟",
+      "a": "تشيلي",
+      "qid": "flags-400-908",
+      "type": "image",
+      "effect": "none",
+      "alt": [
+        "شيلي",
+        "Chile"
+      ],
+      "topic": "أمريكا الجنوبية",
+      "difficultyTarget": 0.6,
+      "verified": true,
+      "sourceUrl": "https://www.bcn.cl/leychile/navegar?idNorma=23382",
+      "media": {
+        "src": "flags-400-908.webp",
+        "type": "image",
+        "title": "علم دولة — رسم توضيحي",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-400-908.json"
+        }
+      }
+    },
+    {
+      "p": 600,
+      "q": "ما الدولة الأوروبية صاحبة هذا العلم ذي الأشرطة العمودية الزرقاء والصفراء والحمراء؟",
       "a": "رومانيا",
-      "qid": "flags-400-039",
+      "qid": "flags-600-901",
       "type": "image",
-      "topic": "أشرطة وألوان",
-      "verified": true,
-      "media": {
-        "src": "flags-400-039.webp",
-        "type": "image",
-        "title": "Flag of Romania from 1867 until 1947 and since 1989.",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Romania.svg",
-        "author": "AdiJapan",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 400,
-      "q": "ما الإقليم الذي يمثله هذا العلم؟",
-      "a": "هونغ كونغ",
-      "qid": "flags-400-040",
-      "type": "image",
+      "effect": "none",
       "alt": [
-        "هونج كونج",
-        "هونغ كونج"
+        "Romania"
       ],
-      "topic": "نباتات وحيوانات",
+      "topic": "أوروبا",
+      "difficultyTarget": 0.4,
       "verified": true,
+      "sourceUrl": "https://www.cdep.ro/ords/pls/steno/steno2015.stenograma?idl=3&ids=6664",
       "media": {
-        "src": "flags-400-040.webp",
+        "src": "flags-600-901.webp",
         "type": "image",
-        "title": "Flag of Hong Kong",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Hong_Kong.svg",
-        "author": "Designed by Tao Ho SVG code of 24 November 2005 version copied from Open Clip Art SVG code of 20 August 2011 version by Alkari SVG code of 6 September 2021 version by Mike Rohsopht",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 400,
-      "q": "لمن تعود هذه الراية؟",
-      "a": "نيبال",
-      "qid": "flags-400-041",
-      "type": "image",
-      "topic": "أشكال هندسية",
-      "verified": true,
-      "media": {
-        "src": "flags-400-041.webp",
-        "type": "image",
-        "title": "The flag of Nepal",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Nepal.svg",
-        "author": "Drawn by Pumbaa80, Achim1999",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 400,
-      "q": "هذا علم أي دولة آسيوية؟",
-      "a": "تايوان",
-      "qid": "flags-400-042",
-      "type": "image",
-      "alt": [
-        "جمهورية الصين"
-      ],
-      "topic": "نجوم",
-      "verified": true,
-      "media": {
-        "src": "flags-400-042.webp",
-        "type": "image",
-        "title": "Flag of the Republic of China (Taiwan)",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_the_Republic_of_China.svg",
-        "author": "Sun Yat-sen",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 400,
-      "q": "راية أي دولة بلقانية أمامك؟",
-      "a": "ألبانيا",
-      "qid": "flags-400-043",
-      "type": "image",
-      "topic": "نباتات وحيوانات",
-      "verified": true,
-      "media": {
-        "src": "flags-400-043.webp",
-        "type": "image",
-        "title": "Flag of Albania",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Albania.svg",
-        "author": "Sadik Kaceli",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 400,
-      "q": "ما الدولة البلقانية صاحبة هذه الراية؟",
-      "a": "البوسنة والهرسك",
-      "qid": "flags-400-044",
-      "type": "image",
-      "alt": [
-        "البوسنة"
-      ],
-      "topic": "أشكال هندسية",
-      "verified": true,
-      "media": {
-        "src": "flags-400-044.webp",
-        "type": "image",
-        "title": "Flag of Bosnia and Herzegovina",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Bosnia_and_Herzegovina.svg",
-        "author": "Mladen Kolobarić",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 400,
-      "q": "سمّ الدولة الأوروبية صاحبة هذه الراية.",
-      "a": "الفاتيكان",
-      "qid": "flags-400-045",
-      "type": "image",
-      "alt": [
-        "دولة الفاتيكان",
-        "الكرسي الرسولي"
-      ],
-      "topic": "شعارات ورموز",
-      "verified": true,
-      "media": {
-        "src": "flags-400-045.webp",
-        "type": "image",
-        "title": "The Flag of Vatican City State, as per the 2023 w:en:Fundamental Law of Vatican City State, reproducing Annex A which c…",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Vatican_City_(2023%E2%80%93present).svg",
-        "author": "Goran_tek-en",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 400,
-      "q": "أي منظمة دولية ترفع هذه الراية؟",
-      "a": "الألعاب الأولمبية",
-      "qid": "flags-400-046",
-      "type": "image",
-      "alt": [
-        "الأولمبياد",
-        "اللجنة الأولمبية الدولية",
-        "الألعاب الأولمبية الدولية"
-      ],
-      "topic": "شعارات ورموز",
-      "verified": true,
-      "media": {
-        "src": "flags-400-046.webp",
-        "type": "image",
-        "title": "Olympic Movement flag Proportions 2:3, created 1913, adopted 1914, first used 1920. My Little Pony: Friendship is Magic…",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Olympic_flag.svg",
-        "author": "Original author: Pierre de Coubertin (1863-1937)",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 400,
-      "q": "هذه راية أي منظمة دولية؟",
-      "a": "جامعة الدول العربية",
-      "qid": "flags-400-047",
-      "type": "image",
-      "alt": [
-        "الجامعة العربية"
-      ],
-      "topic": "كتابة ونقوش",
-      "verified": true,
-      "media": {
-        "src": "flags-400-047.webp",
-        "type": "image",
-        "title": "A green flag with a white inscription above a crescent moon with horns upwards, all within a circle of chain and all ar…",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_the_Arab_League.svg",
-        "author": "Flad",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 400,
-      "q": "ما الدولة التي كانت ترفع هذا العلم؟",
-      "a": "الاتحاد السوفيتي",
-      "qid": "flags-400-048",
-      "type": "image",
-      "alt": [
-        "الاتحاد السوفييتي",
-        "اتحاد الجمهوريات الاشتراكية السوفياتية"
-      ],
-      "topic": "شعارات ورموز",
-      "verified": true,
-      "media": {
-        "src": "flags-400-048.webp",
-        "type": "image",
-        "title": "Flag of the USSR",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_the_Soviet_Union.svg",
-        "author": "СССР",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+        "title": "علم دولة — رسم توضيحي",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-600-901.json"
+        }
       }
     },
     {
       "p": 600,
-      "q": "أي دولة عربية ترفع هذا العلم؟",
-      "a": "جزر القمر",
-      "qid": "flags-600-001",
-      "type": "image",
-      "alt": [
-        "القمر"
-      ],
-      "topic": "أهلة",
-      "verified": true,
-      "media": {
-        "src": "flags-600-001.webp",
-        "type": "image",
-        "title": "Flag of the Comoros",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_the_Comoros.svg",
-        "author": "Original: Comoros; Vector: see file history",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 600,
-      "q": "راية أي دولة في وسط آسيا هذه؟",
-      "a": "قيرغيزستان",
-      "qid": "flags-600-002",
-      "type": "image",
-      "alt": [
-        "قرغيزستان",
-        "قيرغيزيا"
-      ],
-      "topic": "أشكال هندسية",
-      "verified": true,
-      "media": {
-        "src": "flags-600-002.webp",
-        "type": "image",
-        "title": "The flag of Kyrgyzstan",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Kyrgyzstan.svg",
-        "author": "Shakiev N.T., Primov U.B.",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 600,
-      "q": "هذا علم أي إقليم؟",
-      "a": "إقليم كردستان",
-      "qid": "flags-600-003",
-      "type": "image",
-      "alt": [
-        "كردستان",
-        "كردستان العراق"
-      ],
-      "topic": "شعارات ورموز",
-      "verified": true,
-      "media": {
-        "src": "flags-600-003.webp",
-        "type": "image",
-        "title": "Flag of the Kurds and Kurdistan",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Kurdistan.svg",
-        "author": "Unknown authorUnknown author",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 600,
-      "q": "سمّ الدولة الأوروبية صاحبة هذا العلم.",
-      "a": "قبرص",
-      "qid": "flags-600-004",
-      "type": "image",
-      "topic": "شعارات ورموز",
-      "verified": true,
-      "media": {
-        "src": "flags-600-004.webp",
-        "type": "image",
-        "title": "Flag of Cyprus",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Cyprus.svg",
-        "author": "İsmet Güney, SVG by User:Vzb83~commonswiki",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 600,
-      "q": "أي دولة أوروبية يمثلها هذا العلم؟",
-      "a": "مالطا",
-      "qid": "flags-600-005",
-      "type": "image",
-      "topic": "صلبان",
-      "verified": true,
-      "media": {
-        "src": "flags-600-005.webp",
-        "type": "image",
-        "title": "Flag of Malta",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Malta.svg",
-        "author": "See File history below for details.",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 600,
-      "q": "هذا العلم لأي دولة في القوقاز؟",
-      "a": "أذربيجان",
-      "qid": "flags-600-006",
-      "type": "image",
-      "alt": [
-        "آذربيجان"
-      ],
-      "topic": "أهلة",
-      "verified": true,
-      "media": {
-        "src": "flags-600-006.webp",
-        "type": "image",
-        "title": "Flag of Azerbaijan",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Azerbaijan.svg",
-        "author": "SKopp and others",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 600,
-      "q": "أي دولة في وسط آسيا ترفع هذه الراية؟",
-      "a": "كازاخستان",
-      "qid": "flags-600-007",
-      "type": "image",
-      "topic": "شعارات ورموز",
-      "verified": true,
-      "media": {
-        "src": "flags-600-007.webp",
-        "type": "image",
-        "title": "Flag of Kazakhstan",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Kazakhstan.svg",
-        "author": "Shaken Niyazbekop",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 600,
-      "q": "هذه راية أي دولة في وسط آسيا؟",
-      "a": "أوزبكستان",
-      "qid": "flags-600-008",
-      "type": "image",
-      "topic": "أهلة",
-      "verified": true,
-      "media": {
-        "src": "flags-600-008.webp",
-        "type": "image",
-        "title": "Flag of Uzbekistan",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Uzbekistan.svg",
-        "author": "Farhod Yoʻldoshev",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 600,
-      "q": "أي دولة في وسط آسيا ترفع هذا العلم؟",
-      "a": "تركمانستان",
-      "qid": "flags-600-009",
-      "type": "image",
-      "topic": "أهلة",
-      "verified": true,
-      "media": {
-        "src": "flags-600-009.webp",
-        "type": "image",
-        "title": "Flag of Turkmenistan",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Turkmenistan.svg",
-        "author": "مؤلف غير معروف",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 600,
-      "q": "لمن يعود هذا العلم؟",
-      "a": "جورجيا",
-      "qid": "flags-600-010",
-      "type": "image",
-      "alt": [
-        "جورجيا الدولة"
-      ],
-      "topic": "صلبان",
-      "verified": true,
-      "media": {
-        "src": "flags-600-010.webp",
-        "type": "image",
-        "title": "flag of Georgia",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Georgia.svg",
-        "author": "Last update by MapGrid SKopp",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 600,
-      "q": "راية أي دولة في القوقاز أمامك؟",
-      "a": "أرمينيا",
-      "qid": "flags-600-011",
-      "type": "image",
-      "topic": "أشرطة وألوان",
-      "verified": true,
-      "media": {
-        "src": "flags-600-011.webp",
-        "type": "image",
-        "title": "Flag of Armenia",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Armenia.svg",
-        "author": "Original: Stepan Malkhasyants Vector: SKopp",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 600,
-      "q": "هذه راية أي دولة أوروبية؟",
-      "a": "بيلاروسيا",
-      "qid": "flags-600-012",
-      "type": "image",
-      "alt": [
-        "روسيا البيضاء",
-        "بيلاروس"
-      ],
-      "topic": "شعارات ورموز",
-      "verified": true,
-      "media": {
-        "src": "flags-600-012.webp",
-        "type": "image",
-        "title": "Flag of Belarus",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Belarus.svg",
-        "author": "See File history below for details.",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 600,
-      "q": "ما الدولة الأوروبية صاحبة هذه الراية؟",
-      "a": "مولدوفا",
-      "qid": "flags-600-013",
-      "type": "image",
-      "alt": [
-        "مولدافيا"
-      ],
-      "topic": "دروع وتيجان",
-      "verified": true,
-      "media": {
-        "src": "flags-600-013.webp",
-        "type": "image",
-        "title": "flag of Moldova",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Moldova.svg",
-        "author": "Gheorghe Vrabie",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 600,
-      "q": "راية أي دولة أوروبية أمامك؟",
+      "q": "أي دولة يمثلها هذا العلم بأشرطته الأفقية الزرقاء والسوداء والبيضاء؟",
       "a": "إستونيا",
-      "qid": "flags-600-014",
+      "qid": "flags-600-902",
       "type": "image",
+      "effect": "none",
       "alt": [
-        "أستونيا"
+        "Estonia"
       ],
-      "topic": "أشرطة وألوان",
+      "topic": "أوروبا",
+      "difficultyTarget": 0.4,
       "verified": true,
+      "sourceUrl": "https://president.ee/en/republic-of-estonia/symbols/",
       "media": {
-        "src": "flags-600-014.webp",
+        "src": "flags-600-902.webp",
         "type": "image",
-        "title": "Flag of Estonia",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Estonia.svg",
-        "author": "Original: Unknown author Vector: SKopp, PeepP and ‍others",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+        "title": "علم دولة — رسم توضيحي",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-600-902.json"
+        }
       }
     },
     {
       "p": 600,
-      "q": "أي دولة ترفع هذا العلم؟",
-      "a": "ليتوانيا",
-      "qid": "flags-600-015",
+      "q": "لأي دولة ينتمي العلم ذو الشريط الأبيض العمودي بين شريطين أخضرين؟",
+      "a": "نيجيريا",
+      "qid": "flags-600-903",
       "type": "image",
+      "effect": "none",
       "alt": [
-        "ليتوانية"
+        "جمهورية نيجيريا الاتحادية",
+        "Nigeria"
       ],
-      "topic": "أشرطة وألوان",
+      "topic": "أفريقيا الغربية",
+      "difficultyTarget": 0.4,
       "verified": true,
+      "sourceUrl": "https://ntda.gov.ng/media.assets.php",
       "media": {
-        "src": "flags-600-015.webp",
+        "src": "flags-600-903.webp",
         "type": "image",
-        "title": "Flag of Lithuania",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Lithuania.svg",
-        "author": "Original: Jonas Basanavičius, Tadas Daugirdas and Antanas Žmuidzinavičius Vector: SKopp The SVG code is valid. This flag was created with a text editor.Previous version had been created with Inkscape (1930 bytes) f now 14.15% of previous size Please do not replace the simplified code of this file with a version created with Inkscape or any other graphical vector graphics editor",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+        "title": "علم دولة — رسم توضيحي",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-600-903.json"
+        }
       }
     },
     {
       "p": 600,
-      "q": "لأي دولة هذه الراية؟",
-      "a": "سلوفاكيا",
-      "qid": "flags-600-016",
+      "q": "ما الدولة التي تتوسط علمها نجمة سوداء فوق شريط ذهبي؟",
+      "a": "غانا",
+      "qid": "flags-600-904",
       "type": "image",
-      "topic": "دروع وتيجان",
-      "verified": true,
-      "media": {
-        "src": "flags-600-016.webp",
-        "type": "image",
-        "title": "Flag of Slovakia",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Slovakia.svg",
-        "author": "Original: Ladislav Čisárik and Ladislav Vrtel Vector: SKopp",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 600,
-      "q": "علم أي دولة في شرق أفريقيا هذا؟",
-      "a": "إريتريا",
-      "qid": "flags-600-017",
-      "type": "image",
+      "effect": "none",
       "alt": [
-        "أريتريا"
+        "جمهورية غانا",
+        "Ghana"
       ],
-      "topic": "نباتات وحيوانات",
+      "topic": "أفريقيا الغربية",
+      "difficultyTarget": 0.4,
       "verified": true,
+      "sourceUrl": "https://gis.gov.gh/wp-content/uploads/2024/02/FACTS-ABOUT-GHANA.pdf",
       "media": {
-        "src": "flags-600-017.webp",
+        "src": "flags-600-904.webp",
         "type": "image",
-        "title": "Flag of Eritrea",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Eritrea.svg",
-        "author": "Unknown authorUnknown author",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+        "title": "علم دولة — رسم توضيحي",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-600-904.json"
+        }
       }
     },
     {
       "p": 600,
-      "q": "ما اسم الدولة البلقانية صاحبة هذا العلم؟",
-      "a": "مقدونيا الشمالية",
-      "qid": "flags-600-018",
-      "type": "image",
-      "alt": [
-        "مقدونيا"
-      ],
-      "topic": "شعارات ورموز",
-      "verified": true,
-      "media": {
-        "src": "flags-600-018.webp",
-        "type": "image",
-        "title": "Flag of North Macedonia",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_North_Macedonia.svg",
-        "author": "User:SKopp, redrawn by User:Gabbe",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 600,
-      "q": "سمّ الدولة البلقانية صاحبة هذه الراية.",
-      "a": "الجبل الأسود",
-      "qid": "flags-600-019",
-      "type": "image",
-      "alt": [
-        "مونتينيغرو"
-      ],
-      "topic": "دروع وتيجان",
-      "verified": true,
-      "media": {
-        "src": "flags-600-019.webp",
-        "type": "image",
-        "title": "Flag of Montenegro (adopted on 13 July 2004).",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Montenegro.svg",
-        "author": "B1mbo, Froztbyte, Great Brightstar",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 600,
-      "q": "أي دولة في غرب أفريقيا ترفع هذه الراية؟",
-      "a": "مالي",
-      "qid": "flags-600-020",
-      "type": "image",
-      "topic": "أشرطة وألوان",
-      "verified": true,
-      "media": {
-        "src": "flags-600-020.webp",
-        "type": "image",
-        "title": "Flag of Mali",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Mali.svg",
-        "author": "SKopp",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 600,
-      "q": "هذه راية أي دولة في غرب أفريقيا؟",
-      "a": "بوركينا فاسو",
-      "qid": "flags-600-021",
-      "type": "image",
-      "alt": [
-        "بوركينافاسو"
-      ],
-      "topic": "نجوم",
-      "verified": true,
-      "media": {
-        "src": "flags-600-021.webp",
-        "type": "image",
-        "title": "Flag of Burkina Faso",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Burkina_Faso.svg",
-        "author": "Drawn by SKopp, rewritten by Gabbe and Андрей Перцев",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 600,
-      "q": "أي دولة في شرق أفريقيا ترفع هذا العلم؟",
-      "a": "تنزانيا",
-      "qid": "flags-600-022",
-      "type": "image",
-      "topic": "أشكال هندسية",
-      "verified": true,
-      "media": {
-        "src": "flags-600-022.webp",
-        "type": "image",
-        "title": "Flag of Tanzania",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Tanzania.svg",
-        "author": "مؤلف غير معروف",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 600,
-      "q": "لأي دولة في شرق أفريقيا هذه الراية؟",
-      "a": "أوغندا",
-      "qid": "flags-600-023",
-      "type": "image",
-      "alt": [
-        "يوغندا"
-      ],
-      "topic": "نباتات وحيوانات",
-      "verified": true,
-      "media": {
-        "src": "flags-600-023.webp",
-        "type": "image",
-        "title": "Flag of Uganda",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Uganda.svg",
-        "author": "tobias",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 600,
-      "q": "علم أي دولة أفريقية هذا؟",
-      "a": "زيمبابوي",
-      "qid": "flags-600-024",
-      "type": "image",
-      "topic": "نباتات وحيوانات",
-      "verified": true,
-      "media": {
-        "src": "flags-600-024.webp",
-        "type": "image",
-        "title": "Flag of Zimbabwe",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Zimbabwe.svg",
-        "author": "See File history below for details.",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 600,
-      "q": "هذا علم أي دولة أفريقية؟",
-      "a": "زامبيا",
-      "qid": "flags-600-025",
-      "type": "image",
-      "topic": "نباتات وحيوانات",
-      "verified": true,
-      "media": {
-        "src": "flags-600-025.webp",
-        "type": "image",
-        "title": "Flag of Zambia",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Zambia.svg",
-        "author": "Gabriel Ellison",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 600,
-      "q": "هذا العلم لأي دولة أفريقية؟",
-      "a": "أنغولا",
-      "qid": "flags-600-026",
-      "type": "image",
-      "alt": [
-        "أنجولا"
-      ],
-      "topic": "شعارات ورموز",
-      "verified": true,
-      "media": {
-        "src": "flags-600-026.webp",
-        "type": "image",
-        "title": "Flag of Angola",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Angola.svg",
-        "author": "Original: Henrique de Carvalho Santos Vector: SKopp",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 600,
-      "q": "ما الجهة صاحبة هذا العلم؟",
-      "a": "موزمبيق",
-      "qid": "flags-600-027",
-      "type": "image",
-      "alt": [
-        "موزامبيق"
-      ],
-      "topic": "شعارات ورموز",
-      "verified": true,
-      "media": {
-        "src": "flags-600-027.webp",
-        "type": "image",
-        "title": "Flag of Mozambique",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Mozambique.svg",
-        "author": "FRELIMO",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 600,
-      "q": "ما الدولة الأفريقية التي ترفع هذه الراية؟",
-      "a": "ناميبيا",
-      "qid": "flags-600-028",
-      "type": "image",
-      "topic": "أشكال هندسية",
-      "verified": true,
-      "media": {
-        "src": "flags-600-028.webp",
-        "type": "image",
-        "title": "Flag of Namibia",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Namibia.svg",
-        "author": "SVG by Vzb83~commonswiki et al.",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 600,
-      "q": "راية أي دولة أفريقية هذه؟",
+      "q": "ما الدولة التي يظهر علمها بالأزرق الفاتح، ويتوسطه شريط أسود تحيط به حافتان بيضاوان؟",
       "a": "بوتسوانا",
-      "qid": "flags-600-029",
+      "qid": "flags-600-905",
       "type": "image",
+      "effect": "none",
       "alt": [
-        "بتسوانا"
+        "Botswana",
+        "جمهورية بوتسوانا"
       ],
-      "topic": "أشرطة وألوان",
+      "topic": "أفريقيا الشرقية والوسطى والجنوبية",
+      "difficultyTarget": 0.4,
       "verified": true,
+      "sourceUrl": "https://www.gov.bw/about-our-country-0",
       "media": {
-        "src": "flags-600-029.webp",
+        "src": "flags-600-905.webp",
         "type": "image",
-        "title": "Flag of Botswana",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Botswana.svg",
-        "author": "SKopp, Gabbe, Madden",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+        "title": "علم دولة — رسم توضيحي",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-600-905.json"
+        }
       }
     },
     {
       "p": 600,
-      "q": "علم أي دولة في المحيط الهندي هذا؟",
-      "a": "مدغشقر",
-      "qid": "flags-600-030",
+      "q": "ما الدولة صاحبة هذا العلم ذي الشريط الأسود المائل بين الأخضر والأزرق؟",
+      "a": "تنزانيا",
+      "qid": "flags-600-906",
       "type": "image",
+      "effect": "none",
       "alt": [
-        "مدغسقر"
+        "Tanzania",
+        "جمهورية تنزانيا المتحدة"
       ],
-      "topic": "أشكال هندسية",
+      "topic": "أفريقيا الشرقية والوسطى والجنوبية",
+      "difficultyTarget": 0.4,
       "verified": true,
+      "sourceUrl": "https://embassyoftanzaniarome.info/en/about-tanzania/national-symbols",
       "media": {
-        "src": "flags-600-030.webp",
+        "src": "flags-600-906.webp",
         "type": "image",
-        "title": "Flag of Madagascar",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Madagascar.svg",
-        "author": "مؤلف غير معروف",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+        "title": "علم دولة — رسم توضيحي",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-600-906.json"
+        }
       }
     },
     {
       "p": 600,
-      "q": "سمّ الدولة الآسيوية صاحبة هذا العلم.",
-      "a": "سريلانكا",
-      "qid": "flags-600-031",
+      "q": "ما الدولة صاحبة هذا العلم الأحمر الذي تتوسطه نجمة ذهبية خماسية؟",
+      "a": "فيتنام",
+      "qid": "flags-600-907",
       "type": "image",
+      "effect": "none",
       "alt": [
-        "سيلان"
+        "Vietnam",
+        "Viet Nam",
+        "جمهورية فيتنام الاشتراكية"
       ],
-      "topic": "نباتات وحيوانات",
+      "topic": "جنوب وجنوب شرق آسيا",
+      "difficultyTarget": 0.4,
       "verified": true,
+      "sourceUrl": "https://vietnam.gov.vn/default.aspx?catname=national-flag-emblem-anthem-declaration-of-independence-68960",
       "media": {
-        "src": "flags-600-031.webp",
+        "src": "flags-600-907.webp",
         "type": "image",
-        "title": "Flag of Sri Lanka",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Sri_Lanka.svg",
-        "author": "Original: Sri Lanka Vectorization: Zscout370, Mike Rohsopht",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+        "title": "علم دولة — رسم توضيحي",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-600-907.json"
+        }
       }
     },
     {
       "p": 600,
-      "q": "أي دولة في جنوب شرق آسيا صاحبة هذا العلم؟",
-      "a": "ميانمار",
-      "qid": "flags-600-032",
-      "type": "image",
-      "alt": [
-        "بورما"
-      ],
-      "topic": "نجوم",
-      "verified": true,
-      "media": {
-        "src": "flags-600-032.webp",
-        "type": "image",
-        "title": "Flag of Myanmar",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Myanmar.svg",
-        "author": "Unknown authorUnknown author",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 600,
-      "q": "راية أي دولة في جنوب شرق آسيا هذه؟",
-      "a": "كمبوديا",
-      "qid": "flags-600-033",
-      "type": "image",
-      "alt": [
-        "كامبوديا"
-      ],
-      "topic": "شعارات ورموز",
-      "verified": true,
-      "media": {
-        "src": "flags-600-033.webp",
-        "type": "image",
-        "title": "Flag of Cambodia",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Cambodia.svg",
-        "author": "Unknown authorUnknown author",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 600,
-      "q": "راية أي دولة في جنوب شرق آسيا أمامك؟",
+      "q": "ما الدولة التي تتوسط علمها دائرة بيضاء على شريط أزرق عريض بين شريطين أحمرين؟",
       "a": "لاوس",
-      "qid": "flags-600-034",
+      "qid": "flags-600-908",
       "type": "image",
-      "topic": "أشكال هندسية",
-      "verified": true,
-      "media": {
-        "src": "flags-600-034.webp",
-        "type": "image",
-        "title": "Flag of Laos",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Laos.svg",
-        "author": "SKopp",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 600,
-      "q": "أي دولة آسيوية صاحبة هذا العلم؟",
-      "a": "منغوليا",
-      "qid": "flags-600-035",
-      "type": "image",
+      "effect": "none",
       "alt": [
-        "منغوليا الخارجية"
+        "Laos",
+        "Lao PDR",
+        "جمهورية لاو الديمقراطية الشعبية"
       ],
-      "topic": "شعارات ورموز",
+      "topic": "جنوب وجنوب شرق آسيا",
+      "difficultyTarget": 0.4,
       "verified": true,
+      "sourceUrl": "https://www.wipo.int/wipolex/en/legislation/details/5829",
       "media": {
-        "src": "flags-600-035.webp",
+        "src": "flags-600-908.webp",
         "type": "image",
-        "title": "Flag of Mongolia",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Mongolia.svg",
-        "author": "See File history below for details.",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 600,
-      "q": "لأي دولة في المحيط الهندي هذه الراية؟",
-      "a": "المالديف",
-      "qid": "flags-600-036",
-      "type": "image",
-      "alt": [
-        "جزر المالديف"
-      ],
-      "topic": "أهلة",
-      "verified": true,
-      "media": {
-        "src": "flags-600-036.webp",
-        "type": "image",
-        "title": "Flag of Maldives. The colours used are Pantone 186 C for red and Pantone 348 C for green.",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Maldives.svg",
-        "author": "See File history, below, for details.",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 600,
-      "q": "علم أي دولة آسيوية هذا؟",
-      "a": "بوتان",
-      "qid": "flags-600-037",
-      "type": "image",
-      "topic": "نباتات وحيوانات",
-      "verified": true,
-      "media": {
-        "src": "flags-600-037.webp",
-        "type": "image",
-        "title": "Flag of Bhutan",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Bhutan.svg",
-        "author": "See File history below for details.",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 600,
-      "q": "أي دولة في أمريكا الجنوبية ترفع هذه الراية؟",
-      "a": "الإكوادور",
-      "qid": "flags-600-038",
-      "type": "image",
-      "alt": [
-        "الإكوادر"
-      ],
-      "topic": "دروع وتيجان",
-      "verified": true,
-      "media": {
-        "src": "flags-600-038.webp",
-        "type": "image",
-        "title": "Flag of Ecuador",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Ecuador.svg",
-        "author": "President of the Republic of Ecuador, first uploaded by Denelson83 as Flag of Ecuador.svg, modifications by Husunqu, Zscout370",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 600,
-      "q": "هذه راية أي دولة في أمريكا الجنوبية؟",
-      "a": "بوليفيا",
-      "qid": "flags-600-039",
-      "type": "image",
-      "topic": "دروع وتيجان",
-      "verified": true,
-      "media": {
-        "src": "flags-600-039.webp",
-        "type": "image",
-        "title": "National flag of Bolivia Flag of Bolivia* country Template:I18n/Republic of Bolivia used by Bolivia from 1851 until Pre…",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Bolivia.svg",
-        "author": "See file history' below for details.",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 600,
-      "q": "أي دولة في أمريكا الجنوبية صاحبة هذا العلم؟",
-      "a": "باراغواي",
-      "qid": "flags-600-040",
-      "type": "image",
-      "alt": [
-        "باراجواي"
-      ],
-      "topic": "دروع وتيجان",
-      "verified": true,
-      "media": {
-        "src": "flags-600-040.webp",
-        "type": "image",
-        "title": "Flag of Paraguay (obverse).",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Paraguay.svg",
-        "author": "Republica del Paraguay",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 600,
-      "q": "راية أي دولة في أمريكا الوسطى هذه؟",
-      "a": "كوستاريكا",
-      "qid": "flags-600-041",
-      "type": "image",
-      "alt": [
-        "كوستا ريكا"
-      ],
-      "topic": "أشرطة وألوان",
-      "verified": true,
-      "media": {
-        "src": "flags-600-041.webp",
-        "type": "image",
-        "title": "Flag of Costa Rica",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Costa_Rica.svg",
-        "author": "See File history below for details.",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 600,
-      "q": "أي دولة كاريبية ترفع هذه الراية؟",
-      "a": "جامايكا",
-      "qid": "flags-600-042",
-      "type": "image",
-      "alt": [
-        "جاميكا"
-      ],
-      "topic": "أشكال هندسية",
-      "verified": true,
-      "media": {
-        "src": "flags-600-042.webp",
-        "type": "image",
-        "title": "Flag of Jamaica. “The sunshine, the land is green, and the people are strong and bold” is the symbolism of the colours…",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Jamaica.svg",
-        "author": "The SVG code is valid. This vector image was created with Inkscape by SKopp, and then manually edited by Zscout370, Madden and others.",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 600,
-      "q": "هذه راية أي دولة كاريبية؟",
-      "a": "هايتي",
-      "qid": "flags-600-043",
-      "type": "image",
-      "topic": "دروع وتيجان",
-      "verified": true,
-      "media": {
-        "src": "flags-600-043.webp",
-        "type": "image",
-        "title": "The national and official state flag of Haiti; arms obtained from File:Coat of arms of Haiti.svg. The civil flag can be…",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Haiti.svg",
-        "author": "(colours and size changes of the now deleted versions) Madden, Vzb83, Denelson83, Chanheigeorge, Zscout370 and Nightstallion Coat of arms :Lokal_Profil and Myriam Thyes",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 600,
-      "q": "ما الجهة صاحبة هذه الراية؟",
-      "a": "بورتوريكو",
-      "qid": "flags-600-044",
-      "type": "image",
-      "alt": [
-        "بويرتوريكو"
-      ],
-      "topic": "نجوم",
-      "verified": true,
-      "media": {
-        "src": "flags-600-044.webp",
-        "type": "image",
-        "title": "Flag of Puerto Rico",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Puerto_Rico.svg",
-        "author": "Original: Unknown Vector: Cerejota",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 600,
-      "q": "ما المنظمة الدولية التي يمثلها هذا العلم؟",
-      "a": "الاتحاد الأفريقي",
-      "qid": "flags-600-045",
-      "type": "image",
-      "topic": "شعارات ورموز",
-      "verified": true,
-      "media": {
-        "src": "flags-600-045.webp",
-        "type": "image",
-        "title": "Flag of the African Union",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_the_African_Union.svg",
-        "author": "African Union - supranational union in Africa",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 600,
-      "q": "علم أي منظمة دولية هذا؟",
-      "a": "حلف شمال الأطلسي",
-      "qid": "flags-600-046",
-      "type": "image",
-      "alt": [
-        "الناتو",
-        "الحلف الأطلسي"
-      ],
-      "topic": "شعارات ورموز",
-      "verified": true,
-      "media": {
-        "src": "flags-600-046.webp",
-        "type": "image",
-        "title": "The flag of the North Atlantic Treaty Organization (NATO). Color is PMS 280, RGB #004990.",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_NATO.svg",
-        "author": "Current file: Found by 475847394d347339 in websites noted in the source section. Previous file Vectorization: Mysid and uploaded to Flag of NATO.svg Code cleaned up by Artem Karimov.",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 600,
-      "q": "لأي دولة زالت من الخريطة هذا العلم؟",
-      "a": "الجماهيرية العربية الليبية",
-      "qid": "flags-600-047",
-      "type": "image",
-      "alt": [
-        "الجماهيرية الليبية",
-        "ليبيا في عهد القذافي"
-      ],
-      "topic": "أشرطة وألوان",
-      "verified": true,
-      "media": {
-        "src": "flags-600-047.webp",
-        "type": "image",
-        "title": "The national flag of the Libyan Arab Jamahiriya from 1977 to 2011.",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Libya_(1977%E2%80%932011).svg",
-        "author": "Zscout370",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 600,
-      "q": "هذا العلم لأي إقليم؟",
-      "a": "كتالونيا",
-      "qid": "flags-600-048",
-      "type": "image",
-      "alt": [
-        "كاتالونيا"
-      ],
-      "topic": "أشرطة وألوان",
-      "verified": true,
-      "media": {
-        "src": "flags-600-048.webp",
-        "type": "image",
-        "title": "The senyera, the flag of Catalonia, and also used by several lands and municipalities of the ancient Crown of Aragon",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Catalonia.svg",
-        "author": "Motoroil",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+        "title": "علم دولة — رسم توضيحي",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-600-908.json"
+        }
       }
     },
     {
       "p": 800,
-      "q": "لأي دولة في غرب أفريقيا هذه الراية؟",
-      "a": "غينيا",
-      "qid": "flags-800-001",
-      "type": "image",
-      "alt": [
-        "غينيا كوناكري"
-      ],
-      "topic": "أشرطة وألوان",
-      "verified": true,
-      "media": {
-        "src": "flags-800-001.webp",
-        "type": "image",
-        "title": "Flag of Guinea",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Guinea.svg",
-        "author": "مؤلف غير معروف",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 800,
-      "q": "راية أي دولة في غرب أفريقيا أمامك؟",
-      "a": "النيجر",
-      "qid": "flags-800-002",
-      "type": "image",
-      "topic": "أشكال هندسية",
-      "verified": true,
-      "media": {
-        "src": "flags-800-002.webp",
-        "type": "image",
-        "title": "The flag of Niger (7:6)",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Niger.svg",
-        "author": "Made by: Philippe Verdy User:verdy_p, see also fr:Utilisateur:verdy_p.",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 800,
-      "q": "هذا علم أي دولة في غرب أفريقيا؟",
-      "a": "بنين",
-      "qid": "flags-800-003",
-      "type": "image",
-      "topic": "أشكال هندسية",
-      "verified": true,
-      "media": {
-        "src": "flags-800-003.webp",
-        "type": "image",
-        "title": "Flag of Benin",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Benin.svg",
-        "author": "Drawn by User:SKopp, rewritten by User:Gabbe",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 800,
-      "q": "علم أي دولة في غرب أفريقيا تراه أمامك؟",
+      "q": "ما الدولة التي يحمل علمها نجمة بيضاء في مربع أحمر، مع أشرطة خضراء وصفراء؟",
       "a": "توغو",
-      "qid": "flags-800-004",
+      "qid": "flags-800-901",
       "type": "image",
+      "effect": "none",
       "alt": [
-        "توجو"
+        "Togo",
+        "جمهورية توغو"
       ],
-      "topic": "نجوم",
+      "topic": "أفريقيا الغربية",
+      "difficultyTarget": 0.25,
       "verified": true,
+      "sourceUrl": "https://presidenceduconseil.gouv.tg/symbole-des-de-la-republique-togolaise/",
       "media": {
-        "src": "flags-800-004.webp",
+        "src": "flags-800-901.webp",
         "type": "image",
-        "title": "Flag of Togo",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Togo.svg",
-        "author": "See File history below for details.",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+        "title": "علم دولة — رسم توضيحي",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-800-901.json"
+        }
       }
     },
     {
       "p": 800,
-      "q": "أي دولة في غرب أفريقيا ترفع هذا العلم؟",
-      "a": "سيراليون",
-      "qid": "flags-800-005",
+      "q": "ما الدولة صاحبة هذا العلم، بأخضر عمودي إلى جانب الأصفر والأحمر الأفقيين؟",
+      "a": "بنين",
+      "qid": "flags-800-902",
       "type": "image",
+      "effect": "none",
       "alt": [
-        "سيراليون الأفريقية"
+        "Benin",
+        "جمهورية بنين"
       ],
-      "topic": "أشرطة وألوان",
+      "topic": "أفريقيا الغربية",
+      "difficultyTarget": 0.25,
       "verified": true,
+      "sourceUrl": "https://sgg.gouv.bj/doc/loi-90-020/download",
       "media": {
-        "src": "flags-800-005.webp",
+        "src": "flags-800-902.webp",
         "type": "image",
-        "title": "The flag of Sierra Leone",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Sierra_Leone.svg",
-        "author": "Zscout370",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+        "title": "علم دولة — رسم توضيحي",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-800-902.json"
+        }
       }
     },
     {
       "p": 800,
-      "q": "هذا العلم لأي دولة في غرب أفريقيا؟",
-      "a": "غامبيا",
-      "qid": "flags-800-006",
-      "type": "image",
-      "alt": [
-        "جامبيا"
-      ],
-      "topic": "أشرطة وألوان",
-      "verified": true,
-      "media": {
-        "src": "flags-800-006.webp",
-        "type": "image",
-        "title": "Flag of The Gambia",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_The_Gambia.svg",
-        "author": "Vzb83 iThe source code of the previous SVG was invalid due to 39 errors.",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 800,
-      "q": "علم أي دولة في غرب أفريقيا هذا؟",
-      "a": "غينيا بيساو",
-      "qid": "flags-800-007",
-      "type": "image",
-      "alt": [
-        "بيساو"
-      ],
-      "topic": "نجوم",
-      "verified": true,
-      "media": {
-        "src": "flags-800-007.webp",
-        "type": "image",
-        "title": "Flag of Guinea-Bissau",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Guinea-Bissau.svg",
-        "author": "Drawn by User:SKopp",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 800,
-      "q": "أي دولة أفريقية يمثلها هذا العلم؟",
-      "a": "الرأس الأخضر",
-      "qid": "flags-800-008",
-      "type": "image",
-      "alt": [
-        "كابو فيردي",
-        "جزر الرأس الأخضر"
-      ],
-      "topic": "نجوم",
-      "verified": true,
-      "media": {
-        "src": "flags-800-008.webp",
-        "type": "image",
-        "title": "The flag of Cape Verde has no officially defined aspect ratio. File:Flag of Cape Verde (10-17).svg has a 10:17 ratio; t…",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Cape_Verde_(3-2).svg",
-        "author": "Original: Pedro Gregório Vector: SKopp",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 800,
-      "q": "ما الدولة الأفريقية صاحبة هذا العلم؟",
-      "a": "ساو تومي وبرينسيب",
-      "qid": "flags-800-009",
-      "type": "image",
-      "alt": [
-        "ساو تومي"
-      ],
-      "topic": "نجوم",
-      "verified": true,
-      "media": {
-        "src": "flags-800-009.webp",
-        "type": "image",
-        "title": "Flag of São Tomé and Príncipe",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_S%C3%A3o_Tom%C3%A9_and_Pr%C3%ADncipe.svg",
-        "author": "See File history below for details.",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 800,
-      "q": "ما الدولة الأفريقية التي ترفع هذا العلم؟",
-      "a": "غينيا الاستوائية",
-      "qid": "flags-800-010",
-      "type": "image",
-      "topic": "دروع وتيجان",
-      "verified": true,
-      "media": {
-        "src": "flags-800-010.webp",
-        "type": "image",
-        "title": "Flag of Equatorial Guinea",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Equatorial_Guinea.svg",
-        "author": "See File history below for details.",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 800,
-      "q": "أي دولة أفريقية ترفع هذا العلم؟",
+      "q": "ما الدولة التي يتكون علمها من أشرطة أفقية خضراء وصفراء وزرقاء؟",
       "a": "الغابون",
-      "qid": "flags-800-011",
+      "qid": "flags-800-903",
       "type": "image",
+      "effect": "none",
       "alt": [
-        "جابون"
+        "غابون",
+        "الجابون",
+        "Gabon",
+        "جمهورية الغابون"
       ],
-      "topic": "أشرطة وألوان",
+      "topic": "أفريقيا الشرقية والوسطى والجنوبية",
+      "difficultyTarget": 0.25,
       "verified": true,
+      "sourceUrl": "https://gabonembassyusa.org/en/about/about-us",
       "media": {
-        "src": "flags-800-011.webp",
+        "src": "flags-800-903.webp",
         "type": "image",
-        "title": "Flag of Gabon",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Gabon.svg",
-        "author": "Léon Augé and Pierre Claver Eyeghe",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+        "title": "علم دولة — رسم توضيحي",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-800-903.json"
+        }
       }
     },
     {
       "p": 800,
-      "q": "لأي دولة أفريقية هذه الراية؟",
+      "q": "ما الدولة صاحبة هذا العلم، الذي يفصل فيه شريط أصفر مائل بين الأخضر والأحمر؟",
       "a": "جمهورية الكونغو",
-      "qid": "flags-800-012",
+      "qid": "flags-800-904",
       "type": "image",
+      "effect": "none",
       "alt": [
-        "الكونغو برازافيل"
+        "الكونغو برازافيل",
+        "Congo-Brazzaville",
+        "Republic of the Congo"
       ],
-      "topic": "أشكال هندسية",
+      "topic": "أفريقيا الشرقية والوسطى والجنوبية",
+      "difficultyTarget": 0.25,
       "verified": true,
+      "sourceUrl": "https://www.ambacongo-us.org/index.php/en/about-congo/national-symbols",
       "media": {
-        "src": "flags-800-012.webp",
+        "src": "flags-800-904.webp",
         "type": "image",
-        "title": "Flag of the Republic of the Congo",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_the_Republic_of_the_Congo.svg",
-        "author": "See File history below for details.",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+        "title": "علم دولة — رسم توضيحي",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-800-904.json"
+        }
       }
     },
     {
       "p": 800,
-      "q": "لأي جهة يعود هذا العلم؟",
-      "a": "جمهورية الكونغو الديمقراطية",
-      "qid": "flags-800-013",
-      "type": "image",
-      "alt": [
-        "الكونغو الديمقراطية",
-        "الكونغو كينشاسا"
-      ],
-      "topic": "نجوم",
-      "verified": true,
-      "media": {
-        "src": "flags-800-013.webp",
-        "type": "image",
-        "title": "The national flag of the Democratic Republic of the Congo. Created according to the 2006 constitution : Son emblème est…",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_the_Democratic_Republic_of_the_Congo.svg",
-        "author": "Nightstallion",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 800,
-      "q": "ما الدولة الأفريقية صاحبة هذه الراية؟",
-      "a": "جمهورية أفريقيا الوسطى",
-      "qid": "flags-800-014",
-      "type": "image",
-      "alt": [
-        "أفريقيا الوسطى"
-      ],
-      "topic": "نجوم",
-      "verified": true,
-      "media": {
-        "src": "flags-800-014.webp",
-        "type": "image",
-        "title": "The proportions of this flag are 3:2; however, there is no official definition for the correct proportions and also 5:3…",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_the_Central_African_Republic.svg",
-        "author": "Barthélemy Boganda",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 800,
-      "q": "هذا العلم لأي دولة في شرق أفريقيا؟",
-      "a": "بوروندي",
-      "qid": "flags-800-015",
-      "type": "image",
-      "topic": "نجوم",
-      "verified": true,
-      "media": {
-        "src": "flags-800-015.webp",
-        "type": "image",
-        "title": "Flag of Burundi",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Burundi.svg",
-        "author": "See File history below for details.",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 800,
-      "q": "لأي دولة في شرق أفريقيا هذا العلم؟",
-      "a": "رواندا",
-      "qid": "flags-800-016",
-      "type": "image",
-      "topic": "شعارات ورموز",
-      "verified": true,
-      "media": {
-        "src": "flags-800-016.webp",
-        "type": "image",
-        "title": "Flag of Rwanda. The flag ratio is 2:3 with the stripes being 2:1:1. Colors are the following officially: Pantone 299 C…",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Rwanda.svg",
-        "author": "Original: Unknown Vector: Zscout370",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 800,
-      "q": "هذه راية أي دولة أفريقية؟",
-      "a": "مالاوي",
-      "qid": "flags-800-017",
-      "type": "image",
-      "alt": [
-        "ملاوي"
-      ],
-      "topic": "شعارات ورموز",
-      "verified": true,
-      "media": {
-        "src": "flags-800-017.webp",
-        "type": "image",
-        "title": "Flag of Malawi",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Malawi.svg",
-        "author": "Original: Unknown author Vector: Achim1999",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 800,
-      "q": "ما الدولة البلقانية صاحبة هذا العلم؟",
-      "a": "سلوفينيا",
-      "qid": "flags-800-018",
-      "type": "image",
-      "topic": "دروع وتيجان",
-      "verified": true,
-      "media": {
-        "src": "flags-800-018.webp",
-        "type": "image",
-        "title": "The flag of Slovenia. \"The construction sheet for the coat of arms and flag of the Republic of Slovenia is issued in th…",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Slovenia.svg",
-        "author": "Original: Marko Pogačnik Vector: Achim1999",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 800,
-      "q": "ما الدولة الأفريقية التي يمثلها هذا العلم؟",
-      "a": "إسواتيني",
-      "qid": "flags-800-019",
-      "type": "image",
-      "alt": [
-        "سوازيلاند"
-      ],
-      "topic": "دروع وتيجان",
-      "verified": true,
-      "media": {
-        "src": "flags-800-019.webp",
-        "type": "image",
-        "title": "Flag of Eswatini",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Eswatini.svg",
-        "author": "Sobhuza II",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 800,
-      "q": "لأي دولة أفريقية هذا العلم؟",
-      "a": "ليسوتو",
-      "qid": "flags-800-020",
-      "type": "image",
-      "alt": [
-        "ليسوثو"
-      ],
-      "topic": "شعارات ورموز",
-      "verified": true,
-      "media": {
-        "src": "flags-800-020.webp",
-        "type": "image",
-        "title": "Flag of Lesotho",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Lesotho.svg",
-        "author": "See File history below for details.",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 800,
-      "q": "لأي دولة في المحيط الهندي هذا العلم؟",
-      "a": "سيشل",
-      "qid": "flags-800-021",
-      "type": "image",
-      "alt": [
-        "سيشيل",
-        "جزر سيشل"
-      ],
-      "topic": "أشكال هندسية",
-      "verified": true,
-      "media": {
-        "src": "flags-800-021.webp",
-        "type": "image",
-        "title": "Flag of Seychelles",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Seychelles.svg",
-        "author": "User:Vxb83",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 800,
-      "q": "هذا علم أي دولة في المحيط الهندي؟",
-      "a": "موريشيوس",
-      "qid": "flags-800-022",
-      "type": "image",
-      "alt": [
-        "موريشيس",
-        "جزيرة موريشيوس"
-      ],
-      "topic": "أشرطة وألوان",
-      "verified": true,
-      "media": {
-        "src": "flags-800-022.webp",
-        "type": "image",
-        "title": "Flag of Mauritius",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Mauritius.svg",
-        "author": "Zscout370",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 800,
-      "q": "ما اسم الدولة الأفريقية صاحبة هذا العلم؟",
-      "a": "جنوب السودان",
-      "qid": "flags-800-023",
-      "type": "image",
-      "topic": "نجوم",
-      "verified": true,
-      "media": {
-        "src": "flags-800-023.webp",
-        "type": "image",
-        "title": "Flag of South Sudan (originally of the Sudan People's Liberation Army/Movement)",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_South_Sudan.svg",
-        "author": "Achim1999",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 800,
-      "q": "أي دولة في المحيط الهادئ ترفع هذه الراية؟",
-      "a": "فيجي",
-      "qid": "flags-800-024",
-      "type": "image",
-      "alt": [
-        "فيجى"
-      ],
-      "topic": "دروع وتيجان",
-      "verified": true,
-      "media": {
-        "src": "flags-800-024.webp",
-        "type": "image",
-        "title": "Flag of Fiji",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Fiji.svg",
-        "author": "Tessa Mackenzie",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 800,
-      "q": "هذه راية أي دولة في المحيط الهادئ؟",
-      "a": "ساموا",
-      "qid": "flags-800-025",
-      "type": "image",
-      "topic": "نجوم",
-      "verified": true,
-      "media": {
-        "src": "flags-800-025.webp",
-        "type": "image",
-        "title": "Flag of Samoa",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Samoa.svg",
-        "author": "Original: Malietoa Tanumafili II and Tupua Tamasese Meaʻole Vector: See the file history below for details.",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 800,
-      "q": "أي دولة في المحيط الهادئ ترفع هذا العلم؟",
-      "a": "تونغا",
-      "qid": "flags-800-026",
-      "type": "image",
-      "alt": [
-        "تونجا"
-      ],
-      "topic": "صلبان",
-      "verified": true,
-      "media": {
-        "src": "flags-800-026.webp",
-        "type": "image",
-        "title": "Flag of Tonga",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Tonga.svg",
-        "author": "Uelingatoni Ngu Tupoumalohi",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 800,
-      "q": "لأي دولة في المحيط الهادئ هذه الراية؟",
-      "a": "فانواتو",
-      "qid": "flags-800-027",
-      "type": "image",
-      "topic": "شعارات ورموز",
-      "verified": true,
-      "media": {
-        "src": "flags-800-027.webp",
-        "type": "image",
-        "title": "Flag of Vanuatu",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Vanuatu.svg",
-        "author": "Kalontas Mahlon",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 800,
-      "q": "هذا العلم لأي دولة في المحيط الهادئ؟",
-      "a": "جزر سليمان",
-      "qid": "flags-800-028",
-      "type": "image",
-      "alt": [
-        "سليمان"
-      ],
-      "topic": "أشكال هندسية",
-      "verified": true,
-      "media": {
-        "src": "flags-800-028.webp",
-        "type": "image",
-        "title": "Flag of the Solomon Islands",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_the_Solomon_Islands.svg",
-        "author": "User:SKopp",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 800,
-      "q": "لأي دولة في المحيط الهادئ هذا العلم؟",
-      "a": "بابوا غينيا الجديدة",
-      "qid": "flags-800-029",
-      "type": "image",
-      "alt": [
-        "بابوا"
-      ],
-      "topic": "نباتات وحيوانات",
-      "verified": true,
-      "media": {
-        "src": "flags-800-029.webp",
-        "type": "image",
-        "title": "Flag of Papua New GuineaColours: Pantone 186 C for red and 116 C for yellow",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Papua_New_Guinea.svg",
-        "author": "User:Nightstallion",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 800,
-      "q": "سمّ صاحب هذا العلم.",
-      "a": "غرينلاند",
-      "qid": "flags-800-030",
-      "type": "image",
-      "alt": [
-        "جرينلاند"
-      ],
-      "topic": "أشكال هندسية",
-      "verified": true,
-      "media": {
-        "src": "flags-800-030.webp",
-        "type": "image",
-        "title": "Flag of Greenland",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Greenland.svg",
-        "author": "Jeffrey Connell (IceKarma)",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 800,
-      "q": "أي جزيرة صاحبة هذا العلم؟",
-      "a": "جزر فارو",
-      "qid": "flags-800-031",
-      "type": "image",
-      "alt": [
-        "فارو",
-        "جزر فيرو"
-      ],
-      "topic": "صلبان",
-      "verified": true,
-      "media": {
-        "src": "flags-800-031.webp",
-        "type": "image",
-        "title": "Flag of the Faroe Islands",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_the_Faroe_Islands.svg",
-        "author": "It was made by User:IceKarma (Jeffrey Connell), who released it to the public domain.",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 800,
-      "q": "راية أي إقليم ما وراء البحار هذه؟",
-      "a": "جبل طارق",
-      "qid": "flags-800-032",
-      "type": "image",
-      "alt": [
-        "جبرلتار"
-      ],
-      "topic": "دروع وتيجان",
-      "verified": true,
-      "media": {
-        "src": "flags-800-032.webp",
-        "type": "image",
-        "title": "Flag of Gibraltar",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Gibraltar.svg",
-        "author": "Created on behalf of Isabella I of Castile in 1502; this version uploaded by Denelson83 (talk · contribs)",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 800,
-      "q": "أي جزيرة ترفع هذا العلم؟",
-      "a": "جزيرة مان",
-      "qid": "flags-800-033",
-      "type": "image",
-      "alt": [
-        "مان"
-      ],
-      "topic": "شعارات ورموز",
-      "verified": true,
-      "media": {
-        "src": "flags-800-033.webp",
-        "type": "image",
-        "title": "Flag of the Isle of Man",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_the_Isle_of_Man.svg",
-        "author": "Edited by Reisio, Alkari, e.a.",
-        "license": "CC0 1.0",
-        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
-      }
-    },
-    {
-      "p": 800,
-      "q": "لأي ولاية أمريكية هذه الراية؟",
-      "a": "كاليفورنيا",
-      "qid": "flags-800-034",
-      "type": "image",
-      "alt": [
-        "ولاية كاليفورنيا"
-      ],
-      "topic": "نباتات وحيوانات",
-      "verified": true,
-      "media": {
-        "src": "flags-800-034.webp",
-        "type": "image",
-        "title": "Flag of California. This version is designed to accurately depict the standard print of the bear as well as adhere to t…",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_California.svg",
-        "author": "Original: Donald Graeme Kelley Vectorization: Devin Cook",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 800,
-      "q": "راية أي مقاطعة كندية أمامك؟",
-      "a": "كيبيك",
-      "qid": "flags-800-035",
-      "type": "image",
-      "alt": [
-        "كويبك"
-      ],
-      "topic": "صلبان",
-      "verified": true,
-      "media": {
-        "src": "flags-800-035.webp",
-        "type": "image",
-        "title": "Flag of Quebec.",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Quebec.svg",
-        "author": "Original: René Chaloult Vector: Krun",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 800,
-      "q": "هذا العلم لأي دولة في أمريكا الوسطى؟",
-      "a": "هندوراس",
-      "qid": "flags-800-036",
-      "type": "image",
-      "topic": "أشرطة وألوان",
-      "verified": true,
-      "media": {
-        "src": "flags-800-036.webp",
-        "type": "image",
-        "title": "The flag of Honduras",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Honduras_(1949%E2%80%932022,_2026%E2%80%93present).svg",
-        "author": "Kes47",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 800,
-      "q": "أي دولة في أمريكا الوسطى ترفع هذه الراية؟",
-      "a": "السلفادور",
-      "qid": "flags-800-037",
-      "type": "image",
-      "topic": "دروع وتيجان",
-      "verified": true,
-      "media": {
-        "src": "flags-800-037.webp",
-        "type": "image",
-        "title": "The flag of El Salvador.",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_El_Salvador.svg",
-        "author": "See File history below for details.",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 800,
-      "q": "هذه راية أي دولة في أمريكا الوسطى؟",
-      "a": "غواتيمالا",
-      "qid": "flags-800-038",
-      "type": "image",
-      "alt": [
-        "جواتيمالا"
-      ],
-      "topic": "نباتات وحيوانات",
-      "verified": true,
-      "media": {
-        "src": "flags-800-038.webp",
-        "type": "image",
-        "title": "The flag of Guatemala, official since 1871.",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Guatemala.svg",
-        "author": "K21edgo",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 800,
-      "q": "أي دولة في أمريكا الوسطى ترفع هذا العلم؟",
-      "a": "بليز",
-      "qid": "flags-800-039",
-      "type": "image",
-      "alt": [
-        "بيليز"
-      ],
-      "topic": "دروع وتيجان",
-      "verified": true,
-      "media": {
-        "src": "flags-800-039.webp",
-        "type": "image",
-        "title": "The flag of Belize.",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Belize.svg",
-        "author": "Caleb Moore",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 800,
-      "q": "علم أي دولة في أمريكا الجنوبية تراه أمامك؟",
-      "a": "غيانا",
-      "qid": "flags-800-040",
-      "type": "image",
-      "alt": [
-        "جويانا"
-      ],
-      "topic": "أشكال هندسية",
-      "verified": true,
-      "media": {
-        "src": "flags-800-040.webp",
-        "type": "image",
-        "title": "The flag of Guyana",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Guyana.svg",
-        "author": "Whitney Smith",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 800,
-      "q": "أي دولة في أمريكا الجنوبية ترفع هذا العلم؟",
-      "a": "سورينام",
-      "qid": "flags-800-041",
-      "type": "image",
-      "alt": [
-        "سورينامي"
-      ],
-      "topic": "أشرطة وألوان",
-      "verified": true,
-      "media": {
-        "src": "flags-800-041.webp",
-        "type": "image",
-        "title": "The flag of Suriname",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Suriname.svg",
-        "author": "See File history below for details.",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 800,
-      "q": "علم أي دولة كاريبية هذا؟",
-      "a": "ترينيداد وتوباغو",
-      "qid": "flags-800-042",
-      "type": "image",
-      "alt": [
-        "ترينيداد"
-      ],
-      "topic": "أشكال هندسية",
-      "verified": true,
-      "media": {
-        "src": "flags-800-042.webp",
-        "type": "image",
-        "title": "Flag of Trinidad and Tobago",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Trinidad_and_Tobago.svg",
-        "author": "See File history, below, for details.",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 800,
-      "q": "هذا علم أي دولة كاريبية؟",
+      "q": "ما الدولة صاحبة هذا العلم ذي المثلث الأسود والأشرطة الفيروزية والذهبية؟",
       "a": "الباهاما",
-      "qid": "flags-800-043",
+      "qid": "flags-800-905",
       "type": "image",
+      "effect": "none",
       "alt": [
-        "جزر الباهاما"
+        "باهاما",
+        "جزر الباهاما",
+        "Bahamas",
+        "The Bahamas"
       ],
-      "topic": "أشكال هندسية",
+      "topic": "الكاريبي",
+      "difficultyTarget": 0.25,
       "verified": true,
+      "sourceUrl": "https://www.bahamasembdc.org/about/national-symbols/",
       "media": {
-        "src": "flags-800-043.webp",
+        "src": "flags-800-905.webp",
         "type": "image",
-        "title": "Flag of the Bahamas",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_the_Bahamas.svg",
-        "author": "Government of Bahamas",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+        "title": "علم دولة — رسم توضيحي",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-800-905.json"
+        }
       }
     },
     {
       "p": 800,
-      "q": "هذا العلم لأي دولة كاريبية؟",
-      "a": "بربادوس",
-      "qid": "flags-800-044",
+      "q": "ما الدولة صاحبة العلم الأحمر الذي يعبره شريط أسود مائل محاط بالأبيض؟",
+      "a": "ترينيداد وتوباغو",
+      "qid": "flags-800-906",
       "type": "image",
+      "effect": "none",
       "alt": [
-        "باربادوس"
+        "ترينيداد وتوباجو",
+        "Trinidad and Tobago"
       ],
-      "topic": "شعارات ورموز",
+      "topic": "الكاريبي",
+      "difficultyTarget": 0.25,
       "verified": true,
+      "sourceUrl": "https://foreign.gov.tt/about/trinidad-tobago/national-symbols/national-flag/",
       "media": {
-        "src": "flags-800-044.webp",
+        "src": "flags-800-906.webp",
         "type": "image",
-        "title": "flag of Barbados",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Barbados.svg",
-        "author": "User:Denelson83",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+        "title": "علم دولة — رسم توضيحي",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-800-906.json"
+        }
       }
     },
     {
       "p": 800,
-      "q": "هذا علم دولة لم تعد موجودة؛ فما اسمها؟",
-      "a": "ألمانيا الشرقية",
-      "qid": "flags-800-045",
+      "q": "ما الدولة صاحبة هذا العلم، الذي يفصل فيه شريط أصفر مائل بين الأزرق والأخضر؟",
+      "a": "جزر سليمان",
+      "qid": "flags-800-907",
       "type": "image",
+      "effect": "none",
       "alt": [
-        "جمهورية ألمانيا الديمقراطية"
+        "جزر سولومون",
+        "Solomon Islands"
       ],
-      "topic": "شعارات ورموز",
+      "topic": "أوقيانوسيا",
+      "difficultyTarget": 0.25,
       "verified": true,
+      "sourceUrl": [
+        "https://solomons.gov.sb/wp-content/uploads/2024/06/Policy-Statement-TUESDAY-6PM-Final.pdf",
+        "https://www.dfat.gov.au/geo/solomon-islands/solomon-islands-country-brief"
+      ],
       "media": {
-        "src": "flags-800-045.webp",
+        "src": "flags-800-907.webp",
         "type": "image",
-        "title": "Flag of the German Democratic Republic",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_East_Germany.svg",
-        "author": "Flaggenentwurf: unbekannt diese Datei: Jwnabd",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+        "title": "علم دولة — رسم توضيحي",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-800-907.json"
+        }
       }
     },
     {
       "p": 800,
-      "q": "أي دولة سابقة كانت ترفع هذا العلم؟",
-      "a": "يوغوسلافيا",
-      "qid": "flags-800-046",
+      "q": "ما الدولة صاحبة هذا العلم الأحمر، وفي ركنه الأزرق خمس نجوم بيضاء تمثل الصليب الجنوبي؟",
+      "a": "ساموا",
+      "qid": "flags-800-908",
       "type": "image",
+      "effect": "none",
       "alt": [
-        "يوغسلافيا"
+        "Samoa",
+        "دولة ساموا المستقلة"
       ],
-      "topic": "نجوم",
+      "topic": "أوقيانوسيا",
+      "difficultyTarget": 0.25,
       "verified": true,
+      "sourceUrl": "https://www.mfat.gov.ws/wp-content/uploads/2013/10/Flag-of-Samoa.pdf",
       "media": {
-        "src": "flags-800-046.webp",
+        "src": "flags-800-908.webp",
         "type": "image",
-        "title": "Flag of the Socialist Federal Republic of Yugoslavia (1946-1992).The design (blazon) is defined in Article 4 of the Con…",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Yugoslavia_(1946-1992).svg",
-        "author": "Flag designed by Đorđe Andrejević-Kun[3]SVG coding: Zscout370",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 800,
-      "q": "سمّ صاحب هذه الراية.",
-      "a": "مجلس التعاون الخليجي",
-      "qid": "flags-800-047",
-      "type": "image",
-      "alt": [
-        "مجلس التعاون لدول الخليج العربية",
-        "مجلس التعاون"
-      ],
-      "topic": "كتابة ونقوش",
-      "verified": true,
-      "media": {
-        "src": "flags-800-047.webp",
-        "type": "image",
-        "title": "Flag of the Cooperation Council for the Arab States of the Gulf.",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_the_Cooperation_Council_for_the_Arab_States_of_the_Gulf.svg",
-        "author": "Rico Shen",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 800,
-      "q": "أي دولة في جنوب شرق آسيا يمثلها هذا العلم؟",
-      "a": "بروناي",
-      "qid": "flags-800-048",
-      "type": "image",
-      "alt": [
-        "بروناي دار السلام"
-      ],
-      "topic": "كتابة ونقوش",
-      "verified": true,
-      "media": {
-        "src": "flags-800-048.webp",
-        "type": "image",
-        "title": "Flag of Brunei Darussalam",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Brunei.svg",
-        "author": "Nightstallion",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+        "title": "علم دولة — رسم توضيحي",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-800-908.json"
+        }
       }
     },
     {
       "p": 1000,
-      "q": "سمّ الجزيرة صاحبة هذا العلم.",
-      "a": "أروبا",
-      "qid": "flags-1000-001",
-      "type": "image",
-      "topic": "نجوم",
-      "verified": true,
-      "media": {
-        "src": "flags-1000-001.webp",
-        "type": "image",
-        "title": "The flag of Aruba",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Aruba.svg",
-        "author": "Original: Whitney Smith Vector: Wester",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 1000,
-      "q": "ما اسم الجزيرة التي ترفع هذه الراية؟",
-      "a": "كوراساو",
-      "qid": "flags-1000-002",
-      "type": "image",
-      "alt": [
-        "كوراكاو"
-      ],
-      "topic": "نجوم",
-      "verified": true,
-      "media": {
-        "src": "flags-1000-002.webp",
-        "type": "image",
-        "title": "The flag of Curaçao is a blue field with a horizontal yellow stripe slightly below the midline and two white, five-poin…",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Cura%C3%A7ao.svg",
-        "author": "Original: Unknown Vector: David Benbennick",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 1000,
-      "q": "لأي إقليم هذا العلم؟",
-      "a": "مكاو",
-      "qid": "flags-1000-003",
-      "type": "image",
-      "alt": [
-        "ماكاو"
-      ],
-      "topic": "نباتات وحيوانات",
-      "verified": true,
-      "media": {
-        "src": "flags-1000-003.webp",
-        "type": "image",
-        "title": "Flag of Macau",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Macau.svg",
-        "author": "see File history",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 1000,
-      "q": "أي إقليم ما وراء البحار يرفع هذا العلم؟",
-      "a": "جزر كايمان",
-      "qid": "flags-1000-004",
-      "type": "image",
-      "alt": [
-        "كايمان"
-      ],
-      "topic": "دروع وتيجان",
-      "verified": true,
-      "media": {
-        "src": "flags-1000-004.webp",
-        "type": "image",
-        "title": "Government Ensign of the Cayman Islands.",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_the_Cayman_Islands.svg",
-        "author": "Unknown authorUnknown author",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 1000,
-      "q": "أي دولة كاريبية صاحبة هذا العلم؟",
-      "a": "غرينادا",
-      "qid": "flags-1000-005",
-      "type": "image",
-      "alt": [
-        "جرينادا"
-      ],
-      "topic": "نباتات وحيوانات",
-      "verified": true,
-      "media": {
-        "src": "flags-1000-005.webp",
-        "type": "image",
-        "title": "Flag of Grenada",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Grenada.svg",
-        "author": "See file history below for details.",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 1000,
-      "q": "ما الدولة الكاريبية التي ترفع هذا العلم؟",
-      "a": "سانت لوسيا",
-      "qid": "flags-1000-006",
-      "type": "image",
-      "topic": "أشكال هندسية",
-      "verified": true,
-      "media": {
-        "src": "flags-1000-006.webp",
-        "type": "image",
-        "title": "Flag of Saint Lucia",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Saint_Lucia.svg",
-        "author": "Dunstan St Omer",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 1000,
-      "q": "لأي إقليم ما وراء البحار هذا العلم؟",
-      "a": "مونتسرات",
-      "qid": "flags-1000-007",
-      "type": "image",
-      "topic": "دروع وتيجان",
-      "verified": true,
-      "media": {
-        "src": "flags-1000-007.webp",
-        "type": "image",
-        "title": "Flag of Montserrat",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Montserrat.svg",
-        "author": "مؤلف غير معروف",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 1000,
-      "q": "أي إقليم ما وراء البحار يمثله هذا العلم؟",
-      "a": "أنغويلا",
-      "qid": "flags-1000-008",
-      "type": "image",
-      "alt": [
-        "أنجويلا"
-      ],
-      "topic": "نباتات وحيوانات",
-      "verified": true,
-      "media": {
-        "src": "flags-1000-008.webp",
-        "type": "image",
-        "title": "Flag of Anguilla, adopted on 30 May 1990 and modified slightly on 25 January 1999.",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Anguilla.svg",
-        "author": "This work created by the United Kingdom Government is in the public domain. This is because it is one of the following: It is a photograph taken prior to 1 June 1957; or It was published prior to 1976; or It is an artistic work other than a photograph or engraving (e.g. a painting) which was created prior to 1976. HMSO has declared that the expiry of Crown Copyrights applies worldwide (ref: HMSO Email Reply)More information. See also Copyright and Crown copyright artistic works.",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 1000,
-      "q": "راية أي دولة كاريبية أمامك؟",
-      "a": "دومينيكا",
-      "qid": "flags-1000-009",
-      "type": "image",
-      "topic": "نباتات وحيوانات",
-      "verified": true,
-      "media": {
-        "src": "flags-1000-009.webp",
-        "type": "image",
-        "title": "The Flag of Dominica.",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Dominica.svg",
-        "author": "Alwin Bully",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 1000,
-      "q": "لأي إقليم ما وراء البحار هذه الراية؟",
-      "a": "جزر فوكلاند",
-      "qid": "flags-1000-010",
-      "type": "image",
-      "alt": [
-        "مالفيناس",
-        "جزر مالفيناس"
-      ],
-      "topic": "دروع وتيجان",
-      "verified": true,
-      "media": {
-        "src": "flags-1000-010.webp",
-        "type": "image",
-        "title": "British flag of the Falkland Islands since 1948",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_the_Falkland_Islands.svg",
-        "author": "Original: Government of the United Kingdom Vector: Nightstallion and Echando una mano",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 1000,
-      "q": "علم أي إقليم ما وراء البحار تراه أمامك؟",
-      "a": "برمودا",
-      "qid": "flags-1000-011",
-      "type": "image",
-      "topic": "دروع وتيجان",
-      "verified": true,
-      "media": {
-        "src": "flags-1000-011.webp",
-        "type": "image",
-        "title": "Flag of Bermuda",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Bermuda.svg",
-        "author": "Version 1: Made by Caleb Moore from the Open Clip Art website and uploaded by Nightstallion Version 2: Made by Nameneko from version 1 of File:Flag of Bermuda.svg and version 2 of File:Coat of arms of Bermuda.svg by Cronholm144.",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 1000,
-      "q": "أي جزيرة ترفع هذه الراية؟",
-      "a": "جزر آلاند",
-      "qid": "flags-1000-012",
-      "type": "image",
-      "alt": [
-        "آلاند"
-      ],
-      "topic": "صلبان",
-      "verified": true,
-      "media": {
-        "src": "flags-1000-012.webp",
-        "type": "image",
-        "title": "Flag of Åland",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_%C3%85land.svg",
-        "author": "created by Zscout370",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 1000,
-      "q": "هذه راية أي جزيرة؟",
-      "a": "جيرزي",
-      "qid": "flags-1000-013",
-      "type": "image",
-      "alt": [
-        "جيرسي"
-      ],
-      "topic": "صلبان",
-      "verified": true,
-      "media": {
-        "src": "flags-1000-013.webp",
-        "type": "image",
-        "title": "Flag of Jersey",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Jersey.svg",
-        "author": "مؤلف غير معروف",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 1000,
-      "q": "ما الجزيرة صاحبة هذا العلم؟",
-      "a": "غيرنزي",
-      "qid": "flags-1000-014",
-      "type": "image",
-      "alt": [
-        "غيرنسي"
-      ],
-      "topic": "صلبان",
-      "verified": true,
-      "media": {
-        "src": "flags-1000-014.webp",
-        "type": "image",
-        "title": "Flag of Guernsey",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Guernsey.svg",
-        "author": "User:Nightstallion",
-        "license": "CC0 1.0",
-        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
-      }
-    },
-    {
-      "p": 1000,
-      "q": "ما الدولة الكاريبية التي يمثلها هذا العلم؟",
-      "a": "أنتيغوا وباربودا",
-      "qid": "flags-1000-015",
-      "type": "image",
-      "alt": [
-        "أنتيغوا"
-      ],
-      "topic": "شعارات ورموز",
-      "verified": true,
-      "media": {
-        "src": "flags-1000-015.webp",
-        "type": "image",
-        "title": "The flag of Antigua and Barbuda",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Antigua_and_Barbuda.svg",
-        "author": "Original: Sir Reginald Samuel Vector: David Benbennick",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 1000,
-      "q": "ما الجهة التي ترفع هذا العلم؟",
-      "a": "واليس وفوتونا",
-      "qid": "flags-1000-016",
-      "type": "image",
-      "alt": [
-        "واليس"
-      ],
-      "topic": "صلبان",
-      "verified": true,
-      "media": {
-        "src": "flags-1000-016.webp",
-        "type": "image",
-        "title": "Flag of Wallis and Futuna",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Wallis_and_Futuna.svg",
-        "author": "مؤلف غير معروف",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 1000,
-      "q": "علم أي دولة في المحيط الهادئ هذا؟",
-      "a": "بولينيزيا الفرنسية",
-      "qid": "flags-1000-017",
-      "type": "image",
-      "alt": [
-        "تاهيتي"
-      ],
-      "topic": "شعارات ورموز",
-      "verified": true,
-      "media": {
-        "src": "flags-1000-017.webp",
-        "type": "image",
-        "title": "Flag of French Polynesia",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_French_Polynesia.svg",
-        "author": "Nightstallion",
-        "license": "CC0 1.0",
-        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
-      }
-    },
-    {
-      "p": 1000,
-      "q": "هذا علم أي دولة في المحيط الهادئ؟",
-      "a": "توكيلاو",
-      "qid": "flags-1000-018",
-      "type": "image",
-      "alt": [
-        "توكلاو"
-      ],
-      "topic": "نجوم",
-      "verified": true,
-      "media": {
-        "src": "flags-1000-018.webp",
-        "type": "image",
-        "title": "Flag of Tokelau since May 2008.",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Tokelau.svg",
-        "author": "Original: Unknown Vector: Andrwsc",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 1000,
-      "q": "ما اسم الجزيرة صاحبة هذا العلم؟",
-      "a": "جزيرة الكريسماس",
-      "qid": "flags-1000-019",
-      "type": "image",
-      "alt": [
-        "كريسماس"
-      ],
-      "topic": "نباتات وحيوانات",
-      "verified": true,
-      "media": {
-        "src": "flags-1000-019.webp",
-        "type": "image",
-        "title": "Flag of Christmas Island",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Christmas_Island.svg",
-        "author": "Tony Couch",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 1000,
-      "q": "ما الجزيرة التي ترفع هذه الراية؟",
-      "a": "جزر كوكوس",
-      "qid": "flags-1000-020",
-      "type": "image",
-      "alt": [
-        "كوكوس",
-        "جزر كيلينغ"
-      ],
-      "topic": "أهلة",
-      "verified": true,
-      "media": {
-        "src": "flags-1000-020.webp",
-        "type": "image",
-        "title": "Flag of the Cocos (Keeling) Islands. NOTE: The palm tree is intentionally inaccurate for copyright reasons. DO NOT uplo…",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_the_Cocos_(Keeling)_Island.svg",
-        "author": "Original: Mohammed Minkom Vector: SpinnerLaserzthe2nd",
-        "license": "CC BY-SA 4.0",
-        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
-      }
-    },
-    {
-      "p": 1000,
-      "q": "راية أي جزيرة هذه؟",
-      "a": "جزيرة نورفولك",
-      "qid": "flags-1000-021",
-      "type": "image",
-      "alt": [
-        "نورفولك"
-      ],
-      "topic": "نباتات وحيوانات",
-      "verified": true,
-      "media": {
-        "src": "flags-1000-021.webp",
-        "type": "image",
-        "title": "Flag of Norfolk Island, Australia. This flag has 3 verticle stripes and it includes the depiction of flag includes depi…",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Norfolk_Island.svg",
-        "author": "openclipart.org",
-        "license": "CC0 1.0",
-        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
-      }
-    },
-    {
-      "p": 1000,
-      "q": "أي دولة في المحيط الهادئ صاحبة هذا العلم؟",
-      "a": "غوام",
-      "qid": "flags-1000-022",
-      "type": "image",
-      "alt": [
-        "جوام"
-      ],
-      "topic": "شعارات ورموز",
-      "verified": true,
-      "media": {
-        "src": "flags-1000-022.webp",
-        "type": "image",
-        "title": "The flag of Guam, courtesy an e-mail from the author of xrmap. Modifications by Denelson83.",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Guam.svg",
-        "author": "Xrmap",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 1000,
-      "q": "راية أي دولة في المحيط الهادئ هذه؟",
-      "a": "جزر ماريانا الشمالية",
-      "qid": "flags-1000-023",
-      "type": "image",
-      "alt": [
-        "ماريانا الشمالية"
-      ],
-      "topic": "شعارات ورموز",
-      "verified": true,
-      "media": {
-        "src": "flags-1000-023.webp",
-        "type": "image",
-        "title": "Flag of the Northern Mariana Islands",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_the_Northern_Mariana_Islands.svg",
-        "author": "مؤلف غير معروف",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 1000,
-      "q": "أي دولة في المحيط الهادئ يمثلها هذا العلم؟",
-      "a": "ساموا الأمريكية",
-      "qid": "flags-1000-024",
-      "type": "image",
-      "topic": "نباتات وحيوانات",
-      "verified": true,
-      "media": {
-        "src": "flags-1000-024.webp",
-        "type": "image",
-        "title": "Flag of American Samoa, United States",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_American_Samoa.svg",
-        "author": "by Tobias Jakobs",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 1000,
-      "q": "لأي جزيرة هذا العلم؟",
-      "a": "سينت مارتن",
-      "qid": "flags-1000-025",
-      "type": "image",
-      "alt": [
-        "سانت مارتن"
-      ],
-      "topic": "دروع وتيجان",
-      "verified": true,
-      "media": {
-        "src": "flags-1000-025.webp",
-        "type": "image",
-        "title": "Flag of Sint Maarten (Kingdom of the Netherlands)",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Sint_Maarten.svg",
-        "author": "User:Shervinafshar, based on work of User:Washiucho. Earlier non-PD versions by User:SiBr4, User:Fry1989, and User:Andrwsc.",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 1000,
-      "q": "أي جزيرة يمثلها هذا العلم؟",
-      "a": "سان بيير وميكلون",
-      "qid": "flags-1000-026",
-      "type": "image",
-      "alt": [
-        "سان بيير"
-      ],
-      "topic": "دروع وتيجان",
-      "verified": true,
-      "media": {
-        "src": "flags-1000-026.webp",
-        "type": "image",
-        "title": "Unofficial flag of Saint-Pierre and Miquelon.",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Saint-Pierre_and_Miquelon.svg",
-        "author": "André Paturel",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 1000,
-      "q": "هذا العلم لأي جزيرة في المحيط الهادئ؟",
-      "a": "ناورو",
-      "qid": "flags-1000-027",
-      "type": "image",
-      "topic": "نجوم",
-      "verified": true,
-      "media": {
-        "src": "flags-1000-027.webp",
-        "type": "image",
-        "title": "The national flag of Naoero. Pantone 280c (Blue) and Pantone 123c (Yellow). On Pantone's official website these colours…",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Nauru.svg",
-        "author": "User:Skimel",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 1000,
-      "q": "أي جزيرة في المحيط الهادئ ترفع هذه الراية؟",
-      "a": "توفالو",
-      "qid": "flags-1000-028",
-      "type": "image",
-      "topic": "نجوم",
-      "verified": true,
-      "media": {
-        "src": "flags-1000-028.webp",
-        "type": "image",
-        "title": "Flag of Tuvalu.FIAV 111111.svg:",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Tuvalu.svg",
-        "author": "Unknown authorUnknown author",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 1000,
-      "q": "هذه راية أي جزيرة في المحيط الهادئ؟",
-      "a": "كيريباتي",
-      "qid": "flags-1000-029",
-      "type": "image",
-      "alt": [
-        "كيريباس"
-      ],
-      "topic": "نباتات وحيوانات",
-      "verified": true,
-      "media": {
-        "src": "flags-1000-029.webp",
-        "type": "image",
-        "title": "Flag of Kiribati",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Kiribati.svg",
-        "author": "User:Hanzlan",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 1000,
-      "q": "أي جزيرة في المحيط الهادئ ترفع هذا العلم؟",
+      "q": "ما الدولة التي يحمل علمها الأزرق الفاتح دائرة صفراء منحازة قليلًا نحو السارية؟",
       "a": "بالاو",
-      "qid": "flags-1000-030",
+      "qid": "flags-1000-901",
       "type": "image",
+      "effect": "none",
       "alt": [
-        "بالو"
+        "Palau",
+        "جمهورية بالاو"
       ],
-      "topic": "أشكال هندسية",
+      "topic": "أوقيانوسيا",
+      "difficultyTarget": 0.15,
       "verified": true,
+      "sourceUrl": "https://www.palaugov.pw/about-palau/flag/",
       "media": {
-        "src": "flags-1000-030.webp",
+        "src": "flags-1000-901.webp",
         "type": "image",
-        "title": "Flag of Palau",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Palau.svg",
-        "author": "Original: John Blau Skebong Vector: Nightstallion",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+        "title": "علم دولة — رسم توضيحي",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-1000-901.json"
+        }
       }
     },
     {
       "p": 1000,
-      "q": "لأي جزيرة في المحيط الهادئ هذه الراية؟",
-      "a": "جزر مارشال",
-      "qid": "flags-1000-031",
+      "q": "ما الدولة صاحبة العلم الأزرق الذي يجمع شريطًا ذهبيًا ونجمة بيضاء ذات اثني عشر رأسًا؟",
+      "a": "ناورو",
+      "qid": "flags-1000-902",
       "type": "image",
+      "effect": "none",
       "alt": [
-        "مارشال"
+        "Nauru",
+        "Naoero",
+        "جمهورية ناورو"
       ],
-      "topic": "أشكال هندسية",
+      "topic": "أوقيانوسيا",
+      "difficultyTarget": 0.15,
       "verified": true,
+      "sourceUrl": "https://www.nauru.gov.nr/government-information-office/fact-sheet.aspx",
       "media": {
-        "src": "flags-1000-031.webp",
+        "src": "flags-1000-902.webp",
         "type": "image",
-        "title": "Flag of the Marshall Islands",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_the_Marshall_Islands.svg",
-        "author": "No machine-readable author provided. SKopp assumed (based on copyright claims).",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+        "title": "علم دولة — رسم توضيحي",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-1000-902.json"
+        }
       }
     },
     {
       "p": 1000,
-      "q": "راية أي جزيرة في المحيط الهادئ أمامك؟",
-      "a": "ميكرونيسيا",
-      "qid": "flags-1000-032",
+      "q": "ما الدولة التي يتوسط علمها الأزرق شكل مثلثي بالأسود والأبيض والذهبي؟",
+      "a": "سانت لوسيا",
+      "qid": "flags-1000-903",
       "type": "image",
+      "effect": "none",
       "alt": [
-        "ولايات ميكرونيسيا المتحدة"
+        "Saint Lucia",
+        "St Lucia"
       ],
-      "topic": "نجوم",
+      "topic": "الكاريبي",
+      "difficultyTarget": 0.15,
       "verified": true,
+      "sourceUrl": "https://www.govt.lc/stluciaflag",
       "media": {
-        "src": "flags-1000-032.webp",
+        "src": "flags-1000-903.webp",
         "type": "image",
-        "title": "Flag of the Federated States of Micronesia",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_the_Federated_States_of_Micronesia.svg",
-        "author": "مؤلف غير معروف",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+        "title": "علم دولة — رسم توضيحي",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-1000-903.json"
+        }
       }
     },
     {
       "p": 1000,
-      "q": "ما الجهة التي ترفع هذه الراية؟",
-      "a": "أونتاريو",
-      "qid": "flags-1000-033",
-      "type": "image",
-      "topic": "صلبان",
-      "verified": true,
-      "media": {
-        "src": "flags-1000-033.webp",
-        "type": "image",
-        "title": "Flag of Ontario.",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Ontario.svg",
-        "author": "Kooma",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 1000,
-      "q": "أي مقاطعة كندية ترفع هذه الراية؟",
-      "a": "ألبرتا",
-      "qid": "flags-1000-034",
-      "type": "image",
-      "topic": "دروع وتيجان",
-      "verified": true,
-      "media": {
-        "src": "flags-1000-034.webp",
-        "type": "image",
-        "title": "Banniel proviñs Alberta.",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Alberta.svg",
-        "author": "Kooma (original)",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 1000,
-      "q": "هذه راية أي مقاطعة كندية؟",
-      "a": "نونافوت",
-      "qid": "flags-1000-035",
-      "type": "image",
-      "topic": "شعارات ورموز",
-      "verified": true,
-      "media": {
-        "src": "flags-1000-035.webp",
-        "type": "image",
-        "title": "Flag of Nunavut",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Nunavut.svg",
-        "author": "Kooma (original)",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 1000,
-      "q": "ما المقاطعة الكندية صاحبة هذا العلم؟",
-      "a": "يوكون",
-      "qid": "flags-1000-036",
-      "type": "image",
-      "topic": "نباتات وحيوانات",
-      "verified": true,
-      "media": {
-        "src": "flags-1000-036.webp",
-        "type": "image",
-        "title": "Flag of Yukon.",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Yukon.svg",
-        "author": "Kooma (original)",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 1000,
-      "q": "ما المقاطعة الكندية التي يمثلها هذا العلم؟",
-      "a": "نوفا سكوشا",
-      "qid": "flags-1000-037",
-      "type": "image",
-      "alt": [
-        "نوفا سكوتيا"
-      ],
-      "topic": "صلبان",
-      "verified": true,
-      "media": {
-        "src": "flags-1000-037.webp",
-        "type": "image",
-        "title": "Flag of Nova Scotia.",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Nova_Scotia.svg",
-        "author": "Original: Unknown author Vector: Kooma, FJDEACKB, Zscout370 and Denelson83",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 1000,
-      "q": "علم أي مقاطعة كندية هذا؟",
-      "a": "كولومبيا البريطانية",
-      "qid": "flags-1000-038",
-      "type": "image",
-      "alt": [
-        "بريتش كولومبيا"
-      ],
-      "topic": "شعارات ورموز",
-      "verified": true,
-      "media": {
-        "src": "flags-1000-038.webp",
-        "type": "image",
-        "title": "Flag of British Columbia.",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_British_Columbia.svg",
-        "author": "Kooma (original) Sshu94 (current)",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 1000,
-      "q": "هذا علم أي مقاطعة كندية؟",
-      "a": "ساسكاتشوان",
-      "qid": "flags-1000-039",
-      "type": "image",
-      "topic": "نباتات وحيوانات",
-      "verified": true,
-      "media": {
-        "src": "flags-1000-039.webp",
-        "type": "image",
-        "title": "Flag of Saskatchewan.",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Saskatchewan.svg",
-        "author": "Kooma",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 1000,
-      "q": "ما الإقليم صاحب هذا العلم؟",
-      "a": "كورسيكا",
-      "qid": "flags-1000-040",
-      "type": "image",
-      "alt": [
-        "كورسيكة"
-      ],
-      "topic": "شعارات ورموز",
-      "verified": true,
-      "media": {
-        "src": "flags-1000-040.webp",
-        "type": "image",
-        "title": "Flag of Corsica",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Corsica.svg",
-        "author": "Patricia.fidi",
-        "license": "CC0 1.0",
-        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
-      }
-    },
-    {
-      "p": 1000,
-      "q": "ما اسم الإقليم صاحب هذا العلم؟",
-      "a": "بريتاني",
-      "qid": "flags-1000-041",
-      "type": "image",
-      "alt": [
-        "بروتاني",
-        "بريتانيا"
-      ],
-      "topic": "أشرطة وألوان",
-      "verified": true,
-      "media": {
-        "src": "flags-1000-041.webp",
-        "type": "image",
-        "title": "The Gwenn-ha-du, flag of Brittany",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Brittany.svg",
-        "author": "Lexicon and GwenofGwened",
-        "license": "CC BY-SA 4.0",
-        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
-      }
-    },
-    {
-      "p": 1000,
-      "q": "ما الإقليم الذي يرفع هذه الراية؟",
-      "a": "سردينيا",
-      "qid": "flags-1000-042",
-      "type": "image",
-      "alt": [
-        "ساردينيا"
-      ],
-      "topic": "صلبان",
-      "verified": true,
-      "media": {
-        "src": "flags-1000-042.webp",
-        "type": "image",
-        "title": "Flag of the Italian autonomous region Sardinia.",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Sardinia,_Italy.svg",
-        "author": "Angelus",
-        "license": "CC BY-SA 3.0",
-        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
-      }
-    },
-    {
-      "p": 1000,
-      "q": "راية أي إقليم هذه؟",
-      "a": "صقلية",
-      "qid": "flags-1000-043",
-      "type": "image",
-      "alt": [
-        "سيسيليا"
-      ],
-      "topic": "شعارات ورموز",
-      "verified": true,
-      "media": {
-        "src": "flags-1000-043.webp",
-        "type": "image",
-        "title": "Flag of the Sicilian Region",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Sicily.svg",
-        "author": "Angelo Romano",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 1000,
-      "q": "علم أي دولة زائلة هذا؟",
-      "a": "زائير",
-      "qid": "flags-1000-044",
-      "type": "image",
-      "topic": "شعارات ورموز",
-      "verified": true,
-      "media": {
-        "src": "flags-1000-044.webp",
-        "type": "image",
-        "title": "Flag of Zaire (1971–1997)",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Zaire_(1971%E2%80%931997).svg",
-        "author": "User:Moyogo",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 1000,
-      "q": "ما اسم الدولة التي كانت ترفع هذه الراية؟",
-      "a": "فيتنام الجنوبية",
-      "qid": "flags-1000-045",
-      "type": "image",
-      "alt": [
-        "جمهورية فيتنام"
-      ],
-      "topic": "أشرطة وألوان",
-      "verified": true,
-      "media": {
-        "src": "flags-1000-045.webp",
-        "type": "image",
-        "title": "Flag of South Vietnam (1948–1975)",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_South_Vietnam.svg",
-        "author": "(many, see history)",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 1000,
-      "q": "راية دولة زالت من الخريطة؛ فلمن كانت؟",
-      "a": "اليمن الجنوبي",
-      "qid": "flags-1000-046",
-      "type": "image",
-      "alt": [
-        "جمهورية اليمن الديمقراطية الشعبية"
-      ],
-      "topic": "أشكال هندسية",
-      "verified": true,
-      "media": {
-        "src": "flags-1000-046.webp",
-        "type": "image",
-        "title": "Flag of the People's Democratic Republic of Yemen",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_South_Yemen.svg",
-        "author": "National Front - الجبهة القومية",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 1000,
-      "q": "أي جزيرة في المحيط الهادئ يمثلها هذا العلم؟",
-      "a": "جزر كوك",
-      "qid": "flags-1000-047",
-      "type": "image",
-      "alt": [
-        "كوك"
-      ],
-      "topic": "نجوم",
-      "verified": true,
-      "media": {
-        "src": "flags-1000-047.webp",
-        "type": "image",
-        "title": "Flag of the Cook Islands",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_the_Cook_Islands.svg",
-        "author": "مؤلف غير معروف",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 1000,
-      "q": "أي دولة كاريبية يمثلها هذا العلم؟",
+      "q": "ما الدولة صاحبة هذا العلم الذي تظهر فيه معينات خضراء على خلفية ذهبية؟",
       "a": "سانت فنسنت والغرينادين",
-      "qid": "flags-1000-048",
+      "qid": "flags-1000-904",
       "type": "image",
+      "effect": "none",
       "alt": [
-        "سانت فنسنت"
+        "سانت فينسنت والغرينادين",
+        "سانت فنسنت وجزر غرينادين",
+        "Saint Vincent and the Grenadines"
       ],
-      "topic": "أشكال هندسية",
+      "topic": "الكاريبي",
+      "difficultyTarget": 0.15,
       "verified": true,
+      "sourceUrl": "https://foreign.gov.vc/foreign/index.php/the-national-flag",
       "media": {
-        "src": "flags-1000-048.webp",
+        "src": "flags-1000-904.webp",
         "type": "image",
-        "title": "Flag of Saint Vincent and the Grenadines",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Saint_Vincent_and_the_Grenadines.svg",
-        "author": "No machine-readable author provided. SKopp assumed (based on copyright claims).",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+        "title": "علم دولة — رسم توضيحي",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-1000-904.json"
+        }
+      }
+    },
+    {
+      "p": 1000,
+      "q": "ما الدولة صاحبة العلم المؤلف من أشرطة أفقية خضراء وبيضاء وزرقاء؟",
+      "a": "سيراليون",
+      "qid": "flags-1000-905",
+      "type": "image",
+      "effect": "none",
+      "alt": [
+        "Sierra Leone",
+        "جمهورية سيراليون"
+      ],
+      "topic": "أفريقيا الغربية",
+      "difficultyTarget": 0.15,
+      "verified": true,
+      "sourceUrl": "https://www.wipo.int/wipolex/en/legislation/details/20542",
+      "media": {
+        "src": "flags-1000-905.webp",
+        "type": "image",
+        "title": "علم دولة — رسم توضيحي",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-1000-905.json"
+        }
+      }
+    },
+    {
+      "p": 1000,
+      "q": "ما الدولة التي يفصل الأبيض في علمها بين الأشرطة الحمراء والزرقاء والخضراء؟",
+      "a": "غامبيا",
+      "qid": "flags-1000-906",
+      "type": "image",
+      "effect": "none",
+      "alt": [
+        "The Gambia",
+        "Gambia",
+        "جمهورية غامبيا"
+      ],
+      "topic": "أفريقيا الغربية",
+      "difficultyTarget": 0.15,
+      "verified": true,
+      "sourceUrl": "https://www.wipo.int/wipolex/en/text/221243",
+      "media": {
+        "src": "flags-1000-906.webp",
+        "type": "image",
+        "title": "علم دولة — رسم توضيحي",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-1000-906.json"
+        }
+      }
+    },
+    {
+      "p": 1000,
+      "q": "ما الدولة صاحبة هذا العلم ذي النجمة الصفراء وسط شريط أحمر، مع أشرطة خضراء وبيضاء؟",
+      "a": "سورينام",
+      "qid": "flags-1000-907",
+      "type": "image",
+      "effect": "none",
+      "alt": [
+        "Suriname",
+        "Surinam",
+        "جمهورية سورينام"
+      ],
+      "topic": "أمريكا الجنوبية",
+      "difficultyTarget": 0.15,
+      "verified": true,
+      "sourceUrl": "https://gov.sr/suriname/",
+      "media": {
+        "src": "flags-1000-907.webp",
+        "type": "image",
+        "title": "علم دولة — رسم توضيحي",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-1000-907.json"
+        }
+      }
+    },
+    {
+      "p": 1000,
+      "q": "ما الدولة صاحبة هذا العلم الذي يظهر فيه رأس سهم ذهبي ومثلث أحمر على خلفية خضراء؟",
+      "a": "غيانا",
+      "qid": "flags-1000-908",
+      "type": "image",
+      "effect": "none",
+      "alt": [
+        "Guyana",
+        "جمهورية غيانا التعاونية"
+      ],
+      "topic": "أمريكا الجنوبية",
+      "difficultyTarget": 0.15,
+      "verified": true,
+      "sourceUrl": "https://www.education.gov.gy/web2/index.php/students-resources/secondary-school-resources/grade7/grade7-worksheets/grade-7-worksheets-social-studies/2977-grade-7-social-studies-week-6-lesson-1/file",
+      "media": {
+        "src": "flags-1000-908.webp",
+        "type": "image",
+        "title": "علم دولة — رسم توضيحي",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-1000-908.json"
+        }
       }
     }
   ]

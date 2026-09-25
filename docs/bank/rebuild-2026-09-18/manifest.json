@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "status": "paused_by_user",
+  "status": "in_progress",
   "scope": "all_existing_packs",
   "audience": "Arabic-speaking families and adults aged 16+",
   "tiers": {
@@ -576,8 +576,8 @@
       "order": 79
     }
   ],
-  "checkpoint": "checkpoint/inventory.json",
-  "updatedAt": "2026-09-23",
+  "checkpoint": "checkpoint/checkpoint-2026-09-25.json",
+  "updatedAt": "2026-09-25",
   "releasable": false,
   "latestHandoff": "CONTINUE_FROM_ANOTHER_ACCOUNT.md"
 }

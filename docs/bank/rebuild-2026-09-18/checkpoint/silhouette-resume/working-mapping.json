@@ -1,325 +1,6 @@
 [
   {
     "job": {
-      "id": "silhouette-1000-901",
-      "kind": "question",
-      "pack": "silhouette",
-      "a": "خلد الماء",
-      "p": 1000,
-      "topic": "حيوانات",
-      "prompt": "Use case: product-mockup.\nAsset type: one standalone professional image for an Arabic family visual guessing game (age 16+).\nSubject: a platypus in side profile with distinct broad duck bill, webbed feet and flat beaver-like tail.\nStyle: realistic high quality photography with correct anatomy and object geometry, clean natural textures.\nComposition: landscape 4:3, the complete subject occupies only the central 55% of the frame, leaving at least 20% completely transparent margin on ALL FOUR sides; centered with ample margins, immediately recognizable when revealed.  \nBackground: genuinely transparent background with alpha channel; isolated cutout; no shadow backdrop; no checkerboard; color subject will become a silhouette inside the game.\nConstraints: exactly the stated subject; no label, caption, watermark, collage, borders or readable words.  Do not create a black silhouette; render the full natural-color cutout with transparent surroundings. Output must be a PNG cutout with actual alpha=0 pixels outside the subject, fully transparent canvas. Do not paint white, gray, black or checkerboard behind it. Keep the entire outline visible. Natural color, no ground plane or cast shadow. Every tip, leaf, antenna, extremity and protruding part must be well inside the canvas, with broad transparent padding. Zoom out. Do not crop any part of the object.",
-      "question": {
-        "p": 1000,
-        "q": "ما صاحب هذا الشكل؟",
-        "a": "خلد الماء",
-        "qid": "silhouette-1000-901",
-        "type": "image",
-        "effect": "silhouette",
-        "alt": [
-          "بلاتيبوس"
-        ],
-        "topic": "حيوانات",
-        "difficultyTarget": 0.15,
-        "verified": false,
-        "sourceUrl": "docs/bank/rebuild-2026-09-18/review-silhouette-final.json",
-        "media": {
-          "src": "silhouette-1000-901.webp",
-          "type": "image",
-          "title": "لغز بصري مولّد",
-          "author": "Maydan / OpenAI image generation",
-          "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
-          "provenance": {
-            "kind": "ai-generated",
-            "tool": "OpenAI image generation",
-            "createdAt": "2026-09-23",
-            "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-1000-901.json"
-          }
-        }
-      },
-      "requireAlpha": true
-    },
-    "asset": null
-  },
-  {
-    "job": {
-      "id": "silhouette-1000-902",
-      "kind": "question",
-      "pack": "silhouette",
-      "a": "سدس",
-      "p": 1000,
-      "topic": "أدوات",
-      "prompt": "Use case: product-mockup.\nAsset type: one standalone professional image for an Arabic family visual guessing game (age 16+).\nSubject: a nautical sextant, its distinctive sector arc, sighting telescope and handle visible.\nStyle: realistic high quality photography with correct anatomy and object geometry, clean natural textures.\nComposition: landscape 4:3, the complete subject occupies only the central 55% of the frame, leaving at least 20% completely transparent margin on ALL FOUR sides; centered with ample margins, immediately recognizable when revealed.  \nBackground: genuinely transparent background with alpha channel; isolated cutout; no shadow backdrop; no checkerboard; color subject will become a silhouette inside the game.\nConstraints: exactly the stated subject; no label, caption, watermark, collage, borders or readable words.  Do not create a black silhouette; render the full natural-color cutout with transparent surroundings. Output must be a PNG cutout with actual alpha=0 pixels outside the subject, fully transparent canvas. Do not paint white, gray, black or checkerboard behind it. Keep the entire outline visible. Natural color, no ground plane or cast shadow. Every tip, leaf, antenna, extremity and protruding part must be well inside the canvas, with broad transparent padding. Zoom out. Do not crop any part of the object.",
-      "question": {
-        "p": 1000,
-        "q": "ما صاحب هذا الشكل؟",
-        "a": "سدس",
-        "qid": "silhouette-1000-902",
-        "type": "image",
-        "effect": "silhouette",
-        "alt": [],
-        "topic": "أدوات",
-        "difficultyTarget": 0.15,
-        "verified": false,
-        "sourceUrl": "docs/bank/rebuild-2026-09-18/review-silhouette-final.json",
-        "media": {
-          "src": "silhouette-1000-902.webp",
-          "type": "image",
-          "title": "لغز بصري مولّد",
-          "author": "Maydan / OpenAI image generation",
-          "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
-          "provenance": {
-            "kind": "ai-generated",
-            "tool": "OpenAI image generation",
-            "createdAt": "2026-09-23",
-            "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-1000-902.json"
-          }
-        }
-      },
-      "requireAlpha": true
-    },
-    "asset": null
-  },
-  {
-    "job": {
-      "id": "silhouette-1000-903",
-      "kind": "question",
-      "pack": "silhouette",
-      "a": "مكبس رموش",
-      "p": 1000,
-      "topic": "أغراض شخصية",
-      "prompt": "Use case: product-mockup.\nAsset type: one standalone professional image for an Arabic family visual guessing game (age 16+).\nSubject: an eyelash curler with finger loops and curved clamp.\nStyle: realistic high quality photography with correct anatomy and object geometry, clean natural textures.\nComposition: landscape 4:3, the complete subject occupies only the central 55% of the frame, leaving at least 20% completely transparent margin on ALL FOUR sides; centered with ample margins, immediately recognizable when revealed.  \nBackground: genuinely transparent background with alpha channel; isolated cutout; no shadow backdrop; no checkerboard; color subject will become a silhouette inside the game.\nConstraints: exactly the stated subject; no label, caption, watermark, collage, borders or readable words.  Do not create a black silhouette; render the full natural-color cutout with transparent surroundings. Output must be a PNG cutout with actual alpha=0 pixels outside the subject, fully transparent canvas. Do not paint white, gray, black or checkerboard behind it. Keep the entire outline visible. Natural color, no ground plane or cast shadow. Every tip, leaf, antenna, extremity and protruding part must be well inside the canvas, with broad transparent padding. Zoom out. Do not crop any part of the object.",
-      "question": {
-        "p": 1000,
-        "q": "ما صاحب هذا الشكل؟",
-        "a": "مكبس رموش",
-        "qid": "silhouette-1000-903",
-        "type": "image",
-        "effect": "silhouette",
-        "alt": [],
-        "topic": "أغراض شخصية",
-        "difficultyTarget": 0.15,
-        "verified": false,
-        "sourceUrl": "docs/bank/rebuild-2026-09-18/review-silhouette-final.json",
-        "media": {
-          "src": "silhouette-1000-903.webp",
-          "type": "image",
-          "title": "لغز بصري مولّد",
-          "author": "Maydan / OpenAI image generation",
-          "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
-          "provenance": {
-            "kind": "ai-generated",
-            "tool": "OpenAI image generation",
-            "createdAt": "2026-09-23",
-            "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-1000-903.json"
-          }
-        }
-      },
-      "requireAlpha": true
-    },
-    "asset": null
-  },
-  {
-    "job": {
-      "id": "silhouette-1000-904",
-      "kind": "question",
-      "pack": "silhouette",
-      "a": "قاطرة بخارية",
-      "p": 1000,
-      "topic": "وسائل نقل",
-      "prompt": "Use case: product-mockup.\nAsset type: one standalone professional image for an Arabic family visual guessing game (age 16+).\nSubject: a steam locomotive side profile with large driving wheels, smokestack and front cowcatcher.\nStyle: realistic high quality photography with correct anatomy and object geometry, clean natural textures.\nComposition: landscape 4:3, the complete subject occupies only the central 55% of the frame, leaving at least 20% completely transparent margin on ALL FOUR sides; centered with ample margins, immediately recognizable when revealed.  \nBackground: genuinely transparent background with alpha channel; isolated cutout; no shadow backdrop; no checkerboard; color subject will become a silhouette inside the game.\nConstraints: exactly the stated subject; no label, caption, watermark, collage, borders or readable words.  Do not create a black silhouette; render the full natural-color cutout with transparent surroundings. Output must be a PNG cutout with actual alpha=0 pixels outside the subject, fully transparent canvas. Do not paint white, gray, black or checkerboard behind it. Keep the entire outline visible. Natural color, no ground plane or cast shadow. Every tip, leaf, antenna, extremity and protruding part must be well inside the canvas, with broad transparent padding. Zoom out. Do not crop any part of the object.",
-      "question": {
-        "p": 1000,
-        "q": "ما صاحب هذا الشكل؟",
-        "a": "قاطرة بخارية",
-        "qid": "silhouette-1000-904",
-        "type": "image",
-        "effect": "silhouette",
-        "alt": [],
-        "topic": "وسائل نقل",
-        "difficultyTarget": 0.15,
-        "verified": false,
-        "sourceUrl": "docs/bank/rebuild-2026-09-18/review-silhouette-final.json",
-        "media": {
-          "src": "silhouette-1000-904.webp",
-          "type": "image",
-          "title": "لغز بصري مولّد",
-          "author": "Maydan / OpenAI image generation",
-          "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
-          "provenance": {
-            "kind": "ai-generated",
-            "tool": "OpenAI image generation",
-            "createdAt": "2026-09-23",
-            "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-1000-904.json"
-          }
-        }
-      },
-      "requireAlpha": true
-    },
-    "asset": null
-  },
-  {
-    "job": {
-      "id": "silhouette-1000-905",
-      "kind": "question",
-      "pack": "silhouette",
-      "a": "ورقة جنكة",
-      "p": 1000,
-      "topic": "نباتات",
-      "prompt": "Use case: product-mockup.\nAsset type: one standalone professional image for an Arabic family visual guessing game (age 16+).\nSubject: one fan-shaped ginkgo leaf with a central notch and slim stem.\nStyle: realistic high quality photography with correct anatomy and object geometry, clean natural textures.\nComposition: landscape 4:3, the complete subject occupies only the central 55% of the frame, leaving at least 20% completely transparent margin on ALL FOUR sides; centered with ample margins, immediately recognizable when revealed.  \nBackground: genuinely transparent background with alpha channel; isolated cutout; no shadow backdrop; no checkerboard; color subject will become a silhouette inside the game.\nConstraints: exactly the stated subject; no label, caption, watermark, collage, borders or readable words.  Do not create a black silhouette; render the full natural-color cutout with transparent surroundings. Output must be a PNG cutout with actual alpha=0 pixels outside the subject, fully transparent canvas. Do not paint white, gray, black or checkerboard behind it. Keep the entire outline visible. Natural color, no ground plane or cast shadow. Every tip, leaf, antenna, extremity and protruding part must be well inside the canvas, with broad transparent padding. Zoom out. Do not crop any part of the object.",
-      "question": {
-        "p": 1000,
-        "q": "ما صاحب هذا الشكل؟",
-        "a": "ورقة جنكة",
-        "qid": "silhouette-1000-905",
-        "type": "image",
-        "effect": "silhouette",
-        "alt": [],
-        "topic": "نباتات",
-        "difficultyTarget": 0.15,
-        "verified": false,
-        "sourceUrl": "docs/bank/rebuild-2026-09-18/review-silhouette-final.json",
-        "media": {
-          "src": "silhouette-1000-905.webp",
-          "type": "image",
-          "title": "لغز بصري مولّد",
-          "author": "Maydan / OpenAI image generation",
-          "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
-          "provenance": {
-            "kind": "ai-generated",
-            "tool": "OpenAI image generation",
-            "createdAt": "2026-09-23",
-            "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-1000-905.json"
-          }
-        }
-      },
-      "requireAlpha": true
-    },
-    "asset": null
-  },
-  {
-    "job": {
-      "id": "silhouette-1000-906",
-      "kind": "question",
-      "pack": "silhouette",
-      "a": "فاكهة النجمة",
-      "p": 1000,
-      "topic": "طعام",
-      "prompt": "Use case: product-mockup.\nAsset type: one standalone professional image for an Arabic family visual guessing game (age 16+).\nSubject: one whole starfruit and one five-point-star cross section next to it.\nStyle: realistic high quality photography with correct anatomy and object geometry, clean natural textures.\nComposition: landscape 4:3, the complete subject occupies only the central 55% of the frame, leaving at least 20% completely transparent margin on ALL FOUR sides; centered with ample margins, immediately recognizable when revealed.  \nBackground: genuinely transparent background with alpha channel; isolated cutout; no shadow backdrop; no checkerboard; color subject will become a silhouette inside the game.\nConstraints: exactly the stated subject; no label, caption, watermark, collage, borders or readable words.  Do not create a black silhouette; render the full natural-color cutout with transparent surroundings. Output must be a PNG cutout with actual alpha=0 pixels outside the subject, fully transparent canvas. Do not paint white, gray, black or checkerboard behind it. Keep the entire outline visible. Natural color, no ground plane or cast shadow. Every tip, leaf, antenna, extremity and protruding part must be well inside the canvas, with broad transparent padding. Zoom out. Do not crop any part of the object.",
-      "question": {
-        "p": 1000,
-        "q": "ما صاحب هذا الشكل؟",
-        "a": "فاكهة النجمة",
-        "qid": "silhouette-1000-906",
-        "type": "image",
-        "effect": "silhouette",
-        "alt": [],
-        "topic": "طعام",
-        "difficultyTarget": 0.15,
-        "verified": false,
-        "sourceUrl": "docs/bank/rebuild-2026-09-18/review-silhouette-final.json",
-        "media": {
-          "src": "silhouette-1000-906.webp",
-          "type": "image",
-          "title": "لغز بصري مولّد",
-          "author": "Maydan / OpenAI image generation",
-          "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
-          "provenance": {
-            "kind": "ai-generated",
-            "tool": "OpenAI image generation",
-            "createdAt": "2026-09-23",
-            "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-1000-906.json"
-          }
-        }
-      },
-      "requireAlpha": true
-    },
-    "asset": null
-  },
-  {
-    "job": {
-      "id": "silhouette-1000-907",
-      "kind": "question",
-      "pack": "silhouette",
-      "a": "بالالايكا",
-      "p": 1000,
-      "topic": "موسيقى",
-      "prompt": "Use case: product-mockup.\nAsset type: one standalone professional image for an Arabic family visual guessing game (age 16+).\nSubject: a Russian balalaika with triangular wooden body and long neck.\nStyle: realistic high quality photography with correct anatomy and object geometry, clean natural textures.\nComposition: landscape 4:3, the complete subject occupies only the central 55% of the frame, leaving at least 20% completely transparent margin on ALL FOUR sides; centered with ample margins, immediately recognizable when revealed.  \nBackground: genuinely transparent background with alpha channel; isolated cutout; no shadow backdrop; no checkerboard; color subject will become a silhouette inside the game.\nConstraints: exactly the stated subject; no label, caption, watermark, collage, borders or readable words.  Do not create a black silhouette; render the full natural-color cutout with transparent surroundings. Output must be a PNG cutout with actual alpha=0 pixels outside the subject, fully transparent canvas. Do not paint white, gray, black or checkerboard behind it. Keep the entire outline visible. Natural color, no ground plane or cast shadow. Every tip, leaf, antenna, extremity and protruding part must be well inside the canvas, with broad transparent padding. Zoom out. Do not crop any part of the object.",
-      "question": {
-        "p": 1000,
-        "q": "ما صاحب هذا الشكل؟",
-        "a": "بالالايكا",
-        "qid": "silhouette-1000-907",
-        "type": "image",
-        "effect": "silhouette",
-        "alt": [
-          "بالاليكا"
-        ],
-        "topic": "موسيقى",
-        "difficultyTarget": 0.15,
-        "verified": false,
-        "sourceUrl": "docs/bank/rebuild-2026-09-18/review-silhouette-final.json",
-        "media": {
-          "src": "silhouette-1000-907.webp",
-          "type": "image",
-          "title": "لغز بصري مولّد",
-          "author": "Maydan / OpenAI image generation",
-          "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
-          "provenance": {
-            "kind": "ai-generated",
-            "tool": "OpenAI image generation",
-            "createdAt": "2026-09-23",
-            "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-1000-907.json"
-          }
-        }
-      },
-      "requireAlpha": true
-    },
-    "asset": null
-  },
-  {
-    "job": {
-      "id": "silhouette-1000-908",
-      "kind": "question",
-      "pack": "silhouette",
-      "a": "بابور كاز",
-      "p": 1000,
-      "topic": "أثاث ومنزل",
-      "prompt": "Use case: product-mockup.\nAsset type: one standalone professional image for an Arabic family visual guessing game (age 16+).\nSubject: a vintage brass pressurized kerosene stove, round fuel tank, three legs and burner on top.\nStyle: realistic high quality photography with correct anatomy and object geometry, clean natural textures.\nComposition: landscape 4:3, the complete subject occupies only the central 55% of the frame, leaving at least 20% completely transparent margin on ALL FOUR sides; centered with ample margins, immediately recognizable when revealed.  \nBackground: genuinely transparent background with alpha channel; isolated cutout; no shadow backdrop; no checkerboard; color subject will become a silhouette inside the game.\nConstraints: exactly the stated subject; no label, caption, watermark, collage, borders or readable words.  Do not create a black silhouette; render the full natural-color cutout with transparent surroundings. Output must be a PNG cutout with actual alpha=0 pixels outside the subject, fully transparent canvas. Do not paint white, gray, black or checkerboard behind it. Keep the entire outline visible. Natural color, no ground plane or cast shadow. Every tip, leaf, antenna, extremity and protruding part must be well inside the canvas, with broad transparent padding. Zoom out. Do not crop any part of the object.",
-      "question": {
-        "p": 1000,
-        "q": "ما صاحب هذا الشكل؟",
-        "a": "بابور كاز",
-        "qid": "silhouette-1000-908",
-        "type": "image",
-        "effect": "silhouette",
-        "alt": [
-          "وابور كاز",
-          "بابور"
-        ],
-        "topic": "أثاث ومنزل",
-        "difficultyTarget": 0.15,
-        "verified": false,
-        "sourceUrl": "docs/bank/rebuild-2026-09-18/review-silhouette-final.json",
-        "media": {
-          "src": "silhouette-1000-908.webp",
-          "type": "image",
-          "title": "لغز بصري مولّد",
-          "author": "Maydan / OpenAI image generation",
-          "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
-          "provenance": {
-            "kind": "ai-generated",
-            "tool": "OpenAI image generation",
-            "createdAt": "2026-09-23",
-            "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-1000-908.json"
-          }
-        }
-      },
-      "requireAlpha": true
-    },
-    "asset": null
-  },
-  {
-    "job": {
       "id": "silhouette-200-901",
       "kind": "question",
       "pack": "silhouette",
@@ -329,15 +10,19 @@
       "prompt": "Use case: product-mockup. Create one standalone photographic cutout for an Arabic family visual guessing game. Subject: a standing domestic orange tabby cat in a clean side profile, head looking forward, ears upright, tail raised. Correct feline anatomy, clear separate feet, complete body and tail visible. Natural color fur with realistic texture. Centered in a landscape 4:3 frame, fills about 75%, ample margins. Background: genuinely fully transparent PNG alpha background. Every pixel outside the cat must be alpha 0. No floor, no cast shadow, no background color, no checkerboard printed in the image. This full-color cutout will be rendered black by the game. Do not create a black silhouette. No words, letters, logos, watermark, extra subjects or border.",
       "question": {
         "p": 200,
-        "q": "ما صاحب هذا الشكل؟",
+        "q": "ما الحيوان المنزلي الذي يوضحه هذا الظل؟",
         "a": "قط",
         "qid": "silhouette-200-901",
         "type": "image",
         "effect": "silhouette",
-        "alt": [],
+        "alt": [
+          "قطة",
+          "هر",
+          "Cat"
+        ],
         "topic": "حيوانات",
         "difficultyTarget": 0.8,
-        "verified": false,
+        "verified": true,
         "sourceUrl": "docs/bank/rebuild-2026-09-18/review-silhouette-final.json",
         "media": {
           "src": "silhouette-200-901.webp",
@@ -347,7 +32,7 @@
           "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
           "provenance": {
             "kind": "ai-generated",
-            "tool": "OpenAI image generation",
+            "tool": "OpenAI image generation (built-in)",
             "createdAt": "2026-09-23",
             "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-200-901.json"
           }
@@ -355,7 +40,10 @@
       },
       "requireAlpha": true
     },
-    "asset": "media/silhouette/silhouette-200-901.webp"
+    "asset": "media/silhouette/silhouette-200-901.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-200-901.json",
+    "reviewStatus": "approved",
+    "sha256": "3309be76268f26393680b4b84c36c79e6a770cf1d34c77c5bf8a435b2775e5a6"
   },
   {
     "job": {
@@ -368,15 +56,18 @@
       "prompt": "Use case: product-mockup.\nAsset type: one standalone professional image for an Arabic family visual guessing game (age 16+).\nSubject: a claw hammer with wooden handle.\nStyle: realistic high quality photography with correct anatomy and object geometry, clean natural textures.\nComposition: landscape 4:3, the complete subject fills about 75% of the frame; centered with ample margins, immediately recognizable when revealed.  \nBackground: genuinely transparent background with alpha channel; isolated cutout; no shadow backdrop; no checkerboard; color subject will become a silhouette inside the game.\nConstraints: exactly the stated subject; no label, caption, watermark, collage, borders or readable words.  Do not create a black silhouette; render the full natural-color cutout with transparent surroundings. Output must be a PNG cutout with actual alpha=0 pixels outside the subject, fully transparent canvas. Do not paint white, gray, black or checkerboard behind it. Keep the entire outline visible. Natural color, no ground plane or cast shadow.",
       "question": {
         "p": 200,
-        "q": "ما صاحب هذا الشكل؟",
+        "q": "ما الأداة ذات المقبض الطويل والرأس المعقوف في الظل؟",
         "a": "مطرقة",
         "qid": "silhouette-200-902",
         "type": "image",
         "effect": "silhouette",
-        "alt": [],
+        "alt": [
+          "شاكوش",
+          "Hammer"
+        ],
         "topic": "أدوات",
         "difficultyTarget": 0.8,
-        "verified": false,
+        "verified": true,
         "sourceUrl": "docs/bank/rebuild-2026-09-18/review-silhouette-final.json",
         "media": {
           "src": "silhouette-200-902.webp",
@@ -386,7 +77,7 @@
           "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
           "provenance": {
             "kind": "ai-generated",
-            "tool": "OpenAI image generation",
+            "tool": "OpenAI image generation (built-in)",
             "createdAt": "2026-09-23",
             "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-200-902.json"
           }
@@ -394,7 +85,10 @@
       },
       "requireAlpha": true
     },
-    "asset": "media/silhouette/silhouette-200-902.webp"
+    "asset": "media/silhouette/silhouette-200-902.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-200-902.json",
+    "reviewStatus": "approved",
+    "sha256": "a0a91adddaa86a549b330a2a96cb081799bf6e004a250f3023825de540731adb"
   },
   {
     "job": {
@@ -407,15 +101,18 @@
       "prompt": "Use case: product-mockup.\nAsset type: one standalone professional image for an Arabic family visual guessing game (age 16+).\nSubject: an open umbrella in side view, curved handle.\nStyle: realistic high quality photography with correct anatomy and object geometry, clean natural textures.\nComposition: landscape 4:3, the complete subject fills about 75% of the frame; centered with ample margins, immediately recognizable when revealed.  \nBackground: genuinely transparent background with alpha channel; isolated cutout; no shadow backdrop; no checkerboard; color subject will become a silhouette inside the game.\nConstraints: exactly the stated subject; no label, caption, watermark, collage, borders or readable words.  Do not create a black silhouette; render the full natural-color cutout with transparent surroundings. Output must be a PNG cutout with actual alpha=0 pixels outside the subject, fully transparent canvas. Do not paint white, gray, black or checkerboard behind it. Keep the entire outline visible. Natural color, no ground plane or cast shadow.",
       "question": {
         "p": 200,
-        "q": "ما صاحب هذا الشكل؟",
+        "q": "ما الغرض ذو المقبض المنحني والقبة الظاهرة في هذا الظل؟",
         "a": "مظلة",
         "qid": "silhouette-200-903",
         "type": "image",
         "effect": "silhouette",
-        "alt": [],
+        "alt": [
+          "شمسية",
+          "Umbrella"
+        ],
         "topic": "أغراض شخصية",
         "difficultyTarget": 0.8,
-        "verified": false,
+        "verified": true,
         "sourceUrl": "docs/bank/rebuild-2026-09-18/review-silhouette-final.json",
         "media": {
           "src": "silhouette-200-903.webp",
@@ -425,7 +122,7 @@
           "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
           "provenance": {
             "kind": "ai-generated",
-            "tool": "OpenAI image generation",
+            "tool": "OpenAI image generation (built-in)",
             "createdAt": "2026-09-23",
             "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-200-903.json"
           }
@@ -433,7 +130,10 @@
       },
       "requireAlpha": true
     },
-    "asset": "media/silhouette/silhouette-200-903.webp"
+    "asset": "media/silhouette/silhouette-200-903.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-200-903.json",
+    "reviewStatus": "approved",
+    "sha256": "94e555e1f9102a9f5b0adc647dff22d15db4e1dac9e0d557a55c0ab840e4b3d3"
   },
   {
     "job": {
@@ -446,15 +146,19 @@
       "prompt": "Use case: product-mockup.\nAsset type: one standalone professional image for an Arabic family visual guessing game (age 16+).\nSubject: a helicopter in clean side profile with clear main rotor and tail rotor.\nStyle: realistic high quality photography with correct anatomy and object geometry, clean natural textures.\nComposition: landscape 4:3, the complete subject fills about 75% of the frame; centered with ample margins, immediately recognizable when revealed.  \nBackground: genuinely transparent background with alpha channel; isolated cutout; no shadow backdrop; no checkerboard; color subject will become a silhouette inside the game.\nConstraints: exactly the stated subject; no label, caption, watermark, collage, borders or readable words.  Do not create a black silhouette; render the full natural-color cutout with transparent surroundings. Output must be a PNG cutout with actual alpha=0 pixels outside the subject, fully transparent canvas. Do not paint white, gray, black or checkerboard behind it. Keep the entire outline visible. Natural color, no ground plane or cast shadow.",
       "question": {
         "p": 200,
-        "q": "ما صاحب هذا الشكل؟",
+        "q": "ما المركبة الجوية التي يظهر ظلها؟",
         "a": "مروحية",
         "qid": "silhouette-200-904",
         "type": "image",
         "effect": "silhouette",
-        "alt": [],
+        "alt": [
+          "هليكوبتر",
+          "طائرة مروحية",
+          "Helicopter"
+        ],
         "topic": "وسائل نقل",
         "difficultyTarget": 0.8,
-        "verified": false,
+        "verified": true,
         "sourceUrl": "docs/bank/rebuild-2026-09-18/review-silhouette-final.json",
         "media": {
           "src": "silhouette-200-904.webp",
@@ -464,7 +168,7 @@
           "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
           "provenance": {
             "kind": "ai-generated",
-            "tool": "OpenAI image generation",
+            "tool": "OpenAI image generation (built-in)",
             "createdAt": "2026-09-23",
             "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-200-904.json"
           }
@@ -472,7 +176,10 @@
       },
       "requireAlpha": true
     },
-    "asset": "media/silhouette/silhouette-200-904.webp"
+    "asset": "media/silhouette/silhouette-200-904.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-200-904.json",
+    "reviewStatus": "approved",
+    "sha256": "85a56e90ec2f160aa9366b21d9a0b78dd2ce1fb984d56a4a7791dd9dcd028fa9"
   },
   {
     "job": {
@@ -482,18 +189,21 @@
       "a": "صبار",
       "p": 200,
       "topic": "نباتات",
-      "prompt": "Use case: product-mockup.\nAsset type: one standalone professional image for an Arabic family visual guessing game (age 16+).\nSubject: a saguaro cactus with two upward arms.\nStyle: realistic high quality photography with correct anatomy and object geometry, clean natural textures.\nComposition: landscape 4:3, the complete subject fills about 75% of the frame; centered with ample margins, immediately recognizable when revealed.  \nBackground: genuinely transparent background with alpha channel; isolated cutout; no shadow backdrop; no checkerboard; color subject will become a silhouette inside the game.\nConstraints: exactly the stated subject; no label, caption, watermark, collage, borders or readable words.  Do not create a black silhouette; render the full natural-color cutout with transparent surroundings. Output must be a PNG cutout with actual alpha=0 pixels outside the subject, fully transparent canvas. Do not paint white, gray, black or checkerboard behind it. Keep the entire outline visible. Natural color, no ground plane or cast shadow.",
+      "prompt": "Use case: precise-object-edit. Input image is the edit target. Preserve the same pictured subject and realistic photographic style; correct only the specified framing or leaf anatomy. Maintain a genuinely transparent PNG background.\nUse case: product-mockup.\nAsset type: one standalone professional image for an Arabic family visual guessing game (age 16+).\nSubject: a saguaro cactus with two upward arms.\nStyle: realistic high quality photography with correct anatomy and object geometry, clean natural textures.\nComposition: landscape 4:3, the complete subject occupies only the central 55% of the frame, leaving at least 20% completely transparent margin on ALL FOUR sides; centered with ample margins, immediately recognizable when revealed.  \nBackground: genuinely transparent background with alpha channel; isolated cutout; no shadow backdrop; no checkerboard; color subject will become a silhouette inside the game.\nConstraints: exactly the stated subject; no label, caption, watermark, collage, borders or readable words.  Do not create a black silhouette; render the full natural-color cutout with transparent surroundings. Output must be a PNG cutout with actual alpha=0 pixels outside the subject, fully transparent canvas. Do not paint white, gray, black or checkerboard behind it. Keep the entire outline visible. Natural color, no ground plane or cast shadow.\n\nRequired correction:\nCorrect the framing: show the complete saguaro cactus, including its entire base and both upward arms, wholly inside the canvas. Center the whole plant in the central 55% of the frame with broad truly transparent padding on all four sides. Do not crop or let any part touch the image edge. Preserve natural full color and genuine transparent alpha; no pot, ground plane or cast shadow.",
       "question": {
         "p": 200,
-        "q": "ما صاحب هذا الشكل؟",
+        "q": "ما النبات ذو الأذرع المرفوعة الذي يوضحه الظل؟",
         "a": "صبار",
         "qid": "silhouette-200-905",
         "type": "image",
         "effect": "silhouette",
-        "alt": [],
+        "alt": [
+          "نبات الصبار",
+          "Cactus"
+        ],
         "topic": "نباتات",
         "difficultyTarget": 0.8,
-        "verified": false,
+        "verified": true,
         "sourceUrl": "docs/bank/rebuild-2026-09-18/review-silhouette-final.json",
         "media": {
           "src": "silhouette-200-905.webp",
@@ -503,15 +213,18 @@
           "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
           "provenance": {
             "kind": "ai-generated",
-            "tool": "OpenAI image generation",
-            "createdAt": "2026-09-23",
+            "tool": "OpenAI image generation (built-in)",
+            "createdAt": "2026-09-25",
             "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-200-905.json"
           }
         }
       },
       "requireAlpha": true
     },
-    "asset": "media/silhouette/silhouette-200-905.webp"
+    "asset": "media/silhouette/silhouette-200-905.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-200-905.json",
+    "reviewStatus": "approved",
+    "sha256": "f71fef1577ba810939767d08180ef11a798c7655e231429b735907cfc02682ba"
   },
   {
     "job": {
@@ -524,15 +237,19 @@
       "prompt": "Use case: product-mockup.\nAsset type: one standalone professional image for an Arabic family visual guessing game (age 16+).\nSubject: a pear with short stem and one leaf.\nStyle: realistic high quality photography with correct anatomy and object geometry, clean natural textures.\nComposition: landscape 4:3, the complete subject fills about 75% of the frame; centered with ample margins, immediately recognizable when revealed.  \nBackground: genuinely transparent background with alpha channel; isolated cutout; no shadow backdrop; no checkerboard; color subject will become a silhouette inside the game.\nConstraints: exactly the stated subject; no label, caption, watermark, collage, borders or readable words.  Do not create a black silhouette; render the full natural-color cutout with transparent surroundings. Output must be a PNG cutout with actual alpha=0 pixels outside the subject, fully transparent canvas. Do not paint white, gray, black or checkerboard behind it. Keep the entire outline visible. Natural color, no ground plane or cast shadow.",
       "question": {
         "p": 200,
-        "q": "ما صاحب هذا الشكل؟",
+        "q": "ما الفاكهة ذات العنق الضيق والقاعدة العريضة في الظل؟",
         "a": "كمثرى",
         "qid": "silhouette-200-906",
         "type": "image",
         "effect": "silhouette",
-        "alt": [],
+        "alt": [
+          "إجاص",
+          "عرموط",
+          "Pear"
+        ],
         "topic": "طعام",
         "difficultyTarget": 0.8,
-        "verified": false,
+        "verified": true,
         "sourceUrl": "docs/bank/rebuild-2026-09-18/review-silhouette-final.json",
         "media": {
           "src": "silhouette-200-906.webp",
@@ -542,7 +259,7 @@
           "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
           "provenance": {
             "kind": "ai-generated",
-            "tool": "OpenAI image generation",
+            "tool": "OpenAI image generation (built-in)",
             "createdAt": "2026-09-23",
             "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-200-906.json"
           }
@@ -550,7 +267,10 @@
       },
       "requireAlpha": true
     },
-    "asset": "media/silhouette/silhouette-200-906.webp"
+    "asset": "media/silhouette/silhouette-200-906.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-200-906.json",
+    "reviewStatus": "approved",
+    "sha256": "f6f761490a784768f524e5b85a803f03d6d5b4ffdd2340855e5d039b47b0a57e"
   },
   {
     "job": {
@@ -560,18 +280,22 @@
       "a": "ساكسفون",
       "p": 200,
       "topic": "موسيقى",
-      "prompt": "Use case: product-mockup.\nAsset type: one standalone professional image for an Arabic family visual guessing game (age 16+).\nSubject: a tenor saxophone in clear side view.\nStyle: realistic high quality photography with correct anatomy and object geometry, clean natural textures.\nComposition: landscape 4:3, the complete subject fills about 75% of the frame; centered with ample margins, immediately recognizable when revealed.  \nBackground: genuinely transparent background with alpha channel; isolated cutout; no shadow backdrop; no checkerboard; color subject will become a silhouette inside the game.\nConstraints: exactly the stated subject; no label, caption, watermark, collage, borders or readable words.  Do not create a black silhouette; render the full natural-color cutout with transparent surroundings. Output must be a PNG cutout with actual alpha=0 pixels outside the subject, fully transparent canvas. Do not paint white, gray, black or checkerboard behind it. Keep the entire outline visible. Natural color, no ground plane or cast shadow.",
+      "prompt": "Use case: precise-object-edit. The input is the edit target. Preserve the same recognizable realistic golden saxophone, its single continuous curved tube, mouthpiece, keys and upward bell, but correct the framing only. Zoom out significantly to show the entire instrument including top of neck and bottom of curved bow with at least 15% fully transparent padding above and below, 20% at left and right. The entire saxophone must be wholly within central 65% of the landscape 4:3 canvas. No clipped part and nothing touching frame edges. Realistic full natural-color instrument, not a black silhouette. Actual transparent PNG alpha=0 surroundings and through all open gaps, no white/black/checkerboard painted backdrop, no cast shadow, no text or watermark. It will be displayed as a black silhouette via game CSS and revealed in color, so preserve a distinct complete outline.",
       "question": {
         "p": 200,
-        "q": "ما صاحب هذا الشكل؟",
+        "q": "ما آلة النفخ ذات الأنبوب المنحني الظاهرة في الظل؟",
         "a": "ساكسفون",
         "qid": "silhouette-200-907",
         "type": "image",
         "effect": "silhouette",
-        "alt": [],
+        "alt": [
+          "ساكسوفون",
+          "سكسفون",
+          "Saxophone"
+        ],
         "topic": "موسيقى",
         "difficultyTarget": 0.8,
-        "verified": false,
+        "verified": true,
         "sourceUrl": "docs/bank/rebuild-2026-09-18/review-silhouette-final.json",
         "media": {
           "src": "silhouette-200-907.webp",
@@ -581,15 +305,18 @@
           "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
           "provenance": {
             "kind": "ai-generated",
-            "tool": "OpenAI image generation",
-            "createdAt": "2026-09-23",
+            "tool": "OpenAI image generation (built-in)",
+            "createdAt": "2026-09-25",
             "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-200-907.json"
           }
         }
       },
       "requireAlpha": true
     },
-    "asset": "media/silhouette/silhouette-200-907.webp"
+    "asset": "media/silhouette/silhouette-200-907.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-200-907.json",
+    "reviewStatus": "approved",
+    "sha256": "54211c5ddd7bbe94421ffa587029709796561e791cab4df5473fbca232731c9c"
   },
   {
     "job": {
@@ -599,18 +326,21 @@
       "a": "كرسي هزاز",
       "p": 200,
       "topic": "أثاث ومنزل",
-      "prompt": "Use case: product-mockup.\nAsset type: one standalone professional image for an Arabic family visual guessing game (age 16+).\nSubject: a wooden rocking chair side view.\nStyle: realistic high quality photography with correct anatomy and object geometry, clean natural textures.\nComposition: landscape 4:3, the complete subject fills about 75% of the frame; centered with ample margins, immediately recognizable when revealed.  \nBackground: genuinely transparent background with alpha channel; isolated cutout; no shadow backdrop; no checkerboard; color subject will become a silhouette inside the game.\nConstraints: exactly the stated subject; no label, caption, watermark, collage, borders or readable words.  Do not create a black silhouette; render the full natural-color cutout with transparent surroundings. Output must be a PNG cutout with actual alpha=0 pixels outside the subject, fully transparent canvas. Do not paint white, gray, black or checkerboard behind it. Keep the entire outline visible. Natural color, no ground plane or cast shadow.",
+      "prompt": "Use case: precise-object-edit. Input image is the edit target. Preserve the same pictured subject and realistic photographic style; correct only the specified framing or leaf anatomy. Maintain a genuinely transparent PNG background.\nUse case: product-mockup.\nAsset type: one standalone professional image for an Arabic family visual guessing game (age 16+).\nSubject: a wooden rocking chair side view.\nStyle: realistic high quality photography with correct anatomy and object geometry, clean natural textures.\nComposition: landscape 4:3, the complete subject occupies only the central 55% of the frame, leaving at least 20% completely transparent margin on ALL FOUR sides; centered with ample margins, immediately recognizable when revealed.  \nBackground: genuinely transparent background with alpha channel; isolated cutout; no shadow backdrop; no checkerboard; color subject will become a silhouette inside the game.\nConstraints: exactly the stated subject; no label, caption, watermark, collage, borders or readable words.  Do not create a black silhouette; render the full natural-color cutout with transparent surroundings. Output must be a PNG cutout with actual alpha=0 pixels outside the subject, fully transparent canvas. Do not paint white, gray, black or checkerboard behind it. Keep the entire outline visible. Natural color, no ground plane or cast shadow.\n\nRequired correction:\nCorrect the framing: show the complete wooden rocking chair in side view, including the backrest top, all legs, both complete curved rockers and their front and back tips. Keep the whole outline centered in the central 55% of the canvas with broad truly transparent padding on all four sides. Nothing may touch an edge. Preserve natural full color and genuine transparent alpha; no floor or cast shadow.",
       "question": {
         "p": 200,
-        "q": "ما صاحب هذا الشكل؟",
+        "q": "ما اسم المقعد ذي القاعدتين المنحنيتين في هذا الظل؟",
         "a": "كرسي هزاز",
         "qid": "silhouette-200-908",
         "type": "image",
         "effect": "silhouette",
-        "alt": [],
+        "alt": [
+          "كرسي تأرجح",
+          "Rocking chair"
+        ],
         "topic": "أثاث ومنزل",
         "difficultyTarget": 0.8,
-        "verified": false,
+        "verified": true,
         "sourceUrl": "docs/bank/rebuild-2026-09-18/review-silhouette-final.json",
         "media": {
           "src": "silhouette-200-908.webp",
@@ -620,15 +350,18 @@
           "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
           "provenance": {
             "kind": "ai-generated",
-            "tool": "OpenAI image generation",
-            "createdAt": "2026-09-23",
+            "tool": "OpenAI image generation (built-in)",
+            "createdAt": "2026-09-25",
             "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-200-908.json"
           }
         }
       },
       "requireAlpha": true
     },
-    "asset": "media/silhouette/silhouette-200-908.webp"
+    "asset": "media/silhouette/silhouette-200-908.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-200-908.json",
+    "reviewStatus": "approved",
+    "sha256": "69446c9803f7e479e756888a85e43a5711ca271cb003ab1f07b0c9875cb29574"
   },
   {
     "job": {
@@ -641,15 +374,17 @@
       "prompt": "Use case: product-mockup.\nAsset type: one standalone professional image for an Arabic family visual guessing game (age 16+).\nSubject: a rabbit in side profile with both long ears raised.\nStyle: realistic high quality photography with correct anatomy and object geometry, clean natural textures.\nComposition: landscape 4:3, the complete subject occupies only the central 55% of the frame, leaving at least 20% completely transparent margin on ALL FOUR sides; centered with ample margins, immediately recognizable when revealed.  \nBackground: genuinely transparent background with alpha channel; isolated cutout; no shadow backdrop; no checkerboard; color subject will become a silhouette inside the game.\nConstraints: exactly the stated subject; no label, caption, watermark, collage, borders or readable words.  Do not create a black silhouette; render the full natural-color cutout with transparent surroundings. Output must be a PNG cutout with actual alpha=0 pixels outside the subject, fully transparent canvas. Do not paint white, gray, black or checkerboard behind it. Keep the entire outline visible. Natural color, no ground plane or cast shadow. Every tip, leaf, antenna, extremity and protruding part must be well inside the canvas, with broad transparent padding. Zoom out. Do not crop any part of the object.",
       "question": {
         "p": 400,
-        "q": "ما صاحب هذا الشكل؟",
+        "q": "ما الحيوان ذو الأذنين الطويلتين في هذا الظل؟",
         "a": "أرنب",
         "qid": "silhouette-400-901",
         "type": "image",
         "effect": "silhouette",
-        "alt": [],
+        "alt": [
+          "Rabbit"
+        ],
         "topic": "حيوانات",
         "difficultyTarget": 0.6,
-        "verified": false,
+        "verified": true,
         "sourceUrl": "docs/bank/rebuild-2026-09-18/review-silhouette-final.json",
         "media": {
           "src": "silhouette-400-901.webp",
@@ -659,7 +394,7 @@
           "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
           "provenance": {
             "kind": "ai-generated",
-            "tool": "OpenAI image generation",
+            "tool": "OpenAI image generation (built-in)",
             "createdAt": "2026-09-23",
             "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-400-901.json"
           }
@@ -667,7 +402,10 @@
       },
       "requireAlpha": true
     },
-    "asset": "media/silhouette/silhouette-400-901.webp"
+    "asset": "media/silhouette/silhouette-400-901.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-400-901.json",
+    "reviewStatus": "approved",
+    "sha256": "4b50dc7f7e26d807f20b79fc4e4b1b2bdc9fcde00c0296bd98753a70d886b92e"
   },
   {
     "job": {
@@ -680,15 +418,20 @@
       "prompt": "Use case: product-mockup.\nAsset type: one standalone professional image for an Arabic family visual guessing game (age 16+).\nSubject: an open-end wrench.\nStyle: realistic high quality photography with correct anatomy and object geometry, clean natural textures.\nComposition: landscape 4:3, the complete subject occupies only the central 55% of the frame, leaving at least 20% completely transparent margin on ALL FOUR sides; centered with ample margins, immediately recognizable when revealed.  \nBackground: genuinely transparent background with alpha channel; isolated cutout; no shadow backdrop; no checkerboard; color subject will become a silhouette inside the game.\nConstraints: exactly the stated subject; no label, caption, watermark, collage, borders or readable words.  Do not create a black silhouette; render the full natural-color cutout with transparent surroundings. Output must be a PNG cutout with actual alpha=0 pixels outside the subject, fully transparent canvas. Do not paint white, gray, black or checkerboard behind it. Keep the entire outline visible. Natural color, no ground plane or cast shadow. Every tip, leaf, antenna, extremity and protruding part must be well inside the canvas, with broad transparent padding. Zoom out. Do not crop any part of the object.",
       "question": {
         "p": 400,
-        "q": "ما صاحب هذا الشكل؟",
+        "q": "ما الأداة ذات الفكين المفتوحين التي يظهر ظلها؟",
         "a": "مفتاح ربط",
         "qid": "silhouette-400-902",
         "type": "image",
         "effect": "silhouette",
-        "alt": [],
+        "alt": [
+          "مفتاح صواميل",
+          "مفتاح شد",
+          "Spanner",
+          "Wrench"
+        ],
         "topic": "أدوات",
         "difficultyTarget": 0.6,
-        "verified": false,
+        "verified": true,
         "sourceUrl": "docs/bank/rebuild-2026-09-18/review-silhouette-final.json",
         "media": {
           "src": "silhouette-400-902.webp",
@@ -698,7 +441,7 @@
           "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
           "provenance": {
             "kind": "ai-generated",
-            "tool": "OpenAI image generation",
+            "tool": "OpenAI image generation (built-in)",
             "createdAt": "2026-09-23",
             "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-400-902.json"
           }
@@ -706,7 +449,10 @@
       },
       "requireAlpha": true
     },
-    "asset": "media/silhouette/silhouette-400-902.webp"
+    "asset": "media/silhouette/silhouette-400-902.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-400-902.json",
+    "reviewStatus": "approved",
+    "sha256": "45ad90cc21e28343e0d908821dda8c2906e65af0c14980dec8ad67af25a49c38"
   },
   {
     "job": {
@@ -719,15 +465,20 @@
       "prompt": "Use case: product-mockup.\nAsset type: one standalone professional image for an Arabic family visual guessing game (age 16+).\nSubject: a hand-held hair dryer in side profile.\nStyle: realistic high quality photography with correct anatomy and object geometry, clean natural textures.\nComposition: landscape 4:3, the complete subject occupies only the central 55% of the frame, leaving at least 20% completely transparent margin on ALL FOUR sides; centered with ample margins, immediately recognizable when revealed.  \nBackground: genuinely transparent background with alpha channel; isolated cutout; no shadow backdrop; no checkerboard; color subject will become a silhouette inside the game.\nConstraints: exactly the stated subject; no label, caption, watermark, collage, borders or readable words.  Do not create a black silhouette; render the full natural-color cutout with transparent surroundings. Output must be a PNG cutout with actual alpha=0 pixels outside the subject, fully transparent canvas. Do not paint white, gray, black or checkerboard behind it. Keep the entire outline visible. Natural color, no ground plane or cast shadow. Every tip, leaf, antenna, extremity and protruding part must be well inside the canvas, with broad transparent padding. Zoom out. Do not crop any part of the object.",
       "question": {
         "p": 400,
-        "q": "ما صاحب هذا الشكل؟",
+        "q": "ما جهاز العناية الشخصية ذو المقبض والفوهة الظاهر في الظل؟",
         "a": "مجفف شعر",
         "qid": "silhouette-400-903",
         "type": "image",
         "effect": "silhouette",
-        "alt": [],
+        "alt": [
+          "سشوار",
+          "سيشوار",
+          "استشوار",
+          "Hair dryer"
+        ],
         "topic": "أغراض شخصية",
         "difficultyTarget": 0.6,
-        "verified": false,
+        "verified": true,
         "sourceUrl": "docs/bank/rebuild-2026-09-18/review-silhouette-final.json",
         "media": {
           "src": "silhouette-400-903.webp",
@@ -737,7 +488,7 @@
           "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
           "provenance": {
             "kind": "ai-generated",
-            "tool": "OpenAI image generation",
+            "tool": "OpenAI image generation (built-in)",
             "createdAt": "2026-09-23",
             "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-400-903.json"
           }
@@ -745,28 +496,38 @@
       },
       "requireAlpha": true
     },
-    "asset": "media/silhouette/silhouette-400-903.webp"
+    "asset": "media/silhouette/silhouette-400-903.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-400-903.json",
+    "reviewStatus": "approved",
+    "sha256": "40b2a550c3d31dc1c4be326370b0bde99cf92f29ef9746693cb1115ede19fe4b"
   },
   {
     "job": {
       "id": "silhouette-400-904",
       "kind": "question",
       "pack": "silhouette",
-      "a": "قارب سريع",
+      "a": "قارب بمحرك",
       "p": 400,
       "topic": "وسائل نقل",
       "prompt": "Use case: product-mockup.\nAsset type: one standalone professional image for an Arabic family visual guessing game (age 16+).\nSubject: a small speedboat side profile.\nStyle: realistic high quality photography with correct anatomy and object geometry, clean natural textures.\nComposition: landscape 4:3, the complete subject occupies only the central 55% of the frame, leaving at least 20% completely transparent margin on ALL FOUR sides; centered with ample margins, immediately recognizable when revealed.  \nBackground: genuinely transparent background with alpha channel; isolated cutout; no shadow backdrop; no checkerboard; color subject will become a silhouette inside the game.\nConstraints: exactly the stated subject; no label, caption, watermark, collage, borders or readable words.  Do not create a black silhouette; render the full natural-color cutout with transparent surroundings. Output must be a PNG cutout with actual alpha=0 pixels outside the subject, fully transparent canvas. Do not paint white, gray, black or checkerboard behind it. Keep the entire outline visible. Natural color, no ground plane or cast shadow. Every tip, leaf, antenna, extremity and protruding part must be well inside the canvas, with broad transparent padding. Zoom out. Do not crop any part of the object.",
       "question": {
         "p": 400,
-        "q": "ما صاحب هذا الشكل؟",
-        "a": "قارب سريع",
+        "q": "ما المركبة المائية التي يوضحها هذا الظل؟",
+        "a": "قارب بمحرك",
         "qid": "silhouette-400-904",
         "type": "image",
         "effect": "silhouette",
-        "alt": [],
+        "alt": [
+          "قارب سريع",
+          "زورق سريع",
+          "زورق بمحرك",
+          "قارب",
+          "Speedboat",
+          "Motorboat"
+        ],
         "topic": "وسائل نقل",
         "difficultyTarget": 0.6,
-        "verified": false,
+        "verified": true,
         "sourceUrl": "docs/bank/rebuild-2026-09-18/review-silhouette-final.json",
         "media": {
           "src": "silhouette-400-904.webp",
@@ -776,7 +537,7 @@
           "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
           "provenance": {
             "kind": "ai-generated",
-            "tool": "OpenAI image generation",
+            "tool": "OpenAI image generation (built-in)",
             "createdAt": "2026-09-23",
             "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-400-904.json"
           }
@@ -784,7 +545,10 @@
       },
       "requireAlpha": true
     },
-    "asset": "media/silhouette/silhouette-400-904.webp"
+    "asset": "media/silhouette/silhouette-400-904.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-400-904.json",
+    "reviewStatus": "approved",
+    "sha256": "bea692257df255fd7b9c11b9722a4daf9d15881e403dd5bd8be60e87d55b90e2"
   },
   {
     "job": {
@@ -797,15 +561,18 @@
       "prompt": "Use case: product-mockup.\nAsset type: one standalone professional image for an Arabic family visual guessing game (age 16+).\nSubject: a date palm tree with curved trunk and spreading fronds.\nStyle: realistic high quality photography with correct anatomy and object geometry, clean natural textures.\nComposition: landscape 4:3, the complete subject occupies only the central 55% of the frame, leaving at least 20% completely transparent margin on ALL FOUR sides; centered with ample margins, immediately recognizable when revealed.  \nBackground: genuinely transparent background with alpha channel; isolated cutout; no shadow backdrop; no checkerboard; color subject will become a silhouette inside the game.\nConstraints: exactly the stated subject; no label, caption, watermark, collage, borders or readable words.  Do not create a black silhouette; render the full natural-color cutout with transparent surroundings. Output must be a PNG cutout with actual alpha=0 pixels outside the subject, fully transparent canvas. Do not paint white, gray, black or checkerboard behind it. Keep the entire outline visible. Natural color, no ground plane or cast shadow. Every tip, leaf, antenna, extremity and protruding part must be well inside the canvas, with broad transparent padding. Zoom out. Do not crop any part of the object.",
       "question": {
         "p": 400,
-        "q": "ما صاحب هذا الشكل؟",
+        "q": "ما الشجرة ذات السعف التي تظهر في الظل؟",
         "a": "نخلة",
         "qid": "silhouette-400-905",
         "type": "image",
         "effect": "silhouette",
-        "alt": [],
+        "alt": [
+          "شجرة نخيل",
+          "Palm tree"
+        ],
         "topic": "نباتات",
         "difficultyTarget": 0.6,
-        "verified": false,
+        "verified": true,
         "sourceUrl": "docs/bank/rebuild-2026-09-18/review-silhouette-final.json",
         "media": {
           "src": "silhouette-400-905.webp",
@@ -815,7 +582,7 @@
           "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
           "provenance": {
             "kind": "ai-generated",
-            "tool": "OpenAI image generation",
+            "tool": "OpenAI image generation (built-in)",
             "createdAt": "2026-09-23",
             "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-400-905.json"
           }
@@ -823,28 +590,37 @@
       },
       "requireAlpha": true
     },
-    "asset": "media/silhouette/silhouette-400-905.webp"
+    "asset": "media/silhouette/silhouette-400-905.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-400-905.json",
+    "reviewStatus": "approved",
+    "sha256": "a961c8f26080ecf76594685231a6c4c652e1d0899ef8c50c8f2957b7425e57a4"
   },
   {
     "job": {
       "id": "silhouette-400-906",
       "kind": "question",
       "pack": "silhouette",
-      "a": "فلفل حار",
+      "a": "فلفل",
       "p": 400,
       "topic": "طعام",
       "prompt": "Use case: product-mockup.\nAsset type: one standalone professional image for an Arabic family visual guessing game (age 16+).\nSubject: a long curved chili pepper with stem.\nStyle: realistic high quality photography with correct anatomy and object geometry, clean natural textures.\nComposition: landscape 4:3, the complete subject occupies only the central 55% of the frame, leaving at least 20% completely transparent margin on ALL FOUR sides; centered with ample margins, immediately recognizable when revealed.  \nBackground: genuinely transparent background with alpha channel; isolated cutout; no shadow backdrop; no checkerboard; color subject will become a silhouette inside the game.\nConstraints: exactly the stated subject; no label, caption, watermark, collage, borders or readable words.  Do not create a black silhouette; render the full natural-color cutout with transparent surroundings. Output must be a PNG cutout with actual alpha=0 pixels outside the subject, fully transparent canvas. Do not paint white, gray, black or checkerboard behind it. Keep the entire outline visible. Natural color, no ground plane or cast shadow. Every tip, leaf, antenna, extremity and protruding part must be well inside the canvas, with broad transparent padding. Zoom out. Do not crop any part of the object.",
       "question": {
         "p": 400,
-        "q": "ما صاحب هذا الشكل؟",
-        "a": "فلفل حار",
+        "q": "ما الثمرة الطويلة المنحنية صاحبة هذا الظل؟",
+        "a": "فلفل",
         "qid": "silhouette-400-906",
         "type": "image",
         "effect": "silhouette",
-        "alt": [],
+        "alt": [
+          "فلفل حار",
+          "قرن فلفل",
+          "فلفل تشيلي",
+          "Chilli pepper",
+          "Chili pepper"
+        ],
         "topic": "طعام",
         "difficultyTarget": 0.6,
-        "verified": false,
+        "verified": true,
         "sourceUrl": "docs/bank/rebuild-2026-09-18/review-silhouette-final.json",
         "media": {
           "src": "silhouette-400-906.webp",
@@ -854,7 +630,7 @@
           "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
           "provenance": {
             "kind": "ai-generated",
-            "tool": "OpenAI image generation",
+            "tool": "OpenAI image generation (built-in)",
             "createdAt": "2026-09-23",
             "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-400-906.json"
           }
@@ -862,7 +638,10 @@
       },
       "requireAlpha": true
     },
-    "asset": "media/silhouette/silhouette-400-906.webp"
+    "asset": "media/silhouette/silhouette-400-906.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-400-906.json",
+    "reviewStatus": "approved",
+    "sha256": "000c3a8f9ae481a8ce9cbdf20bf45866100cbe48fa262fca02cfbd670ffa6430"
   },
   {
     "job": {
@@ -875,15 +654,20 @@
       "prompt": "Use case: product-mockup.\nAsset type: one standalone professional image for an Arabic family visual guessing game (age 16+).\nSubject: a full cello with endpin and bow beside it.\nStyle: realistic high quality photography with correct anatomy and object geometry, clean natural textures.\nComposition: landscape 4:3, the complete subject occupies only the central 55% of the frame, leaving at least 20% completely transparent margin on ALL FOUR sides; centered with ample margins, immediately recognizable when revealed.  \nBackground: genuinely transparent background with alpha channel; isolated cutout; no shadow backdrop; no checkerboard; color subject will become a silhouette inside the game.\nConstraints: exactly the stated subject; no label, caption, watermark, collage, borders or readable words.  Do not create a black silhouette; render the full natural-color cutout with transparent surroundings. Output must be a PNG cutout with actual alpha=0 pixels outside the subject, fully transparent canvas. Do not paint white, gray, black or checkerboard behind it. Keep the entire outline visible. Natural color, no ground plane or cast shadow. Every tip, leaf, antenna, extremity and protruding part must be well inside the canvas, with broad transparent padding. Zoom out. Do not crop any part of the object.",
       "question": {
         "p": 400,
-        "q": "ما صاحب هذا الشكل؟",
+        "q": "ما الآلة الوترية ذات الدعامة السفلية التي يظهر ظلها؟",
         "a": "تشيلو",
         "qid": "silhouette-400-907",
         "type": "image",
         "effect": "silhouette",
-        "alt": [],
+        "alt": [
+          "شيلو",
+          "فيلونسيل",
+          "Cello",
+          "Violoncello"
+        ],
         "topic": "موسيقى",
         "difficultyTarget": 0.6,
-        "verified": false,
+        "verified": true,
         "sourceUrl": "docs/bank/rebuild-2026-09-18/review-silhouette-final.json",
         "media": {
           "src": "silhouette-400-907.webp",
@@ -893,7 +677,7 @@
           "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
           "provenance": {
             "kind": "ai-generated",
-            "tool": "OpenAI image generation",
+            "tool": "OpenAI image generation (built-in)",
             "createdAt": "2026-09-23",
             "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-400-907.json"
           }
@@ -901,28 +685,37 @@
       },
       "requireAlpha": true
     },
-    "asset": "media/silhouette/silhouette-400-907.webp"
+    "asset": "media/silhouette/silhouette-400-907.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-400-907.json",
+    "reviewStatus": "approved",
+    "sha256": "162d494222dfd9d790d6b3db7c57cef27043762ec6e01495718a11c4ed3e0e8e"
   },
   {
     "job": {
       "id": "silhouette-400-908",
       "kind": "question",
       "pack": "silhouette",
-      "a": "مرش ماء",
+      "a": "إبريق ري",
       "p": 400,
       "topic": "أثاث ومنزل",
       "prompt": "Use case: product-mockup.\nAsset type: one standalone professional image for an Arabic family visual guessing game (age 16+).\nSubject: a garden watering can with long spout and arched handle.\nStyle: realistic high quality photography with correct anatomy and object geometry, clean natural textures.\nComposition: landscape 4:3, the complete subject occupies only the central 55% of the frame, leaving at least 20% completely transparent margin on ALL FOUR sides; centered with ample margins, immediately recognizable when revealed.  \nBackground: genuinely transparent background with alpha channel; isolated cutout; no shadow backdrop; no checkerboard; color subject will become a silhouette inside the game.\nConstraints: exactly the stated subject; no label, caption, watermark, collage, borders or readable words.  Do not create a black silhouette; render the full natural-color cutout with transparent surroundings. Output must be a PNG cutout with actual alpha=0 pixels outside the subject, fully transparent canvas. Do not paint white, gray, black or checkerboard behind it. Keep the entire outline visible. Natural color, no ground plane or cast shadow. Every tip, leaf, antenna, extremity and protruding part must be well inside the canvas, with broad transparent padding. Zoom out. Do not crop any part of the object.",
       "question": {
         "p": 400,
-        "q": "ما صاحب هذا الشكل؟",
-        "a": "مرش ماء",
+        "q": "ما اسم وعاء ري النباتات صاحب هذا الظل؟",
+        "a": "إبريق ري",
         "qid": "silhouette-400-908",
         "type": "image",
         "effect": "silhouette",
-        "alt": [],
+        "alt": [
+          "مرش ماء",
+          "مرش نباتات",
+          "إبريق سقاية",
+          "مرشة ري",
+          "Watering can"
+        ],
         "topic": "أثاث ومنزل",
         "difficultyTarget": 0.6,
-        "verified": false,
+        "verified": true,
         "sourceUrl": "docs/bank/rebuild-2026-09-18/review-silhouette-final.json",
         "media": {
           "src": "silhouette-400-908.webp",
@@ -932,7 +725,7 @@
           "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
           "provenance": {
             "kind": "ai-generated",
-            "tool": "OpenAI image generation",
+            "tool": "OpenAI image generation (built-in)",
             "createdAt": "2026-09-23",
             "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-400-908.json"
           }
@@ -940,7 +733,10 @@
       },
       "requireAlpha": true
     },
-    "asset": "media/silhouette/silhouette-400-908.webp"
+    "asset": "media/silhouette/silhouette-400-908.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-400-908.json",
+    "reviewStatus": "approved",
+    "sha256": "2a02a902e069e5971ec33605e1abbbef5b12a70c5f5cf25780ad076f0fdd683d"
   },
   {
     "job": {
@@ -953,15 +749,17 @@
       "prompt": "Use case: product-mockup.\nAsset type: one standalone professional image for an Arabic family visual guessing game (age 16+).\nSubject: a standing kangaroo in side profile, long tail, clear short front legs.\nStyle: realistic high quality photography with correct anatomy and object geometry, clean natural textures.\nComposition: landscape 4:3, the complete subject occupies only the central 55% of the frame, leaving at least 20% completely transparent margin on ALL FOUR sides; centered with ample margins, immediately recognizable when revealed.  \nBackground: genuinely transparent background with alpha channel; isolated cutout; no shadow backdrop; no checkerboard; color subject will become a silhouette inside the game.\nConstraints: exactly the stated subject; no label, caption, watermark, collage, borders or readable words.  Do not create a black silhouette; render the full natural-color cutout with transparent surroundings. Output must be a PNG cutout with actual alpha=0 pixels outside the subject, fully transparent canvas. Do not paint white, gray, black or checkerboard behind it. Keep the entire outline visible. Natural color, no ground plane or cast shadow. Every tip, leaf, antenna, extremity and protruding part must be well inside the canvas, with broad transparent padding. Zoom out. Do not crop any part of the object.",
       "question": {
         "p": 600,
-        "q": "ما صاحب هذا الشكل؟",
+        "q": "ما الحيوان ذو الذيل الطويل والقدمين الكبيرتين في الظل؟",
         "a": "كنغر",
         "qid": "silhouette-600-901",
         "type": "image",
         "effect": "silhouette",
-        "alt": [],
+        "alt": [
+          "Kangaroo"
+        ],
         "topic": "حيوانات",
         "difficultyTarget": 0.4,
-        "verified": false,
+        "verified": true,
         "sourceUrl": "docs/bank/rebuild-2026-09-18/review-silhouette-final.json",
         "media": {
           "src": "silhouette-600-901.webp",
@@ -971,7 +769,7 @@
           "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
           "provenance": {
             "kind": "ai-generated",
-            "tool": "OpenAI image generation",
+            "tool": "OpenAI image generation (built-in)",
             "createdAt": "2026-09-23",
             "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-600-901.json"
           }
@@ -979,7 +777,10 @@
       },
       "requireAlpha": true
     },
-    "asset": "media/silhouette/silhouette-600-901.webp"
+    "asset": "media/silhouette/silhouette-600-901.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-600-901.json",
+    "reviewStatus": "approved",
+    "sha256": "9dd74758fc7b9b022c4abcf0ac68b25d49fc6908d18ac55d0069cbfba96dfa8b"
   },
   {
     "job": {
@@ -992,15 +793,20 @@
       "prompt": "Use case: product-mockup.\nAsset type: one standalone professional image for an Arabic family visual guessing game (age 16+).\nSubject: a traditional winged corkscrew with raised lever arms.\nStyle: realistic high quality photography with correct anatomy and object geometry, clean natural textures.\nComposition: landscape 4:3, the complete subject occupies only the central 55% of the frame, leaving at least 20% completely transparent margin on ALL FOUR sides; centered with ample margins, immediately recognizable when revealed.  \nBackground: genuinely transparent background with alpha channel; isolated cutout; no shadow backdrop; no checkerboard; color subject will become a silhouette inside the game.\nConstraints: exactly the stated subject; no label, caption, watermark, collage, borders or readable words.  Do not create a black silhouette; render the full natural-color cutout with transparent surroundings. Output must be a PNG cutout with actual alpha=0 pixels outside the subject, fully transparent canvas. Do not paint white, gray, black or checkerboard behind it. Keep the entire outline visible. Natural color, no ground plane or cast shadow. Every tip, leaf, antenna, extremity and protruding part must be well inside the canvas, with broad transparent padding. Zoom out. Do not crop any part of the object.",
       "question": {
         "p": 600,
-        "q": "ما صاحب هذا الشكل؟",
+        "q": "ما الأداة ذات اللولب والذراعين المرفوعتين في الظل؟",
         "a": "فتاحة فلين",
         "qid": "silhouette-600-902",
         "type": "image",
         "effect": "silhouette",
-        "alt": [],
+        "alt": [
+          "فتاحة سدادات الفلين",
+          "فتاحة سدادات",
+          "لولب فتح الفلين",
+          "Corkscrew"
+        ],
         "topic": "أدوات",
         "difficultyTarget": 0.4,
-        "verified": false,
+        "verified": true,
         "sourceUrl": "docs/bank/rebuild-2026-09-18/review-silhouette-final.json",
         "media": {
           "src": "silhouette-600-902.webp",
@@ -1010,7 +816,7 @@
           "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
           "provenance": {
             "kind": "ai-generated",
-            "tool": "OpenAI image generation",
+            "tool": "OpenAI image generation (built-in)",
             "createdAt": "2026-09-23",
             "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-600-902.json"
           }
@@ -1018,7 +824,10 @@
       },
       "requireAlpha": true
     },
-    "asset": "media/silhouette/silhouette-600-902.webp"
+    "asset": "media/silhouette/silhouette-600-902.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-600-902.json",
+    "reviewStatus": "approved",
+    "sha256": "27ae4fa1ab2b6540c4de1203d89616da716b4f3d3fe430b977d5ae5afa03d47c"
   },
   {
     "job": {
@@ -1031,15 +840,20 @@
       "prompt": "Use case: product-mockup.\nAsset type: one standalone professional image for an Arabic family visual guessing game (age 16+).\nSubject: a vintage perfume atomizer bottle with squeeze bulb and short tube.\nStyle: realistic high quality photography with correct anatomy and object geometry, clean natural textures.\nComposition: landscape 4:3, the complete subject occupies only the central 55% of the frame, leaving at least 20% completely transparent margin on ALL FOUR sides; centered with ample margins, immediately recognizable when revealed.  \nBackground: genuinely transparent background with alpha channel; isolated cutout; no shadow backdrop; no checkerboard; color subject will become a silhouette inside the game.\nConstraints: exactly the stated subject; no label, caption, watermark, collage, borders or readable words.  Do not create a black silhouette; render the full natural-color cutout with transparent surroundings. Output must be a PNG cutout with actual alpha=0 pixels outside the subject, fully transparent canvas. Do not paint white, gray, black or checkerboard behind it. Keep the entire outline visible. Natural color, no ground plane or cast shadow. Every tip, leaf, antenna, extremity and protruding part must be well inside the canvas, with broad transparent padding. Zoom out. Do not crop any part of the object.",
       "question": {
         "p": 600,
-        "q": "ما صاحب هذا الشكل؟",
+        "q": "ما العبوة ذات الكرة الضاغطة التي يوضحها هذا الظل؟",
         "a": "زجاجة عطر",
         "qid": "silhouette-600-903",
         "type": "image",
         "effect": "silhouette",
-        "alt": [],
+        "alt": [
+          "قارورة عطر",
+          "مرذاذ عطر",
+          "بخاخ عطر",
+          "Perfume atomizer"
+        ],
         "topic": "أغراض شخصية",
         "difficultyTarget": 0.4,
-        "verified": false,
+        "verified": true,
         "sourceUrl": "docs/bank/rebuild-2026-09-18/review-silhouette-final.json",
         "media": {
           "src": "silhouette-600-903.webp",
@@ -1049,7 +863,7 @@
           "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
           "provenance": {
             "kind": "ai-generated",
-            "tool": "OpenAI image generation",
+            "tool": "OpenAI image generation (built-in)",
             "createdAt": "2026-09-23",
             "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-600-903.json"
           }
@@ -1057,7 +871,10 @@
       },
       "requireAlpha": true
     },
-    "asset": "media/silhouette/silhouette-600-903.webp"
+    "asset": "media/silhouette/silhouette-600-903.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-600-903.json",
+    "reviewStatus": "approved",
+    "sha256": "f0d32cae423a796846be277fe96c779394c96d9429ba2c6a8ecacc9dee865c57"
   },
   {
     "job": {
@@ -1070,15 +887,17 @@
       "prompt": "Use case: product-mockup.\nAsset type: one standalone professional image for an Arabic family visual guessing game (age 16+).\nSubject: a submarine side profile with periscope and propeller.\nStyle: realistic high quality photography with correct anatomy and object geometry, clean natural textures.\nComposition: landscape 4:3, the complete subject occupies only the central 55% of the frame, leaving at least 20% completely transparent margin on ALL FOUR sides; centered with ample margins, immediately recognizable when revealed.  \nBackground: genuinely transparent background with alpha channel; isolated cutout; no shadow backdrop; no checkerboard; color subject will become a silhouette inside the game.\nConstraints: exactly the stated subject; no label, caption, watermark, collage, borders or readable words.  Do not create a black silhouette; render the full natural-color cutout with transparent surroundings. Output must be a PNG cutout with actual alpha=0 pixels outside the subject, fully transparent canvas. Do not paint white, gray, black or checkerboard behind it. Keep the entire outline visible. Natural color, no ground plane or cast shadow. Every tip, leaf, antenna, extremity and protruding part must be well inside the canvas, with broad transparent padding. Zoom out. Do not crop any part of the object.",
       "question": {
         "p": 600,
-        "q": "ما صاحب هذا الشكل؟",
+        "q": "ما المركبة البحرية ذات البرج العلوي الظاهرة في الظل؟",
         "a": "غواصة",
         "qid": "silhouette-600-904",
         "type": "image",
         "effect": "silhouette",
-        "alt": [],
+        "alt": [
+          "Submarine"
+        ],
         "topic": "وسائل نقل",
         "difficultyTarget": 0.4,
-        "verified": false,
+        "verified": true,
         "sourceUrl": "docs/bank/rebuild-2026-09-18/review-silhouette-final.json",
         "media": {
           "src": "silhouette-600-904.webp",
@@ -1088,7 +907,7 @@
           "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
           "provenance": {
             "kind": "ai-generated",
-            "tool": "OpenAI image generation",
+            "tool": "OpenAI image generation (built-in)",
             "createdAt": "2026-09-23",
             "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-600-904.json"
           }
@@ -1096,7 +915,10 @@
       },
       "requireAlpha": true
     },
-    "asset": "media/silhouette/silhouette-600-904.webp"
+    "asset": "media/silhouette/silhouette-600-904.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-600-904.json",
+    "reviewStatus": "approved",
+    "sha256": "80c8c7951f9a9a0ccfc14a2a675eb0cfefea95e7039a41120b2cf1123d8b8c74"
   },
   {
     "job": {
@@ -1109,15 +931,20 @@
       "prompt": "Use case: product-mockup.\nAsset type: one standalone professional image for an Arabic family visual guessing game (age 16+).\nSubject: one lobed oak leaf with stem.\nStyle: realistic high quality photography with correct anatomy and object geometry, clean natural textures.\nComposition: landscape 4:3, the complete subject occupies only the central 55% of the frame, leaving at least 20% completely transparent margin on ALL FOUR sides; centered with ample margins, immediately recognizable when revealed.  \nBackground: genuinely transparent background with alpha channel; isolated cutout; no shadow backdrop; no checkerboard; color subject will become a silhouette inside the game.\nConstraints: exactly the stated subject; no label, caption, watermark, collage, borders or readable words.  Do not create a black silhouette; render the full natural-color cutout with transparent surroundings. Output must be a PNG cutout with actual alpha=0 pixels outside the subject, fully transparent canvas. Do not paint white, gray, black or checkerboard behind it. Keep the entire outline visible. Natural color, no ground plane or cast shadow. Every tip, leaf, antenna, extremity and protruding part must be well inside the canvas, with broad transparent padding. Zoom out. Do not crop any part of the object.",
       "question": {
         "p": 600,
-        "q": "ما صاحب هذا الشكل؟",
+        "q": "ما الورقة النباتية ذات الفصوص المستديرة الظاهرة في الظل؟",
         "a": "ورقة بلوط",
         "qid": "silhouette-600-905",
         "type": "image",
         "effect": "silhouette",
-        "alt": [],
+        "alt": [
+          "بلوط",
+          "ورق بلوط",
+          "ورقة شجر البلوط",
+          "Oak leaf"
+        ],
         "topic": "نباتات",
         "difficultyTarget": 0.4,
-        "verified": false,
+        "verified": true,
         "sourceUrl": "docs/bank/rebuild-2026-09-18/review-silhouette-final.json",
         "media": {
           "src": "silhouette-600-905.webp",
@@ -1127,7 +954,7 @@
           "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
           "provenance": {
             "kind": "ai-generated",
-            "tool": "OpenAI image generation",
+            "tool": "OpenAI image generation (built-in)",
             "createdAt": "2026-09-23",
             "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-600-905.json"
           }
@@ -1135,7 +962,10 @@
       },
       "requireAlpha": true
     },
-    "asset": "media/silhouette/silhouette-600-905.webp"
+    "asset": "media/silhouette/silhouette-600-905.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-600-905.json",
+    "reviewStatus": "approved",
+    "sha256": "81215c41c7a30eb8157144967b9be7efc7d6b32aa9fc4210166e4ce97b28ee12"
   },
   {
     "job": {
@@ -1148,15 +978,17 @@
       "prompt": "Use case: product-mockup.\nAsset type: one standalone professional image for an Arabic family visual guessing game (age 16+).\nSubject: a whole pineapple with a spiky crown.\nStyle: realistic high quality photography with correct anatomy and object geometry, clean natural textures.\nComposition: landscape 4:3, the complete subject occupies only the central 55% of the frame, leaving at least 20% completely transparent margin on ALL FOUR sides; centered with ample margins, immediately recognizable when revealed.  \nBackground: genuinely transparent background with alpha channel; isolated cutout; no shadow backdrop; no checkerboard; color subject will become a silhouette inside the game.\nConstraints: exactly the stated subject; no label, caption, watermark, collage, borders or readable words.  Do not create a black silhouette; render the full natural-color cutout with transparent surroundings. Output must be a PNG cutout with actual alpha=0 pixels outside the subject, fully transparent canvas. Do not paint white, gray, black or checkerboard behind it. Keep the entire outline visible. Natural color, no ground plane or cast shadow. Every tip, leaf, antenna, extremity and protruding part must be well inside the canvas, with broad transparent padding. Zoom out. Do not crop any part of the object.",
       "question": {
         "p": 600,
-        "q": "ما صاحب هذا الشكل؟",
+        "q": "ما الفاكهة ذات التاج الورقي المدبب في هذا الظل؟",
         "a": "أناناس",
         "qid": "silhouette-600-906",
         "type": "image",
         "effect": "silhouette",
-        "alt": [],
+        "alt": [
+          "Pineapple"
+        ],
         "topic": "طعام",
         "difficultyTarget": 0.4,
-        "verified": false,
+        "verified": true,
         "sourceUrl": "docs/bank/rebuild-2026-09-18/review-silhouette-final.json",
         "media": {
           "src": "silhouette-600-906.webp",
@@ -1166,7 +998,7 @@
           "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
           "provenance": {
             "kind": "ai-generated",
-            "tool": "OpenAI image generation",
+            "tool": "OpenAI image generation (built-in)",
             "createdAt": "2026-09-23",
             "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-600-906.json"
           }
@@ -1174,7 +1006,10 @@
       },
       "requireAlpha": true
     },
-    "asset": "media/silhouette/silhouette-600-906.webp"
+    "asset": "media/silhouette/silhouette-600-906.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-600-906.json",
+    "reviewStatus": "approved",
+    "sha256": "368818d404903ea9e31c8a0487316ba3d9d2da9db856214e22794b458a6db4d1"
   },
   {
     "job": {
@@ -1187,15 +1022,21 @@
       "prompt": "Use case: product-mockup.\nAsset type: one standalone professional image for an Arabic family visual guessing game (age 16+).\nSubject: an electric guitar with double-cutaway body.\nStyle: realistic high quality photography with correct anatomy and object geometry, clean natural textures.\nComposition: landscape 4:3, the complete subject occupies only the central 55% of the frame, leaving at least 20% completely transparent margin on ALL FOUR sides; centered with ample margins, immediately recognizable when revealed.  \nBackground: genuinely transparent background with alpha channel; isolated cutout; no shadow backdrop; no checkerboard; color subject will become a silhouette inside the game.\nConstraints: exactly the stated subject; no label, caption, watermark, collage, borders or readable words.  Do not create a black silhouette; render the full natural-color cutout with transparent surroundings. Output must be a PNG cutout with actual alpha=0 pixels outside the subject, fully transparent canvas. Do not paint white, gray, black or checkerboard behind it. Keep the entire outline visible. Natural color, no ground plane or cast shadow. Every tip, leaf, antenna, extremity and protruding part must be well inside the canvas, with broad transparent padding. Zoom out. Do not crop any part of the object.",
       "question": {
         "p": 600,
-        "q": "ما صاحب هذا الشكل؟",
+        "q": "ما نوع الآلة الوترية ذات هذا الجسم والرقبة الطويلة؟",
         "a": "غيتار كهربائي",
         "qid": "silhouette-600-907",
         "type": "image",
         "effect": "silhouette",
-        "alt": [],
+        "alt": [
+          "جيتار كهربائي",
+          "قيثارة كهربائية",
+          "غيتار",
+          "جيتار",
+          "Electric guitar"
+        ],
         "topic": "موسيقى",
         "difficultyTarget": 0.4,
-        "verified": false,
+        "verified": true,
         "sourceUrl": "docs/bank/rebuild-2026-09-18/review-silhouette-final.json",
         "media": {
           "src": "silhouette-600-907.webp",
@@ -1205,7 +1046,7 @@
           "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
           "provenance": {
             "kind": "ai-generated",
-            "tool": "OpenAI image generation",
+            "tool": "OpenAI image generation (built-in)",
             "createdAt": "2026-09-23",
             "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-600-907.json"
           }
@@ -1213,7 +1054,10 @@
       },
       "requireAlpha": true
     },
-    "asset": "media/silhouette/silhouette-600-907.webp"
+    "asset": "media/silhouette/silhouette-600-907.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-600-907.json",
+    "reviewStatus": "approved",
+    "sha256": "02eaa7d950349fe0139530218c87e4bc87a57a3a05d9871e8ba2eca5817229a7"
   },
   {
     "job": {
@@ -1226,15 +1070,20 @@
       "prompt": "Use case: product-mockup.\nAsset type: one standalone professional image for an Arabic family visual guessing game (age 16+).\nSubject: a desktop electric fan in three-quarter profile with circular protective cage.\nStyle: realistic high quality photography with correct anatomy and object geometry, clean natural textures.\nComposition: landscape 4:3, the complete subject occupies only the central 55% of the frame, leaving at least 20% completely transparent margin on ALL FOUR sides; centered with ample margins, immediately recognizable when revealed.  \nBackground: genuinely transparent background with alpha channel; isolated cutout; no shadow backdrop; no checkerboard; color subject will become a silhouette inside the game.\nConstraints: exactly the stated subject; no label, caption, watermark, collage, borders or readable words.  Do not create a black silhouette; render the full natural-color cutout with transparent surroundings. Output must be a PNG cutout with actual alpha=0 pixels outside the subject, fully transparent canvas. Do not paint white, gray, black or checkerboard behind it. Keep the entire outline visible. Natural color, no ground plane or cast shadow. Every tip, leaf, antenna, extremity and protruding part must be well inside the canvas, with broad transparent padding. Zoom out. Do not crop any part of the object.",
       "question": {
         "p": 600,
-        "q": "ما صاحب هذا الشكل؟",
+        "q": "ما الجهاز المنزلي ذو الشبك الدائري الظاهر في الظل؟",
         "a": "مروحة",
         "qid": "silhouette-600-908",
         "type": "image",
         "effect": "silhouette",
-        "alt": [],
+        "alt": [
+          "مروحة كهربائية",
+          "مروحة طاولة",
+          "مروحة مكتب",
+          "Fan"
+        ],
         "topic": "أثاث ومنزل",
         "difficultyTarget": 0.4,
-        "verified": false,
+        "verified": true,
         "sourceUrl": "docs/bank/rebuild-2026-09-18/review-silhouette-final.json",
         "media": {
           "src": "silhouette-600-908.webp",
@@ -1244,7 +1093,7 @@
           "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
           "provenance": {
             "kind": "ai-generated",
-            "tool": "OpenAI image generation",
+            "tool": "OpenAI image generation (built-in)",
             "createdAt": "2026-09-23",
             "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-600-908.json"
           }
@@ -1252,7 +1101,10 @@
       },
       "requireAlpha": true
     },
-    "asset": "media/silhouette/silhouette-600-908.webp"
+    "asset": "media/silhouette/silhouette-600-908.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-600-908.json",
+    "reviewStatus": "approved",
+    "sha256": "80c0fb184e1822b2837a57ffccee9a09ac7bb84b9cafe7d9746600ed6f987f22"
   },
   {
     "job": {
@@ -1265,15 +1117,20 @@
       "prompt": "Use case: product-mockup.\nAsset type: one standalone professional image for an Arabic family visual guessing game (age 16+).\nSubject: a heron in side profile, long legs and S-curved neck.\nStyle: realistic high quality photography with correct anatomy and object geometry, clean natural textures.\nComposition: landscape 4:3, the complete subject occupies only the central 55% of the frame, leaving at least 20% completely transparent margin on ALL FOUR sides; centered with ample margins, immediately recognizable when revealed.  \nBackground: genuinely transparent background with alpha channel; isolated cutout; no shadow backdrop; no checkerboard; color subject will become a silhouette inside the game.\nConstraints: exactly the stated subject; no label, caption, watermark, collage, borders or readable words.  Do not create a black silhouette; render the full natural-color cutout with transparent surroundings. Output must be a PNG cutout with actual alpha=0 pixels outside the subject, fully transparent canvas. Do not paint white, gray, black or checkerboard behind it. Keep the entire outline visible. Natural color, no ground plane or cast shadow. Every tip, leaf, antenna, extremity and protruding part must be well inside the canvas, with broad transparent padding. Zoom out. Do not crop any part of the object.",
       "question": {
         "p": 800,
-        "q": "ما صاحب هذا الشكل؟",
+        "q": "ما الطائر ذو الرقبة المنحنية والساقين الطويلتين في الظل؟",
         "a": "مالك الحزين",
         "qid": "silhouette-800-901",
         "type": "image",
         "effect": "silhouette",
-        "alt": [],
+        "alt": [
+          "بلشون",
+          "طائر البلشون",
+          "طائر مالك الحزين",
+          "Heron"
+        ],
         "topic": "حيوانات",
         "difficultyTarget": 0.25,
-        "verified": false,
+        "verified": true,
         "sourceUrl": "docs/bank/rebuild-2026-09-18/review-silhouette-final.json",
         "media": {
           "src": "silhouette-800-901.webp",
@@ -1283,7 +1140,7 @@
           "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
           "provenance": {
             "kind": "ai-generated",
-            "tool": "OpenAI image generation",
+            "tool": "OpenAI image generation (built-in)",
             "createdAt": "2026-09-23",
             "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-800-901.json"
           }
@@ -1291,7 +1148,10 @@
       },
       "requireAlpha": true
     },
-    "asset": "media/silhouette/silhouette-800-901.webp"
+    "asset": "media/silhouette/silhouette-800-901.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-800-901.json",
+    "reviewStatus": "approved",
+    "sha256": "b6e5ede03192f90d45855e7062d8e6a2bbec21c6b08ab0cc05a6937c921e7bc9"
   },
   {
     "job": {
@@ -1304,15 +1164,20 @@
       "prompt": "Use case: product-mockup.\nAsset type: one standalone professional image for an Arabic family visual guessing game (age 16+).\nSubject: an old hand-cranked drill, gear wheel and crank clearly visible.\nStyle: realistic high quality photography with correct anatomy and object geometry, clean natural textures.\nComposition: landscape 4:3, the complete subject occupies only the central 55% of the frame, leaving at least 20% completely transparent margin on ALL FOUR sides; centered with ample margins, immediately recognizable when revealed.  \nBackground: genuinely transparent background with alpha channel; isolated cutout; no shadow backdrop; no checkerboard; color subject will become a silhouette inside the game.\nConstraints: exactly the stated subject; no label, caption, watermark, collage, borders or readable words.  Do not create a black silhouette; render the full natural-color cutout with transparent surroundings. Output must be a PNG cutout with actual alpha=0 pixels outside the subject, fully transparent canvas. Do not paint white, gray, black or checkerboard behind it. Keep the entire outline visible. Natural color, no ground plane or cast shadow. Every tip, leaf, antenna, extremity and protruding part must be well inside the canvas, with broad transparent padding. Zoom out. Do not crop any part of the object.",
       "question": {
         "p": 800,
-        "q": "ما صاحب هذا الشكل؟",
+        "q": "ما الأداة ذات الترس وذراع التدوير التي يظهر ظلها؟",
         "a": "مثقاب يدوي",
         "qid": "silhouette-800-902",
         "type": "image",
         "effect": "silhouette",
-        "alt": [],
+        "alt": [
+          "مثقب يدوي",
+          "دريل يدوي",
+          "مثقاب بكرنك",
+          "Hand drill"
+        ],
         "topic": "أدوات",
         "difficultyTarget": 0.25,
-        "verified": false,
+        "verified": true,
         "sourceUrl": "docs/bank/rebuild-2026-09-18/review-silhouette-final.json",
         "media": {
           "src": "silhouette-800-902.webp",
@@ -1322,7 +1187,7 @@
           "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
           "provenance": {
             "kind": "ai-generated",
-            "tool": "OpenAI image generation",
+            "tool": "OpenAI image generation (built-in)",
             "createdAt": "2026-09-23",
             "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-800-902.json"
           }
@@ -1330,7 +1195,10 @@
       },
       "requireAlpha": true
     },
-    "asset": "media/silhouette/silhouette-800-902.webp"
+    "asset": "media/silhouette/silhouette-800-902.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-800-902.json",
+    "reviewStatus": "approved",
+    "sha256": "bb3df69b002f9dc10892a8b267519dda28e195b9acf9f5186c94719d7bd181f9"
   },
   {
     "job": {
@@ -1343,15 +1211,19 @@
       "prompt": "Use case: product-mockup.\nAsset type: one standalone professional image for an Arabic family visual guessing game (age 16+).\nSubject: a large sewing needle with a loop of thread passing through its eye.\nStyle: realistic high quality photography with correct anatomy and object geometry, clean natural textures.\nComposition: landscape 4:3, the complete subject occupies only the central 55% of the frame, leaving at least 20% completely transparent margin on ALL FOUR sides; centered with ample margins, immediately recognizable when revealed.  \nBackground: genuinely transparent background with alpha channel; isolated cutout; no shadow backdrop; no checkerboard; color subject will become a silhouette inside the game.\nConstraints: exactly the stated subject; no label, caption, watermark, collage, borders or readable words.  Do not create a black silhouette; render the full natural-color cutout with transparent surroundings. Output must be a PNG cutout with actual alpha=0 pixels outside the subject, fully transparent canvas. Do not paint white, gray, black or checkerboard behind it. Keep the entire outline visible. Natural color, no ground plane or cast shadow. Every tip, leaf, antenna, extremity and protruding part must be well inside the canvas, with broad transparent padding. Zoom out. Do not crop any part of the object.",
       "question": {
         "p": 800,
-        "q": "ما صاحب هذا الشكل؟",
+        "q": "ما الأداة الرفيعة التي يمر خيط عبر طرفها في الظل؟",
         "a": "إبرة خياطة",
         "qid": "silhouette-800-903",
         "type": "image",
         "effect": "silhouette",
-        "alt": [],
+        "alt": [
+          "إبرة",
+          "إبرة وخيط",
+          "Sewing needle"
+        ],
         "topic": "أغراض شخصية",
         "difficultyTarget": 0.25,
-        "verified": false,
+        "verified": true,
         "sourceUrl": "docs/bank/rebuild-2026-09-18/review-silhouette-final.json",
         "media": {
           "src": "silhouette-800-903.webp",
@@ -1361,7 +1233,7 @@
           "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
           "provenance": {
             "kind": "ai-generated",
-            "tool": "OpenAI image generation",
+            "tool": "OpenAI image generation (built-in)",
             "createdAt": "2026-09-23",
             "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-800-903.json"
           }
@@ -1369,7 +1241,10 @@
       },
       "requireAlpha": true
     },
-    "asset": "media/silhouette/silhouette-800-903.webp"
+    "asset": "media/silhouette/silhouette-800-903.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-800-903.json",
+    "reviewStatus": "approved",
+    "sha256": "247d747d6ef8f7e2b5a0896378b92af46e7aa3b72a16e57e637b3456f9b55178"
   },
   {
     "job": {
@@ -1382,15 +1257,20 @@
       "prompt": "Use case: product-mockup.\nAsset type: one standalone professional image for an Arabic family visual guessing game (age 16+).\nSubject: a vintage biplane in side profile, two stacked wings and front propeller.\nStyle: realistic high quality photography with correct anatomy and object geometry, clean natural textures.\nComposition: landscape 4:3, the complete subject occupies only the central 55% of the frame, leaving at least 20% completely transparent margin on ALL FOUR sides; centered with ample margins, immediately recognizable when revealed.  \nBackground: genuinely transparent background with alpha channel; isolated cutout; no shadow backdrop; no checkerboard; color subject will become a silhouette inside the game.\nConstraints: exactly the stated subject; no label, caption, watermark, collage, borders or readable words.  Do not create a black silhouette; render the full natural-color cutout with transparent surroundings. Output must be a PNG cutout with actual alpha=0 pixels outside the subject, fully transparent canvas. Do not paint white, gray, black or checkerboard behind it. Keep the entire outline visible. Natural color, no ground plane or cast shadow. Every tip, leaf, antenna, extremity and protruding part must be well inside the canvas, with broad transparent padding. Zoom out. Do not crop any part of the object.",
       "question": {
         "p": 800,
-        "q": "ما صاحب هذا الشكل؟",
+        "q": "ما نوع الطائرة ذات الجناحين المتراكبين التي يظهر ظلها؟",
         "a": "طائرة ثنائية السطح",
         "qid": "silhouette-800-904",
         "type": "image",
         "effect": "silhouette",
-        "alt": [],
+        "alt": [
+          "طائرة ثنائية الأجنحة",
+          "طائرة بجناحين متراكبين",
+          "طائرة ذات جناحين متراكبين",
+          "Biplane"
+        ],
         "topic": "وسائل نقل",
         "difficultyTarget": 0.25,
-        "verified": false,
+        "verified": true,
         "sourceUrl": "docs/bank/rebuild-2026-09-18/review-silhouette-final.json",
         "media": {
           "src": "silhouette-800-904.webp",
@@ -1400,7 +1280,7 @@
           "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
           "provenance": {
             "kind": "ai-generated",
-            "tool": "OpenAI image generation",
+            "tool": "OpenAI image generation (built-in)",
             "createdAt": "2026-09-23",
             "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-800-904.json"
           }
@@ -1408,7 +1288,10 @@
       },
       "requireAlpha": true
     },
-    "asset": "media/silhouette/silhouette-800-904.webp"
+    "asset": "media/silhouette/silhouette-800-904.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-800-904.json",
+    "reviewStatus": "approved",
+    "sha256": "aae475c12a3e58c1f69bcde0390cf6da516099585607f116c452bbac1e7d1cd1"
   },
   {
     "job": {
@@ -1418,18 +1301,22 @@
       "a": "مونستيرا",
       "p": 800,
       "topic": "نباتات",
-      "prompt": "Use case: product-mockup.\nAsset type: one standalone professional image for an Arabic family visual guessing game (age 16+).\nSubject: one split and perforated monstera leaf.\nStyle: realistic high quality photography with correct anatomy and object geometry, clean natural textures.\nComposition: landscape 4:3, the complete subject occupies only the central 55% of the frame, leaving at least 20% completely transparent margin on ALL FOUR sides; centered with ample margins, immediately recognizable when revealed.  \nBackground: genuinely transparent background with alpha channel; isolated cutout; no shadow backdrop; no checkerboard; color subject will become a silhouette inside the game.\nConstraints: exactly the stated subject; no label, caption, watermark, collage, borders or readable words.  Do not create a black silhouette; render the full natural-color cutout with transparent surroundings. Output must be a PNG cutout with actual alpha=0 pixels outside the subject, fully transparent canvas. Do not paint white, gray, black or checkerboard behind it. Keep the entire outline visible. Natural color, no ground plane or cast shadow. Every tip, leaf, antenna, extremity and protruding part must be well inside the canvas, with broad transparent padding. Zoom out. Do not crop any part of the object.",
+      "prompt": "Use case: scientific-educational. Create a botanically correct realistic full-color photograph cutout of ONE Monstera deliciosa leaf and its petiole for a visual recognition game. Landscape 4:3 PNG, truly transparent background with actual alpha=0, no opaque or painted background. Crucial orientation and anatomy: the single pointed leaf tip faces UP at 12 o'clock. The wide rounded heart-shaped BASE with TWO rounded basal lobes faces DOWN at 6 o'clock. The petiole emerges from the deep basal notch BETWEEN these two lower lobes, and extends downward. The central midrib runs upward from that basal attachment to the single pointed apex at the top. Never attach a stalk to the pointed apex. Leaf has several natural side splits and a few true fenestration holes in the green blade, all holes genuinely transparent. Flat frontal face view, natural dark green leaf textures, neutral studio lighting, no veins outside the leaf, no additional leaves or objects. Keep entire leaf and entire stalk wholly inside central 65% of frame with ample transparent margins on ALL sides, no edge cropping. Render the color leaf, not a black silhouette. No text, no watermark, no frame, no checkerboard, no ground or cast shadow.",
       "question": {
         "p": 800,
-        "q": "ما صاحب هذا الشكل؟",
+        "q": "ما النبات صاحب الورقة المثقبة التي يظهر ظلها؟",
         "a": "مونستيرا",
         "qid": "silhouette-800-905",
         "type": "image",
         "effect": "silhouette",
-        "alt": [],
+        "alt": [
+          "ورقة مونستيرا",
+          "مونستيرا دليسيوسا",
+          "Monstera"
+        ],
         "topic": "نباتات",
         "difficultyTarget": 0.25,
-        "verified": false,
+        "verified": true,
         "sourceUrl": "docs/bank/rebuild-2026-09-18/review-silhouette-final.json",
         "media": {
           "src": "silhouette-800-905.webp",
@@ -1439,15 +1326,18 @@
           "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
           "provenance": {
             "kind": "ai-generated",
-            "tool": "OpenAI image generation",
-            "createdAt": "2026-09-23",
+            "tool": "OpenAI image generation (built-in)",
+            "createdAt": "2026-09-25",
             "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-800-905.json"
           }
         }
       },
       "requireAlpha": true
     },
-    "asset": "media/silhouette/silhouette-800-905.webp"
+    "asset": "media/silhouette/silhouette-800-905.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-800-905.json",
+    "reviewStatus": "approved",
+    "sha256": "b4e9a94499fcdcd8c429b65acecb20db5c4bb6f69f4b82fa9d4c427b7acfe829"
   },
   {
     "job": {
@@ -1460,15 +1350,17 @@
       "prompt": "Use case: product-mockup.\nAsset type: one standalone professional image for an Arabic family visual guessing game (age 16+).\nSubject: one irregular branched ginger root.\nStyle: realistic high quality photography with correct anatomy and object geometry, clean natural textures.\nComposition: landscape 4:3, the complete subject occupies only the central 55% of the frame, leaving at least 20% completely transparent margin on ALL FOUR sides; centered with ample margins, immediately recognizable when revealed.  \nBackground: genuinely transparent background with alpha channel; isolated cutout; no shadow backdrop; no checkerboard; color subject will become a silhouette inside the game.\nConstraints: exactly the stated subject; no label, caption, watermark, collage, borders or readable words.  Do not create a black silhouette; render the full natural-color cutout with transparent surroundings. Output must be a PNG cutout with actual alpha=0 pixels outside the subject, fully transparent canvas. Do not paint white, gray, black or checkerboard behind it. Keep the entire outline visible. Natural color, no ground plane or cast shadow. Every tip, leaf, antenna, extremity and protruding part must be well inside the canvas, with broad transparent padding. Zoom out. Do not crop any part of the object.",
       "question": {
         "p": 800,
-        "q": "ما صاحب هذا الشكل؟",
+        "q": "ما التابل الطازج ذو النكهة اللاذعة والرائحة الليمونية الذي يظهر ظله؟",
         "a": "زنجبيل",
         "qid": "silhouette-800-906",
         "type": "image",
         "effect": "silhouette",
-        "alt": [],
+        "alt": [
+          "Ginger"
+        ],
         "topic": "طعام",
         "difficultyTarget": 0.25,
-        "verified": false,
+        "verified": true,
         "sourceUrl": "docs/bank/rebuild-2026-09-18/review-silhouette-final.json",
         "media": {
           "src": "silhouette-800-906.webp",
@@ -1478,7 +1370,7 @@
           "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
           "provenance": {
             "kind": "ai-generated",
-            "tool": "OpenAI image generation",
+            "tool": "OpenAI image generation (built-in)",
             "createdAt": "2026-09-23",
             "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-800-906.json"
           }
@@ -1486,7 +1378,10 @@
       },
       "requireAlpha": true
     },
-    "asset": "media/silhouette/silhouette-800-906.webp"
+    "asset": "media/silhouette/silhouette-800-906.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-800-906.json",
+    "reviewStatus": "approved",
+    "sha256": "e9aa172449ca14ecadab6809150d7ab6cbc74392d93c9cf872ddc246a6377173"
   },
   {
     "job": {
@@ -1499,17 +1394,19 @@
       "prompt": "Use case: product-mockup.\nAsset type: one standalone professional image for an Arabic family visual guessing game (age 16+).\nSubject: a French horn with a circular coiled tube and broad bell.\nStyle: realistic high quality photography with correct anatomy and object geometry, clean natural textures.\nComposition: landscape 4:3, the complete subject occupies only the central 55% of the frame, leaving at least 20% completely transparent margin on ALL FOUR sides; centered with ample margins, immediately recognizable when revealed.  \nBackground: genuinely transparent background with alpha channel; isolated cutout; no shadow backdrop; no checkerboard; color subject will become a silhouette inside the game.\nConstraints: exactly the stated subject; no label, caption, watermark, collage, borders or readable words.  Do not create a black silhouette; render the full natural-color cutout with transparent surroundings. Output must be a PNG cutout with actual alpha=0 pixels outside the subject, fully transparent canvas. Do not paint white, gray, black or checkerboard behind it. Keep the entire outline visible. Natural color, no ground plane or cast shadow. Every tip, leaf, antenna, extremity and protruding part must be well inside the canvas, with broad transparent padding. Zoom out. Do not crop any part of the object.",
       "question": {
         "p": 800,
-        "q": "ما صاحب هذا الشكل؟",
+        "q": "ما آلة النفخ ذات الأنبوب الملفوف دائريًا في الظل؟",
         "a": "هورن",
         "qid": "silhouette-800-907",
         "type": "image",
         "effect": "silhouette",
         "alt": [
-          "بوق فرنسي"
+          "بوق فرنسي",
+          "قرن فرنسي",
+          "French horn"
         ],
         "topic": "موسيقى",
         "difficultyTarget": 0.25,
-        "verified": false,
+        "verified": true,
         "sourceUrl": "docs/bank/rebuild-2026-09-18/review-silhouette-final.json",
         "media": {
           "src": "silhouette-800-907.webp",
@@ -1519,7 +1416,7 @@
           "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
           "provenance": {
             "kind": "ai-generated",
-            "tool": "OpenAI image generation",
+            "tool": "OpenAI image generation (built-in)",
             "createdAt": "2026-09-23",
             "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-800-907.json"
           }
@@ -1527,7 +1424,10 @@
       },
       "requireAlpha": true
     },
-    "asset": "media/silhouette/silhouette-800-907.webp"
+    "asset": "media/silhouette/silhouette-800-907.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-800-907.json",
+    "reviewStatus": "approved",
+    "sha256": "4dddd125c4ccd75e78685045e34bba50c5eaab728c9bf8591504ceb67780f0e0"
   },
   {
     "job": {
@@ -1540,15 +1440,21 @@
       "prompt": "Use case: product-mockup.\nAsset type: one standalone professional image for an Arabic family visual guessing game (age 16+).\nSubject: an antique oil lamp with a round oil reservoir, glass chimney and side handle.\nStyle: realistic high quality photography with correct anatomy and object geometry, clean natural textures.\nComposition: landscape 4:3, the complete subject occupies only the central 55% of the frame, leaving at least 20% completely transparent margin on ALL FOUR sides; centered with ample margins, immediately recognizable when revealed.  \nBackground: genuinely transparent background with alpha channel; isolated cutout; no shadow backdrop; no checkerboard; color subject will become a silhouette inside the game.\nConstraints: exactly the stated subject; no label, caption, watermark, collage, borders or readable words.  Do not create a black silhouette; render the full natural-color cutout with transparent surroundings. Output must be a PNG cutout with actual alpha=0 pixels outside the subject, fully transparent canvas. Do not paint white, gray, black or checkerboard behind it. Keep the entire outline visible. Natural color, no ground plane or cast shadow. Every tip, leaf, antenna, extremity and protruding part must be well inside the canvas, with broad transparent padding. Zoom out. Do not crop any part of the object.",
       "question": {
         "p": 800,
-        "q": "ما صاحب هذا الشكل؟",
+        "q": "ما وسيلة الإضاءة ذات الخزان والمدخنة التي يوضحها الظل؟",
         "a": "مصباح زيت",
         "qid": "silhouette-800-908",
         "type": "image",
         "effect": "silhouette",
-        "alt": [],
+        "alt": [
+          "مصباح زيتي",
+          "قنديل زيت",
+          "لمبة كاز",
+          "مصباح كيروسين",
+          "Oil lamp"
+        ],
         "topic": "أثاث ومنزل",
         "difficultyTarget": 0.25,
-        "verified": false,
+        "verified": true,
         "sourceUrl": "docs/bank/rebuild-2026-09-18/review-silhouette-final.json",
         "media": {
           "src": "silhouette-800-908.webp",
@@ -1558,7 +1464,7 @@
           "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
           "provenance": {
             "kind": "ai-generated",
-            "tool": "OpenAI image generation",
+            "tool": "OpenAI image generation (built-in)",
             "createdAt": "2026-09-23",
             "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-800-908.json"
           }
@@ -1566,6 +1472,389 @@
       },
       "requireAlpha": true
     },
-    "asset": "media/silhouette/silhouette-800-908.webp"
+    "asset": "media/silhouette/silhouette-800-908.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-800-908.json",
+    "reviewStatus": "approved",
+    "sha256": "cb79c991227a52c89bce67b66146546be05752e81e6005e6a9b020a1a4951fb9"
+  },
+  {
+    "job": {
+      "id": "silhouette-1000-901",
+      "kind": "question",
+      "pack": "silhouette",
+      "a": "خلد الماء",
+      "p": 1000,
+      "topic": "حيوانات",
+      "prompt": "Use case: product-mockup.\nAsset type: one standalone professional image for an Arabic family visual guessing game (age 16+).\nSubject: a platypus in side profile with distinct broad duck bill, webbed feet and flat beaver-like tail.\nStyle: realistic high quality photography with correct anatomy and object geometry, clean natural textures.\nComposition: landscape 4:3, the complete subject occupies only the central 55% of the frame, leaving at least 20% completely transparent margin on ALL FOUR sides; centered with ample margins, immediately recognizable when revealed.  \nBackground: genuinely transparent background with alpha channel; isolated cutout; no shadow backdrop; no checkerboard; color subject will become a silhouette inside the game.\nConstraints: exactly the stated subject; no label, caption, watermark, collage, borders or readable words.  Do not create a black silhouette; render the full natural-color cutout with transparent surroundings. Output must be a PNG cutout with actual alpha=0 pixels outside the subject, fully transparent canvas. Do not paint white, gray, black or checkerboard behind it. Keep the entire outline visible. Natural color, no ground plane or cast shadow. Every tip, leaf, antenna, extremity and protruding part must be well inside the canvas, with broad transparent padding. Zoom out. Do not crop any part of the object.",
+      "question": {
+        "p": 1000,
+        "q": "ما الحيوان ذو المنقار العريض والذيل المفلطح في الظل؟",
+        "a": "خلد الماء",
+        "qid": "silhouette-1000-901",
+        "type": "image",
+        "effect": "silhouette",
+        "alt": [
+          "بلاتيبوس",
+          "خلد الماء بطي المنقار",
+          "Platypus"
+        ],
+        "topic": "حيوانات",
+        "difficultyTarget": 0.15,
+        "verified": true,
+        "sourceUrl": "docs/bank/rebuild-2026-09-18/review-silhouette-final.json",
+        "media": {
+          "src": "silhouette-1000-901.webp",
+          "type": "image",
+          "title": "لغز بصري مولّد",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation (built-in)",
+            "createdAt": "2026-09-25",
+            "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-1000-901.json"
+          }
+        }
+      },
+      "requireAlpha": true
+    },
+    "asset": "media/silhouette/silhouette-1000-901.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-1000-901.json",
+    "reviewStatus": "approved",
+    "sha256": "82c47da48474871156cc56df3feb251f0799221483256ff34a6d4cc57d534001"
+  },
+  {
+    "job": {
+      "id": "silhouette-1000-902",
+      "kind": "question",
+      "pack": "silhouette",
+      "a": "السدس",
+      "p": 1000,
+      "topic": "أدوات",
+      "prompt": "Use case: product-mockup.\nAsset type: one standalone professional image for an Arabic family visual guessing game (age 16+).\nSubject: a nautical sextant, its distinctive sector arc, sighting telescope and handle visible.\nStyle: realistic high quality photography with correct anatomy and object geometry, clean natural textures.\nComposition: landscape 4:3, the complete subject occupies only the central 55% of the frame, leaving at least 20% completely transparent margin on ALL FOUR sides; centered with ample margins, immediately recognizable when revealed.  \nBackground: genuinely transparent background with alpha channel; isolated cutout; no shadow backdrop; no checkerboard; color subject will become a silhouette inside the game.\nConstraints: exactly the stated subject; no label, caption, watermark, collage, borders or readable words.  Do not create a black silhouette; render the full natural-color cutout with transparent surroundings. Output must be a PNG cutout with actual alpha=0 pixels outside the subject, fully transparent canvas. Do not paint white, gray, black or checkerboard behind it. Keep the entire outline visible. Natural color, no ground plane or cast shadow. Every tip, leaf, antenna, extremity and protruding part must be well inside the canvas, with broad transparent padding. Zoom out. Do not crop any part of the object.",
+      "question": {
+        "p": 1000,
+        "q": "ما أداة الملاحة ذات القوس والمنظار التي يظهر ظلها؟",
+        "a": "السدس",
+        "qid": "silhouette-1000-902",
+        "type": "image",
+        "effect": "silhouette",
+        "alt": [
+          "آلة السدس",
+          "سدس ملاحي",
+          "السدس البحري",
+          "Sextant"
+        ],
+        "topic": "أدوات",
+        "difficultyTarget": 0.15,
+        "verified": true,
+        "sourceUrl": "docs/bank/rebuild-2026-09-18/review-silhouette-final.json",
+        "media": {
+          "src": "silhouette-1000-902.webp",
+          "type": "image",
+          "title": "لغز بصري مولّد",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation (built-in)",
+            "createdAt": "2026-09-25",
+            "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-1000-902.json"
+          }
+        }
+      },
+      "requireAlpha": true
+    },
+    "asset": "media/silhouette/silhouette-1000-902.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-1000-902.json",
+    "reviewStatus": "approved",
+    "sha256": "ef1865d5fbd2c26e141a83a95603bb4b973c5e1a6543b06a322246f30e595275"
+  },
+  {
+    "job": {
+      "id": "silhouette-1000-903",
+      "kind": "question",
+      "pack": "silhouette",
+      "a": "مكبس رموش",
+      "p": 1000,
+      "topic": "أغراض شخصية",
+      "prompt": "Use case: product-mockup.\nAsset type: one standalone professional image for an Arabic family visual guessing game (age 16+).\nSubject: an eyelash curler with finger loops and curved clamp.\nStyle: realistic high quality photography with correct anatomy and object geometry, clean natural textures.\nComposition: landscape 4:3, the complete subject occupies only the central 55% of the frame, leaving at least 20% completely transparent margin on ALL FOUR sides; centered with ample margins, immediately recognizable when revealed.  \nBackground: genuinely transparent background with alpha channel; isolated cutout; no shadow backdrop; no checkerboard; color subject will become a silhouette inside the game.\nConstraints: exactly the stated subject; no label, caption, watermark, collage, borders or readable words.  Do not create a black silhouette; render the full natural-color cutout with transparent surroundings. Output must be a PNG cutout with actual alpha=0 pixels outside the subject, fully transparent canvas. Do not paint white, gray, black or checkerboard behind it. Keep the entire outline visible. Natural color, no ground plane or cast shadow. Every tip, leaf, antenna, extremity and protruding part must be well inside the canvas, with broad transparent padding. Zoom out. Do not crop any part of the object.",
+      "question": {
+        "p": 1000,
+        "q": "ما أداة التجميل ذات الحلقتين والمشبك المقوّس في الظل؟",
+        "a": "مكبس رموش",
+        "qid": "silhouette-1000-903",
+        "type": "image",
+        "effect": "silhouette",
+        "alt": [
+          "مكبس الرموش",
+          "مجعد الرموش",
+          "أداة تقويس الرموش",
+          "Eyelash curler"
+        ],
+        "topic": "أغراض شخصية",
+        "difficultyTarget": 0.15,
+        "verified": true,
+        "sourceUrl": "docs/bank/rebuild-2026-09-18/review-silhouette-final.json",
+        "media": {
+          "src": "silhouette-1000-903.webp",
+          "type": "image",
+          "title": "لغز بصري مولّد",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation (built-in)",
+            "createdAt": "2026-09-25",
+            "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-1000-903.json"
+          }
+        }
+      },
+      "requireAlpha": true
+    },
+    "asset": "media/silhouette/silhouette-1000-903.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-1000-903.json",
+    "reviewStatus": "approved",
+    "sha256": "42e065fd6543baae22e2cccbd2938a30747feaf229afa90338386fae32f67074"
+  },
+  {
+    "job": {
+      "id": "silhouette-1000-904",
+      "kind": "question",
+      "pack": "silhouette",
+      "a": "قاطرة بخارية",
+      "p": 1000,
+      "topic": "وسائل نقل",
+      "prompt": "Use case: product-mockup.\nAsset type: one standalone professional image for an Arabic family visual guessing game (age 16+).\nSubject: a steam locomotive side profile with large driving wheels, smokestack and front cowcatcher.\nStyle: realistic high quality photography with correct anatomy and object geometry, clean natural textures.\nComposition: landscape 4:3, the complete subject occupies only the central 55% of the frame, leaving at least 20% completely transparent margin on ALL FOUR sides; centered with ample margins, immediately recognizable when revealed.  \nBackground: genuinely transparent background with alpha channel; isolated cutout; no shadow backdrop; no checkerboard; color subject will become a silhouette inside the game.\nConstraints: exactly the stated subject; no label, caption, watermark, collage, borders or readable words.  Do not create a black silhouette; render the full natural-color cutout with transparent surroundings. Output must be a PNG cutout with actual alpha=0 pixels outside the subject, fully transparent canvas. Do not paint white, gray, black or checkerboard behind it. Keep the entire outline visible. Natural color, no ground plane or cast shadow. Every tip, leaf, antenna, extremity and protruding part must be well inside the canvas, with broad transparent padding. Zoom out. Do not crop any part of the object.",
+      "question": {
+        "p": 1000,
+        "q": "ما نوع مركبة السكك الحديدية التي يوضحها ظلها؟",
+        "a": "قاطرة بخارية",
+        "qid": "silhouette-1000-904",
+        "type": "image",
+        "effect": "silhouette",
+        "alt": [
+          "قطار بخاري",
+          "قاطرة تعمل بالبخار",
+          "Steam locomotive"
+        ],
+        "topic": "وسائل نقل",
+        "difficultyTarget": 0.15,
+        "verified": true,
+        "sourceUrl": "docs/bank/rebuild-2026-09-18/review-silhouette-final.json",
+        "media": {
+          "src": "silhouette-1000-904.webp",
+          "type": "image",
+          "title": "لغز بصري مولّد",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation (built-in)",
+            "createdAt": "2026-09-25",
+            "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-1000-904.json"
+          }
+        }
+      },
+      "requireAlpha": true
+    },
+    "asset": "media/silhouette/silhouette-1000-904.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-1000-904.json",
+    "reviewStatus": "approved",
+    "sha256": "77f70e6977fdf437cdd3def005a2a69523f1141b503534b059498041df4c37ef"
+  },
+  {
+    "job": {
+      "id": "silhouette-1000-905",
+      "kind": "question",
+      "pack": "silhouette",
+      "a": "ورقة جنكة",
+      "p": 1000,
+      "topic": "نباتات",
+      "prompt": "Use case: product-mockup.\nAsset type: one standalone professional image for an Arabic family visual guessing game (age 16+).\nSubject: one fan-shaped ginkgo leaf with a central notch and slim stem.\nStyle: realistic high quality photography with correct anatomy and object geometry, clean natural textures.\nComposition: landscape 4:3, the complete subject occupies only the central 55% of the frame, leaving at least 20% completely transparent margin on ALL FOUR sides; centered with ample margins, immediately recognizable when revealed.  \nBackground: genuinely transparent background with alpha channel; isolated cutout; no shadow backdrop; no checkerboard; color subject will become a silhouette inside the game.\nConstraints: exactly the stated subject; no label, caption, watermark, collage, borders or readable words.  Do not create a black silhouette; render the full natural-color cutout with transparent surroundings. Output must be a PNG cutout with actual alpha=0 pixels outside the subject, fully transparent canvas. Do not paint white, gray, black or checkerboard behind it. Keep the entire outline visible. Natural color, no ground plane or cast shadow. Every tip, leaf, antenna, extremity and protruding part must be well inside the canvas, with broad transparent padding. Zoom out. Do not crop any part of the object.",
+      "question": {
+        "p": 1000,
+        "q": "ما اسم الورقة النباتية ذات الشكل المروحي في الظل؟",
+        "a": "ورقة جنكة",
+        "qid": "silhouette-1000-905",
+        "type": "image",
+        "effect": "silhouette",
+        "alt": [
+          "جنكة",
+          "جينكو",
+          "جنكو",
+          "ورقة جينكو",
+          "Ginkgo",
+          "Ginkgo leaf"
+        ],
+        "topic": "نباتات",
+        "difficultyTarget": 0.15,
+        "verified": true,
+        "sourceUrl": "docs/bank/rebuild-2026-09-18/review-silhouette-final.json",
+        "media": {
+          "src": "silhouette-1000-905.webp",
+          "type": "image",
+          "title": "لغز بصري مولّد",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation (built-in)",
+            "createdAt": "2026-09-25",
+            "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-1000-905.json"
+          }
+        }
+      },
+      "requireAlpha": true
+    },
+    "asset": "media/silhouette/silhouette-1000-905.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-1000-905.json",
+    "reviewStatus": "approved",
+    "sha256": "655df36deff0730f91f399947cec09d5acb66fe9c71ec379387ba35f873458b6"
+  },
+  {
+    "job": {
+      "id": "silhouette-1000-906",
+      "kind": "question",
+      "pack": "silhouette",
+      "a": "فاكهة النجمة",
+      "p": 1000,
+      "topic": "طعام",
+      "prompt": "Use case: product-mockup.\nAsset type: one standalone professional image for an Arabic family visual guessing game (age 16+).\nSubject: one whole starfruit and one five-point-star cross section next to it.\nStyle: realistic high quality photography with correct anatomy and object geometry, clean natural textures.\nComposition: landscape 4:3, the complete subject occupies only the central 55% of the frame, leaving at least 20% completely transparent margin on ALL FOUR sides; centered with ample margins, immediately recognizable when revealed.  \nBackground: genuinely transparent background with alpha channel; isolated cutout; no shadow backdrop; no checkerboard; color subject will become a silhouette inside the game.\nConstraints: exactly the stated subject; no label, caption, watermark, collage, borders or readable words.  Do not create a black silhouette; render the full natural-color cutout with transparent surroundings. Output must be a PNG cutout with actual alpha=0 pixels outside the subject, fully transparent canvas. Do not paint white, gray, black or checkerboard behind it. Keep the entire outline visible. Natural color, no ground plane or cast shadow. Every tip, leaf, antenna, extremity and protruding part must be well inside the canvas, with broad transparent padding. Zoom out. Do not crop any part of the object.",
+      "question": {
+        "p": 1000,
+        "q": "ما الفاكهة التي يبيّن الظل ثمرة منها وشريحة خماسية؟",
+        "a": "فاكهة النجمة",
+        "qid": "silhouette-1000-906",
+        "type": "image",
+        "effect": "silhouette",
+        "alt": [
+          "كارامبولا",
+          "كرامبولا",
+          "ستار فروت",
+          "Starfruit",
+          "Carambola"
+        ],
+        "topic": "طعام",
+        "difficultyTarget": 0.15,
+        "verified": true,
+        "sourceUrl": "docs/bank/rebuild-2026-09-18/review-silhouette-final.json",
+        "media": {
+          "src": "silhouette-1000-906.webp",
+          "type": "image",
+          "title": "لغز بصري مولّد",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation (built-in)",
+            "createdAt": "2026-09-25",
+            "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-1000-906.json"
+          }
+        }
+      },
+      "requireAlpha": true
+    },
+    "asset": "media/silhouette/silhouette-1000-906.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-1000-906.json",
+    "reviewStatus": "approved",
+    "sha256": "d7ae38303a2e556934d477bf02f1a8c57f9658232c30e864b233abd044ec62b6"
+  },
+  {
+    "job": {
+      "id": "silhouette-1000-907",
+      "kind": "question",
+      "pack": "silhouette",
+      "a": "بالالايكا",
+      "p": 1000,
+      "topic": "موسيقى",
+      "prompt": "Use case: product-mockup.\nAsset type: one standalone professional image for an Arabic family visual guessing game (age 16+).\nSubject: a Russian balalaika with triangular wooden body and long neck.\nStyle: realistic high quality photography with correct anatomy and object geometry, clean natural textures.\nComposition: landscape 4:3, the complete subject occupies only the central 55% of the frame, leaving at least 20% completely transparent margin on ALL FOUR sides; centered with ample margins, immediately recognizable when revealed.  \nBackground: genuinely transparent background with alpha channel; isolated cutout; no shadow backdrop; no checkerboard; color subject will become a silhouette inside the game.\nConstraints: exactly the stated subject; no label, caption, watermark, collage, borders or readable words.  Do not create a black silhouette; render the full natural-color cutout with transparent surroundings. Output must be a PNG cutout with actual alpha=0 pixels outside the subject, fully transparent canvas. Do not paint white, gray, black or checkerboard behind it. Keep the entire outline visible. Natural color, no ground plane or cast shadow. Every tip, leaf, antenna, extremity and protruding part must be well inside the canvas, with broad transparent padding. Zoom out. Do not crop any part of the object.",
+      "question": {
+        "p": 1000,
+        "q": "ما الآلة الوترية ذات الصندوق المثلث التي يظهر ظلها؟",
+        "a": "بالالايكا",
+        "qid": "silhouette-1000-907",
+        "type": "image",
+        "effect": "silhouette",
+        "alt": [
+          "بالاليكا",
+          "بالالايكة",
+          "Balalaika"
+        ],
+        "topic": "موسيقى",
+        "difficultyTarget": 0.15,
+        "verified": true,
+        "sourceUrl": "docs/bank/rebuild-2026-09-18/review-silhouette-final.json",
+        "media": {
+          "src": "silhouette-1000-907.webp",
+          "type": "image",
+          "title": "لغز بصري مولّد",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation (built-in)",
+            "createdAt": "2026-09-25",
+            "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-1000-907.json"
+          }
+        }
+      },
+      "requireAlpha": true
+    },
+    "asset": "media/silhouette/silhouette-1000-907.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-1000-907.json",
+    "reviewStatus": "approved",
+    "sha256": "808241872ba97b87decc1257e8192a96dcb8b8744ab159c7b9e818895762ebff"
+  },
+  {
+    "job": {
+      "id": "silhouette-1000-908",
+      "kind": "question",
+      "pack": "silhouette",
+      "a": "بابور كاز",
+      "p": 1000,
+      "topic": "أثاث ومنزل",
+      "prompt": "Use case: product-mockup.\nAsset type: one standalone professional image for an Arabic family visual guessing game (age 16+).\nSubject: a vintage brass pressurized kerosene stove, round fuel tank, three legs and burner on top.\nStyle: realistic high quality photography with correct anatomy and object geometry, clean natural textures.\nComposition: landscape 4:3, the complete subject occupies only the central 55% of the frame, leaving at least 20% completely transparent margin on ALL FOUR sides; centered with ample margins, immediately recognizable when revealed.  \nBackground: genuinely transparent background with alpha channel; isolated cutout; no shadow backdrop; no checkerboard; color subject will become a silhouette inside the game.\nConstraints: exactly the stated subject; no label, caption, watermark, collage, borders or readable words.  Do not create a black silhouette; render the full natural-color cutout with transparent surroundings. Output must be a PNG cutout with actual alpha=0 pixels outside the subject, fully transparent canvas. Do not paint white, gray, black or checkerboard behind it. Keep the entire outline visible. Natural color, no ground plane or cast shadow. Every tip, leaf, antenna, extremity and protruding part must be well inside the canvas, with broad transparent padding. Zoom out. Do not crop any part of the object.",
+      "question": {
+        "p": 1000,
+        "q": "ما جهاز الطبخ القديم ذو الخزان الدائري الذي يوضحه هذا الظل؟",
+        "a": "بابور كاز",
+        "qid": "silhouette-1000-908",
+        "type": "image",
+        "effect": "silhouette",
+        "alt": [
+          "وابور كاز",
+          "وابور جاز",
+          "موقد كاز",
+          "موقد كيروسين",
+          "بابور",
+          "Kerosene stove",
+          "موقد ضغط",
+          "موقد"
+        ],
+        "topic": "أثاث ومنزل",
+        "difficultyTarget": 0.15,
+        "verified": true,
+        "sourceUrl": "docs/bank/rebuild-2026-09-18/review-silhouette-final.json",
+        "media": {
+          "src": "silhouette-1000-908.webp",
+          "type": "image",
+          "title": "لغز بصري مولّد",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation (built-in)",
+            "createdAt": "2026-09-25",
+            "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-1000-908.json"
+          }
+        }
+      },
+      "requireAlpha": true
+    },
+    "asset": "media/silhouette/silhouette-1000-908.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-1000-908.json",
+    "reviewStatus": "approved",
+    "sha256": "2af4e9bf27bbc070e8d968587a0554a4dcce95fdd27d34b6dc1faf9a2537c3ff"
   }
 ]

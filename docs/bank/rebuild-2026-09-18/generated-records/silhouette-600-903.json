@@ -13,17 +13,20 @@
   "sha256": "f0d32cae423a796846be277fe96c779394c96d9429ba2c6a8ecacc9dee865c57",
   "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
   "review": {
-    "status": "visual-subject-reviewed",
-    "reviewedAt": "2026-09-23",
-    "note": "Generated output visually reviewed: subject matches answer; true alpha measured. Final silhouette/reveal gameplay review still pending.",
-    "answer": "زجاجة عطر",
+    "status": "approved",
+    "reviewedAt": "2026-09-25",
+    "sourceReview": "docs/bank/rebuild-2026-09-18/review-silhouette-final.json",
+    "note": "Decorative round perfume atomizer with top nozzle, bent tube and squeeze bulb. The squeeze assembly differentiates it from a generic bottle in black preview.",
+    "gameplayReview": "approved",
     "alpha": {
-      "pixels": 1228800,
-      "alpha0": 988363,
-      "alpha255": 373,
-      "partialAlpha": 240064,
-      "nearOpaque250to255": 220423,
+      "size": [
+        1280,
+        960
+      ],
+      "bytes": 169996,
+      "sha256": "f0d32cae423a796846be277fe96c779394c96d9429ba2c6a8ecacc9dee865c57",
       "transparentFraction": 0.804332,
+      "nearOpaqueFraction": 0.179381,
       "bboxAlphaOver128": [
         351,
         147,
@@ -31,6 +34,7 @@
         820
       ]
     },
-    "gameplayReview": "pending"
+    "independentVisualReview": "All40 installed assets rechecked on2026-09-25; visible outline and subject accepted.",
+    "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/runtime.json"
   }
 }

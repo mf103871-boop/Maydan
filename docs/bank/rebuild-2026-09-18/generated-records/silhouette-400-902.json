@@ -13,17 +13,20 @@
   "sha256": "45ad90cc21e28343e0d908821dda8c2906e65af0c14980dec8ad67af25a49c38",
   "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
   "review": {
-    "status": "visual-subject-reviewed",
-    "reviewedAt": "2026-09-23",
-    "note": "Generated output visually reviewed: subject matches answer; true alpha measured. Final silhouette/reveal gameplay review still pending.",
-    "answer": "مفتاح ربط",
+    "status": "approved",
+    "reviewedAt": "2026-09-25",
+    "sourceReview": "docs/bank/rebuild-2026-09-18/review-silhouette-final.json",
+    "note": "Double-ended open spanner is complete. This is not an adjustable wrench, so مفتاح إنجليزي should not be the required answer or a precise alias.",
+    "gameplayReview": "approved",
     "alpha": {
-      "pixels": 1228800,
-      "alpha0": 1112606,
-      "alpha255": 767,
-      "partialAlpha": 115427,
-      "nearOpaque250to255": 103273,
+      "size": [
+        1280,
+        960
+      ],
+      "bytes": 68556,
+      "sha256": "45ad90cc21e28343e0d908821dda8c2906e65af0c14980dec8ad67af25a49c38",
       "transparentFraction": 0.905441,
+      "nearOpaqueFraction": 0.084044,
       "bboxAlphaOver128": [
         180,
         236,
@@ -31,6 +34,7 @@
         764
       ]
     },
-    "gameplayReview": "pending"
+    "independentVisualReview": "All40 installed assets rechecked on2026-09-25; visible outline and subject accepted.",
+    "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/runtime.json"
   }
 }

@@ -13,17 +13,20 @@
   "sha256": "bb3df69b002f9dc10892a8b267519dda28e195b9acf9f5186c94719d7bd181f9",
   "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
   "review": {
-    "status": "visual-subject-reviewed",
-    "reviewedAt": "2026-09-23",
-    "note": "Generated output visually reviewed: subject matches answer; true alpha measured. Final silhouette/reveal gameplay review still pending.",
-    "answer": "مثقاب يدوي",
+    "status": "approved",
+    "reviewedAt": "2026-09-25",
+    "sourceReview": "docs/bank/rebuild-2026-09-18/review-silhouette-final.json",
+    "note": "Hand-cranked drill shows a gear wheel, crank handle, rear grip and forward drill bit. Exact manufacturer and powered/electric drill labels are unsupported.",
+    "gameplayReview": "approved",
     "alpha": {
-      "pixels": 1228800,
-      "alpha0": 1048460,
-      "alpha255": 993,
-      "partialAlpha": 179347,
-      "nearOpaque250to255": 156607,
+      "size": [
+        1280,
+        960
+      ],
+      "bytes": 118224,
+      "sha256": "bb3df69b002f9dc10892a8b267519dda28e195b9acf9f5186c94719d7bd181f9",
       "transparentFraction": 0.853239,
+      "nearOpaqueFraction": 0.127447,
       "bboxAlphaOver128": [
         69,
         282,
@@ -31,6 +34,7 @@
         744
       ]
     },
-    "gameplayReview": "pending"
+    "independentVisualReview": "All40 installed assets rechecked on2026-09-25; visible outline and subject accepted.",
+    "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/runtime.json"
   }
 }

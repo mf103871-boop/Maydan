@@ -13,17 +13,20 @@
   "sha256": "f6f761490a784768f524e5b85a803f03d6d5b4ffdd2340855e5d039b47b0a57e",
   "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
   "review": {
-    "status": "visual-subject-reviewed",
-    "reviewedAt": "2026-09-23",
-    "note": "Generated output visually reviewed: subject matches answer; true alpha measured. Final silhouette/reveal gameplay review still pending.",
-    "answer": "كمثرى",
+    "status": "approved",
+    "reviewedAt": "2026-09-25",
+    "sourceReview": "docs/bank/rebuild-2026-09-18/review-silhouette-final.json",
+    "note": "Pear-shaped fruit with short stalk and leaf. Fresh full-size inspection confirms stalk top and fruit base are complete despite narrow 4–5 pixel visible margins.",
+    "gameplayReview": "approved",
     "alpha": {
-      "pixels": 1228800,
-      "alpha0": 724299,
-      "alpha255": 1118,
-      "partialAlpha": 503383,
-      "nearOpaque250to255": 483664,
+      "size": [
+        1280,
+        960
+      ],
+      "bytes": 229504,
+      "sha256": "f6f761490a784768f524e5b85a803f03d6d5b4ffdd2340855e5d039b47b0a57e",
       "transparentFraction": 0.589436,
+      "nearOpaqueFraction": 0.393607,
       "bboxAlphaOver128": [
         297,
         5,
@@ -31,6 +34,7 @@
         955
       ]
     },
-    "gameplayReview": "pending"
+    "independentVisualReview": "All40 installed assets rechecked on2026-09-25; visible outline and subject accepted.",
+    "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/runtime.json"
   }
 }

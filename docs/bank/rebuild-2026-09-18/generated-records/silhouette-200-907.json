@@ -4,33 +4,60 @@
   "pack": "silhouette",
   "file": "media/silhouette/silhouette-200-907.webp",
   "asset": "media/silhouette/silhouette-200-907.webp",
-  "prompt": "Use case: product-mockup.\nAsset type: one standalone professional image for an Arabic family visual guessing game (age 16+).\nSubject: a tenor saxophone in clear side view.\nStyle: realistic high quality photography with correct anatomy and object geometry, clean natural textures.\nComposition: landscape 4:3, the complete subject fills about 75% of the frame; centered with ample margins, immediately recognizable when revealed.  \nBackground: genuinely transparent background with alpha channel; isolated cutout; no shadow backdrop; no checkerboard; color subject will become a silhouette inside the game.\nConstraints: exactly the stated subject; no label, caption, watermark, collage, borders or readable words.  Do not create a black silhouette; render the full natural-color cutout with transparent surroundings. Output must be a PNG cutout with actual alpha=0 pixels outside the subject, fully transparent canvas. Do not paint white, gray, black or checkerboard behind it. Keep the entire outline visible. Natural color, no ground plane or cast shadow.",
+  "prompt": "Use case: precise-object-edit. The input is the edit target. Preserve the same recognizable realistic golden saxophone, its single continuous curved tube, mouthpiece, keys and upward bell, but correct the framing only. Zoom out significantly to show the entire instrument including top of neck and bottom of curved bow with at least 15% fully transparent padding above and below, 20% at left and right. The entire saxophone must be wholly within central 65% of the landscape 4:3 canvas. No clipped part and nothing touching frame edges. Realistic full natural-color instrument, not a black silhouette. Actual transparent PNG alpha=0 surroundings and through all open gaps, no white/black/checkerboard painted backdrop, no cast shadow, no text or watermark. It will be displayed as a black silhouette via game CSS and revealed in color, so preserve a distinct complete outline.",
   "tool": "OpenAI image generation (built-in)",
-  "createdAt": "2026-09-23",
+  "createdAt": "2026-09-25",
   "width": 1280,
   "height": 960,
-  "bytes": 154788,
-  "sha256": "761a2f69e0b8f4b35f6e3f6e36bb25d7a1086ffc2129bb925985d7ca94875759",
+  "bytes": 107472,
+  "sha256": "54211c5ddd7bbe94421ffa587029709796561e791cab4df5473fbca232731c9c",
   "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
   "review": {
-    "status": "visual-subject-reviewed",
-    "reviewedAt": "2026-09-23",
-    "note": "Generated output visually reviewed: subject matches answer; true alpha measured. Final silhouette/reveal gameplay review still pending.",
-    "answer": "ساكسفون",
+    "status": "approved",
+    "reviewedAt": "2026-09-25",
+    "sourceReview": "docs/bank/rebuild-2026-09-18/review-silhouette-final.json",
+    "note": "Corrected saxophone mouthpiece, curved neck, keys, flared bell and lower bow are complete and recognizable. Installed full-size image and measured visible margins resolve previous clipping.",
+    "gameplayReview": "approved",
     "alpha": {
-      "pixels": 1228800,
-      "alpha0": 1019407,
-      "alpha255": 661,
-      "partialAlpha": 208732,
-      "nearOpaque250to255": 168431,
-      "transparentFraction": 0.829596,
+      "size": [
+        1280,
+        960
+      ],
+      "bytes": 107472,
+      "sha256": "54211c5ddd7bbe94421ffa587029709796561e791cab4df5473fbca232731c9c",
+      "transparentFraction": 0.893208,
+      "nearOpaqueFraction": 0.086848,
       "bboxAlphaOver128": [
-        245,
-        4,
-        1035,
-        959
+        345,
+        94,
+        936,
+        860
       ]
     },
-    "gameplayReview": "pending"
+    "replacement": {
+      "id": "silhouette-200-907",
+      "replacedSha256": "761a2f69e0b8f4b35f6e3f6e36bb25d7a1086ffc2129bb925985d7ca94875759",
+      "sourcePngSha256": "85a30fe2d7a11d038fceb322a50a0ffc48871d07ca60df294771b57973e9e6bb",
+      "sourceBasename": "exec-5e894b78-09ba-4c86-9778-9502d401e735.png",
+      "sourceSize": [
+        1448,
+        1086
+      ],
+      "sourceBounds": [
+        390,
+        107,
+        1059,
+        973
+      ],
+      "sourceTransparentFraction": 0.8929952280658914,
+      "install": {
+        "file": "media/silhouette/silhouette-200-907.webp",
+        "bytes": 107472,
+        "width": 1280,
+        "height": 960
+      }
+    },
+    "independentVisualReview": "All40 installed assets rechecked on2026-09-25; visible outline and subject accepted.",
+    "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/runtime.json"
   }
 }
