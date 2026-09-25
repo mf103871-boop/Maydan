@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "status": "partial_bank_with_reviewed_image_packs",
+  "status": "reviewed_image_packs_integrated",
   "updatedAt": "2026-09-25",
   "images": [
     {
@@ -14485,5 +14485,6 @@
       "individualGameplayQuestions": 40,
       "review": "docs/bank/rebuild-2026-09-18/review-spotdiff-final.json"
     }
-  }
+  },
+  "bankContentReviewComplete": true
 }

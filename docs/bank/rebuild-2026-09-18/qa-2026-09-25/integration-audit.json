@@ -42,5 +42,11 @@
       "media/sound/_sources.json"
     ],
     "note": "Added3 new r2MP3s; all original audio files retained. Existing index extended with new attribution rows."
+  },
+  "afterSoundCompletion": {
+    "date": "2026-09-25",
+    "generatedArtSha256": "0a33c900ce73d69c1d56068e7229629fb8b8337557573862e5371dfc7634cc1b",
+    "change": "Global status metadata now records completed bank content; the478 image records and all image files are unchanged.",
+    "soundAudit": "sound-completion-audit.json"
   }
 }

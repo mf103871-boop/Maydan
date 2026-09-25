@@ -1,8 +1,8 @@
 {
   "category": "sound",
   "reviewedAt": "2026-09-25",
-  "status": "three-replacements-await-human-listening",
-  "verifiedQuestionCount": 37,
+  "status": "approved",
+  "verifiedQuestionCount": 40,
   "questionCount": 40,
   "perTier": {
     "200": 8,
@@ -12,13 +12,13 @@
     "1000": 8
   },
   "topicCount": 9,
-  "categorySha256": "1fa0caeef8b414ed6f6b7cd5cf84460b1370e88d9afe6bd051fd1d1c498011c5",
-  "scope": "37 exact clips approved by the owner. Three unclear clips replaced with source-reviewed licensed candidates; the three replacements await fresh listening.",
+  "categorySha256": "67dbfca327701375c017964f12843a6795a266a3ee1a53469a050d100fd1a961",
+  "scope": "40/40 exact final clips explicitly approved by the human reviewer. Remaining negative decisions retained; no approval inferred from decoding.",
   "capabilityBlocker": {
     "attempt": "One existing MP3 was submitted through the available audio output helper. No further unsupported calls were made.",
     "actualResult": "audio content omitted because you do not support audio input",
-    "consequence": "The model still cannot listen. Human results received25Sep approve37 exact hashes;3 unclear clips remain verified:false.",
-    "requiredNextStep": "Prepare licensed replacements for the3 unclear clips and obtain human listening decisions on their exact final hashes."
+    "consequence": "The model cannot listen. Human decisions approve40 exact clips;0 remain unverified.",
+    "requiredNextStep": "None for auditory review."
   },
   "downloadConstraints": {
     "commonsOriginalProbe": "Normal HTTPS download of Doorbell-classic-dingdong.ogg returned HTTP 403 Forbidden. Existing local Commons derivatives reused; no escalation or access-control workaround.",
@@ -27,15 +27,15 @@
     "legacyLocalSourcesReused": 20
   },
   "format": {
-    "activeBytes": 3210830,
-    "wholeMediaDirectoryBytesIncludingPreservedLegacyAndIndex": 7677986,
+    "activeBytes": 3238833,
+    "wholeMediaDirectoryBytesIncludingPreservedLegacyAndIndex": 7727729,
     "maximumClipBytes": 121252,
     "maximumDurationSeconds": 7.5,
     "codec": "MP3",
     "channels": 1,
     "bitRate": 128000,
-    "normalisation": "Original37: loudnorm -18LUFS/-5dBTP. Three replacement candidates: mono with short fades and peak adjustment; sneeze/bowling transient compression. Exact filters recorded.",
-    "selectionMethod": "Original37 retained after explicit human approval. Three replacements selected from documented events using signal-envelope/silence analysis; await human listening.",
+    "normalisation": "Original37: loudnorm. Approved waves/bowling r2: recorded fades/level and bowling compression. Sneeze r3: mono and peak adjustment only; full event retained.",
+    "selectionMethod": "39 exact clips have human approval. New sneeze r3 retains the full3-second source preview and awaits human identity/clarity review.",
     "notListening": "Signal checks are non-silence, decode, peak/clipping, format, size and unique file hashes; none counts as listening."
   },
   "excludedLegacyExamples": [
@@ -610,10 +610,16 @@
         "notDigitallyClipped": true
       },
       "auditoryReview": {
-        "status": "pending",
-        "listened": false,
-        "identityConfirmedByListening": false,
-        "required": "Human must listen to this replacement exact hash; original approval or unclear decision does not apply."
+        "status": "approved",
+        "listened": true,
+        "reviewer": "Project owner using local listening page",
+        "identityConfirmedByListening": true,
+        "clarityConfirmedByListening": true,
+        "sha256": "007214a611fd72d6de1dfa22c5561ec27d5ec91bd44f7c14d53c423e4e7baef2",
+        "listenedAt": "2026-09-25T06:45:04.873Z",
+        "note": "",
+        "evidence": "docs/bank/rebuild-2026-09-18/checkpoint/sound-resume/human-listening-replacements-r2-2026-09-25.json",
+        "scope": "Explicit human decision after playback and answer reveal; difficulty remains an editorial estimate."
       },
       "difficultyReview": "Provisional editorial target; must be checked against exact excerpt during listening.",
       "replacementEvidence": "docs/bank/rebuild-2026-09-18/checkpoint/sound-resume/replacements-2026-09-25/replacement-candidates.json",
@@ -749,49 +755,54 @@
       "answer": "عطاس",
       "tier": 400,
       "topic": "جسم وحركة",
-      "sourceUrl": "https://freesound.org/people/edschaefer/sounds/464232/",
-      "sourceTitle": "Sneezing.wav (مقتطف مقصوص ومعدّل المستوى)",
-      "author": "edschaefer",
+      "sourceUrl": "https://freesound.org/people/sofiuzc/sounds/563313/",
+      "sourceTitle": "sneeze.wav (تسجيل كامل معدّل المستوى)",
+      "author": "sofiuzc",
       "license": "CC0 1.0",
       "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
       "sourcePageReviewed": true,
       "licenseDeclarationReviewed": true,
-      "sourceEvidence": "Author labels it a recording of a sneezing person. Full short recording retained; transient compression and peak normalization improve the available average level without changing speed.",
+      "sourceEvidence": "Creator describes an unexpected natural sneeze while the microphone was on, before the planned recording. The page describes the sneeze only and does not mention speech or music.",
       "legacyQid": "sound-200-038",
       "legacyFile": "sound-200-038.mp3",
-      "inputFileSha256": "b6e08afd4a37153d20cee249b4b9aa21acf4754f05cf8ed619cd0731e500665a",
+      "inputFileSha256": "abc085f6c0e9be5666259029a9097a4b6d7a3b75ff205550972816d56235d35e",
       "sourceAcquisition": {
         "status": "downloaded-authorized-public-audio",
-        "originalUrl": "https://cdn.freesound.org/previews/464/464232_6114721-hq.mp3",
-        "sha256": "b6e08afd4a37153d20cee249b4b9aa21acf4754f05cf8ed619cd0731e500665a",
-        "retrievedAt": "2026-09-25T03:53:11.213Z",
-        "quality": "Public HQ lossy preview; original WAV/FLAC not obtained."
+        "originalUrl": "https://cdn.freesound.org/previews/563/563313_12536394-hq.mp3",
+        "sha256": "abc085f6c0e9be5666259029a9097a4b6d7a3b75ff205550972816d56235d35e",
+        "retrievedAt": "2026-09-25T06:48:17.490Z",
+        "quality": "Public HQ lossy MP3 preview; original WAV not obtained."
       },
       "excerptStartSeconds": 0,
-      "excerptLengthSeconds": 1.25,
-      "sourceFidelity": "Fresh authorized creator preview; lossy preview and processing are disclosed.",
+      "excerptLengthSeconds": 3,
+      "sourceFidelity": "Fresh creator public preview; full event retained, lossy encoding disclosed.",
       "audioSignalCheck": {
         "decode": "passed",
         "codec": "mp3",
         "channels": 1,
         "sampleRate": 44100,
         "bitRate": 128000,
-        "durationSeconds": 1.25,
-        "bytes": 20942,
-        "sha256": "207b9491c6274b563b183906468edaf8cfc5a37ea22e7c6ed0834675bba5eff9",
-        "peakDbFS": -3.774727504624573,
-        "rmsDbFS": -22.238103766874445,
-        "nonFiniteSamples": 0,
+        "durationSeconds": 3,
+        "bytes": 48945,
+        "sha256": "dd16293f4364987340dad4d1f8836b4b844f9169bab6b5111cb7c15f6c2dc17f",
+        "peakDbFS": -1.4098830971451068,
+        "rmsDbFS": -24.64078224447791,
         "notDigitallyClipped": true
       },
       "auditoryReview": {
-        "status": "pending",
-        "listened": false,
-        "identityConfirmedByListening": false,
-        "required": "Human must listen to this replacement exact hash; original approval or unclear decision does not apply."
+        "status": "approved",
+        "listened": true,
+        "reviewer": "Project owner using local listening page",
+        "identityConfirmedByListening": true,
+        "clarityConfirmedByListening": true,
+        "sha256": "dd16293f4364987340dad4d1f8836b4b844f9169bab6b5111cb7c15f6c2dc17f",
+        "listenedAt": "2026-09-25T06:53:13.817Z",
+        "note": "",
+        "evidence": "docs/bank/rebuild-2026-09-18/checkpoint/sound-resume/human-listening-final-r3-2026-09-25.json",
+        "scope": "Explicit human decision after playback and answer reveal; difficulty remains an editorial estimate."
       },
       "difficultyReview": "Provisional editorial target; must be checked against exact excerpt during listening.",
-      "replacementEvidence": "docs/bank/rebuild-2026-09-18/checkpoint/sound-resume/replacements-2026-09-25/replacement-candidates.json",
+      "replacementEvidence": "docs/bank/rebuild-2026-09-18/checkpoint/sound-resume/sneeze-replacement-r3/replacement-candidate.json",
       "previousMedia": {
         "src": "sound-400-905.mp3",
         "type": "audio",
@@ -803,15 +814,20 @@
         "changes": "Excerpt selected, level normalized, downmixed to mono, encoded as 128 kbps MP3; no pitch or speed change."
       },
       "processing": {
+        "fullSourceEventRetained": true,
         "sourceStartSeconds": 0,
-        "sourceDurationSeconds": 1.25,
-        "ffmpegFilter": "atrim=start=0:duration=1.25,asetpts=PTS-STARTPTS,aformat=channel_layouts=mono,acompressor=threshold=0.125:ratio=2:attack=3:release=80:makeup=1,afade=t=in:st=0:d=0.005,afade=t=out:st=1.245:d=0.005,volume=2.71659855dB",
-        "targetDecodedPreEncodePeakDbFS": -3,
-        "speedUnchanged": true,
+        "sourceDurationSeconds": 3,
+        "trimmed": false,
+        "compressed": false,
         "synthetic": false,
         "composite": false,
-        "metadataRemoved": true
-      }
+        "speedUnchanged": true,
+        "ffmpegFilter": "aformat=channel_layouts=mono,volume=-7.08371415dB",
+        "peakNormalizationTargetDbFS": -2,
+        "metadataRemoved": true,
+        "encoder": "ffmpeg version 6.1.1-essentials_build-www.gyan.dev Copyright (c) 2000-2023 the FFmpeg developers"
+      },
+      "previousVersionRecord": "docs/bank/rebuild-2026-09-18/checkpoint/sound-resume/sneeze-replacement-r3/rejected-r2-review.json"
     },
     {
       "qid": "sound-400-906",
@@ -1819,10 +1835,16 @@
         "notDigitallyClipped": true
       },
       "auditoryReview": {
-        "status": "pending",
-        "listened": false,
-        "identityConfirmedByListening": false,
-        "required": "Human must listen to this replacement exact hash; original approval or unclear decision does not apply."
+        "status": "approved",
+        "listened": true,
+        "reviewer": "Project owner using local listening page",
+        "identityConfirmedByListening": true,
+        "clarityConfirmedByListening": true,
+        "sha256": "51a7cd20b447b01b1bbd09160d4f4a169eb1a883b4f2ef5cb15c928d913adfc5",
+        "listenedAt": "2026-09-25T06:45:38.265Z",
+        "note": "",
+        "evidence": "docs/bank/rebuild-2026-09-18/checkpoint/sound-resume/human-listening-replacements-r2-2026-09-25.json",
+        "scope": "Explicit human decision after playback and answer reveal; difficulty remains an editorial estimate."
       },
       "difficultyReview": "Provisional editorial target; must be checked against exact excerpt during listening.",
       "replacementEvidence": "docs/bank/rebuild-2026-09-18/checkpoint/sound-resume/replacements-2026-09-25/replacement-candidates.json",
@@ -2309,5 +2331,9 @@
     "questions": 3,
     "evidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/sound-replacements/results.json",
     "scope": "Real app playback/loading, pause/resume/restart,3-play limit, reveal and sound toggle. No auditory identity approval."
-  }
+  },
+  "humanReviewRounds": [
+    "docs/bank/rebuild-2026-09-18/checkpoint/sound-resume/human-listening-replacements-r2-2026-09-25.json",
+    "docs/bank/rebuild-2026-09-18/checkpoint/sound-resume/human-listening-final-r3-2026-09-25.json"
+  ]
 }

@@ -1,0 +1,102 @@
+{
+  "question": {
+    "p": 400,
+    "q": "ما الفعل البشري المسموع في هذا المقطع؟",
+    "a": "عطاس",
+    "qid": "sound-400-905",
+    "type": "audio",
+    "topic": "جسم وحركة",
+    "alt": [
+      "عطسة",
+      "عطس"
+    ],
+    "verified": false,
+    "difficultyTarget": 0.6,
+    "sourceUrl": "https://freesound.org/people/edschaefer/sounds/464232/",
+    "media": {
+      "src": "sound-400-905-r2.mp3",
+      "type": "audio",
+      "title": "Sneezing.wav (مقتطف مقصوص ومعدّل المستوى)",
+      "sourceUrl": "https://freesound.org/people/edschaefer/sounds/464232/",
+      "author": "edschaefer",
+      "license": "CC0 1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "changes": "Excerpt selected, downmixed to mono, short edge fades, level adjusted and encoded as128kbps MP3; no speed or pitch change. Transient dynamic compression applied."
+    }
+  },
+  "review": {
+    "qid": "sound-400-905",
+    "answer": "عطاس",
+    "tier": 400,
+    "topic": "جسم وحركة",
+    "sourceUrl": "https://freesound.org/people/edschaefer/sounds/464232/",
+    "sourceTitle": "Sneezing.wav (مقتطف مقصوص ومعدّل المستوى)",
+    "author": "edschaefer",
+    "license": "CC0 1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "sourcePageReviewed": true,
+    "licenseDeclarationReviewed": true,
+    "sourceEvidence": "Author labels it a recording of a sneezing person. Full short recording retained; transient compression and peak normalization improve the available average level without changing speed.",
+    "legacyQid": "sound-200-038",
+    "legacyFile": "sound-200-038.mp3",
+    "inputFileSha256": "b6e08afd4a37153d20cee249b4b9aa21acf4754f05cf8ed619cd0731e500665a",
+    "sourceAcquisition": {
+      "status": "downloaded-authorized-public-audio",
+      "originalUrl": "https://cdn.freesound.org/previews/464/464232_6114721-hq.mp3",
+      "sha256": "b6e08afd4a37153d20cee249b4b9aa21acf4754f05cf8ed619cd0731e500665a",
+      "retrievedAt": "2026-09-25T03:53:11.213Z",
+      "quality": "Public HQ lossy preview; original WAV/FLAC not obtained."
+    },
+    "excerptStartSeconds": 0,
+    "excerptLengthSeconds": 1.25,
+    "sourceFidelity": "Fresh authorized creator preview; lossy preview and processing are disclosed.",
+    "audioSignalCheck": {
+      "decode": "passed",
+      "codec": "mp3",
+      "channels": 1,
+      "sampleRate": 44100,
+      "bitRate": 128000,
+      "durationSeconds": 1.25,
+      "bytes": 20942,
+      "sha256": "207b9491c6274b563b183906468edaf8cfc5a37ea22e7c6ed0834675bba5eff9",
+      "peakDbFS": -3.774727504624573,
+      "rmsDbFS": -22.238103766874445,
+      "nonFiniteSamples": 0,
+      "notDigitallyClipped": true
+    },
+    "auditoryReview": {
+      "status": "mismatch",
+      "listened": true,
+      "reviewer": "Project owner using local listening page",
+      "identityConfirmedByListening": false,
+      "clarityConfirmedByListening": false,
+      "sha256": "207b9491c6274b563b183906468edaf8cfc5a37ea22e7c6ed0834675bba5eff9",
+      "listenedAt": "2026-09-25T06:45:26.827Z",
+      "note": "",
+      "evidence": "docs/bank/rebuild-2026-09-18/checkpoint/sound-resume/human-listening-replacements-r2-2026-09-25.json",
+      "scope": "Explicit human decision after playback and answer reveal; difficulty remains an editorial estimate."
+    },
+    "difficultyReview": "Provisional editorial target; must be checked against exact excerpt during listening.",
+    "replacementEvidence": "docs/bank/rebuild-2026-09-18/checkpoint/sound-resume/replacements-2026-09-25/replacement-candidates.json",
+    "previousMedia": {
+      "src": "sound-400-905.mp3",
+      "type": "audio",
+      "title": "A man sneezes two times (مقتطف مقصوص ومطبّع)",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Double_sneeze_(man).ogg",
+      "author": "Nikolay Komarov",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "changes": "Excerpt selected, level normalized, downmixed to mono, encoded as 128 kbps MP3; no pitch or speed change."
+    },
+    "processing": {
+      "sourceStartSeconds": 0,
+      "sourceDurationSeconds": 1.25,
+      "ffmpegFilter": "atrim=start=0:duration=1.25,asetpts=PTS-STARTPTS,aformat=channel_layouts=mono,acompressor=threshold=0.125:ratio=2:attack=3:release=80:makeup=1,afade=t=in:st=0:d=0.005,afade=t=out:st=1.245:d=0.005,volume=2.71659855dB",
+      "targetDecodedPreEncodePeakDbFS": -3,
+      "speedUnchanged": true,
+      "synthetic": false,
+      "composite": false,
+      "metadataRemoved": true
+    }
+  }
+}

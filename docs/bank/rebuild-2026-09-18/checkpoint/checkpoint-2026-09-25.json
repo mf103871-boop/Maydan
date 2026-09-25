@@ -1,6 +1,6 @@
 {
   "date": "2026-09-25",
-  "status": "awaiting_audio_replacements",
+  "status": "content_review_complete",
   "userInstruction": "اكمل",
   "repository": "mf103871-boop/Maydan",
   "branch": "codex/badeeha-curated-bank-2026-09-18",
@@ -96,7 +96,7 @@
     },
     "humanListening": {
       "heard": 40,
-      "currentlyApproved": 37,
+      "currentlyApproved": 40,
       "originalEvidence": "docs/bank/rebuild-2026-09-18/checkpoint/sound-resume/human-listening-original-2026-09-25.json"
     },
     "rendererFix": {
@@ -108,37 +108,17 @@
     }
   },
   "completedContent": {
-    "packs": 77,
-    "questions": 3080,
-    "verifiedQuestionsIncludingPartialPacks": 3117,
+    "packs": 78,
+    "questions": 3120,
+    "verifiedQuestionsIncludingPartialPacks": 3120,
     "note": "Content counts reflect exact40 new IDs, verified flags and zero validator errors. Historical status rows are not blanket runtime approval."
   },
   "activeBankQuestions": 3120,
   "integratedGeneratedArtRecords": 478,
   "validation": "docs/bank/rebuild-2026-09-18/validation-2026-09-25.json",
-  "remaining": [
-    {
-      "id": "sound-400-902",
-      "answer": "أمواج البحر",
-      "category": "sound",
-      "nextAction": "Replace unclear clip with source-reviewed licensed candidate, obtain human listening approval on exact final hash."
-    },
-    {
-      "id": "sound-400-905",
-      "answer": "عطاس",
-      "category": "sound",
-      "nextAction": "Replace unclear clip with source-reviewed licensed candidate, obtain human listening approval on exact final hash."
-    },
-    {
-      "id": "sound-800-908",
-      "answer": "بولينغ",
-      "category": "sound",
-      "nextAction": "Replace unclear clip with source-reviewed licensed candidate, obtain human listening approval on exact final hash."
-    }
-  ],
-  "nextPack": "sound",
+  "remaining": [],
+  "nextPack": null,
   "releaseBlockers": [
-    "3 sound clips await approval of corrected audio.",
     "No merge, deployment, full offline/device release review or production account/payment validation claimed."
   ],
   "preserved": [

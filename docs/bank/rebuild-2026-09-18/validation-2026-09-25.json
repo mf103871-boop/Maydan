@@ -1,18 +1,16 @@
 {
   "date": "2026-09-25",
   "releasable": false,
-  "bankContentReady": false,
-  "verifiedQuestions": 3117,
+  "bankContentReady": true,
+  "verifiedQuestions": 3120,
   "categoryCount": 78,
   "totalQuestions": 3120,
-  "completedContentPacks": 77,
-  "completedContentQuestions": 3080,
+  "completedContentPacks": 78,
+  "completedContentQuestions": 3120,
   "fullBank": {
-    "passed": false,
-    "errorCount": 3,
-    "errorsByPack": {
-      "sound": 3
-    },
+    "passed": true,
+    "errorCount": 0,
+    "errorsByPack": {},
     "warnings": [
       "arabliterature: arabliterature-400-902: إجابته «العروض» مكشوفة في نص arabliterature-1000-902 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
       "arabmusic: arabmusic-200-907: إجابته «الكمان» مكشوفة في نص arabmusic-800-906 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
@@ -122,7 +120,8 @@
       "worldcup: worldcup-400-908: إجابته «إسبانيا» مكشوفة في نص worldcup-400-902 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
       "139 إجابة تتكرر في أكثر من فئة (مقبول، للعلم): «احمد حلمي» في actors،reveal · «النمله» في animals،quran · «الحبر» في animals،arabart · «خلد الماء» في animals،emoji،silhouette · «بيكاتشو» في anime،videogames · «كره القدم» في anime،commonbond،emoji،hints،videogames · «هاكو» في anime،naruto · «حجر الفلاسفه» في anime،cartoon …"
     ],
-    "placeholderCount": 0
+    "placeholderCount": 0,
+    "note": "All78 packs and3120 questions pass without errors; accepted cross-category answer overlaps remain warnings."
   },
   "focused": {
     "flags": {
@@ -886,9 +885,9 @@
       "name": "خمن الصوت",
       "questions": 40,
       "newIdCount": 40,
-      "verified": 37,
-      "errors": 3,
-      "sha256": "1fa0caeef8b414ed6f6b7cd5cf84460b1370e88d9afe6bd051fd1d1c498011c5"
+      "verified": 40,
+      "errors": 0,
+      "sha256": "67dbfca327701375c017964f12843a6795a266a3ee1a53469a050d100fd1a961"
     },
     {
       "id": "spacetoon",
@@ -1028,13 +1027,11 @@
   ],
   "tests": {
     "total": 463,
-    "passed": 462,
-    "failed": 1,
+    "passed": 463,
+    "failed": 0,
     "cancelled": 0,
-    "failures": [
-      "البنك الفعلي يجتاز bank:validate بلا أخطاء"
-    ],
-    "note": "Full suite after all image packs, reveal-button fix and human listening results. Exact failing question IDs are in the test log."
+    "failures": [],
+    "note": "Final full-suite run after all40 human audio approvals and all image integrations;463 passed, zero failures."
   },
   "build": {
     "passed": true,
@@ -1042,7 +1039,6 @@
   },
   "limits": [
     "Difficulty rates are editorial targets, not measured.",
-    "Any sound question remaining unverified requires new human approval after correction.",
     "No complete-bank release, production authentication or payment testing claimed."
   ]
 }

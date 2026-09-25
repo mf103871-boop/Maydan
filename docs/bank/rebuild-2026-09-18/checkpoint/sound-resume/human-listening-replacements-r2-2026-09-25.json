@@ -1,0 +1,38 @@
+{
+  "pack": "sound",
+  "categorySha256": "1fa0caeef8b414ed6f6b7cd5cf84460b1370e88d9afe6bd051fd1d1c498011c5",
+  "reviewMethod": "Human choices in local listening page; playback alone is not approval",
+  "updatedAt": "2026-09-25T06:45:38.266Z",
+  "items": [
+    {
+      "qid": "sound-400-902",
+      "sha256": "007214a611fd72d6de1dfa22c5561ec27d5ec91bd44f7c14d53c423e4e7baef2",
+      "status": "approved",
+      "answer": "أمواج البحر",
+      "note": "",
+      "listenedAt": "2026-09-25T06:45:04.873Z",
+      "duration": 7.5,
+      "playbackSeconds": 7.5
+    },
+    {
+      "qid": "sound-400-905",
+      "sha256": "207b9491c6274b563b183906468edaf8cfc5a37ea22e7c6ed0834675bba5eff9",
+      "status": "mismatch",
+      "answer": "عطاس",
+      "note": "",
+      "listenedAt": "2026-09-25T06:45:26.827Z",
+      "duration": 1.25,
+      "playbackSeconds": 1.25
+    },
+    {
+      "qid": "sound-800-908",
+      "sha256": "51a7cd20b447b01b1bbd09160d4f4a169eb1a883b4f2ef5cb15c928d913adfc5",
+      "status": "approved",
+      "answer": "بولينغ",
+      "note": "",
+      "listenedAt": "2026-09-25T06:45:38.265Z",
+      "duration": 2.62,
+      "playbackSeconds": 2.6200000000000006
+    }
+  ]
+}

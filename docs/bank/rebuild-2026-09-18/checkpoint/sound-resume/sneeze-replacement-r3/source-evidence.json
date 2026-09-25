@@ -1,0 +1,33 @@
+{
+  "retrievedAt": "2026-09-25T06:48:17.490Z",
+  "sourceUrl": "https://freesound.org/people/sofiuzc/sounds/563313/",
+  "sourceHttpStatus": 200,
+  "title": "sneeze.wav",
+  "author": "sofiuzc",
+  "published": "2021-03-13",
+  "sourceOriginal": {
+    "format": "WAV",
+    "durationSeconds": 3,
+    "channels": 2,
+    "sampleRateHz": 44100,
+    "bitDepth": 16
+  },
+  "license": "CC0-1.0",
+  "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "licenseLinksInFetchedPage": [
+    "http://creativecommons.org/publicdomain/zero/1.0/"
+  ],
+  "sourcePageActuallyOpened": true,
+  "licenseDeedActuallyOpened": true,
+  "evidence": "Creator describes an unexpected natural sneeze while the microphone was on, before the planned recording. The page describes the sneeze only and does not mention speech or music.",
+  "evidenceLimits": "This is source-description evidence, not listening. Absence of speech/music and perceived clarity still require the user to listen.",
+  "download": {
+    "url": "https://cdn.freesound.org/previews/563/563313_12536394-hq.mp3",
+    "httpStatus": 200,
+    "contentType": "audio/mpeg",
+    "bytes": 72109,
+    "sha256": "abc085f6c0e9be5666259029a9097a4b6d7a3b75ff205550972816d56235d35e",
+    "file": "input-sofiuzc-563313-hq.mp3",
+    "type": "Public HQ MP3 preview; no original WAV claimed."
+  }
+}

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "status": "awaiting_audio_replacements",
+  "status": "content_review_complete",
   "scope": "all_existing_packs",
   "audience": "Arabic-speaking families and adults aged 16+",
   "tiers": {
@@ -581,6 +581,6 @@
   "releasable": false,
   "latestHandoff": "CONTINUE_FROM_ANOTHER_ACCOUNT.md",
   "activeQuestions": 3120,
-  "verifiedQuestions": 3117,
-  "bankContentReady": false
+  "verifiedQuestions": 3120,
+  "bankContentReady": true
 }

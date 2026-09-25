@@ -1,14 +1,13 @@
 {
   "updatedAt": "2026-09-25",
-  "status": "three-replacements-await-human-listening",
-  "approved": 37,
-  "unclear": [
-    "sound-400-902",
-    "sound-400-905",
-    "sound-800-908"
-  ],
-  "categorySha256": "1fa0caeef8b414ed6f6b7cd5cf84460b1370e88d9afe6bd051fd1d1c498011c5",
+  "status": "approved",
+  "approved": 40,
+  "categorySha256": "67dbfca327701375c017964f12843a6795a266a3ee1a53469a050d100fd1a961",
   "originalReview": "docs/bank/rebuild-2026-09-18/checkpoint/sound-resume/human-listening-original-2026-09-25.json",
-  "replacementCandidates": "replacements-2026-09-25/replacement-candidates.json",
-  "listeningPage": "listen-to-replacements.html"
+  "replacementCandidates": "sneeze-replacement-r3/replacement-candidate.json",
+  "listeningPage": "listen-to-final-sound.html",
+  "remaining": [],
+  "latestHumanReview": "docs/bank/rebuild-2026-09-18/checkpoint/sound-resume/human-listening-final-r3-2026-09-25.json",
+  "completedAt": "2026-09-25",
+  "listeningPageRole": "Historical evidence of the exact final clip reviewed; no listening remains pending."
 }

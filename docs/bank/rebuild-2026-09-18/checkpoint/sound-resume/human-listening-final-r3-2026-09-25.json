@@ -1,0 +1,18 @@
+{
+  "pack": "sound",
+  "categorySha256": "76ae559769740ec4060f1f5e491e582893f360d68e2f62175c8e49e7e4b8b6ee",
+  "reviewMethod": "Human choices in local listening page; playback alone is not approval",
+  "updatedAt": "2026-09-25T06:53:13.817Z",
+  "items": [
+    {
+      "qid": "sound-400-905",
+      "sha256": "dd16293f4364987340dad4d1f8836b4b844f9169bab6b5111cb7c15f6c2dc17f",
+      "status": "approved",
+      "answer": "عطاس",
+      "note": "",
+      "listenedAt": "2026-09-25T06:53:13.817Z",
+      "duration": 3,
+      "playbackSeconds": 3
+    }
+  ]
+}

@@ -5166,5 +5166,21 @@
     "durationSec": 2.62,
     "fetchedAt": "2026-09-25T03:53:12.318Z",
     "sha256": "51a7cd20b447b01b1bbd09160d4f4a169eb1a883b4f2ef5cb15c928d913adfc5"
+  },
+  {
+    "file": "sound-400-905-r3.mp3",
+    "kind": "audio",
+    "provider": "freesound",
+    "title": "sneeze.wav (تسجيل كامل معدّل المستوى)",
+    "sourceUrl": "https://freesound.org/people/sofiuzc/sounds/563313/",
+    "originalUrl": "https://cdn.freesound.org/previews/563/563313_12536394-hq.mp3",
+    "author": "sofiuzc",
+    "license": "CC0 1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "changes": "Complete3-second creator preview retained; downmixed to mono, level adjusted and encoded as128kbps MP3. No trimming, compression, pitch/speed change or composite.",
+    "bytes": 48945,
+    "durationSec": 3,
+    "fetchedAt": "2026-09-25T06:48:17.490Z",
+    "sha256": "dd16293f4364987340dad4d1f8836b4b844f9169bab6b5111cb7c15f6c2dc17f"
   }
 ]

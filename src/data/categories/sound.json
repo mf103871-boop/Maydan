@@ -242,7 +242,7 @@
         "موج",
         "أمواج"
       ],
-      "verified": false,
+      "verified": true,
       "difficultyTarget": 0.6,
       "sourceUrl": "https://freesound.org/people/SamsterBirdies/sounds/578524/",
       "media": {
@@ -317,18 +317,18 @@
         "عطسة",
         "عطس"
       ],
-      "verified": false,
+      "verified": true,
       "difficultyTarget": 0.6,
-      "sourceUrl": "https://freesound.org/people/edschaefer/sounds/464232/",
+      "sourceUrl": "https://freesound.org/people/sofiuzc/sounds/563313/",
       "media": {
-        "src": "sound-400-905-r2.mp3",
+        "src": "sound-400-905-r3.mp3",
         "type": "audio",
-        "title": "Sneezing.wav (مقتطف مقصوص ومعدّل المستوى)",
-        "sourceUrl": "https://freesound.org/people/edschaefer/sounds/464232/",
-        "author": "edschaefer",
+        "title": "sneeze.wav (تسجيل كامل معدّل المستوى)",
+        "sourceUrl": "https://freesound.org/people/sofiuzc/sounds/563313/",
+        "author": "sofiuzc",
         "license": "CC0 1.0",
         "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
-        "changes": "Excerpt selected, downmixed to mono, short edge fades, level adjusted and encoded as128kbps MP3; no speed or pitch change. Transient dynamic compression applied."
+        "changes": "Complete3-second creator preview retained; downmixed to mono, level adjusted and encoded as128kbps MP3. No trimming, compression, pitch/speed change or composite."
       }
     },
     {
@@ -788,7 +788,7 @@
         "بولنج",
         "البولينج"
       ],
-      "verified": false,
+      "verified": true,
       "difficultyTarget": 0.25,
       "sourceUrl": "https://freesound.org/people/Rehanjo/sounds/593593/",
       "media": {

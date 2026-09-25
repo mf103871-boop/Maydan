@@ -1,0 +1,21 @@
+{
+  "reviewedAt": "2026-09-25",
+  "reviewer": "audit_current_repo independent sub-agent",
+  "status": "passed",
+  "activeClips": 40,
+  "humanApprovals": {
+    "original": 37,
+    "r2": 2,
+    "r3": 1
+  },
+  "allActiveClipHashesMatchHumanDecisions": true,
+  "allAuditoryReviewDatesAndEvidenceMatch": true,
+  "finalCategorySha256": "67dbfca327701375c017964f12843a6795a266a3ee1a53469a050d100fd1a961",
+  "sneezeR3Sha256": "dd16293f4364987340dad4d1f8836b4b844f9169bab6b5111cb7c15f6c2dc17f",
+  "r3ApprovalIndependentFromRejectedR2": true,
+  "embeddedListeningAudioMatchesR3": true,
+  "comparedWithCommit": "9ffa0cae5afd9fc414b07c7f97718aa8d8d753c8",
+  "preservedBinaryAssets": 3185,
+  "deletedOrModifiedPriorBinaryAssets": 0,
+  "scope": "Only sound category, sound bank-status row, new audio and continuation/source evidence. No image or game-code changes."
+}
