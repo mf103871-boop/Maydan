@@ -5,158 +5,23 @@
   "qs": [
     {
       "p": 200,
-      "q": "ما أضخم حيوان يعيش على اليابسة؟",
-      "a": "الفيل الأفريقي",
-      "qid": "animals-200-901",
-      "topic": "ثدييات",
-      "verified": true,
-      "alt": [
-        "الفيل",
-        "الفيلة",
-        "الفيل الأفريقي السافاني"
-      ],
-      "difficultyTarget": 0.8,
-      "sourceUrl": "https://animals.sandiegozoo.org/animals/elephant"
-    },
-    {
-      "p": 200,
-      "q": "ما اسم الطائر الذي يسبح ماهرًا ويعيش على جليد القطب الجنوبي؟",
-      "a": "البطريق",
-      "qid": "animals-200-902",
-      "topic": "طيور",
-      "verified": true,
-      "alt": [
-        "البنغوين"
-      ],
-      "difficultyTarget": 0.8,
-      "sourceUrl": "https://legacy.bas.ac.uk/bas_research/science/earth_observation/penguins_from_space.php"
-    },
-    {
-      "p": 200,
-      "q": "ما الكائن البحري الهلامي الشفاف الذي يلسع السابحين؟",
-      "a": "قنديل البحر",
-      "qid": "animals-200-903",
-      "topic": "كائنات بحرية",
-      "verified": true,
-      "alt": [
-        "قناديل البحر",
-        "الميدوزا"
-      ],
-      "difficultyTarget": 0.8,
-      "sourceUrl": "https://ocean.si.edu/ocean-life/invertebrates/how-do-jellyfish-sting"
-    },
-    {
-      "p": 200,
-      "q": "بأي عضو يلتقط الضفدع الحشرات الطائرة بسرعة خاطفة؟",
-      "a": "لسانه",
-      "qid": "animals-200-904",
-      "topic": "زواحف وبرمائيات",
-      "verified": true,
-      "alt": [
-        "اللسان",
-        "بلسانه"
-      ],
-      "difficultyTarget": 0.8,
-      "sourceUrl": "https://me.gatech.edu/eating-blink-eye"
-    },
-    {
-      "p": 200,
-      "q": "ما الحشرة الصغيرة التي تعيش في مستعمرات وتجرّ الطعام إلى بيتها؟",
-      "a": "النملة",
-      "qid": "animals-200-905",
-      "topic": "حشرات وعناكب",
-      "verified": true,
-      "alt": [
-        "النمل"
-      ],
-      "difficultyTarget": 0.8,
-      "sourceUrl": "https://www.si.edu/spotlight/buginfo/carpenter-ants"
-    },
-    {
-      "p": 200,
-      "q": "ما الحيوان الصغير الذي يتكوّر ككرة شائكة عند شعوره بالخطر؟",
-      "a": "القنفذ",
-      "qid": "animals-200-906",
-      "topic": "سلوك وهجرة",
-      "verified": true,
-      "alt": [
-        "قنفذ"
-      ],
-      "difficultyTarget": 0.8,
-      "sourceUrl": "https://animals.sandiegozoo.org/animals/hedgehog"
-    },
-    {
-      "p": 200,
-      "q": "ما اسم صغير الأسد؟",
-      "a": "الشبل",
-      "qid": "animals-200-907",
-      "topic": "أسماء الصغار والجماعات",
-      "verified": true,
-      "alt": [
-        "شبل"
-      ],
-      "difficultyTarget": 0.8,
-      "sourceUrl": "https://www.arabicacademy.gov.eg/ar/search_engine/roots/شبل"
-    },
-    {
-      "p": 200,
-      "q": "ما اسم السائل الأسود الذي يطلقه الأخطبوط عند الخطر؟",
-      "a": "الحبر",
-      "qid": "animals-200-908",
-      "topic": "قدرات وحواس",
-      "verified": true,
-      "alt": [
-        "حبر الأخطبوط"
-      ],
-      "difficultyTarget": 0.8,
-      "sourceUrl": "https://ocean.si.edu/ocean-life/invertebrates/octopus-shoots-ink"
-    },
-    {
-      "p": 400,
-      "q": "ما اسم صغير الفرس؟",
-      "a": "المهر",
-      "qid": "animals-400-901",
-      "topic": "ثدييات",
-      "verified": true,
-      "alt": [
-        "مهر"
-      ],
-      "difficultyTarget": 0.6,
-      "sourceUrl": "https://www.arabicacademy.gov.eg/ar/search_engine/roots/مهر"
-    },
-    {
-      "p": 400,
-      "q": "ما اسم الطائر الوردي الذي يقف طويلًا على رجل واحدة؟",
-      "a": "الفلامنجو",
-      "qid": "animals-400-902",
-      "topic": "طيور",
-      "verified": true,
-      "alt": [
-        "النحام",
-        "طائر النحام"
-      ],
-      "difficultyTarget": 0.6,
-      "sourceUrl": "https://animals.sandiegozoo.org/animals/flamingo"
-    },
-    {
-      "p": 400,
       "q": "ما اسم السمكة التي يحمل ذكرها البيض في جراب على بطنه؟",
       "a": "حصان البحر",
-      "qid": "animals-400-903",
+      "qid": "animals-200-911",
       "topic": "كائنات بحرية",
       "verified": true,
       "alt": [
         "فرس البحر",
         "حُصين البحر"
       ],
-      "difficultyTarget": 0.6,
+      "difficultyTarget": 0.8,
       "sourceUrl": "https://oceanservice.noaa.gov/facts/seahorse.html"
     },
     {
-      "p": 400,
+      "p": 200,
       "q": "ما اسم الطور المائي ذي الذيل في دورة حياة الضفدع المعتادة؟",
       "a": "الشرغوف",
-      "qid": "animals-400-904",
+      "qid": "animals-200-912",
       "topic": "زواحف وبرمائيات",
       "verified": true,
       "alt": [
@@ -164,14 +29,14 @@
         "ابو ذنيبة",
         "الشراغيف"
       ],
-      "difficultyTarget": 0.6,
+      "difficultyTarget": 0.8,
       "sourceUrl": "https://www.nhm.ac.uk/discover/frogspawn-tadpoles-and-froglets.html"
     },
     {
-      "p": 400,
+      "p": 200,
       "q": "ما الحشرة المعروفة بالومضات الضوئية التي تصدرها من مؤخرة بطنها ليلًا؟",
       "a": "اليراعة",
-      "qid": "animals-400-905",
+      "qid": "animals-200-913",
       "topic": "حشرات وعناكب",
       "verified": true,
       "alt": [
@@ -180,153 +45,55 @@
         "اليراع",
         "الخنفساء المضيئة"
       ],
-      "difficultyTarget": 0.6,
+      "difficultyTarget": 0.8,
       "sourceUrl": "https://ssec.si.edu/stemvisions-blog/love-air-cicadas"
     },
     {
-      "p": 400,
-      "q": "ما السمكة المشهورة بالعودة من البحر إلى نهر مولدها لوضع البيض؟",
-      "a": "السلمون",
-      "qid": "animals-400-906",
-      "topic": "سلوك وهجرة",
-      "verified": true,
-      "alt": [
-        "سمك السلمون",
-        "سلمون"
-      ],
-      "difficultyTarget": 0.6,
-      "sourceUrl": "https://www.fisheries.noaa.gov/national/outreach-and-education/fun-facts-about-amazing-atlantic-salmon"
-    },
-    {
-      "p": 400,
-      "q": "ما اسم صغير الحمار؟",
-      "a": "الجحش",
-      "qid": "animals-400-907",
-      "topic": "أسماء الصغار والجماعات",
-      "verified": true,
-      "alt": [
-        "جحش"
-      ],
-      "difficultyTarget": 0.6,
-      "sourceUrl": "https://www.arabicacademy.gov.eg/ar/search_engine/roots/جحش"
-    },
-    {
-      "p": 400,
+      "p": 200,
       "q": "ما الحيوان الأفريقي الذي تشبه أصواته الضحك؟",
       "a": "الضبع المرقط",
-      "qid": "animals-400-908",
+      "qid": "animals-200-914",
       "topic": "ثدييات",
       "verified": true,
       "alt": [
         "الضبع",
         "الضبع المرقّط"
       ],
-      "difficultyTarget": 0.6,
+      "difficultyTarget": 0.8,
       "sourceUrl": "https://animals.sandiegozoo.org/animals/spotted-hyena"
     },
     {
-      "p": 600,
+      "p": 200,
       "q": "ما الثديي الأسترالي الذي يضع بيضًا وله منقار يشبه منقار البط؟",
       "a": "خلد الماء",
-      "qid": "animals-600-901",
+      "qid": "animals-200-915",
       "topic": "ثدييات",
       "verified": true,
       "alt": [
         "البلاتيبوس"
       ],
-      "difficultyTarget": 0.4,
+      "difficultyTarget": 0.8,
       "sourceUrl": "https://animals.sandiegozoo.org/animals/platypus"
     },
     {
-      "p": 600,
-      "q": "ما اسم الطائر الأزرق الصغير الذي يغطس في الأنهار لصيد السمك؟",
-      "a": "الرفراف",
-      "qid": "animals-600-902",
-      "topic": "طيور",
-      "verified": true,
-      "alt": [
-        "صياد السمك",
-        "الرفراف الشائع"
-      ],
-      "difficultyTarget": 0.4,
-      "sourceUrl": "https://www.rspb.org.uk/birds-and-wildlife/kingfisher"
-    },
-    {
-      "p": 600,
+      "p": 200,
       "q": "مِمَّ يتكوّن هيكل أسماك القرش بدلًا من العظام؟",
       "a": "الغضروف",
-      "qid": "animals-600-903",
+      "qid": "animals-200-916",
       "topic": "كائنات بحرية",
       "verified": true,
       "alt": [
         "الغضاريف",
         "نسيج غضروفي"
       ],
-      "difficultyTarget": 0.4,
+      "difficultyTarget": 0.8,
       "sourceUrl": "https://www.fisheries.noaa.gov/feature-story/12-shark-facts-may-surprise-you"
     },
     {
-      "p": 600,
-      "q": "ما مجموعة الضفادع الاستوائية الزاهية التي تشتهر بإفرازات جلد سامة وارتبط اسمها بسهام الصيد؟",
-      "a": "ضفدع السهم السام",
-      "qid": "animals-600-904",
-      "topic": "زواحف وبرمائيات",
-      "verified": true,
-      "alt": [
-        "ضفدع سهم السم",
-        "ضفادع السهام السامة"
-      ],
-      "difficultyTarget": 0.4,
-      "sourceUrl": "https://nationalzoo.si.edu/animals/poison-frogs"
-    },
-    {
-      "p": 600,
-      "q": "ما المادة السكرية الصلبة التي تدخل مع البروتينات في بناء الهيكل الخارجي للحشرات؟",
-      "a": "الكيتين",
-      "qid": "animals-600-905",
-      "topic": "حشرات وعناكب",
-      "verified": true,
-      "alt": [
-        "الكايتين",
-        "الشيتين"
-      ],
-      "difficultyTarget": 0.4,
-      "sourceUrl": "https://genent.cals.ncsu.edu/exo-ii/"
-    },
-    {
-      "p": 600,
-      "q": "ما الفراشة التي تقطع آلاف الكيلومترات إلى غابات المكسيك في كل خريف؟",
-      "a": "فراشة الملك",
-      "qid": "animals-600-906",
-      "topic": "سلوك وهجرة",
-      "verified": true,
-      "alt": [
-        "فراشة المونارك",
-        "الفراشة الملكية",
-        "المونارك"
-      ],
-      "difficultyTarget": 0.4,
-      "sourceUrl": "https://www.fs.usda.gov/wildflowers/pollinators/Monarch_Butterfly/documents/Monarch-Monitoring_en.pdf"
-    },
-    {
-      "p": 600,
-      "q": "ما اسم ولد الناقة منذ ولادته حتى فطامه؟",
-      "a": "الحوار",
-      "qid": "animals-600-907",
-      "topic": "أسماء الصغار والجماعات",
-      "verified": true,
-      "alt": [
-        "الحُوار",
-        "حوار"
-      ],
-      "difficultyTarget": 0.4,
-      "sourceUrl": "https://www.arabicacademy.gov.eg/ar/search_engine/roots/حور"
-    },
-    {
-      "p": 600,
+      "p": 200,
       "q": "ما السمكة التي تصعق فرائسها بشحنة كهربائية في أنهار الأمازون؟",
       "a": "الأنقليس الكهربائي",
-      "qid": "animals-600-908",
+      "qid": "animals-200-917",
       "topic": "قدرات وحواس",
       "verified": true,
       "alt": [
@@ -334,102 +101,14 @@
         "الحنكليس الكهربائي",
         "سمكة الرعاش"
       ],
-      "difficultyTarget": 0.4,
+      "difficultyTarget": 0.8,
       "sourceUrl": "https://nationalzoo.si.edu/animals/electric-eel"
     },
     {
-      "p": 800,
-      "q": "ما الحيوان الأفريقي الضخم الذي يفرز سائلًا أحمر يقي جلده من الشمس؟",
-      "a": "فرس النهر",
-      "qid": "animals-800-901",
-      "topic": "ثدييات",
-      "verified": true,
-      "alt": [
-        "الهيبو",
-        "سيد قشطة"
-      ],
-      "difficultyTarget": 0.25,
-      "sourceUrl": "https://animals.sandiegozoo.org/animals/hippo"
-    },
-    {
-      "p": 800,
-      "q": "ما اسم الطائر الجارح الضخم الذي يعيش في جبال الأنديز؟",
-      "a": "الكندور",
-      "qid": "animals-800-902",
-      "topic": "طيور",
-      "verified": true,
-      "alt": [
-        "كندور الأنديز",
-        "الكوندور"
-      ],
-      "difficultyTarget": 0.25,
-      "sourceUrl": "https://animals.sandiegozoo.org/animals/andean-condor"
-    },
-    {
-      "p": 800,
-      "q": "ما اسم السمكة التي تلتصق بجسم القرش بقرص لاصق فوق رأسها؟",
-      "a": "سمكة الريمورا",
-      "qid": "animals-800-903",
-      "topic": "كائنات بحرية",
-      "verified": true,
-      "alt": [
-        "الريمورا",
-        "السمكة اللاصقة"
-      ],
-      "difficultyTarget": 0.25,
-      "sourceUrl": "https://www.floridamuseum.ufl.edu/discover-fish/species-profiles/sharksucker/"
-    },
-    {
-      "p": 800,
-      "q": "ما البرمائي المكسيكي الذي يحتفظ عادة بخياشيمه الخارجية وصفاته اليرقية حتى عندما يبلغ؟",
-      "a": "الأكسولوتل",
-      "qid": "animals-800-904",
-      "topic": "زواحف وبرمائيات",
-      "verified": true,
-      "alt": [
-        "أكسولوتل",
-        "اكسولوتل",
-        "الأخولوتل",
-        "عفريت الماء"
-      ],
-      "difficultyTarget": 0.25,
-      "sourceUrl": "https://www.nhm.ac.uk/discover/axolotls-amphibians-that-never-grow-up.html"
-    },
-    {
-      "p": 800,
-      "q": "ما اسم الأعضاء التي يخرج منها خيط العنكبوت من مؤخرة بطنه؟",
-      "a": "المغازل",
-      "qid": "animals-800-905",
-      "topic": "حشرات وعناكب",
-      "verified": true,
-      "alt": [
-        "المغزل",
-        "المغازل الحريرية",
-        "أعضاء الغزل"
-      ],
-      "difficultyTarget": 0.25,
-      "sourceUrl": "https://australian.museum/learn/animals/spiders/spider-facts/"
-    },
-    {
-      "p": 800,
-      "q": "ما الحيوان الذي يزحف بالملايين عبر طرقات جزيرة كريسماس متجهًا نحو البحر؟",
-      "a": "السرطان الأحمر",
-      "qid": "animals-800-906",
-      "topic": "سلوك وهجرة",
-      "verified": true,
-      "alt": [
-        "السلطعون الأحمر",
-        "سرطان جزيرة كريسماس",
-        "الكابوريا الحمراء"
-      ],
-      "difficultyTarget": 0.25,
-      "sourceUrl": "https://parksaustralia.gov.au/news/millions-of-crabs-march-on-christmas-island/"
-    },
-    {
-      "p": 800,
+      "p": 200,
       "q": "الناب الحلزوني الطويل للحوت وحيد القرن هو في الأصل أي جزء من جسمه؟",
       "a": "سن",
-      "qid": "animals-800-907",
+      "qid": "animals-200-918",
       "topic": "تشريح وتكيف",
       "verified": true,
       "alt": [
@@ -438,14 +117,101 @@
         "ناب سني",
         "أحد الأسنان"
       ],
-      "difficultyTarget": 0.25,
+      "difficultyTarget": 0.8,
       "sourceUrl": "https://naturalhistory.si.edu/exhibits/narwhal-revealing-arctic-legend"
     },
     {
-      "p": 800,
+      "p": 400,
+      "q": "ما اسم الطائر الأزرق الصغير الذي يغطس في الأنهار لصيد السمك؟",
+      "a": "الرفراف",
+      "qid": "animals-400-911",
+      "topic": "طيور",
+      "verified": true,
+      "alt": [
+        "صياد السمك",
+        "الرفراف الشائع"
+      ],
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://www.rspb.org.uk/birds-and-wildlife/kingfisher"
+    },
+    {
+      "p": 400,
+      "q": "ما المادة السكرية الصلبة التي تدخل مع البروتينات في بناء الهيكل الخارجي للحشرات؟",
+      "a": "الكيتين",
+      "qid": "animals-400-912",
+      "topic": "حشرات وعناكب",
+      "verified": true,
+      "alt": [
+        "الكايتين",
+        "الشيتين"
+      ],
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://genent.cals.ncsu.edu/exo-ii/"
+    },
+    {
+      "p": 400,
+      "q": "ما الفراشة التي تقطع آلاف الكيلومترات إلى غابات المكسيك في كل خريف؟",
+      "a": "فراشة الملك",
+      "qid": "animals-400-913",
+      "topic": "سلوك وهجرة",
+      "verified": true,
+      "alt": [
+        "فراشة المونارك",
+        "الفراشة الملكية",
+        "المونارك"
+      ],
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://www.fs.usda.gov/wildflowers/pollinators/Monarch_Butterfly/documents/Monarch-Monitoring_en.pdf"
+    },
+    {
+      "p": 400,
+      "q": "ما اسم ولد الناقة منذ ولادته حتى فطامه؟",
+      "a": "الحوار",
+      "qid": "animals-400-914",
+      "topic": "أسماء الصغار والجماعات",
+      "verified": true,
+      "alt": [
+        "الحُوار",
+        "حوار"
+      ],
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://www.arabicacademy.gov.eg/ar/search_engine/roots/حور"
+    },
+    {
+      "p": 400,
+      "q": "ما الحيوان الأفريقي الضخم الذي يفرز سائلًا أحمر يقي جلده من الشمس؟",
+      "a": "فرس النهر",
+      "qid": "animals-400-915",
+      "topic": "ثدييات",
+      "verified": true,
+      "alt": [
+        "الهيبو",
+        "سيد قشطة"
+      ],
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://animals.sandiegozoo.org/animals/hippo"
+    },
+    {
+      "p": 400,
+      "q": "ما البرمائي المكسيكي الذي يحتفظ عادة بخياشيمه الخارجية وصفاته اليرقية حتى عندما يبلغ؟",
+      "a": "الأكسولوتل",
+      "qid": "animals-400-916",
+      "topic": "زواحف وبرمائيات",
+      "verified": true,
+      "alt": [
+        "أكسولوتل",
+        "اكسولوتل",
+        "الأخولوتل",
+        "عفريت الماء"
+      ],
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://www.nhm.ac.uk/discover/axolotls-amphibians-that-never-grow-up.html"
+    },
+    {
+      "p": 400,
       "q": "ما اسم رقصة النحل التي تدل رفيقاتها على مكان الطعام؟",
       "a": "الرقصة الاهتزازية",
-      "qid": "animals-800-908",
+      "qid": "animals-400-917",
       "topic": "قدرات وحواس",
       "verified": true,
       "alt": [
@@ -453,27 +219,96 @@
         "رقصة الهزّ",
         "الرقصة الهزازة"
       ],
-      "difficultyTarget": 0.25,
+      "difficultyTarget": 0.6,
       "sourceUrl": "https://www.sussex.ac.uk/lasi/sussexplan/dances"
     },
     {
-      "p": 1000,
+      "q": "ما الفلز الذي يدخل في ناقل الأكسجين ويمنح دم الأخطبوط لونه الأزرق؟",
+      "a": "النحاس",
+      "topic": "تشريح وتكيف",
+      "verified": true,
+      "sourceUrl": "https://ocean.si.edu/ocean-life/invertebrates/octopuses-squids-and-relatives",
+      "verifiedAt": "2026-09-25",
+      "p": 400,
+      "qid": "animals-400-918",
+      "difficultyTarget": 0.6
+    },
+    {
+      "p": 600,
+      "q": "ما اسم الطائر الجارح الضخم الذي يعيش في جبال الأنديز؟",
+      "a": "الكندور",
+      "qid": "animals-600-911",
+      "topic": "طيور",
+      "verified": true,
+      "alt": [
+        "كندور الأنديز",
+        "الكوندور"
+      ],
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://animals.sandiegozoo.org/animals/andean-condor"
+    },
+    {
+      "p": 600,
+      "q": "ما اسم السمكة التي تلتصق بجسم القرش بقرص لاصق فوق رأسها؟",
+      "a": "سمكة الريمورا",
+      "qid": "animals-600-912",
+      "topic": "كائنات بحرية",
+      "verified": true,
+      "alt": [
+        "الريمورا",
+        "السمكة اللاصقة"
+      ],
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://www.floridamuseum.ufl.edu/discover-fish/species-profiles/sharksucker/"
+    },
+    {
+      "p": 600,
+      "q": "ما اسم الأعضاء التي يخرج منها خيط العنكبوت من مؤخرة بطنه؟",
+      "a": "المغازل",
+      "qid": "animals-600-913",
+      "topic": "حشرات وعناكب",
+      "verified": true,
+      "alt": [
+        "المغزل",
+        "المغازل الحريرية",
+        "أعضاء الغزل"
+      ],
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://australian.museum/learn/animals/spiders/spider-facts/"
+    },
+    {
+      "p": 600,
+      "q": "ما الحيوان الذي يزحف بالملايين عبر طرقات جزيرة كريسماس متجهًا نحو البحر؟",
+      "a": "السرطان الأحمر",
+      "qid": "animals-600-914",
+      "topic": "سلوك وهجرة",
+      "verified": true,
+      "alt": [
+        "السلطعون الأحمر",
+        "سرطان جزيرة كريسماس",
+        "الكابوريا الحمراء"
+      ],
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://parksaustralia.gov.au/news/millions-of-crabs-march-on-christmas-island/"
+    },
+    {
+      "p": 600,
       "q": "ما اسم حيوان مدغشقر الليلي الذي يستخرج اليرقات بإصبعه الأوسط الطويل؟",
       "a": "الآي آي",
-      "qid": "animals-1000-901",
+      "qid": "animals-600-915",
       "topic": "ثدييات",
       "verified": true,
       "alt": [
         "آي آي"
       ],
-      "difficultyTarget": 0.15,
+      "difficultyTarget": 0.4,
       "sourceUrl": "https://lemur.duke.edu/discover/meet-the-lemurs/aye-aye/"
     },
     {
-      "p": 1000,
+      "p": 600,
       "q": "ما الطائر الأسترالي المشهور بتقليد أصوات طيور أخرى وأحيانًا أصوات الآلات؟",
       "a": "طائر الليرة",
-      "qid": "animals-1000-902",
+      "qid": "animals-600-916",
       "topic": "طيور",
       "verified": true,
       "alt": [
@@ -482,27 +317,40 @@
         "القيثارة",
         "لايربيرد"
       ],
-      "difficultyTarget": 0.15,
+      "difficultyTarget": 0.4,
       "sourceUrl": "https://australian.museum/learn/animals/birds/superb-lyrebird/"
     },
     {
-      "p": 1000,
+      "p": 600,
       "q": "ما السمكة التي ظُن انقراضها ثم عُثر على عينة حية منها قرب جنوب أفريقيا عام 1938؟",
       "a": "السيلاكانث",
-      "qid": "animals-1000-903",
+      "qid": "animals-600-917",
       "topic": "كائنات بحرية",
       "verified": true,
       "alt": [
         "الكولاكانث"
       ],
-      "difficultyTarget": 0.15,
+      "difficultyTarget": 0.4,
       "sourceUrl": "https://www.nhm.ac.uk/discover/coelacanths-the-fish-that-outdid-the-loch-ness-monster.html"
     },
     {
-      "p": 1000,
+      "p": 600,
+      "q": "ما الجرابي الأسترالي الذي يحمل بصمات أصابع شديدة الشبه ببصمات الإنسان؟",
+      "a": "الكوالا",
+      "qid": "animals-600-918",
+      "topic": "تشريح وتكيف",
+      "verified": true,
+      "alt": [
+        "كوالا"
+      ],
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://digital.library.adelaide.edu.au/items/ad4f9181-6877-4d5b-bcf9-55a0446bd65b/full"
+    },
+    {
+      "p": 800,
       "q": "ما البرمائي الشاحب الذي يعيش في كهوف أوروبا وتغطي عينيه الضامرتين طبقة من الجلد؟",
       "a": "الأولم",
-      "qid": "animals-1000-904",
+      "qid": "animals-800-911",
       "topic": "زواحف وبرمائيات",
       "verified": true,
       "alt": [
@@ -510,14 +358,120 @@
         "أولم",
         "تنين الكهوف"
       ],
-      "difficultyTarget": 0.15,
+      "difficultyTarget": 0.25,
       "sourceUrl": "https://www.postojnska-jama.eu/en/postojna-cave/10-years-of-the-world-famous-baby-dragons-from-postojna-cave"
+    },
+    {
+      "p": 800,
+      "q": "ما الطائر الأسترالي الذي يزيّن الذكر فيه تعريشة الغزل بأشياء زرقاء مثل الريش وأغطية الزجاجات؟",
+      "a": "طائر التعريشة الحريري",
+      "qid": "animals-800-912",
+      "topic": "سلوك وهجرة",
+      "verified": true,
+      "alt": [
+        "طائر التعريشة",
+        "طائر العريشة",
+        "طائر التعريشة الساتاني",
+        "طائر العريشة الحريري"
+      ],
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://australian.museum/learn/animals/birds/satin-bowerbird/"
+    },
+    {
+      "p": 800,
+      "q": "ما اسم العضو في سقف فم الأفعى الذي تحلل به الروائح؟",
+      "a": "عضو جاكبسون",
+      "qid": "animals-800-913",
+      "topic": "قدرات وحواس",
+      "verified": true,
+      "alt": [
+        "عضو جاكوبسون",
+        "العضو الميكعي الأنفي",
+        "عضو ياكوبسون"
+      ],
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://museum-publications.australian.museum/media/dd/Uploads/Documents/38092/ams370_vXIX_05_lowres.19e9251.pdf"
+    },
+    {
+      "q": "ما الزاحف النيوزيلندي الذي تظهر عند صغاره عين ثالثة أعلى الرأس؟",
+      "a": "التواتارا",
+      "topic": "زواحف وبرمائيات",
+      "verified": true,
+      "sourceUrl": "https://animals.sandiegozoo.org/animals/tuatara",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "تواتارا",
+        "Tuatara"
+      ],
+      "p": 800,
+      "qid": "animals-800-914",
+      "difficultyTarget": 0.25
+    },
+    {
+      "q": "ما الرخوي الذي يضبط طَفوه بتغيير السائل والغاز في حجرات صدفته الحلزونية؟",
+      "a": "النوتيلوس",
+      "topic": "كائنات بحرية",
+      "verified": true,
+      "sourceUrl": "https://ocean.si.edu/ocean-life/invertebrates/octopuses-squids-and-relatives",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "نوتيلوس",
+        "Nautilus"
+      ],
+      "p": 800,
+      "qid": "animals-800-915",
+      "difficultyTarget": 0.25
+    },
+    {
+      "q": "ما حيوان غابات الكونغو الذي يحمل أرجلًا مخططة ويعد أقرب أقارب الزرافة الأحياء؟",
+      "a": "الأوكابي",
+      "topic": "ثدييات",
+      "verified": true,
+      "sourceUrl": "https://animals.sandiegozoo.org/animals/okapi",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "أوكابي",
+        "Okapi"
+      ],
+      "p": 800,
+      "qid": "animals-800-916",
+      "difficultyTarget": 0.25
+    },
+    {
+      "q": "ما الجارح الأفريقي طويل الساقين الذي يقتل الأفاعي بالدوس عليها؟",
+      "a": "طائر الكاتب",
+      "topic": "طيور",
+      "verified": true,
+      "sourceUrl": "https://animals.sandiegozoo.org/animals/secretary-bird",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "الطائر الكاتب",
+        "Secretary bird"
+      ],
+      "p": 800,
+      "qid": "animals-800-917",
+      "difficultyTarget": 0.25
+    },
+    {
+      "q": "ما القارض شبه الخالي من الشعر الذي يعيش في مستعمرات تقودها ملكة بشرق أفريقيا؟",
+      "a": "فأر الخلد العاري",
+      "topic": "سلوك وهجرة",
+      "verified": true,
+      "sourceUrl": "https://animals.sandiegozoo.org/animals/naked-mole-rat",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "جرذ الخلد العاري",
+        "Naked mole-rat"
+      ],
+      "p": 800,
+      "qid": "animals-800-918",
+      "difficultyTarget": 0.25
     },
     {
       "p": 1000,
       "q": "ما الاسم العلمي لسائل الدوران الذي يغمر الأعضاء مباشرة في أجسام الحشرات؟",
       "a": "الهيموليمف",
-      "qid": "animals-1000-905",
+      "qid": "animals-1000-911",
       "topic": "حشرات وعناكب",
       "verified": true,
       "alt": [
@@ -528,48 +482,107 @@
       "sourceUrl": "https://genent.cals.ncsu.edu/bug-bytes/circulatory-system/"
     },
     {
-      "p": 1000,
-      "q": "ما الطائر الأسترالي الذي يزيّن الذكر فيه تعريشة الغزل بأشياء زرقاء مثل الريش وأغطية الزجاجات؟",
-      "a": "طائر التعريشة الحريري",
-      "qid": "animals-1000-906",
-      "topic": "سلوك وهجرة",
+      "q": "ما الثديي الآسيوي ذو الذيل القابض الذي تشبه رائحته الفشار؟",
+      "a": "البنتورونغ",
+      "topic": "ثدييات",
       "verified": true,
+      "sourceUrl": "https://animals.sandiegozoo.org/animals/binturong",
+      "verifiedAt": "2026-09-25",
       "alt": [
-        "طائر التعريشة",
-        "طائر العريشة",
-        "طائر التعريشة الساتاني",
-        "طائر العريشة الحريري"
+        "بنتورونغ",
+        "Binturong"
       ],
-      "difficultyTarget": 0.15,
-      "sourceUrl": "https://australian.museum/learn/animals/birds/satin-bowerbird/"
+      "p": 1000,
+      "qid": "animals-1000-912",
+      "difficultyTarget": 0.15
     },
     {
+      "q": "ما العقاب الأمريكي الضخم الذي يصطاد القرود والكسلان من أشجار الغابات المطيرة؟",
+      "a": "العقاب الهاربي",
+      "topic": "طيور",
+      "verified": true,
+      "sourceUrl": "https://animals.sandiegozoo.org/animals/harpy-eagle",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "هاربي",
+        "Harpy eagle"
+      ],
       "p": 1000,
-      "q": "ما الجرابي الأسترالي الذي يحمل بصمات أصابع شديدة الشبه ببصمات الإنسان؟",
-      "a": "الكوالا",
-      "qid": "animals-1000-907",
+      "qid": "animals-1000-913",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "ما اسم البروتين الذي ينقل الأكسجين في دم الأخطبوط بدل الهيموغلوبين؟",
+      "a": "الهيموسيانين",
       "topic": "تشريح وتكيف",
       "verified": true,
+      "sourceUrl": "https://ocean.si.edu/ocean-life/invertebrates/octopuses-squids-and-relatives",
+      "verifiedAt": "2026-09-25",
       "alt": [
-        "كوالا"
+        "هيموسيانين",
+        "Hemocyanin"
       ],
-      "difficultyTarget": 0.15,
-      "sourceUrl": "https://digital.library.adelaide.edu.au/items/ad4f9181-6877-4d5b-bcf9-55a0446bd65b/full"
+      "p": 1000,
+      "qid": "animals-1000-914",
+      "difficultyTarget": 0.15
     },
     {
-      "p": 1000,
-      "q": "ما اسم العضو في سقف فم الأفعى الذي تحلل به الروائح؟",
-      "a": "عضو جاكبسون",
-      "qid": "animals-1000-908",
+      "q": "ما اسم الخلايا المملوءة بالأصباغ التي توسعها عضلات الحبار لتغيير لونه؟",
+      "a": "الكروماتوفورات",
       "topic": "قدرات وحواس",
       "verified": true,
+      "sourceUrl": "https://ocean.si.edu/ocean-life/invertebrates/octopuses-squids-and-relatives",
+      "verifiedAt": "2026-09-25",
       "alt": [
-        "عضو جاكوبسون",
-        "العضو الميكعي الأنفي",
-        "عضو ياكوبسون"
+        "الخلايا الصبغية",
+        "Chromatophores"
       ],
-      "difficultyTarget": 0.15,
-      "sourceUrl": "https://museum-publications.australian.museum/media/dd/Uploads/Documents/38092/ams370_vXIX_05_lowres.19e9251.pdf"
+      "p": 1000,
+      "qid": "animals-1000-915",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "ما الاسم الإنجليزي لصغير الإيكيدنا بعد فقسه من البيضة؟",
+      "a": "باغل",
+      "topic": "أسماء الصغار والجماعات",
+      "verified": true,
+      "sourceUrl": "https://animals.sandiegozoo.org/animals/echidna",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Puggle"
+      ],
+      "p": 1000,
+      "qid": "animals-1000-916",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "ما الثديي المدغشقري الشبيه بالقنفذ الذي تتواصل بعض أنواعه بإصدار صوت من أشواكها؟",
+      "a": "التنريك",
+      "topic": "ثدييات",
+      "verified": true,
+      "sourceUrl": "https://animals.sandiegozoo.org/animals/tenrec",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "تنريك",
+        "Tenrec"
+      ],
+      "p": 1000,
+      "qid": "animals-1000-917",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "ما اسم فتات المواد العضوية الهابط في الأعماق الذي يتغذى عليه الحبار مصاص الدماء؟",
+      "a": "الثلج البحري",
+      "topic": "سلوك وهجرة",
+      "verified": true,
+      "sourceUrl": "https://ocean.si.edu/ocean-life/invertebrates/octopuses-squids-and-relatives",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Marine snow"
+      ],
+      "p": 1000,
+      "qid": "animals-1000-918",
+      "difficultyTarget": 0.15
     }
   ]
 }

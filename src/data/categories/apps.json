@@ -5,175 +5,12 @@
   "qs": [
     {
       "p": 200,
-      "q": "ما تطبيق الدردشة من ميتا الذي يحمل شعار سماعة هاتف داخل فقاعة خضراء؟",
-      "a": "واتساب",
-      "qid": "apps-200-901",
-      "topic": "المراسلة",
-      "verified": true,
-      "difficultyTarget": 0.8,
-      "source": "https://www.whatsapp.com/messaging?lang=en",
-      "verifiedAt": "2026-09-18",
-      "alt": [
-        "WhatsApp",
-        "واتس آب"
-      ]
-    },
-    {
-      "p": 200,
-      "q": "في أي منصة من ميتا توجد الصور والستوري ومقاطع ريلز؟",
-      "a": "إنستغرام",
-      "qid": "apps-200-902",
-      "topic": "الصور",
-      "verified": true,
-      "difficultyTarget": 0.8,
-      "source": "https://about.fb.com/news/2020/08/introducing-instagram-reels/",
-      "verifiedAt": "2026-09-18",
-      "alt": [
-        "إنستجرام",
-        "Instagram"
-      ]
-    },
-    {
-      "p": 200,
-      "q": "أي منصة فيديو تقدم المقاطع القصيرة باسم Shorts؟",
-      "a": "يوتيوب",
-      "qid": "apps-200-903",
-      "topic": "الفيديو",
-      "verified": true,
-      "difficultyTarget": 0.8,
-      "source": "https://blog.youtube/topic-hub/shorts/",
-      "verifiedAt": "2026-09-18",
-      "alt": [
-        "YouTube"
-      ]
-    },
-    {
-      "p": 200,
-      "q": "أي خدمة موسيقى تقدم ملخص الاستماع السنوي المعروف باسم Wrapped؟",
-      "a": "سبوتيفاي",
-      "qid": "apps-200-904",
-      "topic": "الصوت",
-      "verified": true,
-      "difficultyTarget": 0.8,
-      "source": "https://newsroom.spotify.com/2024-12-04/wrapped-user-experience-2024/",
-      "verifiedAt": "2026-09-18",
-      "alt": [
-        "Spotify"
-      ]
-    },
-    {
-      "p": 200,
-      "q": "أي برنامج من مايكروسوفت تكتب فيه مستندًا بصيغة DOCX؟",
-      "a": "وورد",
-      "qid": "apps-200-905",
-      "topic": "العمل والتنظيم",
-      "verified": true,
-      "difficultyTarget": 0.8,
-      "source": "https://learn.microsoft.com/en-us/office/compatibility/office-file-format-reference",
-      "verifiedAt": "2026-09-18",
-      "alt": [
-        "Word",
-        "مايكروسوفت وورد"
-      ]
-    },
-    {
-      "p": 200,
-      "q": "ما خدمة غوغل التي تستخدمها للبحث عن طريق وعرض الاتجاهات على خريطة؟",
-      "a": "خرائط غوغل",
-      "qid": "apps-200-906",
-      "topic": "الخرائط والتنقل",
-      "verified": true,
-      "difficultyTarget": 0.8,
-      "source": "https://www.google.com/maps/search/",
-      "verifiedAt": "2026-09-18",
-      "alt": [
-        "Google Maps",
-        "غوغل مابس",
-        "خرائط جوجل"
-      ]
-    },
-    {
-      "p": 200,
-      "q": "ما متصفح الإنترنت الذي طورته غوغل ويحمل شعار دائرة بألوان الأحمر والأصفر والأخضر والأزرق؟",
-      "a": "كروم",
-      "qid": "apps-200-907",
-      "topic": "المتصفحات",
-      "verified": true,
-      "difficultyTarget": 0.8,
-      "source": "https://www.google.com/chrome/",
-      "verifiedAt": "2026-09-18",
-      "alt": [
-        "Chrome",
-        "غوغل كروم"
-      ]
-    },
-    {
-      "p": 200,
-      "q": "أي تطبيق لتعلم اللغات تذكرك بومته الخضراء بإكمال درسك؟",
-      "a": "دولينغو",
-      "qid": "apps-200-908",
-      "topic": "التعلم والاجتماعات",
-      "verified": true,
-      "difficultyTarget": 0.8,
-      "source": "https://en.duolingo.com/",
-      "verifiedAt": "2026-09-18",
-      "alt": [
-        "Duolingo",
-        "دولنغو"
-      ]
-    },
-    {
-      "p": 400,
-      "q": "أي تطبيق مراسلة يستخدم روابطt.me ويتيح إنشاء قنوات وبوتات؟",
-      "a": "تيليغرام",
-      "qid": "apps-400-901",
-      "topic": "المراسلة",
-      "verified": true,
-      "difficultyTarget": 0.6,
-      "source": "https://www.telegram.org/faq_channels?setln=en",
-      "verifiedAt": "2026-09-18",
-      "alt": [
-        "Telegram",
-        "تلغرام"
-      ]
-    },
-    {
-      "p": 400,
-      "q": "أي تطبيق يتيح عدسات الواقع المعزز لإنشاء Snaps وشخصيات Bitmoji؟",
-      "a": "سناب شات",
-      "qid": "apps-400-902",
-      "topic": "الصور",
-      "verified": true,
-      "difficultyTarget": 0.6,
-      "source": "https://help.snapchat.com/hc/en-us/articles/7012348332052-How-do-I-use-Lenses-on-Snapchat",
-      "verifiedAt": "2026-09-18",
-      "alt": [
-        "Snapchat",
-        "سناب"
-      ]
-    },
-    {
-      "p": 400,
-      "q": "أي تطبيق للمقاطع يشتهر بصفحة For You أو«لك»؟",
-      "a": "تيك توك",
-      "qid": "apps-400-903",
-      "topic": "الفيديو",
-      "verified": true,
-      "difficultyTarget": 0.6,
-      "source": "https://support.tiktok.com/en/using-tiktok/exploring-videos/how-tiktok-recommends-content",
-      "verifiedAt": "2026-09-18",
-      "alt": [
-        "TikTok"
-      ]
-    },
-    {
-      "p": 400,
       "q": "ما التطبيق الأزرق الذي يتعرف على اسم أغنية من الاستماع إلى مقطع منها؟",
       "a": "شازام",
-      "qid": "apps-400-904",
+      "qid": "apps-200-911",
       "topic": "الصوت",
       "verified": true,
-      "difficultyTarget": 0.6,
+      "difficultyTarget": 0.8,
       "source": "https://www.shazam.com/apps",
       "verifiedAt": "2026-09-18",
       "alt": [
@@ -181,41 +18,13 @@
       ]
     },
     {
-      "p": 400,
-      "q": "أي برنامج من مايكروسوفت يعتمد الجداول والخلايا ويحفظ الملفات بصيغة XLSX؟",
-      "a": "إكسل",
-      "qid": "apps-400-905",
-      "topic": "العمل والتنظيم",
-      "verified": true,
-      "difficultyTarget": 0.6,
-      "source": "https://learn.microsoft.com/en-us/office/compatibility/office-file-format-reference",
-      "verifiedAt": "2026-09-18",
-      "alt": [
-        "Excel"
-      ]
-    },
-    {
-      "p": 400,
-      "q": "في أي تطبيق لطلب السيارات يمكنك اختيار رحلة UberX؟",
-      "a": "أوبر",
-      "qid": "apps-400-906",
-      "topic": "الخرائط والتنقل",
-      "verified": true,
-      "difficultyTarget": 0.6,
-      "source": "https://help.uber.com/riders/article/yolculuk-talep-etme-?nodeId=e9862b49-81c6-4c6a-a9d3-3c05bf42e82e",
-      "verifiedAt": "2026-09-18",
-      "alt": [
-        "Uber"
-      ]
-    },
-    {
-      "p": 400,
+      "p": 200,
       "q": "ما متصفح الإنترنت الذي أطلقته موزيلا عام 2004؟",
       "a": "فايرفوكس",
-      "qid": "apps-400-907",
+      "qid": "apps-200-912",
       "topic": "المتصفحات",
       "verified": true,
-      "difficultyTarget": 0.6,
+      "difficultyTarget": 0.8,
       "source": "https://www.mozilla.org/firefox/",
       "verifiedAt": "2026-09-18",
       "alt": [
@@ -223,13 +32,13 @@
       ]
     },
     {
-      "p": 400,
+      "p": 200,
       "q": "ما منصة الاجتماعات المرئية التي أسسها إريك يوان عام 2011؟",
       "a": "زووم",
-      "qid": "apps-400-908",
+      "qid": "apps-200-913",
       "topic": "التعلم والاجتماعات",
       "verified": true,
-      "difficultyTarget": 0.6,
+      "difficultyTarget": 0.8,
       "source": "https://www.zoom.com/en/about/team/",
       "verifiedAt": "2026-09-18",
       "alt": [
@@ -237,13 +46,13 @@
       ]
     },
     {
-      "p": 600,
+      "p": 200,
       "q": "أي منصة دردشة ومجتمعات تقدم اشتراك Nitro لاستخدام الإيموجي المخصص عبر السيرفرات؟",
       "a": "ديسكورد",
-      "qid": "apps-600-901",
+      "qid": "apps-200-914",
       "topic": "المراسلة",
       "verified": true,
-      "difficultyTarget": 0.4,
+      "difficultyTarget": 0.8,
       "source": "https://support.discord.com/hc/en-us/articles/360036479811-How-to-Add-Custom-Emojis-on-Discord",
       "verifiedAt": "2026-09-18",
       "alt": [
@@ -251,13 +60,13 @@
       ]
     },
     {
-      "p": 600,
+      "p": 200,
       "q": "أي منصة تتيح حفظ الأفكار المصورة كدبابيس Pins على لوحات Boards؟",
       "a": "بنترست",
-      "qid": "apps-600-902",
+      "qid": "apps-200-915",
       "topic": "الصور",
       "verified": true,
-      "difficultyTarget": 0.4,
+      "difficultyTarget": 0.8,
       "source": "https://help.pinterest.com/en/guide/all-about-pinterest",
       "verifiedAt": "2026-09-18",
       "alt": [
@@ -266,13 +75,13 @@
       ]
     },
     {
-      "p": 600,
+      "p": 200,
       "q": "ما منصة بث ألعاب الفيديو التي أعلنت انضمامها إلى أمازون عام 2014؟",
       "a": "تويتش",
-      "qid": "apps-600-903",
+      "qid": "apps-200-916",
       "topic": "الفيديو",
       "verified": true,
-      "difficultyTarget": 0.4,
+      "difficultyTarget": 0.8,
       "source": "https://blog.twitch.tv/en/2014/08/25/a-letter-from-the-ceo-august-25-2014-b34c1cfbb099/",
       "verifiedAt": "2026-09-18",
       "alt": [
@@ -280,42 +89,13 @@
       ]
     },
     {
-      "p": 600,
-      "q": "ما منصة نشر المقاطع الصوتية التي يعني اسمها بالإنجليزية«سحابة الصوت»؟",
-      "a": "ساوند كلاود",
-      "qid": "apps-600-904",
-      "topic": "الصوت",
-      "verified": true,
-      "difficultyTarget": 0.4,
-      "source": "https://soundcloud.com/company/about-us",
-      "verifiedAt": "2026-09-18",
-      "alt": [
-        "SoundCloud"
-      ]
-    },
-    {
-      "p": 600,
-      "q": "أي برنامج من مايكروسوفت يحفظ عروض الشرائح بصيغة PPTX؟",
-      "a": "باوربوينت",
-      "qid": "apps-600-905",
-      "topic": "العمل والتنظيم",
-      "verified": true,
-      "difficultyTarget": 0.4,
-      "source": "https://learn.microsoft.com/en-us/office/compatibility/office-file-format-reference",
-      "verifiedAt": "2026-09-18",
-      "alt": [
-        "PowerPoint",
-        "باور بوينت"
-      ]
-    },
-    {
-      "p": 600,
+      "p": 200,
       "q": "ما تطبيق الملاحة المجتمعي الذي اشترته غوغل عام 2013؟",
       "a": "ويز",
-      "qid": "apps-600-906",
+      "qid": "apps-200-917",
       "topic": "الخرائط والتنقل",
       "verified": true,
-      "difficultyTarget": 0.4,
+      "difficultyTarget": 0.8,
       "source": "https://blog.google/products-and-platforms/products/maps/google-maps-and-waze-outsmarting/",
       "verifiedAt": "2026-09-18",
       "alt": [
@@ -324,28 +104,13 @@
       ]
     },
     {
-      "p": 600,
-      "q": "ما المتصفح الذي تطوره مايكروسوفت ويحمل اسمًا يعني«الحافة»؟",
-      "a": "إيدج",
-      "qid": "apps-600-907",
-      "topic": "المتصفحات",
-      "verified": true,
-      "difficultyTarget": 0.4,
-      "source": "https://www.microsoft.com/en-us/edge/download",
-      "verifiedAt": "2026-09-18",
-      "alt": [
-        "Edge",
-        "مايكروسوفت إيدج"
-      ]
-    },
-    {
-      "p": 600,
+      "p": 200,
       "q": "ما منصة المسابقات التعليمية ذات أزرار الإجابة الأربعة: مثلث أحمر ومعيّن أزرق ودائرة صفراء ومربع أخضر؟",
       "a": "كاهوت",
-      "qid": "apps-600-908",
+      "qid": "apps-200-918",
       "topic": "التعلم والاجتماعات",
       "verified": true,
-      "difficultyTarget": 0.4,
+      "difficultyTarget": 0.8,
       "source": "https://files.getkahoot.com/academy/Kahoot_Academy_PD_Game_Notes_ArtKahooting_June2016.pdf",
       "verifiedAt": "2026-09-18",
       "alt": [
@@ -353,28 +118,29 @@
       ]
     },
     {
-      "p": 800,
-      "q": "ما تطبيق المراسلة المشفر الذي يعني اسمه بالإنجليزية«إشارة»؟",
+      "p": 400,
+      "q": "ما تطبيق المراسلة المشفر الذي تطوره مؤسسة مستقلة غير ربحية بتمويل المنح والتبرعات؟",
       "a": "سيغنال",
-      "qid": "apps-800-901",
+      "qid": "apps-400-911",
       "topic": "المراسلة",
       "verified": true,
-      "difficultyTarget": 0.25,
+      "difficultyTarget": 0.6,
       "source": "https://signal.org/",
-      "verifiedAt": "2026-09-18",
+      "verifiedAt": "2026-09-25",
       "alt": [
         "Signal",
         "سيجنال"
-      ]
+      ],
+      "sourceUrl": "https://signal.org/"
     },
     {
-      "p": 800,
-      "q": "ما برنامج أدوبي المخصص لتنظيم الصور وتعديلها، واسمه يعني«غرفة مضيئة»؟",
+      "p": 400,
+      "q": "ما برنامج أدوبي المخصص لتنظيم الصور وتعديلها؟",
       "a": "لايت روم",
-      "qid": "apps-800-902",
+      "qid": "apps-400-912",
       "topic": "الصور",
       "verified": true,
-      "difficultyTarget": 0.25,
+      "difficultyTarget": 0.6,
       "source": "https://lightroom.adobe.com/news",
       "verifiedAt": "2026-09-18",
       "alt": [
@@ -383,13 +149,13 @@
       ]
     },
     {
-      "p": 800,
+      "p": 400,
       "q": "ما محرر الفيديو من بايت دانس المستخدم لصناعة مقاطع التواصل القصيرة؟",
       "a": "كاب كات",
-      "qid": "apps-800-903",
+      "qid": "apps-400-913",
       "topic": "الفيديو",
       "verified": true,
-      "difficultyTarget": 0.25,
+      "difficultyTarget": 0.6,
       "source": "https://www.capcut.com/create/free-video-editor-for-tiktok",
       "verifiedAt": "2026-09-18",
       "alt": [
@@ -398,27 +164,28 @@
       ]
     },
     {
-      "p": 800,
-      "q": "ما محرر الصوت الحر والمفتوح المصدر الذي يبدأ اسمه بـ«أودا»؟",
+      "p": 400,
+      "q": "ما محرر الصوت الذي اعتمد امتداد AUP3 لمشروعاته في الإصدار الثالث؟",
       "a": "أوداسيتي",
-      "qid": "apps-800-904",
+      "qid": "apps-400-914",
       "topic": "الصوت",
       "verified": true,
-      "difficultyTarget": 0.25,
+      "difficultyTarget": 0.6,
       "source": "https://support.audacityteam.org/basics/audacity-editing",
-      "verifiedAt": "2026-09-18",
+      "verifiedAt": "2026-09-25",
       "alt": [
         "Audacity"
-      ]
+      ],
+      "sourceUrl": "https://manual.audacityteam.org/man/audacity_projects.html"
     },
     {
-      "p": 800,
+      "p": 400,
       "q": "ما تطبيق الصفحات والملاحظات وقواعد البيانات الذي يحمل شعار حرف N أسود؟",
       "a": "نوشن",
-      "qid": "apps-800-905",
+      "qid": "apps-400-915",
       "topic": "العمل والتنظيم",
       "verified": true,
-      "difficultyTarget": 0.25,
+      "difficultyTarget": 0.6,
       "source": "https://notion.notion.site/Media-Kit-205535b1d9c4440497a3d7a2ac096286",
       "verifiedAt": "2026-09-18",
       "alt": [
@@ -426,13 +193,13 @@
       ]
     },
     {
-      "p": 800,
+      "p": 400,
       "q": "أي خدمة من غوغل تعرض الكرة الأرضية ثلاثية الأبعاد وتتيح استكشاف صور الأقمار الصناعية؟",
       "a": "غوغل إيرث",
-      "qid": "apps-800-906",
+      "qid": "apps-400-916",
       "topic": "الخرائط والتنقل",
       "verified": true,
-      "difficultyTarget": 0.25,
+      "difficultyTarget": 0.6,
       "source": "https://www.google.com/intl/us/earth/index.html",
       "verifiedAt": "2026-09-18",
       "alt": [
@@ -441,27 +208,28 @@
       ]
     },
     {
-      "p": 800,
-      "q": "ما المتصفح الذي يسمي أداة حجب المتعقبات والإعلانات فيه Shields واسمه يعني«شجاع»؟",
+      "p": 400,
+      "q": "ما المتصفح الذي يسمي أداة حجب المتعقبات والإعلانات فيه Shields؟",
       "a": "بريف",
-      "qid": "apps-800-907",
+      "qid": "apps-400-917",
       "topic": "المتصفحات",
       "verified": true,
-      "difficultyTarget": 0.25,
+      "difficultyTarget": 0.6,
       "source": "https://brave.com/shields/",
-      "verifiedAt": "2026-09-18",
+      "verifiedAt": "2026-09-25",
       "alt": [
         "Brave"
-      ]
+      ],
+      "sourceUrl": "https://brave.com/shields/"
     },
     {
-      "p": 800,
+      "p": 400,
       "q": "ما أسلوب المراجعة الذي يعتمد عليه أنكي بتوزيع تكرار البطاقة على فترات زمنية؟",
       "a": "التكرار المتباعد",
-      "qid": "apps-800-908",
+      "qid": "apps-400-918",
       "topic": "التعلم والاجتماعات",
       "verified": true,
-      "difficultyTarget": 0.25,
+      "difficultyTarget": 0.6,
       "source": "https://docs.ankiweb.net/background.html",
       "verifiedAt": "2026-09-18",
       "alt": [
@@ -469,13 +237,13 @@
       ]
     },
     {
-      "p": 1000,
+      "p": 600,
       "q": "ما تطبيق المراسلة السويسري الذي لا يشترط رقم هاتف أو بريد ويعرض ثلاث نقاط لتوثيق جهة الاتصال؟",
       "a": "ثريما",
-      "qid": "apps-1000-901",
+      "qid": "apps-600-911",
       "topic": "المراسلة",
       "verified": true,
-      "difficultyTarget": 0.15,
+      "difficultyTarget": 0.4,
       "source": "https://threema.com/en/faq/levels-expl",
       "verifiedAt": "2026-09-18",
       "alt": [
@@ -483,13 +251,13 @@
       ]
     },
     {
-      "p": 1000,
+      "p": 600,
       "q": "ما محرر الصور من غوغل الذي يجمع أدواته تحت Tools ويحفظ مراحل التعديل في Stacks؟",
       "a": "سنابسيد",
-      "qid": "apps-1000-902",
+      "qid": "apps-600-912",
       "topic": "الصور",
       "verified": true,
-      "difficultyTarget": 0.15,
+      "difficultyTarget": 0.4,
       "source": "https://support.google.com/snapseed/answer/6155517?hl=en",
       "verifiedAt": "2026-09-18",
       "alt": [
@@ -498,13 +266,13 @@
       ]
     },
     {
-      "p": 1000,
+      "p": 600,
       "q": "ما برنامج المونتاج وتصحيح الألوان الذي تنتجه Blackmagic Design؟",
       "a": "دافنشي ريزولف",
-      "qid": "apps-1000-903",
+      "qid": "apps-600-913",
       "topic": "الفيديو",
       "verified": true,
-      "difficultyTarget": 0.15,
+      "difficultyTarget": 0.4,
       "source": "https://www.blackmagicdesign.com/products/davinciresolve/color",
       "verifiedAt": "2026-09-18",
       "alt": [
@@ -513,13 +281,13 @@
       ]
     },
     {
-      "p": 1000,
-      "q": "ما الاستوديو الموسيقي السحابي الذي يجمع التسجيل والمزج في المتصفح واسمه يعني«مختبر الفرقة»؟",
+      "p": 600,
+      "q": "ما الاستوديو الموسيقي السحابي الذي يتيح التسجيل والمزج والتعاون مباشرة في المتصفح؟",
       "a": "باندلاب",
-      "qid": "apps-1000-904",
+      "qid": "apps-600-914",
       "topic": "الصوت",
       "verified": true,
-      "difficultyTarget": 0.15,
+      "difficultyTarget": 0.4,
       "source": "https://help.bandlab.com/hc/en-us/articles/115002945153-Getting-Started-with-the-BandLab-Studio",
       "verifiedAt": "2026-09-18",
       "alt": [
@@ -528,13 +296,13 @@
       ]
     },
     {
-      "p": 1000,
+      "p": 600,
       "q": "ما تطبيق تنظيم المشاريع من أتلاسيان المبني على لوحات وقوائم وبطاقات؟",
       "a": "تريلو",
-      "qid": "apps-1000-905",
+      "qid": "apps-600-915",
       "topic": "العمل والتنظيم",
       "verified": true,
-      "difficultyTarget": 0.15,
+      "difficultyTarget": 0.4,
       "source": "https://support.atlassian.com/trello/docs/creating-a-new-board/",
       "verifiedAt": "2026-09-18",
       "alt": [
@@ -542,13 +310,13 @@
       ]
     },
     {
-      "p": 1000,
-      "q": "ما تطبيق أدلة مسارات المشي والطبيعة الذي يعني اسمه«كل المسارات»؟",
+      "p": 600,
+      "q": "ما تطبيق أدلة المشي الذي يصنف مسارات الطبيعة ويعرض تقييمات المتنزهين؟",
       "a": "أول تريلز",
-      "qid": "apps-1000-906",
+      "qid": "apps-600-916",
       "topic": "الخرائط والتنقل",
       "verified": true,
-      "difficultyTarget": 0.15,
+      "difficultyTarget": 0.4,
       "source": "https://www.alltrails.com/",
       "verifiedAt": "2026-09-18",
       "alt": [
@@ -557,13 +325,13 @@
       ]
     },
     {
-      "p": 1000,
-      "q": "ما المتصفح الذي يستخدم شبكة التوجيه البصلي ويحمل اسم مشروعها المختصر؟",
+      "p": 600,
+      "q": "ما المتصفح المصمم لتصفح الإنترنت عبر شبكة التوجيه البصلي؟",
       "a": "متصفح تور",
-      "qid": "apps-1000-907",
+      "qid": "apps-600-917",
       "topic": "المتصفحات",
       "verified": true,
-      "difficultyTarget": 0.15,
+      "difficultyTarget": 0.4,
       "source": "https://www.torproject.org/",
       "verifiedAt": "2026-09-18",
       "alt": [
@@ -572,19 +340,250 @@
       ]
     },
     {
-      "p": 1000,
-      "q": "ما تطبيق الرياضيات الذي يجمع الهندسة والجبر ورسم الدوال واسمه يبدأ بـ«جيو»؟",
+      "p": 600,
+      "q": "ما تطبيق الرياضيات الذي يجمع الهندسة التفاعلية والجبر ورسم الدوال؟",
       "a": "جيوجبرا",
-      "qid": "apps-1000-908",
+      "qid": "apps-600-918",
       "topic": "التعلم والاجتماعات",
       "verified": true,
-      "difficultyTarget": 0.15,
+      "difficultyTarget": 0.4,
       "source": "https://help.geogebra.org/hc/en-us/articles/8379920754717-Graphing-Calculator",
       "verifiedAt": "2026-09-18",
       "alt": [
         "GeoGebra",
         "جيوجيبرا"
       ]
+    },
+    {
+      "q": "ما تطبيق المراسلة الذي يطوره مبتكرو معيار Matrix اللامركزي؟",
+      "a": "إليمنت",
+      "topic": "المراسلة",
+      "verified": true,
+      "sourceUrl": "https://element.io/en",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Element",
+        "إلمنت"
+      ],
+      "p": 800,
+      "qid": "apps-800-911",
+      "difficultyTarget": 0.25
+    },
+    {
+      "q": "ما برنامج الرسم الرقمي المفتوح المصدر الذي يحفظ مشروعاته بامتداد KRA؟",
+      "a": "كريتا",
+      "topic": "الصور",
+      "verified": true,
+      "sourceUrl": "https://docs.krita.org/en/general_concepts/file_formats/file_kra.html",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Krita"
+      ],
+      "p": 800,
+      "qid": "apps-800-912",
+      "difficultyTarget": 0.25
+    },
+    {
+      "q": "ما محول الفيديو المفتوح المصدر الذي يوفر إعدادات أجهزة جاهزة ومرشح Decomb ويصدر MP4 وMKV؟",
+      "a": "هاند بريك",
+      "topic": "الفيديو",
+      "verified": true,
+      "sourceUrl": "https://handbrake.fr/features.php",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "HandBrake",
+        "هاندبريك"
+      ],
+      "p": 800,
+      "qid": "apps-800-913",
+      "difficultyTarget": 0.25
+    },
+    {
+      "q": "ما برنامج التسجيل والمزج متعدد المسارات الذي تطوره شركة Cockos؟",
+      "a": "ريبر",
+      "topic": "الصوت",
+      "verified": true,
+      "sourceUrl": "https://cockos.com/reaper/about.php",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "REAPER",
+        "ريابر"
+      ],
+      "p": 800,
+      "qid": "apps-800-914",
+      "difficultyTarget": 0.25
+    },
+    {
+      "q": "ما تطبيق الملاحظات الذي يخزن ملفات Markdown محليًا ويعرض روابطها في Graph ويوفر لوحة Canvas؟",
+      "a": "أوبسيديان",
+      "topic": "العمل والتنظيم",
+      "verified": true,
+      "sourceUrl": "https://obsidian.md/",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Obsidian"
+      ],
+      "p": 800,
+      "qid": "apps-800-915",
+      "difficultyTarget": 0.25
+    },
+    {
+      "q": "ما تطبيق الملاحة بلا إنترنت الذي أنشأه مطورو Maps.Me الأصليون اعتمادًا على OpenStreetMap؟",
+      "a": "أورغانيك مابس",
+      "topic": "الخرائط والتنقل",
+      "verified": true,
+      "sourceUrl": "https://organicmaps.app/",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Organic Maps",
+        "أورجانيك مابس"
+      ],
+      "p": 800,
+      "qid": "apps-800-916",
+      "difficultyTarget": 0.25
+    },
+    {
+      "q": "ما المتصفح الذي يجمع الألسنة في مجموعات ذات مستويين تسمى Tab Stacks؟",
+      "a": "فيفالدي",
+      "topic": "المتصفحات",
+      "verified": true,
+      "sourceUrl": "https://vivaldi.com/",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Vivaldi"
+      ],
+      "p": 800,
+      "qid": "apps-800-917",
+      "difficultyTarget": 0.25
+    },
+    {
+      "q": "ما مدير المراجع المجاني الذي يلتقط بيانات بحوث JSTOR وarXiv من المتصفح وينشئ قوائم المصادر؟",
+      "a": "زوتيرو",
+      "topic": "التعلم والاجتماعات",
+      "verified": true,
+      "sourceUrl": "https://www.zotero.org/",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Zotero"
+      ],
+      "p": 800,
+      "qid": "apps-800-918",
+      "difficultyTarget": 0.25
+    },
+    {
+      "q": "ما اسم بروتوكول الاتصال والتشفير الذي طوّره تيليغرام لتطبيقاته؟",
+      "a": "إم تي بروتو",
+      "topic": "المراسلة",
+      "verified": true,
+      "sourceUrl": "https://core.telegram.org/mtproto",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "MTProto"
+      ],
+      "p": 1000,
+      "qid": "apps-1000-911",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "ما اسم الشخصية الكرتونية التي تمثل محرر الصور GIMP؟",
+      "a": "ويلبر",
+      "topic": "الصور",
+      "verified": true,
+      "sourceUrl": "https://www.gimp.org/about/linking.html",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Wilber"
+      ],
+      "p": 1000,
+      "qid": "apps-1000-912",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "ما محرر الفيديو الحر الذي بدأه المطور الملقب Mean للقص والترشيح والترميز؟",
+      "a": "أفيديمكس",
+      "topic": "الفيديو",
+      "verified": true,
+      "sourceUrl": "https://avidemux.sourceforge.net/",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Avidemux",
+        "أفيديموكس"
+      ],
+      "p": 1000,
+      "qid": "apps-1000-913",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "ما لغة برمجة المؤثرات الصوتية المبنية على Lisp والمستخدمة في إضافات محرر الصوت ذي امتداد AUP3؟",
+      "a": "نايكويست",
+      "topic": "الصوت",
+      "verified": true,
+      "sourceUrl": "https://manual.audacityteam.org/man/nyquist.html",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Nyquist",
+        "نيكويست"
+      ],
+      "p": 1000,
+      "qid": "apps-1000-914",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "ما تطبيق الملاحظات المفتوح المصدر الذي أنشأه لوران كوزيك ويدعم المزامنة المشفرة عبر Dropbox وOneDrive؟",
+      "a": "جوبلين",
+      "topic": "العمل والتنظيم",
+      "verified": true,
+      "sourceUrl": "https://joplinapp.org/",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Joplin"
+      ],
+      "p": 1000,
+      "qid": "apps-1000-915",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "بأي صيغة ملفات يحفظ أوسماند مسارات الرحلات المسجلة محليًا؟",
+      "a": "GPX",
+      "topic": "الخرائط والتنقل",
+      "verified": true,
+      "sourceUrl": "https://osmand.net/",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "جي بي إكس"
+      ],
+      "p": 1000,
+      "qid": "apps-1000-916",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "ما اسم محرك عرض الصفحات الذي طورته موزيلا ويستخدمه متصفحها للحاسوب؟",
+      "a": "غيكو",
+      "topic": "المتصفحات",
+      "verified": true,
+      "sourceUrl": "https://developer.mozilla.org/en-US/docs/Glossary/Gecko",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Gecko",
+        "جيكو"
+      ],
+      "p": 1000,
+      "qid": "apps-1000-917",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "ما اختصار خوارزمية جدولة المراجعة في أنكي التي تقدم بديلًا لخوارزمية SM-2؟",
+      "a": "FSRS",
+      "topic": "التعلم والاجتماعات",
+      "verified": true,
+      "sourceUrl": "https://docs.ankiweb.net/deck-options.html#fsrs",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "إف إس آر إس"
+      ],
+      "p": 1000,
+      "qid": "apps-1000-918",
+      "difficultyTarget": 0.15
     }
   ]
 }

@@ -5,113 +5,12 @@
   "qs": [
     {
       "p": 200,
-      "q": "أي نادٍ أحرز دوري الأبطال ثلاث مرات متتالية بين 2016 و 2018؟",
-      "a": "ريال مدريد",
-      "qid": "ucl-200-901",
-      "topic": "الأبطال",
-      "verified": true,
-      "difficultyTarget": 0.8,
-      "source": "https://www.uefa.com/uefachampionsleague/news/0245-0e98d7318379-716954065574-1000/",
-      "verifiedAt": "2026-09-18"
-    },
-    {
-      "p": 200,
-      "q": "أي نادٍ هزم يونايتد بهدفَي إيتو وميسي في نهائي 2009؟",
-      "a": "برشلونة",
-      "qid": "ucl-200-902",
-      "topic": "الأبطال",
-      "verified": true,
-      "difficultyTarget": 0.8,
-      "source": "https://www.uefa.com/uefachampionsleague/news/01e0-0e7398054ce6-4b27ea9955b6-1000--messi-leads-barca-to-rome-glory/",
-      "verifiedAt": "2026-09-18"
-    },
-    {
-      "p": 200,
-      "q": "من أحرز 17 هدفًا في نسخة دوري الأبطال 2013/14؟",
-      "a": "كريستيانو رونالدو",
-      "qid": "ucl-200-903",
-      "topic": "الهدافون",
-      "verified": true,
-      "difficultyTarget": 0.8,
-      "source": "https://www.uefa.com/uefachampionsleague/news/0252-0cdc68c5ee7f-854c7d82fcc8-1000--record-breaking-ronaldo-takes-scoring-honours/",
-      "verifiedAt": "2026-09-18",
-      "alt": [
-        "كريستيانو"
-      ]
-    },
-    {
-      "p": 200,
-      "q": "من الويلزي الذي سجل هدفًا مقصيًا في نهائي دوري الأبطال 2018؟",
-      "a": "غاريث بيل",
-      "qid": "ucl-200-904",
-      "topic": "الهدافون",
-      "verified": true,
-      "difficultyTarget": 0.8,
-      "source": "https://www.uefa.com/uefachampionsleague/news/0245-0e98d7318379-716954065574-1000/",
-      "verifiedAt": "2026-09-18",
-      "alt": [
-        "جاريث بيل"
-      ]
-    },
-    {
-      "p": 200,
-      "q": "من مدرب يونايتد حين رفع الكأس الأوروبية في 1999 و 2008؟",
-      "a": "أليكس فيرغسون",
-      "qid": "ucl-200-905",
-      "topic": "المدربون",
-      "verified": true,
-      "difficultyTarget": 0.8,
-      "source": "https://www.uefa.com/uefachampionsleague/news/01cf-0e6f71aacef6-834e3e001fd3-1000--fate-favours-triumphant-sir-alex/",
-      "verifiedAt": "2026-09-18",
-      "alt": [
-        "أليكس فيرجسون",
-        "فيرغسون"
-      ]
-    },
-    {
-      "p": 200,
-      "q": "من حارس الريال وقائده في نهائي اللقب العاشر عام 2014؟",
-      "a": "إيكر كاسياس",
-      "qid": "ucl-200-906",
-      "topic": "حراس المرمى",
-      "verified": true,
-      "difficultyTarget": 0.8,
-      "source": "https://www.uefa.com/MultimediaFiles/Download/uefaorg/General/02/13/86/55/2138655_DOWNLOAD.pdf",
-      "verifiedAt": "2026-09-18",
-      "alt": [
-        "كاسياس"
-      ]
-    },
-    {
-      "p": 200,
-      "q": "ما الملعب اللندني الذي استضاف النهائي الألماني الخالص عام 2013؟",
-      "a": "ويمبلي",
-      "qid": "ucl-200-907",
-      "topic": "الملاعب",
-      "verified": true,
-      "difficultyTarget": 0.8,
-      "source": "https://www.uefa.com/uefachampionsleague/news/0250-0c50ff9a7f18-7e59ddb15025-1000/",
-      "verifiedAt": "2026-09-18"
-    },
-    {
-      "p": 200,
-      "q": "أي نادٍ عاد من تأخره بثلاثة أهداف ليتوج بطلًا لأوروبا في إسطنبول 2005؟",
-      "a": "ليفربول",
-      "qid": "ucl-200-908",
-      "topic": "العودة في النتيجة",
-      "verified": true,
-      "difficultyTarget": 0.8,
-      "source": "https://www.uefa.com/uefachampionsleague/news/0253-0d7b89fe7b7f-c91716d11bdf-1000--2004-05-liverpool-belief-defies-milan/",
-      "verifiedAt": "2026-09-18"
-    },
-    {
-      "p": 400,
       "q": "أي فريق ألماني هزم دورتموند في نهائي دوري الأبطال 2013؟",
       "a": "بايرن ميونخ",
-      "qid": "ucl-400-901",
+      "qid": "ucl-200-911",
       "topic": "الأبطال",
       "verified": true,
-      "difficultyTarget": 0.6,
+      "difficultyTarget": 0.8,
       "source": "https://www.uefa.com/uefachampionsleague/news/0250-0c50ff9a7f18-7e59ddb15025-1000/",
       "verifiedAt": "2026-09-18",
       "alt": [
@@ -119,24 +18,24 @@
       ]
     },
     {
-      "p": 400,
+      "p": 200,
       "q": "أي فريق لندني أحرز أول ألقابه بدوري الأبطال في نهائي ميونيخ 2012؟",
       "a": "تشيلسي",
-      "qid": "ucl-400-902",
+      "qid": "ucl-200-912",
       "topic": "الأبطال",
       "verified": true,
-      "difficultyTarget": 0.6,
+      "difficultyTarget": 0.8,
       "source": "https://www.uefa.com/uefachampionsleague/news/0250-0c50fb78a384-1434bbcadbcb-1000/",
       "verifiedAt": "2026-09-18"
     },
     {
-      "p": 400,
+      "p": 200,
       "q": "من سجل رأسية التعادل وركلة الترجيح الحاسمة للبلوز في نهائي 2012؟",
       "a": "ديدييه دروغبا",
-      "qid": "ucl-400-903",
+      "qid": "ucl-200-913",
       "topic": "الهدافون",
       "verified": true,
-      "difficultyTarget": 0.6,
+      "difficultyTarget": 0.8,
       "source": "https://www.uefa.com/uefachampionsleague/news/0252-0cd3fae4b776-06473dd5a037-1000--chelsea-success-leaves-drogba-speechless/",
       "verifiedAt": "2026-09-18",
       "alt": [
@@ -144,107 +43,13 @@
       ]
     },
     {
-      "p": 400,
-      "q": "من الهولندي الذي سجل هدف الحسم للبايرن في نهائي 2013؟",
-      "a": "آريين روبن",
-      "qid": "ucl-400-904",
-      "topic": "الهدافون",
-      "verified": true,
-      "difficultyTarget": 0.6,
-      "source": "https://www.uefa.com/uefachampionsleague/news/0250-0c50ff9a7f18-7e59ddb15025-1000/",
-      "verifiedAt": "2026-09-18",
-      "alt": [
-        "أريين روبن",
-        "أرين روبن"
-      ]
-    },
-    {
-      "p": 400,
-      "q": "من قاد البارسا إلى لقب أوروبا في أول موسم له مدربًا للفريق الأول عام 2009؟",
-      "a": "بيب غوارديولا",
-      "qid": "ucl-400-905",
-      "topic": "المدربون",
-      "verified": true,
-      "difficultyTarget": 0.6,
-      "source": "https://www.uefa.com/uefachampionsleague/news/01e0-0e7398054ce6-4b27ea9955b6-1000--messi-leads-barca-to-rome-glory/",
-      "verifiedAt": "2026-09-18",
-      "alt": [
-        "جوسيب غوارديولا",
-        "بيب جوارديولا"
-      ]
-    },
-    {
-      "p": 400,
-      "q": "من تصدى لركلة روبن في الوقت الإضافي لنهائي 2012؟",
-      "a": "بيتر تشيك",
-      "qid": "ucl-400-906",
-      "topic": "حراس المرمى",
-      "verified": true,
-      "difficultyTarget": 0.6,
-      "source": "https://www.uefa.com/uefachampionsleague/news/0250-0c50fb78a384-1434bbcadbcb-1000/",
-      "verifiedAt": "2026-09-18",
-      "alt": [
-        "بيتر تشيك"
-      ]
-    },
-    {
-      "p": 400,
-      "q": "ما الملعب الذي شهد هدفي يونايتد المتأخرين في نهائي 1999؟",
-      "a": "كامب نو",
-      "qid": "ucl-400-907",
-      "topic": "الملاعب",
-      "verified": true,
-      "difficultyTarget": 0.6,
-      "source": "https://www.uefa.com/uefachampionsleague/news/0253-0d800ac7cffa-8147de94780e-1000--the-1999-champions-league-final-20-years-on-most-dramatic/",
-      "verifiedAt": "2026-09-18"
-    },
-    {
-      "p": 400,
-      "q": "من سجل رأسية التعادل للريال في الوقت بدل الضائع لنهائي 2014؟",
-      "a": "سيرخيو راموس",
-      "qid": "ucl-400-908",
-      "topic": "العودة في النتيجة",
-      "verified": true,
-      "difficultyTarget": 0.6,
-      "source": "https://www.uefa.com/MultimediaFiles/Download/uefaorg/General/02/13/86/55/2138655_DOWNLOAD.pdf",
-      "verifiedAt": "2026-09-18",
-      "alt": [
-        "راموس"
-      ]
-    },
-    {
-      "p": 600,
-      "q": "أي نادٍ برتغالي هزم موناكو بثلاثية في نهائي دوري الأبطال 2004؟",
-      "a": "بورتو",
-      "qid": "ucl-600-901",
-      "topic": "الأبطال",
-      "verified": true,
-      "difficultyTarget": 0.4,
-      "source": "https://www.uefa.com/uefachampionsleague/news/0250-0c5101f9aa40-9dbe7a990dfe-1000--mourinho-recalls-porto-s-2004-victory-march/",
-      "verifiedAt": "2026-09-18"
-    },
-    {
-      "p": 600,
-      "q": "أي نادٍ فاز بلقبه الأوروبي السابع في نهائي أثينا 2007؟",
-      "a": "إيه سي ميلان",
-      "qid": "ucl-600-902",
-      "topic": "الأبطال",
-      "verified": true,
-      "difficultyTarget": 0.4,
-      "source": "https://www.uefa.com/uefachampionsleague/news/01c1-0e6e500c2c66-db2412e7ba39-1000/",
-      "verifiedAt": "2026-09-18",
-      "alt": [
-        "ميلان"
-      ]
-    },
-    {
-      "p": 600,
+      "p": 200,
       "q": "من أحرز هدف سيتي الوحيد في نهائي دوري الأبطال 2023؟",
       "a": "رودري",
-      "qid": "ucl-600-903",
+      "qid": "ucl-200-914",
       "topic": "الهدافون",
       "verified": true,
-      "difficultyTarget": 0.4,
+      "difficultyTarget": 0.8,
       "source": "https://www.uefa.com/uefachampionsleague/news/0282-1839b24603ef-36e94e63621d-1000/",
       "verifiedAt": "2026-09-18",
       "alt": [
@@ -252,27 +57,13 @@
       ]
     },
     {
-      "p": 600,
-      "q": "من سجل تسديدة طائرة بيسراه لتحسم نهائي 2002 للريال؟",
-      "a": "زين الدين زيدان",
-      "qid": "ucl-600-904",
-      "topic": "الهدافون",
-      "verified": true,
-      "difficultyTarget": 0.4,
-      "source": "https://www.uefa.com/uefachampionsleague/news/0245-0e98d9a21e9a-535a6472da2d-1000--bale-larsson-kluivert-the-champions-league-final-super-subs/",
-      "verifiedAt": "2026-09-18",
-      "alt": [
-        "زيدان"
-      ]
-    },
-    {
-      "p": 600,
+      "p": 200,
       "q": "من المدرب البرتغالي الفائز بدوري الأبطال مع فريق من بلاده عام 2004؟",
       "a": "جوزيه مورينيو",
-      "qid": "ucl-600-905",
+      "qid": "ucl-200-915",
       "topic": "المدربون",
       "verified": true,
-      "difficultyTarget": 0.4,
+      "difficultyTarget": 0.8,
       "source": "https://www.uefa.com/uefachampionsleague/news/0250-0c5101f9aa40-9dbe7a990dfe-1000--mourinho-recalls-porto-s-2004-victory-march/",
       "verifiedAt": "2026-09-18",
       "alt": [
@@ -280,110 +71,91 @@
       ]
     },
     {
-      "p": 600,
-      "q": "من الحارس البولندي الذي صد ركلة شيفتشينكو الحاسمة في نهائي 2005؟",
-      "a": "يرزي دوديك",
-      "qid": "ucl-600-906",
+      "p": 200,
+      "q": "من تصدى لركلة روبن في الوقت الإضافي لنهائي 2012؟",
+      "a": "بيتر تشيك",
+      "qid": "ucl-200-916",
       "topic": "حراس المرمى",
       "verified": true,
-      "difficultyTarget": 0.4,
-      "source": "https://www.uefa.com/uefachampionsleague/news/0250-0c50f2820ac1-0d73022c807f-1000--liverpool-triumph-in-turkey/",
+      "difficultyTarget": 0.8,
+      "source": "https://www.uefa.com/uefachampionsleague/news/0250-0c50fb78a384-1434bbcadbcb-1000/",
       "verifiedAt": "2026-09-18",
       "alt": [
-        "جيرزي دوديك",
-        "دوديك"
+        "بيتر تشيك"
       ]
     },
     {
-      "p": 600,
-      "q": "ما اسم الملعب الأولمبي الذي استضاف نهائي إسطنبول 2005؟",
-      "a": "أتاتورك",
-      "qid": "ucl-600-907",
+      "p": 200,
+      "q": "ما الملعب الذي شهد هدفي يونايتد المتأخرين في نهائي 1999؟",
+      "a": "كامب نو",
+      "qid": "ucl-200-917",
       "topic": "الملاعب",
       "verified": true,
-      "difficultyTarget": 0.4,
-      "source": "https://www.uefa.com/news/025d-0f782b45c942-3e20b8c30dfa-1000--miracle-of-istanbul-an-oral-history/",
-      "verifiedAt": "2026-09-18",
-      "alt": [
-        "ملعب أتاتورك الأولمبي"
-      ]
-    },
-    {
-      "p": 600,
-      "q": "من سجل ثلاثية توتنهام أمام أياكس ليقوده لنهائي 2019؟",
-      "a": "لوكاس مورا",
-      "qid": "ucl-600-908",
-      "topic": "العودة في النتيجة",
-      "verified": true,
-      "difficultyTarget": 0.4,
-      "source": "https://www.uefa.com/uefachampionsleague/news/0251-0e9ce1f530f2-d243cb498094-1000/",
+      "difficultyTarget": 0.8,
+      "source": "https://www.uefa.com/uefachampionsleague/news/0253-0d800ac7cffa-8147de94780e-1000--the-1999-champions-league-final-20-years-on-most-dramatic/",
       "verifiedAt": "2026-09-18"
     },
     {
-      "p": 800,
-      "q": "أي نادٍ فرنسي أحرز اللقب الأوروبي عام 1993؟",
-      "a": "أولمبيك مارسيليا",
-      "qid": "ucl-800-901",
+      "p": 200,
+      "q": "من سجل رأسية التعادل للريال في الوقت بدل الضائع لنهائي 2014؟",
+      "a": "سيرخيو راموس",
+      "qid": "ucl-200-918",
+      "topic": "العودة في النتيجة",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "source": "https://www.uefa.com/MultimediaFiles/Download/uefaorg/General/02/13/86/55/2138655_DOWNLOAD.pdf",
+      "verifiedAt": "2026-09-18",
+      "alt": [
+        "راموس"
+      ]
+    },
+    {
+      "p": 400,
+      "q": "أي نادٍ برتغالي هزم موناكو بثلاثية في نهائي دوري الأبطال 2004؟",
+      "a": "بورتو",
+      "qid": "ucl-400-911",
       "topic": "الأبطال",
       "verified": true,
-      "difficultyTarget": 0.25,
-      "source": "https://www.uefa.com/uefachampionsleague/news/0119-0e6a0ed00b00-432257e362a9-1000/",
-      "verifiedAt": "2026-09-18",
-      "alt": [
-        "مارسيليا"
-      ]
+      "difficultyTarget": 0.6,
+      "source": "https://www.uefa.com/uefachampionsleague/news/0250-0c5101f9aa40-9dbe7a990dfe-1000--mourinho-recalls-porto-s-2004-victory-march/",
+      "verifiedAt": "2026-09-18"
     },
     {
-      "p": 800,
-      "q": "أي نادٍ هولندي توج بدوري الأبطال بهدف كلويفرت عام 1995؟",
-      "a": "أياكس أمستردام",
-      "qid": "ucl-800-902",
+      "p": 400,
+      "q": "أي نادٍ فاز بلقبه الأوروبي السابع في نهائي أثينا 2007؟",
+      "a": "إيه سي ميلان",
+      "qid": "ucl-400-912",
       "topic": "الأبطال",
       "verified": true,
-      "difficultyTarget": 0.25,
-      "source": "https://www.uefa.com/uefasupercup/history/1995/",
-      "verifiedAt": "2026-09-18",
-      "alt": [
-        "أياكس"
-      ]
-    },
-    {
-      "p": 800,
-      "q": "من سجل هدفي الإنتر في نهائي دوري الأبطال 2010؟",
-      "a": "دييغو ميليتو",
-      "qid": "ucl-800-903",
-      "topic": "الهدافون",
-      "verified": true,
-      "difficultyTarget": 0.25,
-      "source": "https://www.uefa.com/uefachampionsleague/news/0250-0c50f3b81a1b-4c43e12a6520-1000--2009-10-inter-back-on-top-at-last/",
-      "verifiedAt": "2026-09-18",
-      "alt": [
-        "ميليتو"
-      ]
-    },
-    {
-      "p": 800,
-      "q": "من المهاجم الإيطالي الذي سجل هدفي فريقه في نهائي 2007؟",
-      "a": "فيليبو إنزاغي",
-      "qid": "ucl-800-904",
-      "topic": "الهدافون",
-      "verified": true,
-      "difficultyTarget": 0.25,
+      "difficultyTarget": 0.6,
       "source": "https://www.uefa.com/uefachampionsleague/news/01c1-0e6e500c2c66-db2412e7ba39-1000/",
       "verifiedAt": "2026-09-18",
       "alt": [
-        "إنزاغي",
-        "فيليبو إينزاغي"
+        "ميلان"
       ]
     },
     {
-      "p": 800,
+      "p": 400,
+      "q": "من سجل تسديدة طائرة بيسراه لتحسم نهائي 2002 للريال؟",
+      "a": "زين الدين زيدان",
+      "qid": "ucl-400-913",
+      "topic": "الهدافون",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "source": "https://www.uefa.com/uefachampionsleague/news/0245-0e98d9a21e9a-535a6472da2d-1000--bale-larsson-kluivert-the-champions-league-final-super-subs/",
+      "verifiedAt": "2026-09-18",
+      "alt": [
+        "زيدان"
+      ]
+    },
+    {
+      "p": 400,
       "q": "من المدرب الإسباني الذي قاد الريدز إلى لقب إسطنبول 2005؟",
       "a": "رافاييل بينيتيز",
-      "qid": "ucl-800-905",
+      "qid": "ucl-400-914",
       "topic": "المدربون",
       "verified": true,
-      "difficultyTarget": 0.25,
+      "difficultyTarget": 0.6,
       "source": "https://www.uefa.com/news/025d-0f782b45c942-3e20b8c30dfa-1000--miracle-of-istanbul-an-oral-history/",
       "verifiedAt": "2026-09-18",
       "alt": [
@@ -392,84 +164,53 @@
       ]
     },
     {
-      "p": 800,
-      "q": "من الحارس الذي تصدى لركلة أنيلكا وحسم نهائي موسكو 2008؟",
-      "a": "إدوين فان دير سار",
-      "qid": "ucl-800-906",
+      "p": 400,
+      "q": "من الحارس البولندي الذي صد ركلة شيفتشينكو الحاسمة في نهائي 2005؟",
+      "a": "يرزي دوديك",
+      "qid": "ucl-400-915",
       "topic": "حراس المرمى",
       "verified": true,
-      "difficultyTarget": 0.25,
-      "source": "https://www.uefa.com/news-media/news/0254-0d7bddc3ee84-0d3ef5ff88a0-1000--van-der-sar-delights-in-decisive-moment/",
+      "difficultyTarget": 0.6,
+      "source": "https://www.uefa.com/uefachampionsleague/news/0250-0c50f2820ac1-0d73022c807f-1000--liverpool-triumph-in-turkey/",
       "verifiedAt": "2026-09-18",
       "alt": [
-        "فان دير سار"
+        "جيرزي دوديك",
+        "دوديك"
       ]
     },
     {
-      "p": 800,
-      "q": "ما الاسم الشائع لملعب بنفيكا الذي استضاف نهائي دوري الأبطال 2014؟",
-      "a": "دا لوز",
-      "qid": "ucl-800-907",
+      "p": 400,
+      "q": "ما اسم الملعب الأولمبي الذي استضاف نهائي إسطنبول 2005؟",
+      "a": "أتاتورك",
+      "qid": "ucl-400-916",
       "topic": "الملاعب",
       "verified": true,
-      "difficultyTarget": 0.25,
-      "source": "https://www.uefa.com/uefachampionsleague/news/01fb-0e7d59a108bb-e85a09cb5276-1000--lisbon-to-stage-2014-uefa-champions-league-final/",
+      "difficultyTarget": 0.6,
+      "source": "https://www.uefa.com/news/025d-0f782b45c942-3e20b8c30dfa-1000--miracle-of-istanbul-an-oral-history/",
       "verifiedAt": "2026-09-18",
       "alt": [
-        "ملعب النور",
-        "إستاديو دا لوز"
+        "ملعب أتاتورك الأولمبي"
       ]
     },
     {
-      "p": 800,
-      "q": "من سجل الهدف السادس والحاسم للبارسا أمام باريس في ريمونتادا 2017؟",
-      "a": "سيرجي روبرتو",
-      "qid": "ucl-800-908",
+      "p": 400,
+      "q": "من سجل ثلاثية توتنهام أمام أياكس ليقوده لنهائي 2019؟",
+      "a": "لوكاس مورا",
+      "qid": "ucl-400-917",
       "topic": "العودة في النتيجة",
       "verified": true,
-      "difficultyTarget": 0.25,
-      "source": "https://www.uefa.com/uefachampionsleague/news/0237-0e966c1b69f6-14f87a701fd9-1000/",
-      "verifiedAt": "2026-09-18",
-      "alt": [
-        "سيرخي روبرتو"
-      ]
+      "difficultyTarget": 0.6,
+      "source": "https://www.uefa.com/uefachampionsleague/news/0251-0e9ce1f530f2-d243cb498094-1000/",
+      "verifiedAt": "2026-09-18"
     },
     {
-      "p": 1000,
-      "q": "أي نادٍ إسكتلندي توج بطلًا لأوروبا في لشبونة عام 1967؟",
-      "a": "سلتيك",
-      "qid": "ucl-1000-901",
-      "topic": "الأبطال",
-      "verified": true,
-      "difficultyTarget": 0.15,
-      "source": "https://www.uefa.com/uefachampionsleague/news/0258-0e6a053a5775-dc924599f3ea-1000--1966-67-celtic-adventure-reaps-reward/",
-      "verifiedAt": "2026-09-18",
-      "alt": [
-        "سيلتيك"
-      ]
-    },
-    {
-      "p": 1000,
-      "q": "أي نادٍ إنجليزي هزم مالمو بهدف تريفور فرانسيس في نهائي 1979؟",
-      "a": "نوتنغهام فورست",
-      "qid": "ucl-1000-902",
-      "topic": "الأبطال",
-      "verified": true,
-      "difficultyTarget": 0.15,
-      "source": "https://www.uefa.com/uefachampionsleague/news/025a-0ea6687c95ea-1cc4f4a550f7-1000--1978-79-forest-join-elite-club/",
-      "verifiedAt": "2026-09-18",
-      "alt": [
-        "نوتينغهام فورست"
-      ]
-    },
-    {
-      "p": 1000,
+      "p": 400,
       "q": "من البديل النرويجي صاحب هدف الفوز ليونايتد في نهائي 1999؟",
       "a": "أولي غونار سولشاير",
-      "qid": "ucl-1000-903",
+      "qid": "ucl-400-918",
       "topic": "الهدافون",
       "verified": true,
-      "difficultyTarget": 0.15,
+      "difficultyTarget": 0.6,
       "source": "https://www.uefa.com/uefachampionsleague/news/0253-0d800ac7cffa-8147de94780e-1000--the-1999-champions-league-final-20-years-on-most-dramatic/",
       "verifiedAt": "2026-09-18",
       "alt": [
@@ -478,13 +219,156 @@
       ]
     },
     {
-      "p": 1000,
-      "q": "من سجل الهدف الوحيد في نهائي دوري الأبطال 1993؟",
-      "a": "باسيل بولي",
-      "qid": "ucl-1000-904",
+      "p": 600,
+      "q": "أي نادٍ فرنسي أحرز اللقب الأوروبي عام 1993؟",
+      "a": "أولمبيك مارسيليا",
+      "qid": "ucl-600-911",
+      "topic": "الأبطال",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "source": "https://www.uefa.com/uefachampionsleague/news/0119-0e6a0ed00b00-432257e362a9-1000/",
+      "verifiedAt": "2026-09-18",
+      "alt": [
+        "مارسيليا"
+      ]
+    },
+    {
+      "p": 600,
+      "q": "أي نادٍ هولندي توج بدوري الأبطال بهدف كلويفرت عام 1995؟",
+      "a": "أياكس أمستردام",
+      "qid": "ucl-600-912",
+      "topic": "الأبطال",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "source": "https://www.uefa.com/uefasupercup/history/1995/",
+      "verifiedAt": "2026-09-18",
+      "alt": [
+        "أياكس"
+      ]
+    },
+    {
+      "p": 600,
+      "q": "من سجل هدفي الإنتر في نهائي دوري الأبطال 2010؟",
+      "a": "دييغو ميليتو",
+      "qid": "ucl-600-913",
       "topic": "الهدافون",
       "verified": true,
-      "difficultyTarget": 0.15,
+      "difficultyTarget": 0.4,
+      "source": "https://www.uefa.com/uefachampionsleague/news/0250-0c50f3b81a1b-4c43e12a6520-1000--2009-10-inter-back-on-top-at-last/",
+      "verifiedAt": "2026-09-18",
+      "alt": [
+        "ميليتو"
+      ]
+    },
+    {
+      "p": 600,
+      "q": "من المهاجم الإيطالي الذي سجل هدفي فريقه في نهائي 2007؟",
+      "a": "فيليبو إنزاغي",
+      "qid": "ucl-600-914",
+      "topic": "الهدافون",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "source": "https://www.uefa.com/uefachampionsleague/news/01c1-0e6e500c2c66-db2412e7ba39-1000/",
+      "verifiedAt": "2026-09-18",
+      "alt": [
+        "إنزاغي",
+        "فيليبو إينزاغي"
+      ]
+    },
+    {
+      "p": 600,
+      "q": "من الحارس الذي تصدى لركلة أنيلكا وحسم نهائي موسكو 2008؟",
+      "a": "إدوين فان دير سار",
+      "qid": "ucl-600-915",
+      "topic": "حراس المرمى",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "source": "https://www.uefa.com/news-media/news/0254-0d7bddc3ee84-0d3ef5ff88a0-1000--van-der-sar-delights-in-decisive-moment/",
+      "verifiedAt": "2026-09-18",
+      "alt": [
+        "فان دير سار"
+      ]
+    },
+    {
+      "p": 600,
+      "q": "ما الاسم الشائع لملعب بنفيكا الذي استضاف نهائي دوري الأبطال 2014؟",
+      "a": "دا لوز",
+      "qid": "ucl-600-916",
+      "topic": "الملاعب",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "source": "https://www.uefa.com/uefachampionsleague/news/01fb-0e7d59a108bb-e85a09cb5276-1000--lisbon-to-stage-2014-uefa-champions-league-final/",
+      "verifiedAt": "2026-09-18",
+      "alt": [
+        "ملعب النور",
+        "إستاديو دا لوز"
+      ]
+    },
+    {
+      "p": 600,
+      "q": "من سجل الهدف السادس والحاسم للبارسا أمام باريس في ريمونتادا 2017؟",
+      "a": "سيرجي روبرتو",
+      "qid": "ucl-600-917",
+      "topic": "العودة في النتيجة",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "source": "https://www.uefa.com/uefachampionsleague/news/0237-0e966c1b69f6-14f87a701fd9-1000/",
+      "verifiedAt": "2026-09-18",
+      "alt": [
+        "سيرخي روبرتو"
+      ]
+    },
+    {
+      "q": "من الإنجليزي الذي سجل الهدف الثاني لريال مدريد في نهائي دوري الأبطال 2000؟",
+      "a": "ستيف ماكمانامان",
+      "topic": "لحظات النهائي",
+      "verified": true,
+      "sourceUrl": "https://www.uefa.com/news/0275-15201acb75e7-c57250f46a12-1000--liverpool-and-real-madrid-s-finals/",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Steve McManaman",
+        "ستيف مكمانمان"
+      ],
+      "p": 600,
+      "qid": "ucl-600-918",
+      "difficultyTarget": 0.4
+    },
+    {
+      "p": 800,
+      "q": "أي نادٍ إسكتلندي توج بطلًا لأوروبا في لشبونة عام 1967؟",
+      "a": "سلتيك",
+      "qid": "ucl-800-911",
+      "topic": "الأبطال",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "source": "https://www.uefa.com/uefachampionsleague/news/0258-0e6a053a5775-dc924599f3ea-1000--1966-67-celtic-adventure-reaps-reward/",
+      "verifiedAt": "2026-09-18",
+      "alt": [
+        "سيلتيك"
+      ]
+    },
+    {
+      "p": 800,
+      "q": "أي نادٍ إنجليزي هزم مالمو بهدف تريفور فرانسيس في نهائي 1979؟",
+      "a": "نوتنغهام فورست",
+      "qid": "ucl-800-912",
+      "topic": "الأبطال",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "source": "https://www.uefa.com/uefachampionsleague/news/025a-0ea6687c95ea-1cc4f4a550f7-1000--1978-79-forest-join-elite-club/",
+      "verifiedAt": "2026-09-18",
+      "alt": [
+        "نوتينغهام فورست"
+      ]
+    },
+    {
+      "p": 800,
+      "q": "من سجل الهدف الوحيد في نهائي دوري الأبطال 1993؟",
+      "a": "باسيل بولي",
+      "qid": "ucl-800-913",
+      "topic": "الهدافون",
+      "verified": true,
+      "difficultyTarget": 0.25,
       "source": "https://www.uefa.com/uefachampionsleague/news/0119-0e6a0ed00b00-432257e362a9-1000/",
       "verifiedAt": "2026-09-18",
       "alt": [
@@ -492,24 +376,24 @@
       ]
     },
     {
-      "p": 1000,
+      "p": 800,
       "q": "من المدرب النمساوي الذي قاد هامبورغ إلى لقب أوروبا عام 1983؟",
       "a": "إرنست هابل",
-      "qid": "ucl-1000-905",
+      "qid": "ucl-800-914",
       "topic": "المدربون",
       "verified": true,
-      "difficultyTarget": 0.15,
+      "difficultyTarget": 0.25,
       "source": "https://www.uefa.com/uefachampionsleague/news/00a1-0e6a0ac0571c-8d8943df8967-1000--1982-83-magath-thunderbolt-downs-juve/",
       "verifiedAt": "2026-09-18"
     },
     {
-      "p": 1000,
+      "p": 800,
       "q": "من حارس ستيوا بوخارست الذي تصدى لأربع ركلات ترجيح في نهائي 1986؟",
       "a": "هيلموت دوكادام",
-      "qid": "ucl-1000-906",
+      "qid": "ucl-800-915",
       "topic": "حراس المرمى",
       "verified": true,
-      "difficultyTarget": 0.15,
+      "difficultyTarget": 0.25,
       "source": "https://www.uefa.com/uefachampionsleague/news/00c5-0e6a0bc49898-3c69a840d79b-1000/",
       "verifiedAt": "2026-09-18",
       "alt": [
@@ -517,26 +401,159 @@
       ]
     },
     {
-      "p": 1000,
+      "p": 800,
       "q": "ما الملعب الإسكتلندي الذي شهد نهائي 1960 المنتهي بنتيجة 7–3؟",
       "a": "هامبدن بارك",
-      "qid": "ucl-1000-907",
+      "qid": "ucl-800-916",
       "topic": "الملاعب",
       "verified": true,
-      "difficultyTarget": 0.15,
+      "difficultyTarget": 0.25,
       "source": "https://www.uefa.com/uefachampionsleague/news/0253-0d7b1dc17e3e-c896eaba1732-1000--1959-60-dazzling-madrid-crush-frankfurt/",
       "verifiedAt": "2026-09-18"
     },
     {
-      "p": 1000,
+      "p": 800,
       "q": "من افتتح رباعية ديبورتيفو لاكورونيا أمام ميلان في إياب ربع نهائي 2004؟",
       "a": "والتر باندياني",
-      "qid": "ucl-1000-908",
+      "qid": "ucl-800-917",
       "topic": "العودة في النتيجة",
       "verified": true,
-      "difficultyTarget": 0.15,
+      "difficultyTarget": 0.25,
       "source": "https://www.uefa.com/uefachampionsleague/news/019c-0e6c12450ff2-294c584e2602-1000--dazzling-depor-ditch-milan/",
       "verifiedAt": "2026-09-18"
+    },
+    {
+      "q": "من المدرب الذي قاد موناكو إلى نهائي دوري أبطال أوروبا 2004؟",
+      "a": "ديدييه ديشان",
+      "topic": "المدربون",
+      "verified": true,
+      "sourceUrl": "https://www.uefa.com/uefachampionsleague/news/019c-0e6c156f8c5e-ffa68381a78d-1000--ranieri-gamble-backfires/",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Didier Deschamps",
+        "ديديه ديشان"
+      ],
+      "p": 800,
+      "qid": "ucl-800-918",
+      "difficultyTarget": 0.25
+    },
+    {
+      "q": "من سجل هدف الفوز في نهائي كأس أوروبا 1987؟",
+      "a": "جواري",
+      "topic": "لحظات النهائي",
+      "verified": true,
+      "sourceUrl": "https://www.uefa.com/uefaeuropaleague/news/0191-0e6a61b33488-8e8530be9669-1000--juary-sends-bayern-down/",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Juary",
+        "جوارى"
+      ],
+      "p": 1000,
+      "qid": "ucl-1000-911",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "من مدرب الفريق الفائز بكأس أوروبا عام 1987؟",
+      "a": "أرتور جورجي",
+      "topic": "المدربون",
+      "verified": true,
+      "sourceUrl": "https://www.uefa.com/uefaeuropaleague/news/0191-0e6a61b33488-8e8530be9669-1000--juary-sends-bayern-down/",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Artur Jorge",
+        "آرتور جورج"
+      ],
+      "p": 1000,
+      "qid": "ucl-1000-912",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "من درب أستون فيلا عندما فاز بكأس أوروبا عام 1982؟",
+      "a": "توني بارتون",
+      "topic": "المدربون",
+      "verified": true,
+      "sourceUrl": "https://www.uefa.com/uefachampionsleague/news/0254-0d7b1e154752-f2cfb521c62d-1000/",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Tony Barton"
+      ],
+      "p": 1000,
+      "qid": "ucl-1000-913",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "من حارس أستون فيلا البديل الذي دخل بعد إصابة جيمي ريمر في نهائي أوروبا 1982؟",
+      "a": "نايجل سبينك",
+      "topic": "حراس المرمى",
+      "verified": true,
+      "sourceUrl": "https://www.uefa.com/uefachampionsleague/news/0254-0d7b1e154752-f2cfb521c62d-1000/",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Nigel Spink"
+      ],
+      "p": 1000,
+      "qid": "ucl-1000-914",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "ما ملعب روتردام الذي استضاف نهائي كأس أوروبا بين أستون فيلا وبايرن عام 1982؟",
+      "a": "دي كويب",
+      "topic": "الملاعب",
+      "verified": true,
+      "sourceUrl": "https://www.uefa.com/uefachampionsleague/news/0254-0d7b1e154752-f2cfb521c62d-1000/",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "De Kuip",
+        "دي كوييب"
+      ],
+      "p": 1000,
+      "qid": "ucl-1000-915",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "من سجل هدفين لموناكو عند فوزه 3–1 على ريال مدريد في إياب ربع نهائي 2004؟",
+      "a": "لودوفيك جيولي",
+      "topic": "العودة في النتيجة",
+      "verified": true,
+      "sourceUrl": "https://www.uefa.com/uefachampionsleague/news/019c-0e6ad3e94fa1-7d2d6812cba9-1000--madrid-felled-by-morientes/",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Ludovic Giuly",
+        "لودوفيك جولي"
+      ],
+      "p": 1000,
+      "qid": "ucl-1000-916",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "من سجل أول هدفين لدورتموند في نهائي دوري الأبطال 1997؟",
+      "a": "كارل هاينز ريدله",
+      "topic": "الهدافون",
+      "verified": true,
+      "sourceUrl": "https://www.uefa.com/uefachampionsleague/news/0218-0e8b8ebf0d52-be65c1f2eabc-1000--ambassador-karl-heinz-riedle/",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Karl-Heinz Riedle",
+        "كارل هاينز ريدلي"
+      ],
+      "p": 1000,
+      "qid": "ucl-1000-917",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "من تصدر هدافي دوري أبطال أوروبا 2003–2004 بتسعة أهداف؟",
+      "a": "فرناندو مورينتس",
+      "topic": "الهدافون",
+      "verified": true,
+      "sourceUrl": "https://www.uefa.com/uefachampionsleague/news/025a-0eaaab77c975-03f5dd1a853b-1000--madrid-grateful-for-morientes/",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Fernando Morientes",
+        "فرناندو موريانتس"
+      ],
+      "p": 1000,
+      "qid": "ucl-1000-918",
+      "difficultyTarget": 0.15
     }
   ]
 }

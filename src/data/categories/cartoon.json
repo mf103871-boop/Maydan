@@ -6,114 +6,6 @@
   "qs": [
     {
       "p": 200,
-      "topic": "أماكن ومدن",
-      "q": "داخل أي ثمرة يسكن سبونج بوب في قاع البحر؟",
-      "a": "أناناس",
-      "alt": [
-        "أناناسة"
-      ],
-      "sourceUrl": "https://www.paramountpressexpress.com/nickelodeon/shows/spongebob-squarepants",
-      "verified": true,
-      "qid": "cartoon-200-901",
-      "difficultyTarget": 0.8
-    },
-    {
-      "p": 200,
-      "topic": "أصدقاء وعائلات",
-      "q": "ما اسم نجم البحر الوردي الذي يرافق سبونج بوب في مغامراته؟",
-      "a": "باتريك",
-      "alt": [
-        "بسيط",
-        "Patrick Star"
-      ],
-      "sourceUrl": "https://www.paramountpressexpress.com/nickelodeon/shows/spongebob-squarepants",
-      "verified": true,
-      "qid": "cartoon-200-902",
-      "difficultyTarget": 0.8
-    },
-    {
-      "p": 200,
-      "topic": "أطعمة وموارد",
-      "q": "ما الخضار المعلب الذي يأكله بوباي ليستعيد قوته؟",
-      "a": "السبانخ",
-      "alt": [
-        "سبانخ"
-      ],
-      "sourceUrl": "https://popeye.com/About/",
-      "verified": true,
-      "qid": "cartoon-200-903",
-      "difficultyTarget": 0.8
-    },
-    {
-      "p": 200,
-      "topic": "أبطال وشخصيات",
-      "q": "من كبير قرية السنافر الذي يرشدهم ويصنع الجرعات السحرية؟",
-      "a": "بابا سنفور",
-      "alt": [
-        "Papa Smurf"
-      ],
-      "sourceUrl": "https://www.smurf.com/",
-      "verified": true,
-      "qid": "cartoon-200-904",
-      "difficultyTarget": 0.8
-    },
-    {
-      "p": 200,
-      "topic": "أصدقاء وعائلات",
-      "q": "ما اسم كلب ميكي ماوس الأليف؟",
-      "a": "بلوتو",
-      "alt": [
-        "Pluto"
-      ],
-      "sourceUrl": "https://d23.com/a-to-z/pluto/",
-      "verified": true,
-      "qid": "cartoon-200-905",
-      "difficultyTarget": 0.8
-    },
-    {
-      "p": 200,
-      "topic": "أدوات وأشياء",
-      "q": "في فيلم «أب»، ماذا يربط كارل ببيته كي يرتفع في الهواء؟",
-      "a": "بالونات",
-      "alt": [
-        "البالونات"
-      ],
-      "sourceUrl": "https://www.pixar.com/upfilm",
-      "verified": true,
-      "qid": "cartoon-200-906",
-      "difficultyTarget": 0.8
-    },
-    {
-      "p": 200,
-      "topic": "أحداث ومهمات",
-      "q": "في «خلطبيطة بالصلصة»، ما المهنة التي يحلم الفأر ريمي بممارستها؟",
-      "a": "الطبخ",
-      "alt": [
-        "طاه",
-        "طباخ",
-        "أن يصبح طاهيًا"
-      ],
-      "sourceUrl": "https://www.pixar.com/ratatouille",
-      "verified": true,
-      "qid": "cartoon-200-907",
-      "difficultyTarget": 0.8
-    },
-    {
-      "p": 200,
-      "topic": "قدرات وتحولات",
-      "q": "في «الخارقون»، ما قدرة الأم هيلين التي تجعل جسمها كالمطاط؟",
-      "a": "التمدد",
-      "alt": [
-        "مط جسمها",
-        "المرونة"
-      ],
-      "sourceUrl": "https://www.pixar.com/the-incredibles",
-      "verified": true,
-      "qid": "cartoon-200-908",
-      "difficultyTarget": 0.8
-    },
-    {
-      "p": 400,
       "topic": "أصدقاء وعائلات",
       "q": "ما اسم الحلزون الأليف الذي يعيش مع سبونج بوب؟",
       "a": "غاري",
@@ -123,39 +15,11 @@
       ],
       "sourceUrl": "https://www.nick.com/info-page/xe31fl/spongebob-squarepants",
       "verified": true,
-      "qid": "cartoon-400-901",
-      "difficultyTarget": 0.6
+      "qid": "cartoon-200-911",
+      "difficultyTarget": 0.8
     },
     {
-      "p": 400,
-      "topic": "خصوم ومنافسون",
-      "q": "من الساحر البشري الذي يحاول اصطياد السنافر؟",
-      "a": "شرشبيل",
-      "alt": [
-        "غارغامل",
-        "Gargamel"
-      ],
-      "sourceUrl": "https://www.smurf.com/",
-      "verified": true,
-      "qid": "cartoon-400-902",
-      "difficultyTarget": 0.6
-    },
-    {
-      "p": 400,
-      "topic": "أصدقاء وعائلات",
-      "q": "ما اسم القط الذي يرافق الساحر الشرير في مطاردة السنافر؟",
-      "a": "عزرائيل",
-      "alt": [
-        "هرهور",
-        "Azrael"
-      ],
-      "sourceUrl": "https://www.smurf.com/",
-      "verified": true,
-      "qid": "cartoon-400-903",
-      "difficultyTarget": 0.6
-    },
-    {
-      "p": 400,
+      "p": 200,
       "topic": "أدوات وأشياء",
       "q": "في «السنافر»، ماذا تخبئ هدايا سنفور المازح فتفاجئ من يفتحها؟",
       "a": "انفجار",
@@ -166,25 +30,11 @@
       ],
       "sourceUrl": "https://www.smurf.com/",
       "verified": true,
-      "qid": "cartoon-400-904",
-      "difficultyTarget": 0.6
+      "qid": "cartoon-200-912",
+      "difficultyTarget": 0.8
     },
     {
-      "p": 400,
-      "topic": "أحداث ومهمات",
-      "q": "ماذا يضغط الروبوت «وول إي» في مكعبات خلال عمله على الأرض؟",
-      "a": "النفايات",
-      "alt": [
-        "القمامة",
-        "الزبالة"
-      ],
-      "sourceUrl": "https://www.pixar.com/wall-e",
-      "verified": true,
-      "qid": "cartoon-400-905",
-      "difficultyTarget": 0.6
-    },
-    {
-      "p": 400,
+      "p": 200,
       "topic": "أماكن ومدن",
       "q": "في «قلبًا وقالبًا»، إلى أي مدينة تنتقل رايلي مع عائلتها؟",
       "a": "سان فرانسيسكو",
@@ -193,11 +43,11 @@
       ],
       "sourceUrl": "https://www.pixar.com/inside-out",
       "verified": true,
-      "qid": "cartoon-400-906",
-      "difficultyTarget": 0.6
+      "qid": "cartoon-200-913",
+      "difficultyTarget": 0.8
     },
     {
-      "p": 400,
+      "p": 200,
       "topic": "أطعمة وموارد",
       "q": "في بداية «شركة المرعبين المحدودة»، ما أصوات الأطفال التي تجمعها الشركة لإنتاج الطاقة؟",
       "a": "الصرخات",
@@ -207,25 +57,11 @@
       ],
       "sourceUrl": "https://www.pixar.com/monsters-inc",
       "verified": true,
-      "qid": "cartoon-400-907",
-      "difficultyTarget": 0.6
+      "qid": "cartoon-200-914",
+      "difficultyTarget": 0.8
     },
     {
-      "p": 400,
-      "topic": "قدرات وتحولات",
-      "q": "في «الخارقون»، ما القدرة التي يتميز بها الابن داش أثناء الجري؟",
-      "a": "السرعة الخارقة",
-      "alt": [
-        "سرعة خارقة",
-        "سرعة فائقة"
-      ],
-      "sourceUrl": "https://www.pixar.com/the-incredibles",
-      "verified": true,
-      "qid": "cartoon-400-908",
-      "difficultyTarget": 0.6
-    },
-    {
-      "p": 600,
+      "p": 200,
       "topic": "أدوات وأشياء",
       "q": "في «سبونج بوب»، ما الآلة الموسيقية التي يعزف عليها شفيق؟",
       "a": "الكلارينيت",
@@ -235,11 +71,11 @@
       ],
       "sourceUrl": "https://www.nick.com/info-page/c2e5s0/squidward-j-q-tentacles",
       "verified": true,
-      "qid": "cartoon-600-901",
-      "difficultyTarget": 0.4
+      "qid": "cartoon-200-915",
+      "difficultyTarget": 0.8
     },
     {
-      "p": 600,
+      "p": 200,
       "topic": "أماكن ومدن",
       "q": "في «سبونج بوب»، من أي ولاية أمريكية جاءت ساندي؟",
       "a": "تكساس",
@@ -248,11 +84,11 @@
       ],
       "sourceUrl": "https://www.nick.com/info-page/zj5lyn/sandy-cheeks",
       "verified": true,
-      "qid": "cartoon-600-902",
-      "difficultyTarget": 0.4
+      "qid": "cartoon-200-916",
+      "difficultyTarget": 0.8
     },
     {
-      "p": 600,
+      "p": 200,
       "topic": "أبطال وشخصيات",
       "q": "أي سنفور يكثر من ترديد أقوال كبير القرية ويعتبر نفسه أذكى الجميع؟",
       "a": "سنفور مفكر",
@@ -263,11 +99,11 @@
       ],
       "sourceUrl": "https://www.smurf.com/",
       "verified": true,
-      "qid": "cartoon-600-903",
-      "difficultyTarget": 0.4
+      "qid": "cartoon-200-917",
+      "difficultyTarget": 0.8
     },
     {
-      "p": 600,
+      "p": 200,
       "topic": "أبطال وشخصيات",
       "q": "في «أب»، ما اسم الكشاف الصغير الذي يرافق كارل في رحلته؟",
       "a": "راسل",
@@ -277,11 +113,11 @@
       ],
       "sourceUrl": "https://www.pixar.com/upfilm",
       "verified": true,
-      "qid": "cartoon-600-904",
-      "difficultyTarget": 0.4
+      "qid": "cartoon-200-918",
+      "difficultyTarget": 0.8
     },
     {
-      "p": 600,
+      "p": 400,
       "topic": "أصدقاء وعائلات",
       "q": "في «شركة المرعبين المحدودة»، ما الاسم الذي يطلقه سولي على الطفلة البشرية التي يحميها؟",
       "a": "بو",
@@ -290,25 +126,11 @@
       ],
       "sourceUrl": "https://www.pixar.com/monsters-inc",
       "verified": true,
-      "qid": "cartoon-600-905",
-      "difficultyTarget": 0.4
+      "qid": "cartoon-400-911",
+      "difficultyTarget": 0.6
     },
     {
-      "p": 600,
-      "topic": "أحداث ومهمات",
-      "q": "في «كوكو»، ما الفن الذي تمنعه عائلة ميغيل رغم شغفه به؟",
-      "a": "الموسيقى",
-      "alt": [
-        "ممارسة الموسيقى",
-        "العزف والغناء"
-      ],
-      "sourceUrl": "https://www.pixar.com/coco",
-      "verified": true,
-      "qid": "cartoon-600-906",
-      "difficultyTarget": 0.4
-    },
-    {
-      "p": 600,
+      "p": 400,
       "topic": "قدرات وتحولات",
       "q": "في «الخارقون»، ماذا تكوّن فايوليت حولها لحماية نفسها إضافة إلى الاختفاء؟",
       "a": "حقول قوة",
@@ -319,11 +141,11 @@
       ],
       "sourceUrl": "https://www.pixar.com/the-incredibles",
       "verified": true,
-      "qid": "cartoon-600-907",
-      "difficultyTarget": 0.4
+      "qid": "cartoon-400-912",
+      "difficultyTarget": 0.6
     },
     {
-      "p": 600,
+      "p": 400,
       "topic": "أحداث ومهمات",
       "q": "في «الخارقون»، ما تخصص إدنا مود الذي يحتاجه الأبطال عند تجديد بدلاتهم؟",
       "a": "تصميم أزياء الأبطال",
@@ -333,25 +155,11 @@
       ],
       "sourceUrl": "https://www.pixar.com/the-incredibles",
       "verified": true,
-      "qid": "cartoon-600-908",
-      "difficultyTarget": 0.4
+      "qid": "cartoon-400-913",
+      "difficultyTarget": 0.6
     },
     {
-      "p": 800,
-      "topic": "خصوم ومنافسون",
-      "q": "في «سبونج بوب»، ما اسم منافس شفيق المتباهي الذي يتحداه في الحفلات؟",
-      "a": "سكويليام فانسي سن",
-      "alt": [
-        "سكويليام",
-        "Squilliam Fancyson"
-      ],
-      "sourceUrl": "https://www.nick.com/info-page/c2e5s0/squidward-j-q-tentacles",
-      "verified": true,
-      "qid": "cartoon-800-901",
-      "difficultyTarget": 0.25
-    },
-    {
-      "p": 800,
+      "p": 400,
       "topic": "أصدقاء وعائلات",
       "q": "في «كوكو»، ما اسم الكلب شبه الخالي من الشعر الذي يرافق ميغيل؟",
       "a": "دانتي",
@@ -360,25 +168,11 @@
       ],
       "sourceUrl": "https://www.pixar.com/coco",
       "verified": true,
-      "qid": "cartoon-800-902",
-      "difficultyTarget": 0.25
+      "qid": "cartoon-400-914",
+      "difficultyTarget": 0.6
     },
     {
-      "p": 800,
-      "topic": "أصدقاء وعائلات",
-      "q": "في «أب»، ما الاسم الذي يعطيه الكشاف للطائر النادر الذي يجده في الغابة؟",
-      "a": "كيفن",
-      "alt": [
-        "Kevin",
-        "كيفين"
-      ],
-      "sourceUrl": "https://www.pixar.com/upfilm",
-      "verified": true,
-      "qid": "cartoon-800-903",
-      "difficultyTarget": 0.25
-    },
-    {
-      "p": 800,
+      "p": 400,
       "topic": "أماكن ومدن",
       "q": "ما اسم مدينة الوحوش التي تدخلها الطفلة البشرية في «شركة المرعبين المحدودة»؟",
       "a": "مونستروبوليس",
@@ -388,11 +182,11 @@
       ],
       "sourceUrl": "https://www.pixar.com/monsters-inc",
       "verified": true,
-      "qid": "cartoon-800-904",
-      "difficultyTarget": 0.25
+      "qid": "cartoon-400-915",
+      "difficultyTarget": 0.6
     },
     {
-      "p": 800,
+      "p": 400,
       "topic": "أماكن ومدن",
       "q": "في «وول إي»، ما اسم السفينة الفضائية التي يعيش على متنها البشر؟",
       "a": "أكسيوم",
@@ -402,11 +196,11 @@
       ],
       "sourceUrl": "https://www.pixar.com/wall-e",
       "verified": true,
-      "qid": "cartoon-800-905",
-      "difficultyTarget": 0.25
+      "qid": "cartoon-400-916",
+      "difficultyTarget": 0.6
     },
     {
-      "p": 800,
+      "p": 400,
       "topic": "خصوم ومنافسون",
       "q": "في «خلطبيطة بالصلصة»، ما اسم ناقد الطعام الصارم الذي تخشاه المطاعم؟",
       "a": "أنطون إيغو",
@@ -416,11 +210,11 @@
       ],
       "sourceUrl": "https://www.pixar.com/ratatouille",
       "verified": true,
-      "qid": "cartoon-800-906",
-      "difficultyTarget": 0.25
+      "qid": "cartoon-400-917",
+      "difficultyTarget": 0.6
     },
     {
-      "p": 800,
+      "p": 400,
       "topic": "أبطال وشخصيات",
       "q": "في «خلطبيطة بالصلصة»، ما اسم الطاهية التي تُكلّف بتدريب لينغويني؟",
       "a": "كوليت",
@@ -429,11 +223,39 @@
       ],
       "sourceUrl": "https://www.pixar.com/ratatouille",
       "verified": true,
-      "qid": "cartoon-800-907",
-      "difficultyTarget": 0.25
+      "qid": "cartoon-400-918",
+      "difficultyTarget": 0.6
     },
     {
-      "p": 800,
+      "p": 600,
+      "topic": "خصوم ومنافسون",
+      "q": "في «سبونج بوب»، ما اسم منافس شفيق المتباهي الذي يتحداه في الحفلات؟",
+      "a": "سكويليام فانسي سن",
+      "alt": [
+        "سكويليام",
+        "Squilliam Fancyson"
+      ],
+      "sourceUrl": "https://www.nick.com/info-page/c2e5s0/squidward-j-q-tentacles",
+      "verified": true,
+      "qid": "cartoon-600-911",
+      "difficultyTarget": 0.4
+    },
+    {
+      "p": 600,
+      "topic": "أصدقاء وعائلات",
+      "q": "في «أب»، ما الاسم الذي يعطيه الكشاف للطائر النادر الذي يجده في الغابة؟",
+      "a": "كيفن",
+      "alt": [
+        "Kevin",
+        "كيفين"
+      ],
+      "sourceUrl": "https://www.pixar.com/upfilm",
+      "verified": true,
+      "qid": "cartoon-600-912",
+      "difficultyTarget": 0.4
+    },
+    {
+      "p": 600,
       "topic": "أدوات وأشياء",
       "q": "في «كوكو»، من بتلات أي زهرة يتكون الجسر الذي يعبره الموتى نحو عالم الأحياء؟",
       "a": "القطيفة",
@@ -444,24 +266,11 @@
       ],
       "sourceUrl": "https://www.pixar.com/coco",
       "verified": true,
-      "qid": "cartoon-800-908",
-      "difficultyTarget": 0.25
+      "qid": "cartoon-600-913",
+      "difficultyTarget": 0.4
     },
     {
-      "p": 1000,
-      "topic": "أطعمة وموارد",
-      "q": "في «سبونج بوب»، ما المكوّن الرخيص الذي يُكشف أنه يشكّل معظم شطائر السلطعون المجمدة؟",
-      "a": "الرمل",
-      "alt": [
-        "رمل"
-      ],
-      "sourceUrl": "https://www.nick.com/info-page/0vq4xx/mr-krabs",
-      "verified": true,
-      "qid": "cartoon-1000-901",
-      "difficultyTarget": 0.15
-    },
-    {
-      "p": 1000,
+      "p": 600,
       "topic": "أدوات وأشياء",
       "q": "في «السنافر»، ما الحجر الذي أراد الساحر صنعه ليحوّل الرصاص إلى ذهب؟",
       "a": "حجر الفلاسفة",
@@ -471,11 +280,11 @@
       ],
       "sourceUrl": "https://www.smurf.com/",
       "verified": true,
-      "qid": "cartoon-1000-902",
-      "difficultyTarget": 0.15
+      "qid": "cartoon-600-914",
+      "difficultyTarget": 0.4
     },
     {
-      "p": 1000,
+      "p": 600,
       "topic": "أصدقاء وعائلات",
       "q": "في «خلطبيطة بالصلصة»، ما اسم شقيق ريمي الذي يحب أكل كل شيء؟",
       "a": "إيميل",
@@ -485,25 +294,11 @@
       ],
       "sourceUrl": "https://www.pixar.com/ratatouille",
       "verified": true,
-      "qid": "cartoon-1000-903",
-      "difficultyTarget": 0.15
+      "qid": "cartoon-600-915",
+      "difficultyTarget": 0.4
     },
     {
-      "p": 1000,
-      "topic": "أماكن ومدن",
-      "q": "في «كوكو»، ما اسم البلدة التي تعيش فيها عائلة ميغيل؟",
-      "a": "سانتا سيسيليا",
-      "alt": [
-        "Santa Cecilia",
-        "سانتا سيسيليّا"
-      ],
-      "sourceUrl": "https://www.pixar.com/coco",
-      "verified": true,
-      "qid": "cartoon-1000-904",
-      "difficultyTarget": 0.15
-    },
-    {
-      "p": 1000,
+      "p": 600,
       "topic": "أطعمة وموارد",
       "q": "في «شركة المرعبين المحدودة»، بأي نكهة يصنع رجل الثلج المنفي حلوى الثلج؟",
       "a": "الليمون",
@@ -512,25 +307,11 @@
       ],
       "sourceUrl": "https://www.pixar.com/monsters-inc",
       "verified": true,
-      "qid": "cartoon-1000-905",
-      "difficultyTarget": 0.15
+      "qid": "cartoon-600-916",
+      "difficultyTarget": 0.4
     },
     {
-      "p": 1000,
-      "topic": "أصدقاء وعائلات",
-      "q": "في «قلبًا وقالبًا»، ما اسم صديق رايلي الخيالي صاحب خرطوم الفيل؟",
-      "a": "بينغ بونغ",
-      "alt": [
-        "Bing Bong",
-        "بينج بونج"
-      ],
-      "sourceUrl": "https://www.pixar.com/inside-out",
-      "verified": true,
-      "qid": "cartoon-1000-906",
-      "difficultyTarget": 0.15
-    },
-    {
-      "p": 1000,
+      "p": 600,
       "topic": "أبطال وشخصيات",
       "q": "في «وول إي»، ما اسم روبوت التنظيف الصغير الذي يلاحق الملوثات الأجنبية على السفينة؟",
       "a": "مو",
@@ -541,11 +322,11 @@
       ],
       "sourceUrl": "https://www.pixar.com/wall-e",
       "verified": true,
-      "qid": "cartoon-1000-907",
-      "difficultyTarget": 0.15
+      "qid": "cartoon-600-917",
+      "difficultyTarget": 0.4
     },
     {
-      "p": 1000,
+      "p": 600,
       "topic": "أبطال وشخصيات",
       "q": "في «خلطبيطة بالصلصة»، ما اسم والد ريمي وزعيم مستعمرة الجرذان؟",
       "a": "دجانغو",
@@ -556,8 +337,220 @@
       ],
       "sourceUrl": "https://www.pixar.com/ratatouille",
       "verified": true,
-      "qid": "cartoon-1000-908",
-      "difficultyTarget": 0.15
+      "qid": "cartoon-600-918",
+      "difficultyTarget": 0.4
+    },
+    {
+      "p": 800,
+      "topic": "أماكن ومدن",
+      "q": "في «كوكو»، ما اسم البلدة التي تعيش فيها عائلة ميغيل؟",
+      "a": "سانتا سيسيليا",
+      "alt": [
+        "Santa Cecilia",
+        "سانتا سيسيليّا"
+      ],
+      "sourceUrl": "https://www.pixar.com/coco",
+      "verified": true,
+      "qid": "cartoon-800-911",
+      "difficultyTarget": 0.25
+    },
+    {
+      "p": 800,
+      "topic": "أصدقاء وعائلات",
+      "q": "في «قلبًا وقالبًا»، ما اسم صديق رايلي الخيالي صاحب خرطوم الفيل؟",
+      "a": "بينغ بونغ",
+      "alt": [
+        "Bing Bong",
+        "بينج بونج"
+      ],
+      "sourceUrl": "https://www.pixar.com/inside-out",
+      "verified": true,
+      "qid": "cartoon-800-912",
+      "difficultyTarget": 0.25
+    },
+    {
+      "topic": "خصوم ومنافسون",
+      "q": "في «خلطبيطة بالصلصة»، من تولى إدارة المطعم واستغل اسم صاحبه الراحل لبيع الأطعمة المجمدة؟",
+      "a": "سكينر",
+      "alt": [
+        "Skinner"
+      ],
+      "sourceUrl": "https://www.pixar.com/ratatouille",
+      "qid": "cartoon-800-913",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "خصوم ومنافسون",
+      "q": "في «وول إي»، ما اسم الطيار الآلي الذي يخفي أوامر عن القبطان؟",
+      "a": "أوتو",
+      "alt": [
+        "Auto"
+      ],
+      "sourceUrl": "https://www.pixar.com/wall-e",
+      "qid": "cartoon-800-914",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "أصدقاء وعائلات",
+      "q": "في «كوكو»، من أسست حرفة الأحذية في عائلة ميغيل؟",
+      "a": "إيميلدا",
+      "alt": [
+        "Mamá Imelda"
+      ],
+      "sourceUrl": "https://www.pixar.com/coco",
+      "qid": "cartoon-800-915",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "أماكن ومدن",
+      "q": "في «أب»، ما اسم الشلالات التي حلم الزوجان بالوصول إليها؟",
+      "a": "شلالات الجنة",
+      "alt": [
+        "Paradise Falls"
+      ],
+      "sourceUrl": "https://www.pixar.com/upfilm",
+      "qid": "cartoon-800-916",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "أطعمة وموارد",
+      "q": "في «خلطبيطة بالصلصة»، ما وظيفة ريمي في المستعمرة اعتمادًا على حاسة شمه؟",
+      "a": "كشف السموم",
+      "alt": [
+        "فاحص السموم"
+      ],
+      "sourceUrl": "https://www.pixar.com/ratatouille",
+      "qid": "cartoon-800-917",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "أدوات وأشياء",
+      "q": "في «أب»، ما الأداة التي تحول أفكار الكلاب إلى كلام؟",
+      "a": "الأطواق الإلكترونية",
+      "alt": [
+        "طوق إلكتروني"
+      ],
+      "sourceUrl": "https://www.pixar.com/upfilm",
+      "qid": "cartoon-800-918",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "أبطال وشخصيات",
+      "q": "في «كوكو»، ما اسم صديق هيكتور الذي بدأ الناس ينسونه؟",
+      "a": "تشيتشارون",
+      "alt": [
+        "Chicharrón"
+      ],
+      "sourceUrl": "https://www.pixar.com/coco",
+      "qid": "cartoon-1000-911",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "قدرات وتحولات",
+      "q": "في «كوكو»، ما اسم المرشدة الروحية المجنحة التي ترافق جدة ميغيل الكبرى؟",
+      "a": "بيبيتا",
+      "alt": [
+        "Pepita"
+      ],
+      "sourceUrl": "https://www.pixar.com/coco",
+      "qid": "cartoon-1000-912",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "خصوم ومنافسون",
+      "q": "في «أب»، ما اسم كلب الروتوايلر مساعد قائد القطيع؟",
+      "a": "بيتا",
+      "alt": [
+        "Beta"
+      ],
+      "sourceUrl": "https://www.pixar.com/upfilm",
+      "qid": "cartoon-1000-913",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "أحداث ومهمات",
+      "q": "في «أب»، ما رقم قبيلة الكشافة التي ينتمي إليها الطفل المرافق لكارل؟",
+      "a": "54",
+      "alt": [
+        "أربعة وخمسون"
+      ],
+      "sourceUrl": "https://www.pixar.com/upfilm",
+      "qid": "cartoon-1000-914",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "أدوات وأشياء",
+      "q": "في «وول إي»، ما الفيلم الموسيقي الذي يحتفظ الروبوت بشريطه داخل شاحنته؟",
+      "a": "هالو دوللي",
+      "alt": [
+        "Hello, Dolly!"
+      ],
+      "sourceUrl": "https://www.pixar.com/wall-e",
+      "qid": "cartoon-1000-915",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "أبطال وشخصيات",
+      "q": "في «وول إي»، بأي تسمية يخاطب القبطان إيف بوصفها مسبارًا؟",
+      "a": "بروب وان",
+      "alt": [
+        "Probe One",
+        "المسبار الأول"
+      ],
+      "sourceUrl": "https://www.pixar.com/wall-e",
+      "qid": "cartoon-1000-916",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "أدوات وأشياء",
+      "q": "في «خلطبيطة بالصلصة»، ما عنوان كتاب الطاهي الراحل الذي ألهم ريمي؟",
+      "a": "بإمكان أي شخص الطهي",
+      "alt": [
+        "Anyone Can Cook",
+        "يمكن لأي شخص الطبخ"
+      ],
+      "sourceUrl": "https://www.pixar.com/ratatouille",
+      "qid": "cartoon-1000-917",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "أصدقاء وعائلات",
+      "q": "في «كوكو»، ما اسم شقيق أوسكار التوأم من أجداد ميغيل؟",
+      "a": "فيليبي",
+      "alt": [
+        "Felipe"
+      ],
+      "sourceUrl": "https://www.pixar.com/coco",
+      "qid": "cartoon-1000-918",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
     }
   ]
 }

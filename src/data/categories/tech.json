@@ -5,151 +5,9 @@
   "qs": [
     {
       "p": 200,
-      "q": "ما اسم الجهاز الصغير الذي نحرّكه بأيدينا لتحريك المؤشر على شاشة الحاسوب؟",
-      "a": "الفأرة",
-      "qid": "tech-200-901",
-      "topic": "حواسيب وبرمجيات",
-      "verified": true,
-      "alt": [
-        "الماوس"
-      ],
-      "difficultyTarget": 0.8,
-      "sourceUrl": "https://support.microsoft.com/en-us/windows/hardware/input-devices/change-mouse-settings"
-    },
-    {
-      "p": 200,
-      "q": "ما اسم الاتصال اللاسلكي بالإنترنت الذي نسأل عن كلمة سرّه في المقاهي والمطاعم؟",
-      "a": "الواي فاي",
-      "qid": "tech-200-902",
-      "topic": "إنترنت وشبكات",
-      "verified": true,
-      "alt": [
-        "Wi-Fi",
-        "واي فاي"
-      ],
-      "difficultyTarget": 0.8,
-      "sourceUrl": "https://www.cisco.com/site/us/en/learn/topics/networking/what-is-a-wi-fi-network.html"
-    },
-    {
-      "p": 200,
-      "q": "ما نظام تشغيل الهواتف الذي تطوره غوغل ويحمل اسمًا يعني الإنسان الآلي؟",
-      "a": "أندرويد",
-      "qid": "tech-200-903",
-      "topic": "هواتف وأجهزة",
-      "verified": true,
-      "alt": [
-        "Android"
-      ],
-      "difficultyTarget": 0.8,
-      "sourceUrl": "https://blog.google/products-and-platforms/platforms/android/android-gemini-google-ai/"
-    },
-    {
-      "p": 200,
-      "q": "ما اسم وحدة التخزين الصغيرة التي تُوصل بمنفذ USB لنقل الملفات؟",
-      "a": "الفلاشة",
-      "qid": "tech-200-904",
-      "topic": "تخزين وذاكرة",
-      "verified": true,
-      "alt": [
-        "ذاكرة فلاش محمولة",
-        "الفلاش ميموري",
-        "فلاش USB",
-        "ذاكرة USB",
-        "فلاشة"
-      ],
-      "difficultyTarget": 0.8,
-      "sourceUrl": "https://shop.kingston.com/products/datatraveler-exodia-onyx-usb-flash-drive"
-    },
-    {
-      "p": 200,
-      "q": "ما شركة التسوق الإلكتروني التي أسسها جيف بيزوس سنة 1994؟",
-      "a": "أمازون",
-      "qid": "tech-200-905",
-      "topic": "شركات تقنية",
-      "verified": true,
-      "alt": [
-        "Amazon"
-      ],
-      "difficultyTarget": 0.8,
-      "sourceUrl": "https://ir.aboutamazon.com/officers-and-directors/person-details/"
-    },
-    {
-      "p": 200,
-      "q": "ما اسم الرمز المصور الصغير الذي نضغط عليه لفتح تطبيق أو ملف؟",
-      "a": "الأيقونة",
-      "qid": "tech-200-906",
-      "topic": "مصطلحات تقنية",
-      "verified": true,
-      "alt": [
-        "أيقونة",
-        "الآيكون"
-      ],
-      "difficultyTarget": 0.8,
-      "sourceUrl": "https://support.microsoft.com/en-us/topic/how-to-arrange-or-move-icons-on-the-desktop-70e4d22a-d760-5585-449f-2a14c417f84c"
-    },
-    {
-      "p": 200,
-      "q": "من أسّس شركة مايكروسوفت مع بول ألن؟",
-      "a": "بيل غيتس",
-      "qid": "tech-200-907",
-      "topic": "تاريخ التقنية",
-      "verified": true,
-      "alt": [
-        "بيل جيتس",
-        "Bill Gates",
-        "وليم غيتس"
-      ],
-      "difficultyTarget": 0.8,
-      "sourceUrl": "https://news.microsoft.com/microsoft-50/"
-    },
-    {
-      "p": 200,
-      "q": "ما اسم المساعد الصوتي الذي ننادي عليه في مكبرات إيكو الذكية؟",
-      "a": "أليكسا",
-      "qid": "tech-200-908",
-      "topic": "ذكاء اصطناعي وروبوتات",
-      "verified": true,
-      "alt": [
-        "اليكسا",
-        "ألكسا",
-        "Alexa"
-      ],
-      "difficultyTarget": 0.8,
-      "sourceUrl": "https://echo.amazon.com/about"
-    },
-    {
-      "p": 400,
-      "q": "ما اسم نظام العدّ الذي يعتمد عليه الحاسوب مستخدمًا الرقمين صفر وواحد فقط؟",
-      "a": "النظام الثنائي",
-      "qid": "tech-400-901",
-      "topic": "حواسيب وبرمجيات",
-      "verified": true,
-      "alt": [
-        "الثنائي",
-        "Binary"
-      ],
-      "difficultyTarget": 0.6,
-      "sourceUrl": "https://www.ibm.com/docs/en/t-tt-and-t?topic=drives-glossary"
-    },
-    {
-      "p": 400,
-      "q": "ما المقابل العربي لكلمة (سوفتوير) في عالم الحاسوب؟",
-      "a": "البرمجيات",
-      "qid": "tech-400-902",
-      "topic": "مصطلحات تقنية",
-      "verified": true,
-      "alt": [
-        "البرامج",
-        "برمجيات"
-      ],
-      "difficultyTarget": 0.6,
-      "sourceUrl": "https://www.ibm.com/think/topics/software-development"
-    },
-    {
-      "p": 400,
       "q": "ما التقنية التي تستخدم كابلات الشبكة لتوصيل الحاسوب بالراوتر سلكيًا؟",
       "a": "الإيثرنت",
-      "qid": "tech-400-903",
+      "qid": "tech-200-911",
       "topic": "إنترنت وشبكات",
       "verified": true,
       "alt": [
@@ -157,28 +15,14 @@
         "كيبل إيثرنت",
         "إيثرنت"
       ],
-      "difficultyTarget": 0.6,
+      "difficultyTarget": 0.8,
       "sourceUrl": "https://www.cisco.com/site/us/en/learn/topics/networking/what-is-ethernet.html"
     },
     {
-      "p": 400,
-      "q": "ما اسم نظام التشغيل الذي يعمل على هواتف آيفون؟",
-      "a": "iOS",
-      "qid": "tech-400-904",
-      "topic": "هواتف وأجهزة",
-      "verified": true,
-      "alt": [
-        "آي أو إس",
-        "نظام iOS"
-      ],
-      "difficultyTarget": 0.6,
-      "sourceUrl": "https://developer.apple.com/ios"
-    },
-    {
-      "p": 400,
+      "p": 200,
       "q": "ما الذاكرة الرئيسية المؤقتة التي تخزن بيانات البرامج العاملة وتفقدها عادة بانقطاع الكهرباء؟",
       "a": "ذاكرة الوصول العشوائي",
-      "qid": "tech-400-905",
+      "qid": "tech-200-912",
       "topic": "تخزين وذاكرة",
       "verified": true,
       "alt": [
@@ -186,71 +30,42 @@
         "الرام",
         "الذاكرة العشوائية"
       ],
-      "difficultyTarget": 0.6,
+      "difficultyTarget": 0.8,
       "sourceUrl": "https://www.kingston.com/en/memory/kingston-glossary"
     },
     {
-      "p": 400,
-      "q": "ما الاسم الذي اتخذته شركة فيسبوك الأم سنة 2021؟",
-      "a": "ميتا",
-      "qid": "tech-400-906",
-      "topic": "شركات تقنية",
-      "verified": true,
-      "alt": [
-        "Meta",
-        "ميتا بلاتفورمز"
-      ],
-      "difficultyTarget": 0.6,
-      "sourceUrl": "https://about.fb.com/news/2021/10/facebook-company-is-now-meta/"
-    },
-    {
-      "p": 400,
+      "p": 200,
       "q": "ما اسم وحدة تخزين البيانات المكوّنة من ثماني بتّات؟",
       "a": "البايت",
-      "qid": "tech-400-907",
+      "qid": "tech-200-913",
       "topic": "تاريخ التقنية",
       "verified": true,
       "alt": [
         "بايت",
         "Byte"
       ],
-      "difficultyTarget": 0.6,
+      "difficultyTarget": 0.8,
       "sourceUrl": "https://www.ibm.com/think/topics/qubit"
     },
     {
-      "p": 400,
-      "q": "ما الشركة التي طورت مساعد ChatGPT؟",
-      "a": "أوبن إيه آي",
-      "qid": "tech-400-908",
-      "topic": "ذكاء اصطناعي وروبوتات",
-      "verified": true,
-      "alt": [
-        "OpenAI",
-        "أوبن أي آي",
-        "اوبن ايه اي"
-      ],
-      "difficultyTarget": 0.6,
-      "sourceUrl": "https://help.openai.com/en/articles/12677804-what-is-chatgpt-faq"
-    },
-    {
-      "p": 600,
+      "p": 200,
       "q": "ما لغة البرمجة التي صممها جيمس جوسلينج وسميت في البداية أوك؟",
       "a": "جافا",
-      "qid": "tech-600-901",
+      "qid": "tech-200-914",
       "topic": "حواسيب وبرمجيات",
       "verified": true,
       "alt": [
         "Java",
         "جاوة"
       ],
-      "difficultyTarget": 0.4,
+      "difficultyTarget": 0.8,
       "sourceUrl": "https://docs.oracle.com/javase/specs/jls/se6/html/j.preface.html"
     },
     {
-      "p": 600,
+      "p": 200,
       "q": "من العالم البريطاني الذي ابتكر الويب أثناء عمله في سيرن؟",
       "a": "تيم بيرنرز لي",
-      "qid": "tech-600-902",
+      "qid": "tech-200-915",
       "topic": "إنترنت وشبكات",
       "verified": true,
       "alt": [
@@ -258,167 +73,181 @@
         "بيرنرز لي",
         "تيموثي بيرنرز لي"
       ],
-      "difficultyTarget": 0.4,
+      "difficultyTarget": 0.8,
       "sourceUrl": "https://home.cern/science/computing/the-birth-of-the-web/"
     },
     {
-      "p": 600,
+      "p": 200,
       "q": "ما الشركة الأمريكية التي تطور عائلة معالجات سنابدراجون؟",
       "a": "كوالكوم",
-      "qid": "tech-600-903",
+      "qid": "tech-200-916",
       "topic": "هواتف وأجهزة",
       "verified": true,
       "alt": [
         "Qualcomm",
         "كوالكم"
       ],
-      "difficultyTarget": 0.4,
+      "difficultyTarget": 0.8,
       "sourceUrl": "https://www.qualcomm.com/snapdragon/what-is-snapdragon"
     },
     {
-      "p": 600,
-      "q": "ماذا يعني اختصار URL الذي نطلقه على رابط الصفحة؟",
-      "a": "محدّد موقع الموارد الموحّد",
-      "qid": "tech-600-904",
-      "topic": "مصطلحات تقنية",
-      "verified": true,
-      "alt": [
-        "Uniform Resource Locator",
-        "محدد المواقع الموحد",
-        "محدد موقع الموارد"
-      ],
-      "difficultyTarget": 0.4,
-      "sourceUrl": "https://developer.mozilla.org/en-US/docs/Glossary/URL"
-    },
-    {
-      "p": 600,
+      "p": 200,
       "q": "ما الاختصار الإنجليزي لذاكرة القراءة فقط في الحاسوب؟",
       "a": "ROM",
-      "qid": "tech-600-905",
+      "qid": "tech-200-917",
       "topic": "تخزين وذاكرة",
       "verified": true,
       "alt": [
         "روم",
         "آر أو إم"
       ],
-      "difficultyTarget": 0.4,
+      "difficultyTarget": 0.8,
       "sourceUrl": "https://www.kingston.com/en/memory/kingston-glossary"
     },
     {
-      "p": 600,
+      "p": 200,
       "q": "ما اسم شركة قواعد البيانات العملاقة التي شارك في تأسيسها لاري إليسون؟",
       "a": "أوراكل",
-      "qid": "tech-600-906",
+      "qid": "tech-200-918",
       "topic": "شركات تقنية",
       "verified": true,
       "alt": [
         "Oracle",
         "أوركل"
       ],
-      "difficultyTarget": 0.4,
+      "difficultyTarget": 0.8,
       "sourceUrl": "https://www.oracle.com/us/corporate/profit/p27anniv-timeline-151918.pdf"
     },
     {
-      "p": 600,
+      "p": 400,
       "q": "ما اسم لغة البرمجة التي ابتكرها دينيس ريتشي؟",
       "a": "لغة سي",
-      "qid": "tech-600-907",
+      "qid": "tech-400-911",
       "topic": "تاريخ التقنية",
       "verified": true,
       "alt": [
         "سي",
         "C"
       ],
-      "difficultyTarget": 0.4,
+      "difficultyTarget": 0.6,
       "sourceUrl": "https://www.bell-labs.com/usr/dmr/www/chist.pdf"
     },
     {
-      "p": 600,
+      "p": 400,
       "q": "ما اسم الشركة المطوّرة لمساعد الذكاء الاصطناعي كلود؟",
       "a": "أنثروبيك",
-      "qid": "tech-600-908",
+      "qid": "tech-400-912",
       "topic": "ذكاء اصطناعي وروبوتات",
       "verified": true,
       "alt": [
         "Anthropic"
       ],
-      "difficultyTarget": 0.4,
+      "difficultyTarget": 0.6,
       "sourceUrl": "https://www.anthropic.com/claude"
     },
     {
-      "p": 800,
+      "p": 400,
       "q": "ما نظام التشغيل الذي بدأ تطويره في مختبرات بيل سنة 1969 وأثّر في أنظمة كثيرة بعده؟",
       "a": "يونكس",
-      "qid": "tech-800-901",
+      "qid": "tech-400-913",
       "topic": "حواسيب وبرمجيات",
       "verified": true,
       "alt": [
         "Unix",
         "يونيكس"
       ],
-      "difficultyTarget": 0.25,
+      "difficultyTarget": 0.6,
       "sourceUrl": "https://www.nokia.com/bell-labs/about/dennis-m-ritchie/hist.html"
     },
     {
-      "p": 800,
+      "p": 400,
       "q": "ما اسم البروتوكول المسؤول عن إرسال رسائل البريد بين الخوادم؟",
       "a": "SMTP",
-      "qid": "tech-800-902",
+      "qid": "tech-400-914",
       "topic": "إنترنت وشبكات",
       "verified": true,
       "alt": [
         "إس إم تي بي",
         "بروتوكول نقل البريد البسيط"
       ],
-      "difficultyTarget": 0.25,
+      "difficultyTarget": 0.6,
       "sourceUrl": "https://www.rfc-editor.org/info/rfc5321/"
     },
     {
-      "p": 800,
+      "p": 400,
       "q": "ما اسم الزجاج المقوّى الذي تنتجه شركة كورنينج لحماية واجهات الهواتف؟",
       "a": "جوريلا جلاس",
-      "qid": "tech-800-903",
+      "qid": "tech-400-915",
       "topic": "هواتف وأجهزة",
       "verified": true,
       "alt": [
         "Gorilla Glass",
         "زجاج الغوريلا"
       ],
-      "difficultyTarget": 0.25,
+      "difficultyTarget": 0.6,
       "sourceUrl": "https://www.corning.com/gorillaglass/worldwide/en.html"
     },
     {
-      "p": 800,
-      "q": "ما نظام الملفات الافتراضي في أنظمة ويندوز الحديثة، والمكوّن اسمه المختصر من أربعة أحرف؟",
+      "p": 400,
+      "q": "ما نظام الملفات الذي تستخدمه أقراص تثبيت ويندوز الحديثة افتراضيًا؟",
       "a": "NTFS",
-      "qid": "tech-800-904",
+      "qid": "tech-400-916",
       "topic": "تخزين وذاكرة",
       "verified": true,
       "alt": [
         "إن تي إف إس"
       ],
-      "difficultyTarget": 0.25,
+      "difficultyTarget": 0.6,
       "sourceUrl": "https://learn.microsoft.com/en-us/windows-server/storage/file-server/ntfs-overview"
     },
     {
-      "p": 800,
+      "p": 400,
+      "q": "ماذا تسمى الثغرة التي تُستغل قبل توفر إصلاح أمني لها، وغالبًا قبل علم مطوريها؟",
+      "a": "ثغرة يوم الصفر",
+      "qid": "tech-400-917",
+      "topic": "مصطلحات تقنية",
+      "verified": true,
+      "alt": [
+        "يوم الصفر",
+        "Zero-day",
+        "زيرو داي"
+      ],
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://www.ibm.com/think/topics/zero-day"
+    },
+    {
+      "p": 400,
+      "q": "ما الروبوت الشبيه بالإنسان الذي طورته هوندا واشتهر بالمشي وصعود الدرج؟",
+      "a": "أسيمو",
+      "qid": "tech-400-918",
+      "topic": "ذكاء اصطناعي وروبوتات",
+      "verified": true,
+      "alt": [
+        "ASIMO",
+        "آسيمو"
+      ],
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://global.honda/en/ASIMO/about/"
+    },
+    {
+      "p": 600,
       "q": "في أي مدينة بكاليفورنيا افتتح مقر آبل بارك الدائري سنة 2017؟",
       "a": "كوبرتينو",
-      "qid": "tech-800-905",
+      "qid": "tech-600-911",
       "topic": "شركات تقنية",
       "verified": true,
       "alt": [
         "Cupertino",
         "كوبرتينو بكاليفورنيا"
       ],
-      "difficultyTarget": 0.25,
+      "difficultyTarget": 0.4,
       "sourceUrl": "https://www.apple.com/newsroom/2017/02/apple-park-opens-to-employees-in-april/"
     },
     {
-      "p": 800,
-      "q": "ما اسم الملك الدنماركي الذي استوحت منه تقنية بلوتوث اسمها؟",
+      "p": 600,
+      "q": "ما اسم الملك الدنماركي الذي استوحت منه تقنية Bluetooth اسمها؟",
       "a": "هارالد بلوتوث",
-      "qid": "tech-800-906",
+      "qid": "tech-600-912",
       "topic": "تاريخ التقنية",
       "verified": true,
       "alt": [
@@ -427,57 +256,28 @@
         "هارالد جورمسون",
         "Harald Bluetooth"
       ],
-      "difficultyTarget": 0.25,
+      "difficultyTarget": 0.4,
       "sourceUrl": "https://www.bluetooth.com/about-us/bluetooth-origin/"
     },
     {
-      "p": 800,
-      "q": "ماذا تسمى الثغرة التي تُستغل قبل توفر إصلاح أمني لها، وغالبًا قبل علم مطوريها؟",
-      "a": "ثغرة يوم الصفر",
-      "qid": "tech-800-907",
-      "topic": "مصطلحات تقنية",
-      "verified": true,
-      "alt": [
-        "يوم الصفر",
-        "Zero-day",
-        "زيرو داي"
-      ],
-      "difficultyTarget": 0.25,
-      "sourceUrl": "https://www.ibm.com/think/topics/zero-day"
-    },
-    {
-      "p": 800,
-      "q": "ما الروبوت الشبيه بالإنسان الذي طورته هوندا واشتهر بالمشي وصعود الدرج؟",
-      "a": "أسيمو",
-      "qid": "tech-800-908",
-      "topic": "ذكاء اصطناعي وروبوتات",
-      "verified": true,
-      "alt": [
-        "ASIMO",
-        "آسيمو"
-      ],
-      "difficultyTarget": 0.25,
-      "sourceUrl": "https://global.honda/en/ASIMO/about/"
-    },
-    {
-      "p": 1000,
+      "p": 600,
       "q": "ما نوع الحشرة التي عُثر عليها داخل حاسوب مارك الثاني وحُفظت في سجل الأعطال؟",
       "a": "عثة",
-      "qid": "tech-1000-901",
+      "qid": "tech-600-913",
       "topic": "حواسيب وبرمجيات",
       "verified": true,
       "alt": [
         "فراشة ليلية",
         "moth"
       ],
-      "difficultyTarget": 0.15,
+      "difficultyTarget": 0.4,
       "sourceUrl": "https://americanhistory.si.edu/collections/object/nmah_334663"
     },
     {
-      "p": 1000,
+      "p": 600,
       "q": "من المهندسة التي قادت فريق برمجيات الطيران لبرنامج أبولو؟",
       "a": "مارغريت هاميلتون",
-      "qid": "tech-1000-902",
+      "qid": "tech-600-914",
       "topic": "تاريخ التقنية",
       "verified": true,
       "alt": [
@@ -486,42 +286,83 @@
         "مارجريت هاملتون",
         "Margaret Hamilton"
       ],
-      "difficultyTarget": 0.15,
+      "difficultyTarget": 0.4,
       "sourceUrl": "https://science.nasa.gov/people/margaret-hamilton/"
     },
     {
-      "p": 1000,
+      "p": 600,
       "q": "لأي دولة في المحيط الهادئ خُصّص نطاق الإنترنت tv؟",
       "a": "توفالو",
-      "qid": "tech-1000-903",
+      "qid": "tech-600-915",
       "topic": "إنترنت وشبكات",
       "verified": true,
       "alt": [
         "Tuvalu",
         "دولة توفالو"
       ],
-      "difficultyTarget": 0.15,
+      "difficultyTarget": 0.4,
       "sourceUrl": "https://www.iana.org/domains/root/db/tv"
     },
     {
-      "p": 1000,
+      "p": 600,
+      "q": "ماذا يرمز إليه اسم الشركة الكورية «إل جي» في الأصل؟",
+      "a": "لاكي غولدستار",
+      "qid": "tech-600-916",
+      "topic": "شركات تقنية",
+      "verified": true,
+      "alt": [
+        "Lucky Goldstar",
+        "لكي غولد ستار"
+      ],
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://www.lg.com/global/about-lg/company-history/"
+    },
+    {
+      "p": 600,
+      "q": "من العالم الأمريكي الذي صاغ مصطلح الذكاء الاصطناعي؟",
+      "a": "جون مكارثي",
+      "qid": "tech-600-917",
+      "topic": "ذكاء اصطناعي وروبوتات",
+      "verified": true,
+      "alt": [
+        "John McCarthy",
+        "مكارثي"
+      ],
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://news.stanford.edu/stories/2011/10/stanfords-john-mccarthy-seminal-figure-artificial-intelligence-dies-84"
+    },
+    {
+      "p": 600,
+      "q": "ما المتصفح الذي أطلقه مركز NCSA سنة 1993 وساعد على انتشار تصفح الويب بالصور؟",
+      "a": "موزاييك",
+      "qid": "tech-600-918",
+      "topic": "مصطلحات تقنية",
+      "verified": true,
+      "alt": [
+        "Mosaic"
+      ],
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://www.ncsa.illinois.edu/research/project-highlights/ncsa-mosaic/"
+    },
+    {
+      "p": 800,
       "q": "ما اختصار بروتوكول التطبيقات اللاسلكية الذي استُخدم لتصفح الويب على الهواتف القديمة؟",
       "a": "واب",
-      "qid": "tech-1000-904",
+      "qid": "tech-800-911",
       "topic": "هواتف وأجهزة",
       "verified": true,
       "alt": [
         "WAP",
         "واب بروتوكول"
       ],
-      "difficultyTarget": 0.15,
+      "difficultyTarget": 0.25,
       "sourceUrl": "https://wapforum.org/what/technical.htm"
     },
     {
-      "p": 1000,
+      "p": 800,
       "q": "ما الشركة التي صنعت الحاسوب المستخدم أول خادم ويب في سيرن؟",
       "a": "نكست",
-      "qid": "tech-1000-905",
+      "qid": "tech-800-912",
       "topic": "هواتف وأجهزة",
       "verified": true,
       "alt": [
@@ -529,49 +370,213 @@
         "NeXT",
         "نِكست"
       ],
-      "difficultyTarget": 0.15,
+      "difficultyTarget": 0.25,
       "sourceUrl": "https://cds.cern.ch/record/1997535"
     },
     {
-      "p": 1000,
-      "q": "ماذا يرمز إليه اسم الشركة الكورية «إل جي» في الأصل؟",
-      "a": "لاكي غولدستار",
-      "qid": "tech-1000-906",
-      "topic": "شركات تقنية",
+      "q": "ما نظام إدارة نسخ الشفرة الذي بدأه لينوس تورفالدس سنة 2005 بعد توقف إتاحة BitKeeper المجانية؟",
+      "a": "غيت",
+      "topic": "حواسيب وبرمجيات",
       "verified": true,
+      "sourceUrl": "https://git-scm.com/book/en/v2/Getting-Started-A-Short-History-of-Git",
+      "verifiedAt": "2026-09-25",
       "alt": [
-        "Lucky Goldstar",
-        "لكي غولد ستار"
+        "Git",
+        "جيت"
       ],
-      "difficultyTarget": 0.15,
-      "sourceUrl": "https://www.lg.com/global/about-lg/company-history/"
+      "p": 800,
+      "qid": "tech-800-913",
+      "difficultyTarget": 0.25
     },
     {
-      "p": 1000,
-      "q": "من العالم الأمريكي الذي صاغ مصطلح الذكاء الاصطناعي؟",
-      "a": "جون مكارثي",
-      "qid": "tech-1000-907",
-      "topic": "ذكاء اصطناعي وروبوتات",
-      "verified": true,
-      "alt": [
-        "John McCarthy",
-        "مكارثي"
-      ],
-      "difficultyTarget": 0.15,
-      "sourceUrl": "https://news.stanford.edu/stories/2011/10/stanfords-john-mccarthy-seminal-figure-artificial-intelligence-dies-84"
-    },
-    {
-      "p": 1000,
-      "q": "ما المتصفح الذي أطلقه مركز NCSA سنة 1993 وساعد على انتشار تصفح الويب بالصور؟",
-      "a": "موزاييك",
-      "qid": "tech-1000-908",
+      "q": "ما الاسم الإنجليزي الكامل لصيغة الصور PNG؟",
+      "a": "Portable Network Graphics",
       "topic": "مصطلحات تقنية",
       "verified": true,
+      "sourceUrl": "https://www.w3.org/TR/png/",
+      "verifiedAt": "2026-09-25",
       "alt": [
-        "Mosaic"
+        "رسومات الشبكة المحمولة"
       ],
-      "difficultyTarget": 0.15,
-      "sourceUrl": "https://www.ncsa.illinois.edu/research/project-highlights/ncsa-mosaic/"
+      "p": 800,
+      "qid": "tech-800-914",
+      "difficultyTarget": 0.25
+    },
+    {
+      "q": "من طورت برنامج A-0 لحاسوب UNIVAC سنة 1952؟",
+      "a": "غريس هوبر",
+      "topic": "تاريخ التقنية",
+      "verified": true,
+      "sourceUrl": "https://www.computerhistory.org/timeline/software-languages/",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Grace Hopper",
+        "جريس هوبر"
+      ],
+      "p": 800,
+      "qid": "tech-800-915",
+      "difficultyTarget": 0.25
+    },
+    {
+      "q": "من اختار الرمز @ للفصل بين اسم المستخدم والحاسوب في عناوين البريد الإلكتروني؟",
+      "a": "راي توملينسون",
+      "topic": "إنترنت وشبكات",
+      "verified": true,
+      "sourceUrl": "https://www.internethalloffame.org/2012/07/30/meet-man-who-put-your-e-mail/",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Ray Tomlinson"
+      ],
+      "p": 800,
+      "qid": "tech-800-916",
+      "difficultyTarget": 0.25
+    },
+    {
+      "q": "ما اسم البطريق الذي يمثل نواة لينكس؟",
+      "a": "تكس",
+      "topic": "حواسيب وبرمجيات",
+      "verified": true,
+      "sourceUrl": "https://www.kernel.org/faq.html",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Tux",
+        "توكس"
+      ],
+      "p": 800,
+      "qid": "tech-800-917",
+      "difficultyTarget": 0.25
+    },
+    {
+      "q": "ما الشركة اليابانية التي أطلقت رمز QR عام 1994؟",
+      "a": "دينسو ويف",
+      "topic": "شركات تقنية",
+      "verified": true,
+      "sourceUrl": "https://www.qrcode.com/en/history/",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Denso Wave",
+        "دينسو"
+      ],
+      "p": 800,
+      "qid": "tech-800-918",
+      "difficultyTarget": 0.25
+    },
+    {
+      "q": "من صمم لغة البرمجة C++؟",
+      "a": "بيارن ستروستروب",
+      "topic": "حواسيب وبرمجيات",
+      "verified": true,
+      "sourceUrl": "https://www.computerhistory.org/timeline/software-languages/",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Bjarne Stroustrup",
+        "بيارن ستروستروب"
+      ],
+      "p": 1000,
+      "qid": "tech-1000-911",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "من طور نظام التشغيل CP/M للحواسيب الصغيرة؟",
+      "a": "غاري كيلدال",
+      "topic": "تاريخ التقنية",
+      "verified": true,
+      "sourceUrl": "https://www.computerhistory.org/timeline/software-languages/",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Gary Kildall",
+        "جاري كيلدال"
+      ],
+      "p": 1000,
+      "qid": "tech-1000-912",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "ما الحرفان اللذان وصلا في أول رسالة عبر أربانت سنة 1969 قبل تعطل الاتصال؟",
+      "a": "LO",
+      "topic": "إنترنت وشبكات",
+      "verified": true,
+      "sourceUrl": "https://www.lk.cs.ucla.edu/internet_first_words.html",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "إل أو"
+      ],
+      "p": 1000,
+      "qid": "tech-1000-913",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "إلى اسم أي عالم يشير الحرف R في خوارزمية التشفير RSA؟",
+      "a": "رونالد ريفست",
+      "topic": "أمن المعلومات",
+      "verified": true,
+      "sourceUrl": "https://news.mit.edu/2011/rivest-unlocks-cryptographys-past-looks-toward-future",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Ronald Rivest",
+        "رون ريفست"
+      ],
+      "p": 1000,
+      "qid": "tech-1000-914",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "من أنشأ برنامج المحادثة ELIZA في ستينيات القرن العشرين؟",
+      "a": "جوزيف فايزنباوم",
+      "topic": "ذكاء اصطناعي وروبوتات",
+      "verified": true,
+      "sourceUrl": "https://www.computerhistory.org/timeline/1966/",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Joseph Weizenbaum",
+        "جوزيف وايزنباوم"
+      ],
+      "p": 1000,
+      "qid": "tech-1000-915",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "ما الاختصار الذي يميز ذاكرة مزودة برموز لاكتشاف أخطاء البيانات وتصحيحها؟",
+      "a": "ECC",
+      "topic": "تخزين وذاكرة",
+      "verified": true,
+      "sourceUrl": "https://research.ibm.com/publications/synergy-rethinking-secure-memory-design-for-error-correcting-memories",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "إي سي سي"
+      ],
+      "p": 1000,
+      "qid": "tech-1000-916",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "ما شركة الحواسيب البريطانية التي طورت المعالج الأول المسمى ARM؟",
+      "a": "أكورن",
+      "topic": "شركات تقنية",
+      "verified": true,
+      "sourceUrl": "https://developer.arm.com/community/arm-community-blogs/b/architectures-and-processors-blog/posts/a-brief-history-of-arm-part-1",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Acorn"
+      ],
+      "p": 1000,
+      "qid": "tech-1000-917",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "ما اسم أسلوب التداخل ذي المراحل السبع المستخدم في صور PNG؟",
+      "a": "آدم 7",
+      "topic": "مصطلحات تقنية",
+      "verified": true,
+      "sourceUrl": "https://www.w3.org/TR/png/",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Adam7",
+        "آدم7"
+      ],
+      "p": 1000,
+      "qid": "tech-1000-918",
+      "difficultyTarget": 0.15
     }
   ]
 }

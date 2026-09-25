@@ -6,118 +6,6 @@
   "qs": [
     {
       "p": 200,
-      "topic": "عائلة كامادو",
-      "q": "من أخت تانجيرو التي تحوّلت إلى شيطانة؟",
-      "a": "نيزوكو كامادو",
-      "alt": [
-        "نيزوكو",
-        "نزوكو"
-      ],
-      "verified": true,
-      "qid": "demonslayer-200-901",
-      "sourceUrl": "https://demonslayer-anime.com/mugentrainarc/character/?chara=02",
-      "difficultyTarget": 0.8
-    },
-    {
-      "p": 200,
-      "topic": "عائلة كامادو",
-      "q": "ماذا يحمل تانجيرو على ظهره ليخبّئ أخته الصغرى؟",
-      "a": "صندوق خشبي",
-      "alt": [
-        "الصندوق الخشبي",
-        "صندوق على ظهره"
-      ],
-      "verified": true,
-      "qid": "demonslayer-200-902",
-      "sourceUrl": "https://demonslayer-anime.com/mugentrainarc/character/?chara=02",
-      "difficultyTarget": 0.8
-    },
-    {
-      "p": 200,
-      "topic": "الشياطين",
-      "q": "من زعيم الشياطين الذي يطارده الفيلق كلّه؟",
-      "a": "موزان كيبوتسوجي",
-      "alt": [
-        "موزان",
-        "كيبوتسوجي"
-      ],
-      "verified": true,
-      "qid": "demonslayer-200-903",
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters#Muzan_Kibutsuji",
-      "difficultyTarget": 0.8
-    },
-    {
-      "p": 200,
-      "topic": "الفيلق",
-      "q": "ما الطائر الذي ينقل أوامر المهمّات إلى المحاربين؟",
-      "a": "الغراب",
-      "alt": [
-        "الغربان",
-        "غربان"
-      ],
-      "verified": true,
-      "qid": "demonslayer-200-904",
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters#Supporting_characters",
-      "difficultyTarget": 0.8
-    },
-    {
-      "p": 200,
-      "topic": "الرفاق والمعلمون",
-      "q": "من رفيق تانجيرو الذي يرتدي قناع رأس خنزير بري؟",
-      "a": "إينوسكي هاشيبيرا",
-      "alt": [
-        "إينوسكي",
-        "إنوسكي"
-      ],
-      "verified": true,
-      "qid": "demonslayer-200-905",
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters#Inosuke_Hashibira",
-      "difficultyTarget": 0.8
-    },
-    {
-      "p": 200,
-      "topic": "الرفاق والمعلمون",
-      "q": "في أي حالة يقاتل زينيتسو ببراعة رغم خوفه أثناء اليقظة؟",
-      "a": "فاقد الوعي",
-      "alt": [
-        "وهو نائم",
-        "نائمًا",
-        "مغمى عليه"
-      ],
-      "verified": true,
-      "qid": "demonslayer-200-906",
-      "sourceUrl": "https://demonslayer-anime.com/mugentrainarc/character/?chara=03",
-      "difficultyTarget": 0.8
-    },
-    {
-      "p": 200,
-      "topic": "الهاشيرا",
-      "q": "من عمود اللهب؟",
-      "a": "كيوجورو رينغوكو",
-      "alt": [
-        "رينغوكو",
-        "كيوجيرو رينغوكو"
-      ],
-      "verified": true,
-      "qid": "demonslayer-200-907",
-      "sourceUrl": "https://demonslayer-anime.com/mugentrainarc/character/?chara=05",
-      "difficultyTarget": 0.8
-    },
-    {
-      "p": 200,
-      "topic": "الأسلحة والحدادون",
-      "q": "ما لون نصل تانجيرو الذي أدهش الجميع؟",
-      "a": "أسود",
-      "alt": [
-        "الأسود"
-      ],
-      "verified": true,
-      "qid": "demonslayer-200-908",
-      "sourceUrl": "https://en.wikipedia.org/wiki/Tanjiro_Kamado#In_Demon_Slayer:_Kimetsu_no_Yaiba",
-      "difficultyTarget": 0.8
-    },
-    {
-      "p": 400,
       "topic": "التنفس والقدرات",
       "q": "ما اسم الرقصة التي ورثها تانجيرو عن أبيه؟",
       "a": "رقصة إله النار",
@@ -126,12 +14,12 @@
         "رقصة إله النيران"
       ],
       "verified": true,
-      "qid": "demonslayer-400-901",
+      "qid": "demonslayer-200-911",
       "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters#Tanjiro_Kamado",
-      "difficultyTarget": 0.6
+      "difficultyTarget": 0.8
     },
     {
-      "p": 400,
+      "p": 200,
       "topic": "الفيلق",
       "q": "من قائد الفيلق الذي يوقّره المحاربون جميعًا؟",
       "a": "كاغايا أوبوياشيكي",
@@ -140,12 +28,12 @@
         "أوبوياشيكي"
       ],
       "verified": true,
-      "qid": "demonslayer-400-902",
+      "qid": "demonslayer-200-912",
       "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters#Ubuyashiki_family",
-      "difficultyTarget": 0.6
+      "difficultyTarget": 0.8
     },
     {
-      "p": 400,
+      "p": 200,
       "topic": "الفيلق",
       "q": "كم يومًا يجب أن يصمد المرشح في اختبار الانضمام إلى الفيلق؟",
       "a": "سبعة أيام",
@@ -154,12 +42,12 @@
         "سبع ليال"
       ],
       "verified": true,
-      "qid": "demonslayer-400-903",
+      "qid": "demonslayer-200-913",
       "sourceUrl": "https://demonslayer-anime.com/risshihen/story/04.html",
-      "difficultyTarget": 0.6
+      "difficultyTarget": 0.8
     },
     {
-      "p": 400,
+      "p": 200,
       "topic": "الشياطين",
       "q": "ما اسم الشيطان الذي يسيطر على أحلام ركّاب القطار؟",
       "a": "إنمو",
@@ -168,12 +56,12 @@
         "إينمو"
       ],
       "verified": true,
-      "qid": "demonslayer-400-904",
+      "qid": "demonslayer-200-914",
       "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters#Lower_Ranks",
-      "difficultyTarget": 0.6
+      "difficultyTarget": 0.8
     },
     {
-      "p": 400,
+      "p": 200,
       "topic": "الشياطين",
       "q": "من الشيطان الذي واجه عمود اللهب بعد هزيمة شيطان القطار؟",
       "a": "أكازا",
@@ -182,26 +70,12 @@
         "أكازا القوي"
       ],
       "verified": true,
-      "qid": "demonslayer-400-905",
+      "qid": "demonslayer-200-915",
       "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters#Hashira",
-      "difficultyTarget": 0.6
+      "difficultyTarget": 0.8
     },
     {
-      "p": 400,
-      "topic": "الرفاق والمعلمون",
-      "q": "ما الذي تستعمله كاناو لتقرّر ما تفعل؟",
-      "a": "عملة معدنية",
-      "alt": [
-        "قطعة نقود",
-        "نقود معدنية"
-      ],
-      "verified": true,
-      "qid": "demonslayer-400-906",
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters#Butterfly_Mansion",
-      "difficultyTarget": 0.6
-    },
-    {
-      "p": 400,
+      "p": 200,
       "topic": "الأماكن والرحلات",
       "q": "ما اسم القصر الذي يتعافى فيه المحاربون الجرحى؟",
       "a": "قصر الفراشة",
@@ -210,26 +84,12 @@
         "قصر الفراشات"
       ],
       "verified": true,
-      "qid": "demonslayer-400-907",
+      "qid": "demonslayer-200-916",
       "sourceUrl": "https://en.wikipedia.org/wiki/Tanjiro_Kamado#In_Demon_Slayer:_Kimetsu_no_Yaiba",
-      "difficultyTarget": 0.6
+      "difficultyTarget": 0.8
     },
     {
-      "p": 400,
-      "topic": "الأسلحة والحدادون",
-      "q": "أي زهرة تنفر منها الشياطين ولا تقربها؟",
-      "a": "الوستارية",
-      "alt": [
-        "الويستيريا",
-        "الفوجي"
-      ],
-      "verified": true,
-      "qid": "demonslayer-400-908",
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters#Demons",
-      "difficultyTarget": 0.6
-    },
-    {
-      "p": 600,
+      "p": 200,
       "topic": "عائلة كامادو",
       "q": "ما اسم قدرة نيزوكو التي تشعل الدم؟",
       "a": "الدم المتفجّر",
@@ -238,12 +98,25 @@
         "تفجير الدم"
       ],
       "verified": true,
-      "qid": "demonslayer-600-901",
+      "qid": "demonslayer-200-917",
       "sourceUrl": "https://en.wikipedia.org/wiki/Nezuko_Kamado#In_Demon_Slayer:_Kimetsu_no_Yaiba",
-      "difficultyTarget": 0.4
+      "difficultyTarget": 0.8
     },
     {
-      "p": 600,
+      "p": 200,
+      "topic": "الرفاق والمعلمون",
+      "q": "من الفتى ذو قناع الثعلب الذي ساعد تانجيرو على قطع الصخرة أثناء تدريبه؟",
+      "a": "سابيتو",
+      "alt": [
+        "سابيطو"
+      ],
+      "verified": true,
+      "qid": "demonslayer-200-918",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Tanjiro_Kamado#In_Demon_Slayer:_Kimetsu_no_Yaiba",
+      "difficultyTarget": 0.8
+    },
+    {
+      "p": 400,
       "topic": "الشياطين",
       "q": "ما النبتة النادرة التي بحث عنها موزان قرونًا؟",
       "a": "الزنبقة العنكبوتية الزرقاء",
@@ -253,26 +126,12 @@
         "الزنبق الأزرق"
       ],
       "verified": true,
-      "qid": "demonslayer-600-902",
+      "qid": "demonslayer-400-911",
       "sourceUrl": "https://en.wikipedia.org/wiki/Demon_Slayer:_Kimetsu_no_Yaiba_%E2%80%93_Swordsmith_Village_Arc#ep45",
-      "difficultyTarget": 0.4
+      "difficultyTarget": 0.6
     },
     {
-      "p": 600,
-      "topic": "الأسلحة والحدادون",
-      "q": "ما السم الذي تستخدمه شينوبو لقتل الشياطين؟",
-      "a": "سمّ الوستارية",
-      "alt": [
-        "سمّ الويستيريا",
-        "سمّ زهر الوستارية"
-      ],
-      "verified": true,
-      "qid": "demonslayer-600-903",
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters#Hashira",
-      "difficultyTarget": 0.4
-    },
-    {
-      "p": 600,
+      "p": 400,
       "topic": "الأسلحة والحدادون",
       "q": "من الحداد الذي يصنع سيوف تانجيرو ويغضب عندما يكسرها؟",
       "a": "هاغانيزوكا",
@@ -280,25 +139,12 @@
         "هوتارو هاغانيزوكا"
       ],
       "verified": true,
-      "qid": "demonslayer-600-904",
+      "qid": "demonslayer-400-912",
       "sourceUrl": "https://demonslayer-anime.com/sva/character/",
-      "difficultyTarget": 0.4
+      "difficultyTarget": 0.6
     },
     {
-      "p": 600,
-      "topic": "الرفاق والمعلمون",
-      "q": "من الفتى ذو قناع الثعلب الذي ساعد تانجيرو على قطع الصخرة أثناء تدريبه؟",
-      "a": "سابيتو",
-      "alt": [
-        "سابيطو"
-      ],
-      "verified": true,
-      "qid": "demonslayer-600-905",
-      "sourceUrl": "https://en.wikipedia.org/wiki/Tanjiro_Kamado#In_Demon_Slayer:_Kimetsu_no_Yaiba",
-      "difficultyTarget": 0.4
-    },
-    {
-      "p": 600,
+      "p": 400,
       "topic": "الأماكن والرحلات",
       "q": "في أي حيّ التقى تانجيرو بموزان أول مرة؟",
       "a": "أساكوسا",
@@ -306,12 +152,12 @@
         "حي أساكوسا"
       ],
       "verified": true,
-      "qid": "demonslayer-600-906",
+      "qid": "demonslayer-400-913",
       "sourceUrl": "https://en.wikipedia.org/wiki/Tanjiro_Kamado#In_Demon_Slayer:_Kimetsu_no_Yaiba",
-      "difficultyTarget": 0.4
+      "difficultyTarget": 0.6
     },
     {
-      "p": 600,
+      "p": 400,
       "topic": "الأماكن والرحلات",
       "q": "ما اسم الجبل الذي تعيش فيه عائلة شياطين العناكب؟",
       "a": "جبل ناتاغومو",
@@ -320,12 +166,12 @@
         "جبل ناتاجومو"
       ],
       "verified": true,
-      "qid": "demonslayer-600-907",
+      "qid": "demonslayer-400-914",
       "sourceUrl": "https://demonslayer-anime.com/risshihen/story/15.html",
-      "difficultyTarget": 0.4
+      "difficultyTarget": 0.6
     },
     {
-      "p": 600,
+      "p": 400,
       "topic": "الهاشيرا",
       "q": "ماذا فقد أوزوي في معركة حي الملاهي قبل اعتزاله؟",
       "a": "يده اليسرى وعينه اليسرى",
@@ -333,12 +179,12 @@
         "اليد اليسرى والعين اليسرى"
       ],
       "verified": true,
-      "qid": "demonslayer-600-908",
+      "qid": "demonslayer-400-915",
       "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters#Hashira",
-      "difficultyTarget": 0.4
+      "difficultyTarget": 0.6
     },
     {
-      "p": 800,
+      "p": 400,
       "topic": "الفيلق",
       "q": "ما اسم الفتى الذي خلف كاغايا في قيادة الفيلق؟",
       "a": "كيريا",
@@ -346,52 +192,12 @@
         "كيريا أوبوياشيكي"
       ],
       "verified": true,
-      "qid": "demonslayer-800-901",
+      "qid": "demonslayer-400-916",
       "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters#Ubuyashiki_family",
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.6
     },
     {
-      "p": 800,
-      "topic": "الرفاق والمعلمون",
-      "q": "من المعلّم الذي ربّى زينيتسو ودرّبه؟",
-      "a": "جيغورو كواجيما",
-      "alt": [
-        "جيغورو",
-        "كواجيما"
-      ],
-      "verified": true,
-      "qid": "demonslayer-800-902",
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters#Supporting_characters",
-      "difficultyTarget": 0.25
-    },
-    {
-      "p": 800,
-      "topic": "الهاشيرا",
-      "q": "ما اسم أفعى أوباناي؟",
-      "a": "كابورامارو",
-      "alt": [
-        "كابرامارو"
-      ],
-      "verified": true,
-      "qid": "demonslayer-800-903",
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters#Hashira",
-      "difficultyTarget": 0.25
-    },
-    {
-      "p": 800,
-      "topic": "الهاشيرا",
-      "q": "ما اسم والد عمود اللهب الذي حمل المنصب قبله؟",
-      "a": "شينجورو",
-      "alt": [
-        "شنجورو"
-      ],
-      "verified": true,
-      "qid": "demonslayer-800-904",
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters#Rengoku_family",
-      "difficultyTarget": 0.25
-    },
-    {
-      "p": 800,
+      "p": 400,
       "topic": "التنفس والقدرات",
       "q": "ما أسلوب التنفس الذي يقاتل به كوكوشيبو؟",
       "a": "تنفس القمر",
@@ -399,25 +205,12 @@
         "نفَس القمر"
       ],
       "verified": true,
-      "qid": "demonslayer-800-905",
+      "qid": "demonslayer-400-917",
       "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters#Upper_Ranks",
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.6
     },
     {
-      "p": 800,
-      "topic": "الشياطين",
-      "q": "من القمر العلوي الرابع الذي تتكاثر تجسداته عند قطع رأسه؟",
-      "a": "هانتينغو",
-      "alt": [
-        "هانتنغو"
-      ],
-      "verified": true,
-      "qid": "demonslayer-800-906",
-      "sourceUrl": "https://en.wikipedia.org/wiki/Demon_Slayer:_Kimetsu_no_Yaiba_%E2%80%93_Swordsmith_Village_Arc#Episodes",
-      "difficultyTarget": 0.25
-    },
-    {
-      "p": 800,
+      "p": 400,
       "topic": "الشياطين",
       "q": "من الشيطان الذي يتنقل بين جرار خزفية في معركة قرية الحدادين؟",
       "a": "غيوكو",
@@ -426,12 +219,65 @@
         "غيوكّو"
       ],
       "verified": true,
-      "qid": "demonslayer-800-907",
+      "qid": "demonslayer-400-918",
       "sourceUrl": "https://en.wikipedia.org/wiki/Demon_Slayer:_Kimetsu_no_Yaiba_%E2%80%93_Swordsmith_Village_Arc#Episodes",
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.6
     },
     {
-      "p": 800,
+      "p": 600,
+      "topic": "الرفاق والمعلمون",
+      "q": "من المعلّم الذي ربّى زينيتسو ودرّبه؟",
+      "a": "جيغورو كواجيما",
+      "alt": [
+        "جيغورو",
+        "كواجيما"
+      ],
+      "verified": true,
+      "qid": "demonslayer-600-911",
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters#Supporting_characters",
+      "difficultyTarget": 0.4
+    },
+    {
+      "p": 600,
+      "topic": "الهاشيرا",
+      "q": "ما اسم أفعى أوباناي؟",
+      "a": "كابورامارو",
+      "alt": [
+        "كابرامارو"
+      ],
+      "verified": true,
+      "qid": "demonslayer-600-912",
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters#Hashira",
+      "difficultyTarget": 0.4
+    },
+    {
+      "p": 600,
+      "topic": "الهاشيرا",
+      "q": "ما اسم والد عمود اللهب الذي حمل المنصب قبله؟",
+      "a": "شينجورو",
+      "alt": [
+        "شنجورو"
+      ],
+      "verified": true,
+      "qid": "demonslayer-600-913",
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters#Rengoku_family",
+      "difficultyTarget": 0.4
+    },
+    {
+      "p": 600,
+      "topic": "الشياطين",
+      "q": "من القمر العلوي الرابع الذي تتكاثر تجسداته عند قطع رأسه؟",
+      "a": "هانتينغو",
+      "alt": [
+        "هانتنغو"
+      ],
+      "verified": true,
+      "qid": "demonslayer-600-914",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Demon_Slayer:_Kimetsu_no_Yaiba_%E2%80%93_Swordsmith_Village_Arc#Episodes",
+      "difficultyTarget": 0.4
+    },
+    {
+      "p": 600,
       "topic": "الأسلحة والحدادون",
       "q": "ما اسم الدمية الخشبية التي يتدرّب عليها المحاربون؟",
       "a": "يوريتشي النموذج صفر",
@@ -440,12 +286,53 @@
         "يوريتشي تايب زيرو"
       ],
       "verified": true,
-      "qid": "demonslayer-800-908",
+      "qid": "demonslayer-600-915",
       "sourceUrl": "https://demonslayer-anime.com/sva/story/02.html",
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.4
     },
     {
-      "p": 1000,
+      "q": "من الرجل الذي استضاف تانجيرو ليلة الهجوم على أسرته؟",
+      "a": "سابورو",
+      "alt": [
+        "Saburo"
+      ],
+      "p": 600,
+      "topic": "عائلة كامادو",
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters#Minor_characters",
+      "verified": true,
+      "qid": "demonslayer-600-916",
+      "difficultyTarget": 0.4
+    },
+    {
+      "topic": "التنفس والقدرات",
+      "q": "من مقاتل الفيلق الذي يكتسب قوى الشياطين مؤقتًا بأكل لحمها؟",
+      "a": "غينيا شينازوغاوا",
+      "alt": [
+        "غينيا",
+        "جينيا",
+        "Genya Shinazugawa"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters",
+      "qid": "demonslayer-600-917",
+      "p": 600,
+      "difficultyTarget": 0.4,
+      "verified": true
+    },
+    {
+      "topic": "عائلة كامادو",
+      "q": "من سلف تانجيرو الذي تلقى الأقراط وحفظ حركات يوريتشي؟",
+      "a": "سوميوشي",
+      "alt": [
+        "Sumiyoshi"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters",
+      "qid": "demonslayer-600-918",
+      "p": 600,
+      "difficultyTarget": 0.4,
+      "verified": true
+    },
+    {
+      "p": 800,
       "topic": "الأسلحة والحدادون",
       "q": "ما اسم زعيم القرية التي تُصنع فيها السيوف؟",
       "a": "تيتشين",
@@ -453,9 +340,105 @@
         "تيتشيكاواهارا تيتشين"
       ],
       "verified": true,
-      "qid": "demonslayer-1000-901",
+      "qid": "demonslayer-800-911",
       "sourceUrl": "https://demonslayer-anime.com/sva/story/05.html",
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.25
+    },
+    {
+      "p": 800,
+      "topic": "الشياطين",
+      "q": "في أي عصر ياباني تحوّل موزان إلى شيطان؟",
+      "a": "عصر هييآن",
+      "alt": [
+        "هييآن",
+        "حقبة هييآن"
+      ],
+      "verified": true,
+      "qid": "demonslayer-800-912",
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters#Muzan_Kibutsuji",
+      "difficultyTarget": 0.25
+    },
+    {
+      "p": 800,
+      "topic": "الشياطين",
+      "q": "ما اسم كوكوشيبو حين كان إنسانًا؟",
+      "a": "ميتشيكاتسو",
+      "alt": [
+        "ميتشيكاتسو تسوغيكوني"
+      ],
+      "verified": true,
+      "qid": "demonslayer-800-913",
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters#Upper_Ranks",
+      "difficultyTarget": 0.25
+    },
+    {
+      "p": 800,
+      "topic": "الهاشيرا",
+      "q": "ما اسم توأم مويتشيرو؟",
+      "a": "يوئيتشيرو",
+      "alt": [
+        "يويتشيرو",
+        "يوئيتشيرو توكيتو"
+      ],
+      "verified": true,
+      "qid": "demonslayer-800-914",
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters#Hashira",
+      "difficultyTarget": 0.25
+    },
+    {
+      "p": 800,
+      "topic": "الرفاق والمعلمون",
+      "q": "ما الاسم الأصلي لعصفور زينيتسو الملقب تشونتارو؟",
+      "a": "أوكوغي",
+      "alt": [
+        "Ukogi",
+        "أوكيغي",
+        "أوكوجي"
+      ],
+      "verified": true,
+      "qid": "demonslayer-800-915",
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters#Supporting_characters",
+      "difficultyTarget": 0.25
+    },
+    {
+      "q": "ما اسم بائع الأودون الذي غضب من تانجيرو عندما ترك طعامه؟",
+      "a": "تويو",
+      "alt": [
+        "Toyo"
+      ],
+      "p": 800,
+      "topic": "الأماكن والرحلات",
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters#Minor_characters",
+      "verified": true,
+      "qid": "demonslayer-800-916",
+      "difficultyTarget": 0.25
+    },
+    {
+      "topic": "الأماكن والرحلات",
+      "q": "ما اسم الفتى الذي ورث دمية التدريب في قرية الحدادين؟",
+      "a": "كوتيتسو",
+      "alt": [
+        "Kotetsu"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters",
+      "qid": "demonslayer-800-917",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "الأسلحة والحدادون",
+      "q": "من الحداد الذي غضب عندما جعل إينوسكي نصلي سيفيه مسننين؟",
+      "a": "كوزو كاناموري",
+      "alt": [
+        "كاناموري",
+        "Kozo Kanamori"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters",
+      "qid": "demonslayer-800-918",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
     },
     {
       "q": "ما اسم الحداد الراحل الذي صنع سيوف مويتشيرو قبل كاناموري؟",
@@ -467,90 +450,100 @@
       "topic": "الأسلحة والحدادون",
       "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters#Swordsmith_Village",
       "verified": true,
-      "qid": "demonslayer-1000-902",
+      "qid": "demonslayer-1000-911",
       "difficultyTarget": 0.15
     },
     {
-      "p": 1000,
-      "topic": "الشياطين",
-      "q": "في أي عصر ياباني تحوّل موزان إلى شيطان؟",
-      "a": "عصر هييآن",
-      "alt": [
-        "هييآن",
-        "حقبة هييآن"
-      ],
-      "verified": true,
-      "qid": "demonslayer-1000-903",
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters#Muzan_Kibutsuji",
-      "difficultyTarget": 0.15
-    },
-    {
-      "p": 1000,
-      "topic": "الشياطين",
-      "q": "ما اسم كوكوشيبو حين كان إنسانًا؟",
-      "a": "ميتشيكاتسو",
-      "alt": [
-        "ميتشيكاتسو تسوغيكوني"
-      ],
-      "verified": true,
-      "qid": "demonslayer-1000-904",
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters#Upper_Ranks",
-      "difficultyTarget": 0.15
-    },
-    {
-      "p": 1000,
-      "topic": "الهاشيرا",
-      "q": "ما اسم توأم مويتشيرو؟",
-      "a": "يوئيتشيرو",
-      "alt": [
-        "يويتشيرو",
-        "يوئيتشيرو توكيتو"
-      ],
-      "verified": true,
-      "qid": "demonslayer-1000-905",
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters#Hashira",
-      "difficultyTarget": 0.15
-    },
-    {
-      "p": 1000,
       "topic": "الرفاق والمعلمون",
-      "q": "ما الاسم الأصلي لعصفور زينيتسو الملقب تشونتارو؟",
-      "a": "أوكوغي",
+      "q": "ما اسم والدة إينوسكي التي قتلها دوما بعدما هربت منه؟",
+      "a": "كوتوها هاشيبيرا",
       "alt": [
-        "Ukogi",
-        "أوكيغي",
-        "أوكوجي"
+        "كوتوها",
+        "Kotoha Hashibira"
       ],
-      "verified": true,
-      "qid": "demonslayer-1000-906",
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters#Supporting_characters",
-      "difficultyTarget": 0.15
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters",
+      "qid": "demonslayer-1000-912",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
     },
     {
-      "q": "من الرجل الذي استضاف تانجيرو ليلة الهجوم على أسرته؟",
-      "a": "سابورو",
+      "topic": "الشياطين",
+      "q": "ما اسم معلم الفنون القتالية الذي تبنى هاكوجي حين كان إنسانًا؟",
+      "a": "كيزو",
       "alt": [
-        "Saburo"
+        "Keizo"
       ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters",
+      "qid": "demonslayer-1000-913",
       "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "الشياطين",
+      "q": "ما اسم ابنة معلم هاكوجي التي أحبها قبل تحوله إلى شيطان؟",
+      "a": "كويوكي",
+      "alt": [
+        "Koyuki"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters",
+      "qid": "demonslayer-1000-914",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "الهاشيرا",
+      "q": "أي زوجة لأوزوي وجدها بنفسه بعدما حاولت الفرار من داكي؟",
+      "a": "هيناتسورو",
+      "alt": [
+        "Hinatsuru"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters",
+      "qid": "demonslayer-1000-915",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "الهاشيرا",
+      "q": "ما اسم والدة رينغوكو التي علمته حماية الضعفاء؟",
+      "a": "روكا",
+      "alt": [
+        "Ruka"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters",
+      "qid": "demonslayer-1000-916",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "الفيلق",
+      "q": "ما اسم أصغر بنات كاغايا التي تساعد شقيقها في قيادة المعركة الأخيرة؟",
+      "a": "كاناتا أوبوياشيكي",
+      "alt": [
+        "Kanata Ubuyashiki"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters",
+      "qid": "demonslayer-1000-917",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
       "topic": "عائلة كامادو",
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters#Minor_characters",
-      "verified": true,
-      "qid": "demonslayer-1000-907",
-      "difficultyTarget": 0.15
-    },
-    {
-      "q": "ما اسم بائع الأودون الذي غضب من تانجيرو عندما ترك طعامه؟",
-      "a": "تويو",
+      "q": "ما اسم سليل تانجيرو وكاناو البالغ خمسة عشر عامًا في خاتمة العصر الحديث؟",
+      "a": "سوميهيكو كامادو",
       "alt": [
-        "Toyo"
+        "Sumihiko Kamado"
       ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters",
+      "qid": "demonslayer-1000-918",
       "p": 1000,
-      "topic": "الأماكن والرحلات",
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters#Minor_characters",
-      "verified": true,
-      "qid": "demonslayer-1000-908",
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.15,
+      "verified": true
     }
   ]
 }

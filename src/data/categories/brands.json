@@ -5,171 +5,12 @@
   "qs": [
     {
       "p": 200,
-      "q": "ما الشركة التي كشفت عن أول آيفون عام 2007؟",
-      "a": "آبل",
-      "qid": "brands-200-901",
-      "topic": "التقنية",
-      "verified": true,
-      "difficultyTarget": 0.8,
-      "source": "https://www.apple.com/newsroom/2007/01/09Apple-Reinvents-the-Phone-with-iPhone/",
-      "verifiedAt": "2026-09-18",
-      "alt": [
-        "Apple",
-        "أبل"
-      ]
-    },
-    {
-      "p": 200,
-      "q": "ما سلسلة المطاعم المشهورة بشعار القوسين الذهبيين؟",
-      "a": "ماكدونالدز",
-      "qid": "brands-200-902",
-      "topic": "المطاعم",
-      "verified": true,
-      "difficultyTarget": 0.8,
-      "source": "https://corporate.mcdonalds.com/corpmcd/our-company/who-we-are/our-history.html",
-      "verifiedAt": "2026-09-18",
-      "alt": [
-        "McDonald’s"
-      ]
-    },
-    {
-      "p": 200,
-      "q": "ما ماركة المشروب الغازي صاحبة الخط الأبيض الشهير على خلفية حمراء؟",
-      "a": "كوكاكولا",
-      "qid": "brands-200-903",
-      "topic": "المشروبات",
-      "verified": true,
-      "difficultyTarget": 0.8,
-      "source": "https://www.coca-colacompany.com/about-us/history/coca-cola-red-our-second-secret-formula",
-      "verifiedAt": "2026-09-18",
-      "alt": [
-        "كوكا كولا",
-        "Coca-Cola"
-      ]
-    },
-    {
-      "p": 200,
-      "q": "أي ماركة أحذية وملابس تحمل علامة Swoosh التي صممتها كارولين ديفيدسون؟",
-      "a": "نايكي",
-      "qid": "brands-200-904",
-      "topic": "الملابس",
-      "verified": true,
-      "difficultyTarget": 0.8,
-      "source": "https://about.nike.com/en/magazine/nike-swoosh-logo-history",
-      "verifiedAt": "2026-09-18",
-      "alt": [
-        "Nike"
-      ]
-    },
-    {
-      "p": 200,
-      "q": "أي ماركة رياضية اشتهرت بثلاثة خطوط متوازية على أحذيتها؟",
-      "a": "أديداس",
-      "qid": "brands-200-905",
-      "topic": "الرياضة",
-      "verified": true,
-      "difficultyTarget": 0.8,
-      "source": "https://www.adidas-group.com/en/magazine/innovation/the-history-of-adidas-a-background-of-collaboration-and-innovation",
-      "verifiedAt": "2026-09-18",
-      "alt": [
-        "Adidas"
-      ]
-    },
-    {
-      "p": 200,
-      "q": "أي ماركة ساعات سويسرية يحمل شعارها تاجًا خماسي الرؤوس؟",
-      "a": "رولكس",
-      "qid": "brands-200-906",
-      "topic": "الدور الفاخرة",
-      "verified": true,
-      "difficultyTarget": 0.8,
-      "source": "https://newsroom-content.rolex.com/-/media/project/rolex/newsroom/rolex/rolex-newsroom-int/watches/thematic-presskit/rolex-deepsea-challenge/en_02_rolex_deepseachallenge_2020_en.pdf",
-      "verifiedAt": "2026-09-18",
-      "alt": [
-        "Rolex"
-      ]
-    },
-    {
-      "p": 200,
-      "q": "ما ماركة مكعبات البناء الدنماركية التي اشتُق اسمها من عبارة«العب جيدًا»؟",
-      "a": "ليغو",
-      "qid": "brands-200-907",
-      "topic": "الألعاب",
-      "verified": true,
-      "difficultyTarget": 0.8,
-      "source": "https://www.lego.com/cdn/cs/aboutus/assets/blt4ee78e0776fce92f/LEGO_Company_Profile.pdf",
-      "verifiedAt": "2026-09-18",
-      "alt": [
-        "Lego",
-        "ليجو"
-      ]
-    },
-    {
-      "p": 200,
-      "q": "ما شركة الأثاث السويدية المشهورة بالطرود المسطحة والأثاث الذي يجمعه المشتري؟",
-      "a": "إيكيا",
-      "qid": "brands-200-908",
-      "topic": "شركات ومنتجات",
-      "verified": true,
-      "difficultyTarget": 0.8,
-      "source": "https://www.ikea.com/ph/en/this-is-ikea/about-us/the-story-of-ikea-flatpacks-puba710ccb0/",
-      "verifiedAt": "2026-09-18",
-      "alt": [
-        "IKEA"
-      ]
-    },
-    {
-      "p": 400,
-      "q": "ما الشركة الكورية المصنعة لهواتف Galaxy؟",
-      "a": "سامسونغ",
-      "qid": "brands-400-901",
-      "topic": "التقنية",
-      "verified": true,
-      "difficultyTarget": 0.6,
-      "source": "https://www.samsung.com/us/smartphones/",
-      "verifiedAt": "2026-09-18",
-      "alt": [
-        "Samsung",
-        "سامسونج"
-      ]
-    },
-    {
-      "p": 400,
-      "q": "ما سلسلة الدجاج المقلي التي أسسها الكولونيل هارلاند ساندرز؟",
-      "a": "كنتاكي",
-      "qid": "brands-400-902",
-      "topic": "المطاعم",
-      "verified": true,
-      "difficultyTarget": 0.6,
-      "source": "https://global.kfc.com/our-history",
-      "verifiedAt": "2026-09-18",
-      "alt": [
-        "KFC",
-        "كي إف سي"
-      ]
-    },
-    {
-      "p": 400,
-      "q": "أي ماركة كولا تسمي شعارها الدائري ذي الأحمر والأبيض والأزرق Globe؟",
-      "a": "بيبسي",
-      "qid": "brands-400-903",
-      "topic": "المشروبات",
-      "verified": true,
-      "difficultyTarget": 0.6,
-      "source": "https://design.pepsico.com/case-studies/pepsi-global-redesign",
-      "verifiedAt": "2026-09-18",
-      "alt": [
-        "Pepsi"
-      ]
-    },
-    {
-      "p": 400,
       "q": "ما ماركة الأزياء التي افتتح أمانسيو أورتيغا أول متجر لها في لاكورونيا عام 1975؟",
       "a": "زارا",
-      "qid": "brands-400-904",
+      "qid": "brands-200-911",
       "topic": "الملابس",
       "verified": true,
-      "difficultyTarget": 0.6,
+      "difficultyTarget": 0.8,
       "source": "https://www.zara.com/integration/pressapi/microsite/news/?countryiso=WW&detailid=68148f8efcb89e786c382b8e&languageiso=pt",
       "verifiedAt": "2026-09-18",
       "alt": [
@@ -177,10 +18,112 @@
       ]
     },
     {
+      "p": 200,
+      "q": "ما المجموعة الغذائية السويسرية التي تدرج كيت كات وسمارتيز ضمن علاماتها؟",
+      "a": "نستله",
+      "qid": "brands-200-912",
+      "topic": "شركات ومنتجات",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "source": "https://www.nestle.com/brands/chocolate-confectionery",
+      "verifiedAt": "2026-09-18",
+      "alt": [
+        "Nestlé",
+        "نستلي"
+      ]
+    },
+    {
+      "p": 200,
+      "q": "ما الشركة اليابانية التي أطلقت بلايستيشن في اليابان عام 1994؟",
+      "a": "سوني",
+      "qid": "brands-200-913",
+      "topic": "التقنية",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "source": "https://www.sony.com/en/SonyInfo/CorporateInfo/History/SonyHistory/2-09.html",
+      "verifiedAt": "2026-09-18",
+      "alt": [
+        "Sony"
+      ]
+    },
+    {
+      "p": 200,
+      "q": "أي سلسلة مطاعم قدمت شطيرة Whopper لأول مرة عام 1957؟",
+      "a": "برغر كينغ",
+      "qid": "brands-200-914",
+      "topic": "المطاعم",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "source": "https://news.bk.com/blog-posts/65-fun-facts-about-the-whopper-r",
+      "verifiedAt": "2026-09-18",
+      "alt": [
+        "Burger King",
+        "برجر كينج"
+      ]
+    },
+    {
+      "p": 200,
+      "q": "ما ماركة القهوة الفورية التي ولدت عام 1938 بعد تطوير مشروب يجهز بإضافة الماء؟",
+      "a": "نسكافيه",
+      "qid": "brands-200-915",
+      "topic": "المشروبات",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "source": "https://www.nescafe.com/gb/coffee-culture/knowledge/about-us",
+      "verifiedAt": "2026-09-18",
+      "alt": [
+        "Nescafé",
+        "نيسكافيه"
+      ]
+    },
+    {
+      "p": 200,
+      "q": "ما ماركة قمصان البولو التي أخذت شعار التمساح من لقب مؤسسها لاعب التنس رينيه؟",
+      "a": "لاكوست",
+      "qid": "brands-200-916",
+      "topic": "الملابس",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "source": "https://corporate.lacoste.com/our-history/",
+      "verifiedAt": "2026-09-18",
+      "alt": [
+        "Lacoste"
+      ]
+    },
+    {
+      "p": 200,
+      "q": "أي شركة ساعات صنعت Speedmaster التي رافقت رحلات أبولو إلى القمر؟",
+      "a": "أوميغا",
+      "qid": "brands-200-917",
+      "topic": "الدور الفاخرة",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "source": "https://press.omegawatches.com/omega-celebrates-the-50th-anniversary-of-apollo-17-14303/",
+      "verifiedAt": "2026-09-18",
+      "alt": [
+        "Omega",
+        "أوميجا"
+      ]
+    },
+    {
+      "p": 200,
+      "q": "ما المجموعة المالكة لعلامات دوف وصانسيلك وفازلين؟",
+      "a": "يونيليفر",
+      "qid": "brands-200-918",
+      "topic": "شركات ومنتجات",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "source": "https://www.unilever.com/our-company/at-a-glance/",
+      "verifiedAt": "2026-09-18",
+      "alt": [
+        "Unilever"
+      ]
+    },
+    {
       "p": 400,
       "q": "ما الماركة الرياضية التي أسسها رودولف داسلر وتحمل اسم قط بري كبير؟",
       "a": "بوما",
-      "qid": "brands-400-905",
+      "qid": "brands-400-911",
       "topic": "الرياضة",
       "verified": true,
       "difficultyTarget": 0.6,
@@ -194,7 +137,7 @@
       "p": 400,
       "q": "أي دار أزياء إيطالية بدأت بمتجر للحقائب في فلورنسا عام 1921 وتتخذ حرفَي G متداخلين رمزًا؟",
       "a": "غوتشي",
-      "qid": "brands-400-906",
+      "qid": "brands-400-912",
       "topic": "الدور الفاخرة",
       "verified": true,
       "difficultyTarget": 0.6,
@@ -208,99 +151,12 @@
     },
     {
       "p": 400,
-      "q": "ما اسم الدمية التي قدمتها ماتيل في معرض نيويورك للألعاب عام 1959؟",
-      "a": "باربي",
-      "qid": "brands-400-907",
-      "topic": "الألعاب",
-      "verified": true,
-      "difficultyTarget": 0.6,
-      "source": "https://service.mattel.com/us/productPopup.aspx?prodno=N4974&siteid=27",
-      "verifiedAt": "2026-09-18",
-      "alt": [
-        "Barbie"
-      ]
-    },
-    {
-      "p": 400,
-      "q": "ما المجموعة الغذائية السويسرية التي تدرج كيت كات وسمارتيز ضمن علاماتها؟",
-      "a": "نستله",
-      "qid": "brands-400-908",
-      "topic": "شركات ومنتجات",
-      "verified": true,
-      "difficultyTarget": 0.6,
-      "source": "https://www.nestle.com/brands/chocolate-confectionery",
-      "verifiedAt": "2026-09-18",
-      "alt": [
-        "Nestlé",
-        "نستلي"
-      ]
-    },
-    {
-      "p": 600,
-      "q": "ما الشركة اليابانية التي أطلقت بلايستيشن في اليابان عام 1994؟",
-      "a": "سوني",
-      "qid": "brands-600-901",
-      "topic": "التقنية",
-      "verified": true,
-      "difficultyTarget": 0.4,
-      "source": "https://www.sony.com/en/SonyInfo/CorporateInfo/History/SonyHistory/2-09.html",
-      "verifiedAt": "2026-09-18",
-      "alt": [
-        "Sony"
-      ]
-    },
-    {
-      "p": 600,
-      "q": "أي سلسلة مطاعم قدمت شطيرة Whopper لأول مرة عام 1957؟",
-      "a": "برغر كينغ",
-      "qid": "brands-600-902",
-      "topic": "المطاعم",
-      "verified": true,
-      "difficultyTarget": 0.4,
-      "source": "https://news.bk.com/blog-posts/65-fun-facts-about-the-whopper-r",
-      "verifiedAt": "2026-09-18",
-      "alt": [
-        "Burger King",
-        "برجر كينج"
-      ]
-    },
-    {
-      "p": 600,
-      "q": "ما ماركة القهوة الفورية التي ولدت عام 1938 بعد تطوير مشروب يجهز بإضافة الماء؟",
-      "a": "نسكافيه",
-      "qid": "brands-600-903",
-      "topic": "المشروبات",
-      "verified": true,
-      "difficultyTarget": 0.4,
-      "source": "https://www.nescafe.com/gb/coffee-culture/knowledge/about-us",
-      "verifiedAt": "2026-09-18",
-      "alt": [
-        "Nescafé",
-        "نيسكافيه"
-      ]
-    },
-    {
-      "p": 600,
-      "q": "ما ماركة قمصان البولو التي أخذت شعار التمساح من لقب مؤسسها لاعب التنس رينيه؟",
-      "a": "لاكوست",
-      "qid": "brands-600-904",
-      "topic": "الملابس",
-      "verified": true,
-      "difficultyTarget": 0.4,
-      "source": "https://corporate.lacoste.com/our-history/",
-      "verifiedAt": "2026-09-18",
-      "alt": [
-        "Lacoste"
-      ]
-    },
-    {
-      "p": 600,
       "q": "ما ماركة الملابس الرياضية التي أسسها كيفن بلانك عام 1996؟",
       "a": "أندر آرمور",
-      "qid": "brands-600-905",
+      "qid": "brands-400-913",
       "topic": "الرياضة",
       "verified": true,
-      "difficultyTarget": 0.4,
+      "difficultyTarget": 0.6,
       "source": "https://about.underarmour.com/en/our-company/history.html",
       "verifiedAt": "2026-09-18",
       "alt": [
@@ -309,28 +165,13 @@
       ]
     },
     {
-      "p": 600,
-      "q": "أي شركة ساعات صنعت Speedmaster التي رافقت رحلات أبولو إلى القمر؟",
-      "a": "أوميغا",
-      "qid": "brands-600-906",
-      "topic": "الدور الفاخرة",
-      "verified": true,
-      "difficultyTarget": 0.4,
-      "source": "https://press.omegawatches.com/omega-celebrates-the-50th-anniversary-of-apollo-17-14303/",
-      "verifiedAt": "2026-09-18",
-      "alt": [
-        "Omega",
-        "أوميجا"
-      ]
-    },
-    {
-      "p": 600,
+      "p": 400,
       "q": "ما شركة الألعاب التي تنشر النسخ الرسمية من مونوبولي؟",
       "a": "هاسبرو",
-      "qid": "brands-600-907",
+      "qid": "brands-400-914",
       "topic": "الألعاب",
       "verified": true,
-      "difficultyTarget": 0.4,
+      "difficultyTarget": 0.6,
       "source": "https://newsroom.hasbro.com/node/15011",
       "verifiedAt": "2026-09-18",
       "alt": [
@@ -338,27 +179,13 @@
       ]
     },
     {
-      "p": 600,
-      "q": "ما المجموعة المالكة لعلامات دوف وصانسيلك وفازلين؟",
-      "a": "يونيليفر",
-      "qid": "brands-600-908",
-      "topic": "شركات ومنتجات",
-      "verified": true,
-      "difficultyTarget": 0.4,
-      "source": "https://www.unilever.com/our-company/at-a-glance/",
-      "verifiedAt": "2026-09-18",
-      "alt": [
-        "Unilever"
-      ]
-    },
-    {
-      "p": 800,
+      "p": 400,
       "q": "ما شركة الرسوميات التي أسسها جنسن هوانغ وشريكان عام 1993؟",
       "a": "إنفيديا",
-      "qid": "brands-800-901",
+      "qid": "brands-400-915",
       "topic": "التقنية",
       "verified": true,
-      "difficultyTarget": 0.25,
+      "difficultyTarget": 0.6,
       "source": "https://www.nvidia.com/en-gb/about-nvidia/corporate-timeline/",
       "verifiedAt": "2026-09-18",
       "alt": [
@@ -366,13 +193,13 @@
       ]
     },
     {
-      "p": 800,
+      "p": 400,
       "q": "ما سلسلة البرغر التي أسسها ديف توماس عام 1969 وسماها على اسم ابنته؟",
       "a": "وينديز",
-      "qid": "brands-800-902",
+      "qid": "brands-400-916",
       "topic": "المطاعم",
       "verified": true,
-      "difficultyTarget": 0.25,
+      "difficultyTarget": 0.6,
       "source": "https://www.wendys.com/wendys-story",
       "verifiedAt": "2026-09-18",
       "alt": [
@@ -380,13 +207,13 @@
       ]
     },
     {
-      "p": 800,
+      "p": 400,
       "q": "ما ماركة مشروبات الطاقة التي باعت أول عبوة لها في النمسا عام 1987؟",
       "a": "ريد بول",
-      "qid": "brands-800-903",
+      "qid": "brands-400-917",
       "topic": "المشروبات",
       "verified": true,
-      "difficultyTarget": 0.25,
+      "difficultyTarget": 0.6,
       "source": "https://jobs.redbull.com/int-en/locations/red-bull-global-headquarters?lang=en&office=Vienna",
       "verifiedAt": "2026-09-18",
       "alt": [
@@ -394,13 +221,13 @@
       ]
     },
     {
-      "p": 800,
+      "p": 400,
       "q": "أي ماركة جينز تشتهر بطراز 501 الذي تعود جذوره إلى براءة سراويل بمسامير تقوية عام 1873؟",
       "a": "ليفايز",
-      "qid": "brands-800-904",
+      "qid": "brands-400-918",
       "topic": "الملابس",
       "verified": true,
-      "difficultyTarget": 0.25,
+      "difficultyTarget": 0.6,
       "source": "https://www.levistrauss.com/2021/05/20/celebrating-the-levis-501-jean/",
       "verifiedAt": "2026-09-18",
       "alt": [
@@ -409,13 +236,13 @@
       ]
     },
     {
-      "p": 800,
+      "p": 600,
       "q": "ما شركة الأحذية التي أسسها روبرت غرينبرغ في كاليفورنيا عام 1992؟",
       "a": "سكيتشرز",
-      "qid": "brands-800-905",
+      "qid": "brands-600-911",
       "topic": "الرياضة",
       "verified": true,
-      "difficultyTarget": 0.25,
+      "difficultyTarget": 0.4,
       "source": "https://about.skechers.com/executive-team",
       "verifiedAt": "2026-09-18",
       "alt": [
@@ -424,13 +251,13 @@
       ]
     },
     {
-      "p": 800,
+      "p": 600,
       "q": "ما الدار التي ابتكرت ساعة Tank المستطيلة عام 1917؟",
       "a": "كارتييه",
-      "qid": "brands-800-906",
+      "qid": "brands-600-912",
       "topic": "الدور الفاخرة",
       "verified": true,
-      "difficultyTarget": 0.25,
+      "difficultyTarget": 0.4,
       "source": "https://www.cartier.com/en-us/tank.html",
       "verifiedAt": "2026-09-18",
       "alt": [
@@ -439,13 +266,13 @@
       ]
     },
     {
-      "p": 800,
+      "p": 600,
       "q": "ما علامة مجسمات الألعاب التي قدم هانس بيك شخصيتها الأولى في معرض 1974؟",
       "a": "بلايموبيل",
-      "qid": "brands-800-907",
+      "qid": "brands-600-913",
       "topic": "الألعاب",
       "verified": true,
-      "difficultyTarget": 0.25,
+      "difficultyTarget": 0.4,
       "source": "https://www.horst-brandstaetter-group.com/en/why",
       "verifiedAt": "2026-09-18",
       "alt": [
@@ -454,13 +281,13 @@
       ]
     },
     {
-      "p": 800,
+      "p": 600,
       "q": "في أي شركة تطورت ملاحظات Post-it بفضل سبنسر سيلفر وآرت فراي؟",
       "a": "ثري إم",
-      "qid": "brands-800-908",
+      "qid": "brands-600-914",
       "topic": "شركات ومنتجات",
       "verified": true,
-      "difficultyTarget": 0.25,
+      "difficultyTarget": 0.4,
       "source": "https://multimedia.3m.com/mws/media/171240O/3m-century-of-innovation-book.pdf",
       "verifiedAt": "2026-09-18",
       "alt": [
@@ -468,27 +295,13 @@
       ]
     },
     {
-      "p": 1000,
-      "q": "ما شركة الحواسيب التي اشتقت اسمها من آخر أربعة أحرف في Pegasus؟",
-      "a": "أسوس",
-      "qid": "brands-1000-901",
-      "topic": "التقنية",
-      "verified": true,
-      "difficultyTarget": 0.15,
-      "source": "https://www.asus.com/in/About_ASUS/Origin-of-the-Name-ASUS/",
-      "verifiedAt": "2026-09-18",
-      "alt": [
-        "ASUS"
-      ]
-    },
-    {
-      "p": 1000,
+      "p": 600,
       "q": "ما ماركة المثلجات التي بدأت في محطة وقود مجددة بمدينة برلنغتون عام 1978؟",
       "a": "بن آند جيريز",
-      "qid": "brands-1000-902",
+      "qid": "brands-600-915",
       "topic": "المطاعم",
       "verified": true,
-      "difficultyTarget": 0.15,
+      "difficultyTarget": 0.4,
       "source": "https://www.benjerry.com/about-us",
       "verifiedAt": "2026-09-18",
       "alt": [
@@ -497,13 +310,13 @@
       ]
     },
     {
-      "p": 1000,
+      "p": 600,
       "q": "ما ماركة المياه المعدنية التي يأتي ماؤها من نبع Cachat في الألب الفرنسية؟",
       "a": "إيفيان",
-      "qid": "brands-1000-903",
+      "qid": "brands-600-916",
       "topic": "المشروبات",
       "verified": true,
-      "difficultyTarget": 0.15,
+      "difficultyTarget": 0.4,
       "source": "https://www.evian.com/fr/notre-eau/",
       "verifiedAt": "2026-09-18",
       "alt": [
@@ -511,13 +324,13 @@
       ]
     },
     {
-      "p": 1000,
+      "p": 600,
       "q": "ما ماركة الملابس اليابانية التي افتتحت أول متجر لها في هيروشيما عام 1984؟",
       "a": "يونيكلو",
-      "qid": "brands-1000-904",
+      "qid": "brands-600-917",
       "topic": "الملابس",
       "verified": true,
-      "difficultyTarget": 0.15,
+      "difficultyTarget": 0.4,
       "source": "https://www.fastretailing.com/eng/ir/library/pdf/ar2024_en.pdf",
       "verifiedAt": "2026-09-18",
       "alt": [
@@ -525,42 +338,13 @@
       ]
     },
     {
-      "p": 1000,
-      "q": "ما الماركة التي يمثل اسمها اختصار العبارة اللاتينية«عقل سليم في جسم سليم»؟",
-      "a": "أسيكس",
-      "qid": "brands-1000-905",
-      "topic": "الرياضة",
-      "verified": true,
-      "difficultyTarget": 0.15,
-      "source": "https://corp.asics.com/en",
-      "verifiedAt": "2026-09-18",
-      "alt": [
-        "ASICS",
-        "آسيكس"
-      ]
-    },
-    {
-      "p": 1000,
-      "q": "ما دار الساعات التي أطلقت مجموعة Nautilus عام 1976؟",
-      "a": "باتيك فيليب",
-      "qid": "brands-1000-906",
-      "topic": "الدور الفاخرة",
-      "verified": true,
-      "difficultyTarget": 0.15,
-      "source": "https://www.patek.com/en/collection/nautilus",
-      "verifiedAt": "2026-09-18",
-      "alt": [
-        "Patek Philippe"
-      ]
-    },
-    {
-      "p": 1000,
+      "p": 600,
       "q": "ما ماركة عجينة التشكيل التي بدأت أصلًا كمادة لتنظيف ورق الجدران؟",
       "a": "بلاي دو",
-      "qid": "brands-1000-907",
+      "qid": "brands-600-918",
       "topic": "الألعاب",
       "verified": true,
-      "difficultyTarget": 0.15,
+      "difficultyTarget": 0.4,
       "source": "https://newsroom.hasbro.com/node/34691",
       "verifiedAt": "2026-09-18",
       "alt": [
@@ -569,19 +353,238 @@
       ]
     },
     {
-      "p": 1000,
+      "p": 800,
+      "q": "ما شركة الحواسيب التي اشتقت اسمها من آخر أربعة أحرف في Pegasus؟",
+      "a": "أسوس",
+      "qid": "brands-800-911",
+      "topic": "التقنية",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "source": "https://www.asus.com/in/About_ASUS/Origin-of-the-Name-ASUS/",
+      "verifiedAt": "2026-09-18",
+      "alt": [
+        "ASUS"
+      ]
+    },
+    {
+      "p": 800,
+      "q": "ما الماركة التي يمثل اسمها اختصار العبارة اللاتينية«عقل سليم في جسم سليم»؟",
+      "a": "أسيكس",
+      "qid": "brands-800-912",
+      "topic": "الرياضة",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "source": "https://corp.asics.com/en",
+      "verifiedAt": "2026-09-18",
+      "alt": [
+        "ASICS",
+        "آسيكس"
+      ]
+    },
+    {
+      "p": 800,
+      "q": "ما دار الساعات التي أطلقت مجموعة Nautilus عام 1976؟",
+      "a": "باتيك فيليب",
+      "qid": "brands-800-913",
+      "topic": "الدور الفاخرة",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "source": "https://www.patek.com/en/collection/nautilus",
+      "verifiedAt": "2026-09-18",
+      "alt": [
+        "Patek Philippe"
+      ]
+    },
+    {
+      "p": 800,
       "q": "ما الشركة التي أسسها صانع شموع وصانع صابون في 1837 وتعرف باختصار P&G؟",
       "a": "بروكتر آند غامبل",
-      "qid": "brands-1000-908",
+      "qid": "brands-800-914",
       "topic": "شركات ومنتجات",
       "verified": true,
-      "difficultyTarget": 0.15,
+      "difficultyTarget": 0.25,
       "source": "https://us.pg.com/blogs/pg-misspelling-procter-and-gamble/",
       "verifiedAt": "2026-09-18",
       "alt": [
         "Procter & Gamble",
         "بروكتر وغامبل"
       ]
+    },
+    {
+      "q": "أي شركة ألعاب بدأت بصناعة أوراق هانافودا في كيوتو عام 1889؟",
+      "a": "نينتندو",
+      "topic": "الألعاب",
+      "verified": true,
+      "sourceUrl": "https://www.nintendo.co.jp/corporate/en/history/index.html",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Nintendo"
+      ],
+      "p": 800,
+      "qid": "brands-800-915",
+      "difficultyTarget": 0.25
+    },
+    {
+      "q": "ما علامة الملابس التي أسسها متسلق الجبال إيفون شوينارد عام 1973؟",
+      "a": "باتاغونيا",
+      "topic": "الملابس",
+      "verified": true,
+      "sourceUrl": "https://www.patagonia.com/company-history/",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Patagonia",
+        "باتاجونيا"
+      ],
+      "p": 800,
+      "qid": "brands-800-916",
+      "difficultyTarget": 0.25
+    },
+    {
+      "q": "ما علامة الأحذية التي بدأت عام 2002 بحذاء للقوارب مصنوع من مادة كروسلايت؟",
+      "a": "كروكس",
+      "topic": "الرياضة",
+      "verified": true,
+      "sourceUrl": "https://www.crocs.com.sg/company/about-crocs.html",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Crocs"
+      ],
+      "p": 800,
+      "qid": "brands-800-917",
+      "difficultyTarget": 0.25
+    },
+    {
+      "q": "ما سلسلة المتاجر اليابانية التي يعني اسمها الكامل «سلع عالية الجودة بلا علامة تجارية»؟",
+      "a": "موجي",
+      "topic": "شركات ومنتجات",
+      "verified": true,
+      "sourceUrl": "https://www.muji.com/sg/about",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Muji"
+      ],
+      "p": 800,
+      "qid": "brands-800-918",
+      "difficultyTarget": 0.25
+    },
+    {
+      "q": "ما الكلمات الإنجليزية الثلاث التي يختصرها اسم العلامة اليابانية JVC؟",
+      "a": "Japan Victor Company",
+      "topic": "التقنية",
+      "verified": true,
+      "sourceUrl": "https://www.jvc.com/jp/brand/",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "جابان فيكتور كومباني"
+      ],
+      "p": 1000,
+      "qid": "brands-1000-911",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "من مؤسس تيمبرلاند الذي اشترى حصة في شركة أبينغتون للأحذية عام 1952؟",
+      "a": "ناثان شوارتز",
+      "topic": "الرياضة",
+      "verified": true,
+      "sourceUrl": "https://www.timberland.com/en-us/about-us/our-story?ew=0",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Nathan Swartz",
+        "ناثان سوارتز"
+      ],
+      "p": 1000,
+      "qid": "brands-1000-912",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "من المهندس الفنلندي الذي أنشأ مصنع اللب عام 1865 الذي بدأت منه نوكيا؟",
+      "a": "فريدريك إيدستام",
+      "topic": "التقنية",
+      "verified": true,
+      "sourceUrl": "https://www.nokia.com/sites/default/files/2021-03/Nokia_Annual_Report_2020_English.pdf",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Fredrik Idestam",
+        "فريدريك إيدستام"
+      ],
+      "p": 1000,
+      "qid": "brands-1000-913",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "ما علامة حقائب السفر التي بدأ بول مورسيك ورشتها في كولونيا عام 1898؟",
+      "a": "ريمووا",
+      "topic": "الدور الفاخرة",
+      "verified": true,
+      "sourceUrl": "https://www.rimowa.com/us/en/heritage",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Rimowa",
+        "ريموفا"
+      ],
+      "p": 1000,
+      "qid": "brands-1000-914",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "من شارك تيودور توبلر في ابتكار شوكولاتة توبليرون عام 1908؟",
+      "a": "إميل باومان",
+      "topic": "حلويات",
+      "verified": true,
+      "sourceUrl": "https://www.mondelezinternational.com/our-brands/toblerone/",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Emil Baumann",
+        "إيميل باومان"
+      ],
+      "p": 1000,
+      "qid": "brands-1000-915",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "ما علامة المثلجات التي أطلقها روبن وروز ماتوس بثلاث نكهات: الفانيلا والشوكولاتة والقهوة؟",
+      "a": "هاجن داز",
+      "topic": "حلويات",
+      "verified": true,
+      "sourceUrl": "https://www.haagen-dazs.co.uk/our-story",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Häagen-Dazs",
+        "هاجن دازس",
+        "هاجن داز"
+      ],
+      "p": 1000,
+      "qid": "brands-1000-916",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "ما علامة أدوات الكتابة السويسرية التي أخذت اسمها من الكلمة الروسية التي تعني قلم رصاص؟",
+      "a": "كاران داش",
+      "topic": "شركات ومنتجات",
+      "verified": true,
+      "sourceUrl": "https://www.carandache.com/ca/en/notre-histoire",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Caran d'Ache",
+        "كاران دآش"
+      ],
+      "p": 1000,
+      "qid": "brands-1000-917",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "ما الرقم المنقوش على سن أقلام مايسترشتوك إشارة إلى ارتفاع جبل مون بلان بالمتر؟",
+      "a": "4810",
+      "topic": "الدور الفاخرة",
+      "verified": true,
+      "sourceUrl": "https://www.youtube.com/watch?v=ZFbs3KvGTHI",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "٤٨١٠"
+      ],
+      "p": 1000,
+      "qid": "brands-1000-918",
+      "difficultyTarget": 0.15
     }
   ]
 }

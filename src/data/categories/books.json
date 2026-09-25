@@ -4,122 +4,13 @@
   "icon": "📕",
   "qs": [
     {
-      "qid": "books-200-901",
+      "qid": "books-200-911",
       "p": 200,
-      "q": "ما اسم الفتاة التي تتبع الأرنب الأبيض في رواية لويس كارول؟",
-      "a": "أليس",
-      "topic": "حكايات الطفولة",
-      "verified": true,
-      "difficultyTarget": 0.8,
-      "sourceUrl": "https://www.gutenberg.org/files/11/11-h/11-h.htm",
-      "alt": [
-        "أليس في بلاد العجائب",
-        "Alice"
-      ]
-    },
-    {
-      "qid": "books-200-902",
-      "p": 200,
-      "q": "ما اسم الدمية الخشبية بطلة رواية كارلو كولودي التي تكشف أنفُها أكاذيبها؟",
-      "a": "بينوكيو",
-      "topic": "حكايات الطفولة",
-      "verified": true,
-      "difficultyTarget": 0.8,
-      "sourceUrl": "https://www.gutenberg.org/files/500/500-h/500-h.htm",
-      "alt": [
-        "بينوكيو الدمية",
-        "Pinocchio"
-      ]
-    },
-    {
-      "qid": "books-200-903",
-      "p": 200,
-      "q": "ما اسم الفتى الذي تتبناه عائلة ذئاب في «كتاب الأدغال»؟",
-      "a": "موكلي",
-      "topic": "المغامرات",
-      "verified": true,
-      "difficultyTarget": 0.8,
-      "sourceUrl": "https://www.gutenberg.org/files/236/236-h/236-h.htm",
-      "alt": [
-        "ماوكلي",
-        "ماوغلي",
-        "Mowgli"
-      ]
-    },
-    {
-      "qid": "books-200-904",
-      "p": 200,
-      "q": "من المحقق الذي يروي الطبيب واطسون معظم مغامراته عند آرثر كونان دويل؟",
-      "a": "شرلوك هولمز",
-      "topic": "الأدب البوليسي",
-      "verified": true,
-      "difficultyTarget": 0.8,
-      "sourceUrl": "https://www.gutenberg.org/files/1661/1661-h/1661-h.htm",
-      "alt": [
-        "شيرلوك هولمز",
-        "Sherlock Holmes"
-      ]
-    },
-    {
-      "qid": "books-200-905",
-      "p": 200,
-      "q": "ما المدرسة السحرية التي يلتحق بها هاري بوتر في الرواية الأولى؟",
-      "a": "هوغوورتس",
-      "topic": "الخيال والفانتازيا",
-      "verified": true,
-      "difficultyTarget": 0.8,
-      "sourceUrl": "https://www.harrypotter.com/fact-file/locations/hogwarts",
-      "alt": [
-        "هوجوورتس",
-        "هوغوورتز",
-        "Hogwarts"
-      ]
-    },
-    {
-      "qid": "books-200-906",
-      "p": 200,
-      "q": "من الروائي المصري الذي مُنح نوبل للأدب عام1988؟",
-      "a": "نجيب محفوظ",
-      "topic": "الكتب العربية",
-      "verified": true,
-      "difficultyTarget": 0.8,
-      "sourceUrl": "https://www.safahat.org/contributors/71616385/"
-    },
-    {
-      "qid": "books-200-907",
-      "p": 200,
-      "q": "من صاحب المصباح العجيب في الحكاية التي يرويها كتاب «الليالي العربية»؟",
-      "a": "علاء الدين",
-      "topic": "الخيال والفانتازيا",
-      "verified": true,
-      "difficultyTarget": 0.8,
-      "sourceUrl": "https://www.gutenberg.org/files/128/128-h/128-h.htm",
-      "alt": [
-        "علاءالدين",
-        "Aladdin"
-      ]
-    },
-    {
-      "qid": "books-200-908",
-      "p": 200,
-      "q": "ما اسم فتى نيفرلاند الذي يرفض أن يكبر في رواية جيمس باري؟",
-      "a": "بيتر بان",
-      "topic": "المغامرات",
-      "verified": true,
-      "difficultyTarget": 0.8,
-      "sourceUrl": "https://www.gutenberg.org/files/16/16-h/16-h.htm",
-      "alt": [
-        "Peter Pan"
-      ]
-    },
-    {
-      "qid": "books-400-901",
-      "p": 400,
       "q": "من الروائي الفرنسي الذي ألّف «البؤساء»؟",
       "a": "فيكتور هوغو",
       "topic": "الرواية الفرنسية",
       "verified": true,
-      "difficultyTarget": 0.6,
+      "difficultyTarget": 0.8,
       "sourceUrl": "https://www.gutenberg.org/ebooks/135",
       "alt": [
         "فيكتور هوجو",
@@ -127,13 +18,13 @@
       ]
     },
     {
-      "qid": "books-400-902",
-      "p": 400,
+      "qid": "books-200-912",
+      "p": 200,
       "q": "ما اسم الشاب الذي يصادق آثوس وبورثوس وآراميس في «الفرسان الثلاثة»؟",
       "a": "دارتانيان",
       "topic": "الرواية الفرنسية",
       "verified": true,
-      "difficultyTarget": 0.6,
+      "difficultyTarget": 0.8,
       "sourceUrl": "https://www.gutenberg.org/files/1257/1257-h/1257-h.htm",
       "alt": [
         "دارتنيان",
@@ -141,13 +32,13 @@
       ]
     },
     {
-      "qid": "books-400-903",
-      "p": 400,
+      "qid": "books-200-913",
+      "p": 200,
       "q": "من الروائي صاحب الملحمة الروسية «الحرب والسلام»؟",
       "a": "ليو تولستوي",
       "topic": "الرواية الروسية",
       "verified": true,
-      "difficultyTarget": 0.6,
+      "difficultyTarget": 0.8,
       "sourceUrl": "https://www.gutenberg.org/ebooks/2600",
       "alt": [
         "ليف تولستوي",
@@ -156,13 +47,13 @@
       ]
     },
     {
-      "qid": "books-400-904",
-      "p": 400,
+      "qid": "books-200-914",
+      "p": 200,
       "q": "من مؤلف رواية مطاردة الحوت الأبيض «موبي ديك»؟",
       "a": "هيرمان ملفيل",
       "topic": "روايات عالمية",
       "verified": true,
-      "difficultyTarget": 0.6,
+      "difficultyTarget": 0.8,
       "sourceUrl": "https://www.gutenberg.org/ebooks/2701",
       "alt": [
         "هرمان ملفيل",
@@ -171,7 +62,115 @@
       ]
     },
     {
-      "qid": "books-400-905",
+      "qid": "books-200-915",
+      "p": 200,
+      "q": "من مؤلف الرواية التي تحمل عنوان «صورة دوريان غراي»؟",
+      "a": "أوسكار وايلد",
+      "topic": "الخيال والفانتازيا",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://www.gutenberg.org/ebooks/174",
+      "alt": [
+        "Oscar Wilde"
+      ]
+    },
+    {
+      "qid": "books-200-916",
+      "p": 200,
+      "q": "في أي شارع بلندن تقع الشقة التي يزورها واطسون في افتتاح «فضيحة في بوهيميا»؟",
+      "a": "شارع بيكر",
+      "topic": "الأدب البوليسي",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://www.gutenberg.org/files/1661/1661-h/1661-h.htm",
+      "alt": [
+        "بيكر ستريت",
+        "Baker Street"
+      ]
+    },
+    {
+      "qid": "books-200-917",
+      "p": 200,
+      "q": "من الكاتب البريطاني مؤلف رواية «آلة الزمن»؟",
+      "a": "هربرت جورج ويلز",
+      "topic": "الخيال والفانتازيا",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://www.gutenberg.org/ebooks/35",
+      "alt": [
+        "هـ. ج. ويلز",
+        "إتش جي ويلز",
+        "H. G. Wells"
+      ]
+    },
+    {
+      "qid": "books-200-918",
+      "p": 200,
+      "q": "في أي بلد أوروبي تقع جبال موطن هايدي وجدها؟",
+      "a": "سويسرا",
+      "topic": "حكايات الطفولة",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://www.gutenberg.org/cache/epub/1448/pg1448-images.html"
+    },
+    {
+      "qid": "books-400-911",
+      "p": 400,
+      "q": "من الروائية التي كتبت «كبرياء وتحامل»؟",
+      "a": "جين أوستن",
+      "topic": "الرواية الإنجليزية",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://www.gutenberg.org/ebooks/1342",
+      "alt": [
+        "جين أستن",
+        "Jane Austen"
+      ]
+    },
+    {
+      "qid": "books-400-912",
+      "p": 400,
+      "q": "أي أخت من عائلة برونتي ألّفت «جين إير»؟",
+      "a": "شارلوت برونتي",
+      "topic": "الرواية الإنجليزية",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://www.gutenberg.org/ebooks/1260",
+      "alt": [
+        "شارلوت برونته",
+        "Charlotte Brontë"
+      ]
+    },
+    {
+      "qid": "books-400-913",
+      "p": 400,
+      "q": "من صاحب رواية «الجريمة والعقاب»؟",
+      "a": "فيودور دوستويفسكي",
+      "topic": "الرواية الروسية",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://www.gutenberg.org/ebooks/2554",
+      "alt": [
+        "دوستويفسكي",
+        "Fyodor Dostoyevsky"
+      ]
+    },
+    {
+      "qid": "books-400-914",
+      "p": 400,
+      "q": "من الروائي الفرنسي الذي ألّف «مدام بوفاري»؟",
+      "a": "غوستاف فلوبير",
+      "topic": "الرواية الفرنسية",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://www.gutenberg.org/ebooks/2413",
+      "alt": [
+        "جوستاف فلوبير",
+        "Gustave Flaubert"
+      ]
+    },
+    {
+      "qid": "books-400-915",
       "p": 400,
       "q": "من الكاتبة التي ابتكرت سلسلة الكتب عن الصبي صاحب الندبة البرقية؟",
       "a": "ج. ك. رولينغ",
@@ -186,123 +185,13 @@
       ]
     },
     {
-      "qid": "books-400-906",
+      "qid": "books-400-916",
       "p": 400,
-      "q": "في أي شارع بلندن تقع الشقة التي يزورها واطسون في افتتاح «فضيحة في بوهيميا»؟",
-      "a": "شارع بيكر",
-      "topic": "الأدب البوليسي",
-      "verified": true,
-      "difficultyTarget": 0.6,
-      "sourceUrl": "https://www.gutenberg.org/files/1661/1661-h/1661-h.htm",
-      "alt": [
-        "بيكر ستريت",
-        "Baker Street"
-      ]
-    },
-    {
-      "qid": "books-400-907",
-      "p": 400,
-      "q": "من الكاتب البريطاني مؤلف رواية «آلة الزمن»؟",
-      "a": "هربرت جورج ويلز",
-      "topic": "الخيال والفانتازيا",
-      "verified": true,
-      "difficultyTarget": 0.6,
-      "sourceUrl": "https://www.gutenberg.org/ebooks/35",
-      "alt": [
-        "هـ. ج. ويلز",
-        "إتش جي ويلز",
-        "H. G. Wells"
-      ]
-    },
-    {
-      "qid": "books-400-908",
-      "p": 400,
-      "q": "في أي بلد أوروبي تقع جبال موطن هايدي وجدها؟",
-      "a": "سويسرا",
-      "topic": "حكايات الطفولة",
-      "verified": true,
-      "difficultyTarget": 0.6,
-      "sourceUrl": "https://www.gutenberg.org/cache/epub/1448/pg1448-images.html"
-    },
-    {
-      "qid": "books-600-901",
-      "p": 600,
-      "q": "من الروائية التي كتبت «كبرياء وتحامل»؟",
-      "a": "جين أوستن",
-      "topic": "الرواية الإنجليزية",
-      "verified": true,
-      "difficultyTarget": 0.4,
-      "sourceUrl": "https://www.gutenberg.org/ebooks/1342",
-      "alt": [
-        "جين أستن",
-        "Jane Austen"
-      ]
-    },
-    {
-      "qid": "books-600-902",
-      "p": 600,
-      "q": "أي أخت من عائلة برونتي ألّفت «جين إير»؟",
-      "a": "شارلوت برونتي",
-      "topic": "الرواية الإنجليزية",
-      "verified": true,
-      "difficultyTarget": 0.4,
-      "sourceUrl": "https://www.gutenberg.org/ebooks/1260",
-      "alt": [
-        "شارلوت برونته",
-        "Charlotte Brontë"
-      ]
-    },
-    {
-      "qid": "books-600-903",
-      "p": 600,
-      "q": "من صاحب رواية «الجريمة والعقاب»؟",
-      "a": "فيودور دوستويفسكي",
-      "topic": "الرواية الروسية",
-      "verified": true,
-      "difficultyTarget": 0.4,
-      "sourceUrl": "https://www.gutenberg.org/ebooks/2554",
-      "alt": [
-        "دوستويفسكي",
-        "فيودور دوستويفسكي",
-        "Fyodor Dostoyevsky"
-      ]
-    },
-    {
-      "qid": "books-600-904",
-      "p": 600,
-      "q": "من الروائي الفرنسي الذي ألّف «مدام بوفاري»؟",
-      "a": "غوستاف فلوبير",
-      "topic": "الرواية الفرنسية",
-      "verified": true,
-      "difficultyTarget": 0.4,
-      "sourceUrl": "https://www.gutenberg.org/ebooks/2413",
-      "alt": [
-        "جوستاف فلوبير",
-        "Gustave Flaubert"
-      ]
-    },
-    {
-      "qid": "books-600-905",
-      "p": 600,
-      "q": "من مؤلف الرواية التي تحمل عنوان «صورة دوريان غراي»؟",
-      "a": "أوسكار وايلد",
-      "topic": "الخيال والفانتازيا",
-      "verified": true,
-      "difficultyTarget": 0.4,
-      "sourceUrl": "https://www.gutenberg.org/ebooks/174",
-      "alt": [
-        "أوسكار وايلد",
-        "Oscar Wilde"
-      ]
-    },
-    {
-      "qid": "books-600-906",
-      "p": 600,
       "q": "من الكاتبة التي ألّفت «فرانكنشتاين»؟",
       "a": "ماري شيلي",
       "topic": "الخيال والفانتازيا",
       "verified": true,
-      "difficultyTarget": 0.4,
+      "difficultyTarget": 0.6,
       "sourceUrl": "https://www.gutenberg.org/ebooks/84",
       "alt": [
         "ماري شيللي",
@@ -310,36 +199,36 @@
       ]
     },
     {
-      "qid": "books-600-907",
-      "p": 600,
+      "qid": "books-400-917",
+      "p": 400,
       "q": "من صاحب الرواية العربية «سارة»؟",
       "a": "عباس محمود العقاد",
       "topic": "الكتب العربية",
       "verified": true,
-      "difficultyTarget": 0.4,
+      "difficultyTarget": 0.6,
       "sourceUrl": "https://www.safahat.org/books/96468508/",
       "alt": [
         "العقاد"
       ]
     },
     {
-      "qid": "books-600-908",
-      "p": 600,
+      "qid": "books-400-918",
+      "p": 400,
       "q": "من صاحب رواية «دعاء الكروان»؟",
       "a": "طه حسين",
       "topic": "الكتب العربية",
       "verified": true,
-      "difficultyTarget": 0.4,
+      "difficultyTarget": 0.6,
       "sourceUrl": "https://www.safahat.org/contributors/59624258/"
     },
     {
-      "qid": "books-800-901",
-      "p": 800,
+      "qid": "books-600-911",
+      "p": 600,
       "q": "أي أخت من عائلة برونتي كتبت «مرتفعات وذرينغ»؟",
       "a": "إيميلي برونتي",
       "topic": "الرواية الإنجليزية",
       "verified": true,
-      "difficultyTarget": 0.25,
+      "difficultyTarget": 0.4,
       "sourceUrl": "https://www.gutenberg.org/ebooks/768",
       "alt": [
         "إميلي برونتي",
@@ -347,13 +236,13 @@
       ]
     },
     {
-      "qid": "books-800-902",
-      "p": 800,
+      "qid": "books-600-912",
+      "p": 600,
       "q": "من قائد الغواصة نوتيلوس في «عشرون ألف فرسخ تحت البحر»؟",
       "a": "الكابتن نيمو",
       "topic": "المغامرات",
       "verified": true,
-      "difficultyTarget": 0.25,
+      "difficultyTarget": 0.4,
       "sourceUrl": "https://www.gutenberg.org/files/164/164-h/164-h.htm",
       "alt": [
         "نيمو",
@@ -362,13 +251,13 @@
       ]
     },
     {
-      "qid": "books-800-903",
-      "p": 800,
+      "qid": "books-600-913",
+      "p": 600,
       "q": "ما اسم القرصان ذي الساق الواحدة في «جزيرة الكنز»؟",
       "a": "لونغ جون سيلفر",
       "topic": "المغامرات",
       "verified": true,
-      "difficultyTarget": 0.25,
+      "difficultyTarget": 0.4,
       "sourceUrl": "https://www.gutenberg.org/files/120/120-h/120-h.htm",
       "alt": [
         "لونج جون سيلفر",
@@ -377,13 +266,13 @@
       ]
     },
     {
-      "qid": "books-800-904",
-      "p": 800,
+      "qid": "books-600-914",
+      "p": 600,
       "q": "بأي اسم يعرّف الراوي نفسه في الجملة الأولى من «موبي ديك»؟",
       "a": "إسماعيل",
       "topic": "روايات عالمية",
       "verified": true,
-      "difficultyTarget": 0.25,
+      "difficultyTarget": 0.4,
       "sourceUrl": "https://www.gutenberg.org/files/2701/2701-h/2701-h.htm",
       "alt": [
         "إيشمايل",
@@ -391,23 +280,23 @@
       ]
     },
     {
-      "qid": "books-800-905",
-      "p": 800,
+      "qid": "books-600-915",
+      "p": 600,
       "q": "ما اسم الفتاة التي تطمح إلى مغادرة الحارة في «زقاق المدق»؟",
       "a": "حميدة",
       "topic": "الكتب العربية",
       "verified": true,
-      "difficultyTarget": 0.25,
+      "difficultyTarget": 0.4,
       "sourceUrl": "https://www.safahat.org/books/62575295/"
     },
     {
-      "qid": "books-800-906",
-      "p": 800,
+      "qid": "books-600-916",
+      "p": 600,
       "q": "من يستيقظ وقد تحوّل إلى كائن غريب في افتتاح «المسخ» لكافكا؟",
       "a": "غريغور سامسا",
       "topic": "روايات عالمية",
       "verified": true,
-      "difficultyTarget": 0.25,
+      "difficultyTarget": 0.4,
       "sourceUrl": "https://www.gutenberg.org/files/5200/5200-h/5200-h.htm",
       "alt": [
         "جريجور سامسا",
@@ -416,13 +305,13 @@
       ]
     },
     {
-      "qid": "books-800-907",
-      "p": 800,
+      "qid": "books-600-917",
+      "p": 600,
       "q": "من الروائي الروسي صاحب «الأرواح الميتة»؟",
       "a": "نيكولاي غوغول",
       "topic": "الرواية الروسية",
       "verified": true,
-      "difficultyTarget": 0.25,
+      "difficultyTarget": 0.4,
       "sourceUrl": "https://www.gutenberg.org/ebooks/1081",
       "alt": [
         "نيقولاي غوغول",
@@ -431,39 +320,39 @@
       ]
     },
     {
-      "qid": "books-800-908",
-      "p": 800,
+      "qid": "books-600-918",
+      "p": 600,
       "q": "من الروائي الأيرلندي الذي كتب «دراكولا»؟",
       "a": "برام ستوكر",
       "topic": "الرواية الإنجليزية",
       "verified": true,
-      "difficultyTarget": 0.25,
+      "difficultyTarget": 0.4,
       "sourceUrl": "https://www.gutenberg.org/ebooks/345",
       "alt": [
         "Bram Stoker"
       ]
     },
     {
-      "qid": "books-1000-901",
-      "p": 1000,
+      "qid": "books-800-911",
+      "p": 800,
       "q": "ما اسم زوج مولي الذي يتجول في دبلن في رواية «عوليس»؟",
       "a": "ليوبولد بلوم",
       "topic": "الرواية الإنجليزية",
       "verified": true,
-      "difficultyTarget": 0.15,
+      "difficultyTarget": 0.25,
       "sourceUrl": "https://www.gutenberg.org/files/4300/4300-h/4300-h.htm",
       "alt": [
         "Leopold Bloom"
       ]
     },
     {
-      "qid": "books-1000-902",
-      "p": 1000,
+      "qid": "books-800-912",
+      "p": 800,
       "q": "من صاحب الرواية البوليسية «حجر القمر»؟",
       "a": "ويلكي كولينز",
       "topic": "الأدب البوليسي",
       "verified": true,
-      "difficultyTarget": 0.15,
+      "difficultyTarget": 0.25,
       "sourceUrl": "https://www.gutenberg.org/ebooks/155",
       "alt": [
         "ولكي كولينز",
@@ -471,13 +360,13 @@
       ]
     },
     {
-      "qid": "books-1000-903",
-      "p": 1000,
+      "qid": "books-800-913",
+      "p": 800,
       "q": "ما الاسم الأصلي للبحار الذي يعود باسم الكونت دي مونت كريستو؟",
       "a": "إدمون دانتيس",
       "topic": "الرواية الفرنسية",
       "verified": true,
-      "difficultyTarget": 0.15,
+      "difficultyTarget": 0.25,
       "sourceUrl": "https://www.gutenberg.org/files/1184/1184-h/1184-h.htm",
       "alt": [
         "إدموند دانتيس",
@@ -486,13 +375,13 @@
       ]
     },
     {
-      "qid": "books-1000-904",
-      "p": 1000,
+      "qid": "books-800-914",
+      "p": 800,
       "q": "بأي مادة جعل المجرم كلب باسكرفيل يبدو مضيئًا في الظلام داخل الرواية؟",
       "a": "الفوسفور",
       "topic": "الأدب البوليسي",
       "verified": true,
-      "difficultyTarget": 0.15,
+      "difficultyTarget": 0.25,
       "sourceUrl": "https://www.gutenberg.org/files/3070/3070-h/3070-h.htm",
       "alt": [
         "الفسفور",
@@ -500,13 +389,13 @@
       ]
     },
     {
-      "qid": "books-1000-905",
-      "p": 1000,
+      "qid": "books-800-915",
+      "p": 800,
       "q": "ما اسم بطل «أطفال منتصف الليل» صاحب القدرة على الاتصال الذهني؟",
       "a": "سليم سينائي",
       "topic": "روايات عالمية",
       "verified": true,
-      "difficultyTarget": 0.15,
+      "difficultyTarget": 0.25,
       "sourceUrl": "https://thebookerprizes.com/the-booker-library/books/midnights-children",
       "alt": [
         "سليم سيناي",
@@ -515,13 +404,13 @@
       ]
     },
     {
-      "qid": "books-1000-906",
-      "p": 1000,
+      "qid": "books-800-916",
+      "p": 800,
       "q": "من الأديب الذي كتب الرواية التأملية «سدهارتا»؟",
       "a": "هرمان هسه",
       "topic": "روايات عالمية",
       "verified": true,
-      "difficultyTarget": 0.15,
+      "difficultyTarget": 0.25,
       "sourceUrl": "https://www.gutenberg.org/ebooks/2500",
       "alt": [
         "هيرمان هيسه",
@@ -530,13 +419,13 @@
       ]
     },
     {
-      "qid": "books-1000-907",
-      "p": 1000,
+      "qid": "books-800-917",
+      "p": 800,
       "q": "من بطل «الأرواح الميتة» الذي يسعى لشراء أسماء أقنان متوفين؟",
       "a": "تشيتشيكوف",
       "topic": "الرواية الروسية",
       "verified": true,
-      "difficultyTarget": 0.15,
+      "difficultyTarget": 0.25,
       "sourceUrl": "https://www.gutenberg.org/files/1081/1081-h/1081-h.htm",
       "alt": [
         "تشيشيكوف",
@@ -545,14 +434,119 @@
       ]
     },
     {
-      "qid": "books-1000-908",
-      "p": 1000,
+      "qid": "books-800-918",
+      "p": 800,
       "q": "من مؤلف العمل السردي «حديث عيسى بن هشام»؟",
       "a": "محمد المويلحي",
       "topic": "الكتب العربية",
       "verified": true,
-      "difficultyTarget": 0.15,
+      "difficultyTarget": 0.25,
       "sourceUrl": "https://www.safahat.org/contributors/19203514/"
+    },
+    {
+      "topic": "الرواية الفرنسية",
+      "q": "من السجين الذي يعلّم بطل «الكونت دي مونت كريستو» ويدله على الكنز؟",
+      "a": "الأب فاريا",
+      "sourceUrl": "https://www.gutenberg.org/files/1184/1184-h/1184-h.htm",
+      "alt": [
+        "فاريا",
+        "Faria"
+      ],
+      "verified": true,
+      "p": 1000,
+      "qid": "books-1000-911",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "الأدب البوليسي",
+      "q": "ما اسم المرأة التي تلجأ إلى هولمز بعد موت أختها في «العصابة الرقطاء»؟",
+      "a": "هيلين ستونر",
+      "sourceUrl": "https://www.gutenberg.org/files/1661/1661-h/1661-h.htm",
+      "alt": [
+        "Helen Stoner"
+      ],
+      "verified": true,
+      "p": 1000,
+      "qid": "books-1000-912",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "الرواية الإنجليزية",
+      "q": "ما اسم صديقة مينا التي تتحول إلى مصاصة دماء في «دراكولا»؟",
+      "a": "لوسي ويستنرا",
+      "sourceUrl": "https://www.gutenberg.org/files/345/345-h/345-h.htm",
+      "alt": [
+        "Lucy Westenra",
+        "لوسي"
+      ],
+      "verified": true,
+      "p": 1000,
+      "qid": "books-1000-913",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "الخيال والفانتازيا",
+      "q": "ما اسم ابن آوى الذي يخدم شير خان في «كتاب الأدغال»؟",
+      "a": "تاباكي",
+      "sourceUrl": "https://www.gutenberg.org/files/236/236-h/236-h.htm",
+      "alt": [
+        "Tabaqui"
+      ],
+      "verified": true,
+      "p": 1000,
+      "qid": "books-1000-914",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "روايات عالمية",
+      "q": "ما اسم السفينة التي يقودها أهاب في «موبي ديك»؟",
+      "a": "بيكود",
+      "sourceUrl": "https://www.gutenberg.org/files/2701/2701-h/2701-h.htm",
+      "alt": [
+        "Pequod"
+      ],
+      "verified": true,
+      "p": 1000,
+      "qid": "books-1000-915",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "حكايات الطفولة",
+      "q": "في أي حقل يقنع المحتالان الدمية الخشبية بدفن نقوده لتنمو في رواية كولودي؟",
+      "a": "حقل المعجزات",
+      "sourceUrl": "https://www.gutenberg.org/files/500/500-h/500-h.htm",
+      "alt": [
+        "حقل العجائب",
+        "Field of Wonders"
+      ],
+      "verified": true,
+      "p": 1000,
+      "qid": "books-1000-916",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "المغامرات",
+      "q": "ما الاسم الذي أعطاه القرصان لببغائه تيمّنًا بقرصان سابق في «جزيرة الكنز»؟",
+      "a": "الكابتن فلينت",
+      "sourceUrl": "https://www.gutenberg.org/files/120/120-h/120-h.htm",
+      "alt": [
+        "فلينت",
+        "Captain Flint"
+      ],
+      "verified": true,
+      "p": 1000,
+      "qid": "books-1000-917",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "الكتب العربية",
+      "q": "من الرجل الذي ينبش قبور الأثرياء في «زقاق المدق»؟",
+      "a": "البوشي",
+      "sourceUrl": "https://www.safahat.org/books/62575295/",
+      "verified": true,
+      "p": 1000,
+      "qid": "books-1000-918",
+      "difficultyTarget": 0.15
     }
   ]
 }

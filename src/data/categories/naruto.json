@@ -5,122 +5,8 @@
   "style": "story",
   "qs": [
     {
-      "qid": "naruto-200-901",
+      "qid": "naruto-200-911",
       "p": 200,
-      "topic": "الفريق السابع",
-      "q": "من زميل ناروتو وغريمه الذي يترك القرية بحثًا عن القوة؟",
-      "a": "ساسكي",
-      "alt": [
-        "ساسكي أوتشيها",
-        "ساسكي اوتشيها",
-        "Sasuke"
-      ],
-      "sourceUrl": "https://naruto-official.com/en/news/01_1856",
-      "verified": true,
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "naruto-200-902",
-      "p": 200,
-      "topic": "المعلمون",
-      "q": "من قائد الفريق السابع صاحب الشعر الفضي والقناع؟",
-      "a": "كاكاشي",
-      "alt": [
-        "كاكاشي هاتاكي",
-        "Kakashi"
-      ],
-      "sourceUrl": "https://naruto-official.com/en/news/01_1903",
-      "verified": true,
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "naruto-200-903",
-      "p": 200,
-      "topic": "الوحوش المذنبة",
-      "q": "ما الاسم الحقيقي للثعلب ذي الأذيال التسعة المختوم داخل ناروتو؟",
-      "a": "كوراما",
-      "alt": [
-        "Kurama"
-      ],
-      "sourceUrl": "https://naruto-official.com/en/news/01_1611",
-      "verified": true,
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "naruto-200-904",
-      "p": 200,
-      "topic": "العائلات",
-      "q": "من والد ناروتو الذي شغل منصب الهوكاغي الرابع؟",
-      "a": "ميناتو",
-      "alt": [
-        "ميناتو ناميكازي",
-        "Minato"
-      ],
-      "sourceUrl": "https://naruto-official.com/en/news/01_1610",
-      "verified": true,
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "naruto-200-905",
-      "p": 200,
-      "topic": "الخصوم",
-      "q": "ما المنظمة التي تختطف غارا ويواجه ناروتو أفرادها بعد رحلة تدريبه الطويلة؟",
-      "a": "أكاتسوكي",
-      "alt": [
-        "الاكاتسوكي",
-        "أكاتسكي",
-        "Akatsuki"
-      ],
-      "sourceUrl": "https://naruto-official.com/en/news/01_1610",
-      "verified": true,
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "naruto-200-906",
-      "p": 200,
-      "topic": "التقنيات",
-      "q": "ما اسم كرة التشاكرا الدوارة التي يتعلمها ناروتو من معلمه الناسك؟",
-      "a": "الراسينغان",
-      "alt": [
-        "راسينغان",
-        "راسينجان",
-        "Rasengan"
-      ],
-      "sourceUrl": "https://naruto-official.com/en/news/01_1643",
-      "verified": true,
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "naruto-200-907",
-      "p": 200,
-      "topic": "الأماكن",
-      "q": "ما اسم القرية المخفية التي ينتمي إليها ناروتو وفريقه؟",
-      "a": "كونوها",
-      "alt": [
-        "قرية الورق",
-        "قرية الورق المخفية",
-        "Konoha"
-      ],
-      "sourceUrl": "https://naruto-official.com/en/news/01_1610",
-      "verified": true,
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "naruto-200-908",
-      "p": 200,
-      "topic": "المعارك والخطط",
-      "q": "ما الحيوانات الضخمة التي يتعلم ناروتو استدعاءها على يد معلمه الناسك؟",
-      "a": "الضفادع",
-      "alt": [
-        "ضفادع"
-      ],
-      "sourceUrl": "https://naruto-official.com/en/news/01_1610",
-      "verified": true,
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "naruto-400-901",
-      "p": 400,
       "topic": "الفريق السابع",
       "q": "من زميلة ناروتو ذات الشعر الوردي التي تصبح نينجا طبية؟",
       "a": "ساكورا",
@@ -130,11 +16,11 @@
       ],
       "sourceUrl": "https://naruto-official.com/en/news/01_1743",
       "verified": true,
-      "difficultyTarget": 0.6
+      "difficultyTarget": 0.8
     },
     {
-      "qid": "naruto-400-902",
-      "p": 400,
+      "qid": "naruto-200-912",
+      "p": 200,
       "topic": "المعلمون",
       "q": "من الناسك الذي يأخذ ناروتو في رحلة تدريب طويلة ويعلمه الاستدعاء؟",
       "a": "جيرايا",
@@ -144,11 +30,11 @@
       ],
       "sourceUrl": "https://naruto-official.com/en/news/01_1643",
       "verified": true,
-      "difficultyTarget": 0.6
+      "difficultyTarget": 0.8
     },
     {
-      "qid": "naruto-400-903",
-      "p": 400,
+      "qid": "naruto-200-913",
+      "p": 200,
       "topic": "الوحوش المذنبة",
       "q": "من مستضيف ذي الأذيال الثمانية الذي يدرب ناروتو على التحكم بقوة الوحوش؟",
       "a": "كيلر بي",
@@ -159,26 +45,25 @@
       ],
       "sourceUrl": "https://naruto-official.com/en/news/01_1611",
       "verified": true,
-      "difficultyTarget": 0.6
+      "difficultyTarget": 0.8
     },
     {
-      "qid": "naruto-400-904",
-      "p": 400,
+      "qid": "naruto-200-914",
+      "p": 200,
       "topic": "العائلات",
-      "q": "من شقيق فتى الأوتشيها الذي يحمل سر مذبحة العشيرة؟",
-      "a": "إيتاتشي",
+      "q": "من والدة ناروتو التي تساعده داخل وعيه على التغلب على كراهية الثعلب؟",
+      "a": "كوشينا",
       "alt": [
-        "ايتاتشي",
-        "إيتاتشي أوتشيها",
-        "Itachi"
+        "كوشينا أوزوماكي",
+        "Kushina"
       ],
-      "sourceUrl": "https://naruto-official.com/en/news/01_1856",
+      "sourceUrl": "https://naruto-official.com/en/news/01_1611",
       "verified": true,
-      "difficultyTarget": 0.6
+      "difficultyTarget": 0.8
     },
     {
-      "qid": "naruto-400-905",
-      "p": 400,
+      "qid": "naruto-200-915",
+      "p": 200,
       "topic": "الخصوم",
       "q": "إلى من يلجأ غريم ناروتو بعد ترك القرية ليحصل على قوة أكبر؟",
       "a": "أوروتشيمارو",
@@ -189,11 +74,11 @@
       ],
       "sourceUrl": "https://naruto-official.com/en/news/01_1856",
       "verified": true,
-      "difficultyTarget": 0.6
+      "difficultyTarget": 0.8
     },
     {
-      "qid": "naruto-400-906",
-      "p": 400,
+      "qid": "naruto-200-916",
+      "p": 200,
       "topic": "التقنيات",
       "q": "ما العين التي يستخدمها قائد الفريق السابع لقراءة حركات خصومه ونسخ تقنياتهم؟",
       "a": "الشارينغان",
@@ -204,11 +89,11 @@
       ],
       "sourceUrl": "https://naruto-official.com/en/news/01_1903",
       "verified": true,
-      "difficultyTarget": 0.6
+      "difficultyTarget": 0.8
     },
     {
-      "qid": "naruto-400-907",
-      "p": 400,
+      "qid": "naruto-200-917",
+      "p": 200,
       "topic": "الأماكن",
       "q": "ما اسم الوادي الذي يشهد مواجهتين حاسمتين بين ناروتو وغريمه؟",
       "a": "وادي النهاية",
@@ -219,124 +104,11 @@
       ],
       "sourceUrl": "https://naruto-official.com/en/news/01_1858",
       "verified": true,
-      "difficultyTarget": 0.6
+      "difficultyTarget": 0.8
     },
     {
-      "qid": "naruto-400-908",
-      "p": 400,
-      "topic": "المعارك والخطط",
-      "q": "من فتى قرية الرمل الذي يهزمه ناروتو أثناء الهجوم على قرية الورق؟",
-      "a": "غارا",
-      "alt": [
-        "جارا",
-        "Gaara"
-      ],
-      "sourceUrl": "https://naruto-official.com/en/news/01_1610",
-      "verified": true,
-      "difficultyTarget": 0.6
-    },
-    {
-      "qid": "naruto-600-901",
-      "p": 600,
-      "topic": "الفريق السابع",
-      "q": "ما القيمة التي يريد قائد الفريق السابع اختبارها حين يشجع تلاميذه على الاهتمام ببعضهم؟",
-      "a": "العمل الجماعي",
-      "alt": [
-        "التعاون",
-        "روح الفريق"
-      ],
-      "sourceUrl": "https://naruto-official.com/en/news/01_1903",
-      "verified": true,
-      "difficultyTarget": 0.4
-    },
-    {
-      "qid": "naruto-600-902",
-      "p": 600,
-      "topic": "المعلمون",
-      "q": "من الهوكاغي التي تتدرب على يدها زميلة ناروتو لتتقن العلاج والضربات القوية؟",
-      "a": "تسونادي",
-      "alt": [
-        "تسوناده",
-        "Tsunade"
-      ],
-      "sourceUrl": "https://naruto-official.com/en/news/01_1743",
-      "verified": true,
-      "difficultyTarget": 0.4
-    },
-    {
-      "qid": "naruto-600-903",
-      "p": 600,
-      "topic": "الوحوش المذنبة",
-      "q": "من والدة ناروتو التي تساعده داخل وعيه على التغلب على كراهية الثعلب؟",
-      "a": "كوشينا",
-      "alt": [
-        "كوشينا أوزوماكي",
-        "Kushina"
-      ],
-      "sourceUrl": "https://naruto-official.com/en/news/01_1611",
-      "verified": true,
-      "difficultyTarget": 0.4
-    },
-    {
-      "qid": "naruto-600-904",
-      "p": 600,
-      "topic": "العائلات",
-      "q": "من فتاة الهيوغا التي تتدخل لحماية ناروتو بعدما يثبته باين؟",
-      "a": "هيناتا",
-      "alt": [
-        "هيناتا هيوغا",
-        "Hinata"
-      ],
-      "sourceUrl": "https://naruto-official.com/en/news/01_1610",
-      "verified": true,
-      "difficultyTarget": 0.4
-    },
-    {
-      "qid": "naruto-600-905",
-      "p": 600,
-      "topic": "الخصوم",
-      "q": "من النينجا الذي يتحكم بأجساد باين ويقابله ناروتو بعد المعركة؟",
-      "a": "ناغاتو",
-      "alt": [
-        "ناجاتو",
-        "Nagato"
-      ],
-      "sourceUrl": "https://naruto-official.com/en/news/01_1610",
-      "verified": true,
-      "difficultyTarget": 0.4
-    },
-    {
-      "qid": "naruto-600-906",
-      "p": 600,
-      "topic": "التقنيات",
-      "q": "ما اللهب الأسود الذي يطلقه فتى الأوتشيها لحماية رفاقه في مواجهة مستضيف الثمانية ذيول؟",
-      "a": "أماتيراسو",
-      "alt": [
-        "اماتيراسو",
-        "Amaterasu"
-      ],
-      "sourceUrl": "https://naruto-official.com/en/news/01_1858",
-      "verified": true,
-      "difficultyTarget": 0.4
-    },
-    {
-      "qid": "naruto-600-907",
-      "p": 600,
-      "topic": "الأماكن",
-      "q": "على أي جبل يتدرب ناروتو على نمط الناسك قبل مواجهة باين؟",
-      "a": "جبل ميوبوكو",
-      "alt": [
-        "ميوبوكو",
-        "ميو بوكو",
-        "Mount Myoboku"
-      ],
-      "sourceUrl": "https://naruto-official.com/en/news/01_1610",
-      "verified": true,
-      "difficultyTarget": 0.4
-    },
-    {
-      "qid": "naruto-600-908",
-      "p": 600,
+      "qid": "naruto-200-918",
+      "p": 200,
       "topic": "المعارك والخطط",
       "q": "من عبقري عشيرة الهيوغا الذي يهزمه ناروتو في افتتاح نهائيات اختبار التشونين؟",
       "a": "نيجي",
@@ -346,11 +118,11 @@
       ],
       "sourceUrl": "https://naruto-official.com/en/news/01_1610",
       "verified": true,
-      "difficultyTarget": 0.4
+      "difficultyTarget": 0.8
     },
     {
-      "qid": "naruto-800-901",
-      "p": 800,
+      "qid": "naruto-400-911",
+      "p": 400,
       "topic": "الفريق السابع",
       "q": "من زميل قائد الفريق السابع القديم الذي تنكشف هويته خلف قناع الرجل المدعي أنه مادارا؟",
       "a": "أوبيتو",
@@ -361,26 +133,25 @@
       ],
       "sourceUrl": "https://naruto-official.com/en/news/01_1611",
       "verified": true,
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.6
     },
     {
-      "qid": "naruto-800-902",
-      "p": 800,
+      "qid": "naruto-400-912",
+      "p": 400,
       "topic": "المعلمون",
-      "q": "من معلم فريق إينو وتشوغي وشيكامارو الذي يقتله هيدان؟",
-      "a": "أسوما",
+      "q": "من الهوكاغي التي تتدرب على يدها زميلة ناروتو لتتقن العلاج والضربات القوية؟",
+      "a": "تسونادي",
       "alt": [
-        "اسوما",
-        "أسوما ساروتوبي",
-        "Asuma"
+        "تسوناده",
+        "Tsunade"
       ],
-      "sourceUrl": "https://naruto-official.com/en/news/01_1910",
+      "sourceUrl": "https://naruto-official.com/en/news/01_1743",
       "verified": true,
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.6
     },
     {
-      "qid": "naruto-800-903",
-      "p": 800,
+      "qid": "naruto-400-913",
+      "p": 400,
       "topic": "الوحوش المذنبة",
       "q": "أي وحش يستيقظ أثناء الحرب ويصبح الرجل المقنع مستضيفًا له؟",
       "a": "ذو الأذيال العشرة",
@@ -391,10 +162,231 @@
       ],
       "sourceUrl": "https://naruto-official.com/en/news/01_1611",
       "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "naruto-400-914",
+      "p": 400,
+      "topic": "العائلات",
+      "q": "من فتاة الهيوغا التي تتدخل لحماية ناروتو بعدما يثبته باين؟",
+      "a": "هيناتا",
+      "alt": [
+        "هيناتا هيوغا",
+        "Hinata"
+      ],
+      "sourceUrl": "https://naruto-official.com/en/news/01_1610",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "naruto-400-915",
+      "p": 400,
+      "topic": "الخصوم",
+      "q": "من النينجا الذي يتحكم بأجساد باين ويقابله ناروتو بعد المعركة؟",
+      "a": "ناغاتو",
+      "alt": [
+        "ناجاتو",
+        "Nagato"
+      ],
+      "sourceUrl": "https://naruto-official.com/en/news/01_1610",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "naruto-400-916",
+      "p": 400,
+      "topic": "التقنيات",
+      "q": "ما اللهب الأسود الذي يطلقه فتى الأوتشيها لحماية رفاقه في مواجهة مستضيف الثمانية ذيول؟",
+      "a": "أماتيراسو",
+      "alt": [
+        "اماتيراسو",
+        "Amaterasu"
+      ],
+      "sourceUrl": "https://naruto-official.com/en/news/01_1858",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "naruto-400-917",
+      "p": 400,
+      "topic": "الأماكن",
+      "q": "على أي جبل يتدرب ناروتو على نمط الناسك قبل مواجهة باين؟",
+      "a": "جبل ميوبوكو",
+      "alt": [
+        "ميوبوكو",
+        "ميو بوكو",
+        "Mount Myoboku"
+      ],
+      "sourceUrl": "https://naruto-official.com/en/news/01_1610",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "naruto-400-918",
+      "p": 400,
+      "topic": "المعارك والخطط",
+      "q": "من سياف الضباب الذي يواجهه الفريق السابع في مهمة بلاد الأمواج؟",
+      "a": "زابوزا",
+      "alt": [
+        "زابوزا موموتشي",
+        "Zabuza"
+      ],
+      "sourceUrl": "https://naruto-official.com/en/news/01_1903",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "naruto-600-911",
+      "p": 600,
+      "topic": "الفريق السابع",
+      "q": "من رئيس شرطة عشيرة الأوتشيها ووالد الشقيقين الناجيين من مذبحتها؟",
+      "a": "فوغاكو",
+      "alt": [
+        "فوجاكو",
+        "فوغاكو أوتشيها",
+        "Fugaku"
+      ],
+      "sourceUrl": "https://naruto-official.com/en/news/01_1856",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "naruto-600-912",
+      "p": 600,
+      "topic": "المعلمون",
+      "q": "من معلم فريق إينو وتشوغي وشيكامارو الذي يقتله هيدان؟",
+      "a": "أسوما",
+      "alt": [
+        "اسوما",
+        "أسوما ساروتوبي",
+        "Asuma"
+      ],
+      "sourceUrl": "https://naruto-official.com/en/news/01_1910",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "topic": "الوحوش المذنبة",
+      "q": "من زميلة كاكاشي التي أصبحت حاضنة للوحش ذي الأذيال الثلاثة؟",
+      "a": "رين",
+      "sourceUrl": "https://naruto-official.com/en/news/01_1903",
+      "alt": [
+        "رين نوهارا"
+      ],
+      "verified": true,
+      "p": 600,
+      "qid": "naruto-600-913",
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "naruto-600-914",
+      "p": 600,
+      "topic": "العائلات",
+      "q": "من فتاة الرمل التي تنقذ شيكامارو من تايويا، ثم تصبح زوجته لاحقًا؟",
+      "a": "تيماري",
+      "alt": [
+        "تيمارى",
+        "Temari"
+      ],
+      "sourceUrl": "https://naruto-official.com/en/news/01_1910",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "naruto-600-915",
+      "p": 600,
+      "topic": "الخصوم",
+      "q": "من زعيم الجذر الذي يستخدم كارين درعًا أثناء مواجهته مع فتى الأوتشيها؟",
+      "a": "دانزو",
+      "alt": [
+        "دانزو شيمورا",
+        "Danzo"
+      ],
+      "sourceUrl": "https://naruto-official.com/en/news/01_1858",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "topic": "التقنيات",
+      "q": "ما تقنية كاكاشي التي تنقل أهدافها إلى بُعد آخر؟",
+      "a": "كاموي",
+      "sourceUrl": "https://naruto-official.com/en/news/01_1903",
+      "verified": true,
+      "p": 600,
+      "qid": "naruto-600-916",
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "naruto-600-917",
+      "p": 600,
+      "topic": "الأماكن",
+      "q": "إلى أي قرية يتسلل الناسك الأبيض في مهمته الأخيرة للتحقيق في هوية باين؟",
+      "a": "قرية المطر",
+      "alt": [
+        "المطر المخفية",
+        "أميغاكوري",
+        "Hidden Rain"
+      ],
+      "sourceUrl": "https://naruto-official.com/en/news/01_1643",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "naruto-600-918",
+      "p": 600,
+      "topic": "المعارك والخطط",
+      "q": "من الشاب الذي يعترض ضربة البرق بجسده لينقذ سياف الضباب في مهمة الجسر؟",
+      "a": "هاكو",
+      "alt": [
+        "Haku"
+      ],
+      "sourceUrl": "https://naruto-official.com/en/news/01_1903",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "topic": "الفريق السابع",
+      "q": "من العجوز التي تعاونت مع نينجا الفريق السابع الطبية لهزيمة ساسوري؟",
+      "a": "تشيو",
+      "sourceUrl": "https://naruto-official.com/en/news/01_1743",
+      "alt": [
+        "الجدة تشيو"
+      ],
+      "verified": true,
+      "p": 800,
+      "qid": "naruto-800-911",
       "difficultyTarget": 0.25
     },
     {
-      "qid": "naruto-800-904",
+      "qid": "naruto-800-912",
+      "p": 800,
+      "topic": "المعلمون",
+      "q": "من خصم النينجا الثلاثة الذي يمنحهم لقب السانين اعترافًا بقوتهم؟",
+      "a": "هانزو",
+      "alt": [
+        "هانزو السمندر",
+        "Hanzo"
+      ],
+      "sourceUrl": "https://naruto-official.com/en/news/01_1643",
+      "verified": true,
+      "difficultyTarget": 0.25
+    },
+    {
+      "qid": "naruto-800-913",
+      "p": 800,
+      "topic": "الوحوش المذنبة",
+      "q": "من قائد التخطيط الذي يُقتل بقذيفة وحش مذنب ويورث آخر خطة لابنه شيكامارو؟",
+      "a": "شيكاكو",
+      "alt": [
+        "شيكاكو نارا",
+        "Shikaku"
+      ],
+      "sourceUrl": "https://naruto-official.com/en/news/01_1910",
+      "verified": true,
+      "difficultyTarget": 0.25
+    },
+    {
+      "qid": "naruto-800-914",
       "p": 800,
       "topic": "العائلات",
       "q": "ما اسم والد قائد الفريق السابع الذي يلتقيه ابنه بين الحياة والموت بعد معركة باين؟",
@@ -408,124 +400,8 @@
       "difficultyTarget": 0.25
     },
     {
-      "qid": "naruto-800-905",
+      "qid": "naruto-800-915",
       "p": 800,
-      "topic": "الخصوم",
-      "q": "من زعيم الجذر الذي يستخدم كارين درعًا أثناء مواجهته مع فتى الأوتشيها؟",
-      "a": "دانزو",
-      "alt": [
-        "دانزو شيمورا",
-        "Danzo"
-      ],
-      "sourceUrl": "https://naruto-official.com/en/news/01_1858",
-      "verified": true,
-      "difficultyTarget": 0.25
-    },
-    {
-      "qid": "naruto-800-906",
-      "p": 800,
-      "topic": "التقنيات",
-      "q": "ما التقنية التي يمد بها شيكامارو ظله ليثبت حركة خصمه؟",
-      "a": "تقنية امتلاك الظل",
-      "alt": [
-        "شل الظل",
-        "تقليد الظل",
-        "إمساك الظل",
-        "Shadow Possession"
-      ],
-      "sourceUrl": "https://naruto-official.com/en/news/01_1910",
-      "verified": true,
-      "difficultyTarget": 0.25
-    },
-    {
-      "qid": "naruto-800-907",
-      "p": 800,
-      "topic": "الأماكن",
-      "q": "إلى أي قرية يتسلل الناسك الأبيض في مهمته الأخيرة للتحقيق في هوية باين؟",
-      "a": "قرية المطر",
-      "alt": [
-        "المطر المخفية",
-        "أميغاكوري",
-        "Hidden Rain"
-      ],
-      "sourceUrl": "https://naruto-official.com/en/news/01_1643",
-      "verified": true,
-      "difficultyTarget": 0.25
-    },
-    {
-      "qid": "naruto-800-908",
-      "p": 800,
-      "topic": "المعارك والخطط",
-      "q": "من سياف الضباب الذي يواجهه الفريق السابع في مهمة بلاد الأمواج؟",
-      "a": "زابوزا",
-      "alt": [
-        "زابوزا موموتشي",
-        "Zabuza"
-      ],
-      "sourceUrl": "https://naruto-official.com/en/news/01_1903",
-      "verified": true,
-      "difficultyTarget": 0.25
-    },
-    {
-      "qid": "naruto-1000-901",
-      "p": 1000,
-      "topic": "الفريق السابع",
-      "q": "من رئيس شرطة عشيرة الأوتشيها ووالد الشقيقين الناجيين من مذبحتها؟",
-      "a": "فوغاكو",
-      "alt": [
-        "فوجاكو",
-        "فوغاكو أوتشيها",
-        "Fugaku"
-      ],
-      "sourceUrl": "https://naruto-official.com/en/news/01_1856",
-      "verified": true,
-      "difficultyTarget": 0.15
-    },
-    {
-      "qid": "naruto-1000-902",
-      "p": 1000,
-      "topic": "المعلمون",
-      "q": "من خصم النينجا الثلاثة الذي يمنحهم لقب السانين اعترافًا بقوتهم؟",
-      "a": "هانزو",
-      "alt": [
-        "هانزو السمندر",
-        "Hanzo"
-      ],
-      "sourceUrl": "https://naruto-official.com/en/news/01_1643",
-      "verified": true,
-      "difficultyTarget": 0.15
-    },
-    {
-      "qid": "naruto-1000-903",
-      "p": 1000,
-      "topic": "الوحوش المذنبة",
-      "q": "من قائد التخطيط الذي يُقتل بقذيفة وحش مذنب ويورث آخر خطة لابنه شيكامارو؟",
-      "a": "شيكاكو",
-      "alt": [
-        "شيكاكو نارا",
-        "Shikaku"
-      ],
-      "sourceUrl": "https://naruto-official.com/en/news/01_1910",
-      "verified": true,
-      "difficultyTarget": 0.15
-    },
-    {
-      "qid": "naruto-1000-904",
-      "p": 1000,
-      "topic": "العائلات",
-      "q": "من فتاة الرمل التي تنقذ شيكامارو من تايويا، ثم تصبح زوجته لاحقًا؟",
-      "a": "تيماري",
-      "alt": [
-        "تيمارى",
-        "Temari"
-      ],
-      "sourceUrl": "https://naruto-official.com/en/news/01_1910",
-      "verified": true,
-      "difficultyTarget": 0.15
-    },
-    {
-      "qid": "naruto-1000-905",
-      "p": 1000,
       "topic": "الخصوم",
       "q": "دم مَن يستخدم شيكامارو لخداع هيدان وجعله يؤذي شريكه؟",
       "a": "كاكوزو",
@@ -534,26 +410,25 @@
       ],
       "sourceUrl": "https://naruto-official.com/en/news/01_1910",
       "verified": true,
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.25
     },
     {
-      "qid": "naruto-1000-906",
-      "p": 1000,
       "topic": "التقنيات",
-      "q": "ما الآلة الموسيقية التي تستخدمها تايويا للتحكم بمخلوقاتها أثناء مطاردة فريق الاسترجاع؟",
-      "a": "الناي",
+      "q": "ما الوهم الذي يحبس العالم في حلم دائم أثناء الحرب الرابعة؟",
+      "a": "تسوكيومي اللانهائية",
+      "sourceUrl": "https://naruto-official.com/en/news/01_1611",
       "alt": [
-        "ناي",
-        "فلوت",
-        "مزمار"
+        "التسوكيومي الأبدية",
+        "Infinite Tsukuyomi"
       ],
-      "sourceUrl": "https://naruto-official.com/en/news/01_1910",
       "verified": true,
-      "difficultyTarget": 0.15
+      "p": 800,
+      "qid": "naruto-800-916",
+      "difficultyTarget": 0.25
     },
     {
-      "qid": "naruto-1000-907",
-      "p": 1000,
+      "qid": "naruto-800-917",
+      "p": 800,
       "topic": "الأماكن",
       "q": "أين يدفن شيكامارو هيدان بعد تفجيره لمنع عودته؟",
       "a": "غابة عشيرة نارا",
@@ -563,20 +438,127 @@
       ],
       "sourceUrl": "https://naruto-official.com/en/news/01_1910",
       "verified": true,
+      "difficultyTarget": 0.25
+    },
+    {
+      "topic": "المعارك والخطط",
+      "q": "من تلميذة الناسك الأبيض السابقة التي تعترضه أولًا عند تسلله إلى قرية باين؟",
+      "a": "كونان",
+      "sourceUrl": "https://naruto-official.com/en/news/01_1643",
+      "verified": true,
+      "p": 800,
+      "qid": "naruto-800-918",
+      "difficultyTarget": 0.25
+    },
+    {
+      "topic": "الفريق السابع",
+      "q": "ما التدريب الذي أتقنته فتاة الفريق السابع قبل زميليها خلال مهمة بلاد الأمواج؟",
+      "a": "تسلق الأشجار",
+      "sourceUrl": "https://naruto-official.com/en/news/01_1743",
+      "alt": [
+        "صعود الأشجار بالتشاكرا"
+      ],
+      "verified": true,
+      "p": 1000,
+      "qid": "naruto-1000-911",
       "difficultyTarget": 0.15
     },
     {
-      "qid": "naruto-1000-908",
-      "p": 1000,
-      "topic": "المعارك والخطط",
-      "q": "من الشاب الذي يعترض ضربة البرق بجسده لينقذ سياف الضباب في مهمة الجسر؟",
-      "a": "هاكو",
+      "topic": "المعلمون",
+      "q": "من كان يدرب ناروتو على المشي فوق الماء قبل أن يتولى الناسك الأبيض تدريبه؟",
+      "a": "إيبيسو",
+      "sourceUrl": "https://naruto-official.com/en/news/01_1643",
       "alt": [
-        "Haku"
+        "إبيسو",
+        "Ebisu"
       ],
-      "sourceUrl": "https://naruto-official.com/en/news/01_1903",
       "verified": true,
+      "p": 1000,
+      "qid": "naruto-1000-912",
       "difficultyTarget": 0.15
+    },
+    {
+      "topic": "الوحوش المذنبة",
+      "q": "ما الختم الذي أزاله الناسك الأبيض لإصلاح اضطراب تشاكرا ناروتو؟",
+      "a": "ختم العناصر الخمسة",
+      "sourceUrl": "https://naruto-official.com/en/news/01_1643",
+      "alt": [
+        "الختم الخماسي",
+        "Five-Pronged Seal"
+      ],
+      "verified": true,
+      "p": 1000,
+      "qid": "naruto-1000-913",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "العائلات",
+      "q": "من والد إينو الذي قُتل مع قائد التخطيط عند تدمير مقر قيادة التحالف؟",
+      "a": "إينويتشي ياماناكا",
+      "sourceUrl": "https://naruto-official.com/en/news/01_1611",
+      "alt": [
+        "إينويتشي",
+        "Inoichi"
+      ],
+      "verified": true,
+      "p": 1000,
+      "qid": "naruto-1000-914",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "الخصوم",
+      "q": "من التسوتشيكاغي الثاني الذي واجهه ناروتو بعد إحيائه في الحرب؟",
+      "a": "مو",
+      "sourceUrl": "https://naruto-official.com/en/news/01_1611",
+      "alt": [
+        "Mū",
+        "Mu"
+      ],
+      "verified": true,
+      "p": 1000,
+      "qid": "naruto-1000-915",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "التقنيات",
+      "q": "ما الدفاع الذي حمى الفريق السابع من وهم القمر الذي أصاب العالم؟",
+      "a": "سوسانو",
+      "sourceUrl": "https://naruto-official.com/en/news/01_1611",
+      "alt": [
+        "السوسانو",
+        "Susanoo"
+      ],
+      "verified": true,
+      "p": 1000,
+      "qid": "naruto-1000-916",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "الأماكن",
+      "q": "في أي بلدة التقى الناسك الأبيض بمرشحة الهوكاغي الخامس أثناء البحث عنها؟",
+      "a": "تانزاكو",
+      "sourceUrl": "https://naruto-official.com/en/news/01_1643",
+      "alt": [
+        "Tanzaku"
+      ],
+      "verified": true,
+      "p": 1000,
+      "qid": "naruto-1000-917",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "المعارك والخطط",
+      "q": "ما الذي راقبه شيكامارو ليفهم طريقة تحكم تايويا بدمى القتال؟",
+      "a": "حركات أصابعها",
+      "sourceUrl": "https://naruto-official.com/en/news/01_1910",
+      "verified": true,
+      "p": 1000,
+      "qid": "naruto-1000-918",
+      "difficultyTarget": 0.15,
+      "alt": [
+        "حركة أصابعها عند العزف",
+        "أنماط حركة أصابعها"
+      ]
     }
   ]
 }

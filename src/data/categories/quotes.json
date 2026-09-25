@@ -5,119 +5,6 @@
   "qs": [
     {
       "p": 200,
-      "topic": "شعر عربي قديم",
-      "q": "من صاحب البيت: «على قدر أهل العزم تأتي العزائم»؟",
-      "a": "المتنبي",
-      "alt": [
-        "أبو الطيب المتنبي"
-      ],
-      "sourceUrl": "https://ar.wikisource.org/wiki/على_قدر_أهل_العزم_تأتي_العزائم",
-      "verified": true,
-      "difficultyTarget": 0.8,
-      "qid": "quotes-200-901"
-    },
-    {
-      "p": 200,
-      "topic": "شعر عربي حديث",
-      "q": "من صاحب البيت: «وطني لو شغلت بالخلد عنه»؟",
-      "a": "أحمد شوقي",
-      "alt": [
-        "شوقي",
-        "أمير الشعراء"
-      ],
-      "sourceUrl": "https://www.safahat.org/books/70706142/62/",
-      "verified": true,
-      "difficultyTarget": 0.8,
-      "qid": "quotes-200-902"
-    },
-    {
-      "p": 200,
-      "topic": "شعر عربي حديث",
-      "q": "من صاحب البيت: «إذا الشعب يوما أراد الحياة»؟",
-      "a": "أبو القاسم الشابي",
-      "alt": [
-        "الشابي"
-      ],
-      "sourceUrl": "https://poetry.dct.gov.ae/poems/66026-إذا-الشعب-يوما-أراد-الحياة",
-      "verified": true,
-      "difficultyTarget": 0.8,
-      "qid": "quotes-200-903"
-    },
-    {
-      "p": 200,
-      "topic": "شعر عربي قديم",
-      "q": "من صاحب البيت: «السيف أصدق أنباء من الكتب»؟",
-      "a": "أبو تمام",
-      "alt": [
-        "حبيب بن أوس"
-      ],
-      "sourceUrl": "https://poetry.dct.gov.ae/poems/1118-السيف-أصدق-أنباء-من-الكتب",
-      "verified": true,
-      "difficultyTarget": 0.8,
-      "qid": "quotes-200-904"
-    },
-    {
-      "p": 200,
-      "topic": "فكر وفلسفة",
-      "q": "من صاحب العبارة: «أنا أفكر إذن أنا موجود»؟",
-      "a": "رينيه ديكارت",
-      "alt": [
-        "ديكارت",
-        "René Descartes",
-        "Rene Descartes"
-      ],
-      "sourceUrl": "https://www.gutenberg.org/cache/epub/59/pg59-images.html",
-      "verified": true,
-      "difficultyTarget": 0.8,
-      "qid": "quotes-200-905"
-    },
-    {
-      "p": 200,
-      "topic": "علم واكتشاف",
-      "q": "من قال: «الخيال أهم من المعرفة»؟",
-      "a": "ألبرت أينشتاين",
-      "alt": [
-        "أينشتاين",
-        "اينشتاين",
-        "Albert Einstein"
-      ],
-      "sourceUrl": "https://www.cc.kyoto-su.ac.jp/~hara/einstein4.html",
-      "verified": true,
-      "difficultyTarget": 0.8,
-      "qid": "quotes-200-906"
-    },
-    {
-      "p": 200,
-      "topic": "خطب وكلمات",
-      "q": "من قال عند نزوله على القمر: «خطوة صغيرة لإنسان، قفزة كبيرة للبشرية»؟",
-      "a": "نيل أرمسترونغ",
-      "alt": [
-        "أرمسترونغ",
-        "نيل آرمسترونغ",
-        "Neil Armstrong"
-      ],
-      "sourceUrl": "https://www.nasa.gov/history/50-years-ago-one-small-step-one-giant-leap/",
-      "verified": true,
-      "difficultyTarget": 0.8,
-      "qid": "quotes-200-907"
-    },
-    {
-      "p": 200,
-      "topic": "مسرح عالمي",
-      "q": "من كتب في «هاملت»: «أكون أو لا أكون»؟",
-      "a": "وليم شكسبير",
-      "alt": [
-        "ويليام شكسبير",
-        "شكسبير",
-        "William Shakespeare"
-      ],
-      "sourceUrl": "https://www.folger.edu/explore/shakespeares-works/hamlet/read/",
-      "verified": true,
-      "difficultyTarget": 0.8,
-      "qid": "quotes-200-908"
-    },
-    {
-      "p": 400,
       "topic": "شعر عربي حديث",
       "q": "من كتب: «على هذه الأرض ما يستحق الحياة»؟",
       "a": "محمود درويش",
@@ -126,11 +13,11 @@
       ],
       "sourceUrl": "https://www.aldiwan.net/poem9094.html",
       "verified": true,
-      "difficultyTarget": 0.6,
-      "qid": "quotes-400-901"
+      "difficultyTarget": 0.8,
+      "qid": "quotes-200-911"
     },
     {
-      "p": 400,
+      "p": 200,
       "topic": "شعر عربي حديث",
       "q": "من صاحب البيت: «الأم مدرسة إذا أعددتها»؟",
       "a": "حافظ إبراهيم",
@@ -139,11 +26,11 @@
       ],
       "sourceUrl": "https://www.safahat.org/books/94053925/6/",
       "verified": true,
-      "difficultyTarget": 0.6,
-      "qid": "quotes-400-902"
+      "difficultyTarget": 0.8,
+      "qid": "quotes-200-912"
     },
     {
-      "p": 400,
+      "p": 200,
       "topic": "شعر عربي قديم",
       "q": "من صاحب معلقة «قفا نبك من ذكرى حبيب ومنزل»؟",
       "a": "امرؤ القيس",
@@ -153,11 +40,11 @@
       ],
       "sourceUrl": "https://ar.wikisource.org/wiki/قفا_نبك_من_ذكرى_حبيب_ومنزل_(معلقة)",
       "verified": true,
-      "difficultyTarget": 0.6,
-      "qid": "quotes-400-903"
+      "difficultyTarget": 0.8,
+      "qid": "quotes-200-913"
     },
     {
-      "p": 400,
+      "p": 200,
       "topic": "شعر عربي قديم",
       "q": "من صاحب معلقة «هل غادر الشعراء من متردم»؟",
       "a": "عنترة بن شداد",
@@ -167,11 +54,11 @@
       ],
       "sourceUrl": "https://www.aldiwan.net/poem85.html",
       "verified": true,
-      "difficultyTarget": 0.6,
-      "qid": "quotes-400-904"
+      "difficultyTarget": 0.8,
+      "qid": "quotes-200-914"
     },
     {
-      "p": 400,
+      "p": 200,
       "topic": "فكر وفلسفة",
       "q": "من كتب: «ما لا يقتلني يجعلني أقوى»؟",
       "a": "فريدريك نيتشه",
@@ -182,11 +69,11 @@
       ],
       "sourceUrl": "https://www.gutenberg.org/files/52263/52263-h/52263-h.htm",
       "verified": true,
-      "difficultyTarget": 0.6,
-      "qid": "quotes-400-905"
+      "difficultyTarget": 0.8,
+      "qid": "quotes-200-915"
     },
     {
-      "p": 400,
+      "p": 200,
       "topic": "علم واكتشاف",
       "q": "من كتب إلى روبرت هوك أنه رأى أبعد بوقوفه على أكتاف عمالقة؟",
       "a": "إسحاق نيوتن",
@@ -197,11 +84,11 @@
       ],
       "sourceUrl": "https://newtonproject.ox.ac.uk/view/texts/normalized/OTHE00018",
       "verified": true,
-      "difficultyTarget": 0.6,
-      "qid": "quotes-400-906"
+      "difficultyTarget": 0.8,
+      "qid": "quotes-200-916"
     },
     {
-      "p": 400,
+      "p": 200,
       "topic": "رواية ونثر عالمي",
       "q": "من افتتح «قصة مدينتين» بمعنى: «كان أفضل الأزمنة، وكان أسوأ الأزمنة»؟",
       "a": "تشارلز ديكنز",
@@ -212,11 +99,11 @@
       ],
       "sourceUrl": "https://www.gutenberg.org/files/98/98-h/98-h.htm",
       "verified": true,
-      "difficultyTarget": 0.6,
-      "qid": "quotes-400-907"
+      "difficultyTarget": 0.8,
+      "qid": "quotes-200-917"
     },
     {
-      "p": 400,
+      "p": 200,
       "topic": "رواية ونثر عالمي",
       "q": "من كتب في «النبي»: «أولادكم ليسوا أولادكم»؟",
       "a": "جبران خليل جبران",
@@ -227,11 +114,11 @@
       ],
       "sourceUrl": "https://poets.org/poem/children-1/print",
       "verified": true,
-      "difficultyTarget": 0.6,
-      "qid": "quotes-400-908"
+      "difficultyTarget": 0.8,
+      "qid": "quotes-200-918"
     },
     {
-      "p": 600,
+      "p": 400,
       "topic": "شعر عربي قديم",
       "q": "من صاحب البيت: «تعب كلها الحياة»؟",
       "a": "أبو العلاء المعري",
@@ -241,11 +128,11 @@
       ],
       "sourceUrl": "https://poetry.dct.gov.ae/poems/16598-غير-مجد-في-ملتي-واعتقادي",
       "verified": true,
-      "difficultyTarget": 0.4,
-      "qid": "quotes-600-901"
+      "difficultyTarget": 0.6,
+      "qid": "quotes-400-911"
     },
     {
-      "p": 600,
+      "p": 400,
       "topic": "شعر عربي حديث",
       "q": "من صاحب البيت: «قال السماء كئيبة وتجهما»؟",
       "a": "إيليا أبو ماضي",
@@ -255,11 +142,11 @@
       ],
       "sourceUrl": "https://ar.wikisource.org/wiki/ابتسم",
       "verified": true,
-      "difficultyTarget": 0.4,
-      "qid": "quotes-600-902"
+      "difficultyTarget": 0.6,
+      "qid": "quotes-400-912"
     },
     {
-      "p": 600,
+      "p": 400,
       "topic": "فكر وفلسفة",
       "q": "من كتب: «للقلب أسبابه التي لا يعرفها العقل»؟",
       "a": "بليز باسكال",
@@ -269,27 +156,24 @@
       ],
       "sourceUrl": "https://www.gutenberg.org/files/18269/18269-h/18269-h.htm",
       "verified": true,
-      "difficultyTarget": 0.4,
-      "qid": "quotes-600-903"
+      "difficultyTarget": 0.6,
+      "qid": "quotes-400-913"
     },
     {
-      "p": 600,
       "topic": "علم واكتشاف",
-      "q": "من حذر في خطاب بمعهد كاليفورنيا للتقنية من خداع نفسك لأنك أسهل من تخدع؟",
-      "a": "ريتشارد فاينمان",
+      "q": "من ختم كتابه عن نشوء الأنواع بمعنى «ثمة عظمة في هذه النظرة إلى الحياة»؟",
+      "a": "تشارلز داروين",
+      "sourceUrl": "https://www.gutenberg.org/files/2009/2009-h/2009-h.htm",
       "alt": [
-        "فاينمان",
-        "فاينمن",
-        "ريتشارد فاينمن",
-        "Richard Feynman"
+        "Charles Darwin"
       ],
-      "sourceUrl": "https://calteches.library.caltech.edu/51/2/CargoCult.htm",
       "verified": true,
-      "difficultyTarget": 0.4,
-      "qid": "quotes-600-904"
+      "p": 400,
+      "qid": "quotes-400-914",
+      "difficultyTarget": 0.6
     },
     {
-      "p": 600,
+      "p": 400,
       "topic": "رواية ونثر عالمي",
       "q": "من كتب في رواية «الأبله» فكرة أن الجمال سينقذ العالم؟",
       "a": "فيودور دوستويفسكي",
@@ -300,11 +184,11 @@
       ],
       "sourceUrl": "https://en.wikisource.org/wiki/The_Idiot/Part_III/Chapter_V",
       "verified": true,
-      "difficultyTarget": 0.4,
-      "qid": "quotes-600-905"
+      "difficultyTarget": 0.6,
+      "qid": "quotes-400-915"
     },
     {
-      "p": 600,
+      "p": 400,
       "topic": "رواية ونثر عالمي",
       "q": "من افتتح «آنا كارينينا» بأن كل العائلات السعيدة متشابهة؟",
       "a": "ليو تولستوي",
@@ -315,11 +199,11 @@
       ],
       "sourceUrl": "https://penguinrandomhousehighereducation.com/book/?isbn=9780143035008",
       "verified": true,
-      "difficultyTarget": 0.4,
-      "qid": "quotes-600-906"
+      "difficultyTarget": 0.6,
+      "qid": "quotes-400-916"
     },
     {
-      "p": 600,
+      "p": 400,
       "topic": "مسرح عالمي",
       "q": "من كتب في «مروحة الليدي ويندرمير»: «أستطيع مقاومة كل شيء إلا الإغراء»؟",
       "a": "أوسكار وايلد",
@@ -329,8 +213,124 @@
       ],
       "sourceUrl": "https://www.gutenberg.org/files/790/old/lwfan10h.htm",
       "verified": true,
+      "difficultyTarget": 0.6,
+      "qid": "quotes-400-917"
+    },
+    {
+      "p": 400,
+      "topic": "خطب وكلمات",
+      "q": "من كتب في خطاب نوبل: «أنا ابن حضارتين»؟",
+      "a": "نجيب محفوظ",
+      "alt": [
+        "محفوظ",
+        "Naguib Mahfouz"
+      ],
+      "sourceUrl": "https://www.nobelprize.org/prizes/literature/1988/mahfouz/lecture/",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "qid": "quotes-400-918"
+    },
+    {
+      "p": 600,
+      "topic": "شعر عربي قديم",
+      "q": "من صاحب البيت: «لكل شيء إذا ما تم نقصان»؟",
+      "a": "أبو البقاء الرندي",
+      "alt": [
+        "الرندي"
+      ],
+      "sourceUrl": "https://ar.wikisource.org/wiki/لكل_شيء_اذا_ماتم_(رثاء_الأندلس)",
+      "verified": true,
       "difficultyTarget": 0.4,
-      "qid": "quotes-600-907"
+      "qid": "quotes-600-911"
+    },
+    {
+      "p": 600,
+      "topic": "شعر عربي حديث",
+      "q": "من كتبت في قصيدة «الكوليرا»: «أصغ إلى وقع صدى الأنات»؟",
+      "a": "نازك الملائكة",
+      "alt": [
+        "نازك"
+      ],
+      "sourceUrl": "https://poetsgate.com/poem.php?pm=623",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "qid": "quotes-600-912"
+    },
+    {
+      "p": 600,
+      "topic": "فكر وفلسفة",
+      "q": "من كتب في «والدن» أن معظم الناس يعيشون حياة يأس هادئ؟",
+      "a": "هنري ديفيد ثورو",
+      "alt": [
+        "ثورو",
+        "هنري ثورو",
+        "Henry David Thoreau"
+      ],
+      "sourceUrl": "https://digitalthoreau.org/walden/fluid/text/01.html",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "qid": "quotes-600-913"
+    },
+    {
+      "p": 600,
+      "topic": "علم واكتشاف",
+      "q": "من اختتم بحث «آلات الحوسبة والذكاء» بأننا نرى مسافة قصيرة أمامنا، لكن فيها الكثير مما يجب إنجازه؟",
+      "a": "آلان تورينغ",
+      "alt": [
+        "آلان تورنج",
+        "ألان تورينج",
+        "تورينغ",
+        "Alan Turing"
+      ],
+      "sourceUrl": "https://www.cs.tufts.edu/comp/50cog/readings/turing.html",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "qid": "quotes-600-914"
+    },
+    {
+      "p": 600,
+      "topic": "رواية ونثر عالمي",
+      "q": "من افتتحت «كبرياء وتحامل» بفكرة أن كل أعزب ثري يحتاج زوجة؟",
+      "a": "جين أوستن",
+      "alt": [
+        "أوستن",
+        "جين اوستن",
+        "Jane Austen"
+      ],
+      "sourceUrl": "https://www.gutenberg.org/cache/epub/1342/pg1342.html",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "qid": "quotes-600-915"
+    },
+    {
+      "p": 600,
+      "topic": "رواية ونثر عالمي",
+      "q": "من كتب: «حاول ثانية، أخفق ثانية، أخفق على نحو أفضل»؟",
+      "a": "صمويل بيكيت",
+      "alt": [
+        "صامويل بيكيت",
+        "بيكيت",
+        "Samuel Beckett"
+      ],
+      "sourceUrl": "https://www.allenandunwin.com/browse/book/Samuel-Beckett-Company--Ill-Seen-Ill-Said--Worstward-Ho--Stirrings-Still-9780571244737",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "qid": "quotes-600-916"
+    },
+    {
+      "p": 600,
+      "topic": "شعر عالمي",
+      "q": "من الشاعرة التي وصفت الأمل بأنه «الشيء ذو الريش»؟",
+      "a": "إميلي ديكنسون",
+      "alt": [
+        "إميلي ديكنسن",
+        "ديكنسون",
+        "Emily Dickinson"
+      ],
+      "sourceUrl": "https://www.poetryfoundation.org/poems/42889/hope-is-the-thing-with-feathers-314",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "qid": "quotes-600-917"
     },
     {
       "p": 600,
@@ -344,126 +344,10 @@
       "sourceUrl": "https://stevejobsarchive.com/stories/stay-hungry-stay-foolish",
       "verified": true,
       "difficultyTarget": 0.4,
-      "qid": "quotes-600-908"
+      "qid": "quotes-600-918"
     },
     {
       "p": 800,
-      "topic": "شعر عربي قديم",
-      "q": "من صاحب البيت: «لكل شيء إذا ما تم نقصان»؟",
-      "a": "أبو البقاء الرندي",
-      "alt": [
-        "الرندي"
-      ],
-      "sourceUrl": "https://ar.wikisource.org/wiki/لكل_شيء_اذا_ماتم_(رثاء_الأندلس)",
-      "verified": true,
-      "difficultyTarget": 0.25,
-      "qid": "quotes-800-901"
-    },
-    {
-      "p": 800,
-      "topic": "شعر عربي حديث",
-      "q": "من كتبت في قصيدة «الكوليرا»: «أصغ إلى وقع صدى الأنات»؟",
-      "a": "نازك الملائكة",
-      "alt": [
-        "نازك"
-      ],
-      "sourceUrl": "https://poetsgate.com/poem.php?pm=623",
-      "verified": true,
-      "difficultyTarget": 0.25,
-      "qid": "quotes-800-902"
-    },
-    {
-      "p": 800,
-      "topic": "فكر وفلسفة",
-      "q": "من كتب في «والدن» أن معظم الناس يعيشون حياة يأس هادئ؟",
-      "a": "هنري ديفيد ثورو",
-      "alt": [
-        "ثورو",
-        "هنري ثورو",
-        "Henry David Thoreau"
-      ],
-      "sourceUrl": "https://digitalthoreau.org/walden/fluid/text/01.html",
-      "verified": true,
-      "difficultyTarget": 0.25,
-      "qid": "quotes-800-903"
-    },
-    {
-      "p": 800,
-      "topic": "علم واكتشاف",
-      "q": "من اختتم بحث «آلات الحوسبة والذكاء» بأننا نرى مسافة قصيرة أمامنا، لكن فيها الكثير مما يجب إنجازه؟",
-      "a": "آلان تورينغ",
-      "alt": [
-        "آلان تورنج",
-        "ألان تورينج",
-        "تورينغ",
-        "Alan Turing"
-      ],
-      "sourceUrl": "https://www.cs.tufts.edu/comp/50cog/readings/turing.html",
-      "verified": true,
-      "difficultyTarget": 0.25,
-      "qid": "quotes-800-904"
-    },
-    {
-      "p": 800,
-      "topic": "رواية ونثر عالمي",
-      "q": "من افتتحت «كبرياء وتحامل» بفكرة أن كل أعزب ثري يحتاج زوجة؟",
-      "a": "جين أوستن",
-      "alt": [
-        "أوستن",
-        "جين اوستن",
-        "Jane Austen"
-      ],
-      "sourceUrl": "https://www.gutenberg.org/cache/epub/1342/pg1342.html",
-      "verified": true,
-      "difficultyTarget": 0.25,
-      "qid": "quotes-800-905"
-    },
-    {
-      "p": 800,
-      "topic": "رواية ونثر عالمي",
-      "q": "من كتب: «حاول ثانية، أخفق ثانية، أخفق على نحو أفضل»؟",
-      "a": "صمويل بيكيت",
-      "alt": [
-        "صامويل بيكيت",
-        "بيكيت",
-        "Samuel Beckett"
-      ],
-      "sourceUrl": "https://www.allenandunwin.com/browse/book/Samuel-Beckett-Company--Ill-Seen-Ill-Said--Worstward-Ho--Stirrings-Still-9780571244737",
-      "verified": true,
-      "difficultyTarget": 0.25,
-      "qid": "quotes-800-906"
-    },
-    {
-      "p": 800,
-      "topic": "شعر عالمي",
-      "q": "من الشاعرة التي وصفت الأمل بأنه «الشيء ذو الريش»؟",
-      "a": "إميلي ديكنسون",
-      "alt": [
-        "إميلي ديكنسن",
-        "ديكنسون",
-        "Emily Dickinson"
-      ],
-      "sourceUrl": "https://www.poetryfoundation.org/poems/42889/hope-is-the-thing-with-feathers-314",
-      "verified": true,
-      "difficultyTarget": 0.25,
-      "qid": "quotes-800-907"
-    },
-    {
-      "p": 800,
-      "topic": "خطب وكلمات",
-      "q": "من كتب في خطاب نوبل: «أنا ابن حضارتين»؟",
-      "a": "نجيب محفوظ",
-      "alt": [
-        "محفوظ",
-        "Naguib Mahfouz"
-      ],
-      "sourceUrl": "https://www.nobelprize.org/prizes/literature/1988/mahfouz/lecture/",
-      "verified": true,
-      "difficultyTarget": 0.25,
-      "qid": "quotes-800-908"
-    },
-    {
-      "p": 1000,
       "topic": "شعر عربي قديم",
       "q": "من رثى نفسه بقوله: «ألا ليت شعري هل أبيتن ليلة بجنب الغضا»؟",
       "a": "مالك بن الريب",
@@ -472,11 +356,11 @@
       ],
       "sourceUrl": "https://poetry.dct.gov.ae/poems/28285-ألا-ليت-شعري-هل-أبيتن-ليلة",
       "verified": true,
-      "difficultyTarget": 0.15,
-      "qid": "quotes-1000-901"
+      "difficultyTarget": 0.25,
+      "qid": "quotes-800-911"
     },
     {
-      "p": 1000,
+      "p": 800,
       "topic": "شعر عربي قديم",
       "q": "من صاحب البيت: «وإذا المنية أنشبت أظفارها»؟",
       "a": "أبو ذؤيب الهذلي",
@@ -486,11 +370,11 @@
       ],
       "sourceUrl": "https://www.aldiwan.net/poem24106.html",
       "verified": true,
-      "difficultyTarget": 0.15,
-      "qid": "quotes-1000-902"
+      "difficultyTarget": 0.25,
+      "qid": "quotes-800-912"
     },
     {
-      "p": 1000,
+      "p": 800,
       "topic": "شعر عالمي",
       "q": "من افتتح قصيدة «إنديميون» بمعنى: «الشيء الجميل بهجة إلى الأبد»؟",
       "a": "جون كيتس",
@@ -500,11 +384,11 @@
       ],
       "sourceUrl": "https://www.poetryfoundation.org/poems/44469/endymion-56d2239287ca5",
       "verified": true,
-      "difficultyTarget": 0.15,
-      "qid": "quotes-1000-903"
+      "difficultyTarget": 0.25,
+      "qid": "quotes-800-913"
     },
     {
-      "p": 1000,
+      "p": 800,
       "topic": "شعر عالمي",
       "q": "من افتتح قصيدة «الأرض اليباب» بعبارة «أبريل أقسى الشهور»؟",
       "a": "تي إس إليوت",
@@ -516,11 +400,11 @@
       ],
       "sourceUrl": "https://www.poetryfoundation.org/poems/47311/the-waste-land",
       "verified": true,
-      "difficultyTarget": 0.15,
-      "qid": "quotes-1000-904"
+      "difficultyTarget": 0.25,
+      "qid": "quotes-800-914"
     },
     {
-      "p": 1000,
+      "p": 800,
       "topic": "فكر وفلسفة",
       "q": "من كتب في «رسالة في الطبيعة البشرية» أن العقل عبد للانفعالات؟",
       "a": "ديفيد هيوم",
@@ -530,11 +414,11 @@
       ],
       "sourceUrl": "https://metaphors.lib.virginia.edu/metaphors/18227",
       "verified": true,
-      "difficultyTarget": 0.15,
-      "qid": "quotes-1000-905"
+      "difficultyTarget": 0.25,
+      "qid": "quotes-800-915"
     },
     {
-      "p": 1000,
+      "p": 800,
       "topic": "علم واكتشاف",
       "q": "من كتب أن اختبار البرامج يكشف وجود الأخطاء ولا يثبت غيابها؟",
       "a": "إدسخر ديكسترا",
@@ -545,11 +429,11 @@
       ],
       "sourceUrl": "https://www.cs.utexas.edu/~EWD/transcriptions/EWD02xx/EWD249/EWD249.html",
       "verified": true,
-      "difficultyTarget": 0.15,
-      "qid": "quotes-1000-906"
+      "difficultyTarget": 0.25,
+      "qid": "quotes-800-916"
     },
     {
-      "p": 1000,
+      "p": 800,
       "topic": "رواية ونثر عالمي",
       "q": "من كتب في «عوليس»: «التاريخ كابوس أحاول أن أستيقظ منه»؟",
       "a": "جيمس جويس",
@@ -559,11 +443,11 @@
       ],
       "sourceUrl": "https://en.wikisource.org/wiki/Ulysses_(1922)/Chapter_2",
       "verified": true,
-      "difficultyTarget": 0.15,
-      "qid": "quotes-1000-907"
+      "difficultyTarget": 0.25,
+      "qid": "quotes-800-917"
     },
     {
-      "p": 1000,
+      "p": 800,
       "topic": "فكر وفلسفة",
       "q": "من كتب: «من لا يتذكر الماضي محكوم عليه بتكراره»؟",
       "a": "جورج سانتايانا",
@@ -573,8 +457,112 @@
       ],
       "sourceUrl": "https://www.gutenberg.org/files/15000/15000-h/15000-h.htm",
       "verified": true,
+      "difficultyTarget": 0.25,
+      "qid": "quotes-800-918"
+    },
+    {
+      "topic": "شعر عربي قديم",
+      "q": "لأي شاعر تُنسب لامية «أقيموا بني أمي صدور مطيكم»؟",
+      "a": "الشنفرى",
+      "sourceUrl": "https://www.aldiwan.net/poem1219.html",
+      "verified": true,
+      "p": 1000,
+      "qid": "quotes-1000-911",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "شعر عربي قديم",
+      "q": "من صاحب البيت: «صنت نفسي عما يدنس نفسي»؟",
+      "a": "البحتري",
+      "sourceUrl": "https://ar.wikisource.org/wiki/صنت_نفسي_عما_يدنس_نفسي",
+      "verified": true,
+      "p": 1000,
+      "qid": "quotes-1000-912",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "فكر وفلسفة",
+      "q": "من كتب في «الأورغانون الجديد» أن المعرفة البشرية والقوة البشرية مترادفتان؟",
+      "a": "فرانسيس بيكون",
+      "sourceUrl": "https://www.gutenberg.org/files/45988/45988-h/45988-h.htm",
+      "alt": [
+        "Francis Bacon"
+      ],
+      "verified": true,
+      "p": 1000,
+      "qid": "quotes-1000-913",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "فكر وفلسفة",
+      "q": "من صاحب «المقالات» التي تضم فصلًا بعنوان «التفلسف هو تعلم الموت»؟",
+      "a": "ميشيل دي مونتين",
+      "sourceUrl": "https://www.gutenberg.org/files/3600/3600-h/3600-h",
+      "alt": [
+        "مونتين",
+        "Michel de Montaigne"
+      ],
+      "verified": true,
+      "p": 1000,
+      "qid": "quotes-1000-914",
+      "difficultyTarget": 0.15
+    },
+    {
+      "p": 1000,
+      "topic": "علم واكتشاف",
+      "q": "من حذر في خطاب بمعهد كاليفورنيا للتقنية من خداع نفسك لأنك أسهل من تخدع؟",
+      "a": "ريتشارد فاينمان",
+      "alt": [
+        "فاينمان",
+        "فاينمن",
+        "ريتشارد فاينمن",
+        "Richard Feynman"
+      ],
+      "sourceUrl": "https://calteches.library.caltech.edu/51/2/CargoCult.htm",
+      "verified": true,
       "difficultyTarget": 0.15,
-      "qid": "quotes-1000-908"
+      "qid": "quotes-1000-915"
+    },
+    {
+      "topic": "رواية ونثر عالمي",
+      "q": "من كتب على لسان أهاب، بمعنى: «من قلب الجحيم أطعن فيك»؟",
+      "a": "هيرمان ملفيل",
+      "sourceUrl": "https://www.gutenberg.org/files/2701/2701-h/2701-h.htm",
+      "alt": [
+        "Herman Melville"
+      ],
+      "verified": true,
+      "p": 1000,
+      "qid": "quotes-1000-916",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "رواية ونثر عالمي",
+      "q": "من كتبت على لسان بطلتها، بمعنى: «لست طائرًا، ولا شبكة تأسرني»؟",
+      "a": "شارلوت برونتي",
+      "sourceUrl": "https://www.gutenberg.org/files/1260/1260-h/1260-h.htm",
+      "alt": [
+        "Charlotte Brontë"
+      ],
+      "verified": true,
+      "p": 1000,
+      "qid": "quotes-1000-917",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "مسرح عالمي",
+      "q": "من جعل بطله فاوست يقول، بمعنى: «روحان، للأسف، تسكنان صدري»؟",
+      "a": "يوهان غوته",
+      "sourceUrl": "https://www.gutenberg.org/files/14591/14591-h/14591-h.htm",
+      "alt": [
+        "غوته",
+        "يوهان فولفغانغ غوته",
+        "Goethe"
+      ],
+      "verified": true,
+      "p": 1000,
+      "qid": "quotes-1000-918",
+      "difficultyTarget": 0.15
     }
   ]
 }

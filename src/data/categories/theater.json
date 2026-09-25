@@ -5,143 +5,36 @@
   "qs": [
     {
       "p": 200,
-      "q": "ما اسم الأمير الذي يطلب منه شبح أبيه الانتقام في مأساة شكسبير؟",
-      "a": "هاملت",
-      "qid": "theater-200-901",
-      "topic": "شخصيات شكسبير",
-      "sourceUrl": "https://www.rsc.org.uk/hamlet/the-plot",
-      "verified": true,
-      "difficultyTarget": 0.8,
-      "alt": [
-        "Hamlet"
-      ]
-    },
-    {
-      "p": 200,
-      "q": "ما اسم حبيبة روميو في مأساة شكسبير الشهيرة؟",
-      "a": "جولييت",
-      "qid": "theater-200-902",
-      "topic": "شخصيات شكسبير",
-      "sourceUrl": "https://www.rsc.org.uk/romeo-and-juliet/the-plot",
-      "verified": true,
-      "difficultyTarget": 0.8,
-      "alt": [
-        "جوليت",
-        "جولييت كابوليت",
-        "Juliet"
-      ]
-    },
-    {
-      "p": 200,
-      "q": "في أي مسرحية يقود بهجت الأباصيري مجموعة من طلاب الثانوية كثيري المشاكل؟",
-      "a": "مدرسة المشاغبين",
-      "qid": "theater-200-903",
+      "q": "ما المسرحية التي يحاول فيها أبناء رمضان السكري منعه من ترك العائلة؟",
+      "a": "العيال كبرت",
+      "qid": "theater-200-911",
       "topic": "المسرح العربي",
-      "sourceUrl": "https://www.starsmediapro.com/ar/showMedia?Title=%D9%85%D8%AF%D8%B1%D8%B3%D8%A9+%D8%A7%D9%84%D9%85%D8%B4%D8%A7%D8%BA%D8%A8%D9%8A%D9%86&id=797",
+      "sourceUrl": "https://www.aljadeed.tv/episodes/666/%D8%A7%D9%84%D8%B9%D9%8A%D8%A7%D9%84-%D9%83%D8%A8%D8%B1%D8%AA-%D8%A7%D9%84%D8%AC%D8%B2%D8%A1-%D8%A7%D9%84%D8%A3%D9%88%D9%84",
       "verified": true,
       "difficultyTarget": 0.8
     },
     {
       "p": 200,
-      "q": "ما اسم الدمية الشعبية المصرية الساخرة التي يحرّكها اللاعب بيده من داخلها؟",
-      "a": "الأراجوز",
-      "qid": "theater-200-904",
-      "topic": "العرائس والمسرح التقليدي",
-      "sourceUrl": "https://ich.unesco.org/en/USL/traditional-hand-puppetry-01376",
-      "verified": true,
-      "difficultyTarget": 0.8,
-      "alt": [
-        "أراجوز",
-        "اراجوز",
-        "Al-Aragoz"
-      ]
-    },
-    {
-      "p": 200,
-      "q": "ما الحاجز القماشي الذي يُفتح لكشف الخشبة عند بدء العرض المسرحي؟",
-      "a": "الستارة",
-      "qid": "theater-200-905",
-      "topic": "مصطلحات الخشبة",
-      "sourceUrl": "https://theatrecrafts.com/pages/home/topics/stage-management/glossary/",
-      "verified": true,
-      "difficultyTarget": 0.8,
-      "alt": [
-        "ستارة المسرح"
-      ]
-    },
-    {
-      "p": 200,
-      "q": "ما النوع المسرحي الذي يهدف إلى إضحاك الجمهور؟",
-      "a": "الكوميديا",
-      "qid": "theater-200-906",
-      "topic": "مصطلحات الخشبة",
-      "sourceUrl": "https://theatrecrafts.com/pages/home/topics/stage-management/glossary/",
-      "verified": true,
-      "difficultyTarget": 0.8,
-      "alt": [
-        "المسرح الكوميدي",
-        "الملهاة"
-      ]
-    },
-    {
-      "p": 200,
-      "q": "ما اسم الفتى الذي يرفض أن يكبر في مسرحية جيه إم باري؟",
-      "a": "بيتر بان",
-      "qid": "theater-200-907",
-      "topic": "روائع المسرح العالمي",
-      "sourceUrl": "https://www.ntathome.com/peter-pan",
-      "verified": true,
-      "difficultyTarget": 0.8,
-      "alt": [
-        "Peter Pan"
-      ]
-    },
-    {
-      "p": 200,
-      "q": "ما المسرحية الغنائية المستوحاة من فيلم ديزني، والتي تتبع رحلة الشبل سيمبا؟",
-      "a": "الأسد الملك",
-      "qid": "theater-200-908",
-      "topic": "العروض الغنائية",
-      "sourceUrl": "https://www.mtishows.com/disneys-the-lion-king-jr",
-      "verified": true,
-      "difficultyTarget": 0.8,
-      "alt": [
-        "الملك الأسد",
-        "The Lion King"
-      ]
-    },
-    {
-      "p": 400,
-      "q": "ما المسرحية التي يحاول فيها أبناء رمضان السكري منعه من ترك العائلة؟",
-      "a": "العيال كبرت",
-      "qid": "theater-400-901",
-      "topic": "المسرح العربي",
-      "sourceUrl": "https://www.aljadeed.tv/episodes/666/%D8%A7%D9%84%D8%B9%D9%8A%D8%A7%D9%84-%D9%83%D8%A8%D8%B1%D8%AA-%D8%A7%D9%84%D8%AC%D8%B2%D8%A1-%D8%A7%D9%84%D8%A3%D9%88%D9%84",
-      "verified": true,
-      "difficultyTarget": 0.6
-    },
-    {
-      "p": 400,
       "q": "أي بطل شكسبيري تغريه نبوءة ثلاث ساحرات بأن يصبح ملك اسكتلندا؟",
       "a": "ماكبث",
-      "qid": "theater-400-902",
+      "qid": "theater-200-912",
       "topic": "شخصيات شكسبير",
       "sourceUrl": "https://www.rsc.org.uk/macbeth/the-plot",
       "verified": true,
-      "difficultyTarget": 0.6,
+      "difficultyTarget": 0.8,
       "alt": [
         "Macbeth"
       ]
     },
     {
-      "p": 400,
+      "p": 200,
       "q": "ما المسرح اللندني المرتبط بشكسبير، والذي أُعيد بناؤه قرب موقعه الأصلي؟",
       "a": "مسرح الغلوب",
-      "qid": "theater-400-903",
+      "qid": "theater-200-913",
       "topic": "مسارح وجوائز",
       "sourceUrl": "https://www.shakespearesglobe.com/discover/shakespeares-world/",
       "verified": true,
-      "difficultyTarget": 0.6,
+      "difficultyTarget": 0.8,
       "alt": [
         "الغلوب",
         "غلوب",
@@ -150,27 +43,27 @@
       ]
     },
     {
-      "p": 400,
+      "p": 200,
       "q": "ما اسم منطقة المسارح الشهيرة في مدينة نيويورك؟",
       "a": "برودواي",
-      "qid": "theater-400-904",
+      "qid": "theater-200-914",
       "topic": "مسارح وجوائز",
       "sourceUrl": "https://www.broadway.org/broadway-theatres",
       "verified": true,
-      "difficultyTarget": 0.6,
+      "difficultyTarget": 0.8,
       "alt": [
         "Broadway"
       ]
     },
     {
-      "p": 400,
+      "p": 200,
       "q": "ما اسم العرائس التي تُحرّك أطرافها بخيوط يمسكها اللاعب من الأعلى؟",
       "a": "الماريونيت",
-      "qid": "theater-400-905",
+      "qid": "theater-200-915",
       "topic": "العرائس والمسرح التقليدي",
       "sourceUrl": "https://www.getty.edu/vow/AATFullDisplay?find=bima&logic=AND&note=&subjectid=300211126",
       "verified": true,
-      "difficultyTarget": 0.6,
+      "difficultyTarget": 0.8,
       "alt": [
         "ماريونيت",
         "عرائس الخيوط",
@@ -179,14 +72,14 @@
       ]
     },
     {
-      "p": 400,
+      "p": 200,
       "q": "ماذا يُسمّى ابتكار الممثل كلامًا أو حركة أثناء العرض دون نص مُعدّ سلفًا؟",
       "a": "الارتجال",
-      "qid": "theater-400-906",
+      "qid": "theater-200-916",
       "topic": "مصطلحات الخشبة",
       "sourceUrl": "https://theatrecrafts.com/pages/home/topics/stage-management/glossary/",
       "verified": true,
-      "difficultyTarget": 0.6,
+      "difficultyTarget": 0.8,
       "alt": [
         "التمثيل المرتجل",
         "Improvisation",
@@ -194,10 +87,110 @@
       ]
     },
     {
+      "p": 200,
+      "q": "ما المسرحية الغنائية المبنية على أغاني فرقة «آبا» السويدية؟",
+      "a": "ماما ميا",
+      "qid": "theater-200-917",
+      "topic": "العروض الغنائية",
+      "sourceUrl": "https://www.mtishows.com/mamma-mia",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "alt": [
+        "ماما ميا!",
+        "Mamma Mia"
+      ]
+    },
+    {
+      "p": 200,
+      "q": "من الكاتب الفرنسي صاحب مسرحية «طرطوف»؟",
+      "a": "موليير",
+      "qid": "theater-200-918",
+      "topic": "روائع المسرح العالمي",
+      "sourceUrl": "https://www.comedie-francaise.fr/2014-2015/tartuffe",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "alt": [
+        "Molière",
+        "Moliere",
+        "جان باتيست بوكلان"
+      ]
+    },
+    {
+      "p": 400,
+      "q": "ما اسم الرجل المسالم الذي يُستدعى للشهادة في مسرحية «شاهد ماشفش حاجة»؟",
+      "a": "سرحان عبد البصير",
+      "qid": "theater-400-911",
+      "topic": "المسرح العربي",
+      "sourceUrl": "https://www.watchit.com/watch/ar/plays/Shahed-Ma-Shafsh-Haga/plays-20",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "alt": [
+        "سرحان عبدالبصير",
+        "سرحان"
+      ]
+    },
+    {
+      "p": 400,
+      "q": "من الشخصية التي تزرع الشك والغيرة في قلب عطيل؟",
+      "a": "ياغو",
+      "qid": "theater-400-912",
+      "topic": "شخصيات شكسبير",
+      "sourceUrl": "https://www.rsc.org.uk/othello/key-moments",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "alt": [
+        "إياغو",
+        "ياجو",
+        "Iago"
+      ]
+    },
+    {
+      "p": 400,
+      "q": "ما اسم الساحر والد ميراندا الذي يحكم الجزيرة في مسرحية «العاصفة»؟",
+      "a": "بروسبيرو",
+      "qid": "theater-400-913",
+      "topic": "شخصيات شكسبير",
+      "sourceUrl": "https://www.rsc.org.uk/the-tempest/the-plot",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "alt": [
+        "Prospero"
+      ]
+    },
+    {
+      "p": 400,
+      "q": "ما الحاجز الوهمي الذي يفصل عالم الشخصيات على الخشبة عن الجمهور؟",
+      "a": "الجدار الرابع",
+      "qid": "theater-400-914",
+      "topic": "مصطلحات الخشبة",
+      "sourceUrl": "https://theatrecrafts.com/pages/home/topics/stage-management/glossary/",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "alt": [
+        "الحائط الرابع",
+        "Fourth wall"
+      ]
+    },
+    {
+      "p": 400,
+      "q": "ما مسرحية صموئيل بيكيت التي ينتظر فيها فلاديمير وإستراغون شخصًا لا يصل؟",
+      "a": "في انتظار غودو",
+      "qid": "theater-400-915",
+      "topic": "روائع المسرح العالمي",
+      "sourceUrl": "https://livingarchive.royalcourttheatre.com/plays/waiting-for-godot/",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "alt": [
+        "انتظار غودو",
+        "في انتظار جودو",
+        "Waiting for Godot"
+      ]
+    },
+    {
       "p": 400,
       "q": "ما المسرحية الغنائية التي يحاول فيها هيغنز تعليم بائعة الزهور إليزا دوليتل نطقًا أرستقراطيًا؟",
       "a": "سيدتي الجميلة",
-      "qid": "theater-400-907",
+      "qid": "theater-400-916",
       "topic": "العروض الغنائية",
       "sourceUrl": "https://www.mtishows.com/my-fair-lady-0",
       "verified": true,
@@ -208,113 +201,13 @@
     },
     {
       "p": 400,
-      "q": "من الكاتب الفرنسي صاحب مسرحية «طرطوف»؟",
-      "a": "موليير",
-      "qid": "theater-400-908",
-      "topic": "روائع المسرح العالمي",
-      "sourceUrl": "https://www.comedie-francaise.fr/2014-2015/tartuffe",
-      "verified": true,
-      "difficultyTarget": 0.6,
-      "alt": [
-        "Molière",
-        "Moliere",
-        "جان باتيست بوكلان"
-      ]
-    },
-    {
-      "p": 600,
-      "q": "ما اسم الرجل المسالم الذي يُستدعى للشهادة في مسرحية «شاهد ماشفش حاجة»؟",
-      "a": "سرحان عبد البصير",
-      "qid": "theater-600-901",
-      "topic": "المسرح العربي",
-      "sourceUrl": "https://www.watchit.com/watch/ar/plays/Shahed-Ma-Shafsh-Haga/plays-20",
-      "verified": true,
-      "difficultyTarget": 0.4,
-      "alt": [
-        "سرحان عبدالبصير",
-        "سرحان"
-      ]
-    },
-    {
-      "p": 600,
-      "q": "من الشخصية التي تزرع الشك والغيرة في قلب عطيل؟",
-      "a": "ياغو",
-      "qid": "theater-600-902",
-      "topic": "شخصيات شكسبير",
-      "sourceUrl": "https://www.rsc.org.uk/othello/key-moments",
-      "verified": true,
-      "difficultyTarget": 0.4,
-      "alt": [
-        "إياغو",
-        "ياجو",
-        "Iago"
-      ]
-    },
-    {
-      "p": 600,
-      "q": "ما اسم الساحر والد ميراندا الذي يحكم الجزيرة في مسرحية «العاصفة»؟",
-      "a": "بروسبيرو",
-      "qid": "theater-600-903",
-      "topic": "شخصيات شكسبير",
-      "sourceUrl": "https://www.rsc.org.uk/the-tempest/the-plot",
-      "verified": true,
-      "difficultyTarget": 0.4,
-      "alt": [
-        "Prospero"
-      ]
-    },
-    {
-      "p": 600,
-      "q": "ما الحاجز الوهمي الذي يفصل عالم الشخصيات على الخشبة عن الجمهور؟",
-      "a": "الجدار الرابع",
-      "qid": "theater-600-904",
-      "topic": "مصطلحات الخشبة",
-      "sourceUrl": "https://theatrecrafts.com/pages/home/topics/stage-management/glossary/",
-      "verified": true,
-      "difficultyTarget": 0.4,
-      "alt": [
-        "الحائط الرابع",
-        "Fourth wall"
-      ]
-    },
-    {
-      "p": 600,
-      "q": "ما مسرحية صموئيل بيكيت التي ينتظر فيها فلاديمير وإستراغون شخصًا لا يصل؟",
-      "a": "في انتظار غودو",
-      "qid": "theater-600-905",
-      "topic": "روائع المسرح العالمي",
-      "sourceUrl": "https://livingarchive.royalcourttheatre.com/plays/waiting-for-godot/",
-      "verified": true,
-      "difficultyTarget": 0.4,
-      "alt": [
-        "انتظار غودو",
-        "في انتظار جودو",
-        "Waiting for Godot"
-      ]
-    },
-    {
-      "p": 600,
-      "q": "ما المسرحية الغنائية المبنية على أغاني فرقة «آبا» السويدية؟",
-      "a": "ماما ميا",
-      "qid": "theater-600-906",
-      "topic": "العروض الغنائية",
-      "sourceUrl": "https://www.mtishows.com/mamma-mia",
-      "verified": true,
-      "difficultyTarget": 0.4,
-      "alt": [
-        "ماما ميا!",
-        "Mamma Mia"
-      ]
-    },
-    {
-      "p": 600,
       "q": "ما اسم فن خيال الظل التركي الذي يتبادل فيه البطل المزاح مع حاجي واط؟",
       "a": "كاراكوز",
-      "qid": "theater-600-907",
+      "qid": "theater-400-917",
       "topic": "العرائس والمسرح التقليدي",
       "sourceUrl": "https://ich.unesco.org/en/RL/karagz-00180",
       "verified": true,
-      "difficultyTarget": 0.4,
+      "difficultyTarget": 0.6,
       "alt": [
         "قره غوز",
         "كراكوز",
@@ -323,14 +216,14 @@
       ]
     },
     {
-      "p": 600,
+      "p": 400,
       "q": "ما اسم الجوائز المسرحية الأمريكية التي سُمّيت تكريمًا لأنطوانيت بيري؟",
       "a": "جوائز توني",
-      "qid": "theater-600-908",
+      "qid": "theater-400-918",
       "topic": "مسارح وجوائز",
       "sourceUrl": "https://www.tonyawards.com/history/our-history/",
       "verified": true,
-      "difficultyTarget": 0.4,
+      "difficultyTarget": 0.6,
       "alt": [
         "توني",
         "جائزة توني",
@@ -338,14 +231,14 @@
       ]
     },
     {
-      "p": 800,
+      "p": 600,
       "q": "من الكاتب السوري صاحب مسرحية «مغامرة رأس المملوك جابر»؟",
       "a": "سعد الله ونوس",
-      "qid": "theater-800-901",
+      "qid": "theater-600-911",
       "topic": "المسرح العربي",
       "sourceUrl": "https://daraladab.net/book.php?id=448",
       "verified": true,
-      "difficultyTarget": 0.25,
+      "difficultyTarget": 0.4,
       "alt": [
         "سعدالله ونوس",
         "ونوس",
@@ -353,41 +246,41 @@
       ]
     },
     {
-      "p": 800,
+      "p": 600,
       "q": "ما اسم ابنة الملك لير التي ترفض مجاملته بمديح مبالغ فيه؟",
       "a": "كورديليا",
-      "qid": "theater-800-902",
+      "qid": "theater-600-912",
       "topic": "شخصيات شكسبير",
       "sourceUrl": "https://www.rsc.org.uk/king-lear/the-plot",
       "verified": true,
-      "difficultyTarget": 0.25,
+      "difficultyTarget": 0.4,
       "alt": [
         "Cordelia"
       ]
     },
     {
-      "p": 800,
+      "p": 600,
       "q": "من المرابي الذي يشترط رطلًا من لحم أنطونيو ضمانًا لدَينه في «تاجر البندقية»؟",
       "a": "شايلوك",
-      "qid": "theater-800-903",
+      "qid": "theater-600-913",
       "topic": "شخصيات شكسبير",
       "sourceUrl": "https://www.rsc.org.uk/the-merchant-of-venice/about-the-play/key-moments",
       "verified": true,
-      "difficultyTarget": 0.25,
+      "difficultyTarget": 0.4,
       "alt": [
         "شيلوك",
         "Shylock"
       ]
     },
     {
-      "p": 800,
+      "p": 600,
       "q": "ما اسم القوس الذي يؤطّر فتحة الخشبة ويفصلها عن صالة الجمهور في المسرح التقليدي؟",
       "a": "قوس البروسينيوم",
-      "qid": "theater-800-904",
+      "qid": "theater-600-914",
       "topic": "مصطلحات الخشبة",
       "sourceUrl": "https://kvl.cch.kcl.ac.uk/THEATRON/glossary/p.html",
       "verified": true,
-      "difficultyTarget": 0.25,
+      "difficultyTarget": 0.4,
       "alt": [
         "البروسينيوم",
         "قوس المسرح",
@@ -395,14 +288,14 @@
       ]
     },
     {
-      "p": 800,
+      "p": 600,
       "q": "ما المصطلح لكلام توجّهه الشخصية إلى الجمهور ويفترض أن الشخصيات الأخرى لا تسمعه؟",
       "a": "الحديث الجانبي",
-      "qid": "theater-800-905",
+      "qid": "theater-600-915",
       "topic": "مصطلحات الخشبة",
       "sourceUrl": "https://theatrecrafts.com/pages/home/topics/stage-management/glossary/",
       "verified": true,
-      "difficultyTarget": 0.25,
+      "difficultyTarget": 0.4,
       "alt": [
         "الكلام الجانبي",
         "الأبارتي",
@@ -411,28 +304,28 @@
       ]
     },
     {
-      "p": 800,
+      "p": 600,
       "q": "ما المسرح الياباني التقليدي الذي يشتهر بمكياجه الملون، ويؤدي الرجال فيه الأدوار النسائية أيضًا؟",
       "a": "الكابوكي",
-      "qid": "theater-800-906",
+      "qid": "theater-600-916",
       "topic": "العرائس والمسرح التقليدي",
       "sourceUrl": "https://ich.unesco.org/en/RL/kabuki-theatre-00163?RL=00163",
       "verified": true,
-      "difficultyTarget": 0.25,
+      "difficultyTarget": 0.4,
       "alt": [
         "كابوكي",
         "Kabuki"
       ]
     },
     {
-      "p": 800,
+      "p": 600,
       "q": "من الكاتب النرويجي صاحب مسرحية «بيت الدمية»؟",
       "a": "هنريك إبسن",
-      "qid": "theater-800-907",
+      "qid": "theater-600-917",
       "topic": "روائع المسرح العالمي",
       "sourceUrl": "https://www.n-t.gr/en/events/repertory25-26/doll",
       "verified": true,
-      "difficultyTarget": 0.25,
+      "difficultyTarget": 0.4,
       "alt": [
         "هنريك ابسن",
         "هنريك إبسِن",
@@ -442,14 +335,14 @@
       ]
     },
     {
-      "p": 800,
+      "p": 600,
       "q": "ما اسم المفتش الذي يطارد جان فالجان في المسرحية الغنائية «البؤساء»؟",
       "a": "جافير",
-      "qid": "theater-800-908",
+      "qid": "theater-600-918",
       "topic": "العروض الغنائية",
       "sourceUrl": "https://www.mtishows.com/les-miserables",
       "verified": true,
-      "difficultyTarget": 0.25,
+      "difficultyTarget": 0.4,
       "alt": [
         "جافرت",
         "جافيرت",
@@ -457,31 +350,31 @@
       ]
     },
     {
-      "p": 1000,
+      "p": 800,
       "q": "ما اسم تابع علي جناح التبريزي في مسرحية ألفريد فرج؟",
       "a": "قفة",
-      "qid": "theater-1000-901",
+      "qid": "theater-800-911",
       "topic": "المسرح العربي",
       "sourceUrl": [
         "https://elcinema.com/work/1854869/",
         "https://www.emaratalyoum.com/local-section/2008-04-28-1.187647"
       ],
       "verified": true,
-      "difficultyTarget": 0.15,
+      "difficultyTarget": 0.25,
       "alt": [
         "قُفّة",
         "Quffa"
       ]
     },
     {
-      "p": 1000,
+      "p": 800,
       "q": "ما اسم رئيس حرس ميسينا الكوميدي في مسرحية «جعجعة بلا طحن»؟",
       "a": "دوغبري",
-      "qid": "theater-1000-902",
+      "qid": "theater-800-912",
       "topic": "شخصيات شكسبير",
       "sourceUrl": "https://www.rsc.org.uk/shakespeare-learning-zone/much-ado-about-nothing/character/whos-who",
       "verified": true,
-      "difficultyTarget": 0.15,
+      "difficultyTarget": 0.25,
       "alt": [
         "دوغ بيري",
         "دوجبري",
@@ -490,14 +383,14 @@
       ]
     },
     {
-      "p": 1000,
+      "p": 800,
       "q": "ما اسم النسّاج الذي يحوّل باك رأسه إلى رأس حمار في «حلم ليلة صيف»؟",
       "a": "بوتوم",
-      "qid": "theater-1000-903",
+      "qid": "theater-800-913",
       "topic": "شخصيات شكسبير",
       "sourceUrl": "https://www.rsc.org.uk/shakespeare-learning-zone/a-midsummer-nights-dream/staging/productions",
       "verified": true,
-      "difficultyTarget": 0.15,
+      "difficultyTarget": 0.25,
       "alt": [
         "نيك بوتوم",
         "Bottom",
@@ -505,14 +398,14 @@
       ]
     },
     {
-      "p": 1000,
+      "p": 800,
       "q": "ما فن العرائس الياباني الذي يتعاون فيه ثلاثة محرّكين ظاهرين للجمهور على تحريك دمية واحدة؟",
       "a": "البونراكو",
-      "qid": "theater-1000-904",
+      "qid": "theater-800-914",
       "topic": "العرائس والمسرح التقليدي",
       "sourceUrl": "https://www2.ntj.jac.go.jp/unesco/bunraku/en/introduction/index.html",
       "verified": true,
-      "difficultyTarget": 0.15,
+      "difficultyTarget": 0.25,
       "alt": [
         "بونراكو",
         "بونراكو الياباني",
@@ -520,14 +413,14 @@
       ]
     },
     {
-      "p": 1000,
+      "p": 800,
       "q": "ما اسم المصباح المنفرد الذي يُترك مضاءً على الخشبة الخالية بعد مغادرة العاملين ليلًا؟",
       "a": "ضوء الشبح",
-      "qid": "theater-1000-905",
+      "qid": "theater-800-915",
       "topic": "مصطلحات الخشبة",
       "sourceUrl": "https://theatrecrafts.com/pages/home/topics/stage-management/glossary/",
       "verified": true,
-      "difficultyTarget": 0.15,
+      "difficultyTarget": 0.25,
       "alt": [
         "مصباح الشبح",
         "إضاءة الشبح",
@@ -535,14 +428,14 @@
       ]
     },
     {
-      "p": 1000,
+      "p": 800,
       "q": "ما اسم نسخة النص التي يجمع فيها مدير الخشبة إشارات تشغيل الإضاءة والصوت وملاحظات العرض؟",
       "a": "دفتر إدارة المسرح",
-      "qid": "theater-1000-906",
+      "qid": "theater-800-916",
       "topic": "مصطلحات الخشبة",
       "sourceUrl": "https://theatrecrafts.com/pages/home/topics/stage-management/the-prompt-book/",
       "verified": true,
-      "difficultyTarget": 0.15,
+      "difficultyTarget": 0.25,
       "alt": [
         "دفتر التلقين",
         "دفتر الملقن",
@@ -552,14 +445,14 @@
       ]
     },
     {
-      "p": 1000,
+      "p": 800,
       "q": "ما المسرح في فيتشنزا الذي صمّمه أندريا بالاديو مستلهمًا عمارة المسارح الرومانية؟",
       "a": "المسرح الأولمبي",
-      "qid": "theater-1000-907",
+      "qid": "theater-800-917",
       "topic": "مسارح وجوائز",
       "sourceUrl": "https://www.teatrolimpicovicenza.it/il-teatro/presentazione",
       "verified": true,
-      "difficultyTarget": 0.15,
+      "difficultyTarget": 0.25,
       "alt": [
         "تياترو أوليمبيكو",
         "تياترو أولمبيكو",
@@ -567,22 +460,131 @@
       ]
     },
     {
-      "p": 1000,
+      "p": 800,
       "q": "ما اسم أخت ستيلا التي تصل لزيارتها في بداية مسرحية «عربة اسمها الرغبة»؟",
       "a": "بلانش دوبوا",
-      "qid": "theater-1000-908",
+      "qid": "theater-800-918",
       "topic": "روائع المسرح العالمي",
       "sourceUrl": [
         "https://almeida.co.uk/whats-on/a-streetcar-named-desire/",
         "https://www.ntathome.com/videos/a-streetcar-named-desire-full-play"
       ],
       "verified": true,
-      "difficultyTarget": 0.15,
+      "difficultyTarget": 0.25,
       "alt": [
         "بلانش",
         "بلانش ديبوا",
         "Blanche DuBois"
       ]
+    },
+    {
+      "topic": "شخصيات شكسبير",
+      "q": "من ابن غلوستر الذي يتنكر في شخصية المتسول توم المسكين في «الملك لير»؟",
+      "a": "إدغار",
+      "sourceUrl": "https://www.rsc.org.uk/king-lear/the-plot",
+      "alt": [
+        "Edgar"
+      ],
+      "verified": true,
+      "p": 1000,
+      "qid": "theater-1000-911",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "شخصيات شكسبير",
+      "q": "ما اسم الساحرة أم كاليبان التي حكمت الجزيرة قبل وصول الساحر في «العاصفة»؟",
+      "a": "سيكوراكس",
+      "sourceUrl": "https://www.rsc.org.uk/the-tempest/the-plot",
+      "alt": [
+        "Sycorax"
+      ],
+      "verified": true,
+      "p": 1000,
+      "qid": "theater-1000-912",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "مصطلحات الخشبة",
+      "q": "ما اسم الخلفية الكبيرة التي تحيط بمؤخرة الخشبة وتستخدم غالبًا لمحاكاة السماء؟",
+      "a": "السيكلوراما",
+      "sourceUrl": "https://theatrecrafts.com/pages/home/topics/stage-management/glossary/",
+      "alt": [
+        "Cyclorama"
+      ],
+      "verified": true,
+      "p": 1000,
+      "qid": "theater-1000-913",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "مصطلحات الخشبة",
+      "q": "ما اسم الانتقال الذي ترتفع فيه إضاءة المشهد الجديد بالتزامن مع انخفاض إضاءة المشهد السابق؟",
+      "a": "التلاشي المتقاطع",
+      "sourceUrl": "https://theatrecrafts.com/pages/home/topics/stage-management/glossary/",
+      "alt": [
+        "Crossfade",
+        "كروس فيد",
+        "الانتقال المتداخل"
+      ],
+      "verified": true,
+      "p": 1000,
+      "qid": "theater-1000-914",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "العرائس والمسرح التقليدي",
+      "q": "بأي لقب يُعرف الفنان الرئيسي الذي يحرك دمى خيال الظل التركي؟",
+      "a": "الخيالي",
+      "sourceUrl": "https://ich.unesco.org/en/RL/karagz-00180",
+      "alt": [
+        "Hayali",
+        "خيالي"
+      ],
+      "verified": true,
+      "p": 1000,
+      "qid": "theater-1000-915",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "العرائس والمسرح التقليدي",
+      "q": "ما لقب الراوي الذي يؤدي حوار جميع الشخصيات بمفرده في مسرح العرائس الياباني التقليدي؟",
+      "a": "تايو",
+      "sourceUrl": "https://www2.ntj.jac.go.jp/unesco/bunraku/en/introduction/index.html",
+      "alt": [
+        "Tayu"
+      ],
+      "verified": true,
+      "p": 1000,
+      "qid": "theater-1000-916",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "مسارح وجوائز",
+      "q": "من صمّم المناظر الخشبية ذات المنظور العميق لشوارع طيبة في مسرح فيتشنزا؟",
+      "a": "فينتشنزو سكاموتسي",
+      "sourceUrl": "https://www.teatrolimpicovicenza.it/il-teatro/presentazione",
+      "alt": [
+        "Vincenzo Scamozzi",
+        "فينشنزو سكاموزي"
+      ],
+      "verified": true,
+      "p": 1000,
+      "qid": "theater-1000-917",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "روائع المسرح العالمي",
+      "q": "ما المأساة اليونانية التي عُرضت عند افتتاح مسرح فيتشنزا الذي صممه بالاديو؟",
+      "a": "أوديب ملكًا",
+      "sourceUrl": "https://www.teatrolimpicovicenza.it/il-teatro/presentazione",
+      "alt": [
+        "أوديب الملك",
+        "Oedipus Rex"
+      ],
+      "verified": true,
+      "p": 1000,
+      "qid": "theater-1000-918",
+      "difficultyTarget": 0.15
     }
   ]
 }

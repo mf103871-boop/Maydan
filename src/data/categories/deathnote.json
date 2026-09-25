@@ -6,131 +6,6 @@
   "qs": [
     {
       "p": 200,
-      "topic": "لايت وكيرا",
-      "q": "من الطالب الذي التقط الدفتر وصار يقتل به؟",
-      "a": "لايت ياغامي",
-      "alt": [
-        "لايت",
-        "لايت ياجامي",
-        "رايتو ياغامي"
-      ],
-      "sourceUrl": "https://www.viz.com/death-note",
-      "verified": true,
-      "qid": "deathnote-200-901",
-      "difficultyTarget": 0.8
-    },
-    {
-      "p": 200,
-      "topic": "الشينيغامي",
-      "q": "ما اسم إله الموت الذي أسقط الدفتر ورافق لايت؟",
-      "a": "ريوك",
-      "alt": [
-        "Ryuk"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Ryuk_(Death_Note)#In_Death_Note",
-      "verified": true,
-      "qid": "deathnote-200-902",
-      "difficultyTarget": 0.8
-    },
-    {
-      "p": 200,
-      "topic": "الشينيغامي",
-      "q": "ما الفاكهة التي يدمنها إله الموت المرافق للايت؟",
-      "a": "التفاح",
-      "alt": [
-        "تفاح",
-        "التفاحة"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Ryuk_(Death_Note)#In_Death_Note",
-      "verified": true,
-      "qid": "deathnote-200-903",
-      "difficultyTarget": 0.8
-    },
-    {
-      "p": 200,
-      "topic": "ميسا",
-      "q": "ما اسم الفتاة المشهورة التي صارت كيرا الثانية؟",
-      "a": "ميسا أماني",
-      "alt": [
-        "ميسا",
-        "أماني ميسا"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Misa_Amane#In_Death_Note",
-      "verified": true,
-      "qid": "deathnote-200-904",
-      "difficultyTarget": 0.8
-    },
-    {
-      "p": 200,
-      "topic": "إل والتحقيق",
-      "q": "ما الحرف الذي يُعرف به ألمع محقق في العالم؟",
-      "a": "إل",
-      "alt": [
-        "L",
-        "حرف L"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/L_(Death_Note)#In_Death_Note",
-      "verified": true,
-      "qid": "deathnote-200-905",
-      "difficultyTarget": 0.8
-    },
-    {
-      "p": 200,
-      "topic": "المذكرة وقواعدها",
-      "q": "ما سبب الوفاة الافتراضي إن لم يحدّد الكاتب شيئًا؟",
-      "a": "نوبة قلبية",
-      "alt": [
-        "أزمة قلبية",
-        "سكتة قلبية"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Death_Note_characters",
-      "verified": true,
-      "qid": "deathnote-200-906",
-      "difficultyTarget": 0.8
-    },
-    {
-      "p": 200,
-      "topic": "خلفاء إل",
-      "q": "من الصبي الهادئ الذي خلف إل في مطاردة كيرا؟",
-      "a": "نير",
-      "alt": [
-        "Near"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Death_Note_characters#Near",
-      "verified": true,
-      "qid": "deathnote-200-907",
-      "difficultyTarget": 0.8
-    },
-    {
-      "p": 200,
-      "topic": "إل والتحقيق",
-      "q": "ما اللعبة التي تبارى فيها لايت وإل أمام الطلاب؟",
-      "a": "التنس",
-      "alt": [
-        "كرة المضرب",
-        "التنس الأرضي"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Death_Note_(2006_TV_series)#ep10",
-      "verified": true,
-      "qid": "deathnote-200-908",
-      "difficultyTarget": 0.8
-    },
-    {
-      "p": 400,
-      "topic": "المذكرة وقواعدها",
-      "q": "ماذا يفقد الإنسان إن تخلّى عن ملكية الدفتر؟",
-      "a": "ذكرياته عنه",
-      "alt": [
-        "ذاكرته عن الدفتر",
-        "كل ما يتعلق به"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Misa_Amane#In_Death_Note",
-      "verified": true,
-      "qid": "deathnote-400-901",
-      "difficultyTarget": 0.6
-    },
-    {
-      "p": 400,
       "topic": "المذكرة وقواعدها",
       "q": "ما ثمن الحصول على عيني إله الموت؟",
       "a": "نصف العمر المتبقي",
@@ -140,11 +15,11 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/Misa_Amane#In_Death_Note",
       "verified": true,
-      "qid": "deathnote-400-902",
-      "difficultyTarget": 0.6
+      "qid": "deathnote-200-911",
+      "difficultyTarget": 0.8
     },
     {
-      "p": 400,
+      "p": 200,
       "topic": "الشينيغامي",
       "q": "ما اسم إله الموت الذي مات ليحمي ميسا؟",
       "a": "جيلوس",
@@ -154,11 +29,11 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/Misa_Amane#In_Death_Note",
       "verified": true,
-      "qid": "deathnote-400-903",
-      "difficultyTarget": 0.6
+      "qid": "deathnote-200-912",
+      "difficultyTarget": 0.8
     },
     {
-      "p": 400,
+      "p": 200,
       "topic": "قضية الشركة",
       "q": "ما اسم الشركة التي ظهر فيها كيرا الثالث؟",
       "a": "يوتسوبا",
@@ -168,25 +43,11 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Death_Note_characters#Yotsuba_Group",
       "verified": true,
-      "qid": "deathnote-400-904",
-      "difficultyTarget": 0.6
+      "qid": "deathnote-200-913",
+      "difficultyTarget": 0.8
     },
     {
-      "p": 400,
-      "topic": "لايت وكيرا",
-      "q": "ماذا كان لايت يخبّئ داخل كيس رقائق البطاطس؟",
-      "a": "تلفازًا صغيرًا",
-      "alt": [
-        "تلفاز صغير",
-        "شاشة صغيرة"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Death_Note_(2006_TV_series)#ep8",
-      "verified": true,
-      "qid": "deathnote-400-905",
-      "difficultyTarget": 0.6
-    },
-    {
-      "p": 400,
+      "p": 200,
       "topic": "فريق التحقيق",
       "q": "من المحقق الذي أطلق النار على لايت في مواجهة المستودع؟",
       "a": "ماتسودا",
@@ -195,8 +56,60 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Death_Note_characters#Touta_Matsuda",
       "verified": true,
-      "qid": "deathnote-400-906",
-      "difficultyTarget": 0.6
+      "qid": "deathnote-200-914",
+      "difficultyTarget": 0.8
+    },
+    {
+      "p": 200,
+      "topic": "إل والتحقيق",
+      "q": "ما الاسم المستعار الذي طلب إل من الفريق أن يناديه به؟",
+      "a": "ريوزاكي",
+      "alt": [
+        "Ryuzaki"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/L_(Death_Note)#In_Death_Note",
+      "verified": true,
+      "qid": "deathnote-200-915",
+      "difficultyTarget": 0.8
+    },
+    {
+      "p": 200,
+      "topic": "لايت وكيرا",
+      "q": "من الذي اختاره لايت ليكون كيرا الرابع وينفّذ القتل عنه؟",
+      "a": "تيرو ميكامي",
+      "alt": [
+        "ميكامي"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Death_Note_characters#Teru_Mikami",
+      "verified": true,
+      "qid": "deathnote-200-916",
+      "difficultyTarget": 0.8
+    },
+    {
+      "p": 200,
+      "topic": "قضية الشركة",
+      "q": "ما اسم كيرا الثالث الذي كان مديرًا في شركة كبرى؟",
+      "a": "هيغوتشي",
+      "alt": [
+        "كيوسكي هيغوتشي"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Death_Note_characters#Kyosuke_Higuchi",
+      "verified": true,
+      "qid": "deathnote-200-917",
+      "difficultyTarget": 0.8
+    },
+    {
+      "topic": "المذكرة وقواعدها",
+      "q": "كم يومًا حددت القاعدة المزيفة التي أوهمت المحققين أن الكاتب يموت إن توقف عن استخدام الدفتر؟",
+      "a": "ثلاثة عشر يومًا",
+      "alt": [
+        "13 يومًا"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Death_Note_(2006_TV_series)",
+      "qid": "deathnote-200-918",
+      "p": 200,
+      "difficultyTarget": 0.8,
+      "verified": true
     },
     {
       "p": 400,
@@ -210,24 +123,11 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/Mello_(Death_Note)#Appearances",
       "verified": true,
-      "qid": "deathnote-400-907",
+      "qid": "deathnote-400-911",
       "difficultyTarget": 0.6
     },
     {
       "p": 400,
-      "topic": "إل والتحقيق",
-      "q": "ما الاسم المستعار الذي طلب إل من الفريق أن يناديه به؟",
-      "a": "ريوزاكي",
-      "alt": [
-        "Ryuzaki"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/L_(Death_Note)#In_Death_Note",
-      "verified": true,
-      "qid": "deathnote-400-908",
-      "difficultyTarget": 0.6
-    },
-    {
-      "p": 600,
       "topic": "إل والتحقيق",
       "q": "ما الاسم المستعار الذي التحق به إل بالجامعة؟",
       "a": "هيديكي ريوغا",
@@ -236,11 +136,11 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/L_(Death_Note)#In_Death_Note",
       "verified": true,
-      "qid": "deathnote-600-901",
-      "difficultyTarget": 0.4
+      "qid": "deathnote-400-912",
+      "difficultyTarget": 0.6
     },
     {
-      "p": 600,
+      "p": 400,
       "topic": "فريق التحقيق",
       "q": "من العميل الأمريكي الذي كُلّف بمراقبة عائلة لايت؟",
       "a": "راي بنبر",
@@ -249,11 +149,11 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Death_Note_characters#Raye_Penber",
       "verified": true,
-      "qid": "deathnote-600-902",
-      "difficultyTarget": 0.4
+      "qid": "deathnote-400-913",
+      "difficultyTarget": 0.6
     },
     {
-      "p": 600,
+      "p": 400,
       "topic": "فريق التحقيق",
       "q": "من عميلة مكتب التحقيقات السابقة التي بحثت عن قاتل خطيبها؟",
       "a": "ناومي ميسورا",
@@ -262,24 +162,11 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Death_Note_characters#Naomi_Misora",
       "verified": true,
-      "qid": "deathnote-600-903",
-      "difficultyTarget": 0.4
+      "qid": "deathnote-400-914",
+      "difficultyTarget": 0.6
     },
     {
-      "p": 600,
-      "topic": "لايت وكيرا",
-      "q": "من الذي اختاره لايت ليكون كيرا الرابع وينفّذ القتل عنه؟",
-      "a": "تيرو ميكامي",
-      "alt": [
-        "ميكامي"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Death_Note_characters#Teru_Mikami",
-      "verified": true,
-      "qid": "deathnote-600-904",
-      "difficultyTarget": 0.4
-    },
-    {
-      "p": 600,
+      "p": 400,
       "topic": "خلفاء إل",
       "q": "ما اسم المنظمة التي قادها نير لملاحقة كيرا؟",
       "a": "SPK",
@@ -289,11 +176,11 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Death_Note_characters#SPK",
       "verified": true,
-      "qid": "deathnote-600-905",
-      "difficultyTarget": 0.4
+      "qid": "deathnote-400-915",
+      "difficultyTarget": 0.6
     },
     {
-      "p": 600,
+      "p": 400,
       "topic": "لايت وكيرا",
       "q": "ما اسم زميلة لايت الجامعية التي صارت الناطقة باسم كيرا؟",
       "a": "كيومي تاكادا",
@@ -302,24 +189,11 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Death_Note_characters#Kiyomi_Takada",
       "verified": true,
-      "qid": "deathnote-600-906",
-      "difficultyTarget": 0.4
+      "qid": "deathnote-400-916",
+      "difficultyTarget": 0.6
     },
     {
-      "p": 600,
-      "topic": "قضية الشركة",
-      "q": "ما اسم كيرا الثالث الذي كان مديرًا في شركة كبرى؟",
-      "a": "هيغوتشي",
-      "alt": [
-        "كيوسكي هيغوتشي"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Death_Note_characters#Kyosuke_Higuchi",
-      "verified": true,
-      "qid": "deathnote-600-907",
-      "difficultyTarget": 0.4
-    },
-    {
-      "p": 600,
+      "p": 400,
       "topic": "الشينيغامي",
       "q": "ما اسم إله الموت الذي سُرق دفتره وظل يبحث عنه؟",
       "a": "سيدو",
@@ -329,24 +203,11 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Death_Note_characters#Sidoh",
       "verified": true,
-      "qid": "deathnote-600-908",
-      "difficultyTarget": 0.4
+      "qid": "deathnote-400-917",
+      "difficultyTarget": 0.6
     },
     {
-      "p": 800,
-      "topic": "إل والتحقيق",
-      "q": "ما اسم السجين الذي ظهر على الشاشة منتحلًا شخصية إل؟",
-      "a": "ليند إل تايلر",
-      "alt": [
-        "ليند تايلر"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Death_Note_characters#Lind_L._Tailor",
-      "verified": true,
-      "qid": "deathnote-800-901",
-      "difficultyTarget": 0.25
-    },
-    {
-      "p": 800,
+      "p": 400,
       "topic": "إل والتحقيق",
       "q": "في أي منطقة يابانية حصر إل بثه التلفزيوني الأول لكشف موقع كيرا؟",
       "a": "كانتو",
@@ -355,11 +216,24 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/Death_Note#Plot",
       "verified": true,
-      "qid": "deathnote-800-902",
-      "difficultyTarget": 0.25
+      "qid": "deathnote-400-918",
+      "difficultyTarget": 0.6
     },
     {
-      "p": 800,
+      "p": 600,
+      "topic": "إل والتحقيق",
+      "q": "ما اسم السجين الذي ظهر على الشاشة منتحلًا شخصية إل؟",
+      "a": "ليند إل تايلر",
+      "alt": [
+        "ليند تايلر"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Death_Note_characters#Lind_L._Tailor",
+      "verified": true,
+      "qid": "deathnote-600-911",
+      "difficultyTarget": 0.4
+    },
+    {
+      "p": 600,
       "topic": "قضية الشركة",
       "q": "ما اسم المحتال الذي استعان به إل في قضية كيرا الثالث؟",
       "a": "آيبر",
@@ -369,11 +243,11 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Death_Note_characters#Aiber",
       "verified": true,
-      "qid": "deathnote-800-903",
-      "difficultyTarget": 0.25
+      "qid": "deathnote-600-912",
+      "difficultyTarget": 0.4
     },
     {
-      "p": 800,
+      "p": 600,
       "topic": "قضية الشركة",
       "q": "ما اسم اللصة المحترفة التي استعان بها إل؟",
       "a": "ويدي",
@@ -382,11 +256,11 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Death_Note_characters#Wedy",
       "verified": true,
-      "qid": "deathnote-800-904",
-      "difficultyTarget": 0.25
+      "qid": "deathnote-600-913",
+      "difficultyTarget": 0.4
     },
     {
-      "p": 800,
+      "p": 600,
       "topic": "خلفاء إل",
       "q": "ما الاسم الحقيقي لنير؟",
       "a": "نيت ريفر",
@@ -395,11 +269,11 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Death_Note_characters#Near",
       "verified": true,
-      "qid": "deathnote-800-905",
-      "difficultyTarget": 0.25
+      "qid": "deathnote-600-914",
+      "difficultyTarget": 0.4
     },
     {
-      "p": 800,
+      "p": 600,
       "topic": "خلفاء إل",
       "q": "ما الاسم الحقيقي لميلو؟",
       "a": "ميهايل كيل",
@@ -408,11 +282,11 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/Mello_(Death_Note)",
       "verified": true,
-      "qid": "deathnote-800-906",
-      "difficultyTarget": 0.25
+      "qid": "deathnote-600-915",
+      "difficultyTarget": 0.4
     },
     {
-      "p": 800,
+      "p": 600,
       "topic": "لايت وكيرا",
       "q": "كيف قتل لايت كيرا الثالث بعد القبض عليه؟",
       "a": "بقصاصة في ساعته",
@@ -421,11 +295,11 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Death_Note_characters#Kyosuke_Higuchi",
       "verified": true,
-      "qid": "deathnote-800-907",
-      "difficultyTarget": 0.25
+      "qid": "deathnote-600-916",
+      "difficultyTarget": 0.4
     },
     {
-      "p": 800,
+      "p": 600,
       "topic": "فريق التحقيق",
       "q": "من بدّل دفتر ميكامي بنسخة مزيّفة؟",
       "a": "جيفاني",
@@ -434,11 +308,25 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Death_Note_characters#Stephen_Gevanni",
       "verified": true,
-      "qid": "deathnote-800-908",
-      "difficultyTarget": 0.25
+      "qid": "deathnote-600-917",
+      "difficultyTarget": 0.4
     },
     {
-      "p": 1000,
+      "topic": "ميسا",
+      "q": "ما الدليل البيولوجي الذي ربط ميسا بالأشرطة المرسلة إلى التلفزيون؟",
+      "a": "حمضها النووي",
+      "alt": [
+        "DNA",
+        "الحمض النووي"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Death_Note_(2006_TV_series)",
+      "qid": "deathnote-600-918",
+      "p": 600,
+      "difficultyTarget": 0.4,
+      "verified": true
+    },
+    {
+      "p": 800,
       "topic": "خلفاء إل",
       "q": "ما الاسم الحقيقي لمساعد إل ومموّله؟",
       "a": "كويلش وامي",
@@ -447,11 +335,11 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Death_Note_characters#Watari",
       "verified": true,
-      "qid": "deathnote-1000-901",
-      "difficultyTarget": 0.15
+      "qid": "deathnote-800-911",
+      "difficultyTarget": 0.25
     },
     {
-      "p": 1000,
+      "p": 800,
       "topic": "خلفاء إل",
       "q": "في أي مدينة إنجليزية يقع ميتم خلفاء إل؟",
       "a": "ونشستر",
@@ -460,11 +348,11 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Death_Note_characters#Watari",
       "verified": true,
-      "qid": "deathnote-1000-902",
-      "difficultyTarget": 0.15
+      "qid": "deathnote-800-912",
+      "difficultyTarget": 0.25
     },
     {
-      "p": 1000,
+      "p": 800,
       "topic": "قضية الشركة",
       "q": "من مدير شركة كيرا الثالث الذي يتقن الشوغي؟",
       "a": "ناميكاوا",
@@ -473,11 +361,11 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Death_Note_characters#Other_members_of_the_Yotsuba_Group",
       "verified": true,
-      "qid": "deathnote-1000-903",
-      "difficultyTarget": 0.15
+      "qid": "deathnote-800-913",
+      "difficultyTarget": 0.25
     },
     {
-      "p": 1000,
+      "p": 800,
       "topic": "قضية الشركة",
       "q": "من عضو الشركة الذي قتله كيرا الثالث قبل بقية المديرين؟",
       "a": "هاتوري",
@@ -486,8 +374,61 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Death_Note_characters#Other_members_of_the_Yotsuba_Group",
       "verified": true,
-      "qid": "deathnote-1000-904",
-      "difficultyTarget": 0.15
+      "qid": "deathnote-800-914",
+      "difficultyTarget": 0.25
+    },
+    {
+      "topic": "فريق التحقيق",
+      "q": "ما اسم المحقق الذي مات عند باب المحطة بعدما حاول إيقاف رسائل كيرا الثانية؟",
+      "a": "هيروكازو أوكيتا",
+      "alt": [
+        "أوكيتا",
+        "Hirokazu Ukita"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Death_Note_characters",
+      "qid": "deathnote-800-915",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "إل والتحقيق",
+      "q": "في أي جزء من ملابسه أخفى المحقق وسيلة الاتصال بإل أثناء تسلله إلى مقر الشركة المشتبه بها؟",
+      "a": "إبزيم الحزام",
+      "alt": [
+        "مشبك حزامه"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Death_Note_(2006_TV_series)",
+      "qid": "deathnote-800-916",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "لايت وكيرا",
+      "q": "من شريك ميلو الذي أطلق عليه حراس تاكادا النار خلال اختطافها؟",
+      "a": "مات",
+      "alt": [
+        "Matt"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Death_Note_characters",
+      "qid": "deathnote-800-917",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "ميسا",
+      "q": "ما الاسم المستعار الذي استخدمه المحقق الشاب عندما عمل مديرًا لميسا؟",
+      "a": "تارو ماتسوي",
+      "alt": [
+        "Taro Matsui"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Death_Note_characters",
+      "qid": "deathnote-800-918",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
     },
     {
       "p": 1000,
@@ -499,7 +440,7 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Death_Note_characters#Aiber",
       "verified": true,
-      "qid": "deathnote-1000-905",
+      "qid": "deathnote-1000-911",
       "difficultyTarget": 0.15
     },
     {
@@ -512,7 +453,7 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Death_Note_characters#Wedy",
       "verified": true,
-      "qid": "deathnote-1000-906",
+      "qid": "deathnote-1000-912",
       "difficultyTarget": 0.15
     },
     {
@@ -525,7 +466,7 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Death_Note_characters#Kanzo_Mogi",
       "verified": true,
-      "qid": "deathnote-1000-907",
+      "qid": "deathnote-1000-913",
       "difficultyTarget": 0.15
     },
     {
@@ -538,8 +479,62 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Death_Note_characters#Shuichi_Aizawa",
       "verified": true,
-      "qid": "deathnote-1000-908",
+      "qid": "deathnote-1000-914",
       "difficultyTarget": 0.15
+    },
+    {
+      "topic": "خلفاء إل",
+      "q": "ما اسم مدير مكتب التحقيقات الفيدرالي الذي ساعد نير على تأسيس فريقه؟",
+      "a": "ستيف مايسون",
+      "alt": [
+        "Steve Mason"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Death_Note_characters",
+      "qid": "deathnote-1000-915",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "خلفاء إل",
+      "q": "من عميلة نير التي سرّبت المعلومات إلى ميلو لزيادة فرص كشف كيرا؟",
+      "a": "هال ليدنر",
+      "alt": [
+        "Halle Lidner",
+        "هالي ليدنر"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Death_Note_characters",
+      "qid": "deathnote-1000-916",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "الشينيغامي",
+      "q": "من عضو عصابة ميلو الذي امتلك دفتر الموت وأُجبر على صفقة العينين؟",
+      "a": "جاك نيلون",
+      "alt": [
+        "Jack Neylon",
+        "كال سنايدر"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Death_Note_characters",
+      "qid": "deathnote-1000-917",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "قضية الشركة",
+      "q": "من مدير التخطيط المالي الذي قالت ميسا إنه يشبه لايت؟",
+      "a": "شينغو ميدو",
+      "alt": [
+        "Shingo Mido"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Death_Note_characters",
+      "qid": "deathnote-1000-918",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
     }
   ]
 }

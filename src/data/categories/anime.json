@@ -5,153 +5,8 @@
   "style": "story",
   "qs": [
     {
-      "qid": "anime-200-901",
+      "qid": "anime-200-911",
       "p": 200,
-      "topic": "دورايمون",
-      "q": "ما اسم الطفل الذي يعيش معه الروبوت الأزرق في «دورايمون»؟",
-      "a": "نوبيتا",
-      "alt": [
-        "Nobita",
-        "نوبيتا نوبي"
-      ],
-      "sourceUrl": "https://www.tv-asahi.co.jp/doraemon/character/",
-      "verified": true,
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "anime-200-902",
-      "p": 200,
-      "topic": "بوكيمون",
-      "q": "ما اسم رفيق آش الأصفر ذي القوى الكهربائية في «بوكيمون»؟",
-      "a": "بيكاتشو",
-      "alt": [
-        "Pikachu"
-      ],
-      "sourceUrl": "https://www.scholastic.ca/books/app/webroot/img/pdfs/9781338284089.pdf",
-      "verified": true,
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "anime-200-903",
-      "p": 200,
-      "topic": "المحقق كونان",
-      "q": "ما اسم المحقق الحقيقي قبل تقلصه إلى طفل في «المحقق كونان»؟",
-      "a": "شينيتشي كودو",
-      "alt": [
-        "سينشي كودو",
-        "شينتشي كودو",
-        "Shinichi Kudo"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Case_Closed_characters",
-      "verified": true,
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "anime-200-904",
-      "p": 200,
-      "topic": "الكابتن ماجد",
-      "q": "أي رياضة تدور حولها مباريات «الكابتن ماجد»؟",
-      "a": "كرة القدم",
-      "alt": [
-        "القدم",
-        "Football",
-        "Soccer"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Captain_Tsubasa",
-      "verified": true,
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "anime-200-905",
-      "p": 200,
-      "topic": "فولميتال ألكيميست",
-      "q": "بماذا ترتبط روح ألفونس بعد فقدانه جسده في «فولميتال ألكيميست»؟",
-      "a": "بدرع معدني",
-      "alt": [
-        "درع",
-        "درع حديدي",
-        "بدلة درع"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Fullmetal_Alchemist",
-      "verified": true,
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "anime-200-906",
-      "p": 200,
-      "topic": "يوغي يو",
-      "q": "ما اسم لعبة البطاقات التي يتنافس فيها الأبطال في «يوغي يو»؟",
-      "a": "مبارزة الوحوش",
-      "alt": [
-        "Duel Monsters",
-        "مبارزات الوحوش"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Yu-Gi-Oh!",
-      "verified": true,
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "anime-200-907",
-      "p": 200,
-      "topic": "المخطوفة",
-      "q": "إلى أي حيوانات يتحول والدا تشيهيرو في «المخطوفة»؟",
-      "a": "خنازير",
-      "alt": [
-        "خنازير برية",
-        "Pigs"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Spirited_Away",
-      "verified": true,
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "anime-200-908",
-      "p": 200,
-      "topic": "قلعة في السماء",
-      "q": "ما الشيء الذي يبطئ سقوط شيتا من المنطاد في «قلعة في السماء»؟",
-      "a": "قلادتها البلورية",
-      "alt": [
-        "القلادة",
-        "البلورة السحرية",
-        "حجر القلادة"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Castle_in_the_Sky",
-      "verified": true,
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "anime-400-901",
-      "p": 400,
-      "topic": "دورايمون",
-      "q": "من أين يُخرج الروبوت أدواته المستقبلية في «دورايمون»؟",
-      "a": "جيب رباعي الأبعاد",
-      "alt": [
-        "جيبه",
-        "جيب بطنه",
-        "الجيب السحري"
-      ],
-      "sourceUrl": "https://www.tv-asahi.co.jp/doraemon/character/",
-      "verified": true,
-      "difficultyTarget": 0.6
-    },
-    {
-      "qid": "anime-400-902",
-      "p": 400,
-      "topic": "بوكيمون",
-      "q": "ما الأداة الكروية التي يستخدمها المدربون للإمساك بالمخلوقات في «بوكيمون»؟",
-      "a": "كرة البوكيمون",
-      "alt": [
-        "بوكي بول",
-        "Poké Ball",
-        "Pokeball"
-      ],
-      "sourceUrl": "https://www.pokemon.com/fr/actualites/sacha-et-ses-amis-seclatent-avec-les-poke-balls-sur-tv-pokemon",
-      "verified": true,
-      "difficultyTarget": 0.6
-    },
-    {
-      "qid": "anime-400-903",
-      "p": 400,
       "topic": "المحقق كونان",
       "q": "من والد ران الذي يشتهر بحل القضايا وهو نائم في «المحقق كونان»؟",
       "a": "كوغورو موري",
@@ -162,41 +17,11 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Case_Closed_characters",
       "verified": true,
-      "difficultyTarget": 0.6
+      "difficultyTarget": 0.8
     },
     {
-      "qid": "anime-400-904",
-      "p": 400,
-      "topic": "الكابتن ماجد",
-      "q": "ما الاسم الياباني الأصلي لبطل «الكابتن ماجد»؟",
-      "a": "تسوباسا أوزورا",
-      "alt": [
-        "تسوباسا",
-        "Tsubasa Ozora",
-        "تسوباسا اوزورا"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Captain_Tsubasa",
-      "verified": true,
-      "difficultyTarget": 0.6
-    },
-    {
-      "qid": "anime-400-905",
-      "p": 400,
-      "topic": "فولميتال ألكيميست",
-      "q": "في «فولميتال ألكيميست»، من حاول الأخوان إلريك إعادته إلى الحياة بالتجربة التي أفقدتهما جسديهما؟",
-      "a": "أمهما",
-      "alt": [
-        "والدتهما",
-        "تريشا إلريك",
-        "Trisha Elric"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Fullmetal_Alchemist",
-      "verified": true,
-      "difficultyTarget": 0.6
-    },
-    {
-      "qid": "anime-400-906",
-      "p": 400,
+      "qid": "anime-200-912",
+      "p": 200,
       "topic": "يوغي يو",
       "q": "في «يوغي يو»، ما القطعة الأثرية التي يجمعها يوغي فتسكنه روح فرعون؟",
       "a": "أحجية الألفية",
@@ -206,11 +31,11 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/Yu-Gi-Oh!",
       "verified": true,
-      "difficultyTarget": 0.6
+      "difficultyTarget": 0.8
     },
     {
-      "qid": "anime-400-907",
-      "p": 400,
+      "qid": "anime-200-913",
+      "p": 200,
       "topic": "المخطوفة",
       "q": "من الفتى الذي يساعد تشيهيرو ويمكنه التحول إلى تنين في «المخطوفة»؟",
       "a": "هاكو",
@@ -219,11 +44,11 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/Spirited_Away",
       "verified": true,
-      "difficultyTarget": 0.6
+      "difficultyTarget": 0.8
     },
     {
-      "qid": "anime-400-908",
-      "p": 400,
+      "qid": "anime-200-914",
+      "p": 200,
       "topic": "قلعة في السماء",
       "q": "ما اسم الفتى العامل في المناجم الذي يستقبل شيتا في «قلعة في السماء»؟",
       "a": "بازو",
@@ -233,11 +58,11 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/Castle_in_the_Sky",
       "verified": true,
-      "difficultyTarget": 0.6
+      "difficultyTarget": 0.8
     },
     {
-      "qid": "anime-600-901",
-      "p": 600,
+      "qid": "anime-200-915",
+      "p": 200,
       "topic": "دورايمون",
       "q": "ما الحلوى اليابانية المحشوة التي يحبها الروبوت في «دورايمون»؟",
       "a": "دوراياكي",
@@ -247,25 +72,53 @@
       ],
       "sourceUrl": "https://www.tv-asahi.co.jp/doraemon/character/",
       "verified": true,
-      "difficultyTarget": 0.4
+      "difficultyTarget": 0.8
     },
     {
-      "qid": "anime-600-902",
-      "p": 600,
-      "topic": "بوكيمون",
-      "q": "إلى أي عصابة ينتمي جيسي وجيمس في «بوكيمون»؟",
-      "a": "فريق روكيت",
+      "qid": "anime-200-916",
+      "p": 200,
+      "topic": "الكابتن ماجد",
+      "q": "من المدرب البرازيلي الذي يرشد البطل في «الكابتن ماجد»؟",
+      "a": "روبرتو هونغو",
       "alt": [
-        "فريق الصاروخ",
-        "Team Rocket"
+        "روبيرتو هونجو",
+        "روبرتو",
+        "Roberto Hongo"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Captain_Tsubasa",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "anime-200-917",
+      "p": 200,
+      "topic": "دورايمون",
+      "q": "ما اسم الأخت الروبوتية الصفراء للبطل في «دورايمون»؟",
+      "a": "دورامي",
+      "alt": [
+        "Dorami"
+      ],
+      "sourceUrl": "https://www.tv-asahi.co.jp/doraemon/character/",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "anime-200-918",
+      "p": 200,
+      "topic": "بوكيمون",
+      "q": "في «بوكيمون»، في أي مدينة يواجه آش قائد الصالة بروك في بداية رحلته؟",
+      "a": "بيوتر",
+      "alt": [
+        "بيوتر سيتي",
+        "Pewter City"
       ],
       "sourceUrl": "https://www.pokemon.com/us/animation/seasons/1/episode-5-showdown-in-pewter-city",
       "verified": true,
-      "difficultyTarget": 0.4
+      "difficultyTarget": 0.8
     },
     {
-      "qid": "anime-600-903",
-      "p": 600,
+      "qid": "anime-400-911",
+      "p": 400,
       "topic": "المحقق كونان",
       "q": "من المخترع الذي يصنع أدوات المحقق الصغير في «المحقق كونان»؟",
       "a": "الدكتور أغاسا",
@@ -277,26 +130,11 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Case_Closed_characters",
       "verified": true,
-      "difficultyTarget": 0.4
+      "difficultyTarget": 0.6
     },
     {
-      "qid": "anime-600-904",
-      "p": 600,
-      "topic": "الكابتن ماجد",
-      "q": "من المدرب البرازيلي الذي يرشد البطل في «الكابتن ماجد»؟",
-      "a": "روبرتو هونغو",
-      "alt": [
-        "روبيرتو هونجو",
-        "روبرتو",
-        "Roberto Hongo"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Captain_Tsubasa",
-      "verified": true,
-      "difficultyTarget": 0.4
-    },
-    {
-      "qid": "anime-600-905",
-      "p": 600,
+      "qid": "anime-400-912",
+      "p": 400,
       "topic": "فولميتال ألكيميست",
       "q": "في «فولميتال ألكيميست»، عن أي حجر يبحث الأخوان إلريك لاستعادة جسديهما؟",
       "a": "حجر الفلاسفة",
@@ -306,11 +144,11 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/Fullmetal_Alchemist",
       "verified": true,
-      "difficultyTarget": 0.4
+      "difficultyTarget": 0.6
     },
     {
-      "qid": "anime-600-906",
-      "p": 600,
+      "qid": "anime-400-913",
+      "p": 400,
       "topic": "يوغي يو",
       "q": "في «يوغي يو»، من منافس يوغي المرتبط ببطاقة التنين الأبيض أزرق العينين؟",
       "a": "سيتو كايبا",
@@ -320,11 +158,11 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Yu-Gi-Oh!_characters",
       "verified": true,
-      "difficultyTarget": 0.4
+      "difficultyTarget": 0.6
     },
     {
-      "qid": "anime-600-907",
-      "p": 600,
+      "qid": "anime-400-914",
+      "p": 400,
       "topic": "المخطوفة",
       "q": "ما اسم الساحرة التي تدير الحمّام وتسلب العاملين أسماءهم في «المخطوفة»؟",
       "a": "يوبابا",
@@ -333,51 +171,11 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/Spirited_Away",
       "verified": true,
-      "difficultyTarget": 0.4
+      "difficultyTarget": 0.6
     },
     {
-      "qid": "anime-600-908",
-      "p": 600,
-      "topic": "قلعة في السماء",
-      "q": "ما اسم الجزيرة الطائرة التي يسعى الأبطال للوصول إليها في «قلعة في السماء»؟",
-      "a": "لابوتا",
-      "alt": [
-        "Laputa"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Castle_in_the_Sky",
-      "verified": true,
-      "difficultyTarget": 0.4
-    },
-    {
-      "qid": "anime-800-901",
-      "p": 800,
-      "topic": "دورايمون",
-      "q": "ما اسم الأخت الروبوتية الصفراء للبطل في «دورايمون»؟",
-      "a": "دورامي",
-      "alt": [
-        "Dorami"
-      ],
-      "sourceUrl": "https://www.tv-asahi.co.jp/doraemon/character/",
-      "verified": true,
-      "difficultyTarget": 0.25
-    },
-    {
-      "qid": "anime-800-902",
-      "p": 800,
-      "topic": "بوكيمون",
-      "q": "في «بوكيمون»، في أي مدينة يواجه آش قائد الصالة بروك في بداية رحلته؟",
-      "a": "بيوتر",
-      "alt": [
-        "بيوتر سيتي",
-        "Pewter City"
-      ],
-      "sourceUrl": "https://www.pokemon.com/us/animation/seasons/1/episode-5-showdown-in-pewter-city",
-      "verified": true,
-      "difficultyTarget": 0.25
-    },
-    {
-      "qid": "anime-800-903",
-      "p": 800,
+      "qid": "anime-400-915",
+      "p": 400,
       "topic": "المحقق كونان",
       "q": "ما الاسم الحقيقي لآي هايبرا قبل تقلصها في «المحقق كونان»؟",
       "a": "شيهو ميانو",
@@ -387,11 +185,11 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Case_Closed_characters",
       "verified": true,
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.6
     },
     {
-      "qid": "anime-800-904",
-      "p": 800,
+      "qid": "anime-400-916",
+      "p": 400,
       "topic": "الكابتن ماجد",
       "q": "في «الكابتن ماجد»، ما الاسم الياباني للمنافس الملقب بالنمر، والمعروف ببسام في الدبلجة العربية؟",
       "a": "كوجيرو هيوغا",
@@ -402,11 +200,11 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/Captain_Tsubasa",
       "verified": true,
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.6
     },
     {
-      "qid": "anime-800-905",
-      "p": 800,
+      "qid": "anime-400-917",
+      "p": 400,
       "topic": "فولميتال ألكيميست",
       "q": "في «فولميتال ألكيميست»، من صديقة إدوارد التي تصلح أطرافه الآلية؟",
       "a": "وينري روكبيل",
@@ -416,11 +214,24 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/Fullmetal_Alchemist",
       "verified": true,
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.6
     },
     {
-      "qid": "anime-800-906",
-      "p": 800,
+      "qid": "anime-400-918",
+      "p": 400,
+      "topic": "قلعة في السماء",
+      "q": "ما اسم قائدة قراصنة الجو التي تساعد الطفلين في «قلعة في السماء»؟",
+      "a": "دولا",
+      "alt": [
+        "Dola"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Castle_in_the_Sky",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "anime-600-911",
+      "p": 600,
       "topic": "يوغي يو",
       "q": "في «يوغي يو»، أي قطعة ألفية يحملها بيغاسوس داخل محجر عينه؟",
       "a": "عين الألفية",
@@ -429,11 +240,11 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Yu-Gi-Oh!_characters",
       "verified": true,
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.4
     },
     {
-      "qid": "anime-800-907",
-      "p": 800,
+      "qid": "anime-600-912",
+      "p": 600,
       "topic": "المخطوفة",
       "q": "ما اسم الكائن الصامت الذي يقدم الذهب للعاملين في «المخطوفة»؟",
       "a": "بلا وجه",
@@ -444,24 +255,11 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/Spirited_Away",
       "verified": true,
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.4
     },
     {
-      "qid": "anime-800-908",
-      "p": 800,
-      "topic": "قلعة في السماء",
-      "q": "ما اسم قائدة قراصنة الجو التي تساعد الطفلين في «قلعة في السماء»؟",
-      "a": "دولا",
-      "alt": [
-        "Dola"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Castle_in_the_Sky",
-      "verified": true,
-      "difficultyTarget": 0.25
-    },
-    {
-      "qid": "anime-1000-901",
-      "p": 1000,
+      "qid": "anime-600-913",
+      "p": 600,
       "topic": "دورايمون",
       "q": "من سليل العائلة المستقبلي الذي أرسل الروبوت لتحسين حياة جدّه في «دورايمون»؟",
       "a": "سيواشي",
@@ -471,26 +269,11 @@
       ],
       "sourceUrl": "https://www.tv-asahi.co.jp/doraemon/character/",
       "verified": true,
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.4
     },
     {
-      "qid": "anime-1000-902",
-      "p": 1000,
-      "topic": "بوكيمون",
-      "q": "من العالم الذي يكون جدّ غاري، منافس آش في «بوكيمون»؟",
-      "a": "البروفيسور أوك",
-      "alt": [
-        "أوك",
-        "الأستاذ أوك",
-        "Professor Oak"
-      ],
-      "sourceUrl": "https://www.scholastic.ca/books/app/webroot/img/pdfs/9781338284003.pdf",
-      "verified": true,
-      "difficultyTarget": 0.15
-    },
-    {
-      "qid": "anime-1000-903",
-      "p": 1000,
+      "qid": "anime-600-914",
+      "p": 600,
       "topic": "المحقق كونان",
       "q": "ما الرمز المعروف للعقار الذي يقلص جسد البطل في «المحقق كونان»؟",
       "a": "APTX 4869",
@@ -501,11 +284,11 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Case_Closed_characters",
       "verified": true,
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.4
     },
     {
-      "qid": "anime-1000-904",
-      "p": 1000,
+      "qid": "anime-600-915",
+      "p": 600,
       "topic": "الكابتن ماجد",
       "q": "في «الكابتن ماجد»، ما الاسم الياباني للاعب العبقري الذي تحد مشكلة قلبه من مدة مشاركته؟",
       "a": "جون ميسوغي",
@@ -516,11 +299,11 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/Captain_Tsubasa",
       "verified": true,
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.4
     },
     {
-      "qid": "anime-1000-905",
-      "p": 1000,
+      "qid": "anime-600-916",
+      "p": 600,
       "topic": "فولميتال ألكيميست",
       "q": "بماذا يضحي إدوارد نهائيًا ليستعيد أخاه في ختام «فولميتال ألكيميست: براذرهود»؟",
       "a": "قدرته على الخيمياء",
@@ -531,11 +314,11 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/Fullmetal_Alchemist",
       "verified": true,
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.4
     },
     {
-      "qid": "anime-1000-906",
-      "p": 1000,
+      "qid": "anime-600-917",
+      "p": 600,
       "topic": "يوغي يو",
       "q": "في «يوغي يو»، ما الاسم الحقيقي لروح الفرعون التي تسكن يوغي؟",
       "a": "أتيم",
@@ -546,11 +329,11 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Yu-Gi-Oh!_characters",
       "verified": true,
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.4
     },
     {
-      "qid": "anime-1000-907",
-      "p": 1000,
+      "qid": "anime-600-918",
+      "p": 600,
       "topic": "المخطوفة",
       "q": "روح أي نهر تكون الهوية الحقيقية للفتى التنين في «المخطوفة»؟",
       "a": "نهر كوهاكو",
@@ -560,21 +343,216 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/Spirited_Away",
       "verified": true,
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.4
     },
     {
-      "qid": "anime-1000-908",
-      "p": 1000,
-      "topic": "قلعة في السماء",
-      "q": "في «قلعة في السماء»، ما اسم المنطاد العسكري الضخم الذي يدمر الروبوت في الحصن؟",
-      "a": "غولياث",
+      "topic": "دورايمون",
+      "q": "في «دورايمون»، من أخت جيان التي تطمح لرسم المانغا؟",
+      "a": "جايكو",
       "alt": [
-        "جولياث",
-        "Goliath"
+        "Jaiko"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Doraemon_characters",
+      "qid": "anime-800-911",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "دورايمون",
+      "q": "ما اسم والدة نوبيتا في «دورايمون»؟",
+      "a": "تاماكو نوبي",
+      "alt": [
+        "Tamako Nobi"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Doraemon_characters",
+      "qid": "anime-800-912",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "فولميتال ألكيميست",
+      "q": "في «فولميتال ألكيميست»، من أعادت كتابة أبحاث ماركو من ذاكرتها بعد احتراق المكتبة؟",
+      "a": "شيسكا",
+      "alt": [
+        "Sheska"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Fullmetal_Alchemist_characters",
+      "qid": "anime-800-913",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "فولميتال ألكيميست",
+      "q": "في «فولميتال ألكيميست»، من الضابط الذي ابتز بلدة يوسويل بالضرائب؟",
+      "a": "يوكي",
+      "alt": [
+        "Yoki"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Fullmetal_Alchemist_characters",
+      "qid": "anime-800-914",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "المخطوفة",
+      "q": "في «المخطوفة»، ما اسم العامل المسؤول عن غلاية الحمّام؟",
+      "a": "كاماجي",
+      "alt": [
+        "Kamaji"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Spirited_Away",
+      "qid": "anime-800-915",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "المخطوفة",
+      "q": "في «المخطوفة»، ما اسم أخت مديرة الحمّام التوأم؟",
+      "a": "زينيبا",
+      "alt": [
+        "Zeniba"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Spirited_Away",
+      "qid": "anime-800-916",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "قلعة في السماء",
+      "q": "في «قلعة في السماء»، من العميل الذي يريد استخدام المدينة للسيطرة على العالم؟",
+      "a": "موسكا",
+      "alt": [
+        "Muska"
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/Castle_in_the_Sky",
-      "verified": true,
-      "difficultyTarget": 0.15
+      "qid": "anime-800-917",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "قلعة في السماء",
+      "q": "في «قلعة في السماء»، من العجوز الذي يشرح سر البلورة داخل المنجم؟",
+      "a": "العم بوم",
+      "alt": [
+        "Uncle Pom"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Castle_in_the_Sky",
+      "qid": "anime-800-918",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "دورايمون",
+      "q": "في «دورايمون»، ما اسم كلب عائلة جيان؟",
+      "a": "موكو",
+      "alt": [
+        "Muku"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Doraemon_characters",
+      "qid": "anime-1000-911",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "دورايمون",
+      "q": "في «دورايمون»، ما اسم قريب سونيو الجامعي الخبير بالألعاب اللاسلكية؟",
+      "a": "سونيكيتشي هونيكاوا",
+      "alt": [
+        "Sunekichi Honekawa"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Doraemon_characters",
+      "qid": "anime-1000-912",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "فولميتال ألكيميست",
+      "q": "في «براذرهود»، روح من منعت برايد من الاستيلاء على جسد إدوارد؟",
+      "a": "سولف جيه كيمبلي",
+      "alt": [
+        "Kimblee",
+        "كيمبلي"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Fullmetal_Alchemist_characters",
+      "qid": "anime-1000-913",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "فولميتال ألكيميست",
+      "q": "في «فولميتال ألكيميست»، أي رقم حمله باري حارس المختبر الخامس؟",
+      "a": "66",
+      "alt": [
+        "ستة وستون"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Fullmetal_Alchemist_characters",
+      "qid": "anime-1000-914",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "المخطوفة",
+      "q": "في «المخطوفة»، ما اسم الطفل الذي تحول إلى فأر؟",
+      "a": "بوه",
+      "alt": [
+        "Boh"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Spirited_Away",
+      "qid": "anime-1000-915",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "المخطوفة",
+      "q": "في «المخطوفة»، ما الهدية الوقائية التي أخذتها تشيهيرو من الساحرة الطيبة؟",
+      "a": "ربطة شعر",
+      "alt": [
+        "شريط للشعر"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Spirited_Away",
+      "qid": "anime-1000-916",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "قلعة في السماء",
+      "q": "في «قلعة في السماء»، ما اسم الحصن الذي احتجز فيه الجيش الطفلين؟",
+      "a": "حصن تيتوس",
+      "alt": [
+        "Titus Fort"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Castle_in_the_Sky",
+      "qid": "anime-1000-917",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "قلعة في السماء",
+      "q": "في «قلعة في السماء»، ما اسم المعدن المضيء الذي صُنعت منه قلادة شيتا؟",
+      "a": "إيثيريوم",
+      "alt": [
+        "Aetherium"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Castle_in_the_Sky",
+      "qid": "anime-1000-918",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
     }
   ]
 }

@@ -21,12 +21,13 @@ const batch = JSON.parse(readFileSync(process.argv[2], 'utf8'));
 const status = JSON.parse(readFileSync(path.join(ROOT, 'src/data/bank-status.json'), 'utf8'));
 const tierCount = status.tierCount ?? status.tierMin ?? 8;
 const topicCap = Math.max(1, Math.floor(tierCount * 0.25));
-const serialStart = status.qidRange?.start ?? 1;
-const serialEnd = status.qidRange?.end ?? 999;
 const retiredQids = await readRetiredQids(ROOT);
 
 for (const pack of batch.packs) {
   if (!Object.hasOwn(status.categories, pack.id)) throw new Error(`فئة غير معتمدة: ${pack.id}`);
+  const qidRange = status.categories[pack.id].qidRange ?? status.qidRange;
+  const serialStart = qidRange?.start ?? 1;
+  const serialEnd = qidRange?.end ?? 999;
   if (existsSync(path.join(CATS, `${pack.id}.json`))) throw new Error(`الحزمة موجودة: استعمل append-pack لاستكمال ${pack.id}`);
   const verdicts = new Map((pack.checks || []).map((v) => [v.i, v]));
   const kept = []; const drops = [];

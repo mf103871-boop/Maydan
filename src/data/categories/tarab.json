@@ -5,118 +5,16 @@
   "qs": [
     {
       "p": 200,
-      "topic": "نجوم مصر",
-      "q": "من المطربة الملقبة بكوكب الشرق؟",
-      "a": "أم كلثوم",
-      "sourceUrl": "https://www.bibalex.org/ar/news/details?documentid=45460&page=11&related=center_31&searching=1",
-      "alt": [
-        "ام كلثوم"
-      ],
-      "qid": "tarab-200-901",
-      "difficultyTarget": 0.8,
-      "verified": true
-    },
-    {
-      "p": 200,
-      "topic": "نجوم مصر",
-      "q": "من المطرب المصري الملقب بالعندليب الأسمر؟",
-      "a": "عبد الحليم حافظ",
-      "sourceUrl": "https://sis.gov.eg/ar/مصر/المجتمع/أعلام-وشخصيات-مصرية/عبد-الحليم-حافظ-1/",
-      "alt": [
-        "عبدالحليم حافظ"
-      ],
-      "qid": "tarab-200-902",
-      "difficultyTarget": 0.8,
-      "verified": true
-    },
-    {
-      "p": 200,
-      "topic": "نجوم الشام",
-      "q": "من المطربة اللبنانية الملقبة بجارة القمر؟",
-      "a": "فيروز",
-      "sourceUrl": "https://www.gocp.gov.eg/articles.aspx?ArticleID=183980",
-      "alt": [
-        "Fairuz"
-      ],
-      "qid": "tarab-200-903",
-      "difficultyTarget": 0.8,
-      "verified": true
-    },
-    {
-      "p": 200,
-      "topic": "نجوم الشام",
-      "q": "من المطرب صاحب «الربيع» الذي اشتهر بلقب ملك العود؟",
-      "a": "فريد الأطرش",
-      "sourceUrl": "https://www.maqamworld.com/en/instr/oud.php",
-      "alt": [
-        "فريد الاطرش"
-      ],
-      "qid": "tarab-200-904",
-      "difficultyTarget": 0.8,
-      "verified": true
-    },
-    {
-      "p": 200,
-      "topic": "آلات وعازفون",
-      "q": "ما الآلة الوترية ذات الجسم الكمثري والرقبة القصيرة التي تُعزف بريشة؟",
-      "a": "العود",
-      "sourceUrl": "https://www.maqamworld.com/en/instr/oud.php",
-      "alt": [
-        "عود"
-      ],
-      "qid": "tarab-200-905",
-      "difficultyTarget": 0.8,
-      "verified": true
-    },
-    {
-      "p": 200,
-      "topic": "آلات وعازفون",
-      "q": "ما آلة النفخ المصنوعة من القصب والمستخدمة في التخت الشرقي؟",
-      "a": "الناي",
-      "sourceUrl": "https://www.maqamworld.com/en/instr/nay.php",
-      "alt": [
-        "ناي"
-      ],
-      "qid": "tarab-200-906",
-      "difficultyTarget": 0.8,
-      "verified": true
-    },
-    {
-      "p": 200,
-      "topic": "قوالب موسيقية",
-      "q": "ماذا يسمى العمل الغنائي الذي يشترك في أدائه مطربان؟",
-      "a": "دويتو",
-      "sourceUrl": "https://www.maqamworld.com/en/form/vocal_comp.php",
-      "alt": [
-        "ثنائي غنائي",
-        "ديو"
-      ],
-      "qid": "tarab-200-907",
-      "difficultyTarget": 0.8,
-      "verified": true
-    },
-    {
-      "p": 200,
-      "topic": "محطات الطرب",
-      "q": "إلى أي مدينة سورية تُنسب القدود؟",
-      "a": "حلب",
-      "sourceUrl": "https://www.maqamworld.com/en/form/vocal_comp.php",
-      "qid": "tarab-200-908",
-      "difficultyTarget": 0.8,
-      "verified": true
-    },
-    {
-      "p": 400,
       "topic": "التلحين",
       "q": "من وضع لحن «ألف ليلة وليلة»؟",
       "a": "بليغ حمدي",
       "sourceUrl": "https://www.maqamworld.com/en/form/instr_comp.php",
-      "qid": "tarab-400-901",
-      "difficultyTarget": 0.6,
+      "qid": "tarab-200-911",
+      "difficultyTarget": 0.8,
       "verified": true
     },
     {
-      "p": 400,
+      "p": 200,
       "topic": "التلحين",
       "q": "من لحّن قصيدة «الأطلال»؟",
       "a": "رياض السنباطي",
@@ -124,27 +22,90 @@
       "alt": [
         "رياض السنباطى"
       ],
-      "qid": "tarab-400-902",
-      "difficultyTarget": 0.6,
+      "qid": "tarab-200-912",
+      "difficultyTarget": 0.8,
+      "verified": true
+    },
+    {
+      "p": 200,
+      "topic": "نجوم مصر",
+      "q": "من المطربة المصرية صاحبة أغنية «حيرانة ليه»؟",
+      "a": "ليلى مراد",
+      "sourceUrl": "https://www.maqamworld.com/en/form/vocal_comp.php",
+      "qid": "tarab-200-913",
+      "difficultyTarget": 0.8,
+      "verified": true
+    },
+    {
+      "p": 200,
+      "topic": "نجوم الشام",
+      "q": "من المطربة اللبنانية صاحبة أغنية «يا دلع دلع»؟",
+      "a": "صباح",
+      "sourceUrl": "https://www.maqamworld.com/en/form/vocal_comp.php",
+      "qid": "tarab-200-914",
+      "difficultyTarget": 0.8,
+      "verified": true
+    },
+    {
+      "p": 200,
+      "topic": "شعر الأغنية",
+      "q": "من الشاعر صاحب قصيدة «الأطلال»؟",
+      "a": "إبراهيم ناجي",
+      "sourceUrl": "https://www.bibalex.org/libraries/Presentation/Static/Om_Koulthoum_ara.pdf",
+      "alt": [
+        "ابراهيم ناجي"
+      ],
+      "qid": "tarab-200-915",
+      "difficultyTarget": 0.8,
+      "verified": true
+    },
+    {
+      "p": 200,
+      "topic": "محطات الطرب",
+      "q": "في أي موعد شهري اشتهرت كوكب الشرق بتقديم حفلتها الإذاعية؟",
+      "a": "أول خميس",
+      "sourceUrl": "https://streetstory.gov.eg/اسماء-الشوارع/أم-كلثوم/",
+      "alt": [
+        "الخميس الأول من الشهر",
+        "أول خميس من كل شهر"
+      ],
+      "qid": "tarab-200-916",
+      "difficultyTarget": 0.8,
+      "verified": true
+    },
+    {
+      "topic": "آلات وعازفون",
+      "q": "من أي مادة حيوانية كان يُصنع جلد الرق تقليديًا قبل استخدام البلاستيك؟",
+      "a": "جلد السمك",
+      "sourceUrl": "https://www.maqamworld.com/en/instr/riqq.php",
+      "verified": true,
+      "p": 200,
+      "qid": "tarab-200-917",
+      "difficultyTarget": 0.8
+    },
+    {
+      "p": 200,
+      "topic": "قوالب موسيقية",
+      "q": "ماذا يسمى الارتجال الغنائي المنفرد المبني على أبيات بالعامية؟",
+      "a": "الموال",
+      "sourceUrl": "https://www.maqamworld.com/en/form/improv.php",
+      "alt": [
+        "موال"
+      ],
+      "qid": "tarab-200-918",
+      "difficultyTarget": 0.8,
       "verified": true
     },
     {
       "p": 400,
       "topic": "نجوم مصر",
-      "q": "من المطربة المصرية صاحبة أغنية «حيرانة ليه»؟",
-      "a": "ليلى مراد",
-      "sourceUrl": "https://www.maqamworld.com/en/form/vocal_comp.php",
-      "qid": "tarab-400-903",
-      "difficultyTarget": 0.6,
-      "verified": true
-    },
-    {
-      "p": 400,
-      "topic": "نجوم الشام",
-      "q": "من المطربة اللبنانية صاحبة أغنية «يا دلع دلع»؟",
-      "a": "صباح",
-      "sourceUrl": "https://www.maqamworld.com/en/form/vocal_comp.php",
-      "qid": "tarab-400-904",
+      "q": "من المطرب الذي اشتهر بتسجيل «ليه يا بنفسج»؟",
+      "a": "صالح عبد الحي",
+      "sourceUrl": "https://www.maqamworld.com/en/form/improv.php",
+      "alt": [
+        "صالح عبدالحي"
+      ],
+      "qid": "tarab-400-911",
       "difficultyTarget": 0.6,
       "verified": true
     },
@@ -157,78 +118,12 @@
       "alt": [
         "جبران"
       ],
-      "qid": "tarab-400-905",
+      "qid": "tarab-400-912",
       "difficultyTarget": 0.6,
       "verified": true
     },
     {
       "p": 400,
-      "topic": "محطات الطرب",
-      "q": "في أي موعد شهري اشتهرت كوكب الشرق بتقديم حفلتها الإذاعية؟",
-      "a": "أول خميس",
-      "sourceUrl": "https://streetstory.gov.eg/اسماء-الشوارع/أم-كلثوم/",
-      "alt": [
-        "الخميس الأول من الشهر",
-        "أول خميس من كل شهر"
-      ],
-      "qid": "tarab-400-906",
-      "difficultyTarget": 0.6,
-      "verified": true
-    },
-    {
-      "p": 400,
-      "topic": "آلات وعازفون",
-      "q": "ما الآلة ذات الصندوق شبه المنحرف التي ينقر العازف أوتارها بريشتين مثبتتين بسبابتيه؟",
-      "a": "القانون",
-      "sourceUrl": "https://www.maqamworld.com/en/instr/qanun.php",
-      "alt": [
-        "آلة القانون"
-      ],
-      "qid": "tarab-400-907",
-      "difficultyTarget": 0.6,
-      "verified": true
-    },
-    {
-      "p": 400,
-      "topic": "قوالب موسيقية",
-      "q": "ماذا يسمى الارتجال الغنائي المنفرد المبني على أبيات بالعامية؟",
-      "a": "الموال",
-      "sourceUrl": "https://www.maqamworld.com/en/form/improv.php",
-      "alt": [
-        "موال"
-      ],
-      "qid": "tarab-400-908",
-      "difficultyTarget": 0.6,
-      "verified": true
-    },
-    {
-      "p": 600,
-      "topic": "نجوم مصر",
-      "q": "من المطرب الذي اشتهر بتسجيل «ليه يا بنفسج»؟",
-      "a": "صالح عبد الحي",
-      "sourceUrl": "https://www.maqamworld.com/en/form/improv.php",
-      "alt": [
-        "صالح عبدالحي"
-      ],
-      "qid": "tarab-600-901",
-      "difficultyTarget": 0.4,
-      "verified": true
-    },
-    {
-      "p": 600,
-      "topic": "شعر الأغنية",
-      "q": "من الشاعر صاحب قصيدة «الأطلال»؟",
-      "a": "إبراهيم ناجي",
-      "sourceUrl": "https://www.bibalex.org/libraries/Presentation/Static/Om_Koulthoum_ara.pdf",
-      "alt": [
-        "ابراهيم ناجي"
-      ],
-      "qid": "tarab-600-902",
-      "difficultyTarget": 0.4,
-      "verified": true
-    },
-    {
-      "p": 600,
       "topic": "التلحين",
       "q": "من وضع لحن «قارئة الفنجان»؟",
       "a": "محمد الموجي",
@@ -236,12 +131,12 @@
       "alt": [
         "محمد الموجى"
       ],
-      "qid": "tarab-600-903",
-      "difficultyTarget": 0.4,
+      "qid": "tarab-400-913",
+      "difficultyTarget": 0.6,
       "verified": true
     },
     {
-      "p": 600,
+      "p": 400,
       "topic": "التلحين",
       "q": "من الملحن اللبناني صاحب لحن «ورقو الأصفر»؟",
       "a": "فيلمون وهبي",
@@ -249,12 +144,12 @@
       "alt": [
         "فليمون وهبي"
       ],
-      "qid": "tarab-600-904",
-      "difficultyTarget": 0.4,
+      "qid": "tarab-400-914",
+      "difficultyTarget": 0.6,
       "verified": true
     },
     {
-      "p": 600,
+      "p": 400,
       "topic": "قوالب موسيقية",
       "q": "ماذا يسمى الارتجال الغنائي على عبارة «يا ليل يا عين»؟",
       "a": "الليالي",
@@ -262,12 +157,12 @@
       "alt": [
         "ليالي"
       ],
-      "qid": "tarab-600-905",
-      "difficultyTarget": 0.4,
+      "qid": "tarab-400-915",
+      "difficultyTarget": 0.6,
       "verified": true
     },
     {
-      "p": 600,
+      "p": 400,
       "topic": "آلات وعازفون",
       "q": "ما الآلة الشامية ذات الرقبة الطويلة والدساتين المتحركة والأوتار المعدنية؟",
       "a": "البزق",
@@ -275,12 +170,12 @@
       "alt": [
         "بزق"
       ],
-      "qid": "tarab-600-906",
-      "difficultyTarget": 0.4,
+      "qid": "tarab-400-916",
+      "difficultyTarget": 0.6,
       "verified": true
     },
     {
-      "p": 600,
+      "p": 400,
       "topic": "محطات الطرب",
       "q": "ما القاعة الباريسية التي غنّت فيها جارة القمر خلال جولاتها الأوروبية؟",
       "a": "الأولمبيا",
@@ -289,12 +184,12 @@
         "مسرح الأولمبيا",
         "أولمبيا"
       ],
-      "qid": "tarab-600-907",
-      "difficultyTarget": 0.4,
+      "qid": "tarab-400-917",
+      "difficultyTarget": 0.6,
       "verified": true
     },
     {
-      "p": 600,
+      "p": 400,
       "topic": "نجوم الشام",
       "q": "ما الاسم الأصلي لصاحبة لقب جارة القمر؟",
       "a": "نهاد حداد",
@@ -302,12 +197,12 @@
       "alt": [
         "نهاد وديع حداد"
       ],
-      "qid": "tarab-600-908",
-      "difficultyTarget": 0.4,
+      "qid": "tarab-400-918",
+      "difficultyTarget": 0.6,
       "verified": true
     },
     {
-      "p": 800,
+      "p": 600,
       "topic": "التلحين",
       "q": "من وضع لحن المونولوج الغنائي «يا طيور»؟",
       "a": "محمد القصبجي",
@@ -315,12 +210,12 @@
       "alt": [
         "محمد القصبجى"
       ],
-      "qid": "tarab-800-901",
-      "difficultyTarget": 0.25,
+      "qid": "tarab-600-911",
+      "difficultyTarget": 0.4,
       "verified": true
     },
     {
-      "p": 800,
+      "p": 600,
       "topic": "التلحين",
       "q": "من لحّن «يا مسهرني» لكوكب الشرق؟",
       "a": "سيد مكاوي",
@@ -328,12 +223,12 @@
       "alt": [
         "سيد مكاوى"
       ],
-      "qid": "tarab-800-902",
-      "difficultyTarget": 0.25,
+      "qid": "tarab-600-912",
+      "difficultyTarget": 0.4,
       "verified": true
     },
     {
-      "p": 800,
+      "p": 600,
       "topic": "قوالب موسيقية",
       "q": "ما القالب المصري القديم الذي يتبادل فيه المطرب والبطانة غناء الآهات؟",
       "a": "الدور",
@@ -341,25 +236,25 @@
       "alt": [
         "دور"
       ],
-      "qid": "tarab-800-903",
-      "difficultyTarget": 0.25,
+      "qid": "tarab-600-913",
+      "difficultyTarget": 0.4,
       "verified": true
     },
     {
-      "p": 800,
+      "p": 600,
       "topic": "آلات وعازفون",
-      "q": "ما آلة الإيقاع الصغيرة ذات الجلد والصنوج التي تضبط إيقاع التخت التقليدي؟",
+      "q": "ما آلة الإيقاع الصغيرة ذات الجلد والصنوج المستخدمة في الفرقة الشرقية التقليدية؟",
       "a": "الرق",
       "sourceUrl": "https://www.maqamworld.com/en/instr/riqq.php",
       "alt": [
         "رق"
       ],
-      "qid": "tarab-800-904",
-      "difficultyTarget": 0.25,
+      "qid": "tarab-600-914",
+      "difficultyTarget": 0.4,
       "verified": true
     },
     {
-      "p": 800,
+      "p": 600,
       "topic": "شعر الأغنية",
       "q": "من ترجم رباعيات الخيام إلى العربية في النسخة التي غنّتها كوكب الشرق؟",
       "a": "أحمد رامي",
@@ -367,12 +262,12 @@
       "alt": [
         "احمد رامي"
       ],
-      "qid": "tarab-800-905",
-      "difficultyTarget": 0.25,
+      "qid": "tarab-600-915",
+      "difficultyTarget": 0.4,
       "verified": true
     },
     {
-      "p": 800,
+      "p": 600,
       "topic": "نجوم الشام",
       "q": "من المطرب اللبناني الذي شارك جارة القمر مسرحيات «بياع الخواتم» و«ميس الريم» و«بترا»؟",
       "a": "نصري شمس الدين",
@@ -380,12 +275,12 @@
       "alt": [
         "نصري شمسدين"
       ],
-      "qid": "tarab-800-906",
-      "difficultyTarget": 0.25,
+      "qid": "tarab-600-916",
+      "difficultyTarget": 0.4,
       "verified": true
     },
     {
-      "p": 800,
+      "p": 600,
       "topic": "محطات الطرب",
       "q": "ماذا تسمى الفرقة الشرقية الصغيرة التقليدية التي تجمع الآلات اللحنية مع ضابط الإيقاع؟",
       "a": "التخت",
@@ -393,12 +288,12 @@
       "alt": [
         "التخت الشرقي"
       ],
-      "qid": "tarab-800-907",
-      "difficultyTarget": 0.25,
+      "qid": "tarab-600-917",
+      "difficultyTarget": 0.4,
       "verified": true
     },
     {
-      "p": 800,
+      "p": 600,
       "topic": "محطات الطرب",
       "q": "في أي مدينة لبنانية غنّت جارة القمر عام 1957 قرب أعمدة معبد جوبيتر؟",
       "a": "بعلبك",
@@ -406,22 +301,22 @@
       "alt": [
         "بعلبك اللبنانية"
       ],
-      "qid": "tarab-800-908",
-      "difficultyTarget": 0.25,
+      "qid": "tarab-600-918",
+      "difficultyTarget": 0.4,
       "verified": true
     },
     {
-      "p": 1000,
+      "p": 800,
       "topic": "آلات وعازفون",
       "q": "من عازف الأكورديون المصري الذي عزف مقدمة «يا مسهرني»؟",
       "a": "فاروق سلامة",
       "sourceUrl": "https://www.maqamworld.com/en/instr/accordion.php",
-      "qid": "tarab-1000-901",
-      "difficultyTarget": 0.15,
+      "qid": "tarab-800-911",
+      "difficultyTarget": 0.25,
       "verified": true
     },
     {
-      "p": 1000,
+      "p": 800,
       "topic": "آلات وعازفون",
       "q": "من عازف القانون الذي رافق كوكب الشرق عقودًا؟",
       "a": "محمد عبده صالح",
@@ -429,12 +324,12 @@
       "alt": [
         "محمد عبدو صالح"
       ],
-      "qid": "tarab-1000-902",
-      "difficultyTarget": 0.15,
+      "qid": "tarab-800-912",
+      "difficultyTarget": 0.25,
       "verified": true
     },
     {
-      "p": 1000,
+      "p": 800,
       "topic": "قوالب موسيقية",
       "q": "ماذا تسمى اللازمة التي تعود بين خانات السماعي والبشرف؟",
       "a": "التسليم",
@@ -442,12 +337,12 @@
       "alt": [
         "تسليم"
       ],
-      "qid": "tarab-1000-903",
-      "difficultyTarget": 0.15,
+      "qid": "tarab-800-913",
+      "difficultyTarget": 0.25,
       "verified": true
     },
     {
-      "p": 1000,
+      "p": 800,
       "topic": "قوالب موسيقية",
       "q": "ما القالب الآلي الذي تتبادل فيه الفرقة لازمة جماعية مع ارتجال كل عازف؟",
       "a": "التحميلة",
@@ -455,12 +350,12 @@
       "alt": [
         "تحميلة"
       ],
-      "qid": "tarab-1000-904",
-      "difficultyTarget": 0.15,
+      "qid": "tarab-800-914",
+      "difficultyTarget": 0.25,
       "verified": true
     },
     {
-      "p": 1000,
+      "p": 800,
       "topic": "التلحين",
       "q": "من المؤلف المصري لسماعي بياتي الشهير الذي يحمل اسم عائلته؟",
       "a": "إبراهيم العريان",
@@ -468,22 +363,22 @@
       "alt": [
         "ابراهيم العريان"
       ],
-      "qid": "tarab-1000-905",
-      "difficultyTarget": 0.15,
+      "qid": "tarab-800-915",
+      "difficultyTarget": 0.25,
       "verified": true
     },
     {
-      "p": 1000,
+      "p": 800,
       "topic": "التلحين",
       "q": "من الموسيقار الذي اختار لجارة القمر اسمها الفني أثناء عملها في الإذاعة؟",
       "a": "حليم الرومي",
       "sourceUrl": "https://www.aub.edu.lb/doctorates/recipients/Pages/fairuz-profile.aspx",
-      "qid": "tarab-1000-906",
-      "difficultyTarget": 0.15,
+      "qid": "tarab-800-916",
+      "difficultyTarget": 0.25,
       "verified": true
     },
     {
-      "p": 1000,
+      "p": 800,
       "topic": "شعر الأغنية",
       "q": "من الشاعر السوداني صاحب قصيدة «أغدًا ألقاك»؟",
       "a": "الهادي آدم",
@@ -492,12 +387,12 @@
         "الهادي ادَم",
         "الهادي آدم الطيب"
       ],
-      "qid": "tarab-1000-907",
-      "difficultyTarget": 0.15,
+      "qid": "tarab-800-917",
+      "difficultyTarget": 0.25,
       "verified": true
     },
     {
-      "p": 1000,
+      "p": 800,
       "topic": "نجوم الشام",
       "q": "من الموسيقي السوري الذي اشتهر بلقب أمير البزق؟",
       "a": "محمد عبد الكريم",
@@ -505,9 +400,93 @@
       "alt": [
         "محمد عبدالكريم"
       ],
-      "qid": "tarab-1000-908",
-      "difficultyTarget": 0.15,
+      "qid": "tarab-800-918",
+      "difficultyTarget": 0.25,
       "verified": true
+    },
+    {
+      "topic": "نجوم الشام",
+      "q": "من المطربة التي تفتتح تسجيل دور «كادني الهوى» بليالي على مقام نهاوند؟",
+      "a": "ماري جبران",
+      "sourceUrl": "https://www.maqamworld.com/en/form/improv.php",
+      "verified": true,
+      "p": 1000,
+      "qid": "tarab-1000-911",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "نجوم الشام",
+      "q": "من المطربة اللبنانية التي سجّلت دور «إنت فاهم» على مقام هزام؟",
+      "a": "سعاد محمد",
+      "sourceUrl": "https://www.maqamworld.com/en/form/vocal_comp.php",
+      "verified": true,
+      "p": 1000,
+      "qid": "tarab-1000-912",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "التلحين",
+      "q": "من لحّن دور «ضيعت مستقبل حياتي» الذي سجّله صباح فخري؟",
+      "a": "سيد درويش",
+      "sourceUrl": "https://www.maqamworld.com/en/form/vocal_comp.php",
+      "verified": true,
+      "p": 1000,
+      "qid": "tarab-1000-913",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "التلحين",
+      "q": "من الملحن الحلبي صاحب موشحات وصلة نهاوند التي سجلها حسن الحفار؟",
+      "a": "عمر البطش",
+      "sourceUrl": "https://www.maqamworld.com/en/form/vocal_comp.php",
+      "verified": true,
+      "p": 1000,
+      "qid": "tarab-1000-914",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "آلات وعازفون",
+      "q": "من الموسيقي اللبناني الكردي الذي سجل تقاسيم راست للتلفزيون اللبناني؟",
+      "a": "زورو يوسف",
+      "sourceUrl": "https://www.maqamworld.com/en/instr/buzuq.php",
+      "verified": true,
+      "p": 1000,
+      "qid": "tarab-1000-915",
+      "difficultyTarget": 0.15,
+      "alt": [
+        "Zoro Yussef",
+        "زورو سعيد يوسف"
+      ]
+    },
+    {
+      "topic": "قوالب موسيقية",
+      "q": "ما المقام الذي يقدمه الدولاب في افتتاح تسجيل دور «إنت فاهم»؟",
+      "a": "راحة الأرواح",
+      "sourceUrl": "https://www.maqamworld.com/en/form/instr_comp.php",
+      "verified": true,
+      "p": 1000,
+      "qid": "tarab-1000-916",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "قوالب موسيقية",
+      "q": "ما اسم إعادة المطرب مقطع الموشح مع ارتجال وتنويع لحني قبل عودة البطانة؟",
+      "a": "التفريد",
+      "sourceUrl": "https://www.maqamworld.com/en/form/vocal_comp.php",
+      "verified": true,
+      "p": 1000,
+      "qid": "tarab-1000-917",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "محطات الطرب",
+      "q": "من الملحن الذي اكتشف صوت جارة القمر في المدرسة وضمها إلى كورال الإذاعة؟",
+      "a": "محمد فليفل",
+      "sourceUrl": "https://www.aub.edu.lb/doctorates/recipients/Pages/fairuz-profile.aspx",
+      "verified": true,
+      "p": 1000,
+      "qid": "tarab-1000-918",
+      "difficultyTarget": 0.15
     }
   ]
 }

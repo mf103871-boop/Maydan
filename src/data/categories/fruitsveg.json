@@ -5,211 +5,90 @@
   "qs": [
     {
       "p": 200,
-      "q": "ما الفاكهة الاستوائية الصفراء التي تنمو في عناقيد وتُقشَّر باليد؟",
-      "a": "الموز",
-      "qid": "fruitsveg-200-901",
-      "topic": "فواكه استوائية",
-      "verified": true,
-      "alt": [
-        "موز"
-      ],
-      "difficultyTarget": 0.8,
-      "sourceUrl": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A797527-1/general-information"
-    },
-    {
-      "p": 200,
-      "q": "ما الفاكهة الصيفية الكبيرة التي تشتهر بقشرة خضراء ولب أحمر وبذور سوداء؟",
-      "a": "البطيخ",
-      "qid": "fruitsveg-200-902",
-      "topic": "فواكه شائعة",
-      "verified": true,
-      "alt": [
-        "البطيخ الأحمر",
-        "الرقي",
-        "الدلاع",
-        "الجح"
-      ],
-      "difficultyTarget": 0.8,
-      "sourceUrl": "https://extension.umd.edu/sites/extension.umd.edu/files/2021-03/Watermelons.pdf"
-    },
-    {
-      "p": 200,
-      "q": "ما الخضار الورقي الذي يحب البحار الكرتوني باباي أكله؟",
-      "a": "السبانخ",
-      "qid": "fruitsveg-200-903",
-      "topic": "خضراوات ورقية",
-      "verified": true,
-      "alt": [
-        "سبانخ"
-      ],
-      "difficultyTarget": 0.8,
-      "sourceUrl": "https://popeye.com/"
-    },
-    {
-      "p": 200,
-      "q": "ما الخضار الجذري الطويل المعروف بلونه البرتقالي؟",
-      "a": "الجزر",
-      "qid": "fruitsveg-200-904",
-      "topic": "جذور ودرنات",
-      "verified": true,
-      "difficultyTarget": 0.8,
-      "sourceUrl": "https://extension.umn.edu/garden-and-home/yard-and-garden/gardening-in-minnesota/growing-carrots-and-parsnips"
-    },
-    {
-      "p": 200,
-      "q": "ما الحبة التي تُسخَّن حتى تفرقع ويُصنع منها الفشار؟",
-      "a": "الذرة",
-      "qid": "fruitsveg-200-905",
-      "topic": "بذور وحبوب",
-      "verified": true,
-      "alt": [
-        "ذرة الفشار"
-      ],
-      "difficultyTarget": 0.8,
-      "sourceUrl": "https://yardandgarden.extension.iastate.edu/how-to/growing-and-harvesting-popcorn-home-garden"
-    },
-    {
-      "p": 200,
-      "q": "في أي فصل تنضج ثمار البرتقال أبو سرة عادة في كاليفورنيا؟",
-      "a": "الشتاء",
-      "qid": "fruitsveg-200-906",
-      "topic": "ألوان ومواسم",
-      "verified": true,
-      "alt": [
-        "شتاء",
-        "فصل الشتاء"
-      ],
-      "difficultyTarget": 0.8,
-      "sourceUrl": "https://ipm.ucanr.edu/home-and-landscape/harvesting-and-storing-citrus/"
-    },
-    {
-      "p": 200,
-      "q": "ما الثمرة التي تُخلَّل وتُعصر للحصول على زيت تشتهر به بلاد الشام والمغرب؟",
-      "a": "الزيتون",
-      "qid": "fruitsveg-200-907",
-      "topic": "أصول ومناشئ",
-      "verified": true,
-      "alt": [
-        "زيتون"
-      ],
-      "difficultyTarget": 0.8,
-      "sourceUrl": "https://www.internationaloliveoil.org/olive-world/olive-oil/"
-    },
-    {
-      "p": 200,
-      "q": "أي فيتامين تشتهر ثمار الحمضيات بغناها به؟",
-      "a": "فيتامين سي",
-      "qid": "fruitsveg-200-908",
-      "topic": "فوائد ومكوّنات",
-      "verified": true,
-      "alt": [
-        "فيتامين C",
-        "الفيتامين سي"
-      ],
-      "difficultyTarget": 0.8,
-      "sourceUrl": "https://ods.od.nih.gov/factsheets/VitaminC-HealthProfessional/"
-    },
-    {
-      "p": 400,
       "q": "ما الفاكهة الاستوائية الطويلة ذات اللبّ البرتقالي والبذور السوداء الصغيرة في وسطها؟",
       "a": "البابايا",
-      "qid": "fruitsveg-400-901",
+      "qid": "fruitsveg-200-911",
       "topic": "فواكه استوائية",
       "verified": true,
       "alt": [
         "بابايا",
         "الباباظ"
       ],
-      "difficultyTarget": 0.6,
+      "difficultyTarget": 0.8,
       "sourceUrl": "https://edis.ifas.ufl.edu/mg373"
     },
     {
-      "p": 400,
+      "p": 200,
       "q": "ما الثمرة التي تنمو أزهارها الصغيرة داخل تجويفها، وتؤكل طازجة أو مجففة؟",
       "a": "التين",
-      "qid": "fruitsveg-400-902",
+      "qid": "fruitsveg-200-912",
       "topic": "فواكه شائعة",
       "verified": true,
       "alt": [
         "تين"
       ],
-      "difficultyTarget": 0.6,
+      "difficultyTarget": 0.8,
       "sourceUrl": "https://www.kew.org/plants/fig"
     },
     {
-      "p": 400,
+      "p": 200,
       "q": "ما اسم الخضار ذي السيقان الخضراء المقرمشة والأوراق العطرية الذي يُضاف إلى السلطة والشوربة؟",
       "a": "الكرفس",
-      "qid": "fruitsveg-400-903",
+      "qid": "fruitsveg-200-913",
       "topic": "خضراوات ورقية",
       "verified": true,
       "alt": [
         "الكرفس الأخضر",
         "السلري"
       ],
-      "difficultyTarget": 0.6,
+      "difficultyTarget": 0.8,
       "sourceUrl": "https://extension.usu.edu/nutrition/research/celery"
     },
     {
-      "p": 400,
+      "p": 200,
       "q": "ما اسم المعجون الياباني الأخضر الحار الذي يقدم مع السوشي؟",
       "a": "الوسابي",
-      "qid": "fruitsveg-400-904",
+      "qid": "fruitsveg-200-914",
       "topic": "جذور ودرنات",
       "verified": true,
       "alt": [
         "الواسابي",
         "الوازابي"
       ],
-      "difficultyTarget": 0.6,
+      "difficultyTarget": 0.8,
       "sourceUrl": "https://www.japan.travel/en/gastronomy/article-birthplace-of-tatamiishi-wasabi/"
     },
     {
-      "p": 400,
+      "p": 200,
       "q": "ما البقولية التي يُصنع منها التوفو وحليب نباتي شهير؟",
       "a": "فول الصويا",
-      "qid": "fruitsveg-400-905",
+      "qid": "fruitsveg-200-915",
       "topic": "بذور وحبوب",
       "verified": true,
       "alt": [
         "الصويا"
       ],
-      "difficultyTarget": 0.6,
+      "difficultyTarget": 0.8,
       "sourceUrl": "https://extension.umn.edu/about/our-stories/news/source-magazine/from-field-to-tofu"
     },
     {
-      "p": 400,
-      "q": "ما الثمرة الأمريكية الأصل التي أصبحت مكونًا أساسيًا في صلصات المطبخ الإيطالي؟",
-      "a": "الطماطم",
-      "qid": "fruitsveg-400-906",
-      "topic": "أصول ومناشئ",
-      "verified": true,
-      "alt": [
-        "البندورة",
-        "طماطم",
-        "بندورة"
-      ],
-      "difficultyTarget": 0.6,
-      "sourceUrl": "https://www.kew.org/plants/tomato"
-    },
-    {
-      "p": 400,
+      "p": 200,
       "q": "ما الحمض المعروف أيضًا بحمض الليمون والموجود في ثمار الحمضيات؟",
       "a": "حمض الستريك",
-      "qid": "fruitsveg-400-907",
+      "qid": "fruitsveg-200-916",
       "topic": "فوائد ومكوّنات",
       "verified": true,
       "alt": [
         "حمض الليمون"
       ],
-      "difficultyTarget": 0.6,
+      "difficultyTarget": 0.8,
       "sourceUrl": "https://pubs.acs.org/doi/10.1021/ie50138a027"
     },
     {
-      "p": 400,
+      "p": 200,
       "q": "ما اسم الفاكهة ذات القشرة الوردية الحرشفية واللبّ الأبيض المنقّط بنقاط سوداء؟",
       "a": "فاكهة التنين",
-      "qid": "fruitsveg-400-908",
+      "qid": "fruitsveg-200-917",
       "topic": "فواكه استوائية",
       "verified": true,
       "alt": [
@@ -217,196 +96,196 @@
         "البتاهايا",
         "الدراغون فروت"
       ],
-      "difficultyTarget": 0.6,
+      "difficultyTarget": 0.8,
       "sourceUrl": "https://ask.ifas.ufl.edu/publication/HS303"
     },
     {
-      "p": 600,
-      "q": "ما اسم الفاكهة الحمراء الصغيرة التي تغطّي قشرتها شعيرات ناعمة مرنة؟",
-      "a": "الرامبوتان",
-      "qid": "fruitsveg-600-901",
-      "topic": "فواكه استوائية",
-      "verified": true,
-      "alt": [
-        "رامبوتان"
-      ],
-      "difficultyTarget": 0.4,
-      "sourceUrl": "https://www.nparks.gov.sg/florafaunaweb/flora/3/0/3042"
-    },
-    {
-      "p": 600,
-      "q": "ما صنف التفاح الأخضر الحامض الذي يحمل اسم مزارعة عاشت في أستراليا؟",
-      "a": "جراني سميث",
-      "qid": "fruitsveg-600-902",
-      "topic": "فواكه شائعة",
-      "verified": true,
-      "alt": [
-        "غراني سميث",
-        "Granny Smith"
-      ],
-      "difficultyTarget": 0.4,
-      "sourceUrl": "https://www.ryde.nsw.gov.au/Library/Local-and-Family-History/Historic-Ryde/Historic-Figures/Granny-Smith"
-    },
-    {
-      "p": 600,
-      "q": "ما الفيتامين الذي تكثر مصادره في الخضراوات الورقية ويسهم في تخثر الدم؟",
-      "a": "فيتامين ك",
-      "qid": "fruitsveg-600-903",
-      "topic": "خضراوات ورقية",
-      "verified": true,
-      "alt": [
-        "فيتامين K",
-        "الفيتامين ك"
-      ],
-      "difficultyTarget": 0.4,
-      "sourceUrl": "https://ods.od.nih.gov/factsheets/vitaminK-HealthProfessional/"
-    },
-    {
-      "p": 600,
+      "p": 200,
       "q": "ما اسم الجذر الاستوائي الذي تُصنع منه حبيبات التابيوكا؟",
       "a": "الكسافا",
-      "qid": "fruitsveg-600-904",
+      "qid": "fruitsveg-200-918",
       "topic": "جذور ودرنات",
       "verified": true,
       "alt": [
         "المنيهوت",
         "المنيوك"
       ],
-      "difficultyTarget": 0.4,
+      "difficultyTarget": 0.8,
       "sourceUrl": "https://gardeningsg.nparks.gov.sg/gardening-resource-library/tapioca/"
     },
     {
-      "p": 600,
+      "p": 400,
+      "q": "ما اسم الفاكهة الحمراء الصغيرة التي تغطّي قشرتها شعيرات ناعمة مرنة؟",
+      "a": "الرامبوتان",
+      "qid": "fruitsveg-400-911",
+      "topic": "فواكه استوائية",
+      "verified": true,
+      "alt": [
+        "رامبوتان"
+      ],
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://www.nparks.gov.sg/florafaunaweb/flora/3/0/3042"
+    },
+    {
+      "p": 400,
+      "q": "ما صنف التفاح الأخضر الحامض الذي يحمل اسم مزارعة عاشت في أستراليا؟",
+      "a": "جراني سميث",
+      "qid": "fruitsveg-400-912",
+      "topic": "فواكه شائعة",
+      "verified": true,
+      "alt": [
+        "غراني سميث",
+        "Granny Smith"
+      ],
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://www.ryde.nsw.gov.au/Library/Local-and-Family-History/Historic-Ryde/Historic-Figures/Granny-Smith"
+    },
+    {
+      "p": 400,
+      "q": "ما الفيتامين الذي تكثر مصادره في الخضراوات الورقية ويسهم في تخثر الدم؟",
+      "a": "فيتامين ك",
+      "qid": "fruitsveg-400-913",
+      "topic": "خضراوات ورقية",
+      "verified": true,
+      "alt": [
+        "فيتامين K",
+        "الفيتامين ك"
+      ],
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://ods.od.nih.gov/factsheets/vitaminK-HealthProfessional/"
+    },
+    {
+      "p": 400,
       "q": "ما اسم الجزء داخل البذرة الذي ينمو ليصير نباتًا جديدًا؟",
       "a": "الجنين",
-      "qid": "fruitsveg-600-905",
+      "qid": "fruitsveg-400-914",
       "topic": "بذور وحبوب",
       "verified": true,
       "alt": [
         "الرشيم"
       ],
-      "difficultyTarget": 0.4,
+      "difficultyTarget": 0.6,
       "sourceUrl": "https://openstax.org/books/concepts-biology/pages/14-4-seed-plants-angiosperms"
     },
     {
-      "p": 600,
+      "p": 400,
       "q": "ما الفاكهة الصفراء العطرية الصلبة التي يشيع طبخها لصنع المربى والهلام؟",
       "a": "السفرجل",
-      "qid": "fruitsveg-600-906",
+      "qid": "fruitsveg-400-915",
       "topic": "ألوان ومواسم",
       "verified": true,
       "alt": [
         "سفرجل"
       ],
-      "difficultyTarget": 0.4,
+      "difficultyTarget": 0.6,
       "sourceUrl": "https://www.rhs.org.uk/fruit/quince/grow-your-own"
     },
     {
-      "p": 600,
+      "p": 400,
       "q": "ما المنطقة الآسيوية التي ترجع إليها أصول كثير من أصناف الموز المزروع؟",
       "a": "جنوب شرق آسيا",
-      "qid": "fruitsveg-600-907",
+      "qid": "fruitsveg-400-916",
       "topic": "أصول ومناشئ",
       "verified": true,
       "alt": [
         "جنوب شرقي آسيا"
       ],
-      "difficultyTarget": 0.4,
+      "difficultyTarget": 0.6,
       "sourceUrl": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A797527-1/general-information"
     },
     {
-      "p": 600,
+      "p": 400,
       "q": "ما اسم المادة المستخلصة من قشور الفواكه التي تجعل المربّى متماسكًا؟",
       "a": "البكتين",
-      "qid": "fruitsveg-600-908",
+      "qid": "fruitsveg-400-917",
       "topic": "فوائد ومكوّنات",
       "verified": true,
       "alt": [
         "بكتين",
         "البكتين النباتي"
       ],
-      "difficultyTarget": 0.4,
+      "difficultyTarget": 0.6,
       "sourceUrl": "https://nchfp.uga.edu/how/make-jam-jelly/jams-jellies-general-information/jellied-product-ingredients/"
     },
     {
-      "p": 800,
+      "p": 400,
+      "q": "ما اسم مرحلة ثمر النخيل الصلبة الملوّنة التي تسبق مرحلة الطراوة والليونة؟",
+      "a": "البسر",
+      "qid": "fruitsveg-400-918",
+      "topic": "ألوان ومواسم",
+      "verified": true,
+      "alt": [
+        "الخلال"
+      ],
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://www.fao.org/4/Y4360E/y4360e05.htm"
+    },
+    {
+      "p": 600,
       "q": "ما اسم الفاكهة ذات القشرة الأرجوانية السميكة واللبّ الأبيض المقسَّم إلى فصوص؟",
       "a": "المانجوستين",
-      "qid": "fruitsveg-800-901",
+      "qid": "fruitsveg-600-911",
       "topic": "فواكه استوائية",
       "verified": true,
       "alt": [
         "المنغوستين",
         "مانغوستين"
       ],
-      "difficultyTarget": 0.25,
+      "difficultyTarget": 0.4,
       "sourceUrl": "https://www.nparks.gov.sg/florafaunaweb/flora/2/9/2927"
     },
     {
-      "p": 800,
+      "p": 600,
       "q": "ما اسم فيتامين ب9 المشتق من كلمة لاتينية تعني الورقة؟",
       "a": "الفولات",
-      "qid": "fruitsveg-800-902",
+      "qid": "fruitsveg-600-912",
       "topic": "خضراوات ورقية",
       "verified": true,
       "alt": [
         "حمض الفوليك",
         "الفوليت"
       ],
-      "difficultyTarget": 0.25,
+      "difficultyTarget": 0.4,
       "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4175124/"
     },
     {
-      "p": 800,
+      "p": 600,
       "q": "ما اسم الجذر الأبيض اللاذع الذي يُبشر ويُقدَّم صلصة مع اللحوم في أوروبا؟",
       "a": "الفجل الحار",
-      "qid": "fruitsveg-800-903",
+      "qid": "fruitsveg-600-913",
       "topic": "جذور ودرنات",
       "verified": true,
       "alt": [
         "الهورسراديش"
       ],
-      "difficultyTarget": 0.25,
+      "difficultyTarget": 0.4,
       "sourceUrl": "https://extension.umn.edu/garden-and-home/yard-and-garden/gardening-in-minnesota/growing-horseradish"
     },
     {
-      "p": 800,
-      "q": "في أي بلد طورت أصناف الكانولا التي أُخذ اسمها من اسم البلد وكلمة الزيت؟",
+      "p": 600,
+      "q": "في أي بلد طورت أصناف الكانولا لأول مرة؟",
       "a": "كندا",
-      "qid": "fruitsveg-800-904",
+      "qid": "fruitsveg-600-914",
       "topic": "أصول ومناشئ",
       "verified": true,
-      "difficultyTarget": 0.25,
+      "difficultyTarget": 0.4,
       "sourceUrl": "https://www.canolacouncil.org/about-canola/"
     },
     {
-      "p": 800,
-      "q": "ما اسم مرحلة ثمر النخيل الصلبة الملوّنة التي تسبق مرحلة الطراوة والليونة؟",
-      "a": "البسر",
-      "qid": "fruitsveg-800-905",
-      "topic": "ألوان ومواسم",
-      "verified": true,
-      "alt": [
-        "الخلال"
-      ],
-      "difficultyTarget": 0.25,
-      "sourceUrl": "https://www.fao.org/4/Y4360E/y4360e05.htm"
-    },
-    {
-      "p": 800,
+      "p": 600,
       "q": "من أي بلد انتشر الجزر الأرجواني والأصفر نحو شرق المتوسط بين القرنين العاشر والحادي عشر؟",
       "a": "أفغانستان",
-      "qid": "fruitsveg-800-906",
+      "qid": "fruitsveg-600-915",
       "topic": "أصول ومناشئ",
       "verified": true,
-      "difficultyTarget": 0.25,
+      "difficultyTarget": 0.4,
       "sourceUrl": "https://www.ars.usda.gov/midwest-area/madison-wi/vegetable-crops-research/docs/simon-carrot-facts/"
     },
     {
-      "p": 800,
+      "p": 600,
       "q": "ما اسم مجموعة الإنزيمات المحللة للبروتين الموجودة في ساق الأناناس وثمرته؟",
       "a": "البروميلين",
-      "qid": "fruitsveg-800-907",
+      "qid": "fruitsveg-600-916",
       "topic": "فوائد ومكوّنات",
       "verified": true,
       "alt": [
@@ -414,14 +293,14 @@
         "البروميلاين",
         "بروملين"
       ],
-      "difficultyTarget": 0.25,
+      "difficultyTarget": 0.4,
       "sourceUrl": "https://www.nccih.nih.gov/health/bromelain"
     },
     {
-      "p": 800,
+      "p": 600,
       "q": "ما الحمضية التي ينتمي إليها الصنف المتشعب المعروف باسم يد بوذا؟",
       "a": "الأترج",
-      "qid": "fruitsveg-800-908",
+      "qid": "fruitsveg-600-917",
       "topic": "فواكه شائعة",
       "verified": true,
       "alt": [
@@ -429,97 +308,14 @@
         "الكبّاد",
         "أترج"
       ],
-      "difficultyTarget": 0.25,
+      "difficultyTarget": 0.4,
       "sourceUrl": "https://www.nparks.gov.sg/florafaunaweb/flora/5/2/5217"
     },
     {
-      "p": 1000,
-      "q": "ما اسم الفاكهة التي تُعدّ الثمرة الوطنية لجامايكا؟",
-      "a": "الأكي",
-      "qid": "fruitsveg-1000-901",
-      "topic": "فواكه استوائية",
-      "verified": true,
-      "alt": [
-        "أكي",
-        "فاكهة الأكي"
-      ],
-      "difficultyTarget": 0.15,
-      "sourceUrl": "https://jis.gov.jm/media/2021/11/Report-on-National-Symbols-.pdf"
-    },
-    {
-      "p": 1000,
-      "q": "ما صنف الموز الذي حل محل غرو ميشيل في تجارة التصدير بعد تفشي مرض بنما؟",
-      "a": "كافنديش",
-      "qid": "fruitsveg-1000-902",
-      "topic": "فواكه شائعة",
-      "verified": true,
-      "alt": [
-        "الكافنديش",
-        "Cavendish"
-      ],
-      "difficultyTarget": 0.15,
-      "sourceUrl": "https://www.kew.org/read-and-watch/bananas-threat-extinction"
-    },
-    {
-      "p": 1000,
-      "q": "ما اسم الوادي الأمريكي الذي يُلقَّب «وعاء سلطة العالم» لكثرة مزارع الخضار الورقي فيه؟",
-      "a": "وادي ساليناس",
-      "qid": "fruitsveg-1000-903",
-      "topic": "خضراوات ورقية",
-      "verified": true,
-      "alt": [
-        "ساليناس",
-        "Salinas Valley"
-      ],
-      "difficultyTarget": 0.15,
-      "sourceUrl": "https://www.countyofmonterey.gov/home/showpublisheddocument/110639/638645006878000000"
-    },
-    {
-      "p": 1000,
-      "q": "ما اسم الدرنة الصغيرة التي يُصنع منها مشروب الأورتشاتا في فالنسيا؟",
-      "a": "حب العزيز",
-      "qid": "fruitsveg-1000-904",
-      "topic": "جذور ودرنات",
-      "verified": true,
-      "alt": [
-        "لوز الأرض"
-      ],
-      "difficultyTarget": 0.15,
-      "sourceUrl": "https://www.visitvalencia.com/en/what-to-do-valencia/gastronomy/where-to-drink/horchata"
-    },
-    {
-      "p": 1000,
-      "q": "ما الجزء النشوي من حبة القمح الذي يطحن لإنتاج الدقيق الأبيض؟",
-      "a": "السويداء",
-      "qid": "fruitsveg-1000-905",
-      "topic": "بذور وحبوب",
-      "verified": true,
-      "alt": [
-        "الإندوسبيرم",
-        "الاندوسبيرم"
-      ],
-      "difficultyTarget": 0.15,
-      "sourceUrl": "https://www.ukflourmillers.org/knowledge-hub/farming-production/wheat/wheat-structure"
-    },
-    {
-      "p": 1000,
-      "q": "ما اسم الظاهرة التي تُثمر فيها الشجرة بغزارة عامًا وتقلّ في العام التالي؟",
-      "a": "المعاومة",
-      "qid": "fruitsveg-1000-906",
-      "topic": "ألوان ومواسم",
-      "verified": true,
-      "alt": [
-        "تبادل الحمل",
-        "ظاهرة المعاومة"
-      ],
-      "difficultyTarget": 0.15,
-      "sourceUrl": "https://yardandgarden.extension.iastate.edu/how-to/alternate-bearing-fruit-drop-and-hand-thinning-tree-fruits"
-    },
-    {
-      "p": 1000,
+      "p": 600,
       "q": "ما الهرمون الغازي الذي تنتجه ثمار مثل التفاح ويسرع نضج بعض الفواكه المحيطة بها؟",
       "a": "الإيثيلين",
-      "qid": "fruitsveg-1000-907",
+      "qid": "fruitsveg-600-918",
       "topic": "فوائد ومكوّنات",
       "verified": true,
       "alt": [
@@ -527,18 +323,239 @@
         "الإثيلين",
         "الإيثين"
       ],
-      "difficultyTarget": 0.15,
+      "difficultyTarget": 0.4,
       "sourceUrl": "https://www.extension.umd.edu/resource/ethylene-and-regulation-fruit-ripening"
     },
     {
-      "p": 1000,
+      "p": 800,
+      "q": "ما اسم الفاكهة التي تُعدّ الثمرة الوطنية لجامايكا؟",
+      "a": "الأكي",
+      "qid": "fruitsveg-800-911",
+      "topic": "فواكه استوائية",
+      "verified": true,
+      "alt": [
+        "أكي",
+        "فاكهة الأكي"
+      ],
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://jis.gov.jm/media/2021/11/Report-on-National-Symbols-.pdf"
+    },
+    {
+      "p": 800,
+      "q": "ما صنف الموز الذي حل محل غرو ميشيل في تجارة التصدير بعد تفشي مرض بنما؟",
+      "a": "كافنديش",
+      "qid": "fruitsveg-800-912",
+      "topic": "فواكه شائعة",
+      "verified": true,
+      "alt": [
+        "الكافنديش",
+        "Cavendish"
+      ],
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://www.kew.org/read-and-watch/bananas-threat-extinction"
+    },
+    {
+      "p": 800,
+      "q": "ما اسم الوادي الأمريكي الذي يُلقَّب «وعاء سلطة العالم» لكثرة مزارع الخضار الورقي فيه؟",
+      "a": "وادي ساليناس",
+      "qid": "fruitsveg-800-913",
+      "topic": "خضراوات ورقية",
+      "verified": true,
+      "alt": [
+        "ساليناس",
+        "Salinas Valley"
+      ],
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://www.countyofmonterey.gov/home/showpublisheddocument/110639/638645006878000000"
+    },
+    {
+      "p": 800,
+      "q": "ما اسم الدرنة الصغيرة التي يُصنع منها مشروب الأورتشاتا في فالنسيا؟",
+      "a": "حب العزيز",
+      "qid": "fruitsveg-800-914",
+      "topic": "جذور ودرنات",
+      "verified": true,
+      "alt": [
+        "لوز الأرض"
+      ],
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://www.visitvalencia.com/en/what-to-do-valencia/gastronomy/where-to-drink/horchata"
+    },
+    {
+      "p": 800,
+      "q": "ما الجزء النشوي من حبة القمح الذي يطحن لإنتاج الدقيق الأبيض؟",
+      "a": "السويداء",
+      "qid": "fruitsveg-800-915",
+      "topic": "بذور وحبوب",
+      "verified": true,
+      "alt": [
+        "الإندوسبيرم",
+        "الاندوسبيرم"
+      ],
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://www.ukflourmillers.org/knowledge-hub/farming-production/wheat/wheat-structure"
+    },
+    {
+      "p": 800,
+      "q": "ما اسم الظاهرة التي تُثمر فيها الشجرة بغزارة عامًا وتقلّ في العام التالي؟",
+      "a": "المعاومة",
+      "qid": "fruitsveg-800-916",
+      "topic": "ألوان ومواسم",
+      "verified": true,
+      "alt": [
+        "تبادل الحمل",
+        "ظاهرة المعاومة"
+      ],
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://yardandgarden.extension.iastate.edu/how-to/alternate-bearing-fruit-drop-and-hand-thinning-tree-fruits"
+    },
+    {
+      "p": 800,
       "q": "في أي جزيرة كاريبية وردت تقارير عن زراعة الجريب فروت قرابة عام 1750؟",
       "a": "بربادوس",
-      "qid": "fruitsveg-1000-908",
+      "qid": "fruitsveg-800-917",
       "topic": "أصول ومناشئ",
       "verified": true,
-      "difficultyTarget": 0.15,
+      "difficultyTarget": 0.25,
       "sourceUrl": "https://citrusagents.ifas.ufl.edu/media/crecifasufledu/citrus-agents/docs/citrus-publications/Fla-Citrus-Varieties.pdf"
+    },
+    {
+      "q": "ما صنف القرنبيط الأخضر الذي تتشكل رؤوسه من مخاريط حلزونية متكررة؟",
+      "a": "رومانسكو",
+      "topic": "ألوان ومواسم",
+      "verified": true,
+      "sourceUrl": "https://www.rhs.org.uk/plants/279943/brassica-oleracea-botrytis-group-romanesco/details",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Romanesco"
+      ],
+      "p": 800,
+      "qid": "fruitsveg-800-918",
+      "difficultyTarget": 0.25
+    },
+    {
+      "q": "ما البروتين في الفاكهة المعجزة الذي يجعل المذاق الحامض يبدو حلوًا؟",
+      "a": "الميراكولين",
+      "topic": "فوائد ومكوّنات",
+      "verified": true,
+      "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3189030/",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "ميراكولين",
+        "Miraculin"
+      ],
+      "p": 1000,
+      "qid": "fruitsveg-1000-911",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "ما الفاكهة البرازيلية البنفسجية الداكنة التي تنمو مباشرة على جذع الشجرة؟",
+      "a": "جابوتيكابا",
+      "topic": "فواكه استوائية",
+      "verified": true,
+      "sourceUrl": "https://plants.ces.ncsu.edu/plants/plinia-cauliflora/",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Jabuticaba",
+        "Jaboticaba",
+        "جابوتيكابا"
+      ],
+      "p": 1000,
+      "qid": "fruitsveg-1000-912",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "ما ثمرة النخيل الإندونيسية ذات القشرة البنية الحرشفية المعروفة بفاكهة الثعبان؟",
+      "a": "السالاك",
+      "topic": "فواكه استوائية",
+      "verified": true,
+      "sourceUrl": "https://www.nparks.gov.sg/florafaunaweb/flora/3/2/3289",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "سالاك",
+        "Salak"
+      ],
+      "p": 1000,
+      "qid": "fruitsveg-1000-913",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "ما الخضار الآسيوي ذو الأزهار البنفسجية الوردية والدرنات الصغيرة العقدية التي تؤكل نيئة أو مطهوة؟",
+      "a": "الخرشوف الصيني",
+      "topic": "جذور ودرنات",
+      "verified": true,
+      "sourceUrl": "https://www.rhs.org.uk/plants/52884/stachys-affinis/details",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Chinese artichoke",
+        "كرون",
+        "Crosne"
+      ],
+      "p": 1000,
+      "qid": "fruitsveg-1000-914",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "ماذا يسمى نمو الثمرة دون إخصاب، كما يحدث في بعض أصناف الخيار عديمة البذور؟",
+      "a": "العقد البكري",
+      "topic": "نمو الثمار",
+      "verified": true,
+      "sourceUrl": "https://ciet.nic.in/moocspdf/Biology%2003/lebo_10204_eContent.pdf",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "الإثمار البكري",
+        "Parthenocarpy"
+      ],
+      "p": 1000,
+      "qid": "fruitsveg-1000-915",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "ما المصطلح الزراعي لاندفاع الخس أو السبانخ إلى الإزهار مبكرًا قبل الحصاد؟",
+      "a": "التزهير المبكر",
+      "topic": "ألوان ومواسم",
+      "verified": true,
+      "sourceUrl": "https://www.rhs.org.uk/vegetables/bolting",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "الاستطالة الزهرية",
+        "Bolting",
+        "الإزهار المبكر"
+      ],
+      "p": 1000,
+      "qid": "fruitsveg-1000-916",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "ما العملية التي يكتسب بها القمح الشتوي القدرة على الإزهار بعد التعرض للبرد؟",
+      "a": "الارتباع",
+      "topic": "بذور وحبوب",
+      "verified": true,
+      "sourceUrl": "https://extension.umn.edu/agriculture/crop-production/small-grains/plant-winter-hardy-adapted-varieties",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Vernalization",
+        "التربيع"
+      ],
+      "p": 1000,
+      "qid": "fruitsveg-1000-917",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "ما اسم المركبات المسؤولة عن الطعم المر في بعض ثمار الخيار والكوسا؟",
+      "a": "الكوكوربيتاسينات",
+      "topic": "فوائد ومكوّنات",
+      "verified": true,
+      "sourceUrl": "https://extension.oregonstate.edu/ask-extension/featured/are-volunteer-squash-toxic",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Cucurbitacins",
+        "كوكوربيتاسين",
+        "الكوكوربيتاسين"
+      ],
+      "p": 1000,
+      "qid": "fruitsveg-1000-918",
+      "difficultyTarget": 0.15
     }
   ]
 }

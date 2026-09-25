@@ -1,7 +1,7 @@
 // منطق لعبة «بَديهة» — نُقل كما هو من الملف الأصلي دون تعديل في السلوك.
 // أوضاع اللعب، بناء الجولة مع أولوية الأسئلة غير المُلعبة، تحقق أسماء الفرق،
 // وتسلسل الجلسة (حفظ/استئناف). خالٍ من React ليُختبر بمعزل.
-export const BANK_CONTENT_VERSION = 'badeeha-curated-2026-09-18';
+export const BANK_CONTENT_VERSION = 'badeeha-text-challenge-2026-09-25';
 
 // Retired identifiers may remain in a player's history. They must neither mark
 // new cards as played nor inflate the progress shown for the current bank.

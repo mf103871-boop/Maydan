@@ -5,142 +5,19 @@
   "style": "story",
   "qs": [
     {
-      "qid": "arabmovies-200-901",
+      "qid": "arabmovies-200-911",
       "p": 200,
-      "topic": "الناظر",
-      "q": "ما المؤسسة التي يرث صلاح إدارتها عن والده في «الناظر»؟",
-      "a": "مدرسة",
-      "alt": [
-        "مدرسة عاشور"
-      ],
-      "sourceUrl": "https://elcinema.com/work/1001525/content",
-      "verified": true,
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "arabmovies-200-902",
-      "p": 200,
-      "topic": "عسل أسود",
-      "q": "من أي بلد يعود مصري إلى وطنه في «عسل أسود»؟",
-      "a": "الولايات المتحدة",
-      "alt": [
-        "أمريكا",
-        "الولايات المتحدة الأمريكية"
-      ],
-      "sourceUrl": "https://elcinema.com/work/1313173/content",
-      "verified": true,
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "arabmovies-200-903",
-      "p": 200,
-      "topic": "الإرهاب والكباب",
-      "q": "ما المبنى الحكومي الذي تحتشد فيه الرهائن في «الإرهاب والكباب»؟",
-      "a": "مجمع التحرير",
-      "alt": [
-        "مجمع ميدان التحرير"
-      ],
-      "sourceUrl": "https://elcinema.com/work/1010305/content",
-      "verified": true,
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "arabmovies-200-904",
-      "p": 200,
-      "topic": "الجزيرة",
-      "q": "ما اسم الابن الذي يرث نفوذ عائلة الحفني في «الجزيرة»؟",
-      "a": "منصور",
-      "alt": [
-        "منصور الحفني"
-      ],
-      "sourceUrl": "https://elcinema.com/work/1001585/content",
-      "verified": true,
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "arabmovies-200-905",
-      "p": 200,
-      "topic": "الفيل الأزرق",
-      "q": "ما تخصص الطبيب يحيى راشد في الجزء الأول من «الفيل الأزرق»؟",
-      "a": "الطب النفسي",
-      "alt": [
-        "طبيب نفسي",
-        "العلاج النفسي"
-      ],
-      "sourceUrl": "https://elcinema.com/work/2019662/content",
-      "verified": true,
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "arabmovies-200-906",
-      "p": 200,
-      "topic": "كفرناحوم",
-      "q": "ضد من يرفع زين دعواه في «كفرناحوم»؟",
-      "a": "والديه",
-      "alt": [
-        "أمه وأبيه",
-        "والده ووالدته"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Capernaum_(film)",
-      "verified": true,
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "arabmovies-200-907",
-      "p": 200,
-      "topic": "وجدة",
-      "q": "ما الشيء الذي تحلم الطفلة بشرائه في فيلم «وجدة»؟",
-      "a": "دراجة هوائية",
-      "alt": [
-        "دراجة",
-        "بسكليت"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Wadjda",
-      "verified": true,
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "arabmovies-200-908",
-      "p": 200,
-      "topic": "عمر",
-      "q": "ما حرفة البطل في الفيلم الفلسطيني «عمر»؟",
-      "a": "خبّاز",
-      "alt": [
-        "صانع خبز",
-        "الخبز"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Omar_(2013_film)",
-      "verified": true,
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "arabmovies-400-901",
-      "p": 400,
       "topic": "الناظر",
       "q": "من الصديق الذي يصحب صلاح للقاء اللمبي في «الناظر»؟",
       "a": "عاطف",
       "alt": [],
       "sourceUrl": "https://elcinema.com/work/1001525/content",
       "verified": true,
-      "difficultyTarget": 0.6
+      "difficultyTarget": 0.8
     },
     {
-      "qid": "arabmovies-400-902",
-      "p": 400,
-      "topic": "عسل أسود",
-      "q": "ما الوثيقة التي يغيّر ظهورها واختفاؤها معاملة الناس للبطل في «عسل أسود»؟",
-      "a": "جواز سفره الأمريكي",
-      "alt": [
-        "الجواز الأمريكي",
-        "جواز أمريكي"
-      ],
-      "sourceUrl": "https://elcinema.com/work/1313173/content",
-      "verified": true,
-      "difficultyTarget": 0.6
-    },
-    {
-      "qid": "arabmovies-400-903",
-      "p": 400,
+      "qid": "arabmovies-200-912",
+      "p": 200,
       "topic": "الإرهاب والكباب",
       "q": "لماذا ذهب أحمد أصلًا لإنجاز المعاملة الحكومية في «الإرهاب والكباب»؟",
       "a": "لنقل أبنائه إلى مدرسة أخرى",
@@ -150,22 +27,22 @@
       ],
       "sourceUrl": "https://elcinema.com/work/1010305/content",
       "verified": true,
-      "difficultyTarget": 0.6
+      "difficultyTarget": 0.8
     },
     {
-      "qid": "arabmovies-400-904",
-      "p": 400,
+      "qid": "arabmovies-200-913",
+      "p": 200,
       "topic": "الجزيرة",
       "q": "من حبيبة البطل التي ينتمي أهلها لعائلة النجايحة في «الجزيرة»؟",
       "a": "كريمة",
       "alt": [],
       "sourceUrl": "https://elcinema.com/work/1001585/content",
       "verified": true,
-      "difficultyTarget": 0.6
+      "difficultyTarget": 0.8
     },
     {
-      "qid": "arabmovies-400-905",
-      "p": 400,
+      "qid": "arabmovies-200-914",
+      "p": 200,
       "topic": "الفيل الأزرق",
       "q": "ما اسم الصديق القديم المتهم الذي يقابله الطبيب في «الفيل الأزرق»؟",
       "a": "شريف الكردي",
@@ -175,11 +52,11 @@
       ],
       "sourceUrl": "https://elcinema.com/work/2019662/content",
       "verified": true,
-      "difficultyTarget": 0.6
+      "difficultyTarget": 0.8
     },
     {
-      "qid": "arabmovies-400-906",
-      "p": 400,
+      "qid": "arabmovies-200-915",
+      "p": 200,
       "topic": "كفرناحوم",
       "q": "ما اسم الرضيع الذي يعتني به زين بعد اختفاء أمه في «كفرناحوم»؟",
       "a": "يوناس",
@@ -189,24 +66,11 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/Capernaum_(film)",
       "verified": true,
-      "difficultyTarget": 0.6
+      "difficultyTarget": 0.8
     },
     {
-      "qid": "arabmovies-400-907",
-      "p": 400,
-      "topic": "وجدة",
-      "q": "ما لون الشيء الذي تتمنى الطفلة شراءه للسباق في «وجدة»؟",
-      "a": "أخضر",
-      "alt": [
-        "الأخضر"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Wadjda",
-      "verified": true,
-      "difficultyTarget": 0.6
-    },
-    {
-      "qid": "arabmovies-400-908",
-      "p": 400,
+      "qid": "arabmovies-200-916",
+      "p": 200,
       "topic": "عمر",
       "q": "ما اسم الفتاة التي يحبها البطل في «عمر»؟",
       "a": "نادية",
@@ -215,11 +79,11 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/Omar_(2013_film)",
       "verified": true,
-      "difficultyTarget": 0.6
+      "difficultyTarget": 0.8
     },
     {
-      "qid": "arabmovies-600-901",
-      "p": 600,
+      "qid": "arabmovies-200-917",
+      "p": 200,
       "topic": "الناظر",
       "q": "ما اسم وكيل الإدارة الذي يستغل سذاجة صلاح في «الناظر»؟",
       "a": "سيد ضاهي",
@@ -229,78 +93,11 @@
       ],
       "sourceUrl": "https://elcinema.com/work/1001525/content",
       "verified": true,
-      "difficultyTarget": 0.4
+      "difficultyTarget": 0.8
     },
     {
-      "qid": "arabmovies-600-902",
-      "p": 600,
-      "topic": "عسل أسود",
-      "q": "ما مهنة البطل التي تفسّر حمله الكاميرا في «عسل أسود»؟",
-      "a": "مصور فوتوغرافي",
-      "alt": [
-        "مصور",
-        "التصوير الفوتوغرافي"
-      ],
-      "sourceUrl": "https://elcinema.com/work/1313173/content",
-      "verified": true,
-      "difficultyTarget": 0.4
-    },
-    {
-      "qid": "arabmovies-600-903",
-      "p": 600,
-      "topic": "الإرهاب والكباب",
-      "q": "بأي طريقة يخرج أحمد دون أن تميزه القوات في نهاية «الإرهاب والكباب»؟",
-      "a": "يندمج وسط الرهائن",
-      "alt": [
-        "يخرج مع الرهائن",
-        "وسط الناس"
-      ],
-      "sourceUrl": "https://elcinema.com/work/1010305/content",
-      "verified": true,
-      "difficultyTarget": 0.4
-    },
-    {
-      "qid": "arabmovies-600-904",
-      "p": 600,
-      "topic": "الجزيرة",
-      "q": "من العروس التي يتزوجها البطل إرضاءً لوالده في الجزء الأول من «الجزيرة»؟",
-      "a": "فايقة",
-      "alt": [
-        "فائقة"
-      ],
-      "sourceUrl": "https://elcinema.com/work/1001585/content",
-      "verified": true,
-      "difficultyTarget": 0.4
-    },
-    {
-      "qid": "arabmovies-600-905",
-      "p": 600,
-      "topic": "الفيل الأزرق",
-      "q": "ما اسم الكيان الذي يتكلم عبر جسد المريض في «الفيل الأزرق» الأول؟",
-      "a": "نائل",
-      "alt": [
-        "نايل"
-      ],
-      "sourceUrl": "https://elcinema.com/work/2019662/content",
-      "verified": true,
-      "difficultyTarget": 0.4
-    },
-    {
-      "qid": "arabmovies-600-906",
-      "p": 600,
-      "topic": "كفرناحوم",
-      "q": "ما اسم أخت زين التي يحاول حمايتها من الزواج المبكر في «كفرناحوم»؟",
-      "a": "سحر",
-      "alt": [
-        "Sahar"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Capernaum_(film)",
-      "verified": true,
-      "difficultyTarget": 0.4
-    },
-    {
-      "qid": "arabmovies-600-907",
-      "p": 600,
+      "qid": "arabmovies-200-918",
+      "p": 200,
       "topic": "وجدة",
       "q": "في «وجدة»، ما اسم الصديق الذي تريد البطلة منافسته في السباق؟",
       "a": "عبد الله",
@@ -310,25 +107,78 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/Wadjda",
       "verified": true,
-      "difficultyTarget": 0.4
+      "difficultyTarget": 0.8
     },
     {
-      "qid": "arabmovies-600-908",
-      "p": 600,
-      "topic": "عمر",
-      "q": "ما الحاجز الذي يتسلقه البطل ليصل إلى حبيبته في «عمر»؟",
-      "a": "جدار الفصل",
+      "qid": "arabmovies-400-911",
+      "p": 400,
+      "topic": "عسل أسود",
+      "q": "ما مهنة البطل التي تفسّر حمله الكاميرا في «عسل أسود»؟",
+      "a": "مصور فوتوغرافي",
       "alt": [
-        "الجدار الفاصل",
-        "الجدار العازل"
+        "مصور",
+        "التصوير الفوتوغرافي"
       ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Omar_(2013_film)",
+      "sourceUrl": "https://elcinema.com/work/1313173/content",
       "verified": true,
-      "difficultyTarget": 0.4
+      "difficultyTarget": 0.6
     },
     {
-      "qid": "arabmovies-800-901",
-      "p": 800,
+      "qid": "arabmovies-400-912",
+      "p": 400,
+      "topic": "الإرهاب والكباب",
+      "q": "بأي طريقة يخرج أحمد دون أن تميزه القوات في نهاية «الإرهاب والكباب»؟",
+      "a": "يندمج وسط الرهائن",
+      "alt": [
+        "يخرج مع الرهائن",
+        "وسط الناس"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1010305/content",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "arabmovies-400-913",
+      "p": 400,
+      "topic": "الجزيرة",
+      "q": "من العروس التي يتزوجها البطل إرضاءً لوالده في الجزء الأول من «الجزيرة»؟",
+      "a": "فايقة",
+      "alt": [
+        "فائقة"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1001585/content",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "arabmovies-400-914",
+      "p": 400,
+      "topic": "الفيل الأزرق",
+      "q": "ما اسم الكيان الذي يتكلم عبر جسد المريض في «الفيل الأزرق» الأول؟",
+      "a": "نائل",
+      "alt": [
+        "نايل"
+      ],
+      "sourceUrl": "https://elcinema.com/work/2019662/content",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "arabmovies-400-915",
+      "p": 400,
+      "topic": "كفرناحوم",
+      "q": "ما اسم أخت زين التي يحاول حمايتها من الزواج المبكر في «كفرناحوم»؟",
+      "a": "سحر",
+      "alt": [
+        "Sahar"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Capernaum_(film)",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "arabmovies-400-916",
+      "p": 400,
       "topic": "الناظر",
       "q": "أي مادة يدرّسها حسين الذي يشجع صلاح على استعادة المسؤولية في «الناظر»؟",
       "a": "العلوم",
@@ -337,11 +187,37 @@
       ],
       "sourceUrl": "https://elcinema.com/work/1001525/content",
       "verified": true,
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.6
     },
     {
-      "qid": "arabmovies-800-902",
-      "p": 800,
+      "qid": "arabmovies-400-917",
+      "p": 400,
+      "topic": "الفيل الأزرق",
+      "q": "ما اسم شقيقة المريض التي تربطها بالطبيب علاقة قديمة في «الفيل الأزرق»؟",
+      "a": "لبنى",
+      "alt": [
+        "لبنى الكردي"
+      ],
+      "sourceUrl": "https://elcinema.com/work/2019662/content",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "arabmovies-400-918",
+      "p": 400,
+      "topic": "عمر",
+      "q": "من الصديق الذي يتزوج حبيبة البطل بعد خداعه في «عمر»؟",
+      "a": "أمجد",
+      "alt": [
+        "Amjad"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Omar_(2013_film)",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "arabmovies-600-911",
+      "p": 600,
       "topic": "عسل أسود",
       "q": "في «عسل أسود»، ما الهدية التي يتركها مصري لصديقه سعيد ليبدأ عملًا جديدًا؟",
       "a": "كاميرته",
@@ -351,11 +227,11 @@
       ],
       "sourceUrl": "https://elcinema.com/work/1313173/content",
       "verified": true,
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.4
     },
     {
-      "qid": "arabmovies-800-903",
-      "p": 800,
+      "qid": "arabmovies-600-912",
+      "p": 600,
       "topic": "الإرهاب والكباب",
       "q": "ما مهنة شلبي الذي ينضم إلى المحتجين في «الإرهاب والكباب»؟",
       "a": "ماسح أحذية",
@@ -365,35 +241,22 @@
       ],
       "sourceUrl": "https://elcinema.com/work/1010305/content",
       "verified": true,
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.4
     },
     {
-      "qid": "arabmovies-800-904",
-      "p": 800,
+      "qid": "arabmovies-600-913",
+      "p": 600,
       "topic": "الجزيرة",
       "q": "ما وسيلة النقل التي يوقفها البطل بحثًا عن حبيبته في «الجزيرة»؟",
       "a": "القطار",
       "alt": [],
       "sourceUrl": "https://elcinema.com/work/1001585/content",
       "verified": true,
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.4
     },
     {
-      "qid": "arabmovies-800-905",
-      "p": 800,
-      "topic": "الفيل الأزرق",
-      "q": "ما اسم شقيقة المريض التي تربطها بالطبيب علاقة قديمة في «الفيل الأزرق»؟",
-      "a": "لبنى",
-      "alt": [
-        "لبنى الكردي"
-      ],
-      "sourceUrl": "https://elcinema.com/work/2019662/content",
-      "verified": true,
-      "difficultyTarget": 0.25
-    },
-    {
-      "qid": "arabmovies-800-906",
-      "p": 800,
+      "qid": "arabmovies-600-914",
+      "p": 600,
       "topic": "كفرناحوم",
       "q": "من أي بلد جاءت رحيل، الأم التي تؤوي زين في «كفرناحوم»؟",
       "a": "إثيوبيا",
@@ -403,11 +266,11 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/Capernaum_(film)",
       "verified": true,
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.4
     },
     {
-      "qid": "arabmovies-800-907",
-      "p": 800,
+      "qid": "arabmovies-600-915",
+      "p": 600,
       "topic": "وجدة",
       "q": "في «وجدة»، في أي نوع من المسابقات المدرسية تشارك البطلة لتجمع ثمن حلمها؟",
       "a": "تلاوة القرآن",
@@ -417,24 +280,49 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/Wadjda",
       "verified": true,
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.4
     },
     {
-      "qid": "arabmovies-800-908",
-      "p": 800,
-      "topic": "عمر",
-      "q": "من الصديق الذي يتزوج حبيبة البطل بعد خداعه في «عمر»؟",
-      "a": "أمجد",
+      "qid": "arabmovies-600-916",
+      "p": 600,
+      "topic": "الجزيرة",
+      "q": "ما اسم الضابط النزيه الذي يرفض التفاهم مع البطل قرب نهاية «الجزيرة»؟",
+      "a": "طارق",
+      "alt": [],
+      "sourceUrl": "https://elcinema.com/work/1001585/content",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "arabmovies-600-917",
+      "p": 600,
+      "topic": "كفرناحوم",
+      "q": "ما الوثيقة التي يبتسم زين أثناء التقاط صورتها في ختام «كفرناحوم»؟",
+      "a": "بطاقة هوية",
       "alt": [
-        "Amjad"
+        "بطاقته الشخصية",
+        "إثبات الهوية"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Capernaum_(film)",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "arabmovies-600-918",
+      "p": 600,
+      "topic": "عمر",
+      "q": "ما اسم المحقق الذي ينتحل شخصية سجين ليستدرج اعتراف البطل في «عمر»؟",
+      "a": "رامي",
+      "alt": [
+        "Rami"
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/Omar_(2013_film)",
       "verified": true,
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.4
     },
     {
-      "qid": "arabmovies-1000-901",
-      "p": 1000,
+      "qid": "arabmovies-800-911",
+      "p": 800,
       "topic": "الناظر",
       "q": "في «الناظر»، ما اسم الجهة التعليمية النسائية التي تنافس مؤسسة عاشور في المسابقة؟",
       "a": "الإخلاص",
@@ -444,10 +332,99 @@
       ],
       "sourceUrl": "https://elcinema.com/work/1001525/content",
       "verified": true,
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.25
     },
     {
-      "qid": "arabmovies-1000-902",
+      "qid": "arabmovies-800-912",
+      "p": 800,
+      "topic": "الفيل الأزرق",
+      "q": "في «الفيل الأزرق»، ما القطعة التي يعثر عليها الطبيب مخبأة في خزان المرحاض بمنزل صديقه؟",
+      "a": "قميص",
+      "alt": [
+        "القميص المسحور",
+        "قميص مسحور"
+      ],
+      "sourceUrl": "https://elcinema.com/work/2019662/content",
+      "verified": true,
+      "difficultyTarget": 0.25
+    },
+    {
+      "topic": "الناظر",
+      "q": "في «الناظر»، ما اسم مدرسة الإنجليزية التي تصحب وفاء لزيارة صلاح؟",
+      "a": "إنشراح",
+      "alt": [
+        "ميس إنشراح"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1001525/content",
+      "qid": "arabmovies-800-913",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "الإرهاب والكباب",
+      "q": "في «الإرهاب والكباب»، ما اسم المجند الذي يستغله اللواء لخدمة منزله وأبنائه؟",
+      "a": "هلال",
+      "alt": [],
+      "sourceUrl": "https://elcinema.com/work/1010305/content",
+      "qid": "arabmovies-800-914",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "الجزيرة",
+      "q": "في «الجزيرة»، من الضابط الذي يسهّل تجارة منصور مقابل معلومات عن الخارجين على القانون؟",
+      "a": "رشدي",
+      "alt": [],
+      "sourceUrl": "https://elcinema.com/work/1001585/content",
+      "qid": "arabmovies-800-915",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "الفيل الأزرق",
+      "q": "في «الفيل الأزرق» الأول، ما اسم المرأة التي ترسم الوشم لبسمة؟",
+      "a": "ديجا",
+      "alt": [
+        "خديجة"
+      ],
+      "sourceUrl": "https://elcinema.com/work/2019662/",
+      "qid": "arabmovies-800-916",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "كفرناحوم",
+      "q": "في «كفرناحوم»، ما اسم مزور الأوراق الذي يطلب الطفل مقابل مساعدة زين على السفر؟",
+      "a": "أسبرو",
+      "alt": [
+        "Aspro"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Capernaum_(film)",
+      "qid": "arabmovies-800-917",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "وجدة",
+      "q": "في «وجدة»، ما اسم مديرة المدرسة التي تمنع البطلة من أخذ مال الجائزة؟",
+      "a": "حصة",
+      "alt": [
+        "هصة",
+        "Hussa"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Wadjda",
+      "qid": "arabmovies-800-918",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "qid": "arabmovies-1000-911",
       "p": 1000,
       "topic": "عسل أسود",
       "q": "في «عسل أسود»، ما اسم الشارع الذي يبحث فيه مصري عن شقة طفولته؟",
@@ -460,7 +437,7 @@
       "difficultyTarget": 0.15
     },
     {
-      "qid": "arabmovies-1000-903",
+      "qid": "arabmovies-1000-912",
       "p": 1000,
       "topic": "الإرهاب والكباب",
       "q": "في «الإرهاب والكباب»، ماذا تجهز الموظفة من الخضروات أثناء العمل بدل إنهاء معاملات المواطنين؟",
@@ -474,70 +451,82 @@
       "difficultyTarget": 0.15
     },
     {
-      "qid": "arabmovies-1000-904",
+      "topic": "الناظر",
+      "q": "في «الناظر»، ما اسم السكرتير الذي يخطف الطلاب لمنعهم من حضور المسابقة؟",
+      "a": "رسمي",
+      "alt": [
+        "رسمى"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1001525/content",
+      "qid": "arabmovies-1000-913",
       "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "الإرهاب والكباب",
+      "q": "في «الإرهاب والكباب»، في أي شركة يعمل أحمد صباحًا قبل عمله المسائي بالكافيتيريا؟",
+      "a": "شركة المياه",
+      "alt": [
+        "المياه",
+        "شركة المياة"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1010305/content",
+      "qid": "arabmovies-1000-914",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
       "topic": "الجزيرة",
-      "q": "ما اسم الضابط النزيه الذي يرفض التفاهم مع البطل قرب نهاية «الجزيرة»؟",
-      "a": "طارق",
+      "q": "في «الجزيرة»، ما اسم شقيق علي الحفني الأصغر الذي وُلد أخرس؟",
+      "a": "فضل",
       "alt": [],
       "sourceUrl": "https://elcinema.com/work/1001585/content",
-      "verified": true,
-      "difficultyTarget": 0.15
+      "qid": "arabmovies-1000-915",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
     },
     {
-      "qid": "arabmovies-1000-905",
-      "p": 1000,
       "topic": "الفيل الأزرق",
-      "q": "في «الفيل الأزرق»، ما القطعة التي يعثر عليها الطبيب مخبأة في خزان المرحاض بمنزل صديقه؟",
-      "a": "قميص",
+      "q": "في «الفيل الأزرق» الأول، ما اسم ابنة حبيبة يحيى القديمة؟",
+      "a": "هانيا",
       "alt": [
-        "القميص المسحور",
-        "قميص مسحور"
+        "هانيا"
       ],
-      "sourceUrl": "https://elcinema.com/work/2019662/content",
-      "verified": true,
-      "difficultyTarget": 0.15
+      "sourceUrl": "https://elcinema.com/work/2019662/",
+      "qid": "arabmovies-1000-916",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
     },
     {
-      "qid": "arabmovies-1000-906",
-      "p": 1000,
       "topic": "كفرناحوم",
-      "q": "ما الوثيقة التي يبتسم زين أثناء التقاط صورتها في ختام «كفرناحوم»؟",
-      "a": "بطاقة هوية",
+      "q": "في «كفرناحوم»، إلى أي سجن يُرسل زين بعد طعنه زوج أخته؟",
+      "a": "رومية",
       "alt": [
-        "بطاقته الشخصية",
-        "إثبات الهوية"
+        "سجن رومية",
+        "Roumieh"
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/Capernaum_(film)",
-      "verified": true,
-      "difficultyTarget": 0.15
+      "qid": "arabmovies-1000-917",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
     },
     {
-      "qid": "arabmovies-1000-907",
-      "p": 1000,
       "topic": "وجدة",
-      "q": "في «وجدة»، من يشتري للبطلة حلمها في النهاية رغم حرمانها من مال الجائزة؟",
-      "a": "أمها",
+      "q": "في «وجدة»، ما اسم السائق الذي ينقل والدة البطلة للعمل؟",
+      "a": "إقبال",
       "alt": [
-        "والدتها",
-        "الأم"
+        "Iqbal"
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/Wadjda",
-      "verified": true,
-      "difficultyTarget": 0.15
-    },
-    {
-      "qid": "arabmovies-1000-908",
+      "qid": "arabmovies-1000-918",
       "p": 1000,
-      "topic": "عمر",
-      "q": "ما اسم المحقق الذي ينتحل شخصية سجين ليستدرج اعتراف البطل في «عمر»؟",
-      "a": "رامي",
-      "alt": [
-        "Rami"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Omar_(2013_film)",
-      "verified": true,
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.15,
+      "verified": true
     }
   ]
 }

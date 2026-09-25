@@ -5,110 +5,9 @@
   "qs": [
     {
       "p": 200,
-      "q": "ما العضو الذي يضخّ الدم إلى جميع أنحاء الجسم؟",
-      "a": "القلب",
-      "qid": "general-200-901",
-      "topic": "جسم الإنسان",
-      "verified": true,
-      "difficultyTarget": 0.8,
-      "sourceUrl": "https://www.nhlbi.nih.gov/health/heart"
-    },
-    {
-      "p": 200,
-      "q": "أي كوكب يقع بين الزهرة والمريخ في ترتيب المجموعة الشمسية؟",
-      "a": "الأرض",
-      "qid": "general-200-902",
-      "topic": "الفضاء والكواكب",
-      "verified": true,
-      "alt": [
-        "كوكب الأرض"
-      ],
-      "difficultyTarget": 0.8,
-      "sourceUrl": "https://science.nasa.gov/earth/facts/"
-    },
-    {
-      "p": 200,
-      "q": "من المخترع الذي ارتبط اسمه بتطوير المصباح المتوهج ونظام الإضاءة الكهربائية في مينلو بارك؟",
-      "a": "توماس إديسون",
-      "qid": "general-200-903",
-      "topic": "اختراعات وأوائل",
-      "verified": true,
-      "alt": [
-        "إديسون",
-        "توماس أديسون",
-        "توماس ألفا إديسون"
-      ],
-      "difficultyTarget": 0.8,
-      "sourceUrl": "https://home.nps.gov/edis/learn/historyculture/edison-biography.htm"
-    },
-    {
-      "p": 200,
-      "q": "ما اسم الصوت القويّ الذي نسمعه في السماء بعد البرق؟",
-      "a": "الرعد",
-      "qid": "general-200-904",
-      "topic": "ظواهر طبيعية",
-      "verified": true,
-      "difficultyTarget": 0.8,
-      "sourceUrl": "https://www.weather.gov/safety/lightning-science-overview"
-    },
-    {
-      "p": 200,
-      "q": "ما أضخم حيوان يعيش على كوكبنا؟",
-      "a": "الحوت الأزرق",
-      "qid": "general-200-905",
-      "topic": "أرقام قياسية",
-      "verified": true,
-      "alt": [
-        "حوت أزرق"
-      ],
-      "difficultyTarget": 0.8,
-      "sourceUrl": "https://www.fisheries.noaa.gov/species/blue-whale"
-    },
-    {
-      "p": 200,
-      "q": "ما اسم العملة الرسمية في اليابان؟",
-      "a": "الين",
-      "qid": "general-200-906",
-      "topic": "عملات ورموز",
-      "verified": true,
-      "alt": [
-        "الين الياباني"
-      ],
-      "difficultyTarget": 0.8,
-      "sourceUrl": "https://www.boj.or.jp/en/note_tfjgs/note/valid/"
-    },
-    {
-      "p": 200,
-      "q": "في أي اتجاه تُكتب الكلمات العربية؟",
-      "a": "من اليمين إلى اليسار",
-      "qid": "general-200-907",
-      "topic": "لغات وكتابة",
-      "verified": true,
-      "alt": [
-        "يمين إلى يسار"
-      ],
-      "difficultyTarget": 0.8,
-      "sourceUrl": "https://www.w3.org/TR/alreq/"
-    },
-    {
-      "p": 200,
-      "q": "ما الشيء الذي نفتحه فوق رؤوسنا لنحتمي من المطر؟",
-      "a": "المظلة",
-      "qid": "general-200-908",
-      "topic": "أشياء يومية",
-      "verified": true,
-      "alt": [
-        "الشمسية",
-        "الشمسيّة"
-      ],
-      "difficultyTarget": 0.8,
-      "sourceUrl": "https://www.vam.ac.uk/blog/textiles-and-fashion/new-acquisition-storm-umbrella"
-    },
-    {
-      "p": 400,
       "q": "ما الغدة التي تفرز هرمون الإنسولين؟",
       "a": "البنكرياس",
-      "qid": "general-400-901",
+      "qid": "general-200-911",
       "topic": "جسم الإنسان",
       "verified": true,
       "alt": [
@@ -116,14 +15,14 @@
         "غدة البنكرياس",
         "البنكرياس (المعثكلة)"
       ],
-      "difficultyTarget": 0.6,
+      "difficultyTarget": 0.8,
       "sourceUrl": "https://www.niddk.nih.gov/health-information/diabetes/overview/what-is-diabetes"
     },
     {
-      "p": 400,
+      "p": 200,
       "q": "ما أشد كواكب المجموعة الشمسية حرارة؟",
       "a": "الزهرة",
-      "qid": "general-400-902",
+      "qid": "general-200-912",
       "topic": "الفضاء والكواكب",
       "verified": true,
       "alt": [
@@ -131,14 +30,82 @@
         "فينوس",
         "Venus"
       ],
-      "difficultyTarget": 0.6,
+      "difficultyTarget": 0.8,
       "sourceUrl": "https://science.nasa.gov/venus/venus-facts/"
     },
     {
-      "p": 400,
+      "p": 200,
+      "q": "إلى أي معدن ثمين يشير الرمز الكيميائي Au؟",
+      "a": "الذهب",
+      "qid": "general-200-913",
+      "topic": "عملات ورموز",
+      "verified": true,
+      "alt": [
+        "ذهب"
+      ],
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://periodic-table.rsc.org/element/79/"
+    },
+    {
+      "p": 200,
+      "q": "ما اللغة الرسمية في البرازيل؟",
+      "a": "البرتغالية",
+      "qid": "general-200-914",
+      "topic": "لغات وكتابة",
+      "verified": true,
+      "alt": [
+        "اللغة البرتغالية",
+        "برتغالي"
+      ],
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://portal.stf.jus.br/constituicao-supremo/artigo.asp?abrirArtigo=13&abrirBase=CF"
+    },
+    {
+      "p": 200,
+      "q": "ما المادة الغنية بالسيليكا التي تدخل أساسًا في صناعة الزجاج الشائع؟",
+      "a": "الرمل",
+      "qid": "general-200-915",
+      "topic": "أشياء يومية",
+      "verified": true,
+      "alt": [
+        "رمل السيليكا"
+      ],
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://allaboutglass.cmog.org/definition/sand"
+    },
+    {
+      "p": 200,
+      "q": "ما أكبر جزيرة في العالم من حيث المساحة؟",
+      "a": "جرينلاند",
+      "qid": "general-200-916",
+      "topic": "أرقام قياسية",
+      "verified": true,
+      "alt": [
+        "غرينلاند",
+        "Greenland"
+      ],
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://traveltrade.visitgreenland.com/faq/"
+    },
+    {
+      "p": 200,
+      "q": "لماذا أُضيفت المسامير المعدنية إلى زوايا جيوب الجينز في تصميمه الأصلي؟",
+      "a": "تقوية الجيوب ومنع تمزقها",
+      "qid": "general-200-917",
+      "topic": "أشياء يومية",
+      "verified": true,
+      "alt": [
+        "تقوية الجيوب",
+        "منع تمزق الجيوب"
+      ],
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://www.levi.com/SI/en/blog/article/birth-of-the-blue-jean"
+    },
+    {
+      "p": 200,
       "q": "من اكتشف البنسلين؟",
       "a": "ألكسندر فلمنغ",
-      "qid": "general-400-903",
+      "qid": "general-200-918",
       "topic": "اختراعات وأوائل",
       "verified": true,
       "alt": [
@@ -146,14 +113,29 @@
         "فلمنغ",
         "Alexander Fleming"
       ],
-      "difficultyTarget": 0.6,
+      "difficultyTarget": 0.8,
       "sourceUrl": "https://www.nobelprize.org/prizes/medicine/1945/fleming/biographical/"
+    },
+    {
+      "p": 400,
+      "q": "لماذا توجد نتوءات صغيرة على مفتاحي F و J في لوحات المفاتيح؟",
+      "a": "تحديد موضع الأصابع دون النظر",
+      "qid": "general-400-911",
+      "topic": "أشياء يومية",
+      "verified": true,
+      "alt": [
+        "توجيه الأصابع",
+        "تحديد موضع اليدين",
+        "المساعدة على الكتابة دون النظر"
+      ],
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://www.microsoft.com/en-us/surface/do-more-with-surface/choosing-between-touch-and-type"
     },
     {
       "p": 400,
       "q": "ما السبب الرئيسي لحدوث المد والجزر في البحار؟",
       "a": "جاذبية القمر",
-      "qid": "general-400-904",
+      "qid": "general-400-912",
       "topic": "ظواهر طبيعية",
       "verified": true,
       "alt": [
@@ -165,77 +147,93 @@
     },
     {
       "p": 400,
-      "q": "إلى أي معدن ثمين يشير الرمز الكيميائي Au؟",
-      "a": "الذهب",
-      "qid": "general-400-905",
-      "topic": "عملات ورموز",
-      "verified": true,
-      "alt": [
-        "ذهب"
-      ],
-      "difficultyTarget": 0.6,
-      "sourceUrl": "https://periodic-table.rsc.org/element/79/"
-    },
-    {
-      "p": 400,
-      "q": "ما اللغة الرسمية في البرازيل؟",
-      "a": "البرتغالية",
-      "qid": "general-400-906",
-      "topic": "لغات وكتابة",
-      "verified": true,
-      "alt": [
-        "اللغة البرتغالية",
-        "برتغالي"
-      ],
-      "difficultyTarget": 0.6,
-      "sourceUrl": "https://portal.stf.jus.br/constituicao-supremo/artigo.asp?abrirArtigo=13&abrirBase=CF"
-    },
-    {
-      "p": 400,
-      "q": "ما المادة الغنية بالسيليكا التي تدخل أساسًا في صناعة الزجاج الشائع؟",
-      "a": "الرمل",
-      "qid": "general-400-907",
-      "topic": "أشياء يومية",
-      "verified": true,
-      "alt": [
-        "رمل السيليكا"
-      ],
-      "difficultyTarget": 0.6,
-      "sourceUrl": "https://allaboutglass.cmog.org/definition/sand"
-    },
-    {
-      "p": 400,
-      "q": "ما أكبر جزيرة في العالم من حيث المساحة؟",
-      "a": "جرينلاند",
-      "qid": "general-400-908",
-      "topic": "أرقام قياسية",
-      "verified": true,
-      "alt": [
-        "غرينلاند",
-        "Greenland"
-      ],
-      "difficultyTarget": 0.6,
-      "sourceUrl": "https://traveltrade.visitgreenland.com/faq/"
-    },
-    {
-      "p": 600,
       "q": "من العالِم الفرنسي الذي اشتهر بفك رموز الهيروغليفية بمساعدة حجر رشيد؟",
       "a": "شامبليون",
-      "qid": "general-600-901",
+      "qid": "general-400-913",
       "topic": "لغات وكتابة",
       "verified": true,
       "alt": [
         "جان فرانسوا شامبليون",
         "Champollion"
       ],
-      "difficultyTarget": 0.4,
+      "difficultyTarget": 0.6,
       "sourceUrl": "https://www.britishmuseum.org/blog/everything-you-ever-wanted-know-about-rosetta-stone"
+    },
+    {
+      "p": 400,
+      "q": "ما اسم الشبكة الحاسوبية التي تُعدّ الأصل الذي نشأت منه الإنترنت؟",
+      "a": "أربانت",
+      "qid": "general-400-914",
+      "topic": "اختراعات وأوائل",
+      "verified": true,
+      "alt": [
+        "ARPANET",
+        "شبكة أربانت",
+        "آربانت"
+      ],
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://www.computerhistory.org/internethistory/"
+    },
+    {
+      "p": 400,
+      "q": "ما اسم العملة الرسمية في بولندا؟",
+      "a": "الزلوتي",
+      "qid": "general-400-915",
+      "topic": "عملات ورموز",
+      "verified": true,
+      "alt": [
+        "زلوتي",
+        "złoty"
+      ],
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://nbp.pl/wp-content/uploads/2022/11/2009_06___czeslaw_niemen_en.pdf"
+    },
+    {
+      "p": 400,
+      "q": "ما المعدن الذي استُخدم على نطاق واسع لفتائل المصابيح المتوهجة؟",
+      "a": "التنجستن",
+      "qid": "general-400-916",
+      "topic": "أشياء يومية",
+      "verified": true,
+      "alt": [
+        "التنغستن",
+        "الولفرام"
+      ],
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://periodic-table.rsc.org/element/74/"
+    },
+    {
+      "p": 400,
+      "q": "أي دولة اعتمدت لغة إشارتها المحلية لغة رسمية إلى جانب الماورية؟",
+      "a": "نيوزيلندا",
+      "qid": "general-400-917",
+      "topic": "لغات وكتابة",
+      "verified": true,
+      "alt": [
+        "نيو زيلندا"
+      ],
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://ncea.education.govt.nz/learning-languages/new-zealand-sign-language"
+    },
+    {
+      "p": 400,
+      "q": "ما اللون البارز حول الشمس في صور غروب المريخ التي التقطها المسبار كيوريوسيتي؟",
+      "a": "أزرق",
+      "qid": "general-400-918",
+      "topic": "الفضاء والكواكب",
+      "verified": true,
+      "alt": [
+        "الأزرق",
+        "أزرق مائل للرمادي"
+      ],
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://science.nasa.gov/resource/sunset-at-mars-gale-crater-curiosity/"
     },
     {
       "p": 600,
       "q": "ما اسم الغدة الصغيرة في الدماغ التي تفرز هرمون الميلاتونين؟",
       "a": "الغدة الصنوبرية",
-      "qid": "general-600-902",
+      "qid": "general-600-911",
       "topic": "جسم الإنسان",
       "verified": true,
       "alt": [
@@ -249,7 +247,7 @@
       "p": 600,
       "q": "ما تأثير دوران الأرض الذي يوجّه دوران الأعاصير عكس عقارب الساعة في النصف الشمالي؟",
       "a": "تأثير كوريوليس",
-      "qid": "general-600-903",
+      "qid": "general-600-912",
       "topic": "ظواهر طبيعية",
       "verified": true,
       "alt": [
@@ -261,52 +259,9 @@
     },
     {
       "p": 600,
-      "q": "ما اسم الشبكة الحاسوبية التي تُعدّ الأصل الذي نشأت منه الإنترنت؟",
-      "a": "أربانت",
-      "qid": "general-600-904",
-      "topic": "اختراعات وأوائل",
-      "verified": true,
-      "alt": [
-        "ARPANET",
-        "شبكة أربانت",
-        "آربانت"
-      ],
-      "difficultyTarget": 0.4,
-      "sourceUrl": "https://www.computerhistory.org/internethistory/"
-    },
-    {
-      "p": 600,
-      "q": "ما اسم العملة الرسمية في بولندا؟",
-      "a": "الزلوتي",
-      "qid": "general-600-905",
-      "topic": "عملات ورموز",
-      "verified": true,
-      "alt": [
-        "زلوتي",
-        "złoty"
-      ],
-      "difficultyTarget": 0.4,
-      "sourceUrl": "https://nbp.pl/wp-content/uploads/2022/11/2009_06___czeslaw_niemen_en.pdf"
-    },
-    {
-      "p": 600,
-      "q": "ما المعدن الذي استُخدم على نطاق واسع لفتائل المصابيح المتوهجة؟",
-      "a": "التنجستن",
-      "qid": "general-600-906",
-      "topic": "أشياء يومية",
-      "verified": true,
-      "alt": [
-        "التنغستن",
-        "الولفرام"
-      ],
-      "difficultyTarget": 0.4,
-      "sourceUrl": "https://periodic-table.rsc.org/element/74/"
-    },
-    {
-      "p": 600,
       "q": "ما اسم أقرب مجرة حلزونية كبيرة إلى مجرة درب التبانة؟",
       "a": "المرأة المسلسلة",
-      "qid": "general-600-907",
+      "qid": "general-600-913",
       "topic": "الفضاء والكواكب",
       "verified": true,
       "alt": [
@@ -319,9 +274,81 @@
     },
     {
       "p": 600,
+      "q": "من المهندس الأمريكي الذي اخترع مكيف الهواء الحديث؟",
+      "a": "ويليس كاريير",
+      "qid": "general-600-914",
+      "topic": "اختراعات وأوائل",
+      "verified": true,
+      "alt": [
+        "كاريير",
+        "ويلِس كاريير"
+      ],
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://www.carrier.com/us/en/history/invention-of-air-conditioning/"
+    },
+    {
+      "p": 600,
+      "q": "ما اسم العملة الرسمية في منغوليا؟",
+      "a": "التوغريك",
+      "qid": "general-600-915",
+      "topic": "عملات ورموز",
+      "verified": true,
+      "alt": [
+        "توغروغ",
+        "التغريك",
+        "Tögrög"
+      ],
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://www.mongolbank.mn/en/p/banknotes"
+    },
+    {
+      "p": 600,
+      "q": "ما اسم وحدة المسافة الفلكية التي تساوي نحو 3.26 سنة ضوئية؟",
+      "a": "البارسِك",
+      "qid": "general-600-916",
+      "topic": "الفضاء والكواكب",
+      "verified": true,
+      "alt": [
+        "الفرسخ الفلكي",
+        "parsec"
+      ],
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://science.nasa.gov/solar-system/cosmic-distances/"
+    },
+    {
+      "p": 600,
+      "q": "ما المنتج الذي مُسح باركوده في أول عملية بيع تجارية بهذا النظام عام 1974؟",
+      "a": "علكة",
+      "qid": "general-600-917",
+      "topic": "اختراعات وأوائل",
+      "verified": true,
+      "alt": [
+        "علبة علكة",
+        "علكة ريجلي",
+        "لبان"
+      ],
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://support.gs1.org/support/solutions/articles/43000734073-gs1-historical-timeline"
+    },
+    {
+      "p": 600,
+      "q": "ما اسم اللمعة الملونة القصيرة التي قد تظهر عند الحافة العليا للشمس لحظة الغروب؟",
+      "a": "الوميض الأخضر",
+      "qid": "general-600-918",
+      "topic": "ظواهر طبيعية",
+      "verified": true,
+      "alt": [
+        "الشعاع الأخضر",
+        "Green flash"
+      ],
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://www.weather.gov/media/chs/newsletters/StormCourier_2010.pdf#page=8"
+    },
+    {
+      "p": 800,
       "q": "ما النفق السويسري الذي تعبر فيه القطارات تحت الألب لمسافة نحو 57 كيلومترًا؟",
       "a": "نفق غوتهارد القاعدي",
-      "qid": "general-600-908",
+      "qid": "general-800-911",
       "topic": "أرقام قياسية",
       "verified": true,
       "alt": [
@@ -329,28 +356,14 @@
         "نفق غوتهارد",
         "Gotthard Base Tunnel"
       ],
-      "difficultyTarget": 0.4,
-      "sourceUrl": "https://company.sbb.ch/de/bahnentwicklung/projekte/tessin/langintervalle.html"
-    },
-    {
-      "p": 800,
-      "q": "من المهندس الأمريكي الذي اخترع مكيف الهواء الحديث؟",
-      "a": "ويليس كاريير",
-      "qid": "general-800-901",
-      "topic": "اختراعات وأوائل",
-      "verified": true,
-      "alt": [
-        "كاريير",
-        "ويلِس كاريير"
-      ],
       "difficultyTarget": 0.25,
-      "sourceUrl": "https://www.carrier.com/us/en/history/invention-of-air-conditioning/"
+      "sourceUrl": "https://company.sbb.ch/de/bahnentwicklung/projekte/tessin/langintervalle.html"
     },
     {
       "p": 800,
       "q": "ما اسم الأنبوب الزجاجي الذي يخلّفه البرق حين يضرب كثبان الصحراء؟",
       "a": "الفولغوريت",
-      "qid": "general-800-902",
+      "qid": "general-800-912",
       "topic": "ظواهر طبيعية",
       "verified": true,
       "alt": [
@@ -364,37 +377,9 @@
     },
     {
       "p": 800,
-      "q": "ما اسم العملة الرسمية في منغوليا؟",
-      "a": "التوغريك",
-      "qid": "general-800-903",
-      "topic": "عملات ورموز",
-      "verified": true,
-      "alt": [
-        "توغروغ",
-        "التغريك",
-        "Tögrög"
-      ],
-      "difficultyTarget": 0.25,
-      "sourceUrl": "https://www.mongolbank.mn/en/p/banknotes"
-    },
-    {
-      "p": 800,
-      "q": "أي دولة اعتمدت لغة إشارتها المحلية لغة رسمية إلى جانب الماورية؟",
-      "a": "نيوزيلندا",
-      "qid": "general-800-904",
-      "topic": "لغات وكتابة",
-      "verified": true,
-      "alt": [
-        "نيو زيلندا"
-      ],
-      "difficultyTarget": 0.25,
-      "sourceUrl": "https://ncea.education.govt.nz/learning-languages/new-zealand-sign-language"
-    },
-    {
-      "p": 800,
       "q": "ما الغشاء الغني بالأعصاب والأوعية الدموية الذي يغطي العظام من الخارج؟",
       "a": "السمحاق",
-      "qid": "general-800-905",
+      "qid": "general-800-913",
       "topic": "جسم الإنسان",
       "verified": true,
       "alt": [
@@ -405,38 +390,9 @@
     },
     {
       "p": 800,
-      "q": "ما اسم وحدة المسافة الفلكية التي تساوي نحو 3.26 سنة ضوئية؟",
-      "a": "البارسِك",
-      "qid": "general-800-906",
-      "topic": "الفضاء والكواكب",
-      "verified": true,
-      "alt": [
-        "الفرسخ الفلكي",
-        "parsec"
-      ],
-      "difficultyTarget": 0.25,
-      "sourceUrl": "https://science.nasa.gov/solar-system/cosmic-distances/"
-    },
-    {
-      "p": 800,
-      "q": "لماذا توجد نتوءات صغيرة على مفتاحي F و J في لوحات المفاتيح؟",
-      "a": "تحديد موضع الأصابع دون النظر",
-      "qid": "general-800-907",
-      "topic": "أشياء يومية",
-      "verified": true,
-      "alt": [
-        "توجيه الأصابع",
-        "تحديد موضع اليدين",
-        "المساعدة على الكتابة دون النظر"
-      ],
-      "difficultyTarget": 0.25,
-      "sourceUrl": "https://www.microsoft.com/en-us/surface/do-more-with-surface/choosing-between-touch-and-type"
-    },
-    {
-      "p": 800,
       "q": "ما اسم السهل الملحي البوليفي الذي يعد أكبر سهل ملحي في العالم؟",
       "a": "سالار دي أويوني",
-      "qid": "general-800-908",
+      "qid": "general-800-914",
       "topic": "أرقام قياسية",
       "verified": true,
       "alt": [
@@ -448,80 +404,37 @@
       "sourceUrl": "https://www.esa.int/ESA_Multimedia/Images/2017/09/Proba-V_images_Salar_de_Uyuni"
     },
     {
-      "p": 1000,
+      "p": 800,
       "q": "ما اسم العضلة الدقيقة المسؤولة عن ظهور القشعريرة على الجلد؟",
       "a": "العضلة الناصبة للشعرة",
-      "qid": "general-1000-901",
+      "qid": "general-800-915",
       "topic": "جسم الإنسان",
       "verified": true,
       "alt": [
         "الناصبة للشعرة",
         "Arrector pili"
       ],
-      "difficultyTarget": 0.15,
+      "difficultyTarget": 0.25,
       "sourceUrl": "https://www.health.harvard.edu/blog/wondering-about-goosebumps-of-course-you-are-2020080320688"
     },
     {
-      "p": 1000,
-      "q": "ما اللون البارز حول الشمس في صور غروب المريخ التي التقطها المسبار كيوريوسيتي؟",
-      "a": "أزرق",
-      "qid": "general-1000-902",
-      "topic": "الفضاء والكواكب",
-      "verified": true,
-      "alt": [
-        "الأزرق",
-        "أزرق مائل للرمادي"
-      ],
-      "difficultyTarget": 0.15,
-      "sourceUrl": "https://science.nasa.gov/resource/sunset-at-mars-gale-crater-curiosity/"
-    },
-    {
-      "p": 1000,
-      "q": "ما المنتج الذي مُسح باركوده في أول عملية بيع تجارية بهذا النظام عام 1974؟",
-      "a": "علكة",
-      "qid": "general-1000-903",
-      "topic": "اختراعات وأوائل",
-      "verified": true,
-      "alt": [
-        "علبة علكة",
-        "علكة ريجلي",
-        "لبان"
-      ],
-      "difficultyTarget": 0.15,
-      "sourceUrl": "https://support.gs1.org/support/solutions/articles/43000734073-gs1-historical-timeline"
-    },
-    {
-      "p": 1000,
-      "q": "ما اسم اللمعة الملونة القصيرة التي قد تظهر عند الحافة العليا للشمس لحظة الغروب؟",
-      "a": "الوميض الأخضر",
-      "qid": "general-1000-904",
-      "topic": "ظواهر طبيعية",
-      "verified": true,
-      "alt": [
-        "الشعاع الأخضر",
-        "Green flash"
-      ],
-      "difficultyTarget": 0.15,
-      "sourceUrl": "https://www.weather.gov/media/chs/newsletters/StormCourier_2010.pdf#page=8"
-    },
-    {
-      "p": 1000,
+      "p": 800,
       "q": "اسم عملة بوتسوانا«بولا» يعني البركة، وأي ظاهرة طبيعية أيضًا؟",
       "a": "المطر",
-      "qid": "general-1000-905",
+      "qid": "general-800-916",
       "topic": "عملات ورموز",
       "verified": true,
       "alt": [
         "هطول المطر"
       ],
-      "difficultyTarget": 0.15,
+      "difficultyTarget": 0.25,
       "sourceUrl": "https://bankofbotswana.bw/content/history-botswana-currency"
     },
     {
-      "p": 1000,
+      "p": 800,
       "q": "من أي غدة في النعجة الأصلية أُخذت الخلية الجسدية التي استُنسخت منها دوللي؟",
       "a": "الغدة الثديية",
-      "qid": "general-1000-906",
+      "qid": "general-800-917",
       "topic": "اختراعات وأوائل",
       "verified": true,
       "alt": [
@@ -529,36 +442,144 @@
         "غدة الثدي",
         "الضرع"
       ],
-      "difficultyTarget": 0.15,
+      "difficultyTarget": 0.25,
       "sourceUrl": "https://vet.ed.ac.uk/roslin/about/history/dolly/facts/life-of-dolly"
     },
     {
-      "p": 1000,
-      "q": "لماذا أُضيفت المسامير المعدنية إلى زوايا جيوب الجينز في تصميمه الأصلي؟",
-      "a": "تقوية الجيوب ومنع تمزقها",
-      "qid": "general-1000-907",
-      "topic": "أشياء يومية",
-      "verified": true,
-      "alt": [
-        "تقوية الجيوب",
-        "منع تمزق الجيوب"
-      ],
-      "difficultyTarget": 0.15,
-      "sourceUrl": "https://www.levi.com/SI/en/blog/article/birth-of-the-blue-jean"
-    },
-    {
-      "p": 1000,
-      "q": "ما اسم السحب ذات الشكل الشبيه بالعدسة التي تتكون قرب الجبال وتُشبه الأطباق الطائرة؟",
+      "p": 800,
+      "q": "ما السحب الملساء التي تبدو ثابتة قرب الجبال رغم مرور الرياح خلالها؟",
       "a": "السحب العدسية",
-      "qid": "general-1000-908",
+      "qid": "general-800-918",
       "topic": "ظواهر طبيعية",
       "verified": true,
       "alt": [
         "السحابة العدسية",
         "lenticular"
       ],
-      "difficultyTarget": 0.15,
-      "sourceUrl": "https://weather.metoffice.gov.uk/learn-about/weather/types-of-weather/clouds/unusual-cloud-formations"
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://www.metoffice.gov.uk/blog/2026/deep-dive-from-mountain-waves-to-mammatus"
+    },
+    {
+      "q": "ما المادة الهلامية الشفافة التي تملأ معظم تجويف العين؟",
+      "a": "الجسم الزجاجي",
+      "topic": "جسم الإنسان",
+      "sourceUrl": "https://www.nei.nih.gov/eye-health-information/eye-conditions-and-diseases/vitreous-detachment",
+      "alt": [
+        "الخلط الزجاجي"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 1000,
+      "qid": "general-1000-911",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "ما الحد الذي قد يتمزق داخله قمر بفعل قوى المد للكوكب الذي يدور حوله؟",
+      "a": "حد روش",
+      "topic": "الفضاء والكواكب",
+      "sourceUrl": "https://www.nasa.gov/solar-system/new-simulations-shed-light-on-origins-of-saturns-rings-and-icy-moons/",
+      "alt": [
+        "حد روشيه",
+        "Roche limit"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 1000,
+      "qid": "general-1000-912",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "من الممثلة التي شاركت جورج أنثيل في ابتكار نظام اتصالات يعتمد القفز بين الترددات؟",
+      "a": "هيدي لامار",
+      "topic": "اختراعات وأوائل",
+      "sourceUrl": "https://www.invent.org/inductees/hedy-lamarr",
+      "alt": [
+        "هيدي لامارر",
+        "Hedy Lamarr"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 1000,
+      "qid": "general-1000-913",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "ما اسم التوهج الأزرق أو البنفسجي الذي قد يظهر على صواري السفن قرب العواصف الرعدية؟",
+      "a": "نار سانت إلمو",
+      "topic": "ظواهر طبيعية",
+      "sourceUrl": "https://www.weather.gov.hk/en/education/aviation-and-marine/aviation/00534-st-elmos-fire-as-seen-from-aircraft.html",
+      "alt": [
+        "نيران القديس إلمو",
+        "نار القديس إلمو"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 1000,
+      "qid": "general-1000-914",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "ما تقنية الطباعة التي تستخدم لوحًا معدنيًا محفورًا لإنتاج حبر بارز يمكن لمسه على الأوراق النقدية؟",
+      "a": "الطباعة الغائرة",
+      "topic": "عملات ورموز",
+      "sourceUrl": "https://www.bankofengland.co.uk/-/media/boe/files/museum/museum-loan-box-service/victorian-banknote-characters-loan-box-notes-for-teachers.pdf",
+      "alt": [
+        "إنتاغليو",
+        "Intaglio"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 1000,
+      "qid": "general-1000-915",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "ما اسم المخطوط الذي مُحي نصه القديم وأعيدت الكتابة على صفحاته؟",
+      "a": "الطِرس",
+      "topic": "لغات وكتابة",
+      "sourceUrl": "https://blogs.loc.gov/thesignal/2011/10/information-or-artifact-digitizing-a-book-part-2/",
+      "alt": [
+        "باليمبسست",
+        "طرس",
+        "Palimpsest"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 1000,
+      "qid": "general-1000-916",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "أي نخيل في سيشل ينتج أكبر بذرة في العالم؟",
+      "a": "جوز الهند البحري",
+      "topic": "أرقام قياسية",
+      "sourceUrl": "https://www.kew.org/read-and-watch/double-coconut-largest-seed-in-the-world",
+      "alt": [
+        "كوكو دي مير",
+        "جوز الهند المزدوج",
+        "لادويسيا"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 1000,
+      "qid": "general-1000-917",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "قرب أي نقطة في نظام الشمس والأرض يعمل تلسكوب جيمس ويب؟",
+      "a": "لاغرانج الثانية",
+      "topic": "الفضاء والكواكب",
+      "sourceUrl": "https://science.nasa.gov/mission/webb/orbit/",
+      "alt": [
+        "L2",
+        "إل 2",
+        "نقطة لاغرانج الثانية"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 1000,
+      "qid": "general-1000-918",
+      "difficultyTarget": 0.15
     }
   ]
 }

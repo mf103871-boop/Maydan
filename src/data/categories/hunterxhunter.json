@@ -5,134 +5,8 @@
   "style": "story",
   "qs": [
     {
-      "qid": "hunterxhunter-200-901",
+      "qid": "hunterxhunter-200-911",
       "p": 200,
-      "q": "من الفتى الذي يغادر جزيرة الحوت بحثًا عن أبيه في هنتر × هنتر؟",
-      "a": "غون فريكس",
-      "alt": [
-        "غون",
-        "غون فريكس",
-        "Gon Freecss"
-      ],
-      "topic": "رحلة غون",
-      "verified": true,
-      "sourceUrl": "https://en.wikipedia.org/wiki/Gon_Freecss",
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "hunterxhunter-200-902",
-      "p": 200,
-      "q": "من صديق غون صاحب الشعر الفضي القادم من عائلة قتلة محترفين؟",
-      "a": "كيلوا",
-      "alt": [
-        "كيلوا زولديك",
-        "Killua"
-      ],
-      "topic": "عائلة زولديك",
-      "verified": true,
-      "sourceUrl": "https://en.wikipedia.org/wiki/Killua_Zoldyck",
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "hunterxhunter-200-903",
-      "p": 200,
-      "q": "ما الوثيقة التي يحصل عليها الناجح في امتحان الصيادين؟",
-      "a": "رخصة صياد",
-      "alt": [
-        "رخصة الصياد",
-        "رخصة الصيد"
-      ],
-      "topic": "امتحان الصيادين",
-      "verified": true,
-      "sourceUrl": "https://en.wikipedia.org/wiki/Hunter_%C3%97_Hunter#Setting",
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "hunterxhunter-200-904",
-      "p": 200,
-      "q": "ما اسم طاقة الحياة التي يتحكم بها مستخدمو النين؟",
-      "a": "الهالة",
-      "alt": [
-        "الأورا",
-        "Aura"
-      ],
-      "topic": "قدرات النين",
-      "verified": true,
-      "sourceUrl": "https://en.wikipedia.org/wiki/Hunter_%C3%97_Hunter#Setting",
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "hunterxhunter-200-905",
-      "p": 200,
-      "q": "من الناجي من عشيرة كورتا الذي يطارد قتلتها؟",
-      "a": "كورابيكا",
-      "alt": [
-        "Kurapika"
-      ],
-      "topic": "الفرقة الشبح",
-      "verified": true,
-      "sourceUrl": "https://en.wikipedia.org/wiki/Kurapika",
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "hunterxhunter-200-906",
-      "p": 200,
-      "q": "في أي شكل يحتفظ اللاعب بأغراضه وتعاويذه داخل غريد آيلاند؟",
-      "a": "بطاقات",
-      "alt": [
-        "البطاقات",
-        "كروت"
-      ],
-      "topic": "غريد آيلاند",
-      "verified": true,
-      "sourceUrl": "https://en.wikipedia.org/wiki/Gon_Freecss#In_the_Hunter_%C3%97_Hunter_manga",
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "hunterxhunter-200-907",
-      "p": 200,
-      "q": "ما اسم ملك نمل الكيميرا الذي يواجه نيترو؟",
-      "a": "ميرويم",
-      "alt": [
-        "ميريم",
-        "Meruem"
-      ],
-      "topic": "نمل الكيميرا",
-      "verified": true,
-      "sourceUrl": "https://www.ntv.co.jp/hunterhunter/story/102.html",
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "hunterxhunter-200-908",
-      "p": 200,
-      "q": "من صديق غون الذي يطمح للعمل طبيبًا ويترشح لرئاسة الصيادين؟",
-      "a": "ليوريو",
-      "alt": [
-        "Leorio"
-      ],
-      "topic": "الانتخابات",
-      "verified": true,
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_characters#Leorio_Paradinight",
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "hunterxhunter-400-901",
-      "p": 400,
-      "q": "ما اسم والد غون الذي يبحث عنه طوال رحلته؟",
-      "a": "غينغ فريكس",
-      "alt": [
-        "جين فريكس",
-        "جينغ",
-        "Ging Freecss"
-      ],
-      "topic": "رحلة غون",
-      "verified": true,
-      "sourceUrl": "https://en.wikipedia.org/wiki/Gon_Freecss",
-      "difficultyTarget": 0.6
-    },
-    {
-      "qid": "hunterxhunter-400-902",
-      "p": 400,
       "q": "من النينجا الذي يرفض غون الاستسلام له في آخر مراحل الامتحان؟",
       "a": "هانزو",
       "alt": [
@@ -141,11 +15,11 @@
       "topic": "امتحان الصيادين",
       "verified": true,
       "sourceUrl": "https://www.ntv.co.jp/hunterhunter/story/019.html",
-      "difficultyTarget": 0.6
+      "difficultyTarget": 0.8
     },
     {
-      "qid": "hunterxhunter-400-903",
-      "p": 400,
+      "qid": "hunterxhunter-200-912",
+      "p": 200,
       "q": "ما اسم والد كيلوا الذي يسمح له بالعودة إلى أصدقائه؟",
       "a": "سيلفا",
       "alt": [
@@ -155,11 +29,11 @@
       "topic": "عائلة زولديك",
       "verified": true,
       "sourceUrl": "https://www.ntv.co.jp/hunterhunter/story/024.html",
-      "difficultyTarget": 0.6
+      "difficultyTarget": 0.8
     },
     {
-      "qid": "hunterxhunter-400-904",
-      "p": 400,
+      "qid": "hunterxhunter-200-913",
+      "p": 200,
       "q": "من المعلّم الذي عرّف غون وكيلوا بالنين في برج السماء؟",
       "a": "وينغ",
       "alt": [
@@ -169,25 +43,11 @@
       "topic": "قدرات النين",
       "verified": true,
       "sourceUrl": "https://en.wikipedia.org/wiki/Gon_Freecss#In_the_Hunter_%C3%97_Hunter_manga",
-      "difficultyTarget": 0.6
+      "difficultyTarget": 0.8
     },
     {
-      "qid": "hunterxhunter-400-905",
-      "p": 400,
-      "q": "من زعيم الفرقة الشبح الذي قايضه كورابيكا بإطلاق صديقيه؟",
-      "a": "كرولو لوسيلفر",
-      "alt": [
-        "كرولو",
-        "Chrollo Lucilfer"
-      ],
-      "topic": "الفرقة الشبح",
-      "verified": true,
-      "sourceUrl": "https://www.ntv.co.jp/hunterhunter/story/058.html",
-      "difficultyTarget": 0.6
-    },
-    {
-      "qid": "hunterxhunter-400-906",
-      "p": 400,
+      "qid": "hunterxhunter-200-914",
+      "p": 200,
       "q": "من المعلّمة صغيرة الهيئة التي تدرب غون وكيلوا داخل غريد آيلاند؟",
       "a": "بيسكيت كروغر",
       "alt": [
@@ -198,11 +58,11 @@
       "topic": "غريد آيلاند",
       "verified": true,
       "sourceUrl": "https://en.wikipedia.org/wiki/Gon_Freecss#In_the_Hunter_%C3%97_Hunter_manga",
-      "difficultyTarget": 0.6
+      "difficultyTarget": 0.8
     },
     {
-      "qid": "hunterxhunter-400-907",
-      "p": 400,
+      "qid": "hunterxhunter-200-915",
+      "p": 200,
       "q": "من الفتاة العمياء التي يرتبط بها ملك النمل عبر لعبة غونغي؟",
       "a": "كوموغي",
       "alt": [
@@ -212,24 +72,11 @@
       "topic": "نمل الكيميرا",
       "verified": true,
       "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_characters#Komugi",
-      "difficultyTarget": 0.6
+      "difficultyTarget": 0.8
     },
     {
-      "qid": "hunterxhunter-400-908",
-      "p": 400,
-      "q": "من شقيقة كيلوا التي يخرجها من بيت العائلة لإنقاذ غون؟",
-      "a": "ألوكا",
-      "alt": [
-        "Alluka"
-      ],
-      "topic": "الانتخابات",
-      "verified": true,
-      "sourceUrl": "https://www.ntv.co.jp/hunterhunter/story/139.html",
-      "difficultyTarget": 0.6
-    },
-    {
-      "qid": "hunterxhunter-600-901",
-      "p": 600,
+      "qid": "hunterxhunter-200-916",
+      "p": 200,
       "q": "من ربّت غون وسلّمته صندوقًا تركه أبوه له؟",
       "a": "ميتو",
       "alt": [
@@ -238,39 +85,11 @@
       "topic": "رحلة غون",
       "verified": true,
       "sourceUrl": "https://www.ntv.co.jp/hunterhunter/story/037.html",
-      "difficultyTarget": 0.4
+      "difficultyTarget": 0.8
     },
     {
-      "qid": "hunterxhunter-600-902",
-      "p": 600,
-      "q": "ما المهارة التي اختبرها مينتشي وبوهارا في المرحلة الثانية؟",
-      "a": "الطبخ",
-      "alt": [
-        "الطهو",
-        "إعداد الطعام"
-      ],
-      "topic": "امتحان الصيادين",
-      "verified": true,
-      "sourceUrl": "https://www.ntv.co.jp/hunterhunter/story/006.html",
-      "difficultyTarget": 0.4
-    },
-    {
-      "qid": "hunterxhunter-600-903",
-      "p": 600,
-      "q": "من الخادمة المتدرّبة التي تعترض أصدقاء كيلوا بعد اجتيازهم البوابة؟",
-      "a": "كناريا",
-      "alt": [
-        "كاناريا",
-        "Canary"
-      ],
-      "topic": "عائلة زولديك",
-      "verified": true,
-      "sourceUrl": "https://www.ntv.co.jp/hunterhunter/story/023.html",
-      "difficultyTarget": 0.4
-    },
-    {
-      "qid": "hunterxhunter-600-904",
-      "p": 600,
+      "qid": "hunterxhunter-200-917",
+      "p": 200,
       "q": "ما اسم قدرة غون المستوحاة من حجر وورقة ومقص؟",
       "a": "جاجانكين",
       "alt": [
@@ -280,11 +99,38 @@
       "topic": "قدرات النين",
       "verified": true,
       "sourceUrl": "https://en.wikipedia.org/wiki/Gon_Freecss#In_the_Hunter_%C3%97_Hunter_manga",
-      "difficultyTarget": 0.4
+      "difficultyTarget": 0.8
     },
     {
-      "qid": "hunterxhunter-600-905",
-      "p": 600,
+      "qid": "hunterxhunter-200-918",
+      "p": 200,
+      "q": "ما اسم الكيان داخل ألوكا الذي يشفي غون؟",
+      "a": "نانيكا",
+      "alt": [
+        "Nanika"
+      ],
+      "topic": "الانتخابات",
+      "verified": true,
+      "sourceUrl": "https://www.ntv.co.jp/hunterhunter/story/145.html",
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "hunterxhunter-400-911",
+      "p": 400,
+      "q": "من الخادمة المتدرّبة التي تعترض أصدقاء كيلوا بعد اجتيازهم البوابة؟",
+      "a": "كناريا",
+      "alt": [
+        "كاناريا",
+        "Canary"
+      ],
+      "topic": "عائلة زولديك",
+      "verified": true,
+      "sourceUrl": "https://www.ntv.co.jp/hunterhunter/story/023.html",
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "hunterxhunter-400-912",
+      "p": 400,
       "q": "من المبارز الذي يحتجز غون وكيلوا رغبةً في ضمهما إلى الفرقة؟",
       "a": "نوبوناغا",
       "alt": [
@@ -294,11 +140,11 @@
       "topic": "الفرقة الشبح",
       "verified": true,
       "sourceUrl": "https://www.ntv.co.jp/hunterhunter/story/050.html",
-      "difficultyTarget": 0.4
+      "difficultyTarget": 0.6
     },
     {
-      "qid": "hunterxhunter-600-906",
-      "p": 600,
+      "qid": "hunterxhunter-400-913",
+      "p": 400,
       "q": "من زعيم قراصنة غريد آيلاند الذي يجب تحديه للحصول على بطاقة الساحل؟",
       "a": "ريزور",
       "alt": [
@@ -308,11 +154,11 @@
       "topic": "غريد آيلاند",
       "verified": true,
       "sourceUrl": "https://www.ntv.co.jp/hunterhunter/story/068.html",
-      "difficultyTarget": 0.4
+      "difficultyTarget": 0.6
     },
     {
-      "qid": "hunterxhunter-600-907",
-      "p": 600,
+      "qid": "hunterxhunter-400-914",
+      "p": 400,
       "q": "ما اسم المنطقة التي تحظر الآلات وبدأ فيها خطر نمل الكيميرا؟",
       "a": "إن جي إل",
       "alt": [
@@ -322,24 +168,11 @@
       "topic": "نمل الكيميرا",
       "verified": true,
       "sourceUrl": "https://en.wikipedia.org/wiki/Hunter_%C3%97_Hunter#Plot",
-      "difficultyTarget": 0.4
+      "difficultyTarget": 0.6
     },
     {
-      "qid": "hunterxhunter-600-908",
-      "p": 600,
-      "q": "ما اسم الكيان داخل ألوكا الذي يشفي غون؟",
-      "a": "نانيكا",
-      "alt": [
-        "Nanika"
-      ],
-      "topic": "الانتخابات",
-      "verified": true,
-      "sourceUrl": "https://www.ntv.co.jp/hunterhunter/story/145.html",
-      "difficultyTarget": 0.4
-    },
-    {
-      "qid": "hunterxhunter-800-901",
-      "p": 800,
+      "qid": "hunterxhunter-400-915",
+      "p": 400,
       "q": "فوق أي شجرة هائلة يجلس غون مع أبيه في ختام أنمي 2011؟",
       "a": "شجرة العالم",
       "alt": [
@@ -348,39 +181,11 @@
       "topic": "رحلة غون",
       "verified": true,
       "sourceUrl": "https://www.ntv.co.jp/hunterhunter/story/148.html",
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.6
     },
     {
-      "qid": "hunterxhunter-800-902",
-      "p": 800,
-      "q": "ما اسم الجزيرة التي استضافت اختبار جمع الشارات؟",
-      "a": "زيفيل",
-      "alt": [
-        "جزيرة زيفيل",
-        "Zevil Island"
-      ],
-      "topic": "امتحان الصيادين",
-      "verified": true,
-      "sourceUrl": "https://www.ntv.co.jp/hunterhunter/story/014.html",
-      "difficultyTarget": 0.25
-    },
-    {
-      "qid": "hunterxhunter-800-903",
-      "p": 800,
-      "q": "من الخادم الذي يختبر أصدقاء كيلوا بلعبة عملة معدنية؟",
-      "a": "غوتو",
-      "alt": [
-        "غوتوه",
-        "Gotoh"
-      ],
-      "topic": "عائلة زولديك",
-      "verified": true,
-      "sourceUrl": "https://www.ntv.co.jp/hunterhunter/story/025.html",
-      "difficultyTarget": 0.25
-    },
-    {
-      "qid": "hunterxhunter-800-904",
-      "p": 800,
+      "qid": "hunterxhunter-400-916",
+      "p": 400,
       "q": "ما اسم مبدأ النين الذي يغلق تدفق الهالة لإخفاء الحضور؟",
       "a": "زيتسو",
       "alt": [
@@ -390,11 +195,11 @@
       "topic": "قدرات النين",
       "verified": true,
       "sourceUrl": "https://en.wikipedia.org/wiki/Hunter_%C3%97_Hunter#Setting",
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.6
     },
     {
-      "qid": "hunterxhunter-800-905",
-      "p": 800,
+      "qid": "hunterxhunter-400-917",
+      "p": 400,
       "q": "من أول أعضاء الفرقة الشبح الذي يقتله كورابيكا في مواجهته الفردية؟",
       "a": "أوفوغين",
       "alt": [
@@ -405,11 +210,11 @@
       "topic": "الفرقة الشبح",
       "verified": true,
       "sourceUrl": "https://en.wikipedia.org/wiki/Kurapika#Appearances",
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.6
     },
     {
-      "qid": "hunterxhunter-800-906",
-      "p": 800,
+      "qid": "hunterxhunter-400-918",
+      "p": 400,
       "q": "ما اسم اللاعب الملقب بالمفجّر الذي يهزمه غون؟",
       "a": "جينثرو",
       "alt": [
@@ -420,11 +225,39 @@
       "topic": "غريد آيلاند",
       "verified": true,
       "sourceUrl": "https://en.wikipedia.org/wiki/Gon_Freecss#In_the_Hunter_%C3%97_Hunter_manga",
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.6
     },
     {
-      "qid": "hunterxhunter-800-907",
-      "p": 800,
+      "qid": "hunterxhunter-600-911",
+      "p": 600,
+      "q": "ما اسم الجزيرة التي استضافت اختبار جمع الشارات؟",
+      "a": "زيفيل",
+      "alt": [
+        "جزيرة زيفيل",
+        "Zevil Island"
+      ],
+      "topic": "امتحان الصيادين",
+      "verified": true,
+      "sourceUrl": "https://www.ntv.co.jp/hunterhunter/story/014.html",
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "hunterxhunter-600-912",
+      "p": 600,
+      "q": "من الخادم الذي يختبر أصدقاء كيلوا بلعبة عملة معدنية؟",
+      "a": "غوتو",
+      "alt": [
+        "غوتوه",
+        "Gotoh"
+      ],
+      "topic": "عائلة زولديك",
+      "verified": true,
+      "sourceUrl": "https://www.ntv.co.jp/hunterhunter/story/025.html",
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "hunterxhunter-600-913",
+      "p": 600,
       "q": "من النملة الأخطبوطية التي تنقذ كيلوا وتتخلى عن رفاقها؟",
       "a": "إيكالغو",
       "alt": [
@@ -437,11 +270,11 @@
         "https://www.ntv.co.jp/hunterhunter/story/102.html",
         "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_characters#Chimera_Ants"
       ],
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.4
     },
     {
-      "qid": "hunterxhunter-800-908",
-      "p": 800,
+      "qid": "hunterxhunter-600-914",
+      "p": 600,
       "q": "من يفوز برئاسة جمعية الصيادين ثم يستقيل فورًا؟",
       "a": "باريستون هيل",
       "alt": [
@@ -451,11 +284,65 @@
       "topic": "الانتخابات",
       "verified": true,
       "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_characters#Pariston_Hill",
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.4
     },
     {
-      "qid": "hunterxhunter-1000-901",
-      "p": 1000,
+      "qid": "hunterxhunter-600-915",
+      "p": 600,
+      "q": "من عضو الفرقة الشبح الذي يتحكم بضحاياه بهوائي وهاتف؟",
+      "a": "شالنارك",
+      "alt": [
+        "Shalnark"
+      ],
+      "topic": "الفرقة الشبح",
+      "verified": true,
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_characters#Shalnark",
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "hunterxhunter-600-916",
+      "p": 600,
+      "q": "ما اسم قدرة هيسوكا التي تغيّر مظهر سطح مستوٍ كتحويل منديل إلى جلد؟",
+      "a": "تكستشر سربرايز",
+      "alt": [
+        "Texture Surprise",
+        "المفاجأة الملمسية"
+      ],
+      "topic": "قدرات النين",
+      "verified": true,
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_characters#Hisoka",
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "hunterxhunter-600-917",
+      "p": 600,
+      "q": "ما اسم قدرة نيفربيتو العلاجية التي تستدعي جراحًا دمية؟",
+      "a": "دكتور بلايث",
+      "alt": [
+        "Doctor Blythe",
+        "دكتور بليث"
+      ],
+      "topic": "نمل الكيميرا",
+      "verified": true,
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_characters#Neferpitou",
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "hunterxhunter-600-918",
+      "p": 600,
+      "q": "ما الحيوان الذي يمثله غينغ ضمن البروج الاثني عشر؟",
+      "a": "الخنزير البري",
+      "alt": [
+        "Boar"
+      ],
+      "topic": "رحلة غون",
+      "verified": true,
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_characters#Ging_Freecss",
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "hunterxhunter-800-911",
+      "p": 800,
       "q": "من صائد الجوائز الذي جعلته بيسكي خصمًا تدريبيًا لغون وكيلوا مدة أسبوعين؟",
       "a": "بينولت",
       "alt": [
@@ -465,23 +352,106 @@
       "topic": "غريد آيلاند",
       "verified": true,
       "sourceUrl": "https://www.ntv.co.jp/hunterhunter/story/063.html",
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.25
     },
     {
-      "qid": "hunterxhunter-1000-902",
-      "p": 1000,
-      "q": "من عضو الفرقة الشبح الذي يتحكم بضحاياه بهوائي وهاتف؟",
-      "a": "شالنارك",
+      "qid": "hunterxhunter-800-912",
+      "p": 800,
+      "q": "من الخادمة التي تطارد منطاد كيلوا برفقة تسوبوني؟",
+      "a": "أماني",
       "alt": [
-        "Shalnark"
+        "أمانيه",
+        "Amane"
       ],
-      "topic": "الفرقة الشبح",
+      "topic": "عائلة زولديك",
       "verified": true,
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_characters#Shalnark",
-      "difficultyTarget": 0.15
+      "sourceUrl": "https://www.ntv.co.jp/hunterhunter/story/143.html",
+      "difficultyTarget": 0.25
     },
     {
-      "qid": "hunterxhunter-1000-903",
+      "qid": "hunterxhunter-800-913",
+      "p": 800,
+      "q": "من تتولى رئاسة جمعية الصيادين بعد استقالة الفائز بالانتخابات؟",
+      "a": "تشيدل يورك شاير",
+      "alt": [
+        "تشيدل",
+        "تشيدل يوركشاير",
+        "Cheadle Yorkshire"
+      ],
+      "topic": "الانتخابات",
+      "verified": true,
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_characters#Cheadle_Yorkshire",
+      "difficultyTarget": 0.25
+    },
+    {
+      "topic": "امتحان الصيادين",
+      "q": "من قاد المتقدمين في ركض المرحلة الأولى من امتحان الصيادين؟",
+      "a": "ساتوتز",
+      "alt": [
+        "Satotz"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_characters",
+      "qid": "hunterxhunter-800-914",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "قدرات النين",
+      "q": "من الفتى الذي يتدرب على النين في برج السماء قبل لقاء غون وكيلوا؟",
+      "a": "زوشي",
+      "alt": [
+        "Zushi"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_characters",
+      "qid": "hunterxhunter-800-915",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "قدرات النين",
+      "q": "ما قدرة كورابيكا التي تتيح إتقان جميع أنواع النين مؤقتًا؟",
+      "a": "إمبراطور الزمن",
+      "alt": [
+        "Emperor Time",
+        "إمبيرور تايم"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_characters",
+      "qid": "hunterxhunter-800-916",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "الفرقة الشبح",
+      "q": "من حارس نوستراد الذي يتحكم بالكلاب بواسطة الصفير؟",
+      "a": "سكوالا",
+      "alt": [
+        "Squala"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_characters",
+      "qid": "hunterxhunter-800-917",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "غريد آيلاند",
+      "q": "من لاعب غريد آيلاند الذي يستدعي غوريلا سوداء وأخرى بيضاء؟",
+      "a": "غورينو",
+      "alt": [
+        "Goreinu",
+        "غورينيو"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_characters",
+      "qid": "hunterxhunter-800-918",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "qid": "hunterxhunter-1000-911",
       "p": 1000,
       "q": "مع من يتبارز كيلوا من رفيقَي المفجّر في المواجهة النهائية؟",
       "a": "سوب",
@@ -495,74 +465,97 @@
       "difficultyTarget": 0.15
     },
     {
-      "qid": "hunterxhunter-1000-904",
-      "p": 1000,
-      "q": "ما اسم قدرة هيسوكا التي تغيّر مظهر سطح مستوٍ كتحويل منديل إلى جلد؟",
-      "a": "تكستشر سربرايز",
+      "topic": "غريد آيلاند",
+      "q": "من مزيل اللعنات الذي استُعين به لفك نين كرولو؟",
+      "a": "أبينغان",
       "alt": [
-        "Texture Surprise",
-        "المفاجأة الملمسية"
+        "Abengane"
       ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_characters",
+      "qid": "hunterxhunter-1000-912",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "امتحان الصيادين",
+      "q": "من المشرف على اختبار برج الخداع في امتحان الصيادين؟",
+      "a": "ليبو",
+      "alt": [
+        "Lippo"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_characters",
+      "qid": "hunterxhunter-1000-913",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
       "topic": "قدرات النين",
-      "verified": true,
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_characters#Hisoka",
-      "difficultyTarget": 0.15
+      "q": "من مقاتل برج السماء الذي يصنع ذراعًا يسارية من الهالة؟",
+      "a": "ساداسو",
+      "alt": [
+        "Sadaso"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_characters",
+      "qid": "hunterxhunter-1000-914",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
     },
     {
-      "qid": "hunterxhunter-1000-905",
-      "p": 1000,
-      "q": "ما اسم قدرة نيفربيتو العلاجية التي تستدعي جراحًا دمية؟",
-      "a": "دكتور بلايث",
+      "topic": "قدرات النين",
+      "q": "من مقاتل برج السماء الذي يستخدم كرسيًا متحركًا وسوطين كهربائيين؟",
+      "a": "ريلڤيلت",
       "alt": [
-        "Doctor Blythe",
-        "دكتور بليث"
+        "Riehlvelt",
+        "ريلفيلت"
       ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_characters",
+      "qid": "hunterxhunter-1000-915",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "الفرقة الشبح",
+      "q": "من قائد حراس نيون الذي قتله فينكس لإنقاذ أسير الفرقة؟",
+      "a": "دالزوليني",
+      "alt": [
+        "Dalzollene"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_characters",
+      "qid": "hunterxhunter-1000-916",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
       "topic": "نمل الكيميرا",
-      "verified": true,
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_characters#Neferpitou",
-      "difficultyTarget": 0.15
+      "q": "من مؤسس الدولة التي حظرت التقنية الحديثة وبدأ فيها خطر نمل الكيميرا؟",
+      "a": "جايرو",
+      "alt": [
+        "Gyro"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_characters",
+      "qid": "hunterxhunter-1000-917",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
     },
     {
-      "qid": "hunterxhunter-1000-906",
-      "p": 1000,
-      "q": "من الخادمة التي تطارد منطاد كيلوا برفقة تسوبوني؟",
-      "a": "أماني",
-      "alt": [
-        "أمانيه",
-        "Amane"
-      ],
       "topic": "عائلة زولديك",
-      "verified": true,
-      "sourceUrl": "https://www.ntv.co.jp/hunterhunter/story/143.html",
-      "difficultyTarget": 0.15
-    },
-    {
-      "qid": "hunterxhunter-1000-907",
-      "p": 1000,
-      "q": "من تتولى رئاسة جمعية الصيادين بعد استقالة الفائز بالانتخابات؟",
-      "a": "تشيدل يورك شاير",
+      "q": "بأي اسم شارك إيلومي متنكرًا في امتحان الصيادين؟",
+      "a": "غيتاراكر",
       "alt": [
-        "تشيدل",
-        "تشيدل يوركشاير",
-        "Cheadle Yorkshire"
+        "Gittarackur",
+        "غيتاراكور"
       ],
-      "topic": "الانتخابات",
-      "verified": true,
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_characters#Cheadle_Yorkshire",
-      "difficultyTarget": 0.15
-    },
-    {
-      "qid": "hunterxhunter-1000-908",
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_characters",
+      "qid": "hunterxhunter-1000-918",
       "p": 1000,
-      "q": "ما الحيوان الذي يمثله غينغ ضمن البروج الاثني عشر؟",
-      "a": "الخنزير البري",
-      "alt": [
-        "Boar"
-      ],
-      "topic": "رحلة غون",
-      "verified": true,
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_characters#Ging_Freecss",
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.15,
+      "verified": true
     }
   ]
 }

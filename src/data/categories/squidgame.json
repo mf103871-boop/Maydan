@@ -5,125 +5,8 @@
   "style": "story",
   "qs": [
     {
-      "qid": "squidgame-200-901",
+      "qid": "squidgame-200-911",
       "p": 200,
-      "topic": "ألعاب الطفولة",
-      "q": "ما اللعبة الأولى التي تتوقف فيها الحركة حين تستدير الدمية؟",
-      "a": "الضوء الأحمر والضوء الأخضر",
-      "alt": [
-        "ضوء أحمر ضوء أخضر",
-        "الضوء الأحمر"
-      ],
-      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-games-explained",
-      "verified": true,
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "squidgame-200-902",
-      "p": 200,
-      "topic": "رحلة جيهون",
-      "q": "ما رقم جيهون الذي يعود به إلى المسابقة؟",
-      "a": "456",
-      "alt": [
-        "٤٥٦"
-      ],
-      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-season-2-cast",
-      "verified": true,
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "squidgame-200-903",
-      "p": 200,
-      "topic": "الحلفاء والخصوم",
-      "q": "من صديق جيهون منذ الطفولة الذي يواجهه في نهائي الموسم الأول؟",
-      "a": "تشو سانغ وو",
-      "alt": [
-        "سانغ وو",
-        "سانغو",
-        "Cho Sang-woo"
-      ],
-      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-season-1-ending-explainer",
-      "verified": true,
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "squidgame-200-904",
-      "p": 200,
-      "topic": "أسرار المنظمين",
-      "q": "ما اللقب الإنجليزي لقائد المسابقة ذي القناع الأسود؟",
-      "a": "فرونت مان",
-      "alt": [
-        "الرجل الأمامي",
-        "Front Man",
-        "الفرونت مان"
-      ],
-      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-season-2-cast",
-      "verified": true,
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "squidgame-200-905",
-      "p": 200,
-      "topic": "القرارات المصيرية",
-      "q": "لماذا يعود جيهون إلى المسابقة في الموسم الثاني؟",
-      "a": "لإيقاف الألعاب",
-      "alt": [
-        "إنهاء الألعاب",
-        "تدمير المسابقة",
-        "إيقاف المسابقة"
-      ],
-      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-season-2-cast",
-      "verified": true,
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "squidgame-200-906",
-      "p": 200,
-      "topic": "قواعد النجاة",
-      "q": "في لعبة الحلوى، ماذا يجب ألا يحدث للشكل أثناء استخراجه؟",
-      "a": "أن ينكسر",
-      "alt": [
-        "كسر الشكل",
-        "الكسر",
-        "ينكسر"
-      ],
-      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-games-explained",
-      "verified": true,
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "squidgame-200-907",
-      "p": 200,
-      "topic": "العائلة خارج الجزيرة",
-      "q": "من طلبت ساي بيوك من جيهون الاعتناء به إذا نجح في الخروج؟",
-      "a": "أخوها الصغير",
-      "alt": [
-        "أخيها",
-        "شقيقها",
-        "أخوها"
-      ],
-      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-season-1-ending-explainer",
-      "verified": true,
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "squidgame-200-908",
-      "p": 200,
-      "topic": "أحداث الموسم الأخير",
-      "q": "من تصبح الفائزة بالمسابقة في نهاية الموسم الثالث؟",
-      "a": "رضيعة جون هي",
-      "alt": [
-        "الطفلة",
-        "الرضيعة",
-        "مولودة جون هي"
-      ],
-      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-season-3-ending-explained",
-      "verified": true,
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "squidgame-400-901",
-      "p": 400,
       "topic": "ألعاب الطفولة",
       "q": "ما اسم الحلوى الكورية التي يخاطر اللاعبون بكسر شكلها المحفور؟",
       "a": "دالغونا",
@@ -133,11 +16,11 @@
       ],
       "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-games-explained",
       "verified": true,
-      "difficultyTarget": 0.6
+      "difficultyTarget": 0.8
     },
     {
-      "qid": "squidgame-400-902",
-      "p": 400,
+      "qid": "squidgame-200-912",
+      "p": 200,
       "topic": "رحلة جيهون",
       "q": "إلى أي لون يصبغ جيهون شعره بعد فوزه الأول؟",
       "a": "الأحمر",
@@ -146,11 +29,11 @@
       ],
       "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-season-1-ending-explainer",
       "verified": true,
-      "difficultyTarget": 0.6
+      "difficultyTarget": 0.8
     },
     {
-      "qid": "squidgame-400-903",
-      "p": 400,
+      "qid": "squidgame-200-913",
+      "p": 200,
       "topic": "الحلفاء والخصوم",
       "q": "ما اسم مغني الراب ذي الشعر البنفسجي الذي يشارك في الموسم الثاني؟",
       "a": "ثانوس",
@@ -160,10 +43,126 @@
       ],
       "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-season-2-cast",
       "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "squidgame-200-914",
+      "p": 200,
+      "topic": "أسرار المنظمين",
+      "q": "ما اسم العجوز الذي يتضح أنه أحد منشئي المسابقة؟",
+      "a": "أوه إيل نام",
+      "alt": [
+        "إيل نام",
+        "Oh Il-nam"
+      ],
+      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-season-1-ending-explainer",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "squidgame-200-915",
+      "p": 200,
+      "topic": "القرارات المصيرية",
+      "q": "ما الذي يقوده جيهون ضد الحراس في ختام الموسم الثاني؟",
+      "a": "تمرد مسلح",
+      "alt": [
+        "ثورة",
+        "انتفاضة",
+        "تمرد"
+      ],
+      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-season-2-ending-explained",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "squidgame-200-916",
+      "p": 200,
+      "topic": "قواعد النجاة",
+      "q": "ما الذي يجب ضغطه أولًا كي يُحسب سقوط لاعب ضمن جولة النهائي فوق الأبراج؟",
+      "a": "زر بدء الجولة",
+      "alt": [
+        "زر البداية",
+        "الزر",
+        "زر التشغيل"
+      ],
+      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-season-3-ending-explained",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "squidgame-200-917",
+      "p": 200,
+      "topic": "العائلة خارج الجزيرة",
+      "q": "ما المجال الذي روّج له ميونغ جي وأوقع متابعيه في خسائر مالية؟",
+      "a": "العملات المشفرة",
+      "alt": [
+        "العملات الرقمية",
+        "الكريبتو"
+      ],
+      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-season-2-cast",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "squidgame-200-918",
+      "p": 200,
+      "topic": "أحداث الموسم الأخير",
+      "q": "أي لعبة تعبر فيها الشخصيات جسرًا ضيقًا بين دميتين عملاقتين؟",
+      "a": "القفز بالحبل",
+      "alt": [
+        "نط الحبل",
+        "Jump Rope"
+      ],
+      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-games-explained",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "squidgame-400-911",
+      "p": 400,
+      "topic": "ألعاب الطفولة",
+      "q": "ما اسم اللعبة التي يستخدمها المجنّد مع جيهون في محطة المترو؟",
+      "a": "داكجي",
+      "alt": [
+        "داكجي الورقية",
+        "Ddakji",
+        "تاكجي"
+      ],
+      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-season-2-cast",
+      "verified": true,
       "difficultyTarget": 0.6
     },
     {
-      "qid": "squidgame-400-904",
+      "qid": "squidgame-400-912",
+      "p": 400,
+      "topic": "رحلة جيهون",
+      "q": "ما وسيلة التعقب التي يخفيها جيهون في فمه قبل العودة للمسابقة؟",
+      "a": "جهاز داخل ضرس",
+      "alt": [
+        "شريحة في ضرس",
+        "جهاز تعقب في السن",
+        "متتبع في الضرس"
+      ],
+      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-season-2-ending-explained",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "squidgame-400-913",
+      "p": 400,
+      "topic": "الحلفاء والخصوم",
+      "q": "من صديق جيهون الذي يُقتل أمامه بعد فشل التمرد؟",
+      "a": "جونغ باي",
+      "alt": [
+        "جونغ بي",
+        "Jung-bae"
+      ],
+      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-season-2-ending-explained",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "squidgame-400-914",
       "p": 400,
       "topic": "أسرار المنظمين",
       "q": "ما صلة القرابة بين قائد المسابقة والمحقق الذي يتسلل إلى الجزيرة؟",
@@ -178,122 +177,8 @@
       "difficultyTarget": 0.6
     },
     {
-      "qid": "squidgame-400-905",
+      "qid": "squidgame-400-915",
       "p": 400,
-      "topic": "القرارات المصيرية",
-      "q": "ما الذي يقوده جيهون ضد الحراس في ختام الموسم الثاني؟",
-      "a": "تمرد مسلح",
-      "alt": [
-        "ثورة",
-        "انتفاضة",
-        "تمرد"
-      ],
-      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-season-2-ending-explained",
-      "verified": true,
-      "difficultyTarget": 0.6
-    },
-    {
-      "qid": "squidgame-400-906",
-      "p": 400,
-      "topic": "قواعد النجاة",
-      "q": "في لعبة الاختباء بالموسم الثالث، ماذا يحصل عليه الفريق الأزرق لفتح الأبواب؟",
-      "a": "مفاتيح",
-      "alt": [
-        "المفاتيح"
-      ],
-      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-games-explained",
-      "verified": true,
-      "difficultyTarget": 0.6
-    },
-    {
-      "qid": "squidgame-400-907",
-      "p": 400,
-      "topic": "العائلة خارج الجزيرة",
-      "q": "ما المجال الذي روّج له ميونغ جي وأوقع متابعيه في خسائر مالية؟",
-      "a": "العملات المشفرة",
-      "alt": [
-        "العملات الرقمية",
-        "الكريبتو"
-      ],
-      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-season-2-cast",
-      "verified": true,
-      "difficultyTarget": 0.6
-    },
-    {
-      "qid": "squidgame-400-908",
-      "p": 400,
-      "topic": "أحداث الموسم الأخير",
-      "q": "أي لعبة تعبر فيها الشخصيات جسرًا ضيقًا بين دميتين عملاقتين؟",
-      "a": "القفز بالحبل",
-      "alt": [
-        "نط الحبل",
-        "Jump Rope"
-      ],
-      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-games-explained",
-      "verified": true,
-      "difficultyTarget": 0.6
-    },
-    {
-      "qid": "squidgame-600-901",
-      "p": 600,
-      "topic": "ألعاب الطفولة",
-      "q": "ما اسم اللعبة التي يستخدمها المجنّد مع جيهون في محطة المترو؟",
-      "a": "داكجي",
-      "alt": [
-        "داكجي الورقية",
-        "Ddakji",
-        "تاكجي"
-      ],
-      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-season-2-cast",
-      "verified": true,
-      "difficultyTarget": 0.4
-    },
-    {
-      "qid": "squidgame-600-902",
-      "p": 600,
-      "topic": "رحلة جيهون",
-      "q": "ما وسيلة التعقب التي يخفيها جيهون في فمه قبل العودة للمسابقة؟",
-      "a": "جهاز داخل ضرس",
-      "alt": [
-        "شريحة في ضرس",
-        "جهاز تعقب في السن",
-        "متتبع في الضرس"
-      ],
-      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-season-2-ending-explained",
-      "verified": true,
-      "difficultyTarget": 0.4
-    },
-    {
-      "qid": "squidgame-600-903",
-      "p": 600,
-      "topic": "الحلفاء والخصوم",
-      "q": "من صديق جيهون الذي يُقتل أمامه بعد فشل التمرد؟",
-      "a": "جونغ باي",
-      "alt": [
-        "جونغ بي",
-        "Jung-bae"
-      ],
-      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-season-2-ending-explained",
-      "verified": true,
-      "difficultyTarget": 0.4
-    },
-    {
-      "qid": "squidgame-600-904",
-      "p": 600,
-      "topic": "أسرار المنظمين",
-      "q": "ما اسم العجوز الذي يتضح أنه أحد منشئي المسابقة؟",
-      "a": "أوه إيل نام",
-      "alt": [
-        "إيل نام",
-        "Oh Il-nam"
-      ],
-      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-season-1-ending-explainer",
-      "verified": true,
-      "difficultyTarget": 0.4
-    },
-    {
-      "qid": "squidgame-600-905",
-      "p": 600,
       "topic": "القرارات المصيرية",
       "q": "ماذا ينتظر المتمردون أن يجلب لهم داي هو حين يعود إلى المهجع؟",
       "a": "الذخيرة",
@@ -304,11 +189,11 @@
       ],
       "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-season-2-ending-explained",
       "verified": true,
-      "difficultyTarget": 0.4
+      "difficultyTarget": 0.6
     },
     {
-      "qid": "squidgame-600-906",
-      "p": 600,
+      "qid": "squidgame-400-916",
+      "p": 400,
       "topic": "قواعد النجاة",
       "q": "في لعبة الاختباء، أي فريق يتسلم السكاكين بدل أدوات فتح الأبواب؟",
       "a": "الفريق الأحمر",
@@ -319,11 +204,11 @@
       ],
       "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-games-explained",
       "verified": true,
-      "difficultyTarget": 0.4
+      "difficultyTarget": 0.6
     },
     {
-      "qid": "squidgame-600-907",
-      "p": 600,
+      "qid": "squidgame-400-917",
+      "p": 400,
       "topic": "العائلة خارج الجزيرة",
       "q": "مع من يترك جيهون شقيق ساي بيوك في ختام الموسم الأول؟",
       "a": "أم صديقه من الطفولة",
@@ -334,11 +219,11 @@
       ],
       "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-season-1-ending-explainer",
       "verified": true,
-      "difficultyTarget": 0.4
+      "difficultyTarget": 0.6
     },
     {
-      "qid": "squidgame-600-908",
-      "p": 600,
+      "qid": "squidgame-400-918",
+      "p": 400,
       "topic": "أحداث الموسم الأخير",
       "q": "أي لعبة تكون جارية عندما تلد جون هي طفلتها؟",
       "a": "الغميضة",
@@ -349,11 +234,11 @@
       ],
       "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-season-3-ending-explained",
       "verified": true,
-      "difficultyTarget": 0.4
+      "difficultyTarget": 0.6
     },
     {
-      "qid": "squidgame-800-901",
-      "p": 800,
+      "qid": "squidgame-600-911",
+      "p": 600,
       "topic": "ألعاب الطفولة",
       "q": "في أي لعبة تتوقف منصة دوارة ويُطلب من اللاعبين دخول غرف في مجموعات؟",
       "a": "مينغل",
@@ -364,11 +249,11 @@
       ],
       "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-games-explained",
       "verified": true,
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.4
     },
     {
-      "qid": "squidgame-800-902",
-      "p": 800,
+      "qid": "squidgame-600-912",
+      "p": 600,
       "topic": "رحلة جيهون",
       "q": "ما الشيء غير المتوقع الذي يقدّمه جيهون لابنته هدية، ظنًا منه أنه مناسب؟",
       "a": "ولاعة بشكل مسدس",
@@ -378,11 +263,11 @@
       ],
       "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-season-1-ending-explainer",
       "verified": true,
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.4
     },
     {
-      "qid": "squidgame-800-903",
-      "p": 800,
+      "qid": "squidgame-600-913",
+      "p": 600,
       "topic": "الحلفاء والخصوم",
       "q": "ما اسم الحارسة المنشقة من كوريا الشمالية التي تبحث عن طفلتها؟",
       "a": "نو أول",
@@ -393,11 +278,11 @@
       ],
       "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-season-2-cast",
       "verified": true,
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.4
     },
     {
-      "qid": "squidgame-800-904",
-      "p": 800,
+      "qid": "squidgame-600-914",
+      "p": 600,
       "topic": "أسرار المنظمين",
       "q": "ما الاسم المستعار الذي يستخدمه قائد المسابقة حين يلعب إلى جانب جيهون؟",
       "a": "أوه يونغ إيل",
@@ -408,11 +293,11 @@
       ],
       "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-season-2-ending-explained",
       "verified": true,
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.4
     },
     {
-      "qid": "squidgame-800-905",
-      "p": 800,
+      "qid": "squidgame-600-915",
+      "p": 600,
       "topic": "القرارات المصيرية",
       "q": "أي مهنة يعود إليها الأب غيونغ سوك بعد إنقاذه وشفاء ابنته؟",
       "a": "رسم الوجوه في الملاهي",
@@ -423,26 +308,24 @@
       ],
       "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-season-3-ending-explained",
       "verified": true,
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.4
     },
     {
-      "qid": "squidgame-800-906",
-      "p": 800,
+      "qid": "squidgame-600-916",
+      "p": 600,
       "topic": "قواعد النجاة",
-      "q": "ما الذي يجب ضغطه أولًا كي يُحسب سقوط لاعب ضمن جولة النهائي فوق الأبراج؟",
-      "a": "زر بدء الجولة",
+      "q": "في لعبة الاختباء بالموسم الثالث، ماذا يحصل عليه الفريق الأزرق لفتح الأبواب؟",
+      "a": "مفاتيح",
       "alt": [
-        "زر البداية",
-        "الزر",
-        "زر التشغيل"
+        "المفاتيح"
       ],
-      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-season-3-ending-explained",
+      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-games-explained",
       "verified": true,
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.4
     },
     {
-      "qid": "squidgame-800-907",
-      "p": 800,
+      "qid": "squidgame-600-917",
+      "p": 600,
       "topic": "العائلة خارج الجزيرة",
       "q": "من الشخص الذي يسلّمه قائد المسابقة الطفلة والجائزة بعد انتهاء الألعاب؟",
       "a": "المحقق جون هو",
@@ -453,11 +336,11 @@
       ],
       "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-season-3-ending-explained",
       "verified": true,
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.4
     },
     {
-      "qid": "squidgame-800-908",
-      "p": 800,
+      "qid": "squidgame-600-918",
+      "p": 600,
       "topic": "أحداث الموسم الأخير",
       "q": "ما الأشكال الهندسية لمنصات النهائي العلوية، بالترتيب من أول منصة؟",
       "a": "مربع ثم مثلث ثم دائرة",
@@ -467,11 +350,11 @@
       ],
       "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-games-explained",
       "verified": true,
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.4
     },
     {
-      "qid": "squidgame-1000-901",
-      "p": 1000,
+      "qid": "squidgame-800-911",
+      "p": 800,
       "topic": "ألعاب الطفولة",
       "q": "في الخماسي بالموسم الثاني، ما اللعبة التي يركل فيها اللاعب جسمًا خفيفًا لإبقائه في الهواء؟",
       "a": "جيغي تشاغي",
@@ -482,11 +365,11 @@
       ],
       "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-games-explained",
       "verified": true,
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.25
     },
     {
-      "qid": "squidgame-1000-902",
-      "p": 1000,
+      "qid": "squidgame-800-912",
+      "p": 800,
       "topic": "رحلة جيهون",
       "q": "أي مدينة يصل إليها قائد المسابقة لإيصال مقتنيات جيهون إلى ابنته؟",
       "a": "لوس أنجلوس",
@@ -496,11 +379,11 @@
       ],
       "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-season-3-ending-explained",
       "verified": true,
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.25
     },
     {
-      "qid": "squidgame-1000-903",
-      "p": 1000,
+      "qid": "squidgame-800-913",
+      "p": 800,
       "topic": "الحلفاء والخصوم",
       "q": "ما اسم القبطان الذي يعرقل بحث المحقق عن الجزيرة لحساب المنظمين؟",
       "a": "بارك",
@@ -510,11 +393,11 @@
       ],
       "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-season-2-ending-explained",
       "verified": true,
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.25
     },
     {
-      "qid": "squidgame-1000-904",
-      "p": 1000,
+      "qid": "squidgame-800-914",
+      "p": 800,
       "topic": "أسرار المنظمين",
       "q": "أين كانت رسومات ألعاب الموسم الأول مخبأة على مرأى من اللاعبين؟",
       "a": "جدران المهجع",
@@ -525,11 +408,11 @@
       ],
       "sourceUrl": "https://www.netflix.com/tudum/videos/squid-game-easter-eggs",
       "verified": true,
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.25
     },
     {
-      "qid": "squidgame-1000-905",
-      "p": 1000,
+      "qid": "squidgame-800-915",
+      "p": 800,
       "topic": "القرارات المصيرية",
       "q": "في الخماسي، بأي يد يلعب قائد المسابقة متعمدًا رغم تفضيله اليد الأخرى؟",
       "a": "اليمنى",
@@ -539,11 +422,11 @@
       ],
       "sourceUrl": "https://www.netflix.com/tudum/videos/squid-game-easter-eggs",
       "verified": true,
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.25
     },
     {
-      "qid": "squidgame-1000-906",
-      "p": 1000,
+      "qid": "squidgame-800-916",
+      "p": 800,
       "topic": "قواعد النجاة",
       "q": "في خماسي الألعاب، ما اسم تحدي إسقاط الحجر المنتصب بحجر آخر؟",
       "a": "بيسوك تشيغي",
@@ -554,11 +437,11 @@
       ],
       "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-games-explained",
       "verified": true,
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.25
     },
     {
-      "qid": "squidgame-1000-907",
-      "p": 1000,
+      "qid": "squidgame-800-917",
+      "p": 800,
       "topic": "العائلة خارج الجزيرة",
       "q": "ما اسم الابنة الصغيرة للأب الذي تنقذه الحارسة في الموسم الأخير؟",
       "a": "نا يون",
@@ -568,11 +451,11 @@
       ],
       "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-season-3-ending-explained",
       "verified": true,
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.25
     },
     {
-      "qid": "squidgame-1000-908",
-      "p": 1000,
+      "qid": "squidgame-800-918",
+      "p": 800,
       "topic": "أحداث الموسم الأخير",
       "q": "في الموسم الثالث، ماذا تحرق الحارسة أثناء هروبها لمحو أثر المنظمة؟",
       "a": "غرفة السجلات",
@@ -583,6 +466,104 @@
       ],
       "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-season-3-ending-explained",
       "verified": true,
+      "difficultyTarget": 0.25
+    },
+    {
+      "topic": "ألعاب الطفولة",
+      "q": "ما اسم الدمية الذكر التي تشارك يونغ هي تحريك الحبل في الموسم الثالث؟",
+      "a": "تشول سو",
+      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-games-explained",
+      "alt": [
+        "Chul-su"
+      ],
+      "verified": true,
+      "p": 1000,
+      "qid": "squidgame-1000-911",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "رحلة جيهون",
+      "q": "أي عضو يحتاج إلى زراعة بحسب قصة زوجة فرونت مان التي يرويها للاعبين؟",
+      "a": "الكبد",
+      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-season-2-ending-explained",
+      "verified": true,
+      "p": 1000,
+      "qid": "squidgame-1000-912",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "الحلفاء والخصوم",
+      "q": "من اللاعبة التي تنجو من جولة الكرات الزجاجية لأنها لم تجد شريكًا؟",
+      "a": "هان مي نيو",
+      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-games-explained",
+      "alt": [
+        "Han Mi-nyeo",
+        "هان مينيو"
+      ],
+      "verified": true,
+      "p": 1000,
+      "qid": "squidgame-1000-913",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "أسرار المنظمين",
+      "q": "بأي سلاح يصيب جون هو قبطان القارب بعد انكشاف خيانته؟",
+      "a": "حربة صيد",
+      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-season-3-ending-explained",
+      "alt": [
+        "حربة",
+        "رمح صيد"
+      ],
+      "verified": true,
+      "p": 1000,
+      "qid": "squidgame-1000-914",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "القرارات المصيرية",
+      "q": "إلى أي دولة تسافر الحارسة بحثًا عن ابنتها في نهاية المسلسل؟",
+      "a": "الصين",
+      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-season-3-ending-explained",
+      "verified": true,
+      "p": 1000,
+      "qid": "squidgame-1000-915",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "قواعد النجاة",
+      "q": "ماذا يختار جي هون بعد فوزه بقرعة العملة قبل المواجهة الأخيرة في الموسم الأول؟",
+      "a": "الهجوم",
+      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-games-explained",
+      "verified": true,
+      "p": 1000,
+      "qid": "squidgame-1000-916",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "العائلة خارج الجزيرة",
+      "q": "ما اسم ابنة جي هون التي تنتقل إلى الولايات المتحدة؟",
+      "a": "غا يونغ",
+      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-games-explained",
+      "alt": [
+        "Ga-yeong",
+        "جايونغ"
+      ],
+      "verified": true,
+      "p": 1000,
+      "qid": "squidgame-1000-917",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "أحداث الموسم الأخير",
+      "q": "ما الشيء الذي يتمزق أثناء تعلق الرجلين بحافة البرج فيسقط والد الرضيعة؟",
+      "a": "السترة",
+      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-season-3-ending-explained",
+      "alt": [
+        "الجاكيت"
+      ],
+      "verified": true,
+      "p": 1000,
+      "qid": "squidgame-1000-918",
       "difficultyTarget": 0.15
     }
   ]

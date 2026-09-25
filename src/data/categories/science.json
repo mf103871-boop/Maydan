@@ -5,257 +5,77 @@
   "qs": [
     {
       "p": 200,
-      "q": "ما اسم القوة التي تجعل الأشياء تسقط نحو الأرض؟",
-      "a": "الجاذبية",
-      "qid": "science-200-901",
-      "topic": "فيزياء",
-      "verified": true,
-      "alt": [
-        "الجاذبية الأرضية",
-        "جاذبية الأرض"
-      ],
-      "difficultyTarget": 0.8,
-      "sourceUrl": "https://spaceplace.nasa.gov/what-is-gravity/en/"
-    },
-    {
-      "p": 200,
-      "q": "ما اسم الحالة الصلبة للماء؟",
-      "a": "الجليد",
-      "qid": "science-200-902",
-      "topic": "كيمياء",
-      "verified": true,
-      "alt": [
-        "ثلج",
-        "الثلج"
-      ],
-      "difficultyTarget": 0.8,
-      "sourceUrl": "https://openstax.org/books/biology/pages/2-2-water"
-    },
-    {
-      "p": 200,
-      "q": "ما اسم العملية التي تصنع بها النباتات غذاءها بمساعدة ضوء الشمس؟",
-      "a": "البناء الضوئي",
-      "qid": "science-200-903",
-      "topic": "أحياء",
-      "verified": true,
-      "alt": [
-        "التمثيل الضوئي"
-      ],
-      "difficultyTarget": 0.8,
-      "sourceUrl": "https://openstax.org/books/biology-2e/pages/8-1-overview-of-photosynthesis"
-    },
-    {
-      "p": 200,
-      "q": "ما اسم السائل الأحمر الذي يجري في الشرايين والأوردة؟",
-      "a": "الدم",
-      "qid": "science-200-904",
-      "topic": "جسم الإنسان",
-      "verified": true,
-      "alt": [
-        "دم"
-      ],
-      "difficultyTarget": 0.8,
-      "sourceUrl": "https://www.nhlbi.nih.gov/health/heart"
-    },
-    {
-      "p": 200,
-      "q": "بأي لقب يُعرف كوكب المريخ بين الكواكب؟",
-      "a": "الكوكب الأحمر",
-      "qid": "science-200-905",
-      "topic": "فلك",
-      "verified": true,
-      "alt": [
-        "الأحمر",
-        "أحمر"
-      ],
-      "difficultyTarget": 0.8,
-      "sourceUrl": "https://science.nasa.gov/mars/facts/"
-    },
-    {
-      "p": 200,
-      "q": "أي طاقة تحوّلها الألواح الكهروضوئية إلى كهرباء؟",
-      "a": "الطاقة الشمسية",
-      "qid": "science-200-906",
-      "topic": "طاقة وحركة",
-      "verified": true,
-      "alt": [
-        "طاقة شمسية"
-      ],
-      "difficultyTarget": 0.8,
-      "sourceUrl": "https://www.energy.gov/cmei/systems/solar-photovoltaic-cell-basics"
-    },
-    {
-      "p": 200,
-      "q": "ما الصيغة الكيميائية لجزيء الماء؟",
-      "a": "H2O",
-      "qid": "science-200-907",
-      "topic": "عناصر ومركّبات",
-      "verified": true,
-      "alt": [
-        "اتش تو أو",
-        "H₂O"
-      ],
-      "difficultyTarget": 0.8,
-      "sourceUrl": "https://openstax.org/books/biology/pages/2-2-water"
-    },
-    {
-      "p": 200,
-      "q": "ما اسم الجهاز الذي نقيس به درجة حرارة الجو؟",
-      "a": "الترمومتر",
-      "qid": "science-200-908",
-      "topic": "أجهزة وقياس",
-      "verified": true,
-      "alt": [
-        "ميزان الحرارة",
-        "المحرار",
-        "الثرمومتر"
-      ],
-      "difficultyTarget": 0.8,
-      "sourceUrl": "https://www.weather.gov/jkl/education"
-    },
-    {
-      "p": 400,
       "q": "من العالِم المسلم الذي وضع كتاب المناظر وأصبح من رواد علم البصريات؟",
       "a": "ابن الهيثم",
-      "qid": "science-400-901",
+      "qid": "science-200-911",
       "topic": "علماء واكتشافات",
       "verified": true,
       "alt": [
         "الحسن بن الهيثم"
       ],
-      "difficultyTarget": 0.6,
+      "difficultyTarget": 0.8,
       "sourceUrl": "https://www.unesco.org/en/articles/international-year-light-ibn-al-haytham-pioneer-modern-optics-celebrated-unesco"
     },
     {
-      "p": 400,
-      "q": "ما اسم انفصال الضوء الأبيض إلى ألوانه عند مروره في منشور؟",
-      "a": "تشتت الضوء",
-      "qid": "science-400-902",
-      "topic": "فيزياء",
-      "verified": true,
-      "alt": [
-        "تحلل الضوء",
-        "التشتت",
-        "التفريق اللوني"
-      ],
-      "difficultyTarget": 0.6,
-      "sourceUrl": "https://openstax.org/books/college-physics-2e/pages/25-5-dispersion-the-rainbow-and-prisms"
-    },
-    {
-      "p": 400,
+      "p": 200,
       "q": "ما قيمة الأس الهيدروجيني لمحلول مائي متعادل عند 25 درجة مئوية؟",
       "a": "7",
-      "qid": "science-400-903",
+      "qid": "science-200-912",
       "topic": "كيمياء",
       "verified": true,
       "alt": [
         "سبعة",
         "٧"
       ],
-      "difficultyTarget": 0.6,
+      "difficultyTarget": 0.8,
       "sourceUrl": "https://openstax.org/books/biology/pages/2-2-water"
     },
     {
-      "p": 400,
-      "q": "ما اسم الصبغة التي تمنح أوراق النبات لونها الأخضر؟",
-      "a": "الكلوروفيل",
-      "qid": "science-400-904",
-      "topic": "أحياء",
-      "verified": true,
-      "alt": [
-        "اليخضور"
-      ],
-      "difficultyTarget": 0.6,
-      "sourceUrl": "https://openstax.org/books/biology-ap-courses/pages/8-2-the-light-dependent-reaction-of-photosynthesis"
-    },
-    {
-      "p": 400,
-      "q": "ما اسم الظاهرة التي يحجب فيها القمر قرص الشمس عن الأرض؟",
-      "a": "الكسوف",
-      "qid": "science-400-905",
-      "topic": "فلك",
-      "verified": true,
-      "alt": [
-        "كسوف الشمس"
-      ],
-      "difficultyTarget": 0.6,
-      "sourceUrl": "https://science.nasa.gov/eclipses/"
-    },
-    {
-      "p": 400,
+      "p": 200,
       "q": "بأي طريقة تنتقل الطاقة الحرارية من الشمس إلينا عبر فراغ الفضاء؟",
       "a": "الإشعاع",
-      "qid": "science-400-906",
+      "qid": "science-200-913",
       "topic": "طاقة وحركة",
       "verified": true,
       "alt": [
         "الإشعاع الحراري",
         "الإشعاع الكهرومغناطيسي"
       ],
-      "difficultyTarget": 0.6,
+      "difficultyTarget": 0.8,
       "sourceUrl": "https://openstax.org/books/physics/pages/15-2-the-behavior-of-electromagnetic-radiation"
     },
     {
-      "p": 400,
-      "q": "ما اسم المعدن الذي يبقى سائلًا في درجة حرارة الغرفة؟",
-      "a": "الزئبق",
-      "qid": "science-400-907",
-      "topic": "عناصر ومركّبات",
-      "verified": true,
-      "alt": [
-        "Hg",
-        "الزيبق"
-      ],
-      "difficultyTarget": 0.6,
-      "sourceUrl": "https://periodic-table.rsc.org/element/80/"
-    },
-    {
-      "p": 400,
+      "p": 200,
       "q": "ما اسم الجهاز الذي يقيس ضغط الهواء الجوي؟",
       "a": "البارومتر",
-      "qid": "science-400-908",
+      "qid": "science-200-914",
       "topic": "أجهزة وقياس",
       "verified": true,
       "alt": [
         "مقياس الضغط الجوي"
       ],
-      "difficultyTarget": 0.6,
+      "difficultyTarget": 0.8,
       "sourceUrl": "https://www.weather.gov/jkl/education"
     },
     {
-      "p": 600,
+      "p": 200,
       "q": "ما الوحدة الأساسية لدرجة الحرارة في النظام الدولي؟",
       "a": "الكلفن",
-      "qid": "science-600-901",
+      "qid": "science-200-915",
       "topic": "أجهزة وقياس",
       "verified": true,
       "alt": [
         "كلفن",
         "K"
       ],
-      "difficultyTarget": 0.4,
+      "difficultyTarget": 0.8,
       "sourceUrl": "https://www.bipm.org/en/measurement-units/si-base-units"
     },
     {
-      "p": 600,
-      "q": "ما اسم الظاهرة التي يتغيّر بها صوت صفّارة الإسعاف عند اقترابها ثم ابتعادها؟",
-      "a": "تأثير دوبلر",
-      "qid": "science-600-902",
-      "topic": "فيزياء",
-      "verified": true,
-      "alt": [
-        "ظاهرة دوبلر",
-        "دوبلر",
-        "Doppler"
-      ],
-      "difficultyTarget": 0.4,
-      "sourceUrl": "https://openstax.org/books/university-physics-volume-1/pages/17-7-the-doppler-effect"
-    },
-    {
-      "p": 600,
+      "p": 200,
       "q": "ما الرابطة الكيميائية التي تنشأ حين تتشارك الذرات في أزواج إلكترونات؟",
       "a": "الرابطة التساهمية",
-      "qid": "science-600-903",
+      "qid": "science-200-916",
       "topic": "كيمياء",
       "verified": true,
       "alt": [
@@ -263,73 +83,14 @@
         "الرابطة المشتركة",
         "Covalent bond"
       ],
-      "difficultyTarget": 0.4,
+      "difficultyTarget": 0.8,
       "sourceUrl": "https://openstax.org/books/chemistry-2e/pages/7-2-covalent-bonding"
     },
     {
-      "p": 600,
-      "q": "ماذا تسمى محافظة الجسم على بيئته الداخلية ضمن حدود مستقرة؟",
-      "a": "الاتزان الداخلي",
-      "qid": "science-600-904",
-      "topic": "جسم الإنسان",
-      "verified": true,
-      "alt": [
-        "الاستتباب",
-        "التوازن الداخلي",
-        "Homeostasis"
-      ],
-      "difficultyTarget": 0.4,
-      "sourceUrl": "https://openstax.org/books/biology-2e/pages/33-3-homeostasis"
-    },
-    {
-      "p": 600,
-      "q": "أي مجموعة برمائيات، ينتمي إليها الأكسولوتل، تشتهر بقدرتها على إعادة إنماء الأطراف؟",
-      "a": "السمندل",
-      "qid": "science-600-905",
-      "topic": "أحياء",
-      "verified": true,
-      "alt": [
-        "السلمندر",
-        "السمندرات"
-      ],
-      "difficultyTarget": 0.4,
-      "sourceUrl": "https://www.nigms.nih.gov/education/fact-sheets/Pages/regeneration"
-    },
-    {
-      "p": 600,
-      "q": "ما اسم أقرب مجرّة كبيرة إلى مجرّة درب التبّانة؟",
-      "a": "أندروميدا",
-      "qid": "science-600-906",
-      "topic": "فلك",
-      "verified": true,
-      "alt": [
-        "المرأة المسلسلة",
-        "M31",
-        "Andromeda"
-      ],
-      "difficultyTarget": 0.4,
-      "sourceUrl": "https://www.nasa.gov/universe/galaxies/andromeda-galaxy/"
-    },
-    {
-      "p": 600,
-      "q": "ما اسم أقلّ الفلزات كثافةً في الجدول الدوري؟",
-      "a": "الليثيوم",
-      "qid": "science-600-907",
-      "topic": "عناصر ومركّبات",
-      "verified": true,
-      "alt": [
-        "ليثيوم",
-        "Li",
-        "Lithium"
-      ],
-      "difficultyTarget": 0.4,
-      "sourceUrl": "https://www.mtm.kuleuven.be/periodic-table/data/fiches/info-li"
-    },
-    {
-      "p": 600,
+      "p": 200,
       "q": "من العالم الذي رتّب العناصر في جدوله الدوري وتنبّأ بعناصر لم تُكتشف بعد؟",
       "a": "مندلييف",
-      "qid": "science-600-908",
+      "qid": "science-200-917",
       "topic": "علماء واكتشافات",
       "verified": true,
       "alt": [
@@ -337,14 +98,262 @@
         "مندليف",
         "Mendeleev"
       ],
-      "difficultyTarget": 0.4,
+      "difficultyTarget": 0.8,
       "sourceUrl": "https://periodic-table.rsc.org/about"
+    },
+    {
+      "p": 200,
+      "q": "ما اسم الحزام الجليدي الواقع خلف مدار نبتون وينتمي إليه بلوتو؟",
+      "a": "حزام كايبر",
+      "qid": "science-200-918",
+      "topic": "فلك",
+      "verified": true,
+      "alt": [
+        "حزام كويبر",
+        "كايبر"
+      ],
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://science.nasa.gov/dwarf-planets/pluto/"
+    },
+    {
+      "p": 400,
+      "q": "ما اسم الظاهرة التي يتغيّر بها صوت صفّارة الإسعاف عند اقترابها ثم ابتعادها؟",
+      "a": "تأثير دوبلر",
+      "qid": "science-400-911",
+      "topic": "فيزياء",
+      "verified": true,
+      "alt": [
+        "ظاهرة دوبلر",
+        "دوبلر",
+        "Doppler"
+      ],
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://openstax.org/books/university-physics-volume-1/pages/17-7-the-doppler-effect"
+    },
+    {
+      "p": 400,
+      "q": "ماذا تسمى محافظة الجسم على بيئته الداخلية ضمن حدود مستقرة؟",
+      "a": "الاتزان الداخلي",
+      "qid": "science-400-912",
+      "topic": "جسم الإنسان",
+      "verified": true,
+      "alt": [
+        "الاستتباب",
+        "التوازن الداخلي",
+        "Homeostasis"
+      ],
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://openstax.org/books/biology-2e/pages/33-3-homeostasis"
+    },
+    {
+      "p": 400,
+      "q": "أي مجموعة برمائيات، ينتمي إليها الأكسولوتل، تشتهر بقدرتها على إعادة إنماء الأطراف؟",
+      "a": "السمندل",
+      "qid": "science-400-913",
+      "topic": "أحياء",
+      "verified": true,
+      "alt": [
+        "السلمندر",
+        "السمندرات"
+      ],
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://www.nigms.nih.gov/education/fact-sheets/Pages/regeneration"
+    },
+    {
+      "p": 400,
+      "q": "ما اسم أقرب مجرّة كبيرة إلى مجرّة درب التبّانة؟",
+      "a": "أندروميدا",
+      "qid": "science-400-914",
+      "topic": "فلك",
+      "verified": true,
+      "alt": [
+        "المرأة المسلسلة",
+        "M31",
+        "Andromeda"
+      ],
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://www.nasa.gov/universe/galaxies/andromeda-galaxy/"
+    },
+    {
+      "p": 400,
+      "q": "ما اسم أقلّ الفلزات كثافةً في الجدول الدوري؟",
+      "a": "الليثيوم",
+      "qid": "science-400-915",
+      "topic": "عناصر ومركّبات",
+      "verified": true,
+      "alt": [
+        "ليثيوم",
+        "Li",
+        "Lithium"
+      ],
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://www.mtm.kuleuven.be/periodic-table/data/fiches/info-li"
+    },
+    {
+      "p": 400,
+      "q": "ما لون اللهب الذي يعطيه البوتاسيوم في اختبار اللهب؟",
+      "a": "بنفسجي فاتح",
+      "qid": "science-400-916",
+      "topic": "كيمياء",
+      "verified": true,
+      "alt": [
+        "ليلكي",
+        "بنفسجي",
+        "أرجواني فاتح"
+      ],
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://edu.rsc.org/infographics/how-to-carry-out-flame-tests/4024075.article"
+    },
+    {
+      "p": 400,
+      "q": "أي حيوان مجهري، يُسمى أيضًا بطيء الخطو، نجا في تجربة من فراغ الفضاء؟",
+      "a": "دب الماء",
+      "qid": "science-400-917",
+      "topic": "أحياء",
+      "verified": true,
+      "alt": [
+        "دببة الماء",
+        "التارديغرادا",
+        "بطيئات الخطو"
+      ],
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://www.esa.int/Science_Exploration/Human_and_Robotic_Exploration/Research/Tiny_animals_survive_exposure_to_space"
+    },
+    {
+      "p": 400,
+      "q": "ما رمز عنصر التنغستن في الجدول الدوري؟",
+      "a": "W",
+      "qid": "science-400-918",
+      "topic": "عناصر ومركّبات",
+      "verified": true,
+      "alt": [
+        "دبليو",
+        "الولفرام",
+        "Wolfram"
+      ],
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://periodic-table.rsc.org/element/74/"
+    },
+    {
+      "p": 600,
+      "q": "ما اسم الطبقة الخارجية من الغلاف الشمسي التي تظهر حين يحجب القمر الشمس تمامًا؟",
+      "a": "الإكليل",
+      "qid": "science-600-911",
+      "topic": "فلك",
+      "verified": true,
+      "alt": [
+        "الهالة الشمسية",
+        "الكورونا",
+        "Corona"
+      ],
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://spaceplace.nasa.gov/sun-corona/en/"
+    },
+    {
+      "p": 600,
+      "q": "ما وحدة قياس شدة الإضاءة في النظام الدولي للوحدات؟",
+      "a": "الكانديلا",
+      "qid": "science-600-912",
+      "topic": "أجهزة وقياس",
+      "verified": true,
+      "alt": [
+        "كانديلا",
+        "Candela"
+      ],
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://www.bipm.org/en/measurement-units/si-base-units"
+    },
+    {
+      "p": 600,
+      "q": "أي عالمة أنجزت مع طالبها ريموند غوسلينغ صورة الحمض النووي الشهيرة 51؟",
+      "a": "روزاليند فرانكلين",
+      "qid": "science-600-913",
+      "topic": "علماء واكتشافات",
+      "verified": true,
+      "alt": [
+        "روزالند فرانكلين",
+        "Rosalind Franklin"
+      ],
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://digital.sciencehistory.org/works/mjir8wn"
+    },
+    {
+      "p": 600,
+      "q": "ما اسم الحركة العشوائية لحبيبات دقيقة في سائل نتيجة اصطدام جزيئاته بها؟",
+      "a": "الحركة البراونية",
+      "qid": "science-600-914",
+      "topic": "طاقة وحركة",
+      "verified": true,
+      "alt": [
+        "حركة براون",
+        "الحركة البراونيّة"
+      ],
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://sciencedemonstrations.fas.harvard.edu/kinetic-theory"
+    },
+    {
+      "p": 600,
+      "q": "من العالِم الذي توصّل مستقلًا عن داروين إلى الانتقاء الطبيعي وشارك معه إعلانه؟",
+      "a": "ألفريد راسل والاس",
+      "qid": "science-600-915",
+      "topic": "علماء واكتشافات",
+      "verified": true,
+      "alt": [
+        "والاس",
+        "Alfred Russel Wallace"
+      ],
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://www.nhm.ac.uk/discover/what-is-natural-selection.html"
+    },
+    {
+      "p": 600,
+      "q": "أي قارض صحراوي يستمد ماءه من البذور واستقلابها ويمكنه البقاء دون شرب؟",
+      "a": "جرذ الكنغر",
+      "qid": "science-600-916",
+      "topic": "أحياء",
+      "verified": true,
+      "alt": [
+        "فأر الكنغر",
+        "الجرذ الكنغري",
+        "جربوع الكنغر"
+      ],
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://home.nps.gov/whsa/learn/nature/kangaroo-rats.htm"
+    },
+    {
+      "p": 600,
+      "q": "أي فلز ينصهر عند نحو 30 درجة مئوية، فيمكن أن تذيبه حرارة اليد؟",
+      "a": "الغاليوم",
+      "qid": "science-600-917",
+      "topic": "عناصر ومركّبات",
+      "verified": true,
+      "alt": [
+        "غاليوم",
+        "الجاليوم"
+      ],
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://periodic-table.rsc.org/element/31/"
+    },
+    {
+      "q": "ما وحدة السعة الكهربائية في النظام الدولي؟",
+      "a": "الفاراد",
+      "topic": "أجهزة وقياس",
+      "verified": true,
+      "sourceUrl": "https://www.nist.gov/pml/special-publication-811/nist-guide-si-chapter-4-two-classes-si-units-and-si-prefixes",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "فاراد",
+        "Farad"
+      ],
+      "p": 600,
+      "qid": "science-600-918",
+      "difficultyTarget": 0.4
     },
     {
       "p": 800,
       "q": "ما اسم الجسيم الذي يحمل القوة الشديدة بين الكواركات؟",
       "a": "الغلوون",
-      "qid": "science-800-901",
+      "qid": "science-800-911",
       "topic": "فيزياء",
       "verified": true,
       "alt": [
@@ -356,217 +365,222 @@
     },
     {
       "p": 800,
-      "q": "ما لون اللهب الذي يعطيه البوتاسيوم في اختبار اللهب؟",
-      "a": "بنفسجي فاتح",
-      "qid": "science-800-902",
-      "topic": "كيمياء",
-      "verified": true,
-      "alt": [
-        "ليلكي",
-        "بنفسجي",
-        "أرجواني فاتح"
-      ],
-      "difficultyTarget": 0.25,
-      "sourceUrl": "https://edu.rsc.org/infographics/how-to-carry-out-flame-tests/4024075.article"
-    },
-    {
-      "p": 800,
-      "q": "أي حيوان مجهري، يُسمى أيضًا بطيء الخطو، نجا في تجربة من فراغ الفضاء؟",
-      "a": "دب الماء",
-      "qid": "science-800-903",
-      "topic": "أحياء",
-      "verified": true,
-      "alt": [
-        "دببة الماء",
-        "التارديغرادا",
-        "بطيئات الخطو"
-      ],
-      "difficultyTarget": 0.25,
-      "sourceUrl": "https://www.esa.int/Science_Exploration/Human_and_Robotic_Exploration/Research/Tiny_animals_survive_exposure_to_space"
-    },
-    {
-      "p": 800,
-      "q": "ما اسم الطبقة الخارجية من الغلاف الشمسي التي تظهر حين يحجب القمر الشمس تمامًا؟",
-      "a": "الإكليل",
-      "qid": "science-800-904",
-      "topic": "فلك",
-      "verified": true,
-      "alt": [
-        "الهالة الشمسية",
-        "الكورونا",
-        "Corona"
-      ],
-      "difficultyTarget": 0.25,
-      "sourceUrl": "https://spaceplace.nasa.gov/sun-corona/en/"
-    },
-    {
-      "p": 800,
-      "q": "ما رمز عنصر التنغستن في الجدول الدوري؟",
-      "a": "W",
-      "qid": "science-800-905",
-      "topic": "عناصر ومركّبات",
-      "verified": true,
-      "alt": [
-        "دبليو",
-        "الولفرام",
-        "Wolfram"
-      ],
-      "difficultyTarget": 0.25,
-      "sourceUrl": "https://periodic-table.rsc.org/element/74/"
-    },
-    {
-      "p": 800,
-      "q": "ما وحدة قياس شدة الإضاءة في النظام الدولي للوحدات؟",
-      "a": "الكانديلا",
-      "qid": "science-800-906",
-      "topic": "أجهزة وقياس",
-      "verified": true,
-      "alt": [
-        "كانديلا",
-        "Candela"
-      ],
-      "difficultyTarget": 0.25,
-      "sourceUrl": "https://www.bipm.org/en/measurement-units/si-base-units"
-    },
-    {
-      "p": 800,
-      "q": "أي عالمة أنجزت مع طالبها ريموند غوسلينغ صورة الحمض النووي الشهيرة 51؟",
-      "a": "روزاليند فرانكلين",
-      "qid": "science-800-907",
-      "topic": "علماء واكتشافات",
-      "verified": true,
-      "alt": [
-        "روزالند فرانكلين",
-        "Rosalind Franklin"
-      ],
-      "difficultyTarget": 0.25,
-      "sourceUrl": "https://digital.sciencehistory.org/works/mjir8wn"
-    },
-    {
-      "p": 800,
-      "q": "ما اسم الحركة العشوائية لحبيبات دقيقة في سائل نتيجة اصطدام جزيئاته بها؟",
-      "a": "الحركة البراونية",
-      "qid": "science-800-908",
-      "topic": "طاقة وحركة",
-      "verified": true,
-      "alt": [
-        "حركة براون",
-        "الحركة البراونيّة"
-      ],
-      "difficultyTarget": 0.25,
-      "sourceUrl": "https://sciencedemonstrations.fas.harvard.edu/kinetic-theory"
-    },
-    {
-      "p": 1000,
       "q": "ما الدورة الحرارية المثالية التي تحدد أعلى كفاءة لمحرك يعمل بين درجتي حرارة محددتين؟",
       "a": "دورة كارنو",
-      "qid": "science-1000-901",
+      "qid": "science-800-912",
       "topic": "طاقة وحركة",
       "verified": true,
       "alt": [
         "كفاءة كارنو",
         "Carnot cycle"
       ],
-      "difficultyTarget": 0.15,
+      "difficultyTarget": 0.25,
       "sourceUrl": "https://openstax.org/books/university-physics-volume-2/pages/4-5-the-carnot-cycle"
     },
     {
-      "p": 1000,
+      "p": 800,
       "q": "ما وحدة قياس التدفق المغناطيسي في النظام الدولي؟",
       "a": "الويبر",
-      "qid": "science-1000-902",
+      "qid": "science-800-913",
       "topic": "أجهزة وقياس",
       "verified": true,
       "alt": [
         "ويبر",
         "Weber"
       ],
-      "difficultyTarget": 0.15,
+      "difficultyTarget": 0.25,
       "sourceUrl": "https://goldbook.iupac.org/terms/view/W06666"
     },
     {
-      "p": 1000,
-      "q": "من العالِم الذي توصّل مستقلًا عن داروين إلى الانتقاء الطبيعي وشارك معه إعلانه؟",
-      "a": "ألفريد راسل والاس",
-      "qid": "science-1000-903",
-      "topic": "علماء واكتشافات",
-      "verified": true,
-      "alt": [
-        "والاس",
-        "Alfred Russel Wallace"
-      ],
-      "difficultyTarget": 0.15,
-      "sourceUrl": "https://www.nhm.ac.uk/discover/what-is-natural-selection.html"
-    },
-    {
-      "p": 1000,
-      "q": "ما اسم الإشعاع المسؤول عن الوهج الأزرق المميز حول الوقود النووي تحت الماء؟",
+      "p": 800,
+      "q": "ما الظاهرة المسؤولة عن الوهج الأزرق المميز حول الوقود النووي تحت الماء؟",
       "a": "إشعاع تشيرينكوف",
-      "qid": "science-1000-904",
+      "qid": "science-800-914",
       "topic": "فيزياء",
       "verified": true,
       "alt": [
         "تشيرينكوف",
         "أشعة تشيرينكوف"
       ],
-      "difficultyTarget": 0.15,
+      "difficultyTarget": 0.25,
       "sourceUrl": "https://conferences.iaea.org/event/173/contributions/13356/attachments/7890/10577/Poster_SFM_2019.pdf"
     },
     {
-      "p": 1000,
+      "p": 800,
       "q": "ما المركّب الذي تنتجه بكتيريا التربة ويساهم في رائحتها المميزة بعد المطر؟",
       "a": "الجيوسمين",
-      "qid": "science-1000-905",
+      "qid": "science-800-915",
       "topic": "كيمياء",
       "verified": true,
       "alt": [
         "جيوسمين"
       ],
-      "difficultyTarget": 0.15,
+      "difficultyTarget": 0.25,
       "sourceUrl": "https://jic.ac.uk/blog/meet-the-molecules-geosmin/"
     },
     {
-      "p": 1000,
-      "q": "أي قارض صحراوي يستمد ماءه من البذور واستقلابها ويمكنه البقاء دون شرب؟",
-      "a": "جرذ الكنغر",
-      "qid": "science-1000-906",
-      "topic": "أحياء",
+      "q": "من اكتشف النيوترون عام 1932؟",
+      "a": "جيمس تشادويك",
+      "topic": "علماء واكتشافات",
       "verified": true,
+      "sourceUrl": "https://www.nobelprize.org/prizes/themes/the-nobel-prize-in-physics-1901-2000/",
+      "verifiedAt": "2026-09-25",
       "alt": [
-        "فأر الكنغر",
-        "الجرذ الكنغري",
-        "جربوع الكنغر"
+        "James Chadwick"
       ],
-      "difficultyTarget": 0.15,
-      "sourceUrl": "https://home.nps.gov/whsa/learn/nature/kangaroo-rats.htm"
+      "p": 800,
+      "qid": "science-800-916",
+      "difficultyTarget": 0.25
     },
     {
-      "p": 1000,
-      "q": "ما اسم الحزام الجليدي الواقع خلف مدار نبتون وينتمي إليه بلوتو؟",
-      "a": "حزام كايبر",
-      "qid": "science-1000-907",
-      "topic": "فلك",
+      "q": "ما وحدة النشاط الإشعاعي التي تعادل تحولًا نوويًا واحدًا في الثانية؟",
+      "a": "البكريل",
+      "topic": "أجهزة وقياس",
       "verified": true,
+      "sourceUrl": "https://www.nist.gov/pml/special-publication-811/nist-guide-si-chapter-4-two-classes-si-units-and-si-prefixes",
+      "verifiedAt": "2026-09-25",
       "alt": [
-        "حزام كويبر",
-        "كايبر"
+        "بيكريل",
+        "Becquerel",
+        "Bq"
       ],
-      "difficultyTarget": 0.15,
-      "sourceUrl": "https://science.nasa.gov/dwarf-planets/pluto/"
+      "p": 800,
+      "qid": "science-800-917",
+      "difficultyTarget": 0.25
     },
     {
-      "p": 1000,
-      "q": "أي فلز ينصهر عند نحو 30 درجة مئوية، فيمكن أن تذيبه حرارة اليد؟",
-      "a": "الغاليوم",
-      "qid": "science-1000-908",
+      "q": "ما العنصر الذي اكتشفه بنسن وكيرشوف عام 1861 من خطين أحمرين في طيفه؟",
+      "a": "الروبيديوم",
       "topic": "عناصر ومركّبات",
       "verified": true,
+      "sourceUrl": "https://periodic-table.rsc.org/element/37/rubidium",
+      "verifiedAt": "2026-09-25",
       "alt": [
-        "غاليوم",
-        "الجاليوم"
+        "روبيديوم",
+        "Rubidium"
       ],
-      "difficultyTarget": 0.15,
-      "sourceUrl": "https://periodic-table.rsc.org/element/31/"
+      "p": 800,
+      "qid": "science-800-918",
+      "difficultyTarget": 0.25
+    },
+    {
+      "q": "ما المبدأ الذي يمنع إلكترونين في الذرة من امتلاك أعداد الكم الأربعة نفسها؟",
+      "a": "مبدأ استبعاد باولي",
+      "topic": "فيزياء",
+      "verified": true,
+      "sourceUrl": "https://www.nobelprize.org/prizes/physics/1945/pauli/facts/",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "مبدأ باولي",
+        "Pauli exclusion principle"
+      ],
+      "p": 1000,
+      "qid": "science-1000-911",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "ما التأثير الذي يسمح بمرور تيار بين موصلين فائقين يفصل بينهما حاجز عازل رقيق؟",
+      "a": "تأثير جوزيفسون",
+      "topic": "فيزياء",
+      "verified": true,
+      "sourceUrl": "https://www.nobelprize.org/prizes/physics/1973/josephson/facts/",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Josephson effect"
+      ],
+      "p": 1000,
+      "qid": "science-1000-912",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "ما اسم حد الكتلة الأعلى لاستقرار قزم أبيض، والبالغ نحو 1.4 كتلة شمسية؟",
+      "a": "حد تشاندراسيخار",
+      "topic": "فلك",
+      "verified": true,
+      "sourceUrl": "https://educationalgames.nobelprize.org/educational/physics/star_stories/overview/index.html",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "حد شاندراسيخار",
+        "Chandrasekhar limit"
+      ],
+      "p": 1000,
+      "qid": "science-1000-913",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "من العالمة التي استنتجت أن النجوم تتكون أساسًا من الهيدروجين والهيليوم؟",
+      "a": "سيسيليا باين غابوشكين",
+      "topic": "علماء واكتشافات",
+      "verified": true,
+      "sourceUrl": "https://www.aip.org/foundation/the-voice-behind-the-discovery-cecilia-payne-gaposchkins-aip-oral-history",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "سيسيليا باين",
+        "Cecilia Payne-Gaposchkin"
+      ],
+      "p": 1000,
+      "qid": "science-1000-914",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "من العالمة التي فسرت الانشطار النووي نظريًا مع أوتو فريش؟",
+      "a": "ليز مايتنر",
+      "topic": "علماء واكتشافات",
+      "verified": true,
+      "sourceUrl": "https://physicstoday.aip.org/letters/lise-meitner-and-the-discovery-of-fission",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "ليزا مايتنر",
+        "Lise Meitner"
+      ],
+      "p": 1000,
+      "qid": "science-1000-915",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "ماذا يسمى جزيء RNA عندما يعمل محفزًا لتفاعل كيميائي؟",
+      "a": "ريبوزيم",
+      "topic": "أحياء",
+      "verified": true,
+      "sourceUrl": "https://www.nobelprize.org/prizes/chemistry/1989/cech/article/",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "رايبوزيم",
+        "Ribozyme"
+      ],
+      "p": 1000,
+      "qid": "science-1000-916",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "ما الإنزيم الذي يضيف تتابعات DNA إلى نهايات الكروموسومات؟",
+      "a": "التيلوميراز",
+      "topic": "جسم الإنسان",
+      "verified": true,
+      "sourceUrl": "https://www.nobelprize.org/prizes/medicine/2009/advanced-information/",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "تيلوميراز",
+        "Telomerase"
+      ],
+      "p": 1000,
+      "qid": "science-1000-917",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "ما حالة المادة التي تتجمع فيها ذرات شديدة البرودة في أدنى حالة طاقة مشتركة؟",
+      "a": "تكاثف بوز آينشتاين",
+      "topic": "طاقة وحركة",
+      "verified": true,
+      "sourceUrl": "https://www.nobelprize.org/prizes/physics/2001/press-release/",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "مكثف بوز أينشتاين",
+        "Bose-Einstein condensate"
+      ],
+      "p": 1000,
+      "qid": "science-1000-918",
+      "difficultyTarget": 0.15
     }
   ]
 }

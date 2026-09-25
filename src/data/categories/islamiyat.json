@@ -5,126 +5,6 @@
   "qs": [
     {
       "p": 200,
-      "topic": "معالم الحرم",
-      "q": "ما البناء المكعب الذي يتوسط المسجد الحرام؟",
-      "a": "الكعبة المشرفة",
-      "alt": [
-        "الكعبة"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Kaaba",
-      "verified": true,
-      "qid": "islamiyat-200-901",
-      "difficultyTarget": 0.8
-    },
-    {
-      "p": 200,
-      "topic": "معالم الحرم",
-      "q": "ما اسم البئر الشهيرة بجوار البيت الحرام في مكة؟",
-      "a": "بئر زمزم",
-      "alt": [
-        "زمزم"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Zamzam_Well",
-      "verified": true,
-      "qid": "islamiyat-200-902",
-      "difficultyTarget": 0.8
-    },
-    {
-      "p": 200,
-      "topic": "المشاعر",
-      "q": "ما الصعيد الذي يجتمع فيه الحجاج في اليوم التاسع من ذي الحجة؟",
-      "a": "عرفات",
-      "alt": [
-        "عرفة",
-        "صعيد عرفات"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Mount_Arafat",
-      "verified": true,
-      "qid": "islamiyat-200-903",
-      "difficultyTarget": 0.8
-    },
-    {
-      "p": 200,
-      "topic": "التقويم",
-      "q": "على دورة أي جرم سماوي تعتمد الشهور الهجرية؟",
-      "a": "القمر",
-      "alt": [
-        "دورة القمر"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Islamic_calendar",
-      "verified": true,
-      "qid": "islamiyat-200-904",
-      "difficultyTarget": 0.8
-    },
-    {
-      "p": 200,
-      "topic": "مصطلحات",
-      "q": "ماذا يسمى الشخص الذي يرفع الأذان في المسجد؟",
-      "a": "المؤذن",
-      "alt": [
-        "مؤذن"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Muezzin",
-      "verified": true,
-      "qid": "islamiyat-200-905",
-      "difficultyTarget": 0.8
-    },
-    {
-      "p": 200,
-      "topic": "العلماء",
-      "q": "من الطبيب صاحب كتاب «القانون في الطب»؟",
-      "a": "ابن سينا",
-      "alt": [
-        "أبو علي ابن سينا"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Avicenna",
-      "verified": true,
-      "qid": "islamiyat-200-906",
-      "difficultyTarget": 0.8
-    },
-    {
-      "p": 200,
-      "topic": "مدن التراث",
-      "q": "ما الاسم التاريخي للأراضي التي حكمها المسلمون في شبه الجزيرة الأيبيرية؟",
-      "a": "الأندلس",
-      "alt": [
-        "بلاد الأندلس"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Al-Andalus",
-      "verified": true,
-      "qid": "islamiyat-200-907",
-      "difficultyTarget": 0.8
-    },
-    {
-      "p": 200,
-      "topic": "الفنون",
-      "q": "ما الخط العربي ذو الحروف الزاوية الذي يحمل اسم مدينة عراقية؟",
-      "a": "الخط الكوفي",
-      "alt": [
-        "الكوفي",
-        "كوفي"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Kufic",
-      "verified": true,
-      "qid": "islamiyat-200-908",
-      "difficultyTarget": 0.8
-    },
-    {
-      "p": 400,
-      "topic": "معالم الحرم",
-      "q": "ما اسم ركن الكعبة الواقع باتجاه اليمن؟",
-      "a": "الركن اليماني",
-      "alt": [
-        "اليماني",
-        "الركن اليمني"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Kaaba",
-      "verified": true,
-      "qid": "islamiyat-400-901",
-      "difficultyTarget": 0.6
-    },
-    {
-      "p": 400,
       "topic": "المشاعر",
       "q": "ما المشعر الواقع على الطريق بين منى وعرفة؟",
       "a": "مزدلفة",
@@ -133,24 +13,11 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/Muzdalifah",
       "verified": true,
-      "qid": "islamiyat-400-902",
-      "difficultyTarget": 0.6
+      "qid": "islamiyat-200-911",
+      "difficultyTarget": 0.8
     },
     {
-      "p": 400,
-      "topic": "المساجد",
-      "q": "في أي مدينة مصرية يقع الجامع الأزهر؟",
-      "a": "القاهرة",
-      "alt": [
-        "مدينة القاهرة"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Al-Azhar_Mosque",
-      "verified": true,
-      "qid": "islamiyat-400-903",
-      "difficultyTarget": 0.6
-    },
-    {
-      "p": 400,
+      "p": 200,
       "topic": "التقويم",
       "q": "ما الشهر الحرام الذي يقع بين جمادى الآخرة وشعبان؟",
       "a": "رجب",
@@ -160,24 +27,11 @@
       ],
       "sourceUrl": "https://sunnah.com/bukhari:3197",
       "verified": true,
-      "qid": "islamiyat-400-904",
-      "difficultyTarget": 0.6
+      "qid": "islamiyat-200-912",
+      "difficultyTarget": 0.8
     },
     {
-      "p": 400,
-      "topic": "مصطلحات",
-      "q": "بأي اسم تُعرف عبارة «بسم الله الرحمن الرحيم»؟",
-      "a": "البسملة",
-      "alt": [
-        "التسمية"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Basmala",
-      "verified": true,
-      "qid": "islamiyat-400-905",
-      "difficultyTarget": 0.6
-    },
-    {
-      "p": 400,
+      "p": 200,
       "topic": "العلماء",
       "q": "من العالم صاحب كتاب «المختصر في حساب الجبر والمقابلة»؟",
       "a": "الخوارزمي",
@@ -186,11 +40,11 @@
       ],
       "sourceUrl": "https://mathshistory.st-andrews.ac.uk/Biographies/Al-Khwarizmi/",
       "verified": true,
-      "qid": "islamiyat-400-906",
-      "difficultyTarget": 0.6
+      "qid": "islamiyat-200-913",
+      "difficultyTarget": 0.8
     },
     {
-      "p": 400,
+      "p": 200,
       "topic": "مدن التراث",
       "q": "ما المدينة التونسية المشهورة بجامعها الكبير وأحواض الأغالبة؟",
       "a": "القيروان",
@@ -199,25 +53,79 @@
       ],
       "sourceUrl": "https://whc.unesco.org/en/list/499/",
       "verified": true,
-      "qid": "islamiyat-400-907",
+      "qid": "islamiyat-200-914",
+      "difficultyTarget": 0.8
+    },
+    {
+      "p": 200,
+      "topic": "المساجد",
+      "q": "في أي مدينة عُمانية يوجد جامع السلطان قابوس الأكبر؟",
+      "a": "مسقط",
+      "alt": [
+        "مدينة مسقط"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Sultan_Qaboos_Grand_Mosque",
+      "verified": true,
+      "qid": "islamiyat-200-915",
+      "difficultyTarget": 0.8
+    },
+    {
+      "p": 200,
+      "topic": "مدن التراث",
+      "q": "ما المدينة الإسبانية التي يضم مركزها التاريخي جامعًا كبيرًا تحوّل إلى كاتدرائية؟",
+      "a": "قرطبة",
+      "alt": [
+        "كوردوبا",
+        "Cordoba"
+      ],
+      "sourceUrl": "https://whc.unesco.org/en/list/313/",
+      "verified": true,
+      "qid": "islamiyat-200-916",
+      "difficultyTarget": 0.8
+    },
+    {
+      "p": 200,
+      "topic": "العلماء",
+      "q": "من الطبيب الذي وصف مرور الدم بين القلب والرئتين في شرحه لتشريح القانون؟",
+      "a": "ابن النفيس",
+      "alt": [
+        "علاء الدين ابن النفيس"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Ibn_al-Nafis",
+      "verified": true,
+      "qid": "islamiyat-200-917",
+      "difficultyTarget": 0.8
+    },
+    {
+      "p": 200,
+      "topic": "الفنون",
+      "q": "ما الخط العربي المستدير الواضح الذي شاع في نسخ المصاحف والكتب؟",
+      "a": "خط النسخ",
+      "alt": [
+        "النسخ",
+        "النسخي"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Naskh_(script)",
+      "verified": true,
+      "qid": "islamiyat-200-918",
+      "difficultyTarget": 0.8
+    },
+    {
+      "p": 400,
+      "topic": "معالم الحرم",
+      "q": "ما اسم الركن الجنوبي الغربي للكعبة المشرفة؟",
+      "a": "الركن اليماني",
+      "alt": [
+        "اليماني",
+        "الركن اليمني"
+      ],
+      "sourceUrl": "https://saudipedia.com/en/what-is-the-yamani-corner",
+      "verified": true,
+      "qid": "islamiyat-400-911",
       "difficultyTarget": 0.6
     },
     {
       "p": 400,
-      "topic": "الفنون",
-      "q": "ماذا يسمى برج المسجد الذي كان يُرفع الأذان من أعلاه؟",
-      "a": "المئذنة",
-      "alt": [
-        "المنارة",
-        "الصومعة"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Muezzin",
-      "verified": true,
-      "qid": "islamiyat-400-908",
-      "difficultyTarget": 0.6
-    },
-    {
-      "p": 600,
       "topic": "معالم الحرم",
       "q": "ما اسم المساحة من جدار الكعبة بين بابها والحجر الأسود؟",
       "a": "الملتزم",
@@ -226,11 +134,11 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/Kaaba",
       "verified": true,
-      "qid": "islamiyat-600-901",
-      "difficultyTarget": 0.4
+      "qid": "islamiyat-400-912",
+      "difficultyTarget": 0.6
     },
     {
-      "p": 600,
+      "p": 400,
       "topic": "المشاعر",
       "q": "ما المسجد الكبير الذي تُلقى منه خطبة يوم عرفة ويقع على الطرف الغربي للمشعر؟",
       "a": "مسجد نمرة",
@@ -240,24 +148,11 @@
       ],
       "sourceUrl": "https://ar.wikipedia.org/wiki/مسجد_نمرة",
       "verified": true,
-      "qid": "islamiyat-600-902",
-      "difficultyTarget": 0.4
+      "qid": "islamiyat-400-913",
+      "difficultyTarget": 0.6
     },
     {
-      "p": 600,
-      "topic": "المساجد",
-      "q": "في أي مدينة عُمانية يوجد جامع السلطان قابوس الأكبر؟",
-      "a": "مسقط",
-      "alt": [
-        "مدينة مسقط"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Sultan_Qaboos_Grand_Mosque",
-      "verified": true,
-      "qid": "islamiyat-600-903",
-      "difficultyTarget": 0.4
-    },
-    {
-      "p": 600,
+      "p": 400,
       "topic": "التقويم",
       "q": "كم يومًا تضم السنة الهجرية القمرية غير الكبيسة؟",
       "a": "ثلاثمئة وأربعة وخمسون",
@@ -268,11 +163,11 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/Islamic_calendar",
       "verified": true,
-      "qid": "islamiyat-600-904",
-      "difficultyTarget": 0.4
+      "qid": "islamiyat-400-914",
+      "difficultyTarget": 0.6
     },
     {
-      "p": 600,
+      "p": 400,
       "topic": "مصطلحات",
       "q": "ماذا تسمى مهنة العناية بالكعبة وفتحها وإغلاقها وحفظ مفتاحها؟",
       "a": "السدانة",
@@ -282,11 +177,11 @@
       ],
       "sourceUrl": "https://ar.wikipedia.org/wiki/سدانة_الكعبة",
       "verified": true,
-      "qid": "islamiyat-600-905",
-      "difficultyTarget": 0.4
+      "qid": "islamiyat-400-915",
+      "difficultyTarget": 0.6
     },
     {
-      "p": 600,
+      "p": 400,
       "topic": "العلماء",
       "q": "من الجغرافي الذي وضع خريطة العالم لروجر الثاني ملك صقلية؟",
       "a": "الإدريسي",
@@ -296,39 +191,39 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/Al-Idrisi",
       "verified": true,
-      "qid": "islamiyat-600-906",
-      "difficultyTarget": 0.4
+      "qid": "islamiyat-400-916",
+      "difficultyTarget": 0.6
+    },
+    {
+      "p": 400,
+      "topic": "مصطلحات",
+      "q": "ماذا يسمى المبنى الخيري الذي يوزع ماء الشرب مجانًا على المارة في المدن الإسلامية؟",
+      "a": "السبيل",
+      "alt": [
+        "سبيل الماء",
+        "السبيل الخيري"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Sabil_(fountain)",
+      "verified": true,
+      "qid": "islamiyat-400-917",
+      "difficultyTarget": 0.6
+    },
+    {
+      "q": "ما الاسم الشائع لموضع ذي الحليفة قرب المدينة المنورة؟",
+      "a": "آبار علي",
+      "topic": "المشاعر",
+      "sourceUrl": "https://risala.prh.gov.sa/ar/amaken/16",
+      "alt": [
+        "أبيار علي"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 400,
+      "qid": "islamiyat-400-918",
+      "difficultyTarget": 0.6
     },
     {
       "p": 600,
-      "topic": "مدن التراث",
-      "q": "ما المدينة الإسبانية التي يضم مركزها التاريخي جامعًا كبيرًا تحوّل إلى كاتدرائية؟",
-      "a": "قرطبة",
-      "alt": [
-        "كوردوبا",
-        "Cordoba"
-      ],
-      "sourceUrl": "https://whc.unesco.org/en/list/313/",
-      "verified": true,
-      "qid": "islamiyat-600-907",
-      "difficultyTarget": 0.4
-    },
-    {
-      "p": 600,
-      "topic": "الفنون",
-      "q": "ما اسم الزخارف المتدرجة ذات الخلايا الصغيرة التي تتدلى من قباب العمارة الإسلامية؟",
-      "a": "المقرنصات",
-      "alt": [
-        "المقرنص",
-        "المقرنصة"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Muqarnas",
-      "verified": true,
-      "qid": "islamiyat-600-908",
-      "difficultyTarget": 0.4
-    },
-    {
-      "p": 800,
       "topic": "معالم الحرم",
       "q": "ماذا يسمى البناء المائل المحيط بأسفل ثلاثة جوانب من الكعبة؟",
       "a": "الشاذروان",
@@ -340,11 +235,11 @@
         "https://en.wikipedia.org/wiki/Kaaba"
       ],
       "verified": true,
-      "qid": "islamiyat-800-901",
-      "difficultyTarget": 0.25
+      "qid": "islamiyat-600-911",
+      "difficultyTarget": 0.4
     },
     {
-      "p": 800,
+      "p": 600,
       "topic": "المشاعر",
       "q": "ما اسم ميقات أهل نجد المذكور في حديث ابن عباس؟",
       "a": "قرن المنازل",
@@ -353,11 +248,11 @@
       ],
       "sourceUrl": "https://sunnah.com/bukhari:1524",
       "verified": true,
-      "qid": "islamiyat-800-902",
-      "difficultyTarget": 0.25
+      "qid": "islamiyat-600-912",
+      "difficultyTarget": 0.4
     },
     {
-      "p": 800,
+      "p": 600,
       "topic": "المساجد",
       "q": "من المعماري الذي صمم جامع السليمية في أدرنة؟",
       "a": "معمار سنان",
@@ -367,11 +262,11 @@
       ],
       "sourceUrl": "https://whc.unesco.org/en/list/1366/",
       "verified": true,
-      "qid": "islamiyat-800-903",
-      "difficultyTarget": 0.25
+      "qid": "islamiyat-600-913",
+      "difficultyTarget": 0.4
     },
     {
-      "p": 800,
+      "p": 600,
       "topic": "التقويم",
       "q": "ما اسم التقويم الهجري السعودي المبني على حسابات فلكية والمستخدم للأغراض الإدارية؟",
       "a": "تقويم أم القرى",
@@ -380,38 +275,11 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/Islamic_calendar",
       "verified": true,
-      "qid": "islamiyat-800-904",
-      "difficultyTarget": 0.25
+      "qid": "islamiyat-600-914",
+      "difficultyTarget": 0.4
     },
     {
-      "p": 800,
-      "topic": "مصطلحات",
-      "q": "ماذا يسمى المبنى الخيري الذي يوزع ماء الشرب مجانًا على المارة في المدن الإسلامية؟",
-      "a": "السبيل",
-      "alt": [
-        "سبيل الماء",
-        "السبيل الخيري"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Sabil_(fountain)",
-      "verified": true,
-      "qid": "islamiyat-800-905",
-      "difficultyTarget": 0.25
-    },
-    {
-      "p": 800,
-      "topic": "العلماء",
-      "q": "من الطبيب الذي وصف مرور الدم بين القلب والرئتين في شرحه لتشريح القانون؟",
-      "a": "ابن النفيس",
-      "alt": [
-        "علاء الدين ابن النفيس"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Ibn_al-Nafis",
-      "verified": true,
-      "qid": "islamiyat-800-906",
-      "difficultyTarget": 0.25
-    },
-    {
-      "p": 800,
+      "p": 600,
       "topic": "مدن التراث",
       "q": "ما المدينة المالية التي اشتهرت بمدارس سنكوري وتجارة المخطوطات؟",
       "a": "تمبكتو",
@@ -421,25 +289,11 @@
       ],
       "sourceUrl": "https://whc.unesco.org/en/list/119/",
       "verified": true,
-      "qid": "islamiyat-800-907",
-      "difficultyTarget": 0.25
+      "qid": "islamiyat-600-915",
+      "difficultyTarget": 0.4
     },
     {
-      "p": 800,
-      "topic": "الفنون",
-      "q": "ما الخط العربي المستدير الواضح الذي شاع في نسخ المصاحف والكتب؟",
-      "a": "خط النسخ",
-      "alt": [
-        "النسخ",
-        "النسخي"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Naskh_(script)",
-      "verified": true,
-      "qid": "islamiyat-800-908",
-      "difficultyTarget": 0.25
-    },
-    {
-      "p": 1000,
+      "p": 600,
       "topic": "معالم الحرم",
       "q": "بأي اسم تُعرف قناة تصريف المطر الذهبية الخارجة من سطح الكعبة؟",
       "a": "ميزاب الرحمة",
@@ -449,11 +303,11 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/Kaaba",
       "verified": true,
-      "qid": "islamiyat-1000-901",
-      "difficultyTarget": 0.15
+      "qid": "islamiyat-600-916",
+      "difficultyTarget": 0.4
     },
     {
-      "p": 1000,
+      "p": 600,
       "topic": "المشاعر",
       "q": "ما اسم ميقات أهل اليمن المذكور في حديث ابن عباس؟",
       "a": "يلملم",
@@ -462,39 +316,11 @@
       ],
       "sourceUrl": "https://sunnah.com/bukhari:1524",
       "verified": true,
-      "qid": "islamiyat-1000-902",
-      "difficultyTarget": 0.15
+      "qid": "islamiyat-600-917",
+      "difficultyTarget": 0.4
     },
     {
-      "p": 1000,
-      "topic": "المساجد",
-      "q": "في أي بلدة كان مسجد عبد القيس الذي أُقيمت فيه أول جمعة بعد مسجد النبي، وفق البخاري؟",
-      "a": "جواثى",
-      "alt": [
-        "جواثا",
-        "جواثاء"
-      ],
-      "sourceUrl": "https://sunnah.com/bukhari:892",
-      "verified": true,
-      "qid": "islamiyat-1000-903",
-      "difficultyTarget": 0.15
-    },
-    {
-      "p": 1000,
-      "topic": "العلماء",
-      "q": "من مؤلف المعجم اللغوي «القاموس المحيط»؟",
-      "a": "الفيروزآبادي",
-      "alt": [
-        "مجد الدين الفيروزآبادي",
-        "الفيروز أبادي"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Firuzabadi",
-      "verified": true,
-      "qid": "islamiyat-1000-904",
-      "difficultyTarget": 0.15
-    },
-    {
-      "p": 1000,
+      "p": 600,
       "topic": "الكتب",
       "q": "ما اسم معجم الخليل بن أحمد المرتب بحسب مخارج الحروف؟",
       "a": "كتاب العين",
@@ -504,8 +330,120 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/Kitab_al-Ayn",
       "verified": true,
-      "qid": "islamiyat-1000-905",
-      "difficultyTarget": 0.15
+      "qid": "islamiyat-600-918",
+      "difficultyTarget": 0.4
+    },
+    {
+      "p": 800,
+      "topic": "المساجد",
+      "q": "في أي بلدة كان مسجد عبد القيس الذي أُقيمت فيه أول جمعة بعد مسجد النبي، وفق البخاري؟",
+      "a": "جواثى",
+      "alt": [
+        "جواثا",
+        "جواثاء"
+      ],
+      "sourceUrl": "https://sunnah.com/bukhari:892",
+      "verified": true,
+      "qid": "islamiyat-800-911",
+      "difficultyTarget": 0.25
+    },
+    {
+      "p": 800,
+      "topic": "العلماء",
+      "q": "من مؤلف المعجم اللغوي «القاموس المحيط»؟",
+      "a": "الفيروزآبادي",
+      "alt": [
+        "مجد الدين الفيروزآبادي",
+        "الفيروز أبادي"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Firuzabadi",
+      "verified": true,
+      "qid": "islamiyat-800-912",
+      "difficultyTarget": 0.25
+    },
+    {
+      "p": 800,
+      "topic": "الفنون",
+      "q": "ما اسم الزخارف المتدرجة ذات الخلايا الصغيرة التي تتدلى من قباب العمارة الإسلامية؟",
+      "a": "المقرنصات",
+      "alt": [
+        "المقرنص",
+        "المقرنصة"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Muqarnas",
+      "verified": true,
+      "qid": "islamiyat-800-913",
+      "difficultyTarget": 0.25
+    },
+    {
+      "q": "ما الاسم التقليدي لستارة باب الكعبة؟",
+      "a": "البرقع",
+      "topic": "معالم الحرم",
+      "sourceUrl": "https://www.spa.gov.sa/N2229052",
+      "alt": [
+        "برقع الكعبة"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 800,
+      "qid": "islamiyat-800-914",
+      "difficultyTarget": 0.25
+    },
+    {
+      "q": "ما الجامع القاهري الذي اشتهر بمئذنة ذات سلم يلتف خارجها؟",
+      "a": "جامع أحمد بن طولون",
+      "topic": "المساجد",
+      "sourceUrl": "https://cairo.gov.eg/ar/culture/lines-of-knowledge/cairos-minarets/",
+      "alt": [
+        "جامع ابن طولون",
+        "مسجد ابن طولون"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 800,
+      "qid": "islamiyat-800-915",
+      "difficultyTarget": 0.25
+    },
+    {
+      "q": "من الفنان الذي نسخ وصوّر مخطوط مقامات الحريري المحفوظ في باريس سنة 1237؟",
+      "a": "يحيى بن محمود الواسطي",
+      "topic": "الكتب",
+      "sourceUrl": "https://www.loc.gov/item/2021667393/",
+      "alt": [
+        "الواسطي"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 800,
+      "qid": "islamiyat-800-916",
+      "difficultyTarget": 0.25
+    },
+    {
+      "q": "ما اسم الحدائق والقصر الصيفي المجاورين للحمراء في غرناطة؟",
+      "a": "جنة العريف",
+      "topic": "مدن التراث",
+      "sourceUrl": "https://whc.unesco.org/document/142194",
+      "alt": [
+        "جنات العريف",
+        "Generalife"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 800,
+      "qid": "islamiyat-800-917",
+      "difficultyTarget": 0.25
+    },
+    {
+      "q": "في أي مدينة أوزبكية تقع ساحة ريغستان التاريخية؟",
+      "a": "سمرقند",
+      "topic": "مدن التراث",
+      "sourceUrl": "https://whc.unesco.org/en/list/603",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 800,
+      "qid": "islamiyat-800-918",
+      "difficultyTarget": 0.25
     },
     {
       "p": 1000,
@@ -517,7 +455,7 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/Tabula_Rogeriana",
       "verified": true,
-      "qid": "islamiyat-1000-906",
+      "qid": "islamiyat-1000-911",
       "difficultyTarget": 0.15
     },
     {
@@ -531,7 +469,7 @@
       ],
       "sourceUrl": "https://whc.unesco.org/en/list/115/",
       "verified": true,
-      "qid": "islamiyat-1000-907",
+      "qid": "islamiyat-1000-912",
       "difficultyTarget": 0.15
     },
     {
@@ -545,7 +483,76 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/Nastaliq",
       "verified": true,
-      "qid": "islamiyat-1000-908",
+      "qid": "islamiyat-1000-913",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "من الفلكي الدمشقي الذي صنع مزولة للجامع الأموي في القرن الرابع عشر؟",
+      "a": "ابن الشاطر",
+      "topic": "العلماء",
+      "sourceUrl": "https://archive.thawra.sy/?p=633710",
+      "alt": [
+        "علي بن إبراهيم بن الشاطر"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 1000,
+      "qid": "islamiyat-1000-914",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "من المهندس صاحب كتاب الحيل الذي يضم تصميم ساعة الطواويس المائية؟",
+      "a": "بديع الزمان الجزري",
+      "topic": "الكتب",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/451302",
+      "alt": [
+        "الجزري"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 1000,
+      "qid": "islamiyat-1000-915",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "ما اسم فن تطعيم المعادن بخيوط من الذهب أو الفضة؟",
+      "a": "التكفيت",
+      "topic": "الفنون",
+      "sourceUrl": "https://www.safahat.org/books/37926480/5.7/",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 1000,
+      "qid": "islamiyat-1000-916",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "ما المدينة التركية التي اشتهرت بصناعة الخزف العثماني ذي الزخارف النباتية الملونة؟",
+      "a": "إزنيق",
+      "topic": "مدن التراث",
+      "sourceUrl": "https://crees.ku.edu/iznik",
+      "alt": [
+        "إزنيك",
+        "Iznik"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 1000,
+      "qid": "islamiyat-1000-917",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "من الطبيب الأندلسي صاحب كتاب «التصريف لمن عجز عن التأليف»؟",
+      "a": "أبو القاسم الزهراوي",
+      "topic": "العلماء",
+      "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3459224/",
+      "alt": [
+        "الزهراوي"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 1000,
+      "qid": "islamiyat-1000-918",
       "difficultyTarget": 0.15
     }
   ]

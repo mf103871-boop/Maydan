@@ -20,7 +20,7 @@
       "name": "معلومات عامة",
       "icon": "🧠",
       "media": false,
-      "status": "pending",
+      "status": "done",
       "counts": {
         "200": 8,
         "400": 8,
@@ -28,14 +28,18 @@
         "800": 8,
         "1000": 8
       },
-      "doneAt": null,
-      "order": 1
+      "doneAt": "2026-09-25",
+      "order": 1,
+      "qidRange": {
+        "start": 911,
+        "end": 918
+      }
     },
     "geo": {
       "name": "جغرافيا",
       "icon": "🌍",
       "media": false,
-      "status": "pending",
+      "status": "done",
       "counts": {
         "200": 8,
         "400": 8,
@@ -43,14 +47,18 @@
         "800": 8,
         "1000": 8
       },
-      "doneAt": null,
-      "order": 2
+      "doneAt": "2026-09-25",
+      "order": 2,
+      "qidRange": {
+        "start": 911,
+        "end": 918
+      }
     },
     "capitals": {
       "name": "عواصم",
       "icon": "🏙️",
       "media": false,
-      "status": "pending",
+      "status": "done",
       "counts": {
         "200": 8,
         "400": 8,
@@ -58,14 +66,18 @@
         "800": 8,
         "1000": 8
       },
-      "doneAt": null,
-      "order": 3
+      "doneAt": "2026-09-25",
+      "order": 3,
+      "qidRange": {
+        "start": 911,
+        "end": 918
+      }
     },
     "science": {
       "name": "علوم",
       "icon": "🔬",
       "media": false,
-      "status": "pending",
+      "status": "done",
       "counts": {
         "200": 8,
         "400": 8,
@@ -73,14 +85,18 @@
         "800": 8,
         "1000": 8
       },
-      "doneAt": null,
-      "order": 4
+      "doneAt": "2026-09-25",
+      "order": 4,
+      "qidRange": {
+        "start": 911,
+        "end": 918
+      }
     },
     "animals": {
       "name": "حيوانات",
       "icon": "🐾",
       "media": false,
-      "status": "pending",
+      "status": "done",
       "counts": {
         "200": 8,
         "400": 8,
@@ -88,14 +104,18 @@
         "800": 8,
         "1000": 8
       },
-      "doneAt": null,
-      "order": 5
+      "doneAt": "2026-09-25",
+      "order": 5,
+      "qidRange": {
+        "start": 911,
+        "end": 918
+      }
     },
     "history": {
       "name": "تاريخ",
       "icon": "📜",
       "media": false,
-      "status": "pending",
+      "status": "done",
       "counts": {
         "200": 8,
         "400": 8,
@@ -103,14 +123,18 @@
         "800": 8,
         "1000": 8
       },
-      "doneAt": null,
-      "order": 6
+      "doneAt": "2026-09-25",
+      "order": 6,
+      "qidRange": {
+        "start": 911,
+        "end": 918
+      }
     },
     "food": {
       "name": "أكلات ومطابخ",
       "icon": "🍽️",
       "media": false,
-      "status": "pending",
+      "status": "done",
       "counts": {
         "200": 8,
         "400": 8,
@@ -118,14 +142,18 @@
         "800": 8,
         "1000": 8
       },
-      "doneAt": null,
-      "order": 7
+      "doneAt": "2026-09-25",
+      "order": 7,
+      "qidRange": {
+        "start": 911,
+        "end": 918
+      }
     },
     "fruitsveg": {
       "name": "فواكه وخضار",
       "icon": "🍉",
       "media": false,
-      "status": "pending",
+      "status": "done",
       "counts": {
         "200": 8,
         "400": 8,
@@ -133,8 +161,12 @@
         "800": 8,
         "1000": 8
       },
-      "doneAt": null,
-      "order": 8
+      "doneAt": "2026-09-25",
+      "order": 8,
+      "qidRange": {
+        "start": 911,
+        "end": 918
+      }
     },
     "sports": {
       "name": "رياضة",
@@ -148,8 +180,12 @@
         "800": 8,
         "1000": 8
       },
-      "doneAt": "2026-09-18",
-      "order": 9
+      "doneAt": "2026-09-25",
+      "order": 9,
+      "qidRange": {
+        "start": 911,
+        "end": 918
+      }
     },
     "football": {
       "name": "كرة القدم",
@@ -163,8 +199,12 @@
         "800": 8,
         "1000": 8
       },
-      "doneAt": "2026-09-18",
-      "order": 10
+      "doneAt": "2026-09-25",
+      "order": 10,
+      "qidRange": {
+        "start": 911,
+        "end": 918
+      }
     },
     "worldcup": {
       "name": "كأس العالم",
@@ -178,8 +218,12 @@
         "800": 8,
         "1000": 8
       },
-      "doneAt": "2026-09-18",
-      "order": 11
+      "doneAt": "2026-09-25",
+      "order": 11,
+      "qidRange": {
+        "start": 911,
+        "end": 918
+      }
     },
     "ucl": {
       "name": "دوري أبطال أوروبا",
@@ -193,8 +237,12 @@
         "800": 8,
         "1000": 8
       },
-      "doneAt": "2026-09-18",
-      "order": 12
+      "doneAt": "2026-09-25",
+      "order": 12,
+      "qidRange": {
+        "start": 911,
+        "end": 918
+      }
     },
     "premier": {
       "name": "الدوري الإنجليزي",
@@ -208,14 +256,18 @@
         "800": 8,
         "1000": 8
       },
-      "doneAt": "2026-09-18",
-      "order": 13
+      "doneAt": "2026-09-25",
+      "order": 13,
+      "qidRange": {
+        "start": 911,
+        "end": 918
+      }
     },
     "tech": {
       "name": "تقنية",
       "icon": "💻",
       "media": false,
-      "status": "pending",
+      "status": "done",
       "counts": {
         "200": 8,
         "400": 8,
@@ -223,14 +275,18 @@
         "800": 8,
         "1000": 8
       },
-      "doneAt": null,
-      "order": 14
+      "doneAt": "2026-09-25",
+      "order": 14,
+      "qidRange": {
+        "start": 911,
+        "end": 918
+      }
     },
     "apps": {
       "name": "تطبيقات وسوشيال",
       "icon": "📲",
       "media": false,
-      "status": "pending",
+      "status": "done",
       "counts": {
         "200": 8,
         "400": 8,
@@ -238,14 +294,18 @@
         "800": 8,
         "1000": 8
       },
-      "doneAt": null,
-      "order": 15
+      "doneAt": "2026-09-25",
+      "order": 15,
+      "qidRange": {
+        "start": 911,
+        "end": 918
+      }
     },
     "brands": {
       "name": "ماركات وشركات",
       "icon": "🏷️",
       "media": false,
-      "status": "pending",
+      "status": "done",
       "counts": {
         "200": 8,
         "400": 8,
@@ -253,14 +313,18 @@
         "800": 8,
         "1000": 8
       },
-      "doneAt": null,
-      "order": 16
+      "doneAt": "2026-09-25",
+      "order": 16,
+      "qidRange": {
+        "start": 911,
+        "end": 918
+      }
     },
     "cars": {
       "name": "سيارات",
       "icon": "🚗",
       "media": false,
-      "status": "pending",
+      "status": "done",
       "counts": {
         "200": 8,
         "400": 8,
@@ -268,14 +332,18 @@
         "800": 8,
         "1000": 8
       },
-      "doneAt": null,
-      "order": 17
+      "doneAt": "2026-09-25",
+      "order": 17,
+      "qidRange": {
+        "start": 911,
+        "end": 918
+      }
     },
     "shopping": {
       "name": "تسوق وحديث البنات",
       "icon": "💄",
       "media": false,
-      "status": "pending",
+      "status": "done",
       "counts": {
         "200": 8,
         "400": 8,
@@ -283,14 +351,18 @@
         "800": 8,
         "1000": 8
       },
-      "doneAt": null,
-      "order": 18
+      "doneAt": "2026-09-25",
+      "order": 18,
+      "qidRange": {
+        "start": 911,
+        "end": 918
+      }
     },
     "arabic": {
       "name": "لغة عربية",
       "icon": "🔤",
       "media": false,
-      "status": "pending",
+      "status": "done",
       "counts": {
         "200": 8,
         "400": 8,
@@ -298,14 +370,18 @@
         "800": 8,
         "1000": 8
       },
-      "doneAt": null,
-      "order": 19
+      "doneAt": "2026-09-25",
+      "order": 19,
+      "qidRange": {
+        "start": 911,
+        "end": 918
+      }
     },
     "proverbs": {
       "name": "أمثال شعبية",
       "icon": "🧿",
       "media": false,
-      "status": "pending",
+      "status": "done",
       "counts": {
         "200": 8,
         "400": 8,
@@ -313,14 +389,18 @@
         "800": 8,
         "1000": 8
       },
-      "doneAt": null,
-      "order": 20
+      "doneAt": "2026-09-25",
+      "order": 20,
+      "qidRange": {
+        "start": 911,
+        "end": 918
+      }
     },
     "dialects": {
       "name": "لهجات عربية",
       "icon": "🗣️",
       "media": false,
-      "status": "pending",
+      "status": "done",
       "counts": {
         "200": 8,
         "400": 8,
@@ -328,14 +408,18 @@
         "800": 8,
         "1000": 8
       },
-      "doneAt": null,
-      "order": 21
+      "doneAt": "2026-09-25",
+      "order": 21,
+      "qidRange": {
+        "start": 911,
+        "end": 918
+      }
     },
     "arabliterature": {
       "name": "أدب عربي",
       "icon": "✒️",
       "media": false,
-      "status": "pending",
+      "status": "done",
       "counts": {
         "200": 8,
         "400": 8,
@@ -343,14 +427,18 @@
         "800": 8,
         "1000": 8
       },
-      "doneAt": null,
-      "order": 22
+      "doneAt": "2026-09-25",
+      "order": 22,
+      "qidRange": {
+        "start": 911,
+        "end": 918
+      }
     },
     "books": {
       "name": "كتب وروايات",
       "icon": "📕",
       "media": false,
-      "status": "pending",
+      "status": "done",
       "counts": {
         "200": 8,
         "400": 8,
@@ -358,14 +446,18 @@
         "800": 8,
         "1000": 8
       },
-      "doneAt": null,
-      "order": 23
+      "doneAt": "2026-09-25",
+      "order": 23,
+      "qidRange": {
+        "start": 911,
+        "end": 918
+      }
     },
     "quotes": {
       "name": "من القائل",
       "icon": "💬",
       "media": false,
-      "status": "pending",
+      "status": "done",
       "counts": {
         "200": 8,
         "400": 8,
@@ -373,14 +465,18 @@
         "800": 8,
         "1000": 8
       },
-      "doneAt": null,
-      "order": 24
+      "doneAt": "2026-09-25",
+      "order": 24,
+      "qidRange": {
+        "start": 911,
+        "end": 918
+      }
     },
     "arabcelebs": {
       "name": "مشاهير عرب",
       "icon": "🌟",
       "media": false,
-      "status": "pending",
+      "status": "done",
       "counts": {
         "200": 8,
         "400": 8,
@@ -388,14 +484,18 @@
         "800": 8,
         "1000": 8
       },
-      "doneAt": null,
-      "order": 25
+      "doneAt": "2026-09-25",
+      "order": 25,
+      "qidRange": {
+        "start": 911,
+        "end": 918
+      }
     },
     "youtubers": {
       "name": "يوتيوبرز وصنّاع محتوى",
       "icon": "📱",
       "media": false,
-      "status": "pending",
+      "status": "done",
       "counts": {
         "200": 8,
         "400": 8,
@@ -403,8 +503,12 @@
         "800": 8,
         "1000": 8
       },
-      "doneAt": null,
-      "order": 26
+      "doneAt": "2026-09-25",
+      "order": 26,
+      "qidRange": {
+        "start": 911,
+        "end": 918
+      }
     },
     "arabmusic": {
       "name": "أغاني عربية",
@@ -418,8 +522,12 @@
         "800": 8,
         "1000": 8
       },
-      "doneAt": "2026-09-25T03:51:52.896188+00:00",
-      "order": 27
+      "doneAt": "2026-09-25",
+      "order": 27,
+      "qidRange": {
+        "start": 911,
+        "end": 918
+      }
     },
     "tarab": {
       "name": "طرب وأغاني زمان",
@@ -433,14 +541,18 @@
         "800": 8,
         "1000": 8
       },
-      "doneAt": "2026-09-25T03:51:52.897188+00:00",
-      "order": 28
+      "doneAt": "2026-09-25",
+      "order": 28,
+      "qidRange": {
+        "start": 911,
+        "end": 918
+      }
     },
     "arabart": {
       "name": "فن عربي",
       "icon": "🖌️",
       "media": false,
-      "status": "pending",
+      "status": "done",
       "counts": {
         "200": 8,
         "400": 8,
@@ -448,14 +560,18 @@
         "800": 8,
         "1000": 8
       },
-      "doneAt": null,
-      "order": 29
+      "doneAt": "2026-09-25",
+      "order": 29,
+      "qidRange": {
+        "start": 911,
+        "end": 918
+      }
     },
     "theater": {
       "name": "مسرح",
       "icon": "🎭",
       "media": false,
-      "status": "pending",
+      "status": "done",
       "counts": {
         "200": 8,
         "400": 8,
@@ -463,14 +579,18 @@
         "800": 8,
         "1000": 8
       },
-      "doneAt": null,
-      "order": 30
+      "doneAt": "2026-09-25",
+      "order": 30,
+      "qidRange": {
+        "start": 911,
+        "end": 918
+      }
     },
     "ramadan": {
       "name": "رمضان",
       "icon": "🌙",
       "media": false,
-      "status": "pending",
+      "status": "done",
       "counts": {
         "200": 8,
         "400": 8,
@@ -478,15 +598,19 @@
         "800": 8,
         "1000": 8
       },
-      "doneAt": null,
+      "doneAt": "2026-09-25",
       "order": 31,
-      "note": "معلومات عامة فقط: أسماء وأماكن وأحداث وأعداد؛ لا فتاوى ولا مسائل خلافية."
+      "note": "معلومات عامة فقط: أسماء وأماكن وأحداث وأعداد؛ لا فتاوى ولا مسائل خلافية.",
+      "qidRange": {
+        "start": 911,
+        "end": 918
+      }
     },
     "islamiyat": {
       "name": "إسلاميات",
       "icon": "☪️",
       "media": false,
-      "status": "pending",
+      "status": "done",
       "counts": {
         "200": 8,
         "400": 8,
@@ -494,15 +618,19 @@
         "800": 8,
         "1000": 8
       },
-      "doneAt": null,
+      "doneAt": "2026-09-25",
       "order": 32,
-      "note": "معلومات عامة فقط: أسماء وأماكن وأحداث وأعداد؛ لا فتاوى ولا مسائل خلافية."
+      "note": "معلومات عامة فقط: أسماء وأماكن وأحداث وأعداد؛ لا فتاوى ولا مسائل خلافية.",
+      "qidRange": {
+        "start": 911,
+        "end": 918
+      }
     },
     "quran": {
       "name": "القرآن الكريم",
       "icon": "📖",
       "media": false,
-      "status": "pending",
+      "status": "done",
       "counts": {
         "200": 8,
         "400": 8,
@@ -510,15 +638,19 @@
         "800": 8,
         "1000": 8
       },
-      "doneAt": null,
+      "doneAt": "2026-09-25",
       "order": 33,
-      "note": "معلومات عامة فقط: أسماء وأماكن وأحداث وأعداد؛ لا فتاوى ولا مسائل خلافية."
+      "note": "معلومات عامة فقط: أسماء وأماكن وأحداث وأعداد؛ لا فتاوى ولا مسائل خلافية.",
+      "qidRange": {
+        "start": 911,
+        "end": 918
+      }
     },
     "seerah": {
       "name": "السيرة النبوية",
       "icon": "🕋",
       "media": false,
-      "status": "pending",
+      "status": "done",
       "counts": {
         "200": 8,
         "400": 8,
@@ -526,15 +658,19 @@
         "800": 8,
         "1000": 8
       },
-      "doneAt": null,
+      "doneAt": "2026-09-25",
       "order": 34,
-      "note": "معلومات عامة فقط: أسماء وأماكن وأحداث وأعداد؛ لا فتاوى ولا مسائل خلافية."
+      "note": "معلومات عامة فقط: أسماء وأماكن وأحداث وأعداد؛ لا فتاوى ولا مسائل خلافية.",
+      "qidRange": {
+        "start": 911,
+        "end": 918
+      }
     },
     "prophets": {
       "name": "قصص الأنبياء",
       "icon": "🕊️",
       "media": false,
-      "status": "pending",
+      "status": "done",
       "counts": {
         "200": 8,
         "400": 8,
@@ -542,15 +678,19 @@
         "800": 8,
         "1000": 8
       },
-      "doneAt": null,
+      "doneAt": "2026-09-25",
       "order": 35,
-      "note": "معلومات عامة فقط: أسماء وأماكن وأحداث وأعداد؛ لا فتاوى ولا مسائل خلافية."
+      "note": "معلومات عامة فقط: أسماء وأماكن وأحداث وأعداد؛ لا فتاوى ولا مسائل خلافية.",
+      "qidRange": {
+        "start": 911,
+        "end": 918
+      }
     },
     "arabseries": {
       "name": "مسلسلات عربية",
       "icon": "📺",
       "media": false,
-      "status": "pending",
+      "status": "done",
       "counts": {
         "200": 8,
         "400": 8,
@@ -558,15 +698,19 @@
         "800": 8,
         "1000": 8
       },
-      "doneAt": null,
+      "doneAt": "2026-09-25",
       "order": 36,
-      "style": "story"
+      "style": "story",
+      "qidRange": {
+        "start": 911,
+        "end": 918
+      }
     },
     "ramadanseries": {
       "name": "مسلسلات رمضان",
       "icon": "🌛",
       "media": false,
-      "status": "pending",
+      "status": "done",
       "counts": {
         "200": 8,
         "400": 8,
@@ -574,15 +718,19 @@
         "800": 8,
         "1000": 8
       },
-      "doneAt": null,
+      "doneAt": "2026-09-25",
       "order": 37,
-      "style": "story"
+      "style": "story",
+      "qidRange": {
+        "start": 911,
+        "end": 918
+      }
     },
     "babalhara": {
       "name": "باب الحارة",
       "icon": "🚪",
       "media": false,
-      "status": "pending",
+      "status": "done",
       "counts": {
         "200": 8,
         "400": 8,
@@ -590,15 +738,19 @@
         "800": 8,
         "1000": 8
       },
-      "doneAt": null,
+      "doneAt": "2026-09-25",
       "order": 38,
-      "style": "story"
+      "style": "story",
+      "qidRange": {
+        "start": 911,
+        "end": 918
+      }
     },
     "syriandrama": {
       "name": "دراما سورية",
       "icon": "🇸🇾",
       "media": false,
-      "status": "pending",
+      "status": "done",
       "counts": {
         "200": 8,
         "400": 8,
@@ -606,15 +758,19 @@
         "800": 8,
         "1000": 8
       },
-      "doneAt": null,
+      "doneAt": "2026-09-25",
       "order": 39,
-      "style": "story"
+      "style": "story",
+      "qidRange": {
+        "start": 911,
+        "end": 918
+      }
     },
     "egyptdrama": {
       "name": "دراما مصرية",
       "icon": "🇪🇬",
       "media": false,
-      "status": "pending",
+      "status": "done",
       "counts": {
         "200": 8,
         "400": 8,
@@ -622,15 +778,19 @@
         "800": 8,
         "1000": 8
       },
-      "doneAt": null,
+      "doneAt": "2026-09-25",
       "order": 40,
-      "style": "story"
+      "style": "story",
+      "qidRange": {
+        "start": 911,
+        "end": 918
+      }
     },
     "turkishdrama": {
       "name": "مسلسلات تركية",
       "icon": "🇹🇷",
       "media": false,
-      "status": "pending",
+      "status": "done",
       "counts": {
         "200": 8,
         "400": 8,
@@ -638,15 +798,19 @@
         "800": 8,
         "1000": 8
       },
-      "doneAt": null,
+      "doneAt": "2026-09-25",
       "order": 41,
-      "style": "story"
+      "style": "story",
+      "qidRange": {
+        "start": 911,
+        "end": 918
+      }
     },
     "ertugrul": {
       "name": "قيامة أرطغرل",
       "icon": "🏹",
       "media": false,
-      "status": "pending",
+      "status": "done",
       "counts": {
         "200": 8,
         "400": 8,
@@ -654,15 +818,19 @@
         "800": 8,
         "1000": 8
       },
-      "doneAt": null,
+      "doneAt": "2026-09-25",
       "order": 42,
-      "style": "story"
+      "style": "story",
+      "qidRange": {
+        "start": 911,
+        "end": 918
+      }
     },
     "foreignseries": {
       "name": "مسلسلات أجنبية",
       "icon": "🎬",
       "media": false,
-      "status": "pending",
+      "status": "done",
       "counts": {
         "200": 8,
         "400": 8,
@@ -670,15 +838,19 @@
         "800": 8,
         "1000": 8
       },
-      "doneAt": null,
+      "doneAt": "2026-09-25",
       "order": 43,
-      "style": "story"
+      "style": "story",
+      "qidRange": {
+        "start": 911,
+        "end": 918
+      }
     },
     "breakingbad": {
       "name": "بريكنغ باد",
       "icon": "🧪",
       "media": false,
-      "status": "pending",
+      "status": "done",
       "counts": {
         "200": 8,
         "400": 8,
@@ -686,15 +858,19 @@
         "800": 8,
         "1000": 8
       },
-      "doneAt": null,
+      "doneAt": "2026-09-25",
       "order": 44,
-      "style": "story"
+      "style": "story",
+      "qidRange": {
+        "start": 911,
+        "end": 918
+      }
     },
     "squidgame": {
       "name": "لعبة الحبار",
       "icon": "🦑",
       "media": false,
-      "status": "pending",
+      "status": "done",
       "counts": {
         "200": 8,
         "400": 8,
@@ -702,15 +878,19 @@
         "800": 8,
         "1000": 8
       },
-      "doneAt": null,
+      "doneAt": "2026-09-25",
       "order": 45,
-      "style": "story"
+      "style": "story",
+      "qidRange": {
+        "start": 911,
+        "end": 918
+      }
     },
     "movies": {
       "name": "أفلام عالمية",
       "icon": "🎥",
       "media": false,
-      "status": "pending",
+      "status": "done",
       "counts": {
         "200": 8,
         "400": 8,
@@ -718,15 +898,19 @@
         "800": 8,
         "1000": 8
       },
-      "doneAt": null,
+      "doneAt": "2026-09-25",
       "order": 46,
-      "style": "story"
+      "style": "story",
+      "qidRange": {
+        "start": 911,
+        "end": 918
+      }
     },
     "arabmovies": {
       "name": "أفلام عربية",
       "icon": "🎟️",
       "media": false,
-      "status": "pending",
+      "status": "done",
       "counts": {
         "200": 8,
         "400": 8,
@@ -734,15 +918,19 @@
         "800": 8,
         "1000": 8
       },
-      "doneAt": null,
+      "doneAt": "2026-09-25",
       "order": 47,
-      "style": "story"
+      "style": "story",
+      "qidRange": {
+        "start": 911,
+        "end": 918
+      }
     },
     "actors": {
       "name": "ممثلون ونجوم",
       "icon": "🌠",
       "media": false,
-      "status": "pending",
+      "status": "done",
       "counts": {
         "200": 8,
         "400": 8,
@@ -750,14 +938,18 @@
         "800": 8,
         "1000": 8
       },
-      "doneAt": null,
-      "order": 48
+      "doneAt": "2026-09-25",
+      "order": 48,
+      "qidRange": {
+        "start": 911,
+        "end": 918
+      }
     },
     "anime": {
       "name": "أنمي",
       "icon": "🍥",
       "media": false,
-      "status": "pending",
+      "status": "done",
       "counts": {
         "200": 8,
         "400": 8,
@@ -765,15 +957,19 @@
         "800": 8,
         "1000": 8
       },
-      "doneAt": null,
+      "doneAt": "2026-09-25",
       "order": 49,
-      "style": "story"
+      "style": "story",
+      "qidRange": {
+        "start": 911,
+        "end": 918
+      }
     },
     "naruto": {
       "name": "ناروتو",
       "icon": "🌀",
       "media": false,
-      "status": "pending",
+      "status": "done",
       "counts": {
         "200": 8,
         "400": 8,
@@ -781,15 +977,19 @@
         "800": 8,
         "1000": 8
       },
-      "doneAt": null,
+      "doneAt": "2026-09-25",
       "order": 50,
-      "style": "story"
+      "style": "story",
+      "qidRange": {
+        "start": 911,
+        "end": 918
+      }
     },
     "onepiece": {
       "name": "ون بيس",
       "icon": "🏴‍☠️",
       "media": false,
-      "status": "pending",
+      "status": "done",
       "counts": {
         "200": 8,
         "400": 8,
@@ -797,15 +997,19 @@
         "800": 8,
         "1000": 8
       },
-      "doneAt": null,
+      "doneAt": "2026-09-25",
       "order": 51,
-      "style": "story"
+      "style": "story",
+      "qidRange": {
+        "start": 911,
+        "end": 918
+      }
     },
     "dragonball": {
       "name": "دراغون بول",
       "icon": "🐲",
       "media": false,
-      "status": "pending",
+      "status": "done",
       "counts": {
         "200": 8,
         "400": 8,
@@ -813,15 +1017,19 @@
         "800": 8,
         "1000": 8
       },
-      "doneAt": null,
+      "doneAt": "2026-09-25",
       "order": 52,
-      "style": "story"
+      "style": "story",
+      "qidRange": {
+        "start": 911,
+        "end": 918
+      }
     },
     "aot": {
       "name": "هجوم العمالقة",
       "icon": "🏯",
       "media": false,
-      "status": "pending",
+      "status": "done",
       "counts": {
         "200": 8,
         "400": 8,
@@ -829,15 +1037,19 @@
         "800": 8,
         "1000": 8
       },
-      "doneAt": null,
+      "doneAt": "2026-09-25",
       "order": 53,
-      "style": "story"
+      "style": "story",
+      "qidRange": {
+        "start": 911,
+        "end": 918
+      }
     },
     "deathnote": {
       "name": "ديث نوت",
       "icon": "📓",
       "media": false,
-      "status": "pending",
+      "status": "done",
       "counts": {
         "200": 8,
         "400": 8,
@@ -845,15 +1057,19 @@
         "800": 8,
         "1000": 8
       },
-      "doneAt": null,
+      "doneAt": "2026-09-25",
       "order": 54,
-      "style": "story"
+      "style": "story",
+      "qidRange": {
+        "start": 911,
+        "end": 918
+      }
     },
     "demonslayer": {
       "name": "قاتل الشياطين",
       "icon": "👺",
       "media": false,
-      "status": "pending",
+      "status": "done",
       "counts": {
         "200": 8,
         "400": 8,
@@ -861,15 +1077,19 @@
         "800": 8,
         "1000": 8
       },
-      "doneAt": null,
+      "doneAt": "2026-09-25",
       "order": 55,
-      "style": "story"
+      "style": "story",
+      "qidRange": {
+        "start": 911,
+        "end": 918
+      }
     },
     "jujutsu": {
       "name": "جوجوتسو كايسن",
       "icon": "👁️",
       "media": false,
-      "status": "pending",
+      "status": "done",
       "counts": {
         "200": 8,
         "400": 8,
@@ -877,15 +1097,19 @@
         "800": 8,
         "1000": 8
       },
-      "doneAt": null,
+      "doneAt": "2026-09-25",
       "order": 56,
-      "style": "story"
+      "style": "story",
+      "qidRange": {
+        "start": 911,
+        "end": 918
+      }
     },
     "hunterxhunter": {
       "name": "هنتر × هنتر",
       "icon": "🎴",
       "media": false,
-      "status": "pending",
+      "status": "done",
       "counts": {
         "200": 8,
         "400": 8,
@@ -893,15 +1117,19 @@
         "800": 8,
         "1000": 8
       },
-      "doneAt": null,
+      "doneAt": "2026-09-25",
       "order": 57,
-      "style": "story"
+      "style": "story",
+      "qidRange": {
+        "start": 911,
+        "end": 918
+      }
     },
     "spacetoon": {
       "name": "سبيستون",
       "icon": "📡",
       "media": false,
-      "status": "pending",
+      "status": "done",
       "counts": {
         "200": 8,
         "400": 8,
@@ -909,15 +1137,19 @@
         "800": 8,
         "1000": 8
       },
-      "doneAt": null,
+      "doneAt": "2026-09-25",
       "order": 58,
-      "style": "story"
+      "style": "story",
+      "qidRange": {
+        "start": 911,
+        "end": 918
+      }
     },
     "cartoon": {
       "name": "كرتون",
       "icon": "🐰",
       "media": false,
-      "status": "pending",
+      "status": "done",
       "counts": {
         "200": 8,
         "400": 8,
@@ -925,15 +1157,19 @@
         "800": 8,
         "1000": 8
       },
-      "doneAt": null,
+      "doneAt": "2026-09-25",
       "order": 59,
-      "style": "story"
+      "style": "story",
+      "qidRange": {
+        "start": 911,
+        "end": 918
+      }
     },
     "videogames": {
       "name": "ألعاب فيديو",
       "icon": "🎮",
       "media": false,
-      "status": "pending",
+      "status": "done",
       "counts": {
         "200": 8,
         "400": 8,
@@ -941,14 +1177,18 @@
         "800": 8,
         "1000": 8
       },
-      "doneAt": null,
-      "order": 60
+      "doneAt": "2026-09-25",
+      "order": 60,
+      "qidRange": {
+        "start": 911,
+        "end": 918
+      }
     },
     "puzzles": {
       "name": "ألغاز وذكاء",
       "icon": "🧩",
       "media": false,
-      "status": "pending",
+      "status": "done",
       "counts": {
         "200": 8,
         "400": 8,
@@ -956,8 +1196,12 @@
         "800": 8,
         "1000": 8
       },
-      "doneAt": null,
-      "order": 61
+      "doneAt": "2026-09-25",
+      "order": 61,
+      "qidRange": {
+        "start": 911,
+        "end": 918
+      }
     },
     "emoji": {
       "name": "إيموجي",
@@ -995,7 +1239,7 @@
       "name": "أكمل المثل",
       "icon": "🧵",
       "media": false,
-      "status": "pending",
+      "status": "done",
       "counts": {
         "200": 8,
         "400": 8,
@@ -1003,15 +1247,19 @@
         "800": 8,
         "1000": 8
       },
-      "doneAt": null,
+      "doneAt": "2026-09-25",
       "order": 64,
-      "defaultType": "complete"
+      "defaultType": "complete",
+      "qidRange": {
+        "start": 911,
+        "end": 918
+      }
     },
     "beforeafter": {
       "name": "قبل ولا بعد",
       "icon": "⏳",
       "media": false,
-      "status": "pending",
+      "status": "done",
       "counts": {
         "200": 8,
         "400": 8,
@@ -1019,15 +1267,19 @@
         "800": 8,
         "1000": 8
       },
-      "doneAt": null,
+      "doneAt": "2026-09-25",
       "order": 65,
-      "defaultType": "choice"
+      "defaultType": "choice",
+      "qidRange": {
+        "start": 911,
+        "end": 918
+      }
     },
     "commonbond": {
       "name": "القاسم المشترك",
       "icon": "🔗",
       "media": false,
-      "status": "pending",
+      "status": "done",
       "counts": {
         "200": 8,
         "400": 8,
@@ -1035,15 +1287,19 @@
         "800": 8,
         "1000": 8
       },
-      "doneAt": null,
+      "doneAt": "2026-09-25",
       "order": 66,
-      "defaultType": "common"
+      "defaultType": "common",
+      "qidRange": {
+        "start": 911,
+        "end": 918
+      }
     },
     "code": {
       "name": "الشفرة",
       "icon": "🔣",
       "media": false,
-      "status": "pending",
+      "status": "done",
       "counts": {
         "200": 8,
         "400": 8,
@@ -1051,15 +1307,19 @@
         "800": 8,
         "1000": 8
       },
-      "doneAt": null,
+      "doneAt": "2026-09-25",
       "order": 67,
-      "defaultType": "code"
+      "defaultType": "code",
+      "qidRange": {
+        "start": 911,
+        "end": 918
+      }
     },
     "hints": {
       "name": "تلميحات",
       "icon": "💡",
       "media": false,
-      "status": "pending",
+      "status": "done",
       "counts": {
         "200": 8,
         "400": 8,
@@ -1067,9 +1327,13 @@
         "800": 8,
         "1000": 8
       },
-      "doneAt": null,
+      "doneAt": "2026-09-25",
       "order": 68,
-      "defaultType": "hints"
+      "defaultType": "hints",
+      "qidRange": {
+        "start": 911,
+        "end": 918
+      }
     },
     "flags": {
       "name": "أعلام",
@@ -1243,7 +1507,7 @@
     }
   },
   "updatedAt": "2026-09-25",
-  "contentVersion": "badeeha-curated-2026-09-18",
+  "contentVersion": "badeeha-text-challenge-2026-09-25",
   "tierCount": 8,
   "qidRange": {
     "start": 901,

@@ -5,117 +5,8 @@
   "style": "story",
   "qs": [
     {
-      "qid": "spacetoon-200-901",
+      "qid": "spacetoon-200-911",
       "p": 200,
-      "q": "أين عثر عدنان على لينا حين التقيا أول مرة؟",
-      "a": "على الشاطئ",
-      "alt": [
-        "الشاطئ",
-        "شاطئ الجزيرة"
-      ],
-      "topic": "عدنان ولينا",
-      "verified": true,
-      "sourceUrl": "https://en.wikipedia.org/wiki/Future_Boy_Conan#Story",
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "spacetoon-200-902",
-      "p": 200,
-      "q": "ما العمل الذي أُجبرت سالي عليه في المدرسة بعد وفاة والدها؟",
-      "a": "خادمة",
-      "alt": [
-        "العمل خادمة",
-        "خادمة بالمدرسة"
-      ],
-      "topic": "سالي",
-      "verified": true,
-      "sourceUrl": "https://ar.wikipedia.org/wiki/سالي_(أنمي)#القصة",
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "spacetoon-200-903",
-      "p": 200,
-      "q": "أين بنت عائلة فلونة منزلها لتحتمي من الحيوانات على الجزيرة؟",
-      "a": "فوق شجرة",
-      "alt": [
-        "بيت شجرة",
-        "على شجرة"
-      ],
-      "topic": "فلونة",
-      "verified": true,
-      "sourceUrl": "https://en.wikipedia.org/wiki/The_Swiss_Family_Robinson:_Flone_of_the_Mysterious_Island#Plot",
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "spacetoon-200-904",
-      "p": 200,
-      "q": "من أي مدينة عربية ينطلق الفتى في أنمي «مغامرات سندباد»؟",
-      "a": "بغداد",
-      "alt": [],
-      "topic": "سندباد",
-      "verified": true,
-      "sourceUrl": "https://ar.wikipedia.org/wiki/مغامرات_سندباد#الشخصيات",
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "spacetoon-200-905",
-      "p": 200,
-      "q": "بأي اسم يعيش دوق فليد على الأرض ويعمل في المزرعة؟",
-      "a": "دايسكي",
-      "alt": [
-        "دايسوكي",
-        "Daisuke"
-      ],
-      "topic": "غرندايزر",
-      "verified": true,
-      "sourceUrl": "https://en.wikipedia.org/wiki/Grendizer#Plot",
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "spacetoon-200-906",
-      "p": 200,
-      "q": "ما اسم الفتى بطل أنمي «جزيرة الكنز» الذي يبحر مع سيلفر؟",
-      "a": "جيم",
-      "alt": [
-        "جيم هوكنز",
-        "Jim Hawkins"
-      ],
-      "topic": "جزيرة الكنز",
-      "verified": true,
-      "sourceUrl": "https://en.wikipedia.org/wiki/Treasure_Island_(1978_TV_series)#Main_characters",
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "spacetoon-200-907",
-      "p": 200,
-      "q": "عن أي فرد من عائلتها تبحث ساندي بل وتلتقيه في نهاية رحلتها؟",
-      "a": "أمها",
-      "alt": [
-        "والدتها",
-        "الأم"
-      ],
-      "topic": "ساندي بل",
-      "verified": true,
-      "sourceUrl": "https://en.wikipedia.org/wiki/Hello!_Sandybell#Plot",
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "spacetoon-200-908",
-      "p": 200,
-      "q": "على ظهر أي طائر يطير نيلز في مغامراته؟",
-      "a": "إوزة",
-      "alt": [
-        "الإوزة",
-        "وزة"
-      ],
-      "topic": "نيلز",
-      "verified": true,
-      "sourceUrl": "https://en.wikipedia.org/wiki/The_Wonderful_Adventures_of_Nils_(TV_series)#Plot",
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "spacetoon-400-901",
-      "p": 400,
       "q": "من صديق عدنان الذي يتعرف إليه بعد مغادرة جزيرته؟",
       "a": "عبسي",
       "alt": [
@@ -125,11 +16,11 @@
       "topic": "عدنان ولينا",
       "verified": true,
       "sourceUrl": "https://ar.wikipedia.org/wiki/عدنان_ولينا#القصة",
-      "difficultyTarget": 0.6
+      "difficultyTarget": 0.8
     },
     {
-      "qid": "spacetoon-400-902",
-      "p": 400,
+      "qid": "spacetoon-200-912",
+      "p": 200,
       "q": "من مديرة المعهد القاسية التي تحوّل حياة سالي بعد فقدان ثروتها؟",
       "a": "الآنسة منشن",
       "alt": [
@@ -140,22 +31,21 @@
       "topic": "سالي",
       "verified": true,
       "sourceUrl": "https://ar.wikipedia.org/wiki/سالي_(أنمي)#الآنسة_منشن",
-      "difficultyTarget": 0.6
+      "difficultyTarget": 0.8
     },
     {
-      "qid": "spacetoon-400-903",
-      "p": 400,
+      "qid": "spacetoon-200-913",
+      "p": 200,
       "q": "إلى أي بلد كانت عائلة فلونة تبحر قبل تحطم السفينة؟",
       "a": "أستراليا",
-      "alt": [],
       "topic": "فلونة",
       "verified": true,
       "sourceUrl": "https://ar.wikipedia.org/wiki/فلونة#القصة",
-      "difficultyTarget": 0.6
+      "difficultyTarget": 0.8
     },
     {
-      "qid": "spacetoon-400-904",
-      "p": 400,
+      "qid": "spacetoon-200-914",
+      "p": 200,
       "q": "ما اسم الطائر المتكلم المرافق لسندباد في الدبلجة العربية؟",
       "a": "ياسمينة",
       "alt": [
@@ -166,10 +56,119 @@
       "topic": "سندباد",
       "verified": true,
       "sourceUrl": "https://ar.wikipedia.org/wiki/مغامرات_سندباد#الشخصيات",
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "spacetoon-200-915",
+      "p": 200,
+      "q": "من حليف غرندايزر الذي صنع المركبة الصغيرة «تيفو»؟",
+      "a": "كوجي كابوتو",
+      "alt": [
+        "كوجي",
+        "Koji Kabuto"
+      ],
+      "topic": "غرندايزر",
+      "verified": true,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Grendizer#Plot",
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "spacetoon-200-916",
+      "p": 200,
+      "q": "ما اسم القبطان الصارم المسؤول عن رحلة السفينة في أنمي «جزيرة الكنز»؟",
+      "a": "سموليت",
+      "alt": [
+        "الكابتن سموليت",
+        "Smollett"
+      ],
+      "topic": "جزيرة الكنز",
+      "verified": true,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Treasure_Island_(1978_TV_series)#Main_characters",
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "spacetoon-200-917",
+      "p": 200,
+      "q": "ما اسم الكلب الوفي الذي يرافق ساندي بل؟",
+      "a": "أوليفر",
+      "alt": [
+        "Oliver"
+      ],
+      "topic": "ساندي بل",
+      "verified": true,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Hello!_Sandybell#Plot",
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "spacetoon-200-918",
+      "p": 200,
+      "q": "ما القدرة الجديدة التي اكتسبها نيلز حين صغّره القزم؟",
+      "a": "فهم لغة الحيوانات",
+      "alt": [
+        "التحدث مع الحيوانات",
+        "التكلم مع الحيوانات"
+      ],
+      "topic": "نيلز",
+      "verified": true,
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Wonderful_Adventures_of_Nils_(TV_series)#Plot",
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "spacetoon-400-911",
+      "p": 400,
+      "q": "ما القدرة التي تتيح للينا التواصل ذهنيًا مع جدّها والطيور؟",
+      "a": "التخاطر",
+      "alt": [
+        "التواصل الذهني"
+      ],
+      "topic": "عدنان ولينا",
+      "verified": true,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Future_Boy_Conan#Characters",
       "difficultyTarget": 0.6
     },
     {
-      "qid": "spacetoon-400-905",
+      "qid": "spacetoon-400-912",
+      "p": 400,
+      "q": "من صديقة سالي التي تعمل في المعهد وتأخذها معها بعد استعادة ثروتها؟",
+      "a": "فيكي",
+      "alt": [
+        "بيكي",
+        "Becky"
+      ],
+      "topic": "سالي",
+      "verified": true,
+      "sourceUrl": "https://ar.wikipedia.org/wiki/سالي_(أنمي)#فيكي",
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "spacetoon-400-913",
+      "p": 400,
+      "q": "ما اسم أخي فلونة الأكبر الذي يحلم بأن يصبح موسيقيًا؟",
+      "a": "فرانس",
+      "alt": [
+        "فرانز",
+        "Franz"
+      ],
+      "topic": "فلونة",
+      "verified": true,
+      "sourceUrl": "https://ar.wikipedia.org/wiki/فلونة#شخصيات_المسلسل",
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "spacetoon-400-914",
+      "p": 400,
+      "q": "من اللص الذي يترك رفاقه وينضم إلى سندباد في مغامراته؟",
+      "a": "علي بابا",
+      "alt": [
+        "Ali Baba"
+      ],
+      "topic": "سندباد",
+      "verified": true,
+      "sourceUrl": "https://ar.wikipedia.org/wiki/مغامرات_سندباد#الشخصيات",
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "spacetoon-400-915",
       "p": 400,
       "q": "ما اسم الكوكب الذي فرّ منه دوق غرندايزر إلى الأرض؟",
       "a": "فليد",
@@ -182,7 +181,7 @@
       "difficultyTarget": 0.6
     },
     {
-      "qid": "spacetoon-400-906",
+      "qid": "spacetoon-400-916",
       "p": 400,
       "q": "ما وظيفة جون سيلفر على السفينة في أنمي «جزيرة الكنز»؟",
       "a": "طباخ",
@@ -196,117 +195,8 @@
       "difficultyTarget": 0.6
     },
     {
-      "qid": "spacetoon-400-907",
+      "qid": "spacetoon-400-917",
       "p": 400,
-      "q": "ما اسم الكلب الوفي الذي يرافق ساندي بل؟",
-      "a": "أوليفر",
-      "alt": [
-        "Oliver"
-      ],
-      "topic": "ساندي بل",
-      "verified": true,
-      "sourceUrl": "https://en.wikipedia.org/wiki/Hello!_Sandybell#Plot",
-      "difficultyTarget": 0.6
-    },
-    {
-      "qid": "spacetoon-400-908",
-      "p": 400,
-      "q": "ما القدرة الجديدة التي اكتسبها نيلز حين صغّره القزم؟",
-      "a": "فهم لغة الحيوانات",
-      "alt": [
-        "التحدث مع الحيوانات",
-        "التكلم مع الحيوانات"
-      ],
-      "topic": "نيلز",
-      "verified": true,
-      "sourceUrl": "https://en.wikipedia.org/wiki/The_Wonderful_Adventures_of_Nils_(TV_series)#Plot",
-      "difficultyTarget": 0.6
-    },
-    {
-      "qid": "spacetoon-600-901",
-      "p": 600,
-      "q": "ما القدرة التي تتيح للينا التواصل ذهنيًا مع جدّها والطيور؟",
-      "a": "التخاطر",
-      "alt": [
-        "التواصل الذهني"
-      ],
-      "topic": "عدنان ولينا",
-      "verified": true,
-      "sourceUrl": "https://en.wikipedia.org/wiki/Future_Boy_Conan#Characters",
-      "difficultyTarget": 0.4
-    },
-    {
-      "qid": "spacetoon-600-902",
-      "p": 600,
-      "q": "من صديقة سالي التي تعمل في المعهد وتأخذها معها بعد استعادة ثروتها؟",
-      "a": "فيكي",
-      "alt": [
-        "بيكي",
-        "Becky"
-      ],
-      "topic": "سالي",
-      "verified": true,
-      "sourceUrl": "https://ar.wikipedia.org/wiki/سالي_(أنمي)#فيكي",
-      "difficultyTarget": 0.4
-    },
-    {
-      "qid": "spacetoon-600-903",
-      "p": 600,
-      "q": "ما اسم أخي فلونة الأكبر الذي يحلم بأن يصبح موسيقيًا؟",
-      "a": "فرانس",
-      "alt": [
-        "فرانز",
-        "Franz"
-      ],
-      "topic": "فلونة",
-      "verified": true,
-      "sourceUrl": "https://ar.wikipedia.org/wiki/فلونة#شخصيات_المسلسل",
-      "difficultyTarget": 0.4
-    },
-    {
-      "qid": "spacetoon-600-904",
-      "p": 600,
-      "q": "من اللص الذي يترك رفاقه وينضم إلى سندباد في مغامراته؟",
-      "a": "علي بابا",
-      "alt": [
-        "Ali Baba"
-      ],
-      "topic": "سندباد",
-      "verified": true,
-      "sourceUrl": "https://ar.wikipedia.org/wiki/مغامرات_سندباد#الشخصيات",
-      "difficultyTarget": 0.4
-    },
-    {
-      "qid": "spacetoon-600-905",
-      "p": 600,
-      "q": "من حليف غرندايزر الذي صنع المركبة الصغيرة «تيفو»؟",
-      "a": "كوجي كابوتو",
-      "alt": [
-        "كوجي",
-        "Koji Kabuto"
-      ],
-      "topic": "غرندايزر",
-      "verified": true,
-      "sourceUrl": "https://en.wikipedia.org/wiki/Grendizer#Plot",
-      "difficultyTarget": 0.4
-    },
-    {
-      "qid": "spacetoon-600-906",
-      "p": 600,
-      "q": "ما اسم القبطان الصارم المسؤول عن رحلة السفينة في أنمي «جزيرة الكنز»؟",
-      "a": "سموليت",
-      "alt": [
-        "الكابتن سموليت",
-        "Smollett"
-      ],
-      "topic": "جزيرة الكنز",
-      "verified": true,
-      "sourceUrl": "https://en.wikipedia.org/wiki/Treasure_Island_(1978_TV_series)#Main_characters",
-      "difficultyTarget": 0.4
-    },
-    {
-      "qid": "spacetoon-600-907",
-      "p": 600,
       "q": "في أي بلد تبدأ حياة ساندي بل قبل انتقالها إلى لندن؟",
       "a": "اسكتلندا",
       "alt": [
@@ -316,11 +206,11 @@
       "topic": "ساندي بل",
       "verified": true,
       "sourceUrl": "https://en.wikipedia.org/wiki/Hello!_Sandybell#Plot",
-      "difficultyTarget": 0.4
+      "difficultyTarget": 0.6
     },
     {
-      "qid": "spacetoon-600-908",
-      "p": 600,
+      "qid": "spacetoon-400-918",
+      "p": 400,
       "q": "ما اسم إوزة المزرعة البيضاء التي تحمل نيلز في الرحلة؟",
       "a": "مورتن",
       "alt": [
@@ -330,11 +220,11 @@
       "topic": "نيلز",
       "verified": true,
       "sourceUrl": "https://ar.wikipedia.org/wiki/مغامرات_نيلز#الشخصيات",
-      "difficultyTarget": 0.4
+      "difficultyTarget": 0.6
     },
     {
-      "qid": "spacetoon-800-901",
-      "p": 800,
+      "qid": "spacetoon-600-911",
+      "p": 600,
       "q": "أي مصدر للطاقة يسعى علام إلى انتزاع سرّه من جد لينا؟",
       "a": "الطاقة الشمسية",
       "alt": [
@@ -343,11 +233,11 @@
       "topic": "عدنان ولينا",
       "verified": true,
       "sourceUrl": "https://ar.wikipedia.org/wiki/عدنان_ولينا#القصة",
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.4
     },
     {
-      "qid": "spacetoon-800-902",
-      "p": 800,
+      "qid": "spacetoon-600-912",
+      "p": 600,
       "q": "من صديق والد سالي الذي يبحث عنها ويعيد إليها نصيبها من الثروة؟",
       "a": "كريس فورد",
       "alt": [
@@ -358,11 +248,11 @@
       "topic": "سالي",
       "verified": true,
       "sourceUrl": "https://ar.wikipedia.org/wiki/سالي_(أنمي)#توماس_كريسفورس",
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.4
     },
     {
-      "qid": "spacetoon-800-903",
-      "p": 800,
+      "qid": "spacetoon-600-913",
+      "p": 600,
       "q": "ما اسم البحار العجوز الذي يساعد عائلة فلونة على صنع قارب النجاة؟",
       "a": "مورتون",
       "alt": [
@@ -372,11 +262,11 @@
       "topic": "فلونة",
       "verified": true,
       "sourceUrl": "https://ar.wikipedia.org/wiki/فلونة#شخصيات_المسلسل",
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.4
     },
     {
-      "qid": "spacetoon-800-904",
-      "p": 800,
+      "qid": "spacetoon-600-914",
+      "p": 600,
       "q": "ما مكانة رفيقة سندباد الطائرة قبل أن يحوّلها السحرة إلى طائر؟",
       "a": "أميرة",
       "alt": [
@@ -385,12 +275,12 @@
       "topic": "سندباد",
       "verified": true,
       "sourceUrl": "https://ar.wikipedia.org/wiki/مغامرات_سندباد#الشخصيات",
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.4
     },
     {
-      "qid": "spacetoon-800-905",
-      "p": 800,
-      "q": "من شقيقة دوق فليد التي تنضم إلى فريق غرندايزر؟",
+      "qid": "spacetoon-600-915",
+      "p": 600,
+      "q": "من شقيقة قائد غرندايزر التي تنضم إلى فريقه؟",
       "a": "ماريا",
       "alt": [
         "ماريا فليد",
@@ -399,11 +289,11 @@
       "topic": "غرندايزر",
       "verified": true,
       "sourceUrl": "https://ar.wikipedia.org/wiki/جريندايزر#الشخصيات_الرئيسية",
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.4
     },
     {
-      "qid": "spacetoon-800-906",
-      "p": 800,
+      "qid": "spacetoon-600-916",
+      "p": 600,
       "q": "من البحار المتروك على الجزيرة الذي يرشد جيم إلى قاربه المصنوع يدويًا؟",
       "a": "بن غان",
       "alt": [
@@ -413,11 +303,11 @@
       "topic": "جزيرة الكنز",
       "verified": true,
       "sourceUrl": "https://en.wikipedia.org/wiki/Treasure_Island_(1978_TV_series)#Main_characters",
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.4
     },
     {
-      "qid": "spacetoon-800-907",
-      "p": 800,
+      "qid": "spacetoon-600-917",
+      "p": 600,
       "q": "ما اسم الفتاة المتعجرفة التي تنافس ساندي بل على حب مارك؟",
       "a": "كيتي",
       "alt": [
@@ -426,11 +316,11 @@
       "topic": "ساندي بل",
       "verified": true,
       "sourceUrl": "https://en.wikipedia.org/wiki/Hello!_Sandybell#Plot",
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.4
     },
     {
-      "qid": "spacetoon-800-908",
-      "p": 800,
+      "qid": "spacetoon-600-918",
+      "p": 600,
       "q": "ما اسم قائد سرب الإوز الحكيم في دبلجة «مغامرات نيلز» العربية؟",
       "a": "أكسا",
       "alt": [
@@ -441,11 +331,11 @@
       "topic": "نيلز",
       "verified": true,
       "sourceUrl": "https://ar.wikipedia.org/wiki/مغامرات_نيلز#الشخصيات",
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.4
     },
     {
-      "qid": "spacetoon-1000-901",
-      "p": 1000,
+      "qid": "spacetoon-800-911",
+      "p": 800,
       "q": "ما اسم طائرة علام العملاقة التي يدمّرها عدنان في النهاية، بالدبلجة العربية؟",
       "a": "جمانة",
       "alt": [
@@ -455,11 +345,11 @@
       "topic": "عدنان ولينا",
       "verified": true,
       "sourceUrl": "https://ar.wikipedia.org/wiki/عدنان_ولينا#القصة",
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.25
     },
     {
-      "qid": "spacetoon-1000-902",
-      "p": 1000,
+      "qid": "spacetoon-800-912",
+      "p": 800,
       "q": "ما اسم شقيقة مديرة معهد سالي التي كانت ألطف منها وتحاول الدفاع عن الفتاة؟",
       "a": "إيميليا",
       "alt": [
@@ -469,11 +359,11 @@
       "topic": "سالي",
       "verified": true,
       "sourceUrl": "https://ar.wikipedia.org/wiki/سالي_(أنمي)#الآنسة_إيميليا",
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.25
     },
     {
-      "qid": "spacetoon-1000-903",
-      "p": 1000,
+      "qid": "spacetoon-800-913",
+      "p": 800,
       "q": "ما اسم الحيوان الصغير الذي يصبح رفيق جاك في «فلونة»؟",
       "a": "ميركوري",
       "alt": [
@@ -483,12 +373,12 @@
       "topic": "فلونة",
       "verified": true,
       "sourceUrl": "https://ar.wikipedia.org/wiki/فلونة#شخصيات_المسلسل",
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.25
     },
     {
-      "qid": "spacetoon-1000-904",
-      "p": 1000,
-      "q": "إلى أي طائرين حوّل السحرة والدي الأميرة المرافقة لسندباد؟",
+      "qid": "spacetoon-800-914",
+      "p": 800,
+      "q": "إلى أي طائرين حوّل السحرة والدي رفيقة سندباد الطائرة؟",
       "a": "نسرين أبيضين",
       "alt": [
         "نسران أبيضان",
@@ -497,11 +387,11 @@
       "topic": "سندباد",
       "verified": true,
       "sourceUrl": "https://ar.wikipedia.org/wiki/مغامرات_سندباد#الشخصيات",
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.25
     },
     {
-      "qid": "spacetoon-1000-905",
-      "p": 1000,
+      "qid": "spacetoon-800-915",
+      "p": 800,
       "q": "من صاحب المزرعة ووالد هيكارو الذي يصيح «يوفو» عند رؤية الأطباق الطائرة؟",
       "a": "دامبي",
       "alt": [
@@ -511,11 +401,11 @@
       "topic": "غرندايزر",
       "verified": true,
       "sourceUrl": "https://ar.wikipedia.org/wiki/جريندايزر#الشخصيات_الرئيسية",
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.25
     },
     {
-      "qid": "spacetoon-1000-906",
-      "p": 1000,
+      "qid": "spacetoon-800-916",
+      "p": 800,
       "q": "ما اسم شبل النمر الأليف الذي يرافق جيم في أنمي «جزيرة الكنز»؟",
       "a": "بنبو",
       "alt": [
@@ -525,11 +415,11 @@
       "topic": "جزيرة الكنز",
       "verified": true,
       "sourceUrl": "https://en.wikipedia.org/wiki/Treasure_Island_(1978_TV_series)#Main_characters",
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.25
     },
     {
-      "qid": "spacetoon-1000-907",
-      "p": 1000,
+      "qid": "spacetoon-800-917",
+      "p": 800,
       "q": "ما الزهرة البيضاء التي تزرعها ساندي بل وتربطها بذكرى أمها؟",
       "a": "النرجس الأبيض",
       "alt": [
@@ -539,11 +429,11 @@
       "topic": "ساندي بل",
       "verified": true,
       "sourceUrl": "https://ar.wikipedia.org/wiki/ساندي_بل#القصة",
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.25
     },
     {
-      "qid": "spacetoon-1000-908",
-      "p": 1000,
+      "qid": "spacetoon-800-918",
+      "p": 800,
       "q": "ما اسم الثعلب الذي يلاحق سرب الإوز في دبلجة «مغامرات نيلز» العربية؟",
       "a": "ريكس",
       "alt": [
@@ -553,6 +443,97 @@
       "topic": "نيلز",
       "verified": true,
       "sourceUrl": "https://ar.wikipedia.org/wiki/مغامرات_نيلز#الشخصيات",
+      "difficultyTarget": 0.25
+    },
+    {
+      "topic": "عدنان ولينا",
+      "q": "بأي اسم يتخفّى جد لينا قائدًا لفريق إنقاذ في «عدنان ولينا»؟",
+      "a": "بدر",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Future_Boy_Conan#Story",
+      "alt": [
+        "باتش",
+        "Patch"
+      ],
+      "verified": true,
+      "p": 1000,
+      "qid": "spacetoon-1000-911",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "سالي",
+      "q": "ما اسم الصبي الذي يساعد سالي في حمل المشتريات بعد مرض أبيه سائق العربة؟",
+      "a": "بيتر",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/سالي_(أنمي)#القصة",
+      "verified": true,
+      "p": 1000,
+      "qid": "spacetoon-1000-912",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "فلونة",
+      "q": "في «فلونة»، ما اسم مربية عائلة روبنسون قبل رحيلها من سويسرا؟",
+      "a": "مارش",
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Swiss_Family_Robinson:_Flone_of_the_Mysterious_Island#Plot",
+      "verified": true,
+      "p": 1000,
+      "qid": "spacetoon-1000-913",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "سندباد",
+      "q": "ما اسم الساحرة التي تأخذ الطائر المتكلم والبساط إلى الجبل الأسود في «مغامرات سندباد»؟",
+      "a": "ميساء",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/مغامرات_سندباد#الشخصيات",
+      "verified": true,
+      "p": 1000,
+      "qid": "spacetoon-1000-914",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "غرندايزر",
+      "q": "ما اسم قاعدة قوات فيغا الموجودة على القمر في «غرندايزر»؟",
+      "a": "جمجمة القمر",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Grendizer#Plot",
+      "verified": true,
+      "p": 1000,
+      "qid": "spacetoon-1000-915",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "جزيرة الكنز",
+      "q": "من النبيل الذي يمول الرحلة ويختار طاقم السفينة في «جزيرة الكنز»؟",
+      "a": "تريلاوني",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Treasure_Island_(1978_TV_series)#Main_characters",
+      "alt": [
+        "Trelawney"
+      ],
+      "verified": true,
+      "p": 1000,
+      "qid": "spacetoon-1000-916",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "ساندي بل",
+      "q": "ماذا تسمي سانديبل الحديقة التي تنشئها سرًا حول زهرتها البيضاء؟",
+      "a": "حديقة أمي",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Hello!_Sandybell#Plot",
+      "verified": true,
+      "p": 1000,
+      "qid": "spacetoon-1000-917",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "نيلز",
+      "q": "أين يختبئ الهامستر رات أثناء الرحلة في «مغامرات نيلز»؟",
+      "a": "في قبعة نيلز",
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Wonderful_Adventures_of_Nils_(TV_series)#Plot",
+      "alt": [
+        "قبعة نيلز",
+        "قبعته"
+      ],
+      "verified": true,
+      "p": 1000,
+      "qid": "spacetoon-1000-918",
       "difficultyTarget": 0.15
     }
   ]

@@ -6,124 +6,6 @@
   "qs": [
     {
       "p": 200,
-      "q": "من الفتى الذي أقسم على محاربة العمالقة بعد مقتل أمه؟",
-      "a": "إيرين ييغر",
-      "alt": [
-        "إرين",
-        "إيرين",
-        "Eren Yeager"
-      ],
-      "topic": "البدايات",
-      "verified": true,
-      "qid": "aot-200-901",
-      "difficultyTarget": 0.8,
-      "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_1#ep1"
-    },
-    {
-      "p": 200,
-      "q": "من الفتاة التي تحتفظ بالوشاح الذي أعطاها إيرين في طفولتها؟",
-      "a": "ميكاسا أكرمان",
-      "alt": [
-        "ميكاسا",
-        "Mikasa Ackerman"
-      ],
-      "topic": "العلاقات",
-      "verified": true,
-      "qid": "aot-200-902",
-      "difficultyTarget": 0.8,
-      "sourceUrl": "https://shingeki.tv/season1/character/"
-    },
-    {
-      "p": 200,
-      "q": "من المقاتل المعروف بأنه أقوى جنود البشرية في هجوم العمالقة؟",
-      "a": "ليفاي أكرمان",
-      "alt": [
-        "ليفاي",
-        "ليفي",
-        "Levi Ackerman"
-      ],
-      "topic": "المعارك",
-      "verified": true,
-      "qid": "aot-200-903",
-      "difficultyTarget": 0.8,
-      "sourceUrl": "https://shingeki.tv/season1/character/"
-    },
-    {
-      "p": 200,
-      "q": "ما السور الخارجي الذي سقط في بداية هجوم العمالقة؟",
-      "a": "سور ماريا",
-      "alt": [
-        "ماريا",
-        "Wall Maria"
-      ],
-      "topic": "الأسوار",
-      "verified": true,
-      "qid": "aot-200-904",
-      "difficultyTarget": 0.8,
-      "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_1#ep2"
-    },
-    {
-      "p": 200,
-      "q": "ما الفيلق الذي يحلم إيرين بالانضمام إليه لاستكشاف العالم خارج الأسوار؟",
-      "a": "فيلق الاستطلاع",
-      "alt": [
-        "الاستطلاع",
-        "فوج الكشافة",
-        "Survey Corps"
-      ],
-      "topic": "البدايات",
-      "verified": true,
-      "qid": "aot-200-905",
-      "difficultyTarget": 0.8,
-      "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_1#ep1"
-    },
-    {
-      "p": 200,
-      "q": "ما موضع جسد العملاق الذي يستهدفه الجنود للقضاء عليه؟",
-      "a": "مؤخرة الرقبة",
-      "alt": [
-        "القفا",
-        "قفا الرقبة",
-        "Nape"
-      ],
-      "topic": "الأدوات",
-      "verified": true,
-      "qid": "aot-200-906",
-      "difficultyTarget": 0.8,
-      "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_1#ep5"
-    },
-    {
-      "p": 200,
-      "q": "بم أغلق إيرين فتحة بوابة تروست بعدما تحوّل؟",
-      "a": "صخرة ضخمة",
-      "alt": [
-        "صخرة",
-        "حجر كبير",
-        "Boulder"
-      ],
-      "topic": "المعارك",
-      "verified": true,
-      "qid": "aot-200-907",
-      "difficultyTarget": 0.8,
-      "sourceUrl": "https://shingeki.tv/season1/character/"
-    },
-    {
-      "p": 200,
-      "q": "كم سورًا رئيسيًا يحيط بمناطق البشر في بداية القصة؟",
-      "a": "ثلاثة",
-      "alt": [
-        "3",
-        "ثلاثة أسوار",
-        "Three"
-      ],
-      "topic": "الأسوار",
-      "verified": true,
-      "qid": "aot-200-908",
-      "difficultyTarget": 0.8,
-      "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_1#ep1"
-    },
-    {
-      "p": 400,
       "q": "من الجندية التي اكتشف رفاقها أنها العملاقة الأنثى؟",
       "a": "آني ليونهارت",
       "alt": [
@@ -133,12 +15,12 @@
       ],
       "topic": "الهوية",
       "verified": true,
-      "qid": "aot-400-901",
-      "difficultyTarget": 0.6,
+      "qid": "aot-200-911",
+      "difficultyTarget": 0.8,
       "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_3#ep41"
     },
     {
-      "p": 400,
+      "p": 200,
       "q": "من رفيق إيرين الذي كشف أنه العملاق المدرع؟",
       "a": "راينر براون",
       "alt": [
@@ -148,27 +30,12 @@
       ],
       "topic": "الهوية",
       "verified": true,
-      "qid": "aot-400-902",
-      "difficultyTarget": 0.6,
+      "qid": "aot-200-912",
+      "difficultyTarget": 0.8,
       "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_2#ep31"
     },
     {
-      "p": 400,
-      "q": "من أنقذه ليفاي بالمصل في شيغانشينا بعد أن احترق جسده؟",
-      "a": "أرمين أرليرت",
-      "alt": [
-        "أرمين",
-        "آرمين",
-        "Armin Arlert"
-      ],
-      "topic": "المعارك",
-      "verified": true,
-      "qid": "aot-400-903",
-      "difficultyTarget": 0.6,
-      "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_3#ep55"
-    },
-    {
-      "p": 400,
+      "p": 200,
       "q": "من وريثة عائلة ريس التي أصبحت ملكة الأسوار؟",
       "a": "هيستوريا ريس",
       "alt": [
@@ -178,42 +45,12 @@
       ],
       "topic": "العلاقات",
       "verified": true,
-      "qid": "aot-400-904",
-      "difficultyTarget": 0.6,
+      "qid": "aot-200-913",
+      "difficultyTarget": 0.8,
       "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_3#ep47"
     },
     {
-      "p": 400,
-      "q": "أين أخفى غريشا كتبه التي تكشف حقيقة العالم خارج الأسوار؟",
-      "a": "قبو منزله",
-      "alt": [
-        "قبو منزل إيرين",
-        "القبو",
-        "Basement"
-      ],
-      "topic": "الأسرار",
-      "verified": true,
-      "qid": "aot-400-905",
-      "difficultyTarget": 0.6,
-      "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_3#ep56"
-    },
-    {
-      "p": 400,
-      "q": "من قائدة الأبحاث المهووسة بدراسة العمالقة وتجربة قدراتهم؟",
-      "a": "هانجي زوي",
-      "alt": [
-        "هانجي",
-        "هانج",
-        "Hange Zoe"
-      ],
-      "topic": "الأدوات",
-      "verified": true,
-      "qid": "aot-400-906",
-      "difficultyTarget": 0.6,
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Attack_on_Titan_characters#Survey_Corps"
-    },
-    {
-      "p": 400,
+      "p": 200,
       "q": "من القائد الذي قاد هجوم الخيالة الأخير لتشتيت العملاق الوحش؟",
       "a": "إروين سميث",
       "alt": [
@@ -223,26 +60,68 @@
       ],
       "topic": "المعارك",
       "verified": true,
-      "qid": "aot-400-907",
-      "difficultyTarget": 0.6,
+      "qid": "aot-200-914",
+      "difficultyTarget": 0.8,
       "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Attack_on_Titan_characters#Survey_Corps"
     },
     {
-      "p": 400,
-      "q": "ما المسطح المائي الذي شاهده الرفاق لأول مرة بعد استعادة مناطقهم في نهاية الموسم الثالث؟",
-      "a": "المحيط",
+      "p": 200,
+      "q": "ما السلاح المتفجر الذي طوره الجنود لاختراق درع خصمهم في شيغانشينا؟",
+      "a": "رماح الرعد",
       "alt": [
-        "البحر",
-        "Ocean"
+        "الرماح الرعدية",
+        "Thunder Spears"
+      ],
+      "topic": "الأدوات",
+      "verified": true,
+      "qid": "aot-200-915",
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Attack_on_Titan_characters#Survey_Corps"
+    },
+    {
+      "p": 200,
+      "q": "ما اسم قرية كوني التي وجد سكانها قد اختفوا وعملاقًا عالقًا فوق منزله؟",
+      "a": "راغاكو",
+      "alt": [
+        "راجاكو",
+        "Ragako"
       ],
       "topic": "الأسوار",
       "verified": true,
-      "qid": "aot-400-908",
-      "difficultyTarget": 0.6,
-      "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_3#ep59"
+      "qid": "aot-200-916",
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_2#ep27"
     },
     {
-      "p": 600,
+      "p": 200,
+      "q": "من كانت المرأة التي تحولت إلى العملاق المبتسم الذي أكل أم إيرين؟",
+      "a": "دينا فريتز",
+      "alt": [
+        "دينا",
+        "Dina Fritz"
+      ],
+      "topic": "العلاقات",
+      "verified": true,
+      "qid": "aot-200-917",
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Attack_on_Titan_characters#Eldian_Restorationists"
+    },
+    {
+      "p": 200,
+      "q": "ما اسم الاجتياح الذي تسير فيه عمالقة الأسوار لسحق العالم؟",
+      "a": "الدك",
+      "alt": [
+        "دك الأرض",
+        "Rumbling"
+      ],
+      "topic": "النهاية",
+      "verified": true,
+      "qid": "aot-200-918",
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_4#ep88"
+    },
+    {
+      "p": 400,
       "q": "من حامل العملاق الضخم الذي ورث أرمين قوته بعد معركة شيغانشينا؟",
       "a": "بيرتولت هوفر",
       "alt": [
@@ -252,12 +131,12 @@
       ],
       "topic": "الهوية",
       "verified": true,
-      "qid": "aot-600-901",
-      "difficultyTarget": 0.4,
+      "qid": "aot-400-911",
+      "difficultyTarget": 0.6,
       "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_3#ep55"
     },
     {
-      "p": 600,
+      "p": 400,
       "q": "ما اسم ابن غريشا ودينا الذي أبلغ السلطات عن والديه؟",
       "a": "زيك ييغر",
       "alt": [
@@ -267,9 +146,97 @@
       ],
       "topic": "العلاقات",
       "verified": true,
-      "qid": "aot-600-902",
-      "difficultyTarget": 0.4,
+      "qid": "aot-400-912",
+      "difficultyTarget": 0.6,
       "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Attack_on_Titan_characters#Eldian_Restorationists"
+    },
+    {
+      "p": 400,
+      "q": "من الرجل الذي ربّى ليفاي وكشف له عند موته أنه خاله؟",
+      "a": "كيني أكرمان",
+      "alt": [
+        "كيني",
+        "Kenny Ackerman"
+      ],
+      "topic": "العلاقات",
+      "verified": true,
+      "qid": "aot-400-913",
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Levi_Ackerman#In_Attack_on_Titan"
+    },
+    {
+      "p": 400,
+      "q": "من ضابط مارلي الذي كشف لغريشا أنه المخبر الملقب بالبومة؟",
+      "a": "إيرين كروغر",
+      "alt": [
+        "كروغر",
+        "إرين كروغر",
+        "Eren Kruger"
+      ],
+      "topic": "الهوية",
+      "verified": true,
+      "qid": "aot-400-914",
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Attack_on_Titan_characters#Eldian_Restorationists"
+    },
+    {
+      "p": 400,
+      "q": "كم سنة يعيش حامل إحدى قوى العمالقة بعد وراثتها وفق لعنة يمير؟",
+      "a": "ثلاث عشرة سنة",
+      "alt": [
+        "13",
+        "13 سنة",
+        "ثلاث عشرة",
+        "Thirteen years"
+      ],
+      "topic": "الأسرار",
+      "verified": true,
+      "qid": "aot-400-915",
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_3#ep58"
+    },
+    {
+      "p": 400,
+      "q": "من رجل الدين الذي عُذّب وقُتل لإخفاء أسرار الأسوار؟",
+      "a": "القس نيك",
+      "alt": [
+        "نيك",
+        "Pastor Nick"
+      ],
+      "topic": "البدايات",
+      "verified": true,
+      "qid": "aot-400-916",
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_3#ep38"
+    },
+    {
+      "p": 400,
+      "q": "داخل أي جزء من رأس عملاق إيرين وجدت ميكاسا جسده البشري في النهاية؟",
+      "a": "الفم",
+      "alt": [
+        "داخل الفم",
+        "Mouth"
+      ],
+      "topic": "المعارك",
+      "verified": true,
+      "qid": "aot-400-917",
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_4#ep93"
+    },
+    {
+      "p": 400,
+      "q": "ما القلعة التي تحولت عندها يمير لحماية رفاقها من هجوم العمالقة ليلًا؟",
+      "a": "أوتغارد",
+      "alt": [
+        "قلعة أوتغارد",
+        "أوتغارد",
+        "Utgard"
+      ],
+      "topic": "الأسوار",
+      "verified": true,
+      "qid": "aot-400-918",
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_2#ep29"
     },
     {
       "p": 600,
@@ -281,128 +248,12 @@
       ],
       "topic": "الهوية",
       "verified": true,
-      "qid": "aot-600-903",
+      "qid": "aot-600-911",
       "difficultyTarget": 0.4,
       "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_3#ep44"
     },
     {
       "p": 600,
-      "q": "ما السلاح المتفجر الذي طوره الجنود لاختراق درع خصمهم في شيغانشينا؟",
-      "a": "رماح الرعد",
-      "alt": [
-        "الرماح الرعدية",
-        "Thunder Spears"
-      ],
-      "topic": "الأدوات",
-      "verified": true,
-      "qid": "aot-600-904",
-      "difficultyTarget": 0.4,
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Attack_on_Titan_characters#Survey_Corps"
-    },
-    {
-      "p": 600,
-      "q": "ما اسم قرية كوني التي وجد سكانها قد اختفوا وعملاقًا عالقًا فوق منزله؟",
-      "a": "راغاكو",
-      "alt": [
-        "راجاكو",
-        "Ragako"
-      ],
-      "topic": "الأسوار",
-      "verified": true,
-      "qid": "aot-600-905",
-      "difficultyTarget": 0.4,
-      "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_2#ep27"
-    },
-    {
-      "p": 600,
-      "q": "ماذا يطلق العملاق الضخم من جسده ليمنع الجنود من الاقتراب؟",
-      "a": "البخار",
-      "alt": [
-        "بخار حار",
-        "بخار",
-        "Steam"
-      ],
-      "topic": "المعارك",
-      "verified": true,
-      "qid": "aot-600-906",
-      "difficultyTarget": 0.4,
-      "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_2#ep32"
-    },
-    {
-      "p": 600,
-      "q": "من كانت المرأة التي تحولت إلى العملاق المبتسم الذي أكل أم إيرين؟",
-      "a": "دينا فريتز",
-      "alt": [
-        "دينا",
-        "Dina Fritz"
-      ],
-      "topic": "العلاقات",
-      "verified": true,
-      "qid": "aot-600-907",
-      "difficultyTarget": 0.4,
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Attack_on_Titan_characters#Eldian_Restorationists"
-    },
-    {
-      "p": 600,
-      "q": "ما اسم الاجتياح الذي تسير فيه عمالقة الأسوار لسحق العالم؟",
-      "a": "الدك",
-      "alt": [
-        "دك الأرض",
-        "Rumbling"
-      ],
-      "topic": "النهاية",
-      "verified": true,
-      "qid": "aot-600-908",
-      "difficultyTarget": 0.4,
-      "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_4#ep88"
-    },
-    {
-      "p": 800,
-      "q": "من الرجل الذي ربّى ليفاي وكشف له عند موته أنه خاله؟",
-      "a": "كيني أكرمان",
-      "alt": [
-        "كيني",
-        "Kenny Ackerman"
-      ],
-      "topic": "العلاقات",
-      "verified": true,
-      "qid": "aot-800-901",
-      "difficultyTarget": 0.25,
-      "sourceUrl": "https://en.wikipedia.org/wiki/Levi_Ackerman#In_Attack_on_Titan"
-    },
-    {
-      "p": 800,
-      "q": "من ضابط مارلي الذي كشف لغريشا أنه المخبر الملقب بالبومة؟",
-      "a": "إيرين كروغر",
-      "alt": [
-        "كروغر",
-        "إرين كروغر",
-        "Eren Kruger"
-      ],
-      "topic": "الهوية",
-      "verified": true,
-      "qid": "aot-800-902",
-      "difficultyTarget": 0.25,
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Attack_on_Titan_characters#Eldian_Restorationists"
-    },
-    {
-      "p": 800,
-      "q": "كم سنة يعيش حامل إحدى قوى العمالقة بعد وراثتها وفق لعنة يمير؟",
-      "a": "ثلاث عشرة سنة",
-      "alt": [
-        "13",
-        "13 سنة",
-        "ثلاث عشرة",
-        "Thirteen years"
-      ],
-      "topic": "الأسرار",
-      "verified": true,
-      "qid": "aot-800-903",
-      "difficultyTarget": 0.25,
-      "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_3#ep58"
-    },
-    {
-      "p": 800,
       "q": "ما نوع الصورة التي كشفت كتب غريشا أنها أُنتجت بتقنية مجهولة داخل الأسوار؟",
       "a": "صورة فوتوغرافية",
       "alt": [
@@ -412,26 +263,12 @@
       ],
       "topic": "الأدوات",
       "verified": true,
-      "qid": "aot-800-904",
-      "difficultyTarget": 0.25,
+      "qid": "aot-600-912",
+      "difficultyTarget": 0.4,
       "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_3#ep56"
     },
     {
-      "p": 800,
-      "q": "من رجل الدين الذي عُذّب وقُتل لإخفاء أسرار الأسوار؟",
-      "a": "القس نيك",
-      "alt": [
-        "نيك",
-        "Pastor Nick"
-      ],
-      "topic": "البدايات",
-      "verified": true,
-      "qid": "aot-800-905",
-      "difficultyTarget": 0.25,
-      "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_3#ep38"
-    },
-    {
-      "p": 800,
+      "p": 600,
       "q": "ما الحصن الذي لجأ إليه سكان ليبيريو وشاهدوا قربه المعركة الأخيرة؟",
       "a": "حصن سالتا",
       "alt": [
@@ -440,41 +277,12 @@
       ],
       "topic": "النهاية",
       "verified": true,
-      "qid": "aot-800-906",
-      "difficultyTarget": 0.25,
+      "qid": "aot-600-913",
+      "difficultyTarget": 0.4,
       "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_4#ep90"
     },
     {
-      "p": 800,
-      "q": "داخل أي جزء من رأس عملاق إيرين وجدت ميكاسا جسده البشري في النهاية؟",
-      "a": "الفم",
-      "alt": [
-        "داخل الفم",
-        "Mouth"
-      ],
-      "topic": "المعارك",
-      "verified": true,
-      "qid": "aot-800-907",
-      "difficultyTarget": 0.25,
-      "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_4#ep93"
-    },
-    {
-      "p": 800,
-      "q": "ما القلعة التي تحولت عندها يمير لحماية رفاقها من هجوم العمالقة ليلًا؟",
-      "a": "أوتغارد",
-      "alt": [
-        "قلعة أوتغارد",
-        "أوتغارد",
-        "Utgard"
-      ],
-      "topic": "الأسوار",
-      "verified": true,
-      "qid": "aot-800-908",
-      "difficultyTarget": 0.25,
-      "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_2#ep29"
-    },
-    {
-      "p": 1000,
+      "p": 600,
       "q": "من زميل التدريب الذي حاولت كريستا ويمير إنقاذه خلال العاصفة الثلجية؟",
       "a": "داز",
       "alt": [
@@ -482,26 +290,12 @@
       ],
       "topic": "المعارك",
       "verified": true,
-      "qid": "aot-1000-901",
-      "difficultyTarget": 0.15,
+      "qid": "aot-600-914",
+      "difficultyTarget": 0.4,
       "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_2#ep30"
     },
     {
-      "p": 1000,
-      "q": "ما السمك المكتوب على العلبة التي استطاعت يمير قراءة اسمها فأثارت شك راينر؟",
-      "a": "الرنجة",
-      "alt": [
-        "رنجة",
-        "Herring"
-      ],
-      "topic": "الأدوات",
-      "verified": true,
-      "qid": "aot-1000-902",
-      "difficultyTarget": 0.15,
-      "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_2#ep29"
-    },
-    {
-      "p": 1000,
+      "p": 600,
       "q": "ماذا كان يفتح مفتاح غريشا فعليًا داخل الغرفة السرية؟",
       "a": "درج المكتب",
       "alt": [
@@ -511,12 +305,12 @@
       ],
       "topic": "الأسرار",
       "verified": true,
-      "qid": "aot-1000-903",
-      "difficultyTarget": 0.15,
+      "qid": "aot-600-915",
+      "difficultyTarget": 0.4,
       "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_3#ep56"
     },
     {
-      "p": 1000,
+      "p": 600,
       "q": "من أنقذ هانجي من انفجار تحوّل بيرتولت مضحيًا بحياته؟",
       "a": "موبليت برنر",
       "alt": [
@@ -526,40 +320,12 @@
       ],
       "topic": "العلاقات",
       "verified": true,
-      "qid": "aot-1000-904",
-      "difficultyTarget": 0.15,
+      "qid": "aot-600-916",
+      "difficultyTarget": 0.4,
       "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Attack_on_Titan_characters#Survey_Corps"
     },
     {
-      "p": 1000,
-      "q": "ما اسم أخت كيني التي كانت والدة ليفاي؟",
-      "a": "كوشيل أكرمان",
-      "alt": [
-        "كوشيل",
-        "Kuchel Ackerman"
-      ],
-      "topic": "العلاقات",
-      "verified": true,
-      "qid": "aot-1000-905",
-      "difficultyTarget": 0.15,
-      "sourceUrl": "https://en.wikipedia.org/wiki/Levi_Ackerman"
-    },
-    {
-      "p": 1000,
-      "q": "ما المورد النادر في باراديس الذي يشغل العتاد والطائرة التجريبية القادمة من هيزورو؟",
-      "a": "حجر الانفجار الجليدي",
-      "alt": [
-        "حجر الجليد المتفجر",
-        "Iceburst Stone"
-      ],
-      "topic": "الأدوات",
-      "verified": true,
-      "qid": "aot-1000-906",
-      "difficultyTarget": 0.15,
-      "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_4#ep69"
-    },
-    {
-      "p": 1000,
+      "p": 600,
       "q": "من قاد الطائرة التي حملت التحالف لملاحقة إيرين بعد تضحية هانجي؟",
       "a": "أونيانكوبون",
       "alt": [
@@ -568,12 +334,12 @@
       ],
       "topic": "النهاية",
       "verified": true,
-      "qid": "aot-1000-907",
-      "difficultyTarget": 0.15,
+      "qid": "aot-600-917",
+      "difficultyTarget": 0.4,
       "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_4#ep89"
     },
     {
-      "p": 1000,
+      "p": 600,
       "q": "إلى من سلّم أرمين القيادة مؤقتًا عندما تقدّم العملاق الضخم داخل شيغانشينا؟",
       "a": "جان كيرشتاين",
       "alt": [
@@ -583,9 +349,218 @@
       ],
       "topic": "المعارك",
       "verified": true,
-      "qid": "aot-1000-908",
-      "difficultyTarget": 0.15,
+      "qid": "aot-600-918",
+      "difficultyTarget": 0.4,
       "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_3#ep53"
+    },
+    {
+      "p": 800,
+      "q": "ما السمك المكتوب على العلبة التي استطاعت يمير قراءة اسمها فأثارت شك راينر؟",
+      "a": "الرنجة",
+      "alt": [
+        "رنجة",
+        "Herring"
+      ],
+      "topic": "الأدوات",
+      "verified": true,
+      "qid": "aot-800-911",
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_2#ep29"
+    },
+    {
+      "p": 800,
+      "q": "ما اسم أخت كيني التي كانت والدة ليفاي؟",
+      "a": "كوشيل أكرمان",
+      "alt": [
+        "كوشيل",
+        "Kuchel Ackerman"
+      ],
+      "topic": "العلاقات",
+      "verified": true,
+      "qid": "aot-800-912",
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Levi_Ackerman"
+    },
+    {
+      "p": 800,
+      "q": "ما المورد النادر في باراديس الذي يشغل العتاد والطائرة التجريبية القادمة من هيزورو؟",
+      "a": "حجر الانفجار الجليدي",
+      "alt": [
+        "حجر الجليد المتفجر",
+        "Iceburst Stone"
+      ],
+      "topic": "الأدوات",
+      "verified": true,
+      "qid": "aot-800-913",
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_4#ep69"
+    },
+    {
+      "topic": "الهوية",
+      "q": "من التاجر الذي قتله كيني ثم اتُّهم إروين بقتله؟",
+      "a": "ديمو ريفز",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_3",
+      "qid": "aot-800-914",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "الأسوار",
+      "q": "إلى أي منطقة اتجه عملاق والد هيستوريا بعد انهيار الكهف؟",
+      "a": "أورفود",
+      "alt": [
+        "Orvud"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_3",
+      "qid": "aot-800-915",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "العلاقات",
+      "q": "من فرد عائلة ريس الذي كوّن كيني معه صداقة بعدما طلب مسامحته؟",
+      "a": "أوري ريس",
+      "alt": [
+        "Uri Reiss"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_3",
+      "qid": "aot-800-916",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "البدايات",
+      "q": "من قائد التدريب الذي التقى غريشا خارج الأسوار قبل زواجه؟",
+      "a": "كيث شاديس",
+      "alt": [
+        "Keith Shadis"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_3",
+      "qid": "aot-800-917",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "المعارك",
+      "q": "كم جنديًا من قوة الاستطلاع عاد حيًا من عملية استعادة شيغانشينا؟",
+      "a": "تسعة",
+      "alt": [
+        "9"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_3",
+      "qid": "aot-800-918",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "الأسرار",
+      "q": "ما اسم المحقق الذي انتزع منه ليفاي اعترافًا بأن الملك الحاكم مزيف؟",
+      "a": "جيل سانيس",
+      "alt": [
+        "Djel Sannes"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_3",
+      "qid": "aot-1000-911",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "البدايات",
+      "q": "من ابن التاجر الذي استدرج الشرطة للاعتراف بقتل والده أمام سكان ستوهيس؟",
+      "a": "فليغل ريفز",
+      "alt": [
+        "Flegel Reeves"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_3",
+      "qid": "aot-1000-912",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "المعارك",
+      "q": "من شرطي رفيق هيتش الذي ساعد فريق ليفاي للوصول إلى موقع للشرطة الداخلية؟",
+      "a": "مارلو فريدنبرغ",
+      "alt": [
+        "Marlowe Freudenberg"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_3",
+      "qid": "aot-1000-913",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "الهوية",
+      "q": "من القائد الأعلى الذي كشف أن خبر اختراق سور روز كان حيلة لإسقاط الحكومة؟",
+      "a": "داريوس زاكلي",
+      "alt": [
+        "Darius Zackly"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_3",
+      "qid": "aot-1000-914",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "العلاقات",
+      "q": "ما اسم مبعوثة هيزورو التي تعرّفت إلى نسب ميكاسا من وشمها؟",
+      "a": "كيومي أزومابيتو",
+      "alt": [
+        "Kiyomi Azumabito"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_4",
+      "qid": "aot-1000-915",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "العلاقات",
+      "q": "من الفتاة التي آوت غابي وفالكو في إسطبلات عائلة براوس؟",
+      "a": "كايا",
+      "alt": [
+        "Kaya"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_4",
+      "qid": "aot-1000-916",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "البدايات",
+      "q": "ما اسم الطاهي المارلي الذي أحب ساشا وعمل في مطعم على باراديس؟",
+      "a": "نيكولو",
+      "alt": [
+        "Nicolo"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_4",
+      "qid": "aot-1000-917",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "الأسرار",
+      "q": "ما اسم الجندية التي غيّرت مذكرتها نظرة هانجي إلى العمالقة؟",
+      "a": "إيلزي لانغنر",
+      "alt": [
+        "Ilse Langnar"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Attack_on_Titan_characters",
+      "qid": "aot-1000-918",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
     }
   ]
 }

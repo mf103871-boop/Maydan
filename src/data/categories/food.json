@@ -5,208 +5,60 @@
   "qs": [
     {
       "p": 200,
-      "q": "ما اسم الطبق المصري الشعبي الذي يجمع العدس والمكرونة والصلصة والبصل المقلي؟",
-      "a": "الكشري",
-      "qid": "food-200-901",
-      "topic": "مطبخ عربي",
-      "verified": true,
-      "alt": [
-        "الكشرى",
-        "كشري"
-      ],
-      "difficultyTarget": 0.8,
-      "sourceUrl": "https://ich.unesco.org/en/RL/koshary-daily-life-dish-and-practices-associated-with-it-02278"
-    },
-    {
-      "p": 200,
-      "q": "ما الطبق الياباني الذي يجمع الأرز المتبل بالخل مع السمك أو الخضراوات، ويقدم أحيانًا كلفائف؟",
-      "a": "السوشي",
-      "qid": "food-200-902",
-      "topic": "مطابخ عالمية",
-      "verified": true,
-      "alt": [
-        "سوشي"
-      ],
-      "difficultyTarget": 0.8,
-      "sourceUrl": "https://www.japan.travel/en/guide/sushi-in-japan/"
-    },
-    {
-      "p": 200,
-      "q": "ما التابل المطحون الأسود الذي يوضع على المائدة في مرشّة صغيرة؟",
-      "a": "الفلفل الأسود",
-      "qid": "food-200-903",
-      "topic": "توابل وأعشاب",
-      "verified": true,
-      "alt": [
-        "فلفل أسود",
-        "الفلفل"
-      ],
-      "difficultyTarget": 0.8,
-      "sourceUrl": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A682369-1/general-information"
-    },
-    {
-      "p": 200,
-      "q": "ما اسم السائل الحلو الذي ينتجه النحل؟",
-      "a": "العسل",
-      "qid": "food-200-904",
-      "topic": "حلويات",
-      "verified": true,
-      "difficultyTarget": 0.8,
-      "sourceUrl": "https://www.fao.org/4/w0076e/w0076e30.htm"
-    },
-    {
-      "p": 200,
-      "q": "ما السائل الذي يصنع منه الجبن والزبدة واللبن الرائب؟",
-      "a": "الحليب",
-      "qid": "food-200-905",
-      "topic": "مشروبات",
-      "verified": true,
-      "alt": [
-        "حليب",
-        "اللبن"
-      ],
-      "difficultyTarget": 0.8,
-      "sourceUrl": "https://www.fao.org/dairy-production-products/processing/"
-    },
-    {
-      "p": 200,
-      "q": "ما الطبق السعودي الشهير الذي يجمع الأرز المتبل مع اللحم أو الدجاج؟",
-      "a": "الكبسة",
-      "qid": "food-200-906",
-      "topic": "أصول الأطباق",
-      "verified": true,
-      "alt": [
-        "كبسة",
-        "الكبسه"
-      ],
-      "difficultyTarget": 0.8,
-      "sourceUrl": "https://saudipedia.com/ما-أشهر-طبق-سعودي؟"
-    },
-    {
-      "p": 200,
-      "q": "ما اسم طريقة طهي الطعام بغمره في زيت ساخن غزير؟",
-      "a": "القلي العميق",
-      "qid": "food-200-907",
-      "topic": "طرق الطهي",
-      "verified": true,
-      "alt": [
-        "القلي",
-        "القلي بالغمر",
-        "القلي الغزير"
-      ],
-      "difficultyTarget": 0.8,
-      "sourceUrl": "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/deep-fat-frying"
-    },
-    {
-      "p": 200,
-      "q": "ما اسم مسحوق الحبوب الذي يشكل أساس عجين الخبز؟",
-      "a": "الدقيق",
-      "qid": "food-200-908",
-      "topic": "مكوّنات وأصناف",
-      "verified": true,
-      "alt": [
-        "الطحين"
-      ],
-      "difficultyTarget": 0.8,
-      "sourceUrl": "https://www.ukflourmillers.org/flour-milling/flour"
-    },
-    {
-      "p": 400,
-      "q": "ما الطبق الأردني الذي يجمع لحم الضأن والجميد وخبز الشراك؟",
-      "a": "المنسف",
-      "qid": "food-400-901",
-      "topic": "مطبخ عربي",
-      "verified": true,
-      "alt": [
-        "منسف"
-      ],
-      "difficultyTarget": 0.6,
-      "sourceUrl": "https://ich.unesco.org/en/RL/al-mansaf-in-jordan-a-festive-banquet-and-its-social-and-cultural-meanings-01849"
-    },
-    {
-      "p": 400,
       "q": "ما طبق الأرز الإسباني الذي يطهى في مقلاة عريضة، وتضم بعض نسخه مأكولات بحرية؟",
       "a": "البايلا",
-      "qid": "food-400-902",
+      "qid": "food-200-911",
       "topic": "مطابخ عالمية",
       "verified": true,
       "alt": [
         "بايلا",
         "الباييا"
       ],
-      "difficultyTarget": 0.6,
+      "difficultyTarget": 0.8,
       "sourceUrl": "https://www.spain.info/es/top/comida-saludable-espana/"
     },
     {
-      "p": 400,
-      "q": "ما التابل الأخضر الحبّات الذي يُضاف إلى القهوة العربية فيمنحها نكهتها المميزة؟",
-      "a": "الهيل",
-      "qid": "food-400-903",
-      "topic": "توابل وأعشاب",
-      "verified": true,
-      "alt": [
-        "الحبهان",
-        "الهال",
-        "حبهان"
-      ],
-      "difficultyTarget": 0.6,
-      "sourceUrl": "https://saudipedia.com/ما-مكونات-القهوة-السعودية؟"
-    },
-    {
-      "p": 400,
+      "p": 200,
       "q": "ما اسم الحلوى الفرنسية الملوّنة الصغيرة المكوّنة من قرصين بينهما حشوة كريمية؟",
       "a": "الماكارون",
-      "qid": "food-400-904",
+      "qid": "food-200-912",
       "topic": "حلويات",
       "verified": true,
       "alt": [
         "ماكارون",
         "المكرون"
       ],
-      "difficultyTarget": 0.6,
+      "difficultyTarget": 0.8,
       "sourceUrl": "https://www.laduree.fr/en/macarons/"
     },
     {
-      "p": 400,
+      "p": 200,
       "q": "ما اسم شراب رمضان الشهير المصنوع من عجينة المشمش المجففة؟",
       "a": "قمر الدين",
-      "qid": "food-400-905",
+      "qid": "food-200-913",
       "topic": "مشروبات",
       "verified": true,
-      "difficultyTarget": 0.6,
+      "difficultyTarget": 0.8,
       "sourceUrl": "https://damasradio.fm/قمر-الدين-السوري-سفير-المشمش-الدمشقي-م/"
     },
     {
-      "p": 400,
+      "p": 200,
       "q": "ما البلد الذي جاء منه أصل طبق المندي؟",
       "a": "اليمن",
-      "qid": "food-400-906",
+      "qid": "food-200-914",
       "topic": "أصول الأطباق",
       "verified": true,
       "alt": [
         "حضرموت"
       ],
-      "difficultyTarget": 0.6,
+      "difficultyTarget": 0.8,
       "sourceUrl": "https://www.yementourism.com/ar/food-drinks/47-food/215-2017-07-23-09-13-42"
     },
     {
-      "p": 400,
-      "q": "ما اسم نقع اللحم في التوابل والزيت قبل طهيه ليكتسب نكهة؟",
-      "a": "التتبيل",
-      "qid": "food-400-907",
-      "topic": "طرق الطهي",
-      "verified": true,
-      "alt": [
-        "التتبيلة"
-      ],
-      "difficultyTarget": 0.6,
-      "sourceUrl": "https://ask.fsis.usda.gov/article/What-is-a-Marinade"
-    },
-    {
-      "p": 400,
+      "p": 200,
       "q": "ما اسم الجبن الإيطالي الصلب الذي يُبشر فوق أطباق المعكرونة؟",
       "a": "البارميزان",
-      "qid": "food-400-908",
+      "qid": "food-200-915",
       "topic": "مكوّنات وأصناف",
       "verified": true,
       "alt": [
@@ -215,113 +67,42 @@
         "بارميجيانو ريجيانو",
         "البارميجيانو ريجيانو"
       ],
-      "difficultyTarget": 0.6,
+      "difficultyTarget": 0.8,
       "sourceUrl": "https://www.parmigianoreggiano.com/en-US/faq"
     },
     {
-      "p": 600,
-      "q": "ما الطبق اليمني الذي تعلوه الحلبة ويقدم ساخنًا في وعاء حجري يسمى المدرة؟",
-      "a": "السلتة",
-      "qid": "food-600-901",
-      "topic": "مطبخ عربي",
-      "verified": true,
-      "alt": [
-        "سلتة"
-      ],
-      "difficultyTarget": 0.4,
-      "sourceUrl": "https://www.yementourism.com/ar/food-drinks/47-food/208-2017-07-23-08-50-10"
-    },
-    {
-      "p": 600,
+      "p": 200,
       "q": "ما اسم الحساء البارد المصنوع من الطماطم والخيار في جنوب إسبانيا؟",
       "a": "الغازباتشو",
-      "qid": "food-600-902",
+      "qid": "food-200-916",
       "topic": "مطابخ عالمية",
       "verified": true,
       "alt": [
         "غاسباتشو",
         "غازباتشو"
       ],
-      "difficultyTarget": 0.4,
+      "difficultyTarget": 0.8,
       "sourceUrl": "https://www.spain.info/es/top/comida-saludable-espana/"
     },
     {
-      "p": 600,
-      "q": "ما التابل الأحمر المطحون الذي يمنح طبق الغولاش لونه الأحمر المميز؟",
-      "a": "البابريكا",
-      "qid": "food-600-903",
-      "topic": "توابل وأعشاب",
-      "verified": true,
-      "alt": [
-        "بابريكا",
-        "الفلفل الأحمر الحلو"
-      ],
-      "difficultyTarget": 0.4,
-      "sourceUrl": "https://www.visitczechia.com/en-us/things-to-do/places/gastronomic-tourism/recipes/g-goulash"
-    },
-    {
-      "p": 600,
-      "q": "ما اسم الحلوى المصنوعة من بياض البيض المخفوق والفواكه وسُمّيت باسم راقصة باليه روسية؟",
-      "a": "البافلوفا",
-      "qid": "food-600-904",
-      "topic": "حلويات",
-      "verified": true,
-      "alt": [
-        "بافلوفا",
-        "الباڤلوفا"
-      ],
-      "difficultyTarget": 0.4,
-      "sourceUrl": "https://teara.govt.nz/en/photograph/38530/anna-pavlova-and-her-baked-namesake"
-    },
-    {
-      "p": 600,
+      "p": 200,
       "q": "ما اسم المشروب المركّز الذي يُحضَّر بدفع ماء ساخن بضغط عالٍ عبر البنّ المطحون؟",
       "a": "الإسبريسو",
-      "qid": "food-600-905",
+      "qid": "food-200-917",
       "topic": "مشروبات",
       "verified": true,
       "alt": [
         "إسبريسو",
         "الاسبرسو"
       ],
-      "difficultyTarget": 0.4,
+      "difficultyTarget": 0.8,
       "sourceUrl": "https://www.illy.com/content/dam/channels/website/professional/usa/professional-standtogether/Espresso-Preparation-Guide-Beans_5-2020.pdf"
     },
     {
-      "p": 600,
-      "q": "ما البلد الذي نشأ فيه جبن الشيدر؟",
-      "a": "إنجلترا",
-      "qid": "food-600-906",
-      "topic": "أصول الأطباق",
-      "verified": true,
-      "alt": [
-        "بريطانيا",
-        "المملكة المتحدة",
-        "إنكلترا"
-      ],
-      "difficultyTarget": 0.4,
-      "sourceUrl": "https://www.cheddargorgecheese.com/the-history-of-cheddar-cheese/"
-    },
-    {
-      "p": 600,
-      "q": "ما اسم طهي الطعام داخل وعاء موضوع في إناء آخر ممتلئ بماء ساخن؟",
-      "a": "حمام مائي",
-      "qid": "food-600-907",
-      "topic": "طرق الطهي",
-      "verified": true,
-      "alt": [
-        "بان ماري",
-        "البانماري",
-        "الحمام المائي"
-      ],
-      "difficultyTarget": 0.4,
-      "sourceUrl": "https://app.ckbk.com/reference/cook52062c12s001ss003e004/making-creme-caramel"
-    },
-    {
-      "p": 600,
+      "p": 200,
       "q": "ما الجبن القبرصي المعروف بتحمله الشواء والقلي مع احتفاظه بشكله؟",
       "a": "الحلوم",
-      "qid": "food-600-908",
+      "qid": "food-200-918",
       "topic": "مكوّنات وأصناف",
       "verified": true,
       "alt": [
@@ -329,41 +110,139 @@
         "هالومي",
         "جبن الحلوم"
       ],
-      "difficultyTarget": 0.4,
+      "difficultyTarget": 0.8,
       "sourceUrl": "https://www.visitcyprus.com/discover-cyprus/food-drink/local-produce/halloumi-cheese/"
     },
     {
-      "p": 800,
+      "p": 400,
+      "q": "ما الطبق اليمني الذي تعلوه الحلبة ويقدم ساخنًا في وعاء حجري يسمى المدرة؟",
+      "a": "السلتة",
+      "qid": "food-400-911",
+      "topic": "مطبخ عربي",
+      "verified": true,
+      "alt": [
+        "سلتة"
+      ],
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://www.yementourism.com/ar/food-drinks/47-food/208-2017-07-23-08-50-10"
+    },
+    {
+      "p": 400,
+      "q": "ما التابل الأحمر المطحون الذي يمنح طبق الغولاش لونه الأحمر المميز؟",
+      "a": "البابريكا",
+      "qid": "food-400-912",
+      "topic": "توابل وأعشاب",
+      "verified": true,
+      "alt": [
+        "بابريكا",
+        "الفلفل الأحمر الحلو"
+      ],
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://www.visitczechia.com/en-us/things-to-do/places/gastronomic-tourism/recipes/g-goulash"
+    },
+    {
+      "p": 400,
+      "q": "ما اسم الحلوى المصنوعة من بياض البيض المخفوق والفواكه وسُمّيت باسم راقصة باليه روسية؟",
+      "a": "البافلوفا",
+      "qid": "food-400-913",
+      "topic": "حلويات",
+      "verified": true,
+      "alt": [
+        "بافلوفا",
+        "الباڤلوفا"
+      ],
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://teara.govt.nz/en/photograph/38530/anna-pavlova-and-her-baked-namesake"
+    },
+    {
+      "p": 400,
+      "q": "ما البلد الذي نشأ فيه جبن الشيدر؟",
+      "a": "إنجلترا",
+      "qid": "food-400-914",
+      "topic": "أصول الأطباق",
+      "verified": true,
+      "alt": [
+        "بريطانيا",
+        "المملكة المتحدة",
+        "إنكلترا"
+      ],
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://www.cheddargorgecheese.com/the-history-of-cheddar-cheese/"
+    },
+    {
+      "p": 400,
+      "q": "ما اسم طهي الطعام داخل وعاء موضوع في إناء آخر ممتلئ بماء ساخن؟",
+      "a": "حمام مائي",
+      "qid": "food-400-915",
+      "topic": "طرق الطهي",
+      "verified": true,
+      "alt": [
+        "بان ماري",
+        "البانماري",
+        "الحمام المائي"
+      ],
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://app.ckbk.com/reference/cook52062c12s001ss003e004/making-creme-caramel"
+    },
+    {
+      "p": 400,
       "q": "ما اسم خلطة التوابل المغربية الشهيرة التي قد تضمّ عشرات الأصناف؟",
       "a": "رأس الحانوت",
-      "qid": "food-800-901",
+      "qid": "food-400-916",
       "topic": "مطبخ عربي",
       "verified": true,
       "alt": [
         "رأس حانوت"
       ],
-      "difficultyTarget": 0.25,
+      "difficultyTarget": 0.6,
       "sourceUrl": "https://www.visitmorocco.com/sites/default/files/atoms/files/maroc_gastronomie_0111_il_en.pdf"
     },
     {
-      "p": 800,
+      "p": 400,
+      "q": "ما الميناء اليمني القديم الذي أخذ منه نوع شهير من البنّ اسمه العالمي؟",
+      "a": "المخا",
+      "qid": "food-400-917",
+      "topic": "مشروبات",
+      "verified": true,
+      "alt": [
+        "مخا",
+        "ميناء المخا"
+      ],
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://yemen.un.org/en/290202-fao-yemen-assessment-report-coffee-value-chain-yemen-export-potential-and-investment"
+    },
+    {
+      "p": 400,
+      "q": "في أي بلد ابتُكرت النودلز سريعة التحضير؟",
+      "a": "اليابان",
+      "qid": "food-400-918",
+      "topic": "أصول الأطباق",
+      "verified": true,
+      "alt": [
+        "يابان"
+      ],
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://www.cupnoodles-museum.jp/ja/osaka_ikeda/about/"
+    },
+    {
+      "p": 600,
       "q": "ما الطبق البيروفي المعد من سمك نيئ منقوع في عصير الحمضيات مع التوابل؟",
       "a": "السيفيتشي",
-      "qid": "food-800-902",
+      "qid": "food-600-911",
       "topic": "مطابخ عالمية",
       "verified": true,
       "alt": [
         "سيبيتشي",
         "سيفيتشي"
       ],
-      "difficultyTarget": 0.25,
+      "difficultyTarget": 0.4,
       "sourceUrl": "https://ich.unesco.org/en/RL/practices-and-meanings-associated-with-the-preparation-and-consumption-of-ceviche-an-expression-of-peruvian-traditional-cuisine-01952"
     },
     {
-      "p": 800,
+      "p": 600,
       "q": "ما اسم الأرخبيل الإندونيسي الذي عُرف قديمًا بلقب أرخبيل التوابل؟",
       "a": "جزر الملوكو",
-      "qid": "food-800-903",
+      "qid": "food-600-912",
       "topic": "توابل وأعشاب",
       "verified": true,
       "alt": [
@@ -371,14 +250,14 @@
         "مالوكو",
         "جزر الملوك"
       ],
-      "difficultyTarget": 0.25,
+      "difficultyTarget": 0.4,
       "sourceUrl": "https://www.indonesia.travel/gb/en/destination/maluku-papua/maluku"
     },
     {
-      "p": 800,
+      "p": 600,
       "q": "ما اسم الكعكة النمساوية المغطاة بالشوكولاتة والمحشوة بمربى المشمش؟",
       "a": "كعكة زاخر",
-      "qid": "food-800-904",
+      "qid": "food-600-913",
       "topic": "حلويات",
       "verified": true,
       "alt": [
@@ -386,41 +265,14 @@
         "ساخر تورتة",
         "الزاخر"
       ],
-      "difficultyTarget": 0.25,
+      "difficultyTarget": 0.4,
       "sourceUrl": "https://www.sacher.com/en/original-sacher-torte/recipe/"
     },
     {
-      "p": 800,
-      "q": "ما الميناء اليمني القديم الذي أخذ منه نوع شهير من البنّ اسمه العالمي؟",
-      "a": "المخا",
-      "qid": "food-800-905",
-      "topic": "مشروبات",
-      "verified": true,
-      "alt": [
-        "مخا",
-        "ميناء المخا"
-      ],
-      "difficultyTarget": 0.25,
-      "sourceUrl": "https://yemen.un.org/en/290202-fao-yemen-assessment-report-coffee-value-chain-yemen-export-potential-and-investment"
-    },
-    {
-      "p": 800,
-      "q": "في أي بلد ابتُكرت النودلز سريعة التحضير؟",
-      "a": "اليابان",
-      "qid": "food-800-906",
-      "topic": "أصول الأطباق",
-      "verified": true,
-      "alt": [
-        "يابان"
-      ],
-      "difficultyTarget": 0.25,
-      "sourceUrl": "https://www.cupnoodles-museum.jp/ja/osaka_ikeda/about/"
-    },
-    {
-      "p": 800,
+      "p": 600,
       "q": "ما التفاعل بين الأحماض الأمينية والسكريات المختزلة الذي يسهم في تحمير الخبز ونكهته؟",
       "a": "تفاعل ميلارد",
-      "qid": "food-800-907",
+      "qid": "food-600-914",
       "topic": "طرق الطهي",
       "verified": true,
       "alt": [
@@ -430,42 +282,84 @@
         "مايار",
         "Maillard"
       ],
-      "difficultyTarget": 0.25,
+      "difficultyTarget": 0.4,
       "sourceUrl": "https://cen.acs.org/articles/89/i47/Maillard-Reaction.html"
     },
     {
-      "p": 800,
+      "p": 600,
       "q": "ما اسم الطبق الليبي المصنوع من عجين الشعير المسلوق ويُقدَّم مع المرق؟",
       "a": "البازين",
-      "qid": "food-800-908",
+      "qid": "food-600-915",
       "topic": "مطبخ عربي",
       "verified": true,
       "alt": [
         "بازين",
         "البازين الليبي"
       ],
-      "difficultyTarget": 0.25,
+      "difficultyTarget": 0.4,
       "sourceUrl": "https://alqurtas.alandalus-libya.org.ly/ojs/index.php/qjhar/article/download/1625/1450/1925"
     },
     {
-      "p": 1000,
+      "p": 600,
+      "q": "من الصيدلي الأمريكي الذي ابتكر وصفة مشروب كوكاكولا؟",
+      "a": "جون بيمبرتون",
+      "qid": "food-600-916",
+      "topic": "مشروبات",
+      "verified": true,
+      "alt": [
+        "جون ستيث بيمبرتون",
+        "بيمبرتون",
+        "بمبرتون"
+      ],
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://www.coca-colacompany.com/about-us/history/the-birth-of-a-refreshing-idea"
+    },
+    {
+      "p": 600,
+      "q": "ما البلد الآسيوي الذي تشتهر غاباته بتفاح مالوس سيفيرسي البري، أحد أسلاف التفاح المزروع؟",
+      "a": "كازاخستان",
+      "qid": "food-600-917",
+      "topic": "أصول الأطباق",
+      "verified": true,
+      "alt": [
+        "قازاخستان"
+      ],
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://www.ars.usda.gov/news-events/news/research-news/2006/going-back-to-the-source-for-a-heartier-apple-tree/"
+    },
+    {
+      "p": 600,
+      "q": "ما اسم البهار المأخوذ من الغلاف الأحمر المحيط بجوزة الطيب؟",
+      "a": "البسباسة",
+      "qid": "food-600-918",
+      "topic": "مكوّنات وأصناف",
+      "verified": true,
+      "alt": [
+        "الميس",
+        "المَيس"
+      ],
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A77126699-1/general-information"
+    },
+    {
+      "p": 800,
       "q": "ما اسم مسحوق البامية المجفَّفة المستخدم في المُلاح السوداني؟",
       "a": "الويكة",
-      "qid": "food-1000-901",
+      "qid": "food-800-911",
       "topic": "مطبخ عربي",
       "verified": true,
       "alt": [
         "ويكة",
         "الويكة السودانية"
       ],
-      "difficultyTarget": 0.15,
+      "difficultyTarget": 0.25,
       "sourceUrl": "https://ugspace.ug.edu.gh/bitstreams/3554962a-5b4c-469d-be68-7975ff863c3a/download"
     },
     {
-      "p": 1000,
+      "p": 800,
       "q": "ما اسم الفطيرة الجورجية التي تُشكَّل كقارب وتُحشى بالجبن والبيض؟",
       "a": "خاتشابوري أجاري",
-      "qid": "food-1000-902",
+      "qid": "food-800-912",
       "topic": "مطابخ عالمية",
       "verified": true,
       "alt": [
@@ -474,14 +368,14 @@
         "خاتشابوري أدجاري",
         "خاتشابوري ادجاري"
       ],
-      "difficultyTarget": 0.15,
+      "difficultyTarget": 0.25,
       "sourceUrl": "https://georgia.travel/ship-and-sun-the-inspiration-for-ajarian-khachapuri"
     },
     {
-      "p": 1000,
+      "p": 800,
       "q": "ما التابل الصمغي قوي الرائحة المعروف باسم هينغ في المطبخ الهندي؟",
       "a": "الحلتيت",
-      "qid": "food-1000-903",
+      "qid": "food-800-913",
       "topic": "توابل وأعشاب",
       "verified": true,
       "alt": [
@@ -489,56 +383,28 @@
         "الحلتيت الهندي",
         "هينج"
       ],
-      "difficultyTarget": 0.15,
+      "difficultyTarget": 0.25,
       "sourceUrl": "https://www.csir.res.in/sites/default/files/2023-06/Compendium-of-Social-relevant-technologies-2.6.2021.pdf"
     },
     {
-      "p": 1000,
+      "p": 800,
       "q": "ما اسم الحلوى الفرنسية المكوّنة من كرات عجين محشوة ومكدّسة على شكل هرم بالكراميل؟",
       "a": "كروكمبوش",
-      "qid": "food-1000-904",
+      "qid": "food-800-914",
       "topic": "حلويات",
       "verified": true,
       "alt": [
         "الكروكمبوش",
         "كروكانبوش"
       ],
-      "difficultyTarget": 0.15,
+      "difficultyTarget": 0.25,
       "sourceUrl": "https://www.cordonbleu.edu/news/celebrate-bastille-day-croquembouche-recipe-lcba/en"
     },
     {
-      "p": 1000,
-      "q": "من الصيدلي الأمريكي الذي ابتكر وصفة مشروب كوكاكولا؟",
-      "a": "جون بيمبرتون",
-      "qid": "food-1000-905",
-      "topic": "مشروبات",
-      "verified": true,
-      "alt": [
-        "جون ستيث بيمبرتون",
-        "بيمبرتون",
-        "بمبرتون"
-      ],
-      "difficultyTarget": 0.15,
-      "sourceUrl": "https://www.coca-colacompany.com/about-us/history/the-birth-of-a-refreshing-idea"
-    },
-    {
-      "p": 1000,
-      "q": "ما البلد الآسيوي الذي تشتهر غاباته بتفاح مالوس سيفيرسي البري، أحد أسلاف التفاح المزروع؟",
-      "a": "كازاخستان",
-      "qid": "food-1000-906",
-      "topic": "أصول الأطباق",
-      "verified": true,
-      "alt": [
-        "قازاخستان"
-      ],
-      "difficultyTarget": 0.15,
-      "sourceUrl": "https://www.ars.usda.gov/news-events/news/research-news/2006/going-back-to-the-source-for-a-heartier-apple-tree/"
-    },
-    {
-      "p": 1000,
+      "p": 800,
       "q": "ما الاسم الفرنسي لطهي الطعام داخل ظرف من ورق مغلق في الفرن؟",
       "a": "أون بابيوط",
-      "qid": "food-1000-907",
+      "qid": "food-800-915",
       "topic": "طرق الطهي",
       "verified": true,
       "alt": [
@@ -548,22 +414,172 @@
         "الطهي بالورق",
         "en papillote"
       ],
-      "difficultyTarget": 0.15,
+      "difficultyTarget": 0.25,
       "sourceUrl": "https://www.ice.edu/blog/fish-en-papillote-with-farro-and-asparagus"
     },
     {
-      "p": 1000,
-      "q": "ما اسم البهار المأخوذ من الغلاف الأحمر المحيط بجوزة الطيب؟",
-      "a": "البسباسة",
-      "qid": "food-1000-908",
+      "q": "ما المرق الياباني الأساسي الذي يحضر عادة من أعشاب بحرية وسمك مجفف؟",
+      "a": "داشي",
       "topic": "مكوّنات وأصناف",
       "verified": true,
+      "sourceUrl": "https://www.maff.go.jp/j/shokusan/gaisyoku/pamphlet/pdf/washoku_english.pdf",
+      "verifiedAt": "2026-09-25",
       "alt": [
-        "الميس",
-        "المَيس"
+        "Dashi"
       ],
-      "difficultyTarget": 0.15,
-      "sourceUrl": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A77126699-1/general-information"
+      "p": 800,
+      "qid": "food-800-916",
+      "difficultyTarget": 0.25
+    },
+    {
+      "q": "ما اسم مزيج الدقيق والدهن المطهو الذي يبدأ به تحضير صلصة البشاميل؟",
+      "a": "الرو",
+      "topic": "طرق الطهي",
+      "verified": true,
+      "sourceUrl": "https://tollbit.bbcgoodfood.com/howto/guide/how-make-roux",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "رو",
+        "Roux"
+      ],
+      "p": 800,
+      "qid": "food-800-917",
+      "difficultyTarget": 0.25
+    },
+    {
+      "q": "ما الجذمور العطري القريب من الزنجبيل والمستخدم في حساء توم خا التايلندي؟",
+      "a": "الخولنجان",
+      "topic": "توابل وأعشاب",
+      "verified": true,
+      "sourceUrl": "https://www.thaicookbook.tv/thai-food-ingredients/roots-and-rhizomes/galangal-thai-kha/",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "خولنجان",
+        "غالانغال",
+        "Galangal"
+      ],
+      "p": 800,
+      "qid": "food-800-918",
+      "difficultyTarget": 0.25
+    },
+    {
+      "q": "ما اسم التابل الهندي الحامض المصنوع من بذور الرمان المجففة؟",
+      "a": "أناردانا",
+      "topic": "توابل وأعشاب",
+      "verified": true,
+      "sourceUrl": "https://worldspice.com/products/anardana",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Anardana"
+      ],
+      "p": 1000,
+      "qid": "food-1000-911",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "ما الاسم الفرنسي لعجينة الزبدة والدقيق غير المطهوة التي تضاف لتكثيف الصلصات؟",
+      "a": "بور مانييه",
+      "topic": "طرق الطهي",
+      "verified": true,
+      "sourceUrl": "https://www.academiedugout.fr/recettes/beurre-manie_7621_2",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Beurre manié",
+        "بير مانييه"
+      ],
+      "p": 1000,
+      "qid": "food-1000-912",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "ما اسم خلطة التوابل اليابانية السباعية التي ترش فوق النودلز والأرز؟",
+      "a": "شيتشيمي توغاراشي",
+      "topic": "توابل وأعشاب",
+      "verified": true,
+      "sourceUrl": "https://www.bbcgoodfood.com/glossary/sichimi-togarashi-glossary",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Shichimi togarashi",
+        "شيتشيمي"
+      ],
+      "p": 1000,
+      "qid": "food-1000-913",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "ما اسم كاسترد البيض الياباني المالح المطهو على البخار داخل أكواب؟",
+      "a": "تشاوانموشي",
+      "topic": "مطابخ عالمية",
+      "verified": true,
+      "sourceUrl": "https://www.maff.go.jp/e/policies/market/japan-cuisine/japan/19/index.html",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Chawanmushi",
+        "تشاوان موشي"
+      ],
+      "p": 1000,
+      "qid": "food-1000-914",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "ما اسم حلوى بوردو الصغيرة ذات القشرة المكرملة والداخل الطري المنكه بالفانيلا والروم؟",
+      "a": "كانيليه",
+      "topic": "حلويات",
+      "verified": true,
+      "sourceUrl": "https://www.bordeaux-tourisme.com/commerce-service/toque-cuivree.html",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Canelé",
+        "كانليه"
+      ],
+      "p": 1000,
+      "qid": "food-1000-915",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "ما الشاي الصيني الأسود المعروف بتجفيفه فوق دخان خشب الصنوبر؟",
+      "a": "لابسانغ سوشونغ",
+      "topic": "مشروبات",
+      "verified": true,
+      "sourceUrl": "https://www.harney.com/products/lapsang-souchong",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Lapsang Souchong",
+        "لابسانج سوشونج"
+      ],
+      "p": 1000,
+      "qid": "food-1000-916",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "ما الاسم الفارسي للقشرة المقرمشة التي تتكون في قاع قدر الأرز؟",
+      "a": "تهديغ",
+      "topic": "مطابخ عالمية",
+      "verified": true,
+      "sourceUrl": "https://tollbit.bbcgoodfood.com/recipes/persian-basmati-rice-chelo-tahdig",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Tahdig",
+        "ته ديغ",
+        "تهديق"
+      ],
+      "p": 1000,
+      "qid": "food-1000-917",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "ما اسم بادئ التخمير الياباني المصنوع بإنماء فطر أسبرجيلوس أوريزا على الأرز أو الشعير؟",
+      "a": "كوجي",
+      "topic": "مكوّنات وأصناف",
+      "verified": true,
+      "sourceUrl": "https://japan-food.jetro.go.jp/en/japanesecuisine/117.html",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Koji"
+      ],
+      "p": 1000,
+      "qid": "food-1000-918",
+      "difficultyTarget": 0.15
     }
   ]
 }

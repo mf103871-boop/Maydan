@@ -4,112 +4,8 @@
   "icon": "🌠",
   "qs": [
     {
-      "qid": "actors-200-901",
+      "qid": "actors-200-911",
       "p": 200,
-      "topic": "هاري بوتر",
-      "q": "من جسّد الساحر صاحب الندبة في أفلام «هاري بوتر»؟",
-      "a": "دانيال رادكليف",
-      "alt": [
-        "Daniel Radcliffe",
-        "دانييل رادكليف"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Harry_Potter_and_the_Philosopher%27s_Stone_(film)",
-      "verified": true,
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "actors-200-902",
-      "p": 200,
-      "topic": "قراصنة الكاريبي",
-      "q": "من جسّد القرصان جاك سبارو في «قراصنة الكاريبي»؟",
-      "a": "جوني ديب",
-      "alt": [
-        "Johnny Depp"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Pirates_of_the_Caribbean:_The_Curse_of_the_Black_Pearl",
-      "verified": true,
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "actors-200-903",
-      "p": 200,
-      "topic": "فارس الظلام",
-      "q": "من جسّد بروس واين في «فارس الظلام» لكريستوفر نولان؟",
-      "a": "كريستيان بيل",
-      "alt": [
-        "Christian Bale",
-        "كريستيان بال"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/The_Dark_Knight",
-      "verified": true,
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "actors-200-904",
-      "p": 200,
-      "topic": "فريندز",
-      "q": "من جسّدت رايتشل غرين في «فريندز»؟",
-      "a": "جينيفر أنيستون",
-      "alt": [
-        "جنيفر أنيستون",
-        "Jennifer Aniston"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Friends_and_Joey_characters",
-      "verified": true,
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "actors-200-905",
-      "p": 200,
-      "topic": "باب الحارة",
-      "q": "من جسّد أبو عصام في الجزء الأول من «باب الحارة»؟",
-      "a": "عباس النوري",
-      "alt": [],
-      "sourceUrl": "https://elcinema.com/work/1010631/cast",
-      "verified": true,
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "actors-200-906",
-      "p": 200,
-      "topic": "لن أعيش في جلباب أبي",
-      "q": "من جسّد عبد الغفور البرعي في مسلسل «لن أعيش في جلباب أبي» التلفزيوني؟",
-      "a": "نور الشريف",
-      "alt": [],
-      "sourceUrl": "https://elcinema.com/work/1010312/cast",
-      "verified": true,
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "actors-200-907",
-      "p": 200,
-      "topic": "الناظر",
-      "q": "من جسّد صلاح وأباه وأمه في فيلم «الناظر»؟",
-      "a": "علاء ولي الدين",
-      "alt": [
-        "علاء وليدين",
-        "علاء وليّ الدين"
-      ],
-      "sourceUrl": "https://elcinema.com/work/1001525/cast",
-      "verified": true,
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "actors-200-908",
-      "p": 200,
-      "topic": "الهيبة",
-      "q": "من جسّد جبل شيخ الجبل في مسلسل «الهيبة»؟",
-      "a": "تيم حسن",
-      "alt": [
-        "تيم الحسن"
-      ],
-      "sourceUrl": "https://elcinema.com/work/2030474/cast",
-      "verified": true,
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "actors-400-901",
-      "p": 400,
       "topic": "هاري بوتر",
       "q": "من جسّدت هيرميون غرينجر في أفلام «هاري بوتر»؟",
       "a": "إيما واتسون",
@@ -119,11 +15,11 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/Harry_Potter_and_the_Philosopher%27s_Stone_(film)",
       "verified": true,
-      "difficultyTarget": 0.6
+      "difficultyTarget": 0.8
     },
     {
-      "qid": "actors-400-902",
-      "p": 400,
+      "qid": "actors-200-912",
+      "p": 200,
       "topic": "قراصنة الكاريبي",
       "q": "من جسّد ويل تيرنر في «قراصنة الكاريبي»؟",
       "a": "أورلاندو بلوم",
@@ -132,71 +28,161 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/Pirates_of_the_Caribbean:_The_Curse_of_the_Black_Pearl",
       "verified": true,
-      "difficultyTarget": 0.6
+      "difficultyTarget": 0.8
     },
     {
-      "qid": "actors-400-903",
-      "p": 400,
+      "qid": "actors-200-913",
+      "p": 200,
       "topic": "فارس الظلام",
       "q": "من جسّد الجوكر في فيلم «فارس الظلام» الصادر سنة 2008؟",
       "a": "هيث ليدجر",
       "alt": [
-        "Heath Ledger",
-        "هيث ليدجر"
+        "Heath Ledger"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Dark_Knight",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "actors-200-914",
+      "p": 200,
+      "topic": "فريندز",
+      "q": "من جسّد تشاندلر بينغ في «فريندز»؟",
+      "a": "ماثيو بيري",
+      "alt": [
+        "Matthew Perry"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Friends_and_Joey_characters",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "actors-200-915",
+      "p": 200,
+      "topic": "باب الحارة",
+      "q": "من جسّدت سعاد أم عصام في «باب الحارة»؟",
+      "a": "صباح الجزائري",
+      "sourceUrl": "https://elcinema.com/work/1010631/cast",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "actors-200-916",
+      "p": 200,
+      "topic": "لن أعيش في جلباب أبي",
+      "q": "من جسّدت بائعة الكشري فاطمة في «لن أعيش في جلباب أبي»؟",
+      "a": "عبلة كامل",
+      "sourceUrl": "https://elcinema.com/work/1010312/cast",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "actors-200-917",
+      "p": 200,
+      "topic": "الناظر",
+      "q": "من جسّد عاطف، الصديق البسيط لصلاح، في «الناظر»؟",
+      "a": "أحمد حلمي",
+      "sourceUrl": "https://elcinema.com/work/1001525/cast",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "actors-200-918",
+      "p": 200,
+      "topic": "الهيبة",
+      "q": "من جسّدت ناهد، والدة جبل، في «الهيبة»؟",
+      "a": "منى واصف",
+      "sourceUrl": "https://elcinema.com/work/2030474/cast",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "actors-400-911",
+      "p": 400,
+      "topic": "هاري بوتر",
+      "q": "من جسّد رون ويزلي في أفلام «هاري بوتر»؟",
+      "a": "روبرت غرينت",
+      "alt": [
+        "روبرت جرينت",
+        "Rupert Grint"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Harry_Potter_and_the_Philosopher%27s_Stone_(film)",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "actors-400-912",
+      "p": 400,
+      "topic": "قراصنة الكاريبي",
+      "q": "من جسّدت إليزابيث سوان في «لعنة اللؤلؤة السوداء»؟",
+      "a": "كيرا نايتلي",
+      "alt": [
+        "Keira Knightley"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Pirates_of_the_Caribbean:_The_Curse_of_the_Black_Pearl",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "actors-400-913",
+      "p": 400,
+      "topic": "فارس الظلام",
+      "q": "من جسّد مفوض الشرطة جيمس غوردون في ثلاثية باتمان لنولان؟",
+      "a": "غاري أولدمان",
+      "alt": [
+        "جاري أولدمان",
+        "Gary Oldman"
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/The_Dark_Knight",
       "verified": true,
       "difficultyTarget": 0.6
     },
     {
-      "qid": "actors-400-904",
+      "qid": "actors-400-914",
       "p": 400,
       "topic": "فريندز",
-      "q": "من جسّد تشاندلر بينغ في «فريندز»؟",
-      "a": "ماثيو بيري",
+      "q": "من جسّدت مونيكا غيلر في «فريندز»؟",
+      "a": "كورتني كوكس",
       "alt": [
-        "Matthew Perry",
-        "ماثيو بيري"
+        "Courteney Cox",
+        "كورتيني كوكس"
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Friends_and_Joey_characters",
       "verified": true,
       "difficultyTarget": 0.6
     },
     {
-      "qid": "actors-400-905",
+      "qid": "actors-400-915",
       "p": 400,
       "topic": "باب الحارة",
       "q": "من جسّد العكيد أبو شهاب في الأجزاء الأولى من «باب الحارة»؟",
       "a": "سامر المصري",
-      "alt": [],
       "sourceUrl": "https://elcinema.com/work/1010631/cast",
       "verified": true,
       "difficultyTarget": 0.6
     },
     {
-      "qid": "actors-400-906",
+      "qid": "actors-400-916",
       "p": 400,
       "topic": "لن أعيش في جلباب أبي",
-      "q": "من جسّدت بائعة الكشري فاطمة في «لن أعيش في جلباب أبي»؟",
-      "a": "عبلة كامل",
-      "alt": [],
+      "q": "من جسّد عبد الوهاب البالغ في «لن أعيش في جلباب أبي»؟",
+      "a": "محمد رياض",
       "sourceUrl": "https://elcinema.com/work/1010312/cast",
       "verified": true,
       "difficultyTarget": 0.6
     },
     {
-      "qid": "actors-400-907",
+      "qid": "actors-400-917",
       "p": 400,
       "topic": "الناظر",
-      "q": "من جسّد عاطف، الصديق البسيط لصلاح، في «الناظر»؟",
-      "a": "أحمد حلمي",
-      "alt": [],
+      "q": "من جسّد سيد ضاهي، وكيل المدرسة، في «الناظر»؟",
+      "a": "حسن حسني",
       "sourceUrl": "https://elcinema.com/work/1001525/cast",
       "verified": true,
       "difficultyTarget": 0.6
     },
     {
-      "qid": "actors-400-908",
+      "qid": "actors-400-918",
       "p": 400,
       "topic": "الهيبة",
       "q": "من جسّدت عليا في الموسم الأول من «الهيبة»؟",
@@ -209,109 +195,8 @@
       "difficultyTarget": 0.6
     },
     {
-      "qid": "actors-600-901",
+      "qid": "actors-600-911",
       "p": 600,
-      "topic": "هاري بوتر",
-      "q": "من جسّد رون ويزلي في أفلام «هاري بوتر»؟",
-      "a": "روبرت غرينت",
-      "alt": [
-        "روبرت جرينت",
-        "روبرت غرينت",
-        "Rupert Grint"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Harry_Potter_and_the_Philosopher%27s_Stone_(film)",
-      "verified": true,
-      "difficultyTarget": 0.4
-    },
-    {
-      "qid": "actors-600-902",
-      "p": 600,
-      "topic": "قراصنة الكاريبي",
-      "q": "من جسّدت إليزابيث سوان في «لعنة اللؤلؤة السوداء»؟",
-      "a": "كيرا نايتلي",
-      "alt": [
-        "Keira Knightley",
-        "كيرا نايتلي"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Pirates_of_the_Caribbean:_The_Curse_of_the_Black_Pearl",
-      "verified": true,
-      "difficultyTarget": 0.4
-    },
-    {
-      "qid": "actors-600-903",
-      "p": 600,
-      "topic": "فارس الظلام",
-      "q": "من جسّد مفوض الشرطة جيمس غوردون في ثلاثية باتمان لنولان؟",
-      "a": "غاري أولدمان",
-      "alt": [
-        "جاري أولدمان",
-        "Gary Oldman"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/The_Dark_Knight",
-      "verified": true,
-      "difficultyTarget": 0.4
-    },
-    {
-      "qid": "actors-600-904",
-      "p": 600,
-      "topic": "فريندز",
-      "q": "من جسّدت مونيكا غيلر في «فريندز»؟",
-      "a": "كورتني كوكس",
-      "alt": [
-        "Courteney Cox",
-        "كورتيني كوكس"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Friends_and_Joey_characters",
-      "verified": true,
-      "difficultyTarget": 0.4
-    },
-    {
-      "qid": "actors-600-905",
-      "p": 600,
-      "topic": "باب الحارة",
-      "q": "من جسّدت سعاد أم عصام في «باب الحارة»؟",
-      "a": "صباح الجزائري",
-      "alt": [],
-      "sourceUrl": "https://elcinema.com/work/1010631/cast",
-      "verified": true,
-      "difficultyTarget": 0.4
-    },
-    {
-      "qid": "actors-600-906",
-      "p": 600,
-      "topic": "لن أعيش في جلباب أبي",
-      "q": "من جسّد عبد الوهاب البالغ في «لن أعيش في جلباب أبي»؟",
-      "a": "محمد رياض",
-      "alt": [],
-      "sourceUrl": "https://elcinema.com/work/1010312/cast",
-      "verified": true,
-      "difficultyTarget": 0.4
-    },
-    {
-      "qid": "actors-600-907",
-      "p": 600,
-      "topic": "الناظر",
-      "q": "من جسّد سيد ضاهي، وكيل المدرسة، في «الناظر»؟",
-      "a": "حسن حسني",
-      "alt": [],
-      "sourceUrl": "https://elcinema.com/work/1001525/cast",
-      "verified": true,
-      "difficultyTarget": 0.4
-    },
-    {
-      "qid": "actors-600-908",
-      "p": 600,
-      "topic": "الهيبة",
-      "q": "من جسّدت ناهد، والدة جبل، في «الهيبة»؟",
-      "a": "منى واصف",
-      "alt": [],
-      "sourceUrl": "https://elcinema.com/work/2030474/cast",
-      "verified": true,
-      "difficultyTarget": 0.4
-    },
-    {
-      "qid": "actors-800-901",
-      "p": 800,
       "topic": "هاري بوتر",
       "q": "من جسّد أستاذ الجرعات سيفيروس سناب في أفلام «هاري بوتر»؟",
       "a": "آلان ريكمان",
@@ -321,11 +206,11 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/Harry_Potter_and_the_Philosopher%27s_Stone_(film)",
       "verified": true,
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.4
     },
     {
-      "qid": "actors-800-902",
-      "p": 800,
+      "qid": "actors-600-912",
+      "p": 600,
       "topic": "قراصنة الكاريبي",
       "q": "من جسّد الكابتن باربوسا في «قراصنة الكاريبي»؟",
       "a": "جيفري راش",
@@ -335,11 +220,11 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/Pirates_of_the_Caribbean:_The_Curse_of_the_Black_Pearl",
       "verified": true,
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.4
     },
     {
-      "qid": "actors-800-903",
-      "p": 800,
+      "qid": "actors-600-913",
+      "p": 600,
       "topic": "فارس الظلام",
       "q": "من جسّد ألفريد، خادم بروس واين، في ثلاثية باتمان لنولان؟",
       "a": "مايكل كين",
@@ -348,11 +233,11 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/The_Dark_Knight",
       "verified": true,
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.4
     },
     {
-      "qid": "actors-800-904",
-      "p": 800,
+      "qid": "actors-600-914",
+      "p": 600,
       "topic": "فريندز",
       "q": "من جسّدت فيبي بوفيه في «فريندز»؟",
       "a": "ليزا كودرو",
@@ -361,11 +246,11 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Friends_and_Joey_characters",
       "verified": true,
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.4
     },
     {
-      "qid": "actors-800-905",
-      "p": 800,
+      "qid": "actors-600-915",
+      "p": 600,
       "topic": "باب الحارة",
       "q": "من جسّدت فريال، شقيقة أبو عصام، في «باب الحارة»؟",
       "a": "وفاء موصللي",
@@ -374,44 +259,41 @@
       ],
       "sourceUrl": "https://elcinema.com/work/1010631/cast",
       "verified": true,
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.4
     },
     {
-      "qid": "actors-800-906",
-      "p": 800,
+      "qid": "actors-600-916",
+      "p": 600,
       "topic": "لن أعيش في جلباب أبي",
       "q": "من جسّدت سنية، ابنة عبد الغفور، في «لن أعيش في جلباب أبي»؟",
       "a": "ناهد رشدي",
-      "alt": [],
       "sourceUrl": "https://elcinema.com/work/1010312/cast",
       "verified": true,
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.4
     },
     {
-      "qid": "actors-800-907",
-      "p": 800,
+      "qid": "actors-600-917",
+      "p": 600,
       "topic": "الناظر",
       "q": "من جسّد المدرس حسين إسماعيل في «الناظر»؟",
       "a": "هشام سليم",
-      "alt": [],
       "sourceUrl": "https://elcinema.com/work/1001525/cast",
       "verified": true,
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.4
     },
     {
-      "qid": "actors-800-908",
-      "p": 800,
+      "qid": "actors-600-918",
+      "p": 600,
       "topic": "الهيبة",
       "q": "من جسّد صخر، شقيق جبل، في الأجزاء الأولى من «الهيبة»؟",
       "a": "أويس مخللاتي",
-      "alt": [],
       "sourceUrl": "https://elcinema.com/work/2030474/cast",
       "verified": true,
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.4
     },
     {
-      "qid": "actors-1000-901",
-      "p": 1000,
+      "qid": "actors-800-911",
+      "p": 800,
       "topic": "هاري بوتر",
       "q": "من جسّد هاغريد، حارس مفاتيح هوغوورتس، في أفلام «هاري بوتر»؟",
       "a": "روبي كولترين",
@@ -421,11 +303,11 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/Harry_Potter_and_the_Philosopher%27s_Stone_(film)",
       "verified": true,
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.25
     },
     {
-      "qid": "actors-1000-902",
-      "p": 1000,
+      "qid": "actors-800-912",
+      "p": 800,
       "topic": "قراصنة الكاريبي",
       "q": "من جسّد الضابط جيمس نورينغتون في «لعنة اللؤلؤة السوداء»؟",
       "a": "جاك دافنبورت",
@@ -435,11 +317,11 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/Pirates_of_the_Caribbean:_The_Curse_of_the_Black_Pearl",
       "verified": true,
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.25
     },
     {
-      "qid": "actors-1000-903",
-      "p": 1000,
+      "qid": "actors-800-913",
+      "p": 800,
       "topic": "فارس الظلام",
       "q": "من جسّد هارفي دنت الذي يصبح ذا الوجهين في «فارس الظلام»؟",
       "a": "آرون إيكهارت",
@@ -449,11 +331,11 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/The_Dark_Knight",
       "verified": true,
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.25
     },
     {
-      "qid": "actors-1000-904",
-      "p": 1000,
+      "qid": "actors-800-914",
+      "p": 800,
       "topic": "فريندز",
       "q": "من جسّدت جانيس صاحبة الضحكة المميزة في «فريندز»؟",
       "a": "ماغي ويلر",
@@ -463,11 +345,11 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Friends_and_Joey_characters",
       "verified": true,
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.25
     },
     {
-      "qid": "actors-1000-905",
-      "p": 1000,
+      "qid": "actors-800-915",
+      "p": 800,
       "topic": "باب الحارة",
       "q": "من جسّدت دلال ابنة أبو عصام في الأجزاء الأولى من «باب الحارة»؟",
       "a": "أناهيد فياض",
@@ -476,22 +358,21 @@
       ],
       "sourceUrl": "https://elcinema.com/work/1010631/cast",
       "verified": true,
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.25
     },
     {
-      "qid": "actors-1000-906",
-      "p": 1000,
+      "qid": "actors-800-916",
+      "p": 800,
       "topic": "لن أعيش في جلباب أبي",
       "q": "من جسّدت نفيسة المعروفة بنوفا في «لن أعيش في جلباب أبي»؟",
       "a": "منال سلامة",
-      "alt": [],
       "sourceUrl": "https://elcinema.com/work/1010312/cast",
       "verified": true,
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.25
     },
     {
-      "qid": "actors-1000-907",
-      "p": 1000,
+      "qid": "actors-800-917",
+      "p": 800,
       "topic": "الناظر",
       "q": "من جسّدت وفاء حسن، محبوبة صلاح، في «الناظر»؟",
       "a": "بسمة",
@@ -500,11 +381,11 @@
       ],
       "sourceUrl": "https://elcinema.com/work/1001525/cast",
       "verified": true,
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.25
     },
     {
-      "qid": "actors-1000-908",
-      "p": 1000,
+      "qid": "actors-800-918",
+      "p": 800,
       "topic": "الهيبة",
       "q": "من جسّدت منى، شقيقة جبل، في الموسم الأول من «الهيبة»؟",
       "a": "روزينا لاذقاني",
@@ -513,6 +394,98 @@
       ],
       "sourceUrl": "https://elcinema.com/work/2030474/cast",
       "verified": true,
+      "difficultyTarget": 0.25
+    },
+    {
+      "topic": "هاري بوتر",
+      "q": "من جسّد دمبلدور في فيلم «هاري بوتر وحجر الفيلسوف»؟",
+      "a": "ريتشارد هاريس",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Harry_Potter_and_the_Philosopher%27s_Stone_(film)",
+      "alt": [
+        "Richard Harris"
+      ],
+      "verified": true,
+      "p": 1000,
+      "qid": "actors-1000-911",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "قراصنة الكاريبي",
+      "q": "من جسّد البحار جيبس في «لعنة اللؤلؤة السوداء»؟",
+      "a": "كيفن ماكنالي",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Pirates_of_the_Caribbean:_The_Curse_of_the_Black_Pearl",
+      "alt": [
+        "Kevin McNally"
+      ],
+      "verified": true,
+      "p": 1000,
+      "qid": "actors-1000-912",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "فارس الظلام",
+      "q": "من جسّد زعيم العصابة سال ماروني في «فارس الظلام»؟",
+      "a": "إريك روبرتس",
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Dark_Knight",
+      "alt": [
+        "Eric Roberts"
+      ],
+      "verified": true,
+      "p": 1000,
+      "qid": "actors-1000-913",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "فريندز",
+      "q": "من جسّد غونثر العامل في المقهى في «فريندز»؟",
+      "a": "جيمس مايكل تايلر",
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Friends_and_Joey_characters",
+      "alt": [
+        "James Michael Tyler"
+      ],
+      "verified": true,
+      "p": 1000,
+      "qid": "actors-1000-914",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "باب الحارة",
+      "q": "من جسّدت لطفية في الجزء الأول من «باب الحارة»؟",
+      "a": "ليليا الأطرش",
+      "sourceUrl": "https://elcinema.com/work/1010631/cast",
+      "verified": true,
+      "p": 1000,
+      "qid": "actors-1000-915",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "لن أعيش في جلباب أبي",
+      "q": "من جسّد نبيل في «لن أعيش في جلباب أبي»؟",
+      "a": "ياسر جلال",
+      "sourceUrl": "https://elcinema.com/work/1010312/cast",
+      "verified": true,
+      "p": 1000,
+      "qid": "actors-1000-916",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "الناظر",
+      "q": "من جسّد زكريا الدرديري في فيلم «الناظر»؟",
+      "a": "يوسف عيد",
+      "sourceUrl": "https://elcinema.com/work/1001525/cast",
+      "verified": true,
+      "p": 1000,
+      "qid": "actors-1000-917",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "الهيبة",
+      "q": "من جسّد المحامي نعيم في الموسم الأول من «الهيبة»؟",
+      "a": "وجيه صقر",
+      "sourceUrl": "https://elcinema.com/work/2030474/cast",
+      "verified": true,
+      "p": 1000,
+      "qid": "actors-1000-918",
       "difficultyTarget": 0.15
     }
   ]

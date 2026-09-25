@@ -6,108 +6,25 @@
     {
       "p": 200,
       "topic": "آدم ونوح",
-      "q": "من النبي الذي أمره الله بصنع السفينة لينجو ومن معه؟",
-      "a": "نوح",
-      "sourceUrl": "https://quran.com/hud/36-37",
-      "verified": true,
-      "qid": "prophets-200-901",
-      "difficultyTarget": 0.8
-    },
-    {
-      "p": 200,
-      "topic": "إبراهيم وآله",
-      "q": "ماذا صارت النار على إبراهيم بأمر الله؟",
-      "a": "بردًا وسلامًا",
-      "alt": [
-        "بردا وسلاما"
-      ],
-      "sourceUrl": "https://quran.com/al-anbya/69",
-      "verified": true,
-      "qid": "prophets-200-902",
-      "difficultyTarget": 0.8
-    },
-    {
-      "p": 200,
-      "topic": "يوسف وإخوته",
-      "q": "ما الحيوان الذي زعم إخوة يوسف أنه أكله؟",
-      "a": "الذئب",
-      "sourceUrl": "https://quran.com/yusuf/17",
-      "verified": true,
-      "qid": "prophets-200-903",
-      "difficultyTarget": 0.8
-    },
-    {
-      "p": 200,
-      "topic": "موسى وهارون",
-      "q": "من أخو موسى الذي جعله الله وزيرًا له؟",
-      "a": "هارون",
-      "sourceUrl": "https://quran.com/taha/30",
-      "verified": true,
-      "qid": "prophets-200-904",
-      "difficultyTarget": 0.8
-    },
-    {
-      "p": 200,
-      "topic": "داود وسليمان",
-      "q": "ما الكتاب الذي أنزله الله على داود؟",
-      "a": "الزبور",
-      "sourceUrl": "https://quran.com/an-nisa/163",
-      "verified": true,
-      "qid": "prophets-200-905",
-      "difficultyTarget": 0.8
-    },
-    {
-      "p": 200,
-      "topic": "عيسى ومريم",
-      "q": "من أم عيسى عليه السلام؟",
-      "a": "مريم",
-      "sourceUrl": "https://quran.com/maryam/34",
-      "verified": true,
-      "qid": "prophets-200-906",
-      "difficultyTarget": 0.8
-    },
-    {
-      "p": 200,
-      "topic": "هود وصالح وشعيب",
-      "q": "إلى أي قوم أُرسل النبي هود؟",
-      "a": "عاد",
-      "sourceUrl": "https://quran.com/al-araf/65",
-      "verified": true,
-      "qid": "prophets-200-907",
-      "difficultyTarget": 0.8
-    },
-    {
-      "p": 200,
-      "topic": "أنبياء آخرون",
-      "q": "من النبي الذي التقمه الحوت ثم نجّاه الله؟",
-      "a": "يونس",
-      "sourceUrl": "https://quran.com/as-saffat/139-142",
-      "verified": true,
-      "qid": "prophets-200-908",
-      "difficultyTarget": 0.8
-    },
-    {
-      "p": 400,
-      "topic": "آدم ونوح",
       "q": "ماذا أمر الله نوحًا أن يحمل في السفينة من كل نوع؟",
       "a": "زوجين اثنين",
       "sourceUrl": "https://quran.com/hud/40",
       "verified": true,
-      "qid": "prophets-400-901",
-      "difficultyTarget": 0.6
+      "qid": "prophets-200-911",
+      "difficultyTarget": 0.8
     },
     {
-      "p": 400,
+      "p": 200,
       "topic": "إبراهيم وآله",
       "q": "بأي نبي بشرت الملائكة امرأة إبراهيم، ومن ورائه يعقوب؟",
       "a": "إسحاق",
       "sourceUrl": "https://quran.com/hud/71",
       "verified": true,
-      "qid": "prophets-400-902",
-      "difficultyTarget": 0.6
+      "qid": "prophets-200-912",
+      "difficultyTarget": 0.8
     },
     {
-      "p": 400,
+      "p": 200,
       "topic": "يوسف وإخوته",
       "q": "ما الحيوان الذي رآه الملك في رؤياه سبعًا سمانًا؟",
       "a": "البقرات",
@@ -116,38 +33,58 @@
       ],
       "sourceUrl": "https://quran.com/yusuf/43",
       "verified": true,
-      "qid": "prophets-400-903",
-      "difficultyTarget": 0.6
+      "qid": "prophets-200-913",
+      "difficultyTarget": 0.8
     },
     {
-      "p": 400,
+      "p": 200,
       "topic": "موسى وهارون",
       "q": "من الذي أضلّ بني إسرائيل بعد ذهاب موسى إلى الميقات؟",
       "a": "السامري",
       "sourceUrl": "https://quran.com/taha/85",
       "verified": true,
-      "qid": "prophets-400-904",
-      "difficultyTarget": 0.6
+      "qid": "prophets-200-914",
+      "difficultyTarget": 0.8
     },
     {
-      "p": 400,
+      "p": 200,
       "topic": "داود وسليمان",
       "q": "ما الذي سُخّر لسليمان تجري بأمره رخاء؟",
       "a": "الريح",
       "sourceUrl": "https://quran.com/sad/36",
       "verified": true,
-      "qid": "prophets-400-905",
-      "difficultyTarget": 0.6
+      "qid": "prophets-200-915",
+      "difficultyTarget": 0.8
     },
     {
-      "p": 400,
+      "p": 200,
       "topic": "عيسى ومريم",
       "q": "ماذا طلب أنصار عيسى أن ينزّل عليهم من السماء؟",
       "a": "المائدة",
       "sourceUrl": "https://quran.com/al-maidah/112",
       "verified": true,
-      "qid": "prophets-400-906",
-      "difficultyTarget": 0.6
+      "qid": "prophets-200-916",
+      "difficultyTarget": 0.8
+    },
+    {
+      "p": 200,
+      "topic": "أنبياء آخرون",
+      "q": "من النبي الذي دعا ربه: أني مسني الضر وأنت أرحم الراحمين؟",
+      "a": "أيوب",
+      "sourceUrl": "https://quran.com/al-anbya/83",
+      "verified": true,
+      "qid": "prophets-200-917",
+      "difficultyTarget": 0.8
+    },
+    {
+      "p": 200,
+      "topic": "إبراهيم وآله",
+      "q": "ما الاسم الذي ذكره القرآن لأبي إبراهيم؟",
+      "a": "آزر",
+      "sourceUrl": "https://quran.com/al-anam/74",
+      "verified": true,
+      "qid": "prophets-200-918",
+      "difficultyTarget": 0.8
     },
     {
       "p": 400,
@@ -156,21 +93,11 @@
       "a": "ثلاثة أيام",
       "sourceUrl": "https://quran.com/hud/65",
       "verified": true,
-      "qid": "prophets-400-907",
+      "qid": "prophets-400-911",
       "difficultyTarget": 0.6
     },
     {
       "p": 400,
-      "topic": "أنبياء آخرون",
-      "q": "من النبي الذي دعا ربه: أني مسني الضر وأنت أرحم الراحمين؟",
-      "a": "أيوب",
-      "sourceUrl": "https://quran.com/al-anbya/83",
-      "verified": true,
-      "qid": "prophets-400-908",
-      "difficultyTarget": 0.6
-    },
-    {
-      "p": 600,
       "topic": "آدم ونوح",
       "q": "ما العلامة التي جعلها الله لنوح ليحمل أهله في السفينة؟",
       "a": "فوران التنور",
@@ -179,28 +106,72 @@
       ],
       "sourceUrl": "https://quran.com/hud/40",
       "verified": true,
-      "qid": "prophets-600-901",
-      "difficultyTarget": 0.4
+      "qid": "prophets-400-912",
+      "difficultyTarget": 0.6
     },
     {
-      "p": 600,
-      "topic": "إبراهيم وآله",
-      "q": "ما الاسم الذي ذكره القرآن لأبي إبراهيم؟",
-      "a": "آزر",
-      "sourceUrl": "https://quran.com/al-anam/74",
-      "verified": true,
-      "qid": "prophets-600-902",
-      "difficultyTarget": 0.4
-    },
-    {
-      "p": 600,
+      "p": 400,
       "topic": "يوسف وإخوته",
       "q": "ماذا طلب يوسف من الملك أن يجعله عليه؟",
       "a": "خزائن الأرض",
       "sourceUrl": "https://quran.com/yusuf/55",
       "verified": true,
-      "qid": "prophets-600-903",
-      "difficultyTarget": 0.4
+      "qid": "prophets-400-913",
+      "difficultyTarget": 0.6
+    },
+    {
+      "p": 400,
+      "topic": "داود وسليمان",
+      "q": "أي حيوان عُرض على سليمان بالعشي ووصفه القرآن بالصافنات الجياد؟",
+      "a": "الخيل",
+      "sourceUrl": "https://quran.com/sad/31",
+      "verified": true,
+      "qid": "prophets-400-914",
+      "difficultyTarget": 0.6
+    },
+    {
+      "p": 400,
+      "topic": "عيسى ومريم",
+      "q": "أين كان زكريا قائمًا يصلي حين نادته الملائكة؟",
+      "a": "المحراب",
+      "sourceUrl": "https://quran.com/ali-imran/39",
+      "verified": true,
+      "qid": "prophets-400-915",
+      "difficultyTarget": 0.6
+    },
+    {
+      "p": 400,
+      "topic": "هود وصالح وشعيب",
+      "q": "ما الجماعة التي ذكرتها سورة الشعراء قبل دعوة شعيب لهم إلى التقوى؟",
+      "a": "أصحاب الأيكة",
+      "sourceUrl": "https://quran.com/ash-shuara/176-177",
+      "verified": true,
+      "qid": "prophets-400-916",
+      "difficultyTarget": 0.6
+    },
+    {
+      "p": 400,
+      "topic": "أنبياء آخرون",
+      "q": "من النبي الذي قال الله عنه: ورفعناه مكانًا عليًّا؟",
+      "a": "إدريس",
+      "sourceUrl": "https://quran.com/maryam/56-57",
+      "verified": true,
+      "qid": "prophets-400-917",
+      "difficultyTarget": 0.6
+    },
+    {
+      "q": "بم كان آدم وزوجه يستران نفسيهما بعد الأكل من الشجرة؟",
+      "a": "ورق الجنة",
+      "topic": "آدم ونوح",
+      "sourceUrl": "https://quran.com/7/22",
+      "alt": [
+        "من ورق الجنة"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 400,
+      "qid": "prophets-400-918",
+      "difficultyTarget": 0.6
     },
     {
       "p": 600,
@@ -212,61 +183,21 @@
       ],
       "sourceUrl": "https://quran.com/al-araf/143",
       "verified": true,
-      "qid": "prophets-600-904",
+      "qid": "prophets-600-911",
       "difficultyTarget": 0.4
     },
     {
       "p": 600,
-      "topic": "داود وسليمان",
-      "q": "أي حيوان عُرض على سليمان بالعشي ووصفه القرآن بالصافنات الجياد؟",
-      "a": "الخيل",
-      "sourceUrl": "https://quran.com/sad/31",
-      "verified": true,
-      "qid": "prophets-600-905",
-      "difficultyTarget": 0.4
-    },
-    {
-      "p": 600,
-      "topic": "عيسى ومريم",
-      "q": "أين كان زكريا قائمًا يصلي حين نادته الملائكة؟",
-      "a": "المحراب",
-      "sourceUrl": "https://quran.com/ali-imran/39",
-      "verified": true,
-      "qid": "prophets-600-906",
-      "difficultyTarget": 0.4
-    },
-    {
-      "p": 600,
-      "topic": "هود وصالح وشعيب",
-      "q": "ما الجماعة التي ذكرتها سورة الشعراء قبل دعوة شعيب لهم إلى التقوى؟",
-      "a": "أصحاب الأيكة",
-      "sourceUrl": "https://quran.com/ash-shuara/176-177",
-      "verified": true,
-      "qid": "prophets-600-907",
-      "difficultyTarget": 0.4
-    },
-    {
-      "p": 600,
-      "topic": "أنبياء آخرون",
-      "q": "من النبي الذي قال الله عنه: ورفعناه مكانًا عليًّا؟",
-      "a": "إدريس",
-      "sourceUrl": "https://quran.com/maryam/56-57",
-      "verified": true,
-      "qid": "prophets-600-908",
-      "difficultyTarget": 0.4
-    },
-    {
-      "p": 800,
       "topic": "آدم ونوح",
       "q": "بم أمر الله الأرض بعد هلاك قوم نوح؟",
       "a": "ابلعي ماءك",
       "sourceUrl": "https://quran.com/hud/44",
       "verified": true,
-      "qid": "prophets-800-901",
-      "difficultyTarget": 0.25
+      "qid": "prophets-600-912",
+      "difficultyTarget": 0.4
     },
     {
-      "p": 800,
+      "p": 600,
       "topic": "إبراهيم وآله",
       "q": "ماذا فعلت امرأة إبراهيم بوجهها حين بشّرتها الملائكة بالولد؟",
       "a": "صكّت وجهها",
@@ -275,41 +206,31 @@
       ],
       "sourceUrl": "https://quran.com/adh-dhariyat/29",
       "verified": true,
-      "qid": "prophets-800-902",
-      "difficultyTarget": 0.25
+      "qid": "prophets-600-913",
+      "difficultyTarget": 0.4
     },
     {
-      "p": 800,
+      "p": 600,
       "topic": "يوسف وإخوته",
       "q": "بم عفا يوسف عن إخوته حين عرّفهم بنفسه؟",
       "a": "لا تثريب عليكم",
       "sourceUrl": "https://quran.com/yusuf/92",
       "verified": true,
-      "qid": "prophets-800-903",
-      "difficultyTarget": 0.25
+      "qid": "prophets-600-914",
+      "difficultyTarget": 0.4
     },
     {
-      "p": 800,
+      "p": 600,
       "topic": "موسى وهارون",
       "q": "ما المكان الذي قصده موسى وفتاه ليلقيا العبد الصالح؟",
       "a": "مجمع البحرين",
       "sourceUrl": "https://quran.com/al-kahf/60",
       "verified": true,
-      "qid": "prophets-800-904",
-      "difficultyTarget": 0.25
+      "qid": "prophets-600-915",
+      "difficultyTarget": 0.4
     },
     {
-      "p": 800,
-      "topic": "داود وسليمان",
-      "q": "ما العين التي أسالها الله لسليمان بحسب سورة سبأ؟",
-      "a": "عين القطر",
-      "sourceUrl": "https://quran.com/saba/12",
-      "verified": true,
-      "qid": "prophets-800-905",
-      "difficultyTarget": 0.25
-    },
-    {
-      "p": 800,
+      "p": 600,
       "topic": "عيسى ومريم",
       "q": "بم وصف القرآن ابن زكريا في البشارة: سيدًا و...؟",
       "a": "حصورًا",
@@ -318,11 +239,11 @@
       ],
       "sourceUrl": "https://quran.com/ali-imran/39",
       "verified": true,
-      "qid": "prophets-800-906",
-      "difficultyTarget": 0.25
+      "qid": "prophets-600-916",
+      "difficultyTarget": 0.4
     },
     {
-      "p": 800,
+      "p": 600,
       "topic": "هود وصالح وشعيب",
       "q": "كم رجلًا كان في المدينة يفسدون في قصة صالح؟",
       "a": "تسعة رهط",
@@ -331,7 +252,31 @@
       ],
       "sourceUrl": "https://quran.com/an-naml/48",
       "verified": true,
-      "qid": "prophets-800-907",
+      "qid": "prophets-600-917",
+      "difficultyTarget": 0.4
+    },
+    {
+      "p": 600,
+      "topic": "يوسف وإخوته",
+      "q": "ماذا حدث لعيني يعقوب من الحزن كما تذكر سورة يوسف؟",
+      "a": "ابيضّتا من الحزن",
+      "alt": [
+        "ابيضت عيناه",
+        "ابيضتا من الحزن"
+      ],
+      "sourceUrl": "https://quran.com/yusuf/84",
+      "verified": true,
+      "qid": "prophets-600-918",
+      "difficultyTarget": 0.4
+    },
+    {
+      "p": 800,
+      "topic": "داود وسليمان",
+      "q": "ما العين التي أسالها الله لسليمان بحسب سورة سبأ؟",
+      "a": "عين القطر",
+      "sourceUrl": "https://quran.com/saba/12",
+      "verified": true,
+      "qid": "prophets-800-911",
       "difficultyTarget": 0.25
     },
     {
@@ -345,11 +290,11 @@
       ],
       "sourceUrl": "https://quran.com/sad/44",
       "verified": true,
-      "qid": "prophets-800-908",
+      "qid": "prophets-800-912",
       "difficultyTarget": 0.25
     },
     {
-      "p": 1000,
+      "p": 800,
       "topic": "آدم ونوح",
       "q": "ما الصفة التي نفاها نص آية العهد عن آدم بقوله: ولم نجد له...؟",
       "a": "عزمًا",
@@ -359,11 +304,11 @@
       ],
       "sourceUrl": "https://quran.com/taha/115",
       "verified": true,
-      "qid": "prophets-1000-901",
-      "difficultyTarget": 0.15
+      "qid": "prophets-800-913",
+      "difficultyTarget": 0.25
     },
     {
-      "p": 1000,
+      "p": 800,
       "topic": "إبراهيم وآله",
       "q": "بم وصف الله إبراهيم في سورة النحل: إن إبراهيم كان...؟",
       "a": "أمة قانتًا لله",
@@ -372,35 +317,21 @@
       ],
       "sourceUrl": "https://quran.com/an-nahl/120",
       "verified": true,
-      "qid": "prophets-1000-902",
-      "difficultyTarget": 0.15
+      "qid": "prophets-800-914",
+      "difficultyTarget": 0.25
     },
     {
-      "p": 1000,
-      "topic": "يوسف وإخوته",
-      "q": "ماذا حدث لعيني يعقوب من الحزن كما تذكر سورة يوسف؟",
-      "a": "ابيضّتا من الحزن",
-      "alt": [
-        "ابيضت عيناه",
-        "ابيضتا من الحزن"
-      ],
-      "sourceUrl": "https://quran.com/yusuf/84",
-      "verified": true,
-      "qid": "prophets-1000-903",
-      "difficultyTarget": 0.15
-    },
-    {
-      "p": 1000,
+      "p": 800,
       "topic": "موسى وهارون",
       "q": "في أي يوم واعد موسى سحرة فرعون أن يلتقوا؟",
       "a": "يوم الزينة",
       "sourceUrl": "https://quran.com/taha/59",
       "verified": true,
-      "qid": "prophets-1000-904",
-      "difficultyTarget": 0.15
+      "qid": "prophets-800-915",
+      "difficultyTarget": 0.25
     },
     {
-      "p": 1000,
+      "p": 800,
       "topic": "داود وسليمان",
       "q": "على أي شيء كان سليمان متكئًا حين توفّاه الله؟",
       "a": "منسأته",
@@ -409,24 +340,11 @@
       ],
       "sourceUrl": "https://quran.com/saba/14",
       "verified": true,
-      "qid": "prophets-1000-905",
-      "difficultyTarget": 0.15
+      "qid": "prophets-800-916",
+      "difficultyTarget": 0.25
     },
     {
-      "p": 1000,
-      "topic": "عيسى ومريم",
-      "q": "إلى أي مكان آوى الله عيسى وأمه كما ذكر القرآن؟",
-      "a": "ربوة ذات قرار ومعين",
-      "alt": [
-        "ربوة"
-      ],
-      "sourceUrl": "https://quran.com/al-muminun/50",
-      "verified": true,
-      "qid": "prophets-1000-906",
-      "difficultyTarget": 0.15
-    },
-    {
-      "p": 1000,
+      "p": 800,
       "topic": "هود وصالح وشعيب",
       "q": "بم شبه القرآن ما تصيبه ريح عاد في سورة الذاريات؟",
       "a": "الرميم",
@@ -435,20 +353,124 @@
       ],
       "sourceUrl": "https://quran.com/adh-dhariyat/42",
       "verified": true,
-      "qid": "prophets-1000-907",
+      "qid": "prophets-800-917",
+      "difficultyTarget": 0.25
+    },
+    {
+      "q": "من النبي الذي قال لقومه «أتدعون بعلا وتذرون أحسن الخالقين»؟",
+      "a": "إلياس",
+      "topic": "أنبياء آخرون",
+      "sourceUrl": "https://quran.com/37/125",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 800,
+      "qid": "prophets-800-918",
+      "difficultyTarget": 0.25
+    },
+    {
+      "p": 1000,
+      "topic": "عيسى ومريم",
+      "q": "كيف وُصف الموضع الذي آوى الله إليه ابن مريم وأمه في سورة المؤمنون؟",
+      "a": "ربوة ذات قرار ومعين",
+      "alt": [
+        "ربوة"
+      ],
+      "sourceUrl": "https://quran.com/al-muminun/50",
+      "verified": true,
+      "qid": "prophets-1000-911",
       "difficultyTarget": 0.15
     },
     {
       "p": 1000,
       "topic": "أنبياء آخرون",
-      "q": "كيف وصف القرآن حال يونس حين نُبذ بالعراء؟",
+      "q": "ما الوصف القرآني الذي تختم به آية «فنبذناه بالعراء» في قصة يونس؟",
       "a": "سقيم",
       "alt": [
         "وهو سقيم"
       ],
       "sourceUrl": "https://quran.com/as-saffat/145",
       "verified": true,
-      "qid": "prophets-1000-908",
+      "qid": "prophets-1000-912",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "بم وصف إبراهيم الوادي الذي أسكن فيه بعض ذريته عند البيت المحرم؟",
+      "a": "غير ذي زرع",
+      "topic": "إبراهيم وآله",
+      "sourceUrl": "https://quran.com/14/37",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 1000,
+      "qid": "prophets-1000-913",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "ماذا رأى أحد صاحبي يوسف في السجن أنه يعصر في منامه؟",
+      "a": "خمرًا",
+      "topic": "يوسف وإخوته",
+      "sourceUrl": "https://quran.com/12/36",
+      "alt": [
+        "خمر"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 1000,
+      "qid": "prophets-1000-914",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "ما الذي كانت تفعله جماعة الناس عند ماء مدين حين وصل موسى؟",
+      "a": "يسقون",
+      "topic": "موسى وهارون",
+      "sourceUrl": "https://quran.com/28/23",
+      "alt": [
+        "سقي الماشية",
+        "يسقون ماشيتهم"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 1000,
+      "qid": "prophets-1000-915",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "ما الكلمة التي وردت بعد «وقدر في» في الأمر الموجه إلى داود بصناعة السابغات؟",
+      "a": "السرد",
+      "topic": "داود وسليمان",
+      "sourceUrl": "https://quran.com/34/11",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 1000,
+      "qid": "prophets-1000-916",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "ما الوصف الذي تمنته مريم لنفسها بعد قولها «يا ليتني مت قبل هذا»؟",
+      "a": "نسيًا منسيًا",
+      "topic": "عيسى ومريم",
+      "sourceUrl": "https://quran.com/19/23",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 1000,
+      "qid": "prophets-1000-917",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "بأي وصف نعتت سورة القمر الريح التي أرسلت على عاد؟",
+      "a": "صرصرًا",
+      "topic": "هود وصالح وشعيب",
+      "sourceUrl": "https://quran.com/54/19",
+      "alt": [
+        "صرصر"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 1000,
+      "qid": "prophets-1000-918",
       "difficultyTarget": 0.15
     }
   ]

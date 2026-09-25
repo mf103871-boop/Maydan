@@ -4,118 +4,123 @@
   "icon": "🗣️",
   "qs": [
     {
-      "qid": "dialects-200-901",
+      "qid": "dialects-200-911",
       "p": 200,
-      "q": "ما معنى التحية المصرية «إزيك»؟",
-      "a": "كيف حالك",
+      "q": "أي عدد تعنيه كلمة «جوج» في الدارجة المغربية؟",
+      "a": "اثنان",
+      "topic": "الوقت والعدد",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://files.peacecorps.gov/multimedia/audio/languagelessons/morocco/MO_Arabic_Language_Lessons.pdf",
+      "alt": [
+        "اثنين",
+        "2",
+        "٢"
+      ]
+    },
+    {
+      "qid": "dialects-200-912",
+      "p": 200,
+      "q": "ما معنى «عافاك» في طلب مغربي مثل «عطيني الماء عافاك»؟",
+      "a": "من فضلك",
       "topic": "التواصل",
       "verified": true,
       "difficultyTarget": 0.8,
-      "sourceUrl": "https://resources.lingualism.com/egyptian-arabic/100-essential-egyptian-arabic-phrases-for-everyday-conversation/",
+      "sourceUrl": "https://files.peacecorps.gov/multimedia/audio/languagelessons/morocco/MO_Arabic_Language_Lessons.pdf",
       "alt": [
-        "كيف أنت",
-        "كيف أحوالك"
+        "لو سمحت",
+        "رجاء"
       ]
     },
     {
-      "qid": "dialects-200-902",
+      "qid": "dialects-200-913",
       "p": 200,
-      "q": "ما معنى «دلوقتي» في الكلام المصري؟",
-      "a": "الآن",
-      "topic": "الوقت والعدد",
-      "verified": true,
-      "difficultyTarget": 0.8,
-      "sourceUrl": "https://resources.lingualism.com/egyptian-arabic/100-essential-egyptian-arabic-phrases-for-everyday-conversation/",
-      "alt": [
-        "حاليا",
-        "في الوقت الحالي"
-      ]
-    },
-    {
-      "qid": "dialects-200-903",
-      "p": 200,
-      "q": "ما معنى «عايز» عندما يقول مصري: أنا عايز أروح؟",
-      "a": "أريد",
-      "topic": "الأفعال والأنشطة",
-      "verified": true,
-      "difficultyTarget": 0.8,
-      "sourceUrl": "https://resources.lingualism.com/egyptian-arabic/100-essential-egyptian-arabic-phrases-for-everyday-conversation/",
-      "alt": [
-        "أرغب"
-      ]
-    },
-    {
-      "qid": "dialects-200-904",
-      "p": 200,
-      "q": "ما معنى «أوضة» في اللهجة المصرية؟",
-      "a": "غرفة",
-      "topic": "البيت والأدوات",
-      "verified": true,
-      "difficultyTarget": 0.8,
-      "sourceUrl": "https://resources.lingualism.com/egyptian-arabic/the-house/",
-      "alt": [
-        "الغرفة",
-        "حجرة"
-      ]
-    },
-    {
-      "qid": "dialects-200-905",
-      "p": 200,
-      "q": "ما معنى «مبسوط» عند وصف المشاعر باللهجة المصرية؟",
-      "a": "سعيد",
+      "q": "ما معنى «بنينة» عندما يصف مغربي وجبة طعام؟",
+      "a": "لذيذة",
       "topic": "الصفات والأحوال",
       "verified": true,
       "difficultyTarget": 0.8,
-      "sourceUrl": "https://resources.lingualism.com/egyptian-arabic/100-essential-egyptian-arabic-phrases-for-everyday-conversation/",
+      "sourceUrl": "https://files.peacecorps.gov/multimedia/audio/languagelessons/morocco/MO_Arabic_Language_Lessons.pdf",
       "alt": [
-        "فرح",
-        "مسرور"
+        "شهية",
+        "طيبة المذاق",
+        "لذيذ"
       ]
     },
     {
-      "qid": "dialects-200-906",
+      "qid": "dialects-200-914",
       "p": 200,
-      "q": "ما المقصود بـ«مخدّة» في اللهجة الفلسطينية؟",
-      "a": "الوسادة",
+      "q": "ما معنى «وايد» في العبارة الإماراتية «وايد طويل»؟",
+      "a": "جدًا",
+      "topic": "الصفات والأحوال",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://alramsa.ae/wp-content/uploads/2025/09/Emirati-Arabic-Beginner-level-A3-Al-Ramsa-Sample-Book.pdf",
+      "alt": [
+        "كثيرا",
+        "للغاية"
+      ]
+    },
+    {
+      "qid": "dialects-200-915",
+      "p": 200,
+      "q": "ماذا يطلب المتحدث الإماراتي بقوله «عطني الزبدة» أثناء حديث طويل؟",
+      "a": "أعطني الخلاصة",
+      "topic": "التواصل",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://alramsa.ae/wp-content/uploads/2025/09/Emirati-Arabic-Beginner-level-A3-Al-Ramsa-Sample-Book.pdf",
+      "alt": [
+        "اختصر",
+        "ادخل في صلب الموضوع",
+        "قل المهم"
+      ]
+    },
+    {
+      "qid": "dialects-200-916",
+      "p": 200,
+      "q": "ما المقصود بـ«طَشّة» حين يقترح فلسطيني الخروج مع أصحابه؟",
+      "a": "نزهة",
+      "topic": "الأفعال والأنشطة",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://sites.google.com/nyu.edu/palestine-lexicon/download",
+      "alt": [
+        "طلعة",
+        "رحلة للتنزه"
+      ]
+    },
+    {
+      "qid": "dialects-200-917",
+      "p": 200,
+      "q": "ما معنى «خوت» في الدارجة المغربية عند الحديث عن العائلة؟",
+      "a": "الإخوة",
+      "topic": "الأسرة",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://files.peacecorps.gov/multimedia/audio/languagelessons/morocco/MO_Arabic_Language_Lessons.pdf",
+      "alt": [
+        "الإخوة والأخوات",
+        "الأشقاء"
+      ]
+    },
+    {
+      "q": "ما «الشيش» في أجزاء البيت باللهجة المصرية؟",
+      "a": "مصاريع النوافذ",
+      "alt": [
+        "درف النوافذ",
+        "أغطية النوافذ الخارجية",
+        "مصاريع خشبية للنوافذ"
+      ],
       "topic": "البيت والأدوات",
       "verified": true,
-      "difficultyTarget": 0.8,
-      "sourceUrl": "https://drive.google.com/uc?id=1prIUi6nw9DHVkvBx0YiVcm6aQYYfqXLy&export=download",
-      "alt": [
-        "وسادة"
-      ]
-    },
-    {
-      "qid": "dialects-200-907",
+      "sourceUrl": "https://resources.lingualism.com/egyptian-arabic/the-house/",
       "p": 200,
-      "q": "ما معنى «إمبارح» في اللهجة المصرية؟",
-      "a": "أمس",
-      "topic": "الوقت والعدد",
-      "verified": true,
-      "difficultyTarget": 0.8,
-      "sourceUrl": "https://resources.lingualism.com/egyptian-arabic/100-essential-egyptian-arabic-phrases-for-everyday-conversation/",
-      "alt": [
-        "البارحة",
-        "اليوم السابق"
-      ]
+      "qid": "dialects-200-918",
+      "difficultyTarget": 0.8
     },
     {
-      "qid": "dialects-200-908",
-      "p": 200,
-      "q": "ما معنى «مصاري» في اللهجة الفلسطينية؟",
-      "a": "النقود",
-      "topic": "المال والعمل",
-      "verified": true,
-      "difficultyTarget": 0.8,
-      "sourceUrl": "https://drive.google.com/uc?id=1prIUi6nw9DHVkvBx0YiVcm6aQYYfqXLy&export=download",
-      "alt": [
-        "المال",
-        "فلوس",
-        "الأموال"
-      ]
-    },
-    {
-      "qid": "dialects-400-901",
+      "qid": "dialects-400-911",
       "p": 400,
       "q": "ما المشروب الذي يُسمّى «أتاي» في الدارجة المغربية؟",
       "a": "الشاي",
@@ -128,140 +133,39 @@
       ]
     },
     {
-      "qid": "dialects-400-902",
+      "qid": "dialects-400-912",
       "p": 400,
-      "q": "أي عدد تعنيه كلمة «جوج» في الدارجة المغربية؟",
-      "a": "اثنان",
-      "topic": "الوقت والعدد",
-      "verified": true,
-      "difficultyTarget": 0.6,
-      "sourceUrl": "https://files.peacecorps.gov/multimedia/audio/languagelessons/morocco/MO_Arabic_Language_Lessons.pdf",
-      "alt": [
-        "اثنين",
-        "2",
-        "٢"
-      ]
-    },
-    {
-      "qid": "dialects-400-903",
-      "p": 400,
-      "q": "ما معنى «عافاك» في طلب مغربي مثل «عطيني الماء عافاك»؟",
-      "a": "من فضلك",
-      "topic": "التواصل",
-      "verified": true,
-      "difficultyTarget": 0.6,
-      "sourceUrl": "https://files.peacecorps.gov/multimedia/audio/languagelessons/morocco/MO_Arabic_Language_Lessons.pdf",
-      "alt": [
-        "لو سمحت",
-        "رجاء"
-      ]
-    },
-    {
-      "qid": "dialects-400-904",
-      "p": 400,
-      "q": "ما المقصود بـ«طَشّة» حين يقترح فلسطيني الخروج مع أصحابه؟",
-      "a": "نزهة",
-      "topic": "الأفعال والأنشطة",
-      "verified": true,
-      "difficultyTarget": 0.6,
-      "sourceUrl": "https://drive.google.com/uc?id=1prIUi6nw9DHVkvBx0YiVcm6aQYYfqXLy&export=download",
-      "alt": [
-        "طلعة",
-        "رحلة للتنزه"
-      ]
-    },
-    {
-      "qid": "dialects-400-905",
-      "p": 400,
-      "q": "ما معنى «بنينة» عندما يصف مغربي وجبة طعام؟",
-      "a": "لذيذة",
-      "topic": "الصفات والأحوال",
-      "verified": true,
-      "difficultyTarget": 0.6,
-      "sourceUrl": "https://files.peacecorps.gov/multimedia/audio/languagelessons/morocco/MO_Arabic_Language_Lessons.pdf",
-      "alt": [
-        "شهية",
-        "طيبة المذاق",
-        "لذيذ"
-      ]
-    },
-    {
-      "qid": "dialects-400-906",
-      "p": 400,
-      "q": "ما معنى «وايد» في العبارة الإماراتية «وايد طويل»؟",
-      "a": "جدًا",
-      "topic": "الصفات والأحوال",
-      "verified": true,
-      "difficultyTarget": 0.6,
-      "sourceUrl": "https://alramsa.ae/wp-content/uploads/2025/09/Emirati-Arabic-Beginner-level-A3-Al-Ramsa-Sample-Book.pdf",
-      "alt": [
-        "كثيرا",
-        "للغاية"
-      ]
-    },
-    {
-      "qid": "dialects-400-907",
-      "p": 400,
-      "q": "ماذا يطلب المتحدث الإماراتي بقوله «عطني الزبدة» أثناء حديث طويل؟",
-      "a": "أعطني الخلاصة",
-      "topic": "التواصل",
-      "verified": true,
-      "difficultyTarget": 0.6,
-      "sourceUrl": "https://alramsa.ae/wp-content/uploads/2025/09/Emirati-Arabic-Beginner-level-A3-Al-Ramsa-Sample-Book.pdf",
-      "alt": [
-        "اختصر",
-        "ادخل في صلب الموضوع",
-        "قل المهم"
-      ]
-    },
-    {
-      "qid": "dialects-400-908",
-      "p": 400,
-      "q": "ما معنى «طرابيزة» في اللهجة المصرية؟",
-      "a": "الطاولة",
-      "topic": "البيت والأدوات",
-      "verified": true,
-      "difficultyTarget": 0.6,
-      "sourceUrl": "https://resources.lingualism.com/egyptian-arabic/the-house/",
-      "alt": [
-        "طاولة",
-        "منضدة"
-      ]
-    },
-    {
-      "qid": "dialects-600-901",
-      "p": 600,
       "q": "أي خضار يُسمّى «خيزو» في الدارجة المغربية؟",
       "a": "الجزر",
       "topic": "الطعام والنباتات",
       "verified": true,
-      "difficultyTarget": 0.4,
+      "difficultyTarget": 0.6,
       "sourceUrl": "https://files.eric.ed.gov/fulltext/ED353812.pdf",
       "alt": [
         "جزر"
       ]
     },
     {
-      "qid": "dialects-600-902",
-      "p": 600,
+      "qid": "dialects-400-913",
+      "p": 400,
       "q": "ما معنى «شحال» في السؤال المغربي «شحال من أخت عندك»؟",
       "a": "كم",
       "topic": "التواصل",
       "verified": true,
-      "difficultyTarget": 0.4,
+      "difficultyTarget": 0.6,
       "sourceUrl": "https://files.peacecorps.gov/multimedia/audio/languagelessons/morocco/MO_Arabic_Language_Lessons.pdf",
       "alt": [
         "ما العدد"
       ]
     },
     {
-      "qid": "dialects-600-903",
-      "p": 600,
+      "qid": "dialects-400-914",
+      "p": 400,
       "q": "ما معنى «معاش» في مفردات العمل باللهجة الإماراتية؟",
       "a": "الراتب",
       "topic": "المال والعمل",
       "verified": true,
-      "difficultyTarget": 0.4,
+      "difficultyTarget": 0.6,
       "sourceUrl": "https://alramsa.ae/wp-content/uploads/2025/09/Emirati-Arabic-Beginner-level-A3-Al-Ramsa-Sample-Book.pdf",
       "alt": [
         "راتب",
@@ -269,7 +173,89 @@
       ]
     },
     {
-      "qid": "dialects-600-904",
+      "qid": "dialects-400-915",
+      "p": 400,
+      "q": "ما المقصود بـ«الطابون» المستخدم للخبز في الريف الفلسطيني؟",
+      "a": "فرن طيني",
+      "topic": "البيت والأدوات",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://sites.google.com/nyu.edu/palestine-lexicon/download",
+      "alt": [
+        "فرن من الطين",
+        "الفرن الطيني"
+      ]
+    },
+    {
+      "qid": "dialects-400-916",
+      "p": 400,
+      "q": "ما معنى «عيّان» في العبارة المغربية «أنا عيان» عند طلب الراحة؟",
+      "a": "متعب",
+      "topic": "الصفات والأحوال",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://files.peacecorps.gov/multimedia/audio/languagelessons/morocco/MO_Arabic_Language_Lessons.pdf",
+      "alt": [
+        "مرهق",
+        "تعبان"
+      ]
+    },
+    {
+      "qid": "dialects-400-917",
+      "p": 400,
+      "q": "ما مقدار «كَمْشة» من المكسرات في اللهجة الفلسطينية؟",
+      "a": "ملء اليد",
+      "topic": "الوقت والعدد",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://sites.google.com/nyu.edu/palestine-lexicon/download",
+      "alt": [
+        "حفنة",
+        "قبضة يد"
+      ]
+    },
+    {
+      "qid": "dialects-400-918",
+      "p": 400,
+      "q": "ما المقصود بـ«برّاد» عند تقديم المشروبات في الدارجة المغربية؟",
+      "a": "إبريق الشاي",
+      "topic": "البيت والأدوات",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://files.eric.ed.gov/fulltext/ED353812.pdf",
+      "alt": [
+        "براد الشاي",
+        "إبريق لتحضير الشاي"
+      ]
+    },
+    {
+      "qid": "dialects-600-911",
+      "p": 600,
+      "q": "ما البهار الذي يُسمّى «الخرقوم» في الدارجة المغربية؟",
+      "a": "الكركم",
+      "topic": "الطعام والنباتات",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://files.eric.ed.gov/fulltext/ED353812.pdf",
+      "alt": [
+        "كركم"
+      ]
+    },
+    {
+      "qid": "dialects-600-912",
+      "p": 600,
+      "q": "أي فاكهة تُسمّى «حب الملوك» في الدارجة المغربية؟",
+      "a": "الكرز",
+      "topic": "الطعام والنباتات",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://files.eric.ed.gov/fulltext/ED353812.pdf",
+      "alt": [
+        "كرز"
+      ]
+    },
+    {
+      "qid": "dialects-600-913",
       "p": 600,
       "q": "ما «الكومودينو» في أسماء أثاث النوم المصرية؟",
       "a": "منضدة بجانب السرير",
@@ -283,136 +269,40 @@
       ]
     },
     {
-      "qid": "dialects-600-905",
+      "qid": "dialects-600-914",
       "p": 600,
-      "q": "ما المقصود بـ«الطابون» المستخدم للخبز في الريف الفلسطيني؟",
-      "a": "فرن طيني",
-      "topic": "البيت والأدوات",
-      "verified": true,
-      "difficultyTarget": 0.4,
-      "sourceUrl": "https://drive.google.com/uc?id=1prIUi6nw9DHVkvBx0YiVcm6aQYYfqXLy&export=download",
-      "alt": [
-        "فرن من الطين",
-        "الفرن الطيني"
-      ]
-    },
-    {
-      "qid": "dialects-600-906",
-      "p": 600,
-      "q": "ما معنى «خوت» في الدارجة المغربية عند الحديث عن العائلة؟",
-      "a": "الإخوة",
-      "topic": "الأسرة",
-      "verified": true,
-      "difficultyTarget": 0.4,
-      "sourceUrl": "https://files.peacecorps.gov/multimedia/audio/languagelessons/morocco/MO_Arabic_Language_Lessons.pdf",
-      "alt": [
-        "الإخوة والأخوات",
-        "الأشقاء"
-      ]
-    },
-    {
-      "qid": "dialects-600-907",
-      "p": 600,
-      "q": "ما معنى «عيّان» في العبارة المغربية «أنا عيان» عند طلب الراحة؟",
-      "a": "متعب",
-      "topic": "الصفات والأحوال",
-      "verified": true,
-      "difficultyTarget": 0.4,
-      "sourceUrl": "https://files.peacecorps.gov/multimedia/audio/languagelessons/morocco/MO_Arabic_Language_Lessons.pdf",
-      "alt": [
-        "مرهق",
-        "تعبان"
-      ]
-    },
-    {
-      "qid": "dialects-600-908",
-      "p": 600,
-      "q": "ما مقدار «كَمْشة» من المكسرات في اللهجة الفلسطينية؟",
-      "a": "ملء اليد",
-      "topic": "الوقت والعدد",
-      "verified": true,
-      "difficultyTarget": 0.4,
-      "sourceUrl": "https://drive.google.com/uc?id=1prIUi6nw9DHVkvBx0YiVcm6aQYYfqXLy&export=download",
-      "alt": [
-        "حفنة",
-        "قبضة يد"
-      ]
-    },
-    {
-      "qid": "dialects-800-901",
-      "p": 800,
-      "q": "ما البهار الذي يُسمّى «الخرقوم» في الدارجة المغربية؟",
-      "a": "الكركم",
-      "topic": "الطعام والنباتات",
-      "verified": true,
-      "difficultyTarget": 0.25,
-      "sourceUrl": "https://files.eric.ed.gov/fulltext/ED353812.pdf",
-      "alt": [
-        "كركم"
-      ]
-    },
-    {
-      "qid": "dialects-800-902",
-      "p": 800,
-      "q": "أي فاكهة تُسمّى «حب الملوك» في الدارجة المغربية؟",
-      "a": "الكرز",
-      "topic": "الطعام والنباتات",
-      "verified": true,
-      "difficultyTarget": 0.25,
-      "sourceUrl": "https://files.eric.ed.gov/fulltext/ED353812.pdf",
-      "alt": [
-        "كرز"
-      ]
-    },
-    {
-      "qid": "dialects-800-903",
-      "p": 800,
-      "q": "ما اسم البحّار المسؤول عن سحب غوّاص اللؤلؤ بالحبل في المصطلحات الإماراتية؟",
-      "a": "السيب",
-      "topic": "مصطلحات البحر",
-      "verified": true,
-      "difficultyTarget": 0.25,
-      "sourceUrl": "https://abudhabiculture.ae/ar/cultural-heritage/intangible/heritage-register/traditional-handicraft/pearl-diving",
-      "alt": [
-        "سيب"
-      ]
-    },
-    {
-      "qid": "dialects-800-904",
-      "p": 800,
-      "q": "ما المقصود بـ«برّاد» عند تقديم أتاي في الدارجة المغربية؟",
-      "a": "إبريق الشاي",
-      "topic": "البيت والأدوات",
-      "verified": true,
-      "difficultyTarget": 0.25,
-      "sourceUrl": "https://files.eric.ed.gov/fulltext/ED353812.pdf",
-      "alt": [
-        "براد الشاي",
-        "إبريق لتحضير الشاي"
-      ]
-    },
-    {
-      "qid": "dialects-800-905",
-      "p": 800,
       "q": "ما «النملية» في أثاث المطبخ الفلسطيني القديم؟",
       "a": "خزانة لحفظ الطعام",
       "topic": "البيت والأدوات",
       "verified": true,
-      "difficultyTarget": 0.25,
-      "sourceUrl": "https://drive.google.com/uc?id=1prIUi6nw9DHVkvBx0YiVcm6aQYYfqXLy&export=download",
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://sites.google.com/nyu.edu/palestine-lexicon/download",
       "alt": [
         "خزانة الطعام",
         "دولاب لحفظ الطعام"
       ]
     },
     {
-      "qid": "dialects-800-906",
-      "p": 800,
+      "qid": "dialects-600-915",
+      "p": 600,
+      "q": "ما اسم البحّار المسؤول عن سحب غوّاص اللؤلؤ بالحبل في المصطلحات الإماراتية؟",
+      "a": "السيب",
+      "topic": "مصطلحات البحر",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://abudhabiculture.ae/ar/cultural-heritage/intangible/heritage-register/traditional-handicraft/pearl-diving",
+      "alt": [
+        "سيب"
+      ]
+    },
+    {
+      "qid": "dialects-600-916",
+      "p": 600,
       "q": "ما معنى «نيشان» في العبارة المغربية عن الساعة «هدي الوحدة نيشان»؟",
       "a": "بالضبط",
       "topic": "الوقت والعدد",
       "verified": true,
-      "difficultyTarget": 0.25,
+      "difficultyTarget": 0.4,
       "sourceUrl": "https://files.peacecorps.gov/multimedia/audio/languagelessons/morocco/MO_Arabic_Language_Lessons.pdf",
       "alt": [
         "تماما",
@@ -420,13 +310,13 @@
       ]
     },
     {
-      "qid": "dialects-800-907",
-      "p": 800,
+      "qid": "dialects-600-917",
+      "p": 600,
       "q": "ما صلة القرابة التي تدل عليها كلمة «نساب» في الدارجة المغربية؟",
       "a": "الأصهار",
       "topic": "الأسرة",
       "verified": true,
-      "difficultyTarget": 0.25,
+      "difficultyTarget": 0.4,
       "sourceUrl": "https://files.peacecorps.gov/multimedia/audio/languagelessons/morocco/MO_Arabic_Language_Lessons.pdf",
       "alt": [
         "أقارب بالمصاهرة",
@@ -434,27 +324,27 @@
       ]
     },
     {
-      "qid": "dialects-800-908",
-      "p": 800,
+      "qid": "dialects-600-918",
+      "p": 600,
       "q": "ما المقصود بـ«شختورة» في قول فلسطيني «ركبنا الشختورة في البحر»؟",
       "a": "قارب",
       "topic": "مصطلحات البحر",
       "verified": true,
-      "difficultyTarget": 0.25,
-      "sourceUrl": "https://drive.google.com/uc?id=1prIUi6nw9DHVkvBx0YiVcm6aQYYfqXLy&export=download",
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://sites.google.com/nyu.edu/palestine-lexicon/download",
       "alt": [
         "زورق",
         "مركب"
       ]
     },
     {
-      "qid": "dialects-1000-901",
-      "p": 1000,
+      "qid": "dialects-800-911",
+      "p": 800,
       "q": "كم دقيقة تعني «قصم» عند قراءة الساعة بالدارجة المغربية؟",
       "a": "خمس دقائق",
       "topic": "الوقت والعدد",
       "verified": true,
-      "difficultyTarget": 0.15,
+      "difficultyTarget": 0.25,
       "sourceUrl": "https://files.peacecorps.gov/multimedia/audio/languagelessons/morocco/MO_Arabic_Language_Lessons.pdf",
       "alt": [
         "5 دقائق",
@@ -462,13 +352,13 @@
       ]
     },
     {
-      "qid": "dialects-1000-902",
-      "p": 1000,
+      "qid": "dialects-800-912",
+      "p": 800,
       "q": "أي فاكهة تُسمّى «الشهدية» في الدارجة المغربية؟",
       "a": "النكتارين",
       "topic": "الطعام والنباتات",
       "verified": true,
-      "difficultyTarget": 0.15,
+      "difficultyTarget": 0.25,
       "sourceUrl": "https://files.eric.ed.gov/fulltext/ED353812.pdf",
       "alt": [
         "نكتارين",
@@ -477,39 +367,39 @@
       ]
     },
     {
-      "qid": "dialects-1000-903",
-      "p": 1000,
+      "qid": "dialects-800-913",
+      "p": 800,
       "q": "ما اسم مشبك الأنف الذي يستعمله غوّاص اللؤلؤ في المصطلحات الإماراتية؟",
       "a": "الفطام",
       "topic": "مصطلحات البحر",
       "verified": true,
-      "difficultyTarget": 0.15,
+      "difficultyTarget": 0.25,
       "sourceUrl": "https://abudhabiculture.ae/ar/cultural-heritage/intangible/heritage-register/traditional-handicraft/pearl-diving",
       "alt": [
         "فطام"
       ]
     },
     {
-      "qid": "dialects-1000-904",
-      "p": 1000,
+      "qid": "dialects-800-914",
+      "p": 800,
       "q": "ما اسم السلة الشبكية التي يعلّقها غوّاص اللؤلؤ لجمع المحار في المصطلحات الإماراتية؟",
       "a": "الديين",
       "topic": "مصطلحات البحر",
       "verified": true,
-      "difficultyTarget": 0.15,
+      "difficultyTarget": 0.25,
       "sourceUrl": "https://abudhabiculture.ae/ar/cultural-heritage/intangible/heritage-register/traditional-handicraft/pearl-diving",
       "alt": [
         "ديين"
       ]
     },
     {
-      "qid": "dialects-1000-905",
-      "p": 1000,
+      "qid": "dialects-800-915",
+      "p": 800,
       "q": "ما «الكسكاس» في أدوات الطبخ المغربية؟",
       "a": "إناء مثقب لتبخير الكسكس",
       "topic": "البيت والأدوات",
       "verified": true,
-      "difficultyTarget": 0.15,
+      "difficultyTarget": 0.25,
       "sourceUrl": "https://files.eric.ed.gov/fulltext/ED353812.pdf",
       "alt": [
         "وعاء مثقب لطهو الكسكس بالبخار",
@@ -517,27 +407,27 @@
       ]
     },
     {
-      "qid": "dialects-1000-906",
-      "p": 1000,
+      "qid": "dialects-800-916",
+      "p": 800,
       "q": "ما المسكن الذي يُسمّى «خربوش» في اللهجة الفلسطينية؟",
       "a": "خيمة صغيرة",
       "topic": "البيت والأدوات",
       "verified": true,
-      "difficultyTarget": 0.15,
-      "sourceUrl": "https://drive.google.com/uc?id=1prIUi6nw9DHVkvBx0YiVcm6aQYYfqXLy&export=download",
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://sites.google.com/nyu.edu/palestine-lexicon/download",
       "alt": [
         "خيمة من الخيش",
         "الخيمة الصغيرة"
       ]
     },
     {
-      "qid": "dialects-1000-907",
-      "p": 1000,
+      "qid": "dialects-800-917",
+      "p": 800,
       "q": "ما «المضمة» في اللباس المغربي التقليدي؟",
       "a": "حزام نسائي مطرز",
       "topic": "الملابس",
       "verified": true,
-      "difficultyTarget": 0.15,
+      "difficultyTarget": 0.25,
       "sourceUrl": "https://files.eric.ed.gov/fulltext/ED353812.pdf",
       "alt": [
         "حزام المرأة",
@@ -545,18 +435,130 @@
       ]
     },
     {
-      "qid": "dialects-1000-908",
-      "p": 1000,
+      "qid": "dialects-800-918",
+      "p": 800,
       "q": "ما المقصود بـ«مكنونة» عند مربي الدجاج في الريف الفلسطيني؟",
       "a": "بيضة لإرشاد الدجاج لموضع البيض",
       "topic": "الطعام والنباتات",
       "verified": true,
-      "difficultyTarget": 0.15,
+      "difficultyTarget": 0.25,
       "sourceUrl": "https://sites.google.com/nyu.edu/palestine-lexicon",
       "alt": [
         "بيضة لتحديد مكان وضع البيض",
         "بيضة تترك لتحديد موضع البيض"
       ]
+    },
+    {
+      "q": "ما «التشمير» في أدوات اللباس النسائي بالدارجة المغربية؟",
+      "a": "رباط لرفع أكمام الثوب",
+      "alt": [
+        "حبل لرفع الأكمام",
+        "رباط يثبت الأكمام مرفوعة"
+      ],
+      "topic": "الملابس",
+      "verified": true,
+      "sourceUrl": "https://files.eric.ed.gov/fulltext/ED353812.pdf",
+      "p": 1000,
+      "qid": "dialects-1000-911",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "ما «الوصلة» المستخدمة بين البيت والفرن في الدارجة المغربية؟",
+      "a": "لوح لحمل الخبز",
+      "alt": [
+        "لوح حمل الخبز إلى الفرن",
+        "لوح ينقل عليه الخبز"
+      ],
+      "topic": "البيت والأدوات",
+      "verified": true,
+      "sourceUrl": "https://files.eric.ed.gov/fulltext/ED353812.pdf",
+      "p": 1000,
+      "qid": "dialects-1000-912",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "ما مهنة «المواكسي» في الدارجة المغربية؟",
+      "a": "مصلح الساعات",
+      "alt": [
+        "إصلاح الساعات",
+        "مصلح ساعات اليد والحائط"
+      ],
+      "topic": "المال والعمل",
+      "verified": true,
+      "sourceUrl": "https://files.eric.ed.gov/fulltext/ED353812.pdf",
+      "p": 1000,
+      "qid": "dialects-1000-913",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "من «الكريسون» بين العاملين في النقل بالدارجة المغربية؟",
+      "a": "مساعد سائق الحافلة",
+      "alt": [
+        "مساعد السائق وحامل الأمتعة",
+        "مساعد سائق الحافلة المسؤول عن الأمتعة"
+      ],
+      "topic": "المال والعمل",
+      "verified": true,
+      "sourceUrl": "https://files.eric.ed.gov/fulltext/ED353812.pdf",
+      "p": 1000,
+      "qid": "dialects-1000-914",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "ما «القُنْبُر» الذي يوضع فوق الكعك في اللهجة الفلسطينية؟",
+      "a": "حبيبات السكر للتزيين",
+      "alt": [
+        "خرز سكري لتزيين الكعك",
+        "حبات سكر لتزيين الكيك"
+      ],
+      "topic": "الطعام والنباتات",
+      "verified": true,
+      "sourceUrl": "https://sites.google.com/nyu.edu/palestine-lexicon/download",
+      "p": 1000,
+      "qid": "dialects-1000-915",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "ما أداة «الشاقوف» عند البنّاء في اللهجة الفلسطينية؟",
+      "a": "مطرقة لتقطيع الحجر",
+      "alt": [
+        "مطرقة البناء",
+        "مطرقة لتكسير الحجر"
+      ],
+      "topic": "البيت والأدوات",
+      "verified": true,
+      "sourceUrl": "https://sites.google.com/nyu.edu/palestine-lexicon/download",
+      "p": 1000,
+      "qid": "dialects-1000-916",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "ما معنى «مِن إبرته» عندما يصف فلسطيني ثوبًا؟",
+      "a": "جديد لم يُلبس",
+      "alt": [
+        "جديد غير مستعمل",
+        "لم يلبسه أحد من قبل"
+      ],
+      "topic": "الملابس",
+      "verified": true,
+      "sourceUrl": "https://sites.google.com/nyu.edu/palestine-lexicon/download",
+      "p": 1000,
+      "qid": "dialects-1000-917",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "ما «قُرْمِيّة الشجرة» في اللهجة الفلسطينية؟",
+      "a": "جذع الشجرة وجذورها",
+      "alt": [
+        "الجذع مع الجذور",
+        "أصل الشجرة مع جذورها"
+      ],
+      "topic": "الطعام والنباتات",
+      "verified": true,
+      "sourceUrl": "https://sites.google.com/nyu.edu/palestine-lexicon/download",
+      "p": 1000,
+      "qid": "dialects-1000-918",
+      "difficultyTarget": 0.15
     }
   ]
 }

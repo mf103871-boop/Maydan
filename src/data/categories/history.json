@@ -5,116 +5,6 @@
   "qs": [
     {
       "p": 200,
-      "q": "ما اسم المقابر الحجرية الضخمة التي بناها المصريون القدماء في هضبة الجيزة؟",
-      "a": "الأهرامات",
-      "alt": [
-        "أهرامات الجيزة",
-        "أهرامات مصر"
-      ],
-      "topic": "حضارات قديمة",
-      "verified": true,
-      "qid": "history-200-901",
-      "difficultyTarget": 0.8,
-      "sourceUrl": "https://egymonuments.gov.eg/archaeological-sites/giza-plateau/"
-    },
-    {
-      "p": 200,
-      "q": "ما النهران اللذان سُمّيت بهما بلاد الرافدين؟",
-      "a": "دجلة والفرات",
-      "alt": [
-        "نهرا دجلة والفرات"
-      ],
-      "topic": "مصر وبلاد الرافدين",
-      "verified": true,
-      "qid": "history-200-902",
-      "difficultyTarget": 0.8,
-      "sourceUrl": "https://www.metmuseum.org/exhibitions/listings/2003/art-of-the-first-cities"
-    },
-    {
-      "p": 200,
-      "q": "ما اسم المدرّج الروماني الضخم الذي يقع في مدينة روما؟",
-      "a": "الكولوسيوم",
-      "alt": [
-        "الكوليزيوم",
-        "المدرّج الفلافي"
-      ],
-      "topic": "اليونان والرومان",
-      "verified": true,
-      "qid": "history-200-903",
-      "difficultyTarget": 0.8,
-      "sourceUrl": "https://colosseo.it/en/area/the-colosseum/"
-    },
-    {
-      "p": 200,
-      "q": "من الرحالة المغربي الذي جاب آسيا وأفريقيا في القرن الرابع عشر وأملى رواية رحلاته؟",
-      "a": "ابن بطوطة",
-      "alt": [
-        "محمد بن بطوطة"
-      ],
-      "topic": "العصور الوسطى",
-      "verified": true,
-      "qid": "history-200-904",
-      "difficultyTarget": 0.8,
-      "sourceUrl": "https://orias.berkeley.edu/resources-teachers/travels-ibn-battuta"
-    },
-    {
-      "p": 200,
-      "q": "من البحار الذي قاد رحلة عبر الأطلسي سنة 1492 ووصل إلى جزر الكاريبي؟",
-      "a": "كريستوفر كولومبوس",
-      "alt": [
-        "كولومبوس",
-        "كولومبس"
-      ],
-      "topic": "رحلات واكتشاف",
-      "verified": true,
-      "qid": "history-200-905",
-      "difficultyTarget": 0.8,
-      "sourceUrl": "https://www.loc.gov/exhibits/1492/columbus.html"
-    },
-    {
-      "p": 200,
-      "q": "ما اسم الجدار الذي قسم مدينة برلين وسقط عام 1989؟",
-      "a": "جدار برلين",
-      "alt": [
-        "سور برلين",
-        "حائط برلين"
-      ],
-      "topic": "حروب وثورات",
-      "verified": true,
-      "qid": "history-200-906",
-      "difficultyTarget": 0.8,
-      "sourceUrl": "https://www.berlin.de/en/history/8482274-8619314-opening-and-fall-of-the-berlin-wall.en.html"
-    },
-    {
-      "p": 200,
-      "q": "ما البرج الحديدي الباريسي الذي افتتح عام 1889؟",
-      "a": "برج إيفل",
-      "alt": [
-        "إيفل",
-        "برج آيفل"
-      ],
-      "topic": "آثار ومعالم",
-      "verified": true,
-      "qid": "history-200-907",
-      "difficultyTarget": 0.8,
-      "sourceUrl": "https://www.toureiffel.paris/en/news/history-and-culture/133-years-and-1083-feet"
-    },
-    {
-      "p": 200,
-      "q": "من رسم لوحة الموناليزا؟",
-      "a": "ليوناردو دافنشي",
-      "alt": [
-        "دافنشي",
-        "ليوناردو دا فينشي"
-      ],
-      "topic": "شخصيات تاريخية",
-      "verified": true,
-      "qid": "history-200-908",
-      "difficultyTarget": 0.8,
-      "sourceUrl": "https://www.louvre.fr/decouvrir/le-palais/de-la-joconde-aux-noces-de-cana"
-    },
-    {
-      "p": 400,
       "q": "من القائد المقدوني الذي أسقط الإمبراطورية الفارسية الأخمينية؟",
       "a": "الإسكندر الأكبر",
       "alt": [
@@ -122,12 +12,12 @@
       ],
       "topic": "حضارات قديمة",
       "verified": true,
-      "qid": "history-400-901",
-      "difficultyTarget": 0.6,
+      "qid": "history-200-911",
+      "difficultyTarget": 0.8,
       "sourceUrl": "https://www.metmuseum.org/exhibitions/listings/2016/pergamon/exhibition-galleries"
     },
     {
-      "p": 400,
+      "p": 200,
       "q": "ما اسم المدينة التي بناها الخليفة المنصور لتكون عاصمة الدولة العباسية؟",
       "a": "بغداد",
       "alt": [
@@ -136,12 +26,12 @@
       ],
       "topic": "العصور الوسطى",
       "verified": true,
-      "qid": "history-400-902",
-      "difficultyTarget": 0.6,
+      "qid": "history-200-912",
+      "difficultyTarget": 0.8,
       "sourceUrl": "https://rucforsk.ruc.dk/ws/portalfiles/portal/63367903/2018_11_03_Shanghai_International_Studies_Islamic_Scientific_Thought.pdf"
     },
     {
-      "p": 400,
+      "p": 200,
       "q": "من آخر ملكات مصر في العصر البطلمي؟",
       "a": "كليوباترا السابعة",
       "alt": [
@@ -150,12 +40,12 @@
       ],
       "topic": "مصر وبلاد الرافدين",
       "verified": true,
-      "qid": "history-400-903",
-      "difficultyTarget": 0.6,
+      "qid": "history-200-913",
+      "difficultyTarget": 0.8,
       "sourceUrl": "https://www.britishmuseum.org/collection/term/BIOG57627"
     },
     {
-      "p": 400,
+      "p": 200,
       "q": "ما اسم البركان الذي دفن مدينة بومبي القديمة؟",
       "a": "فيزوف",
       "alt": [
@@ -164,12 +54,12 @@
       ],
       "topic": "اليونان والرومان",
       "verified": true,
-      "qid": "history-400-904",
-      "difficultyTarget": 0.6,
+      "qid": "history-200-914",
+      "difficultyTarget": 0.8,
       "sourceUrl": "https://pompeiisites.org/en/pompeii-map/analysis/pompeii-after-the-eruption/"
     },
     {
-      "p": 400,
+      "p": 200,
       "q": "ما اسم المعركة التي أوقف فيها المماليك زحف المغول سنة 1260؟",
       "a": "عين جالوت",
       "alt": [
@@ -177,12 +67,12 @@
       ],
       "topic": "حروب وثورات",
       "verified": true,
-      "qid": "history-400-905",
-      "difficultyTarget": 0.6,
+      "qid": "history-200-915",
+      "difficultyTarget": 0.8,
       "sourceUrl": "https://www.metmuseum.org/essays/the-art-of-the-mamluk-period-1250-1517"
     },
     {
-      "p": 400,
+      "p": 200,
       "q": "في أي دولة يقع معبد أنغكور وات؟",
       "a": "كمبوديا",
       "alt": [
@@ -190,12 +80,12 @@
       ],
       "topic": "آثار ومعالم",
       "verified": true,
-      "qid": "history-400-906",
-      "difficultyTarget": 0.6,
+      "qid": "history-200-916",
+      "difficultyTarget": 0.8,
       "sourceUrl": "https://whc.unesco.org/en/list/668"
     },
     {
-      "p": 400,
+      "p": 200,
       "q": "ما الفن الذي ارتبطت بدايات عروضه التجارية بالأخوين لوميير في باريس سنة 1895؟",
       "a": "السينما",
       "alt": [
@@ -203,12 +93,12 @@
       ],
       "topic": "تواريخ فارقة",
       "verified": true,
-      "qid": "history-400-907",
-      "difficultyTarget": 0.6,
+      "qid": "history-200-917",
+      "difficultyTarget": 0.8,
       "sourceUrl": "https://www.institut-lumiere.org/le-cinematographe-lumiere"
     },
     {
-      "p": 400,
+      "p": 200,
       "q": "من مؤلف مسرحية «روميو وجولييت»؟",
       "a": "وليم شكسبير",
       "alt": [
@@ -217,12 +107,12 @@
       ],
       "topic": "شخصيات تاريخية",
       "verified": true,
-      "qid": "history-400-908",
-      "difficultyTarget": 0.6,
+      "qid": "history-200-918",
+      "difficultyTarget": 0.8,
       "sourceUrl": "https://www.folger.edu/explore/shakespeares-works/romeo-and-juliet/"
     },
     {
-      "p": 600,
+      "p": 400,
       "q": "ما الحضارة الأمريكية القديمة التي استخدمت تقويمي هاب وتزولكين؟",
       "a": "المايا",
       "alt": [
@@ -230,12 +120,12 @@
       ],
       "topic": "حضارات قديمة",
       "verified": true,
-      "qid": "history-600-901",
-      "difficultyTarget": 0.4,
+      "qid": "history-400-911",
+      "difficultyTarget": 0.6,
       "sourceUrl": "https://maya.nmai.si.edu/calendar/calendar-system"
     },
     {
-      "p": 600,
+      "p": 400,
       "q": "ما الملحمة البابلية الشهيرة التي حفظت نصوصها ألواح طينية من مكتبة آشوربانيبال؟",
       "a": "ملحمة جلجامش",
       "alt": [
@@ -243,12 +133,12 @@
       ],
       "topic": "مصر وبلاد الرافدين",
       "verified": true,
-      "qid": "history-600-902",
-      "difficultyTarget": 0.4,
+      "qid": "history-400-912",
+      "difficultyTarget": 0.6,
       "sourceUrl": "https://www.britishmuseum.org/collection/object/W_K-3588"
     },
     {
-      "p": 600,
+      "p": 400,
       "q": "من الشاعر الإغريقي الذي تُنسب إليه ملحمتا الإلياذة والأوديسة؟",
       "a": "هوميروس",
       "alt": [
@@ -257,12 +147,12 @@
       ],
       "topic": "اليونان والرومان",
       "verified": true,
-      "qid": "history-600-903",
-      "difficultyTarget": 0.4,
+      "qid": "history-400-913",
+      "difficultyTarget": 0.6,
       "sourceUrl": "https://searcharchives.bl.uk/catalog/032-002110325"
     },
     {
-      "p": 600,
+      "p": 400,
       "q": "ما اسم الآلة الفلكية النحاسية التي قاس بها فلكيو العصور الوسطى مواقع الأجرام؟",
       "a": "الإسطرلاب",
       "alt": [
@@ -270,12 +160,12 @@
       ],
       "topic": "العصور الوسطى",
       "verified": true,
-      "qid": "history-600-904",
-      "difficultyTarget": 0.4,
+      "qid": "history-400-914",
+      "difficultyTarget": 0.6,
       "sourceUrl": "https://www.whipplemuseum.cam.ac.uk/explore-whipple-collections/astronomy/medieval-astrolabe"
     },
     {
-      "p": 600,
+      "p": 400,
       "q": "من البحار البريطاني الذي رسم خرائط الساحل الشرقي لأستراليا في رحلته الأولى؟",
       "a": "جيمس كوك",
       "alt": [
@@ -283,12 +173,12 @@
       ],
       "topic": "رحلات واكتشاف",
       "verified": true,
-      "qid": "history-600-905",
-      "difficultyTarget": 0.4,
+      "qid": "history-400-915",
+      "difficultyTarget": 0.6,
       "sourceUrl": "https://www.rmg.co.uk/collections/objects/rmgc-object-543610"
     },
     {
-      "p": 600,
+      "p": 400,
       "q": "في أي دولة تقع تماثيل المواي الحجرية في جزيرة الفصح؟",
       "a": "تشيلي",
       "alt": [
@@ -296,12 +186,12 @@
       ],
       "topic": "آثار ومعالم",
       "verified": true,
-      "qid": "history-600-906",
-      "difficultyTarget": 0.4,
+      "qid": "history-400-916",
+      "difficultyTarget": 0.6,
       "sourceUrl": "https://whc.unesco.org/en/list/715"
     },
     {
-      "p": 600,
+      "p": 400,
       "q": "من العالم المسلم الذي ألّف كتاب المناظر في دراسة الضوء والبصر؟",
       "a": "ابن الهيثم",
       "alt": [
@@ -310,12 +200,12 @@
       ],
       "topic": "شخصيات تاريخية",
       "verified": true,
-      "qid": "history-600-907",
-      "difficultyTarget": 0.4,
+      "qid": "history-400-917",
+      "difficultyTarget": 0.6,
       "sourceUrl": "https://www.unesco.org/en/articles/sm-razaullah-ansari-ibn-al-haythams-scientific-method"
     },
     {
-      "p": 600,
+      "p": 400,
       "q": "ما المعركة الحاسمة بين المسلمين والبيزنطيين في بلاد الشام سنة 636؟",
       "a": "اليرموك",
       "alt": [
@@ -323,12 +213,12 @@
       ],
       "topic": "حروب وثورات",
       "verified": true,
-      "qid": "history-600-908",
-      "difficultyTarget": 0.4,
+      "qid": "history-400-918",
+      "difficultyTarget": 0.6,
       "sourceUrl": "https://islamansiklopedisi.org.tr/yermuk-savasi"
     },
     {
-      "p": 800,
+      "p": 600,
       "q": "ما المدينة الأثرية في وادي السند التي اشتهرت بحمامها الكبير وتخطيط شوارعها المنظم؟",
       "a": "موهينجو دارو",
       "alt": [
@@ -336,9 +226,104 @@
       ],
       "topic": "حضارات قديمة",
       "verified": true,
-      "qid": "history-800-901",
-      "difficultyTarget": 0.25,
+      "qid": "history-600-911",
+      "difficultyTarget": 0.4,
       "sourceUrl": "https://whc.unesco.org/en/list/138"
+    },
+    {
+      "p": 600,
+      "q": "ما الحضارة التي ازدهرت في كريت وتركت قصر كنوسوس وتماثيل إلهة الأفاعي؟",
+      "a": "المينوية",
+      "alt": [
+        "الحضارة المينوية",
+        "المينوسية"
+      ],
+      "topic": "اليونان والرومان",
+      "verified": true,
+      "qid": "history-600-912",
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://www.heraklionmuseum.gr/en/exhibit/the-snake-goddesses/"
+    },
+    {
+      "p": 600,
+      "q": "ما مدينة الخلافة التي بناها الأمويون قرب قرطبة في القرن العاشر الميلادي؟",
+      "a": "مدينة الزهراء",
+      "alt": [
+        "الزهراء",
+        "مدينة الزهراء بقرطبة"
+      ],
+      "topic": "آثار ومعالم",
+      "verified": true,
+      "qid": "history-600-913",
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://whc.unesco.org/en/list/1560"
+    },
+    {
+      "p": 600,
+      "q": "من حاكم مالي الذي اشتهر برحلة الحج وقافلة الذهب عبر القاهرة في القرن الرابع عشر؟",
+      "a": "مانسا موسى",
+      "alt": [
+        "منسا موسى"
+      ],
+      "topic": "العصور الوسطى",
+      "verified": true,
+      "qid": "history-600-914",
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://www.metmuseum.org/essays/the-trans-saharan-gold-trade-7th-14th-century"
+    },
+    {
+      "p": 600,
+      "q": "من الرحالة الذي وصف رحلة بعثة عباسية إلى بلغار الفولغا في القرن العاشر؟",
+      "a": "ابن فضلان",
+      "alt": [
+        "أحمد بن فضلان"
+      ],
+      "topic": "رحلات واكتشاف",
+      "verified": true,
+      "qid": "history-600-915",
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://www.jstor.org/stable/j.ctt1gk093h"
+    },
+    {
+      "p": 600,
+      "q": "من العالم المسلم الذي ألّف الكتاب الفلكي المعروف بالقانون المسعودي؟",
+      "a": "البيروني",
+      "alt": [
+        "أبو الريحان البيروني"
+      ],
+      "topic": "شخصيات تاريخية",
+      "verified": true,
+      "qid": "history-600-916",
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://muslimheritage.com/the-science-of-al-biruni/"
+    },
+    {
+      "p": 600,
+      "q": "ما اسم البلاد التي قصدتها البعثة المصرية القديمة المصوّرة في معبد الدير البحري؟",
+      "a": "بلاد بونت",
+      "alt": [
+        "بونت",
+        "بلاد البونت"
+      ],
+      "topic": "رحلات واكتشاف",
+      "verified": true,
+      "qid": "history-600-917",
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://egymonuments.gov.eg/monuments/hatshepsut-temple/"
+    },
+    {
+      "p": 600,
+      "q": "ما اسم الرحّالة والجغرافي المعروف في أوروبا باسم «ليون الإفريقي»؟",
+      "a": "الحسن الوزان",
+      "alt": [
+        "حسن الوزان",
+        "الحسن بن محمد الوزان"
+      ],
+      "topic": "شخصيات تاريخية",
+      "verified": true,
+      "qid": "history-600-918",
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://tile.loc.gov/storage-services/master/gdc/gdcebookspublic/20/20/42/60/25/2020426025/2020426025.pdf"
     },
     {
       "p": 800,
@@ -350,63 +335,9 @@
       ],
       "topic": "مصر وبلاد الرافدين",
       "verified": true,
-      "qid": "history-800-902",
+      "qid": "history-800-911",
       "difficultyTarget": 0.25,
       "sourceUrl": "https://www.ub.uni-leipzig.de/ueber-uns/ausstellungen/dauerausstellung/papyrus-ebers"
-    },
-    {
-      "p": 800,
-      "q": "ما الحضارة التي ازدهرت في كريت وتركت قصر كنوسوس وتماثيل إلهة الأفاعي؟",
-      "a": "المينوية",
-      "alt": [
-        "الحضارة المينوية",
-        "المينوسية"
-      ],
-      "topic": "اليونان والرومان",
-      "verified": true,
-      "qid": "history-800-903",
-      "difficultyTarget": 0.25,
-      "sourceUrl": "https://www.heraklionmuseum.gr/en/exhibit/the-snake-goddesses/"
-    },
-    {
-      "p": 800,
-      "q": "ما مدينة الخلافة التي بناها الأمويون قرب قرطبة في القرن العاشر الميلادي؟",
-      "a": "مدينة الزهراء",
-      "alt": [
-        "الزهراء",
-        "مدينة الزهراء بقرطبة"
-      ],
-      "topic": "آثار ومعالم",
-      "verified": true,
-      "qid": "history-800-904",
-      "difficultyTarget": 0.25,
-      "sourceUrl": "https://whc.unesco.org/en/list/1560"
-    },
-    {
-      "p": 800,
-      "q": "من حاكم مالي الذي اشتهر برحلة الحج وقافلة الذهب عبر القاهرة في القرن الرابع عشر؟",
-      "a": "مانسا موسى",
-      "alt": [
-        "منسا موسى"
-      ],
-      "topic": "العصور الوسطى",
-      "verified": true,
-      "qid": "history-800-905",
-      "difficultyTarget": 0.25,
-      "sourceUrl": "https://www.metmuseum.org/essays/the-trans-saharan-gold-trade-7th-14th-century"
-    },
-    {
-      "p": 800,
-      "q": "من الرحالة الذي وصف رحلة بعثة عباسية إلى بلغار الفولغا في القرن العاشر؟",
-      "a": "ابن فضلان",
-      "alt": [
-        "أحمد بن فضلان"
-      ],
-      "topic": "رحلات واكتشاف",
-      "verified": true,
-      "qid": "history-800-906",
-      "difficultyTarget": 0.25,
-      "sourceUrl": "https://www.jstor.org/stable/j.ctt1gk093h"
     },
     {
       "p": 800,
@@ -419,25 +350,12 @@
       ],
       "topic": "حروب وثورات",
       "verified": true,
-      "qid": "history-800-907",
+      "qid": "history-800-912",
       "difficultyTarget": 0.25,
       "sourceUrl": "https://www.history.navy.mil/browse-by-topic/wars-conflicts-and-operations/world-war-ii/1944/overlord/operation-neptune.html"
     },
     {
       "p": 800,
-      "q": "من العالم المسلم الذي ألّف الكتاب الفلكي المعروف بالقانون المسعودي؟",
-      "a": "البيروني",
-      "alt": [
-        "أبو الريحان البيروني"
-      ],
-      "topic": "شخصيات تاريخية",
-      "verified": true,
-      "qid": "history-800-908",
-      "difficultyTarget": 0.25,
-      "sourceUrl": "https://muslimheritage.com/the-science-of-al-biruni/"
-    },
-    {
-      "p": 1000,
       "q": "ما اسم الجهاز الفلكي البرونزي القديم الذي انتُشل من حطام سفينة يونانية غارقة؟",
       "a": "آلة أنتيكيثيرا",
       "alt": [
@@ -445,12 +363,12 @@
       ],
       "topic": "حضارات قديمة",
       "verified": true,
-      "qid": "history-1000-901",
-      "difficultyTarget": 0.15,
+      "qid": "history-800-913",
+      "difficultyTarget": 0.25,
       "sourceUrl": "https://antikythera-mechanism.namuseum.gr/en/"
     },
     {
-      "p": 1000,
+      "p": 800,
       "q": "من النبيل الإنجليزي الذي دخل مع هوارد كارتر مقبرة توت عنخ آمون عند فتحها سنة 1922؟",
       "a": "اللورد كارنارفون",
       "alt": [
@@ -458,12 +376,12 @@
       ],
       "topic": "مصر وبلاد الرافدين",
       "verified": true,
-      "qid": "history-1000-902",
-      "difficultyTarget": 0.15,
+      "qid": "history-800-914",
+      "difficultyTarget": 0.25,
       "sourceUrl": "https://www.highclerecastle.co.uk/visit-us/egyptian-exhibition"
     },
     {
-      "p": 1000,
+      "p": 800,
       "q": "ما اسم المدينة الرومانية القريبة من بومبي التي دفنها الثوران نفسه وحُفظت أخشابها ومخطوطاتها؟",
       "a": "هيركولانيوم",
       "alt": [
@@ -472,12 +390,12 @@
       ],
       "topic": "اليونان والرومان",
       "verified": true,
-      "qid": "history-1000-903",
-      "difficultyTarget": 0.15,
+      "qid": "history-800-915",
+      "difficultyTarget": 0.25,
       "sourceUrl": "https://ercolano.cultura.gov.it/organic-finds/?lang=en"
     },
     {
-      "p": 1000,
+      "p": 800,
       "q": "ما اسم النسيج المطرّز الطويل الذي يصوّر غزو النورمان لإنجلترا سنة ١٠٦٦؟",
       "a": "نسيج بايو",
       "alt": [
@@ -486,41 +404,12 @@
       ],
       "topic": "العصور الوسطى",
       "verified": true,
-      "qid": "history-1000-904",
-      "difficultyTarget": 0.15,
+      "qid": "history-800-916",
+      "difficultyTarget": 0.25,
       "sourceUrl": "https://www.bayeuxmuseum.com/en/the-bayeux-tapestry/discover-the-bayeux-tapestry/"
     },
     {
-      "p": 1000,
-      "q": "ما اسم البلاد التي قصدتها البعثة المصرية القديمة المصوّرة في معبد الدير البحري؟",
-      "a": "بلاد بونت",
-      "alt": [
-        "بونت",
-        "بلاد البونت"
-      ],
-      "topic": "رحلات واكتشاف",
-      "verified": true,
-      "qid": "history-1000-905",
-      "difficultyTarget": 0.15,
-      "sourceUrl": "https://egymonuments.gov.eg/monuments/hatshepsut-temple/"
-    },
-    {
-      "p": 1000,
-      "q": "من الرحالة السويسري الذي عرّف الأوروبيين بآثار البترا بعد زيارته لها سنة 1812؟",
-      "a": "يوهان بوركهارت",
-      "alt": [
-        "بوركهارت",
-        "يوهان لودفيغ بوركهارت",
-        "بركهارت"
-      ],
-      "topic": "آثار ومعالم",
-      "verified": true,
-      "qid": "history-1000-906",
-      "difficultyTarget": 0.15,
-      "sourceUrl": "https://www.visitpetra.jo/en/page/12/History-of-Petra"
-    },
-    {
-      "p": 1000,
+      "p": 800,
       "q": "ما الطراد الروسي المرتبط بإطلاق طلقة الإشارة لاقتحام قصر الشتاء سنة 1917؟",
       "a": "الطرّاد أورورا",
       "alt": [
@@ -529,23 +418,148 @@
       ],
       "topic": "حروب وثورات",
       "verified": true,
-      "qid": "history-1000-907",
-      "difficultyTarget": 0.15,
+      "qid": "history-800-917",
+      "difficultyTarget": 0.25,
       "sourceUrl": "https://navalmuseum.ru/news/memorable?id=423"
     },
     {
-      "p": 1000,
-      "q": "ما اسم الرحّالة والجغرافي المعروف في أوروبا باسم «ليون الإفريقي»؟",
-      "a": "الحسن الوزان",
-      "alt": [
-        "حسن الوزان",
-        "الحسن بن محمد الوزان"
-      ],
+      "q": "من المسؤول المصري القديم الذي تولى تربية نفرورع ابنة حتشبسوت؟",
+      "a": "سننموت",
       "topic": "شخصيات تاريخية",
+      "sourceUrl": "https://www.metmuseum.org/exhibitions/listings/2006/hatshepsut",
+      "alt": [
+        "سنموت",
+        "Senenmut"
+      ],
       "verified": true,
-      "qid": "history-1000-908",
+      "verifiedAt": "2026-09-25",
+      "p": 800,
+      "qid": "history-800-918",
+      "difficultyTarget": 0.25
+    },
+    {
+      "p": 1000,
+      "q": "من الرحالة السويسري الذي زار البترا سنة 1812 وعرّف الأوروبيين بآثارها؟",
+      "a": "يوهان بوركهارت",
+      "alt": [
+        "بوركهارت",
+        "يوهان لودفيغ بوركهارت",
+        "بركهارت"
+      ],
+      "topic": "آثار ومعالم",
+      "verified": true,
+      "qid": "history-1000-911",
       "difficultyTarget": 0.15,
-      "sourceUrl": "https://tile.loc.gov/storage-services/master/gdc/gdcebookspublic/20/20/42/60/25/2020426025/2020426025.pdf"
+      "sourceUrl": "https://www.visitpetra.jo/en/page/12/History-of-Petra"
+    },
+    {
+      "q": "ما اسم القطعة السومرية المطعمة التي يصور وجهاها مشاهد الحرب والسلم؟",
+      "a": "راية أور",
+      "topic": "مصر وبلاد الرافدين",
+      "sourceUrl": "https://www.britishmuseum.org/sites/default/files/2023-10/Whats_inside_gallery_backpack.pdf",
+      "alt": [
+        "لوحة أور",
+        "Standard of Ur"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 1000,
+      "qid": "history-1000-912",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "من الملك الفارسي الذي أمر بكتابة الأسطوانة الطينية بعد دخوله بابل سنة 539 قبل الميلاد؟",
+      "a": "كورش الكبير",
+      "topic": "حضارات قديمة",
+      "sourceUrl": "https://www.metmuseum.org/exhibitions/listings/2013/cyrus-cylinder",
+      "alt": [
+        "قورش الكبير",
+        "كورش",
+        "Cyrus"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 1000,
+      "qid": "history-1000-913",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "ما الخط المصري المستخدم للحياة اليومية والمنقوش على حجر رشيد إلى جانب الهيروغليفية واليونانية؟",
+      "a": "الديموطيقية",
+      "topic": "مصر وبلاد الرافدين",
+      "sourceUrl": "https://www.britishmuseum.org/collection/galleries/egyptian-sculpture",
+      "alt": [
+        "الخط الديموطيقي",
+        "الديموطيقي"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 1000,
+      "qid": "history-1000-914",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "ما الموقع الإنجليزي الذي اكتُشفت فيه سفينة دفن أنغلوساكسونية سنة 1939؟",
+      "a": "ساتون هو",
+      "topic": "العصور الوسطى",
+      "sourceUrl": "https://www.nationaltrust.org.uk/visit/suffolk/sutton-hoo/history-of-archaeology-at-sutton-hoo",
+      "alt": [
+        "سوتون هوو",
+        "Sutton Hoo"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 1000,
+      "qid": "history-1000-915",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "ما اسم النقش الصخري الذي أمر به دارا الأول قرب كرمانشاه لتسجيل توليه العرش؟",
+      "a": "نقش بيستون",
+      "topic": "آثار ومعالم",
+      "sourceUrl": "https://whc.unesco.org/fr/list/1222",
+      "alt": [
+        "بهستون",
+        "بيستون",
+        "نقش بهستون"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 1000,
+      "qid": "history-1000-916",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "من قاد السفينة فيكتوريا إلى إسبانيا مكملًا أول رحلة حول العالم بعد وفاة ماجلان؟",
+      "a": "خوان سباستيان إلكانو",
+      "topic": "رحلات واكتشاف",
+      "sourceUrl": "https://ejercito.defensa.gob.es/museo/HECHOS_HISTORICOS/HECHOS_HISTORICOS/09.06_sept_SE_COMPLETO_LA_PRIMERA_VUELTA_AL_MUNDO_POR_ELCANO.html",
+      "alt": [
+        "إلكانو",
+        "خوان سيباستيان إلكانو",
+        "Elcano"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 1000,
+      "qid": "history-1000-917",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "من العالم الإيطالي الذي ابتكر البارومتر الزئبقي في القرن السابع عشر؟",
+      "a": "إيفانجيليستا توريتشيلي",
+      "topic": "شخصيات تاريخية",
+      "sourceUrl": "https://catalogue.museogalileo.it/section/MeteorologyThermologyBarometersHygrometers.html",
+      "alt": [
+        "توريتشيلي",
+        "توريشلي",
+        "Torricelli"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 1000,
+      "qid": "history-1000-918",
+      "difficultyTarget": 0.15
     }
   ]
 }

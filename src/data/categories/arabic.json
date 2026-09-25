@@ -5,463 +5,499 @@
   "qs": [
     {
       "p": 200,
-      "q": "في جملة«ابتسم الطفلُ»، ما الوظيفة الإعرابية لكلمة«الطفل»؟",
-      "a": "فاعل",
-      "qid": "arabic-200-901",
+      "q": "ما إعراب «الطالبُ» في «كُوفئ الطالبُ»؟",
+      "a": "نائب فاعل",
+      "qid": "arabic-200-911",
       "topic": "الإعراب",
       "verified": true,
       "difficultyTarget": 0.8,
-      "source": "docs/bank/rebuild-2026-09-18/arabic-proofs.json",
-      "verifiedAt": "2026-09-18"
-    },
-    {
-      "p": 200,
-      "q": "ما نوع المشتق«كاتب» من الفعل«كتب»؟",
-      "a": "اسم فاعل",
-      "qid": "arabic-200-902",
-      "topic": "الصرف",
-      "verified": true,
-      "difficultyTarget": 0.8,
-      "source": "docs/bank/rebuild-2026-09-18/arabic-proofs.json",
-      "verifiedAt": "2026-09-18"
-    },
-    {
-      "p": 200,
-      "q": "ما نوع همزة بداية«ابن» التي تسقط نطقًا عند وصل الكلام؟",
-      "a": "همزة وصل",
-      "qid": "arabic-200-903",
-      "topic": "الإملاء",
-      "verified": true,
-      "difficultyTarget": 0.8,
-      "source": "docs/bank/rebuild-2026-09-18/arabic-proofs.json",
-      "verifiedAt": "2026-09-18"
-    },
-    {
-      "p": 200,
-      "q": "ما الأسلوب المستخدم في قولنا«أين تسكن؟»؟",
-      "a": "استفهام",
-      "qid": "arabic-200-904",
-      "topic": "الأساليب",
-      "verified": true,
-      "difficultyTarget": 0.8,
-      "source": "docs/bank/rebuild-2026-09-18/arabic-proofs.json",
-      "verifiedAt": "2026-09-18"
-    },
-    {
-      "p": 200,
-      "q": "ما مرادف«هائل» بمعنى كبير الحجم؟",
-      "a": "ضخم",
-      "qid": "arabic-200-905",
-      "topic": "المفردات",
-      "verified": true,
-      "difficultyTarget": 0.8,
-      "source": "docs/bank/rebuild-2026-09-18/arabic-proofs.json",
-      "verifiedAt": "2026-09-18",
+      "sourceUrl": "https://learning.aljazeera.net/en/generallanguage/نائب-الفاعل",
+      "verifiedAt": "2026-09-25",
       "alt": [
-        "كبير",
-        "عظيم الحجم"
+        "نائب الفاعل"
       ]
     },
     {
       "p": 200,
-      "q": "ما الصورة البلاغية في«الطفل كالقمر»؟",
-      "a": "تشبيه",
-      "qid": "arabic-200-906",
-      "topic": "البلاغة",
+      "q": "ما اسم الفاعل من «استخرج»؟",
+      "a": "مُستخرِج",
+      "qid": "arabic-200-912",
+      "topic": "الصرف",
       "verified": true,
       "difficultyTarget": 0.8,
-      "source": "docs/bank/rebuild-2026-09-18/arabic-proofs.json",
-      "verifiedAt": "2026-09-18"
+      "sourceUrl": "https://hdat.sa/library/files/view/2699",
+      "verifiedAt": "2026-09-25"
     },
     {
       "p": 200,
-      "q": "ما جمع التكسير لكلمة«كتاب»؟",
-      "a": "كتب",
-      "qid": "arabic-200-907",
-      "topic": "الجمع",
+      "q": "ما نوع همزة الأمر من الفعل الرباعي «أكرم»؟",
+      "a": "همزة قطع",
+      "qid": "arabic-200-913",
+      "topic": "الإملاء",
       "verified": true,
       "difficultyTarget": 0.8,
-      "source": "docs/bank/rebuild-2026-09-18/arabic-proofs.json",
-      "verifiedAt": "2026-09-18"
+      "sourceUrl": "https://learning.aljazeera.net/ar/node/974",
+      "verifiedAt": "2026-09-25"
     },
     {
       "p": 200,
-      "q": "ما حرف العطف الذي يفيد الجمع دون إلزام بترتيب زمني؟",
-      "a": "الواو",
-      "qid": "arabic-200-908",
-      "topic": "الأدوات",
-      "verified": true,
-      "difficultyTarget": 0.8,
-      "source": "docs/bank/rebuild-2026-09-18/arabic-proofs.json",
-      "verifiedAt": "2026-09-18"
-    },
-    {
-      "p": 400,
-      "q": "في«الحديقةُ واسعةٌ»، ما إعراب«الحديقة»؟",
-      "a": "مبتدأ",
-      "qid": "arabic-400-901",
-      "topic": "الإعراب",
-      "verified": true,
-      "difficultyTarget": 0.6,
-      "source": "docs/bank/rebuild-2026-09-18/arabic-proofs.json",
-      "verifiedAt": "2026-09-18"
-    },
-    {
-      "p": 400,
-      "q": "ما نوع المشتق«مكتوب» من الفعل«كتب»؟",
-      "a": "اسم مفعول",
-      "qid": "arabic-400-902",
-      "topic": "الصرف",
-      "verified": true,
-      "difficultyTarget": 0.6,
-      "source": "docs/bank/rebuild-2026-09-18/arabic-proofs.json",
-      "verifiedAt": "2026-09-18"
-    },
-    {
-      "p": 400,
-      "q": "ما نوع التاء التي تنطق هاء عند الوقف في كلمة«نافذة»؟",
-      "a": "تاء مربوطة",
-      "qid": "arabic-400-903",
-      "topic": "الإملاء",
-      "verified": true,
-      "difficultyTarget": 0.6,
-      "source": "docs/bank/rebuild-2026-09-18/arabic-proofs.json",
-      "verifiedAt": "2026-09-18"
-    },
-    {
-      "p": 400,
-      "q": "ما نوع الأسلوب في«لا تُهملْ واجبك»؟",
-      "a": "نهي",
-      "qid": "arabic-400-904",
-      "topic": "الأساليب",
-      "verified": true,
-      "difficultyTarget": 0.6,
-      "source": "docs/bank/rebuild-2026-09-18/arabic-proofs.json",
-      "verifiedAt": "2026-09-18"
-    },
-    {
-      "p": 400,
-      "q": "ما ضد«الضياء»؟",
-      "a": "الظلام",
-      "qid": "arabic-400-905",
-      "topic": "المفردات",
-      "verified": true,
-      "difficultyTarget": 0.6,
-      "source": "docs/bank/rebuild-2026-09-18/arabic-proofs.json",
-      "verifiedAt": "2026-09-18",
-      "alt": [
-        "العتمة"
-      ]
-    },
-    {
-      "p": 400,
-      "q": "ما المحسن البديعي الذي يجمع«الليل والنهار» في عبارة واحدة؟",
-      "a": "طباق",
-      "qid": "arabic-400-906",
-      "topic": "البلاغة",
-      "verified": true,
-      "difficultyTarget": 0.6,
-      "source": "docs/bank/rebuild-2026-09-18/arabic-proofs.json",
-      "verifiedAt": "2026-09-18"
-    },
-    {
-      "p": 400,
-      "q": "ما جمع التكسير لكلمة«مدرسة»؟",
-      "a": "مدارس",
-      "qid": "arabic-400-907",
-      "topic": "الجمع",
-      "verified": true,
-      "difficultyTarget": 0.6,
-      "source": "docs/bank/rebuild-2026-09-18/arabic-proofs.json",
-      "verifiedAt": "2026-09-18"
-    },
-    {
-      "p": 400,
-      "q": "ما الحرف الذي ينصب المضارع وينفي وقوعه في المستقبل؟",
-      "a": "لن",
-      "qid": "arabic-400-908",
-      "topic": "الأدوات",
-      "verified": true,
-      "difficultyTarget": 0.6,
-      "source": "docs/bank/rebuild-2026-09-18/arabic-proofs.json",
-      "verifiedAt": "2026-09-18"
-    },
-    {
-      "p": 600,
-      "q": "ما إعراب«النافذةَ» في«فتح الحارسُ النافذةَ»؟",
-      "a": "مفعول به",
-      "qid": "arabic-600-901",
-      "topic": "الإعراب",
-      "verified": true,
-      "difficultyTarget": 0.4,
-      "source": "docs/bank/rebuild-2026-09-18/arabic-proofs.json",
-      "verifiedAt": "2026-09-18"
-    },
-    {
-      "p": 600,
-      "q": "ما نوع المشتق«مِفتاح» الدال على الأداة؟",
-      "a": "اسم آلة",
-      "qid": "arabic-600-902",
-      "topic": "الصرف",
-      "verified": true,
-      "difficultyTarget": 0.4,
-      "source": "docs/bank/rebuild-2026-09-18/arabic-proofs.json",
-      "verifiedAt": "2026-09-18"
-    },
-    {
-      "p": 600,
-      "q": "ما اسم الألف اللينة المرسومة ياء بلا نقطتين في آخر«فتى»؟",
-      "a": "ألف مقصورة",
-      "qid": "arabic-600-903",
-      "topic": "الإملاء",
-      "verified": true,
-      "difficultyTarget": 0.4,
-      "source": "docs/bank/rebuild-2026-09-18/arabic-proofs.json",
-      "verifiedAt": "2026-09-18"
-    },
-    {
-      "p": 600,
-      "q": "ما الأسلوب في«ما أجملَ الحديقةَ!»؟",
+      "q": "ما نوع الأسلوب في «ما أروعَ البحرَ!»؟",
       "a": "تعجب",
-      "qid": "arabic-600-904",
+      "qid": "arabic-200-914",
       "topic": "الأساليب",
       "verified": true,
-      "difficultyTarget": 0.4,
-      "source": "docs/bank/rebuild-2026-09-18/arabic-proofs.json",
-      "verifiedAt": "2026-09-18"
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://www.safahat.org/books/85925824/1.2/",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "أسلوب تعجب"
+      ]
     },
     {
-      "p": 600,
-      "q": "ما العضو الذي تعنيه كلمة«فؤاد»؟",
-      "a": "القلب",
-      "qid": "arabic-600-905",
+      "p": 200,
+      "q": "ماذا تعني «نفد» في «نفد المخزون»؟",
+      "a": "انتهى",
+      "qid": "arabic-200-915",
       "topic": "المفردات",
       "verified": true,
-      "difficultyTarget": 0.4,
-      "source": "docs/bank/rebuild-2026-09-18/arabic-proofs.json",
-      "verifiedAt": "2026-09-18"
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://www.arabicterminology.com/content/نفد-1",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "فني",
+        "فرغ"
+      ]
     },
     {
-      "p": 600,
-      "q": "ما الصورة البلاغية في«ابتسم الصباح»، حين يمنح الصباح فعل الإنسان؟",
+      "p": 200,
+      "q": "ما نوع التشبيه في «العلم نور»؟",
+      "a": "تشبيه بليغ",
+      "qid": "arabic-200-916",
+      "topic": "البلاغة",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://www.safahat.org/books/85925824/2.1/",
+      "verifiedAt": "2026-09-25"
+    },
+    {
+      "p": 200,
+      "q": "ما مفرد «أروقة»؟",
+      "a": "رواق",
+      "qid": "arabic-200-917",
+      "topic": "الجمع",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://www.arabicterminology.com/content/رُواقٌرِواقٌ",
+      "verifiedAt": "2026-09-25"
+    },
+    {
+      "p": 200,
+      "q": "أي حرف عطف يدل على ترتيب حدثين مع مهلة بينهما؟",
+      "a": "ثم",
+      "qid": "arabic-200-918",
+      "topic": "الأدوات",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://learning.aljazeera.net/ar/node/1025",
+      "verifiedAt": "2026-09-25"
+    },
+    {
+      "p": 400,
+      "q": "ما إعراب «مبتسمًا» في «عاد المسافر مبتسمًا»؟",
+      "a": "حال",
+      "qid": "arabic-400-911",
+      "topic": "الإعراب",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://learning.aljazeera.net/en/generallanguage/الحال",
+      "verifiedAt": "2026-09-25"
+    },
+    {
+      "p": 400,
+      "q": "ما اسم المفعول من «استعمل»؟",
+      "a": "مُستعمَل",
+      "qid": "arabic-400-912",
+      "topic": "الصرف",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://hdat.sa/library/files/view/2699",
+      "verifiedAt": "2026-09-25"
+    },
+    {
+      "p": 400,
+      "q": "ما الرسم الصحيح لتثنية «مبدأ» في الرفع؟",
+      "a": "مبدآن",
+      "qid": "arabic-400-913",
+      "topic": "الإملاء",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://almustashar.ksaa.gov.sa/bank/4927",
+      "verifiedAt": "2026-09-25"
+    },
+    {
+      "p": 400,
+      "q": "ما الأسلوب في «إياك والكذب»؟",
+      "a": "تحذير",
+      "qid": "arabic-400-914",
+      "topic": "الأساليب",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://bahethoarabia.com/egrathzir/",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "أسلوب تحذير"
+      ]
+    },
+    {
+      "p": 400,
+      "q": "ما معنى «وجل» في «وقف وجلًا أمام الخطر»؟",
+      "a": "خائف",
+      "qid": "arabic-400-915",
+      "topic": "المفردات",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://www.arabicacademy.gov.eg/ar/محرك-البحث/وَجُلَ?exact_search=true",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "فزع",
+        "خائفًا"
+      ]
+    },
+    {
+      "p": 400,
+      "q": "ما الصورة البلاغية في «ضحك الحقل»؟",
       "a": "استعارة مكنية",
-      "qid": "arabic-600-906",
+      "qid": "arabic-400-916",
       "topic": "البلاغة",
       "verified": true,
-      "difficultyTarget": 0.4,
-      "source": "docs/bank/rebuild-2026-09-18/arabic-proofs.json",
-      "verifiedAt": "2026-09-18",
-      "alt": [
-        "استعارة"
-      ]
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://www.safahat.org/books/85925824/2.2/",
+      "verifiedAt": "2026-09-25"
     },
     {
-      "p": 600,
-      "q": "ما جمع التكسير للاسم«قاضٍ»؟",
-      "a": "قضاة",
-      "qid": "arabic-600-907",
-      "topic": "الجمع",
-      "verified": true,
-      "difficultyTarget": 0.4,
-      "source": "docs/bank/rebuild-2026-09-18/arabic-proofs.json",
-      "verifiedAt": "2026-09-18"
-    },
-    {
-      "p": 600,
-      "q": "ما الحرف الذي يجزم المضارع وينفي الحدث في الزمن الماضي؟",
-      "a": "لم",
-      "qid": "arabic-600-908",
-      "topic": "الأدوات",
-      "verified": true,
-      "difficultyTarget": 0.4,
-      "source": "docs/bank/rebuild-2026-09-18/arabic-proofs.json",
-      "verifiedAt": "2026-09-18"
-    },
-    {
-      "p": 800,
-      "q": "في«قرأتُ الكتابَ نصفَه»، ما نوع التابع«نصفه»؟",
-      "a": "بدل بعض من كل",
-      "qid": "arabic-800-901",
-      "topic": "الإعراب",
-      "verified": true,
-      "difficultyTarget": 0.25,
-      "source": "docs/bank/rebuild-2026-09-18/arabic-proofs.json",
-      "verifiedAt": "2026-09-18"
-    },
-    {
-      "p": 800,
-      "q": "ما اسم المصدر الذي يبدأ بميم زائدة، ولا يكون على صيغة المفاعلة؟",
-      "a": "مصدر ميمي",
-      "qid": "arabic-800-902",
-      "topic": "الصرف",
-      "verified": true,
-      "difficultyTarget": 0.25,
-      "source": "docs/bank/rebuild-2026-09-18/arabic-proofs.json",
-      "verifiedAt": "2026-09-18"
-    },
-    {
-      "p": 800,
-      "q": "أين ترسم الهمزة في آخر كلمة إذا سبقها حرف مد، مثل«وضوء»؟",
-      "a": "على السطر",
-      "qid": "arabic-800-903",
-      "topic": "الإملاء",
-      "verified": true,
-      "difficultyTarget": 0.25,
-      "source": "docs/bank/rebuild-2026-09-18/arabic-proofs.json",
-      "verifiedAt": "2026-09-18"
-    },
-    {
-      "p": 800,
-      "q": "ما الأسلوب في«نحنُ العربَ نعتز بلغتنا»، بنصب«العرب» لتوضيح المقصود بالضمير؟",
-      "a": "اختصاص",
-      "qid": "arabic-800-904",
-      "topic": "الأساليب",
-      "verified": true,
-      "difficultyTarget": 0.25,
-      "source": "docs/bank/rebuild-2026-09-18/arabic-proofs.json",
-      "verifiedAt": "2026-09-18"
-    },
-    {
-      "p": 800,
-      "q": "ما اسم مأوى الأسد في العربية؟",
-      "a": "عرين",
-      "qid": "arabic-800-905",
-      "topic": "المفردات",
-      "verified": true,
-      "difficultyTarget": 0.25,
-      "source": "docs/bank/rebuild-2026-09-18/arabic-proofs.json",
-      "verifiedAt": "2026-09-18",
-      "alt": [
-        "العرين"
-      ]
-    },
-    {
-      "p": 800,
-      "q": "ما المحسن في تكرار لفظ«ساعة» مرة بمعنى القيامة ومرة بمعنى مدة قصيرة؟",
-      "a": "جناس تام",
-      "qid": "arabic-800-906",
-      "topic": "البلاغة",
-      "verified": true,
-      "difficultyTarget": 0.25,
-      "source": "docs/bank/rebuild-2026-09-18/arabic-proofs.json",
-      "verifiedAt": "2026-09-18",
-      "alt": [
-        "الجناس"
-      ]
-    },
-    {
-      "p": 800,
-      "q": "ما جمع المؤنث السالم لكلمة«صحراء»؟",
+      "p": 400,
+      "q": "ما جمع «صحراء» بالألف والتاء؟",
       "a": "صحراوات",
-      "qid": "arabic-800-907",
+      "qid": "arabic-400-917",
       "topic": "الجمع",
       "verified": true,
-      "difficultyTarget": 0.25,
-      "source": "docs/bank/rebuild-2026-09-18/arabic-proofs.json",
-      "verifiedAt": "2026-09-18"
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://uomustansiriyah.edu.iq/media/lectures/9/9_2024_10_26%2107_45_25_AM.pdf",
+      "verifiedAt": "2026-09-25"
+    },
+    {
+      "p": 400,
+      "q": "أكمل «اجتهدتُ ___ أنجحَ» بحرف تعليل ناصب من حرفين.",
+      "a": "كي",
+      "qid": "arabic-400-918",
+      "topic": "الأدوات",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://almustashar.ksaa.gov.sa/bank/1930",
+      "verifiedAt": "2026-09-25"
+    },
+    {
+      "p": 600,
+      "q": "ما إعراب «عسلًا» في «اشتريت لترًا عسلًا»؟",
+      "a": "تمييز",
+      "qid": "arabic-600-911",
+      "topic": "الإعراب",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://learning.aljazeera.net/es/node/19637",
+      "verifiedAt": "2026-09-25"
+    },
+    {
+      "p": 600,
+      "q": "ما المصدر من «استغفر»؟",
+      "a": "استغفار",
+      "qid": "arabic-600-912",
+      "topic": "الصرف",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://learning.aljazeera.net/ar/node/974",
+      "verifiedAt": "2026-09-25"
+    },
+    {
+      "p": 600,
+      "q": "كيف تكتب «جزء» مع تنوين الفتح؟",
+      "a": "جزءًا",
+      "qid": "arabic-600-913",
+      "topic": "الإملاء",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://library.ksaa.gov.sa/links/epubs/alkhilaf_fi_nizam_alkitabat_alearabia.pdf",
+      "verifiedAt": "2026-09-25"
+    },
+    {
+      "p": 600,
+      "q": "ما الأسلوب في «نحن العربَ نكرم الضيف»؟",
+      "a": "اختصاص",
+      "qid": "arabic-600-914",
+      "topic": "الأساليب",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://kenanaonline.com/users/amer123123/posts/606227",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "أسلوب اختصاص"
+      ]
+    },
+    {
+      "p": 600,
+      "q": "ما معنى «أمعن في النظر»؟",
+      "a": "دقق النظر",
+      "qid": "arabic-600-915",
+      "topic": "المفردات",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://www.quranicthought.com/wp-content/uploads/post_attachments/5d4812b073855.pdf",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "تأمل بدقة",
+        "بالغ في الاستقصاء"
+      ]
+    },
+    {
+      "p": 600,
+      "q": "ما المحسن البديعي في «يخفون الحزن ويظهرون الفرح»؟",
+      "a": "مقابلة",
+      "qid": "arabic-600-916",
+      "topic": "البلاغة",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://www.safahat.org/books/85925824/3.1/",
+      "verifiedAt": "2026-09-25"
+    },
+    {
+      "p": 600,
+      "q": "ما جمع التكسير لكلمة «قبو» وفق المعجم الوسيط؟",
+      "a": "أقباء",
+      "qid": "arabic-600-917",
+      "topic": "الجمع",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://www.almougem.com/search.php?mdatabase=lmougem&query=قبو",
+      "verifiedAt": "2026-09-25"
+    },
+    {
+      "p": 600,
+      "q": "أكمل بأداة من أربعة أحرف تعني أن المطر منع الخروج: «___ المطرُ لخرجنا».",
+      "a": "لولا",
+      "qid": "arabic-600-918",
+      "topic": "الأدوات",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://abu.edu.iq/en/node/12486",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "لوما"
+      ]
     },
     {
       "p": 800,
-      "q": "أي حرف من أخوات«إنّ» يدل على التمني؟",
-      "a": "ليت",
-      "qid": "arabic-800-908",
+      "q": "ما إعراب «احترامًا» في «وقفت احترامًا للضيف»؟",
+      "a": "مفعول لأجله",
+      "qid": "arabic-800-911",
+      "topic": "الإعراب",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://learning.aljazeera.net/ar/node/19640",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "مفعول له"
+      ]
+    },
+    {
+      "p": 800,
+      "q": "ما الفعل الثلاثي الذي اشتقت منه «ميزان»؟",
+      "a": "وزن",
+      "qid": "arabic-800-912",
+      "topic": "الصرف",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://www.arabicacademy.gov.eg/ar/محرك-البحث/معجم/dic-19/الميزان",
+      "verifiedAt": "2026-09-25"
+    },
+    {
+      "p": 800,
+      "q": "ما الرسم الصحيح لاسم الفاعل المنون من «سعى» في الرفع؟",
+      "a": "ساعٍ",
+      "qid": "arabic-800-913",
+      "topic": "الإملاء",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://uomustansiriyah.edu.iq/media/lectures/8/8_2022_03_25%2110_26_14_PM.pdf",
+      "verifiedAt": "2026-09-25"
+    },
+    {
+      "p": 800,
+      "q": "ما الأسلوب في «الصدقَ الصدقَ» حين نحث على التزامه؟",
+      "a": "إغراء",
+      "qid": "arabic-800-914",
+      "topic": "الأساليب",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://bahethoarabia.com/egrathzir/",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "أسلوب إغراء"
+      ]
+    },
+    {
+      "p": 800,
+      "q": "ما معنى «أزف الرحيل»؟",
+      "a": "اقترب",
+      "qid": "arabic-800-915",
+      "topic": "المفردات",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://www.islamweb.net/ar/library/content/122/110/أزف",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "دنا"
+      ]
+    },
+    {
+      "p": 800,
+      "q": "ماذا تعني كناية «فلان نظيف اليد» عند الحديث عن المال؟",
+      "a": "النزاهة",
+      "qid": "arabic-800-916",
+      "topic": "البلاغة",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://www.safahat.org/books/85925824/2.3/",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "الأمانة",
+        "التعفف عن المال الحرام",
+        "عدم أخذ الرشوة"
+      ]
+    },
+    {
+      "p": 800,
+      "q": "ما جمع «داعٍ» بالواو والنون في الرفع؟",
+      "a": "داعون",
+      "qid": "arabic-800-917",
+      "topic": "الجمع",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://st.mara.gov.om/uploads/documents/2020/05/xFxfp.pdf",
+      "verifiedAt": "2026-09-25"
+    },
+    {
+      "p": 800,
+      "q": "أي أداة تسبق الجملة الاسمية للنفي وتعمل عمل «إنّ»؟",
+      "a": "لا النافية للجنس",
+      "qid": "arabic-800-918",
       "topic": "الأدوات",
       "verified": true,
       "difficultyTarget": 0.25,
-      "source": "docs/bank/rebuild-2026-09-18/arabic-proofs.json",
-      "verifiedAt": "2026-09-18"
+      "sourceUrl": "https://learning.aljazeera.net/ar/node/19642",
+      "verifiedAt": "2026-09-25"
     },
     {
       "p": 1000,
-      "q": "ما الوظيفة الإعرابية للمصدر«انطلاقًا» في«انطلق العداء انطلاقًا سريعًا»؟",
-      "a": "مفعول مطلق",
-      "qid": "arabic-1000-901",
+      "q": "ما نوع البدل في «أعجبني الكتابُ أسلوبُه»؟",
+      "a": "بدل اشتمال",
+      "qid": "arabic-1000-911",
       "topic": "الإعراب",
       "verified": true,
       "difficultyTarget": 0.15,
-      "source": "docs/bank/rebuild-2026-09-18/arabic-proofs.json",
-      "verifiedAt": "2026-09-18"
+      "sourceUrl": "https://learning.aljazeera.net/ar/node/19670",
+      "verifiedAt": "2026-09-25"
     },
     {
       "p": 1000,
-      "q": "ما التسمية الصرفية للجموع مثل«مساجد» و«مصابيح»، التي يأتي بعد ألف تكسيرها حرفان أو ثلاثة أوسطها ساكن؟",
-      "a": "صيغة منتهى الجموع",
-      "qid": "arabic-1000-902",
+      "q": "ما الجذر الثلاثي لكلمة «اتّصال»؟",
+      "a": "وصل",
+      "qid": "arabic-1000-912",
       "topic": "الصرف",
       "verified": true,
       "difficultyTarget": 0.15,
-      "source": "docs/bank/rebuild-2026-09-18/arabic-proofs.json",
-      "verifiedAt": "2026-09-18"
+      "sourceUrl": "https://faculty.ksu.edu.sa/en/badalobaid/course-material/55963",
+      "verifiedAt": "2026-09-25"
     },
     {
       "p": 1000,
-      "q": "عند كتابة الهمزة المتوسطة، ما أقوى الحركات التي ترجح كرسي الياء؟",
-      "a": "الكسرة",
-      "qid": "arabic-1000-903",
+      "q": "بعد دخول لام الجر على «اللّيل»، كيف تكتب الكلمة؟",
+      "a": "للّيل",
+      "qid": "arabic-1000-913",
       "topic": "الإملاء",
       "verified": true,
       "difficultyTarget": 0.15,
-      "source": "docs/bank/rebuild-2026-09-18/arabic-proofs.json",
-      "verifiedAt": "2026-09-18"
+      "sourceUrl": "https://www.al-jazirah.com/2011/20110721/cu8.htm",
+      "verifiedAt": "2026-09-25"
     },
     {
       "p": 1000,
-      "q": "ما الأسلوب في«الصدقَ الصدقَ»، حين ننصح المخاطب بالالتزام به؟",
-      "a": "إغراء",
-      "qid": "arabic-1000-904",
+      "q": "ما أسلوب تخصيص النجاح بالمجتهد في «ما ينجح إلا المجتهد»؟",
+      "a": "قصر بالنفي والاستثناء",
+      "qid": "arabic-1000-914",
       "topic": "الأساليب",
       "verified": true,
       "difficultyTarget": 0.15,
-      "source": "docs/bank/rebuild-2026-09-18/arabic-proofs.json",
-      "verifiedAt": "2026-09-18"
-    },
-    {
-      "p": 1000,
-      "q": "ما معنى«سرمدي» حين نصف به الزمن؟",
-      "a": "دائم لا ينقطع",
-      "qid": "arabic-1000-905",
-      "topic": "المفردات",
-      "verified": true,
-      "difficultyTarget": 0.15,
-      "source": "docs/bank/rebuild-2026-09-18/arabic-proofs.json",
-      "verifiedAt": "2026-09-18",
+      "sourceUrl": "https://www.safahat.org/books/85925824/1.7/",
+      "verifiedAt": "2026-09-25",
       "alt": [
-        "دائم",
-        "أبدي"
+        "قصر",
+        "حصر"
       ]
     },
     {
       "p": 1000,
-      "q": "ما المحسن البديعي في الجمع بين«فليضحكوا قليلًا» و«ليبكوا كثيرًا»؟",
-      "a": "مقابلة",
-      "qid": "arabic-1000-906",
+      "q": "ما معنى «قَمِنٌ» في «هو قَمِنٌ بالثقة»؟",
+      "a": "جدير",
+      "qid": "arabic-1000-915",
+      "topic": "المفردات",
+      "verified": true,
+      "difficultyTarget": 0.15,
+      "sourceUrl": "https://www.arabicterminology.com/content/قمن-1",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "حقيق",
+        "خليق"
+      ]
+    },
+    {
+      "p": 1000,
+      "q": "ما نوع الجناس بين «يحيى» اسم الرجل و«يحيا» بمعنى يعيش؟",
+      "a": "جناس تام",
+      "qid": "arabic-1000-916",
       "topic": "البلاغة",
       "verified": true,
       "difficultyTarget": 0.15,
-      "source": "docs/bank/rebuild-2026-09-18/arabic-proofs.json",
-      "verifiedAt": "2026-09-18"
+      "sourceUrl": "https://www.safahat.org/books/85925824/3.2/",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "جناس تام مستوفٍ",
+        "جناس مستوفٍ"
+      ]
     },
     {
       "p": 1000,
-      "q": "ما جمع التكسير القياسي لـ«سفرجل» عند حذف خامس حروفه، دون تعويض؟",
-      "a": "سفارج",
-      "qid": "arabic-1000-907",
+      "q": "عند تثنية «عصا» في الرفع، ما الصورة الصحيحة؟",
+      "a": "عصوان",
+      "qid": "arabic-1000-917",
       "topic": "الجمع",
       "verified": true,
       "difficultyTarget": 0.15,
-      "source": "docs/bank/rebuild-2026-09-18/arabic-proofs.json",
-      "verifiedAt": "2026-09-18"
+      "sourceUrl": "https://uomustansiriyah.edu.iq/media/lectures/9/9_2024_10_26%2107_45_25_AM.pdf",
+      "verifiedAt": "2026-09-25"
     },
     {
       "p": 1000,
-      "q": "ما حرف الشرط غير الجازم الذي يوصف بأنه حرف امتناع لوجود؟",
-      "a": "لولا",
-      "qid": "arabic-1000-908",
+      "q": "في «إنما العلمُ نورٌ»، ماذا تسمى «ما» التي منعت الحرف السابق من العمل؟",
+      "a": "ما الكافة",
+      "qid": "arabic-1000-918",
       "topic": "الأدوات",
       "verified": true,
       "difficultyTarget": 0.15,
-      "source": "docs/bank/rebuild-2026-09-18/arabic-proofs.json",
-      "verifiedAt": "2026-09-18"
+      "sourceUrl": "https://learning.aljazeera.net/ar/node/342",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "ما الكافة عن العمل"
+      ]
     }
   ]
 }

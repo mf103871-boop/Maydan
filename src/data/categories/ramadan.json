@@ -5,107 +5,102 @@
   "qs": [
     {
       "p": 200,
-      "topic": "مفردات الشهر",
-      "q": "ما اسم الوجبة التي يتناولها المسلمون قبل أذان الفجر في رمضان؟",
-      "a": "السحور",
-      "alt": [
-        "سحور"
-      ],
-      "sourceUrl": "https://sunnah.com/bukhari:1923",
-      "verified": true,
-      "qid": "ramadan-200-901",
-      "difficultyTarget": 0.8
-    },
-    {
-      "p": 200,
       "topic": "عادات وتقاليد",
-      "q": "ما اسم المصباح المزخرف الذي يُعلَّق زينةً في الشوارع والبيوت في رمضان؟",
-      "a": "الفانوس",
+      "q": "ما اسم السهرة الاجتماعية على مائدة متأخرة يقيمها أهل الخليج في ليالي رمضان؟",
+      "a": "الغبقة",
       "alt": [
-        "فانوس رمضان"
+        "غبقة"
       ],
-      "sourceUrl": "https://www.cairo.gov.eg/ar/culture/cultural-variety/ramadan-lantern/",
+      "sourceUrl": "https://visitqatar.com/intl-en/about-qatar/traditions/ramadan",
       "verified": true,
-      "qid": "ramadan-200-902",
+      "qid": "ramadan-200-911",
       "difficultyTarget": 0.8
     },
     {
       "p": 200,
       "topic": "مائدة الإفطار",
-      "q": "ما الثمرة التي جرت العادة أن يبدأ بها الناس فطورهم في رمضان؟",
-      "a": "التمر",
+      "q": "ما الطبق الخليجي من القمح المهروس مع اللحم ويكثر في رمضان؟",
+      "a": "الهريس",
       "alt": [
-        "البلح",
-        "الرطب"
+        "هريس",
+        "الهريسة"
       ],
-      "sourceUrl": "https://saudipedia.com/شهر-رمضان",
+      "sourceUrl": "https://saudipedia.com/الهريس",
       "verified": true,
-      "qid": "ramadan-200-903",
+      "qid": "ramadan-200-912",
       "difficultyTarget": 0.8
     },
     {
       "p": 200,
       "topic": "حلويات ومشروبات",
-      "q": "ما الفطائر الرمضانية الصغيرة التي تُحشى بالقشطة أو الجوز ثم يُغلق طرفاها؟",
-      "a": "القطايف",
-      "alt": [
-        "قطايف",
-        "القطائف"
-      ],
-      "sourceUrl": "https://www.cairo.gov.eg/ar/culture/cultural-variety/kunafa-and-qatayef/",
+      "q": "ما المشروب الرمضاني البني الحامض الذي يُحضّر بنقع لب ثمار تحمل اسمه؟",
+      "a": "التمر الهندي",
+      "sourceUrl": "https://gate.ahram.org.eg/News/5483552.aspx",
       "verified": true,
-      "qid": "ramadan-200-904",
+      "qid": "ramadan-200-913",
       "difficultyTarget": 0.8
     },
     {
       "p": 200,
-      "topic": "التقويم الهجري",
-      "q": "ما ترتيب رمضان بين شهور السنة الهجرية؟",
-      "a": "التاسع",
-      "alt": [
-        "تسعة",
-        "9"
-      ],
-      "sourceUrl": "https://saudipedia.com/شهر-رمضان",
+      "topic": "أحداث في رمضان",
+      "q": "ما المعركة التي هزم فيها المماليك المغول في الخامس والعشرين من رمضان؟",
+      "a": "عين جالوت",
+      "sourceUrl": "https://ramadan.dar-alifta.org/event",
       "verified": true,
-      "qid": "ramadan-200-905",
+      "qid": "ramadan-200-914",
       "difficultyTarget": 0.8
     },
     {
       "p": 200,
+      "q": "ما المكيال الذي تُقدَّر به زكاة ختام رمضان؟",
+      "a": "الصاع",
+      "alt": [
+        "صاع"
+      ],
       "topic": "العشر الأواخر والعيد",
-      "q": "ما اسم العيد الذي يأتي مباشرة بعد انقضاء رمضان؟",
-      "a": "عيد الفطر",
-      "alt": [
-        "الفطر"
-      ],
-      "sourceUrl": "https://visitqatar.com/intl-en/about-qatar/traditions/ramadan",
       "verified": true,
-      "qid": "ramadan-200-906",
-      "difficultyTarget": 0.8
+      "qid": "ramadan-200-915",
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://sunnah.com/bukhari:1503"
     },
     {
       "p": 200,
+      "q": "ما اسم الجدول اليومي الذي يبيّن مواعيد الصيام طوال الشهر؟",
+      "a": "الإمساكية",
+      "alt": [
+        "إمساكية"
+      ],
       "topic": "عادات وتقاليد",
-      "q": "ما لقب من يطوف بالحارات ليلًا قارعًا طبلته ليوقظ الناس قبل الفجر؟",
-      "a": "المسحراتي",
-      "alt": [
-        "المسحّر",
-        "المسحر"
-      ],
-      "sourceUrl": "https://www.cairo.gov.eg/ar/culture/cultural-variety/ramadan-lantern/",
       "verified": true,
-      "qid": "ramadan-200-907",
-      "difficultyTarget": 0.8
+      "qid": "ramadan-200-916",
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://cairo.gov.eg/ar/more/seasonal-events/ramadan/"
     },
     {
       "p": 200,
       "topic": "العشر الأواخر والعيد",
-      "q": "ما اسم أعظم ليالي رمضان وقد ذُكرت في سورة كاملة؟",
-      "a": "ليلة القدر",
-      "sourceUrl": "https://quran.com/al-qadr/1-5",
+      "q": "في أي سورة ورد اسم شهر رمضان؟",
+      "a": "البقرة",
+      "alt": [
+        "سورة البقرة"
+      ],
+      "sourceUrl": "https://quran.com/al-baqarah/185",
       "verified": true,
-      "qid": "ramadan-200-908",
+      "qid": "ramadan-200-917",
+      "difficultyTarget": 0.8
+    },
+    {
+      "p": 200,
+      "topic": "مائدة الإفطار",
+      "q": "ما الإناء الطيني المخروطي الغطاء الذي تحمل الأكلة المغربية اسمه؟",
+      "a": "الطاجين",
+      "alt": [
+        "طاجين",
+        "الطاجن"
+      ],
+      "sourceUrl": "https://www.visitmorocco.com/sites/default/files/atoms/files/maroc-ang.pdf",
+      "verified": true,
+      "qid": "ramadan-200-918",
       "difficultyTarget": 0.8
     },
     {
@@ -118,54 +113,7 @@
       ],
       "sourceUrl": "https://saudipedia.com/شهر-رمضان",
       "verified": true,
-      "qid": "ramadan-400-901",
-      "difficultyTarget": 0.6
-    },
-    {
-      "p": 400,
-      "topic": "عادات وتقاليد",
-      "q": "ما اسم السهرة الاجتماعية على مائدة متأخرة يقيمها أهل الخليج في ليالي رمضان؟",
-      "a": "الغبقة",
-      "alt": [
-        "غبقة"
-      ],
-      "sourceUrl": "https://visitqatar.com/intl-en/about-qatar/traditions/ramadan",
-      "verified": true,
-      "qid": "ramadan-400-902",
-      "difficultyTarget": 0.6
-    },
-    {
-      "p": 400,
-      "topic": "مائدة الإفطار",
-      "q": "ما الطبق الخليجي من القمح المهروس مع اللحم ويكثر في رمضان؟",
-      "a": "الهريس",
-      "alt": [
-        "هريس",
-        "الهريسة"
-      ],
-      "sourceUrl": "https://saudipedia.com/الهريس",
-      "verified": true,
-      "qid": "ramadan-400-903",
-      "difficultyTarget": 0.6
-    },
-    {
-      "p": 400,
-      "topic": "حلويات ومشروبات",
-      "q": "ما المشروب الرمضاني البني الحامض الذي يُحضّر بنقع لب ثمار تحمل اسمه؟",
-      "a": "التمر الهندي",
-      "sourceUrl": "https://gate.ahram.org.eg/News/5483552.aspx",
-      "verified": true,
-      "qid": "ramadan-400-904",
-      "difficultyTarget": 0.6
-    },
-    {
-      "p": 400,
-      "topic": "أحداث في رمضان",
-      "q": "ما المعركة التي هزم فيها المماليك المغول في الخامس والعشرين من رمضان؟",
-      "a": "عين جالوت",
-      "sourceUrl": "https://ramadan.dar-alifta.org/event",
-      "verified": true,
-      "qid": "ramadan-400-905",
+      "qid": "ramadan-400-911",
       "difficultyTarget": 0.6
     },
     {
@@ -178,37 +126,11 @@
       ],
       "sourceUrl": "https://whc.unesco.org/en/list/20/",
       "verified": true,
-      "qid": "ramadan-400-906",
+      "qid": "ramadan-400-912",
       "difficultyTarget": 0.6
     },
     {
       "p": 400,
-      "q": "ما المكيال الذي تُقدَّر به زكاة ختام رمضان؟",
-      "a": "الصاع",
-      "alt": [
-        "صاع"
-      ],
-      "topic": "العشر الأواخر والعيد",
-      "verified": true,
-      "qid": "ramadan-400-907",
-      "difficultyTarget": 0.6,
-      "sourceUrl": "https://sunnah.com/bukhari:1503"
-    },
-    {
-      "p": 400,
-      "q": "ما اسم الجدول اليومي الذي يبيّن مواعيد الصيام طوال الشهر؟",
-      "a": "الإمساكية",
-      "alt": [
-        "إمساكية"
-      ],
-      "topic": "عادات وتقاليد",
-      "verified": true,
-      "qid": "ramadan-400-908",
-      "difficultyTarget": 0.6,
-      "sourceUrl": "https://cairo.gov.eg/ar/more/seasonal-events/ramadan/"
-    },
-    {
-      "p": 600,
       "topic": "مفردات الشهر",
       "q": "إلى أي معنى يعود اسم شهر رمضان في أصله اللغوي؟",
       "a": "شدة الحر",
@@ -217,8 +139,75 @@
       ],
       "sourceUrl": "https://saudipedia.com/شهر-رمضان",
       "verified": true,
-      "qid": "ramadan-600-901",
-      "difficultyTarget": 0.4
+      "qid": "ramadan-400-913",
+      "difficultyTarget": 0.6
+    },
+    {
+      "p": 400,
+      "topic": "مائدة الإفطار",
+      "q": "ما اسم الخبز اليمني الرقيق المسامي الذي يُغمر باللبن؟",
+      "a": "اللحوح",
+      "alt": [
+        "لحوح"
+      ],
+      "sourceUrl": "https://reefyemen.net/%D8%A7%D9%84%D9%84%D8%AD%D9%88%D8%AD-%D8%A3%D9%8A%D9%82%D9%88%D9%86%D8%A9-%D8%A7%D9%84%D9%85%D8%A7%D8%A6%D8%AF%D8%A9-%D8%A7%D9%84%D8%B1%D9%85%D8%B6%D8%A7%D9%86%D9%8A%D8%A9-%D9%81",
+      "verified": true,
+      "qid": "ramadan-400-914",
+      "difficultyTarget": 0.6
+    },
+    {
+      "p": 400,
+      "q": "ما الحلوى القيروانية المعسّلة التي تُباع في رمضان بتونس؟",
+      "a": "المقروض",
+      "alt": [
+        "مقروض"
+      ],
+      "topic": "حلويات ومشروبات",
+      "verified": true,
+      "qid": "ramadan-400-915",
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://www.discovertunisia.com/decouvrir/autour-de-kairouan"
+    },
+    {
+      "p": 400,
+      "topic": "العشر الأواخر والعيد",
+      "q": "في أي ليالي العشر الأخيرة يُكثر الناس تحرّي الليلة المباركة؟",
+      "a": "الليالي الوتر",
+      "alt": [
+        "الوتر",
+        "الليالي الفردية"
+      ],
+      "sourceUrl": "https://sunnah.com/bukhari:2017",
+      "verified": true,
+      "qid": "ramadan-400-916",
+      "difficultyTarget": 0.6
+    },
+    {
+      "p": 400,
+      "q": "بعد غروب أي يوم من شعبان يُتحرّى الهلال، ويُكمل الشهر ثلاثين إن لم تثبت رؤيته؟",
+      "a": "التاسع والعشرين",
+      "alt": [
+        "29",
+        "29 شعبان",
+        "التاسع والعشرون"
+      ],
+      "topic": "التقويم الهجري",
+      "verified": true,
+      "qid": "ramadan-400-917",
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://sunnah.com/bukhari:1909"
+    },
+    {
+      "q": "ما الطبق الرمضاني الذي يتكون من خبز رقيق تسقى طبقاته بمرق اللحم أو الخضار؟",
+      "a": "الثريد",
+      "topic": "مائدة الإفطار",
+      "sourceUrl": "https://visitqatar.com/intl-en/about-qatar/traditions/ramadan",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 400,
+      "qid": "ramadan-400-918",
+      "difficultyTarget": 0.6
     },
     {
       "p": 600,
@@ -230,34 +219,8 @@
       ],
       "sourceUrl": "https://visitqatar.com/intl-en/about-qatar/traditions/ramadan",
       "verified": true,
-      "qid": "ramadan-600-902",
+      "qid": "ramadan-600-911",
       "difficultyTarget": 0.4
-    },
-    {
-      "p": 600,
-      "topic": "مائدة الإفطار",
-      "q": "ما اسم الخبز اليمني الرقيق المسامي الذي يُغمر باللبن؟",
-      "a": "اللحوح",
-      "alt": [
-        "لحوح"
-      ],
-      "sourceUrl": "https://reefyemen.net/%D8%A7%D9%84%D9%84%D8%AD%D9%88%D8%AD-%D8%A3%D9%8A%D9%82%D9%88%D9%86%D8%A9-%D8%A7%D9%84%D9%85%D8%A7%D8%A6%D8%AF%D8%A9-%D8%A7%D9%84%D8%B1%D9%85%D8%B6%D8%A7%D9%86%D9%8A%D8%A9-%D9%81",
-      "verified": true,
-      "qid": "ramadan-600-903",
-      "difficultyTarget": 0.4
-    },
-    {
-      "p": 600,
-      "q": "ما الحلوى القيروانية المعسّلة التي تُباع في رمضان بتونس؟",
-      "a": "المقروض",
-      "alt": [
-        "مقروض"
-      ],
-      "topic": "حلويات ومشروبات",
-      "verified": true,
-      "qid": "ramadan-600-904",
-      "difficultyTarget": 0.4,
-      "sourceUrl": "https://www.discovertunisia.com/decouvrir/autour-de-kairouan"
     },
     {
       "p": 600,
@@ -266,37 +229,8 @@
       "a": "العاشر من رمضان",
       "sourceUrl": "https://www.newcities.gov.eg/know_cities/Tenth_Ramadan/default.aspx",
       "verified": true,
-      "qid": "ramadan-600-905",
+      "qid": "ramadan-600-912",
       "difficultyTarget": 0.4
-    },
-    {
-      "p": 600,
-      "topic": "العشر الأواخر والعيد",
-      "q": "في أي ليالي العشر الأخيرة يُكثر الناس تحرّي الليلة المباركة؟",
-      "a": "الليالي الوتر",
-      "alt": [
-        "الوتر",
-        "الليالي الفردية"
-      ],
-      "sourceUrl": "https://sunnah.com/bukhari:2017",
-      "verified": true,
-      "qid": "ramadan-600-906",
-      "difficultyTarget": 0.4
-    },
-    {
-      "p": 600,
-      "q": "بعد غروب أي يوم من شعبان يُتحرّى الهلال، ويُكمل الشهر ثلاثين إن لم تثبت رؤيته؟",
-      "a": "التاسع والعشرين",
-      "alt": [
-        "29",
-        "29 شعبان",
-        "التاسع والعشرون"
-      ],
-      "topic": "التقويم الهجري",
-      "verified": true,
-      "qid": "ramadan-600-907",
-      "difficultyTarget": 0.4,
-      "sourceUrl": "https://sunnah.com/bukhari:1909"
     },
     {
       "p": 600,
@@ -308,12 +242,12 @@
       ],
       "topic": "عادات وتقاليد",
       "verified": true,
-      "qid": "ramadan-600-908",
+      "qid": "ramadan-600-913",
       "difficultyTarget": 0.4,
       "sourceUrl": "https://ina.iq/ar/art/205796--.html"
     },
     {
-      "p": 800,
+      "p": 600,
       "topic": "مفردات الشهر",
       "q": "اذكر جمعًا صحيحًا لكلمة رمضان في العربية.",
       "a": "رمضانات",
@@ -325,8 +259,62 @@
       ],
       "sourceUrl": "https://www.arabicacademy.gov.eg/ar/محرك-البحث/رَمَضَانُ?exact_search=true",
       "verified": true,
-      "qid": "ramadan-800-901",
-      "difficultyTarget": 0.25
+      "qid": "ramadan-600-914",
+      "difficultyTarget": 0.4
+    },
+    {
+      "p": 600,
+      "topic": "أحداث في رمضان",
+      "q": "أي شهر ميلادي يحمل الاسم الأشهر لحرب عام 1973 التي اندلعت خلال الصيام؟",
+      "a": "أكتوبر",
+      "alt": [
+        "تشرين الأول"
+      ],
+      "sourceUrl": "https://ramadan.dar-alifta.org/event",
+      "verified": true,
+      "qid": "ramadan-600-915",
+      "difficultyTarget": 0.4
+    },
+    {
+      "p": 600,
+      "topic": "العشر الأواخر والعيد",
+      "q": "بأي اسم يبدأ عنوان باب زكاة الفطر في صحيح البخاري: فرض ...؟",
+      "a": "صدقة الفطر",
+      "sourceUrl": "https://sunnah.com/bukhari:1503",
+      "verified": true,
+      "qid": "ramadan-600-916",
+      "difficultyTarget": 0.4
+    },
+    {
+      "p": 600,
+      "q": "ما الاسم الفلكي للحظة تساوي طولَي القمر والشمس على دائرة البروج، قبل ظهور الهلال؟",
+      "a": "المحاق",
+      "alt": [
+        "الاقتران",
+        "القمر الجديد"
+      ],
+      "topic": "التقويم الهجري",
+      "verified": true,
+      "qid": "ramadan-600-917",
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://aa.usno.navy.mil/faq/crescent"
+    },
+    {
+      "q": "ما اسم الخبز التركي المستدير المرشوش بالسمسم الذي تشتهر المخابز بإعداده في رمضان؟",
+      "a": "بيده رمضان",
+      "topic": "مائدة الإفطار",
+      "sourceUrl": "https://goturkiye.com/halaltourism/ramadan-and-ramadan-feasts",
+      "alt": [
+        "رمضان بيدسي",
+        "رمضان بيده",
+        "Ramazan Pidesi",
+        "بيدا"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 600,
+      "qid": "ramadan-600-918",
+      "difficultyTarget": 0.4
     },
     {
       "p": 800,
@@ -338,21 +326,7 @@
       ],
       "sourceUrl": "https://www.omaninfo.om/images/library/file/Book736319.pdf",
       "verified": true,
-      "qid": "ramadan-800-902",
-      "difficultyTarget": 0.25
-    },
-    {
-      "p": 800,
-      "topic": "مائدة الإفطار",
-      "q": "ما الإناء الطيني المخروطي الغطاء الذي تحمل الأكلة المغربية اسمه؟",
-      "a": "الطاجين",
-      "alt": [
-        "طاجين",
-        "الطاجن"
-      ],
-      "sourceUrl": "https://www.visitmorocco.com/sites/default/files/atoms/files/maroc-ang.pdf",
-      "verified": true,
-      "qid": "ramadan-800-903",
+      "qid": "ramadan-800-911",
       "difficultyTarget": 0.25
     },
     {
@@ -362,45 +336,8 @@
       "a": "العرديب",
       "sourceUrl": "https://raseef22.net/article/1092704-الكشك-الأبريه-السوبيا-القصب-العرديب-عصائر-رمضانية-بعدد-الأقاليم-المصرية",
       "verified": true,
-      "qid": "ramadan-800-904",
+      "qid": "ramadan-800-912",
       "difficultyTarget": 0.25
-    },
-    {
-      "p": 800,
-      "topic": "أحداث في رمضان",
-      "q": "أي شهر ميلادي يحمل الاسم الأشهر لحرب عام 1973 التي اندلعت خلال الصيام؟",
-      "a": "أكتوبر",
-      "alt": [
-        "تشرين الأول"
-      ],
-      "sourceUrl": "https://ramadan.dar-alifta.org/event",
-      "verified": true,
-      "qid": "ramadan-800-905",
-      "difficultyTarget": 0.25
-    },
-    {
-      "p": 800,
-      "topic": "العشر الأواخر والعيد",
-      "q": "بأي اسم يبدأ عنوان باب زكاة الفطر في صحيح البخاري: فرض ...؟",
-      "a": "صدقة الفطر",
-      "sourceUrl": "https://sunnah.com/bukhari:1503",
-      "verified": true,
-      "qid": "ramadan-800-906",
-      "difficultyTarget": 0.25
-    },
-    {
-      "p": 800,
-      "q": "ما الاسم الفلكي للحظة تساوي طولَي القمر والشمس على دائرة البروج، قبل ظهور الهلال؟",
-      "a": "المحاق",
-      "alt": [
-        "الاقتران",
-        "القمر الجديد"
-      ],
-      "topic": "التقويم الهجري",
-      "verified": true,
-      "qid": "ramadan-800-907",
-      "difficultyTarget": 0.25,
-      "sourceUrl": "https://aa.usno.navy.mil/faq/crescent"
     },
     {
       "p": 800,
@@ -411,22 +348,22 @@
       ],
       "topic": "مائدة الإفطار",
       "verified": true,
-      "qid": "ramadan-800-908",
+      "qid": "ramadan-800-913",
       "difficultyTarget": 0.25,
       "sourceUrl": "https://qna.org.qa/ar-QA/news/news-details?date=4%2F05%2F2022&id=0013-عيد-الفطر-في-السودان-حرص-على-بياض-الثياب-ونقاء-السريرة"
     },
     {
-      "p": 1000,
+      "p": 800,
       "topic": "حلويات ومشروبات",
       "q": "بأي اسم يعرف اليونانيون حلوى كرات العجين المقلية الذهبية؟",
       "a": "لوكوماديس",
       "sourceUrl": "https://www.visitgreece.gr/fr/experiences/gastronomy/traditional-products/greek-sweets",
       "verified": true,
-      "qid": "ramadan-1000-901",
-      "difficultyTarget": 0.15
+      "qid": "ramadan-800-914",
+      "difficultyTarget": 0.25
     },
     {
-      "p": 1000,
+      "p": 800,
       "topic": "عادات وتقاليد",
       "q": "ما غطاء الرأس الأسود المزخرف بالذهب الذي ترتديه الفتيات في احتفال القرنقعوه القطري؟",
       "a": "البخنق",
@@ -435,18 +372,46 @@
       ],
       "sourceUrl": "https://qna.org.qa/ar-QA/News-Area/Special-News/2023-3/27/0033-الشعوب-العربية-تستقبل-شهر-الصيام-بالعبادات-والزينات-والتهاني--تقرير",
       "verified": true,
-      "qid": "ramadan-1000-902",
-      "difficultyTarget": 0.15
+      "qid": "ramadan-800-915",
+      "difficultyTarget": 0.25
     },
     {
-      "p": 1000,
+      "p": 800,
       "topic": "أحداث في رمضان",
       "q": "أي دولة من آسيا الوسطى شاركت أذربيجان وإيران وتركيا تسجيل تقاليد الإفطار لدى اليونسكو؟",
       "a": "أوزبكستان",
       "sourceUrl": "https://ich.unesco.org/en/RL/iftar-eftari-iftar-iftor-and-its-socio-cultural-traditions-01984",
       "verified": true,
-      "qid": "ramadan-1000-903",
-      "difficultyTarget": 0.15
+      "qid": "ramadan-800-916",
+      "difficultyTarget": 0.25
+    },
+    {
+      "p": 800,
+      "q": "ما المصطلح الفلكي للمسافة الزاوية بين مركزي القمر والشمس، وهو عامل مهم لرؤية هلال رمضان؟",
+      "a": "الاستطالة",
+      "alt": [
+        "استطالة القمر",
+        "الاستطالة الزاوية"
+      ],
+      "topic": "التقويم الهجري",
+      "verified": true,
+      "qid": "ramadan-800-917",
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://aa.usno.navy.mil/faq/crescent"
+    },
+    {
+      "p": 800,
+      "q": "ما اسم الأداة الخشبية التي يُهرس بها القمح واللحم في تحضير الهريس الأحسائي؟",
+      "a": "المضرابة",
+      "alt": [
+        "مضراب الهريس",
+        "المضراب"
+      ],
+      "topic": "مائدة الإفطار",
+      "verified": true,
+      "qid": "ramadan-800-918",
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://saudipedia.com/الهريس"
     },
     {
       "p": 1000,
@@ -457,22 +422,9 @@
       ],
       "topic": "حلويات ومشروبات",
       "verified": true,
-      "qid": "ramadan-1000-904",
+      "qid": "ramadan-1000-911",
       "difficultyTarget": 0.15,
       "sourceUrl": "https://ar.tunisienumerique.com/%D9%85%D9%86-%D8%A7%D9%84%D9%85%D8%AE%D8%A7%D8%B1%D9%82-%D9%88%D8%A7%D9%84%D8%B2%D9%84%D8%A7%D8%A8%D9%8A%D8%A9-%D8%A5%D9%84%D9%89-%D9%85%D8%AE%D8%A7%D8%B1%D9%82-%D8%A8%D9%82%D9%84%D8%A7%D9%88/"
-    },
-    {
-      "p": 1000,
-      "topic": "العشر الأواخر والعيد",
-      "q": "في أي سورة ورد اسم شهر رمضان؟",
-      "a": "البقرة",
-      "alt": [
-        "سورة البقرة"
-      ],
-      "sourceUrl": "https://quran.com/al-baqarah/185",
-      "verified": true,
-      "qid": "ramadan-1000-905",
-      "difficultyTarget": 0.15
     },
     {
       "p": 1000,
@@ -480,37 +432,102 @@
       "a": "البرلمان",
       "topic": "عادات وتقاليد",
       "verified": true,
-      "qid": "ramadan-1000-906",
+      "qid": "ramadan-1000-912",
       "difficultyTarget": 0.15,
       "sourceUrl": "https://www.cairo.gov.eg/ar/culture/cultural-variety/ramadan-lantern/"
     },
     {
-      "p": 1000,
-      "q": "ما المصطلح الفلكي للمسافة الزاوية بين مركزي القمر والشمس، وهو عامل مهم لرؤية هلال رمضان؟",
-      "a": "الاستطالة",
+      "q": "ما اسم الكتابات الضوئية التي تزدان بها المساجد التركية خلال رمضان؟",
+      "a": "المحيا",
+      "topic": "الفنون الشعبية",
+      "sourceUrl": "https://goturkiye.com/halaltourism/ramadan-and-ramadan-feasts",
       "alt": [
-        "استطالة القمر",
-        "الاستطالة الزاوية"
+        "ماهيا",
+        "Mahya",
+        "المحيا الرمضانية"
       ],
-      "topic": "التقويم الهجري",
       "verified": true,
-      "qid": "ramadan-1000-907",
-      "difficultyTarget": 0.15,
-      "sourceUrl": "https://aa.usno.navy.mil/faq/crescent"
+      "verifiedAt": "2026-09-25",
+      "p": 1000,
+      "qid": "ramadan-1000-913",
+      "difficultyTarget": 0.15
     },
     {
-      "p": 1000,
-      "q": "ما اسم الأداة الخشبية التي يُهرس بها القمح واللحم في تحضير الهريس الأحسائي؟",
-      "a": "المضرابة",
+      "q": "ما الحلوى التركية الرمضانية المصنوعة من رقائق نشا الأرز والحليب وماء الورد والمكسرات؟",
+      "a": "غولاش",
+      "topic": "حلويات ومشروبات",
+      "sourceUrl": "https://goturkiye.com/halaltourism/ramadan-and-ramadan-feasts",
       "alt": [
-        "مضراب الهريس",
-        "المضراب"
+        "غولاج",
+        "جولاش",
+        "Güllaç",
+        "الغولاش"
       ],
-      "topic": "مائدة الإفطار",
       "verified": true,
-      "qid": "ramadan-1000-908",
-      "difficultyTarget": 0.15,
-      "sourceUrl": "https://saudipedia.com/الهريس"
+      "verifiedAt": "2026-09-25",
+      "p": 1000,
+      "qid": "ramadan-1000-914",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "ما اسم عادة الاغتسال في الينابيع بجاوة استعدادًا لرمضان؟",
+      "a": "بادوسان",
+      "topic": "عادات وتقاليد",
+      "sourceUrl": "https://www.indonesia.travel/nl/en/muslim-friendly-travel/events/padusan",
+      "alt": [
+        "Padusan"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 1000,
+      "qid": "ramadan-1000-915",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "ما اسم العصيدة التقليدية التي توزعها مبادرات ماليزية على الناس في رمضان؟",
+      "a": "بوبور لامبوك",
+      "topic": "مائدة الإفطار",
+      "sourceUrl": "https://www.matic.gov.my/en/imedia/news/santai-matic-berlambuk-4-0",
+      "alt": [
+        "Bubur lambuk",
+        "ببور لامبوك"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 1000,
+      "qid": "ramadan-1000-916",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "ما اسم رفيق شخصية قره غوز في مسرح الظل التركي المرتبط بليالي رمضان؟",
+      "a": "حاجي واط",
+      "topic": "الفنون الشعبية",
+      "sourceUrl": "https://goturkiye.com/halaltourism/ramadan-and-ramadan-feasts",
+      "alt": [
+        "هاجيفات",
+        "حاجيفات",
+        "Hacivat"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 1000,
+      "qid": "ramadan-1000-917",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "ما اسم دورة القمر من محاق إلى المحاق التالي، ومدتها نحو 29.53 يومًا؟",
+      "a": "الشهر الاقتراني",
+      "topic": "التقويم الهجري",
+      "sourceUrl": "https://eclipse.gsfc.nasa.gov/SEsaros/SEperiodicity.html",
+      "alt": [
+        "الشهر السينودي",
+        "الشهر القمري الاقتراني"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 1000,
+      "qid": "ramadan-1000-918",
+      "difficultyTarget": 0.15
     }
   ]
 }
