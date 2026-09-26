@@ -164,6 +164,22 @@ test('x509: السلسلة الوهمية تُحلَّل وتُتحقق، وال
   assert.equal(APPLE_ROOT_CA_G3_SHA256, '63343abfb89a6a03ebb57e9b3f5fa7be7c4f5c756f3017b3a8c488c3653e9179');
 });
 
+// انحدار: مدخلات DER تالفة (طول لا يطابق حجم البايتات، عنصر يتجاوز أصله، شهادة
+// مقطوعة) تُرفض بـSIGNATURE فورًا ولا تُطيل التحليل ولا تصير 500.
+test('x509: DER تالف يُرفض فورًا بـSIGNATURE بدل حلقة أو خطأ داخلي', async () => {
+  const chain = appleChain();
+  const long = new Uint8Array(40);
+  long.set([0x30, 0x26, 0x30, 0x84, 0xff, 0xff, 0xff, 0xfa]); // طول لا يطابق حجم المدخل
+  const overflow = new Uint8Array([0x30, 0x04, 0x02, 0x06, 0x01, 0x02]); // عنصر أطول من أصله
+  for (const der of [long, overflow, chain.leafDer.subarray(0, 40), new Uint8Array(0), new Uint8Array([0x30])]) {
+    const started = Date.now();
+    assert.throws(() => parseCertificate(der), /SIGNATURE/);
+    assert.ok(Date.now() - started < 200, 'الرفض فوري');
+  }
+  await assert.rejects(verifyChain([long, chain.rootDer], { rootSha256: chain.rootSha256 }), /SIGNATURE/);
+  await assert.rejects(verifyAppleJws(chain.sign({ a: 1 }, { header: { alg: 'ES256', x5c: ['!!not-base64!!', chain.x5c[1]] } }), { rootSha256: chain.rootSha256 }), /SIGNATURE/);
+});
+
 test('x509: JWS آبل يُقبل موقّعًا، ويُرفض معدَّلًا أو بلا x5c أو بخوارزمية أخرى', async () => {
   const chain = appleChain();
   const options = { rootSha256: chain.rootSha256 };

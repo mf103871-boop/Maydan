@@ -3,8 +3,14 @@
 // بـWebCrypto، وتثبيت الجذر ببصمة SHA-256 (Apple Root CA - G3 افتراضيًا).
 // بلا هذا كان أي طرف يستطيع إرسال إشعار مزوّر بـnotificationUUID حقيقي فيُسقط
 // الإشعار الأصلي عند فحص التكرار.
-import { failure } from './errors.mjs';
+import { failure, RoomError } from './errors.mjs';
 import { bytesFromBase64url } from './jwt.mjs';
+
+// Structural surprises in attacker-supplied DER (a TypeError on a missing field,
+// a decode error) are a bad signature, never a 500 that masks real outages.
+function guarded(fn) {
+  try { return fn(); } catch (error) { if (error instanceof RoomError) throw error; return failure('SIGNATURE'); }
+}
 
 // https://www.apple.com/certificateauthority/AppleRootCA-G3.cer — بصمة SHA-256 للـDER.
 export const APPLE_ROOT_CA_G3_SHA256 = '63343abfb89a6a03ebb57e9b3f5fa7be7c4f5c756f3017b3a8c488c3653e9179';
@@ -33,11 +39,13 @@ function tlv(bytes, offset) {
     const count = length & 0x7f;
     if (count === 0 || count > 4 || cursor + count > bytes.length) failure('SIGNATURE');
     length = 0;
-    for (let i = 0; i < count; i += 1) length = (length << 8) | bytes[cursor + i];
+    // Unsigned arithmetic: `<<` is signed 32-bit, so a four-byte length used to go
+    // negative, move the cursor backwards and keep children() looping forever.
+    for (let i = 0; i < count; i += 1) length = length * 256 + bytes[cursor + i];
     cursor += count;
   }
   const end = cursor + length;
-  if (end > bytes.length) failure('SIGNATURE');
+  if (!Number.isSafeInteger(end) || end < cursor || end > bytes.length) failure('SIGNATURE');
   return { tag, start: cursor, end, offset };
 }
 function children(bytes, node) {
@@ -45,6 +53,8 @@ function children(bytes, node) {
   let cursor = node.start;
   while (cursor < node.end) {
     const child = tlv(bytes, cursor);
+    // Every element must advance and stay inside its parent, or the input is not DER.
+    if (child.end <= cursor || child.end > node.end) failure('SIGNATURE');
     list.push(child);
     cursor = child.end;
   }
@@ -122,7 +132,7 @@ async function sha256Hex(bytes) {
 // يتحقق أن كل شهادة موقّعة بالتي تليها، وأن الأخيرة هي الجذر المثبّت، وأنها كلها سارية.
 export async function verifyChain(certs, { now = Date.now(), rootSha256 = APPLE_ROOT_CA_G3_SHA256 } = {}) {
   if (!Array.isArray(certs) || certs.length < 2 || certs.length > 5) failure('SIGNATURE');
-  const parsed = certs.map(parseCertificate);
+  const parsed = guarded(() => certs.map(parseCertificate));
   for (const cert of parsed) if (now < cert.notBefore || now > cert.notAfter) failure('SIGNATURE');
   const root = parsed[parsed.length - 1];
   if ((await sha256Hex(root.der)) !== String(rootSha256 || '').toLowerCase()) failure('SIGNATURE');
@@ -130,7 +140,8 @@ export async function verifyChain(certs, { now = Date.now(), rootSha256 = APPLE_
     const cert = parsed[i];
     const issuer = parsed[Math.min(i + 1, parsed.length - 1)]; // الجذر يوقّع نفسه
     const key = await importPublicKey(issuer);
-    const ok = await crypto.subtle.verify({ name: 'ECDSA', hash: cert.hash }, key, rawEcdsaSignature(cert.signature, CURVE_BYTES[issuer.curve]), cert.tbs);
+    const signature = guarded(() => rawEcdsaSignature(cert.signature, CURVE_BYTES[issuer.curve]));
+    const ok = await crypto.subtle.verify({ name: 'ECDSA', hash: cert.hash }, key, signature, cert.tbs);
     if (!ok) failure('SIGNATURE');
   }
   return parsed;
@@ -147,7 +158,7 @@ export async function verifyAppleJws(token, { now = Date.now(), rootSha256 = APP
   } catch { return failure('INVALID'); }
   if (!payload || typeof payload !== 'object' || Array.isArray(payload)) failure('INVALID');
   if (header?.alg !== 'ES256' || !Array.isArray(header.x5c) || !header.x5c.length) failure('SIGNATURE');
-  const chain = header.x5c.map((entry) => bytesFromBase64url(String(entry).replace(/-/g, '+').replace(/_/g, '/').replace(/=+$/, '')));
+  const chain = guarded(() => header.x5c.map((entry) => bytesFromBase64url(String(entry).replace(/-/g, '+').replace(/_/g, '/').replace(/=+$/, ''))));
   // Offline verification uses the signed date, as Apple's verifier does: a restored
   // transaction can legitimately outlive the certificate that signed it.
   const signedAt = payload.signedDate === undefined ? now : Number(payload.signedDate);
@@ -157,7 +168,7 @@ export async function verifyAppleJws(token, { now = Date.now(), rootSha256 = APP
   if (leaf.curve !== 'P-256' || !leaf.extensions.has(APPLE_LEAF_OID)) failure('SIGNATURE');
   if (parsed.length > 2 && !parsed[1].extensions.has(APPLE_INTERMEDIATE_OID)) failure('SIGNATURE');
   const key = await importPublicKey(leaf);
-  const signature = bytesFromBase64url(parts[2]);
+  const signature = guarded(() => bytesFromBase64url(parts[2]));
   if (signature.length !== 64) failure('SIGNATURE');
   const ok = await crypto.subtle.verify({ name: 'ECDSA', hash: 'SHA-256' }, key, signature, new TextEncoder().encode(`${parts[0]}.${parts[1]}`));
   if (!ok) failure('SIGNATURE');

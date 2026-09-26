@@ -6,7 +6,7 @@ import * as db from '../server/accounts/db.mjs';
 import * as paddle from '../server/accounts/paddle.mjs';
 import { premiumOf } from '../server/accounts/entitlements.mjs';
 import { issueSession } from '../server/accounts/session.mjs';
-import { routeAccounts, roomGate } from '../server/accounts/router.mjs';
+import { routeAccounts, roomGate, limitKind } from '../server/accounts/router.mjs';
 import { hmacHex } from '../server/accounts/jwt.mjs';
 
 const now = Date.now();
@@ -53,11 +53,23 @@ test('live me and room gates ignore sandbox/unclassified Paddle while preserving
   await assert.rejects(roomGate(new Request('https://maydan.test/api/rooms', { headers: { authorization: `Bearer ${session.token}` } }), env, { game: 'beep' }), /PLUS_REQUIRED/);
   assert.equal((await db.subscriptionsOf(env, user.id))[0].environment, 'sandbox', 'historical subscription remains untouched');
   assert.equal(premiumOf([row(user.id, null)], now, env).active, false);
-  for (const [source, environment] of [['apple', 'Sandbox'], ['apple', 'Production'], ['promo', 'promo']]) {
+  for (const [source, environment] of [['apple', 'Production'], ['promo', 'promo']]) {
     const premium = premiumOf([row(user.id, 'sandbox'), row(user.id, environment, { source })], now, env);
     assert.equal(premium.active, true);
     assert.equal(premium.source, source);
   }
+  // معاملة آبل من Sandbox (TestFlight) لا تمنح «بلس» على عامل الإنتاج، إلا بسماح صريح أو في بيئة التجربة.
+  assert.equal(premiumOf([row(user.id, 'Sandbox', { source: 'apple' })], now, env).active, false);
+  assert.equal(premiumOf([row(user.id, 'Sandbox', { source: 'apple' })], now, { ...env, APPLE_ALLOW_SANDBOX_ENTITLEMENTS: '1' }).active, true);
+  assert.equal(premiumOf([row(user.id, 'Sandbox', { source: 'apple' })], now, envOf(env.DB, 'sandbox')).active, true);
+});
+
+test('the development sign-in stays closed on a production worker even with AUTH_DEV_FAKE set', async (t) => {
+  const env = { ...envOf(), AUTH_DEV_FAKE: '1' }; t.after(() => env.DB.close());
+  await assert.rejects(request(env, '/api/auth/dev', { method: 'POST', body: { subject: 'anyone' } }), /NOT_FOUND/);
+  const config = await (await request(env, '/api/billing/config')).json();
+  assert.equal('dev' in config.providers, false, 'المزوّد الوهمي لا يُعلَن للعموم');
+  assert.equal(limitKind('/api/apple/notifications'), 'webhook', 'إشعارات آبل تأخذ حصّة معدل');
 });
 
 test('live checkout for a sandbox subscriber creates a live customer and never reuses the sandbox mapping', async (t) => {

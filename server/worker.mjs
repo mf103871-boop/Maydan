@@ -15,11 +15,13 @@ export { Room };
 // Keys contain only a digest; no raw address is persisted. These are not DDoS protection.
 export const LIMIT_WINDOWS = { create: 600_000, join: 60_000, leave: 60_000, socket: 60_000,
   auth: 600_000, me: 60_000, billing: 600_000, trial: 60_000, socialRead: 60_000, socialWrite: 60_000,
-  profileRead: 60_000, profileWrite: 60_000, profileImage: 60_000 };
+  profileRead: 60_000, profileWrite: 60_000, profileImage: 60_000, webhook: 60_000 };
 // حدّ كل نوع داخل نافذته. مسارات الحسابات أقلّ سخاءً من قراءة الحالة لأنها تكتب أو تنادي مزوّدًا.
+// `webhook` سخيّ عمدًا (إشعارات آبل قد تصل دفعة)، لكنه يمنع سيلًا من عنوان واحد
+// على مسار عام يتحقق من توقيع قبل أي مصادقة.
 export const LIMITS = { create: 8, join: 40, leave: 100, socket: 100,
   auth: 40, me: 120, billing: 30, trial: 60, socialRead: 240, socialWrite: 60,
-  profileRead: 240, profileWrite: 30, profileImage: 600 };
+  profileRead: 240, profileWrite: 30, profileImage: 600, webhook: 300 };
 export class RequestLimiter {
   constructor(ctx) { this.ctx = ctx; }
   async fetch(request) {

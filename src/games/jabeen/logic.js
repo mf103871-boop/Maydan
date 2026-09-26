@@ -95,8 +95,11 @@ export function reduce(state, action) {
     case 'ANSWER': {
       if (state.phase !== 'play') return state;
       const results = [...state.results, { itemId: state.item.id, text: state.item.text, ok: !!action.ok }];
-      if (!action.item) return { ...state, results, phase: 'review', item: null };
-      return { ...state, results, item: action.item };
+      const recycled = state.recycled || !!action.recycled;
+      // لا كلمة حتى بعد إعادة الخلط (فئة فارغة): ينتهي الدور بالمراجعة. الواجهة تعيد
+      // الخلط قبل الوصول هنا، فنفاد الفئة وحده لا يقطع دور اللاعب.
+      if (!action.item) return { ...state, results, phase: 'review', item: null, recycled };
+      return { ...state, results, item: action.item, recycled };
     }
     case 'TIME_UP':
       if (state.phase !== 'play') return state;

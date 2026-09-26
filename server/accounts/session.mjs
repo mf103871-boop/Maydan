@@ -103,7 +103,7 @@ export async function redeemAuthCode(env, code, now = Date.now()) {
 export const STATE_TTL = 10 * 60 * 1000;
 const stateSecret = (env) => {
   if (env.SESSION_SECRET) return String(env.SESSION_SECRET);
-  if (env.AUTH_DEV_FAKE === '1') return 'maydan-dev-session-secret';
+  if (env.AUTH_DEV_FAKE === '1' && env.PADDLE_ENV !== 'production') return 'maydan-dev-session-secret';
   failure('NOT_ELIGIBLE');
 };
 

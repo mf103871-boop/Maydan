@@ -198,7 +198,8 @@ test('إعداد الفوترة يعلن Paddle والمزوّدين المتا�
   assert.equal(status, 200);
   assert.deepEqual(data.products, PRODUCTS);
   assert.deepEqual(data.paddle, { clientToken: 'test_client_token', environment: 'sandbox', prices: { monthly: 'pri_monthly', yearly: 'pri_yearly' }, checkoutEnabled: true });
-  assert.deepEqual(data.providers, { apple: true, google: true, dev: true });
+  // المزوّد الوهمي لا يُعلَن في الإعداد العام حتى حين تكون رايته مفعّلة محليًا.
+  assert.deepEqual(data.providers, { apple: true, google: true });
 });
 
 test('الأصل المجهول يُرفض، ومسارات المزوّد العامة معفاة منه', { timeout: 30_000 }, async () => {

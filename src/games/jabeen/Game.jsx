@@ -89,7 +89,9 @@ export function Game({ api, players, onExit }) {
     clearTimeout(flashTimer.current);
     flashTimer.current = setTimeout(() => setFlash(''), wait(420));
     stampScreen(ok ? { text: '✓', tone: 'good', ms: 420 } : { text: '⏭', tone: 'bad', ms: 420 });
-    dispatch({ type: 'ANSWER', ok, item: source.next() });
+    // نفاد الفئة في منتصف الدور يعيد خلطها كما في بداية الدور، لا ينهي دور اللاعب مبكرًا.
+    const next = drawForTurn();
+    dispatch({ type: 'ANSWER', ok, item: next.item, recycled: next.recycled });
   };
 
   // نسخة واحدة من مستشعر الميلان: الإذن والقراءة في المكان نفسه.

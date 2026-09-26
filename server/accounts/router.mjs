@@ -30,12 +30,15 @@ const EXACT = new Set(['/api/me', '/api/account', '/api/redeem']);
 export const isAccountPath = (pathname) => EXACT.has(pathname) || PREFIXES.some((prefix) => pathname.startsWith(prefix));
 export const isPublicAccountPath = (pathname) => PUBLIC_PATHS.has(pathname);
 
-const devFake = (env) => env.AUTH_DEV_FAKE === '1';
+// المزوّد الوهمي للتطوير المحلي والاختبارات فقط: راية مضبوطة خطأً على عامل إنتاج
+// (PADDLE_ENV=production) لا تفتح أي حساب ولا تمنح «بلس».
+export const devFake = (env) => env.AUTH_DEV_FAKE === '1' && env.PADDLE_ENV !== 'production';
 const MAX_BODY = 32_768; // JWS آبل وإشعاراتها أكبر بكثير من أجسام الغرف.
 
 export function limitKind(pathname) {
   if (pathname === '/api/me') return 'me';
   if (pathname.startsWith('/api/trials/')) return 'trial';
+  if (pathname === '/api/apple/notifications') return 'webhook';
   if (pathname.startsWith('/api/billing/') || pathname.startsWith('/api/paddle/') || pathname === '/api/apple/transactions' || pathname === '/api/redeem') return 'billing';
   return 'auth';
 }
@@ -45,8 +48,10 @@ export async function routeAccounts(request, env, url, charge) {
   const path = url.pathname;
   if (!isAccountPath(path)) return null;
   if (!env.DB) failure('NOT_FOUND'); // لم تُربط قاعدة D1: الحسابات معطّلة، والغرف تعمل كما كانت.
-  // الـwebhooks لا تُحسب على حصّة عنوان المتصل: المزوّد قد يعيد الإرسال دفعة واحدة.
-  if (charge && path !== '/api/paddle/webhook' && path !== '/api/apple/notifications') await charge(limitKind(path));
+  // webhook Paddle محميّ بقائمة عناوينه وتوقيعه ولا يُحسب على حصّة العنوان (قد يعيد
+  // الإرسال دفعة واحدة). إشعارات آبل تصل من عناوين متغيرة فتأخذ حصّة `webhook` السخية:
+  // مسار عام يفحص توقيعًا قبل أي مصادقة يجب ألا يُستهلك بسيل من عنوان واحد.
+  if (charge && path !== '/api/paddle/webhook') await charge(limitKind(path));
   const method = request.method;
   const now = Date.now();
 
@@ -79,7 +84,8 @@ function billingConfig(env) {
     paddle: paddle.publicConfig(env),
     apple: { purchasesConfigured: apple.purchasesConfigured(env) },
     products: PRODUCTS,
-    providers: { apple: apple.configured(env), google: google.configured(env), dev: devFake(env) },
+    // المزوّد الوهمي لا يُعلَن في الإعداد العام؛ اختبارات التطوير تعرف مساره.
+    providers: { apple: apple.configured(env), google: google.configured(env) },
   });
 }
 

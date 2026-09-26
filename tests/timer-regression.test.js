@@ -291,3 +291,33 @@ test('القنبلة تسحب طلبات سهلة/متوسطة لا أصعب ا�
   const old = createPromptSource(prompts, { random: seeded(4) });
   assert.equal(old.next(1, 1).difficulty, 3, 'السلوك القديم كان يبدأ بالأصعب');
 });
+
+// ── انحدار: pause() أثناء عدّ 3-2-1 كان بلا أثر، فيستدعي العدّ start() ويعمل مؤقت شبح ──
+test('useTimer: pause أثناء عدّ الاستئناف يلغيه ولا يشغّل مؤقتًا شبحًا', () => {
+  const queued = [];
+  const previousTimeout = globalThis.setTimeout;
+  globalThis.setTimeout = (fn) => { queued.push(fn); return queued.length; };
+  try {
+    let ended = 0;
+    const h = mountTimer({ seconds: 60, onEnd: () => { ended += 1; } });
+    h.current.start(); h.flush(); h.advance(5);
+    h.current.pause(); h.flush();
+    assert.equal(h.current.paused, true);
+    h.current.resume(); h.flush();
+    assert.equal(h.current.resuming, 3, 'العدّ 3-2-1 بدأ');
+    // «إنهاء» من المضيف أثناء العدّ (على جبينك لا تعرض واجهة العدّ أصلًا)
+    h.current.pause(); h.flush();
+    assert.equal(h.current.resuming, null, 'الإيقاف يلغي العدّ');
+    assert.equal(h.current.paused, true);
+    assert.equal(h.current.running, false);
+    while (queued.length) { const fn = queued.shift(); fn(); h.flush(); }
+    assert.equal(h.current.running, false, 'لا مؤقت شبح بعد إلغاء العدّ');
+    assert.equal(h.current.resuming, null);
+    h.advance(120);
+    assert.equal(ended, 0, 'لا صفارة نهاية لدور لم يُستأنف');
+    // الاستئناف العادي ما زال يعمل بعد العدّ الكامل
+    h.current.resume(); h.flush();
+    while (queued.length) { const fn = queued.shift(); fn(); h.flush(); }
+    assert.equal(h.current.running, true, 'العدّ الكامل يشغّل المؤقت');
+  } finally { globalThis.setTimeout = previousTimeout; }
+});
