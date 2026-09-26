@@ -1,6 +1,6 @@
 // رموز الهدايا: التجزئة النقية، التطبيع، المخزن، وأثر الرمز على الاستحقاق في الواجهة
 // (المزوّد والجدار وبطاقة الحساب). لا شبكة: fetch وهمي ومتصفح صغير كما في account-client.
-import { test, after } from 'node:test';
+import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { createHash } from 'node:crypto';
 import { mkdtempSync, mkdirSync, rmSync } from 'node:fs';
@@ -25,8 +25,11 @@ globalThis.fetch = async () => { throw new Error('لا شبكة في الاخت�
 const root = process.cwd();
 mkdirSync(path.join(root, '.cache'), { recursive: true });
 const temp = mkdtempSync(path.join(root, '.cache', 'account-redeem-'));
-after(() => rmSync(temp, { recursive: true, force: true }));
-
+// التنظيف عند خروج العملية لا في after(): خطّاف after() في المستوى الأعلى كان يعمل قبل أن
+// تنتهي الانتظارات العليا (بناء esbuild ثم الاستيراد)، فيحذف المجلد وهو فارغ ويعيده esbuild
+// (مجلدات متروكة في .cache)، وعلى عامل macOS سبق الحذفُ قراءةَ الاستيراد فسقط الملف كله
+// بـ ERR_MODULE_NOT_FOUND. الخروج يأتي بعد كل نشاط، ولا مخلّفات.
+process.once('exit', () => rmSync(temp, { recursive: true, force: true }));
 await build({
   stdin: {
     contents: `

@@ -1,6 +1,6 @@
 // Privacy regressions at the rendered markup boundary. The engine tests cover
 // transitions; these ensure private data never reaches a closed/pass-phone view.
-import { test, after } from 'node:test';
+import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync, mkdtempSync, mkdirSync, rmSync } from 'node:fs';
 import path from 'node:path';
@@ -11,7 +11,11 @@ import { initialState, reduce, currentActor, turnKey, TRUTH_ID } from '../src/ga
 const root=process.cwd();
 mkdirSync(path.join(root,'.cache'),{recursive:true});
 const temp=mkdtempSync(path.join(root,'.cache','fabraka-ui-'));
-after(()=>rmSync(temp,{recursive:true,force:true}));
+// التنظيف عند خروج العملية لا في after(): خطّاف after() في المستوى الأعلى كان يعمل قبل أن
+// تنتهي الانتظارات العليا (بناء esbuild ثم الاستيراد)، فيحذف المجلد وهو فارغ ويعيده esbuild
+// (مجلدات متروكة في .cache)، وعلى عامل macOS سبق الحذفُ قراءةَ الاستيراد فسقط الملف كله
+// بـ ERR_MODULE_NOT_FOUND. الخروج يأتي بعد كل نشاط، ولا مخلّفات.
+process.once('exit', () => rmSync(temp, { recursive: true, force: true }));
 await build({stdin:{contents:`import React from 'react'; import {renderToStaticMarkup} from 'react-dom/server'; import {Game,SetupOptions,Results} from './src/games/fabraka/Game.jsx'; import {Illustration} from './src/games/fabraka/Illustration.jsx'; export const game=p=>renderToStaticMarkup(React.createElement(Game,p)); export const setup=p=>renderToStaticMarkup(React.createElement(SetupOptions,p)); export const results=p=>renderToStaticMarkup(React.createElement(Results,p)); export const picture=q=>renderToStaticMarkup(React.createElement(Illustration,{question:q}));`,resolveDir:root,loader:'jsx'},outfile:path.join(temp,'render.mjs'),bundle:true,platform:'node',format:'esm',packages:'external',jsx:'automatic',loader:{'.css':'text','.webp':'dataurl','.woff2':'dataurl'},logLevel:'silent'});
 const render=await import(pathToFileURL(path.join(temp,'render.mjs')));
 const noop=()=>{};
