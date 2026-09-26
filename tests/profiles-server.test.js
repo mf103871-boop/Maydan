@@ -2,9 +2,10 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import sharp from 'sharp';
 import { createLocalD1 } from '../server/local-d1.mjs';
-import { createUser } from '../server/accounts/db.mjs';
+import { createUser, deleteUser } from '../server/accounts/db.mjs';
 import { issueSession, ROTATE_AFTER } from '../server/accounts/session.mjs';
 import { routeProfiles, isPublicProfileImagePath } from '../server/profiles/router.mjs';
+import { routeModeration } from '../server/moderation/router.mjs';
 import * as profiles from '../server/profiles/db.mjs';
 import * as social from '../server/social/db.mjs';
 import { errorResponse } from '../server/protocol.mjs';
@@ -16,7 +17,8 @@ async function fixture(kind='avatar',color='#9962be',options={}) {
   return {bytes,dataUrl:`data:image/jpeg;base64,${bytes.toString('base64')}`};
 }
 async function setup(t) {
-  const env={DB:createLocalD1()};t.after(()=>env.DB.close());
+  const env={DB:createLocalD1(),MODERATOR_USER_IDS:''};t.after(()=>env.DB.close());
+  let reviewAccount;
   async function user(name='لاعب تجربة') {
     const row=await createUser(env,{name,email:`private-${crypto.randomUUID()}@example.test`});
     const session=await issueSession(env,row.id);await profiles.ensurePlayerProfile(env,row.id);
@@ -30,11 +32,36 @@ async function setup(t) {
     return {status:response.status,headers:response.headers,body:response.headers.get('content-type')?.startsWith('image/')?
       new Uint8Array(await response.arrayBuffer()):await response.json()};
   }
+  async function moderator() {
+    if(reviewAccount)return reviewAccount;
+    const row=await createUser(env,{name:'حساب مراجعة'});const session=await issueSession(env,row.id);
+    env.MODERATOR_USER_IDS=row.id;reviewAccount={...row,token:session.token};return reviewAccount;
+  }
+  async function callModeration(actor,path,method='GET',body) {
+    const request=new Request(`https://maydan.test${path.startsWith('/api/')?path:'/api/moderation'+path}`,{method,
+      headers:{...(actor?.token?{authorization:`Bearer ${actor.token}`} :{}),...(body===undefined?{}:{'content-type':'application/json'})},
+      ...(body===undefined?{}:{body:JSON.stringify(body)})});
+    let response;try{response=await routeModeration(request,env)}catch(error){response=errorResponse(error)}
+    return {status:response.status,headers:response.headers,body:response.headers.get('content-type')?.startsWith('image/')?
+      new Uint8Array(await response.arrayBuffer()):await response.json()};
+  }
+  async function approveImage(actor,kind) {
+    const pending=(await call(actor,'/me')).body.profile.imageReviews[kind];
+    assert.equal(pending?.status,'pending');
+    const reviewer=await moderator();
+    const queue=await callModeration(reviewer,'/images');assert.equal(queue.status,200);
+    const item=queue.body.images.find(row=>row.kind===kind&&row.version===pending.pendingVersion);
+    assert.ok(item);
+    const decision=await callModeration(reviewer,'/actions','POST',{action:'approve_image',clientId:crypto.randomUUID(),
+      targetId:item.id,version:item.version,reason:'صورة مناسبة للمراجعة'});
+    assert.equal(decision.status,200,JSON.stringify(decision.body));
+    return (await call(actor,'/me')).body.profile;
+  }
   async function connect(a,b) {
     const r=await social.requestFriend(env,a.id,b.id,Date.now());await social.acceptRequest(env,b.id,r.id,Date.now());
     await profiles.awardProfileAchievements(env,a.id);await profiles.awardProfileAchievements(env,b.id);
   }
-  return {env,user,call,connect};
+  return {env,user,call,connect,moderator,callModeration,approveImage};
 }
 
 test('profiles require sessions, preserve friend codes, rotate auth, and never reveal emails',async t=>{
@@ -85,7 +112,7 @@ test('earned profile and friendship awards persist after their prerequisites are
 });
 
 test('profile and image revision guards reject stale writes without changing users.name or image data',async t=>{
-  const {user,call,env}=await setup(t);const a=await user();
+  const {user,call,env,approveImage}=await setup(t);const a=await user();
   const revision=(await call(a,'/me')).body.profile.revision;
   assert.equal((await call(a,'/me','PATCH',{name:'الاسم الأول',revision})).status,200);
   assert.equal((await call(a,'/me','PATCH',{name:'اسم متأخر',bio:'متأخر',revision})).status,409);
@@ -95,16 +122,23 @@ test('profile and image revision guards reject stale writes without changing use
   assert.equal((await call(a,'/me')).body.profile.avatarUrl,null);
   const newest=(await call(a,'/me')).body.profile.revision;
   assert.equal((await call(a,'/me/images/avatar','PUT',{dataUrl:jpeg.dataUrl,revision:newest})).status,200);
+  assert.equal((await call(a,'/me')).body.profile.avatarUrl,null);
+  const approved=await approveImage(a,'avatar');assert.ok(approved.avatarUrl);
   assert.equal((await call(a,'/me/images/avatar','DELETE',{revision:newest})).status,409);
-  assert.ok((await call(a,'/me')).body.profile.avatarUrl);
+  assert.equal((await call(a,'/me')).body.profile.avatarUrl,approved.avatarUrl);
 });
 
 test('images are sanitized JPEG bytes, public only at the current content version, and replace/delete atomically',async t=>{
-  const {user,call,env}=await setup(t);const a=await user();
+  const {user,call,env,approveImage}=await setup(t);const a=await user();
   const jpeg=await fixture();
   const marker=(kind,text)=>{const data=Buffer.from(text);return Buffer.concat([Buffer.from([255,kind,(data.length+2)>>8,(data.length+2)&255]),data])};
   const input=Buffer.concat([jpeg.bytes.subarray(0,2),marker(225,'Exif\0\0PRIVATE-GPS'),marker(254,'PRIVATE-COMMENT'),marker(237,'PRIVATE-XMP'),jpeg.bytes.subarray(2)]);
-  const first=(await call(a,'/me/images/avatar','PUT',{dataUrl:`data:image/jpeg;base64,${input.toString('base64')}`})).body.profile;
+  const submitted=(await call(a,'/me/images/avatar','PUT',{dataUrl:`data:image/jpeg;base64,${input.toString('base64')}`})).body.profile;
+  assert.equal(submitted.avatarUrl,null);assert.equal(submitted.imageReviews.avatar.status,'pending');
+  const preview=await call(a,submitted.imageReviews.avatar.previewUrl);assert.equal(preview.status,200);
+  assert.equal(preview.headers.get('cache-control'),'no-store');
+  assert.equal((await call(null,submitted.imageReviews.avatar.previewUrl)).status,401);
+  const first=await approveImage(a,'avatar');
   assert.match(first.avatarUrl,new RegExp(`^/api/profiles/${a.id}/images/avatar/[a-f0-9]{64}$`));
   assert.equal(isPublicProfileImagePath(first.avatarUrl),true);assert.equal(isPublicProfileImagePath('/api/profiles/me'),false);
   const image=await call(null,first.avatarUrl);
@@ -114,12 +148,16 @@ test('images are sanitized JPEG bytes, public only at the current content versio
   const metadata=await sharp(image.body).metadata();assert.equal(metadata.width,64);assert.equal(metadata.exif,undefined);assert.equal(metadata.icc,undefined);
   const retry=(await call(a,'/me/images/avatar','PUT',{dataUrl:jpeg.dataUrl})).body.profile;
   assert.equal(retry.avatarUrl,first.avatarUrl);
+  assert.equal((await approveImage(a,'avatar')).avatarUrl,first.avatarUrl);
   assert.equal((await env.DB.prepare('SELECT count(*) n FROM player_images WHERE user_id=?').bind(a.id).first()).n,1);
   const changed=await fixture('avatar','#22aa44');
-  const replacement=(await call(a,'/me/images/avatar','PUT',{dataUrl:changed.dataUrl})).body.profile;
+  const pendingReplacement=(await call(a,'/me/images/avatar','PUT',{dataUrl:changed.dataUrl})).body.profile;
+  assert.equal(pendingReplacement.avatarUrl,first.avatarUrl,'the approved photo stays visible while its replacement is reviewed');
+  const replacement=await approveImage(a,'avatar');
   assert.notEqual(replacement.avatarUrl,first.avatarUrl);assert.equal((await call(null,first.avatarUrl)).status,404);
   await call(a,'/me/images/avatar','DELETE',{});assert.equal((await call(null,replacement.avatarUrl)).status,404);
-  const custom=(await call(a,'/me/images/avatar','PUT',{dataUrl:jpeg.dataUrl})).body.profile;
+  await call(a,'/me/images/avatar','PUT',{dataUrl:jpeg.dataUrl});
+  const custom=(await approveImage(a,'avatar'));
   const preset=(await call(a,'/me','PATCH',{avatarPreset:'cat'})).body.profile;
   assert.equal(preset.avatarUrl,null);assert.equal((await call(null,custom.avatarUrl)).status,404);
   assert.equal((await env.DB.prepare('SELECT count(*) n FROM player_images WHERE user_id=?').bind(a.id).first()).n,0);
@@ -207,8 +245,8 @@ test('local start and completion quotas each enforce 24 per UTC day',async t=>{
 });
 
 test('profile summaries batch without image bodies and cleanup participates in account rollback',async t=>{
-  const {user,call,env}=await setup(t);const a=await user();const b=await user();const jpeg=await fixture();
-  const p=(await call(a,'/me/images/avatar','PUT',{dataUrl:jpeg.dataUrl})).body.profile;
+  const {user,call,env,approveImage}=await setup(t);const a=await user();const b=await user();const jpeg=await fixture();
+  await call(a,'/me/images/avatar','PUT',{dataUrl:jpeg.dataUrl});const p=await approveImage(a,'avatar');
   const summaries=await profiles.profileSummaries(env,[a.id,b.id,a.id,'invalid/id']);
   assert.equal(summaries.size,2);assert.equal(summaries.get(a.id).avatarUrl,p.avatarUrl);assert.equal('data_base64' in summaries.get(a.id),false);
   await profiles.recordOnlineResult(env,{userId:a.id,eventId:'online:delete:1',game:'fabraka',won:true,draw:false,finishedAt:Date.now()});
@@ -221,4 +259,22 @@ test('profile summaries batch without image bodies and cleanup participates in a
   await env.DB.batch([...profiles.profileDeleteStatements(env,a.id),env.DB.prepare('DELETE FROM users WHERE id=?').bind(a.id)]);
   for(const table of ['player_profiles','player_images','player_stats','player_events','player_sessions','player_achievements'])
     assert.equal((await env.DB.prepare(`SELECT COUNT(*) n FROM ${table} WHERE user_id=?`).bind(a.id).first()).n,0,table);
+});
+
+test('account deletion also clears queued/approved images and moderation evidence tied to that account',async t=>{
+  const {user,call,env,moderator,callModeration,approveImage}=await setup(t);const a=await user();const reporter=await user();
+  const jpeg=await fixture();await call(a,'/me/images/avatar','PUT',{dataUrl:jpeg.dataUrl});await approveImage(a,'avatar');
+  const reportId='report-'+crypto.randomUUID();
+  await env.DB.prepare('INSERT INTO social_reports(id,reporter_id,reported_id,message_seq,message_text,reason,created_at) VALUES(?,?,?,?,?,?,?)')
+    .bind(reportId,reporter.id,a.id,null,null,'بلاغ اختبار',Date.now()).run();
+  const review=await moderator();
+  const resolution=await callModeration(review,'/actions','POST',{action:'resolve_report',clientId:crypto.randomUUID(),targetId:reportId,reason:'تمت مراجعة البلاغ'});
+  assert.equal(resolution.status,200,JSON.stringify(resolution.body));
+  assert.equal((await env.DB.prepare('SELECT COUNT(*) n FROM moderation_report_decisions WHERE report_id=?').bind(reportId).first()).n,1);
+  await deleteUser(env,a.id);
+  for(const table of ['player_profiles','player_images','player_achievements','moderation_image_reviews','moderation_image_approvals','social_reports','moderation_report_decisions'])
+    assert.equal((await env.DB.prepare(`SELECT COUNT(*) n FROM ${table} WHERE ${table==='social_reports'?'reported_id':table==='moderation_report_decisions'?'report_id':'user_id'}=?`)
+      .bind(table==='social_reports'?a.id:table==='moderation_report_decisions'?reportId:a.id).first()).n,0,table);
+  assert.equal((await env.DB.prepare('SELECT COUNT(*) n FROM moderation_actions WHERE subject_user_id=? OR report_id=?').bind(a.id,reportId).first()).n,0);
+  assert.equal((await env.DB.prepare('SELECT COUNT(*) n FROM users WHERE id=?').bind(a.id).first()).n,0);
 });

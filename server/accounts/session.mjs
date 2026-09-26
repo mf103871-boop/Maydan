@@ -7,6 +7,7 @@ import * as db from './db.mjs';
 import { meResponse } from './entitlements.mjs';
 import { paddleEnvironmentOf } from './billing-environment.mjs';
 import { ensurePlayerProfile } from '../profiles/db.mjs';
+import { suspensionOf } from '../moderation/access.mjs';
 
 export const SESSION_TTL = 180 * 24 * 60 * 60 * 1000; // 180 يومًا
 export const ROTATE_AFTER = 24 * 60 * 60 * 1000;      // تدوير منزلق بعد يوم من آخر استعمال
@@ -49,6 +50,11 @@ export async function readSession(env, request, { now = Date.now(), rotate = tru
   if (row.revoked_at !== null && row.revoked_at !== undefined && now >= row.revoked_at) failure('AUTH_EXPIRED');
   const user = await db.userById(env, row.user_id);
   if (!user) failure('AUTH_EXPIRED');
+  const suspension = await suspensionOf(env,user.id);
+  // A suspended member still owns their account and subscription. OAuth can
+  // issue a fresh restricted session, but cannot restore social/game access.
+  const managementPaths = new Set(['/api/me','/api/account','/api/auth/signout','/api/apple/transactions','/api/paddle/portal']);
+  if (suspension && !managementPaths.has(new URL(request.url).pathname)) failure('ACCOUNT_SUSPENDED');
   // الرمز في فترة السماح بعد تدويره: يعمل، لكنه لا يولّد تدويرًا ثانيًا.
   if (row.replaced_by) return { session: row, user, rotated: null };
   if (rotate && now - row.last_seen > ROTATE_AFTER) {
@@ -77,13 +83,15 @@ export function withRotation(response, rotated) {
 
 export async function me(env, user, now = Date.now()) {
   await db.releaseStaleDeletions(env, now);
-  await ensurePlayerProfile(env, user.id);
+  const suspension = await suspensionOf(env,user.id);
+  if (!suspension) await ensurePlayerProfile(env, user.id);
   const [subscriptions, trials, customer] = await Promise.all([
     db.subscriptionsOf(env, user.id), db.trialsOf(env, user.id), db.paddleCustomerOf(env, user.id),
   ]);
   // Read only: never create a Paddle customer or classify a legacy mapping here.
   const customerId = /^ctm_[a-z0-9]{26}$/.test(customer?.customer_id || '') ? customer.customer_id : null;
   return { ...meResponse({ user, subscriptions, trials, now, env }),
+    moderation: { suspended: !!suspension, ...(suspension || {}) },
     paddle: { environment: paddleEnvironmentOf(env), customerId } };
 }
 

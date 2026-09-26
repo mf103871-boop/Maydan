@@ -1,6 +1,7 @@
 import { MIN_PLAYERS, MAX_PLAYERS, ROUND_OPTIONS, VOTE_SECONDS, ROOM_TTL, ROOM_MAX_TTL, MATCH_EXTENSION, START_MIN_REMAINING, SEAT_GRACE, HOST_GRACE, AVATARS, COLORS, PROTOCOL } from '../src/online/shared.js';
 import { TITLES, DEFAULT_TITLE } from '../src/games/meenfina/logic.js';
 import { arabicNormalize } from '../src/shared/lib/arabicNormalize.js';
+import { objectionableText } from './moderation/filter.mjs';
 
 export class RoomError extends Error {
   // `detail` is a short machine code safe to show a client (a provider's error code such
@@ -16,6 +17,7 @@ export function profile(value) {
   if (typeof value?.name !== 'string') fail('NAME');
   const name = value.name.normalize('NFKC').trim().replace(/\s+/g, ' ');
   if (!name || Array.from(name).length > 20 || hasInvisible(name)) fail('NAME');
+  if (objectionableText(name)) fail('CONTENT_REJECTED',422);
   if (!Number.isInteger(value.avatar) || value.avatar < 0 || value.avatar >= AVATARS.length) fail('INVALID');
   return { name, avatar: value.avatar };
 }

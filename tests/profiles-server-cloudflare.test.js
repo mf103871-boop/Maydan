@@ -14,6 +14,7 @@ test('D1/workerd: profile CAS, image consistency, duplicate outcomes, local quot
     const scriptPath=path.join(dir,'worker.mjs');
     await build({stdin:{resolveDir:process.cwd(),sourcefile:'profiles-test-entry.mjs',contents:`
       import {routeProfiles} from './server/profiles/router.mjs';
+      import {routeModeration} from './server/moderation/router.mjs';
       import {createUser} from './server/accounts/db.mjs';
       import {issueSession} from './server/accounts/session.mjs';
       import {ensurePlayerProfile,recordOnlineResult,profileDeleteStatements} from './server/profiles/db.mjs';
@@ -21,11 +22,12 @@ test('D1/workerd: profile CAS, image consistency, duplicate outcomes, local quot
       export default {async fetch(request,env){try{
         const url=new URL(request.url);
         if(url.pathname==='/test/user'){const user=await createUser(env,{name:'حساب تجربة'});const session=await issueSession(env,user.id);await ensurePlayerProfile(env,user.id);return json({id:user.id,token:session.token});}
+        if(url.pathname==='/test/moderator'){env.MODERATOR_USER_IDS='moderator-test';await env.DB.prepare('INSERT INTO users(id,name,created_at,updated_at) VALUES(?,?,?,?)').bind('moderator-test','حساب مراجعة',Date.now(),Date.now()).run();const session=await issueSession(env,'moderator-test');return json({id:'moderator-test',token:session.token});}
         if(url.pathname==='/test/result')return json({recorded:await recordOnlineResult(env,await request.json())});
         if(url.pathname==='/test/delete'){const {id}=await request.json();await env.DB.batch([...profileDeleteStatements(env,id),env.DB.prepare('DELETE FROM users WHERE id=?').bind(id)]);return json({ok:true});}
-        return await routeProfiles(request,env,url)||new Response(null,{status:404});
+        return await routeModeration(request,env,url)||await routeProfiles(request,env,url)||new Response(null,{status:404});
       }catch(error){return json({error:error.code||'INTERNAL',detail:String(error),cause:String(error.cause)},error.status||500);}}};`},bundle:true,format:'esm',platform:'browser',outfile:scriptPath,logLevel:'silent'});
-    mf=new Miniflare(convertV4MiniflareOptions({rootPath:dir,name:'profiles-server',modules:true,scriptPath,compatibilityDate:'2026-09-01',d1Databases:{DB:'profiles-server'},cf:false}));
+    mf=new Miniflare(convertV4MiniflareOptions({rootPath:dir,name:'profiles-server',modules:true,scriptPath,compatibilityDate:'2026-09-01',d1Databases:{DB:'profiles-server'},vars:{MODERATOR_USER_IDS:'moderator-test'},cf:false}));
     const d1=await mf.getD1Database('DB');await d1.exec(migrationSql());
     async function call(actor,path,method='GET',body) {
       const r=await mf.dispatchFetch(`https://test.local${path.startsWith('/test/')||path.startsWith('/api/')?path:'/api/profiles'+path}`,{method,
@@ -35,6 +37,7 @@ test('D1/workerd: profile CAS, image consistency, duplicate outcomes, local quot
     }
     const a=(await call(null,'/test/user','POST')).body;
     const b=(await call(null,'/test/user','POST')).body;
+    const moderator=(await call(null,'/test/moderator','POST')).body;
     assert.ok(a.id,JSON.stringify(a));assert.ok(b.id,JSON.stringify(b));
     const originalResponse=await call(a,'/me');assert.equal(originalResponse.status,200,JSON.stringify(originalResponse));
     const original=originalResponse.body.profile;
@@ -55,6 +58,14 @@ test('D1/workerd: profile CAS, image consistency, duplicate outcomes, local quot
     }));
     const imageRace=await Promise.all(urls.map(dataUrl=>call(a,'/me/images/avatar','PUT',{dataUrl,revision})));
     assert.deepEqual(imageRace.map(r=>r.status).sort(),[200,409]);
+    const beforeApproval=(await call(a,'/me')).body.profile;
+    assert.equal(beforeApproval.avatarUrl,null);assert.equal(beforeApproval.imageReviews.avatar.status,'pending');
+    assert.equal((await call(b,beforeApproval.imageReviews.avatar.previewUrl)).status,404);
+    const queue=await call(moderator,'/api/moderation/images');assert.equal(queue.status,200,JSON.stringify(queue.body));assert.equal(queue.body.images.length,1);
+    assert.equal((await call(b,'/api/moderation/images')).status,403);
+    const review=queue.body.images[0];
+    const decision=await call(moderator,'/api/moderation/actions','POST',{action:'approve_image',clientId:crypto.randomUUID(),targetId:review.id,version:review.version,reason:'صورة مناسبة'});
+    assert.equal(decision.status,200,JSON.stringify(decision.body));
     const images=await d1.prepare('SELECT i.version,p.avatar_version,i.data_base64 FROM player_images i JOIN player_profiles p ON p.user_id=i.user_id WHERE i.user_id=?').bind(a.id).first();
     assert.equal(images.version,images.avatar_version);
     const current=(await call(a,'/me')).body.profile;
@@ -78,7 +89,7 @@ test('D1/workerd: profile CAS, image consistency, duplicate outcomes, local quot
       call(null,current.avatarUrl),call(null,'/test/delete','POST',{id:a.id}),
     ]);
     assert.ok([401,404].includes(late[0].status));assert.equal(late[1].body.recorded,false);assert.equal(late[2].status,404);
-    for(const table of ['player_profiles','player_images','player_stats','player_events','player_sessions','player_achievements'])
+    for(const table of ['player_profiles','player_images','player_stats','player_events','player_sessions','player_achievements','moderation_image_reviews','moderation_image_approvals'])
       assert.equal((await d1.prepare('SELECT COUNT(*) n FROM '+table+' WHERE user_id=?').bind(a.id).first()).n,0,table);
     assert.equal((await call(b,'/me')).status,200);
   } finally {

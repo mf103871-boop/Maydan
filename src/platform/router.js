@@ -12,6 +12,7 @@ const ROUTES = [
   ['friends', /^\/friends(?:\/([a-zA-Z0-9_-]+))?$/],
   ['profile', /^\/profile(?:\/([a-zA-Z0-9_-]+))?$/],
   ['settings', /^\/settings$/],
+  ['moderation', /^\/moderation$/],
   ['about', /^\/about$/],
   ['terms', /^\/terms$/],
   ['privacy', /^\/privacy$/],

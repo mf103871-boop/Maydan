@@ -1,4 +1,5 @@
 import { fail } from '../room-model.mjs';
+import { objectionableText } from '../moderation/filter.mjs';
 import { PROFILE_THEMES, AVATAR_PRESETS, TITLES, ACHIEVEMENTS, PROFILE_GAME_IDS, EMPTY_STATS, achievementState } from '../../src/profiles/catalog.js';
 export { PROFILE_GAME_IDS, EMPTY_STATS };
 
@@ -15,12 +16,13 @@ export function displayName(value) {
   if (typeof value !== 'string') fail('INVALID', 400);
   const name = value.normalize('NFKC').trim().replace(/\s+/g, ' ');
   if (Array.from(name).length < 2 || Array.from(name).length > 32 || /[@\p{Cc}\u202a-\u202e\u2066-\u2069]/u.test(name)) fail('INVALID', 400);
+  if (objectionableText(name)) fail('CONTENT_REJECTED',422);
   return name;
 }
 export function publicName(value) {
   if (typeof value !== 'string') return 'لاعب ميدان';
   const normalized = value.normalize('NFKC');
-  if (normalized.includes('@')) return 'لاعب ميدان';
+  if (normalized.includes('@') || objectionableText(normalized)) return 'لاعب ميدان';
   const name = normalized.replace(/[\p{Cc}\u202a-\u202e\u2066-\u2069]/gu, '').trim();
   return Array.from(name || 'لاعب ميدان').slice(0,32).join('');
 }
@@ -28,6 +30,7 @@ export function bioOf(value) {
   if (typeof value !== 'string') fail('INVALID', 400);
   const text = value.replace(/\r\n?/g, '\n').trim();
   if (Array.from(text).length > 160 || /[\u0000-\u0008\u000b\u000c\u000e-\u001f\u007f\u202a-\u202e\u2066-\u2069]/u.test(text)) fail('INVALID', 400);
+  if (objectionableText(text)) fail('CONTENT_REJECTED',422);
   return text;
 }
 export function patchOf(body, earned) {

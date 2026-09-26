@@ -3,6 +3,7 @@ import { fail } from '../room-model.mjs';
 import { sha256 } from '../protocol.mjs';
 import { pairOf, publicProfile, messageView } from './model.mjs';
 import { ensurePlayerProfile, profileAchievementStatements } from '../profiles/db.mjs';
+import { objectionableText } from '../moderation/filter.mjs';
 
 const stmt = (env, sql, ...args) => env.DB.prepare(sql).bind(...args);
 const first = (env, sql, ...args) => stmt(env, sql, ...args).first();
@@ -16,7 +17,7 @@ const unblocked = (alias) => `NOT EXISTS (SELECT 1 FROM social_blocks b WHERE
   (b.blocker_id = ${alias}.user_high AND b.blocked_id = ${alias}.user_low))`;
 const livePair = (alias) => `EXISTS (SELECT 1 FROM users u WHERE u.id = ${alias}.user_low)
   AND EXISTS (SELECT 1 FROM users u WHERE u.id = ${alias}.user_high)
-  AND NOT EXISTS (SELECT 1 FROM account_deletions d WHERE d.user_id IN (${alias}.user_low,${alias}.user_high))`;
+  AND NOT EXISTS (SELECT 1 FROM (SELECT user_id FROM account_deletions UNION ALL SELECT user_id FROM moderation_suspensions) d WHERE d.user_id IN (${alias}.user_low,${alias}.user_high))`;
 const allowedConversation = (alias) => `${unblocked(alias)} AND ${livePair(alias)} AND EXISTS
   (SELECT 1 FROM social_friendships f WHERE f.user_low = ${alias}.user_low
     AND f.user_high = ${alias}.user_high AND f.status = 'accepted')`;
@@ -24,14 +25,14 @@ const allowedConversation = (alias) => `${unblocked(alias)} AND ${livePair(alias
 export async function ensureProfile(env, userId, now = Date.now()) {
   for (let tries = 0; tries < 5; tries++) {
     const existing = await first(env, `SELECT p.*,u.name FROM social_profiles p JOIN users u ON u.id=p.user_id
-      WHERE p.user_id=? AND NOT EXISTS(SELECT 1 FROM account_deletions d WHERE d.user_id=p.user_id)`, userId);
+      WHERE p.user_id=? AND NOT EXISTS(SELECT 1 FROM (SELECT user_id FROM account_deletions UNION ALL SELECT user_id FROM moderation_suspensions) d WHERE d.user_id=p.user_id)`, userId);
     if (existing) return existing;
     await run(env, `INSERT OR IGNORE INTO social_profiles(user_id,code,created_at)
       SELECT ?,?,? WHERE EXISTS(SELECT 1 FROM users WHERE id=?)
-      AND NOT EXISTS(SELECT 1 FROM account_deletions WHERE user_id=?)`, userId, `MDN-${randomHex(5).toUpperCase()}`, now, userId, userId);
+      AND NOT EXISTS(SELECT 1 FROM (SELECT user_id FROM account_deletions UNION ALL SELECT user_id FROM moderation_suspensions) WHERE user_id=?)`, userId, `MDN-${randomHex(5).toUpperCase()}`, now, userId, userId);
   }
   const row = await first(env, `SELECT p.*,u.name FROM social_profiles p JOIN users u ON u.id=p.user_id WHERE p.user_id=?
-    AND NOT EXISTS(SELECT 1 FROM account_deletions d WHERE d.user_id=p.user_id)`, userId);
+    AND NOT EXISTS(SELECT 1 FROM (SELECT user_id FROM account_deletions UNION ALL SELECT user_id FROM moderation_suspensions) d WHERE d.user_id=p.user_id)`, userId);
   if (!row) fail('NOT_FOUND', 404);
   return row;
 }
@@ -39,7 +40,7 @@ export async function touchPresence(env, userId, lastActiveAt, onlineUntil) {
   await ensureProfile(env, userId, lastActiveAt);
   await run(env, `UPDATE social_profiles SET last_active_at=MAX(last_active_at,?),online_until=?
     WHERE user_id=? AND EXISTS(SELECT 1 FROM users WHERE id=?)
-    AND NOT EXISTS(SELECT 1 FROM account_deletions WHERE user_id=?)`, lastActiveAt, onlineUntil, userId, userId, userId);
+    AND NOT EXISTS(SELECT 1 FROM (SELECT user_id FROM account_deletions UNION ALL SELECT user_id FROM moderation_suspensions) WHERE user_id=?)`, lastActiveAt, onlineUntil, userId, userId, userId);
 }
 // Per-user quotas: friend requests and writes per minute, and a daily message cap that
 // bounds what a colluding pair can pour into the database.
@@ -49,7 +50,7 @@ export async function chargeUser(env, userId, kind, now = Date.now()) {
   const window = Math.floor(now / windowMs) * windowMs;
   const result = await run(env, `INSERT INTO social_limits(user_id,kind,window_start,count)
     SELECT ?,?,?,1 WHERE EXISTS(SELECT 1 FROM users WHERE id=?)
-    AND NOT EXISTS(SELECT 1 FROM account_deletions WHERE user_id=?)
+    AND NOT EXISTS(SELECT 1 FROM (SELECT user_id FROM account_deletions UNION ALL SELECT user_id FROM moderation_suspensions) WHERE user_id=?)
     ON CONFLICT(user_id,kind) DO UPDATE SET window_start=MAX(social_limits.window_start,excluded.window_start),
       count=CASE WHEN social_limits.window_start<excluded.window_start THEN 1 ELSE social_limits.count+1 END
     WHERE social_limits.window_start<excluded.window_start OR social_limits.count<?`, userId, kind, window, userId, userId, max);
@@ -79,7 +80,7 @@ export async function searchUsers(env, userId, query) {
   const rows = await all(env, `SELECT p.*,u.name,f.status,f.requester_id FROM social_profiles p
     JOIN users u ON u.id=p.user_id LEFT JOIN social_friendships f
     ON (f.user_low=? AND f.user_high=p.user_id) OR (f.user_high=? AND f.user_low=p.user_id)
-    WHERE p.user_id!=? AND NOT EXISTS(SELECT 1 FROM account_deletions d WHERE d.user_id=p.user_id)
+    WHERE p.user_id!=? AND NOT EXISTS(SELECT 1 FROM (SELECT user_id FROM account_deletions UNION ALL SELECT user_id FROM moderation_suspensions) d WHERE d.user_id=p.user_id)
     AND NOT EXISTS(SELECT 1 FROM social_blocks b WHERE (b.blocker_id=? AND b.blocked_id=p.user_id)
       OR (b.blocked_id=? AND b.blocker_id=p.user_id))
     AND (p.code=? OR (?=0 AND u.name NOT LIKE '%@%' AND u.name LIKE ? ESCAPE '\\'))
@@ -118,7 +119,7 @@ export async function requestFriend(env, userId, otherId, now) {
   const [low, high] = pairOf(userId, otherId);
   await run(env, `INSERT OR IGNORE INTO social_friendships(id,user_low,user_high,requester_id,status,created_at)
     SELECT ?,?,?,?,'pending',? WHERE EXISTS(SELECT 1 FROM users WHERE id=?) AND EXISTS(SELECT 1 FROM users WHERE id=?)
-    AND NOT EXISTS(SELECT 1 FROM account_deletions WHERE user_id IN (?,?))
+    AND NOT EXISTS(SELECT 1 FROM (SELECT user_id FROM account_deletions UNION ALL SELECT user_id FROM moderation_suspensions) WHERE user_id IN (?,?))
     AND NOT EXISTS(SELECT 1 FROM social_blocks WHERE (blocker_id=? AND blocked_id=?) OR (blocker_id=? AND blocked_id=?))`,
   crypto.randomUUID(), low, high, userId, now, low, high, low, high, low, high, high, low);
   const row = await first(env, `SELECT f.* FROM social_friendships f WHERE user_low=? AND user_high=? AND ${unblocked('f')} AND ${livePair('f')}`, low, high);
@@ -171,7 +172,7 @@ export async function blockUser(env, userId, otherId, now) {
   await env.DB.batch([
     stmt(env, `INSERT OR IGNORE INTO social_blocks(blocker_id,blocked_id,created_at) SELECT ?,?,?
       WHERE EXISTS(SELECT 1 FROM users WHERE id=?) AND EXISTS(SELECT 1 FROM users WHERE id=?)
-      AND NOT EXISTS(SELECT 1 FROM account_deletions WHERE user_id IN (?,?))`, userId, otherId, now, userId, otherId, userId, otherId),
+      AND NOT EXISTS(SELECT 1 FROM (SELECT user_id FROM account_deletions UNION ALL SELECT user_id FROM moderation_suspensions) WHERE user_id IN (?,?))`, userId, otherId, now, userId, otherId, userId, otherId),
     stmt(env, `DELETE FROM social_friendships WHERE user_low=? AND user_high=?
       AND EXISTS(SELECT 1 FROM social_blocks WHERE blocker_id=? AND blocked_id=?)`, low, high, userId, otherId),
   ]);
@@ -222,6 +223,7 @@ export async function messagesOf(env, userId, conversationId, { before, after, l
 }
 export async function sendMessage(env, userId, conversationId, text, clientId, now) {
   await chargeUser(env, userId, 'message_day', now);
+  if(objectionableText(text))fail('CONTENT_REJECTED',422);
   const hash = await sha256(text);
   await run(env, `INSERT OR IGNORE INTO social_messages(conversation_id,sender_id,client_id,text,original_hash,created_at)
     SELECT c.id,?,?,?,?,? FROM social_conversations c WHERE c.id=? AND (c.user_low=? OR c.user_high=?)
@@ -237,6 +239,7 @@ export async function sendMessage(env, userId, conversationId, text, clientId, n
   return { message: messageView(row), otherId: peerOf(row, userId) };
 }
 export async function changeMessage(env, userId, seq, text, now) {
+  if(text!==null && objectionableText(text))fail('CONTENT_REJECTED',422);
   const deleting = text === null;
   const result = await run(env, `UPDATE social_messages SET ${deleting ? "text='',deleted_at=?" : 'text=?,edited_at=?'}
     WHERE seq=? AND sender_id=? AND deleted_at IS NULL AND EXISTS (SELECT 1 FROM social_conversations c
@@ -272,7 +275,7 @@ export async function reportUser(env, userId, otherId, messageSeq, reason, now) 
   }
   const result = await run(env, `INSERT INTO social_reports(id,reporter_id,reported_id,message_seq,message_text,reason,created_at)
     SELECT ?,?,?,?,?,?,? WHERE EXISTS(SELECT 1 FROM users WHERE id=?) AND EXISTS(SELECT 1 FROM users WHERE id=?)
-    AND NOT EXISTS(SELECT 1 FROM account_deletions WHERE user_id IN (?,?))
+    AND NOT EXISTS(SELECT 1 FROM (SELECT user_id FROM account_deletions UNION ALL SELECT user_id FROM moderation_suspensions) WHERE user_id IN (?,?))
     AND (SELECT COUNT(*) FROM social_reports WHERE reporter_id=? AND created_at>?)<10`,
   crypto.randomUUID(), userId, otherId, messageSeq, message?.text || null, reason, now, userId, otherId, userId, otherId, userId, now - 3_600_000);
   if (!changed(result)) fail('RATE_LIMIT', 429);
