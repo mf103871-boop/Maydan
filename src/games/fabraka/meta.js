@@ -17,4 +17,5 @@ export default {
   tags: ['خداع', 'ضحك', 'صور'],
   isNew: true,
   version: '3.0.0',
+  music: 'calm',
 };

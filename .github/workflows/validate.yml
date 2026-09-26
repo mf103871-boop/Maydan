@@ -40,6 +40,8 @@ jobs:
         continue-on-error: true
       - run: npm run build:cloudflare
       - run: npm test
+      # The shipped cues and music must match their manifests and the committed masters.
+      - run: node scripts/audio/build.mjs --check && node scripts/audio/music.mjs --check
       - run: npm run bank:validate
       - run: npm run ios:prepare
 

@@ -35,7 +35,7 @@ import { ModerationScreen } from '../moderation/ModerationScreen.jsx';
 
 export const VERSION = typeof __MAYDAN_VERSION__ !== 'undefined' ? __MAYDAN_VERSION__ : '1.0.0';
 const platformStorage = createStorage('platform');
-const DEFAULT_SETTINGS = { soundOn: true, soundVolume: 0.75, hapticsOn: true, reducedMotion: false, splashSeen: false };
+const DEFAULT_SETTINGS = { soundOn: true, soundVolume: 0.75, musicOn: true, musicVolume: 0.5, hapticsOn: true, reducedMotion: false, splashSeen: false };
 
 function ScreenHost({ route }) {
   // Screens animate in, with the direction taken from how the route was
@@ -66,13 +66,15 @@ function Providers({ children }) {
   const toast = useToast();
   const [settings, setSettingsState] = useState(() => ({ ...DEFAULT_SETTINGS, ...(platformStorage.get('settings', {}) || {}) }));
   const [roster, setRosterState] = useState(() => platformStorage.get('roster', []) || []);
-  const sound = useMemo(() => createSound({ enabled: settings.soundOn, volume: settings.soundVolume }), []); // eslint-disable-line react-hooks/exhaustive-deps
+  const sound = useMemo(() => createSound({ enabled: settings.soundOn, volume: settings.soundVolume, music: settings.musicOn, musicVolume: settings.musicVolume }), []); // eslint-disable-line react-hooks/exhaustive-deps
   const haptics = useMemo(() => createHaptics({ enabled: settings.hapticsOn }), []); // eslint-disable-line react-hooks/exhaustive-deps
 
   const setSettings = useCallback((patch) => {
     // Apply in the gesture itself so enabling audio can play its confirmation.
     if ('soundOn' in patch) sound.enable(patch.soundOn);
     if ('soundVolume' in patch) sound.setVolume(patch.soundVolume);
+    if ('musicOn' in patch) sound.music.enable(patch.musicOn);
+    if ('musicVolume' in patch) sound.music.setVolume(patch.musicVolume);
     if ('hapticsOn' in patch) haptics.enable(patch.hapticsOn);
     setSettingsState((prev) => {
       const next = { ...prev, ...patch };
@@ -88,6 +90,8 @@ function Providers({ children }) {
   useEffect(() => { sound.attach(); return () => sound.dispose(); }, [sound]);
   useEffect(() => { sound.enable(settings.soundOn); }, [sound, settings.soundOn]);
   useEffect(() => { sound.setVolume(settings.soundVolume); }, [sound, settings.soundVolume]);
+  useEffect(() => { sound.music.enable(settings.musicOn); }, [sound, settings.musicOn]);
+  useEffect(() => { sound.music.setVolume(settings.musicVolume); }, [sound, settings.musicVolume]);
   useEffect(() => { haptics.enable(settings.hapticsOn); }, [haptics, settings.hapticsOn]);
   useEffect(() => { document.documentElement.dataset.reducedMotion = settings.reducedMotion ? 'true' : 'false'; }, [settings.reducedMotion]);
 
@@ -137,6 +141,9 @@ function Shell() {
     if (!settings.splashSeen) setSettings({ splashSeen: true });
   }, [settings.splashSeen, setSettings]);
   useEffect(() => () => { sound.stop(); confetti.clear(); }, [route.path, sound, confetti]);
+  // الموسيقى تتبع الشاشة: القوائم واللّمّة على مقطع «البيت»، وشاشة اللعب تختار مقطعها بنفسها
+  // (الإعداد على «البيت»، ثم مقطع اللعبة عند البدء؛ انظر Play.jsx).
+  useEffect(() => { if (route.name !== 'play') sound.music.play('home'); }, [route.name, sound]);
   // «مسح كل البيانات» من الشاشة الحمراء يبقي الحساب كما تفعل الإعدادات.
   const resetKeepingAccount = () => { clearAllPlatformData({ keep: [ACCOUNT_PREFIX] }); location.reload(); };
   return (

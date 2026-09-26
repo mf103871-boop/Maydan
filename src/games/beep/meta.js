@@ -15,4 +15,5 @@ export default {
   tags: ['سرعة', 'ضحك', 'صوت'],
   isNew: true,
   version: '1.0.0',
+  music: 'tense',
 };

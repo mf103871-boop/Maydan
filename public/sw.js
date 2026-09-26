@@ -32,14 +32,25 @@ const ASSETS = [
   './icons/maskable-192.png',
   './icons/maskable-512.png',
   './icons/apple-touch-icon.png',
-  // The six sound cues (~100 KB together) travel with the shell so the first
-  // gesture can play offline; they used to be 2.8 MB of PCM inside the document.
-  './audio/tap.m4a',
+  // The sixteen sound cues (~340 KB together) travel with the shell so the first
+  // gesture can play offline. Music is not precached: it streams on first play and
+  // stays in the media cache afterwards.
+  './audio/click.m4a',
+  './audio/pop.m4a',
+  './audio/tick.m4a',
+  './audio/tick-fast.m4a',
+  './audio/countdown.m4a',
+  './audio/start.m4a',
   './audio/correct.m4a',
   './audio/wrong.m4a',
+  './audio/buzzer.m4a',
+  './audio/timeout.m4a',
+  './audio/whoosh.m4a',
   './audio/reveal.m4a',
-  './audio/start.m4a',
-  './audio/win.m4a'
+  './audio/win.m4a',
+  './audio/explosion.m4a',
+  './audio/drumroll.m4a',
+  './audio/pass.m4a'
 ];
 
 // Static hosts may redirect index.html to the directory URL. Navigation

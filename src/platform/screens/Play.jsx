@@ -46,6 +46,11 @@ export function Play({ id }) {
   const [mode, setMode] = useState(game && game.players.mode === 'both' ? 'individual' : (game && game.players.mode) || 'individual');
   const [inGame, setInGame] = useState(game ? game.setup === 'self' : false);
   const [session, setSession] = useState(0);
+  // مقطع اللعبة يبدأ مع المباراة (وعند إعادتها)، وشاشة الإعداد تبقى على مقطع «البيت».
+  useEffect(() => {
+    if (!game) return;
+    platform.sound.music.play(stage === 'play' && inGame ? game.music || 'calm' : 'home');
+  }, [platform.sound, game, stage, inGame, session]);
   const [savedSession, setSavedSession] = useState(null);
   const [gameOptions, setGameOptions] = useState(null);
   const [setupValid, setSetupValid] = useState(true);
@@ -72,7 +77,8 @@ export function Play({ id }) {
     matchStart: () => recorder.start(id),
     matchSnapshot: () => recorder.marker(),
     matchResume: (marker) => recorder.resume(marker, id),
-    matchOver: ({ completed = false } = {}) => { account.markTrial(id); recorder.complete(completed); },
+    // نهاية المباراة: خاتمة موسيقية قصيرة تحلّ محل مقطع اللعبة ثم يعود مقطع «البيت» لشاشة النتائج.
+    matchOver: ({ completed = false } = {}) => { account.markTrial(id); recorder.complete(completed); platform.sound.music.sting('finale', { after: 'home' }); },
     sound: platform.sound,
     haptics: platform.haptics,
     confetti: platform.confetti,
