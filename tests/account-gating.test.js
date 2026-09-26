@@ -1,6 +1,6 @@
 // قفل المحتوى في الواجهة: الحزم المجانية في «بَديهة»، وشارات الرئيسية، وجدار «ميدان بلس»
 // في تفاصيل اللعبة. تُبنى الشاشات بـ esbuild وتُصيَّر بـ react-dom/server كما في بقية اختبارات الواجهة.
-import { test, after } from 'node:test';
+import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync, mkdtempSync, mkdirSync, rmSync } from 'node:fs';
 import path from 'node:path';
@@ -93,7 +93,11 @@ React.useState = function useState(initial) {
 
 mkdirSync(path.join(root, '.cache'), { recursive: true });
 const temp = mkdtempSync(path.join(root, '.cache', 'account-gating-'));
-after(() => rmSync(temp, { recursive: true, force: true }));
+// التنظيف عند خروج العملية لا في after(): خطّاف after() في المستوى الأعلى كان يعمل قبل أن
+// تنتهي الانتظارات العليا (بناء esbuild ثم الاستيراد)، فيحذف المجلد وهو فارغ ويعيده esbuild
+// (مجلدات متروكة في .cache)، وعلى عامل macOS سبق الحذفُ قراءةَ الاستيراد فسقط الملف كله
+// بـ ERR_MODULE_NOT_FOUND. الخروج يأتي بعد كل نشاط، ولا مخلّفات.
+process.once('exit', () => rmSync(temp, { recursive: true, force: true }));
 await build({
   stdin: { loader: 'jsx', resolveDir: root, contents: `
     import React from 'react';
