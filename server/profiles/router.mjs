@@ -23,7 +23,9 @@ export async function routeProfiles(request,env,url=new URL(request.url),charge)
     const found=await db.currentImage(env,image[1],image[2],image[3]);
     if(!found) return json({error:'NOT_FOUND'},404,{'x-content-type-options':'nosniff'});
     return new Response(request.method==='HEAD'?null:base64ToBytes(found.data_base64),{headers:{
-      'content-type':'image/jpeg','content-length':String(found.byte_length),'cache-control':'no-store',
+      // The path carries the content hash: a replaced image gets a new URL, so the
+      // current one may be cached for a year at the edge and in the browser.
+      'content-type':'image/jpeg','content-length':String(found.byte_length),'cache-control':'public, max-age=31536000, immutable','etag':`"${image[3]}"`,
       'x-content-type-options':'nosniff','content-security-policy':"default-src 'none'; sandbox",'cross-origin-resource-policy':'cross-origin',
     }});
   }

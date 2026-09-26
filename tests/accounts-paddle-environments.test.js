@@ -176,7 +176,50 @@ test('webhook signatures, deduplication, customer maps and subscription rows sta
   assert.ok(await db.webhookEvent(env, 'paddle:sandbox:evt_shared_id'));
   assert.equal((await db.paddleCustomerOf(env, user.id)).customer_id, 'ctm_production');
   assert.equal((await db.paddleCustomerOf(sandbox, user.id)).customer_id, 'ctm_sandbox');
-  await assert.rejects(signedHook(env, { ...liveEvent, event_id: 'evt_collision', data: { ...liveEvent.data, id: 'sub_sandbox' } }), /NOT_ELIGIBLE/);
+  const collision = await signedHook(env, { ...liveEvent, event_id: 'evt_collision', data: { ...liveEvent.data, id: 'sub_sandbox' } });
+  assert.equal(collision.status, 200, 'a cross-environment collision is acknowledged so Paddle stops retrying it');
+  assert.equal((await collision.json()).ignored, 'NOT_ELIGIBLE');
   await assert.rejects(db.upsertSubscription(env, row(user.id, 'production', { external_id: 'sub_sandbox' })), /NOT_ELIGIBLE/);
   assert.equal((await db.subscriptionByExternal(env, 'paddle', 'sub_sandbox')).environment, 'sandbox');
+});
+
+test('a full approved refund or chargeback revokes the subscription and stops renewal; partial refunds do not', async (t) => {
+  const env = envOf(); t.after(() => env.DB.close());
+  const user = await db.createUser(env);
+  const calls = [];
+  t.mock.method(globalThis, 'fetch', async (url, init) => {
+    calls.push(`${init?.method || 'GET'} ${new URL(url).pathname}`);
+    if (String(url).endsWith('/ips')) return reply({ data: { ipv4_cidrs: ['192.0.2.10/32'] } });
+    return reply({ data: { id: 'sub_production', status: 'active' } });
+  });
+  assert.equal((await signedHook(env, eventOf(env, user.id, 'sub_production'))).status, 200);
+  assert.equal(premiumOf(await db.subscriptionsOf(env, user.id), now, env).active, true);
+  const adjustment = (id, patch) => ({ event_id: id, event_type: 'adjustment.updated', occurred_at: new Date(now + 1000).toISOString(),
+    data: { id: `adj_${id}`, action: 'refund', type: 'full', status: 'approved', subscription_id: 'sub_production', transaction_id: 'txn_1', ...patch } });
+  const partial = await signedHook(env, adjustment('evt_partial', { type: 'partial' }));
+  assert.equal((await partial.json()).ignored, 'adjustment.updated');
+  assert.equal(premiumOf(await db.subscriptionsOf(env, user.id), now, env).active, true, 'a partial refund keeps access');
+  const pending = await signedHook(env, adjustment('evt_pending', { status: 'pending_approval' }));
+  assert.equal((await pending.json()).ignored, 'adjustment.updated');
+  const refunded = await signedHook(env, adjustment('evt_refund'));
+  assert.deepEqual(await refunded.json(), { ok: true, revoked: true, action: 'refund' });
+  const after = premiumOf(await db.subscriptionsOf(env, user.id), now, env);
+  assert.equal(after.active, false); assert.equal(after.status, null, 'a revoked row no longer counts');
+  assert.ok(calls.some((call) => call.includes('/subscriptions/sub_production/cancel')), 'the renewal is cancelled as well');
+  const late = await signedHook(env, { ...eventOf(env, user.id, 'sub_production'), event_id: 'evt_stale' });
+  assert.equal(late.status, 200);
+  assert.equal(premiumOf(await db.subscriptionsOf(env, user.id), now, env).active, false, 'an older subscription event cannot undo the revocation');
+  const chargeback = await signedHook(env, { ...adjustment('evt_cb', { action: 'chargeback', subscription_id: 'sub_unknown' }) });
+  assert.deepEqual(await chargeback.json(), { ok: true, revoked: false, action: 'chargeback' });
+});
+
+test('permanent webhook conditions are acknowledged so Paddle stops retrying them', async (t) => {
+  const env = envOf(); t.after(() => env.DB.close());
+  const owner = await db.createUser(env), intruder = await db.createUser(env);
+  assert.equal((await signedHook(env, eventOf(env, owner.id, 'sub_owned'))).status, 200);
+  const crossed = await signedHook(env, { ...eventOf(env, intruder.id, 'sub_owned'), event_id: 'evt_crossed', occurred_at: new Date(now + 5000).toISOString() });
+  assert.equal(crossed.status, 200);
+  assert.equal((await crossed.json()).ignored, 'ALREADY_LINKED');
+  assert.equal((await db.subscriptionByExternal(env, 'paddle', 'sub_owned')).user_id, owner.id, 'ownership never moves');
+  assert.equal((await (await signedHook(env, { ...eventOf(env, intruder.id, 'sub_owned'), event_id: 'evt_crossed' })).json()).duplicate, true, 'acknowledged events are not reprocessed');
 });

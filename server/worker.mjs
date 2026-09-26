@@ -3,7 +3,7 @@ import { readJson, json, errorResponse, sha256, credentials } from './protocol.m
 import { fail } from './room-model.mjs';
 import { isPublicAccountPath, markRoomTrial, roomGate, routeAccounts } from './accounts/router.mjs';
 import { cleanup } from './accounts/cleanup.mjs';
-import { readSession } from './accounts/session.mjs';
+import { readSession, rotations, SESSION_HEADER } from './accounts/session.mjs';
 import packageInfo from '../package.json' with { type: 'json' };
 import { routeSocial } from './social/router.mjs';
 import { routeSocialLive } from './social/realtime.mjs';
@@ -162,6 +162,9 @@ export async function routeRequest(request, env) {
   if (response.status === 101) return response;
   const allHeaders = new Headers(response.headers);
   for (const [key, value] of Object.entries(headers)) allHeaders.set(key, value);
+  // A session rotated while handling this request reaches the client even on a 4xx.
+  const rotated = rotations.get(request);
+  if (rotated && !allHeaders.has(SESSION_HEADER)) allHeaders.set(SESSION_HEADER, rotated.token);
   return new Response(response.body, { status: response.status, headers: allHeaders });
 }
 // Cron Trigger (wrangler triggers.crons): تنظيف الجلسات ورموز الدخول وسجل webhooks.

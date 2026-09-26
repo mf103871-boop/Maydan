@@ -288,3 +288,18 @@ test('social cleanup can join the account transaction and a later failure restor
   assert.equal(await social.messageForUser(env, b.id, message.seq), null);
   assert.equal(await env.DB.prepare('SELECT id FROM users WHERE id=?').bind(a.id).first(), null);
 });
+
+test('the friend list is capped for both sides of a request', async (t) => {
+  const { user, call, env } = await setup(t);
+  env.SOCIAL_FRIEND_LIMIT = '10';
+  const target = await user('محبوب');
+  for (let i = 0; i < 10; i++) {
+    const requester = await user(`طالب ${i}`);
+    assert.equal((await call(requester, '/requests', 'POST', { userId: target.id })).status, 200);
+  }
+  const eleventh = await user('الحادي عشر');
+  const refused = await call(eleventh, '/requests', 'POST', { userId: target.id });
+  assert.equal(refused.status, 409); assert.equal(refused.body.error, 'FRIEND_LIMIT');
+  const other = await user('آخر');
+  assert.equal((await call(eleventh, '/requests', 'POST', { userId: other.id })).status, 200, 'the limit is per account, not global');
+});

@@ -6,6 +6,7 @@ import { bindSeatAccount, prepareRoomStats } from './room-stats.mjs';
 import { recordOnlineResult } from './profiles/db.mjs';
 const SOCKET_IDLE = 45_000;
 const STATS_RETRY = 30_000;
+const STATS_MAX_ATTEMPTS = 48; // a day of half-minute retries
 // Statements the room has already shown wait at the back of the queue, so a second
 // match in the same room does not repeat the first.
 export function meenfinaDeck(room) {
@@ -40,16 +41,18 @@ export class Room {
     const pong = this.ctx.getWebSocketAutoResponseTimestamp?.(ws);
     return Math.max(attachment.seenAt || 0, pong?.getTime() || 0);
   }
+  // Without a database binding the outbox can never drain; do not wake every 30 s for it.
+  outboxPending() { return Boolean(this.env.DB) && this.profileOutbox.length > 0; }
   alarmAt(room, now) {
     const deadlines = this.sockets().map((ws) => {
       const a = this.attachment(ws);
       return a.id ? this.lastSeen(ws, a) + SOCKET_IDLE : a.authDeadline;
     }).filter(Number.isFinite);
-    return Math.max(now + 1, Math.min(nextAlarm(room, now), ...deadlines, ...(this.profileOutbox.length ? [now + STATS_RETRY] : [])));
+    return Math.max(now + 1, Math.min(nextAlarm(room, now), ...deadlines, ...(this.outboxPending() ? [now + STATS_RETRY] : [])));
   }
   async schedule() {
     if (this.room) await this.ctx.storage.setAlarm(this.alarmAt(this.room, Date.now()));
-    else if (this.profileOutbox.length) await this.ctx.storage.setAlarm(Date.now() + STATS_RETRY);
+    else if (this.outboxPending()) await this.ctx.storage.setAlarm(Date.now() + STATS_RETRY);
     else await this.ctx.storage.deleteAlarm();
   }
   async commit(candidate) {
@@ -79,7 +82,21 @@ export class Room {
         // D1 waits happen outside the game-command queue. A slow or unavailable
         // database must not delay a room action or the next match.
         try { await recordOnlineResult(this.env, event); }
-        catch { break; }
+        catch (error) {
+          // A malformed event (the database says INVALID) or one that keeps failing
+          // must not block every later result behind it: drop it after a bounded
+          // number of attempts. Transient failures keep the head of the queue.
+          const permanent = error instanceof RoomError && error.status === 400;
+          const attempts = (event.attempts || 0) + 1;
+          if (!permanent && attempts < STATS_MAX_ATTEMPTS) {
+            await this.serial(async () => {
+              this.profileOutbox = this.profileOutbox.map((item) => (item === event ? { ...item, attempts } : item));
+              await this.ctx.storage.put('profileOutbox', this.profileOutbox);
+            });
+            break;
+          }
+          try { console.error('[maydan] dropping online result', permanent ? 'INVALID' : 'too many attempts', event.eventId); } catch { /* no console */ }
+        }
         await this.serial(async () => {
           const pending = this.profileOutbox.filter((item) => item.eventId !== event.eventId || item.userId !== event.userId);
           // D1 success followed by a failed DO write is safe to retry: the D1

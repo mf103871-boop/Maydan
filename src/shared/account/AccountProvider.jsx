@@ -18,6 +18,7 @@ import { clearPaddleCustomer, loadPaddle, openCheckout, previewPrices, setPaddle
 import { usePlatform } from '../../platform/context.js';
 import { navigate, useRoute } from '../../platform/router.js';
 import { rememberProfileReturn, consumeProfileReturn } from './return-path.js';
+import { beginAuthAttempt, currentAuthAttempt, clearAuthAttempt } from './attempt.js';
 
 const EMPTY = Object.freeze({});
 // أوراق النظام (Apple، المتجر) قد تنتظر المستخدم طويلًا: مهلة أطول من مهلة الجسر الافتراضية.
@@ -196,7 +197,12 @@ export function AccountProvider({ children }) {
 
   const consumeCode = useCallback(async (code, client) => {
     const epoch = authEpochRef.current;
-    const result = await exchangeCode(code, client);
+    // The attempt secret this browser generated before leaving; the server accepts the
+    // code only together with it. It is cleared whether or not the exchange succeeds.
+    const attempt = currentAuthAttempt();
+    let result;
+    try { result = await exchangeCode(code, client, undefined, attempt); }
+    finally { clearAuthAttempt(); }
     if (epoch !== authEpochRef.current) throw new ClientError('PURCHASE_CANCELLED');
     return afterSignIn(result);
   }, [afterSignIn]);
@@ -279,7 +285,7 @@ export function AccountProvider({ children }) {
       if (!native) {
         // الويب: الخادم يتولّى المزوّد ثم يعيدنا إلى #/auth?code=. قبل المغادرة
         // نتأكد أن الحسابات مفعّلة على الخادم كي لا نهبط على صفحة 404.
-        const url = authStartUrl(provider, { client: 'web' });
+        const url = authStartUrl(provider, { client: 'web', attempt: beginAuthAttempt() });
         if (!url) throw new ClientError('OFFLINE');
         try {
           const config = await getBillingConfig(options());
@@ -301,7 +307,7 @@ export function AccountProvider({ children }) {
         const result = await appleNative(payload || {}, { onSession: applySession });
         return await afterSignIn(result);
       }
-      const url = authStartUrl(provider, { client: 'ios', returnUrl: 'maydan://auth' });
+      const url = authStartUrl(provider, { client: 'ios', returnUrl: 'maydan://auth', attempt: beginAuthAttempt() });
       if (!url) throw new ClientError('OFFLINE');
       const waiting = waitForAuthReturn();
       await callNative('openAuth', { url });

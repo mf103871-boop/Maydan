@@ -12,6 +12,10 @@ export const SESSION_TTL = 180 * 24 * 60 * 60 * 1000; // 180 يومًا
 export const ROTATE_AFTER = 24 * 60 * 60 * 1000;      // تدوير منزلق بعد يوم من آخر استعمال
 export const ROTATE_GRACE = 5 * 60 * 1000;            // الرمز القديم يبقى صالحًا 5 دقائق بعد التدوير
 export const SESSION_HEADER = 'x-maydan-session';
+// Requests whose session was rotated while reading it: the worker attaches the new
+// token to whatever response follows, including a 4xx, so the retiring token's grace
+// period never ends in a forced sign-out.
+export const rotations = new WeakMap();
 
 export function parseToken(value) {
   const parts = String(value || '').split('.');
@@ -50,6 +54,7 @@ export async function readSession(env, request, { now = Date.now(), rotate = tru
   if (rotate && now - row.last_seen > ROTATE_AFTER) {
     const next = await issueSession(env, user.id, row.client || 'web', now);
     await db.retireSession(env, row.id, now + ROTATE_GRACE, next.id);
+    rotations.set(request, next);
     return { session: row, user, rotated: next };
   }
   if (now - row.last_seen > 60_000) await db.touchSession(env, row.id, now);
@@ -71,6 +76,7 @@ export function withRotation(response, rotated) {
 }
 
 export async function me(env, user, now = Date.now()) {
+  await db.releaseStaleDeletions(env, now);
   await ensurePlayerProfile(env, user.id);
   const [subscriptions, trials, customer] = await Promise.all([
     db.subscriptionsOf(env, user.id), db.trialsOf(env, user.id), db.paddleCustomerOf(env, user.id),
@@ -83,17 +89,25 @@ export async function me(env, user, now = Date.now()) {
 
 // ── رموز الدخول لمرة واحدة (تمرير الجلسة عبر إعادة التوجيه دون كشفها) ───────
 export const AUTH_CODE_TTL = 60_000;
-export async function issueAuthCode(env, userId, client, now = Date.now()) {
+export const ATTEMPT = /^[a-f0-9]{32}$/;
+export async function issueAuthCode(env, userId, client, now = Date.now(), attemptHash = null) {
   const code = randomHex(24);
   await db.pruneAuthCodes(env, now);
-  await db.insertAuthCode(env, { codeHash: await sha256(code), userId, client, expiresAt: now + AUTH_CODE_TTL });
+  const codeHash = await sha256(code);
+  await db.insertAuthCode(env, { codeHash, userId, client, expiresAt: now + AUTH_CODE_TTL });
+  if (attemptHash) await db.insertAuthCodeAttempt(env, { codeHash, attemptHash, expiresAt: now + AUTH_CODE_TTL });
   return code;
 }
-export async function redeemAuthCode(env, code, now = Date.now()) {
+// A code minted for a browser that started the flow with an attempt secret is redeemed
+// only together with that secret. A browser sent to somebody else's #/auth?code= link
+// cannot be signed into that account, and the code stays unconsumed for its owner.
+export async function redeemAuthCode(env, code, now = Date.now(), attempt = null) {
   if (!/^[a-f0-9]{48}$/.test(String(code || ''))) failure('STATE');
   const hash = await sha256(code);
   const row = await db.authCode(env, hash);
   if (!row) failure('STATE');
+  const binding = await db.authCodeAttempt(env, hash);
+  if (binding && (typeof attempt !== 'string' || !ATTEMPT.test(attempt) || !safeEqual(binding.attempt_hash, await sha256(attempt)))) failure('STATE');
   if (!(await db.useAuthCode(env, hash, now))) failure('STATE');
   return row;
 }

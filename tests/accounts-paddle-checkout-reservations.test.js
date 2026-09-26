@@ -219,3 +219,41 @@ test('deletion accepts a provider-confirmed scheduled cancellation without repea
   assert.equal((await request('/api/account', 'DELETE')).status, 204);
   assert.deepEqual(methods, ['GET']);
 });
+
+test('an uncertain reservation is settled from Paddle: the matching transaction is adopted, or it is released after fifteen minutes', async (t) => {
+  const { env, user, checkout } = await setup(t);
+  await db.setPaddleCustomer(env, user.id, 'ctm_reconcile');
+  let posts = 0, listing = [];
+  const transaction = (id, checkoutAttemptId, userId = user.id) => ({ id, status: 'ready', custom_data: { userId, checkoutAttemptId }, items: [{ price: { id: 'pri_month' } }] });
+  t.mock.method(globalThis, 'fetch', async (url, init) => {
+    if (init?.method === 'POST' && String(url).endsWith('/transactions')) { posts++; throw new Error('response lost'); }
+    if (String(url).includes('/transactions?customer_id=')) return reply({ data: listing });
+    return reply({ data: listing.find((txn) => String(url).endsWith(`/transactions/${txn.id}`)) || { id: 'none' } });
+  });
+  await assert.rejects(checkout(), /CHECKOUT_REVIEW/);
+  const reservation = await db.paddleCheckoutOf(env, user.id);
+  assert.equal(reservation.state, 'unknown');
+  // Paddle knows nothing yet and the attempt is young: keep waiting.
+  await assert.rejects(checkout(), /CHECKOUT_REVIEW/);
+  assert.equal(posts, 1);
+  // Paddle did create it: adopt it without a second POST.
+  // Another customer's attempt id or another account's transaction is never adopted.
+  listing = [transaction('txn_other', 'someone-else'), transaction('txn_stolen', reservation.attempt_id, 'someone-else'), transaction('txn_found', reservation.attempt_id)];
+  assert.equal((await (await checkout()).json()).transactionId, 'txn_found');
+  assert.equal(posts, 1);
+  assert.equal((await db.paddleCheckoutOf(env, user.id)).transaction_id, 'txn_found');
+
+  const aged = await setup(t);
+  await db.setPaddleCustomer(aged.env, aged.user.id, 'ctm_aged');
+  let agedPosts = 0;
+  t.mock.method(globalThis, 'fetch', async (url, init) => {
+    if (init?.method === 'POST' && String(url).endsWith('/transactions')) { agedPosts++; if (agedPosts === 1) throw new Error('response lost'); return reply({ data: { id: 'txn_second', status: 'ready' } }); }
+    if (String(url).includes('/transactions?customer_id=')) return reply({ data: [] });
+    return reply({ data: { id: 'txn_second', status: 'ready' } });
+  });
+  await assert.rejects(aged.checkout(), /CHECKOUT_REVIEW/);
+  await assert.rejects(aged.checkout(), /CHECKOUT_REVIEW/, 'fifteen minutes have not passed');
+  await db.run(aged.env, 'UPDATE paddle_checkouts SET created_at = 0, updated_at = 0 WHERE user_id = ?', aged.user.id);
+  assert.equal((await (await aged.checkout()).json()).transactionId, 'txn_second', 'nothing at Paddle and the attempt is old: released and retried');
+  assert.equal(agedPosts, 2);
+});

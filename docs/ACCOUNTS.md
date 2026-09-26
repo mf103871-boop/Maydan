@@ -49,6 +49,18 @@ Authorization: Bearer mdn1.<معرّف 16 hex>.<سر base64url من 32 بايت>
 
 ---
 
+## تشديدات مراجعة 26 سبتمبر 2026
+
+- **ربط رمز الدخول بالمتصفح:** يولّد العميل سرّ محاولة (32 hex) قبل التحويل ويحفظه في `sessionStorage`
+  ويرسله كـ`attempt` في `start`؛ الخادم يضع بصمته في `state` ثم في `auth_code_attempts` مع بصمة الرمز،
+  ولا يقبل `POST /api/auth/exchange` الرمز إلا مع السرّ نفسه. رمز بلا ربط (عميل قديم) يبقى مقبولًا بلا سرّ.
+- **Paddle:** اشترك في وجهة الإشعارات بأحداث `adjustment.created` و`adjustment.updated` إضافة إلى
+  `transaction.*` و`subscription.*`؛ الاسترداد الكامل المعتمد أو الاسترجاع يبطل الاشتراك ويطلب إلغاءه.
+  حجز شراء بحالة `unknown` يُسوّى عبر `GET /transactions?customer_id=` حين يكون للعميل معرّف Paddle.
+- **التنظيف اليومي** يحذف أيضًا صفوف `account_deletions` الأقدم من عشر دقائق، والرسائل والبلاغات الأقدم من
+  `SOCIAL_MESSAGE_RETENTION_DAYS`/`SOCIAL_REPORT_RETENTION_DAYS` (365 افتراضيًا). سقف الأصدقاء
+  `SOCIAL_FRIEND_LIMIT` (300 افتراضيًا). طبّق ترحيل `0006_hardening.sql` قبل نشر هذه النسخة.
+
 ## المسارات
 
 كل الردود JSON بلا تخزين مؤقت، والأخطاء بالشكل `{"error": "CODE"}`.

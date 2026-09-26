@@ -80,8 +80,10 @@ export function nameFromForm(value) {
   if (!value) return null;
   try {
     const parsed = typeof value === 'string' ? JSON.parse(value) : value;
-    const name = [parsed?.name?.firstName ?? parsed?.givenName, parsed?.name?.lastName ?? parsed?.familyName].filter(Boolean).join(' ').trim();
-    return name || null;
+    // The web `user` field is unsigned and client-controlled: bound and clean it.
+    const clean = (value) => (typeof value === 'string' ? value.normalize('NFKC').replace(/[\p{Cc}\p{Cf}]/gu, '').trim() : '');
+    const name = [parsed?.name?.firstName ?? parsed?.givenName, parsed?.name?.lastName ?? parsed?.familyName].map(clean).filter(Boolean).join(' ').replace(/\s+/g, ' ').trim();
+    return name ? Array.from(name).slice(0, 80).join('') : null;
   } catch { return null; }
 }
 

@@ -41,9 +41,12 @@ export async function touchPresence(env, userId, lastActiveAt, onlineUntil) {
     WHERE user_id=? AND EXISTS(SELECT 1 FROM users WHERE id=?)
     AND NOT EXISTS(SELECT 1 FROM account_deletions WHERE user_id=?)`, lastActiveAt, onlineUntil, userId, userId, userId);
 }
+// Per-user quotas: friend requests and writes per minute, and a daily message cap that
+// bounds what a colluding pair can pour into the database.
+const QUOTAS = { request: [10, 60_000], write: [120, 60_000], message_day: [2000, 86_400_000] };
 export async function chargeUser(env, userId, kind, now = Date.now()) {
-  const max = kind === 'request' ? 10 : 120;
-  const window = Math.floor(now / 60_000) * 60_000;
+  const [max, windowMs] = QUOTAS[kind] || QUOTAS.write;
+  const window = Math.floor(now / windowMs) * windowMs;
   const result = await run(env, `INSERT INTO social_limits(user_id,kind,window_start,count)
     SELECT ?,?,?,1 WHERE EXISTS(SELECT 1 FROM users WHERE id=?)
     AND NOT EXISTS(SELECT 1 FROM account_deletions WHERE user_id=?)
@@ -102,9 +105,15 @@ export async function requestsOf(env, userId) {
   for (const row of rows) result[row.requester_id === userId ? 'outgoing' : 'incoming'].push({ id: row.id, user: publicProfile(row), createdAt: row.created_at });
   return result;
 }
+// Nothing bounded the friend list; every list, presence fan-out and summary lookup is
+// O(friends), so a cap keeps one account from making its own screens unusable.
+export const friendLimit = (env) => Math.max(10, Number(env.SOCIAL_FRIEND_LIMIT) || 300);
+const linkCount = async (env, id) => Number((await first(env, 'SELECT COUNT(*) AS n FROM social_friendships WHERE user_low=? OR user_high=?', id, id))?.n || 0);
 export async function requestFriend(env, userId, otherId, now) {
   if (userId === otherId) fail('INVALID', 400);
   await chargeUser(env, userId, 'request', now);
+  const limit = friendLimit(env);
+  if (await linkCount(env, userId) >= limit || await linkCount(env, otherId) >= limit) fail('FRIEND_LIMIT', 409);
   await ensureProfile(env, otherId, now);
   const [low, high] = pairOf(userId, otherId);
   await run(env, `INSERT OR IGNORE INTO social_friendships(id,user_low,user_high,requester_id,status,created_at)
@@ -170,19 +179,23 @@ export async function blockUser(env, userId, otherId, now) {
 export const unblockUser = (env, userId, otherId) => run(env, 'DELETE FROM social_blocks WHERE blocker_id=? AND blocked_id=?', userId, otherId);
 
 export async function conversationsOf(env, userId, now) {
+  // The last message joins in the same statement (membership and blocks are already
+  // enforced on the conversation row) instead of one extra query per conversation.
   const rows = await all(env, `SELECT c.*,p.user_id,p.code,p.last_active_at,p.online_until,u.name,
     COALESCE(r.last_read_seq,0) AS read_seq,COALESCE(pr.last_read_seq,0) AS peer_read_seq,
     (SELECT COUNT(*) FROM social_messages m WHERE m.conversation_id=c.id AND m.sender_id!=? AND m.deleted_at IS NULL AND m.seq>COALESCE(r.last_read_seq,0)) AS unread_count,
-    (SELECT MAX(m.seq) FROM social_messages m WHERE m.conversation_id=c.id) AS last_seq
+    lm.seq AS lm_seq,lm.conversation_id AS lm_conversation_id,lm.sender_id AS lm_sender_id,lm.client_id AS lm_client_id,lm.text AS lm_text,
+    lm.original_hash AS lm_original_hash,lm.created_at AS lm_created_at,lm.edited_at AS lm_edited_at,lm.deleted_at AS lm_deleted_at
     FROM social_conversations c JOIN social_profiles p ON p.user_id=CASE WHEN c.user_low=? THEN c.user_high ELSE c.user_low END
     JOIN users u ON u.id=p.user_id LEFT JOIN social_reads r ON r.conversation_id=c.id AND r.user_id=?
     LEFT JOIN social_reads pr ON pr.conversation_id=c.id AND pr.user_id=p.user_id
+    LEFT JOIN social_messages lm ON lm.seq=(SELECT MAX(m2.seq) FROM social_messages m2 WHERE m2.conversation_id=c.id)
     WHERE (c.user_low=? OR c.user_high=?) AND ${allowedConversation('c')}
-    ORDER BY COALESCE(last_seq,0) DESC,c.id`, userId, userId, userId, userId, userId);
-  // Each message read independently rechecks membership/block status.
-  return Promise.all(rows.map(async (row) => ({ id: row.id, user: publicProfile(row, { presence: true, now }),
-    lastMessage: row.last_seq ? await messageForUser(env, userId, row.last_seq) : null,
-    unreadCount: row.unread_count, readSeq: row.read_seq, peerReadSeq: row.peer_read_seq })));
+    ORDER BY COALESCE(lm.seq,0) DESC,c.id`, userId, userId, userId, userId, userId);
+  return rows.map((row) => ({ id: row.id, user: publicProfile(row, { presence: true, now }),
+    lastMessage: row.lm_seq ? messageView({ seq: row.lm_seq, conversation_id: row.lm_conversation_id, sender_id: row.lm_sender_id, client_id: row.lm_client_id,
+      text: row.lm_text, original_hash: row.lm_original_hash, created_at: row.lm_created_at, edited_at: row.lm_edited_at, deleted_at: row.lm_deleted_at }) : null,
+    unreadCount: row.unread_count, readSeq: row.read_seq, peerReadSeq: row.peer_read_seq }));
 }
 export async function messageForUser(env, userId, seq) {
   const row = await first(env, `SELECT m.* FROM social_messages m JOIN social_conversations c ON c.id=m.conversation_id
@@ -208,6 +221,7 @@ export async function messagesOf(env, userId, conversationId, { before, after, l
     peerReadSeq: reads.find((r) => r.user_id === peerOf(convo, userId))?.last_read_seq || 0 };
 }
 export async function sendMessage(env, userId, conversationId, text, clientId, now) {
+  await chargeUser(env, userId, 'message_day', now);
   const hash = await sha256(text);
   await run(env, `INSERT OR IGNORE INTO social_messages(conversation_id,sender_id,client_id,text,original_hash,created_at)
     SELECT c.id,?,?,?,?,? FROM social_conversations c WHERE c.id=? AND (c.user_low=? OR c.user_high=?)

@@ -2,7 +2,7 @@
 // يُعيد Response إن كان المسار له، أو null ليكمل الموجّه الأصلي طريقه.
 import { TRIAL_GAMES, PRODUCTS, PROMO_DURATION_MS } from '../../src/shared/account/config.js';
 import { codeHash, isValidCode } from '../../src/shared/account/redeem.js';
-import { json, readJson } from '../protocol.mjs';
+import { json, readJson, sha256 } from '../protocol.mjs';
 import { failure, RoomError } from './errors.mjs';
 import * as db from './db.mjs';
 import * as apple from './apple.mjs';
@@ -12,7 +12,7 @@ import { assertPaddleWebhookIp } from './paddle-ips.mjs';
 import { premiumOf, premiumActive } from './entitlements.mjs';
 import { inBillingEnvironment } from './billing-environment.mjs';
 import {
-  bearer, issueAuthCode, issueSession, me as meOf, readSession, readState, redeemAuthCode,
+  ATTEMPT, bearer, issueAuthCode, issueSession, me as meOf, readSession, readState, redeemAuthCode,
   requireSession, returnRedirect, safeReturn, signState, withRotation,
 } from './session.mjs';
 import { randomHex } from './jwt.mjs';
@@ -93,11 +93,17 @@ function billingConfig(env) {
 const clientOf = (value) => (value === 'ios' ? 'ios' : 'web');
 const redirectUri = (url, provider) => `${url.origin}/api/auth/${provider}/callback`;
 
+// The client generates a random attempt secret and keeps it; only its hash travels in
+// the signed state and is stored with the one-time code (see redeemAuthCode).
+async function attemptHashOf(url) {
+  const raw = url.searchParams.get('attempt');
+  return raw && ATTEMPT.test(raw) ? await sha256(raw) : null;
+}
 async function startApple(request, env, url, now) {
   const client = clientOf(url.searchParams.get('client'));
   const target = safeReturn(env, url.searchParams.get('return'), client);
   const nonce = randomHex(16);
-  const state = await signState(env, { p: 'apple', c: client, r: target, nonce }, now);
+  const state = await signState(env, { p: 'apple', c: client, r: target, nonce, a: await attemptHashOf(url) }, now);
   const location = apple.authorizeUrl(env, { redirectUri: redirectUri(url, 'apple'), state, nonce });
   return new Response(null, { status: 302, headers: { location, 'cache-control': 'no-store' } });
 }
@@ -105,7 +111,7 @@ async function startGoogle(request, env, url, now) {
   const client = clientOf(url.searchParams.get('client'));
   const target = safeReturn(env, url.searchParams.get('return'), client);
   const nonce = randomHex(16);
-  const state = await signState(env, { p: 'google', c: client, r: target, nonce }, now);
+  const state = await signState(env, { p: 'google', c: client, r: target, nonce, a: await attemptHashOf(url) }, now);
   const location = google.authorizeUrl(env, { redirectUri: redirectUri(url, 'google'), state, nonce });
   return new Response(null, { status: 302, headers: { location, 'cache-control': 'no-store' } });
 }
@@ -115,8 +121,17 @@ function checkNonce(payload, state) {
   if (!state.nonce || payload.nonce !== state.nonce) failure('STATE');
 }
 
+// Apple documents email_verified as a Boolean or the strings "true"/"false".
+const unverifiedEmail = (value) => value === false || value === 'false';
+async function readForm(request, max = MAX_BODY) {
+  const declared = Number(request.headers.get('content-length'));
+  if (Number.isFinite(declared) && declared > max) failure('INVALID');
+  const text = await request.text();
+  if (text.length > max) failure('INVALID');
+  return new URLSearchParams(text);
+}
 async function callbackApple(request, env, url, now) {
-  const form = new URLSearchParams(await request.text());
+  const form = await readForm(request);
   const state = await readState(env, form.get('state'), now);
   if (state.p !== 'apple') failure('STATE');
   const idToken = form.get('id_token');
@@ -131,9 +146,9 @@ async function callbackApple(request, env, url, now) {
   }
   const user = await db.linkIdentity(env, {
     provider: 'apple', subject: payload.sub, name: apple.nameFromForm(form.get('user')),
-    email: payload.email_verified === false ? null : (payload.email || null), refreshToken, now,
+    email: unverifiedEmail(payload.email_verified) ? null : (payload.email || null), refreshToken, now,
   });
-  return returnRedirect(state.r, await issueAuthCode(env, user.id, state.c, now));
+  return returnRedirect(state.r, await issueAuthCode(env, user.id, state.c, now, state.a || null));
 }
 
 async function callbackGoogle(request, env, url, now) {
@@ -146,7 +161,7 @@ async function callbackGoogle(request, env, url, now) {
   checkNonce(payload, state);
   const profile = google.profileOf(payload);
   const user = await db.linkIdentity(env, { provider: 'google', subject: profile.subject, name: profile.name, email: profile.email, now });
-  return returnRedirect(state.r, await issueAuthCode(env, user.id, state.c, now));
+  return returnRedirect(state.r, await issueAuthCode(env, user.id, state.c, now, state.a || null));
 }
 
 // ── تحويل الهوية إلى جلسة ───────────────────────────────────────────────────
@@ -157,7 +172,7 @@ async function sessionResponse(env, user, client, now, status = 200) {
 
 async function exchange(request, env, now) {
   const body = await readJson(request);
-  const row = await redeemAuthCode(env, body.code, now);
+  const row = await redeemAuthCode(env, body.code, now, typeof body.attempt === 'string' ? body.attempt : null);
   const user = await db.userById(env, row.user_id);
   if (!user) failure('STATE');
   return sessionResponse(env, user, clientOf(body.client || row.client), now);
@@ -176,7 +191,7 @@ async function appleNative(request, env, now) {
   const name = apple.nameFromForm(body.fullName);
   const user = await db.linkIdentity(env, {
     provider: 'apple', subject: payload.sub, name,
-    email: payload.email_verified === false ? null : (payload.email || null), refreshToken, now,
+    email: unverifiedEmail(payload.email_verified) ? null : (payload.email || null), refreshToken, now,
   });
   return sessionResponse(env, user, 'ios', now);
 }
@@ -268,6 +283,8 @@ async function paddlePortal(request, env, now) {
 }
 async function paddleWebhook(request, env, now) {
   await assertPaddleWebhookIp(request, env);
+  const declared = Number(request.headers.get('content-length'));
+  if (Number.isFinite(declared) && declared > 262_144) failure('INVALID');
   const raw = await request.text();
   if (raw.length > 262_144) failure('INVALID');
   await paddle.verifySignature(env, request.headers.get('paddle-signature'), raw, now);
@@ -276,9 +293,36 @@ async function paddleWebhook(request, env, now) {
   if (!event?.event_id) failure('INVALID');
   const eventId = `paddle:${paddle.environmentOf(env)}:${event.event_id}`;
   if (await db.webhookEvent(env, eventId)) return json({ ok: true, duplicate: true });
+  try {
+    return await applyPaddleEvent(env, event, eventId, now);
+  } catch (error) {
+    // Conditions that can never change (a subscription linked to another account, an
+    // event from the other billing environment) are acknowledged, or Paddle retries
+    // them for three days and every retry alerts.
+    if (error instanceof RoomError && ['ALREADY_LINKED', 'NOT_ELIGIBLE'].includes(error.code)) {
+      await db.markWebhookEvent(env, eventId, now);
+      return json({ ok: true, ignored: error.code });
+    }
+    throw error;
+  }
+}
+async function applyPaddleEvent(env, event, eventId, now) {
   if (await paddle.recoverCheckoutEvent(env, event)) {
     await db.markWebhookEvent(env, eventId, now);
     return json({ ok: true, recovered: true });
+  }
+  // A full refund or an approved chargeback takes the entitlement away at once and
+  // stops the next renewal; subscription.* events never carry that information.
+  const revocation = paddle.adjustmentRevocation(event, now);
+  if (revocation) {
+    const existing = await db.subscriptionByExternal(env, 'paddle', revocation.subscriptionId);
+    if (existing && inBillingEnvironment(env, existing)) {
+      await db.upsertSubscription(env, { source: 'paddle', external_id: existing.external_id, user_id: existing.user_id, product: existing.product,
+        status: 'revoked', until: 0, will_renew: false, environment: existing.environment, occurred_at: Math.max(Number(existing.occurred_at) || 0, revocation.occurredAt) });
+      try { await paddle.cancelSubscription(env, existing.external_id, { verifyFirst: true }); } catch { /* the next subscription event settles it */ }
+    }
+    await db.markWebhookEvent(env, eventId, now);
+    return json({ ok: true, revoked: Boolean(existing), action: revocation.action });
   }
   const row = paddle.subscriptionRow(env, event, now);
   if (!row) {

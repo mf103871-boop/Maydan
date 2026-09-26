@@ -217,7 +217,9 @@ test('الأصل المجهول يُرفض، ومسارات المزوّد ال�
 
 test('تدفق جوجل كامل: state ثم رمز لمرة واحدة ثم جلسة و/api/me', { timeout: 30_000 }, async () => {
   const api = client();
-  const started = await api.get(`/api/auth/google/start?client=web&return=${encodeURIComponent(`${ORIGIN}/`)}`);
+  // The browser keeps a random attempt secret; only its hash rides in the signed state.
+  const attempt = 'a1'.repeat(16);
+  const started = await api.get(`/api/auth/google/start?client=web&return=${encodeURIComponent(`${ORIGIN}/`)}&attempt=${attempt}`);
   assert.equal(started.status, 302);
   const authorize = new URL(started.headers.get('location'));
   assert.equal(authorize.origin + authorize.pathname, `${providers.url}/google/authorize`);
@@ -238,7 +240,13 @@ test('تدفق جوجل كامل: state ثم رمز لمرة واحدة ثم ج�
   assert.ok(location.startsWith(`${ORIGIN}/#/auth?code=`), location);
   const code = new URL(location.replace('#/auth?', '?')).searchParams.get('code');
 
-  const exchanged = await api.post('/api/auth/exchange', { code, client: 'web' });
+  // Another browser holding only the link (login CSRF) cannot redeem the code, and the
+  // failed attempts do not consume it for its owner.
+  const unbound = await api.post('/api/auth/exchange', { code, client: 'web' });
+  assert.equal(unbound.status, 400); assert.equal(unbound.data.error, 'STATE');
+  const wrong = await api.post('/api/auth/exchange', { code, client: 'web', attempt: 'b2'.repeat(16) });
+  assert.equal(wrong.status, 400); assert.equal(wrong.data.error, 'STATE');
+  const exchanged = await api.post('/api/auth/exchange', { code, client: 'web', attempt });
   assert.equal(exchanged.status, 200, JSON.stringify(exchanged.data));
   assert.match(exchanged.data.session.token, /^mdn1\.[a-f0-9]{16}\.[A-Za-z0-9_-]{43}$/);
   assert.equal(exchanged.data.me.user.email, 'player@example.com');
@@ -246,7 +254,7 @@ test('تدفق جوجل كامل: state ثم رمز لمرة واحدة ثم ج�
   assert.equal(exchanged.data.me.premium.active, false);
 
   // الرمز لمرة واحدة فقط.
-  const replay = await api.post('/api/auth/exchange', { code, client: 'web' });
+  const replay = await api.post('/api/auth/exchange', { code, client: 'web', attempt });
   assert.equal(replay.status, 400);
   assert.equal(replay.data.error, 'STATE');
 

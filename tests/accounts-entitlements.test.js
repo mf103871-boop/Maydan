@@ -212,7 +212,7 @@ test('cleanup يحذف الجلسات المنتهية قديمًا ورموز �
   await db.prepare('INSERT INTO webhook_events (id, received_at) VALUES (?, ?)').bind('recent', now - day).run();
   await db.prepare('INSERT INTO webhook_events (id, received_at) VALUES (?, ?)').bind('ancient', now - 100 * day).run();
   const result = await cleanup(env, now);
-  assert.deepEqual(result, { sessions: 2, authCodes: 1, webhookEvents: 1 });
+  assert.deepEqual(result, { sessions: 2, authCodes: 1, webhookEvents: 1, staleDeletions: 0, messages: 0, reports: 0 });
   const ids = (await db.prepare('SELECT id FROM sessions ORDER BY id').all()).results.map((r) => r.id);
   assert.deepEqual(ids, ['just-expired', 'live', 'revoked-recent']);
   assert.equal((await db.prepare('SELECT count(*) AS n FROM auth_codes').first()).n, 1);
