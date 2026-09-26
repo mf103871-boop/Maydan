@@ -8,6 +8,7 @@ import packageInfo from '../package.json' with { type: 'json' };
 import { routeSocial } from './social/router.mjs';
 import { routeSocialLive } from './social/realtime.mjs';
 import { routeProfiles, isPublicProfileImagePath } from './profiles/router.mjs';
+import { routeModeration } from './moderation/router.mjs';
 export { SocialHub } from './social/realtime.mjs';
 export { Room };
 
@@ -103,6 +104,7 @@ export async function routeRequest(request, env) {
   try {
     // الحسابات أولًا: مساراتها تحت /api/ ولا تتقاطع مع تعبير الغرف.
     response = await routeSocialLive(request, env, url, charge)
+      || await routeModeration(request, env, url, charge)
       || await routeProfiles(request, env, url, charge)
       || await routeSocial(request, env, url, charge)
       || await routeAccounts(request, env, url, charge);

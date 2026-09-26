@@ -227,7 +227,8 @@ test('ترحيلات D1 جمل مستقلة بسطر واحد يقبلها exec'
   // preserves existing rows; no update/delete/upsert or other table is allowed.
   const allowed = statement => /^CREATE (TABLE|INDEX) IF NOT EXISTS /.test(statement) ||
     (/^INSERT OR IGNORE INTO (social_profiles|player_profiles)\(/.test(statement) &&
-      !/\b(UPDATE|DELETE|REPLACE|DROP|ALTER)\b/i.test(statement));
+      !/\b(UPDATE|DELETE|REPLACE|DROP|ALTER)\b/i.test(statement)) ||
+    /^INSERT OR IGNORE INTO moderation_image_reviews\(id,user_id,kind,version,data_base64,width,height,byte_length,created_at\) SELECT 'legacy-' \|\| i\.user_id \|\| '-' \|\| i\.kind,i\.user_id,i\.kind,i\.version,i\.data_base64,i\.width,i\.height,i\.byte_length,i\.updated_at FROM player_images i JOIN users u ON u\.id=i\.user_id WHERE NOT EXISTS\(SELECT 1 FROM account_deletions d WHERE d\.user_id=i\.user_id\) AND NOT EXISTS\(SELECT 1 FROM moderation_image_approvals a WHERE a\.user_id=i\.user_id AND a\.kind=i\.kind AND a\.version=i\.version\);$/.test(statement);
   for (const unsafe of [
     'INSERT OR IGNORE INTO users(id) VALUES(1);',
     'INSERT OR REPLACE INTO player_profiles(user_id) VALUES(1);',

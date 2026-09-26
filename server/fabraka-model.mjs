@@ -4,6 +4,7 @@ import { normalizeOptions, validateLie, matchesTruth, sameAnswer, roundBreakdown
 import { pictureAsset, PICTURE_CREDIT } from '../src/games/fabraka/pictureAssets.js';
 import { active, member, memberOrNull, profile, transferHost, joinRoom as joinMember, fail, hasInvisible, absent, graceDeadlines, extendForMatch, kickSeat, colorOf } from './room-model.mjs';
 import { shuffled } from './protocol.mjs';
+import { objectionableText } from './moderation/filter.mjs';
 
 const TIMED = ['host', 'write', 'discussion', 'vote'];
 const PLAYING = ['host', 'write', 'discussion', 'vote', 'reveal', 'result'];
@@ -14,6 +15,7 @@ function text(value) {
   if (typeof value !== 'string' || hasInvisible(value)) fail('ANSWER');
   const checked = validateLie(value.normalize('NFKC'));
   if (!checked.ok) fail('ANSWER');
+  if (objectionableText(checked.text)) fail('CONTENT_REJECTED',422);
   return checked.text;
 }
 function deadline(room, phase, now, seconds) {

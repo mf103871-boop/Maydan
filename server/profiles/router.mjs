@@ -42,6 +42,13 @@ async function dispatch(request,env,url,id) {
   // Plain reads of other profiles must not write, or any visitor could bump a
   // player's revision and turn their concurrent save into a 409.
   if(method!=='GET' || path==='/me') await db.ensurePlayerProfile(env,id,now);
+  const preview=/^\/me\/images\/(avatar|cover)\/pending\/([a-f0-9]{64})$/.exec(path);
+  if(preview && method==='GET') {
+    const found=await db.pendingImage(env,id,preview[1],preview[2]);
+    if(!found) fail('NOT_FOUND',404);
+    return new Response(base64ToBytes(found.data_base64),{headers:{'content-type':'image/jpeg','cache-control':'no-store',
+      'x-content-type-options':'nosniff','content-security-policy':"default-src 'none'; sandbox"}});
+  }
   if(method!=='GET') await chargeUser(env,id,'write',now);
   if(path==='/me' && method==='GET') return json({profile:await db.profileFor(env,id,id)});
   if(path==='/search' && method==='GET') {

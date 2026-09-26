@@ -6,6 +6,8 @@ export const SOCIAL_ERRORS = {
   CONFLICT: 'تغيّر هذا الطلب، حدّث القائمة وحاول مجددًا.', RATE_LIMIT: 'طلبات كثيرة، انتظر قليلًا ثم حاول.',
   FRIEND_LIMIT: 'قائمة الأصدقاء ممتلئة لديك أو لدى الطرف الآخر.',
   NETWORK: 'تعذّر الاتصال. يمكنك إعادة المحاولة عند عودة الإنترنت.',
+  CONTENT_REJECTED: 'يحتوي النص على محتوى غير مسموح. عدّله قبل الإرسال.',
+  ACCOUNT_SUSPENDED: 'حسابك معلّق. راجع الحالة ووسيلة التواصل من الإعدادات.',
   SOCIAL_UNAVAILABLE: 'التحديث المباشر غير متاح مؤقتًا.', STALE: 'تغيّر الحساب أثناء الطلب.',
 };
 export const socialError = error => SOCIAL_ERRORS[error?.code] || SOCIAL_ERRORS.NETWORK;
