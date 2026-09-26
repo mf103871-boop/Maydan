@@ -2,12 +2,13 @@ import { fail } from '../room-model.mjs';
 import { ensureProfile as ensureSocialProfile } from '../social/db.mjs';
 import { ACHIEVEMENTS } from '../../src/profiles/catalog.js';
 import { earnedState, imageUrl, publicName, gameOf, EMPTY_STATS } from './model.mjs';
+import { liveAccountSql, approvedImageSql } from '../moderation/access.mjs';
 
 const stmt = (env, sql, ...args) => env.DB.prepare(sql).bind(...args);
 const first = (env, sql, ...args) => stmt(env, sql, ...args).first();
 const all = async (env, sql, ...args) => (await stmt(env, sql, ...args).all()).results || [];
 const changed = result => Number(result?.meta?.changes || 0) > 0;
-const live = alias => `EXISTS(SELECT 1 FROM users u WHERE u.id=${alias}) AND NOT EXISTS(SELECT 1 FROM account_deletions d WHERE d.user_id=${alias})`;
+const live = liveAccountSql;
 const noBlock = (viewer, target) => `NOT EXISTS(SELECT 1 FROM social_blocks b WHERE (b.blocker_id=${viewer} AND b.blocked_id=${target}) OR (b.blocked_id=${viewer} AND b.blocker_id=${target}))`;
 const FRIEND_COUNT = `SELECT COUNT(*) FROM social_friendships f WHERE (f.user_low=p.user_id OR f.user_high=p.user_id) AND f.status='accepted' AND ${live('f.user_low')} AND ${live('f.user_high')} AND ${noBlock('f.user_low','f.user_high')}`;
 const bumpIfChanged = (env,userId,now=Date.now()) => stmt(env, `UPDATE player_profiles SET revision=revision+1,updated_at=?
@@ -59,7 +60,7 @@ function view(row, viewerId, records, now) {
   const relationship = row.user_id === viewerId ? 'self' : row.friend_status === 'accepted' ? 'friend' : row.friend_status === 'pending' ?
     (row.requester_id === viewerId ? 'pending_outgoing' : 'pending_incoming') : 'none';
   const profile = { id: row.user_id, name: publicName(row.name), code: row.code, bio: row.bio, theme: row.theme,
-    avatarPreset: row.avatar_preset, avatarUrl: imageUrl(row.user_id,'avatar',row.avatar_version), coverUrl: imageUrl(row.user_id,'cover',row.cover_version),
+    avatarPreset: row.avatar_preset, avatarUrl: imageUrl(row.user_id,'avatar',row.public_avatar_version), coverUrl: imageUrl(row.user_id,'cover',row.public_cover_version),
     stats: readStats(row), friendCount: row.friend_count, relationship, requestId: row.friend_status === 'pending' ? row.request_id : null,
     selectedTitle: row.selected_title, featuredBadges: Array.isArray(featured) ? featured : [],
     createdAt: row.account_created_at, updatedAt: row.updated_at, revision: row.revision };
@@ -73,6 +74,8 @@ function view(row, viewerId, records, now) {
   return profile;
 }
 const PROFILE_SELECT = `SELECT p.*,u.name,u.created_at AS account_created_at,s.code,s.last_active_at,s.online_until,
+  CASE WHEN ${approvedImageSql('p','avatar')} THEN p.avatar_version END AS public_avatar_version,
+  CASE WHEN ${approvedImageSql('p','cover')} THEN p.cover_version END AS public_cover_version,
   f.status AS friend_status,f.requester_id,f.id AS request_id,
   st.local_sessions,st.online_matches,st.online_wins,st.online_draws,
   (SELECT COUNT(DISTINCT game) FROM player_events e WHERE e.user_id=p.user_id) AS distinct_games,
@@ -88,7 +91,9 @@ export async function profileFor(env, viewerId, targetId, now = Date.now()) {
     viewerId, viewerId, targetId, viewerId, viewerId, viewerId, viewerId);
   if (!row) fail('NOT_FOUND', 404);
   const earned = JSON.parse(row.earned_ids || '[]').map(achievement_id=>({achievement_id}));
-  return view(row, viewerId, earned, now);
+  const result=view(row, viewerId, earned, now);
+  if(viewerId===targetId) result.imageReviews=await imageReviews(env,targetId);
+  return result;
 }
 export async function searchProfiles(env, viewerId, query, now = Date.now()) {
   const code = query.toUpperCase(); const pattern = `%${query.replace(/[\\%_]/g,'\\$&')}%`;
@@ -120,6 +125,8 @@ export async function patchProfile(env, userId, patch, revision = null, now = Da
     AND EXISTS(SELECT 1 FROM player_profiles p WHERE p.user_id=users.id AND p.last_mutation=?)`, patch.name,now,userId,mutation));
   if ('avatarPreset' in patch) statements.push(stmt(env, `DELETE FROM player_images WHERE user_id=? AND kind='avatar'
     AND EXISTS(SELECT 1 FROM player_profiles p WHERE p.user_id=player_images.user_id AND p.last_mutation=?)`, userId,mutation));
+  if ('avatarPreset' in patch) for(const table of ['moderation_image_reviews','moderation_image_approvals'])
+    statements.push(stmt(env,`DELETE FROM ${table} WHERE user_id=? AND kind='avatar' AND EXISTS(SELECT 1 FROM player_profiles p WHERE p.user_id=? AND p.last_mutation=?)`,userId,userId,mutation));
   statements.push(...profileAchievementStatements(env,userId,now));
   const result = await env.DB.batch(statements);
   await checkMutation(env,userId,result[0]);
@@ -127,29 +134,47 @@ export async function patchProfile(env, userId, patch, revision = null, now = Da
 export async function setImage(env, userId, kind, image, revision = null, now = Date.now()) {
   if (!['avatar','cover'].includes(kind)) fail('INVALID',400);
   const mutation = crypto.randomUUID(); const guard = mutationGuard(revision);
-  const result = await env.DB.batch([
-    stmt(env, `UPDATE player_profiles SET ${kind}_version=?,revision=revision+1,updated_at=?,last_mutation=?
-      WHERE user_id=? AND ${live('player_profiles.user_id')}${guard.sql}`, image?.version || null,now,mutation,userId,...guard.args),
-    image ? stmt(env, `INSERT INTO player_images(user_id,kind,version,data_base64,width,height,byte_length,updated_at)
-      SELECT ?,?,?,?,?,?,?,? WHERE EXISTS(SELECT 1 FROM player_profiles p WHERE p.user_id=? AND p.last_mutation=?)
-      ON CONFLICT(user_id,kind) DO UPDATE SET version=excluded.version,data_base64=excluded.data_base64,width=excluded.width,
-        height=excluded.height,byte_length=excluded.byte_length,updated_at=excluded.updated_at`,
-    userId,kind,image.version,image.base64,image.width,image.height,image.bytes.length,now,userId,mutation)
+  const statements = [
+    stmt(env, `UPDATE player_profiles SET ${image?`${kind}_version=CASE WHEN EXISTS(SELECT 1 FROM moderation_image_approvals a WHERE a.user_id=player_profiles.user_id AND a.kind='${kind}' AND a.version=player_profiles.${kind}_version AND a.hidden_at IS NULL) THEN player_profiles.${kind}_version ELSE NULL END,`:`${kind}_version=NULL,`}revision=revision+1,updated_at=?,last_mutation=?
+      WHERE user_id=? AND ${live('player_profiles.user_id')}${guard.sql}`, now,mutation,userId,...guard.args),
+    image ? stmt(env, `INSERT INTO moderation_image_reviews(id,user_id,kind,version,data_base64,width,height,byte_length,created_at)
+      SELECT ?,?,?,?,?,?,?,?,? WHERE EXISTS(SELECT 1 FROM player_profiles p WHERE p.user_id=? AND p.last_mutation=?)
+      ON CONFLICT(user_id,kind) DO UPDATE SET id=excluded.id,version=excluded.version,data_base64=excluded.data_base64,width=excluded.width,
+        height=excluded.height,byte_length=excluded.byte_length,created_at=excluded.created_at,status='pending',reviewed_at=NULL,reviewer_id=NULL,note=NULL`,
+    crypto.randomUUID(),userId,kind,image.version,image.base64,image.width,image.height,image.bytes.length,now,userId,mutation)
       : stmt(env, `DELETE FROM player_images WHERE user_id=? AND kind=? AND EXISTS(SELECT 1 FROM player_profiles p WHERE p.user_id=player_images.user_id AND p.last_mutation=?)`,userId,kind,mutation),
     ...profileAchievementStatements(env,userId,now),
-  ]);
+  ];
+  if(!image) for(const table of ['moderation_image_reviews','moderation_image_approvals'])
+    statements.push(stmt(env,`DELETE FROM ${table} WHERE user_id=? AND kind=? AND EXISTS(SELECT 1 FROM player_profiles p WHERE p.user_id=? AND p.last_mutation=?)`,userId,kind,userId,mutation));
+  const result=await env.DB.batch(statements);
   await checkMutation(env,userId,result[0]);
 }
 export const currentImage = (env,userId,kind,version) => first(env, `SELECT i.data_base64,i.byte_length FROM player_images i
   JOIN player_profiles p ON p.user_id=i.user_id WHERE i.user_id=? AND i.kind=? AND i.version=?
-  AND CASE WHEN i.kind='avatar' THEN p.avatar_version ELSE p.cover_version END=i.version AND ${live('i.user_id')}`,userId,kind,version);
+  AND CASE WHEN i.kind='avatar' THEN p.avatar_version ELSE p.cover_version END=i.version
+  AND EXISTS(SELECT 1 FROM moderation_image_approvals a WHERE a.user_id=i.user_id AND a.kind=i.kind AND a.version=i.version AND a.hidden_at IS NULL)
+  AND ${live('i.user_id')}`,userId,kind,version);
+
+export const pendingImage = (env,id,kind,version) => first(env,`SELECT data_base64,byte_length FROM moderation_image_reviews r
+  WHERE user_id=? AND kind=? AND version=? AND ${live('r.user_id')}`,id,kind,version);
+export async function imageReviews(env,id) {
+  const result={};
+  for(const row of await all(env,'SELECT kind,version,created_at,status,note FROM moderation_image_reviews WHERE user_id=?',id))
+    result[row.kind]={status:row.status,pendingVersion:row.version,submittedAt:row.created_at,
+      ...(row.note?{rejectionReason:row.note}:{}),previewUrl:`/api/profiles/me/images/${row.kind}/pending/${row.version}`};
+  for(const row of await all(env,'SELECT kind,hidden_at,reason FROM moderation_image_approvals WHERE user_id=? AND hidden_at IS NOT NULL',id))
+    if(!result[row.kind]) result[row.kind]={status:'removed',pendingVersion:null,submittedAt:row.hidden_at,rejectionReason:row.reason};
+  return result;
+}
 
 export async function profileSummaries(env,userIds) {
   const ids=[...new Set(userIds)].filter(id=>typeof id==='string' && /^[A-Za-z0-9_-]{1,80}$/.test(id));
   const result=new Map();
   for(let start=0;start<ids.length;start+=80) {
     const batch=ids.slice(start,start+80);
-    const rows=await all(env,`SELECT p.user_id,p.avatar_preset,p.theme,p.avatar_version,p.selected_title,p.revision
+    const rows=await all(env,`SELECT p.user_id,p.avatar_preset,p.theme,
+      CASE WHEN ${approvedImageSql('p','avatar')} THEN p.avatar_version END AS avatar_version,p.selected_title,p.revision
       FROM player_profiles p WHERE p.user_id IN (${batch.map(()=>'?').join(',')}) AND ${live('p.user_id')}`, ...batch);
     for(const row of rows) result.set(row.user_id,{avatarPreset:row.avatar_preset,theme:row.theme,
       avatarUrl:imageUrl(row.user_id,'avatar',row.avatar_version),selectedTitle:row.selected_title,revision:row.revision});
@@ -205,6 +230,6 @@ export async function completeLocalSession(env,userId,id,now=Date.now()) {
   return { counted: changed(result[0]) };
 }
 export function profileDeleteStatements(env,userId) {
-  return ['player_images','player_profiles','player_stats','player_events','player_sessions','player_achievements']
+  return ['player_images','player_profiles','player_stats','player_events','player_sessions','player_achievements','moderation_image_reviews','moderation_image_approvals']
     .map(table=>stmt(env,`DELETE FROM ${table} WHERE user_id=?`,userId));
 }

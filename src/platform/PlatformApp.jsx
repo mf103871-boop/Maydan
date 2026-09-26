@@ -31,6 +31,7 @@ import { SocialProvider } from '../social/SocialProvider.jsx';
 import { SocialScreen } from '../social/SocialScreen.jsx';
 import { ProfileProvider } from '../profiles/ProfileProvider.jsx';
 import { ProfileScreen } from '../profiles/ProfileScreen.jsx';
+import { ModerationScreen } from '../moderation/ModerationScreen.jsx';
 
 export const VERSION = typeof __MAYDAN_VERSION__ !== 'undefined' ? __MAYDAN_VERSION__ : '1.0.0';
 const platformStorage = createStorage('platform');
@@ -52,6 +53,7 @@ function ScreenHost({ route }) {
   else if (route.name === 'friends') screen = <SocialScreen key="friends" friendId={route.params.id || null} />;
   else if (route.name === 'profile') screen = <ProfileScreen key={`profile-${route.params.id || 'me'}`} profileId={route.params.id || null} />;
   else if (route.name === 'settings') screen = <Settings key="settings" />;
+  else if (route.name === 'moderation') screen = <ModerationScreen key="moderation" />;
   else if (route.name === 'about') screen = <About key="about" />;
   else if (route.name === 'terms') screen = <Terms key="terms" />;
   else if (route.name === 'privacy') screen = <Privacy key="privacy" />;

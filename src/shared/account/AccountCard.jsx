@@ -9,7 +9,7 @@ import { isPremium } from './entitlements.js';
 import { accountErrorText } from './errors.js';
 import { SignInSheet } from './SignInSheet.jsx';
 import { RedeemSheet, REDEEM_PROMPT } from './RedeemSheet.jsx';
-import { REDEEM_ON_IOS } from './config.js';
+import { REDEEM_ON_IOS, SUPPORT_EMAIL } from './config.js';
 import { navigate } from '../../platform/router.js';
 
 const SOURCE_TEXT = { apple: 'عبر App Store', paddle: 'عبر الويب', promo: 'برمز هدية' };
@@ -41,6 +41,7 @@ export function AccountCard() {
   const [confirmDelete, setConfirmDelete] = useState(false);
   const [redeem, setRedeem] = useState(false);
   const user = account.user;
+  const suspension = account.me?.moderation?.suspended ? account.me.moderation : null;
   const ios = account.platform === 'ios';
   const canRedeem = !account.premium && (!ios || REDEEM_ON_IOS);
   const managed = account.premium && isPremium(account.me) && account.me.premium.source !== 'promo';
@@ -65,12 +66,12 @@ export function AccountCard() {
             <b>{user.name || 'لاعب ميدان'}</b>
             {user.email && <small className="muted">{user.email}</small>}
           </div>
-          <Button variant="secondary" icon={<IconUsers />} onClick={() => navigate('/profile')}>بروفايلي وإنجازاتي</Button>
+          {suspension ? <div className="online-notice error" role="status"><b>حسابك معلّق</b><p>الملف والتواصل والغرف غير متاحة أثناء التعليق. يمكنك إدارة اشتراكك واستعادة المشتريات أو حذف الحساب.</p>{suspension.reason && <p dir="auto">السبب: {suspension.reason}</p>}<a href={`mailto:${SUPPORT_EMAIL}`}>التواصل مع الدعم بخصوص التعليق</a></div> : <Button variant="secondary" icon={<IconUsers />} onClick={() => navigate('/profile')}>بروفايلي وإنجازاتي</Button>}
           <p className={`account-plan ${account.premium ? 'is-plus' : ''}`}>{subscriptionLine(account.me, account.premium, account.promo)}</p>
-          {!account.premium && (
+          {!account.premium && !suspension && (
             <Button variant="primary" icon={<IconStar />} onClick={() => account.openPaywall({ reason: 'settings' })}>اشترك في {PLUS_NAME}</Button>
           )}
-          {redeemButton}
+          {!suspension && redeemButton}
           {managed && (
             <Button variant="secondary" onClick={() => account.manageSubscription()}>إدارة الاشتراك</Button>
           )}

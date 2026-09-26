@@ -10,6 +10,7 @@ import { ACCOUNT_PREFIX } from '../../shared/account/store.js';
 import { shareText } from '../../shared/fx/haptics.js';
 import { usePlatform } from '../context.js';
 import { back, getDirection } from '../router.js';
+import { ModerationSettingsLink } from '../../moderation/ModerationScreen.jsx';
 
 // index: تدرّج دخول الصفوف (45ms لكل صف) عبر --delay
 function Toggle({ icon, title, sub, checked, onChange, index = 0 }) {
@@ -50,6 +51,7 @@ export function Settings() {
         <Toggle index={2} icon={<IconMotion />} title="تقليل الحركة" sub="يعطّل الجسيمات والانتقالات مع بقاء الوظائف" checked={settings.reducedMotion} onChange={(v) => setSettings({ reducedMotion: v })} />
       </div>
       <AccountCard />
+      <ModerationSettingsLink />
       <Card className="stack">
         <div className="row"><IconFlag style={{ color: 'var(--accent)' }} /><span className="card-title">الإبلاغ عن سؤال</span></div>
         <p className="card-muted">تُحفظ البلاغات التي ترسلها من داخل بَديهة على هذا الجهاز. عدد البلاغات الحالية: <b style={{ color: 'var(--text)' }}>{reports.length}</b>.</p>

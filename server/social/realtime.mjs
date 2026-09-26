@@ -104,9 +104,10 @@ export class SocialHub {
   save() { return this.state.userId ? this.ctx.storage.put('social', this.state) : Promise.resolve(); }
   async canForget(userId, allowReserved = false) {
     const row = await first(this.env, `SELECT u.id,
-      EXISTS(SELECT 1 FROM account_deletions d WHERE d.user_id=u.id) AS deleting
+      EXISTS(SELECT 1 FROM account_deletions d WHERE d.user_id=u.id) AS deleting,
+      EXISTS(SELECT 1 FROM moderation_suspensions ms WHERE ms.user_id=u.id) AS suspended
       FROM users u WHERE u.id=?`, userId);
-    return !row || (allowReserved && !!row.deleting);
+    return !row || !!row.suspended || (allowReserved && !!row.deleting);
   }
   async forget(userId = this.state.userId) {
     this.cleanupUserId = userId;
@@ -129,7 +130,8 @@ export class SocialHub {
   async authenticate(sessionId, now, userId = this.state.userId) {
     const row = typeof sessionId === 'string' && await first(this.env, `SELECT s.* FROM sessions s
       JOIN users u ON u.id=s.user_id WHERE s.id=? AND s.user_id=?
-      AND NOT EXISTS (SELECT 1 FROM account_deletions d WHERE d.user_id=s.user_id)`, sessionId, userId);
+      AND NOT EXISTS (SELECT 1 FROM account_deletions d WHERE d.user_id=s.user_id)
+      AND NOT EXISTS (SELECT 1 FROM moderation_suspensions ms WHERE ms.user_id=s.user_id)`, sessionId, userId);
     if (!row || row.expires_at <= now || (row.revoked_at != null && row.revoked_at <= now)) {
       for (const ws of this.sockets()) if (this.attachment(ws).sessionId === sessionId) this.close(ws);
       fail('AUTH_EXPIRED', 401);
