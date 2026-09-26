@@ -18,4 +18,5 @@ export default {
   tags: ['أسئلة', 'فرق', 'معلومات'],
   isNew: false,
   version: '1.0.0',
+  music: 'calm',
 };

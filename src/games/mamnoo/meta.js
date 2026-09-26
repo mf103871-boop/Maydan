@@ -15,4 +15,5 @@ export default {
   tags: ['فرق', 'وصف', 'سرعة'],
   isNew: true,
   version: '1.0.0',
+  music: 'tense',
 };

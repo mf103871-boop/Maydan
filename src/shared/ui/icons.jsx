@@ -11,6 +11,7 @@ export const IconClock = I(<><circle cx="12" cy="12" r="10" /><path d="M12 6v6l4
 export const IconTrophy = I(<><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0z" /><path d="M7 6H4v2a3 3 0 0 0 3 3M17 6h3v2a3 3 0 0 1-3 3" /></>);
 export const IconVolume = I(<><path d="M11 5 6 9H2v6h4l5 4z" /><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a9 9 0 0 1 0 14" /></>);
 export const IconVolumeOff = I(<><path d="M11 5 6 9H2v6h4l5 4z" /><path d="m23 9-6 6M17 9l6 6" /></>);
+export const IconMusic = I(<><path d="M9 18V5l12-2v13" /><circle cx="6" cy="18" r="3" /><circle cx="18" cy="16" r="3" /></>);
 export const IconVibrate = I(<><rect x="8" y="2" width="8" height="20" rx="2" /><path d="M4 8v8M20 8v8M1 10v4M23 10v4" /></>);
 export const IconInfo = I(<><circle cx="12" cy="12" r="10" /><path d="M12 16v-4M12 8h.01" /></>);
 export const IconPlus = I(<><path d="M12 5v14M5 12h14" /></>);

@@ -1,0 +1,82 @@
+{
+  "generator": "scripts/audio/music.mjs (deterministic composition and synthesis, ffmpeg-static mastering)",
+  "key": "D",
+  "tracks": {
+    "home": {
+      "file": "audio/music/home.m4a",
+      "seconds": 53.3333,
+      "frames": 2560000,
+      "bpm": 72,
+      "loop": true,
+      "targetLufs": -19,
+      "measured": {
+        "lufs": -19.1,
+        "lra": 3.5,
+        "truePeak": -6.9,
+        "rmsPeak": -16.364819,
+        "rms": -21.738817,
+        "samplePeak": -6.991352
+      },
+      "masterSha256": "58a3c120c7607f3226e4b69bccbd66f5c5cdaf5d30bfc513579187d78d90f876",
+      "encodedSha256": "3d8a2323a571d7ff65d2b014be52dd6d750cf2b5655b0777f85adadd8f8cd576",
+      "encodedBytes": 1336152
+    },
+    "calm": {
+      "file": "audio/music/calm.m4a",
+      "seconds": 58.1818,
+      "frames": 2792728,
+      "bpm": 66,
+      "loop": true,
+      "targetLufs": -21,
+      "measured": {
+        "lufs": -20.9,
+        "lra": 3.4,
+        "truePeak": -7.4,
+        "rmsPeak": -16.754087,
+        "rms": -23.731485,
+        "samplePeak": -7.448241
+      },
+      "masterSha256": "b7c98a8d9f18d9c3b75d94290c139216820d9bfa52a647a65a90eceed5cd4882",
+      "encodedSha256": "6185c0efb1f993ca3f6c0cc0f41b7f85249faaf416dfae0cadfebe34bb878f03",
+      "encodedBytes": 1443304
+    },
+    "tense": {
+      "file": "audio/music/tense.m4a",
+      "seconds": 40,
+      "frames": 1920000,
+      "bpm": 96,
+      "loop": true,
+      "targetLufs": -18,
+      "measured": {
+        "lufs": -18.1,
+        "lra": 1.9,
+        "truePeak": -5.3,
+        "rmsPeak": -16.107853,
+        "rms": -21.154678,
+        "samplePeak": -5.430438
+      },
+      "masterSha256": "5eeb9189a11f76be433f3f1cf6575805d0439f242651957331fd03c20c830c6b",
+      "encodedSha256": "be60ce794581530c4599beb9902ce7031df544bcb59e3553e995f29f9f2a8f0c",
+      "encodedBytes": 1014784
+    },
+    "finale": {
+      "file": "audio/music/finale.m4a",
+      "seconds": 6.5,
+      "frames": 312000,
+      "bpm": 84,
+      "loop": false,
+      "targetLufs": -16,
+      "measured": {
+        "lufs": -16,
+        "lra": 14.5,
+        "truePeak": -4.7,
+        "rmsPeak": -12.760688,
+        "rms": -21.657825,
+        "samplePeak": -4.748185
+      },
+      "masterSha256": "ba4009e80d19be9eeef1eb3d6c2ef55743df39bee96e60f3cb7ebd9f1efcca6f",
+      "encodedSha256": "579d07a3a25c53c36804906f47878fb6603ff4d27a0a9c7a75e613d497c7041b",
+      "encodedBytes": 165974
+    }
+  }
+}

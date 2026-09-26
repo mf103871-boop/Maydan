@@ -15,4 +15,5 @@ export default {
   tags: ['تمثيل', 'حركة', 'ضحك'],
   isNew: true,
   version: '1.0.0',
+  music: 'tense',
 };

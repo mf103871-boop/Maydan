@@ -1,7 +1,7 @@
-// الإعدادات: الصوت، الاهتزاز، تقليل الحركة، مسح البيانات، الإصدار، وبلاغات أسئلة بَديهة.
+// الإعدادات: الصوت، الموسيقى، الاهتزاز، تقليل الحركة، مسح البيانات، الإصدار، وبلاغات أسئلة بَديهة.
 import React, { useState } from 'react';
 import { Screen, TopBar, IconButton, Button, Card, ConfirmModal } from '../../shared/ui/components.jsx';
-import { IconBack, IconVolume, IconVibrate, IconMotion, IconTrash, IconFlag, IconShare } from '../../shared/ui/icons.jsx';
+import { IconBack, IconVolume, IconMusic, IconVibrate, IconMotion, IconTrash, IconFlag, IconShare } from '../../shared/ui/icons.jsx';
 import { clearAllPlatformData, createStorage } from '../../shared/lib/storage.js';
 import { AccountCard } from '../../shared/account/AccountCard.jsx';
 import { LEGAL_ROUTES, PUBLIC_SITE_ORIGIN } from '../../shared/account/config.js';
@@ -37,7 +37,7 @@ export function Settings() {
     <Screen dir={getDirection()} className="stack" aria-label="الإعدادات">
       <TopBar title="الإعدادات" start={<IconButton label="رجوع" onClick={back}><IconBack /></IconButton>} />
       <div className="stack">
-        <Toggle index={0} icon={<IconVolume />} title="الصوت" sub="مؤثرات اللعب ومقاطع الأسئلة" checked={settings.soundOn} onChange={(v) => { setSettings({ soundOn: v }); if (v) sound.play('pop'); }} />
+        <Toggle index={0} icon={<IconVolume />} title="الصوت" sub="المؤثرات ومقاطع الأسئلة والموسيقى معًا" checked={settings.soundOn} onChange={(v) => { setSettings({ soundOn: v }); if (v) sound.play('pop'); }} />
         <div className="setting setting-volume">
           <label htmlFor="sound-volume"><b>مستوى الصوت</b><output htmlFor="sound-volume">{Math.round(sound.volume * 100)}٪</output></label>
           <input id="sound-volume" type="range" min="0" max="100" step="5" value={Math.round(sound.volume * 100)} disabled={!settings.soundOn}
@@ -46,8 +46,15 @@ export function Settings() {
             onPointerUp={() => sound.play('pop')} onKeyUp={(event) => { if (event.key.startsWith('Arrow') || event.key === 'Home' || event.key === 'End') sound.play('pop'); }} />
           <Button size="sm" disabled={!settings.soundOn || sound.volume === 0} onClick={() => sound.play('correct')}>تجربة الصوت</Button>
         </div>
-        <Toggle index={1} icon={<IconVibrate />} title="الاهتزاز" sub="عند الإجابات والمؤقت (حيث يتوفر)" checked={settings.hapticsOn} onChange={(v) => { setSettings({ hapticsOn: v }); if (v) haptics.vibrate('light'); }} />
-        <Toggle index={2} icon={<IconMotion />} title="تقليل الحركة" sub="يعطّل الجسيمات والانتقالات مع بقاء الوظائف" checked={settings.reducedMotion} onChange={(v) => setSettings({ reducedMotion: v })} />
+        <Toggle index={1} icon={<IconMusic />} title="الموسيقى" sub="خلفية هادئة في القوائم ومقاطع تناسب كل لعبة" checked={settings.musicOn} onChange={(v) => setSettings({ musicOn: v })} />
+        <div className="setting setting-volume">
+          <label htmlFor="music-volume"><b>مستوى الموسيقى</b><output htmlFor="music-volume">{Math.round(sound.music.volume * 100)}٪</output></label>
+          <input id="music-volume" type="range" min="0" max="100" step="5" value={Math.round(sound.music.volume * 100)} disabled={!settings.soundOn || !settings.musicOn}
+            aria-valuetext={`${Math.round(sound.music.volume * 100)} بالمئة`}
+            onChange={(event) => setSettings({ musicVolume: Number(event.target.value) / 100 })} />
+        </div>
+        <Toggle index={2} icon={<IconVibrate />} title="الاهتزاز" sub="عند الإجابات والمؤقت (حيث يتوفر)" checked={settings.hapticsOn} onChange={(v) => { setSettings({ hapticsOn: v }); if (v) haptics.vibrate('light'); }} />
+        <Toggle index={3} icon={<IconMotion />} title="تقليل الحركة" sub="يعطّل الجسيمات والانتقالات مع بقاء الوظائف" checked={settings.reducedMotion} onChange={(v) => setSettings({ reducedMotion: v })} />
       </div>
       <AccountCard />
       <Card className="stack">

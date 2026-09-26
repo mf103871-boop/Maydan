@@ -15,4 +15,5 @@ export default {
   tags: ['ضحك', 'تعارف', 'جماعي'],
   isNew: true,
   version: '1.0.0',
+  music: 'home',
 };

@@ -1,0 +1,294 @@
+{
+  "generator": "scripts/audio/build.mjs (deterministic synthesis, ffmpeg-static mastering)",
+  "key": "D",
+  "cues": {
+    "click": {
+      "file": "audio/click.m4a",
+      "seconds": 0.25,
+      "frames": 12000,
+      "room": "room",
+      "targetTruePeakDb": -10,
+      "measured": {
+        "lufs": -70,
+        "lra": 0,
+        "truePeak": -10,
+        "rmsPeak": -17.451868,
+        "rms": -19.769866,
+        "samplePeak": -10.070176
+      },
+      "masterSha256": "775fa4e7ad25c687b1a9c89c6975a79b670e9f1e575a446393435b94f4b7a829",
+      "encodedSha256": "6fa40842c402fa9bd911ad76283b0908b54c53fa207cc5708bf0c4f441a85ac1",
+      "encodedBytes": 6530
+    },
+    "pop": {
+      "file": "audio/pop.m4a",
+      "seconds": 0.5,
+      "frames": 24000,
+      "room": "room",
+      "targetTruePeakDb": -8,
+      "measured": {
+        "lufs": -14.6,
+        "lra": 0,
+        "truePeak": -8,
+        "rmsPeak": -15.261045,
+        "rms": -17.444163,
+        "samplePeak": -8.009308
+      },
+      "masterSha256": "e55e6fdd4ebee41bff316d3535adcf339f7987936aad7c5c6e0e23cf23b1070f",
+      "encodedSha256": "60bd4d856574ebf15de7fcb5770bae4545c738706f48fccc8714c8ee4c7070f1",
+      "encodedBytes": 11506
+    },
+    "tick": {
+      "file": "audio/tick.m4a",
+      "seconds": 0.09,
+      "frames": 4320,
+      "room": null,
+      "targetTruePeakDb": -15,
+      "measured": {
+        "lufs": -70,
+        "lra": 0,
+        "truePeak": -15,
+        "rmsPeak": -31.074265,
+        "rms": -30.103311,
+        "samplePeak": -15.010405
+      },
+      "masterSha256": "4c200fa0a8b131b1a711a8736ea20136716f9d44ffd3b00cf6f206ec96950677",
+      "encodedSha256": "844a01b1a023768b32fd7841fb510b9e6867d6d14d062a8fe51d8e00dd24779e",
+      "encodedBytes": 2450
+    },
+    "tickFast": {
+      "file": "audio/tick-fast.m4a",
+      "seconds": 0.09,
+      "frames": 4320,
+      "room": null,
+      "targetTruePeakDb": -12,
+      "measured": {
+        "lufs": -70,
+        "lra": 0,
+        "truePeak": -12,
+        "rmsPeak": -27.031279,
+        "rms": -26.116941,
+        "samplePeak": -11.973675
+      },
+      "masterSha256": "04c4a5756a42b47c4cf6be50976a0981db0ea9c2613f4a91d4df514b795e16e4",
+      "encodedSha256": "db1a19359ab22a7d1823e28c2fcc9f3496ee864deaaf7002657764a0f5be98d9",
+      "encodedBytes": 2743
+    },
+    "countdown": {
+      "file": "audio/countdown.m4a",
+      "seconds": 0.6,
+      "frames": 28800,
+      "room": "room",
+      "targetTruePeakDb": -7,
+      "measured": {
+        "lufs": -14.3,
+        "lra": 0,
+        "truePeak": -6.7,
+        "rmsPeak": -14.032809,
+        "rms": -16.786326,
+        "samplePeak": -6.729008
+      },
+      "masterSha256": "cb519278724c38473f0b8502747f08d3826fa40c4874deb7c9883a139e434ec6",
+      "encodedSha256": "b231c6b09d64cf81b9a4af057edb39ff17aae8ec43f28f0fde165182c056df73",
+      "encodedBytes": 13722
+    },
+    "start": {
+      "file": "audio/start.m4a",
+      "seconds": 1.5,
+      "frames": 72000,
+      "room": "hall",
+      "targetTruePeakDb": -5,
+      "measured": {
+        "lufs": -14.8,
+        "lra": 0,
+        "truePeak": -5.2,
+        "rmsPeak": -13.391147,
+        "rms": -18.577571,
+        "samplePeak": -5.188768
+      },
+      "masterSha256": "d4883adcc1b2affab491d66bcb6ef46bdffe260a83a0523b1cf9ee0488d5e8f0",
+      "encodedSha256": "765cccb92dfa832a79bb08350730b0499dd5572d06dd17dc76fd3653941283ee",
+      "encodedBytes": 31356
+    },
+    "correct": {
+      "file": "audio/correct.m4a",
+      "seconds": 0.9,
+      "frames": 43200,
+      "room": "room",
+      "targetTruePeakDb": -6,
+      "measured": {
+        "lufs": -15.6,
+        "lra": 0,
+        "truePeak": -6,
+        "rmsPeak": -14.72102,
+        "rms": -18.243529,
+        "samplePeak": -5.986316
+      },
+      "masterSha256": "342e797a5186e804c094b7b5ad6eea9fa17d4cc27dd66e6f4d06409e442056ee",
+      "encodedSha256": "d207bbe4ff6e8c6bdb1304ceb7b3530fd4a690bffda930e081f33f7d94b44041",
+      "encodedBytes": 19664
+    },
+    "wrong": {
+      "file": "audio/wrong.m4a",
+      "seconds": 0.75,
+      "frames": 36000,
+      "room": "room",
+      "targetTruePeakDb": -7,
+      "measured": {
+        "lufs": -14.2,
+        "lra": 0,
+        "truePeak": -6.9,
+        "rmsPeak": -13.405443,
+        "rms": -16.758034,
+        "samplePeak": -6.880302
+      },
+      "masterSha256": "81288d17563b46c5032ea2ca046a2d3e897259087c62b42dffa5d105fdadc4a6",
+      "encodedSha256": "a5aef0a0999597d796630b1406a61bcda944902cf7b5109818b511db7aa4a47a",
+      "encodedBytes": 16873
+    },
+    "buzzer": {
+      "file": "audio/buzzer.m4a",
+      "seconds": 0.8,
+      "frames": 38400,
+      "room": "room",
+      "targetTruePeakDb": -6,
+      "measured": {
+        "lufs": -17.2,
+        "lra": 0,
+        "truePeak": -5.7,
+        "rmsPeak": -15.813711,
+        "rms": -19.046647,
+        "samplePeak": -5.7
+      },
+      "masterSha256": "3483fd0f62fa728619874d84b12d97e8b7b4447f1925ee4dffbdf0ea7ac0dcf6",
+      "encodedSha256": "368950a7c0b53b34cc08a2085b8b1619f1d4bd9e14c1f5e89552f8aa9c591a22",
+      "encodedBytes": 17577
+    },
+    "timeout": {
+      "file": "audio/timeout.m4a",
+      "seconds": 1.3,
+      "frames": 62400,
+      "room": "hall",
+      "targetTruePeakDb": -6,
+      "measured": {
+        "lufs": -16.2,
+        "lra": 0,
+        "truePeak": -6.1,
+        "rmsPeak": -15.192712,
+        "rms": -18.999724,
+        "samplePeak": -6.068888
+      },
+      "masterSha256": "138e7aaf1304b38692e2cd8ae7a7e621f963815050bb1479aa1b47719d4dddb5",
+      "encodedSha256": "d935a44c5f23e7bedfb0953a1164e2b9d7d62b6df72c8fdf89f6eab1599eb9e8",
+      "encodedBytes": 27199
+    },
+    "whoosh": {
+      "file": "audio/whoosh.m4a",
+      "seconds": 0.55,
+      "frames": 26400,
+      "room": "room",
+      "targetTruePeakDb": -12,
+      "measured": {
+        "lufs": -23.9,
+        "lra": 0,
+        "truePeak": -11.9,
+        "rmsPeak": -24.032094,
+        "rms": -29.337737,
+        "samplePeak": -11.947273
+      },
+      "masterSha256": "f8400361529c05732a8683d6218db9655a82864eff291d7b0723adf75e50cb91",
+      "encodedSha256": "bab4304eec87d99fac99735c0bc50f295a50920727e5e1f9d39cd6b93d1b9db7",
+      "encodedBytes": 11849
+    },
+    "reveal": {
+      "file": "audio/reveal.m4a",
+      "seconds": 1.9,
+      "frames": 91200,
+      "room": "hall",
+      "targetTruePeakDb": -6,
+      "measured": {
+        "lufs": -17.3,
+        "lra": 0,
+        "truePeak": -5.9,
+        "rmsPeak": -15.145387,
+        "rms": -22.773874,
+        "samplePeak": -5.946358
+      },
+      "masterSha256": "c2eb18ca142148d395965a19ca04074d81549c74c974119e25708e3e5bbfebc4",
+      "encodedSha256": "5701b5058f93e9cc918e9c3f593267bb2664cfaed3834d668a78cd66955a6b3c",
+      "encodedBytes": 38903
+    },
+    "win": {
+      "file": "audio/win.m4a",
+      "seconds": 3.2,
+      "frames": 153600,
+      "room": "hall",
+      "targetTruePeakDb": -3,
+      "measured": {
+        "lufs": -13.4,
+        "lra": 20.2,
+        "truePeak": -3.2,
+        "rmsPeak": -12.252357,
+        "rms": -17.973162,
+        "samplePeak": -3.243486
+      },
+      "masterSha256": "aeac83dd4a6600529327f9ee8b4d170c36e1660bb7b89ed7821df19fd1302a6a",
+      "encodedSha256": "77749bc29a38dd93520a82e0541bf24c3d7dd7c2d19f5c07201b0f7118d28c74",
+      "encodedBytes": 66223
+    },
+    "explosion": {
+      "file": "audio/explosion.m4a",
+      "seconds": 1.6,
+      "frames": 76800,
+      "room": "hall",
+      "targetTruePeakDb": -2.5,
+      "measured": {
+        "lufs": -12.4,
+        "lra": 0,
+        "truePeak": -2.2,
+        "rmsPeak": -8.642177,
+        "rms": -13.646676,
+        "samplePeak": -2.200527
+      },
+      "masterSha256": "8ba4be79b37c2b0b7b29bb50de0165706ef352d12960417390ec1bed9b362546",
+      "encodedSha256": "e6feda126ac021a8a0cd11b1fcd1b34639cea9bef0d7c0ba1c10f5b7896850d9",
+      "encodedBytes": 33603
+    },
+    "drumroll": {
+      "file": "audio/drumroll.m4a",
+      "seconds": 1.7,
+      "frames": 81600,
+      "room": "room",
+      "targetTruePeakDb": -6,
+      "measured": {
+        "lufs": -20.3,
+        "lra": 0,
+        "truePeak": -6.7,
+        "rmsPeak": -15.604364,
+        "rms": -23.649026,
+        "samplePeak": -6.687346
+      },
+      "masterSha256": "479f0f36eab232ca72047007ec5bd3148f96d6b13fe9844c9ac6805379fe75bb",
+      "encodedSha256": "b68a563b92fa85549b4156214dd6e50e4cff0be8920086609e0dd37508d658a5",
+      "encodedBytes": 36222
+    },
+    "pass": {
+      "file": "audio/pass.m4a",
+      "seconds": 0.45,
+      "frames": 21600,
+      "room": "room",
+      "targetTruePeakDb": -8,
+      "measured": {
+        "lufs": -15.7,
+        "lra": 0,
+        "truePeak": -8,
+        "rmsPeak": -16.131509,
+        "rms": -18.723724,
+        "samplePeak": -8.012597
+      },
+      "masterSha256": "1480ddedcc98053fa5816b7bb563026b9d0fac020767612b1ca988253237706f",
+      "encodedSha256": "7a14c1057131757a6be204123e3b06f3d74bb8eb6ac66e51f600ff9dd7506327",
+      "encodedBytes": 10323
+    }
+  }
+}

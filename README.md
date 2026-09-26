@@ -115,7 +115,7 @@ export function standings(state) { /* … */ }
 
 | الحقل | الوظيفة |
 | --- | --- |
-| `api.sound.play(name)` | مؤثر صوتي مُصنَّع (`correct`, `buzzer`, `explosion`, `drumroll`…) |
+| `api.sound.play(name)` | مؤثر من بنك ميدان (`correct`, `buzzer`, `explosion`, `drumroll`…)؛ الموسيقى تختارها المنصة من `meta.music` |
 | `api.haptics.vibrate(kind)` | اهتزاز (`success`, `error`, `light`…) حيث يتوفر |
 | `api.confetti.fire() / .burst()` | قصاصات على canvas، تحترم «تقليل الحركة» |
 | `api.toast(msg)` | تنبيه ينزلق من الأسفل |
@@ -147,6 +147,7 @@ export default {
   tags: ['سرعة'],
   isNew: true,
   version: '1.0.0',
+  music: 'calm',         // موسيقى الخلفية أثناء المباراة: 'calm' | 'home' | 'tense' (شاشة الإعداد على 'home')
   icon: MyIcon,          // SVG مضمّن
   Component: Game,
   SetupOptions,          // اختياري: إعدادات تظهر في شاشة الإعداد
