@@ -25,5 +25,6 @@ export const STATUS = {
   NOT_FOUND: 404,
   INTERNAL: 500,
 };
-// مختصر: `failure('STATE')` بدل تكرار رقم الحالة في كل نداء.
-export function failure(code) { fail(code, STATUS[code] ?? 400); }
+// مختصر: `failure('STATE')` بدل تكرار رقم الحالة في كل نداء. `detail` اختياري: رمز قصير آمن
+// للعرض (رمز خطأ المزوّد مثل invalid_grant) يشرح فشل PROVIDER بدل 502 صامت.
+export function failure(code, detail) { fail(code, STATUS[code] ?? 400, detail); }

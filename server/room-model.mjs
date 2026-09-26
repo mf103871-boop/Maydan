@@ -3,9 +3,11 @@ import { TITLES, DEFAULT_TITLE } from '../src/games/meenfina/logic.js';
 import { arabicNormalize } from '../src/shared/lib/arabicNormalize.js';
 
 export class RoomError extends Error {
-  constructor(code, status = 400) { super(code); this.code = code; this.status = status; }
+  // `detail` is a short machine code safe to show a client (a provider's error code such
+  // as `invalid_grant`), never a message, token or body.
+  constructor(code, status = 400, detail = null) { super(code); this.code = code; this.status = status; this.detail = detail || null; }
 }
-export function fail(code, status) { throw new RoomError(code, status); }
+export function fail(code, status, detail) { throw new RoomError(code, status, detail); }
 // Zero-width joiners belong to emoji sequences and to some Arabic keyboards; every
 // other control or format character has no place in a name or an answer.
 const INVISIBLE = /[\p{Cc}\p{Cf}]/u;

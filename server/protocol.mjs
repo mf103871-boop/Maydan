@@ -8,7 +8,8 @@ export function errorResponse(error) {
     // message (never a request body or token) so an outage is visible in the logs.
     try { console.error('[maydan] internal error', error?.name || typeof error, error?.message || String(error)); } catch { /* no console */ }
   }
-  return json({ error: error instanceof RoomError ? error.code : 'INTERNAL' }, error instanceof RoomError ? error.status : 500);
+  if (!(error instanceof RoomError)) return json({ error: 'INTERNAL' }, 500);
+  return json(error.detail ? { error: error.code, detail: error.detail } : { error: error.code }, error.status);
 }
 export async function readJson(request, max = 2048) {
   if (!request.headers.get('content-type')?.toLowerCase().startsWith('application/json')) fail('INVALID', 415);
