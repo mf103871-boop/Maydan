@@ -7,15 +7,25 @@ import { mulberry32, randomSeed } from '../../shared/lib/rng.js';
 import statements from '../../data/games/meenfina/statements.json';
 import css from './meenfina.css';
 import { stampScreen, wait } from '../../shared/fx/index.js';
-import { initialState, reduce, currentVoter, standings, createStatementSource, normalizeOptions, tallyVotes, statementsLabel, ROUNDS } from './logic.js';
+import { initialState, reduce, currentVoter, standings, createStatementSource, normalizeOptions, tallyVotes, statementsLabel, restoreSession, sessionSnapshot, ROUNDS } from './logic.js';
+import { loadSession } from '../../shared/lib/session.js';
+import { useSessionSave } from '../../shared/ui/useSessionSave.js';
 
 const OPTIONS_KEY = 'options';
 const SEEN_KEY = 'seen';
 
 export function SetupOptions({ storage, api }) {
   const [opts, setOpts] = useState(() => normalizeOptions(storage.get(OPTIONS_KEY)));
+  const [resume] = useState(() => loadSession(storage, restoreSession));
   const update = (patch) => { const next = normalizeOptions({ ...opts, ...patch }); setOpts(next); storage.set(OPTIONS_KEY, next); api.sound.play('click'); };
   return (
+    <>
+    {resume && <Card className="stack resume-card">
+      <span className="card-title">لعبتكم بانتظاركم</span>
+      <p className="card-muted">العبارة {resume.state.round} من {resume.state.rounds} · {resume.players.map((p) => p.name).join('، ')}</p>
+      <Button variant="accent" full onClick={() => api.resumeGame(resume)}>استئناف اللعبة المحفوظة</Button>
+      <p className="card-muted">بدء لعبة جديدة يستبدل هذا التقدم.</p>
+    </Card>}
     <Card className="stack">
       <span className="card-title">الوضع والجولات</span>
       <Segment accent label="الوضع" value={opts.mode} onChange={(v) => update({ mode: v })} options={[{ value: 'point', label: '👉 أشّر!' }, { value: 'secret', label: '🤫 تصويت سري' }]} />
@@ -24,6 +34,7 @@ export function SetupOptions({ storage, api }) {
       </div>
       <p className="card-muted">{opts.mode === 'point' ? 'الجميع يشيرون في اللحظة نفسها بعد عدّ 3-2-1.' : 'يمرّ الجوال على كل لاعب ليصوّت سرًا، ثم تُكشف النتائج.'}</p>
     </Card>
+    </>
   );
 }
 
@@ -46,12 +57,23 @@ function Countdown({ api, statement, onDone }) {
   );
 }
 
-export function Game({ api, players, onExit }) {
-  const seed = useRef(randomSeed());
+export function Game({ api, players, onExit, savedSession = null }) {
+  // لقطة محفوظة صالحة تعيد الحالة والمصدر بنفس البذرة والموضع؛ وإلا مباراة جديدة.
+  const saved = useMemo(() => restoreSession(savedSession), [savedSession]);
+  const seed = useRef(saved ? saved.seed : randomSeed());
   const random = useMemo(() => mulberry32(seed.current), []);
-  const options = useMemo(() => normalizeOptions(api.storage.get(OPTIONS_KEY)), [api.storage]);
-  const source = useMemo(() => createStatementSource(statements, { random, seen: api.storage.get(SEEN_KEY, {}) || {} }), [random, api.storage]);
-  const [state, dispatch] = useReducer(reduce, undefined, () => initialState(players, options));
+  const options = useMemo(() => normalizeOptions(saved ? saved.settings : api.storage.get(OPTIONS_KEY)), [api.storage, saved]);
+  const source = useMemo(() => {
+    const statementSource = createStatementSource(statements, { random, seen: api.storage.get(SEEN_KEY, {}) || {} });
+    if (saved) statementSource.seek(saved.cursor);
+    return statementSource;
+  }, [random, api.storage, saved]);
+  const [state, dispatch] = useReducer(reduce, undefined, () => (saved ? saved.state : initialState(players, options)));
+  const profileSession = useRef(saved ? saved.profileSession || null : api.matchSnapshot?.() || null);
+  useSessionSave({
+    api, state, active: state.phase !== 'over', phaseKey: `${state.phase}:${state.round}:${state.voter}`,
+    snapshot: (current) => sessionSnapshot({ players: current.players, settings: options, seed: seed.current, cursor: source.cursor, profileSession: profileSession.current, state: current }),
+  });
   const [picked, setPicked] = useState([]);
   const [leaving, setLeaving] = useState(false);   // العبارة تطير جانبًا قبل «لا أحد» (حارس ضد الضغط المزدوج)
   const [cast, setCast] = useState(null);           // البلاطة المضغوطة في التصويت السري تنبض ثم يُرسل الصوت

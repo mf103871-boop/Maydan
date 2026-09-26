@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { initialState, reduce, currentPlayer, standings, createPromptSource, normalizeOptions, LIVES, BOMB_RANGE } from '../src/games/beep/logic.js';
+import { initialState, reduce, currentPlayer, standings, createPromptSource, normalizeOptions, restoreSession, sessionSnapshot, LIVES, BOMB_RANGE } from '../src/games/beep/logic.js';
 import { seeded } from './helpers.js';
 
 const players = [
@@ -107,4 +107,44 @@ test('نفاد الطلبات ينهي اللعبة بدل التعطل', () => 
   let s = initialState(players, { mode: 'three', rounds: 3 }, { random: seeded(1) });
   s = reduce(s, { type: 'BEGIN', prompt: null });
   assert.equal(s.phase, 'over');
+});
+
+test('الجلسة المحفوظة (قبل ما يطق): وضعا الصفارة والقنبلة يعودان كما هما، والتالف يُرفض', () => {
+  const settings = { mode: 'three', seconds: 7, rounds: 3 };
+  const source = createPromptSource(prompts, { random: seeded(4) });
+  let s = initialState(players, settings);
+  const snap = (state, extra = {}) => sessionSnapshot({ players, settings, seed: 4, cursor: source.cursor, timeLeft: null, profileSession: null, state, ...extra });
+  const check = (state) => { const r = restoreSession(JSON.parse(JSON.stringify(snap(state)))); assert.ok(r, `restore ${state.mode}/${state.phase}`); assert.deepEqual(r.state, JSON.parse(JSON.stringify(state))); };
+  check(s);
+  s = reduce(s, { type: 'BEGIN', prompt: source.next(1, 3) }); check(s);
+  assert.ok(restoreSession(snap(s, { timeLeft: 3.2 })));
+  s = reduce(s, { type: 'FINISH' }); check(s);
+  s = reduce(s, { type: 'JUDGE', ok: true }); check(s);
+  assert.equal(restoreSession(snap(reduce(s, { type: 'END' }))), null, 'المنتهية لا تُستأنف');
+  const bombSettings = { mode: 'bomb', seconds: 5, rounds: 5 };
+  let b = initialState(players, bombSettings, { random: seeded(2) });
+  const bsnap = (state) => sessionSnapshot({ players, settings: bombSettings, seed: 2, cursor: [0, 2, 0], timeLeft: null, profileSession: null, state });
+  const bcheck = (state) => { const r = restoreSession(JSON.parse(JSON.stringify(bsnap(state)))); assert.ok(r, `restore bomb/${state.phase}`); assert.deepEqual(r.state, JSON.parse(JSON.stringify(state))); };
+  bcheck(b);
+  b = reduce(b, { type: 'BEGIN', prompt: prompts[0] }); bcheck(b);
+  b = reduce(b, { type: 'PASS', prompt: prompts[1] }); bcheck(b);
+  b = reduce(b, { type: 'EXPLODE' }); assert.equal(b.phase, 'boom'); bcheck(b);
+  b = reduce(b, { type: 'CONTINUE', bombSeconds: 33 }); bcheck(b);
+  const base = JSON.parse(JSON.stringify(snap(s)));
+  const broken = [
+    (r) => { r.game = 'mamnoo'; }, (r) => { r.settings.mode = 'bomb'; }, (r) => { r.settings.rounds = 8; }, (r) => { r.state.phase = 'boom'; r.state.boomPlayerId = 'a'; },
+    (r) => { r.state.phase = 'prompt'; r.state.prompt = null; }, (r) => { r.state.prompt = { id: 'x' }; }, (r) => { r.state.lives.a = LIVES + 1; },
+    (r) => { r.state.eliminated = ['zz']; }, (r) => { r.state.eliminated = ['a', 'a']; }, (r) => { r.state.turn = 3; }, (r) => { r.state.round = 4; },
+    (r) => { r.state.history.push({ playerId: 'a', promptId: 5, ok: true }); }, (r) => { r.state.bombSeconds = BOMB_RANGE[1] + 1; },
+    (r) => { r.players = r.players.slice(0, 1); }, (r) => { r.state.scores.a = 'one'; }, (r) => { r.seed = 'seed'; }, (r) => { r.cursor = 3; }, (r) => { r.cursor = [0, -1, 0]; },
+  ];
+  // ثلاثة طوابير صعوبة: المواضع الثلاثة تُحفظ وتُستعاد فيتطابق ما بعدها.
+  const again = createPromptSource(prompts, { random: seeded(4) });
+  again.seek(source.cursor);
+  assert.deepEqual(again.cursor, source.cursor);
+  assert.equal(again.next(3, 3)?.id, source.next(3, 3)?.id);
+  for (const change of broken) { const r = structuredClone(base); change(r); assert.equal(restoreSession(r), null); }
+  const bombBase = JSON.parse(JSON.stringify(bsnap(b)));
+  bombBase.state.phase = 'judge'; bombBase.state.prompt = prompts[0];
+  assert.equal(restoreSession(bombBase), null, 'لا مرحلة تحكيم في وضع القنبلة');
 });

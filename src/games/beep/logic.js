@@ -4,6 +4,7 @@
 //   three: «3 قبل الصفارة» — كل لاعب بدوره يذكر 3 أشياء قبل انتهاء المؤقت، والمجموعة تحكم ✅/❌ → نقطة.
 //   bomb : «القنبلة» — مؤقت مخفي عشوائي؛ يتناقل اللاعبون الجوال؛ من ينفجر بيده يخسر حياة. آخر من يبقى يفوز.
 import { createNoRepeat } from '../../shared/lib/noRepeat.js';
+import { isPlayerList, isCountMap, isNonNegInt, isText, isSeed } from '../../shared/lib/session.js';
 import { randInt } from '../../shared/lib/rng.js';
 
 export const SECONDS = [5, 7, 10];
@@ -40,6 +41,13 @@ export function createPromptSource(prompts, { random = Math.random, seen = {} } 
       return null;
     },
     get remaining() { return queues[1].remaining + queues[2].remaining + queues[3].remaining; },
+    // ثلاثة طوابير = ثلاثة مواضع؛ تُحفظ مع الجلسة وتُستعاد بـ seek بعد إعادة البناء بنفس البذرة.
+    get cursor() { return [queues[1].cursor, queues[2].cursor, queues[3].cursor]; },
+    seek(cursors) {
+      const list = Array.isArray(cursors) ? cursors : [cursors, 0, 0];
+      [1, 2, 3].forEach((level, i) => { queues[level].seek(list[i]); for (const id of Object.keys(queues[level].seen())) if (!seen[id]) drawn.add(id); });
+      return this.cursor;
+    },
     seen() { return { ...queues[1].seen(), ...queues[2].seen(), ...queues[3].seen() }; },
     drawnIds() { return [...drawn]; },
   };
@@ -167,4 +175,36 @@ export const BOMB_LEVELS = [1, 1, 2];
 export function bombPromptArgs(drawIndex = 0) {
   const i = Number.isFinite(drawIndex) ? Math.abs(Math.trunc(drawIndex)) : 0;
   return [BOMB_LEVELS[i % BOMB_LEVELS.length], 3];
+}
+
+// ── الجلسة المحفوظة ───────────────────────────────────────────────────────────
+export const SESSION_VERSION = 1;
+export const PHASES = ['intro', 'prompt', 'judge', 'boom', 'over'];
+export const sessionSnapshot = (fields) => ({ schemaVersion: SESSION_VERSION, game: 'beep', ...fields });
+const promptOk = (p) => !!p && typeof p === 'object' && typeof p.id === 'string' && isText(p.text, 200) && (p.category === undefined || typeof p.category === 'string');
+export function restoreSession(raw) {
+  if (!raw || typeof raw !== 'object' || raw.schemaVersion !== SESSION_VERSION || raw.game !== 'beep') return null;
+  const s = raw.state;
+  if (!s || typeof s !== 'object' || !isPlayerList(raw.players, { min: 2, max: 10 }) || !isPlayerList(s.players, { min: 2, max: 10 })) return null;
+  const ids = s.players.map((p) => p.id);
+  if (raw.players.map((p) => p.id).join('|') !== ids.join('|')) return null;
+  const settings = normalizeOptions(raw.settings);
+  if (s.mode !== settings.mode || s.seconds !== settings.seconds || s.rounds !== (settings.mode === 'three' ? settings.rounds : 0)) return null;
+  if (!PHASES.includes(s.phase) || s.phase === 'over' || typeof s.completed !== 'boolean') return null;
+  if (s.mode === 'three' && s.phase === 'boom') return null;
+  if (s.mode === 'bomb' && s.phase === 'judge') return null;
+  if (!isCountMap(ids, s.scores) || !isCountMap(ids, s.lives) || !isCountMap(ids, s.passes)) return null;
+  if (ids.some((id) => s.lives[id] > LIVES)) return null;
+  if (!Array.isArray(s.eliminated) || s.eliminated.some((id) => !ids.includes(id)) || new Set(s.eliminated).size !== s.eliminated.length) return null;
+  if (!Number.isInteger(s.round) || s.round < 1 || (s.mode === 'three' && s.round > s.rounds)) return null;
+  if (!Number.isInteger(s.turn) || s.turn < 0 || s.turn >= ids.length) return null;
+  // شاشة الانفجار تُبقي آخر طلب معروضًا، فيُقبل طلب صالح في أي مرحلة ويُشترط في الطلب والتحكيم.
+  if (s.prompt !== null && !promptOk(s.prompt)) return null;
+  if (['prompt', 'judge'].includes(s.phase) && !s.prompt) return null;
+  if (s.phase === 'boom' && !ids.includes(s.boomPlayerId)) return null;
+  if (!Number.isInteger(s.bombSeconds) || s.bombSeconds < 0 || s.bombSeconds > BOMB_RANGE[1]) return null;
+  if (!Array.isArray(s.history) || s.history.length > 2000 || !s.history.every((h) => h && ids.includes(h.playerId) && typeof h.promptId === 'string' && typeof h.ok === 'boolean')) return null;
+  if (!isSeed(raw.seed) || !Array.isArray(raw.cursor) || raw.cursor.length !== 3 || !raw.cursor.every(isNonNegInt)) return null;
+  if (raw.timeLeft != null && !(Number.isFinite(raw.timeLeft) && raw.timeLeft >= 0 && raw.timeLeft <= 600)) return null;
+  return { ...raw, settings, state: { ...s } };
 }

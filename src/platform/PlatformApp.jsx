@@ -1,7 +1,8 @@
 // غلاف المنصة: المزوّدون (صوت/اهتزاز/تخزين/دفتر اللاعبين/إعدادات)، الموجّه، وانتقالات الشاشات.
-import React, { useEffect, useMemo, useState, useCallback } from 'react';
+import React, { useEffect, useMemo, useState, useCallback, useRef } from 'react';
 import { PlatformContext, usePlatform } from './context.js';
-import { useRoute, navigate, getDirection } from './router.js';
+import { useRoute, navigate, getDirection, getRoute } from './router.js';
+import { getGame } from './registry.js';
 import { createStorage, clearAllPlatformData } from '../shared/lib/storage.js';
 import { ACCOUNT_PREFIX } from '../shared/account/store.js';
 import { createSound } from '../shared/fx/sound.js';
@@ -93,10 +94,40 @@ function Providers({ children }) {
   return <PlatformContext.Provider value={value}><AccountProvider><SocialProvider><ProfileProvider>{children}</ProfileProvider></SocialProvider></AccountProvider></PlatformContext.Provider>;
 }
 
+// عنوان المستند يتبع الشاشة (قارئات الشاشة والتبويبات والسجل)، والألعاب تحمل اسمها.
+const SCREEN_TITLES = { players: 'اللاعبون', friends: 'الأصدقاء', profile: 'الملف', settings: 'الإعدادات', about: 'عن ميدان', terms: 'شروط الاستخدام', privacy: 'سياسة الخصوصية', online: 'اللّمّة', room: 'الغرفة' };
+const BASE_TITLE = 'ميدان: ألعاب جمعتنا';
+const IN_GAME_ROUTES = new Set(['play', 'online', 'room']);
+export const UPDATE_READY_MESSAGE = 'تحديث ميدان جاهز — يعمل عند الفتح التالي.';
+
 function Shell() {
   const route = useRoute();
-  const { settings, setSettings, sound, confetti } = usePlatform();
+  const { settings, setSettings, sound, confetti, toast } = usePlatform();
   const [booted, setBooted] = useState(false);
+  useEffect(() => {
+    const game = (route.name === 'game' || route.name === 'play') ? getGame(route.params.id) : null;
+    const title = game ? game.name : SCREEN_TITLES[route.name];
+    document.title = title ? `${title} · ميدان` : BASE_TITLE;
+  }, [route.name, route.params.id]);
+  // عامل الخدمة يعلن «maydan-update-ready» بعد تثبيت إصدار جديد ولا يعيد تحميل الصفحة.
+  // التنبيه يظهر خارج شاشات اللعب فقط؛ داخل مباراة يُؤجَّل إلى أول شاشة عادية بعدها.
+  const pendingUpdate = useRef(false);
+  const inGame = IN_GAME_ROUTES.has(route.name);
+  useEffect(() => {
+    if (typeof navigator === 'undefined' || !navigator.serviceWorker) return undefined;
+    const onMessage = (event) => {
+      if (event.data?.type !== 'maydan-update-ready') return;
+      pendingUpdate.current = true;
+      if (!IN_GAME_ROUTES.has(getRoute().name)) { pendingUpdate.current = false; toast(UPDATE_READY_MESSAGE, { duration: 6000 }); }
+    };
+    navigator.serviceWorker.addEventListener('message', onMessage);
+    return () => navigator.serviceWorker.removeEventListener('message', onMessage);
+  }, [toast]);
+  useEffect(() => {
+    if (!booted || inGame || !pendingUpdate.current) return;
+    pendingUpdate.current = false;
+    toast(UPDATE_READY_MESSAGE, { duration: 6000 });
+  }, [booted, inGame, toast]);
   // The shell becomes usable quickly; the mounted splash continues image work
   // in the background without starting a hidden game's timers during startup.
   const finishSplash = useCallback(() => {

@@ -6,6 +6,7 @@ import { seeded } from './helpers.js';
 
 const batchIds = ['arabliterature', 'beforeafter', 'commonbond', 'hidden', 'quran', 'movies', 'onepiece', 'dragonball', 'worldcup'];
 const stableFillers = ['general', 'geo', 'science', 'animals', 'history'];
+const team = (name) => ({ name, score: 0, correct: 0, steals: 0, tools: { double: true, two: true, time: true } });
 
 test('دفعة البنك: كل حزمة جديدة أو مستكملة قابلة للعب والحفظ في جميع الأوضاع والأحجام', () => {
   for (const id of batchIds) {
@@ -23,7 +24,7 @@ test('دفعة البنك: كل حزمة جديدة أو مستكملة قابل
         const saved = logic.deckToIds(deck);
         assert.deepEqual(logic.idsToDeck(CATS, saved), deck);
         assert.equal(logic.isValidSession(CATS, {
-          version: 2, contentVersion: BANK_CONTENT_VERSION, teams: [{}, {}], selectedCategories: selected,
+          version: 2, contentVersion: BANK_CONTENT_VERSION, teams: [team('أ'), team('ب')], selectedCategories: selected,
           mode, roundSize: size, deck: saved,
         }), true, `${id}/${mode}/${size}`);
       }

@@ -3,6 +3,8 @@
 //   const draw = createNoRepeat(items, { random, seen: storage.get('seen', {}) });
 //   draw.next()      → عنصر جديد (أو null عند النفاد)
 //   draw.remaining   → كم بقي
+//   draw.cursor      → موضع السحب (يُحفظ مع جلسة اللعبة)
+//   draw.seek(n)     → يتقدّم إلى الموضع n بعد إعادة بناء المصدر بنفس البذرة والعناصر
 //   draw.seen()      → خريطة المعرّفات المعروضة لحفظها
 import { shuffle } from './shuffle.js';
 
@@ -21,6 +23,16 @@ export function createNoRepeat(items, { random = Math.random, seen = {}, idOf = 
     },
     get total() {
       return queue.length;
+    },
+    get cursor() {
+      return cursor;
+    },
+    // استئناف جلسة محفوظة: المصدر يُبنى من جديد بنفس البذرة وخريطة «المعروض سابقًا» فيعطي
+    // الطابور نفسه، ثم يُسحب حتى الموضع المحفوظ كي تبقى «المعروض» و«المسحوب» متسقة.
+    seek(position) {
+      const target = Math.min(Math.max(0, Math.floor(Number(position) || 0)), queue.length);
+      while (cursor < target) this.next();
+      return cursor;
     },
     next() {
       if (cursor >= queue.length) return null;

@@ -127,12 +127,12 @@ export function Paywall({ open = true, reason = 'settings', game = null, pack = 
         <p className="paywall-legal">
           {PAYWALL_LEGAL}
           <span className="paywall-legal-links">
-            {account.platform !== 'ios' && <><a data-legal="pricing" href="/pricing/" onClick={onClose}>التسعير</a><span aria-hidden="true"> · </span></>}
+            {account.platform !== 'ios' && <><a data-legal="pricing" href="pricing/" onClick={onClose}>التسعير</a><span aria-hidden="true"> · </span></>}
             <a data-legal="terms" href={LEGAL_ROUTES.terms} onClick={onClose}>شروط الاستخدام</a>
             <span aria-hidden="true"> · </span>
             <a data-legal="privacy" href={LEGAL_ROUTES.privacy} onClick={onClose}>سياسة الخصوصية</a>
             <span aria-hidden="true"> · </span>
-            <a data-legal="refunds" href={account.platform === 'ios' ? `${PUBLIC_SITE_ORIGIN}/refunds/` : '/refunds/'} onClick={onClose}>سياسة الاسترداد</a>
+            <a data-legal="refunds" href={account.platform === 'ios' ? `${PUBLIC_SITE_ORIGIN}/refunds/` : 'refunds/'} onClick={onClose}>سياسة الاسترداد</a>
           </span>
         </p>
           </>

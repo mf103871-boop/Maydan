@@ -6,9 +6,27 @@ import { setExitGuard, navigate } from './router.js';
 import { usePlatform } from './context.js';
 import { createStorage } from '../shared/lib/storage.js';
 
+// «مسح بيانات اللعبة» من شاشة التعطّل كان يمسح النتائج والسجل أيضًا، والمباراة الجارية وحدها
+// هي سبب الأعطال المتكررة عادة. الضغطة الأولى تمسح مفاتيح المباراة الجارية التي تعلنها اللعبة
+// (`activeKeys` في manifest؛ مفتاح مطلق يبدأ بـ maydan: أو مفتاح داخل مخزن اللعبة)، والثانية
+// تمسح مخزن اللعبة كله.
+export function clearActiveGameData(game) {
+  const keys = Array.isArray(game?.activeKeys) ? game.activeKeys : [];
+  if (!keys.length) return false;
+  const store = createStorage(game.id);
+  for (const key of keys) {
+    try {
+      if (key.startsWith('maydan:')) localStorage.removeItem(key);
+      else store.remove(key);
+    } catch (error) { /* ignore */ }
+  }
+  return true;
+}
+
 export function GameFrame({ game, inGame, exitMessage, beforeExit, children, onExit }) {
   const platform = usePlatform();
   const [confirming, setConfirming] = useState(null); // target path | null
+  const [clearedActive, setClearedActive] = useState(false);
   const leave = useCallback((target = '/') => {
     setExitGuard(null);
     if (onExit) onExit();
@@ -36,6 +54,13 @@ export function GameFrame({ game, inGame, exitMessage, beforeExit, children, onE
     return () => { if (meta && previous) meta.setAttribute('content', previous); };
   }, [game.accent]);
 
+  const clearLabel = !clearedActive && game.activeKeys?.length ? 'مسح المباراة الجارية وإعادة المحاولة' : 'مسح كل بيانات هذه اللعبة';
+  const clearGameData = () => {
+    if (!clearedActive && clearActiveGameData(game)) { setClearedActive(true); leave(`/play/${game.id}`); return; }
+    try { createStorage(game.id).clear(); } catch (error) { /* ignore */ }
+    leave('/');
+  };
+
   return (
     <div className="game-frame" style={{ '--game-accent': game.accent }}>
       <div className="game-bar">
@@ -52,9 +77,9 @@ export function GameFrame({ game, inGame, exitMessage, beforeExit, children, onE
           resetKey={game.id}
           title="تعطّلت اللعبة"
           message={`حدث خطأ غير متوقع في ${game.name}. يمكنك العودة إلى الرئيسية، أو مسح بيانات هذه اللعبة إن تكرّر الخطأ.`}
-          clearLabel="مسح بيانات هذه اللعبة"
+          clearLabel={clearLabel}
           onHome={() => leave('/')}
-          onClear={() => { try { createStorage(game.id).clear(); } catch (error) { /* ignore */ } leave('/'); }}
+          onClear={clearGameData}
         >
           {children}
         </ErrorBoundary>

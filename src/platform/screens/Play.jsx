@@ -89,7 +89,9 @@ export function Play({ id }) {
     setBeforeExit: (handler) => setBeforeExit(() => handler),
     resumeGame: (saved) => {
       recorder.resume(saved.profileSession, id);
-      setPlayers(saved.players); setGameOptions(saved.settings || null); setSavedSession(saved); setInGame(true);
+      // ممنوع تُلعب بفرق: اللقطة تحمل teams بدل players، والنمط يعود إلى «فرق».
+      if (Array.isArray(saved.teams)) { setTeams(saved.teams); setMode('teams'); } else setPlayers(saved.players);
+      setGameOptions(saved.settings || null); setSavedSession(saved); setInGame(true);
       setStage('play'); setSession((s) => s + 1);
       raiseCurtain();
     },

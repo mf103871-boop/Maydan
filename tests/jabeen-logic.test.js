@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { initialState, reduce, currentEntrant, standings, createItemSource, normalizeOptions, tiltDecision, isNeutral, orientedTilt, TILT_DOWN, TILT_UP } from '../src/games/jabeen/logic.js';
+import { initialState, reduce, currentEntrant, standings, createItemSource, normalizeOptions, tiltDecision, isNeutral, orientedTilt, tiltBaseline, restoreSession, sessionSnapshot, TILT_DOWN, TILT_UP, TILT_BASELINE_SAMPLES, TILT_BASELINE_MAX } from '../src/games/jabeen/logic.js';
 import { seeded } from './helpers.js';
 
 const players = [{ id: 'a', name: 'أحمد', emoji: '🦁' }, { id: 'b', name: 'سارة', emoji: '🐼' }];
@@ -103,4 +103,45 @@ test('علم «أُعيد الخلط» ينتقل مع البداية ويبقى
   s = reduce(s, { type: 'CONFIRM' });
   s = reduce(s, { type: 'BEGIN', item: { id: 'i2', text: 'نمر' } });
   assert.equal(s.recycled, true, 'لا يُنسى بعد أول دور');
+});
+
+test('المعايرة: القرار بالفرق عن وضع الجبين، والأساس وسيط العينات ويُرفض إن كان الميل الابتدائي كبيرًا', () => {
+  // هاتف على الجبين بميل طبيعي 25°: بالزوايا المطلقة كان 25° خارج المدى المحايد فلا يُسلَّح القرار.
+  const samples = [24, 26, 25, 80, 25, 24];
+  assert.equal(tiltBaseline(samples), 25, 'الوسيط يتجاهل القراءة الشاذة 80');
+  assert.equal(tiltBaseline(samples.slice(0, TILT_BASELINE_SAMPLES - 1)), null, 'عينات أقل من اللازم لا تُعاير');
+  assert.equal(tiltBaseline([70, 71, 72, 70, 71, 72]), 0, `ميل أكبر من ${TILT_BASELINE_MAX}° عند البداية ليس وضع جبين`);
+  assert.ok(isNeutral(25, 25), 'وضع الجبين نفسه محايد بعد المعايرة');
+  assert.ok(isNeutral(35, 25));
+  assert.equal(tiltDecision(25 + TILT_DOWN, true, 25), 'correct');
+  assert.equal(tiltDecision(25 + TILT_UP, true, 25), 'skip');
+  assert.equal(tiltDecision(25 + TILT_DOWN - 1, true, 25), null, 'هستيرة: دون العتبة لا قرار');
+  assert.equal(tiltDecision(TILT_DOWN + 5, true), 'correct', 'بلا أساس تبقى الزوايا مطلقة كما كانت');
+  assert.equal(tiltDecision(TILT_DOWN + 5, true, NaN), 'correct', 'أساس غير صالح يعامَل صفرًا');
+});
+
+test('الجلسة المحفوظة (على جبينك): الدور والنتائج والفئة تعود كما هي، والتالف يُرفض', () => {
+  const people = [{ id: 'a', name: 'أحمد', emoji: '🦁' }, { id: 'b', name: 'سارة', emoji: '🐼' }];
+  const cats = [{ id: 'home', name: 'البيت', icon: '🏠', items: Array.from({ length: 20 }, (_, i) => ({ id: `h${i}`, text: `كلمة ${i}` })) }];
+  const settings = normalizeOptions({ seconds: 45, categoryId: 'home', control: 'touch' }, cats);
+  const source = createItemSource(cats[0], { random: seeded(9) });
+  let s = initialState(people, cats[0], settings);
+  const snap = (state, extra = {}) => sessionSnapshot({ players: people, settings, seed: 9, cursor: source.cursor, timeLeft: null, profileSession: null, state, ...extra });
+  const check = (state) => { const r = restoreSession(JSON.parse(JSON.stringify(snap(state))), cats); assert.ok(r, `restore ${state.phase}`); assert.deepEqual(r.state, JSON.parse(JSON.stringify(state))); };
+  check(s);
+  s = reduce(s, { type: 'BEGIN', item: source.next() }); check(s);
+  s = reduce(s, { type: 'ANSWER', ok: true, item: source.next() }); s = reduce(s, { type: 'ANSWER', ok: false, item: source.next() }); check(s);
+  assert.ok(restoreSession(snap(s, { timeLeft: 30 }), cats));
+  s = reduce(s, { type: 'TIME_UP' }); check(s);
+  s = reduce(s, { type: 'CONFIRM' }); check(s); assert.equal(s.turn, 1);
+  assert.equal(restoreSession(snap(reduce(s, { type: 'END' })), cats), null, 'المنتهية لا تُستأنف');
+  assert.equal(restoreSession(snap(s), []), null, 'فئة لم تعد موجودة في المحتوى');
+  const base = JSON.parse(JSON.stringify(snap(s)));
+  const broken = [
+    (r) => { r.game = 'beep'; }, (r) => { r.settings.categoryId = 'zz'; }, (r) => { r.settings.seconds = 90; }, (r) => { r.state.turn = 2; },
+    (r) => { r.state.phase = 'play'; r.state.item = null; }, (r) => { r.state.item = { id: 1 }; }, (r) => { r.state.results = [{ itemId: 'x' }]; },
+    (r) => { r.state.log.push({ entrantId: 'zz', correct: 1, total: 1 }); }, (r) => { r.state.scores = { a: 1 }; }, (r) => { r.state.recycled = 'yes'; },
+    (r) => { r.players = [r.players[0]]; }, (r) => { r.timeLeft = 9999; }, (r) => { r.cursor = 2.5; },
+  ];
+  for (const change of broken) { const r = structuredClone(base); change(r); assert.equal(restoreSession(r, cats), null); }
 });

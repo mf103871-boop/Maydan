@@ -1339,6 +1339,11 @@ function MaydanBeta({ api } = {}) {
     const now = Date.now();
     if (now - lastQuestionSoundRef.current < 450) return;
     lastQuestionSoundRef.current = now;
+    // ناقل الصوت المشترك حين يتوفر: مستوى الصوت وكتم الخلفية يسريان على أصوات الأسئلة.
+    if (api && api.sound && typeof api.sound.synth === "function") {
+      api.sound.synth((context) => SOUND_RECIPES[recipe](context));
+      return;
+    }
     const context = getCtx();
     if (context)
       try {
@@ -1465,6 +1470,12 @@ function MaydanBeta({ api } = {}) {
         } catch (error) {}
       }
     }, [effectiveSoundOn]),
+    // السياق الاحتياطي (بلا ناقل المنصة) يُغلق عند الخروج من اللعبة لا يبقى يستهلك الصوت.
+    useEffect(() => () => {
+      try {
+        if (_ctx) { Promise.resolve(_ctx.close()).catch(() => {}); _ctx = null; }
+      } catch (error) {}
+    }, []),
     useEffect(() => {
       if (!hydrated || (screen !== "board" && screen !== "question")) return;
       // أثناء مهلة الحسم (650ms) النقاط مُسجَّلة والسؤال ما زال مفتوحًا؛ لا تُحفظ لقطة بهذه الحالة المختلطة.
@@ -1870,7 +1881,7 @@ function MaydanBeta({ api } = {}) {
       burst(),
       isSteal && window.setTimeout(burst, wait(150)));
   }
-  function useTool(toolId) {
+  function spendTool(toolId) {
     !currentQuestion ||
       revealed ||
       timeLeft <= 0 ||
@@ -2101,6 +2112,11 @@ ${record.answered} من ${record.total} سؤالًا`,
         onClick: () => {
           if (soundOn) {
             (playSfx("click"), setSoundOn(!1));
+            return;
+          }
+          if (api && api.sound && typeof api.sound.play === "function") {
+            // الإيماءة نفسها تفتح ناقل المنصة؛ لا سياق ثانٍ خارج مستوى الصوت.
+            (setSoundOn(!0), api.sound.play("click"));
             return;
           }
           const context = getCtx();
@@ -3166,7 +3182,7 @@ ${record.answered} من ${record.total} سؤالًا`,
                   type: "button",
                   className: `${available ? "" : "used"} ${effect[tool.id] ? "active" : ""}`,
                   disabled: !available,
-                  onClick: () => useTool(tool.id),
+                  onClick: () => spendTool(tool.id),
                   title: tool.hint,
                 },
                 hBeta("span", { "aria-hidden": "true" }, tool.icon),

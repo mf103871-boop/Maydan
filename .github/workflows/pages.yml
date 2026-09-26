@@ -1,12 +1,13 @@
-name: pages
+name: pages (legacy preview, manual only)
 
+# The live game is the Cloudflare Worker `maydan-game` (workers.dev), deployed from
+# `main` through Workers Builds — see docs/CLOUDFLARE.md. GitHub Pages used to deploy
+# on every push as well, publishing a second copy without rooms, accounts or the
+# security headers, and the two drifted apart. This workflow is kept for a manual
+# static preview only and never runs on push.
 on:
   workflow_dispatch:
-  push:
-    branches: [main]
 
-# The site is one deploy of one branch: let a running deploy finish rather than
-# cancelling it, or a half-uploaded artifact becomes the live site.
 concurrency:
   group: pages
   cancel-in-progress: false
@@ -24,23 +25,24 @@ jobs:
       name: github-pages
       url: ${{ steps.deploy.outputs.page_url }}
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
         with:
           node-version: 22
           cache: npm
       - name: configure pages
-        uses: actions/configure-pages@v5
+        uses: actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b # v5.0.0
       - name: install
         run: npm ci --no-audit --no-fund
       - name: test
         run: npm test
       - name: build
-        # dist/ is the site: the single-file game plus the PWA files from public/.
+        # dist/ is the static preview: the single-file game plus the PWA files from public/.
+        # Rooms, accounts and friends need the Worker; this copy shows them as unavailable.
         run: npm run build
       - name: upload site
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@56afc609e74202658d3ffba0e8f6dda462b719fa # v3.0.1
         with:
           path: dist
       - id: deploy
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e # v4.0.5

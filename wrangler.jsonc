@@ -42,7 +42,8 @@
     { "tag": "v1", "new_sqlite_classes": ["Room", "RequestLimiter"] },
     { "tag": "v2-social", "new_sqlite_classes": ["SocialHub"] }
   ],
-  // تنظيف يومي للجلسات المنتهية ورموز الدخول وسجل webhooks (server/accounts/cleanup.mjs).
+  // تنظيف يومي للجلسات المنتهية ورموز الدخول وسجل webhooks والرسائل القديمة
+  // (server/accounts/cleanup.mjs). يعمل من هذا العامل وحده؛ `maydan-rooms` بلا cron.
   "triggers": { "crons": ["17 3 * * *"] },
-  "observability": { "enabled": false }
+  "observability": { "enabled": true }
 }

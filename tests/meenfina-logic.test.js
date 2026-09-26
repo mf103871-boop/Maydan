@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { initialState, reduce, currentVoter, standings, createStatementSource, normalizeOptions, tallyVotes, titleFor, statementsLabel, TITLES, DEFAULT_TITLE } from '../src/games/meenfina/logic.js';
+import { initialState, reduce, currentVoter, standings, createStatementSource, normalizeOptions, tallyVotes, titleFor, statementsLabel, TITLES, DEFAULT_TITLE, restoreSession, sessionSnapshot } from '../src/games/meenfina/logic.js';
 import { seeded } from './helpers.js';
 
 const players = [
@@ -106,4 +106,29 @@ test('عدد العبارات يُصاغ بجمع القلة 3–10 وإفراد
   assert.equal(statementsLabel(12), '12 عبارة');
   assert.equal(statementsLabel(1), 'عبارة واحدة');
   assert.equal(statementsLabel(2), 'عبارتان');
+});
+
+test('الجلسة المحفوظة (مين فينا؟): كل مرحلة تعود كما هي، والمنتهية والتالفة تُرفض', () => {
+  const people = Array.from({ length: 4 }, (_, i) => ({ id: `p${i}`, name: `لاعب ${i}`, emoji: '🦁', color: '#123' }));
+  const pool = Array.from({ length: 10 }, (_, i) => ({ id: `s${i}`, text: `مين فينا ${i}؟`, tag: 'sleepy' }));
+  const source = createStatementSource(pool, { random: seeded(5) });
+  const settings = { mode: 'secret', rounds: 5 };
+  let s = initialState(people, settings);
+  const snap = (state) => sessionSnapshot({ players: people, settings, seed: 5, cursor: source.cursor, profileSession: 'ps', state });
+  const check = (state) => { const r = restoreSession(JSON.parse(JSON.stringify(snap(state)))); assert.ok(r, `restore ${state.phase}`); assert.deepEqual(r.state, JSON.parse(JSON.stringify(state))); assert.equal(r.profileSession, 'ps'); };
+  check(s);
+  s = reduce(s, { type: 'BEGIN', statement: source.next() }); check(s);
+  s = reduce(s, { type: 'VOTE', targetId: 'p1' }); s = reduce(s, { type: 'VOTE', targetId: 'p1' }); check(s);
+  s = reduce(s, { type: 'VOTE', targetId: 'p2' }); s = reduce(s, { type: 'VOTE', targetId: 'p1' }); check(s);
+  assert.equal(s.phase, 'result'); assert.deepEqual(s.winners, ['p1']);
+  s = reduce(s, { type: 'NEXT' }); check(s);
+  assert.equal(restoreSession(snap(reduce(s, { type: 'END' }))), null, 'المنتهية لا تُستأنف');
+  const base = JSON.parse(JSON.stringify(snap(s)));
+  const broken = [
+    (r) => { r.game = 'jabeen'; }, (r) => { r.players = r.players.slice(0, 2); }, (r) => { r.settings.mode = 'point'; },
+    (r) => { r.state.phase = 'vote'; r.state.statement = null; }, (r) => { r.state.voter = 4; }, (r) => { r.state.votes = { p0: 'zz' }; },
+    (r) => { r.state.winners = ['zz']; }, (r) => { r.state.scores.p0 = -1; }, (r) => { r.state.tags.p0 = { sleepy: 'x' }; }, (r) => { r.state.tags.zz = {}; },
+    (r) => { r.state.round = 0; }, (r) => { r.cursor = -1; }, (r) => { r.seed = 1.5; },
+  ];
+  for (const change of broken) { const r = structuredClone(base); change(r); assert.equal(restoreSession(r), null); }
 });

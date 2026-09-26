@@ -227,6 +227,30 @@ export function createSound({ enabled = true, volume = 0.75 } = {}) {
     context = null; master = null; voiceContext = null; resumePromise = null;
     try { Promise.resolve(c?.close()).catch(() => {}); } catch { /* already closed */ }
   }
+  // A caller's own Web Audio recipe (Badeeha's question sounds) rendered inside this
+  // context: `render(ctx)` receives a view of the context whose `destination` is the
+  // master gain, so volume, ducking and the hidden-page mute apply to it as well.
+  function synthContext(c) {
+    return new Proxy(c, {
+      get(target, key) {
+        if (key === 'destination') return master;
+        const value = target[key];
+        return typeof value === 'function' ? value.bind(target) : value;
+      },
+    });
+  }
+  function synth(render) {
+    if (!canPlay() || typeof render !== 'function') return;
+    const c = getContext();
+    if (!c) return;
+    const token = generation;
+    const run = () => {
+      if (!canPlay() || token !== generation || c !== context || c.state !== 'running') return;
+      try { render(synthContext(c)); } catch { /* never break the game */ }
+    };
+    if (c.state === 'running') run();
+    else void unlock().then((ok) => { if (ok) run(); });
+  }
   return {
     play(name) {
       name = ALIASES[name] || name;
@@ -252,7 +276,7 @@ export function createSound({ enabled = true, volume = 0.75 } = {}) {
     enable(value) { on = !!value; if (!on) stop(); mix(); },
     setVolume(value) { level = clampVolume(value); if (!level) stop(); mix(); },
     setDucking(value) { ducked = !!value; mix(); },
-    attach, dispose, stop, unlock,
+    attach, dispose, stop, unlock, synth,
     names: [...Object.keys(RECIPES), ...Object.keys(ALIASES)],
   };
 }

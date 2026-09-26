@@ -210,3 +210,30 @@ test('a closed context is rebuilt with fresh buffers and keeps question-audio du
   assert.notEqual(env.instances[1].sources[0].buffer, oldBuffer);
   sound.dispose();
 });
+
+test('synth renders a caller recipe inside the shared context behind the master gain, and never outside it', async (t) => {
+  const env = audioEnvironment(t);
+  const sound = await warm(createSound({ volume: 0.5 }));
+  const c = env.instances[0];
+  const master = c.nodes[0];
+  let seen = null;
+  sound.synth((ctx) => {
+    seen = ctx;
+    const o = ctx.createOscillator(), g = ctx.createGain();
+    o.connect(g); g.connect(ctx.destination); o.start(ctx.currentTime); o.stop(ctx.currentTime + 0.2);
+  });
+  assert.equal(env.instances.length, 1, 'no second AudioContext for a recipe');
+  assert.equal(seen.destination, master, 'the recipe output lands on the master gain, not the speakers directly');
+  assert.equal(seen.currentTime, 4, 'context properties read through');
+  const gainNode = c.nodes.at(-1);
+  assert.deepEqual(gainNode.connections, [master]);
+  assert.equal(c.sources.at(-1).starts.length, 1);
+  const before = c.sources.length;
+  sound.enable(false);
+  sound.synth((ctx) => { ctx.createOscillator().start(0); });
+  assert.equal(c.sources.length, before, 'muted: the recipe is not rendered at all');
+  sound.enable(true);
+  sound.synth(() => { throw new Error('bad recipe'); });
+  sound.synth('not a function');
+  assert.equal(c.state, 'running', 'a failing recipe never breaks the bus');
+});

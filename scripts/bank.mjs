@@ -172,6 +172,52 @@ export function answerLeaks(answerNorm, questionNorm) {
   return new RegExp(`(^| )${CLITIC}${escaped}( |$)`).test(questionNorm);
 }
 
+// البديل المقبول (alt) يضيف تهجئة مختلفة فعلًا؛ بديل يطابق الإجابة بعد التطبيع («أستانا»/«استانا»)
+// أو يكرر بديلًا آخر لا يغيّر المطابقة في الواجهة (تقارن بعد التطبيع) ويوهم المراجع بتغطية أوسع.
+export function redundantAltReasons(question) {
+  if (!Array.isArray(question?.alt) || !question.alt.length) return [];
+  const answer = normalizeArabic(question.a || '');
+  const seen = new Set();
+  const reasons = [];
+  for (const alt of question.alt) {
+    const n = normalizeArabic(alt);
+    if (!n) continue;
+    if (n === answer) reasons.push(`alt «${alt}» يطابق الإجابة نفسها بعد التطبيع`);
+    else if (seen.has(n)) reasons.push(`alt «${alt}» مكرر بعد التطبيع`);
+    seen.add(n);
+  }
+  return reasons;
+}
+// يحذف البدائل الزائدة ويحتفظ بأول تهجئة لكل صورة مطبَّعة؛ يعيد عدد المحذوف.
+export function pruneRedundantAlt(question) {
+  if (!Array.isArray(question?.alt) || !question.alt.length) return 0;
+  const answer = normalizeArabic(question.a || '');
+  const seen = new Set();
+  const kept = question.alt.filter((alt) => {
+    const n = normalizeArabic(alt);
+    if (!n || n === answer || seen.has(n)) return false;
+    seen.add(n);
+    return true;
+  });
+  const removed = question.alt.length - kept.length;
+  if (kept.length) question.alt = kept; else delete question.alt;
+  return removed;
+}
+export async function pruneAltAcrossBank(root = ROOT) {
+  const files = await listCategoryFiles(root);
+  const report = [];
+  for (const file of files) {
+    const id = file.replace(/\.json$/, '');
+    const pack = await readCategory(root, id);
+    let removed = 0;
+    for (const q of Array.isArray(pack.qs) ? pack.qs : []) removed += pruneRedundantAlt(q);
+    if (!removed) continue;
+    await writeFile(path.join(root, CATS_DIR, file), `${JSON.stringify(pack, null, 2)}\n`);
+    report.push({ id, removed });
+  }
+  return report;
+}
+
 // علامات حشو ظهرت في دفعات فعلية ومرّت سابقًا لأنها فريدة نصيًا فقط.
 // هذا فحص للقوالب المعروفة، وليس إثباتًا لصحة المعلومة أو مصدرها.
 export function fabricatedContentReasons(question) {
@@ -456,6 +502,7 @@ export async function validateBank(root = ROOT, { only = null } = {}) {
       if (!answer && !(type && NO_WRITTEN_ANSWER.has(type))) qerr('سؤال بلا إجابة');
       if (answer && wordCount(answer) > maxA) qerr(`الإجابة ${wordCount(answer)} كلمات والحد ${maxA}`);
       if (q.alt !== undefined && (!Array.isArray(q.alt) || q.alt.some((x) => !String(x || '').trim()))) qerr('alt يجب أن تكون مصفوفة نصوص غير فارغة');
+      for (const reason of redundantAltReasons(q)) qerr(reason);
       for (const reason of fabricatedContentReasons(q)) qerr(reason);
 
       // حقول الجودة (إلزامية للفئات المكتملة)
@@ -782,6 +829,13 @@ async function main(argv) {
     // التوجيه إلى أنبوب، وتقرير بآلاف الأسطر يُبتر فعلًا.
     if (errors.length || placeholders.length) { process.exitCode = 1; return; }
     console.log(`\n✓ ${only ? `الفئة ${only}` : `البنك (${categories.length} ملفًا)`} سليمة`);
+    return;
+  }
+  if (cmd === 'alt') {
+    // `npm run bank:alt` — يحذف بدائل alt المطابقة للإجابة أو المكررة بعد التطبيع ويكتب الملفات.
+    const report = await pruneAltAcrossBank(ROOT);
+    for (const row of report) console.log(`${row.id.padEnd(16)} −${row.removed}`);
+    console.log(`${report.reduce((n, r) => n + r.removed, 0)} بديلًا زائدًا حُذف من ${report.length} فئة`);
     return;
   }
   if (cmd === 'placeholders') {

@@ -6,8 +6,8 @@
   "workers_dev": true,
   // إعدادات عامة (غير سرّية). الأسرار عبر `wrangler secret put` — راجع docs/ACCOUNTS.md.
   "vars": {
-    "ALLOWED_ORIGINS": "https://mf103871-boop.github.io",
-    "APP_ORIGIN": "https://mf103871-boop.github.io",
+    "ALLOWED_ORIGINS": "https://maydan-game.mf103871.workers.dev",
+    "APP_ORIGIN": "https://maydan-game.mf103871.workers.dev",
     "EXTRA_ORIGINS": "maydan://app",
     "APPLE_BUNDLE_ID": "Maydan",
     "APPLE_SERVICES_ID": "app.maydan.web",
@@ -32,7 +32,7 @@
   "migrations": [
     { "tag": "v1", "new_sqlite_classes": ["Room", "RequestLimiter"] }
   ],
-  // تنظيف يومي للجلسات المنتهية ورموز الدخول وسجل webhooks (server/accounts/cleanup.mjs).
-  "triggers": { "crons": ["17 3 * * *"] },
-  "observability": { "enabled": false }
+  // لا cron هنا: التنظيف اليومي يعمل من `maydan-game` وحده (القاعدة مشتركة)، وإلا جرى مرتين.
+  // هذا العامل يعتمد على `maydan-game` أصلًا (ربط SOCIAL_HUB أعلاه) فيُنشر بعده دائمًا.
+  "observability": { "enabled": true }
 }

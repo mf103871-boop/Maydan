@@ -1,9 +1,17 @@
 name: iOS build
 
+# The wrapper is compiled whenever the web app or the shell changes on `main`, not only
+# on a release branch: a Swift regression used to surface weeks later at signing time.
 on:
   workflow_dispatch:
   push:
-    branches: [codex/ios-release-pipeline]
+    branches: [main, codex/ios-release-pipeline]
+    paths:
+      - 'src/**'
+      - 'public/**'
+      - 'ios/**'
+      - 'scripts/ios/**'
+      - '.github/workflows/ios-build.yml'
   pull_request:
     paths:
       - 'ios/**'
@@ -18,8 +26,8 @@ jobs:
     runs-on: macos-15
     timeout-minutes: 20
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
         with:
           node-version: 22
           cache: npm
@@ -57,7 +65,7 @@ jobs:
             -derivedDataPath ios/build CODE_SIGNING_ALLOWED=NO build
       - name: Package the simulator app
         run: ditto -c -k --sequesterRsrc --keepParent ios/build/Build/Products/Release-iphonesimulator/Maydan.app ios/build/Maydan-simulator.zip
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
         with:
           name: Maydan-iOS-simulator
           path: ios/build/Maydan-simulator.zip
