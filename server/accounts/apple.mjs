@@ -3,7 +3,7 @@
 import { PRODUCTS } from '../../src/shared/account/config.js';
 import { json } from '../protocol.mjs';
 import { failure } from './errors.mjs';
-import { providerFetch, signEs256, verifyJwt } from './jwt.mjs';
+import { providerFetch, providerDetail, signEs256, verifyJwt } from './jwt.mjs';
 import { rootFingerprint, verifyAppleJws } from './x509.mjs';
 import * as db from './db.mjs';
 
@@ -58,14 +58,16 @@ export async function exchangeCode(env, { code, redirectUri, client = 'web' }) {
 export async function revokeToken(env, refreshToken) {
   if (!refreshToken) return;
   // السجلات القديمة لا تحفظ مصدر الرمز: جرّب الجمهورين مع سر مطابق لكل جمهور.
+  let last = null;
   for (const client of ['web', 'ios']) {
     if (!audienceFor(env, client)) continue;
     const body = new URLSearchParams({ token: refreshToken, token_type_hint: 'refresh_token',
       client_id: audienceFor(env, client), client_secret: await clientSecret(env, client) });
     const result = await providerFetch(urls(env).revoke, { method: 'POST', headers: { 'content-type': 'application/x-www-form-urlencoded' }, body: String(body) });
     if (result.ok) return;
+    last = result;
   }
-  failure('PROVIDER');
+  failure('PROVIDER', providerDetail(urls(env).revoke, { status: last?.status || 0, data: last?.data }));
 }
 
 export async function verifyIdentityToken(env, token, { client = 'web', nonce, now = Date.now() } = {}) {
@@ -109,7 +111,7 @@ export async function fetchSubscription(env, originalTransactionId, now = Date.n
   let result = await request(environment);
   if (!env.APPLE_STORE_API_URL && !environment && result.status === 404 && result.data?.errorCode === 4040010) result = await request('Sandbox');
   if (result.status === 404) failure('NOT_ELIGIBLE');
-  if (!result.ok || !result.data) failure('PROVIDER');
+  if (!result.ok || !result.data) failure('PROVIDER', providerDetail(result.url, { status: result.status, data: result.data, malformed: result.ok }));
   return result.data;
 }
 // كل JWS من آبل (معاملة، تجديد، إشعار) يُتحقق من توقيعه وسلسلة x5c حتى الجذر المثبّت.

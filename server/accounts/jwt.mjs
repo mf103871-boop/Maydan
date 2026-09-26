@@ -51,11 +51,11 @@ async function jwks(url) {
   if (cached && cached.expires > Date.now()) return cached.keys;
   let response;
   try { response = await fetch(url, { headers: { accept: 'application/json' }, signal: providerSignal() }); }
-  catch { return failure('PROVIDER'); }
-  if (!response.ok) failure('PROVIDER');
+  catch (error) { return failure('PROVIDER', providerDetail(url, { network: error })); }
+  if (!response.ok) failure('PROVIDER', providerDetail(url, { status: response.status }));
   let keys;
-  try { keys = (await response.json()).keys; } catch { return failure('PROVIDER'); }
-  if (!Array.isArray(keys)) failure('PROVIDER');
+  try { keys = (await response.json()).keys; } catch { return failure('PROVIDER', providerDetail(url, { status: response.status, malformed: true })); }
+  if (!Array.isArray(keys)) failure('PROVIDER', providerDetail(url, { status: response.status, malformed: true }));
   jwksCache.set(url, { keys, expires: Date.now() + JWKS_TTL });
   return keys;
 }
@@ -128,16 +128,31 @@ export function safeEqual(a, b) {
 // A hanging provider must not pin a Worker request until the platform kills it.
 export const PROVIDER_TIMEOUT_MS = 10_000;
 export const providerSignal = () => (typeof AbortSignal !== 'undefined' && AbortSignal.timeout ? AbortSignal.timeout(PROVIDER_TIMEOUT_MS) : undefined);
+// A 502 with no explanation cost a day of guessing. The provider's own error code
+// (`invalid_grant`, `invalid_client`, `redirect_uri_mismatch`…) is short, public and never
+// secret, so it travels as `detail` and one compact line goes to the Worker log:
+// host, HTTP status and that code. Never a body, token, secret or request payload.
+const DETAIL = /^[a-z][a-z0-9_.-]{0,39}$/i;
+export function providerDetail(url, { status = 0, data = null, network = null, malformed = false } = {}) {
+  let host = 'provider';
+  try { host = new URL(url).host; } catch { /* keep the placeholder */ }
+  const code = typeof data?.error === 'string' ? data.error : typeof data?.error?.code === 'string' ? data.error.code : typeof data?.errorCode === 'number' ? `code_${data.errorCode}` : '';
+  const detail = network ? (network.name === 'TimeoutError' || network.name === 'AbortError' ? 'timeout' : 'network')
+    : DETAIL.test(code) ? code.toLowerCase() : malformed ? `malformed_${status || 'response'}` : `http_${status || 'error'}`;
+  try { console.warn('[maydan] provider', host, status || '-', detail); } catch { /* no console */ }
+  return detail;
+}
 export async function providerFetch(url, init = {}) {
   let response;
-  try { response = await fetch(url, { ...init, signal: init.signal || providerSignal() }); } catch { return failure('PROVIDER'); }
+  try { response = await fetch(url, { ...init, signal: init.signal || providerSignal() }); }
+  catch (error) { return failure('PROVIDER', providerDetail(url, { network: error })); }
   const text = await response.text();
   let data = null;
   try { data = text ? JSON.parse(text) : null; } catch { data = null; }
-  return { ok: response.ok, status: response.status, data, text };
+  return { ok: response.ok, status: response.status, data, text, url };
 }
 export async function providerJson(url, init) {
   const result = await providerFetch(url, init);
-  if (!result.ok || !result.data) failure('PROVIDER');
+  if (!result.ok || !result.data) failure('PROVIDER', providerDetail(url, { status: result.status, data: result.data, malformed: result.ok && !result.data }));
   return result.data;
 }

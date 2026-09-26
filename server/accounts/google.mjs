@@ -1,6 +1,6 @@
 // جوجل: تدفق code على الويب، والتحقق من id_token عبر JWKS. لا نطلب أي نطاق غير openid/email/profile.
 import { failure } from './errors.mjs';
-import { providerFetch, verifyJwt } from './jwt.mjs';
+import { providerFetch, providerDetail, verifyJwt } from './jwt.mjs';
 
 export const ISSUERS = ['https://accounts.google.com', 'accounts.google.com'];
 export const urls = (env) => ({
@@ -28,7 +28,7 @@ export async function exchangeCode(env, { code, redirectUri }) {
   const result = await providerFetch(urls(env).token, {
     method: 'POST', headers: { 'content-type': 'application/x-www-form-urlencoded' }, body: String(body),
   });
-  if (!result.ok || !result.data?.id_token) failure('PROVIDER');
+  if (!result.ok || !result.data?.id_token) failure('PROVIDER', providerDetail(urls(env).token, { status: result.status, data: result.data, malformed: result.ok }));
   return result.data;
 }
 

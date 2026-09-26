@@ -91,6 +91,14 @@ Authorization: Bearer mdn1.<معرّف 16 hex>.<سر base64url من 32 بايت>
 
 `AUTH_REQUIRED` 401 · `AUTH_EXPIRED` 401 · `PLUS_REQUIRED` 402 · `ALREADY_LINKED` 409 · `ALREADY_SUBSCRIBED` 409 (اشتراك مدفوع سارٍ يمنع معاملة Paddle ثانية) · `SIGNATURE` 401 · `PROVIDER` 502 · `STATE` 400 · `NOT_ELIGIBLE` 400 · `INVALID` 400 · `RATE_LIMIT` 429 · `NOT_FOUND` 404.
 
+ردّ `PROVIDER` يحمل حقلًا إضافيًا `detail`: رمز خطأ المزوّد نفسه بعد تنقيته (حروف وأرقام و`_` فقط)، أو
+`http_<الحالة>` / `network` / `timeout` / `malformed_<الحالة>` حين لا يرسل المزوّد رمزًا. السطر نفسه يظهر في
+سجل العامل (Workers → Logs) بالشكل `[maydan] provider <المضيف> <الحالة> <الرمز>` — بلا جسم ولا رمز ولا سر.
+أشهر الرموز عند تسجيل الدخول بجوجل: `invalid_grant` = رمز التفويض استُهلك أو انتهى (إعادة تحميل صفحة العودة،
+أو محاولة ثانية بنفس الرابط؛ ابدأ الدخول من جديد)، `invalid_client` = `GOOGLE_CLIENT_SECRET` غير مطابق
+لمعرّف العميل في `wrangler.jsonc` (أعد `wrangler secret put GOOGLE_CLIENT_SECRET`)، `redirect_uri_mismatch`
+= `https://<المضيف>/api/auth/google/callback` غير مسجَّل في Google Cloud Console.
+
 نصوصها العربية في `src/shared/account/errors.js`.
 
 ### قفل إنشاء الغرف

@@ -261,6 +261,10 @@ test('تدفق جوجل كامل: state ثم رمز لمرة واحدة ثم ج�
   // state مزوّر أو منتهٍ يُرفض قبل أي نداء للمزوّد.
   const forged = await api.get('/api/auth/google/callback?code=code-google-1&state=abc.def');
   assert.equal(forged.data.error, 'STATE');
+  // رمز لا تعرفه جوجل (مستهلك أو منتهٍ): 502 مع رمز خطأ المزوّد نفسه كي لا يبقى الفشل صامتًا.
+  const unknown = await api.get(`/api/auth/google/callback?code=code-nope&state=${encodeURIComponent(state_)}`);
+  assert.equal(unknown.status, 502);
+  assert.deepEqual(unknown.data, { error: 'PROVIDER', detail: 'invalid_grant' });
 
   api.token = exchanged.data.session.token;
   const me = await api.get('/api/me');
