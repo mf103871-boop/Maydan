@@ -14,13 +14,16 @@ export function isExternal(ref) {
   return ABSOLUTE.test(ref) || DATA_URI.test(ref);
 }
 
-// نسخ مجلدات الوسائط يحقنها البناء (بصمة محتوى كل مجلد)؛ تُلحق بالعنوان كـ ?v=
-// فلا يعلق لاعبٌ على نسخة قديمة من ملف صُحِّح بالاسم نفسه. غيابها (اختبارات، تطوير) يعني بلا لاحقة.
+// نسخ ملفات الوسائط يحقنها البناء (بصمة محتوى كل ملف بمفتاح «المجلد/الملف»)؛ تُلحق
+// بالعنوان كـ ?v= فلا يعلق لاعبٌ على نسخة قديمة من ملف صُحِّح بالاسم نفسه. غيابها
+// (اختبارات، تطوير) يعني بلا لاحقة.
 const MEDIA_VERSIONS = typeof __MAYDAN_MEDIA_VERSIONS__ !== 'undefined' ? __MAYDAN_MEDIA_VERSIONS__ : {};
 
+export function mediaVersionOf(url) {
+  return url.startsWith(`${MEDIA_ROOT}/`) ? MEDIA_VERSIONS[url.slice(MEDIA_ROOT.length + 1)] || '' : '';
+}
 function withVersion(url) {
-  const m = /^media\/([^/]+)\//.exec(url);
-  const v = m && MEDIA_VERSIONS[m[1]];
+  const v = mediaVersionOf(url);
   return v ? `${url}?v=${v}` : url;
 }
 

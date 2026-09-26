@@ -183,7 +183,11 @@ async function appleNative(request, env, now) {
 
 async function signout(request, env, now) {
   const found = await readSession(env, request, { now, rotate: false });
-  if (found) await db.revokeSession(env, found.session.id, now);
+  if (found) {
+    await db.revokeSession(env, found.session.id, now);
+    // Tell the live hub at once, so its sockets need not poll the session table.
+    await notifyUsers(env, [found.user.id], { type: 'session_revoked', sessionId: found.session.id });
+  }
   return new Response(null, { status: 204, headers: { 'cache-control': 'no-store' } });
 }
 

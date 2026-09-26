@@ -9,6 +9,7 @@ import { CATS } from '../src/data/categories/index.js';
 import pictures from '../src/data/games/fabraka/pictures.json' with { type: 'json' };
 import { categoryCoverSource } from '../src/games/badeeha/covers.js';
 import { collectStartupImages, startupImageUrls } from '../src/shared/media/startup-images.js';
+import { mediaVersions } from '../scripts/lib.mjs';
 
 const root = fileURLToPath(new URL('..', import.meta.url));
 
@@ -68,10 +69,10 @@ test('the complete active image bank includes all 78 covers, 400 puzzle images a
 });
 
 test('bundled startup URLs use the same versioned paths as the game renderers under a nested site path', async () => {
-  const versions = Object.fromEntries([
-    'badeeha-covers', 'fabraka-v3', 'flags', 'zoom', 'blur', 'reveal', 'silhouette',
-    'guesscar', 'placefinder', 'tilepuzzle', 'spotdiff',
-  ].map((name, index) => [name, (0x10000000 + index).toString(16)]));
+  // Versions are per file (`folder/file`), computed exactly as the build does.
+  const versions = await mediaVersions(root);
+  assert.ok(Object.keys(versions).length > 3000, 'one version per media file');
+  assert.ok(Object.keys(versions).every((key) => /^[^/]+\/[^/]+$/.test(key)));
   const result = await build({
     stdin: { contents: `export { startupImageUrls } from './src/shared/media/startup-images.js';
       export { categoryCoverSource } from './src/games/badeeha/covers.js';
@@ -92,8 +93,8 @@ test('bundled startup URLs use the same versioned paths as the game renderers un
   }
   for (const picture of pictures) assert.ok(urls.includes(resolveMedia(picture.image)), picture.id);
   for (const url of urls) {
-    const folder = url.split('/')[1];
-    assert.ok(url.endsWith(`?v=${versions[folder]}`), url);
+    const file = url.split('?')[0].replace(/^media\//, '');
+    assert.ok(url.endsWith(`?v=${versions[file]}`), url);
     assert.equal(new URL(url, 'https://example.test/Maydan/index.html').pathname, `/Maydan/${url.split('?')[0]}`);
   }
 });

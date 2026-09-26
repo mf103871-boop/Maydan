@@ -1182,6 +1182,44 @@ function ScorePoints({ value, from }) {
   );
 }
 
+// صف «وسائط الفئات المختارة»: مكوّن مستقل، لا دالة داخل الرسم كانت تُعاد تركيبها
+// (وتفقد حالتها) مع كل ضغطة في حقل البحث.
+function OfflineMediaRowBeta({ offlineMedia, count, onDownload }) {
+  const { state, done, total } = offlineMedia;
+  return hBeta(
+    "div",
+    { className: "m-offline-row" },
+    hBeta(
+      "div",
+      { className: "m-offline-text" },
+      hBeta("b", null, "وسائط الفئات المختارة"),
+      hBeta(
+        "small",
+        null,
+        state === "busy"
+          ? `يُحمَّل ${done} من ${total}…`
+          : state === "done"
+            ? "جاهزة للّعب دون إنترنت"
+            : state === "unsupported"
+              ? "التحميل المؤقت اكتمل؛ أعد فتح اللعبة لتفعيل الحفظ دون إنترنت"
+            : state === "error"
+              ? "تعذّر تحميل بعض الملفات؛ ستُجلب عند فتح السؤال"
+              : `${count} ملفًا · حمّلها الآن لتلعبوا دون إنترنت`,
+      ),
+    ),
+    hBeta(
+      "button",
+      {
+        type: "button",
+        className: "m-secondary m-small",
+        disabled: state === "busy" || state === "done",
+        onClick: onDownload,
+      },
+      state === "busy" ? "…" : state === "done" ? "✓ جاهزة" : "حمّل",
+    ),
+  );
+}
+
 function MaydanBeta({ api } = {}) {
   const logic = MaydanLogicBeta,
     [hydrated, setHydrated] = useState(!1),
@@ -1234,6 +1272,9 @@ function MaydanBeta({ api } = {}) {
     [lastAction, setLastAction] = useState(null),
     [notice, setNotice] = useState(""),
     deadlineRef = useRef(null),
+    // آخر قيمة للمؤقت دون أن تكون تبعية لتأثير الحفظ: الحفظ كل ثانية كان يبني لقطة
+    // كاملة ويعيد تسليح المؤقت مع كل تكّة.
+    timeLeftRef = useRef(60),
     roundLoadRef = useRef(null),
     soundTimerRef = useRef(null),
     saveTimerRef = useRef(null),
@@ -1443,7 +1484,7 @@ function MaydanBeta({ api } = {}) {
         used: { ...used },
         turn,
         current: current ? { ...current } : null,
-        timeLeft,
+        timeLeft: timeLeftRef.current,
         paused: screen === "question" ? !0 : paused,
         revealed,
         answerHidden,
@@ -1477,7 +1518,6 @@ function MaydanBeta({ api } = {}) {
       used,
       turn,
       current,
-      timeLeft,
       paused,
       revealed,
       answerHidden,
@@ -1496,7 +1536,9 @@ function MaydanBeta({ api } = {}) {
     }, [api, screen]),
     useEffect(() => {
       const saveOnLeave = () => {
-        activeSnapshotRef.current && saveKey(MAYDAN_BETA_KEYS.active, activeSnapshotRef.current);
+        if (!activeSnapshotRef.current) return;
+        // اللقطة تُبنى عند تغيّر الحالة لا مع كل تكّة؛ الوقت المتبقي يُؤخذ لحظة الخروج.
+        saveKey(MAYDAN_BETA_KEYS.active, { ...activeSnapshotRef.current, timeLeft: timeLeftRef.current });
       };
       return (
         window.addEventListener("pagehide", saveOnLeave),
@@ -1513,20 +1555,27 @@ function MaydanBeta({ api } = {}) {
     useEffect(() => {
       if (screen !== "question" || !current || revealed || paused || timeLeft <= 0) return;
       deadlineRef.current || (deadlineRef.current = Date.now() + timeLeft * 1e3);
+      let interval = 0;
       const tick = () => {
+        // بعد الصفر لا يبقى موعد نهائي؛ لا نحسب على null ولا نستمر في التكّ بلا فائدة.
+        if (!deadlineRef.current) { window.clearInterval(interval); return; }
         const next = Math.max(0, Math.ceil((deadlineRef.current - Date.now()) / 1e3));
-        (setTimeLeft(
-          (previous) => (next !== previous && next > 0 && next <= 5 && playSfx("tick"), next),
-        ),
-          next === 0 &&
-            !timeoutPlayedRef.current &&
-            ((timeoutPlayedRef.current = !0),
-            (deadlineRef.current = null),
-            playSfx("timeout"),
-            haptic("warning")));
+        // المؤثر خارج دالة التحديث: React قد يستدعي المحدِّث مرتين في وضع التدقيق.
+        if (next !== timeLeftRef.current && next > 0 && next <= 5) playSfx("tick");
+        timeLeftRef.current = next;
+        setTimeLeft(next);
+        if (next === 0) {
+          window.clearInterval(interval);
+          if (!timeoutPlayedRef.current) {
+            timeoutPlayedRef.current = !0;
+            deadlineRef.current = null;
+            playSfx("timeout");
+            haptic("warning");
+          }
+        }
       };
       tick();
-      const interval = window.setInterval(tick, 250);
+      interval = window.setInterval(tick, 250);
       return () => window.clearInterval(interval);
     }, [screen, current && `${current.categoryId}:${current.index}`, revealed, paused, effectiveSoundOn]),
     useEffect(() => {
@@ -2795,7 +2844,7 @@ ${record.answered} من ${record.total} سؤالًا`,
           ),
         ),
       ),
-      selectedMediaUrls.length > 0 && hBeta(OfflineMediaRow, null),
+      selectedMediaUrls.length > 0 && hBeta(OfflineMediaRowBeta, { offlineMedia, count: selectedMediaUrls.length, onDownload: downloadSelectedMedia }),
       setupError && hBeta("p", { className: "m-error", role: "alert" }, setupError),
       hBeta(
         "button",
@@ -2821,52 +2870,19 @@ ${record.answered} من ${record.total} سؤالًا`,
     return [...new Set(urls)];
   }, [selectedCategories]);
 
-  function OfflineMediaRow() {
-    const { state, done, total } = offlineMedia,
-      count = selectedMediaUrls.length;
-    return hBeta(
-      "div",
-      { className: "m-offline-row" },
-      hBeta(
-        "div",
-        { className: "m-offline-text" },
-        hBeta("b", null, "وسائط الفئات المختارة"),
-        hBeta(
-          "small",
-          null,
-          state === "busy"
-            ? `يُحمَّل ${done} من ${total}…`
-            : state === "done"
-              ? "جاهزة للّعب دون إنترنت"
-              : state === "unsupported"
-                ? "التحميل المؤقت اكتمل؛ أعد فتح اللعبة لتفعيل الحفظ دون إنترنت"
-              : state === "error"
-                ? "تعذّر تحميل بعض الملفات؛ ستُجلب عند فتح السؤال"
-                : `${count} ملفًا · حمّلها الآن لتلعبوا دون إنترنت`,
-        ),
-      ),
-      hBeta(
-        "button",
-        {
-          type: "button",
-          className: "m-secondary m-small",
-          disabled: state === "busy" || state === "done",
-          onClick: async () => {
-            setOfflineMedia({ state: "busy", done: 0, total: count });
-            const result = await cacheForOffline(selectedMediaUrls, {
-              onProgress: ({ done: n, total: t }) =>
-                setOfflineMedia({ state: "busy", done: n, total: t || count }),
-            });
-            setOfflineMedia({
-              state: result && result.failed ? "error" : result && result.offlineReady ? "done" : "unsupported",
-              done: count,
-              total: count,
-            });
-          },
-        },
-        state === "busy" ? "…" : state === "done" ? "✓ جاهزة" : "حمّل",
-      ),
-    );
+  // تنزيل وسائط الفئات المختارة (زر «حمّل» في صف الوسائط دون إنترنت).
+  async function downloadSelectedMedia() {
+    const count = selectedMediaUrls.length;
+    setOfflineMedia({ state: "busy", done: 0, total: count });
+    const result = await cacheForOffline(selectedMediaUrls, {
+      onProgress: ({ done: n, total: t }) =>
+        setOfflineMedia({ state: "busy", done: n, total: t || count }),
+    });
+    setOfflineMedia({
+      state: result && result.failed ? "error" : result && result.offlineReady ? "done" : "unsupported",
+      done: count,
+      total: count,
+    });
   }
 
   function BoardScreen() {

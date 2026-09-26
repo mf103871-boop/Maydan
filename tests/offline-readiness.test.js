@@ -16,6 +16,8 @@ async function worker({ entries = {}, fetcher = async () => new Response('asset'
     async put(url, response) { map.set(key(url), response.clone()); },
     async match(url) { return map.get(key(url))?.clone(); },
     async delete(url) { return map.delete(key(url)); },
+    async keys() { return [...map.keys()].map((url) => new Request(new URL(url, 'https://maydan.example/').href)); },
+    size() { return map.size; },
   });
   const caches = {
     async open(name) { if (!cachesByName.has(name)) cachesByName.set(name, makeCache()); return cachesByName.get(name); },
@@ -37,7 +39,7 @@ async function worker({ entries = {}, fetcher = async () => new Response('asset'
     }
     return fetcher(request, options);
   };
-  vm.runInNewContext(source, { self, caches, fetch, URL, Response, Headers, AbortController, setTimeout, clearTimeout });
+  vm.runInNewContext(source, { self, caches, fetch, URL, Request, Response, Headers, AbortController, setTimeout, clearTimeout });
   async function dispatch(type, extras = {}) {
     let response;
     const tasks = [];
@@ -164,4 +166,24 @@ test('HTML media fallback stays retryable after the server is repaired', async (
     assert.equal((await preloadMedia(['/retry.mp3'])).ok, 1);
     assert.equal(calls, 2);
   } finally { globalThis.fetch = originalFetch; globalThis.document = originalDocument; resetMediaState(); }
+});
+
+test('prune-media removes stale versions and retired files but keeps every current media URL and the shell', async () => {
+  const media = new Map();
+  const seed = (url) => media.set(new URL(url, 'https://maydan.example/').href, new Response('img', { headers: { 'content-type': 'image/webp' } }));
+  seed('media/flags/eg.webp?v=old'); seed('media/flags/eg.webp?v=new'); seed('media/flags/retired.webp?v=x');
+  seed('media/sound/clip.mp3?v=s1'); seed('media/fabraka-v3/fab3-001.webp?v=p1'); seed('media/zoom/unversioned.webp');
+  const w = await worker();
+  const cache = w.makeCache(media);
+  (await w.caches.open('maydan-media-v1')); // create then replace with the seeded one
+  w.caches.open = async (name) => (name === 'maydan-media-v1' ? cache : w.makeCache());
+  const messages = [];
+  await w.dispatch('message', { data: { type: 'prune-media', urls: ['media/flags/eg.webp?v=new', 'media/sound/clip.mp3?v=s1', 'media/fabraka-v3/fab3-001.webp?v=p1', 'https://cdn.example/x.webp'] }, ports: [{ postMessage: (m) => messages.push(m) }] });
+  const left = (await cache.keys()).map((request) => new URL(request.url).pathname + new URL(request.url).search).sort();
+  assert.deepEqual(left, ['/media/fabraka-v3/fab3-001.webp?v=p1', '/media/flags/eg.webp?v=new', '/media/sound/clip.mp3?v=s1']);
+  assert.equal(JSON.stringify(messages), JSON.stringify([{ type: 'pruned', removed: 3 }])); // objects cross the vm realm
+  // an empty or foreign list never wipes the cache
+  await w.dispatch('message', { data: { type: 'prune-media', urls: [] } });
+  await w.dispatch('message', { data: { type: 'prune-media', urls: ['https://cdn.example/only.webp'] } });
+  assert.equal(cache.size(), 3);
 });

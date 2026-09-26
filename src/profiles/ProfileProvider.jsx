@@ -48,7 +48,7 @@ export function ProfileProvider({ children }) {
   useEffect(() => {
     if (!ready || !viewedId) return;
     const refresh = () => { if (document.visibilityState !== 'hidden') client.loadProfile(viewedId).catch(() => {}); };
-    refresh(); const timer = setInterval(refresh, 30_000); return () => clearInterval(timer);
+    refresh(); const timer = setInterval(refresh, 60_000); return () => clearInterval(timer);
   }, [client, ready, viewedId, relation]);
   const safeState = client.userId === userId ? state : emptyProfiles();
   return <ProfileContext.Provider value={{ ...safeState, ...client.actions, ready }}>{children}</ProfileContext.Provider>;

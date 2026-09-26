@@ -57,7 +57,13 @@ export class SocialClient {
     this.stop(); this.userId = userId; this.update({ ...initial(), loading: true });
     if (!userId) return;
     this.refresh().catch(() => {}); this.connect();
-    this.poll = setInterval(() => { if (this.visible()) this.refresh({ quiet: true }).catch(() => {}); }, 30_000);
+    // With a live socket the server pushes changes; the poll is only a safety net.
+    let ticks = 0;
+    this.poll = setInterval(() => {
+      ticks += 1;
+      if (!this.visible()) return;
+      if (!this.state.connected || ticks % 4 === 0) this.refresh({ quiet: true }).catch(() => {});
+    }, 30_000);
   }
   stop() {
     this.epoch++; this.userId = null; this.activeFriend = null; this.refreshing = null;
@@ -85,15 +91,14 @@ export class SocialClient {
     if (!quiet) this.update({ loading: true, error: '' });
     const task = (async () => {
       try {
-        const [me, friends, requests, blocks, conversations] = await Promise.all([
-          this.call('/me'), this.call('/friends'), this.call('/requests'), this.call('/blocks'), this.call('/conversations'),
-        ]);
+        // One request carries the whole screen (it used to be five per refresh).
+        const state = await this.call('/state');
         if (epoch !== this.epoch) return;
-        const list = conversations.conversations || [];
-        this.update({ profile: me.user, friends: (friends.friends || []).map(friend => {
+        const list = state.conversations || [];
+        this.update({ profile: state.user, friends: (state.friends || []).map(friend => {
           const conversation = list.find(c => c.user.id === friend.id);
           return { ...friend, lastMessage: conversation?.lastMessage || null, unreadCount: conversation?.unreadCount || 0 };
-        }), incoming: requests.incoming || [], outgoing: requests.outgoing || [], blocked: blocks.users || [],
+        }), incoming: state.incoming || [], outgoing: state.outgoing || [], blocked: state.blocked || [],
         conversationList: list, loading: false, error: '', offline: false });
         const allowed = new Set(this.state.friends.map(f => f.id));
         const loaded = Object.fromEntries(Object.entries(this.state.conversations).filter(([id]) => allowed.has(id)));

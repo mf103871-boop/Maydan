@@ -23,9 +23,9 @@ export async function routeSocial(request, env, url = new URL(request.url), char
   const auth = await requireSession(env, request);
   try {
     let response = await dispatch(request, env, url, auth.user.id, Date.now());
-    if (response.ok && ['/api/social/me', '/api/social/search', '/api/social/friends', '/api/social/requests', '/api/social/blocks', '/api/social/conversations'].includes(url.pathname)) {
+    if (response.ok && ['/api/social/me', '/api/social/state', '/api/social/search', '/api/social/friends', '/api/social/requests', '/api/social/blocks', '/api/social/conversations'].includes(url.pathname)) {
       const body = await response.json();
-      const users = [body.user, body.request?.user, ...(body.users || []), ...(body.friends || []),
+      const users = [body.user, body.request?.user, ...(body.users || []), ...(body.blocked || []), ...(body.friends || []),
         ...(body.incoming || []).map(item => item.user), ...(body.outgoing || []).map(item => item.user),
         ...(body.conversations || []).map(item => item.user)].filter(Boolean);
       const summaries = await profileSummaries(env, users.map(user => user.id));
@@ -43,6 +43,14 @@ async function dispatch(request, env, url, id, now) {
   const profile = await db.ensureProfile(env, id, now);
   if (method !== 'GET') await db.chargeUser(env, id, 'write', now);
   if (path === '/me' && method === 'GET') return json({ user: publicProfile(profile) });
+  // One read for the whole social screen. The client used to issue five requests
+  // per refresh, and a refresh followed every message, send and read receipt.
+  if (path === '/state' && method === 'GET') {
+    const [friends, requests, blocked, conversations] = await Promise.all([
+      db.friendsOf(env, id, now), db.requestsOf(env, id), db.blocksOf(env, id), db.conversationsOf(env, id),
+    ]);
+    return json({ user: publicProfile(profile), friends, incoming: requests.incoming || [], outgoing: requests.outgoing || [], blocked, conversations: conversations.conversations || conversations });
+  }
   if (path === '/search' && method === 'GET') {
     const query = String(url.searchParams.get('q') || '').normalize('NFKC').trim();
     if (Array.from(query).length < 2 || Array.from(query).length > 80) fail('INVALID', 400);

@@ -17,18 +17,21 @@ export async function readPkg() {
 }
 
 // esbuild options shared by the one-shot build and the dev watcher.
-// نسخة لكل مجلد وسائط (بصمة محتوى ملفاته): تُلحق بعناوين الملفات كـ ?v= فيتجاوز
-// المتصفح والعامل الخدمي النسخة المخزّنة حين يُصحَّح ملف بالاسم نفسه.
+// نسخة لكل ملف وسائط (بصمة محتواه) بمفتاح `المجلد/الملف`: تُلحق بعنوانه كـ ?v= فيتجاوز
+// المتصفح والعامل الخدمي النسخة المخزّنة حين يُصحَّح الملف بالاسم نفسه. البصمة لكل ملف
+// لا لكل مجلد، وإلا أعاد تصحيحُ صورة واحدة تنزيل حزمتها كاملةً (١٩ ميغابايت أحيانًا).
 export async function mediaVersions(root = ROOT) {
   const versions = {};
   for (const base of [path.join(root, 'media'), path.join(root, 'public/media')]) {
     const entries = await readdir(base, { withFileTypes: true }).catch(() => []);
     const packs = entries.filter((d) => d.isDirectory()).map((d) => d.name);
     for (const pack of packs.sort()) {
-      const hash = createHash('sha256');
       const files = (await readdir(path.join(base, pack))).filter((f) => !f.startsWith('_') && !f.endsWith('.md')).sort();
-      for (const f of files) { hash.update(f); hash.update(await readFile(path.join(base, pack, f))); }
-      if (files.length) versions[pack] = hash.digest('hex').slice(0, 8);
+      for (const f of files) {
+        const info = await stat(path.join(base, pack, f));
+        if (!info.isFile()) continue;
+        versions[`${pack}/${f}`] = createHash('sha256').update(await readFile(path.join(base, pack, f))).digest('hex').slice(0, 6);
+      }
     }
   }
   return versions;

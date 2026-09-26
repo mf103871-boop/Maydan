@@ -1,5 +1,5 @@
 import { Avatar, GameArtwork } from '../../shared/brand/art.jsx';
-import React, { useEffect, useReducer, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useReducer, useRef, useState } from 'react';
 import { Screen, Button, Podium, Segment, Card, Scoreboard, Modal, CountUp } from '../../shared/ui/components.jsx';
 import { flashScreen, stampScreen, vignette, burstConfetti, wait } from '../../shared/fx/index.js';
 import { useReaction } from '../../shared/ui/useReaction.js';
@@ -285,10 +285,28 @@ export function Game({ api, players, onExit, savedSession = null, gameOptions = 
     api.setBeforeExit?.(() => latestAct.current('PAUSE'));
     return () => api.setBeforeExit?.(null);
   }, [api]);
-  useEffect(() => {
-    const ok = saveSession(api.storage, state); setSaveOk(ok);
+  // الحفظ مؤجَّل ربع ثانية: كل حرف في المسودة كان يكتب ثلاث مفاتيح في التخزين على الخيط
+  // الرئيسي. تغيّر المرحلة يُحفظ فورًا، والإخفاء والخروج يفرّغان ما تأخر.
+  const latestState = useRef(state); latestState.current = state;
+  const saveTimer = useRef(0);
+  const persist = useCallback(() => {
+    clearTimeout(saveTimer.current); saveTimer.current = 0;
+    const ok = saveSession(api.storage, latestState.current); setSaveOk(ok);
     api.setExitMessage?.(ok ? 'تقدم فبركة محفوظ على هذا الجهاز. يمكنك استئناف اللعبة من إعداداتها عند العودة.' : 'تعذر حفظ آخر تقدم. مغادرة اللعبة أو إغلاق الصفحة قد يفقد هذه الجلسة.');
-  }, [state, api]);
+  }, [api]);
+  const lastPhase = useRef(null);
+  useEffect(() => {
+    const phaseKey = `${state.phase}:${state.round}:${state.writer}:${state.voter}:${state.revealIndex}:${state.revealed}:${state.paused}`;
+    if (lastPhase.current !== phaseKey) { lastPhase.current = phaseKey; persist(); return undefined; }
+    clearTimeout(saveTimer.current);
+    saveTimer.current = setTimeout(persist, 250);
+    return () => clearTimeout(saveTimer.current);
+  }, [state, persist]);
+  useEffect(() => {
+    const flush = () => { if (document.hidden && saveTimer.current) persist(); };
+    document.addEventListener('visibilitychange', flush); window.addEventListener('pagehide', flush);
+    return () => { document.removeEventListener('visibilitychange', flush); window.removeEventListener('pagehide', flush); if (saveTimer.current) persist(); };
+  }, [persist]);
   useEffect(() => { api.setInGame(state.phase !== 'over'); }, [state.phase, api]);
   useEffect(() => {
     const hide = () => { if (document.hidden) latestAct.current('PAUSE'); };

@@ -14,6 +14,12 @@ const TYPING_PER_SECOND = 3;
 const TICKET = /^[A-Za-z0-9_-]{43}$/;
 const METADATA_CHECK_MS = 24 * 60 * 60 * 1000;
 const CLEANUP_RETRY_MS = 60_000;
+// Presence in D1 is a lease refreshed every four minutes, not a write per 20-second
+// heartbeat (that was ~4,000 D1 writes a day for one open tab). Going online or
+// offline still writes at once; the alarm that closes a silent socket after 45 s
+// produces that flip, so a dead phone shows offline within the same window as before.
+const PRESENCE_LEASE_MS = 5 * 60 * 1000;
+const PRESENCE_REFRESH_MS = 4 * 60 * 1000;
 const emptyState = () => ({ userId: null, lastActiveAt: 0, tickets: {}, typingAt: 0, typingCount: 0, onlineBroadcast: false });
 
 const hub = (env, userId) => env.SOCIAL_HUB.get(env.SOCIAL_HUB.idFromName(userId));
@@ -147,12 +153,15 @@ export class SocialHub {
   }
   async presence() {
     if (!this.state.userId) return;
-    const sockets = this.sockets();
-    const onlineUntil = sockets.length ? Math.max(...sockets.map((ws) => this.attachment(ws).seenAt + ONLINE_WINDOW)) : 0;
-    await touchPresence(this.env, this.state.userId, this.state.lastActiveAt, onlineUntil);
+    const now = this.now();
+    const online = this.sockets().length > 0;
+    const flipped = this.state.onlineBroadcast !== online;
+    const stale = !this.state.presenceWrittenAt || now - this.state.presenceWrittenAt >= PRESENCE_REFRESH_MS;
     this.presenceDirty = false;
-    const online = sockets.length > 0;
-    if (this.state.onlineBroadcast === online) return;
+    if (!flipped && !stale) return;
+    await touchPresence(this.env, this.state.userId, this.state.lastActiveAt, online ? now + PRESENCE_LEASE_MS : 0);
+    this.state.presenceWrittenAt = now;
+    if (!flipped) { await this.save(); return; }
     const recipients = await friendIds(this.env, this.state.userId);
     this.state.onlineBroadcast = online;
     await this.save();
@@ -236,6 +245,16 @@ export class SocialHub {
         if (request.method === 'POST' && url.pathname === '/notify') {
           const { userId, event } = await readJson(request, 16_384);
           if (userId !== this.state.userId || !event || typeof event.type !== 'string') return json({ ok: true });
+          // Sign-out pushes the revocation here instead of every socket polling D1.
+          if (event.type === 'session_revoked') {
+            for (const ws of this.sockets()) if (this.attachment(ws).sessionId === event.sessionId) this.close(ws, 4401, 'AUTH_EXPIRED');
+            await this.presence();
+            await this.schedule();
+            return json({ ok: true });
+          }
+          // A session revoked in the database (not through sign-out) must not receive
+          // the event: outbound delivery re-checks every socket. These are D1 reads;
+          // the writes that used to follow each heartbeat are the ones now leased.
           await this.sweep(now, true);
           // A block or unfriend that raced the sender's check wins at delivery.
           if ((event.type === 'typing' || event.reason === 'presence') && !(await areFriends(this.env, userId, event.userId))) return json({ ok: true });

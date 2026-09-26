@@ -4,6 +4,19 @@ import { prepareVisuals } from '../../shared/fx/readiness.js';
 import { Button } from '../../shared/ui/components.jsx';
 import { cacheStartupImages } from '../../shared/media/startup-cache.js';
 import { startupImageUrls } from '../../shared/media/startup-images.js';
+import { pruneStaleMedia } from '../../shared/media/prune.js';
+import { isNativeShell } from '../../shared/account/native.js';
+import { createStorage } from '../../shared/lib/storage.js';
+
+// When the browser cannot keep the images (private mode, full quota), the whole
+// preload would be repeated on every launch. Remember that for a week and skip it.
+const platformStorage = createStorage('platform');
+const UNAVAILABLE_KEY = 'startup-cache-unavailable';
+const UNAVAILABLE_TTL = 7 * 24 * 60 * 60 * 1000;
+export function storageKnownUnavailable(now = Date.now()) {
+  const at = Number(platformStorage.get(UNAVAILABLE_KEY, 0) || 0);
+  return at > 0 && now - at < UNAVAILABLE_TTL;
+}
 import gameIcons from '../../shared/brand/assets/game-icons.webp';
 import avatars from '../../shared/brand/assets/avatars.webp';
 import world from '../../shared/brand/assets/world.webp';
@@ -49,6 +62,13 @@ export function Splash({ onDone, visible = true, reducedMotion = false }) {
   useEffect(() => {
     let active = true;
     const abort = new AbortController();
+    // Inside the iOS shell every image is already bundled and served locally:
+    // preloading would only duplicate sixty megabytes into WebKit's cache.
+    if (isNativeShell() || (attempt === 0 && storageKnownUnavailable())) {
+      setImages({ done: 0, total: 0, ok: 0, failed: 0 });
+      setPhase(isNativeShell() ? 'ready' : 'skipped');
+      return () => { active = false; };
+    }
     setPhase('loading');
     setImages({ done: 0, total: startupImageUrls.length, ok: 0, failed: 0 });
     cacheStartupImages(startupImageUrls, {
@@ -58,7 +78,10 @@ export function Splash({ onDone, visible = true, reducedMotion = false }) {
     }).then((result) => {
       if (!active || result.aborted) return;
       setImages(result);
-      setPhase(result.failed ? 'error' : 'ready');
+      if (result.persistent === false) platformStorage.set(UNAVAILABLE_KEY, Date.now());
+      else platformStorage.remove?.(UNAVAILABLE_KEY);
+      setPhase(result.failed ? 'error' : result.persistent === false ? 'unsaved' : 'ready');
+      if (!result.failed && result.persistent !== false) void pruneStaleMedia();
     }).catch(() => { if (active) setPhase('error'); });
     return () => { active = false; abort.abort(); };
   }, [attempt]);
@@ -71,7 +94,7 @@ export function Splash({ onDone, visible = true, reducedMotion = false }) {
   }, []);
 
   useEffect(() => {
-    if (ready && (phase === 'ready' || canLeave) && !finished.current) { finished.current = true; onDone(); }
+    if (ready && (['ready', 'skipped', 'unsaved'].includes(phase) || canLeave) && !finished.current) { finished.current = true; onDone(); }
   }, [ready, phase, canLeave, onDone]);
 
   const enterWithAvailableImages = () => {
@@ -84,9 +107,9 @@ export function Splash({ onDone, visible = true, reducedMotion = false }) {
   const incomplete = Math.max(0, images.total - images.ok);
 
   if (!visible) {
-    if (phase === 'ready' || statusHidden) return null;
+    if (['ready', 'skipped'].includes(phase) || statusHidden) return null;
     return <aside className="startup-background" aria-label="حالة تحميل الصور">
-      <span role="status">{phase === 'error' ? `باقي ${number(incomplete)} صورة` : `نجهّز الصور بالخلفية · ${number(images.ok)} / ${number(images.total)}`}</span>
+      <span role="status">{phase === 'error' ? `باقي ${number(incomplete)} صورة` : phase === 'unsaved' ? 'الصور نُزّلت لكن المتصفح لم يحفظها؛ ستُجلب عند الحاجة.' : `نجهّز الصور بالخلفية · ${number(images.ok)} / ${number(images.total)}`}</span>
       {phase === 'error' && <button type="button" onClick={() => setAttempt((value) => value + 1)}>إعادة المحاولة</button>}
       <button type="button" className="startup-background-close" aria-label="إخفاء حالة الصور" onClick={() => setStatusHidden(true)}>×</button>
     </aside>;
@@ -103,7 +126,7 @@ export function Splash({ onDone, visible = true, reducedMotion = false }) {
     <div className="splash-loading">
       <div className="loading-status startup-download">
         <span className="startup-download-kicker">نجهّز كل الصور للّعب</span>
-        <h1>{phase === 'error' ? 'باقي صور لم يكتمل تحميلها' : phase === 'ready' ? 'الصور جاهزة، نفتح الساحة…' : 'نحمّل صور الألعاب…'}</h1>
+        <h1>{phase === 'error' ? 'باقي صور لم يكتمل تحميلها' : phase === 'unsaved' ? 'الصور جاهزة لهذه الجلسة' : ['ready', 'skipped'].includes(phase) ? 'الصور جاهزة، نفتح الساحة…' : 'نحمّل صور الألعاب…'}</h1>
         <div className="startup-download-count" aria-hidden="true">
           <b>{number(percent)}٪</b><span>{number(images.ok)} من {number(images.total)} صورة</span>
         </div>
@@ -111,7 +134,9 @@ export function Splash({ onDone, visible = true, reducedMotion = false }) {
         <p className="startup-download-note" role="status" aria-live="polite">
           {phase === 'error'
             ? `تعذّر تجهيز ${number(incomplete)} صورة. تحقّق من الاتصال وأعد المحاولة؛ الصور المكتملة محفوظة إذا كانت مساحة الجهاز تسمح.`
-            : 'ستفتح اللعبة خلال لحظات، وتكتمل الصور في الخلفية. الصور المحفوظة لا نحمّلها مجددًا.'}
+            : phase === 'unsaved'
+              ? 'المتصفح لا يسمح بحفظ الصور على هذا الجهاز (تصفّح خاص أو مساحة ممتلئة)، فستُجلب من الإنترنت عند الحاجة.'
+              : 'ستفتح اللعبة خلال لحظات، وتكتمل الصور في الخلفية. الصور المحفوظة لا نحمّلها مجددًا.'}
         </p>
         <div className="startup-download-actions">
           {phase === 'error' && <Button variant="primary" full onClick={() => setAttempt((value) => value + 1)}>إعادة المحاولة</Button>}

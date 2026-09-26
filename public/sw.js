@@ -31,7 +31,15 @@ const ASSETS = [
   './icons/favicon-32.png',
   './icons/maskable-192.png',
   './icons/maskable-512.png',
-  './icons/apple-touch-icon.png'
+  './icons/apple-touch-icon.png',
+  // The six sound cues (~100 KB together) travel with the shell so the first
+  // gesture can play offline; they used to be 2.8 MB of PCM inside the document.
+  './audio/tap.m4a',
+  './audio/correct.m4a',
+  './audio/wrong.m4a',
+  './audio/reveal.m4a',
+  './audio/start.m4a',
+  './audio/win.m4a'
 ];
 
 // Static hosts may redirect index.html to the directory URL. Navigation
@@ -192,6 +200,7 @@ async function rangedResponse(request, response) {
 // اللاعب تجهيز الجولة قبل سفر أو مكان بلا تغطية.
 self.addEventListener('message', (event) => {
   const data = event.data || {};
+  if (data.type === 'prune-media' && Array.isArray(data.urls)) { pruneMedia(event, data.urls); return; }
   if (data.type !== 'cache-media' || !Array.isArray(data.urls)) return;
   const port = event.ports && event.ports[0];
   const urls = [...new Set(data.urls)];
@@ -235,3 +244,36 @@ self.addEventListener('message', (event) => {
     }).catch(() => post({ type: 'done', total: urls.length, ok: 0, failed: urls.length }))
   );
 });
+
+// Media URLs carry a per-file version (?v=). The page sends the list it currently
+// uses after its startup preload; anything cached under /media/ with another
+// version, or for a file no active question references, is deleted. Without this
+// the media cache grew by a full copy at every content correction and browsers
+// eventually evicted the whole origin under storage pressure.
+function pruneMedia(event, urls) {
+  const mediaBase = new URL('./media/', self.location.href);
+  const current = new Map();
+  for (const url of urls) {
+    try {
+      const address = new URL(url, self.location.href);
+      if (address.origin !== mediaBase.origin || !address.pathname.startsWith(mediaBase.pathname)) continue;
+      if (!current.has(address.pathname)) current.set(address.pathname, new Set());
+      current.get(address.pathname).add(address.searchParams.get('v') || '');
+    } catch (error) { /* not a URL */ }
+  }
+  if (!current.size) return;
+  event.waitUntil(
+    caches.open(MEDIA_CACHE).then(async (cache) => {
+      let removed = 0;
+      for (const request of await cache.keys()) {
+        const address = new URL(request.url);
+        if (!address.pathname.startsWith(mediaBase.pathname)) continue;
+        const versions = current.get(address.pathname);
+        if (versions && versions.has(address.searchParams.get('v') || '')) continue;
+        if (await cache.delete(request)) removed += 1;
+      }
+      const port = event.ports && event.ports[0];
+      if (port) port.postMessage({ type: 'pruned', removed });
+    }).catch(() => {})
+  );
+}

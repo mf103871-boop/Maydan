@@ -12,7 +12,7 @@ import { resolveMedia } from '../src/shared/media/resolve.js';
 test('the complete picture bank resolves to local high-resolution WebP assets with neutral paths', async () => {
   const root = process.cwd();
   const pictures = JSON.parse(await readFile(path.join(root, 'src/data/games/fabraka/pictures.json'), 'utf8'));
-  const manifest = await fabrakaMediaManifest(root, { 'fabraka-v3': 'unit' });
+  const manifest = await fabrakaMediaManifest(root, Object.fromEntries(pictures.map((picture) => [picture.image.replace(/^media\//, ''), 'unit'])));
   assert.equal(manifest.length, pictures.length);
   for (const picture of pictures) {
     const asset = pictureAsset(picture);
@@ -40,8 +40,9 @@ test('missing files block a release and replaced public images change the cache 
   const before = await mediaVersions(root);
   await writeFile(asset, 'test-content-two');
   const after = await mediaVersions(root);
-  assert.notEqual(before['fabraka-v3'], after['fabraka-v3']);
-  assert.equal((await fabrakaMediaManifest(root, after))[0], `./${picture.image}?v=${after['fabraka-v3']}`);
+  const key = picture.image.replace(/^media\//, '');
+  assert.notEqual(before[key], after[key]);
+  assert.equal((await fabrakaMediaManifest(root, after))[0], `./${picture.image}?v=${after[key]}`);
   await writeFile(bank, JSON.stringify([{ ...picture, image: '../outside.webp' }]));
   await assert.rejects(fabrakaMediaManifest(root), /مسار صورة غير صالح/);
 });

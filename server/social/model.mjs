@@ -36,7 +36,9 @@ export function publicProfile(row, { presence = false, now = Date.now() } = {}) 
   const result = { id: row.user_id || row.id, name: publicName(row.name), code: row.code };
   if (presence) {
     result.lastActiveAt = Number(row.last_active_at) || 0;
-    result.online = Number(row.online_until) > now && result.lastActiveAt > now - ONLINE_WINDOW;
+    // The lease is refreshed while a socket is open and cleared the moment the last
+    // one closes or falls silent; last activity is no longer a second condition.
+    result.online = Number(row.online_until) > now;
   }
   return result;
 }
