@@ -3,7 +3,7 @@ import React from 'react';
 import meta from './meta.js';
 import MaydanBeta from './App.js';
 import { BadeehaIcon } from './icon.jsx';
-import { migrateLegacyKeys } from './keys.js';
+import { migrateLegacyKeys, BADEEHA_KEYS } from './keys.js';
 import { CATS } from '../../data/categories/index.js';
 import { collectCredits } from '../../shared/media/resolve.js';
 
@@ -22,6 +22,8 @@ export default {
   icon: BadeehaIcon,
   Component: Game,
   exitMessage: 'تُحفظ المباراة تلقائيًا، ويمكنك متابعتها لاحقًا من شاشة بَديهة.',
+  // شاشة التعطّل تمسح المباراة الجارية أولًا؛ النتائج والسجل والإعدادات تبقى.
+  activeKeys: [BADEEHA_KEYS.active],
   // إسناد كل ملف وسائط في الحزم (صورة/صوت) — تعرضه شاشة «المصادر والتراخيص» في «حول».
   credits: collectCredits(CATS),
 };

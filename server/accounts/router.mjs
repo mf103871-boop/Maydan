@@ -2,7 +2,7 @@
 // يُعيد Response إن كان المسار له، أو null ليكمل الموجّه الأصلي طريقه.
 import { TRIAL_GAMES, PRODUCTS, PROMO_DURATION_MS } from '../../src/shared/account/config.js';
 import { codeHash, isValidCode } from '../../src/shared/account/redeem.js';
-import { json, readJson } from '../protocol.mjs';
+import { json, readJson, sha256 } from '../protocol.mjs';
 import { failure, RoomError } from './errors.mjs';
 import * as db from './db.mjs';
 import * as apple from './apple.mjs';
@@ -12,7 +12,7 @@ import { assertPaddleWebhookIp } from './paddle-ips.mjs';
 import { premiumOf, premiumActive } from './entitlements.mjs';
 import { inBillingEnvironment } from './billing-environment.mjs';
 import {
-  bearer, issueAuthCode, issueSession, me as meOf, readSession, readState, redeemAuthCode,
+  ATTEMPT, bearer, issueAuthCode, issueSession, me as meOf, readSession, readState, redeemAuthCode,
   requireSession, returnRedirect, safeReturn, signState, withRotation,
 } from './session.mjs';
 import { randomHex } from './jwt.mjs';
@@ -30,12 +30,15 @@ const EXACT = new Set(['/api/me', '/api/account', '/api/redeem']);
 export const isAccountPath = (pathname) => EXACT.has(pathname) || PREFIXES.some((prefix) => pathname.startsWith(prefix));
 export const isPublicAccountPath = (pathname) => PUBLIC_PATHS.has(pathname);
 
-const devFake = (env) => env.AUTH_DEV_FAKE === '1';
+// المزوّد الوهمي للتطوير المحلي والاختبارات فقط: راية مضبوطة خطأً على عامل إنتاج
+// (PADDLE_ENV=production) لا تفتح أي حساب ولا تمنح «بلس».
+export const devFake = (env) => env.AUTH_DEV_FAKE === '1' && env.PADDLE_ENV !== 'production';
 const MAX_BODY = 32_768; // JWS آبل وإشعاراتها أكبر بكثير من أجسام الغرف.
 
 export function limitKind(pathname) {
   if (pathname === '/api/me') return 'me';
   if (pathname.startsWith('/api/trials/')) return 'trial';
+  if (pathname === '/api/apple/notifications') return 'webhook';
   if (pathname.startsWith('/api/billing/') || pathname.startsWith('/api/paddle/') || pathname === '/api/apple/transactions' || pathname === '/api/redeem') return 'billing';
   return 'auth';
 }
@@ -45,8 +48,10 @@ export async function routeAccounts(request, env, url, charge) {
   const path = url.pathname;
   if (!isAccountPath(path)) return null;
   if (!env.DB) failure('NOT_FOUND'); // لم تُربط قاعدة D1: الحسابات معطّلة، والغرف تعمل كما كانت.
-  // الـwebhooks لا تُحسب على حصّة عنوان المتصل: المزوّد قد يعيد الإرسال دفعة واحدة.
-  if (charge && path !== '/api/paddle/webhook' && path !== '/api/apple/notifications') await charge(limitKind(path));
+  // webhook Paddle محميّ بقائمة عناوينه وتوقيعه ولا يُحسب على حصّة العنوان (قد يعيد
+  // الإرسال دفعة واحدة). إشعارات آبل تصل من عناوين متغيرة فتأخذ حصّة `webhook` السخية:
+  // مسار عام يفحص توقيعًا قبل أي مصادقة يجب ألا يُستهلك بسيل من عنوان واحد.
+  if (charge && path !== '/api/paddle/webhook') await charge(limitKind(path));
   const method = request.method;
   const now = Date.now();
 
@@ -79,7 +84,8 @@ function billingConfig(env) {
     paddle: paddle.publicConfig(env),
     apple: { purchasesConfigured: apple.purchasesConfigured(env) },
     products: PRODUCTS,
-    providers: { apple: apple.configured(env), google: google.configured(env), dev: devFake(env) },
+    // المزوّد الوهمي لا يُعلَن في الإعداد العام؛ اختبارات التطوير تعرف مساره.
+    providers: { apple: apple.configured(env), google: google.configured(env) },
   });
 }
 
@@ -87,11 +93,17 @@ function billingConfig(env) {
 const clientOf = (value) => (value === 'ios' ? 'ios' : 'web');
 const redirectUri = (url, provider) => `${url.origin}/api/auth/${provider}/callback`;
 
+// The client generates a random attempt secret and keeps it; only its hash travels in
+// the signed state and is stored with the one-time code (see redeemAuthCode).
+async function attemptHashOf(url) {
+  const raw = url.searchParams.get('attempt');
+  return raw && ATTEMPT.test(raw) ? await sha256(raw) : null;
+}
 async function startApple(request, env, url, now) {
   const client = clientOf(url.searchParams.get('client'));
   const target = safeReturn(env, url.searchParams.get('return'), client);
   const nonce = randomHex(16);
-  const state = await signState(env, { p: 'apple', c: client, r: target, nonce }, now);
+  const state = await signState(env, { p: 'apple', c: client, r: target, nonce, a: await attemptHashOf(url) }, now);
   const location = apple.authorizeUrl(env, { redirectUri: redirectUri(url, 'apple'), state, nonce });
   return new Response(null, { status: 302, headers: { location, 'cache-control': 'no-store' } });
 }
@@ -99,7 +111,7 @@ async function startGoogle(request, env, url, now) {
   const client = clientOf(url.searchParams.get('client'));
   const target = safeReturn(env, url.searchParams.get('return'), client);
   const nonce = randomHex(16);
-  const state = await signState(env, { p: 'google', c: client, r: target, nonce }, now);
+  const state = await signState(env, { p: 'google', c: client, r: target, nonce, a: await attemptHashOf(url) }, now);
   const location = google.authorizeUrl(env, { redirectUri: redirectUri(url, 'google'), state, nonce });
   return new Response(null, { status: 302, headers: { location, 'cache-control': 'no-store' } });
 }
@@ -109,8 +121,17 @@ function checkNonce(payload, state) {
   if (!state.nonce || payload.nonce !== state.nonce) failure('STATE');
 }
 
+// Apple documents email_verified as a Boolean or the strings "true"/"false".
+const unverifiedEmail = (value) => value === false || value === 'false';
+async function readForm(request, max = MAX_BODY) {
+  const declared = Number(request.headers.get('content-length'));
+  if (Number.isFinite(declared) && declared > max) failure('INVALID');
+  const text = await request.text();
+  if (text.length > max) failure('INVALID');
+  return new URLSearchParams(text);
+}
 async function callbackApple(request, env, url, now) {
-  const form = new URLSearchParams(await request.text());
+  const form = await readForm(request);
   const state = await readState(env, form.get('state'), now);
   if (state.p !== 'apple') failure('STATE');
   const idToken = form.get('id_token');
@@ -125,9 +146,9 @@ async function callbackApple(request, env, url, now) {
   }
   const user = await db.linkIdentity(env, {
     provider: 'apple', subject: payload.sub, name: apple.nameFromForm(form.get('user')),
-    email: payload.email_verified === false ? null : (payload.email || null), refreshToken, now,
+    email: unverifiedEmail(payload.email_verified) ? null : (payload.email || null), refreshToken, now,
   });
-  return returnRedirect(state.r, await issueAuthCode(env, user.id, state.c, now));
+  return returnRedirect(state.r, await issueAuthCode(env, user.id, state.c, now, state.a || null));
 }
 
 async function callbackGoogle(request, env, url, now) {
@@ -140,7 +161,7 @@ async function callbackGoogle(request, env, url, now) {
   checkNonce(payload, state);
   const profile = google.profileOf(payload);
   const user = await db.linkIdentity(env, { provider: 'google', subject: profile.subject, name: profile.name, email: profile.email, now });
-  return returnRedirect(state.r, await issueAuthCode(env, user.id, state.c, now));
+  return returnRedirect(state.r, await issueAuthCode(env, user.id, state.c, now, state.a || null));
 }
 
 // ── تحويل الهوية إلى جلسة ───────────────────────────────────────────────────
@@ -151,7 +172,7 @@ async function sessionResponse(env, user, client, now, status = 200) {
 
 async function exchange(request, env, now) {
   const body = await readJson(request);
-  const row = await redeemAuthCode(env, body.code, now);
+  const row = await redeemAuthCode(env, body.code, now, typeof body.attempt === 'string' ? body.attempt : null);
   const user = await db.userById(env, row.user_id);
   if (!user) failure('STATE');
   return sessionResponse(env, user, clientOf(body.client || row.client), now);
@@ -170,14 +191,18 @@ async function appleNative(request, env, now) {
   const name = apple.nameFromForm(body.fullName);
   const user = await db.linkIdentity(env, {
     provider: 'apple', subject: payload.sub, name,
-    email: payload.email_verified === false ? null : (payload.email || null), refreshToken, now,
+    email: unverifiedEmail(payload.email_verified) ? null : (payload.email || null), refreshToken, now,
   });
   return sessionResponse(env, user, 'ios', now);
 }
 
 async function signout(request, env, now) {
   const found = await readSession(env, request, { now, rotate: false });
-  if (found) await db.revokeSession(env, found.session.id, now);
+  if (found) {
+    await db.revokeSession(env, found.session.id, now);
+    // Tell the live hub at once, so its sockets need not poll the session table.
+    await notifyUsers(env, [found.user.id], { type: 'session_revoked', sessionId: found.session.id });
+  }
   return new Response(null, { status: 204, headers: { 'cache-control': 'no-store' } });
 }
 
@@ -258,6 +283,8 @@ async function paddlePortal(request, env, now) {
 }
 async function paddleWebhook(request, env, now) {
   await assertPaddleWebhookIp(request, env);
+  const declared = Number(request.headers.get('content-length'));
+  if (Number.isFinite(declared) && declared > 262_144) failure('INVALID');
   const raw = await request.text();
   if (raw.length > 262_144) failure('INVALID');
   await paddle.verifySignature(env, request.headers.get('paddle-signature'), raw, now);
@@ -266,9 +293,36 @@ async function paddleWebhook(request, env, now) {
   if (!event?.event_id) failure('INVALID');
   const eventId = `paddle:${paddle.environmentOf(env)}:${event.event_id}`;
   if (await db.webhookEvent(env, eventId)) return json({ ok: true, duplicate: true });
+  try {
+    return await applyPaddleEvent(env, event, eventId, now);
+  } catch (error) {
+    // Conditions that can never change (a subscription linked to another account, an
+    // event from the other billing environment) are acknowledged, or Paddle retries
+    // them for three days and every retry alerts.
+    if (error instanceof RoomError && ['ALREADY_LINKED', 'NOT_ELIGIBLE'].includes(error.code)) {
+      await db.markWebhookEvent(env, eventId, now);
+      return json({ ok: true, ignored: error.code });
+    }
+    throw error;
+  }
+}
+async function applyPaddleEvent(env, event, eventId, now) {
   if (await paddle.recoverCheckoutEvent(env, event)) {
     await db.markWebhookEvent(env, eventId, now);
     return json({ ok: true, recovered: true });
+  }
+  // A full refund or an approved chargeback takes the entitlement away at once and
+  // stops the next renewal; subscription.* events never carry that information.
+  const revocation = paddle.adjustmentRevocation(event, now);
+  if (revocation) {
+    const existing = await db.subscriptionByExternal(env, 'paddle', revocation.subscriptionId);
+    if (existing && inBillingEnvironment(env, existing)) {
+      await db.upsertSubscription(env, { source: 'paddle', external_id: existing.external_id, user_id: existing.user_id, product: existing.product,
+        status: 'revoked', until: 0, will_renew: false, environment: existing.environment, occurred_at: Math.max(Number(existing.occurred_at) || 0, revocation.occurredAt) });
+      try { await paddle.cancelSubscription(env, existing.external_id, { verifyFirst: true }); } catch { /* the next subscription event settles it */ }
+    }
+    await db.markWebhookEvent(env, eventId, now);
+    return json({ ok: true, revoked: Boolean(existing), action: revocation.action });
   }
   const row = paddle.subscriptionRow(env, event, now);
   if (!row) {
@@ -345,19 +399,38 @@ async function redeem(request, env, now) {
 // ── بوابة إنشاء الغرف ───────────────────────────────────────────────────────
 export const gameOf = (input) => (TRIAL_GAMES.includes(input?.game) ? input.game : 'meenfina');
 // المجهول يبقى مسموحًا (العلامة محلية)؛ المسجّل غير المشترك يُحسب له إنشاء واحد لكل لعبة.
+// المجهول يُحسب له أيضًا: معرّف جهاز عشوائي يولّده العميل ويحتفظ به، وتُسجَّل تجربته في
+// جدول التجارب نفسه تحت `device:<id>`. مسح التخزين يعطي معرّفًا جديدًا (كما هو حال بقية
+// المحتوى المحلي)، لكن الخادم صار مصدر الحقيقة بدل علامة في localStorage وحدها.
+const DEVICE_ID = /^[a-f0-9]{32}$/;
+const deviceKeyOf = (input) => (typeof input?.deviceId === 'string' && DEVICE_ID.test(input.deviceId) ? `device:${input.deviceId}` : null);
 export async function roomGate(request, env, input, now = Date.now()) {
-  if (!env.DB || !bearer(request)) return null;
-  let found = null;
-  try { found = await readSession(env, request, { now, rotate: false }); }
-  catch (error) { if (error instanceof RoomError) return null; throw error; } // رمز قديم = ضيف، لا رفض
-  if (!found) return null;
+  if (!env.DB) return null;
   const game = gameOf(input);
-  const [subscriptions, trials] = await Promise.all([db.subscriptionsOf(env, found.user.id), db.trialsOf(env, found.user.id)]);
+  const device = deviceKeyOf(input);
+  let found = null;
+  if (bearer(request)) {
+    try { found = await readSession(env, request, { now, rotate: false }); }
+    catch (error) { if (!(error instanceof RoomError)) throw error; } // رمز قديم = ضيف، لا رفض
+  }
+  if (!found) {
+    if (!device) return null; // لا هوية إطلاقًا: تبقى علامة العميل المحلية هي الحارس
+    const trials = await db.trialsOf(env, device);
+    if (trials[game]) failure('PLUS_REQUIRED');
+    return { userId: null, device, game, premium: false };
+  }
+  const [subscriptions, trials, deviceTrials] = await Promise.all([
+    db.subscriptionsOf(env, found.user.id), db.trialsOf(env, found.user.id), device ? db.trialsOf(env, device) : {},
+  ]);
   const premium = premiumActive(premiumOf(subscriptions, now, env), now);
-  if (!premium && trials[game]) failure('PLUS_REQUIRED');
-  return { userId: found.user.id, game, premium };
+  // اتحاد الحساب والجهاز، كما يتحد المحلي والخادم في العميل: الدخول لا يستعيد تجربة مستهلكة.
+  if (!premium && (trials[game] || deviceTrials[game])) failure('PLUS_REQUIRED');
+  return { userId: found.user.id, device, game, premium };
 }
 export async function markRoomTrial(env, gate, now = Date.now()) {
   if (!gate) return;
-  try { await db.addTrial(env, gate.userId, gate.game, now); } catch { /* الغرفة أُنشئت فعلًا */ }
+  for (const key of [gate.userId, gate.device]) {
+    if (!key) continue;
+    try { await db.addTrial(env, key, gate.game, now); } catch { /* الغرفة أُنشئت فعلًا */ }
+  }
 }

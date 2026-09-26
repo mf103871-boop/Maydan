@@ -23,7 +23,9 @@ export async function routeProfiles(request,env,url=new URL(request.url),charge)
     const found=await db.currentImage(env,image[1],image[2],image[3]);
     if(!found) return json({error:'NOT_FOUND'},404,{'x-content-type-options':'nosniff'});
     return new Response(request.method==='HEAD'?null:base64ToBytes(found.data_base64),{headers:{
-      'content-type':'image/jpeg','content-length':String(found.byte_length),'cache-control':'no-store',
+      // The path carries the content hash: a replaced image gets a new URL, so the
+      // current one may be cached for a year at the edge and in the browser.
+      'content-type':'image/jpeg','content-length':String(found.byte_length),'cache-control':'public, max-age=31536000, immutable','etag':`"${image[3]}"`,
       'x-content-type-options':'nosniff','content-security-policy':"default-src 'none'; sandbox",'cross-origin-resource-policy':'cross-origin',
     }});
   }
@@ -36,7 +38,10 @@ export async function routeProfiles(request,env,url=new URL(request.url),charge)
 }
 async function dispatch(request,env,url,id) {
   const path=url.pathname.slice('/api/profiles'.length); const method=request.method; const now=Date.now();
-  await db.ensurePlayerProfile(env,id,now);
+  // The achievement batch (a write) runs for the viewer's own profile and for writes.
+  // Plain reads of other profiles must not write, or any visitor could bump a
+  // player's revision and turn their concurrent save into a 409.
+  if(method!=='GET' || path==='/me') await db.ensurePlayerProfile(env,id,now);
   if(method!=='GET') await chargeUser(env,id,'write',now);
   if(path==='/me' && method==='GET') return json({profile:await db.profileFor(env,id,id)});
   if(path==='/search' && method==='GET') {

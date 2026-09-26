@@ -55,7 +55,7 @@ enum BridgeError: String {
     case invalid = "SIGNATURE"
 }
 
-final class GameViewController: UIViewController, WKNavigationDelegate, WKScriptMessageHandler {
+final class GameViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, WKScriptMessageHandler {
     private enum Constants {
         static let bridgeName = "maydan"
         static let maximumShareTextLength = 10_000
@@ -97,6 +97,8 @@ final class GameViewController: UIViewController, WKNavigationDelegate, WKScript
         configuration.defaultWebpagePreferences.allowsContentJavaScript = true
         configuration.preferences.javaScriptCanOpenWindowsAutomatically = false
         configuration.mediaTypesRequiringUserActionForPlayback = []
+        // مقاطع الأسئلة تُعرض داخل الصفحة لا في مشغّل ملء الشاشة.
+        configuration.allowsInlineMediaPlayback = true
         configuration.suppressesIncrementalRendering = false
         if let directory = Self.gameDirectory {
             configuration.setURLSchemeHandler(AppSchemeHandler(directory: directory), forURLScheme: AppSchemeHandler.scheme)
@@ -110,6 +112,7 @@ final class GameViewController: UIViewController, WKNavigationDelegate, WKScript
         self.webView = webView
         webView.translatesAutoresizingMaskIntoConstraints = false
         webView.navigationDelegate = self
+        webView.uiDelegate = self
         webView.isOpaque = false
         webView.backgroundColor = Constants.backgroundColor
         webView.scrollView.backgroundColor = Constants.backgroundColor
@@ -152,6 +155,7 @@ final class GameViewController: UIViewController, WKNavigationDelegate, WKScript
             forName: Constants.bridgeName
         )
         webView?.navigationDelegate = nil
+        webView?.uiDelegate = nil
         bridgeProxy?.delegate = nil
     }
 
@@ -231,8 +235,14 @@ final class GameViewController: UIViewController, WKNavigationDelegate, WKScript
             return
         }
 
-        // اللعبة مدمجة كاملة: أصلها وحده يتنقّل داخل العرض.
+        // اللعبة مدمجة كاملة: أصلها وحده يتنقّل داخل العرض. رابط داخلي بـ target="_blank"
+        // (targetFrame == nil) لا نافذة له في WKWebView، فيُفتح في العرض نفسه بدل أن يضيع.
         if isTrustedGameURL(url) {
+            if navigationAction.targetFrame == nil {
+                webView.load(URLRequest(url: url))
+                decisionHandler(.cancel)
+                return
+            }
             decisionHandler(.allow)
             return
         }
@@ -243,12 +253,36 @@ final class GameViewController: UIViewController, WKNavigationDelegate, WKScript
             return
         }
         // رابط خارجي نقره اللاعب (المصادر والتراخيص مثلًا) يُفتح في Safari لا داخل اللعبة.
-        if navigationAction.navigationType == .linkActivated,
-           let scheme = url.scheme?.lowercased(),
-           scheme == "https" || scheme == "mailto" {
+        if navigationAction.navigationType == .linkActivated, Self.isExternalLink(url) {
             UIApplication.shared.open(url)
         }
         decisionHandler(.cancel)
+    }
+
+    /// https أو mailto فقط تُسلَّم للنظام؛ لا مخططات أخرى (tel، javascript، ملفات) من صفحة اللعبة.
+    private static func isExternalLink(_ url: URL) -> Bool {
+        guard let scheme = url.scheme?.lowercased() else { return false }
+        return scheme == "https" || scheme == "mailto"
+    }
+
+    // MARK: - WKUIDelegate
+
+    /// روابط `target="_blank"` وwindow.open: لا نافذة ثانية في الغلاف. رابط اللعبة يُحمَّل في
+    /// العرض نفسه، والرابط الخارجي (تراخيص الأصوات في «عن ميدان» مثلًا) يُفتح في Safari.
+    func webView(
+        _ webView: WKWebView,
+        createWebViewWith configuration: WKWebViewConfiguration,
+        for navigationAction: WKNavigationAction,
+        windowFeatures: WKWindowFeatures
+    ) -> WKWebView? {
+        if let url = navigationAction.request.url {
+            if isTrustedGameURL(url) {
+                webView.load(URLRequest(url: url))
+            } else if Self.isExternalLink(url) {
+                UIApplication.shared.open(url)
+            }
+        }
+        return nil
     }
 
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {

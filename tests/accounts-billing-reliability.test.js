@@ -61,7 +61,11 @@ test('subscription and customer ownership cannot be silently reassigned', async 
   const owner = await db.createUser(env), other = await db.createUser(env);
   const event = eventFor(owner.id);
   await hook(env, event);
-  await assert.rejects(hook(env, { ...eventFor(other.id), event_id: 'evt_other' }), /ALREADY_LINKED/);
+  // A permanent condition is acknowledged (Paddle must stop retrying) without moving the row.
+  const foreign = await hook(env, { ...eventFor(other.id), event_id: 'evt_other' });
+  assert.equal(foreign.status, 200);
+  assert.equal((await foreign.json()).ignored, 'ALREADY_LINKED');
+  assert.equal((await db.subscriptionByExternal(env, 'paddle', 'sub_retry')).user_id, owner.id);
   await db.upsertSubscription(env, { ...paddle.subscriptionRow(env, event), user_id: other.id, occurred_at: now + 10000 });
   assert.equal((await db.subscriptionByExternal(env, 'paddle', 'sub_retry')).user_id, owner.id);
   await db.setPaddleCustomer(env, owner.id, 'ctm_owner');
@@ -166,6 +170,10 @@ test('native transaction finish follows server save; failed save never acknowled
   let finished = false;
   await assert.rejects(deliverAppleTransaction('signed', { submit: async () => { throw new Error('offline'); }, apply: () => {}, acknowledge: async () => { finished = true; } }), /offline/);
   assert.equal(finished, false);
+  // A transaction bound to another account is finished so StoreKit stops replaying it.
+  let terminal = 0;
+  await assert.rejects(deliverAppleTransaction('signed', { submit: async () => { throw Object.assign(new Error('ALREADY_LINKED'), { code: 'ALREADY_LINKED' }); }, apply: () => {}, acknowledge: async () => { terminal += 1; } }), /ALREADY_LINKED/);
+  assert.equal(terminal, 1);
   const swift = readFileSync('ios/Maydan/StoreManager.swift', 'utf8');
   assert.equal([...swift.matchAll(/await transaction\.finish\(\)/g)].length, 1);
   assert.match(swift, /func finishTransaction\(jws: String\)[\s\S]*await transaction\.finish\(\)/);

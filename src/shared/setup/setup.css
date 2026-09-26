@@ -26,3 +26,8 @@
 .pass-name { font-size: clamp(30px, 9vw, 44px); font-weight: 900; color: #fff; animation: ui-lift-in .36s var(--ease-out) .12s both; }
 .pass-hint { font-size: 14px; color: var(--muted); max-width: 320px; line-height: 1.7; }
 .pass-revealed { animation: ui-lift-in .36s var(--ease-out) both; }   /* غلاف الأبناء بعد الكشف */
+
+/* بطاقة «لعبتكم بانتظاركم» فوق إعدادات اللعبة: حافة بلون اللعبة وومضة قصيرة عند الظهور */
+.resume-card { position: relative; border-color: var(--game-accent) !important; background: var(--top-light), color-mix(in srgb, var(--game-accent) 8%, var(--surface)) !important; animation: ui-lift-in .35s var(--ease-out) both; }
+.resume-card::after { content: ""; position: absolute; inset: -5px; border-radius: inherit; pointer-events: none; box-shadow: 0 0 0 4px color-mix(in srgb, var(--game-accent) 35%, transparent); opacity: 0; animation: ui-glow 2.2s ease-in-out .5s 2; }
+.resume-card .card-muted { margin: 0; }

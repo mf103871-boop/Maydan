@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { initialState, reduce, currentTeam, standings, createCardSource, normalizeOptions, MAX_SKIPS } from '../src/games/mamnoo/logic.js';
+import { initialState, reduce, currentTeam, standings, createCardSource, normalizeOptions, restoreSession, sessionSnapshot, MAX_SKIPS } from '../src/games/mamnoo/logic.js';
 import { seeded } from './helpers.js';
 
 const teams = [{ id: 't1', name: 'الصقور', color: '#111' }, { id: 't2', name: 'النمور', color: '#222' }];
@@ -47,4 +47,35 @@ test('نفاد البطاقات ينهي الجولة، وأفعال خارج م
   assert.equal(s.phase, 'roundEnd');
   assert.equal(reduce(s, { type: 'CORRECT', card: cards[1] }), s);
   assert.equal(reduce(initialState(teams, {}), { type: 'BEGIN', card: null }).phase, 'over');
+});
+
+test('الجلسة المحفوظة: لقطة الحالة تعود كما هي في كل مرحلة، والتالف يُرفض بدل أن يُسقط الشاشة', () => {
+  const source = createCardSource(cards, { random: seeded(3) });
+  let s = initialState(teams, { seconds: 60, rounds: 2 });
+  const snap = (state, extra = {}) => sessionSnapshot({ teams, settings: { seconds: 60, rounds: 2 }, seed: 3, cursor: source.cursor, timeLeft: null, profileSession: null, state, ...extra });
+  const check = (state) => {
+    const restored = restoreSession(JSON.parse(JSON.stringify(snap(state))));
+    assert.ok(restored, `restore ${state.phase}`);
+    assert.deepEqual(restored.state, JSON.parse(JSON.stringify(state)), 'الحقول غير المعرَّفة (emoji) تسقط في JSON فقط');
+    assert.deepEqual(restored.settings, { seconds: 60, rounds: 2 });
+  };
+  check(s);
+  s = reduce(s, { type: 'BEGIN', card: source.next() }); check(s);
+  s = reduce(s, { type: 'CORRECT', card: source.next() }); s = reduce(s, { type: 'BUZZ', card: source.next() }); check(s);
+  assert.equal(s.scores.t1, 0, 'ممنوع يخصم؛ الخريطة تقبل الأعداد السالبة');
+  s = reduce(s, { type: 'BUZZ', card: source.next() }); assert.equal(s.scores.t1, -1); check(s);
+  s = reduce(s, { type: 'TIME_UP' }); check(s);
+  assert.ok(restoreSession(snap(s, { timeLeft: 12.5 })), 'وقت متبقٍ صالح');
+  const over = reduce(reduce(reduce(reduce(s, { type: 'NEXT' }), { type: 'BEGIN', card: source.next() }), { type: 'TIME_UP' }), { type: 'END' });
+  assert.equal(restoreSession(snap(over)), null, 'المباراة المنتهية لا تُستأنف');
+  const base = JSON.parse(JSON.stringify(snap(s)));
+  const broken = [
+    (r) => { r.schemaVersion = 2; }, (r) => { r.game = 'beep'; }, (r) => { r.seed = -1; }, (r) => { r.cursor = 'x'; }, (r) => { r.timeLeft = -3; },
+    (r) => { r.teams = [{}, {}]; }, (r) => { r.state.teams[0].name = 7; }, (r) => { r.settings = { seconds: 45, rounds: 2 }; },
+    (r) => { r.state.phase = 'oops'; }, (r) => { r.state.scores = { t1: 0 }; }, (r) => { r.state.scores.t1 = 1.5; }, (r) => { r.state.turn = 2; },
+    (r) => { r.state.round = 3; }, (r) => { r.state.skipsLeft = MAX_SKIPS + 1; }, (r) => { r.state.tally = null; }, (r) => { r.state.log.push({ teamId: 'zz' }); },
+    (r) => { r.state.phase = 'play'; r.state.card = null; }, (r) => { r.state.card = { id: 'c1' }; }, (r) => { r.state.completed = 'no'; },
+  ];
+  for (const change of broken) { const r = structuredClone(base); change(r); assert.equal(restoreSession(r), null); }
+  assert.equal(restoreSession(null), null); assert.equal(restoreSession('x'), null);
 });

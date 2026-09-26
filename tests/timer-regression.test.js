@@ -154,8 +154,9 @@ test('لا شرط تشغيل هشّ مبني على مساواة timer.left في
   for (const [name, src] of [['mamnoo', mamnooSrc], ['beep', beepSrc]]) {
     assert.doesNotMatch(src, /timer\.left\s*===/, `${name}: تشغيل المؤقت لا يجوز أن يعتمد على مساواة left`);
   }
-  assert.match(mamnooSrc, /state\.phase === 'play'\) \{ timer\.reset\(state\.seconds\); timer\.start\(\); \}/);
-  assert.match(beepSrc, /state\.phase === 'prompt'\) \{ timer\.reset\(state\.bombSeconds\); timer\.start\(\); \}/);
+  // الجولة المستأنفة تبدأ من الوقت المحفوظ مرة واحدة (resumeLeft) ثم من المدة الكاملة.
+  assert.match(mamnooSrc, /state\.phase === 'play'\) \{ timer\.reset\(resumeLeft\.current \?\? state\.seconds\); resumeLeft\.current = null; timer\.start\(\); \}/);
+  assert.match(beepSrc, /state\.phase === 'prompt'\) \{ timer\.reset\(resumeLeft\.current \?\? state\.bombSeconds\); resumeLeft\.current = null; timer\.start\(\); \}/);
   assert.doesNotMatch(beepSrc, /source\.next\(1, 1\)/, 'وضع القنبلة لا يسحب أصعب الطلبات');
   assert.match(beepSrc, /bombPromptArgs\(/);
 });
@@ -167,20 +168,41 @@ function extractTimerEffect(src, marker) {
   assert.ok(line, `لم يُعثر على تأثير المؤقت (${marker})`);
   const m = /useEffect\(\(\) => \{(.*)\}, \[(.*?)\]\)/.exec(line);
   assert.ok(m, `تعذّر تحليل التأثير: ${line}`);
-  return { run: new Function('state', 'timer', m[1]), deps: new Function('state', `return [${m[2]}]`) };
+  // resumeLeft: مرجع الوقت المحفوظ الذي تقرأه الجولة المستأنفة (null في مباراة جديدة).
+  return { run: new Function('state', 'timer', 'resumeLeft', m[1]), deps: new Function('state', `return [${m[2]}]`) };
 }
 
-function makeEffectRunner(effect, timerHandle) {
+function makeEffectRunner(effect, timerHandle, resumeLeft = { current: null }) {
   let prev = null;
   const same = (a, b) => a && b && a.length === b.length && a.every((v, i) => Object.is(v, b[i]));
   return (state) => { // = تصيير React: props ثم التأثير عند تغيّر الاعتمادات
     const next = effect.deps(state);
     if (same(prev, next)) return;
     prev = next;
-    effect.run(state, timerHandle.current);
+    effect.run(state, timerHandle.current, resumeLeft);
     timerHandle.flush();
   };
 }
+
+// ── الاستئناف: الدور المحفوظ يبدأ من وقته المتبقي مرة واحدة، والدور التالي من المدة الكاملة ──
+test('ممنوع: الجولة المستأنفة تبدأ من الوقت المحفوظ مرة واحدة فقط', () => {
+  const teams = [{ id: 't1', name: 'أ', color: '#111' }, { id: 't2', name: 'ب', color: '#222' }];
+  const card = (i) => ({ id: `c${i}`, word: `w${i}`, forbidden: ['1'], category: 'x', difficulty: 1 });
+  let s = mamnooReduce(mamnooInit(teams, { seconds: 45, rounds: 1 }), { type: 'BEGIN', card: card(0) });
+  const h = mountTimer({ seconds: s.seconds, onEnd: () => { s = mamnooReduce(s, { type: 'TIME_UP' }); } });
+  const resumeLeft = { current: 12 };
+  const runEffect = makeEffectRunner(extractTimerEffect(mamnooSrc, "state.phase === 'play'"), h, resumeLeft);
+  runEffect(s); // تركيب الجولة المستأنفة في مرحلة اللعب
+  assert.equal(h.current.running, true);
+  assert.equal(h.current.left, 12, 'يبدأ من الوقت المحفوظ');
+  assert.equal(resumeLeft.current, null, 'الوقت المحفوظ يُستهلك مرة واحدة');
+  h.advance(12);
+  assert.equal(s.phase, 'roundEnd');
+  runEffect(s);
+  s = mamnooReduce(s, { type: 'NEXT' }); runEffect(s);
+  s = mamnooReduce(s, { type: 'BEGIN', card: card(1) }); runEffect(s);
+  assert.equal(h.current.left, 45, 'الدور التالي من المدة الكاملة');
+});
 
 // ── ممنوع: جولتان كاملتان، المؤقت الحقيقي يُقاد بتأثير Game.jsx الحقيقي ──
 test('ممنوع: المؤقت يعمل في كل دور من الجولة الأولى حتى الأخيرة', () => {
@@ -290,4 +312,34 @@ test('القنبلة تسحب طلبات سهلة/متوسطة لا أصعب ا�
   // بينما القديم (source.next(1, 1)) كان يبدأ بالمستوى 3 دائمًا
   const old = createPromptSource(prompts, { random: seeded(4) });
   assert.equal(old.next(1, 1).difficulty, 3, 'السلوك القديم كان يبدأ بالأصعب');
+});
+
+// ── انحدار: pause() أثناء عدّ 3-2-1 كان بلا أثر، فيستدعي العدّ start() ويعمل مؤقت شبح ──
+test('useTimer: pause أثناء عدّ الاستئناف يلغيه ولا يشغّل مؤقتًا شبحًا', () => {
+  const queued = [];
+  const previousTimeout = globalThis.setTimeout;
+  globalThis.setTimeout = (fn) => { queued.push(fn); return queued.length; };
+  try {
+    let ended = 0;
+    const h = mountTimer({ seconds: 60, onEnd: () => { ended += 1; } });
+    h.current.start(); h.flush(); h.advance(5);
+    h.current.pause(); h.flush();
+    assert.equal(h.current.paused, true);
+    h.current.resume(); h.flush();
+    assert.equal(h.current.resuming, 3, 'العدّ 3-2-1 بدأ');
+    // «إنهاء» من المضيف أثناء العدّ (على جبينك لا تعرض واجهة العدّ أصلًا)
+    h.current.pause(); h.flush();
+    assert.equal(h.current.resuming, null, 'الإيقاف يلغي العدّ');
+    assert.equal(h.current.paused, true);
+    assert.equal(h.current.running, false);
+    while (queued.length) { const fn = queued.shift(); fn(); h.flush(); }
+    assert.equal(h.current.running, false, 'لا مؤقت شبح بعد إلغاء العدّ');
+    assert.equal(h.current.resuming, null);
+    h.advance(120);
+    assert.equal(ended, 0, 'لا صفارة نهاية لدور لم يُستأنف');
+    // الاستئناف العادي ما زال يعمل بعد العدّ الكامل
+    h.current.resume(); h.flush();
+    while (queued.length) { const fn = queued.shift(); fn(); h.flush(); }
+    assert.equal(h.current.running, true, 'العدّ الكامل يشغّل المؤقت');
+  } finally { globalThis.setTimeout = previousTimeout; }
 });

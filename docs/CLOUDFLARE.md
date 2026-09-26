@@ -67,9 +67,21 @@ npm run cloudflare:check
 
 بدون ربط `DB` يبقى كل ما سبق يعمل كما هو: الغرف والملفات والوسائط، وتردّ مسارات `/api/auth` و`/api/me` بـ404.
 
-## الخيار الموجود سابقًا: GitHub Pages مع خادم منفصل
+## ترتيب النشر والرصد
 
-ما زال `npm run rooms:deploy` ينشر **خادم الغرف فقط** وفق `wrangler.rooms.jsonc`. بعده تضبط عنوان الخادم في `online.config.json` وترفع الواجهة بنفسك إلى GitHub Pages، كما في `docs/ONLINE.md`.
+ثلاثة ملفات Wrangler، وعامل واحد هو الأصل الرسمي:
+
+| العامل | الملف | متى يُنشر |
+| --- | --- | --- |
+| `maydan-game` | `wrangler.jsonc` | **دائمًا أولًا**: اللعبة والغرف والحسابات، وفيه وحده cron التنظيف اليومي (`17 3 * * *`). |
+| `maydan-rooms` | `wrangler.rooms.jsonc` | اختياري للخيار القديم (واجهة مستضافة بعيدًا). يربط `SOCIAL_HUB` بعامل `maydan-game` فيفشل نشره قبله. بلا cron حتى لا يجري التنظيف مرتين على القاعدة نفسها. |
+| `maydan-paddle-live` | `wrangler.paddle-live.jsonc` | مدخل webhook للإنتاج فقط؛ مستقل عن الاثنين. |
+
+`observability.enabled: true` في الثلاثة: سجلات `console` وأخطاء 5xx تظهر في لوحة Cloudflare (Workers → Logs) ضمن الخطة المجانية. الأخطاء الداخلية تُسجَّل باسمها ورسالتها فقط دون بيانات شخصية (`server/protocol.mjs`).
+
+## الخيار القديم: واجهة مستضافة منفصلة مع `maydan-rooms`
+
+ما زال `npm run rooms:deploy` ينشر **خادم الغرف فقط** وفق `wrangler.rooms.jsonc` (بعد `maydan-game`). بعده تضبط عنوان الخادم في `online.config.json` وترفع الواجهة بنفسك إلى استضافتك؛ سير عمل GitHub Pages صار يدويًا فقط، كما في `docs/ONLINE.md`.
 
 لرفع ميدان كاملة إلى Cloudflare استخدم **`npm run cloudflare:deploy`**. هذا الأمر يستعمل `wrangler.jsonc`، وخادم `server/full-worker.mjs`، وبناء `build:cloudflare` الذي يربط API بالموقع نفسه. عند الربط عبر Workers Builds ضع `npm run build:cloudflare` في خانة Build command كما هو موضح أعلاه.
 

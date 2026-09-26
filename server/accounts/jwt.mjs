@@ -50,7 +50,7 @@ async function jwks(url) {
   const cached = jwksCache.get(url);
   if (cached && cached.expires > Date.now()) return cached.keys;
   let response;
-  try { response = await fetch(url, { headers: { accept: 'application/json' } }); }
+  try { response = await fetch(url, { headers: { accept: 'application/json' }, signal: providerSignal() }); }
   catch { return failure('PROVIDER'); }
   if (!response.ok) failure('PROVIDER');
   let keys;
@@ -79,8 +79,10 @@ export async function verifyJwt(token, { jwksUrl, issuer, audience, nonce, now =
   const wanted = (Array.isArray(audience) ? audience : [audience]).filter(Boolean);
   if (issuer && payload.iss !== issuer) failure('SIGNATURE');
   if (wanted.length && !audiences.some((value) => wanted.includes(value))) failure('SIGNATURE');
-  if (Number.isFinite(payload.exp) && payload.exp * 1000 + skew < now) failure('SIGNATURE');
+  // A token without an expiry would be valid for ever; Apple and Google always set one.
+  if (!Number.isFinite(payload.exp) || payload.exp * 1000 + skew < now) failure('SIGNATURE');
   if (Number.isFinite(payload.iat) && payload.iat * 1000 - skew > now) failure('SIGNATURE');
+  if (Number.isFinite(payload.nbf) && payload.nbf * 1000 - skew > now) failure('SIGNATURE');
   if (nonce && payload.nonce !== nonce) failure('SIGNATURE');
   return payload;
 }
@@ -123,9 +125,12 @@ export function safeEqual(a, b) {
 }
 
 // نداء مزوّد خارجي: أي فشل شبكة أو رد غير JSON يصير PROVIDER بدل 500 غامض.
+// A hanging provider must not pin a Worker request until the platform kills it.
+export const PROVIDER_TIMEOUT_MS = 10_000;
+export const providerSignal = () => (typeof AbortSignal !== 'undefined' && AbortSignal.timeout ? AbortSignal.timeout(PROVIDER_TIMEOUT_MS) : undefined);
 export async function providerFetch(url, init = {}) {
   let response;
-  try { response = await fetch(url, init); } catch { return failure('PROVIDER'); }
+  try { response = await fetch(url, { ...init, signal: init.signal || providerSignal() }); } catch { return failure('PROVIDER'); }
   const text = await response.text();
   let data = null;
   try { data = text ? JSON.parse(text) : null; } catch { data = null; }

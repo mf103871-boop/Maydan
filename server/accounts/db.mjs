@@ -69,7 +69,15 @@ export async function useAuthCode(env, codeHash, now) {
   const result = await run(env, 'UPDATE auth_codes SET used_at = ? WHERE code_hash = ? AND used_at IS NULL AND expires_at > ?', now, codeHash, now);
   return (result?.meta?.changes ?? result?.meta?.rows_written ?? 0) > 0;
 }
-export const pruneAuthCodes = (env, now) => run(env, 'DELETE FROM auth_codes WHERE expires_at < ?', now - 3_600_000);
+export async function pruneAuthCodes(env, now) {
+  await run(env, 'DELETE FROM auth_codes WHERE expires_at < ?', now - 3_600_000);
+  await run(env, 'DELETE FROM auth_code_attempts WHERE expires_at < ?', now - 3_600_000);
+}
+// The browser that starts a sign-in holds a random attempt secret; the code minted for
+// it is stored with the secret's hash and redeemable only together with the secret.
+export const insertAuthCodeAttempt = (env, { codeHash, attemptHash, expiresAt }) =>
+  run(env, 'INSERT OR REPLACE INTO auth_code_attempts (code_hash, attempt_hash, expires_at) VALUES (?, ?, ?)', codeHash, attemptHash, expiresAt);
+export const authCodeAttempt = (env, codeHash) => first(env, 'SELECT attempt_hash FROM auth_code_attempts WHERE code_hash = ?', codeHash);
 
 // ── التجارب المجانية ────────────────────────────────────────────────────────
 export async function trialsOf(env, userId) {
@@ -138,8 +146,14 @@ export const markPaddleCheckoutUnknown = (env, userId, attemptId) => run(env, "U
 export async function releasePaddleCheckout(env, userId, attemptId) {
   return changed(await run(env, 'DELETE FROM paddle_checkouts WHERE environment = ? AND user_id = ? AND attempt_id = ?', paddleEnvironmentOf(env), userId, attemptId));
 }
-export async function reserveAccountDeletion(env, userId, attemptId) {
-  return changed(await run(env, 'INSERT OR IGNORE INTO account_deletions (user_id, attempt_id, created_at) SELECT ?, ?, ? WHERE EXISTS (SELECT 1 FROM users WHERE id = ?)', userId, attemptId, Date.now(), userId));
+// A deletion guard left behind by a request that died mid-flight (isolate eviction, CPU
+// limit) used to lock the account out of checkout, deletion and social features for
+// ever. Ten minutes is far longer than any deletion takes.
+export const DELETION_STALE_MS = 10 * 60 * 1000;
+export const releaseStaleDeletions = (env, now = Date.now()) => run(env, 'DELETE FROM account_deletions WHERE created_at < ?', now - DELETION_STALE_MS);
+export async function reserveAccountDeletion(env, userId, attemptId, now = Date.now()) {
+  await run(env, 'DELETE FROM account_deletions WHERE user_id = ? AND created_at < ?', userId, now - DELETION_STALE_MS);
+  return changed(await run(env, 'INSERT OR IGNORE INTO account_deletions (user_id, attempt_id, created_at) SELECT ?, ?, ? WHERE EXISTS (SELECT 1 FROM users WHERE id = ?)', userId, attemptId, now, userId));
 }
 export const releaseAccountDeletion = (env, userId, attemptId) => run(env, 'DELETE FROM account_deletions WHERE user_id = ? AND attempt_id = ?', userId, attemptId);
 

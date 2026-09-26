@@ -170,7 +170,7 @@ function Final({ state, sorted, isHost, disabled, act }) {
 }
 export function FabrakaMatch({ state, me, isHost, disabled, act, clockOffset }) {
   const platform = usePlatform();
-  const [now, setNow] = useState(Date.now()), [confirmFinish, setConfirmFinish] = useState(false);
+  const [now, setNow] = useState(Date.now()), [confirmFinish, setConfirmFinish] = useState(false), [confirmSkip, setConfirmSkip] = useState(false);
   useEffect(() => {
     if (!state.deadlineAt) return;
     setNow(Date.now()); const timer = setInterval(() => setNow(Date.now()), 250);
@@ -191,7 +191,8 @@ export function FabrakaMatch({ state, me, isHost, disabled, act, clockOffset }) 
   const players = state.members.filter((m) => state.participants.includes(m.id));
   const sorted = [...players].sort((a, b) => b.score - a.score);
   const truthOwner = state.truthHostId === me?.id;
-  const ownerName = state.members.find((m) => m.id === state.truthHostId)?.name;
+  const owner = state.members.find((m) => m.id === state.truthHostId);
+  const ownerName = owner?.name;
   const multiplier = state.settings.finalDouble && state.round === state.rounds ? 2 : 1;
   const roundKey = `${state.code}:${state.matchId}:${state.round}`;
   return <div className="fabraka stack online-fabraka"><style>{css}</style>
@@ -200,7 +201,8 @@ export function FabrakaMatch({ state, me, isHost, disabled, act, clockOffset }) 
       {multiplier === 2 && <p className="online-notice online-double"><span className="fire" aria-hidden="true">🔥</span>الجولة الأخيرة · نقاط الحقيقة والخداع مضاعفة!</p>}
       <Card><Question value={state.question} answer={state.phase === 'result' && !state.roundReason} /></Card>
       {state.phase === 'host' && <Card className="stack">
-        {truthOwner ? <><h2>هذه جولتك يا {me.name}</h2><p className="online-footnote">اكتب الحقيقة عن نفسك. لن تشارك في الكتابة والتصويت أو تجمع نقاطًا في هذا الدور.</p><Draft key={`${roundKey}:truth:${state.question.text}`} state={state} me={me} truth disabled={disabled} expired={expired} act={act} /></> : <div role="status" className="online-waiting"><h2>بانتظار حقيقة {ownerName}</h2><p>يكتب صاحب الجولة إجابته سرًا، ثم تبدأون الفبركة معًا.</p></div>}
+        {truthOwner ? <><h2>هذه جولتك يا {me.name}</h2><p className="online-footnote">اكتب الحقيقة عن نفسك. لن تشارك في الكتابة والتصويت أو تجمع نقاطًا في هذا الدور.</p><Draft key={`${roundKey}:truth:${state.question.text}`} state={state} me={me} truth disabled={disabled} expired={expired} act={act} /></> : <div role="status" className="online-waiting"><h2>بانتظار حقيقة {ownerName}</h2><p>{owner && !owner.connected ? 'انقطع اتصال صاحب الجولة. يستطيع المضيف تخطّي الجولة بدل انتظار المهلة.' : 'يكتب صاحب الجولة إجابته سرًا، ثم تبدأون الفبركة معًا.'}</p></div>}
+        {isHost && !truthOwner && <Button full variant="ghost" disabled={disabled} onClick={() => setConfirmSkip(true)}>تخطّي هذه الجولة</Button>}
       </Card>}
       {state.phase === 'write' && <Card className="stack">
         {truthOwner ? <div role="status" className="online-waiting"><h2>أصحابك يفبركون الآن</h2><p>حقيقتك: {state.myTruth}. تابع الجولة دون تلميحات.</p></div>
@@ -222,7 +224,7 @@ export function FabrakaMatch({ state, me, isHost, disabled, act, clockOffset }) 
         {isHost ? <Button full variant="primary" disabled={disabled} onClick={() => act(state.reveal.shown ? 'next_reveal' : 'reveal')}>{state.reveal.shown ? 'المجموعة التالية' : state.reveal.final ? 'اكشف الحقيقة!' : 'اكشف هذه الإجابات'}</Button> : <p className="online-footnote">المضيف يكشف الإجابات للجميع.</p>}
       </Card>}
       {state.phase === 'result' && <>
-        <Card className="stack">{state.roundReason ? <p className="online-notice">{state.roundReason === 'owner_left' ? 'غادر صاحب الحقيقة قبل تثبيت إجابته.' : 'انتهى وقت كتابة الحقيقة.'} انتقلوا للجولة التالية؛ لا نقاط في هذه الجولة.</p> : <>
+        <Card className="stack">{state.roundReason ? <p className="online-notice">{state.roundReason === 'owner_left' ? 'غادر صاحب الحقيقة قبل تثبيت إجابته.' : state.roundReason === 'skipped' ? 'تجاوز المضيف هذه الجولة.' : 'انتهى وقت كتابة الحقيقة.'} انتقلوا للجولة التالية؛ لا نقاط في هذه الجولة.</p> : <>
           <h2>الحقيقة: {state.question.answer}</h2><p>{state.question.explanation}</p>
           {state.question.sourceUrl && <a href={state.question.sourceUrl} target="_blank" rel="noreferrer">مصدر المعلومة</a>}
           {state.options.map((o, i) => <AnswerCard key={o.id} index={i} option={o} members={players} multiplier={multiplier} />)}
@@ -235,5 +237,6 @@ export function FabrakaMatch({ state, me, isHost, disabled, act, clockOffset }) 
       <Card className="stack"><h2>النقاط</h2><Scoreboard entries={sorted} /></Card>
     </>}
     {confirmFinish && <ConfirmModal title="إنهاء الكتابة؟" message="ستُخلط الإجابات المثبتة، ويتجاوز الدور من لم يرسل إجابته." confirmLabel="إنهاء الكتابة" cancelLabel="ننتظر الباقي" onConfirm={async () => { setConfirmFinish(false); await act('finish_writing'); }} onCancel={() => setConfirmFinish(false)} />}
+    {confirmSkip && <ConfirmModal title="تخطّي الجولة؟" message="تنتهي هذه الجولة بلا نقاط وتبدأ التالية بصاحب حقيقة آخر." confirmLabel="تخطّي" cancelLabel="ننتظر" onConfirm={async () => { setConfirmSkip(false); await act('skip_round'); }} onCancel={() => setConfirmSkip(false)} />}
   </div>;
 }

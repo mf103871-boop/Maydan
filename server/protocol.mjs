@@ -3,6 +3,11 @@ export const json = (data, status = 200, headers = {}) => new Response(JSON.stri
   status, headers: { 'content-type': 'application/json; charset=utf-8', 'cache-control': 'no-store', ...headers },
 });
 export function errorResponse(error) {
+  if (!(error instanceof RoomError)) {
+    // An unexpected failure used to vanish into a bare INTERNAL: keep the class and
+    // message (never a request body or token) so an outage is visible in the logs.
+    try { console.error('[maydan] internal error', error?.name || typeof error, error?.message || String(error)); } catch { /* no console */ }
+  }
   return json({ error: error instanceof RoomError ? error.code : 'INTERNAL' }, error instanceof RoomError ? error.status : 500);
 }
 export async function readJson(request, max = 2048) {

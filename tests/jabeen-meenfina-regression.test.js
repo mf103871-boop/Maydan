@@ -42,10 +42,13 @@ test('انحدار: فئة صغيرة وعشرة لاعبين — لا أحد ي
     state = jabeenReduce(state, { type: 'BEGIN', item: draw.item, recycled: draw.recycled });
     assert.equal(state.phase, 'play');
     for (let i = 0; i < 6; i += 1) {
-      if (state.phase !== 'play') break;
-      state = jabeenReduce(state, { type: 'ANSWER', ok: true, item: source.next() });
+      // كما في answer() داخل Game.jsx: إعادة الخلط في منتصف الدور أيضًا، فلا ينتهي
+      // دور اللاعب الرابع بعد أربع كلمات لأن الفئة نفدت.
+      const next = drawForTurn();
+      state = jabeenReduce(state, { type: 'ANSWER', ok: true, item: next.item, recycled: next.recycled });
+      assert.equal(state.phase, 'play', `نفاد الفئة في منتصف الدور ${turn} لا ينهيه`);
     }
-    if (state.phase === 'play') state = jabeenReduce(state, { type: 'TIME_UP' });
+    state = jabeenReduce(state, { type: 'TIME_UP' });
     assert.equal(state.phase, 'review');
     state = jabeenReduce(state, { type: 'CONFIRM' });
   }

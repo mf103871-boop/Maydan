@@ -16,6 +16,6 @@ export async function fabrakaMediaManifest(root, versions = {}) {
     const file = await stat(path.join(root, 'public', asset)).catch(() => null);
     if (!file?.isFile() || !file.size) throw new Error(`فبركة: ملف صورة مفقود — ${asset}`);
   }
-  const version = versions['fabraka-v3'];
-  return [...paths].sort().map((asset) => `./${asset}${version ? `?v=${version}` : ''}`);
+  // Versions are keyed per file (`folder/file`), matching src/shared/media/resolve.js.
+  return [...paths].sort().map((asset) => { const version = versions[asset.replace(/^media\//, '')]; return `./${asset}${version ? `?v=${version}` : ''}`; });
 }

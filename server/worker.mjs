@@ -3,7 +3,7 @@ import { readJson, json, errorResponse, sha256, credentials } from './protocol.m
 import { fail } from './room-model.mjs';
 import { isPublicAccountPath, markRoomTrial, roomGate, routeAccounts } from './accounts/router.mjs';
 import { cleanup } from './accounts/cleanup.mjs';
-import { readSession } from './accounts/session.mjs';
+import { readSession, rotations, SESSION_HEADER } from './accounts/session.mjs';
 import packageInfo from '../package.json' with { type: 'json' };
 import { routeSocial } from './social/router.mjs';
 import { routeSocialLive } from './social/realtime.mjs';
@@ -15,11 +15,13 @@ export { Room };
 // Keys contain only a digest; no raw address is persisted. These are not DDoS protection.
 export const LIMIT_WINDOWS = { create: 600_000, join: 60_000, leave: 60_000, socket: 60_000,
   auth: 600_000, me: 60_000, billing: 600_000, trial: 60_000, socialRead: 60_000, socialWrite: 60_000,
-  profileRead: 60_000, profileWrite: 60_000, profileImage: 60_000 };
+  profileRead: 60_000, profileWrite: 60_000, profileImage: 60_000, webhook: 60_000 };
 // حدّ كل نوع داخل نافذته. مسارات الحسابات أقلّ سخاءً من قراءة الحالة لأنها تكتب أو تنادي مزوّدًا.
+// `webhook` سخيّ عمدًا (إشعارات آبل قد تصل دفعة)، لكنه يمنع سيلًا من عنوان واحد
+// على مسار عام يتحقق من توقيع قبل أي مصادقة.
 export const LIMITS = { create: 8, join: 40, leave: 100, socket: 100,
   auth: 40, me: 120, billing: 30, trial: 60, socialRead: 240, socialWrite: 60,
-  profileRead: 240, profileWrite: 30, profileImage: 600 };
+  profileRead: 240, profileWrite: 30, profileImage: 600, webhook: 300 };
 export class RequestLimiter {
   constructor(ctx) { this.ctx = ctx; }
   async fetch(request) {
@@ -160,6 +162,9 @@ export async function routeRequest(request, env) {
   if (response.status === 101) return response;
   const allHeaders = new Headers(response.headers);
   for (const [key, value] of Object.entries(headers)) allHeaders.set(key, value);
+  // A session rotated while handling this request reaches the client even on a 4xx.
+  const rotated = rotations.get(request);
+  if (rotated && !allHeaders.has(SESSION_HEADER)) allHeaders.set(SESSION_HEADER, rotated.token);
   return new Response(response.body, { status: response.status, headers: allHeaders });
 }
 // Cron Trigger (wrangler triggers.crons): تنظيف الجلسات ورموز الدخول وسجل webhooks.

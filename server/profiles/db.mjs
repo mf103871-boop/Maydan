@@ -44,6 +44,11 @@ export async function ensurePlayerProfile(env, userId, now = Date.now()) {
   if (!row) fail('NOT_FOUND', 404);
   return row;
 }
+// Read-only lookups create the row a never-seen account is missing, without the
+// achievement batch or a revision bump.
+export async function ensurePlayerRow(env, userId, now = Date.now()) {
+  await stmt(env, `INSERT OR IGNORE INTO player_profiles(user_id,created_at,updated_at) SELECT ?,?,? WHERE ${live('?')}`, userId, now, now, userId, userId).run();
+}
 export async function awardProfileAchievements(env, userId, now = Date.now()) {
   await env.DB.batch(profileAchievementStatements(env, userId, now));
 }
@@ -78,7 +83,7 @@ const PROFILE_SELECT = `SELECT p.*,u.name,u.created_at AS account_created_at,s.c
 export async function profileFor(env, viewerId, targetId, now = Date.now()) {
   const visible = await first(env, `SELECT u.id FROM users u WHERE u.id=? AND ${live('u.id')} AND ${noBlock('?','u.id')}`, targetId, viewerId, viewerId);
   if (!visible || !(await isLiveAccount(env, viewerId))) fail('NOT_FOUND', 404);
-  await ensurePlayerProfile(env, targetId, now);
+  await ensurePlayerRow(env, targetId, now);
   const row = await first(env, `${PROFILE_SELECT} WHERE p.user_id=? AND ${live('p.user_id')} AND ${noBlock('?','p.user_id')} AND ${live('?')}`,
     viewerId, viewerId, targetId, viewerId, viewerId, viewerId, viewerId);
   if (!row) fail('NOT_FOUND', 404);

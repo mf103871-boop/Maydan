@@ -109,6 +109,30 @@ export async function recoverCheckoutEvent(env, event) {
   return db.recordPaddleTransaction(env, userId, row.attempt_id, data.id);
 }
 
+// A reservation whose POST outcome was never learned is settled from Paddle's side:
+// the transaction carrying our attempt id is adopted; when none exists after a quarter
+// hour the reservation is released and the customer may try again. Until now such a
+// customer saw "contact support" on every attempt, for ever.
+export const UNKNOWN_RECONCILE_MS = 15 * 60 * 1000;
+export async function reconcileUnknownCheckout(env, user, previous, now = Date.now()) {
+  if (!previous || previous.transaction_id || previous.state !== 'unknown') return previous;
+  // Without a Paddle customer there is nothing to ask; the reservation stays, as before,
+  // until a signed transaction event repairs it (recoverCheckoutEvent).
+  const customer = await db.paddleCustomerOf(env, user.id);
+  if (!customer?.customer_id) return previous;
+  const listing = await api(env, `/transactions?customer_id=${encodeURIComponent(customer.customer_id)}&per_page=50`);
+  if (!listing.ok || !Array.isArray(listing.data?.data)) failure('CHECKOUT_REVIEW');
+  // The same predicate readCheckout applies later: our attempt id, our user and our price.
+  const match = listing.data.data.find((txn) => transactionMatches(previous, txn));
+  if (match) {
+    if (!await db.recordPaddleTransaction(env, user.id, previous.attempt_id, match.id)) failure('CHECKOUT_REVIEW');
+    return db.paddleCheckoutOf(env, user.id);
+  }
+  if (now - Number(previous.updated_at || previous.created_at || 0) < UNKNOWN_RECONCILE_MS) failure('CHECKOUT_REVIEW');
+  await db.releasePaddleCheckout(env, user.id, previous.attempt_id);
+  return null;
+}
+
 // custom_data includes a durable attempt ID. Paddle has no client-supplied
 // idempotency key, so an uncertain POST must never be automatically repeated.
 export async function createTransaction(env, user, plan) {
@@ -117,6 +141,15 @@ export async function createTransaction(env, user, plan) {
   if (!priceId) failure('INVALID');
   const attemptId = crypto.randomUUID();
   let owned = await db.reservePaddleCheckout(env, user.id, plan, priceId, attemptId);
+  if (!owned) {
+    let previous = await db.paddleCheckoutOf(env, user.id);
+    if (!previous) failure('CHECKOUT_PENDING');
+    if (previous.state === 'unknown' && !previous.transaction_id) {
+      previous = await reconcileUnknownCheckout(env, user, previous);
+      if (!previous) owned = await db.reservePaddleCheckout(env, user.id, plan, priceId, attemptId);
+      if (!previous && !owned) failure('CHECKOUT_PENDING');
+    }
+  }
   if (!owned) {
     const previous = await db.paddleCheckoutOf(env, user.id);
     if (!previous) failure('CHECKOUT_PENDING');
@@ -170,7 +203,9 @@ export async function createTransaction(env, user, plan) {
 export async function checkDeletionCheckout(env, user) {
   // A sandbox endpoint cannot erase a live attempt it has no credentials to inspect.
   if (environmentOf(env) !== 'production' && await db.first(env, "SELECT attempt_id FROM paddle_checkouts WHERE user_id = ? AND environment = 'production'", user.id)) failure('CHECKOUT_REVIEW');
-  const row = await db.paddleCheckoutOf(env, user.id);
+  let row = await db.paddleCheckoutOf(env, user.id);
+  if (!row) return;
+  if (!row.transaction_id && row.state === 'unknown') row = await reconcileUnknownCheckout(env, user, row);
   if (!row) return;
   if (!row.transaction_id) failure('CHECKOUT_REVIEW');
   const transaction = await readCheckout(env, row);
@@ -236,6 +271,19 @@ export async function verifySignature(env, header, rawBody, now = Date.now()) {
 
 const ACTIVE = new Set(['active', 'trialing', 'past_due']);
 const time = (value) => (value ? Date.parse(value) || 0 : 0);
+
+// Refunds and chargebacks arrive as adjustment events (subscribe the notification
+// destination to adjustment.created/updated). A full approved refund or an approved
+// chargeback revokes the subscription's entitlement; partial refunds do not.
+export function adjustmentRevocation(event, now = Date.now()) {
+  if (!['adjustment.created', 'adjustment.updated'].includes(String(event?.event_type || ''))) return null;
+  const data = event.data || {};
+  const action = String(data.action || '').toLowerCase(), status = String(data.status || '').toLowerCase();
+  const full = String(data.type || 'full').toLowerCase() === 'full';
+  const revoking = (action === 'refund' && full && status === 'approved') || (action === 'chargeback' && ['approved', 'accepted'].includes(status));
+  if (!revoking || !data.subscription_id) return null;
+  return { subscriptionId: String(data.subscription_id), transactionId: data.transaction_id ? String(data.transaction_id) : null, action, occurredAt: time(event.occurred_at) || now };
+}
 
 // تحويل حدث اشتراك إلى صف؛ يُعيد null للأحداث التي لا تخصّ اشتراكًا نعرفه.
 export function subscriptionRow(env, event, now = Date.now()) {

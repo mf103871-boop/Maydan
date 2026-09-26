@@ -7,7 +7,9 @@ import { trimSeen } from '../../shared/lib/noRepeat.js';
 import { mulberry32, randomSeed } from '../../shared/lib/rng.js';
 import categories from '../../data/games/jabeen/index.js';
 import css from './jabeen.css';
-import { initialState, reduce, currentEntrant, standings, createItemSource, normalizeOptions, SECONDS } from './logic.js';
+import { initialState, reduce, currentEntrant, standings, createItemSource, normalizeOptions, restoreSession, sessionSnapshot, SECONDS } from './logic.js';
+import { loadSession } from '../../shared/lib/session.js';
+import { useSessionSave } from '../../shared/ui/useSessionSave.js';
 import { useTilt } from './useTilt.js';
 
 const OPTIONS_KEY = 'options';
@@ -15,8 +17,17 @@ const SEEN_KEY = 'seen';
 
 export function SetupOptions({ storage, api }) {
   const [opts, setOpts] = useState(() => normalizeOptions(storage.get(OPTIONS_KEY), categories));
+  const [resume] = useState(() => loadSession(storage, (raw) => restoreSession(raw, categories)));
   const update = (patch) => { const next = normalizeOptions({ ...opts, ...patch }, categories); setOpts(next); storage.set(OPTIONS_KEY, next); api.sound.play('click'); };
   return (
+    <>
+    {resume && <Card className="stack resume-card">
+      <style>{css}</style>
+      <span className="card-title">لعبتكم بانتظاركم</span>
+      <p className="card-muted">فئة «{resume.state.categoryName}» · دور {currentEntrant(resume.state)?.name} ({resume.state.turn + 1} من {resume.state.entrants.length})</p>
+      <Button variant="accent" full onClick={() => api.resumeGame(resume)}>استئناف اللعبة المحفوظة</Button>
+      <p className="card-muted">بدء لعبة جديدة يستبدل هذا التقدم.</p>
+    </Card>}
     <Card className="stack">
       <style>{css}</style>
       <span className="card-title">الفئة والمدة</span>
@@ -31,11 +42,13 @@ export function SetupOptions({ storage, api }) {
         <Segment accent label="المدة" value={opts.seconds} onChange={(v) => update({ seconds: v })} options={SECONDS.map((s) => ({ value: s, label: `${s} ث` }))} />
       </div>
     </Card>
+    </>
   );
 }
 
 function Stage({ state, timer, tilt, onAnswer, onEnd, flash, blocked }) {
   const tiltLive = state.control === 'auto' && tilt.supported;
+  const tiltLost = state.control === 'auto' && !tilt.supported;
   const danger = timer.left <= 10;
   const okCount = state.results.filter((r) => r.ok).length;
   // التظليل الأحمر في آخر 3 ثوانٍ: عنصر ثابت في body (fx.vignette) يُطفأ عند إزالة المسرح.
@@ -50,7 +63,8 @@ function Stage({ state, timer, tilt, onAnswer, onEnd, flash, blocked }) {
       </div>
       <div className="jabeen-word"><span key={state.item ? state.item.id : 'none'}>{state.item ? state.item.text : '…'}</span></div>
       <div className="jabeen-controls">
-        {tiltLive && <p className="jabeen-hint">أَمِل للأسفل = صح · للأعلى = تخطي — أو استخدم الزرين.</p>}
+        {tiltLive && <p className="jabeen-hint">{tilt.calibrated ? 'أَمِل للأسفل = صح · للأعلى = تخطي — أو استخدم الزرين.' : 'ثبّت الجوال على جبينك لحظة… تُعاير الحركة.'}</p>}
+        {tiltLost && <Button size="sm" variant="ghost" onClick={() => { tilt.retry(); }}>إعادة تفعيل الميلان</Button>}
         <div className="jabeen-touch">
           <button type="button" className="ok" onClick={() => onAnswer(true)}><span aria-hidden="true">✅</span>صح</button>
           <button type="button" className="skip" onClick={() => onAnswer(false)}><span aria-hidden="true">⏭</span>تخطي</button>
@@ -60,13 +74,27 @@ function Stage({ state, timer, tilt, onAnswer, onEnd, flash, blocked }) {
   );
 }
 
-export function Game({ api, players, onExit }) {
-  const seed = useRef(randomSeed());
+export function Game({ api, players, onExit, savedSession = null }) {
+  // لقطة محفوظة صالحة تعيد الحالة والمصدر بنفس البذرة والموضع؛ وإلا مباراة جديدة.
+  const saved = useMemo(() => restoreSession(savedSession, categories), [savedSession]);
+  const seed = useRef(saved ? saved.seed : randomSeed());
   const random = useMemo(() => mulberry32(seed.current), []);
-  const options = useMemo(() => normalizeOptions(api.storage.get(OPTIONS_KEY), categories), [api.storage]);
+  const options = useMemo(() => normalizeOptions(saved ? saved.settings : api.storage.get(OPTIONS_KEY), categories), [api.storage, saved]);
   const category = useMemo(() => categories.find((c) => c.id === options.categoryId) || categories[0], [options.categoryId]);
-  const source = useMemo(() => createItemSource(category, { random, seen: api.storage.get(SEEN_KEY, {}) || {} }), [category, random, api.storage]);
-  const [state, dispatch] = useReducer(reduce, undefined, () => initialState(players, category, options));
+  const source = useMemo(() => {
+    const itemSource = createItemSource(category, { random, seen: api.storage.get(SEEN_KEY, {}) || {} });
+    if (saved) itemSource.seek(saved.cursor);
+    return itemSource;
+  }, [category, random, api.storage, saved]);
+  const [state, dispatch] = useReducer(reduce, undefined, () => (saved ? saved.state : initialState(players, category, options)));
+  const profileSession = useRef(saved ? saved.profileSession || null : api.matchSnapshot?.() || null);
+  const timeLeftRef = useRef(saved?.timeLeft ?? null);
+  const resumeLeft = useRef(saved?.timeLeft ?? null);
+  useSessionSave({
+    api, state, active: state.phase !== 'over', phaseKey: `${state.phase}:${state.turn}`,
+    snapshot: (current) => sessionSnapshot({ players: current.entrants, settings: options, seed: seed.current, cursor: source.cursor,
+      timeLeft: current.phase === 'play' ? timeLeftRef.current : null, profileSession: profileSession.current, state: current }),
+  });
   const [landscape, setLandscape] = useState(true);
   const [flash, setFlash] = useState('');
   const flashTimer = useRef(null);
@@ -89,7 +117,9 @@ export function Game({ api, players, onExit }) {
     clearTimeout(flashTimer.current);
     flashTimer.current = setTimeout(() => setFlash(''), wait(420));
     stampScreen(ok ? { text: '✓', tone: 'good', ms: 420 } : { text: '⏭', tone: 'bad', ms: 420 });
-    dispatch({ type: 'ANSWER', ok, item: source.next() });
+    // نفاد الفئة في منتصف الدور يعيد خلطها كما في بداية الدور، لا ينهي دور اللاعب مبكرًا.
+    const next = drawForTurn();
+    dispatch({ type: 'ANSWER', ok, item: next.item, recycled: next.recycled });
   };
 
   // نسخة واحدة من مستشعر الميلان: الإذن والقراءة في المكان نفسه.
@@ -104,8 +134,10 @@ export function Game({ api, players, onExit }) {
     window.addEventListener('orientationchange', check);
     return () => { window.removeEventListener('resize', check); window.removeEventListener('orientationchange', check); };
   }, []);
-  // Reset once per turn. Rotation only pauses/resumes the remaining time.
-  useEffect(() => { if (state.phase === 'play') timer.reset(state.seconds); else timer.pause(); }, [state.phase]); // eslint-disable-line react-hooks/exhaustive-deps
+  // Reset once per turn. Rotation only pauses/resumes the remaining time. A resumed turn
+  // starts from the saved remaining time, once.
+  useEffect(() => { if (state.phase === 'play') { timer.reset(resumeLeft.current ?? state.seconds); resumeLeft.current = null; } else timer.pause(); }, [state.phase]); // eslint-disable-line react-hooks/exhaustive-deps
+  useEffect(() => { timeLeftRef.current = timer.left; }, [timer.left]);
   useEffect(() => {
     if (state.phase === 'play' && landscape && !document.hidden) timer.start();
     else timer.pause();
@@ -132,7 +164,7 @@ export function Game({ api, players, onExit }) {
           <p className="muted">ضع الجوال على جبينك والشاشة نحو الآخرين. هم يصفون وأنت تخمّن.</p>
           {tilt.needsPermission && <p className="jabeen-perm">قد يطلب جهازك إذن استخدام مستشعر الحركة عند البدء. إن رفضت، يمكنك اللعب باللمس.</p>}
           {exhausted && <p className="jabeen-perm">انتهت كلمات «{state.categoryName}» — سنعيد خلطها من جديد ليكمل كل لاعب دوره.</p>}
-          <Button variant="accent" size="lg" full className="is-armed" onClick={async () => { await tilt.request(); api.sound.play('whoosh'); const draw = drawForTurn(); dispatch({ type: 'BEGIN', item: draw.item, recycled: draw.recycled }); }}>ابدأ الجولة</Button>
+          <Button variant="accent" size="lg" full className="is-armed" onClick={async () => { await tilt.request(); tilt.recalibrate(); api.sound.play('whoosh'); const draw = drawForTurn(); dispatch({ type: 'BEGIN', item: draw.item, recycled: draw.recycled }); }}>ابدأ الجولة</Button>
         </div>
       )}
       {state.phase === 'play' && (

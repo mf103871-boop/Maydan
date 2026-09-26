@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { createRoom, joinRoom, connected, action, tick, leaveRoom, snapshot, profile, nextAlarm } from '../server/room-model.mjs';
-import { HOST_GRACE, ROOM_TTL, normalizeCode, validateServerUrl } from '../src/online/shared.js';
+import { HOST_GRACE, ROOM_TTL, ROOM_MAX_TTL, MATCH_EXTENSION, SEAT_GRACE, COLORS, normalizeCode, validateServerUrl } from '../src/online/shared.js';
 const people = Array.from({ length: 13 }, (_, n) => ({ id: `p${n}`, tokenHash: `secret${n}`, name: `لاعب ${n}`, avatar: n % 4, rounds: 5 }));
 const deck = Array.from({ length: 12 }, (_, n) => ({ id: `q${n}`, text: `سؤال ${n}`, tag: 'نوم' }));
 function lobby(n = 3) {
@@ -87,7 +87,9 @@ test('server deadline reveals partial votes and rejects late or stale commands',
 test('host grace, transfer and reconnect retain votes and do not restore old host authority', () => {
   const r = playing(); command(r, 'p0', 'vote', { targetId: 'p1' });
   connected(r, 'p0', false, 2000);
-  assert.equal(nextAlarm(r, 2000), 2000 + HOST_GRACE);
+  // The dropped seat's grace (15 s) wakes the room before the host grace (20 s).
+  assert.equal(nextAlarm(r, 2000), 2000 + SEAT_GRACE);
+  assert.equal(nextAlarm(r, 2000 + SEAT_GRACE), 2000 + HOST_GRACE);
   tick(r, 2000 + HOST_GRACE - 1); assert.equal(r.hostId, 'p0');
   connected(r, 'p0', true, 2500); assert.equal(r.hostMissingSince, null);
   connected(r, 'p0', false, 3000); tick(r, 3000 + HOST_GRACE);
@@ -99,7 +101,8 @@ test('host grace, transfer and reconnect retain votes and do not restore old hos
 test('explicit departures release lobby seats and end a match with fewer than three', () => {
   const r = lobby(); connected(r, 'p2', false, 1100);
   command(r, 'p0', 'kick', { targetId: 'p2' }); assert.equal(r.members.length, 2);
-  joinRoom(r, people[2], 1200); connected(r, 'p2', true, 1200); command(r, 'p2', 'ready', { ready: true });
+  rejects('BANNED', () => joinRoom(r, people[2], 1200)); // removal bans the seat's credentials
+  joinRoom(r, people[3], 1200); connected(r, 'p3', true, 1200); command(r, 'p3', 'ready', { ready: true });
   command(r, 'p0', 'start'); leaveRoom(r, 'p0', 1300);
   assert.equal(r.hostId, 'p1'); assert.equal(r.phase, 'over'); assert.equal(r.reason, 'players_left');
   command(r, 'p1', 'restart'); assert.equal(r.phase, 'lobby'); assert.equal(r.members.length, 2);
@@ -113,5 +116,65 @@ test('full match, replay generation and room expiry', () => {
   assert.equal(r.phase, 'over'); assert.equal(r.scores.p0, 5);
   command(r, 'p0', 'restart');
   rejects('STALE', () => command(r, 'p0', 'start', { matchId: firstMatch }));
-  tick(r, 1000 + ROOM_TTL); assert.equal(r.phase, 'closed'); assert.equal(r.reason, 'expired');
+  tick(r, 1000 + ROOM_TTL); assert.equal(r.phase, 'lobby', 'the match start at 1100 extended the room');
+  tick(r, 1100 + ROOM_TTL); assert.equal(r.phase, 'closed'); assert.equal(r.reason, 'expired');
+});
+
+test('a departed host is replaced the moment someone connects; removal works for anyone in the lobby and dropped seats mid-match', () => {
+  const r = lobby();
+  connected(r, 'p1', false, 1200); connected(r, 'p2', false, 1200);
+  leaveRoom(r, 'p0', 1300);
+  assert.equal(r.hostId, 'p0', 'nobody connected to take over yet');
+  connected(r, 'p1', true, 1400);
+  assert.equal(r.hostId, 'p1', 'no twenty-second wait for a host who left on purpose');
+  const room = lobby(4);
+  command(room, 'p0', 'kick', { targetId: 'p3' });
+  assert.equal(room.members.length, 3);
+  rejects('BANNED', () => joinRoom(room, people[3], 1500));
+  rejects('BANNED', () => joinRoom(room, { ...people[4], tokenHash: people[3].tokenHash }, 1500));
+  command(room, 'p0', 'start');
+  rejects('INVALID', () => command(room, 'p0', 'kick', { targetId: 'p1' }));
+  connected(room, 'p1', false, 2000);
+  command(room, 'p0', 'kick', { targetId: 'p1' });
+  assert.equal(room.phase, 'over'); assert.equal(room.reason, 'players_left');
+});
+test('a voter away past the seat grace no longer holds the reveal, and the alarm wakes for it', () => {
+  const r = playing();
+  command(r, 'p0', 'vote', { targetId: 'p1' }); command(r, 'p1', 'vote', { targetId: 'p1' });
+  connected(r, 'p2', false, 2000);
+  assert.equal(r.phase, 'vote');
+  assert.equal(nextAlarm(r, 2000), 2000 + SEAT_GRACE);
+  tick(r, 2000 + SEAT_GRACE - 1); assert.equal(r.phase, 'vote', 'still within the grace period');
+  tick(r, 2000 + SEAT_GRACE); assert.equal(r.phase, 'result'); assert.deepEqual(r.winners, ['p1']);
+  const s = playing();
+  command(s, 'p0', 'vote', { targetId: 'p1' }); command(s, 'p1', 'vote', { targetId: 'p1' });
+  connected(s, 'p2', false, 2000); connected(s, 'p2', true, 5000);
+  tick(s, 2000 + SEAT_GRACE + 1);
+  assert.equal(s.phase, 'vote', 'a seat that came back keeps its vote');
+});
+test('names collide after Arabic normalisation, joiner characters are allowed, and seats get distinct colours', () => {
+  const r = createRoom('123456', { ...people[0], name: 'أحمد' }, 1000);
+  rejects('NAME_TAKEN', () => joinRoom(r, { ...people[1], name: 'احمد' }, 1001));
+  rejects('NAME_TAKEN', () => joinRoom(r, { ...people[1], name: 'أَحْمَد' }, 1001));
+  joinRoom(r, { ...people[1], name: '👨‍👩‍👧 أبو خالد' }, 1001);
+  assert.equal(profile({ name: '👨‍👩‍👧', avatar: 0 }).name, '👨‍👩‍👧');
+  rejects('NAME', () => profile({ name: '\u202Eabc', avatar: 0 }));
+  const full = lobby(12);
+  const colors = snapshot(full, 'p0', 1100).members.map((m) => m.color);
+  assert.equal(new Set(colors).size, 12);
+  assert.equal(colors[0], COLORS[0]);
+});
+test('each match start extends the room up to six hours, and a nearly expired room cannot start a match', () => {
+  const r = lobby();
+  assert.equal(r.expiresAt, 1000 + ROOM_TTL);
+  const late = 1000 + ROOM_TTL - 60_000;
+  command(r, 'p0', 'start', {}, late);
+  assert.equal(r.expiresAt, late + MATCH_EXTENSION, 'a match started a minute before expiry gets two more hours');
+  assert.deepEqual(r.seenStatements, r.deck.map((q) => q.id), 'shown statements are remembered for the next match');
+  r.phase = 'over'; command(r, 'p0', 'restart');
+  r.members.forEach((m) => { m.ready = true; });
+  const nearCap = 1000 + ROOM_MAX_TTL - 10 * 60_000;
+  rejects('EXPIRING', () => command(r, 'p0', 'start', {}, nearCap));
+  command(r, 'p0', 'start', {}, 1000 + ROOM_MAX_TTL - 20 * 60_000);
+  assert.equal(r.expiresAt, 1000 + ROOM_MAX_TTL, 'capped at six hours from creation');
 });

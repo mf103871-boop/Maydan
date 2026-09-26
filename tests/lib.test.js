@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { createStorage, clearAllPlatformData } from '../src/shared/lib/storage.js';
 import { shuffle, shuffleDifferent } from '../src/shared/lib/shuffle.js';
 import { createNoRepeat, drawUnique, trimSeen } from '../src/shared/lib/noRepeat.js';
-import { arabicNormalize, sameText } from '../src/shared/lib/arabicNormalize.js';
+import { arabicNormalize, arabicNormalizeLoose, sameText } from '../src/shared/lib/arabicNormalize.js';
 import { mulberry32, randInt } from '../src/shared/lib/rng.js';
 import { fakeStorage, seeded } from './helpers.js';
 
@@ -72,6 +72,31 @@ test('arabicNormalize: تشكيل وتطويل وألف/ياء/تاء مربوط
   assert.ok(!sameText('', ''));
 });
 
+test('arabicNormalize: NFKC وأشكال العرض والحروف الفارسية والمحارف الصفرية', () => {
+  assert.equal(arabicNormalize('\uFDF2'), 'الله', 'رمز ﷲ المركّب');
+  assert.equal(arabicNormalize('\uFEFB'), 'لا', 'ﻻ المركّبة');
+  assert.equal(arabicNormalize('\uFEB3\uFEE0\uFEE7'), 'سلن', 'أشكال العرض تعود إلى حروفها');
+  assert.equal(arabicNormalize('کتاب'), 'كتاب', 'الكاف الفارسية');
+  assert.equal(arabicNormalize('علی'), 'علي', 'الياء الفارسية');
+  assert.equal(arabicNormalize('مص\u200Cر\u200B'), 'مصر', 'محارف العرض الصفرية تُحذف');
+  assert.equal(arabicNormalize('١٢٣ ۴۵'), '123 45');
+});
+
+test('arabicNormalizeLoose: تُحذف «ال» التعريف فقط، لا همزة الكلمة ولا أسماء الله والموصولات', () => {
+  assert.ok(sameText('القاهرة', 'قاهرة'));
+  assert.ok(sameText('المدرسة', 'مدرسه'));
+  assert.ok(!sameText('الله', 'له'), 'الله ليست ال + له');
+  assert.ok(!sameText('ألوان', 'وان'), 'ألوان تبدأ بهمزة أصلية');
+  assert.ok(!sameText('ألم', 'م'));
+  assert.ok(!sameText('ألمانيا', 'مانيا'));
+  assert.ok(!sameText('إلى', 'ي'));
+  assert.ok(!sameText('الآن', 'ان'));
+  assert.ok(!sameText('التي', 'تي'));
+  assert.equal(arabicNormalizeLoose('الأردن'), 'اردن', 'ال + همزة بعدها: أداة تعريف حقيقية');
+  assert.equal(arabicNormalizeLoose('البحر الأحمر'), 'بحر احمر');
+  assert.equal(arabicNormalizeLoose('الحب'), 'الحب', 'كلمة قصيرة لا تُبتر (يبقى أقل من ثلاثة أحرف)');
+});
+
 test('rng: حتمي وضمن الحدود', () => {
   const r = mulberry32(42);
   const seq = [r(), r(), r()];
@@ -81,4 +106,20 @@ test('rng: حتمي وضمن الحدود', () => {
     const n = randInt(r, 3, 5);
     assert.ok(n >= 3 && n <= 5);
   }
+});
+
+test('createNoRepeat.seek: إعادة بناء المصدر بنفس البذرة ثم seek تعيد الطابور نفسه من الموضع المحفوظ', () => {
+  const items = Array.from({ length: 12 }, (_, i) => ({ id: `i${i}` }));
+  const seen = { i3: 1, i7: 1 };
+  const first = createNoRepeat(items, { random: mulberry32(42), seen });
+  const drawn = [first.next().id, first.next().id, first.next().id, first.next().id];
+  assert.equal(first.cursor, 4);
+  const again = createNoRepeat(items, { random: mulberry32(42), seen });
+  assert.equal(again.seek(4), 4);
+  assert.deepEqual(Object.keys(again.seen()).sort(), [...new Set([...drawn, 'i3', 'i7'])].sort(), 'المسحوب قبل الموضع يُعدّ معروضًا');
+  const rest = []; let next; while ((next = again.next())) rest.push(next.id);
+  const restFirst = []; while ((next = first.next())) restFirst.push(next.id);
+  assert.deepEqual(rest, restFirst, 'ما بعد الموضع متطابق');
+  assert.equal(createNoRepeat(items, { random: mulberry32(1) }).seek(99), 12, 'الموضع محصور بطول الطابور');
+  assert.equal(createNoRepeat(items, { random: mulberry32(1) }).seek(-4), 0);
 });

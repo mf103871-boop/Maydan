@@ -165,25 +165,62 @@ const MaydanLogicBeta = (() => {
       }
       return restored;
     }
+    const TOOL_IDS = ["double", "two", "time"],
+      TIMER_LENGTHS = [30, 60, 90],
+      isCount = (value) => Number.isSafeInteger(value) && value >= 0,
+      isTeam = (team) =>
+        !!team &&
+        typeof team == "object" &&
+        typeof team.name == "string" &&
+        isCount(team.score) &&
+        isCount(team.correct) &&
+        isCount(team.steals) &&
+        !!team.tools &&
+        typeof team.tools == "object" &&
+        TOOL_IDS.every((id) => typeof team.tools[id] == "boolean"),
+      isTeams = (teams) => Array.isArray(teams) && teams.length >= 2 && teams.length <= 4 && teams.every(isTeam);
+    // لقطة تالفة (يد عابثة، نسخة أقدم، تخزين مبتور) كانت تمرّ بفحص سطحي ثم تُسقط شاشة السؤال
+    // عند الاستئناف؛ كل حقل تقرأه الواجهة يُفحص هنا كما تفحص فبركة لقطتها.
     function isValidSession(categories, session) {
       if (
         !session ||
+        typeof session != "object" ||
         session.version !== 2 ||
         session.contentVersion !== BANK_CONTENT_VERSION ||
-        !Array.isArray(session.teams) ||
-        session.teams.length < 2 ||
-        session.teams.length > 4 ||
+        !isTeams(session.teams) ||
         !Array.isArray(session.selectedCategories) ||
         session.selectedCategories.length !== 6 ||
+        session.selectedCategories.some((id) => typeof id != "string") ||
         !MODES[session.mode] ||
         !ROUND_SIZES.includes(session.roundSize)
       )
         return !1;
       const restored = idsToDeck(categories, session.deck);
-      return restored
-        ? Object.values(restored).reduce((sum, questions) => sum + questions.length, 0) ===
-            session.roundSize
-        : !1;
+      if (
+        !restored ||
+        Object.values(restored).reduce((sum, questions) => sum + questions.length, 0) !== session.roundSize ||
+        Object.keys(restored).some((id) => !session.selectedCategories.includes(id))
+      )
+        return !1;
+      const qids = new Set(Object.values(restored).flat().map((question) => question.qid));
+      if (session.turn !== undefined && !(Number.isInteger(session.turn) && session.turn >= 0 && session.turn < session.teams.length)) return !1;
+      if (session.used !== undefined) {
+        if (!session.used || typeof session.used != "object" || Array.isArray(session.used)) return !1;
+        if (Object.keys(session.used).some((qid) => !qids.has(qid))) return !1;
+      }
+      if (session.current !== undefined && session.current !== null) {
+        const { categoryId, index } = session.current;
+        if (!restored[categoryId] || !Number.isInteger(index) || index < 0 || index >= restored[categoryId].length) return !1;
+      }
+      if (session.screen !== undefined && !["board", "question"].includes(session.screen)) return !1;
+      if (session.screen === "question" && !session.current) return !1;
+      if (session.timerLength !== undefined && !TIMER_LENGTHS.includes(session.timerLength)) return !1;
+      if (session.timeLeft !== undefined && !(Number.isFinite(session.timeLeft) && session.timeLeft >= 0 && session.timeLeft <= 600)) return !1;
+      if (session.hintsUsed !== undefined && !isCount(session.hintsUsed)) return !1;
+      if (session.mixedItems !== undefined && !(Array.isArray(session.mixedItems) && session.mixedItems.every((item) => typeof item == "string"))) return !1;
+      if (session.effect !== undefined && (!session.effect || typeof session.effect != "object")) return !1;
+      if (session.questionBaseTeams !== undefined && session.questionBaseTeams !== null && !isTeams(session.questionBaseTeams)) return !1;
+      return !0;
     }
     return {
       MODES,

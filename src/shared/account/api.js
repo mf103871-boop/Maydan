@@ -82,7 +82,7 @@ export async function request(path, { method = 'GET', body, token, timeout = DEF
 // ── نداءات المسارات (كلها تمرّر options إلى request) ───────────────────────
 export const getBillingConfig = (options) => request('/api/billing/config', options);
 export const getMe = (options) => request('/api/me', options);
-export const exchangeCode = (code, client, options) => request('/api/auth/exchange', { ...options, method: 'POST', body: { code, client } });
+export const exchangeCode = (code, client, options, attempt = '') => request('/api/auth/exchange', { ...options, method: 'POST', body: { code, client, ...(attempt ? { attempt } : {}) } });
 export const appleNative = (payload, options) => request('/api/auth/apple/native', { ...options, method: 'POST', body: { ...payload, client: 'ios' } });
 export const signout = (options) => request('/api/auth/signout', { ...options, method: 'POST', raw: true });
 export const postTrial = (game, options) => request(`/api/trials/${encodeURIComponent(game)}`, { ...options, method: 'POST' });
@@ -94,9 +94,9 @@ export const deleteAccountRequest = (options) => request('/api/account', { ...op
 export const redeemRequest = (code, options) => request('/api/redeem', { ...options, method: 'POST', body: { code } });
 
 // رابط بدء الدخول على الويب: الخادم يعيد التوجيه إلى المزوّد ثم إلى return#/auth?code=
-export function authStartUrl(provider, { client = 'web', returnUrl, server } = {}) {
+export function authStartUrl(provider, { client = 'web', returnUrl, server, attempt = '' } = {}) {
   const base = server === undefined ? resolveAccountServer() : server;
   if (!base) return '';
   const target = returnUrl || (typeof location === 'undefined' ? '' : `${location.origin}${location.pathname}`);
-  return `${base}/api/auth/${provider}/start?client=${encodeURIComponent(client)}&return=${encodeURIComponent(target)}`;
+  return `${base}/api/auth/${provider}/start?client=${encodeURIComponent(client)}&return=${encodeURIComponent(target)}${attempt ? `&attempt=${encodeURIComponent(attempt)}` : ''}`;
 }

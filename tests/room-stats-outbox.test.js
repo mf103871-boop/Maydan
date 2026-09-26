@@ -100,3 +100,32 @@ test('a hanging database write does not hold the room command queue or lose a ne
     assert.equal((await DB.prepare('SELECT COUNT(*) AS n FROM player_events').first()).n,2);
   } finally { release(); await room.flushStats().catch(()=>{}); DB.close(); }
 });
+
+test('a malformed result is dropped instead of blocking every later event, and a missing database never re-arms the alarm', async () => {
+  const { DB,env,storage,room,over } = await fixture();
+  try {
+    const now = Date.now();
+    await storage.put('profileOutbox', [
+      { userId: 'account-a', eventId: 'online:broken', game: 'meenfina', won: 'yes', draw: false, finishedAt: now },
+      { userId: 'account-a', eventId: 'online:good', game: 'fabraka', won: true, draw: false, finishedAt: now },
+    ]);
+    const restored = instantiate(storage, env); await restored.ready;
+    await restored.flushStats();
+    assert.equal(restored.profileOutbox.length, 0, 'the invalid head is dropped and the valid event behind it is recorded');
+    assert.deepEqual(await DB.prepare('SELECT online_matches,online_wins FROM player_stats WHERE user_id=?').bind('account-a').first(), { online_matches: 1, online_wins: 1 });
+    // Transient failures count attempts on the retained event.
+    env.DB = { prepare: () => { throw new Error('D1 down'); } };
+    await room.serial(() => room.commit(over)); await room.flushStats();
+    assert.equal(room.profileOutbox[0].attempts, 1);
+    // Without a database binding there is nothing to drain: the retained event adds no
+    // half-minute alarm, and once the room itself is gone no alarm is armed at all.
+    const silent = instantiate(storage, {}); await silent.ready;
+    await silent.serial(() => silent.schedule());
+    assert.ok(storage.alarm > Date.now() + 60_000, 'only the room\'s own deadline remains');
+    await storage.delete('room');
+    const empty = instantiate(storage, {}); await empty.ready;
+    assert.equal(empty.profileOutbox.length, 1);
+    await empty.serial(() => empty.schedule());
+    assert.equal(storage.alarm, null);
+  } finally { DB.close(); }
+});

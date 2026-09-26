@@ -43,6 +43,26 @@ final class AppSchemeHandler: NSObject, WKURLSchemeHandler {
         "ttf": "font/ttf"
     ]
 
+    /// سياسة أمن المحتوى داخل الغلاف، نظير `public/_headers` على الويب: الصفحة مستند واحد
+    /// بسكربت وأنماط مضمّنة، ووسائط من الأصل أو data:/blob: أو https، واتصال بخوادم ميدان
+    /// عبر https/wss. لا إطارات ولا كائنات ولا نماذج خارجية. (لم يُتحقق منها على جهاز بعد.)
+    static let contentSecurityPolicy = [
+        "default-src 'self' maydan:",
+        "script-src 'self' 'unsafe-inline' maydan:",
+        "style-src 'self' 'unsafe-inline' maydan:",
+        "img-src 'self' maydan: data: blob: https:",
+        "media-src 'self' maydan: data: blob: https:",
+        "font-src 'self' maydan: data:",
+        "connect-src 'self' maydan: https: wss:",
+        "worker-src 'self' maydan:",
+        "manifest-src 'self' maydan:",
+        "frame-src 'none'",
+        "object-src 'none'",
+        "base-uri 'none'",
+        "form-action 'self'",
+        "frame-ancestors 'none'"
+    ].joined(separator: "; ")
+
     private let directory: URL
     private let queue = DispatchQueue(label: "maydan.scheme", qos: .userInitiated, attributes: .concurrent)
     private let lock = NSLock()
@@ -103,11 +123,16 @@ final class AppSchemeHandler: NSObject, WKURLSchemeHandler {
         }
 
         let total = data.count
+        let contentType = mimeType(for: file)
         var headers: [String: String] = [
-            "Content-Type": mimeType(for: file),
+            "Content-Type": contentType,
             "Accept-Ranges": "bytes",
-            "Cache-Control": "no-cache"
+            "Cache-Control": "no-cache",
+            "X-Content-Type-Options": "nosniff"
         ]
+        if contentType.hasPrefix("text/html") {
+            headers["Content-Security-Policy"] = Self.contentSecurityPolicy
+        }
 
         if let header = request.value(forHTTPHeaderField: "Range"),
            let range = Self.byteRange(from: header, total: total) {

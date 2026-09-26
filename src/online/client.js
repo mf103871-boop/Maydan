@@ -17,6 +17,15 @@ export function clearSession(server, code) {
   try { localStorage.removeItem(key(server, code)); } catch { /* private browsing */ }
   if (readSaved(server, 'lastRoom') === code) save(server, 'lastRoom', null);
 }
+// معرّف جهاز ثابت لاحتساب الغرفة المجانية لغير المسجّلين على الخادم؛ ليس سرًّا ولا هوية.
+const DEVICE_KEY = 'maydan:online:device';
+export function deviceId() {
+  try { const saved = localStorage.getItem(DEVICE_KEY); if (/^[a-f0-9]{32}$/.test(saved || '')) return saved; } catch { /* private browsing */ }
+  const fresh = memory.get(DEVICE_KEY) || Array.from(crypto.getRandomValues(new Uint8Array(16)), (b) => b.toString(16).padStart(2, '0')).join('');
+  memory.set(DEVICE_KEY, fresh);
+  try { localStorage.setItem(DEVICE_KEY, fresh); } catch { /* memory only */ }
+  return fresh;
+}
 export function newCredentials() {
   const hex = (length) => Array.from(crypto.getRandomValues(new Uint8Array(length)), (b) => b.toString(16).padStart(2, '0')).join('');
   return { id: hex(16), token: hex(32) };

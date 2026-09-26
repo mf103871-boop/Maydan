@@ -1,6 +1,8 @@
-import { SAMPLE_BANK, SAMPLE_RATE } from './sample-bank.js';
+import { SAMPLE_BANK } from './sample-bank.js';
 
-// Approved option A, with a +6 dB tap master, embedded for offline playback.
+// Approved option A, with a +6 dB tap master. The cues are small AAC files fetched
+// once (the service worker precaches them, the iOS shell bundles them) and decoded
+// on the first gesture, instead of 2.8 MB of PCM parsed on every cold start.
 export const RECIPES = {
   click: (c) => c.sample('tap'),
   pop: (c) => c.sample('tap', { gain: 0.9 }),
@@ -31,6 +33,11 @@ const clampVolume = (value) => typeof value === 'number' && Number.isFinite(valu
 const COOLDOWNS = { click: 65, pop: 70, tick: 100, tickFast: 100, countdown: 120, correct: 150, wrong: 180,
   buzzer: 300, whoosh: 100, fanfare: 500, explosion: 400, drumroll: 1250, countdownGo: 180, reveal: 160, timeout: 300 };
 const ALIASES = { open: 'whoosh', steal: 'correct', win: 'fanfare', start: 'countdownGo', tool: 'reveal', scoreUp: 'pop', scoreDown: 'wrong' };
+// A cue that arrives while the bank is still decoding may play a little late; a
+// cue this old belongs to a moment that has passed.
+const LATE_CUE_MS = 400;
+const RESUME_TIMEOUT_MS = 1500;
+const CUE_IDS = Object.keys(SAMPLE_BANK);
 
 export function createSound({ enabled = true, volume = 0.75 } = {}) {
   let on = !!enabled;
@@ -42,11 +49,15 @@ export function createSound({ enabled = true, volume = 0.75 } = {}) {
   let generation = 0;
   let ducked = false;
   let resumePromise = null;
+  let bankPromise = null;
+  let decodePromise = null;
+  const encoded = new Map();
   const buffers = new Map();
   const voices = new Set();
   const lastPlayed = new Map();
   const hidden = () => typeof document !== 'undefined' && document.hidden;
   const canPlay = () => on && level > 0 && !hidden();
+  const ready = () => CUE_IDS.every((id) => buffers.has(id));
 
   function mix() {
     if (!master || !context) return;
@@ -75,23 +86,47 @@ export function createSound({ enabled = true, volume = 0.75 } = {}) {
     voices.add(voice);
     source.onended = voice.cleanup;
   }
-  function bufferFor(id) {
-    if (buffers.has(id)) return buffers.get(id);
-    const entry = SAMPLE_BANK[id];
-    const bytes = atob(entry.pcm);
-    const buffer = context.createBuffer(2, entry.frames, SAMPLE_RATE);
-    const channels = [buffer.getChannelData(0), buffer.getChannelData(1)];
-    for (let frame = 0, offset = 0; frame < entry.frames; frame += 1) {
-      for (let channel = 0; channel < 2; channel += 1, offset += 3) {
-        const value = bytes.charCodeAt(offset) | (bytes.charCodeAt(offset + 1) << 8) | (bytes.charCodeAt(offset + 2) << 16);
-        channels[channel][frame] = ((value << 8) >> 8) / 8388608;
-      }
-    }
-    buffers.set(id, buffer);
-    return buffer;
+  // The encoded files need no AudioContext, so they are fetched as soon as the bus
+  // attaches; the first gesture then only has to decode ~100 KB.
+  function fetchBank() {
+    if (bankPromise) return bankPromise;
+    if (typeof fetch !== 'function') return Promise.resolve(false);
+    bankPromise = Promise.all(CUE_IDS.map(async (id) => {
+      if (encoded.has(id)) return;
+      const response = await fetch(SAMPLE_BANK[id].url);
+      if (!response || !response.ok) throw new Error('cue unavailable');
+      encoded.set(id, await response.arrayBuffer());
+    })).then(() => true, () => { bankPromise = null; return false; });
+    return bankPromise;
+  }
+  function decode(c, data) {
+    return new Promise((resolve, reject) => {
+      try {
+        // Older WebKit only knows the callback form; newer engines return a promise.
+        const result = c.decodeAudioData(data, resolve, reject);
+        if (result && typeof result.then === 'function') result.then(resolve, reject);
+      } catch (error) { reject(error); }
+    });
+  }
+  function decodeBank(c) {
+    if (decodePromise) return decodePromise;
+    const task = fetchBank().then(async (fetched) => {
+      if (!fetched || c !== context) return false;
+      await Promise.all(CUE_IDS.map(async (id) => {
+        if (buffers.has(id)) return;
+        // decodeAudioData detaches its input; hand each context a copy.
+        const buffer = await decode(c, encoded.get(id).slice(0));
+        if (c === context) buffers.set(id, buffer);
+      }));
+      return c === context && ready();
+    }).catch(() => false);
+    decodePromise = task;
+    void task.finally(() => { if (decodePromise === task) decodePromise = null; });
+    return task;
   }
   function sample(id, { at = 0, gain = 1, rate = 1 } = {}) {
-    const buffer = bufferFor(id);
+    const buffer = buffers.get(id);
+    if (!buffer) return;
     const source = context.createBufferSource();
     source.buffer = buffer;
     source.playbackRate.value = rate;
@@ -107,7 +142,7 @@ export function createSound({ enabled = true, volume = 0.75 } = {}) {
     try {
       const AC = typeof window !== 'undefined' && (window.AudioContext || window.webkitAudioContext);
       if (!AC) return null;
-      stop(); buffers.clear(); resumePromise = null;
+      stop(); buffers.clear(); resumePromise = null; decodePromise = null;
       context = new AC({ latencyHint: 'interactive' });
       master = context.createGain();
       const compressor = context.createDynamicsCompressor();
@@ -135,14 +170,25 @@ export function createSound({ enabled = true, volume = 0.75 } = {}) {
     if (c.state === 'running') return Promise.resolve(true);
     // iOS can become "interrupted" after a call. Retain gesture listeners
     // so every return to the app can recover instead of unlocking only once.
+    // A resume() that never settles (WebKit outside a gesture) must not pin the
+    // shared promise forever, or later gestures could never try again.
     if (!resumePromise) {
       try {
-        const pending = Promise.resolve(c.resume()).then(() => c.state === 'running', () => false);
+        let timer = null;
+        const attempt = Promise.resolve(c.resume()).then(() => c.state === 'running', () => false);
+        const deadline = new Promise((resolve) => { timer = setTimeout(() => resolve(c.state === 'running'), RESUME_TIMEOUT_MS); });
+        const pending = Promise.race([attempt, deadline]);
         resumePromise = pending;
-        void pending.finally(() => { if (resumePromise === pending) resumePromise = null; });
+        void pending.finally(() => { clearTimeout(timer); if (resumePromise === pending) resumePromise = null; });
       } catch { return Promise.resolve(false); }
     }
     return resumePromise;
+  }
+  // Fetch, resume and decode together; render only once the cue can actually sound.
+  function prepare() {
+    const c = getContext();
+    if (!c) return Promise.resolve(false);
+    return Promise.all([unlock(), decodeBank(c)]).then(([running, decoded]) => running && decoded && c === context);
   }
   function onVisibility() {
     if (hidden()) {
@@ -150,17 +196,26 @@ export function createSound({ enabled = true, volume = 0.75 } = {}) {
       try { Promise.resolve(context?.suspend()).catch(() => {}); } catch { /* unavailable */ }
     } else mix();
   }
-  function onGesture() { void unlock(); }
+  function onGesture() {
+    if (!canPlay()) return;
+    const c = getContext();
+    if (!c) return;
+    // WebKit only honours resume() issued inside a user gesture: call it here even
+    // while an earlier attempt is still pending.
+    if (c.state !== 'running') { try { Promise.resolve(c.resume()).catch(() => {}); } catch { /* unavailable */ } }
+    void prepare();
+  }
   function attach() {
     if (attached || typeof document === 'undefined') return;
     attached = true;
+    void fetchBank();
     document.addEventListener('pointerdown', onGesture, true);
     document.addEventListener('touchstart', onGesture, { capture: true, passive: true });
     document.addEventListener('keydown', onGesture, true);
     document.addEventListener('visibilitychange', onVisibility);
   }
   function dispose() {
-    stop(); buffers.clear();
+    stop(); buffers.clear(); decodePromise = null;
     if (attached) {
       document.removeEventListener('pointerdown', onGesture, true);
       document.removeEventListener('touchstart', onGesture, true);
@@ -171,6 +226,30 @@ export function createSound({ enabled = true, volume = 0.75 } = {}) {
     const c = context;
     context = null; master = null; voiceContext = null; resumePromise = null;
     try { Promise.resolve(c?.close()).catch(() => {}); } catch { /* already closed */ }
+  }
+  // A caller's own Web Audio recipe (Badeeha's question sounds) rendered inside this
+  // context: `render(ctx)` receives a view of the context whose `destination` is the
+  // master gain, so volume, ducking and the hidden-page mute apply to it as well.
+  function synthContext(c) {
+    return new Proxy(c, {
+      get(target, key) {
+        if (key === 'destination') return master;
+        const value = target[key];
+        return typeof value === 'function' ? value.bind(target) : value;
+      },
+    });
+  }
+  function synth(render) {
+    if (!canPlay() || typeof render !== 'function') return;
+    const c = getContext();
+    if (!c) return;
+    const token = generation;
+    const run = () => {
+      if (!canPlay() || token !== generation || c !== context || c.state !== 'running') return;
+      try { render(synthContext(c)); } catch { /* never break the game */ }
+    };
+    if (c.state === 'running') run();
+    else void unlock().then((ok) => { if (ok) run(); });
   }
   return {
     play(name) {
@@ -183,18 +262,21 @@ export function createSound({ enabled = true, volume = 0.75 } = {}) {
       lastPlayed.set(name, now);
       const token = generation;
       const render = () => {
-        if (!canPlay() || token !== generation || c !== context || c.state !== 'running') return;
+        if (!canPlay() || token !== generation || c !== context || c.state !== 'running' || !ready()) return;
         try { RECIPES[name](voiceContext); } catch { /* never break the game */ }
       };
-      if (c.state === 'running') render();
-      else void unlock().then((ready) => { if (ready && Date.now() - now < 180) render(); });
+      if (c.state === 'running' && ready()) render();
+      else void prepare().then((ok) => { if (ok && Date.now() - now < LATE_CUE_MS) render(); });
     },
+    // Fetch and decode every cue ahead of the first play (tests, splash warm-up).
+    preload() { return prepare(); },
     get enabled() { return on; },
     get volume() { return level; },
+    get ready() { return ready(); },
     enable(value) { on = !!value; if (!on) stop(); mix(); },
     setVolume(value) { level = clampVolume(value); if (!level) stop(); mix(); },
     setDucking(value) { ducked = !!value; mix(); },
-    attach, dispose, stop, unlock,
+    attach, dispose, stop, unlock, synth,
     names: [...Object.keys(RECIPES), ...Object.keys(ALIASES)],
   };
 }

@@ -164,6 +164,22 @@ test('x509: السلسلة الوهمية تُحلَّل وتُتحقق، وال
   assert.equal(APPLE_ROOT_CA_G3_SHA256, '63343abfb89a6a03ebb57e9b3f5fa7be7c4f5c756f3017b3a8c488c3653e9179');
 });
 
+// انحدار: مدخلات DER تالفة (طول لا يطابق حجم البايتات، عنصر يتجاوز أصله، شهادة
+// مقطوعة) تُرفض بـSIGNATURE فورًا ولا تُطيل التحليل ولا تصير 500.
+test('x509: DER تالف يُرفض فورًا بـSIGNATURE بدل حلقة أو خطأ داخلي', async () => {
+  const chain = appleChain();
+  const long = new Uint8Array(40);
+  long.set([0x30, 0x26, 0x30, 0x84, 0xff, 0xff, 0xff, 0xfa]); // طول لا يطابق حجم المدخل
+  const overflow = new Uint8Array([0x30, 0x04, 0x02, 0x06, 0x01, 0x02]); // عنصر أطول من أصله
+  for (const der of [long, overflow, chain.leafDer.subarray(0, 40), new Uint8Array(0), new Uint8Array([0x30])]) {
+    const started = Date.now();
+    assert.throws(() => parseCertificate(der), /SIGNATURE/);
+    assert.ok(Date.now() - started < 200, 'الرفض فوري');
+  }
+  await assert.rejects(verifyChain([long, chain.rootDer], { rootSha256: chain.rootSha256 }), /SIGNATURE/);
+  await assert.rejects(verifyAppleJws(chain.sign({ a: 1 }, { header: { alg: 'ES256', x5c: ['!!not-base64!!', chain.x5c[1]] } }), { rootSha256: chain.rootSha256 }), /SIGNATURE/);
+});
+
 test('x509: JWS آبل يُقبل موقّعًا، ويُرفض معدَّلًا أو بلا x5c أو بخوارزمية أخرى', async () => {
   const chain = appleChain();
   const options = { rootSha256: chain.rootSha256 };
@@ -196,7 +212,7 @@ test('cleanup يحذف الجلسات المنتهية قديمًا ورموز �
   await db.prepare('INSERT INTO webhook_events (id, received_at) VALUES (?, ?)').bind('recent', now - day).run();
   await db.prepare('INSERT INTO webhook_events (id, received_at) VALUES (?, ?)').bind('ancient', now - 100 * day).run();
   const result = await cleanup(env, now);
-  assert.deepEqual(result, { sessions: 2, authCodes: 1, webhookEvents: 1 });
+  assert.deepEqual(result, { sessions: 2, authCodes: 1, webhookEvents: 1, staleDeletions: 0, messages: 0, reports: 0 });
   const ids = (await db.prepare('SELECT id FROM sessions ORDER BY id').all()).results.map((r) => r.id);
   assert.deepEqual(ids, ['just-expired', 'live', 'revoked-recent']);
   assert.equal((await db.prepare('SELECT count(*) AS n FROM auth_codes').first()).n, 1);

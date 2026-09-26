@@ -108,7 +108,7 @@ test('images are sanitized JPEG bytes, public only at the current content versio
   assert.match(first.avatarUrl,new RegExp(`^/api/profiles/${a.id}/images/avatar/[a-f0-9]{64}$`));
   assert.equal(isPublicProfileImagePath(first.avatarUrl),true);assert.equal(isPublicProfileImagePath('/api/profiles/me'),false);
   const image=await call(null,first.avatarUrl);
-  assert.equal(image.status,200);assert.equal(image.headers.get('cache-control'),'no-store');
+  assert.equal(image.status,200);assert.equal(image.headers.get('cache-control'),'public, max-age=31536000, immutable');assert.ok(image.headers.get('etag'));
   assert.equal(image.headers.get('x-content-type-options'),'nosniff');assert.equal(image.headers.get('content-type'),'image/jpeg');
   assert.equal(Buffer.from(image.body).includes(Buffer.from('PRIVATE')),false);
   const metadata=await sharp(image.body).metadata();assert.equal(metadata.width,64);assert.equal(metadata.exif,undefined);assert.equal(metadata.icc,undefined);

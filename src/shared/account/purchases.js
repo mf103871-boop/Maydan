@@ -11,9 +11,17 @@ export async function waitForEntitlement(refresh, { attempts = 10, delayMs = 150
   throw new ClientError('ACTIVATION_PENDING');
 }
 
+// A transaction bound to another account, or from the other environment, can never be
+// accepted later: finish it so StoreKit stops replaying it on every launch.
+export const TERMINAL_TRANSACTION_ERRORS = ['ALREADY_LINKED', 'NOT_ELIGIBLE'];
 // A failed server request must leave the StoreKit transaction unfinished for retry.
 export async function deliverAppleTransaction(jws, { submit, apply, acknowledge }) {
-  const next = await submit(jws);
+  let next;
+  try { next = await submit(jws); }
+  catch (error) {
+    if (TERMINAL_TRANSACTION_ERRORS.includes(error && error.code)) { try { await acknowledge(jws); } catch { /* replayed */ } }
+    throw error;
+  }
   apply(next);
   try { await acknowledge(jws); } catch { /* StoreKit replays the unfinished transaction. */ }
   return next;

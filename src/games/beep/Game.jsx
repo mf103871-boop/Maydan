@@ -9,7 +9,9 @@ import { trimSeen } from '../../shared/lib/noRepeat.js';
 import { mulberry32, randomSeed } from '../../shared/lib/rng.js';
 import prompts from '../../data/games/beep/prompts.json';
 import css from './beep.css';
-import { initialState, reduce, currentPlayer, standings, createPromptSource, normalizeOptions, nextBombSeconds, bombPromptArgs, SECONDS, ROUNDS, LIVES } from './logic.js';
+import { initialState, reduce, currentPlayer, standings, createPromptSource, normalizeOptions, nextBombSeconds, bombPromptArgs, restoreSession, sessionSnapshot, SECONDS, ROUNDS, LIVES } from './logic.js';
+import { loadSession } from '../../shared/lib/session.js';
+import { useSessionSave } from '../../shared/ui/useSessionSave.js';
 
 const OPTIONS_KEY = 'options';
 const SEEN_KEY = 'seen';
@@ -19,8 +21,16 @@ const verdictFresh = (v) => !!v && Date.now() - v.at < 1200;
 
 export function SetupOptions({ storage, api }) {
   const [opts, setOpts] = useState(() => normalizeOptions(storage.get(OPTIONS_KEY)));
+  const [resume] = useState(() => loadSession(storage, restoreSession));
   const update = (patch) => { const next = normalizeOptions({ ...opts, ...patch }); setOpts(next); storage.set(OPTIONS_KEY, next); api.sound.play('click'); };
   return (
+    <>
+    {resume && <Card className="stack resume-card">
+      <span className="card-title">لعبتكم بانتظاركم</span>
+      <p className="card-muted">{resume.state.mode === 'three' ? `الجولة ${resume.state.round} من ${resume.state.rounds}` : `💣 القنبلة · ${resume.state.players.length - resume.state.eliminated.length} لاعبين باقين`} · {resume.players.map((p) => p.name).join('، ')}</p>
+      <Button variant="accent" full onClick={() => api.resumeGame(resume)}>استئناف اللعبة المحفوظة</Button>
+      <p className="card-muted">بدء لعبة جديدة يستبدل هذا التقدم.</p>
+    </Card>}
     <Card className="stack">
       <span className="card-title">إعدادات الجولة</span>
       <div className="field"><span>الوضع</span>
@@ -38,14 +48,17 @@ export function SetupOptions({ storage, api }) {
       )}
       {opts.mode === 'bomb' && <p className="card-muted">مؤقت مخفي بين 20 و60 ثانية. كل لاعب 3 أرواح. آخر من يبقى يفوز.</p>}
     </Card>
+    </>
   );
 }
 
-function ThreeRound({ state, dispatch, api, source }) {
+function ThreeRound({ state, dispatch, api, source, timeLeftRef, resumeLeft }) {
   const player = currentPlayer(state);
   const verdict = useRef(null);
   const timer = useTimer({ seconds: state.seconds, onEnd: () => { api.sound.play('buzzer'); api.haptics.vibrate('error'); flashScreen('bad'); dispatch({ type: 'FINISH', timedOut: true }); } });
-  useEffect(() => { if (state.phase === 'prompt') { timer.reset(state.seconds); timer.start(); } }, [state.phase, state.prompt && state.prompt.id]); // eslint-disable-line react-hooks/exhaustive-deps
+  // طلب مستأنف يبدأ من الوقت المحفوظ مرة واحدة.
+  useEffect(() => { if (state.phase === 'prompt') { timer.reset(resumeLeft.current ?? state.seconds); resumeLeft.current = null; timer.start(); } }, [state.phase, state.prompt && state.prompt.id]); // eslint-disable-line react-hooks/exhaustive-deps
+  useEffect(() => { timeLeftRef.current = timer.left; }, [timer.left, timeLeftRef]);
   useEffect(() => { if (state.phase === 'prompt' && timer.left <= state.seconds && timer.running) api.sound.play(timer.left <= 2 ? 'tickFast' : 'tick'); }, [timer.left]); // eslint-disable-line react-hooks/exhaustive-deps
 
   if (state.phase === 'intro') {
@@ -87,7 +100,7 @@ function ThreeRound({ state, dispatch, api, source }) {
   return null;
 }
 
-function BombRound({ state, dispatch, api, source, random }) {
+function BombRound({ state, dispatch, api, source, random, timeLeftRef, resumeLeft }) {
   const player = currentPlayer(state);
   const [hot, setHot] = useState(false);
   const explode = () => {
@@ -100,8 +113,10 @@ function BombRound({ state, dispatch, api, source, random }) {
   };
   const timer = useTimer({ seconds: state.bombSeconds, onEnd: explode });
   // كل قنبلة جديدة لها مدة عشوائية جديدة: نصفّر المؤقت عليها ثم نشغّله (القنبلة تستمر عبر التمرير لأن الطور يبقى prompt).
-  useEffect(() => { if (state.phase === 'prompt') { timer.reset(state.bombSeconds); timer.start(); } }, [state.phase, state.round]); // eslint-disable-line react-hooks/exhaustive-deps
+  // قنبلة مستأنفة تكمل من الوقت المحفوظ لا من فتيل جديد.
+  useEffect(() => { if (state.phase === 'prompt') { timer.reset(resumeLeft.current ?? state.bombSeconds); resumeLeft.current = null; timer.start(); } }, [state.phase, state.round]); // eslint-disable-line react-hooks/exhaustive-deps
   useEffect(() => { setHot(timer.running && timer.left <= 8); if (timer.running) api.sound.play(timer.left <= 8 ? 'tickFast' : 'tick'); }, [timer.left]); // eslint-disable-line react-hooks/exhaustive-deps
+  useEffect(() => { timeLeftRef.current = timer.left; }, [timer.left, timeLeftRef]);
 
   if (state.phase === 'intro') {
     return (
@@ -166,13 +181,27 @@ function PlayersStrip({ state, bump = null }) {
   );
 }
 
-export function Game({ api, players, onExit }) {
-  const seed = useRef(randomSeed());
+export function Game({ api, players, onExit, savedSession = null }) {
+  // لقطة محفوظة صالحة تعيد الحالة والمصدر بنفس البذرة والموضع؛ وإلا مباراة جديدة.
+  const saved = useMemo(() => restoreSession(savedSession), [savedSession]);
+  const seed = useRef(saved ? saved.seed : randomSeed());
   const random = useMemo(() => mulberry32(seed.current), []);
-  const options = useMemo(() => normalizeOptions(api.storage.get(OPTIONS_KEY)), [api.storage]);
-  const source = useMemo(() => createPromptSource(prompts, { random, seen: api.storage.get(SEEN_KEY, {}) || {} }), [random, api.storage]);
-  const [state, dispatch] = useReducer(reduce, undefined, () => initialState(players, options, { random }));
+  const options = useMemo(() => normalizeOptions(saved ? saved.settings : api.storage.get(OPTIONS_KEY)), [api.storage, saved]);
+  const source = useMemo(() => {
+    const promptSource = createPromptSource(prompts, { random, seen: api.storage.get(SEEN_KEY, {}) || {} });
+    if (saved) promptSource.seek(saved.cursor);
+    return promptSource;
+  }, [random, api.storage, saved]);
+  const [state, dispatch] = useReducer(reduce, undefined, () => (saved ? saved.state : initialState(players, options, { random })));
   const [session, setSession] = useState(0);
+  const profileSession = useRef(saved ? saved.profileSession || null : api.matchSnapshot?.() || null);
+  const timeLeftRef = useRef(saved?.timeLeft ?? null);
+  const resumeLeft = useRef(saved?.timeLeft ?? null);
+  useSessionSave({
+    api, state, active: state.phase !== 'over', phaseKey: `${state.phase}:${state.round}:${state.turn}`,
+    snapshot: (current) => sessionSnapshot({ players: current.players, settings: options, seed: seed.current, cursor: source.cursor,
+      timeLeft: current.phase === 'prompt' ? timeLeftRef.current : null, profileSession: profileSession.current, state: current }),
+  });
 
   useEffect(() => { api.setInGame(state.phase !== 'over'); }, [state.phase, api]);
   useEffect(() => {
@@ -199,9 +228,9 @@ export function Game({ api, players, onExit }) {
           </div>
         </div>
       ) : state.mode === 'three' ? (
-        <ThreeRound key={session} state={state} dispatch={dispatch} api={api} source={source} />
+        <ThreeRound key={session} state={state} dispatch={dispatch} api={api} source={source} timeLeftRef={timeLeftRef} resumeLeft={resumeLeft} />
       ) : (
-        <BombRound key={session} state={state} dispatch={dispatch} api={api} source={source} random={random} />
+        <BombRound key={session} state={state} dispatch={dispatch} api={api} source={source} random={random} timeLeftRef={timeLeftRef} resumeLeft={resumeLeft} />
       )}
     </Screen>
   );

@@ -70,8 +70,8 @@ export function About() {
       </Card>
       <Credits />
       <p className="muted center legal-links" style={{ fontSize: 13 }}>
-        {!native && <><a href="/pricing/">التسعير</a> · </>}
-        <a href={native ? `${PUBLIC_SITE_ORIGIN}/refunds/` : '/refunds/'}>سياسة الاسترداد</a> · <a href={LEGAL_ROUTES.terms}>شروط الاستخدام</a> · <a href={LEGAL_ROUTES.privacy}>سياسة الخصوصية</a>
+        {!native && <><a href="pricing/">التسعير</a> · </>}
+        <a href={native ? `${PUBLIC_SITE_ORIGIN}/refunds/` : 'refunds/'}>سياسة الاسترداد</a> · <a href={LEGAL_ROUTES.terms}>شروط الاستخدام</a> · <a href={LEGAL_ROUTES.privacy}>سياسة الخصوصية</a>
       </p>
       <p className="muted center" style={{ fontSize: 13 }}>الإصدار {version} · صُنعت بحب للجلسات العائلية</p>
     </Screen>

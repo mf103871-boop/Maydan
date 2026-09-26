@@ -13,8 +13,10 @@ export function useTimer({ seconds, onEnd, onSecond, autoStart = false, resumeCo
   const onEndRef = useRef(onEnd);
   const onSecondRef = useRef(onSecond);
   const lastSecond = useRef(seconds);
+  const resumingRef = useRef(null);
   onEndRef.current = onEnd;
   onSecondRef.current = onSecond;
+  resumingRef.current = resuming;
 
   const reset = useCallback((next = seconds) => {
     deadline.current = null;
@@ -40,6 +42,16 @@ export function useTimer({ seconds, onEnd, onSecond, autoStart = false, resumeCo
   }, [seconds]);
 
   const pause = useCallback(() => {
+    // أثناء عدّ 3-2-1 لا موعد نهائي بعد؛ الإيقاف هنا يلغي العدّ كي لا يستدعي start()
+    // بعد ثلاث ثوانٍ فيعمل مؤقت شبح خلف شاشة المراجعة.
+    if (resumingRef.current !== null) {
+      resumingRef.current = null;
+      autoPaused.current = false;
+      setResuming(null);
+      setRunning(false);
+      setPaused(true);
+      return;
+    }
     if (!deadline.current) return;
     remaining.current = Math.max(0, (deadline.current - Date.now()) / 1000);
     deadline.current = null;
@@ -77,7 +89,12 @@ export function useTimer({ seconds, onEnd, onSecond, autoStart = false, resumeCo
   // the 3-2-1 overlay drives itself down to zero, then starts
   useEffect(() => {
     if (resuming === null) return undefined;
-    if (resuming <= 0) { setResuming(null); start(); return undefined; }
+    if (resuming <= 0) {
+      setResuming(null);
+      // pause() during the countdown clears the ref; a queued tick may still reach zero.
+      if (resumingRef.current !== null) start();
+      return undefined;
+    }
     const t = setTimeout(() => setResuming((v) => (v === null ? null : v - 1)), 1000);
     return () => clearTimeout(t);
   }, [resuming, start]);

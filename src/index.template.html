@@ -45,10 +45,16 @@
 </div>
 </div>
 <script>
+// حارس مرحلة الإقلاع فقط: يلتقط حزمة لا تُحلَّل أو لا تعمل قبل تركيب React.
+// بعد نجاح التركيب يستبدله main.jsx، فلا يغطي خطأٌ عابر (معالج نقر، تنبيه
+// ResizeObserver) لعبةً تعمل بلوحة عطل ملء الشاشة.
 window.onerror = function (msg, src, line, col) {
+  if (window.__maydanBooted) return false;
+  if (/ResizeObserver loop/.test(String(msg))) return false;
   var f = document.getElementById('fatal');
   var d = document.getElementById('fatal-detail');
   if (f) { f.style.display = 'block'; if (d) { d.textContent = 'خطأ في تشغيل المنصة:\n' + msg + '\nسطر ' + line + ':' + col; } }
+  return false;
 };
 // لوحة العطل لم يكن فيها مخرج: هذه الأزرار تعيد المحاولة أو تمسح البيانات
 // المعطوبة، فلا يبقى اللاعب أمام شاشة ميتة في كل فتح.

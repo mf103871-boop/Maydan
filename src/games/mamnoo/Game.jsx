@@ -7,15 +7,25 @@ import { trimSeen } from '../../shared/lib/noRepeat.js';
 import { mulberry32, randomSeed } from '../../shared/lib/rng.js';
 import cards from '../../data/games/mamnoo/cards.json';
 import css from './mamnoo.css';
-import { initialState, reduce, currentTeam, opponentLabel, standings, createCardSource, normalizeOptions, SECONDS, ROUNDS, MAX_SKIPS } from './logic.js';
+import { initialState, reduce, currentTeam, opponentLabel, standings, createCardSource, normalizeOptions, restoreSession, sessionSnapshot, SECONDS, ROUNDS, MAX_SKIPS } from './logic.js';
+import { loadSession } from '../../shared/lib/session.js';
+import { useSessionSave } from '../../shared/ui/useSessionSave.js';
 
 const OPTIONS_KEY = 'options';
 const SEEN_KEY = 'seen';
 
 export function SetupOptions({ storage, api }) {
   const [opts, setOpts] = useState(() => normalizeOptions(storage.get(OPTIONS_KEY)));
+  const [resume] = useState(() => loadSession(storage, restoreSession));
   const update = (patch) => { const next = normalizeOptions({ ...opts, ...patch }); setOpts(next); storage.set(OPTIONS_KEY, next); api.sound.play('click'); };
   return (
+    <>
+    {resume && <Card className="stack resume-card">
+      <span className="card-title">لعبتكم بانتظاركم</span>
+      <p className="card-muted">الجولة {resume.state.round} من {resume.state.rounds} · {resume.teams.map((t) => t.name).join(' و')}</p>
+      <Button variant="accent" full onClick={() => api.resumeGame(resume)}>استئناف اللعبة المحفوظة</Button>
+      <p className="card-muted">بدء لعبة جديدة يستبدل هذا التقدم.</p>
+    </Card>}
     <Card className="stack">
       <span className="card-title">إعدادات الجولة</span>
       <div className="field"><span>مدة الجولة</span>
@@ -25,15 +35,18 @@ export function SetupOptions({ storage, api }) {
         <Segment accent label="الجولات" value={opts.rounds} onChange={(v) => update({ rounds: v })} options={ROUNDS.map((r) => ({ value: r, label: `${r} جولات` }))} />
       </div>
     </Card>
+    </>
   );
 }
 
-function Round({ state, dispatch, api, source }) {
+function Round({ state, dispatch, api, source, timeLeftRef, resumeLeft }) {
   const team = currentTeam(state);
   const [flash, setFlash] = useState('');
   const timer = useTimer({ seconds: state.seconds, onEnd: () => { api.sound.play('buzzer'); api.haptics.vibrate('warning'); dispatch({ type: 'TIME_UP' }); } });
   // كل دور يبدأ بمؤقت جديد: نصفّره صراحةً ثم نشغّله، فلا نعتمد على مساواة هشّة مع قيمة سابقة.
-  useEffect(() => { if (state.phase === 'play') { timer.reset(state.seconds); timer.start(); } else if (timer.running) timer.pause(); }, [state.phase, state.round, state.turn]); // eslint-disable-line react-hooks/exhaustive-deps
+  // جولة مستأنفة تبدأ من الوقت المحفوظ مرة واحدة.
+  useEffect(() => { if (state.phase === 'play') { timer.reset(resumeLeft.current ?? state.seconds); resumeLeft.current = null; timer.start(); } else if (timer.running) timer.pause(); }, [state.phase, state.round, state.turn]); // eslint-disable-line react-hooks/exhaustive-deps
+  useEffect(() => { timeLeftRef.current = timer.left; }, [timer.left, timeLeftRef]);
   // الإرسال فوري؛ صنف الوميض يقع على البطاقة (لا على .stack الحاوي للمؤقت)، والختم/الوميض طبقات ثابتة في body.
   const act = (type, sound, haptic, cls) => {
     api.sound.play(sound); api.haptics.vibrate(haptic);
@@ -97,12 +110,26 @@ function Round({ state, dispatch, api, source }) {
   return null;
 }
 
-export function Game({ api, teams, onExit }) {
-  const seed = useRef(randomSeed());
+export function Game({ api, teams, onExit, savedSession = null }) {
+  // لقطة محفوظة صالحة تعيد الحالة والمصدر بنفس البذرة والموضع؛ وإلا مباراة جديدة.
+  const saved = useMemo(() => restoreSession(savedSession), [savedSession]);
+  const seed = useRef(saved ? saved.seed : randomSeed());
   const random = useMemo(() => mulberry32(seed.current), []);
-  const options = useMemo(() => normalizeOptions(api.storage.get(OPTIONS_KEY)), [api.storage]);
-  const source = useMemo(() => createCardSource(cards, { random, seen: api.storage.get(SEEN_KEY, {}) || {} }), [random, api.storage]);
-  const [state, dispatch] = useReducer(reduce, undefined, () => initialState(teams, options));
+  const options = useMemo(() => normalizeOptions(saved ? saved.settings : api.storage.get(OPTIONS_KEY)), [api.storage, saved]);
+  const source = useMemo(() => {
+    const cardsSource = createCardSource(cards, { random, seen: api.storage.get(SEEN_KEY, {}) || {} });
+    if (saved) cardsSource.seek(saved.cursor);
+    return cardsSource;
+  }, [random, api.storage, saved]);
+  const [state, dispatch] = useReducer(reduce, undefined, () => (saved ? saved.state : initialState(teams, options)));
+  const profileSession = useRef(saved ? saved.profileSession || null : api.matchSnapshot?.() || null);
+  const timeLeftRef = useRef(saved?.timeLeft ?? null);
+  const resumeLeft = useRef(saved?.timeLeft ?? null);
+  useSessionSave({
+    api, state, active: state.phase !== 'over', phaseKey: `${state.phase}:${state.round}:${state.turn}`,
+    snapshot: (current) => sessionSnapshot({ teams: current.teams, settings: options, seed: seed.current, cursor: source.cursor,
+      timeLeft: current.phase === 'play' ? timeLeftRef.current : null, profileSession: profileSession.current, state: current }),
+  });
   useEffect(() => { api.setInGame(state.phase !== 'over'); }, [state.phase, api]);
   useEffect(() => {
     if (state.phase !== 'over') return;
@@ -120,7 +147,7 @@ export function Game({ api, teams, onExit }) {
           <Button variant="secondary" full onClick={api.backToSetup}>تغيير الفرق أو الإعدادات</Button>
           <Button variant="ghost" full onClick={onExit}>العودة للمنصة</Button>
         </div>
-      ) : <Round key={`${state.round}-${state.turn}`} state={state} dispatch={dispatch} api={api} source={source} />}
+      ) : <Round key={`${state.round}-${state.turn}`} state={state} dispatch={dispatch} api={api} source={source} timeLeftRef={timeLeftRef} resumeLeft={resumeLeft} />}
     </Screen>
   );
 }

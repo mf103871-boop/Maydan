@@ -89,6 +89,9 @@ export async function cacheStartupImages(urls, {
       checkSignal(requestSignal);
       if (hit) {
         try {
+          // Entries this loader stored carry their exact content-length; trusting it
+          // avoids reading sixty megabytes of image bodies off disk on every launch.
+          if (imageResponse(hit) && Number(hit.headers?.get('content-length')) > 0) return;
           if (imageResponse(hit) && (await hit.blob()).size > 0) return;
         } catch {
           // Discard an unreadable cached body and repair it from the network.

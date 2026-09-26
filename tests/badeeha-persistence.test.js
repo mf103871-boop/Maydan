@@ -9,7 +9,8 @@ const categories = Array.from({ length: 6 }, (_, i) => ({ id: `c${i}`, name: `ف
   qs: [200, 400, 600, 800, 1000].flatMap(p => Array.from({ length: 8 }, (_, n) => ({ qid: `c${i}-${p}-${901+n}`, p, q: 'اختبار', a: 'إجابة' }))) }));
 const ids = categories.map(c => c.id);
 const deck = logic.buildDeck(categories, ids, {}, logic.MODES.expert.tiers, 60);
-const session = { version: 2, contentVersion: BANK_CONTENT_VERSION, teams: [{}, {}], selectedCategories: ids, mode: 'expert', roundSize: 60, deck: logic.deckToIds(deck) };
+const team = (name) => ({ name, score: 0, correct: 0, steals: 0, tools: { double: true, two: true, time: true } });
+const session = { version: 2, contentVersion: BANK_CONTENT_VERSION, teams: [team('أ'), team('ب')], selectedCategories: ids, mode: 'expert', roundSize: 60, deck: logic.deckToIds(deck) };
 
 test('old content cannot resume even if question IDs happen to exist, and no stored result/account/history is deleted', () => {
   const old = { ...session }; delete old.contentVersion;
