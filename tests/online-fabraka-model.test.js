@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import * as game from '../server/game-model.mjs';
 import { buildFabrakaDeck } from '../server/fabraka-content.mjs';
-import { FABRAKA_PROTOCOL } from '../src/online/shared.js';
+import { FABRAKA_PROTOCOL, SEAT_GRACE } from '../src/online/shared.js';
 
 const q = { id: 'truth-fixture', kind: 'text', text: 'السؤال فيه ___؟', answer: '206', aliases: ['مئتان وستة'],
   explanation: 'PRIVATE_EXPLANATION', sourceUrl: 'https://example.com/private-source', decoys: ['190', '218', '230'], curious: true };
@@ -175,4 +175,33 @@ test('all four game modes build server decks and pictures expose only display da
       assert.equal(JSON.stringify(exposed).includes(f.room.fab.question.answer), false);
     }
   }
+});
+
+test('a disconnected truth owner is skipped, the host can skip a stalled truth round, and dropped seats stop holding writes and votes', () => {
+  const personal = { ...q, id: 'friend', kind: 'friend', text: '{name} يحب ___', answer: '', aliases: [] };
+  const { room, players, act, view, option, reveal } = fixture({ mode: 'friends' }, 3, personal);
+  act(0, 'start'); act(0, 'truth', { text: 'كبسة' });
+  act(1, 'lie', { text: 'مكرونة' }); act(2, 'lie', { text: 'عدس' });
+  act(1, 'vote', { optionId: option('كبسة') }); act(2, 'vote', { optionId: option('كبسة') }); reveal();
+  game.connected(room, players[1].id, false, 1000); // the round-two owner's phone is dark
+  act(0, 'next');
+  assert.equal(room.phase, 'host');
+  assert.equal(view().truthHostId, players[2].id, 'the slot passes to the next connected player');
+  assert.throws(() => act(2, 'skip_round'), error('HOST_ONLY'));
+  act(0, 'skip_round');
+  assert.equal(room.phase, 'result'); assert.equal(view().roundReason, 'skipped');
+  assert.ok(view().members.every((m) => m.score === 1000 || m.score === 0));
+  assert.throws(() => act(0, 'skip_round'), error('PHASE'));
+
+  const free = fixture({ writeSeconds: 0 }); free.act(0, 'start');
+  game.connected(free.room, free.players[2].id, false, 1000);
+  free.act(0, 'lie', { text: 'أ' }); free.act(1, 'lie', { text: 'ب' });
+  assert.equal(free.room.phase, 'write', 'within the grace the round still waits for the dropped seat');
+  assert.equal(game.nextAlarm(free.room, 1000), 1000 + SEAT_GRACE);
+  game.tick(free.room, 1000 + SEAT_GRACE); free.time(1000 + SEAT_GRACE);
+  assert.equal(free.room.phase, 'vote', 'past the grace the round moves on without a timer');
+  assert.equal(free.view(2).mySubmission.skipped, true);
+  assert.equal(free.view(0).writerCount, 2, 'the dropped seat is not counted among waiting writers');
+  free.act(0, 'vote', { optionId: free.option('ب') }); free.act(1, 'vote', { optionId: free.option('أ') });
+  assert.equal(free.room.phase, 'reveal', 'two present votes reveal without waiting thirty seconds');
 });

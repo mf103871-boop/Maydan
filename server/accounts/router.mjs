@@ -351,19 +351,38 @@ async function redeem(request, env, now) {
 // ── بوابة إنشاء الغرف ───────────────────────────────────────────────────────
 export const gameOf = (input) => (TRIAL_GAMES.includes(input?.game) ? input.game : 'meenfina');
 // المجهول يبقى مسموحًا (العلامة محلية)؛ المسجّل غير المشترك يُحسب له إنشاء واحد لكل لعبة.
+// المجهول يُحسب له أيضًا: معرّف جهاز عشوائي يولّده العميل ويحتفظ به، وتُسجَّل تجربته في
+// جدول التجارب نفسه تحت `device:<id>`. مسح التخزين يعطي معرّفًا جديدًا (كما هو حال بقية
+// المحتوى المحلي)، لكن الخادم صار مصدر الحقيقة بدل علامة في localStorage وحدها.
+const DEVICE_ID = /^[a-f0-9]{32}$/;
+const deviceKeyOf = (input) => (typeof input?.deviceId === 'string' && DEVICE_ID.test(input.deviceId) ? `device:${input.deviceId}` : null);
 export async function roomGate(request, env, input, now = Date.now()) {
-  if (!env.DB || !bearer(request)) return null;
-  let found = null;
-  try { found = await readSession(env, request, { now, rotate: false }); }
-  catch (error) { if (error instanceof RoomError) return null; throw error; } // رمز قديم = ضيف، لا رفض
-  if (!found) return null;
+  if (!env.DB) return null;
   const game = gameOf(input);
-  const [subscriptions, trials] = await Promise.all([db.subscriptionsOf(env, found.user.id), db.trialsOf(env, found.user.id)]);
+  const device = deviceKeyOf(input);
+  let found = null;
+  if (bearer(request)) {
+    try { found = await readSession(env, request, { now, rotate: false }); }
+    catch (error) { if (!(error instanceof RoomError)) throw error; } // رمز قديم = ضيف، لا رفض
+  }
+  if (!found) {
+    if (!device) return null; // لا هوية إطلاقًا: تبقى علامة العميل المحلية هي الحارس
+    const trials = await db.trialsOf(env, device);
+    if (trials[game]) failure('PLUS_REQUIRED');
+    return { userId: null, device, game, premium: false };
+  }
+  const [subscriptions, trials, deviceTrials] = await Promise.all([
+    db.subscriptionsOf(env, found.user.id), db.trialsOf(env, found.user.id), device ? db.trialsOf(env, device) : {},
+  ]);
   const premium = premiumActive(premiumOf(subscriptions, now, env), now);
-  if (!premium && trials[game]) failure('PLUS_REQUIRED');
-  return { userId: found.user.id, game, premium };
+  // اتحاد الحساب والجهاز، كما يتحد المحلي والخادم في العميل: الدخول لا يستعيد تجربة مستهلكة.
+  if (!premium && (trials[game] || deviceTrials[game])) failure('PLUS_REQUIRED');
+  return { userId: found.user.id, device, game, premium };
 }
 export async function markRoomTrial(env, gate, now = Date.now()) {
   if (!gate) return;
-  try { await db.addTrial(env, gate.userId, gate.game, now); } catch { /* الغرفة أُنشئت فعلًا */ }
+  for (const key of [gate.userId, gate.device]) {
+    if (!key) continue;
+    try { await db.addTrial(env, key, gate.game, now); } catch { /* الغرفة أُنشئت فعلًا */ }
+  }
 }

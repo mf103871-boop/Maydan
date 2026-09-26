@@ -6,6 +6,12 @@ import { bindSeatAccount, prepareRoomStats } from './room-stats.mjs';
 import { recordOnlineResult } from './profiles/db.mjs';
 const SOCKET_IDLE = 45_000;
 const STATS_RETRY = 30_000;
+// Statements the room has already shown wait at the back of the queue, so a second
+// match in the same room does not repeat the first.
+export function meenfinaDeck(room) {
+  const seen = new Set(room.seenStatements || []);
+  return [...shuffled(statements.filter((s) => !seen.has(s.id))), ...shuffled(statements.filter((s) => seen.has(s.id)))];
+}
 
 // Plain Durable Object constructor works in Cloudflare and the local Node adapter.
 // All mutations share a queue; a failed storage write never becomes visible.
@@ -226,7 +232,7 @@ export class Room {
         if (!a.id) fail('AUTH', 401);
         if (!requestId) fail('INVALID');
         const candidate = structuredClone(this.room);
-        const deck = command.type === 'start' ? (candidate.game === 'fabraka' ? buildFabrakaDeck(candidate) : shuffled(statements)) : [];
+        const deck = command.type === 'start' ? (candidate.game === 'fabraka' ? buildFabrakaDeck(candidate) : meenfinaDeck(candidate)) : [];
         action(candidate, a.id, command, now, deck);
         await this.commit(candidate);
         this.send(ws, { type: 'ack', requestId, ok: true });

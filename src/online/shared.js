@@ -9,10 +9,20 @@ export const MIN_PLAYERS = 3;
 export const MAX_PLAYERS = 12;
 export const ROUND_OPTIONS = [5, 8, 12];
 export const VOTE_SECONDS = 30;
+// عمر الغرفة: ساعتان من الإنشاء، ويُمدَّد عند كل بداية مباراة إلى ساعتين من تلك اللحظة
+// بحد أقصى ست ساعات، فلا تُقطع جلسة بدأت متأخرًا في منتصف جولة.
 export const ROOM_TTL = 2 * 60 * 60 * 1000;
+export const ROOM_MAX_TTL = 6 * 60 * 60 * 1000;
+export const MATCH_EXTENSION = ROOM_TTL;
+export const START_MIN_REMAINING = 15 * 60 * 1000;
+export const EXPIRY_WARNING = 10 * 60 * 1000;
 export const HOST_GRACE = 20_000;
+// مقعد منقطع أكثر من هذه المدة لا يُنتظر في الكتابة أو التصويت؛ يعود متى شاء.
+export const SEAT_GRACE = 15_000;
 export const AVATARS = ['😎', '🦋', '🌟', '🚀'];
-export const COLORS = ['#118D96', '#9250BD', '#8651AD', '#A67A21'];
+// لون لكل مقعد (لا لكل شخصية): الأربعة الأولى كما كانت لتوافق الغرف القائمة، والبقية
+// تمنح غرفة من اثني عشر لاعبًا ألوانًا مميزة في لوحة النقاط والمنصة.
+export const COLORS = ['#118D96', '#9250BD', '#8651AD', '#A67A21', '#C2503A', '#2E7D4F', '#B0367A', '#3A63B8', '#D0651B', '#1F8A70', '#6B4FB3', '#8C2F39'];
 // CLDR now gives the bare `ar` locale Latin digits, so generated numbers used to
 // sit next to the hand-written Arabic-Indic ones. Ask for the arab numbering
 // system explicitly, and map anything a reduced-ICU build still returns.
@@ -71,6 +81,8 @@ export const ERRORS = {
   CREATE_LIMIT: 'أنشأت غرفًا كثيرة من هذا الجهاز. انتظر ١٠ دقائق ثم أنشئ غرفة جديدة، أو ادخل برمز غرفة جاهزة.',
   COLLISION: 'تعذر حجز رمز غرفة فارغ الآن. حاول مرة ثانية بعد لحظات.',
   TARGET_GONE: 'غادر هذا المقعد الغرفة بالفعل. حدّثت القائمة تلقائيًا.',
+  BANNED: 'أزال المضيف مقعدك من هذه الغرفة، ولا يمكن العودة إليها.',
+  EXPIRING: 'لم يبقَ من عمر الغرفة ما يكفي لمباراة كاملة. أنشئ غرفة جديدة.',
   ORIGIN: 'رابط اللعبة غير مفعّل للاتصال بالغرف.',
   PLUS_REQUIRED: 'إنشاء الغرف بعد الغرفة المجانية يحتاج إلى ميدان بلس.',
   CONFIG: 'حدّث صفحة اللعبة للحصول على أحدث نسخة من الغرف.',

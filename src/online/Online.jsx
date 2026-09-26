@@ -7,8 +7,8 @@ import { burstConfetti, vignette } from '../shared/fx/index.js';
 import { navigate, setExitGuard } from '../platform/router.js';
 import { usePlatform } from '../platform/context.js';
 import { useAccount } from '../shared/account/context.js';
-import { AVATARS, ROUND_OPTIONS, MIN_PLAYERS, ONLINE_GAMES, normalizeCode, validCode, resolveServerUrl, errorText, arabicNumber } from './shared.js';
-import { RoomClient, newCredentials, post, readSaved, save, clearSession } from './client.js';
+import { AVATARS, ROUND_OPTIONS, MIN_PLAYERS, ONLINE_GAMES, EXPIRY_WARNING, normalizeCode, validCode, resolveServerUrl, errorText, arabicNumber } from './shared.js';
+import { RoomClient, newCredentials, post, readSaved, save, clearSession, deviceId } from './client.js';
 import { normalizeContentOptions } from '../games/fabraka/content.js';
 import { FabrakaSettings, FabrakaRules, FabrakaMatch, FABRAKA_MODES, fabrakaTopics } from './Fabraka.jsx';
 
@@ -48,7 +48,8 @@ function Entry({ initialCode = '', initialGame = 'meenfina', onJoined }) {
       credentialsRef.current = session;
       save(SERVER, pendingKey, session); // Persist before HTTP so a retry can reclaim the same seat.
       const result = await post(SERVER, mode === 'create' ? '/api/rooms' : `/api/rooms/${normalized}/join`, { ...session, name: name.trim(), avatar, rounds,
-        ...(mode === 'create' ? { game, ...(game === 'fabraka' ? { settings: fabrakaSettings } : {}) } : {}) }, { headers: account.authHeaders() });
+        // معرّف الجهاز يحتسب الغرفة المجانية لغير المسجّل على الخادم؛ الدخول برمز لا يحتاجه.
+        ...(mode === 'create' ? { game, deviceId: deviceId(), ...(game === 'fabraka' ? { settings: fabrakaSettings } : {}) } : {}) }, { headers: account.authHeaders() });
       if (mode === 'create') account.markTrial(game);
       const stored = save(SERVER, result.code, session);
       save(SERVER, 'persistence', stored);
@@ -119,14 +120,16 @@ function Invite({ code }) {
 export function Lobby({ state, me, isHost, disabled, act }) {
   const players = state.members.filter((m) => !m.left);
   const canStart = players.length >= MIN_PLAYERS && players.every((m) => m.connected && m.ready);
+  // إزالة لاعب متصل قرار يستحق تأكيدًا؛ المقعد المنقطع يُزال مباشرة. الإزالة تمنع العودة إلى هذه الغرفة.
+  const [kickTarget, setKickTarget] = useState(null);
   return <>
     <Invite code={state.code} />
     <Card className="stack">
       <div className="row-between"><h2>غرفة الانتظار</h2><span>{arabic(players.length)} / {arabic(ONLINE_GAMES[state.game || 'meenfina'].max)}</span></div>
       <ul className="online-players">{players.map((p, i) => <li key={p.id} style={{ '--i': i }}>
-        <Avatar index={p.avatar} /><div className="grow"><b>{p.name}{p.id === me?.id ? ' (أنت)' : ''}</b><small>{p.id === state.hostId ? 'المضيف · ' : ''}{!p.connected ? 'انقطع الاتصال' : p.ready ? 'جاهز' : 'يستعد'}</small></div>
+        <span className="online-seat" style={{ background: p.color }} aria-hidden="true" /><Avatar index={p.avatar} /><div className="grow"><b>{p.name}{p.id === me?.id ? ' (أنت)' : ''}</b><small>{p.id === state.hostId ? 'المضيف · ' : ''}{!p.connected ? 'انقطع الاتصال' : p.ready ? 'جاهز' : 'يستعد'}</small></div>
         <span className={`online-presence ${p.connected && p.ready ? 'ready' : ''}`} aria-hidden="true" />
-        {isHost && !p.connected && p.id !== me.id && <Button size="sm" disabled={disabled} onClick={() => act('kick', { targetId: p.id })}>إزالة</Button>}
+        {isHost && p.id !== me?.id && <Button size="sm" variant={p.connected ? 'ghost' : 'secondary'} disabled={disabled} onClick={() => (p.connected ? setKickTarget(p) : act('kick', { targetId: p.id }))}>إزالة</Button>}
       </li>)}</ul>
       <Button full disabled={disabled} variant={me?.ready ? 'secondary' : 'primary'} onClick={() => act('ready', { ready: !me?.ready })}>{me?.ready ? 'أنا جاهز ✓ — إلغاء الجاهزية' : 'أنا جاهز'}</Button>
       {isHost ? <Button full variant="primary" size="lg" className={canStart ? 'is-armed' : ''} disabled={disabled || !canStart} onClick={() => act('start')}>ابدأ اللعب</Button> : <p className="online-footnote">المضيف يبدأ الجولة عندما يجهز الجميع.</p>}
@@ -134,7 +137,14 @@ export function Lobby({ state, me, isHost, disabled, act }) {
     </Card>
     {state.game === 'fabraka' ? <Card className="stack"><h2>فبركة · {FABRAKA_MODES[state.settings.mode]}</h2><p>{arabic(state.rounds)} جولات · {state.settings.writeSeconds ? `${arabic(state.settings.writeSeconds)} ثانية للكتابة` : 'كتابة براحتنا'} · {state.settings.discussionSeconds ? `${arabic(state.settings.discussionSeconds)} ثانية للنقاش` : 'بدون نقاش'} · ٣٠ ثانية للتصويت.</p><FabrakaRules /></Card>
       : <p className="online-footnote">{arabic(state.rounds)} جولات · ٣٠ ثانية لكل تصويت · الأعلى أصواتًا يكسب نقطة، والتعادل يحتسب للجميع.</p>}
+    {kickTarget && <ConfirmModal title={`تزيل ${kickTarget.name}؟`} message="يخرج من الغرفة ولا يستطيع العودة إليها بهذا الرمز." confirmLabel="إزالة" cancelLabel="إبقاؤه" onConfirm={() => { const target = kickTarget; setKickTarget(null); act('kick', { targetId: target.id }); }} onCancel={() => setKickTarget(null)} />}
   </>;
+}
+// «دقيقة واحدة»، «دقيقتان»، «٣–١٠ دقائق»، ثم «١١ دقيقة».
+function minutesLabel(n) {
+  if (n <= 1) return 'دقيقة واحدة';
+  if (n === 2) return 'دقيقتين';
+  return `${arabic(n)} ${n <= 10 ? 'دقائق' : 'دقيقة'}`;
 }
 function Match({ state, disabled, isHost, act, clockOffset }) {
   const platform = usePlatform();
@@ -232,11 +242,20 @@ function ConnectedRoom({ code, session, stored, onLeft }) {
   const me = state?.members.find((m) => m.id === session.id);
   const isHost = state?.hostId === session.id;
   const disabled = busy || status !== 'connected';
+  // تنبيه قبل انتهاء عمر الغرفة (يُمدَّد مع كل مباراة حتى ست ساعات) بدل قطع الجولة بلا سابق إنذار.
+  const [clock, setClock] = useState(() => Date.now());
+  useEffect(() => { const timer = setInterval(() => setClock(Date.now()), 30_000); return () => clearInterval(timer); }, []);
+  const msLeft = state ? state.expiresAt - (clock + (clientRef.current?.clockOffset || 0)) : Infinity;
+  const expiring = Boolean(state) && msLeft < EXPIRY_WARNING && !['over', 'closed'].includes(state.phase);
+  // مقاعد انقطعت أثناء المباراة: الجولة لا تنتظرها بعد مهلتها، ويستطيع المضيف إزالتها.
+  const dropped = state && isHost && state.phase !== 'lobby' ? state.members.filter((m) => state.participants.includes(m.id) && !m.left && !m.connected) : [];
   return <>
     <TopBar title={state ? ONLINE_GAMES[state.game || 'meenfina'].name : 'غرف ميدان'} eyebrow={`غرفة ${code}`} end={<Button size="sm" onClick={() => setExitTarget(state?.game === 'fabraka' ? '/online/fabraka' : '/online')}>خروج</Button>} />
     <p className={`online-connection ${status === 'connected' ? 'connected' : ''}`} role="status">{status === 'connected' ? 'متصل · كل واحد بجواله' : status === 'ended' ? 'انتهى الاتصال بالغرفة' : status === 'replaced' ? 'الجلسة مفتوحة في تبويب آخر' : 'جاري الاتصال بالغرفة…'}</p>
     <ErrorNotice code={error} />
     {state?.hostMissingSince && <p className="online-notice is-host-missing">انقطع اتصال المضيف. تنتقل الإدارة للاعب متصل بعد ٢٠ ثانية إذا لم يعد.</p>}
+    {expiring && <p className="online-notice" role="status">تنتهي الغرفة بعد {minutesLabel(Math.max(1, Math.ceil(msLeft / 60_000)))}. أكملوا الجولة الحالية أو أنشئوا غرفة جديدة بعدها.</p>}
+    {dropped.length > 0 && <Card className="stack online-dropped"><p className="online-footnote">مقاعد منقطعة: لا تنتظرها الجولة بعد ١٥ ثانية، وتقدر تزيلها من المباراة.</p>{dropped.map((m) => <Button key={m.id} size="sm" variant="ghost" disabled={disabled} onClick={() => act('kick', { targetId: m.id })}>إزالة {m.name}</Button>)}</Card>}
     {['replaced', 'reconnecting', 'disconnected'].includes(status) && <Button onClick={() => { clientRef.current.stop(); clientRef.current.start(); }}>إعادة الاتصال</Button>}
     {status === 'ended' ? <Button full onClick={() => { clearSession(SERVER, code); setExitGuard(null); onLeft(); navigate('/online', { replace: true }); }}>العودة إلى الغرف</Button>
       : state && (state.phase === 'lobby' ? <Lobby state={state} me={me} isHost={isHost} disabled={disabled} act={act} /> : state.game === 'fabraka'

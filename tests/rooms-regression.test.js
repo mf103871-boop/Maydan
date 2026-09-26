@@ -12,6 +12,7 @@ import { Miniflare, convertV4MiniflareOptions } from 'miniflare';
 import { WebSocket } from 'ws';
 import { startLocalServer, MemoryStorage } from '../server/local.mjs';
 import { routeRequest, RequestLimiter } from '../server/worker.mjs';
+import { meenfinaDeck } from '../server/room.mjs';
 import { securityHeaders } from '../server/full-worker.mjs';
 import * as model from '../server/room-model.mjs';
 import { RoomClient, newCredentials } from '../src/online/client.js';
@@ -351,4 +352,24 @@ test('7 · a protocol mismatch ends the session instead of offering a retry', ()
   assert.equal(client.connectionStatus, 'ended'); // 'disconnected' would render a retry button that can never work.
   assert.equal(client.stopped, true);
   assert.match(errorText('CONFIG'), /حدّث صفحة اللعبة/);
+});
+
+test('anonymous room creation counts the device: the second free room needs Plus, another device does not', async (t) => {
+  const app = await startLocalServer({ port: 0 }); t.after(() => app.close());
+  const body = (deviceId) => ({ ...newCredentials(), name: 'أحمد', avatar: 0, rounds: 5, ...(deviceId ? { deviceId } : {}) });
+  const device = 'd'.repeat(32);
+  assert.equal((await api(app, '/api/rooms', body(device))).status, 201);
+  const second = await api(app, '/api/rooms', body(device));
+  assert.equal(second.status, 402); assert.equal(second.body.error, 'PLUS_REQUIRED');
+  assert.equal((await api(app, '/api/rooms', body('e'.repeat(32)))).status, 201);
+  assert.equal((await api(app, '/api/rooms', body(null))).status, 201, 'without a device id the client-side mark remains the gate');
+});
+
+test('statements a room already showed go to the back of the next deck', () => {
+  const first = meenfinaDeck({ seenStatements: [] });
+  const seen = first.slice(0, 12).map((s) => s.id);
+  const second = meenfinaDeck({ seenStatements: seen });
+  assert.equal(second.length, first.length);
+  assert.ok(second.slice(0, first.length - 12).every((s) => !seen.includes(s.id)), 'fresh statements first');
+  assert.deepEqual(new Set(second.slice(-12).map((s) => s.id)), new Set(seen), 'seen statements last');
 });

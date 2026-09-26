@@ -1,8 +1,8 @@
 // Authoritative simultaneous Fabraka. Only snapshot() may leave the room server.
-import { FABRAKA_PROTOCOL, ROOM_TTL, HOST_GRACE, AVATARS, COLORS, VOTE_SECONDS } from '../src/online/shared.js';
+import { FABRAKA_PROTOCOL, ROOM_TTL, HOST_GRACE, AVATARS, VOTE_SECONDS } from '../src/online/shared.js';
 import { normalizeOptions, validateLie, matchesTruth, sameAnswer, roundBreakdown, fillName, TRUTH_ID } from '../src/games/fabraka/logic.js';
 import { pictureAsset, PICTURE_CREDIT } from '../src/games/fabraka/pictureAssets.js';
-import { active, member, memberOrNull, profile, transferHost, joinRoom as joinMember, fail } from './room-model.mjs';
+import { active, member, memberOrNull, profile, transferHost, joinRoom as joinMember, fail, hasInvisible, absent, graceDeadlines, extendForMatch, kickSeat, colorOf } from './room-model.mjs';
 import { shuffled } from './protocol.mjs';
 
 const TIMED = ['host', 'write', 'discussion', 'vote'];
@@ -11,7 +11,7 @@ const has = (object, key) => Object.hasOwn(object, key);
 const zeroStats = () => ({ truths: 0, fooled: 0, laughs: 0 });
 const zeroRow = () => ({ truth: 0, fooled: 0, laughs: 0, points: 0, byWriting: false, host: false });
 function text(value) {
-  if (typeof value !== 'string' || /[\p{Cc}\p{Cf}]/u.test(value)) fail('ANSWER');
+  if (typeof value !== 'string' || hasInvisible(value)) fail('ANSWER');
   const checked = validateLie(value.normalize('NFKC'));
   if (!checked.ok) fail('ANSWER');
   return checked.text;
@@ -19,8 +19,10 @@ function text(value) {
 function deadline(room, phase, now, seconds) {
   room.phase = phase; room.deadlineAt = seconds ? now + seconds * 1000 : null;
 }
-function presentWriters(room) {
-  return room.fab.writers.filter((id) => room.members.some((m) => m.id === id && !m.left));
+// Writers the round still waits for: present seats, or seats that dropped less than
+// SEAT_GRACE ago. A phone that stays away does not hold everyone else.
+function presentWriters(room, now) {
+  return room.fab.writers.filter((id) => { const m = room.members.find((x) => x.id === id); return m && !absent(m, now); });
 }
 function question(room) { return room.fab?.question; }
 // صاحب الحقيقة يدور على المشاركين الحاضرين. ownerShift يعوّض من غادر في المنتصف
@@ -28,6 +30,17 @@ function question(room) { return room.fab?.question; }
 function friendOwner(room, round) {
   const size = room.participants.length;
   return size ? room.participants[(((round - 1 - (room.ownerShift || 0)) % size) + size) % size] : null;
+}
+// A disconnected player cannot write a truth: their slot passes to the next player in
+// rotation instead of holding the room for ninety seconds behind a dark phone.
+function pickOwner(room) {
+  const size = room.participants.length;
+  for (let step = 0; step < size; step += 1) {
+    const owner = room.members.find((m) => m.id === friendOwner(room, room.round));
+    if (owner && !owner.left && owner.connected) return owner;
+    room.ownerShift = (room.ownerShift || 0) - 1;
+  }
+  return room.members.find((m) => m.id === friendOwner(room, room.round)) || null;
 }
 function dropParticipant(room, id) {
   const index = room.participants.indexOf(id);
@@ -45,8 +58,8 @@ export function createRoom(code, input, now) {
   return { game: 'fabraka', code, revision: 0, createdAt: now, expiresAt: now + ROOM_TTL,
     hostId: input.id, hostMissingSince: now, phase: 'lobby', matchId: 0, round: 0, ownerShift: 0,
     rounds: settings.rounds, settings, voteSeconds: VOTE_SECONDS, deadlineAt: null, reason: null,
-    members: [{ id: input.id, tokenHash: input.tokenHash, ...profile(input), joinedAt: now, connected: false, ready: true, left: false }],
-    participants: [], scores: {}, stats: {}, seenFacts: [], fab: null, history: [] };
+    members: [{ id: input.id, tokenHash: input.tokenHash, ...profile(input), joinedAt: now, connected: false, disconnectedAt: null, ready: true, left: false, colorIndex: 0 }],
+    banned: [], participants: [], scores: {}, stats: {}, seenFacts: [], fab: null, history: [] };
 }
 export function joinRoom(room, input, now) {
   if (!room.members.some((m) => m.id === input.id && !m.left) && active(room).length >= 8) fail('FULL_FABRAKA', 409);
@@ -60,8 +73,8 @@ function beginRound(room, now) {
   const f = room.fab;
   const raw = f.deck[f.cursor++];
   if (!raw) fail('QUESTIONS');
-  const truthHostId = room.settings.mode === 'friends' ? friendOwner(room, room.round) : null;
-  const owner = room.members.find((m) => m.id === truthHostId);
+  const owner = room.settings.mode === 'friends' ? pickOwner(room) : null;
+  const truthHostId = owner?.id || null;
   Object.assign(f, { question: truthHostId ? { ...raw, text: fillName(raw.text, owner.name), answer: '', aliases: [] } : raw,
     truthHostId, writers: active(room).map((m) => m.id).filter((id) => id !== truthHostId),
     submissions: {}, options: [], votes: {}, truthWriters: [], helped: {}, revealGroups: [], revealIndex: 0,
@@ -112,7 +125,7 @@ function prepareReveal(room) {
   room.phase = 'reveal'; room.deadlineAt = null;
 }
 function maybeAdvance(room, now) {
-  const ids = presentWriters(room);
+  const ids = presentWriters(room, now);
   if (room.phase === 'write' && ids.every((id) => has(room.fab.submissions, id))) finishWriting(room, now);
   if (room.phase === 'vote' && ids.every((id) => has(room.fab.votes, id))) prepareReveal(room);
 }
@@ -151,6 +164,8 @@ export function leaveRoom(room, id, now) {
 export function tick(room, now) {
   if (now >= room.expiresAt) { room.phase = 'closed'; room.reason = 'expired'; room.deadlineAt = null; return; }
   transferHost(room, now);
+  // A seat away for longer than its grace stops holding the round for the others.
+  if (['write', 'vote'].includes(room.phase)) maybeAdvance(room, now);
   if (!room.deadlineAt || now < room.deadlineAt) return;
   if (room.phase === 'host') abortRound(room, 'truth_timeout');
   else if (room.phase === 'write') finishWriting(room, now);
@@ -160,6 +175,7 @@ export function tick(room, now) {
 export function nextAlarm(room, now) {
   const deadlines = [room.expiresAt];
   if (TIMED.includes(room.phase) && room.deadlineAt) deadlines.push(room.deadlineAt);
+  if (['write', 'vote'].includes(room.phase)) deadlines.push(...graceDeadlines(room, now));
   if (room.hostMissingSince !== null && active(room).some((m) => m.connected)) deadlines.push(room.hostMissingSince + HOST_GRACE);
   return Math.max(now + 1, Math.min(...deadlines));
 }
@@ -175,20 +191,15 @@ export function action(room, actorId, command, now, deck = []) {
   switch (command.type) {
     case 'ready':
       phase('lobby'); if (typeof command.ready !== 'boolean') fail('INVALID'); actor.ready = command.ready; break;
-    case 'kick': {
-      host(); phase('lobby');
-      if (command.targetId === actorId) fail('INVALID');
-      const target = memberOrNull(room, command.targetId);
-      if (!target) fail('TARGET_GONE', 409);
-      if (target.connected) fail('INVALID');
-      leaveRoom(room, command.targetId, now); break;
-    }
+    case 'kick':
+      leaveRoom(room, kickSeat(room, actorId, command, now, host), now); break;
     case 'start': {
       host(); phase('lobby');
       const players = active(room);
       if (players.length < 3 || players.length > 8 || !players.every((m) => m.connected && m.ready)) fail('NOT_READY', 409);
       const rounds = room.settings.mode === 'friends' ? players.length * room.settings.friendCycles : room.settings.rounds;
       if (deck.length < rounds) fail('QUESTIONS');
+      extendForMatch(room, now);
       room.matchId++; room.round = 1; room.rounds = rounds; room.reason = null; room.ownerShift = 0;
       room.participants = players.map((m) => m.id);
       room.scores = Object.fromEntries(room.participants.map((id) => [id, 0]));
@@ -214,6 +225,10 @@ export function action(room, actorId, command, now, deck = []) {
       // Keeping the original deadline prevents an absent owner from stalling the room.
       break;
     }
+    // The room host may give up on a truth owner who is not writing, instead of
+    // waiting out the ninety seconds with everyone watching.
+    case 'skip_round':
+      host(); phase('host'); abortRound(room, 'skipped'); break;
     case 'help': {
       phase('write'); if (!f.writers.includes(actorId)) fail('TRUTH_OWNER', 403);
       if (has(f.submissions, actorId)) fail('SUBMITTED', 409);
@@ -295,17 +310,18 @@ export function snapshot(room, viewerId, now) {
     return safe;
   };
   const optionPhase = ['discussion', 'vote', 'reveal', 'result'].includes(room.phase) || (room.phase === 'over' && f?.scored);
+  const writers = f ? presentWriters(room, now) : [];
   return { protocol: FABRAKA_PROTOCOL, game: 'fabraka', code: room.code, revision: room.revision,
     serverNow: now, expiresAt: room.expiresAt, hostId: room.hostId, hostMissingSince: room.hostMissingSince,
     phase: room.phase, matchId: room.matchId, round: room.round,
     rounds: room.phase === 'lobby' && room.settings.mode === 'friends' ? active(room).length * room.settings.friendCycles : room.rounds,
     settings: room.settings, voteSeconds: VOTE_SECONDS, deadlineAt: room.deadlineAt, reason: room.reason,
-    members: room.members.map((m) => ({ id: m.id, name: m.name, avatar: m.avatar, emoji: AVATARS[m.avatar], color: COLORS[m.avatar],
+    members: room.members.map((m) => ({ id: m.id, name: m.name, avatar: m.avatar, emoji: AVATARS[m.avatar], color: colorOf(m),
       connected: m.connected, ready: m.ready, left: m.left, score: room.scores[m.id] || 0, stats: room.stats[m.id] || zeroStats() })),
     participants: room.participants, question: publicQuestion(room), truthHostId: f?.truthHostId || null,
-    writerCount: f ? presentWriters(room).length : 0,
-    writingCount: f ? presentWriters(room).filter((id) => has(f.submissions, id)).length : 0,
-    submittedCount: f ? presentWriters(room).filter((id) => has(f.votes, id)).length : 0,
+    writerCount: writers.length,
+    writingCount: writers.filter((id) => has(f.submissions, id)).length,
+    submittedCount: writers.filter((id) => has(f.votes, id)).length,
     mySubmission: f && has(f.submissions, viewerId) ? { submitted: true, ...f.submissions[viewerId] } : { submitted: false },
     myVote: f && has(f.votes, viewerId) ? { submitted: true, ...f.votes[viewerId] } : { submitted: false },
     myHelp: f?.helped[viewerId] || null, helpAvailable: Boolean(f && !f.helpUsed.includes(viewerId) && f.writers.includes(viewerId)),
