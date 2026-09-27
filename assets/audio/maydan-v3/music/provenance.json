@@ -3,7 +3,8 @@
   "key": "D",
   "tracks": {
     "home": {
-      "file": "audio/music/home.m4a",
+      "file": "audio/music/home-3d8a23.m4a",
+      "master": "assets/audio/maydan-v3/music/home.wav",
       "seconds": 53.3333,
       "frames": 2560000,
       "bpm": 72,
@@ -22,7 +23,8 @@
       "encodedBytes": 1336152
     },
     "calm": {
-      "file": "audio/music/calm.m4a",
+      "file": "audio/music/calm-6185c0.m4a",
+      "master": "assets/audio/maydan-v3/music/calm.wav",
       "seconds": 58.1818,
       "frames": 2792728,
       "bpm": 66,
@@ -41,7 +43,8 @@
       "encodedBytes": 1443304
     },
     "tense": {
-      "file": "audio/music/tense.m4a",
+      "file": "audio/music/tense-be60ce.m4a",
+      "master": "assets/audio/maydan-v3/music/tense.wav",
       "seconds": 40,
       "frames": 1920000,
       "bpm": 96,
@@ -60,7 +63,8 @@
       "encodedBytes": 1014784
     },
     "finale": {
-      "file": "audio/music/finale.m4a",
+      "file": "audio/music/finale-579d07.m4a",
+      "master": "assets/audio/maydan-v3/music/finale.wav",
       "seconds": 6.5,
       "frames": 312000,
       "bpm": 84,

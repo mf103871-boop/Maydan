@@ -6,6 +6,9 @@ import { createNoRepeat, drawUnique, trimSeen } from '../src/shared/lib/noRepeat
 import { arabicNormalize, arabicNormalizeLoose, sameText } from '../src/shared/lib/arabicNormalize.js';
 import { mulberry32, randInt } from '../src/shared/lib/rng.js';
 import { fakeStorage, seeded } from './helpers.js';
+import { renderServiceWorker, audioCueAssets } from '../scripts/lib.mjs';
+import { SAMPLE_BANK } from '../src/shared/fx/sample-bank.js';
+import { readFileSync } from 'node:fs';
 
 test('storage: نطاق لكل لعبة، JSON، ومسح بالنطاق فقط', () => {
   const backend = fakeStorage();
@@ -122,4 +125,14 @@ test('createNoRepeat.seek: إعادة بناء المصدر بنفس البذر�
   assert.deepEqual(rest, restFirst, 'ما بعد الموضع متطابق');
   assert.equal(createNoRepeat(items, { random: mulberry32(1) }).seek(99), 12, 'الموضع محصور بطول الطابور');
   assert.equal(createNoRepeat(items, { random: mulberry32(1) }).seek(-4), 0);
+});
+
+test('renderServiceWorker: قائمة المؤثرات تأتي من manifest البناء، والموسيقى لا تُخزَّن مسبقًا', () => {
+  const src = readFileSync(new URL('../public/sw.js', import.meta.url), 'utf8');
+  const out = renderServiceWorker(src, { id: '9.9.9-abcdef01', fabrakaImages: ['./media/fabraka-v3/x.webp?v=1'], audioCues: audioCueAssets() });
+  assert.ok(!out.includes('__BUILD_ID__') && out.includes('maydan-platform-9.9.9-abcdef01'));
+  assert.ok(!out.includes('/*__AUDIO_CUES__*/'), 'placeholder replaced');
+  for (const entry of Object.values(SAMPLE_BANK)) assert.ok(out.includes(`"./${entry.url}"`), `${entry.url} precached`);
+  assert.ok(!out.includes('audio/music/'));
+  assert.ok(out.includes('./media/fabraka-v3/x.webp?v=1'));
 });

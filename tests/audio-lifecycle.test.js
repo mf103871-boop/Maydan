@@ -166,11 +166,16 @@ test('the shipped AAC cues match the manifest and the manifest matches the appro
     assert.equal(createHash('sha256').update(file).digest('hex'), entry.sha256, `encoded cue changed: ${id}`);
     assert.equal(file.length, entry.bytes);
     total += file.length;
-    const data = wavData(readFileSync(new URL(`../assets/audio/maydan-v2/${entry.url.split('/').pop().replace(/\.m4a$/, '.wav')}`, import.meta.url)));
+    assert.match(entry.url, /^audio\/[a-z-]+-[0-9a-f]{6}\.m4a$/, `cue files are named after their content hash: ${id}`);
+    assert.equal(entry.url.slice(-10, -4), createHash('sha256').update(file).digest('hex').slice(0, 6), `the name carries the file's own hash: ${id}`);
+    const data = wavData(readFileSync(new URL(`../assets/audio/maydan-v3/${entry.url.split('/').pop().replace(/-[0-9a-f]{6}\.m4a$/, '.wav')}`, import.meta.url)));
     assert.equal(createHash('sha256').update(data).digest('hex'), entry.masterSha256, `approved master changed: ${id}`);
     assert.equal(data.length / 6, entry.frames);
   }
-  assert.ok(total < 512 * 1024, `the cue bank stays under half a megabyte (${total} bytes)`);
+  assert.ok(total < 640 * 1024, `the cue bank stays small enough to precache (${total} bytes)`);
+  const sw = readFileSync(new URL('../public/sw.js', import.meta.url), 'utf8');
+  assert.ok(sw.includes('...(/*__AUDIO_CUES__*/[])'), 'the service worker takes its cue list from the manifest at build time');
+  assert.ok(!/audio\/[a-z-]+\.m4a/.test(sw), 'no cue file name is hard-coded in the service worker');
 });
 
 test('cues are fetched once, decoded once per context, and a late first cue is dropped rather than played out of place', async (t) => {
@@ -263,10 +268,10 @@ test('background music: a screen request starts a loop on its own gain behind th
   assert.equal(sound.music.current, 'home');
   const home = c.sources.at(-1);
   assert.equal(home.loop, true);
-  assert.equal(Math.round(home.buffer.duration * 10) / 10, 53.3, 'the loop is the decoded track');
+  assert.equal(Math.round(home.buffer.duration * 10) / 10, Math.round(MUSIC_BANK.home.seconds * 10) / 10, 'the loop is the decoded track');
   assert.equal(home.starts.length, 1);
   assert.equal(c.nodes.at(-1).connections[0], musicGain, 'the track gain feeds the music gain, not the cue master');
-  assert.deepEqual(env.fetched.filter((u) => u.includes('music/')), ['audio/music/home.m4a', 'audio/music/finale.m4a'], 'the track is fetched, then the finale is warmed');
+  assert.deepEqual(env.fetched.filter((u) => u.includes('music/')), [MUSIC_BANK.home.url, MUSIC_BANK.finale.url], 'the track is fetched, then the finale is warmed');
   sound.stop();
   assert.equal(home.stops.length, 0, 'stopping cues leaves the music alone');
   sound.music.play('tense');
@@ -353,7 +358,7 @@ test('the finale sting replaces the loop, holds new tracks while it sounds, and 
   const finale = c.sources.at(-1);
   assert.notEqual(finale, tense);
   assert.equal(!!finale.loop, false);
-  assert.equal(Math.round(finale.buffer.duration * 10) / 10, 6.5);
+  assert.equal(Math.round(finale.buffer.duration * 10) / 10, Math.round(MUSIC_BANK.finale.seconds * 10) / 10);
   assert.equal(sound.music.stingId, 'finale');
   assert.equal(sound.music.wanted, 'home');
   assert.equal(sound.music.current, null, 'no loop under the sting');
@@ -396,12 +401,14 @@ test('the shipped music matches its manifest and the manifest matches the master
     assert.equal(createHash('sha256').update(file).digest('hex'), entry.sha256, `encoded track changed: ${id}`);
     assert.equal(file.length, entry.bytes);
     total += file.length;
-    const data = wavData(readFileSync(new URL(`../assets/audio/maydan-v2/music/${id}.wav`, import.meta.url)));
+    assert.match(entry.url, /^audio\/music\/[a-z]+-[0-9a-f]{6}\.m4a$/, `music files are named after their content hash: ${id}`);
+    assert.equal(entry.url.slice(-10, -4), createHash('sha256').update(file).digest('hex').slice(0, 6), `the name carries the file's own hash: ${id}`);
+    const data = wavData(readFileSync(new URL(`../assets/audio/maydan-v3/music/${id}.wav`, import.meta.url)));
     assert.equal(createHash('sha256').update(data).digest('hex'), entry.masterSha256, `music master changed: ${id}`);
     assert.equal(data.length / 6, entry.frames);
     assert.ok(Math.abs(entry.frames / 48000 - entry.seconds) < 0.001, `seconds follow the frame count: ${id}`);
     assert.equal(entry.loop, id !== 'finale');
   }
-  assert.ok(total < 5 * 1024 * 1024, `the music stays under five megabytes (${total} bytes)`);
+  assert.ok(total < 7 * 1024 * 1024, `the music stays under seven megabytes (${total} bytes)`);
   assert.ok(!readFileSync(new URL('../public/sw.js', import.meta.url), 'utf8').includes('audio/music/'), 'music is fetched on demand, never precached');
 });

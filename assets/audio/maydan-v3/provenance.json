@@ -3,7 +3,8 @@
   "key": "D",
   "cues": {
     "click": {
-      "file": "audio/click.m4a",
+      "file": "audio/click-6fa408.m4a",
+      "master": "assets/audio/maydan-v3/click.wav",
       "seconds": 0.25,
       "frames": 12000,
       "room": "room",
@@ -21,7 +22,8 @@
       "encodedBytes": 6530
     },
     "pop": {
-      "file": "audio/pop.m4a",
+      "file": "audio/pop-60bd4d.m4a",
+      "master": "assets/audio/maydan-v3/pop.wav",
       "seconds": 0.5,
       "frames": 24000,
       "room": "room",
@@ -39,7 +41,8 @@
       "encodedBytes": 11506
     },
     "tick": {
-      "file": "audio/tick.m4a",
+      "file": "audio/tick-844a01.m4a",
+      "master": "assets/audio/maydan-v3/tick.wav",
       "seconds": 0.09,
       "frames": 4320,
       "room": null,
@@ -57,7 +60,8 @@
       "encodedBytes": 2450
     },
     "tickFast": {
-      "file": "audio/tick-fast.m4a",
+      "file": "audio/tick-fast-db1a19.m4a",
+      "master": "assets/audio/maydan-v3/tick-fast.wav",
       "seconds": 0.09,
       "frames": 4320,
       "room": null,
@@ -75,7 +79,8 @@
       "encodedBytes": 2743
     },
     "countdown": {
-      "file": "audio/countdown.m4a",
+      "file": "audio/countdown-b231c6.m4a",
+      "master": "assets/audio/maydan-v3/countdown.wav",
       "seconds": 0.6,
       "frames": 28800,
       "room": "room",
@@ -93,7 +98,8 @@
       "encodedBytes": 13722
     },
     "start": {
-      "file": "audio/start.m4a",
+      "file": "audio/start-765ccc.m4a",
+      "master": "assets/audio/maydan-v3/start.wav",
       "seconds": 1.5,
       "frames": 72000,
       "room": "hall",
@@ -111,7 +117,8 @@
       "encodedBytes": 31356
     },
     "correct": {
-      "file": "audio/correct.m4a",
+      "file": "audio/correct-d207bb.m4a",
+      "master": "assets/audio/maydan-v3/correct.wav",
       "seconds": 0.9,
       "frames": 43200,
       "room": "room",
@@ -129,7 +136,8 @@
       "encodedBytes": 19664
     },
     "wrong": {
-      "file": "audio/wrong.m4a",
+      "file": "audio/wrong-a5aef0.m4a",
+      "master": "assets/audio/maydan-v3/wrong.wav",
       "seconds": 0.75,
       "frames": 36000,
       "room": "room",
@@ -147,7 +155,8 @@
       "encodedBytes": 16873
     },
     "buzzer": {
-      "file": "audio/buzzer.m4a",
+      "file": "audio/buzzer-368950.m4a",
+      "master": "assets/audio/maydan-v3/buzzer.wav",
       "seconds": 0.8,
       "frames": 38400,
       "room": "room",
@@ -165,7 +174,8 @@
       "encodedBytes": 17577
     },
     "timeout": {
-      "file": "audio/timeout.m4a",
+      "file": "audio/timeout-d935a4.m4a",
+      "master": "assets/audio/maydan-v3/timeout.wav",
       "seconds": 1.3,
       "frames": 62400,
       "room": "hall",
@@ -183,7 +193,8 @@
       "encodedBytes": 27199
     },
     "whoosh": {
-      "file": "audio/whoosh.m4a",
+      "file": "audio/whoosh-bab430.m4a",
+      "master": "assets/audio/maydan-v3/whoosh.wav",
       "seconds": 0.55,
       "frames": 26400,
       "room": "room",
@@ -201,7 +212,8 @@
       "encodedBytes": 11849
     },
     "reveal": {
-      "file": "audio/reveal.m4a",
+      "file": "audio/reveal-5701b5.m4a",
+      "master": "assets/audio/maydan-v3/reveal.wav",
       "seconds": 1.9,
       "frames": 91200,
       "room": "hall",
@@ -219,7 +231,8 @@
       "encodedBytes": 38903
     },
     "win": {
-      "file": "audio/win.m4a",
+      "file": "audio/win-77749b.m4a",
+      "master": "assets/audio/maydan-v3/win.wav",
       "seconds": 3.2,
       "frames": 153600,
       "room": "hall",
@@ -237,7 +250,8 @@
       "encodedBytes": 66223
     },
     "explosion": {
-      "file": "audio/explosion.m4a",
+      "file": "audio/explosion-e6feda.m4a",
+      "master": "assets/audio/maydan-v3/explosion.wav",
       "seconds": 1.6,
       "frames": 76800,
       "room": "hall",
@@ -255,7 +269,8 @@
       "encodedBytes": 33603
     },
     "drumroll": {
-      "file": "audio/drumroll.m4a",
+      "file": "audio/drumroll-b68a56.m4a",
+      "master": "assets/audio/maydan-v3/drumroll.wav",
       "seconds": 1.7,
       "frames": 81600,
       "room": "room",
@@ -273,7 +288,8 @@
       "encodedBytes": 36222
     },
     "pass": {
-      "file": "audio/pass.m4a",
+      "file": "audio/pass-7a14c1.m4a",
+      "master": "assets/audio/maydan-v3/pass.wav",
       "seconds": 0.45,
       "frames": 21600,
       "room": "room",
