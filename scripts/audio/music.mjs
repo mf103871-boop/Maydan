@@ -1,6 +1,7 @@
-// موسيقى ميدان الخلفية: ثلاث حلقات هادئة ونهاية قصيرة، مؤلَّفة على ري (نهاوند للقوائم واللعب
-// الهادئ، حجاز للمؤقتات) بآلات voices.mjs، وتُصنع «بلا وصلة»: تُعزف الدورة مرتين، يُطبَّق الصدى
-// على الكل، ثم تُقتطع الدورة الثانية فتحمل بدايتها ذيول نهاية الدورة الأولى.
+// موسيقى ميدان الخلفية (3.1، كرتونية هادئة): ثلاث حلقات ونهاية قصيرة على ري بسلّم خماسي
+// معلَّق (ري مي صول لا سي) يجلس مع مؤثرات ري الكبيرة والصغيرة معًا، بآلات لعبة ناعمة
+// (بيتزيكاتو، ماريمبا، إكسيليفون، غلوكنشبيل، باص لطيف، فقاعات) بلا طبول ولا ناي. تُصنع
+// «بلا وصلة»: تُعزف الدورة مرتين، يُطبَّق الصدى على الكل، ثم تُقتطع الدورة الثانية.
 //
 //   node scripts/audio/music.mjs            يبني الحلقات كلها
 //   node scripts/audio/music.mjs --only home
@@ -10,7 +11,7 @@ import { createHash } from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 import { Stereo, midi, writeWav, decodeWav24, impulseResponse, reverbFile, master, encodeAac, measure } from './engine.mjs';
-import { kalimba, marimba, bell, glass, oud, pad, ney, dum, tak, shaker, padStereo, m } from './voices.mjs';
+import { marimba, glass, shaker, padStereo, m, pizz, xylo, glock, softBass, bubble, softPad } from './voices.mjs';
 import { prepareSource, sourceProvenance, resolveSource } from './prepare.mjs';
 import { convertFile, pitchShiftFile, filter } from './engine.mjs';
 import { seamlessLoop, seamMetrics } from './analysis.mjs';
@@ -26,7 +27,7 @@ const check = args.includes('--check');
 const only = args.includes('--only') ? args[args.indexOf('--only') + 1] : null;
 
 // سلالم على ري: درجات نصف-نغمية من الجذر.
-const SCALES = { nahawand: [0, 2, 3, 5, 7, 8, 10], kurd: [0, 1, 3, 5, 7, 8, 10], hijaz: [0, 1, 4, 5, 7, 8, 10] };
+const SCALES = { nahawand: [0, 2, 3, 5, 7, 8, 10], kurd: [0, 1, 3, 5, 7, 8, 10], hijaz: [0, 1, 4, 5, 7, 8, 10], toy: [0, 2, 5, 7, 9] };
 const ROOT = m('D', 3); // 50
 // درجة السلّم (0 = الجذر، تقبل السالب والأوكتافات) → رقم MIDI.
 const deg = (scale, d, octave = 0) => { const s = SCALES[scale]; const o = Math.floor(d / s.length); return ROOT + 12 * (octave + o) + s[((d % s.length) + s.length) % s.length]; };
@@ -50,99 +51,97 @@ class Seq {
   }
 }
 
-// ── القوائم: نهاوند، 72 نبضة، 16 بارًا (~53 ث) ────────────────────────────────
+// تآلفات اللوحة الكرتونية على الخماسي المعلَّق: كل تآلف = درجات السلّم [جذر، خامسة، أوكتاف، لون].
+// D(0): ري لا ري مي · G(2): صول ري صول لا · Em(1): مي سي مي صول · Asus(3): لا مي لا ري
+const CHORD = { D: [0, 3, 5, 6], G: [2, 5, 7, 8], Em: [1, 4, 6, 7], A: [3, 6, 8, 10] };
+const sc = 'toy';
+
+// ── القوائم: 84 نبضة، 16 بارًا (~46 ث) — باص لطيف، بيتزيكاتو خفيف، لحن ماريمبا، غلوكنشبيل نادر ──
 function home() {
-  const s = new Seq(72, 16), sc = 'nahawand';
-  // تتابع: i – VI – iv – i | i – VI – VII – i (كل تآلف باران)
-  const chords = [0, 5, 3, 0, 0, 5, 6, 0];
-  chords.forEach((c, i) => {
-    const bar = i * 2;
-    const rootN = deg(sc, c, -1), third = deg(sc, c + 2, -1), fifth = deg(sc, c + 4, -1);
-    s.at(bar, 0, () => padStereo(pad(hz(rootN), s.beat * 8 - 0.3, { a: 1.4, r: 1.6, cutoff: 700, sweepAmt: 300 })), { gain: 0.55 });
-    s.at(bar, 0, () => padStereo(pad(hz(fifth), s.beat * 8 - 0.3, { a: 1.8, r: 1.6, cutoff: 650, sweepAmt: 250 })), { gain: 0.32 });
-    s.at(bar, 0.02, () => padStereo(pad(hz(third + 12), s.beat * 8 - 0.3, { a: 2.2, r: 1.6, cutoff: 900, sweepAmt: 200 })), { gain: 0.16 });
-    // عود: الجذر على 1، الخامسة على 3
-    s.at(bar, 0, () => oud(hz(rootN - 12), 1.6, { seed: 4 + i }), { gain: 0.5, pan: -0.15 });
-    s.at(bar, 2, () => oud(hz(fifth - 12), 1.4, { seed: 14 + i }), { gain: 0.36, pan: -0.15 });
-    s.at(bar + 1, 0, () => oud(hz(rootN - 12), 1.6, { seed: 24 + i }), { gain: 0.42, pan: -0.15 });
-    s.at(bar + 1, 2.5, () => oud(hz(third - 12), 1.2, { seed: 34 + i }), { gain: 0.3, pan: -0.15 });
-    // كالمبا: أربيج ثُمنيات ناعم يتنقل بين درجات التآلف
-    const arp = [c, c + 4, c + 7, c + 4, c + 2, c + 4, c + 7, c + 9];
-    for (let b = 0; b < 2; b++) arp.forEach((d, k) => { if ((b * 8 + k) % 16 === 15) return; s.at(bar + b, k * 0.5, () => kalimba(hz(deg(sc, d, 1)), 0.9, { bright: 0.8, seed: 3 + k }), { gain: 0.26 + 0.06 * (k % 2 === 0), pan: -0.3 + 0.6 * (k / 7) }); });
-    // دفّ خفيف: دُم على 1، تَك على 2.5 و4
-    s.at(bar, 0, () => dum(0.5), { gain: 0.42 }); s.at(bar, 2.5, () => tak(0.14, { seed: 37 + i }), { gain: 0.2, pan: 0.3 }); s.at(bar, 3, () => tak(0.14, { seed: 47 + i }), { gain: 0.16, pan: 0.3 });
-    s.at(bar + 1, 0, () => dum(0.5, { f0: 100, f1: 55 }), { gain: 0.36 }); s.at(bar + 1, 2, () => tak(0.14, { seed: 57 + i }), { gain: 0.18, pan: 0.3 }); s.at(bar + 1, 3.5, () => dum(0.4, { f0: 90, f1: 52 }), { gain: 0.25 });
-    for (let k = 0; k < 8; k++) { s.at(bar, k * 0.5, () => shaker(0.1, { seed: 60 + k, open: k % 2 ? 0.5 : 0.15 }), { gain: 0.09 + 0.05 * (k % 2), pan: 0.45 }); s.at(bar + 1, k * 0.5, () => shaker(0.1, { seed: 70 + k, open: k % 2 ? 0.5 : 0.15 }), { gain: 0.09 + 0.05 * (k % 2), pan: 0.45 }); }
+  const s = new Seq(84, 16);
+  const prog = ['D', 'G', 'Em', 'A', 'D', 'G', 'A', 'D'];
+  prog.forEach((name, i) => {
+    const bar = i * 2, ch = CHORD[name];
+    const root = deg(sc, ch[0], -1), fifth = deg(sc, ch[1], -1);
+    // بطانة رقيقة جدًا تحت التآلف
+    s.at(bar, 0, () => padStereo(softPad(hz(root), s.beat * 8 - 0.3)), { gain: 0.42 });
+    s.at(bar, 0.02, () => padStereo(softPad(hz(fifth), s.beat * 8 - 0.3, { a: 1.6 })), { gain: 0.22 });
+    // باص: جذر على 1، خامسة على 3 (باران)
+    for (let b = 0; b < 2; b++) { s.at(bar + b, 0, () => softBass(hz(root - 12), 0.7), { gain: 0.5 }); s.at(bar + b, 2, () => softBass(hz(fifth - 12), 0.6), { gain: 0.36 }); }
+    // بيتزيكاتو على الضعيف: 1.5، 2.5، 3.5 (ألوان التآلف)
+    for (let b = 0; b < 2; b++) [[1.5, ch[1]], [2.5, ch[2]], [3.5, ch[3]]].forEach(([beat, d], k) => s.at(bar + b, beat, () => pizz(hz(deg(sc, d, 0)), 0.55, { seed: 7 + i * 3 + k }), { gain: 0.26, pan: -0.25 + 0.25 * k }));
+    // شخشيخة خفيفة جدًا على 2 و4
+    for (let b = 0; b < 2; b++) [1, 3].forEach((beat, k) => s.at(bar + b, beat, () => shaker(0.08, { seed: 60 + i * 2 + k, open: 0.3 }), { gain: 0.045, pan: 0.4 }));
   });
-  // ناي: جملتان متأملتان (البارات 4–7 و12–15)
-  const phrase = (bar, notes) => notes.forEach(([beat, d, len]) => s.at(bar + Math.floor(beat / 4), beat % 4, () => ney(hz(deg(sc, d, 1)), len * s.beat, { vibDepth: 6 }), { gain: 0.34, pan: 0.12 }));
-  phrase(4, [[0, 4, 1.5], [1.5, 3, 0.5], [2, 2, 2], [4.5, 1, 1], [5.5, 2, 0.5], [6, 0, 2.5], [9, 2, 1], [10, 3, 1], [11, 4, 3]]);
-  phrase(12, [[0, 7, 1.5], [1.5, 6, 0.5], [2, 5, 1], [3, 4, 1], [4, 3, 2], [6, 4, 1], [7, 2, 1], [8, 0, 3.5], [12, 1, 1], [13, 0, 3]]);
-  // أجراس بعيدة على بداية كل أربعة بارات
-  [0, 4, 8, 12].forEach((bar, i) => s.at(bar, 0, () => bell(hz(deg(sc, [7, 9, 11, 7][i], 1)), 3, { tau: 1.4 }), { gain: 0.16, pan: i % 2 ? 0.35 : -0.35 }));
+  // لحن ماريمبا لطيف (جملتان من ثمانية بارات، الثانية تجيب الأولى)
+  const melody = (bar, notes) => notes.forEach(([beat, d, len]) => s.at(bar + Math.floor(beat / 4), beat % 4, () => marimba(hz(deg(sc, d, 1)), Math.max(0.5, len * s.beat + 0.3), { soft: 0.75, seed: 5 + d }), { gain: 0.36, pan: 0.1 - 0.05 * (d % 3) }));
+  melody(0, [[0, 3, 1], [1, 4, 0.5], [1.5, 3, 0.5], [2, 2, 1], [4, 0, 1.5], [6, 1, 1], [7, 2, 1], [8, 3, 1], [9, 5, 0.5], [9.5, 4, 0.5], [10, 3, 2], [12, 2, 1], [13, 1, 1], [14, 0, 2], [20, 3, 1], [21, 2, 1], [22, 4, 2], [24, 5, 1], [25, 4, 1], [26, 3, 1], [27, 2, 1], [28, 0, 3]]);
+  melody(8, [[0, 5, 1], [1, 4, 0.5], [1.5, 3, 0.5], [2, 4, 1], [4, 2, 1.5], [6, 3, 1], [7, 4, 1], [8, 5, 1], [9, 7, 0.5], [9.5, 5, 0.5], [10, 4, 2], [12, 3, 1], [13, 2, 1], [14, 1, 2], [20, 2, 1], [21, 3, 1], [22, 4, 1], [23, 3, 1], [24, 2, 1.5], [26, 1, 1], [27, 0, 1], [28, 0, 3]]);
+  // غلوكنشبيل: نغمة واحدة ناعمة على بداية كل أربعة بارات، وفقاعة كرتونية قبل نهايتها
+  [0, 4, 8, 12].forEach((bar, i) => { s.at(bar, 0, () => glock(hz(deg(sc, [5, 7, 6, 8][i], 1)), 1.8), { gain: 0.11, pan: i % 2 ? 0.35 : -0.35 }); s.at(bar + 3, 3.5, () => bubble(420 + 60 * i, 0.14), { gain: 0.1, pan: 0.2 * (i % 2 ? 1 : -1) }); });
   return s;
 }
 
-// ── اللعب الهادئ: نهاوند، 66 نبضة، 16 بارًا (~58 ث) — بلا إيقاع ─────────────────
+// ── اللعب الهادئ: 66 نبضة، 16 بارًا (~58 ث) — بلا إيقاع: بطانة، باص على 1، ماريمبا بطيئة ──
 function calm() {
-  const s = new Seq(66, 16), sc = 'nahawand';
-  const chords = [0, 3, 5, 4, 0, 3, 6, 0];
-  chords.forEach((c, i) => {
-    const bar = i * 2, rootN = deg(sc, c, -1), fifth = deg(sc, c + 4, -1), third = deg(sc, c + 2, 0);
-    s.at(bar, 0, () => padStereo(pad(hz(rootN), s.beat * 8 - 0.4, { a: 1.8, r: 2.0, cutoff: 600, sweepAmt: 220, lfo: 0.09 })), { gain: 0.5 });
-    s.at(bar, 0.03, () => padStereo(pad(hz(fifth), s.beat * 8 - 0.4, { a: 2.4, r: 2.0, cutoff: 560, sweepAmt: 180, lfo: 0.07 })), { gain: 0.28 });
-    s.at(bar, 0.06, () => padStereo(pad(hz(third), s.beat * 8 - 0.4, { a: 3, r: 2.2, cutoff: 800, sweepAmt: 150 })), { gain: 0.14 });
-    // كالمبا: نمط بطيء على أرباع منقوطة
-    const motif = [c + 7, c + 4, c + 9, c + 7, c + 11, c + 9, c + 7, c + 4];
-    motif.forEach((d, k) => s.at(bar + Math.floor((k * 1.5) / 4), (k * 1.5) % 4, () => kalimba(hz(deg(sc, d, 1)), 1.4, { bright: 0.6, seed: 5 + k }), { gain: 0.22, pan: -0.35 + 0.7 * ((k % 4) / 3) }));
-    s.at(bar, 0, () => oud(hz(rootN - 12), 2.2, { seed: 8 + i, bright: 0.3 }), { gain: 0.34, pan: -0.1 });
-    s.at(bar + 1, 1, () => oud(hz(fifth - 12), 1.8, { seed: 18 + i, bright: 0.3 }), { gain: 0.24, pan: -0.1 });
+  const s = new Seq(66, 16);
+  const prog = ['D', 'Em', 'G', 'A', 'D', 'G', 'Em', 'D'];
+  prog.forEach((name, i) => {
+    const bar = i * 2, ch = CHORD[name], root = deg(sc, ch[0], -1), fifth = deg(sc, ch[1], -1);
+    s.at(bar, 0, () => padStereo(softPad(hz(root), s.beat * 8 - 0.4, { a: 1.8, r: 2 })), { gain: 0.46 });
+    s.at(bar, 0.03, () => padStereo(softPad(hz(fifth), s.beat * 8 - 0.4, { a: 2.4, r: 2 })), { gain: 0.24 });
+    s.at(bar, 0, () => softBass(hz(root - 12), 1.4), { gain: 0.4 });
+    s.at(bar + 1, 0, () => softBass(hz(fifth - 12), 1.2), { gain: 0.26 });
+    // بيتزيكاتو: نغمة لون واحدة كل بار على 2.5
+    s.at(bar, 2.5, () => pizz(hz(deg(sc, ch[3], 0)), 0.8, { seed: 17 + i }), { gain: 0.2, pan: 0.25 });
+    s.at(bar + 1, 2.5, () => pizz(hz(deg(sc, ch[2], 0)), 0.8, { seed: 27 + i }), { gain: 0.16, pan: -0.25 });
   });
-  [0, 6, 10, 14].forEach((bar, i) => s.at(bar, 1.5, () => bell(hz(deg(sc, [7, 9, 4, 11][i], 1)), 3.5, { tau: 1.6, index: 1.6 }), { gain: 0.14, pan: i % 2 ? 0.4 : -0.4 }));
-  [2, 8, 12].forEach((bar, i) => s.at(bar, 3, () => glass(hz(deg(sc, [11, 14, 9][i], 1)), 1.2), { gain: 0.1, pan: 0.2 - 0.2 * i }));
+  const melody = (bar, notes) => notes.forEach(([beat, d, len]) => s.at(bar + Math.floor(beat / 4), beat % 4, () => marimba(hz(deg(sc, d, 1)), Math.max(0.8, len * s.beat + 0.4), { soft: 0.85, seed: 3 + d }), { gain: 0.3, pan: -0.1 + 0.06 * (d % 4) }));
+  melody(0, [[0, 3, 2], [2, 4, 1], [3, 3, 1], [4, 2, 3], [8, 1, 2], [10, 2, 1], [11, 3, 1], [12, 5, 4], [18, 4, 1], [19, 3, 1], [20, 2, 2], [22, 1, 2], [24, 0, 4]]);
+  melody(8, [[0, 5, 2], [2, 4, 1], [3, 5, 1], [4, 6, 3], [8, 4, 2], [10, 3, 1], [11, 2, 1], [12, 3, 4], [18, 2, 1], [19, 1, 1], [20, 2, 2], [22, 1, 2], [24, 0, 4]]);
+  [2, 7, 10, 15].forEach((bar, i) => s.at(bar, 1.5, () => glock(hz(deg(sc, [7, 8, 6, 5][i], 1)), 2.2), { gain: 0.09, pan: i % 2 ? 0.4 : -0.4 }));
+  [5, 13].forEach((bar, i) => s.at(bar, 3.5, () => bubble(380 + 80 * i, 0.16), { gain: 0.08, pan: 0.15 }));
   return s;
 }
 
-// ── المؤقتات: حجاز، 96 نبضة، 16 بارًا (~40 ث) — نبض دفّ وعود، بلا حدّة ─────────
+// ── المؤقتات: 100 نبضة، 16 بارًا (~38 ث) — أوستيناتو بيتزيكاتو وتكّة ساعة خفيفة، بلا طبول ─────
 function tense() {
-  const s = new Seq(96, 16), sc = 'hijaz';
-  const bass = [0, 0, 5, 5, 3, 3, 4, 4, 0, 0, 5, 5, 6, 6, 4, 4];
-  bass.forEach((c, bar) => {
-    const rootN = deg(sc, c, -1);
-    // إيقاع مقسوم: دُم . تَك . دُم دُم . تَك
-    s.at(bar, 0, () => dum(0.45, { f0: 105, f1: 58 }), { gain: 0.6 }); s.at(bar, 1, () => tak(0.13, { seed: 31 + bar }), { gain: 0.3, pan: 0.3 });
-    s.at(bar, 2, () => dum(0.4, { f0: 95, f1: 55 }), { gain: 0.45 }); s.at(bar, 2.5, () => dum(0.35, { f0: 90, f1: 55 }), { gain: 0.3 }); s.at(bar, 3.5, () => tak(0.13, { seed: 41 + bar }), { gain: 0.26, pan: -0.3 });
-    for (let k = 0; k < 8; k++) s.at(bar, k * 0.5, () => shaker(0.09, { seed: 80 + k + bar, open: k % 2 ? 0.55 : 0.1 }), { gain: 0.1 + 0.06 * (k % 2), pan: 0.45 });
-    // عود: جذر، ثم قفزة إلى الخامسة والسابعة الحجازية
-    [[0, 0], [1.5, 0], [2, 4], [3, 6], [3.5, 4]].forEach(([beat, d], k) => s.at(bar, beat, () => oud(hz(deg(sc, c + d, -1) - 12), 0.9, { seed: 9 + bar * 5 + k, bright: 0.5 }), { gain: k === 0 ? 0.5 : 0.36, pan: -0.15 }));
-    // ماريمبا: زخرفة حجازية متقطعة في البارات الزوجية
-    if (bar % 2 === 1) [[0.5, 1], [1, 2], [1.5, 1], [2.5, 0], [3, 2], [3.5, 4]].forEach(([beat, d], k) => s.at(bar, beat, () => marimba(hz(deg(sc, c + d, 1)), 0.5, { soft: 0.4, seed: 21 + k }), { gain: 0.3, pan: -0.25 + 0.5 * (k / 5) }));
-    // بطانة رقيقة تحت كل تآلف (جذر + خامسة)
-    if (bar % 2 === 0) { s.at(bar, 0, () => padStereo(pad(hz(rootN), s.beat * 8 - 0.3, { a: 0.9, r: 1.0, cutoff: 750, sweepAmt: 350, lfo: 0.18 })), { gain: 0.36 }); s.at(bar, 0, () => padStereo(pad(hz(deg(sc, c + 4, -1)), s.beat * 8 - 0.3, { a: 1.2, r: 1.0, cutoff: 700, sweepAmt: 250 })), { gain: 0.2 }); }
+  const s = new Seq(100, 16);
+  const prog = ['D', 'D', 'G', 'G', 'Em', 'Em', 'A', 'A', 'D', 'D', 'G', 'G', 'A', 'A', 'D', 'D'];
+  prog.forEach((name, bar) => {
+    const ch = CHORD[name], root = deg(sc, ch[0], -1);
+    // أوستيناتو ثُمنيات: جذر خامسة أوكتاف خامسة (باص وبيتزيكاتو يتبادلان)
+    [ch[0], ch[1], ch[2], ch[1], ch[0], ch[1], ch[3], ch[1]].forEach((d, k) => s.at(bar, k * 0.5, () => pizz(hz(deg(sc, d, 0)), 0.42, { seed: 9 + bar * 8 + k }), { gain: k % 2 ? 0.2 : 0.28, pan: -0.2 + 0.4 * (k % 2) }));
+    s.at(bar, 0, () => softBass(hz(root - 12), 0.45), { gain: 0.46 }); s.at(bar, 2, () => softBass(hz(root - 12), 0.45), { gain: 0.34 });
+    // تكّة ساعة خفيفة على 2 و4، وشخشيخة على «و»
+    [1, 3].forEach((beat, k) => s.at(bar, beat, () => xylo(hz(deg(sc, k ? 3 : 5, 2)), 0.12, { seed: 31 + bar + k }), { gain: 0.1, pan: k ? 0.3 : -0.3 }));
+    for (let k = 0; k < 4; k++) s.at(bar, k + 0.5, () => shaker(0.07, { seed: 80 + bar * 4 + k, open: 0.25 }), { gain: 0.05, pan: 0.45 });
+    // لازمة إكسيليفون قصيرة في البارات الفردية
+    if (bar % 2 === 1) [[0.5, ch[2]], [1, ch[3]], [1.5, ch[2]], [2.5, ch[1]], [3, ch[2]]].forEach(([beat, d], k) => s.at(bar, beat, () => xylo(hz(deg(sc, d, 1)), 0.35, { seed: 21 + bar + k }), { gain: 0.24, pan: -0.25 + 0.5 * (k / 4) }));
+    if (bar % 2 === 0) s.at(bar, 0, () => padStereo(softPad(hz(root), s.beat * 8 - 0.3, { a: 0.8, r: 1 })), { gain: 0.3 });
   });
-  [3, 7, 11, 15].forEach((bar, i) => s.at(bar, 3.5, () => glass(hz(deg(sc, [7, 11, 9, 14][i], 1)), 0.9), { gain: 0.16, pan: i % 2 ? 0.3 : -0.3 }));
+  [3, 7, 11, 15].forEach((bar, i) => s.at(bar, 3.5, () => glass(hz(deg(sc, [7, 8, 6, 9][i], 1)), 0.8), { gain: 0.12, pan: i % 2 ? 0.3 : -0.3 }));
   return s;
 }
 
-// ── نهاية النتائج: 6 ثوانٍ، تُعزف مرة واحدة ─────────────────────────────────────
+// ── نهاية النتائج: ~5.5 ثوانٍ، تُعزف مرة واحدة — ركضة إكسيليفون صاعدة وتآلف غلوكنشبيل ─────
 function finale() {
-  const st = new Stereo(6.5), sc = 'nahawand', b = 60 / 84;
-  let t = 0; for (let i = 0; t < 1.3; i++) { st.mix(tak(0.12, { seed: 90 + i, tone: 1900 + 900 * (t / 1.3) }), t, { gain: 0.25 + 0.3 * (t / 1.3), pan: i % 2 ? 0.25 : -0.25 }); t += 0.1 - 0.06 * (t / 1.3); }
-  st.mix(dum(0.6), 1.3, { gain: 0.9 });
-  [[0, 1.3, -0.3], [2, 1.3, 0], [4, 1.3, 0.3], [7, 1.3, 0.1]].forEach(([d, at, pan]) => st.mix(marimba(hz(deg(sc, d, 0)), 1.8, { soft: 0.45 }), at, { gain: 0.5, pan }));
-  [[7, 1.3], [9, 1.3 + b * 0.5], [11, 1.3 + b], [14, 1.3 + b * 1.5]].forEach(([d, at], k) => st.mix(kalimba(hz(deg(sc, d, 0)), 1.6), at, { gain: 0.6, pan: -0.3 + 0.2 * k }));
-  st.mix(bell(hz(deg(sc, 14, 0)), 3.2), 1.3 + b * 1.5, { gain: 0.45, pan: 0.2 }).mix(bell(hz(deg(sc, 11, 0)), 3.0), 1.3 + b * 2, { gain: 0.3, pan: -0.2 });
-  st.mix(padStereo(pad(hz(deg(sc, 0, -1)), 2.4, { a: 0.4, r: 1.6, cutoff: 800 })), 1.2, { gain: 0.7 });
-  st.mix(padStereo(pad(hz(deg(sc, 4, -1)), 2.2, { a: 0.6, r: 1.6, cutoff: 700 })), 1.3, { gain: 0.4 });
-  st.mix(glass(hz(deg(sc, 14, 1)), 1), 1.3 + b * 1.5, { gain: 0.2 });
+  const st = new Stereo(6.5), b = 60 / 96;
+  [0, 1, 2, 3, 4, 5, 6, 7].forEach((d, k) => st.mix(xylo(hz(deg(sc, d, 1)), 0.4, { seed: 40 + k }), k * b * 0.25, { gain: 0.42, pan: -0.35 + 0.1 * k }));
+  st.mix(bubble(520, 0.18), b * 2, { gain: 0.16, pan: 0.2 });
+  st.mix(softBass(hz(deg(sc, 0, -2)), 1.6), b * 2.25, { gain: 0.6 });
+  [[5, 0.5, -0.3], [8, 0.5, 0], [10, 0.5, 0.3]].forEach(([d, g, pan], k) => st.mix(marimba(hz(deg(sc, d, 0)), 2.2, { soft: 0.6 }), b * 2.25 + 0.02 * k, { gain: g, pan }));
+  st.mix(glock(hz(deg(sc, 10, 0)), 3), b * 2.25, { gain: 0.3, pan: 0.2 }).mix(glock(hz(deg(sc, 5, 1)), 2.6), b * 2.75, { gain: 0.22, pan: -0.2 });
+  st.mix(padStereo(softPad(hz(deg(sc, 0, -1)), 2.2, { a: 0.3, r: 1.6 })), b * 2.2, { gain: 0.6 });
   return st;
 }
 
+// أهداف أهدأ من 3.0: الموسيقى خلفية حقًا تحت المؤثرات.
 export const TRACKS = {
-  home: { bpm: 72, loop: true, lufs: -19, build: home },
-  calm: { bpm: 66, loop: true, lufs: -21, build: calm },
-  tense: { bpm: 96, loop: true, lufs: -18, build: tense },
-  finale: { bpm: 84, loop: false, lufs: -16, build: finale },
+  home: { bpm: 84, loop: true, lufs: -22, build: home },
+  calm: { bpm: 66, loop: true, lufs: -24, build: calm },
+  tense: { bpm: 100, loop: true, lufs: -21, build: tense },
+  finale: { bpm: 96, loop: false, lufs: -18, build: finale },
 };
 const sha = (buf) => createHash('sha256').update(buf).digest('hex');
 
@@ -183,7 +182,7 @@ async function renderSourcedTrack(id, track, { masterWav }) {
   await writeWav(masterWav, decodeWav24(await readFile(fullWav)).slice(from, from + seconds));
   const measured = await measure(masterWav);
   if (loop) {
-    loop.seam = seamMetrics(decodeWav24(await readFile(masterWav)));
+    loop.seam = seamMetrics(decodeWav24(await readFile(masterWav)), { bpm: track.bpm });
     if (loop.seam.discontinuity > SEAM_LIMITS.discontinuity || loop.seam.hfClickDb > SEAM_LIMITS.hfClickDb) throw new Error(`${id}: loop seam is audible (${JSON.stringify(loop.seam)}); adjust offset/bars/crossfadeBeats`);
     prepared.modifications.push(`mastered as a double loop to ${track.lufs} LUFS / −1.5 dBTP, second cycle kept (seam: step ${loop.seam.discontinuity}, HF ${loop.seam.hfClickDb} dB)`);
   } else prepared.modifications.push(`mastered to ${track.lufs} LUFS / −1.5 dBTP`);
@@ -204,7 +203,8 @@ async function renderTrack(id, track, ir) {
   // الإتقان (مرشّح عالٍ ورفّ وحدّ) يجري على الدورتين معًا كي لا تبدأ مرشّحاته من الصفر عند
   // بداية الحلقة؛ ثم تُقتطع الدورة الثانية من الملف المُتقَن ويُقاس الملف النهائي.
   const fullWav = path.join(workDir, `${id}.mastered.wav`);
-  await master(revWav, fullWav, { truePeakDb: -1.5, lufs: track.lufs, highpass: 32, extra: 'highshelf=f=9000:g=-1.5' });
+  // رفّ عالٍ أنعم من 3.0 (−3 dB فوق 6 kHz): الأجراس والإكسيليفون لا تلسع على سماعات الهاتف.
+  await master(revWav, fullWav, { truePeakDb: -1.5, lufs: track.lufs, highpass: 32, extra: 'highshelf=f=6000:g=-3' });
   await writeWav(masterWav, decodeWav24(await readFile(fullWav)).slice(from, from + seconds));
   const measured = await measure(masterWav);
   return { masterWav, measured, seconds };

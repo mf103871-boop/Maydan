@@ -57991,7 +57991,7 @@
      "seam": {
       "levelDiffDb": -21.17,
       "discontinuity": 0.003,
-      "hfClickDb": -46.63,
+      "hfClickDb": -63.35,
       "centroidDiff": 0.793
      },
      "loop": {
@@ -58022,7 +58022,7 @@
      "seam": {
       "levelDiffDb": -21.17,
       "discontinuity": 0.003,
-      "hfClickDb": -46.63,
+      "hfClickDb": -63.35,
       "centroidDiff": 0.793
      },
      "loop": {
@@ -58082,7 +58082,7 @@
      "seam": {
       "levelDiffDb": -34.03,
       "discontinuity": 0,
-      "hfClickDb": -21.45,
+      "hfClickDb": -51.43,
       "centroidDiff": 0.394
      },
      "loop": {
@@ -58108,10 +58108,10 @@
    },
    "scores": {
     "home": {
-     "total": 91,
+     "total": 85,
      "parts": {
       "fidelity": 0.35,
-      "seam": 1,
+      "seam": 0.69,
       "dynamics": 1,
       "spectrum": 0.99,
       "key": 1,
@@ -58120,10 +58120,10 @@
      "fails": []
     },
     "calm": {
-     "total": 84,
+     "total": 78,
      "parts": {
       "fidelity": 0.35,
-      "seam": 1,
+      "seam": 0.69,
       "dynamics": 1,
       "spectrum": 0.99,
       "key": 1,
@@ -58154,7 +58154,7 @@
      "seam": {
       "levelDiffDb": 0.13,
       "discontinuity": 0.135,
-      "hfClickDb": -20.76,
+      "hfClickDb": 4.6,
       "centroidDiff": 0.52
      },
      "loop": {
@@ -58185,7 +58185,7 @@
      "seam": {
       "levelDiffDb": 0.13,
       "discontinuity": 0.135,
-      "hfClickDb": -20.76,
+      "hfClickDb": 4.6,
       "centroidDiff": 0.52
      },
      "loop": {
@@ -58245,7 +58245,7 @@
      "seam": {
       "levelDiffDb": -22.61,
       "discontinuity": 0.008,
-      "hfClickDb": -6.61,
+      "hfClickDb": -28.06,
       "centroidDiff": 3.587
      },
      "loop": {
@@ -58307,7 +58307,7 @@
      "seam": {
       "levelDiffDb": -1.43,
       "discontinuity": 0.082,
-      "hfClickDb": -9.84,
+      "hfClickDb": -8.52,
       "centroidDiff": 0.552
      },
      "loop": {
@@ -58336,7 +58336,7 @@
      "total": 75,
      "parts": {
       "fidelity": 0.35,
-      "seam": 0.97,
+      "seam": 1,
       "dynamics": 0.88,
       "spectrum": 0.7,
       "key": 0.5,
@@ -58345,10 +58345,10 @@
      "fails": []
     },
     "home": {
-     "total": 71,
+     "total": 72,
      "parts": {
       "fidelity": 0.35,
-      "seam": 0.97,
+      "seam": 1,
       "dynamics": 0.88,
       "spectrum": 0.7,
       "key": 0.5,
@@ -58379,7 +58379,7 @@
      "seam": {
       "levelDiffDb": -12.58,
       "discontinuity": 0.008,
-      "hfClickDb": 0.44,
+      "hfClickDb": -4.66,
       "centroidDiff": 0.473
      },
      "loop": {
@@ -58410,7 +58410,7 @@
      "seam": {
       "levelDiffDb": -12.58,
       "discontinuity": 0.008,
-      "hfClickDb": 0.44,
+      "hfClickDb": -4.66,
       "centroidDiff": 0.473
      },
      "loop": {
@@ -58436,16 +58436,18 @@
    },
    "scores": {
     "tense": {
-     "total": 77,
+     "total": 0,
      "parts": {
       "fidelity": 0.5,
-      "seam": 1,
+      "seam": 0.6,
       "dynamics": 0.85,
       "spectrum": 0.5,
       "key": 0.6,
       "palette": 1
      },
-     "fails": []
+     "fails": [
+      "seam would click"
+     ]
     }
    },
    "musicMetrics": {
@@ -58470,7 +58472,7 @@
      "seam": {
       "levelDiffDb": -4.2,
       "discontinuity": 0.08,
-      "hfClickDb": -0.67,
+      "hfClickDb": 7.57,
       "centroidDiff": 0.034
      },
      "loop": {
@@ -58532,7 +58534,7 @@
      "seam": {
       "levelDiffDb": 1.67,
       "discontinuity": 0.017,
-      "hfClickDb": -4.27,
+      "hfClickDb": -25.73,
       "centroidDiff": 0.069
      },
      "loop": {
@@ -58592,7 +58594,7 @@
      "seam": {
       "levelDiffDb": -24.1,
       "discontinuity": 0.005,
-      "hfClickDb": -37.93,
+      "hfClickDb": -22.28,
       "centroidDiff": 0.408
      },
      "loop": {
@@ -58654,7 +58656,7 @@
      "seam": {
       "levelDiffDb": 3.51,
       "discontinuity": 0.099,
-      "hfClickDb": -8.02,
+      "hfClickDb": -18.94,
       "centroidDiff": 0.206
      },
      "loop": {
@@ -58726,7 +58728,7 @@
      "seam": {
       "levelDiffDb": -1.64,
       "discontinuity": 0.03,
-      "hfClickDb": -12.22,
+      "hfClickDb": -9.8,
       "centroidDiff": 0.978
      },
      "loop": {
@@ -58757,7 +58759,7 @@
      "seam": {
       "levelDiffDb": -1.64,
       "discontinuity": 0.03,
-      "hfClickDb": -12.22,
+      "hfClickDb": -9.8,
       "centroidDiff": 0.978
      },
      "loop": {
@@ -58833,7 +58835,7 @@
      "seam": {
       "levelDiffDb": -19.59,
       "discontinuity": 0.025,
-      "hfClickDb": -12.46,
+      "hfClickDb": -12.84,
       "centroidDiff": 0.582
      },
      "loop": {
@@ -58864,7 +58866,7 @@
      "seam": {
       "levelDiffDb": -19.59,
       "discontinuity": 0.025,
-      "hfClickDb": -12.46,
+      "hfClickDb": -12.84,
       "centroidDiff": 0.582
      },
      "loop": {
@@ -58890,10 +58892,10 @@
    },
    "scores": {
     "calm": {
-     "total": 84,
+     "total": 85,
      "parts": {
       "fidelity": 0.35,
-      "seam": 0.97,
+      "seam": 1,
       "dynamics": 1,
       "spectrum": 0.95,
       "key": 0.6,
@@ -58924,7 +58926,7 @@
      "seam": {
       "levelDiffDb": -1.26,
       "discontinuity": 0.08,
-      "hfClickDb": 0.43,
+      "hfClickDb": -26.49,
       "centroidDiff": 0.001
      },
      "loop": {
@@ -58953,7 +58955,7 @@
      "total": 0,
      "parts": {
       "fidelity": 0.35,
-      "seam": 0.75,
+      "seam": 1,
       "dynamics": 0.54,
       "spectrum": 1,
       "key": 0.2,
@@ -58967,7 +58969,7 @@
      "total": 0,
      "parts": {
       "fidelity": 0.35,
-      "seam": 0.75,
+      "seam": 1,
       "dynamics": 0.54,
       "spectrum": 1,
       "key": 0.2,
@@ -59000,7 +59002,7 @@
      "seam": {
       "levelDiffDb": -4.58,
       "discontinuity": 0.028,
-      "hfClickDb": 3.74,
+      "hfClickDb": -16.11,
       "centroidDiff": 1.845
      },
      "loop": {
@@ -59031,7 +59033,7 @@
      "seam": {
       "levelDiffDb": -4.58,
       "discontinuity": 0.028,
-      "hfClickDb": 3.74,
+      "hfClickDb": -16.11,
       "centroidDiff": 1.845
      },
      "loop": {
@@ -59091,7 +59093,7 @@
      "seam": {
       "levelDiffDb": -24.41,
       "discontinuity": 0.008,
-      "hfClickDb": -16.86,
+      "hfClickDb": -16.47,
       "centroidDiff": 2.016
      },
      "loop": {
@@ -59120,7 +59122,7 @@
      "total": 0,
      "parts": {
       "fidelity": 0.35,
-      "seam": 0.6,
+      "seam": 0.81,
       "dynamics": 0.7,
       "spectrum": 0.35,
       "key": 0.2,
@@ -59128,15 +59130,14 @@
      },
      "fails": [
       "lossy < 192 kb/s",
-      "key too far from D (F# minor)",
-      "seam would click"
+      "key too far from D (F# minor)"
      ]
     },
     "tense": {
      "total": 0,
      "parts": {
       "fidelity": 0.35,
-      "seam": 0.6,
+      "seam": 0.81,
       "dynamics": 0.7,
       "spectrum": 0.35,
       "key": 0.2,
@@ -59144,8 +59145,7 @@
      },
      "fails": [
       "lossy < 192 kb/s",
-      "key too far from D (F# minor)",
-      "seam would click"
+      "key too far from D (F# minor)"
      ]
     }
    },
@@ -59171,7 +59171,7 @@
      "seam": {
       "levelDiffDb": -0.63,
       "discontinuity": 0.057,
-      "hfClickDb": 11.21,
+      "hfClickDb": 2.82,
       "centroidDiff": 0.076
      },
      "loop": {
@@ -59202,7 +59202,7 @@
      "seam": {
       "levelDiffDb": -0.63,
       "discontinuity": 0.057,
-      "hfClickDb": 11.21,
+      "hfClickDb": 2.82,
       "centroidDiff": 0.076
      },
      "loop": {
@@ -59264,7 +59264,7 @@
      "seam": {
       "levelDiffDb": -15.07,
       "discontinuity": 0.023,
-      "hfClickDb": -42.05,
+      "hfClickDb": -47.43,
       "centroidDiff": 0.842
      },
      "loop": {
@@ -59293,30 +59293,28 @@
      "total": 0,
      "parts": {
       "fidelity": 0.35,
-      "seam": 0.6,
+      "seam": 1,
       "dynamics": 1,
       "spectrum": 0.62,
       "key": 0.2,
       "palette": 1
      },
      "fails": [
-      "key too far from D (C# major)",
-      "seam would click"
+      "key too far from D (C# major)"
      ]
     },
     "home": {
      "total": 0,
      "parts": {
       "fidelity": 0.35,
-      "seam": 0.6,
+      "seam": 1,
       "dynamics": 1,
       "spectrum": 0.62,
       "key": 0.2,
       "palette": 0.94
      },
      "fails": [
-      "key too far from D (C# major)",
-      "seam would click"
+      "key too far from D (C# major)"
      ]
     }
    },
@@ -59342,7 +59340,7 @@
      "seam": {
       "levelDiffDb": 1.69,
       "discontinuity": 0.107,
-      "hfClickDb": 8.03,
+      "hfClickDb": -5.07,
       "centroidDiff": 0.28
      },
      "loop": {
@@ -59373,7 +59371,7 @@
      "seam": {
       "levelDiffDb": 1.69,
       "discontinuity": 0.107,
-      "hfClickDb": 8.03,
+      "hfClickDb": -5.07,
       "centroidDiff": 0.28
      },
      "loop": {
@@ -59399,10 +59397,10 @@
    },
    "scores": {
     "tense": {
-     "total": 73,
+     "total": 74,
      "parts": {
       "fidelity": 0.5,
-      "seam": 0.92,
+      "seam": 1,
       "dynamics": 0.55,
       "spectrum": 0.41,
       "key": 0.8,
@@ -59433,7 +59431,7 @@
      "seam": {
       "levelDiffDb": 0.94,
       "discontinuity": 0.009,
-      "hfClickDb": 1.16,
+      "hfClickDb": -2.92,
       "centroidDiff": 0.033
      },
      "loop": {
@@ -59462,7 +59460,7 @@
      "total": 0,
      "parts": {
       "fidelity": 0.5,
-      "seam": 1,
+      "seam": 0.7,
       "dynamics": 0.75,
       "spectrum": 0.7,
       "key": 0.2,
@@ -59476,7 +59474,7 @@
      "total": 0,
      "parts": {
       "fidelity": 0.5,
-      "seam": 1,
+      "seam": 0.7,
       "dynamics": 0.75,
       "spectrum": 0.7,
       "key": 0.2,
@@ -59509,7 +59507,7 @@
      "seam": {
       "levelDiffDb": -3.02,
       "discontinuity": 0.2,
-      "hfClickDb": -4.05,
+      "hfClickDb": 4.57,
       "centroidDiff": 0.09
      },
      "loop": {
@@ -59540,7 +59538,7 @@
      "seam": {
       "levelDiffDb": -3.02,
       "discontinuity": 0.2,
-      "hfClickDb": -4.05,
+      "hfClickDb": 4.57,
       "centroidDiff": 0.09
      },
      "loop": {
@@ -59612,7 +59610,7 @@
      "seam": {
       "levelDiffDb": 1.2,
       "discontinuity": 0.207,
-      "hfClickDb": -1.46,
+      "hfClickDb": -3.11,
       "centroidDiff": 0.237
      },
      "loop": {
@@ -59643,7 +59641,7 @@
      "seam": {
       "levelDiffDb": 1.2,
       "discontinuity": 0.207,
-      "hfClickDb": -1.46,
+      "hfClickDb": -3.11,
       "centroidDiff": 0.237
      },
      "loop": {
@@ -59719,7 +59717,7 @@
      "seam": {
       "levelDiffDb": -5.45,
       "discontinuity": 0.02,
-      "hfClickDb": -29.07,
+      "hfClickDb": -23.74,
       "centroidDiff": 0.806
      },
      "loop": {
@@ -59750,7 +59748,7 @@
      "seam": {
       "levelDiffDb": -5.45,
       "discontinuity": 0.02,
-      "hfClickDb": -29.07,
+      "hfClickDb": -23.74,
       "centroidDiff": 0.806
      },
      "loop": {
@@ -59817,50 +59815,50 @@
   },
   "pop": {
    "metrics": {
-    "seconds": 0.5,
-    "leadingSilence": 0.0032,
-    "effective": 0.499,
-    "tail": 0,
-    "peakAt": 0.004,
-    "attackMs": 2,
-    "endLevelDb": -45.7,
+    "seconds": 0.218,
+    "leadingSilence": 0.0044,
+    "effective": 0.19,
+    "tail": 0.025,
+    "peakAt": 0.005,
+    "attackMs": 3,
+    "endLevelDb": -81.8,
     "noiseFloorDb": null,
-    "crestDb": 9,
+    "crestDb": 15.8,
     "dc": 0,
     "clipping": 0,
-    "centroidHz": 2030,
-    "flatness": 0,
-    "lfShare": 0,
-    "presenceShare": 1,
-    "airShare": 0,
+    "centroidHz": 2033,
+    "flatness": 0.0006,
+    "lfShare": 0.007,
+    "presenceShare": 0.557,
+    "airShare": 0.003,
     "mono": {
-     "correlation": 0.979,
-     "sumLossDb": -0.68
+     "correlation": 1,
+     "sumLossDb": 0
     },
     "pitch": {
-     "hz": 291.28,
-     "midi": 62,
-     "note": "D4",
-     "cents": -14,
-     "confidence": 0.563,
-     "stability": 1.45
+     "hz": 145.33,
+     "midi": 50,
+     "note": "D3",
+     "cents": -18,
+     "confidence": 0.488,
+     "stability": 0.35
     },
-    "contour": 0,
+    "contour": -1,
     "key": {
-     "name": "A",
-     "mode": "major",
-     "score": 0.684,
-     "toD": -4
+     "name": "C",
+     "mode": "minor",
+     "score": 0.276,
+     "toD": 2
     }
    },
    "score": {
-    "total": 85,
+    "total": 90,
     "parts": {
      "fidelity": 1,
      "envelope": 1,
-     "spectrum": 1,
-     "tonal": 0.46,
-     "clean": 0.87,
+     "spectrum": 0.98,
+     "tonal": 0.7,
+     "clean": 0.92,
      "fit": 0.78
     },
     "fails": []
@@ -60062,50 +60060,50 @@
   },
   "correct": {
    "metrics": {
-    "seconds": 0.9,
-    "leadingSilence": 0.0033,
-    "effective": 0.899,
-    "tail": 0,
-    "peakAt": 0.103,
-    "attackMs": 93,
-    "endLevelDb": -44.6,
-    "noiseFloorDb": null,
-    "crestDb": 12,
+    "seconds": 0.302,
+    "leadingSilence": 0.0067,
+    "effective": 0.157,
+    "tail": 0.14,
+    "peakAt": 0.04,
+    "attackMs": 31,
+    "endLevelDb": -92.9,
+    "noiseFloorDb": -56.3,
+    "crestDb": 17.7,
     "dc": 0,
     "clipping": 0,
-    "centroidHz": 1388,
-    "flatness": 0,
-    "lfShare": 0,
-    "presenceShare": 1,
+    "centroidHz": 1594,
+    "flatness": 0.0001,
+    "lfShare": 0.001,
+    "presenceShare": 0.989,
     "airShare": 0,
     "mono": {
-     "correlation": 0.914,
-     "sumLossDb": -0.98
+     "correlation": 1,
+     "sumLossDb": -0.08
     },
     "pitch": {
-     "hz": 293.71,
-     "midi": 62,
-     "note": "D4",
-     "cents": 0,
-     "confidence": 0.539,
-     "stability": 3.92
+     "hz": 246.23,
+     "midi": 59,
+     "note": "B3",
+     "cents": -5,
+     "confidence": 0.336,
+     "stability": 2.73
     },
-    "contour": 0,
+    "contour": null,
     "key": {
-     "name": "D",
+     "name": "F",
      "mode": "major",
-     "score": 0.824,
+     "score": 0.518,
      "toD": 0
     }
    },
    "score": {
-    "total": 85,
+    "total": 93,
     "parts": {
      "fidelity": 1,
-     "envelope": 0.6,
+     "envelope": 0.99,
      "spectrum": 1,
      "tonal": 0.84,
-     "clean": 0.92,
+     "clean": 0.9,
      "fit": 0.78
     },
     "fails": []
@@ -60113,141 +60111,39 @@
   },
   "wrong": {
    "metrics": {
-    "seconds": 0.75,
-    "leadingSilence": 0.0033,
-    "effective": 0.749,
-    "tail": 0,
-    "peakAt": 0.135,
-    "attackMs": 3,
-    "endLevelDb": -44.6,
+    "seconds": 0.215,
+    "leadingSilence": 0.0047,
+    "effective": 0.192,
+    "tail": 0.021,
+    "peakAt": 0.021,
+    "attackMs": 8,
+    "endLevelDb": -78.2,
     "noiseFloorDb": null,
-    "crestDb": 9.5,
+    "crestDb": 11.2,
     "dc": 0,
     "clipping": 0,
-    "centroidHz": 587,
+    "centroidHz": 299,
     "flatness": 0,
-    "lfShare": 0.011,
-    "presenceShare": 0.004,
+    "lfShare": 0,
+    "presenceShare": 0.387,
     "airShare": 0,
     "mono": {
-     "correlation": 0.959,
-     "sumLossDb": -0.41
+     "correlation": 1,
+     "sumLossDb": 0
     },
     "pitch": {
-     "hz": 52.73,
-     "midi": 32,
-     "note": "G#1",
-     "cents": 27,
-     "confidence": 0.537,
-     "stability": 7.41
+     "hz": 92.36,
+     "midi": 42,
+     "note": "F#2",
+     "cents": -3,
+     "confidence": 0.586,
+     "stability": 0.79
     },
-    "contour": 0,
-    "key": {
-     "name": "F",
-     "mode": "minor",
-     "score": 0.526,
-     "toD": -3
-    }
-   },
-   "score": {
-    "total": 83,
-    "parts": {
-     "fidelity": 1,
-     "envelope": 1,
-     "spectrum": 0.7,
-     "tonal": 0.57,
-     "clean": 0.9,
-     "fit": 0.78
-    },
-    "fails": []
-   }
-  },
-  "buzzer": {
-   "metrics": {
-    "seconds": 0.8,
-    "leadingSilence": 0.0032,
-    "effective": 0.797,
-    "tail": 0.001,
-    "peakAt": 0.176,
-    "attackMs": 4,
-    "endLevelDb": -58.1,
-    "noiseFloorDb": null,
-    "crestDb": 13.1,
-    "dc": 0.0001,
-    "clipping": 0,
-    "centroidHz": 483,
-    "flatness": 0,
-    "lfShare": 0.546,
-    "presenceShare": 0.173,
-    "airShare": 0,
-    "mono": {
-     "correlation": 0.983,
-     "sumLossDb": -0.16
-    },
-    "pitch": {
-     "hz": 87.89,
-     "midi": 41,
-     "note": "F2",
-     "cents": 12,
-     "confidence": 0.497,
-     "stability": 7.12
-    },
-    "contour": 9,
-    "key": {
-     "name": "A",
-     "mode": "major",
-     "score": 0.652,
-     "toD": -4
-    }
-   },
-   "score": {
-    "total": 73,
-    "parts": {
-     "fidelity": 1,
-     "envelope": 1,
-     "spectrum": 0.62,
-     "tonal": 0.13,
-     "clean": 0.92,
-     "fit": 0.78
-    },
-    "fails": []
-   }
-  },
-  "timeout": {
-   "metrics": {
-    "seconds": 1.3,
-    "leadingSilence": 0.0033,
-    "effective": 1.299,
-    "tail": 0,
-    "peakAt": 0.316,
-    "attackMs": 151,
-    "endLevelDb": -46.7,
-    "noiseFloorDb": null,
-    "crestDb": 12.6,
-    "dc": 0,
-    "clipping": 0,
-    "centroidHz": 626,
-    "flatness": 0,
-    "lfShare": 0.03,
-    "presenceShare": 0.691,
-    "airShare": 0,
-    "mono": {
-     "correlation": 0.914,
-     "sumLossDb": -0.42
-    },
-    "pitch": {
-     "hz": 99.25,
-     "midi": 43,
-     "note": "G2",
-     "cents": 22,
-     "confidence": 0.54,
-     "stability": 7.4
-    },
-    "contour": -1,
+    "contour": 2,
     "key": {
      "name": "D",
      "mode": "minor",
-     "score": 0.765,
+     "score": 0.645,
      "toD": 0
     }
    },
@@ -60255,7 +60151,58 @@
     "total": 89,
     "parts": {
      "fidelity": 1,
-     "envelope": 0.6,
+     "envelope": 1,
+     "spectrum": 0.89,
+     "tonal": 0.68,
+     "clean": 0.92,
+     "fit": 0.78
+    },
+    "fails": []
+   }
+  },
+  "buzzer": {
+   "metrics": {
+    "seconds": 0.4,
+    "leadingSilence": 0.0047,
+    "effective": 0.384,
+    "tail": 0.013,
+    "peakAt": 0.134,
+    "attackMs": 8,
+    "endLevelDb": -71.7,
+    "noiseFloorDb": null,
+    "crestDb": 10.3,
+    "dc": 0,
+    "clipping": 0,
+    "centroidHz": 1227,
+    "flatness": 0,
+    "lfShare": 0,
+    "presenceShare": 1,
+    "airShare": 0,
+    "mono": {
+     "correlation": 0.856,
+     "sumLossDb": -0.55
+    },
+    "pitch": {
+     "hz": 345.7,
+     "midi": 65,
+     "note": "F4",
+     "cents": -18,
+     "confidence": 0.51,
+     "stability": 7.69
+    },
+    "contour": -12,
+    "key": {
+     "name": "D",
+     "mode": "minor",
+     "score": 0.897,
+     "toD": 0
+    }
+   },
+   "score": {
+    "total": 97,
+    "parts": {
+     "fidelity": 1,
+     "envelope": 1,
      "spectrum": 1,
      "tonal": 1,
      "clean": 0.92,
@@ -60264,52 +60211,103 @@
     "fails": []
    }
   },
-  "whoosh": {
+  "timeout": {
    "metrics": {
-    "seconds": 0.55,
-    "leadingSilence": 0.0292,
-    "effective": 0.523,
-    "tail": 0,
-    "peakAt": 0.212,
-    "attackMs": 126,
-    "endLevelDb": -57.8,
-    "noiseFloorDb": -56.9,
-    "crestDb": 16.6,
+    "seconds": 1.545,
+    "leadingSilence": 0.005,
+    "effective": 1.509,
+    "tail": 0.033,
+    "peakAt": 0.312,
+    "attackMs": 12,
+    "endLevelDb": -83.8,
+    "noiseFloorDb": -67.9,
+    "crestDb": 17,
     "dc": 0,
     "clipping": 0,
-    "centroidHz": 3406,
-    "flatness": 0.0147,
-    "lfShare": 0.005,
-    "presenceShare": 0.949,
-    "airShare": 0.017,
+    "centroidHz": 400,
+    "flatness": 0,
+    "lfShare": 0.006,
+    "presenceShare": 0.185,
+    "airShare": 0,
     "mono": {
-     "correlation": 0.91,
-     "sumLossDb": -0.87
+     "correlation": 1,
+     "sumLossDb": 0
     },
     "pitch": {
-     "hz": 410.59,
-     "midi": 68,
-     "note": "G#4",
-     "cents": -20,
-     "confidence": 0.224,
-     "stability": 9.63
+     "hz": 292.69,
+     "midi": 62,
+     "note": "D4",
+     "cents": -6,
+     "confidence": 0.576,
+     "stability": 9.21
     },
-    "contour": null,
+    "contour": -3,
     "key": {
-     "name": "G",
+     "name": "D",
      "mode": "minor",
-     "score": 0.401,
-     "toD": -5
+     "score": 0.73,
+     "toD": 0
     }
    },
    "score": {
-    "total": 91,
+    "total": 95,
+    "parts": {
+     "fidelity": 1,
+     "envelope": 1,
+     "spectrum": 0.79,
+     "tonal": 1,
+     "clean": 1,
+     "fit": 0.78
+    },
+    "fails": []
+   }
+  },
+  "whoosh": {
+   "metrics": {
+    "seconds": 0.844,
+    "leadingSilence": 0.008,
+    "effective": 0.822,
+    "tail": 0.016,
+    "peakAt": 0.635,
+    "attackMs": 45,
+    "endLevelDb": -95,
+    "noiseFloorDb": -59.1,
+    "crestDb": 15.3,
+    "dc": 0,
+    "clipping": 0,
+    "centroidHz": 6066,
+    "flatness": 0.0394,
+    "lfShare": 0.004,
+    "presenceShare": 0.866,
+    "airShare": 0.123,
+    "mono": {
+     "correlation": 0.931,
+     "sumLossDb": -0.74
+    },
+    "pitch": {
+     "hz": 474.61,
+     "midi": 70,
+     "note": "A#4",
+     "cents": 31,
+     "confidence": 0.184,
+     "stability": 14.46
+    },
+    "contour": null,
+    "key": {
+     "name": "E",
+     "mode": "minor",
+     "score": 0.507,
+     "toD": -2
+    }
+   },
+   "score": {
+    "total": 97,
     "parts": {
      "fidelity": 1,
      "envelope": 1,
      "spectrum": 1,
-     "tonal": 0.73,
-     "clean": 0.92,
+     "tonal": 1,
+     "clean": 0.98,
      "fit": 0.78
     },
     "fails": []
@@ -60419,49 +60417,49 @@
   },
   "explosion": {
    "metrics": {
-    "seconds": 1.6,
-    "leadingSilence": 0.003,
-    "effective": 1.599,
-    "tail": 0,
-    "peakAt": 0.02,
-    "attackMs": 0,
-    "endLevelDb": -49.1,
+    "seconds": 1.332,
+    "leadingSilence": 0.0033,
+    "effective": 1.165,
+    "tail": 0.166,
+    "peakAt": 0.08,
+    "attackMs": 14,
+    "endLevelDb": null,
     "noiseFloorDb": null,
-    "crestDb": 11.6,
-    "dc": 0.0001,
+    "crestDb": 21.3,
+    "dc": 0,
     "clipping": 0,
-    "centroidHz": 1200,
-    "flatness": 0.0001,
-    "lfShare": 0.971,
-    "presenceShare": 0.008,
-    "airShare": 0,
+    "centroidHz": 5469,
+    "flatness": 0.0408,
+    "lfShare": 0.224,
+    "presenceShare": 0.492,
+    "airShare": 0.092,
     "mono": {
-     "correlation": 0.944,
-     "sumLossDb": -0.3
+     "correlation": 1,
+     "sumLossDb": 0
     },
     "pitch": {
-     "hz": 72.56,
-     "midi": 38,
-     "note": "D2",
-     "cents": -20,
-     "confidence": 0.505,
-     "stability": 4.7
+     "hz": 76.17,
+     "midi": 39,
+     "note": "D#2",
+     "cents": -36,
+     "confidence": 0.324,
+     "stability": 10.68
     },
-    "contour": 3,
+    "contour": -7,
     "key": {
-     "name": "D#",
-     "mode": "minor",
-     "score": 0.469,
-     "toD": -1
+     "name": "B",
+     "mode": "major",
+     "score": 0.377,
+     "toD": 3
     }
    },
    "score": {
-    "total": 71,
+    "total": 90,
     "parts": {
      "fidelity": 1,
      "envelope": 1,
-     "spectrum": 0.62,
-     "tonal": 0.01,
+     "spectrum": 0.55,
+     "tonal": 1,
      "clean": 0.92,
      "fit": 0.78
     },
@@ -60572,75 +60570,32 @@
   },
   "home": {
    "metrics": {
-    "seconds": 53.33,
-    "lufs": -19.1,
-    "lra": 3.5,
-    "truePeak": -6.9,
-    "centroidHz": 3371,
-    "lfShare": 0.061,
+    "seconds": 45.71,
+    "lufs": -22.1,
+    "lra": 4.1,
+    "truePeak": -9.3,
+    "centroidHz": 1337,
+    "lfShare": 0.266,
     "mono": {
-     "correlation": 0.925,
-     "sumLossDb": -0.2
+     "correlation": 0.943,
+     "sumLossDb": -0.69
     },
     "key": {
      "name": "D",
-     "mode": "minor",
+     "mode": "major",
      "score": 1,
      "toD": 0
     },
-    "endLevelDb": -23.8,
+    "endLevelDb": -41.3,
     "seam": {
-     "levelDiffDb": -5.07,
-     "discontinuity": 0.013,
-     "hfClickDb": -5.11,
-     "centroidDiff": 0.674
+     "levelDiffDb": -16.43,
+     "discontinuity": 0.015,
+     "hfClickDb": 1.14,
+     "centroidDiff": 0.666
     },
     "loop": {
      "authored": true,
-     "seconds": 53.333
-    }
-   },
-   "score": {
-    "total": 97,
-    "parts": {
-     "fidelity": 1,
-     "seam": 1,
-     "dynamics": 1,
-     "spectrum": 0.83,
-     "key": 1,
-     "palette": 1
-    },
-    "fails": []
-   }
-  },
-  "calm": {
-   "metrics": {
-    "seconds": 58.18,
-    "lufs": -20.9,
-    "lra": 3.4,
-    "truePeak": -7.4,
-    "centroidHz": 1947,
-    "lfShare": 0.081,
-    "mono": {
-     "correlation": 0.895,
-     "sumLossDb": -0.44
-    },
-    "key": {
-     "name": "D",
-     "mode": "minor",
-     "score": 1,
-     "toD": 0
-    },
-    "endLevelDb": -28,
-    "seam": {
-     "levelDiffDb": -5.44,
-     "discontinuity": 0.002,
-     "hfClickDb": -5.05,
-     "centroidDiff": 0.855
-    },
-    "loop": {
-     "authored": true,
-     "seconds": 58.182
+     "seconds": 45.714
     }
    },
    "score": {
@@ -60656,43 +60611,86 @@
     "fails": []
    }
   },
-  "tense": {
+  "calm": {
    "metrics": {
-    "seconds": 40,
-    "lufs": -18.1,
-    "lra": 1.9,
-    "truePeak": -5.3,
-    "centroidHz": 3910,
-    "lfShare": 0.238,
+    "seconds": 58.18,
+    "lufs": -24.2,
+    "lra": 8.6,
+    "truePeak": -10.8,
+    "centroidHz": 519,
+    "lfShare": 0.304,
     "mono": {
-     "correlation": 0.931,
-     "sumLossDb": -0.48
+     "correlation": 0.927,
+     "sumLossDb": -0.42
     },
     "key": {
-     "name": "C",
-     "mode": "minor",
+     "name": "G",
+     "mode": "major",
      "score": 1,
      "toD": 0
     },
-    "endLevelDb": -22.2,
+    "endLevelDb": -38.6,
     "seam": {
-     "levelDiffDb": -3.53,
-     "discontinuity": 0.403,
-     "hfClickDb": -2.14,
-     "centroidDiff": 0.457
+     "levelDiffDb": -16.18,
+     "discontinuity": 0.009,
+     "hfClickDb": 2.32,
+     "centroidDiff": 0.463
     },
     "loop": {
      "authored": true,
-     "seconds": 40
+     "seconds": 58.182
     }
    },
    "score": {
-    "total": 92,
+    "total": 98,
     "parts": {
      "fidelity": 1,
      "seam": 1,
-     "dynamics": 0.73,
-     "spectrum": 0.71,
+     "dynamics": 1,
+     "spectrum": 0.85,
+     "key": 1,
+     "palette": 1
+    },
+    "fails": []
+   }
+  },
+  "tense": {
+   "metrics": {
+    "seconds": 38.4,
+    "lufs": -21.3,
+    "lra": 3.8,
+    "truePeak": -7.7,
+    "centroidHz": 2580,
+    "lfShare": 0.571,
+    "mono": {
+     "correlation": 0.915,
+     "sumLossDb": -0.23
+    },
+    "key": {
+     "name": "D",
+     "mode": "major",
+     "score": 1,
+     "toD": 0
+    },
+    "endLevelDb": -29.9,
+    "seam": {
+     "levelDiffDb": -7.86,
+     "discontinuity": 0.102,
+     "hfClickDb": -20.65,
+     "centroidDiff": 1.107
+    },
+    "loop": {
+     "authored": true,
+     "seconds": 38.4
+    }
+   },
+   "score": {
+    "total": 97,
+    "parts": {
+     "fidelity": 1,
+     "seam": 1,
+     "dynamics": 1,
+     "spectrum": 0.81,
      "key": 1,
      "palette": 1
     },
@@ -60702,22 +60700,22 @@
   "finale": {
    "metrics": {
     "seconds": 6.5,
-    "lufs": -16,
-    "lra": 14.5,
-    "truePeak": -4.7,
-    "centroidHz": 1162,
-    "lfShare": 0.034,
+    "lufs": -18.1,
+    "lra": 18.5,
+    "truePeak": -6,
+    "centroidHz": 763,
+    "lfShare": 0.134,
     "mono": {
-     "correlation": 0.927,
-     "sumLossDb": -0.22
+     "correlation": 0.91,
+     "sumLossDb": -0.45
     },
     "key": {
      "name": "D",
-     "mode": "minor",
+     "mode": "major",
      "score": 1,
      "toD": 0
     },
-    "endLevelDb": -80.8,
+    "endLevelDb": -118.4,
     "seam": null,
     "loop": null
    },
@@ -60736,45 +60734,8 @@
   }
  },
  "selection": {
-  "buzzer": {
-   "baseline": 73,
-   "best": "dustyroom:DM-CGS-27",
-   "bestScore": 94,
-   "top": [
-    {
-     "id": "dustyroom:DM-CGS-27",
-     "total": 94,
-     "fails": []
-    },
-    {
-     "id": "dustyroom:DM-CGS-03",
-     "total": 87,
-     "fails": []
-    },
-    {
-     "id": "dustyroom:DM-CGS-46",
-     "total": 87,
-     "fails": []
-    },
-    {
-     "id": "dustyroom:DM-CGS-07",
-     "total": 85,
-     "fails": []
-    },
-    {
-     "id": "dustyroom:DM-CGS-10",
-     "total": 85,
-     "fails": []
-    }
-   ],
-   "decision": "sourced",
-   "spec": {
-    "id": "dustyroom:DM-CGS-27",
-    "pitchSemitones": 2
-   }
-  },
   "wrong": {
-   "baseline": 83,
+   "baseline": 89,
    "best": "dustyroom:DM-CGS-03",
    "bestScore": 96,
    "top": [
@@ -60810,199 +60771,10 @@
     "pitchSemitones": -1
    }
   },
-  "explosion": {
-   "baseline": 71,
-   "best": "mixkit:1519",
-   "bestScore": 84,
-   "top": [
-    {
-     "id": "mixkit:1519",
-     "total": 84,
-     "fails": []
-    },
-    {
-     "id": "mixkit:1685",
-     "total": 74,
-     "fails": []
-    },
-    {
-     "id": "mixkit:1184",
-     "total": 71,
-     "fails": []
-    },
-    {
-     "id": "mixkit:1616",
-     "total": 71,
-     "fails": []
-    },
-    {
-     "id": "mixkit:782",
-     "total": 70,
-     "fails": []
-    }
-   ],
-   "decision": "sourced",
-   "spec": {
-    "id": "mixkit:1519",
-    "pitchSemitones": 0,
-    "trim": [
-     0.291,
-     1.623
-    ]
-   }
-  },
-  "correct": {
-   "baseline": 85,
-   "best": "dustyroom:DM-CGS-46",
-   "bestScore": 94,
-   "top": [
-    {
-     "id": "dustyroom:DM-CGS-46",
-     "total": 94,
-     "fails": []
-    },
-    {
-     "id": "mixkit:1938",
-     "total": 94,
-     "fails": []
-    },
-    {
-     "id": "dustyroom:DM-CGS-30",
-     "total": 93,
-     "fails": []
-    },
-    {
-     "id": "mixkit:767",
-     "total": 91,
-     "fails": []
-    },
-    {
-     "id": "dustyroom:DM-CGS-15",
-     "total": 90,
-     "fails": []
-    }
-   ],
-   "decision": "sourced",
-   "spec": {
-    "id": "dustyroom:DM-CGS-46",
-    "pitchSemitones": -1
-   }
-  },
-  "pop": {
-   "baseline": 85,
-   "best": "dustyroom:DM-CGS-22",
-   "bestScore": 91,
-   "top": [
-    {
-     "id": "dustyroom:DM-CGS-27",
-     "total": 92,
-     "fails": []
-    },
-    {
-     "id": "dustyroom:DM-CGS-22",
-     "total": 91,
-     "fails": []
-    },
-    {
-     "id": "dustyroom:DM-CGS-30",
-     "total": 91,
-     "fails": []
-    },
-    {
-     "id": "dustyroom:DM-CGS-41",
-     "total": 90,
-     "fails": []
-    },
-    {
-     "id": "dustyroom:DM-CGS-46",
-     "total": 90,
-     "fails": []
-    }
-   ],
-   "decision": "sourced",
-   "spec": {
-    "id": "dustyroom:DM-CGS-22",
-    "pitchSemitones": 0
-   }
-  },
-  "whoosh": {
-   "baseline": 91,
-   "best": "dustyroom:DM-CGS-08",
-   "bestScore": 98,
-   "top": [
-    {
-     "id": "dustyroom:DM-CGS-08",
-     "total": 98,
-     "fails": []
-    },
-    {
-     "id": "mixkit:2596",
-     "total": 87,
-     "fails": []
-    },
-    {
-     "id": "dustyroom:DM-CGS-19",
-     "total": 86,
-     "fails": []
-    },
-    {
-     "id": "dustyroom:DM-CGS-39",
-     "total": 86,
-     "fails": []
-    },
-    {
-     "id": "dustyroom:DM-CGS-04",
-     "total": 80,
-     "fails": []
-    }
-   ],
-   "decision": "sourced",
-   "spec": {
-    "id": "dustyroom:DM-CGS-08",
-    "pitchSemitones": 0
-   }
-  },
-  "timeout": {
-   "baseline": 89,
-   "best": "dustyroom:DM-CGS-23",
-   "bestScore": 94,
-   "top": [
-    {
-     "id": "dustyroom:DM-CGS-23",
-     "total": 94,
-     "fails": []
-    },
-    {
-     "id": "dustyroom:DM-CGS-27",
-     "total": 94,
-     "fails": []
-    },
-    {
-     "id": "dustyroom:DM-CGS-12",
-     "total": 93,
-     "fails": []
-    },
-    {
-     "id": "dustyroom:DM-CGS-46",
-     "total": 93,
-     "fails": []
-    },
-    {
-     "id": "dustyroom:DM-CGS-30",
-     "total": 91,
-     "fails": []
-    }
-   ],
-   "decision": "sourced",
-   "spec": {
-    "id": "dustyroom:DM-CGS-23",
-    "pitchSemitones": -2
-   }
-  },
   "pass": {
    "baseline": 91,
-   "best": "dustyroom:DM-CGS-30",
-   "bestScore": 94,
+   "best": "dustyroom:DM-CGS-46",
+   "bestScore": 95,
    "top": [
     {
      "id": "dustyroom:DM-CGS-46",
@@ -61027,6 +60799,40 @@
     {
      "id": "dustyroom:DM-CGS-22",
      "total": 91,
+     "fails": []
+    }
+   ],
+   "decision": "kept-in-house",
+   "spec": null
+  },
+  "pop": {
+   "baseline": 90,
+   "best": "dustyroom:DM-CGS-27",
+   "bestScore": 92,
+   "top": [
+    {
+     "id": "dustyroom:DM-CGS-27",
+     "total": 92,
+     "fails": []
+    },
+    {
+     "id": "dustyroom:DM-CGS-22",
+     "total": 91,
+     "fails": []
+    },
+    {
+     "id": "dustyroom:DM-CGS-30",
+     "total": 91,
+     "fails": []
+    },
+    {
+     "id": "dustyroom:DM-CGS-41",
+     "total": 90,
+     "fails": []
+    },
+    {
+     "id": "dustyroom:DM-CGS-46",
+     "total": 90,
      "fails": []
     }
    ],
@@ -61095,6 +60901,74 @@
     {
      "id": "dustyroom:DM-CGS-22",
      "total": 91,
+     "fails": []
+    }
+   ],
+   "decision": "kept-in-house",
+   "spec": null
+  },
+  "correct": {
+   "baseline": 93,
+   "best": "dustyroom:DM-CGS-46",
+   "bestScore": 94,
+   "top": [
+    {
+     "id": "dustyroom:DM-CGS-46",
+     "total": 94,
+     "fails": []
+    },
+    {
+     "id": "mixkit:1938",
+     "total": 94,
+     "fails": []
+    },
+    {
+     "id": "dustyroom:DM-CGS-30",
+     "total": 93,
+     "fails": []
+    },
+    {
+     "id": "mixkit:767",
+     "total": 91,
+     "fails": []
+    },
+    {
+     "id": "dustyroom:DM-CGS-15",
+     "total": 90,
+     "fails": []
+    }
+   ],
+   "decision": "kept-in-house",
+   "spec": null
+  },
+  "whoosh": {
+   "baseline": 97,
+   "best": "dustyroom:DM-CGS-08",
+   "bestScore": 98,
+   "top": [
+    {
+     "id": "dustyroom:DM-CGS-08",
+     "total": 98,
+     "fails": []
+    },
+    {
+     "id": "mixkit:2596",
+     "total": 87,
+     "fails": []
+    },
+    {
+     "id": "dustyroom:DM-CGS-19",
+     "total": 86,
+     "fails": []
+    },
+    {
+     "id": "dustyroom:DM-CGS-39",
+     "total": 86,
+     "fails": []
+    },
+    {
+     "id": "dustyroom:DM-CGS-04",
+     "total": 80,
      "fails": []
     }
    ],
@@ -61203,6 +61077,40 @@
    "decision": "kept-in-house",
    "spec": null
   },
+  "timeout": {
+   "baseline": 95,
+   "best": "dustyroom:DM-CGS-23",
+   "bestScore": 94,
+   "top": [
+    {
+     "id": "dustyroom:DM-CGS-23",
+     "total": 94,
+     "fails": []
+    },
+    {
+     "id": "dustyroom:DM-CGS-27",
+     "total": 94,
+     "fails": []
+    },
+    {
+     "id": "dustyroom:DM-CGS-12",
+     "total": 93,
+     "fails": []
+    },
+    {
+     "id": "dustyroom:DM-CGS-46",
+     "total": 93,
+     "fails": []
+    },
+    {
+     "id": "dustyroom:DM-CGS-30",
+     "total": 91,
+     "fails": []
+    }
+   ],
+   "decision": "kept-in-house",
+   "spec": null
+  },
   "click": {
    "baseline": 94,
    "best": "dustyroom:DM-CGS-07",
@@ -61271,34 +61179,68 @@
    "decision": "kept-in-house",
    "spec": null
   },
-  "home": {
+  "buzzer": {
    "baseline": 97,
-   "best": "incompetech:USUAN1800003",
-   "bestScore": 91,
+   "best": "dustyroom:DM-CGS-27",
+   "bestScore": 94,
    "top": [
     {
-     "id": "incompetech:USUAN1800003",
-     "total": 91,
+     "id": "dustyroom:DM-CGS-27",
+     "total": 94,
      "fails": []
     },
     {
-     "id": "incompetech:USUAN2000006",
+     "id": "dustyroom:DM-CGS-03",
+     "total": 87,
+     "fails": []
+    },
+    {
+     "id": "dustyroom:DM-CGS-46",
+     "total": 87,
+     "fails": []
+    },
+    {
+     "id": "dustyroom:DM-CGS-07",
      "total": 85,
      "fails": []
     },
     {
-     "id": "incompetech:USUAN1100839",
-     "total": 81,
+     "id": "dustyroom:DM-CGS-10",
+     "total": 85,
+     "fails": []
+    }
+   ],
+   "decision": "kept-in-house",
+   "spec": null
+  },
+  "explosion": {
+   "baseline": 90,
+   "best": "mixkit:1519",
+   "bestScore": 84,
+   "top": [
+    {
+     "id": "mixkit:1519",
+     "total": 84,
      "fails": []
     },
     {
-     "id": "incompetech:USUAN1100706",
-     "total": 77,
+     "id": "mixkit:1685",
+     "total": 74,
      "fails": []
     },
     {
-     "id": "incompetech:USUAN1100838",
-     "total": 72,
+     "id": "mixkit:1184",
+     "total": 71,
+     "fails": []
+    },
+    {
+     "id": "mixkit:1616",
+     "total": 71,
+     "fails": []
+    },
+    {
+     "id": "mixkit:782",
+     "total": 70,
      "fails": []
     }
    ],
@@ -61306,7 +61248,7 @@
    "spec": null
   },
   "calm": {
-   "baseline": 100,
+   "baseline": 98,
    "best": "incompetech:USUAN1900004",
    "bestScore": 87,
    "top": [
@@ -61321,18 +61263,18 @@
      "fails": []
     },
     {
-     "id": "incompetech:USUAN1800003",
-     "total": 84,
-     "fails": []
-    },
-    {
      "id": "incompetech:USUAN1800008",
-     "total": 84,
+     "total": 85,
      "fails": []
     },
     {
      "id": "incompetech:USUAN1700057",
      "total": 79,
+     "fails": []
+    },
+    {
+     "id": "incompetech:USUAN1800003",
+     "total": 78,
      "fails": []
     }
    ],
@@ -61373,16 +61315,45 @@
    "decision": "kept-in-house",
    "spec": null
   },
-  "tense": {
-   "baseline": 92,
-   "best": "incompetech:USUAN1100672",
-   "bestScore": 77,
+  "home": {
+   "baseline": 100,
+   "best": "incompetech:USUAN1800003",
+   "bestScore": 85,
    "top": [
     {
-     "id": "incompetech:USUAN1100672",
+     "id": "incompetech:USUAN1800003",
+     "total": 85,
+     "fails": []
+    },
+    {
+     "id": "incompetech:USUAN2000006",
+     "total": 85,
+     "fails": []
+    },
+    {
+     "id": "incompetech:USUAN1100839",
+     "total": 81,
+     "fails": []
+    },
+    {
+     "id": "incompetech:USUAN1100706",
      "total": 77,
      "fails": []
     },
+    {
+     "id": "incompetech:USUAN1100838",
+     "total": 72,
+     "fails": []
+    }
+   ],
+   "decision": "kept-in-house",
+   "spec": null
+  },
+  "tense": {
+   "baseline": 97,
+   "best": "incompetech:USUAN1800007",
+   "bestScore": 75,
+   "top": [
     {
      "id": "incompetech:USUAN1800007",
      "total": 75,
@@ -61390,7 +61361,7 @@
     },
     {
      "id": "incompetech:USUAN2000002",
-     "total": 73,
+     "total": 74,
      "fails": []
     },
     {
@@ -61398,6 +61369,13 @@
      "total": 0,
      "fails": [
       "key too far from D (A minor)"
+     ]
+    },
+    {
+     "id": "incompetech:USUAN1100672",
+     "total": 0,
+     "fails": [
+      "seam would click"
      ]
     },
     {

@@ -82,6 +82,18 @@ immutable for a year, the service worker takes the cue list from `sample-bank.js
 (`renderServiceWorker` in `scripts/lib.mjs`) and never precaches music. Budgets in the tests: cues
 < 640 KB together, music < 7 MB.
 
+## Music 3.1: calm cartoon palette
+
+After the owner found the 3.0 loops intrusive, all four in-house tracks were recomposed
+(2026-09-27) in a calm, cartoon-like palette: pizzicato, soft marimba, toy xylophone, soft
+glockenspiel, a gentle triangle bass, occasional bubbles and a thin pad; no frame drum, no ney,
+no drone. They sit on a suspended pentatonic on D (D E G A B) that agrees with both the major and
+the minor cues, and are mastered quieter (home −22, calm −24, tense −21, finale −18 LUFS) with a
+−3 dB shelf above 6 kHz. `home` 84 BPM (menus), `calm` 66 BPM with no percussion (Badeeha,
+Fabraka), `tense` 100 BPM with a pizzicato ostinato and a light clock tick (Beep, Mamnoo, Jabeen),
+`finale` a 6.5 s xylophone run. The default music level dropped from 50 % to 35 %; saved settings
+from before are moved to the new default once (`musicLevel: 2` in the platform settings).
+
 ## Playback
 
 `src/shared/fx/sound.js` maps the public cue names 1:1 to files (`fanfare → win`, `countdownGo →

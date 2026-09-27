@@ -2,7 +2,7 @@
 // (مع النسخة السابقة قبله عند --ab <git-ref> للمؤثرات المستبدلة)، ثم وصلة كل حلقة موسيقية
 // (آخر 8 ثوانٍ فأول 12) والخاتمة. يكتب m4a وفهرسًا نصيًا بالتوقيتات.
 //
-//   node scripts/audio/audition.mjs --out <file.m4a> [--ab <git-ref>]
+//   node scripts/audio/audition.mjs --out <file.m4a> [--ab <git-ref>] [--music-only]
 import { readFile, writeFile, mkdir } from 'node:fs/promises';
 import { execFileSync } from 'node:child_process';
 import path from 'node:path';
@@ -14,6 +14,7 @@ const args = process.argv.slice(2);
 const value = (name, fallback = null) => (args.includes(name) ? args[args.indexOf(name) + 1] : fallback);
 const out = value('--out', path.join(root, '.cache/audio-audition', `maydan-audition-${new Date().toISOString().slice(0, 10)}.m4a`));
 const abRef = value('--ab');
+const musicOnly = args.includes('--music-only');
 const cueProv = JSON.parse(await readFile(path.join(root, 'assets/audio/maydan-v3/provenance.json'), 'utf8'));
 const musicProv = JSON.parse(await readFile(path.join(root, 'assets/audio/maydan-v3/music/provenance.json'), 'utf8'));
 const ORDER = ['click', 'pop', 'tick', 'tickFast', 'countdown', 'start', 'correct', 'wrong', 'buzzer', 'timeout', 'whoosh', 'reveal', 'win', 'explosion', 'drumroll', 'pass'];
@@ -28,7 +29,7 @@ async function previous(file) {
   try { return decodeWav24(execFileSync('git', ['show', `${abRef}:${file}`], { cwd: root, maxBuffer: 256 * 1024 * 1024 })); } catch { return null; }
 }
 t += 0.5;
-for (const [i, id] of ORDER.entries()) {
+for (const [i, id] of musicOnly ? [] : ORDER.entries()) {
   const info = cueProv.cues[id];
   const current = decodeWav24(await readFile(path.join(root, info.master)));
   markers(i + 1);
