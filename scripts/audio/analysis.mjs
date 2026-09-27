@@ -168,15 +168,28 @@ export function semitonesToDCue(key, mode) {
 }
 
 // ── الحلقات: وصلة النهاية→البداية، وقياسها ─────────────────────────────────────────────
-export function seamMetrics(st, { windowMs = 200, hfHz = 4000 } = {}) {
+// hfClickDb: طاقة الترددات العالية في نافذة 21 ms على الوصلة نسبةً إلى مرجع. مع bpm يكون المرجع
+// وسيط النوافذ على بدايات النبضات الأخرى في الحلقة (ضربة أول البار عند الوصلة طبيعية، لا نقرة)؛
+// بدونه المرجع النوافذ المجاورة داخل ±windowMs.
+export function seamMetrics(st, { windowMs = 200, hfHz = 4000, bpm = null } = {}) {
   const x = mono(st), n = x.length, w = Math.min(secs(windowMs / 1000), Math.floor(n / 2));
   const tail = x.subarray(n - w), head = x.subarray(0, w);
   const joined = new Float64Array(2 * w); joined.set(tail); joined.set(head, w);
   const size = 1024, sizeHf = (seg) => bandFraction(spectrum(seg, 0, size), size, hfHz, SR / 2) * rms(seg, 0, size) ** 2;
   const centre = sizeHf(joined.subarray(w - size / 2));
-  let others = 0, count = 0;
-  for (let s = 0; s + size <= 2 * w; s += size) { if (Math.abs(s + size / 2 - w) < size) continue; others += sizeHf(joined.subarray(s)); count++; }
-  const hfClickDb = count ? 10 * Math.log10((centre + 1e-18) / (others / count + 1e-18)) : 0;
+  let reference;
+  if (bpm) {
+    const beat = secs(60 / bpm), values = [];
+    for (let at = beat; at + size / 2 < n; at += beat) values.push(sizeHf(x.subarray(Math.max(0, at - size / 2))));
+    values.sort((a, b) => a - b);
+    // موسيقى متفرّقة (نبضات كثيرة صامتة) لا تُعطي مرجعًا صفريًا: أرضية ربع أعلى نبضة.
+    reference = values.length ? Math.max(values[Math.floor(values.length / 2)], 0.25 * values[values.length - 1]) : 0;
+  } else {
+    let others = 0, count = 0;
+    for (let s = 0; s + size <= 2 * w; s += size) { if (Math.abs(s + size / 2 - w) < size) continue; others += sizeHf(joined.subarray(s)); count++; }
+    reference = count ? others / count : 0;
+  }
+  const hfClickDb = 10 * Math.log10((centre + 1e-18) / (reference + 1e-18));
   // القفزة عند الوصلة نسبةً إلى أكبر القفزات الطبيعية في الإشارة (المئين 99.9 لـ |Δx|): حلقة سليمة
   // تبدأ بضربة طبل تُعطي ≈ 1، وقطع فجّ في نغمة ممتدة يُعطي أضعافًا.
   const steps = new Float64Array(Math.min(n - 1, 480000));

@@ -3,99 +3,99 @@
   "key": "D",
   "tracks": {
     "home": {
-      "file": "audio/music/home-3d8a23.m4a",
+      "file": "audio/music/home-ee5839.m4a",
       "master": "assets/audio/maydan-v3/music/home.wav",
-      "seconds": 53.3333,
-      "frames": 2560000,
-      "bpm": 72,
+      "seconds": 45.7143,
+      "frames": 2194285,
+      "bpm": 84,
       "loop": true,
-      "targetLufs": -19,
+      "targetLufs": -22,
       "measured": {
-        "lufs": -19.1,
-        "lra": 3.5,
-        "truePeak": -6.9,
-        "rmsPeak": -16.364819,
-        "rms": -21.738817,
-        "samplePeak": -6.991352
+        "lufs": -22.1,
+        "lra": 4.1,
+        "truePeak": -9.3,
+        "rmsPeak": -18.540771,
+        "rms": -23.868211,
+        "samplePeak": -9.271794
       },
-      "masterSha256": "58a3c120c7607f3226e4b69bccbd66f5c5cdaf5d30bfc513579187d78d90f876",
-      "encodedSha256": "3d8a2323a571d7ff65d2b014be52dd6d750cf2b5655b0777f85adadd8f8cd576",
-      "encodedBytes": 1336152,
+      "masterSha256": "a04f3c2ee19939386706181149fa230c7522bee5a87fb5e0f289feadee4dc943",
+      "encodedSha256": "ee58395dd3992e877d009bbae1920d3d11c4b98ab9c08986e3a7387e128544e7",
+      "encodedBytes": 1149498,
       "origin": "in-house",
       "decision": {
         "kept": "in-house",
-        "reason": "best challenger incompetech:USUAN1800003 scored 91 vs 97 (needs ≥ 70 and ≥ baseline + 5)"
+        "reason": "best challenger incompetech:USUAN1800003 scored 85 vs 100 (needs ≥ 70 and ≥ baseline + 5)"
       }
     },
     "calm": {
-      "file": "audio/music/calm-6185c0.m4a",
+      "file": "audio/music/calm-cdad51.m4a",
       "master": "assets/audio/maydan-v3/music/calm.wav",
       "seconds": 58.1818,
       "frames": 2792728,
       "bpm": 66,
       "loop": true,
-      "targetLufs": -21,
+      "targetLufs": -24,
       "measured": {
-        "lufs": -20.9,
-        "lra": 3.4,
-        "truePeak": -7.4,
-        "rmsPeak": -16.754087,
-        "rms": -23.731485,
-        "samplePeak": -7.448241
+        "lufs": -24.2,
+        "lra": 8.6,
+        "truePeak": -10.8,
+        "rmsPeak": -18.947832,
+        "rms": -25.906958,
+        "samplePeak": -10.75792
       },
-      "masterSha256": "b7c98a8d9f18d9c3b75d94290c139216820d9bfa52a647a65a90eceed5cd4882",
-      "encodedSha256": "6185c0efb1f993ca3f6c0cc0f41b7f85249faaf416dfae0cadfebe34bb878f03",
-      "encodedBytes": 1443304,
+      "masterSha256": "0b6cb624d3449eace2742d3b11538890d3ff743a9c5b3ad7ec453a62afe36efa",
+      "encodedSha256": "cdad511aeba2c8a9f591c1591a69fce18404053309cbad5f5cdd05e9f3c11389",
+      "encodedBytes": 1420805,
       "origin": "in-house",
       "decision": {
         "kept": "in-house",
-        "reason": "best challenger incompetech:USUAN1900004 scored 87 vs 100 (needs ≥ 70 and ≥ baseline + 5)"
+        "reason": "best challenger incompetech:USUAN1900004 scored 87 vs 98 (needs ≥ 70 and ≥ baseline + 5)"
       }
     },
     "tense": {
-      "file": "audio/music/tense-be60ce.m4a",
+      "file": "audio/music/tense-87ace7.m4a",
       "master": "assets/audio/maydan-v3/music/tense.wav",
-      "seconds": 40,
-      "frames": 1920000,
-      "bpm": 96,
+      "seconds": 38.4,
+      "frames": 1843200,
+      "bpm": 100,
       "loop": true,
-      "targetLufs": -18,
+      "targetLufs": -21,
       "measured": {
-        "lufs": -18.1,
-        "lra": 1.9,
-        "truePeak": -5.3,
-        "rmsPeak": -16.107853,
-        "rms": -21.154678,
-        "samplePeak": -5.430438
+        "lufs": -21.3,
+        "lra": 3.8,
+        "truePeak": -7.7,
+        "rmsPeak": -15.836399,
+        "rms": -22.244941,
+        "samplePeak": -7.679039
       },
-      "masterSha256": "5eeb9189a11f76be433f3f1cf6575805d0439f242651957331fd03c20c830c6b",
-      "encodedSha256": "be60ce794581530c4599beb9902ce7031df544bcb59e3553e995f29f9f2a8f0c",
-      "encodedBytes": 1014784,
+      "masterSha256": "2d7b5f75db59d03d5c81256e52e8c6ca456b3c28a9b4260930b4d70166ca9c71",
+      "encodedSha256": "87ace7a2615a718695aca1780778b57b69e5b44d3e230de4a5eabe7501b66a60",
+      "encodedBytes": 967875,
       "origin": "in-house",
       "decision": {
         "kept": "in-house",
-        "reason": "best challenger incompetech:USUAN1100672 scored 77 vs 92 (needs ≥ 70 and ≥ baseline + 5)"
+        "reason": "best challenger incompetech:USUAN1800007 scored 75 vs 97 (needs ≥ 70 and ≥ baseline + 5)"
       }
     },
     "finale": {
-      "file": "audio/music/finale-579d07.m4a",
+      "file": "audio/music/finale-f3b09a.m4a",
       "master": "assets/audio/maydan-v3/music/finale.wav",
       "seconds": 6.5,
       "frames": 312000,
-      "bpm": 84,
+      "bpm": 96,
       "loop": false,
-      "targetLufs": -16,
+      "targetLufs": -18,
       "measured": {
-        "lufs": -16,
-        "lra": 14.5,
-        "truePeak": -4.7,
-        "rmsPeak": -12.760688,
-        "rms": -21.657825,
-        "samplePeak": -4.748185
+        "lufs": -18.1,
+        "lra": 18.5,
+        "truePeak": -6,
+        "rmsPeak": -14.591785,
+        "rms": -22.586936,
+        "samplePeak": -6.024071
       },
-      "masterSha256": "ba4009e80d19be9eeef1eb3d6c2ef55743df39bee96e60f3cb7ebd9f1efcca6f",
-      "encodedSha256": "579d07a3a25c53c36804906f47878fb6603ff4d27a0a9c7a75e613d497c7041b",
-      "encodedBytes": 165974,
+      "masterSha256": "22f64d309a134ccc114bb5f1bc92c1ed32530b6be9116eb1eb079af58f7062dc",
+      "encodedSha256": "f3b09aaace534a2166d065ed001acefa9fc485f5c1f87ad8d6134fdbb5787995",
+      "encodedBytes": 144151,
       "origin": "in-house",
       "decision": {
         "kept": "in-house",

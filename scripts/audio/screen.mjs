@@ -105,13 +105,13 @@ export async function musicMetrics(wav, st, candidate, role, { authored = false 
   let seam = null, loop = null;
   if (role !== 'finale') {
     const bpm = candidate.bpm || null;
-    if (authored) { seam = seamMetrics(st); loop = { authored: true, seconds: Number(st.seconds.toFixed(3)) }; }
+    if (authored) { seam = seamMetrics(st, { bpm }); loop = { authored: true, seconds: Number(st.seconds.toFixed(3)) }; }
     else if (bpm) {
       // حلقة تجريبية بطول بارات كاملة (≤ 64 ث) مع تلاشٍ متبادل نبضة واحدة، كما سيُصنَع المقطع فعلًا.
       const bar = 4 * 60 / bpm;
       const bars = Math.max(4, Math.min(32, Math.floor((Math.min(st.seconds - 1, 64)) / bar / 4) * 4));
       const L = bars * bar, xf = 60 / bpm;
-      if (L + xf < st.seconds) { loop = { offset: 0, bars, seconds: Number(L.toFixed(3)), crossfadeBeats: 1 }; seam = seamMetrics(seamlessLoop(st, 0, L, xf)); }
+      if (L + xf < st.seconds) { loop = { offset: 0, bars, seconds: Number(L.toFixed(3)), crossfadeBeats: 1 }; seam = seamMetrics(seamlessLoop(st, 0, L, xf), { bpm }); }
     }
     if (!seam) seam = seamMetrics(st);
   }
@@ -124,11 +124,12 @@ export function scoreMusic(m, role, candidate, source) {
   const lossy = source.lossy, kbps = source.kbps || 0;
   if (lossy && kbps && kbps < 192) fails.push('lossy < 192 kb/s');
   if (Math.abs(m.key.toD) > 2 && m.key.score >= 0.5) fails.push(`key too far from D (${m.key.name} ${m.key.mode})`);
-  if (role !== 'finale' && m.seam && (m.seam.discontinuity > 3 || m.seam.hfClickDb > 6)) fails.push('seam would click');
+  // حلقة مؤلَّفة (تُصنع مضاعفةً ثم تُقتطع) متصلة بالبناء؛ قاعدة النقرة للحلقات المقصوصة أو المتلاشية فقط.
+  if (role !== 'finale' && m.seam && (m.seam.discontinuity > 3 || (!m.loop?.authored && m.seam.hfClickDb > 6))) fails.push('seam would click');
   if (role === 'finale' && (m.seconds < 2.5 || m.seconds > 12)) fails.push(`sting length ${m.seconds}s`);
   if (role !== 'finale' && m.seconds < 20) fails.push('too short to loop');
   parts.fidelity = !lossy ? 1 : kbps >= 320 ? 0.5 : 0.35;
-  parts.seam = role === 'finale' ? (m.endLevelDb < -40 ? 1 : 0.5) : m.seam ? clamp01(1 - Math.max(0, m.seam.discontinuity - 1) / 2) * 0.6 + clamp01(1 - Math.max(0, m.seam.hfClickDb) / 6) * 0.4 : 0.5;
+  parts.seam = role === 'finale' ? (m.endLevelDb < -40 ? 1 : 0.5) : m.seam ? clamp01(1 - Math.max(0, m.seam.discontinuity - 1) / 2) * 0.6 + (m.loop?.authored ? 1 : clamp01(1 - Math.max(0, m.seam.hfClickDb) / 6)) * 0.4 : 0.5;
   parts.dynamics = role === 'finale' ? 1 : 0.6 * between(m.lra, 3, 9, 0.8) + 0.4 * (m.lufs !== null && Number.isFinite(m.lufs) ? 1 : 0);
   parts.spectrum = 0.4 * between(m.centroidHz, 700, 2600, 0.7) + 0.3 * (m.lfShare <= 0.35 ? 1 : clamp01(1 - (m.lfShare - 0.35) / 0.35)) + 0.3 * between(m.mono.correlation, 0.25, 0.95, 1);
   const toD = Math.abs(m.key.toD);

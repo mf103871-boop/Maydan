@@ -116,3 +116,44 @@ export function buzz(freq = 112, dur = 0.55, { trem = 13 } = {}) {
 // ── ستيريو مساعد: توزيع يمين/يسار مع اتساع خفيف ────────────────────────────────
 export const place = (mono, pan = 0, width = 0.15) => stereo(mono, { pan, width, delayMs: 7 });
 export const padStereo = (mono) => chorus(stereo(mono, { pan: 0, width: 0.35, delayMs: 11 }), { rate: 0.3, depth: 0.0035, mix: 0.45 });
+
+// ── لوحة كرتونية هادئة (الموسيقى 3.1): بيتزيكاتو، إكسيليفون لعبة، غلوكنشبيل ناعم، باص لطيف،
+// فقاعة، وبطانة جيبية رقيقة — بلا طبول ولا ناي ولا حدّة.
+// بيتزيكاتو: وتر مقطوف قصير داكن.
+export function pizz(freq, dur = 0.6, { seed = 7 } = {}) {
+  const n = secs(dur);
+  const body = pluck(n, freq, { decay: 0.994, brightness: 0.3, seed, pick: 0.28, level: 0.9 });
+  filter(body, 'lowpass', Math.min(6000, freq * 6), 0.7);
+  return applyEnv(body, perc(0.0015, dur * 0.45));
+}
+// إكسيليفون لعبة: خشب لامع قصير جدًا.
+export function xylo(freq, dur = 0.45, { seed = 11 } = {}) {
+  const n = secs(dur);
+  const body = partials(n, freq, [{ r: 1, g: 1, tau: 0.16 + 60 / freq }, { r: 3.0, g: 0.3, tau: 0.05 }, { r: 6.0, g: 0.08, tau: 0.03 }], { attack: 0.0015, pitchDip: 0.004 });
+  const tap = applyEnv(filter(noise(secs(0.012), { seed }), 'bandpass', 2600, 1.4), perc(0.0005, 0.003));
+  return sum(body, gain(tap, 0.3));
+}
+// غلوكنشبيل ناعم: شركاء لا متناسقون بمستوى منخفض، ذيل متوسط.
+export function glock(freq, dur = 1.6) {
+  const n = secs(dur);
+  return gain(partials(n, freq, [{ r: 1, g: 1, tau: 0.9 }, { r: 2.76, g: 0.22, tau: 0.35 }, { r: 5.4, g: 0.06, tau: 0.15 }], { attack: 0.001 }), 0.8);
+}
+// باص لطيف: مثلث مع جيب سفلي، هجوم ناعم ومرشّح منخفض.
+export function softBass(freq, dur = 0.8) {
+  const n = secs(dur + 0.15), env = adsr({ a: 0.012, d: 0.25, s: 0.55, r: 0.15, curve: 2.5 }, dur);
+  const body = sum(tone(n, freq, { type: 'tri' }), gain(tone(n, freq / 2, { type: 'sine' }), 0.6), gain(tone(n, freq * 2, { type: 'sine' }), 0.12));
+  filter(body, 'lowpass', 700, 0.7);
+  return gain(applyEnv(body, env), 0.9);
+}
+// فقاعة كرتونية: جيب يقفز صعودًا ثم ينطفئ.
+export function bubble(freq = 500, dur = 0.16) {
+  const n = secs(dur);
+  return tone(n, (t) => freq * (1 + 0.9 * Math.min(1, t / dur) ** 0.5), { type: 'sine', env: perc(0.004, dur * 0.4) });
+}
+// بطانة رقيقة: مثلثات منفرجة قليلًا وجيب سفلي، مرشّح منخفض ثابت.
+export function softPad(freq, dur, { a = 1.2, r = 1.4 } = {}) {
+  const n = secs(dur + r + 0.2), env = adsr({ a, d: 0.5, s: 0.9, r, curve: 2 }, dur);
+  const v = sum(tone(n, freq, { type: 'tri', detune: -4 }), tone(n, freq, { type: 'tri', detune: 5 }), gain(tone(n, freq * 2, { type: 'sine', detune: 2 }), 0.25), gain(tone(n, freq / 2, { type: 'sine' }), 0.4));
+  filter(v, 'lowpass', 1100, 0.7);
+  return gain(applyEnv(v, env), 0.2);
+}

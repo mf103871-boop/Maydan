@@ -2,43 +2,43 @@
 // Masters: assets/audio/maydan-v3/music/*.wav; files: public/audio/music (AAC 192 kb/s, content-hashed names), fetched on first play, never precached.
 export const MUSIC_BANK = {
   "home": {
-    "url": "audio/music/home-3d8a23.m4a",
-    "seconds": 53.3333,
-    "frames": 2560000,
-    "bytes": 1336152,
-    "sha256": "3d8a2323a571d7ff65d2b014be52dd6d750cf2b5655b0777f85adadd8f8cd576",
-    "masterSha256": "58a3c120c7607f3226e4b69bccbd66f5c5cdaf5d30bfc513579187d78d90f876",
+    "url": "audio/music/home-ee5839.m4a",
+    "seconds": 45.7143,
+    "frames": 2194285,
+    "bytes": 1149498,
+    "sha256": "ee58395dd3992e877d009bbae1920d3d11c4b98ab9c08986e3a7387e128544e7",
+    "masterSha256": "a04f3c2ee19939386706181149fa230c7522bee5a87fb5e0f289feadee4dc943",
     "loop": true,
-    "bpm": 72
+    "bpm": 84
   },
   "calm": {
-    "url": "audio/music/calm-6185c0.m4a",
+    "url": "audio/music/calm-cdad51.m4a",
     "seconds": 58.1818,
     "frames": 2792728,
-    "bytes": 1443304,
-    "sha256": "6185c0efb1f993ca3f6c0cc0f41b7f85249faaf416dfae0cadfebe34bb878f03",
-    "masterSha256": "b7c98a8d9f18d9c3b75d94290c139216820d9bfa52a647a65a90eceed5cd4882",
+    "bytes": 1420805,
+    "sha256": "cdad511aeba2c8a9f591c1591a69fce18404053309cbad5f5cdd05e9f3c11389",
+    "masterSha256": "0b6cb624d3449eace2742d3b11538890d3ff743a9c5b3ad7ec453a62afe36efa",
     "loop": true,
     "bpm": 66
   },
   "tense": {
-    "url": "audio/music/tense-be60ce.m4a",
-    "seconds": 40,
-    "frames": 1920000,
-    "bytes": 1014784,
-    "sha256": "be60ce794581530c4599beb9902ce7031df544bcb59e3553e995f29f9f2a8f0c",
-    "masterSha256": "5eeb9189a11f76be433f3f1cf6575805d0439f242651957331fd03c20c830c6b",
+    "url": "audio/music/tense-87ace7.m4a",
+    "seconds": 38.4,
+    "frames": 1843200,
+    "bytes": 967875,
+    "sha256": "87ace7a2615a718695aca1780778b57b69e5b44d3e230de4a5eabe7501b66a60",
+    "masterSha256": "2d7b5f75db59d03d5c81256e52e8c6ca456b3c28a9b4260930b4d70166ca9c71",
     "loop": true,
-    "bpm": 96
+    "bpm": 100
   },
   "finale": {
-    "url": "audio/music/finale-579d07.m4a",
+    "url": "audio/music/finale-f3b09a.m4a",
     "seconds": 6.5,
     "frames": 312000,
-    "bytes": 165974,
-    "sha256": "579d07a3a25c53c36804906f47878fb6603ff4d27a0a9c7a75e613d497c7041b",
-    "masterSha256": "ba4009e80d19be9eeef1eb3d6c2ef55743df39bee96e60f3cb7ebd9f1efcca6f",
+    "bytes": 144151,
+    "sha256": "f3b09aaace534a2166d065ed001acefa9fc485f5c1f87ad8d6134fdbb5787995",
+    "masterSha256": "22f64d309a134ccc114bb5f1bc92c1ed32530b6be9116eb1eb079af58f7062dc",
     "loop": false,
-    "bpm": 84
+    "bpm": 96
   }
 };

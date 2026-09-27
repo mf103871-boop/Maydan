@@ -35,7 +35,13 @@ import { ModerationScreen } from '../moderation/ModerationScreen.jsx';
 
 export const VERSION = typeof __MAYDAN_VERSION__ !== 'undefined' ? __MAYDAN_VERSION__ : '1.0.0';
 const platformStorage = createStorage('platform');
-const DEFAULT_SETTINGS = { soundOn: true, soundVolume: 0.75, musicOn: true, musicVolume: 0.5, hapticsOn: true, reducedMotion: false, splashSeen: false };
+const DEFAULT_SETTINGS = { soundOn: true, soundVolume: 0.75, musicOn: true, musicVolume: 0.35, musicLevel: 2, hapticsOn: true, reducedMotion: false, splashSeen: false };
+// الموسيقى 3.1 أهدأ وأخفض: من حفظ مستوى الموسيقى قبلها يُنقل مرة واحدة إلى الافتراضي الجديد.
+function migrateSettings(saved) {
+  const next = { ...DEFAULT_SETTINGS, ...(saved || {}) };
+  if ((saved?.musicLevel || 1) < 2) { next.musicVolume = DEFAULT_SETTINGS.musicVolume; next.musicLevel = 2; }
+  return next;
+}
 
 function ScreenHost({ route }) {
   // Screens animate in, with the direction taken from how the route was
@@ -64,7 +70,7 @@ function ScreenHost({ route }) {
 
 function Providers({ children }) {
   const toast = useToast();
-  const [settings, setSettingsState] = useState(() => ({ ...DEFAULT_SETTINGS, ...(platformStorage.get('settings', {}) || {}) }));
+  const [settings, setSettingsState] = useState(() => migrateSettings(platformStorage.get('settings', {})));
   const [roster, setRosterState] = useState(() => platformStorage.get('roster', []) || []);
   const sound = useMemo(() => createSound({ enabled: settings.soundOn, volume: settings.soundVolume, music: settings.musicOn, musicVolume: settings.musicVolume }), []); // eslint-disable-line react-hooks/exhaustive-deps
   const haptics = useMemo(() => createHaptics({ enabled: settings.hapticsOn }), []); // eslint-disable-line react-hooks/exhaustive-deps
