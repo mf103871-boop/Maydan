@@ -4,7 +4,7 @@ import vm from 'node:vm';
 import { readFile } from 'node:fs/promises';
 import { preloadMedia, cacheForOffline, isLoaded, resetMediaState } from '../src/shared/media/preload.js';
 
-async function worker({ entries = {}, fetcher = async () => new Response('asset'), failDocument = false, documentStatus = 200, fabrakaImages = [] } = {}) {
+async function worker({ entries = {}, fetcher = async () => new Response('asset'), failDocument = false, documentStatus = 200, fabrakaImages = [], audioCues = [] } = {}) {
   const listeners = new Map();
   const cachesByName = new Map(Object.entries(entries));
   const deleted = [];
@@ -31,7 +31,7 @@ async function worker({ entries = {}, fetcher = async () => new Response('asset'
     async skipWaiting() { skipped = true; },
     clients: { async claim() {}, async matchAll() { return [{ postMessage() {}, navigate() { navigated = true; } }]; } },
   };
-  const source = (await readFile(new URL('../public/sw.js', import.meta.url), 'utf8')).replace('/*__FABRAKA_IMAGES__*/[]', JSON.stringify(fabrakaImages));
+  const source = (await readFile(new URL('../public/sw.js', import.meta.url), 'utf8')).replace('/*__FABRAKA_IMAGES__*/[]', JSON.stringify(fabrakaImages)).replace('/*__AUDIO_CUES__*/[]', JSON.stringify(audioCues));
   const fetch = async (request, options) => {
     if (request === './index.html') {
       if (failDocument) throw new Error('offline');
@@ -186,4 +186,14 @@ test('prune-media removes stale versions and retired files but keeps every curre
   await w.dispatch('message', { data: { type: 'prune-media', urls: [] } });
   await w.dispatch('message', { data: { type: 'prune-media', urls: ['https://cdn.example/only.webp'] } });
   assert.equal(cache.size(), 3);
+});
+
+test('the build-time cue list is precached with the shell so the first gesture can play offline', async () => {
+  const cues = ['./audio/click-abc123.m4a', './audio/win-def456.m4a'];
+  const w = await worker({ audioCues: cues });
+  await w.dispatch('install');
+  const shell = (await w.caches.keys()).find((name) => name.startsWith('maydan-platform-'));
+  const cache = await w.caches.open(shell);
+  for (const url of cues) assert.ok(await cache.match(url), `${url} precached`);
+  assert.ok(await cache.match('./index.html'));
 });

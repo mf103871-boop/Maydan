@@ -8,6 +8,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { checkMedia, copyMedia, fmtMB } from './media.mjs';
 import { fabrakaMediaManifest } from './fabraka-media.mjs';
+import { SAMPLE_BANK } from '../src/shared/fx/sample-bank.js';
 
 export const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 export const DIST = path.join(ROOT, 'dist');
@@ -83,6 +84,15 @@ export function buildId(version, html) {
   return `${version}-${createHash('sha256').update(html).digest('hex').slice(0, 8)}`;
 }
 
+// العامل الخدمي يتلقّى من البناء: معرّف الإصدار، صور فبركة، وأسماء ملفات المؤثرات (بأسمائها
+// المبصومة من sample-bank.js) كي يبقى manifest المؤثرات المصدر الوحيد لقائمة التخزين المسبق.
+export function renderServiceWorker(src, { id = 'dev', fabrakaImages = [], audioCues = [] } = {}) {
+  return src.replaceAll('__BUILD_ID__', id)
+    .replace('/*__FABRAKA_IMAGES__*/[]', JSON.stringify(fabrakaImages))
+    .replace('/*__AUDIO_CUES__*/[]', JSON.stringify(audioCues));
+}
+export const audioCueAssets = () => Object.values(SAMPLE_BANK).map((entry) => `./${entry.url}`);
+
 async function copyPublic({ id = 'dev', fabrakaImages = [] } = {}) {
   const pub = path.join(ROOT, 'public');
   try { await stat(pub); } catch { return; }
@@ -92,7 +102,7 @@ async function copyPublic({ id = 'dev', fabrakaImages = [] } = {}) {
   const sw = path.join(DIST, 'sw.js');
   try {
     const src = await readFile(sw, 'utf8');
-    await writeFile(sw, src.replaceAll('__BUILD_ID__', id).replace('/*__FABRAKA_IMAGES__*/[]', JSON.stringify(fabrakaImages)), 'utf8');
+    await writeFile(sw, renderServiceWorker(src, { id, fabrakaImages, audioCues: audioCueAssets() }), 'utf8');
   } catch { /* لا عامل خدمي في public */ }
 }
 

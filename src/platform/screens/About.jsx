@@ -7,6 +7,7 @@ import { back, getDirection } from '../router.js';
 import { GAMES } from '../registry.js';
 import { LEGAL_ROUTES, PUBLIC_SITE_ORIGIN } from '../../shared/account/config.js';
 import { isNativeShell } from '../../shared/account/native.js';
+import { AudioCredits } from './AudioCredits.jsx';
 
 // Imported media keeps its attribution; generated illustrations are disclosed
 // separately without inventing a photography license or an external source.
@@ -17,7 +18,7 @@ function Credits() {
   return (
     <Card className="stack" aria-label="المصادر والتراخيص">
       <span className="card-title">المصادر والتراخيص</span>
-      <p className="card-muted">المؤثرات الصوتية والموسيقى من تأليف ميدان وتصنيعه رقميًا داخل المشروع، بلا عيّنات من طرف ثالث.</p>
+      <AudioCredits />
       {items.length === 0 ? (
         <p className="card-muted">تظهر هنا بيانات إنشاء وسائط الأسئلة، ومصادر الملفات الخارجية وتراخيصها.</p>
       ) : (

@@ -5,15 +5,19 @@
 //   node scripts/audio/music.mjs            يبني الحلقات كلها
 //   node scripts/audio/music.mjs --only home
 //   node scripts/audio/music.mjs --check
-import { readFile, writeFile, mkdir, rm } from 'node:fs/promises';
+import { readFile, writeFile, mkdir, rm, readdir } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 import { Stereo, midi, writeWav, decodeWav24, impulseResponse, reverbFile, master, encodeAac, measure } from './engine.mjs';
 import { kalimba, marimba, bell, glass, oud, pad, ney, dum, tak, shaker, padStereo, m } from './voices.mjs';
+import { prepareSource, sourceProvenance, resolveSource } from './prepare.mjs';
+import { convertFile, pitchShiftFile, filter } from './engine.mjs';
+import { seamlessLoop, seamMetrics } from './analysis.mjs';
+import { checkSources } from './build.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
-const mastersDir = path.join(root, 'assets/audio/maydan-v2/music');
+const mastersDir = path.join(root, 'assets/audio/maydan-v3/music');
 const workDir = path.join(root, '.cache/audio-work-music');
 const outDir = path.join(root, 'public/audio/music');
 const manifestFile = path.join(root, 'src/shared/fx/music-bank.js');
@@ -142,7 +146,52 @@ export const TRACKS = {
 };
 const sha = (buf) => createHash('sha256').update(buf).digest('hex');
 
+// عتبات الوصلة لحلقة من مصدر خارجي: قفزة مستوى، انقطاع عيّنة، نقرة ترددات عالية.
+const SEAM_LIMITS = { discontinuity: 0.02, hfClickDb: 3 };
+// مقطع من مصدر مرخَّص: حلقة بطول بارات محدَّد مع تلاشٍ متبادل عند الوصلة (analysis.seamlessLoop)،
+// تُتقَن مضاعفةً (الحلقة مرتين) ثم تُقتطع الثانية كما تُصنع الحلقات الداخلية؛ أو نهاية قصيرة.
+async function renderSourcedTrack(id, track, { masterWav }) {
+  const spec = track.source;
+  let prepared, seconds, from = 0, loop = null;
+  const fullWav = path.join(workDir, `${id}.mastered.wav`), dryWav = path.join(workDir, `${id}.dry.wav`);
+  if (track.loop) {
+    const resolved = await resolveSource(spec.id);
+    const src = path.join(workDir, `${id}.src.wav`);
+    await convertFile(resolved.file, src);
+    let wav = src;
+    const modifications = [`converted from ${resolved.entry.probe.codec} ${resolved.entry.probe.sampleRate} Hz${resolved.entry.probe.kbps ? ` ${resolved.entry.probe.kbps} kb/s` : ''} to 48 kHz stereo PCM24 (soxr)`];
+    if (spec.pitchSemitones) { const shifted = path.join(workDir, `${id}.pitch.wav`); await pitchShiftFile(src, shifted, spec.pitchSemitones, { transients: 'mixed' }); wav = shifted; modifications.push(`pitch shifted ${spec.pitchSemitones} semitones (rubberband) toward D`); }
+    const st = decodeWav24(await readFile(wav));
+    const beats = spec.beats || 4, beat = 60 / track.bpm, L = spec.bars * beats * beat, xf = (spec.crossfadeBeats || 0) * beat;
+    const looped = seamlessLoop(st, spec.offset || 0, L, xf);
+    if (spec.highpass) { filter(looped.L, 'highpass', spec.highpass, 0.707); filter(looped.R, 'highpass', spec.highpass, 0.707); modifications.push(`high-pass ${spec.highpass} Hz`); }
+    modifications.push(`loop of ${spec.bars} bars (${L.toFixed(3)} s) from ${(spec.offset || 0).toFixed(3)} s${xf ? `, ${spec.crossfadeBeats} beat equal-power crossfade of the following tail into the head` : ', authored loop point'}`);
+    const dbl = new Stereo(2 * L); dbl.mix(looped, 0).mix(looped, L);
+    dbl.normalize(-6);
+    await writeWav(dryWav, dbl);
+    await master(dryWav, fullWav, { truePeakDb: -1.5, lufs: track.lufs, highpass: 32 });
+    seconds = L; from = L;
+    prepared = { ...resolved, modifications };
+    loop = { offset: spec.offset || 0, bars: spec.bars, beats, crossfadeBeats: spec.crossfadeBeats || 0 };
+  } else {
+    prepared = await prepareSource(spec, { role: 'win', workDir, name: id });
+    const st = prepared.st.normalize(-6);
+    seconds = st.seconds;
+    await writeWav(dryWav, st);
+    await master(dryWav, fullWav, { truePeakDb: -1.5, lufs: track.lufs, highpass: 32 });
+  }
+  await writeWav(masterWav, decodeWav24(await readFile(fullWav)).slice(from, from + seconds));
+  const measured = await measure(masterWav);
+  if (loop) {
+    loop.seam = seamMetrics(decodeWav24(await readFile(masterWav)));
+    if (loop.seam.discontinuity > SEAM_LIMITS.discontinuity || loop.seam.hfClickDb > SEAM_LIMITS.hfClickDb) throw new Error(`${id}: loop seam is audible (${JSON.stringify(loop.seam)}); adjust offset/bars/crossfadeBeats`);
+    prepared.modifications.push(`mastered as a double loop to ${track.lufs} LUFS / −1.5 dBTP, second cycle kept (seam: step ${loop.seam.discontinuity}, HF ${loop.seam.hfClickDb} dB)`);
+  } else prepared.modifications.push(`mastered to ${track.lufs} LUFS / −1.5 dBTP`);
+  return { masterWav, measured, seconds, prepared, loop };
+}
+
 async function renderTrack(id, track, ir) {
+  if (track.source) return renderSourcedTrack(id, track, { masterWav: path.join(mastersDir, `${id}.wav`) });
   // الحلقة تُعزف دورتين، ويُطبَّق الصدى على الدورتين معًا، ثم تُقتطع الدورة الثانية: بدايتها
   // تحمل ذيول نهاية الأولى (نغمات وصدى) تمامًا كما ستسمعها الأذن عند العودة من نهاية الحلقة.
   let dry, seconds, from = 0;
@@ -161,43 +210,58 @@ async function renderTrack(id, track, ir) {
   return { masterWav, measured, seconds };
 }
 
+const provenanceFile = path.join(mastersDir, 'provenance.json');
+const hashedName = (base, encoded) => `${base}-${sha(encoded).slice(0, 6)}.m4a`;
+const rel = (file) => path.relative(root, file).split(path.sep).join('/');
+async function screeningFor(id) {
+  try { const s = JSON.parse(await readFile(path.join(mastersDir, '../screening.json'), 'utf8')); return s.selection?.[id] || null; } catch { return null; }
+}
+
 async function main() {
   await mkdir(workDir, { recursive: true }); await mkdir(mastersDir, { recursive: true }); await mkdir(outDir, { recursive: true });
-  const provenanceFile = path.join(mastersDir, 'provenance.json');
-  const existing = check ? JSON.parse(await readFile(provenanceFile, 'utf8')) : null;
+  const existing = (check || only) ? JSON.parse(await readFile(provenanceFile, 'utf8')) : null;
   const ir = path.join(workDir, 'ir-hall.wav');
   if (!check) await writeWav(ir, impulseResponse({ seconds: 2.6, damp: 3200, predelay: 0.024, seed: 17 }));
   const bank = {}, provenance = { generator: 'scripts/audio/music.mjs (deterministic composition and synthesis, ffmpeg-static mastering)', key: 'D', tracks: {} };
+  const referenced = new Set();
   for (const [id, track] of Object.entries(TRACKS)) {
-    if (only && id !== only) continue;
-    const m4a = path.join(outDir, `${id}.m4a`);
     let info;
-    if (check) { info = existing?.tracks?.[id]; if (!info) throw new Error(`provenance lacks ${id}`); }
+    if (check || (only && id !== only)) { info = existing?.tracks?.[id]; if (!info) throw new Error(`provenance lacks ${id}`); }
     else {
       const started = Date.now();
-      const { masterWav, measured, seconds } = await renderTrack(id, track, ir);
-      const encoded = await encodeAac(masterWav, m4a, { bitrate: '192k' });
+      const { masterWav, measured, seconds, prepared, loop } = await renderTrack(id, track, ir);
+      const encoded = await encodeAac(masterWav, path.join(workDir, `${id}.m4a`), { bitrate: '192k' });
+      const file = `audio/music/${hashedName(id, encoded)}`;
+      await writeFile(path.join(root, 'public', file), encoded);
       const pcm = (await readFile(masterWav)).subarray(44);
-      info = { file: `audio/music/${id}.m4a`, seconds: Number(seconds.toFixed(4)), frames: pcm.length / 6, bpm: track.bpm, loop: track.loop, targetLufs: track.lufs, measured,
-        masterSha256: sha(pcm), encodedSha256: sha(encoded), encodedBytes: encoded.length };
+      const screening = await screeningFor(id);
+      info = { file, master: rel(masterWav), seconds: Number(seconds.toFixed(4)), frames: pcm.length / 6, bpm: track.bpm, loop: track.loop, targetLufs: track.lufs, measured,
+        masterSha256: sha(pcm), encodedSha256: sha(encoded), encodedBytes: encoded.length, origin: prepared ? 'sourced' : 'in-house',
+        ...(prepared ? { source: sourceProvenance(prepared, { screening: screening ? { total: screening.bestScore, baseline: screening.baseline, decision: screening.decision } : null }), ...(loop ? { loopRegion: loop } : {}) }
+          : { decision: { kept: 'in-house', reason: screening ? `best challenger ${screening.best || 'none'} scored ${screening.bestScore ?? '-'} vs ${screening.baseline} (needs ≥ 70 and ≥ baseline + 5)` : 'no screening on record' } }) };
       console.log(`${id.padEnd(7)} ${seconds.toFixed(1).padStart(6)}s  I ${String(measured.lufs).padStart(6)} LUFS  LRA ${String(measured.lra).padStart(5)}  TP ${String(measured.truePeak).padStart(5)}  ${(encoded.length / 1024).toFixed(0)} KB  (${((Date.now() - started) / 1000).toFixed(1)} s)`);
     }
-    const encoded = await readFile(m4a);
+    const encoded = await readFile(path.join(root, 'public', info.file));
+    if (path.basename(info.file) !== hashedName(id, encoded)) throw new Error(`${info.file} is not named after its content hash; run node scripts/audio/music.mjs`);
+    referenced.add(path.basename(info.file));
     bank[id] = { url: info.file, seconds: info.seconds, frames: info.frames, bytes: encoded.length, sha256: sha(encoded), masterSha256: info.masterSha256, loop: info.loop, bpm: info.bpm };
     provenance.tracks[id] = info;
   }
-  if (only) { console.log('single track rebuilt; manifest not rewritten'); return; }
-  const text = '// Generated by scripts/audio/music.mjs — Maydan\'s own background music (composed and synthesized in-repo).\n'
-    + '// Masters: assets/audio/maydan-v2/music/*.wav; files: public/audio/music (AAC 192 kb/s), fetched on first play, never precached.\n'
+  const orphans = (await readdir(outDir)).filter((name) => name.endsWith('.m4a') && !referenced.has(name));
+  const text = '// Generated by scripts/audio/music.mjs — Maydan\'s background music (in-house compositions and licensed tracks; see assets/audio/maydan-v3/music/provenance.json).\n'
+    + '// Masters: assets/audio/maydan-v3/music/*.wav; files: public/audio/music (AAC 192 kb/s, content-hashed names), fetched on first play, never precached.\n'
     + `export const MUSIC_BANK = ${JSON.stringify(bank, null, 2)};\n`;
   if (check) {
+    if (orphans.length) throw new Error(`public/audio/music holds files no track references: ${orphans.join(', ')}`);
     if (await readFile(manifestFile, 'utf8') !== text) throw new Error('music-bank.js differs from public/audio/music; run node scripts/audio/music.mjs');
-    console.log(`Music bank verified: ${Object.keys(bank).length} tracks`); return;
+    await checkSources(provenance.tracks);
+    console.log(`Music bank verified: ${Object.keys(bank).length} tracks (${Object.values(provenance.tracks).filter((t) => t.source).length} from licensed sources)`); return;
   }
+  for (const name of orphans) await rm(path.join(outDir, name));
   await writeFile(manifestFile, text, 'utf8');
   await writeFile(provenanceFile, `${JSON.stringify(provenance, null, 2)}\n`, 'utf8');
   await rm(workDir, { recursive: true, force: true });
   const total = Object.values(bank).reduce((s, e) => s + e.bytes, 0);
-  console.log(`Music bank: ${Object.keys(bank).length} tracks, ${(total / 1024 / 1024).toFixed(2)} MB of AAC in public/audio/music`);
+  console.log(`Music bank: ${Object.keys(bank).length} tracks, ${(total / 1024 / 1024).toFixed(2)} MB of AAC in public/audio/music${orphans.length ? `; removed ${orphans.length} stale file(s)` : ''}`);
 }
 main().catch((error) => { console.error(error.stack || error.message); process.exit(1); });

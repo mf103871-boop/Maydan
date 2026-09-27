@@ -1,0 +1,627 @@
+{
+  "generator": "scripts/audio/build.mjs (deterministic synthesis, ffmpeg-static mastering)",
+  "key": "D",
+  "cues": {
+    "click": {
+      "file": "audio/click-6fa408.m4a",
+      "master": "assets/audio/maydan-v3/click.wav",
+      "seconds": 0.25,
+      "frames": 12000,
+      "room": "room",
+      "targetTruePeakDb": -10,
+      "measured": {
+        "lufs": -70,
+        "lra": 0,
+        "truePeak": -10,
+        "rmsPeak": -17.451868,
+        "rms": -19.769866,
+        "samplePeak": -10.070176
+      },
+      "masterSha256": "775fa4e7ad25c687b1a9c89c6975a79b670e9f1e575a446393435b94f4b7a829",
+      "encodedSha256": "6fa40842c402fa9bd911ad76283b0908b54c53fa207cc5708bf0c4f441a85ac1",
+      "encodedBytes": 6530,
+      "origin": "in-house",
+      "decision": {
+        "kept": "in-house",
+        "reason": "best challenger dustyroom:DM-CGS-07 scored 92 vs 94 (needs ≥ 70 and ≥ baseline + 5)"
+      }
+    },
+    "pop": {
+      "file": "audio/pop-abb9bf.m4a",
+      "master": "assets/audio/maydan-v3/pop.wav",
+      "seconds": 0.2176,
+      "frames": 10444,
+      "room": null,
+      "targetTruePeakDb": -8,
+      "measured": {
+        "lufs": -70,
+        "lra": 0,
+        "truePeak": -7.8,
+        "rmsPeak": -20.376783,
+        "rms": -23.654198,
+        "samplePeak": -7.841967
+      },
+      "masterSha256": "69c6e539daffa44c5c460784609853bbac17ba9f47bdf6d5fa3fd8b049600af6",
+      "encodedSha256": "abb9bf2066311ccce1096357b981e947f48997163e2eda5574a5ad099e3ff83f",
+      "encodedBytes": 5439,
+      "origin": "sourced",
+      "source": {
+        "id": "dustyroom:DM-CGS-22",
+        "provider": "dustyroom",
+        "providerName": "Dustyroom — Free Casual Game Sounds",
+        "title": "DM-CGS-22",
+        "author": "Dustyroom",
+        "sourcePage": "https://dustyroom.com/free-casual-game-sounds/",
+        "archiveUrl": "https://dustyroom.com/casualgamesounds/DM-CGS.zip",
+        "archiveSha256": "7ffc649a641a8b8ee0136d431b5dd69bcf9eeabc250a18285ad984ad09bd4a4f",
+        "path": "DM-CGS/WAV/DM-CGS-22.wav",
+        "originalSha256": "1bcf593662d6377cb474d2017cc2d4d759e8f12fe0e30064b65d18e0a00e55c1",
+        "originalBytes": 62562,
+        "originalFormat": {
+          "codec": "pcm_s24le",
+          "sampleRate": 44100,
+          "bitDepth": 24,
+          "channels": 2,
+          "seconds": 0.22,
+          "kbps": 2116,
+          "lossy": false
+        },
+        "retrieved": "2026-09-27",
+        "license": "CC0 1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "licenseFile": "licenses/dustyroom-cc0.txt",
+        "attribution": false,
+        "modifications": [
+          "converted from pcm_s24le 44100 Hz stereo 24-bit to 48 kHz stereo PCM24 (soxr)",
+          "1 ms entry fade, 15 ms release fade",
+          "high-pass 120 Hz"
+        ],
+        "screening": {
+          "total": 91,
+          "baseline": 85,
+          "decision": "sourced"
+        }
+      }
+    },
+    "tick": {
+      "file": "audio/tick-844a01.m4a",
+      "master": "assets/audio/maydan-v3/tick.wav",
+      "seconds": 0.09,
+      "frames": 4320,
+      "room": null,
+      "targetTruePeakDb": -15,
+      "measured": {
+        "lufs": -70,
+        "lra": 0,
+        "truePeak": -15,
+        "rmsPeak": -31.074265,
+        "rms": -30.103311,
+        "samplePeak": -15.010405
+      },
+      "masterSha256": "4c200fa0a8b131b1a711a8736ea20136716f9d44ffd3b00cf6f206ec96950677",
+      "encodedSha256": "844a01b1a023768b32fd7841fb510b9e6867d6d14d062a8fe51d8e00dd24779e",
+      "encodedBytes": 2450,
+      "origin": "in-house",
+      "decision": {
+        "kept": "in-house",
+        "reason": "best challenger dustyroom:DM-CGS-34 scored 97 vs 97 (needs ≥ 70 and ≥ baseline + 5)"
+      }
+    },
+    "tickFast": {
+      "file": "audio/tick-fast-db1a19.m4a",
+      "master": "assets/audio/maydan-v3/tick-fast.wav",
+      "seconds": 0.09,
+      "frames": 4320,
+      "room": null,
+      "targetTruePeakDb": -12,
+      "measured": {
+        "lufs": -70,
+        "lra": 0,
+        "truePeak": -12,
+        "rmsPeak": -27.031279,
+        "rms": -26.116941,
+        "samplePeak": -11.973675
+      },
+      "masterSha256": "04c4a5756a42b47c4cf6be50976a0981db0ea9c2613f4a91d4df514b795e16e4",
+      "encodedSha256": "db1a19359ab22a7d1823e28c2fcc9f3496ee864deaaf7002657764a0f5be98d9",
+      "encodedBytes": 2743,
+      "origin": "in-house",
+      "decision": {
+        "kept": "in-house",
+        "reason": "best challenger dustyroom:DM-CGS-34 scored 98 vs 97 (needs ≥ 70 and ≥ baseline + 5)"
+      }
+    },
+    "countdown": {
+      "file": "audio/countdown-b231c6.m4a",
+      "master": "assets/audio/maydan-v3/countdown.wav",
+      "seconds": 0.6,
+      "frames": 28800,
+      "room": "room",
+      "targetTruePeakDb": -7,
+      "measured": {
+        "lufs": -14.3,
+        "lra": 0,
+        "truePeak": -6.7,
+        "rmsPeak": -14.032809,
+        "rms": -16.786326,
+        "samplePeak": -6.729008
+      },
+      "masterSha256": "cb519278724c38473f0b8502747f08d3826fa40c4874deb7c9883a139e434ec6",
+      "encodedSha256": "b231c6b09d64cf81b9a4af057edb39ff17aae8ec43f28f0fde165182c056df73",
+      "encodedBytes": 13722,
+      "origin": "in-house",
+      "decision": {
+        "kept": "in-house",
+        "reason": "best challenger dustyroom:DM-CGS-30 scored 95 vs 94 (needs ≥ 70 and ≥ baseline + 5)"
+      }
+    },
+    "start": {
+      "file": "audio/start-765ccc.m4a",
+      "master": "assets/audio/maydan-v3/start.wav",
+      "seconds": 1.5,
+      "frames": 72000,
+      "room": "hall",
+      "targetTruePeakDb": -5,
+      "measured": {
+        "lufs": -14.8,
+        "lra": 0,
+        "truePeak": -5.2,
+        "rmsPeak": -13.391147,
+        "rms": -18.577571,
+        "samplePeak": -5.188768
+      },
+      "masterSha256": "d4883adcc1b2affab491d66bcb6ef46bdffe260a83a0523b1cf9ee0488d5e8f0",
+      "encodedSha256": "765cccb92dfa832a79bb08350730b0499dd5572d06dd17dc76fd3653941283ee",
+      "encodedBytes": 31356,
+      "origin": "in-house",
+      "decision": {
+        "kept": "in-house",
+        "reason": "best challenger dustyroom:DM-CGS-30 scored 93 vs 93 (needs ≥ 70 and ≥ baseline + 5)"
+      }
+    },
+    "correct": {
+      "file": "audio/correct-4958a5.m4a",
+      "master": "assets/audio/maydan-v3/correct.wav",
+      "seconds": 0.3018,
+      "frames": 14486,
+      "room": null,
+      "targetTruePeakDb": -6,
+      "measured": {
+        "lufs": -70,
+        "lra": 0,
+        "truePeak": -5.9,
+        "rmsPeak": -18.489373,
+        "rms": -23.771048,
+        "samplePeak": -5.929062
+      },
+      "masterSha256": "b4a6142ce1ee4aa8635a0b6596b1b82103d43983b53937a8069aff350f622d47",
+      "encodedSha256": "4958a5292906d25481e551b0ad0cae3568d4657c845e254cd4b3a6688d19f220",
+      "encodedBytes": 7425,
+      "origin": "sourced",
+      "source": {
+        "id": "dustyroom:DM-CGS-46",
+        "provider": "dustyroom",
+        "providerName": "Dustyroom — Free Casual Game Sounds",
+        "title": "DM-CGS-46",
+        "author": "Dustyroom",
+        "sourcePage": "https://dustyroom.com/free-casual-game-sounds/",
+        "archiveUrl": "https://dustyroom.com/casualgamesounds/DM-CGS.zip",
+        "archiveSha256": "7ffc649a641a8b8ee0136d431b5dd69bcf9eeabc250a18285ad984ad09bd4a4f",
+        "path": "DM-CGS/WAV/DM-CGS-46.wav",
+        "originalSha256": "b7b1754f0bd236b6e63769cc960799fabd1d86113f8231f520aa33b10914f714",
+        "originalBytes": 100428,
+        "originalFormat": {
+          "codec": "pcm_s24le",
+          "sampleRate": 44100,
+          "bitDepth": 24,
+          "channels": 2,
+          "seconds": 0.36,
+          "kbps": 2116,
+          "lossy": false
+        },
+        "retrieved": "2026-09-27",
+        "license": "CC0 1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "licenseFile": "licenses/dustyroom-cc0.txt",
+        "attribution": false,
+        "modifications": [
+          "converted from pcm_s24le 44100 Hz stereo 24-bit to 48 kHz stereo PCM24 (soxr)",
+          "pitch shifted -1 semitones (rubberband) to sit on D",
+          "leading silence trimmed (0.059 s below -45 dBFS)",
+          "1 ms entry fade, 60 ms release fade",
+          "high-pass 80 Hz"
+        ],
+        "screening": {
+          "total": 94,
+          "baseline": 85,
+          "decision": "sourced"
+        }
+      }
+    },
+    "wrong": {
+      "file": "audio/wrong-1a1155.m4a",
+      "master": "assets/audio/maydan-v3/wrong.wav",
+      "seconds": 0.2154,
+      "frames": 10338,
+      "room": null,
+      "targetTruePeakDb": -7,
+      "measured": {
+        "lufs": -70,
+        "lra": 0,
+        "truePeak": -7,
+        "rmsPeak": -14.736252,
+        "rms": -18.257081,
+        "samplePeak": -7.002647
+      },
+      "masterSha256": "69ceacffcacefa3aeb8a9a81a0040210c0605438b0897375a291e6688dcefa79",
+      "encodedSha256": "1a11550c094069043ffa6ae7051ebfd427dd557576e8fcef62a9df955f5cedc7",
+      "encodedBytes": 4014,
+      "origin": "sourced",
+      "source": {
+        "id": "dustyroom:DM-CGS-03",
+        "provider": "dustyroom",
+        "providerName": "Dustyroom — Free Casual Game Sounds",
+        "title": "DM-CGS-03",
+        "author": "Dustyroom",
+        "sourcePage": "https://dustyroom.com/free-casual-game-sounds/",
+        "archiveUrl": "https://dustyroom.com/casualgamesounds/DM-CGS.zip",
+        "archiveSha256": "7ffc649a641a8b8ee0136d431b5dd69bcf9eeabc250a18285ad984ad09bd4a4f",
+        "path": "DM-CGS/WAV/DM-CGS-03.wav",
+        "originalSha256": "cb6febbba59dce8ef1bee80b48891c74280f26f34502ae4b70bb48b466394e8e",
+        "originalBytes": 61980,
+        "originalFormat": {
+          "codec": "pcm_s24le",
+          "sampleRate": 44100,
+          "bitDepth": 24,
+          "channels": 2,
+          "seconds": 0.22,
+          "kbps": 2116,
+          "lossy": false
+        },
+        "retrieved": "2026-09-27",
+        "license": "CC0 1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "licenseFile": "licenses/dustyroom-cc0.txt",
+        "attribution": false,
+        "modifications": [
+          "converted from pcm_s24le 44100 Hz stereo 24-bit to 48 kHz stereo PCM24 (soxr)",
+          "pitch shifted -1 semitones (rubberband) to sit on D",
+          "1 ms entry fade, 60 ms release fade",
+          "high-pass 80 Hz"
+        ],
+        "screening": {
+          "total": 96,
+          "baseline": 83,
+          "decision": "sourced"
+        }
+      }
+    },
+    "buzzer": {
+      "file": "audio/buzzer-7bed47.m4a",
+      "master": "assets/audio/maydan-v3/buzzer.wav",
+      "seconds": 0.4002,
+      "frames": 19212,
+      "room": null,
+      "targetTruePeakDb": -6,
+      "measured": {
+        "lufs": -13,
+        "lra": 0,
+        "truePeak": -6,
+        "rmsPeak": -13.037101,
+        "rms": -16.430384,
+        "samplePeak": -5.97386
+      },
+      "masterSha256": "b6dc0e8d7a75944e704e1a493f1fa14f7b3973f400248146fe8b9883c804008a",
+      "encodedSha256": "7bed47fec0de2a9722ae44344755fc5a108a5fc25a031c069a78e1d2de02f002",
+      "encodedBytes": 9521,
+      "origin": "sourced",
+      "source": {
+        "id": "dustyroom:DM-CGS-27",
+        "provider": "dustyroom",
+        "providerName": "Dustyroom — Free Casual Game Sounds",
+        "title": "DM-CGS-27",
+        "author": "Dustyroom",
+        "sourcePage": "https://dustyroom.com/free-casual-game-sounds/",
+        "archiveUrl": "https://dustyroom.com/casualgamesounds/DM-CGS.zip",
+        "archiveSha256": "7ffc649a641a8b8ee0136d431b5dd69bcf9eeabc250a18285ad984ad09bd4a4f",
+        "path": "DM-CGS/WAV/DM-CGS-27.wav",
+        "originalSha256": "44daa6ee6747cec7707450e300731f80fbe9015386db37391efc182f2e778a82",
+        "originalBytes": 113028,
+        "originalFormat": {
+          "codec": "pcm_s24le",
+          "sampleRate": 44100,
+          "bitDepth": 24,
+          "channels": 2,
+          "seconds": 0.4,
+          "kbps": 2116,
+          "lossy": false
+        },
+        "retrieved": "2026-09-27",
+        "license": "CC0 1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "licenseFile": "licenses/dustyroom-cc0.txt",
+        "attribution": false,
+        "modifications": [
+          "converted from pcm_s24le 44100 Hz stereo 24-bit to 48 kHz stereo PCM24 (soxr)",
+          "pitch shifted +2 semitones (rubberband) to sit on D",
+          "1 ms entry fade, 60 ms release fade",
+          "high-pass 80 Hz"
+        ],
+        "screening": {
+          "total": 94,
+          "baseline": 73,
+          "decision": "sourced"
+        }
+      }
+    },
+    "timeout": {
+      "file": "audio/timeout-5881fd.m4a",
+      "master": "assets/audio/maydan-v3/timeout.wav",
+      "seconds": 1.5453,
+      "frames": 74174,
+      "room": null,
+      "targetTruePeakDb": -6,
+      "measured": {
+        "lufs": -18.4,
+        "lra": 0,
+        "truePeak": -5.9,
+        "rmsPeak": -14.872981,
+        "rms": -22.839245,
+        "samplePeak": -5.867887
+      },
+      "masterSha256": "8ddbec0f412a5c3e47ee5cb63085f506e98575132c609ca75adca5fc58c06840",
+      "encodedSha256": "5881fd9254a4342ceee9a6fb0f77c1178be076b3c8fd30e1c0fca7c9a567bcf7",
+      "encodedBytes": 32484,
+      "origin": "sourced",
+      "source": {
+        "id": "dustyroom:DM-CGS-23",
+        "provider": "dustyroom",
+        "providerName": "Dustyroom — Free Casual Game Sounds",
+        "title": "DM-CGS-23",
+        "author": "Dustyroom",
+        "sourcePage": "https://dustyroom.com/free-casual-game-sounds/",
+        "archiveUrl": "https://dustyroom.com/casualgamesounds/DM-CGS.zip",
+        "archiveSha256": "7ffc649a641a8b8ee0136d431b5dd69bcf9eeabc250a18285ad984ad09bd4a4f",
+        "path": "DM-CGS/WAV/DM-CGS-23.wav",
+        "originalSha256": "d526089b4175bc1da7a39b943f31b0994fa59a863c9937b78ec433e07915a7b5",
+        "originalBytes": 415494,
+        "originalFormat": {
+          "codec": "pcm_s24le",
+          "sampleRate": 44100,
+          "bitDepth": 24,
+          "channels": 2,
+          "seconds": 1.55,
+          "kbps": 2116,
+          "lossy": false
+        },
+        "retrieved": "2026-09-27",
+        "license": "CC0 1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "licenseFile": "licenses/dustyroom-cc0.txt",
+        "attribution": false,
+        "modifications": [
+          "converted from pcm_s24le 44100 Hz stereo 24-bit to 48 kHz stereo PCM24 (soxr)",
+          "pitch shifted -2 semitones (rubberband) to sit on D",
+          "leading silence trimmed (0.006 s below -45 dBFS)",
+          "1 ms entry fade, 60 ms release fade",
+          "high-pass 80 Hz"
+        ],
+        "screening": {
+          "total": 94,
+          "baseline": 89,
+          "decision": "sourced"
+        }
+      }
+    },
+    "whoosh": {
+      "file": "audio/whoosh-8ba94f.m4a",
+      "master": "assets/audio/maydan-v3/whoosh.wav",
+      "seconds": 0.8439,
+      "frames": 40509,
+      "room": null,
+      "targetTruePeakDb": -12,
+      "measured": {
+        "lufs": -22.6,
+        "lra": 0,
+        "truePeak": -11.9,
+        "rmsPeak": -24.872523,
+        "rms": -28.131309,
+        "samplePeak": -11.986099
+      },
+      "masterSha256": "414f96e5009fb0283c0357d79e2b7ab9781d97ace4cb7ef971a4a11c5380a44b",
+      "encodedSha256": "8ba94fa52d50b9a79444c85394359b824d97dc38537e44d28fab20b83f80b9a7",
+      "encodedBytes": 19281,
+      "origin": "sourced",
+      "source": {
+        "id": "dustyroom:DM-CGS-08",
+        "provider": "dustyroom",
+        "providerName": "Dustyroom — Free Casual Game Sounds",
+        "title": "DM-CGS-08",
+        "author": "Dustyroom",
+        "sourcePage": "https://dustyroom.com/free-casual-game-sounds/",
+        "archiveUrl": "https://dustyroom.com/casualgamesounds/DM-CGS.zip",
+        "archiveSha256": "7ffc649a641a8b8ee0136d431b5dd69bcf9eeabc250a18285ad984ad09bd4a4f",
+        "path": "DM-CGS/WAV/DM-CGS-08.wav",
+        "originalSha256": "1a15843a59b3219d9281084e792c046d4c14de718fdcfa24ef2125c03130c7b2",
+        "originalBytes": 228366,
+        "originalFormat": {
+          "codec": "pcm_s24le",
+          "sampleRate": 44100,
+          "bitDepth": 24,
+          "channels": 2,
+          "seconds": 0.84,
+          "kbps": 2116,
+          "lossy": false
+        },
+        "retrieved": "2026-09-27",
+        "license": "CC0 1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "licenseFile": "licenses/dustyroom-cc0.txt",
+        "attribution": false,
+        "modifications": [
+          "converted from pcm_s24le 44100 Hz stereo 24-bit to 48 kHz stereo PCM24 (soxr)",
+          "1 ms entry fade, 80 ms release fade",
+          "high-pass 100 Hz"
+        ],
+        "screening": {
+          "total": 98,
+          "baseline": 91,
+          "decision": "sourced"
+        }
+      }
+    },
+    "reveal": {
+      "file": "audio/reveal-5701b5.m4a",
+      "master": "assets/audio/maydan-v3/reveal.wav",
+      "seconds": 1.9,
+      "frames": 91200,
+      "room": "hall",
+      "targetTruePeakDb": -6,
+      "measured": {
+        "lufs": -17.3,
+        "lra": 0,
+        "truePeak": -5.9,
+        "rmsPeak": -15.145387,
+        "rms": -22.773874,
+        "samplePeak": -5.946358
+      },
+      "masterSha256": "c2eb18ca142148d395965a19ca04074d81549c74c974119e25708e3e5bbfebc4",
+      "encodedSha256": "5701b5058f93e9cc918e9c3f593267bb2664cfaed3834d668a78cd66955a6b3c",
+      "encodedBytes": 38903,
+      "origin": "in-house",
+      "decision": {
+        "kept": "in-house",
+        "reason": "best challenger dustyroom:DM-CGS-50 scored 91 vs 93 (needs ≥ 70 and ≥ baseline + 5)"
+      }
+    },
+    "win": {
+      "file": "audio/win-77749b.m4a",
+      "master": "assets/audio/maydan-v3/win.wav",
+      "seconds": 3.2,
+      "frames": 153600,
+      "room": "hall",
+      "targetTruePeakDb": -3,
+      "measured": {
+        "lufs": -13.4,
+        "lra": 20.2,
+        "truePeak": -3.2,
+        "rmsPeak": -12.252357,
+        "rms": -17.973162,
+        "samplePeak": -3.243486
+      },
+      "masterSha256": "aeac83dd4a6600529327f9ee8b4d170c36e1660bb7b89ed7821df19fd1302a6a",
+      "encodedSha256": "77749bc29a38dd93520a82e0541bf24c3d7dd7c2d19f5c07201b0f7118d28c74",
+      "encodedBytes": 66223,
+      "origin": "in-house",
+      "decision": {
+        "kept": "in-house",
+        "reason": "best challenger mixkit:269 scored 94 vs 93 (needs ≥ 70 and ≥ baseline + 5)"
+      }
+    },
+    "explosion": {
+      "file": "audio/explosion-5c7ad4.m4a",
+      "master": "assets/audio/maydan-v3/explosion.wav",
+      "seconds": 1.332,
+      "frames": 63936,
+      "room": null,
+      "targetTruePeakDb": -2.5,
+      "measured": {
+        "lufs": -20,
+        "lra": 0,
+        "truePeak": -2.1,
+        "rmsPeak": -13.705726,
+        "rms": -23.55117,
+        "samplePeak": -2.200527
+      },
+      "masterSha256": "0f848c8e588009ea38a6d4222fd04f54455d55d1242c02ef79425b3be1bdd43a",
+      "encodedSha256": "5c7ad4a53cb4473d12f8718a2ccf1c81d639dfa77ced70b70995758c4798750c",
+      "encodedBytes": 27044,
+      "origin": "sourced",
+      "source": {
+        "id": "mixkit:1519",
+        "provider": "mixkit-sfx",
+        "providerName": "Mixkit Sound Effects (Envato)",
+        "title": "Whip small explosion",
+        "author": "Mixkit",
+        "sourcePage": "https://mixkit.co/free-sound-effects/explosion/",
+        "url": "https://assets.mixkit.co/active_storage/sfx/1519/1519.wav",
+        "originalSha256": "bde95960637c90aee185a0878ac4e8ed915281ad9cb37222a7a766d2028c1e15",
+        "originalBytes": 451832,
+        "originalFormat": {
+          "codec": "pcm_s24le",
+          "sampleRate": 44100,
+          "bitDepth": 24,
+          "channels": 2,
+          "seconds": 1.71,
+          "kbps": 2116,
+          "lossy": false
+        },
+        "retrieved": "2026-09-27",
+        "license": "Mixkit Sound Effects Free License",
+        "licenseUrl": "https://mixkit.co/license/#sfx",
+        "licenseFile": "licenses/mixkit-sfx-free-license.txt",
+        "attribution": false,
+        "modifications": [
+          "converted from pcm_s24le 44100 Hz stereo 24-bit to 48 kHz stereo PCM24 (soxr)",
+          "leading silence trimmed (0.084 s below -45 dBFS)",
+          "cut to 0.291–1.623 s",
+          "1 ms entry fade, 200 ms release fade",
+          "high-pass 35 Hz"
+        ],
+        "screening": {
+          "total": 84,
+          "baseline": 71,
+          "decision": "sourced"
+        }
+      }
+    },
+    "drumroll": {
+      "file": "audio/drumroll-b68a56.m4a",
+      "master": "assets/audio/maydan-v3/drumroll.wav",
+      "seconds": 1.7,
+      "frames": 81600,
+      "room": "room",
+      "targetTruePeakDb": -6,
+      "measured": {
+        "lufs": -20.3,
+        "lra": 0,
+        "truePeak": -6.7,
+        "rmsPeak": -15.604364,
+        "rms": -23.649026,
+        "samplePeak": -6.687346
+      },
+      "masterSha256": "479f0f36eab232ca72047007ec5bd3148f96d6b13fe9844c9ac6805379fe75bb",
+      "encodedSha256": "b68a563b92fa85549b4156214dd6e50e4cff0be8920086609e0dd37508d658a5",
+      "encodedBytes": 36222,
+      "origin": "in-house",
+      "decision": {
+        "kept": "in-house",
+        "reason": "best challenger mixkit:227 scored 68 vs 83 (needs ≥ 70 and ≥ baseline + 5)"
+      }
+    },
+    "pass": {
+      "file": "audio/pass-7a14c1.m4a",
+      "master": "assets/audio/maydan-v3/pass.wav",
+      "seconds": 0.45,
+      "frames": 21600,
+      "room": "room",
+      "targetTruePeakDb": -8,
+      "measured": {
+        "lufs": -15.7,
+        "lra": 0,
+        "truePeak": -8,
+        "rmsPeak": -16.131509,
+        "rms": -18.723724,
+        "samplePeak": -8.012597
+      },
+      "masterSha256": "1480ddedcc98053fa5816b7bb563026b9d0fac020767612b1ca988253237706f",
+      "encodedSha256": "7a14c1057131757a6be204123e3b06f3d74bb8eb6ac66e51f600ff9dd7506327",
+      "encodedBytes": 10323,
+      "origin": "in-house",
+      "decision": {
+        "kept": "in-house",
+        "reason": "best challenger dustyroom:DM-CGS-30 scored 94 vs 91 (needs ≥ 70 and ≥ baseline + 5)"
+      }
+    }
+  }
+}
