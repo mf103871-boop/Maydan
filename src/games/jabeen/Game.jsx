@@ -1,7 +1,7 @@
 import { Avatar, GameArtwork } from '../../shared/brand/art.jsx';
 import React, { useEffect, useMemo, useReducer, useRef, useState } from 'react';
 import { Screen, Button, Podium, Segment, Card } from '../../shared/ui/components.jsx';
-import { useTimer } from '../../shared/ui/useTimer.js';
+import { ResumeCountdown, useTimer, useTimerCues } from '../../shared/ui/index.js';
 import { stampScreen, vignette, wait } from '../../shared/fx/index.js';
 import { trimSeen } from '../../shared/lib/noRepeat.js';
 import { mulberry32, randomSeed } from '../../shared/lib/rng.js';
@@ -18,7 +18,7 @@ const SEEN_KEY = 'seen';
 export function SetupOptions({ storage, api }) {
   const [opts, setOpts] = useState(() => normalizeOptions(storage.get(OPTIONS_KEY), categories));
   const [resume] = useState(() => loadSession(storage, (raw) => restoreSession(raw, categories)));
-  const update = (patch) => { const next = normalizeOptions({ ...opts, ...patch }, categories); setOpts(next); storage.set(OPTIONS_KEY, next); api.sound.play('click'); };
+  const update = (patch) => { const next = normalizeOptions({ ...opts, ...patch }, categories); setOpts(next); storage.set(OPTIONS_KEY, next); };
   return (
     <>
     {resume && <Card className="stack resume-card">
@@ -99,6 +99,8 @@ export function Game({ api, players, onExit, savedSession = null }) {
   const [flash, setFlash] = useState('');
   const flashTimer = useRef(null);
   const timer = useTimer({ seconds: state.seconds, onEnd: () => { api.sound.play('buzzer'); api.haptics.vibrate('warning'); dispatch({ type: 'TIME_UP' }); } });
+  // آخر خمس ثوانٍ تُسمع (tick ثم tickFast) وتهتز، وعدّ 3-2-1 عند العودة من الإخفاء أو من وضع الجوال عموديًا.
+  useTimerCues(timer, api);
 
   // الفئة الواحدة لا تكفي عشرة لاعبين؛ عند نفادها نعيد خلطها بدل إنهاء المباراة.
   const exhausted = source.remaining === 0;
@@ -136,12 +138,15 @@ export function Game({ api, players, onExit, savedSession = null }) {
   }, []);
   // Reset once per turn. Rotation only pauses/resumes the remaining time. A resumed turn
   // starts from the saved remaining time, once.
-  useEffect(() => { if (state.phase === 'play') { timer.reset(resumeLeft.current ?? state.seconds); resumeLeft.current = null; } else timer.pause(); }, [state.phase]); // eslint-disable-line react-hooks/exhaustive-deps
+  useEffect(() => { if (state.phase === 'play') { timer.reset(resumeLeft.current ?? state.seconds); resumeLeft.current = null; if (landscape && !document.hidden) timer.start(); } else timer.pause(); }, [state.phase]); // eslint-disable-line react-hooks/exhaustive-deps
   useEffect(() => { timeLeftRef.current = timer.left; }, [timer.left]);
+  // الجوال عموديًا يوقف الوقت؛ إعادته أفقيًا تستأنف بعدّ 3-2-1 (لا انطلاقة مباغتة)، وأول دخول يبدأ العدّ.
   useEffect(() => {
-    if (state.phase === 'play' && landscape && !document.hidden) timer.start();
-    else timer.pause();
-  }, [state.phase, landscape]); // eslint-disable-line react-hooks/exhaustive-deps
+    if (state.phase !== 'play') return;
+    if (!landscape) { timer.pause(); return; }
+    if (document.hidden || timer.running || timer.resuming !== null) return;
+    if (timer.paused) timer.resume(); else timer.start();
+  }, [landscape]); // eslint-disable-line react-hooks/exhaustive-deps
   // A browser visibility resume must not restart behind the rotate prompt.
   useEffect(() => { if (!landscape && timer.running) timer.pause(); }, [landscape, timer.running, timer.pause]);
   useEffect(() => {
@@ -171,6 +176,7 @@ export function Game({ api, players, onExit, savedSession = null }) {
         <>
           {!landscape && <div className="jabeen-rotate" style={{ animation: 'none' }}><div><div className="big" aria-hidden="true">📱</div><p style={{ marginTop: 14, fontWeight: 800 }}>أدر الجوال أفقيًا</p><p className="muted">أسهل في القراءة من بعيد.</p><Button variant="ghost" onClick={() => setLandscape(true)}>تخطي هذا التنبيه</Button></div></div>}
           <Stage state={state} timer={timer} tilt={tilt} flash={flash} blocked={!landscape} onAnswer={answer} onEnd={() => { timer.pause(); dispatch({ type: 'TIME_UP' }); }} />
+          <ResumeCountdown resuming={timer.resuming} />
         </>
       )}
       {state.phase === 'review' && (
@@ -179,7 +185,7 @@ export function Game({ api, players, onExit, savedSession = null }) {
           <p className="center muted">{state.results.filter((r) => r.ok).length} من {state.results.length} — المس أي كلمة لتصحيحها.</p>
           <div className="jabeen-review">
             {state.results.map((r, i) => (
-              <button key={`${r.itemId}-${i}`} type="button" className={r.ok ? 'ok' : ''} aria-pressed={r.ok} onClick={() => { api.sound.play('click'); dispatch({ type: 'TOGGLE_RESULT', index: i }); }}>
+              <button key={`${r.itemId}-${i}`} type="button" className={r.ok ? 'ok' : ''} aria-pressed={r.ok} onClick={() => dispatch({ type: 'TOGGLE_RESULT', index: i })}>
                 <span className="mark" aria-hidden="true" key={String(r.ok)}>{r.ok ? '✓' : '—'}</span><span className="grow">{r.text}</span>
               </button>
             ))}

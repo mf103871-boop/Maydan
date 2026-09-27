@@ -55,10 +55,10 @@ export default { useState, useRef, useCallback, useMemo, useEffect };
 `);
 
 await build({
-  stdin: { contents: "export { useTimer } from './src/shared/ui/useTimer.js';\nexport { __mount, __render } from 'react';\n", resolveDir: root, loader: 'js' },
+  stdin: { contents: "export { useTimer } from './src/shared/ui/useTimer.js';\nexport { useTimerCues } from './src/shared/ui/useTimerCues.js';\nexport { __mount, __render } from 'react';\n", resolveDir: root, loader: 'js' },
   outfile: path.join(temp, 'timer.mjs'), bundle: true, platform: 'node', format: 'esm', alias: { react: miniReact }, logLevel: 'silent',
 });
-const { useTimer, __mount, __render } = await import(pathToFileURL(path.join(temp, 'timer.mjs')));
+const { useTimer, useTimerCues, __mount, __render } = await import(pathToFileURL(path.join(temp, 'timer.mjs')));
 
 // ── ساعة وهمية + document وهمي ──
 const realNow = Date.now;
@@ -79,9 +79,9 @@ after(() => {
   if (realDocument === undefined) delete globalThis.document;
 });
 
-function mountTimer(opts) {
+function mountTimer(opts, render = (p) => useTimer(p)) {
   const state = { ...opts };
-  const timer = __mount((p) => useTimer(p), state);
+  const timer = __mount(render, state);
   const api = {
     get current() { return api._t; },
     _t: timer,
@@ -342,4 +342,115 @@ test('useTimer: pause أثناء عدّ الاستئناف يلغيه ولا ي�
     while (queued.length) { const fn = queued.shift(); fn(); h.flush(); }
     assert.equal(h.current.running, true, 'العدّ الكامل يشغّل المؤقت');
   } finally { globalThis.setTimeout = previousTimeout; }
+});
+
+// ── الصوت 3.2: إشارات المؤقت من useTimerCues وحده (الحلقة بصرية)، بلا تكرار ولا ثانية أولى صامتة ──
+// يركّب useTimer مع useTimerCues في مكوّن واحد، وواجهة api تسجّل الأصوات والاهتزازات.
+function mountCued(opts, cues) {
+  const sounds = [], haptics = [];
+  const api = { sound: { play: (name) => { sounds.push(name); return true; } }, haptics: { vibrate: (kind) => haptics.push(kind) } };
+  const h = mountTimer({ ...opts, api, cues }, (p) => { const timer = useTimer(p); useTimerCues(timer, p.api, p.cues); return timer; });
+  return { h, sounds, haptics };
+}
+
+test('useTimerCues: «قبل ما يطق» يسمع كل ثانية من الأولى، الأخيرتان سريعتان، ولا تكرار في الثانية نفسها', () => {
+  const { h, sounds, haptics } = mountCued({ seconds: 5 }, { last: Infinity, fastBelow: 2 });
+  assert.deepEqual(sounds, [], 'لا صوت قبل البدء');
+  h.current.start(); h.flush();
+  assert.deepEqual(sounds, ['tick'], 'الثانية الأولى للطلب تُسمع فور البدء');
+  h.flush(); h.flush();
+  assert.deepEqual(sounds, ['tick'], 'إعادة التصيير لا تعيد الصوت');
+  h.advance(1);
+  assert.deepEqual(sounds, ['tick', 'tick']);
+  h.advance(3);
+  assert.deepEqual(sounds, ['tick', 'tick', 'tick', 'tickFast', 'tickFast'], 'tickFast في الثانيتين الأخيرتين');
+  assert.deepEqual(haptics, ['tick', 'tick', 'tick'], 'اهتزاز في آخر ثلاث ثوانٍ');
+  h.advance(1);
+  assert.equal(h.current.running, false);
+  assert.equal(sounds.length, 5, 'لا إشارة عند الصفر (الصفارة من onEnd)');
+});
+
+test('useTimerCues: «ممنوع» (60 ث، الافتراضيات) يسمع خمس إشارات فقط: 5-4-3 عادية ثم 2-1 سريعة', () => {
+  const { h, sounds } = mountCued({ seconds: 60 });
+  h.current.start(); h.flush();
+  h.advance(54);
+  assert.deepEqual(sounds, [], 'لا صوت قبل الثواني الخمس الأخيرة');
+  h.advance(5);
+  assert.deepEqual(sounds, ['tick', 'tick', 'tick', 'tickFast', 'tickFast']);
+  h.advance(1);
+  assert.equal(sounds.length, 5);
+});
+
+test('useTimerCues: القنبلة تتسارع تحت 8 ثوانٍ', () => {
+  const { h, sounds } = mountCued({ seconds: 10 }, { last: Infinity, fastBelow: 8 });
+  h.current.start(); h.flush();
+  h.advance(2);
+  assert.deepEqual(sounds, ['tick', 'tick', 'tickFast']);
+});
+
+test('useTimerCues: الاستئناف يعدّ 3-2-1 ثم «انطلق» بلا tick على الثانية المستأنفة، والتالية تُسمع', () => {
+  const queued = [];
+  const previousTimeout = globalThis.setTimeout;
+  globalThis.setTimeout = (fn) => { queued.push(fn); return queued.length; };
+  try {
+    const { h, sounds, haptics } = mountCued({ seconds: 60 }, { last: Infinity });
+    h.current.start(); h.flush(); h.advance(2);
+    assert.deepEqual(sounds, ['tick', 'tick', 'tick']);
+    assert.equal(h.current.left, 58);
+    h.current.pause(); h.flush();
+    h.current.resume(); h.flush();
+    assert.equal(h.current.resuming, 3);
+    while (queued.length) { const fn = queued.shift(); fn(); h.flush(); }
+    assert.equal(h.current.running, true);
+    assert.equal(h.current.left, 58);
+    assert.deepEqual(sounds.slice(3), ['countdown', 'countdown', 'countdown', 'countdownGo'], '«انطلق» لا يُكدَّس عليه tick للثانية نفسها');
+    assert.deepEqual(haptics, ['light', 'light', 'light', 'medium']);
+    h.advance(1);
+    assert.equal(h.current.left, 57);
+    assert.equal(sounds.at(-1), 'tick', 'الثانية التالية بعد الاستئناف تُسمع');
+    assert.equal(sounds.length, 8);
+  } finally { globalThis.setTimeout = previousTimeout; }
+});
+
+test('useTimerCues: طلب جديد بعد «خلصت!» يسمع ثانيته الأولى (التصفير ليس استئنافًا)', () => {
+  const { h, sounds } = mountCued({ seconds: 5 }, { last: Infinity, fastBelow: 2 });
+  h.current.start(); h.flush(); h.advance(2);
+  assert.equal(h.current.left, 3);
+  h.current.pause(); h.flush();
+  assert.equal(sounds.length, 3);
+  h.current.reset(5); h.current.start(); h.flush();
+  assert.equal(h.current.left, 5);
+  assert.deepEqual(sounds.slice(3), ['tick'], 'الثانية الأولى للطلب الجديد تُسمع');
+  h.advance(1);
+  assert.deepEqual(sounds.slice(3), ['tick', 'tick']);
+});
+
+test('مصدر واحد لإشارات المؤقت: الحلقة بصرية، والألعاب تستعمل useTimerCues بلا tick مباشر', () => {
+  const src = (rel) => readFileSync(path.resolve(rel), 'utf8');
+  const ring = src('src/shared/ui/Timer.jsx');
+  assert.doesNotMatch(ring, /sound\.play|haptics/, 'Timer.jsx لا يصدر أصواتًا');
+  assert.match(ring, /export function ResumeCountdown/);
+  assert.match(src('src/shared/ui/index.js'), /useTimerCues/);
+  for (const [name, rel, options] of [
+    ['beep', 'src/games/beep/Game.jsx', /useTimerCues\(timer, api, \{ last: Infinity, fastBelow: 2 \}\)[\s\S]*useTimerCues\(timer, api, \{ last: Infinity, fastBelow: 8 \}\)/],
+    ['mamnoo', 'src/games/mamnoo/Game.jsx', /useTimerCues\(timer, api\)/],
+    ['jabeen', 'src/games/jabeen/Game.jsx', /useTimerCues\(timer, api\)/],
+  ]) {
+    const game = src(rel);
+    assert.match(game, options, `${name}: يستعمل useTimerCues`);
+    assert.doesNotMatch(game, /play\((['"])tick(Fast)?\1\)|play\(timer\.left/, `${name}: لا تكّات مباشرة`);
+    assert.doesNotMatch(game, /<Timer [^>]*api=/, `${name}: الحلقة لا تأخذ api`);
+  }
+  const beep = src('src/games/beep/Game.jsx');
+  assert.match(beep, /<ResumeCountdown resuming=\{timer\.resuming\} \/>/, 'القنبلة تعرض عدّ الاستئناف وحده');
+  const jabeen = src('src/games/jabeen/Game.jsx');
+  assert.match(jabeen, /if \(timer\.paused\) timer\.resume\(\); else timer\.start\(\);/, 'إعادة الجوال أفقيًا تستأنف بعدّ 3-2-1');
+  assert.match(jabeen, /<ResumeCountdown resuming=\{timer\.resuming\} \/>/);
+  const fabraka = src('src/games/fabraka/Game.jsx');
+  assert.match(fabraka, /const s = latestState\.current;\n\s*if \(!s\.paused && s\.remaining > 0 && s\.remaining <= 5[^\n]*api\.sound\.play\('tick'\);\n\s*\}, \[state\.remaining\]\)/, 'فبركة: التكّة تتبع الثانية وحدها');
+  const badeeha = src('src/games/badeeha/App.js');
+  assert.match(badeeha, /if \(!effectiveSoundOn\) return;\n[^\n]*\n\s*if \(api && api\.sound && typeof api\.sound\.play === "function"\) \{\n\s*api\.sound\.play\(name\);\n\s*return;\n\s*\}\n\s*if \(!SFX\[name\]\) return;/, 'بَديهة: الناقل المشترك يسمع scoreUp/scoreDown');
+  assert.match(badeeha, /timeLeftRef\.current = Number\.isFinite\(savedActive\.timeLeft\)/, 'بَديهة: الاستئناف لا يكرّر تكّة الثانية المحفوظة');
+  assert.match(badeeha, /const releasing = \["pause", "ended", "error", "abort", "emptied"\]/, 'بَديهة: خفض الخلفية يُرفع عند تعطّل المقطع');
+  assert.match(src('src/games/meenfina/Game.jsx'), /if \(hidden\) return undefined;/, 'مين فينا: العدّ يتوقف والصفحة مخفية');
 });

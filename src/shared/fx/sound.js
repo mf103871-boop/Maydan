@@ -4,24 +4,42 @@ import { MUSIC_BANK } from './music-bank.js';
 // Maydan's cue bank: sixteen mastered AAC files (scripts/audio/build.mjs), in-house
 // designs and cues from licensed libraries alike, all tuned to D so they sit inside the
 // music (assets/audio/maydan-v3/provenance.json records where each came from). They are
-// fetched once (the service worker precaches them, the iOS shell bundles them) and decoded
-// on the first gesture; each public cue name maps to exactly one mastered file.
+// fetched and decoded as soon as the bus attaches (decoding needs no gesture); each public
+// cue name maps to exactly one mastered file.
 export const CUE_SAMPLES = {
   click: 'click', pop: 'pop', tick: 'tick', tickFast: 'tickFast', correct: 'correct', wrong: 'wrong',
   buzzer: 'buzzer', whoosh: 'whoosh', fanfare: 'win', explosion: 'explosion', drumroll: 'drumroll',
   countdown: 'countdown', countdownGo: 'start', reveal: 'reveal', pass: 'pass', timeout: 'timeout',
 };
-export const RECIPES = Object.fromEntries(Object.entries(CUE_SAMPLES).map(([name, id]) => [name, (c) => c.sample(id)]));
+export const RECIPES = Object.fromEntries(Object.entries(CUE_SAMPLES).map(([name, id]) => [name, (c, meta) => c.sample(id, meta)]));
 
 const clampVolume = (value, fallback = 0.75) => typeof value === 'number' && Number.isFinite(value) ? Math.min(1, Math.max(0, value)) : fallback;
+// A repeat inside the cooldown restarts a user cue (the tap happened, the sound must
+// follow) and is dropped for an automatic one (ticks and countdowns keep their rhythm).
 const COOLDOWNS = { click: 65, pop: 70, tick: 100, tickFast: 100, countdown: 120, correct: 150, wrong: 180,
-  buzzer: 300, whoosh: 100, fanfare: 500, explosion: 400, drumroll: 1250, countdownGo: 180, reveal: 160, timeout: 300 };
+  buzzer: 300, whoosh: 100, fanfare: 500, explosion: 400, drumroll: 300, countdownGo: 180, reveal: 160, timeout: 300, pass: 80 };
+const USER_CUES = new Set(['click', 'pop', 'whoosh', 'correct', 'wrong', 'buzzer', 'pass', 'reveal', 'drumroll']);
+// Below this gap a repeat is one gesture seen twice (pointerdown + click), never two taps.
+const RETRIGGER_FLOOR_MS = 40;
 const ALIASES = { open: 'whoosh', steal: 'correct', win: 'fanfare', start: 'countdownGo', tool: 'reveal', scoreUp: 'pop', scoreDown: 'wrong' };
-// A cue that arrives while the bank is still decoding may play a little late; a
-// cue this old belongs to a moment that has passed.
-const LATE_CUE_MS = 400;
+// A cue that arrives while the bank is still decoding or the context resuming plays a
+// little late; feedback for a tap is still welcome after a second, a timer tick is not.
+const LATE_MS = { default: 1200, tick: 400, tickFast: 400, countdown: 400, countdownGo: 400, timeout: 400 };
+const lateFor = (name) => LATE_MS[name] ?? LATE_MS.default;
 const RESUME_TIMEOUT_MS = 1500;
 const CUE_IDS = Object.keys(SAMPLE_BANK);
+// Every activation of a control sounds, without wiring each handler: a capture `click`
+// listener on document plays `data-sound` (default `click`) for anything matching
+// TAP_SELECTOR; `data-sound="none"` on the element or an ancestor keeps it silent, as do
+// disabled, busy and inert controls. `click` (not pointerdown) so a scroll that starts on a
+// button, a drag away, or a disabled control never sounds, and keyboard and assistive
+// activations do.
+export const TAP_SELECTOR = 'button, [role="button"], a[href], summary, select, input[type="checkbox"], input[type="radio"], [data-sound]';
+export const TAP_SKIP = '[data-sound="none"]';
+const GESTURE_EVENTS = ['pointerdown', 'pointerup', 'touchstart', 'touchend', 'keydown', 'click'];
+// A handler cue arriving this soon after a tap click replaces it: one sound per tap.
+const TAP_SUPERSEDE_MS = 180;
+const TAP_FADE_S = 0.03;
 // Background music (scripts/audio/music.mjs): seamless loops fetched on first use, never
 // precached, played on their own gain behind the shared compressor so the sound-effects
 // volume, cooldowns and stop() leave them alone. Cues that carry a moment pull the music
@@ -43,15 +61,28 @@ export function createSound({ enabled = true, volume = 0.75, music = true, music
   let musicGain = null;
   let voiceContext = null;
   let attached = false;
-  let generation = 0;
+  // Every request and voice carries an ordinal and the wall-clock time it was asked for.
+  // A full stop() voids everything asked for up to its ordinal; stop({ spare }) voids only
+  // what was asked for before `spare` milliseconds ago, so a tap that changes the screen
+  // keeps its own sound while the previous screen's long cues end.
+  let seq = 0;
+  let cutoffSeq = 0;
+  let cutoffAt = 0;
   let ducked = false;
-  let resumePromise = null;
-  let bankPromise = null;
-  let decodePromise = null;
+  let bankFetch = null;
+  let bankDecode = null;
+  let unlockWaiters = [];
+  let unlockTimer = null;
   const encoded = new Map();
+  const fetches = new Map();
   const buffers = new Map();
+  const decodes = new Map();
   const voices = new Set();
   const lastPlayed = new Map();
+  const lastVoice = new Map();
+  // The tap delegate's pending click (rendered a tick later unless a handler cue
+  // supersedes it) and the last tap voice (cut when a handler cue follows shortly).
+  const tap = { pending: null, superseded: false, voice: null, timer: null };
   // Music state: the track the current screen wants, the loop actually sounding, a
   // one-shot sting, and the cue duck (a level held until a wall-clock deadline).
   let musicWanted = null;
@@ -71,8 +102,8 @@ export function createSound({ enabled = true, volume = 0.75, music = true, music
   const hidden = () => typeof document !== 'undefined' && document.hidden;
   const canPlay = () => on && level > 0 && !hidden();
   const canPlayMusic = () => on && musicOn && musicLevel > 0 && !hidden();
-  const audible = () => canPlay() || canPlayMusic();
-  const ready = () => CUE_IDS.every((id) => buffers.has(id));
+  // Per cue when named, the whole bank otherwise.
+  const ready = (name = null) => (name ? buffers.has(CUE_SAMPLES[name]) : CUE_IDS.every((id) => buffers.has(id)));
 
   function musicMix(tc = 0.08) {
     if (!musicGain || !context) return;
@@ -94,40 +125,61 @@ export function createSound({ enabled = true, volume = 0.75, music = true, music
     clearTimeout(duckTimer);
     duckTimer = setTimeout(() => musicMix(0.3), duckUntil - Date.now() + 20);
   }
-  function stop() {
-    generation += 1;
-    lastPlayed.clear();
-    for (const voice of [...voices]) {
-      try { voice.source.stop(); } catch { /* already ended */ }
-      voice.cleanup();
+  // Stop what is sounding and void what is pending. `spare` keeps the last few hundred
+  // milliseconds alive: a route change must not swallow the tap that caused it.
+  const voided = (ordinal, at) => ordinal <= cutoffSeq || at < cutoffAt;
+  function stop({ spare = 0 } = {}) {
+    if (spare) {
+      cutoffAt = Math.max(cutoffAt, Date.now() - spare);
+      for (const voice of [...voices]) if (voice.at < cutoffAt) cutVoice(voice);
+      return;
     }
+    cutoffSeq = seq;
+    lastPlayed.clear(); lastVoice.clear(); tap.pending = null; tap.voice = null;
+    for (const voice of [...voices]) cutVoice(voice);
   }
-  function track(source, nodes) {
-    if (voices.size >= 20) {
-      const oldest = voices.values().next().value;
-      try { oldest.source.stop(); } catch { /* ended */ }
-      oldest.cleanup();
-    }
-    const voice = { source, cleanup() {
+  function cutVoice(voice, seconds = 0) {
+    if (!voice || !voices.has(voice)) return;
+    try {
+      if (seconds && voice.gain && context) {
+        voice.gain.gain.setTargetAtTime(0, context.currentTime, seconds / 3);
+        voice.source.stop(context.currentTime + seconds);
+      } else { voice.source.stop(); voice.cleanup(); }
+    } catch { voice.cleanup(); }
+  }
+  function track(source, nodes, { name = null, at = Date.now(), ordinal = ++seq, gain = null } = {}) {
+    if (voices.size >= 20) cutVoice(voices.values().next().value);
+    const voice = { source, name, at, ordinal, gain, cleanup() {
       voices.delete(voice);
       source.onended = null;
       for (const node of nodes) { try { node.disconnect(); } catch { /* disconnected */ } }
     } };
     voices.add(voice);
+    if (name) lastVoice.set(name, voice);
     source.onended = voice.cleanup;
+    return voice;
   }
   // The encoded files need no AudioContext, so they are fetched as soon as the bus
-  // attaches; the first gesture then only has to decode ~100 KB.
-  function fetchBank() {
-    if (bankPromise) return bankPromise;
+  // attaches, one promise per cue: a file that fails leaves the other fifteen playable.
+  function fetchCue(id) {
+    if (encoded.has(id)) return Promise.resolve(true);
+    if (fetches.has(id)) return fetches.get(id);
     if (typeof fetch !== 'function') return Promise.resolve(false);
-    bankPromise = Promise.all(CUE_IDS.map(async (id) => {
-      if (encoded.has(id)) return;
-      const response = await fetch(SAMPLE_BANK[id].url);
+    const task = Promise.resolve().then(() => fetch(SAMPLE_BANK[id].url)).then(async (response) => {
       if (!response || !response.ok) throw new Error('cue unavailable');
       encoded.set(id, await response.arrayBuffer());
-    })).then(() => true, () => { bankPromise = null; return false; });
-    return bankPromise;
+      return true;
+    }).catch(() => false);
+    fetches.set(id, task);
+    void task.finally(() => { if (fetches.get(id) === task) fetches.delete(id); });
+    return task;
+  }
+  function fetchBank() {
+    if (bankFetch) return bankFetch;
+    const task = Promise.all(CUE_IDS.map(fetchCue)).then((results) => results.every(Boolean));
+    bankFetch = task;
+    void task.finally(() => { if (bankFetch === task) bankFetch = null; });
+    return task;
   }
   function decode(c, data) {
     return new Promise((resolve, reject) => {
@@ -138,25 +190,38 @@ export function createSound({ enabled = true, volume = 0.75, music = true, music
       } catch (error) { reject(error); }
     });
   }
-  function decodeBank(c) {
-    if (decodePromise) return decodePromise;
-    const task = fetchBank().then(async (fetched) => {
-      if (!fetched || c !== context) return false;
-      await Promise.all(CUE_IDS.map(async (id) => {
-        if (buffers.has(id)) return;
-        // decodeAudioData detaches its input; hand each context a copy.
-        const buffer = await decode(c, encoded.get(id).slice(0));
-        if (c === context) buffers.set(id, buffer);
-      }));
-      return c === context && ready();
+  // One cue, decoded once per context (decodeAudioData detaches its input: hand it a copy).
+  function decodeCue(c, id) {
+    if (c !== context) return Promise.resolve(false);
+    if (buffers.has(id)) return Promise.resolve(true);
+    if (decodes.has(id)) return decodes.get(id);
+    const task = fetchCue(id).then(async (ok) => {
+      if (!ok || c !== context) return false;
+      const buffer = await decode(c, encoded.get(id).slice(0));
+      if (c !== context) return false;
+      buffers.set(id, buffer);
+      return true;
     }).catch(() => false);
-    decodePromise = task;
-    void task.finally(() => { if (decodePromise === task) decodePromise = null; });
+    decodes.set(id, task);
+    void task.finally(() => { if (decodes.get(id) === task) decodes.delete(id); });
     return task;
   }
-  function sample(id, { at = 0, gain = 1, rate = 1 } = {}) {
+  // The whole bank; `firstId` (the cue somebody is waiting for) goes first.
+  function decodeBank(c, firstId = null) {
+    if (c !== context) return Promise.resolve(false);
+    const all = () => {
+      if (!bankDecode) {
+        const task = Promise.all(CUE_IDS.map((id) => decodeCue(c, id))).then((results) => c === context && results.every(Boolean));
+        bankDecode = task;
+        void task.finally(() => { if (bankDecode === task && !ready()) bankDecode = null; });
+      }
+      return bankDecode;
+    };
+    return firstId && !buffers.has(firstId) ? decodeCue(c, firstId).then(all) : all();
+  }
+  function sample(id, { at = 0, gain = 1, rate = 1, name = null, requested = Date.now(), ordinal = undefined } = {}) {
     const buffer = buffers.get(id);
-    if (!buffer) return;
+    if (!buffer) return null;
     const source = context.createBufferSource();
     source.buffer = buffer;
     source.playbackRate.value = rate;
@@ -164,8 +229,9 @@ export function createSound({ enabled = true, volume = 0.75, music = true, music
     voiceGain.gain.value = gain;
     source.connect(voiceGain);
     voiceGain.connect(master);
-    track(source, [source, voiceGain]);
+    const voice = track(source, [source, voiceGain], { name, at: requested, ordinal, gain: voiceGain });
     source.start(context.currentTime + at);
+    return voice;
   }
   // Music files are large (a minute of stereo AAC each), so a track is fetched the first
   // time a screen asks for it and decoded once per context; decoded loops are kept for
@@ -200,7 +266,8 @@ export function createSound({ enabled = true, volume = 0.75, music = true, music
       return Promise.resolve(buffer);
     }
     if (musicDecodes.has(id)) return musicDecodes.get(id);
-    const task = fetchTrack(id).then(async (data) => {
+    // المؤثرات أولًا: مقطع بدقيقة كاملة لا يحجز المُفكِّك قبل ستة عشر مؤثرًا قصيرًا.
+    const task = Promise.resolve(bankDecode || decodeBank(c)).then(() => fetchTrack(id)).then(async (data) => {
       if (!data || c !== context) return null;
       const buffer = await decode(c, data.slice(0));
       if (c !== context) return null;
@@ -311,12 +378,23 @@ export function createSound({ enabled = true, volume = 0.75, music = true, music
       stingTimer = setTimeout(finish, seconds * 1000 + 250);
     });
   }
+  function settleUnlock() {
+    const waiters = unlockWaiters;
+    unlockWaiters = [];
+    clearTimeout(unlockTimer); unlockTimer = null;
+    const ok = !!context && context.state === 'running';
+    for (const resolve of waiters) resolve(ok);
+  }
+  function onStateChange() {
+    if (context?.state === 'running') settleUnlock();
+    mix(); syncMusic();
+  }
   function getContext() {
     if (context && context.state !== 'closed') return context;
     try {
       const AC = typeof window !== 'undefined' && (window.AudioContext || window.webkitAudioContext);
       if (!AC) return null;
-      stop(); haltMusic(); buffers.clear(); musicBuffers.clear(); musicDecodes.clear(); resumePromise = null; decodePromise = null;
+      stop(); haltMusic(); buffers.clear(); decodes.clear(); musicBuffers.clear(); musicDecodes.clear(); bankDecode = null; settleUnlock();
       context = new AC({ latencyHint: 'interactive' });
       master = context.createGain();
       const compressor = context.createDynamicsCompressor();
@@ -335,6 +413,9 @@ export function createSound({ enabled = true, volume = 0.75, music = true, music
       musicGain.connect(compressor);
       voiceContext = { sample };
       master.gain.value = canPlay() ? level * level * (ducked ? 0.3 : 1) : 0;
+      // iOS moves the context to "interrupted" during a call and back; resolve waiters
+      // the moment it runs again instead of trusting a resume() promise that may never settle.
+      try { context.onstatechange = onStateChange; } catch { /* read-only in a fake */ }
       return context;
     } catch {
       try { Promise.resolve(context?.close()).catch(() => {}); } catch { /* unavailable */ }
@@ -342,73 +423,92 @@ export function createSound({ enabled = true, volume = 0.75, music = true, music
       return null;
     }
   }
+  // Ask the context to run and resolve when it does (statechange or the resume promise),
+  // or after RESUME_TIMEOUT_MS with the truth. WebKit only honours resume() issued inside a
+  // user gesture, so every caller asks again rather than waiting on an earlier attempt.
   function unlock() {
-    if (!audible()) return Promise.resolve(false);
     const c = getContext();
     if (!c) return Promise.resolve(false);
     if (c.state === 'running') return Promise.resolve(true);
-    // iOS can become "interrupted" after a call. Retain gesture listeners
-    // so every return to the app can recover instead of unlocking only once.
-    // A resume() that never settles (WebKit outside a gesture) must not pin the
-    // shared promise forever, or later gestures could never try again.
-    if (!resumePromise) {
-      try {
-        let timer = null;
-        const attempt = Promise.resolve(c.resume()).then(() => c.state === 'running', () => false);
-        const deadline = new Promise((resolve) => { timer = setTimeout(() => resolve(c.state === 'running'), RESUME_TIMEOUT_MS); });
-        const pending = Promise.race([attempt, deadline]);
-        resumePromise = pending;
-        void pending.finally(() => { clearTimeout(timer); if (resumePromise === pending) resumePromise = null; });
-      } catch { return Promise.resolve(false); }
-    }
-    return resumePromise;
+    try { Promise.resolve(c.resume()).then(() => { if (c === context && c.state === 'running') settleUnlock(); }, () => {}); } catch { /* unavailable */ }
+    return new Promise((resolve) => {
+      unlockWaiters.push(resolve);
+      if (!unlockTimer) unlockTimer = setTimeout(settleUnlock, RESUME_TIMEOUT_MS);
+    });
   }
-  // Fetch, resume and decode together; render only once the cue can actually sound.
-  function prepare() {
+  // Resume and decode together; render only once the cue can actually sound.
+  function prepare(name = null) {
     const c = getContext();
     if (!c) return Promise.resolve(false);
-    return Promise.all([unlock(), decodeBank(c)]).then(([running, decoded]) => running && decoded && c === context);
+    const decoded = name ? decodeCue(c, CUE_SAMPLES[name]).then((ok) => { void decodeBank(c); return ok; }) : decodeBank(c);
+    return Promise.all([unlock(), decoded]).then(([running, ok]) => running && ok && c === context);
   }
   function onVisibility() {
     if (hidden()) {
       stop(); mix();
       try { Promise.resolve(context?.suspend()).catch(() => {}); } catch { /* unavailable */ }
     } else {
-      // The music gain climbs back on the audio clock, which only moves again once a
-      // gesture resumes the context: the loop returns with a short fade, not a jolt.
+      // Ask to run again (it works outside a gesture on most engines; a gesture will
+      // repeat the request otherwise) and let the music gain climb back with a short fade.
+      try { Promise.resolve(context?.resume()).then(() => { if (context?.state === 'running') settleUnlock(); }, () => {}); } catch { /* unavailable */ }
       mix(); syncMusic(0.4);
     }
   }
   function onGesture() {
-    if (!audible()) return;
     const c = getContext();
     if (!c) return;
-    // WebKit only honours resume() issued inside a user gesture: call it here even
-    // while an earlier attempt is still pending.
-    if (c.state !== 'running') { try { Promise.resolve(c.resume()).catch(() => {}); } catch { /* unavailable */ } }
-    if (canPlay()) void prepare();
+    if (c.state !== 'running') { try { Promise.resolve(c.resume()).then(() => { if (c === context && c.state === 'running') settleUnlock(); }, () => {}); } catch { /* unavailable */ } }
+    void decodeBank(c);
     syncMusic();
+  }
+  function tapTarget(event) {
+    const target = event?.target;
+    if (!target || typeof target.closest !== 'function') return null;
+    try {
+      const el = target.closest(TAP_SELECTOR);
+      if (!el || el.closest(TAP_SKIP) || el.closest('[inert]')) return null;
+      if (el.matches(':disabled') || el.matches('[aria-disabled="true"], [aria-busy="true"]')) return null;
+      return el;
+    } catch { return null; }
+  }
+  function onTap(event) {
+    const el = tapTarget(event);
+    if (!el) return;
+    const wanted = (el.dataset && el.dataset.sound) || 'click';
+    const name = ALIASES[wanted] || wanted;
+    tap.pending = { name: RECIPES[name] ? name : 'click', at: Date.now() };
+    tap.superseded = false;
+    clearTimeout(tap.timer);
+    // Handlers and the effects React flushes for a click run before this timeout; a cue
+    // they play supersedes the click so one tap never sounds twice.
+    tap.timer = setTimeout(() => {
+      const pending = tap.pending;
+      tap.pending = null;
+      if (!pending || tap.superseded) return;
+      play(pending.name, { source: 'tap' });
+    }, 0);
   }
   function attach() {
     if (attached || typeof document === 'undefined') return;
     attached = true;
     void fetchBank();
-    document.addEventListener('pointerdown', onGesture, true);
-    document.addEventListener('touchstart', onGesture, { capture: true, passive: true });
-    document.addEventListener('keydown', onGesture, true);
+    const c = getContext();
+    if (c) void decodeBank(c);
+    for (const type of GESTURE_EVENTS) document.addEventListener(type, onGesture, type.startsWith('touch') ? { capture: true, passive: true } : true);
+    document.addEventListener('click', onTap, true);
     document.addEventListener('visibilitychange', onVisibility);
   }
   function dispose() {
-    stop(); haltMusic(); buffers.clear(); musicBuffers.clear(); musicDecodes.clear(); decodePromise = null;
+    stop(); haltMusic(); buffers.clear(); decodes.clear(); musicBuffers.clear(); musicDecodes.clear(); bankDecode = null;
+    clearTimeout(tap.timer); tap.pending = null;
     if (attached) {
-      document.removeEventListener('pointerdown', onGesture, true);
-      document.removeEventListener('touchstart', onGesture, true);
-      document.removeEventListener('keydown', onGesture, true);
+      for (const type of GESTURE_EVENTS) document.removeEventListener(type, onGesture, true);
+      document.removeEventListener('click', onTap, true);
       document.removeEventListener('visibilitychange', onVisibility);
       attached = false;
     }
     const c = context;
-    context = null; master = null; musicGain = null; voiceContext = null; resumePromise = null;
+    context = null; master = null; musicGain = null; voiceContext = null; settleUnlock();
     try { Promise.resolve(c?.close()).catch(() => {}); } catch { /* already closed */ }
   }
   // A caller's own Web Audio recipe (Badeeha's question sounds) rendered inside this
@@ -424,35 +524,50 @@ export function createSound({ enabled = true, volume = 0.75, music = true, music
     });
   }
   function synth(render) {
-    if (!canPlay() || typeof render !== 'function') return;
+    if (!canPlay() || typeof render !== 'function') return false;
     const c = getContext();
-    if (!c) return;
-    const token = generation;
+    if (!c) return false;
+    const at = Date.now(), ordinal = ++seq;
     const run = () => {
-      if (!canPlay() || token !== generation || c !== context || c.state !== 'running') return;
+      if (!canPlay() || voided(ordinal, at) || c !== context || c.state !== 'running') return;
       try { render(synthContext(c)); } catch { /* never break the game */ }
     };
     if (c.state === 'running') run();
     else void unlock().then((ok) => { if (ok) run(); });
+    return true;
+  }
+  // `source: 'tap'` marks the delegate's own click; any other cue requested while a tap
+  // click is pending replaces it, and one arriving shortly after cuts the click voice.
+  function play(rawName, { source = 'code' } = {}) {
+    const name = ALIASES[rawName] || rawName;
+    if (!canPlay() || !RECIPES[name]) return false;
+    const now = Date.now();
+    const last = lastPlayed.get(name) ?? -Infinity;
+    if (now - last < RETRIGGER_FLOOR_MS) return false;
+    if (now - last < COOLDOWNS[name]) { if (!USER_CUES.has(name)) return false; cutVoice(lastVoice.get(name), 0.02); }
+    const c = getContext();
+    if (!c) return false;
+    const ordinal = ++seq;
+    if (source !== 'tap') {
+      if (tap.pending) tap.superseded = true;
+      if (tap.voice && tap.voice.name !== name && USER_CUES.has(name) && now - tap.voice.at < TAP_SUPERSEDE_MS) { cutVoice(tap.voice, TAP_FADE_S); tap.voice = null; }
+    }
+    const render = () => {
+      if (!canPlay() || voided(ordinal, now) || c !== context || c.state !== 'running' || !ready(name)) return false;
+      // The cooldown clock starts when the cue actually sounds, not when it was asked for.
+      lastPlayed.set(name, Date.now());
+      if (DUCKS[name]) duckFor(DUCKS[name], SAMPLE_BANK[CUE_SAMPLES[name]].frames / SAMPLE_RATE);
+      let voice = null;
+      try { voice = RECIPES[name](voiceContext, { name, requested: now, ordinal }); } catch { /* never break the game */ }
+      if (source === 'tap') tap.voice = voice;
+      return true;
+    };
+    if (c.state === 'running' && ready(name)) return render();
+    void prepare(name).then((ok) => { if (ok && Date.now() - now < lateFor(name)) render(); });
+    return true;
   }
   return {
-    play(name) {
-      name = ALIASES[name] || name;
-      if (!canPlay() || !RECIPES[name]) return;
-      const now = Date.now();
-      if (now - (lastPlayed.get(name) ?? -Infinity) < (COOLDOWNS[name] || 80)) return;
-      const c = getContext();
-      if (!c) return;
-      lastPlayed.set(name, now);
-      if (DUCKS[name]) duckFor(DUCKS[name], SAMPLE_BANK[CUE_SAMPLES[name]].frames / SAMPLE_RATE);
-      const token = generation;
-      const render = () => {
-        if (!canPlay() || token !== generation || c !== context || c.state !== 'running' || !ready()) return;
-        try { RECIPES[name](voiceContext); } catch { /* never break the game */ }
-      };
-      if (c.state === 'running' && ready()) render();
-      else void prepare().then((ok) => { if (ok && Date.now() - now < LATE_CUE_MS) render(); });
-    },
+    play,
     // Fetch and decode every cue ahead of the first play (tests, splash warm-up).
     preload() { return prepare(); },
     get enabled() { return on; },
@@ -472,7 +587,7 @@ export function createSound({ enabled = true, volume = 0.75, music = true, music
         if (next === musicWanted) { syncMusic(); return; }
         musicWanted = next;
         syncMusic();
-        if (next) void fetchTrack('finale');
+        if (next) void Promise.resolve(bankDecode).then(() => fetchTrack('finale'));
       },
       stop() { musicWanted = null; syncMusic(); },
       sting: playSting,

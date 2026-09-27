@@ -17,7 +17,7 @@ const SEEN_KEY = 'seen';
 export function SetupOptions({ storage, api }) {
   const [opts, setOpts] = useState(() => normalizeOptions(storage.get(OPTIONS_KEY)));
   const [resume] = useState(() => loadSession(storage, restoreSession));
-  const update = (patch) => { const next = normalizeOptions({ ...opts, ...patch }); setOpts(next); storage.set(OPTIONS_KEY, next); api.sound.play('click'); };
+  const update = (patch) => { const next = normalizeOptions({ ...opts, ...patch }); setOpts(next); storage.set(OPTIONS_KEY, next); };
   return (
     <>
     {resume && <Card className="stack resume-card">
@@ -41,12 +41,20 @@ export function SetupOptions({ storage, api }) {
 // طبقة العدّ تغطي الشاشة، فالعبارة تُرسم داخلها — وإلا أُشير قبل أن تُقرأ.
 function Countdown({ api, statement, onDone }) {
   const [n, setN] = useState(3);
+  // العدّ يتوقف والصفحة مخفية ويعود من الرقم نفسه؛ وإلا أُشير قبل أن يرى أحد.
+  const [hidden, setHidden] = useState(() => typeof document !== 'undefined' && document.hidden);
   useEffect(() => {
+    const onVisibility = () => setHidden(document.hidden);
+    document.addEventListener('visibilitychange', onVisibility);
+    return () => document.removeEventListener('visibilitychange', onVisibility);
+  }, []);
+  useEffect(() => {
+    if (hidden) return undefined;
     if (n > 0) { api.sound.play('countdown'); api.haptics.vibrate('light'); }
     else { api.sound.play('countdownGo'); api.haptics.vibrate('medium'); }
     const t = setTimeout(() => (n > 0 ? setN(n - 1) : onDone()), n > 0 ? 900 : 650);
     return () => clearTimeout(t);
-  }, [n]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [n, hidden]); // eslint-disable-line react-hooks/exhaustive-deps
   return (
     <div className="meen-count">
       <div className="meen-statement">{statement}</div>
@@ -89,7 +97,7 @@ export function Game({ api, players, onExit, savedSession = null }) {
 
   // مرجع الطور: التخطي المؤجَّل لا يُرسَل إن كان الحسم قد وقع خلال مهلته.
   const phaseRef = useRef(state.phase); phaseRef.current = state.phase;
-  const toggle = (id) => { api.sound.play('click'); api.haptics.vibrate('selection'); setPicked((list) => (list.includes(id) ? list.filter((x) => x !== id) : [...list, id])); };
+  const toggle = (id) => { api.haptics.vibrate('selection'); setPicked((list) => (list.includes(id) ? list.filter((x) => x !== id) : [...list, id])); };
   const confirmPick = () => { api.sound.play('correct'); api.haptics.vibrate('success'); api.confetti.burst(); stampScreen({ text: 'صح!' }); dispatch({ type: 'PICK', playerIds: picked }); };
   const skipStatement = () => {
     if (leaving) return;

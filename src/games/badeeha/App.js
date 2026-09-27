@@ -1017,17 +1017,19 @@ function useQuestionMedia(ref, soundOn, volume, sound) {
     document.addEventListener("visibilitychange", pauseHidden);
     return () => document.removeEventListener("visibilitychange", pauseHidden);
   }, [element, soundOn, volume]);
+  // يخفض المقطع الخلفية عند تشغيله ويرفعها عند توقفه أو انتهائه أو تعطّله؛ ولا يرفع إلا ما خفضه هو.
   useEffect(() => {
-    const duck = () => sound?.setDucking?.(true);
-    const release = () => sound?.setDucking?.(false);
-    element?.addEventListener("play", duck);
-    element?.addEventListener("pause", release);
-    element?.addEventListener("ended", release);
+    if (!element) return undefined;
+    let ducking = false;
+    const duck = () => { ducking = true; sound?.setDucking?.(true); };
+    const release = () => { if (!ducking) return; ducking = false; sound?.setDucking?.(false); };
+    const releasing = ["pause", "ended", "error", "abort", "emptied"];
+    element.addEventListener("play", duck);
+    for (const type of releasing) element.addEventListener(type, release);
     return () => {
-      element?.pause();
-      element?.removeEventListener("play", duck);
-      element?.removeEventListener("pause", release);
-      element?.removeEventListener("ended", release);
+      element.pause();
+      element.removeEventListener("play", duck);
+      for (const type of releasing) element.removeEventListener(type, release);
       release();
     };
   }, [element, sound]);
@@ -1323,11 +1325,13 @@ function MaydanBeta({ api } = {}) {
     fxTimersRef.current[key] = window.setTimeout(() => setter(reset), wait(ms));
   }
   function playSfx(name) {
-    if (!effectiveSoundOn || !SFX[name]) return;
+    if (!effectiveSoundOn) return;
+    // ناقل الصوت المشترك يعرف كل الأسماء (scoreUp/scoreDown عبر أسمائه البديلة)؛ الجدول المحلي للبديل فقط.
     if (api && api.sound && typeof api.sound.play === "function") {
       api.sound.play(name);
       return;
     }
+    if (!SFX[name]) return;
     const context = getCtx();
     if (context)
       try {
@@ -1338,16 +1342,17 @@ function MaydanBeta({ api } = {}) {
     if (!effectiveSoundOn || !SOUND_RECIPES[recipe]) return;
     const now = Date.now();
     if (now - lastQuestionSoundRef.current < 450) return;
-    lastQuestionSoundRef.current = now;
     // ناقل الصوت المشترك حين يتوفر: مستوى الصوت وكتم الخلفية يسريان على أصوات الأسئلة.
+    // المهلة تُحتسب عند صدور الصوت فعلًا، فلا يبتلع طلبٌ مرفوض (كتم، سياق غير جاهز) الطلب التالي.
     if (api && api.sound && typeof api.sound.synth === "function") {
-      api.sound.synth((context) => SOUND_RECIPES[recipe](context));
+      if (api.sound.synth((context) => SOUND_RECIPES[recipe](context))) lastQuestionSoundRef.current = now;
       return;
     }
     const context = getCtx();
     if (context)
       try {
         SOUND_RECIPES[recipe](context);
+        lastQuestionSoundRef.current = now;
       } catch (error) {}
   }
   useEffect(() => () => { roundLoadRef.current?.abort(); }, []);
@@ -1379,6 +1384,7 @@ function MaydanBeta({ api } = {}) {
     roundLoadRef.current?.abort();
     roundLoadRef.current = null;
     setRoundLoading(null);
+    playSfx("start");
     toast("بدأت الجولة؛ الوسائط غير الجاهزة ستُحمّل عند فتحها");
   }
   function haptic(kind) {
@@ -1802,6 +1808,7 @@ function MaydanBeta({ api } = {}) {
       ),
       setLastAction(savedActive.lastAction || null),
       (deadlineRef.current = null),
+      (timeLeftRef.current = Number.isFinite(savedActive.timeLeft) ? savedActive.timeLeft : savedActive.timerLength),
       (timeoutPlayedRef.current = savedActive.timeLeft <= 0),
       setScreen(savedActive.screen === "question" && savedActive.current ? "question" : "board"),
       playSfx("start"));
