@@ -35,7 +35,12 @@
     "db:migrate": "wrangler d1 migrations apply maydan-accounts --remote",
     "db:migrate:local": "wrangler d1 migrations apply maydan-accounts --local",
     "art:alpha": "node scripts/art-alpha.mjs",
-    "art:check": "node scripts/art-alpha.mjs --check"
+    "art:check": "node scripts/art-alpha.mjs --check",
+    "audio:fetch": "node scripts/audio/sources.mjs --fetch",
+    "audio:screen": "node scripts/audio/screen.mjs",
+    "audio:build": "node scripts/audio/build.mjs && node scripts/audio/music.mjs && node scripts/audio/credits.mjs",
+    "audio:audition": "node scripts/audio/audition.mjs",
+    "audio:check": "node scripts/audio/sources.mjs --check && node scripts/audio/build.mjs --check && node scripts/audio/music.mjs --check && node scripts/audio/credits.mjs --check"
   },
   "engines": {
     "node": ">=22"

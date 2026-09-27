@@ -1,10 +1,11 @@
 import { SAMPLE_BANK, SAMPLE_RATE } from './sample-bank.js';
 import { MUSIC_BANK } from './music-bank.js';
 
-// Maydan's own cue bank: sixteen synthesized, mastered AAC files (scripts/audio/build.mjs)
-// in one wooden/glass palette tuned to D so they sit inside the music. They are fetched
-// once (the service worker precaches them, the iOS shell bundles them) and decoded on
-// the first gesture; each public cue name maps to exactly one mastered file.
+// Maydan's cue bank: sixteen mastered AAC files (scripts/audio/build.mjs), in-house
+// designs and cues from licensed libraries alike, all tuned to D so they sit inside the
+// music (assets/audio/maydan-v3/provenance.json records where each came from). They are
+// fetched once (the service worker precaches them, the iOS shell bundles them) and decoded
+// on the first gesture; each public cue name maps to exactly one mastered file.
 export const CUE_SAMPLES = {
   click: 'click', pop: 'pop', tick: 'tick', tickFast: 'tickFast', correct: 'correct', wrong: 'wrong',
   buzzer: 'buzzer', whoosh: 'whoosh', fanfare: 'win', explosion: 'explosion', drumroll: 'drumroll',
