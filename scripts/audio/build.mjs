@@ -14,6 +14,8 @@ import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 import { Stereo, midi, secs, writeWav, decodeWav24, impulseResponse, reverbFile, master, encodeAac, applyEnv, filter, noise, sweep, perc } from './engine.mjs';
 import { kalimba, marimba, bell, glass, oud, pad, dum, tak, shaker, whoosh, thump, woodTick, buzz, place, padStereo, m } from './voices.mjs';
+import { prepareSource, sourceProvenance } from './prepare.mjs';
+import { loadRegistry } from './sources.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
 const mastersDir = path.join(root, 'assets/audio/maydan-v3');
@@ -27,11 +29,13 @@ const f = (name, oct) => midi(m(name, oct));
 
 // المفتاح المشترك للمنصة: ري (D). الموسيقى في مقام كرد/نهاوند على ري، فتنسجم المؤثرات معها.
 // كل تصميم يعيد Stereo جافًا؛ room = غرفة خشبية قصيرة، hall = قاعة ناعمة للنهايات.
+// مؤثر له `source` يُصنَع من ملف مرخَّص من sources.json (اختيار screen.mjs المسجَّل في
+// screening.json) ويُترك تصميمه الداخلي كأساس للمقارنة؛ الصدى لا يُضاف للمصادر (تحمل ذيولها).
 export const CUES = {
   click: { file: 'click', room: 'room', wetDb: -20, peak: -10, design: () => new Stereo(0.25)
     .mix(marimba(f('D', 6), 0.14, { soft: 0.7 }), 0, { gain: 0.8 })
     .mix(woodTick(3300, 0.02, { seed: 63 }), 0, { gain: 0.25 }) },
-  pop: { file: 'pop', room: 'room', wetDb: -15, peak: -8, design: () => new Stereo(0.5)
+  pop: { file: 'pop', room: 'room', wetDb: -15, peak: -8, source: { id: 'dustyroom:DM-CGS-22' }, design: () => new Stereo(0.5)
     .mix(kalimba(f('A', 5), 0.42), 0, { gain: 0.9, pan: 0.08 }) },
   tick: { file: 'tick', room: null, peak: -15, design: () => new Stereo(0.09)
     .mix(woodTick(1900, 0.05), 0, { gain: 1 }) },
@@ -48,24 +52,24 @@ export const CUES = {
     st.mix(glass(f('D', 6), 0.5), 0.22, { gain: 0.35, pan: -0.2 }).mix(bell(f('A', 5), 1.2, { tau: 0.6 }), 0.33, { gain: 0.3 });
     return st;
   } },
-  correct: { file: 'correct', room: 'room', wetDb: -13, peak: -6, design: () => new Stereo(0.9)
+  correct: { file: 'correct', room: 'room', wetDb: -13, peak: -6, source: { id: 'dustyroom:DM-CGS-46', pitchSemitones: -1 }, design: () => new Stereo(0.9)
     .mix(kalimba(f('A', 4), 0.7), 0, { gain: 0.8, pan: -0.15 })
     .mix(kalimba(f('D', 5), 0.75), 0.09, { gain: 0.9, pan: 0.15 })
     .mix(glass(f('D', 6), 0.45), 0.1, { gain: 0.3, pan: 0.05 }) },
-  wrong: { file: 'wrong', room: 'room', wetDb: -15, peak: -7, design: () => new Stereo(0.75)
+  wrong: { file: 'wrong', room: 'room', wetDb: -15, peak: -7, source: { id: 'dustyroom:DM-CGS-03', pitchSemitones: -1 }, design: () => new Stereo(0.75)
     .mix(marimba(f('F', 3), 0.55, { soft: 0.75 }), 0, { gain: 0.9 })
     .mix(marimba(f('E', 3), 0.6, { soft: 0.8 }), 0.12, { gain: 0.85 })
     .mix(thump(0.3, { f0: 90, f1: 45 }), 0.12, { gain: 0.25 }) },
-  buzzer: { file: 'buzzer', room: 'room', wetDb: -17, peak: -6, design: () => new Stereo(0.8)
+  buzzer: { file: 'buzzer', room: 'room', wetDb: -17, peak: -6, source: { id: 'dustyroom:DM-CGS-27', pitchSemitones: 2 }, design: () => new Stereo(0.8)
     .mix(buzz(112, 0.52), 0, { gain: 0.55 })
     .mix(thump(0.35, { f0: 120, f1: 40 }), 0, { gain: 0.4 })
     .mix(marimba(f('D', 3), 0.5, { soft: 0.6 }), 0, { gain: 0.35 }) },
-  timeout: { file: 'timeout', room: 'hall', wetDb: -13, peak: -6, design: () => {
+  timeout: { file: 'timeout', room: 'hall', wetDb: -13, peak: -6, source: { id: 'dustyroom:DM-CGS-23', pitchSemitones: -2 }, design: () => {
     const st = new Stereo(1.3);
     [[f('G', 4), 0], [f('F', 4), 0.15], [f('D', 4), 0.3]].forEach(([fr, at], i) => st.mix(marimba(fr, 0.7, { soft: 0.5 }), at, { gain: 0.85, pan: -0.2 + 0.2 * i }));
     return st.mix(dum(0.5), 0.3, { gain: 0.55 });
   } },
-  whoosh: { file: 'whoosh', room: 'room', wetDb: -16, peak: -12, design: () => new Stereo(0.55)
+  whoosh: { file: 'whoosh', room: 'room', wetDb: -16, peak: -12, source: { id: 'dustyroom:DM-CGS-08' }, design: () => new Stereo(0.55)
     .mix(whoosh(0.42, { from: 300, to: 2800, shape: 0.6 }), 0, { gain: 1, pan: -0.25 })
     .mix(whoosh(0.4, { from: 420, to: 3600, seed: 53, shape: 0.5 }), 0.03, { gain: 0.6, pan: 0.3 }) },
   reveal: { file: 'reveal', room: 'hall', wetDb: -10, peak: -6, design: () => {
@@ -92,7 +96,7 @@ export const CUES = {
     st.mix(padStereo(pad(f('D', 3), 1.3, { a: 0.5, r: 1.2, cutoff: 800 })), 0.55, { gain: 0.7 });
     return st;
   } },
-  explosion: { file: 'explosion', room: 'hall', wetDb: -12, peak: -2.5, design: () => {
+  explosion: { file: 'explosion', room: 'hall', wetDb: -12, peak: -2.5, source: { id: 'mixkit:1519', trim: [0.291, 1.623] }, design: () => {
     const st = new Stereo(1.6);
     st.mix(thump(0.9, { f0: 170, f1: 30 }), 0, { gain: 1 });
     const burst = noise(secs(0.9), { seed: 71, color: 'pink' });
@@ -122,23 +126,44 @@ export const CUES = {
 const ROOMS = { room: { seconds: 0.9, damp: 4200, predelay: 0.008, seed: 11 }, hall: { seconds: 2.1, damp: 3400, predelay: 0.02, seed: 13 } };
 const sha = (buf) => createHash('sha256').update(buf).digest('hex');
 
+// مؤثر من تصميم داخلي (design) أو من ملف مصدر مرخَّص (source، انظر prepare.mjs)؛ الباقي واحد.
 async function renderCue(id, cue, irs) {
-  const dry = cue.design().fade(0.001, 0.015);
+  let prepared = null;
+  if (cue.source) prepared = await prepareSource(cue.source, { role: id, workDir, name: cue.file });
+  const dry = (prepared ? prepared.st : cue.design()).fade(0.001, 0.015);
+  const room = prepared ? (cue.source.room ?? null) : cue.room;
   const dryWav = path.join(workDir, `${cue.file}.dry.wav`);
   await writeWav(dryWav, dry.normalize(-6));
   let stage = dryWav;
-  if (cue.room) { stage = path.join(workDir, `${cue.file}.rev.wav`); await reverbFile(dryWav, irs[cue.room], stage, { wetDb: cue.wetDb }); }
+  if (room) { stage = path.join(workDir, `${cue.file}.rev.wav`); await reverbFile(dryWav, irs[room], stage, { wetDb: cue.source?.wetDb ?? cue.wetDb }); }
   const masterWav = path.join(mastersDir, `${cue.file}.wav`);
   const measured = await master(stage, masterWav, { truePeakDb: cue.peak, highpass: 28 });
   // ffmpeg يكتب ترويسات WAV موسّعة؛ يُعاد الماستر بترويسة المحرّك القياسية (44 بايت) كي
   // تكون بيانات PCM هي كل ما بعدها وتتطابق البصمة مع فحص الاختبارات.
   await writeWav(masterWav, decodeWav24(await readFile(masterWav)));
-  return { masterWav, measured, seconds: dry.seconds };
+  return { masterWav, measured, seconds: dry.seconds, prepared, room };
+}
+// قرار الفرز (screening.json) يُنسخ إلى provenance ليبقى الاختيار قابلًا للمراجعة.
+async function screeningFor(id) {
+  try { const s = JSON.parse(await readFile(path.join(mastersDir, 'screening.json'), 'utf8')); return s.selection?.[id] || null; } catch { return null; }
 }
 
 const provenanceFile = path.join(mastersDir, 'provenance.json');
 const hashedName = (base, encoded) => `${base}-${sha(encoded).slice(0, 6)}.m4a`;
 const rel = (file) => path.relative(root, file).split(path.sep).join('/');
+// كل مؤثر من مصدر خارجي يجب أن يشير إلى مزوّد مسجَّل ومُتحقَّق منه وملف رخصة موجود.
+export async function checkSources(items) {
+  const reg = await loadRegistry();
+  for (const [id, info] of Object.entries(items)) {
+    if (!info.source) continue;
+    const provider = reg.providers[info.source.provider];
+    if (!provider) throw new Error(`${id}: source provider ${info.source.provider} is not in sources.json`);
+    if (provider.verified === false) throw new Error(`${id}: provider ${info.source.provider} is not verified`);
+    if (!reg.candidates.some((c) => c.id === info.source.id)) throw new Error(`${id}: source ${info.source.id} is not a registered candidate`);
+    await readFile(path.join(mastersDir, info.source.licenseFile)).catch(() => { throw new Error(`${id}: license file ${info.source.licenseFile} missing`); });
+    if (provider.attribution && !info.source.creditLine) throw new Error(`${id}: attribution source without a credit line`);
+  }
+}
 
 async function main() {
   const existing = (check || only) ? JSON.parse(await readFile(provenanceFile, 'utf8')) : null;
@@ -153,14 +178,18 @@ async function main() {
       info = existing?.cues?.[id];
       if (!info) throw new Error(`provenance lacks ${id}`);
     } else {
-      const { masterWav, measured, seconds } = await renderCue(id, cue, irs);
+      const { masterWav, measured, seconds, prepared, room } = await renderCue(id, cue, irs);
       const encoded = await encodeAac(masterWav, path.join(workDir, `${cue.file}.m4a`), { bitrate: '160k' });
       const file = `audio/${hashedName(cue.file, encoded)}`;
       await writeFile(path.join(root, 'public', file), encoded);
       // بصمة الماستر على بيانات PCM وحدها (ترويسة WAV التي يكتبها المحرّك 44 بايت دائمًا).
       const pcm = (await readFile(masterWav)).subarray(44);
-      info = { file, master: rel(masterWav), seconds: Number(seconds.toFixed(4)), frames: pcm.length / 6, room: cue.room, targetTruePeakDb: cue.peak,
-        measured, masterSha256: sha(pcm), encodedSha256: sha(encoded), encodedBytes: encoded.length };
+      const screening = await screeningFor(id);
+      info = { file, master: rel(masterWav), seconds: Number(seconds.toFixed(4)), frames: pcm.length / 6, room, targetTruePeakDb: cue.peak,
+        measured, masterSha256: sha(pcm), encodedSha256: sha(encoded), encodedBytes: encoded.length,
+        origin: prepared ? 'sourced' : 'in-house',
+        ...(prepared ? { source: sourceProvenance(prepared, { screening: screening ? { total: screening.bestScore, baseline: screening.baseline, decision: screening.decision } : null }) }
+          : { decision: { kept: 'in-house', reason: screening ? `best challenger ${screening.best || 'none'} scored ${screening.bestScore ?? '-'} vs ${screening.baseline} (needs ≥ 70 and ≥ baseline + 5)` : 'no screening on record' } }) };
       console.log(`${id.padEnd(10)} ${String(info.seconds).padStart(6)}s  TP ${String(measured.truePeak).padStart(6)} dBTP  RMSpk ${String(measured.rmsPeak?.toFixed(1)).padStart(6)}  ${(encoded.length / 1024).toFixed(1)} KB`);
     }
     const encoded = await readFile(path.join(root, 'public', info.file));
@@ -170,14 +199,15 @@ async function main() {
     provenance.cues[id] = info;
   }
   const orphans = (await readdir(outDir)).filter((name) => name.endsWith('.m4a') && !referenced.has(name));
-  const text = '// Generated by scripts/audio/build.mjs — Maydan\'s cue bank.\n'
+  const text = '// Generated by scripts/audio/build.mjs — Maydan\'s cue bank (in-house synthesis and licensed samples; see assets/audio/maydan-v3/provenance.json).\n'
     + '// Masters: assets/audio/maydan-v3/*.wav (48 kHz stereo PCM24); files: public/audio (AAC 160 kb/s), named after their content hash.\n'
     + '// sha256 covers the encoded file and masterSha256 the PCM master it was encoded from.\n'
     + `export const SAMPLE_RATE = 48000;\nexport const SAMPLE_BANK = ${JSON.stringify(bank, null, 2)};\n`;
   if (check) {
     if (orphans.length) throw new Error(`public/audio holds files no cue references: ${orphans.join(', ')}`);
     if (await readFile(manifestFile, 'utf8') !== text) throw new Error('sample-bank.js differs from public/audio; run node scripts/audio/build.mjs');
-    console.log(`Audio bank verified: ${Object.keys(bank).length} cues`);
+    await checkSources(provenance.cues);
+    console.log(`Audio bank verified: ${Object.keys(bank).length} cues (${Object.values(provenance.cues).filter((c) => c.source).length} from licensed sources)`);
     return;
   }
   for (const name of orphans) await rm(path.join(outDir, name));
@@ -187,4 +217,4 @@ async function main() {
   const total = Object.values(bank).reduce((s, e) => s + e.bytes, 0);
   console.log(`Audio bank: ${Object.keys(bank).length} cues, ${(total / 1024).toFixed(0)} KB of AAC in public/audio${orphans.length ? `; removed ${orphans.length} stale file(s)` : ''}`);
 }
-main().catch((error) => { console.error(error.stack || error.message); process.exit(1); });
+if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) main().catch((error) => { console.error(error.stack || error.message); process.exit(1); });

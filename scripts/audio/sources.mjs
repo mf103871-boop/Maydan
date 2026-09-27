@@ -95,7 +95,9 @@ export function zipRead(buf, entry) {
 export function probe(file) {
   const out = spawnSync(ffmpeg, ['-hide_banner', '-i', file], { encoding: 'utf8' });
   const text = out.stderr || '';
-  const stream = /Audio: ([a-z0-9_]+)[^\n]*?(\d+) Hz, ([a-z0-9.()]+)[^\n]*?(?:,\s*(\d+) kb\/s)?/i.exec(text);
+  const line = (text.split('\n').find((l) => /Audio: /.test(l)) || '');
+  const stream = /Audio: ([a-z0-9_]+)[^\n]*?(\d+) Hz, ([a-z0-9.()]+)/i.exec(line);
+  const kb = /(\d+) kb\/s/.exec(line);
   const dur = /Duration: (\d+):(\d+):(\d+\.\d+)/.exec(text);
   const codec = stream?.[1] || null;
   const depth = /pcm_s(\d+)/.exec(codec || '')?.[1] || (/pcm_f32/.test(codec || '') ? '32f' : null);
@@ -105,7 +107,7 @@ export function probe(file) {
     bitDepth: depth ? (depth === '32f' ? 32 : Number(depth)) : null,
     channels: /stereo/.test(layout) ? 2 : /mono/.test(layout) ? 1 : Number(/(\d+) channels/.exec(layout)?.[1]) || null,
     seconds: dur ? Number((Number(dur[1]) * 3600 + Number(dur[2]) * 60 + Number(dur[3])).toFixed(3)) : null,
-    kbps: stream?.[4] ? Number(stream[4]) : null,
+    kbps: kb ? Number(kb[1]) : null,
     lossy: !!codec && !/^pcm_|^flac|^alac/.test(codec),
   };
 }

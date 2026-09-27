@@ -339,3 +339,18 @@ export async function encodeAac(inWav, outFile, { bitrate = '128k' } = {}) {
   await ff(['-i', inWav, '-vn', '-c:a', 'aac', '-b:a', bitrate, '-ar', String(SR), '-map_metadata', '-1', '-fflags', '+bitexact', '-flags:a', '+bitexact', '-movflags', '+faststart', outFile]);
   return readFile(outFile);
 }
+// ── ملفات مصدر خارجية: تحويل إلى صيغة الماستر، وإزاحة طبقة ───────────────────────────
+// تحويل أي ملف (WAV/OGG/MP3…) إلى 48 kHz ستيريو PCM24 بمُعيد العيّنة soxr؛ start/duration بالثواني.
+export async function convertFile(input, outWav, { rate = SR, channels = 2, start = null, duration = null } = {}) {
+  const args = [];
+  if (start !== null) args.push('-ss', String(start));
+  args.push('-i', input);
+  if (duration !== null) args.push('-t', String(duration));
+  await ff([...args, '-vn', '-af', `aresample=${rate}:resampler=soxr:precision=28:dither_method=triangular_hp`, '-ac', String(channels), '-c:a', 'pcm_s24le', '-ar', String(rate), '-map_metadata', '-1', '-fflags', '+bitexact', outWav]);
+  return outWav;
+}
+// إزاحة الطبقة بأنصاف النغمات دون تغيير المدة (rubberband)؛ transients: crisp للمؤثرات، mixed للموسيقى.
+export async function pitchShiftFile(inWav, outWav, semitones, { transients = 'crisp' } = {}) {
+  await ff(['-i', inWav, '-af', `rubberband=pitch=${Math.pow(2, semitones / 12).toFixed(6)}:transients=${transients}:pitchq=quality:channels=together`, '-c:a', 'pcm_s24le', '-ar', String(SR), '-map_metadata', '-1', '-fflags', '+bitexact', outWav]);
+  return outWav;
+}
