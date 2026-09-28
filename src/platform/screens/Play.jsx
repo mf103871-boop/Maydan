@@ -129,7 +129,7 @@ export function Play({ id }) {
         <Screen dir={getDirection()} className="stack" style={{ '--game-accent': game.accent }} aria-label={`إعداد ${game.name}`}>
           <TopBar title="من يلعب؟" eyebrow={game.name} />
           {game.players.mode === 'both' && (
-            <Segment label="نمط اللعب" accent value={mode} onChange={(v) => { setMode(v); platform.sound.play('click'); }} options={[{ value: 'individual', label: 'فردي' }, { value: 'teams', label: 'فرق' }]} />
+            <Segment label="نمط اللعب" accent value={mode} onChange={(v) => setMode(v)} options={[{ value: 'individual', label: 'فردي' }, { value: 'teams', label: 'فرق' }]} />
           )}
           {mode === 'teams' ? (
             <TeamsSetup min={Math.max(2, game.players.mode === 'teams' ? game.players.min : 2)} max={Math.min(4, game.players.mode === 'teams' ? game.players.max : 4)} api={api} onStart={start}>

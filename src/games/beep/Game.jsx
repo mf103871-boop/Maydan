@@ -3,7 +3,7 @@ import { Avatar, GameArtwork } from '../../shared/brand/art.jsx';
 // الحركة: أختام ووميض من shared/fx (طبقات ثابتة في body)، والرسوم على حوامل clay-stage (brand.css).
 import React, { useEffect, useMemo, useReducer, useRef, useState } from 'react';
 import { Screen, Button, Podium, Segment, Card } from '../../shared/ui/components.jsx';
-import { Timer, useTimer } from '../../shared/ui/index.js';
+import { Timer, ResumeCountdown, useTimer, useTimerCues } from '../../shared/ui/index.js';
 import { flashScreen, stampScreen, wait } from '../../shared/fx/index.js';
 import { trimSeen } from '../../shared/lib/noRepeat.js';
 import { mulberry32, randomSeed } from '../../shared/lib/rng.js';
@@ -22,7 +22,7 @@ const verdictFresh = (v) => !!v && Date.now() - v.at < 1200;
 export function SetupOptions({ storage, api }) {
   const [opts, setOpts] = useState(() => normalizeOptions(storage.get(OPTIONS_KEY)));
   const [resume] = useState(() => loadSession(storage, restoreSession));
-  const update = (patch) => { const next = normalizeOptions({ ...opts, ...patch }); setOpts(next); storage.set(OPTIONS_KEY, next); api.sound.play('click'); };
+  const update = (patch) => { const next = normalizeOptions({ ...opts, ...patch }); setOpts(next); storage.set(OPTIONS_KEY, next); };
   return (
     <>
     {resume && <Card className="stack resume-card">
@@ -59,7 +59,8 @@ function ThreeRound({ state, dispatch, api, source, timeLeftRef, resumeLeft }) {
   // طلب مستأنف يبدأ من الوقت المحفوظ مرة واحدة.
   useEffect(() => { if (state.phase === 'prompt') { timer.reset(resumeLeft.current ?? state.seconds); resumeLeft.current = null; timer.start(); } }, [state.phase, state.prompt && state.prompt.id]); // eslint-disable-line react-hooks/exhaustive-deps
   useEffect(() => { timeLeftRef.current = timer.left; }, [timer.left, timeLeftRef]);
-  useEffect(() => { if (state.phase === 'prompt' && timer.left <= state.seconds && timer.running) api.sound.play(timer.left <= 2 ? 'tickFast' : 'tick'); }, [timer.left]); // eslint-disable-line react-hooks/exhaustive-deps
+  // صوت لكل ثانية من الثانية الأولى (tickFast في الأخيرتَين) من مصدر واحد؛ الحلقة بصرية فقط.
+  useTimerCues(timer, api, { last: Infinity, fastBelow: 2 });
 
   if (state.phase === 'intro') {
     return (
@@ -77,7 +78,7 @@ function ThreeRound({ state, dispatch, api, source, timeLeftRef, resumeLeft }) {
     return (
       <>
         <div className="beep-turn" key={state.turn} style={{ '--p-color': player.color }}><span className="avatar clay-stage"><span className="clay-lift"><Avatar player={player} /></span></span><div><b>{player.name}</b><small>قل ثلاثة بصوت عالٍ</small></div></div>
-        <Timer timer={timer} api={api} accent="#FF4D4D" />
+        <Timer timer={timer} accent="#FF4D4D" />
         <div className="beep-prompt" key={state.prompt.id}>{state.prompt.text}<small>{state.prompt.category}</small></div>
         <Button variant="accent" size="lg" full onClick={() => { timer.pause(); api.sound.play('pop'); dispatch({ type: 'FINISH' }); }}>خلصت! ✋</Button>
       </>
@@ -115,7 +116,9 @@ function BombRound({ state, dispatch, api, source, random, timeLeftRef, resumeLe
   // كل قنبلة جديدة لها مدة عشوائية جديدة: نصفّر المؤقت عليها ثم نشغّله (القنبلة تستمر عبر التمرير لأن الطور يبقى prompt).
   // قنبلة مستأنفة تكمل من الوقت المحفوظ لا من فتيل جديد.
   useEffect(() => { if (state.phase === 'prompt') { timer.reset(resumeLeft.current ?? state.bombSeconds); resumeLeft.current = null; timer.start(); } }, [state.phase, state.round]); // eslint-disable-line react-hooks/exhaustive-deps
-  useEffect(() => { setHot(timer.running && timer.left <= 8); if (timer.running) api.sound.play(timer.left <= 8 ? 'tickFast' : 'tick'); }, [timer.left]); // eslint-disable-line react-hooks/exhaustive-deps
+  useEffect(() => { setHot(timer.running && timer.left <= 8); }, [timer.left, timer.running]);
+  // الفتيل يُسمع كل ثانية ويتسارع تحت 8 ثوانٍ؛ عدّ الاستئناف 3-2-1 من المصدر نفسه.
+  useTimerCues(timer, api, { last: Infinity, fastBelow: 8 });
   useEffect(() => { timeLeftRef.current = timer.left; }, [timer.left, timeLeftRef]);
 
   if (state.phase === 'intro') {
@@ -134,7 +137,7 @@ function BombRound({ state, dispatch, api, source, random, timeLeftRef, resumeLe
       <>
         <div className="beep-turn" key={state.turn} style={{ '--p-color': player.color }}><span className="avatar clay-stage"><span className="clay-lift"><Avatar player={player} /></span></span><div><b>{player.name}</b><small>أجب ثم مرّر بسرعة</small></div></div>
         <div className={`beep-bomb clay-stage ${hot ? 'is-hot' : ''}`} aria-hidden="true"><span className="clay-lift"><GameArtwork game="beep" /></span></div>
-        {timer.resuming !== null && <Timer timer={timer} api={api} size={1} />}
+        <ResumeCountdown resuming={timer.resuming} />
         <div className="beep-prompt" key={state.prompt.id}>{state.prompt.text}<small>{state.prompt.category}</small></div>
         <Button variant="accent" size="lg" full onClick={() => { api.sound.play('pass'); api.haptics.vibrate('light'); dispatch({ type: 'PASS', prompt: source.next(...bombPromptArgs(state.history.length)) }); }}>أجبت — مرّر الجوال ⬅</Button>
         <PlayersStrip state={state} />

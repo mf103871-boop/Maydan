@@ -6,9 +6,10 @@ import { createSound } from '../src/shared/fx/sound.js';
 import { SAMPLE_BANK } from '../src/shared/fx/sample-bank.js';
 import { MUSIC_BANK } from '../src/shared/fx/music-bank.js';
 
-function audioEnvironment(t, { state = 'running', resume } = {}) {
+function audioEnvironment(t, { state = 'running', resume, decode = 'immediate', missing = [] } = {}) {
   const instances = [];
   const listeners = new Map();
+  const decodes = [];
   const param = () => ({ value: 0, setValueAtTime(value) { this.value = value; }, exponentialRampToValueAtTime() {}, setTargetAtTime(value) { this.value = value; } });
   class Context {
     constructor() { this.state = state; this.currentTime = 4; this.sampleRate = 8000; this.nodes = []; this.sources = []; this.buffers = []; this.destination = {}; instances.push(this); }
@@ -25,7 +26,12 @@ function audioEnvironment(t, { state = 'running', resume } = {}) {
     async suspend() { this.state = 'suspended'; }
     async close() { this.state = 'closed'; }
     // Decoding yields a buffer whose length identifies the cue (see fetch below).
-    decodeAudioData(data) { this.decoded = (this.decoded || 0) + 1; return Promise.resolve(this.createBuffer(2, data.byteLength, 48000)); }
+    decodeAudioData(data) {
+      this.decoded = (this.decoded || 0) + 1;
+      const buffer = this.createBuffer(2, data.byteLength, 48000);
+      if (decode !== 'manual') return Promise.resolve(buffer);
+      return new Promise((resolve) => { decodes.push({ frames: data.byteLength, resolve: () => resolve(buffer) }); });
+    }
   }
   const oldWindow = globalThis.window, oldDocument = globalThis.document, oldFetch = globalThis.fetch;
   const fetched = [];
@@ -35,15 +41,43 @@ function audioEnvironment(t, { state = 'running', resume } = {}) {
     const id = Object.keys(SAMPLE_BANK).find((key) => SAMPLE_BANK[key].url === path);
     const track = Object.keys(MUSIC_BANK).find((key) => MUSIC_BANK[key].url === path);
     const entry = id ? SAMPLE_BANK[id] : track ? MUSIC_BANK[track] : null;
-    if (!entry) return new Response('missing', { status: 404 });
+    if (!entry || missing.includes(id)) return new Response('missing', { status: 404 });
     return new Response(new Uint8Array(entry.frames), { status: 200, headers: { 'content-type': 'audio/mp4' } });
   };
   const document = { hidden: false, addEventListener(name, fn) { if (!listeners.has(name)) listeners.set(name, new Set()); listeners.get(name).add(fn); }, removeEventListener(name, fn) { listeners.get(name)?.delete(fn); } };
   globalThis.window = { AudioContext: Context };
   globalThis.document = document;
   t.after(() => { globalThis.window = oldWindow; globalThis.document = oldDocument; globalThis.fetch = oldFetch; });
-  return { instances, listeners, document, fetched, dispatch(name) { for (const fn of listeners.get(name) || []) fn(); } };
+  return {
+    instances, listeners, document, fetched, decodes,
+    dispatch(name, event = {}) { for (const fn of listeners.get(name) || []) fn(event); },
+    // Resolve every pending decode (manual mode), or only the cues whose frame count matches.
+    decodeAll(frames = null) { for (const d of decodes.splice(0)) { if (frames === null || d.frames === frames) d.resolve(); else decodes.push(d); } },
+    setState(c, next) { c.state = next; if (typeof c.onstatechange === 'function') c.onstatechange(); },
+  };
 }
+// A minimal element for the tap delegate: tag, attributes, parent; matches() understands the
+// selectors the bus uses (tags, [attr], [attr="v"], :disabled) and closest() walks up.
+function element(tag, attrs = {}, parent = null) {
+  const el = { tag, attrs, parent, dataset: Object.fromEntries(Object.entries(attrs).filter(([k]) => k.startsWith('data-')).map(([k, v]) => [k.slice(5).replace(/-([a-z])/g, (_, c) => c.toUpperCase()), v])) };
+  const simple = (sel) => {
+    sel = sel.trim();
+    if (sel === ':disabled') return !!attrs.disabled;
+    const m = /^([a-z]*)((?:\[[^\]]+\])*)$/.exec(sel);
+    if (!m) return false;
+    if (m[1] && m[1] !== tag) return false;
+    for (const part of m[2].match(/\[[^\]]+\]/g) || []) {
+      const [, name, , value] = /^\[([a-z-]+)(="([^"]*)")?\]$/.exec(part);
+      if (!(name in attrs)) return false;
+      if (value !== undefined && String(attrs[name]) !== value) return false;
+    }
+    return true;
+  };
+  el.matches = (selector) => selector.split(',').some(simple);
+  el.closest = (selector) => { for (let node = el; node; node = node.parent) if (node.matches(selector)) return node; return null; };
+  return el;
+}
+const tick = () => new Promise((resolve) => setTimeout(resolve, 2));
 const flush = () => new Promise((resolve) => setImmediate(resolve));
 const settle = async () => { await flush(); await flush(); await flush(); };
 // The PCM payload of a RIFF/WAVE file (the manifests hash the data chunk only).
@@ -66,13 +100,14 @@ test('audio is lazy, respects saved mute, and attaches/disposes without listener
   sound.attach(); sound.attach();
   assert.equal(env.listeners.get('pointerdown').size, 1);
   env.dispatch('pointerdown'); sound.play('correct');
-  assert.equal(env.instances.length, 0, 'muted: no context');
-  await flush();
-  assert.equal(env.fetched.length, Object.keys(SAMPLE_BANK).length, 'the encoded cues are prefetched on attach without a context');
+  assert.equal(env.instances.length, 1, 'the context exists from attach (decoding needs no gesture) even while muted');
+  await settle();
+  assert.equal(env.instances[0].sources.length, 0, 'muted: nothing sounds');
+  assert.equal(env.fetched.length, Object.keys(SAMPLE_BANK).length, 'the encoded cues are prefetched on attach');
+  assert.equal(env.instances[0].decoded, Object.keys(SAMPLE_BANK).length, 'and decoded before any gesture or unmute');
   sound.enable(true); sound.play('correct');
   assert.equal(env.instances.length, 1);
-  await flush(); await flush();
-  assert.equal(env.instances[0].sources.length, 1, 'the first cue plays once the bank has decoded');
+  assert.equal(env.instances[0].sources.length, 1, 'unmuting plays its confirmation cue at once: the bank is already decoded');
   sound.dispose(); sound.dispose();
   assert.equal(env.instances[0].state, 'closed');
   assert.ok([...env.listeners.values()].every((set) => !set.size));
@@ -153,7 +188,22 @@ test('resume rejection is harmless and can be retried by the next gesture', asyn
   const sound = createSound(); sound.attach(); sound.play('correct'); await flush();
   assert.equal(env.instances[0].sources.length, 0);
   reject = false; env.dispatch('pointerdown'); await flush(); await flush();
-  sound.play('reveal'); await flush(); assert.equal(env.instances[0].sources.length, 1);
+  assert.equal(env.instances[0].sources.length, 1, 'the cue that waited plays once the gesture unlocks the context (still inside its late window)');
+  sound.play('reveal'); await flush(); assert.equal(env.instances[0].sources.length, 2);
+  sound.dispose();
+});
+
+test('a feedback cue that waited too long for the unlock is dropped, a fresh one after it plays', async (t) => {
+  let now = 1000;
+  t.mock.method(Date, 'now', () => now);
+  const env = audioEnvironment(t, { state: 'suspended', resume: async () => { throw new Error('not allowed'); } });
+  const sound = createSound(); sound.attach(); await settle();
+  sound.play('correct'); await flush();
+  now += 2000;
+  env.setState(env.instances[0], 'running'); await settle();
+  assert.equal(env.instances[0].sources.length, 0, 'two seconds late: that moment has passed');
+  sound.play('correct');
+  assert.equal(env.instances[0].sources.length, 1, 'the dropped cue did not spend its cooldown');
   sound.dispose();
 });
 
@@ -295,7 +345,7 @@ test('background music: a screen request starts a loop on its own gain behind th
   assert.equal(c.sources.at(-1).stops.length, 1);
   assert.equal(sound.music.current, null);
   assert.equal(sound.music.wanted, null);
-  assert.equal(c.decoded, 2, 'each track decodes once per context');
+  assert.equal(c.decoded, Object.keys(SAMPLE_BANK).length + 2, 'each track decodes once per context, after the cue bank');
   sound.dispose();
 });
 
@@ -385,7 +435,7 @@ test('a track asked for while the page is hidden starts when the page returns', 
   env.document.hidden = true;
   sound.music.play('home');
   await settle();
-  assert.equal(env.instances.length, 0, 'nothing is built for a hidden page');
+  assert.equal(env.instances[0].sources.length, 0, 'nothing sounds for a hidden page');
   env.document.hidden = false; env.dispatch('visibilitychange');
   await settle();
   assert.equal(sound.music.current, 'home');
@@ -411,4 +461,160 @@ test('the shipped music matches its manifest and the manifest matches the master
   }
   assert.ok(total < 7 * 1024 * 1024, `the music stays under seven megabytes (${total} bytes)`);
   assert.ok(!readFileSync(new URL('../public/sw.js', import.meta.url), 'utf8').includes('audio/music/'), 'music is fetched on demand, never precached');
+});
+
+test('a tap on any control plays one click a tick later; data-sound picks the cue; none, disabled, busy and inert stay silent', async (t) => {
+  let now = 1000;
+  t.mock.method(Date, 'now', () => now);
+  const env = audioEnvironment(t);
+  const sound = await warm(createSound()); sound.attach();
+  const c = env.instances[0];
+  const page = element('div');
+  const button = element('button', {}, page);
+  const label = element('span', {}, button);
+  // Taps half a second apart: closer repeats are one gesture or a retrigger (tested elsewhere).
+  const tapOn = async (target) => { now += 500; env.dispatch('click', { target }); await tick(); };
+  env.dispatch('click', { target: label });
+  assert.equal(c.sources.length, 0, 'nothing sounds during the dispatch itself');
+  await tick();
+  assert.equal(c.sources.length, 1, 'a tap inside a button plays one click');
+  await tapOn(element('a', { href: '#/terms' }, page));
+  await tapOn(element('div', { role: 'button' }, page));
+  await tapOn(element('summary', {}, page));
+  await tapOn(element('input', { type: 'checkbox' }, page));
+  assert.equal(c.sources.length, 5, 'links, role=button, summary and checkboxes count as taps');
+  await tapOn(element('div', {}, page));
+  await tapOn(element('input', { type: 'range' }, page));
+  await tapOn(element('input', { type: 'text' }, page));
+  assert.equal(c.sources.length, 5, 'plain elements, sliders and text inputs are not taps');
+  await tapOn(element('button', { disabled: true }, page));
+  await tapOn(element('button', { 'aria-busy': 'true' }, page));
+  await tapOn(element('button', { 'aria-disabled': 'true' }, page));
+  await tapOn(element('button', {}, element('div', { inert: '' }, page)));
+  await tapOn(element('button', { 'data-sound': 'none' }, page));
+  await tapOn(element('button', {}, element('div', { 'data-sound': 'none' }, page)));
+  assert.equal(c.sources.length, 5, 'disabled, busy, inert and data-sound="none" (own or inherited) stay silent');
+  const clickBuffer = c.sources[0].buffer;
+  await tapOn(element('button', { 'data-sound': 'pop' }, page));
+  assert.equal(c.sources.length, 6);
+  assert.notEqual(c.sources[5].buffer, clickBuffer, 'data-sound chooses the cue');
+  await tapOn(element('button', { 'data-sound': 'no-such-cue' }, page));
+  assert.equal(c.sources[6].buffer, clickBuffer, 'an unknown data-sound falls back to click');
+  now += 500; env.dispatch('click', {}); await tick();
+  assert.equal(c.sources.length, 7, 'an event without a target is ignored');
+  sound.enable(false);
+  await tapOn(button);
+  assert.equal(c.sources.length, 7, 'muted: taps are silent');
+  sound.dispose();
+});
+
+test('one sound per tap: a handler cue during the click replaces the tap click, and one arriving soon after cuts it', async (t) => {
+  let now = 5000;
+  t.mock.method(Date, 'now', () => now);
+  const env = audioEnvironment(t);
+  const sound = await warm(createSound()); sound.attach();
+  const c = env.instances[0];
+  const button = element('button');
+  env.dispatch('click', { target: button });
+  sound.play('pop'); // the handler, in the same dispatch
+  await tick();
+  assert.equal(c.sources.length, 1, 'the tap click was superseded');
+  const popBuffer = c.sources[0].buffer;
+  now += 1000;
+  env.dispatch('click', { target: button }); await tick();
+  assert.equal(c.sources.length, 2, 'a tap without a handler cue plays its click');
+  const clickVoice = c.sources[1];
+  assert.notEqual(clickVoice.buffer, popBuffer);
+  now += 100;
+  sound.play('whoosh'); // an asynchronous handler cue (after a permission prompt, say)
+  assert.equal(c.sources.length, 3);
+  assert.equal(clickVoice.stops.length, 1, 'the click voice is cut when the real cue arrives within 180 ms');
+  now += 1000;
+  env.dispatch('click', { target: button }); await tick();
+  const lateClick = c.sources[3];
+  now += 500;
+  sound.play('whoosh');
+  assert.equal(lateClick.stops.length, 0, 'a cue half a second later is its own sound');
+  now += 1000;
+  env.dispatch('click', { target: button });
+  sound.play('click'); // a handler that plays the same click itself
+  await tick();
+  assert.equal(c.sources.filter((s) => s.buffer === clickVoice.buffer).length, 3, 'the handler click plays once and the tap click is superseded: still one sound');
+  sound.dispose();
+});
+
+test('decoding starts at attach, the requested cue plays as soon as its own file is decoded, and one missing file leaves the rest playable', async (t) => {
+  const env = audioEnvironment(t, { decode: 'manual', missing: ['pass'] });
+  const sound = createSound(); sound.attach();
+  await settle();
+  const c = env.instances[0];
+  assert.equal(env.decodes.length, Object.keys(SAMPLE_BANK).length - 1, 'every fetched cue is being decoded before any gesture');
+  sound.play('correct'); await settle();
+  assert.equal(c.sources.length, 0, 'not decoded yet');
+  env.decodeAll(SAMPLE_BANK.correct.frames); await settle();
+  assert.equal(c.sources.length, 1, 'the cue plays when its own file is decoded, without waiting for the bank');
+  assert.equal(sound.ready, false, 'the bank as a whole is not ready');
+  env.decodeAll(); await settle();
+  assert.equal(sound.ready, false, 'the missing file keeps the bank incomplete');
+  sound.play('click'); assert.equal(c.sources.length, 2, 'other cues play');
+  sound.play('pass'); await settle(); assert.equal(c.sources.length, 2, 'the missing cue stays silent, nothing else breaks');
+  sound.dispose();
+});
+
+test('user cues retrigger inside their cooldown, automatic cues are dropped, and a repeat within 40 ms is one gesture', async (t) => {
+  let now = 1000;
+  t.mock.method(Date, 'now', () => now);
+  const env = audioEnvironment(t);
+  const sound = await warm(createSound());
+  const c = env.instances[0];
+  sound.play('correct'); now += 60; sound.play('correct');
+  assert.equal(c.sources.length, 2, 'a second correct 60 ms later restarts the cue');
+  assert.equal(c.sources[0].stops.length, 1, 'and cuts the first');
+  now += 500;
+  sound.play('tick'); now += 60; sound.play('tick');
+  assert.equal(c.sources.length, 3, 'a tick inside its cooldown is dropped');
+  now += 500;
+  sound.play('drumroll'); now += 350; sound.play('drumroll');
+  assert.equal(c.sources.length, 5, 'the drumroll restarts on the next tap (cooldown 300 ms)');
+  now += 500;
+  sound.play('buzzer'); now += 20; sound.play('buzzer');
+  assert.equal(c.sources.length, 6, 'within 40 ms it is the same gesture, not a retrigger');
+  sound.dispose();
+});
+
+test('stop({ spare }) ends the previous screen\'s long cues but keeps the tap that changed the screen', async (t) => {
+  let now = 1000;
+  t.mock.method(Date, 'now', () => now);
+  const env = audioEnvironment(t);
+  const sound = await warm(createSound());
+  const c = env.instances[0];
+  sound.play('drumroll');
+  now += 500;
+  sound.play('whoosh');
+  sound.stop({ spare: 350 });
+  assert.equal(c.sources[0].stops.length, 1, 'the 500 ms-old drumroll is stopped');
+  assert.equal(c.sources[1].stops.length, 0, 'the whoosh of the navigating tap plays on');
+  sound.play('click');
+  assert.equal(c.sources.length, 3, 'new cues after the stop play');
+  sound.stop();
+  assert.ok(c.sources.every((s) => s.stops.length === 1), 'a full stop ends everything');
+  sound.dispose();
+});
+
+test('returning from the background asks the context to run again, and an interrupted context released by statechange plays the waiting cue', async (t) => {
+  let allow = true;
+  const env = audioEnvironment(t, { resume: async () => { if (!allow) throw new Error('not yet'); } });
+  const sound = await warm(createSound()); sound.attach();
+  const c = env.instances[0];
+  env.document.hidden = true; env.dispatch('visibilitychange'); await settle();
+  assert.equal(c.state, 'suspended');
+  env.document.hidden = false; env.dispatch('visibilitychange'); await settle();
+  assert.equal(c.state, 'running', 'no gesture needed on return where the engine allows it');
+  allow = false;
+  env.setState(c, 'interrupted');
+  sound.play('correct'); await settle();
+  assert.equal(c.sources.length, 0, 'waiting for the context');
+  env.setState(c, 'running'); await settle();
+  assert.equal(c.sources.length, 1, 'statechange to running releases the cue without a resume() promise');
+  sound.dispose();
 });

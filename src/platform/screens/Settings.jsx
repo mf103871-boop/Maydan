@@ -52,7 +52,8 @@ export function Settings() {
           <label htmlFor="music-volume"><b>مستوى الموسيقى</b><output htmlFor="music-volume">{Math.round(sound.music.volume * 100)}٪</output></label>
           <input id="music-volume" type="range" min="0" max="100" step="5" value={Math.round(sound.music.volume * 100)} disabled={!settings.soundOn || !settings.musicOn}
             aria-valuetext={`${Math.round(sound.music.volume * 100)} بالمئة`}
-            onChange={(event) => setSettings({ musicVolume: Number(event.target.value) / 100 })} />
+            onChange={(event) => setSettings({ musicVolume: Number(event.target.value) / 100 })}
+            onPointerUp={() => sound.play('pop')} onKeyUp={(event) => { if (event.key.startsWith('Arrow') || event.key === 'Home' || event.key === 'End') sound.play('pop'); }} />
         </div>
         <Toggle index={2} icon={<IconVibrate />} title="الاهتزاز" sub="عند الإجابات والمؤقت (حيث يتوفر)" checked={settings.hapticsOn} onChange={(v) => { setSettings({ hapticsOn: v }); if (v) haptics.vibrate('light'); }} />
         <Toggle index={3} icon={<IconMotion />} title="تقليل الحركة" sub="يعطّل الجسيمات والانتقالات مع بقاء الوظائف" checked={settings.reducedMotion} onChange={(v) => setSettings({ reducedMotion: v })} />

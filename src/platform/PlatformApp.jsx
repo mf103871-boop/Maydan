@@ -146,7 +146,8 @@ function Shell() {
     setBooted(true);
     if (!settings.splashSeen) setSettings({ splashSeen: true });
   }, [settings.splashSeen, setSettings]);
-  useEffect(() => () => { sound.stop(); confetti.clear(); }, [route.path, sound, confetti]);
+  // تغيير الشاشة يقطع المؤثرات المعلّقة لكن يُبقي صوت اللمسة التي انتقلت بنا (آخر 350 مللي ثانية).
+  useEffect(() => () => { sound.stop({ spare: 350 }); confetti.clear(); }, [route.path, sound, confetti]);
   // الموسيقى تتبع الشاشة: القوائم واللّمّة على مقطع «البيت»، وشاشة اللعب تختار مقطعها بنفسها
   // (الإعداد على «البيت»، ثم مقطع اللعبة عند البدء؛ انظر Play.jsx).
   useEffect(() => { if (route.name !== 'play') sound.music.play('home'); }, [route.name, sound]);

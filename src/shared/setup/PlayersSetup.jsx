@@ -14,7 +14,6 @@ export function PlayersSetup({ roster, setRoster, min = 2, max = 10, accent, onS
 
   const toggle = (id) => {
     setError('');
-    api && api.sound.play('click');
     setSelected((list) => (list.includes(id) ? list.filter((x) => x !== id) : list.length < max ? [...list, id] : list));
   };
   const submitAdd = () => {

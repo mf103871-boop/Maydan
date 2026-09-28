@@ -29,7 +29,7 @@ export function SetupOptions({ storage, api }) {
     const next = normalizeOptions({ ...opts, ...patch });
     // موضوع بلا أسئلة في النمط المختار تركيبة مسدودة، فلا نبقيه محددًا بعد تبديل النمط.
     next.categories = next.categories.filter((c) => categoryCount(c, next.style) > 0);
-    setOpts(next); storage.set(OPTIONS_KEY, next); api.setGameOptions?.(next); api.sound.play('click');
+    setOpts(next); storage.set(OPTIONS_KEY, next); api.setGameOptions?.(next);
   };
   useEffect(() => { api.setSetupValid?.(valid); return () => api.setSetupValid?.(true); }, [api, valid]);
   useEffect(() => { api.setGameOptions?.(opts); }, [api, opts]);
@@ -269,7 +269,7 @@ export function Game({ api, players, onExit, savedSession = null, gameOptions = 
   const act = (type, extra = {}) => {
     if (['SUBMIT_LIE', 'SUBMIT_TRUTH'].includes(type)) api.sound.play('pop');
     else if (['BEGIN', 'READY', 'START_WRITING', 'NEXT_ROUND'].includes(type)) api.sound.play('whoosh');
-    else if (type === 'VOTE') { api.sound.play('click'); api.haptics.vibrate('selection'); }
+    else if (type === 'VOTE') api.haptics.vibrate('selection');
     else if (type === 'TIMEOUT') { api.sound.play('timeout'); stampScreen({ text: 'انتهى الوقت', tone: 'bad' }); }
     dispatch({ type, round: state.round, key, playerId: actor?.id, ...extra });
   };
@@ -317,9 +317,11 @@ export function Game({ api, players, onExit, savedSession = null, gameOptions = 
     if (state.phase === 'over') { api.sound.play('fanfare'); api.haptics.vibrate('win'); api.confetti.fire(); api.matchOver?.({ completed: state.history.length >= state.rounds }); }
     else if (state.phase === 'reveal') { api.sound.play(state.revealed ? 'reveal' : 'drumroll'); }
   }, [state.phase, state.revealIndex, state.revealed]);
+  // تكّة لكل ثانية من الخمس الأخيرة؛ الاستئناف أو «جاهزون» على الثانية نفسها لا يعيدها.
   useEffect(() => {
-    if (!state.paused && state.remaining > 0 && state.remaining <= 5 && ((state.phase === 'write' && state.ready) || state.phase === 'discussion')) api.sound.play('tick');
-  }, [state.remaining, state.phase, state.ready, state.paused]);
+    const s = latestState.current;
+    if (!s.paused && s.remaining > 0 && s.remaining <= 5 && ((s.phase === 'write' && s.ready) || s.phase === 'discussion')) api.sound.play('tick');
+  }, [state.remaining]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return <Screen className="fabraka stack" aria-label="فبركة">
     <style>{css}</style><Clock state={state} act={act} />

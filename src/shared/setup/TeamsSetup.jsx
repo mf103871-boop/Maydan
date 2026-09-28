@@ -20,7 +20,7 @@ export function TeamsSetup({ min = 2, max = 4, onStart, children, startLabel = '
     <div className="stack">
       <Card>
         <span className="card-title" style={{ display: 'block', marginBottom: 10 }}>الفرق</span>
-        <Segment label="عدد الفرق" accent options={options} value={count} onChange={(v) => { setCount(v); setError(''); api && api.sound.play('click'); }} />
+        <Segment label="عدد الفرق" accent options={options} value={count} onChange={(v) => { setCount(v); setError(''); }} />
         <div className="stack" style={{ marginTop: 12 }}>
           {teams.map((t, i) => (
             <label key={t.id} className="team-input" style={{ '--team-color': t.color }}>

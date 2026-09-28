@@ -278,3 +278,29 @@ test('الشاشة تحجز مكان الشريط اللاصق وزره معتم
   assert.match(setup, /\.screen:has\(\.setup-sticky\) \{ --screen-bottom-reserve/);
   assert.match(setup, /\.setup-sticky \.btn-secondary \{ --btn-bg: linear-gradient\(180deg, #FFFEF8, #F9EFDD\); \}/);
 });
+
+// الصوت 3.2: صوت لكل لمسة يأتي من مفوِّض واحد، ولا تكرار في المعالجات.
+test('مفوِّض اللمسات مسجَّل، وتغيير الشاشة يُبقي صوت اللمسة الأخيرة', () => {
+  const bus = read('src/shared/fx/sound.js');
+  assert.match(bus, /document\.addEventListener\('click', onTap, true\)/, 'المفوِّض يُسجَّل على click في مرحلة الالتقاط');
+  assert.match(bus, /document\.removeEventListener\('click', onTap, true\)/, 'dispose يزيل المفوِّض');
+  assert.match(bus, /const GESTURE_EVENTS = \[[^\]]*'pointerup'[^\]]*'touchend'[^\]]*'click'[^\]]*\]/, 'إيماءات الفتح تشمل pointerup/touchend/click');
+  assert.match(read('src/platform/PlatformApp.jsx'), /sound\.stop\(\{ spare: \d+ \}\)/, 'تغيير الشاشة يستعمل stop({ spare })');
+});
+
+test('المعالجات لا تكرّر صوت النقرة الذي يقدّمه المفوِّض', () => {
+  for (const rel of ['src/platform/screens/Home.jsx', 'src/platform/screens/Play.jsx', 'src/shared/setup/PlayersSetup.jsx', 'src/shared/setup/TeamsSetup.jsx', 'src/platform/GameFrame.jsx',
+    'src/games/beep/Game.jsx', 'src/games/mamnoo/Game.jsx', 'src/games/jabeen/Game.jsx', 'src/games/meenfina/Game.jsx', 'src/games/fabraka/Game.jsx']) {
+    assert.doesNotMatch(read(rel), /sound\.play\('click'\)/, `${rel} يعتمد على المفوِّض`);
+  }
+  const settings = read('src/platform/screens/Settings.jsx');
+  assert.equal((settings.match(/onPointerUp=\{\(\) => sound\.play\('pop'\)\}/g) || []).length, 2, 'منزلقا الصوت والموسيقى يؤكدان بـ pop');
+  assert.equal((settings.match(/onKeyUp=\{\(event\) => \{ if \(event\.key\.startsWith\('Arrow'\)/g) || []).length, 2, 'المنزلقان يؤكدان بالأسهم أيضًا');
+});
+
+test('زر التحميل يبقى معطّلًا حتى لو مرّر المستدعي disabled={false}', () => {
+  const ui = read('src/shared/ui/components.jsx');
+  assert.match(ui, /export function Button\(\{[^}]*\bdisabled = false\b[^}]*\}\)/);
+  assert.match(ui, /disabled=\{disabled \|\| loading\}/);
+  assert.doesNotMatch(ui, /rest\.disabled/);
+});

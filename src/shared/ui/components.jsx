@@ -27,13 +27,13 @@ export function ripple(event) {
 }
 
 // ── Button ───────────────────────────────────────────────────
-export function Button({ variant = 'secondary', size = 'md', full = false, loading = false, icon = null, className = '', children, onPointerDown, ...rest }) {
+export function Button({ variant = 'secondary', size = 'md', full = false, loading = false, disabled = false, icon = null, className = '', children, onPointerDown, ...rest }) {
   const classes = ['btn', `btn-${variant}`, size === 'lg' ? 'btn-lg' : size === 'sm' ? 'btn-sm' : '', full ? 'btn-full' : '', className].filter(Boolean).join(' ');
   return (
     <button
       type="button"
       className={classes}
-      disabled={rest.disabled || loading}
+      disabled={disabled || loading}
       aria-busy={loading || undefined}
       onPointerDown={(e) => { ripple(e); onPointerDown && onPointerDown(e); }}
       {...rest}

@@ -111,13 +111,13 @@ export function Home() {
         </div>
       </header>
 
-      <button type="button" className="card online-home-card" onClick={() => { sound.play('click'); navigate('/online'); }} onPointerDown={ripple}>
+      <button type="button" className="card online-home-card" onClick={() => navigate('/online')} onPointerDown={ripple}>
         <ClayStage className="clay-static"><GameArtwork game="meenfina" /></ClayStage>
         <span><strong>اللّمّة من كل جوال</strong><small>غرف «مين فينا؟» و«فبركة» · دخول برمز وتصويت سري</small></span>
         <span className="online-new">تجريبي</span>
       </button>
 
-      <button type="button" className="card roster-card social-home-card" onClick={() => { sound.play('click'); navigate('/friends'); }} aria-label="الأصدقاء والمحادثات" onPointerDown={ripple}>
+      <button type="button" className="card roster-card social-home-card" onClick={() => navigate('/friends')} aria-label="الأصدقاء والمحادثات" onPointerDown={ripple}>
         <span className="grow" style={{ textAlign: 'start' }}>
           <span className="card-title" style={{ display: 'block' }}>الأصدقاء والمحادثات</span>
           <span className="card-muted">{account.signedIn ? `${social.friends.filter(f => f.online).length} متصل الآن · تواصل مع أصحابك` : 'أضف أصحابك وخليك قريب منهم'}</span>
@@ -127,7 +127,7 @@ export function Home() {
           : <IconUsers style={{ width: 34, height: 34, color: 'var(--accent)' }} />}
       </button>
 
-      <button type="button" className="card roster-card" onClick={() => { sound.play('click'); navigate('/players'); }} aria-label="دفتر اللاعبين" onPointerDown={ripple}>
+      <button type="button" className="card roster-card" onClick={() => navigate('/players')} aria-label="دفتر اللاعبين" onPointerDown={ripple}>
         <span className="grow" style={{ textAlign: 'start' }}>
           <span className="card-title" style={{ display: 'block' }}>دفتر اللاعبين</span>
           <span key={roster.length} className="card-muted">{roster.length ? `${roster.length} لاعبين جاهزون لكل الألعاب` : 'أضف أسماء أصدقائك مرة واحدة'}</span>

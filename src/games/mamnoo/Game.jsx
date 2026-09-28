@@ -1,7 +1,7 @@
 import { Avatar, GameArtwork } from '../../shared/brand/art.jsx';
 import React, { useEffect, useMemo, useReducer, useRef, useState } from 'react';
 import { Screen, Button, Podium, Segment, Card, Scoreboard } from '../../shared/ui/components.jsx';
-import { Timer, useTimer } from '../../shared/ui/index.js';
+import { Timer, useTimer, useTimerCues } from '../../shared/ui/index.js';
 import { flashScreen, stampScreen, wait } from '../../shared/fx/index.js';
 import { trimSeen } from '../../shared/lib/noRepeat.js';
 import { mulberry32, randomSeed } from '../../shared/lib/rng.js';
@@ -17,7 +17,7 @@ const SEEN_KEY = 'seen';
 export function SetupOptions({ storage, api }) {
   const [opts, setOpts] = useState(() => normalizeOptions(storage.get(OPTIONS_KEY)));
   const [resume] = useState(() => loadSession(storage, restoreSession));
-  const update = (patch) => { const next = normalizeOptions({ ...opts, ...patch }); setOpts(next); storage.set(OPTIONS_KEY, next); api.sound.play('click'); };
+  const update = (patch) => { const next = normalizeOptions({ ...opts, ...patch }); setOpts(next); storage.set(OPTIONS_KEY, next); };
   return (
     <>
     {resume && <Card className="stack resume-card">
@@ -47,6 +47,8 @@ function Round({ state, dispatch, api, source, timeLeftRef, resumeLeft }) {
   // جولة مستأنفة تبدأ من الوقت المحفوظ مرة واحدة.
   useEffect(() => { if (state.phase === 'play') { timer.reset(resumeLeft.current ?? state.seconds); resumeLeft.current = null; timer.start(); } else if (timer.running) timer.pause(); }, [state.phase, state.round, state.turn]); // eslint-disable-line react-hooks/exhaustive-deps
   useEffect(() => { timeLeftRef.current = timer.left; }, [timer.left, timeLeftRef]);
+  // آخر خمس ثوانٍ: tick ثم tickFast في الأخيرتَين، واهتزاز في آخر ثلاث؛ 3-2-1 عند الاستئناف.
+  useTimerCues(timer, api);
   // الإرسال فوري؛ صنف الوميض يقع على البطاقة (لا على .stack الحاوي للمؤقت)، والختم/الوميض طبقات ثابتة في body.
   const act = (type, sound, haptic, cls) => {
     api.sound.play(sound); api.haptics.vibrate(haptic);
@@ -77,7 +79,7 @@ function Round({ state, dispatch, api, source, timeLeftRef, resumeLeft }) {
     return (
       <div className="stack">
         <div className="mamnoo-head">
-          <Timer timer={timer} api={api} size={92} accent="#FF5C8A" />
+          <Timer timer={timer} size={92} accent="#FF5C8A" />
           <div className="grow"><b style={{ color: team.color }}>{team.name}</b><small>صح {state.tally.correct} · ممنوع {state.tally.buzz} · تخطي {state.tally.skip}</small></div>
           <span className="badge"><b key={state.scores[team.id]}>{state.scores[team.id]}</b></span>
         </div>

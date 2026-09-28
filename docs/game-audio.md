@@ -97,8 +97,9 @@ from before are moved to the new default once (`musicLevel: 2` in the platform s
 ## Playback
 
 `src/shared/fx/sound.js` maps the public cue names 1:1 to files (`fanfare → win`, `countdownGo →
-start`, aliases `win`, `start`, `steal`, `open`, `tool`, `scoreUp`, `scoreDown`), fetches the
-cues when the bus attaches, decodes on the first gesture, limits overlapping voices, suppresses
+start`, aliases `win`, `start`, `steal`, `open`, `tool`, `scoreUp`, `scoreDown`), fetches and
+decodes the cues as soon as the bus attaches (each file on its own, so one missing file silences
+only itself), resumes the context on the first gesture, limits overlapping voices, suppresses
 duplicates with per-cue cooldowns, ducks under Badeeha's question audio, stops voices on mute and
 backgrounding and recovers after iOS interruptions. `sound.music` plays the loops on their own
 gain behind the shared compressor (fetched on first request, decoded once per context, crossfades,
@@ -106,6 +107,59 @@ ducking under big cues, hidden-page suspend with resume, gesture-deferred start,
 hands over to the next track). Track selection: `meta.music` per game, `home` on setup screens and
 every non-game route, `finale` on `matchOver()`. Settings: "الصوت" is the master switch,
 "الموسيقى" and its slider control the loops.
+
+## Taps and timers (audio 3.2)
+
+**Every tap sounds, once.** Handlers no longer play `click` themselves. The bus registers one
+capture `click` listener on `document` (`onTap`) that plays a cue for any activated control
+matching `TAP_SELECTOR` (`button, [role="button"], a[href], summary, select, checkbox and radio
+inputs, [data-sound]`). The cue is the element's `data-sound` (any cue or alias name, e.g.
+`data-sound="pop"`) or `click`; `data-sound="none"` on the element or an ancestor keeps it silent,
+as do `:disabled`, `aria-disabled="true"`, `aria-busy="true"` and an `[inert]` ancestor. `click`
+rather than `pointerdown` because a scroll that starts on a button, a drag away and a disabled
+control never click, while keyboard, assistive-technology and programmatic activations do.
+Range inputs are not in the selector: the two Settings sliders confirm with `pop` on release.
+
+The delegate renders its cue on a `setTimeout(0)`. Any `play()` issued during the click dispatch
+(the handler, or an effect React flushes for it) marks the pending tap as superseded, so a handler
+`pop`/`whoosh`/`correct` replaces the click instead of stacking on it; a handler cue that arrives
+asynchronously within 180 ms (Jabeen after `await tilt.request()`) fade-cuts the click voice.
+A handler that still calls `play('click')` is absorbed by the 40 ms retrigger floor.
+
+**Nothing requested is dropped for avoidable reasons.** Decoding starts at attach, per cue; a
+requested cue is decoded first and plays while the rest pend (`ready(name)`). `unlock()` always
+issues `resume()` and settles on `statechange` (covers iOS `interrupted → running`) or a 1.5 s
+deadline, never on a stale promise; gesture listeners cover `pointerdown/up`, `touchstart/end`,
+`keydown` and `click`; returning from the background tries `resume()`. A cue that becomes playable
+late still plays within its window (1200 ms; 400 ms for `tick`, `tickFast`, `countdown`,
+`countdownGo`, `timeout`). Cooldowns are spent only when a cue actually sounds.
+
+| cue | cooldown | on repeat within cooldown |
+|---|---|---|
+| click 65 · pop 70 · whoosh 100 · pass 80 · correct 150 · reveal 160 · wrong 180 · buzzer 300 · drumroll 300 | user cues | restart (previous voice cut, 40 ms floor) |
+| tick 100 · tickFast 100 · countdown 120 · countdownGo 180 · timeout 300 · explosion 400 · fanfare 500 | auto cues | dropped |
+
+`stop()` voids everything requested so far (mute, background, dispose); `stop({ spare: 350 })`
+on a route change (`PlatformApp.jsx`) keeps voices and pending requests younger than 350 ms, so
+the tap that navigated keeps its sound while stale cues cannot leak onto the next screen.
+
+**Timer cues come from one hook.** `useTimerCues(timer, api, { last = 5, fastBelow = 2,
+hapticBelow = 3 })` plays `tick` (or `tickFast` at and below `fastBelow`) once per second for
+`1 ≤ left ≤ last`, vibrates at and below `hapticBelow`, ticks the first second of a fresh start,
+skips the second a timer resumes on (the `countdownGo` already marks it) and plays `countdown` /
+`countdownGo` with haptics during the 3-2-1 overlay. `Timer.jsx` is visual only and exports
+`ResumeCountdown` for timers without a ring (the bomb, Jabeen). Beep uses `{ last: Infinity,
+fastBelow: 2 }` (bomb `fastBelow: 8`), Mamnoo and Jabeen the defaults; Jabeen resumes with 3-2-1
+after the phone is turned back to landscape, Fabraka's tick follows the second alone (no extra
+tick on resume or "ready"), Badeeha routes every cue name through the shared bus (`scoreUp`,
+`scoreDown` included), does not re-tick the resumed second, and releases music ducking when a
+question clip errors or is emptied; Meenfina's 3-2-1 waits while the page is hidden.
+
+**Tests.** `tests/audio-lifecycle.test.js` drives the bus with a fake Web Audio environment and
+fake elements (`element()`, `dispatch()`), `tests/timer-regression.test.js` mounts `useTimer` +
+`useTimerCues` with a recording api, `tests/platform-regression.test.js` locks the wiring, and
+`scripts/e2e/smoke.mjs` counts `AudioBufferSourceNode.start` calls per tap (`tap()` helper:
+at least one cue per tap, exactly one click for a plain control, silence while muted).
 
 ## Verifying and re-curating
 
