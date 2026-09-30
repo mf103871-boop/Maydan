@@ -2,6 +2,8 @@
 
 This is a preparation record, not evidence that the new release has been uploaded, submitted or approved. The release operator checked the observations below in signed-in App Store Connect and GitHub sessions on 25 September 2026. They supersede earlier same-day notes that signing secrets or TestFlight builds did not exist.
 
+For the rejection received on 28 September and replacement-build preparation, see [the 1 October review-fix record](../2026-10-01/app-store-review-fix.md). The observations below retain their original dates.
+
 ## Observed release state
 
 | Item | Observed state |
@@ -11,7 +13,7 @@ This is a preparation record, not evidence that the new release has been uploade
 | TestFlight builds | Builds `1.5 (1)`, `(2)`, `(3)` and `(4)` were all processed, shown Complete / Ready to Submit. Latest: **1.5 (4)**, uploaded 25 September at **5:40 PM local time**. This does not establish App Review approval or device-test success. |
 | Signed workflow history | Four successful TestFlight workflow runs were observed. Latest: [run 36148561528](https://github.com/mf103871-boop/Maydan/actions/runs/36148561528), source commit `6bdbf89`, matching build 4. |
 | GitHub signing configuration | All six required Actions secret names were present: `IOS_DISTRIBUTION_P12_BASE64`, `IOS_DISTRIBUTION_P12_PASSWORD`, `IOS_APP_STORE_PROFILE_BASE64`, `ASC_KEY_ID`, `ASC_ISSUER_ID`, `ASC_PRIVATE_KEY_BASE64`. No values or certificate/private-key contents are recorded here. |
-| Source to release | The release branch is now based on `e8b4a41`, including the latest Google sign-in diagnostic fix; build 4's `6bdbf89` predates profiles, chat, moderation and these privacy changes. This source has **not yet been uploaded** to TestFlight. |
+| Source to release | The release branch is now based on `e8b4a41`, including the latest Google sign-in diagnostic fix; build 4's `6bdbf89` contains friends/chat from `d11c7be`, but predates profiles, moderation and these privacy changes. This source has **not yet been uploaded** to TestFlight. |
 | Planned build | **1.5 (5)** is prepared after checking builds 1–4. This is not an upload or reservation: check for another upload immediately before dispatch. Explicit workflow inputs determine archive numbers. |
 | Agreements | Free Apps: **Active**. Paid Apps Agreement: **Pending User Info**. Bank details missing; US tax questionnaire: **Missing Tax Info**. DSA: **Active**. The owner was asked to complete financial/tax information privately. |
 | Review contact | Support email: `mf103871@gmail.com`. A review-contact phone number has been requested from the owner; do not invent it. |
