@@ -51,6 +51,7 @@ enum BridgeError: String {
     case pending = "PURCHASE_PENDING"
     case provider = "PROVIDER"
     case network = "NETWORK"
+    case productsUnavailable = "APPLE_PRODUCTS_UNAVAILABLE"
     case notEligible = "NOT_ELIGIBLE"
     case invalid = "SIGNATURE"
 }
@@ -351,7 +352,7 @@ final class GameViewController: UIViewController, WKNavigationDelegate, WKUIDele
         case "purchase":
             guard let productId = payload["productId"] as? String,
                   NativeConfig.shared.productIds.contains(productId) else {
-                reply(id, error: .notEligible)
+                reply(id, error: .productsUnavailable)
                 return
             }
             // appAccountToken = معرّف مستخدم ميدان (UUID) فيربط الخادم المعاملة بالحساب الصحيح.
@@ -451,7 +452,7 @@ final class GameViewController: UIViewController, WKNavigationDelegate, WKUIDele
         case StoreError.pending:
             return .pending
         case StoreError.unknownProduct:
-            return .notEligible
+            return .productsUnavailable
         case AuthError.failed, AuthError.busy:
             return .provider
         default:

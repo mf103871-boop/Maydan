@@ -68,6 +68,10 @@ async function fresh(t, ready, { failed = false, unfinished = false } = {}) {
       window.nativeCalls.push(message);
       let result = {};
       if (message.type === 'getTrials') result = { marks: {} };
+      if (message.type === 'products') result = { products: [
+        { id: 'plus.monthly', price: '$3.99', period: 'شهريًا' },
+        { id: 'plus.yearly', price: '$29.99', period: 'سنويًا' },
+      ] };
       if (message.type === 'pendingTransactions') result = { transactions: window.testUnfinished ? ['unit-replay-jws'] : [] };
       if (message.type === 'purchase') result = { jws: 'unit-purchase-jws' };
       if (message.type === 'restore') result = { transactions: ['unit-restore-jws'] };
@@ -78,6 +82,7 @@ async function fresh(t, ready, { failed = false, unfinished = false } = {}) {
   await page.route('**/*', (route) => new URL(route.request().url()).origin === origin ? route.continue() : route.abort());
   await page.goto(origin);
   await page.waitForFunction(() => window.testAccount?.me?.serverTime === 1 && window.nativeCalls.some((call) => call.type === 'pendingTransactions'));
+  await page.evaluate(() => window.testAccount.loadProducts());
   if (unfinished) await page.evaluate(() => {
     window.testUnfinished = true;
     window.dispatchEvent(new Event('online'));

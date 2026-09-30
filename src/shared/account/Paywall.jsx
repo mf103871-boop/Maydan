@@ -54,18 +54,27 @@ export function Paywall({ open = true, reason = 'settings', game = null, pack = 
   useEffect(() => { if (open && loadProducts) loadProducts(); }, [open, loadProducts]);
   // كل فتح يبدأ بالخطط لا بنموذج الرمز: المكوّن يبقى مركّبًا بين فتحتين.
   useEffect(() => { if (open) setRedeeming(false); }, [open]);
+  useEffect(() => {
+    if (account.platform !== 'ios' || account.productsStatus !== 'ready') return;
+    setPlan((current) => account.products?.[current]?.price?.trim() ? current :
+      PLANS.find((item) => account.products?.[item.key]?.price?.trim())?.key || current);
+  }, [account.platform, account.products, account.productsStatus]);
   if (!open) return null;
 
   const reasonText = paywallReason(reason, game);
   const products = account.products || null;
+  const native = account.platform === 'ios';
+  const productsLoading = native && (account.productsStatus === 'idle' || account.productsStatus === 'loading');
+  const productsUnavailable = native && account.productsStatus === 'unavailable';
   const plans = PLANS.filter((item) => {
+    if (native) return (account.productsStatus === 'ready' || productsLoading) && !!products?.[item.key]?.price?.trim();
     // Do not advertise an annual plan until its price is actually available.
     if (item.key === 'yearly' && !products?.yearly?.price) return false;
-    if (account.platform === 'ios') return !products || !!products[item.key];
     if (!account.billing) return item.key === 'monthly';
     return !!account.billing.paddle?.prices?.[item.key];
   });
   const selectedPlan = plans.some((item) => item.key === plan) ? plan : plans[0]?.key;
+  const partialCatalog = native && account.productsStatus === 'ready' && plans.length < PLANS.length;
   const needsSignIn = account.platform !== 'ios' && !account.signedIn;
   const busy = account.busy;
   // قواعد App Store تمنع فتح المحتوى بمفاتيح داخل التطبيق: الرابط للويب فقط.
@@ -101,7 +110,15 @@ export function Paywall({ open = true, reason = 'settings', game = null, pack = 
             );
           })}
         </div>
-        {!plans.length && <p className="online-notice" role="status">الاشتراك غير متاح حاليًا؛ حاول لاحقًا.</p>}
+        {productsLoading && <p className="online-notice" role="status">جارٍ تحميل أسعار App Store…</p>}
+        {productsUnavailable && (
+          <>
+            <p className="online-notice error" role="status">{accountErrorText(account.productsError || 'APPLE_PRODUCTS_UNAVAILABLE')}</p>
+            <Button variant="secondary" full onClick={() => account.retryProducts && account.retryProducts()}>إعادة تحميل الأسعار</Button>
+          </>
+        )}
+        {partialCatalog && <Button variant="secondary" full onClick={() => account.retryProducts && account.retryProducts()}>إعادة تحميل الأسعار</Button>}
+        {!native && !plans.length && <p className="online-notice" role="status">الاشتراك غير متاح حاليًا؛ حاول لاحقًا.</p>}
         {needsSignIn ? (
           <div className="paywall-auth">
             <p className="paywall-note">{SIGN_IN_NOTE}</p>
@@ -110,7 +127,7 @@ export function Paywall({ open = true, reason = 'settings', game = null, pack = 
         ) : (
           <>
             {account.platform === 'ios' && !account.signedIn && <p className="paywall-note">{SIGN_IN_NOTE}</p>}
-            <Button variant="primary" size="lg" full disabled={!!account.activationPending || !selectedPlan} loading={busy === 'purchase' || busy === 'signin'} onClick={() => account.purchase && account.purchase(selectedPlan)}>اشترك</Button>
+            <Button variant="primary" size="lg" full disabled={!!account.activationPending || !selectedPlan || productsLoading} loading={busy === 'purchase' || busy === 'signin'} onClick={() => account.purchase && account.purchase(selectedPlan)}>اشترك</Button>
             {account.activationPending && <Button variant="secondary" full onClick={() => account.refresh()}>تحديث حالة الاشتراك</Button>}
           </>
         )}
@@ -120,7 +137,7 @@ export function Paywall({ open = true, reason = 'settings', game = null, pack = 
         {canRedeem && (
           <button type="button" ref={redeemTrigger} className="btn btn-ghost btn-full paywall-redeem" onClick={() => setRedeeming(true)}>{REDEEM_PROMPT}</button>
         )}
-        {account.error && !needsSignIn && <p className="online-notice error" role="alert">{accountErrorText(account.error)}</p>}
+        {account.error && !needsSignIn && !(productsUnavailable && account.error === 'APPLE_PRODUCTS_UNAVAILABLE') && <p className="online-notice error" role="alert">{accountErrorText(account.error)}</p>}
         {account.error === 'CHECKOUT_REVIEW' && !needsSignIn && SUPPORT_EMAIL && (
           <a className="btn btn-ghost btn-full" href={`mailto:${SUPPORT_EMAIL}?subject=${encodeURIComponent('مراجعة محاولة دفع ميدان')}`}>التواصل مع الدعم</a>
         )}

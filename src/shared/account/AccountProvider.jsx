@@ -53,6 +53,8 @@ export function AccountProvider({ children }) {
   const promo = null; // Legacy device-only gifts no longer grant access; server grants remain valid.
   const [ready, setReady] = useState(() => !(accountStore.readSession() && !cached.data));
   const [products, setProducts] = useState(null);
+  const [productsStatus, setProductsStatus] = useState('idle');
+  const [productsError, setProductsError] = useState(null);
   const [billing, setBilling] = useState(null);
   const [paddleIdentity, setPaddleIdentity] = useState(null);
   const [busy, setBusy] = useState(false);
@@ -68,6 +70,9 @@ export function AccountProvider({ children }) {
   const consumedRef = useRef(new Set());
   const authWaiterRef = useRef(null);
   const productsRef = useRef(false);
+  const productsRequestRef = useRef(null);
+  const nativeCatalogRef = useRef({ status: 'idle', products: null });
+  const purchaseInFlightRef = useRef(false);
 
   // ── أدوات داخلية ────────────────────────────────────────────────────────
   const applySession = useCallback((token) => {
@@ -208,25 +213,48 @@ export function AccountProvider({ children }) {
   }, [afterSignIn]);
 
   // ── المنتجات والأسعار (كسول: عند فتح الجدار أو بطاقة الإعدادات) ─────────
-  const loadProducts = useCallback(async () => {
+  const applyNativeCatalog = useCallback((status, next, code = null) => {
+    nativeCatalogRef.current = { status, products: next };
+    setProducts(next);
+    setProductsStatus(status);
+    setProductsError(code);
+    if (status === 'ready') setError((current) => current === 'APPLE_PRODUCTS_UNAVAILABLE' ? null : current);
+  }, []);
+
+  const loadProducts = useCallback(async ({ retry = false } = {}) => {
+    if (native) {
+      if (productsRequestRef.current) return productsRequestRef.current;
+      const catalog = nativeCatalogRef.current;
+      if (catalog.status === 'ready' && !retry) return catalog.products;
+      // A failed catalog waits for an explicit retry, avoiding a Paywall effect loop.
+      if (catalog.status === 'unavailable' && !retry) return null;
+      applyNativeCatalog('loading', catalog.products);
+      const pending = (async () => {
+        try {
+          const list = listOf(await callNative('products'), 'products');
+          const byId = {};
+          for (const item of list) if (item && item.id) byId[item.id] = item;
+          const priced = (key, period) => {
+            const item = byId[PRODUCTS[key]];
+            const price = typeof item?.price === 'string' ? item.price.trim() : '';
+            return price ? { id: PRODUCTS[key], price, period: String(item.period || period) } : null;
+          };
+          const next = { monthly: priced('monthly', 'شهريًا'), yearly: priced('yearly', 'سنويًا') };
+          if (!next.monthly && !next.yearly) throw new ClientError('APPLE_PRODUCTS_UNAVAILABLE');
+          applyNativeCatalog('ready', next);
+          return next;
+        } catch {
+          applyNativeCatalog('unavailable', null, 'APPLE_PRODUCTS_UNAVAILABLE');
+          return null;
+        }
+      })();
+      productsRequestRef.current = pending;
+      try { return await pending; }
+      finally { if (productsRequestRef.current === pending) productsRequestRef.current = null; }
+    }
     if (productsRef.current) return;
     productsRef.current = true;
     try {
-      if (native) {
-        const list = listOf(await callNative('products'), 'products');
-        const byId = {};
-        for (const item of list) if (item && item.id) byId[item.id] = item;
-        const monthly = byId[PRODUCTS.monthly];
-        const yearly = byId[PRODUCTS.yearly];
-        if (monthly || yearly) {
-          setProducts({
-            monthly: monthly ? { id: PRODUCTS.monthly, price: String(monthly.price || ''), period: String(monthly.period || 'شهريًا') } : null,
-            yearly: yearly ? { id: PRODUCTS.yearly, price: String(yearly.price || ''), period: String(yearly.period || 'سنويًا') } : null,
-          });
-        }
-        if (!monthly && !yearly) productsRef.current = false;
-        return;
-      }
       if (accountOffline()) return;
       const config = await getBillingConfig(options());
       setBilling(config || null);
@@ -242,7 +270,12 @@ export function AccountProvider({ children }) {
       productsRef.current = false; // محاولة أخرى ممكنة لاحقًا
       if (isDisabled(codeOf(err))) setOffline(true);
     }
-  }, [native, options]);
+  }, [native, options, applyNativeCatalog]);
+
+  const retryProducts = useCallback(() => {
+    setError((current) => current === 'APPLE_PRODUCTS_UNAVAILABLE' ? null : current);
+    return loadProducts({ retry: true });
+  }, [loadProducts]);
 
   // ── الإجراءات العامة ────────────────────────────────────────────────────
   const openPaywall = useCallback((detail = {}) => {
@@ -336,18 +369,30 @@ export function AccountProvider({ children }) {
   }, [options, clearLocalAuth, toast]);
 
   const purchase = useCallback(async (plan = 'monthly') => {
+    if (purchaseInFlightRef.current) return null;
     setError(null);
     if (activationPending) { setError('ACTIVATION_PENDING'); return null; }
     if (accountOffline()) { setError('OFFLINE'); return null; }
-    // داخل التطبيق: الاشتراك يُربط بحساب ليعمل على كل الأجهزة، فالدخول بحساب Apple
-    // (ورقة واحدة) يسبق ورقة المتجر حين لا جلسة.
-    if (native && !sessionRef.current) {
-      const signed = await signIn('apple');
-      if (!signed || !sessionRef.current) return null;
+    if (native) {
+      const catalog = nativeCatalogRef.current;
+      const product = catalog.products?.[plan];
+      // Catalog availability is independent of authentication. Do not open either
+      // Apple sheet for a plan whose real StoreKit price has not loaded.
+      if (catalog.status !== 'ready' || product?.id !== PRODUCTS[plan] || !product?.price?.trim()) {
+        setError('APPLE_PRODUCTS_UNAVAILABLE');
+        return null;
+      }
     }
-    setBusy('purchase');
-    const epoch = authEpochRef.current;
+    purchaseInFlightRef.current = true;
     try {
+      // داخل التطبيق: الاشتراك يُربط بحساب ليعمل على كل الأجهزة، فالدخول بحساب Apple
+      // (ورقة واحدة) يسبق ورقة المتجر حين لا جلسة.
+      if (native && !sessionRef.current) {
+        const signed = await signIn('apple');
+        if (!signed || !sessionRef.current) return null;
+      }
+      setBusy('purchase');
+      const epoch = authEpochRef.current;
       if (!sessionRef.current) throw new ClientError('AUTH_REQUIRED');
       // An old sandbox entitlement may still be cached after a live cutover.
       // Require a fresh server answer before checking duplicates or opening a
@@ -366,7 +411,10 @@ export function AccountProvider({ children }) {
         // appAccountToken = معرّف المستخدم: الخادم يرفض ربط المعاملة بحساب آخر.
         const userId = (meRef.current && meRef.current.user && meRef.current.user.id) || null;
         if (!sessionRef.current || !userId) throw new ClientError('AUTH_REQUIRED');
-        const result = await callNative('purchase', { productId: PRODUCTS[plan] || PRODUCTS.monthly, plan, userId }, { timeout: NATIVE_SHEET_TIMEOUT });
+        const catalog = nativeCatalogRef.current;
+        const product = catalog.products?.[plan];
+        if (catalog.status !== 'ready' || product?.id !== PRODUCTS[plan] || !product?.price?.trim()) throw new ClientError('APPLE_PRODUCTS_UNAVAILABLE');
+        const result = await callNative('purchase', { productId: PRODUCTS[plan], plan, userId }, { timeout: NATIVE_SHEET_TIMEOUT });
         const jws = (result && (result.jws || result.transaction)) || null;
         if (!jws) throw new ClientError('PURCHASE_PENDING');
         const next = await deliverAppleTransaction(jws, {
@@ -395,12 +443,14 @@ export function AccountProvider({ children }) {
       return next;
     } catch (err) {
       const code = handleError(err);
+      if (native && code === 'APPLE_PRODUCTS_UNAVAILABLE') applyNativeCatalog('unavailable', null, code);
       if (code !== 'PURCHASE_CANCELLED') toast(accountErrorText(code));
       return null;
     } finally {
+      purchaseInFlightRef.current = false;
       setBusy(false);
     }
-  }, [native, options, applyMe, refresh, handleError, closePaywall, toast, signIn, activationPending]);
+  }, [native, options, applyMe, refresh, handleError, closePaywall, toast, signIn, activationPending, applyNativeCatalog]);
 
   const restore = useCallback(async () => {
     setError(null);
@@ -635,7 +685,7 @@ export function AccountProvider({ children }) {
   const user = (me && me.user) || null;
 
   const value = useMemo(() => ({
-    ready, user, me, premium, promo, trials, platform, products,
+    ready, user, me, premium, promo, trials, platform, products, productsStatus, productsError,
     offline, signedIn: !!session, busy, error, paywall, billing, activationPending,
     redeem,
     signIn, signOut, refresh, requestAuthenticated,
@@ -644,11 +694,11 @@ export function AccountProvider({ children }) {
     lockedPack: (id) => lockedPackOf(id, premium),
     gameAccess: (game) => (premium ? 'premium' : gameAccessOf(me, localTrials.marks, game)),
     openPaywall, closePaywall, restore, deleteAccount,
-    purchase, manageSubscription, loadProducts,
+    purchase, manageSubscription, loadProducts, retryProducts,
     clearError: () => setError(null),
     authHeaders: () => (sessionRef.current ? { Authorization: `Bearer ${sessionRef.current}` } : {}),
-  }), [ready, user, me, premium, promo, trials, platform, products, offline, session, busy, error, paywall, billing, activationPending,
-    signIn, signOut, refresh, requestAuthenticated, markTrial, localTrials, openPaywall, closePaywall, restore, deleteAccount, purchase, manageSubscription, loadProducts, redeem]);
+  }), [ready, user, me, premium, promo, trials, platform, products, productsStatus, productsError, offline, session, busy, error, paywall, billing, activationPending,
+    signIn, signOut, refresh, requestAuthenticated, markTrial, localTrials, openPaywall, closePaywall, restore, deleteAccount, purchase, manageSubscription, loadProducts, retryProducts, redeem]);
 
   return <AccountContext.Provider value={value}>{children}</AccountContext.Provider>;
 }
