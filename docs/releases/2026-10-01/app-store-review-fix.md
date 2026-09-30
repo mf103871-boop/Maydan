@@ -35,13 +35,15 @@ Apple processed **1.5 (5)**, build ID **`e00db909-dd40-44ec-a7f0-b3b49dbcad1f`**
 
 The successful macOS workflow additionally verifies Swift compilation/signing, archive export and upload, and Apple's `VALID` state verifies processing. A successful on-device purchase/restoration and App Review approval remain unverified.
 
-## TestFlight catalog failure and build 6 preparation
+## TestFlight catalog failure and build 6 upload
 
 The owner tested **1.5 (5)** on an iPhone and supplied screenshots showing only a monthly placeholder price and the error **هذا الحساب غير مؤهل** immediately after tapping Subscribe, without an Apple purchase sheet. The native bridge mapped an empty `Product.products` lookup (`StoreError.unknownProduct`) to the account-eligibility error. The paywall left its monthly placeholder purchasable when the catalog was missing.
 
-Build **1.5 (6)** is prepared to distinguish unavailable products from account eligibility, display native catalog loading/retry states, and prevent purchase until the selected product has a StoreKit price. Restoration remains independent of catalog availability. These changes do not manufacture StoreKit products or prove that Apple's catalog is available on a device.
+Build **1.5 (6)** distinguishes unavailable products from account eligibility, displays native catalog loading/retry states, and prevents purchase until the selected product has a StoreKit price. Restoration remains independent of catalog availability. These changes do not manufacture StoreKit products or prove that Apple's catalog is available on a device.
 
 Local checks passed: **33 targeted Node tests**, **28 browser regression cases** across native catalog/readiness, web checkout and sign-in (the **16 native cases** rerun after the final change), **5 signing-helper tests**, and whitespace checks. The actual paywall was inspected at phone width with local empty/loaded catalog fixtures. `ios:prepare` verified **3,227** files with HTML SHA-256 `a59d9b9e447b42d3872021dc59c6e0f9d4c39f7a7d1bc9ba7610624fb7265d89`. These simulated tests do not perform Apple purchases. ESLint was unavailable in the existing local dependencies.
+
+The [build 6 signed workflow](https://github.com/mf103871-boop/Maydan/actions/runs/36791803887), source **`9ab1360085a8ae08e02092d7142050223a8ef985`**, succeeded. Its full Node suite reported **657 tests: 656 passed, 1 skipped, 0 failed**; signing checks, Swift archive and IPA export also succeeded. Apple confirmed **Upload succeeded** at **1 October 2026, 02:38:47 Asia/Amman**. Artifact `Maydan-iOS-1.5-6` is retained for seven days. At the 02:42 check, the public builds API still returned build 5 as the newest processed record; build 6 processing and internal TestFlight availability remain unconfirmed. No App Review submission was sent.
 
 Read-only checks confirmed the bundle/product identifiers, localized metadata, Jordan/US prices and internal TestFlight availability. The actual signed build 5 IPA from the successful workflow was also inspected: its artifact SHA-256 matched GitHub, and its bundled native configuration contains the correct API origin and both product IDs. Apple explains that TestFlight uses sandbox and products do not require review approval for sandbox testing; metadata changes can take up to one hour to propagate. The recent account activation is a possible contributor, not a proven root cause of the empty catalog. A fresh device test is still required.
 
