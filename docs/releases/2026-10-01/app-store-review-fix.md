@@ -23,7 +23,7 @@ Apple processed **1.5 (5)**, build ID **`e00db909-dd40-44ec-a7f0-b3b49dbcad1f`**
 ## Remaining release steps
 
 1. Re-test StoreKit prices, purchase and restoration after the catalog fix below. Account configuration is complete, but a real successful purchase has not been observed.
-2. Verify the current account/social/profile behavior and configured moderator account. Correct the pending version's age-rating declaration (`messagingAndChat` is still false) and Arabic privacy links (they still reference an obsolete policy); the published privacy labels already contain all twelve declared data types. Updated review notes were prepared, but App Store Connect did not save the attempted metadata changes.
+2. Verify the current account/social/profile behavior and configured moderator account. The pending version's messaging declaration and Arabic privacy links were corrected on the evening of 1 October (see below); the published privacy labels already contain all twelve declared data types. Updated review notes were prepared, but have not been saved in App Store Connect.
 3. Select the tested build in version 1.5 and create a **new App Review draft containing version 1.5, the subscription group and BOTH `plus.monthly` and `plus.yearly` products in the same draft**. The old unresolved submission cannot accept those additional items. The code already uses these product identifiers; editing source or selecting a build alone does not submit them.
 4. Check all draft items and reviewer information, then submit the new draft and send a reply addressing 2.3.8 and 2.1(b). Neither action has been performed yet.
 
@@ -49,7 +49,7 @@ Read-only checks confirmed the bundle/product identifiers, localized metadata, J
 
 References: [Apple sandbox availability troubleshooting](https://developer.apple.com/documentation/technotes/tn3186-troubleshooting-in-app-purchases-availability-in-the-sandbox), [sandbox testing](https://developer.apple.com/documentation/storekit/testing-in-app-purchases-with-sandbox).
 
-## Build 6 device failure and build 7 diagnostic preparation
+## Build 6 device failure and build 7 diagnostic upload
 
 At approximately 21:00 Asia/Amman on 1 October, the owner confirmed **1.5 (6)** still showed no prices and no Apple purchase sheet. The App Store account is Jordan. Retrying over cellular data also failed after approximately one minute. This matches the web/native request's 60-second timeout, but does not establish whether StoreKit itself or the bridge is stalled. The earlier empty-catalog explanation was a possible path, not an observed native result.
 
@@ -59,4 +59,8 @@ The **actual signed build 6 IPA** was inspected without executing it. Its GitHub
 
 Prepared build **1.5 (7)** adds local, collapsed **تفاصيل المشكلة للدعم** when catalog loading fails. It distinguishes an empty catalog, missing native configuration, StoreKit errors (domain and numeric code only), and timeouts. An independent synchronous native status response distinguishes a stalled product request from an unresponsive bridge. It includes build/iOS/storefront and payment-permission context, with no receipts, account identifiers, raw error descriptions, persistence or automatic telemetry. Retry clears stale details after recovery. Purchase and restore rules remain unchanged.
 
-Local checks passed **42 tests** across bridge/client contracts, diagnostic redaction, actual React catalog behavior, purchase readiness, timeout differentiation and recovery. These tests use local fixtures; **the underlying device purchase failure is not yet fixed or verified**. The next step is to read the support details from the diagnostic build on the affected iPhone, then act on the observed cause. Build 7 upload/processing is recorded only after the signed workflow completes.
+Local checks passed **42 tests** across bridge/client contracts, diagnostic redaction, actual React catalog behavior, purchase readiness, timeout differentiation and recovery. The phone-width support details were visually checked using a clearly synthetic timeout fixture. These tests use local fixtures; **the underlying device purchase failure is not yet fixed or verified**. The next step is to read the support details from the diagnostic build on the affected iPhone, then act on the observed cause.
+
+The [build 7 signed workflow](https://github.com/mf103871-boop/Maydan/actions/runs/36905587823), source **`9701790cbbd4b9785e02cd4f1a3e8e636be99877`**, completed successfully: **659 tests, 658 passed, 1 skipped, 0 failed**, plus signing checks, Swift archive and IPA export. Apple confirmed **Upload succeeded** at **1 October 2026, 21:20:39 Asia/Amman**. At **21:23**, ASC confirmed build **`21307101-7ea7-414f-b463-33b659a69919`** is **VALID**, unexpired, and **IN_BETA_TESTING** internally. External beta status remains **READY_FOR_BETA_SUBMISSION**.
+
+Separately, the pending version's age-rating questionnaire was saved with **Messaging and Chat = Yes**, and the API confirmed `messagingAndChat=true` and `userGeneratedContent=true`. Both Arabic privacy links were saved to **`https://maydan-game.mf103871.workers.dev/#/privacy`**, replacing the obsolete policy; the saved Arabic page visibly shows both corrected URLs. No new App Review submission or Resolution Center message was sent. The app version still needs the tested replacement build and the group/both products included in a new submission.
