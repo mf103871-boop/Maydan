@@ -216,7 +216,10 @@ test('جسر الغلاف: وعد لكل نداء، ورفض بالكود، وم
     globalThis.window.maydanNative.resolve(sent[1].id, { ok: false, error: 'PURCHASE_CANCELLED' });
     await assert.rejects(purchase, (e) => e.code === 'PURCHASE_CANCELLED');
 
-    await assert.rejects(native.callNative('restore', {}, { timeout: 5 }), (e) => e.code === 'NETWORK');
+    await assert.rejects(native.callNative('restore', {}, { timeout: 5 }), (e) => e.code === 'NETWORK' && e.nativeFailure === 'bridge-timeout');
+
+    globalThis.window.webkit.messageHandlers.maydan.postMessage = () => { throw new Error('private platform detail'); };
+    await assert.rejects(native.callNative('products'), (e) => e.code === 'NETWORK' && e.nativeFailure === 'bridge-unavailable' && !e.message.includes('private'));
 
     // ردّ لمعرّف مجهول لا يرمي ولا يحلّ شيئًا.
     assert.equal(globalThis.window.maydanNative.resolve('لا-يوجد', { ok: true }), false);

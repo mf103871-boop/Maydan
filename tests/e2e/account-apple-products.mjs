@@ -67,10 +67,10 @@ after(async () => {
   assert.deepEqual(errors, [], 'no uncaught React/browser errors');
 });
 
-async function fresh(t, responses, { signedIn = true, purchaseError = null, configured = true } = {}) {
+async function fresh(t, responses, { signedIn = true, purchaseError = null, configured = true, holdStatus = false, fakeClock = false } = {}) {
   configCalls = 0; deliveries = 0; readiness = configured; holdConfig = false; pendingConfig = [];
   const context = await browser.newContext(); t.after(() => context.close());
-  await context.addInitScript(({ cached, signedIn, responses, purchaseError }) => {
+  await context.addInitScript(({ cached, signedIn, responses, purchaseError, holdStatus }) => {
     if (signedIn) {
       localStorage.setItem('maydan:account:session', JSON.stringify('unit-session'));
       localStorage.setItem('maydan:account:me', JSON.stringify({ data: cached, fetchedAt: Date.now() }));
@@ -88,7 +88,11 @@ async function fresh(t, responses, { signedIn = true, purchaseError = null, conf
       if (message.type === 'products') {
         const response = window.catalogResponses.length > 1 ? window.catalogResponses.shift() : window.catalogResponses[0];
         if (response?.hold) { window.pendingCatalog.push(message.id); return; }
-        result = { products: response?.products || [] }; error = response?.error;
+        result = { products: response?.products || [], diagnostics: response?.diagnostics }; error = response?.error;
+      }
+      if (message.type === 'storeStatus') {
+        if (holdStatus) return;
+        result = { bundleId: 'Maydan', version: '1.5', build: '7', storefrontCountry: 'JOR', canMakePayments: true };
       }
       if (message.type === 'getTrials') result = { marks: {} };
       if (message.type === 'pendingTransactions') result = { transactions: [] };
@@ -96,8 +100,9 @@ async function fresh(t, responses, { signedIn = true, purchaseError = null, conf
       if (message.type === 'restore') result = { transactions: ['unit-restore-jws'] };
       queueMicrotask(() => window.maydanNative.resolve(message.id, { ok: !error, result, error }));
     } };
-  }, { cached: { ...me(), serverTime: 0 }, signedIn, responses, purchaseError });
+  }, { cached: { ...me(), serverTime: 0 }, signedIn, responses, purchaseError, holdStatus });
   const page = await context.newPage(); page.on('pageerror', (error) => errors.push(error.message));
+  if (fakeClock) await page.clock.install();
   await page.route('**/*', (route) => new URL(route.request().url()).origin === origin ? route.continue() : route.abort());
   await page.goto(origin);
   await page.waitForFunction(() => window.testAccount?.ready);
@@ -132,6 +137,39 @@ test('loading catalog shows no placeholder or purchase, and concurrent loaders a
   assert.deepEqual(result.map((catalog) => catalog.monthly.price), ['$3.99', '$3.99']);
   assert.equal(await subscribe(page).isDisabled(), false);
 });
+
+test('StoreKit error diagnostics remain local and clear after successful retry', async (t) => {
+  const page = await fresh(t, [{ products: [], diagnostics: { outcome: 'storekit-error', storefrontCountry: 'JOR',
+    errorChain: [{ domain: 'ASDErrorDomain', code: 500, description: 'private-account' }], receipt: 'private-receipt' } }, { products: allProducts }]);
+  await retry(page).waitFor();
+  const details = page.locator('.paywall-support');
+  assert.equal(await details.getAttribute('open'), null, 'support report starts collapsed');
+  await details.locator('summary').click();
+  assert.match(await details.textContent(), /storekit-error/);
+  assert.match(await details.textContent(), /JOR/);
+  assert.doesNotMatch(await details.textContent(), /private/);
+  assert.equal(deliveries, 0);
+  await retry(page).click();
+  await page.waitForFunction(() => window.testAccount.productsStatus === 'ready');
+  assert.equal(await details.count(), 0);
+  assert.equal(await page.evaluate(() => window.testAccount.productsDiagnostics), null);
+});
+
+for (const holdStatus of [false, true]) {
+  test(`one-minute catalog timeout identifies ${holdStatus ? 'unresponsive bridge' : 'StoreKit request'}`, async (t) => {
+    const page = await fresh(t, [{ hold: true }], { holdStatus, fakeClock: true });
+    await page.waitForFunction(() => window.testAccount.productsStatus === 'loading');
+    await page.clock.fastForward(61_000);
+    await retry(page).waitFor();
+    const diagnostics = await page.evaluate(() => window.testAccount.productsDiagnostics);
+    assert.equal(diagnostics.outcome, holdStatus ? 'bridge-timeout' : 'storekit-timeout');
+    assert.equal(diagnostics.storefrontCountry, holdStatus ? undefined : 'JOR');
+    assert.equal(await subscribe(page).isDisabled(), true);
+    assert.equal((await calls(page, 'purchase')).length, 0);
+    await page.evaluate((products) => window.replyCatalog(products), allProducts);
+    assert.equal(await page.evaluate(() => window.testAccount.productsStatus), 'unavailable', 'late timed-out reply does not overwrite current state');
+  });
+}
 
 test('empty catalog waits for explicit retry, then reveals actual StoreKit prices', async (t) => {
   const page = await fresh(t, [{ products: [] }, { products: allProducts }]);

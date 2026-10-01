@@ -14,6 +14,7 @@ import {
 } from './api.js';
 import { deliverAppleTransaction, waitForEntitlement } from './purchases.js';
 import { callNative, isNativeShell, onNativeEvent } from './native.js';
+import { catalogDiagnostics } from './catalog-diagnostics.js';
 import { clearPaddleCustomer, loadPaddle, openCheckout, previewPrices, setPaddleCustomer } from './paddle.js';
 import { usePlatform } from '../../platform/context.js';
 import { navigate, useRoute } from '../../platform/router.js';
@@ -55,6 +56,7 @@ export function AccountProvider({ children }) {
   const [products, setProducts] = useState(null);
   const [productsStatus, setProductsStatus] = useState('idle');
   const [productsError, setProductsError] = useState(null);
+  const [productsDiagnostics, setProductsDiagnostics] = useState(null);
   const [billing, setBilling] = useState(null);
   const [paddleIdentity, setPaddleIdentity] = useState(null);
   const [busy, setBusy] = useState(false);
@@ -213,11 +215,12 @@ export function AccountProvider({ children }) {
   }, [afterSignIn]);
 
   // ── المنتجات والأسعار (كسول: عند فتح الجدار أو بطاقة الإعدادات) ─────────
-  const applyNativeCatalog = useCallback((status, next, code = null) => {
+  const applyNativeCatalog = useCallback((status, next, code = null, diagnostics = null) => {
     nativeCatalogRef.current = { status, products: next };
     setProducts(next);
     setProductsStatus(status);
     setProductsError(code);
+    setProductsDiagnostics(diagnostics);
     if (status === 'ready') setError((current) => current === 'APPLE_PRODUCTS_UNAVAILABLE' ? null : current);
   }, []);
 
@@ -230,8 +233,12 @@ export function AccountProvider({ children }) {
       if (catalog.status === 'unavailable' && !retry) return null;
       applyNativeCatalog('loading', catalog.products);
       const pending = (async () => {
+        // Independent, synchronous native reply distinguishes a stalled StoreKit query
+        // from a bridge that cannot return any reply. Never gates the product request.
+        const statusRequest = callNative('storeStatus', {}, { timeout: 5_000 }).catch(() => null);
         try {
-          const list = listOf(await callNative('products'), 'products');
+          const result = await callNative('products');
+          const list = listOf(result, 'products');
           const byId = {};
           for (const item of list) if (item && item.id) byId[item.id] = item;
           const priced = (key, period) => {
@@ -240,11 +247,19 @@ export function AccountProvider({ children }) {
             return price ? { id: PRODUCTS[key], price, period: String(item.period || period) } : null;
           };
           const next = { monthly: priced('monthly', 'شهريًا'), yearly: priced('yearly', 'سنويًا') };
-          if (!next.monthly && !next.yearly) throw new ClientError('APPLE_PRODUCTS_UNAVAILABLE');
+          if (!next.monthly && !next.yearly) {
+            const diagnostics = catalogDiagnostics(result?.diagnostics, list.length ? 'unexpected-products' : 'empty');
+            if (diagnostics.outcome === 'success') diagnostics.outcome = 'unexpected-products';
+            applyNativeCatalog('unavailable', null, 'APPLE_PRODUCTS_UNAVAILABLE', diagnostics);
+            return null;
+          }
           applyNativeCatalog('ready', next);
           return next;
-        } catch {
-          applyNativeCatalog('unavailable', null, 'APPLE_PRODUCTS_UNAVAILABLE');
+        } catch (err) {
+          const status = await statusRequest;
+          let outcome = err?.nativeFailure === 'bridge-timeout' || err?.nativeFailure === 'bridge-unavailable' ? err.nativeFailure : 'native-error';
+          if (outcome === 'bridge-timeout' && status && typeof status === 'object') outcome = 'storekit-timeout';
+          applyNativeCatalog('unavailable', null, 'APPLE_PRODUCTS_UNAVAILABLE', catalogDiagnostics({ ...status, outcome }));
           return null;
         }
       })();
@@ -685,7 +700,7 @@ export function AccountProvider({ children }) {
   const user = (me && me.user) || null;
 
   const value = useMemo(() => ({
-    ready, user, me, premium, promo, trials, platform, products, productsStatus, productsError,
+    ready, user, me, premium, promo, trials, platform, products, productsStatus, productsError, productsDiagnostics,
     offline, signedIn: !!session, busy, error, paywall, billing, activationPending,
     redeem,
     signIn, signOut, refresh, requestAuthenticated,
@@ -697,7 +712,7 @@ export function AccountProvider({ children }) {
     purchase, manageSubscription, loadProducts, retryProducts,
     clearError: () => setError(null),
     authHeaders: () => (sessionRef.current ? { Authorization: `Bearer ${sessionRef.current}` } : {}),
-  }), [ready, user, me, premium, promo, trials, platform, products, productsStatus, productsError, offline, session, busy, error, paywall, billing, activationPending,
+  }), [ready, user, me, premium, promo, trials, platform, products, productsStatus, productsError, productsDiagnostics, offline, session, busy, error, paywall, billing, activationPending,
     signIn, signOut, refresh, requestAuthenticated, markTrial, localTrials, openPaywall, closePaywall, restore, deleteAccount, purchase, manageSubscription, loadProducts, retryProducts, redeem]);
 
   return <AccountContext.Provider value={value}>{children}</AccountContext.Provider>;

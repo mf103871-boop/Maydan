@@ -36,17 +36,23 @@ const pending = new Map();
 const listeners = new Map();
 let counter = 0;
 
+function bridgeFailure(source) {
+  const error = new ClientError('NETWORK');
+  error.nativeFailure = source;
+  return error;
+}
+
 // callNative('products') → Promise<result>؛ الرفض دائمًا ClientError بكود من errors.js.
 export function callNative(type, payload = {}, { timeout = NATIVE_TIMEOUT } = {}) {
   return new Promise((resolve, reject) => {
     installNativeBridge();
     const id = `mdn-${Date.now().toString(36)}-${(counter += 1)}`;
-    const timer = setTimeout(() => { pending.delete(id); reject(new ClientError('NETWORK')); }, timeout);
+    const timer = setTimeout(() => { pending.delete(id); reject(bridgeFailure('bridge-timeout')); }, timeout);
     pending.set(id, { resolve, reject, timer });
     if (!postToNative({ type, id, ...payload })) {
       clearTimeout(timer);
       pending.delete(id);
-      reject(new ClientError('NETWORK'));
+      reject(bridgeFailure('bridge-unavailable'));
     }
   });
 }

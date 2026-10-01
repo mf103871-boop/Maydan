@@ -56,6 +56,74 @@ final class StoreManager {
         return products.map { StoreProductInfo(id: $0.id, price: $0.displayPrice, period: Self.periodText($0)) }
     }
 
+    /// Read-only context, available even while StoreKit's product request is suspended.
+    /// The synchronous storefront lookup does not delay a request or open an Apple sheet.
+    func catalogStatus() -> [String: Any] {
+        let info = Bundle.main.infoDictionary ?? [:]
+        var status: [String: Any] = [
+            "requestedIds": NativeConfig.shared.productIds,
+            "bundleId": Bundle.main.bundleIdentifier ?? "",
+            "version": info["CFBundleShortVersionString"] as? String ?? "",
+            "build": info["CFBundleVersion"] as? String ?? "",
+            "iOSVersion": UIDevice.current.systemVersion,
+            "canMakePayments": AppStore.canMakePayments
+        ]
+        if let country = SKPaymentQueue.default().storefront?.countryCode {
+            status["storefrontCountry"] = country
+        } else {
+            status["storefrontCountry"] = NSNull()
+        }
+        return status
+    }
+
+    /// Return the original product data and narrowly scoped device diagnostics.
+    /// No receipts, account identifiers, error messages, logging, or persistence.
+    func catalog(ids: [String]) async -> [String: Any] {
+        let started = ProcessInfo.processInfo.systemUptime
+        var diagnostics = catalogStatus()
+        diagnostics["requestedIds"] = ids
+        diagnostics["returnedIds"] = [String]()
+        diagnostics["errorChain"] = [[String: Any]]()
+        var list: [StoreProductInfo] = []
+        if ids.isEmpty {
+            diagnostics["outcome"] = "missing-config"
+        } else {
+            do {
+                list = try await products(ids: ids)
+                diagnostics["returnedIds"] = list.map(\.id)
+                diagnostics["outcome"] = list.isEmpty ? "empty" : "success"
+            } catch {
+                diagnostics["outcome"] = "storekit-error"
+                diagnostics["errorChain"] = Self.errorCodes(error)
+            }
+        }
+        diagnostics["elapsedMs"] = max(0, Int((ProcessInfo.processInfo.systemUptime - started) * 1000))
+        return ["products": list.map(\.json), "diagnostics": diagnostics]
+    }
+
+    private static func errorCodes(_ error: Error) -> [[String: Any]] {
+        var chain: [[String: Any]] = []
+        var current: Error? = error
+        for _ in 0..<3 {
+            guard let value = current else { break }
+            let code = value as NSError
+            chain.append(["domain": code.domain, "code": code.code])
+            if let storeError = value as? StoreKitError {
+                switch storeError {
+                case .networkError(let underlying):
+                    current = underlying
+                case .systemError(let underlying):
+                    current = underlying
+                default:
+                    current = code.userInfo[NSUnderlyingErrorKey] as? Error
+                }
+            } else {
+                current = code.userInfo[NSUnderlyingErrorKey] as? Error
+            }
+        }
+        return chain
+    }
+
     /// يعيد JWS المعاملة الموثّقة.
     @MainActor
     func purchase(productId: String, appAccountToken: UUID?, from viewController: UIViewController) async throws -> String {

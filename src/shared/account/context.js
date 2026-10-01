@@ -2,7 +2,7 @@ import { createContext, useContext } from 'react';
 // قيمة السياق حين لا يوجد AccountProvider (اختبارات، تصيير معزول): لا قفل ولا جدار — كل شيء متاح.
 export const NULL_ACCOUNT = Object.freeze({
   ready: true, user: null, me: null, premium: false, promo: null, trials: {}, platform: 'web', products: null,
-  productsStatus: 'idle', productsError: null,
+  productsStatus: 'idle', productsError: null, productsDiagnostics: null,
   loadProducts: async () => null, retryProducts: async () => null,
   redeem: async () => false,
   signIn: async () => {}, signOut: async () => {}, refresh: async () => null,

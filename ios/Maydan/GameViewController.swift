@@ -344,10 +344,11 @@ final class GameViewController: UIViewController, WKNavigationDelegate, WKUIDele
 
     private func handle(command: String, id: String, payload: [String: Any]) {
         switch command {
+        case "storeStatus":
+            reply(id, result: StoreManager.shared.catalogStatus())
         case "products":
             run(id) {
-                let list = try await StoreManager.shared.products(ids: NativeConfig.shared.productIds)
-                return list.map(\.json) as [[String: Any]]
+                await StoreManager.shared.catalog(ids: NativeConfig.shared.productIds)
             }
         case "purchase":
             guard let productId = payload["productId"] as? String,

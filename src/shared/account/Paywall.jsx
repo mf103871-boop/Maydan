@@ -5,6 +5,7 @@ import { Sheet, Button } from '../ui/components.jsx';
 import { ClayStage, TrophyArtwork } from '../brand/art.jsx';
 import { useAccount } from './context.js';
 import { accountErrorText } from './errors.js';
+import { catalogSupportText } from './catalog-diagnostics.js';
 import { PLUS_NAME, LEGAL_ROUTES, SUPPORT_EMAIL, PUBLIC_SITE_ORIGIN } from './config.js';
 import { SignInButtons, SIGN_IN_NOTE } from './SignInSheet.jsx';
 import { RedeemForm, REDEEM_PROMPT } from './RedeemSheet.jsx';
@@ -115,6 +116,10 @@ export function Paywall({ open = true, reason = 'settings', game = null, pack = 
           <>
             <p className="online-notice error" role="status">{accountErrorText(account.productsError || 'APPLE_PRODUCTS_UNAVAILABLE')}</p>
             <Button variant="secondary" full onClick={() => account.retryProducts && account.retryProducts()}>إعادة تحميل الأسعار</Button>
+            {account.productsDiagnostics && <details className="paywall-support">
+              <summary>تفاصيل المشكلة للدعم</summary>
+              <pre dir="ltr" style={{ whiteSpace: 'pre-wrap', overflowWrap: 'anywhere', textAlign: 'left', fontSize: '0.8rem' }}>{catalogSupportText(account.productsDiagnostics)}</pre>
+            </details>}
           </>
         )}
         {partialCatalog && <Button variant="secondary" full onClick={() => account.retryProducts && account.retryProducts()}>إعادة تحميل الأسعار</Button>}
