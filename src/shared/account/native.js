@@ -2,6 +2,7 @@
 // لكن بوعود: كل نداء يحمل معرّفًا، والغلاف يردّ عبر window.maydanNative.resolve(id, …)
 // ويبثّ أحداثًا (عودة المصادقة مثلًا) عبر window.maydanNative.event(name, payload).
 import { ClientError } from '../../online/client.js';
+import { catalogDiagnostics } from './catalog-diagnostics.js';
 
 export const NATIVE_TIMEOUT = 60_000;
 
@@ -48,7 +49,7 @@ export function callNative(type, payload = {}, { timeout = NATIVE_TIMEOUT } = {}
     installNativeBridge();
     const id = `mdn-${Date.now().toString(36)}-${(counter += 1)}`;
     const timer = setTimeout(() => { pending.delete(id); reject(bridgeFailure('bridge-timeout')); }, timeout);
-    pending.set(id, { resolve, reject, timer });
+    pending.set(id, { resolve, reject, timer, type });
     if (!postToNative({ type, id, ...payload })) {
       clearTimeout(timer);
       pending.delete(id);
@@ -64,13 +65,19 @@ export function onNativeEvent(name, fn) {
   return () => { const set = listeners.get(name); if (set) set.delete(fn); };
 }
 
-export function resolveNative(id, { ok = true, result = null, error = null } = {}) {
+export function resolveNative(id, { ok = true, result = null, error = null, diagnostics = null } = {}) {
   const entry = pending.get(String(id));
   if (!entry) return false;
   clearTimeout(entry.timer);
   pending.delete(String(id));
   if (ok) entry.resolve(result);
-  else entry.reject(new ClientError(error || 'NETWORK'));
+  else {
+    const failure = new ClientError(error || 'NETWORK');
+    if (entry.type === 'restore' && diagnostics?.stage === 'native-sync') {
+      failure.nativeDiagnostics = catalogDiagnostics({ ...diagnostics, outcome: 'storekit-error' });
+    }
+    entry.reject(failure);
+  }
   return true;
 }
 

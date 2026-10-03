@@ -16,6 +16,7 @@ export const ACCOUNT_ERRORS = {
   CHECKOUT_DISABLED: 'شراء الاشتراك غير متاح بعد. يمكنك متابعة اللعب بالمحتوى المجاني.',
   APPLE_PURCHASES_UNAVAILABLE: 'الشراء عبر App Store غير متاح حاليًا. جرّب لاحقًا؛ يمكنك متابعة اللعب بالمحتوى المجاني.',
   APPLE_PRODUCTS_UNAVAILABLE: 'تعذّر تحميل أسعار الاشتراك من App Store. أعد تحميل الأسعار ثم حاول مجددًا.',
+  APPLE_STORE_CONNECTION: 'تعذّر الاتصال بمتجر Apple لاستعادة المشتريات. حاول لاحقًا.',
   BILLING_CONFIG_CHANGED: 'تغيّرت إعدادات الدفع. أعد فتح الصفحة ثم حاول مجددًا.',
   MANAGE_ON_WEB: 'اشتراكك أُنشئ على الويب. أدره من إعدادات حسابك في موقع ميدان.',
   SIGNATURE: 'طلب غير صالح.',

@@ -249,6 +249,79 @@ test('كشف الغلاف: الويب ليس غلافًا، و MaydanNative اح
   assert.equal(native.isNativeShell(), false);
 });
 
+test('native restore errors retain their legacy code and attach only sanitized native-sync metadata', async () => {
+  const sent = [];
+  globalThis.window.MaydanNative = { postMessage: (raw) => sent.push(JSON.parse(raw)) };
+  const diagnostics = {
+    outcome: 'success', api: 'storekit2', stage: 'native-sync', elapsedMs: 999_999,
+    invalidIds: ['private@example.test', 'plus.monthly', 'plus.yearly'],
+    errorChain: [{ domain: 'ASDErrorDomain', code: 500, description: 'private-error', userInfo: { receipt: 'private-receipt' } }],
+    receipt: 'private-receipt', userId: 'private-user',
+  };
+  const rejectCall = async (type, response) => {
+    const promise = native.callNative(type);
+    const rejected = assert.rejects(promise, (error) => {
+      assert.equal(error.code, response.error);
+      assert.equal(error.message, response.error);
+      assert.equal(error.nativeFailure, undefined);
+      if (type === 'restore' && response.diagnostics?.stage === 'native-sync') {
+        assert.deepEqual(error.nativeDiagnostics, {
+          outcome: 'storekit-error', api: 'storekit2', stage: 'native-sync', elapsedMs: 600_000,
+          invalidIds: ['plus.monthly', 'plus.yearly'], errorChain: [{ domain: 'ASDErrorDomain', code: 500 }],
+        });
+        assert.doesNotMatch(JSON.stringify(error.nativeDiagnostics), /private|receipt|userInfo|description/);
+      } else assert.equal(error.nativeDiagnostics, undefined);
+      return true;
+    });
+    const id = sent.at(-1).id;
+    assert.equal(native.resolveNative(id, { ok: false, ...response }), true);
+    assert.equal(native.resolveNative(id, { ok: false, ...response }), false, 'a consumed reply cannot change the report');
+    await rejected;
+  };
+  try {
+    await rejectCall('restore', { error: 'NETWORK', diagnostics });
+    for (const type of ['products', 'purchase', 'storeProbe']) {
+      await rejectCall(type, { error: 'NETWORK', diagnostics });
+    }
+    for (const stage of ['native-bridge', 'native-entitlements', 'server-verify', 'private-stage', undefined]) {
+      await rejectCall('restore', { error: 'NETWORK', diagnostics: { ...diagnostics, stage } });
+    }
+    await rejectCall('restore', { error: 'NETWORK', result: { diagnostics } });
+    await rejectCall('restore', { error: 'PURCHASE_CANCELLED' });
+    const legacy = native.callNative('restore');
+    native.resolveNative(sent.at(-1).id, { ok: true, result: { transactions: ['unit-jws'] } });
+    assert.deepEqual(await legacy, { transactions: ['unit-jws'] });
+  } finally {
+    delete globalThis.window.MaydanNative;
+    native.resetNativeForTests();
+  }
+});
+
+test('late native diagnostic replies cannot replace a timeout or consume a newer request', async () => {
+  const sent = [];
+  globalThis.window.MaydanNative = { postMessage: (raw) => sent.push(JSON.parse(raw)) };
+  try {
+    const timedOut = native.callNative('restore', {}, { timeout: 5 });
+    const oldId = sent.at(-1).id;
+    let timeoutError;
+    await assert.rejects(timedOut, (error) => {
+      timeoutError = error;
+      return error.code === 'NETWORK' && error.nativeFailure === 'bridge-timeout';
+    });
+    const current = native.callNative('restore');
+    const currentId = sent.at(-1).id;
+    assert.equal(native.resolveNative(oldId, { ok: false, error: 'NETWORK', diagnostics: {
+      stage: 'native-sync', receipt: 'private-receipt', errorChain: [{ domain: 'ASDErrorDomain', code: 500 }],
+    } }), false);
+    assert.equal(timeoutError.nativeDiagnostics, undefined);
+    assert.equal(native.resolveNative(currentId, { ok: true, result: { transactions: [] } }), true);
+    assert.deepEqual(await current, { transactions: [] });
+  } finally {
+    delete globalThis.window.MaydanNative;
+    native.resetNativeForTests();
+  }
+});
+
 // ── العميل المشترك: ترويسات الحساب على طلبات الغرف ──────────────────────────
 test('post في online/client يقبل ترويسات إضافية دون كسر المستدعين القدامى', async () => {
   let seen = null;

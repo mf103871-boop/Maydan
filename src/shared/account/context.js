@@ -3,7 +3,9 @@ import { createContext, useContext } from 'react';
 export const NULL_ACCOUNT = Object.freeze({
   ready: true, user: null, me: null, premium: false, promo: null, trials: {}, platform: 'web', products: null,
   productsStatus: 'idle', productsError: null, productsDiagnostics: null,
+  storeProbeStatus: 'idle', storeProbeDiagnostics: null, restoreDiagnostics: null,
   loadProducts: async () => null, retryProducts: async () => null,
+  probeStore: async () => null,
   redeem: async () => false,
   signIn: async () => {}, signOut: async () => {}, refresh: async () => null,
   markTrial: () => {}, trialAvailable: () => true, lockedPack: () => false, gameAccess: () => 'premium',

@@ -18,6 +18,105 @@ enum StoreError: Error {
     case failed
 }
 
+/// Preserve the original error while identifying the explicit restore sync stage.
+struct StoreSyncError: Error {
+    let underlying: Error
+}
+
+fileprivate struct StoreDiagnosticCode: Sendable {
+    let domain: String
+    let code: Int
+
+    var json: [String: Any] { ["domain": domain, "code": code] }
+}
+
+private struct StoreProbeResult: Sendable {
+    let outcome: String
+    let returnedIds: [String]
+    let invalidIds: [String]
+    let errorChain: [StoreDiagnosticCode]
+}
+
+/// Diagnostic only: retain each original StoreKit request and its delegate until
+/// a response, failure, cancellation or timeout. No purchases or authentication.
+@MainActor
+private final class StoreCatalogProbe: NSObject, SKProductsRequestDelegate {
+    private let ids: Set<String>
+    private var request: SKProductsRequest?
+    private var timeoutTask: Task<Void, Never>?
+    private var continuation: CheckedContinuation<StoreProbeResult, Never>?
+    private var completedResult: StoreProbeResult?
+
+    init(ids: Set<String>) {
+        self.ids = ids
+        super.init()
+    }
+
+    func run() async -> StoreProbeResult {
+        await withTaskCancellationHandler {
+            await withCheckedContinuation { continuation in
+                if let completedResult {
+                    continuation.resume(returning: completedResult)
+                    return
+                }
+                self.continuation = continuation
+                guard !Task.isCancelled else {
+                    finish(outcome: "probe-cancelled")
+                    return
+                }
+                let request = SKProductsRequest(productIdentifiers: ids)
+                self.request = request
+                request.delegate = self
+                timeoutTask = Task { @MainActor [weak self] in
+                    do {
+                        try await Task.sleep(nanoseconds: 15_000_000_000)
+                    } catch {
+                        return
+                    }
+                    self?.finish(outcome: "storekit-timeout")
+                }
+                request.start()
+            }
+        } onCancel: {
+            Task { @MainActor [weak self] in
+                self?.finish(outcome: "probe-cancelled")
+            }
+        }
+    }
+
+    nonisolated func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
+        let returnedIds = response.products.map(\.productIdentifier).sorted()
+        let invalidIds = response.invalidProductIdentifiers.sorted()
+        Task { @MainActor [weak self] in
+            self?.finish(outcome: returnedIds.isEmpty ? "empty" : "success",
+                         returnedIds: returnedIds, invalidIds: invalidIds)
+        }
+    }
+
+    nonisolated func request(_ request: SKRequest, didFailWithError error: Error) {
+        let errorChain = StoreManager.errorDetails(error)
+        Task { @MainActor [weak self] in
+            self?.finish(outcome: "storekit-error", errorChain: errorChain)
+        }
+    }
+
+    private func finish(outcome: String, returnedIds: [String] = [], invalidIds: [String] = [],
+                        errorChain: [StoreDiagnosticCode] = []) {
+        guard completedResult == nil else { return }
+        let result = StoreProbeResult(outcome: outcome, returnedIds: returnedIds,
+                                      invalidIds: invalidIds, errorChain: errorChain)
+        completedResult = result
+        timeoutTask?.cancel()
+        timeoutTask = nil
+        request?.delegate = nil
+        request?.cancel()
+        request = nil
+        let waiting = continuation
+        continuation = nil
+        waiting?.resume(returning: result)
+    }
+}
+
 /// StoreKit 2: المنتجات، الشراء بربط المعاملة بحساب ميدان (`appAccountToken`)، الاستعادة،
 /// وإدارة الاشتراك. تبقى المعاملات معلقة حتى يؤكد الويب حفظ الاستحقاق على الخادم.
 @MainActor
@@ -30,6 +129,7 @@ final class StoreManager {
     private var updatesTask: Task<Void, Never>?
     private var cache: [String: Product] = [:]
     private var pending: [String: Transaction] = [:]
+    private var catalogProbes: [UUID: StoreCatalogProbe] = [:]
 
     private init() {}
 
@@ -61,6 +161,7 @@ final class StoreManager {
     func catalogStatus() -> [String: Any] {
         let info = Bundle.main.infoDictionary ?? [:]
         var status: [String: Any] = [
+            "api": "storekit2",
             "requestedIds": NativeConfig.shared.productIds,
             "bundleId": Bundle.main.bundleIdentifier ?? "",
             "version": info["CFBundleShortVersionString"] as? String ?? "",
@@ -101,13 +202,48 @@ final class StoreManager {
         return ["products": list.map(\.json), "diagnostics": diagnostics]
     }
 
-    private static func errorCodes(_ error: Error) -> [[String: Any]] {
-        var chain: [[String: Any]] = []
+    /// Explicit independent catalog check; its results never enter the SK2 cache.
+    func storeProbe(ids: [String]) async -> [String: Any] {
+        let started = ProcessInfo.processInfo.systemUptime
+        let requestedIds = Array(Set(ids)).sorted()
+        var diagnostics = catalogStatus()
+        diagnostics["api"] = "storekit1"
+        diagnostics["requestedIds"] = requestedIds
+        diagnostics["returnedIds"] = [String]()
+        diagnostics["invalidIds"] = [String]()
+        diagnostics["errorChain"] = [[String: Any]]()
+        if requestedIds.isEmpty {
+            diagnostics["outcome"] = "missing-config"
+        } else {
+            let key = UUID()
+            let probe = StoreCatalogProbe(ids: Set(requestedIds))
+            catalogProbes[key] = probe
+            let result = await probe.run()
+            catalogProbes.removeValue(forKey: key)
+            diagnostics["outcome"] = result.outcome
+            diagnostics["returnedIds"] = result.returnedIds
+            diagnostics["invalidIds"] = result.invalidIds
+            diagnostics["errorChain"] = result.errorChain.map(\.json)
+        }
+        diagnostics["elapsedMs"] = max(0, Int((ProcessInfo.processInfo.systemUptime - started) * 1000))
+        return ["diagnostics": diagnostics]
+    }
+
+    static func restoreDiagnostics(_ error: Error) -> [String: Any] {
+        ["api": "storekit2", "stage": "native-sync", "errorChain": errorCodes(error)]
+    }
+
+    private nonisolated static func errorCodes(_ error: Error) -> [[String: Any]] {
+        errorDetails(error).map(\.json)
+    }
+
+    fileprivate nonisolated static func errorDetails(_ error: Error) -> [StoreDiagnosticCode] {
+        var chain: [StoreDiagnosticCode] = []
         var current: Error? = error
         for _ in 0..<3 {
             guard let value = current else { break }
             let code = value as NSError
-            chain.append(["domain": code.domain, "code": code.code])
+            chain.append(StoreDiagnosticCode(domain: code.domain, code: code.code))
             if let storeError = value as? StoreKitError {
                 switch storeError {
                 case .networkError(let underlying):
@@ -165,7 +301,11 @@ final class StoreManager {
 
     /// مزامنة مع المتجر ثم كل الاستحقاقات الحالية الموثّقة (JWS لكل واحدة).
     func restore() async throws -> [String] {
-        try await AppStore.sync()
+        do {
+            try await AppStore.sync()
+        } catch {
+            throw StoreSyncError(underlying: error)
+        }
         var list: [String] = []
         for await result in Transaction.currentEntitlements {
             guard case .verified(let transaction) = result,

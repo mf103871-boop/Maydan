@@ -57,6 +57,9 @@ export function AccountProvider({ children }) {
   const [productsStatus, setProductsStatus] = useState('idle');
   const [productsError, setProductsError] = useState(null);
   const [productsDiagnostics, setProductsDiagnostics] = useState(null);
+  const [storeProbeStatus, setStoreProbeStatus] = useState('idle');
+  const [storeProbeDiagnostics, setStoreProbeDiagnostics] = useState(null);
+  const [restoreDiagnostics, setRestoreDiagnostics] = useState(null);
   const [billing, setBilling] = useState(null);
   const [paddleIdentity, setPaddleIdentity] = useState(null);
   const [busy, setBusy] = useState(false);
@@ -73,6 +76,8 @@ export function AccountProvider({ children }) {
   const authWaiterRef = useRef(null);
   const productsRef = useRef(false);
   const productsRequestRef = useRef(null);
+  const storeProbeRequestRef = useRef(null);
+  const storeProbeEpochRef = useRef(0);
   const nativeCatalogRef = useRef({ status: 'idle', products: null });
   const purchaseInFlightRef = useRef(false);
 
@@ -221,7 +226,13 @@ export function AccountProvider({ children }) {
     setProductsStatus(status);
     setProductsError(code);
     setProductsDiagnostics(diagnostics);
-    if (status === 'ready') setError((current) => current === 'APPLE_PRODUCTS_UNAVAILABLE' ? null : current);
+    if (status === 'ready') {
+      storeProbeEpochRef.current++;
+      setStoreProbeStatus('idle');
+      setStoreProbeDiagnostics(null);
+      setRestoreDiagnostics(null);
+      setError((current) => current === 'APPLE_PRODUCTS_UNAVAILABLE' ? null : current);
+    }
   }, []);
 
   const loadProducts = useCallback(async ({ retry = false } = {}) => {
@@ -291,6 +302,36 @@ export function AccountProvider({ children }) {
     setError((current) => current === 'APPLE_PRODUCTS_UNAVAILABLE' ? null : current);
     return loadProducts({ retry: true });
   }, [loadProducts]);
+
+  // A support-only, read-only comparison. It never supplies prices or grants access.
+  const probeStore = useCallback(async () => {
+    if (!native || nativeCatalogRef.current.status !== 'unavailable') return null;
+    if (storeProbeRequestRef.current) return storeProbeRequestRef.current;
+    const epoch = ++storeProbeEpochRef.current;
+    setStoreProbeStatus('loading');
+    setStoreProbeDiagnostics(null);
+    const pending = (async () => {
+      const statusRequest = callNative('storeStatus', {}, { timeout: 5_000 }).catch(() => null);
+      let details;
+      try {
+        const result = await callNative('storeProbe', {}, { timeout: 20_000 });
+        details = catalogDiagnostics({ ...result?.diagnostics, api: 'storekit1' });
+      } catch (err) {
+        const status = await statusRequest;
+        let outcome = err?.nativeFailure || 'native-error';
+        if (outcome === 'bridge-timeout' && status && typeof status === 'object') outcome = 'storekit-timeout';
+        details = catalogDiagnostics({ ...status, api: 'storekit1', outcome });
+      }
+      if (epoch === storeProbeEpochRef.current) {
+        setStoreProbeDiagnostics(details);
+        setStoreProbeStatus('ready');
+      }
+      return details;
+    })();
+    storeProbeRequestRef.current = pending;
+    try { return await pending; }
+    finally { if (storeProbeRequestRef.current === pending) storeProbeRequestRef.current = null; }
+  }, [native]);
 
   // ── الإجراءات العامة ────────────────────────────────────────────────────
   const openPaywall = useCallback((detail = {}) => {
@@ -469,12 +510,16 @@ export function AccountProvider({ children }) {
 
   const restore = useCallback(async () => {
     setError(null);
+    setRestoreDiagnostics(null);
     if (!native) { setError('NOT_ELIGIBLE'); return null; }
     if (!sessionRef.current) { setError('AUTH_REQUIRED'); toast(accountErrorText('AUTH_REQUIRED')); return null; }
     setBusy('restore');
+    let stage = 'native-bridge';
     try {
       const jwsList = listOf(await callNative('restore', {}, { timeout: NATIVE_SHEET_TIMEOUT }), 'transactions').filter((value) => typeof value === 'string' && value);
+      stage = 'native-entitlements';
       if (!jwsList.length) throw new ClientError('RESTORE_EMPTY');
+      stage = 'server-verify';
       let next = null;
       for (const jws of jwsList) next = await deliverAppleTransaction(jws, {
         submit: (value) => postAppleTransaction(value, options()), apply: applyMe,
@@ -484,7 +529,10 @@ export function AccountProvider({ children }) {
       toast(isPremium(next) ? 'استُعيد اشتراكك' : accountErrorText('RESTORE_EMPTY'));
       return next;
     } catch (err) {
-      const code = handleError(err);
+      const nativeDetails = err?.nativeDiagnostics;
+      const outcome = nativeDetails?.outcome || err?.nativeFailure || (codeOf(err) === 'RESTORE_EMPTY' ? 'empty' : 'native-error');
+      setRestoreDiagnostics(catalogDiagnostics({ ...nativeDetails, stage: nativeDetails?.stage || stage, outcome }));
+      const code = handleError(nativeDetails?.stage === 'native-sync' && codeOf(err) === 'NETWORK' ? new ClientError('APPLE_STORE_CONNECTION') : err);
       toast(accountErrorText(code));
       return null;
     } finally {
@@ -701,6 +749,7 @@ export function AccountProvider({ children }) {
 
   const value = useMemo(() => ({
     ready, user, me, premium, promo, trials, platform, products, productsStatus, productsError, productsDiagnostics,
+    storeProbeStatus, storeProbeDiagnostics, restoreDiagnostics,
     offline, signedIn: !!session, busy, error, paywall, billing, activationPending,
     redeem,
     signIn, signOut, refresh, requestAuthenticated,
@@ -709,11 +758,11 @@ export function AccountProvider({ children }) {
     lockedPack: (id) => lockedPackOf(id, premium),
     gameAccess: (game) => (premium ? 'premium' : gameAccessOf(me, localTrials.marks, game)),
     openPaywall, closePaywall, restore, deleteAccount,
-    purchase, manageSubscription, loadProducts, retryProducts,
+    purchase, manageSubscription, loadProducts, retryProducts, probeStore,
     clearError: () => setError(null),
     authHeaders: () => (sessionRef.current ? { Authorization: `Bearer ${sessionRef.current}` } : {}),
-  }), [ready, user, me, premium, promo, trials, platform, products, productsStatus, productsError, productsDiagnostics, offline, session, busy, error, paywall, billing, activationPending,
-    signIn, signOut, refresh, requestAuthenticated, markTrial, localTrials, openPaywall, closePaywall, restore, deleteAccount, purchase, manageSubscription, loadProducts, retryProducts, redeem]);
+  }), [ready, user, me, premium, promo, trials, platform, products, productsStatus, productsError, productsDiagnostics, storeProbeStatus, storeProbeDiagnostics, restoreDiagnostics, offline, session, busy, error, paywall, billing, activationPending,
+    signIn, signOut, refresh, requestAuthenticated, markTrial, localTrials, openPaywall, closePaywall, restore, deleteAccount, purchase, manageSubscription, loadProducts, retryProducts, probeStore, redeem]);
 
   return <AccountContext.Provider value={value}>{children}</AccountContext.Provider>;
 }

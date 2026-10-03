@@ -119,6 +119,8 @@ export function Paywall({ open = true, reason = 'settings', game = null, pack = 
             {account.productsDiagnostics && <details className="paywall-support">
               <summary>تفاصيل المشكلة للدعم</summary>
               <pre dir="ltr" style={{ whiteSpace: 'pre-wrap', overflowWrap: 'anywhere', textAlign: 'left', fontSize: '0.8rem' }}>{catalogSupportText(account.productsDiagnostics)}</pre>
+              {account.probeStore && <Button variant="secondary" full loading={account.storeProbeStatus === 'loading'} onClick={() => account.probeStore()}>فحص المتجر للدعم</Button>}
+              {account.storeProbeDiagnostics && <pre dir="ltr" style={{ whiteSpace: 'pre-wrap', overflowWrap: 'anywhere', textAlign: 'left', fontSize: '0.8rem' }}>{catalogSupportText(account.storeProbeDiagnostics)}</pre>}
             </details>}
           </>
         )}
@@ -139,6 +141,10 @@ export function Paywall({ open = true, reason = 'settings', game = null, pack = 
         {account.platform === 'ios' && (
           <Button variant="ghost" full loading={busy === 'restore'} onClick={() => account.restore && account.restore()}>استعادة المشتريات</Button>
         )}
+        {native && account.restoreDiagnostics && <details className="paywall-support">
+          <summary>تفاصيل الاستعادة للدعم</summary>
+          <pre dir="ltr" style={{ whiteSpace: 'pre-wrap', overflowWrap: 'anywhere', textAlign: 'left', fontSize: '0.8rem' }}>{catalogSupportText(account.restoreDiagnostics)}</pre>
+        </details>}
         {canRedeem && (
           <button type="button" ref={redeemTrigger} className="btn btn-ghost btn-full paywall-redeem" onClick={() => setRedeeming(true)}>{REDEEM_PROMPT}</button>
         )}

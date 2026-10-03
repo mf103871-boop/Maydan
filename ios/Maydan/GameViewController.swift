@@ -350,6 +350,10 @@ final class GameViewController: UIViewController, WKNavigationDelegate, WKUIDele
             run(id) {
                 await StoreManager.shared.catalog(ids: NativeConfig.shared.productIds)
             }
+        case "storeProbe":
+            run(id) {
+                await StoreManager.shared.storeProbe(ids: NativeConfig.shared.productIds)
+            }
         case "purchase":
             guard let productId = payload["productId"] as? String,
                   NativeConfig.shared.productIds.contains(productId) else {
@@ -441,7 +445,12 @@ final class GameViewController: UIViewController, WKNavigationDelegate, WKUIDele
                 let result = try await work()
                 self?.reply(id, result: result)
             } catch {
-                self?.reply(id, error: Self.bridgeError(for: error))
+                if let syncError = error as? StoreSyncError {
+                    self?.reply(id, error: Self.bridgeError(for: syncError.underlying),
+                                diagnostics: StoreManager.restoreDiagnostics(syncError.underlying))
+                } else {
+                    self?.reply(id, error: Self.bridgeError(for: error))
+                }
             }
         }
     }
@@ -461,13 +470,17 @@ final class GameViewController: UIViewController, WKNavigationDelegate, WKUIDele
         }
     }
 
-    private func reply(_ id: String, result: Any? = nil, error: BridgeError? = nil) {
+    private func reply(_ id: String, result: Any? = nil, error: BridgeError? = nil,
+                       diagnostics: [String: Any]? = nil) {
         var body: [String: Any] = ["ok": error == nil]
         if let result {
             body["result"] = result
         }
         if let error {
             body["error"] = error.rawValue
+            if let diagnostics {
+                body["diagnostics"] = diagnostics
+            }
         }
         evaluate("window.maydanNative && window.maydanNative.resolve(\(Self.json([id]))[0], \(Self.json(body)));")
     }
