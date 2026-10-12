@@ -1,0 +1,68 @@
+{
+  "runId": 38226797638,
+  "runUrl": "https://github.com/mf103871-boop/Maydan/actions/runs/38226797638",
+  "headSHA": "dea94914f5935ed0da500247e4f72c54aec1c2df",
+  "conclusion": "success",
+  "updatedAt": "2026-10-12T09:03:25Z",
+  "version": "1.7",
+  "build": "10",
+  "npmTestAggregates": [
+    {
+      "tests": 753,
+      "suites": 0,
+      "pass": 752,
+      "fail": 0,
+      "cancelled": 0,
+      "skipped": 1,
+      "todo": 0,
+      "duration_ms": 25490.652
+    }
+  ],
+  "archiveLogSucceeded": true,
+  "exportLogSucceeded": true,
+  "uploadLogSucceeded": true,
+  "uploadStepConclusion": "success",
+  "uploadStepCompletedAt": "2026-10-12T09:03:18Z",
+  "signingCleanupConclusion": "success",
+  "artifacts": [
+    {
+      "id": 11736903797,
+      "name": "Maydan-iOS-1.7-10",
+      "size_in_bytes": 152115758,
+      "digest": "sha256:e3612a756e1e56e80fe1727aa9f646346e271fa6458bb5335eb1a981d060783d",
+      "created_at": "2026-10-12T09:02:02Z",
+      "expires_at": "2026-10-19T09:01:55Z",
+      "expired": false
+    }
+  ],
+  "publicReleasePerformed": false,
+  "appleProcessingAndDeviceAcceptance": "Processing VALID and internal testing available; physical-device acceptance remains pending.",
+  "asc": {
+    "verifiedAt": "2026-10-12T09:10:51.113939+00:00",
+    "buildId": "a8414288-310a-4192-9105-12dc8c409771",
+    "version": "1.7",
+    "build": "10",
+    "processingState": "VALID",
+    "internalBuildState": "IN_BETA_TESTING",
+    "externalBuildState": "READY_FOR_BETA_SUBMISSION",
+    "usesNonExemptEncryption": false,
+    "groupVerifiedViaUI": {
+      "name": "Envysnowy Group",
+      "type": "Internal",
+      "testers": 1
+    },
+    "testingNotesSavedViaUI": true
+  },
+  "ciSkippedTest": {
+    "name": "10 · the shipped page only needs the sources the policy allows",
+    "reason": "CI runs npm test before ios:prepare; dist/index.html is absent in the clean checkout.",
+    "localFollowup": {
+      "test": "node --test --test-name-pattern=\"the shipped page only needs\" tests/rooms-regression.test.js",
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "compiledHtmlBytes": 3573305,
+      "uiNativeAndPreparationSourceUnchangedSincePriorSignedBuild": "cf1b8fa286a479b5d4743e8374ac854c53de425d"
+    }
+  }
+}
