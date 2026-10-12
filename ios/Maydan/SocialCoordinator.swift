@@ -19,6 +19,9 @@ final class SocialCoordinator: NSObject {
     private var room: Room?
     private var call: NativeCall?
     private var callPoll: Task<Void, Never>?
+    private var callAuthorizationWatchdog: Task<Void, Never>?
+    private var lastCallAuthorization: TimeInterval = 0
+    private var callAuthorizationFailures = 0
     private var pushTokens: [String: String] = [:]
     private var pendingEvents: [(String, [String: Any])] = []
     private var webReady = false
@@ -30,6 +33,9 @@ final class SocialCoordinator: NSObject {
     private var privateTurn = UserDefaults.standard.bool(forKey: "maydan.social.privateTurn")
     private var state = "idle"
     private var signingOut = false
+    private var accountGeneration = 0
+    private var callGeneration = 0
+    private var pendingCallId: UUID?
     var onEvent: ((String, [String: Any]) -> Void)?
 
     private struct NativeCall {
@@ -56,8 +62,9 @@ final class SocialCoordinator: NSObject {
         AudioManager.shared.audioSession.isAutomaticConfigurationEnabled = false
         try? AudioManager.shared.setEngineAvailability(.none)
         UNUserNotificationCenter.current().delegate = self
-        session.onRotation = { [weak self] userId, token in
-            self?.emit("socialSessionRotated", ["userId": userId, "token": token], retain: true)
+        session.onRotation = { [weak self] userId, token, previousToken in
+            self?.emit("socialSessionRotated", ["userId": userId, "token": token, "previousToken": previousToken], retain: true)
+            Task { @MainActor [weak self] in await self?.registerTokens() }
         }
         voice.onEvent = { [weak self] payload in self?.emit("socialVoice", payload) }
         let center = NotificationCenter.default
@@ -95,23 +102,31 @@ final class SocialCoordinator: NSObject {
 
     func handle(_ command: String, payload: [String: Any]) async throws -> [String: Any] {
         bootstrap()
-        guard !signingOut || command == "socialStoredSession" else { throw SocialNativeError.failed("AUTH_REQUIRED") }
+        guard !signingOut || ["socialStoredSession", "socialSession", "socialLogout"].contains(command) else { throw SocialNativeError.failed("AUTH_REQUIRED") }
         switch command {
-        case "socialStoredSession": return session.snapshot()
+        case "socialStoredSession":
+            var snapshot = session.snapshot()
+            snapshot["call"] = callSnapshot()
+            return snapshot
         case "socialSession":
+            accountGeneration += 1
+            let attempt = accountGeneration
             guard let userId = payload["userId"] as? String, let token = payload["token"] as? String else { throw SocialNativeError.failed("AUTH_REQUIRED") }
             if let previous = session.credential, previous.userId != userId { await logout() }
+            guard attempt == accountGeneration else { throw SocialNativeError.failed("AUTH_REQUIRED") }
             try session.set(userId: userId, token: token)
             webReady = true
             let retained = pendingEvents
             pendingEvents.removeAll()
             for (event, data) in retained { emit(event, data) }
+            emitCall()
             enablePushRegistry()
-            await registerTokens()
+            Task { await registerTokens() }
             var result = session.snapshot()
             result["call"] = callSnapshot()
             return result
         case "socialLogout":
+            accountGeneration += 1
             await logout()
             return ["cleared": true]
         case "socialNotifications":
@@ -135,9 +150,14 @@ final class SocialCoordinator: NSObject {
                 throw SocialNativeError.failed("CALL_INVALID")
             }
             guard call == nil || call?.id == id else { throw SocialNativeError.failed("CALL_BUSY") }
+            guard payload["userId"] as? String == nil || payload["userId"] as? String == userId else { throw SocialNativeError.failed("AUTH_REQUIRED") }
+            callGeneration += 1
+            let attempt = callGeneration
+            pendingCallId = id
+            defer { if pendingCallId == id { pendingCallId = nil } }
             voice.cancel()
             guard await SocialVoiceRecorder.permission() else { throw SocialNativeError.failed("MICROPHONE_DENIED") }
-            guard !signingOut, session.credential?.userId == userId else { throw SocialNativeError.failed("AUTH_REQUIRED") }
+            guard !signingOut, session.credential?.userId == userId, attempt == callGeneration else { throw SocialNativeError.failed("CALL_CANCELLED") }
             guard call == nil || call?.id == id else { throw SocialNativeError.failed("CALL_BUSY") }
             if call?.id == id {
                 call?.connection = (url, token)
@@ -152,32 +172,50 @@ final class SocialCoordinator: NSObject {
                 state = "connecting"
                 let action = CXStartCallAction(call: id, handle: CXHandle(type: .generic, value: call!.name))
                 action.isVideo = false
-                do { try await transaction(action) } catch { await finish(reason: .failed); throw error }
+                do { try await transaction(action) } catch { await finish(reason: .failed, expectedCallId: id); throw error }
             }
             return callSnapshot()
         case "socialCallMute":
             guard let current = call else { throw SocialNativeError.failed("CALL_NOT_FOUND") }
+            guard payload["callId"] as? String == nil || payload["callId"] as? String == current.id.uuidString.lowercased() else { throw SocialNativeError.failed("CALL_NOT_FOUND") }
             let value = payload["muted"] as? Bool ?? true
             try await transaction(CXSetMutedCallAction(call: current.id, muted: value))
             return callSnapshot()
         case "socialCallSpeaker":
-            guard call != nil else { throw SocialNativeError.failed("CALL_NOT_FOUND") }
+            guard let current = call else { throw SocialNativeError.failed("CALL_NOT_FOUND") }
+            guard payload["callId"] as? String == nil || payload["callId"] as? String == current.id.uuidString.lowercased() else { throw SocialNativeError.failed("CALL_NOT_FOUND") }
             speaker = payload["speaker"] as? Bool ?? false
             try AVAudioSession.sharedInstance().overrideOutputAudioPort(speaker ? .speaker : .none)
             emitCall()
             return callSnapshot()
         case "socialCallEnd":
+            if let target = payload["callId"] as? String,
+               target != call?.id.uuidString.lowercased(), target != pendingCallId?.uuidString.lowercased() {
+                return ["state": "ended"]
+            }
+            callGeneration += 1
+            pendingCallId = nil
             if let current = call {
-                do { try await transaction(CXEndCallAction(call: current.id)) }
-                catch { await finish(reason: .remoteEnded, notifyServer: true) }
+                if payload["localOnly"] as? Bool == true {
+                    let endReason = payload["endReason"] as? String ?? "local-ended"
+                    await finish(reason: endReason == "ownership-lost" ? .answeredElsewhere : .remoteEnded,
+                                 endReason: endReason, expectedCallId: current.id)
+                } else {
+                    do { try await transaction(CXEndCallAction(call: current.id)) }
+                    catch { await finish(reason: .remoteEnded, notifyServer: true, expectedCallId: current.id) }
+                }
             }
             return ["state": "ended"]
         case "socialVoiceStart":
             guard session.credential != nil else { throw SocialNativeError.failed("AUTH_REQUIRED") }
             guard call == nil, !privateTurn else { throw SocialNativeError.failed("AUDIO_BUSY") }
-            return try await voice.start()
-        case "socialVoiceStop": return try voice.stop()
-        case "socialVoiceCancel": voice.cancel(); return ["state": "cancelled"]
+            return try await voice.start(id: Self.identifier(payload["recordingId"]) ?? UUID().uuidString.lowercased())
+        case "socialVoiceStop":
+            guard payload["recordingId"] as? String == nil || payload["recordingId"] as? String == voice.recordingId else { throw SocialNativeError.failed("AUDIO_NOT_RECORDING") }
+            return try voice.stop()
+        case "socialVoiceCancel":
+            if payload["recordingId"] as? String == nil || payload["recordingId"] as? String == voice.recordingId { voice.cancel() }
+            return ["state": "cancelled"]
         case "socialAudioPrivacy":
             privateTurn = payload["privateTurn"] as? Bool ?? false
             UserDefaults.standard.set(privateTurn, forKey: "maydan.social.privateTurn")
@@ -214,6 +252,21 @@ final class SocialCoordinator: NSObject {
 
     func registrationFailed() { emit("socialNotificationStatus", ["error": "NOTIFICATIONS_UNAVAILABLE"]) }
 
+    func openNotification(_ data: [AnyHashable: Any]) {
+        guard let current = session.credential,
+              data["recipientId"] as? String == current.userId else { return }
+        var event: [String: Any] = ["userId": current.userId]
+        if let conversationId = Self.identifier(data["conversationId"]) {
+            event["conversationId"] = conversationId
+            event["scope"] = data["scope"] as? String == "group" ? "group" : "direct"
+        } else if let category = data["category"] as? String, ["friendRequests", "groupInvites"].contains(category) {
+            event["category"] = category
+            event["view"] = category == "friendRequests" ? "requests" : "groups"
+        } else { return }
+        if let id = data["callId"] as? String, UUID(uuidString: id) != nil { event["callId"] = id }
+        emit("socialNotification", event, retain: true)
+    }
+
     private var pushEnvironment: String {
         let environment = Bundle.main.object(forInfoDictionaryKey: "MaydanPushEnvironment") as? String
         return environment == "production" ? "production" : "sandbox"
@@ -233,6 +286,8 @@ final class SocialCoordinator: NSObject {
 
     private func logout() async {
         signingOut = true
+        callGeneration += 1
+        pendingCallId = nil
         let previous = session.credential
         let previousCall = call
         // Revoke local access before any potentially slow network operation.
@@ -248,14 +303,14 @@ final class SocialCoordinator: NSObject {
         UIApplication.shared.applicationIconBadgeNumber = 0
         pendingEvents.removeAll()
         webReady = false
-        if let previous {
+        signingOut = false
+        if let previous { Task { @MainActor in
             if let previousCall {
                 let operation = previousCall.incoming && previousCall.connection == nil ? "reject" : "leave"
-                _ = try? await session.request("/api/social/calls/\(previousCall.id.uuidString.lowercased())/\(operation)", retiring: previous)
+                _ = try? await session.request("/api/social/calls/\(previousCall.id.uuidString.lowercased())/\(operation)", body: ["deviceId": session.deviceId], retiring: previous)
             }
             _ = try? await session.request("/api/social/devices/\(session.deviceId)", method: "DELETE", retiring: previous)
-        }
-        signingOut = false
+        } }
     }
 
     private func transaction(_ action: CXAction) async throws {
@@ -271,7 +326,7 @@ final class SocialCoordinator: NSObject {
         guard let current = call, let connection = current.connection, session.credential?.userId == current.userId else {
             throw SocialNativeError.failed("AUTH_REQUIRED")
         }
-        if room?.connectionState == .connected { return }
+        if room != nil { return }
         state = "connecting"
         emitCall()
         let next = Room(delegate: self)
@@ -279,6 +334,7 @@ final class SocialCoordinator: NSObject {
         try await next.connect(url: connection.url, token: connection.token)
         guard call?.id == current.id, room === next else { await next.disconnect(); return }
         if audioActive { try await next.localParticipant.setMicrophone(enabled: !muted) }
+        guard call?.id == current.id, room === next else { await next.disconnect(); return }
         state = "connected"
         if !current.incoming { provider.reportOutgoingCall(with: current.id, connectedAt: Date()) }
         emitCall()
@@ -287,58 +343,97 @@ final class SocialCoordinator: NSObject {
 
     private func pollCall() {
         callPoll?.cancel()
+        callAuthorizationWatchdog?.cancel()
+        lastCallAuthorization = ProcessInfo.processInfo.systemUptime
+        callAuthorizationFailures = 0
+        guard let callId = call?.id else { return }
+        // Separate from HTTP polling: a request still awaiting its timeout must
+        // not extend access after two failed checks and a minute without proof.
+        callAuthorizationWatchdog = Task { @MainActor [weak self] in
+            while !Task.isCancelled {
+                try? await Task.sleep(nanoseconds: 1_000_000_000)
+                guard !Task.isCancelled, let self, self.call?.id == callId else { return }
+                if self.callAuthorizationFailures >= 2,
+                   ProcessInfo.processInfo.systemUptime - self.lastCallAuthorization >= 60 {
+                    await self.finish(reason: .failed, endReason: "authorization-timeout", expectedCallId: callId)
+                    return
+                }
+            }
+        }
         callPoll = Task { @MainActor [weak self] in
             while !Task.isCancelled {
                 try? await Task.sleep(nanoseconds: 5_000_000_000)
                 guard !Task.isCancelled, let self, let current = self.call else { return }
                 do {
                     let response = try await self.session.request("/api/social/calls/\(current.id.uuidString.lowercased())", method: "GET")
-                    guard self.call?.id == current.id else { return }
-                    guard let remote = response["call"] as? [String: Any] else { continue }
+                    guard !Task.isCancelled, self.call?.id == current.id else { return }
+                    guard let remote = response["call"] as? [String: Any] else { throw SocialNativeError.failed("NETWORK") }
                     let status = remote["status"] as? String ?? "ended"
                     let participants = remote["participants"] as? [[String: Any]] ?? []
                     let own = participants.first { $0["userId"] as? String == current.userId }
                     let device = own?["deviceId"] as? String
-                    if ["ended", "rejected", "expired", "cancelled"].contains(status) ||
+                    let ownState = own?["state"] as? String
+                    if !["ringing", "active"].contains(status) ||
+                        own == nil || !["active", "invited"].contains(ownState ?? "") ||
                         (device != nil && device != self.session.deviceId) {
-                        await self.finish(reason: device != nil && device != self.session.deviceId ? .answeredElsewhere : .remoteEnded)
+                        let lost = device != nil && device != self.session.deviceId
+                        await self.finish(reason: lost ? .answeredElsewhere : .remoteEnded,
+                                          endReason: lost ? "ownership-lost" : "authorization-revoked", expectedCallId: current.id)
                         return
                     }
+                    self.lastCallAuthorization = ProcessInfo.processInfo.systemUptime
+                    self.callAuthorizationFailures = 0
                 } catch {
-                    if ["AUTH_REQUIRED", "AUTH_EXPIRED", "NOT_FOUND", "CALL_NOT_FOUND", "CALL_FORBIDDEN", "FORBIDDEN", "BLOCKED"].contains(Self.errorCode(error)) {
-                        await self.finish(reason: .remoteEnded)
+                    guard !Task.isCancelled, self.call?.id == current.id else { return }
+                    if ["AUTH_REQUIRED", "AUTH_EXPIRED", "ACCOUNT_SUSPENDED", "NOT_FOUND", "CALL_NOT_FOUND", "CALL_UNAVAILABLE", "CALL_FORBIDDEN", "FORBIDDEN", "BLOCKED"].contains(Self.errorCode(error)) {
+                        await self.finish(reason: .remoteEnded, endReason: "authorization-revoked", expectedCallId: current.id)
                         return
                     }
+                    self.callAuthorizationFailures += 1
                 }
             }
         }
     }
 
-    private func finish(reason: CXCallEndedReason, notifyServer: Bool = false) async {
+    private func finish(reason: CXCallEndedReason, notifyServer: Bool = false, endReason: String? = nil, expectedCallId: UUID? = nil) async {
         guard let current = call else { return }
+        guard expectedCallId == nil || expectedCallId == current.id else { return }
+        let endedReason = endReason ?? (reason == .answeredElsewhere ? "ownership-lost" : "call-ended")
+        muted = true
+        state = "ending"
+        var ending = callSnapshot()
+        ending["localOnly"] = !notifyServer
+        ending["endReason"] = endedReason
+        emit("socialCall", ending)
+        try? AudioManager.shared.setEngineAvailability(.none)
         call = nil
         callPoll?.cancel()
         callPoll = nil
+        callAuthorizationWatchdog?.cancel()
+        callAuthorizationWatchdog = nil
         let previousRoom = room
         room = nil
         state = "ended"
         provider.reportCall(with: current.id, endedAt: Date(), reason: reason)
         await previousRoom?.disconnect()
-        try? AudioManager.shared.setEngineAvailability(.none)
-        audioActive = false
-        muted = false
-        speaker = false
+        if call == nil {
+            try? AudioManager.shared.setEngineAvailability(.none)
+            audioActive = false
+            muted = false
+            speaker = false
+        }
         emit("socialCall", ["callId": current.id.uuidString.lowercased(), "conversationId": current.conversationId,
-                            "scope": current.scope, "state": "ended", "muted": false, "speaker": false, "participants": []])
+                            "userId": current.userId, "scope": current.scope, "state": "ended", "muted": true, "speaker": false, "participants": [],
+                            "localOnly": !notifyServer, "endReason": endedReason])
         if notifyServer, session.credential?.userId == current.userId {
-            let operation = current.incoming && previousRoom == nil ? "reject" : "leave"
-            _ = try? await session.request("/api/social/calls/\(current.id.uuidString.lowercased())/\(operation)")
+            let operation = current.incoming && current.connection == nil ? "reject" : "leave"
+            _ = try? await session.request("/api/social/calls/\(current.id.uuidString.lowercased())/\(operation)", body: ["deviceId": session.deviceId])
         }
     }
 
     private func callSnapshot() -> [String: Any] {
         guard let call else { return ["state": "idle", "participants": []] }
-        let participants: [Participant] = room.map { [$0.localParticipant] + Array($0.remoteParticipants.values) } ?? []
+        let participants: [Participant] = room.map { [$0.localParticipant as Participant] + $0.remoteParticipants.values.map { $0 as Participant } } ?? []
         return ["callId": call.id.uuidString.lowercased(), "conversationId": call.conversationId, "scope": call.scope,
                 "userId": call.userId,
                 "state": state, "muted": muted, "speaker": speaker,
@@ -382,8 +477,9 @@ extension SocialCoordinator: CXProviderDelegate {
                 action.fulfill()
                 try await self.connectRoom()
             } catch {
+                guard self.call?.id == action.callUUID else { return }
                 self.emitCall(error: Self.errorCode(error))
-                await self.finish(reason: .failed, notifyServer: true)
+                await self.finish(reason: .failed, notifyServer: true, expectedCallId: action.callUUID)
             }
         }
     }
@@ -391,8 +487,10 @@ extension SocialCoordinator: CXProviderDelegate {
     nonisolated func provider(_ provider: CXProvider, perform action: CXAnswerCallAction) {
         Task { @MainActor in
             guard let current = self.call, current.id == action.callUUID else { action.fail(); return }
+            var fulfilled = false
             do {
                 guard await SocialVoiceRecorder.permission() else { throw SocialNativeError.failed("MICROPHONE_DENIED") }
+                guard self.call?.id == current.id else { action.fail(); return }
                 let response = try await self.session.request("/api/social/calls/\(current.id.uuidString.lowercased())/accept", body: ["deviceId": self.session.deviceId])
                 guard self.call?.id == current.id,
                       let connection = response["connection"] as? [String: String], let url = connection["url"],
@@ -401,12 +499,16 @@ extension SocialCoordinator: CXProviderDelegate {
                 self.call?.connection = (url, token)
                 try AVAudioSession.sharedInstance().setCategory(.playAndRecord, mode: .voiceChat, options: [.allowBluetooth, .mixWithOthers])
                 action.fulfill()
+                fulfilled = true
                 try await self.connectRoom()
+                guard self.call?.id == current.id else { return }
                 self.emit("socialNotification", ["scope": current.scope, "conversationId": current.conversationId, "callId": current.id.uuidString.lowercased()], retain: true)
             } catch {
-                action.fail()
+                if !fulfilled { action.fail() }
+                guard self.call?.id == current.id else { return }
                 self.emitCall(error: Self.errorCode(error))
-                await self.finish(reason: Self.errorCode(error) == "CALL_ANSWERED" ? .answeredElsewhere : .failed)
+                let answeredElsewhere = Self.errorCode(error) == "CALL_ANSWERED"
+                await self.finish(reason: answeredElsewhere ? .answeredElsewhere : .failed, notifyServer: !answeredElsewhere, expectedCallId: current.id)
             }
         }
     }
@@ -415,7 +517,7 @@ extension SocialCoordinator: CXProviderDelegate {
         Task { @MainActor in
             guard self.call?.id == action.callUUID else { action.fulfill(); return }
             action.fulfill()
-            await self.finish(reason: .remoteEnded, notifyServer: true)
+            await self.finish(reason: .remoteEnded, notifyServer: true, expectedCallId: action.callUUID)
         }
     }
 
@@ -434,13 +536,17 @@ extension SocialCoordinator: CXProviderDelegate {
 
     nonisolated func provider(_ provider: CXProvider, didActivate audioSession: AVAudioSession) {
         Task { @MainActor in
-            guard self.call != nil else { return }
+            guard let callId = self.call?.id else { return }
             do {
                 try audioSession.setCategory(.playAndRecord, mode: .voiceChat, options: [.allowBluetooth, .mixWithOthers])
                 try AudioManager.shared.setEngineAvailability(.default)
                 self.audioActive = true
                 if self.room?.connectionState == .connected { _ = try await self.room?.localParticipant.setMicrophone(enabled: !self.muted) }
-            } catch { self.emitCall(error: "AUDIO_SESSION"); await self.finish(reason: .failed, notifyServer: true) }
+            } catch {
+                guard self.call?.id == callId else { return }
+                self.emitCall(error: "AUDIO_SESSION")
+                await self.finish(reason: .failed, notifyServer: true, expectedCallId: callId)
+            }
         }
     }
 
@@ -453,7 +559,8 @@ extension SocialCoordinator: CXProviderDelegate {
 
     nonisolated func provider(_ provider: CXProvider, timedOutPerforming action: CXAction) {
         action.fail()
-        Task { @MainActor in await self.finish(reason: .failed, notifyServer: true) }
+        guard let callAction = action as? CXCallAction else { return }
+        Task { @MainActor in await self.finish(reason: .failed, notifyServer: true, expectedCallId: callAction.callUUID) }
     }
 }
 
@@ -535,12 +642,7 @@ extension SocialCoordinator: UNUserNotificationCenterDelegate {
         let data = response.notification.request.content.userInfo
         Task { @MainActor in
             defer { completionHandler() }
-            guard let current = self.session.credential,
-                  data["recipientId"] as? String == current.userId,
-                  let conversationId = Self.identifier(data["conversationId"]) else { return }
-            var event: [String: Any] = ["conversationId": conversationId, "scope": data["scope"] as? String ?? "direct"]
-            if let id = data["callId"] as? String, UUID(uuidString: id) != nil { event["callId"] = id }
-            self.emit("socialNotification", event, retain: true)
+            self.openNotification(data)
         }
     }
 }

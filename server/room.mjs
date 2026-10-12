@@ -179,6 +179,14 @@ export class Room {
           return json({ code, id: input.id, game: this.room.game }, 201);
         }
         if (!this.room) fail('NOT_FOUND', 404);
+        // Internal binding only: routeRequest never exposes this endpoint publicly.
+        if(request.method==='POST'&&endpoint==='social-status') {
+          const {accountUserId}=await readJson(request);
+          if(typeof accountUserId!=='string'||!this.room.members.some(m=>!m.left&&m.accountUserId===accountUserId))fail('NOT_FOUND',404);
+          if(this.room.phase!=='lobby')fail('STARTED',409);
+          if(this.room.members.filter(m=>!m.left).length>=12)fail('FULL',409);
+          return json({game:this.room.game||'meenfina',expiresAt:this.room.expiresAt});
+        }
         if (request.method === 'POST' && endpoint === 'join') {
           const input = await credentials(await readJson(request));
           const candidate = structuredClone(this.room);

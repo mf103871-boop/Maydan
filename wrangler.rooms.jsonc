@@ -21,7 +21,8 @@
     "bindings": [
       { "name": "ROOMS", "class_name": "Room" },
       { "name": "LIMITERS", "class_name": "RequestLimiter" },
-      { "name": "SOCIAL_HUB", "class_name": "SocialHub", "script_name": "maydan-game" }
+      { "name": "SOCIAL_HUB", "class_name": "SocialHub", "script_name": "maydan-game" },
+      { "name": "SOCIAL_JOBS", "class_name": "LammaJobs", "script_name": "maydan-game" }
     ]
   },
   // القاعدة نفسها التي يستعملها maydan-game (حساب واحد يخدم الواجهتين). اختيارية
@@ -35,4 +36,6 @@
   // لا cron هنا: التنظيف اليومي يعمل من `maydan-game` وحده (القاعدة مشتركة)، وإلا جرى مرتين.
   // هذا العامل يعتمد على `maydan-game` أصلًا (ربط SOCIAL_HUB أعلاه) فيُنشر بعده دائمًا.
   "observability": { "enabled": true }
+  // Enable the same private SOCIAL_AUDIO R2 binding as maydan-game after provisioning.
+  // LIVEKIT_* and APNS_* settings must match the main worker.
 }

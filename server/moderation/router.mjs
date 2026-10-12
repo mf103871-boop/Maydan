@@ -6,6 +6,8 @@ import * as db from './db.mjs';
 import { base64ToBytes } from '../profiles/images.mjs';
 import { friendIds,chargeUser } from '../social/db.mjs';
 import { notifyUsers,forgetSocialUser } from '../social/realtime.mjs';
+import { reportAudioResponse,collectDeletedAudio } from '../lamma/media.mjs';
+import { revokeInvalidCalls } from '../lamma/calls.mjs';
 
 export async function routeModeration(request,env,url=new URL(request.url),charge) {
   if(!url.pathname.startsWith('/api/moderation/'))return null;
@@ -26,11 +28,15 @@ export async function routeModeration(request,env,url=new URL(request.url),charg
       const result=await db.performAction(env,{userId:auth.user.id,sessionId:auth.rotated?.id||auth.session.id},await readJson(request,8192));
       try {
         if(result.action==='suspend_user')await forgetSocialUser(env,result.subjectUserId);
+        if(result.action==='suspend_user')await revokeInvalidCalls(env);
+        if(result.action==='remove_message')await collectDeletedAudio(env);
         const peers=result.subjectUserId?await friendIds(env,result.subjectUserId):[];
         await notifyUsers(env,[auth.user.id,result.subjectUserId,...peers,...(result.relatedUsers||[])].filter(Boolean),{type:'refresh',reason:'moderation'});
       } catch {/* Moderation is committed; reconnect/refresh also enforces it. */}
       response=json({ok:true,actionId:result.actionId});
     } else {
+      const audio=/^\/reports\/([A-Za-z0-9_-]{1,100})\/audio$/.exec(path);
+      if(audio&&request.method==='GET')return withRotation(await reportAudioResponse(env,audio[1]),auth.rotated);
       const image=/^\/images\/([A-Za-z0-9_-]{1,100})\/([a-f0-9]{64})$/.exec(path);
       if(!image||request.method!=='GET')fail('NOT_FOUND',404);
       const found=await db.reviewImage(env,image[1],image[2]);if(!found)fail('NOT_FOUND',404);

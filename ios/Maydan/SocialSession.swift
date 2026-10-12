@@ -18,7 +18,7 @@ final class SocialSession: NSObject, URLSessionTaskDelegate {
     }
     private static let service = "Maydan.social.session"
     private(set) var credential: Credential?
-    var onRotation: ((String, String) -> Void)?
+    var onRotation: ((String, String, String) -> Void)?
     let deviceId: String
     private lazy var http: URLSession = {
         let config = URLSessionConfiguration.ephemeral
@@ -61,7 +61,7 @@ final class SocialSession: NSObject, URLSessionTaskDelegate {
             throw SocialNativeError.failed("AUTH_REQUIRED")
         }
         if let current = credential, current.userId == userId, current.previous.contains(token) { return }
-        let prior = credential?.userId == userId ? credential?.previous ?? [] : []
+        let prior = credential?.userId == userId ? Array(((credential?.previous ?? []) + [credential!.token]).suffix(8)) : []
         try persist(Credential(userId: userId, token: token, previous: prior))
     }
 
@@ -119,7 +119,7 @@ final class SocialSession: NSObject, URLSessionTaskDelegate {
             current.previous = Array((current.previous + [current.token]).suffix(8))
             current.token = next
             try persist(current)
-            onRotation?(current.userId, next)
+            onRotation?(current.userId, next, auth.token)
         }
         let result = (try? JSONSerialization.jsonObject(with: data)) as? [String: Any] ?? [:]
         guard (200..<300).contains(response.statusCode) else {

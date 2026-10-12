@@ -1,0 +1,187 @@
+import { mergeMessages, socialError } from './client.js';
+
+const ERRORS = {
+  GROUP_FULL: 'الشلّة ممتلئة؛ الحد الأقصى ١٢ عضوًا.', GROUP_LIMIT: 'وصلت إلى الحد الأقصى للشِلَل.',
+  FORBIDDEN: 'هذا الإجراء غير متاح لحسابك.', CALL_UNAVAILABLE: 'المكالمة غير متاحة الآن.',
+  CALL_BUSY: 'لديك مكالمة أخرى جارية.', SERVICE_UNAVAILABLE: 'الخدمة غير متاحة حاليًا. حاول لاحقًا.',
+  VOICE_UNAVAILABLE: 'التسجيلات الصوتية غير متاحة حاليًا.', LIVEKIT_UNAVAILABLE: 'المكالمات غير متاحة حاليًا.',
+  TOO_LARGE: 'حجم التسجيل أكبر من المسموح.', ROOM_FULL: 'الغرفة ممتلئة.', ROOM_UNAVAILABLE: 'لم تعد الدعوة متاحة.',
+  CALLS_UNAVAILABLE: 'المكالمات غير متاحة حاليًا. حاول لاحقًا.', AUDIO_UNAVAILABLE: 'التسجيلات الصوتية غير متاحة حاليًا.',
+  AUDIO_INVALID: 'تعذّر قراءة التسجيل. سجّله مجددًا.', CALL_ANSWERED: 'فُتحت المكالمة على جهازك الآخر.',
+  CALL_RECONNECTING: 'يجري تحديث اتصال المكالمة. حاول بعد لحظة.', GROUP_INVITE_UNAVAILABLE: 'لم تعد دعوة الشلّة متاحة.',
+};
+export const lammaError = e => ERRORS[e?.code] || socialError(e);
+export const lammaId = () => globalThis.crypto.randomUUID();
+export const DEFAULT_PREFERENCES = { messages: true, friendRequests: true, groupInvites: true, calls: true, previews: false, sound: true, mutedConversations: [] };
+export const emptyLamma = () => ({ groups: [], groupInvites: [], groupConversations: {}, calls: [], loading: false,
+  error: '', offline: false, preferences: { ...DEFAULT_PREFERENCES }, capabilities: { voiceMessages: false, liveCalls: false, pushNotifications: false } });
+const enc = encodeURIComponent;
+
+export async function blobBase64(blob) {
+  const bytes = new Uint8Array(await blob.arrayBuffer());
+  let binary = ''; for (let i = 0; i < bytes.length; i += 8192) binary += String.fromCharCode(...bytes.subarray(i, i + 8192));
+  return btoa(binary);
+}
+
+export class LammaClient {
+  constructor({ request, onDirectChange = () => {}, makeURL = blob => URL.createObjectURL(blob), revokeURL = url => URL.revokeObjectURL(url) }) {
+    this.request = request; this.onDirectChange = onDirectChange; this.makeURL = makeURL; this.revokeURL = revokeURL;
+    this.state = emptyLamma(); this.userId = null; this.epoch = 0; this.authorizationEpoch = 0; this.listeners = new Set(); this.urls = new Map(); this.reads = new Map(); this.groupVersions = new Map(); this.pendingText = new Map(); this.pendingInvites = new Map(); this.pendingVoice = new WeakMap();
+    this.subscribe = fn => { this.listeners.add(fn); return () => this.listeners.delete(fn); };
+    this.getSnapshot = () => this.state;
+  }
+  update(patch) { this.state = { ...this.state, ...patch }; for (const fn of [...this.listeners]) fn(); }
+  assert(epoch) { if (epoch !== this.epoch || !this.userId) throw Object.assign(new Error('تغيّر الحساب.'), { code: 'STALE' }); }
+  assertVisibility(epoch, authorizationEpoch, id, version) {
+    this.assert(epoch);
+    if (authorizationEpoch !== this.authorizationEpoch || (id !== undefined && version !== this.groupVersions.get(id)))
+      throw Object.assign(new Error('تغيّرت صلاحية المحادثة. أعد تحميلها.'), { code: 'STALE' });
+  }
+  async call(path, options) {
+    const epoch = this.epoch; this.assert(epoch);
+    try { const result = await this.request(`/api/social${path}`, options); this.assert(epoch); return result; }
+    catch (e) { this.assert(epoch); throw Object.assign(new Error(lammaError(e)), { code: e?.code || 'NETWORK' }); }
+  }
+  start(userId) { this.stop(); this.userId = userId; if (userId) this.refresh().catch(() => {}); }
+  invalidateAudio() { this.authorizationEpoch++; for (const url of this.urls.values()) this.revokeURL(url); this.urls.clear(); }
+  stop() { this.epoch++; this.userId = null; this.activeGroup = null; this.refreshing = null; this.reads.clear(); this.groupVersions.clear(); this.pendingText.clear(); this.pendingInvites.clear(); this.pendingVoice = new WeakMap(); this.invalidateAudio(); this.update(emptyLamma()); }
+  async refresh({ quiet = false } = {}) {
+    if (!this.userId) return;
+    if (this.refreshing) return this.refreshing;
+    const epoch = this.epoch, authorizationEpoch = this.authorizationEpoch;
+    if (!quiet) this.update({ loading: true, error: '' });
+    const task = (async () => {
+      try {
+        const [groups, preferences, capabilities, calls] = await Promise.all([
+          this.call('/groups'), this.call('/preferences'), this.call('/capabilities'), this.call('/calls'),
+        ]);
+        this.assertVisibility(epoch, authorizationEpoch);
+        const allowed = new Set((groups.groups || []).map(g => g.id));
+        this.update({ groups: groups.groups || [], groupInvites: groups.incoming || [], calls: calls.calls || [],
+          preferences: { ...DEFAULT_PREFERENCES, ...(preferences.preferences || preferences) }, capabilities: capabilities.capabilities || capabilities,
+          groupConversations: Object.fromEntries(Object.entries(this.state.groupConversations).filter(([id]) => allowed.has(id))), loading: false, offline: false, error: '' });
+        if (this.activeGroup && allowed.has(this.activeGroup)) await this.loadGroup(this.activeGroup, { quiet: true });
+      } catch (e) {
+        if (epoch === this.epoch) this.update({ loading: false, error: e.code === 'NOT_FOUND' ? 'الشِلَل تحتاج تحديث الخدمة. محادثات الأصدقاء متاحة.' : e.message, offline: e.code === 'NETWORK' });
+        throw e;
+      } finally { if (epoch === this.epoch) this.refreshing = null; }
+    })(); this.refreshing = task; return task;
+  }
+  group(id, patch) { this.update({ groupConversations: { ...this.state.groupConversations, [id]: { messages: [], ...this.state.groupConversations[id], ...patch } } }); }
+  selectGroup(id) { this.activeGroup = id || null; }
+  async loadGroup(id, { quiet = false } = {}) {
+    const epoch = this.epoch, authorizationEpoch = this.authorizationEpoch;
+    const version = (this.groupVersions.get(id) || 0) + 1; this.groupVersions.set(id, version);
+    if (!quiet) this.group(id, { loading: true, error: '' });
+    try {
+      const [detail, history] = await Promise.all([this.call(`/groups/${enc(id)}`), this.call(`/groups/${enc(id)}/messages`)]);
+      this.assertVisibility(epoch, authorizationEpoch, id, version);
+      // Replace the current visibility window: removed/blocked senders must disappear.
+      this.group(id, { ...detail, ...history, messages: history.messages || [], loading: false, loadingOlder: false, error: '' });
+      return this.state.groupConversations[id];
+    } catch (e) { if (epoch === this.epoch && version === this.groupVersions.get(id) && authorizationEpoch === this.authorizationEpoch) this.group(id, { loading: false, error: e.message, ...(['NOT_FOUND', 'FORBIDDEN', 'BLOCKED'].includes(e.code) ? { messages: [], members: [] } : {}) }); throw e; }
+  }
+  async loadOlderGroup(id) {
+    const current = this.state.groupConversations[id]; if (!current?.hasMore || current.loadingOlder) return;
+    const epoch = this.epoch, authorizationEpoch = this.authorizationEpoch, version = this.groupVersions.get(id); this.group(id, { loadingOlder: true });
+    try { const history = await this.call(`/groups/${enc(id)}/messages?before=${enc(current.nextBefore)}`); this.assertVisibility(epoch, authorizationEpoch, id, version);
+      this.group(id, { ...history, messages: mergeMessages(history.messages || [], this.state.groupConversations[id]?.messages || []), loadingOlder: false });
+    } catch (e) { if (epoch === this.epoch && version === this.groupVersions.get(id) && authorizationEpoch === this.authorizationEpoch) this.group(id, { loadingOlder: false, error: e.message }); throw e; }
+  }
+  async groupAction(id, suffix, method = 'POST', body = {}) {
+    const epoch = this.epoch;
+    const result = await this.call(`/groups/${enc(id)}${suffix}`, { method, body }); this.assert(epoch);
+    this.invalidateAudio(); await this.refresh({ quiet: true }); this.assert(epoch); return result;
+  }
+  async createGroup({ name, memberIds = [] }) {
+    const epoch = this.epoch;
+    const result = await this.call('/groups', { method: 'POST', body: { name } }); this.assert(epoch);
+    const group = result.group || result; const failedInvites = [];
+    for (const userId of memberIds) { try { await this.call(`/groups/${enc(group.id)}/invites`, { method: 'POST', body: { userId } }); this.assert(epoch); } catch (e) { this.assert(epoch); if (e.code === 'STALE') throw e; failedInvites.push(userId); } }
+    await this.refresh({ quiet: true }); this.assert(epoch); return { ...group, failedInvites };
+  }
+  async inviteGroupMembers(id, userIds) { const epoch = this.epoch; for (const userId of userIds) { await this.groupAction(id, '/invites', 'POST', { userId }); this.assert(epoch); } return this.loadGroup(id); }
+  acceptGroupInvite(id, inviteId) { return this.groupAction(id, `/invites/${enc(inviteId)}/accept`); }
+  rejectGroupInvite(id, inviteId) { return this.groupAction(id, `/invites/${enc(inviteId)}/reject`); }
+  leaveGroup(id) { return this.groupAction(id, '/leave'); }
+  renameGroup(id, name) { return this.groupAction(id, '', 'PATCH', { name }); }
+  updateGroupAvatar(id, avatarPreset) { return this.groupAction(id, '', 'PATCH', { avatarPreset }); }
+  reportGroupMessage(id, messageSeq, reason) { return this.call(`/groups/${enc(id)}/reports`, { method: 'POST', body: { messageSeq, reason } }); }
+  removeGroupMember(id, userId) { return this.groupAction(id, `/members/${enc(userId)}`, 'DELETE'); }
+  setGroupRole(id, userId, role) { return this.groupAction(id, `/members/${enc(userId)}`, 'PATCH', { role }); }
+  transferGroupOwnership(id, userId) { return this.groupAction(id, '/ownership', 'POST', { userId }); }
+  async sendGroupMessage(id, text, clientId) {
+    const epoch = this.epoch, authorizationEpoch = this.authorizationEpoch;
+    const previous = this.pendingText.get(id);
+    clientId ||= previous?.text === text ? previous.clientId : lammaId();
+    this.pendingText.set(id, { text, clientId });
+    const result = await this.call(`/groups/${enc(id)}/messages`, { method: 'POST', body: { kind: 'text', text, clientId } });
+    this.assertVisibility(epoch, authorizationEpoch);
+    if (this.pendingText.get(id)?.clientId === clientId) this.pendingText.delete(id);
+    this.group(id, { messages: mergeMessages(this.state.groupConversations[id]?.messages || [], [result.message]) });
+    this.refresh({ quiet: true }).catch(() => {}); return result.message;
+  }
+  async changeGroupMessage(id, seq, text) {
+    const epoch = this.epoch;
+    const result = await this.call(`/groups/${enc(id)}/messages/${enc(seq)}`, { method: text === null ? 'DELETE' : 'PATCH', body: text === null ? undefined : { text } });
+    this.assert(epoch); await this.loadGroup(id, { quiet: true }); this.assert(epoch); return result;
+  }
+  async markGroupRead(id, seq) {
+    const epoch = this.epoch;
+    if (!Number.isSafeInteger(seq) || seq <= (this.reads.get(id) || 0)) return;
+    await this.call(`/groups/${enc(id)}/read`, { method: 'POST', body: { seq } }); this.assert(epoch); this.reads.set(id, seq);
+    this.update({ groups: this.state.groups.map(g => g.id === id ? { ...g, unreadCount: 0 } : g) });
+  }
+  async sendVoiceNote({ targetType, targetId, blob, durationMs, clientId }) {
+    const epoch = this.epoch; this.assert(epoch);
+    if (!blob || blob.size > 3 * 1024 * 1024 || durationMs > 120_000 || durationMs <= 0) throw new Error('مدة التسجيل دقيقتان كحد أقصى.');
+    const key = `${targetType}:${targetId}`;
+    let attempts = this.pendingVoice.get(blob); if (!attempts) { attempts = new Map(); this.pendingVoice.set(blob, attempts); }
+    clientId ||= attempts.get(key) || lammaId(); attempts.set(key, clientId);
+    const dataBase64 = await blobBase64(blob); this.assert(epoch);
+    const { attachment } = await this.call('/attachments', { method: 'POST', timeout: 60_000,
+      body: { scope: targetType, conversationId: targetId, clientId, dataBase64, mimeType: blob.type.split(';')[0], durationMs: Math.round(durationMs) } });
+    this.assert(epoch);
+    const path = targetType === 'group' ? `/groups/${enc(targetId)}/messages` : `/conversations/${enc(targetId)}/messages`;
+    const result = await this.call(path, { method: 'POST', body: { kind: 'voice', attachmentId: attachment.id, clientId } });
+    this.assert(epoch);
+    if (targetType === 'group') await this.loadGroup(targetId, { quiet: true }); else await this.onDirectChange();
+    this.assert(epoch); return result.message;
+  }
+  async getVoiceUrl(id) {
+    const epoch = this.epoch;
+    const authorizationEpoch = this.authorizationEpoch;
+    // Authorize every playback; cached Blob URLs must not bypass a later block/removal.
+    const response = await this.call(`/attachments/${enc(id)}/content`, { raw: true });
+    const blob = await response.blob(); this.assert(epoch);
+    if (authorizationEpoch !== this.authorizationEpoch) throw Object.assign(new Error('تغيّرت صلاحية الوصول للصوت؛ أعد المحاولة.'), { code: 'STALE' });
+    if (this.urls.has(id)) this.revokeURL(this.urls.get(id));
+    const url = this.makeURL(blob); this.urls.set(id, url); return url;
+  }
+  async setNotificationPreferences(patch) {
+    const epoch = this.epoch;
+    const body = { ...patch }; if ('enabled' in body) { body.messages = body.calls = body.groupInvites = body.friendRequests = body.enabled; delete body.enabled; }
+    const result = await this.call('/preferences', { method: 'PUT', body });
+    this.assert(epoch);
+    this.update({ preferences: { ...this.state.preferences, ...body, ...(result.preferences || {}) } }); return result;
+  }
+  setConversationMuted({ targetType, targetId, muted }) {
+    const rest = this.state.preferences.mutedConversations.filter(c => !(c.scope === targetType && c.conversationId === targetId));
+    return this.setNotificationPreferences({ mutedConversations: muted ? [...rest, { scope: targetType, conversationId: targetId }] : rest });
+  }
+  async sendGameInvite({ targetType, targetId, roomCode, clientId }) {
+    const epoch = this.epoch;
+    const pendingKey = JSON.stringify([targetType, targetId, roomCode]);
+    clientId ||= this.pendingInvites.get(pendingKey) || lammaId(); this.pendingInvites.set(pendingKey, clientId);
+    const result = await this.call('/room-invitations', { method: 'POST', body: { scope: targetType, conversationId: targetId, roomCode, clientId } });
+    this.assert(epoch);
+    if (this.pendingInvites.get(pendingKey) === clientId) this.pendingInvites.delete(pendingKey);
+    if (targetType === 'group') await this.loadGroup(targetId, { quiet: true }); else await this.onDirectChange(); this.assert(epoch); return result;
+  }
+  acceptGameInvite(id) { return this.call(`/room-invitations/${enc(id)}/accept`, { method: 'POST', body: {} }); }
+  rejectGameInvite(id) { return this.call(`/room-invitations/${enc(id)}/reject`, { method: 'POST', body: {} }); }
+  startCall({ targetType, targetId, deviceId }) { return this.call('/calls', { method: 'POST', body: { scope: targetType, conversationId: targetId, clientId: lammaId(), deviceId } }); }
+  acceptCall(id, deviceId) { return this.call(`/calls/${enc(id)}/accept`, { method: 'POST', body: { deviceId } }); }
+  callStatus(id) { return this.call(`/calls/${enc(id)}`); }
+  callAction(id, action, deviceId) { return this.call(`/calls/${enc(id)}/${action}`, { method: 'POST', body: deviceId ? { deviceId } : {} }); }
+}

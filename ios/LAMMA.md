@@ -14,29 +14,30 @@ credential-bearing upstream descriptions.
 
 | Command | Input / result |
 | --- | --- |
-| `socialStoredSession` | Returns `{deviceId,userId?,token?}`. Read before account hydration, because a call answered while WebKit was suspended may rotate the account session. |
+| `socialStoredSession` | Returns `{deviceId,userId?,token?,call}`. Read before account hydration, because a call answered while WebKit was suspended may rotate the account session. |
 | `socialSession` | `{userId,token}` → canonical `{userId,token,deviceId,call}`; binds the current account and enables pending event delivery. |
 | `socialLogout` | Ends media, clears Keychain and pending events, unregisters this installation's push devices. Invoke before account-session revocation. Network cleanup is best effort; local credentials are cleared first. |
 | `socialNotifications` | `{request:boolean}` → `{authorized,status,deviceId}`. `request:true` must follow an explicit notification-enable gesture. |
-| `socialCallConnect` | `{callId,scope,conversationId,url,token,callerName?,muted?}` → call snapshot. Credentials come from the authenticated server; only secure LiveKit Cloud URLs are accepted. |
-| `socialCallMute` | `{muted:boolean}` → call snapshot. CallKit is kept in sync. |
-| `socialCallSpeaker` | `{speaker:boolean}` → call snapshot. `false` restores system routing (receiver/headset/Bluetooth). |
-| `socialCallEnd` | Ends the local call and leaves/rejects it on the server; endpoint operations must be idempotent. |
+| `socialCallConnect` | `{userId,callId,scope,conversationId,url,token,callerName?,muted?}` → call snapshot. Credentials come from the authenticated server; only secure LiveKit Cloud URLs are accepted. |
+| `socialCallMute` | `{callId,muted:boolean}` → call snapshot. CallKit is kept in sync. |
+| `socialCallSpeaker` | `{callId,speaker:boolean}` → call snapshot. `false` restores system routing (receiver/headset/Bluetooth). |
+| `socialCallEnd` | `{callId,localOnly?,endReason?}` ends only that call and cancels its pending permission/connect attempt. With `localOnly:true`, it does not leave/reject on the server (required when another installation owns the call). Otherwise cleanup includes the installation's `deviceId`. |
 | `socialAudioPrivacy` | `{privateTurn:boolean}`. A visible secret cancels a recording and mutes a call; clearing the flag never automatically unmutes. |
-| `socialVoiceStart` | Requests microphone permission and records up to 120 seconds, only in the foreground and outside a call/private turn. |
-| `socialVoiceStop` | `{base64,mimeType:'audio/mp4',durationMs}`. Preview in the web composer before upload. |
-| `socialVoiceCancel` | Discards the local recording and removes its temporary file. |
+| `socialVoiceStart` | `{recordingId}` requests microphone permission and records up to 120 seconds, only in the foreground and outside a call/private turn. |
+| `socialVoiceStop` | `{recordingId}` → `{recordingId,base64,mimeType:'audio/mp4',durationMs}`. Idempotent within this recording, including after native automatic stop. Preview in the web composer before upload. |
+| `socialVoiceCancel` | `{recordingId}` discards only that recording/preview and removes its temporary file. |
 
 Events use `window.maydanNative.event(name,payload)`:
 
-- `socialCall`: `{callId,conversationId,scope,userId,state,muted,speaker,participants,error?}`.
+- `socialCall`: `{callId,conversationId,scope,userId,state,muted,speaker,participants,error?,localOnly?,endReason?}`. Ending snapshots mute locally; `endReason` distinguishes `ownership-lost`, `authorization-revoked`, `authorization-timeout`, and `call-ended`. A `localOnly` termination must never trigger a JavaScript leave/reject request.
   Participants have `{id,name,speaking,muted}`. States are ringing, connecting,
   connected, reconnecting, ended (or idle in an empty snapshot).
 - `socialVoice`: `{state:'recording'|'ready'|'cancelled'|'interrupted',...}`. At the
   120-second limit, `ready` contains the same audio fields as `socialVoiceStop`.
-- `socialNotification`: `{scope,conversationId,callId?}`. Open the social drawer,
+- `socialNotification`: `{userId,scope,conversationId,callId?}` (or
+  `{userId,category,view:'requests'|'groups'}` for an invitation). Open the social drawer,
   preserving the active match. It is held until the signed-in bridge is ready.
-- `socialSessionRotated`: `{userId,token}`. Adopt only for the matching account.
+- `socialSessionRotated`: `{userId,token,previousToken}`. Adopt only for the matching account and current previous token.
   The canonical token is also persisted in Keychain for cold launch recovery.
 - `socialDeviceToken`: `{deviceId,kind,environment,registered:true}` and
   `socialNotificationStatus:{error}`. Tokens themselves are sent directly to the
@@ -59,7 +60,13 @@ Redirects are refused. Requests use the account bearer and `Origin: maydan://app
   `{call,connection:{url,token}}`; the server enforces one answering installation.
 - `GET /api/social/calls/:id` returns `{call}`. A native poll reconciles expired,
   cancelled and answered-elsewhere calls even when the web app is suspended.
-- `POST /api/social/calls/:id/leave` or `/reject` ends local participation.
+- `POST /api/social/calls/:id/leave` or `/reject` uses `{deviceId}` to end only this installation's participation. Stale actions from another device must be an idempotent no-op.
+
+Both native and web engines end local media immediately for explicit authorization
+revocation, including account suspension. After at least two failed checks, an
+independent watchdog ends media at 60 seconds without a successful authorized
+response, including while a later HTTP request is still pending. Success resets
+the failure count and deadline. Device-ownership loss never sends server cleanup.
 
 Ordinary APNs custom fields: `{recipientId,scope,conversationId,callId?}`. The
 notification body must follow the user's server-side preview preference.

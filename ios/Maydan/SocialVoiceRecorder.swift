@@ -9,6 +9,8 @@ final class SocialVoiceRecorder: NSObject, AVAudioRecorderDelegate {
     private var startedAt: Date?
     private var generation = 0
     private var starting = false
+    private var ready: [String: Any]?
+    private(set) var recordingId: String?
     var isRecording: Bool { recorder != nil }
 
     static func permission() async -> Bool {
@@ -17,8 +19,10 @@ final class SocialVoiceRecorder: NSObject, AVAudioRecorderDelegate {
         }
     }
 
-    func start() async throws -> [String: Any] {
+    func start(id: String) async throws -> [String: Any] {
         guard recorder == nil, !starting else { throw SocialNativeError.failed("AUDIO_BUSY") }
+        ready = nil
+        recordingId = id
         starting = true
         let attempt = generation
         defer { starting = false }
@@ -41,8 +45,8 @@ final class SocialVoiceRecorder: NSObject, AVAudioRecorderDelegate {
             recordingURL = url
             recorder = audio
             startedAt = Date()
-            onEvent?(["state": "recording"])
-            return ["state": "recording", "maximumDurationMs": 120_000]
+            onEvent?(["state": "recording", "recordingId": id])
+            return ["state": "recording", "recordingId": id, "maximumDurationMs": 120_000]
         } catch {
             try? FileManager.default.removeItem(at: url)
             try? session.setActive(false, options: .notifyOthersOnDeactivation)
@@ -51,6 +55,7 @@ final class SocialVoiceRecorder: NSObject, AVAudioRecorderDelegate {
     }
 
     func stop() throws -> [String: Any] {
+        if let ready { return ready }
         guard let audio = recorder, let url = recordingURL else { throw SocialNativeError.failed("AUDIO_NOT_RECORDING") }
         let duration = min(120, max(audio.currentTime, Date().timeIntervalSince(startedAt ?? Date())))
         audio.delegate = nil
@@ -64,11 +69,17 @@ final class SocialVoiceRecorder: NSObject, AVAudioRecorderDelegate {
         }
         let data = try Data(contentsOf: url)
         guard duration >= 0.3, !data.isEmpty, data.count <= 2_000_000 else { throw SocialNativeError.failed("AUDIO_TOO_SHORT") }
-        return ["base64": data.base64EncodedString(), "mimeType": "audio/mp4", "durationMs": Int(duration * 1_000)]
+        let result: [String: Any] = ["base64": data.base64EncodedString(), "mimeType": "audio/mp4",
+                                   "durationMs": Int(duration * 1_000), "recordingId": recordingId ?? ""]
+        ready = result
+        return result
     }
 
     func cancel(state: String = "cancelled") {
         generation += 1
+        ready = nil
+        let cancelledId = recordingId
+        recordingId = nil
         guard recorder != nil else { return }
         recorder?.delegate = nil
         recorder?.stop()
@@ -77,7 +88,7 @@ final class SocialVoiceRecorder: NSObject, AVAudioRecorderDelegate {
         recordingURL = nil
         startedAt = nil
         try? AVAudioSession.sharedInstance().setActive(false, options: .notifyOthersOnDeactivation)
-        onEvent?(["state": state])
+        onEvent?(["state": state, "recordingId": cancelledId ?? ""])
     }
 
     nonisolated func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
