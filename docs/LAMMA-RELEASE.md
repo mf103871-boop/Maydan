@@ -58,7 +58,7 @@ The executable sequence is:
 1. Apply the one reviewed additive D1 migration with a private minimal Wrangler configuration pinned to the production account/database; no frontend build hook is present.
 2. Upload `maydan-game` with inherited bindings, retained assets and the `v2-social` → `v3-lamma` migration adding only `LammaJobs`.
 3. Verify the original public asset hashes, then retain the daily cron and add the minute jobs cron on the main worker.
-4. Upload `maydan-rooms` with its original `v1` namespace history and a cross-worker `SOCIAL_JOBS` binding to the main worker. It receives no new cron. The live service already has a historical daily `17 3 * * *` schedule despite the repository's main-only comment; this procedure preserves it. Removing that historical duplicate is a separate change.
+4. Upload `maydan-rooms` with its original `v1` namespace history and a cross-worker `SOCIAL_JOBS` binding to the main worker. It receives no new cron. The original plan preserves its historical daily `17 3 * * *` schedule. On 2026-10-12 Cloudflare rejected the additional main minute cron with error `10072` because the free account already had five triggers. A separately reviewed recovery amendment removes only the duplicate rooms daily trigger and retains daily cleanup plus minute jobs on the main worker. It does not change other workers or upgrade the plan.
 5. Verify both active worker module bytes against the reviewed bundles, original bindings/settings, new private storage/jobs bindings, migration ledger, cron schedules, full asset configuration and original public asset hashes.
 
 The helper does not set secrets, create provider projects, send notifications, dispatch CI or upload TestFlight. Its successful result explicitly reports `testFlightUploaded: false`.
@@ -68,6 +68,8 @@ Read-only verification can be repeated:
 ```powershell
 node scripts/lamma-release.mjs verify '<private-directory>'
 ```
+
+An explicitly reviewed cron recovery uses a separate encrypted, original-plan-bound `recovery-receipt`. Only a completed receipt for the exact historical rooms daily duplicate changes the expected rooms schedule to empty. The original plan and failed apply journal remain immutable. Worker downloads may encode the main module as either a multipart file or UTF-8 text field; both representations must match the same reviewed SHA-256.
 
 ## Failure and recovery
 
