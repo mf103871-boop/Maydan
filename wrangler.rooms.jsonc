@@ -35,7 +35,7 @@
   ],
   // لا cron هنا: التنظيف اليومي يعمل من `maydan-game` وحده (القاعدة مشتركة)، وإلا جرى مرتين.
   // هذا العامل يعتمد على `maydan-game` أصلًا (ربط SOCIAL_HUB أعلاه) فيُنشر بعده دائمًا.
-  "observability": { "enabled": true }
-  // Enable the same private SOCIAL_AUDIO R2 binding as maydan-game after provisioning.
+  "observability": { "enabled": true },
+  "r2_buckets": [{ "binding": "SOCIAL_AUDIO", "bucket_name": "maydan-social-audio" }]
   // LIVEKIT_* and APNS_* settings must match the main worker.
 }

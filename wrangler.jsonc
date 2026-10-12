@@ -47,8 +47,7 @@
   // تنظيف يومي للجلسات المنتهية ورموز الدخول وسجل webhooks والرسائل القديمة
   // (server/accounts/cleanup.mjs). يعمل من هذا العامل وحده؛ `maydan-rooms` بلا cron.
   "triggers": { "crons": ["17 3 * * *", "* * * * *"] },
-  // Provision a private bucket, then enable the binding on both workers:
-  // "r2_buckets": [{ "binding": "SOCIAL_AUDIO", "bucket_name": "maydan-social-audio" }],
+  "r2_buckets": [{ "binding": "SOCIAL_AUDIO", "bucket_name": "maydan-social-audio" }],
   // Secrets: LIVEKIT_URL (wss://...), LIVEKIT_API_KEY, LIVEKIT_API_SECRET,
   // APNS_KEY_ID, APNS_TEAM_ID, APNS_PRIVATE_KEY. No credentials are bundled.
   "observability": { "enabled": true }

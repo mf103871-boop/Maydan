@@ -1,0 +1,68 @@
+{
+  "runId": "507624d6-51f2-4704-b411-a354cbba3f26",
+  "startedAt": "2026-10-12T08:32:51.390Z",
+  "origin": "https://maydan-lamma-preview.mf103871.workers.dev",
+  "checks": [
+    {
+      "name": "preview capability and accepted synthetic friendships",
+      "passed": true
+    },
+    {
+      "name": "direct real audio, other-device guard, and room-ending token revocation",
+      "passed": true
+    },
+    {
+      "name": "twelve accepted group members connect and receive actual audio",
+      "passed": true
+    },
+    {
+      "name": "real provider join webhooks bind every participant SID",
+      "passed": true
+    },
+    {
+      "name": "blocking revokes media and old token while unrelated group members stay connected",
+      "passed": true
+    },
+    {
+      "name": "voluntary provider disconnect triggers authenticated webhook departure",
+      "passed": true
+    },
+    {
+      "name": "group room end revokes remaining tokens and drains RoomService jobs",
+      "passed": true
+    }
+  ],
+  "cleanup": {
+    "accountsSeeded": 12,
+    "accountsDeleted": 12,
+    "callsCreated": 2,
+    "callEndRequestsAccepted": 2,
+    "credentials": "memory-only; D1 stores one-hour hashes",
+    "providerJobsRemaining": 0,
+    "remainingUsersAndSessions": 0
+  },
+  "sourceCommit": "86fa1bb42cd6488267770c6b07374b0773f8036f",
+  "sourceServerTree": "6f3f37b811d1df6bddb7b3e8b4ff74749475a1cc",
+  "backendTreeSha256": "b048b0f4b4a081a353f394d16e9308b15b5825fbd3baef30fcf5a975ed9f4be5",
+  "previewDeploymentVersion": "4862d1fc-5f62-487e-b646-6c4f26f39665",
+  "fixtureRooms": [
+    {
+      "callId": "292c3ec3-0a87-47e2-923f-4b8b11a8510a",
+      "roomName": "lamma-292c3ec3-0a87-47e2-923f-4b8b11a8510a",
+      "scope": "direct"
+    },
+    {
+      "callId": "2059d5df-506a-4b5f-9722-c5c3227790a9",
+      "roomName": "lamma-2059d5df-506a-4b5f-9722-c5c3227790a9",
+      "scope": "group"
+    }
+  ],
+  "providerMetadataEchoes": 15,
+  "refreshedTokenMetadataEchoes": 15,
+  "maximumConnectedParticipants": 12,
+  "revocationAcknowledgementMs": 1218,
+  "passed": true,
+  "sourceCommitAtFinish": "b3a377020801497c8b16c4092686eea041e8db7f",
+  "finishedPreviewDeploymentVersion": "4862d1fc-5f62-487e-b646-6c4f26f39665",
+  "finishedAt": "2026-10-12T08:36:36.791Z"
+}
