@@ -73,6 +73,8 @@ try {
   await page.route('**/*', route => new URL(route.request().url()).origin === origin ? route.continue() : route.abort());
   await page.goto(origin + '/#/play/fabraka');
   await page.getByRole('button', { name: /الأصدقاء،/ }).click();
+  await page.getByRole('button', { name: 'محادثة مع أحمد', exact: true }).waitFor();
+  await page.evaluate(() => document.fonts.ready); await page.waitForTimeout(300); await page.screenshot({ path: path.join(out, 'mobile-friends.png') });
   await page.getByRole('button', { name: 'محادثة مع أحمد', exact: true }).click();
   await page.getByRole('textbox', { name: 'اكتب رسالة' }).fill('مسودة تبقى معي');
   await page.getByRole('button', { name: 'إغلاق اللّمة والعودة للعبة' }).click();
