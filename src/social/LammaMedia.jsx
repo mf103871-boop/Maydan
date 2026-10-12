@@ -18,6 +18,7 @@ const PATHS = {
   more: 'M5 12h.01M12 12h.01M19 12h.01', send: 'M21 3L3 10l7 4 4 7 7-18ZM10 14l11-11',
   stop: 'M6 6h12v12H6Z', play: 'm8 4 12 8-12 8V4Z', settings: 'M4 7h16M4 17h16M9 3v8M16 13v8',
   pause: 'M8 4v16M16 4v16',
+  star: 'm12 3 2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-3-5.6 3 1.1-6.2L3 9.6l6.2-.9L12 3Z',
   shield: 'M12 2l8 3v7c0 5-8 10-8 10S4 17 4 12V5l8-3ZM8 12l3 3 5-6',
 };
 export function LammaIcon({ name, size = 22 }) {

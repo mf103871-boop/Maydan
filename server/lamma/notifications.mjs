@@ -2,7 +2,15 @@ import { fail } from '../room-model.mjs';
 import { signEs256 } from '../accounts/jwt.mjs';
 import { userId } from '../social/model.mjs';
 import { all, first, stmt, run, live, unblocked, friends, ident, scopeAllowed, requireScope, scopeOf } from './common.mjs';
-export const pushConfigured = env => !!(env.APNS_KEY_ID && env.APNS_TEAM_ID && env.APNS_PRIVATE_KEY && env.APPLE_BUNDLE_ID);
+function pushCredentials(env,environment) {
+  if(!env.APPLE_BUNDLE_ID||!['production','sandbox'].includes(environment)) return null;
+  const prefix=environment==='sandbox'?'APNS_SANDBOX_':'APNS_';
+  const keyId=env[`${prefix}KEY_ID`],teamId=env[`${prefix}TEAM_ID`],privateKey=env[`${prefix}PRIVATE_KEY`];
+  return keyId&&teamId&&privateKey?{keyId,teamId,privateKey}:null;
+}
+// The existing public capability describes production. Device registration
+// reports its own environment; sandbox never borrows a production credential.
+export const pushConfigured = (env,environment='production') => !!pushCredentials(env,environment);
 export function job(env,id,kind,payload,user=null,now=Date.now(),condition='1') {
   return stmt(env,`INSERT OR IGNORE INTO social_jobs(id,kind,payload,user_id,created_at,due_at) SELECT ?,?,?,?,?,? WHERE ${condition}`,id,kind,JSON.stringify(payload),user,now,now);
 }
@@ -39,7 +47,7 @@ export async function registerDevice(env,id,sessionId,body) {
     stmt(env,'DELETE FROM social_devices WHERE (token=? AND kind=? AND environment=? AND (user_id!=? OR device_id!=?)) OR (device_id=? AND user_id!=?)',body.token.toLowerCase(),kind,environment,id,device,device,id),
     stmt(env,`INSERT INTO social_devices(user_id,device_id,kind,environment,token,session_id,updated_at) SELECT ?,?,?,?,?,?,? WHERE ${live(ident(id))} ON CONFLICT(user_id,device_id,kind) DO UPDATE SET token=excluded.token,environment=excluded.environment,session_id=excluded.session_id,updated_at=excluded.updated_at WHERE COALESCE((SELECT created_at FROM sessions WHERE id=excluded.session_id),0)>=COALESCE((SELECT created_at FROM sessions WHERE id=social_devices.session_id),0)`,id,device,kind,environment,body.token.toLowerCase(),sessionId,Date.now()),
   ]);
-  return {ok:true,configured:pushConfigured(env)};
+  return {ok:true,configured:pushConfigured(env,environment)};
 }
 export const deleteDevice = (env,id,device) => run(env,'DELETE FROM social_devices WHERE user_id=? AND device_id=?',id,userId(device));
 async function eligible(env,id,p) {
@@ -58,25 +66,36 @@ async function eligible(env,id,p) {
 }
 export async function deliverPush(env,row) {
   const p=JSON.parse(row.payload), id=row.user_id;
-  if(!pushConfigured(env)) return 'retry';
   if(!await eligible(env,id,p)) return 'done';
   let pref=await preferences(env,id);
   if(!pref[p.category]||pref.mutedConversations.some(m=>m.scope===p.scope&&m.conversationId===p.conversationId)) return 'done';
   const voip=p.category==='calls'&&p.scope==='direct';
   const devices=await all(env,`SELECT d.* FROM social_devices d JOIN sessions s ON s.id=d.session_id AND s.user_id=d.user_id WHERE d.user_id=? AND d.kind=? AND s.expires_at>? AND (s.revoked_at IS NULL OR s.revoked_at>?)`,id,voip?'voip':'apns',Date.now(),Date.now());
-  const auth=await signEs256({kid:env.APNS_KEY_ID},{iss:env.APNS_TEAM_ID,iat:Math.floor(Date.now()/1000)},env.APNS_PRIVATE_KEY);
+  const authorizations=new Map();
   let failed=false;
   for(const d of devices) {
+    const credentials=pushCredentials(env,d.environment);
+    // Absent configuration is unavailable, not a transient provider failure.
+    // Keep the registration for future events, without replaying this old event.
+    if(!credentials) continue;
+    let auth=authorizations.get(d.environment);
+    if(!auth) {
+      try { auth=await signEs256({kid:credentials.keyId},{iss:credentials.teamId,iat:Math.floor(Date.now()/1000)},credentials.privateKey); }
+      catch { failed=true;continue; }
+      authorizations.set(d.environment,auth);
+    }
     // Recheck after provider work: a queued event cannot bypass a recent block.
     if(!await eligible(env,id,p)) return 'done';
     pref=await preferences(env,id);
     if(!pref[p.category]||pref.mutedConversations.some(m=>m.scope===p.scope&&m.conversationId===p.conversationId))return 'done';
-    if(!await first(env,'SELECT 1 FROM social_devices d JOIN sessions s ON s.id=d.session_id AND s.user_id=d.user_id WHERE d.user_id=? AND d.device_id=? AND d.kind=? AND d.token=? AND s.expires_at>? AND (s.revoked_at IS NULL OR s.revoked_at>?)',id,d.device_id,d.kind,d.token,Date.now(),Date.now()))continue;
+    if(!await first(env,'SELECT 1 FROM social_devices d JOIN sessions s ON s.id=d.session_id AND s.user_id=d.user_id WHERE d.user_id=? AND d.device_id=? AND d.kind=? AND d.environment=? AND d.token=? AND s.expires_at>? AND (s.revoked_at IS NULL OR s.revoked_at>?)',id,d.device_id,d.kind,d.environment,d.token,Date.now(),Date.now()))continue;
     let preview=null;
     if(pref.previews&&p.category==='messages'&&p.messageSeq){const m=await first(env,`SELECT kind,text FROM ${p.scope==='group'?'social_group_messages':'social_messages'} WHERE seq=? AND deleted_at IS NULL`,p.messageSeq);if(m?.kind==='text')preview=Array.from(m.text).slice(0,100).join('');}
     const body=voip?{aps:{},recipientId:id,callId:p.callId,scope:p.scope,conversationId:p.conversationId,callerName:'مكالمة ميدان',expiresAt:p.expiresAt}:{aps:{alert:{title:'ميدان',body:preview||(p.category==='calls'?'انضم للمكالمة الجماعية':p.category==='friendRequests'?'وصلك طلب صداقة':p.category==='groupInvites'?'وصلتك دعوة للمة':'وصلتك رسالة جديدة')},...(pref.sound?{sound:'default'}:{})},recipientId:id,eventId:row.id,category:p.category,scope:p.scope,conversationId:p.category==='groupInvites'?undefined:p.conversationId,groupId:p.scope==='group'?p.conversationId:undefined,requestId:p.requestId,callId:p.callId};
-    const response=await fetch(`https://${d.environment==='sandbox'?'api.sandbox.push.apple.com':'api.push.apple.com'}/3/device/${d.token}`,{method:'POST',headers:{authorization:`bearer ${auth}`,'apns-topic':`${env.APPLE_BUNDLE_ID}${voip?'.voip':''}`,'apns-push-type':voip?'voip':'alert','apns-priority':'10','apns-expiration':voip?'0':String(Math.floor((row.created_at+86400000)/1000)),'apns-collapse-id':row.id.slice(-64),'content-type':'application/json'},body:JSON.stringify(body),signal:AbortSignal.timeout(10000)});
-    if(response.status===410 || response.status===400 && ['BadDeviceToken','DeviceTokenNotForTopic'].includes((await response.json().catch(()=>({}))).reason)) await run(env,'DELETE FROM social_devices WHERE user_id=? AND device_id=? AND kind=? AND token=?',id,d.device_id,d.kind,d.token);
+    let response;
+    try { response=await fetch(`https://${d.environment==='sandbox'?'api.sandbox.push.apple.com':'api.push.apple.com'}/3/device/${d.token}`,{method:'POST',headers:{authorization:`bearer ${auth}`,'apns-topic':`${env.APPLE_BUNDLE_ID}${voip?'.voip':''}`,'apns-push-type':voip?'voip':'alert','apns-priority':'10','apns-expiration':voip?'0':String(Math.floor((row.created_at+86400000)/1000)),'apns-collapse-id':row.id.slice(-64),'content-type':'application/json'},body:JSON.stringify(body),signal:AbortSignal.timeout(10000)}); }
+    catch { failed=true;continue; }
+    if(response.status===410 || response.status===400 && ['BadDeviceToken','DeviceTokenNotForTopic'].includes((await response.json().catch(()=>({}))).reason)) await run(env,'DELETE FROM social_devices WHERE user_id=? AND device_id=? AND kind=? AND environment=? AND token=?',id,d.device_id,d.kind,d.environment,d.token);
     else if(!response.ok) failed=true;
   }
   return failed?'retry':'done';

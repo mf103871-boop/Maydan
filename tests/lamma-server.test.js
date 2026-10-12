@@ -34,8 +34,103 @@ test('account deletion transfers a group and redacts only that author while remo
 
 test('LiveKit calls issue room-scoped microphone tokens, claim one device and revoke blocked participation',async t=>{const h=await setup(t),a=await h.user(),b=await h.user(),c=await h.friends(a,b);const requests=[];t.mock.method(globalThis,'fetch',async(url,opts)=>{requests.push({url:String(url),body:JSON.parse(opts.body)});return Response.json({});});Object.assign(h.env,{LIVEKIT_URL:'wss://test.livekit.cloud',LIVEKIT_API_KEY:'test-key',LIVEKIT_API_SECRET:'test-secret'});const created=await h.api(a,'/calls','POST',{scope:'direct',conversationId:c,clientId:crypto.randomUUID(),deviceId:'device-alpha'});assert.equal(created.status,200,JSON.stringify(created.body));const id=created.body.call.id,jwt=decodeJws(created.body.connection.token);assert.equal(jwt.payload.sub,a.id);assert.deepEqual(jwt.payload.video.canPublishSources,['microphone']);assert.equal(jwt.payload.video.room,`lamma-${id}`);assert.equal((await h.api(b,`/calls/${id}/accept`,'POST',{deviceId:'device-beta'})).status,200);assert.equal((await h.api(b,`/calls/${id}/accept`,'POST',{deviceId:'device-other'})).body.error,'CALL_ANSWERED');await h.api(a,'/blocks','POST',{userId:b.id});await drainJobs(h.env);assert.ok(requests.some(r=>r.url.endsWith('/RemoveParticipant')));assert.equal((await first(h.env,'SELECT status FROM social_calls WHERE id=?',id)).status,'ended');});
 
-test('notifications enforce mutes and late blocks, include recipient identity, and clean rejected APNs tokens',async t=>{const h=await setup(t),a=await h.user(),b=await h.user(),c=await h.friends(a,b);const key=await crypto.subtle.generateKey({name:'ECDSA',namedCurve:'P-256'},true,['sign','verify']);const pem=Buffer.from(await crypto.subtle.exportKey('pkcs8',key.privateKey)).toString('base64');Object.assign(h.env,{APNS_KEY_ID:'kid',APNS_TEAM_ID:'team',APNS_PRIVATE_KEY:`-----BEGIN PRIVATE KEY-----\n${pem}\n-----END PRIVATE KEY-----`,APPLE_BUNDLE_ID:'Maydan'});await h.api(b,'/devices','PUT',{deviceId:'device-beta',kind:'apns',environment:'sandbox',token:'a'.repeat(64)});let sent=[];t.mock.method(globalThis,'fetch',async(url,opts)=>{sent.push(JSON.parse(opts.body));return new Response('{}');});await h.api(a,`/conversations/${c}/messages`,'POST',{clientId:crypto.randomUUID(),text:'لا يوضع في التنبيه'});await drainJobs(h.env);assert.equal(sent.length,1);assert.equal(sent[0].recipientId,b.id);assert.equal(JSON.stringify(sent[0]).includes('لا يوضع'),false);await h.api(b,'/preferences','PUT',{mutedConversations:[{scope:'direct',conversationId:c}]});await h.api(a,`/conversations/${c}/messages`,'POST',{clientId:crypto.randomUUID(),text:'صامتة'});await drainJobs(h.env);assert.equal(sent.length,1);await h.api(b,'/preferences','PUT',{mutedConversations:[]});await h.api(a,`/conversations/${c}/messages`,'POST',{clientId:crypto.randomUUID(),text:'قبل الحظر'});await h.api(b,'/blocks','POST',{userId:a.id});await drainJobs(h.env);assert.equal(sent.length,1);
- const other=await h.user(),otherConversation=await h.friends(a,other);await h.api(other,'/devices','PUT',{deviceId:'expired-token-device',kind:'apns',environment:'sandbox',token:'c'.repeat(64)});t.mock.method(globalThis,'fetch',async()=>Response.json({reason:'Unregistered'},{status:410}));await h.api(a,`/conversations/${otherConversation}/messages`,'POST',{clientId:crypto.randomUUID(),text:'تنظيف الرمز'});await drainJobs(h.env);assert.equal(await first(h.env,'SELECT 1 FROM social_devices WHERE user_id=?',other.id),null);
+test('notifications enforce mutes and late blocks, include recipient identity, and clean rejected APNs tokens',async t=>{const h=await setup(t),a=await h.user(),b=await h.user(),c=await h.friends(a,b);const key=await crypto.subtle.generateKey({name:'ECDSA',namedCurve:'P-256'},true,['sign','verify']);const pem=Buffer.from(await crypto.subtle.exportKey('pkcs8',key.privateKey)).toString('base64');Object.assign(h.env,{APNS_KEY_ID:'kid',APNS_TEAM_ID:'team',APNS_PRIVATE_KEY:`-----BEGIN PRIVATE KEY-----\n${pem}\n-----END PRIVATE KEY-----`,APPLE_BUNDLE_ID:'Maydan'});await h.api(b,'/devices','PUT',{deviceId:'device-beta',kind:'apns',environment:'production',token:'a'.repeat(64)});let sent=[];t.mock.method(globalThis,'fetch',async(url,opts)=>{sent.push(JSON.parse(opts.body));return new Response('{}');});await h.api(a,`/conversations/${c}/messages`,'POST',{clientId:crypto.randomUUID(),text:'لا يوضع في التنبيه'});await drainJobs(h.env);assert.equal(sent.length,1);assert.equal(sent[0].recipientId,b.id);assert.equal(JSON.stringify(sent[0]).includes('لا يوضع'),false);await h.api(b,'/preferences','PUT',{mutedConversations:[{scope:'direct',conversationId:c}]});await h.api(a,`/conversations/${c}/messages`,'POST',{clientId:crypto.randomUUID(),text:'صامتة'});await drainJobs(h.env);assert.equal(sent.length,1);await h.api(b,'/preferences','PUT',{mutedConversations:[]});await h.api(a,`/conversations/${c}/messages`,'POST',{clientId:crypto.randomUUID(),text:'قبل الحظر'});await h.api(b,'/blocks','POST',{userId:a.id});await drainJobs(h.env);assert.equal(sent.length,1);
+ const other=await h.user(),otherConversation=await h.friends(a,other);await h.api(other,'/devices','PUT',{deviceId:'expired-token-device',kind:'apns',environment:'production',token:'c'.repeat(64)});t.mock.method(globalThis,'fetch',async()=>Response.json({reason:'Unregistered'},{status:410}));await h.api(a,`/conversations/${otherConversation}/messages`,'POST',{clientId:crypto.randomUUID(),text:'تنظيف الرمز'});await drainJobs(h.env);assert.equal(await first(h.env,'SELECT 1 FROM social_devices WHERE user_id=?',other.id),null);
+});
+
+async function configurePush(env,environment) {
+  const key=await crypto.subtle.generateKey({name:'ECDSA',namedCurve:'P-256'},true,['sign','verify']);
+  const pem=Buffer.from(await crypto.subtle.exportKey('pkcs8',key.privateKey)).toString('base64');
+  const prefix=environment==='production'?'APNS_':'APNS_SANDBOX_';
+  Object.assign(env,{APPLE_BUNDLE_ID:'Maydan',[`${prefix}KEY_ID`]:`${environment}-kid`,[`${prefix}TEAM_ID`]:`${environment}-team`,[`${prefix}PRIVATE_KEY`]:`-----BEGIN PRIVATE KEY-----\n${pem}\n-----END PRIVATE KEY-----`});
+  return key.publicKey;
+}
+
+test('APNs alerts and VoIP pushes select environment-specific origins and independently verified signing keys',async t=>{
+  const h=await setup(t),a=await h.user(),b=await h.user(),conversationId=await h.friends(a,b);
+  const keys={production:await configurePush(h.env,'production'),sandbox:await configurePush(h.env,'sandbox')};
+  for(const [index,environment,kind] of [[0,'production','apns'],[1,'sandbox','apns'],[2,'production','voip'],[3,'sandbox','voip']]){
+    const r=await h.api(b,'/devices','PUT',{deviceId:`device-${index}`,kind,environment,token:String(index+1).repeat(64)});
+    assert.deepEqual(r.body,{ok:true,configured:true});
+  }
+  const requests=[];
+  t.mock.method(globalThis,'fetch',async(url,options)=>{
+    if(new URL(url).hostname.endsWith('push.apple.com'))requests.push({url:new URL(url),headers:new Headers(options.headers),body:JSON.parse(options.body)});
+    return Response.json({});
+  });
+  assert.equal((await h.api(a,`/conversations/${conversationId}/messages`,'POST',{clientId:crypto.randomUUID(),text:'تجربة تنبيه'})).status,200);
+  await drainJobs(h.env);
+  Object.assign(h.env,{LIVEKIT_URL:'wss://test.livekit.cloud',LIVEKIT_API_KEY:'test-key',LIVEKIT_API_SECRET:'test-secret'});
+  assert.equal((await h.api(a,'/calls','POST',{scope:'direct',conversationId,clientId:crypto.randomUUID(),deviceId:'caller'})).status,200);
+  await drainJobs(h.env);
+  assert.equal(requests.length,4);
+  const combinations=new Set();
+  for(const request of requests){
+    const environment=request.url.hostname==='api.sandbox.push.apple.com'?'sandbox':'production';
+    assert.equal(request.url.origin,environment==='sandbox'?'https://api.sandbox.push.apple.com':'https://api.push.apple.com');
+    const type=request.headers.get('apns-push-type'),jwt=decodeJws(request.headers.get('authorization').slice(7));
+    combinations.add(`${environment}:${type}`);
+    assert.equal(request.headers.get('apns-topic'),type==='voip'?'Maydan.voip':'Maydan');
+    assert.equal(request.body.recipientId,b.id);
+    assert.equal(jwt.header.kid,`${environment}-kid`);
+    assert.equal(jwt.payload.iss,`${environment}-team`);
+    assert.equal(jwt.header.alg,'ES256');
+    const input=new TextEncoder().encode(jwt.signingInput),algorithm={name:'ECDSA',hash:'SHA-256'};
+    assert.equal(await crypto.subtle.verify(algorithm,keys[environment],jwt.signature,input),true);
+    assert.equal(await crypto.subtle.verify(algorithm,keys[environment==='sandbox'?'production':'sandbox'],jwt.signature,input),false);
+  }
+  assert.deepEqual([...combinations].sort(),['production:alert','production:voip','sandbox:alert','sandbox:voip']);
+});
+
+test('missing or partial APNs credentials never cross environments or retain unavailable push jobs',async t=>{
+  for(const configured of ['production','sandbox'])await t.test(configured,async t=>{
+    const h=await setup(t),a=await h.user(),b=await h.user(),conversationId=await h.friends(a,b);
+    await configurePush(h.env,configured);
+    const unavailable=configured==='production'?'sandbox':'production',prefix=unavailable==='sandbox'?'APNS_SANDBOX_':'APNS_';
+    h.env[`${prefix}KEY_ID`]='partial-key';
+    const device=(environment)=>({deviceId:`device-${environment}`,kind:'apns',environment:environment==='sandbox'?'development':environment,token:(environment==='production'?'a':'b').repeat(64)});
+    assert.equal((await h.api(b,'/devices','PUT',device(configured))).body.configured,true);
+    assert.equal((await h.api(b,'/devices','PUT',device(unavailable))).body.configured,false);
+    assert.equal((await h.api(b,'/capabilities')).body.pushNotifications,configured==='production');
+    const sent=[];
+    t.mock.method(globalThis,'fetch',async(url)=>{sent.push(new URL(url).hostname);return Response.json({});});
+    await h.api(a,`/conversations/${conversationId}/messages`,'POST',{clientId:crypto.randomUUID(),text:'مفتاح البيئة'});
+    await drainJobs(h.env);
+    assert.deepEqual(sent,[configured==='production'?'api.push.apple.com':'api.sandbox.push.apple.com']);
+    await h.api(b,`/devices/device-${configured}`,'DELETE');
+    await h.api(a,`/conversations/${conversationId}/messages`,'POST',{clientId:crypto.randomUUID(),text:'غير متاح'});
+    await drainJobs(h.env);
+    assert.equal(sent.length,1);
+    assert.equal((await first(h.env,"SELECT COUNT(*) AS n FROM social_jobs WHERE kind='push'")).n,0);
+    assert.ok(await first(h.env,'SELECT 1 FROM social_devices WHERE user_id=? AND environment=?',b.id,unavailable));
+    await configurePush(h.env,unavailable);
+    await drainJobs(h.env);
+    assert.equal(sent.length,1,'configuring later must not replay skipped stale notifications');
+    assert.equal((await h.api(b,'/devices','PUT',device(unavailable))).body.configured,true);
+  });
+});
+
+test('APNs late environment changes cancel sends and preserve a replacement registration after rejection',async t=>{
+  const h=await setup(t),a=await h.user(),b=await h.user(),conversationId=await h.friends(a,b);
+  await configurePush(h.env,'production');await configurePush(h.env,'sandbox');
+  const device={deviceId:'same-installation',kind:'apns',environment:'production',token:'a'.repeat(64)};
+  await h.api(b,'/devices','PUT',device);
+  const originalSign=crypto.subtle.sign.bind(crypto.subtle);
+  const signMock=t.mock.method(crypto.subtle,'sign',async(...args)=>{
+    const signed=await originalSign(...args);
+    await run(h.env,"UPDATE social_devices SET environment='sandbox' WHERE user_id=?",b.id);
+    return signed;
+  });
+  let sent=0;
+  t.mock.method(globalThis,'fetch',async()=>{sent++;await run(h.env,"UPDATE social_devices SET environment='production' WHERE user_id=?",b.id);return Response.json({reason:'Unregistered'},{status:410});});
+  await h.api(a,`/conversations/${conversationId}/messages`,'POST',{clientId:crypto.randomUUID(),text:'أثناء تغيير البيئة'});
+  await drainJobs(h.env);
+  assert.equal(sent,0);
+  signMock.mock.restore();
+  await h.api(a,`/conversations/${conversationId}/messages`,'POST',{clientId:crypto.randomUUID(),text:'أثناء تبديل التسجيل'});
+  await drainJobs(h.env);
+  assert.equal(sent,1);
+  assert.equal((await first(h.env,'SELECT environment FROM social_devices WHERE user_id=?',b.id)).environment,'production');
 });
 
 test('retention removes expired group messages and audio, and provider capabilities remain honest',async t=>{const h=await setup(t),a=await h.user(),g=await h.group(a);const m=await h.send(a,g,'قديم');const upload=await h.upload(a,'group',g);assert.equal(upload.status,200);await run(h.env,'UPDATE social_group_messages SET created_at=0 WHERE seq=?',m.body.message.seq);await run(h.env,'UPDATE social_attachments SET created_at=0 WHERE id=?',upload.body.attachment.id);await cleanupLamma(h.env);await drainJobs(h.env);assert.equal(h.objects.size,0);assert.deepEqual((await h.api(a,`/groups/${g}/messages`)).body.messages,[]);delete h.env.SOCIAL_AUDIO;const caps=(await h.api(a,'/capabilities')).body;assert.equal(caps.voiceMessages,false);assert.equal(caps.liveCalls,false);assert.equal(caps.pushNotifications,false);assert.equal((await h.upload(a,'group',g)).status,503);});

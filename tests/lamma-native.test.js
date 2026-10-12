@@ -50,6 +50,16 @@ test('pinned native SDK has a matching lockfile entry and all native sources are
   }
 });
 
+test('signed archive applies the app provisioning profile only to the application target', () => {
+  const workflow = read('.github/workflows/ios-testflight.yml');
+  assert.match(workflow, /"MAYDAN_PROVISIONING_PROFILE_SPECIFIER=\$IOS_PROFILE_UUID" archive/);
+  assert.doesNotMatch(workflow, /[\s"]PROVISIONING_PROFILE_SPECIFIER=/, 'a command-line profile also reaches Swift Package resource bundles');
+  assert.doesNotMatch(workflow, /PRODUCT_BUNDLE_IDENTIFIER=Maydan/, 'Swift Package bundles must keep their own identifier');
+  const releaseTarget = project.split('\n').find(line => line.includes('F20000000000000000000004 /* Release */ ='));
+  assert.ok(releaseTarget.includes('PROVISIONING_PROFILE_SPECIFIER = "$(MAYDAN_PROVISIONING_PROFILE_SPECIFIER)";'));
+  assert.equal((project.match(/PROVISIONING_PROFILE_SPECIFIER =/g) || []).length, 1);
+});
+
 test('audio capabilities and disclosure accompany real native audio integration', () => {
   const plist = read('ios/Maydan/Info.plist');
   assert.match(plist, /NSMicrophoneUsageDescription/);

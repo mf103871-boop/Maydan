@@ -5,6 +5,14 @@ import { socialInterruption } from './interruption.js';
 const SocialUIContext = createContext(null);
 export const useSocialUI = () => useContext(SocialUIContext);
 export const conversationDraftKey = (kind, id) => `${kind}:${id}`;
+const favoritesKey = accountKey => `maydan:social-ui:favorites:${encodeURIComponent(accountKey)}`;
+const loadFavorites = accountKey => {
+  if (!accountKey || accountKey === 'guest') return [];
+  try {
+    const value = JSON.parse(localStorage.getItem(favoritesKey(accountKey)) || '[]');
+    return Array.isArray(value) ? [...new Set(value.filter(id => typeof id === 'string' && id.length > 0 && id.length <= 128))].slice(0, 5000) : [];
+  } catch { return []; }
+};
 
 function AccountSocialUI({ children, accountKey }) {
   const [stateOwner, setStateOwner] = useState(accountKey);
@@ -15,10 +23,20 @@ function AccountSocialUI({ children, accountKey }) {
   // later account or to another player using browser storage on this device.
   const [drafts, setDrafts] = useState({});
   const [invite, setInvite] = useState(null);
+  // Device preference only: each account owns its own IDs; no message/profile data is stored.
+  const [favorites, setFavorites] = useState(() => loadFavorites(accountKey));
   const owned = stateOwner === accountKey;
   useEffect(() => {
-    setOpen(false); setView({ type: 'list', tab: 'friends' }); setHistory([]); setDrafts({}); setInvite(null); setStateOwner(accountKey);
+    setOpen(false); setView({ type: 'list', tab: 'friends' }); setHistory([]); setDrafts({}); setInvite(null); setFavorites(loadFavorites(accountKey)); setStateOwner(accountKey);
   }, [accountKey]);
+  useEffect(() => {
+    if (!owned || !accountKey || accountKey === 'guest') return;
+    try { localStorage.setItem(favoritesKey(accountKey), JSON.stringify(favorites)); } catch { /* Keep the preference for this session if storage is unavailable. */ }
+  }, [favorites, accountKey, owned]);
+  const toggleFavorite = useCallback(id => {
+    if (!owned || !accountKey || accountKey === 'guest' || !id) return;
+    setFavorites(current => current.includes(id) ? current.filter(value => value !== id) : [...current, id]);
+  }, [owned, accountKey]);
   const show = useCallback((next = { type: 'list', tab: 'friends' }) => {
     setView(next); setHistory([]); setOpen(true);
   }, []);
@@ -40,11 +58,11 @@ function AccountSocialUI({ children, accountKey }) {
     window.addEventListener('maydan-invite-friends', handler);
     return () => window.removeEventListener('maydan-invite-friends', handler);
   }, [shareRoom]);
-  const value = useMemo(() => ({ open: owned && open, view: owned ? view : { type: 'list', tab: 'friends' }, show, push, close, back, openChat, openGroup, openProfile, drafts: owned ? drafts : {}, setDraft, invite: owned ? invite : null, shareRoom, clearInvite }), [owned, open, view, show, push, close, back, openChat, openGroup, openProfile, drafts, setDraft, invite, shareRoom, clearInvite]);
+  const value = useMemo(() => ({ open: owned && open, view: owned ? view : { type: 'list', tab: 'friends' }, show, push, close, back, openChat, openGroup, openProfile, drafts: owned ? drafts : {}, setDraft, favorites: owned ? favorites : [], toggleFavorite, invite: owned ? invite : null, shareRoom, clearInvite }), [owned, open, view, show, push, close, back, openChat, openGroup, openProfile, drafts, setDraft, favorites, toggleFavorite, invite, shareRoom, clearInvite]);
   return <SocialUIContext.Provider value={value}>{children}</SocialUIContext.Provider>;
 }
 
 export function SocialUIProvider({ children }) {
   const account = useAccount();
-  return <AccountSocialUI accountKey={account.signedIn ? account.user?.id : 'guest'}>{children}</AccountSocialUI>;
+  return <AccountSocialUI accountKey={account.ready && account.signedIn && account.user?.id ? account.user.id : 'guest'}>{children}</AccountSocialUI>;
 }

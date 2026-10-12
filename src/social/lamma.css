@@ -36,6 +36,13 @@
 .lamma-tabs b { font-size: 9px; min-width: 15px; border-radius: 5px; background: #0b7d7d; color: white; padding: 1px 3px; }
 .lamma-search { margin: 0 20px 10px; display: flex; align-items: center; gap: 10px; min-height: 43px; border: 1px solid #e4ddd4; border-radius: 13px; background: #fffdfa; padding: 0 12px; color: #9d919b; }
 .lamma-search input { min-width: 0; width: 100%; outline: none; border: 0; background: transparent; color: #44354a; font-size: 12px; }
+.lamma-friend-filters { display: flex; gap: 7px; margin: 0 20px 8px; }
+.lamma-friend-filters button { display: inline-flex; justify-content: center; align-items: center; gap: 5px; min-height: 36px; padding: 5px 13px; border: 1px solid #e5ddd4; border-radius: 100px; background: transparent; color: #7c7080; font: inherit; font-size: 11px; font-weight: 700; }
+.lamma-friend-filters button[aria-pressed="true"] { color: #166d68; background: #e4efe8; border-color: #c6dcd1; }
+.lamma-favorites-note { margin: 0 22px 7px; color: #8c7f8c; font-size: 10px; }
+.lamma-favorite { color: #a99d9b; width: 36px; min-width: 36px; height: 40px; }
+.lamma-favorite.is-favorite { color: #b37c28; }
+.lamma-favorite.is-favorite svg { fill: #f9df9d; }
 .lamma-list-scroll { min-height: 0; overflow-y: auto; overscroll-behavior: contain; padding: 0 10px 16px; flex: 1; scrollbar-width: thin; scrollbar-color: #d4cbd4 transparent; }
 .lamma-list-heading { display: flex; align-items: center; justify-content: space-between; padding: 8px 14px 7px; }
 .lamma-list-heading strong { color: #8a7c86; font-size: 10px; font-weight: 800; }
@@ -171,6 +178,14 @@
 .lamma-call-orb.is-connected { background: #67976260; }
 .lamma-call-bar .lamma-icon-button { color: #d5e6cf; background: #ffffff15; border-radius: 13px; }
 .lamma-call-bar .lamma-icon-button.is-muted { background: #e7d8c6; color: #714d4c; }
+.lamma-call-count { display: flex; align-items: center; justify-content: center; gap: 5px; min-height: 40px; padding: 5px 9px; border: 1px solid #78927d; border-radius: 12px; background: transparent; color: inherit; font: inherit; font-size: 12px; }
+.lamma-call-member-list { display: grid; gap: 7px; }
+.lamma-call-member { display: flex; align-items: center; gap: 12px; padding: 10px; border-radius: 14px; }
+.lamma-call-member.is-speaking { background: #e6efdd; box-shadow: inset 0 0 0 1px #b9d6a7; }
+.lamma-call-member > span:nth-child(2) { flex: 1; }
+.lamma-call-member strong, .lamma-call-member small { display: block; }
+.lamma-call-member small { font-size: 11px; color: #817982; margin-top: 3px; }
+.lamma-call-member > svg { color: #66815b; }
 .lamma-call-end { background: #b9504c !important; color: #fff4ed !important; }
 .lamma-call-accept { background: #3c865b !important; color: #fff !important; }
 .lamma-call-people { display: flex; padding-inline: 5px; }
@@ -194,6 +209,13 @@
 .lamma-home-friend .social-avatar { transform: none; }
 .lamma-home-friend > span:last-child { max-width: 60px; text-overflow: ellipsis; white-space: nowrap; overflow: hidden; }
 .lamma-home-add { width: 45px; height: 45px; display: grid; place-items: center; border: 1px dashed #b2c5a9; border-radius: 16px; color: #849d76; background: #f9fff45c; }
+.lamma-home-groups { display: flex; gap: 8px; overflow-x: auto; padding-top: 13px; margin-top: 13px; border-top: 1px solid #ccd9bb; scrollbar-width: thin; }
+.lamma-home-group { flex: 0 0 auto; display: flex; align-items: center; gap: 8px; max-width: 205px; text-align: start; border: 1px solid #d7dfce; border-radius: 14px; background: #ffffff80; padding: 8px 10px; color: #43523c; font: inherit; }
+.lamma-home-group > span { min-width: 0; }
+.lamma-home-group strong { display: block; max-width: 130px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 11px; }
+.lamma-home-group small { display: flex; gap: 4px; align-items: center; margin-top: 3px; font-size: 10px; color: #859376; }
+.lamma-home-group.has-live-call { background: #f3ffeb; border-color: #98bd80; }
+.lamma-home-group.has-live-call small { color: #347444; }
 @media(min-width: 900px) { .lamma-panel { border-radius: 24px 0 0 24px; } .lamma-call-bar { left: 24px; transform: none; } }
 @media(max-width: 540px) {
   .lamma-panel.has-call { padding-bottom: calc(89px + env(safe-area-inset-bottom)); }

@@ -2,13 +2,12 @@
 
 Lamma adds private friend groups, voice notes, game invitations, LiveKit calls and APNs notifications. The existing direct-message endpoints and text DTOs remain compatible with v1 clients; typed messages retain readable fallback text. All core social features are free.
 
-## Read-only preflight (2026-10-12)
+## Verification snapshot (2026-10-12)
 
 - Production D1 `maydan-accounts` reports only `0008_lamma.sql` pending. No remote migration or deployment was performed during preflight.
 - Cloudflare R2 bucket listing returned error **10042: Please enable R2 through the Cloudflare Dashboard**. R2 must be enabled before creating a bucket or activating audio.
-- At this checkpoint, `npm test` passed **703/703**, with no failures or skips. Later changes require their own recorded results; this is a point-in-time result, not a standing production certification.
-- After the provider/webhook and UI lifecycle follow-ups in this working tree, a second full run passed **712/712**, with no failures or skips. Backend ESLint and the preview worker's `wrangler deploy --dry-run` also passed; the dry run did not deploy or provision resources.
-- The subsequent full suite passed **722/722**. The four browser regression suites cover the mobile drawer, actual local-game pause/privacy, voice playback/call interruption, and moderator audio. Newly mounted audio controls were additionally checked against an already active call.
+- The final local `npm test` run passed **730/730**, with no failures or skips. ESLint passed with zero errors and 33 existing warnings; generated test caches are excluded. Production and preview worker dry runs passed without deploying production resources.
+- Four browser regression suites cover the mobile drawer, account-specific favorites, actual local-game pause/privacy, voice playback/call interruption, and moderator audio. The drawer fixture also checks home group shortcuts and a 12-person participant view using simulated call state; it does not establish 12 real media connections. Newly mounted audio controls were checked against an already active call.
 - LiveKit and APNs behavior has local protocol coverage. Real provider delivery, real-device audio and locked/background iOS calls still require the acceptance checks below.
 
 ## Isolated trial before a public release
@@ -48,9 +47,12 @@ npx wrangler d1 migrations apply maydan-accounts --remote --config wrangler.json
 | `LIVEKIT_URL` | `wss://<project>.livekit.cloud`; Cloud is required for access-token revocation. |
 | `LIVEKIT_API_KEY` | Key used to sign room-scoped join/service tokens and verify webhooks. |
 | `LIVEKIT_API_SECRET` | Corresponding LiveKit secret. |
-| `APNS_KEY_ID` | Apple APNs signing-key identifier. |
-| `APNS_TEAM_ID` | Apple developer team identifier. |
-| `APNS_PRIVATE_KEY` | Complete APNs `.p8` private-key PEM. |
+| `APNS_KEY_ID` | Production Apple APNs signing-key identifier. |
+| `APNS_TEAM_ID` | Developer team identifier for the production key. |
+| `APNS_PRIVATE_KEY` | Complete production APNs `.p8` private-key PEM. |
+| `APNS_SANDBOX_KEY_ID` | Optional, separate sandbox APNs signing-key identifier for native development builds. |
+| `APNS_SANDBOX_TEAM_ID` | Developer team identifier for the sandbox key; must be explicitly configured even when the team is the same. |
+| `APNS_SANDBOX_PRIVATE_KEY` | Complete sandbox APNs `.p8` private-key PEM. Requires both other sandbox settings. |
 | `APPLE_BUNDLE_ID` | Actual signed app bundle identifier; currently `Maydan`. VoIP uses its `.voip` topic. |
 | `SOCIAL_AUDIO` | Private R2 binding, not a string secret. |
 | `SOCIAL_MESSAGE_RETENTION_DAYS` | Optional; defaults to 365, with the existing 30-day minimum. Applies to direct/group messages and audio. |
@@ -59,6 +61,12 @@ npx wrangler d1 migrations apply maydan-accounts --remote --config wrangler.json
 The main webhook URL is `https://maydan-game.mf103871.workers.dev/api/social/livekit/webhook`. Preview uses the same path on its isolated worker hostname. Select the matching LiveKit signing API key. Handle `participant_joined`, `participant_left`, and `room_finished`; other verified events are harmless acknowledgements. Verification uses the raw request-body SHA-256 and JWT signature. No account bearer token belongs in the webhook URL.
 
 `GET /api/social/capabilities` advertises voice/calls/push only when their required bindings/settings exist. This detects configuration, not provider billing, network reachability or real-device readiness. Missing services stay unavailable rather than claiming successful delivery.
+
+The existing `pushNotifications` capability specifically describes **production** configuration. `PUT /api/social/devices` returns `{ok:true, configured}` for that registration's environment: `production`, or `sandbox` (`development` is accepted as an alias). Production/TestFlight devices use only `APNS_*`; development devices use only `APNS_SANDBOX_*`. There is no fallback between environments, including for incomplete credentials. Registering a device is allowed while its provider configuration is absent, but its queued pushes are skipped and completed rather than retried or replayed after configuration is added. New events can use the retained registration once all three matching credentials exist. A sandbox-only setup therefore leaves the general production capability false; development acceptance must inspect the registration response. Actual provider failures continue using the bounded outbox retry window.
+
+Apple's [token-authentication documentation](https://developer.apple.com/documentation/usernotifications/establishing-a-token-based-connection-to-apns) restricts newly created keys to one environment. Select the matching environment and app bundle ID when creating each key. The ordinary topic is `Maydan`; incoming direct calls use `Maydan.voip` with the separate PushKit token. Both topics need real-device acceptance; configuration presence alone does not verify Apple's topic authorization. No additional VoIP certificate is used by this token-based backend.
+
+During the trial, review LiveKit dashboard participant minutes and Cloudflare private-bucket stored bytes and read/write operations, alongside each provider's billing/usage view. Call recording is not enabled. These dashboards provide usage visibility; no automatic budget alert, spend limit, or recurring monitoring automation has been configured, and this guide does not assume a price or free allowance. Record observed usage and applicable account pricing before release.
 
 ## Privacy and lifecycle behavior
 
@@ -79,7 +87,7 @@ Direct incoming calls alone use VoIP pushes/CallKit. Group calls use ordinary AP
 | Voice privacy | Private/Ranged playback, double-claim, delete/retention, delayed R2 block checks | iPhone AAC to browser and browser WebM/MP4 to iPhone; recording interrupted by calls; two-minute limit. |
 | Reports/deletion | Moderator report queue, protected audio evidence, author deletion and owner succession | Moderator hears evidence; ordinary members cannot; deletion leaves only allowed shared history. |
 | Calls | JWT grants, provider request authentication, device race, cutoff/revocation and webhook verification | 1:1 and 3-person calls; block/remove/suspend/logout; retry old token after removal; provider disconnect/reconnect. |
-| Push | Preference/mute/block/session checks; payload identity; APNs rejection cleanup | Sandbox development plus production TestFlight APNs; locked/terminated direct calls; group-call invitation; account-switch stale push. |
+| Push | Preference/mute/block/session checks; payload identity; APNs rejection cleanup; independently verified production/sandbox signatures and origins, incomplete-key isolation, and registration-environment races | Sandbox development plus production TestFlight APNs; locked/terminated direct calls; group-call invitation; account-switch stale push. |
 | Offline/recovery | Persistent D1 jobs with leases/retry | Temporarily fail APNs/LiveKit/R2 in preview; restore and observe bounded retries without leaking stale events. |
 | Native lifecycle | Native unit/build checks elsewhere in repository | Locked screen, Bluetooth, headphones, interruption by cellular call, multiple devices answering, and game privacy/ducking. |
 

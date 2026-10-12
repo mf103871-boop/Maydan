@@ -9,7 +9,7 @@ import { SocialClient } from '../src/social/client.js';
 mkdirSync(path.resolve('.cache'), { recursive: true });
 const dir = mkdtempSync(path.resolve('.cache/lamma-ui-'));
 after(() => rmSync(dir, { recursive: true, force: true }));
-await build({ stdin: { contents: `import React from 'react';import{renderToStaticMarkup}from'react-dom/server';import{VoiceMessage,GameInviteCard,durationLabel,invalidatesVoice}from'./src/social/LammaMedia.jsx';import{MessageBubble}from'./src/social/SocialScreen.jsx';import{FriendListItem,CallControls,groupPreview,isConversationMuted}from'./src/social/SocialHost.jsx';export{durationLabel,groupPreview,isConversationMuted,invalidatesVoice};const render=(C,p)=>renderToStaticMarkup(React.createElement(C,p));export const voice=p=>render(VoiceMessage,p);export const invite=p=>render(GameInviteCard,p);export const friend=p=>render(FriendListItem,p);export const call=p=>render(CallControls,p);export const deleted=p=>render(MessageBubble,{...p,content:React.createElement('span',null,'PRIVATE_VOICE')});`, resolveDir: process.cwd(), loader: 'jsx' }, outfile: path.join(dir, 'render.mjs'), bundle: true, platform: 'node', format: 'esm', packages: 'external', jsx: 'automatic', loader: { '.css': 'text', '.webp': 'dataurl', '.woff2': 'dataurl' }, logLevel: 'silent' });
+await build({ stdin: { contents: `import React from 'react';import{renderToStaticMarkup}from'react-dom/server';import{VoiceMessage,GameInviteCard,durationLabel,invalidatesVoice}from'./src/social/LammaMedia.jsx';import{MessageBubble}from'./src/social/SocialScreen.jsx';import{FriendListItem,CallControls,groupPreview,isConversationMuted}from'./src/social/SocialHost.jsx';import{HomeGroups}from'./src/platform/screens/Home.jsx';export{durationLabel,groupPreview,isConversationMuted,invalidatesVoice};const render=(C,p)=>renderToStaticMarkup(React.createElement(C,p));export const homeGroups=p=>render(HomeGroups,p);export const voice=p=>render(VoiceMessage,p);export const invite=p=>render(GameInviteCard,p);export const friend=p=>render(FriendListItem,p);export const call=p=>render(CallControls,p);export const deleted=p=>render(MessageBubble,{...p,content:React.createElement('span',null,'PRIVATE_VOICE')});`, resolveDir: process.cwd(), loader: 'jsx' }, outfile: path.join(dir, 'render.mjs'), bundle: true, platform: 'node', format: 'esm', packages: 'external', jsx: 'automatic', loader: { '.css': 'text', '.webp': 'dataurl', '.woff2': 'dataurl' }, logLevel: 'silent' });
 const render = await import(pathToFileURL(path.join(dir, 'render.mjs')));
 
 test('drawer read ownership survives overlapping view cleanup and clears on account stop', () => {
@@ -57,4 +57,18 @@ test('non-text previews describe content without exposing attachment addresses',
 test('minimized calls keep explicit microphone and end controls', () => {
   const html = render.call({ call: { id: 'call', scope: 'group', status: 'active' }, media: { muted: true, connected: true, participants: [] } });
   assert.match(html, /تشغيل الميكروفون/); assert.match(html, /إنهاء المكالمة/); assert.match(html, /aria-pressed="true"/);
+});
+
+test('favorite toggle has an explicit accessible pressed state without replacing chat action', () => {
+  const html = render.friend({ friend: { id: 'friend', name: 'أحمد' }, favorite: true, onFavorite() {} });
+  assert.match(html, /إزالة أحمد من المفضّلين/); assert.match(html, /aria-pressed="true"/); assert.match(html, /محادثة مع أحمد/);
+});
+
+test('home groups prioritize actual active calls, then unread and recent activity, and hide for guests', () => {
+  const groups = [{ id: 'recent', name: 'الأحدث', updatedAt: 90 }, { id: 'live', name: 'المكالمة', updatedAt: 1 }, { id: 'unread', name: 'غير مقروءة', unreadCount: 1, updatedAt: 2 }, { id: 'old', name: 'القديمة', updatedAt: 3 }];
+  const calls = [{ scope: 'group', conversationId: 'live', status: 'active' }, { scope: 'group', conversationId: 'recent', status: 'ended' }];
+  const html = render.homeGroups({ account: { ready: true, signedIn: true }, groups, calls });
+  assert.ok(html.indexOf('افتح لمّة المكالمة') < html.indexOf('افتح لمّة غير مقروءة')); assert.ok(html.indexOf('افتح لمّة غير مقروءة') < html.indexOf('افتح لمّة الأحدث'));
+  assert.equal((html.match(/مكالمة جارية/g) || []).length, 2); assert.doesNotMatch(html, /القديمة/);
+  for (const account of [{ ready: true, signedIn: false }, { ready: false, signedIn: true }]) assert.equal(render.homeGroups({ account, groups, calls }), '');
 });
