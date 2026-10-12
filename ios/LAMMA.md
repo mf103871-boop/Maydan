@@ -1,0 +1,107 @@
+# Lamma native integration
+
+The native social coordinator adds audio-only LiveKit calls, CallKit, genuine
+incoming-call PushKit notifications, ordinary APNs registration and AAC voice
+notes to the existing trusted `maydan://app` bridge. It does not request payment,
+provision any external account, upload a build, or turn on a production rollout.
+
+## Bridge contract
+
+All commands use `webkit.messageHandlers.maydan.postMessage({type,id,...payload})`
+and the existing `window.maydanNative.resolve(id,{ok,result,error})` convention.
+Only the app's main frame can invoke them. Native errors are stable codes, never
+credential-bearing upstream descriptions.
+
+| Command | Input / result |
+| --- | --- |
+| `socialStoredSession` | Returns `{deviceId,userId?,token?}`. Read before account hydration, because a call answered while WebKit was suspended may rotate the account session. |
+| `socialSession` | `{userId,token}` → canonical `{userId,token,deviceId,call}`; binds the current account and enables pending event delivery. |
+| `socialLogout` | Ends media, clears Keychain and pending events, unregisters this installation's push devices. Invoke before account-session revocation. Network cleanup is best effort; local credentials are cleared first. |
+| `socialNotifications` | `{request:boolean}` → `{authorized,status,deviceId}`. `request:true` must follow an explicit notification-enable gesture. |
+| `socialCallConnect` | `{callId,scope,conversationId,url,token,callerName?,muted?}` → call snapshot. Credentials come from the authenticated server; only secure LiveKit Cloud URLs are accepted. |
+| `socialCallMute` | `{muted:boolean}` → call snapshot. CallKit is kept in sync. |
+| `socialCallSpeaker` | `{speaker:boolean}` → call snapshot. `false` restores system routing (receiver/headset/Bluetooth). |
+| `socialCallEnd` | Ends the local call and leaves/rejects it on the server; endpoint operations must be idempotent. |
+| `socialAudioPrivacy` | `{privateTurn:boolean}`. A visible secret cancels a recording and mutes a call; clearing the flag never automatically unmutes. |
+| `socialVoiceStart` | Requests microphone permission and records up to 120 seconds, only in the foreground and outside a call/private turn. |
+| `socialVoiceStop` | `{base64,mimeType:'audio/mp4',durationMs}`. Preview in the web composer before upload. |
+| `socialVoiceCancel` | Discards the local recording and removes its temporary file. |
+
+Events use `window.maydanNative.event(name,payload)`:
+
+- `socialCall`: `{callId,conversationId,scope,userId,state,muted,speaker,participants,error?}`.
+  Participants have `{id,name,speaking,muted}`. States are ringing, connecting,
+  connected, reconnecting, ended (or idle in an empty snapshot).
+- `socialVoice`: `{state:'recording'|'ready'|'cancelled'|'interrupted',...}`. At the
+  120-second limit, `ready` contains the same audio fields as `socialVoiceStop`.
+- `socialNotification`: `{scope,conversationId,callId?}`. Open the social drawer,
+  preserving the active match. It is held until the signed-in bridge is ready.
+- `socialSessionRotated`: `{userId,token}`. Adopt only for the matching account.
+  The canonical token is also persisted in Keychain for cold launch recovery.
+- `socialDeviceToken`: `{deviceId,kind,environment,registered:true}` and
+  `socialNotificationStatus:{error}`. Tokens themselves are sent directly to the
+  API, not passed through social UI state.
+
+CallKit owns audio-session activation. The SDK engine is disabled outside
+CallKit's activated window, and microphone publication waits for activation.
+Call interruptions mute the mic and require an explicit unmute. Voice recording
+is interrupted when the app leaves the foreground. Calls are never recorded.
+
+## Server contracts
+
+The configured account API HTTPS origin is the only native API destination.
+Redirects are refused. Requests use the account bearer and `Origin: maydan://app`;
+`x-maydan-session` rotation is handled on successful and error responses.
+
+- `PUT /api/social/devices` accepts `{deviceId,kind:'apns'|'voip',token,environment:'sandbox'|'production'}`.
+- `DELETE /api/social/devices/:deviceId` removes both token kinds for the account.
+- `POST /api/social/calls/:id/accept` accepts `{deviceId}` and returns
+  `{call,connection:{url,token}}`; the server enforces one answering installation.
+- `GET /api/social/calls/:id` returns `{call}`. A native poll reconciles expired,
+  cancelled and answered-elsewhere calls even when the web app is suspended.
+- `POST /api/social/calls/:id/leave` or `/reject` ends local participation.
+
+Ordinary APNs custom fields: `{recipientId,scope,conversationId,callId?}`. The
+notification body must follow the user's server-side preview preference.
+Foreground system banners are suppressed because the web app owns privacy-aware
+toasts; there must not be a second banner over a hidden-role screen.
+
+Genuine incoming direct-call VoIP fields:
+`{recipientId,callId,scope,conversationId,expiresAt}` (expiry in epoch milliseconds).
+`callId` must be a UUID. Never include a session token, LiveKit token or message
+text. The app reports the incoming call to CallKit before any network request,
+then ends invalid, cross-account, expired or busy calls. The backend must send
+VoIP only for actual new incoming calls, with `apns-expiration:0`; messages and
+group-call invitations use ordinary notifications.
+
+## Provisioning and validation
+
+1. Configure the server's LiveKit Cloud project and APNs token credentials. No
+   provider secret belongs in `native-config.json` or the application bundle.
+2. Enable **Push Notifications** on the existing explicit `Maydan` App ID,
+   regenerate its App Store distribution profile, and update the existing build
+   secret. The signing preflight deliberately rejects a profile without
+   `aps-environment:production`.
+3. Debug uses the APNs development environment; Release uses production. Both
+   Info.plist and entitlements use `MAYDAN_PUSH_ENVIRONMENT` to prevent divergent
+   token registration and signing. TestFlight uses production APNs.
+4. Build with the existing Xcode 26+ workflow. LiveKit Swift is pinned to 2.17.0;
+   the resolved dependency file contains verified upstream tag commit IDs. The
+   macOS build must resolve and compile those pins before calling the build valid.
+5. Update App Store Connect privacy answers and the live policy for audio data,
+   device push identifiers, group membership and call metadata. The local privacy
+   manifest alone does not update published answers.
+
+Required physical-device tests: permission refusal, two-device private call,
+12-member group call, locked and cold-start answer, duplicate/expired call push,
+answer on a second device, caller cancellation, remote block/removal, Wi-Fi to
+cellular transition, Bluetooth/receiver/speaker, interruption by a cellular call,
+background audio, privacy auto-mute, recording auto-stop/preview/cancel, account
+switch and sign-out with an active call, session rotation while locked, ordinary
+notifications after force-close, and returning to the same saved match.
+
+Windows source checks and web tests cannot verify CallKit, APNs delivery, audio
+routing, or microphone behavior. Those remain device acceptance checks.
+
+References: [LiveKit Swift SDK](https://github.com/livekit/client-sdk-swift/tree/2.17.0),
+[Apple PushKit call handling](https://developer.apple.com/documentation/pushkit/responding-to-voip-notifications-from-pushkit).
