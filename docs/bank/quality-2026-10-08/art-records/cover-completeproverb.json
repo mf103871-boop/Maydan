@@ -1,0 +1,29 @@
+{
+  "id": "completeproverb",
+  "kind": "cover",
+  "file": "public/media/badeeha-covers/completeproverb.webp",
+  "style": "folk-inspired editorial illustration",
+  "palette": "terracotta, indigo, cream",
+  "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'أكمل المثل'. Landscape 4:3 artwork.\nMedium: folk-inspired editorial illustration.\nIntentional palette: terracotta, indigo, cream.\nScene: A patterned storytelling rug whose woven motif continues into an unfinished corner, a visual metaphor for completing a story, no specific proverb or text.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-10-08",
+  "sourceImage": {
+    "name": "exec-a8fb0e32-9d21-4b4d-b000-59bc8d3904b2.png",
+    "sha256": "fe68cf5d4290bb4f34449ff82c859034cd007d2a9bcfb9c47db5e69d0fb5d361",
+    "width": 1448,
+    "height": 1086
+  },
+  "width": 640,
+  "height": 480,
+  "bytes": 109916,
+  "sha256": "11e012767f2625c0faaf33518414d4afb40d40ed865f9e6e7165fadef1969a92",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "phone-size-reviewed",
+    "date": "2026-10-08",
+    "reviewer": "root",
+    "width": 160,
+    "method": "shipped cover CSS; baseline and replacement side by side",
+    "evidence": "docs/bank/quality-2026-10-08/preview/covers-4.jpg"
+  }
+}

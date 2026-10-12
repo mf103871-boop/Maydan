@@ -1,0 +1,29 @@
+{
+  "id": "capitals",
+  "kind": "cover",
+  "file": "public/media/badeeha-covers/capitals.webp",
+  "style": "architectural editorial illustration",
+  "palette": "indigo, warm amber, pale sky",
+  "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'عواصم'. Landscape 4:3 artwork.\nMedium: architectural editorial illustration.\nIntentional palette: indigo, warm amber, pale sky.\nScene: A lively imaginary capital city seen across a river, domes and contemporary towers, atmospheric dusk and lit windows, no single real landmark.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-10-08",
+  "sourceImage": {
+    "name": "exec-2fb40304-241a-4d2d-8b00-325070d9fd42.png",
+    "sha256": "d48d10b6113ced31f8b93f519c1c48cc0aa87c808b86a894e8967e0f26880f80",
+    "width": 1448,
+    "height": 1086
+  },
+  "width": 640,
+  "height": 480,
+  "bytes": 81246,
+  "sha256": "c7a0c7cc97975f93406ae23a4156ed5ff2a555a83560807a1f2ce2cf138fad49",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "phone-size-reviewed",
+    "date": "2026-10-08",
+    "reviewer": "root",
+    "width": 160,
+    "method": "shipped cover CSS; baseline and replacement side by side",
+    "evidence": "docs/bank/quality-2026-10-08/preview/covers-1.jpg"
+  }
+}

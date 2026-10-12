@@ -1,0 +1,29 @@
+{
+  "id": "worldcup",
+  "kind": "cover",
+  "file": "public/media/badeeha-covers/worldcup.webp",
+  "style": "celebratory painted poster art",
+  "palette": "gold, ultramarine, emerald",
+  "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'كأس العالم'. Landscape 4:3 artwork.\nMedium: celebratory painted poster art.\nIntentional palette: gold, ultramarine, emerald.\nScene: A football lifted into stadium light by several hands, worldwide celebration conveyed by colored ribbons, original trophy-free composition.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-10-08",
+  "sourceImage": {
+    "name": "exec-8eca15d6-1045-4930-94e4-2fc2fa110d13.png",
+    "sha256": "c150240535503066b058db0482ed07207f15f7b796d7faf0dfa56beabe51741a",
+    "width": 1448,
+    "height": 1086
+  },
+  "width": 640,
+  "height": 480,
+  "bytes": 83006,
+  "sha256": "2af1e2437c69074f158cbba190cb3e60d8fc83ccfc1287e3937b2fdabe3c133a",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "phone-size-reviewed",
+    "date": "2026-10-08",
+    "reviewer": "root",
+    "width": 160,
+    "method": "shipped cover CSS; baseline and replacement side by side",
+    "evidence": "docs/bank/quality-2026-10-08/preview/covers-1.jpg"
+  }
+}

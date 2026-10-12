@@ -1,0 +1,20 @@
+{
+  "id": "blur-1000-907",
+  "prompt": "Create ONE landscape 4:3 dynamic sports illustration, bold clean realistic painted shapes. A water polo player chest-deep in vivid turquoise pool, wearing a white protective water polo cap, preparing to throw a LARGE orange-yellow water polo ball held high in one hand; other hand presses water for balance. Red and white floating goal net visible distinctly at rear left. Medium close action crop, ball 22% image width near upper right, human upper body centre, clearly water splashing around torso. Correct human anatomy, no writing or sponsors. Strong sunny colours, bold legible forms because this will be viewed with 16px blur at 360px width; water, ball and net should remain distinguishable. No land court, no basketball basket.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-10-08",
+  "sourceFile": "exec-3eb16f8f-72ca-451a-be7d-8ea22c52a811.png",
+  "sourceSha256": "b4ac6234c6c6b49e4a4aa1e6991f34f9f45dd3d55ecee43acfac91339142e970",
+  "file": "media/blur/quality-water-polo.webp",
+  "sha256": "d45d0a6b03a32d8c971b360769454c4d0befd16be0e9e7ef84a989b6f4435468",
+  "width": 960,
+  "height": 720,
+  "bytes": 194062,
+  "review": {
+    "status": "phone-size-reviewed",
+    "reviewedAt": "2026-10-08",
+    "method": "Original and shipped effect at phone width, including high-tier assistance; independent editorial review.",
+    "evidence": "docs/bank/quality-2026-10-08/independent-root-image-review.md",
+    "qid": "blur-1000-907"
+  }
+}

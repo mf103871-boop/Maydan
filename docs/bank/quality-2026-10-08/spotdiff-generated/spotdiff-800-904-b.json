@@ -1,0 +1,58 @@
+{
+  "pack": "spotdiff",
+  "oldQid": "spotdiff-800-904",
+  "side": "b",
+  "createdAt": "2026-10-08",
+  "kind": "ai-generated",
+  "tool": "OpenAI image generation (built-in)",
+  "mode": "edit",
+  "prompt": "Use case: precise-object-edit\nAsset type: strict matching B image for a single-difference puzzle.\nInput image 1 is exact EDIT TARGET. Change ONLY the white sail of the toy boat lower center-right: keep its bottom edge, position, white paper material, size, central dark mast and boat identical; replace the pointed triangular top with a short flat horizontal top, making the full white sail a four-sided trapezoid. The lower left and lower right sail corners must remain at their exact original positions. This is one sail-shape difference, not a second object.\nExactly ONE semantic difference. Keep everything else identical including train including three wheels and chimney, robot face and three chest buttons, all four animal silhouettes, three cubes, two balls, paint pot drips, paintbrush, tools, plant, shavings, desk grain, light, framing. Preserve 4:3 canvas, perspective and medium. No annotations, text, highlights, borders or panels.",
+  "asset": "media/spotdiff/spotdiff-800-904-b-q20261008.webp",
+  "sha256": "61aef8b9d49279c1ecf543ad1a5c979eafefbc5d6f15f16d8ac24b0b0f7829db",
+  "bytes": 254940,
+  "width": 1280,
+  "height": 960,
+  "inputImages": [
+    {
+      "file": "exec-26761e27-6670-4dff-b0ef-d6e4576d255a.png",
+      "sha256": "ce616355b2c7bdce304fc8d7f36372c2a10dbf7c58787211de742571c29d0b5b"
+    }
+  ],
+  "review": {
+    "status": "phone-size-reviewed",
+    "originalCompared": true,
+    "displayedEffect": "Side-by-side unfiltered originals; reveal circle only",
+    "difference": "Toy boat white sail triangle becomes trapezoid",
+    "semanticDifferenceCount": 1,
+    "invariantsReviewed": [
+      "train three wheels",
+      "four animals",
+      "three cubes",
+      "robot face/buttons",
+      "two balls",
+      "tools",
+      "paint drips",
+      "plant",
+      "desk/light/framing"
+    ],
+    "mobileDeviceQA": false,
+    "reviewedAt": "2026-10-12",
+    "reviewer": "finish_spotdiff",
+    "imageWidthCSS": 173,
+    "evidence": "docs/bank/quality-2026-10-08/preview/spotdiff-07.png"
+  },
+  "packaging": "Uniform size/format encoding only; all scene changes created by built-in imagegen",
+  "packagingReview": {
+    "date": "2026-10-12",
+    "file": "media/spotdiff/spotdiff-800-904-b-q20261008.webp",
+    "beforeBytes": 262780,
+    "bytes": 254940,
+    "beforeSha256": "37bb4b3c1f5b01c0fd5c1d1591b0aae6b89a825099d900739aac3e95a2c4a85c",
+    "sha256": "61aef8b9d49279c1ecf543ad1a5c979eafefbc5d6f15f16d8ac24b0b0f7829db",
+    "quality": 92,
+    "dimensionsUnchanged": true,
+    "operation": "WebP encoding only; no scene edit",
+    "phoneReview": "phone-size-reviewed-after-compression",
+    "reviewRecord": "docs/bank/quality-2026-10-08/postcompression-review.json"
+  }
+}

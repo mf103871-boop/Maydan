@@ -1,0 +1,145 @@
+[
+  {
+    "pack": "placefinder",
+    "qid": "placefinder-200-901",
+    "answer": "برج إيفل",
+    "index": 0,
+    "wikiTitle": "Eiffel Tower",
+    "wikidataId": "Q243",
+    "entityDescription": "tower located on the Champ de Mars in Paris, France",
+    "commonsTitle": "File:Tour Eiffel Wikimedia Commons.jpg",
+    "source": {
+      "title": "File:Tour Eiffel Wikimedia Commons.jpg",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tour_Eiffel_Wikimedia_Commons.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a8/Tour_Eiffel_Wikimedia_Commons.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "thumbUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a8/Tour_Eiffel_Wikimedia_Commons.jpg/960px-Tour_Eiffel_Wikimedia_Commons.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "author": "Benh LIEU SONG",
+      "license": "Public domain",
+      "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "description": "Eiffel Tower , seen from the  Champ de Mars , Paris, France",
+      "restrictions": "",
+      "width": 2900,
+      "height": 5367
+    },
+    "preparedFile": "media/blur/quality-eiffel.webp",
+    "bytes": 132842,
+    "width": 692,
+    "height": 1280,
+    "media": {
+      "src": "quality-eiffel.webp",
+      "type": "image",
+      "title": "Tour Eiffel Wikimedia Commons.jpg",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tour_Eiffel_Wikimedia_Commons.jpg",
+      "author": "Benh LIEU SONG",
+      "license": "Public Domain",
+      "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "changes": "Resized and converted to WebP; photographic content unchanged"
+    }
+  },
+  {
+    "pack": "blur",
+    "qid": "quality-tapir",
+    "answer": "تابير",
+    "commonsTitle": "File:Malayan Tapir.JPG",
+    "source": {
+      "title": "File:Malayan Tapir.JPG",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Malayan_Tapir.JPG",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/b/bd/Malayan_Tapir.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "thumbUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/Malayan_Tapir.JPG/1280px-Malayan_Tapir.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "author": "Bluemoose",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+      "description": "A Malayan Tapir in London Zoo. Photographed by User:Bluemoose in May 2005.",
+      "restrictions": "",
+      "width": 1990,
+      "height": 1553
+    },
+    "preparedFile": "media/blur/quality-tapir.webp",
+    "bytes": 250918,
+    "width": 1280,
+    "height": 999,
+    "media": {
+      "src": "quality-tapir.webp",
+      "type": "image",
+      "title": "Malayan Tapir.JPG",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Malayan_Tapir.JPG",
+      "author": "Bluemoose",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+      "changes": "Resized and converted to WebP; photographic content unchanged"
+    },
+    "sha256": "5f6b8f03082eb528dfaf30f954839c35c8b7cdc4ee0d3eda9a8c318a5e2cfb02"
+  },
+  {
+    "qid": "quality-usbc-reference",
+    "pack": "zoom",
+    "commonsTitle": "File:USB-C.jpg",
+    "answer": "USB-C",
+    "source": {
+      "title": "File:USB-C.jpg",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:USB-C.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c2/USB-C.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c2/USB-C.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+      "author": "Wikideas1",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "description": "USB-C type c",
+      "restrictions": "",
+      "width": 1130,
+      "height": 1131
+    },
+    "preparedFile": "media/zoom/quality-usbc-reference.webp",
+    "bytes": 28554,
+    "width": 1130,
+    "height": 1131,
+    "media": {
+      "src": "quality-usbc-reference.webp",
+      "type": "image",
+      "title": "USB-C.jpg",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:USB-C.jpg",
+      "author": "Wikideas1",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "changes": "Resized and converted to WebP; photographic content unchanged"
+    }
+  },
+  {
+    "candidate": 9,
+    "local": "docs\\bank\\quality-2026-10-08\\authoring\\identity-source-cache\\candidate-9.jpg",
+    "source": {
+      "title": "File:Paris Eiffel Tower from below 2014-10-05 bis.jpg",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Paris_Eiffel_Tower_from_below_2014-10-05_bis.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c0/Paris_Eiffel_Tower_from_below_2014-10-05_bis.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "thumbUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c0/Paris_Eiffel_Tower_from_below_2014-10-05_bis.jpg/960px-Paris_Eiffel_Tower_from_below_2014-10-05_bis.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "author": "최광모",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "description": "141005Eiffel Tower, Paris, France",
+      "restrictions": "",
+      "width": 3648,
+      "height": 5472
+    },
+    "qid": "quality-eiffel-close",
+    "pack": "blur",
+    "preparedFile": "media/blur/quality-eiffel-close.webp",
+    "width": 960,
+    "height": 720,
+    "bytes": 221024,
+    "crop": [
+      0,
+      0.24,
+      1,
+      0.74
+    ],
+    "media": {
+      "src": "quality-eiffel-close.webp",
+      "type": "image",
+      "title": "Paris Eiffel Tower from below 2014-10-05 bis.jpg",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Paris_Eiffel_Tower_from_below_2014-10-05_bis.jpg",
+      "author": "최광모",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "changes": "Cropped from the daylight photograph to normalized bounds [0,0.24,1,0.74], focusing the recognizable first/second decks and lower tower arch; top and ground outside crop; converted to WebP."
+    }
+  }
+]

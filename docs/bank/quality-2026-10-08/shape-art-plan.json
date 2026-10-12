@@ -1,0 +1,19 @@
+{
+  "createdAt": "2026-10-08",
+  "jobs": [
+    {
+      "id": "tilepuzzle-800-903",
+      "file": "media/tilepuzzle/quality-watermill.webp",
+      "status": "generated-installed",
+      "prompt": "Create one landscape 4:3 illustration for an adult visual reasoning puzzle, no text. Cutaway of a plausible traditional water-powered grain mill beside a fast narrow stream. Visually distribute three linked clues: on left a wooden undershot water wheel with stream visibly pushing bottom paddles; through middle a horizontal shaft and simple bevel gears connect it to a vertical shaft; on right two horizontal millstones with a hopper of wheat above and flour falling into a sack below. Restrained scientific editorial illustration, detailed clean shapes, cool blue water, deep teal shadows, copper and warm ochre wood, muted burgundy accents. Three-quarter cutaway perspective. Fill the composition, linked mechanism occupies 85%, avoid empty borders. This will be scrambled into a 4 by 3 tile grid: each major clue should cross multiple tile boundaries, and users must infer that flowing water powers milling. Mechanically coherent, no electric motor, no sails, no labels, arrows, numerals, logo, watermark, or printed text.",
+      "record": "docs/bank/quality-2026-10-08/art-records/tilepuzzle-800-903.json"
+    },
+    {
+      "id": "tilepuzzle-800-904",
+      "file": "media/tilepuzzle/quality-drawbridge.webp",
+      "status": "generated-installed",
+      "prompt": "Create one landscape 4:3 cinematic editorial illustration for an adult visual puzzle. A realistic generic double-leaf bascule drawbridge over a narrow harbor channel, viewed obliquely from water level. Both road leaves rise from opposite banks making an open inverted V gap through which a small sailing boat with a tall mast is entering. Show the hinged bases and heavy counterweight mechanism at the near side, with interrupted road markings on both raised road leaves and safety barriers closed on the banks. The boat, hinge, counterweight, and two road halves are spread across the whole composition, so no single quadrant alone tells the complete story. Wet steel in slate blue and muted orange, dramatic coral dusk over violet water, coherent accurate civil engineering proportions. 4:3 landscape, no signs, text, logos, labels, arrows, watermark. This artwork will be scrambled into 12 tiles and players identify the bridge mechanism from its combined clues.",
+      "record": "docs/bank/quality-2026-10-08/art-records/tilepuzzle-800-904.json"
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "pack": "spotdiff",
+  "oldQid": "spotdiff-800-905",
+  "side": "b",
+  "createdAt": "2026-10-12",
+  "kind": "ai-generated",
+  "tool": "OpenAI image generation (built-in)",
+  "mode": "edit",
+  "prompt": "Use case: precise-object-edit. Input image is the exact A source for a strictly single-difference visual puzzle. Produce B. Change ONLY the small square bronze-colored SLIDING WEIGHT on the metronome in the upper right. Slide that same weight upward on its existing thin pendulum rod, from its current center around x=1157,y=215 to x=1171,y=127 (source 1280x960). Same square size, same metal material, same rod angle. Restore the uncovered lower rod and dark face naturally. The shift must remain clear at a 173px-wide thumbnail. Preserve EVERYTHING else exactly: all five xylophone bars and pins, the two mallets, two maracas, two claves, tambourine and jingles, white sheet, instrument case clasps, metronome wood frame and base and entire scale, table texture, plant, chair, light, camera, crop. Exactly ONE semantic difference, sliding weight position only. No highlights, annotations, new writing, borders or layout changes. Preserve landscape4:3 image. Do not move the whole metronome, do not rotate its rod, do not alter bar counts.",
+  "asset": "media/spotdiff/spotdiff-800-905-b-q20261008.webp",
+  "sha256": "b37beba80ee282cf19122fe54b0dcc0286db6a76a36a504f43800a9a322afd87",
+  "bytes": 108020,
+  "width": 1280,
+  "height": 960,
+  "inputImages": [
+    {
+      "file": "media/spotdiff/spotdiff-800-905-a-q20261008.webp",
+      "sha256": "2000395819a9ee0d7f2c8c0ca17b22f960a8456982767d29585ecc90f010488c",
+      "role": "exact edit target A"
+    }
+  ],
+  "review": {
+    "status": "phone-size-reviewed",
+    "reviewedAt": "2026-10-12",
+    "originalCompared": true,
+    "displayedEffect": "Side-by-side unfiltered originals, 173 CSS px each",
+    "difference": "Metronome sliding weight moved upward along the same rod",
+    "semanticDifferenceCount": 1,
+    "invariantsReviewed": [
+      "five xylophone bars and pins",
+      "two mallets",
+      "two maracas",
+      "two claves",
+      "tambourine jingles",
+      "paper",
+      "case clasps",
+      "metronome body and rod",
+      "plant and chair",
+      "framing and lighting"
+    ],
+    "mobileDeviceQA": false,
+    "reviewers": [
+      "integration_audit",
+      "finish_spotdiff"
+    ],
+    "evidence": "docs/bank/quality-2026-10-08/preview/spotdiff-08.png",
+    "suggestedSpot": {
+      "x": 91,
+      "y": 18,
+      "r": 6
+    },
+    "reviewer": "finish_spotdiff",
+    "imageWidthCSS": 173,
+    "independentReviewer": "root"
+  },
+  "packaging": "1280x960 WebP quality84; uniform size/format encoding only; all scene changes created by built-in imagegen",
+  "generatedSource": {
+    "file": "exec-3851ef4b-4532-48bf-a9c5-ac6f29986445.png",
+    "sha256": "803851a3bab4f4d79ea868244f4556720a34c8ebae85d7a7e124e744c58eee2f"
+  },
+  "revision": {
+    "reason": "Replace low-value count/orientation difference with a finer relation/position difference for 800 points.",
+    "supersededSha256": "7fa4070a43904872ee93afa0f56f147a9b1d688c41c893149f8a3571300e7c49",
+    "supersededDifference": "Xylophone count five to four: output removed SECOND bar, not requested third"
+  }
+}

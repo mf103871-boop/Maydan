@@ -104,7 +104,7 @@
     },
     {
       "p": 200,
-      "q": "الناب الحلزوني الطويل للحوت وحيد القرن هو في الأصل أي جزء من جسمه؟",
+      "q": "ناب الحوت وحيد القرن يشبه القرن، لكنه امتداد لأي جزء؟",
       "a": "سن",
       "qid": "animals-200-918",
       "topic": "تشريح وتكيف",
@@ -168,9 +168,7 @@
       "qid": "animals-400-914",
       "topic": "أسماء الصغار والجماعات",
       "verified": true,
-      "alt": [
-        "حوار"
-      ],
+      "alt": [],
       "difficultyTarget": 0.6,
       "sourceUrl": "https://www.arabicacademy.gov.eg/ar/search_engine/roots/حور"
     },
@@ -196,7 +194,6 @@
       "topic": "زواحف وبرمائيات",
       "verified": true,
       "alt": [
-        "أكسولوتل",
         "الأخولوتل",
         "عفريت الماء"
       ],
@@ -219,7 +216,7 @@
       "sourceUrl": "https://www.sussex.ac.uk/lasi/sussexplan/dances"
     },
     {
-      "q": "ما الفلز الذي يدخل في ناقل الأكسجين ويمنح دم الأخطبوط لونه الأزرق؟",
+      "q": "دم الأخطبوط أزرق؛ أي فلز يدخل في ناقل الأكسجين لديه؟",
       "a": "النحاس",
       "topic": "تشريح وتكيف",
       "verified": true,
@@ -227,7 +224,8 @@
       "verifiedAt": "2026-09-25",
       "p": 400,
       "qid": "animals-400-918",
-      "difficultyTarget": 0.6
+      "difficultyTarget": 0.6,
+      "alt": []
     },
     {
       "p": 600,
@@ -259,7 +257,7 @@
     },
     {
       "p": 600,
-      "q": "ما اسم الأعضاء التي يخرج منها خيط العنكبوت من مؤخرة بطنه؟",
+      "q": "خيط يخرج من مؤخرة بطن عنكبوت؛ ما اسم الأعضاء التي أخرجته؟",
       "a": "المغازل",
       "qid": "animals-600-913",
       "topic": "حشرات وعناكب",
@@ -318,29 +316,28 @@
     },
     {
       "p": 600,
-      "q": "ما السمكة التي ظُن انقراضها ثم عُثر على عينة حية منها قرب جنوب أفريقيا عام 1938؟",
-      "a": "السيلاكانث",
-      "qid": "animals-600-917",
-      "topic": "كائنات بحرية",
-      "verified": true,
-      "alt": [
-        "الكولاكانث"
-      ],
-      "difficultyTarget": 0.4,
-      "sourceUrl": "https://www.nhm.ac.uk/discover/coelacanths-the-fish-that-outdid-the-loch-ness-monster.html"
-    },
-    {
-      "p": 600,
       "q": "ما الجرابي الأسترالي الذي يحمل بصمات أصابع شديدة الشبه ببصمات الإنسان؟",
       "a": "الكوالا",
       "qid": "animals-600-918",
       "topic": "تشريح وتكيف",
       "verified": true,
-      "alt": [
-        "كوالا"
-      ],
+      "alt": [],
       "difficultyTarget": 0.4,
       "sourceUrl": "https://digital.library.adelaide.edu.au/items/ad4f9181-6877-4d5b-bcf9-55a0446bd65b/full"
+    },
+    {
+      "q": "ما حيوان غابات الكونغو الذي يحمل أرجلًا مخططة ويعد أقرب أقارب الزرافة الأحياء؟",
+      "a": "الأوكابي",
+      "topic": "ثدييات",
+      "verified": true,
+      "sourceUrl": "https://animals.sandiegozoo.org/animals/okapi",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Okapi"
+      ],
+      "p": 600,
+      "qid": "animals-600-921",
+      "difficultyTarget": 0.4
     },
     {
       "p": 800,
@@ -351,7 +348,6 @@
       "verified": true,
       "alt": [
         "البروتيوس",
-        "أولم",
         "تنين الكهوف"
       ],
       "difficultyTarget": 0.25,
@@ -396,7 +392,6 @@
       "sourceUrl": "https://animals.sandiegozoo.org/animals/tuatara",
       "verifiedAt": "2026-09-25",
       "alt": [
-        "تواتارا",
         "Tuatara"
       ],
       "p": 800,
@@ -404,33 +399,17 @@
       "difficultyTarget": 0.25
     },
     {
-      "q": "ما الرخوي الذي يضبط طَفوه بتغيير السائل والغاز في حجرات صدفته الحلزونية؟",
+      "q": "رخوي يغيّر السائل والغاز في حجرات صدفته ليضبط الطفو؛ أي حيوان؟",
       "a": "النوتيلوس",
       "topic": "كائنات بحرية",
       "verified": true,
       "sourceUrl": "https://ocean.si.edu/ocean-life/invertebrates/octopuses-squids-and-relatives",
       "verifiedAt": "2026-09-25",
       "alt": [
-        "نوتيلوس",
         "Nautilus"
       ],
       "p": 800,
       "qid": "animals-800-915",
-      "difficultyTarget": 0.25
-    },
-    {
-      "q": "ما حيوان غابات الكونغو الذي يحمل أرجلًا مخططة ويعد أقرب أقارب الزرافة الأحياء؟",
-      "a": "الأوكابي",
-      "topic": "ثدييات",
-      "verified": true,
-      "sourceUrl": "https://animals.sandiegozoo.org/animals/okapi",
-      "verifiedAt": "2026-09-25",
-      "alt": [
-        "أوكابي",
-        "Okapi"
-      ],
-      "p": 800,
-      "qid": "animals-800-916",
       "difficultyTarget": 0.25
     },
     {
@@ -441,7 +420,6 @@
       "sourceUrl": "https://animals.sandiegozoo.org/animals/secretary-bird",
       "verifiedAt": "2026-09-25",
       "alt": [
-        "الطائر الكاتب",
         "Secretary bird"
       ],
       "p": 800,
@@ -464,8 +442,21 @@
       "difficultyTarget": 0.25
     },
     {
+      "p": 800,
+      "q": "ما السمكة التي ظُن انقراضها ثم عُثر على عينة حية منها قرب جنوب أفريقيا عام 1938؟",
+      "a": "السيلاكانث",
+      "qid": "animals-800-921",
+      "topic": "كائنات بحرية",
+      "verified": true,
+      "alt": [
+        "الكولاكانث"
+      ],
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://www.nhm.ac.uk/discover/coelacanths-the-fish-that-outdid-the-loch-ness-monster.html"
+    },
+    {
       "p": 1000,
-      "q": "ما الاسم العلمي لسائل الدوران الذي يغمر الأعضاء مباشرة في أجسام الحشرات؟",
+      "q": "سائل دوران يغمر أعضاء الحشرة مباشرة؛ ما اسمه؟",
       "a": "الهيموليمف",
       "qid": "animals-1000-911",
       "topic": "حشرات وعناكب",
@@ -485,7 +476,6 @@
       "sourceUrl": "https://animals.sandiegozoo.org/animals/binturong",
       "verifiedAt": "2026-09-25",
       "alt": [
-        "بنتورونغ",
         "Binturong"
       ],
       "p": 1000,
@@ -515,7 +505,6 @@
       "sourceUrl": "https://ocean.si.edu/ocean-life/invertebrates/octopuses-squids-and-relatives",
       "verifiedAt": "2026-09-25",
       "alt": [
-        "هيموسيانين",
         "Hemocyanin"
       ],
       "p": 1000,
@@ -523,7 +512,7 @@
       "difficultyTarget": 0.15
     },
     {
-      "q": "ما اسم الخلايا المملوءة بالأصباغ التي توسعها عضلات الحبار لتغيير لونه؟",
+      "q": "حبار يغير لونه بتوسيع خلايا أصباغ عضليًا؛ ما اسم هذه الخلايا؟",
       "a": "الكروماتوفورات",
       "topic": "قدرات وحواس",
       "verified": true,
@@ -538,20 +527,6 @@
       "difficultyTarget": 0.15
     },
     {
-      "q": "ما الاسم الإنجليزي لصغير الإيكيدنا بعد فقسه من البيضة؟",
-      "a": "باغل",
-      "topic": "أسماء الصغار والجماعات",
-      "verified": true,
-      "sourceUrl": "https://animals.sandiegozoo.org/animals/echidna",
-      "verifiedAt": "2026-09-25",
-      "alt": [
-        "Puggle"
-      ],
-      "p": 1000,
-      "qid": "animals-1000-916",
-      "difficultyTarget": 0.15
-    },
-    {
       "q": "ما الثديي المدغشقري الشبيه بالقنفذ الذي تتواصل بعض أنواعه بإصدار صوت من أشواكها؟",
       "a": "التنريك",
       "topic": "ثدييات",
@@ -559,7 +534,6 @@
       "sourceUrl": "https://animals.sandiegozoo.org/animals/tenrec",
       "verifiedAt": "2026-09-25",
       "alt": [
-        "تنريك",
         "Tenrec"
       ],
       "p": 1000,
@@ -578,6 +552,21 @@
       ],
       "p": 1000,
       "qid": "animals-1000-918",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "صغير الإيكيدنا يلعق الحليب من جسم أمه؛ أي تركيب لدى معظم الثدييات تفتقر إليه الأم؟",
+      "a": "الحلمات",
+      "topic": "تشريح وتكيف",
+      "verified": true,
+      "sourceUrl": "https://animals.sandiegozoo.org/animals/echidna",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "حلمات الثدي",
+        "حلمات الرضاعة"
+      ],
+      "p": 1000,
+      "qid": "animals-1000-921",
       "difficultyTarget": 0.15
     }
   ]

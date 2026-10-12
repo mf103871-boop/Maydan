@@ -1,0 +1,29 @@
+{
+  "id": "ertugrul",
+  "kind": "cover",
+  "file": "public/media/badeeha-covers/ertugrul.webp",
+  "style": "historical adventure painting",
+  "palette": "pine green, leather brown, silver",
+  "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'قيامة أرطغرل'. Landscape 4:3 artwork.\nMedium: historical adventure painting.\nIntentional palette: pine green, leather brown, silver.\nScene: A safely sheathed historical sword and worn leather shield near a nomadic tent at forest edge, dramatic dawn, no people or emblems.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-10-08",
+  "sourceImage": {
+    "name": "exec-de07f2a7-442c-4348-91ca-d34b3b6ba63e.png",
+    "sha256": "41de9acaf0eaa119367915947ceebcfd9314d2df60b887042d56d9a6ec935ee1",
+    "width": 1448,
+    "height": 1086
+  },
+  "width": 640,
+  "height": 480,
+  "bytes": 88848,
+  "sha256": "24605d7ed4099d566f8d25cde1d06a44c4a9b976a8b8934254cfd9d80f70cec3",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "phone-size-reviewed",
+    "date": "2026-10-08",
+    "reviewer": "root",
+    "width": 160,
+    "method": "shipped cover CSS; baseline and replacement side by side",
+    "evidence": "docs/bank/quality-2026-10-08/preview/covers-3.jpg"
+  }
+}

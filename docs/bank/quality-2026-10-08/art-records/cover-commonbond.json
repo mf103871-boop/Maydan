@@ -1,0 +1,29 @@
+{
+  "id": "commonbond",
+  "kind": "cover",
+  "file": "public/media/badeeha-covers/commonbond.webp",
+  "style": "clean conceptual paper illustration",
+  "palette": "mint, coral, dark blue",
+  "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'القاسم المشترك'. Landscape 4:3 artwork.\nMedium: clean conceptual paper illustration.\nIntentional palette: mint, coral, dark blue.\nScene: Three differently shaped paper islands connect to a single central bridge knot, abstract shared connection, no actual question answers.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-10-08",
+  "sourceImage": {
+    "name": "exec-e6680daf-e750-4d8a-8363-8edf92cb982c.png",
+    "sha256": "318b730327219f589de78ce59447cb0dd07fcbe07512789898a8325d78240b00",
+    "width": 1448,
+    "height": 1086
+  },
+  "width": 640,
+  "height": 480,
+  "bytes": 52990,
+  "sha256": "bd170a220d4f2758964b3b4180e53df98f41371777046619e508f7328a510b71",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "phone-size-reviewed",
+    "date": "2026-10-08",
+    "reviewer": "root",
+    "width": 160,
+    "method": "shipped cover CSS; baseline and replacement side by side",
+    "evidence": "docs/bank/quality-2026-10-08/preview/covers-4.jpg"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "id": "zoom-400-904",
+  "prompt": "Create ONE landscape 4:3 high fidelity photographic puzzle image for an Arabic game for ages 16+. An unbranded matte charcoal computer mouse on a cobalt desk. Three-quarter very low front angle; ribbed scroll wheel and separation between left and right buttons meet at exact centre. Complete mouse visible, no keyboard or computer, teal side light. IMPORTANT: this full image will be shown magnified 3.4x around the exact centre, leaving only approximately the central 29% visible during the question. Make that central area contain TWO coherent diagnostic material/structural details of the named object, not the entire silhouette, not blank texture, and not a disconnected fragment. Full image reveals the complete object naturally. Rich but restrained environment palette. No lettering, logos, watermark, hands, labels, borders, collages or question marks. No ivory studio background. Physical realism and fair visual evidence matter more than decoration.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-10-08",
+  "sourceFile": "exec-9f3b888c-157c-499a-8243-6ca7acdb3472.png",
+  "sourceSha256": "9776b66f338740e9e999d60078745ee2801c3b2426fcd2afeaab56a6a142ccf4",
+  "file": "media/zoom/quality-400-904.webp",
+  "sha256": "19d365d6faef10503a91566e70354e9bd82e776b49b9ab69c807886eca3db33e",
+  "width": 960,
+  "height": 720,
+  "bytes": 63278,
+  "review": {
+    "status": "phone-size-reviewed",
+    "reviewedAt": "2026-10-08",
+    "method": "Original and shipped effect at phone width, including high-tier assistance; independent editorial review.",
+    "evidence": "docs/bank/quality-2026-10-08/independent-root-image-review.md",
+    "qid": "zoom-400-904"
+  }
+}

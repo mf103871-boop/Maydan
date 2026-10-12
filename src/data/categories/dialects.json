@@ -63,7 +63,7 @@
     {
       "qid": "dialects-200-915",
       "p": 200,
-      "q": "ماذا يطلب المتحدث الإماراتي بقوله «عطني الزبدة» أثناء حديث طويل؟",
+      "q": "طلب إماراتي «عطني الزبدة» بعد حديث طويل؛ ماذا يريد؟",
       "a": "أعطني الخلاصة",
       "topic": "التواصل",
       "verified": true,
@@ -127,9 +127,7 @@
       "verified": true,
       "difficultyTarget": 0.6,
       "sourceUrl": "https://files.peacecorps.gov/multimedia/audio/languagelessons/morocco/MO_Arabic_Language_Lessons.pdf",
-      "alt": [
-        "شاي"
-      ]
+      "alt": []
     },
     {
       "qid": "dialects-400-912",
@@ -140,9 +138,7 @@
       "verified": true,
       "difficultyTarget": 0.6,
       "sourceUrl": "https://files.eric.ed.gov/fulltext/ED353812.pdf",
-      "alt": [
-        "جزر"
-      ]
+      "alt": []
     },
     {
       "qid": "dialects-400-913",
@@ -167,7 +163,6 @@
       "difficultyTarget": 0.6,
       "sourceUrl": "https://alramsa.ae/wp-content/uploads/2025/09/Emirati-Arabic-Beginner-level-A3-Al-Ramsa-Sample-Book.pdf",
       "alt": [
-        "راتب",
         "الأجر الشهري"
       ]
     },
@@ -181,14 +176,13 @@
       "difficultyTarget": 0.6,
       "sourceUrl": "https://sites.google.com/nyu.edu/palestine-lexicon/download",
       "alt": [
-        "فرن من الطين",
-        "الفرن الطيني"
+        "فرن من الطين"
       ]
     },
     {
       "qid": "dialects-400-916",
       "p": 400,
-      "q": "ما معنى «عيّان» في العبارة المغربية «أنا عيان» عند طلب الراحة؟",
+      "q": "مغربي يطلب الراحة ويقول «أنا عيان»؛ ماذا يقصد؟",
       "a": "متعب",
       "topic": "الصفات والأحوال",
       "verified": true,
@@ -236,9 +230,7 @@
       "verified": true,
       "difficultyTarget": 0.4,
       "sourceUrl": "https://files.eric.ed.gov/fulltext/ED353812.pdf",
-      "alt": [
-        "كركم"
-      ]
+      "alt": []
     },
     {
       "qid": "dialects-600-912",
@@ -249,9 +241,7 @@
       "verified": true,
       "difficultyTarget": 0.4,
       "sourceUrl": "https://files.eric.ed.gov/fulltext/ED353812.pdf",
-      "alt": [
-        "كرز"
-      ]
+      "alt": []
     },
     {
       "qid": "dialects-600-913",
@@ -290,14 +280,12 @@
       "verified": true,
       "difficultyTarget": 0.4,
       "sourceUrl": "https://abudhabiculture.ae/ar/cultural-heritage/intangible/heritage-register/traditional-handicraft/pearl-diving",
-      "alt": [
-        "سيب"
-      ]
+      "alt": []
     },
     {
       "qid": "dialects-600-916",
       "p": 600,
-      "q": "ما معنى «نيشان» في العبارة المغربية عن الساعة «هدي الوحدة نيشان»؟",
+      "q": "قيل بالمغربية «هدي الوحدة نيشان» عن الساعة؛ ما معنى الكلمة الأخيرة؟",
       "a": "بالضبط",
       "topic": "الوقت والعدد",
       "verified": true,
@@ -359,7 +347,6 @@
       "difficultyTarget": 0.25,
       "sourceUrl": "https://files.eric.ed.gov/fulltext/ED353812.pdf",
       "alt": [
-        "نكتارين",
         "الخوخ الأملس",
         "الدراق الأملس"
       ]
@@ -373,9 +360,7 @@
       "verified": true,
       "difficultyTarget": 0.25,
       "sourceUrl": "https://abudhabiculture.ae/ar/cultural-heritage/intangible/heritage-register/traditional-handicraft/pearl-diving",
-      "alt": [
-        "فطام"
-      ]
+      "alt": []
     },
     {
       "qid": "dialects-800-914",
@@ -386,9 +371,7 @@
       "verified": true,
       "difficultyTarget": 0.25,
       "sourceUrl": "https://abudhabiculture.ae/ar/cultural-heritage/intangible/heritage-register/traditional-handicraft/pearl-diving",
-      "alt": [
-        "ديين"
-      ]
+      "alt": []
     },
     {
       "qid": "dialects-800-915",
@@ -414,8 +397,7 @@
       "difficultyTarget": 0.25,
       "sourceUrl": "https://sites.google.com/nyu.edu/palestine-lexicon/download",
       "alt": [
-        "خيمة من الخيش",
-        "الخيمة الصغيرة"
+        "خيمة من الخيش"
       ]
     },
     {
@@ -435,7 +417,7 @@
     {
       "qid": "dialects-800-918",
       "p": 800,
-      "q": "ما المقصود بـ«مكنونة» عند مربي الدجاج في الريف الفلسطيني؟",
+      "q": "مربي دجاج فلسطيني أبقى «مكنونة» لتوجيه البيض؛ ما هي؟",
       "a": "بيضة لإرشاد الدجاج لموضع البيض",
       "topic": "الطعام والنباتات",
       "verified": true,
@@ -531,7 +513,7 @@
       "difficultyTarget": 0.15
     },
     {
-      "q": "ما معنى «مِن إبرته» عندما يصف فلسطيني ثوبًا؟",
+      "q": "وصف فلسطيني ثوبًا بأنه «مِن إبرته»؛ ما حال الثوب؟",
       "a": "جديد لم يُلبس",
       "alt": [
         "جديد غير مستعمل",

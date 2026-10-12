@@ -1,0 +1,42 @@
+{
+  "pack": "spotdiff",
+  "oldQid": "spotdiff-800-905",
+  "side": "a",
+  "createdAt": "2026-10-08",
+  "kind": "ai-generated",
+  "tool": "OpenAI image generation (built-in)",
+  "mode": "generate",
+  "prompt": "Use case: photorealistic-natural\nAsset type: original A of a mobile single-difference comparison puzzle.\nPrimary request: one landscape 4:3 image. A cinematic natural photograph of a rehearsal room table lit by warm amber side-light, dark navy wall, rich walnut. Three small percussion instruments arranged alongside closed instrument cases: tambourine at left with six pairs of jingles, two maracas at back, wood claves lower left, and a compact wooden xylophone across lower center with exactly FIVE distinct wooden bars parallel and evenly spaced, from long at left to short at right, each bar warm unpainted wood. Two matching mallets lie diagonally on the table at right with heads pointing upper left. A folded sheet of blank cream paper and a metronome back right. Xylophone occupies about 35% image width, all bars sharply focused. No written notes or text.\nNo comparison panels, people, labels, letters, digits, logos, border, watermark, highlights or UI. Essential items large enough to compare at 175px width; no miniature inaccessible details. This is the original unmodified scene.",
+  "asset": "media/spotdiff/spotdiff-800-905-a-q20261008.webp",
+  "sha256": "2000395819a9ee0d7f2c8c0ca17b22f960a8456982767d29585ecc90f010488c",
+  "bytes": 206888,
+  "width": 1280,
+  "height": 960,
+  "inputImages": [],
+  "review": {
+    "status": "phone-size-reviewed",
+    "originalCompared": true,
+    "displayedEffect": "Side-by-side unfiltered originals; reveal circle only",
+    "difference": "Metronome sliding weight moved upward along the same rod",
+    "semanticDifferenceCount": 1,
+    "invariantsReviewed": [
+      "four unchanged bars at original positions",
+      "two maracas",
+      "two claves",
+      "two mallets",
+      "tambourine jingles",
+      "metronome",
+      "blank paper",
+      "case",
+      "table/light/framing"
+    ],
+    "mobileDeviceQA": false,
+    "reviewedAt": "2026-10-12",
+    "reviewer": "finish_spotdiff",
+    "imageWidthCSS": 173,
+    "evidence": "docs/bank/quality-2026-10-08/preview/spotdiff-08.png",
+    "independentReviewer": "root",
+    "revisionReviewedAt": "2026-10-12"
+  },
+  "packaging": "Uniform size/format encoding only; all scene changes created by built-in imagegen"
+}

@@ -11,11 +11,12 @@
       "verified": true,
       "sourceUrl": "https://www.wimbledon.com/amp/en_GB/news/articles/2023-07-08/jabeur_passes_tough_test_from_andreescu.html",
       "difficultyTarget": 0.8,
-      "qid": "arabcelebs-200-911"
+      "qid": "arabcelebs-200-911",
+      "alt": []
     },
     {
       "p": 200,
-      "q": "من القطري الذي تقاسم ذهبية الوثب العالي في طوكيو مع الإيطالي تامبيري؟",
+      "q": "تقاسم ذهبية الوثب العالي في طوكيو مع تامبيري؛ من الرياضي القطري؟",
       "a": "معتز برشم",
       "alt": [
         "معتز عيسى برشم"
@@ -34,7 +35,8 @@
       "verified": true,
       "sourceUrl": "https://www.mbrsc.ae/hazzaa-almansoori/",
       "difficultyTarget": 0.8,
-      "qid": "arabcelebs-200-913"
+      "qid": "arabcelebs-200-913",
+      "alt": []
     },
     {
       "p": 200,
@@ -44,7 +46,8 @@
       "verified": true,
       "sourceUrl": "https://www.axiomspace.com/astronaut/rayyanah-barnawi",
       "difficultyTarget": 0.8,
-      "qid": "arabcelebs-200-914"
+      "qid": "arabcelebs-200-914",
+      "alt": []
     },
     {
       "p": 200,
@@ -54,7 +57,8 @@
       "verified": true,
       "sourceUrl": "https://www.bibliotheque.nat.tn/BNT/detailstatic.aspx?RSC_BASE=SYRACUSE&RSC_DOCID=5713209&TITLE=&_lg=ar-TN",
       "difficultyTarget": 0.8,
-      "qid": "arabcelebs-200-915"
+      "qid": "arabcelebs-200-915",
+      "alt": []
     },
     {
       "p": 200,
@@ -64,7 +68,8 @@
       "verified": true,
       "sourceUrl": "https://www.unhcr.org/uk/news/news-releases/raya-abirached-appointed-unhcr-goodwill-ambassador-mena-region",
       "difficultyTarget": 0.8,
-      "qid": "arabcelebs-200-916"
+      "qid": "arabcelebs-200-916",
+      "alt": []
     },
     {
       "p": 200,
@@ -74,7 +79,8 @@
       "verified": true,
       "sourceUrl": "https://goldenglobes.com/articles/1966-drama-doctor-zhivago/",
       "difficultyTarget": 0.8,
-      "qid": "arabcelebs-200-917"
+      "qid": "arabcelebs-200-917",
+      "alt": []
     },
     {
       "p": 200,
@@ -84,7 +90,8 @@
       "verified": true,
       "sourceUrl": "https://www.aramex.com/content/uploads/109/200/38482/Fadi-Ghandour-profile-in-English.pdf",
       "difficultyTarget": 0.8,
-      "qid": "arabcelebs-200-918"
+      "qid": "arabcelebs-200-918",
+      "alt": []
     },
     {
       "p": 400,
@@ -94,7 +101,8 @@
       "verified": true,
       "sourceUrl": "https://www.anocolympic.org/noc-highlights/jordan-wins-first-ever-olympic-medal/",
       "difficultyTarget": 0.6,
-      "qid": "arabcelebs-400-911"
+      "qid": "arabcelebs-400-911",
+      "alt": []
     },
     {
       "p": 400,
@@ -118,7 +126,8 @@
       "verified": true,
       "sourceUrl": "https://siarchives.si.edu/collections/siris_arc_217570",
       "difficultyTarget": 0.6,
-      "qid": "arabcelebs-400-913"
+      "qid": "arabcelebs-400-913",
+      "alt": []
     },
     {
       "p": 400,
@@ -128,7 +137,8 @@
       "verified": true,
       "sourceUrl": "https://www.unesco.org/en/articles/hayat-sindi-calls-inclusive-sti-investment-and-gender-responsive-financing-ffd4-seville",
       "difficultyTarget": 0.6,
-      "qid": "arabcelebs-400-914"
+      "qid": "arabcelebs-400-914",
+      "alt": []
     },
     {
       "p": 400,
@@ -138,7 +148,8 @@
       "verified": true,
       "sourceUrl": "https://www.neelwafurat.com/itempage.aspx?id=lbb223144-199427&search=books",
       "difficultyTarget": 0.6,
-      "qid": "arabcelebs-400-915"
+      "qid": "arabcelebs-400-915",
+      "alt": []
     },
     {
       "p": 400,
@@ -148,7 +159,8 @@
       "verified": true,
       "sourceUrl": "https://www.watchit.com/watch/en/shows/Maakom/shows-37",
       "difficultyTarget": 0.6,
-      "qid": "arabcelebs-400-916"
+      "qid": "arabcelebs-400-916",
+      "alt": []
     },
     {
       "p": 400,
@@ -158,17 +170,19 @@
       "verified": true,
       "sourceUrl": "https://www.wfp.org/news/arab-film-star-hend-sabry-marks-ten-years-wfp-goodwill-ambassador",
       "difficultyTarget": 0.6,
-      "qid": "arabcelebs-400-917"
+      "qid": "arabcelebs-400-917",
+      "alt": []
     },
     {
       "p": 400,
-      "q": "من رجل الأعمال الكويتي الذي أسس مشروع «صخر» لتعريب الحاسوب؟",
+      "q": "مشروع صخر لتعريب الحاسوب أسسه أي رجل أعمال كويتي؟",
       "a": "محمد الشارخ",
       "topic": "أعمال وريادة",
       "verified": true,
       "sourceUrl": "https://kingfaisalprize.org/mohamed-bin-abdulrahman-al-sharekh/",
       "difficultyTarget": 0.6,
-      "qid": "arabcelebs-400-918"
+      "qid": "arabcelebs-400-918",
+      "alt": []
     },
     {
       "p": 600,
@@ -191,17 +205,19 @@
       "verified": true,
       "sourceUrl": "https://worldathletics.org/news/news/boulmerka-bubka-crooks-and-zelezny-elected-io",
       "difficultyTarget": 0.4,
-      "qid": "arabcelebs-600-912"
+      "qid": "arabcelebs-600-912",
+      "alt": []
     },
     {
       "p": 600,
-      "q": "من عالمة الأحياء الأردنية التي أسست مبادرة «نحن نحب القراءة»؟",
+      "q": "عالمة أحياء أردنية أسست «نحن نحب القراءة»؛ من هي؟",
       "a": "رنا الدجاني",
       "topic": "علوم وفضاء",
       "verified": true,
       "sourceUrl": "https://welovereading.org/about/story/",
       "difficultyTarget": 0.4,
-      "qid": "arabcelebs-600-913"
+      "qid": "arabcelebs-600-913",
+      "alt": []
     },
     {
       "p": 600,
@@ -211,7 +227,8 @@
       "verified": true,
       "sourceUrl": "https://chemistry.gatech.edu/people/mostafa-el-sayed",
       "difficultyTarget": 0.4,
-      "qid": "arabcelebs-600-914"
+      "qid": "arabcelebs-600-914",
+      "alt": []
     },
     {
       "p": 600,
@@ -221,7 +238,8 @@
       "verified": true,
       "sourceUrl": "https://www.rienner.com/title/Men_in_the_Sun_and_Other_Palestinian_Stories",
       "difficultyTarget": 0.4,
-      "qid": "arabcelebs-600-915"
+      "qid": "arabcelebs-600-915",
+      "alt": []
     },
     {
       "p": 600,
@@ -245,7 +263,8 @@
       "verified": true,
       "sourceUrl": "https://www.festival-cannes.com/en/2024/meeting-nadine-labaki-member-of-the-jury-for-feature-films/",
       "difficultyTarget": 0.4,
-      "qid": "arabcelebs-600-917"
+      "qid": "arabcelebs-600-917",
+      "alt": []
     },
     {
       "p": 600,
@@ -281,24 +300,25 @@
       "verified": true,
       "sourceUrl": "https://www.worldaquatics.com/athletes/1000445/ous-mellouli/medals",
       "difficultyTarget": 0.25,
-      "qid": "arabcelebs-800-912"
+      "qid": "arabcelebs-800-912",
+      "alt": []
     },
     {
       "p": 800,
-      "q": "من الطبيب الجزائري الذي أدار المعاهد الوطنية الأمريكية للصحة بين 2002 و2008؟",
+      "q": "من الطبيب الجزائري الذي أدار المعاهد الوطنية الأمريكية للصحة بين 2002 و 2008؟",
       "a": "إلياس زرهوني",
       "topic": "علوم وفضاء",
       "verified": true,
       "sourceUrl": "https://www.nih.gov/about-nih/nih-almanac/elias-zerhouni-md",
       "difficultyTarget": 0.25,
-      "qid": "arabcelebs-800-913"
+      "qid": "arabcelebs-800-913",
+      "alt": []
     },
     {
       "p": 800,
       "q": "من العالم المغربي الذي اخترع أنود الغرافيت المستخدم في بطاريات الليثيوم أيون؟",
       "a": "رشيد اليزمي",
       "alt": [
-        "رشيد يزمي",
         "Rachid Yazami"
       ],
       "topic": "علوم وفضاء",
@@ -315,7 +335,8 @@
       "verified": true,
       "p": 800,
       "qid": "arabcelebs-800-915",
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.25,
+      "alt": []
     },
     {
       "p": 800,
@@ -325,7 +346,8 @@
       "verified": true,
       "sourceUrl": "https://gate.ahram.org.eg/daily/WriterArticles/08/2002/70.aspx",
       "difficultyTarget": 0.25,
-      "qid": "arabcelebs-800-916"
+      "qid": "arabcelebs-800-916",
+      "alt": []
     },
     {
       "p": 800,
@@ -362,7 +384,8 @@
       "verified": true,
       "p": 1000,
       "qid": "arabcelebs-1000-911",
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.15,
+      "alt": []
     },
     {
       "topic": "رياضيون",
@@ -385,15 +408,15 @@
       "verified": true,
       "p": 1000,
       "qid": "arabcelebs-1000-913",
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.15,
+      "alt": []
     },
     {
       "topic": "علوم وفضاء",
-      "q": "من العالم المولود في لبنان الذي أدار مختبر الدفع النفاث خلال رحلات سبيريت وأوبورتيونيتي وكوريوسيتي؟",
+      "q": "قاد مختبر الدفع النفاث خلال بعثات سبيريت وأوبورتيونيتي وكوريوسيتي؛ من العالم المولود بلبنان؟",
       "a": "شارل العشي",
       "sourceUrl": "https://www.jpl.nasa.gov/who-we-are/faces-of-leadership-the-directors-of-jpl/dr-charles-elachi-1947/",
       "alt": [
-        "شارل عشي",
         "Charles Elachi"
       ],
       "verified": true,
@@ -409,7 +432,8 @@
       "verified": true,
       "sourceUrl": "https://ci.nii.ac.jp/ncid/BA51544870",
       "difficultyTarget": 0.15,
-      "qid": "arabcelebs-1000-915"
+      "qid": "arabcelebs-1000-915",
+      "alt": []
     },
     {
       "topic": "إعلام وصحافة",
@@ -419,7 +443,8 @@
       "verified": true,
       "p": 1000,
       "qid": "arabcelebs-1000-916",
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.15,
+      "alt": []
     },
     {
       "topic": "سينما ومسرح",
@@ -429,7 +454,8 @@
       "verified": true,
       "p": 1000,
       "qid": "arabcelebs-1000-917",
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.15,
+      "alt": []
     },
     {
       "topic": "أعمال وريادة",
@@ -439,7 +465,8 @@
       "verified": true,
       "p": 1000,
       "qid": "arabcelebs-1000-918",
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.15,
+      "alt": []
     }
   ]
 }

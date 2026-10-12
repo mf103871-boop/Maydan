@@ -1,0 +1,29 @@
+{
+  "id": "squidgame",
+  "kind": "cover",
+  "file": "public/media/badeeha-covers/squidgame.webp",
+  "style": "graphic suspense illustration",
+  "palette": "pink, mint, charcoal",
+  "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'لعبة الحبار'. Landscape 4:3 artwork.\nMedium: graphic suspense illustration.\nIntentional palette: pink, mint, charcoal.\nScene: An impossible geometric staircase maze inside a colorful empty building, dramatic shadows and playful tension, no copied characters or logos.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-10-08",
+  "sourceImage": {
+    "name": "exec-1db09b91-0af5-4f13-a1db-2bc802401d15.png",
+    "sha256": "e38de846f28c4030ca63670f4151798d10cee91d1feeadea9b349867da1ed8a6",
+    "width": 1448,
+    "height": 1086
+  },
+  "width": 640,
+  "height": 480,
+  "bytes": 28954,
+  "sha256": "ed8c7e1c2ec8ddd320b0a26e3000d0d4417204eae7cac5c13a52f9ba22bb2186",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "phone-size-reviewed",
+    "date": "2026-10-08",
+    "reviewer": "root",
+    "width": 160,
+    "method": "shipped cover CSS; baseline and replacement side by side",
+    "evidence": "docs/bank/quality-2026-10-08/preview/covers-3.jpg"
+  }
+}

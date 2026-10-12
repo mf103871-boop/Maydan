@@ -1,0 +1,88 @@
+{
+  "pack": "spotdiff",
+  "oldQid": "spotdiff-200-906",
+  "side": "b",
+  "createdAt": "2026-10-08",
+  "kind": "ai-generated",
+  "tool": "OpenAI image generation (built-in)",
+  "mode": "edit",
+  "prompt": "Use case: precise-object-edit. Asset type: B photo for a mobile single-difference puzzle. Input image is the EXACT A photo to edit, not general inspiration. Output ONE landscape 4:3 image, original framing and positions.\nMake exactly ONE semantic change: add ONE straight horizontal BLACK crossbar connecting the two upright black telescoping handle posts of the blue suitcase, halfway up the EMPTY opening above the suitcase. The bar lies around x=64% to77%, y=13.5% of the whole photo. Its thickness is 1.5% of the whole image width. The black bar divides the previously single tall rectangular opening into TWO visible rectangular openings. Match the existing handle's matte black material. Do not replace the top grip or add any other bars.\nSTRICT INVARIANTS: keep the suitcase BLUE, with its EXACT original seven raised horizontal front ridges unchanged; keep its outline, wheels, small carry handle and original telescoping handle/top grip identical except for this one added crossbar. Preserve straw hat and black band, rolled white towel, bench, wall, floor tiles, shadows, lighting, composition, camera and colors exactly. No removed ridges, color swaps, changed object counts elsewhere, text, border, watermark or marks. Copy original image everywhere except the new single horizontal crossbar.",
+  "asset": "media/spotdiff/spotdiff-200-906-b-q20261008.webp",
+  "sha256": "b83ee4c126bf8a9b03653ca51b325ff279b994b772864f0d9fccc42777ffb19d",
+  "inputSHA": "cbb159ef79002390f55d958c4d0e74063a3f9d29998bb33abf4088c2ec60016c",
+  "outputSHA": "b83ee4c126bf8a9b03653ca51b325ff279b994b772864f0d9fccc42777ffb19d",
+  "rawOutputSHA": "741e929443e184f799a7b36f0ea4f14c9f8a83d6338988b9bc5e605991e1c6d8",
+  "rawGeneratedFile": "exec-b75199d2-5cb1-4e63-b04a-cfef67f5ece1.png",
+  "bytes": 62718,
+  "width": 1280,
+  "height": 960,
+  "inputImages": [
+    {
+      "file": "media/spotdiff/spotdiff-200-906-a.webp",
+      "sha256": "cbb159ef79002390f55d958c4d0e74063a3f9d29998bb33abf4088c2ec60016c"
+    }
+  ],
+  "diff": {
+    "description": "One horizontal black crossbar divides the telescoping handle opening into two openings.",
+    "answer": "عارضة إضافية في مقبض الحقيبة",
+    "spot": {
+      "x": 70.5,
+      "y": 14,
+      "r": 9
+    },
+    "coordinates": "x is measured from physical left; y from top; r is a percentage of image width"
+  },
+  "invariants": [
+    "seven blue suitcase front ridges",
+    "blue case outline and wheels",
+    "top grip and telescoping posts",
+    "straw hat and black band",
+    "white towel and wooden bench",
+    "floor and wall",
+    "camera framing and colors"
+  ],
+  "review": {
+    "status": "phone-size-reviewed",
+    "originalCompared": true,
+    "oldAAndOldBViewed": true,
+    "semanticDifferenceCount": 1,
+    "invariantsReviewed": [
+      "seven blue suitcase front ridges",
+      "blue case outline and wheels",
+      "top grip and telescoping posts",
+      "straw hat and black band",
+      "white towel and wooden bench",
+      "floor and wall",
+      "camera framing and colors"
+    ],
+    "displayedEffect": "Unfiltered original A and edited B side-by-side; physical-left reveal circle only",
+    "mobileDeviceQA": false,
+    "limitation": "AI re-encoding produces minor texture variation. Review checks one meaningful object difference, preserved counts, colors and geometry; exact outside-region pixel identity is not claimed.",
+    "reviewedAt": "2026-10-12",
+    "reviewer": "finish_spotdiff",
+    "imageWidthCSS": 173,
+    "evidence": "docs/bank/quality-2026-10-08/preview/spotdiff-02.png"
+  },
+  "mobileQA": {
+    "method": "Viewed rendered pairs at 175px per image and vertically stacked originals at 359px width, then viewed circles over both A and B.",
+    "sideBySideImageWidth": 175,
+    "stackedImageWidth": 359,
+    "differenceVisible": true,
+    "circleEnclosesDifferenceInBothImages": true,
+    "physicalLeftCoordinates": true,
+    "deviceTested": false,
+    "artifacts": [
+      ".cache/badeeha-quality/spotdiff-eight-qa/spotdiff-200-906-175.png",
+      ".cache/badeeha-quality/spotdiff-eight-qa/spotdiff-200-906-359.png",
+      ".cache/badeeha-quality/spotdiff-eight-qa/spotdiff-200-906-circle175.png"
+    ]
+  },
+  "packaging": "Uniform landscape resize to 1280x960 and WebP quality 85 only; all scene changes made by built-in imagegen. Original A unchanged.",
+  "rejectedAttempts": [
+    {
+      "prompt": "Use case: precise-object-edit. Asset type: B photo for a mobile spot-the-difference puzzle. Input image is the EXACT A photo to edit, not general inspiration. Output ONE landscape 4:3 image matching original framing. Make exactly ONE semantic difference. Remove ONLY ONE horizontal raised ridge on the blue suitcase front: the middle ridge at about 53.5% of the whole image height (the fourth visible horizontal ridge counting downward across the suitcase front). Flatten only this narrow strip so it matches the adjoining BLUE shell, while keeping every other horizontal ridge at its exact original height. The suitcase must remain BLUE. Absolutely preserve the suitcase outline, telescoping black handle, small carry handle, wheels, straw hat with black band, white towel, wooden bench, wall, floor tile lines and all object positions. Only the one missing horizontal ridge may differ.\nSTRICT: copy original photo everywhere outside the specified object change; preserve original colors, object counts, backgrounds, textures and composition. No global repaint, color swap, crop, camera move, extra decorative details, text, border, watermark or marks. The changed feature must be clear at 175 px image width.",
+      "rawGeneratedFile": "exec-cf9b122c-b783-494e-b360-53c3f60f3ed7.png",
+      "reason": "Only ridge highlight flattened; dark horizontal line remains. Difference too weak at 175px."
+    }
+  ]
+}

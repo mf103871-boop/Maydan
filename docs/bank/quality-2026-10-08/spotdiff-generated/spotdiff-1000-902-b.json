@@ -1,0 +1,45 @@
+{
+  "pack": "spotdiff",
+  "oldQid": "spotdiff-1000-902",
+  "side": "b",
+  "createdAt": "2026-10-08",
+  "kind": "ai-generated",
+  "tool": "OpenAI image generation (built-in)",
+  "mode": "edit",
+  "prompt": "Use case: precise-object-edit\nAsset type: strict matching B of a single-difference comparison puzzle.\nInput image1 is the exact EDIT TARGET. Make ONLY one localized pattern change on the blue notebook in the lower-left position of the six-notebook group: the MIDDLE of its three vertical cream stripes is continuous in A. In B interrupt just the central one-third of that middle stripe with the exact same petrol-blue cover material as beside it. Leave the top and bottom thirds of that stripe in place, and leave both outer stripes uninterrupted. This is one continuity difference, not a removed whole stripe. Do not shift or recolor the cover. Keep all other patterns exact.\nMake exactly this one semantic difference. Keep all other objects and pixels identical including five other notebook patterns, two outer cream stripes, blue spine and cover edges, binder clips, scattered paper clips, pencil count and tips, scissors, ruler, eraser, glass water level, folded letter, plants, surface, lighting and camera. No annotations, highlights, new text or UI. Preserve4:3 framing and original style.",
+  "asset": "media/spotdiff/spotdiff-1000-902-b-q20261008.webp",
+  "sha256": "f965b4faff04f8fba3a85b0054452c91d9e4854c1438266e11a1e7d40d6fdbec",
+  "bytes": 214788,
+  "width": 1280,
+  "height": 960,
+  "inputImages": [
+    {
+      "file": "exec-acad2545-044e-4231-ae10-e8023e6f088e.png",
+      "sha256": "40bc2280cb00f77a335a4b05faedcab8d135084941aedced9ad6d465cd0d9d26"
+    }
+  ],
+  "review": {
+    "status": "phone-size-reviewed",
+    "originalCompared": true,
+    "displayedEffect": "Side-by-side unfiltered originals; reveal circle only",
+    "difference": "Only central third of middle cream notebook stripe is interrupted; all three stripe positions otherwise retained",
+    "semanticDifferenceCount": 1,
+    "invariantsReviewed": [
+      "other five notebook patterns",
+      "all three stripe positions",
+      "clip count",
+      "paper clip group",
+      "pencil tips",
+      "scissors",
+      "plants",
+      "glass/letter/ruler/eraser",
+      "light/framing"
+    ],
+    "mobileDeviceQA": false,
+    "reviewedAt": "2026-10-12",
+    "reviewer": "finish_spotdiff",
+    "imageWidthCSS": 173,
+    "evidence": "docs/bank/quality-2026-10-08/preview/spotdiff-09.png"
+  },
+  "packaging": "Uniform size/format encoding only; all scene changes created by built-in imagegen"
+}

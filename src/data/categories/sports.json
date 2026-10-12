@@ -12,7 +12,8 @@
       "verified": true,
       "difficultyTarget": 0.8,
       "source": "https://www.nba.com/news/history-nba-legend-wilt-chamberlain",
-      "verifiedAt": "2026-09-18"
+      "verifiedAt": "2026-09-18",
+      "alt": []
     },
     {
       "p": 200,
@@ -30,20 +31,6 @@
     },
     {
       "p": 200,
-      "q": "من صاحب أسلوب القفز العالي الذي يعبر فيه اللاعب العارضة بظهره وفاز بذهبية 1968؟",
-      "a": "ديك فوسبري",
-      "qid": "sports-200-913",
-      "topic": "ألعاب القوى",
-      "verified": true,
-      "difficultyTarget": 0.8,
-      "source": "https://worldathletics.org/news/news/dick-fosbury-obituary",
-      "verifiedAt": "2026-09-18",
-      "alt": [
-        "ديك فوسبوري"
-      ]
-    },
-    {
-      "p": 200,
       "q": "ما الاسم الذي كان يحمله محمد علي عندما فاز بذهبية روما؟",
       "a": "كاسيوس كلاي",
       "qid": "sports-200-914",
@@ -51,7 +38,8 @@
       "verified": true,
       "difficultyTarget": 0.8,
       "source": "https://olympic.ca/games/1960-rome/",
-      "verifiedAt": "2026-09-18"
+      "verifiedAt": "2026-09-18",
+      "alt": []
     },
     {
       "p": 200,
@@ -62,11 +50,12 @@
       "verified": true,
       "difficultyTarget": 0.8,
       "source": "https://www.formula1.com/en/information/drivers-hall-of-fame-michael-schumacher.7KdX5nJlTG55vR5JQSbZ21",
-      "verifiedAt": "2026-09-18"
+      "verifiedAt": "2026-09-18",
+      "alt": []
     },
     {
       "p": 200,
-      "q": "أي ترتيب يمنح متصدرَه القميص الأخضر في طواف فرنسا؟",
+      "q": "متسابق يرتدي الأخضر في طواف فرنسا؛ أي ترتيب يتصدر؟",
       "a": "ترتيب النقاط",
       "qid": "sports-200-916",
       "topic": "الدراجات",
@@ -87,7 +76,8 @@
       "verified": true,
       "difficultyTarget": 0.8,
       "source": "https://www.fiba.basketball/en/news/10-fun-basketball-facts-to-celebrate-the-inaugural-world-basketball-day",
-      "verifiedAt": "2026-09-18"
+      "verifiedAt": "2026-09-18",
+      "alt": []
     },
     {
       "p": 200,
@@ -102,6 +92,20 @@
       "alt": [
         "ناديا كومانتشي"
       ]
+    },
+    {
+      "q": "من جمع ذهبيتي 1500 متر و5000 متر للرجال في أولمبياد أثينا 2004؟",
+      "a": "هشام الكروج",
+      "topic": "ألعاب القوى",
+      "verified": true,
+      "sourceUrl": "https://worldathletics.org/competitions/olympic-games/28th-olympic-games-6913163/news/article/mens-5000m-final-2",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Hicham El Guerrouj"
+      ],
+      "p": 200,
+      "qid": "sports-200-921",
+      "difficultyTarget": 0.8
     },
     {
       "p": 400,
@@ -126,7 +130,8 @@
       "verified": true,
       "difficultyTarget": 0.6,
       "source": "https://olympic.ca/games/1964-tokyo/",
-      "verifiedAt": "2026-09-18"
+      "verifiedAt": "2026-09-18",
+      "alt": []
     },
     {
       "p": 400,
@@ -165,7 +170,8 @@
       "verified": true,
       "difficultyTarget": 0.6,
       "source": "https://www.letour.fr/en/1975-a-landmark-year",
-      "verifiedAt": "2026-09-18"
+      "verifiedAt": "2026-09-18",
+      "alt": []
     },
     {
       "p": 400,
@@ -184,7 +190,7 @@
     },
     {
       "p": 400,
-      "q": "ما الحركة الوسطى في تسلسل الوثب الثلاثي: حجلة، ثم ماذا، ثم وثبة؟",
+      "q": "في الوثب الثلاثي، ما الحركة الواقعة بين الحجلة والوثبة؟",
       "a": "خطوة",
       "qid": "sports-400-917",
       "topic": "ألعاب القوى",
@@ -192,9 +198,7 @@
       "difficultyTarget": 0.6,
       "source": "https://worldathletics.org/disciplines/jump/triple-jump",
       "verifiedAt": "2026-09-18",
-      "alt": [
-        "الخطوة"
-      ]
+      "alt": []
     },
     {
       "p": 400,
@@ -220,11 +224,12 @@
       "verified": true,
       "difficultyTarget": 0.4,
       "source": "https://www.worldaquatics.com/athletes/1010811/ian-thorpe/medals",
-      "verifiedAt": "2026-09-18"
+      "verifiedAt": "2026-09-18",
+      "alt": []
     },
     {
       "p": 600,
-      "q": "أي نوع أولمبي من المصارعة يمنع الإمساك بساقَي الخصم للهجوم؟",
+      "q": "مصارع لا يحق له الإمساك بساقَي خصمه للهجوم؛ أي نوع أولمبي يمارس؟",
       "a": "المصارعة اليونانية الرومانية",
       "qid": "sports-600-912",
       "topic": "الرياضات القتالية",
@@ -245,7 +250,8 @@
       "verified": true,
       "difficultyTarget": 0.4,
       "source": "https://www.formula1.com/en/latest/article/who-was-ayrton-senna-and-why-is-he-regarded-as-one-of-f1s-greatest-drivers.2GZEdmgHd9mPeCae2n6n4K",
-      "verifiedAt": "2026-09-18"
+      "verifiedAt": "2026-09-18",
+      "alt": []
     },
     {
       "p": 600,
@@ -256,7 +262,8 @@
       "verified": true,
       "difficultyTarget": 0.4,
       "source": "https://www.fiba.basketball/en/news/10-fun-basketball-facts-to-celebrate-the-inaugural-world-basketball-day",
-      "verifiedAt": "2026-09-18"
+      "verifiedAt": "2026-09-18",
+      "alt": []
     },
     {
       "p": 600,
@@ -281,7 +288,8 @@
       "verified": true,
       "difficultyTarget": 0.4,
       "source": "https://worldathletics.org/download/competition?filename=AT-TJ-M-f----.RS6.pdf&path=%5Cpdf%5C5151%5C&updatedOn=08%2F10%2F2017+20%3A46%3A25&urlslug=triple-jump-Official+Results",
-      "verifiedAt": "2026-09-18"
+      "verifiedAt": "2026-09-18",
+      "alt": []
     },
     {
       "p": 600,
@@ -386,20 +394,6 @@
       "difficultyTarget": 0.25
     },
     {
-      "q": "من جمع ذهبيتي 1500 متر و5000 متر للرجال في أولمبياد أثينا 2004؟",
-      "a": "هشام الكروج",
-      "topic": "ألعاب القوى",
-      "verified": true,
-      "sourceUrl": "https://worldathletics.org/competitions/olympic-games/28th-olympic-games-6913163/news/article/mens-5000m-final-2",
-      "verifiedAt": "2026-09-25",
-      "alt": [
-        "Hicham El Guerrouj"
-      ],
-      "p": 800,
-      "qid": "sports-800-916",
-      "difficultyTarget": 0.25
-    },
-    {
       "q": "من العداء اليوناني الذي فاز بأول ماراثون أولمبي حديث عام 1896؟",
       "a": "سبيريدون لويس",
       "topic": "الألعاب الأولمبية",
@@ -428,6 +422,20 @@
       "p": 800,
       "qid": "sports-800-918",
       "difficultyTarget": 0.25
+    },
+    {
+      "p": 800,
+      "q": "من صاحب أسلوب القفز العالي الذي يعبر فيه اللاعب العارضة بظهره وفاز بذهبية 1968؟",
+      "a": "ديك فوسبري",
+      "qid": "sports-800-921",
+      "topic": "ألعاب القوى",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "source": "https://worldathletics.org/news/news/dick-fosbury-obituary",
+      "verifiedAt": "2026-09-18",
+      "alt": [
+        "ديك فوسبوري"
+      ]
     },
     {
       "q": "من لاعب السلة البرازيلي الذي سجل 55 نقطة أمام إسبانيا في أولمبياد سيول 1988؟",
@@ -474,7 +482,7 @@
       "difficultyTarget": 0.15
     },
     {
-      "q": "من الأسترالية التي فازت بذهبية 100 متر حرة في أولمبياد 1956 و1960 و1964؟",
+      "q": "أي سباحة أسترالية حافظت على ذهبية 100 متر حرة في دورات 1956 و 1960 و 1964؟",
       "a": "دون فريزر",
       "topic": "السباحة",
       "verified": true,

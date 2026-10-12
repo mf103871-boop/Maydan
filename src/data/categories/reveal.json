@@ -6,7 +6,7 @@
   "qs": [
     {
       "p": 200,
-      "q": "من هذا الممثل المصري ذو الابتسامة المائلة؟",
+      "q": "من الشخصية التي تكشفها الصورة؟",
       "a": "عادل إمام",
       "qid": "reveal-200-901",
       "type": "image",
@@ -17,24 +17,21 @@
       "topic": "نجوم عرب",
       "difficultyTarget": 0.8,
       "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-reveal-generated.json",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
       "media": {
         "src": "reveal-200-901.webp",
         "type": "image",
-        "title": "لغز بصري مولّد",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-23",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/reveal-200-901.json"
-        }
+        "title": "Adel Imam 2009 cropped.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Adel_Imam_2009_cropped.jpg",
+        "author": "Adel Imam 2009.jpg",
+        "license": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
       }
     },
     {
       "p": 200,
-      "q": "ما اسم نجم أفلام الحركة صاحب هذا الوجه؟",
+      "q": "من الشخصية التي تكشفها الصورة؟",
       "a": "جاكي شان",
       "qid": "reveal-200-902",
       "type": "image",
@@ -46,24 +43,21 @@
       "topic": "سينما عالمية",
       "difficultyTarget": 0.8,
       "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-reveal-generated.json",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
       "media": {
         "src": "reveal-200-902.webp",
         "type": "image",
-        "title": "لغز بصري مولّد",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-23",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/reveal-200-902.json"
-        }
+        "title": "Jackie Chan - 2025 Locarno Film Festival.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jackie_Chan_-_2025_Locarno_Film_Festival.jpg",
+        "author": "Segolene Liger",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
       }
     },
     {
       "p": 200,
-      "q": "من لاعب الكرة المصري الذي تكشفه هذه البلاطات؟",
+      "q": "من الرياضي الذي يظهر في الصورة؟",
       "a": "محمد صلاح",
       "qid": "reveal-200-903",
       "type": "image",
@@ -75,54 +69,21 @@
       "topic": "رياضة عربية",
       "difficultyTarget": 0.8,
       "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-reveal-generated.json",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
       "media": {
         "src": "reveal-200-903.webp",
         "type": "image",
-        "title": "لغز بصري مولّد",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-23",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/reveal-200-903.json"
-        }
+        "title": "Mohamed Salah Argentina v Egypt 7 July 2026-163 (cropped).jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mohamed_Salah_Argentina_v_Egypt_7_July_2026-163_(cropped).jpg",
+        "author": "Bryan Berlin",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
       }
     },
     {
       "p": 200,
-      "q": "ما اسم أسطورة الكرة البرازيلية في هذا الرسم؟",
-      "a": "بيليه",
-      "qid": "reveal-200-904",
-      "type": "image",
-      "effect": "reveal",
-      "alt": [
-        "بيلي",
-        "Pele",
-        "Pelé"
-      ],
-      "topic": "رياضة عالمية",
-      "difficultyTarget": 0.8,
-      "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-reveal-generated.json",
-      "media": {
-        "src": "reveal-200-904.webp",
-        "type": "image",
-        "title": "لغز بصري مولّد",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-23",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/reveal-200-904.json"
-        }
-      }
-    },
-    {
-      "p": 200,
-      "q": "أي عالم فيزياء صاحب الشعر الأبيض المنفوش تكشفه الصورة؟",
+      "q": "من العالم الذي تكشفه الصورة؟",
       "a": "ألبرت أينشتاين",
       "qid": "reveal-200-905",
       "type": "image",
@@ -134,24 +95,21 @@
       "topic": "علوم وابتكار",
       "difficultyTarget": 0.8,
       "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-reveal-generated.json",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
       "media": {
         "src": "reveal-200-905.webp",
         "type": "image",
-        "title": "لغز بصري مولّد",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-23",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/reveal-200-905.json"
-        }
+        "title": "Albert Einstein Head.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Albert_Einstein_Head.jpg",
+        "author": "Photograph by  Orren Jack Turner , Princeton, N.J.  Modified with Photoshop by  PM_Poon  and later by  Dantadd .",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
       }
     },
     {
       "p": 200,
-      "q": "من الشخصية الجنوب إفريقية صاحبة هذه الابتسامة؟",
+      "q": "من الشخصية التي تظهر في الصورة؟",
       "a": "نيلسون مانديلا",
       "qid": "reveal-200-906",
       "type": "image",
@@ -163,53 +121,21 @@
       "topic": "قادة وشخصيات عامة",
       "difficultyTarget": 0.8,
       "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-reveal-generated.json",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
       "media": {
         "src": "reveal-200-906.webp",
         "type": "image",
-        "title": "لغز بصري مولّد",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-23",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/reveal-200-906.json"
-        }
+        "title": "Nelson Mandela 1994.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nelson_Mandela_1994.jpg",
+        "author": "Kingkongphoto & www.celebrity-photos.com  from   Laurel",
+        "license": "CC BY-SA 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
       }
     },
     {
       "p": 200,
-      "q": "من المطربة المصرية ذات النظارة الداكنة في الرسم؟",
-      "a": "أم كلثوم",
-      "qid": "reveal-200-907",
-      "type": "image",
-      "effect": "reveal",
-      "alt": [
-        "أمكلثوم",
-        "Umm Kulthum"
-      ],
-      "topic": "موسيقى وغناء",
-      "difficultyTarget": 0.8,
-      "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-reveal-generated.json",
-      "media": {
-        "src": "reveal-200-907.webp",
-        "type": "image",
-        "title": "لغز بصري مولّد",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-23",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/reveal-200-907.json"
-        }
-      }
-    },
-    {
-      "p": 200,
-      "q": "من الروائي المصري ذو الشارب والنظارة الذي يظهر هنا؟",
+      "q": "من الشخصية التي تظهر في الصورة؟",
       "a": "نجيب محفوظ",
       "qid": "reveal-200-908",
       "type": "image",
@@ -221,53 +147,99 @@
       "topic": "أدب وفنون",
       "difficultyTarget": 0.8,
       "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-reveal-generated.json",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
       "media": {
         "src": "reveal-200-908.webp",
         "type": "image",
-        "title": "لغز بصري مولّد",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-23",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/reveal-200-908.json"
-        }
+        "title": "Naguib Mahfouz HR.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Naguib_Mahfouz_HR.jpg",
+        "author": "Unknown author Unknown author",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
+      }
+    },
+    {
+      "p": 200,
+      "q": "من الرياضي الذي يظهر في الصورة؟",
+      "a": "مايكل جوردان",
+      "qid": "reveal-200-921",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "مايكل جوردن",
+        "Michael Jordan"
+      ],
+      "topic": "رياضة عالمية",
+      "difficultyTarget": 0.8,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
+      "media": {
+        "src": "reveal-600-904.webp",
+        "type": "image",
+        "title": "Michael Jordan in 2014.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Michael_Jordan_in_2014.jpg",
+        "author": "DOD photo by D. Myles Cullen",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
+      }
+    },
+    {
+      "p": 200,
+      "q": "من الفنان الذي تكشفه الصورة؟",
+      "a": "عبد الحليم حافظ",
+      "qid": "reveal-200-922",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "عبدالحليم حافظ",
+        "عبد الحليم",
+        "Abdel Halim Hafez"
+      ],
+      "topic": "موسيقى وغناء",
+      "difficultyTarget": 0.8,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
+      "media": {
+        "src": "reveal-600-907.webp",
+        "type": "image",
+        "title": "Abdel Halim Hafez.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Abdel_Halim_Hafez.jpg",
+        "author": "Crimson2022 Alfred",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
       }
     },
     {
       "p": 400,
-      "q": "ما اسم الممثل المصري صاحب الشعر المموج والشارب؟",
+      "q": "من الشخصية التي تكشفها الصورة؟",
       "a": "عمر الشريف",
       "qid": "reveal-400-901",
       "type": "image",
       "effect": "reveal",
       "alt": [
-        "عمر شريف",
         "Omar Sharif"
       ],
       "topic": "نجوم عرب",
       "difficultyTarget": 0.6,
       "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-reveal-generated.json",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
       "media": {
         "src": "reveal-400-901.webp",
         "type": "image",
-        "title": "لغز بصري مولّد",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-23",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/reveal-400-901.json"
-        }
+        "title": "Omar Sharif 1963.JPG",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Omar_Sharif_1963.JPG",
+        "author": "Photographer-Gene Weber, Seattle",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
       }
     },
     {
       "p": 400,
-      "q": "ما الاسم الحقيقي للممثل الكوميدي الذي يظهر وجهه بين البلاطات؟",
+      "q": "من الشخصية التي تكشفها الصورة؟",
       "a": "روان أتكينسون",
       "qid": "reveal-400-902",
       "type": "image",
@@ -279,24 +251,21 @@
       "topic": "سينما عالمية",
       "difficultyTarget": 0.6,
       "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-reveal-generated.json",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
       "media": {
         "src": "reveal-400-902.webp",
         "type": "image",
-        "title": "لغز بصري مولّد",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-23",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/reveal-400-902.json"
-        }
+        "title": "Rowan Atkinson, 2011.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Rowan_Atkinson,_2011.jpg",
+        "author": "Eva Rinaldi",
+        "license": "CC BY-SA 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
       }
     },
     {
       "p": 400,
-      "q": "من لاعب كرة القدم الجزائري في هذه الصورة؟",
+      "q": "من الرياضي الذي يظهر في الصورة؟",
       "a": "رياض محرز",
       "qid": "reveal-400-903",
       "type": "image",
@@ -308,24 +277,21 @@
       "topic": "رياضة عربية",
       "difficultyTarget": 0.6,
       "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-reveal-generated.json",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
       "media": {
         "src": "reveal-400-903.webp",
         "type": "image",
-        "title": "لغز بصري مولّد",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-23",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/reveal-400-903.json"
-        }
+        "title": "Mahrez 2021.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mahrez_2021.jpg",
+        "author": "Jeanpierrekepseu",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "changes": "Cropped to normalized bounds [0.17, 0.035, 0.66, 0.47]; resized and converted to WebP; subject appearance not altered."
       }
     },
     {
       "p": 400,
-      "q": "أي نجم أرجنتيني تكشفه الصورة ذات الشعر الكثيف؟",
+      "q": "من الرياضي الذي يظهر في الصورة؟",
       "a": "دييغو مارادونا",
       "qid": "reveal-400-904",
       "type": "image",
@@ -338,24 +304,21 @@
       "topic": "رياضة عالمية",
       "difficultyTarget": 0.6,
       "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-reveal-generated.json",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
       "media": {
         "src": "reveal-400-904.webp",
         "type": "image",
-        "title": "لغز بصري مولّد",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-23",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/reveal-400-904.json"
-        }
+        "title": "Argentina celebrando copa (cropped).jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Argentina_celebrando_copa_(cropped).jpg",
+        "author": "Unknown author Unknown author",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "changes": "Cropped to normalized bounds [0.12, 0.025, 0.61, 0.43]; resized and converted to WebP; subject appearance not altered."
       }
     },
     {
       "p": 400,
-      "q": "من عالم الفيزياء الذي يظهر جالسًا على كرسيه؟",
+      "q": "من العالم الذي تكشفه الصورة؟",
       "a": "ستيفن هوكينغ",
       "qid": "reveal-400-905",
       "type": "image",
@@ -368,24 +331,21 @@
       "topic": "علوم وابتكار",
       "difficultyTarget": 0.6,
       "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-reveal-generated.json",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
       "media": {
         "src": "reveal-400-905.webp",
         "type": "image",
-        "title": "لغز بصري مولّد",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-23",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/reveal-400-905.json"
-        }
+        "title": "Stephen Hawking.StarChild.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Stephen_Hawking.StarChild.jpg",
+        "author": "NASA",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "changes": "Cropped to normalized bounds [0, 0, 0.67, 0.55]; resized and converted to WebP; subject appearance not altered."
       }
     },
     {
       "p": 400,
-      "q": "من الشخصية الأمريكية ذات الابتسامة الواسعة والشعر القصير؟",
+      "q": "من الشخصية التي تظهر في الصورة؟",
       "a": "باراك أوباما",
       "qid": "reveal-400-906",
       "type": "image",
@@ -397,24 +357,21 @@
       "topic": "قادة وشخصيات عامة",
       "difficultyTarget": 0.6,
       "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-reveal-generated.json",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
       "media": {
         "src": "reveal-400-906.webp",
         "type": "image",
-        "title": "لغز بصري مولّد",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-23",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/reveal-400-906.json"
-        }
+        "title": "President Barack Obama.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:President_Barack_Obama.jpg",
+        "author": "Official White House Photo by  Pete Souza",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "changes": "Cropped to normalized bounds [0.18, 0, 0.81, 0.51]; resized and converted to WebP; subject appearance not altered."
       }
     },
     {
       "p": 400,
-      "q": "ما اسم المطربة اللبنانية التي يتضح وجهها مع فتح البلاطات؟",
+      "q": "من الفنان الذي تكشفه الصورة؟",
       "a": "فيروز",
       "qid": "reveal-400-907",
       "type": "image",
@@ -427,24 +384,21 @@
       "topic": "موسيقى وغناء",
       "difficultyTarget": 0.6,
       "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-reveal-generated.json",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
       "media": {
         "src": "reveal-400-907.webp",
         "type": "image",
-        "title": "لغز بصري مولّد",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-23",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/reveal-400-907.json"
-        }
+        "title": "Fairuz in btd concert 2001.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Fairuz_in_btd_concert_2001.jpg",
+        "author": "Wissam Chidiak",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "changes": "Cropped to normalized bounds [0.29, 0.02, 0.67, 0.41]; resized and converted to WebP; subject appearance not altered."
       }
     },
     {
       "p": 400,
-      "q": "من الشاعر الفلسطيني صاحب النظارة الدائرية في الرسم؟",
+      "q": "من الشاعر الذي تكشفه الصورة؟",
       "a": "محمود درويش",
       "qid": "reveal-400-908",
       "type": "image",
@@ -456,53 +410,21 @@
       "topic": "أدب وفنون",
       "difficultyTarget": 0.6,
       "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-reveal-generated.json",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
       "media": {
         "src": "reveal-400-908.webp",
         "type": "image",
-        "title": "لغز بصري مولّد",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-23",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/reveal-400-908.json"
-        }
+        "title": "MahmoudDarwish.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:MahmoudDarwish.jpg",
+        "author": "Amer Shomali",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+        "changes": "Cropped to normalized bounds [0.42, 0.015, 1, 0.56]; resized and converted to WebP; subject appearance not altered."
       }
     },
     {
       "p": 600,
-      "q": "من الممثلة العربية التي تكشف صورتها تدريجيًا؟",
-      "a": "هند صبري",
-      "qid": "reveal-600-901",
-      "type": "image",
-      "effect": "reveal",
-      "alt": [
-        "Hend Sabry",
-        "Hend Sabri"
-      ],
-      "topic": "نجوم عرب",
-      "difficultyTarget": 0.4,
-      "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-reveal-generated.json",
-      "media": {
-        "src": "reveal-600-901.webp",
-        "type": "image",
-        "title": "لغز بصري مولّد",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-23",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/reveal-600-901.json"
-        }
-      }
-    },
-    {
-      "p": 600,
-      "q": "ما اسم الممثل صاحب الشعر الطويل واللحية الداكنة؟",
+      "q": "من الشخصية التي تكشفها الصورة؟",
       "a": "كيانو ريفز",
       "qid": "reveal-600-902",
       "type": "image",
@@ -514,24 +436,21 @@
       "topic": "سينما عالمية",
       "difficultyTarget": 0.4,
       "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-reveal-generated.json",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
       "media": {
         "src": "reveal-600-902.webp",
         "type": "image",
-        "title": "لغز بصري مولّد",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-23",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/reveal-600-902.json"
-        }
+        "title": "Keanu Reeves at TIFF 2025 02 (Cropped).jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Keanu_Reeves_at_TIFF_2025_02_(Cropped).jpg",
+        "author": "Gabriel Hutchinson",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
       }
     },
     {
       "p": 600,
-      "q": "من لاعب الكرة المغربي صاحب القميص الأحمر؟",
+      "q": "من الرياضي الذي يظهر في الصورة؟",
       "a": "أشرف حكيمي",
       "qid": "reveal-600-903",
       "type": "image",
@@ -543,53 +462,21 @@
       "topic": "رياضة عربية",
       "difficultyTarget": 0.4,
       "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-reveal-generated.json",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
       "media": {
         "src": "reveal-600-903.webp",
         "type": "image",
-        "title": "لغز بصري مولّد",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-23",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/reveal-600-903.json"
-        }
+        "title": "Achraf Hakimi Morocco v Norway 7 June 2026-16.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Achraf_Hakimi_Morocco_v_Norway_7_June_2026-16.jpg",
+        "author": "Bryan Berlin",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "changes": "Cropped to normalized bounds [0.3, 0.035, 0.72, 0.5]; resized and converted to WebP; subject appearance not altered."
       }
     },
     {
       "p": 600,
-      "q": "من نجم كرة السلة صاحب الرأس الحليق في الصورة؟",
-      "a": "مايكل جوردان",
-      "qid": "reveal-600-904",
-      "type": "image",
-      "effect": "reveal",
-      "alt": [
-        "مايكل جوردن",
-        "Michael Jordan"
-      ],
-      "topic": "رياضة عالمية",
-      "difficultyTarget": 0.4,
-      "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-reveal-generated.json",
-      "media": {
-        "src": "reveal-600-904.webp",
-        "type": "image",
-        "title": "لغز بصري مولّد",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-25",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/reveal-600-904.json"
-        }
-      }
-    },
-    {
-      "p": 600,
-      "q": "ما اسم العالم المصري الذي يظهر بشارب وشعر رمادي؟",
+      "q": "من العالم الذي تكشفه الصورة؟",
       "a": "أحمد زويل",
       "qid": "reveal-600-905",
       "type": "image",
@@ -601,24 +488,21 @@
       "topic": "علوم وابتكار",
       "difficultyTarget": 0.4,
       "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-reveal-generated.json",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
       "media": {
         "src": "reveal-600-905.webp",
         "type": "image",
-        "title": "لغز بصري مولّد",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-23",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/reveal-600-905.json"
-        }
+        "title": "Ahmed Zewail HD2009 Othmer Gold Medal portrait.JPG",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ahmed_Zewail_HD2009_Othmer_Gold_Medal_portrait.JPG",
+        "author": "Douglas A. Lockard",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "changes": "Cropped to normalized bounds [0.18, 0, 0.79, 0.6]; resized and converted to WebP; subject appearance not altered."
       }
     },
     {
       "p": 600,
-      "q": "من الشخصية المصرية ذات الشارب والشعر الممشط للخلف؟",
+      "q": "من الشخصية التي تظهر في الصورة؟",
       "a": "جمال عبد الناصر",
       "qid": "reveal-600-906",
       "type": "image",
@@ -631,54 +515,21 @@
       "topic": "قادة وشخصيات عامة",
       "difficultyTarget": 0.4,
       "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-reveal-generated.json",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
       "media": {
         "src": "reveal-600-906.webp",
         "type": "image",
-        "title": "لغز بصري مولّد",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-23",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/reveal-600-906.json"
-        }
+        "title": "Nasser in 1969.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nasser_in_1969.jpg",
+        "author": "Not credited",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
       }
     },
     {
       "p": 600,
-      "q": "ما اسم المطرب المصري صاحب الوجه النحيل في الرسم؟",
-      "a": "عبد الحليم حافظ",
-      "qid": "reveal-600-907",
-      "type": "image",
-      "effect": "reveal",
-      "alt": [
-        "عبدالحليم حافظ",
-        "عبد الحليم",
-        "Abdel Halim Hafez"
-      ],
-      "topic": "موسيقى وغناء",
-      "difficultyTarget": 0.4,
-      "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-reveal-generated.json",
-      "media": {
-        "src": "reveal-600-907.webp",
-        "type": "image",
-        "title": "لغز بصري مولّد",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-23",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/reveal-600-907.json"
-        }
-      }
-    },
-    {
-      "p": 600,
-      "q": "من الرسام ذو اللحية الحمراء والقبعة الرمادية؟",
+      "q": "من الفنان صاحب هذه الصورة الذاتية؟",
       "a": "فينسنت فان غوخ",
       "qid": "reveal-600-908",
       "type": "image",
@@ -692,52 +543,99 @@
       "topic": "أدب وفنون",
       "difficultyTarget": 0.4,
       "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-reveal-generated.json",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
       "media": {
         "src": "reveal-600-908.webp",
         "type": "image",
-        "title": "لغز بصري مولّد",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-25",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/reveal-600-908.json"
-        }
+        "title": "Self-portrait - Vincent van Gogh.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Self-portrait_-_Vincent_van_Gogh.jpg",
+        "author": "Vincent van Gogh",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
       }
     },
     {
-      "p": 800,
-      "q": "من الممثل المصري ذو النظارة واللحية الخفيفة في الصورة؟",
+      "p": 600,
+      "q": "من الرياضي الذي يظهر في الصورة؟",
+      "a": "بيليه",
+      "qid": "reveal-600-921",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "بيلي",
+        "Pele",
+        "Pelé"
+      ],
+      "topic": "رياضة عالمية",
+      "difficultyTarget": 0.4,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
+      "media": {
+        "src": "reveal-200-904.webp",
+        "type": "image",
+        "title": "Pele con brasil (cropped).jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pele_con_brasil_(cropped).jpg",
+        "author": "Unknown author Unknown author",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
+      }
+    },
+    {
+      "p": 600,
+      "q": "من الفنان الذي تكشفه الصورة؟",
+      "a": "أم كلثوم",
+      "qid": "reveal-600-922",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "أمكلثوم",
+        "Umm Kulthum"
+      ],
+      "topic": "موسيقى وغناء",
+      "difficultyTarget": 0.4,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
+      "media": {
+        "src": "reveal-200-907.webp",
+        "type": "image",
+        "title": "Umm Kulthum as Fatimah.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Umm_Kulthum_as_Fatimah.jpg",
+        "author": "Production company",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
+      }
+    },
+    {
+      "p": 600,
+      "q": "من الشخصية التي تكشفها الصورة؟",
       "a": "أحمد حلمي",
-      "qid": "reveal-800-901",
+      "qid": "reveal-600-923",
       "type": "image",
       "effect": "reveal",
       "alt": [
         "Ahmed Helmy"
       ],
       "topic": "نجوم عرب",
-      "difficultyTarget": 0.25,
+      "difficultyTarget": 0.4,
       "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-reveal-generated.json",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
       "media": {
         "src": "reveal-800-901.webp",
         "type": "image",
-        "title": "لغز بصري مولّد",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-23",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/reveal-800-901.json"
-        }
+        "title": "Ahmed Helmy in Sawiris 2018.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ahmed_Helmy_in_Sawiris_2018.jpg",
+        "author": "ElFagr News",
+        "license": "CC BY 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+        "changes": "Cropped to normalized bounds [0.18, 0.015, 0.75, 0.52]; resized and converted to WebP; subject appearance not altered."
       }
     },
     {
       "p": 800,
-      "q": "ما اسم الممثلة ذات الشعر الأشقر القصير التي تظهر هنا؟",
+      "q": "من الشخصية التي تكشفها الصورة؟",
       "a": "كيت بلانشيت",
       "qid": "reveal-800-902",
       "type": "image",
@@ -748,24 +646,21 @@
       "topic": "سينما عالمية",
       "difficultyTarget": 0.25,
       "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-reveal-generated.json",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
       "media": {
         "src": "reveal-800-902.webp",
         "type": "image",
-        "title": "لغز بصري مولّد",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-25",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/reveal-800-902.json"
-        }
+        "title": "Cate Blanchett Cannes 2018 2 (cropped).jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cate_Blanchett_Cannes_2018_2_(cropped).jpg",
+        "author": "Joan Hernandez Mir",
+        "license": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
       }
     },
     {
       "p": 800,
-      "q": "من لاعبة التنس العربية صاحبة الشعر المربوط والابتسامة؟",
+      "q": "من الرياضية التي تظهر في الصورة؟",
       "a": "أنس جابر",
       "qid": "reveal-800-903",
       "type": "image",
@@ -776,24 +671,21 @@
       "topic": "رياضة عربية",
       "difficultyTarget": 0.25,
       "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-reveal-generated.json",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
       "media": {
         "src": "reveal-800-903.webp",
         "type": "image",
-        "title": "لغز بصري مولّد",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-25",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/reveal-800-903.json"
-        }
+        "title": "Ons Jabeur (2023 US Open) 02 (cropped).jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ons_Jabeur_(2023_US_Open)_02_(cropped).jpg",
+        "author": "Hameltion",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "changes": "Cropped to normalized bounds [0.3, 0.005, 0.8, 0.52]; resized and converted to WebP; subject appearance not altered."
       }
     },
     {
       "p": 800,
-      "q": "ما اسم بطلة التنس التي تكشفها البلاطات بقميص بنفسجي؟",
+      "q": "من الرياضية التي تظهر في الصورة؟",
       "a": "سيرينا ويليامز",
       "qid": "reveal-800-904",
       "type": "image",
@@ -805,24 +697,21 @@
       "topic": "رياضة عالمية",
       "difficultyTarget": 0.25,
       "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-reveal-generated.json",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
       "media": {
         "src": "reveal-800-904.webp",
         "type": "image",
-        "title": "لغز بصري مولّد",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-25",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/reveal-800-904.json"
-        }
+        "title": "Serena Williams at 2013 US Open.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Serena_Williams_at_2013_US_Open.jpg",
+        "author": "Edwin Martinez",
+        "license": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
       }
     },
     {
       "p": 800,
-      "q": "من العالمة ذات الشعر المرفوع والملابس الداكنة في الرسم؟",
+      "q": "من العالمة التي تكشفها الصورة؟",
       "a": "ماري كوري",
       "qid": "reveal-800-905",
       "type": "image",
@@ -835,24 +724,21 @@
       "topic": "علوم وابتكار",
       "difficultyTarget": 0.25,
       "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-reveal-generated.json",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
       "media": {
         "src": "reveal-800-905.webp",
         "type": "image",
-        "title": "لغز بصري مولّد",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-25",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/reveal-800-905.json"
-        }
+        "title": "Mariecurie.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mariecurie.jpg",
+        "author": "Unknown author Unknown author",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
       }
     },
     {
       "p": 800,
-      "q": "ما اسم ناشط الحقوق المدنية الأمريكي الظاهر في الصورة؟",
+      "q": "من الشخصية التي تظهر في الصورة؟",
       "a": "مارتن لوثر كينغ",
       "qid": "reveal-800-906",
       "type": "image",
@@ -865,24 +751,21 @@
       "topic": "قادة وشخصيات عامة",
       "difficultyTarget": 0.25,
       "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-reveal-generated.json",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
       "media": {
         "src": "reveal-800-906.webp",
         "type": "image",
-        "title": "لغز بصري مولّد",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-25",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/reveal-800-906.json"
-        }
+        "title": "The Rev. Dr. Martin Luther King Jr. Color Portrait (high quality).jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_Rev._Dr._Martin_Luther_King_Jr._Color_Portrait_(high_quality).jpg",
+        "author": "Associated Press",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
       }
     },
     {
       "p": 800,
-      "q": "من المؤلف الموسيقي ذو الشعر المنفوش والوشاح الأحمر؟",
+      "q": "من المؤلف الموسيقي الذي تصوّره هذه اللوحة؟",
       "a": "لودفيغ فان بيتهوفن",
       "qid": "reveal-800-907",
       "type": "image",
@@ -896,24 +779,21 @@
       "topic": "موسيقى وغناء",
       "difficultyTarget": 0.25,
       "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-reveal-generated.json",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
       "media": {
         "src": "reveal-800-907.webp",
         "type": "image",
-        "title": "لغز بصري مولّد",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-25",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/reveal-800-907.json"
-        }
+        "title": "Joseph Karl Stieler's Beethoven mit dem Manuskript der Missa solemnis.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Joseph_Karl_Stieler%27s_Beethoven_mit_dem_Manuskript_der_Missa_solemnis.jpg",
+        "author": "Joseph Karl Stieler",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "changes": "Cropped to normalized bounds [0.22, 0, 0.85, 0.6]; resized and converted to WebP; subject appearance not altered."
       }
     },
     {
       "p": 800,
-      "q": "ما اسم الرسام صاحب القميص المخطط والرأس شبه الأصلع؟",
+      "q": "من الشخصية التي تظهر في الصورة؟",
       "a": "بابلو بيكاسو",
       "qid": "reveal-800-908",
       "type": "image",
@@ -925,24 +805,47 @@
       "topic": "أدب وفنون",
       "difficultyTarget": 0.25,
       "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-reveal-generated.json",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
       "media": {
         "src": "reveal-800-908.webp",
         "type": "image",
-        "title": "لغز بصري مولّد",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-25",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/reveal-800-908.json"
-        }
+        "title": "Pablo picasso 1.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pablo_picasso_1.jpg",
+        "author": "Argentina . Revista   Vea y Lea",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
+      }
+    },
+    {
+      "p": 800,
+      "q": "من الشخصية التي تكشفها الصورة؟",
+      "a": "هند صبري",
+      "qid": "reveal-800-921",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "Hend Sabry",
+        "Hend Sabri"
+      ],
+      "topic": "نجوم عرب",
+      "difficultyTarget": 0.25,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
+      "media": {
+        "src": "reveal-600-901.webp",
+        "type": "image",
+        "title": "Couv-Tunivisions Juin 2011.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Couv-Tunivisions_Juin_2011.jpg",
+        "author": "Nizar Chaari",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "changes": "Cropped to normalized bounds [0.29, 0.39, 0.7, 0.84]; resized and converted to WebP; subject appearance not altered."
       }
     },
     {
       "p": 1000,
-      "q": "من المخرجة اللبنانية ذات الشعر الداكن الطويل في الصورة؟",
+      "q": "من الشخصية التي تكشفها الصورة؟",
       "a": "نادين لبكي",
       "qid": "reveal-1000-901",
       "type": "image",
@@ -953,24 +856,21 @@
       "topic": "نجوم عرب",
       "difficultyTarget": 0.15,
       "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-reveal-generated.json",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
       "media": {
         "src": "reveal-1000-901.webp",
         "type": "image",
-        "title": "لغز بصري مولّد",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-25",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/reveal-1000-901.json"
-        }
+        "title": "Nadine Labaki by Matteo Chinellato (cropped).jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nadine_Labaki_by_Matteo_Chinellato_(cropped).jpg",
+        "author": "Nadine Labaki",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
       }
     },
     {
       "p": 1000,
-      "q": "من مخرج الرسوم المتحركة الياباني ذو النظارة واللحية البيضاء؟",
+      "q": "من مخرج الرسوم المتحركة الذي يظهر في الصورة؟",
       "a": "هاياو ميازاكي",
       "qid": "reveal-1000-902",
       "type": "image",
@@ -983,24 +883,21 @@
       "topic": "سينما عالمية",
       "difficultyTarget": 0.15,
       "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-reveal-generated.json",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
       "media": {
         "src": "reveal-1000-902.webp",
         "type": "image",
-        "title": "لغز بصري مولّد",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-25",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/reveal-1000-902.json"
-        }
+        "title": "HayaoMiyazakiCCJuly09.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:HayaoMiyazakiCCJuly09.jpg",
+        "author": "Natasha Baucas at  https://www.flickr.com/photos/sdnatasha/",
+        "license": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+        "changes": "Cropped to normalized bounds [0.18, 0, 0.9, 0.55]; resized and converted to WebP; subject appearance not altered."
       }
     },
     {
       "p": 1000,
-      "q": "من بطل الوثب العالي القطري الذي يظهر بهذا الوجه؟",
+      "q": "من الرياضي الذي يظهر في الصورة؟",
       "a": "معتز برشم",
       "qid": "reveal-1000-903",
       "type": "image",
@@ -1012,114 +909,21 @@
       "topic": "رياضة عربية",
       "difficultyTarget": 0.15,
       "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-reveal-generated.json",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
       "media": {
         "src": "reveal-1000-903.webp",
         "type": "image",
-        "title": "لغز بصري مولّد",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-25",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/reveal-1000-903.json"
-        }
+        "title": "Mutaz essa barshim.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mutaz_essa_barshim.jpg",
+        "author": "Doha Stadium Plus",
+        "license": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+        "changes": "Cropped to normalized bounds [0.2, 0.045, 0.8, 0.54]; resized and converted to WebP; subject appearance not altered."
       }
     },
     {
       "p": 1000,
-      "q": "ما اسم لاعب التنس السويسري صاحب الشعر البني؟",
-      "a": "روجر فيدرر",
-      "qid": "reveal-1000-904",
-      "type": "image",
-      "effect": "reveal",
-      "alt": [
-        "روجيه فيدرر",
-        "فيدرر",
-        "Roger Federer"
-      ],
-      "topic": "رياضة عالمية",
-      "difficultyTarget": 0.15,
-      "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-reveal-generated.json",
-      "media": {
-        "src": "reveal-1000-904.webp",
-        "type": "image",
-        "title": "لغز بصري مولّد",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-25",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/reveal-1000-904.json"
-        }
-      }
-    },
-    {
-      "p": 1000,
-      "q": "من المخترع صاحب الشارب الداكن والشعر المفروق في الرسم؟",
-      "a": "نيكولا تسلا",
-      "qid": "reveal-1000-905",
-      "type": "image",
-      "effect": "reveal",
-      "alt": [
-        "نيقولا تسلا",
-        "تسلا",
-        "Nikola Tesla"
-      ],
-      "topic": "علوم وابتكار",
-      "difficultyTarget": 0.15,
-      "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-reveal-generated.json",
-      "media": {
-        "src": "reveal-1000-905.webp",
-        "type": "image",
-        "title": "لغز بصري مولّد",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-25",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/reveal-1000-905.json"
-        }
-      }
-    },
-    {
-      "p": 1000,
-      "q": "من الشخصية الألمانية ذات الشعر القصير والسترة الفيروزية؟",
-      "a": "أنغيلا ميركل",
-      "qid": "reveal-1000-906",
-      "type": "image",
-      "effect": "reveal",
-      "alt": [
-        "انجيلا ميركل",
-        "ميركل",
-        "Angela Merkel"
-      ],
-      "topic": "قادة وشخصيات عامة",
-      "difficultyTarget": 0.15,
-      "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-reveal-generated.json",
-      "media": {
-        "src": "reveal-1000-906.webp",
-        "type": "image",
-        "title": "لغز بصري مولّد",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-25",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/reveal-1000-906.json"
-        }
-      }
-    },
-    {
-      "p": 1000,
-      "q": "ما اسم المؤلف الموسيقي صاحب المعطف الأحمر والشعر الرمادي الملتف؟",
+      "q": "من المؤلف الموسيقي الذي تصوّره هذه اللوحة التاريخية؟",
       "a": "فولفغانغ أماديوس موزارت",
       "qid": "reveal-1000-907",
       "type": "image",
@@ -1134,24 +938,21 @@
       "topic": "موسيقى وغناء",
       "difficultyTarget": 0.15,
       "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-reveal-generated.json",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
       "media": {
         "src": "reveal-1000-907.webp",
         "type": "image",
-        "title": "لغز بصري مولّد",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-25",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/reveal-1000-907.json"
-        }
+        "title": "Wolfgang-amadeus-mozart 1.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Wolfgang-amadeus-mozart_1.jpg",
+        "author": "Barbara Krafft",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "changes": "Cropped to normalized bounds [0.13, 0.03, 0.85, 0.64]; resized and converted to WebP; subject appearance not altered."
       }
     },
     {
       "p": 1000,
-      "q": "من الكاتب صاحب الشارب الأبيض الكثيف والبدلة البيضاء؟",
+      "q": "من الشخصية التي تظهر في الصورة؟",
       "a": "مارك توين",
       "qid": "reveal-1000-908",
       "type": "image",
@@ -1165,19 +966,94 @@
       "topic": "أدب وفنون",
       "difficultyTarget": 0.15,
       "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-reveal-generated.json",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
       "media": {
         "src": "reveal-1000-908.webp",
         "type": "image",
-        "title": "لغز بصري مولّد",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-25",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/reveal-1000-908.json"
-        }
+        "title": "MarkTwain.LOC.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:MarkTwain.LOC.jpg",
+        "author": "Unknown author Unknown author",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "changes": "Cropped to normalized bounds [0.12, 0.1, 0.79, 0.68]; resized and converted to WebP; subject appearance not altered."
+      }
+    },
+    {
+      "p": 1000,
+      "q": "من بطل القفز بالزانة الذي يظهر في الصورة؟",
+      "a": "سيرغي بوبكا",
+      "qid": "reveal-1000-921",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "Sergey Bubka",
+        "Sergei Bubka",
+        "سيرجي بوبكا"
+      ],
+      "topic": "رياضة عالمية",
+      "difficultyTarget": 0.15,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
+      "media": {
+        "src": "reveal-1000-904.webp",
+        "type": "image",
+        "title": "Sergei Bubka (2007) cropped.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sergei_Bubka_(2007)_cropped.jpg",
+        "author": "Zureks, cropped by  MachoCarioca",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
+      }
+    },
+    {
+      "p": 1000,
+      "q": "من عالم الفيزياء الذي يظهر في الصورة؟",
+      "a": "ريتشارد فاينمان",
+      "qid": "reveal-1000-922",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "Richard Feynman",
+        "ريتشارد فينمان"
+      ],
+      "topic": "علوم وابتكار",
+      "difficultyTarget": 0.15,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
+      "media": {
+        "src": "reveal-1000-905.webp",
+        "type": "image",
+        "title": "RichardFeynman-PaineMansionWoods1984 copyrightTamikoThiel bw.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:RichardFeynman-PaineMansionWoods1984_copyrightTamikoThiel_bw.jpg",
+        "author": "Copyright Tamiko Thiel 1984",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "changes": "Cropped to normalized bounds [0.16, 0.06, 0.6, 0.48]; resized and converted to WebP; subject appearance not altered."
+      }
+    },
+    {
+      "p": 1000,
+      "q": "من ناشطة الحقوق المدنية التي تظهر في الصورة؟",
+      "a": "روزا باركس",
+      "qid": "reveal-1000-923",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "Rosa Parks"
+      ],
+      "topic": "قادة وشخصيات عامة",
+      "difficultyTarget": 0.15,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
+      "media": {
+        "src": "reveal-1000-906.webp",
+        "type": "image",
+        "title": "Rosa Parks 1997.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Rosa_Parks_1997.jpg",
+        "author": "John Mathew Smith & www.celebrity-photos.com  from Laurel  Maryland, USA",
+        "license": "CC BY-SA 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
       }
     }
   ]

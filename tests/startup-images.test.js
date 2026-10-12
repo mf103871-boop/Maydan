@@ -55,8 +55,20 @@ test('the complete active image bank includes all 78 covers, 400 puzzle images a
   }
   const differences = puzzles.filter((url) => url.startsWith('media/spotdiff/'));
   assert.equal(differences.length, 80, 'both images of all 40 spot-the-difference questions must be warm');
-  assert.equal(differences.filter((url) => /-a\.webp$/.test(url)).length, 40);
-  assert.equal(differences.filter((url) => /-b\.webp$/.test(url)).length, 40);
+  const pairedQuestions = CATS.find((category) => category.id === 'spotdiff').qs;
+  assert.equal(pairedQuestions.length, 40);
+  const pairedAssets = new Set();
+  for (const question of pairedQuestions) {
+    assert.ok(Array.isArray(question.media), `${question.qid}: paired media must be an array`);
+    assert.equal(question.media.length, 2, `${question.qid}: both sides are required`);
+    for (const [side, entry] of question.media.entries()) {
+      const src = typeof entry === 'string' ? entry : entry.src;
+      const url = src.startsWith('media/') ? src : `media/spotdiff/${src}`;
+      assert.ok(differences.includes(url), `${question.qid}: side ${side + 1} must be warm`);
+      pairedAssets.add(url);
+    }
+  }
+  assert.equal(pairedAssets.size, 80, 'the 40 questions must have 80 distinct active sides');
   assert.ok(fabraka.includes('media/fabraka-v3/fab3-001.webp'));
   assert.ok(fabraka.includes('media/fabraka-v3/fab3-032.webp'));
   assert.ok(urls.every((url) => !/\.(mp3|mp4|wav|ogg)(?:\?|$)/i.test(url)));

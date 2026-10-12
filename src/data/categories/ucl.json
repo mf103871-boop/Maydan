@@ -26,11 +26,12 @@
       "verified": true,
       "difficultyTarget": 0.8,
       "source": "https://www.uefa.com/uefachampionsleague/news/0250-0c50fb78a384-1434bbcadbcb-1000/",
-      "verifiedAt": "2026-09-18"
+      "verifiedAt": "2026-09-18",
+      "alt": []
     },
     {
       "p": 200,
-      "q": "من سجل رأسية التعادل وركلة الترجيح الحاسمة للبلوز في نهائي 2012؟",
+      "q": "سجل رأسية التعادل ثم الترجيحية الحاسمة في نهائي دوري الأبطال 2012؛ من اللاعب؟",
       "a": "ديدييه دروغبا",
       "qid": "ucl-200-913",
       "topic": "الهدافون",
@@ -79,7 +80,8 @@
       "verified": true,
       "difficultyTarget": 0.8,
       "source": "https://www.uefa.com/uefachampionsleague/news/0250-0c50fb78a384-1434bbcadbcb-1000/",
-      "verifiedAt": "2026-09-18"
+      "verifiedAt": "2026-09-18",
+      "alt": []
     },
     {
       "p": 200,
@@ -90,7 +92,8 @@
       "verified": true,
       "difficultyTarget": 0.8,
       "source": "https://www.uefa.com/uefachampionsleague/news/0253-0d800ac7cffa-8147de94780e-1000--the-1999-champions-league-final-20-years-on-most-dramatic/",
-      "verifiedAt": "2026-09-18"
+      "verifiedAt": "2026-09-18",
+      "alt": []
     },
     {
       "p": 200,
@@ -115,7 +118,8 @@
       "verified": true,
       "difficultyTarget": 0.6,
       "source": "https://www.uefa.com/uefachampionsleague/news/0250-0c5101f9aa40-9dbe7a990dfe-1000--mourinho-recalls-porto-s-2004-victory-march/",
-      "verifiedAt": "2026-09-18"
+      "verifiedAt": "2026-09-18",
+      "alt": []
     },
     {
       "p": 400,
@@ -197,11 +201,12 @@
       "verified": true,
       "difficultyTarget": 0.6,
       "source": "https://www.uefa.com/uefachampionsleague/news/0251-0e9ce1f530f2-d243cb498094-1000/",
-      "verifiedAt": "2026-09-18"
+      "verifiedAt": "2026-09-18",
+      "alt": []
     },
     {
       "p": 400,
-      "q": "من البديل النرويجي صاحب هدف الفوز ليونايتد في نهائي 1999؟",
+      "q": "من البديل النرويجي الذي حسم ليونايتد نهائي 1999؟",
       "a": "أولي غونار سولشاير",
       "qid": "ucl-400-918",
       "topic": "الهدافون",
@@ -315,7 +320,7 @@
       ]
     },
     {
-      "q": "من الإنجليزي الذي سجل الهدف الثاني لريال مدريد في نهائي دوري الأبطال 2000؟",
+      "q": "أي لاعب إنجليزي سجل لريال مدريد هدفه الثاني في نهائي 2000؟",
       "a": "ستيف ماكمانامان",
       "topic": "لحظات النهائي",
       "verified": true,
@@ -380,7 +385,8 @@
       "verified": true,
       "difficultyTarget": 0.25,
       "source": "https://www.uefa.com/uefachampionsleague/news/00a1-0e6a0ac0571c-8d8943df8967-1000--1982-83-magath-thunderbolt-downs-juve/",
-      "verifiedAt": "2026-09-18"
+      "verifiedAt": "2026-09-18",
+      "alt": []
     },
     {
       "p": 800,
@@ -405,7 +411,8 @@
       "verified": true,
       "difficultyTarget": 0.25,
       "source": "https://www.uefa.com/uefachampionsleague/news/0253-0d7b1dc17e3e-c896eaba1732-1000--1959-60-dazzling-madrid-crush-frankfurt/",
-      "verifiedAt": "2026-09-18"
+      "verifiedAt": "2026-09-18",
+      "alt": []
     },
     {
       "p": 800,
@@ -416,7 +423,8 @@
       "verified": true,
       "difficultyTarget": 0.25,
       "source": "https://www.uefa.com/uefachampionsleague/news/019c-0e6c12450ff2-294c584e2602-1000--dazzling-depor-ditch-milan/",
-      "verifiedAt": "2026-09-18"
+      "verifiedAt": "2026-09-18",
+      "alt": []
     },
     {
       "q": "من المدرب الذي قاد موناكو إلى نهائي دوري أبطال أوروبا 2004؟",
@@ -477,7 +485,7 @@
       "difficultyTarget": 0.15
     },
     {
-      "q": "من حارس أستون فيلا البديل الذي دخل بعد إصابة جيمي ريمر في نهائي أوروبا 1982؟",
+      "q": "أُصيب جيمي ريمر في نهائي 1982؛ من حارس أستون فيلا الذي دخل بديلًا؟",
       "a": "نايجل سبينك",
       "topic": "حراس المرمى",
       "verified": true,
@@ -506,7 +514,7 @@
       "difficultyTarget": 0.15
     },
     {
-      "q": "من سجل هدفين لموناكو عند فوزه 3–1 على ريال مدريد في إياب ربع نهائي 2004؟",
+      "q": "موناكو فاز 3–1 على ريال مدريد بإياب ربع نهائي 2004؛ من صاحب هدفين؟",
       "a": "لودوفيك جيولي",
       "topic": "العودة في النتيجة",
       "verified": true,

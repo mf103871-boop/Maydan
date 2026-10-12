@@ -1,0 +1,182 @@
+[
+  {
+    "oldQid": "spotdiff-1000-905",
+    "answer": "فتحات الآلة الخشبية أربع وثلاث",
+    "spot": {
+      "x": 56.2,
+      "y": 75.2,
+      "r": 4.5
+    },
+    "difference": "Remove second of four dark rectangular front holes from physical left; three remaining front holes and the right end-face hole stay fixed.",
+    "semanticDifferenceCount": 1,
+    "identityChanged": true,
+    "assets": [
+      {
+        "side": "a",
+        "src": "spotdiff-1000-905-a-q20261008.webp",
+        "record": "docs/bank/quality-2026-10-08/spotdiff-generated/spotdiff-1000-905-a.json",
+        "sha256": "2b635395dd6ae59bf6045bb2f68fb15a8e9a02544a63067446a82800fa5251c0",
+        "width": 1280,
+        "height": 960,
+        "bytes": 235514
+      },
+      {
+        "side": "b",
+        "src": "spotdiff-1000-905-b-q20261008.webp",
+        "record": "docs/bank/quality-2026-10-08/spotdiff-generated/spotdiff-1000-905-b.json",
+        "sha256": "526029fad2b532031671c67b94a6d32759b7333301a9a7513a4658b5a70f8a97",
+        "width": 1280,
+        "height": 960,
+        "bytes": 208770
+      }
+    ],
+    "browserDisplayQA": true,
+    "mobileDeviceQA": false,
+    "invariants": [
+      "violin body and detached neck",
+      "three tuning pegs",
+      "bow",
+      "jar and brush",
+      "two chisels",
+      "pliers and tuning fork",
+      "wooden instrument outline and end-face hole",
+      "shavings and window composition"
+    ]
+  },
+  {
+    "oldQid": "spotdiff-1000-906",
+    "answer": "انعكس اتجاه بوابة المشبك",
+    "spot": {
+      "x": 71.4,
+      "y": 78.1,
+      "r": 8
+    },
+    "difference": "Mirror only the D-shaped carabiner in place: its straight gate moves from right side to left; its strap loop and route stay fixed.",
+    "semanticDifferenceCount": 1,
+    "identityChanged": true,
+    "assets": [
+      {
+        "side": "a",
+        "src": "spotdiff-1000-906-a-q20261008.webp",
+        "record": "docs/bank/quality-2026-10-08/spotdiff-generated/spotdiff-1000-906-a.json",
+        "sha256": "bb7b721f1e8c92fa8e269849dd58d4683089088844d0460d508b290ff47301ca",
+        "width": 1280,
+        "height": 960,
+        "bytes": 196410
+      },
+      {
+        "side": "b",
+        "src": "spotdiff-1000-906-b-q20261008.webp",
+        "record": "docs/bank/quality-2026-10-08/spotdiff-generated/spotdiff-1000-906-b.json",
+        "sha256": "12880b8ff78c0f4ac0c4e2f2058e1ac53e36745cf25dc3f764bb9fb574895708",
+        "width": 1280,
+        "height": 960,
+        "bytes": 178038
+      }
+    ],
+    "browserDisplayQA": true,
+    "mobileDeviceQA": false,
+    "invariants": [
+      "rucksack and duffel straps/buckles",
+      "two blankets",
+      "two shoes",
+      "compass and mug",
+      "map outline",
+      "two drybags",
+      "rope coil",
+      "lake background and camera framing",
+      "beige strap path"
+    ]
+  },
+  {
+    "oldQid": "spotdiff-1000-907",
+    "answer": "تغيّر اتجاه عروة الكم السفلية",
+    "spot": {
+      "x": 64.7,
+      "y": 70.9,
+      "r": 4.5
+    },
+    "difference": "The lower cuff buttonhole rotates from horizontal to vertical; upper buttonhole remains horizontal; exactly two buttonholes remain.",
+    "semanticDifferenceCount": 1,
+    "identityChanged": true,
+    "assets": [
+      {
+        "side": "a",
+        "src": "spotdiff-1000-907-a-q20261008.webp",
+        "record": "docs/bank/quality-2026-10-08/spotdiff-generated/spotdiff-1000-907-a.json",
+        "sha256": "e1d6256c5b535a857f18b5e975fada2b651e510a7b280766a182ba0537db8362",
+        "width": 1280,
+        "height": 960,
+        "bytes": 341842
+      },
+      {
+        "side": "b",
+        "src": "spotdiff-1000-907-b-q20261008.webp",
+        "record": "docs/bank/quality-2026-10-08/spotdiff-generated/spotdiff-1000-907-b.json",
+        "sha256": "71a39b6853184206d539b1701d8cbb26dcdf4dce713115d0ae3370a610a1907b",
+        "width": 1280,
+        "height": 960,
+        "bytes": 272342
+      }
+    ],
+    "browserDisplayQA": true,
+    "mobileDeviceQA": false,
+    "invariants": [
+      "upper cuff buttonhole",
+      "four placket buttons",
+      "shirt pocket and seams",
+      "four dish buttons",
+      "two spools",
+      "scissors",
+      "pincushion pins",
+      "measuring tape and patterns",
+      "fabric placement and palette"
+    ]
+  },
+  {
+    "oldQid": "spotdiff-1000-908",
+    "answer": "انتقل الشق العلوي في الحلقة",
+    "spot": {
+      "x": 39.5,
+      "y": 48,
+      "r": 7.5
+    },
+    "difference": "Relocate the locking washer top outer notch from 12 oclock to 1:30; the other three notches stay in place, maintaining four total.",
+    "semanticDifferenceCount": 1,
+    "identityChanged": true,
+    "assets": [
+      {
+        "side": "a",
+        "src": "spotdiff-1000-908-a-q20261008.webp",
+        "record": "docs/bank/quality-2026-10-08/spotdiff-generated/spotdiff-1000-908-a.json",
+        "sha256": "f45d527e00bc169c4b87e6aa0af2e1775193b8917e687b564a1ac94510748820",
+        "width": 1280,
+        "height": 960,
+        "bytes": 171612
+      },
+      {
+        "side": "b",
+        "src": "spotdiff-1000-908-b-q20261008.webp",
+        "record": "docs/bank/quality-2026-10-08/spotdiff-generated/spotdiff-1000-908-b.json",
+        "sha256": "9168fd7bb42759f86ecff50689304381ccc6ea6167698f04425eef131968369d",
+        "width": 1280,
+        "height": 960,
+        "bytes": 160024
+      }
+    ],
+    "browserDisplayQA": true,
+    "mobileDeviceQA": false,
+    "invariants": [
+      "three stationary ring notches and central hole",
+      "four hex nuts",
+      "three plain washers",
+      "two wrenches",
+      "caliper",
+      "screwdriver",
+      "bolt",
+      "brass gear",
+      "oilcan and lamp",
+      "lighting and bench composition"
+    ]
+  }
+]

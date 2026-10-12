@@ -1,0 +1,57 @@
+{
+  "pack": "spotdiff",
+  "oldQid": "spotdiff-800-903",
+  "side": "b",
+  "createdAt": "2026-10-08",
+  "kind": "ai-generated",
+  "tool": "OpenAI image generation (built-in)",
+  "mode": "edit",
+  "prompt": "Use case: precise-object-edit\nAsset type: strict matching B image for a single-difference comparison puzzle.\nInput image 1 is the exact EDIT TARGET. Remove ONLY the pebble at the lower right of the central terracotta saucer (the light grey pebble with a pale curved stripe around coordinates 56% from left and 60% from top). There must remain exactly FOUR pebbles in their original positions: upper pebble, left pebble, upper-right pebble, and bottom-left pebble. Fill removed pebble's footprint with the matching terracotta surface. Do not move the other four pebbles.\nMake exactly this one semantic change. Preserve EVERYTHING ELSE identical, including all leaves and pots, watering can, twine, gloves, all three printed seed cards and artwork, shears, soil grains, brush bristles, greenhouse background, camera, lighting. Keep framing 4:3 and style. Do not regenerate the scene, add/remove any other item, change any color or edge, add text, marker or highlight.",
+  "asset": "media/spotdiff/spotdiff-800-903-b-q20261008.webp",
+  "sha256": "d7fb4fa65df415c71f1fa0e688004e804961e85ba549ddae895164d65ea85816",
+  "bytes": 236226,
+  "width": 1280,
+  "height": 960,
+  "inputImages": [
+    {
+      "file": "exec-98b43b85-93fa-4267-9a44-fc607978188d.png",
+      "sha256": "ee90dfd3983aa4fc758ab01f84032272925b9445186574c25d47980eb02c70fa"
+    }
+  ],
+  "review": {
+    "status": "phone-size-reviewed",
+    "originalCompared": true,
+    "displayedEffect": "Side-by-side unfiltered originals; reveal circle only",
+    "difference": "Five grey pebbles to four on central saucer",
+    "semanticDifferenceCount": 1,
+    "invariantsReviewed": [
+      "five/four pebble count",
+      "all plants",
+      "seed card print shapes",
+      "tools",
+      "twine",
+      "soil",
+      "bench",
+      "light/framing"
+    ],
+    "mobileDeviceQA": false,
+    "reviewedAt": "2026-10-12",
+    "reviewer": "finish_spotdiff",
+    "imageWidthCSS": 173,
+    "evidence": "docs/bank/quality-2026-10-08/preview/spotdiff-07.png"
+  },
+  "packaging": "Uniform size/format encoding only; all scene changes created by built-in imagegen",
+  "packagingReview": {
+    "date": "2026-10-12",
+    "file": "media/spotdiff/spotdiff-800-903-b-q20261008.webp",
+    "beforeBytes": 380010,
+    "bytes": 236226,
+    "beforeSha256": "0c39121ab95c50e0e2a4402b33bb55f9e32cce99445102c8b74ca344b617994b",
+    "sha256": "d7fb4fa65df415c71f1fa0e688004e804961e85ba549ddae895164d65ea85816",
+    "quality": 84,
+    "dimensionsUnchanged": true,
+    "operation": "WebP encoding only; no scene edit",
+    "phoneReview": "phone-size-reviewed-after-compression",
+    "reviewRecord": "docs/bank/quality-2026-10-08/postcompression-review.json"
+  }
+}

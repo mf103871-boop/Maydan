@@ -5,13 +5,18 @@
   "qs": [
     {
       "p": 200,
-      "q": "في أي سورة توجد آية الكرسي؟",
+      "q": "ما السورة التي تجمع آية الكرسي وقصة الملك الموصوف بسعة العلم والجسم؟",
       "a": "البقرة",
       "qid": "quran-200-911",
       "topic": "السور والمقاطع",
       "verified": true,
       "difficultyTarget": 0.8,
-      "sourceUrl": "https://quran.com/2/255"
+      "sourceUrl": [
+        "https://quran.com/2/255",
+        "https://quran.com/2/247"
+      ],
+      "verifiedAt": "2026-10-08",
+      "alt": []
     },
     {
       "p": 200,
@@ -21,17 +26,8 @@
       "topic": "الشخصيات والأقوام",
       "verified": true,
       "difficultyTarget": 0.8,
-      "sourceUrl": "https://quran.com/31/12-13"
-    },
-    {
-      "p": 200,
-      "q": "ما الثمرة المذكورة بعد الفاكهة والنخل في وصف الجنتين؟",
-      "a": "الرمان",
-      "qid": "quran-200-913",
-      "topic": "الحيوان والنبات",
-      "verified": true,
-      "difficultyTarget": 0.8,
-      "sourceUrl": "https://quran.com/ar-rahman/68"
+      "sourceUrl": "https://quran.com/31/12-13",
+      "alt": []
     },
     {
       "p": 200,
@@ -46,7 +42,8 @@
         "عرش الملكة"
       ],
       "difficultyTarget": 0.8,
-      "sourceUrl": "https://quran.com/27/38-40"
+      "sourceUrl": "https://quran.com/27/38-40",
+      "verifiedAt": "2026-10-08"
     },
     {
       "p": 200,
@@ -69,7 +66,8 @@
       "topic": "الأماكن",
       "verified": true,
       "difficultyTarget": 0.8,
-      "sourceUrl": "https://quran.com/11/44"
+      "sourceUrl": "https://quran.com/11/44",
+      "alt": []
     },
     {
       "p": 200,
@@ -79,7 +77,8 @@
       "topic": "الألفاظ والأوصاف",
       "verified": true,
       "difficultyTarget": 0.8,
-      "sourceUrl": "https://quran.com/83/26"
+      "sourceUrl": "https://quran.com/83/26",
+      "alt": []
     },
     {
       "p": 200,
@@ -95,6 +94,18 @@
       "sourceUrl": "https://quran.com/9"
     },
     {
+      "q": "ما النبات الذي جمع القرآن ذكره مع الحب ذي العصف في سورة الرحمن؟",
+      "a": "الريحان",
+      "topic": "الحيوان والنبات",
+      "sourceUrl": "https://quran.com/55/12",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-10-08",
+      "p": 200,
+      "qid": "quran-200-921",
+      "difficultyTarget": 0.8
+    },
+    {
       "p": 400,
       "q": "في أي سورة ورد «وجعلناكم شعوبا وقبائل لتعارفوا»؟",
       "a": "الحجرات",
@@ -102,7 +113,8 @@
       "topic": "السور والمقاطع",
       "verified": true,
       "difficultyTarget": 0.6,
-      "sourceUrl": "https://quran.com/49/13"
+      "sourceUrl": "https://quran.com/49/13",
+      "alt": []
     },
     {
       "p": 400,
@@ -112,20 +124,8 @@
       "topic": "الشخصيات والأقوام",
       "verified": true,
       "difficultyTarget": 0.6,
-      "sourceUrl": "https://quran.com/2/247"
-    },
-    {
-      "p": 400,
-      "q": "ما الشجرة التي أنبتها الله على يونس بعد نجاته من الحوت؟",
-      "a": "اليقطين",
-      "qid": "quran-400-913",
-      "topic": "الحيوان والنبات",
-      "verified": true,
-      "alt": [
-        "يقطين"
-      ],
-      "difficultyTarget": 0.6,
-      "sourceUrl": "https://quran.com/as-saffat/146"
+      "sourceUrl": "https://quran.com/2/247",
+      "alt": []
     },
     {
       "p": 400,
@@ -136,34 +136,38 @@
       "verified": true,
       "alt": [
         "النحاس",
-        "النحاس المذاب",
-        "قطر"
+        "النحاس المذاب"
       ],
       "difficultyTarget": 0.6,
       "sourceUrl": "https://quran.com/18/96"
     },
     {
       "p": 400,
-      "q": "كم نعجة كان يملك أحد الخصمين في قصة المحراب؟",
+      "q": "كم نعجة كان يملك الطرف الذي طلب ضم النعجة الواحدة في قصة الخصمين؟",
       "a": "تسع وتسعون",
       "qid": "quran-400-915",
       "topic": "الأعداد والأزمنة",
       "verified": true,
       "alt": [
-        "99"
+        "99",
+        "تسعة وتسعون",
+        "تسع وتسعون نعجة",
+        "99 نعجة"
       ],
       "difficultyTarget": 0.6,
-      "sourceUrl": "https://quran.com/38/23"
+      "sourceUrl": "https://quran.com/38/23",
+      "verifiedAt": "2026-10-08"
     },
     {
       "p": 400,
-      "q": "ما المدينة التي ورد اسمها مع هاروت وماروت في سورة البقرة؟",
+      "q": "ما المدينة التي ورد اسمها مع هاروت وماروت في القرآن؟",
       "a": "بابل",
       "qid": "quran-400-916",
       "topic": "الأماكن",
       "verified": true,
       "difficultyTarget": 0.6,
-      "sourceUrl": "https://quran.com/al-baqarah/102"
+      "sourceUrl": "https://quran.com/al-baqarah/102",
+      "alt": []
     },
     {
       "p": 400,
@@ -173,7 +177,8 @@
       "topic": "الألفاظ والأوصاف",
       "verified": true,
       "difficultyTarget": 0.6,
-      "sourceUrl": "https://quran.com/24/39"
+      "sourceUrl": "https://quran.com/24/39",
+      "alt": []
     },
     {
       "p": 400,
@@ -183,7 +188,20 @@
       "topic": "السور والمقاطع",
       "verified": true,
       "difficultyTarget": 0.6,
-      "sourceUrl": "https://quran.com/30/2-4"
+      "sourceUrl": "https://quran.com/30/2-4",
+      "alt": []
+    },
+    {
+      "p": 400,
+      "q": "أي ثمرة جاء ذكرها مع النخل في وصف الجنتين بسورة الرحمن؟",
+      "a": "الرمان",
+      "qid": "quran-400-921",
+      "topic": "الحيوان والنبات",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://quran.com/ar-rahman/68",
+      "verifiedAt": "2026-10-08",
+      "alt": []
     },
     {
       "p": 600,
@@ -193,7 +211,8 @@
       "topic": "السور والمقاطع",
       "verified": true,
       "difficultyTarget": 0.4,
-      "sourceUrl": "https://quran.com/adh-dhariyat/21"
+      "sourceUrl": "https://quran.com/adh-dhariyat/21",
+      "alt": []
     },
     {
       "p": 600,
@@ -203,17 +222,8 @@
       "topic": "الشخصيات والأقوام",
       "verified": true,
       "difficultyTarget": 0.4,
-      "sourceUrl": "https://quran.com/40/36"
-    },
-    {
-      "p": 600,
-      "q": "ما الشجر الذي ورد بوصف «منضود» في سورة الواقعة؟",
-      "a": "الطلح",
-      "qid": "quran-600-913",
-      "topic": "الحيوان والنبات",
-      "verified": true,
-      "difficultyTarget": 0.4,
-      "sourceUrl": "https://quran.com/al-waqiah/29"
+      "sourceUrl": "https://quran.com/40/36",
+      "alt": []
     },
     {
       "p": 600,
@@ -223,7 +233,6 @@
       "topic": "الأشياء والمواد",
       "verified": true,
       "alt": [
-        "ورق",
         "ورقكم"
       ],
       "difficultyTarget": 0.4,
@@ -251,7 +260,8 @@
       "topic": "الأماكن",
       "verified": true,
       "difficultyTarget": 0.4,
-      "sourceUrl": "https://quran.com/7/46"
+      "sourceUrl": "https://quran.com/7/46",
+      "alt": []
     },
     {
       "p": 600,
@@ -261,7 +271,8 @@
       "topic": "الألفاظ والأوصاف",
       "verified": true,
       "difficultyTarget": 0.4,
-      "sourceUrl": "https://quran.com/ya-sin/39"
+      "sourceUrl": "https://quran.com/ya-sin/39",
+      "alt": []
     },
     {
       "p": 600,
@@ -277,6 +288,18 @@
       "sourceUrl": "https://quran.com/76/18"
     },
     {
+      "p": 600,
+      "q": "ما الشجرة التي أنبتها الله على يونس بعد نجاته من الحوت؟",
+      "a": "اليقطين",
+      "qid": "quran-600-921",
+      "topic": "الحيوان والنبات",
+      "verified": true,
+      "alt": [],
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://quran.com/as-saffat/146",
+      "verifiedAt": "2026-10-08"
+    },
+    {
       "p": 800,
       "q": "في أي سورة ورد «انظروا إلى ثمره إذا أثمر وينعه»؟",
       "a": "الأنعام",
@@ -284,7 +307,8 @@
       "topic": "السور والمقاطع",
       "verified": true,
       "difficultyTarget": 0.25,
-      "sourceUrl": "https://quran.com/6/99"
+      "sourceUrl": "https://quran.com/6/99",
+      "alt": []
     },
     {
       "p": 800,
@@ -294,17 +318,8 @@
       "topic": "الشخصيات والأقوام",
       "verified": true,
       "difficultyTarget": 0.25,
-      "sourceUrl": "https://quran.com/5/44"
-    },
-    {
-      "p": 800,
-      "q": "ما اسم عناقيد النخل التي وصفها القرآن بالدنو في سورة الأنعام؟",
-      "a": "القنوان",
-      "qid": "quran-800-913",
-      "topic": "الحيوان والنبات",
-      "verified": true,
-      "difficultyTarget": 0.25,
-      "sourceUrl": "https://quran.com/6/99"
+      "sourceUrl": "https://quran.com/5/44",
+      "alt": []
     },
     {
       "p": 800,
@@ -314,7 +329,8 @@
       "topic": "الأشياء والمواد",
       "verified": true,
       "difficultyTarget": 0.25,
-      "sourceUrl": "https://quran.com/54/13"
+      "sourceUrl": "https://quran.com/54/13",
+      "alt": []
     },
     {
       "p": 800,
@@ -332,23 +348,14 @@
     },
     {
       "p": 800,
-      "q": "كيف وصفت سورة الدخان الليلة التي أنزل فيها الكتاب؟",
-      "a": "ليلة مباركة",
-      "qid": "quran-800-916",
-      "topic": "الأعداد والأزمنة",
-      "verified": true,
-      "difficultyTarget": 0.25,
-      "sourceUrl": "https://quran.com/44/3"
-    },
-    {
-      "p": 800,
       "q": "بأي وصف للسماء أُقسم قبل «إنكم لفي قول مختلف»؟",
       "a": "الحبك",
       "qid": "quran-800-917",
       "topic": "الألفاظ والأوصاف",
       "verified": true,
       "difficultyTarget": 0.25,
-      "sourceUrl": "https://quran.com/adh-dhariyat/7"
+      "sourceUrl": "https://quran.com/adh-dhariyat/7",
+      "alt": []
     },
     {
       "p": 800,
@@ -358,7 +365,34 @@
       "topic": "الألفاظ والأوصاف",
       "verified": true,
       "difficultyTarget": 0.25,
-      "sourceUrl": "https://quran.com/24/43"
+      "sourceUrl": "https://quran.com/24/43",
+      "alt": []
+    },
+    {
+      "p": 800,
+      "q": "ما الشجر الذي ورد بوصف «منضود» في سورة الواقعة؟",
+      "a": "الطلح",
+      "qid": "quran-800-921",
+      "topic": "الحيوان والنبات",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://quran.com/al-waqiah/29",
+      "verifiedAt": "2026-10-08",
+      "alt": []
+    },
+    {
+      "p": 800,
+      "q": "ما الموضع الذي جعلت فيه سورة المطففين كتاب الأبرار؟",
+      "a": "عليّون",
+      "qid": "quran-800-922",
+      "topic": "الأماكن",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://quran.com/83/18",
+      "alt": [
+        "عليين"
+      ],
+      "verifiedAt": "2026-10-08"
     },
     {
       "q": "في أي سورة ورد «وما أمرنا إلا واحدة كلمح بالبصر»؟",
@@ -386,18 +420,6 @@
       "verifiedAt": "2026-09-25",
       "p": 1000,
       "qid": "quran-1000-912",
-      "difficultyTarget": 0.15
-    },
-    {
-      "q": "ما اللفظ الوارد بعد «والحب ذو العصف» في سورة الرحمن؟",
-      "a": "الريحان",
-      "topic": "الحيوان والنبات",
-      "sourceUrl": "https://quran.com/55/12",
-      "alt": [],
-      "verified": true,
-      "verifiedAt": "2026-09-25",
-      "p": 1000,
-      "qid": "quran-1000-913",
       "difficultyTarget": 0.15
     },
     {
@@ -431,9 +453,7 @@
       "a": "ربوة",
       "topic": "الأماكن",
       "sourceUrl": "https://quran.com/23/50",
-      "alt": [
-        "الربوة"
-      ],
+      "alt": [],
       "verified": true,
       "verifiedAt": "2026-09-25",
       "p": 1000,
@@ -441,7 +461,7 @@
       "difficultyTarget": 0.15
     },
     {
-      "q": "من ماذا أُنزل الماء الثجاج بحسب لفظ سورة النبأ؟",
+      "q": "ما اللفظ الذي سمّت به سورة النبأ مصدر الماء الثجاج؟",
       "a": "المعصرات",
       "topic": "الألفاظ والأوصاف",
       "sourceUrl": "https://quran.com/78/14",
@@ -449,13 +469,13 @@
         "من المعصرات"
       ],
       "verified": true,
-      "verifiedAt": "2026-09-25",
+      "verifiedAt": "2026-10-08",
       "p": 1000,
       "qid": "quran-1000-917",
       "difficultyTarget": 0.15
     },
     {
-      "q": "ما اللفظ الموصوف بالخضرة في خاتمة سورة الرحمن قبل «وعبقري حسان»؟",
+      "q": "ما لفظ المتكأ الأخضر الذي ورد مع العبقري الحسان في سورة الرحمن؟",
       "a": "رفرف",
       "topic": "الألفاظ والأوصاف",
       "sourceUrl": "https://quran.com/55/76",
@@ -463,10 +483,24 @@
         "رفرف خضر"
       ],
       "verified": true,
-      "verifiedAt": "2026-09-25",
+      "verifiedAt": "2026-10-08",
       "p": 1000,
       "qid": "quran-1000-918",
       "difficultyTarget": 0.15
+    },
+    {
+      "p": 1000,
+      "q": "ما اللفظ القرآني المستخدم لعناقيد النخل الدانية؟",
+      "a": "القنوان",
+      "qid": "quran-1000-921",
+      "topic": "الحيوان والنبات",
+      "verified": true,
+      "difficultyTarget": 0.15,
+      "sourceUrl": "https://quran.com/6/99",
+      "alt": [
+        "قنوان دانية"
+      ],
+      "verifiedAt": "2026-10-08"
     }
   ]
 }

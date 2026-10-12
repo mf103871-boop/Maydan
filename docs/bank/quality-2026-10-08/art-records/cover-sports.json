@@ -1,0 +1,29 @@
+{
+  "id": "sports",
+  "kind": "cover",
+  "file": "public/media/badeeha-covers/sports.webp",
+  "style": "dynamic editorial illustration",
+  "palette": "vermillion, cobalt, white",
+  "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'رياضة'. Landscape 4:3 artwork.\nMedium: dynamic editorial illustration.\nIntentional palette: vermillion, cobalt, white.\nScene: A running track curves through a stadium with a runner silhouette in motion, bold speed diagonals and cropped sporting equipment, human proportions correct.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-10-08",
+  "sourceImage": {
+    "name": "exec-db444cbc-3927-4501-80de-8bcae35cfe33.png",
+    "sha256": "82db07a582c7e82e5fabff44e881751bfd32b5c6af834be3107223bb8dfceed0",
+    "width": 1448,
+    "height": 1086
+  },
+  "width": 640,
+  "height": 480,
+  "bytes": 80656,
+  "sha256": "afb85979831cc376d54fd7e98046eaecd8cfa27a1ffb8558ccedd986cd1bc976",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "phone-size-reviewed",
+    "date": "2026-10-08",
+    "reviewer": "root",
+    "width": 160,
+    "method": "shipped cover CSS; baseline and replacement side by side",
+    "evidence": "docs/bank/quality-2026-10-08/preview/covers-1.jpg"
+  }
+}

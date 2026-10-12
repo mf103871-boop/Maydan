@@ -1,0 +1,29 @@
+{
+  "id": "cars",
+  "kind": "cover",
+  "file": "public/media/badeeha-covers/cars.webp",
+  "style": "automotive editorial illustration",
+  "palette": "racing red, steel blue, asphalt grey",
+  "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'سيارات'. Landscape 4:3 artwork.\nMedium: automotive editorial illustration.\nIntentional palette: racing red, steel blue, asphalt grey.\nScene: A generic classic sports car taking a sweeping mountain-road curve, three-quarter rear view, dynamic perspective, original unbranded design.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-10-08",
+  "sourceImage": {
+    "name": "exec-0755ec4a-2217-4a51-929b-80a88db81506.png",
+    "sha256": "4f985185068a1997112c035964b674c163515e2c539fd9b188308eb61e1d1685",
+    "width": 1448,
+    "height": 1086
+  },
+  "width": 640,
+  "height": 480,
+  "bytes": 56402,
+  "sha256": "5bbd6011a6fafd659ab61bb98d935b47f571b065116ab10ae7ec04a81473e2c6",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "phone-size-reviewed",
+    "date": "2026-10-08",
+    "reviewer": "root",
+    "width": 160,
+    "method": "shipped cover CSS; baseline and replacement side by side",
+    "evidence": "docs/bank/quality-2026-10-08/preview/covers-1.jpg"
+  }
+}

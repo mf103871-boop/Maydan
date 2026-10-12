@@ -79,20 +79,6 @@
     },
     {
       "p": 200,
-      "q": "ما اسم قرية كوني التي وجد سكانها قد اختفوا وعملاقًا عالقًا فوق منزله؟",
-      "a": "راغاكو",
-      "alt": [
-        "راجاكو",
-        "Ragako"
-      ],
-      "topic": "الأسوار",
-      "verified": true,
-      "qid": "aot-200-916",
-      "difficultyTarget": 0.8,
-      "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_2#ep27"
-    },
-    {
-      "p": 200,
       "q": "من كانت المرأة التي تحولت إلى العملاق المبتسم الذي أكل أم إيرين؟",
       "a": "دينا فريتز",
       "alt": [
@@ -118,6 +104,21 @@
       "qid": "aot-200-918",
       "difficultyTarget": 0.8,
       "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_4#ep88"
+    },
+    {
+      "p": 200,
+      "q": "ماذا كان يفتح مفتاح غريشا فعليًا داخل الغرفة السرية؟",
+      "a": "درج المكتب",
+      "alt": [
+        "درج مكتبه",
+        "الدرج",
+        "Desk drawer"
+      ],
+      "topic": "الأسرار",
+      "verified": true,
+      "qid": "aot-200-921",
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_3#ep56"
     },
     {
       "p": 400,
@@ -294,21 +295,6 @@
     },
     {
       "p": 600,
-      "q": "ماذا كان يفتح مفتاح غريشا فعليًا داخل الغرفة السرية؟",
-      "a": "درج المكتب",
-      "alt": [
-        "درج مكتبه",
-        "الدرج",
-        "Desk drawer"
-      ],
-      "topic": "الأسرار",
-      "verified": true,
-      "qid": "aot-600-915",
-      "difficultyTarget": 0.4,
-      "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_3#ep56"
-    },
-    {
-      "p": 600,
       "q": "من أنقذ هانجي من انفجار تحوّل بيرتولت مضحيًا بحياته؟",
       "a": "موبليت برنر",
       "alt": [
@@ -352,11 +338,24 @@
       "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_3#ep53"
     },
     {
+      "p": 600,
+      "q": "ما اسم قرية كوني التي وجد سكانها قد اختفوا وعملاقًا عالقًا فوق منزله؟",
+      "a": "راغاكو",
+      "alt": [
+        "راجاكو",
+        "Ragako"
+      ],
+      "topic": "الأسوار",
+      "verified": true,
+      "qid": "aot-600-921",
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_2#ep27"
+    },
+    {
       "p": 800,
       "q": "ما السمك المكتوب على العلبة التي استطاعت يمير قراءة اسمها فأثارت شك راينر؟",
       "a": "الرنجة",
       "alt": [
-        "رنجة",
         "Herring"
       ],
       "topic": "الأدوات",
@@ -381,7 +380,7 @@
     },
     {
       "p": 800,
-      "q": "ما المورد النادر في باراديس الذي يشغل العتاد والطائرة التجريبية القادمة من هيزورو؟",
+      "q": "ما المورد النادر في باراديس الذي يشغّل عتاد الجنود والطائرة التجريبية القادمة من هيزورو؟",
       "a": "حجر الانفجار الجليدي",
       "alt": [
         "حجر الجليد المتفجر",

@@ -1,0 +1,481 @@
+{
+  "date": "2026-10-12",
+  "reviewer": "integration_audit",
+  "status": "passed",
+  "scope": "Independent post-compression visual check of 19 re-encoded assets in 12 affected paired puzzles; no image or bank edits.",
+  "method": "Original pre-compression A/B and final A/B rendered side by side in Chromium at 173 and 183 CSS px per image, DPR 2. All 12 comparison sheets inspected, both without reveal and with the existing answer circles.",
+  "nativeDeviceQA": false,
+  "difficultyCalibration": "not measured by this packaging review",
+  "result": "The clues and existing reveal markers remain visible. No visible loss of a required distinction from WebP recompression.",
+  "records": [
+    {
+      "qid": "spotdiff-800-921",
+      "file": "media/spotdiff/spotdiff-800-901-a-q20261008.webp",
+      "sha256": "07c1ef327f31799d93bef416cfabe19500f4bee47b743a58971cc9e74ff44a5d",
+      "bytes": 254470,
+      "width": 1280,
+      "height": 960,
+      "beforeSha256": "0e27b49827592a110532a6ed1175366422fad58034b6bcf838ad30ad02f5e756",
+      "status": "phone-size-reviewed-after-compression",
+      "observation": "تقدّم علبة المربى الوسطى أمام جارتيها واضح دون طمس الحواف بعد الضغط.",
+      "questionViewReviewed": true,
+      "revealViewReviewed": true,
+      "widthsCss": [
+        173,
+        183
+      ]
+    },
+    {
+      "qid": "spotdiff-800-922",
+      "file": "media/spotdiff/spotdiff-800-902-a-q20261008.webp",
+      "sha256": "30ca7c75245ceba8dbdbc711221c4b4dc016cbc65bebe60566fe1e3ff840395e",
+      "bytes": 255210,
+      "width": 1280,
+      "height": 960,
+      "beforeSha256": "e1c36e285293362605def1090a58029ce697ed2acc52357b4b0e6fb8cdb2ab80",
+      "status": "phone-size-reviewed-after-compression",
+      "observation": "اتجاه المجسّم الأزرق قائمًا مقابل مائلًا واضح؛ بقيت الوجوه الهندسية منفصلة.",
+      "questionViewReviewed": true,
+      "revealViewReviewed": true,
+      "widthsCss": [
+        173,
+        183
+      ]
+    },
+    {
+      "qid": "spotdiff-800-922",
+      "file": "media/spotdiff/spotdiff-800-902-b-q20261008.webp",
+      "sha256": "906346cbaf4a22e7d0e058b6afb79a203c8e22c954aaed595a2fb219842da114",
+      "bytes": 205858,
+      "width": 1280,
+      "height": 960,
+      "beforeSha256": "9978c37a1664da03cc7ade79ebe391647ed5c6f7c7e74a9a354de656e15297d9",
+      "status": "phone-size-reviewed-after-compression",
+      "observation": "اتجاه المجسّم الأزرق قائمًا مقابل مائلًا واضح؛ بقيت الوجوه الهندسية منفصلة.",
+      "questionViewReviewed": true,
+      "revealViewReviewed": true,
+      "widthsCss": [
+        173,
+        183
+      ]
+    },
+    {
+      "qid": "spotdiff-800-923",
+      "file": "media/spotdiff/spotdiff-800-903-a-q20261008.webp",
+      "sha256": "20a14102d39d4cf9ef4485b1b522dc2d4ac4d007ebc395b6dfab50f9dbdeb0e8",
+      "bytes": 237478,
+      "width": 1280,
+      "height": 960,
+      "beforeSha256": "c72a862724db45a7cd756014cfb5420672d8225c089fc8b69d7d3d14d26fcd1c",
+      "status": "phone-size-reviewed-after-compression",
+      "observation": "يمكن عدّ الأحجار الخمسة مقابل الأربعة؛ لا تندمج حدودها مع الصحن.",
+      "questionViewReviewed": true,
+      "revealViewReviewed": true,
+      "widthsCss": [
+        173,
+        183
+      ]
+    },
+    {
+      "qid": "spotdiff-800-923",
+      "file": "media/spotdiff/spotdiff-800-903-b-q20261008.webp",
+      "sha256": "d7fb4fa65df415c71f1fa0e688004e804961e85ba549ddae895164d65ea85816",
+      "bytes": 236226,
+      "width": 1280,
+      "height": 960,
+      "beforeSha256": "0c39121ab95c50e0e2a4402b33bb55f9e32cce99445102c8b74ca344b617994b",
+      "status": "phone-size-reviewed-after-compression",
+      "observation": "يمكن عدّ الأحجار الخمسة مقابل الأربعة؛ لا تندمج حدودها مع الصحن.",
+      "questionViewReviewed": true,
+      "revealViewReviewed": true,
+      "widthsCss": [
+        173,
+        183
+      ]
+    },
+    {
+      "qid": "spotdiff-800-924",
+      "file": "media/spotdiff/spotdiff-800-904-a-q20261008.webp",
+      "sha256": "d0d9166153235584a6b36f49550e31931b5fbc64d75eda27f8fa51116984d0d5",
+      "bytes": 221404,
+      "width": 1280,
+      "height": 960,
+      "beforeSha256": "41db4d7213dc6b6bf7a09474723787cdec0a54dd38ee936ee883b9340d050464",
+      "status": "phone-size-reviewed-after-compression",
+      "observation": "قمة الشراع المثلثة مقابل حافة شبه المنحرف الأفقية محفوظة.",
+      "questionViewReviewed": true,
+      "revealViewReviewed": true,
+      "widthsCss": [
+        173,
+        183
+      ]
+    },
+    {
+      "qid": "spotdiff-800-924",
+      "file": "media/spotdiff/spotdiff-800-904-b-q20261008.webp",
+      "sha256": "61aef8b9d49279c1ecf543ad1a5c979eafefbc5d6f15f16d8ac24b0b0f7829db",
+      "bytes": 254940,
+      "width": 1280,
+      "height": 960,
+      "beforeSha256": "37bb4b3c1f5b01c0fd5c1d1591b0aae6b89a825099d900739aac3e95a2c4a85c",
+      "status": "phone-size-reviewed-after-compression",
+      "observation": "قمة الشراع المثلثة مقابل حافة شبه المنحرف الأفقية محفوظة.",
+      "questionViewReviewed": true,
+      "revealViewReviewed": true,
+      "widthsCss": [
+        173,
+        183
+      ]
+    },
+    {
+      "qid": "spotdiff-800-926",
+      "file": "media/spotdiff/spotdiff-800-906-a-q20261008.webp",
+      "sha256": "dabc17d5b679a82de38bb8dea50aedd8e04ab14f95f615056886f1d55cc61ec7",
+      "bytes": 256938,
+      "width": 1280,
+      "height": 960,
+      "beforeSha256": "9a422ccad3ddf46bec2a24e45d5aedc6b9537a1985bc86cec445be65f13a8bcd",
+      "status": "phone-size-reviewed-after-compression",
+      "observation": "اتجاه إبرة البوصلة الحمراء دقيق لكنه ما زال مرئيًا على القرص الفاتح.",
+      "questionViewReviewed": true,
+      "revealViewReviewed": true,
+      "widthsCss": [
+        173,
+        183
+      ]
+    },
+    {
+      "qid": "spotdiff-800-926",
+      "file": "media/spotdiff/spotdiff-800-906-b-q20261008.webp",
+      "sha256": "e4e3dfd021c2c0183ceb4fec254ff010c785622028cdd439897abdf48d306b9b",
+      "bytes": 234420,
+      "width": 1280,
+      "height": 960,
+      "beforeSha256": "6574fe0c609e000aa240b78191b35c6e3c458c832a664c8ac52252cbbf323ad2",
+      "status": "phone-size-reviewed-after-compression",
+      "observation": "اتجاه إبرة البوصلة الحمراء دقيق لكنه ما زال مرئيًا على القرص الفاتح.",
+      "questionViewReviewed": true,
+      "revealViewReviewed": true,
+      "widthsCss": [
+        173,
+        183
+      ]
+    },
+    {
+      "qid": "spotdiff-800-927",
+      "file": "media/spotdiff/spotdiff-800-907-a-q20261008.webp",
+      "sha256": "7dde662c5357178ea6e8d20c53d882b69ae934bba599e457b8b0b271e8b6bc15",
+      "bytes": 243166,
+      "width": 1280,
+      "height": 960,
+      "beforeSha256": "db23dc35245f50e6f75656dbf7af269f086b3f74695e729393603f959cacd7e0",
+      "status": "phone-size-reviewed-after-compression",
+      "observation": "حدود الزر الأوسط المربع تختلف عن الزر الدائري؛ بقيت زواياه واضحة.",
+      "questionViewReviewed": true,
+      "revealViewReviewed": true,
+      "widthsCss": [
+        173,
+        183
+      ]
+    },
+    {
+      "qid": "spotdiff-800-927",
+      "file": "media/spotdiff/spotdiff-800-907-b-q20261008.webp",
+      "sha256": "58faebc77776f5f7510e69ec2506a59ea2588d36e59e8e954cd520e465a8ecec",
+      "bytes": 254826,
+      "width": 1280,
+      "height": 960,
+      "beforeSha256": "8208a831e7404980d2c05add1d6112aed5393d54971a7c6373b57d3af8b95d14",
+      "status": "phone-size-reviewed-after-compression",
+      "observation": "حدود الزر الأوسط المربع تختلف عن الزر الدائري؛ بقيت زواياه واضحة.",
+      "questionViewReviewed": true,
+      "revealViewReviewed": true,
+      "widthsCss": [
+        173,
+        183
+      ]
+    },
+    {
+      "qid": "spotdiff-800-928",
+      "file": "media/spotdiff/spotdiff-800-908-a-q20261008.webp",
+      "sha256": "f728f78c32f593140bcdbe98a02386532308600a5ab159ac6d032068b934fc25",
+      "bytes": 245100,
+      "width": 1280,
+      "height": 960,
+      "beforeSha256": "a136fef1eed018da66b1f754ebc7b4185023aa6f90ff978f17a2cf3e4ae7ff13",
+      "status": "phone-size-reviewed-after-compression",
+      "observation": "الفجوة بين الثقبين الأوسط والأيمن أصبحت أصغر؛ الثقوب الثلاثة بقيت منفصلة.",
+      "questionViewReviewed": true,
+      "revealViewReviewed": true,
+      "widthsCss": [
+        173,
+        183
+      ]
+    },
+    {
+      "qid": "spotdiff-1000-921",
+      "file": "media/spotdiff/spotdiff-1000-901-a-q20261008.webp",
+      "sha256": "805220d50b888576509d4e1c569f453a0382ce2468b4fa60e5ae041643d5954f",
+      "bytes": 261556,
+      "width": 1280,
+      "height": 960,
+      "beforeSha256": "73dcf8f0cc2ac0807003cf5919d02888f32120dfe93e91e27d789fd332e8ef70",
+      "status": "phone-size-reviewed-after-compression",
+      "observation": "يمكن تمييز خمس زوايا لنجمة البسكويت الأصلية وست للبديلة؛ الفراغات لم تُطمس.",
+      "questionViewReviewed": true,
+      "revealViewReviewed": true,
+      "widthsCss": [
+        173,
+        183
+      ]
+    },
+    {
+      "qid": "spotdiff-1000-921",
+      "file": "media/spotdiff/spotdiff-1000-901-b-q20261008.webp",
+      "sha256": "308acd9c9bed25a638d41de66d48a390e946e61fc66ab6e57c0a2fc0741a0733",
+      "bytes": 240858,
+      "width": 1280,
+      "height": 960,
+      "beforeSha256": "f3e816a497ae58ec8184b0032de3a8de07a8a5c8278c5989468f29f05bbd5cb8",
+      "status": "phone-size-reviewed-after-compression",
+      "observation": "يمكن تمييز خمس زوايا لنجمة البسكويت الأصلية وست للبديلة؛ الفراغات لم تُطمس.",
+      "questionViewReviewed": true,
+      "revealViewReviewed": true,
+      "widthsCss": [
+        173,
+        183
+      ]
+    },
+    {
+      "qid": "spotdiff-1000-922",
+      "file": "media/spotdiff/spotdiff-1000-902-a-q20261008.webp",
+      "sha256": "ee0f617a822023e760ad352e4f9fd7967621413ed4553b77abc0b239b65026ec",
+      "bytes": 257006,
+      "width": 1280,
+      "height": 960,
+      "beforeSha256": "4c8e927ba7ab6266ce1b178948f1693aa16ba00a3c51c5ba0cf38c86ec6cbf33",
+      "status": "phone-size-reviewed-after-compression",
+      "observation": "انقطاع الخط الأوسط على الدفتر الأزرق واضح مع بقاء الخطين المجاورين متصلين.",
+      "questionViewReviewed": true,
+      "revealViewReviewed": true,
+      "widthsCss": [
+        173,
+        183
+      ]
+    },
+    {
+      "qid": "spotdiff-1000-923",
+      "file": "media/spotdiff/spotdiff-1000-903-a-q20261008.webp",
+      "sha256": "679c663241e0e630e5b1ae10fe0866c0b867682ac1d18e3019cbed4021713106",
+      "bytes": 260680,
+      "width": 1280,
+      "height": 960,
+      "beforeSha256": "f092275da0d942277fafa720452a75aa6cdeb672b9d8b9c6520a005aea4122b8",
+      "status": "phone-size-reviewed-after-compression",
+      "observation": "البقعة السوداء الغائبة على الدعسوقة الكبيرة مرئية؛ البقع المتبقية محفوظة.",
+      "questionViewReviewed": true,
+      "revealViewReviewed": true,
+      "widthsCss": [
+        173,
+        183
+      ]
+    },
+    {
+      "qid": "spotdiff-1000-924",
+      "file": "media/spotdiff/spotdiff-1000-904-a-q20261008.webp",
+      "sha256": "983d9ebeb48542f615e59eff7930ab67146d5001a8d3ade836563d7254a29b4b",
+      "bytes": 250904,
+      "width": 1280,
+      "height": 960,
+      "beforeSha256": "7f5ea30058e965750e33ea474f7a87d0795a99e8641b4556cbb180c58084e252",
+      "status": "phone-size-reviewed-after-compression",
+      "observation": "الأربع نقاط مقابل الخمس في النصف الأيسر من قطعة الدومينو الوسطى السفلية قابلة للعد.",
+      "questionViewReviewed": true,
+      "revealViewReviewed": true,
+      "widthsCss": [
+        173,
+        183
+      ]
+    },
+    {
+      "qid": "spotdiff-1000-927",
+      "file": "media/spotdiff/spotdiff-1000-907-a-q20261008.webp",
+      "sha256": "d74809ddc6f492705ea2bb8854f1426f7fc011ac401d0df05003b9498b8d3be9",
+      "bytes": 258446,
+      "width": 1280,
+      "height": 960,
+      "beforeSha256": "e1d6256c5b535a857f18b5e975fada2b651e510a7b280766a182ba0537db8362",
+      "status": "phone-size-reviewed-after-compression",
+      "observation": "العروة السفلية الأفقية مقابل العمودية واضحة؛ خط العروة العليا بقي أفقيًا.",
+      "questionViewReviewed": true,
+      "revealViewReviewed": true,
+      "widthsCss": [
+        173,
+        183
+      ]
+    },
+    {
+      "qid": "spotdiff-1000-927",
+      "file": "media/spotdiff/spotdiff-1000-907-b-q20261008.webp",
+      "sha256": "90ed9873d7ae6b19865bdacdf5f1849a8a2762c9b0ac8b82921d897f3f459280",
+      "bytes": 250266,
+      "width": 1280,
+      "height": 960,
+      "beforeSha256": "71a39b6853184206d539b1701d8cbb26dcdf4dce713115d0ae3370a610a1907b",
+      "status": "phone-size-reviewed-after-compression",
+      "observation": "العروة السفلية الأفقية مقابل العمودية واضحة؛ خط العروة العليا بقي أفقيًا.",
+      "questionViewReviewed": true,
+      "revealViewReviewed": true,
+      "widthsCss": [
+        173,
+        183
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "file": "docs/bank/quality-2026-10-08/preview/postcompression-173-question-1.jpg",
+      "sha256": "4d54eb0d77cd4789ef719fd30964693e4f96d6f8eec5d0486560c012a4606933",
+      "widthPerImageCss": 173,
+      "state": "question",
+      "questions": [
+        "spotdiff-800-921",
+        "spotdiff-800-922",
+        "spotdiff-800-923",
+        "spotdiff-800-924"
+      ]
+    },
+    {
+      "file": "docs/bank/quality-2026-10-08/preview/postcompression-173-question-2.jpg",
+      "sha256": "2edc66e89895a522e536e02664f4101201711394529291f1698a8ea2ac85cf57",
+      "widthPerImageCss": 173,
+      "state": "question",
+      "questions": [
+        "spotdiff-800-926",
+        "spotdiff-800-927",
+        "spotdiff-800-928",
+        "spotdiff-1000-921"
+      ]
+    },
+    {
+      "file": "docs/bank/quality-2026-10-08/preview/postcompression-173-question-3.jpg",
+      "sha256": "bfa7b9c6ea96df70f4be499227e8d8ef773c655ef52cd48cafe6dce0364f7520",
+      "widthPerImageCss": 173,
+      "state": "question",
+      "questions": [
+        "spotdiff-1000-922",
+        "spotdiff-1000-923",
+        "spotdiff-1000-924",
+        "spotdiff-1000-927"
+      ]
+    },
+    {
+      "file": "docs/bank/quality-2026-10-08/preview/postcompression-173-reveal-1.jpg",
+      "sha256": "332d30d409a601ee724f94034747df2e77ed01a7dcd0753c3660d2d4f8393c89",
+      "widthPerImageCss": 173,
+      "state": "reveal",
+      "questions": [
+        "spotdiff-800-921",
+        "spotdiff-800-922",
+        "spotdiff-800-923",
+        "spotdiff-800-924"
+      ]
+    },
+    {
+      "file": "docs/bank/quality-2026-10-08/preview/postcompression-173-reveal-2.jpg",
+      "sha256": "830556ee49ae2f5324a133d6974c79326ca976dc21685ec5b68549f63999b344",
+      "widthPerImageCss": 173,
+      "state": "reveal",
+      "questions": [
+        "spotdiff-800-926",
+        "spotdiff-800-927",
+        "spotdiff-800-928",
+        "spotdiff-1000-921"
+      ]
+    },
+    {
+      "file": "docs/bank/quality-2026-10-08/preview/postcompression-173-reveal-3.jpg",
+      "sha256": "4a17561250f87a42f3b8647209e8447936245d23d47d1cfa41eeb7c2c63d63bd",
+      "widthPerImageCss": 173,
+      "state": "reveal",
+      "questions": [
+        "spotdiff-1000-922",
+        "spotdiff-1000-923",
+        "spotdiff-1000-924",
+        "spotdiff-1000-927"
+      ]
+    },
+    {
+      "file": "docs/bank/quality-2026-10-08/preview/postcompression-183-question-1.jpg",
+      "sha256": "8adb95a326c49ee828a5046b71d890265791817be700f08d367cc2658dd71191",
+      "widthPerImageCss": 183,
+      "state": "question",
+      "questions": [
+        "spotdiff-800-921",
+        "spotdiff-800-922",
+        "spotdiff-800-923",
+        "spotdiff-800-924"
+      ]
+    },
+    {
+      "file": "docs/bank/quality-2026-10-08/preview/postcompression-183-question-2.jpg",
+      "sha256": "b2da4fab8f4d6564c35ed9bc89da862cf9fa512847637a2ae6e84ef6450ecc73",
+      "widthPerImageCss": 183,
+      "state": "question",
+      "questions": [
+        "spotdiff-800-926",
+        "spotdiff-800-927",
+        "spotdiff-800-928",
+        "spotdiff-1000-921"
+      ]
+    },
+    {
+      "file": "docs/bank/quality-2026-10-08/preview/postcompression-183-question-3.jpg",
+      "sha256": "7fd07750b872221d4baa15c168690fa5618e44d055d8b993cf0d427d48786b01",
+      "widthPerImageCss": 183,
+      "state": "question",
+      "questions": [
+        "spotdiff-1000-922",
+        "spotdiff-1000-923",
+        "spotdiff-1000-924",
+        "spotdiff-1000-927"
+      ]
+    },
+    {
+      "file": "docs/bank/quality-2026-10-08/preview/postcompression-183-reveal-1.jpg",
+      "sha256": "cc3dba51456a586bac2ec5ab5dffb3aa3966f60a9c6ee402d12c6c8e7a4bd300",
+      "widthPerImageCss": 183,
+      "state": "reveal",
+      "questions": [
+        "spotdiff-800-921",
+        "spotdiff-800-922",
+        "spotdiff-800-923",
+        "spotdiff-800-924"
+      ]
+    },
+    {
+      "file": "docs/bank/quality-2026-10-08/preview/postcompression-183-reveal-2.jpg",
+      "sha256": "d9306c905cbba130ac3facc27790628d97d4e15df51da473dde03f77f9d5e942",
+      "widthPerImageCss": 183,
+      "state": "reveal",
+      "questions": [
+        "spotdiff-800-926",
+        "spotdiff-800-927",
+        "spotdiff-800-928",
+        "spotdiff-1000-921"
+      ]
+    },
+    {
+      "file": "docs/bank/quality-2026-10-08/preview/postcompression-183-reveal-3.jpg",
+      "sha256": "51140eabb198b9f04d6543295c1ac6961886ca00c6b657fa881bfff3232aeda2",
+      "widthPerImageCss": 183,
+      "state": "reveal",
+      "questions": [
+        "spotdiff-1000-922",
+        "spotdiff-1000-923",
+        "spotdiff-1000-924",
+        "spotdiff-1000-927"
+      ]
+    }
+  ]
+}

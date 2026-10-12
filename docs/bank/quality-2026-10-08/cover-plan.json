@@ -1,0 +1,1411 @@
+{
+  "version": 1,
+  "date": "2026-10-08",
+  "baselineCommit": "e912acf",
+  "covers": [
+    {
+      "id": "general",
+      "name": "معلومات عامة",
+      "style": "editorial cut-paper collage",
+      "palette": "midnight blue, coral, golden yellow",
+      "scene": "An open circular portal joining an observatory, a tiny earth and branching human curiosity paths; layered paper, asymmetrical diagonal composition.",
+      "file": "public/media/badeeha-covers/general.webp",
+      "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'معلومات عامة'. Landscape 4:3 artwork.\nMedium: editorial cut-paper collage.\nIntentional palette: midnight blue, coral, golden yellow.\nScene: An open circular portal joining an observatory, a tiny earth and branching human curiosity paths; layered paper, asymmetrical diagonal composition.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+      "status": "generated-installed",
+      "target": {
+        "width": 640,
+        "height": 480,
+        "format": "webp",
+        "maxBytes": 262144
+      },
+      "record": "docs/bank/quality-2026-10-08/art-records/cover-general.json",
+      "reviewStatus": "phone-size-reviewed"
+    },
+    {
+      "id": "geo",
+      "name": "جغرافيا",
+      "style": "aerial landscape photography",
+      "palette": "deep ocean blue, jade green, terracotta",
+      "scene": "A broad river meanders between lush mountains into the ocean; oblique aerial view, morning mist, dramatic real landforms.",
+      "file": "public/media/badeeha-covers/geo.webp",
+      "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'جغرافيا'. Landscape 4:3 artwork.\nMedium: aerial landscape photography.\nIntentional palette: deep ocean blue, jade green, terracotta.\nScene: A broad river meanders between lush mountains into the ocean; oblique aerial view, morning mist, dramatic real landforms.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+      "status": "generated-installed",
+      "target": {
+        "width": 640,
+        "height": 480,
+        "format": "webp",
+        "maxBytes": 262144
+      },
+      "record": "docs/bank/quality-2026-10-08/art-records/cover-geo.json",
+      "reviewStatus": "phone-size-reviewed"
+    },
+    {
+      "id": "capitals",
+      "name": "عواصم",
+      "style": "architectural editorial illustration",
+      "palette": "indigo, warm amber, pale sky",
+      "scene": "A lively imaginary capital city seen across a river, domes and contemporary towers, atmospheric dusk and lit windows, no single real landmark.",
+      "file": "public/media/badeeha-covers/capitals.webp",
+      "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'عواصم'. Landscape 4:3 artwork.\nMedium: architectural editorial illustration.\nIntentional palette: indigo, warm amber, pale sky.\nScene: A lively imaginary capital city seen across a river, domes and contemporary towers, atmospheric dusk and lit windows, no single real landmark.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+      "status": "generated-installed",
+      "target": {
+        "width": 640,
+        "height": 480,
+        "format": "webp",
+        "maxBytes": 262144
+      },
+      "record": "docs/bank/quality-2026-10-08/art-records/cover-capitals.json",
+      "reviewStatus": "phone-size-reviewed"
+    },
+    {
+      "id": "science",
+      "name": "علوم",
+      "style": "scientific editorial art",
+      "palette": "electric cyan, cobalt, luminous yellow",
+      "scene": "A prism splitting a beam of light above a deep blue laboratory workbench, precise glass refraction and an elegant orbital arc in the background.",
+      "file": "public/media/badeeha-covers/science.webp",
+      "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'علوم'. Landscape 4:3 artwork.\nMedium: scientific editorial art.\nIntentional palette: electric cyan, cobalt, luminous yellow.\nScene: A prism splitting a beam of light above a deep blue laboratory workbench, precise glass refraction and an elegant orbital arc in the background.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+      "status": "generated-installed",
+      "target": {
+        "width": 640,
+        "height": 480,
+        "format": "webp",
+        "maxBytes": 262144
+      },
+      "record": "docs/bank/quality-2026-10-08/art-records/cover-science.json",
+      "reviewStatus": "phone-size-reviewed"
+    },
+    {
+      "id": "animals",
+      "name": "حيوانات",
+      "style": "wildlife photography",
+      "palette": "forest green, russet, soft golden light",
+      "scene": "A curious red fox in a fern forest, three-quarter environmental portrait, sunbeams and natural depth, no studio background.",
+      "file": "public/media/badeeha-covers/animals.webp",
+      "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'حيوانات'. Landscape 4:3 artwork.\nMedium: wildlife photography.\nIntentional palette: forest green, russet, soft golden light.\nScene: A curious red fox in a fern forest, three-quarter environmental portrait, sunbeams and natural depth, no studio background.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+      "status": "generated-installed",
+      "target": {
+        "width": 640,
+        "height": 480,
+        "format": "webp",
+        "maxBytes": 262144
+      },
+      "record": "docs/bank/quality-2026-10-08/art-records/cover-animals.json",
+      "reviewStatus": "phone-size-reviewed"
+    },
+    {
+      "id": "history",
+      "name": "تاريخ",
+      "style": "antique engraving with selective color",
+      "palette": "copper, burgundy, parchment",
+      "scene": "An ancient city gate and a winding route through layered centuries, engraved architectural detail with copper sun, no lettering or invented inscriptions.",
+      "file": "public/media/badeeha-covers/history.webp",
+      "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'تاريخ'. Landscape 4:3 artwork.\nMedium: antique engraving with selective color.\nIntentional palette: copper, burgundy, parchment.\nScene: An ancient city gate and a winding route through layered centuries, engraved architectural detail with copper sun, no lettering or invented inscriptions.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+      "status": "generated-installed",
+      "target": {
+        "width": 640,
+        "height": 480,
+        "format": "webp",
+        "maxBytes": 262144
+      },
+      "record": "docs/bank/quality-2026-10-08/art-records/cover-history.json",
+      "reviewStatus": "phone-size-reviewed"
+    },
+    {
+      "id": "food",
+      "name": "أكلات ومطابخ",
+      "style": "natural food photography",
+      "palette": "tomato red, olive green, charcoal",
+      "scene": "Overhead view of a freshly prepared colorful Mediterranean sharing table, one dominant earthenware dish, herbs and textured dark stone.",
+      "file": "public/media/badeeha-covers/food.webp",
+      "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'أكلات ومطابخ'. Landscape 4:3 artwork.\nMedium: natural food photography.\nIntentional palette: tomato red, olive green, charcoal.\nScene: Overhead view of a freshly prepared colorful Mediterranean sharing table, one dominant earthenware dish, herbs and textured dark stone.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+      "status": "generated-installed",
+      "target": {
+        "width": 640,
+        "height": 480,
+        "format": "webp",
+        "maxBytes": 262144
+      },
+      "record": "docs/bank/quality-2026-10-08/art-records/cover-food.json",
+      "reviewStatus": "phone-size-reviewed"
+    },
+    {
+      "id": "fruitsveg",
+      "name": "فواكه وخضار",
+      "style": "botanical watercolor",
+      "palette": "leaf green, blood orange, sky blue",
+      "scene": "Fresh produce growing in a sunlit garden bed, a cut pomegranate in foreground and leaves curving across the scene, painted paper texture.",
+      "file": "public/media/badeeha-covers/fruitsveg.webp",
+      "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'فواكه وخضار'. Landscape 4:3 artwork.\nMedium: botanical watercolor.\nIntentional palette: leaf green, blood orange, sky blue.\nScene: Fresh produce growing in a sunlit garden bed, a cut pomegranate in foreground and leaves curving across the scene, painted paper texture.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+      "status": "generated-installed",
+      "target": {
+        "width": 640,
+        "height": 480,
+        "format": "webp",
+        "maxBytes": 262144
+      },
+      "record": "docs/bank/quality-2026-10-08/art-records/cover-fruitsveg.json",
+      "reviewStatus": "phone-size-reviewed"
+    },
+    {
+      "id": "sports",
+      "name": "رياضة",
+      "style": "dynamic editorial illustration",
+      "palette": "vermillion, cobalt, white",
+      "scene": "A running track curves through a stadium with a runner silhouette in motion, bold speed diagonals and cropped sporting equipment, human proportions correct.",
+      "file": "public/media/badeeha-covers/sports.webp",
+      "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'رياضة'. Landscape 4:3 artwork.\nMedium: dynamic editorial illustration.\nIntentional palette: vermillion, cobalt, white.\nScene: A running track curves through a stadium with a runner silhouette in motion, bold speed diagonals and cropped sporting equipment, human proportions correct.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+      "status": "generated-installed",
+      "target": {
+        "width": 640,
+        "height": 480,
+        "format": "webp",
+        "maxBytes": 262144
+      },
+      "record": "docs/bank/quality-2026-10-08/art-records/cover-sports.json",
+      "reviewStatus": "phone-size-reviewed"
+    },
+    {
+      "id": "football",
+      "name": "كرة القدم",
+      "style": "sports photography",
+      "palette": "pitch green, floodlight white, deep navy",
+      "scene": "A football on wet grass in the foreground beneath dramatic stadium floodlights, low camera viewpoint, distant goal and authentic turf.",
+      "file": "public/media/badeeha-covers/football.webp",
+      "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'كرة القدم'. Landscape 4:3 artwork.\nMedium: sports photography.\nIntentional palette: pitch green, floodlight white, deep navy.\nScene: A football on wet grass in the foreground beneath dramatic stadium floodlights, low camera viewpoint, distant goal and authentic turf.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+      "status": "generated-installed",
+      "target": {
+        "width": 640,
+        "height": 480,
+        "format": "webp",
+        "maxBytes": 262144
+      },
+      "record": "docs/bank/quality-2026-10-08/art-records/cover-football.json",
+      "reviewStatus": "phone-size-reviewed"
+    },
+    {
+      "id": "worldcup",
+      "name": "كأس العالم",
+      "style": "celebratory painted poster art",
+      "palette": "gold, ultramarine, emerald",
+      "scene": "A football lifted into stadium light by several hands, worldwide celebration conveyed by colored ribbons, original trophy-free composition.",
+      "file": "public/media/badeeha-covers/worldcup.webp",
+      "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'كأس العالم'. Landscape 4:3 artwork.\nMedium: celebratory painted poster art.\nIntentional palette: gold, ultramarine, emerald.\nScene: A football lifted into stadium light by several hands, worldwide celebration conveyed by colored ribbons, original trophy-free composition.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+      "status": "generated-installed",
+      "target": {
+        "width": 640,
+        "height": 480,
+        "format": "webp",
+        "maxBytes": 262144
+      },
+      "record": "docs/bank/quality-2026-10-08/art-records/cover-worldcup.json",
+      "reviewStatus": "phone-size-reviewed"
+    },
+    {
+      "id": "ucl",
+      "name": "دوري أبطال أوروبا",
+      "style": "cinematic sports scene",
+      "palette": "midnight navy, silver, icy blue",
+      "scene": "A silver original two-handled trophy silhouette at the edge of a luminous night stadium tunnel, dramatic converging lights, no official logos.",
+      "file": "public/media/badeeha-covers/ucl.webp",
+      "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'دوري أبطال أوروبا'. Landscape 4:3 artwork.\nMedium: cinematic sports scene.\nIntentional palette: midnight navy, silver, icy blue.\nScene: A silver original two-handled trophy silhouette at the edge of a luminous night stadium tunnel, dramatic converging lights, no official logos.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+      "status": "generated-installed",
+      "target": {
+        "width": 640,
+        "height": 480,
+        "format": "webp",
+        "maxBytes": 262144
+      },
+      "record": "docs/bank/quality-2026-10-08/art-records/cover-ucl.json",
+      "reviewStatus": "phone-size-reviewed"
+    },
+    {
+      "id": "premier",
+      "name": "الدوري الإنجليزي",
+      "style": "bold screen-print illustration",
+      "palette": "violet, lime green, black",
+      "scene": "Football boots and a rolling ball crossing an English-style rainy pitch, energetic low diagonal perspective and halftone texture.",
+      "file": "public/media/badeeha-covers/premier.webp",
+      "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'الدوري الإنجليزي'. Landscape 4:3 artwork.\nMedium: bold screen-print illustration.\nIntentional palette: violet, lime green, black.\nScene: Football boots and a rolling ball crossing an English-style rainy pitch, energetic low diagonal perspective and halftone texture.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+      "status": "generated-installed",
+      "target": {
+        "width": 640,
+        "height": 480,
+        "format": "webp",
+        "maxBytes": 262144
+      },
+      "record": "docs/bank/quality-2026-10-08/art-records/cover-premier.json",
+      "reviewStatus": "phone-size-reviewed"
+    },
+    {
+      "id": "tech",
+      "name": "تقنية",
+      "style": "precise isometric technical illustration",
+      "palette": "cyan, navy, mint",
+      "scene": "A small imaginary data city built from a computer chip, elegant illuminated pathways and layered translucent architecture, restrained clean geometry.",
+      "file": "public/media/badeeha-covers/tech.webp",
+      "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'تقنية'. Landscape 4:3 artwork.\nMedium: precise isometric technical illustration.\nIntentional palette: cyan, navy, mint.\nScene: A small imaginary data city built from a computer chip, elegant illuminated pathways and layered translucent architecture, restrained clean geometry.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+      "status": "generated-installed",
+      "target": {
+        "width": 640,
+        "height": 480,
+        "format": "webp",
+        "maxBytes": 262144
+      },
+      "record": "docs/bank/quality-2026-10-08/art-records/cover-tech.json",
+      "reviewStatus": "phone-size-reviewed"
+    },
+    {
+      "id": "apps",
+      "name": "تطبيقات وسوشيال",
+      "style": "playful flat editorial illustration",
+      "palette": "coral, turquoise, royal blue",
+      "scene": "Several floating unbranded mobile windows and a phone in a bright spatial composition, abstract icons without lettering, rounded graphic geometry.",
+      "file": "public/media/badeeha-covers/apps.webp",
+      "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'تطبيقات وسوشيال'. Landscape 4:3 artwork.\nMedium: playful flat editorial illustration.\nIntentional palette: coral, turquoise, royal blue.\nScene: Several floating unbranded mobile windows and a phone in a bright spatial composition, abstract icons without lettering, rounded graphic geometry.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+      "status": "generated-installed",
+      "target": {
+        "width": 640,
+        "height": 480,
+        "format": "webp",
+        "maxBytes": 262144
+      },
+      "record": "docs/bank/quality-2026-10-08/art-records/cover-apps.json",
+      "reviewStatus": "phone-size-reviewed"
+    },
+    {
+      "id": "brands",
+      "name": "ماركات وشركات",
+      "style": "fashion editorial photography",
+      "palette": "black, crimson, brushed silver",
+      "scene": "An elegant shop window with an unbranded sculptural bottle, folded fabric and a box, hard sidelight and glossy reflections, no legible marks.",
+      "file": "public/media/badeeha-covers/brands.webp",
+      "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'ماركات وشركات'. Landscape 4:3 artwork.\nMedium: fashion editorial photography.\nIntentional palette: black, crimson, brushed silver.\nScene: An elegant shop window with an unbranded sculptural bottle, folded fabric and a box, hard sidelight and glossy reflections, no legible marks.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+      "status": "generated-installed",
+      "target": {
+        "width": 640,
+        "height": 480,
+        "format": "webp",
+        "maxBytes": 262144
+      },
+      "record": "docs/bank/quality-2026-10-08/art-records/cover-brands.json",
+      "reviewStatus": "phone-size-reviewed"
+    },
+    {
+      "id": "cars",
+      "name": "سيارات",
+      "style": "automotive editorial illustration",
+      "palette": "racing red, steel blue, asphalt grey",
+      "scene": "A generic classic sports car taking a sweeping mountain-road curve, three-quarter rear view, dynamic perspective, original unbranded design.",
+      "file": "public/media/badeeha-covers/cars.webp",
+      "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'سيارات'. Landscape 4:3 artwork.\nMedium: automotive editorial illustration.\nIntentional palette: racing red, steel blue, asphalt grey.\nScene: A generic classic sports car taking a sweeping mountain-road curve, three-quarter rear view, dynamic perspective, original unbranded design.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+      "status": "generated-installed",
+      "target": {
+        "width": 640,
+        "height": 480,
+        "format": "webp",
+        "maxBytes": 262144
+      },
+      "record": "docs/bank/quality-2026-10-08/art-records/cover-cars.json",
+      "reviewStatus": "phone-size-reviewed"
+    },
+    {
+      "id": "shopping",
+      "name": "تسوق وحديث البنات",
+      "style": "paper-cut fashion illustration",
+      "palette": "magenta, peach, petrol blue",
+      "scene": "A bustling stylized market arcade with hanging fabrics and a shopping bag in foreground, layered cut-paper depth and rich textiles.",
+      "file": "public/media/badeeha-covers/shopping.webp",
+      "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'تسوق وحديث البنات'. Landscape 4:3 artwork.\nMedium: paper-cut fashion illustration.\nIntentional palette: magenta, peach, petrol blue.\nScene: A bustling stylized market arcade with hanging fabrics and a shopping bag in foreground, layered cut-paper depth and rich textiles.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+      "status": "generated-installed",
+      "target": {
+        "width": 640,
+        "height": 480,
+        "format": "webp",
+        "maxBytes": 262144
+      },
+      "record": "docs/bank/quality-2026-10-08/art-records/cover-shopping.json",
+      "reviewStatus": "phone-size-reviewed"
+    },
+    {
+      "id": "arabic",
+      "name": "لغة عربية",
+      "style": "expressive ink and paper illustration",
+      "palette": "deep burgundy, cream paper, copper",
+      "scene": "An angled reed pen drawing a single broad abstract ink flourish across textured paper, ink pooling naturally, no readable letters.",
+      "file": "public/media/badeeha-covers/arabic.webp",
+      "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'لغة عربية'. Landscape 4:3 artwork.\nMedium: expressive ink and paper illustration.\nIntentional palette: deep burgundy, cream paper, copper.\nScene: An angled reed pen drawing a single broad abstract ink flourish across textured paper, ink pooling naturally, no readable letters.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+      "status": "generated-installed",
+      "target": {
+        "width": 640,
+        "height": 480,
+        "format": "webp",
+        "maxBytes": 262144
+      },
+      "record": "docs/bank/quality-2026-10-08/art-records/cover-arabic.json",
+      "reviewStatus": "phone-size-reviewed"
+    },
+    {
+      "id": "proverbs",
+      "name": "أمثال شعبية",
+      "style": "warm narrative watercolor",
+      "palette": "sienna, sage green, sunset gold",
+      "scene": "An inviting courtyard with empty woven chairs in a conversational circle beneath an old tree, suggestion of oral storytelling, no specific proverb scene.",
+      "file": "public/media/badeeha-covers/proverbs.webp",
+      "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'أمثال شعبية'. Landscape 4:3 artwork.\nMedium: warm narrative watercolor.\nIntentional palette: sienna, sage green, sunset gold.\nScene: An inviting courtyard with empty woven chairs in a conversational circle beneath an old tree, suggestion of oral storytelling, no specific proverb scene.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+      "status": "generated-installed",
+      "target": {
+        "width": 640,
+        "height": 480,
+        "format": "webp",
+        "maxBytes": 262144
+      },
+      "record": "docs/bank/quality-2026-10-08/art-records/cover-proverbs.json",
+      "reviewStatus": "phone-size-reviewed"
+    },
+    {
+      "id": "dialects",
+      "name": "لهجات عربية",
+      "style": "layered graphic illustration",
+      "palette": "teal, orange, plum",
+      "scene": "Three differently textured abstract speech shapes interweave like a flowing conversation over an urban map-like composition, no text or flags.",
+      "file": "public/media/badeeha-covers/dialects.webp",
+      "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'لهجات عربية'. Landscape 4:3 artwork.\nMedium: layered graphic illustration.\nIntentional palette: teal, orange, plum.\nScene: Three differently textured abstract speech shapes interweave like a flowing conversation over an urban map-like composition, no text or flags.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+      "status": "generated-installed",
+      "target": {
+        "width": 640,
+        "height": 480,
+        "format": "webp",
+        "maxBytes": 262144
+      },
+      "record": "docs/bank/quality-2026-10-08/art-records/cover-dialects.json",
+      "reviewStatus": "phone-size-reviewed"
+    },
+    {
+      "id": "arabliterature",
+      "name": "أدب عربي",
+      "style": "woodcut editorial illustration",
+      "palette": "ink black, burnt orange, parchment",
+      "scene": "A manuscript opens into a richly patterned imaginary old city under a crescent moon, visible page texture, no words.",
+      "file": "public/media/badeeha-covers/arabliterature.webp",
+      "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'أدب عربي'. Landscape 4:3 artwork.\nMedium: woodcut editorial illustration.\nIntentional palette: ink black, burnt orange, parchment.\nScene: A manuscript opens into a richly patterned imaginary old city under a crescent moon, visible page texture, no words.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+      "status": "generated-installed",
+      "target": {
+        "width": 640,
+        "height": 480,
+        "format": "webp",
+        "maxBytes": 262144
+      },
+      "record": "docs/bank/quality-2026-10-08/art-records/cover-arabliterature.json",
+      "reviewStatus": "phone-size-reviewed"
+    },
+    {
+      "id": "books",
+      "name": "كتب وروايات",
+      "style": "cozy cinematic photography",
+      "palette": "forest green, amber, walnut brown",
+      "scene": "A reading nook beside a rain-covered window, a few blank-spined books and an open book seen from behind its pages, intimate light, no readable text.",
+      "file": "public/media/badeeha-covers/books.webp",
+      "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'كتب وروايات'. Landscape 4:3 artwork.\nMedium: cozy cinematic photography.\nIntentional palette: forest green, amber, walnut brown.\nScene: A reading nook beside a rain-covered window, a few blank-spined books and an open book seen from behind its pages, intimate light, no readable text.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+      "status": "generated-installed",
+      "target": {
+        "width": 640,
+        "height": 480,
+        "format": "webp",
+        "maxBytes": 262144
+      },
+      "record": "docs/bank/quality-2026-10-08/art-records/cover-books.json",
+      "reviewStatus": "phone-size-reviewed"
+    },
+    {
+      "id": "quotes",
+      "name": "من القائل",
+      "style": "minimal conceptual illustration",
+      "palette": "cobalt, warm white, vermillion",
+      "scene": "An oversized pair of original curved quotation-like abstract shapes framing a beam of light, strong editorial composition, no actual words.",
+      "file": "public/media/badeeha-covers/quotes.webp",
+      "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'من القائل'. Landscape 4:3 artwork.\nMedium: minimal conceptual illustration.\nIntentional palette: cobalt, warm white, vermillion.\nScene: An oversized pair of original curved quotation-like abstract shapes framing a beam of light, strong editorial composition, no actual words.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+      "status": "generated-installed",
+      "target": {
+        "width": 640,
+        "height": 480,
+        "format": "webp",
+        "maxBytes": 262144
+      },
+      "record": "docs/bank/quality-2026-10-08/art-records/cover-quotes.json",
+      "reviewStatus": "phone-size-reviewed"
+    },
+    {
+      "id": "arabcelebs",
+      "name": "مشاهير عرب",
+      "style": "editorial portrait silhouettes",
+      "palette": "burgundy, gold, midnight blue",
+      "scene": "Several anonymous elegant human profiles against stage lights, adult proportions and distinct silhouettes, no identifiable celebrity face.",
+      "file": "public/media/badeeha-covers/arabcelebs.webp",
+      "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'مشاهير عرب'. Landscape 4:3 artwork.\nMedium: editorial portrait silhouettes.\nIntentional palette: burgundy, gold, midnight blue.\nScene: Several anonymous elegant human profiles against stage lights, adult proportions and distinct silhouettes, no identifiable celebrity face.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+      "status": "generated-installed",
+      "target": {
+        "width": 640,
+        "height": 480,
+        "format": "webp",
+        "maxBytes": 262144
+      },
+      "record": "docs/bank/quality-2026-10-08/art-records/cover-arabcelebs.json",
+      "reviewStatus": "phone-size-reviewed"
+    },
+    {
+      "id": "youtubers",
+      "name": "يوتيوبرز وصنّاع محتوى",
+      "style": "contemporary editorial illustration",
+      "palette": "tangerine, aqua, charcoal",
+      "scene": "A creator desk seen from a bold overhead angle with camera, ring light, headphones and blank monitor, lively purposeful composition, no platform logos.",
+      "file": "public/media/badeeha-covers/youtubers.webp",
+      "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'يوتيوبرز وصنّاع محتوى'. Landscape 4:3 artwork.\nMedium: contemporary editorial illustration.\nIntentional palette: tangerine, aqua, charcoal.\nScene: A creator desk seen from a bold overhead angle with camera, ring light, headphones and blank monitor, lively purposeful composition, no platform logos.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+      "status": "generated-installed",
+      "target": {
+        "width": 640,
+        "height": 480,
+        "format": "webp",
+        "maxBytes": 262144
+      },
+      "record": "docs/bank/quality-2026-10-08/art-records/cover-youtubers.json",
+      "reviewStatus": "phone-size-reviewed"
+    },
+    {
+      "id": "arabmusic",
+      "name": "أغاني عربية",
+      "style": "concert photography",
+      "palette": "wine red, brass gold, deep black",
+      "scene": "Close-up of an oud being played on a dark intimate stage, accurate strings and hands, amber rim light and distant blurred musicians.",
+      "file": "public/media/badeeha-covers/arabmusic.webp",
+      "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'أغاني عربية'. Landscape 4:3 artwork.\nMedium: concert photography.\nIntentional palette: wine red, brass gold, deep black.\nScene: Close-up of an oud being played on a dark intimate stage, accurate strings and hands, amber rim light and distant blurred musicians.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+      "status": "generated-installed",
+      "target": {
+        "width": 640,
+        "height": 480,
+        "format": "webp",
+        "maxBytes": 262144
+      },
+      "record": "docs/bank/quality-2026-10-08/art-records/cover-arabmusic.json",
+      "reviewStatus": "phone-size-reviewed"
+    },
+    {
+      "id": "tarab",
+      "name": "طرب وأغاني زمان",
+      "style": "painterly vintage stage scene",
+      "palette": "indigo, amber, muted rose",
+      "scene": "A classic standing microphone beside an empty ornate concert chair, velvet curtain and atmospheric light, evocative mid-century Arabic music hall.",
+      "file": "public/media/badeeha-covers/tarab.webp",
+      "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'طرب وأغاني زمان'. Landscape 4:3 artwork.\nMedium: painterly vintage stage scene.\nIntentional palette: indigo, amber, muted rose.\nScene: A classic standing microphone beside an empty ornate concert chair, velvet curtain and atmospheric light, evocative mid-century Arabic music hall.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+      "status": "generated-installed",
+      "target": {
+        "width": 640,
+        "height": 480,
+        "format": "webp",
+        "maxBytes": 262144
+      },
+      "record": "docs/bank/quality-2026-10-08/art-records/cover-tarab.json",
+      "reviewStatus": "phone-size-reviewed"
+    },
+    {
+      "id": "arabart",
+      "name": "فن عربي",
+      "style": "expressive mixed-media painting",
+      "palette": "cobalt, coral, ochre",
+      "scene": "A vibrant original abstract canvas being painted with broad brush strokes, close texture and art studio light, no imitation of a named artwork.",
+      "file": "public/media/badeeha-covers/arabart.webp",
+      "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'فن عربي'. Landscape 4:3 artwork.\nMedium: expressive mixed-media painting.\nIntentional palette: cobalt, coral, ochre.\nScene: A vibrant original abstract canvas being painted with broad brush strokes, close texture and art studio light, no imitation of a named artwork.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+      "status": "generated-installed",
+      "target": {
+        "width": 640,
+        "height": 480,
+        "format": "webp",
+        "maxBytes": 262144
+      },
+      "record": "docs/bank/quality-2026-10-08/art-records/cover-arabart.json",
+      "reviewStatus": "phone-size-reviewed"
+    },
+    {
+      "id": "theater",
+      "name": "مسرح",
+      "style": "dramatic theatrical photography",
+      "palette": "scarlet, black, warm gold",
+      "scene": "A partly opened crimson stage curtain reveals an empty spotlight circle and a wooden stage, sweeping composition and theatrical depth.",
+      "file": "public/media/badeeha-covers/theater.webp",
+      "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'مسرح'. Landscape 4:3 artwork.\nMedium: dramatic theatrical photography.\nIntentional palette: scarlet, black, warm gold.\nScene: A partly opened crimson stage curtain reveals an empty spotlight circle and a wooden stage, sweeping composition and theatrical depth.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+      "status": "generated-installed",
+      "target": {
+        "width": 640,
+        "height": 480,
+        "format": "webp",
+        "maxBytes": 262144
+      },
+      "record": "docs/bank/quality-2026-10-08/art-records/cover-theater.json",
+      "reviewStatus": "phone-size-reviewed"
+    },
+    {
+      "id": "ramadan",
+      "name": "رمضان",
+      "style": "nighttime architectural illustration",
+      "palette": "indigo, lantern amber, turquoise",
+      "scene": "A peaceful neighborhood courtyard at blue hour with a glowing hanging lantern and arched doorways, no people or sacred text.",
+      "file": "public/media/badeeha-covers/ramadan.webp",
+      "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'رمضان'. Landscape 4:3 artwork.\nMedium: nighttime architectural illustration.\nIntentional palette: indigo, lantern amber, turquoise.\nScene: A peaceful neighborhood courtyard at blue hour with a glowing hanging lantern and arched doorways, no people or sacred text.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+      "status": "generated-installed",
+      "target": {
+        "width": 640,
+        "height": 480,
+        "format": "webp",
+        "maxBytes": 262144
+      },
+      "record": "docs/bank/quality-2026-10-08/art-records/cover-ramadan.json",
+      "reviewStatus": "phone-size-reviewed"
+    },
+    {
+      "id": "islamiyat",
+      "name": "إسلاميات",
+      "style": "geometric architectural illustration",
+      "palette": "emerald, sandstone, gold",
+      "scene": "Sunlight streams across a quiet Islamic geometric arcade, intricate but legible architectural rhythm, no calligraphy or human figures.",
+      "file": "public/media/badeeha-covers/islamiyat.webp",
+      "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'إسلاميات'. Landscape 4:3 artwork.\nMedium: geometric architectural illustration.\nIntentional palette: emerald, sandstone, gold.\nScene: Sunlight streams across a quiet Islamic geometric arcade, intricate but legible architectural rhythm, no calligraphy or human figures.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+      "status": "generated-installed",
+      "target": {
+        "width": 640,
+        "height": 480,
+        "format": "webp",
+        "maxBytes": 262144
+      },
+      "record": "docs/bank/quality-2026-10-08/art-records/cover-islamiyat.json",
+      "reviewStatus": "phone-size-reviewed"
+    },
+    {
+      "id": "quran",
+      "name": "القرآن الكريم",
+      "style": "respectful still-life photography",
+      "palette": "deep green, warm gold, walnut",
+      "scene": "A closed unlettered dark-green book on a carved wooden stand in soft window light, dignified simple composition, no readable writing.",
+      "file": "public/media/badeeha-covers/quran.webp",
+      "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'القرآن الكريم'. Landscape 4:3 artwork.\nMedium: respectful still-life photography.\nIntentional palette: deep green, warm gold, walnut.\nScene: A closed unlettered dark-green book on a carved wooden stand in soft window light, dignified simple composition, no readable writing.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+      "status": "generated-installed",
+      "target": {
+        "width": 640,
+        "height": 480,
+        "format": "webp",
+        "maxBytes": 262144
+      },
+      "record": "docs/bank/quality-2026-10-08/art-records/cover-quran.json",
+      "reviewStatus": "phone-size-reviewed"
+    },
+    {
+      "id": "seerah",
+      "name": "السيرة النبوية",
+      "style": "historical landscape watercolor",
+      "palette": "sand gold, date-palm green, dawn blue",
+      "scene": "An empty historic Arabian desert route toward a distant mud-brick oasis settlement, peaceful dawn, no people, no invented sacred-site details.",
+      "file": "public/media/badeeha-covers/seerah.webp",
+      "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'السيرة النبوية'. Landscape 4:3 artwork.\nMedium: historical landscape watercolor.\nIntentional palette: sand gold, date-palm green, dawn blue.\nScene: An empty historic Arabian desert route toward a distant mud-brick oasis settlement, peaceful dawn, no people, no invented sacred-site details.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+      "status": "generated-installed",
+      "target": {
+        "width": 640,
+        "height": 480,
+        "format": "webp",
+        "maxBytes": 262144
+      },
+      "record": "docs/bank/quality-2026-10-08/art-records/cover-seerah.json",
+      "reviewStatus": "phone-size-reviewed"
+    },
+    {
+      "id": "prophets",
+      "name": "قصص الأنبياء",
+      "style": "symbolic landscape painting",
+      "palette": "deep blue, golden light, earth brown",
+      "scene": "A mountain path opening toward a luminous distant horizon beyond water and desert, dignified abstract journey, no human or prophet depictions.",
+      "file": "public/media/badeeha-covers/prophets.webp",
+      "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'قصص الأنبياء'. Landscape 4:3 artwork.\nMedium: symbolic landscape painting.\nIntentional palette: deep blue, golden light, earth brown.\nScene: A mountain path opening toward a luminous distant horizon beyond water and desert, dignified abstract journey, no human or prophet depictions.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+      "status": "generated-installed",
+      "target": {
+        "width": 640,
+        "height": 480,
+        "format": "webp",
+        "maxBytes": 262144
+      },
+      "record": "docs/bank/quality-2026-10-08/art-records/cover-prophets.json",
+      "reviewStatus": "phone-size-reviewed"
+    },
+    {
+      "id": "arabseries",
+      "name": "مسلسلات عربية",
+      "style": "cinematic neighborhood scene",
+      "palette": "amber, teal shadows, clay red",
+      "scene": "A warmly lit fictional Arab neighborhood alley with patterned balconies and an open doorway, nighttime dramatic atmosphere, no actual series set.",
+      "file": "public/media/badeeha-covers/arabseries.webp",
+      "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'مسلسلات عربية'. Landscape 4:3 artwork.\nMedium: cinematic neighborhood scene.\nIntentional palette: amber, teal shadows, clay red.\nScene: A warmly lit fictional Arab neighborhood alley with patterned balconies and an open doorway, nighttime dramatic atmosphere, no actual series set.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+      "status": "generated-installed",
+      "target": {
+        "width": 640,
+        "height": 480,
+        "format": "webp",
+        "maxBytes": 262144
+      },
+      "record": "docs/bank/quality-2026-10-08/art-records/cover-arabseries.json",
+      "reviewStatus": "phone-size-reviewed"
+    },
+    {
+      "id": "ramadanseries",
+      "name": "مسلسلات رمضان",
+      "style": "cinematic interior scene",
+      "palette": "plum, golden amber, dark teal",
+      "scene": "A fictional family sitting room ready for evening viewing, a softly glowing blank television and lantern, layered human-scale environment with no people.",
+      "file": "public/media/badeeha-covers/ramadanseries.webp",
+      "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'مسلسلات رمضان'. Landscape 4:3 artwork.\nMedium: cinematic interior scene.\nIntentional palette: plum, golden amber, dark teal.\nScene: A fictional family sitting room ready for evening viewing, a softly glowing blank television and lantern, layered human-scale environment with no people.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+      "status": "generated-installed",
+      "target": {
+        "width": 640,
+        "height": 480,
+        "format": "webp",
+        "maxBytes": 262144
+      },
+      "record": "docs/bank/quality-2026-10-08/art-records/cover-ramadanseries.json",
+      "reviewStatus": "phone-size-reviewed"
+    },
+    {
+      "id": "babalhara",
+      "name": "باب الحارة",
+      "style": "hand-painted historic street scene",
+      "palette": "stone beige, olive, deep turquoise",
+      "scene": "An evocative old Damascene-style courtyard gate with a brass knocker and climbing jasmine, watercolor light, original architecture.",
+      "file": "public/media/badeeha-covers/babalhara.webp",
+      "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'باب الحارة'. Landscape 4:3 artwork.\nMedium: hand-painted historic street scene.\nIntentional palette: stone beige, olive, deep turquoise.\nScene: An evocative old Damascene-style courtyard gate with a brass knocker and climbing jasmine, watercolor light, original architecture.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+      "status": "generated-installed",
+      "target": {
+        "width": 640,
+        "height": 480,
+        "format": "webp",
+        "maxBytes": 262144
+      },
+      "record": "docs/bank/quality-2026-10-08/art-records/cover-babalhara.json",
+      "reviewStatus": "phone-size-reviewed"
+    },
+    {
+      "id": "syriandrama",
+      "name": "دراما سورية",
+      "style": "cinematic architectural photograph style",
+      "palette": "blue-grey, warm amber, walnut",
+      "scene": "Rain on a fictional old stone courtyard with an ornate wooden balcony, warm light from one window, emotionally rich empty scene.",
+      "file": "public/media/badeeha-covers/syriandrama.webp",
+      "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'دراما سورية'. Landscape 4:3 artwork.\nMedium: cinematic architectural photograph style.\nIntentional palette: blue-grey, warm amber, walnut.\nScene: Rain on a fictional old stone courtyard with an ornate wooden balcony, warm light from one window, emotionally rich empty scene.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+      "status": "generated-installed",
+      "target": {
+        "width": 640,
+        "height": 480,
+        "format": "webp",
+        "maxBytes": 262144
+      },
+      "record": "docs/bank/quality-2026-10-08/art-records/cover-syriandrama.json",
+      "reviewStatus": "phone-size-reviewed"
+    },
+    {
+      "id": "egyptdrama",
+      "name": "دراما مصرية",
+      "style": "gouache city illustration",
+      "palette": "terracotta, aqua, cream",
+      "scene": "A lively fictional Cairo-style street corner with balconies and laundry catching afternoon light, bold painterly textures, no text or logos.",
+      "file": "public/media/badeeha-covers/egyptdrama.webp",
+      "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'دراما مصرية'. Landscape 4:3 artwork.\nMedium: gouache city illustration.\nIntentional palette: terracotta, aqua, cream.\nScene: A lively fictional Cairo-style street corner with balconies and laundry catching afternoon light, bold painterly textures, no text or logos.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+      "status": "generated-installed",
+      "target": {
+        "width": 640,
+        "height": 480,
+        "format": "webp",
+        "maxBytes": 262144
+      },
+      "record": "docs/bank/quality-2026-10-08/art-records/cover-egyptdrama.json",
+      "reviewStatus": "phone-size-reviewed"
+    },
+    {
+      "id": "turkishdrama",
+      "name": "مسلسلات تركية",
+      "style": "cinematic waterfront scene",
+      "palette": "petrol blue, burgundy, warm pearl",
+      "scene": "An elegant fictional waterside mansion seen through rain on a window at dusk, dramatic depth and romantic color contrast, no identifiable filming location.",
+      "file": "public/media/badeeha-covers/turkishdrama.webp",
+      "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'مسلسلات تركية'. Landscape 4:3 artwork.\nMedium: cinematic waterfront scene.\nIntentional palette: petrol blue, burgundy, warm pearl.\nScene: An elegant fictional waterside mansion seen through rain on a window at dusk, dramatic depth and romantic color contrast, no identifiable filming location.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+      "status": "generated-installed",
+      "target": {
+        "width": 640,
+        "height": 480,
+        "format": "webp",
+        "maxBytes": 262144
+      },
+      "record": "docs/bank/quality-2026-10-08/art-records/cover-turkishdrama.json",
+      "reviewStatus": "phone-size-reviewed"
+    },
+    {
+      "id": "ertugrul",
+      "name": "قيامة أرطغرل",
+      "style": "historical adventure painting",
+      "palette": "pine green, leather brown, silver",
+      "scene": "A safely sheathed historical sword and worn leather shield near a nomadic tent at forest edge, dramatic dawn, no people or emblems.",
+      "file": "public/media/badeeha-covers/ertugrul.webp",
+      "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'قيامة أرطغرل'. Landscape 4:3 artwork.\nMedium: historical adventure painting.\nIntentional palette: pine green, leather brown, silver.\nScene: A safely sheathed historical sword and worn leather shield near a nomadic tent at forest edge, dramatic dawn, no people or emblems.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+      "status": "generated-installed",
+      "target": {
+        "width": 640,
+        "height": 480,
+        "format": "webp",
+        "maxBytes": 262144
+      },
+      "record": "docs/bank/quality-2026-10-08/art-records/cover-ertugrul.json",
+      "reviewStatus": "phone-size-reviewed"
+    },
+    {
+      "id": "foreignseries",
+      "name": "مسلسلات أجنبية",
+      "style": "cinematic editorial illustration",
+      "palette": "electric blue, amber, deep violet",
+      "scene": "A rain-soaked fictional city crossroads viewed from a rooftop, luminous blank windows and a distant mysterious silhouette, restrained suspense.",
+      "file": "public/media/badeeha-covers/foreignseries.webp",
+      "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'مسلسلات أجنبية'. Landscape 4:3 artwork.\nMedium: cinematic editorial illustration.\nIntentional palette: electric blue, amber, deep violet.\nScene: A rain-soaked fictional city crossroads viewed from a rooftop, luminous blank windows and a distant mysterious silhouette, restrained suspense.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+      "status": "generated-installed",
+      "target": {
+        "width": 640,
+        "height": 480,
+        "format": "webp",
+        "maxBytes": 262144
+      },
+      "record": "docs/bank/quality-2026-10-08/art-records/cover-foreignseries.json",
+      "reviewStatus": "phone-size-reviewed"
+    },
+    {
+      "id": "breakingbad",
+      "name": "بريكنغ باد",
+      "style": "cinematic desert landscape",
+      "palette": "ochre, turquoise sky, deep olive",
+      "scene": "A distant generic recreational vehicle on an empty New Mexico-like desert road with long afternoon shadows and vast sky, no drugs or show logos.",
+      "file": "public/media/badeeha-covers/breakingbad.webp",
+      "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'بريكنغ باد'. Landscape 4:3 artwork.\nMedium: cinematic desert landscape.\nIntentional palette: ochre, turquoise sky, deep olive.\nScene: A distant generic recreational vehicle on an empty New Mexico-like desert road with long afternoon shadows and vast sky, no drugs or show logos.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+      "status": "generated-installed",
+      "target": {
+        "width": 640,
+        "height": 480,
+        "format": "webp",
+        "maxBytes": 262144
+      },
+      "record": "docs/bank/quality-2026-10-08/art-records/cover-breakingbad.json",
+      "reviewStatus": "phone-size-reviewed"
+    },
+    {
+      "id": "squidgame",
+      "name": "لعبة الحبار",
+      "style": "graphic suspense illustration",
+      "palette": "pink, mint, charcoal",
+      "scene": "An impossible geometric staircase maze inside a colorful empty building, dramatic shadows and playful tension, no copied characters or logos.",
+      "file": "public/media/badeeha-covers/squidgame.webp",
+      "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'لعبة الحبار'. Landscape 4:3 artwork.\nMedium: graphic suspense illustration.\nIntentional palette: pink, mint, charcoal.\nScene: An impossible geometric staircase maze inside a colorful empty building, dramatic shadows and playful tension, no copied characters or logos.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+      "status": "generated-installed",
+      "target": {
+        "width": 640,
+        "height": 480,
+        "format": "webp",
+        "maxBytes": 262144
+      },
+      "record": "docs/bank/quality-2026-10-08/art-records/cover-squidgame.json",
+      "reviewStatus": "phone-size-reviewed"
+    },
+    {
+      "id": "movies",
+      "name": "أفلام عالمية",
+      "style": "cinematic photography",
+      "palette": "deep blue, projector gold, black",
+      "scene": "Light from a vintage film projector crosses a dark theater above empty seats, strong light beam diagonal and glowing dust motes.",
+      "file": "public/media/badeeha-covers/movies.webp",
+      "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'أفلام عالمية'. Landscape 4:3 artwork.\nMedium: cinematic photography.\nIntentional palette: deep blue, projector gold, black.\nScene: Light from a vintage film projector crosses a dark theater above empty seats, strong light beam diagonal and glowing dust motes.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+      "status": "generated-installed",
+      "target": {
+        "width": 640,
+        "height": 480,
+        "format": "webp",
+        "maxBytes": 262144
+      },
+      "record": "docs/bank/quality-2026-10-08/art-records/cover-movies.json",
+      "reviewStatus": "phone-size-reviewed"
+    },
+    {
+      "id": "arabmovies",
+      "name": "أفلام عربية",
+      "style": "painted cinema poster style",
+      "palette": "burgundy, turquoise, warm gold",
+      "scene": "An old neighborhood cinema facade at twilight with blank poster frames and a luminous entrance, original hand-painted atmosphere, no letters.",
+      "file": "public/media/badeeha-covers/arabmovies.webp",
+      "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'أفلام عربية'. Landscape 4:3 artwork.\nMedium: painted cinema poster style.\nIntentional palette: burgundy, turquoise, warm gold.\nScene: An old neighborhood cinema facade at twilight with blank poster frames and a luminous entrance, original hand-painted atmosphere, no letters.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+      "status": "generated-installed",
+      "target": {
+        "width": 640,
+        "height": 480,
+        "format": "webp",
+        "maxBytes": 262144
+      },
+      "record": "docs/bank/quality-2026-10-08/art-records/cover-arabmovies.json",
+      "reviewStatus": "phone-size-reviewed"
+    },
+    {
+      "id": "actors",
+      "name": "ممثلون ونجوم",
+      "style": "backstage editorial photography",
+      "palette": "black, copper, muted cobalt",
+      "scene": "An empty actor dressing-room chair reflected in a mirror with warm bulbs, hanging jacket at frame edge, intimate cinematic composition, no faces.",
+      "file": "public/media/badeeha-covers/actors.webp",
+      "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'ممثلون ونجوم'. Landscape 4:3 artwork.\nMedium: backstage editorial photography.\nIntentional palette: black, copper, muted cobalt.\nScene: An empty actor dressing-room chair reflected in a mirror with warm bulbs, hanging jacket at frame edge, intimate cinematic composition, no faces.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+      "status": "generated-installed",
+      "target": {
+        "width": 640,
+        "height": 480,
+        "format": "webp",
+        "maxBytes": 262144
+      },
+      "record": "docs/bank/quality-2026-10-08/art-records/cover-actors.json",
+      "reviewStatus": "phone-size-reviewed"
+    },
+    {
+      "id": "anime",
+      "name": "أنمي",
+      "style": "original cel-shaded animation illustration",
+      "palette": "sky cyan, scarlet, golden yellow",
+      "scene": "A windswept hill above an imaginative colorful city, a small anonymous adventurer seen from behind, bold hand-drawn linework and dramatic clouds.",
+      "file": "public/media/badeeha-covers/anime.webp",
+      "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'أنمي'. Landscape 4:3 artwork.\nMedium: original cel-shaded animation illustration.\nIntentional palette: sky cyan, scarlet, golden yellow.\nScene: A windswept hill above an imaginative colorful city, a small anonymous adventurer seen from behind, bold hand-drawn linework and dramatic clouds.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+      "status": "generated-installed",
+      "target": {
+        "width": 640,
+        "height": 480,
+        "format": "webp",
+        "maxBytes": 262144
+      },
+      "record": "docs/bank/quality-2026-10-08/art-records/cover-anime.json",
+      "reviewStatus": "phone-size-reviewed"
+    },
+    {
+      "id": "naruto",
+      "name": "ناروتو",
+      "style": "original ink-and-cel illustration",
+      "palette": "orange, forest green, midnight blue",
+      "scene": "A forest training path with a safely stored throwing-tool pouch and a swirling leaf in foreground, energetic ink movement, no franchise marks or exact characters.",
+      "file": "public/media/badeeha-covers/naruto.webp",
+      "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'ناروتو'. Landscape 4:3 artwork.\nMedium: original ink-and-cel illustration.\nIntentional palette: orange, forest green, midnight blue.\nScene: A forest training path with a safely stored throwing-tool pouch and a swirling leaf in foreground, energetic ink movement, no franchise marks or exact characters.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+      "status": "generated-installed",
+      "target": {
+        "width": 640,
+        "height": 480,
+        "format": "webp",
+        "maxBytes": 262144
+      },
+      "record": "docs/bank/quality-2026-10-08/art-records/cover-naruto.json",
+      "reviewStatus": "phone-size-reviewed"
+    },
+    {
+      "id": "onepiece",
+      "name": "ون بيس",
+      "style": "adventure watercolor animation",
+      "palette": "ocean turquoise, golden sand, coral",
+      "scene": "An original small pirate sailing ship navigating radiant islands, exaggerated playful waves, broad panorama, no exact franchise emblems.",
+      "file": "public/media/badeeha-covers/onepiece.webp",
+      "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'ون بيس'. Landscape 4:3 artwork.\nMedium: adventure watercolor animation.\nIntentional palette: ocean turquoise, golden sand, coral.\nScene: An original small pirate sailing ship navigating radiant islands, exaggerated playful waves, broad panorama, no exact franchise emblems.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+      "status": "generated-installed",
+      "target": {
+        "width": 640,
+        "height": 480,
+        "format": "webp",
+        "maxBytes": 262144
+      },
+      "record": "docs/bank/quality-2026-10-08/art-records/cover-onepiece.json",
+      "reviewStatus": "phone-size-reviewed"
+    },
+    {
+      "id": "dragonball",
+      "name": "دراغون بول",
+      "style": "energetic cel-shaded illustration",
+      "palette": "sunset orange, royal blue, lemon yellow",
+      "scene": "A rocky training plateau beneath dramatic streaked clouds and a glowing abstract energy arc, original martial-arts adventure environment, no exact characters.",
+      "file": "public/media/badeeha-covers/dragonball.webp",
+      "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'دراغون بول'. Landscape 4:3 artwork.\nMedium: energetic cel-shaded illustration.\nIntentional palette: sunset orange, royal blue, lemon yellow.\nScene: A rocky training plateau beneath dramatic streaked clouds and a glowing abstract energy arc, original martial-arts adventure environment, no exact characters.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+      "status": "generated-installed",
+      "target": {
+        "width": 640,
+        "height": 480,
+        "format": "webp",
+        "maxBytes": 262144
+      },
+      "record": "docs/bank/quality-2026-10-08/art-records/cover-dragonball.json",
+      "reviewStatus": "phone-size-reviewed"
+    },
+    {
+      "id": "aot",
+      "name": "هجوم العمالقة",
+      "style": "dramatic ink-wash illustration",
+      "palette": "slate blue, forest green, warm grey",
+      "scene": "A colossal fictional fortified wall towers over tiny rooftops under storm clouds, epic perspective, no giants or graphic violence.",
+      "file": "public/media/badeeha-covers/aot.webp",
+      "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'هجوم العمالقة'. Landscape 4:3 artwork.\nMedium: dramatic ink-wash illustration.\nIntentional palette: slate blue, forest green, warm grey.\nScene: A colossal fictional fortified wall towers over tiny rooftops under storm clouds, epic perspective, no giants or graphic violence.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+      "status": "generated-installed",
+      "target": {
+        "width": 640,
+        "height": 480,
+        "format": "webp",
+        "maxBytes": 262144
+      },
+      "record": "docs/bank/quality-2026-10-08/art-records/cover-aot.json",
+      "reviewStatus": "phone-size-reviewed"
+    },
+    {
+      "id": "deathnote",
+      "name": "ديث نوت",
+      "style": "moody graphic illustration",
+      "palette": "black, crimson, cold white",
+      "scene": "A plain closed black notebook on a rain-lit windowsill with a red apple nearby, stark asymmetrical composition, no lettering or identifiable props from source artwork.",
+      "file": "public/media/badeeha-covers/deathnote.webp",
+      "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'ديث نوت'. Landscape 4:3 artwork.\nMedium: moody graphic illustration.\nIntentional palette: black, crimson, cold white.\nScene: A plain closed black notebook on a rain-lit windowsill with a red apple nearby, stark asymmetrical composition, no lettering or identifiable props from source artwork.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+      "status": "generated-installed",
+      "target": {
+        "width": 640,
+        "height": 480,
+        "format": "webp",
+        "maxBytes": 262144
+      },
+      "record": "docs/bank/quality-2026-10-08/art-records/cover-deathnote.json",
+      "reviewStatus": "phone-size-reviewed"
+    },
+    {
+      "id": "demonslayer",
+      "name": "قاتل الشياطين",
+      "style": "original cel-shaded night landscape",
+      "palette": "wisteria violet, forest green, silver",
+      "scene": "A moonlit path through wisteria and bamboo with a safely sheathed sword in foreground, clean expressive illustration and drifting petals.",
+      "file": "public/media/badeeha-covers/demonslayer.webp",
+      "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'قاتل الشياطين'. Landscape 4:3 artwork.\nMedium: original cel-shaded night landscape.\nIntentional palette: wisteria violet, forest green, silver.\nScene: A moonlit path through wisteria and bamboo with a safely sheathed sword in foreground, clean expressive illustration and drifting petals.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+      "status": "generated-installed",
+      "target": {
+        "width": 640,
+        "height": 480,
+        "format": "webp",
+        "maxBytes": 262144
+      },
+      "record": "docs/bank/quality-2026-10-08/art-records/cover-demonslayer.json",
+      "reviewStatus": "phone-size-reviewed"
+    },
+    {
+      "id": "jujutsu",
+      "name": "جوجوتسو كايسن",
+      "style": "original graphic action illustration",
+      "palette": "purple, cyan, black",
+      "scene": "An empty urban alley filled with abstract violet energy ribbons, bold perspective, no characters or symbols.",
+      "file": "public/media/badeeha-covers/jujutsu.webp",
+      "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'جوجوتسو كايسن'. Landscape 4:3 artwork.\nMedium: original graphic action illustration.\nIntentional palette: purple, cyan, black.\nScene: An empty urban alley filled with abstract violet energy ribbons, bold perspective, no characters or symbols.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+      "status": "generated-installed",
+      "target": {
+        "width": 640,
+        "height": 480,
+        "format": "webp",
+        "maxBytes": 262144
+      },
+      "record": "docs/bank/quality-2026-10-08/art-records/cover-jujutsu.json",
+      "reviewStatus": "phone-size-reviewed"
+    },
+    {
+      "id": "hunterxhunter",
+      "name": "هنتر × هنتر",
+      "style": "adventure gouache illustration",
+      "palette": "leaf green, coral, gold",
+      "scene": "An original explorer compass and backpack at a forest trail branching toward distant mountains, vibrant hand-painted adventure scene.",
+      "file": "public/media/badeeha-covers/hunterxhunter.webp",
+      "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'هنتر × هنتر'. Landscape 4:3 artwork.\nMedium: adventure gouache illustration.\nIntentional palette: leaf green, coral, gold.\nScene: An original explorer compass and backpack at a forest trail branching toward distant mountains, vibrant hand-painted adventure scene.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+      "status": "generated-installed",
+      "target": {
+        "width": 640,
+        "height": 480,
+        "format": "webp",
+        "maxBytes": 262144
+      },
+      "record": "docs/bank/quality-2026-10-08/art-records/cover-hunterxhunter.json",
+      "reviewStatus": "phone-size-reviewed"
+    },
+    {
+      "id": "spacetoon",
+      "name": "سبيستون",
+      "style": "nostalgic 2D space illustration",
+      "palette": "cobalt, tangerine, star yellow",
+      "scene": "A friendly imaginary small spaceship arcs between colorful planets and stars, hand-painted television-animation warmth, no brand logo or characters.",
+      "file": "public/media/badeeha-covers/spacetoon.webp",
+      "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'سبيستون'. Landscape 4:3 artwork.\nMedium: nostalgic 2D space illustration.\nIntentional palette: cobalt, tangerine, star yellow.\nScene: A friendly imaginary small spaceship arcs between colorful planets and stars, hand-painted television-animation warmth, no brand logo or characters.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+      "status": "generated-installed",
+      "target": {
+        "width": 640,
+        "height": 480,
+        "format": "webp",
+        "maxBytes": 262144
+      },
+      "record": "docs/bank/quality-2026-10-08/art-records/cover-spacetoon.json",
+      "reviewStatus": "phone-size-reviewed"
+    },
+    {
+      "id": "cartoon",
+      "name": "كرتون",
+      "style": "playful hand-drawn illustration",
+      "palette": "turquoise, cherry red, sunny yellow",
+      "scene": "An original whimsical cartoon neighborhood with elastic curved rooftops and a winding street, clean bold outlines and lively scale.",
+      "file": "public/media/badeeha-covers/cartoon.webp",
+      "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'كرتون'. Landscape 4:3 artwork.\nMedium: playful hand-drawn illustration.\nIntentional palette: turquoise, cherry red, sunny yellow.\nScene: An original whimsical cartoon neighborhood with elastic curved rooftops and a winding street, clean bold outlines and lively scale.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+      "status": "generated-installed",
+      "target": {
+        "width": 640,
+        "height": 480,
+        "format": "webp",
+        "maxBytes": 262144
+      },
+      "record": "docs/bank/quality-2026-10-08/art-records/cover-cartoon.json",
+      "reviewStatus": "phone-size-reviewed"
+    },
+    {
+      "id": "videogames",
+      "name": "ألعاب فيديو",
+      "style": "stylized game-world illustration",
+      "palette": "electric purple, lime, cobalt",
+      "scene": "A game controller in the foreground opens into a layered original platforming world, crisp graphic shapes, no interface text or recognizable game assets.",
+      "file": "public/media/badeeha-covers/videogames.webp",
+      "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'ألعاب فيديو'. Landscape 4:3 artwork.\nMedium: stylized game-world illustration.\nIntentional palette: electric purple, lime, cobalt.\nScene: A game controller in the foreground opens into a layered original platforming world, crisp graphic shapes, no interface text or recognizable game assets.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+      "status": "generated-installed",
+      "target": {
+        "width": 640,
+        "height": 480,
+        "format": "webp",
+        "maxBytes": 262144
+      },
+      "record": "docs/bank/quality-2026-10-08/art-records/cover-videogames.json",
+      "reviewStatus": "phone-size-reviewed"
+    },
+    {
+      "id": "puzzles",
+      "name": "ألغاز وذكاء",
+      "style": "surreal editorial illustration",
+      "palette": "cobalt, coral, pale yellow",
+      "scene": "An elegant impossible-looking but coherent arrangement of interlocking wooden pathways and a single key, perspective puzzle atmosphere without a specific solvable card.",
+      "file": "public/media/badeeha-covers/puzzles.webp",
+      "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'ألغاز وذكاء'. Landscape 4:3 artwork.\nMedium: surreal editorial illustration.\nIntentional palette: cobalt, coral, pale yellow.\nScene: An elegant impossible-looking but coherent arrangement of interlocking wooden pathways and a single key, perspective puzzle atmosphere without a specific solvable card.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+      "status": "generated-installed",
+      "target": {
+        "width": 640,
+        "height": 480,
+        "format": "webp",
+        "maxBytes": 262144
+      },
+      "record": "docs/bank/quality-2026-10-08/art-records/cover-puzzles.json",
+      "reviewStatus": "phone-size-reviewed"
+    },
+    {
+      "id": "emoji",
+      "name": "إيموجي",
+      "style": "playful sculptural paper collage",
+      "palette": "tangerine, violet, aqua",
+      "scene": "Original expressive round paper faces and abstract thought shapes interact across a bold diagonal composition, no existing emoji font rendering.",
+      "file": "public/media/badeeha-covers/emoji.webp",
+      "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'إيموجي'. Landscape 4:3 artwork.\nMedium: playful sculptural paper collage.\nIntentional palette: tangerine, violet, aqua.\nScene: Original expressive round paper faces and abstract thought shapes interact across a bold diagonal composition, no existing emoji font rendering.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+      "status": "generated-installed",
+      "target": {
+        "width": 640,
+        "height": 480,
+        "format": "webp",
+        "maxBytes": 262144
+      },
+      "record": "docs/bank/quality-2026-10-08/art-records/cover-emoji.json",
+      "reviewStatus": "phone-size-reviewed"
+    },
+    {
+      "id": "hidden",
+      "name": "البطة المخفية",
+      "style": "detailed narrative illustration",
+      "palette": "pond green, duck gold, soft blue",
+      "scene": "A lush pond with reeds, rounded leaves and a small friendly duck partly hidden among them, readable cover composition, not a reused question grid.",
+      "file": "public/media/badeeha-covers/hidden.webp",
+      "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'البطة المخفية'. Landscape 4:3 artwork.\nMedium: detailed narrative illustration.\nIntentional palette: pond green, duck gold, soft blue.\nScene: A lush pond with reeds, rounded leaves and a small friendly duck partly hidden among them, readable cover composition, not a reused question grid.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+      "status": "generated-installed",
+      "target": {
+        "width": 640,
+        "height": 480,
+        "format": "webp",
+        "maxBytes": 262144
+      },
+      "record": "docs/bank/quality-2026-10-08/art-records/cover-hidden.json",
+      "reviewStatus": "phone-size-reviewed"
+    },
+    {
+      "id": "completeproverb",
+      "name": "أكمل المثل",
+      "style": "folk-inspired editorial illustration",
+      "palette": "terracotta, indigo, cream",
+      "scene": "A patterned storytelling rug whose woven motif continues into an unfinished corner, a visual metaphor for completing a story, no specific proverb or text.",
+      "file": "public/media/badeeha-covers/completeproverb.webp",
+      "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'أكمل المثل'. Landscape 4:3 artwork.\nMedium: folk-inspired editorial illustration.\nIntentional palette: terracotta, indigo, cream.\nScene: A patterned storytelling rug whose woven motif continues into an unfinished corner, a visual metaphor for completing a story, no specific proverb or text.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+      "status": "generated-installed",
+      "target": {
+        "width": 640,
+        "height": 480,
+        "format": "webp",
+        "maxBytes": 262144
+      },
+      "record": "docs/bank/quality-2026-10-08/art-records/cover-completeproverb.json",
+      "reviewStatus": "phone-size-reviewed"
+    },
+    {
+      "id": "beforeafter",
+      "name": "قبل ولا بعد",
+      "style": "conceptual split-light illustration",
+      "palette": "dawn coral, midnight blue, gold",
+      "scene": "One winding pathway transitions from sunrise to starry night across a single coherent landscape, symbolic passage of time, no clocks with legible numbers.",
+      "file": "public/media/badeeha-covers/beforeafter.webp",
+      "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'قبل ولا بعد'. Landscape 4:3 artwork.\nMedium: conceptual split-light illustration.\nIntentional palette: dawn coral, midnight blue, gold.\nScene: One winding pathway transitions from sunrise to starry night across a single coherent landscape, symbolic passage of time, no clocks with legible numbers.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+      "status": "generated-installed",
+      "target": {
+        "width": 640,
+        "height": 480,
+        "format": "webp",
+        "maxBytes": 262144
+      },
+      "record": "docs/bank/quality-2026-10-08/art-records/cover-beforeafter.json",
+      "reviewStatus": "phone-size-reviewed"
+    },
+    {
+      "id": "commonbond",
+      "name": "القاسم المشترك",
+      "style": "clean conceptual paper illustration",
+      "palette": "mint, coral, dark blue",
+      "scene": "Three differently shaped paper islands connect to a single central bridge knot, abstract shared connection, no actual question answers.",
+      "file": "public/media/badeeha-covers/commonbond.webp",
+      "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'القاسم المشترك'. Landscape 4:3 artwork.\nMedium: clean conceptual paper illustration.\nIntentional palette: mint, coral, dark blue.\nScene: Three differently shaped paper islands connect to a single central bridge knot, abstract shared connection, no actual question answers.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+      "status": "generated-installed",
+      "target": {
+        "width": 640,
+        "height": 480,
+        "format": "webp",
+        "maxBytes": 262144
+      },
+      "record": "docs/bank/quality-2026-10-08/art-records/cover-commonbond.json",
+      "reviewStatus": "phone-size-reviewed"
+    },
+    {
+      "id": "code",
+      "name": "الشفرة",
+      "style": "technical ink illustration",
+      "palette": "charcoal, emerald, brass",
+      "scene": "An original mechanical cipher wheel with abstract unlettered marks and interlocking gears under slanting light, no readable code or digits.",
+      "file": "public/media/badeeha-covers/code.webp",
+      "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'الشفرة'. Landscape 4:3 artwork.\nMedium: technical ink illustration.\nIntentional palette: charcoal, emerald, brass.\nScene: An original mechanical cipher wheel with abstract unlettered marks and interlocking gears under slanting light, no readable code or digits.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+      "status": "generated-installed",
+      "target": {
+        "width": 640,
+        "height": 480,
+        "format": "webp",
+        "maxBytes": 262144
+      },
+      "record": "docs/bank/quality-2026-10-08/art-records/cover-code.json",
+      "reviewStatus": "phone-size-reviewed"
+    },
+    {
+      "id": "hints",
+      "name": "تلميحات",
+      "style": "editorial detective scene",
+      "palette": "petrol blue, amber, brick red",
+      "scene": "A magnifying glass casts a circular light across three subtle footprints on a textured path, mysterious but inviting, no written clues.",
+      "file": "public/media/badeeha-covers/hints.webp",
+      "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'تلميحات'. Landscape 4:3 artwork.\nMedium: editorial detective scene.\nIntentional palette: petrol blue, amber, brick red.\nScene: A magnifying glass casts a circular light across three subtle footprints on a textured path, mysterious but inviting, no written clues.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+      "status": "generated-installed",
+      "target": {
+        "width": 640,
+        "height": 480,
+        "format": "webp",
+        "maxBytes": 262144
+      },
+      "record": "docs/bank/quality-2026-10-08/art-records/cover-hints.json",
+      "reviewStatus": "phone-size-reviewed"
+    },
+    {
+      "id": "flags",
+      "name": "أعلام",
+      "style": "editorial textile collage",
+      "palette": "navy, red, white, azure, yellow",
+      "scene": "Faithful Japanese, Swiss and Ukrainian flag cloths around a stylized globe.",
+      "file": "public/media/badeeha-covers/flags.webp",
+      "prompt": "Create ONE premium category cover for a flag-identification quiz in Arabic game Maydan. Landscape 4:3, bold editorial textile collage with richly folded cloth against a deep navy blue spherical globe and a turquoise atmosphere. Three clearly recognizable national flags sweeping diagonally: Japan's WHITE rectangular flag with exactly ONE RED CIRCLE at centre, Switzerland's RED SQUARE with a WHITE equilateral upright cross at centre, Ukraine's horizontal BLUE upper half and YELLOW lower half. Keep all national patterns faithful and simple, no invented extra symbols. Cloth movement and layered composition, clean silhouettes legible at 160px, celebratory natural light. IMPORTANT this is about FLAGS, no faces, statues, monuments, books, blank ribbons or text. Full bleed, no ivory studio background, no logo, no watermark, no lettering.",
+      "status": "generated-installed",
+      "target": {
+        "width": 640,
+        "height": 480,
+        "format": "webp",
+        "maxBytes": 262144
+      },
+      "record": "docs/bank/quality-2026-10-08/art-records/cover-flags.json",
+      "reviewStatus": "phone-size-reviewed"
+    },
+    {
+      "id": "zoom",
+      "name": "زووم",
+      "style": "macro photography",
+      "palette": "charcoal, copper, forest green",
+      "scene": "An extreme macro of beautiful leaf veins and a curving magnifier rim, tactile natural detail, off-center composition, no complete identifiable question subject.",
+      "file": "public/media/badeeha-covers/zoom.webp",
+      "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'زووم'. Landscape 4:3 artwork.\nMedium: macro photography.\nIntentional palette: charcoal, copper, forest green.\nScene: An extreme macro of beautiful leaf veins and a curving magnifier rim, tactile natural detail, off-center composition, no complete identifiable question subject.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+      "status": "generated-installed",
+      "target": {
+        "width": 640,
+        "height": 480,
+        "format": "webp",
+        "maxBytes": 262144
+      },
+      "record": "docs/bank/quality-2026-10-08/art-records/cover-zoom.json",
+      "reviewStatus": "phone-size-reviewed"
+    },
+    {
+      "id": "blur",
+      "name": "وضّح شوي",
+      "style": "cinematic environmental photography",
+      "palette": "dark teal, amber, soft coral",
+      "scene": "A rain-speckled glass pane partly obscures a luminous street scene, one sharp droplet in foreground, atmospheric focus contrast, no question subject.",
+      "file": "public/media/badeeha-covers/blur.webp",
+      "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'وضّح شوي'. Landscape 4:3 artwork.\nMedium: cinematic environmental photography.\nIntentional palette: dark teal, amber, soft coral.\nScene: A rain-speckled glass pane partly obscures a luminous street scene, one sharp droplet in foreground, atmospheric focus contrast, no question subject.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+      "status": "generated-installed",
+      "target": {
+        "width": 640,
+        "height": 480,
+        "format": "webp",
+        "maxBytes": 262144
+      },
+      "record": "docs/bank/quality-2026-10-08/art-records/cover-blur.json",
+      "reviewStatus": "phone-size-reviewed"
+    },
+    {
+      "id": "reveal",
+      "name": "إكشفني",
+      "style": "editorial layered-paper portrait",
+      "palette": "burgundy, navy, soft peach",
+      "scene": "An anonymous fictional adult face partly concealed by sliding colorful paper panels, artful portrait with clear expression, not a real question identity.",
+      "file": "public/media/badeeha-covers/reveal.webp",
+      "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'إكشفني'. Landscape 4:3 artwork.\nMedium: editorial layered-paper portrait.\nIntentional palette: burgundy, navy, soft peach.\nScene: An anonymous fictional adult face partly concealed by sliding colorful paper panels, artful portrait with clear expression, not a real question identity.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+      "status": "generated-installed",
+      "target": {
+        "width": 640,
+        "height": 480,
+        "format": "webp",
+        "maxBytes": 262144
+      },
+      "record": "docs/bank/quality-2026-10-08/art-records/cover-reveal.json",
+      "reviewStatus": "phone-size-reviewed"
+    },
+    {
+      "id": "silhouette",
+      "name": "صور غامضة",
+      "style": "layered paper-cut shadow illustration",
+      "palette": "night blue, silver, violet",
+      "scene": "Overlapping abstract sculptural silhouettes project intriguing shadows on a deep blue wall, one crescent of light, no reuse of a question object.",
+      "file": "public/media/badeeha-covers/silhouette.webp",
+      "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'صور غامضة'. Landscape 4:3 artwork.\nMedium: layered paper-cut shadow illustration.\nIntentional palette: night blue, silver, violet.\nScene: Overlapping abstract sculptural silhouettes project intriguing shadows on a deep blue wall, one crescent of light, no reuse of a question object.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+      "status": "generated-installed",
+      "target": {
+        "width": 640,
+        "height": 480,
+        "format": "webp",
+        "maxBytes": 262144
+      },
+      "record": "docs/bank/quality-2026-10-08/art-records/cover-silhouette.json",
+      "reviewStatus": "phone-size-reviewed"
+    },
+    {
+      "id": "guesscar",
+      "name": "خمن السيارة",
+      "style": "automotive photography",
+      "palette": "steel blue, racing red, asphalt",
+      "scene": "An anonymous original performance-car front corner emerging from a mountain tunnel, dramatic side light, no logo or identifiable real model.",
+      "file": "public/media/badeeha-covers/guesscar.webp",
+      "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'خمن السيارة'. Landscape 4:3 artwork.\nMedium: automotive photography.\nIntentional palette: steel blue, racing red, asphalt.\nScene: An anonymous original performance-car front corner emerging from a mountain tunnel, dramatic side light, no logo or identifiable real model.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+      "status": "generated-installed",
+      "target": {
+        "width": 640,
+        "height": 480,
+        "format": "webp",
+        "maxBytes": 262144
+      },
+      "record": "docs/bank/quality-2026-10-08/art-records/cover-guesscar.json",
+      "reviewStatus": "phone-size-reviewed"
+    },
+    {
+      "id": "placefinder",
+      "name": "وين المكان؟",
+      "style": "architectural travel illustration",
+      "palette": "sandstone, sky blue, burnt orange",
+      "scene": "A winding path through an imaginary richly detailed hilltop town and a small map pin shape, warm travel-poster composition, not a real answer landmark.",
+      "file": "public/media/badeeha-covers/placefinder.webp",
+      "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'وين المكان؟'. Landscape 4:3 artwork.\nMedium: architectural travel illustration.\nIntentional palette: sandstone, sky blue, burnt orange.\nScene: A winding path through an imaginary richly detailed hilltop town and a small map pin shape, warm travel-poster composition, not a real answer landmark.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+      "status": "generated-installed",
+      "target": {
+        "width": 640,
+        "height": 480,
+        "format": "webp",
+        "maxBytes": 262144
+      },
+      "record": "docs/bank/quality-2026-10-08/art-records/cover-placefinder.json",
+      "reviewStatus": "phone-size-reviewed"
+    },
+    {
+      "id": "tilepuzzle",
+      "name": "ركّبها صح",
+      "style": "rich gouache illustration",
+      "palette": "olive green, coral, cream",
+      "scene": "A painted landscape breaks into a few floating rectangular puzzle tiles that align into a vibrant valley, clear large shapes, no real question image.",
+      "file": "public/media/badeeha-covers/tilepuzzle.webp",
+      "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'ركّبها صح'. Landscape 4:3 artwork.\nMedium: rich gouache illustration.\nIntentional palette: olive green, coral, cream.\nScene: A painted landscape breaks into a few floating rectangular puzzle tiles that align into a vibrant valley, clear large shapes, no real question image.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+      "status": "generated-installed",
+      "target": {
+        "width": 640,
+        "height": 480,
+        "format": "webp",
+        "maxBytes": 262144
+      },
+      "record": "docs/bank/quality-2026-10-08/art-records/cover-tilepuzzle.json",
+      "reviewStatus": "phone-size-reviewed"
+    },
+    {
+      "id": "spotdiff",
+      "name": "اكتشف الفرق",
+      "style": "isometric narrative illustration",
+      "palette": "turquoise, yellow, coral",
+      "scene": "Two playful miniature rooms side by side with a small deliberate decorative difference, original cover-only scene, lively coherent colors.",
+      "file": "public/media/badeeha-covers/spotdiff.webp",
+      "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'اكتشف الفرق'. Landscape 4:3 artwork.\nMedium: isometric narrative illustration.\nIntentional palette: turquoise, yellow, coral.\nScene: Two playful miniature rooms side by side with a small deliberate decorative difference, original cover-only scene, lively coherent colors.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+      "status": "generated-installed",
+      "target": {
+        "width": 640,
+        "height": 480,
+        "format": "webp",
+        "maxBytes": 262144
+      },
+      "record": "docs/bank/quality-2026-10-08/art-records/cover-spotdiff.json",
+      "reviewStatus": "phone-size-reviewed"
+    },
+    {
+      "id": "sound",
+      "name": "خمن الصوت",
+      "style": "expressive editorial illustration",
+      "palette": "ultramarine, orange, gold",
+      "scene": "A brass gramophone horn releases abstract colorful sound ribbons into a night-blue atmosphere, tactile painterly texture, no notation or lettering.",
+      "file": "public/media/badeeha-covers/sound.webp",
+      "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'خمن الصوت'. Landscape 4:3 artwork.\nMedium: expressive editorial illustration.\nIntentional palette: ultramarine, orange, gold.\nScene: A brass gramophone horn releases abstract colorful sound ribbons into a night-blue atmosphere, tactile painterly texture, no notation or lettering.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+      "status": "generated-installed",
+      "target": {
+        "width": 640,
+        "height": 480,
+        "format": "webp",
+        "maxBytes": 262144
+      },
+      "record": "docs/bank/quality-2026-10-08/art-records/cover-sound.json",
+      "reviewStatus": "phone-size-reviewed"
+    }
+  ]
+}

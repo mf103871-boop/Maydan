@@ -11,7 +11,8 @@
       "topic": "الشعر القديم",
       "verified": true,
       "difficultyTarget": 0.8,
-      "sourceUrl": "https://www.safahat.org/contributors/47539208/"
+      "sourceUrl": "https://www.safahat.org/contributors/47539208/",
+      "alt": []
     },
     {
       "qid": "arabliterature-200-912",
@@ -21,7 +22,8 @@
       "topic": "المصطلحات والنقد",
       "verified": true,
       "difficultyTarget": 0.8,
-      "sourceUrl": "https://www.safahat.org/books/50259706/"
+      "sourceUrl": "https://www.safahat.org/books/50259706/",
+      "alt": []
     },
     {
       "qid": "arabliterature-200-913",
@@ -31,7 +33,8 @@
       "topic": "الرواية والقصة",
       "verified": true,
       "difficultyTarget": 0.8,
-      "sourceUrl": "https://www.safahat.org/contributors/59624258/"
+      "sourceUrl": "https://www.safahat.org/contributors/59624258/",
+      "alt": []
     },
     {
       "topic": "النثر والكتب التراثية",
@@ -41,7 +44,8 @@
       "verified": true,
       "p": 200,
       "qid": "arabliterature-200-914",
-      "difficultyTarget": 0.8
+      "difficultyTarget": 0.8,
+      "alt": []
     },
     {
       "qid": "arabliterature-200-915",
@@ -51,7 +55,8 @@
       "topic": "المسرح والدراما",
       "verified": true,
       "difficultyTarget": 0.8,
-      "sourceUrl": "https://www.safahat.org/contributors/80628197/"
+      "sourceUrl": "https://www.safahat.org/contributors/80628197/",
+      "alt": []
     },
     {
       "topic": "الحكايات والشخصيات",
@@ -74,7 +79,8 @@
       "topic": "الرواية والقصة",
       "verified": true,
       "difficultyTarget": 0.8,
-      "sourceUrl": "https://www.safahat.org/books/29179502/"
+      "sourceUrl": "https://www.safahat.org/books/29179502/",
+      "alt": []
     },
     {
       "qid": "arabliterature-200-918",
@@ -84,7 +90,8 @@
       "topic": "الشعر الحديث",
       "verified": true,
       "difficultyTarget": 0.8,
-      "sourceUrl": "https://www.safahat.org/books/70706142/"
+      "sourceUrl": "https://www.safahat.org/books/70706142/",
+      "alt": []
     },
     {
       "qid": "arabliterature-400-911",
@@ -94,17 +101,19 @@
       "topic": "النثر والكتب التراثية",
       "verified": true,
       "difficultyTarget": 0.6,
-      "sourceUrl": "https://www.safahat.org/books/95904020/"
+      "sourceUrl": "https://www.safahat.org/books/95904020/",
+      "alt": []
     },
     {
       "qid": "arabliterature-400-912",
       "p": 400,
-      "q": "ما الحرف الذي يجعل القصيدة تُسمّى نونية أو ميمية؟",
+      "q": "قصيدة تسمى نونية وأخرى ميمية؛ ما اسم الحرف الذي يحدد هذه التسمية؟",
       "a": "الروي",
       "topic": "المصطلحات والنقد",
       "verified": true,
       "difficultyTarget": 0.6,
-      "sourceUrl": "https://www.safahat.org/books/50259706/2.1/"
+      "sourceUrl": "https://www.safahat.org/books/50259706/2.1/",
+      "alt": []
     },
     {
       "qid": "arabliterature-400-913",
@@ -114,7 +123,8 @@
       "topic": "سير الأدباء وأماكنهم",
       "verified": true,
       "difficultyTarget": 0.6,
-      "sourceUrl": "https://www.safahat.org/contributors/85274958/"
+      "sourceUrl": "https://www.safahat.org/contributors/85274958/",
+      "alt": []
     },
     {
       "qid": "arabliterature-400-914",
@@ -124,7 +134,8 @@
       "topic": "الشعر الحديث",
       "verified": true,
       "difficultyTarget": 0.6,
-      "sourceUrl": "https://www.safahat.org/contributors/85274958/"
+      "sourceUrl": "https://www.safahat.org/contributors/85274958/",
+      "alt": []
     },
     {
       "qid": "arabliterature-400-915",
@@ -148,7 +159,8 @@
       "topic": "المسرح والدراما",
       "verified": true,
       "difficultyTarget": 0.6,
-      "sourceUrl": "https://www.safahat.org/contributors/80628197/"
+      "sourceUrl": "https://www.safahat.org/contributors/80628197/",
+      "alt": []
     },
     {
       "qid": "arabliterature-400-917",
@@ -158,7 +170,8 @@
       "topic": "الحكايات والشخصيات",
       "verified": true,
       "difficultyTarget": 0.6,
-      "sourceUrl": "https://ar.wikisource.org/wiki/ألف_ليلة_وليلة/السندباد_البحري"
+      "sourceUrl": "https://ar.wikisource.org/wiki/ألف_ليلة_وليلة/السندباد_البحري",
+      "alt": []
     },
     {
       "qid": "arabliterature-400-918",
@@ -168,7 +181,8 @@
       "topic": "الرواية والقصة",
       "verified": true,
       "difficultyTarget": 0.6,
-      "sourceUrl": "https://www.safahat.org/books/85802403/"
+      "sourceUrl": "https://www.safahat.org/books/85802403/",
+      "alt": []
     },
     {
       "qid": "arabliterature-600-911",
@@ -178,17 +192,19 @@
       "topic": "النثر والكتب التراثية",
       "verified": true,
       "difficultyTarget": 0.4,
-      "sourceUrl": "https://www.safahat.org/books/50259706/"
+      "sourceUrl": "https://www.safahat.org/books/50259706/",
+      "alt": []
     },
     {
       "qid": "arabliterature-600-912",
       "p": 600,
-      "q": "ما الفن البديعي الذي يستبدل السبب المعروف للظاهرة بسبب شعري لطيف؟",
+      "q": "شاعر يستبدل السبب الحقيقي للظاهرة بسبب لطيف متخيل؛ ما هذا الفن البديعي؟",
       "a": "حسن التعليل",
       "topic": "المصطلحات والنقد",
       "verified": true,
       "difficultyTarget": 0.4,
-      "sourceUrl": "https://www.safahat.org/books/85925824/3.1/"
+      "sourceUrl": "https://www.safahat.org/books/85925824/3.1/",
+      "alt": []
     },
     {
       "qid": "arabliterature-600-913",
@@ -198,7 +214,8 @@
       "topic": "النثر والكتب التراثية",
       "verified": true,
       "difficultyTarget": 0.4,
-      "sourceUrl": "https://www.safahat.org/contributors/19203514/"
+      "sourceUrl": "https://www.safahat.org/contributors/19203514/",
+      "alt": []
     },
     {
       "qid": "arabliterature-600-914",
@@ -208,7 +225,8 @@
       "topic": "الحكايات والشخصيات",
       "verified": true,
       "difficultyTarget": 0.4,
-      "sourceUrl": "https://ar.wikisource.org/wiki/معلقة_زهير_بن_أبي_سلمى"
+      "sourceUrl": "https://ar.wikisource.org/wiki/معلقة_زهير_بن_أبي_سلمى",
+      "alt": []
     },
     {
       "qid": "arabliterature-600-915",
@@ -218,7 +236,8 @@
       "topic": "الشعر القديم",
       "verified": true,
       "difficultyTarget": 0.4,
-      "sourceUrl": "https://ar.wikisource.org/wiki/معلقة_امرئ_القيس"
+      "sourceUrl": "https://ar.wikisource.org/wiki/معلقة_امرئ_القيس",
+      "alt": []
     },
     {
       "qid": "arabliterature-600-916",
@@ -241,7 +260,8 @@
       "topic": "المسرح والدراما",
       "verified": true,
       "difficultyTarget": 0.4,
-      "sourceUrl": "https://www.safahat.org/books/24806246/"
+      "sourceUrl": "https://www.safahat.org/books/24806246/",
+      "alt": []
     },
     {
       "qid": "arabliterature-600-918",
@@ -251,7 +271,8 @@
       "topic": "الرواية والقصة",
       "verified": true,
       "difficultyTarget": 0.4,
-      "sourceUrl": "https://www.safahat.org/books/85847308/"
+      "sourceUrl": "https://www.safahat.org/books/85847308/",
+      "alt": []
     },
     {
       "qid": "arabliterature-800-911",
@@ -261,17 +282,19 @@
       "topic": "النثر والكتب التراثية",
       "verified": true,
       "difficultyTarget": 0.25,
-      "sourceUrl": "https://www.safahat.org/contributors/47539208/"
+      "sourceUrl": "https://www.safahat.org/contributors/47539208/",
+      "alt": []
     },
     {
       "qid": "arabliterature-800-912",
       "p": 800,
-      "q": "بم يسمّى تسكين الحرف الثاني من تفعيلة «متفاعلن»؟",
+      "q": "سُكّن الحرف الثاني من «متفاعلن»؛ ما اسم هذا الزحاف؟",
       "a": "الإضمار",
       "topic": "المصطلحات والنقد",
       "verified": true,
       "difficultyTarget": 0.25,
-      "sourceUrl": "https://www.safahat.org/books/50259706/1.1/"
+      "sourceUrl": "https://www.safahat.org/books/50259706/1.1/",
+      "alt": []
     },
     {
       "qid": "arabliterature-800-913",
@@ -281,7 +304,8 @@
       "topic": "المصطلحات والنقد",
       "verified": true,
       "difficultyTarget": 0.25,
-      "sourceUrl": "https://www.safahat.org/books/50259706/1.1/"
+      "sourceUrl": "https://www.safahat.org/books/50259706/1.1/",
+      "alt": []
     },
     {
       "qid": "arabliterature-800-914",
@@ -291,7 +315,8 @@
       "topic": "النثر والكتب التراثية",
       "verified": true,
       "difficultyTarget": 0.25,
-      "sourceUrl": "https://www.safahat.org/contributors/19203514/"
+      "sourceUrl": "https://www.safahat.org/contributors/19203514/",
+      "alt": []
     },
     {
       "topic": "الشعر القديم",
@@ -301,7 +326,8 @@
       "verified": true,
       "p": 800,
       "qid": "arabliterature-800-915",
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.25,
+      "alt": []
     },
     {
       "qid": "arabliterature-800-916",
@@ -311,7 +337,8 @@
       "topic": "الحكايات والشخصيات",
       "verified": true,
       "difficultyTarget": 0.25,
-      "sourceUrl": "https://ar.wikisource.org/wiki/كليلة_ودمنة/باب_الحمامة_المطوقة"
+      "sourceUrl": "https://ar.wikisource.org/wiki/كليلة_ودمنة/باب_الحمامة_المطوقة",
+      "alt": []
     },
     {
       "qid": "arabliterature-800-917",
@@ -321,7 +348,8 @@
       "topic": "المسرح والدراما",
       "verified": true,
       "difficultyTarget": 0.25,
-      "sourceUrl": "https://www.safahat.org/books/18292682/"
+      "sourceUrl": "https://www.safahat.org/books/18292682/",
+      "alt": []
     },
     {
       "qid": "arabliterature-800-918",
@@ -331,7 +359,8 @@
       "topic": "الرواية والقصة",
       "verified": true,
       "difficultyTarget": 0.25,
-      "sourceUrl": "https://www.safahat.org/books/62575295/"
+      "sourceUrl": "https://www.safahat.org/books/62575295/",
+      "alt": []
     },
     {
       "topic": "سير الأدباء وأماكنهم",
@@ -341,11 +370,12 @@
       "verified": true,
       "p": 1000,
       "qid": "arabliterature-1000-911",
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.15,
+      "alt": []
     },
     {
       "topic": "المصطلحات والنقد",
-      "q": "ما اسم ألف القافية التي يفصلها حرف متحرك عن حرفها الأساسي، مثل ألف «جاهل»؟",
+      "q": "ألف «جاهل» يفصلها حرف متحرك عن الروي؛ ما اسمها في القافية؟",
       "a": "ألف التأسيس",
       "sourceUrl": "https://www.safahat.org/books/50259706/2.1/",
       "alt": [
@@ -364,7 +394,8 @@
       "verified": true,
       "p": 1000,
       "qid": "arabliterature-1000-913",
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.15,
+      "alt": []
     },
     {
       "topic": "الحكايات والشخصيات",
@@ -374,7 +405,8 @@
       "verified": true,
       "p": 1000,
       "qid": "arabliterature-1000-914",
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.15,
+      "alt": []
     },
     {
       "topic": "المسرح والدراما",
@@ -384,7 +416,8 @@
       "verified": true,
       "p": 1000,
       "qid": "arabliterature-1000-915",
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.15,
+      "alt": []
     },
     {
       "topic": "الرواية والقصة",
@@ -394,7 +427,8 @@
       "verified": true,
       "p": 1000,
       "qid": "arabliterature-1000-916",
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.15,
+      "alt": []
     },
     {
       "topic": "سير الأدباء وأماكنهم",
@@ -404,7 +438,8 @@
       "verified": true,
       "p": 1000,
       "qid": "arabliterature-1000-917",
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.15,
+      "alt": []
     },
     {
       "qid": "arabliterature-1000-918",
@@ -414,7 +449,8 @@
       "topic": "الشعر القديم",
       "verified": true,
       "difficultyTarget": 0.15,
-      "sourceUrl": "https://ar.wikisource.org/wiki/معلقة_امرئ_القيس"
+      "sourceUrl": "https://ar.wikisource.org/wiki/معلقة_امرئ_القيس",
+      "alt": []
     }
   ]
 }

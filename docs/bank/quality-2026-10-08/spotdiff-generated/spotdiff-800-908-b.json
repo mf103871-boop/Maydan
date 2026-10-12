@@ -1,0 +1,67 @@
+{
+  "pack": "spotdiff",
+  "oldQid": "spotdiff-800-908",
+  "side": "b",
+  "createdAt": "2026-10-12",
+  "kind": "ai-generated",
+  "tool": "OpenAI image generation (built-in)",
+  "mode": "edit",
+  "prompt": "Use case: precise-object-edit. Input image is exact A source for a strict ONE-difference puzzle. Produce B. On the rectangular wooden block at the BOTTOM CENTER, change ONLY the position of its MIDDLE drilled circular hole. Original three hole centers (1280x960 source) are approximately (533,765), (636,762), (740,759). Move only middle hole rightward to approximately (690,761), on the same row. Three holes must remain the same sizes and depth; the new spacing is clearly unequal (larger left-to-middle gap, smaller middle-to-right gap). Preserve left and right holes exactly; new middle and right holes must be distinct with visible wood between them. Restore original middle-hole footprint with matching unbroken wood grain. Preserve EVERYTHING else exactly: every wrench end and engraving, hammer, pliers, file, two screwdriver tips, tape-measure extension, four washers, three nuts, wood shape and edges, worn teal surface, perspective/crop, lighting/color. Exactly ONE semantic difference (middle hole position only), no other moved/added/deleted/rotated tool or object. No labels, highlights, arrows, borders, UI. Same landscape4:3 image.",
+  "asset": "media/spotdiff/spotdiff-800-908-b-q20261008.webp",
+  "sha256": "f46b75cfcb58053a17a51a6e0713f65c45ad562d06438fb67d39b0c0d07dbcd4",
+  "bytes": 231174,
+  "width": 1280,
+  "height": 960,
+  "inputImages": [
+    {
+      "file": "media/spotdiff/spotdiff-800-908-a-q20261008.webp",
+      "sha256": "a136fef1eed018da66b1f754ebc7b4185023aa6f90ff978f17a2cf3e4ae7ff13",
+      "role": "exact edit target A"
+    }
+  ],
+  "review": {
+    "status": "phone-size-reviewed",
+    "reviewedAt": "2026-10-12",
+    "originalCompared": true,
+    "displayedEffect": "Side-by-side unfiltered originals, 173 CSS px each",
+    "difference": "Only middle wood-block hole shifted right; still three holes, now uneven spacing",
+    "semanticDifferenceCount": 1,
+    "invariantsReviewed": [
+      "three holes with only middle location changed",
+      "four washers",
+      "three nuts",
+      "unchanged wrench orientation",
+      "hammer",
+      "pliers",
+      "two screwdriver tips",
+      "file",
+      "tape measure extension",
+      "wood-block outline",
+      "framing and lighting"
+    ],
+    "mobileDeviceQA": false,
+    "reviewers": [
+      "integration_audit",
+      "finish_spotdiff"
+    ],
+    "evidence": "docs/bank/quality-2026-10-08/preview/spotdiff-08.png",
+    "suggestedSpot": {
+      "x": 51.5,
+      "y": 79.4,
+      "r": 5.5
+    },
+    "reviewer": "finish_spotdiff",
+    "imageWidthCSS": 173,
+    "independentReviewer": "root"
+  },
+  "packaging": "1280x960 WebP quality84; uniform size/format encoding only; all scene changes created by built-in imagegen",
+  "generatedSource": {
+    "file": "exec-6a09c5c6-7832-4280-b3d7-937eaeab8543.png",
+    "sha256": "c2adc44823c63dd5b07da671260eb3c252efe772af566ca5bef18e857099ac7a"
+  },
+  "revision": {
+    "reason": "Replace low-value count/orientation difference with a finer relation/position difference for 800 points.",
+    "supersededSha256": "c1af256407dfef475cba5f6652df0223d168e06e83b002d9b2075a3119ccec7a",
+    "supersededDifference": "Turn wrench 180 degrees"
+  }
+}

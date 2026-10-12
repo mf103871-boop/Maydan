@@ -9,9 +9,7 @@
       "topic": "الحديقة الجوراسية",
       "q": "في «الحديقة الجوراسية»، في الفيلم الأول، ما المادة التي حفظت البعوضة الحاملة للحمض النووي القديم؟",
       "a": "الكهرمان",
-      "alt": [
-        "كهرمان"
-      ],
+      "alt": [],
       "sourceUrl": "https://en.wikipedia.org/wiki/Jurassic_Park_(film)",
       "verified": true,
       "difficultyTarget": 0.8
@@ -26,7 +24,7 @@
         "إريسيد",
         "Mirror of Erised"
       ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Harry_Potter_and_the_Philosopher%27s_Stone_(film)",
+      "sourceUrl": "https://www.harrypotter.com/fact-file/objects/the-mirror-of-erised",
       "verified": true,
       "difficultyTarget": 0.8
     },
@@ -341,19 +339,6 @@
       "difficultyTarget": 0.4
     },
     {
-      "topic": "هاري بوتر",
-      "q": "في «حجر الفيلسوف»، ما اسم الكلب ذي الرؤوس الثلاثة؟",
-      "a": "فلافي",
-      "alt": [
-        "Fluffy"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Harry_Potter_and_the_Philosopher%27s_Stone_(film)",
-      "qid": "movies-800-911",
-      "p": 800,
-      "difficultyTarget": 0.25,
-      "verified": true
-    },
-    {
       "topic": "الحديقة الجوراسية",
       "q": "في «الحديقة الجوراسية» الأول، ما اسم كبير المهندسين الذي يحاول إعادة تشغيل الأنظمة؟",
       "a": "راي أرنولد",
@@ -447,15 +432,18 @@
     },
     {
       "topic": "هاري بوتر",
-      "q": "في «حجر الفيلسوف»، ما الاسم الذي أطلقه هاغريد على التنين الصغير؟",
-      "a": "نوربرت",
+      "q": "في «حجر الفيلسوف»، بأي وسيلة يمكن إنامة الكلب الحارس ذي الرؤوس الثلاثة للعبور دون قتاله؟",
+      "a": "عزف الموسيقى",
       "alt": [
-        "Norbert"
+        "الموسيقى",
+        "العزف",
+        "عزف الناي",
+        "تشغيل الموسيقى"
       ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Harry_Potter_and_the_Philosopher%27s_Stone_(film)",
-      "qid": "movies-1000-911",
-      "p": 1000,
-      "difficultyTarget": 0.15,
+      "sourceUrl": "https://www.harrypotter.com/fact-file/characters-and-pets/fluffy-fact-file",
+      "qid": "movies-800-921",
+      "p": 800,
+      "difficultyTarget": 0.25,
       "verified": true
     },
     {
@@ -525,7 +513,7 @@
     },
     {
       "topic": "قراصنة الكاريبي",
-      "q": "في «لعنة اللؤلؤة السوداء»، ما السفينة البحرية التي يسرقها جاك وويل لإنقاذ إليزابيث؟",
+      "q": "في «لعنة اللؤلؤة السوداء»، ما السفينة البحرية التي يسرقها جاك وويل لإنقاذ إليزابيث المخطوفة؟",
       "a": "إنترسيبتور",
       "alt": [
         "HMS Interceptor",
@@ -546,6 +534,21 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/Back_to_the_Future",
       "qid": "movies-1000-918",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "هاري بوتر",
+      "q": "في «حجر الفيلسوف»، ما الرغبة التي تتيح لهاري إخراج الحجر من المرآة بينما يعجز خصمه؟",
+      "a": "العثور عليه دون استخدامه",
+      "alt": [
+        "إيجاد الحجر دون استخدامه",
+        "العثور على الحجر لا استعماله",
+        "العثور على الحجر دون استخدامه"
+      ],
+      "sourceUrl": "https://www.harrypotter.com/features/what-the-mirror-of-erised-can-tell-us-about-the-boy-who-lived",
+      "qid": "movies-1000-921",
       "p": 1000,
       "difficultyTarget": 0.15,
       "verified": true

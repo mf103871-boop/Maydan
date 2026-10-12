@@ -1,0 +1,20 @@
+{
+  "id": "zoom-800-905",
+  "prompt": "Create ONE landscape 4:3 high fidelity photographic puzzle image for an Arabic game for ages 16+. A fencing mask lying sideways on a charcoal gym floor. Fine dark metal mesh curves around the face; centre contains mesh and its stitched reinforced boundary adjoining white protective bib. Entire mask visible with curved rear fastening band off to edge, sports photography, hard sidelight, no person or sword. IMPORTANT: this full image will be shown magnified 3.4x around the exact centre, leaving only approximately the central 29% visible during the question. Make that central area contain TWO coherent diagnostic material/structural details of the named object, not the entire silhouette, not blank texture, and not a disconnected fragment. Full image reveals the complete object naturally. Rich but restrained environment palette. No lettering, logos, watermark, hands, labels, borders, collages or question marks. No ivory studio background. Physical realism and fair visual evidence matter more than decoration.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-10-08",
+  "sourceFile": "exec-23ecb81e-7922-439f-9157-b469e71a6588.png",
+  "sourceSha256": "8042b70900496ff32c9056b4bb33dbaf80f9690b0446cac2b2419f3b5f123f1d",
+  "file": "media/zoom/quality-800-905.webp",
+  "sha256": "847712bb04779b81e73d0b80f72047bd0ac8692ac58670baf2434ad70011f3b7",
+  "width": 960,
+  "height": 720,
+  "bytes": 167012,
+  "review": {
+    "status": "phone-size-reviewed",
+    "reviewedAt": "2026-10-08",
+    "method": "Original and shipped effect at phone width, including high-tier assistance; independent editorial review.",
+    "evidence": "docs/bank/quality-2026-10-08/independent-root-image-review.md",
+    "qid": "zoom-800-905"
+  }
+}

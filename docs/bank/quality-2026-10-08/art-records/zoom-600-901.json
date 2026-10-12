@@ -1,0 +1,20 @@
+{
+  "id": "zoom-600-901",
+  "prompt": "Create ONE landscape 4:3 high fidelity photographic puzzle image for an Arabic game for ages 16+. A single ripe purple fig cut lengthwise into two halves on dark green ceramic. One half occupies centre, clear pink fleshy interior with many tiny golden seeds, thin white ring and purple skin; second half behind to left. Natural food photography, directional morning light, no other food. IMPORTANT: this full image will be shown magnified 3.4x around the exact centre, leaving only approximately the central 29% visible during the question. Make that central area contain TWO coherent diagnostic material/structural details of the named object, not the entire silhouette, not blank texture, and not a disconnected fragment. Full image reveals the complete object naturally. Rich but restrained environment palette. No lettering, logos, watermark, hands, labels, borders, collages or question marks. No ivory studio background. Physical realism and fair visual evidence matter more than decoration.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-10-08",
+  "sourceFile": "exec-f50a904c-5202-4bf3-a285-fe9741a2750c.png",
+  "sourceSha256": "8ef64e4f4b0087e4ca38c7364d3a7ed1ec89f463b3a7cbf55d25281c7510c1c8",
+  "file": "media/zoom/quality-600-901.webp",
+  "sha256": "53a0efb990998ec66c0d279f178319a67c5abd7554c3525e775d4ba7cfa04dd4",
+  "width": 960,
+  "height": 720,
+  "bytes": 149532,
+  "review": {
+    "status": "phone-size-reviewed",
+    "reviewedAt": "2026-10-08",
+    "method": "Original and shipped effect at phone width, including high-tier assistance; independent editorial review.",
+    "evidence": "docs/bank/quality-2026-10-08/independent-root-image-review.md",
+    "qid": "zoom-600-901"
+  }
+}

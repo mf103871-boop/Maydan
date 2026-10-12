@@ -13,7 +13,7 @@
         "Emma Watson",
         "إما واتسون"
       ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Harry_Potter_and_the_Philosopher%27s_Stone_(film)",
+      "sourceUrl": "https://www.harrypotter.com/features/actors-of-the-wizarding-world-part-one-the-stars-that-rose",
       "verified": true,
       "difficultyTarget": 0.8
     },
@@ -21,7 +21,7 @@
       "qid": "actors-200-912",
       "p": 200,
       "topic": "قراصنة الكاريبي",
-      "q": "من جسّد ويل تيرنر في «قراصنة الكاريبي»؟",
+      "q": "من جسّد الحدّاد ويل تيرنر الذي ينطلق مع جاك في «قراصنة الكاريبي»؟",
       "a": "أورلاندو بلوم",
       "alt": [
         "Orlando Bloom"
@@ -64,7 +64,8 @@
       "a": "صباح الجزائري",
       "sourceUrl": "https://elcinema.com/work/1010631/cast",
       "verified": true,
-      "difficultyTarget": 0.8
+      "difficultyTarget": 0.8,
+      "alt": []
     },
     {
       "qid": "actors-200-916",
@@ -74,7 +75,8 @@
       "a": "عبلة كامل",
       "sourceUrl": "https://elcinema.com/work/1010312/cast",
       "verified": true,
-      "difficultyTarget": 0.8
+      "difficultyTarget": 0.8,
+      "alt": []
     },
     {
       "qid": "actors-200-917",
@@ -84,7 +86,8 @@
       "a": "أحمد حلمي",
       "sourceUrl": "https://elcinema.com/work/1001525/cast",
       "verified": true,
-      "difficultyTarget": 0.8
+      "difficultyTarget": 0.8,
+      "alt": []
     },
     {
       "qid": "actors-200-918",
@@ -94,7 +97,8 @@
       "a": "منى واصف",
       "sourceUrl": "https://elcinema.com/work/2030474/cast",
       "verified": true,
-      "difficultyTarget": 0.8
+      "difficultyTarget": 0.8,
+      "alt": []
     },
     {
       "qid": "actors-400-911",
@@ -159,7 +163,8 @@
       "a": "سامر المصري",
       "sourceUrl": "https://elcinema.com/work/1010631/cast",
       "verified": true,
-      "difficultyTarget": 0.6
+      "difficultyTarget": 0.6,
+      "alt": []
     },
     {
       "qid": "actors-400-916",
@@ -169,7 +174,8 @@
       "a": "محمد رياض",
       "sourceUrl": "https://elcinema.com/work/1010312/cast",
       "verified": true,
-      "difficultyTarget": 0.6
+      "difficultyTarget": 0.6,
+      "alt": []
     },
     {
       "qid": "actors-400-917",
@@ -179,7 +185,8 @@
       "a": "حسن حسني",
       "sourceUrl": "https://elcinema.com/work/1001525/cast",
       "verified": true,
-      "difficultyTarget": 0.6
+      "difficultyTarget": 0.6,
+      "alt": []
     },
     {
       "qid": "actors-400-918",
@@ -268,7 +275,8 @@
       "a": "ناهد رشدي",
       "sourceUrl": "https://elcinema.com/work/1010312/cast",
       "verified": true,
-      "difficultyTarget": 0.4
+      "difficultyTarget": 0.4,
+      "alt": []
     },
     {
       "qid": "actors-600-917",
@@ -278,7 +286,8 @@
       "a": "هشام سليم",
       "sourceUrl": "https://elcinema.com/work/1001525/cast",
       "verified": true,
-      "difficultyTarget": 0.4
+      "difficultyTarget": 0.4,
+      "alt": []
     },
     {
       "qid": "actors-600-918",
@@ -288,7 +297,8 @@
       "a": "أويس مخللاتي",
       "sourceUrl": "https://elcinema.com/work/2030474/cast",
       "verified": true,
-      "difficultyTarget": 0.4
+      "difficultyTarget": 0.4,
+      "alt": []
     },
     {
       "qid": "actors-800-911",
@@ -354,7 +364,8 @@
       "a": "أناهيد فياض",
       "sourceUrl": "https://elcinema.com/work/1010631/cast",
       "verified": true,
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.25,
+      "alt": []
     },
     {
       "qid": "actors-800-916",
@@ -364,7 +375,8 @@
       "a": "منال سلامة",
       "sourceUrl": "https://elcinema.com/work/1010312/cast",
       "verified": true,
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.25,
+      "alt": []
     },
     {
       "qid": "actors-800-917",
@@ -452,7 +464,8 @@
       "verified": true,
       "p": 1000,
       "qid": "actors-1000-915",
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.15,
+      "alt": []
     },
     {
       "topic": "لن أعيش في جلباب أبي",
@@ -462,7 +475,8 @@
       "verified": true,
       "p": 1000,
       "qid": "actors-1000-916",
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.15,
+      "alt": []
     },
     {
       "topic": "الناظر",
@@ -472,7 +486,8 @@
       "verified": true,
       "p": 1000,
       "qid": "actors-1000-917",
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.15,
+      "alt": []
     },
     {
       "topic": "الهيبة",
@@ -482,7 +497,8 @@
       "verified": true,
       "p": 1000,
       "qid": "actors-1000-918",
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.15,
+      "alt": []
     }
   ]
 }

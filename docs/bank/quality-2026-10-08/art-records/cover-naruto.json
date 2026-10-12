@@ -1,0 +1,29 @@
+{
+  "id": "naruto",
+  "kind": "cover",
+  "file": "public/media/badeeha-covers/naruto.webp",
+  "style": "original ink-and-cel illustration",
+  "palette": "orange, forest green, midnight blue",
+  "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'ناروتو'. Landscape 4:3 artwork.\nMedium: original ink-and-cel illustration.\nIntentional palette: orange, forest green, midnight blue.\nScene: A forest training path with a safely stored throwing-tool pouch and a swirling leaf in foreground, energetic ink movement, no franchise marks or exact characters.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-10-08",
+  "sourceImage": {
+    "name": "exec-51e4f5d4-262d-4074-9a7e-097884ea9817.png",
+    "sha256": "ae5b30cc6c0a1b3625f19a837f7252dd557706208f7d251f848a9ff4c12d4d94",
+    "width": 1448,
+    "height": 1086
+  },
+  "width": 640,
+  "height": 480,
+  "bytes": 101070,
+  "sha256": "325949170700e6effb328f3210e5ff6a93e53f845999762b845c1c346280b124",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "phone-size-reviewed",
+    "date": "2026-10-08",
+    "reviewer": "root",
+    "width": 160,
+    "method": "shipped cover CSS; baseline and replacement side by side",
+    "evidence": "docs/bank/quality-2026-10-08/preview/covers-3.jpg"
+  }
+}

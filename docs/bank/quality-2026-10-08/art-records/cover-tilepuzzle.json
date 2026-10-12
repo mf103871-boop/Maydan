@@ -1,0 +1,29 @@
+{
+  "id": "tilepuzzle",
+  "kind": "cover",
+  "file": "public/media/badeeha-covers/tilepuzzle.webp",
+  "style": "rich gouache illustration",
+  "palette": "olive green, coral, cream",
+  "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'ركّبها صح'. Landscape 4:3 artwork.\nMedium: rich gouache illustration.\nIntentional palette: olive green, coral, cream.\nScene: A painted landscape breaks into a few floating rectangular puzzle tiles that align into a vibrant valley, clear large shapes, no real question image.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-10-08",
+  "sourceImage": {
+    "name": "exec-7febd7ea-c9c2-42d7-886d-640603c3bb31.png",
+    "sha256": "b1a364f02609c63d88efc07443cd47b46ace81d8d8b86a4ad323cbec73bab206",
+    "width": 1448,
+    "height": 1086
+  },
+  "width": 640,
+  "height": 480,
+  "bytes": 93402,
+  "sha256": "04c149772f7f39c0a1ffda3f0dd496f1cbb2f4de545514e97d50893cfe08df82",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "phone-size-reviewed",
+    "date": "2026-10-08",
+    "reviewer": "root",
+    "width": 160,
+    "method": "shipped cover CSS; baseline and replacement side by side",
+    "evidence": "docs/bank/quality-2026-10-08/preview/covers-4.jpg"
+  }
+}

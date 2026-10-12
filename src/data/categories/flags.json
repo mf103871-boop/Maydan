@@ -6,7 +6,7 @@
   "qs": [
     {
       "p": 200,
-      "q": "ما الدولة صاحبة هذا العلم ذي الشريط الأحمر العمودي؟",
+      "q": "ما الدولة صاحبة هذا العلم؟",
       "a": "الإمارات",
       "qid": "flags-200-901",
       "type": "image",
@@ -19,24 +19,21 @@
       "topic": "غرب آسيا وشمال أفريقيا",
       "difficultyTarget": 0.8,
       "verified": true,
-      "sourceUrl": "https://vig.gmo.gov.ae/en/guideline/the-uae-flag",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
       "media": {
         "src": "flags-200-901.webp",
         "type": "image",
-        "title": "علم دولة — رسم توضيحي",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-23",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-200-901.json"
-        }
+        "title": "Flag of the United Arab Emirates.svg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_the_United_Arab_Emirates.svg",
+        "author": "Abdulla Mohammed Al Maainah",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
       }
     },
     {
       "p": 200,
-      "q": "أي دولة يمثلها العلم المصوّر ذو شبه المنحرف الأسود؟",
+      "q": "ما الدولة صاحبة هذا العلم؟",
       "a": "الكويت",
       "qid": "flags-200-902",
       "type": "image",
@@ -48,24 +45,21 @@
       "topic": "غرب آسيا وشمال أفريقيا",
       "difficultyTarget": 0.8,
       "verified": true,
-      "sourceUrl": "https://www.kuwaitmission.ch/KUFacts.aspx",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
       "media": {
         "src": "flags-200-902.webp",
         "type": "image",
-        "title": "علم دولة — رسم توضيحي",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-23",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-200-902.json"
-        }
+        "title": "Flag of Kuwait.svg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Kuwait.svg",
+        "author": "Wikimedia Commons contributors; public-domain geometric flag (no author specified)",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
       }
     },
     {
       "p": 200,
-      "q": "لأي دولة ينتمي العلم الأبيض الذي تتوسطه دائرة حمراء؟",
+      "q": "ما الدولة صاحبة هذا العلم؟",
       "a": "اليابان",
       "qid": "flags-200-903",
       "type": "image",
@@ -76,24 +70,21 @@
       "topic": "آسيا الشرقية",
       "difficultyTarget": 0.8,
       "verified": true,
-      "sourceUrl": "https://web-japan.org/factsheet/en/pdf/11NFlagAnthem.pdf",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
       "media": {
         "src": "flags-200-903.webp",
         "type": "image",
-        "title": "علم دولة — رسم توضيحي",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-23",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-200-903.json"
-        }
+        "title": "Flag of Japan.svg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Japan.svg",
+        "author": "Various",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
       }
     },
     {
       "p": 200,
-      "q": "ما الدولة التي يحمل علمها المصوّر خمس نجوم صفراء؟",
+      "q": "ما الدولة صاحبة هذا العلم؟",
       "a": "الصين",
       "qid": "flags-200-904",
       "type": "image",
@@ -106,24 +97,21 @@
       "topic": "آسيا الشرقية",
       "difficultyTarget": 0.8,
       "verified": true,
-      "sourceUrl": "https://english.court.gov.cn/2016-04/14/c_761456.htm",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
       "media": {
         "src": "flags-200-904.webp",
         "type": "image",
-        "title": "علم دولة — رسم توضيحي",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-23",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-200-904.json"
-        }
+        "title": "Flag of the People's Republic of China.svg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_the_People%27s_Republic_of_China.svg",
+        "author": "Zeng Liansong",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
       }
     },
     {
       "p": 200,
-      "q": "لأي دولة ينتمي هذا العلم ذو الأشرطة العمودية الزرقاء والبيضاء والحمراء؟",
+      "q": "ما الدولة صاحبة هذا العلم؟",
       "a": "فرنسا",
       "qid": "flags-200-905",
       "type": "image",
@@ -135,24 +123,21 @@
       "topic": "أوروبا",
       "difficultyTarget": 0.8,
       "verified": true,
-      "sourceUrl": "https://www.elysee.fr/la-presidence/le-drapeau-francais",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
       "media": {
         "src": "flags-200-905.webp",
         "type": "image",
-        "title": "علم دولة — رسم توضيحي",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-23",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-200-905.json"
-        }
+        "title": "Flag of France.svg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_France.svg",
+        "author": "Original:   Unknown   Vector:     SKopp",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
       }
     },
     {
       "p": 200,
-      "q": "ما الدولة صاحبة العلم المكوّن من أشرطة أفقية سوداء وحمراء وذهبية؟",
+      "q": "ما الدولة صاحبة هذا العلم؟",
       "a": "ألمانيا",
       "qid": "flags-200-906",
       "type": "image",
@@ -164,24 +149,21 @@
       "topic": "أوروبا",
       "difficultyTarget": 0.8,
       "verified": true,
-      "sourceUrl": "https://www.gesetze-im-internet.de/flaggano_1996/i_.html",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
       "media": {
         "src": "flags-200-906.webp",
         "type": "image",
-        "title": "علم دولة — رسم توضيحي",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-23",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-200-906.json"
-        }
+        "title": "Flag of Germany.svg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Germany.svg",
+        "author": "User:SKopp ,  User:Madden , and other users",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
       }
     },
     {
       "p": 200,
-      "q": "ما الدولة التي تتوسط علمها المصوّر ورقة قيقب حمراء؟",
+      "q": "ما الدولة صاحبة هذا العلم؟",
       "a": "كندا",
       "qid": "flags-200-907",
       "type": "image",
@@ -192,24 +174,21 @@
       "topic": "أمريكا الشمالية",
       "difficultyTarget": 0.8,
       "verified": true,
-      "sourceUrl": "https://www.canada.ca/en/canadian-heritage/services/flag-canada-description.html",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
       "media": {
         "src": "flags-200-907.webp",
         "type": "image",
-        "title": "علم دولة — رسم توضيحي",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-23",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-200-907.json"
-        }
+        "title": "Flag of Canada.svg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Canada.svg",
+        "author": "Created by George F. G. Stanley /   E Pluribus Anthony  /  User:Mzajac",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
       }
     },
     {
       "p": 200,
-      "q": "أي دولة يمثلها هذا العلم الأخضر ذو الدائرة الحمراء؟",
+      "q": "ما الدولة صاحبة هذا العلم؟",
       "a": "بنغلاديش",
       "qid": "flags-200-908",
       "type": "image",
@@ -221,24 +200,21 @@
       "topic": "جنوب وجنوب شرق آسيا",
       "difficultyTarget": 0.8,
       "verified": true,
-      "sourceUrl": "https://bdlaws.minlaw.gov.bd/act-print-367/section-print-24551.html",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
       "media": {
         "src": "flags-200-908.webp",
         "type": "image",
-        "title": "علم دولة — رسم توضيحي",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-23",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-200-908.json"
-        }
+        "title": "Flag of Bangladesh.svg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Bangladesh.svg",
+        "author": "See   File history   below for details.",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
       }
     },
     {
       "p": 400,
-      "q": "لأي دولة ينتمي العلم الأحمر المصوّر ذو النجمة الخضراء؟",
+      "q": "ما الدولة صاحبة هذا العلم؟",
       "a": "المغرب",
       "qid": "flags-400-901",
       "type": "image",
@@ -250,24 +226,21 @@
       "topic": "غرب آسيا وشمال أفريقيا",
       "difficultyTarget": 0.6,
       "verified": true,
-      "sourceUrl": "https://www.maroc.ma/fr/actualites/lhistoire-des-drapeaux-du-maroc-mise-en-avant-rabat",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
       "media": {
         "src": "flags-400-901.webp",
         "type": "image",
-        "title": "علم دولة — رسم توضيحي",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-23",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-400-901.json"
-        }
+        "title": "Flag of Morocco.svg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Morocco.svg",
+        "author": "Denelson83 ,  Zscout370",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
       }
     },
     {
       "p": 400,
-      "q": "ما الدولة صاحبة هذا العلم بنصفيه الأخضر والأبيض وهلاله الأحمر؟",
+      "q": "ما الدولة صاحبة هذا العلم؟",
       "a": "الجزائر",
       "qid": "flags-400-902",
       "type": "image",
@@ -279,24 +252,21 @@
       "topic": "غرب آسيا وشمال أفريقيا",
       "difficultyTarget": 0.6,
       "verified": true,
-      "sourceUrl": "https://embwashington.mfa.gov.dz/discover-algeria-1/state-symbols-1",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
       "media": {
         "src": "flags-400-902.webp",
         "type": "image",
-        "title": "علم دولة — رسم توضيحي",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-23",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-400-902.json"
-        }
+        "title": "Flag of Algeria.svg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Algeria.svg",
+        "author": "Original:   National Liberation Front of Algeria   Vector:     SKopp",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
       }
     },
     {
       "p": 400,
-      "q": "أي دولة يمثلها هذا العلم الأزرق ذو الصليب الأصفر؟",
+      "q": "ما الدولة صاحبة هذا العلم؟",
       "a": "السويد",
       "qid": "flags-400-903",
       "type": "image",
@@ -308,24 +278,21 @@
       "topic": "أوروبا",
       "difficultyTarget": 0.6,
       "verified": true,
-      "sourceUrl": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/lag-1982269-om-sveriges-flagga_sfs-1982-269/",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
       "media": {
         "src": "flags-400-903.webp",
         "type": "image",
-        "title": "علم دولة — رسم توضيحي",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-23",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-400-903.json"
-        }
+        "title": "Flag of Sweden.svg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Sweden.svg",
+        "author": "Jon Harald Søby  and others.",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
       }
     },
     {
       "p": 400,
-      "q": "لأي دولة ينتمي العلم الأحمر بصليب أزرق تحيط به حواف بيضاء؟",
+      "q": "ما الدولة صاحبة هذا العلم؟",
       "a": "النرويج",
       "qid": "flags-400-904",
       "type": "image",
@@ -337,24 +304,21 @@
       "topic": "أوروبا",
       "difficultyTarget": 0.6,
       "verified": true,
-      "sourceUrl": "https://www.regjeringen.no/no/dep/ud/dep/diplomatiske-forbindelser-og-protokoll/norges-flagg-forskrift/id449230/",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
       "media": {
         "src": "flags-400-904.webp",
         "type": "image",
-        "title": "علم دولة — رسم توضيحي",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-23",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-400-904.json"
-        }
+        "title": "Flag of Norway.svg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Norway.svg",
+        "author": "Original:   Fredrik Meltzer   Vector:     Gutten på Hemsen",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
       }
     },
     {
       "p": 400,
-      "q": "ما الدولة صاحبة هذا العلم ذي خمسة أشرطة وشريط أزرق عريض في الوسط؟",
+      "q": "ما الدولة صاحبة هذا العلم؟",
       "a": "تايلاند",
       "qid": "flags-400-905",
       "type": "image",
@@ -367,24 +331,21 @@
       "topic": "جنوب وجنوب شرق آسيا",
       "difficultyTarget": 0.6,
       "verified": true,
-      "sourceUrl": "https://www.boi.go.th/index.php?language=ko&page=social_and_culture",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
       "media": {
         "src": "flags-400-905.webp",
         "type": "image",
-        "title": "علم دولة — رسم توضيحي",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-23",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-400-905.json"
-        }
+        "title": "Flag of Thailand.svg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Thailand.svg",
+        "author": "Zscout370",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
       }
     },
     {
       "p": 400,
-      "q": "أي دولة يمثلها العلم الأخضر ذو الهلال والنجمة والشريط الأبيض؟",
+      "q": "ما الدولة صاحبة هذا العلم؟",
       "a": "باكستان",
       "qid": "flags-400-906",
       "type": "image",
@@ -396,24 +357,21 @@
       "topic": "جنوب وجنوب شرق آسيا",
       "difficultyTarget": 0.6,
       "verified": true,
-      "sourceUrl": "https://pcgv.org/national-flag/",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
       "media": {
         "src": "flags-400-906.webp",
         "type": "image",
-        "title": "علم دولة — رسم توضيحي",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-23",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-400-906.json"
-        }
+        "title": "Flag of Pakistan.svg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Pakistan.svg",
+        "author": "User:Zscout370",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
       }
     },
     {
       "p": 400,
-      "q": "ما الدولة المطلة على الكاريبي صاحبة هذا العلم الذي يحتل الأصفر نصفه العلوي؟",
+      "q": "ما الدولة صاحبة هذا العلم؟",
       "a": "كولومبيا",
       "qid": "flags-400-907",
       "type": "image",
@@ -425,27 +383,21 @@
       "topic": "أمريكا الجنوبية",
       "difficultyTarget": 0.6,
       "verified": true,
-      "sourceUrl": [
-        "https://www.cancilleria.gov.co/normograma/compilacion/docs/circular_minrelaciones_0036_2021.htm",
-        "https://cancilleria.gov.co/politica-exterior/asuntos-bilaterales/delimitacion-maritima-colombia-panama"
-      ],
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
       "media": {
         "src": "flags-400-907.webp",
         "type": "image",
-        "title": "علم دولة — رسم توضيحي",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-23",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-400-907.json"
-        }
+        "title": "Flag of Colombia.svg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Colombia.svg",
+        "author": "See   File history   below for details.",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
       }
     },
     {
       "p": 400,
-      "q": "ما الدولة صاحبة العلم بنجمة بيضاء داخل مربع أزرق في الزاوية العليا؟",
+      "q": "ما الدولة صاحبة هذا العلم؟",
       "a": "تشيلي",
       "qid": "flags-400-908",
       "type": "image",
@@ -457,24 +409,21 @@
       "topic": "أمريكا الجنوبية",
       "difficultyTarget": 0.6,
       "verified": true,
-      "sourceUrl": "https://www.bcn.cl/leychile/navegar?idNorma=23382",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
       "media": {
         "src": "flags-400-908.webp",
         "type": "image",
-        "title": "علم دولة — رسم توضيحي",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-23",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-400-908.json"
-        }
+        "title": "Flag of Chile.svg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Chile.svg",
+        "author": "See   file history   below for details.",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
       }
     },
     {
       "p": 600,
-      "q": "ما الدولة الأوروبية صاحبة هذا العلم ذي الأشرطة العمودية الزرقاء والصفراء والحمراء؟",
+      "q": "ما الدولة الأوروبية صاحبة هذا العلم؟",
       "a": "رومانيا",
       "qid": "flags-600-901",
       "type": "image",
@@ -485,24 +434,21 @@
       "topic": "أوروبا",
       "difficultyTarget": 0.4,
       "verified": true,
-      "sourceUrl": "https://www.cdep.ro/ords/pls/steno/steno2015.stenograma?idl=3&ids=6664",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
       "media": {
         "src": "flags-600-901.webp",
         "type": "image",
-        "title": "علم دولة — رسم توضيحي",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-23",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-600-901.json"
-        }
+        "title": "Flag of Romania.svg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Romania.svg",
+        "author": "AdiJapan",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
       }
     },
     {
       "p": 600,
-      "q": "أي دولة يمثلها هذا العلم بأشرطته الأفقية الزرقاء والسوداء والبيضاء؟",
+      "q": "ما الدولة صاحبة هذا العلم؟",
       "a": "إستونيا",
       "qid": "flags-600-902",
       "type": "image",
@@ -513,24 +459,21 @@
       "topic": "أوروبا",
       "difficultyTarget": 0.4,
       "verified": true,
-      "sourceUrl": "https://president.ee/en/republic-of-estonia/symbols/",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
       "media": {
         "src": "flags-600-902.webp",
         "type": "image",
-        "title": "علم دولة — رسم توضيحي",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-23",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-600-902.json"
-        }
+        "title": "Flag of Estonia.svg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Estonia.svg",
+        "author": "Original:   Unknown author   Vector:     SKopp ,  PeepP   and ‍others",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
       }
     },
     {
       "p": 600,
-      "q": "لأي دولة ينتمي العلم ذو الشريط الأبيض العمودي بين شريطين أخضرين؟",
+      "q": "ما الدولة صاحبة هذا العلم؟",
       "a": "نيجيريا",
       "qid": "flags-600-903",
       "type": "image",
@@ -542,24 +485,21 @@
       "topic": "أفريقيا الغربية",
       "difficultyTarget": 0.4,
       "verified": true,
-      "sourceUrl": "https://ntda.gov.ng/media.assets.php",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
       "media": {
         "src": "flags-600-903.webp",
         "type": "image",
-        "title": "علم دولة — رسم توضيحي",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-23",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-600-903.json"
-        }
+        "title": "Flag of Nigeria.svg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Nigeria.svg",
+        "author": "Jon Harald Søby .",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
       }
     },
     {
       "p": 600,
-      "q": "ما الدولة التي تتوسط علمها نجمة سوداء فوق شريط ذهبي؟",
+      "q": "ما الدولة صاحبة هذا العلم؟",
       "a": "غانا",
       "qid": "flags-600-904",
       "type": "image",
@@ -571,24 +511,21 @@
       "topic": "أفريقيا الغربية",
       "difficultyTarget": 0.4,
       "verified": true,
-      "sourceUrl": "https://gis.gov.gh/wp-content/uploads/2024/02/FACTS-ABOUT-GHANA.pdf",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
       "media": {
         "src": "flags-600-904.webp",
         "type": "image",
-        "title": "علم دولة — رسم توضيحي",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-23",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-600-904.json"
-        }
+        "title": "Flag of Ghana.svg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Ghana.svg",
+        "author": "Theodosia Okoh",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
       }
     },
     {
       "p": 600,
-      "q": "ما الدولة التي يظهر علمها بالأزرق الفاتح، ويتوسطه شريط أسود تحيط به حافتان بيضاوان؟",
+      "q": "ما الدولة صاحبة هذا العلم؟",
       "a": "بوتسوانا",
       "qid": "flags-600-905",
       "type": "image",
@@ -600,24 +537,21 @@
       "topic": "أفريقيا الشرقية والوسطى والجنوبية",
       "difficultyTarget": 0.4,
       "verified": true,
-      "sourceUrl": "https://www.gov.bw/about-our-country-0",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
       "media": {
         "src": "flags-600-905.webp",
         "type": "image",
-        "title": "علم دولة — رسم توضيحي",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-23",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-600-905.json"
-        }
+        "title": "Flag of Botswana.svg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Botswana.svg",
+        "author": "SKopp ,  Gabbe ,  Madden",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
       }
     },
     {
       "p": 600,
-      "q": "ما الدولة صاحبة هذا العلم ذي الشريط الأسود المائل بين الأخضر والأزرق؟",
+      "q": "ما الدولة صاحبة هذا العلم؟",
       "a": "تنزانيا",
       "qid": "flags-600-906",
       "type": "image",
@@ -629,24 +563,21 @@
       "topic": "أفريقيا الشرقية والوسطى والجنوبية",
       "difficultyTarget": 0.4,
       "verified": true,
-      "sourceUrl": "https://embassyoftanzaniarome.info/en/about-tanzania/national-symbols",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
       "media": {
         "src": "flags-600-906.webp",
         "type": "image",
-        "title": "علم دولة — رسم توضيحي",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-23",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-600-906.json"
-        }
+        "title": "Flag of Tanzania.svg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Tanzania.svg",
+        "author": "SKopp, Madden and Alkari",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
       }
     },
     {
       "p": 600,
-      "q": "ما الدولة صاحبة هذا العلم الأحمر الذي تتوسطه نجمة ذهبية خماسية؟",
+      "q": "ما الدولة صاحبة هذا العلم؟",
       "a": "فيتنام",
       "qid": "flags-600-907",
       "type": "image",
@@ -659,24 +590,21 @@
       "topic": "جنوب وجنوب شرق آسيا",
       "difficultyTarget": 0.4,
       "verified": true,
-      "sourceUrl": "https://vietnam.gov.vn/default.aspx?catname=national-flag-emblem-anthem-declaration-of-independence-68960",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
       "media": {
         "src": "flags-600-907.webp",
         "type": "image",
-        "title": "علم دولة — رسم توضيحي",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-23",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-600-907.json"
-        }
+        "title": "Flag of Vietnam.svg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Vietnam.svg",
+        "author": "See   File history   below for details.",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
       }
     },
     {
       "p": 600,
-      "q": "ما الدولة التي تتوسط علمها دائرة بيضاء على شريط أزرق عريض بين شريطين أحمرين؟",
+      "q": "ما الدولة صاحبة هذا العلم؟",
       "a": "لاوس",
       "qid": "flags-600-908",
       "type": "image",
@@ -689,24 +617,21 @@
       "topic": "جنوب وجنوب شرق آسيا",
       "difficultyTarget": 0.4,
       "verified": true,
-      "sourceUrl": "https://www.wipo.int/wipolex/en/legislation/details/5829",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
       "media": {
         "src": "flags-600-908.webp",
         "type": "image",
-        "title": "علم دولة — رسم توضيحي",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-23",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-600-908.json"
-        }
+        "title": "Flag of Laos.svg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Laos.svg",
+        "author": "SKopp",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
       }
     },
     {
       "p": 800,
-      "q": "ما الدولة التي يحمل علمها نجمة بيضاء في مربع أحمر، مع أشرطة خضراء وصفراء؟",
+      "q": "ما الدولة من أفريقيا صاحبة هذا العلم؟",
       "a": "توغو",
       "qid": "flags-800-901",
       "type": "image",
@@ -718,24 +643,21 @@
       "topic": "أفريقيا الغربية",
       "difficultyTarget": 0.25,
       "verified": true,
-      "sourceUrl": "https://presidenceduconseil.gouv.tg/symbole-des-de-la-republique-togolaise/",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
       "media": {
         "src": "flags-800-901.webp",
         "type": "image",
-        "title": "علم دولة — رسم توضيحي",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-23",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-800-901.json"
-        }
+        "title": "Flag of Togo.svg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Togo.svg",
+        "author": "See   File history   below for details.",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
       }
     },
     {
       "p": 800,
-      "q": "ما الدولة صاحبة هذا العلم، بأخضر عمودي إلى جانب الأصفر والأحمر الأفقيين؟",
+      "q": "ما الدولة من أفريقيا صاحبة هذا العلم؟",
       "a": "بنين",
       "qid": "flags-800-902",
       "type": "image",
@@ -747,30 +669,26 @@
       "topic": "أفريقيا الغربية",
       "difficultyTarget": 0.25,
       "verified": true,
-      "sourceUrl": "https://sgg.gouv.bj/doc/loi-90-020/download",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
       "media": {
         "src": "flags-800-902.webp",
         "type": "image",
-        "title": "علم دولة — رسم توضيحي",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-23",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-800-902.json"
-        }
+        "title": "Flag of Benin.svg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Benin.svg",
+        "author": "Drawn by  User:SKopp , rewritten by  User:Gabbe",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
       }
     },
     {
       "p": 800,
-      "q": "ما الدولة التي يتكون علمها من أشرطة أفقية خضراء وصفراء وزرقاء؟",
+      "q": "ما الدولة من أفريقيا صاحبة هذا العلم؟",
       "a": "الغابون",
       "qid": "flags-800-903",
       "type": "image",
       "effect": "none",
       "alt": [
-        "غابون",
         "الجابون",
         "Gabon",
         "جمهورية الغابون"
@@ -778,24 +696,21 @@
       "topic": "أفريقيا الشرقية والوسطى والجنوبية",
       "difficultyTarget": 0.25,
       "verified": true,
-      "sourceUrl": "https://gabonembassyusa.org/en/about/about-us",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
       "media": {
         "src": "flags-800-903.webp",
         "type": "image",
-        "title": "علم دولة — رسم توضيحي",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-23",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-800-903.json"
-        }
+        "title": "Flag of Gabon.svg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Gabon.svg",
+        "author": "Léon Augé and Pierre Claver Eyeghe",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
       }
     },
     {
       "p": 800,
-      "q": "ما الدولة صاحبة هذا العلم، الذي يفصل فيه شريط أصفر مائل بين الأخضر والأحمر؟",
+      "q": "ما الدولة من أفريقيا صاحبة هذا العلم؟",
       "a": "جمهورية الكونغو",
       "qid": "flags-800-904",
       "type": "image",
@@ -808,30 +723,26 @@
       "topic": "أفريقيا الشرقية والوسطى والجنوبية",
       "difficultyTarget": 0.25,
       "verified": true,
-      "sourceUrl": "https://www.ambacongo-us.org/index.php/en/about-congo/national-symbols",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
       "media": {
         "src": "flags-800-904.webp",
         "type": "image",
-        "title": "علم دولة — رسم توضيحي",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-23",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-800-904.json"
-        }
+        "title": "Flag of the Republic of the Congo.svg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_the_Republic_of_the_Congo.svg",
+        "author": "See   File history   below for details.",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
       }
     },
     {
       "p": 800,
-      "q": "ما الدولة صاحبة هذا العلم ذي المثلث الأسود والأشرطة الفيروزية والذهبية؟",
+      "q": "ما الدولة من الكاريبي صاحبة هذا العلم؟",
       "a": "الباهاما",
       "qid": "flags-800-905",
       "type": "image",
       "effect": "none",
       "alt": [
-        "باهاما",
         "جزر الباهاما",
         "Bahamas",
         "The Bahamas"
@@ -839,24 +750,21 @@
       "topic": "الكاريبي",
       "difficultyTarget": 0.25,
       "verified": true,
-      "sourceUrl": "https://www.bahamasembdc.org/about/national-symbols/",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
       "media": {
         "src": "flags-800-905.webp",
         "type": "image",
-        "title": "علم دولة — رسم توضيحي",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-23",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-800-905.json"
-        }
+        "title": "Flag of the Bahamas.svg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_the_Bahamas.svg",
+        "author": "Government of  Bahamas",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
       }
     },
     {
       "p": 800,
-      "q": "ما الدولة صاحبة العلم الأحمر الذي يعبره شريط أسود مائل محاط بالأبيض؟",
+      "q": "ما الدولة من الكاريبي صاحبة هذا العلم؟",
       "a": "ترينيداد وتوباغو",
       "qid": "flags-800-906",
       "type": "image",
@@ -868,24 +776,21 @@
       "topic": "الكاريبي",
       "difficultyTarget": 0.25,
       "verified": true,
-      "sourceUrl": "https://foreign.gov.tt/about/trinidad-tobago/national-symbols/national-flag/",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
       "media": {
         "src": "flags-800-906.webp",
         "type": "image",
-        "title": "علم دولة — رسم توضيحي",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-23",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-800-906.json"
-        }
+        "title": "Flag of Trinidad and Tobago.svg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Trinidad_and_Tobago.svg",
+        "author": "See   File history  , below, for details .",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
       }
     },
     {
       "p": 800,
-      "q": "ما الدولة صاحبة هذا العلم، الذي يفصل فيه شريط أصفر مائل بين الأزرق والأخضر؟",
+      "q": "ما الدولة من أوقيانوسيا صاحبة هذا العلم؟",
       "a": "جزر سليمان",
       "qid": "flags-800-907",
       "type": "image",
@@ -897,27 +802,21 @@
       "topic": "أوقيانوسيا",
       "difficultyTarget": 0.25,
       "verified": true,
-      "sourceUrl": [
-        "https://solomons.gov.sb/wp-content/uploads/2024/06/Policy-Statement-TUESDAY-6PM-Final.pdf",
-        "https://www.dfat.gov.au/geo/solomon-islands/solomon-islands-country-brief"
-      ],
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
       "media": {
         "src": "flags-800-907.webp",
         "type": "image",
-        "title": "علم دولة — رسم توضيحي",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-23",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-800-907.json"
-        }
+        "title": "Flag of the Solomon Islands.svg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_the_Solomon_Islands.svg",
+        "author": "User:SKopp",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
       }
     },
     {
       "p": 800,
-      "q": "ما الدولة صاحبة هذا العلم الأحمر، وفي ركنه الأزرق خمس نجوم بيضاء تمثل الصليب الجنوبي؟",
+      "q": "ما الدولة من أوقيانوسيا صاحبة هذا العلم؟",
       "a": "ساموا",
       "qid": "flags-800-908",
       "type": "image",
@@ -929,24 +828,21 @@
       "topic": "أوقيانوسيا",
       "difficultyTarget": 0.25,
       "verified": true,
-      "sourceUrl": "https://www.mfat.gov.ws/wp-content/uploads/2013/10/Flag-of-Samoa.pdf",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
       "media": {
         "src": "flags-800-908.webp",
         "type": "image",
-        "title": "علم دولة — رسم توضيحي",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-23",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-800-908.json"
-        }
+        "title": "Flag of Samoa.svg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Samoa.svg",
+        "author": "Original:    Malietoa Tanumafili II  and  Tupua Tamasese Meaʻole    Vector:    See the   file history   below for details.",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
       }
     },
     {
       "p": 1000,
-      "q": "ما الدولة التي يحمل علمها الأزرق الفاتح دائرة صفراء منحازة قليلًا نحو السارية؟",
+      "q": "ما الدولة من أوقيانوسيا صاحبة هذا العلم؟",
       "a": "بالاو",
       "qid": "flags-1000-901",
       "type": "image",
@@ -958,24 +854,21 @@
       "topic": "أوقيانوسيا",
       "difficultyTarget": 0.15,
       "verified": true,
-      "sourceUrl": "https://www.palaugov.pw/about-palau/flag/",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
       "media": {
         "src": "flags-1000-901.webp",
         "type": "image",
-        "title": "علم دولة — رسم توضيحي",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-23",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-1000-901.json"
-        }
+        "title": "Flag of Palau.svg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Palau.svg",
+        "author": "Original:   John Blau Skebong   Vector:     Nightstallion",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
       }
     },
     {
       "p": 1000,
-      "q": "ما الدولة صاحبة العلم الأزرق الذي يجمع شريطًا ذهبيًا ونجمة بيضاء ذات اثني عشر رأسًا؟",
+      "q": "ما الدولة من أوقيانوسيا صاحبة هذا العلم؟",
       "a": "ناورو",
       "qid": "flags-1000-902",
       "type": "image",
@@ -988,24 +881,21 @@
       "topic": "أوقيانوسيا",
       "difficultyTarget": 0.15,
       "verified": true,
-      "sourceUrl": "https://www.nauru.gov.nr/government-information-office/fact-sheet.aspx",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
       "media": {
         "src": "flags-1000-902.webp",
         "type": "image",
-        "title": "علم دولة — رسم توضيحي",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-23",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-1000-902.json"
-        }
+        "title": "Flag of Nauru.svg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Nauru.svg",
+        "author": "User:Skimel",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
       }
     },
     {
       "p": 1000,
-      "q": "ما الدولة التي يتوسط علمها الأزرق شكل مثلثي بالأسود والأبيض والذهبي؟",
+      "q": "ما الدولة من الكاريبي صاحبة هذا العلم؟",
       "a": "سانت لوسيا",
       "qid": "flags-1000-903",
       "type": "image",
@@ -1017,24 +907,21 @@
       "topic": "الكاريبي",
       "difficultyTarget": 0.15,
       "verified": true,
-      "sourceUrl": "https://www.govt.lc/stluciaflag",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
       "media": {
         "src": "flags-1000-903.webp",
         "type": "image",
-        "title": "علم دولة — رسم توضيحي",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-23",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-1000-903.json"
-        }
+        "title": "Flag of Saint Lucia.svg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Saint_Lucia.svg",
+        "author": "Dunstan St Omer",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
       }
     },
     {
       "p": 1000,
-      "q": "ما الدولة صاحبة هذا العلم الذي تظهر فيه معينات خضراء على خلفية ذهبية؟",
+      "q": "ما الدولة من الكاريبي صاحبة هذا العلم؟",
       "a": "سانت فنسنت والغرينادين",
       "qid": "flags-1000-904",
       "type": "image",
@@ -1047,24 +934,21 @@
       "topic": "الكاريبي",
       "difficultyTarget": 0.15,
       "verified": true,
-      "sourceUrl": "https://foreign.gov.vc/foreign/index.php/the-national-flag",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
       "media": {
         "src": "flags-1000-904.webp",
         "type": "image",
-        "title": "علم دولة — رسم توضيحي",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-23",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-1000-904.json"
-        }
+        "title": "Flag of Saint Vincent and the Grenadines.svg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Saint_Vincent_and_the_Grenadines.svg",
+        "author": "No machine-readable author provided.  SKopp  assumed (based on copyright claims).",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
       }
     },
     {
       "p": 1000,
-      "q": "ما الدولة صاحبة العلم المؤلف من أشرطة أفقية خضراء وبيضاء وزرقاء؟",
+      "q": "ما الدولة من أفريقيا صاحبة هذا العلم؟",
       "a": "سيراليون",
       "qid": "flags-1000-905",
       "type": "image",
@@ -1076,24 +960,21 @@
       "topic": "أفريقيا الغربية",
       "difficultyTarget": 0.15,
       "verified": true,
-      "sourceUrl": "https://www.wipo.int/wipolex/en/legislation/details/20542",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
       "media": {
         "src": "flags-1000-905.webp",
         "type": "image",
-        "title": "علم دولة — رسم توضيحي",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-23",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-1000-905.json"
-        }
+        "title": "Flag of Sierra Leone.svg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Sierra_Leone.svg",
+        "author": "Zscout370",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
       }
     },
     {
       "p": 1000,
-      "q": "ما الدولة التي يفصل الأبيض في علمها بين الأشرطة الحمراء والزرقاء والخضراء؟",
+      "q": "ما الدولة من أفريقيا صاحبة هذا العلم؟",
       "a": "غامبيا",
       "qid": "flags-1000-906",
       "type": "image",
@@ -1106,24 +987,21 @@
       "topic": "أفريقيا الغربية",
       "difficultyTarget": 0.15,
       "verified": true,
-      "sourceUrl": "https://www.wipo.int/wipolex/en/text/221243",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
       "media": {
         "src": "flags-1000-906.webp",
         "type": "image",
-        "title": "علم دولة — رسم توضيحي",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-23",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-1000-906.json"
-        }
+        "title": "Flag of The Gambia.svg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_The_Gambia.svg",
+        "author": "Vzb83  \n \n  \n       i The source code of the previous   SVG  was    invalid    due to   39   errors.",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
       }
     },
     {
       "p": 1000,
-      "q": "ما الدولة صاحبة هذا العلم ذي النجمة الصفراء وسط شريط أحمر، مع أشرطة خضراء وبيضاء؟",
+      "q": "ما الدولة من أمريكا الجنوبية صاحبة هذا العلم؟",
       "a": "سورينام",
       "qid": "flags-1000-907",
       "type": "image",
@@ -1136,24 +1014,21 @@
       "topic": "أمريكا الجنوبية",
       "difficultyTarget": 0.15,
       "verified": true,
-      "sourceUrl": "https://gov.sr/suriname/",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
       "media": {
         "src": "flags-1000-907.webp",
         "type": "image",
-        "title": "علم دولة — رسم توضيحي",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-23",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-1000-907.json"
-        }
+        "title": "Flag of Suriname.svg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Suriname.svg",
+        "author": "See   File history   below for details.",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
       }
     },
     {
       "p": 1000,
-      "q": "ما الدولة صاحبة هذا العلم الذي يظهر فيه رأس سهم ذهبي ومثلث أحمر على خلفية خضراء؟",
+      "q": "ما الدولة من أمريكا الجنوبية صاحبة هذا العلم؟",
       "a": "غيانا",
       "qid": "flags-1000-908",
       "type": "image",
@@ -1165,19 +1040,16 @@
       "topic": "أمريكا الجنوبية",
       "difficultyTarget": 0.15,
       "verified": true,
-      "sourceUrl": "https://www.education.gov.gy/web2/index.php/students-resources/secondary-school-resources/grade7/grade7-worksheets/grade-7-worksheets-social-studies/2977-grade-7-social-studies-week-6-lesson-1/file",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
       "media": {
         "src": "flags-1000-908.webp",
         "type": "image",
-        "title": "علم دولة — رسم توضيحي",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-23",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-1000-908.json"
-        }
+        "title": "Flag of Guyana.svg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Guyana.svg",
+        "author": "Whitney Smith",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
       }
     }
   ]

@@ -1,0 +1,66 @@
+{
+  "date": "2026-10-12",
+  "bankVersion": "badeeha-quality-2026-10-08",
+  "tests": {
+    "passed": 670,
+    "failed": 0
+  },
+  "bankValidation": {
+    "errors": 0,
+    "crossCardWarnings": "Reviewed deliberate cross-card words; see ../cross-card-warnings.json"
+  },
+  "lint": {
+    "errors": 0,
+    "existingWarnings": 34,
+    "runner": "Same ESLint 10.11 and repo config, isolated local dependency install"
+  },
+  "signingTests": {
+    "passed": 5,
+    "failed": 0
+  },
+  "game": {
+    "passed": 77,
+    "failed": 0,
+    "snapshots": 18,
+    "viewport": [
+      390,
+      844
+    ],
+    "network": "Production requests blocked; isolated local entitlement fixture",
+    "includes": [
+      "family/challenge/expert",
+      "media reveal and assistance",
+      "hints and audio",
+      "offline cached media",
+      "save and resume with scores",
+      "old-version notice",
+      "account/history/settings preservation"
+    ]
+  },
+  "resources": {
+    "cards": 3120,
+    "images": 478,
+    "sha256": "Every active asset and media cache fingerprint matched final manifest"
+  },
+  "independentReview": {
+    "beforeAndAfterSnapshots": 3120,
+    "retiredIds": 294,
+    "blockingFindings": 0
+  },
+  "physicalIPhoneTest": false,
+  "playerDifficultyCalibration": false,
+  "startupImages": {
+    "passed": 23,
+    "failed": 0,
+    "activeImages": 510,
+    "coverage": [
+      "first launch",
+      "nonblocking background download",
+      "second launch without repeat requests",
+      "all 510 SHA comparisons",
+      "offline decode",
+      "503 outage of one active image",
+      "retry only the missing image"
+    ]
+  }
+}

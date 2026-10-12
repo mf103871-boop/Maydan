@@ -1,0 +1,20 @@
+{
+  "id": "zoom-800-903",
+  "prompt": "Create one landscape 4:3 highly realistic macro photo of a standard stainless steel fingernail clipper, sideways diagonally on sage-green linen. Show the complete object at 80% frame. Central 30% MUST contain both curved cutting jaws and the pivot pin under the upturned pressure lever; longer folded body goes toward right edge. Clearly correct real clipper mechanical structure. Unbranded, no hand, no nails, no lettering. Soft copper-tinted window light, restrained dark green background. Game will magnify 3.4x around the centre to show part of the mechanism, making players infer the whole from the connection of two clear parts.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-10-08",
+  "sourceFile": "exec-5cbeb58b-d986-4f12-9f33-0de81eb81902.png",
+  "sourceSha256": "1881319f43a14b3261426a10d89f6eeec57dc7d232467d26211718dee970f52e",
+  "file": "media/zoom/quality-800-903.webp",
+  "sha256": "bf9b0fbde100cf99d5afb5d0b181d3b270ecdb14a5fe96a43d45eb45db6fd10f",
+  "width": 960,
+  "height": 720,
+  "bytes": 113434,
+  "review": {
+    "status": "phone-size-reviewed",
+    "reviewedAt": "2026-10-08",
+    "method": "Original and shipped effect at phone width, including high-tier assistance; independent editorial review.",
+    "evidence": "docs/bank/quality-2026-10-08/independent-root-image-review.md",
+    "qid": "zoom-800-903"
+  }
+}

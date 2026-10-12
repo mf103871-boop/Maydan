@@ -41,7 +41,8 @@
       "topic": "فلونة",
       "verified": true,
       "sourceUrl": "https://ar.wikipedia.org/wiki/فلونة#القصة",
-      "difficultyTarget": 0.8
+      "difficultyTarget": 0.8,
+      "alt": []
     },
     {
       "qid": "spacetoon-200-914",
@@ -210,7 +211,7 @@
     {
       "qid": "spacetoon-400-918",
       "p": 400,
-      "q": "ما اسم إوزة المزرعة البيضاء التي تحمل نيلز في الرحلة؟",
+      "q": "ما اسم الإوز الأبيض من المزرعة الذي يحمل نيلز في رحلته؟",
       "a": "مورتن",
       "alt": [
         "مورتون",
@@ -268,9 +269,7 @@
       "p": 600,
       "q": "ما مكانة رفيقة سندباد الطائرة قبل أن يحوّلها السحرة إلى طائر؟",
       "a": "أميرة",
-      "alt": [
-        "الأميرة"
-      ],
+      "alt": [],
       "topic": "سندباد",
       "verified": true,
       "sourceUrl": "https://ar.wikipedia.org/wiki/مغامرات_سندباد#الشخصيات",
@@ -420,7 +419,6 @@
       "q": "ما الزهرة البيضاء التي تزرعها ساندي بل وتربطها بذكرى أمها؟",
       "a": "النرجس الأبيض",
       "alt": [
-        "نرجس أبيض",
         "زهرة النرجس"
       ],
       "topic": "ساندي بل",
@@ -464,7 +462,8 @@
       "verified": true,
       "p": 1000,
       "qid": "spacetoon-1000-912",
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.15,
+      "alt": []
     },
     {
       "topic": "فلونة",
@@ -474,7 +473,8 @@
       "verified": true,
       "p": 1000,
       "qid": "spacetoon-1000-913",
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.15,
+      "alt": []
     },
     {
       "topic": "سندباد",
@@ -484,17 +484,19 @@
       "verified": true,
       "p": 1000,
       "qid": "spacetoon-1000-914",
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.15,
+      "alt": []
     },
     {
       "topic": "غرندايزر",
-      "q": "ما اسم قاعدة قوات فيغا الموجودة على القمر في «غرندايزر»؟",
+      "q": "ما الاسم العربي لقاعدة قوات فيغا على القمر في «غرندايزر»؟",
       "a": "جمجمة القمر",
       "sourceUrl": "https://en.wikipedia.org/wiki/Grendizer#Plot",
       "verified": true,
       "p": 1000,
       "qid": "spacetoon-1000-915",
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.15,
+      "alt": []
     },
     {
       "topic": "جزيرة الكنز",
@@ -517,7 +519,8 @@
       "verified": true,
       "p": 1000,
       "qid": "spacetoon-1000-917",
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.15,
+      "alt": []
     },
     {
       "topic": "نيلز",

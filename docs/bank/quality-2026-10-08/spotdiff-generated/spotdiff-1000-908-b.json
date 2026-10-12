@@ -1,0 +1,76 @@
+{
+  "pack": "spotdiff",
+  "oldQid": "spotdiff-1000-908",
+  "side": "b",
+  "createdAt": "2026-10-08",
+  "kind": "ai-generated",
+  "tool": "OpenAI image generation (built-in)",
+  "mode": "edit",
+  "prompt": "Use case: precise-object-edit. Input is the exact original A for a one-difference puzzle. Edit ONLY the position of the TOP notch on the large flat circular steel locking washer at lower left. The ring currently has FOUR outer edge notches at top, right, bottom and left. Fill the top/12-o'clock notch seamlessly with matching metal, and put that SAME notch at the upper-right diagonal, about 1:30 o'clock, between the previous top and right positions. Thus exactly FOUR notches still exist: upper-right diagonal, right, bottom, left. This relocation is the only difference. Keep the central circular hole, ring size and location, other THREE notches, metal texture and light, all nuts, plain washers, gear, tools, bolt, lamp, oilcan and background completely identical. Keep same4:3 framing, no annotations, circles, symbols or border.",
+  "asset": "media/spotdiff/spotdiff-1000-908-b-q20261008.webp",
+  "generatedOriginal": "C:\\Users\\user\\.codex\\generated_images\\01a11a56-e9d4-7570-aca6-dec9cf1d8f58\\exec-bdd85e78-8f90-4f19-aa67-eaef1a67e7d7.png",
+  "inputImages": [
+    "C:\\Users\\user\\.codex\\generated_images\\01a11a56-e9d4-7570-aca6-dec9cf1d8f58\\exec-1e6beeaf-6dfa-49b2-af2c-675f047b2695.png"
+  ],
+  "review": {
+    "status": "phone-size-reviewed",
+    "originalCompared": true,
+    "displayedEffect": "Side-by-side unfiltered originals; reveal circle only. Stacked below 359px viewport.",
+    "difference": "Relocate the locking washer top outer notch from 12 oclock to 1:30; the other three notches stay in place, maintaining four total.",
+    "answer": "انتقل الشق العلوي في الحلقة",
+    "spot": {
+      "x": 39.5,
+      "y": 48,
+      "r": 7.5
+    },
+    "semanticDifferenceCount": 1,
+    "invariantsReviewed": [
+      "three stationary ring notches and central hole",
+      "four hex nuts",
+      "three plain washers",
+      "two wrenches",
+      "caliper",
+      "screwdriver",
+      "bolt",
+      "brass gear",
+      "oilcan and lamp",
+      "lighting and bench composition"
+    ],
+    "mobileDeviceQA": false,
+    "browserDisplayQA": {
+      "usedShippedCSS": true,
+      "source": "src/games/badeeha/styles.css",
+      "markupMatches": "App.js .m-diff/.m-diff-frame with physical left/top circle",
+      "viewports": [
+        390,
+        350
+      ],
+      "imageWidths": [
+        173,
+        316
+      ],
+      "views": [
+        "side-by-side before reveal",
+        "side-by-side with reveal",
+        "stacked before reveal",
+        "stacked with reveal"
+      ],
+      "evidence": [
+        ".cache/badeeha-quality/spotdiff-shape/spotdiff-1000-908-390.png",
+        ".cache/badeeha-quality/spotdiff-shape/spotdiff-1000-908-350.png"
+      ],
+      "reviewer": "shape_visual_audit",
+      "notes": "One semantic difference confirmed; generated texture variations do not add an identifiable object/count/layout difference. Diagnostic browser rendering, not on-device iPhone QA."
+    },
+    "reviewedAt": "2026-10-12",
+    "reviewer": "finish_spotdiff",
+    "imageWidthCSS": 173,
+    "evidence": "docs/bank/quality-2026-10-08/preview/spotdiff-10.png"
+  },
+  "packaging": "Uniform proportional resize to1280x960 and WebP encoding only; every scene edit made by built-in imagegen.",
+  "sha256": "9168fd7bb42759f86ecff50689304381ccc6ea6167698f04425eef131968369d",
+  "bytes": 160024,
+  "width": 1280,
+  "height": 960,
+  "generatedOriginalSha256": "c09582cf81692c16c83c5f10312b320f3630e923387dafe8b4b91bed2bd123e6"
+}

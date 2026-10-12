@@ -1,0 +1,29 @@
+{
+  "id": "zoom",
+  "kind": "cover",
+  "file": "public/media/badeeha-covers/zoom.webp",
+  "style": "macro photography",
+  "palette": "charcoal, copper, forest green",
+  "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'زووم'. Landscape 4:3 artwork.\nMedium: macro photography.\nIntentional palette: charcoal, copper, forest green.\nScene: An extreme macro of beautiful leaf veins and a curving magnifier rim, tactile natural detail, off-center composition, no complete identifiable question subject.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-10-08",
+  "sourceImage": {
+    "name": "exec-5b18adc1-857e-46a6-9bc7-f8f54caea8c2.png",
+    "sha256": "78f5df6bcbc912c5a8deb34724ca23e8c03d7da26b9ef85adbc06b91d4e98f76",
+    "width": 1448,
+    "height": 1086
+  },
+  "width": 640,
+  "height": 480,
+  "bytes": 66024,
+  "sha256": "8191ecc726e4b67499eacb5af4ed88948681cb79236505bd4ca85c8f747191a9",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "phone-size-reviewed",
+    "date": "2026-10-08",
+    "reviewer": "root",
+    "width": 160,
+    "method": "shipped cover CSS; baseline and replacement side by side",
+    "evidence": "docs/bank/quality-2026-10-08/preview/covers-4.jpg"
+  }
+}

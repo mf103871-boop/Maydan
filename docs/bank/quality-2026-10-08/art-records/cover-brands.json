@@ -1,0 +1,29 @@
+{
+  "id": "brands",
+  "kind": "cover",
+  "file": "public/media/badeeha-covers/brands.webp",
+  "style": "fashion editorial photography",
+  "palette": "black, crimson, brushed silver",
+  "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'ماركات وشركات'. Landscape 4:3 artwork.\nMedium: fashion editorial photography.\nIntentional palette: black, crimson, brushed silver.\nScene: An elegant shop window with an unbranded sculptural bottle, folded fabric and a box, hard sidelight and glossy reflections, no legible marks.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-10-08",
+  "sourceImage": {
+    "name": "exec-ebb50b75-a9d6-4c8c-a93d-5ee5496e6ff2.png",
+    "sha256": "416ab4bb7e9b707d4752aa037680bc00bccb7b2d6099801cf169fc56c00ee857",
+    "width": 1448,
+    "height": 1086
+  },
+  "width": 640,
+  "height": 480,
+  "bytes": 43354,
+  "sha256": "78f6e01eede816692710d5587b4a926bbb74bb675e2fcf3a3a3ba957a0bdfe49",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "phone-size-reviewed",
+    "date": "2026-10-08",
+    "reviewer": "root",
+    "width": 160,
+    "method": "shipped cover CSS; baseline and replacement side by side",
+    "evidence": "docs/bank/quality-2026-10-08/preview/covers-1.jpg"
+  }
+}

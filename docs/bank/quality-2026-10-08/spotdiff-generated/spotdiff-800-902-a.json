@@ -1,0 +1,53 @@
+{
+  "pack": "spotdiff",
+  "oldQid": "spotdiff-800-902",
+  "side": "a",
+  "createdAt": "2026-10-08",
+  "kind": "ai-generated",
+  "tool": "OpenAI image generation (built-in)",
+  "mode": "generate",
+  "prompt": "Use case: illustration-story\nAsset type: base A for a single-difference puzzle in the Arabic party game Maydan; scene will display at about 175 pixels wide.\nPrimary request: one landscape 4:3 image of an illustrated architect's desk, crisp mature editorial gouache and ink, no text. Use a cool teal, navy, ochre and coral palette instead of beige product photography. Slight overhead view. Scene contains an open cream sketchbook with a simple floor-plan drawing, a set square, three graphite pencils parallel at lower left all sharpened tips pointing upward/right, a small navy mug upper right with its handle to the right, five neatly arranged wooden building blocks behind the sketchbook, a desk lamp upper left, and one brass paper clip near the lower right corner of the sketchbook. Natural window light, clear outlines, varied but harmonious details. No people, logos, captions, numbers, letters, UI, border, watermark or paired panels. Composition has about ten clearly distinct objects, all large enough for mobile comparison. Keep the desk arrangement believable and carefully separated. This is only the original scene; do not insert a hidden difference or highlight any item.",
+  "asset": "media/spotdiff/spotdiff-800-902-a-q20261008.webp",
+  "sha256": "30ca7c75245ceba8dbdbc711221c4b4dc016cbc65bebe60566fe1e3ff840395e",
+  "bytes": 255210,
+  "width": 1280,
+  "height": 960,
+  "inputImages": [],
+  "review": {
+    "status": "phone-size-reviewed",
+    "originalCompared": true,
+    "displayedEffect": "Side-by-side unfiltered originals; reveal circle only",
+    "difference": "Only teal triangular block orientation; upward A, rightward B",
+    "semanticDifferenceCount": 1,
+    "invariantsReviewed": [
+      "five blocks remain",
+      "three pencil tips",
+      "floor-plan",
+      "clip",
+      "lamp",
+      "plants",
+      "window",
+      "mug/coaster",
+      "framing"
+    ],
+    "mobileDeviceQA": false,
+    "reviewedAt": "2026-10-12",
+    "reviewer": "finish_spotdiff",
+    "imageWidthCSS": 173,
+    "evidence": "docs/bank/quality-2026-10-08/preview/spotdiff-07.png"
+  },
+  "packaging": "Uniform size/format encoding only; all scene changes created by built-in imagegen",
+  "packagingReview": {
+    "date": "2026-10-12",
+    "file": "media/spotdiff/spotdiff-800-902-a-q20261008.webp",
+    "beforeBytes": 344704,
+    "bytes": 255210,
+    "beforeSha256": "e1c36e285293362605def1090a58029ce697ed2acc52357b4b0e6fb8cdb2ab80",
+    "sha256": "30ca7c75245ceba8dbdbc711221c4b4dc016cbc65bebe60566fe1e3ff840395e",
+    "quality": 88,
+    "dimensionsUnchanged": true,
+    "operation": "WebP encoding only; no scene edit",
+    "phoneReview": "phone-size-reviewed-after-compression",
+    "reviewRecord": "docs/bank/quality-2026-10-08/postcompression-review.json"
+  }
+}

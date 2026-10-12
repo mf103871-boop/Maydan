@@ -1,0 +1,29 @@
+{
+  "id": "apps",
+  "kind": "cover",
+  "file": "public/media/badeeha-covers/apps.webp",
+  "style": "playful flat editorial illustration",
+  "palette": "coral, turquoise, royal blue",
+  "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'تطبيقات وسوشيال'. Landscape 4:3 artwork.\nMedium: playful flat editorial illustration.\nIntentional palette: coral, turquoise, royal blue.\nScene: Several floating unbranded mobile windows and a phone in a bright spatial composition, abstract icons without lettering, rounded graphic geometry.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-10-08",
+  "sourceImage": {
+    "name": "exec-6b1cedf2-2471-4635-a18e-1d88e501a8ed.png",
+    "sha256": "a52f77bf7ac90fdaa4143fad04e175f202e674939826e6c9eba74afd0d72d34a",
+    "width": 1448,
+    "height": 1086
+  },
+  "width": 640,
+  "height": 480,
+  "bytes": 47460,
+  "sha256": "ece5738644c6b406863f8e4d5c66ade893c50f73d253aae9774a113e3d04d8fb",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "phone-size-reviewed",
+    "date": "2026-10-08",
+    "reviewer": "root",
+    "width": 160,
+    "method": "shipped cover CSS; baseline and replacement side by side",
+    "evidence": "docs/bank/quality-2026-10-08/preview/covers-1.jpg"
+  }
+}

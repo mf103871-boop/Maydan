@@ -1,0 +1,29 @@
+{
+  "id": "ramadan",
+  "kind": "cover",
+  "file": "public/media/badeeha-covers/ramadan.webp",
+  "style": "nighttime architectural illustration",
+  "palette": "indigo, lantern amber, turquoise",
+  "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'رمضان'. Landscape 4:3 artwork.\nMedium: nighttime architectural illustration.\nIntentional palette: indigo, lantern amber, turquoise.\nScene: A peaceful neighborhood courtyard at blue hour with a glowing hanging lantern and arched doorways, no people or sacred text.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-10-08",
+  "sourceImage": {
+    "name": "exec-4af950d0-dcdf-4547-9fa0-312c2cd4c0fa.png",
+    "sha256": "523e252e7a59a39d6f445f82cab54d2acc44ebae1a64330fb476d9c565b6bc4a",
+    "width": 1448,
+    "height": 1086
+  },
+  "width": 640,
+  "height": 480,
+  "bytes": 84004,
+  "sha256": "aeda512f5fa67b2a71ce31740f7aaa6d0866f07ac58b49b0440d80dad59240ab",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "phone-size-reviewed",
+    "date": "2026-10-08",
+    "reviewer": "root",
+    "width": 160,
+    "method": "shipped cover CSS; baseline and replacement side by side",
+    "evidence": "docs/bank/quality-2026-10-08/preview/covers-2.jpg"
+  }
+}

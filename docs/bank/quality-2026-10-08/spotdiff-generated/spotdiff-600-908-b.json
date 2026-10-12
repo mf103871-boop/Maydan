@@ -1,0 +1,39 @@
+{
+  "pack": "spotdiff",
+  "oldQid": "spotdiff-600-908",
+  "side": "b",
+  "createdAt": "2026-10-08",
+  "kind": "ai-generated",
+  "tool": "OpenAI image generation (built-in)",
+  "mode": "edit",
+  "prompt": "Use case: precise-object-edit\nAsset type: matching B of a one-difference comparison puzzle.\nInput image1 is exact EDIT TARGET. Change ONLY the hanging-hole at the far tip of the blue paintbrush HANDLE: fill the circular hole with solid blue plastic matching the surrounding handle. Preserve the entire handle outline, size, color and texture. The brush bristles must remain BLACK, not white. This is one handle-hole existence difference.\nOnly ONE semantic difference. Keep everything else identical including black bristles count/texture/outline, silver ferrule two rivets and ridges, blue handle outline/shine, red paint can and closed lid/rims, tabletop/light/framing. No new items, text, markers, annotations, border, panel, or UI. Preserve4:3 framing.",
+  "asset": "media/spotdiff/spotdiff-600-908-b-q20261008.webp",
+  "sha256": "4dd37e4531b32403f1e5df69726d84e351fd617ba6abf09071396496a67a3124",
+  "bytes": 80664,
+  "width": 1280,
+  "height": 960,
+  "inputImages": [
+    {
+      "file": "spotdiff-600-908-a.webp",
+      "sha256": "53cdac817bd8a880cc35fe29728bfd502b97e91ed2eb8778ab3a998f9be7ff3b"
+    }
+  ],
+  "review": {
+    "status": "phone-size-reviewed",
+    "originalCompared": true,
+    "displayedEffect": "Side-by-side unfiltered originals; reveal circle only",
+    "difference": "اختفت فتحة مقبض الفرشاة",
+    "semanticDifferenceCount": 1,
+    "invariantsReviewed": [
+      "فتحة التعليق الدائرية أصبحت بلاستيكًا أزرق مصمتًا",
+      "الشعيرات السوداء والطوق المعدني والمسماران ثابتة",
+      "علبة الطلاء الحمراء والطاولة والإضاءة ثابتة"
+    ],
+    "mobileDeviceQA": false,
+    "reviewedAt": "2026-10-12",
+    "reviewer": "finish_spotdiff",
+    "imageWidthCSS": 173,
+    "evidence": "docs/bank/quality-2026-10-08/preview/spotdiff-06.png"
+  },
+  "packaging": "Uniform size/format encoding only; all scene changes created by built-in imagegen"
+}

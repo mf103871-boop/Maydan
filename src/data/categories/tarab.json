@@ -11,7 +11,8 @@
       "sourceUrl": "https://www.maqamworld.com/en/form/instr_comp.php",
       "qid": "tarab-200-911",
       "difficultyTarget": 0.8,
-      "verified": true
+      "verified": true,
+      "alt": []
     },
     {
       "p": 200,
@@ -21,7 +22,8 @@
       "sourceUrl": "https://www.maqamworld.com/en/form/vocal_comp.php",
       "qid": "tarab-200-912",
       "difficultyTarget": 0.8,
-      "verified": true
+      "verified": true,
+      "alt": []
     },
     {
       "p": 200,
@@ -31,7 +33,8 @@
       "sourceUrl": "https://www.maqamworld.com/en/form/vocal_comp.php",
       "qid": "tarab-200-913",
       "difficultyTarget": 0.8,
-      "verified": true
+      "verified": true,
+      "alt": []
     },
     {
       "p": 200,
@@ -41,7 +44,8 @@
       "sourceUrl": "https://www.maqamworld.com/en/form/vocal_comp.php",
       "qid": "tarab-200-914",
       "difficultyTarget": 0.8,
-      "verified": true
+      "verified": true,
+      "alt": []
     },
     {
       "p": 200,
@@ -51,7 +55,8 @@
       "sourceUrl": "https://www.bibalex.org/libraries/Presentation/Static/Om_Koulthoum_ara.pdf",
       "qid": "tarab-200-915",
       "difficultyTarget": 0.8,
-      "verified": true
+      "verified": true,
+      "alt": []
     },
     {
       "p": 200,
@@ -75,17 +80,16 @@
       "verified": true,
       "p": 200,
       "qid": "tarab-200-917",
-      "difficultyTarget": 0.8
+      "difficultyTarget": 0.8,
+      "alt": []
     },
     {
       "p": 200,
       "topic": "قوالب موسيقية",
-      "q": "ماذا يسمى الارتجال الغنائي المنفرد المبني على أبيات بالعامية؟",
+      "q": "مطرب يرتجل منفردًا أبياتًا بالعامية؛ ما اسم القالب الغنائي؟",
       "a": "الموال",
       "sourceUrl": "https://www.maqamworld.com/en/form/improv.php",
-      "alt": [
-        "موال"
-      ],
+      "alt": [],
       "qid": "tarab-200-918",
       "difficultyTarget": 0.8,
       "verified": true
@@ -124,7 +128,8 @@
       "sourceUrl": "https://www.maqamworld.com/en/form/instr_comp.php",
       "qid": "tarab-400-913",
       "difficultyTarget": 0.6,
-      "verified": true
+      "verified": true,
+      "alt": []
     },
     {
       "p": 400,
@@ -142,12 +147,10 @@
     {
       "p": 400,
       "topic": "قوالب موسيقية",
-      "q": "ماذا يسمى الارتجال الغنائي على عبارة «يا ليل يا عين»؟",
+      "q": "ارتجال على «يا ليل يا عين»؛ ماذا يسمى هذا الأداء؟",
       "a": "الليالي",
       "sourceUrl": "https://www.maqamworld.com/en/form/improv.php",
-      "alt": [
-        "ليالي"
-      ],
+      "alt": [],
       "qid": "tarab-400-915",
       "difficultyTarget": 0.6,
       "verified": true
@@ -158,9 +161,7 @@
       "q": "ما الآلة الشامية ذات الرقبة الطويلة والدساتين المتحركة والأوتار المعدنية؟",
       "a": "البزق",
       "sourceUrl": "https://www.maqamworld.com/en/instr/buzuq.php",
-      "alt": [
-        "بزق"
-      ],
+      "alt": [],
       "qid": "tarab-400-916",
       "difficultyTarget": 0.6,
       "verified": true
@@ -172,8 +173,7 @@
       "a": "الأولمبيا",
       "sourceUrl": "https://music.apple.com/us/album/the-olympia-paris-concert-1979-live/1420594903",
       "alt": [
-        "مسرح الأولمبيا",
-        "أولمبيا"
+        "مسرح الأولمبيا"
       ],
       "qid": "tarab-400-917",
       "difficultyTarget": 0.6,
@@ -200,7 +200,8 @@
       "sourceUrl": "https://www.maqamworld.com/en/form/vocal_comp.php",
       "qid": "tarab-600-911",
       "difficultyTarget": 0.4,
-      "verified": true
+      "verified": true,
+      "alt": []
     },
     {
       "p": 600,
@@ -210,17 +211,16 @@
       "sourceUrl": "https://www.maqamworld.com/en/instr/accordion.php",
       "qid": "tarab-600-912",
       "difficultyTarget": 0.4,
-      "verified": true
+      "verified": true,
+      "alt": []
     },
     {
       "p": 600,
       "topic": "قوالب موسيقية",
-      "q": "ما القالب المصري القديم الذي يتبادل فيه المطرب والبطانة غناء الآهات؟",
+      "q": "مطرب وبطانة يتبادلون الآهات في قالب مصري قديم؛ ما القالب؟",
       "a": "الدور",
       "sourceUrl": "https://www.maqamworld.com/en/form/vocal_comp.php",
-      "alt": [
-        "دور"
-      ],
+      "alt": [],
       "qid": "tarab-600-913",
       "difficultyTarget": 0.4,
       "verified": true
@@ -246,7 +246,8 @@
       "sourceUrl": "https://www.bibalex.org/libraries/Presentation/Static/ramy.pdf",
       "qid": "tarab-600-915",
       "difficultyTarget": 0.4,
-      "verified": true
+      "verified": true,
+      "alt": []
     },
     {
       "p": 600,
@@ -295,7 +296,8 @@
       "sourceUrl": "https://www.maqamworld.com/en/instr/accordion.php",
       "qid": "tarab-800-911",
       "difficultyTarget": 0.25,
-      "verified": true
+      "verified": true,
+      "alt": []
     },
     {
       "p": 800,
@@ -313,12 +315,10 @@
     {
       "p": 800,
       "topic": "قوالب موسيقية",
-      "q": "ماذا تسمى اللازمة التي تعود بين خانات السماعي والبشرف؟",
+      "q": "بين خانات السماعي والبشرف تعود لازمة؛ ما اسمها؟",
       "a": "التسليم",
       "sourceUrl": "https://www.maqamworld.com/en/form/ottoman.php",
-      "alt": [
-        "تسليم"
-      ],
+      "alt": [],
       "qid": "tarab-800-913",
       "difficultyTarget": 0.25,
       "verified": true
@@ -329,9 +329,7 @@
       "q": "ما القالب الآلي الذي تتبادل فيه الفرقة لازمة جماعية مع ارتجال كل عازف؟",
       "a": "التحميلة",
       "sourceUrl": "https://www.maqamworld.com/en/form/instr_comp.php",
-      "alt": [
-        "تحميلة"
-      ],
+      "alt": [],
       "qid": "tarab-800-914",
       "difficultyTarget": 0.25,
       "verified": true
@@ -344,7 +342,8 @@
       "sourceUrl": "https://www.maqamworld.com/en/form/ottoman.php",
       "qid": "tarab-800-915",
       "difficultyTarget": 0.25,
-      "verified": true
+      "verified": true,
+      "alt": []
     },
     {
       "p": 800,
@@ -354,7 +353,8 @@
       "sourceUrl": "https://www.aub.edu.lb/doctorates/recipients/Pages/fairuz-profile.aspx",
       "qid": "tarab-800-916",
       "difficultyTarget": 0.25,
-      "verified": true
+      "verified": true,
+      "alt": []
     },
     {
       "p": 800,
@@ -390,7 +390,8 @@
       "verified": true,
       "p": 1000,
       "qid": "tarab-1000-911",
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.15,
+      "alt": []
     },
     {
       "topic": "نجوم الشام",
@@ -400,7 +401,8 @@
       "verified": true,
       "p": 1000,
       "qid": "tarab-1000-912",
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.15,
+      "alt": []
     },
     {
       "topic": "التلحين",
@@ -410,7 +412,8 @@
       "verified": true,
       "p": 1000,
       "qid": "tarab-1000-913",
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.15,
+      "alt": []
     },
     {
       "topic": "التلحين",
@@ -420,7 +423,8 @@
       "verified": true,
       "p": 1000,
       "qid": "tarab-1000-914",
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.15,
+      "alt": []
     },
     {
       "topic": "آلات وعازفون",
@@ -444,17 +448,19 @@
       "verified": true,
       "p": 1000,
       "qid": "tarab-1000-916",
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.15,
+      "alt": []
     },
     {
       "topic": "قوالب موسيقية",
-      "q": "ما اسم إعادة المطرب مقطع الموشح مع ارتجال وتنويع لحني قبل عودة البطانة؟",
+      "q": "مطرب يعيد مقطع الموشح بتنويع وارتجال قبل عودة البطانة؛ ما اسم هذا الأسلوب؟",
       "a": "التفريد",
       "sourceUrl": "https://www.maqamworld.com/en/form/vocal_comp.php",
       "verified": true,
       "p": 1000,
       "qid": "tarab-1000-917",
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.15,
+      "alt": []
     },
     {
       "topic": "محطات الطرب",
@@ -464,7 +470,8 @@
       "verified": true,
       "p": 1000,
       "qid": "tarab-1000-918",
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.15,
+      "alt": []
     }
   ]
 }

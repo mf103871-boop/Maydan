@@ -1,0 +1,29 @@
+{
+  "id": "islamiyat",
+  "kind": "cover",
+  "file": "public/media/badeeha-covers/islamiyat.webp",
+  "style": "geometric architectural illustration",
+  "palette": "emerald, sandstone, gold",
+  "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'إسلاميات'. Landscape 4:3 artwork.\nMedium: geometric architectural illustration.\nIntentional palette: emerald, sandstone, gold.\nScene: Sunlight streams across a quiet Islamic geometric arcade, intricate but legible architectural rhythm, no calligraphy or human figures.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-10-08",
+  "sourceImage": {
+    "name": "exec-fa5849a1-a0db-41a1-bfa2-37a99965f6ac.png",
+    "sha256": "e05e45841f267b77714cbfc4d30d570640449c75a62924c8f72426fc3a64647f",
+    "width": 1448,
+    "height": 1086
+  },
+  "width": 640,
+  "height": 480,
+  "bytes": 77876,
+  "sha256": "88c1aa2bd4db34f30ac021329f7b2798a49af2b7a53a8367eeac8b43c3271664",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "phone-size-reviewed",
+    "date": "2026-10-08",
+    "reviewer": "root",
+    "width": 160,
+    "method": "shipped cover CSS; baseline and replacement side by side",
+    "evidence": "docs/bank/quality-2026-10-08/preview/covers-2.jpg"
+  }
+}

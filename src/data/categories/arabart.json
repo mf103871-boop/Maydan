@@ -54,7 +54,6 @@
       "verified": true,
       "difficultyTarget": 0.8,
       "alt": [
-        "ارابيسك",
         "العربسة"
       ]
     },
@@ -67,9 +66,7 @@
       "sourceUrl": "https://ich.unesco.org/en/RL/traditional-weaving-of-al-sadu-02158",
       "verified": true,
       "difficultyTarget": 0.8,
-      "alt": [
-        "سدو"
-      ]
+      "alt": []
     },
     {
       "p": 200,
@@ -80,9 +77,7 @@
       "sourceUrl": "https://mia.org.qa/en/about-us/",
       "verified": true,
       "difficultyTarget": 0.8,
-      "alt": [
-        "دوحة"
-      ]
+      "alt": []
     },
     {
       "p": 200,
@@ -99,7 +94,7 @@
     },
     {
       "p": 200,
-      "q": "ما اسم مادة الكتابة المصنوعة من جلد الحيوان التي استُخدمت للمخطوطات قبل انتشار الورق؟",
+      "q": "مخطوط سابق لانتشار الورق كُتب على جلد حيوان؛ ما اسم مادة الكتابة؟",
       "a": "الرق",
       "qid": "arabart-200-918",
       "topic": "حرف وتقنيات",
@@ -134,11 +129,12 @@
       "topic": "رواد التشكيل",
       "sourceUrl": "https://www.barjeelartfoundation.org/artist/sudan/ibrahim-el-salahi/",
       "verified": true,
-      "difficultyTarget": 0.6
+      "difficultyTarget": 0.6,
+      "alt": []
     },
     {
       "p": 400,
-      "q": "ما الوحدة المعينية التي يستخدمها الخطاط لضبط تناسب الحروف؟",
+      "q": "خطاط يقيس تناسب الحروف بوحدة معينية؛ ما اسم هذه الوحدة؟",
       "a": "النقطة",
       "qid": "arabart-400-913",
       "topic": "خط عربي",
@@ -146,7 +142,6 @@
       "verified": true,
       "difficultyTarget": 0.6,
       "alt": [
-        "نقطة",
         "النقطة المعينية"
       ]
     },
@@ -160,8 +155,7 @@
       "verified": true,
       "difficultyTarget": 0.6,
       "alt": [
-        "المقرنص",
-        "مقرنصات"
+        "المقرنص"
       ]
     },
     {
@@ -214,7 +208,6 @@
       "verified": true,
       "difficultyTarget": 0.6,
       "alt": [
-        "ألوان مائية",
         "الأكواريل"
       ]
     },
@@ -314,7 +307,7 @@
     },
     {
       "p": 600,
-      "q": "ما تقنية زخرفة الخزف التي تستخدم مركبات المعادن لإعطاء السطح لمعانًا معدنيًا؟",
+      "q": "مركبات معادن تمنح الخزف لمعانًا معدنيًا؛ ما تقنية الزخرفة؟",
       "a": "البريق المعدني",
       "qid": "arabart-600-918",
       "topic": "حرف وتقنيات",
@@ -369,7 +362,7 @@
     },
     {
       "p": 800,
-      "q": "ما اسم نوع الخط الزاوي الذي تنبت من حروفه زخارف نباتية؟",
+      "q": "حروف خط زاوي تنبت منها زخارف نباتية؛ ما نوعه؟",
       "a": "الكوفي المورق",
       "qid": "arabart-800-914",
       "topic": "خط عربي",
@@ -405,9 +398,7 @@
       "verified": true,
       "difficultyTarget": 0.25,
       "alt": [
-        "كاجوجة",
-        "الكاجوجا",
-        "كاجوجا"
+        "الكاجوجا"
       ]
     },
     {
@@ -446,7 +437,8 @@
       "verified": true,
       "p": 1000,
       "qid": "arabart-1000-911",
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.15,
+      "alt": []
     },
     {
       "topic": "رواد التشكيل",
@@ -456,7 +448,8 @@
       "verified": true,
       "p": 1000,
       "qid": "arabart-1000-912",
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.15,
+      "alt": []
     },
     {
       "topic": "أعمال شهيرة",
@@ -466,7 +459,8 @@
       "verified": true,
       "p": 1000,
       "qid": "arabart-1000-913",
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.15,
+      "alt": []
     },
     {
       "topic": "عمارة وزخرفة",
@@ -484,11 +478,10 @@
     },
     {
       "topic": "حرف وتقنيات",
-      "q": "ما الاسم المحلي للخيط المعدني الذهبي أو الفضي المستخدم في نسج التلي الإماراتي؟",
+      "q": "حرفية تنسج التلي بخيط معدني ذهبي أو فضي؛ ما اسمه المحلي الإماراتي؟",
       "a": "خوصة",
       "sourceUrl": "https://artsandculture.google.com/story/QQVxOxFtPMyAsw",
       "alt": [
-        "الخوصة",
         "خوص"
       ],
       "verified": true,

@@ -1,0 +1,29 @@
+{
+  "id": "quran",
+  "kind": "cover",
+  "file": "public/media/badeeha-covers/quran.webp",
+  "style": "respectful still-life photography",
+  "palette": "deep green, warm gold, walnut",
+  "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'القرآن الكريم'. Landscape 4:3 artwork.\nMedium: respectful still-life photography.\nIntentional palette: deep green, warm gold, walnut.\nScene: A closed unlettered dark-green book on a carved wooden stand in soft window light, dignified simple composition, no readable writing.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-10-08",
+  "sourceImage": {
+    "name": "exec-42907dd9-2772-4eb2-ace4-fdc4648ef2fb.png",
+    "sha256": "b38da4a08080f98d784e1798555686778aa17593f806eda628642850fee9ae35",
+    "width": 1448,
+    "height": 1086
+  },
+  "width": 640,
+  "height": 480,
+  "bytes": 66910,
+  "sha256": "60249df3c62a5c3cb65ec90489f3b2023629958831a9914c8a526ddbeadc2c50",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "phone-size-reviewed",
+    "date": "2026-10-08",
+    "reviewer": "root",
+    "width": 160,
+    "method": "shipped cover CSS; baseline and replacement side by side",
+    "evidence": "docs/bank/quality-2026-10-08/preview/covers-2.jpg"
+  }
+}

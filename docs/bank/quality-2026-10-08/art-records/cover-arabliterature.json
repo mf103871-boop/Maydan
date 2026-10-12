@@ -1,0 +1,29 @@
+{
+  "id": "arabliterature",
+  "kind": "cover",
+  "file": "public/media/badeeha-covers/arabliterature.webp",
+  "style": "woodcut editorial illustration",
+  "palette": "ink black, burnt orange, parchment",
+  "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'أدب عربي'. Landscape 4:3 artwork.\nMedium: woodcut editorial illustration.\nIntentional palette: ink black, burnt orange, parchment.\nScene: A manuscript opens into a richly patterned imaginary old city under a crescent moon, visible page texture, no words.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-10-08",
+  "sourceImage": {
+    "name": "exec-426c7b3d-256b-48b9-b6bf-ba30c11f2cc9.png",
+    "sha256": "022804bac1a9f0b179f0624e4c6a6030fe17ce3da2cc0c33b9f7d4b948172008",
+    "width": 1448,
+    "height": 1086
+  },
+  "width": 640,
+  "height": 480,
+  "bytes": 135010,
+  "sha256": "098fa9119fe1028cb0f8af971854ca1dffaf705932e2e171cbc0f8ad9129eaa1",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "phone-size-reviewed",
+    "date": "2026-10-08",
+    "reviewer": "root",
+    "width": 160,
+    "method": "shipped cover CSS; baseline and replacement side by side",
+    "evidence": "docs/bank/quality-2026-10-08/preview/covers-2.jpg"
+  }
+}

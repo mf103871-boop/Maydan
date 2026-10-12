@@ -1,0 +1,52 @@
+{
+  "pack": "spotdiff",
+  "oldQid": "spotdiff-800-903",
+  "side": "a",
+  "createdAt": "2026-10-08",
+  "kind": "ai-generated",
+  "tool": "OpenAI image generation (built-in)",
+  "mode": "generate",
+  "prompt": "Use case: illustration-story\nAsset type: base A of a one-difference mobile comparison puzzle.\nPrimary request: one landscape 4:3 image. A richly colored mature botanical editorial illustration of a potting bench, muted forest green, sage, violet and terracotta, crisp ink outlines with gouache shading. Three plant pots in different heights at back: basil, small fern, succulent. On bench center a terracotta saucer holds exactly FIVE rounded smooth grey pebbles in a loose ring, each separated and clearly visible, not overlapping. Saucer occupies 26 percent of image width. Around it are a watering can at left, coiled garden twine, pruning shears at front right, paper seed packets with abstract leaf illustrations and NO text, gardening glove at lower left, wooden brush and potting soil bowl at right. Soft dappled greenhouse light. Pebble count is precisely five.\nNo paired panels, people, labels, letters, digits, logos, border, watermark, highlights or UI. All comparison details remain discernible around 175 pixels display width. This is the original scene; no hidden difference.",
+  "asset": "media/spotdiff/spotdiff-800-903-a-q20261008.webp",
+  "sha256": "20a14102d39d4cf9ef4485b1b522dc2d4ac4d007ebc395b6dfab50f9dbdeb0e8",
+  "bytes": 237478,
+  "width": 1280,
+  "height": 960,
+  "inputImages": [],
+  "review": {
+    "status": "phone-size-reviewed",
+    "originalCompared": true,
+    "displayedEffect": "Side-by-side unfiltered originals; reveal circle only",
+    "difference": "Five grey pebbles to four on central saucer",
+    "semanticDifferenceCount": 1,
+    "invariantsReviewed": [
+      "five/four pebble count",
+      "all plants",
+      "seed card print shapes",
+      "tools",
+      "twine",
+      "soil",
+      "bench",
+      "light/framing"
+    ],
+    "mobileDeviceQA": false,
+    "reviewedAt": "2026-10-12",
+    "reviewer": "finish_spotdiff",
+    "imageWidthCSS": 173,
+    "evidence": "docs/bank/quality-2026-10-08/preview/spotdiff-07.png"
+  },
+  "packaging": "Uniform size/format encoding only; all scene changes created by built-in imagegen",
+  "packagingReview": {
+    "date": "2026-10-12",
+    "file": "media/spotdiff/spotdiff-800-903-a-q20261008.webp",
+    "beforeBytes": 447236,
+    "bytes": 237478,
+    "beforeSha256": "c72a862724db45a7cd756014cfb5420672d8225c089fc8b69d7d3d14d26fcd1c",
+    "sha256": "20a14102d39d4cf9ef4485b1b522dc2d4ac4d007ebc395b6dfab50f9dbdeb0e8",
+    "quality": 80,
+    "dimensionsUnchanged": true,
+    "operation": "WebP encoding only; no scene edit",
+    "phoneReview": "phone-size-reviewed-after-compression",
+    "reviewRecord": "docs/bank/quality-2026-10-08/postcompression-review.json"
+  }
+}

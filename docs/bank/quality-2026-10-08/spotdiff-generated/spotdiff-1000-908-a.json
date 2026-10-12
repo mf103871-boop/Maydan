@@ -1,0 +1,74 @@
+{
+  "pack": "spotdiff",
+  "oldQid": "spotdiff-1000-908",
+  "side": "a",
+  "createdAt": "2026-10-08",
+  "kind": "ai-generated",
+  "tool": "OpenAI image generation (built-in)",
+  "mode": "generate",
+  "prompt": "Use case: photorealistic-natural. Asset type: base A of a one-difference mobile comparison puzzle. One landscape 4:3 cinematic photograph of an orderly mechanical workbench, petrol-blue steel surface, brass and steel tools, warm workshop sidelight. High three-quarter overhead view. Many clearly separated objects: two wrenches, small vernier caliper without legible text, screwdriver with amber handle, four hex nuts of varying size, three plain steel washers, a bolt, small brass gear near back. Foreground center-left one large flat steel locking washer, 21 percent of image width, has a round central hole and exactly FOUR broad rectangular radial notches cut into its outer edge at north, east, south and west (like a slotted round locknut lying flat). Each notch deep and wide, distinctly countable at 175px display. This target component is separated from neighbors, all four edge notches visible, not hidden by perspective. Rich visual rhythm and true material texture, believable orderly workshop. No lettering, numbers, labels, people, arrows, border, watermark or puzzle UI.",
+  "asset": "media/spotdiff/spotdiff-1000-908-a-q20261008.webp",
+  "generatedOriginal": "C:\\Users\\user\\.codex\\generated_images\\01a11a56-e9d4-7570-aca6-dec9cf1d8f58\\exec-1e6beeaf-6dfa-49b2-af2c-675f047b2695.png",
+  "inputImages": [],
+  "review": {
+    "status": "phone-size-reviewed",
+    "originalCompared": true,
+    "displayedEffect": "Side-by-side unfiltered originals; reveal circle only. Stacked below 359px viewport.",
+    "difference": "Relocate the locking washer top outer notch from 12 oclock to 1:30; the other three notches stay in place, maintaining four total.",
+    "answer": "انتقل الشق العلوي في الحلقة",
+    "spot": {
+      "x": 39.5,
+      "y": 48,
+      "r": 7.5
+    },
+    "semanticDifferenceCount": 1,
+    "invariantsReviewed": [
+      "three stationary ring notches and central hole",
+      "four hex nuts",
+      "three plain washers",
+      "two wrenches",
+      "caliper",
+      "screwdriver",
+      "bolt",
+      "brass gear",
+      "oilcan and lamp",
+      "lighting and bench composition"
+    ],
+    "mobileDeviceQA": false,
+    "browserDisplayQA": {
+      "usedShippedCSS": true,
+      "source": "src/games/badeeha/styles.css",
+      "markupMatches": "App.js .m-diff/.m-diff-frame with physical left/top circle",
+      "viewports": [
+        390,
+        350
+      ],
+      "imageWidths": [
+        173,
+        316
+      ],
+      "views": [
+        "side-by-side before reveal",
+        "side-by-side with reveal",
+        "stacked before reveal",
+        "stacked with reveal"
+      ],
+      "evidence": [
+        ".cache/badeeha-quality/spotdiff-shape/spotdiff-1000-908-390.png",
+        ".cache/badeeha-quality/spotdiff-shape/spotdiff-1000-908-350.png"
+      ],
+      "reviewer": "shape_visual_audit",
+      "notes": "One semantic difference confirmed; generated texture variations do not add an identifiable object/count/layout difference. Diagnostic browser rendering, not on-device iPhone QA."
+    },
+    "reviewedAt": "2026-10-12",
+    "reviewer": "finish_spotdiff",
+    "imageWidthCSS": 173,
+    "evidence": "docs/bank/quality-2026-10-08/preview/spotdiff-10.png"
+  },
+  "packaging": "Uniform proportional resize to1280x960 and WebP encoding only; every scene edit made by built-in imagegen.",
+  "sha256": "f45d527e00bc169c4b87e6aa0af2e1775193b8917e687b564a1ac94510748820",
+  "bytes": 171612,
+  "width": 1280,
+  "height": 960,
+  "generatedOriginalSha256": "cb4d8f942cad2d1b3325fa051ce0a895c0f6b1e52a2b6c1b0fc8007ee565f949"
+}

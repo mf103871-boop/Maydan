@@ -1,0 +1,29 @@
+{
+  "id": "sound",
+  "kind": "cover",
+  "file": "public/media/badeeha-covers/sound.webp",
+  "style": "expressive editorial illustration",
+  "palette": "ultramarine, orange, gold",
+  "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'خمن الصوت'. Landscape 4:3 artwork.\nMedium: expressive editorial illustration.\nIntentional palette: ultramarine, orange, gold.\nScene: A brass gramophone horn releases abstract colorful sound ribbons into a night-blue atmosphere, tactile painterly texture, no notation or lettering.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-10-08",
+  "sourceImage": {
+    "name": "exec-9bad7622-c81d-4f4a-89b4-f5cddabe2dee.png",
+    "sha256": "b0b72f1bf3acea06ad88945bd976ead2cb8dd51d137539d971d4ebfd470d904d",
+    "width": 1448,
+    "height": 1086
+  },
+  "width": 640,
+  "height": 480,
+  "bytes": 87518,
+  "sha256": "bffcabcc8c159025113da9ff86a5a359c53057df317743edd18b2de38184fc82",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "phone-size-reviewed",
+    "date": "2026-10-08",
+    "reviewer": "root",
+    "width": 160,
+    "method": "shipped cover CSS; baseline and replacement side by side",
+    "evidence": "docs/bank/quality-2026-10-08/preview/covers-4.jpg"
+  }
+}

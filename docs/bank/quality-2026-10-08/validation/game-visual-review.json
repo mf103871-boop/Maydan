@@ -1,0 +1,19 @@
+{
+  "date": "2026-10-12",
+  "scope": "Visual check of 18 pairs captured from the actual unmodified built game at a 390x844 mobile viewport. Family and challenge pairs independently reviewed by finish_spotdiff; expert pairs reviewed by root.",
+  "status": "passed",
+  "blockingContentFindings": 0,
+  "recapture": "The family silhouette screenshot originally captured a moving entrance transition. Screenshot capture now fast-forwards finite animations. Re-ran all 77 checks, then reviewed the complete recaptured silhouette.",
+  "checksPassed": 77,
+  "evidence": [
+    {
+      "file": "docs/bank/quality-2026-10-08/preview/game-600-silhouette-before.png",
+      "sha256": "0eca425c1519c973ba588ab1f3d5aafea5b17b08e8d5b14445226d95884c260a"
+    },
+    {
+      "file": "docs/bank/quality-2026-10-08/preview/game-600-silhouette-after.png",
+      "sha256": "5ddca4cd089aa3133d8d0b42bab5f761ba8d3dda914eb984f41c2603ea6fe270"
+    }
+  ],
+  "nativeDeviceQA": false
+}

@@ -1,0 +1,58 @@
+{
+  "pack": "spotdiff",
+  "oldQid": "spotdiff-800-906",
+  "side": "b",
+  "createdAt": "2026-10-08",
+  "kind": "ai-generated",
+  "tool": "OpenAI image generation (built-in)",
+  "mode": "edit",
+  "prompt": "Use case: precise-object-edit\nAsset type: strict matching B for one-difference comparison.\nInput 1 is the exact EDIT TARGET. Rotate ONLY the complete red-and-black compass needle inside the brass compass at left on the map by 90 degrees counterclockwise around its central pivot. The red half currently points diagonally upper right; it must now point upper left. Keep compass face, pivot, housing, markings, glass reflections and size identical. This is one needle-orientation difference.\nChange exactly one detail. Keep all other items and pixels identical including entire map artwork and folds, compass housing, lantern, backpack straps, mug handle, flashlight, both carabiners, binoculars, rope loops, pinecone scales, glove details, blanket, trees, tent, lake/sky, lighting and framing. No second difference, recoloring, object movement, added text, highlights or borders. Preserve 4:3 framing.",
+  "asset": "media/spotdiff/spotdiff-800-906-b-q20261008.webp",
+  "sha256": "e4e3dfd021c2c0183ceb4fec254ff010c785622028cdd439897abdf48d306b9b",
+  "bytes": 234420,
+  "width": 1280,
+  "height": 960,
+  "inputImages": [
+    {
+      "file": "exec-8857b1db-9b52-4417-a512-b0d27dc8d46e.png",
+      "sha256": "cb0ee92ba2e69c1bbb05cb6708cefb17e2ee21e03f2e655da3805e0a61ecc693"
+    }
+  ],
+  "review": {
+    "status": "phone-size-reviewed",
+    "originalCompared": true,
+    "displayedEffect": "Side-by-side unfiltered originals; reveal circle only",
+    "difference": "Compass needle diagonal reverses",
+    "semanticDifferenceCount": 1,
+    "invariantsReviewed": [
+      "same brass face/pivot",
+      "map",
+      "two carabiners",
+      "gloves",
+      "lantern",
+      "tent",
+      "backpack",
+      "mug",
+      "sky/light/framing"
+    ],
+    "mobileDeviceQA": false,
+    "reviewedAt": "2026-10-12",
+    "reviewer": "finish_spotdiff",
+    "imageWidthCSS": 173,
+    "evidence": "docs/bank/quality-2026-10-08/preview/spotdiff-08.png"
+  },
+  "packaging": "Uniform size/format encoding only; all scene changes created by built-in imagegen",
+  "packagingReview": {
+    "date": "2026-10-12",
+    "file": "media/spotdiff/spotdiff-800-906-b-q20261008.webp",
+    "beforeBytes": 307330,
+    "bytes": 234420,
+    "beforeSha256": "6574fe0c609e000aa240b78191b35c6e3c458c832a664c8ac52252cbbf323ad2",
+    "sha256": "e4e3dfd021c2c0183ceb4fec254ff010c785622028cdd439897abdf48d306b9b",
+    "quality": 88,
+    "dimensionsUnchanged": true,
+    "operation": "WebP encoding only; no scene edit",
+    "phoneReview": "phone-size-reviewed-after-compression",
+    "reviewRecord": "docs/bank/quality-2026-10-08/postcompression-review.json"
+  }
+}

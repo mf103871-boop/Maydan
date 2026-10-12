@@ -1,0 +1,29 @@
+{
+  "id": "actors",
+  "kind": "cover",
+  "file": "public/media/badeeha-covers/actors.webp",
+  "style": "backstage editorial photography",
+  "palette": "black, copper, muted cobalt",
+  "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'ممثلون ونجوم'. Landscape 4:3 artwork.\nMedium: backstage editorial photography.\nIntentional palette: black, copper, muted cobalt.\nScene: An empty actor dressing-room chair reflected in a mirror with warm bulbs, hanging jacket at frame edge, intimate cinematic composition, no faces.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-10-08",
+  "sourceImage": {
+    "name": "exec-7440e56f-90dc-4258-93a7-1c466b86d233.png",
+    "sha256": "d85303e836d1a901bf4ac7866afec6feeaead32bdb2004f07b871fb3eb583deb",
+    "width": 1448,
+    "height": 1086
+  },
+  "width": 640,
+  "height": 480,
+  "bytes": 43196,
+  "sha256": "d31e1f5035005b1ed13a7e12bf994f04d913c10c488d849005a523ba89fd98cb",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "phone-size-reviewed",
+    "date": "2026-10-08",
+    "reviewer": "root",
+    "width": 160,
+    "method": "shipped cover CSS; baseline and replacement side by side",
+    "evidence": "docs/bank/quality-2026-10-08/preview/covers-3.jpg"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "date": "2026-10-12",
+  "artifactId": 11722627664,
+  "version": "1.6",
+  "build": "9",
+  "bundleId": "Maydan",
+  "ipaSha256": "189f3c29718e1ed88e1296205150a4b3e190a5e438e000263886a5ee0afb93ff",
+  "ipaBytes": 142365632,
+  "sourceCommit": "bd05eecc2389608014ecb900f8ebe592d1779173",
+  "workflowRun": "https://github.com/mf103871-boop/Maydan/actions/runs/38194376193",
+  "resourceValidation": "signed-iphone-resources.json",
+  "verification": "Signed IPA downloaded from its GitHub Actions artifact; extracted resources matched 3120 current IDs and all 478 final asset hashes/cache fingerprints. Native signing verified by the macOS workflow.",
+  "deviceTesting": false,
+  "appStoreReleaseSubmitted": false,
+  "workflowConclusion": "success",
+  "artifactZipSha256": "f10dd1509b08cce89a359adbea90623fbd37f43239e0848d2c5f3f476c5386bb",
+  "artifactZipDigestVerified": true
+}

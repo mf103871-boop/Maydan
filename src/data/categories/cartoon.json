@@ -6,20 +6,6 @@
   "qs": [
     {
       "p": 200,
-      "topic": "أصدقاء وعائلات",
-      "q": "ما اسم الحلزون الأليف الذي يعيش مع سبونج بوب؟",
-      "a": "غاري",
-      "alt": [
-        "Gary",
-        "جاري"
-      ],
-      "sourceUrl": "https://www.nick.com/info-page/xe31fl/spongebob-squarepants",
-      "verified": true,
-      "qid": "cartoon-200-911",
-      "difficultyTarget": 0.8
-    },
-    {
-      "p": 200,
       "topic": "أدوات وأشياء",
       "q": "في «السنافر»، ماذا تخبئ هدايا سنفور المازح فتفاجئ من يفتحها؟",
       "a": "انفجار",
@@ -66,7 +52,6 @@
       "q": "في «سبونج بوب»، ما الآلة الموسيقية التي يعزف عليها شفيق؟",
       "a": "الكلارينيت",
       "alt": [
-        "كلارينيت",
         "Clarinet"
       ],
       "sourceUrl": "https://www.nick.com/info-page/c2e5s0/squidward-j-q-tentacles",
@@ -114,6 +99,21 @@
       "sourceUrl": "https://www.pixar.com/upfilm",
       "verified": true,
       "qid": "cartoon-200-918",
+      "difficultyTarget": 0.8
+    },
+    {
+      "p": 200,
+      "topic": "خصوم ومنافسون",
+      "q": "في «شركة المرعبين المحدودة»، لماذا تعقّم الوكالة الوحوش عند العثور على غرض بشري؟",
+      "a": "لخشيتها التلوث البشري",
+      "alt": [
+        "الخوف من تلوث البشر",
+        "اعتقادها أن البشر سامون",
+        "اعتقادها أن أغراض البشر ملوثة"
+      ],
+      "sourceUrl": "https://www.pixar.com/monsters-inc",
+      "verified": true,
+      "qid": "cartoon-200-921",
       "difficultyTarget": 0.8
     },
     {
@@ -298,19 +298,6 @@
     },
     {
       "p": 600,
-      "topic": "أطعمة وموارد",
-      "q": "في «شركة المرعبين المحدودة»، بأي نكهة يصنع رجل الثلج المنفي حلوى الثلج؟",
-      "a": "الليمون",
-      "alt": [
-        "ليمون"
-      ],
-      "sourceUrl": "https://www.pixar.com/monsters-inc",
-      "verified": true,
-      "qid": "cartoon-600-916",
-      "difficultyTarget": 0.4
-    },
-    {
-      "p": 600,
       "topic": "أبطال وشخصيات",
       "q": "في «وول إي»، ما اسم روبوت التنظيف الصغير الذي يلاحق الملوثات الأجنبية على السفينة؟",
       "a": "مو",
@@ -338,6 +325,20 @@
       "verified": true,
       "qid": "cartoon-600-918",
       "difficultyTarget": 0.4
+    },
+    {
+      "topic": "أحداث ومهمات",
+      "q": "في «خلطبيطة بالصلصة»، ما عنوان كتاب الطاهي الراحل الذي ألهم ريمي؟",
+      "a": "بإمكان أي شخص الطهي",
+      "alt": [
+        "Anyone Can Cook",
+        "يمكن لأي شخص الطبخ"
+      ],
+      "sourceUrl": "https://www.pixar.com/ratatouille",
+      "qid": "cartoon-600-921",
+      "p": 600,
+      "difficultyTarget": 0.4,
+      "verified": true
     },
     {
       "p": 800,
@@ -484,19 +485,6 @@
       "verified": true
     },
     {
-      "topic": "أحداث ومهمات",
-      "q": "في «أب»، ما رقم قبيلة الكشافة التي ينتمي إليها الطفل المرافق لكارل؟",
-      "a": "54",
-      "alt": [
-        "أربعة وخمسون"
-      ],
-      "sourceUrl": "https://www.pixar.com/upfilm",
-      "qid": "cartoon-1000-914",
-      "p": 1000,
-      "difficultyTarget": 0.15,
-      "verified": true
-    },
-    {
       "topic": "أدوات وأشياء",
       "q": "في «وول إي»، ما الفيلم الموسيقي الذي يحتفظ الروبوت بشريطه داخل شاحنته؟",
       "a": "هالو دوللي",
@@ -524,20 +512,6 @@
       "verified": true
     },
     {
-      "topic": "أدوات وأشياء",
-      "q": "في «خلطبيطة بالصلصة»، ما عنوان كتاب الطاهي الراحل الذي ألهم ريمي؟",
-      "a": "بإمكان أي شخص الطهي",
-      "alt": [
-        "Anyone Can Cook",
-        "يمكن لأي شخص الطبخ"
-      ],
-      "sourceUrl": "https://www.pixar.com/ratatouille",
-      "qid": "cartoon-1000-917",
-      "p": 1000,
-      "difficultyTarget": 0.15,
-      "verified": true
-    },
-    {
       "topic": "أصدقاء وعائلات",
       "q": "في «كوكو»، ما اسم شقيق أوسكار التوأم من أجداد ميغيل؟",
       "a": "فيليبي",
@@ -549,6 +523,32 @@
       "p": 1000,
       "difficultyTarget": 0.15,
       "verified": true
+    },
+    {
+      "topic": "أحداث ومهمات",
+      "q": "في «قلبًا وقالبًا»، لماذا يتوقف قطار الأفكار حين تنام رايلي؟",
+      "a": "لأن مشغليه ينامون",
+      "alt": [
+        "نوم المشغلين",
+        "ينام سائقوه",
+        "مشغلو القطار ينامون أيضًا"
+      ],
+      "sourceUrl": "https://www.pixar.com/inside-out",
+      "qid": "cartoon-1000-921",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "p": 1000,
+      "topic": "أطعمة وموارد",
+      "q": "في «شركة المرعبين المحدودة»، بأي نكهة يصنع رجل الثلج المنفي حلوى الثلج؟",
+      "a": "الليمون",
+      "alt": [],
+      "sourceUrl": "https://www.pixar.com/monsters-inc",
+      "verified": true,
+      "qid": "cartoon-1000-922",
+      "difficultyTarget": 0.15
     }
   ]
 }

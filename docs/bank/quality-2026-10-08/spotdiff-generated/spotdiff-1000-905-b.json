@@ -1,0 +1,74 @@
+{
+  "pack": "spotdiff",
+  "oldQid": "spotdiff-1000-905",
+  "side": "b",
+  "createdAt": "2026-10-08",
+  "kind": "ai-generated",
+  "tool": "OpenAI image generation (built-in)",
+  "mode": "edit",
+  "prompt": "Use case: precise-object-edit. Input image is the exact edit target A of a ONE-difference puzzle. Make B. Change only ONE tiny structural feature: fill in the SECOND dark rectangular hole from the physical left on the small wooden wind instrument in the lower foreground, replacing that hole with perfectly matching uninterrupted wood grain. Leave the other THREE front holes at exactly their current positions, sizes, shapes and darkness. Do NOT redistribute the remaining holes. Keep the wooden instrument body, end hole, all instruments, pegs, shavings, tools, jar, window, brush, shadows, colors, texture, framing and perspective completely unchanged. No new differences anywhere. Same 4:3 dimensions and composition. No marks, labels, circles, words or border. Only one of the four FRONT holes disappears; the tiny end-face hole stays.",
+  "asset": "media/spotdiff/spotdiff-1000-905-b-q20261008.webp",
+  "generatedOriginal": "C:\\Users\\user\\.codex\\generated_images\\01a11a56-e9d4-7570-aca6-dec9cf1d8f58\\exec-4767029a-eeca-44c5-984e-732489b9a6fe.png",
+  "inputImages": [
+    "C:\\Users\\user\\.codex\\generated_images\\01a11a56-e9d4-7570-aca6-dec9cf1d8f58\\exec-c8b49e02-7ce0-484e-b63c-721097497f5e.png"
+  ],
+  "review": {
+    "status": "phone-size-reviewed",
+    "originalCompared": true,
+    "displayedEffect": "Side-by-side unfiltered originals; reveal circle only. Stacked below 359px viewport.",
+    "difference": "Remove second of four dark rectangular front holes from physical left; three remaining front holes and the right end-face hole stay fixed.",
+    "answer": "فتحات الآلة الخشبية أربع وثلاث",
+    "spot": {
+      "x": 56.2,
+      "y": 75.2,
+      "r": 4.5
+    },
+    "semanticDifferenceCount": 1,
+    "invariantsReviewed": [
+      "violin body and detached neck",
+      "three tuning pegs",
+      "bow",
+      "jar and brush",
+      "two chisels",
+      "pliers and tuning fork",
+      "wooden instrument outline and end-face hole",
+      "shavings and window composition"
+    ],
+    "mobileDeviceQA": false,
+    "browserDisplayQA": {
+      "usedShippedCSS": true,
+      "source": "src/games/badeeha/styles.css",
+      "markupMatches": "App.js .m-diff/.m-diff-frame with physical left/top circle",
+      "viewports": [
+        390,
+        350
+      ],
+      "imageWidths": [
+        173,
+        316
+      ],
+      "views": [
+        "side-by-side before reveal",
+        "side-by-side with reveal",
+        "stacked before reveal",
+        "stacked with reveal"
+      ],
+      "evidence": [
+        ".cache/badeeha-quality/spotdiff-shape/spotdiff-1000-905-390.png",
+        ".cache/badeeha-quality/spotdiff-shape/spotdiff-1000-905-350.png"
+      ],
+      "reviewer": "shape_visual_audit",
+      "notes": "One semantic difference confirmed; generated texture variations do not add an identifiable object/count/layout difference. Diagnostic browser rendering, not on-device iPhone QA."
+    },
+    "reviewedAt": "2026-10-12",
+    "reviewer": "finish_spotdiff",
+    "imageWidthCSS": 173,
+    "evidence": "docs/bank/quality-2026-10-08/preview/spotdiff-10.png"
+  },
+  "packaging": "Uniform proportional resize to1280x960 and WebP encoding only; every scene edit made by built-in imagegen.",
+  "sha256": "526029fad2b532031671c67b94a6d32759b7333301a9a7513a4658b5a70f8a97",
+  "bytes": 208770,
+  "width": 1280,
+  "height": 960,
+  "generatedOriginalSha256": "a8472b50ce833d8cb9accac9dc783eb5976fdfa94797204b17c182d93af97240"
+}

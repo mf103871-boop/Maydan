@@ -1,0 +1,63 @@
+{
+  "pack": "spotdiff",
+  "oldQid": "spotdiff-1000-901",
+  "side": "b",
+  "createdAt": "2026-10-08",
+  "kind": "ai-generated",
+  "tool": "OpenAI image generation (built-in)",
+  "mode": "edit",
+  "prompt": "Use case: precise-object-edit\nAsset type: strict matching B for one-difference puzzle.\nInput image 1 is exact EDIT TARGET. Change ONLY the bottom-MIDDLE star-shaped biscuit on the baking tray from FIVE points to SIX evenly spaced points. Keep that biscuit's center, size, pale dough color, flour speckles, surface shading and thickness identical. Every other five-point star must remain identical and in position. There are still exactly SIX biscuits in two rows of three. This is one local star point-count difference.\nMake ONLY this semantic change and preserve all other objects/pixels including other five biscuits including each five-point shape, tray rims and flour, two spice jar cap holes, jug leaf motifs, whisk wires, towel checks, two round cutters, dough ball, four eggs, bowl, rolling pin, spoon, background speckling, lighting and framing. No added annotations, UI, highlights or writing. Preserve 4:3 framing and art style.",
+  "asset": "media/spotdiff/spotdiff-1000-901-b-q20261008.webp",
+  "sha256": "308acd9c9bed25a638d41de66d48a390e946e61fc66ab6e57c0a2fc0741a0733",
+  "bytes": 240858,
+  "width": 1280,
+  "height": 960,
+  "inputImages": [
+    {
+      "file": "exec-526d6be7-c92f-48c3-bac8-65010baff323.png",
+      "sha256": "a37b54c67435349067bb47bf931f65a0e3854f932d86267af4d44eee3b1730a6"
+    }
+  ],
+  "review": {
+    "status": "phone-size-reviewed",
+    "originalCompared": true,
+    "displayedEffect": "Side-by-side unfiltered originals; reveal circle only",
+    "difference": "One bottom-middle biscuit becomes six-point star",
+    "semanticDifferenceCount": 1,
+    "invariantsReviewed": [
+      "six biscuits remain",
+      "five biscuits remain five-point",
+      "tray",
+      "four eggs",
+      "whisk",
+      "spices cap holes",
+      "jug leaf motifs",
+      "towel checks",
+      "cutters",
+      "dough",
+      "bowl",
+      "rolling pin",
+      "spoon",
+      "light/framing"
+    ],
+    "mobileDeviceQA": false,
+    "reviewedAt": "2026-10-12",
+    "reviewer": "finish_spotdiff",
+    "imageWidthCSS": 173,
+    "evidence": "docs/bank/quality-2026-10-08/preview/spotdiff-09.png"
+  },
+  "packaging": "Uniform size/format encoding only; all scene changes created by built-in imagegen",
+  "packagingReview": {
+    "date": "2026-10-12",
+    "file": "media/spotdiff/spotdiff-1000-901-b-q20261008.webp",
+    "beforeBytes": 398428,
+    "bytes": 240858,
+    "beforeSha256": "f3e816a497ae58ec8184b0032de3a8de07a8a5c8278c5989468f29f05bbd5cb8",
+    "sha256": "308acd9c9bed25a638d41de66d48a390e946e61fc66ab6e57c0a2fc0741a0733",
+    "quality": 84,
+    "dimensionsUnchanged": true,
+    "operation": "WebP encoding only; no scene edit",
+    "phoneReview": "phone-size-reviewed-after-compression",
+    "reviewRecord": "docs/bank/quality-2026-10-08/postcompression-review.json"
+  }
+}

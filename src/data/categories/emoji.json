@@ -6,150 +6,152 @@
   "qs": [
     {
       "p": 200,
-      "q": "🐘",
-      "a": "فيل",
-      "qid": "emoji-200-901",
-      "type": "emoji",
-      "topic": "حيوانات",
-      "hint": "حيوان بري",
-      "alt": [],
-      "verified": true,
-      "difficultyTarget": 0.8,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
-    },
-    {
-      "p": 200,
-      "q": "🍕",
-      "a": "بيتزا",
-      "qid": "emoji-200-902",
-      "type": "emoji",
-      "topic": "أطعمة",
-      "hint": "أكلة",
-      "alt": [],
-      "verified": true,
-      "difficultyTarget": 0.8,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
-    },
-    {
-      "p": 200,
-      "q": "😴 💤",
-      "a": "نوم",
-      "qid": "emoji-200-903",
-      "type": "emoji",
-      "topic": "تعبيرات",
-      "hint": "حالة يومية",
-      "alt": [
-        "النوم"
-      ],
-      "verified": true,
-      "difficultyTarget": 0.8,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
-    },
-    {
-      "p": 200,
-      "q": "🤝 💪",
+      "q": "🤝 ➕ 💪",
       "a": "الاتحاد قوة",
       "qid": "emoji-200-904",
       "type": "emoji",
       "topic": "أمثال",
-      "hint": "مقولة عن التعاون",
+      "hint": "مقولة قصيرة",
       "alt": [
         "في الاتحاد قوة"
       ],
       "verified": true,
       "difficultyTarget": 0.8,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+      "sourceUrl": "docs/bank/quality-2026-10-08/emoji-proofs.json"
     },
     {
       "p": 200,
-      "q": "🦁 👑",
+      "q": "🦁 ➕ 👑",
       "a": "الأسد الملك",
       "qid": "emoji-200-905",
       "type": "emoji",
       "topic": "أعمال وقصص",
-      "hint": "فيلم رسوم متحركة من ديزني",
+      "hint": "عنوان فيلم رسوم متحركة",
       "alt": [
         "الملك الأسد",
         "Lion King"
       ],
       "verified": true,
       "difficultyTarget": 0.8,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+      "sourceUrl": "docs/bank/quality-2026-10-08/emoji-proofs.json"
     },
     {
       "p": 200,
-      "q": "⚽ 🥅",
+      "q": "🦶 ➕ ⚽ ➕ 🥅",
       "a": "كرة القدم",
       "qid": "emoji-200-906",
       "type": "emoji",
       "topic": "رياضات",
-      "hint": "رياضة جماعية",
+      "hint": "اسم رياضة",
       "alt": [],
       "verified": true,
       "difficultyTarget": 0.8,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+      "sourceUrl": "docs/bank/quality-2026-10-08/emoji-proofs.json"
     },
     {
       "p": 200,
-      "q": "🗽",
-      "a": "تمثال الحرية",
-      "qid": "emoji-200-907",
+      "q": "🦁 ➕ 🌊",
+      "a": "أسد البحر",
+      "qid": "emoji-200-921",
       "type": "emoji",
-      "topic": "معالم وأماكن",
-      "hint": "معلم في نيويورك",
+      "topic": "حيوانات",
+      "hint": "اسم حيوان بحري من كلمتين",
       "alt": [],
       "verified": true,
       "difficultyTarget": 0.8,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+      "sourceUrl": "docs/bank/quality-2026-10-08/emoji-proofs.json"
     },
     {
       "p": 200,
-      "q": "🎸",
-      "a": "غيتار",
-      "qid": "emoji-200-908",
+      "q": "🍞 ➕ 🧄",
+      "a": "خبز بالثوم",
+      "qid": "emoji-200-922",
       "type": "emoji",
-      "topic": "أشياء",
-      "hint": "آلة موسيقية",
+      "topic": "أطعمة",
+      "hint": "اسم طعام؛ اقرأ الرمزين معًا",
       "alt": [
-        "جيتار"
+        "خبز الثوم"
       ],
       "verified": true,
       "difficultyTarget": 0.8,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+      "sourceUrl": "docs/bank/quality-2026-10-08/emoji-proofs.json"
+    },
+    {
+      "p": 200,
+      "q": "🕋 ➕ 🏙️",
+      "a": "مكة",
+      "qid": "emoji-200-923",
+      "type": "emoji",
+      "topic": "معالم وأماكن",
+      "hint": "اسم المدينة التي تضم المعلم",
+      "alt": [
+        "مكة المكرمة"
+      ],
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "sourceUrl": "docs/bank/quality-2026-10-08/emoji-proofs.json"
+    },
+    {
+      "p": 200,
+      "q": "🚶 ➕ 💤",
+      "a": "المشي أثناء النوم",
+      "qid": "emoji-200-924",
+      "type": "emoji",
+      "topic": "تعبيرات",
+      "hint": "اسم ظاهرة",
+      "alt": [
+        "السير أثناء النوم"
+      ],
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "sourceUrl": "docs/bank/quality-2026-10-08/emoji-proofs.json"
+    },
+    {
+      "p": 200,
+      "q": "👁️ ➕ 🪡",
+      "a": "عين الإبرة",
+      "qid": "emoji-200-925",
+      "type": "emoji",
+      "topic": "أشياء",
+      "hint": "اسم جزء من الأداة",
+      "alt": [
+        "ثقب الإبرة"
+      ],
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "sourceUrl": "docs/bank/quality-2026-10-08/emoji-proofs.json"
     },
     {
       "p": 400,
-      "q": "🐴 🌊",
+      "q": "🐴 ➕ 🌊",
       "a": "فرس البحر",
       "qid": "emoji-400-901",
       "type": "emoji",
       "topic": "حيوانات",
-      "hint": "اسم حيوان بحري",
+      "hint": "اسم حيوان بحري من كلمتين",
       "alt": [
         "حصان البحر"
       ],
       "verified": true,
       "difficultyTarget": 0.6,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+      "sourceUrl": "docs/bank/quality-2026-10-08/emoji-proofs.json"
     },
     {
       "p": 400,
-      "q": "🍎 🍌 🥝 🥣",
+      "q": "🍎 ➕ 🍌 ➕ 🥝 ➡️ 🥣",
       "a": "سلطة فواكه",
       "qid": "emoji-400-902",
       "type": "emoji",
       "topic": "أطعمة",
-      "hint": "طبق يجمع القطع الظاهرة",
-      "alt": [
-        "سلطة الفواكه"
-      ],
+      "hint": "اسم طبق",
+      "alt": [],
       "verified": true,
       "difficultyTarget": 0.6,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+      "sourceUrl": "docs/bank/quality-2026-10-08/emoji-proofs.json"
     },
     {
       "p": 400,
-      "q": "☕ 🌅",
+      "q": "☕ ➕ 🌅",
       "a": "قهوة الصباح",
       "qid": "emoji-400-903",
       "type": "emoji",
@@ -158,241 +160,233 @@
       "alt": [],
       "verified": true,
       "difficultyTarget": 0.6,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+      "sourceUrl": "docs/bank/quality-2026-10-08/emoji-proofs.json"
     },
     {
       "p": 400,
-      "q": "🤐 🥇",
+      "q": "🤐 ➕ 🥇",
       "a": "السكوت من ذهب",
       "qid": "emoji-400-904",
       "type": "emoji",
       "topic": "أمثال",
-      "hint": "أكمل معنى المثل: إذا كان الكلام من فضة...",
+      "hint": "مثل؛ الرمز الثاني يدل على المعدن",
       "alt": [
         "الصمت من ذهب"
       ],
       "verified": true,
       "difficultyTarget": 0.6,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+      "sourceUrl": "docs/bank/quality-2026-10-08/emoji-proofs.json"
     },
     {
       "p": 400,
-      "q": "🐠 🔎",
+      "q": "🐠 ➕ 🔎",
       "a": "البحث عن نيمو",
       "qid": "emoji-400-905",
       "type": "emoji",
       "topic": "أعمال وقصص",
-      "hint": "فيلم بكسار عن سمكة مهرّج صغيرة",
+      "hint": "عنوان فيلم رسوم متحركة",
       "alt": [
-        "Finding Nemo",
-        "نيمو"
+        "Finding Nemo"
       ],
       "verified": true,
       "difficultyTarget": 0.6,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+      "sourceUrl": "docs/bank/quality-2026-10-08/emoji-proofs.json"
     },
     {
       "p": 400,
-      "q": "🏓 ⚪",
-      "a": "تنس الطاولة",
-      "qid": "emoji-400-906",
-      "type": "emoji",
-      "topic": "رياضات",
-      "hint": "رياضة مضارب",
-      "alt": [
-        "بينغ بونغ",
-        "بينج بونج"
-      ],
-      "verified": true,
-      "difficultyTarget": 0.6,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
-    },
-    {
-      "p": 400,
-      "q": "🕋",
-      "a": "مكة",
-      "qid": "emoji-400-907",
-      "type": "emoji",
-      "topic": "معالم وأماكن",
-      "hint": "اسم المدينة",
-      "alt": [
-        "مكة المكرمة"
-      ],
-      "verified": true,
-      "difficultyTarget": 0.6,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
-    },
-    {
-      "p": 400,
-      "q": "⏰ 🔊",
+      "q": "⏰ ➕ 🔊 ➕ 😴 ➡️ 😳",
       "a": "منبّه",
       "qid": "emoji-400-908",
       "type": "emoji",
       "topic": "أشياء",
-      "hint": "جهاز يوقظك",
+      "hint": "اسم جهاز",
       "alt": [
         "ساعة منبهة"
       ],
       "verified": true,
       "difficultyTarget": 0.6,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+      "sourceUrl": "docs/bank/quality-2026-10-08/emoji-proofs.json"
     },
     {
-      "p": 600,
-      "q": "🐻 ❄️",
-      "a": "دب قطبي",
-      "qid": "emoji-600-901",
+      "p": 400,
+      "q": "🏊 ➕ 🚴 ➕ 🏃",
+      "a": "ترايثلون",
+      "qid": "emoji-400-921",
       "type": "emoji",
-      "topic": "حيوانات",
-      "hint": "حيوان يعيش في الشمال البارد",
+      "topic": "رياضات",
+      "hint": "اسم السباق المركب",
       "alt": [
-        "الدب القطبي"
+        "الثلاثي",
+        "الثلاثي الرياضي",
+        "السباق الثلاثي",
+        "الترياثلون"
       ],
       "verified": true,
-      "difficultyTarget": 0.4,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+      "difficultyTarget": 0.6,
+      "sourceUrl": "docs/bank/quality-2026-10-08/emoji-proofs.json"
+    },
+    {
+      "p": 400,
+      "q": "👑 ➕ 🕌 ➕ 🤍",
+      "a": "تاج محل",
+      "qid": "emoji-400-922",
+      "type": "emoji",
+      "topic": "معالم وأماكن",
+      "hint": "اسم ضريح آسيوي؛ الرمز الأول جزء من الاسم",
+      "alt": [],
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "sourceUrl": "docs/bank/quality-2026-10-08/emoji-proofs.json"
     },
     {
       "p": 600,
-      "q": "🍇 🍃 🍚",
+      "q": "🍇 ➕ 🍃 ➕ 🍚",
       "a": "ورق عنب",
       "qid": "emoji-600-902",
       "type": "emoji",
       "topic": "أطعمة",
-      "hint": "طبق من أوراق محشوّة",
+      "hint": "اسم طبق؛ الأول يحدد النبات والثالث الحشوة",
       "alt": [
-        "ورق العنب",
         "دوالي",
         "يبرق"
       ],
       "verified": true,
       "difficultyTarget": 0.4,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+      "sourceUrl": "docs/bank/quality-2026-10-08/emoji-proofs.json"
     },
     {
       "p": 600,
-      "q": "🚶 💤",
-      "a": "المشي أثناء النوم",
-      "qid": "emoji-600-903",
-      "type": "emoji",
-      "topic": "تعبيرات",
-      "hint": "اسم ظاهرة أثناء النوم",
-      "alt": [
-        "السير أثناء النوم"
-      ],
-      "verified": true,
-      "difficultyTarget": 0.4,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
-    },
-    {
-      "p": 600,
-      "q": "🐦 ✋ ➡️ 🌳 🐦 × 10",
+      "q": "🐦 ✋ ➡️ 🌳 🐦 ×10",
       "a": "عصفور باليد خير من عشرة بالشجرة",
       "qid": "emoji-600-904",
       "type": "emoji",
       "topic": "أمثال",
-      "hint": "مثل عن الاكتفاء بالمضمون",
+      "hint": "مثل؛ قارن بين المضمون والمحتمل",
       "alt": [
         "عصفور في اليد خير من عشرة على الشجرة"
       ],
       "verified": true,
       "difficultyTarget": 0.4,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+      "sourceUrl": "docs/bank/quality-2026-10-08/emoji-proofs.json"
     },
     {
       "p": 600,
-      "q": "👦 🏠 🚫 👨‍👩‍👧",
-      "a": "وحيد في المنزل",
-      "qid": "emoji-600-905",
-      "type": "emoji",
-      "topic": "أعمال وقصص",
-      "hint": "فيلم كوميدي يترك فيه الأهل طفلهم وراءهم",
-      "alt": [
-        "وحدي في المنزل",
-        "وحده في المنزل",
-        "Home Alone"
-      ],
-      "verified": true,
-      "difficultyTarget": 0.4,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
-    },
-    {
-      "p": 600,
-      "q": "🏹 🎯",
+      "q": "🏹 ➕ 🎯",
       "a": "الرماية بالقوس",
       "qid": "emoji-600-906",
       "type": "emoji",
       "topic": "رياضات",
-      "hint": "رياضة تصويب",
+      "hint": "رياضة؛ سمّ الأداة مع الفعل",
       "alt": [
-        "رماية بالقوس",
         "رمي السهام"
       ],
       "verified": true,
       "difficultyTarget": 0.4,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+      "sourceUrl": "docs/bank/quality-2026-10-08/emoji-proofs.json"
     },
     {
       "p": 600,
-      "q": "🌊 🚣 🏘️",
+      "q": "🌊 ➕ 🚣 ➕ 🏘️",
       "a": "البندقية",
       "qid": "emoji-600-907",
       "type": "emoji",
       "topic": "معالم وأماكن",
-      "hint": "مدينة إيطالية تشتهر بالقنوات",
+      "hint": "مدينة أوروبية",
       "alt": [
         "فينيسيا",
         "فينيس"
       ],
       "verified": true,
       "difficultyTarget": 0.4,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+      "sourceUrl": "docs/bank/quality-2026-10-08/emoji-proofs.json"
     },
     {
       "p": 600,
-      "q": "🦷 🧵",
+      "q": "🦷 ➕ 🧵",
       "a": "خيط أسنان",
       "qid": "emoji-600-908",
       "type": "emoji",
       "topic": "أشياء",
-      "hint": "أداة للعناية بالفم",
+      "hint": "اسم أداة",
+      "alt": [],
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "sourceUrl": "docs/bank/quality-2026-10-08/emoji-proofs.json"
+    },
+    {
+      "p": 600,
+      "q": "⚔️ ➕ 🕊️ ➕ 📖",
+      "a": "الحرب والسلام",
+      "qid": "emoji-600-921",
+      "type": "emoji",
+      "topic": "أعمال وقصص",
+      "hint": "عنوان رواية",
+      "alt": [],
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "sourceUrl": "docs/bank/quality-2026-10-08/emoji-proofs.json"
+    },
+    {
+      "p": 600,
+      "q": "🎭 ➕ 🐺 ➕ 🐑",
+      "a": "ذئب في ثياب حمل",
+      "qid": "emoji-600-922",
+      "type": "emoji",
+      "topic": "تعبيرات",
+      "hint": "تعبير عن إخفاء النية المؤذية",
       "alt": [
-        "خيط الأسنان"
+        "ذئب بجلد خروف",
+        "ذئب في جلد خروف"
       ],
       "verified": true,
       "difficultyTarget": 0.4,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+      "sourceUrl": "docs/bank/quality-2026-10-08/emoji-proofs.json"
+    },
+    {
+      "p": 600,
+      "q": "🦊 ➕ 🪽 ➕ 🍉",
+      "a": "الثعلب الطائر",
+      "qid": "emoji-600-923",
+      "type": "emoji",
+      "topic": "حيوانات",
+      "hint": "اسم ثديي؛ الرمز الأخير غذاؤه لا جزء من الاسم",
+      "alt": [
+        "خفاش الفاكهة",
+        "خفاش الثمار"
+      ],
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://animaldiversity.org/accounts/Pteropodidae/"
     },
     {
       "p": 800,
-      "q": "🦆 👄 🦫",
+      "q": "🦆👄 ➕ 🦫 ➕ 🥚",
       "a": "خلد الماء",
       "qid": "emoji-800-901",
       "type": "emoji",
       "topic": "حيوانات",
-      "hint": "ثديي أسترالي له منقار شبيه بمنقار البط",
+      "hint": "ثديي؛ الرمز الأول يصف منقاره والثاني شبه ذيله",
       "alt": [
         "بلاتيبوس"
       ],
       "verified": true,
       "difficultyTarget": 0.25,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+      "sourceUrl": "docs/bank/quality-2026-10-08/emoji-proofs.json"
     },
     {
       "p": 800,
-      "q": "🤏 🍩 🧑‍⚖️",
+      "q": "🤏 ➕ 🍩 ➕ 🧑‍⚖️",
       "a": "لقمة القاضي",
       "qid": "emoji-800-902",
       "type": "emoji",
       "topic": "أطعمة",
-      "hint": "حلوى مقلية يرتبط اسمها بمهنة",
+      "hint": "حلوى عربية؛ اقرأ الأول والأخير جزءًا من اسمها",
       "alt": [
-        "لقيمات",
-        "لقمة قاضي"
+        "لقيمات"
       ],
       "verified": true,
       "difficultyTarget": 0.25,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+      "sourceUrl": "docs/bank/quality-2026-10-08/emoji-proofs.json"
     },
     {
       "p": 800,
@@ -401,11 +395,11 @@
       "qid": "emoji-800-903",
       "type": "emoji",
       "topic": "تعبيرات",
-      "hint": "تعبير عن الوقوع بين خيارين صعبين",
+      "hint": "تعبير عربي من كلمتين",
       "alt": [],
       "verified": true,
       "difficultyTarget": 0.25,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+      "sourceUrl": "docs/bank/quality-2026-10-08/emoji-proofs.json"
     },
     {
       "p": 800,
@@ -414,36 +408,36 @@
       "qid": "emoji-800-904",
       "type": "emoji",
       "topic": "أمثال",
-      "hint": "مثل عن رجوع الأذى على صاحبه",
+      "hint": "مثل عن نتيجة إيذاء الغير",
       "alt": [],
       "verified": true,
       "difficultyTarget": 0.25,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+      "sourceUrl": "docs/bank/quality-2026-10-08/emoji-proofs.json"
     },
     {
       "p": 800,
-      "q": "🐀 👨‍🍳 🍲",
+      "q": "🐀 ➕ 👨‍🍳 ➕ 🍲",
       "a": "راتاتوي",
       "qid": "emoji-800-905",
       "type": "emoji",
       "topic": "أعمال وقصص",
-      "hint": "فيلم بكسار عن طاهٍ غير متوقع",
+      "hint": "عنوان فيلم رسوم متحركة",
       "alt": [
         "خلطبيطة بالصلصة",
         "Ratatouille"
       ],
       "verified": true,
       "difficultyTarget": 0.25,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+      "sourceUrl": "docs/bank/quality-2026-10-08/emoji-proofs.json"
     },
     {
       "p": 800,
-      "q": "⚫ ⚪ ▦",
+      "q": "⚫ ➕ ⚪ ➕ ▦",
       "a": "غو",
       "qid": "emoji-800-906",
       "type": "emoji",
       "topic": "رياضات",
-      "hint": "لعبة استراتيجية آسيوية بأحجار سوداء وبيضاء",
+      "hint": "لعبة لوح آسيوية؛ حجارتها لونان",
       "alt": [
         "جو",
         "غو اليابانية",
@@ -451,158 +445,159 @@
       ],
       "verified": true,
       "difficultyTarget": 0.25,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+      "sourceUrl": "docs/bank/quality-2026-10-08/emoji-proofs.json"
     },
     {
       "p": 800,
-      "q": "👑 🕌 🤍",
-      "a": "تاج محل",
-      "qid": "emoji-800-907",
+      "q": "🌉 ➕ 😮‍💨 ➕ 🇮🇹",
+      "a": "جسر التنهدات",
+      "qid": "emoji-800-921",
       "type": "emoji",
       "topic": "معالم وأماكن",
-      "hint": "ضريح هندي مشهور من الرخام الأبيض",
-      "alt": [],
-      "verified": true,
-      "difficultyTarget": 0.25,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
-    },
-    {
-      "p": 800,
-      "q": "🪡 🕳️",
-      "a": "عين الإبرة",
-      "qid": "emoji-800-908",
-      "type": "emoji",
-      "topic": "أشياء",
-      "hint": "اسم الفتحة الصغيرة التي يمر فيها الخيط",
+      "hint": "اسم معلم في البندقية؛ اجمع معنى أول رمزين",
       "alt": [
-        "ثقب الإبرة"
+        "جسر التنهدات في البندقية"
       ],
       "verified": true,
       "difficultyTarget": 0.25,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+      "sourceUrl": "https://www.italia.it/en/veneto/venice/bridge-of-sighs"
     },
     {
-      "p": 1000,
-      "q": "⚔️ 🕊️ 📖",
-      "a": "الحرب والسلام",
-      "qid": "emoji-1000-901",
+      "p": 800,
+      "q": "🧊 ➕ 💥 ➕ 🚢",
+      "a": "كاسحة جليد",
+      "qid": "emoji-800-922",
       "type": "emoji",
-      "topic": "أعمال وقصص",
-      "hint": "عنوان رواية لتولستوي",
-      "alt": [],
+      "topic": "أشياء",
+      "hint": "اسم سفينة؛ الأول يبين ما تكسره",
+      "alt": [
+        "سفينة كاسحة للجليد"
+      ],
       "verified": true,
-      "difficultyTarget": 0.15,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+      "difficultyTarget": 0.25,
+      "sourceUrl": "docs/bank/quality-2026-10-08/emoji-proofs.json"
     },
     {
       "p": 1000,
-      "q": "🌙 ⭐ 🖌️",
+      "q": "🌙 ➕ ⭐ ➕ 🖌️",
       "a": "ليلة النجوم",
       "qid": "emoji-1000-902",
       "type": "emoji",
       "topic": "فنون",
-      "hint": "لوحة لفان غوخ",
+      "hint": "عنوان لوحة؛ اجمع وقت المشهد وما في السماء",
       "alt": [
         "ليلة مرصعة بالنجوم",
-        "الليلة المرصعة بالنجوم",
         "The Starry Night"
       ],
       "verified": true,
       "difficultyTarget": 0.15,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+      "sourceUrl": "docs/bank/quality-2026-10-08/emoji-proofs.json"
     },
     {
       "p": 1000,
-      "q": "🤫 🐑 🐑",
+      "q": "🤫 ➕ 🐑 ➕ 🐑",
       "a": "صمت الحملان",
       "qid": "emoji-1000-903",
       "type": "emoji",
       "topic": "أعمال وقصص",
-      "hint": "عنوان فيلم تشويق",
+      "hint": "عنوان فيلم",
       "alt": [
         "The Silence of the Lambs"
       ],
       "verified": true,
       "difficultyTarget": 0.15,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+      "sourceUrl": "docs/bank/quality-2026-10-08/emoji-proofs.json"
     },
     {
       "p": 1000,
-      "q": "🔙 👞 👞",
+      "q": "🔙 ➕ 👞 ➕ 👞",
       "a": "رجع بخفي حنين",
       "qid": "emoji-1000-904",
       "type": "emoji",
       "topic": "أمثال",
-      "hint": "مثل عن العودة بلا مكسب",
+      "hint": "مثل؛ الحذاءان دليل على حكاية صاحبهما",
       "alt": [
         "عاد بخفي حنين"
       ],
       "verified": true,
       "difficultyTarget": 0.15,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+      "sourceUrl": "docs/bank/quality-2026-10-08/emoji-proofs.json"
     },
     {
       "p": 1000,
-      "q": "🤏 🌫️ 👀",
+      "q": "🤏 ➕ 🌫️ ➕ 👀",
       "a": "ذر الرماد في العيون",
       "qid": "emoji-1000-905",
       "type": "emoji",
       "topic": "تعبيرات",
-      "hint": "تعبير عن التمويه والخداع",
+      "hint": "تعبير عربي؛ الأول فعل والثاني مادته",
       "alt": [
         "ذر الرماد بالعيون"
       ],
       "verified": true,
       "difficultyTarget": 0.15,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+      "sourceUrl": "docs/bank/quality-2026-10-08/emoji-proofs.json"
     },
     {
       "p": 1000,
-      "q": "🚪 🔵 🐂 🐉",
+      "q": "🚪 ➕ 🔵 ➕ 🐂 ➕ 🐉",
       "a": "بوابة عشتار",
       "qid": "emoji-1000-906",
       "type": "emoji",
       "topic": "معالم وأماكن",
-      "hint": "بوابة بابلية ذات آجر أزرق وزخارف ثيران وتنانين",
+      "hint": "اسم معلم أثري؛ لونه وزخارفه قرينتان",
       "alt": [
         "باب عشتار"
       ],
       "verified": true,
       "difficultyTarget": 0.15,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+      "sourceUrl": "docs/bank/quality-2026-10-08/emoji-proofs.json"
     },
     {
       "p": 1000,
-      "q": "🦁 🐜 🕳️",
+      "q": "🦁 ➕ 🐜 ➕ 🕳️",
       "a": "أسد النمل",
       "qid": "emoji-1000-907",
       "type": "emoji",
       "topic": "حيوانات",
-      "hint": "حشرة تبني يرقات بعض أنواعها مصائد قمعية في الرمل",
+      "hint": "اسم حشرة؛ الثالث شكل مصيدتها",
       "alt": [
         "Antlion"
       ],
       "verified": true,
       "difficultyTarget": 0.15,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+      "sourceUrl": "docs/bank/quality-2026-10-08/emoji-proofs.json"
     },
     {
       "p": 1000,
-      "q": "🏊 🚴 🏃",
-      "a": "ترايثلون",
-      "qid": "emoji-1000-908",
+      "q": "🏊 ➕ ⚔️ ➕ 🐎 ➕ 🏃 ➕ 🎯",
+      "a": "الخماسي الحديث",
+      "qid": "emoji-1000-921",
       "type": "emoji",
       "topic": "رياضات",
-      "hint": "اسم سباق يجمع الرياضات الثلاث بالترتيب",
+      "hint": "رياضة أولمبية بصيغتها حتى باريس2024؛ الحصان يمثل الفروسية",
       "alt": [
-        "الثلاثي",
-        "الثلاثي الرياضي",
-        "السباق الثلاثي",
-        "الترياثلون"
+        "الخماسي",
+        "الخماسي الحديث قبل2025"
       ],
       "verified": true,
       "difficultyTarget": 0.15,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+      "sourceUrl": "https://www.uipmworld.org/news/uipm-2025-pentathlon-world-championships-all-you-need-know"
+    },
+    {
+      "p": 1000,
+      "q": "⛪ ➕ 🔎 ➕ ☠️ ➕ 🌹",
+      "a": "اسم الوردة",
+      "qid": "emoji-1000-922",
+      "type": "emoji",
+      "topic": "أعمال وقصص",
+      "hint": "رواية ألغاز في دير؛ الزهرة جزء من عنوانها",
+      "alt": [
+        "The Name of the Rose"
+      ],
+      "verified": true,
+      "difficultyTarget": 0.15,
+      "sourceUrl": "https://www.penguinrandomhouse.com/books/44869/the-name-of-the-rose-by-umberto-eco-translated-by-william-weaver-introduction-by-david-lodge/9780307264893/"
     }
   ]
 }

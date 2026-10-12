@@ -1,0 +1,47 @@
+{
+  "pack": "spotdiff",
+  "oldQid": "spotdiff-1000-904",
+  "side": "b",
+  "createdAt": "2026-10-08",
+  "kind": "ai-generated",
+  "tool": "OpenAI image generation (built-in)",
+  "mode": "edit",
+  "prompt": "Use case: precise-object-edit\nAsset type: strict matching B of a one-difference puzzle.\nInput image 1 is exact EDIT TARGET. Add ONLY one black round pip at the exact center of the LEFT half of the LOWER MIDDLE domino. That half currently has FOUR pips in a two-by-two square; now it has FIVE in the standard four-corners-plus-center pattern. Match the new pip diameter/material/light precisely to its four neighbors. The right half remains SIX pips. All six dominoes remain in the same places.\nExactly one semantic change. Everything else identical including all other domino pips: upper row1|3,5|2,3|1; lower row2|5,4-to5|6,1|4; all tile shapes/dividers, three dice and every visible face, wooden counters and stack counts, mug/coaster, box clasp, bag print/knot, nuts bowl, blank score grid, pencil, lighting/framing. No text, UI, highlight, border or panel. Preserve original4:3 framing.",
+  "asset": "media/spotdiff/spotdiff-1000-904-b-q20261008.webp",
+  "sha256": "7ebc21e437eade94f4f3df8871a278a229a180f85173b5b23fddce2de3ce8d5a",
+  "bytes": 247564,
+  "width": 1280,
+  "height": 960,
+  "inputImages": [
+    {
+      "file": "exec-2ebead02-367e-4a44-9555-6e363e674be2.png",
+      "sha256": "6e7eaca49cc54593c63018df8ee8eeda8bc176fb9e594377ceee631ae136d9dd"
+    }
+  ],
+  "review": {
+    "status": "phone-size-reviewed",
+    "originalCompared": true,
+    "displayedEffect": "Side-by-side unfiltered originals; reveal circle only",
+    "difference": "Lower middle domino left half pips four to five; all other counts unchanged",
+    "semanticDifferenceCount": 1,
+    "invariantsReviewed": [
+      "six dominoes; eleven other half-counts",
+      "three dice",
+      "counter stack counts",
+      "box clasp",
+      "bag knot/print",
+      "mug",
+      "coaster",
+      "nuts",
+      "score grid",
+      "pencil",
+      "framing"
+    ],
+    "mobileDeviceQA": false,
+    "reviewedAt": "2026-10-12",
+    "reviewer": "finish_spotdiff",
+    "imageWidthCSS": 173,
+    "evidence": "docs/bank/quality-2026-10-08/preview/spotdiff-09.png"
+  },
+  "packaging": "Uniform size/format encoding only; all scene changes created by built-in imagegen"
+}

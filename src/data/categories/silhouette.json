@@ -6,7 +6,7 @@
   "qs": [
     {
       "p": 200,
-      "q": "ما الحيوان المنزلي الذي يوضحه هذا الظل؟",
+      "q": "أيّ حيوان يمثله هذا الظل؟",
       "a": "قط",
       "qid": "silhouette-200-901",
       "type": "image",
@@ -19,7 +19,7 @@
       "topic": "حيوانات",
       "difficultyTarget": 0.8,
       "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-silhouette-final.json",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
       "media": {
         "src": "silhouette-200-901.webp",
         "type": "image",
@@ -36,7 +36,7 @@
     },
     {
       "p": 200,
-      "q": "ما الأداة ذات المقبض الطويل والرأس المعقوف في الظل؟",
+      "q": "ما الأداة التي يمثّلها الظل؟",
       "a": "مطرقة",
       "qid": "silhouette-200-902",
       "type": "image",
@@ -48,7 +48,7 @@
       "topic": "أدوات",
       "difficultyTarget": 0.8,
       "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-silhouette-final.json",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
       "media": {
         "src": "silhouette-200-902.webp",
         "type": "image",
@@ -65,7 +65,7 @@
     },
     {
       "p": 200,
-      "q": "ما الغرض ذو المقبض المنحني والقبة الظاهرة في هذا الظل؟",
+      "q": "ما الغرض الذي تراه في الظل؟",
       "a": "مظلة",
       "qid": "silhouette-200-903",
       "type": "image",
@@ -77,7 +77,7 @@
       "topic": "أغراض شخصية",
       "difficultyTarget": 0.8,
       "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-silhouette-final.json",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
       "media": {
         "src": "silhouette-200-903.webp",
         "type": "image",
@@ -94,7 +94,7 @@
     },
     {
       "p": 200,
-      "q": "ما المركبة الجوية التي يظهر ظلها؟",
+      "q": "ما وسيلة النقل التي يمثّلها الظل؟",
       "a": "مروحية",
       "qid": "silhouette-200-904",
       "type": "image",
@@ -107,7 +107,7 @@
       "topic": "وسائل نقل",
       "difficultyTarget": 0.8,
       "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-silhouette-final.json",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
       "media": {
         "src": "silhouette-200-904.webp",
         "type": "image",
@@ -124,7 +124,7 @@
     },
     {
       "p": 200,
-      "q": "ما النبات ذو الأذرع المرفوعة الذي يوضحه الظل؟",
+      "q": "أيّ نبات يمثله هذا الظل؟",
       "a": "صبار",
       "qid": "silhouette-200-905",
       "type": "image",
@@ -136,7 +136,7 @@
       "topic": "نباتات",
       "difficultyTarget": 0.8,
       "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-silhouette-final.json",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
       "media": {
         "src": "silhouette-200-905.webp",
         "type": "image",
@@ -153,107 +153,18 @@
     },
     {
       "p": 200,
-      "q": "ما الفاكهة ذات العنق الضيق والقاعدة العريضة في الظل؟",
-      "a": "كمثرى",
-      "qid": "silhouette-200-906",
-      "type": "image",
-      "effect": "silhouette",
-      "alt": [
-        "إجاص",
-        "عرموط",
-        "Pear"
-      ],
-      "topic": "طعام",
-      "difficultyTarget": 0.8,
-      "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-silhouette-final.json",
-      "media": {
-        "src": "silhouette-200-906.webp",
-        "type": "image",
-        "title": "لغز بصري مولّد",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-23",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-200-906.json"
-        }
-      }
-    },
-    {
-      "p": 200,
-      "q": "ما آلة النفخ ذات الأنبوب المنحني الظاهرة في الظل؟",
-      "a": "ساكسفون",
-      "qid": "silhouette-200-907",
-      "type": "image",
-      "effect": "silhouette",
-      "alt": [
-        "ساكسوفون",
-        "سكسفون",
-        "Saxophone"
-      ],
-      "topic": "موسيقى",
-      "difficultyTarget": 0.8,
-      "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-silhouette-final.json",
-      "media": {
-        "src": "silhouette-200-907.webp",
-        "type": "image",
-        "title": "لغز بصري مولّد",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-25",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-200-907.json"
-        }
-      }
-    },
-    {
-      "p": 200,
-      "q": "ما اسم المقعد ذي القاعدتين المنحنيتين في هذا الظل؟",
-      "a": "كرسي هزاز",
-      "qid": "silhouette-200-908",
-      "type": "image",
-      "effect": "silhouette",
-      "alt": [
-        "كرسي تأرجح",
-        "Rocking chair"
-      ],
-      "topic": "أثاث ومنزل",
-      "difficultyTarget": 0.8,
-      "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-silhouette-final.json",
-      "media": {
-        "src": "silhouette-200-908.webp",
-        "type": "image",
-        "title": "لغز بصري مولّد",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-25",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-200-908.json"
-        }
-      }
-    },
-    {
-      "p": 400,
-      "q": "ما الحيوان ذو الأذنين الطويلتين في هذا الظل؟",
+      "q": "أيّ حيوان يمثله هذا الظل؟",
       "a": "أرنب",
-      "qid": "silhouette-400-901",
+      "qid": "silhouette-200-921",
       "type": "image",
       "effect": "silhouette",
       "alt": [
         "Rabbit"
       ],
       "topic": "حيوانات",
-      "difficultyTarget": 0.6,
+      "difficultyTarget": 0.8,
       "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-silhouette-final.json",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
       "media": {
         "src": "silhouette-400-901.webp",
         "type": "image",
@@ -269,8 +180,65 @@
       }
     },
     {
+      "p": 200,
+      "q": "أيّ شجرة يمثّلها هذا الظل؟",
+      "a": "نخلة",
+      "qid": "silhouette-200-922",
+      "type": "image",
+      "effect": "silhouette",
+      "alt": [
+        "شجرة نخيل",
+        "Palm tree"
+      ],
+      "topic": "نباتات",
+      "difficultyTarget": 0.8,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
+      "media": {
+        "src": "silhouette-400-905.webp",
+        "type": "image",
+        "title": "لغز بصري مولّد",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-400-905.json"
+        }
+      }
+    },
+    {
+      "p": 200,
+      "q": "ما الفاكهة التي يمثّلها الظل؟",
+      "a": "أناناس",
+      "qid": "silhouette-200-923",
+      "type": "image",
+      "effect": "silhouette",
+      "alt": [
+        "Pineapple"
+      ],
+      "topic": "طعام",
+      "difficultyTarget": 0.8,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
+      "media": {
+        "src": "silhouette-600-906.webp",
+        "type": "image",
+        "title": "لغز بصري مولّد",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-600-906.json"
+        }
+      }
+    },
+    {
       "p": 400,
-      "q": "ما الأداة ذات الفكين المفتوحين التي يظهر ظلها؟",
+      "q": "ما الأداة التي يمثّلها الظل؟",
       "a": "مفتاح ربط",
       "qid": "silhouette-400-902",
       "type": "image",
@@ -284,7 +252,7 @@
       "topic": "أدوات",
       "difficultyTarget": 0.6,
       "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-silhouette-final.json",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
       "media": {
         "src": "silhouette-400-902.webp",
         "type": "image",
@@ -301,7 +269,7 @@
     },
     {
       "p": 400,
-      "q": "ما جهاز العناية الشخصية ذو المقبض والفوهة الظاهر في الظل؟",
+      "q": "ما الجهاز الذي يمثّله الظل؟",
       "a": "مجفف شعر",
       "qid": "silhouette-400-903",
       "type": "image",
@@ -315,7 +283,7 @@
       "topic": "أغراض شخصية",
       "difficultyTarget": 0.6,
       "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-silhouette-final.json",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
       "media": {
         "src": "silhouette-400-903.webp",
         "type": "image",
@@ -332,7 +300,7 @@
     },
     {
       "p": 400,
-      "q": "ما المركبة المائية التي يوضحها هذا الظل؟",
+      "q": "ما وسيلة النقل التي يمثّلها الظل؟",
       "a": "قارب بمحرك",
       "qid": "silhouette-400-904",
       "type": "image",
@@ -348,7 +316,7 @@
       "topic": "وسائل نقل",
       "difficultyTarget": 0.6,
       "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-silhouette-final.json",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
       "media": {
         "src": "silhouette-400-904.webp",
         "type": "image",
@@ -365,99 +333,7 @@
     },
     {
       "p": 400,
-      "q": "ما الشجرة ذات السعف التي تظهر في الظل؟",
-      "a": "نخلة",
-      "qid": "silhouette-400-905",
-      "type": "image",
-      "effect": "silhouette",
-      "alt": [
-        "شجرة نخيل",
-        "Palm tree"
-      ],
-      "topic": "نباتات",
-      "difficultyTarget": 0.6,
-      "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-silhouette-final.json",
-      "media": {
-        "src": "silhouette-400-905.webp",
-        "type": "image",
-        "title": "لغز بصري مولّد",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-23",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-400-905.json"
-        }
-      }
-    },
-    {
-      "p": 400,
-      "q": "ما الثمرة الطويلة المنحنية صاحبة هذا الظل؟",
-      "a": "فلفل",
-      "qid": "silhouette-400-906",
-      "type": "image",
-      "effect": "silhouette",
-      "alt": [
-        "فلفل حار",
-        "قرن فلفل",
-        "فلفل تشيلي",
-        "Chilli pepper",
-        "Chili pepper"
-      ],
-      "topic": "طعام",
-      "difficultyTarget": 0.6,
-      "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-silhouette-final.json",
-      "media": {
-        "src": "silhouette-400-906.webp",
-        "type": "image",
-        "title": "لغز بصري مولّد",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-23",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-400-906.json"
-        }
-      }
-    },
-    {
-      "p": 400,
-      "q": "ما الآلة الوترية ذات الدعامة السفلية التي يظهر ظلها؟",
-      "a": "تشيلو",
-      "qid": "silhouette-400-907",
-      "type": "image",
-      "effect": "silhouette",
-      "alt": [
-        "شيلو",
-        "فيلونسيل",
-        "Cello",
-        "Violoncello"
-      ],
-      "topic": "موسيقى",
-      "difficultyTarget": 0.6,
-      "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-silhouette-final.json",
-      "media": {
-        "src": "silhouette-400-907.webp",
-        "type": "image",
-        "title": "لغز بصري مولّد",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-23",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-400-907.json"
-        }
-      }
-    },
-    {
-      "p": 400,
-      "q": "ما اسم وعاء ري النباتات صاحب هذا الظل؟",
+      "q": "ما الغرض الذي يمثّله الظل؟",
       "a": "إبريق ري",
       "qid": "silhouette-400-908",
       "type": "image",
@@ -472,7 +348,7 @@
       "topic": "أثاث ومنزل",
       "difficultyTarget": 0.6,
       "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-silhouette-final.json",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
       "media": {
         "src": "silhouette-400-908.webp",
         "type": "image",
@@ -488,8 +364,131 @@
       }
     },
     {
+      "p": 400,
+      "q": "ما الفاكهة التي يمثّلها الظل؟",
+      "a": "كمثرى",
+      "qid": "silhouette-400-921",
+      "type": "image",
+      "effect": "silhouette",
+      "alt": [
+        "إجاص",
+        "عرموط",
+        "Pear"
+      ],
+      "topic": "طعام",
+      "difficultyTarget": 0.6,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
+      "media": {
+        "src": "silhouette-200-906.webp",
+        "type": "image",
+        "title": "لغز بصري مولّد",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-200-906.json"
+        }
+      }
+    },
+    {
+      "p": 400,
+      "q": "ما نوع الآلة الموسيقية التي يمثّلها الظل؟",
+      "a": "غيتار كهربائي",
+      "qid": "silhouette-400-922",
+      "type": "image",
+      "effect": "silhouette",
+      "alt": [
+        "جيتار كهربائي",
+        "قيثارة كهربائية",
+        "غيتار",
+        "جيتار",
+        "Electric guitar"
+      ],
+      "topic": "موسيقى",
+      "difficultyTarget": 0.6,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
+      "media": {
+        "src": "silhouette-600-907.webp",
+        "type": "image",
+        "title": "لغز بصري مولّد",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-600-907.json"
+        }
+      }
+    },
+    {
+      "p": 400,
+      "q": "ما الجهاز الذي يمثّله الظل؟",
+      "a": "مروحة",
+      "qid": "silhouette-400-923",
+      "type": "image",
+      "effect": "silhouette",
+      "alt": [
+        "مروحة كهربائية",
+        "مروحة طاولة",
+        "مروحة مكتب",
+        "Fan"
+      ],
+      "topic": "أثاث ومنزل",
+      "difficultyTarget": 0.6,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
+      "media": {
+        "src": "silhouette-600-908.webp",
+        "type": "image",
+        "title": "لغز بصري مولّد",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-600-908.json"
+        }
+      }
+    },
+    {
+      "p": 400,
+      "q": "ما الأداة الصغيرة التي يمثّلها الظل؟",
+      "a": "إبرة خياطة",
+      "qid": "silhouette-400-924",
+      "type": "image",
+      "effect": "silhouette",
+      "alt": [
+        "إبرة",
+        "إبرة وخيط",
+        "Sewing needle"
+      ],
+      "topic": "أغراض شخصية",
+      "difficultyTarget": 0.6,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
+      "media": {
+        "src": "silhouette-800-903.webp",
+        "type": "image",
+        "title": "لغز بصري مولّد",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-800-903.json"
+        }
+      }
+    },
+    {
       "p": 600,
-      "q": "ما الحيوان ذو الذيل الطويل والقدمين الكبيرتين في الظل؟",
+      "q": "أيّ حيوان يمثله هذا الظل؟",
       "a": "كنغر",
       "qid": "silhouette-600-901",
       "type": "image",
@@ -500,7 +499,7 @@
       "topic": "حيوانات",
       "difficultyTarget": 0.4,
       "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-silhouette-final.json",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
       "media": {
         "src": "silhouette-600-901.webp",
         "type": "image",
@@ -517,38 +516,7 @@
     },
     {
       "p": 600,
-      "q": "ما الأداة ذات اللولب والذراعين المرفوعتين في الظل؟",
-      "a": "فتاحة فلين",
-      "qid": "silhouette-600-902",
-      "type": "image",
-      "effect": "silhouette",
-      "alt": [
-        "فتاحة سدادات الفلين",
-        "فتاحة سدادات",
-        "لولب فتح الفلين",
-        "Corkscrew"
-      ],
-      "topic": "أدوات",
-      "difficultyTarget": 0.4,
-      "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-silhouette-final.json",
-      "media": {
-        "src": "silhouette-600-902.webp",
-        "type": "image",
-        "title": "لغز بصري مولّد",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-23",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-600-902.json"
-        }
-      }
-    },
-    {
-      "p": 600,
-      "q": "ما العبوة ذات الكرة الضاغطة التي يوضحها هذا الظل؟",
+      "q": "ما الغرض الشخصي الذي يمثّله الظل؟",
       "a": "زجاجة عطر",
       "qid": "silhouette-600-903",
       "type": "image",
@@ -562,7 +530,7 @@
       "topic": "أغراض شخصية",
       "difficultyTarget": 0.4,
       "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-silhouette-final.json",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
       "media": {
         "src": "silhouette-600-903.webp",
         "type": "image",
@@ -579,7 +547,7 @@
     },
     {
       "p": 600,
-      "q": "ما المركبة البحرية ذات البرج العلوي الظاهرة في الظل؟",
+      "q": "ما وسيلة النقل التي يمثّلها الظل؟",
       "a": "غواصة",
       "qid": "silhouette-600-904",
       "type": "image",
@@ -590,7 +558,7 @@
       "topic": "وسائل نقل",
       "difficultyTarget": 0.4,
       "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-silhouette-final.json",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
       "media": {
         "src": "silhouette-600-904.webp",
         "type": "image",
@@ -607,23 +575,22 @@
     },
     {
       "p": 600,
-      "q": "ما الورقة النباتية ذات الفصوص المستديرة الظاهرة في الظل؟",
-      "a": "ورقة بلوط",
-      "qid": "silhouette-600-905",
+      "q": "ما نوع القاطرة التي يمثّلها الظل؟",
+      "a": "قاطرة بخارية",
+      "qid": "silhouette-600-921",
       "type": "image",
       "effect": "silhouette",
       "alt": [
-        "بلوط",
-        "ورق بلوط",
-        "ورقة شجر البلوط",
-        "Oak leaf"
+        "قطار بخاري",
+        "قاطرة تعمل بالبخار",
+        "Steam locomotive"
       ],
-      "topic": "نباتات",
+      "topic": "وسائل نقل",
       "difficultyTarget": 0.4,
       "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-silhouette-final.json",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
       "media": {
-        "src": "silhouette-600-905.webp",
+        "src": "silhouette-1000-904.webp",
         "type": "image",
         "title": "لغز بصري مولّد",
         "author": "Maydan / OpenAI image generation",
@@ -631,27 +598,31 @@
         "provenance": {
           "kind": "ai-generated",
           "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-23",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-600-905.json"
+          "createdAt": "2026-09-25",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-1000-904.json"
         }
       }
     },
     {
       "p": 600,
-      "q": "ما الفاكهة ذات التاج الورقي المدبب في هذا الظل؟",
-      "a": "أناناس",
-      "qid": "silhouette-600-906",
+      "q": "ما الفاكهة التي يمثّلها الظل؟",
+      "a": "فاكهة النجمة",
+      "qid": "silhouette-600-922",
       "type": "image",
       "effect": "silhouette",
       "alt": [
-        "Pineapple"
+        "كارامبولا",
+        "كرامبولا",
+        "ستار فروت",
+        "Starfruit",
+        "Carambola"
       ],
       "topic": "طعام",
       "difficultyTarget": 0.4,
       "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-silhouette-final.json",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
       "media": {
-        "src": "silhouette-600-906.webp",
+        "src": "silhouette-1000-906.webp",
         "type": "image",
         "title": "لغز بصري مولّد",
         "author": "Maydan / OpenAI image generation",
@@ -659,31 +630,30 @@
         "provenance": {
           "kind": "ai-generated",
           "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-23",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-600-906.json"
+          "createdAt": "2026-09-25",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-1000-906.json"
         }
       }
     },
     {
       "p": 600,
-      "q": "ما نوع الآلة الوترية ذات هذا الجسم والرقبة الطويلة؟",
-      "a": "غيتار كهربائي",
-      "qid": "silhouette-600-907",
+      "q": "ما الآلة الموسيقية التي يمثّلها الظل؟",
+      "a": "ساكسفون",
+      "qid": "silhouette-600-923",
       "type": "image",
       "effect": "silhouette",
       "alt": [
-        "جيتار كهربائي",
-        "قيثارة كهربائية",
-        "غيتار",
-        "جيتار",
-        "Electric guitar"
+        "ساكسوفون",
+        "سكسفون",
+        "Saxophone",
+        "ساكس"
       ],
       "topic": "موسيقى",
       "difficultyTarget": 0.4,
       "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-silhouette-final.json",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
       "media": {
-        "src": "silhouette-600-907.webp",
+        "src": "silhouette-200-907.webp",
         "type": "image",
         "title": "لغز بصري مولّد",
         "author": "Maydan / OpenAI image generation",
@@ -691,30 +661,28 @@
         "provenance": {
           "kind": "ai-generated",
           "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-23",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-600-907.json"
+          "createdAt": "2026-09-25",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-200-907.json"
         }
       }
     },
     {
       "p": 600,
-      "q": "ما الجهاز المنزلي ذو الشبك الدائري الظاهر في الظل؟",
-      "a": "مروحة",
-      "qid": "silhouette-600-908",
+      "q": "ما نوع المقعد الذي يمثّله الظل؟",
+      "a": "كرسي هزاز",
+      "qid": "silhouette-600-924",
       "type": "image",
       "effect": "silhouette",
       "alt": [
-        "مروحة كهربائية",
-        "مروحة طاولة",
-        "مروحة مكتب",
-        "Fan"
+        "كرسي تأرجح",
+        "Rocking chair"
       ],
       "topic": "أثاث ومنزل",
       "difficultyTarget": 0.4,
       "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-silhouette-final.json",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
       "media": {
-        "src": "silhouette-600-908.webp",
+        "src": "silhouette-200-908.webp",
         "type": "image",
         "title": "لغز بصري مولّد",
         "author": "Maydan / OpenAI image generation",
@@ -722,30 +690,31 @@
         "provenance": {
           "kind": "ai-generated",
           "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-23",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-600-908.json"
+          "createdAt": "2026-09-25",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-200-908.json"
         }
       }
     },
     {
-      "p": 800,
-      "q": "ما الطائر ذو الرقبة المنحنية والساقين الطويلتين في الظل؟",
-      "a": "مالك الحزين",
-      "qid": "silhouette-800-901",
+      "p": 600,
+      "q": "ما الثمرة التي يمثّلها الظل؟",
+      "a": "فلفل",
+      "qid": "silhouette-600-925",
       "type": "image",
       "effect": "silhouette",
       "alt": [
-        "بلشون",
-        "طائر البلشون",
-        "طائر مالك الحزين",
-        "Heron"
+        "فلفل حار",
+        "قرن فلفل",
+        "فلفل تشيلي",
+        "Chilli pepper",
+        "Chili pepper"
       ],
-      "topic": "حيوانات",
-      "difficultyTarget": 0.25,
+      "topic": "طعام",
+      "difficultyTarget": 0.4,
       "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-silhouette-final.json",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
       "media": {
-        "src": "silhouette-800-901.webp",
+        "src": "silhouette-400-906.webp",
         "type": "image",
         "title": "لغز بصري مولّد",
         "author": "Maydan / OpenAI image generation",
@@ -754,13 +723,13 @@
           "kind": "ai-generated",
           "tool": "OpenAI image generation (built-in)",
           "createdAt": "2026-09-23",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-800-901.json"
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-400-906.json"
         }
       }
     },
     {
       "p": 800,
-      "q": "ما الأداة ذات الترس وذراع التدوير التي يظهر ظلها؟",
+      "q": "ما الأداة التي يمثّلها الظل؟",
       "a": "مثقاب يدوي",
       "qid": "silhouette-800-902",
       "type": "image",
@@ -774,7 +743,7 @@
       "topic": "أدوات",
       "difficultyTarget": 0.25,
       "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-silhouette-final.json",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
       "media": {
         "src": "silhouette-800-902.webp",
         "type": "image",
@@ -791,37 +760,7 @@
     },
     {
       "p": 800,
-      "q": "ما الأداة الرفيعة التي يمر خيط عبر طرفها في الظل؟",
-      "a": "إبرة خياطة",
-      "qid": "silhouette-800-903",
-      "type": "image",
-      "effect": "silhouette",
-      "alt": [
-        "إبرة",
-        "إبرة وخيط",
-        "Sewing needle"
-      ],
-      "topic": "أغراض شخصية",
-      "difficultyTarget": 0.25,
-      "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-silhouette-final.json",
-      "media": {
-        "src": "silhouette-800-903.webp",
-        "type": "image",
-        "title": "لغز بصري مولّد",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-23",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-800-903.json"
-        }
-      }
-    },
-    {
-      "p": 800,
-      "q": "ما نوع الطائرة ذات الجناحين المتراكبين التي يظهر ظلها؟",
+      "q": "ما نوع الطائرة التي يمثّلها الظل؟",
       "a": "طائرة ثنائية السطح",
       "qid": "silhouette-800-904",
       "type": "image",
@@ -835,7 +774,7 @@
       "topic": "وسائل نقل",
       "difficultyTarget": 0.25,
       "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-silhouette-final.json",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
       "media": {
         "src": "silhouette-800-904.webp",
         "type": "image",
@@ -852,7 +791,7 @@
     },
     {
       "p": 800,
-      "q": "ما النبات صاحب الورقة المثقبة التي يظهر ظلها؟",
+      "q": "إلى أيّ نبات تنتمي هذه الورقة؟",
       "a": "مونستيرا",
       "qid": "silhouette-800-905",
       "type": "image",
@@ -865,7 +804,7 @@
       "topic": "نباتات",
       "difficultyTarget": 0.25,
       "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-silhouette-final.json",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
       "media": {
         "src": "silhouette-800-905.webp",
         "type": "image",
@@ -882,7 +821,7 @@
     },
     {
       "p": 800,
-      "q": "ما التابل الطازج ذو النكهة اللاذعة والرائحة الليمونية الذي يظهر ظله؟",
+      "q": "أيّ جذر يُستخدم في المطبخ يمثّله الظل؟",
       "a": "زنجبيل",
       "qid": "silhouette-800-906",
       "type": "image",
@@ -893,7 +832,7 @@
       "topic": "طعام",
       "difficultyTarget": 0.25,
       "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-silhouette-final.json",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
       "media": {
         "src": "silhouette-800-906.webp",
         "type": "image",
@@ -910,37 +849,7 @@
     },
     {
       "p": 800,
-      "q": "ما آلة النفخ ذات الأنبوب الملفوف دائريًا في الظل؟",
-      "a": "هورن",
-      "qid": "silhouette-800-907",
-      "type": "image",
-      "effect": "silhouette",
-      "alt": [
-        "بوق فرنسي",
-        "قرن فرنسي",
-        "French horn"
-      ],
-      "topic": "موسيقى",
-      "difficultyTarget": 0.25,
-      "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-silhouette-final.json",
-      "media": {
-        "src": "silhouette-800-907.webp",
-        "type": "image",
-        "title": "لغز بصري مولّد",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-23",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-800-907.json"
-        }
-      }
-    },
-    {
-      "p": 800,
-      "q": "ما وسيلة الإضاءة ذات الخزان والمدخنة التي يوضحها الظل؟",
+      "q": "ما الغرض المنزلي الذي يمثّله الظل؟",
       "a": "مصباح زيت",
       "qid": "silhouette-800-908",
       "type": "image",
@@ -955,7 +864,7 @@
       "topic": "أثاث ومنزل",
       "difficultyTarget": 0.25,
       "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-silhouette-final.json",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
       "media": {
         "src": "silhouette-800-908.webp",
         "type": "image",
@@ -971,8 +880,100 @@
       }
     },
     {
+      "p": 800,
+      "q": "ما الأداة الشخصية التي يمثّلها الظل؟",
+      "a": "مكبس رموش",
+      "qid": "silhouette-800-921",
+      "type": "image",
+      "effect": "silhouette",
+      "alt": [
+        "مجعد الرموش",
+        "أداة تقويس الرموش",
+        "Eyelash curler"
+      ],
+      "topic": "أغراض شخصية",
+      "difficultyTarget": 0.25,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
+      "media": {
+        "src": "silhouette-1000-903.webp",
+        "type": "image",
+        "title": "لغز بصري مولّد",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-25",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-1000-903.json"
+        }
+      }
+    },
+    {
+      "p": 800,
+      "q": "ما الآلة الموسيقية التي يمثّلها الظل؟",
+      "a": "تشيلو",
+      "qid": "silhouette-800-922",
+      "type": "image",
+      "effect": "silhouette",
+      "alt": [
+        "شيلو",
+        "فيلونسيل",
+        "Cello",
+        "Violoncello"
+      ],
+      "topic": "موسيقى",
+      "difficultyTarget": 0.25,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
+      "media": {
+        "src": "silhouette-400-907.webp",
+        "type": "image",
+        "title": "لغز بصري مولّد",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-400-907.json"
+        }
+      }
+    },
+    {
+      "p": 800,
+      "q": "ما الأداة التي يمثّلها الظل؟",
+      "a": "فتاحة فلين",
+      "qid": "silhouette-800-923",
+      "type": "image",
+      "effect": "silhouette",
+      "alt": [
+        "فتاحة سدادات الفلين",
+        "فتاحة سدادات",
+        "لولب فتح الفلين",
+        "Corkscrew"
+      ],
+      "topic": "أدوات",
+      "difficultyTarget": 0.25,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
+      "media": {
+        "src": "silhouette-600-902.webp",
+        "type": "image",
+        "title": "لغز بصري مولّد",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-600-902.json"
+        }
+      }
+    },
+    {
       "p": 1000,
-      "q": "ما الحيوان ذو المنقار العريض والذيل المفلطح في الظل؟",
+      "q": "أيّ حيوان يمثله هذا الظل؟",
       "a": "خلد الماء",
       "qid": "silhouette-1000-901",
       "type": "image",
@@ -985,7 +986,7 @@
       "topic": "حيوانات",
       "difficultyTarget": 0.15,
       "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-silhouette-final.json",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
       "media": {
         "src": "silhouette-1000-901.webp",
         "type": "image",
@@ -1002,7 +1003,7 @@
     },
     {
       "p": 1000,
-      "q": "ما أداة الملاحة ذات القوس والمنظار التي يظهر ظلها؟",
+      "q": "ما الأداة القديمة التي يمثّلها الظل؟",
       "a": "السدس",
       "qid": "silhouette-1000-902",
       "type": "image",
@@ -1016,7 +1017,7 @@
       "topic": "أدوات",
       "difficultyTarget": 0.15,
       "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-silhouette-final.json",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
       "media": {
         "src": "silhouette-1000-902.webp",
         "type": "image",
@@ -1033,68 +1034,7 @@
     },
     {
       "p": 1000,
-      "q": "ما أداة التجميل ذات الحلقتين والمشبك المقوّس في الظل؟",
-      "a": "مكبس رموش",
-      "qid": "silhouette-1000-903",
-      "type": "image",
-      "effect": "silhouette",
-      "alt": [
-        "مكبس الرموش",
-        "مجعد الرموش",
-        "أداة تقويس الرموش",
-        "Eyelash curler"
-      ],
-      "topic": "أغراض شخصية",
-      "difficultyTarget": 0.15,
-      "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-silhouette-final.json",
-      "media": {
-        "src": "silhouette-1000-903.webp",
-        "type": "image",
-        "title": "لغز بصري مولّد",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-25",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-1000-903.json"
-        }
-      }
-    },
-    {
-      "p": 1000,
-      "q": "ما نوع مركبة السكك الحديدية التي يوضحها ظلها؟",
-      "a": "قاطرة بخارية",
-      "qid": "silhouette-1000-904",
-      "type": "image",
-      "effect": "silhouette",
-      "alt": [
-        "قطار بخاري",
-        "قاطرة تعمل بالبخار",
-        "Steam locomotive"
-      ],
-      "topic": "وسائل نقل",
-      "difficultyTarget": 0.15,
-      "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-silhouette-final.json",
-      "media": {
-        "src": "silhouette-1000-904.webp",
-        "type": "image",
-        "title": "لغز بصري مولّد",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-25",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-1000-904.json"
-        }
-      }
-    },
-    {
-      "p": 1000,
-      "q": "ما اسم الورقة النباتية ذات الشكل المروحي في الظل؟",
+      "q": "إلى أيّ شجرة تنتمي هذه الورقة؟",
       "a": "ورقة جنكة",
       "qid": "silhouette-1000-905",
       "type": "image",
@@ -1105,12 +1045,13 @@
         "جنكو",
         "ورقة جينكو",
         "Ginkgo",
-        "Ginkgo leaf"
+        "Ginkgo leaf",
+        "شجرة الجنكة"
       ],
       "topic": "نباتات",
       "difficultyTarget": 0.15,
       "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-silhouette-final.json",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
       "media": {
         "src": "silhouette-1000-905.webp",
         "type": "image",
@@ -1127,39 +1068,7 @@
     },
     {
       "p": 1000,
-      "q": "ما الفاكهة التي يبيّن الظل ثمرة منها وشريحة خماسية؟",
-      "a": "فاكهة النجمة",
-      "qid": "silhouette-1000-906",
-      "type": "image",
-      "effect": "silhouette",
-      "alt": [
-        "كارامبولا",
-        "كرامبولا",
-        "ستار فروت",
-        "Starfruit",
-        "Carambola"
-      ],
-      "topic": "طعام",
-      "difficultyTarget": 0.15,
-      "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-silhouette-final.json",
-      "media": {
-        "src": "silhouette-1000-906.webp",
-        "type": "image",
-        "title": "لغز بصري مولّد",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-25",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-1000-906.json"
-        }
-      }
-    },
-    {
-      "p": 1000,
-      "q": "ما الآلة الوترية ذات الصندوق المثلث التي يظهر ظلها؟",
+      "q": "ما الآلة الموسيقية التي يمثّلها الظل؟",
       "a": "بالالايكا",
       "qid": "silhouette-1000-907",
       "type": "image",
@@ -1172,7 +1081,7 @@
       "topic": "موسيقى",
       "difficultyTarget": 0.15,
       "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-silhouette-final.json",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
       "media": {
         "src": "silhouette-1000-907.webp",
         "type": "image",
@@ -1189,7 +1098,7 @@
     },
     {
       "p": 1000,
-      "q": "ما جهاز الطبخ القديم ذو الخزان الدائري الذي يوضحه هذا الظل؟",
+      "q": "ما الجهاز المنزلي القديم الذي يمثّله الظل؟",
       "a": "بابور كاز",
       "qid": "silhouette-1000-908",
       "type": "image",
@@ -1207,7 +1116,7 @@
       "topic": "أثاث ومنزل",
       "difficultyTarget": 0.15,
       "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-silhouette-final.json",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
       "media": {
         "src": "silhouette-1000-908.webp",
         "type": "image",
@@ -1219,6 +1128,99 @@
           "tool": "OpenAI image generation (built-in)",
           "createdAt": "2026-09-25",
           "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-1000-908.json"
+        }
+      }
+    },
+    {
+      "p": 1000,
+      "q": "إلى أيّ شجرة تنتمي هذه الورقة؟",
+      "a": "ورقة بلوط",
+      "qid": "silhouette-1000-921",
+      "type": "image",
+      "effect": "silhouette",
+      "alt": [
+        "بلوط",
+        "ورق بلوط",
+        "ورقة شجر البلوط",
+        "Oak leaf",
+        "شجرة بلوط"
+      ],
+      "topic": "نباتات",
+      "difficultyTarget": 0.15,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
+      "media": {
+        "src": "silhouette-600-905.webp",
+        "type": "image",
+        "title": "لغز بصري مولّد",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-600-905.json"
+        }
+      }
+    },
+    {
+      "p": 1000,
+      "q": "أيّ طائر يمثّله هذا الظل؟",
+      "a": "مالك الحزين",
+      "qid": "silhouette-1000-922",
+      "type": "image",
+      "effect": "silhouette",
+      "alt": [
+        "بلشون",
+        "طائر البلشون",
+        "طائر مالك الحزين",
+        "Heron"
+      ],
+      "topic": "حيوانات",
+      "difficultyTarget": 0.15,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
+      "media": {
+        "src": "silhouette-800-901.webp",
+        "type": "image",
+        "title": "لغز بصري مولّد",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-800-901.json"
+        }
+      }
+    },
+    {
+      "p": 1000,
+      "q": "ما الآلة الموسيقية التي يمثّلها الظل؟",
+      "a": "هورن",
+      "qid": "silhouette-1000-923",
+      "type": "image",
+      "effect": "silhouette",
+      "alt": [
+        "بوق فرنسي",
+        "قرن فرنسي",
+        "French horn"
+      ],
+      "topic": "موسيقى",
+      "difficultyTarget": 0.15,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
+      "media": {
+        "src": "silhouette-800-907.webp",
+        "type": "image",
+        "title": "لغز بصري مولّد",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-800-907.json"
         }
       }
     }

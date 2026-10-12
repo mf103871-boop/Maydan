@@ -1,0 +1,58 @@
+{
+  "pack": "spotdiff",
+  "oldQid": "spotdiff-800-902",
+  "side": "b",
+  "createdAt": "2026-10-08",
+  "kind": "ai-generated",
+  "tool": "OpenAI image generation (built-in)",
+  "mode": "edit",
+  "prompt": "Use case: precise-object-edit\nAsset type: matching B image of a one-difference puzzle.\nInput image 1 is the exact EDIT TARGET, the approved original scene. Make exactly one semantic change: rotate ONLY the teal triangular prism wooden block near upper center-right (between the cylindrical block and the right wooden cube) 90 degrees clockwise within its existing footprint so its triangular apex points to the right instead of upward. Keep it teal, same size, same place, same paint texture. Preserve all other pixels and objects: all five blocks otherwise identical, floor-plan ink lines, three pencil tips, paper clip, plants, lamp, mug, coaster, book edges, window, lighting, desk grain, framing and perspective. Do not add/remove items or change other shapes/colors. No text or marker. Return a single image, same 4:3 framing. This must be a strict matching comparison pair with exactly one changed block orientation.",
+  "asset": "media/spotdiff/spotdiff-800-902-b-q20261008.webp",
+  "sha256": "906346cbaf4a22e7d0e058b6afb79a203c8e22c954aaed595a2fb219842da114",
+  "bytes": 205858,
+  "width": 1280,
+  "height": 960,
+  "inputImages": [
+    {
+      "file": "exec-364d7a64-c59b-4673-92b2-5ef52ca6b3be.png",
+      "sha256": "14cc66586fd41f1c7e520447d28d7dbc35dee9fc33836de0fa5416bfbe1d8444"
+    }
+  ],
+  "review": {
+    "status": "phone-size-reviewed",
+    "originalCompared": true,
+    "displayedEffect": "Side-by-side unfiltered originals; reveal circle only",
+    "difference": "Only teal triangular block orientation; upward A, rightward B",
+    "semanticDifferenceCount": 1,
+    "invariantsReviewed": [
+      "five blocks remain",
+      "three pencil tips",
+      "floor-plan",
+      "clip",
+      "lamp",
+      "plants",
+      "window",
+      "mug/coaster",
+      "framing"
+    ],
+    "mobileDeviceQA": false,
+    "reviewedAt": "2026-10-12",
+    "reviewer": "finish_spotdiff",
+    "imageWidthCSS": 173,
+    "evidence": "docs/bank/quality-2026-10-08/preview/spotdiff-07.png"
+  },
+  "packaging": "Uniform size/format encoding only; all scene changes created by built-in imagegen",
+  "packagingReview": {
+    "date": "2026-10-12",
+    "file": "media/spotdiff/spotdiff-800-902-b-q20261008.webp",
+    "beforeBytes": 281670,
+    "bytes": 205858,
+    "beforeSha256": "9978c37a1664da03cc7ade79ebe391647ed5c6f7c7e74a9a354de656e15297d9",
+    "sha256": "906346cbaf4a22e7d0e058b6afb79a203c8e22c954aaed595a2fb219842da114",
+    "quality": 88,
+    "dimensionsUnchanged": true,
+    "operation": "WebP encoding only; no scene edit",
+    "phoneReview": "phone-size-reviewed-after-compression",
+    "reviewRecord": "docs/bank/quality-2026-10-08/postcompression-review.json"
+  }
+}

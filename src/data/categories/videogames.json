@@ -39,7 +39,6 @@
       "verified": true,
       "alt": [
         "Ender Pearl",
-        "لؤلؤة إندر",
         "اندر بيرل"
       ],
       "sourceUrl": "https://www.minecraft.net/en-us/article/ender-pearl",
@@ -94,8 +93,7 @@
       "verified": true,
       "alt": [
         "Obsidian",
-        "سبج",
-        "أوبسيديان"
+        "سبج"
       ],
       "sourceUrl": "https://www.minecraft.net/en-us/article/dragon-s-breath",
       "difficultyTarget": 0.8
@@ -217,7 +215,7 @@
     },
     {
       "p": 400,
-      "q": "في بورتال 2، ما اسم الذكاء الاصطناعي الذي يواجه البطلة داخل مختبرات الاختبار؟",
+      "q": "في بورتال 2، ما الذكاء الاصطناعي الذي يعود لاختبار البطلة بعدما وجّهها في الجزء الأول؟",
       "a": "غلادوس",
       "qid": "videogames-400-918",
       "topic": "خصوم وأخطار",
@@ -226,7 +224,7 @@
         "GLaDOS",
         "جلادوس"
       ],
-      "sourceUrl": "https://www.thinkwithportals.com/about.php",
+      "sourceUrl": "https://store.steampowered.com/app/620/Portal_2/",
       "difficultyTarget": 0.6
     },
     {
@@ -458,7 +456,6 @@
       "verifiedAt": "2026-09-25",
       "alt": [
         "Focus",
-        "فوكس",
         "التركيز"
       ],
       "p": 800,
@@ -510,35 +507,6 @@
       "difficultyTarget": 0.15
     },
     {
-      "q": "ما الاسم الحقيقي لمطور ستارديو فالي المعروف باسم ConcernedApe؟",
-      "a": "إريك بارون",
-      "topic": "صناعة الألعاب",
-      "verified": true,
-      "sourceUrl": "https://www.stardewvalley.net/press/",
-      "verifiedAt": "2026-09-25",
-      "alt": [
-        "Eric Barone",
-        "إيريك بارون"
-      ],
-      "p": 1000,
-      "qid": "videogames-1000-914",
-      "difficultyTarget": 0.15
-    },
-    {
-      "q": "من ألف موسيقى لعبة هيديز من استوديو سوبرجاينت؟",
-      "a": "دارين كورب",
-      "topic": "صناعة الألعاب",
-      "verified": true,
-      "sourceUrl": "https://www.supergiantgames.com/blog/hades-faq/",
-      "verifiedAt": "2026-09-25",
-      "alt": [
-        "Darren Korb"
-      ],
-      "p": 1000,
-      "qid": "videogames-1000-915",
-      "difficultyTarget": 0.15
-    },
-    {
       "q": "ما المهارة في سيكيرو التي تصد الطعنة بالدوس على سلاح الخصم؟",
       "a": "ميكيري كاونتر",
       "topic": "قدرات وتحولات",
@@ -580,6 +548,37 @@
       ],
       "p": 1000,
       "qid": "videogames-1000-918",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "في ستارديو فالي 1.6، أي إصلاح يتيح الوصول إلى مهرجان الربيع الذي يُقام في الصحراء؟",
+      "a": "إصلاح الحافلة",
+      "topic": "آليات الحركة",
+      "verified": true,
+      "sourceUrl": "https://www.stardewvalley.net/stardew-valley-1-6-update-full-changelog/",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "إصلاح الباص",
+        "ترميم الحافلة"
+      ],
+      "p": 1000,
+      "qid": "videogames-1000-921",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "في هيديز، أي مورد تحتاجه لفتح صفوف جديدة من قدرات مرآة الليل؟",
+      "a": "المفاتيح الكثونية",
+      "topic": "أدوات وموارد",
+      "verified": true,
+      "sourceUrl": "https://www.supergiantgames.com/blog/hades-the-blood-price-update-patch-notes-pt-1/",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Chthonic Keys",
+        "المفاتيح",
+        "مفاتيح العالم السفلي"
+      ],
+      "p": 1000,
+      "qid": "videogames-1000-922",
       "difficultyTarget": 0.15
     }
   ]
