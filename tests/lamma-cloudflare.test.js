@@ -41,5 +41,18 @@ test('D1/workerd serializes final group seat, voice attachment claim and multi-d
   const staleOwnerEnd=await api(owner,`/calls/${cid}/end`,'POST',{deviceId:'retired-owner-device'});assert.equal(staleOwnerEnd.status,200);
   assert.equal((await query('SELECT status FROM social_calls WHERE id=?',cid).first()).status,'active');
   const outsider=await user();assert.equal((await api(outsider,`/calls/${cid}/accept`,'POST',{deviceId:'outsider-device'})).status,404);
+  // Exercise the write-time session and cross-account ordering predicates on
+  // actual D1/workerd as well as the separately delayed SQLite race fixtures.
+  await query('UPDATE sessions SET created_at=? WHERE user_id=?',now-1000,owner.id).run();
+  await query('UPDATE sessions SET created_at=? WHERE user_id=?',now,outsider.id).run();
+  const device={deviceId:'shared-installation',kind:'apns',environment:'production',token:'a'.repeat(64)};
+  assert.equal((await api(owner,'/devices','PUT',device)).status,200);
+  assert.equal((await api(outsider,'/devices','PUT',device)).status,200);
+  assert.equal((await api(owner,'/devices','PUT',device)).status,200);
+  assert.equal((await query('SELECT user_id FROM social_devices WHERE device_id=?',device.deviceId).first()).user_id,outsider.id);
+  assert.equal((await api(owner,`/devices/${device.deviceId}`,'DELETE')).status,200);
+  assert.equal((await query('SELECT user_id FROM social_devices WHERE device_id=?',device.deviceId).first()).user_id,outsider.id);
+  assert.equal((await api(outsider,`/devices/${device.deviceId}`,'DELETE')).status,200);
+  assert.equal(await query('SELECT user_id FROM social_devices WHERE device_id=?',device.deviceId).first(),null);
  }finally{if(mf)await mf.dispose();await rm(dir,{recursive:true,force:true});}
 });

@@ -43,13 +43,31 @@ export async function registerDevice(env,id,sessionId,body) {
   const device=userId(body.deviceId), kind=body.kind, environment=body.environment==='development'?'sandbox':body.environment;
   if(!['apns','voip'].includes(kind)||!['sandbox','production'].includes(environment)||typeof body.token!=='string'||!/^[a-fA-F0-9]{32,512}$/.test(body.token)) fail('INVALID',400);
   if((await first(env,'SELECT COUNT(DISTINCT device_id) AS n FROM social_devices WHERE user_id=?',id)).n>=16 && !await first(env,'SELECT 1 FROM social_devices WHERE user_id=? AND device_id=?',id,device)) fail('RATE_LIMIT',429);
+  const token=body.token.toLowerCase(), account=ident(id), session=ident(sessionId);
+  // A request can pass HTTP authentication before a logout/account switch, then
+  // reach this batch after the new account registers. Fence BOTH statements at
+  // write time; checking only the same-user upsert leaves the cross-user DELETE
+  // able to remove the newer registration. Equal timestamps keep the existing
+  // session rather than letting a delayed, different session win the tie.
+  const current=deviceSessionSql(account,session);
+  // token is validated hex above (up to 512 chars, longer than an account ID).
+  const collision=`(d.device_id=${ident(device)} OR (d.token='${token}' AND d.kind=${ident(kind)} AND d.environment=${ident(environment)}))`;
+  const newer=`NOT EXISTS(SELECT 1 FROM social_devices d JOIN sessions old ON old.id=d.session_id WHERE ${collision} AND d.session_id!=${session} AND old.created_at>=(SELECT created_at FROM sessions WHERE id=${session}))`;
+  const guard=`${current} AND ${newer}`;
   await env.DB.batch([
-    stmt(env,'DELETE FROM social_devices WHERE (token=? AND kind=? AND environment=? AND (user_id!=? OR device_id!=?)) OR (device_id=? AND user_id!=?)',body.token.toLowerCase(),kind,environment,id,device,device,id),
-    stmt(env,`INSERT INTO social_devices(user_id,device_id,kind,environment,token,session_id,updated_at) SELECT ?,?,?,?,?,?,? WHERE ${live(ident(id))} ON CONFLICT(user_id,device_id,kind) DO UPDATE SET token=excluded.token,environment=excluded.environment,session_id=excluded.session_id,updated_at=excluded.updated_at WHERE COALESCE((SELECT created_at FROM sessions WHERE id=excluded.session_id),0)>=COALESCE((SELECT created_at FROM sessions WHERE id=social_devices.session_id),0)`,id,device,kind,environment,body.token.toLowerCase(),sessionId,Date.now()),
+    stmt(env,`DELETE FROM social_devices WHERE ((token=? AND kind=? AND environment=? AND (user_id!=? OR device_id!=?)) OR (device_id=? AND user_id!=?)) AND ${guard}`,token,kind,environment,id,device,device,id),
+    stmt(env,`INSERT INTO social_devices(user_id,device_id,kind,environment,token,session_id,updated_at) SELECT ?,?,?,?,?,?,? WHERE ${guard} ON CONFLICT(user_id,device_id,kind) DO UPDATE SET token=excluded.token,environment=excluded.environment,session_id=excluded.session_id,updated_at=excluded.updated_at`,id,device,kind,environment,token,sessionId,Date.now()),
   ]);
   return {ok:true,configured:pushConfigured(env,environment)};
 }
-export const deleteDevice = (env,id,device) => run(env,'DELETE FROM social_devices WHERE user_id=? AND device_id=?',id,userId(device));
+// SQL time matters: D1 may execute after a request that authenticated earlier.
+// This expression retains milliseconds on the SQLite versions supported by D1.
+const deviceWriteNow=`(CAST(strftime('%s','now') AS INTEGER)*1000+CAST(substr(strftime('%f','now'),4,3) AS INTEGER))`;
+const deviceSessionSql=(account,session)=>`${live(account)} AND EXISTS(SELECT 1 FROM sessions s WHERE s.id=${session} AND s.user_id=${account} AND s.expires_at>${deviceWriteNow} AND (s.revoked_at IS NULL OR s.revoked_at>${deviceWriteNow}))`;
+export const deleteDevice = (env,id,device,sessionId) => {
+  const account=ident(id),session=ident(sessionId);
+  return run(env,`DELETE FROM social_devices WHERE user_id=? AND device_id=? AND ${deviceSessionSql(account,session)} AND (session_id=${session} OR COALESCE((SELECT created_at FROM sessions WHERE id=social_devices.session_id),0)<(SELECT created_at FROM sessions WHERE id=${session}))`,id,userId(device));
+};
 async function eligible(env,id,p) {
   const u=ident(id), actor=ident(p.actorId);
   if(!await first(env,`SELECT 1 WHERE ${live(u)} AND ${live(actor)} AND ${unblocked(u,actor)}`)) return false;

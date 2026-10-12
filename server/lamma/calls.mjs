@@ -19,7 +19,7 @@ export async function startCall(env,id,body){
   statements.push(job(env,`expire-${callId}`,'call_expire',{callId},null,now+45001,`EXISTS(SELECT 1 FROM social_calls WHERE id=${ident(callId)})`));
   await env.DB.batch(statements);if(!await first(env,'SELECT 1 FROM social_calls WHERE id=?',callId))fail('CALL_BUSY',409);
   try{await providerRequest(env,'CreateRoom',{name:room,max_participants:12,empty_timeout:60,departure_timeout:20,metadata:JSON.stringify({callId})});}catch(error){await finishCall(env,callId,'ended');throw error;}
-  await notifyCall(env,callId,'ringing');await wakeJobs(env);const current=await getCall(env,id,callId);return {call:current,connection:await connection(env,room,id,current.participants.find(p=>p.userId===id)?.name)};
+  await notifyCall(env,callId,'ringing');await wakeJobs(env);const current=await getCall(env,id,callId),own=current.participants.find(p=>p.userId===id);return {call:current,connection:await connection(env,room,id,own?.name,own?.joinedAt)};
 }
 export async function joinCall(env,id,callId,body){
   if(!liveKitConfigured(env))fail('CALLS_UNAVAILABLE',503);const device=userId(body.deviceId);await sweepCalls(env);const c=await first(env,'SELECT * FROM social_calls WHERE id=?',userId(callId));if(!c||!['ringing','active'].includes(c.status))fail('CALL_UNAVAILABLE',409);await requireScope(env,id,c.scope,c.conversation_id);
@@ -27,15 +27,17 @@ export async function joinCall(env,id,callId,body){
   if(old?.revoked_before>Math.floor(Date.now()/1000))fail('CALL_RECONNECTING',409);
   if(await first(env,"SELECT 1 FROM social_jobs WHERE kind='lk_remove' AND json_extract(payload,'$.room')=?",c.room_name))fail('CALL_RECONNECTING',409);
   const now=Date.now(),guard=`EXISTS(SELECT 1 FROM social_calls c WHERE c.id=${ident(callId)} AND c.status IN ('ringing','active') AND c.expires_at>${now}) AND ${scopeAllowed(c.scope,ident(c.conversation_id),ident(id))} AND ${noConflict(ident(callId),ident(id))} AND ${unblocked(ident(c.initiator_id),ident(id))} AND NOT EXISTS(SELECT 1 FROM social_call_participants x WHERE x.user_id=${ident(id)} AND x.state='active' AND x.call_id!=${ident(callId)}) ${c.scope==='direct'?`AND EXISTS(SELECT 1 FROM social_call_participants WHERE call_id=${ident(callId)} AND user_id=${ident(id)} AND (state='active' OR (state='invited' AND ${c.ring_until}>${now})))`:''}`;
-  const result=await env.DB.batch([stmt(env,`INSERT INTO social_call_participants(call_id,user_id,state,device_id,joined_at) SELECT ?,?,'active',?,? WHERE ${guard} ON CONFLICT(call_id,user_id) DO UPDATE SET state='active',device_id=excluded.device_id,joined_at=COALESCE(social_call_participants.joined_at,excluded.joined_at),left_at=NULL WHERE social_call_participants.state!='active' OR social_call_participants.device_id=excluded.device_id`,callId,id,device,now),stmt(env,"UPDATE social_calls SET status='active',expires_at=? WHERE id=? AND status IN ('ringing','active') AND (SELECT COUNT(*) FROM social_call_participants WHERE call_id=? AND state='active')>=2",now+2*3600000,callId,callId)]);
-  if(!changed(result[0]))fail('CALL_UNAVAILABLE',409);const current=await getCall(env,id,callId);await notifyCall(env,callId,'accepted');return {call:current,connection:await connection(env,c.room_name,id,current.participants.find(p=>p.userId===id)?.name)};
+  // A rejoin awaits a new provider SID. Delayed departure webhooks for the
+  // previous connection must not terminate this newly authorized participation.
+  const result=await env.DB.batch([stmt(env,`INSERT INTO social_call_participants(call_id,user_id,state,device_id,joined_at) SELECT ?,?,'active',?,? WHERE ${guard} ON CONFLICT(call_id,user_id) DO UPDATE SET state='active',device_id=excluded.device_id,provider_sid=CASE WHEN social_call_participants.state='active' THEN social_call_participants.provider_sid ELSE NULL END,joined_at=CASE WHEN social_call_participants.state='active' THEN social_call_participants.joined_at ELSE MAX(excluded.joined_at,COALESCE(social_call_participants.joined_at,0)+1) END,left_at=NULL WHERE social_call_participants.state!='active' OR social_call_participants.device_id=excluded.device_id`,callId,id,device,now),stmt(env,"UPDATE social_calls SET status='active',expires_at=? WHERE id=? AND status IN ('ringing','active') AND (SELECT COUNT(*) FROM social_call_participants WHERE call_id=? AND state='active')>=2",now+2*3600000,callId,callId)]);
+  if(!changed(result[0]))fail('CALL_UNAVAILABLE',409);const current=await getCall(env,id,callId),own=current.participants.find(p=>p.userId===id);await notifyCall(env,callId,'accepted');return {call:current,connection:await connection(env,c.room_name,id,own?.name,own?.joinedAt)};
 }
 export function removeParticipantStatements(env,c,id,now=Date.now(),guard='1') {
   return [stmt(env,`UPDATE social_call_participants SET state='left',left_at=? WHERE call_id=? AND user_id=? AND ${guard}`,now,c.id,id),
     job(env,`lk-remove-${c.id}-${id}-${now}`,'lk_remove',{room:c.room_name,identity:id},null,now,
       `EXISTS(SELECT 1 FROM social_call_participants WHERE call_id=${ident(c.id)} AND user_id=${ident(id)} AND state='left' AND left_at=${now}) AND ${guard}`)];
 }
-export async function finishCall(env,callId,status='ended',guard='1') {
+export async function finishCall(env,callId,status='ended',guard='1',{deferProvider=false}={}) {
   const c=await first(env,'SELECT * FROM social_calls WHERE id=?',callId);if(!c)return;
   const now=Date.now(),participants=await all(env,'SELECT user_id FROM social_call_participants WHERE call_id=?',callId);
   const result=await env.DB.batch([
@@ -45,28 +47,30 @@ export async function finishCall(env,callId,status='ended',guard='1') {
     job(env,`lk-delete-${callId}`,'lk_delete',{room:c.room_name},null,now,guard),
   ]);
   if(guard!=='1'&&!changed(result[0]))return;
-  await notifyCall(env,callId,status);await (await import('./jobs.mjs')).drainJobs(env,Date.now(),c.room_name);await wakeJobs(env);
+  await wakeJobs(env);await notifyCall(env,callId,status);if(!deferProvider)await (await import('./jobs.mjs')).drainJobs(env,Date.now(),c.room_name);
 }
-export async function callAction(env,id,callId,action,body={}) {
+export async function callAction(env,id,callId,action,body={},options={}) {
   const c=await first(env,'SELECT * FROM social_calls WHERE id=?',userId(callId));if(!c)fail('NOT_FOUND',404);
   const own=await first(env,'SELECT * FROM social_call_participants WHERE call_id=? AND user_id=?',callId,id);if(!own)fail('NOT_FOUND',404);
+  if(options.providerSid&&own.provider_sid!==options.providerSid)return {ok:true};
   // Optional for earlier clients. A supplied installation ID is checked again
   // inside every write so another device winning acceptance cannot be removed.
   const device=body.deviceId==null?null:userId(body.deviceId);
   if(device&&own.device_id&&own.device_id!==device)return {ok:true};
-  const guard=device?`EXISTS(SELECT 1 FROM social_call_participants claimed WHERE claimed.call_id=${ident(callId)} AND claimed.user_id=${ident(id)} AND (claimed.device_id IS NULL OR claimed.device_id=${ident(device)}))`:'1';
+  const guard=(device?`EXISTS(SELECT 1 FROM social_call_participants claimed WHERE claimed.call_id=${ident(callId)} AND claimed.user_id=${ident(id)} AND (claimed.device_id IS NULL OR claimed.device_id=${ident(device)}))`:'1')+(options.providerSid?` AND EXISTS(SELECT 1 FROM social_call_participants current WHERE current.call_id=${ident(callId)} AND current.user_id=${ident(id)} AND current.provider_sid=${ident(options.providerSid)})`:'');
   if(action==='end') {
     await requireScope(env,id,c.scope,c.conversation_id);
     if(c.initiator_id!==id&&c.scope==='group'&&!await first(env,`SELECT 1 WHERE ${admin(ident(c.conversation_id),ident(id))}`))fail('NOT_FOUND',404);
-    await finishCall(env,callId,'ended',guard);return {ok:true};
+    await finishCall(env,callId,'ended',guard,options);return {ok:true};
   }
   let result;
   if(action==='reject') result=await run(env,`UPDATE social_call_participants SET state='rejected',left_at=? WHERE call_id=? AND user_id=? AND state='invited' AND ${guard}`,Date.now(),callId,id);
   else [result]=await env.DB.batch(removeParticipantStatements(env,c,id,Date.now(),guard));
   if(!changed(result))return {ok:true};
+  await wakeJobs(env);
   const counts=await first(env,"SELECT SUM(state='active') AS active,SUM(state='invited') AS invited FROM social_call_participants WHERE call_id=?",callId);
-  if(!counts.active || c.scope==='direct'&&!counts.invited&&counts.active<2)await finishCall(env,callId);else await notifyCall(env,callId,action);
-  await (await import('./jobs.mjs')).drainJobs(env,Date.now(),c.room_name);await wakeJobs(env);return {ok:true};
+  if(!counts.active || c.scope==='direct'&&!counts.invited&&counts.active<2)await finishCall(env,callId,'ended','1',options);else await notifyCall(env,callId,action);
+  if(!options.deferProvider)await (await import('./jobs.mjs')).drainJobs(env,Date.now(),c.room_name);return {ok:true};
 }
 export async function sweepCalls(env,now=Date.now()) {const rows=await all(env,"SELECT * FROM social_calls WHERE status IN ('ringing','active') AND (expires_at<=? OR NOT EXISTS(SELECT 1 FROM social_call_participants p WHERE p.call_id=social_calls.id AND p.state='active')) LIMIT 50",now);for(const c of rows)await finishCall(env,c.id,c.status==='ringing'?'missed':'ended');}
 export async function revokeInvalidCalls(env,actorId=null,blockedId=null){const rows=await all(env,"SELECT c.*,p.user_id FROM social_calls c JOIN social_call_participants p ON p.call_id=c.id WHERE c.status IN ('ringing','active') AND p.state='active'");for(const c of rows){const allowed=await first(env,`SELECT 1 WHERE ${scopeAllowed(c.scope,ident(c.conversation_id),ident(c.user_id))}`);const blocked=actorId===c.user_id&&blockedId&&await first(env,"SELECT 1 FROM social_call_participants WHERE call_id=? AND user_id=? AND state='active'",c.id,blockedId);if(!allowed||blocked)await callAction(env,c.user_id,c.id,'leave');}await wakeJobs(env);}

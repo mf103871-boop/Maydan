@@ -155,16 +155,16 @@ test('LiveKit wire grants, signed webhooks and strict same-second revocation fol
  });
  const started=await h.api(a,'/calls','POST',{scope:'group',conversationId:g,clientId:crypto.randomUUID(),deviceId:'device-a'});assert.equal(started.status,200,JSON.stringify(started.body));const id=started.body.call.id;
  const join=await h.api(b,`/calls/${id}/join`,'POST',{deviceId:'device-b'});assert.equal(join.status,200);const old=verify(join.body.connection.token);
- assert.equal(old.sub,b.id);assert.equal(old.name,'لاعب اختبار');assert.deepEqual(old.video,{room:`lamma-${id}`,roomJoin:true,canPublish:true,canSubscribe:true,canPublishData:false,canPublishSources:['microphone']});
+ assert.equal(old.sub,b.id);assert.equal(old.name,'لاعب اختبار');assert.deepEqual(old.video,{room:`lamma-${id}`,roomJoin:true,canPublish:true,canSubscribe:true,canPublishData:false,canUpdateOwnMetadata:false,canPublishSources:['microphone']});
  const webhook=async(event,{tamper=false,badSignature=false}={})=>{const raw=JSON.stringify(event),stamp=Math.floor(now/1000),header=Buffer.from(JSON.stringify({alg:'HS256',typ:'JWT'})).toString('base64url'),payload=Buffer.from(JSON.stringify({iss:h.env.LIVEKIT_API_KEY,nbf:stamp,exp:stamp+60,sha256:createHash('sha256').update(raw).digest('base64')})).toString('base64url');const signing=`${header}.${payload}`,token=`${signing}.${createHmac('sha256',badSignature?'wrong':h.env.LIVEKIT_API_SECRET).update(signing).digest('base64url')}`;try{return await liveKitWebhook(new Request('https://test.local/api/social/livekit/webhook',{method:'POST',headers:{authorization:token},body:tamper?raw+' ':raw}),h.env);}catch(e){return errorResponse(e);}};
- const joined={event:'participant_joined',room:{name:`lamma-${id}`},participant:{identity:b.id,sid:'PA_current'}};
+ const joined={event:'participant_joined',room:{name:`lamma-${id}`},participant:{identity:b.id,sid:'PA_current',metadata:old.metadata}};
  assert.equal((await webhook(joined,{tamper:true})).status,401);assert.equal((await webhook(joined,{badSignature:true})).status,401);assert.equal((await webhook(joined)).status,200);
  assert.equal((await first(h.env,'SELECT provider_sid FROM social_call_participants WHERE call_id=? AND user_id=?',id,b.id)).provider_sid,'PA_current');
  await webhook({...joined,event:'participant_left',participant:{identity:b.id,sid:'PA_old'}});assert.equal((await first(h.env,'SELECT state FROM social_call_participants WHERE call_id=? AND user_id=?',id,b.id)).state,'active');
  await h.api(b,`/calls/${id}/leave`,'POST',{deviceId:'device-b'});const removal=calls.find(r=>r.method==='RemoveParticipant'&&r.body.identity===b.id);assert.ok(removal);assert.ok(old.nbf<removal.body.revoke_token_ts);assert.ok(removal.body.revoke_token_ts<=Math.floor(now/1000)+1);
  assert.equal((await h.api(b,`/calls/${id}/join`,'POST',{deviceId:'device-b'})).body.error,'CALL_RECONNECTING');
  now+=2000;const rejoin=await h.api(b,`/calls/${id}/join`,'POST',{deviceId:'device-b'});assert.equal(rejoin.status,200);assert.ok(verify(rejoin.body.connection.token).nbf>=removal.body.revoke_token_ts);
- await webhook({event:'room_finished',room:{name:`lamma-${id}`}});assert.equal((await h.api(a,`/calls/${id}`)).body.call.status,'ended');assert.ok(calls.some(r=>r.method==='DeleteRoom'));
+ await webhook({event:'room_finished',room:{name:`lamma-${id}`}});assert.equal((await h.api(a,`/calls/${id}`)).body.call.status,'ended');await drainJobs(h.env);assert.ok(calls.some(r=>r.method==='DeleteRoom'));
 });
 
 test('realtime distinguishes message edits, deletions, and read receipts without invalidating ordinary playback',async t=>{

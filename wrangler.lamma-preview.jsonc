@@ -24,7 +24,7 @@
   ],
   // Isolated preview database: contains only synthetic acceptance-test accounts.
   "d1_databases": [{ "binding": "DB", "database_name": "maydan-lamma-preview-accounts", "database_id": "346a7165-9989-4fe2-a5a3-aec017a2d21b", "migrations_dir": "server/migrations" }],
-  // "r2_buckets": [{ "binding": "SOCIAL_AUDIO", "bucket_name": "maydan-lamma-preview-audio" }],
+  "r2_buckets": [{ "binding": "SOCIAL_AUDIO", "bucket_name": "maydan-lamma-preview-audio" }],
   // Use a separate LiveKit preview project and preview/test APNs credentials.
   "triggers": { "crons": ["17 3 * * *", "* * * * *"] },
   "observability": { "enabled": true }

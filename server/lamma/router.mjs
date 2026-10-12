@@ -13,7 +13,7 @@ export async function routeLamma(request,env,path,id,sessionId){const method=req
   if(path==='/capabilities'&&method==='GET')return json({groups:true,voiceMessages:!!env.SOCIAL_AUDIO,liveCalls:liveKitConfigured(env),pushNotifications:pushConfigured(env),maxGroupMembers:12,maxVoiceDurationMs:120000,maxVoiceBytes:MAX_AUDIO_BYTES});
   if(path==='/preferences'){if(method==='GET')return json(await preferences(env,id));if(method==='PUT')return json(await setPreferences(env,id,await body(request)));}
   if(path==='/devices'&&method==='PUT')return json(await registerDevice(env,id,sessionId,await body(request)));
-  let m=/^\/devices\/([A-Za-z0-9_-]+)$/.exec(path);if(m&&method==='DELETE'){await deleteDevice(env,id,m[1]);return json({ok:true});}
+  let m=/^\/devices\/([A-Za-z0-9_-]+)$/.exec(path);if(m&&method==='DELETE'){await deleteDevice(env,id,m[1],sessionId);return json({ok:true});}
   if(path==='/attachments'&&method==='POST')return json(await uploadAttachment(env,id,await readJson(request,Math.ceil(MAX_AUDIO_BYTES/3)*4+4096)));
   m=/^\/attachments\/([A-Za-z0-9_-]+)(\/content)?$/.exec(path);if(m){if(m[2]&&method==='GET')return audioResponse(env,id,m[1],request);if(!m[2]&&method==='DELETE')return json(await deleteAttachment(env,id,m[1]));}
   if(path==='/groups'){if(method==='GET')return json(await groups.listGroups(env,id));if(method==='POST')return json(await groups.createGroup(env,id,await body(request)));}
