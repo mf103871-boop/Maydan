@@ -79,6 +79,12 @@ The additive D1 migration keeps old client contracts, but adding a Durable Objec
 
 ## Internal TestFlight and actual device gate
 
+### Build 10 immediate launch failure
+
+The internal tester reported that `1.7 (10)` closes immediately on launch. Inspection of the exact uploaded IPA confirmed that its executable depends on `@rpath/LiveKitWebRTC.framework/LiveKitWebRTC` and `@rpath/RustLiveKitUniFFI.framework/RustLiveKitUniFFI`, while its only `LC_RPATH` is `/usr/lib/swift`. Both frameworks are embedded, but the executable cannot resolve their location. Archive, signature and export success did not catch this pre-main loading failure.
+
+The corrective build adds `@executable_path/Frameworks` to both app-target configurations. Both iOS workflows now validate actual Mach-O dependencies and launch the Release app on an iPhone simulator. The signed workflow also validates the archive and exported IPA before upload. A replacement build must pass these gates and then receive fresh physical-device confirmation; build 10 is not accepted for release.
+
 The signed `1.7 (10)` artifact at commit `cf1b8fa286a479b5d4743e8374ac854c53de425d` passed archive, signature and export checks in [run 38212813632](https://github.com/mf103871-boop/Maydan/actions/runs/38212813632). It was **not uploaded** by that run. Verify artifact retention and integrity before any later upload; rebuild if the native/UI source changes.
 
 The subsequent [run 38226797638](https://github.com/mf103871-boop/Maydan/actions/runs/38226797638) rebuilt exact commit `dea94914f5935ed0da500247e4f72c54aec1c2df` with upload enabled. Archive, strict signature verification, export and upload succeeded. Apple build `a8414288-310a-4192-9105-12dc8c409771` is `VALID`, with internal state `IN_BETA_TESTING`. Its sole group is **Envysnowy Group**, internal with one tester, and Arabic testing notes were saved. External state remains `READY_FOR_BETA_SUBMISSION`; no external submission or public app release was performed. The [sanitized receipt](releases/lamma-2026-10-12/testflight-1.7-10.json) records CI tests, artifact integrity and the remaining physical-device gate.

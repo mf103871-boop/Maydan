@@ -95,6 +95,10 @@ group-call invitations use ordinary notifications.
 4. Build with the existing Xcode 26+ workflow. LiveKit Swift is pinned to 2.17.0;
    the resolved dependency file contains verified upstream tag commit IDs. The
    macOS build must resolve and compile those pins before calling the build valid.
+   The app target must include `@executable_path/Frameworks` in its runpaths for
+   the embedded LiveKitWebRTC and RustLiveKitUniFFI binaries. Run the actual
+   package dependency validator on the simulator app, archive and exported IPA,
+   and pass the Release simulator launch smoke before uploading to TestFlight.
 5. Update App Store Connect privacy answers and the live policy for audio data,
    device push identifiers, group membership and call metadata. The local privacy
    manifest alone does not update published answers.

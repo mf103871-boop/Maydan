@@ -54,7 +54,7 @@
     "testingNotesSavedViaUI": true
   },
   "ciSkippedTest": {
-    "name": "10 · the shipped page only needs the sources the policy allows",
+    "name": "10 \u00c2\u00b7 the shipped page only needs the sources the policy allows",
     "reason": "CI runs npm test before ios:prepare; dist/index.html is absent in the clean checkout.",
     "localFollowup": {
       "test": "node --test --test-name-pattern=\"the shipped page only needs\" tests/rooms-regression.test.js",
@@ -64,5 +64,13 @@
       "compiledHtmlBytes": 3573305,
       "uiNativeAndPreparationSourceUnchangedSincePriorSignedBuild": "cf1b8fa286a479b5d4743e8374ac854c53de425d"
     }
+  },
+  "physicalDeviceAcceptance": {
+    "status": "failed",
+    "symptom": "Immediate termination on launch reported by internal tester",
+    "diagnosis": "Main executable lacks @executable_path/Frameworks LC_RPATH for embedded LiveKitWebRTC and RustLiveKitUniFFI",
+    "ipaSHA256": "3ed8bbc9c7aec11fced44eda58dd0ed4172cf2ee56a56a6e561e57d66df2bcc5",
+    "appleCrashLogReceived": false,
+    "replacementBuildRequired": true
   }
 }
