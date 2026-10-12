@@ -57,7 +57,7 @@ async function d1(sql) {
   } catch { throw new Error('Preview D1 command failed; no credentials or SQL were printed.'); }
   finally { await unlink(filename).catch(() => {}); }
 }
-async function request(user, pathname, method = 'GET', body) {
+async function request(user, pathname, method = 'GET', body, extraHeaders = {}) {
   const url = assertPreviewURL(new URL(pathname, ORIGIN).href);
   if (method !== 'GET' && pathname.startsWith('/api/social/')) {
     const current = Math.floor(Date.now() / 60_000);
@@ -69,14 +69,14 @@ async function request(user, pathname, method = 'GET', body) {
   }
   const response = await fetch(url, { method, redirect: 'error', signal: AbortSignal.timeout(20_000),
     headers: { Origin: 'maydan://app', ...(user ? { Authorization: `Bearer ${user.token}` } : {}),
-      ...(body === undefined ? {} : { 'Content-Type': 'application/json' }) },
+      ...(body === undefined ? {} : { 'Content-Type': 'application/json' }), ...extraHeaders },
     ...(body === undefined ? {} : { body: JSON.stringify(body) }) });
   const rotated = response.headers.get('x-maydan-session');
   if (user && rotated) user.token = rotated;
   const data = response.headers.get('content-type')?.includes('application/json') ? await response.json() : new Uint8Array(await response.arrayBuffer());
-  return { status: response.status, data };
+  return { status: response.status, data, headers: response.headers };
 }
-const social = (user, suffix, method, body) => request(user, `/api/social${suffix}`, method, body);
+const social = (user, suffix, method, body, headers) => request(user, `/api/social${suffix}`, method, body, headers);
 function expect(result, status, label) { assert.equal(result.status, status, `${label}: expected HTTP ${status}, received ${result.status} (${result.data?.error || 'no error code'})`); return result.data; }
 async function check(name, test) {
   try { await test(); report.checks.push({ name, passed: true }); console.log(`PASS ${name}`); }
@@ -166,14 +166,24 @@ async function main() {
     const upload = await social(owner, '/attachments', 'POST', { scope: 'direct', conversationId: cid, clientId, mimeType: 'audio/wav', durationMs: 1000, dataBase64: audio.toString('base64') });
     if (!capabilities.voiceMessages) { assert.equal(expect(upload, 503, 'unconfigured storage').error, 'AUDIO_UNAVAILABLE'); return; }
     const attachment = expect(upload, 200, 'private upload').attachment;
+    expect(await social(users[4], `/attachments/${attachment.id}/content`), 404, 'unsent audio private to uploader');
+    expect(await social(losing, '/attachments', 'POST', { scope: 'direct', conversationId: cid, clientId: randomUUID(), mimeType: 'audio/wav', durationMs: 1000, dataBase64: audio.toString('base64') }), 404, 'outsider upload denied');
     const sent = expect(await social(owner, `/conversations/${cid}/messages`, 'POST', { kind: 'voice', clientId, attachmentId: attachment.id }), 200, 'typed direct voice').message;
     assert.equal(sent.kind, 'voice'); assert.match(sent.text, /رسالة صوتية/);
-    const played = expect(await social(users[4], `/attachments/${attachment.id}/content`), 200, 'authorized voice'); assert.equal(played.length, audio.length);
+    const content = `/attachments/${attachment.id}/content`;
+    const played = expect(await social(users[4], content), 200, 'authorized voice'); assert.deepEqual(Buffer.from(played), audio);
+    const range = await social(users[4], content, 'GET', undefined, { Range: 'bytes=0-15' });
+    assert.deepEqual(Buffer.from(expect(range, 206, 'authorized range')), audio.subarray(0, 16));
+    assert.equal(range.headers.get('content-range'), `bytes 0-15/${audio.length}`);
+    assert.equal(range.headers.get('cache-control'), 'private, no-store');
+    expect(await social(users[4], content, 'GET', undefined, { Range: `bytes=${audio.length}-` }), 416, 'out-of-range playback');
+    expect(await social(null, content), 401, 'anonymous playback denied');
     expect(await social(losing, `/attachments/${attachment.id}/content`), 404, 'voice outsider');
     expect(await social(owner, `/messages/${sent.seq}`, 'DELETE'), 200, 'delete voice');
     expect(await social(users[4], `/attachments/${attachment.id}/content`), 404, 'deleted voice');
+    report.storageAcceptance = { uploadedBytes: audio.length, byteExactPlayback: true, privateRange: true, unsentAndOutsiderDenied: true, deletedPlaybackDenied: true };
   });
-  await check('unconfigured call service fails explicitly without provider work', async () => {
+  await check(capabilities.liveCalls ? 'configured call service reserved for separate live-provider acceptance' : 'unconfigured call service fails explicitly without provider work', async () => {
     if (capabilities.liveCalls) { report.liveProviderAcceptance = 'Separate authorized provider/device trial required'; return; }
     const result = await social(owner, '/calls', 'POST', { scope: 'group', conversationId: group, clientId: randomUUID(), deviceId: 'preview-fixture-device' });
     assert.equal(expect(result, 503, 'unconfigured calls').error, 'CALLS_UNAVAILABLE');
