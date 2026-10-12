@@ -48,5 +48,19 @@
     "blockingFindings": 0
   },
   "physicalIPhoneTest": false,
-  "playerDifficultyCalibration": false
+  "playerDifficultyCalibration": false,
+  "startupImages": {
+    "passed": 23,
+    "failed": 0,
+    "activeImages": 510,
+    "coverage": [
+      "first launch",
+      "nonblocking background download",
+      "second launch without repeat requests",
+      "all 510 SHA comparisons",
+      "offline decode",
+      "503 outage of one active image",
+      "retry only the missing image"
+    ]
+  }
 }

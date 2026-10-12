@@ -103,14 +103,14 @@ try{
     check('audio plays',await page.locator('audio').evaluate(a=>a.currentTime>0));
    }
    const prefix=`${config.top}-${config.ids[column]}`;
-   await page.locator('.m-question-card').screenshot({path:path.join(out,prefix+'-before.png')});
+   await page.locator('.m-question-card').screenshot({animations:'disabled',path:path.join(out,prefix+'-before.png')});
    await click(page,'.m-reveal-action');await page.locator('.m-judge').waitFor();
    await page.waitForTimeout(300);
    check(`${prefix}: answer is visible`,(await page.locator('.m-answer strong').textContent()).trim().length>0);
    if(config.ids[column]==='tilepuzzle')check('jumble resolves on reveal',await page.locator('.m-jumble').count()===0);
    if(config.ids[column]==='reveal')check('all twelve tiles open on reveal',await page.locator('.m-reveal-tiles .is-open').count()===12);
    if(config.ids[column]==='spotdiff')check('difference marker on both pictures',await page.locator('.m-diff-spot').count()===2);
-   await page.locator('.m-question-card').screenshot({path:path.join(out,prefix+'-after.png')});
+   await page.locator('.m-question-card').screenshot({animations:'disabled',path:path.join(out,prefix+'-after.png')});
    snapshots.push(prefix);
    await click(page,'.m-judge-grid button');await page.locator('.m-board-grid').waitFor();
   }
