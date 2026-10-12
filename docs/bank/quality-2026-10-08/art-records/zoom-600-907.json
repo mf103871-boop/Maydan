@@ -1,0 +1,20 @@
+{
+  "id": "zoom-600-907",
+  "prompt": "Create ONE landscape 4:3 high fidelity photographic puzzle image for an Arabic game for ages 16+. Detailed real-world photograph of a bicycle rear cassette mounted at rear hub. Several concentric toothed metal sprockets and an oily bicycle chain engage near exact centre. Blue painted frame only at far edge, spokes radiate behind; low raking workshop light, mechanically correct geometry. IMPORTANT: this full image will be shown magnified 3.4x around the exact centre, leaving only approximately the central 29% visible during the question. Make that central area contain TWO coherent diagnostic material/structural details of the named object, not the entire silhouette, not blank texture, and not a disconnected fragment. Full image reveals the complete object naturally. Rich but restrained environment palette. No lettering, logos, watermark, hands, labels, borders, collages or question marks. No ivory studio background. Physical realism and fair visual evidence matter more than decoration.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-10-08",
+  "sourceFile": "exec-f74b1631-09c9-4d18-bc95-a49cce40584c.png",
+  "sourceSha256": "70a0b9e3db164e3fb3c6e00db3bcb4c395f8ae1468a8922353aeaeab25967570",
+  "file": "media/zoom/quality-600-907.webp",
+  "sha256": "5b51618de6975592e4fa742f2316c6ea765e77f86dea18c134c6eb93a455a21a",
+  "width": 960,
+  "height": 720,
+  "bytes": 171646,
+  "review": {
+    "status": "phone-size-reviewed",
+    "reviewedAt": "2026-10-08",
+    "method": "Original and shipped effect at phone width, including high-tier assistance; independent editorial review.",
+    "evidence": "docs/bank/quality-2026-10-08/independent-root-image-review.md",
+    "qid": "zoom-600-907"
+  }
+}

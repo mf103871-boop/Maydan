@@ -1,0 +1,79 @@
+{
+  "pack": "spotdiff",
+  "oldQid": "spotdiff-200-905",
+  "side": "b",
+  "createdAt": "2026-10-08",
+  "kind": "ai-generated",
+  "tool": "OpenAI image generation (built-in)",
+  "mode": "edit",
+  "prompt": "Use case: precise-object-edit. Asset type: B photo for a mobile spot-the-difference puzzle. Input image is the EXACT A photo to edit, not general inspiration. Output ONE landscape 4:3 image matching original framing. Make exactly ONE semantic difference. Rotate ONLY the single wooden musical mallet on the foreground table by 180 degrees in the plane of the table. Retain its exact diagonal track, overall bounding box and center. The spherical wooden head currently at upper-left must be at the opposite lower-right end; the plain narrow handle end must now be at upper-left. Keep its wood color and realistic contact shadow. Keep the large cylindrical drum RED and absolutely identical including pale drumhead and wood rim; keep the blue zippered case, backdrop, tabletop and all their positions/textures identical. No extra mallet.\nSTRICT: copy original photo everywhere outside the specified object change; preserve original colors, object counts, backgrounds, textures and composition. No global repaint, color swap, crop, camera move, extra decorative details, text, border, watermark or marks. The changed feature must be clear at 175 px image width.",
+  "asset": "media/spotdiff/spotdiff-200-905-b-q20261008.webp",
+  "sha256": "4f943d91191e0d810ad05381916d5cdcc8886c9c48f79a65e846ff87318fefc6",
+  "inputSHA": "756650c9d71b49cac407ab60c8090fa5eaf8f3ab24ab36027a7126b5ed044457",
+  "outputSHA": "4f943d91191e0d810ad05381916d5cdcc8886c9c48f79a65e846ff87318fefc6",
+  "rawOutputSHA": "c69582ce2e93fb9f25524c18d25cb30c0e7aae81749be339d2c5ffeddf1b2f0d",
+  "rawGeneratedFile": "exec-c53e24f9-e464-4abf-b281-bb835b793768.png",
+  "bytes": 43000,
+  "width": 1280,
+  "height": 960,
+  "inputImages": [
+    {
+      "file": "media/spotdiff/spotdiff-200-905-a.webp",
+      "sha256": "756650c9d71b49cac407ab60c8090fa5eaf8f3ab24ab36027a7126b5ed044457"
+    }
+  ],
+  "diff": {
+    "description": "Wooden musical mallet reverses along its diagonal track; ball head is at the lower-right rather than upper-left.",
+    "answer": "انعكس اتجاه المطرقة الموسيقية",
+    "spot": {
+      "x": 29,
+      "y": 74,
+      "r": 22
+    },
+    "coordinates": "x is measured from physical left; y from top; r is a percentage of image width"
+  },
+  "invariants": [
+    "red drum shell",
+    "drumhead and wooden rim",
+    "blue zipped case",
+    "one mallet only",
+    "table and backdrop",
+    "camera framing and colors"
+  ],
+  "review": {
+    "status": "phone-size-reviewed",
+    "originalCompared": true,
+    "oldAAndOldBViewed": true,
+    "semanticDifferenceCount": 1,
+    "invariantsReviewed": [
+      "red drum shell",
+      "drumhead and wooden rim",
+      "blue zipped case",
+      "one mallet only",
+      "table and backdrop",
+      "camera framing and colors"
+    ],
+    "displayedEffect": "Unfiltered original A and edited B side-by-side; physical-left reveal circle only",
+    "mobileDeviceQA": false,
+    "limitation": "AI re-encoding produces minor texture variation. Review checks one meaningful object difference, preserved counts, colors and geometry; exact outside-region pixel identity is not claimed.",
+    "reviewedAt": "2026-10-12",
+    "reviewer": "finish_spotdiff",
+    "imageWidthCSS": 173,
+    "evidence": "docs/bank/quality-2026-10-08/preview/spotdiff-02.png"
+  },
+  "mobileQA": {
+    "method": "Viewed rendered pairs at 175px per image and vertically stacked originals at 359px width, then viewed circles over both A and B.",
+    "sideBySideImageWidth": 175,
+    "stackedImageWidth": 359,
+    "differenceVisible": true,
+    "circleEnclosesDifferenceInBothImages": true,
+    "physicalLeftCoordinates": true,
+    "deviceTested": false,
+    "artifacts": [
+      ".cache/badeeha-quality/spotdiff-eight-qa/spotdiff-200-905-175.png",
+      ".cache/badeeha-quality/spotdiff-eight-qa/spotdiff-200-905-359.png",
+      ".cache/badeeha-quality/spotdiff-eight-qa/spotdiff-200-905-circle175.png"
+    ]
+  },
+  "packaging": "Uniform landscape resize to 1280x960 and WebP quality 85 only; all scene changes made by built-in imagegen. Original A unchanged."
+}

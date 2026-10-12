@@ -1,0 +1,29 @@
+{
+  "id": "ucl",
+  "kind": "cover",
+  "file": "public/media/badeeha-covers/ucl.webp",
+  "style": "cinematic sports scene",
+  "palette": "midnight navy, silver, icy blue",
+  "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'دوري أبطال أوروبا'. Landscape 4:3 artwork.\nMedium: cinematic sports scene.\nIntentional palette: midnight navy, silver, icy blue.\nScene: A silver original two-handled trophy silhouette at the edge of a luminous night stadium tunnel, dramatic converging lights, no official logos.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-10-08",
+  "sourceImage": {
+    "name": "exec-a750d75f-4513-4a16-a847-34e375cf0f1c.png",
+    "sha256": "43cca7b9ae3087037c889bb470e221b95f08bc5a9c5da8252b602188a7b178fd",
+    "width": 1448,
+    "height": 1086
+  },
+  "width": 640,
+  "height": 480,
+  "bytes": 65348,
+  "sha256": "2542a6947c3c65beaf0b2a6ad7c824b7815cb7c40a4bb282d2d515b482e4b69f",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "phone-size-reviewed",
+    "date": "2026-10-08",
+    "reviewer": "root",
+    "width": 160,
+    "method": "shipped cover CSS; baseline and replacement side by side",
+    "evidence": "docs/bank/quality-2026-10-08/preview/covers-1.jpg"
+  }
+}

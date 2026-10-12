@@ -1,0 +1,79 @@
+{
+  "pack": "spotdiff",
+  "oldQid": "spotdiff-400-902",
+  "side": "b",
+  "createdAt": "2026-10-08",
+  "kind": "ai-generated",
+  "tool": "OpenAI image generation (built-in)",
+  "mode": "edit",
+  "prompt": "Use case: precise-object-edit. Asset type: B photo for a mobile spot-the-difference puzzle. Input image is the EXACT A photo to edit, not general inspiration. Output ONE landscape 4:3 image matching original framing. Make exactly ONE semantic difference. Rotate ONLY the single RED colored pencil by 180 degrees IN THE PLANE OF THE DESK around its existing center, retaining its exact diagonal axis/track, overall bounding box and position to the right of the notebook. Its sharpened exposed-wood RED lead tip currently at UPPER-LEFT must now be at LOWER-RIGHT; its flat red butt end now occupies UPPER-LEFT. Same red color, wooden hexagonal form and length. Preserve the open BLANK spiral notebook and every spiral loop, empty beige cylindrical pencil cup, blue eraser, grey desk, shadows, camera framing and all other objects absolutely identically. No second pencil or text.\nSTRICT: copy original photo everywhere outside the specified object change; preserve original colors, object counts, backgrounds, textures and composition. No global repaint, color swap, crop, camera move, extra decorative details, text, border, watermark or marks. The changed feature must be clear at 175 px image width.",
+  "asset": "media/spotdiff/spotdiff-400-902-b-q20261008.webp",
+  "sha256": "eddb930638b608096c6627a8f9f875ae6dff05fc210b584cecb83aa0bf4bc24e",
+  "inputSHA": "18f01f770900f9de7ab6bc328943249e94d857494731f50814871008235df002",
+  "outputSHA": "eddb930638b608096c6627a8f9f875ae6dff05fc210b584cecb83aa0bf4bc24e",
+  "rawOutputSHA": "64847548b2bc36fd270bce2fa2e26884e22717c2ffa67da69b448c18f12260d7",
+  "rawGeneratedFile": "exec-0fa63bfc-c746-4f3e-8b51-1785f2433956.png",
+  "bytes": 43128,
+  "width": 1280,
+  "height": 960,
+  "inputImages": [
+    {
+      "file": "media/spotdiff/spotdiff-400-902-a.webp",
+      "sha256": "18f01f770900f9de7ab6bc328943249e94d857494731f50814871008235df002"
+    }
+  ],
+  "diff": {
+    "description": "Red pencil reverses on its diagonal track: sharpened wood-and-red-lead tip moves from upper-left to lower-right.",
+    "answer": "انعكس اتجاه القلم الأحمر",
+    "spot": {
+      "x": 83,
+      "y": 55,
+      "r": 23
+    },
+    "coordinates": "x is measured from physical left; y from top; r is a percentage of image width"
+  },
+  "invariants": [
+    "blank notebook pages and spiral binding",
+    "beige pencil cup",
+    "blue eraser",
+    "one red pencil only",
+    "grey desk",
+    "camera framing and colors"
+  ],
+  "review": {
+    "status": "phone-size-reviewed",
+    "originalCompared": true,
+    "oldAAndOldBViewed": true,
+    "semanticDifferenceCount": 1,
+    "invariantsReviewed": [
+      "blank notebook pages and spiral binding",
+      "beige pencil cup",
+      "blue eraser",
+      "one red pencil only",
+      "grey desk",
+      "camera framing and colors"
+    ],
+    "displayedEffect": "Unfiltered original A and edited B side-by-side; physical-left reveal circle only",
+    "mobileDeviceQA": false,
+    "limitation": "AI re-encoding produces minor texture variation. Review checks one meaningful object difference, preserved counts, colors and geometry; exact outside-region pixel identity is not claimed.",
+    "reviewedAt": "2026-10-12",
+    "reviewer": "finish_spotdiff",
+    "imageWidthCSS": 173,
+    "evidence": "docs/bank/quality-2026-10-08/preview/spotdiff-03.png"
+  },
+  "mobileQA": {
+    "method": "Viewed rendered pairs at 175px per image and vertically stacked originals at 359px width, then viewed circles over both A and B.",
+    "sideBySideImageWidth": 175,
+    "stackedImageWidth": 359,
+    "differenceVisible": true,
+    "circleEnclosesDifferenceInBothImages": true,
+    "physicalLeftCoordinates": true,
+    "deviceTested": false,
+    "artifacts": [
+      ".cache/badeeha-quality/spotdiff-eight-qa/spotdiff-400-902-175.png",
+      ".cache/badeeha-quality/spotdiff-eight-qa/spotdiff-400-902-359.png",
+      ".cache/badeeha-quality/spotdiff-eight-qa/spotdiff-400-902-circle175.png"
+    ]
+  },
+  "packaging": "Uniform landscape resize to 1280x960 and WebP quality 85 only; all scene changes made by built-in imagegen. Original A unchanged."
+}

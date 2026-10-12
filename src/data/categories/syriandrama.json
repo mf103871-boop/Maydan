@@ -39,7 +39,8 @@
       "a": "أمل",
       "sourceUrl": "https://elcinema.com/work/1010717/episodes",
       "verified": true,
-      "difficultyTarget": 0.8
+      "difficultyTarget": 0.8,
+      "alt": []
     },
     {
       "qid": "syriandrama-200-914",
@@ -75,7 +76,8 @@
       "a": "نبيلة",
       "sourceUrl": "https://elcinema.com/work/1011042/episodes",
       "verified": true,
-      "difficultyTarget": 0.8
+      "difficultyTarget": 0.8,
+      "alt": []
     },
     {
       "qid": "syriandrama-200-917",
@@ -91,14 +93,15 @@
       "difficultyTarget": 0.8
     },
     {
-      "qid": "syriandrama-200-918",
+      "qid": "syriandrama-200-921",
       "p": 200,
-      "topic": "الانتظار",
-      "q": "من الشاب الذي يحمي رجا ويموت أثناء إنقاذه في ختام «الانتظار»؟",
-      "a": "عبود",
-      "sourceUrl": "https://elcinema.com/work/1676776/episodes",
+      "topic": "الخربة",
+      "q": "من أي بلد يعود عاطف، لتتكشف حقيقة دراسته وزواجه في «الخربة»؟",
+      "a": "فرنسا",
+      "sourceUrl": "https://elcinema.com/work/1768474/episodes",
       "verified": true,
-      "difficultyTarget": 0.8
+      "difficultyTarget": 0.8,
+      "alt": []
     },
     {
       "qid": "syriandrama-400-911",
@@ -106,9 +109,7 @@
       "topic": "ضيعة ضايعة",
       "q": "أي حيوان يواجهه أسعد فتحتفل القرية بشجاعته في حلقة «البطل»؟",
       "a": "ضبع",
-      "alt": [
-        "الضبع"
-      ],
+      "alt": [],
       "sourceUrl": "https://elcinema.com/work/1400743/episodes",
       "verified": true,
       "difficultyTarget": 0.6
@@ -135,7 +136,8 @@
       "a": "وسيم",
       "sourceUrl": "https://elcinema.com/work/1010717/episodes",
       "verified": true,
-      "difficultyTarget": 0.6
+      "difficultyTarget": 0.6,
+      "alt": []
     },
     {
       "qid": "syriandrama-400-914",
@@ -171,7 +173,8 @@
       "a": "عادل",
       "sourceUrl": "https://elcinema.com/work/1011042/episodes",
       "verified": true,
-      "difficultyTarget": 0.6
+      "difficultyTarget": 0.6,
+      "alt": []
     },
     {
       "qid": "syriandrama-400-917",
@@ -205,23 +208,13 @@
       "qid": "syriandrama-600-911",
       "p": 600,
       "topic": "ضيعة ضايعة",
-      "q": "لماذا يغادر أسعد منزله سرًا في بداية الجزء الثاني من «ضيعة ضايعة»؟",
+      "q": "في بداية الجزء الثاني من «ضيعة ضايعة»، لماذا يغادر أسعد منزله سرًا؟",
       "a": "هربًا من مضايقات جاره",
       "alt": [
         "ليبتعد عن جودة",
         "للهروب من جودة"
       ],
       "sourceUrl": "https://elcinema.com/work/1494336/episodes",
-      "verified": true,
-      "difficultyTarget": 0.4
-    },
-    {
-      "qid": "syriandrama-600-912",
-      "p": 600,
-      "topic": "الخربة",
-      "q": "من أي بلد يعود عاطف، لتتكشف حقيقة دراسته وزواجه في «الخربة»؟",
-      "a": "فرنسا",
-      "sourceUrl": "https://elcinema.com/work/1768474/episodes",
       "verified": true,
       "difficultyTarget": 0.4
     },
@@ -244,9 +237,7 @@
       "topic": "الزير سالم",
       "q": "في «الزير سالم»، من ابن الملك المقتول الذي يثأر لأبيه في مبارزة خاله؟",
       "a": "هجرس",
-      "alt": [
-        "الهجرس"
-      ],
+      "alt": [],
       "sourceUrl": "https://elcinema.com/work/1707324/episodes",
       "verified": true,
       "difficultyTarget": 0.4
@@ -272,7 +263,8 @@
       "a": "باريس",
       "sourceUrl": "https://elcinema.com/work/1011042/episodes",
       "verified": true,
-      "difficultyTarget": 0.4
+      "difficultyTarget": 0.4,
+      "alt": []
     },
     {
       "qid": "syriandrama-600-917",
@@ -281,8 +273,7 @@
       "q": "في «أهل الراية»، ماذا يرسل الزعيم للإمبراطور الألماني ردًا على وسام الوجاهة؟",
       "a": "سيفه",
       "alt": [
-        "سيف",
-        "السيف"
+        "سيف"
       ],
       "sourceUrl": "https://elcinema.com/work/1846031/episodes",
       "verified": true,
@@ -296,7 +287,19 @@
       "a": "مالك",
       "sourceUrl": "https://elcinema.com/work/1676776/episodes",
       "verified": true,
-      "difficultyTarget": 0.4
+      "difficultyTarget": 0.4,
+      "alt": []
+    },
+    {
+      "qid": "syriandrama-600-921",
+      "p": 600,
+      "topic": "الانتظار",
+      "q": "من الشاب الذي يحمي رجا ويموت أثناء إنقاذه في ختام «الانتظار»؟",
+      "a": "عبود",
+      "sourceUrl": "https://elcinema.com/work/1676776/episodes",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "alt": []
     },
     {
       "qid": "syriandrama-800-911",
@@ -306,7 +309,8 @@
       "a": "فنزويلا",
       "sourceUrl": "https://elcinema.com/work/1494336/episodes",
       "verified": true,
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.25,
+      "alt": []
     },
     {
       "qid": "syriandrama-800-912",
@@ -341,9 +345,7 @@
       "topic": "الزير سالم",
       "q": "في «الزير سالم»، ما الاسم الذي تمنحه القبيلة للبطل بعد فقدان ذاكرته؟",
       "a": "تمساح",
-      "alt": [
-        "التمساح"
-      ],
+      "alt": [],
       "sourceUrl": "https://elcinema.com/work/1707324/episodes",
       "verified": true,
       "difficultyTarget": 0.25
@@ -371,7 +373,8 @@
       "a": "رامي عياش",
       "sourceUrl": "https://elcinema.com/work/1011042/episodes",
       "verified": true,
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.25,
+      "alt": []
     },
     {
       "qid": "syriandrama-800-917",
@@ -392,9 +395,7 @@
       "topic": "الانتظار",
       "q": "من الخصم الذي يقتل حامي رجا في الحلقة الأخيرة من «الانتظار»؟",
       "a": "شاويش",
-      "alt": [
-        "الشاويش"
-      ],
+      "alt": [],
       "sourceUrl": "https://elcinema.com/work/1676776/episodes",
       "verified": true,
       "difficultyTarget": 0.25
@@ -414,7 +415,7 @@
     },
     {
       "topic": "الخربة",
-      "q": "في «الخربة»، ما الوثيقة التي ينساها جوهر فيُمنع من دخول الحفل الرسمي؟",
+      "q": "في «الخربة»، ما الوثيقة المنسية التي تمنع جوهر من دخول الحفل الرسمي؟",
       "a": "الهوية الشخصية",
       "sourceUrl": "https://elcinema.com/work/1768474/episodes",
       "alt": [
@@ -434,7 +435,8 @@
       "verified": true,
       "p": 1000,
       "qid": "syriandrama-1000-913",
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.15,
+      "alt": []
     },
     {
       "topic": "الزير سالم",
@@ -444,7 +446,8 @@
       "verified": true,
       "p": 1000,
       "qid": "syriandrama-1000-914",
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.15,
+      "alt": []
     },
     {
       "topic": "التغريبة الفلسطينية",
@@ -454,7 +457,8 @@
       "verified": true,
       "p": 1000,
       "qid": "syriandrama-1000-915",
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.15,
+      "alt": []
     },
     {
       "topic": "الفصول الأربعة",
@@ -464,7 +468,8 @@
       "verified": true,
       "p": 1000,
       "qid": "syriandrama-1000-916",
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.15,
+      "alt": []
     },
     {
       "topic": "أهل الراية",
@@ -474,7 +479,8 @@
       "verified": true,
       "p": 1000,
       "qid": "syriandrama-1000-917",
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.15,
+      "alt": []
     },
     {
       "topic": "الانتظار",
@@ -484,7 +490,8 @@
       "verified": true,
       "p": 1000,
       "qid": "syriandrama-1000-918",
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.15,
+      "alt": []
     }
   ]
 }

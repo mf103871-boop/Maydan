@@ -11,7 +11,6 @@
       "topic": "مطابخ عالمية",
       "verified": true,
       "alt": [
-        "بايلا",
         "الباييا"
       ],
       "difficultyTarget": 0.8,
@@ -25,7 +24,6 @@
       "topic": "حلويات",
       "verified": true,
       "alt": [
-        "ماكارون",
         "المكرون"
       ],
       "difficultyTarget": 0.8,
@@ -39,7 +37,8 @@
       "topic": "مشروبات",
       "verified": true,
       "difficultyTarget": 0.8,
-      "sourceUrl": "https://damasradio.fm/قمر-الدين-السوري-سفير-المشمش-الدمشقي-م/"
+      "sourceUrl": "https://damasradio.fm/قمر-الدين-السوري-سفير-المشمش-الدمشقي-م/",
+      "alt": []
     },
     {
       "p": 200,
@@ -62,10 +61,8 @@
       "topic": "مكوّنات وأصناف",
       "verified": true,
       "alt": [
-        "بارميزان",
         "البارميجان",
-        "بارميجيانو ريجيانو",
-        "البارميجيانو ريجيانو"
+        "بارميجيانو ريجيانو"
       ],
       "difficultyTarget": 0.8,
       "sourceUrl": "https://www.parmigianoreggiano.com/en-US/faq"
@@ -78,8 +75,7 @@
       "topic": "مطابخ عالمية",
       "verified": true,
       "alt": [
-        "غاسباتشو",
-        "غازباتشو"
+        "غاسباتشو"
       ],
       "difficultyTarget": 0.8,
       "sourceUrl": "https://www.spain.info/es/top/comida-saludable-espana/"
@@ -92,7 +88,6 @@
       "topic": "مشروبات",
       "verified": true,
       "alt": [
-        "إسبريسو",
         "الاسبرسو"
       ],
       "difficultyTarget": 0.8,
@@ -100,7 +95,7 @@
     },
     {
       "p": 200,
-      "q": "ما الجبن القبرصي المعروف بتحمله الشواء والقلي مع احتفاظه بشكله؟",
+      "q": "أي جبن قبرصي تحتفظ قطعه بشكلها عند الشواء والقلي؟",
       "a": "الحلوم",
       "qid": "food-200-918",
       "topic": "مكوّنات وأصناف",
@@ -120,9 +115,7 @@
       "qid": "food-400-911",
       "topic": "مطبخ عربي",
       "verified": true,
-      "alt": [
-        "سلتة"
-      ],
+      "alt": [],
       "difficultyTarget": 0.6,
       "sourceUrl": "https://www.yementourism.com/ar/food-drinks/47-food/208-2017-07-23-08-50-10"
     },
@@ -134,7 +127,6 @@
       "topic": "توابل وأعشاب",
       "verified": true,
       "alt": [
-        "بابريكا",
         "الفلفل الأحمر الحلو"
       ],
       "difficultyTarget": 0.6,
@@ -148,7 +140,6 @@
       "topic": "حلويات",
       "verified": true,
       "alt": [
-        "بافلوفا",
         "الباڤلوفا"
       ],
       "difficultyTarget": 0.6,
@@ -171,15 +162,14 @@
     },
     {
       "p": 400,
-      "q": "ما اسم طهي الطعام داخل وعاء موضوع في إناء آخر ممتلئ بماء ساخن؟",
+      "q": "وعاء الطهي موضوع داخل إناء ماء ساخن؛ ما اسم هذه الطريقة؟",
       "a": "حمام مائي",
       "qid": "food-400-915",
       "topic": "طرق الطهي",
       "verified": true,
       "alt": [
         "بان ماري",
-        "البانماري",
-        "الحمام المائي"
+        "البانماري"
       ],
       "difficultyTarget": 0.6,
       "sourceUrl": "https://app.ckbk.com/reference/cook52062c12s001ss003e004/making-creme-caramel"
@@ -191,9 +181,7 @@
       "qid": "food-400-916",
       "topic": "مطبخ عربي",
       "verified": true,
-      "alt": [
-        "رأس حانوت"
-      ],
+      "alt": [],
       "difficultyTarget": 0.6,
       "sourceUrl": "https://www.visitmorocco.com/sites/default/files/atoms/files/maroc_gastronomie_0111_il_en.pdf"
     },
@@ -205,7 +193,6 @@
       "topic": "مشروبات",
       "verified": true,
       "alt": [
-        "مخا",
         "ميناء المخا"
       ],
       "difficultyTarget": 0.6,
@@ -218,9 +205,7 @@
       "qid": "food-400-918",
       "topic": "أصول الأطباق",
       "verified": true,
-      "alt": [
-        "يابان"
-      ],
+      "alt": [],
       "difficultyTarget": 0.6,
       "sourceUrl": "https://www.cupnoodles-museum.jp/ja/osaka_ikeda/about/"
     },
@@ -232,8 +217,7 @@
       "topic": "مطابخ عالمية",
       "verified": true,
       "alt": [
-        "سيبيتشي",
-        "سيفيتشي"
+        "سيبيتشي"
       ],
       "difficultyTarget": 0.4,
       "sourceUrl": "https://ich.unesco.org/en/RL/practices-and-meanings-associated-with-the-preparation-and-consumption-of-ceviche-an-expression-of-peruvian-traditional-cuisine-01952"
@@ -270,7 +254,7 @@
     },
     {
       "p": 600,
-      "q": "ما التفاعل بين الأحماض الأمينية والسكريات المختزلة الذي يسهم في تحمير الخبز ونكهته؟",
+      "q": "خبز يتحمر وتتطور نكهته بتفاعل السكريات المختزلة والأحماض الأمينية؛ ما اسم التفاعل؟",
       "a": "تفاعل ميلارد",
       "qid": "food-600-914",
       "topic": "طرق الطهي",
@@ -293,7 +277,6 @@
       "topic": "مطبخ عربي",
       "verified": true,
       "alt": [
-        "بازين",
         "البازين الليبي"
       ],
       "difficultyTarget": 0.4,
@@ -348,7 +331,6 @@
       "topic": "مطبخ عربي",
       "verified": true,
       "alt": [
-        "ويكة",
         "الويكة السودانية"
       ],
       "difficultyTarget": 0.25,
@@ -363,7 +345,6 @@
       "verified": true,
       "alt": [
         "خاتشابوري",
-        "الخاتشابوري",
         "خاتشابوري أدجاري"
       ],
       "difficultyTarget": 0.25,
@@ -377,7 +358,6 @@
       "topic": "توابل وأعشاب",
       "verified": true,
       "alt": [
-        "حلتيت",
         "الحلتيت الهندي",
         "هينج"
       ],
@@ -392,7 +372,6 @@
       "topic": "حلويات",
       "verified": true,
       "alt": [
-        "الكروكمبوش",
         "كروكانبوش"
       ],
       "difficultyTarget": 0.25,
@@ -430,7 +409,7 @@
       "difficultyTarget": 0.25
     },
     {
-      "q": "ما اسم مزيج الدقيق والدهن المطهو الذي يبدأ به تحضير صلصة البشاميل؟",
+      "q": "بدأ طاهٍ صلصة البشاميل بطهو دهن ودقيق معًا؛ ما اسم هذا المزيج؟",
       "a": "الرو",
       "topic": "طرق الطهي",
       "verified": true,
@@ -452,7 +431,6 @@
       "sourceUrl": "https://www.thaicookbook.tv/thai-food-ingredients/roots-and-rhizomes/galangal-thai-kha/",
       "verifiedAt": "2026-09-25",
       "alt": [
-        "خولنجان",
         "غالانغال",
         "Galangal"
       ],
@@ -475,7 +453,7 @@
       "difficultyTarget": 0.15
     },
     {
-      "q": "ما الاسم الفرنسي لعجينة الزبدة والدقيق غير المطهوة التي تضاف لتكثيف الصلصات؟",
+      "q": "لتكثيف صلصة، أضيفت عجينة زبدة ودقيق غير مطهوة؛ ما اسمها الفرنسي؟",
       "a": "بور مانييه",
       "topic": "طرق الطهي",
       "verified": true,
@@ -566,7 +544,7 @@
       "difficultyTarget": 0.15
     },
     {
-      "q": "ما اسم بادئ التخمير الياباني المصنوع بإنماء فطر أسبرجيلوس أوريزا على الأرز أو الشعير؟",
+      "q": "نما فطر أسبرجيلوس أوريزا على الأرز ليصبح بادئ تخمير؛ ما اسم الناتج؟",
       "a": "كوجي",
       "topic": "مكوّنات وأصناف",
       "verified": true,

@@ -1,0 +1,29 @@
+{
+  "id": "aot",
+  "kind": "cover",
+  "file": "public/media/badeeha-covers/aot.webp",
+  "style": "dramatic ink-wash illustration",
+  "palette": "slate blue, forest green, warm grey",
+  "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'هجوم العمالقة'. Landscape 4:3 artwork.\nMedium: dramatic ink-wash illustration.\nIntentional palette: slate blue, forest green, warm grey.\nScene: A colossal fictional fortified wall towers over tiny rooftops under storm clouds, epic perspective, no giants or graphic violence.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-10-08",
+  "sourceImage": {
+    "name": "exec-8327dc59-d7f5-493c-8cb8-4d1577ad5494.png",
+    "sha256": "e15825f3487c52ff3523e3fedd556ef0a553aa2b21832945c8e5be0541b92683",
+    "width": 1448,
+    "height": 1086
+  },
+  "width": 640,
+  "height": 480,
+  "bytes": 68124,
+  "sha256": "30330f68324046b8baea5fdd06a83465a0b2255d51ab79fa237a72fd58a9e615",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "phone-size-reviewed",
+    "date": "2026-10-08",
+    "reviewer": "root",
+    "width": 160,
+    "method": "shipped cover CSS; baseline and replacement side by side",
+    "evidence": "docs/bank/quality-2026-10-08/preview/covers-3.jpg"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "id": "zoom-400-903",
+  "prompt": "Create ONE landscape 4:3 high fidelity photographic puzzle image for an Arabic game for ages 16+. A wooden spring clothespin lying diagonally on indigo linen. The steel torsion spring and the junction between both wooden jaws at the exact centre; the complete clothespin visible, fills 75% of frame. Side view, afternoon window light. IMPORTANT: this full image will be shown magnified 3.4x around the exact centre, leaving only approximately the central 29% visible during the question. Make that central area contain TWO coherent diagnostic material/structural details of the named object, not the entire silhouette, not blank texture, and not a disconnected fragment. Full image reveals the complete object naturally. Rich but restrained environment palette. No lettering, logos, watermark, hands, labels, borders, collages or question marks. No ivory studio background. Physical realism and fair visual evidence matter more than decoration.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-10-08",
+  "sourceFile": "exec-4a055ecd-c7f4-4a54-b5b9-10232805f719.png",
+  "sourceSha256": "d2c5d11ac695feaf000b83e1d70c515470f1863ac1b4102f446889046012e611",
+  "file": "media/zoom/quality-400-903.webp",
+  "sha256": "8cbd6f6f03d8de912514e42d2f37f19c7954fd2faa6db4bc5a803cf53270d8c0",
+  "width": 960,
+  "height": 720,
+  "bytes": 170388,
+  "review": {
+    "status": "phone-size-reviewed",
+    "reviewedAt": "2026-10-08",
+    "method": "Original and shipped effect at phone width, including high-tier assistance; independent editorial review.",
+    "evidence": "docs/bank/quality-2026-10-08/independent-root-image-review.md",
+    "qid": "zoom-400-903"
+  }
+}

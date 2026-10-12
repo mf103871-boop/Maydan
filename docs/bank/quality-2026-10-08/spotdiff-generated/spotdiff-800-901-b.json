@@ -1,0 +1,46 @@
+{
+  "pack": "spotdiff",
+  "oldQid": "spotdiff-800-901",
+  "side": "b",
+  "createdAt": "2026-10-12",
+  "kind": "ai-generated",
+  "tool": "OpenAI image generation (built-in)",
+  "mode": "edit",
+  "prompt": "Use case: precise-object-edit\nAsset type: matching second image for single-difference visual comparison puzzle, later displayed at 173 pixels wide.\nInput image is the exact EDIT TARGET. Change ONLY the position of the orange marmalade jar (middle of the three jars, near upper center). Shift that entire jar DOWN approximately 100 pixels along the tabletop toward the viewer, without changing its size, shape, contents, gold lid, orientation or color. Originally three jars form a receding diagonal line; now the middle orange jar sits noticeably in front of its two neighbors. It must remain on the table, not overlap the butter dish. Reconstruct only its former tabletop footprint and appropriate tiny shadow. This is exactly ONE relative-position difference.\nPreserve every other object and its exact geometry and position: both dark jam jars, flowers and vase, coffee pot, coffee mug, four-tined fork and navy napkin, two toast slices, croissant, fruit bowl and each fruit, butter dish, sugar bowl, juice and spoon. Keep framing 4:3, camera, photographic material, illumination and background identical. No annotation, marks, panels or text. No other differences.",
+  "asset": "media/spotdiff/spotdiff-800-901-b-q20261008.webp",
+  "sha256": "64c27e995217ba7914047b95f79a861e71c99a721d394c83be19d268e1246d39",
+  "bytes": 190082,
+  "width": 1280,
+  "height": 960,
+  "inputImages": [
+    {
+      "file": "spotdiff-800-901-a-q20261008.webp",
+      "sha256": "0e27b49827592a110532a6ed1175366422fad58034b6bcf838ad30ad02f5e756"
+    }
+  ],
+  "review": {
+    "status": "phone-size-reviewed",
+    "originalCompared": true,
+    "difference": "Middle orange marmalade jar is shifted forward relative to its two neighboring jars.",
+    "answer": "تقدّمت علبة المربى البرتقالية عن العلبتين",
+    "spot": {
+      "x": 54,
+      "y": 21,
+      "r": 13
+    },
+    "semanticDifferenceCount": 1,
+    "mobileDeviceQA": false,
+    "displayedEffect": "Unfiltered side-by-side originals; reveal circle only",
+    "reviewedAt": "2026-10-12",
+    "reviewer": "finish_spotdiff",
+    "imageWidthCSS": 173,
+    "evidence": "docs/bank/quality-2026-10-08/preview/spotdiff-07.png",
+    "independentReviewer": "root"
+  },
+  "packaging": "Uniform size/format encoding only; all scene changes created by built-in imagegen",
+  "revision": {
+    "reason": "Previous large fork reversal too easy for 800; replace with relative position comparison.",
+    "previousSha256": "fdebe167d77056132db56c23ed398fc41d75575b303ffb1bec758327b9382cf8",
+    "previousPrompt": "Use case: precise-object-edit\nAsset type: strict matching B image for a single-difference comparison puzzle.\nInput image 1 is the exact EDIT TARGET. Rotate ONLY the silver fork lying on the navy napkin at lower left by 180 degrees around its center, within the same footprint. In the original its tines point toward upper left; in the edited result its tines must point lower right and its handle upper left. Keep its four tines, exact silver material, size and diagonal axis. The napkin and its folds must remain identical.\nMake exactly this one semantic change. Preserve EVERYTHING ELSE identical, including coffee pot/mug and liquid, two toast slices, three jam jars, butter dish, juice, croissant, berry bowl, flowers, sugar bowl, separate spoon, all textile weave, tabletop grain, camera, lighting. Keep framing 4:3 and style. Do not regenerate the scene, add/remove any other item, change any color or edge, add text, marker or highlight."
+  }
+}

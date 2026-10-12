@@ -1,0 +1,29 @@
+{
+  "id": "arabcelebs",
+  "kind": "cover",
+  "file": "public/media/badeeha-covers/arabcelebs.webp",
+  "style": "editorial portrait silhouettes",
+  "palette": "burgundy, gold, midnight blue",
+  "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'مشاهير عرب'. Landscape 4:3 artwork.\nMedium: editorial portrait silhouettes.\nIntentional palette: burgundy, gold, midnight blue.\nScene: Several anonymous elegant human profiles against stage lights, adult proportions and distinct silhouettes, no identifiable celebrity face.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-10-08",
+  "sourceImage": {
+    "name": "exec-1b4e45e0-9822-4da6-9ee1-8bd7b22ae3e6.png",
+    "sha256": "a741e1ccb847b0eae560345cf25343662dcc77c4940b6c433cec08deb46abd7b",
+    "width": 1448,
+    "height": 1086
+  },
+  "width": 640,
+  "height": 480,
+  "bytes": 38490,
+  "sha256": "941276437ab3cb99ca2f538dc472f0d0ed37399b1972cc2e91a43e15f6667719",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "phone-size-reviewed",
+    "date": "2026-10-08",
+    "reviewer": "root",
+    "width": 160,
+    "method": "shipped cover CSS; baseline and replacement side by side",
+    "evidence": "docs/bank/quality-2026-10-08/preview/covers-2.jpg"
+  }
+}

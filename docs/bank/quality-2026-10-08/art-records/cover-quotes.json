@@ -1,0 +1,29 @@
+{
+  "id": "quotes",
+  "kind": "cover",
+  "file": "public/media/badeeha-covers/quotes.webp",
+  "style": "minimal conceptual illustration",
+  "palette": "cobalt, warm white, vermillion",
+  "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'من القائل'. Landscape 4:3 artwork.\nMedium: minimal conceptual illustration.\nIntentional palette: cobalt, warm white, vermillion.\nScene: An oversized pair of original curved quotation-like abstract shapes framing a beam of light, strong editorial composition, no actual words.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-10-08",
+  "sourceImage": {
+    "name": "exec-38d6bcc7-8f98-4d5b-88f1-5d190ab974f2.png",
+    "sha256": "e586b4c59264b57c8903944e17a7b2570784bb570c5c8e06d2ee8ff2ca12c900",
+    "width": 1448,
+    "height": 1086
+  },
+  "width": 640,
+  "height": 480,
+  "bytes": 33102,
+  "sha256": "9dffd3992880b3894e06ac3071e00921bf3145981382e34bc87e218dd8540b5b",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "phone-size-reviewed",
+    "date": "2026-10-08",
+    "reviewer": "root",
+    "width": 160,
+    "method": "shipped cover CSS; baseline and replacement side by side",
+    "evidence": "docs/bank/quality-2026-10-08/preview/covers-2.jpg"
+  }
+}

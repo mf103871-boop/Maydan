@@ -1,0 +1,29 @@
+{
+  "id": "tarab",
+  "kind": "cover",
+  "file": "public/media/badeeha-covers/tarab.webp",
+  "style": "painterly vintage stage scene",
+  "palette": "indigo, amber, muted rose",
+  "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'طرب وأغاني زمان'. Landscape 4:3 artwork.\nMedium: painterly vintage stage scene.\nIntentional palette: indigo, amber, muted rose.\nScene: A classic standing microphone beside an empty ornate concert chair, velvet curtain and atmospheric light, evocative mid-century Arabic music hall.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-10-08",
+  "sourceImage": {
+    "name": "exec-2f9a5d80-57ec-473b-a4a8-c40a7f2070a6.png",
+    "sha256": "d0bf2fa5fdd9288fc9b2f215d4b0accc29a5e3bbb6736b8b49853e10bb02d2e4",
+    "width": 1448,
+    "height": 1086
+  },
+  "width": 640,
+  "height": 480,
+  "bytes": 55352,
+  "sha256": "b7463b90c23b030ed02649a57ccab51bde63dd1a9f343245b40766c34953198a",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "phone-size-reviewed",
+    "date": "2026-10-08",
+    "reviewer": "root",
+    "width": 160,
+    "method": "shipped cover CSS; baseline and replacement side by side",
+    "evidence": "docs/bank/quality-2026-10-08/preview/covers-2.jpg"
+  }
+}

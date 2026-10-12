@@ -100,385 +100,9 @@
     },
     {
       "p": 200,
-      "q": "ما الذي تبدّل في صورتي زاوية الزراعة؟",
-      "a": "تغيّر لون إبريق الري",
-      "qid": "spotdiff-200-903",
-      "type": "diff",
-      "spot": {
-        "x": 63,
-        "y": 54,
-        "r": 27
-      },
-      "topic": "حديقة",
-      "alt": [
-        "لون إبريق الري"
-      ],
-      "verified": true,
-      "difficultyTarget": 0.8,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-spotdiff-final.json",
-      "media": [
-        {
-          "src": "spotdiff-200-903-a.webp",
-          "type": "image",
-          "title": "لغز بصري مولّد",
-          "author": "Maydan / OpenAI image generation",
-          "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-          "provenance": {
-            "kind": "ai-generated",
-            "tool": "OpenAI image generation (built-in)",
-            "createdAt": "2026-09-25",
-            "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-200-903-a.json"
-          }
-        },
-        {
-          "src": "spotdiff-200-903-b.webp",
-          "type": "image",
-          "title": "لغز بصري مولّد",
-          "author": "Maydan / OpenAI image generation",
-          "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-          "provenance": {
-            "kind": "ai-generated",
-            "tool": "OpenAI image generation (built-in)",
-            "createdAt": "2026-09-25",
-            "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-200-903-b.json"
-          }
-        }
-      ]
-    },
-    {
-      "p": 200,
-      "q": "ما التغيير الظاهر في صورتي رف الألعاب؟",
-      "a": "تغيّر لون السيارة",
-      "qid": "spotdiff-200-904",
-      "type": "diff",
-      "spot": {
-        "x": 68,
-        "y": 49,
-        "r": 24
-      },
-      "topic": "ألعاب وهوايات",
-      "alt": [
-        "لون السيارة"
-      ],
-      "verified": true,
-      "difficultyTarget": 0.8,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-spotdiff-final.json",
-      "media": [
-        {
-          "src": "spotdiff-200-904-a.webp",
-          "type": "image",
-          "title": "لغز بصري مولّد",
-          "author": "Maydan / OpenAI image generation",
-          "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-          "provenance": {
-            "kind": "ai-generated",
-            "tool": "OpenAI image generation (built-in)",
-            "createdAt": "2026-09-25",
-            "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-200-904-a.json"
-          }
-        },
-        {
-          "src": "spotdiff-200-904-b.webp",
-          "type": "image",
-          "title": "لغز بصري مولّد",
-          "author": "Maydan / OpenAI image generation",
-          "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-          "provenance": {
-            "kind": "ai-generated",
-            "tool": "OpenAI image generation (built-in)",
-            "createdAt": "2026-09-25",
-            "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-200-904-b.json"
-          }
-        }
-      ]
-    },
-    {
-      "p": 200,
-      "q": "ما الذي اختلف بين صورتي ركن الإيقاع؟",
-      "a": "تغيّر لون الطبلة",
-      "qid": "spotdiff-200-905",
-      "type": "diff",
-      "spot": {
-        "x": 69,
-        "y": 56,
-        "r": 24
-      },
-      "topic": "موسيقى",
-      "alt": [
-        "لون الطبلة"
-      ],
-      "verified": true,
-      "difficultyTarget": 0.8,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-spotdiff-final.json",
-      "media": [
-        {
-          "src": "spotdiff-200-905-a.webp",
-          "type": "image",
-          "title": "لغز بصري مولّد",
-          "author": "Maydan / OpenAI image generation",
-          "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-          "provenance": {
-            "kind": "ai-generated",
-            "tool": "OpenAI image generation (built-in)",
-            "createdAt": "2026-09-25",
-            "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-200-905-a.json"
-          }
-        },
-        {
-          "src": "spotdiff-200-905-b.webp",
-          "type": "image",
-          "title": "لغز بصري مولّد",
-          "author": "Maydan / OpenAI image generation",
-          "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-          "provenance": {
-            "kind": "ai-generated",
-            "tool": "OpenAI image generation (built-in)",
-            "createdAt": "2026-09-25",
-            "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-200-905-b.json"
-          }
-        }
-      ]
-    },
-    {
-      "p": 200,
-      "q": "ما الفرق بين صورتي تجهيز الرحلة؟",
-      "a": "تغيّر لون الحقيبة",
-      "qid": "spotdiff-200-906",
-      "type": "diff",
-      "spot": {
-        "x": 71,
-        "y": 53,
-        "r": 24
-      },
-      "topic": "سفر",
-      "alt": [
-        "لون الحقيبة"
-      ],
-      "verified": true,
-      "difficultyTarget": 0.8,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-spotdiff-final.json",
-      "media": [
-        {
-          "src": "spotdiff-200-906-a.webp",
-          "type": "image",
-          "title": "لغز بصري مولّد",
-          "author": "Maydan / OpenAI image generation",
-          "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-          "provenance": {
-            "kind": "ai-generated",
-            "tool": "OpenAI image generation (built-in)",
-            "createdAt": "2026-09-25",
-            "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-200-906-a.json"
-          }
-        },
-        {
-          "src": "spotdiff-200-906-b.webp",
-          "type": "image",
-          "title": "لغز بصري مولّد",
-          "author": "Maydan / OpenAI image generation",
-          "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-          "provenance": {
-            "kind": "ai-generated",
-            "tool": "OpenAI image generation (built-in)",
-            "createdAt": "2026-09-25",
-            "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-200-906-b.json"
-          }
-        }
-      ]
-    },
-    {
-      "p": 200,
-      "q": "ما الذي تبدّل بين صورتي الملابس الشتوية؟",
-      "a": "تغيّر لون القبعة",
-      "qid": "spotdiff-200-907",
-      "type": "diff",
-      "spot": {
-        "x": 72,
-        "y": 44,
-        "r": 24
-      },
-      "topic": "ملابس وإكسسوارات",
-      "alt": [
-        "لون القبعة"
-      ],
-      "verified": true,
-      "difficultyTarget": 0.8,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-spotdiff-final.json",
-      "media": [
-        {
-          "src": "spotdiff-200-907-a.webp",
-          "type": "image",
-          "title": "لغز بصري مولّد",
-          "author": "Maydan / OpenAI image generation",
-          "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-          "provenance": {
-            "kind": "ai-generated",
-            "tool": "OpenAI image generation (built-in)",
-            "createdAt": "2026-09-25",
-            "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-200-907-a.json"
-          }
-        },
-        {
-          "src": "spotdiff-200-907-b.webp",
-          "type": "image",
-          "title": "لغز بصري مولّد",
-          "author": "Maydan / OpenAI image generation",
-          "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-          "provenance": {
-            "kind": "ai-generated",
-            "tool": "OpenAI image generation (built-in)",
-            "createdAt": "2026-09-25",
-            "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-200-907-b.json"
-          }
-        }
-      ]
-    },
-    {
-      "p": 200,
-      "q": "ما الاختلاف بين صورتي طاولة الصيانة؟",
-      "a": "تغيّر لون صندوق الأدوات",
-      "qid": "spotdiff-200-908",
-      "type": "diff",
-      "spot": {
-        "x": 64,
-        "y": 49,
-        "r": 25
-      },
-      "topic": "ورشة وأدوات",
-      "alt": [
-        "لون صندوق الأدوات"
-      ],
-      "verified": true,
-      "difficultyTarget": 0.8,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-spotdiff-final.json",
-      "media": [
-        {
-          "src": "spotdiff-200-908-a.webp",
-          "type": "image",
-          "title": "لغز بصري مولّد",
-          "author": "Maydan / OpenAI image generation",
-          "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-          "provenance": {
-            "kind": "ai-generated",
-            "tool": "OpenAI image generation (built-in)",
-            "createdAt": "2026-09-25",
-            "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-200-908-a.json"
-          }
-        },
-        {
-          "src": "spotdiff-200-908-b.webp",
-          "type": "image",
-          "title": "لغز بصري مولّد",
-          "author": "Maydan / OpenAI image generation",
-          "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-          "provenance": {
-            "kind": "ai-generated",
-            "tool": "OpenAI image generation (built-in)",
-            "createdAt": "2026-09-25",
-            "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-200-908-b.json"
-          }
-        }
-      ]
-    },
-    {
-      "p": 400,
-      "q": "ما الذي اختفى من صورتي مائدة الحساء؟",
-      "a": "اختفت الملعقة",
-      "qid": "spotdiff-400-901",
-      "type": "diff",
-      "spot": {
-        "x": 85,
-        "y": 33,
-        "r": 10
-      },
-      "topic": "مطبخ",
-      "alt": [
-        "الملعقة"
-      ],
-      "verified": true,
-      "difficultyTarget": 0.6,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-spotdiff-final.json",
-      "media": [
-        {
-          "src": "spotdiff-400-901-a.webp",
-          "type": "image",
-          "title": "لغز بصري مولّد",
-          "author": "Maydan / OpenAI image generation",
-          "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-          "provenance": {
-            "kind": "ai-generated",
-            "tool": "OpenAI image generation (built-in)",
-            "createdAt": "2026-09-25",
-            "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-400-901-a.json"
-          }
-        },
-        {
-          "src": "spotdiff-400-901-b.webp",
-          "type": "image",
-          "title": "لغز بصري مولّد",
-          "author": "Maydan / OpenAI image generation",
-          "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-          "provenance": {
-            "kind": "ai-generated",
-            "tool": "OpenAI image generation (built-in)",
-            "createdAt": "2026-09-25",
-            "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-400-901-b.json"
-          }
-        }
-      ]
-    },
-    {
-      "p": 400,
-      "q": "ما الذي غاب عن صورتي التحضير للرسم؟",
-      "a": "اختفى القلم الأحمر",
-      "qid": "spotdiff-400-902",
-      "type": "diff",
-      "spot": {
-        "x": 83,
-        "y": 55,
-        "r": 12
-      },
-      "topic": "مكتب ودراسة",
-      "alt": [
-        "القلم الأحمر"
-      ],
-      "verified": true,
-      "difficultyTarget": 0.6,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-spotdiff-final.json",
-      "media": [
-        {
-          "src": "spotdiff-400-902-a.webp",
-          "type": "image",
-          "title": "لغز بصري مولّد",
-          "author": "Maydan / OpenAI image generation",
-          "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-          "provenance": {
-            "kind": "ai-generated",
-            "tool": "OpenAI image generation (built-in)",
-            "createdAt": "2026-09-25",
-            "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-400-902-a.json"
-          }
-        },
-        {
-          "src": "spotdiff-400-902-b.webp",
-          "type": "image",
-          "title": "لغز بصري مولّد",
-          "author": "Maydan / OpenAI image generation",
-          "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-          "provenance": {
-            "kind": "ai-generated",
-            "tool": "OpenAI image generation (built-in)",
-            "createdAt": "2026-09-25",
-            "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-400-902-b.json"
-          }
-        }
-      ]
-    },
-    {
-      "p": 400,
       "q": "ما العنصر المفقود في صورتي أدوات الزراعة؟",
       "a": "اختفت المجرفة الصغيرة",
-      "qid": "spotdiff-400-903",
+      "qid": "spotdiff-200-921",
       "type": "diff",
       "spot": {
         "x": 76,
@@ -490,8 +114,8 @@
         "المجرفة الصغيرة"
       ],
       "verified": true,
-      "difficultyTarget": 0.6,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-spotdiff-final.json",
+      "difficultyTarget": 0.8,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-spotdiff.json",
       "media": [
         {
           "src": "spotdiff-400-903-a.webp",
@@ -522,10 +146,10 @@
       ]
     },
     {
-      "p": 400,
+      "p": 200,
       "q": "ما التغيير في صورتي مكعبات اللعب؟",
       "a": "اختفى المكعب العلوي",
-      "qid": "spotdiff-400-904",
+      "qid": "spotdiff-200-922",
       "type": "diff",
       "spot": {
         "x": 67,
@@ -538,8 +162,8 @@
         "المكعب العلوي"
       ],
       "verified": true,
-      "difficultyTarget": 0.6,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-spotdiff-final.json",
+      "difficultyTarget": 0.8,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-spotdiff.json",
       "media": [
         {
           "src": "spotdiff-400-904-a.webp",
@@ -570,10 +194,10 @@
       ]
     },
     {
-      "p": 400,
+      "p": 200,
       "q": "ما العنصر الذي اختفى من صورتي التدريب الإيقاعي؟",
       "a": "اختفت الماراكاس",
-      "qid": "spotdiff-400-905",
+      "qid": "spotdiff-200-923",
       "type": "diff",
       "spot": {
         "x": 75,
@@ -586,8 +210,8 @@
         "الخشخيشة"
       ],
       "verified": true,
-      "difficultyTarget": 0.6,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-spotdiff-final.json",
+      "difficultyTarget": 0.8,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-spotdiff.json",
       "media": [
         {
           "src": "spotdiff-400-905-a.webp",
@@ -618,10 +242,10 @@
       ]
     },
     {
-      "p": 400,
+      "p": 200,
       "q": "ما الشيء الناقص في صورتي مستلزمات التنزه؟",
       "a": "اختفت البوصلة",
-      "qid": "spotdiff-400-906",
+      "qid": "spotdiff-200-924",
       "type": "diff",
       "spot": {
         "x": 64,
@@ -633,8 +257,8 @@
         "البوصلة"
       ],
       "verified": true,
-      "difficultyTarget": 0.6,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-spotdiff-final.json",
+      "difficultyTarget": 0.8,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-spotdiff.json",
       "media": [
         {
           "src": "spotdiff-400-906-a.webp",
@@ -665,10 +289,10 @@
       ]
     },
     {
-      "p": 400,
+      "p": 200,
       "q": "ما المفقود من صورتي الاستعداد للبرد؟",
       "a": "اختفى الوشاح",
-      "qid": "spotdiff-400-907",
+      "qid": "spotdiff-200-925",
       "type": "diff",
       "spot": {
         "x": 71,
@@ -680,8 +304,8 @@
         "الوشاح"
       ],
       "verified": true,
-      "difficultyTarget": 0.6,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-spotdiff-final.json",
+      "difficultyTarget": 0.8,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-spotdiff.json",
       "media": [
         {
           "src": "spotdiff-400-907-a.webp",
@@ -712,10 +336,10 @@
       ]
     },
     {
-      "p": 400,
+      "p": 200,
       "q": "ما الأداة التي غابت عن صورتي طاولة الإصلاح؟",
       "a": "اختفى المفك",
-      "qid": "spotdiff-400-908",
+      "qid": "spotdiff-200-926",
       "type": "diff",
       "spot": {
         "x": 73,
@@ -727,8 +351,8 @@
         "المفك"
       ],
       "verified": true,
-      "difficultyTarget": 0.6,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-spotdiff-final.json",
+      "difficultyTarget": 0.8,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-spotdiff.json",
       "media": [
         {
           "src": "spotdiff-400-908-a.webp",
@@ -759,26 +383,27 @@
       ]
     },
     {
-      "p": 600,
-      "q": "ما التفصيل المختلف في صورتي تقديم الماء؟",
-      "a": "تغيّر لون مقبض الإبريق",
-      "qid": "spotdiff-600-901",
+      "p": 400,
+      "q": "ما الذي تبدّل في صورتي زاوية الزراعة؟",
+      "a": "شريط إضافي حول الأصيص",
+      "qid": "spotdiff-400-921",
       "type": "diff",
       "spot": {
-        "x": 75,
-        "y": 40,
-        "r": 16
+        "x": 20,
+        "y": 59,
+        "r": 14
       },
-      "topic": "مطبخ",
+      "topic": "حديقة",
       "alt": [
-        "مقبض الإبريق"
+        "حلقة إضافية حول الأصيص",
+        "حافة جديدة حول الأصيص"
       ],
       "verified": true,
-      "difficultyTarget": 0.4,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-spotdiff-final.json",
+      "difficultyTarget": 0.6,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-spotdiff.json",
       "media": [
         {
-          "src": "spotdiff-600-901-a.webp",
+          "src": "spotdiff-200-903-a.webp",
           "type": "image",
           "title": "لغز بصري مولّد",
           "author": "Maydan / OpenAI image generation",
@@ -787,11 +412,46 @@
             "kind": "ai-generated",
             "tool": "OpenAI image generation (built-in)",
             "createdAt": "2026-09-25",
-            "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-600-901-a.json"
+            "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-200-903-a.json"
           }
         },
         {
-          "src": "spotdiff-600-901-b.webp",
+          "src": "spotdiff-200-903-b-q20261008.webp",
+          "type": "image",
+          "title": "لغز بصري مولّد",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation (built-in)",
+            "createdAt": "2026-10-08",
+            "record": "docs/bank/quality-2026-10-08/spotdiff-generated/spotdiff-200-903-b.json"
+          }
+        }
+      ]
+    },
+    {
+      "p": 400,
+      "q": "ما التغيير الظاهر في صورتي رف الألعاب؟",
+      "a": "حلقات البرج الصغير أصبحت اثنتين",
+      "qid": "spotdiff-400-922",
+      "type": "diff",
+      "spot": {
+        "x": 26,
+        "y": 58,
+        "r": 12
+      },
+      "topic": "ألعاب وهوايات",
+      "alt": [
+        "عدد حلقات البرج الصغير",
+        "اختفت الحلقة الزرقاء من البرج الصغير"
+      ],
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-spotdiff.json",
+      "media": [
+        {
+          "src": "spotdiff-200-904-a.webp",
           "type": "image",
           "title": "لغز بصري مولّد",
           "author": "Maydan / OpenAI image generation",
@@ -800,7 +460,308 @@
             "kind": "ai-generated",
             "tool": "OpenAI image generation (built-in)",
             "createdAt": "2026-09-25",
-            "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-600-901-b.json"
+            "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-200-904-a.json"
+          }
+        },
+        {
+          "src": "spotdiff-200-904-b-q20261008.webp",
+          "type": "image",
+          "title": "لغز بصري مولّد",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation (built-in)",
+            "createdAt": "2026-10-08",
+            "record": "docs/bank/quality-2026-10-08/spotdiff-generated/spotdiff-200-904-b.json"
+          }
+        }
+      ]
+    },
+    {
+      "p": 400,
+      "q": "ما الذي اختلف بين صورتي ركن الإيقاع؟",
+      "a": "انعكس اتجاه المطرقة الموسيقية",
+      "qid": "spotdiff-400-923",
+      "type": "diff",
+      "spot": {
+        "x": 29,
+        "y": 74,
+        "r": 22
+      },
+      "topic": "موسيقى",
+      "alt": [
+        "اتجاه عصا الطبلة",
+        "رأس المطرقة الموسيقية انتقل للطرف الآخر"
+      ],
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-spotdiff.json",
+      "media": [
+        {
+          "src": "spotdiff-200-905-a.webp",
+          "type": "image",
+          "title": "لغز بصري مولّد",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation (built-in)",
+            "createdAt": "2026-09-25",
+            "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-200-905-a.json"
+          }
+        },
+        {
+          "src": "spotdiff-200-905-b-q20261008.webp",
+          "type": "image",
+          "title": "لغز بصري مولّد",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation (built-in)",
+            "createdAt": "2026-10-08",
+            "record": "docs/bank/quality-2026-10-08/spotdiff-generated/spotdiff-200-905-b.json"
+          }
+        }
+      ]
+    },
+    {
+      "p": 400,
+      "q": "ما الفرق بين صورتي تجهيز الرحلة؟",
+      "a": "عارضة إضافية في مقبض الحقيبة",
+      "qid": "spotdiff-400-924",
+      "type": "diff",
+      "spot": {
+        "x": 70.5,
+        "y": 14,
+        "r": 9
+      },
+      "topic": "سفر",
+      "alt": [
+        "عارضة سوداء في مقبض الحقيبة",
+        "انقسمت فتحة المقبض إلى فتحتين"
+      ],
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-spotdiff.json",
+      "media": [
+        {
+          "src": "spotdiff-200-906-a.webp",
+          "type": "image",
+          "title": "لغز بصري مولّد",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation (built-in)",
+            "createdAt": "2026-09-25",
+            "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-200-906-a.json"
+          }
+        },
+        {
+          "src": "spotdiff-200-906-b-q20261008.webp",
+          "type": "image",
+          "title": "لغز بصري مولّد",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation (built-in)",
+            "createdAt": "2026-10-08",
+            "record": "docs/bank/quality-2026-10-08/spotdiff-generated/spotdiff-200-906-b.json"
+          }
+        }
+      ]
+    },
+    {
+      "p": 400,
+      "q": "ما الذي تبدّل بين صورتي الملابس الشتوية؟",
+      "a": "زر إضافي على القبعة",
+      "qid": "spotdiff-400-925",
+      "type": "diff",
+      "spot": {
+        "x": 72,
+        "y": 60,
+        "r": 6
+      },
+      "topic": "ملابس وإكسسوارات",
+      "alt": [
+        "زر جديد على القبعة",
+        "ظهور زر على القبعة"
+      ],
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-spotdiff.json",
+      "media": [
+        {
+          "src": "spotdiff-200-907-a.webp",
+          "type": "image",
+          "title": "لغز بصري مولّد",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation (built-in)",
+            "createdAt": "2026-09-25",
+            "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-200-907-a.json"
+          }
+        },
+        {
+          "src": "spotdiff-200-907-b-q20261008.webp",
+          "type": "image",
+          "title": "لغز بصري مولّد",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation (built-in)",
+            "createdAt": "2026-10-08",
+            "record": "docs/bank/quality-2026-10-08/spotdiff-generated/spotdiff-200-907-b.json"
+          }
+        }
+      ]
+    },
+    {
+      "p": 400,
+      "q": "ما الاختلاف بين صورتي طاولة الصيانة؟",
+      "a": "قفل صندوق الأدوات أصبح مفتوحًا",
+      "qid": "spotdiff-400-926",
+      "type": "diff",
+      "spot": {
+        "x": 63,
+        "y": 44,
+        "r": 10
+      },
+      "topic": "ورشة وأدوات",
+      "alt": [
+        "تغيّرت حالة مشبك الصندوق",
+        "مشبك الصندوق انفتح"
+      ],
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-spotdiff.json",
+      "media": [
+        {
+          "src": "spotdiff-200-908-a.webp",
+          "type": "image",
+          "title": "لغز بصري مولّد",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation (built-in)",
+            "createdAt": "2026-09-25",
+            "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-200-908-a.json"
+          }
+        },
+        {
+          "src": "spotdiff-200-908-b-q20261008.webp",
+          "type": "image",
+          "title": "لغز بصري مولّد",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation (built-in)",
+            "createdAt": "2026-10-08",
+            "record": "docs/bank/quality-2026-10-08/spotdiff-generated/spotdiff-200-908-b.json"
+          }
+        }
+      ]
+    },
+    {
+      "p": 400,
+      "q": "ما الاختلاف بين صورتي مائدة الحساء؟",
+      "a": "انعكس اتجاه ملعقة الحساء",
+      "qid": "spotdiff-400-927",
+      "type": "diff",
+      "spot": {
+        "x": 85,
+        "y": 54,
+        "r": 27
+      },
+      "topic": "مطبخ",
+      "alt": [
+        "اتجاه الملعقة",
+        "ملعقة معكوسة"
+      ],
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-spotdiff.json",
+      "media": [
+        {
+          "src": "spotdiff-400-901-a.webp",
+          "type": "image",
+          "title": "لغز بصري مولّد",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation (built-in)",
+            "createdAt": "2026-09-25",
+            "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-400-901-a.json"
+          }
+        },
+        {
+          "src": "spotdiff-400-901-b-q20261008.webp",
+          "type": "image",
+          "title": "لغز بصري مولّد",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation (built-in)",
+            "createdAt": "2026-10-08",
+            "record": "docs/bank/quality-2026-10-08/spotdiff-generated/spotdiff-400-901-b.json"
+          }
+        }
+      ]
+    },
+    {
+      "p": 400,
+      "q": "ما الذي تبدّل بين صورتي التحضير للرسم؟",
+      "a": "انعكس اتجاه القلم الأحمر",
+      "qid": "spotdiff-400-928",
+      "type": "diff",
+      "spot": {
+        "x": 83,
+        "y": 55,
+        "r": 23
+      },
+      "topic": "مكتب ودراسة",
+      "alt": [
+        "اتجاه رأس القلم",
+        "القلم الأحمر معكوس"
+      ],
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-spotdiff.json",
+      "media": [
+        {
+          "src": "spotdiff-400-902-a.webp",
+          "type": "image",
+          "title": "لغز بصري مولّد",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation (built-in)",
+            "createdAt": "2026-09-25",
+            "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-400-902-a.json"
+          }
+        },
+        {
+          "src": "spotdiff-400-902-b-q20261008.webp",
+          "type": "image",
+          "title": "لغز بصري مولّد",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation (built-in)",
+            "createdAt": "2026-10-08",
+            "record": "docs/bank/quality-2026-10-08/spotdiff-generated/spotdiff-400-902-b.json"
           }
         }
       ]
@@ -855,100 +816,6 @@
     },
     {
       "p": 600,
-      "q": "ما التفصيل الذي تبدّل في صورتي زاوية النباتات؟",
-      "a": "تغيّر لون حافة الأصيص",
-      "qid": "spotdiff-600-903",
-      "type": "diff",
-      "spot": {
-        "x": 49,
-        "y": 49,
-        "r": 22
-      },
-      "topic": "حديقة",
-      "alt": [
-        "حافة الأصيص"
-      ],
-      "verified": true,
-      "difficultyTarget": 0.4,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-spotdiff-final.json",
-      "media": [
-        {
-          "src": "spotdiff-600-903-a.webp",
-          "type": "image",
-          "title": "لغز بصري مولّد",
-          "author": "Maydan / OpenAI image generation",
-          "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-          "provenance": {
-            "kind": "ai-generated",
-            "tool": "OpenAI image generation (built-in)",
-            "createdAt": "2026-09-25",
-            "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-600-903-a.json"
-          }
-        },
-        {
-          "src": "spotdiff-600-903-b.webp",
-          "type": "image",
-          "title": "لغز بصري مولّد",
-          "author": "Maydan / OpenAI image generation",
-          "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-          "provenance": {
-            "kind": "ai-generated",
-            "tool": "OpenAI image generation (built-in)",
-            "createdAt": "2026-09-25",
-            "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-600-903-b.json"
-          }
-        }
-      ]
-    },
-    {
-      "p": 600,
-      "q": "ما الذي اختلف بين صورتي القطار الخشبي؟",
-      "a": "تغيّر لون مدخنة القطار",
-      "qid": "spotdiff-600-904",
-      "type": "diff",
-      "spot": {
-        "x": 44,
-        "y": 28,
-        "r": 10
-      },
-      "topic": "ألعاب وهوايات",
-      "alt": [
-        "مدخنة القطار"
-      ],
-      "verified": true,
-      "difficultyTarget": 0.4,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-spotdiff-final.json",
-      "media": [
-        {
-          "src": "spotdiff-600-904-a.webp",
-          "type": "image",
-          "title": "لغز بصري مولّد",
-          "author": "Maydan / OpenAI image generation",
-          "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-          "provenance": {
-            "kind": "ai-generated",
-            "tool": "OpenAI image generation (built-in)",
-            "createdAt": "2026-09-25",
-            "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-600-904-a.json"
-          }
-        },
-        {
-          "src": "spotdiff-600-904-b.webp",
-          "type": "image",
-          "title": "لغز بصري مولّد",
-          "author": "Maydan / OpenAI image generation",
-          "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-          "provenance": {
-            "kind": "ai-generated",
-            "tool": "OpenAI image generation (built-in)",
-            "createdAt": "2026-09-25",
-            "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-600-904-b.json"
-          }
-        }
-      ]
-    },
-    {
-      "p": 600,
       "q": "ما التفصيل المتبدّل في صورتي ضبط الإيقاع؟",
       "a": "تغيّر اتجاه بندول المسرّع",
       "qid": "spotdiff-600-905",
@@ -997,55 +864,7 @@
     },
     {
       "p": 600,
-      "q": "ما الاختلاف بين صورتي مراقبة الطبيعة؟",
-      "a": "اختفى غطاء عدسة المنظار",
-      "qid": "spotdiff-600-906",
-      "type": "diff",
-      "spot": {
-        "x": 84,
-        "y": 68,
-        "r": 12
-      },
-      "topic": "سفر",
-      "alt": [
-        "غطاء العدسة",
-        "غطاء عدسة المنظار"
-      ],
-      "verified": true,
-      "difficultyTarget": 0.4,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-spotdiff-final.json",
-      "media": [
-        {
-          "src": "spotdiff-600-906-a.webp",
-          "type": "image",
-          "title": "لغز بصري مولّد",
-          "author": "Maydan / OpenAI image generation",
-          "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-          "provenance": {
-            "kind": "ai-generated",
-            "tool": "OpenAI image generation (built-in)",
-            "createdAt": "2026-09-25",
-            "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-600-906-a.json"
-          }
-        },
-        {
-          "src": "spotdiff-600-906-b.webp",
-          "type": "image",
-          "title": "لغز بصري مولّد",
-          "author": "Maydan / OpenAI image generation",
-          "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-          "provenance": {
-            "kind": "ai-generated",
-            "tool": "OpenAI image generation (built-in)",
-            "createdAt": "2026-09-25",
-            "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-600-906-b.json"
-          }
-        }
-      ]
-    },
-    {
-      "p": 600,
-      "q": "ما التفصيل المختلف في صورتي القفاز الجلدي؟",
+      "q": "ما التفصيل المختلف بين صورتي تجهيز الشتاء؟",
       "a": "اختفى زر القفاز",
       "qid": "spotdiff-600-907",
       "type": "diff",
@@ -1060,7 +879,7 @@
       ],
       "verified": true,
       "difficultyTarget": 0.4,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-spotdiff-final.json",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-spotdiff.json",
       "media": [
         {
           "src": "spotdiff-600-907-a.webp",
@@ -1092,22 +911,215 @@
     },
     {
       "p": 600,
-      "q": "ما التغيير في صورتي أدوات الطلاء؟",
-      "a": "تغيّر لون شعيرات الفرشاة",
-      "qid": "spotdiff-600-908",
+      "q": "ما التفصيل المختلف في صورتي تقديم الماء؟",
+      "a": "ارتفع مستوى الماء في الكأس",
+      "qid": "spotdiff-600-921",
       "type": "diff",
       "spot": {
-        "x": 48,
-        "y": 73,
-        "r": 17
+        "x": 18,
+        "y": 52,
+        "r": 10
       },
-      "topic": "ورشة وأدوات",
+      "topic": "مطبخ",
       "alt": [
-        "شعيرات الفرشاة"
+        "مستوى الماء",
+        "كمية الماء زادت"
       ],
       "verified": true,
       "difficultyTarget": 0.4,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-spotdiff-final.json",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-spotdiff.json",
+      "media": [
+        {
+          "src": "spotdiff-600-901-a.webp",
+          "type": "image",
+          "title": "لغز بصري مولّد",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation (built-in)",
+            "createdAt": "2026-09-25",
+            "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-600-901-a.json"
+          }
+        },
+        {
+          "src": "spotdiff-600-901-b-q20261008.webp",
+          "type": "image",
+          "title": "لغز بصري مولّد",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation (built-in)",
+            "createdAt": "2026-10-08",
+            "record": "docs/bank/quality-2026-10-08/spotdiff-generated/spotdiff-600-901-b.json"
+          }
+        }
+      ]
+    },
+    {
+      "p": 600,
+      "q": "ما التفصيل الذي تبدّل في صورتي زاوية النباتات؟",
+      "a": "تغيّر اتجاه فوهة إبريق الري",
+      "qid": "spotdiff-600-922",
+      "type": "diff",
+      "spot": {
+        "x": 81,
+        "y": 54,
+        "r": 10
+      },
+      "topic": "حديقة",
+      "alt": [
+        "ميل فوهة إبريق الري",
+        "زاوية فوهة الإبريق"
+      ],
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-spotdiff.json",
+      "media": [
+        {
+          "src": "spotdiff-600-903-a.webp",
+          "type": "image",
+          "title": "لغز بصري مولّد",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation (built-in)",
+            "createdAt": "2026-09-25",
+            "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-600-903-a.json"
+          }
+        },
+        {
+          "src": "spotdiff-600-903-b-q20261008.webp",
+          "type": "image",
+          "title": "لغز بصري مولّد",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation (built-in)",
+            "createdAt": "2026-10-08",
+            "record": "docs/bank/quality-2026-10-08/spotdiff-generated/spotdiff-600-903-b.json"
+          }
+        }
+      ]
+    },
+    {
+      "p": 600,
+      "q": "ما الذي اختلف بين صورتي القطار الخشبي؟",
+      "a": "أصبحت نافذة القطار دائرية",
+      "qid": "spotdiff-600-923",
+      "type": "diff",
+      "spot": {
+        "x": 80,
+        "y": 41,
+        "r": 9
+      },
+      "topic": "ألعاب وهوايات",
+      "alt": [
+        "شكل نافذة القطار",
+        "نافذة مستطيلة ونافذة دائرية"
+      ],
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-spotdiff.json",
+      "media": [
+        {
+          "src": "spotdiff-600-904-a.webp",
+          "type": "image",
+          "title": "لغز بصري مولّد",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation (built-in)",
+            "createdAt": "2026-09-25",
+            "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-600-904-a.json"
+          }
+        },
+        {
+          "src": "spotdiff-600-904-b-q20261008.webp",
+          "type": "image",
+          "title": "لغز بصري مولّد",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation (built-in)",
+            "createdAt": "2026-10-08",
+            "record": "docs/bank/quality-2026-10-08/spotdiff-generated/spotdiff-600-904-b.json"
+          }
+        }
+      ]
+    },
+    {
+      "p": 600,
+      "q": "ما الاختلاف بين صورتي مراقبة الطبيعة؟",
+      "a": "انتقل غطاء العدسة إلى الجهة الأخرى",
+      "qid": "spotdiff-600-924",
+      "type": "diff",
+      "spot": {
+        "x": 70,
+        "y": 59,
+        "r": 25
+      },
+      "topic": "سفر",
+      "alt": [
+        "تبدل موضع غطاء المنظار",
+        "العدسة المغطاة تبدلت"
+      ],
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-spotdiff.json",
+      "media": [
+        {
+          "src": "spotdiff-600-906-a.webp",
+          "type": "image",
+          "title": "لغز بصري مولّد",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation (built-in)",
+            "createdAt": "2026-09-25",
+            "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-600-906-a.json"
+          }
+        },
+        {
+          "src": "spotdiff-600-906-b-q20261008.webp",
+          "type": "image",
+          "title": "لغز بصري مولّد",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation (built-in)",
+            "createdAt": "2026-10-08",
+            "record": "docs/bank/quality-2026-10-08/spotdiff-generated/spotdiff-600-906-b.json"
+          }
+        }
+      ]
+    },
+    {
+      "p": 600,
+      "q": "ما التغيير في صورتي أدوات الطلاء؟",
+      "a": "اختفت فتحة مقبض الفرشاة",
+      "qid": "spotdiff-600-925",
+      "type": "diff",
+      "spot": {
+        "x": 92,
+        "y": 36,
+        "r": 5
+      },
+      "topic": "ورشة وأدوات",
+      "alt": [
+        "فتحة تعليق الفرشاة",
+        "مقبض الفرشاة بلا ثقب"
+      ],
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-spotdiff.json",
       "media": [
         {
           "src": "spotdiff-600-908-a.webp",
@@ -1123,7 +1135,7 @@
           }
         },
         {
-          "src": "spotdiff-600-908-b.webp",
+          "src": "spotdiff-600-908-b-q20261008.webp",
           "type": "image",
           "title": "لغز بصري مولّد",
           "author": "Maydan / OpenAI image generation",
@@ -1131,33 +1143,35 @@
           "provenance": {
             "kind": "ai-generated",
             "tool": "OpenAI image generation (built-in)",
-            "createdAt": "2026-09-25",
-            "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-600-908-b.json"
+            "createdAt": "2026-10-08",
+            "record": "docs/bank/quality-2026-10-08/spotdiff-generated/spotdiff-600-908-b.json"
           }
         }
       ]
     },
     {
       "p": 800,
-      "q": "ما التفصيل الدقيق في صورتي جلسة القهوة؟",
-      "a": "تغيّر لون حافة الفنجان",
-      "qid": "spotdiff-800-901",
+      "q": "ما التفصيل المختلف بين صورتي مائدة الإفطار؟",
+      "a": "تقدّمت علبة المربى البرتقالية عن العلبتين",
+      "qid": "spotdiff-800-921",
       "type": "diff",
       "spot": {
-        "x": 63,
-        "y": 25,
-        "r": 18
+        "x": 54,
+        "y": 21,
+        "r": 13
       },
       "topic": "مطبخ",
       "alt": [
-        "حافة الفنجان"
+        "موضع علبة المربى",
+        "تغير ترتيب علب المربى",
+        "العلبة الوسطى تقدمت"
       ],
       "verified": true,
       "difficultyTarget": 0.25,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-spotdiff-final.json",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-spotdiff.json",
       "media": [
         {
-          "src": "spotdiff-800-901-a.webp",
+          "src": "spotdiff-800-901-a-q20261008.webp",
           "type": "image",
           "title": "لغز بصري مولّد",
           "author": "Maydan / OpenAI image generation",
@@ -1165,12 +1179,12 @@
           "provenance": {
             "kind": "ai-generated",
             "tool": "OpenAI image generation (built-in)",
-            "createdAt": "2026-09-25",
-            "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-800-901-a.json"
+            "createdAt": "2026-10-08",
+            "record": "docs/bank/quality-2026-10-08/spotdiff-generated/spotdiff-800-901-a.json"
           }
         },
         {
-          "src": "spotdiff-800-901-b.webp",
+          "src": "spotdiff-800-901-b-q20261008.webp",
           "type": "image",
           "title": "لغز بصري مولّد",
           "author": "Maydan / OpenAI image generation",
@@ -1178,33 +1192,34 @@
           "provenance": {
             "kind": "ai-generated",
             "tool": "OpenAI image generation (built-in)",
-            "createdAt": "2026-09-25",
-            "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-800-901-b.json"
+            "createdAt": "2026-10-12",
+            "record": "docs/bank/quality-2026-10-08/spotdiff-generated/spotdiff-800-901-b.json"
           }
         }
       ]
     },
     {
       "p": 800,
-      "q": "ما التفصيل المتغير في صورتي مساحة العمل؟",
-      "a": "تغيّر لون ورقة الملاحظات",
-      "qid": "spotdiff-800-902",
+      "q": "ما الذي اختلف بين صورتي مكتب التصميم؟",
+      "a": "تغيّر اتجاه المجسّم المثلث الأزرق",
+      "qid": "spotdiff-800-922",
       "type": "diff",
       "spot": {
-        "x": 80,
-        "y": 74,
-        "r": 14
+        "x": 62,
+        "y": 33,
+        "r": 9
       },
       "topic": "مكتب ودراسة",
       "alt": [
-        "ورقة الملاحظات"
+        "اتجاه القطعة المثلثة",
+        "دوران المثلث الأزرق"
       ],
       "verified": true,
       "difficultyTarget": 0.25,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-spotdiff-final.json",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-spotdiff.json",
       "media": [
         {
-          "src": "spotdiff-800-902-a.webp",
+          "src": "spotdiff-800-902-a-q20261008.webp",
           "type": "image",
           "title": "لغز بصري مولّد",
           "author": "Maydan / OpenAI image generation",
@@ -1212,12 +1227,12 @@
           "provenance": {
             "kind": "ai-generated",
             "tool": "OpenAI image generation (built-in)",
-            "createdAt": "2026-09-25",
-            "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-800-902-a.json"
+            "createdAt": "2026-10-08",
+            "record": "docs/bank/quality-2026-10-08/spotdiff-generated/spotdiff-800-902-a.json"
           }
         },
         {
-          "src": "spotdiff-800-902-b.webp",
+          "src": "spotdiff-800-902-b-q20261008.webp",
           "type": "image",
           "title": "لغز بصري مولّد",
           "author": "Maydan / OpenAI image generation",
@@ -1225,33 +1240,35 @@
           "provenance": {
             "kind": "ai-generated",
             "tool": "OpenAI image generation (built-in)",
-            "createdAt": "2026-09-25",
-            "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-800-902-b.json"
+            "createdAt": "2026-10-08",
+            "record": "docs/bank/quality-2026-10-08/spotdiff-generated/spotdiff-800-902-b.json"
           }
         }
       ]
     },
     {
       "p": 800,
-      "q": "ما التفصيل غير المتطابق في صورتي النبتة المنزلية؟",
-      "a": "تغيّر لون ورقة النبات",
-      "qid": "spotdiff-800-903",
+      "q": "ما التفصيل غير المتطابق بين صورتي ركن الزراعة؟",
+      "a": "نقص حجر من الصحن",
+      "qid": "spotdiff-800-923",
       "type": "diff",
       "spot": {
-        "x": 67,
-        "y": 14,
-        "r": 9
+        "x": 51,
+        "y": 55,
+        "r": 10
       },
       "topic": "حديقة",
       "alt": [
-        "ورقة النبات"
+        "الحجارة خمس وأربع",
+        "عدد الحصى في الصحن",
+        "اختفت حصاة"
       ],
       "verified": true,
       "difficultyTarget": 0.25,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-spotdiff-final.json",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-spotdiff.json",
       "media": [
         {
-          "src": "spotdiff-800-903-a.webp",
+          "src": "spotdiff-800-903-a-q20261008.webp",
           "type": "image",
           "title": "لغز بصري مولّد",
           "author": "Maydan / OpenAI image generation",
@@ -1259,12 +1276,12 @@
           "provenance": {
             "kind": "ai-generated",
             "tool": "OpenAI image generation (built-in)",
-            "createdAt": "2026-09-25",
-            "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-800-903-a.json"
+            "createdAt": "2026-10-08",
+            "record": "docs/bank/quality-2026-10-08/spotdiff-generated/spotdiff-800-903-a.json"
           }
         },
         {
-          "src": "spotdiff-800-903-b.webp",
+          "src": "spotdiff-800-903-b-q20261008.webp",
           "type": "image",
           "title": "لغز بصري مولّد",
           "author": "Maydan / OpenAI image generation",
@@ -1272,33 +1289,34 @@
           "provenance": {
             "kind": "ai-generated",
             "tool": "OpenAI image generation (built-in)",
-            "createdAt": "2026-09-25",
-            "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-800-903-b.json"
+            "createdAt": "2026-10-08",
+            "record": "docs/bank/quality-2026-10-08/spotdiff-generated/spotdiff-800-903-b.json"
           }
         }
       ]
     },
     {
       "p": 800,
-      "q": "ما التفصيل المختلف في صورتي الروبوت الصغير؟",
-      "a": "تغيّر لون عين الروبوت",
-      "qid": "spotdiff-800-904",
+      "q": "ما الاختلاف بين صورتي ورشة الألعاب؟",
+      "a": "الشراع المثلث أصبح شبه منحرف",
+      "qid": "spotdiff-800-924",
       "type": "diff",
       "spot": {
-        "x": 57,
-        "y": 25,
-        "r": 5
+        "x": 65,
+        "y": 54,
+        "r": 12
       },
       "topic": "ألعاب وهوايات",
       "alt": [
-        "عين الروبوت"
+        "شكل شراع القارب",
+        "قمة الشراع أصبحت مسطحة"
       ],
       "verified": true,
       "difficultyTarget": 0.25,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-spotdiff-final.json",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-spotdiff.json",
       "media": [
         {
-          "src": "spotdiff-800-904-a.webp",
+          "src": "spotdiff-800-904-a-q20261008.webp",
           "type": "image",
           "title": "لغز بصري مولّد",
           "author": "Maydan / OpenAI image generation",
@@ -1306,12 +1324,12 @@
           "provenance": {
             "kind": "ai-generated",
             "tool": "OpenAI image generation (built-in)",
-            "createdAt": "2026-09-25",
-            "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-800-904-a.json"
+            "createdAt": "2026-10-08",
+            "record": "docs/bank/quality-2026-10-08/spotdiff-generated/spotdiff-800-904-a.json"
           }
         },
         {
-          "src": "spotdiff-800-904-b.webp",
+          "src": "spotdiff-800-904-b-q20261008.webp",
           "type": "image",
           "title": "لغز بصري مولّد",
           "author": "Maydan / OpenAI image generation",
@@ -1319,82 +1337,82 @@
           "provenance": {
             "kind": "ai-generated",
             "tool": "OpenAI image generation (built-in)",
-            "createdAt": "2026-09-25",
-            "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-800-904-b.json"
+            "createdAt": "2026-10-08",
+            "record": "docs/bank/quality-2026-10-08/spotdiff-generated/spotdiff-800-904-b.json"
           }
         }
       ]
     },
     {
       "p": 800,
-      "q": "ما التفصيل الناقص في صورتي آلة الإيقاع الدائرية؟",
-      "a": "اختفى زوج الصنوج",
-      "qid": "spotdiff-800-905",
+      "q": "ما التفصيل المختلف بين صورتي غرفة الموسيقى؟",
+      "a": "ارتفع ثقل الميترونوم على القضيب",
+      "qid": "spotdiff-800-925",
       "type": "diff",
       "spot": {
-        "x": 80,
+        "x": 91,
+        "y": 18,
+        "r": 6
+      },
+      "topic": "موسيقى",
+      "alt": [
+        "موضع ثقل المسرع",
+        "تحرك وزن بندول الميترونوم لأعلى"
+      ],
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-spotdiff.json",
+      "media": [
+        {
+          "src": "spotdiff-800-905-a-q20261008.webp",
+          "type": "image",
+          "title": "لغز بصري مولّد",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation (built-in)",
+            "createdAt": "2026-10-08",
+            "record": "docs/bank/quality-2026-10-08/spotdiff-generated/spotdiff-800-905-a.json"
+          }
+        },
+        {
+          "src": "spotdiff-800-905-b-q20261008.webp",
+          "type": "image",
+          "title": "لغز بصري مولّد",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation (built-in)",
+            "createdAt": "2026-10-12",
+            "record": "docs/bank/quality-2026-10-08/spotdiff-generated/spotdiff-800-905-b.json"
+          }
+        }
+      ]
+    },
+    {
+      "p": 800,
+      "q": "ما التفصيل المتبدّل بين صورتي المخيم؟",
+      "a": "تغيّر اتجاه إبرة البوصلة",
+      "qid": "spotdiff-800-926",
+      "type": "diff",
+      "spot": {
+        "x": 14,
         "y": 47,
         "r": 6
       },
-      "topic": "موسيقى",
-      "alt": [
-        "زوج الصنوج",
-        "صنوج الدف"
-      ],
-      "verified": true,
-      "difficultyTarget": 0.25,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-spotdiff-final.json",
-      "media": [
-        {
-          "src": "spotdiff-800-905-a.webp",
-          "type": "image",
-          "title": "لغز بصري مولّد",
-          "author": "Maydan / OpenAI image generation",
-          "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-          "provenance": {
-            "kind": "ai-generated",
-            "tool": "OpenAI image generation (built-in)",
-            "createdAt": "2026-09-25",
-            "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-800-905-a.json"
-          }
-        },
-        {
-          "src": "spotdiff-800-905-b.webp",
-          "type": "image",
-          "title": "لغز بصري مولّد",
-          "author": "Maydan / OpenAI image generation",
-          "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-          "provenance": {
-            "kind": "ai-generated",
-            "tool": "OpenAI image generation (built-in)",
-            "createdAt": "2026-09-25",
-            "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-800-905-b.json"
-          }
-        }
-      ]
-    },
-    {
-      "p": 800,
-      "q": "ما التفصيل المتبدّل في صورتي المخيم؟",
-      "a": "تغيّر لون حلقة باب الخيمة",
-      "qid": "spotdiff-800-906",
-      "type": "diff",
-      "spot": {
-        "x": 77,
-        "y": 71,
-        "r": 5
-      },
       "topic": "سفر",
       "alt": [
-        "حلقة باب الخيمة",
-        "حلقة السحاب"
+        "إبرة البوصلة انعكست",
+        "اتجاه مؤشر البوصلة"
       ],
       "verified": true,
       "difficultyTarget": 0.25,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-spotdiff-final.json",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-spotdiff.json",
       "media": [
         {
-          "src": "spotdiff-800-906-a.webp",
+          "src": "spotdiff-800-906-a-q20261008.webp",
           "type": "image",
           "title": "لغز بصري مولّد",
           "author": "Maydan / OpenAI image generation",
@@ -1402,12 +1420,12 @@
           "provenance": {
             "kind": "ai-generated",
             "tool": "OpenAI image generation (built-in)",
-            "createdAt": "2026-09-25",
-            "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-800-906-a.json"
+            "createdAt": "2026-10-08",
+            "record": "docs/bank/quality-2026-10-08/spotdiff-generated/spotdiff-800-906-a.json"
           }
         },
         {
-          "src": "spotdiff-800-906-b.webp",
+          "src": "spotdiff-800-906-b-q20261008.webp",
           "type": "image",
           "title": "لغز بصري مولّد",
           "author": "Maydan / OpenAI image generation",
@@ -1415,33 +1433,34 @@
           "provenance": {
             "kind": "ai-generated",
             "tool": "OpenAI image generation (built-in)",
-            "createdAt": "2026-09-25",
-            "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-800-906-b.json"
+            "createdAt": "2026-10-08",
+            "record": "docs/bank/quality-2026-10-08/spotdiff-generated/spotdiff-800-906-b.json"
           }
         }
       ]
     },
     {
       "p": 800,
-      "q": "ما التفصيل المختلف في صورتي الحزام الجلدي؟",
-      "a": "تغيّر شكل مشبك الحزام",
-      "qid": "spotdiff-800-907",
+      "q": "ما التفصيل المختلف بين صورتي تجهيز الملابس؟",
+      "a": "أصبح الزر الأوسط مربعًا",
+      "qid": "spotdiff-800-927",
       "type": "diff",
       "spot": {
-        "x": 64,
-        "y": 73,
-        "r": 12
+        "x": 54.3,
+        "y": 46.5,
+        "r": 4
       },
       "topic": "ملابس وإكسسوارات",
       "alt": [
-        "شكل مشبك الحزام"
+        "شكل زر السترة الأوسط",
+        "زر دائري وآخر مربع"
       ],
       "verified": true,
       "difficultyTarget": 0.25,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-spotdiff-final.json",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-spotdiff.json",
       "media": [
         {
-          "src": "spotdiff-800-907-a.webp",
+          "src": "spotdiff-800-907-a-q20261008.webp",
           "type": "image",
           "title": "لغز بصري مولّد",
           "author": "Maydan / OpenAI image generation",
@@ -1449,12 +1468,12 @@
           "provenance": {
             "kind": "ai-generated",
             "tool": "OpenAI image generation (built-in)",
-            "createdAt": "2026-09-25",
-            "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-800-907-a.json"
+            "createdAt": "2026-10-08",
+            "record": "docs/bank/quality-2026-10-08/spotdiff-generated/spotdiff-800-907-a.json"
           }
         },
         {
-          "src": "spotdiff-800-907-b.webp",
+          "src": "spotdiff-800-907-b-q20261008.webp",
           "type": "image",
           "title": "لغز بصري مولّد",
           "author": "Maydan / OpenAI image generation",
@@ -1462,33 +1481,35 @@
           "provenance": {
             "kind": "ai-generated",
             "tool": "OpenAI image generation (built-in)",
-            "createdAt": "2026-09-25",
-            "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-800-907-b.json"
+            "createdAt": "2026-10-08",
+            "record": "docs/bank/quality-2026-10-08/spotdiff-generated/spotdiff-800-907-b.json"
           }
         }
       ]
     },
     {
       "p": 800,
-      "q": "ما التفصيل المتغير في صورتي قياس الخشب؟",
-      "a": "تغيّر لون زر شريط القياس",
-      "qid": "spotdiff-800-908",
+      "q": "ما التفصيل غير المتطابق بين صورتي أدوات الورشة؟",
+      "a": "اختلّ تباعد ثقوب الخشب",
+      "qid": "spotdiff-800-928",
       "type": "diff",
       "spot": {
-        "x": 65,
-        "y": 34,
-        "r": 7
+        "x": 51.5,
+        "y": 79.4,
+        "r": 5.5
       },
       "topic": "ورشة وأدوات",
       "alt": [
-        "زر شريط القياس"
+        "موضع الثقب الأوسط",
+        "تباعد ثقوب الخشب",
+        "الثقب الأوسط انتقل يمينًا"
       ],
       "verified": true,
       "difficultyTarget": 0.25,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-spotdiff-final.json",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-spotdiff.json",
       "media": [
         {
-          "src": "spotdiff-800-908-a.webp",
+          "src": "spotdiff-800-908-a-q20261008.webp",
           "type": "image",
           "title": "لغز بصري مولّد",
           "author": "Maydan / OpenAI image generation",
@@ -1496,12 +1517,12 @@
           "provenance": {
             "kind": "ai-generated",
             "tool": "OpenAI image generation (built-in)",
-            "createdAt": "2026-09-25",
-            "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-800-908-a.json"
+            "createdAt": "2026-10-08",
+            "record": "docs/bank/quality-2026-10-08/spotdiff-generated/spotdiff-800-908-a.json"
           }
         },
         {
-          "src": "spotdiff-800-908-b.webp",
+          "src": "spotdiff-800-908-b-q20261008.webp",
           "type": "image",
           "title": "لغز بصري مولّد",
           "author": "Maydan / OpenAI image generation",
@@ -1509,33 +1530,34 @@
           "provenance": {
             "kind": "ai-generated",
             "tool": "OpenAI image generation (built-in)",
-            "createdAt": "2026-09-25",
-            "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-800-908-b.json"
+            "createdAt": "2026-10-12",
+            "record": "docs/bank/quality-2026-10-08/spotdiff-generated/spotdiff-800-908-b.json"
           }
         }
       ]
     },
     {
       "p": 1000,
-      "q": "ما التغيير الصغير في صورتي تحضير التوابل؟",
-      "a": "نقصت حبة فلفل",
-      "qid": "spotdiff-1000-901",
+      "q": "ما الاختلاف الدقيق بين صورتي تحضير البسكويت؟",
+      "a": "نجمة البسكويت السفلية الوسطى أصبحت سداسية",
+      "qid": "spotdiff-1000-921",
       "type": "diff",
       "spot": {
-        "x": 90,
-        "y": 58,
-        "r": 5
+        "x": 28.3,
+        "y": 38,
+        "r": 8
       },
       "topic": "مطبخ",
       "alt": [
-        "حبة فلفل"
+        "عدد رؤوس نجمة البسكويت",
+        "نجمة سداسية بدل خماسية"
       ],
       "verified": true,
       "difficultyTarget": 0.15,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-spotdiff-final.json",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-spotdiff.json",
       "media": [
         {
-          "src": "spotdiff-1000-901-a.webp",
+          "src": "spotdiff-1000-901-a-q20261008.webp",
           "type": "image",
           "title": "لغز بصري مولّد",
           "author": "Maydan / OpenAI image generation",
@@ -1543,12 +1565,12 @@
           "provenance": {
             "kind": "ai-generated",
             "tool": "OpenAI image generation (built-in)",
-            "createdAt": "2026-09-25",
-            "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-1000-901-a.json"
+            "createdAt": "2026-10-08",
+            "record": "docs/bank/quality-2026-10-08/spotdiff-generated/spotdiff-1000-901-a.json"
           }
         },
         {
-          "src": "spotdiff-1000-901-b.webp",
+          "src": "spotdiff-1000-901-b-q20261008.webp",
           "type": "image",
           "title": "لغز بصري مولّد",
           "author": "Maydan / OpenAI image generation",
@@ -1556,33 +1578,34 @@
           "provenance": {
             "kind": "ai-generated",
             "tool": "OpenAI image generation (built-in)",
-            "createdAt": "2026-09-25",
-            "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-1000-901-b.json"
+            "createdAt": "2026-10-08",
+            "record": "docs/bank/quality-2026-10-08/spotdiff-generated/spotdiff-1000-901-b.json"
           }
         }
       ]
     },
     {
       "p": 1000,
-      "q": "ما التفصيل الصغير الذي تغيّر في صورتي الأوراق المرتبة؟",
-      "a": "تغيّر لون مشبك الورق",
-      "qid": "spotdiff-1000-902",
+      "q": "ما التفصيل غير المتطابق بين صورتي القرطاسية؟",
+      "a": "انقطع الخط الأوسط على الدفتر الأزرق",
+      "qid": "spotdiff-1000-922",
       "type": "diff",
       "spot": {
-        "x": 81,
-        "y": 57,
-        "r": 8
+        "x": 30.5,
+        "y": 49,
+        "r": 6
       },
       "topic": "مكتب ودراسة",
       "alt": [
-        "مشبك الورق"
+        "جزء مفقود من خط الدفتر",
+        "انقطاع الشريط الأوسط"
       ],
       "verified": true,
       "difficultyTarget": 0.15,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-spotdiff-final.json",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-spotdiff.json",
       "media": [
         {
-          "src": "spotdiff-1000-902-a.webp",
+          "src": "spotdiff-1000-902-a-q20261008.webp",
           "type": "image",
           "title": "لغز بصري مولّد",
           "author": "Maydan / OpenAI image generation",
@@ -1590,12 +1613,12 @@
           "provenance": {
             "kind": "ai-generated",
             "tool": "OpenAI image generation (built-in)",
-            "createdAt": "2026-09-25",
-            "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-1000-902-a.json"
+            "createdAt": "2026-10-08",
+            "record": "docs/bank/quality-2026-10-08/spotdiff-generated/spotdiff-1000-902-a.json"
           }
         },
         {
-          "src": "spotdiff-1000-902-b.webp",
+          "src": "spotdiff-1000-902-b-q20261008.webp",
           "type": "image",
           "title": "لغز بصري مولّد",
           "author": "Maydan / OpenAI image generation",
@@ -1603,33 +1626,35 @@
           "provenance": {
             "kind": "ai-generated",
             "tool": "OpenAI image generation (built-in)",
-            "createdAt": "2026-09-25",
-            "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-1000-902-b.json"
+            "createdAt": "2026-10-08",
+            "record": "docs/bank/quality-2026-10-08/spotdiff-generated/spotdiff-1000-902-b.json"
           }
         }
       ]
     },
     {
       "p": 1000,
-      "q": "ما التغيير الدقيق في صورتي الحشرة على الورقة؟",
-      "a": "نقصت بقعة على الدعسوقة",
-      "qid": "spotdiff-1000-903",
+      "q": "ما الاختلاف الدقيق بين صورتي البيت الزجاجي؟",
+      "a": "نقصت بقعة سوداء من الدعسوقة الكبيرة",
+      "qid": "spotdiff-1000-923",
       "type": "diff",
       "spot": {
-        "x": 57,
-        "y": 62,
-        "r": 4
+        "x": 89.5,
+        "y": 82.5,
+        "r": 4.5
       },
       "topic": "حديقة",
       "alt": [
-        "بقعة الدعسوقة"
+        "بقع الدعسوقة الكبيرة ثلاث وأربع",
+        "عدد بقع الدعسوقة",
+        "اختفت بقعة على الدعسوقة"
       ],
       "verified": true,
       "difficultyTarget": 0.15,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-spotdiff-final.json",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-spotdiff.json",
       "media": [
         {
-          "src": "spotdiff-1000-903-a.webp",
+          "src": "spotdiff-1000-903-a-q20261008.webp",
           "type": "image",
           "title": "لغز بصري مولّد",
           "author": "Maydan / OpenAI image generation",
@@ -1637,12 +1662,12 @@
           "provenance": {
             "kind": "ai-generated",
             "tool": "OpenAI image generation (built-in)",
-            "createdAt": "2026-09-25",
-            "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-1000-903-a.json"
+            "createdAt": "2026-10-08",
+            "record": "docs/bank/quality-2026-10-08/spotdiff-generated/spotdiff-1000-903-a.json"
           }
         },
         {
-          "src": "spotdiff-1000-903-b.webp",
+          "src": "spotdiff-1000-903-b-q20261008.webp",
           "type": "image",
           "title": "لغز بصري مولّد",
           "author": "Maydan / OpenAI image generation",
@@ -1650,33 +1675,35 @@
           "provenance": {
             "kind": "ai-generated",
             "tool": "OpenAI image generation (built-in)",
-            "createdAt": "2026-09-25",
-            "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-1000-903-b.json"
+            "createdAt": "2026-10-12",
+            "record": "docs/bank/quality-2026-10-08/spotdiff-generated/spotdiff-1000-903-b.json"
           }
         }
       ]
     },
     {
       "p": 1000,
-      "q": "ما التفصيل المختلف في صورتي لعبة الطاولة؟",
-      "a": "زادت نقطة على النرد",
-      "qid": "spotdiff-1000-904",
+      "q": "ما التفصيل المختلف بين صورتي لعبة الطاولة؟",
+      "a": "نقطة إضافية بالدومينو الأوسط السفلي",
+      "qid": "spotdiff-1000-924",
       "type": "diff",
       "spot": {
-        "x": 65,
-        "y": 36,
-        "r": 4
+        "x": 45.5,
+        "y": 55,
+        "r": 7
       },
       "topic": "ألعاب وهوايات",
       "alt": [
-        "نقطة النرد"
+        "عدد نقاط قطعة الدومينو",
+        "نقطة إضافية في الدومينو",
+        "خمس نقاط بدل أربع بالدومينو"
       ],
       "verified": true,
       "difficultyTarget": 0.15,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-spotdiff-final.json",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-spotdiff.json",
       "media": [
         {
-          "src": "spotdiff-1000-904-a.webp",
+          "src": "spotdiff-1000-904-a-q20261008.webp",
           "type": "image",
           "title": "لغز بصري مولّد",
           "author": "Maydan / OpenAI image generation",
@@ -1684,12 +1711,12 @@
           "provenance": {
             "kind": "ai-generated",
             "tool": "OpenAI image generation (built-in)",
-            "createdAt": "2026-09-25",
-            "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-1000-904-a.json"
+            "createdAt": "2026-10-08",
+            "record": "docs/bank/quality-2026-10-08/spotdiff-generated/spotdiff-1000-904-a.json"
           }
         },
         {
-          "src": "spotdiff-1000-904-b.webp",
+          "src": "spotdiff-1000-904-b-q20261008.webp",
           "type": "image",
           "title": "لغز بصري مولّد",
           "author": "Maydan / OpenAI image generation",
@@ -1697,33 +1724,34 @@
           "provenance": {
             "kind": "ai-generated",
             "tool": "OpenAI image generation (built-in)",
-            "createdAt": "2026-09-25",
-            "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-1000-904-b.json"
+            "createdAt": "2026-10-08",
+            "record": "docs/bank/quality-2026-10-08/spotdiff-generated/spotdiff-1000-904-b.json"
           }
         }
       ]
     },
     {
       "p": 1000,
-      "q": "ما التفصيل الناقص في صورتي ضبط الآلات؟",
-      "a": "اختفى شريط الشوكة الرنانة",
-      "qid": "spotdiff-1000-905",
+      "q": "ما الاختلاف الدقيق بين صورتي ورشة الموسيقى؟",
+      "a": "فتحات الآلة الخشبية الأمامية ثلاث وأربع",
+      "qid": "spotdiff-1000-925",
       "type": "diff",
       "spot": {
-        "x": 90,
-        "y": 66,
-        "r": 9
+        "x": 56.2,
+        "y": 75.2,
+        "r": 4.5
       },
       "topic": "موسيقى",
       "alt": [
-        "شريط الشوكة الرنانة"
+        "فتحة ناقصة في الآلة الخشبية",
+        "عدد فتحات الآلة الخشبية"
       ],
       "verified": true,
       "difficultyTarget": 0.15,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-spotdiff-final.json",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-spotdiff.json",
       "media": [
         {
-          "src": "spotdiff-1000-905-a.webp",
+          "src": "spotdiff-1000-905-a-q20261008.webp",
           "type": "image",
           "title": "لغز بصري مولّد",
           "author": "Maydan / OpenAI image generation",
@@ -1731,12 +1759,12 @@
           "provenance": {
             "kind": "ai-generated",
             "tool": "OpenAI image generation (built-in)",
-            "createdAt": "2026-09-25",
-            "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-1000-905-a.json"
+            "createdAt": "2026-10-08",
+            "record": "docs/bank/quality-2026-10-08/spotdiff-generated/spotdiff-1000-905-a.json"
           }
         },
         {
-          "src": "spotdiff-1000-905-b.webp",
+          "src": "spotdiff-1000-905-b-q20261008.webp",
           "type": "image",
           "title": "لغز بصري مولّد",
           "author": "Maydan / OpenAI image generation",
@@ -1744,33 +1772,34 @@
           "provenance": {
             "kind": "ai-generated",
             "tool": "OpenAI image generation (built-in)",
-            "createdAt": "2026-09-25",
-            "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-1000-905-b.json"
+            "createdAt": "2026-10-08",
+            "record": "docs/bank/quality-2026-10-08/spotdiff-generated/spotdiff-1000-905-b.json"
           }
         }
       ]
     },
     {
       "p": 1000,
-      "q": "ما التفصيل الدقيق المتبدّل في صورتي حقيبة التخييم؟",
-      "a": "تغيّر لون مشبك حقيبة الظهر",
-      "qid": "spotdiff-1000-906",
+      "q": "ما التفصيل الدقيق المتبدّل بين صورتي تجهيز التخييم؟",
+      "a": "انعكس اتجاه بوابة المشبك",
+      "qid": "spotdiff-1000-926",
       "type": "diff",
       "spot": {
-        "x": 52,
-        "y": 63,
-        "r": 4
+        "x": 71.4,
+        "y": 78.1,
+        "r": 8
       },
       "topic": "سفر",
       "alt": [
-        "مشبك حقيبة الظهر"
+        "اتجاه فتحة حلقة التسلق",
+        "بوابة المشبك انتقلت للجهة الأخرى"
       ],
       "verified": true,
       "difficultyTarget": 0.15,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-spotdiff-final.json",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-spotdiff.json",
       "media": [
         {
-          "src": "spotdiff-1000-906-a.webp",
+          "src": "spotdiff-1000-906-a-q20261008.webp",
           "type": "image",
           "title": "لغز بصري مولّد",
           "author": "Maydan / OpenAI image generation",
@@ -1778,12 +1807,12 @@
           "provenance": {
             "kind": "ai-generated",
             "tool": "OpenAI image generation (built-in)",
-            "createdAt": "2026-09-25",
-            "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-1000-906-a.json"
+            "createdAt": "2026-10-08",
+            "record": "docs/bank/quality-2026-10-08/spotdiff-generated/spotdiff-1000-906-a.json"
           }
         },
         {
-          "src": "spotdiff-1000-906-b.webp",
+          "src": "spotdiff-1000-906-b-q20261008.webp",
           "type": "image",
           "title": "لغز بصري مولّد",
           "author": "Maydan / OpenAI image generation",
@@ -1791,33 +1820,34 @@
           "provenance": {
             "kind": "ai-generated",
             "tool": "OpenAI image generation (built-in)",
-            "createdAt": "2026-09-25",
-            "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-1000-906-b.json"
+            "createdAt": "2026-10-08",
+            "record": "docs/bank/quality-2026-10-08/spotdiff-generated/spotdiff-1000-906-b.json"
           }
         }
       ]
     },
     {
       "p": 1000,
-      "q": "ما التفصيل المختلف في صورتي كم القميص؟",
-      "a": "تغيّر لون فص زر الكم",
-      "qid": "spotdiff-1000-907",
+      "q": "ما التفصيل المختلف بين صورتي طاولة الخياطة؟",
+      "a": "تغيّر اتجاه عروة الكم السفلية",
+      "qid": "spotdiff-1000-927",
       "type": "diff",
       "spot": {
-        "x": 68,
-        "y": 55,
-        "r": 3
+        "x": 64.7,
+        "y": 70.9,
+        "r": 4.5
       },
       "topic": "ملابس وإكسسوارات",
       "alt": [
-        "فص زر الكم"
+        "العروة السفلية أصبحت عمودية",
+        "اتجاه فتحة زر الكم السفلى"
       ],
       "verified": true,
       "difficultyTarget": 0.15,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-spotdiff-final.json",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-spotdiff.json",
       "media": [
         {
-          "src": "spotdiff-1000-907-a.webp",
+          "src": "spotdiff-1000-907-a-q20261008.webp",
           "type": "image",
           "title": "لغز بصري مولّد",
           "author": "Maydan / OpenAI image generation",
@@ -1825,12 +1855,12 @@
           "provenance": {
             "kind": "ai-generated",
             "tool": "OpenAI image generation (built-in)",
-            "createdAt": "2026-09-25",
-            "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-1000-907-a.json"
+            "createdAt": "2026-10-08",
+            "record": "docs/bank/quality-2026-10-08/spotdiff-generated/spotdiff-1000-907-a.json"
           }
         },
         {
-          "src": "spotdiff-1000-907-b.webp",
+          "src": "spotdiff-1000-907-b-q20261008.webp",
           "type": "image",
           "title": "لغز بصري مولّد",
           "author": "Maydan / OpenAI image generation",
@@ -1838,33 +1868,34 @@
           "provenance": {
             "kind": "ai-generated",
             "tool": "OpenAI image generation (built-in)",
-            "createdAt": "2026-09-25",
-            "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-1000-907-b.json"
+            "createdAt": "2026-10-08",
+            "record": "docs/bank/quality-2026-10-08/spotdiff-generated/spotdiff-1000-907-b.json"
           }
         }
       ]
     },
     {
       "p": 1000,
-      "q": "ما التغيير الصغير في صورتي القطع المعدنية؟",
-      "a": "تغيّر لون الحلقة المطاطية",
-      "qid": "spotdiff-1000-908",
+      "q": "ما التغيير الدقيق بين صورتي القطع المعدنية؟",
+      "a": "انتقل الشق العلوي في الحلقة",
+      "qid": "spotdiff-1000-928",
       "type": "diff",
       "spot": {
-        "x": 81,
-        "y": 32,
-        "r": 6
+        "x": 39.5,
+        "y": 48,
+        "r": 7.5
       },
       "topic": "ورشة وأدوات",
       "alt": [
-        "الحلقة المطاطية"
+        "تغيّر موضع شق الحلقة",
+        "تباعد شقوق الحلقة"
       ],
       "verified": true,
       "difficultyTarget": 0.15,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-spotdiff-final.json",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-spotdiff.json",
       "media": [
         {
-          "src": "spotdiff-1000-908-a.webp",
+          "src": "spotdiff-1000-908-a-q20261008.webp",
           "type": "image",
           "title": "لغز بصري مولّد",
           "author": "Maydan / OpenAI image generation",
@@ -1872,12 +1903,12 @@
           "provenance": {
             "kind": "ai-generated",
             "tool": "OpenAI image generation (built-in)",
-            "createdAt": "2026-09-25",
-            "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-1000-908-a.json"
+            "createdAt": "2026-10-08",
+            "record": "docs/bank/quality-2026-10-08/spotdiff-generated/spotdiff-1000-908-a.json"
           }
         },
         {
-          "src": "spotdiff-1000-908-b.webp",
+          "src": "spotdiff-1000-908-b-q20261008.webp",
           "type": "image",
           "title": "لغز بصري مولّد",
           "author": "Maydan / OpenAI image generation",
@@ -1885,8 +1916,8 @@
           "provenance": {
             "kind": "ai-generated",
             "tool": "OpenAI image generation (built-in)",
-            "createdAt": "2026-09-25",
-            "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-1000-908-b.json"
+            "createdAt": "2026-10-08",
+            "record": "docs/bank/quality-2026-10-08/spotdiff-generated/spotdiff-1000-908-b.json"
           }
         }
       ]

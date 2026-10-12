@@ -1,0 +1,149 @@
+{
+  "date": "2026-10-12",
+  "summary": {
+    "version": "badeeha-quality-2026-10-08",
+    "baselineCommit": "e912acf",
+    "reviewed": 3120,
+    "packs": 78,
+    "retired": 294,
+    "decisions": {
+      "keep": 2155,
+      "improve": 678,
+      "retier": 125,
+      "replace": 162
+    },
+    "factualChecks": {
+      "not-rechecked": 2262,
+      "new-source-reviewed": 164,
+      "existing-source-reviewed": 334,
+      "not-recorded": 160,
+      "visual-object-review": 77,
+      "licensed-reference-verified": 3,
+      "visual-object-and-answer-review": 78,
+      "licensed-museum-reference-verified": 1,
+      "new-primary-source-verified": 1,
+      "visual-observation": 40
+    }
+  },
+  "checks": [
+    {
+      "name": "data-coverage",
+      "status": "passed",
+      "questions": 3120,
+      "covers": 78
+    },
+    {
+      "name": "portable-media-files",
+      "status": "passed",
+      "assets": 1036
+    },
+    {
+      "name": "all-pack-pagination",
+      "status": "passed",
+      "packs": 78,
+      "pages": 156
+    },
+    {
+      "name": "decision-filters",
+      "status": "passed"
+    },
+    {
+      "name": "search-and-empty-state",
+      "status": "passed"
+    },
+    {
+      "name": "choice-options-and-references",
+      "status": "passed"
+    },
+    {
+      "name": "code-direction",
+      "status": "passed"
+    },
+    {
+      "name": "jumble-direction-and-render",
+      "status": "passed"
+    },
+    {
+      "name": "reveal-originals-and-answers",
+      "status": "passed"
+    },
+    {
+      "name": "duck-board-direction",
+      "status": "passed"
+    },
+    {
+      "name": "image-attribution-and-license",
+      "status": "passed"
+    },
+    {
+      "name": "difference-reveal-circles",
+      "status": "passed"
+    },
+    {
+      "name": "audio-references",
+      "status": "passed",
+      "controls": 40
+    },
+    {
+      "name": "covers-and-responsive-layout",
+      "status": "passed",
+      "widths": [
+        320,
+        390,
+        1280
+      ],
+      "covers": 78
+    },
+    {
+      "name": "direct-local-file-opening",
+      "status": "passed"
+    },
+    {
+      "name": "browser-console-and-network",
+      "status": "passed"
+    }
+  ],
+  "errors": [],
+  "failures": [],
+  "status": "passed",
+  "scope": "Portable comparison preview in Chromium; not native iPhone gameplay.",
+  "visualReview": {
+    "reviewer": "integration_audit",
+    "status": "passed",
+    "notes": [
+      "Desktop shows before/after covers side by side; narrow screens stack them with explicit labels and no horizontal overflow.",
+      "RTL text, controls, question cards, reveal circles, image effects and puzzle grids inspected in the saved mobile views.",
+      "The retained-question filter malformed HTML option was corrected, and all four decision filters passed the final browser run.",
+      "Cover comparison caption is direction-neutral for desktop and stacked mobile layouts.",
+      "After the completed browser review, trailing CSS-line whitespace was removed and the portable HTML regenerated; rendering and data are unchanged."
+    ],
+    "nativeIphoneQA": false
+  },
+  "previewHtmlSha256": "60ba9885af4a91b8428d3a4d145b2275242d336f264c6e67c532c578965b4752",
+  "evidence": [
+    {
+      "file": "docs/bank/quality-2026-10-08/preview/portable-covers-320.png",
+      "sha256": "eabe53e03db577f0ebaa866026c54a4cb16aa119dd0a70cc9677d82a6edc9936"
+    },
+    {
+      "file": "docs/bank/quality-2026-10-08/preview/portable-covers-390.png",
+      "sha256": "779b8b6caa7a77071265be6bbc883491d20acd335f71a1ee1706beda1717063b"
+    },
+    {
+      "file": "docs/bank/quality-2026-10-08/preview/portable-covers-1280.png",
+      "sha256": "9567825b55f19799b34c04258cdf848c0d5770ec2b0dfd63c616fef6bf07d4a7"
+    },
+    {
+      "file": "docs/bank/quality-2026-10-08/preview/portable-zoom-mobile.png",
+      "sha256": "edda84847f745c67a0c697c50962b3cbfa1e61e518bca838f486d33cf80199b7"
+    },
+    {
+      "file": "docs/bank/quality-2026-10-08/preview/portable-tilepuzzle-mobile.png",
+      "sha256": "755702934aa6bd2fdf840e2a15d0721a52ec549eeac6d8ef347af3301b72a72e"
+    },
+    {
+      "file": "docs/bank/quality-2026-10-08/preview/portable-spotdiff-mobile.png",
+      "sha256": "abd20f7c1e82edc809e92a1349082bf3c2fe58518c05d758cdb0b265ad84ed90"
+    }
+  ]
+}

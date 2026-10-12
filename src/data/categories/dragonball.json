@@ -187,20 +187,6 @@
     },
     {
       "p": 400,
-      "q": "ما اسم الكلب الصغير الذي تبناه ماجين بو وصديقه البطل؟",
-      "a": "بي",
-      "alt": [
-        "بيي",
-        "Bee"
-      ],
-      "topic": "العائلة",
-      "verified": true,
-      "qid": "dragonball-400-915",
-      "difficultyTarget": 0.6,
-      "sourceUrl": "https://en.wikipedia.org/wiki/Dragon_Ball_Z_season_9#ep254"
-    },
-    {
-      "p": 400,
       "q": "إلى أي كوكب نقل غوكو سيل عندما أوشك على تفجير نفسه؟",
       "a": "كوكب كايو",
       "alt": [
@@ -238,6 +224,19 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Dragon_Ball_characters",
       "qid": "dragonball-400-918",
+      "p": 400,
+      "difficultyTarget": 0.6,
+      "verified": true
+    },
+    {
+      "topic": "العائلة",
+      "q": "ما اسم ابنة كريلين وأندرويد 18؟",
+      "a": "مارون",
+      "alt": [
+        "Marron"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Dragon_Ball_characters",
+      "qid": "dragonball-400-921",
       "p": 400,
       "difficultyTarget": 0.6,
       "verified": true
@@ -392,7 +391,6 @@
       "q": "ما الحيوان الذي رماه غوكو أمام جينيو فانتقل جينيو إلى جسده بالخطأ؟",
       "a": "ضفدع",
       "alt": [
-        "الضفدع",
         "Frog"
       ],
       "topic": "التحولات",
@@ -537,27 +535,14 @@
       "verified": true
     },
     {
-      "topic": "العائلة",
-      "q": "ما اسم ابنة كريلين وأندرويد 18؟",
-      "a": "مارون",
-      "alt": [
-        "Marron"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Dragon_Ball_characters",
-      "qid": "dragonball-1000-916",
-      "p": 1000,
-      "difficultyTarget": 0.15,
-      "verified": true
-    },
-    {
       "topic": "التحولات",
-      "q": "كم تستمر وحدة المقاتلين البشر بأقراط بوتارا كحد زمني عادي؟",
+      "q": "ما المدة العادية لاندماج من ليسا من الكايوشين بأقراط بوتارا؟",
       "a": "ساعة واحدة",
       "alt": [
         "ساعة",
         "60 دقيقة"
       ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Dragon_Ball_characters",
+      "sourceUrl": "https://en.dragon-ball-official.com/news/01_2255.html",
       "qid": "dragonball-1000-917",
       "p": 1000,
       "difficultyTarget": 0.15,
@@ -575,6 +560,20 @@
       "p": 1000,
       "difficultyTarget": 0.15,
       "verified": true
+    },
+    {
+      "p": 1000,
+      "q": "ما اسم الكلب الصغير الذي تبناه ماجين بو وصديقه البطل؟",
+      "a": "بي",
+      "alt": [
+        "بيي",
+        "Bee"
+      ],
+      "topic": "العائلة",
+      "verified": true,
+      "qid": "dragonball-1000-921",
+      "difficultyTarget": 0.15,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Dragon_Ball_Z_season_9#ep254"
     }
   ]
 }

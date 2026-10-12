@@ -1,0 +1,29 @@
+{
+  "id": "hints",
+  "kind": "cover",
+  "file": "public/media/badeeha-covers/hints.webp",
+  "style": "editorial detective scene",
+  "palette": "petrol blue, amber, brick red",
+  "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'تلميحات'. Landscape 4:3 artwork.\nMedium: editorial detective scene.\nIntentional palette: petrol blue, amber, brick red.\nScene: A magnifying glass casts a circular light across three subtle footprints on a textured path, mysterious but inviting, no written clues.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-10-08",
+  "sourceImage": {
+    "name": "exec-c6d353f2-9886-4068-9606-6a399c2d7c8c.png",
+    "sha256": "f253eff9d2bef16c7f7d750dea2d73bd1bd55e46ad4b9963a971c3b82c5aec67",
+    "width": 1448,
+    "height": 1086
+  },
+  "width": 640,
+  "height": 480,
+  "bytes": 78318,
+  "sha256": "ba3f57396da0e070eb6f83d12c7c1fe310ae91f61b9fe819129c0754d5bc9ec4",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "phone-size-reviewed",
+    "date": "2026-10-08",
+    "reviewer": "root",
+    "width": 160,
+    "method": "shipped cover CSS; baseline and replacement side by side",
+    "evidence": "docs/bank/quality-2026-10-08/preview/covers-4.jpg"
+  }
+}

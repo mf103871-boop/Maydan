@@ -1,0 +1,29 @@
+{
+  "id": "ramadanseries",
+  "kind": "cover",
+  "file": "public/media/badeeha-covers/ramadanseries.webp",
+  "style": "cinematic interior scene",
+  "palette": "plum, golden amber, dark teal",
+  "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'مسلسلات رمضان'. Landscape 4:3 artwork.\nMedium: cinematic interior scene.\nIntentional palette: plum, golden amber, dark teal.\nScene: A fictional family sitting room ready for evening viewing, a softly glowing blank television and lantern, layered human-scale environment with no people.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-10-08",
+  "sourceImage": {
+    "name": "exec-fb162e77-e1ff-4ce2-8225-96d36ad301d3.png",
+    "sha256": "3158c03d4c9da22edccf7d968e49e7ccfd53d4245eb22255cd79918ec3955993",
+    "width": 1448,
+    "height": 1086
+  },
+  "width": 640,
+  "height": 480,
+  "bytes": 59114,
+  "sha256": "7ac9a695e8f5c0f49d28ef2cdeb9946e3b4e3d11669e261276d8b00c0e49a276",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "phone-size-reviewed",
+    "date": "2026-10-08",
+    "reviewer": "root",
+    "width": 160,
+    "method": "shipped cover CSS; baseline and replacement side by side",
+    "evidence": "docs/bank/quality-2026-10-08/preview/covers-2.jpg"
+  }
+}

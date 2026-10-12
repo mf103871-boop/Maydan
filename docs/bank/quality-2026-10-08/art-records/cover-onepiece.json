@@ -1,0 +1,29 @@
+{
+  "id": "onepiece",
+  "kind": "cover",
+  "file": "public/media/badeeha-covers/onepiece.webp",
+  "style": "adventure watercolor animation",
+  "palette": "ocean turquoise, golden sand, coral",
+  "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'ون بيس'. Landscape 4:3 artwork.\nMedium: adventure watercolor animation.\nIntentional palette: ocean turquoise, golden sand, coral.\nScene: An original small pirate sailing ship navigating radiant islands, exaggerated playful waves, broad panorama, no exact franchise emblems.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-10-08",
+  "sourceImage": {
+    "name": "exec-95e33c1e-6975-4c69-a29a-43ea62ec502d.png",
+    "sha256": "79a39e091f02372e7455000c57ddfbb060502ee199f50397afdebddb6617fe6d",
+    "width": 1448,
+    "height": 1086
+  },
+  "width": 640,
+  "height": 480,
+  "bytes": 109596,
+  "sha256": "4ca8a4bc70b8c0f407eac8e9dc9a5c2c6998af534595aae55641ce2374163416",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "phone-size-reviewed",
+    "date": "2026-10-08",
+    "reviewer": "root",
+    "width": 160,
+    "method": "shipped cover CSS; baseline and replacement side by side",
+    "evidence": "docs/bank/quality-2026-10-08/preview/covers-3.jpg"
+  }
+}

@@ -34,7 +34,7 @@ test('قبل ولا بعد: الحل يطابق الحدثين وسنتيهما 
     // «بـ» تُوصل بما بعدها؛ التطويل يسقط قبل الهمزة والألف. نقارن بعد حذف التطويل
     // فيبقى ترتيب الحدثين ونصّهما مثبّتين دون فرض إملاء ركيك.
     const tatweel = (text) => text.replace(/\u0640/g, '');
-    assert.equal(tatweel(q.q), tatweel(`${left.label} مقارنة بـ${right.label}؟`), q.qid);
+    assert.equal(tatweel(q.q), tatweel(`${left.label} بالنسبة إلى ${right.label}؟`), q.qid);
     for (const url of q.source) assert.equal(new URL(url).protocol, 'https:');
     assert.equal(q.verified, true, q.qid);
   }

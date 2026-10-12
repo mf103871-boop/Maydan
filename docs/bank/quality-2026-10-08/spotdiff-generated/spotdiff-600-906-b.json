@@ -1,0 +1,39 @@
+{
+  "pack": "spotdiff",
+  "oldQid": "spotdiff-600-906",
+  "side": "b",
+  "createdAt": "2026-10-08",
+  "kind": "ai-generated",
+  "tool": "OpenAI image generation (built-in)",
+  "mode": "edit",
+  "prompt": "Use case: precise-object-edit\nAsset type: matching B of a one-difference comparison puzzle.\nInput image1 is exact EDIT TARGET. Move ONLY the existing single RED round lens cap from the RIGHT objective lens to the LEFT objective lens of the binoculars. The left lens becomes covered with that exact cap, and the right lens is uncovered with green optical glass matching the previously uncovered lens. There is exactly one red cap in each image; this is one cap-to-lens relationship change. Keep binocular geometry and all controls identical.\nOnly ONE semantic difference. Keep everything else identical including black barrel positions/outlines, all grips, eyepieces, center focus wheel, green pouch folds/seams, bench plank seams, background, light/framing. No new items, text, markers, annotations, border, panel, or UI. Preserve4:3 framing.",
+  "asset": "media/spotdiff/spotdiff-600-906-b-q20261008.webp",
+  "sha256": "b92059b2eaa823e8378777675ac207bc9383fcb2473a9a638e9fd370e1f43238",
+  "bytes": 160768,
+  "width": 1280,
+  "height": 960,
+  "inputImages": [
+    {
+      "file": "spotdiff-600-906-a.webp",
+      "sha256": "e29980922c1115bdc08254919c1ccaeddc0834d04ea017eaa790b9da4cbb7860"
+    }
+  ],
+  "review": {
+    "status": "phone-size-reviewed",
+    "originalCompared": true,
+    "displayedEffect": "Side-by-side unfiltered originals; reveal circle only",
+    "difference": "انتقل غطاء العدسة إلى الجهة الأخرى",
+    "semanticDifferenceCount": 1,
+    "invariantsReviewed": [
+      "غطاء أحمر واحد انتقل بين عدستي المنظار",
+      "الموقع والشكل الخارجي للمنظار والضوابط ثابتة",
+      "حقيبة القماش وشرائح المقعد والإضاءة ثابتة"
+    ],
+    "mobileDeviceQA": false,
+    "reviewedAt": "2026-10-12",
+    "reviewer": "finish_spotdiff",
+    "imageWidthCSS": 173,
+    "evidence": "docs/bank/quality-2026-10-08/preview/spotdiff-06.png"
+  },
+  "packaging": "Uniform size/format encoding only; all scene changes created by built-in imagegen"
+}

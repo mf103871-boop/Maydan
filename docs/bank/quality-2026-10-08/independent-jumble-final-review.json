@@ -1,0 +1,1725 @@
+{
+  "date": "2026-10-12",
+  "pack": "tilepuzzle",
+  "reviewer": "finish_puzzles",
+  "status": "40-final-identifiers-reviewed-before-and-after-reveal",
+  "summary": {
+    "cards": 40,
+    "images": 40,
+    "views": 80,
+    "contactSheets": 10,
+    "blockingFindings": 0
+  },
+  "method": {
+    "renderer": "scripts/badeeha-quality/visual-review.mjs",
+    "rendererSha256": "b2db3867e6d78f76dc6f1a4fb0a22c2715a957d1079423879b25531ec94e9886",
+    "applicationRendererSha256": "eefca638e35bf426821cbbeacbcf13d4f07883d34d6f45faad2aa10be9961e1f",
+    "stylesSha256": "b86e44ad3a5ac1eb5d319c37b359983c3d035c274c49e97fb0508db3fa3b6b13",
+    "bankSha256": "0a543a2030b193d5f5baf5d68dde64f9b0f318b2e1f00bd267479380aca43c9a",
+    "qidMappingSha256": "ff1762c51b43b95d663bf82009e5cb14c680940f9d5fa27ffb09c8e79711ccc3",
+    "cardWidthCssPx": 390,
+    "imageWidthCssPx": 366,
+    "effectHeightCssPx": 274,
+    "layoutDirection": "rtl",
+    "source": "All ten complete contact sheets were visually inspected. The permutation follows the actual app qid hash, mulberry32 RNG and Fisher-Yates shuffle. Physical unchanged-tile counts account for right-to-left grid placement.",
+    "commands": [
+      "node scripts/badeeha-quality/visual-review.mjs tilepuzzle effect .cache/badeeha-quality/jumble-final-2026-10-12",
+      "node scripts/badeeha-quality/visual-review.mjs tilepuzzle raw .cache/badeeha-quality/jumble-final-2026-10-12"
+    ]
+  },
+  "conclusions": [
+    "شُوهدت جميع الصور كاملة ومع المؤثر بترتيب القطع الناتج عن المعرّفات النهائية.",
+    "الأدلة الرئيسية موزعة على عدة قطع؛ لم تصبح أي إجابة متوقفة على تفصيل وحيد صغير أو ضائع بسبب الترحيل.",
+    "الأمثلة الدنيا قد تُعرف سريعًا من جزء مألوف وتبقى القرائن الأخرى متاحة؛ لا يثبت ذلك أن كل لاعب يحتاج جمع القطع كلها.",
+    "مشاهد الطاحونة والجسر ووظيفة الأنابيب تحتفظ بالعلاقة المرئية بين أجزاء منفصلة."
+  ],
+  "limitations": [
+    "مراجعة تشخيصية بمتصفح وبحجم صورة الهاتف؛ ليست تشغيلًا على آيفون فعلي أو قياسًا لمتعة اللاعبين.",
+    "إجابات الأوراق ظاهرة للمطابقة؛ ليست تجربة حل عمياء ولا تعطي نسب نجاح مقاسة.",
+    "صحة المراجع النوعية ومعلومة الرنين موثقة في مراجعة المصادر السابقة؛ هذه مراجعة عرض وقرائن بعد الترحيل."
+  ],
+  "contactSheets": [
+    {
+      "file": ".cache/badeeha-quality/jumble-final-2026-10-12/tilepuzzle-effect-01.jpg",
+      "sha256": "b2e0978efcacdb20e6cf0359652819e32b5f669f7b80ffee1e2928a7b30f636f"
+    },
+    {
+      "file": ".cache/badeeha-quality/jumble-final-2026-10-12/tilepuzzle-effect-02.jpg",
+      "sha256": "477cd2cfd4f08274b7fccd20b5467868caaefaafed695621e638e2f626e7762f"
+    },
+    {
+      "file": ".cache/badeeha-quality/jumble-final-2026-10-12/tilepuzzle-effect-03.jpg",
+      "sha256": "c3159da73f3e201b7fc90ff1f6d2d2dbd52bb23e427f1bf8774fb852a5cd8640"
+    },
+    {
+      "file": ".cache/badeeha-quality/jumble-final-2026-10-12/tilepuzzle-effect-04.jpg",
+      "sha256": "57707c1dfff8e7fefd94f780b532c9bbbc01f8b8a6d75c624f515a79c89880e3"
+    },
+    {
+      "file": ".cache/badeeha-quality/jumble-final-2026-10-12/tilepuzzle-effect-05.jpg",
+      "sha256": "93fa50c49a944f554ee8a813e7119fbd54d634b6f69685f6e5b440fc11b771bf"
+    },
+    {
+      "file": ".cache/badeeha-quality/jumble-final-2026-10-12/tilepuzzle-raw-01.jpg",
+      "sha256": "19f298ec8e6c9b85ea757fc2d1012b4ed9dc8d5efd5470e8fb521896ac26e178"
+    },
+    {
+      "file": ".cache/badeeha-quality/jumble-final-2026-10-12/tilepuzzle-raw-02.jpg",
+      "sha256": "b97c5016d24b324ddf37f7ebee9efb7ab4d898af3a031dac60a28a00a0509e38"
+    },
+    {
+      "file": ".cache/badeeha-quality/jumble-final-2026-10-12/tilepuzzle-raw-03.jpg",
+      "sha256": "e3ca0f4ee86cb0f529bad13818e8bdca52aa89008e04e04d9e897e64a7a3ca2b"
+    },
+    {
+      "file": ".cache/badeeha-quality/jumble-final-2026-10-12/tilepuzzle-raw-04.jpg",
+      "sha256": "8bacad78edc49f11a34cd158ab9ae62a7681411e345983fb597354703f599241"
+    },
+    {
+      "file": ".cache/badeeha-quality/jumble-final-2026-10-12/tilepuzzle-raw-05.jpg",
+      "sha256": "04c4086dbfdc84c0f44664dff924fb190af020e0f303c4d35d00df53795e808b"
+    }
+  ],
+  "cards": [
+    {
+      "qid": "tilepuzzle-200-901",
+      "previousQid": "tilepuzzle-200-901",
+      "p": 200,
+      "answer": "زرافة",
+      "media": "media/tilepuzzle/tilepuzzle-200-901.webp",
+      "sha256": "caa05c33834684f30e8f467fa1cdd01af3fff013e34da70cebc42455430fc1d7",
+      "width": 1280,
+      "height": 960,
+      "questionSha256": "17cc1f03278f18b152a1938e330dfd245e7d6455849f3d225b4597e1f2293c4f",
+      "sourceIndicesInRtlDomOrder": [
+        10,
+        5,
+        0,
+        8,
+        9,
+        4,
+        7,
+        2,
+        11,
+        1,
+        6,
+        3
+      ],
+      "unchangedPhysicalTilesInRtl": 1,
+      "grid": {
+        "columns": 4,
+        "rows": 3,
+        "all12SourceTilesPresentOnce": true,
+        "direction": "rtl"
+      },
+      "viewedBeforeReveal": true,
+      "viewedAfterReveal": true,
+      "clueDistribution": "الرقبة والرأس، ونقش الجلد والساقان موزعة.",
+      "observation": "المشهد الكامل يؤكد الزرافة؛ قرائن الجسم موزعة على عدة قطع.",
+      "status": "pass",
+      "evidence": {
+        "before": ".cache/badeeha-quality/jumble-final-2026-10-12/tilepuzzle-effect-01.jpg",
+        "after": ".cache/badeeha-quality/jumble-final-2026-10-12/tilepuzzle-raw-01.jpg"
+      }
+    },
+    {
+      "qid": "tilepuzzle-200-902",
+      "previousQid": "tilepuzzle-200-902",
+      "p": 200,
+      "answer": "برغر",
+      "media": "media/tilepuzzle/tilepuzzle-200-902.webp",
+      "sha256": "4cf713cc9337c3750a883a7282dd06e4071e9e2bcd2ece51162c5f79793f47b9",
+      "width": 1280,
+      "height": 960,
+      "questionSha256": "b2906c3c61edd71e8aaf1af4f3720079d9ba31a2675ad015f407f83dee932f90",
+      "sourceIndicesInRtlDomOrder": [
+        8,
+        10,
+        11,
+        0,
+        3,
+        1,
+        5,
+        9,
+        6,
+        4,
+        2,
+        7
+      ],
+      "unchangedPhysicalTilesInRtl": 2,
+      "grid": {
+        "columns": 4,
+        "rows": 3,
+        "all12SourceTilesPresentOnce": true,
+        "direction": "rtl"
+      },
+      "viewedBeforeReveal": true,
+      "viewedAfterReveal": true,
+      "clueDistribution": "سطح الخبز، وطبقة اللحم، والخضار موزعة.",
+      "observation": "اسم البرغر تؤكده طبقات الساندويش بعد الكشف.",
+      "status": "pass",
+      "evidence": {
+        "before": ".cache/badeeha-quality/jumble-final-2026-10-12/tilepuzzle-effect-01.jpg",
+        "after": ".cache/badeeha-quality/jumble-final-2026-10-12/tilepuzzle-raw-01.jpg"
+      }
+    },
+    {
+      "qid": "tilepuzzle-200-903",
+      "previousQid": "tilepuzzle-200-903",
+      "p": 200,
+      "answer": "حاسوب محمول",
+      "media": "media/tilepuzzle/tilepuzzle-200-903.webp",
+      "sha256": "b0b1fa3f3db8f886cd018a369db092335ab29b52dabd54250ace708b9689cd0a",
+      "width": 1280,
+      "height": 960,
+      "questionSha256": "d00ed65e4895d97ba1f4efdafc19cb4faf421f8e3848cdb04edb8666915e5b91",
+      "sourceIndicesInRtlDomOrder": [
+        1,
+        2,
+        3,
+        11,
+        4,
+        7,
+        6,
+        0,
+        8,
+        5,
+        9,
+        10
+      ],
+      "unchangedPhysicalTilesInRtl": 2,
+      "grid": {
+        "columns": 4,
+        "rows": 3,
+        "all12SourceTilesPresentOnce": true,
+        "direction": "rtl"
+      },
+      "viewedBeforeReveal": true,
+      "viewedAfterReveal": true,
+      "clueDistribution": "الشاشة، ولوحة المفاتيح، والمفصل في قطع مختلفة.",
+      "observation": "المحمول يتضح من ربط الشاشة بالقاعدة؛ لا نص كاشف.",
+      "status": "pass",
+      "evidence": {
+        "before": ".cache/badeeha-quality/jumble-final-2026-10-12/tilepuzzle-effect-01.jpg",
+        "after": ".cache/badeeha-quality/jumble-final-2026-10-12/tilepuzzle-raw-01.jpg"
+      }
+    },
+    {
+      "qid": "tilepuzzle-200-904",
+      "previousQid": "tilepuzzle-200-904",
+      "p": 200,
+      "answer": "حافلة مدرسية",
+      "media": "media/tilepuzzle/tilepuzzle-200-904.webp",
+      "sha256": "b6b0e0957e810088e5fab3e5ca806d36e31ba79f74e2e03d204fa07a30154d26",
+      "width": 1280,
+      "height": 960,
+      "questionSha256": "da7035d979b022cbd3a6299907da51e09e6c565ea408691f9433b5367f1d2456",
+      "sourceIndicesInRtlDomOrder": [
+        8,
+        2,
+        11,
+        3,
+        6,
+        4,
+        5,
+        7,
+        1,
+        0,
+        10,
+        9
+      ],
+      "unchangedPhysicalTilesInRtl": 2,
+      "grid": {
+        "columns": 4,
+        "rows": 3,
+        "all12SourceTilesPresentOnce": true,
+        "direction": "rtl"
+      },
+      "viewedBeforeReveal": true,
+      "viewedAfterReveal": true,
+      "clueDistribution": "واجهة الحافلة، وصف النوافذ، والجوانب الصفراء موزعة.",
+      "observation": "نوع الحافلة واضح بأكثر من سمة، دون طلب طراز محدد.",
+      "status": "pass",
+      "evidence": {
+        "before": ".cache/badeeha-quality/jumble-final-2026-10-12/tilepuzzle-effect-01.jpg",
+        "after": ".cache/badeeha-quality/jumble-final-2026-10-12/tilepuzzle-raw-01.jpg"
+      }
+    },
+    {
+      "qid": "tilepuzzle-200-906",
+      "previousQid": "tilepuzzle-200-906",
+      "p": 200,
+      "answer": "قوس قزح",
+      "media": "media/tilepuzzle/tilepuzzle-200-906.webp",
+      "sha256": "7fdac8e625ea6ebcb86cd4b11a550714ca2533f5792785335e2018c84b7e1b40",
+      "width": 1280,
+      "height": 960,
+      "questionSha256": "674342704434f3316aaadc1c357da6454f8df37b65e710e428a55e414d5522a5",
+      "sourceIndicesInRtlDomOrder": [
+        1,
+        2,
+        8,
+        6,
+        5,
+        10,
+        0,
+        11,
+        7,
+        9,
+        3,
+        4
+      ],
+      "unchangedPhysicalTilesInRtl": 1,
+      "grid": {
+        "columns": 4,
+        "rows": 3,
+        "all12SourceTilesPresentOnce": true,
+        "direction": "rtl"
+      },
+      "viewedBeforeReveal": true,
+      "viewedAfterReveal": true,
+      "clueDistribution": "أجزاء القوس الملون موزعة في السماء.",
+      "observation": "الكشف يعيد القوس متصلًا فوق المنظر؛ الشكل واللون متوافقان.",
+      "status": "pass",
+      "evidence": {
+        "before": ".cache/badeeha-quality/jumble-final-2026-10-12/tilepuzzle-effect-01.jpg",
+        "after": ".cache/badeeha-quality/jumble-final-2026-10-12/tilepuzzle-raw-01.jpg"
+      }
+    },
+    {
+      "qid": "tilepuzzle-200-907",
+      "previousQid": "tilepuzzle-200-907",
+      "p": 200,
+      "answer": "طقم طبول",
+      "media": "media/tilepuzzle/tilepuzzle-200-907.webp",
+      "sha256": "9277c5a6346f92008015209e8922beed5aebd3c0fbbae19a47d08906ba2679d0",
+      "width": 1280,
+      "height": 960,
+      "questionSha256": "514406ddcbbc7ff8ae96084ba8ef3784537667cb5354e475f6070ff8d5a0f760",
+      "sourceIndicesInRtlDomOrder": [
+        5,
+        9,
+        10,
+        11,
+        1,
+        4,
+        3,
+        0,
+        8,
+        6,
+        7,
+        2
+      ],
+      "unchangedPhysicalTilesInRtl": 0,
+      "grid": {
+        "columns": 4,
+        "rows": 3,
+        "all12SourceTilesPresentOnce": true,
+        "direction": "rtl"
+      },
+      "viewedBeforeReveal": true,
+      "viewedAfterReveal": true,
+      "clueDistribution": "وجوه الطبول، والصنوج، والدعامات موزعة.",
+      "observation": "المطلوب مجموعة طبول؛ عدة مكونات موسيقية تدعمها.",
+      "status": "pass",
+      "evidence": {
+        "before": ".cache/badeeha-quality/jumble-final-2026-10-12/tilepuzzle-effect-01.jpg",
+        "after": ".cache/badeeha-quality/jumble-final-2026-10-12/tilepuzzle-raw-01.jpg"
+      }
+    },
+    {
+      "qid": "tilepuzzle-200-908",
+      "previousQid": "tilepuzzle-200-908",
+      "p": 200,
+      "answer": "لوحة ألوان",
+      "media": "media/tilepuzzle/tilepuzzle-200-908.webp",
+      "sha256": "e4938640b3b2701fe0265a54e4c2ed7233ab790ca1ca0abcc4d0354c63dabebc",
+      "width": 1280,
+      "height": 960,
+      "questionSha256": "308e4f277f69c03abbcbdaab7e6c224851cf5a29c96f48ecf71214132d06e819",
+      "sourceIndicesInRtlDomOrder": [
+        11,
+        10,
+        3,
+        2,
+        0,
+        6,
+        7,
+        5,
+        4,
+        8,
+        9,
+        1
+      ],
+      "unchangedPhysicalTilesInRtl": 2,
+      "grid": {
+        "columns": 4,
+        "rows": 3,
+        "all12SourceTilesPresentOnce": true,
+        "direction": "rtl"
+      },
+      "viewedBeforeReveal": true,
+      "viewedAfterReveal": true,
+      "clueDistribution": "اللوح الخشبي، والألوان، والفرش موزعة.",
+      "observation": "لوحة مزج الألوان تتضح من الأداة والمواد عليها.",
+      "status": "pass",
+      "evidence": {
+        "before": ".cache/badeeha-quality/jumble-final-2026-10-12/tilepuzzle-effect-01.jpg",
+        "after": ".cache/badeeha-quality/jumble-final-2026-10-12/tilepuzzle-raw-01.jpg"
+      }
+    },
+    {
+      "qid": "tilepuzzle-200-921",
+      "previousQid": "tilepuzzle-200-905",
+      "p": 200,
+      "answer": "كرة القدم",
+      "media": "media/tilepuzzle/tilepuzzle-200-905.webp",
+      "sha256": "42e7b953f337ac004dd1f96fb1468e295828669725ca80a652dd3634f86702a5",
+      "width": 1280,
+      "height": 960,
+      "questionSha256": "c9d0ffdd8f542566eca57f6701dfa6adeb8039b308346307e7c76dd75ca9d027",
+      "sourceIndicesInRtlDomOrder": [
+        5,
+        4,
+        0,
+        10,
+        2,
+        9,
+        3,
+        6,
+        8,
+        7,
+        1,
+        11
+      ],
+      "unchangedPhysicalTilesInRtl": 0,
+      "grid": {
+        "columns": 4,
+        "rows": 3,
+        "all12SourceTilesPresentOnce": true,
+        "direction": "rtl"
+      },
+      "viewedBeforeReveal": true,
+      "viewedAfterReveal": true,
+      "clueDistribution": "المرمى وشبكته، وخطوط العشب، والمدرجات موزعة.",
+      "observation": "القرائن تدعم كرة القدم؛ لا يتطلب السؤال اسم الملعب.",
+      "status": "pass",
+      "evidence": {
+        "before": ".cache/badeeha-quality/jumble-final-2026-10-12/tilepuzzle-effect-01.jpg",
+        "after": ".cache/badeeha-quality/jumble-final-2026-10-12/tilepuzzle-raw-01.jpg"
+      }
+    },
+    {
+      "qid": "tilepuzzle-400-901",
+      "previousQid": "tilepuzzle-400-901",
+      "p": 400,
+      "answer": "نحام",
+      "media": "media/tilepuzzle/tilepuzzle-400-901.webp",
+      "sha256": "8f156a9771c9fc7291145abfdeaaa825bbbcf2be9d77cf776416ef0654118f12",
+      "width": 1280,
+      "height": 960,
+      "questionSha256": "9ba081ebcd57d25afff5ff517cdbc384e8f641d3bc4f476d48ded42ce11dee28",
+      "sourceIndicesInRtlDomOrder": [
+        2,
+        4,
+        10,
+        8,
+        9,
+        6,
+        1,
+        7,
+        3,
+        11,
+        0,
+        5
+      ],
+      "unchangedPhysicalTilesInRtl": 1,
+      "grid": {
+        "columns": 4,
+        "rows": 3,
+        "all12SourceTilesPresentOnce": true,
+        "direction": "rtl"
+      },
+      "viewedBeforeReveal": true,
+      "viewedAfterReveal": true,
+      "clueDistribution": "المنقار والرقبة المنحنية، والساق، والريش موزعة.",
+      "observation": "النحام له قرائن شكلية مستقلة عن اللون الوردي وحده.",
+      "status": "pass",
+      "evidence": {
+        "before": ".cache/badeeha-quality/jumble-final-2026-10-12/tilepuzzle-effect-02.jpg",
+        "after": ".cache/badeeha-quality/jumble-final-2026-10-12/tilepuzzle-raw-02.jpg"
+      }
+    },
+    {
+      "qid": "tilepuzzle-400-902",
+      "previousQid": "tilepuzzle-400-902",
+      "p": 400,
+      "answer": "وافل",
+      "media": "media/tilepuzzle/tilepuzzle-400-902.webp",
+      "sha256": "d9640f05e674853db3c3f899841b7b31b2b14de40d3cd38a72221f71ce4a6716",
+      "width": 1280,
+      "height": 960,
+      "questionSha256": "7006e3eb023221b0dc7431dadb4d1789eff4a618691ffb0ae1d2ad73020cab6e",
+      "sourceIndicesInRtlDomOrder": [
+        0,
+        6,
+        10,
+        8,
+        2,
+        1,
+        5,
+        4,
+        9,
+        11,
+        3,
+        7
+      ],
+      "unchangedPhysicalTilesInRtl": 2,
+      "grid": {
+        "columns": 4,
+        "rows": 3,
+        "all12SourceTilesPresentOnce": true,
+        "direction": "rtl"
+      },
+      "viewedBeforeReveal": true,
+      "viewedAfterReveal": true,
+      "clueDistribution": "حفر العجينة الشبكية، وحوافها، وسمكها موزعة.",
+      "observation": "شبكة الوافل مرئية تحت الفاكهة وتطابق الكشف.",
+      "status": "pass",
+      "evidence": {
+        "before": ".cache/badeeha-quality/jumble-final-2026-10-12/tilepuzzle-effect-02.jpg",
+        "after": ".cache/badeeha-quality/jumble-final-2026-10-12/tilepuzzle-raw-02.jpg"
+      }
+    },
+    {
+      "qid": "tilepuzzle-400-903",
+      "previousQid": "tilepuzzle-400-903",
+      "p": 400,
+      "answer": "كاميرا",
+      "media": "media/tilepuzzle/tilepuzzle-400-903.webp",
+      "sha256": "5fc55f46f84c75afde24a7d3ab9a7ad9994729b83b67cc5d938c8028a1ee1118",
+      "width": 1280,
+      "height": 960,
+      "questionSha256": "4a370612e338925de39594e5fde9aea6c66187501218ce1e3931e2e3aefde9ef",
+      "sourceIndicesInRtlDomOrder": [
+        5,
+        10,
+        7,
+        11,
+        6,
+        1,
+        2,
+        3,
+        8,
+        0,
+        9,
+        4
+      ],
+      "unchangedPhysicalTilesInRtl": 1,
+      "grid": {
+        "columns": 4,
+        "rows": 3,
+        "all12SourceTilesPresentOnce": true,
+        "direction": "rtl"
+      },
+      "viewedBeforeReveal": true,
+      "viewedAfterReveal": true,
+      "clueDistribution": "العدسة، والجسم، والأزرار موزعة.",
+      "observation": "العدسة مع الجسم تحددان كاميرا دون حاجة لعلامة تجارية.",
+      "status": "pass",
+      "evidence": {
+        "before": ".cache/badeeha-quality/jumble-final-2026-10-12/tilepuzzle-effect-02.jpg",
+        "after": ".cache/badeeha-quality/jumble-final-2026-10-12/tilepuzzle-raw-02.jpg"
+      }
+    },
+    {
+      "qid": "tilepuzzle-400-904",
+      "previousQid": "tilepuzzle-400-904",
+      "p": 400,
+      "answer": "منطاد",
+      "media": "media/tilepuzzle/tilepuzzle-400-904.webp",
+      "sha256": "15acd95f0206017b698c3a8a162f131a0df94b637f74080b2880b800796b41aa",
+      "width": 1280,
+      "height": 960,
+      "questionSha256": "8a146dddc8dbed2e6eb80cd6c6ea7bf4da7d69ebbd99ada2fe0e6de59b4a5694",
+      "sourceIndicesInRtlDomOrder": [
+        2,
+        7,
+        8,
+        11,
+        5,
+        6,
+        10,
+        0,
+        1,
+        9,
+        4,
+        3
+      ],
+      "unchangedPhysicalTilesInRtl": 1,
+      "grid": {
+        "columns": 4,
+        "rows": 3,
+        "all12SourceTilesPresentOnce": true,
+        "direction": "rtl"
+      },
+      "viewedBeforeReveal": true,
+      "viewedAfterReveal": true,
+      "clueDistribution": "غلاف البالون، والحبال، والسلة موزعة.",
+      "observation": "ربط السلة بالغلاف يؤكد منطاد الهواء الساخن.",
+      "status": "pass",
+      "evidence": {
+        "before": ".cache/badeeha-quality/jumble-final-2026-10-12/tilepuzzle-effect-02.jpg",
+        "after": ".cache/badeeha-quality/jumble-final-2026-10-12/tilepuzzle-raw-02.jpg"
+      }
+    },
+    {
+      "qid": "tilepuzzle-400-905",
+      "previousQid": "tilepuzzle-400-905",
+      "p": 400,
+      "answer": "دوامة خيل",
+      "media": "media/tilepuzzle/tilepuzzle-400-905.webp",
+      "sha256": "b50fa155c8913ea3c1a45afe11d066e4806d8de137f12a9ece344a22846cc476",
+      "width": 1280,
+      "height": 960,
+      "questionSha256": "be077a57ff868233c5b8484c62b43a12e5645b725b3a8680a63c93da7b92b930",
+      "sourceIndicesInRtlDomOrder": [
+        1,
+        9,
+        6,
+        11,
+        4,
+        2,
+        10,
+        0,
+        5,
+        7,
+        8,
+        3
+      ],
+      "unchangedPhysicalTilesInRtl": 0,
+      "grid": {
+        "columns": 4,
+        "rows": 3,
+        "all12SourceTilesPresentOnce": true,
+        "direction": "rtl"
+      },
+      "viewedBeforeReveal": true,
+      "viewedAfterReveal": true,
+      "clueDistribution": "الخيل، والأعمدة، والمنصة، والسقف موزعة.",
+      "observation": "نوع لعبة الملاهي يظهر بضم الخيل إلى المظلة والمنصة.",
+      "status": "pass",
+      "evidence": {
+        "before": ".cache/badeeha-quality/jumble-final-2026-10-12/tilepuzzle-effect-02.jpg",
+        "after": ".cache/badeeha-quality/jumble-final-2026-10-12/tilepuzzle-raw-02.jpg"
+      }
+    },
+    {
+      "qid": "tilepuzzle-400-906",
+      "previousQid": "tilepuzzle-400-906",
+      "p": 400,
+      "answer": "شفق قطبي",
+      "media": "media/tilepuzzle/tilepuzzle-400-906.webp",
+      "sha256": "cb11a58c861078838c9d3855b479bb63c62c7e1732d04edfb6dfa8e8b7804611",
+      "width": 1280,
+      "height": 960,
+      "questionSha256": "2f4e9f3cd8bd2ace0a40e89001021dc4650d987269fc7112ac770b7cad408b31",
+      "sourceIndicesInRtlDomOrder": [
+        11,
+        8,
+        10,
+        6,
+        1,
+        0,
+        4,
+        7,
+        2,
+        9,
+        3,
+        5
+      ],
+      "unchangedPhysicalTilesInRtl": 0,
+      "grid": {
+        "columns": 4,
+        "rows": 3,
+        "all12SourceTilesPresentOnce": true,
+        "direction": "rtl"
+      },
+      "viewedBeforeReveal": true,
+      "viewedAfterReveal": true,
+      "clueDistribution": "أشرطة الضوء، والسماء الليلية، والانعكاس موزعة.",
+      "observation": "الشفق ظاهر بأكثر من قطعة؛ لا يختزل الحل إلى عنصر واحد.",
+      "status": "pass",
+      "evidence": {
+        "before": ".cache/badeeha-quality/jumble-final-2026-10-12/tilepuzzle-effect-02.jpg",
+        "after": ".cache/badeeha-quality/jumble-final-2026-10-12/tilepuzzle-raw-02.jpg"
+      }
+    },
+    {
+      "qid": "tilepuzzle-400-908",
+      "previousQid": "tilepuzzle-400-908",
+      "p": 400,
+      "answer": "دولاب فخار",
+      "media": "media/tilepuzzle/tilepuzzle-400-908.webp",
+      "sha256": "97993702b93c7eb3183f0a5e0149c0155d877edd4202fdcbf871adadffe7aefc",
+      "width": 1280,
+      "height": 960,
+      "questionSha256": "3361a510d00a805e9264718692c738207e3f618cbd3bc4b9d4ecb40217bb6ef8",
+      "sourceIndicesInRtlDomOrder": [
+        9,
+        8,
+        10,
+        6,
+        2,
+        11,
+        4,
+        5,
+        7,
+        0,
+        3,
+        1
+      ],
+      "unchangedPhysicalTilesInRtl": 0,
+      "grid": {
+        "columns": 4,
+        "rows": 3,
+        "all12SourceTilesPresentOnce": true,
+        "direction": "rtl"
+      },
+      "viewedBeforeReveal": true,
+      "viewedAfterReveal": true,
+      "clueDistribution": "القرص، والإناء الطيني، والطين والأدوات موزعة.",
+      "observation": "قرائن عمل الخزاف تدعم دولاب الفخار.",
+      "status": "pass",
+      "evidence": {
+        "before": ".cache/badeeha-quality/jumble-final-2026-10-12/tilepuzzle-effect-02.jpg",
+        "after": ".cache/badeeha-quality/jumble-final-2026-10-12/tilepuzzle-raw-02.jpg"
+      }
+    },
+    {
+      "qid": "tilepuzzle-400-921",
+      "previousQid": "tilepuzzle-800-908",
+      "p": 400,
+      "answer": "تلسكوب",
+      "media": "media/tilepuzzle/tilepuzzle-800-908.webp",
+      "sha256": "b7330922458be4f4a02b308cb861ac1add41e85770bc9458eeff57286f1df1b3",
+      "width": 1280,
+      "height": 960,
+      "questionSha256": "ae01785979e2bce6e7677ddc48b3cd72c65377480ffc6096d774bc703ae21999",
+      "sourceIndicesInRtlDomOrder": [
+        6,
+        3,
+        10,
+        5,
+        8,
+        2,
+        4,
+        1,
+        11,
+        7,
+        9,
+        0
+      ],
+      "unchangedPhysicalTilesInRtl": 2,
+      "grid": {
+        "columns": 4,
+        "rows": 3,
+        "all12SourceTilesPresentOnce": true,
+        "direction": "rtl"
+      },
+      "viewedBeforeReveal": true,
+      "viewedAfterReveal": true,
+      "clueDistribution": "الأنبوب، والعدسة، والحامل أمام النجوم موزعة.",
+      "observation": "التلسكوب مقروء دون تفاصيل دقيقة غير مرئية على الهاتف.",
+      "status": "pass",
+      "evidence": {
+        "before": ".cache/badeeha-quality/jumble-final-2026-10-12/tilepuzzle-effect-02.jpg",
+        "after": ".cache/badeeha-quality/jumble-final-2026-10-12/tilepuzzle-raw-02.jpg"
+      }
+    },
+    {
+      "qid": "tilepuzzle-600-901",
+      "previousQid": "tilepuzzle-600-901",
+      "p": 600,
+      "answer": "طوقان",
+      "media": "media/tilepuzzle/tilepuzzle-600-901.webp",
+      "sha256": "a6e46c24975f6e575a128ce944cd3c55bed4bb9e1a35d2d7982a6469fa89a505",
+      "width": 1280,
+      "height": 960,
+      "questionSha256": "79107b1896ffdc300c07eeeb48bcd774967b3f4eaff795facc7c00f636677ce2",
+      "sourceIndicesInRtlDomOrder": [
+        4,
+        0,
+        2,
+        10,
+        11,
+        9,
+        1,
+        7,
+        6,
+        5,
+        8,
+        3
+      ],
+      "unchangedPhysicalTilesInRtl": 0,
+      "grid": {
+        "columns": 4,
+        "rows": 3,
+        "all12SourceTilesPresentOnce": true,
+        "direction": "rtl"
+      },
+      "viewedBeforeReveal": true,
+      "viewedAfterReveal": true,
+      "clueDistribution": "المنقار والرأس، والجسم والرقبة والذيل موزعة.",
+      "observation": "المنقار قرينة قوية قد تكفي للعارف بالطوقان، لكن توجد قرائن جسدية أخرى؛ لا تفصيل وحيد صغير أو ضائع.",
+      "status": "pass",
+      "evidence": {
+        "before": ".cache/badeeha-quality/jumble-final-2026-10-12/tilepuzzle-effect-03.jpg",
+        "after": ".cache/badeeha-quality/jumble-final-2026-10-12/tilepuzzle-raw-03.jpg"
+      }
+    },
+    {
+      "qid": "tilepuzzle-600-902",
+      "previousQid": "tilepuzzle-600-902",
+      "p": 600,
+      "answer": "بريتزل",
+      "media": "media/tilepuzzle/tilepuzzle-600-902.webp",
+      "sha256": "de78cccae5b7d3e9ca90b104a3601026a38f22aaff6d24201153eed6b60052c7",
+      "width": 1280,
+      "height": 960,
+      "questionSha256": "d263e75928f6100218d42c97179fa0e5408d832a522211818c5f9f93953e8451",
+      "sourceIndicesInRtlDomOrder": [
+        0,
+        4,
+        11,
+        1,
+        5,
+        6,
+        3,
+        8,
+        7,
+        9,
+        10,
+        2
+      ],
+      "unchangedPhysicalTilesInRtl": 1,
+      "grid": {
+        "columns": 4,
+        "rows": 3,
+        "all12SourceTilesPresentOnce": true,
+        "direction": "rtl"
+      },
+      "viewedBeforeReveal": true,
+      "viewedAfterReveal": true,
+      "clueDistribution": "عقدة العجين، والانحناءات، والملح موزعة.",
+      "observation": "وصل الانحناءات يميز البريتزل من خبز عام؛ الكشف يؤكد العقدة.",
+      "status": "pass",
+      "evidence": {
+        "before": ".cache/badeeha-quality/jumble-final-2026-10-12/tilepuzzle-effect-03.jpg",
+        "after": ".cache/badeeha-quality/jumble-final-2026-10-12/tilepuzzle-raw-03.jpg"
+      }
+    },
+    {
+      "qid": "tilepuzzle-600-903",
+      "previousQid": "tilepuzzle-600-903",
+      "p": 600,
+      "answer": "غرامافون",
+      "media": "media/tilepuzzle/tilepuzzle-600-903.webp",
+      "sha256": "233f287461ee98e6ddae11c17f0a73f97c00baca6404069df464315b465720f7",
+      "width": 1280,
+      "height": 960,
+      "questionSha256": "823684335311659269ef8db3a2d29b8f4edafd130c5d8ecf990128d9e6271341",
+      "sourceIndicesInRtlDomOrder": [
+        7,
+        8,
+        5,
+        4,
+        11,
+        2,
+        6,
+        10,
+        1,
+        3,
+        9,
+        0
+      ],
+      "unchangedPhysicalTilesInRtl": 1,
+      "grid": {
+        "columns": 4,
+        "rows": 3,
+        "all12SourceTilesPresentOnce": true,
+        "direction": "rtl"
+      },
+      "viewedBeforeReveal": true,
+      "viewedAfterReveal": true,
+      "clueDistribution": "البوق، وقرص الأسطوانة، والقاعدة والمقبض موزعة.",
+      "observation": "ربط مخرج الصوت بوسيط الأسطوانة يدعم الغرامافون.",
+      "status": "pass",
+      "evidence": {
+        "before": ".cache/badeeha-quality/jumble-final-2026-10-12/tilepuzzle-effect-03.jpg",
+        "after": ".cache/badeeha-quality/jumble-final-2026-10-12/tilepuzzle-raw-03.jpg"
+      }
+    },
+    {
+      "qid": "tilepuzzle-600-904",
+      "previousQid": "tilepuzzle-600-904",
+      "p": 600,
+      "answer": "حفارة",
+      "media": "media/tilepuzzle/tilepuzzle-600-904.webp",
+      "sha256": "d37088f9d783f9789c2fa4eac35c4771757b960bd7d349b28817a623d081f021",
+      "width": 1280,
+      "height": 960,
+      "questionSha256": "056925d3980fab680ed8210c7726bcb7ebcf4b3426b4d87d18deb323100a9484",
+      "sourceIndicesInRtlDomOrder": [
+        0,
+        10,
+        3,
+        7,
+        9,
+        8,
+        2,
+        4,
+        1,
+        11,
+        6,
+        5
+      ],
+      "unchangedPhysicalTilesInRtl": 1,
+      "grid": {
+        "columns": 4,
+        "rows": 3,
+        "all12SourceTilesPresentOnce": true,
+        "direction": "rtl"
+      },
+      "viewedBeforeReveal": true,
+      "viewedAfterReveal": true,
+      "clueDistribution": "الدلو، والذراع، والمقصورة، والجنزير موزعة.",
+      "observation": "الذراع والدلو يميزان حفارًا من جرافة؛ الأصل متوافق.",
+      "status": "pass",
+      "evidence": {
+        "before": ".cache/badeeha-quality/jumble-final-2026-10-12/tilepuzzle-effect-03.jpg",
+        "after": ".cache/badeeha-quality/jumble-final-2026-10-12/tilepuzzle-raw-03.jpg"
+      }
+    },
+    {
+      "qid": "tilepuzzle-600-905",
+      "previousQid": "tilepuzzle-600-905",
+      "p": 600,
+      "answer": "بيت زجاجي",
+      "media": "media/tilepuzzle/tilepuzzle-600-905.webp",
+      "sha256": "664fdebc6333cdc207502951aa3fc2649a1a8111bea38b2c7bd146714a50e2f6",
+      "width": 1280,
+      "height": 960,
+      "questionSha256": "2c19c060ce1cac4dd043f9609a895c309d3b67b840f6e55daf90ba8ce92ea706",
+      "sourceIndicesInRtlDomOrder": [
+        4,
+        3,
+        6,
+        10,
+        1,
+        8,
+        11,
+        0,
+        2,
+        9,
+        7,
+        5
+      ],
+      "unchangedPhysicalTilesInRtl": 0,
+      "grid": {
+        "columns": 4,
+        "rows": 3,
+        "all12SourceTilesPresentOnce": true,
+        "direction": "rtl"
+      },
+      "viewedBeforeReveal": true,
+      "viewedAfterReveal": true,
+      "clueDistribution": "السقف الزجاجي، والإطار، والنباتات الداخلية موزعة.",
+      "observation": "المطلوب نوع البناء؛ النبات مع الجدران الشفافة يحدد الدفيئة.",
+      "status": "pass",
+      "evidence": {
+        "before": ".cache/badeeha-quality/jumble-final-2026-10-12/tilepuzzle-effect-03.jpg",
+        "after": ".cache/badeeha-quality/jumble-final-2026-10-12/tilepuzzle-raw-03.jpg"
+      }
+    },
+    {
+      "qid": "tilepuzzle-600-906",
+      "previousQid": "tilepuzzle-600-906",
+      "p": 600,
+      "answer": "نافورة حارة",
+      "media": "media/tilepuzzle/tilepuzzle-600-906.webp",
+      "sha256": "a66034d5920c98e8c4258baf21219de9c5dc41df9585007806df052e8c84d364",
+      "width": 1280,
+      "height": 960,
+      "questionSha256": "ec4d0429f0faed59ce29693a2b3310170a0d88f02b9a70a5e24e93e7c626b9de",
+      "sourceIndicesInRtlDomOrder": [
+        6,
+        5,
+        0,
+        11,
+        8,
+        7,
+        4,
+        2,
+        10,
+        1,
+        9,
+        3
+      ],
+      "unchangedPhysicalTilesInRtl": 1,
+      "grid": {
+        "columns": 4,
+        "rows": 3,
+        "all12SourceTilesPresentOnce": true,
+        "direction": "rtl"
+      },
+      "viewedBeforeReveal": true,
+      "viewedAfterReveal": true,
+      "clueDistribution": "اندفاع الماء من الأرض، والصخور، والرذاذ موزعة.",
+      "observation": "أساس الاندفاع الأرضي ظاهر مع عمود الماء ويدعم ينبوعًا فوّارًا طبيعيًا.",
+      "status": "pass",
+      "evidence": {
+        "before": ".cache/badeeha-quality/jumble-final-2026-10-12/tilepuzzle-effect-03.jpg",
+        "after": ".cache/badeeha-quality/jumble-final-2026-10-12/tilepuzzle-raw-03.jpg"
+      }
+    },
+    {
+      "qid": "tilepuzzle-600-908",
+      "previousQid": "tilepuzzle-600-908",
+      "p": 600,
+      "answer": "عجلة غزل",
+      "media": "media/tilepuzzle/tilepuzzle-600-908.webp",
+      "sha256": "19cf0929c4103f4afe03083f569f2dbeeb54d31c32d1ecb0e57efebd6ab6feed",
+      "width": 1280,
+      "height": 960,
+      "questionSha256": "307c8bc53da832465e06f97fcd7e746995a61b8107b6ca360752d3ffeeea079e",
+      "sourceIndicesInRtlDomOrder": [
+        0,
+        6,
+        8,
+        7,
+        9,
+        2,
+        5,
+        3,
+        4,
+        1,
+        10,
+        11
+      ],
+      "unchangedPhysicalTilesInRtl": 1,
+      "grid": {
+        "columns": 4,
+        "rows": 3,
+        "all12SourceTilesPresentOnce": true,
+        "direction": "rtl"
+      },
+      "viewedBeforeReveal": true,
+      "viewedAfterReveal": true,
+      "clueDistribution": "العجلة، والبكرة، والخيط، والألياف موزعة.",
+      "observation": "علاقة العجلة بمكونات الغزل تحدد الأداة ولا تكتفي بعجلة مجردة.",
+      "status": "pass",
+      "evidence": {
+        "before": ".cache/badeeha-quality/jumble-final-2026-10-12/tilepuzzle-effect-03.jpg",
+        "after": ".cache/badeeha-quality/jumble-final-2026-10-12/tilepuzzle-raw-03.jpg"
+      }
+    },
+    {
+      "qid": "tilepuzzle-600-921",
+      "previousQid": "tilepuzzle-400-907",
+      "p": 600,
+      "answer": "قيثارة",
+      "media": "media/tilepuzzle/tilepuzzle-400-907.webp",
+      "sha256": "274c90e525b4f4e80b5921e2905628feb62b7f372d7ec90b5fb585f0cc55e696",
+      "width": 1280,
+      "height": 960,
+      "questionSha256": "4d76de3c3e92d59cbf1e091003f20872ea1c85abe8af18746653399731e5bbd6",
+      "sourceIndicesInRtlDomOrder": [
+        4,
+        5,
+        2,
+        1,
+        8,
+        10,
+        0,
+        7,
+        3,
+        9,
+        6,
+        11
+      ],
+      "unchangedPhysicalTilesInRtl": 0,
+      "grid": {
+        "columns": 4,
+        "rows": 3,
+        "all12SourceTilesPresentOnce": true,
+        "direction": "rtl"
+      },
+      "viewedBeforeReveal": true,
+      "viewedAfterReveal": true,
+      "clueDistribution": "قوس الإطار، والأوتار، والعمود، والقاعدة موزعة.",
+      "observation": "القيثارة تتضح بربط إطارها بأوتارها رغم وجود قطع خلفية.",
+      "status": "pass",
+      "evidence": {
+        "before": ".cache/badeeha-quality/jumble-final-2026-10-12/tilepuzzle-effect-03.jpg",
+        "after": ".cache/badeeha-quality/jumble-final-2026-10-12/tilepuzzle-raw-03.jpg"
+      }
+    },
+    {
+      "qid": "tilepuzzle-800-901",
+      "previousQid": "tilepuzzle-800-901",
+      "p": 800,
+      "answer": "أكسولوتل",
+      "media": "media/tilepuzzle/tilepuzzle-800-901.webp",
+      "sha256": "d673f6f6b91a8067d3d05c50f72978870e97a61651500b85c35c5a86438f456f",
+      "width": 1280,
+      "height": 960,
+      "questionSha256": "2f5d5abc63e648be3f500f28c3eeebb107288ac428b6e864ca3cd28327d0bc26",
+      "sourceIndicesInRtlDomOrder": [
+        2,
+        8,
+        6,
+        0,
+        9,
+        11,
+        1,
+        7,
+        3,
+        4,
+        10,
+        5
+      ],
+      "unchangedPhysicalTilesInRtl": 1,
+      "grid": {
+        "columns": 4,
+        "rows": 3,
+        "all12SourceTilesPresentOnce": true,
+        "direction": "rtl"
+      },
+      "viewedBeforeReveal": true,
+      "viewedAfterReveal": true,
+      "clueDistribution": "الخياشيم الخارجية، والرأس، والأطراف، والذيل موزعة.",
+      "observation": "السمات التشريحية تدعم الأكسولوتل؛ لا كتابة تسميه.",
+      "status": "pass",
+      "evidence": {
+        "before": ".cache/badeeha-quality/jumble-final-2026-10-12/tilepuzzle-effect-04.jpg",
+        "after": ".cache/badeeha-quality/jumble-final-2026-10-12/tilepuzzle-raw-04.jpg"
+      }
+    },
+    {
+      "qid": "tilepuzzle-800-902",
+      "previousQid": "tilepuzzle-800-902",
+      "p": 800,
+      "answer": "مانغوستين",
+      "media": "media/tilepuzzle/tilepuzzle-800-902.webp",
+      "sha256": "57d240ecd353caec8dcf44aae9a1394e7175d5e58a79df0442cb311fe9f9a0f7",
+      "width": 1280,
+      "height": 960,
+      "questionSha256": "b4490a5031c16915bac42e928100a7fbf09be2ac9cc3e89bcf9cf99fd303beff",
+      "sourceIndicesInRtlDomOrder": [
+        3,
+        7,
+        8,
+        1,
+        2,
+        5,
+        0,
+        10,
+        9,
+        11,
+        4,
+        6
+      ],
+      "unchangedPhysicalTilesInRtl": 1,
+      "grid": {
+        "columns": 4,
+        "rows": 3,
+        "all12SourceTilesPresentOnce": true,
+        "direction": "rtl"
+      },
+      "viewedBeforeReveal": true,
+      "viewedAfterReveal": true,
+      "clueDistribution": "القشرة الداكنة، واللب الأبيض المقسم، والتاج الأخضر موزعة.",
+      "observation": "جمع داخل الثمرة وخارجها يدعم المانغوستين.",
+      "status": "pass",
+      "evidence": {
+        "before": ".cache/badeeha-quality/jumble-final-2026-10-12/tilepuzzle-effect-04.jpg",
+        "after": ".cache/badeeha-quality/jumble-final-2026-10-12/tilepuzzle-raw-04.jpg"
+      }
+    },
+    {
+      "qid": "tilepuzzle-800-906",
+      "previousQid": "tilepuzzle-800-906",
+      "p": 800,
+      "answer": "مسطحات ملحية",
+      "media": "media/tilepuzzle/tilepuzzle-800-906.webp",
+      "sha256": "1d07d925e62b25da8f47141f2736e359d9ebb090888b97e249c36e6606de5864",
+      "width": 1280,
+      "height": 960,
+      "questionSha256": "604127774b95b24a5360ffa1c15ff8bfe5debe370ecfada851b96db0f5f5e47b",
+      "sourceIndicesInRtlDomOrder": [
+        8,
+        0,
+        3,
+        7,
+        10,
+        1,
+        4,
+        9,
+        2,
+        5,
+        6,
+        11
+      ],
+      "unchangedPhysicalTilesInRtl": 0,
+      "grid": {
+        "columns": 4,
+        "rows": 3,
+        "all12SourceTilesPresentOnce": true,
+        "direction": "rtl"
+      },
+      "viewedBeforeReveal": true,
+      "viewedAfterReveal": true,
+      "clueDistribution": "القشرة البيضاء المضلعة، والأفق المستوي، والامتداد موزعة.",
+      "observation": "الملمس والامتداد يدعمان مسطحات ملحية؛ لا يطلب اسم موقع.",
+      "status": "pass",
+      "evidence": {
+        "before": ".cache/badeeha-quality/jumble-final-2026-10-12/tilepuzzle-effect-04.jpg",
+        "after": ".cache/badeeha-quality/jumble-final-2026-10-12/tilepuzzle-raw-04.jpg"
+      }
+    },
+    {
+      "qid": "tilepuzzle-800-907",
+      "previousQid": "tilepuzzle-800-907",
+      "p": 800,
+      "answer": "ناي بان",
+      "media": "media/tilepuzzle/tilepuzzle-800-907.webp",
+      "sha256": "0cd5d11690dda0516ea8cce4db417e5ecc707047ee2b588a3b5af70753db1455",
+      "width": 1280,
+      "height": 960,
+      "questionSha256": "7a685f884ddf65533bc5e49df0b380fcf3adc4f491be751b830ea973665f8662",
+      "sourceIndicesInRtlDomOrder": [
+        0,
+        1,
+        6,
+        7,
+        9,
+        2,
+        11,
+        4,
+        10,
+        3,
+        5,
+        8
+      ],
+      "unchangedPhysicalTilesInRtl": 2,
+      "grid": {
+        "columns": 4,
+        "rows": 3,
+        "all12SourceTilesPresentOnce": true,
+        "direction": "rtl"
+      },
+      "viewedBeforeReveal": true,
+      "viewedAfterReveal": true,
+      "clueDistribution": "فتحات الأنابيب، وأطوالها المتدرجة، والرباط موزعة.",
+      "observation": "الفتحات مع الأطوال المتدرجة تدعم ناي بان.",
+      "status": "pass",
+      "evidence": {
+        "before": ".cache/badeeha-quality/jumble-final-2026-10-12/tilepuzzle-effect-04.jpg",
+        "after": ".cache/badeeha-quality/jumble-final-2026-10-12/tilepuzzle-raw-04.jpg"
+      }
+    },
+    {
+      "qid": "tilepuzzle-800-921",
+      "previousQid": "tilepuzzle-1000-903",
+      "p": 800,
+      "answer": "عارض شفافيات",
+      "media": "media/tilepuzzle/tilepuzzle-1000-903.webp",
+      "sha256": "0e3a099d83a00516b8403792d933bf246bbf2a4379a80109fb0c02ee10e93d14",
+      "width": 1280,
+      "height": 960,
+      "questionSha256": "6420179915b60b2b4df06843b99fc3500400f2bb5ceb95d38c7ed1d445dfde25",
+      "sourceIndicesInRtlDomOrder": [
+        5,
+        6,
+        3,
+        10,
+        8,
+        11,
+        1,
+        7,
+        0,
+        4,
+        2,
+        9
+      ],
+      "unchangedPhysicalTilesInRtl": 0,
+      "grid": {
+        "columns": 4,
+        "rows": 3,
+        "all12SourceTilesPresentOnce": true,
+        "direction": "rtl"
+      },
+      "viewedBeforeReveal": true,
+      "viewedAfterReveal": true,
+      "clueDistribution": "رأس العدسة، والذراع، والمنصة المضيئة، والقاعدة موزعة.",
+      "observation": "تجميع بنية عارض الشفافيات أهم من لون أو شعار.",
+      "status": "pass",
+      "evidence": {
+        "before": ".cache/badeeha-quality/jumble-final-2026-10-12/tilepuzzle-effect-04.jpg",
+        "after": ".cache/badeeha-quality/jumble-final-2026-10-12/tilepuzzle-raw-04.jpg"
+      }
+    },
+    {
+      "qid": "tilepuzzle-800-922",
+      "previousQid": "tilepuzzle-800-903",
+      "p": 800,
+      "answer": "الماء الجاري",
+      "media": "media/tilepuzzle/quality-watermill.webp",
+      "sha256": "a53e6dce4b2655806558ba90d797b7311295f1ab45ce17231d4df2b9b1e6ea94",
+      "width": 960,
+      "height": 720,
+      "questionSha256": "18dd779462b8d25bcc057d056c62220986e9e88feda39730888e0175fbfc51b9",
+      "sourceIndicesInRtlDomOrder": [
+        11,
+        6,
+        0,
+        8,
+        9,
+        10,
+        7,
+        2,
+        4,
+        5,
+        3,
+        1
+      ],
+      "unchangedPhysicalTilesInRtl": 0,
+      "grid": {
+        "columns": 4,
+        "rows": 3,
+        "all12SourceTilesPresentOnce": true,
+        "direction": "rtl"
+      },
+      "viewedBeforeReveal": true,
+      "viewedAfterReveal": true,
+      "clueDistribution": "الماء، والعجلة، والمحور والتروس، وحجر الطحن موزعة.",
+      "observation": "مصدر الطاقة يُستنتج من علاقة الماء بالعجلة ثم نقل الحركة إلى الطحن.",
+      "status": "pass",
+      "evidence": {
+        "before": ".cache/badeeha-quality/jumble-final-2026-10-12/tilepuzzle-effect-04.jpg",
+        "after": ".cache/badeeha-quality/jumble-final-2026-10-12/tilepuzzle-raw-04.jpg"
+      }
+    },
+    {
+      "qid": "tilepuzzle-800-923",
+      "previousQid": "tilepuzzle-800-904",
+      "p": 800,
+      "answer": "جسر قلّاب",
+      "media": "media/tilepuzzle/quality-drawbridge.webp",
+      "sha256": "b6809ad37cc8672461fb69147731716642360d9ce4b6ff38bb347b2250e842a3",
+      "width": 960,
+      "height": 720,
+      "questionSha256": "192d0464c393d9a1583200d48cee241f855a49a87852f697e8040cd7bdecad85",
+      "sourceIndicesInRtlDomOrder": [
+        6,
+        1,
+        11,
+        7,
+        10,
+        0,
+        5,
+        4,
+        3,
+        2,
+        8,
+        9
+      ],
+      "unchangedPhysicalTilesInRtl": 2,
+      "grid": {
+        "columns": 4,
+        "rows": 3,
+        "all12SourceTilesPresentOnce": true,
+        "direction": "rtl"
+      },
+      "viewedBeforeReveal": true,
+      "viewedAfterReveal": true,
+      "clueDistribution": "ورقتا الجسر، ومحورا الدوران، وأثقال الموازنة، والقناة موزعة.",
+      "observation": "ربط الارتفاع بالمحاور والممر المائي يدعم الجسر القلاب؛ لا لون أو نص يكشف الحل.",
+      "status": "pass",
+      "evidence": {
+        "before": ".cache/badeeha-quality/jumble-final-2026-10-12/tilepuzzle-effect-04.jpg",
+        "after": ".cache/badeeha-quality/jumble-final-2026-10-12/tilepuzzle-raw-04.jpg"
+      }
+    },
+    {
+      "qid": "tilepuzzle-800-924",
+      "previousQid": "tilepuzzle-800-905",
+      "p": 800,
+      "answer": "مسرح أثري",
+      "media": "media/tilepuzzle/tilepuzzle-800-905.webp",
+      "sha256": "9afb257e5681183aec90104bad1297d67c300a977eb2e326fa1e6fe702066154",
+      "width": 1280,
+      "height": 960,
+      "questionSha256": "3fddc95693294b9ef59cde9901635854b70020ef5a097b77f47b715f2953cd42",
+      "sourceIndicesInRtlDomOrder": [
+        3,
+        0,
+        5,
+        2,
+        4,
+        11,
+        8,
+        10,
+        9,
+        6,
+        7,
+        1
+      ],
+      "unchangedPhysicalTilesInRtl": 1,
+      "grid": {
+        "columns": 4,
+        "rows": 3,
+        "all12SourceTilesPresentOnce": true,
+        "direction": "rtl"
+      },
+      "viewedBeforeReveal": true,
+      "viewedAfterReveal": true,
+      "clueDistribution": "صفوف المقاعد المقوسة، والمساحة الوسطى، وواجهة المسرح موزعة.",
+      "observation": "جواب مسرح أثري وبدائله مناسب؛ لا يجزم السؤال بحضارة من صورة عامة.",
+      "status": "pass",
+      "evidence": {
+        "before": ".cache/badeeha-quality/jumble-final-2026-10-12/tilepuzzle-effect-04.jpg",
+        "after": ".cache/badeeha-quality/jumble-final-2026-10-12/tilepuzzle-raw-04.jpg"
+      }
+    },
+    {
+      "qid": "tilepuzzle-1000-901",
+      "previousQid": "tilepuzzle-1000-901",
+      "p": 1000,
+      "answer": "آكل النمل الحرشفي",
+      "media": "media/tilepuzzle/tilepuzzle-1000-901.webp",
+      "sha256": "2c231dc8b6f2bc47fa78de8b8fc1d7102988698eac8307c3164117cae8487491",
+      "width": 1280,
+      "height": 960,
+      "questionSha256": "3cd707395ae69fc4894095c9793f8e429407188d1697fa3a7db0f2fac8e219b1",
+      "sourceIndicesInRtlDomOrder": [
+        7,
+        4,
+        3,
+        9,
+        10,
+        8,
+        0,
+        11,
+        5,
+        6,
+        1,
+        2
+      ],
+      "unchangedPhysicalTilesInRtl": 0,
+      "grid": {
+        "columns": 4,
+        "rows": 3,
+        "all12SourceTilesPresentOnce": true,
+        "direction": "rtl"
+      },
+      "viewedBeforeReveal": true,
+      "viewedAfterReveal": true,
+      "clueDistribution": "الرأس المدبب، والحراشف المتراكبة، والذيل الطويل موزعة.",
+      "observation": "ملامح البنغولين متاحة في أكثر من منطقة وتميزه عن المدرع.",
+      "status": "pass",
+      "evidence": {
+        "before": ".cache/badeeha-quality/jumble-final-2026-10-12/tilepuzzle-effect-05.jpg",
+        "after": ".cache/badeeha-quality/jumble-final-2026-10-12/tilepuzzle-raw-05.jpg"
+      }
+    },
+    {
+      "qid": "tilepuzzle-1000-902",
+      "previousQid": "tilepuzzle-1000-902",
+      "p": 1000,
+      "answer": "رومانسكو",
+      "media": "media/tilepuzzle/tilepuzzle-1000-902.webp",
+      "sha256": "3143287c1dbc69c5b32809947fef4d4ea680ee35d1b02e2968a8fc77b59fc0c9",
+      "width": 1280,
+      "height": 960,
+      "questionSha256": "14636f0be8b53103ff3be67c8fac1fbe1deacfd46081607bccbf5f26192825ce",
+      "sourceIndicesInRtlDomOrder": [
+        1,
+        6,
+        10,
+        7,
+        0,
+        9,
+        11,
+        2,
+        3,
+        4,
+        8,
+        5
+      ],
+      "unchangedPhysicalTilesInRtl": 0,
+      "grid": {
+        "columns": 4,
+        "rows": 3,
+        "all12SourceTilesPresentOnce": true,
+        "direction": "rtl"
+      },
+      "viewedBeforeReveal": true,
+      "viewedAfterReveal": true,
+      "clueDistribution": "الرؤوس المخروطية المتكررة، وبنية الزهرة، والأوراق موزعة.",
+      "observation": "البنية المتكررة مع شكل النبات تدعم رومانسكو وتميزه عن بروكلي عادي.",
+      "status": "pass",
+      "evidence": {
+        "before": ".cache/badeeha-quality/jumble-final-2026-10-12/tilepuzzle-effect-05.jpg",
+        "after": ".cache/badeeha-quality/jumble-final-2026-10-12/tilepuzzle-raw-05.jpg"
+      }
+    },
+    {
+      "qid": "tilepuzzle-1000-904",
+      "previousQid": "tilepuzzle-1000-904",
+      "p": 1000,
+      "answer": "حوامة",
+      "media": "media/tilepuzzle/tilepuzzle-1000-904.webp",
+      "sha256": "afb8993ca14a611ec42dcea8f94c7ee2c3f52377f195268eb4b591b58160ed2e",
+      "width": 1280,
+      "height": 960,
+      "questionSha256": "2a319df945c66136eab9bdee5016aef05ca602a7ab4293013f432a3d90cf6dec",
+      "sourceIndicesInRtlDomOrder": [
+        2,
+        4,
+        0,
+        1,
+        7,
+        5,
+        11,
+        3,
+        10,
+        9,
+        8,
+        6
+      ],
+      "unchangedPhysicalTilesInRtl": 1,
+      "grid": {
+        "columns": 4,
+        "rows": 3,
+        "all12SourceTilesPresentOnce": true,
+        "direction": "rtl"
+      },
+      "viewedBeforeReveal": true,
+      "viewedAfterReveal": true,
+      "clueDistribution": "المراوح الخلفية، والوسادة السوداء، والمقصورة موزعة.",
+      "observation": "الجمع بين الدفع والوسادة الهوائية يحدد الحوامة ولا يكتفي بقارب.",
+      "status": "pass",
+      "evidence": {
+        "before": ".cache/badeeha-quality/jumble-final-2026-10-12/tilepuzzle-effect-05.jpg",
+        "after": ".cache/badeeha-quality/jumble-final-2026-10-12/tilepuzzle-raw-05.jpg"
+      }
+    },
+    {
+      "qid": "tilepuzzle-1000-905",
+      "previousQid": "tilepuzzle-1000-905",
+      "p": 1000,
+      "answer": "برج رياح",
+      "media": "media/tilepuzzle/tilepuzzle-1000-905.webp",
+      "sha256": "a26018d8da25bbda4902fa6825ccb60d04a70e83a190122acb3b215f9af6261c",
+      "width": 1280,
+      "height": 960,
+      "questionSha256": "4566945fa723b5ec972e0b827185f299220bd338e21397e213c05fd2ad5d9b42",
+      "sourceIndicesInRtlDomOrder": [
+        5,
+        11,
+        10,
+        9,
+        4,
+        7,
+        6,
+        8,
+        2,
+        0,
+        1,
+        3
+      ],
+      "unchangedPhysicalTilesInRtl": 0,
+      "grid": {
+        "columns": 4,
+        "rows": 3,
+        "all12SourceTilesPresentOnce": true,
+        "direction": "rtl"
+      },
+      "viewedBeforeReveal": true,
+      "viewedAfterReveal": true,
+      "clueDistribution": "فتحات البرج الرأسية، وتفاصيل الرأس، والبناء التقليدي موزعة.",
+      "observation": "رغم قطع السماء، تبقى تفاصيل التهوية في عدة قطع وبحجم مقروء؛ برج رياح مناسب.",
+      "status": "pass",
+      "evidence": {
+        "before": ".cache/badeeha-quality/jumble-final-2026-10-12/tilepuzzle-effect-05.jpg",
+        "after": ".cache/badeeha-quality/jumble-final-2026-10-12/tilepuzzle-raw-05.jpg"
+      }
+    },
+    {
+      "qid": "tilepuzzle-1000-906",
+      "previousQid": "tilepuzzle-1000-906",
+      "p": 1000,
+      "answer": "أعمدة بازلتية",
+      "media": "media/tilepuzzle/tilepuzzle-1000-906.webp",
+      "sha256": "d131c44501c1a04feb38a5843f6d54467d78d09c9b94928fed4f541653efe6f3",
+      "width": 1280,
+      "height": 960,
+      "questionSha256": "e5daeb6c2af952f59dc6626a45b068f2ca09029b440f680b842cc3c788148e8b",
+      "sourceIndicesInRtlDomOrder": [
+        8,
+        9,
+        1,
+        2,
+        3,
+        0,
+        4,
+        11,
+        5,
+        7,
+        10,
+        6
+      ],
+      "unchangedPhysicalTilesInRtl": 1,
+      "grid": {
+        "columns": 4,
+        "rows": 3,
+        "all12SourceTilesPresentOnce": true,
+        "direction": "rtl"
+      },
+      "viewedBeforeReveal": true,
+      "viewedAfterReveal": true,
+      "clueDistribution": "الأعمدة المضلعة، والأسطح المكسورة، والساحل موزعة.",
+      "observation": "النسيج العمودي المتكرر يدعم أعمدة بازلتية؛ لا اسم معلم مطلوب.",
+      "status": "pass",
+      "evidence": {
+        "before": ".cache/badeeha-quality/jumble-final-2026-10-12/tilepuzzle-effect-05.jpg",
+        "after": ".cache/badeeha-quality/jumble-final-2026-10-12/tilepuzzle-raw-05.jpg"
+      }
+    },
+    {
+      "qid": "tilepuzzle-1000-907",
+      "previousQid": "tilepuzzle-1000-907",
+      "p": 1000,
+      "answer": "هاندبان",
+      "media": "media/tilepuzzle/tilepuzzle-1000-907.webp",
+      "sha256": "d09f3470501008db00704f696bc139003a52d4281b97a58923246937e25bc148",
+      "width": 1280,
+      "height": 960,
+      "questionSha256": "b4a5fa2069b63a498c7206d61dc1ea0014aca798153db5514de5e90abcd46722",
+      "sourceIndicesInRtlDomOrder": [
+        9,
+        8,
+        7,
+        11,
+        3,
+        0,
+        2,
+        1,
+        6,
+        4,
+        5,
+        10
+      ],
+      "unchangedPhysicalTilesInRtl": 0,
+      "grid": {
+        "columns": 4,
+        "rows": 3,
+        "all12SourceTilesPresentOnce": true,
+        "direction": "rtl"
+      },
+      "viewedBeforeReveal": true,
+      "viewedAfterReveal": true,
+      "clueDistribution": "القبة المعدنية، والحقل المركزي، وتجويفات النغم، والحافة موزعة.",
+      "observation": "وصل سمات الآلة يميز الهاندبان عن طبق معدني عام.",
+      "status": "pass",
+      "evidence": {
+        "before": ".cache/badeeha-quality/jumble-final-2026-10-12/tilepuzzle-effect-05.jpg",
+        "after": ".cache/badeeha-quality/jumble-final-2026-10-12/tilepuzzle-raw-05.jpg"
+      }
+    },
+    {
+      "qid": "tilepuzzle-1000-921",
+      "previousQid": "tilepuzzle-1000-908",
+      "p": 1000,
+      "answer": "أسطرلاب",
+      "media": "media/tilepuzzle/quality-astrolabe-met.webp",
+      "sha256": "3893f5600b728214e01dd63ced4b1dfafd52a4a907ab4a1ab35c2cd9a07adfc0",
+      "width": 960,
+      "height": 720,
+      "questionSha256": "a40001b85f50b8488a623357ccc7acbb1dc8e4d8596092a08f864a73f1db568f",
+      "sourceIndicesInRtlDomOrder": [
+        2,
+        10,
+        4,
+        7,
+        11,
+        6,
+        8,
+        1,
+        5,
+        0,
+        9,
+        3
+      ],
+      "unchangedPhysicalTilesInRtl": 2,
+      "grid": {
+        "columns": 4,
+        "rows": 3,
+        "all12SourceTilesPresentOnce": true,
+        "direction": "rtl"
+      },
+      "viewedBeforeReveal": true,
+      "viewedAfterReveal": true,
+      "clueDistribution": "القرص المدرج/المزخرف، والجزء العلوي، وحلقة التعليق موزعة.",
+      "observation": "المرجع المتحفي يترك قطعًا رمادية، لكن تفاصيل الأداة موزعة في عدة قطع؛ يحتاج معرفة شكلها التاريخي.",
+      "status": "pass",
+      "evidence": {
+        "before": ".cache/badeeha-quality/jumble-final-2026-10-12/tilepuzzle-effect-05.jpg",
+        "after": ".cache/badeeha-quality/jumble-final-2026-10-12/tilepuzzle-raw-05.jpg"
+      }
+    },
+    {
+      "qid": "tilepuzzle-1000-922",
+      "previousQid": "tilepuzzle-600-907",
+      "p": 1000,
+      "answer": "تضخيم الصوت",
+      "media": "media/tilepuzzle/tilepuzzle-600-907.webp",
+      "sha256": "f84ced51ff13519a640b3c320efab3b81bf8cb40ba2ef4ce9913b5f94f681aa9",
+      "width": 1280,
+      "height": 960,
+      "questionSha256": "5f05619cedbf9f7f111601d0a18a64cc6dfb052ead3165cc4fa63a8fa362ddd8",
+      "sourceIndicesInRtlDomOrder": [
+        5,
+        8,
+        3,
+        1,
+        6,
+        11,
+        2,
+        0,
+        9,
+        7,
+        10,
+        4
+      ],
+      "unchangedPhysicalTilesInRtl": 0,
+      "grid": {
+        "columns": 4,
+        "rows": 3,
+        "all12SourceTilesPresentOnce": true,
+        "direction": "rtl"
+      },
+      "viewedBeforeReveal": true,
+      "viewedAfterReveal": true,
+      "clueDistribution": "القضبان، والمطارق، والأنابيب المعلقة المتدرجة موزعة.",
+      "observation": "السؤال يطلب وظيفة الأنابيب تحت القضبان؛ ربطها يفسر الرنين دون إلزام باسم آلة غير محسوم.",
+      "status": "pass",
+      "evidence": {
+        "before": ".cache/badeeha-quality/jumble-final-2026-10-12/tilepuzzle-effect-05.jpg",
+        "after": ".cache/badeeha-quality/jumble-final-2026-10-12/tilepuzzle-raw-05.jpg"
+      }
+    }
+  ]
+}

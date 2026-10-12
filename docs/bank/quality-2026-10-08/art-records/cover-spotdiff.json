@@ -1,0 +1,29 @@
+{
+  "id": "spotdiff",
+  "kind": "cover",
+  "file": "public/media/badeeha-covers/spotdiff.webp",
+  "style": "isometric narrative illustration",
+  "palette": "turquoise, yellow, coral",
+  "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'اكتشف الفرق'. Landscape 4:3 artwork.\nMedium: isometric narrative illustration.\nIntentional palette: turquoise, yellow, coral.\nScene: Two playful miniature rooms side by side with a small deliberate decorative difference, original cover-only scene, lively coherent colors.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-10-08",
+  "sourceImage": {
+    "name": "exec-50221299-6f80-4492-9b67-5bca83c08624.png",
+    "sha256": "02d60dec41209fb09d3ffde6898f57679fec9ceda5544fa4ef5fa2346191588a",
+    "width": 1448,
+    "height": 1086
+  },
+  "width": 640,
+  "height": 480,
+  "bytes": 71328,
+  "sha256": "890068607698dfa5af20cfc585e96031472ff675bfc5efb841f58a9aa2d64271",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "phone-size-reviewed",
+    "date": "2026-10-08",
+    "reviewer": "root",
+    "width": 160,
+    "method": "shipped cover CSS; baseline and replacement side by side",
+    "evidence": "docs/bank/quality-2026-10-08/preview/covers-4.jpg"
+  }
+}

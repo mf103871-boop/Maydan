@@ -1,0 +1,29 @@
+{
+  "id": "demonslayer",
+  "kind": "cover",
+  "file": "public/media/badeeha-covers/demonslayer.webp",
+  "style": "original cel-shaded night landscape",
+  "palette": "wisteria violet, forest green, silver",
+  "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'قاتل الشياطين'. Landscape 4:3 artwork.\nMedium: original cel-shaded night landscape.\nIntentional palette: wisteria violet, forest green, silver.\nScene: A moonlit path through wisteria and bamboo with a safely sheathed sword in foreground, clean expressive illustration and drifting petals.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-10-08",
+  "sourceImage": {
+    "name": "exec-0f1e1bf9-229d-4498-af24-e7d7105d929a.png",
+    "sha256": "8dd0e0008848337b2f1b0d97c71a2998995fdc834d09b6895222f2010e7fe8f8",
+    "width": 1448,
+    "height": 1086
+  },
+  "width": 640,
+  "height": 480,
+  "bytes": 93726,
+  "sha256": "65a30dee5d5ed252fd60056ee8536d48445328c817da6fe382617aa1d2aff6a1",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "phone-size-reviewed",
+    "date": "2026-10-08",
+    "reviewer": "root",
+    "width": 160,
+    "method": "shipped cover CSS; baseline and replacement side by side",
+    "evidence": "docs/bank/quality-2026-10-08/preview/covers-3.jpg"
+  }
+}

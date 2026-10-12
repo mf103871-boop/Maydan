@@ -8,9 +8,7 @@
       "topic": "المشاعر",
       "q": "ما المشعر الواقع على الطريق بين منى وعرفة؟",
       "a": "مزدلفة",
-      "alt": [
-        "المزدلفة"
-      ],
+      "alt": [],
       "sourceUrl": "https://en.wikipedia.org/wiki/Muzdalifah",
       "verified": true,
       "qid": "islamiyat-200-911",
@@ -132,10 +130,11 @@
       "alt": [
         "ملتزم الكعبة"
       ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Kaaba",
+      "sourceUrl": "https://saudipedia.com/ملتزم-الكعبة",
       "verified": true,
       "qid": "islamiyat-400-912",
-      "difficultyTarget": 0.6
+      "difficultyTarget": 0.6,
+      "verifiedAt": "2026-10-08"
     },
     {
       "p": 400,
@@ -154,17 +153,18 @@
     {
       "p": 400,
       "topic": "التقويم",
-      "q": "كم يومًا تضم السنة الهجرية القمرية غير الكبيسة؟",
+      "q": "كم يومًا تضم السنة غير الكبيسة في التقويم الهجري الحسابي؟",
       "a": "ثلاثمئة وأربعة وخمسون",
       "alt": [
         "354",
         "ثلاثمائة وأربعة وخمسون",
         "354 يومًا"
       ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Islamic_calendar",
+      "sourceUrl": "https://aa.usno.navy.mil/downloads/c15_usb_online.pdf",
       "verified": true,
       "qid": "islamiyat-400-914",
-      "difficultyTarget": 0.6
+      "difficultyTarget": 0.6,
+      "verifiedAt": "2026-10-08"
     },
     {
       "p": 400,
@@ -231,12 +231,13 @@
         "شاذروان الكعبة"
       ],
       "sourceUrl": [
-        "https://alharamain.gov.sa/public/?page=shadrawan-ar",
-        "https://en.wikipedia.org/wiki/Kaaba"
+        "https://saudipedia.com/en/al-kaaba%22s-shadherwaan",
+        "https://alharamain.gov.sa/public/?page=shadrawan-ar"
       ],
       "verified": true,
       "qid": "islamiyat-600-911",
-      "difficultyTarget": 0.4
+      "difficultyTarget": 0.4,
+      "verifiedAt": "2026-10-08"
     },
     {
       "p": 600,
@@ -405,7 +406,7 @@
       "difficultyTarget": 0.25
     },
     {
-      "q": "من الفنان الذي نسخ وصوّر مخطوط مقامات الحريري المحفوظ في باريس سنة 1237؟",
+      "q": "من الفنان الذي نسخ وصوّر مخطوط مقامات الحريري المحفوظ في باريس؟",
       "a": "يحيى بن محمود الواسطي",
       "topic": "الكتب",
       "sourceUrl": "https://www.loc.gov/item/2021667393/",
@@ -478,7 +479,6 @@
       "q": "ما اسم الخط الفارسي الذي يعني اسمه «النسخ المعلق»؟",
       "a": "النستعليق",
       "alt": [
-        "نستعليق",
         "خط النستعليق"
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/Nastaliq",

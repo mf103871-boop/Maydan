@@ -1,0 +1,20 @@
+{
+  "id": "zoom-400-907",
+  "prompt": "Create ONE landscape 4:3 high fidelity photographic puzzle image for an Arabic game for ages 16+. An automobile seat belt laid on a dark burgundy fabric seat, realistic stamped silver tongue and thick woven strap centered, a black buckle with red release button near far right. Whole assembly visible, daytime natural light, no logos. IMPORTANT: this full image will be shown magnified 3.4x around the exact centre, leaving only approximately the central 29% visible during the question. Make that central area contain TWO coherent diagnostic material/structural details of the named object, not the entire silhouette, not blank texture, and not a disconnected fragment. Full image reveals the complete object naturally. Rich but restrained environment palette. No lettering, logos, watermark, hands, labels, borders, collages or question marks. No ivory studio background. Physical realism and fair visual evidence matter more than decoration.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-10-08",
+  "sourceFile": "exec-36d1e8a9-461b-46a5-8105-31c83224d915.png",
+  "sourceSha256": "f48752cda97f577d3aeb6447e1d4975c03137f86559046f3f512bead42d6d6ea",
+  "file": "media/zoom/quality-400-907.webp",
+  "sha256": "2d172e7fb2526f5cda3ac1516caccb0690d168bdca438a24333dc07281966931",
+  "width": 960,
+  "height": 720,
+  "bytes": 210074,
+  "review": {
+    "status": "phone-size-reviewed",
+    "reviewedAt": "2026-10-08",
+    "method": "Original and shipped effect at phone width, including high-tier assistance; independent editorial review.",
+    "evidence": "docs/bank/quality-2026-10-08/independent-root-image-review.md",
+    "qid": "zoom-400-907"
+  }
+}

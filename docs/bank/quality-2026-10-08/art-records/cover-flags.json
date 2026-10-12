@@ -1,0 +1,29 @@
+{
+  "id": "flags",
+  "kind": "cover",
+  "file": "public/media/badeeha-covers/flags.webp",
+  "style": "editorial textile collage",
+  "palette": "navy, red, white, azure, yellow",
+  "prompt": "Create ONE premium category cover for a flag-identification quiz in Arabic game Maydan. Landscape 4:3, bold editorial textile collage with richly folded cloth against a deep navy blue spherical globe and a turquoise atmosphere. Three clearly recognizable national flags sweeping diagonally: Japan's WHITE rectangular flag with exactly ONE RED CIRCLE at centre, Switzerland's RED SQUARE with a WHITE equilateral upright cross at centre, Ukraine's horizontal BLUE upper half and YELLOW lower half. Keep all national patterns faithful and simple, no invented extra symbols. Cloth movement and layered composition, clean silhouettes legible at 160px, celebratory natural light. IMPORTANT this is about FLAGS, no faces, statues, monuments, books, blank ribbons or text. Full bleed, no ivory studio background, no logo, no watermark, no lettering.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-10-08",
+  "sourceImage": {
+    "name": "exec-ae3d20c7-32e2-445b-80ef-29d14406d6d4.png",
+    "sha256": "33f14dce0048898ec4cdec8fc1a16292c54d41ecade55647ac5a0e3eeb8b1c4c",
+    "width": 1448,
+    "height": 1086
+  },
+  "width": 640,
+  "height": 480,
+  "bytes": 65178,
+  "sha256": "4e500d02c3db04a5d5401a9996df0a9e5de78a433aa7a585f9eed3901d7910e4",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "phone-size-reviewed",
+    "date": "2026-10-08",
+    "reviewer": "root",
+    "width": 160,
+    "method": "shipped cover CSS; baseline and replacement side by side",
+    "evidence": "docs/bank/quality-2026-10-08/preview/covers-4.jpg"
+  }
+}

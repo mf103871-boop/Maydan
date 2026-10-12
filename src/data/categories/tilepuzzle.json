@@ -6,7 +6,7 @@
   "qs": [
     {
       "p": 200,
-      "q": "ما الحيوان طويل الرقبة الذي تعيد هذه القطع صورته؟",
+      "q": "ما الحيوان الذي تجمعه قطع الصورة؟",
       "a": "زرافة",
       "qid": "tilepuzzle-200-901",
       "type": "image",
@@ -17,7 +17,7 @@
       "topic": "حيوانات",
       "difficultyTarget": 0.8,
       "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-tilepuzzle-final.json",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
       "media": {
         "src": "tilepuzzle-200-901.webp",
         "type": "image",
@@ -34,7 +34,7 @@
     },
     {
       "p": 200,
-      "q": "ما الشطيرة المستديرة التي تظهر بين قطع الصورة؟",
+      "q": "ما الطعام الذي تجمعه قطع الصورة؟",
       "a": "برغر",
       "qid": "tilepuzzle-200-902",
       "type": "image",
@@ -49,7 +49,7 @@
       "topic": "أطعمة",
       "difficultyTarget": 0.8,
       "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-tilepuzzle-final.json",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
       "media": {
         "src": "tilepuzzle-200-902.webp",
         "type": "image",
@@ -66,7 +66,7 @@
     },
     {
       "p": 200,
-      "q": "ما الجهاز الذي يجمع شاشة ولوحة مفاتيح في هيكل قابل للطي؟",
+      "q": "ما الجهاز الذي تجمعه قطع الصورة؟",
       "a": "حاسوب محمول",
       "qid": "tilepuzzle-200-903",
       "type": "image",
@@ -79,7 +79,7 @@
       "topic": "أجهزة",
       "difficultyTarget": 0.8,
       "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-tilepuzzle-final.json",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
       "media": {
         "src": "tilepuzzle-200-903.webp",
         "type": "image",
@@ -96,7 +96,7 @@
     },
     {
       "p": 200,
-      "q": "ما المركبة الصفراء المخصصة لنقل الطلاب التي ترسمها القطع؟",
+      "q": "ما نوع المركبة الذي تجمعه القطع؟",
       "a": "حافلة مدرسية",
       "qid": "tilepuzzle-200-904",
       "type": "image",
@@ -110,7 +110,7 @@
       "topic": "وسائل نقل",
       "difficultyTarget": 0.8,
       "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-tilepuzzle-final.json",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
       "media": {
         "src": "tilepuzzle-200-904.webp",
         "type": "image",
@@ -127,38 +127,7 @@
     },
     {
       "p": 200,
-      "q": "ما المنشأة الرياضية ذات العشب والمدرجات التي تكوّنها هذه القطع؟",
-      "a": "ملعب كرة قدم",
-      "qid": "tilepuzzle-200-905",
-      "type": "image",
-      "effect": "jumble",
-      "alt": [
-        "استاد كرة قدم",
-        "ستاد كرة قدم",
-        "Football stadium",
-        "Soccer stadium"
-      ],
-      "topic": "أماكن",
-      "difficultyTarget": 0.8,
-      "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-tilepuzzle-final.json",
-      "media": {
-        "src": "tilepuzzle-200-905.webp",
-        "type": "image",
-        "title": "مشهد بصري للغز تركيب الصورة",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-23",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/tilepuzzle-200-905.json"
-        }
-      }
-    },
-    {
-      "p": 200,
-      "q": "ما الظاهرة ذات الألوان المقوسة التي تظهر بعد المطر؟",
+      "q": "ما الظاهرة الطبيعية التي تجمعها القطع؟",
       "a": "قوس قزح",
       "qid": "tilepuzzle-200-906",
       "type": "image",
@@ -170,7 +139,7 @@
       "topic": "طبيعة",
       "difficultyTarget": 0.8,
       "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-tilepuzzle-final.json",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
       "media": {
         "src": "tilepuzzle-200-906.webp",
         "type": "image",
@@ -187,7 +156,7 @@
     },
     {
       "p": 200,
-      "q": "ما المجموعة الإيقاعية المزودة بصنوج التي تكشفها القطع؟",
+      "q": "ما المجموعة الموسيقية التي تجمعها القطع؟",
       "a": "طقم طبول",
       "qid": "tilepuzzle-200-907",
       "type": "image",
@@ -202,7 +171,7 @@
       "topic": "موسيقى",
       "difficultyTarget": 0.8,
       "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-tilepuzzle-final.json",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
       "media": {
         "src": "tilepuzzle-200-907.webp",
         "type": "image",
@@ -219,7 +188,7 @@
     },
     {
       "p": 200,
-      "q": "ما الأداة المسطحة التي يخلط عليها الرسام أصباغه؟",
+      "q": "ما أداة الرسام التي تجمعها القطع؟",
       "a": "لوحة ألوان",
       "qid": "tilepuzzle-200-908",
       "type": "image",
@@ -235,7 +204,7 @@
       "topic": "هوايات وأدوات",
       "difficultyTarget": 0.8,
       "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-tilepuzzle-final.json",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
       "media": {
         "src": "tilepuzzle-200-908.webp",
         "type": "image",
@@ -251,8 +220,37 @@
       }
     },
     {
+      "p": 200,
+      "q": "لأيّ رياضة أُعدّ المكان في الصورة؟",
+      "a": "كرة القدم",
+      "qid": "tilepuzzle-200-921",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "Football",
+        "Soccer"
+      ],
+      "topic": "أماكن",
+      "difficultyTarget": 0.8,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
+      "media": {
+        "src": "tilepuzzle-200-905.webp",
+        "type": "image",
+        "title": "مشهد بصري للغز تركيب الصورة",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/tilepuzzle-200-905.json"
+        }
+      }
+    },
+    {
       "p": 400,
-      "q": "ما الطائر الوردي طويل الساقين الذي تعيد القطع صورته؟",
+      "q": "ما الطائر الذي تجمعه قطع الصورة؟",
       "a": "نحام",
       "qid": "tilepuzzle-400-901",
       "type": "image",
@@ -266,7 +264,7 @@
       "topic": "حيوانات",
       "difficultyTarget": 0.6,
       "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-tilepuzzle-final.json",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
       "media": {
         "src": "tilepuzzle-400-901.webp",
         "type": "image",
@@ -283,7 +281,7 @@
     },
     {
       "p": 400,
-      "q": "ما الحلوى ذات التجاويف المربعة الظاهرة بين القطع؟",
+      "q": "ما الطعام الذي تجمعه قطع الصورة؟",
       "a": "وافل",
       "qid": "tilepuzzle-400-902",
       "type": "image",
@@ -295,7 +293,7 @@
       "topic": "أطعمة",
       "difficultyTarget": 0.6,
       "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-tilepuzzle-final.json",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
       "media": {
         "src": "tilepuzzle-400-902.webp",
         "type": "image",
@@ -312,7 +310,7 @@
     },
     {
       "p": 400,
-      "q": "ما جهاز التقاط الصور ذو العدسة البارزة الذي تكشفه القطع؟",
+      "q": "ما الجهاز الذي تجمعه قطع الصورة؟",
       "a": "كاميرا",
       "qid": "tilepuzzle-400-903",
       "type": "image",
@@ -325,7 +323,7 @@
       "topic": "أجهزة",
       "difficultyTarget": 0.6,
       "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-tilepuzzle-final.json",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
       "media": {
         "src": "tilepuzzle-400-903.webp",
         "type": "image",
@@ -342,7 +340,7 @@
     },
     {
       "p": 400,
-      "q": "ما وسيلة التحليق ذات السلة المعلقة التي تتجمع صورتها؟",
+      "q": "ما وسيلة التنقل التي تجمعها القطع؟",
       "a": "منطاد",
       "qid": "tilepuzzle-400-904",
       "type": "image",
@@ -355,7 +353,7 @@
       "topic": "وسائل نقل",
       "difficultyTarget": 0.6,
       "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-tilepuzzle-final.json",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
       "media": {
         "src": "tilepuzzle-400-904.webp",
         "type": "image",
@@ -372,7 +370,7 @@
     },
     {
       "p": 400,
-      "q": "ما لعبة الملاهي التي تحمل مجسمات أحصنة على منصة دائرية؟",
+      "q": "ما لعبة الملاهي التي تجمعها القطع؟",
       "a": "دوامة خيل",
       "qid": "tilepuzzle-400-905",
       "type": "image",
@@ -386,7 +384,7 @@
       "topic": "أماكن",
       "difficultyTarget": 0.6,
       "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-tilepuzzle-final.json",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
       "media": {
         "src": "tilepuzzle-400-905.webp",
         "type": "image",
@@ -403,7 +401,7 @@
     },
     {
       "p": 400,
-      "q": "ما الظاهرة التي ترسم ستائر مضيئة في السماء قرب القطبين؟",
+      "q": "ما الظاهرة الطبيعية التي تجمعها القطع؟",
       "a": "شفق قطبي",
       "qid": "tilepuzzle-400-906",
       "type": "image",
@@ -417,7 +415,7 @@
       "topic": "طبيعة",
       "difficultyTarget": 0.6,
       "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-tilepuzzle-final.json",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
       "media": {
         "src": "tilepuzzle-400-906.webp",
         "type": "image",
@@ -434,37 +432,7 @@
     },
     {
       "p": 400,
-      "q": "ما الآلة الوترية ذات الإطار المثلث والأوتار الكثيرة بين القطع؟",
-      "a": "قيثارة",
-      "qid": "tilepuzzle-400-907",
-      "type": "image",
-      "effect": "jumble",
-      "alt": [
-        "هارب",
-        "هارپ",
-        "Harp"
-      ],
-      "topic": "موسيقى",
-      "difficultyTarget": 0.6,
-      "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-tilepuzzle-final.json",
-      "media": {
-        "src": "tilepuzzle-400-907.webp",
-        "type": "image",
-        "title": "مشهد بصري للغز تركيب الصورة",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-25",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/tilepuzzle-400-907.json"
-        }
-      }
-    },
-    {
-      "p": 400,
-      "q": "ما الأداة ذات القرص الدوار المستخدمة لتشكيل الأواني الطينية؟",
+      "q": "ما أداة الحرفة التي تجمعها القطع؟",
       "a": "دولاب فخار",
       "qid": "tilepuzzle-400-908",
       "type": "image",
@@ -478,7 +446,7 @@
       "topic": "هوايات وأدوات",
       "difficultyTarget": 0.6,
       "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-tilepuzzle-final.json",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
       "media": {
         "src": "tilepuzzle-400-908.webp",
         "type": "image",
@@ -494,8 +462,38 @@
       }
     },
     {
+      "p": 400,
+      "q": "ما الأداة العلمية التي تجمعها القطع؟",
+      "a": "تلسكوب",
+      "qid": "tilepuzzle-400-921",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "مقراب",
+        "منظار فلكي",
+        "Telescope"
+      ],
+      "topic": "هوايات وأدوات",
+      "difficultyTarget": 0.6,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
+      "media": {
+        "src": "tilepuzzle-800-908.webp",
+        "type": "image",
+        "title": "مشهد بصري للغز تركيب الصورة",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/tilepuzzle-800-908.json"
+        }
+      }
+    },
+    {
       "p": 600,
-      "q": "ما الطائر الاستوائي ذو المنقار الضخم الملون في هذه القطع؟",
+      "q": "ما الطائر الذي تجمعه قطع الصورة؟",
       "a": "طوقان",
       "qid": "tilepuzzle-600-901",
       "type": "image",
@@ -507,7 +505,7 @@
       "topic": "حيوانات",
       "difficultyTarget": 0.4,
       "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-tilepuzzle-final.json",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
       "media": {
         "src": "tilepuzzle-600-901.webp",
         "type": "image",
@@ -524,7 +522,7 @@
     },
     {
       "p": 600,
-      "q": "ما المخبوز المملح الملتف على هيئة عقدة في الصورة؟",
+      "q": "ما المخبوز الذي تجمعه قطع الصورة؟",
       "a": "بريتزل",
       "qid": "tilepuzzle-600-902",
       "type": "image",
@@ -537,7 +535,7 @@
       "topic": "أطعمة",
       "difficultyTarget": 0.4,
       "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-tilepuzzle-final.json",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
       "media": {
         "src": "tilepuzzle-600-902.webp",
         "type": "image",
@@ -554,7 +552,7 @@
     },
     {
       "p": 600,
-      "q": "ما جهاز تشغيل الأسطوانات القديم ذو البوق الكبير بين القطع؟",
+      "q": "ما الجهاز القديم الذي تجمعه القطع؟",
       "a": "غرامافون",
       "qid": "tilepuzzle-600-903",
       "type": "image",
@@ -569,7 +567,7 @@
       "topic": "أجهزة",
       "difficultyTarget": 0.4,
       "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-tilepuzzle-final.json",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
       "media": {
         "src": "tilepuzzle-600-903.webp",
         "type": "image",
@@ -586,7 +584,7 @@
     },
     {
       "p": 600,
-      "q": "ما الآلة المجنزرة ذات الذراع الطويلة والدلو التي تظهر هنا؟",
+      "q": "ما آلة العمل التي تجمعها القطع؟",
       "a": "حفارة",
       "qid": "tilepuzzle-600-904",
       "type": "image",
@@ -599,7 +597,7 @@
       "topic": "وسائل نقل",
       "difficultyTarget": 0.4,
       "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-tilepuzzle-final.json",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
       "media": {
         "src": "tilepuzzle-600-904.webp",
         "type": "image",
@@ -616,7 +614,7 @@
     },
     {
       "p": 600,
-      "q": "ما المبنى الشفاف المخصص لزراعة النباتات الظاهر بين القطع؟",
+      "q": "ما نوع المبنى الذي تجمعه القطع؟",
       "a": "بيت زجاجي",
       "qid": "tilepuzzle-600-905",
       "type": "image",
@@ -630,7 +628,7 @@
       "topic": "أماكن",
       "difficultyTarget": 0.4,
       "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-tilepuzzle-final.json",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
       "media": {
         "src": "tilepuzzle-600-905.webp",
         "type": "image",
@@ -647,7 +645,7 @@
     },
     {
       "p": 600,
-      "q": "ما الظاهرة الطبيعية التي تقذف الماء الساخن والبخار من باطن الأرض؟",
+      "q": "ما الظاهرة الطبيعية التي تجمعها القطع؟",
       "a": "نافورة حارة",
       "qid": "tilepuzzle-600-906",
       "type": "image",
@@ -662,7 +660,7 @@
       "topic": "طبيعة",
       "difficultyTarget": 0.4,
       "verified": true,
-      "sourceUrl": "https://www.nps.gov/places/000/giantess-geyser.htm",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
       "media": {
         "src": "tilepuzzle-600-906.webp",
         "type": "image",
@@ -679,35 +677,7 @@
     },
     {
       "p": 600,
-      "q": "ما الآلة الإيقاعية ذات القضبان الخشبية والأنابيب الرنانة أسفلها؟",
-      "a": "ماريمبا",
-      "qid": "tilepuzzle-600-907",
-      "type": "image",
-      "effect": "jumble",
-      "alt": [
-        "Marimba"
-      ],
-      "topic": "موسيقى",
-      "difficultyTarget": 0.4,
-      "verified": true,
-      "sourceUrl": "https://hub.yamaha.com/drums/percussion/anatomy-of-a-marimba/",
-      "media": {
-        "src": "tilepuzzle-600-907.webp",
-        "type": "image",
-        "title": "مشهد بصري للغز تركيب الصورة",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-23",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/tilepuzzle-600-907.json"
-        }
-      }
-    },
-    {
-      "p": 600,
-      "q": "ما الأداة التقليدية التي تحول ألياف الصوف إلى خيوط؟",
+      "q": "ما أداة الحرفة التي تجمعها القطع؟",
       "a": "عجلة غزل",
       "qid": "tilepuzzle-600-908",
       "type": "image",
@@ -715,13 +685,12 @@
       "alt": [
         "دولاب غزل",
         "عجلة المغزل",
-        "دولاب الغزل",
         "Spinning wheel"
       ],
       "topic": "هوايات وأدوات",
       "difficultyTarget": 0.4,
       "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-tilepuzzle-final.json",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
       "media": {
         "src": "tilepuzzle-600-908.webp",
         "type": "image",
@@ -737,8 +706,38 @@
       }
     },
     {
+      "p": 600,
+      "q": "ما الآلة الموسيقية التي تجمعها القطع؟",
+      "a": "قيثارة",
+      "qid": "tilepuzzle-600-921",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "هارب",
+        "هارپ",
+        "Harp"
+      ],
+      "topic": "موسيقى",
+      "difficultyTarget": 0.4,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
+      "media": {
+        "src": "tilepuzzle-400-907.webp",
+        "type": "image",
+        "title": "مشهد بصري للغز تركيب الصورة",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-25",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/tilepuzzle-400-907.json"
+        }
+      }
+    },
+    {
       "p": 800,
-      "q": "ما البرمائي المائي ذو الخياشيم الريشية حول رأسه في القطع؟",
+      "q": "ما الحيوان الذي تجمعه قطع الصورة؟",
       "a": "أكسولوتل",
       "qid": "tilepuzzle-800-901",
       "type": "image",
@@ -752,7 +751,7 @@
       "topic": "حيوانات",
       "difficultyTarget": 0.25,
       "verified": true,
-      "sourceUrl": "https://animals.sandiegozoo.org/animals/axolotl",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
       "media": {
         "src": "tilepuzzle-800-901.webp",
         "type": "image",
@@ -769,7 +768,7 @@
     },
     {
       "p": 800,
-      "q": "ما الفاكهة ذات القشرة البنفسجية والفصوص البيضاء التي تكشفها القطع؟",
+      "q": "ما الفاكهة التي تجمعها قطع الصورة؟",
       "a": "مانغوستين",
       "qid": "tilepuzzle-800-902",
       "type": "image",
@@ -782,7 +781,7 @@
       "topic": "أطعمة",
       "difficultyTarget": 0.25,
       "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-tilepuzzle-final.json",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
       "media": {
         "src": "tilepuzzle-800-902.webp",
         "type": "image",
@@ -799,98 +798,7 @@
     },
     {
       "p": 800,
-      "q": "ما الجهاز الميكانيكي ذو المفاتيح وبكرة الورق الظاهر بين القطع؟",
-      "a": "آلة كاتبة",
-      "qid": "tilepuzzle-800-903",
-      "type": "image",
-      "effect": "jumble",
-      "alt": [
-        "ماكينة كتابة",
-        "آلة طباعة كاتبة",
-        "Typewriter"
-      ],
-      "topic": "أجهزة",
-      "difficultyTarget": 0.25,
-      "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-tilepuzzle-final.json",
-      "media": {
-        "src": "tilepuzzle-800-903.webp",
-        "type": "image",
-        "title": "مشهد بصري للغز تركيب الصورة",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-23",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/tilepuzzle-800-903.json"
-        }
-      }
-    },
-    {
-      "p": 800,
-      "q": "ما وسيلة النقل المعلقة بكابل فوق الوادي التي تظهر هنا؟",
-      "a": "تلفريك",
-      "qid": "tilepuzzle-800-904",
-      "type": "image",
-      "effect": "jumble",
-      "alt": [
-        "تليفريك",
-        "عربة هوائية معلقة",
-        "عربة تلفريك",
-        "Aerial cable car"
-      ],
-      "topic": "وسائل نقل",
-      "difficultyTarget": 0.25,
-      "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-tilepuzzle-final.json",
-      "media": {
-        "src": "tilepuzzle-800-904.webp",
-        "type": "image",
-        "title": "مشهد بصري للغز تركيب الصورة",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-23",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/tilepuzzle-800-904.json"
-        }
-      }
-    },
-    {
-      "p": 800,
-      "q": "ما المكان الأثري ذو المقاعد نصف الدائرية المواجهة لخشبة العروض؟",
-      "a": "مسرح روماني",
-      "qid": "tilepuzzle-800-905",
-      "type": "image",
-      "effect": "jumble",
-      "alt": [
-        "مسرح أثري روماني",
-        "Roman theatre",
-        "Roman theater"
-      ],
-      "topic": "أماكن",
-      "difficultyTarget": 0.25,
-      "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-tilepuzzle-final.json",
-      "media": {
-        "src": "tilepuzzle-800-905.webp",
-        "type": "image",
-        "title": "مشهد بصري للغز تركيب الصورة",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-23",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/tilepuzzle-800-905.json"
-        }
-      }
-    },
-    {
-      "p": 800,
-      "q": "ما التكوين الطبيعي الأبيض المتشقق إلى أشكال مضلعة في الصورة؟",
+      "q": "ما التكوين الطبيعي الذي تجمعه القطع؟",
       "a": "مسطحات ملحية",
       "qid": "tilepuzzle-800-906",
       "type": "image",
@@ -904,7 +812,7 @@
       "topic": "طبيعة",
       "difficultyTarget": 0.25,
       "verified": true,
-      "sourceUrl": "https://www.nps.gov/deva/learn/nature/salt-flats.htm",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
       "media": {
         "src": "tilepuzzle-800-906.webp",
         "type": "image",
@@ -921,7 +829,7 @@
     },
     {
       "p": 800,
-      "q": "ما آلة النفخ المؤلفة من أنابيب قصب متدرجة الطول بين القطع؟",
+      "q": "ما الآلة الموسيقية التي تجمعها القطع؟",
       "a": "ناي بان",
       "qid": "tilepuzzle-800-907",
       "type": "image",
@@ -936,7 +844,7 @@
       "topic": "موسيقى",
       "difficultyTarget": 0.25,
       "verified": true,
-      "sourceUrl": "https://www.metmuseum.org/art/collection/search/501913",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
       "media": {
         "src": "tilepuzzle-800-907.webp",
         "type": "image",
@@ -953,22 +861,124 @@
     },
     {
       "p": 800,
-      "q": "ما أداة رصد النجوم ذات الأنبوب والحامل الثلاثي التي تكشفها القطع؟",
-      "a": "تلسكوب",
-      "qid": "tilepuzzle-800-908",
+      "q": "ما الجهاز القديم الذي تجمعه القطع؟",
+      "a": "عارض شفافيات",
+      "qid": "tilepuzzle-800-921",
       "type": "image",
       "effect": "jumble",
       "alt": [
-        "مقراب",
-        "منظار فلكي",
-        "Telescope"
+        "بروجكتر شفافيات",
+        "جهاز عرض الشفافيات",
+        "جهاز الإسقاط العلوي",
+        "Overhead projector"
       ],
-      "topic": "هوايات وأدوات",
+      "topic": "أجهزة",
       "difficultyTarget": 0.25,
       "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-tilepuzzle-final.json",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
       "media": {
-        "src": "tilepuzzle-800-908.webp",
+        "src": "tilepuzzle-1000-903.webp",
+        "type": "image",
+        "title": "مشهد بصري للغز تركيب الصورة",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-25",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/tilepuzzle-1000-903.json"
+        }
+      }
+    },
+    {
+      "p": 800,
+      "q": "ما مصدر الطاقة الذي يشغّل الآلية في الصورة؟",
+      "a": "الماء الجاري",
+      "qid": "tilepuzzle-800-922",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "المياه الجارية",
+        "جريان الماء",
+        "الماء",
+        "طاقة المياه",
+        "طاقة الماء",
+        "الطاقة المائية"
+      ],
+      "topic": "الآلات والطاقة",
+      "difficultyTarget": 0.25,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
+      "media": {
+        "src": "quality-watermill.webp",
+        "type": "image",
+        "title": "مشهد استنتاج بصري",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-10-08",
+          "record": "docs/bank/quality-2026-10-08/art-records/tilepuzzle-800-903.json"
+        }
+      }
+    },
+    {
+      "p": 800,
+      "q": "ما نوع الجسر الذي تكشفه القطع؟",
+      "a": "جسر قلّاب",
+      "qid": "tilepuzzle-800-923",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "جسر متحرك",
+        "جسر يفتح",
+        "جسر قابل للفتح",
+        "جسر مرفوع",
+        "جسر باسكولي",
+        "Bascule bridge",
+        "Drawbridge"
+      ],
+      "topic": "النقل والهندسة",
+      "difficultyTarget": 0.25,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
+      "media": {
+        "src": "quality-drawbridge.webp",
+        "type": "image",
+        "title": "مشهد استنتاج بصري",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-10-08",
+          "record": "docs/bank/quality-2026-10-08/art-records/tilepuzzle-800-904.json"
+        }
+      }
+    },
+    {
+      "p": 800,
+      "q": "ما نوع البناء الأثري الذي تجمعه القطع؟",
+      "a": "مسرح أثري",
+      "qid": "tilepuzzle-800-924",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "مسرح روماني",
+        "مسرح يوناني",
+        "مسرح قديم",
+        "مسرح",
+        "مدرج مسرحي",
+        "مدرج روماني",
+        "Ancient theatre"
+      ],
+      "topic": "أماكن",
+      "difficultyTarget": 0.25,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
+      "media": {
+        "src": "tilepuzzle-800-905.webp",
         "type": "image",
         "title": "مشهد بصري للغز تركيب الصورة",
         "author": "Maydan / OpenAI image generation",
@@ -977,13 +987,13 @@
           "kind": "ai-generated",
           "tool": "OpenAI image generation (built-in)",
           "createdAt": "2026-09-23",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/tilepuzzle-800-908.json"
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/tilepuzzle-800-905.json"
         }
       }
     },
     {
       "p": 1000,
-      "q": "ما الثديي ذو الحراشف المتراكبة والذيل الطويل الذي ترسمه القطع؟",
+      "q": "ما الحيوان الذي تجمعه قطع الصورة؟",
       "a": "آكل النمل الحرشفي",
       "qid": "tilepuzzle-1000-901",
       "type": "image",
@@ -997,7 +1007,7 @@
       "topic": "حيوانات",
       "difficultyTarget": 0.15,
       "verified": true,
-      "sourceUrl": "https://animals.sandiegozoo.org/animals/tree-pangolin",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
       "media": {
         "src": "tilepuzzle-1000-901.webp",
         "type": "image",
@@ -1014,7 +1024,7 @@
     },
     {
       "p": 1000,
-      "q": "ما الخضار ذات البراعم المخروطية المرتبة في لوالب متكررة؟",
+      "q": "ما نوع الخضار الذي تجمعه القطع؟",
       "a": "رومانسكو",
       "qid": "tilepuzzle-1000-902",
       "type": "image",
@@ -1027,7 +1037,7 @@
       "topic": "أطعمة",
       "difficultyTarget": 0.15,
       "verified": true,
-      "sourceUrl": "https://hort.extension.wisc.edu/articles/romanesco/",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
       "media": {
         "src": "tilepuzzle-1000-902.webp",
         "type": "image",
@@ -1044,38 +1054,7 @@
     },
     {
       "p": 1000,
-      "q": "ما جهاز العرض القديم ذو القاعدة المضيئة والذراع المرتفعة؟",
-      "a": "عارض شفافيات",
-      "qid": "tilepuzzle-1000-903",
-      "type": "image",
-      "effect": "jumble",
-      "alt": [
-        "بروجكتر شفافيات",
-        "جهاز عرض الشفافيات",
-        "جهاز الإسقاط العلوي",
-        "Overhead projector"
-      ],
-      "topic": "أجهزة",
-      "difficultyTarget": 0.15,
-      "verified": true,
-      "sourceUrl": "https://collection.sciencemuseumgroup.org.uk/objects/co4527/an-overhead-projector-master-view-graph-by-international-tutor-machines",
-      "media": {
-        "src": "tilepuzzle-1000-903.webp",
-        "type": "image",
-        "title": "مشهد بصري للغز تركيب الصورة",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-25",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/tilepuzzle-1000-903.json"
-        }
-      }
-    },
-    {
-      "p": 1000,
-      "q": "ما المركبة ذات الوسادة الهوائية والحافة المرنة التي تكشفها القطع؟",
+      "q": "ما نوع المركبة التي تجمعها القطع؟",
       "a": "حوامة",
       "qid": "tilepuzzle-1000-904",
       "type": "image",
@@ -1088,7 +1067,7 @@
       "topic": "وسائل نقل",
       "difficultyTarget": 0.15,
       "verified": true,
-      "sourceUrl": "https://www.griffonhoverwork.com/products/hovercraft/how-hovercraft-work/",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
       "media": {
         "src": "tilepuzzle-1000-904.webp",
         "type": "image",
@@ -1105,7 +1084,7 @@
     },
     {
       "p": 1000,
-      "q": "ما البناء التقليدي المرتفع الذي يوجه الهواء لتبريد الغرف؟",
+      "q": "ما العنصر المعماري الذي تجمعه القطع؟",
       "a": "برج رياح",
       "qid": "tilepuzzle-1000-905",
       "type": "image",
@@ -1121,7 +1100,7 @@
       "topic": "أماكن",
       "difficultyTarget": 0.15,
       "verified": true,
-      "sourceUrl": "https://www.dubaidet.gov.ae/-/media/dotsite/migrated/pdfs/2019/01/january-2019/72-hours-in-dubai-ar.pdf?la=ar",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
       "media": {
         "src": "tilepuzzle-1000-905.webp",
         "type": "image",
@@ -1138,7 +1117,7 @@
     },
     {
       "p": 1000,
-      "q": "ما التكوين الصخري المؤلف من منشورات داكنة متجاورة في الصورة؟",
+      "q": "ما التكوين الصخري الذي تجمعه القطع؟",
       "a": "أعمدة بازلتية",
       "qid": "tilepuzzle-1000-906",
       "type": "image",
@@ -1152,7 +1131,7 @@
       "topic": "طبيعة",
       "difficultyTarget": 0.15,
       "verified": true,
-      "sourceUrl": "https://www.nps.gov/subjects/volcanoes/columnar-jointing.htm",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
       "media": {
         "src": "tilepuzzle-1000-906.webp",
         "type": "image",
@@ -1169,7 +1148,7 @@
     },
     {
       "p": 1000,
-      "q": "ما الآلة المعدنية المحدبة ذات التجاويف النغمية حول مركز بارز؟",
+      "q": "ما الآلة الموسيقية التي تجمعها القطع؟",
       "a": "هاندبان",
       "qid": "tilepuzzle-1000-907",
       "type": "image",
@@ -1181,7 +1160,7 @@
       "topic": "موسيقى",
       "difficultyTarget": 0.15,
       "verified": true,
-      "sourceUrl": "https://meinlsonicenergy.com/en/wiki",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
       "media": {
         "src": "tilepuzzle-1000-907.webp",
         "type": "image",
@@ -1198,9 +1177,9 @@
     },
     {
       "p": 1000,
-      "q": "ما الأداة الفلكية القديمة ذات القرص المدرج والشبكة الدوارة؟",
+      "q": "ما الأداة التاريخية التي تجمعها القطع؟",
       "a": "أسطرلاب",
-      "qid": "tilepuzzle-1000-908",
+      "qid": "tilepuzzle-1000-921",
       "type": "image",
       "effect": "jumble",
       "alt": [
@@ -1211,9 +1190,37 @@
       "topic": "هوايات وأدوات",
       "difficultyTarget": 0.15,
       "verified": true,
-      "sourceUrl": "https://www.rmg.co.uk/collections/objects/rmgc-object-10720",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/451699",
       "media": {
-        "src": "tilepuzzle-1000-908.webp",
+        "src": "quality-astrolabe-met.webp",
+        "type": "image",
+        "title": "Planispheric Astrolabe, MET 63.166a–j",
+        "author": "Muhammad Zaman al-Munajjim al-Asturlabi / The Metropolitan Museum of Art",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Planispheric_Astrolabe_MET_DP105325.jpg",
+        "license": "CC0 1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "ما وظيفة الأنابيب المعلّقة أسفل الآلة؟",
+      "a": "تضخيم الصوت",
+      "qid": "tilepuzzle-1000-922",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "تقوية الصوت",
+        "تعزيز الصوت",
+        "زيادة شدة الصوت",
+        "تضخيم صوت القضبان",
+        "تقوية صوت القضبان"
+      ],
+      "topic": "موسيقى",
+      "difficultyTarget": 0.15,
+      "verified": true,
+      "sourceUrl": "https://hub.yamaha.com/drums/percussion/anatomy-of-a-marimba/",
+      "media": {
+        "src": "tilepuzzle-600-907.webp",
         "type": "image",
         "title": "مشهد بصري للغز تركيب الصورة",
         "author": "Maydan / OpenAI image generation",
@@ -1221,8 +1228,8 @@
         "provenance": {
           "kind": "ai-generated",
           "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-25",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/tilepuzzle-1000-908.json"
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/tilepuzzle-600-907.json"
         }
       }
     }

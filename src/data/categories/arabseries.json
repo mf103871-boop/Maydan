@@ -30,13 +30,12 @@
       "qid": "arabseries-200-913",
       "p": 200,
       "topic": "الروابي",
-      "q": "في الموسم الأول من «مدرسة الروابي للبنات»، ما اسم الطالبة الجديدة التي تتحالف مع البطلة ضد المتنمرات؟",
+      "q": "في الموسم الأول من «مدرسة الروابي للبنات»، من الطالبة الجديدة التي تتحالف مع مريم ضد المتنمرات؟",
       "a": "نوف",
       "alt": [
-        "نواف",
         "Noaf"
       ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/AlRawabi_School_for_Girls",
+      "sourceUrl": "https://www.netflix.com/title/81034661",
       "verified": true,
       "difficultyTarget": 0.8
     },
@@ -55,10 +54,10 @@
       "qid": "arabseries-200-915",
       "p": 200,
       "topic": "ما وراء الطبيعة",
-      "q": "في مسلسل «ما وراء الطبيعة»، ما اسم الطفلة الشبح المرتبطة بذكريات الطبيب وبيت الخضراوي؟",
+      "q": "في «ما وراء الطبيعة»، من يطاردها رفعت في متاهة أحلامه معتقدًا أنها وراء مآسيه؟",
       "a": "شيراز",
       "alt": [],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Paranormal_(TV_series)",
+      "sourceUrl": "https://www.netflix.com/title/80214886",
       "verified": true,
       "difficultyTarget": 0.8
     },
@@ -92,7 +91,8 @@
       "a": "غنيمة",
       "sourceUrl": "https://elcinema.com/work/2042472/episodes",
       "verified": true,
-      "difficultyTarget": 0.8
+      "difficultyTarget": 0.8,
+      "alt": []
     },
     {
       "qid": "arabseries-400-911",
@@ -128,7 +128,7 @@
       "qid": "arabseries-400-913",
       "p": 400,
       "topic": "العاصوف",
-      "q": "في «العاصوف»، ما اسم الفتاة التي يتزوجها خالد ويحبها قبل زواجه؟",
+      "q": "في «العاصوف»، من حبيبة خالد التي يتزوجها؟",
       "a": "جهير",
       "alt": [],
       "sourceUrl": "https://elcinema.com/work/2009970/episodes",
@@ -139,13 +139,13 @@
       "qid": "arabseries-400-914",
       "p": 400,
       "topic": "ما وراء الطبيعة",
-      "q": "في مسلسل «ما وراء الطبيعة»، ما التخصص الطبي الذي يعمل به البطل؟",
+      "q": "في «ما وراء الطبيعة»، ما تخصص رفعت الطبي قبل التحقيق في الأحداث الخارقة؟",
       "a": "أمراض الدم",
       "alt": [
         "علم الدم",
         "طب الدم"
       ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Paranormal_(TV_series)",
+      "sourceUrl": "https://www.netflix.com/title/80214886",
       "verified": true,
       "difficultyTarget": 0.6
     },
@@ -157,18 +157,8 @@
       "a": "آدم",
       "sourceUrl": "https://elcinema.com/work/2056050/episodes",
       "verified": true,
-      "difficultyTarget": 0.6
-    },
-    {
-      "qid": "arabseries-400-916",
-      "p": 400,
-      "topic": "الهيبة",
-      "q": "في الموسم الأول من «الهيبة»، من ابن العم الذي يتعاون مع كبير العائلة للإيقاع بدريد؟",
-      "a": "شاهين",
-      "alt": [],
-      "sourceUrl": "https://elcinema.com/work/2030474/episodes",
-      "verified": true,
-      "difficultyTarget": 0.6
+      "difficultyTarget": 0.6,
+      "alt": []
     },
     {
       "qid": "arabseries-400-917",
@@ -176,9 +166,10 @@
       "topic": "الروابي",
       "q": "في الموسم الأول من «مدرسة الروابي للبنات»، من المتنمرة التي تُستهدف أولًا بفضيحة خلال اليوم المفتوح؟",
       "a": "رقية",
-      "sourceUrl": "https://en.wikipedia.org/wiki/AlRawabi_School_for_Girls",
+      "sourceUrl": "https://www.netflix.com/title/81034661",
       "verified": true,
-      "difficultyTarget": 0.6
+      "difficultyTarget": 0.6,
+      "alt": []
     },
     {
       "qid": "arabseries-400-918",
@@ -188,6 +179,21 @@
       "a": "كرم",
       "alt": [],
       "sourceUrl": "https://elcinema.com/work/2076120/episodes",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "arabseries-400-921",
+      "p": 400,
+      "topic": "رشاش",
+      "q": "في نهاية مسلسل «رشاش»، ما الذي يدفع شريك زعيم العصابة إلى تسليمه للشرطة؟",
+      "a": "مكافأة مالية",
+      "alt": [
+        "جائزة مالية",
+        "المال",
+        "مكافأة"
+      ],
+      "sourceUrl": "https://elcinema.com/work/2067733/episodes",
       "verified": true,
       "difficultyTarget": 0.6
     },
@@ -235,7 +241,7 @@
       "alt": [
         "سكوتلندا"
       ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Paranormal_(TV_series)",
+      "sourceUrl": "https://www.netflix.com/title/80214886",
       "verified": true,
       "difficultyTarget": 0.4
     },
@@ -282,21 +288,6 @@
       "sourceUrl": "https://elcinema.com/work/2042472/episodes",
       "verified": true,
       "difficultyTarget": 0.4
-    },
-    {
-      "qid": "arabseries-800-911",
-      "p": 800,
-      "topic": "رشاش",
-      "q": "في نهاية مسلسل «رشاش»، ما الذي يدفع شريك زعيم العصابة إلى تسليمه للشرطة؟",
-      "a": "مكافأة مالية",
-      "alt": [
-        "جائزة مالية",
-        "المال",
-        "مكافأة"
-      ],
-      "sourceUrl": "https://elcinema.com/work/2067733/episodes",
-      "verified": true,
-      "difficultyTarget": 0.25
     },
     {
       "qid": "arabseries-800-912",
@@ -363,9 +354,7 @@
       "topic": "ساق البامبو",
       "q": "في «ساق البامبو»، على هيئة أي حيوان كانت الهدية الصغيرة التي قدمتها نور لعيسى؟",
       "a": "سلحفاة",
-      "alt": [
-        "السلحفاة"
-      ],
+      "alt": [],
       "sourceUrl": "https://elcinema.com/work/2042472/episodes",
       "qid": "arabseries-800-917",
       "p": 800,
@@ -379,11 +368,22 @@
       "alt": [
         "صحراء ليبيا"
       ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Paranormal_(TV_series)",
+      "sourceUrl": "https://www.netflix.com/title/80214886",
       "qid": "arabseries-800-918",
       "p": 800,
       "difficultyTarget": 0.25,
       "verified": true
+    },
+    {
+      "qid": "arabseries-800-921",
+      "p": 800,
+      "topic": "الهيبة",
+      "q": "في الموسم الأول من «الهيبة»، من ابن العم الذي يتعاون مع كبير العائلة للإيقاع بدريد؟",
+      "a": "شاهين",
+      "alt": [],
+      "sourceUrl": "https://elcinema.com/work/2030474/episodes",
+      "verified": true,
+      "difficultyTarget": 0.25
     },
     {
       "topic": "الهيبة",
@@ -409,7 +409,7 @@
     },
     {
       "topic": "الثمن",
-      "q": "في «الثمن»، من المرأة التي تمنعها موافقة زوجها البنكية من دفع تكاليف علاج ابن سارة؟",
+      "q": "في «الثمن»، من تعجز عن دفع علاج ابن سارة لأن حسابها البنكي يحتاج موافقة زوجها؟",
       "a": "نادية",
       "alt": [],
       "sourceUrl": "https://elcinema.com/work/2076120/episodes",

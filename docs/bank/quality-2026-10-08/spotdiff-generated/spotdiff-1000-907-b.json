@@ -1,0 +1,88 @@
+{
+  "pack": "spotdiff",
+  "oldQid": "spotdiff-1000-907",
+  "side": "b",
+  "createdAt": "2026-10-08",
+  "kind": "ai-generated",
+  "tool": "OpenAI image generation (built-in)",
+  "mode": "edit",
+  "prompt": "Use case: precise-object-edit. Input is the exact original A for a one-difference game. Change only ONE feature on the pale cuff in the lower middle-right: rotate the LOWER of its two burgundy buttonholes exactly ninety degrees, making this lower slit vertical while keeping its center, size, burgundy color, outline stitching and proportions. The upper slit remains horizontal and entirely unchanged. Do not add or remove holes; still exactly TWO. Keep every other shirt seam, button, pocket, fabric hatch, measuring tape tick, scissors, pin, spool, button dish, paper pattern, shading, color and framing identical. Same landscape4:3 image. No circles, annotations, text or border.",
+  "asset": "media/spotdiff/spotdiff-1000-907-b-q20261008.webp",
+  "generatedOriginal": "C:\\Users\\user\\.codex\\generated_images\\01a11a56-e9d4-7570-aca6-dec9cf1d8f58\\exec-47311ad4-d669-4e0c-932e-03193b9db0f6.png",
+  "inputImages": [
+    "C:\\Users\\user\\.codex\\generated_images\\01a11a56-e9d4-7570-aca6-dec9cf1d8f58\\exec-103ffb54-382b-40ff-97c8-2176d74ec99b.png"
+  ],
+  "review": {
+    "status": "phone-size-reviewed",
+    "originalCompared": true,
+    "displayedEffect": "Side-by-side unfiltered originals; reveal circle only. Stacked below 359px viewport.",
+    "difference": "The lower cuff buttonhole rotates from horizontal to vertical; upper buttonhole remains horizontal; exactly two buttonholes remain.",
+    "answer": "تغيّر اتجاه عروة الكم السفلية",
+    "spot": {
+      "x": 64.7,
+      "y": 70.9,
+      "r": 4.5
+    },
+    "semanticDifferenceCount": 1,
+    "invariantsReviewed": [
+      "upper cuff buttonhole",
+      "four placket buttons",
+      "shirt pocket and seams",
+      "four dish buttons",
+      "two spools",
+      "scissors",
+      "pincushion pins",
+      "measuring tape and patterns",
+      "fabric placement and palette"
+    ],
+    "mobileDeviceQA": false,
+    "browserDisplayQA": {
+      "usedShippedCSS": true,
+      "source": "src/games/badeeha/styles.css",
+      "markupMatches": "App.js .m-diff/.m-diff-frame with physical left/top circle",
+      "viewports": [
+        390,
+        350
+      ],
+      "imageWidths": [
+        173,
+        316
+      ],
+      "views": [
+        "side-by-side before reveal",
+        "side-by-side with reveal",
+        "stacked before reveal",
+        "stacked with reveal"
+      ],
+      "evidence": [
+        ".cache/badeeha-quality/spotdiff-shape/spotdiff-1000-907-390.png",
+        ".cache/badeeha-quality/spotdiff-shape/spotdiff-1000-907-350.png"
+      ],
+      "reviewer": "shape_visual_audit",
+      "notes": "One semantic difference confirmed; generated texture variations do not add an identifiable object/count/layout difference. Diagnostic browser rendering, not on-device iPhone QA."
+    },
+    "reviewedAt": "2026-10-12",
+    "reviewer": "finish_spotdiff",
+    "imageWidthCSS": 173,
+    "evidence": "docs/bank/quality-2026-10-08/preview/spotdiff-10.png"
+  },
+  "packaging": "Uniform proportional resize to1280x960 and WebP encoding only; every scene edit made by built-in imagegen.",
+  "sha256": "90ed9873d7ae6b19865bdacdf5f1849a8a2762c9b0ac8b82921d897f3f459280",
+  "bytes": 250266,
+  "width": 1280,
+  "height": 960,
+  "generatedOriginalSha256": "4943f517d5c61d525a099865b2c6a800403c51e52cdbfa76dd879b40aa08df09",
+  "packagingReview": {
+    "date": "2026-10-12",
+    "file": "media/spotdiff/spotdiff-1000-907-b-q20261008.webp",
+    "beforeBytes": 272342,
+    "bytes": 250266,
+    "beforeSha256": "71a39b6853184206d539b1701d8cbb26dcdf4dce713115d0ae3370a610a1907b",
+    "sha256": "90ed9873d7ae6b19865bdacdf5f1849a8a2762c9b0ac8b82921d897f3f459280",
+    "quality": 80,
+    "dimensionsUnchanged": true,
+    "operation": "WebP encoding only; no scene edit",
+    "phoneReview": "phone-size-reviewed-after-compression",
+    "reviewRecord": "docs/bank/quality-2026-10-08/postcompression-review.json"
+  }
+}

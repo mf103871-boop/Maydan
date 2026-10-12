@@ -1,0 +1,31 @@
+{
+  "date": "2026-10-08",
+  "jobs": [
+    {
+      "id": "blur-400-904",
+      "pack": "blur",
+      "a": "بوق",
+      "alt": [
+        "ترومبيت",
+        "ترومبت"
+      ],
+      "file": "media/blur/quality-400-904.webp",
+      "prompt": "Edit target: the referenced brass trumpet photograph. Preserve exactly the same structurally correct trumpet and 4:3 landscape composition. Change the dark purple background and bench to a simple matte pale cool cyan studio surface and background. Use bright even daylight fill so the entire gold body forms a strong, well-lit solid silhouette, including the coiled tubing, three raised valves, and large bell at the right. Keep the trumpet large, fully in frame. This is a recognition puzzle viewed with 16px blur at 366px width: strong warm-gold versus pale-cyan separation must survive blur. No text, other objects, or logos.",
+      "status": "generated-installed",
+      "record": "docs/bank/quality-2026-10-08/art-records/blur-400-904.json"
+    },
+    {
+      "id": "blur-1000-907",
+      "pack": "blur",
+      "a": "رمي المطرقة",
+      "alt": [
+        "مسابقة رمي المطرقة",
+        "إطاحة المطرقة"
+      ],
+      "file": "media/blur/quality-1000-907.webp",
+      "prompt": "Create ONE landscape 4:3 precise sports equipment photograph. Show a correct athletics throwing hammer resting on clean dark red rubber at the edge of a throwing circle: a large polished steel spherical weight at lower left, attached to one straight slender steel wire which leads diagonally to a clearly visible triangular rigid metal hand grip at upper right. Ball and triangular grip each prominent, separated by the long taut wire, all of implement inside frame. Behind, soft background throwing cage green mesh and green field. No person, no workshop hammer, no handle attached directly to ball, no chains. Strong silver vs burgundy contrast, natural stadium daylight. Needs recognisable large sphere AND triangular grip when the photo is blurred at 16px on a 360px-wide phone. No labels, text or watermark.",
+      "status": "rejected-not-shipped",
+      "reason": "Hammer-throw wire and grip disappear after blur, leaving insufficient evidence; replaced with water polo."
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "pack": "spotdiff",
+  "oldQid": "spotdiff-200-903",
+  "side": "b",
+  "createdAt": "2026-10-08",
+  "kind": "ai-generated",
+  "tool": "OpenAI image generation (built-in)",
+  "mode": "edit",
+  "prompt": "Use case: precise-object-edit. Asset type: the B photo for a mobile spot-the-difference puzzle. Input image is the exact A photo to edit, not just inspiration. Output one landscape 4:3 image at the original composition and framing.\nMake exactly ONE semantic change: add one clearly visible raised terracotta horizontal band around the middle of the flowerpot below its existing wide upper rim. Place this new single clay band around the pot at about 62% of image height, covering only the pot's front and sides; its color matches the pot. It should be a 2 cm wide distinct ridge, readable at thumbnail size. Keep the existing upper pot rim untouched.\nSTRICT INVARIANTS: keep the fern and ALL its leaves and stems identical; keep the blue watering can blue and absolutely identical including both handles, spout, holes, lid, ridges and position; keep the knitted glove, its fingers, stone ground, wall, textures, shadows and framing identical. Do not add any other object. No color changes. No text, marks, border or watermark. Preserve the original photo pixels everywhere outside the added terracotta band.",
+  "asset": "media/spotdiff/spotdiff-200-903-b-q20261008.webp",
+  "sha256": "878b0009da3b34264517521799705b2b002019f161b1b9808747b672fbc5932f",
+  "inputSHA": "20db8af44a1613a9aa08d3317aac9cb78c1f8202ea5cdce86a4ed9fe1b566c47",
+  "outputSHA": "878b0009da3b34264517521799705b2b002019f161b1b9808747b672fbc5932f",
+  "rawOutputSHA": "1f485f0a8df9edb299f42c2582720b84033c99c9aff301cec7d17ed20b491243",
+  "rawGeneratedFile": "exec-4dad7511-f520-40a5-a6b4-7b2ccba0c17e.png",
+  "bytes": 151282,
+  "width": 1280,
+  "height": 960,
+  "inputImages": [
+    {
+      "file": "media/spotdiff/spotdiff-200-903-a.webp",
+      "sha256": "20db8af44a1613a9aa08d3317aac9cb78c1f8202ea5cdce86a4ed9fe1b566c47"
+    }
+  ],
+  "diff": {
+    "description": "A new raised terracotta band encircles the flowerpot below its original upper rim.",
+    "answer": "شريط إضافي حول الأصيص",
+    "spot": {
+      "x": 20,
+      "y": 59,
+      "r": 14
+    },
+    "coordinates": "x is measured from physical left; y from top; r is a percentage of image width"
+  },
+  "invariants": [
+    "fern leaves and plant count",
+    "blue watering can and its handles/spout/rose",
+    "knitted glove fingers",
+    "pot upper rim",
+    "stone floor and wall",
+    "camera framing and colors"
+  ],
+  "review": {
+    "status": "phone-size-reviewed",
+    "originalCompared": true,
+    "oldAAndOldBViewed": true,
+    "semanticDifferenceCount": 1,
+    "invariantsReviewed": [
+      "fern leaves and plant count",
+      "blue watering can and its handles/spout/rose",
+      "knitted glove fingers",
+      "pot upper rim",
+      "stone floor and wall",
+      "camera framing and colors"
+    ],
+    "displayedEffect": "Unfiltered original A and edited B side-by-side; physical-left reveal circle only",
+    "mobileDeviceQA": false,
+    "limitation": "AI re-encoding produces minor texture variation. Review checks one meaningful object difference, preserved counts, colors and geometry; exact outside-region pixel identity is not claimed.",
+    "reviewedAt": "2026-10-12",
+    "reviewer": "finish_spotdiff",
+    "imageWidthCSS": 173,
+    "evidence": "docs/bank/quality-2026-10-08/preview/spotdiff-01.png"
+  },
+  "mobileQA": {
+    "method": "Viewed rendered pairs at 175px per image and vertically stacked originals at 359px width, then viewed circles over both A and B.",
+    "sideBySideImageWidth": 175,
+    "stackedImageWidth": 359,
+    "differenceVisible": true,
+    "circleEnclosesDifferenceInBothImages": true,
+    "physicalLeftCoordinates": true,
+    "deviceTested": false,
+    "artifacts": [
+      ".cache/badeeha-quality/spotdiff-eight-qa/spotdiff-200-903-175.png",
+      ".cache/badeeha-quality/spotdiff-eight-qa/spotdiff-200-903-359.png",
+      ".cache/badeeha-quality/spotdiff-eight-qa/spotdiff-200-903-circle175.png"
+    ]
+  },
+  "packaging": "Uniform landscape resize to 1280x960 and WebP quality 85 only; all scene changes made by built-in imagegen. Original A unchanged."
+}

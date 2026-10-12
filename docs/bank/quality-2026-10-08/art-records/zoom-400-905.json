@@ -1,0 +1,20 @@
+{
+  "id": "zoom-400-905",
+  "prompt": "Create ONE landscape 4:3 high fidelity photographic puzzle image for an Arabic game for ages 16+. A table tennis paddle tilted on its side on a deep blue playing table. Centre shows the layered plywood edge meeting red textured rubber; a little handle visible lower right. Entire paddle visible, sports sidelight, realistic material. IMPORTANT: this full image will be shown magnified 3.4x around the exact centre, leaving only approximately the central 29% visible during the question. Make that central area contain TWO coherent diagnostic material/structural details of the named object, not the entire silhouette, not blank texture, and not a disconnected fragment. Full image reveals the complete object naturally. Rich but restrained environment palette. No lettering, logos, watermark, hands, labels, borders, collages or question marks. No ivory studio background. Physical realism and fair visual evidence matter more than decoration.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-10-08",
+  "sourceFile": "exec-d7800d01-915d-4520-95d3-d2bf9fa071bd.png",
+  "sourceSha256": "836f53bc6ffb5b109b36c5dd7acd9486117f46c8ff734471de8057400dbfd57e",
+  "file": "media/zoom/quality-400-905.webp",
+  "sha256": "3b2318167b61a334f3b7def3736fc612dd92ac04a34ef258b80dcc123da38158",
+  "width": 960,
+  "height": 720,
+  "bytes": 91546,
+  "review": {
+    "status": "phone-size-reviewed",
+    "reviewedAt": "2026-10-08",
+    "method": "Original and shipped effect at phone width, including high-tier assistance; independent editorial review.",
+    "evidence": "docs/bank/quality-2026-10-08/independent-root-image-review.md",
+    "qid": "zoom-400-905"
+  }
+}

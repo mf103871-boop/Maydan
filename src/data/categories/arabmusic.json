@@ -11,7 +11,8 @@
       "sourceUrl": "https://music.apple.com/us/song/770937661",
       "qid": "arabmusic-200-911",
       "difficultyTarget": 0.8,
-      "verified": true
+      "verified": true,
+      "alt": []
     },
     {
       "p": 200,
@@ -21,7 +22,8 @@
       "sourceUrl": "https://www.maqamworld.com/en/instr/accordion.php",
       "qid": "arabmusic-200-912",
       "difficultyTarget": 0.8,
-      "verified": true
+      "verified": true,
+      "alt": []
     },
     {
       "p": 200,
@@ -31,7 +33,8 @@
       "sourceUrl": "https://music.apple.com/us/album/youm-wara-youm/771786474",
       "qid": "arabmusic-200-913",
       "difficultyTarget": 0.8,
-      "verified": true
+      "verified": true,
+      "alt": []
     },
     {
       "p": 200,
@@ -41,7 +44,8 @@
       "sourceUrl": "https://www.unrwa.org/newsroom/press-releases/unrwa-commissioner-general-welcomes-singer-mohammad-assaf-unrwa-headquarters",
       "qid": "arabmusic-200-914",
       "difficultyTarget": 0.8,
-      "verified": true
+      "verified": true,
+      "alt": []
     },
     {
       "p": 200,
@@ -51,7 +55,8 @@
       "sourceUrl": "https://amrdiab.net/biography/",
       "qid": "arabmusic-200-915",
       "difficultyTarget": 0.8,
-      "verified": true
+      "verified": true,
+      "alt": []
     },
     {
       "p": 200,
@@ -59,9 +64,7 @@
       "q": "ما اللون الغنائي الجزائري الذي اشتهر به صاحب أغنية «ديدي»؟",
       "a": "الراي",
       "sourceUrl": "https://universalmusic.fr/artistes/20000129953",
-      "alt": [
-        "راي"
-      ],
+      "alt": [],
       "qid": "arabmusic-200-916",
       "difficultyTarget": 0.8,
       "verified": true
@@ -69,12 +72,11 @@
     {
       "p": 200,
       "topic": "قوالب غنائية وآلية",
-      "q": "ماذا يسمى الارتجال المنفرد على آلة موسيقية لاستعراض المقام ومهارة العازف؟",
+      "q": "عازف يستعرض المقام منفردًا بارتجال على آلته؛ ما اسم هذا الأداء؟",
       "a": "التقسيم",
       "sourceUrl": "https://www.maqamworld.com/en/form/improv.php",
       "alt": [
-        "تقاسيم",
-        "تقسيم"
+        "تقاسيم"
       ],
       "qid": "arabmusic-200-917",
       "difficultyTarget": 0.8,
@@ -87,7 +89,6 @@
       "a": "الريشة",
       "sourceUrl": "https://www.maqamworld.com/en/instr/oud.php",
       "alt": [
-        "ريشة",
         "مضراب"
       ],
       "qid": "arabmusic-200-918",
@@ -102,7 +103,8 @@
       "sourceUrl": "https://souad-massi.com/en/biography/",
       "qid": "arabmusic-400-911",
       "difficultyTarget": 0.6,
-      "verified": true
+      "verified": true,
+      "alt": []
     },
     {
       "p": 400,
@@ -126,7 +128,8 @@
       "sourceUrl": "https://oe1.orf.at/programm/20251005/809921/Ziad-Rahbani-Nicht-nur-der-Sohn",
       "qid": "arabmusic-400-913",
       "difficultyTarget": 0.6,
-      "verified": true
+      "verified": true,
+      "alt": []
     },
     {
       "p": 400,
@@ -136,7 +139,8 @@
       "sourceUrl": "https://www.maqamworld.com/en/instr/qanun.php",
       "qid": "arabmusic-400-914",
       "difficultyTarget": 0.6,
-      "verified": true
+      "verified": true,
+      "alt": []
     },
     {
       "p": 400,
@@ -181,12 +185,10 @@
     {
       "p": 400,
       "topic": "قوالب غنائية وآلية",
-      "q": "ما القالب الغنائي القصير الذي تتناوب فيه الكوبليهات مع مذهب متكرر؟",
+      "q": "كوبليهات تتناوب مع مذهب يتكرر في قالب غنائي قصير؛ ما القالب؟",
       "a": "الطقطوقة",
       "sourceUrl": "https://www.maqamworld.com/en/form/vocal_comp.php",
-      "alt": [
-        "طقطوقة"
-      ],
+      "alt": [],
       "qid": "arabmusic-400-918",
       "difficultyTarget": 0.6,
       "verified": true
@@ -212,7 +214,8 @@
       "sourceUrl": "https://www.film-foundation.org/trances-kj",
       "qid": "arabmusic-600-912",
       "difficultyTarget": 0.4,
-      "verified": true
+      "verified": true,
+      "alt": []
     },
     {
       "p": 600,
@@ -235,7 +238,8 @@
       "sourceUrl": "https://dokanbach.com/product/saalouny-elnas-%D8%B3%D8%A7%D9%84%D9%88%D9%86%D9%8A-%D8%A7%D9%84%D9%86%D8%A7%D8%B3/",
       "qid": "arabmusic-600-914",
       "difficultyTarget": 0.4,
-      "verified": true
+      "verified": true,
+      "alt": []
     },
     {
       "p": 600,
@@ -258,7 +262,8 @@
       "sourceUrl": "https://www.maqamworld.com/en/instr/violin.php",
       "qid": "arabmusic-600-916",
       "difficultyTarget": 0.4,
-      "verified": true
+      "verified": true,
+      "alt": []
     },
     {
       "p": 600,
@@ -276,12 +281,10 @@
     {
       "p": 600,
       "topic": "قوالب غنائية وآلية",
-      "q": "ما اسم المقدمة الآلية القصيرة المتكررة التي تعرّف بالمقام قبل الغناء؟",
+      "q": "مقدمة آلية قصيرة متكررة تعرف بالمقام قبل الغناء؛ ما اسمها؟",
       "a": "الدولاب",
       "sourceUrl": "https://www.maqamworld.com/en/form/instr_comp.php",
-      "alt": [
-        "دولاب"
-      ],
+      "alt": [],
       "qid": "arabmusic-600-918",
       "difficultyTarget": 0.4,
       "verified": true
@@ -294,7 +297,8 @@
       "sourceUrl": "https://www.maqamworld.com/en/form/vocal_comp.php",
       "qid": "arabmusic-800-911",
       "difficultyTarget": 0.25,
-      "verified": true
+      "verified": true,
+      "alt": []
     },
     {
       "p": 800,
@@ -304,7 +308,8 @@
       "sourceUrl": "https://www.maqamworld.com/en/form/ottoman.php",
       "qid": "arabmusic-800-912",
       "difficultyTarget": 0.25,
-      "verified": true
+      "verified": true,
+      "alt": []
     },
     {
       "p": 800,
@@ -314,7 +319,8 @@
       "sourceUrl": "https://www.maqamworld.com/en/instr/nay.php",
       "qid": "arabmusic-800-913",
       "difficultyTarget": 0.25,
-      "verified": true
+      "verified": true,
+      "alt": []
     },
     {
       "p": 800,
@@ -324,7 +330,8 @@
       "sourceUrl": "https://www.maqamworld.com/en/instr/org.php",
       "qid": "arabmusic-800-914",
       "difficultyTarget": 0.25,
-      "verified": true
+      "verified": true,
+      "alt": []
     },
     {
       "p": 800,
@@ -332,9 +339,7 @@
       "q": "ما القالب الآلي العثماني الأصل الذي يُعرف بسرعته، ومن أمثلته «فرحفزا» للسنباطي؟",
       "a": "اللونجا",
       "sourceUrl": "https://www.maqamworld.com/en/form/ottoman.php",
-      "alt": [
-        "لونجا"
-      ],
+      "alt": [],
       "qid": "arabmusic-800-915",
       "difficultyTarget": 0.25,
       "verified": true
@@ -360,17 +365,17 @@
       "verified": true,
       "p": 800,
       "qid": "arabmusic-800-917",
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.25,
+      "alt": []
     },
     {
       "p": 800,
       "topic": "مقامات وإيقاعات",
-      "q": "ما الإيقاع العشري الذي تُبنى عليه الخانات الثلاث الأولى في قالب السماعي؟",
+      "q": "الخانات الثلاث الأولى للسماعي تبنى على إيقاع عشري؛ ما اسمه؟",
       "a": "السماعي الثقيل",
       "sourceUrl": "https://www.maqamworld.com/en/form/ottoman.php",
       "alt": [
-        "إيقاع السماعي الثقيل",
-        "سماعي ثقيل"
+        "إيقاع السماعي الثقيل"
       ],
       "qid": "arabmusic-800-918",
       "difficultyTarget": 0.25,
@@ -384,7 +389,8 @@
       "verified": true,
       "p": 1000,
       "qid": "arabmusic-1000-911",
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.15,
+      "alt": []
     },
     {
       "topic": "صناعة الألحان",
@@ -394,7 +400,8 @@
       "verified": true,
       "p": 1000,
       "qid": "arabmusic-1000-912",
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.15,
+      "alt": []
     },
     {
       "topic": "آلات وعازفون",
@@ -404,7 +411,8 @@
       "verified": true,
       "p": 1000,
       "qid": "arabmusic-1000-913",
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.15,
+      "alt": []
     },
     {
       "topic": "آلات وعازفون",
@@ -434,13 +442,14 @@
     },
     {
       "topic": "قوالب غنائية وآلية",
-      "q": "ماذا تسمى مجموعة القوالب التي تؤدى متتابعة وتبدأ عادة بتمهيد المقام وتنتهي بأغان خفيفة؟",
+      "q": "تمهيد مقام، ثم قوالب متتابعة تنتهي عادة بأغان خفيفة؛ ماذا تسمى هذه المجموعة؟",
       "a": "الوصلة",
       "sourceUrl": "https://www.maqamworld.com/en/form/vocal_comp.php",
       "verified": true,
       "p": 1000,
       "qid": "arabmusic-1000-916",
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.15,
+      "alt": []
     },
     {
       "p": 1000,

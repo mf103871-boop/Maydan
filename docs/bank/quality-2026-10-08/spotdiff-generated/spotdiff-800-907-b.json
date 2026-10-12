@@ -1,0 +1,61 @@
+{
+  "pack": "spotdiff",
+  "oldQid": "spotdiff-800-907",
+  "side": "b",
+  "createdAt": "2026-10-08",
+  "kind": "ai-generated",
+  "tool": "OpenAI image generation (built-in)",
+  "mode": "edit",
+  "prompt": "Use case: precise-object-edit\nAsset type: strict matching B for one-difference comparison.\nInput 1 is the exact EDIT TARGET. Change ONLY the middle (third of five) round navy cardigan button at center to a SQUARE navy button with softly rounded corners. Keep its center position, width, color, four sewing holes and sewn thread identical. Keep the other four buttons exactly round and identical. This is one button shape difference.\nChange exactly one detail. Keep all other items and pixels identical including all knitted stitches and cardigan outline, other four buttons, scarf fringe, belt and holes/buckle, two gloves, glove button, three thread spools, scissors, pincushion floral embroidery, two needles, comb teeth, embroidered handkerchief, lavender background, framing and painted style. No second difference, recoloring, object movement, added text, highlights or borders. Preserve 4:3 framing.",
+  "asset": "media/spotdiff/spotdiff-800-907-b-q20261008.webp",
+  "sha256": "58faebc77776f5f7510e69ec2506a59ea2588d36e59e8e954cd520e465a8ecec",
+  "bytes": 254826,
+  "width": 1280,
+  "height": 960,
+  "inputImages": [
+    {
+      "file": "exec-04246f3c-cc42-4fc4-98f2-5c97e413eb7f.png",
+      "sha256": "d1ad749d5c91a753517765e98985518b2f45fe71fd674be544d8a2ccf5c04f1e"
+    }
+  ],
+  "review": {
+    "status": "phone-size-reviewed",
+    "originalCompared": true,
+    "displayedEffect": "Side-by-side unfiltered originals; reveal circle only",
+    "difference": "Middle cardigan button round to square",
+    "semanticDifferenceCount": 1,
+    "invariantsReviewed": [
+      "five buttons; four remain round",
+      "four holes each button",
+      "knit",
+      "scarf",
+      "belt",
+      "two gloves",
+      "three spools",
+      "needles",
+      "scissors",
+      "comb",
+      "embroidery",
+      "framing"
+    ],
+    "mobileDeviceQA": false,
+    "reviewedAt": "2026-10-12",
+    "reviewer": "finish_spotdiff",
+    "imageWidthCSS": 173,
+    "evidence": "docs/bank/quality-2026-10-08/preview/spotdiff-08.png"
+  },
+  "packaging": "Uniform size/format encoding only; all scene changes created by built-in imagegen",
+  "packagingReview": {
+    "date": "2026-10-12",
+    "file": "media/spotdiff/spotdiff-800-907-b-q20261008.webp",
+    "beforeBytes": 337160,
+    "bytes": 254826,
+    "beforeSha256": "8208a831e7404980d2c05add1d6112aed5393d54971a7c6373b57d3af8b95d14",
+    "sha256": "58faebc77776f5f7510e69ec2506a59ea2588d36e59e8e954cd520e465a8ecec",
+    "quality": 88,
+    "dimensionsUnchanged": true,
+    "operation": "WebP encoding only; no scene edit",
+    "phoneReview": "phone-size-reviewed-after-compression",
+    "reviewRecord": "docs/bank/quality-2026-10-08/postcompression-review.json"
+  }
+}

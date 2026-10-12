@@ -1,0 +1,73 @@
+{
+  "pack": "spotdiff",
+  "oldQid": "spotdiff-1000-906",
+  "side": "a",
+  "createdAt": "2026-10-08",
+  "kind": "ai-generated",
+  "tool": "OpenAI image generation (built-in)",
+  "mode": "generate",
+  "prompt": "Use case: photorealistic-natural. Asset type: base A of a single-difference mobile puzzle. One landscape image, 4:3, no panels. A natural travel-preparation photograph on a cedar cabin deck beside a lake, soft forest green and terracotta palette, diffuse morning sunlight. High oblique camera. A canvas rucksack, tan duffel, two rolled blankets with dark straps, hiking shoes, enamel mug, compass, folded unlabeled map, coiled rope and two small drybags arranged clearly. Foreground center-right: one broad beige webbing strap lies loose in a shallow S, its free end fitted with a large matte dark-metal D-shaped carabiner laying flat. Carabiner occupies 16 percent of scene width, its straight hinged gate on the RIGHT side and curved spine on LEFT; its top clipped through the end loop of the beige strap. All its geometry unobscured. Two ordinary closed rectangular buckles elsewhere as distractors. Keep geometry photographic and readable at 175px full-scene width. No people, hands, words, numerals, logos, arrows, border, watermark or UI.",
+  "asset": "media/spotdiff/spotdiff-1000-906-a-q20261008.webp",
+  "generatedOriginal": "C:\\Users\\user\\.codex\\generated_images\\01a11a56-e9d4-7570-aca6-dec9cf1d8f58\\exec-300ad37d-405b-4667-9776-fe643d2194ce.png",
+  "inputImages": [],
+  "review": {
+    "status": "phone-size-reviewed",
+    "originalCompared": true,
+    "displayedEffect": "Side-by-side unfiltered originals; reveal circle only. Stacked below 359px viewport.",
+    "difference": "Mirror only the D-shaped carabiner in place: its straight gate moves from right side to left; its strap loop and route stay fixed.",
+    "answer": "انعكس اتجاه بوابة المشبك",
+    "spot": {
+      "x": 71.4,
+      "y": 78.1,
+      "r": 8
+    },
+    "semanticDifferenceCount": 1,
+    "invariantsReviewed": [
+      "rucksack and duffel straps/buckles",
+      "two blankets",
+      "two shoes",
+      "compass and mug",
+      "map outline",
+      "two drybags",
+      "rope coil",
+      "lake background and camera framing",
+      "beige strap path"
+    ],
+    "mobileDeviceQA": false,
+    "browserDisplayQA": {
+      "usedShippedCSS": true,
+      "source": "src/games/badeeha/styles.css",
+      "markupMatches": "App.js .m-diff/.m-diff-frame with physical left/top circle",
+      "viewports": [
+        390,
+        350
+      ],
+      "imageWidths": [
+        173,
+        316
+      ],
+      "views": [
+        "side-by-side before reveal",
+        "side-by-side with reveal",
+        "stacked before reveal",
+        "stacked with reveal"
+      ],
+      "evidence": [
+        ".cache/badeeha-quality/spotdiff-shape/spotdiff-1000-906-390.png",
+        ".cache/badeeha-quality/spotdiff-shape/spotdiff-1000-906-350.png"
+      ],
+      "reviewer": "shape_visual_audit",
+      "notes": "One semantic difference confirmed; generated texture variations do not add an identifiable object/count/layout difference. Diagnostic browser rendering, not on-device iPhone QA."
+    },
+    "reviewedAt": "2026-10-12",
+    "reviewer": "finish_spotdiff",
+    "imageWidthCSS": 173,
+    "evidence": "docs/bank/quality-2026-10-08/preview/spotdiff-10.png"
+  },
+  "packaging": "Uniform proportional resize to1280x960 and WebP encoding only; every scene edit made by built-in imagegen.",
+  "sha256": "bb7b721f1e8c92fa8e269849dd58d4683089088844d0460d508b290ff47301ca",
+  "bytes": 196410,
+  "width": 1280,
+  "height": 960,
+  "generatedOriginalSha256": "347a604fdecf4f52ecb68b10fe2a276b62ed58f2c6759ffcd7bf869c0b9f43cb"
+}

@@ -1,0 +1,29 @@
+{
+  "id": "videogames",
+  "kind": "cover",
+  "file": "public/media/badeeha-covers/videogames.webp",
+  "style": "stylized game-world illustration",
+  "palette": "electric purple, lime, cobalt",
+  "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'ألعاب فيديو'. Landscape 4:3 artwork.\nMedium: stylized game-world illustration.\nIntentional palette: electric purple, lime, cobalt.\nScene: A game controller in the foreground opens into a layered original platforming world, crisp graphic shapes, no interface text or recognizable game assets.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-10-08",
+  "sourceImage": {
+    "name": "exec-4b0a8230-e935-4f5b-be22-86f48a4d13fd.png",
+    "sha256": "ddc3ca6e00afde21fd8b940926e69987c26c802dfdd7c70cef8c0e5545538a5a",
+    "width": 1448,
+    "height": 1086
+  },
+  "width": 640,
+  "height": 480,
+  "bytes": 79996,
+  "sha256": "d7f6e74b75bf4bca19f5a07fc3a493c47fb9bfc220f89438bcf4fce12f3c3596",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "phone-size-reviewed",
+    "date": "2026-10-08",
+    "reviewer": "root",
+    "width": 160,
+    "method": "shipped cover CSS; baseline and replacement side by side",
+    "evidence": "docs/bank/quality-2026-10-08/preview/covers-3.jpg"
+  }
+}

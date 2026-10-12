@@ -1,0 +1,29 @@
+{
+  "id": "guesscar",
+  "kind": "cover",
+  "file": "public/media/badeeha-covers/guesscar.webp",
+  "style": "automotive photography",
+  "palette": "steel blue, racing red, asphalt",
+  "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'خمن السيارة'. Landscape 4:3 artwork.\nMedium: automotive photography.\nIntentional palette: steel blue, racing red, asphalt.\nScene: An anonymous original performance-car front corner emerging from a mountain tunnel, dramatic side light, no logo or identifiable real model.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-10-08",
+  "sourceImage": {
+    "name": "exec-96c3ffb8-4363-47f4-861d-a64f91ec80ee.png",
+    "sha256": "a7d7b1f7ce973d102ccd893f0e4c58967b1c136cdd694ec6a545f670f1e58f82",
+    "width": 1448,
+    "height": 1086
+  },
+  "width": 640,
+  "height": 480,
+  "bytes": 61886,
+  "sha256": "3a5c45db7bd27c6c170e2e0b97c5f09c8ea2f5ce9b13843096c74b72c110ec9d",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "phone-size-reviewed",
+    "date": "2026-10-08",
+    "reviewer": "root",
+    "width": 160,
+    "method": "shipped cover CSS; baseline and replacement side by side",
+    "evidence": "docs/bank/quality-2026-10-08/preview/covers-4.jpg"
+  }
+}

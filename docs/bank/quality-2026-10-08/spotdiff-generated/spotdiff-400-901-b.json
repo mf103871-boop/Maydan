@@ -1,0 +1,77 @@
+{
+  "pack": "spotdiff",
+  "oldQid": "spotdiff-400-901",
+  "side": "b",
+  "createdAt": "2026-10-08",
+  "kind": "ai-generated",
+  "tool": "OpenAI image generation (built-in)",
+  "mode": "edit",
+  "prompt": "Use case: precise-object-edit. Asset type: B photo for a mobile spot-the-difference puzzle. Input image is the EXACT A photo to edit, not general inspiration. Output ONE landscape 4:3 image matching original framing. Make exactly ONE semantic difference. Rotate ONLY the stainless-steel soup spoon 180 degrees IN THE PLANE OF THE TABLE around its existing center. Retain its same vertical axis/track, exact overall bounding box and right-side placement. The rounded spoon bowl currently at the TOP must be at the BOTTOM instead; the long narrow handle now reaches the TOP. It is still face-up reflective stainless steel, with the same overall length and original design. Keep the white bowl of orange soup, soup surface, folded linen at left, every wood-grain line, lighting and camera framing absolutely identical. No second spoon and no removal.\nSTRICT: copy original photo everywhere outside the specified object change; preserve original colors, object counts, backgrounds, textures and composition. No global repaint, color swap, crop, camera move, extra decorative details, text, border, watermark or marks. The changed feature must be clear at 175 px image width.",
+  "asset": "media/spotdiff/spotdiff-400-901-b-q20261008.webp",
+  "sha256": "d0976a23e107f5b9f0842e4e88d4ae57805175eb6f42e4f55a0dc472f31bbe6e",
+  "inputSHA": "6bda203b0ac31f3d7f01472a2aefe1ea15f83a10abef96e24efed6c3f3f58cd8",
+  "outputSHA": "d0976a23e107f5b9f0842e4e88d4ae57805175eb6f42e4f55a0dc472f31bbe6e",
+  "rawOutputSHA": "2875445beedf8d86c1fe5b75f72ee91f8fbacace5536a2dd40e02163267e3a12",
+  "rawGeneratedFile": "exec-d71d8c28-df6b-411b-924d-50a568e1005e.png",
+  "bytes": 117606,
+  "width": 1280,
+  "height": 960,
+  "inputImages": [
+    {
+      "file": "media/spotdiff/spotdiff-400-901-a.webp",
+      "sha256": "6bda203b0ac31f3d7f01472a2aefe1ea15f83a10abef96e24efed6c3f3f58cd8"
+    }
+  ],
+  "diff": {
+    "description": "Soup spoon reverses vertically: its bowl is at the lower end and handle at the upper end.",
+    "answer": "انعكس اتجاه ملعقة الحساء",
+    "spot": {
+      "x": 85,
+      "y": 54,
+      "r": 27
+    },
+    "coordinates": "x is measured from physical left; y from top; r is a percentage of image width"
+  },
+  "invariants": [
+    "white bowl and orange soup",
+    "folded linen",
+    "one stainless steel spoon only",
+    "wooden table",
+    "camera framing and colors"
+  ],
+  "review": {
+    "status": "phone-size-reviewed",
+    "originalCompared": true,
+    "oldAAndOldBViewed": true,
+    "semanticDifferenceCount": 1,
+    "invariantsReviewed": [
+      "white bowl and orange soup",
+      "folded linen",
+      "one stainless steel spoon only",
+      "wooden table",
+      "camera framing and colors"
+    ],
+    "displayedEffect": "Unfiltered original A and edited B side-by-side; physical-left reveal circle only",
+    "mobileDeviceQA": false,
+    "limitation": "AI re-encoding produces minor texture variation. Review checks one meaningful object difference, preserved counts, colors and geometry; exact outside-region pixel identity is not claimed.",
+    "reviewedAt": "2026-10-12",
+    "reviewer": "finish_spotdiff",
+    "imageWidthCSS": 173,
+    "evidence": "docs/bank/quality-2026-10-08/preview/spotdiff-03.png"
+  },
+  "mobileQA": {
+    "method": "Viewed rendered pairs at 175px per image and vertically stacked originals at 359px width, then viewed circles over both A and B.",
+    "sideBySideImageWidth": 175,
+    "stackedImageWidth": 359,
+    "differenceVisible": true,
+    "circleEnclosesDifferenceInBothImages": true,
+    "physicalLeftCoordinates": true,
+    "deviceTested": false,
+    "artifacts": [
+      ".cache/badeeha-quality/spotdiff-eight-qa/spotdiff-400-901-175.png",
+      ".cache/badeeha-quality/spotdiff-eight-qa/spotdiff-400-901-359.png",
+      ".cache/badeeha-quality/spotdiff-eight-qa/spotdiff-400-901-circle175.png"
+    ]
+  },
+  "packaging": "Uniform landscape resize to 1280x960 and WebP quality 85 only; all scene changes made by built-in imagegen. Original A unchanged."
+}

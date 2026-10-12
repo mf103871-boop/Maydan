@@ -1,0 +1,29 @@
+{
+  "id": "movies",
+  "kind": "cover",
+  "file": "public/media/badeeha-covers/movies.webp",
+  "style": "cinematic photography",
+  "palette": "deep blue, projector gold, black",
+  "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'أفلام عالمية'. Landscape 4:3 artwork.\nMedium: cinematic photography.\nIntentional palette: deep blue, projector gold, black.\nScene: Light from a vintage film projector crosses a dark theater above empty seats, strong light beam diagonal and glowing dust motes.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-10-08",
+  "sourceImage": {
+    "name": "exec-0f895cfe-eed1-48dc-9a10-bb632e74b6cd.png",
+    "sha256": "38c2bbfc1b723fdd22f186b970a84e0cad15923bb46bb36681cb31eb5441278d",
+    "width": 1448,
+    "height": 1086
+  },
+  "width": 640,
+  "height": 480,
+  "bytes": 35132,
+  "sha256": "82cdee667aa974b6339e552766abc6144fcc01d95244f43a0ea6d9f46173b20d",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "phone-size-reviewed",
+    "date": "2026-10-08",
+    "reviewer": "root",
+    "width": 160,
+    "method": "shipped cover CSS; baseline and replacement side by side",
+    "evidence": "docs/bank/quality-2026-10-08/preview/covers-3.jpg"
+  }
+}

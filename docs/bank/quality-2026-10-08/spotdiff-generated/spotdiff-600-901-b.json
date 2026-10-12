@@ -1,0 +1,42 @@
+{
+  "pack": "spotdiff",
+  "oldQid": "spotdiff-600-901",
+  "side": "b",
+  "createdAt": "2026-10-08",
+  "kind": "ai-generated",
+  "tool": "OpenAI image generation (built-in)",
+  "mode": "edit",
+  "prompt": "Use case: precise-object-edit\nAsset type: strict matching B of a one-difference puzzle.\nInput image 1 is exact EDIT TARGET. Change ONLY the water level inside the clear drinking glass at left: it is around halfway in the original; increase to three-quarters full. Raise the horizontal visible water meniscus to three-quarters of the interior height. Preserve the glass outline, base, highlights and reflections; do not add any other object. The ceramic pitcher handle must remain turquoise (do not recolor).\nExactly one semantic change. Everything else identical including turquoise pitcher handle, cream pitcher body/rim and every reflection, lemon texture/location, glass base/outline, background wall and stone surface, camera, composition and lighting. No text, UI, highlight, border or panel. Preserve original4:3 framing.",
+  "asset": "media/spotdiff/spotdiff-600-901-b-q20261008.webp",
+  "sha256": "84d872a1a0d4521df37374bde3cc41b54f17ac6ec66de93469770839ac3e4cd8",
+  "bytes": 113984,
+  "width": 1280,
+  "height": 960,
+  "inputImages": [
+    {
+      "file": "spotdiff-600-901-a.webp",
+      "sha256": "02c1c95ff4bb5a22d81052d340ed7444bb3c911cd7d1e2842c8f17a1c08e3559"
+    }
+  ],
+  "review": {
+    "status": "phone-size-reviewed",
+    "originalCompared": true,
+    "displayedEffect": "Side-by-side unfiltered originals; reveal circle only",
+    "difference": "Water meniscus rises in left glass (actual A roughly two-thirds; B roughly three-quarters), handle remains turquoise",
+    "semanticDifferenceCount": 1,
+    "invariantsReviewed": [
+      "glass outline/base/highlights",
+      "turquoise handle",
+      "pitcher body/reflections",
+      "lemon",
+      "stone surface",
+      "wall/framing"
+    ],
+    "mobileDeviceQA": false,
+    "reviewedAt": "2026-10-12",
+    "reviewer": "finish_spotdiff",
+    "imageWidthCSS": 173,
+    "evidence": "docs/bank/quality-2026-10-08/preview/spotdiff-05.png"
+  },
+  "packaging": "Uniform size/format encoding only; all scene changes created by built-in imagegen"
+}

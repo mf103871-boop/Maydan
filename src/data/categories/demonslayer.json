@@ -152,7 +152,7 @@
       ],
       "verified": true,
       "qid": "demonslayer-400-913",
-      "sourceUrl": "https://en.wikipedia.org/wiki/Tanjiro_Kamado#In_Demon_Slayer:_Kimetsu_no_Yaiba",
+      "sourceUrl": "https://kimetsu.com/anime/risshihen/story/?story=8",
       "difficultyTarget": 0.6
     },
     {
@@ -179,7 +179,7 @@
       ],
       "verified": true,
       "qid": "demonslayer-400-915",
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters#Hashira",
+      "sourceUrl": "https://kimetsu.com/anime/hashirageikohen/character/",
       "difficultyTarget": 0.6
     },
     {
@@ -310,7 +310,7 @@
         "جينيا",
         "Genya Shinazugawa"
       ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters",
+      "sourceUrl": "https://kimetsu.com/anime/hashirageikohen/character/",
       "qid": "demonslayer-600-917",
       "p": 600,
       "difficultyTarget": 0.4,
@@ -518,19 +518,6 @@
       "verified": true
     },
     {
-      "topic": "الفيلق",
-      "q": "ما اسم أصغر بنات كاغايا التي تساعد شقيقها في قيادة المعركة الأخيرة؟",
-      "a": "كاناتا أوبوياشيكي",
-      "alt": [
-        "Kanata Ubuyashiki"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters",
-      "qid": "demonslayer-1000-917",
-      "p": 1000,
-      "difficultyTarget": 0.15,
-      "verified": true
-    },
-    {
       "topic": "عائلة كامادو",
       "q": "ما اسم سليل تانجيرو وكاناو البالغ خمسة عشر عامًا في خاتمة العصر الحديث؟",
       "a": "سوميهيكو كامادو",
@@ -539,6 +526,20 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters",
       "qid": "demonslayer-1000-918",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "الفيلق",
+      "q": "في قرية الحدادين، ما الاكتشاف الذي يفسر بقاء التجسدات الأربعة حية بعد قطع رؤوسها معًا؟",
+      "a": "وجود شيطان خامس",
+      "alt": [
+        "وجود جسد خامس",
+        "وجود جسده الأصلي منفصلًا"
+      ],
+      "sourceUrl": "https://kimetsu.com/anime/story/detail/?ep=ep06&series=katanakaji",
+      "qid": "demonslayer-1000-921",
       "p": 1000,
       "difficultyTarget": 0.15,
       "verified": true

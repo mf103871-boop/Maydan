@@ -11,7 +11,6 @@
       "topic": "فواكه استوائية",
       "verified": true,
       "alt": [
-        "بابايا",
         "الباباظ"
       ],
       "difficultyTarget": 0.8,
@@ -19,14 +18,12 @@
     },
     {
       "p": 200,
-      "q": "ما الثمرة التي تنمو أزهارها الصغيرة داخل تجويفها، وتؤكل طازجة أو مجففة؟",
+      "q": "أي ثمرة تؤكل طازجة أو مجففة، بينما تنمو أزهارها الصغيرة داخل تجويفها؟",
       "a": "التين",
       "qid": "fruitsveg-200-912",
       "topic": "فواكه شائعة",
       "verified": true,
-      "alt": [
-        "تين"
-      ],
+      "alt": [],
       "difficultyTarget": 0.8,
       "sourceUrl": "https://www.kew.org/plants/fig"
     },
@@ -120,9 +117,7 @@
       "qid": "fruitsveg-400-911",
       "topic": "فواكه استوائية",
       "verified": true,
-      "alt": [
-        "رامبوتان"
-      ],
+      "alt": [],
       "difficultyTarget": 0.6,
       "sourceUrl": "https://www.nparks.gov.sg/florafaunaweb/flora/3/0/3042"
     },
@@ -148,8 +143,7 @@
       "topic": "خضراوات ورقية",
       "verified": true,
       "alt": [
-        "فيتامين K",
-        "الفيتامين ك"
+        "فيتامين K"
       ],
       "difficultyTarget": 0.6,
       "sourceUrl": "https://ods.od.nih.gov/factsheets/vitaminK-HealthProfessional/"
@@ -174,9 +168,7 @@
       "qid": "fruitsveg-400-915",
       "topic": "ألوان ومواسم",
       "verified": true,
-      "alt": [
-        "سفرجل"
-      ],
+      "alt": [],
       "difficultyTarget": 0.6,
       "sourceUrl": "https://www.rhs.org.uk/fruit/quince/grow-your-own"
     },
@@ -195,13 +187,12 @@
     },
     {
       "p": 400,
-      "q": "ما اسم المادة المستخلصة من قشور الفواكه التي تجعل المربّى متماسكًا؟",
+      "q": "لجعل المربى متماسكًا، أي مادة مستخلصة من قشور الفواكه تُستعمل؟",
       "a": "البكتين",
       "qid": "fruitsveg-400-917",
       "topic": "فوائد ومكوّنات",
       "verified": true,
       "alt": [
-        "بكتين",
         "البكتين النباتي"
       ],
       "difficultyTarget": 0.6,
@@ -269,7 +260,8 @@
       "topic": "أصول ومناشئ",
       "verified": true,
       "difficultyTarget": 0.4,
-      "sourceUrl": "https://www.canolacouncil.org/about-canola/"
+      "sourceUrl": "https://www.canolacouncil.org/about-canola/",
+      "alt": []
     },
     {
       "p": 600,
@@ -279,7 +271,8 @@
       "topic": "أصول ومناشئ",
       "verified": true,
       "difficultyTarget": 0.4,
-      "sourceUrl": "https://www.ars.usda.gov/midwest-area/madison-wi/vegetable-crops-research/docs/simon-carrot-facts/"
+      "sourceUrl": "https://www.ars.usda.gov/midwest-area/madison-wi/vegetable-crops-research/docs/simon-carrot-facts/",
+      "alt": []
     },
     {
       "p": 600,
@@ -289,7 +282,6 @@
       "topic": "فوائد ومكوّنات",
       "verified": true,
       "alt": [
-        "بروميلين",
         "البروميلاين",
         "بروملين"
       ],
@@ -305,15 +297,14 @@
       "verified": true,
       "alt": [
         "الترنج",
-        "الكبّاد",
-        "أترج"
+        "الكبّاد"
       ],
       "difficultyTarget": 0.4,
       "sourceUrl": "https://www.nparks.gov.sg/florafaunaweb/flora/5/2/5217"
     },
     {
       "p": 600,
-      "q": "ما الهرمون الغازي الذي تنتجه ثمار مثل التفاح ويسرع نضج بعض الفواكه المحيطة بها؟",
+      "q": "تفاح قرب فواكه أخرى يسرّع نضج بعضها؛ أي هرمون غازي يفسر ذلك؟",
       "a": "الإيثيلين",
       "qid": "fruitsveg-600-918",
       "topic": "فوائد ومكوّنات",
@@ -333,7 +324,6 @@
       "topic": "فواكه استوائية",
       "verified": true,
       "alt": [
-        "أكي",
         "فاكهة الأكي"
       ],
       "difficultyTarget": 0.25,
@@ -347,7 +337,6 @@
       "topic": "فواكه شائعة",
       "verified": true,
       "alt": [
-        "الكافنديش",
         "Cavendish"
       ],
       "difficultyTarget": 0.25,
@@ -395,7 +384,7 @@
     },
     {
       "p": 800,
-      "q": "ما اسم الظاهرة التي تُثمر فيها الشجرة بغزارة عامًا وتقلّ في العام التالي؟",
+      "q": "شجرة تثمر بغزارة عامًا ثم يقل إنتاجها التالي؛ ماذا تسمى الظاهرة؟",
       "a": "المعاومة",
       "qid": "fruitsveg-800-916",
       "topic": "ألوان ومواسم",
@@ -415,7 +404,8 @@
       "topic": "أصول ومناشئ",
       "verified": true,
       "difficultyTarget": 0.25,
-      "sourceUrl": "https://citrusagents.ifas.ufl.edu/media/crecifasufledu/citrus-agents/docs/citrus-publications/Fla-Citrus-Varieties.pdf"
+      "sourceUrl": "https://citrusagents.ifas.ufl.edu/media/crecifasufledu/citrus-agents/docs/citrus-publications/Fla-Citrus-Varieties.pdf",
+      "alt": []
     },
     {
       "q": "ما صنف القرنبيط الأخضر الذي تتشكل رؤوسه من مخاريط حلزونية متكررة؟",
@@ -439,7 +429,6 @@
       "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3189030/",
       "verifiedAt": "2026-09-25",
       "alt": [
-        "ميراكولين",
         "Miraculin"
       ],
       "p": 1000,
@@ -469,7 +458,6 @@
       "sourceUrl": "https://www.nparks.gov.sg/florafaunaweb/flora/3/2/3289",
       "verifiedAt": "2026-09-25",
       "alt": [
-        "سالاك",
         "Salak"
       ],
       "p": 1000,
@@ -493,7 +481,7 @@
       "difficultyTarget": 0.15
     },
     {
-      "q": "ماذا يسمى نمو الثمرة دون إخصاب، كما يحدث في بعض أصناف الخيار عديمة البذور؟",
+      "q": "ثمرة خيار تنمو دون إخصاب؛ ماذا تسمى هذه العملية؟",
       "a": "العقد البكري",
       "topic": "نمو الثمار",
       "verified": true,
@@ -524,7 +512,7 @@
       "difficultyTarget": 0.15
     },
     {
-      "q": "ما العملية التي يكتسب بها القمح الشتوي القدرة على الإزهار بعد التعرض للبرد؟",
+      "q": "قمح شتوي يكتسب القدرة على الإزهار بعد فترة برد؛ ما اسم العملية؟",
       "a": "الارتباع",
       "topic": "بذور وحبوب",
       "verified": true,
@@ -547,8 +535,7 @@
       "verifiedAt": "2026-09-25",
       "alt": [
         "Cucurbitacins",
-        "كوكوربيتاسين",
-        "الكوكوربيتاسين"
+        "كوكوربيتاسين"
       ],
       "p": 1000,
       "qid": "fruitsveg-1000-918",

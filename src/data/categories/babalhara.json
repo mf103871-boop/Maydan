@@ -25,7 +25,8 @@
       "a": "لطفية",
       "sourceUrl": "https://elcinema.com/work/1821972/episodes",
       "verified": true,
-      "difficultyTarget": 0.8
+      "difficultyTarget": 0.8,
+      "alt": []
     },
     {
       "qid": "babalhara-200-913",
@@ -86,7 +87,8 @@
       "a": "أبو النار",
       "sourceUrl": "https://elcinema.com/work/1653818/episodes",
       "verified": true,
-      "difficultyTarget": 0.8
+      "difficultyTarget": 0.8,
+      "alt": []
     },
     {
       "qid": "babalhara-200-918",
@@ -107,7 +109,7 @@
       "qid": "babalhara-400-911",
       "p": 400,
       "topic": "سرقة الذهب",
-      "q": "ما الأثر الذي يراه أبو إبراهيم في منزله ويجعله يشك في هوية السارق؟",
+      "q": "ما الغرض المتروك الذي يجعل أبا إبراهيم يشك في هوية سارق الليرات في الجزء الأول؟",
       "a": "حذاء السارق",
       "alt": [
         "حذاؤه",
@@ -126,7 +128,8 @@
       "a": "خيرية",
       "sourceUrl": "https://elcinema.com/work/1653818/episodes",
       "verified": true,
-      "difficultyTarget": 0.6
+      "difficultyTarget": 0.6,
+      "alt": []
     },
     {
       "qid": "babalhara-400-913",
@@ -136,20 +139,8 @@
       "a": "أبو دياب",
       "sourceUrl": "https://elcinema.com/work/1295836/content",
       "verified": true,
-      "difficultyTarget": 0.6
-    },
-    {
-      "qid": "babalhara-400-914",
-      "p": 400,
-      "topic": "الأماكن",
-      "q": "في أي سجن عرف كاشف الجاسوس حقيقة زوج فريال قبل وصوله إلى الحارة؟",
-      "a": "سجن أرواد",
-      "alt": [
-        "أرواد"
-      ],
-      "sourceUrl": "https://elcinema.com/work/1295836/content",
-      "verified": true,
-      "difficultyTarget": 0.6
+      "difficultyTarget": 0.6,
+      "alt": []
     },
     {
       "qid": "babalhara-400-915",
@@ -187,7 +178,8 @@
       "a": "شريفة",
       "sourceUrl": "https://elcinema.com/work/1667786/episodes",
       "verified": true,
-      "difficultyTarget": 0.6
+      "difficultyTarget": 0.6,
+      "alt": []
     },
     {
       "qid": "babalhara-400-918",
@@ -196,10 +188,24 @@
       "q": "من أي مرفق يحرر الرجال المرأة المقاومة المختبئة لاحقًا لدى الفران في الجزء الخامس؟",
       "a": "المستشفى",
       "alt": [
-        "مشفى",
-        "المشفى"
+        "مشفى"
       ],
       "sourceUrl": "https://elcinema.com/work/1295836/episodes",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "babalhara-400-921",
+      "p": 400,
+      "topic": "أعمال أهل الحارة",
+      "q": "بأي مهمة اجتماعية يساعد أبو فارس شباب الحارة العازبين في الجزء الخامس؟",
+      "a": "خطبة العرائس لهم",
+      "alt": [
+        "الخطبة",
+        "تزويج الشباب",
+        "التوسط للزواج"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1295836/content",
       "verified": true,
       "difficultyTarget": 0.6
     },
@@ -207,7 +213,7 @@
       "qid": "babalhara-600-911",
       "p": 600,
       "topic": "الأسرار والجواسيس",
-      "q": "في أي مهنة يتنكر ابن عم النمس وهو يجمع الأدلة ضد زوج فريال؟",
+      "q": "بأي مهنة يتنكر ابن عم النمس لجمع الأدلة ضد زوج فريال؟",
       "a": "زبال",
       "alt": [
         "جامع قمامة",
@@ -225,7 +231,8 @@
       "a": "وردة",
       "sourceUrl": "https://elcinema.com/work/1653818/episodes",
       "verified": true,
-      "difficultyTarget": 0.4
+      "difficultyTarget": 0.4,
+      "alt": []
     },
     {
       "qid": "babalhara-600-913",
@@ -248,7 +255,8 @@
       "a": "صبحي",
       "sourceUrl": "https://elcinema.com/work/1010631/episodes",
       "verified": true,
-      "difficultyTarget": 0.4
+      "difficultyTarget": 0.4,
+      "alt": []
     },
     {
       "qid": "babalhara-600-915",
@@ -258,7 +266,8 @@
       "a": "حميدة",
       "sourceUrl": "https://elcinema.com/work/1653818/episodes",
       "verified": true,
-      "difficultyTarget": 0.4
+      "difficultyTarget": 0.4,
+      "alt": []
     },
     {
       "qid": "babalhara-600-916",
@@ -268,7 +277,8 @@
       "a": "أبو الورد",
       "sourceUrl": "https://elcinema.com/work/1295836/episodes",
       "verified": true,
-      "difficultyTarget": 0.4
+      "difficultyTarget": 0.4,
+      "alt": []
     },
     {
       "qid": "babalhara-600-917",
@@ -294,21 +304,6 @@
       "sourceUrl": "https://elcinema.com/work/1295836/episodes",
       "verified": true,
       "difficultyTarget": 0.4
-    },
-    {
-      "qid": "babalhara-800-911",
-      "p": 800,
-      "topic": "أعمال أهل الحارة",
-      "q": "بأي مهمة اجتماعية يساعد أبو فارس شباب الحارة العازبين في الجزء الخامس؟",
-      "a": "خطبة العرائس لهم",
-      "alt": [
-        "الخطبة",
-        "تزويج الشباب",
-        "التوسط للزواج"
-      ],
-      "sourceUrl": "https://elcinema.com/work/1295836/content",
-      "verified": true,
-      "difficultyTarget": 0.25
     },
     {
       "topic": "الأسرار والجواسيس",
@@ -392,8 +387,21 @@
       "verified": true
     },
     {
+      "qid": "babalhara-800-921",
+      "p": 800,
+      "topic": "الأماكن",
+      "q": "في أي سجن عرف ابن عم النمس حقيقة زوج فريال قبل وصوله إلى الحارة؟",
+      "a": "سجن أرواد",
+      "alt": [
+        "أرواد"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1295836/content",
+      "verified": true,
+      "difficultyTarget": 0.25
+    },
+    {
       "topic": "عائلة الحكيم",
-      "q": "ماذا تهدي سارة ابن الحكيم الأصغر في بداية الجزء السابع؟",
+      "q": "ما الشيء الذي تقدمه سارة لابن الحكيم الأصغر في بداية الجزء السابع؟",
       "a": "حجر كريم",
       "alt": [],
       "sourceUrl": "https://elcinema.com/work/2034936/episodes",

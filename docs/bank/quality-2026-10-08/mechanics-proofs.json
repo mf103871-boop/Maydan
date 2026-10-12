@@ -1,0 +1,1459 @@
+{
+  "date": "2026-10-08",
+  "scope": "Independent solutions and verification notes; qids are final live-bank IDs after the 2026-10-12 migration. The qid-mapping.json ledger links them to original IDs.",
+  "difficultyNote": "Editorial targets; no measured solve rates are claimed.",
+  "code": [
+    {
+      "qid": "code-200-911",
+      "method": "reverse",
+      "answer": "تونس",
+      "solution": "عكس الحروف مرة واحدة",
+      "encoded": "س · ن · و · ت"
+    },
+    {
+      "qid": "code-200-912",
+      "method": "reverse",
+      "answer": "غزال",
+      "solution": "عكس الحروف مرة واحدة",
+      "encoded": "ل · ا · ز · غ"
+    },
+    {
+      "qid": "code-200-913",
+      "method": "reverse",
+      "answer": "عدس",
+      "solution": "عكس الحروف مرة واحدة",
+      "encoded": "س · د · ع"
+    },
+    {
+      "qid": "code-200-914",
+      "method": "reverse",
+      "answer": "مقص",
+      "solution": "عكس الحروف مرة واحدة",
+      "encoded": "ص · ق · م"
+    },
+    {
+      "qid": "code-200-915",
+      "method": "reverse",
+      "answer": "مرفأ",
+      "solution": "عكس الحروف مرة واحدة",
+      "encoded": "أ · ف · ر · م"
+    },
+    {
+      "qid": "code-200-916",
+      "method": "reverse",
+      "answer": "شلال",
+      "solution": "عكس الحروف مرة واحدة",
+      "encoded": "ل · ا · ل · ش"
+    },
+    {
+      "qid": "code-200-917",
+      "method": "reverse",
+      "answer": "تنس",
+      "solution": "عكس الحروف مرة واحدة",
+      "encoded": "س · ن · ت"
+    },
+    {
+      "qid": "code-200-918",
+      "method": "reverse",
+      "answer": "دفتر",
+      "solution": "عكس الحروف مرة واحدة",
+      "encoded": "ر · ت · ف · د"
+    },
+    {
+      "qid": "code-400-911",
+      "method": "alternating",
+      "answer": "عمان",
+      "solution": "أخذ المواقع الفردية بدءًا من1",
+      "encoded": "ع · ق · م · ب · ا · ن · ن · ر"
+    },
+    {
+      "qid": "code-400-912",
+      "method": "alternating",
+      "answer": "نحلة",
+      "solution": "أخذ المواقع الفردية بدءًا من1",
+      "encoded": "ن · ب · ح · ن · ل · ر · ة · ز"
+    },
+    {
+      "qid": "code-400-913",
+      "method": "alternating",
+      "answer": "كنافة",
+      "solution": "أخذ المواقع الفردية بدءًا من1",
+      "encoded": "ك · ن · ن · ر · ا · ز · ف · س · ة · ق"
+    },
+    {
+      "qid": "code-400-914",
+      "method": "alternating",
+      "answer": "منشار",
+      "solution": "أخذ المواقع الفردية بدءًا من1",
+      "encoded": "م · ر · ن · ز · ش · س · ا · ق · ر · ب"
+    },
+    {
+      "qid": "code-400-915",
+      "method": "alternating",
+      "answer": "متحف",
+      "solution": "أخذ المواقع الفردية بدءًا من1",
+      "encoded": "م · ز · ت · س · ح · ق · ف · ب"
+    },
+    {
+      "qid": "code-400-916",
+      "method": "alternating",
+      "answer": "مرجان",
+      "solution": "أخذ المواقع الفردية بدءًا من1",
+      "encoded": "م · س · ر · ق · ج · ب · ا · ن · ن · ر"
+    },
+    {
+      "qid": "code-400-917",
+      "method": "alternating",
+      "answer": "سباحة",
+      "solution": "أخذ المواقع الفردية بدءًا من1",
+      "encoded": "س · ق · ب · ب · ا · ن · ح · ر · ة · ز"
+    },
+    {
+      "qid": "code-400-918",
+      "method": "alternating",
+      "answer": "مصباح",
+      "solution": "أخذ المواقع الفردية بدءًا من1",
+      "encoded": "م · ب · ص · ن · ب · ر · ا · ز · ح · س"
+    },
+    {
+      "qid": "code-600-921",
+      "method": "reverse-pair-swap",
+      "answer": "السودان",
+      "solution": "تبديل الأزواج ثم عكس الناتج",
+      "encoded": "ا · ن · و · د · ل · س · ا"
+    },
+    {
+      "qid": "code-600-922",
+      "method": "reverse-pair-swap",
+      "answer": "سنجاب",
+      "solution": "تبديل الأزواج ثم عكس الناتج",
+      "encoded": "ا · ب · ن · ج · س"
+    },
+    {
+      "qid": "code-600-923",
+      "method": "reverse-pair-swap",
+      "answer": "زعتر",
+      "solution": "تبديل الأزواج ثم عكس الناتج",
+      "encoded": "ت · ر · ز · ع"
+    },
+    {
+      "qid": "code-600-924",
+      "method": "reverse-pair-swap",
+      "answer": "بوصلة",
+      "solution": "تبديل الأزواج ثم عكس الناتج",
+      "encoded": "ل · ة · و · ص · ب"
+    },
+    {
+      "qid": "code-600-925",
+      "method": "reverse-pair-swap",
+      "answer": "مكتبة",
+      "solution": "تبديل الأزواج ثم عكس الناتج",
+      "encoded": "ب · ة · ك · ت · م"
+    },
+    {
+      "qid": "code-600-926",
+      "method": "reverse-pair-swap",
+      "answer": "بركان",
+      "solution": "تبديل الأزواج ثم عكس الناتج",
+      "encoded": "ا · ن · ر · ك · ب"
+    },
+    {
+      "qid": "code-600-927",
+      "method": "reverse-pair-swap",
+      "answer": "تجديف",
+      "solution": "تبديل الأزواج ثم عكس الناتج",
+      "encoded": "ي · ف · ج · د · ت"
+    },
+    {
+      "qid": "code-600-928",
+      "method": "reverse-pair-swap",
+      "answer": "مظلة",
+      "solution": "تبديل الأزواج ثم عكس الناتج",
+      "encoded": "ل · ة · م · ظ"
+    },
+    {
+      "qid": "code-800-921",
+      "method": "reverse-deinterleave",
+      "answer": "السنغال",
+      "solution": "تشبيك القسمين بدءًا بالقسم الأيمن ثم عكس الناتج",
+      "encoded": "ل · غ · س · ا / ا · ن · ل"
+    },
+    {
+      "qid": "code-800-922",
+      "method": "reverse-deinterleave",
+      "answer": "سلحفاة",
+      "solution": "تشبيك القسمين بدءًا بالقسم الأيمن ثم عكس الناتج",
+      "encoded": "ة · ف · ل / ا · ح · س"
+    },
+    {
+      "qid": "code-800-923",
+      "method": "reverse-deinterleave",
+      "answer": "كركديه",
+      "solution": "تشبيك القسمين بدءًا بالقسم الأيمن ثم عكس الناتج",
+      "encoded": "ه · د · ر / ي · ك · ك"
+    },
+    {
+      "qid": "code-800-924",
+      "method": "reverse-deinterleave",
+      "answer": "مرسام",
+      "solution": "تشبيك القسمين بدءًا بالقسم الأيمن ثم عكس الناتج",
+      "encoded": "م · س · م / ا · ر"
+    },
+    {
+      "qid": "code-800-925",
+      "method": "reverse-deinterleave",
+      "answer": "مختبر",
+      "solution": "تشبيك القسمين بدءًا بالقسم الأيمن ثم عكس الناتج",
+      "encoded": "ر · ت · م / ب · خ"
+    },
+    {
+      "qid": "code-800-926",
+      "method": "reverse-deinterleave",
+      "answer": "شلالات",
+      "solution": "تشبيك القسمين بدءًا بالقسم الأيمن ثم عكس الناتج",
+      "encoded": "ت · ل · ل / ا · ا · ش"
+    },
+    {
+      "qid": "code-800-927",
+      "method": "reverse-deinterleave",
+      "answer": "بيسبول",
+      "solution": "تشبيك القسمين بدءًا بالقسم الأيمن ثم عكس الناتج",
+      "encoded": "ل · ب · ي / و · س · ب"
+    },
+    {
+      "qid": "code-800-928",
+      "method": "reverse-deinterleave",
+      "answer": "حقيبة",
+      "solution": "تشبيك القسمين بدءًا بالقسم الأيمن ثم عكس الناتج",
+      "encoded": "ة · ي · ح / ب · ق"
+    },
+    {
+      "qid": "code-1000-911",
+      "method": "reverse-caesar",
+      "answer": "تايلاند",
+      "solution": "عكس الحروف ثم طرح1 من فهرس كل حرف في أبجدية28 مع الالتفاف",
+      "encoded": "ذ · ه · ب · م · ا · ب · ث",
+      "alphabet": "ابتثجحخدذرزسشصضطظعغفقكلمنهوي"
+    },
+    {
+      "qid": "code-1000-912",
+      "method": "reverse-caesar",
+      "answer": "سمندل",
+      "solution": "عكس الحروف ثم طرح1 من فهرس كل حرف في أبجدية28 مع الالتفاف",
+      "encoded": "م · ذ · ه · ن · ش",
+      "alphabet": "ابتثجحخدذرزسشصضطظعغفقكلمنهوي"
+    },
+    {
+      "qid": "code-1000-913",
+      "method": "reverse-caesar",
+      "answer": "زعفران",
+      "solution": "عكس الحروف ثم طرح1 من فهرس كل حرف في أبجدية28 مع الالتفاف",
+      "encoded": "ه · ب · ز · ق · غ · س",
+      "alphabet": "ابتثجحخدذرزسشصضطظعغفقكلمنهوي"
+    },
+    {
+      "qid": "code-1000-914",
+      "method": "reverse-caesar",
+      "answer": "تلسكوب",
+      "solution": "عكس الحروف ثم طرح1 من فهرس كل حرف في أبجدية28 مع الالتفاف",
+      "encoded": "ت · ي · ل · ش · م · ث",
+      "alphabet": "ابتثجحخدذرزسشصضطظعغفقكلمنهوي"
+    },
+    {
+      "qid": "code-1000-915",
+      "method": "reverse-caesar",
+      "answer": "مستودع",
+      "solution": "عكس الحروف ثم طرح1 من فهرس كل حرف في أبجدية28 مع الالتفاف",
+      "encoded": "غ · ذ · ي · ث · ش · ن",
+      "alphabet": "ابتثجحخدذرزسشصضطظعغفقكلمنهوي"
+    },
+    {
+      "qid": "code-1000-916",
+      "method": "reverse-caesar",
+      "answer": "كهرمان",
+      "solution": "عكس الحروف ثم طرح1 من فهرس كل حرف في أبجدية28 مع الالتفاف",
+      "encoded": "ه · ب · ن · ز · و · ل",
+      "alphabet": "ابتثجحخدذرزسشصضطظعغفقكلمنهوي"
+    },
+    {
+      "qid": "code-1000-921",
+      "method": "reverse-caesar",
+      "answer": "ماراثون",
+      "solution": "عكس الحروف ثم طرح1 من فهرس كل حرف في أبجدية28 مع الالتفاف",
+      "encoded": "ه · ي · ج · ب · ز · ب · ن",
+      "alphabet": "ابتثجحخدذرزسشصضطظعغفقكلمنهوي"
+    },
+    {
+      "qid": "code-1000-922",
+      "method": "reverse-caesar",
+      "answer": "تلفزيون",
+      "solution": "عكس الحروف ثم طرح1 من فهرس كل حرف في أبجدية28 مع الالتفاف",
+      "encoded": "ه · ي · ا · س · ق · م · ث",
+      "alphabet": "ابتثجحخدذرزسشصضطظعغفقكلمنهوي"
+    }
+  ],
+  "beforeafter": [
+    {
+      "qid": "beforeafter-200-911",
+      "events": [
+        {
+          "id": "macintosh",
+          "name": "إطلاق أول ماكنتوش",
+          "year": 1984,
+          "source": "https://www.computerhistory.org/timeline/1984/",
+          "topic": "تاريخ الحوسبة"
+        },
+        {
+          "id": "iphone",
+          "name": "إطلاق أول آيفون",
+          "year": 2007,
+          "source": "https://www.computerhistory.org/timeline/2007/",
+          "topic": "تاريخ الحوسبة"
+        }
+      ],
+      "answer": "قبل",
+      "explanation": "1984 < 2007؛ إطلاق أول ماكنتوش حدث قبل إطلاق أول آيفون.",
+      "sourceFactsCheckedAt": "2026-09-18"
+    },
+    {
+      "qid": "beforeafter-200-912",
+      "events": [
+        {
+          "id": "hubble",
+          "name": "إطلاق تلسكوب هابل",
+          "year": 1990,
+          "source": "https://science.nasa.gov/mission/hubble/",
+          "topic": "رحلات الفضاء"
+        },
+        {
+          "id": "apollo11",
+          "name": "هبوط أبولو 11 على القمر",
+          "year": 1969,
+          "source": "https://www.nasa.gov/mission/apollo-11/",
+          "topic": "رحلات الفضاء"
+        }
+      ],
+      "answer": "بعد",
+      "explanation": "1990 > 1969؛ إطلاق تلسكوب هابل حدث بعد هبوط أبولو 11 على القمر.",
+      "sourceFactsCheckedAt": "2026-09-18"
+    },
+    {
+      "qid": "beforeafter-200-913",
+      "events": [
+        {
+          "id": "dubaimetro",
+          "name": "بدء تشغيل مترو دبي",
+          "year": 2009,
+          "source": "https://rta.ae/wps/portal/rta/ae/home/news-and-media/all-news/NewsDetails/dubai-metro-accomplishes-a-decade-of-happy-journeys-for-riders",
+          "topic": "شبكات المترو"
+        },
+        {
+          "id": "dohametro",
+          "name": "بدء تشغيل مترو الدوحة",
+          "year": 2019,
+          "source": "https://en.wikipedia.org/wiki/Doha_Metro",
+          "topic": "شبكات المترو"
+        }
+      ],
+      "answer": "قبل",
+      "explanation": "2009 < 2019؛ بدء تشغيل مترو دبي حدث قبل بدء تشغيل مترو الدوحة.",
+      "sourceFactsCheckedAt": "2026-09-18"
+    },
+    {
+      "qid": "beforeafter-200-914",
+      "events": [
+        {
+          "id": "beijing",
+          "name": "أولمبياد بكين الصيفي",
+          "year": 2008,
+          "source": "https://en.wikipedia.org/wiki/2008_Summer_Olympics",
+          "topic": "دورات أولمبية"
+        },
+        {
+          "id": "sydneygames",
+          "name": "أولمبياد سيدني الصيفي",
+          "year": 2000,
+          "source": "https://en.wikipedia.org/wiki/2000_Summer_Olympics",
+          "topic": "دورات أولمبية"
+        }
+      ],
+      "answer": "بعد",
+      "explanation": "2008 > 2000؛ أولمبياد بكين الصيفي حدث بعد أولمبياد سيدني الصيفي.",
+      "sourceFactsCheckedAt": "2026-09-18"
+    },
+    {
+      "qid": "beforeafter-200-915",
+      "events": [
+        {
+          "id": "liberty",
+          "name": "تدشين تمثال الحرية بنيويورك",
+          "year": 1886,
+          "source": "https://www.nps.gov/stli/learn/statue-of-liberty-facts.htm",
+          "topic": "معالم عمرانية"
+        },
+        {
+          "id": "empirestate",
+          "name": "افتتاح مبنى إمباير ستيت",
+          "year": 1931,
+          "source": "https://www.esbnyc.com/about/history",
+          "topic": "معالم عمرانية"
+        }
+      ],
+      "answer": "قبل",
+      "explanation": "1886 < 1931؛ تدشين تمثال الحرية بنيويورك حدث قبل افتتاح مبنى إمباير ستيت.",
+      "sourceFactsCheckedAt": "2026-09-18"
+    },
+    {
+      "qid": "beforeafter-200-916",
+      "events": [
+        {
+          "id": "burjkhalifa",
+          "name": "افتتاح برج خليفة",
+          "year": 2010,
+          "source": "https://en.wikipedia.org/wiki/Burj_Khalifa",
+          "topic": "معالم عمرانية"
+        },
+        {
+          "id": "sydneyopera",
+          "name": "افتتاح دار أوبرا سيدني",
+          "year": 1973,
+          "source": "https://www.sydneyoperahouse.com/our-story",
+          "topic": "معالم عمرانية"
+        }
+      ],
+      "answer": "بعد",
+      "explanation": "2010 > 1973؛ افتتاح برج خليفة حدث بعد افتتاح دار أوبرا سيدني.",
+      "sourceFactsCheckedAt": "2026-09-18"
+    },
+    {
+      "qid": "beforeafter-200-917",
+      "events": [
+        {
+          "id": "et",
+          "name": "صدور فيلم «إي تي»",
+          "year": 1982,
+          "source": "https://www.universalpicturesathome.com/movies/et-the-extra-terrestrial",
+          "topic": "إصدارات سينمائية"
+        },
+        {
+          "id": "lionking",
+          "name": "صدور رسوم «الأسد الملك» الأصلية",
+          "year": 1994,
+          "source": "https://movies.disney.com/the-lion-king",
+          "topic": "إصدارات سينمائية"
+        }
+      ],
+      "answer": "قبل",
+      "explanation": "1982 < 1994؛ صدور فيلم «إي تي» حدث قبل صدور رسوم «الأسد الملك» الأصلية.",
+      "sourceFactsCheckedAt": "2026-09-18"
+    },
+    {
+      "qid": "beforeafter-200-918",
+      "events": [
+        {
+          "id": "beautybeast",
+          "name": "صدور رسوم «الجميلة والوحش» الأصلية",
+          "year": 1991,
+          "source": "https://movies.disney.com/beauty-and-the-beast",
+          "topic": "إصدارات سينمائية"
+        },
+        {
+          "id": "junglebook",
+          "name": "صدور رسوم «كتاب الأدغال» الأصلية",
+          "year": 1967,
+          "source": "https://movies.disney.com/the-jungle-book-1967",
+          "topic": "إصدارات سينمائية"
+        }
+      ],
+      "answer": "بعد",
+      "explanation": "1991 > 1967؛ صدور رسوم «الجميلة والوحش» الأصلية حدث بعد صدور رسوم «كتاب الأدغال» الأصلية.",
+      "sourceFactsCheckedAt": "2026-09-18"
+    },
+    {
+      "qid": "beforeafter-400-911",
+      "events": [
+        {
+          "id": "apple1",
+          "name": "اكتمال حاسوب آبل الأول",
+          "year": 1976,
+          "source": "https://www.computerhistory.org/timeline/1976/",
+          "topic": "تاريخ الحوسبة"
+        },
+        {
+          "id": "macintosh",
+          "name": "إطلاق أول ماكنتوش",
+          "year": 1984,
+          "source": "https://www.computerhistory.org/timeline/1984/",
+          "topic": "تاريخ الحوسبة"
+        }
+      ],
+      "answer": "قبل",
+      "explanation": "1976 < 1984؛ اكتمال حاسوب آبل الأول حدث قبل إطلاق أول ماكنتوش.",
+      "sourceFactsCheckedAt": "2026-09-18"
+    },
+    {
+      "qid": "beforeafter-400-912",
+      "events": [
+        {
+          "id": "hubble",
+          "name": "إطلاق تلسكوب هابل",
+          "year": 1990,
+          "source": "https://science.nasa.gov/mission/hubble/",
+          "topic": "رحلات الفضاء"
+        },
+        {
+          "id": "voyager1",
+          "name": "إطلاق فوياجر 1",
+          "year": 1977,
+          "source": "https://science.nasa.gov/mission/voyager/voyager-1/",
+          "topic": "رحلات الفضاء"
+        }
+      ],
+      "answer": "بعد",
+      "explanation": "1990 > 1977؛ إطلاق تلسكوب هابل حدث بعد إطلاق فوياجر 1.",
+      "sourceFactsCheckedAt": "2026-09-18"
+    },
+    {
+      "qid": "beforeafter-400-913",
+      "events": [
+        {
+          "id": "londonmetro",
+          "name": "بدء تشغيل مترو لندن",
+          "year": 1863,
+          "source": "https://foi.tfl.gov.uk/FOI-0773-2324/TUBE160%20Heritage%20Leaflet.pdf",
+          "topic": "شبكات المترو"
+        },
+        {
+          "id": "parismetro",
+          "name": "بدء تشغيل مترو باريس",
+          "year": 1900,
+          "source": "https://en.wikipedia.org/wiki/Paris_M%C3%A9tro",
+          "topic": "شبكات المترو"
+        }
+      ],
+      "answer": "قبل",
+      "explanation": "1863 < 1900؛ بدء تشغيل مترو لندن حدث قبل بدء تشغيل مترو باريس.",
+      "sourceFactsCheckedAt": "2026-09-18"
+    },
+    {
+      "qid": "beforeafter-400-914",
+      "events": [
+        {
+          "id": "montreal",
+          "name": "أولمبياد مونتريال الصيفي",
+          "year": 1976,
+          "source": "https://en.wikipedia.org/wiki/1976_Summer_Olympics",
+          "topic": "دورات أولمبية"
+        },
+        {
+          "id": "munich",
+          "name": "أولمبياد ميونخ الصيفي",
+          "year": 1972,
+          "source": "https://en.wikipedia.org/wiki/1972_Summer_Olympics",
+          "topic": "دورات أولمبية"
+        }
+      ],
+      "answer": "بعد",
+      "explanation": "1976 > 1972؛ أولمبياد مونتريال الصيفي حدث بعد أولمبياد ميونخ الصيفي.",
+      "sourceFactsCheckedAt": "2026-09-18"
+    },
+    {
+      "qid": "beforeafter-400-915",
+      "events": [
+        {
+          "id": "goldengate",
+          "name": "افتتاح جسر البوابة الذهبية",
+          "year": 1937,
+          "source": "https://en.wikipedia.org/wiki/Golden_Gate_Bridge",
+          "topic": "معالم عمرانية"
+        },
+        {
+          "id": "spaceneedle",
+          "name": "افتتاح برج سبيس نيدل",
+          "year": 1962,
+          "source": "https://www.spaceneedle.com/history",
+          "topic": "معالم عمرانية"
+        }
+      ],
+      "answer": "قبل",
+      "explanation": "1937 < 1962؛ افتتاح جسر البوابة الذهبية حدث قبل افتتاح برج سبيس نيدل.",
+      "sourceFactsCheckedAt": "2026-09-18"
+    },
+    {
+      "qid": "beforeafter-400-916",
+      "events": [
+        {
+          "id": "louvreabudhabi",
+          "name": "افتتاح اللوفر أبوظبي",
+          "year": 2017,
+          "source": "https://en.wikipedia.org/wiki/Louvre_Abu_Dhabi",
+          "topic": "معالم عمرانية"
+        },
+        {
+          "id": "dubaimetro",
+          "name": "بدء تشغيل مترو دبي",
+          "year": 2009,
+          "source": "https://rta.ae/wps/portal/rta/ae/home/news-and-media/all-news/NewsDetails/dubai-metro-accomplishes-a-decade-of-happy-journeys-for-riders",
+          "topic": "شبكات المترو"
+        }
+      ],
+      "answer": "بعد",
+      "explanation": "2017 > 2009؛ افتتاح اللوفر أبوظبي حدث بعد بدء تشغيل مترو دبي.",
+      "sourceFactsCheckedAt": "2026-09-18"
+    },
+    {
+      "qid": "beforeafter-400-917",
+      "events": [
+        {
+          "id": "bttf",
+          "name": "صدور أول أفلام «العودة إلى المستقبل»",
+          "year": 1985,
+          "source": "https://www.universalpicturesathome.com/movies/back-to-the-future",
+          "topic": "إصدارات سينمائية"
+        },
+        {
+          "id": "aladdin",
+          "name": "صدور رسوم «علاء الدين» الأصلية",
+          "year": 1992,
+          "source": "https://movies.disney.com/aladdin",
+          "topic": "إصدارات سينمائية"
+        }
+      ],
+      "answer": "قبل",
+      "explanation": "1985 < 1992؛ صدور أول أفلام «العودة إلى المستقبل» حدث قبل صدور رسوم «علاء الدين» الأصلية.",
+      "sourceFactsCheckedAt": "2026-09-18"
+    },
+    {
+      "qid": "beforeafter-400-918",
+      "events": [
+        {
+          "id": "jurassicpark",
+          "name": "صدور أول أفلام «جوراسيك بارك»",
+          "year": 1993,
+          "source": "https://www.universalpicturesathome.com/movies/jurassic-park",
+          "topic": "إصدارات سينمائية"
+        },
+        {
+          "id": "et",
+          "name": "صدور فيلم «إي تي»",
+          "year": 1982,
+          "source": "https://www.universalpicturesathome.com/movies/et-the-extra-terrestrial",
+          "topic": "إصدارات سينمائية"
+        }
+      ],
+      "answer": "بعد",
+      "explanation": "1993 > 1982؛ صدور أول أفلام «جوراسيك بارك» حدث بعد صدور فيلم «إي تي».",
+      "sourceFactsCheckedAt": "2026-09-18"
+    },
+    {
+      "qid": "beforeafter-600-911",
+      "events": [
+        {
+          "id": "apple1",
+          "name": "اكتمال حاسوب آبل الأول",
+          "year": 1976,
+          "source": "https://www.computerhistory.org/timeline/1976/",
+          "topic": "تاريخ الحوسبة"
+        },
+        {
+          "id": "ibmpc",
+          "name": "الإعلان عن حاسوب آي بي إم الشخصي",
+          "year": 1981,
+          "source": "https://www.computerhistory.org/timeline/1981/",
+          "topic": "تاريخ الحوسبة"
+        }
+      ],
+      "answer": "قبل",
+      "explanation": "1976 < 1981؛ اكتمال حاسوب آبل الأول حدث قبل الإعلان عن حاسوب آي بي إم الشخصي.",
+      "sourceFactsCheckedAt": "2026-09-18"
+    },
+    {
+      "qid": "beforeafter-600-912",
+      "events": [
+        {
+          "id": "cassini",
+          "name": "إطلاق كاسيني",
+          "year": 1997,
+          "source": "https://science.nasa.gov/mission/cassini/",
+          "topic": "رحلات الفضاء"
+        },
+        {
+          "id": "hubble",
+          "name": "إطلاق تلسكوب هابل",
+          "year": 1990,
+          "source": "https://science.nasa.gov/mission/hubble/",
+          "topic": "رحلات الفضاء"
+        }
+      ],
+      "answer": "بعد",
+      "explanation": "1997 > 1990؛ إطلاق كاسيني حدث بعد إطلاق تلسكوب هابل.",
+      "sourceFactsCheckedAt": "2026-09-18"
+    },
+    {
+      "qid": "beforeafter-600-913",
+      "events": [
+        {
+          "id": "tokyometro",
+          "name": "افتتاح أول خط لمترو طوكيو",
+          "year": 1927,
+          "source": "https://en.wikipedia.org/wiki/Tokyo_Metro",
+          "topic": "شبكات المترو"
+        },
+        {
+          "id": "moscowmetro",
+          "name": "بدء تشغيل مترو موسكو",
+          "year": 1935,
+          "source": "https://en.wikipedia.org/wiki/Moscow_Metro",
+          "topic": "شبكات المترو"
+        }
+      ],
+      "answer": "قبل",
+      "explanation": "1927 < 1935؛ افتتاح أول خط لمترو طوكيو حدث قبل بدء تشغيل مترو موسكو.",
+      "sourceFactsCheckedAt": "2026-09-18"
+    },
+    {
+      "qid": "beforeafter-600-914",
+      "events": [
+        {
+          "id": "sydneygames",
+          "name": "أولمبياد سيدني الصيفي",
+          "year": 2000,
+          "source": "https://en.wikipedia.org/wiki/2000_Summer_Olympics",
+          "topic": "دورات أولمبية"
+        },
+        {
+          "id": "atlanta",
+          "name": "أولمبياد أتلانتا الصيفي",
+          "year": 1996,
+          "source": "https://en.wikipedia.org/wiki/1996_Summer_Olympics",
+          "topic": "دورات أولمبية"
+        }
+      ],
+      "answer": "بعد",
+      "explanation": "2000 > 1996؛ أولمبياد سيدني الصيفي حدث بعد أولمبياد أتلانتا الصيفي.",
+      "sourceFactsCheckedAt": "2026-09-18"
+    },
+    {
+      "qid": "beforeafter-600-915",
+      "events": [
+        {
+          "id": "empirestate",
+          "name": "افتتاح مبنى إمباير ستيت",
+          "year": 1931,
+          "source": "https://www.esbnyc.com/about/history",
+          "topic": "معالم عمرانية"
+        },
+        {
+          "id": "goldengate",
+          "name": "افتتاح جسر البوابة الذهبية",
+          "year": 1937,
+          "source": "https://en.wikipedia.org/wiki/Golden_Gate_Bridge",
+          "topic": "معالم عمرانية"
+        }
+      ],
+      "answer": "قبل",
+      "explanation": "1931 < 1937؛ افتتاح مبنى إمباير ستيت حدث قبل افتتاح جسر البوابة الذهبية.",
+      "sourceFactsCheckedAt": "2026-09-18"
+    },
+    {
+      "qid": "beforeafter-600-916",
+      "events": [
+        {
+          "id": "louvreabudhabi",
+          "name": "افتتاح اللوفر أبوظبي",
+          "year": 2017,
+          "source": "https://en.wikipedia.org/wiki/Louvre_Abu_Dhabi",
+          "topic": "معالم عمرانية"
+        },
+        {
+          "id": "burjkhalifa",
+          "name": "افتتاح برج خليفة",
+          "year": 2010,
+          "source": "https://en.wikipedia.org/wiki/Burj_Khalifa",
+          "topic": "معالم عمرانية"
+        }
+      ],
+      "answer": "بعد",
+      "explanation": "2017 > 2010؛ افتتاح اللوفر أبوظبي حدث بعد افتتاح برج خليفة.",
+      "sourceFactsCheckedAt": "2026-09-18"
+    },
+    {
+      "qid": "beforeafter-600-917",
+      "events": [
+        {
+          "id": "jaws",
+          "name": "صدور فيلم «الفك المفترس» الأصلي",
+          "year": 1975,
+          "source": "https://www.universalpicturesathome.com/movies/jaws",
+          "topic": "إصدارات سينمائية"
+        },
+        {
+          "id": "et",
+          "name": "صدور فيلم «إي تي»",
+          "year": 1982,
+          "source": "https://www.universalpicturesathome.com/movies/et-the-extra-terrestrial",
+          "topic": "إصدارات سينمائية"
+        }
+      ],
+      "answer": "قبل",
+      "explanation": "1975 < 1982؛ صدور فيلم «الفك المفترس» الأصلي حدث قبل صدور فيلم «إي تي».",
+      "sourceFactsCheckedAt": "2026-09-18"
+    },
+    {
+      "qid": "beforeafter-600-918",
+      "events": [
+        {
+          "id": "beautybeast",
+          "name": "صدور رسوم «الجميلة والوحش» الأصلية",
+          "year": 1991,
+          "source": "https://movies.disney.com/beauty-and-the-beast",
+          "topic": "إصدارات سينمائية"
+        },
+        {
+          "id": "bttf",
+          "name": "صدور أول أفلام «العودة إلى المستقبل»",
+          "year": 1985,
+          "source": "https://www.universalpicturesathome.com/movies/back-to-the-future",
+          "topic": "إصدارات سينمائية"
+        }
+      ],
+      "answer": "بعد",
+      "explanation": "1991 > 1985؛ صدور رسوم «الجميلة والوحش» الأصلية حدث بعد صدور أول أفلام «العودة إلى المستقبل».",
+      "sourceFactsCheckedAt": "2026-09-18"
+    },
+    {
+      "qid": "beforeafter-800-911",
+      "events": [
+        {
+          "id": "intel4004",
+          "name": "طرح معالج إنتل 4004",
+          "year": 1971,
+          "source": "https://www.computerhistory.org/timeline/1971/",
+          "topic": "تاريخ الحوسبة"
+        },
+        {
+          "id": "apple1",
+          "name": "اكتمال حاسوب آبل الأول",
+          "year": 1976,
+          "source": "https://www.computerhistory.org/timeline/1976/",
+          "topic": "تاريخ الحوسبة"
+        }
+      ],
+      "answer": "قبل",
+      "explanation": "1971 < 1976؛ طرح معالج إنتل 4004 حدث قبل اكتمال حاسوب آبل الأول.",
+      "sourceFactsCheckedAt": "2026-09-18"
+    },
+    {
+      "qid": "beforeafter-800-912",
+      "events": [
+        {
+          "id": "arpanet",
+          "name": "بدء تشغيل شبكة أربانت",
+          "year": 1969,
+          "source": "https://www.computerhistory.org/timeline/1969/",
+          "topic": "تاريخ الحوسبة"
+        },
+        {
+          "id": "apollo8",
+          "name": "إطلاق أبولو 8",
+          "year": 1968,
+          "source": "https://www.nasa.gov/mission/apollo-8/",
+          "topic": "رحلات الفضاء"
+        }
+      ],
+      "answer": "بعد",
+      "explanation": "1969 > 1968؛ بدء تشغيل شبكة أربانت حدث بعد إطلاق أبولو 8.",
+      "sourceFactsCheckedAt": "2026-09-18"
+    },
+    {
+      "qid": "beforeafter-800-913",
+      "events": [
+        {
+          "id": "parismetro",
+          "name": "بدء تشغيل مترو باريس",
+          "year": 1900,
+          "source": "https://en.wikipedia.org/wiki/Paris_M%C3%A9tro",
+          "topic": "شبكات المترو"
+        },
+        {
+          "id": "newyorkmetro",
+          "name": "افتتاح أول خط أنفاق لمترو نيويورك",
+          "year": 1904,
+          "source": "https://en.wikipedia.org/wiki/New_York_City_Subway",
+          "topic": "شبكات المترو"
+        }
+      ],
+      "answer": "قبل",
+      "explanation": "1900 < 1904؛ بدء تشغيل مترو باريس حدث قبل افتتاح أول خط أنفاق لمترو نيويورك.",
+      "sourceFactsCheckedAt": "2026-09-18"
+    },
+    {
+      "qid": "beforeafter-800-914",
+      "events": [
+        {
+          "id": "moscow",
+          "name": "أولمبياد موسكو الصيفي",
+          "year": 1980,
+          "source": "https://en.wikipedia.org/wiki/1980_Summer_Olympics",
+          "topic": "دورات أولمبية"
+        },
+        {
+          "id": "montreal",
+          "name": "أولمبياد مونتريال الصيفي",
+          "year": 1976,
+          "source": "https://en.wikipedia.org/wiki/1976_Summer_Olympics",
+          "topic": "دورات أولمبية"
+        }
+      ],
+      "answer": "بعد",
+      "explanation": "1980 > 1976؛ أولمبياد موسكو الصيفي حدث بعد أولمبياد مونتريال الصيفي.",
+      "sourceFactsCheckedAt": "2026-09-18"
+    },
+    {
+      "qid": "beforeafter-800-915",
+      "events": [
+        {
+          "id": "liberty",
+          "name": "تدشين تمثال الحرية بنيويورك",
+          "year": 1886,
+          "source": "https://www.nps.gov/stli/learn/statue-of-liberty-facts.htm",
+          "topic": "معالم عمرانية"
+        },
+        {
+          "id": "eiffel",
+          "name": "اكتمال بناء برج إيفل",
+          "year": 1889,
+          "source": "https://www.toureiffel.paris/en/the-monument/history",
+          "topic": "معالم عمرانية"
+        }
+      ],
+      "answer": "قبل",
+      "explanation": "1886 < 1889؛ تدشين تمثال الحرية بنيويورك حدث قبل اكتمال بناء برج إيفل.",
+      "sourceFactsCheckedAt": "2026-09-18"
+    },
+    {
+      "qid": "beforeafter-800-916",
+      "events": [
+        {
+          "id": "junglebook",
+          "name": "صدور رسوم «كتاب الأدغال» الأصلية",
+          "year": 1967,
+          "source": "https://movies.disney.com/the-jungle-book-1967",
+          "topic": "إصدارات سينمائية"
+        },
+        {
+          "id": "spaceneedle",
+          "name": "افتتاح برج سبيس نيدل",
+          "year": 1962,
+          "source": "https://www.spaceneedle.com/history",
+          "topic": "معالم عمرانية"
+        }
+      ],
+      "answer": "بعد",
+      "explanation": "1967 > 1962؛ صدور رسوم «كتاب الأدغال» الأصلية حدث بعد افتتاح برج سبيس نيدل.",
+      "sourceFactsCheckedAt": "2026-09-18"
+    },
+    {
+      "qid": "beforeafter-800-917",
+      "events": [
+        {
+          "id": "beautybeast",
+          "name": "صدور رسوم «الجميلة والوحش» الأصلية",
+          "year": 1991,
+          "source": "https://movies.disney.com/beauty-and-the-beast",
+          "topic": "إصدارات سينمائية"
+        },
+        {
+          "id": "jurassicpark",
+          "name": "صدور أول أفلام «جوراسيك بارك»",
+          "year": 1993,
+          "source": "https://www.universalpicturesathome.com/movies/jurassic-park",
+          "topic": "إصدارات سينمائية"
+        }
+      ],
+      "answer": "قبل",
+      "explanation": "1991 < 1993؛ صدور رسوم «الجميلة والوحش» الأصلية حدث قبل صدور أول أفلام «جوراسيك بارك».",
+      "sourceFactsCheckedAt": "2026-09-18"
+    },
+    {
+      "qid": "beforeafter-800-918",
+      "events": [
+        {
+          "id": "aladdin",
+          "name": "صدور رسوم «علاء الدين» الأصلية",
+          "year": 1992,
+          "source": "https://movies.disney.com/aladdin",
+          "topic": "إصدارات سينمائية"
+        },
+        {
+          "id": "hubble",
+          "name": "إطلاق تلسكوب هابل",
+          "year": 1990,
+          "source": "https://science.nasa.gov/mission/hubble/",
+          "topic": "رحلات الفضاء"
+        }
+      ],
+      "answer": "بعد",
+      "explanation": "1992 > 1990؛ صدور رسوم «علاء الدين» الأصلية حدث بعد إطلاق تلسكوب هابل.",
+      "sourceFactsCheckedAt": "2026-09-18"
+    },
+    {
+      "qid": "beforeafter-1000-911",
+      "events": [
+        {
+          "id": "ibmpc",
+          "name": "الإعلان عن حاسوب آي بي إم الشخصي",
+          "year": 1981,
+          "source": "https://www.computerhistory.org/timeline/1981/",
+          "topic": "تاريخ الحوسبة"
+        },
+        {
+          "id": "et",
+          "name": "صدور فيلم «إي تي»",
+          "year": 1982,
+          "source": "https://www.universalpicturesathome.com/movies/et-the-extra-terrestrial",
+          "topic": "إصدارات سينمائية"
+        }
+      ],
+      "answer": "قبل",
+      "explanation": "1981 < 1982؛ الإعلان عن حاسوب آي بي إم الشخصي حدث قبل صدور فيلم «إي تي».",
+      "sourceFactsCheckedAt": "2026-09-18"
+    },
+    {
+      "qid": "beforeafter-1000-912",
+      "events": [
+        {
+          "id": "voyager1",
+          "name": "إطلاق فوياجر 1",
+          "year": 1977,
+          "source": "https://science.nasa.gov/mission/voyager/voyager-1/",
+          "topic": "رحلات الفضاء"
+        },
+        {
+          "id": "apple1",
+          "name": "اكتمال حاسوب آبل الأول",
+          "year": 1976,
+          "source": "https://www.computerhistory.org/timeline/1976/",
+          "topic": "تاريخ الحوسبة"
+        }
+      ],
+      "answer": "بعد",
+      "explanation": "1977 > 1976؛ إطلاق فوياجر 1 حدث بعد اكتمال حاسوب آبل الأول.",
+      "sourceFactsCheckedAt": "2026-09-18"
+    },
+    {
+      "qid": "beforeafter-1000-913",
+      "events": [
+        {
+          "id": "moscowmetro",
+          "name": "بدء تشغيل مترو موسكو",
+          "year": 1935,
+          "source": "https://en.wikipedia.org/wiki/Moscow_Metro",
+          "topic": "شبكات المترو"
+        },
+        {
+          "id": "snowwhite",
+          "name": "صدور رسوم «سنو وايت والأقزام السبعة»",
+          "year": 1937,
+          "source": "https://movies.disney.com/snow-white-and-the-seven-dwarfs",
+          "topic": "إصدارات سينمائية"
+        }
+      ],
+      "answer": "قبل",
+      "explanation": "1935 < 1937؛ بدء تشغيل مترو موسكو حدث قبل صدور رسوم «سنو وايت والأقزام السبعة».",
+      "sourceFactsCheckedAt": "2026-09-18"
+    },
+    {
+      "qid": "beforeafter-1000-914",
+      "events": [
+        {
+          "id": "sydneyopera",
+          "name": "افتتاح دار أوبرا سيدني",
+          "year": 1973,
+          "source": "https://www.sydneyoperahouse.com/our-story",
+          "topic": "معالم عمرانية"
+        },
+        {
+          "id": "munich",
+          "name": "أولمبياد ميونخ الصيفي",
+          "year": 1972,
+          "source": "https://en.wikipedia.org/wiki/1972_Summer_Olympics",
+          "topic": "دورات أولمبية"
+        }
+      ],
+      "answer": "بعد",
+      "explanation": "1973 > 1972؛ افتتاح دار أوبرا سيدني حدث بعد أولمبياد ميونخ الصيفي.",
+      "sourceFactsCheckedAt": "2026-09-18"
+    },
+    {
+      "qid": "beforeafter-1000-915",
+      "events": [
+        {
+          "id": "empirestate",
+          "name": "افتتاح مبنى إمباير ستيت",
+          "year": 1931,
+          "source": "https://www.esbnyc.com/about/history",
+          "topic": "معالم عمرانية"
+        },
+        {
+          "id": "moscowmetro",
+          "name": "بدء تشغيل مترو موسكو",
+          "year": 1935,
+          "source": "https://en.wikipedia.org/wiki/Moscow_Metro",
+          "topic": "شبكات المترو"
+        }
+      ],
+      "answer": "قبل",
+      "explanation": "1931 < 1935؛ افتتاح مبنى إمباير ستيت حدث قبل بدء تشغيل مترو موسكو.",
+      "sourceFactsCheckedAt": "2026-09-18"
+    },
+    {
+      "qid": "beforeafter-1000-916",
+      "events": [
+        {
+          "id": "bttf",
+          "name": "صدور أول أفلام «العودة إلى المستقبل»",
+          "year": 1985,
+          "source": "https://www.universalpicturesathome.com/movies/back-to-the-future",
+          "topic": "إصدارات سينمائية"
+        },
+        {
+          "id": "macintosh",
+          "name": "إطلاق أول ماكنتوش",
+          "year": 1984,
+          "source": "https://www.computerhistory.org/timeline/1984/",
+          "topic": "تاريخ الحوسبة"
+        }
+      ],
+      "answer": "بعد",
+      "explanation": "1985 > 1984؛ صدور أول أفلام «العودة إلى المستقبل» حدث بعد إطلاق أول ماكنتوش.",
+      "sourceFactsCheckedAt": "2026-09-18"
+    },
+    {
+      "qid": "beforeafter-1000-917",
+      "events": [
+        {
+          "id": "aladdin",
+          "name": "صدور رسوم «علاء الدين» الأصلية",
+          "year": 1992,
+          "source": "https://movies.disney.com/aladdin",
+          "topic": "إصدارات سينمائية"
+        },
+        {
+          "id": "jurassicpark",
+          "name": "صدور أول أفلام «جوراسيك بارك»",
+          "year": 1993,
+          "source": "https://www.universalpicturesathome.com/movies/jurassic-park",
+          "topic": "إصدارات سينمائية"
+        }
+      ],
+      "answer": "قبل",
+      "explanation": "1992 < 1993؛ صدور رسوم «علاء الدين» الأصلية حدث قبل صدور أول أفلام «جوراسيك بارك».",
+      "sourceFactsCheckedAt": "2026-09-18"
+    },
+    {
+      "qid": "beforeafter-1000-918",
+      "events": [
+        {
+          "id": "iphone",
+          "name": "إطلاق أول آيفون",
+          "year": 2007,
+          "source": "https://www.computerhistory.org/timeline/2007/",
+          "topic": "تاريخ الحوسبة"
+        },
+        {
+          "id": "newhorizons",
+          "name": "إطلاق نيو هورايزنز",
+          "year": 2006,
+          "source": "https://science.nasa.gov/mission/new-horizons/",
+          "topic": "رحلات الفضاء"
+        }
+      ],
+      "answer": "بعد",
+      "explanation": "2007 > 2006؛ إطلاق أول آيفون حدث بعد إطلاق نيو هورايزنز.",
+      "sourceFactsCheckedAt": "2026-09-18"
+    }
+  ],
+  "puzzles": [
+    {
+      "qid": "puzzles-200-912",
+      "p": 200,
+      "question": "اقلب حروف «ملك»، ثم أضف همزة «أ» في البداية. ما الفعل الناتج؟",
+      "answer": "أكلم",
+      "reason": "ملك→كلم→أكلم."
+    },
+    {
+      "qid": "puzzles-200-913",
+      "p": 200,
+      "question": "بدأ فيلم الساعة 9:40 ومدته 95 دقيقة. متى ينتهي؟",
+      "answer": "11:15",
+      "reason": "9:40 +60 دقيقة=10:40؛ +35=11:15."
+    },
+    {
+      "qid": "puzzles-200-915",
+      "p": 200,
+      "question": "أمام شخص أربعة أفراد وخلفه سبعة في طابور. ما ترتيبه من الخلف؟",
+      "answer": "الثامن",
+      "reason": "سبعة خلفه يعني أنه الثامن من النهاية."
+    },
+    {
+      "qid": "puzzles-200-921",
+      "p": 200,
+      "question": "قُسّم مربع إلى شبكة 2×2 مربعات متساوية. كم مربعًا يوجد بكل الأحجام؟",
+      "answer": "5 مربعات",
+      "reason": "أربعة مربعات صغيرة ومربع خارجي: 4+1=5؛ حل بصري قصير بدل معلومة محفوظة عن المكعب."
+    },
+    {
+      "qid": "puzzles-200-922",
+      "p": 200,
+      "question": "مصباح متوهج أُطفئ للتو وآخر لم يُشغّل؛ كلاهما مظلم. ما الخاصية التي تميزهما فورًا؟",
+      "answer": "الحرارة",
+      "reason": "التوهج يسخن المصباح؛ يبقى الأول ساخنًا فترة بعد إطفائه. المثال للمصباح المتوهج، لا افتراض لجميع أنواع الإضاءة."
+    },
+    {
+      "qid": "puzzles-200-923",
+      "p": 200,
+      "question": "دفعت 40 دينارًا بعد خصم 20% من السعر الأصلي. كم كان السعر الأصلي؟",
+      "answer": "50 دينارًا",
+      "reason": "السعر×0.8=40؛ السعر=50."
+    },
+    {
+      "qid": "puzzles-200-924",
+      "p": 200,
+      "question": "في سباق، تجاوزت أقرب متسابق خلف المتصدر دون تخطي غيره. ما مركزك الآن؟",
+      "answer": "الثاني",
+      "reason": "استُبدل طرح عمرين مباشر باستنتاج ترتيب قصير: تجاوز صاحب المركز الثاني يأخذ مركزه، ولا يتخطى المتصدر. مناسب لبداية الحزمة عند200."
+    },
+    {
+      "qid": "puzzles-200-925",
+      "p": 200,
+      "question": "لديك ثلاثة قمصان وسروالان مختلفان. كم زيًا يمكن تكوينه بقميص وسروال؟",
+      "answer": "6 أزياء",
+      "reason": "لكل قميص خياران من السراويل، فيكون3×2=6؛ نقل إلى200 بدل عد تكرارات الرقم9 الذي يتكرر في سؤال آخر."
+    },
+    {
+      "qid": "puzzles-400-921",
+      "p": 400,
+      "question": "سعر حقيبة 50، خُصم 20% منه ثم خُصمت 5 إضافية. كم أصبح السعر؟",
+      "answer": "35",
+      "reason": "50×0.8−5=35."
+    },
+    {
+      "qid": "puzzles-400-922",
+      "p": 400,
+      "question": "مجموع عمري أخوين 24 سنة، والفارق 12 سنة. كم عمر الأكبر؟",
+      "answer": "18 سنة",
+      "reason": "الأكبر=(24+12)/2=18 والأصغر6."
+    },
+    {
+      "qid": "puzzles-400-912",
+      "p": 400,
+      "question": "احذف آخر حرف من «ملحق»، ثم انقل أول حرف إلى النهاية. ما الكلمة الناتجة؟",
+      "answer": "لحم",
+      "reason": "ملحق→ملح→لحم."
+    },
+    {
+      "qid": "puzzles-400-923",
+      "p": 400,
+      "question": "استدرت ربع دورة يمينًا ثم نصف دورة يسارًا، وانتهيت شمالًا. إلى أي اتجاه كنت تواجه؟",
+      "answer": "الشرق",
+      "reason": "استُبدلت صيغة طابور ثانية باستدلال مكاني عكسي: شرق→جنوب→شمال. يتطلب عكس خطوتين دون تكرار حساب ترتيب الشخص."
+    },
+    {
+      "qid": "puzzles-400-916",
+      "p": 400,
+      "question": "كم قطرًا للشكل الخماسي المحدب؟",
+      "answer": "5 أقطار",
+      "reason": "لكل رأس قطـران؛5×2/2=5."
+    },
+    {
+      "qid": "puzzles-400-924",
+      "p": 400,
+      "question": "كيس فيه ثلاث كرات حمراء وواحدة زرقاء؛ سُحبت حمراء دون إعادتها. ما احتمال سحب زرقاء عشوائيًا بعدها؟",
+      "answer": "الثلث",
+      "reason": "استُبدل عد الأزواج المكرر باحتمال بعد سحب بلا إعادة. يبقى ثلاث كرات، إحداها زرقاء، فالاحتمال1/3. تحديث العينة ثم حساب النسبة يلائمان400."
+    },
+    {
+      "qid": "puzzles-400-918",
+      "p": 400,
+      "question": "درج فيه جوارب سوداء وبيضاء كثيرة. ما أقل عدد تسحبه عشوائيًا لتضمن ثلاثة من اللون نفسه؟",
+      "answer": "5 جوارب",
+      "reason": "ذُكر الحد الأدنى صراحة حتى لا تبدو أي كمية أكبر جوابًا صحيحًا. أربعة قد تتوزع2+2، والخامسة تضمن ثلاثة من لون واحد."
+    },
+    {
+      "qid": "puzzles-400-925",
+      "p": 400,
+      "question": "جرس بفواصل متساوية يستغرق عشر ثوانٍ من أول دقة إلى السادسة. كم يستغرق من الأولى إلى الثانية عشرة؟",
+      "answer": "22 ثانية",
+      "reason": "بين6دقات5فواصل؛ الفاصل2ثانية. بين12دقة11فاصلًا، أي22ثانية."
+    },
+    {
+      "qid": "puzzles-600-921",
+      "p": 600,
+      "question": "في نادٍ 30 عضوًا؛ 18 يسبحون و20 يركضون، والجميع يمارس واحدة على الأقل. كم يمارس الرياضتين؟",
+      "answer": "8 أعضاء",
+      "reason": "استُبدل عدد المصافحات، الذي يكرر عد الأزواج والأقطار، باستنتاج التقاطع: جمع18+20 يعد أصحاب الرياضتين مرتين؛38−30=8. يتطلب إدراك العد المكرر عند600."
+    },
+    {
+      "qid": "puzzles-600-922",
+      "p": 600,
+      "question": "ثماني كرات، إحداها أثقل والباقي متساوٍ؛ ما أقل عدد وزنات بميزان كفتين يضمن تحديد الثقيلة؟",
+      "answer": "وزنتان",
+      "reason": "أُزيل احتمال فهم العبارة كثماني كرات إضافة إلى كرة أخرى، ونُص على تساوي الباقي.3ضد3 ثم1ضد1 يحسمان؛ وزنة واحدة لا تميز ثماني حالات."
+    },
+    {
+      "qid": "puzzles-600-923",
+      "p": 600,
+      "question": "ثمن دفتر وقلم 18، والدفتر ضعف القلم. ما ثمن ثلاثة دفاتر وقلم؟",
+      "answer": "42",
+      "reason": "القلم6 والدفتر12؛3×12+6=42."
+    },
+    {
+      "qid": "puzzles-600-924",
+      "p": 600,
+      "question": "ساعة تخسر بمعدل ثابت 5 دقائق كل ساعة حقيقية، وضُبطت ظهرًا. عندما تشير إلى 5:30 مساءً، كم تكون الساعة الحقيقية؟",
+      "answer": "6:00 مساءً",
+      "reason": "كل60 دقيقة حقيقية تظهر55؛ للوصول إلى330 دقيقة معروضة يلزم330÷55=6 ساعات حقيقية. سؤال600 يتطلب إدراك معدل الساعة."
+    },
+    {
+      "qid": "puzzles-600-925",
+      "p": 600,
+      "question": "أب عمره ثلاثة أضعاف ابنه؛ بعد 12 سنة يصبح ضعفه. كم عمر الأب الآن؟",
+      "answer": "36 سنة",
+      "reason": "إذا كان الابنx فإن3x+12=2(x+12)، فيكونx=12 والأب36."
+    },
+    {
+      "qid": "puzzles-600-912",
+      "p": 600,
+      "question": "شفرة تستبدل كل حرف بالتالي في ترتيب الهجاء العربي. ما أصل كلمة «كنز»؟",
+      "answer": "قمر",
+      "reason": "تصحيح فصل كلمة عن الاقتباس؛ الحل كما هو: ك←ق، ن←م، ز←ر، فتكون قمر."
+    },
+    {
+      "qid": "puzzles-600-926",
+      "p": 600,
+      "question": "خمسة كتب: أ قبل ب مباشرة، وج بعد د مباشرة، وهـ بين ب ود. ما الكتاب الأوسط؟",
+      "answer": "هـ",
+      "reason": "أ وب كتلة، ود وج كتلة، وهـ بين ب ود؛ الترتيبان الممكنان أ،ب،هـ،د،ج أو د،ج،هـ،أ،ب. في كليهما هـ وسطًا، فالإجابة وحيدة وإن لم يكن ترتيب الكتب كله وحيدًا. استبدال باقي قسمة الدور27 باستدلال ترتيبي."
+    },
+    {
+      "qid": "puzzles-600-927",
+      "p": 600,
+      "question": "مكعب طُلي خارجيًا ثم قُطع إلى 27 مكعبًا متساويًا. كم مكعبًا صغيرًا له وجهان مطليان بالضبط؟",
+      "answer": "12 مكعبًا",
+      "reason": "استُبدلت زيادة شبكة2×2 إلى3×3 باستدلال فراغي: القطع ذات الوجهين وسط الحواف الاثنتي عشرة؛ الزوايا لها ثلاثة أوجه، ومراكز الوجوه وجه واحد. مناسب600."
+    },
+    {
+      "qid": "puzzles-800-921",
+      "p": 800,
+      "question": "عدد من رقمين مجموع رقميه 11. بعكسهما يزداد 27. ما العدد؟",
+      "answer": "47",
+      "reason": "إذا العشراتa والآحادb: a+b=11 و9(b−a)=27، ومنهa=4 وb=7."
+    },
+    {
+      "qid": "puzzles-800-922",
+      "p": 800,
+      "question": "ما الزاوية الأصغر بين عقربَي ساعة تناظرية عند الثالثة والنصف؟",
+      "answer": "75 درجة",
+      "reason": "عقرب الدقائق180° وعقرب الساعات105°؛ الفرق75°."
+    },
+    {
+      "qid": "puzzles-800-923",
+      "p": 800,
+      "question": "صنبور يملأ حوضًا في ست ساعات، ومصرف يفرغه في تسع، بمعدلين ثابتين. إذا عَملا معًا، فمتى يمتلئ الحوض الفارغ؟",
+      "answer": "بعد 18 ساعة",
+      "reason": "استُبدلت مسألة عمر تماثل سؤال الأب باجتماع معدلَي تعبئة وتفريغ:1/6−1/9=1/18 حوض كل ساعة. تحويل الأزمنة إلى معدلات ثم عكس الناتج يناسب800."
+    },
+    {
+      "qid": "puzzles-800-924",
+      "p": 800,
+      "question": "شبكة مستطيلة من صفين وثلاثة أعمدة؛ كم مستطيلًا مختلفًا تحدده خطوطها، بما فيها المربعات؟",
+      "answer": "18 مستطيلًا",
+      "reason": "اختر خطين من3 أفقيين وخطين من4 رأسيين:3×6=18."
+    },
+    {
+      "qid": "puzzles-800-912",
+      "p": 800,
+      "question": "في شفرة تعكس ترتيب الحروف الهجائية العربية الثمانية والعشرين، أي حرف يقابل الذال؟",
+      "answer": "الفاء",
+      "reason": "الذال ترتيبه9، ومقابله28+1−9=20 وهو الفاء. ا ب ت ث ج ح خ د ذ ر ز س ش ص ض ط ظ ع غ ف ق ك ل م ن ه و ي."
+    },
+    {
+      "qid": "puzzles-800-915",
+      "p": 800,
+      "question": "خمسة كتب مختلفة على رف؛ كتابان محددان يجب أن يتجاورا. كم ترتيبًا ممكنًا؟",
+      "answer": "48 ترتيبًا",
+      "reason": "اعتبر الكتابين كتلة:4! ترتيبات للكتل×2 لترتيب الكتابين=48."
+    },
+    {
+      "qid": "puzzles-800-916",
+      "p": 800,
+      "question": "شبكة 3×3 مربعات؛ كم مسارًا أقصر بين ركنين متقابلين باستخدام اليمين والأسفل فقط؟",
+      "answer": "20 مسارًا",
+      "reason": "كل مسار6 خطوات، ثلاث يمين وثلاث أسفل؛عددها اختيار3 من6=20."
+    },
+    {
+      "qid": "puzzles-800-918",
+      "p": 800,
+      "question": "شهر من ثلاثين يومًا فيه خمس جمع وخمس سبوت. بأي يوم بدأ؟",
+      "answer": "الجمعة",
+      "reason": "30=4أسابيع+يومين. اليومان المتتاليان الزائدان الجمعة والسبت، لذا الأول الجمعة."
+    },
+    {
+      "qid": "puzzles-1000-921",
+      "p": 1000,
+      "question": "بعت سلعتين بالسعر نفسه؛ ربحت في إحداهما 25% وخسرت في الأخرى 25%. ما نسبة الخسارة الإجمالية؟",
+      "answer": "6.25%",
+      "reason": "نفترض سعر بيع كل سلعة100؛ التكلفتان100/1.25=80 و100/.75=400/3؛ الإجمالي640/3 مقابل بيع200. الخسارة(40/3)/(640/3)=1/16=6.25%. تساوي سعر البيع لا تساوي التكلفة."
+    },
+    {
+      "qid": "puzzles-1000-912",
+      "p": 1000,
+      "question": "صناديق تفاح وبرتقال وخليط، وكل الملصقات خاطئة. من أي صندوق تسحب ثمرة دون النظر لتحدد محتويات الجميع؟",
+      "answer": "المسمى خليطًا",
+      "reason": "ذُكر السحب دون النظر منعًا لاختصار اللغز بقراءة محتويات الصندوق بصريًا. البدء بالمسمى خليطًا يكشف نوعًا خالصًا؛ ثم تستبعد بقية الملصقات الخاطئة."
+    },
+    {
+      "qid": "puzzles-1000-922",
+      "p": 1000,
+      "question": "حبلان غير منتظمي الاحتراق، يحترق كل منهما بساعة. كيف تبدأ إشعالهما معًا لقياس 45 دقيقة، بإشعال طرف إضافي عند نفاد الأول؟",
+      "answer": "أحدهما بطرفيه والآخر بطرف",
+      "reason": "أصبح المطلوب اكتشاف توزيع الإشعال بدل حساب مدة بعد إعطاء الاستراتيجية كاملة. حبل بطرفين ينفد بعد30دقيقة؛ إشعال الطرف الآخر للباقي عندئذ يستهلك ما بقي في15، فينتهي القياس بعد45دقيقة. لا يُقاس طول الحبل لأن احتراقه غير منتظم."
+    },
+    {
+      "qid": "puzzles-1000-923",
+      "p": 1000,
+      "question": "سبعة أشخاص يجلسون حول طاولة دائرية. نعد الدوران والانعكاس ترتيبًا واحدًا. كم ترتيبًا مختلفًا يوجد؟",
+      "answer": "360 ترتيبًا",
+      "reason": "نثبت موضع شخص لإزالة الدوران، ثم6! ترتيبات؛ كل ترتيب وصورته المنعكسة متكافئان، وليس لأي ترتيب من أشخاص متميزين انعكاس ثابت، فالعدد6!/2=360."
+    },
+    {
+      "qid": "puzzles-1000-915",
+      "p": 1000,
+      "question": "حُذف ركنان متقابلان من رقعة شطرنج. لماذا يستحيل تغطية الباقي بقطع 2×1 دون تداخل أو خروج؟",
+      "answer": "اختلاف عدد المربعات من اللونين",
+      "reason": "الركنان المتقابلان من اللون نفسه؛ يبقى30من لون و32من الآخر. كل قطعة2×1 تغطي لونًا من كل نوع، فيستحيل."
+    },
+    {
+      "qid": "puzzles-1000-924",
+      "p": 1000,
+      "question": "100 خزنة مغلقة؛ الجولات مرقمة 1–100. في الجولة k تُقلب حالة كل خزنة رقمها مضاعف لـk. كم خزنة مفتوحة؟",
+      "answer": "10 خزائن",
+      "reason": "خزنة n تُقلب بعدد قواسمn؛ القواسم تتزاوج إلا للجذر الصحيح. تبقى مفتوحة المربعات1،4،9،16،25،36،49،64،81،100 فقط:10. استبدال سؤال الرقم9 المتكرر."
+    },
+    {
+      "qid": "puzzles-1000-917",
+      "p": 1000,
+      "question": "أربعة بضفة: أزمنتهم 1،2،7،10 دقائق. جسر يتسع لاثنين، والعبور بسرعة الأبطأ والمصباح يرافق كل عبور. ما أقل زمن للجميع؟",
+      "answer": "17 دقيقة",
+      "reason": "نُص على مرافقة المصباح كل عبور، بما فيه العودة. البحث المستقل في جميع انتقالات المصباح يثبت أن الحد الأدنى17دقيقة."
+    },
+    {
+      "qid": "puzzles-1000-918",
+      "p": 1000,
+      "question": "ثلاثة مفاتيح لثلاثة أقفال، لكل قفل مفتاح مختلف. ما أقل عدد تجارب يكفي لتحديد جميع المطابقات في أسوأ حالة؟",
+      "answer": "3 تجارب",
+      "reason": "هناك6مطابقات؛ تجربتان بنعم/لا لا تميزان إلا4حالات. ثلاث تكفي: جرّب المفتاح الأول بقفلين، فتحدد قفله نجاحًا أو استبعادًا؛ ثم تجربة واحدة للمفتاح الثاني بين القفلين الباقيين. قد تكفي أقل في حالة محظوظة، لكن أسوأ حالة3."
+    }
+  ]
+}

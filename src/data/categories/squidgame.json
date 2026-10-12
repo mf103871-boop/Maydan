@@ -11,7 +11,6 @@
       "q": "ما اسم الحلوى الكورية التي يخاطر اللاعبون بكسر شكلها المحفور؟",
       "a": "دالغونا",
       "alt": [
-        "الدالغونا",
         "Dalgona"
       ],
       "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-games-explained",
@@ -24,9 +23,7 @@
       "topic": "رحلة جيهون",
       "q": "إلى أي لون يصبغ جيهون شعره بعد فوزه الأول؟",
       "a": "الأحمر",
-      "alt": [
-        "أحمر"
-      ],
+      "alt": [],
       "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-season-1-ending-explainer",
       "verified": true,
       "difficultyTarget": 0.8
@@ -182,7 +179,6 @@
       "q": "ماذا ينتظر المتمردون أن يجلب لهم داي هو حين يعود إلى المهجع؟",
       "a": "الذخيرة",
       "alt": [
-        "ذخيرة",
         "مخازن الذخيرة",
         "الرصاص"
       ],
@@ -299,10 +295,10 @@
       "p": 600,
       "topic": "القرارات المصيرية",
       "q": "أي مهنة يعود إليها الأب غيونغ سوك بعد إنقاذه وشفاء ابنته؟",
-      "a": "رسم الوجوه في الملاهي",
+      "a": "رسم البورتريه",
       "alt": [
+        "رسم الصور الشخصية",
         "رسام بورتريه",
-        "رسم البورتريه",
         "رسام في الملاهي"
       ],
       "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-season-3-ending-explained",
@@ -315,9 +311,7 @@
       "topic": "قواعد النجاة",
       "q": "في لعبة الاختباء بالموسم الثالث، ماذا يحصل عليه الفريق الأزرق لفتح الأبواب؟",
       "a": "مفاتيح",
-      "alt": [
-        "المفاتيح"
-      ],
+      "alt": [],
       "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-games-explained",
       "verified": true,
       "difficultyTarget": 0.4
@@ -488,7 +482,8 @@
       "verified": true,
       "p": 1000,
       "qid": "squidgame-1000-912",
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.15,
+      "alt": []
     },
     {
       "topic": "الحلفاء والخصوم",
@@ -526,7 +521,8 @@
       "verified": true,
       "p": 1000,
       "qid": "squidgame-1000-915",
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.15,
+      "alt": []
     },
     {
       "topic": "قواعد النجاة",
@@ -536,7 +532,8 @@
       "verified": true,
       "p": 1000,
       "qid": "squidgame-1000-916",
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.15,
+      "alt": []
     },
     {
       "topic": "العائلة خارج الجزيرة",

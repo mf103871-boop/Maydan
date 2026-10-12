@@ -1,0 +1,29 @@
+{
+  "id": "proverbs",
+  "kind": "cover",
+  "file": "public/media/badeeha-covers/proverbs.webp",
+  "style": "warm narrative watercolor",
+  "palette": "sienna, sage green, sunset gold",
+  "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'أمثال شعبية'. Landscape 4:3 artwork.\nMedium: warm narrative watercolor.\nIntentional palette: sienna, sage green, sunset gold.\nScene: An inviting courtyard with empty woven chairs in a conversational circle beneath an old tree, suggestion of oral storytelling, no specific proverb scene.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-10-08",
+  "sourceImage": {
+    "name": "exec-be40fc85-6d8c-44ae-953f-a6d11cdac648.png",
+    "sha256": "bc147a76c7ff936767a82d624518e1cdc15bd2cec164fa6f8c5b75a400045414",
+    "width": 1448,
+    "height": 1086
+  },
+  "width": 640,
+  "height": 480,
+  "bytes": 120098,
+  "sha256": "3e0603e28c93d78a371046e427e136753d48afae14efa8150f60a407c9e95ef4",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "phone-size-reviewed",
+    "date": "2026-10-08",
+    "reviewer": "root",
+    "width": 160,
+    "method": "shipped cover CSS; baseline and replacement side by side",
+    "evidence": "docs/bank/quality-2026-10-08/preview/covers-1.jpg"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "id": "zoom-600-905",
+  "prompt": "Create ONE landscape 4:3 high fidelity photographic puzzle image for an Arabic game for ages 16+. A modern unbranded bicycle helmet on muted terracotta cycle-track pavement. Three-quarter overhead angle, centre shows two elongated ventilation channels, compressed black foam beneath thin matte white outer shell. Whole helmet visible with fastening straps near bottom, late afternoon light. IMPORTANT: this full image will be shown magnified 3.4x around the exact centre, leaving only approximately the central 29% visible during the question. Make that central area contain TWO coherent diagnostic material/structural details of the named object, not the entire silhouette, not blank texture, and not a disconnected fragment. Full image reveals the complete object naturally. Rich but restrained environment palette. No lettering, logos, watermark, hands, labels, borders, collages or question marks. No ivory studio background. Physical realism and fair visual evidence matter more than decoration.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-10-08",
+  "sourceFile": "exec-58112424-d397-4f27-989f-032c1db74620.png",
+  "sourceSha256": "0254a1f562bc6d28d4205a9862439cdbfd014589cca7da1e2f8835b1a0510422",
+  "file": "media/zoom/quality-600-905.webp",
+  "sha256": "b5bdc4b183b919d1a78cfdca5aca6026ed6f9a65e61d7a4a5cbbda054e786475",
+  "width": 960,
+  "height": 720,
+  "bytes": 178550,
+  "review": {
+    "status": "phone-size-reviewed",
+    "reviewedAt": "2026-10-08",
+    "method": "Original and shipped effect at phone width, including high-tier assistance; independent editorial review.",
+    "evidence": "docs/bank/quality-2026-10-08/independent-root-image-review.md",
+    "qid": "zoom-600-905"
+  }
+}

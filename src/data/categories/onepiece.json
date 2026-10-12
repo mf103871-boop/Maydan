@@ -43,7 +43,7 @@
       "verified": true,
       "qid": "onepiece-200-913",
       "difficultyTarget": 0.8,
-      "sourceUrl": "https://en.wikipedia.org/wiki/One_Piece_season_4#ep121"
+      "sourceUrl": "https://one-piece.com/character/Crocodile/index.html"
     },
     {
       "p": 200,
@@ -124,7 +124,6 @@
       "q": "ما اسم الهجوم البحري الشامل الذي أحرق موطن روبين؟",
       "a": "باستر كول",
       "alt": [
-        "الباستر كول",
         "Buster Call"
       ],
       "topic": "الأدوات",
@@ -384,7 +383,8 @@
       "verified": true,
       "p": 800,
       "qid": "onepiece-800-913",
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.25,
+      "alt": []
     },
     {
       "p": 800,
@@ -495,20 +495,6 @@
       "difficultyTarget": 0.15
     },
     {
-      "topic": "الإنقاذ",
-      "q": "ما اسم بطة فيفي التي تحملها فوق أسوار العاصمة أثناء المعركة؟",
-      "a": "كارو",
-      "sourceUrl": "https://en.wikipedia.org/wiki/One_Piece_season_4",
-      "alt": [
-        "Karoo",
-        "Karue"
-      ],
-      "verified": true,
-      "p": 1000,
-      "qid": "onepiece-1000-914",
-      "difficultyTarget": 0.15
-    },
-    {
       "topic": "الرحلات",
       "q": "ما الطائر الذي يحتاجه الطاقم لتحديد اتجاه التيار الصاعد إلى السماء؟",
       "a": "طائر الجنوب",
@@ -560,6 +546,21 @@
       "verified": true,
       "p": 1000,
       "qid": "onepiece-1000-918",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "الإنقاذ",
+      "q": "بعد التخلص من مفتاح القفص، كيف يساعد مستر ثري سانجي على تحرير رفاقه؟",
+      "a": "يصنع مفتاحًا بقدرته الشمعية",
+      "sourceUrl": "https://one-piece.com/anime/109/index.html",
+      "alt": [
+        "صنع مفتاح شمعي",
+        "يصنع مفتاحًا من الشمع",
+        "صناعة مفتاح شمعي"
+      ],
+      "verified": true,
+      "p": 1000,
+      "qid": "onepiece-1000-921",
       "difficultyTarget": 0.15
     }
   ]

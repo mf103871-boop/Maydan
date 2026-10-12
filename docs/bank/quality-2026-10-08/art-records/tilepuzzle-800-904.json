@@ -1,0 +1,20 @@
+{
+  "id": "tilepuzzle-800-904",
+  "prompt": "Create one landscape 4:3 cinematic editorial illustration for an adult visual puzzle. A realistic generic double-leaf bascule drawbridge over a narrow harbor channel, viewed obliquely from water level. Both road leaves rise from opposite banks making an open inverted V gap through which a small sailing boat with a tall mast is entering. Show the hinged bases and heavy counterweight mechanism at the near side, with interrupted road markings on both raised road leaves and safety barriers closed on the banks. The boat, hinge, counterweight, and two road halves are spread across the whole composition, so no single quadrant alone tells the complete story. Wet steel in slate blue and muted orange, dramatic coral dusk over violet water, coherent accurate civil engineering proportions. 4:3 landscape, no signs, text, logos, labels, arrows, watermark. This artwork will be scrambled into 12 tiles and players identify the bridge mechanism from its combined clues.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-10-08",
+  "sourceFile": "exec-d5ef2bd2-3454-4af7-8ad4-d829b0197a42.png",
+  "sourceSha256": "9750497703fdfd2b599deee480f717556e132cbe11d9d5b34d7a4829914e85a5",
+  "file": "media/tilepuzzle/quality-drawbridge.webp",
+  "sha256": "b6809ad37cc8672461fb69147731716642360d9ce4b6ff38bb347b2250e842a3",
+  "width": 960,
+  "height": 720,
+  "bytes": 183850,
+  "review": {
+    "status": "phone-size-reviewed",
+    "date": "2026-10-08",
+    "width": 366,
+    "method": "Shipped CSS, complete image and 4x3 shuffled grid",
+    "evidence": ".cache/badeeha-quality/shape-final/tilepuzzle-effect-04.jpg"
+  }
+}

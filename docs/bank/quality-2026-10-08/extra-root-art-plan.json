@@ -1,0 +1,33 @@
+{
+  "date": "2026-10-08",
+  "jobs": [
+    {
+      "id": "zoom-800-903",
+      "file": "media/zoom/quality-800-903.webp",
+      "pack": "zoom",
+      "a": "قصاصة أظافر",
+      "alt": [
+        "مقص أظافر",
+        "قلامة أظافر"
+      ],
+      "reason": "استبدال القص غير العادل بآلية شائعة يمكن استنتاجها من الرافعة والفكين.",
+      "origin": "52% 48%",
+      "status": "generated-installed",
+      "prompt": "Create one landscape 4:3 highly realistic macro photo of a standard stainless steel fingernail clipper, sideways diagonally on sage-green linen. Show the complete object at 80% frame. Central 30% MUST contain both curved cutting jaws and the pivot pin under the upturned pressure lever; longer folded body goes toward right edge. Clearly correct real clipper mechanical structure. Unbranded, no hand, no nails, no lettering. Soft copper-tinted window light, restrained dark green background. Game will magnify 3.4x around the centre to show part of the mechanism, making players infer the whole from the connection of two clear parts.",
+      "record": "docs/bank/quality-2026-10-08/art-records/zoom-800-903.json"
+    },
+    {
+      "id": "blur-1000-907",
+      "file": "media/blur/quality-water-polo.webp",
+      "pack": "blur",
+      "a": "كرة الماء",
+      "alt": [
+        "واتر بولو"
+      ],
+      "reason": "استبدال رمي المطرقة لأن السلك والمقبض يختفيان بالتشويش؛ الماء والكرة وحركة اللاعب تبقى قرائن مرئية.",
+      "status": "generated-installed",
+      "prompt": "Create ONE landscape 4:3 dynamic sports illustration, bold clean realistic painted shapes. A water polo player chest-deep in vivid turquoise pool, wearing a white protective water polo cap, preparing to throw a LARGE orange-yellow water polo ball held high in one hand; other hand presses water for balance. Red and white floating goal net visible distinctly at rear left. Medium close action crop, ball 22% image width near upper right, human upper body centre, clearly water splashing around torso. Correct human anatomy, no writing or sponsors. Strong sunny colours, bold legible forms because this will be viewed with 16px blur at 360px width; water, ball and net should remain distinguishable. No land court, no basketball basket.",
+      "record": "docs/bank/quality-2026-10-08/art-records/blur-1000-907.json"
+    }
+  ]
+}

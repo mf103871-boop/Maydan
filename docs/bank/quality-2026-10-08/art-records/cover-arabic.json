@@ -1,0 +1,29 @@
+{
+  "id": "arabic",
+  "kind": "cover",
+  "file": "public/media/badeeha-covers/arabic.webp",
+  "style": "expressive ink and paper illustration",
+  "palette": "deep burgundy, cream paper, copper",
+  "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'لغة عربية'. Landscape 4:3 artwork.\nMedium: expressive ink and paper illustration.\nIntentional palette: deep burgundy, cream paper, copper.\nScene: An angled reed pen drawing a single broad abstract ink flourish across textured paper, ink pooling naturally, no readable letters.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-10-08",
+  "sourceImage": {
+    "name": "exec-35c8933f-f792-41df-851b-122852d0da4e.png",
+    "sha256": "fefb312ccbc2622c7900fc7a8134680b6009aa6bfd0e54ddb7f7687998562505",
+    "width": 1448,
+    "height": 1086
+  },
+  "width": 640,
+  "height": 480,
+  "bytes": 61480,
+  "sha256": "8a24b8d669c0c02b8890407f7b7e1495b0533b9e1f57a383f73d681501c56a7d",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "phone-size-reviewed",
+    "date": "2026-10-08",
+    "reviewer": "root",
+    "width": 160,
+    "method": "shipped cover CSS; baseline and replacement side by side",
+    "evidence": "docs/bank/quality-2026-10-08/preview/covers-1.jpg"
+  }
+}
