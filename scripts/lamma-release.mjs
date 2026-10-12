@@ -169,16 +169,16 @@ async function protect(bytes, decrypt = false) {
     child.stdin.end(bytes.toString('base64'));
   });
 }
-async function savePrivate(dir, name, value) {
+export async function savePrivate(dir, name, value) {
   await mkdir(dir, { recursive: true, mode: 0o700 });
   await writeFile(path.join(dir, `${name}.dpapi`), await protect(Buffer.isBuffer(value) ? value : Buffer.from(JSON.stringify(value))), { mode: 0o600, flag: 'wx' });
 }
-async function loadPrivate(dir, name, raw = false) {
+export async function loadPrivate(dir, name, raw = false) {
   const bytes = await protect(await readFile(path.join(dir, `${name}.dpapi`)), true);
   return raw ? bytes : JSON.parse(bytes);
 }
 
-async function snapshotWorker(api, name) {
+export async function snapshotWorker(api, name) {
   const base = `/workers/scripts/${name}`;
   const [settings, deployments, schedules, versions] = await Promise.all([api(`${base}/settings`), api(`${base}/deployments`), api(`${base}/schedules`), api(`${base}/versions`)]);
   const versionId = activeVersion(deployments), version = await api(`${base}/versions/${versionId}`);
@@ -199,7 +199,7 @@ async function publicAsset(pathname) {
   return { entry: { path: pathname, finalPath: new URL(response.url).pathname, sha256: hash(bytes), bytes: bytes.length, headers }, bytes };
 }
 
-async function publicManifest(paths) {
+export async function publicManifest(paths) {
   const entryDocs = await Promise.all(['/','/sw.js','/manifest.webmanifest'].map(publicAsset));
   const discovered = referencedPaths(entryDocs.map(item => item.bytes.toString('utf8')));
   if (paths) assert.deepEqual(discovered, paths, 'The live frontend reference list changed.');
@@ -332,8 +332,22 @@ export async function assertDeployedBundle(script, name, expectedDigest) {
   const response = new Response(bytes, { headers: { 'content-type': script.contentType } });
   const form = await response.formData();
   const main = form.get(`${name}.mjs`);
-  assert.ok(main && typeof main.arrayBuffer === 'function', 'Reviewed module is missing from the live worker.');
-  assert.equal(hash(Buffer.from(await main.arrayBuffer())), expectedDigest, 'Live worker code differs from the reviewed bundle.');
+  assert.ok(typeof main === 'string' || (main && typeof main.arrayBuffer === 'function'), 'Reviewed module is missing from the live worker.');
+  // Cloudflare's download response can omit filename=, which FormData parses
+  // as a text field. Both representations must verify the same UTF-8 bytes.
+  const source = typeof main === 'string' ? Buffer.from(main, 'utf8') : Buffer.from(await main.arrayBuffer());
+  assert.equal(hash(source), expectedDigest, 'Live worker code differs from the reviewed bundle.');
+}
+
+export function expectedSchedules(name, review, recovery) {
+  if (!recovery || name !== 'maydan-rooms') return review.plans[name].schedules;
+  assert.equal(recovery.operation, 'deduplicate-rooms-daily-cron');
+  assert.equal(recovery.originalPlanSHA256, hash(canonical(review)), 'Recovery receipt refers to another release plan.');
+  assert.deepEqual(recovery.previousRoomsSchedules, [{ cron: '17 3 * * *' }]);
+  assert.deepEqual(review.plans['maydan-rooms'].schedules, recovery.previousRoomsSchedules);
+  assert.deepEqual(recovery.expectedRoomsSchedules, []);
+  assert.equal(recovery.writesCompleted, true, 'Recovery writes have not completed.');
+  return [];
 }
 
 async function apply(dir, expectedDigest, evidencePath) {
@@ -399,9 +413,11 @@ async function apply(dir, expectedDigest, evidencePath) {
   return { ...result, applied: true, testFlightUploaded: false };
 }
 
-async function verify(dir) {
+export async function verify(dir) {
   const before = await loadPrivate(dir, 'preflight'), api = apiClient(await auth());
   const review = await loadPrivate(dir, 'deployment-plan');
+  let recovery;
+  try { recovery = await loadPrivate(dir, 'recovery-receipt'); } catch (error) { if (error.code !== 'ENOENT') throw error; }
   const current = await publicManifest(before.public.paths);
   assertAssetsUnchanged(before.public, current);
   const now = {};
@@ -419,14 +435,15 @@ async function verify(dir) {
     assert.equal(bindings.get('SOCIAL_JOBS')?.class_name, 'LammaJobs');
     assert.equal(bindings.get('SOCIAL_JOBS')?.script_name || name, 'maydan-game');
     assert.deepEqual((now[name].schedules.schedules || []).map(item => ({ cron: item.cron })).sort((a, b) => a.cron.localeCompare(b.cron)),
-      [...review.plans[name].schedules].sort((a, b) => a.cron.localeCompare(b.cron)), 'Worker cron schedule mismatch.');
+      [...expectedSchedules(name, review, recovery)].sort((a, b) => a.cron.localeCompare(b.cron)), 'Worker cron schedule mismatch.');
   }
   assert.equal(now['maydan-game'].version.resources.script_runtime.migration_tag, 'v3-lamma');
   assert.equal(now['maydan-rooms'].version.resources.script_runtime.migration_tag, 'v1');
   const ledger = await api(`/d1/database/${DATABASE}/query`, { readMigrations: true });
   assert.deepEqual(ledger.flatMap(item => item.results).map(item => item.name), [...before.migrations, ...review.pendingMigrations]);
   const result = { verifiedAt: new Date().toISOString(), versions: Object.fromEntries(WORKERS.map(name => [name, now[name].versionId])),
-    assetsUnchanged: true, checkedAssets: current.entries.length, originalBindingsUnchanged: true, reviewedWorkerCodeVerified: true };
+    assetsUnchanged: true, checkedAssets: current.entries.length, originalBindingsUnchanged: true, reviewedWorkerCodeVerified: true,
+    ...(recovery ? { recovery: recovery.operation, originalPlanSHA256: recovery.originalPlanSHA256 } : {}) };
   await savePrivate(dir, `verification-${new Date().toISOString().replace(/[:.]/g, '-')}`, result);
   return result;
 }

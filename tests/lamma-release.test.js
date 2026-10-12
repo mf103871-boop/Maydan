@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { createHash } from 'node:crypto';
 import { activeVersion, assertLatestActive, assertLease, leaseOf, uploadPlan, assetsConfig,
-  assertAssetsUnchanged, assertProviderEvidence, assertPrivateBucket, migrationConfig, apiClient, assertProvenance, assertDeployedBundle } from '../scripts/lamma-release.mjs';
+  assertAssetsUnchanged, assertProviderEvidence, assertPrivateBucket, migrationConfig, apiClient, assertProvenance, assertDeployedBundle, expectedSchedules } from '../scripts/lamma-release.mjs';
 
 function snapshot(name = 'maydan-game') {
   return { versionId: '123', latestVersionId: '123', settings: { compatibility_date: '2026-09-01', compatibility_flags: [],
@@ -115,6 +115,27 @@ test('deployed module verification rejects a different or missing worker bundle'
   await assertDeployedBundle(script, 'maydan-game', digest);
   await assert.rejects(assertDeployedBundle(script, 'maydan-game', '0'.repeat(64)), /differs from the reviewed bundle/);
   await assert.rejects(assertDeployedBundle(script, 'maydan-rooms', digest), /missing from the live worker/);
+  const textForm = new FormData(); textForm.set('maydan-game.mjs', bytes.toString('utf8'));
+  const textResponse = new Response(textForm);
+  const textScript = { contentType: textResponse.headers.get('content-type'), base64: Buffer.from(await textResponse.arrayBuffer()).toString('base64') };
+  await assertDeployedBundle(textScript, 'maydan-game', digest);
+  await assert.rejects(assertDeployedBundle(textScript, 'maydan-game', '0'.repeat(64)), /differs from the reviewed bundle/);
+});
+
+test('recovery receipt changes only the explicitly duplicated rooms cron', () => {
+  const review = { plans: { 'maydan-game': { schedules: [{ cron: '17 3 * * *' }, { cron: '* * * * *' }] },
+    'maydan-rooms': { schedules: [{ cron: '17 3 * * *' }] } } };
+  const canonical = value => JSON.stringify(value, (_, item) => item && !Array.isArray(item) && typeof item === 'object'
+    ? Object.fromEntries(Object.entries(item).sort(([a], [b]) => a.localeCompare(b))) : item);
+  const receipt = { operation: 'deduplicate-rooms-daily-cron', originalPlanSHA256: createHash('sha256').update(canonical(review)).digest('hex'),
+    previousRoomsSchedules: [{ cron: '17 3 * * *' }], expectedRoomsSchedules: [], writesCompleted: true };
+  assert.deepEqual(expectedSchedules('maydan-rooms', review), [{ cron: '17 3 * * *' }]);
+  assert.deepEqual(expectedSchedules('maydan-rooms', review, receipt), []);
+  assert.deepEqual(expectedSchedules('maydan-game', review, receipt), review.plans['maydan-game'].schedules);
+  for (const change of [r => { r.originalPlanSHA256 = 'bad'; }, r => { r.writesCompleted = false; },
+    r => { r.expectedRoomsSchedules = [{ cron: '* * * * *' }]; }, r => { r.previousRoomsSchedules = []; }]) {
+    const r = structuredClone(receipt); change(r); assert.throws(() => expectedSchedules('maydan-rooms', review, r));
+  }
 });
 
 test('requires private R2 and a fixed migration destination without build hooks', () => {
