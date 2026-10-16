@@ -6,6 +6,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A10000000000000000000010 /* AppUpdatePolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000000000000000012 /* AppUpdatePolicy.swift */; };
+		A10000000000000000000011 /* AppUpdateCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000000000000000013 /* AppUpdateCoordinator.swift */; };
 		A1000000000000000000000C /* SocialSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1000000000000000000000F /* SocialSession.swift */; };
 		A1000000000000000000000D /* SocialVoiceRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000000000000000010 /* SocialVoiceRecorder.swift */; };
 		A1000000000000000000000E /* SocialCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000000000000000011 /* SocialCoordinator.swift */; };
@@ -24,6 +26,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B10000000000000000000012 /* AppUpdatePolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUpdatePolicy.swift; sourceTree = "<group>"; };
+		B10000000000000000000013 /* AppUpdateCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUpdateCoordinator.swift; sourceTree = "<group>"; };
 		B1000000000000000000000F /* SocialSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialSession.swift; sourceTree = "<group>"; };
 		B10000000000000000000010 /* SocialVoiceRecorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialVoiceRecorder.swift; sourceTree = "<group>"; };
 		B10000000000000000000011 /* SocialCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialCoordinator.swift; sourceTree = "<group>"; };
@@ -68,6 +72,8 @@
 				B1000000000000000000000F /* SocialSession.swift */,
 				B10000000000000000000010 /* SocialVoiceRecorder.swift */,
 				B10000000000000000000011 /* SocialCoordinator.swift */,
+				B10000000000000000000012 /* AppUpdatePolicy.swift */,
+				B10000000000000000000013 /* AppUpdateCoordinator.swift */,
 				B10000000000000000000002 /* SceneDelegate.swift */,
 				B10000000000000000000003 /* GameViewController.swift */,
 				B10000000000000000000009 /* AppSchemeHandler.swift */,
@@ -155,6 +161,8 @@
 				A1000000000000000000000C /* SocialSession.swift in Sources */,
 				A1000000000000000000000D /* SocialVoiceRecorder.swift in Sources */,
 				A1000000000000000000000E /* SocialCoordinator.swift in Sources */,
+				A10000000000000000000010 /* AppUpdatePolicy.swift in Sources */,
+				A10000000000000000000011 /* AppUpdateCoordinator.swift in Sources */,
 				A10000000000000000000001 /* AppDelegate.swift in Sources */,
 				A10000000000000000000002 /* SceneDelegate.swift in Sources */,
 				A10000000000000000000003 /* GameViewController.swift in Sources */,

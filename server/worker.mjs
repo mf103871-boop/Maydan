@@ -13,6 +13,7 @@ import { cleanupLamma } from './lamma/lifecycle.mjs';
 import { drainJobs } from './lamma/jobs.mjs';
 import { liveKitWebhook } from './lamma/webhook.mjs';
 import { messageRetentionMs,reportRetentionMs } from './accounts/cleanup.mjs';
+import { iosAppPolicy } from './app-policy.mjs';
 export { LammaJobs } from './lamma/jobs.mjs';
 export { SocialHub } from './social/realtime.mjs';
 export { Room };
@@ -78,6 +79,7 @@ async function roomAccountId(request, env) {
 }
 export async function routeRequest(request, env) {
   const url = new URL(request.url);
+  if (url.pathname === '/api/app-policy/ios') return iosAppPolicy(request, env);
   if(url.pathname==='/api/social/livekit/webhook'){try{return await liveKitWebhook(request,env);}catch(error){return errorResponse(error);}}
   // HEAD keeps `curl -I` and uptime monitors working; it must not fall through
   // to the origin check and answer 403/404.

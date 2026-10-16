@@ -37,6 +37,8 @@ final class SocialCoordinator: NSObject {
     private var callGeneration = 0
     private var pendingCallId: UUID?
     var onEvent: ((String, [String: Any]) -> Void)?
+    var onAudioActivityChange: (() -> Void)?
+    var isBusyForAppUpdate: Bool { call != nil || pendingCallId != nil || voice.isRecording }
 
     private struct NativeCall {
         let id: UUID
@@ -448,6 +450,9 @@ final class SocialCoordinator: NSObject {
     }
 
     private func emit(_ event: String, _ payload: [String: Any], retain: Bool = false) {
+        // Native foreground policy checks must also respect incoming calls that
+        // arrive before the web bridge is ready to receive social events.
+        if event == "socialCall" || event == "socialVoice" { onAudioActivityChange?() }
         if webReady { onEvent?(event, payload) }
         else if retain {
             pendingEvents.removeAll { $0.0 == event }

@@ -71,12 +71,17 @@ jobs:
           python3 scripts/ios/smoke_simulator_launch.py \
             --app ios/build/Build/Products/Release-iphonesimulator/Maydan.app \
             --output-dir ios/build/launch-smoke
+          python3 scripts/ios/smoke_app_update_gate.py \
+            --app ios/build/Build/Products/Release-iphonesimulator/Maydan.app \
+            --output-dir ios/build/update-gate-smoke
       - name: Preserve simulator launch evidence
         if: ${{ always() }}
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
         with:
           name: Maydan-simulator-launch
-          path: ios/build/launch-smoke
+          path: |
+            ios/build/launch-smoke
+            ios/build/update-gate-smoke
           if-no-files-found: warn
           retention-days: 7
       - name: Package the simulator app
