@@ -15,6 +15,25 @@ from smoke_simulator_launch import LaunchSmoke, SmokeFailure
 
 
 class UpdateGateSmoke(LaunchSmoke):
+    def use_verified_simulator(self, source):
+        previous = source.report['launches'][-1] if source.report['launches'] else {}
+        if (not source.report['passed'] or not source.owns_device or not source.device
+                or not previous.get('passed') or not previous.get('terminatedForRelaunch')
+                or self.app != source.app):
+            raise SmokeFailure('Update gate requires the same installed app on a verified, terminated simulator process.')
+        if source.process_is_app(previous['pid']):
+            raise SmokeFailure('The normal smoke app is still running before the fixture launch.')
+        self.device = source.device
+        self.installed_app = source.installed_app
+        self.bundle = source.bundle
+        self.executable = source.executable
+        # Keep ownership with the normal smoke. Never erase/reinstall its app:
+        # the coordinator's initial-load state is process-local, not persisted.
+        self.owns_device = False
+        for key in ('bundleIdentifier', 'version', 'build', 'executableSha256', 'simulatorUdid', 'simulatorModel', 'runtime'):
+            self.report[key] = source.report[key]
+        self.report['reusedVerifiedSimulator'] = True
+
     def read_until(self, state_path, predicate):
         deadline = time.monotonic() + 15
         while time.monotonic() < deadline:
@@ -29,12 +48,15 @@ class UpdateGateSmoke(LaunchSmoke):
             time.sleep(0.25)
         raise SmokeFailure('The native view hierarchy did not reach the expected update-gate state.')
 
-    def run(self):
+    def run(self, prepared=None):
         variable = 'SIMCTL_CHILD_MAYDAN_SIMULATOR_APP_POLICY'
         previous = os.environ.get(variable)
         os.environ[variable] = 'required-then-offline'
         try:
-            self.prepare()
+            if prepared is None:
+                self.prepare()
+            else:
+                self.use_verified_simulator(prepared)
             self.launch('required-update', 5)
             self.latest_pid = self.report['launches'][-1]['pid']
             data = Path(self.simctl('get_app_container', self.device, self.bundle, 'data', label='data-container').stdout.strip())

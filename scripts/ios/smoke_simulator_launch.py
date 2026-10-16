@@ -27,6 +27,7 @@ class LaunchSmoke:
         self.output = output.resolve()
         self.output.mkdir(parents=True, exist_ok=True)
         self.device = None
+        self.owns_device = False
         self.installed_app = None
         self.bundle = None
         self.executable = None
@@ -123,6 +124,7 @@ class LaunchSmoke:
         if not re.fullmatch(r"[0-9A-Fa-f-]{36}", created):
             raise SmokeFailure("simctl create did not return a simulator UUID.")
         self.device = str(uuid.UUID(created))
+        self.owns_device = True
         self.report.update({"simulatorUdid": self.device, "simulatorModel": name, "runtime": runtime_id})
         self.simctl("boot", self.device, timeout=60, label="simulator-boot")
         self.simctl("bootstatus", self.device, "-b", timeout=180, label="simulator-bootstatus")
@@ -224,7 +226,21 @@ class LaunchSmoke:
                 except OSError as error:
                     self.report["diagnosticWarnings"].append(f"Could not read crash report: {error}")
 
-    def finish(self):
+    def cleanup_device(self):
+        if not self.device or not self.owns_device:
+            return
+        # A borrowed verified simulator is cleaned only by its original owner.
+        self.owns_device = False
+        for action in ("shutdown", "delete"):
+            try:
+                self.simctl(action, self.device, timeout=30, label=f"simulator-{action}")
+            except (OSError, SmokeFailure) as error:
+                self.report["diagnosticWarnings"].append(str(error))
+
+    def write_summary(self):
+        (self.output / "summary.json").write_text(json.dumps(self.report, indent=2) + "\n", encoding="utf-8")
+
+    def finish(self, cleanup=True):
         if self.device:
             # Crash reporting is asynchronous. Keep the test device alive briefly
             # after a failure to let DiagnosticReports write the useful evidence.
@@ -239,29 +255,27 @@ class LaunchSmoke:
             except (OSError, SmokeFailure) as error:
                 self.report["diagnosticWarnings"].append(str(error))
             finally:
-                # Only the UUID created by this invocation may be removed.
-                for action in ("shutdown", "delete"):
-                    try:
-                        self.simctl(action, self.device, timeout=30, label=f"simulator-{action}")
-                    except (OSError, SmokeFailure) as error:
-                        self.report["diagnosticWarnings"].append(str(error))
+                if cleanup:
+                    self.cleanup_device()
         if self.crashes:
             self.report["passed"] = False
             self.report.setdefault("error", "A matching application crash report was created during startup testing.")
         self.report["finishedAt"] = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
-        (self.output / "summary.json").write_text(json.dumps(self.report, indent=2) + "\n", encoding="utf-8")
+        self.write_summary()
 
-    def run(self):
+    def run(self, cleanup=True, terminate_after=False):
         try:
             self.prepare()
             self.launch("cold", 45)
             self.terminate_for_relaunch()
             self.launch("relaunch", 15)
+            if terminate_after:
+                self.terminate_for_relaunch()
             self.report["passed"] = True
         except (OSError, ValueError, SmokeFailure) as error:
             self.report["error"] = str(error)
         finally:
-            self.finish()
+            self.finish(cleanup=cleanup)
         print(f"{'PASS' if self.report['passed'] else 'FAIL'} simulator startup; diagnostics: {self.output}", flush=True)
         if not self.report["passed"]:
             print(self.report.get("error", "Startup failed."), file=sys.stderr)

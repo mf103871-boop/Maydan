@@ -68,20 +68,15 @@ jobs:
       - name: Verify dependencies and launch the Release app
         run: |
           python3 scripts/ios/verify_runtime_dependencies.py ios/build/Build/Products/Release-iphonesimulator/Maydan.app
-          python3 scripts/ios/smoke_simulator_launch.py \
+          python3 scripts/ios/smoke_release.py \
             --app ios/build/Build/Products/Release-iphonesimulator/Maydan.app \
-            --output-dir ios/build/launch-smoke
-          python3 scripts/ios/smoke_app_update_gate.py \
-            --app ios/build/Build/Products/Release-iphonesimulator/Maydan.app \
-            --output-dir ios/build/update-gate-smoke
+            --output-dir ios/build/release-smoke
       - name: Preserve simulator launch evidence
         if: ${{ always() }}
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
         with:
           name: Maydan-simulator-launch
-          path: |
-            ios/build/launch-smoke
-            ios/build/update-gate-smoke
+          path: ios/build/release-smoke
           if-no-files-found: warn
           retention-days: 7
       - name: Package the simulator app
