@@ -1,0 +1,34 @@
+App Store 1.7 screenshot review — 2026-10-17
+
+The read-only App Store Connect API reports five COMPLETE iPhone 6.7-inch screenshots, 1290 × 2796, in each of ar-SA and en-US. Both locales use the same five Arabic images. Source-file MD5 checksums and byte sizes match the local originals below. Each original image was visually inspected; the older overview collage is not the evidence for the individual screenshot content.
+
+Local originals:
+C:/Users/user/Documents/Codex/2026-09-25/hg/output/maydan-store-refresh/screenshots-store/
+
+Minimum recommendation: keep 03-board.png, 02-badeeha.png and 05-mamnoo.png, in that order; omit or replace 01-home.png and 04-question.png in both locales. A new home or Lamma capture would help show the new social features, but there is no need to redesign all screenshots. Do not invent a social screenshot from marketing artwork; capture the submitted build if adding one.
+
+01-home.png — OMIT OR REPLACE
+MD5: 87ca14f1e4d27a89642fb5ada3ff57ae
+The screenshot's six games, free badges, player notebook and online-room banner still describe real features. However, this home view predates the new Lamma home card and profile shortcut. Current src/platform/screens/Home.jsx always renders the social card between the room banner and player notebook, including for guests. The screenshot therefore does not show the current home layout.
+
+03-board.png — KEEP
+MD5: 3ae5c9a4e9cf46c7933f8ba63703a8fc
+Shows Badeeha's six-category, 20-question family-mode board and 200/400/600 point values. These remain consistent with src/games/badeeha/logic.js and App.js. The absence of 800/1000 here is correct for family mode, not a stale-content defect.
+
+04-question.png — OMIT OR REPLACE
+MD5: 37cc79c3972a0124df54f9f1baf20ecd
+The actual uploaded file asks “في أي اتجاه تُكتب الكلمات العربية؟” for 200 points in General Knowledge. That question is absent from the current category-bank source after the refresh. The play controls remain recognizable, but this exact card is no longer representative of shipped content. Replace with a real current question if retaining a question-screen screenshot.
+
+02-badeeha.png — KEEP
+MD5: ab04ceb6675bce04922656d4bdf731a6
+Shows the Badeeha information screen: six categories, points 200–1000, 2–4 teams, 20/30/60 questions, family/challenge/expert modes, and 10 free categories. These statements match current src/games/badeeha/meta.js and entitlement copy. The lower instructions are partly covered by the fixed Play button in this capture; that is a presentation weakness, not a false feature claim.
+
+05-mamnoo.png — KEEP
+MD5: 3ecad951334077ea87b7cbfe6ebd9f7e
+Shows the Mamnoo information screen, five forbidden words, 2–4 teams, one free game and round rules. The text matches current src/games/mamnoo/meta.js. As with the Badeeha information shot, the fixed Play button partly covers the lower rules in the image.
+
+Screenshot sets:
+ar-SA: aa42f922-3ff6-4b48-b0d3-c6cbe2980c47
+en-US: d3f194ab-b7da-432b-aaa7-66041bc6058f
+
+This review does not upload, reorder or delete screenshots. No English UI is implied; the English store description explicitly says the app interface and games are Arabic.

@@ -9,6 +9,12 @@ import { routeSocial } from './social/router.mjs';
 import { routeSocialLive } from './social/realtime.mjs';
 import { routeProfiles, isPublicProfileImagePath } from './profiles/router.mjs';
 import { routeModeration } from './moderation/router.mjs';
+import { cleanupLamma } from './lamma/lifecycle.mjs';
+import { drainJobs } from './lamma/jobs.mjs';
+import { liveKitWebhook } from './lamma/webhook.mjs';
+import { messageRetentionMs,reportRetentionMs } from './accounts/cleanup.mjs';
+import { iosAppPolicy } from './app-policy.mjs';
+export { LammaJobs } from './lamma/jobs.mjs';
 export { SocialHub } from './social/realtime.mjs';
 export { Room };
 
@@ -73,6 +79,8 @@ async function roomAccountId(request, env) {
 }
 export async function routeRequest(request, env) {
   const url = new URL(request.url);
+  if (url.pathname === '/api/app-policy/ios') return iosAppPolicy(request, env);
+  if(url.pathname==='/api/social/livekit/webhook'){try{return await liveKitWebhook(request,env);}catch(error){return errorResponse(error);}}
   // HEAD keeps `curl -I` and uptime monitors working; it must not fall through
   // to the origin check and answer 403/404.
   if (url.pathname === '/health' && ['GET', 'HEAD'].includes(request.method)) {
@@ -86,7 +94,7 @@ export async function routeRequest(request, env) {
   if (!origin && !isPublicAccountPath(url.pathname) && !publicImage) return json({ error: 'ORIGIN' }, 403);
   const headers = origin ? { 'access-control-allow-origin': origin, vary: 'Origin',
     'access-control-allow-methods': 'GET, POST, PUT, PATCH, DELETE, OPTIONS',
-    'access-control-allow-headers': 'Content-Type, Authorization',
+    'access-control-allow-headers': 'Content-Type, Authorization, Range',
     'access-control-expose-headers': 'x-maydan-session',
     'access-control-max-age': '600' } : {};
   if (request.method === 'OPTIONS') return new Response(null, { status: 204, headers });
@@ -171,6 +179,9 @@ export async function routeRequest(request, env) {
 }
 // Cron Trigger (wrangler triggers.crons): تنظيف الجلسات ورموز الدخول وسجل webhooks.
 export async function scheduled(event, env) {
+  await cleanupLamma(env,Date.now(),messageRetentionMs(env),reportRetentionMs(env));
+  await drainJobs(env);
+  if(event?.cron==='* * * * *')return;
   const result = await cleanup(env, Date.now());
   console.log('accounts cleanup', JSON.stringify(result));
 }

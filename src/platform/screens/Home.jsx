@@ -5,6 +5,10 @@ import { IconSettings, IconUsers, IconClock, IconInfo } from '../../shared/ui/ic
 import { usePlatform } from '../context.js';
 import { useAccount } from '../../shared/account/context.js';
 import { useSocial } from '../../social/SocialProvider.jsx';
+import { useSocialUI } from '../../social/SocialUIProvider.jsx';
+import { useLamma } from '../../social/LammaProvider.jsx';
+import { PersonAvatar } from '../../social/SocialScreen.jsx';
+import { LammaIcon } from '../../social/LammaMedia.jsx';
 import { useProfiles } from '../../profiles/ProfileProvider.jsx';
 import { ProfileAvatar } from '../../profiles/ProfileAvatar.jsx';
 import { PUBLIC_SITE_ORIGIN, LEGAL_ROUTES } from '../../shared/account/config.js';
@@ -29,6 +33,15 @@ export function plusBadge(account, game) {
   const access = account.gameAccess(game.id);
   if (access === 'premium') return '';
   return access === 'locked' ? 'بلس' : 'مباراة مجانية';
+}
+
+export function HomeGroups({ account, groups = [], calls = [], onOpen }) {
+  // LammaProvider supplies an identity-checked snapshot; guests never render cached groups.
+  if (!account?.ready || !account.signedIn) return null;
+  const active = new Set(calls.filter(call => call.scope === 'group' && call.status === 'active').map(call => call.conversationId));
+  const recent = [...groups].sort((a, b) => Number(active.has(b.id)) - Number(active.has(a.id)) || Number(!!b.unreadCount) - Number(!!a.unreadCount) || Number(b.lastMessage?.createdAt || b.updatedAt || b.createdAt || 0) - Number(a.lastMessage?.createdAt || a.updatedAt || a.createdAt || 0)).slice(0, 3);
+  if (!recent.length) return null;
+  return <div className="lamma-home-groups" aria-label="لمّاتك الأخيرة">{recent.map(group => <button type="button" key={group.id} className={'lamma-home-group' + (active.has(group.id) ? ' has-live-call' : '')} onClick={() => onOpen(group.id)} aria-label={'افتح لمّة ' + group.name + (active.has(group.id) ? '، مكالمة جارية' : '')}><ProfileAvatar user={{ avatarPreset: group.avatarPreset, theme: 'teal' }} size={32} /><span><strong>{group.name}</strong><small>{active.has(group.id) ? <><LammaIcon name="phone" size={12} />مكالمة جارية</> : group.unreadCount > 0 ? `${group.unreadCount} رسالة جديدة` : 'افتح السوالف'}</small></span></button>)}</div>;
 }
 
 function GameCard({ game, index, launching, badge, onOpen }) {
@@ -83,6 +96,8 @@ export function Home() {
   const { roster, sound, haptics, version } = usePlatform();
   const account = useAccount();
   const social = useSocial() || { friends: [], incoming: [], unreadCount: 0 };
+  const socialUI = useSocialUI();
+  const lamma = useLamma();
   const profiles = useProfiles();
   // فتح لعبة: البطاقة تنطلق (is-launch) ثم الملاحة بعد 140ms (صفر تحت تقليل الحركة)؛ النقر المزدوج محروس بمرجع.
   const launching = useRef(false);
@@ -117,15 +132,11 @@ export function Home() {
         <span className="online-new">تجريبي</span>
       </button>
 
-      <button type="button" className="card roster-card social-home-card" onClick={() => navigate('/friends')} aria-label="الأصدقاء والمحادثات" onPointerDown={ripple}>
-        <span className="grow" style={{ textAlign: 'start' }}>
-          <span className="card-title" style={{ display: 'block' }}>الأصدقاء والمحادثات</span>
-          <span className="card-muted">{account.signedIn ? `${social.friends.filter(f => f.online).length} متصل الآن · تواصل مع أصحابك` : 'أضف أصحابك وخليك قريب منهم'}</span>
-        </span>
-        {social.unreadCount + social.incoming.length > 0
-          ? <span className="badge badge-accent" aria-label="تنبيهات الأصدقاء">{social.unreadCount + social.incoming.length}</span>
-          : <IconUsers style={{ width: 34, height: 34, color: 'var(--accent)' }} />}
-      </button>
+      <section className="lamma-home-card" aria-label="الأصدقاء والمحادثات">
+        <div className="lamma-home-heading"><div><strong>الميدان يحلى بأصحابك</strong><small>{account.signedIn ? `${social.friends.filter(f => f.online).length} متصل الآن · السالفة تبدأ من هنا` : 'سوالف، صوت، ولعبة تجمعكم'}</small></div><button type="button" onClick={() => socialUI ? socialUI.show() : navigate('/friends')}>افتح اللّمة{social.unreadCount + social.incoming.length > 0 && <b className="lamma-unread">{social.unreadCount + social.incoming.length}</b>}</button></div>
+        <div className="lamma-home-friends">{social.friends.slice().sort((a, b) => Number(!!b.online) - Number(!!a.online)).slice(0, 7).map(friend => <button type="button" className="lamma-home-friend" key={friend.id} onClick={() => socialUI ? socialUI.openChat(friend.id) : navigate('/friends/' + friend.id)} aria-label={'محادثة مع ' + friend.name}><PersonAvatar user={friend} presence /><span>{friend.name}</span></button>)}<button type="button" className="lamma-home-friend" onClick={() => socialUI ? socialUI.show() : navigate('/friends')}><span className="lamma-home-add"><LammaIcon name="plus" size={22} /></span><span>أصحابك</span></button></div>
+        <HomeGroups account={account} groups={lamma?.groups} calls={lamma?.calls} onOpen={id => socialUI?.openGroup(id)} />
+      </section>
 
       <button type="button" className="card roster-card" onClick={() => navigate('/players')} aria-label="دفتر اللاعبين" onPointerDown={ripple}>
         <span className="grow" style={{ textAlign: 'start' }}>

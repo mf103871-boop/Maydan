@@ -28,10 +28,10 @@ const paths = {
   inbox: 'M3 4h18v16H3zM3 13h5l2 3h4l2-3h5',
   shield: 'M12 2l8 3v7c0 5-8 10-8 10S4 17 4 12V5l8-3ZM8 8l8 8M16 8l-8 8',
 };
-function Icon({ name, size = 22 }) {
+export function Icon({ name, size = 22 }) {
   return <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d={paths[name] || paths.chat} /></svg>;
 }
-function IconAction({ label, icon, className = '', ...props }) {
+export function IconAction({ label, icon, className = '', ...props }) {
   return <button type="button" className={'social-icon-button ' + className} aria-label={label} title={label} {...props}><Icon name={icon} /></button>;
 }
 function displayName(user) { return user?.name?.trim() || 'لاعب ميدان'; }
@@ -62,7 +62,7 @@ export function presenceLabel(user, now = Date.now()) {
   if (minutes < 1440) return 'آخر ظهور ' + timeLabel(last);
   return 'آخر ظهور ' + dayLabel(last, now);
 }
-function PersonAvatar({ user, large = false, presence = false }) {
+export function PersonAvatar({ user, large = false, presence = false }) {
   return <span className={'social-avatar' + (large ? ' is-large' : '')} aria-hidden="true"><ProfileAvatar user={user} size={large ? 66 : 44} />{presence && <i className={user?.online ? 'is-online' : ''} />}</span>;
 }
 function EmptyState({ icon = 'chat', title, children, action, compact = false }) {
@@ -82,11 +82,11 @@ function Badge({ count, label }) {
   if (!count) return null;
   return <span className="social-badge" aria-label={label || count + ' غير مقروءة'}>{count > 99 ? '99+' : count.toLocaleString('ar')}</span>;
 }
-function FriendRow({ friend, active, onOpen, onMenu, conversation = false }) {
+export function FriendRow({ friend, active, onOpen, onMenu, onProfile = () => navigate(`/profile/${friend.id}`), conversation = false }) {
   const last = friend.lastMessage;
   const preview = last ? (last.deletedAt ? 'حُذفت رسالة' : last.text) : presenceLabel(friend);
   return <div className={'social-person-row' + (active ? ' is-selected' : '')}>
-    <button type="button" className="social-person-main" onClick={conversation ? onOpen : () => navigate(`/profile/${friend.id}`)} aria-label={(conversation ? 'فتح محادثة ' : 'عرض بروفايل ') + displayName(friend)}>
+    <button type="button" className="social-person-main" onClick={conversation ? onOpen : onProfile} aria-label={(conversation ? 'فتح محادثة ' : 'عرض بروفايل ') + displayName(friend)}>
       <PersonAvatar user={friend} presence />
       <span className="social-person-copy"><span className="social-person-title"><strong><bdi>{displayName(friend)}</bdi></strong>{conversation && last && <time dateTime={new Date(timestamp(last.createdAt) || Date.now()).toISOString()}>{dayLabel(last.createdAt) === 'اليوم' ? timeLabel(last.createdAt) : dayLabel(last.createdAt)}</time>}</span><span className={'social-person-sub' + (!conversation && friend.online ? ' is-online' : '')}>{conversation ? preview : presenceLabel(friend)}</span></span>
       <Badge count={friend.unreadCount} />
@@ -95,24 +95,26 @@ function FriendRow({ friend, active, onOpen, onMenu, conversation = false }) {
     <IconAction label={'خيارات ' + displayName(friend)} icon="more" onClick={onMenu} />
   </div>;
 }
-function RequestRow({ request, outgoing, busy, onAccept, onReject, onCancel, onMenu }) {
-  return <article className="social-request-row"><div className="social-request-identity"><PersonAvatar user={request.user} /><div><button type="button" className="social-profile-link" aria-label={"عرض بروفايل " + displayName(request.user)} onClick={() => navigate(`/profile/${request.user.id}`)}><strong><bdi>{displayName(request.user)}</bdi></strong></button><small>{outgoing ? 'بانتظار الموافقة' : 'يريد إضافتك إلى أصدقائه'}</small></div><IconAction label={'خيارات ' + displayName(request.user)} icon="more" onClick={onMenu} /></div><div className="social-request-actions">{outgoing ? <Button variant="ghost" disabled={busy} onClick={onCancel}>إلغاء الطلب</Button> : <><Button variant="primary" loading={busy} onClick={onAccept}>قبول الطلب</Button><Button variant="ghost" disabled={busy} onClick={onReject}>رفض</Button></>}</div></article>;
+export function RequestRow({ request, outgoing, busy, onAccept, onReject, onCancel, onMenu, onProfile = () => navigate(`/profile/${request.user.id}`) }) {
+  return <article className="social-request-row"><div className="social-request-identity"><PersonAvatar user={request.user} /><div><button type="button" className="social-profile-link" aria-label={"عرض بروفايل " + displayName(request.user)} onClick={onProfile}><strong><bdi>{displayName(request.user)}</bdi></strong></button><small>{outgoing ? 'بانتظار الموافقة' : 'يريد إضافتك إلى أصدقائه'}</small></div><IconAction label={'خيارات ' + displayName(request.user)} icon="more" onClick={onMenu} /></div><div className="social-request-actions">{outgoing ? <Button variant="ghost" disabled={busy} onClick={onCancel}>إلغاء الطلب</Button> : <><Button variant="primary" loading={busy} onClick={onAccept}>قبول الطلب</Button><Button variant="ghost" disabled={busy} onClick={onReject}>رفض</Button></>}</div></article>;
 }
-export function MessageBubble({ message, mine, read = false, onEdit, onDelete, onReport, onRetry }) {
+export function MessageBubble({ message, mine, read = false, onEdit, onDelete, onReport, onRetry, content }) {
   const pending = message.status === 'pending';
   const failed = message.status === 'failed';
   const deleted = Boolean(message.deletedAt);
   const [menu, setMenu] = useState(false);
   const sentLabel = failed ? 'لم تُرسل' : pending ? 'جارٍ الإرسال' : read || message.read ? 'قُرئت' : 'أُرسلت';
   return <article className={'social-message ' + (mine ? 'is-mine' : 'is-theirs') + (failed ? ' is-failed' : '')} aria-label={mine ? 'رسالتك' : 'رسالة صديقك'}>
-    <div className={'social-bubble' + (deleted ? ' is-deleted' : '')}><p dir="auto">{deleted ? 'حُذفت هذه الرسالة' : message.text}</p><div className="social-message-meta">{message.editedAt && !deleted && <span>معدّلة</span>}<time dateTime={timestamp(message.createdAt) ? new Date(timestamp(message.createdAt)).toISOString() : undefined}>{timeLabel(message.createdAt)}</time>{mine && <span className={'social-delivery' + (read || message.read ? ' is-read' : '')} aria-label={sentLabel} title={sentLabel}><Icon name={pending ? 'clock' : read || message.read ? 'double' : 'check'} size={15} /><span>{sentLabel}</span></span>}</div></div>
-    {!deleted && !pending && !failed && <div className="social-message-actions"><IconAction label={mine ? 'خيارات رسالتك' : 'خيارات الرسالة'} icon="more" aria-expanded={menu} onClick={() => setMenu(v => !v)} />{menu && <div className="social-message-menu">{mine ? <><button type="button" onClick={() => { setMenu(false); onEdit(); }}>تعديل</button><button type="button" className="is-danger" onClick={() => { setMenu(false); onDelete(); }}>حذف</button></> : <button type="button" onClick={() => { setMenu(false); onReport(); }}>إبلاغ عن الرسالة</button>}</div>}</div>}
+    <div className={'social-bubble' + (deleted ? ' is-deleted' : '')}>{!deleted && content ? content : <p dir="auto">{deleted ? 'حُذفت هذه الرسالة' : message.text}</p>}<div className="social-message-meta">{message.editedAt && !deleted && <span>معدّلة</span>}<time dateTime={timestamp(message.createdAt) ? new Date(timestamp(message.createdAt)).toISOString() : undefined}>{timeLabel(message.createdAt)}</time>{mine && <span className={'social-delivery' + (read || message.read ? ' is-read' : '')} aria-label={sentLabel} title={sentLabel}><Icon name={pending ? 'clock' : read || message.read ? 'double' : 'check'} size={15} /><span>{sentLabel}</span></span>}</div></div>
+    {!deleted && !pending && !failed && <div className="social-message-actions"><IconAction label={mine ? 'خيارات رسالتك' : 'خيارات الرسالة'} icon="more" aria-expanded={menu} onClick={() => setMenu(v => !v)} />{menu && <div className="social-message-menu">{mine ? <>{(!message.kind || message.kind === 'text') && <button type="button" onClick={() => { setMenu(false); onEdit?.(); }}>تعديل</button>}<button type="button" className="is-danger" onClick={() => { setMenu(false); onDelete?.(); }}>حذف</button></> : <button type="button" onClick={() => { setMenu(false); onReport?.(); }}>إبلاغ عن الرسالة</button>}</div>}</div>}
     {mine && failed && <button type="button" className="social-retry" onClick={onRetry}>إعادة الإرسال</button>}
   </article>;
 }
-function Conversation({ friend, conversation = EMPTY_CONVERSATION, account, social, onMenu, onBack, onAction, notify }) {
+export function Conversation({ friend, conversation = EMPTY_CONVERSATION, account, social, onMenu, onBack, onAction, notify, onProfile = () => navigate(`/profile/${friend.id}`), headerActions, composerExtras, renderContent, draftValue, onDraftChange, subtitle, visible = true }) {
   const messages = conversation.messages || EMPTY_LIST;
-  const [text, setText] = useState('');
+  const [localText, setLocalText] = useState('');
+  const text = draftValue === undefined ? localText : draftValue;
+  const setText = onDraftChange || setLocalText;
   const [sending, setSending] = useState(false);
   const [newBelow, setNewBelow] = useState(false);
   const scroller = useRef(null);
@@ -124,6 +126,7 @@ function Conversation({ friend, conversation = EMPTY_CONVERSATION, account, soci
   const typingTimer = useRef(null);
   const typingActive = useRef(false);
   const typingSentAt = useRef(0);
+  useEffect(() => visible ? social.registerConversation?.(friend.id) : undefined, [friend.id, visible, social.registerConversation]);
   const stopped = () => {
     clearTimeout(typingTimer.current);
     if (typingActive.current) {
@@ -207,7 +210,7 @@ function Conversation({ friend, conversation = EMPTY_CONVERSATION, account, soci
     catch (error) { olderAnchor.current = null; notify(friendlyError(error), true); }
   };
   return <section className="social-chat" aria-label={'المحادثة مع ' + displayName(friend)}>
-    <header className="social-chat-head"><IconAction label="العودة للأصدقاء" icon="back" className="social-mobile-back" onClick={onBack} /><button type="button" className="social-icon-button" aria-label={'عرض بروفايل ' + displayName(friend)} onClick={() => navigate(`/profile/${friend.id}`)}><PersonAvatar user={friend} presence /></button><div className="social-chat-person"><h2><button type="button" className="social-profile-link" onClick={() => navigate(`/profile/${friend.id}`)}><bdi>{displayName(friend)}</bdi></button></h2><p className={friend.online || conversation.typing ? 'is-online' : ''}>{conversation.typing ? 'يكتب الآن…' : presenceLabel(friend)}</p></div><IconAction label="خيارات المحادثة" icon="more" onClick={onMenu} /></header>
+    <header className="social-chat-head"><IconAction label="العودة للأصدقاء" icon="back" className="social-mobile-back" onClick={onBack} /><button type="button" className="social-icon-button" aria-label={'عرض بروفايل ' + displayName(friend)} onClick={onProfile}><PersonAvatar user={friend} presence /></button><div className="social-chat-person"><h2><button type="button" className="social-profile-link" onClick={onProfile}><bdi>{displayName(friend)}</bdi></button></h2><p className={friend.online || conversation.typing ? 'is-online' : ''}>{subtitle || (conversation.typing ? 'يكتب الآن…' : presenceLabel(friend))}</p></div>{headerActions}<IconAction label="خيارات المحادثة" icon="more" onClick={onMenu} /></header>
     <div className="social-message-area">
       <div ref={scroller} className="social-message-scroll" role="log" aria-label="الرسائل" aria-live="polite" aria-relevant="additions text" onScroll={() => { const el = scroller.current; nearBottom.current = el.scrollHeight - el.scrollTop - el.clientHeight < 72; if (nearBottom.current) { setNewBelow(false); Promise.resolve(social.markRead(friend.id)).catch(() => {}); } }}>
         {conversation.hasMore && <button type="button" className="social-load-older" onClick={loadOlder} disabled={conversation.loadingOlder}>{conversation.loadingOlder ? 'جارٍ التحميل…' : 'تحميل الرسائل الأقدم'}</button>}
@@ -217,20 +220,20 @@ function Conversation({ friend, conversation = EMPTY_CONVERSATION, account, soci
           const date = dayLabel(message.createdAt);
           const showDate = index === 0 || new Date(timestamp(message.createdAt)).toDateString() !== new Date(timestamp(messages[index - 1].createdAt)).toDateString();
           const mine = message.senderId === account.user.id;
-          return <React.Fragment key={messageKey(message)}>{showDate && <div className="social-day"><span>{date}</span></div>}<MessageBubble message={message} mine={mine} read={mine && Number(message.seq) > 0 && Number(message.seq) <= Number(conversation.peerReadSeq || 0)} onEdit={() => onAction({ kind: 'edit', user: friend, message })} onDelete={() => onAction({ kind: 'delete', user: friend, message })} onReport={() => onAction({ kind: 'report', user: friend, message })} onRetry={() => Promise.resolve(social.retryMessage(friend.id, message.clientId)).catch(error => notify(friendlyError(error), true))} /></React.Fragment>;
+          return <React.Fragment key={messageKey(message)}>{showDate && <div className="social-day"><span>{date}</span></div>}<MessageBubble message={message} mine={mine} content={renderContent?.(message)} read={mine && Number(message.seq) > 0 && Number(message.seq) <= Number(conversation.peerReadSeq || 0)} onEdit={() => onAction({ kind: 'edit', user: friend, message })} onDelete={() => onAction({ kind: 'delete', user: friend, message })} onReport={() => onAction({ kind: 'report', user: friend, message })} onRetry={() => Promise.resolve(social.retryMessage(friend.id, message.clientId)).catch(error => notify(friendlyError(error), true))} /></React.Fragment>;
         })}
         {conversation.typing && <div className="social-typing" role="status" aria-label={displayName(friend) + ' يكتب الآن'}><span /><span /><span /><small>يكتب الآن</small></div>}
       </div>
       {newBelow && <button type="button" className="social-jump" onClick={() => goBottom(true)}><Icon name="down" size={16} />رسائل جديدة</button>}
     </div>
-    <form className="social-composer" onSubmit={send}>
+    <form className="social-composer" onSubmit={send}>{composerExtras}
       {social.offline && <p className="social-composer-note" role="status">أنت غير متصل. ستتمكن من الإرسال عند عودة الاتصال.</p>}
       <div className="social-composer-row"><textarea ref={composer} rows={1} maxLength={MAX_TEXT} value={text} aria-label="اكتب رسالة" placeholder="اكتب رسالة…" enterKeyHint="send" onChange={event => changeText(event.target.value)} onBlur={stopped} onKeyDown={event => { if (event.key === 'Enter' && !event.shiftKey && !event.nativeEvent.isComposing) { event.preventDefault(); send(); } }} /><button type="submit" className="social-send" aria-label="إرسال الرسالة" disabled={!text.trim() || sending || social.offline}><Icon name="send" /></button></div>
       {text.length > MAX_TEXT - 200 && <small className="social-character-count" role="status">{text.length.toLocaleString('ar')} / {MAX_TEXT.toLocaleString('ar')}</small>}
     </form>
   </section>;
 }
-function SearchDialog({ social, onClose, run, busy, onOpen }) {
+export function SearchDialog({ social, onClose, run, busy, onOpen, onProfile = id => navigate(`/profile/${id}`) }) {
   const [query, setQuery] = useState('');
   const [results, setResults] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -252,10 +255,10 @@ function SearchDialog({ social, onClose, run, busy, onOpen }) {
   return <Modal title="أضف صديقًا" onClose={onClose} className="social-dialog"><p className="social-dialog-intro">ابحث باسم صديقك أو أدخل رمز ميدان الخاص به.</p><label className="social-search"><Icon name="search" size={20} /><input autoFocus value={query} onChange={event => setQuery(event.target.value)} placeholder="الاسم أو رمز الصديق" aria-label="ابحث بالاسم أو رمز الصديق" maxLength={100} autoComplete="off" /></label><div className="social-search-results" aria-live="polite">{error && <Notice error>{error}</Notice>}{loading ? <LoadingRows /> : !searched ? !error && <p className="social-search-hint">اكتب حرفين على الأقل لبدء البحث.</p> : results.length === 0 ? <EmptyState compact title="لم نجد هذا الاسم" icon="search">جرّب رمز صديقك أو تأكد من كتابة الاسم.</EmptyState> : results.map(user => {
     const isFriend = user.relationship === 'friend';
     const pending = requested.has(user.id) || user.relationship === 'pending_outgoing';
-    return <div key={user.id} className="social-search-result"><PersonAvatar user={user} /><div><button type="button" className="social-profile-link" aria-label={"عرض بروفايل " + displayName(user)} onClick={() => { onClose(); navigate(`/profile/${user.id}`); }}><strong><bdi>{displayName(user)}</bdi></strong></button>{user.code && <small><bdi>{user.code}</bdi></small>}</div>{isFriend ? <Button variant="secondary" onClick={() => { onClose(); onOpen(user.id); }}>محادثة</Button> : pending ? <span className="social-status-pill">تم إرسال الطلب</span> : user.relationship === 'pending_incoming' ? <span className="social-status-pill">طلب وارد</span> : <Button variant="primary" loading={busy === 'invite-' + user.id} disabled={social.offline || Boolean(busy)} onClick={async () => { setError(''); const ok = await run(() => social.sendRequest(user.id), 'invite-' + user.id, 'أُرسل طلب الصداقة', setError); if (ok) setRequested(prev => new Set([...prev, user.id])); }}>إضافة</Button>}</div>;
+    return <div key={user.id} className="social-search-result"><PersonAvatar user={user} /><div><button type="button" className="social-profile-link" aria-label={"عرض بروفايل " + displayName(user)} onClick={() => { onClose(); onProfile(user.id); }}><strong><bdi>{displayName(user)}</bdi></strong></button>{user.code && <small><bdi>{user.code}</bdi></small>}</div>{isFriend ? <Button variant="secondary" onClick={() => { onClose(); onOpen(user.id); }}>محادثة</Button> : pending ? <span className="social-status-pill">تم إرسال الطلب</span> : user.relationship === 'pending_incoming' ? <span className="social-status-pill">طلب وارد</span> : <Button variant="primary" loading={busy === 'invite-' + user.id} disabled={social.offline || Boolean(busy)} onClick={async () => { setError(''); const ok = await run(() => social.sendRequest(user.id), 'invite-' + user.id, 'أُرسل طلب الصداقة', setError); if (ok) setRequested(prev => new Set([...prev, user.id])); }}>إضافة</Button>}</div>;
   })}</div></Modal>;
 }
-function ActionDialog({ action, social, onClose, onComplete }) {
+export function ActionDialog({ action, social, onClose, onComplete }) {
   const { kind, user, message } = action;
   const [text, setText] = useState(message?.text || '');
   const [reason, setReason] = useState('');
@@ -347,19 +350,19 @@ export function SocialView({ account, social, friendId, onNavigate = navigate })
         <div id="social-list-panel" className="social-list-panel" role="tabpanel" aria-labelledby={'social-tab-' + tab}>
           {social.loading && friends.length === 0 && incoming.length === 0 ? <LoadingRows /> : tab === 'requests' ? <>
             {incoming.length > 0 && <h2 className="social-list-heading">طلبات واردة <span>{incoming.length.toLocaleString('ar')}</span></h2>}
-            {incoming.map(request => <RequestRow key={request.id} request={request} busy={busy === request.id} onAccept={() => run(() => social.acceptRequest(request.id), request.id, 'أُضيف إلى أصدقائك')} onReject={() => run(() => social.rejectRequest(request.id), request.id, 'رُفض الطلب')} onMenu={() => setMenu(request.user)} />)}
+            {incoming.map(request => <RequestRow key={request.id} request={request} busy={busy === request.id} onAccept={() => run(() => social.acceptRequest(request.id), request.id, 'أُضيف إلى أصدقائك')} onReject={() => run(() => social.rejectRequest(request.id), request.id, 'رُفض الطلب')} onMenu={() => setMenu(request.user)} onProfile={() => onNavigate(`/profile/${request.user.id}`)} />)}
             {outgoing.length > 0 && <h2 className="social-list-heading">طلبات أرسلتها <span>{outgoing.length.toLocaleString('ar')}</span></h2>}
-            {outgoing.map(request => <RequestRow key={request.id} request={request} outgoing busy={busy === request.id} onCancel={() => run(() => social.cancelRequest(request.id), request.id, 'أُلغي الطلب')} onMenu={() => setMenu(request.user)} />)}
+            {outgoing.map(request => <RequestRow key={request.id} request={request} outgoing busy={busy === request.id} onCancel={() => run(() => social.cancelRequest(request.id), request.id, 'أُلغي الطلب')} onMenu={() => setMenu(request.user)} onProfile={() => onNavigate(`/profile/${request.user.id}`)} />)}
             {!incoming.length && !outgoing.length && <EmptyState compact icon="inbox" title="ما عندك طلبات الآن">طلبات الصداقة الجديدة ستظهر هنا.</EmptyState>}
-          </> : visibleFriends.length ? visibleFriends.map(user => <FriendRow key={user.id} friend={user} active={user.id === friendId} conversation={tab === 'chats'} onOpen={() => openFriend(user.id)} onMenu={() => setMenu(user)} />) : <EmptyState compact icon={filter ? 'search' : tab === 'chats' ? 'chat' : 'people'} title={filter ? 'لا يوجد اسم مطابق' : tab === 'chats' ? 'لسّه السوالف ما بدأت' : 'أصحابك يكملون الجمعة'} action={!filter && tab === 'friends' ? <Button variant="primary" onClick={() => setSearchOpen(true)}>أضف أول صديق</Button> : null}>{filter ? 'جرّب كتابة جزء آخر من الاسم.' : tab === 'chats' ? 'افتح محادثة من قائمة الأصدقاء وقل مرحبًا.' : 'شارك رمزك أو ابحث عن صديق لتبدؤوا المحادثة.'}</EmptyState>}
+          </> : visibleFriends.length ? visibleFriends.map(user => <FriendRow key={user.id} friend={user} active={user.id === friendId} conversation={tab === 'chats'} onOpen={() => openFriend(user.id)} onMenu={() => setMenu(user)} onProfile={() => onNavigate(`/profile/${user.id}`)} />) : <EmptyState compact icon={filter ? 'search' : tab === 'chats' ? 'chat' : 'people'} title={filter ? 'لا يوجد اسم مطابق' : tab === 'chats' ? 'لسّه السوالف ما بدأت' : 'أصحابك يكملون الجمعة'} action={!filter && tab === 'friends' ? <Button variant="primary" onClick={() => setSearchOpen(true)}>أضف أول صديق</Button> : null}>{filter ? 'جرّب كتابة جزء آخر من الاسم.' : tab === 'chats' ? 'افتح محادثة من قائمة الأصدقاء وقل مرحبًا.' : 'شارك رمزك أو ابحث عن صديق لتبدؤوا المحادثة.'}</EmptyState>}
         </div>
         <footer className="social-sidebar-footer"><button type="button" onClick={() => setBlockedOpen(true)}><Icon name="shield" size={17} />المحظورون{blocked.length > 0 && <span>{blocked.length.toLocaleString('ar')}</span>}</button><span>{friends.filter(user => user.online).length > 0 ? friends.filter(user => user.online).length.toLocaleString('ar') + ' متصل الآن' : 'لجمعة أقرب'}</span></footer>
       </aside>
-      <div className="social-chat-panel">{friend ? <Conversation key={friend.id} friend={friend} conversation={social.conversations?.[friend.id]} account={account} social={social} onMenu={() => setMenu(friend)} onBack={() => onNavigate('/friends')} onAction={setAction} notify={notify} /> : friendId ? <div className="social-unavailable"><EmptyState icon="people" title={social.loading ? 'جارٍ فتح المحادثة…' : 'هذه المحادثة غير متاحة'} action={<Button variant="secondary" onClick={() => onNavigate('/friends')}>العودة إلى الأصدقاء</Button>}>{!social.loading && 'اختر صديقًا من قائمتك، أو أرسل طلب صداقة جديدًا.'}</EmptyState></div> : <div className="social-welcome"><span className="social-welcome-chip"><i />مساحة لسوالفكم</span><div className="social-welcome-art"><span><Icon name="chat" size={58} /></span><i><Icon name="people" size={34} /></i></div><h2>كل جمعة تبدأ برسالة</h2><p>اختَر صديقًا من القائمة،<br />وخَلّ التخطيط للجمعة يبدأ.</p><div className="social-welcome-line" /></div>}</div></div>
+      <div className="social-chat-panel">{friend ? <Conversation key={friend.id} friend={friend} conversation={social.conversations?.[friend.id]} account={account} social={social} onMenu={() => setMenu(friend)} onBack={() => onNavigate('/friends')} onAction={setAction} notify={notify} onProfile={() => onNavigate(`/profile/${friend.id}`)} /> : friendId ? <div className="social-unavailable"><EmptyState icon="people" title={social.loading ? 'جارٍ فتح المحادثة…' : 'هذه المحادثة غير متاحة'} action={<Button variant="secondary" onClick={() => onNavigate('/friends')}>العودة إلى الأصدقاء</Button>}>{!social.loading && 'اختر صديقًا من قائمتك، أو أرسل طلب صداقة جديدًا.'}</EmptyState></div> : <div className="social-welcome"><span className="social-welcome-chip"><i />مساحة لسوالفكم</span><div className="social-welcome-art"><span><Icon name="chat" size={58} /></span><i><Icon name="people" size={34} /></i></div><h2>كل جمعة تبدأ برسالة</h2><p>اختَر صديقًا من القائمة،<br />وخَلّ التخطيط للجمعة يبدأ.</p><div className="social-welcome-line" /></div>}</div></div>
     </>}
     <SignInSheet open={signInOpen} onClose={() => setSignInOpen(false)} note="سجّل الدخول لإضافة أصحابك ومتابعة محادثاتك من أجهزتك." />
-    {searchOpen && <SearchDialog social={social} onClose={() => setSearchOpen(false)} run={run} busy={busy} onOpen={openFriend} />}
-    {menu && <Modal title={displayName(menu)} onClose={() => setMenu(null)} className="social-dialog social-person-menu"><div className="social-menu-identity"><PersonAvatar user={menu} large /><p>{presenceLabel(menu)}</p></div><div className="social-menu-options"><button type="button" onClick={() => { navigate(`/profile/${menu.id}`); setMenu(null); }}><Icon name="people" />عرض البروفايل</button>{friends.some(user => user.id === menu.id) && <><button type="button" onClick={() => { openFriend(menu.id); setMenu(null); }}><Icon name="chat" />فتح المحادثة</button><button type="button" onClick={() => chooseAction('remove')}>إزالة من الأصدقاء</button></>}<button type="button" className="is-danger" onClick={() => chooseAction('block')}><Icon name="shield" />حظر</button><button type="button" onClick={() => chooseAction('report')}>إبلاغ عن الحساب</button></div></Modal>}
+    {searchOpen && <SearchDialog social={social} onClose={() => setSearchOpen(false)} run={run} busy={busy} onOpen={openFriend} onProfile={id => onNavigate(`/profile/${id}`)} />}
+    {menu && <Modal title={displayName(menu)} onClose={() => setMenu(null)} className="social-dialog social-person-menu"><div className="social-menu-identity"><PersonAvatar user={menu} large /><p>{presenceLabel(menu)}</p></div><div className="social-menu-options"><button type="button" onClick={() => { onNavigate(`/profile/${menu.id}`); setMenu(null); }}><Icon name="people" />عرض البروفايل</button>{friends.some(user => user.id === menu.id) && <><button type="button" onClick={() => { openFriend(menu.id); setMenu(null); }}><Icon name="chat" />فتح المحادثة</button><button type="button" onClick={() => chooseAction('remove')}>إزالة من الأصدقاء</button></>}<button type="button" className="is-danger" onClick={() => chooseAction('block')}><Icon name="shield" />حظر</button><button type="button" onClick={() => chooseAction('report')}>إبلاغ عن الحساب</button></div></Modal>}
     {blockedOpen && <Modal title="المحظورون" onClose={() => setBlockedOpen(false)} className="social-dialog"><p className="social-dialog-intro">هؤلاء الأشخاص لا يمكنهم مراسلتك أو إرسال طلب صداقة إليك.</p>{blocked.length ? <div className="social-blocked-list">{blocked.map(user => <div key={user.id} className="social-search-result"><PersonAvatar user={user} /><strong><bdi>{displayName(user)}</bdi></strong><Button variant="ghost" onClick={() => { setBlockedOpen(false); setAction({ kind: 'unblock', user }); }}>إلغاء الحظر</Button></div>)}</div> : <EmptyState compact icon="shield" title="قائمتك فارغة">لم تحظر أي شخص.</EmptyState>}</Modal>}
     {action && <ActionDialog key={action.kind + '-' + action.user.id + '-' + (action.message?.seq || '')} action={action} social={social} onClose={() => setAction(null)} onComplete={kind => { notify(kind === 'report' ? 'وصل بلاغك. شكرًا لمساعدتنا.' : kind === 'edit' ? 'حُفظ التعديل' : kind === 'delete' ? 'حُذفت الرسالة' : kind === 'block' ? 'حُظر الحساب' : kind === 'unblock' ? 'أُلغي الحظر' : 'أُزيل من أصدقائك'); if (['remove', 'block'].includes(kind) && action.user.id === friendId) onNavigate('/friends'); }} />}
   </main>;

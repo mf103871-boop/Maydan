@@ -46,6 +46,7 @@
     "node": ">=22"
   },
   "dependencies": {
+    "livekit-client": "2.22.4",
     "qrcode": "1.5.4",
     "react": "19.2.5",
     "react-dom": "19.2.5"

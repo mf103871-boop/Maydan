@@ -7,6 +7,7 @@ import { flashScreen, stampScreen, vignette, wait, burstConfetti, confetti as co
 // التعديلات الوحيدة: الاستيرادات أعلاه بدل المتغيرات العامة، اسم اللعبة في النصوص،
 // ومفاتيح التخزين تحت النطاق maydan:badeeha (انظر keys.js).
 import React from "react";
+import { socialInterruption } from '../../social/interruption.js';
 import { CATS } from "../../data/categories/index.js";
 import MAYDAN_BETA_CSS from "./styles.css";
 import MaydanLogicBeta, {
@@ -1013,9 +1014,10 @@ function useQuestionMedia(ref, soundOn, volume, sound) {
     element.muted = !soundOn;
     element.volume = Math.max(0, Math.min(1, Number.isFinite(volume) ? volume : .75));
     if (!soundOn) element.pause();
-    const pauseHidden = () => { if (document.hidden) element.pause(); };
+    const pauseHidden = () => { if (document.hidden || socialInterruption.getSnapshot().paused) element.pause(); };
     document.addEventListener("visibilitychange", pauseHidden);
-    return () => document.removeEventListener("visibilitychange", pauseHidden);
+    const unsubscribe = socialInterruption.subscribe(pauseHidden);
+    return () => { document.removeEventListener("visibilitychange", pauseHidden); unsubscribe(); };
   }, [element, soundOn, volume]);
   // يخفض المقطع الخلفية عند تشغيله ويرفعها عند توقفه أو انتهائه أو تعطّله؛ ولا يرفع إلا ما خفضه هو.
   useEffect(() => {
@@ -1274,6 +1276,7 @@ function MaydanBeta({ api } = {}) {
     [lastAction, setLastAction] = useState(null),
     [notice, setNotice] = useState(""),
     deadlineRef = useRef(null),
+    pausedRef = useRef(paused),
     // آخر قيمة للمؤقت دون أن تكون تبعية لتأثير الحفظ: الحفظ كل ثانية كان يبني لقطة
     // كاملة ويعيد تسليح المؤقت مع كل تكّة.
     timeLeftRef = useRef(60),
@@ -1306,6 +1309,7 @@ function MaydanBeta({ api } = {}) {
     account = (api && api.account) || null,
     premium = !!(account && account.premium),
     packLocked = (categoryId) => !!account && account.lockedPack(categoryId);
+  pausedRef.current = paused;
   // سقوط الاشتراك (انتهاء أو خروج) يسحب الحزم المقفولة من الاختيار كي لا تبدأ مباراة بها.
   useEffect(() => {
     if (premium) return;
@@ -1606,6 +1610,14 @@ function MaydanBeta({ api } = {}) {
         document.addEventListener("visibilitychange", onVisibility),
         () => document.removeEventListener("visibilitychange", onVisibility)
       );
+    }, [screen, revealed]),
+    useEffect(() => {
+      let pausedHere = false;
+      return socialInterruption.subscribe(() => {
+        if (socialInterruption.getSnapshot().paused && screen === "question" && !revealed && !pausedRef.current) {
+          pausedHere = true; pausedRef.current = true; deadlineRef.current = null; setPaused(true);
+        } else if (!socialInterruption.getSnapshot().paused && pausedHere) { pausedHere = false; setPaused(false); }
+      });
     }, [screen, revealed]),
     // التظليل الأحمر في آخر ثلاث ثوانٍ (طبقة ثابتة في body)؛ يُطفأ عند تغيّر الشاشة أو الكشف أو التوقف
     useEffect(() => {

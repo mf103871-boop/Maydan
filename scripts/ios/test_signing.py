@@ -25,6 +25,7 @@ class SigningChecks(unittest.TestCase):
                 'com.apple.developer.team-identifier': TEAM_ID,
                 'get-task-allow': False, 'beta-reports-active': True,
                 'com.apple.developer.applesignin': ['Default'],
+                'aps-environment': 'production',
             },
         )
 
@@ -35,6 +36,16 @@ class SigningChecks(unittest.TestCase):
             validate_inputs(self.env, self.identity)
         self.env.update(ASC_KEY_ID='ABCDE12345', ASC_ISSUER_ID=self.profile['UUID'], ASC_PRIVATE_KEY_BASE64='placeholder')
         validate_inputs(self.env, self.identity)
+
+    def test_push_capability_is_required_for_incoming_calls(self):
+        for value in (None, 'development'):
+            profile = copy.deepcopy(self.profile)
+            if value is None:
+                profile['Entitlements'].pop('aps-environment')
+            else:
+                profile['Entitlements']['aps-environment'] = value
+            with self.assertRaisesRegex(ValueError, 'Push Notifications'):
+                validate_profile(profile, self.identities)
 
     def test_invalid_or_missing_build_values_and_identity_are_rejected(self):
         for field, value in [('IOS_BUILD', ''), ('IOS_BUILD', '0'), ('IOS_BUILD', '1;whoami'),

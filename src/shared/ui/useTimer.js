@@ -1,6 +1,7 @@
 // مؤقت تنازلي مبني على «موعد نهائي» لا على عدّ الفواصل، فلا ينحرف مع بطء الجهاز.
 // يتوقف تلقائيًا عند إخفاء الصفحة أو قفل الشاشة ويستأنف بعد عدّ 3-2-1.
 import { useCallback, useEffect, useRef, useState } from 'react';
+import { socialInterruption } from '../../social/interruption.js';
 
 export function useTimer({ seconds, onEnd, onSecond, autoStart = false, resumeCountdown = 3 } = {}) {
   const [left, setLeft] = useState(seconds);
@@ -29,6 +30,7 @@ export function useTimer({ seconds, onEnd, onSecond, autoStart = false, resumeCo
   }, [seconds]);
 
   const start = useCallback(() => {
+    if (socialInterruption.getSnapshot().paused) { autoPaused.current = true; setPaused(true); return; }
     // بعد انتهاء العدّ تبقى remaining صفرًا؛ نبدأ من المدة الكاملة بدل انتهاء فوري.
     if (!(remaining.current > 0)) {
       remaining.current = seconds;
@@ -60,6 +62,7 @@ export function useTimer({ seconds, onEnd, onSecond, autoStart = false, resumeCo
   }, []);
 
   const resume = useCallback(() => {
+    if (socialInterruption.getSnapshot().paused) { autoPaused.current = true; return; }
     if (remaining.current <= 0) return;
     if (resumeCountdown > 0) {
       setResuming(resumeCountdown);
@@ -127,7 +130,7 @@ export function useTimer({ seconds, onEnd, onSecond, autoStart = false, resumeCo
       if (document.hidden) {
         if (deadline.current) { autoPaused.current = true; pause(); }
         if (resuming !== null) { setResuming(null); autoPaused.current = true; }
-      } else if (autoPaused.current) {
+      } else if (autoPaused.current && !socialInterruption.getSnapshot().paused) {
         autoPaused.current = false;
         resume();
       }
@@ -135,6 +138,14 @@ export function useTimer({ seconds, onEnd, onSecond, autoStart = false, resumeCo
     document.addEventListener('visibilitychange', onVisibility);
     return () => document.removeEventListener('visibilitychange', onVisibility);
   }, [pause, resume, resuming]);
+
+  useEffect(() => socialInterruption.subscribe(() => {
+    if (socialInterruption.getSnapshot().paused) {
+      if (deadline.current || resumingRef.current !== null) { pause(); autoPaused.current = true; }
+    } else if (autoPaused.current && !document.hidden) {
+      autoPaused.current = false; resume();
+    }
+  }), [pause, resume]);
 
   useEffect(() => {
     if (autoStart) start();

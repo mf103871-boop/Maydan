@@ -7,6 +7,7 @@ import { burstConfetti, vignette } from '../shared/fx/index.js';
 import { navigate, setExitGuard } from '../platform/router.js';
 import { usePlatform } from '../platform/context.js';
 import { useAccount } from '../shared/account/context.js';
+import { socialInterruption } from '../social/interruption.js';
 import { AVATARS, ROUND_OPTIONS, MIN_PLAYERS, ONLINE_GAMES, EXPIRY_WARNING, normalizeCode, validCode, resolveServerUrl, errorText, arabicNumber } from './shared.js';
 import { RoomClient, newCredentials, post, readSaved, save, clearSession, deviceId } from './client.js';
 import { normalizeContentOptions } from '../games/fabraka/content.js';
@@ -111,7 +112,7 @@ function Invite({ code }) {
     catch { setShowLink(true); }
   }
   return <Card className="online-invite">
-    <div><span className="online-label">رمز الغرفة</span><strong className="online-room-code" dir="ltr">{code}</strong><p>أرسل الرابط أو خلي أصحابك يمسحوا الرمز.</p><Button onClick={copy}>نسخ رابط الدعوة</Button></div>
+    <div><span className="online-label">رمز الغرفة</span><strong className="online-room-code" dir="ltr">{code}</strong><p>أرسل الرابط أو خلي أصحابك يمسحوا الرمز.</p><Button onClick={() => window.dispatchEvent(new CustomEvent('maydan-invite-friends', { detail: { roomCode: code } }))}>ادعُ أصدقاء ميدان</Button><Button onClick={copy}>نسخ رابط الدعوة</Button></div>
     {qr && <img width="136" height="136" src={qr} className={qrReady ? 'is-ready' : ''} onLoad={() => setQrReady(true)} alt={`رمز QR للدخول إلى الغرفة ${code}`} />}
     {showLink && <label className="online-field online-invite-link">رابط الدعوة<input readOnly value={url} dir="ltr" onFocus={(e) => e.target.select()} /></label>}
   </Card>;
@@ -218,6 +219,10 @@ function ConnectedRoom({ code, session, stored, onLeft }) {
   }, [code, session]);
   useEffect(() => { if (status === 'connected') setError((old) => old === 'STORAGE' ? old : ''); }, [status]);
   const phase = state?.phase;
+  useEffect(() => {
+    socialInterruption.setContext({ local: false, online: true, turnDeadline: state?.deadlineAt ? state.deadlineAt - (clientRef.current?.clockOffset || 0) : null });
+    return () => socialInterruption.setContext({ online: false, turnDeadline: null });
+  }, [state?.deadlineAt]);
   useEffect(() => {
     if (phase === 'result') { sound.play('pop'); haptics.vibrate('success'); }
     else if (phase === 'over') { sound.play('fanfare'); haptics.vibrate('win'); confetti?.fire(); }   // احتفال النهاية (مرئي/صوتي فقط)

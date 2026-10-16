@@ -69,7 +69,7 @@ function view(row, viewerId, records, now) {
   profile.featuredBadges = profile.featuredBadges.filter(id => profile.earnedBadges.includes(id));
   if (relationship === 'friend' || relationship === 'self') {
     profile.lastActiveAt = row.last_active_at;
-    profile.online = row.online_until > now && row.last_active_at > now - 45_000;
+    profile.online = row.online_until > now;
   }
   return profile;
 }

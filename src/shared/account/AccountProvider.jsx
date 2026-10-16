@@ -10,7 +10,7 @@ import { accountErrorText } from './errors.js';
 import { accountStore, ACCOUNT_PREFIX, KEYS } from './store.js';
 import {
   ClientError, accountOffline, authStartUrl, appleNative, createPaddleCheckout, deleteAccountRequest,
-  exchangeCode, getBillingConfig, getMe, getPaddlePortal, mergeTrialsRequest, postAppleTransaction, postTrial, redeemRequest, signout, request,
+  exchangeCode, getBillingConfig, getPaddlePortal, mergeTrialsRequest, postAppleTransaction, postTrial, redeemRequest, signout, request,
 } from './api.js';
 import { deliverAppleTransaction, waitForEntitlement } from './purchases.js';
 import { callNative, isNativeShell, onNativeEvent } from './native.js';
@@ -52,7 +52,7 @@ export function AccountProvider({ children }) {
   const [localTrials, setLocalTrials] = useState(() => accountStore.readTrials());
   // منح الهدايا تأتي ضمن me من الخادم، ولا تمنح بيانات الجهاز صلاحيات مستقلة.
   const promo = null; // Legacy device-only gifts no longer grant access; server grants remain valid.
-  const [ready, setReady] = useState(() => !(accountStore.readSession() && !cached.data));
+  const [ready, setReady] = useState(() => !native && !(accountStore.readSession() && !cached.data));
   const [products, setProducts] = useState(null);
   const [productsStatus, setProductsStatus] = useState('idle');
   const [productsError, setProductsError] = useState(null);
@@ -123,6 +123,7 @@ export function AccountProvider({ children }) {
     setSession(null);
     setMe(null);
     setFetchedAt(0);
+    if (isNativeShell()) return callNative('socialLogout', {}, { timeout: 5000 }).catch(() => {});
   }, []);
 
   // خيارات كل نداء: الرمز الحالي + التقاط تدوير الجلسة المنزلق.
@@ -141,15 +142,41 @@ export function AccountProvider({ children }) {
     return code;
   }, [clearLocalAuth]);
 
+  const ensureNativeSocialSession = useCallback(async () => {
+    if (!native) return null;
+    const epoch = authEpochRef.current, sent = sessionRef.current, userId = meRef.current?.user?.id;
+    if (!sent || !userId) throw new ClientError('AUTH_REQUIRED');
+    const result = await callNative('socialSession', { userId, token: sent }, { timeout: 5000 });
+    if (epoch !== authEpochRef.current || meRef.current?.user?.id !== userId) throw new ClientError('AUTH_REQUIRED');
+    if (sessionRef.current === sent && result?.token && result.token !== sent) applySession(result.token);
+    return result;
+  }, [native, applySession]);
+
   // Reuse session rotation, guarding late authentication failures across accounts.
   const requestAuthenticated = useCallback(async (path, settings = {}) => {
     const epoch = authEpochRef.current;
+    const sent = sessionRef.current;
     try { return await request(path, { ...settings, ...options() }); }
     catch (error) {
+      // A native call can renew its credential while WebKit is suspended. An
+      // auth rejection performs no mutation, so retry it once with that canonical
+      // credential before treating the account as signed out.
+      if (native && sent && epoch === authEpochRef.current && isAuthError(codeOf(error))) {
+        let retrying = false;
+        try {
+          const stored = await callNative('socialStoredSession', {}, { timeout: 5000 });
+          if (epoch === authEpochRef.current && sessionRef.current && stored?.userId === meRef.current?.user?.id && stored.token) {
+            if (sessionRef.current === sent && stored.token !== sent) applySession(stored.token);
+            if (sessionRef.current !== sent) { retrying = true; return await request(path, { ...settings, ...options() }); }
+          }
+        } catch (retryError) {
+          if (retrying && !isAuthError(codeOf(retryError))) throw retryError;
+        }
+      }
       if (epoch === authEpochRef.current && isAuthError(codeOf(error))) handleError(error);
       throw error;
     }
-  }, [options, handleError]);
+  }, [options, handleError, native, applySession]);
 
   // ── التحديث ─────────────────────────────────────────────────────────────
   const flushPending = useCallback(async () => {
@@ -168,7 +195,7 @@ export function AccountProvider({ children }) {
     if (!sessionRef.current || accountOffline()) return null;
     const epoch = authEpochRef.current;
     try {
-      const next = await getMe(options());
+      const next = await requestAuthenticated('/api/me');
       if (epoch !== authEpochRef.current) return null;
       applyMe(next, epoch);
       if (isPremium(next) && next?.premium?.active && next.premium.source === 'paddle') setActivationPending(false);
@@ -181,7 +208,7 @@ export function AccountProvider({ children }) {
       if (isDisabled(code)) setOffline(true);
       return null;
     }
-  }, [options, applyMe, flushPending, clearLocalAuth]);
+  }, [requestAuthenticated, applyMe, flushPending, clearLocalAuth]);
 
   // بعد أي دخول ناجح: خزّن الجلسة، ادمج علامات هذا الجهاز، ثم رحّب باللاعب.
   const afterSignIn = useCallback(async (result) => {
@@ -193,6 +220,7 @@ export function AccountProvider({ children }) {
     setMe(null);
     applySession(result.session.token);
     if (result.me) applyMe(result.me);
+    setReady(true);
     const stored = accountStore.readTrials();
     const games = [...new Set([...Object.keys(stored.marks), ...stored.pending])].filter((g) => TRIAL_GAMES.includes(g));
     if (games.length) {
@@ -414,8 +442,8 @@ export function AccountProvider({ children }) {
   const signOut = useCallback(async () => {
     setBusy('signout');
     const requestOptions = options();
-    clearLocalAuth(); // Clear Retain before waiting on an unavailable logout endpoint.
-    try { if (requestOptions.token && !accountOffline()) await signout(requestOptions); }
+    const nativeLogout = clearLocalAuth(); // Hide private state immediately; unregister native devices before revoking its session.
+    try { await nativeLogout; if (requestOptions.token && !accountOffline()) await signout(requestOptions); }
     catch (err) { /* الخروج محلي في كل الأحوال */ }
     finally {
       setBusy(false);
@@ -642,11 +670,31 @@ export function AccountProvider({ children }) {
     accountStore.clearPromo();
     setOffline(accountOffline());
     (async () => {
+      // CallKit may rotate the account session while WebKit is suspended. Adopt
+      // the secure native copy before sending the first request with an old token.
+      const epoch = authEpochRef.current;
+      if (native) {
+        try {
+          const stored = await callNative('socialStoredSession', {}, { timeout: 5000 });
+          if (alive && epoch === authEpochRef.current && stored?.token && stored.userId &&
+            (!meRef.current?.user?.id || meRef.current.user.id === stored.userId)) applySession(stored.token);
+        } catch { /* Older shells do not implement social calls. */ }
+      }
+      if (!alive || epoch !== authEpochRef.current) return;
       if (sessionRef.current && !accountOffline()) await refresh();
       if (alive) setReady(true);
     })();
     return () => { alive = false; };
-  }, [refresh]);
+  }, [refresh, native, applySession]);
+
+  useEffect(() => onNativeEvent('socialSessionRotated', payload => {
+    if (payload?.userId === meRef.current?.user?.id && sessionRef.current &&
+      payload.previousToken === sessionRef.current && typeof payload.token === 'string') applySession(payload.token);
+  }), [applySession]);
+  useEffect(() => {
+    if (!native || !ready || !session || !me?.user?.id) return;
+    ensureNativeSocialSession().catch(() => {});
+  }, [native, ready, session, me?.user?.id, ensureNativeSocialSession]);
 
   // إقلاع الغلاف: علامات التجارب المحفوظة في UserDefaults تُدمج (اتحاد) مع علامات WebKit.
   useEffect(() => {
@@ -752,7 +800,7 @@ export function AccountProvider({ children }) {
     storeProbeStatus, storeProbeDiagnostics, restoreDiagnostics,
     offline, signedIn: !!session, busy, error, paywall, billing, activationPending,
     redeem,
-    signIn, signOut, refresh, requestAuthenticated,
+    signIn, signOut, refresh, requestAuthenticated, ensureNativeSocialSession,
     markTrial,
     trialAvailable: (game) => trialAvailableOf(me, localTrials.marks, game, premium),
     lockedPack: (id) => lockedPackOf(id, premium),
@@ -762,7 +810,7 @@ export function AccountProvider({ children }) {
     clearError: () => setError(null),
     authHeaders: () => (sessionRef.current ? { Authorization: `Bearer ${sessionRef.current}` } : {}),
   }), [ready, user, me, premium, promo, trials, platform, products, productsStatus, productsError, productsDiagnostics, storeProbeStatus, storeProbeDiagnostics, restoreDiagnostics, offline, session, busy, error, paywall, billing, activationPending,
-    signIn, signOut, refresh, requestAuthenticated, markTrial, localTrials, openPaywall, closePaywall, restore, deleteAccount, purchase, manageSubscription, loadProducts, retryProducts, probeStore, redeem]);
+    signIn, signOut, refresh, requestAuthenticated, ensureNativeSocialSession, markTrial, localTrials, openPaywall, closePaywall, restore, deleteAccount, purchase, manageSubscription, loadProducts, retryProducts, probeStore, redeem]);
 
   return <AccountContext.Provider value={value}>{children}</AccountContext.Provider>;
 }

@@ -1,5 +1,6 @@
 import { Avatar, GameArtwork } from '../../shared/brand/art.jsx';
 import React, { useCallback, useEffect, useReducer, useRef, useState } from 'react';
+import { socialInterruption } from '../../social/interruption.js';
 import { Screen, Button, Podium, Segment, Card, Scoreboard, Modal, CountUp } from '../../shared/ui/components.jsx';
 import { flashScreen, stampScreen, vignette, burstConfetti, wait } from '../../shared/fx/index.js';
 import { useReaction } from '../../shared/ui/useReaction.js';
@@ -288,6 +289,15 @@ export function Game({ api, players, onExit, savedSession = null, gameOptions = 
   // الحفظ مؤجَّل ربع ثانية: كل حرف في المسودة كان يكتب ثلاث مفاتيح في التخزين على الخيط
   // الرئيسي. تغيّر المرحلة يُحفظ فورًا، والإخفاء والخروج يفرّغان ما تأخر.
   const latestState = useRef(state); latestState.current = state;
+  const privateTurnVisible = isSecret(state) && state.ready && !state.paused;
+  useEffect(() => privateTurnVisible ? socialInterruption.private(Symbol('fabraka-turn')) : undefined, [privateTurnVisible]);
+  useEffect(() => {
+    let pausedHere = false;
+    return socialInterruption.subscribe(() => {
+      if (socialInterruption.getSnapshot().paused && !latestState.current.paused && !pausedHere) { pausedHere = true; latestAct.current('PAUSE'); }
+      else if (!socialInterruption.getSnapshot().paused && pausedHere) { pausedHere = false; latestAct.current('RESUME'); }
+    });
+  }, []);
   const saveTimer = useRef(0);
   const persist = useCallback(() => {
     clearTimeout(saveTimer.current); saveTimer.current = 0;

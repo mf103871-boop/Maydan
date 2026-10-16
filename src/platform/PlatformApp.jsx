@@ -29,6 +29,9 @@ import { PaywallHost } from '../shared/account/PaywallHost.jsx';
 import accountCss from '../shared/account/account.css';
 import { SocialProvider } from '../social/SocialProvider.jsx';
 import { SocialScreen } from '../social/SocialScreen.jsx';
+import { LammaProvider } from '../social/LammaProvider.jsx';
+import { SocialUIProvider } from '../social/SocialUIProvider.jsx';
+import { SocialHost } from '../social/SocialHost.jsx';
 import { ProfileProvider } from '../profiles/ProfileProvider.jsx';
 import { ProfileScreen } from '../profiles/ProfileScreen.jsx';
 import { ModerationScreen } from '../moderation/ModerationScreen.jsx';
@@ -103,7 +106,7 @@ function Providers({ children }) {
 
   const value = useMemo(() => ({ sound, haptics, confetti, toast, settings, setSettings, roster, setRoster, navigate, storage: platformStorage, version: VERSION }), [sound, haptics, toast, settings, setSettings, roster, setRoster]);
   // الحساب داخل مزوّد المنصة: يحتاج التنبيهات (toast) والإعدادات، وتحتاجه كل الشاشات.
-  return <PlatformContext.Provider value={value}><AccountProvider><SocialProvider><ProfileProvider>{children}</ProfileProvider></SocialProvider></AccountProvider></PlatformContext.Provider>;
+  return <PlatformContext.Provider value={value}><AccountProvider><SocialProvider><LammaProvider><SocialUIProvider><ProfileProvider>{children}</ProfileProvider></SocialUIProvider></LammaProvider></SocialProvider></AccountProvider></PlatformContext.Provider>;
 }
 
 // عنوان المستند يتبع الشاشة (قارئات الشاشة والتبويبات والسجل)، والألعاب تحمل اسمها.
@@ -172,6 +175,7 @@ function Shell() {
         <ScreenHost route={route} />
       </ErrorBoundary>}
       {booted && <PaywallHost />}
+      {booted && <ErrorBoundary title="تعذّر فتح اللّمة" message="أعد فتح ميدان لتتصل بأصحابك." onHome={() => navigate('/')}><SocialHost /></ErrorBoundary>}
       <style>{brandCss}</style>
       <style>{onlineCss}</style>
       <style>{accountCss}</style>

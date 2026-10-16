@@ -69,6 +69,7 @@ export function createSound({ enabled = true, volume = 0.75, music = true, music
   let cutoffSeq = 0;
   let cutoffAt = 0;
   let ducked = false;
+  const duckOwners = new Set();
   let bankFetch = null;
   let bankDecode = null;
   let unlockWaiters = [];
@@ -575,7 +576,7 @@ export function createSound({ enabled = true, volume = 0.75, music = true, music
     get ready() { return ready(); },
     enable(value) { on = !!value; if (!on) stop(); mix(); syncMusic(); },
     setVolume(value) { level = clampVolume(value); if (!level) stop(); mix(); },
-    setDucking(value) { ducked = !!value; mix(); },
+    setDucking(value, owner = 'question-media') { if (value) duckOwners.add(owner); else duckOwners.delete(owner); ducked = duckOwners.size > 0; mix(); },
     attach, dispose, stop, unlock, synth,
     names: [...Object.keys(RECIPES), ...Object.keys(ALIASES)],
     // Background music: `play(id)` names the track a screen wants (it starts on the next

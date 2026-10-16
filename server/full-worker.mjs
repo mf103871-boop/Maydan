@@ -1,6 +1,7 @@
 // One Cloudflare origin serves the game, assets, and room API.
 import { routeRequest, scheduled } from './worker.mjs';
-export { Room, RequestLimiter, SocialHub } from './worker.mjs';
+import { privacyPageResponse } from './legal/privacy.mjs';
+export { Room, RequestLimiter, SocialHub, LammaJobs } from './worker.mjs';
 
 // The page is one self-contained document: inline script and styles, images and
 // audio from this origin, data:/blob: URLs, and question media that may be hosted
@@ -42,6 +43,9 @@ export function secured(response) {
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
+    if (['/api/legal/privacy', '/api/legal/privacy/'].includes(url.pathname) && ['GET', 'HEAD'].includes(request.method)) {
+      return privacyPageResponse(request.method);
+    }
     if (url.pathname === '/api' || url.pathname.startsWith('/api/') || url.pathname === '/health') {
       // أصل الموقع نفسه دائمًا مسموح، ويُضاف إليه EXTRA_ORIGINS (مخطط تطبيق iOS مثلًا).
       const extra = String(env.EXTRA_ORIGINS || '').split(',').map((value) => value.trim()).filter(Boolean);

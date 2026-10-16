@@ -6,6 +6,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A10000000000000000000010 /* AppUpdatePolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000000000000000012 /* AppUpdatePolicy.swift */; };
+		A10000000000000000000011 /* AppUpdateCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000000000000000013 /* AppUpdateCoordinator.swift */; };
+		A1000000000000000000000C /* SocialSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1000000000000000000000F /* SocialSession.swift */; };
+		A1000000000000000000000D /* SocialVoiceRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000000000000000010 /* SocialVoiceRecorder.swift */; };
+		A1000000000000000000000E /* SocialCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000000000000000011 /* SocialCoordinator.swift */; };
+		A1000000000000000000000F /* LiveKit in Frameworks */ = {isa = PBXBuildFile; productRef = B20000000000000000000002 /* LiveKit */; };
 		A10000000000000000000001 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000000000000000001 /* AppDelegate.swift */; };
 		A10000000000000000000002 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000000000000000002 /* SceneDelegate.swift */; };
 		A10000000000000000000003 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000000000000000003 /* GameViewController.swift */; };
@@ -20,6 +26,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B10000000000000000000012 /* AppUpdatePolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUpdatePolicy.swift; sourceTree = "<group>"; };
+		B10000000000000000000013 /* AppUpdateCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUpdateCoordinator.swift; sourceTree = "<group>"; };
+		B1000000000000000000000F /* SocialSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialSession.swift; sourceTree = "<group>"; };
+		B10000000000000000000010 /* SocialVoiceRecorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialVoiceRecorder.swift; sourceTree = "<group>"; };
+		B10000000000000000000011 /* SocialCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialCoordinator.swift; sourceTree = "<group>"; };
 		B10000000000000000000001 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B10000000000000000000002 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		B10000000000000000000003 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
@@ -40,7 +51,7 @@
 		C10000000000000000000001 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
-			files = ();
+			files = (A1000000000000000000000F /* LiveKit in Frameworks */,);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
@@ -58,6 +69,11 @@
 			isa = PBXGroup;
 			children = (
 				B10000000000000000000001 /* AppDelegate.swift */,
+				B1000000000000000000000F /* SocialSession.swift */,
+				B10000000000000000000010 /* SocialVoiceRecorder.swift */,
+				B10000000000000000000011 /* SocialCoordinator.swift */,
+				B10000000000000000000012 /* AppUpdatePolicy.swift */,
+				B10000000000000000000013 /* AppUpdateCoordinator.swift */,
 				B10000000000000000000002 /* SceneDelegate.swift */,
 				B10000000000000000000003 /* GameViewController.swift */,
 				B10000000000000000000009 /* AppSchemeHandler.swift */,
@@ -94,6 +110,7 @@
 			buildRules = ();
 			dependencies = ();
 			name = Maydan;
+			packageProductDependencies = (B20000000000000000000002 /* LiveKit */,);
 			productName = Maydan;
 			productReference = B10000000000000000000008 /* Maydan.app */;
 			productType = "com.apple.product-type.application";
@@ -107,7 +124,7 @@
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1600;
 				LastUpgradeCheck = 1600;
-				TargetAttributes = { E10000000000000000000001 = {CreatedOnToolsVersion = 16.0; SystemCapabilities = {com.apple.InAppPurchase = {enabled = 1;}; com.apple.SignInWithApple = {enabled = 1;};}; }; };
+				TargetAttributes = { E10000000000000000000001 = {CreatedOnToolsVersion = 16.0; SystemCapabilities = {com.apple.InAppPurchase = {enabled = 1;}; com.apple.SignInWithApple = {enabled = 1;}; com.apple.Push = {enabled = 1;}; com.apple.BackgroundModes = {enabled = 1;};}; }; };
 			};
 			buildConfigurationList = F10000000000000000000001 /* Build configuration list for PBXProject "Maydan" */;
 			compatibilityVersion = "Xcode 14.0";
@@ -115,6 +132,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (ar, en, Base,);
 			mainGroup = D10000000000000000000001;
+			packageReferences = (B20000000000000000000001 /* XCRemoteSwiftPackageReference "client-sdk-swift" */,);
 			productRefGroup = D10000000000000000000003 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -140,6 +158,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1000000000000000000000C /* SocialSession.swift in Sources */,
+				A1000000000000000000000D /* SocialVoiceRecorder.swift in Sources */,
+				A1000000000000000000000E /* SocialCoordinator.swift in Sources */,
+				A10000000000000000000010 /* AppUpdatePolicy.swift in Sources */,
+				A10000000000000000000011 /* AppUpdateCoordinator.swift in Sources */,
 				A10000000000000000000001 /* AppDelegate.swift in Sources */,
 				A10000000000000000000002 /* SceneDelegate.swift in Sources */,
 				A10000000000000000000003 /* GameViewController.swift in Sources */,
@@ -156,14 +179,30 @@
 /* Begin XCBuildConfiguration section */
 		F20000000000000000000001 /* Debug */ = {isa = XCBuildConfiguration; buildSettings = {ALWAYS_SEARCH_USER_PATHS = NO; CLANG_ENABLE_MODULES = YES; IPHONEOS_DEPLOYMENT_TARGET = 16.4; SDKROOT = iphoneos; SWIFT_VERSION = 5.0;}; name = Debug;};
 		F20000000000000000000002 /* Release */ = {isa = XCBuildConfiguration; buildSettings = {ALWAYS_SEARCH_USER_PATHS = NO; CLANG_ENABLE_MODULES = YES; IPHONEOS_DEPLOYMENT_TARGET = 16.4; SDKROOT = iphoneos; SWIFT_COMPILATION_MODE = wholemodule; SWIFT_VERSION = 5.0;}; name = Release;};
-		F20000000000000000000003 /* Debug */ = {isa = XCBuildConfiguration; buildSettings = {ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon; CODE_SIGN_ENTITLEMENTS = Maydan/Maydan.entitlements; CODE_SIGN_STYLE = Automatic; CURRENT_PROJECT_VERSION = 8; GENERATE_INFOPLIST_FILE = NO; INFOPLIST_FILE = Maydan/Info.plist; IPHONEOS_DEPLOYMENT_TARGET = 16.4; MARKETING_VERSION = 1.5; PRODUCT_BUNDLE_IDENTIFIER = Maydan; DEVELOPMENT_TEAM = 96WJBK2MB2; PRODUCT_NAME = "$(TARGET_NAME)"; SUPPORTED_PLATFORMS = "iphoneos iphonesimulator"; SUPPORTS_MACCATALYST = NO; SWIFT_VERSION = 5.0; TARGETED_DEVICE_FAMILY = 1;}; name = Debug;};
-		F20000000000000000000004 /* Release */ = {isa = XCBuildConfiguration; buildSettings = {ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon; CODE_SIGN_ENTITLEMENTS = Maydan/Maydan.entitlements; CODE_SIGN_STYLE = Automatic; CURRENT_PROJECT_VERSION = 8; GENERATE_INFOPLIST_FILE = NO; INFOPLIST_FILE = Maydan/Info.plist; IPHONEOS_DEPLOYMENT_TARGET = 16.4; MARKETING_VERSION = 1.5; PRODUCT_BUNDLE_IDENTIFIER = Maydan; DEVELOPMENT_TEAM = 96WJBK2MB2; PRODUCT_NAME = "$(TARGET_NAME)"; SUPPORTED_PLATFORMS = "iphoneos iphonesimulator"; SUPPORTS_MACCATALYST = NO; SWIFT_COMPILATION_MODE = wholemodule; SWIFT_VERSION = 5.0; TARGETED_DEVICE_FAMILY = 1;}; name = Release;};
+		F20000000000000000000003 /* Debug */ = {isa = XCBuildConfiguration; buildSettings = {ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon; CODE_SIGN_ENTITLEMENTS = Maydan/Maydan.entitlements; CODE_SIGN_STYLE = Automatic; CURRENT_PROJECT_VERSION = 8; GENERATE_INFOPLIST_FILE = NO; INFOPLIST_FILE = Maydan/Info.plist; LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/Frameworks",); MAYDAN_PUSH_ENVIRONMENT = development; IPHONEOS_DEPLOYMENT_TARGET = 16.4; MARKETING_VERSION = 1.5; PRODUCT_BUNDLE_IDENTIFIER = Maydan; DEVELOPMENT_TEAM = 96WJBK2MB2; PRODUCT_NAME = "$(TARGET_NAME)"; SUPPORTED_PLATFORMS = "iphoneos iphonesimulator"; SUPPORTS_MACCATALYST = NO; SWIFT_VERSION = 5.0; TARGETED_DEVICE_FAMILY = 1;}; name = Debug;};
+		F20000000000000000000004 /* Release */ = {isa = XCBuildConfiguration; buildSettings = {ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon; CODE_SIGN_ENTITLEMENTS = Maydan/Maydan.entitlements; CODE_SIGN_STYLE = Automatic; CURRENT_PROJECT_VERSION = 8; GENERATE_INFOPLIST_FILE = NO; INFOPLIST_FILE = Maydan/Info.plist; LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/Frameworks",); MAYDAN_PUSH_ENVIRONMENT = production; IPHONEOS_DEPLOYMENT_TARGET = 16.4; MARKETING_VERSION = 1.5; PRODUCT_BUNDLE_IDENTIFIER = Maydan; DEVELOPMENT_TEAM = 96WJBK2MB2; PRODUCT_NAME = "$(TARGET_NAME)"; PROVISIONING_PROFILE_SPECIFIER = "$(MAYDAN_PROVISIONING_PROFILE_SPECIFIER)"; SUPPORTED_PLATFORMS = "iphoneos iphonesimulator"; SUPPORTS_MACCATALYST = NO; SWIFT_COMPILATION_MODE = wholemodule; SWIFT_VERSION = 5.0; TARGETED_DEVICE_FAMILY = 1;}; name = Release;};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
 		F10000000000000000000001 /* Build configuration list for PBXProject "Maydan" */ = {isa = XCConfigurationList; buildConfigurations = (F20000000000000000000001 /* Debug */, F20000000000000000000002 /* Release */,); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release;};
 		F10000000000000000000002 /* Build configuration list for PBXNativeTarget "Maydan" */ = {isa = XCConfigurationList; buildConfigurations = (F20000000000000000000003 /* Debug */, F20000000000000000000004 /* Release */,); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release;};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B20000000000000000000001 /* XCRemoteSwiftPackageReference "client-sdk-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/livekit/client-sdk-swift.git";
+			requirement = {kind = exactVersion; version = 2.17.0;};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B20000000000000000000002 /* LiveKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B20000000000000000000001 /* XCRemoteSwiftPackageReference "client-sdk-swift" */;
+			productName = LiveKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E10000000000000000000002 /* Project object */;
 }
