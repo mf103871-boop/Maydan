@@ -79,6 +79,14 @@ The additive D1 migration keeps old client contracts, but adding a Durable Objec
 
 ## Internal TestFlight and actual device gate
 
+### Corrected build 11 available for internal testing
+
+The launch fix was uploaded as `1.7 (11)` from commit `57bddb1b189bdfa0c3e629065ae8e51b4f3a38d4` in [run 38231151756](https://github.com/mf103871-boop/Maydan/actions/runs/38231151756). All required steps passed, including Release simulator launch, archive, signature, exported-IPA dependency checks, upload and signing cleanup. The simulator stayed alive for 45.29 seconds on first launch and 15.16 seconds after relaunch, with no crash reports; saved screenshots show the rendered home screen. One screenshot command timed out, but the required images were present and inspected.
+
+Independent inspection of the exported IPA confirms the corrected `@executable_path/Frameworks` runpath and resolves both embedded LiveKit dependencies. Apple build `c822237d-5b69-488d-a5aa-ec9759375b82` was rechecked on 2026-10-16: `VALID` and `IN_BETA_TESTING`. The [sanitized receipt](releases/lamma-2026-10-12/testflight-1.7-11.json) records the exact artifact hashes and limits. Updated testing notes remain unsaved because the API returned 405 and the browser session expired; this does not block the verified internal build availability.
+
+On 2026-10-16, the internal tester confirmed that build 11 opens normally and reaches the home screen after reopening. Startup acceptance therefore passes on the reported physical iPhone. The wider device acceptance below remains required before public rollout; no public release was performed.
+
 ### Build 10 immediate launch failure
 
 The internal tester reported that `1.7 (10)` closes immediately on launch. Inspection of the exact uploaded IPA confirmed that its executable depends on `@rpath/LiveKitWebRTC.framework/LiveKitWebRTC` and `@rpath/RustLiveKitUniFFI.framework/RustLiveKitUniFFI`, while its only `LC_RPATH` is `/usr/lib/swift`. Both frameworks are embedded, but the executable cannot resolve their location. Archive, signature and export success did not catch this pre-main loading failure.
