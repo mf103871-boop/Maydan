@@ -265,6 +265,12 @@ private final class AppUpdatePanel: UIView {
         secondary.title = "إعادة التحقق"
         secondary.cornerStyle = .large
         retry.configuration = secondary
+        update.isAccessibilityElement = true
+        retry.isAccessibilityElement = true
+        update.accessibilityLabel = "تحديث ميدان من متجر التطبيقات"
+        retry.accessibilityLabel = "إعادة التحقق من التحديث"
+        update.accessibilityTraits = .button
+        retry.accessibilityTraits = .button
         update.titleLabel?.adjustsFontForContentSizeCategory = true
         retry.titleLabel?.adjustsFontForContentSizeCategory = true
         update.addTarget(self, action: #selector(updateTapped), for: .touchUpInside)
@@ -312,11 +318,14 @@ private final class AppUpdatePanel: UIView {
 #if targetEnvironment(simulator)
     func performSimulatorRetry() { retry.sendActions(for: .touchUpInside) }
     func simulatorSnapshot() -> [String: Any] {
+        layoutIfNeeded()
         func button(_ value: UIButton) -> [String: Any] {
             let frame = value.convert(value.bounds, to: self)
             return ["title": value.configuration?.title ?? "", "hidden": value.isHidden,
                     "enabled": value.isEnabled, "width": frame.width, "height": frame.height,
-                    "accessible": value.isAccessibilityElement]
+                    "accessible": value.isAccessibilityElement,
+                    "accessibilityLabel": value.accessibilityLabel ?? "",
+                    "buttonTrait": value.accessibilityTraits.contains(.button)]
         }
         return ["heading": heading.text ?? "", "message": message.text ?? "",
                 "mounted": window != nil, "width": bounds.width, "height": bounds.height,

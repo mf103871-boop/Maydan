@@ -62,6 +62,8 @@ class UpdateGateSmoke(LaunchSmoke):
             data = Path(self.prepare_command('data-container', 180, 'get_app_container', self.device, self.bundle, 'data').stdout.strip())
             state_path = data / 'Documents/app-update-fixture/state.json'
             required = self.read_until(state_path, lambda value: value.get('blocked') is True and (value.get('panel') or {}).get('mounted') is True)
+            # Preserve measured facts even when an assertion below fails.
+            (self.output / 'required-view.json').write_text(json.dumps(required, ensure_ascii=False, indent=2), encoding='utf-8')
             panel = required['panel']
             if required.get('initialLoadPermitted') is not False or panel.get('heading') != 'تحديث ميدان مطلوب':
                 raise SmokeFailure('The required-update heading is missing or the game was started behind it.')
@@ -69,12 +71,15 @@ class UpdateGateSmoke(LaunchSmoke):
                 raise SmokeFailure('The mounted update panel lacks its Arabic message or modal accessibility.')
             for key, title in [('update', 'تحديث من App Store'), ('retry', 'إعادة التحقق')]:
                 button = panel.get(key, {})
+                measured = json.dumps(button, ensure_ascii=False, sort_keys=True)
                 if button.get('title') != title or button.get('hidden') is not False or button.get('enabled') is not True:
-                    raise SmokeFailure(f'The visible {key} action is missing or disabled.')
+                    raise SmokeFailure(f'The visible {key} action is missing or disabled: {measured}')
                 if button.get('height', 0) < 44 or button.get('width', 0) < 100 or not button.get('accessible'):
-                    raise SmokeFailure(f'The {key} action is not a usable accessible button.')
+                    raise SmokeFailure(f'The {key} action is not a usable accessible button: {measured}')
+                label = 'تحديث ميدان من متجر التطبيقات' if key == 'update' else 'إعادة التحقق من التحديث'
+                if button.get('accessibilityLabel') != label or button.get('buttonTrait') is not True:
+                    raise SmokeFailure(f'The {key} action lacks its Arabic accessibility label or button trait: {measured}')
             self.screenshot('required-update-verified')
-            (self.output / 'required-view.json').write_text(json.dumps(required, ensure_ascii=False, indent=2), encoding='utf-8')
             # Only the simulator fixture can consume this finite command. It
             # dispatches the production Retry UIButton target/action, then makes
             # the policy unavailable to prove the user is not trapped offline.
