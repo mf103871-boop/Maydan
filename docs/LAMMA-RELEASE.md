@@ -77,6 +77,40 @@ The sequence is not an atomic transaction across D1, two workers and cron. If an
 
 The additive D1 migration keeps old client contracts, but adding a Durable Object class constrains [rollback across lifecycle migrations](https://developers.cloudflare.com/workers/versions-and-deployments/rollbacks/). There is deliberately no automatic rollback or destructive SQL reversal. After `v3-lamma`, the practical recovery is a reviewed forward deployment retaining the new namespace/class while restoring compatible behavior. Keep the public assets unchanged and withhold/expire the internal build while resolving any failure. Restoring an old D1 export would overwrite newer user activity and requires a separate recovery decision.
 
+## 2026-10-17: privacy page and dormant iOS update policy
+
+This later release updated only `maydan-game`; it did not repeat the original
+two-worker/database rollout above. The [backend receipt](releases/lamma-2026-10-17/backend-release.json)
+records both the initial routing failure and the independently reviewed repair.
+
+The first upload installed the exact reviewed module, but its post-upload check
+found that `keep_assets` had also retained the original asset routing. The
+requested `/privacy` and `/privacy/` additions were absent, and those URLs still
+returned the old SPA. Read-only diagnosis verified the deployed code, all 63
+public reference hashes/headers, bindings, settings, schedules, `v3-lamma`,
+health and the disabled update policy. Execution stopped without retrying the
+old plan or rolling back production.
+
+A fresh plan from the actual live state served the privacy page inside the
+existing `/api/*` worker-first route. The corrected source is
+`78e6e1725369626f7ecbee388e65ef17e9f77c9f`; its main Worker version
+`745b3112-099a-4d68-b16c-ddb958eb8bfe` passed verification at
+`2026-10-16T21:42:07.324Z` (17 October in Amman). Both
+[`/api/legal/privacy`](https://maydan-game.mf103871.workers.dev/api/legal/privacy)
+and its trailing-slash form return the reviewed standalone HTML. The complete
+raw asset configuration, original bindings/settings/schedules and the 63 public
+references remain unchanged. There were no D1 operations, rooms-worker uploads,
+cron writes, Durable Object migrations or public frontend asset uploads.
+
+The public `/api/app-policy/ios` endpoint is deployed with mandatory updates
+**disabled**. The [operator guide](IOS-UPDATE-POLICY.md) describes future
+activation only after verifying the exact public App Store build/version and
+per-store availability, plus the immediate disable switch and offline behavior.
+Installed 1.5 clients cannot acquire the new native check through this backend
+deployment. The intended native build is 1.7 (12), but this backend receipt does
+not establish completion of that build, Apple processing, TestFlight availability,
+physical-device acceptance or public App Store release.
+
 ## Internal TestFlight and actual device gate
 
 ### Corrected build 11 available for internal testing

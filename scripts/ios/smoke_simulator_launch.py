@@ -143,8 +143,11 @@ class LaunchSmoke:
         return Path(fields[2]).resolve() == (self.installed_app / self.executable).resolve()
 
     def launch(self, name, duration):
+        # A new simulator has no earlier app process to terminate. A combined
+        # launch/terminate request stalled in FrontBoard before app execution in
+        # build 12; use a plain launch and terminate verified runs separately.
         result = self.simctl(
-            "launch", "--terminate-running-process",
+            "launch",
             f"--stdout={self.output / (name + '-app.stdout.log')}",
             f"--stderr={self.output / (name + '-app.stderr.log')}",
             self.device, self.bundle, timeout=45, label=f"{name}-launch",
@@ -171,6 +174,19 @@ class LaunchSmoke:
         self.collect_crashes()
         if self.crashes:
             raise SmokeFailure("A matching application crash report was created during startup testing.")
+
+    def terminate_for_relaunch(self):
+        previous = self.report["launches"][-1] if self.report["launches"] else None
+        if not previous or not previous["passed"] or not self.process_is_app(previous["pid"]):
+            raise SmokeFailure("Cannot relaunch: the previously verified app process is no longer running.")
+        self.simctl("terminate", self.device, self.bundle, timeout=45,
+                    label=f"{previous['name']}-terminate")
+        deadline = time.monotonic() + 10
+        while self.process_is_app(previous["pid"]):
+            if time.monotonic() >= deadline:
+                raise SmokeFailure("The previously verified app did not terminate before relaunch.")
+            time.sleep(0.25)
+        previous["terminatedForRelaunch"] = True
 
     def screenshot(self, name):
         try:
@@ -239,7 +255,7 @@ class LaunchSmoke:
         try:
             self.prepare()
             self.launch("cold", 45)
-            self.simctl("terminate", self.device, self.bundle, label="cold-terminate")
+            self.terminate_for_relaunch()
             self.launch("relaunch", 15)
             self.report["passed"] = True
         except (OSError, ValueError, SmokeFailure) as error:
