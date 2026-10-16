@@ -23,7 +23,7 @@ function after(snapshot, plan) {
   return current;
 }
 
-test('narrow policy upload preserves resources/secrets/assets and adds only two privacy routes', () => {
+test('narrow policy upload preserves resources, secrets and the complete asset routing without additions', () => {
   const before = snapshot(), original = structuredClone(before), plan = policyUploadPlan(before);
   assert.deepEqual(before, original);
   assert.equal(plan.metadata.keep_assets, true);
@@ -33,7 +33,7 @@ test('narrow policy upload preserves resources/secrets/assets and adds only two 
   assert.ok(plan.metadata.bindings.every(binding => binding.type === 'inherit' && Object.keys(binding).length === 2));
   assert.equal(plan.metadata.bindings.some(binding => binding.name.includes('SECRET')), false);
   assert.deepEqual(plan.metadata.assets.config, { base_path: '/', not_found_handling: 'single-page-application',
-    run_worker_first: ['/api', '/api/*', '/health', '/privacy', '/privacy/'], _headers: '/*\n X-Frame-Options: DENY', _redirects: '/old /new 301' });
+    run_worker_first: ['/api', '/api/*', '/health'], _headers: '/*\n X-Frame-Options: DENY', _redirects: '/old /new 301' });
   assertPolicyDeployment(before, after(before, plan), plan);
   const repeated = policyUploadPlan(after(before, plan));
   assert.deepEqual(repeated.metadata.assets.config, plan.metadata.assets.config);
@@ -68,6 +68,8 @@ test('post-upload verification rejects drift in every preserved surface', () => 
     value => { value.version.resources.script_runtime.assets.raw_headers = '/*\n Access-Control-Allow-Origin: *'; },
     value => { value.version.resources.script_runtime.assets.raw_redirects = '/old /another 301'; },
     value => { value.version.resources.script_runtime.assets.raw_run_worker_first.push('/*'); },
+    value => { value.version.resources.script_runtime.assets.raw_run_worker_first.push('/privacy'); },
+    value => { value.version.resources.script_runtime.assets.static_routing = { user_worker: ['/api/*', '/privacy'] }; },
     value => { value.version.resources.script_runtime.assets.not_found_handling = '404-page'; },
   ]) {
     const current = after(before, plan); change(current);

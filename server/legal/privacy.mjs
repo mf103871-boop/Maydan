@@ -72,7 +72,7 @@ const HTML = `<!doctype html>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="سياسة خصوصية ميدان: الحساب والألعاب والأصدقاء والشِلَل والمحادثات والصوت وحقوقك.">
   <title>سياسة الخصوصية | ميدان</title>
-  <link rel="canonical" href="${ORIGIN}/privacy/">
+  <link rel="canonical" href="${ORIGIN}/api/legal/privacy/">
   <style>
     :root { color-scheme: light; font-family: system-ui, sans-serif; color: #242039; background: #fffaf2; }
     * { box-sizing: border-box; }
@@ -98,7 +98,7 @@ const HTML = `<!doctype html>
   <header>
     <nav aria-label="التنقل والدعم">
       <a href="${ORIGIN}/">ميدان</a>
-      <a href="${ORIGIN}/privacy/" aria-current="page">سياسة الخصوصية</a>
+      <a href="${ORIGIN}/api/legal/privacy/" aria-current="page">سياسة الخصوصية</a>
       <a href="${ORIGIN}/#/terms">شروط الاستخدام</a>
       <a href="mailto:${SUPPORT_EMAIL}">التواصل مع الدعم</a>
     </nav>

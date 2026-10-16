@@ -45,12 +45,11 @@ export function policyUploadPlan(snapshot) {
   assert.ok(plan.metadata.bindings.every(binding => binding.type === 'inherit'), 'New/changed bindings are forbidden.');
   assert.deepEqual(plan.metadata.bindings.map(binding => binding.name).sort(), snapshot.settings.bindings
     .filter(binding => !['secret_text', 'secret_key'].includes(binding.type)).map(binding => binding.name).sort());
-  const original = assetsConfig(snapshot.version.resources.script_runtime.assets);
-  plan.metadata.assets.config = { ...original, run_worker_first: [...original.run_worker_first] };
-  for (const route of ['/privacy', '/privacy/']) {
-    if (!plan.metadata.assets.config.run_worker_first.includes(route)) plan.metadata.assets.config.run_worker_first.push(route);
-  }
-  plan.metadata.annotations = { 'workers/message': 'Public privacy page and dormant iOS update policy; preserve public assets' };
+  // Production showed keep_assets preserves routing configuration as well as
+  // files. Serve privacy under the existing /api/* route; request no routing
+  // changes and verify the entire raw configuration remains exactly identical.
+  assert.deepEqual(plan.metadata.assets.config, assetsConfig(snapshot.version.resources.script_runtime.assets));
+  plan.metadata.annotations = { 'workers/message': 'Public privacy API page and dormant iOS update policy; preserve all asset settings' };
   return { metadata: plan.metadata, lease: plan.lease };
 }
 
@@ -60,11 +59,9 @@ export function assertPolicyDeployment(before, after, plan) {
   for (const key of SETTINGS) assert.deepEqual(after.settings[key], before.settings[key], `Production setting changed: ${key}`);
   const runtime = after.version.resources.script_runtime;
   assert.equal(runtime.migration_tag, 'v3-lamma', 'DO migration tag changed.');
-  assert.deepEqual(assetsConfig(runtime.assets), plan.metadata.assets.config, 'Only the exact privacy routes may change in asset configuration.');
-  // raw_run_worker_first/static_routing are Cloudflare's two representations of
-  // the intentional route change. Every other asset/runtime field is preserved.
-  const withoutRouting = assets => Object.fromEntries(Object.entries(assets).filter(([key]) => !['raw_run_worker_first', 'static_routing'].includes(key)));
-  assert.deepEqual(withoutRouting(runtime.assets), withoutRouting(before.version.resources.script_runtime.assets), 'Other live asset configuration changed.');
+  assert.deepEqual(plan.metadata.assets.config, assetsConfig(before.version.resources.script_runtime.assets), 'Asset configuration changes are forbidden.');
+  assert.deepEqual(assetsConfig(runtime.assets), plan.metadata.assets.config, 'Live asset configuration differs from the preserved original.');
+  assert.deepEqual(runtime.assets, before.version.resources.script_runtime.assets, 'Full original asset configuration must remain unchanged.');
 }
 
 function privateDirectory(value) {
@@ -115,18 +112,17 @@ async function plan(dir) {
   // This is a worker snapshot only. No database is mutated by this release.
   const preflight = { worker: before, assets };
   const privacy = Buffer.from(await privacyPageResponse('GET').arrayBuffer());
-  const review = { schemaVersion: 1, operation: 'ios-policy-and-privacy-backend-only', createdAt: new Date().toISOString(), ...provenance,
+  const review = { schemaVersion: 1, operation: 'ios-policy-and-api-privacy-preserve-assets-v2', createdAt: new Date().toISOString(), ...provenance,
     sourceInputs: source.inputs, preflightSHA256: hash(canonical(preflight)), specification,
     bundleSHA256: hash(source.module), bundleBytes: source.module.length, privacySHA256: hash(privacy),
-    policyEnabled: false, noDatabaseChanges: true, noCronChanges: true, noRoomsChanges: true, noDOMigration: true, keepAssets: true };
+    policyEnabled: false, noDatabaseChanges: true, noCronChanges: true, noRoomsChanges: true, noDOMigration: true, keepAssets: true, assetConfigurationUnchanged: true };
   await savePrivate(dir, 'preflight', preflight);
   await savePrivate(dir, `${NAME}.mjs`, source.module);
   await savePrivate(dir, 'deployment-plan', review);
   return { directory: dir, planSHA256: hash(canonical(review)), sourceCommit: provenance.sourceCommit,
     sourceServerTree: provenance.sourceServerTree, bundleSHA256: review.bundleSHA256, previousVersion: before.versionId,
     publicAssetsChecked: assets.entries.length, policyEnabled: false, applied: false,
-    metadataChanges: { run_worker_firstAdded: specification.metadata.assets.config.run_worker_first
-      .filter(route => !assetsConfig(before.version.resources.script_runtime.assets).run_worker_first.includes(route)) },
+    assetConfigurationUnchanged: true, privacyURL: `${ORIGIN}/api/legal/privacy/`,
     mutationsPlanned: ['Upload reviewed maydan-game module with keep_assets=true and inherited bindings'] };
 }
 
@@ -134,7 +130,7 @@ async function reviewed(dir, digest, requireFresh = false) {
   assert.match(digest || '', /^[a-f0-9]{64}$/, 'Pass the exact reviewed plan SHA-256.');
   const review = await loadPrivate(dir, 'deployment-plan');
   assert.equal(hash(canonical(review)), digest, 'Plan digest differs from the reviewed digest.');
-  assert.equal(review.operation, 'ios-policy-and-privacy-backend-only');
+  assert.equal(review.operation, 'ios-policy-and-api-privacy-preserve-assets-v2', 'An earlier privacy-routing plan cannot be reused.');
   const before = await loadPrivate(dir, 'preflight');
   assert.equal(hash(canonical(before)), review.preflightSHA256, 'Original worker snapshot integrity failed.');
   assert.deepEqual(policyUploadPlan(before.worker), review.specification, 'Unapproved metadata delta.');
@@ -147,7 +143,7 @@ async function reviewed(dir, digest, requireFresh = false) {
 
 async function verifyPublic(privacySHA256) {
   const checks = [];
-  for (const pathname of ['/privacy', '/privacy/']) {
+  for (const pathname of ['/api/legal/privacy', '/api/legal/privacy/']) {
     const response = await fetch(ORIGIN + pathname, { redirect: 'error', signal: AbortSignal.timeout(20_000), headers: { 'cache-control': 'no-cache' } });
     assert.equal(response.status, 200, 'Public privacy route unavailable.');
     assert.equal(hash(Buffer.from(await response.arrayBuffer())), privacySHA256, 'Public privacy copy differs from the reviewed page.');
@@ -182,7 +178,7 @@ async function verify(dir, digest, api = null, uploadVersionId = null) {
   assertLease(current, await snapshotWorker(api, NAME));
   const receipt = { verifiedAt: new Date().toISOString(), planSHA256: digest, sourceCommit: review.sourceCommit, versionId: current.versionId,
     bundleSHA256: review.bundleSHA256, publicAssetsUnchanged: true, assetsChecked: assets.entries.length, bindingsUnchanged: true,
-    schedulesUnchanged: true, migrationTag: 'v3-lamma', ...smoke };
+    schedulesUnchanged: true, assetConfigurationUnchanged: true, migrationTag: 'v3-lamma', ...smoke };
   await savePrivate(dir, `verification-${new Date().toISOString().replace(/[:.]/g, '-')}`, receipt);
   return receipt;
 }

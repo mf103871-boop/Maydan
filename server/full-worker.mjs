@@ -43,7 +43,7 @@ export function secured(response) {
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
-    if (['/privacy', '/privacy/'].includes(url.pathname) && ['GET', 'HEAD'].includes(request.method)) {
+    if (['/api/legal/privacy', '/api/legal/privacy/'].includes(url.pathname) && ['GET', 'HEAD'].includes(request.method)) {
       return privacyPageResponse(request.method);
     }
     if (url.pathname === '/api' || url.pathname.startsWith('/api/') || url.pathname === '/health') {

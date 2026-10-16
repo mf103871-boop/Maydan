@@ -7,9 +7,9 @@ import fullWorker from '../server/full-worker.mjs';
 const root = new URL('../', import.meta.url);
 const plainText = value => value.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
 
-test('production entry serves privacy before the SPA asset fallback', async () => {
+test('production entry serves privacy inside the existing worker-first API route', async () => {
   const env = { ASSETS: { fetch() { throw new Error('privacy must not use stale SPA assets'); } } };
-  for (const path of ['/privacy', '/privacy/']) for (const method of ['GET', 'HEAD']) {
+  for (const path of ['/api/legal/privacy', '/api/legal/privacy/']) for (const method of ['GET', 'HEAD']) {
     const response = await fullWorker.fetch(new Request(`https://maydan.test${path}`, { method }), env);
     assert.equal(response.status, 200);
     assert.match(response.headers.get('content-security-policy'), /default-src 'none'/);
@@ -17,6 +17,17 @@ test('production entry serves privacy before the SPA asset fallback', async () =
     if (method === 'HEAD') assert.equal(body, '');
     else assert.match(body, /LiveKit/);
   }
+});
+
+test('privacy paths need no new asset routing and reject other methods through the existing origin guard', async () => {
+  const config = await readFile(new URL('wrangler.jsonc', root), 'utf8');
+  const routes = JSON.parse(config.match(/"run_worker_first"\s*:\s*(\[[^\]]+\])/)[1]);
+  assert.deepEqual(routes, ['/api', '/api/*', '/health']);
+  const response = await fullWorker.fetch(new Request('https://maydan.test/api/legal/privacy', { method: 'POST' }), {});
+  assert.equal(response.status, 403);
+  assert.deepEqual(await response.json(), { error: 'ORIGIN' });
+  const html = await privacyPageResponse().text();
+  assert.ok(html.includes('<link rel="canonical" href="https://maydan-game.mf103871.workers.dev/api/legal/privacy/">'));
 });
 
 test('public privacy includes every current native policy paragraph and the same date/contact', async () => {

@@ -53,18 +53,25 @@ games, accounts, settings, or results.
 For the initial backend-only deployment, commit and review the source, then run
 `node scripts/ios/publish-policy-backend.mjs --plan`. This is read-only against
 production and creates an encrypted private worker snapshot, reviewed bundle,
-and plan digest. Review the printed digest and intended route additions. Run
+and plan digest. Review the printed digest and exact original asset settings. Run
 `--apply <private-directory> <exact-plan-sha256>` only after authorizing that
 specific plan; plans expire after 30 minutes. `--verify` with the same arguments
 performs read-only verification of an already-applied plan.
 
 This helper inherits existing bindings and preserves the complete stored asset
-set with `keep_assets: true`. It adds only `/privacy` and `/privacy/` to asset
-worker-first routing and uploads the main Worker. It requires the already
+set and its complete routing configuration with `keep_assets: true`. It serves
+the standalone privacy page at
+`https://maydan-game.mf103871.workers.dev/api/legal/privacy/` (also without the
+trailing slash), within the existing `/api/*` worker-first route, and uploads
+only the main Worker. It requires the already
 existing `v3-lamma` migration and job schedule. It does not upload public
 frontend assets, modify D1, deploy the rooms Worker, change cron schedules,
 or activate the policy. Public document/reference hashes and the exact deployed
-module, bindings, settings, routes, and disabled policy are checked afterward.
+module, bindings, settings, unchanged asset configuration, privacy HTML and
+disabled policy are checked afterward. Do not reuse the superseded deployment
+plan that attempted to add `/privacy` routes: production retained the original
+asset routing when `keep_assets` was used. A new plan has a separate operation
+identifier and must snapshot the actual current Worker before deployment.
 
 If an upload or verification is interrupted, stop and inspect the encrypted
 snapshot and private progress journal. A failed request may already have
