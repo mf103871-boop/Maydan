@@ -59,7 +59,7 @@ class UpdateGateSmoke(LaunchSmoke):
                 self.use_verified_simulator(prepared)
             self.launch('required-update', 5)
             self.latest_pid = self.report['launches'][-1]['pid']
-            data = Path(self.simctl('get_app_container', self.device, self.bundle, 'data', label='data-container').stdout.strip())
+            data = Path(self.prepare_command('data-container', 180, 'get_app_container', self.device, self.bundle, 'data').stdout.strip())
             state_path = data / 'Documents/app-update-fixture/state.json'
             required = self.read_until(state_path, lambda value: value.get('blocked') is True and (value.get('panel') or {}).get('mounted') is True)
             panel = required['panel']

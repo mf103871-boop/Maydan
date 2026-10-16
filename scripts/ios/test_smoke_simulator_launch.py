@@ -1,5 +1,7 @@
 """Keep simulator preparation failures separate from actual app survival checks."""
 from pathlib import Path
+import json
+import plistlib
 import subprocess
 import tempfile
 import unittest
@@ -86,6 +88,59 @@ class LaunchSmokeTests(unittest.TestCase):
                 smoke.launch('cold', 45)
         run.assert_called_once()
         self.assertEqual(smoke.report['launches'], [])
+
+    def prepared_fixture(self):
+        app = self.root / 'Maydan.app'
+        app.mkdir()
+        (app / 'Maydan').write_bytes(b'test executable')
+        (app / 'Info.plist').write_bytes(plistlib.dumps({'CFBundleIdentifier': 'Maydan', 'CFBundleExecutable': 'Maydan'}))
+        smoke = LaunchSmoke(app, self.root / 'preparation')
+        runtime = 'com.apple.CoreSimulator.SimRuntime.iOS-26-2'
+        inventory = {'runtimes': [{'identifier': runtime, 'version': '26.2', 'isAvailable': True}],
+                     'devices': {runtime: [{'name': 'iPhone SE', 'isAvailable': True,
+                                           'deviceTypeIdentifier': 'com.apple.CoreSimulator.SimDeviceType.iPhone-SE'}]}}
+        def result(*args, **kwargs):
+            values = {'list': json.dumps(inventory), 'create': '00000000-0000-4000-8000-000000000001', 'get_app_container': str(app)}
+            return subprocess.CompletedProcess([], 0, values.get(args[0], ''), '')
+        smoke.simctl = Mock(side_effect=result)
+        return smoke
+
+    def test_runtime_readiness_finishes_before_boot_and_container_has_preparation_deadline(self):
+        smoke = self.prepared_fixture()
+        with patch('smoke_simulator_launch.sys.platform', 'darwin'):
+            smoke.prepare()
+        calls = smoke.simctl.call_args_list
+        self.assertEqual([call.args[0] for call in calls], ['runtime', 'list', 'create', 'boot', 'bootstatus', 'install', 'get_app_container'])
+        self.assertEqual(calls[0].args, ('runtime', 'dyld_shared_cache', 'update', '--all'))
+        self.assertEqual(calls[0].kwargs['timeout'], 300)
+        self.assertEqual(calls[-1].kwargs['timeout'], 180)
+        self.assertTrue(all(item['passed'] and item['elapsedSeconds'] >= 0 for item in smoke.report['preparation']))
+        self.assertEqual(smoke.report['launches'], [])
+
+    def test_readiness_failure_is_recorded_and_never_retried_or_followed_by_boot(self):
+        smoke = self.prepared_fixture()
+        smoke.simctl.side_effect = SmokeFailure('Readiness timed out')
+        with patch('smoke_simulator_launch.sys.platform', 'darwin'):
+            with self.assertRaisesRegex(SmokeFailure, 'Readiness timed out'):
+                smoke.prepare()
+        smoke.simctl.assert_called_once()
+        self.assertFalse(smoke.report['preparation'][0]['passed'])
+        self.assertIsNone(smoke.device)
+        self.assertEqual(smoke.report['launches'], [])
+
+    def test_update_data_container_uses_preparation_deadline_and_cannot_skip_failure(self):
+        smoke = self.smoke(UpdateGateSmoke)
+        smoke.prepare = Mock()
+        smoke.launch = Mock(side_effect=lambda *args: smoke.report['launches'].append({'pid': 123}))
+        smoke.simctl.side_effect = SmokeFailure('Data container timed out')
+        smoke.read_until = Mock()
+        smoke.finish = Mock()
+        self.assertEqual(smoke.run(), 1)
+        smoke.simctl.assert_called_once_with('get_app_container', 'fresh-simulator', 'Maydan', 'data',
+                                            timeout=180, label='data-container')
+        smoke.read_until.assert_not_called()
+        self.assertFalse(smoke.report['passed'])
+        self.assertFalse(smoke.report['preparation'][0]['passed'])
 
 
 if __name__ == '__main__':

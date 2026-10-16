@@ -40,6 +40,7 @@ class LaunchSmoke:
             "launches": [],
             "crashReports": [],
             "diagnosticWarnings": [],
+            "preparation": [],
             "limits": [
                 "Checks simulator process survival and launch crash reports only.",
                 "Does not certify rendered UI, device-only code, or exported IPA packaging.",
@@ -71,6 +72,17 @@ class LaunchSmoke:
     def simctl(self, *args, **kwargs):
         return self.command(["xcrun", "simctl", *args], **kwargs)
 
+    def prepare_command(self, label, timeout, *args):
+        record = {"step": label, "timeoutSeconds": timeout, "passed": False}
+        self.report["preparation"].append(record)
+        started = time.monotonic()
+        try:
+            result = self.simctl(*args, timeout=timeout, label=label)
+            record["passed"] = True
+            return result
+        finally:
+            record["elapsedSeconds"] = round(time.monotonic() - started, 2)
+
     def prepare(self):
         if sys.platform != "darwin":
             raise SmokeFailure("This launch gate requires macOS with Xcode and an iOS simulator runtime.")
@@ -97,7 +109,12 @@ class LaunchSmoke:
             "build": info.get("CFBundleVersion"),
             "executableSha256": digest.hexdigest(),
         })
-        inventory = json.loads(self.simctl("list", "--json", label="simulator-inventory").stdout)
+        # Apple recommends completing this readiness operation before boot:
+        # https://developer.apple.com/forums/thread/807025
+        # CI stalled in simulator services before any app execution. Cache
+        # scanning is a possible cause, not a confirmed diagnosis of those logs.
+        self.prepare_command("runtime-cache-readiness", 300, "runtime", "dyld_shared_cache", "update", "--all")
+        inventory = json.loads(self.prepare_command("simulator-inventory", 45, "list", "--json").stdout)
         runtimes = {
             item["identifier"]: item for item in inventory.get("runtimes", [])
             if item.get("isAvailable") and ".iOS-" in item.get("identifier", "")
@@ -117,20 +134,21 @@ class LaunchSmoke:
         _, name, runtime_id, kind = max(candidates)
         # A dedicated device gives a real first launch without erasing, installing
         # over, or shutting down any pre-existing simulator or physical device.
-        created = self.simctl(
-            "create", f"Maydan startup smoke {uuid.uuid4()}", kind, runtime_id,
-            label="simulator-create",
+        created = self.prepare_command(
+            "simulator-create", 45, "create", f"Maydan startup smoke {uuid.uuid4()}", kind, runtime_id,
         ).stdout.strip()
         if not re.fullmatch(r"[0-9A-Fa-f-]{36}", created):
             raise SmokeFailure("simctl create did not return a simulator UUID.")
         self.device = str(uuid.UUID(created))
         self.owns_device = True
         self.report.update({"simulatorUdid": self.device, "simulatorModel": name, "runtime": runtime_id})
-        self.simctl("boot", self.device, timeout=60, label="simulator-boot")
-        self.simctl("bootstatus", self.device, "-b", timeout=180, label="simulator-bootstatus")
-        self.simctl("install", self.device, str(self.app), timeout=90, label="simulator-install")
-        self.installed_app = Path(self.simctl(
-            "get_app_container", self.device, self.bundle, "app", label="installed-app"
+        self.prepare_command("simulator-boot", 60, "boot", self.device)
+        self.prepare_command("simulator-bootstatus", 180, "bootstatus", self.device, "-b")
+        self.prepare_command("simulator-install", 90, "install", self.device, str(self.app))
+        # Container discovery is simulator preparation, not the app's launch
+        # performance gate. First-boot services can still be completing work.
+        self.installed_app = Path(self.prepare_command(
+            "installed-app", 180, "get_app_container", self.device, self.bundle, "app"
         ).stdout.strip()).resolve()
         if not (self.installed_app / self.executable).is_file():
             raise SmokeFailure("The installed simulator executable could not be found.")
