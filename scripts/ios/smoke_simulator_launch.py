@@ -144,7 +144,12 @@ class LaunchSmoke:
         self.report.update({"simulatorUdid": self.device, "simulatorModel": name, "runtime": runtime_id})
         self.prepare_command("simulator-boot", 60, "boot", self.device)
         self.prepare_command("simulator-bootstatus", 180, "bootstatus", self.device, "-b")
-        self.prepare_command("simulator-install", 90, "install", self.device, str(self.app))
+        # Fresh iOS 26 simulator services can still be provisioning after
+        # bootstatus finishes. Builds 18/1 and 18/2 timed out installing before
+        # any app launch, with empty installer output and a busy system UI.
+        # Give this single preparation command a bounded five-minute budget;
+        # launch/PID-survival/crash checks below retain their original limits.
+        self.prepare_command("simulator-install", 300, "install", self.device, str(self.app))
         # Container discovery is simulator preparation, not the app's launch
         # performance gate. First-boot services can still be completing work.
         self.installed_app = Path(self.prepare_command(
@@ -258,20 +263,34 @@ class LaunchSmoke:
     def write_summary(self):
         (self.output / "summary.json").write_text(json.dumps(self.report, indent=2) + "\n", encoding="utf-8")
 
+    def collect_device_logs(self):
+        predicate = (f'process == "{self.executable}" OR eventMessage CONTAINS[c] "{self.bundle}" '
+                     'OR process == "installd" OR process == "lsd" OR process == "containermanagerd"')
+        self.simctl("spawn", self.device, "log", "show", "--style", "compact", "--last", "5m",
+                    "--predicate", predicate, timeout=30, label="simulator-unified-log")
+
     def finish(self, cleanup=True):
         if self.device:
             # Crash reporting is asynchronous. Keep the test device alive briefly
             # after a failure to let DiagnosticReports write the useful evidence.
             if not self.report["passed"]:
                 time.sleep(2)
+                try:
+                    # Host CPU/memory pressure is useful when simulator service
+                    # calls stall. No process arguments or environment values
+                    # are collected, and diagnostics cannot turn failure to pass.
+                    self.command(["/usr/bin/top", "-l", "1", "-n", "0"], timeout=10,
+                                 label="host-resources", check=False)
+                except (OSError, SmokeFailure) as error:
+                    self.report["diagnosticWarnings"].append(str(error))
             try:
-                self.collect_crashes()
-                self.screenshot("final-state")
-                predicate = f'process == "{self.executable}" OR eventMessage CONTAINS[c] "{self.bundle}"'
-                self.simctl("spawn", self.device, "log", "show", "--style", "compact", "--last", "5m",
-                            "--predicate", predicate, timeout=30, label="simulator-unified-log")
-            except (OSError, SmokeFailure) as error:
-                self.report["diagnosticWarnings"].append(str(error))
+                # Each artifact is independent: an unavailable screenshot or
+                # crash directory must not suppress installation service logs.
+                for diagnostic in (self.collect_crashes, lambda: self.screenshot("final-state"), self.collect_device_logs):
+                    try:
+                        diagnostic()
+                    except (OSError, SmokeFailure) as error:
+                        self.report["diagnosticWarnings"].append(str(error))
             finally:
                 if cleanup:
                     self.cleanup_device()

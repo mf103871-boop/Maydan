@@ -1,0 +1,127 @@
+{
+  "runId": "653c7be3-341b-4e4a-8c6b-d4abe3641058",
+  "startedAt": "2026-10-18T20:19:09.607Z",
+  "origin": "https://maydan-lamma-preview.mf103871.workers.dev",
+  "checks": [
+    {
+      "name": "preview capability and accepted synthetic friendships",
+      "passed": true
+    },
+    {
+      "name": "direct real audio, other-device guard, and room-ending token revocation",
+      "passed": true
+    },
+    {
+      "name": "twelve accepted group members connect and receive actual audio",
+      "passed": true
+    },
+    {
+      "name": "real provider join webhooks bind every participant SID",
+      "passed": true
+    },
+    {
+      "name": "blocking revokes media and old token while unrelated group members stay connected",
+      "passed": true
+    },
+    {
+      "name": "voluntary provider disconnect triggers authenticated webhook departure",
+      "passed": true
+    },
+    {
+      "name": "group room end revokes remaining tokens and drains RoomService jobs",
+      "passed": true
+    }
+  ],
+  "cleanup": {
+    "accountsSeeded": 12,
+    "accountsDeleted": 12,
+    "callsCreated": 2,
+    "callEndRequestsAccepted": 2,
+    "credentials": "memory-only; D1 stores one-hour hashes",
+    "providerJobsRemaining": 0,
+    "remainingUsersAndSessions": 0
+  },
+  "providerProjectId": "p_6asugsl60h0",
+  "providerHost": "maydan-test-lab-831mi2tl.livekit.cloud",
+  "sourceCommit": "2e5e30c051096c577373861a246e85a868e9d40f",
+  "sourceServerTree": "4fdf118eb15cadb4e5eb496d82a1daa40dba4a80",
+  "backendTreeSha256": "55a4a4af6e65753fd7b5dbb3e38db2a61aff2ecc92f22e2e02ba94ecbb73aadc",
+  "previewDeploymentVersion": "e1c33d9b-1609-48fd-9f9e-4a3eccaa0742",
+  "fixtureRooms": [
+    {
+      "callId": "a552688c-b275-4587-add7-a192b269130d",
+      "roomName": "lamma-a552688c-b275-4587-add7-a192b269130d",
+      "scope": "direct"
+    },
+    {
+      "callId": "b20e2e73-56d5-43a5-b4f6-8dba0aa5dce1",
+      "roomName": "lamma-b20e2e73-56d5-43a5-b4f6-8dba0aa5dce1",
+      "scope": "group"
+    }
+  ],
+  "providerMetadataEchoes": 15,
+  "refreshedTokenMetadataEchoes": 15,
+  "maximumConnectedParticipants": 12,
+  "blockDiagnostic": {
+    "before": {
+      "status": "active",
+      "participants": [
+        {
+          "userId": "lamma-live-653c7be3-341b-4e4a-8c6b-d4abe3641058-0",
+          "state": "active"
+        },
+        {
+          "userId": "lamma-live-653c7be3-341b-4e4a-8c6b-d4abe3641058-1",
+          "state": "active"
+        },
+        {
+          "userId": "lamma-live-653c7be3-341b-4e4a-8c6b-d4abe3641058-10",
+          "state": "active"
+        },
+        {
+          "userId": "lamma-live-653c7be3-341b-4e4a-8c6b-d4abe3641058-11",
+          "state": "active"
+        },
+        {
+          "userId": "lamma-live-653c7be3-341b-4e4a-8c6b-d4abe3641058-2",
+          "state": "active"
+        },
+        {
+          "userId": "lamma-live-653c7be3-341b-4e4a-8c6b-d4abe3641058-3",
+          "state": "active"
+        },
+        {
+          "userId": "lamma-live-653c7be3-341b-4e4a-8c6b-d4abe3641058-4",
+          "state": "active"
+        },
+        {
+          "userId": "lamma-live-653c7be3-341b-4e4a-8c6b-d4abe3641058-5",
+          "state": "active"
+        },
+        {
+          "userId": "lamma-live-653c7be3-341b-4e4a-8c6b-d4abe3641058-6",
+          "state": "active"
+        },
+        {
+          "userId": "lamma-live-653c7be3-341b-4e4a-8c6b-d4abe3641058-7",
+          "state": "active"
+        },
+        {
+          "userId": "lamma-live-653c7be3-341b-4e4a-8c6b-d4abe3641058-8",
+          "state": "active"
+        },
+        {
+          "userId": "lamma-live-653c7be3-341b-4e4a-8c6b-d4abe3641058-9",
+          "state": "active"
+        }
+      ]
+    },
+    "blockerId": "lamma-live-653c7be3-341b-4e4a-8c6b-d4abe3641058-1",
+    "blockedId": "lamma-live-653c7be3-341b-4e4a-8c6b-d4abe3641058-2"
+  },
+  "revocationAcknowledgementMs": 1633,
+  "passed": true,
+  "sourceCommitAtFinish": "2e5e30c051096c577373861a246e85a868e9d40f",
+  "finishedPreviewDeploymentVersion": "e1c33d9b-1609-48fd-9f9e-4a3eccaa0742",
+  "finishedAt": "2026-10-18T20:23:01.138Z"
+}

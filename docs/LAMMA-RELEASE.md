@@ -2,6 +2,12 @@
 
 The original internal-pilot procedure below updated the two production API workers while retaining the existing public website. Its backend helper does **not** publish the website or upload a build to Apple. That rollout and its preview-provider prerequisites are historical; later backend and native release status is recorded in the dated sections below. Do not repeat the initial migration procedure against the already migrated production service.
 
+## Current candidate — 18 October 2026
+
+The current candidate is **1.8 (18)**. Its [release receipt](releases/lamma-reliability-2026-10-18/release.json) is the authoritative record for this update; [Arabic TestFlight notes](releases/lamma-reliability-2026-10-18/testflight-notes-ar.txt) describe the intended device trial. The dated records below preserve earlier release states and must not be read as this candidate's current App Store status.
+
+Local validation, isolated preview API/storage acceptance (10/10), and actual LiveKit media/provider acceptance (7/7 with twelve concurrent peers) have passed. The compatible production backend update and additive migration 0009 are verified, with the existing 63 public assets, bindings, settings and schedules preserved. Build 18 has not yet reached TestFlight: two CI attempts stopped during simulator installation before any app launch; a bounded preparation-budget correction retains the complete launch/crash/update gates. Exact native signing/upload and Apple processing evidence will be added to the receipt after success. Physical iPhone latency, background/locked calls and push delivery remain unverified; public release waits for that device trial.
+
 ## Why this route
 
 The signed iPhone build uses `https://maydan-game.mf103871.workers.dev` for accounts and social APIs. Its Keychain session is not scoped by API origin. Switching that build to the isolated preview service would mix existing production sessions with a different account database and authentication callbacks. Keep its current production origin and update the compatible backend first.

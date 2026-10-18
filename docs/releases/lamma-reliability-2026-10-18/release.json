@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "status": "local-validation-passed",
+  "status": "backend-verified-awaiting-signed-testflight-build",
   "target": {
     "version": "1.8",
     "build": "18",
@@ -40,7 +40,23 @@
     "cancelledMatchExitAllocatesNoSeat": true,
     "callContinuityUsesFixtureMedia": true,
     "preparedHTMLSHA256": "cb5f8fb51163595efd9948159d97343f40258e119547f478a2b247500f00429b",
-    "providerAcceptance": "pending-isolated-provider-project"
+    "providerAcceptance": "passed-7-of-7-with-12-concurrent-real-audio-peers",
+    "previewApiStorageAcceptance": {
+      "passed": 10,
+      "failed": 0,
+      "artifact": "preview-api-storage-acceptance.json"
+    },
+    "liveProviderAcceptance": {
+      "passed": 7,
+      "failed": 0,
+      "artifact": "live-provider-acceptance.json",
+      "context": "live-provider-acceptance-context.json",
+      "sha256": "b6617ac0397106f5f255a6caeb3554c064553f86d5d3e45ec135ae77066f1b15",
+      "providerProjectId": "p_6asugsl60h0",
+      "maximumConcurrentParticipants": 12,
+      "physicalIPhone": false,
+      "pushDelivery": false
+    }
   },
   "intermediateBuild17": {
     "sourceCommit": "b9530d953702b5bcb0996196452dfefe5649d4d9",
@@ -48,5 +64,61 @@
     "workflowJob": 117771603493,
     "uploadStepSucceeded": true,
     "supersededByBuild18For": "Preserve exit confirmation before allocating invited room seat"
+  },
+  "sourceCommit": "2e5e30c051096c577373861a246e85a868e9d40f",
+  "sourceServerTree": "4fdf118eb15cadb4e5eb496d82a1daa40dba4a80",
+  "backendTreeSha256": "55a4a4af6e65753fd7b5dbb3e38db2a61aff2ecc92f22e2e02ba94ecbb73aadc",
+  "backendDeployment": {
+    "verifiedAt": "2026-10-18T20:24:53.610Z",
+    "operation": "lamma-social-update",
+    "versions": {
+      "maydan-game": "da6bff68-3009-482b-b6ea-a7cd06f84711",
+      "maydan-rooms": "523ab5dc-9ff4-48d7-8601-4a2f9f84eff0"
+    },
+    "assetsUnchanged": true,
+    "checkedAssets": 63,
+    "originalBindingsUnchanged": true,
+    "originalSettingsUnchanged": true,
+    "originalCronsUnchanged": true,
+    "durableObjectMigrationsUnchanged": true,
+    "reviewedWorkerCodeVerified": true,
+    "onlyMigration0009Added": true,
+    "smoke": {
+      "maydan-game": {
+        "healthPassed": true,
+        "accounts": true,
+        "protocol": 1,
+        "mandatoryUpdatePolicyChecked": true,
+        "mandatoryUpdateDisabled": true
+      },
+      "maydan-rooms": {
+        "healthPassed": true,
+        "accounts": true,
+        "protocol": 1,
+        "mandatoryUpdatePolicyChecked": true,
+        "mandatoryUpdateDisabled": true
+      }
+    },
+    "applied": true,
+    "frontendDeployed": false,
+    "secretValuesWritten": false,
+    "planSHA256": "af6b8228e0223ebcd2f8f281bbf7ac77a5d7d9f45e698521d77a31319e201eb2"
+  },
+  "nativeBuild": {
+    "workflowRun": 39161749336,
+    "workflowJob": 117778722973,
+    "workflowAttempt": 2,
+    "sourceCommit": "2e5e30c051096c577373861a246e85a868e9d40f",
+    "url": "https://github.com/mf103871-boop/Maydan/actions/runs/39161749336",
+    "state": "failed-simulator-install-preparation",
+    "previousAttempt": "build18-attempt1-infrastructure-failure.json",
+    "attempt2Failure": "build18-attempt2-infrastructure-failure.json"
+  },
+  "preservedAppStoreReview": {
+    "version": "1.7.1",
+    "build": "13",
+    "state": "WAITING_FOR_REVIEW",
+    "lastReadAt": "2026-10-18T20:14:16.525881+00:00",
+    "modifiedByThisRelease": false
   }
 }

@@ -12,12 +12,12 @@ import http from 'node:http';
 import { build } from 'esbuild';
 import { chromium } from 'playwright';
 import { getBackendProvenance } from './lib/lamma-provenance.mjs';
+import { PREVIEW_LIVEKIT_PROJECT_ID, PREVIEW_LIVEKIT_HOST, assertPreviewLiveKitHost } from './lib/lamma-provider-target.mjs';
 
 const ROOT=fileURLToPath(new URL('../',import.meta.url));
 const CONFIG=path.join(ROOT,'wrangler.lamma-preview.jsonc');
 const DATABASE='maydan-lamma-preview-accounts',DATABASE_ID='346a7165-9989-4fe2-a5a3-aec017a2d21b';
 const ORIGIN='https://maydan-lamma-preview.mf103871.workers.dev';
-const LIVEKIT_HOST='maydan-gvk8joay.livekit.cloud';
 const outputDir=path.join(ROOT,'.cache','lamma-preview');
 const execute=promisify(execFile),sleep=ms=>new Promise(resolve=>setTimeout(resolve,ms));
 const literal=value=>`'${String(value).replaceAll("'","''")}'`;
@@ -96,14 +96,14 @@ async function harness(){
     async function leave(slot){const s=slots.get(slot);if(!s)return;await s.room.disconnect();s.oscillator?.stop();s.track?.stop();await s.audio?.close();slots.delete(slot);}
     async function join(slot,connection,publish=true){
       await leave(slot);const room=new Room({adaptiveStream:false,dynacast:false});
-      const s={room,disconnected:false};slots.set(slot,s);room.on(RoomEvent.Disconnected,()=>{s.disconnected=true;});
+      const s={room,disconnected:false,disconnectReason:null};slots.set(slot,s);room.on(RoomEvent.Disconnected,reason=>{s.disconnected=true;s.disconnectReason=reason??null;});
       try{
         await room.connect(connection.url,connection.token,{autoSubscribe:true,maxRetries:0,peerConnectionTimeout:12000,websocketTimeout:12000});
         if(publish){const audio=new AudioContext();await audio.resume();const oscillator=audio.createOscillator(),gain=audio.createGain(),destination=audio.createMediaStreamDestination();gain.gain.value=.015;oscillator.frequency.value=240+slots.size*13;oscillator.connect(gain).connect(destination);oscillator.start();const track=destination.stream.getAudioTracks()[0];Object.assign(s,{audio,oscillator,track});await room.localParticipant.publishTrack(track,{source:Track.Source.Microphone,name:'synthetic-audio'});}
         return {connected:true,identity:room.localParticipant.identity,roomName:room.name,metadata:room.localParticipant.metadata,refreshedMetadata:room.engine.token!==connection.token?JSON.parse(atob(room.engine.token.split('.')[1].replace(/-/g,'+').replace(/_/g,'/'))).metadata:null};
       }catch(e){await leave(slot);return {connected:false,reason:e.reason??null,status:e.status??null,name:e.name};}
     }
-    async function snapshot(slot){const s=slots.get(slot);if(!s)return null;let tracks=0,bytes=0;for(const p of s.room.remoteParticipants.values())for(const publication of p.audioTrackPublications.values()){if(!publication.track)continue;tracks++;const stats=await publication.track.getRTCStatsReport();stats?.forEach(r=>{if(r.type==='inbound-rtp'&&r.kind==='audio')bytes+=r.bytesReceived||0;});}return {state:s.room.state,disconnected:s.disconnected,peers:s.room.remoteParticipants.size,tracks,bytes};}
+    async function snapshot(slot){const s=slots.get(slot);if(!s)return null;let tracks=0,bytes=0;for(const p of s.room.remoteParticipants.values())for(const publication of p.audioTrackPublications.values()){if(!publication.track)continue;tracks++;const stats=await publication.track.getRTCStatsReport();stats?.forEach(r=>{if(r.type==='inbound-rtp'&&r.kind==='audio')bytes+=r.bytesReceived||0;});}return {state:s.room.state,disconnected:s.disconnected,disconnectReason:s.disconnectReason,peers:s.room.remoteParticipants.size,tracks,bytes};}
     window.trial={join,leave,snapshot,close:async()=>{for(const slot of [...slots.keys()])await leave(slot);},preflight:async()=>{const audio=new AudioContext();await audio.resume();const destination=audio.createMediaStreamDestination();const result={rtc:typeof RTCPeerConnection==='function',audio:audio.state,tracks:destination.stream.getAudioTracks().length};destination.stream.getTracks().forEach(t=>t.stop());await audio.close();return result;}};
   `},bundle:true,write:false,format:'iife',logLevel:'silent'});
   server=http.createServer((_req,res)=>{res.writeHead(200,{'content-type':'text/html','cache-control':'no-store'});res.end(`<!doctype html><meta charset="utf-8"><script>${bundle.outputFiles[0].text}</script>`);});
@@ -113,7 +113,7 @@ async function harness(){
   assert.deepEqual(await page.evaluate(()=>window.trial.preflight()),{rtc:true,audio:'running',tracks:1});
 }
 const snapshot=slot=>page.evaluate(slot=>window.trial.snapshot(slot),slot);
-async function joinBrowser(slot,c,user){const result=await page.evaluate(({slot,c})=>window.trial.join(slot,c),{slot,c});assert.equal(result.connected,true,`Provider join rejected (${result.reason}/${result.status})`);assert.equal(result.identity,user.id);const metadata=JSON.parse(Buffer.from(c.token.split('.')[1],'base64url').toString('utf8')).metadata;assert.equal(result.metadata,metadata,'provider echoes signed generation metadata');report.providerMetadataEchoes=(report.providerMetadataEchoes||0)+1;if(result.refreshedMetadata!=null){assert.equal(result.refreshedMetadata,metadata,'refreshed provider token preserves generation');report.refreshedTokenMetadataEchoes=(report.refreshedTokenMetadataEchoes||0)+1;}}
+async function joinBrowser(slot,c,user){const result=await page.evaluate(({slot,c})=>window.trial.join(slot,c),{slot,c});if(!result.connected)report.failedJoin={slot,userId:user.id,...result};assert.equal(result.connected,true,`Provider join rejected (${result.reason}/${result.status})`);assert.equal(result.identity,user.id);const metadata=JSON.parse(Buffer.from(c.token.split('.')[1],'base64url').toString('utf8')).metadata;assert.equal(result.metadata,metadata,'provider echoes signed generation metadata');report.providerMetadataEchoes=(report.providerMetadataEchoes||0)+1;if(result.refreshedMetadata!=null){assert.equal(result.refreshedMetadata,metadata,'refreshed provider token preserves generation');report.refreshedTokenMetadataEchoes=(report.refreshedTokenMetadataEchoes||0)+1;}}
 async function audioFlow(slots){await until(async()=>{const states=await Promise.all(slots.map(snapshot));return states.every(s=>s?.state==='connected'&&s.peers===slots.length-1&&s.tracks===slots.length-1&&s.bytes>0);},`${slots.length} peers receiving synthetic audio`,35_000);report.maximumConnectedParticipants=Math.max(report.maximumConnectedParticipants||0,slots.length);}
 async function rejectedOldToken(c){
   const claims=JSON.parse(Buffer.from(c.token.split('.')[1],'base64url').toString('utf8'));assert.ok(claims.exp*1000>Date.now()+5000,'Token expiry would make the revocation result inconclusive');
@@ -148,7 +148,8 @@ async function run(){
   assert.ok(['--check','--run-preview'].includes(mode),'Use --check or explicit --run-preview --livekit-host <preview>.livekit.cloud');
   await guard();await harness();console.log('PASS isolated Chromium, synthetic audio, and preview resource guards');
   if(mode==='--check'){report.preflightOnly=true;return;}
-  assert.equal(providerHost,LIVEKIT_HOST,'Exact authorized preview LiveKit hostname required');
+  assertPreviewLiveKitHost(providerHost);
+  report.providerProjectId=PREVIEW_LIVEKIT_PROJECT_ID;report.providerHost=PREVIEW_LIVEKIT_HOST;
   Object.assign(report,await getBackendProvenance(ROOT,{requireClean:true}));report.previewDeploymentVersion=await deploymentVersion();
   await mkdir(outputDir,{recursive:true});expect(await request(null,'/health'),200,'preview health');await seed();
   const owner=users[0],friend=users[1];let conversationId,groupId,groupCall,groupConnections;
@@ -169,7 +170,17 @@ async function run(){
     for(const user of users.slice(1)){const invite=expect(await social(owner,`/groups/${groupId}/invites`,'POST',{userId:user.id}),200,'invite friend').invitation;expect(await social(user,`/groups/${groupId}/invites/${invite.id}/accept`,'POST',{}),200,'accept group');}
     const created=await start(owner,'group',groupId);groupCall=calls.at(-1);groupConnections=[connection(created,owner)];
     for(const user of users.slice(1))groupConnections.push(connection(await join(user,groupCall.id),user));
-    await Promise.all(users.map((user,i)=>joinBrowser(`group-${i}`,groupConnections[i],user)));await audioFlow(users.map((_,i)=>`group-${i}`));
+    try{
+      // Twelve simulated phones share one renderer/CPU here. Limit simultaneous
+      // ICE handshakes, then retain every connection and require actual audio
+      // among all twelve; media/revocation assertions are unchanged.
+      for(let offset=0;offset<users.length;offset+=3)await Promise.all(users.slice(offset,offset+3).map((user,i)=>joinBrowser(`group-${offset+i}`,groupConnections[offset+i],user)));
+      await audioFlow(users.map((_,i)=>`group-${i}`));
+    }catch(error){
+      report.groupMediaDiagnostic={browserStates:await Promise.all(users.map((_,i)=>snapshot(`group-${i}`))).catch(()=>null),ownerView:(await social(owner,`/calls/${groupCall.id}`).catch(()=>({data:null}))).data};
+      report.groupMediaDiagnostic.database=await d1(`SELECT user_id,state,revoked_before,provider_sid FROM social_call_participants WHERE call_id=${literal(groupCall.id)};`,{query:true}).catch(()=>null);
+      throw error;
+    }
     const dto=expect(await social(owner,`/calls/${groupCall.id}`),200,'group call state').call;
     assert.equal(dto.participants.filter(p=>p.state==='active').length,12);
     assert.ok(dto.participants.every(p=>p.userId===owner.id||!('deviceId' in p)),'Other installation IDs leaked');
@@ -178,8 +189,17 @@ async function run(){
     await until(async()=>{const rows=await d1(`SELECT COUNT(*) AS n FROM social_call_participants WHERE call_id=${literal(groupCall.id)} AND provider_sid IS NOT NULL;`,{query:true});return rows[0]?.n===12;},'twelve verified provider webhooks',45_000);
   });
   await check('blocking revokes media and old token while unrelated group members stay connected',async()=>{
+    const before=expect(await social(owner,`/calls/${groupCall.id}`),200,'group before block').call;
+    report.blockDiagnostic={before:{status:before.status,participants:before.participants.map(p=>({userId:p.userId,state:p.state}))},blockerId:friend.id,blockedId:users[2].id};
     expect(await social(friend,'/blocks','POST',{userId:users[2].id}),200,'block group peer');await disconnected('group-1');await rejectedOldToken(groupConnections[1]);
-    assert.equal(expect(await social(friend,`/calls/${groupCall.id}`),409,'blocked shared call').error,'CALL_UNAVAILABLE');
+    const blockedView=await social(friend,`/calls/${groupCall.id}`);
+    if(blockedView.status!==409){
+      report.blockDiagnostic.blockedView={status:blockedView.status,data:blockedView.data};
+      report.blockDiagnostic.ownerView=(await social(owner,`/calls/${groupCall.id}`)).data;
+      report.blockDiagnostic.browserStates=await Promise.all(users.map((_,i)=>snapshot(`group-${i}`)));
+      report.blockDiagnostic.database=await d1(`SELECT 'participant' AS recordType,user_id,state,revoked_before FROM social_call_participants WHERE call_id=${literal(groupCall.id)} UNION ALL SELECT 'block' AS recordType,blocker_id AS user_id,blocked_id AS state,created_at AS revoked_before FROM social_blocks WHERE blocker_id=${literal(friend.id)} OR blocked_id=${literal(friend.id)};`,{query:true});
+    }
+    assert.equal(expect(blockedView,409,'blocked shared call').error,'CALL_UNAVAILABLE');
     const others=await Promise.all(users.filter((_,i)=>i!==1).map(user=>snapshot(`group-${users.indexOf(user)}`)));assert.ok(others.every(s=>s.state==='connected'));
     expect(await social(friend,`/blocks/${users[2].id}`,'DELETE'),200,'unblock group peer');
     let joined;await until(async()=>{joined=await social(friend,`/calls/${groupCall.id}/join`,'POST',{deviceId:friend.deviceId});return joined.status!==409||joined.data?.error!=='CALL_RECONNECTING';},'fresh authorized rejoin',15_000);

@@ -113,9 +113,63 @@ class LaunchSmokeTests(unittest.TestCase):
         self.assertEqual([call.args[0] for call in calls], ['runtime', 'list', 'create', 'boot', 'bootstatus', 'install', 'get_app_container'])
         self.assertEqual(calls[0].args, ('runtime', 'dyld_shared_cache', 'update', '--all'))
         self.assertEqual(calls[0].kwargs['timeout'], 300)
+        self.assertEqual(calls[-2].args[0], 'install')
+        self.assertEqual(calls[-2].kwargs['timeout'], 300)
         self.assertEqual(calls[-1].kwargs['timeout'], 180)
         self.assertTrue(all(item['passed'] and item['elapsedSeconds'] >= 0 for item in smoke.report['preparation']))
         self.assertEqual(smoke.report['launches'], [])
+
+    def test_install_timeout_remains_a_failed_preparation_without_retry_or_launch(self):
+        smoke = self.prepared_fixture()
+        previous = smoke.simctl.side_effect
+        def result(*args, **kwargs):
+            if args[0] == 'install':
+                self.assertEqual(kwargs['timeout'], 300)
+                raise SmokeFailure('Timed out after 300s: xcrun simctl install')
+            return previous(*args, **kwargs)
+        smoke.simctl.side_effect = result
+        smoke.launch, smoke.finish = Mock(), Mock()
+        with patch('smoke_simulator_launch.sys.platform', 'darwin'):
+            self.assertEqual(smoke.run(), 1)
+        installs = [call for call in smoke.simctl.call_args_list if call.args[0] == 'install']
+        self.assertEqual(len(installs), 1)
+        self.assertEqual(smoke.report['preparation'][-1]['step'], 'simulator-install')
+        self.assertFalse(smoke.report['preparation'][-1]['passed'])
+        self.assertEqual(smoke.report['preparation'][-1]['timeoutSeconds'], 300)
+        self.assertFalse(smoke.report['passed'])
+        self.assertEqual(smoke.report['launches'], [])
+        smoke.launch.assert_not_called()
+        self.assertIsNone(smoke.installed_app)
+
+    def test_failed_preparation_collects_host_pressure_and_install_service_diagnostics(self):
+        smoke = self.smoke()
+        smoke.command = Mock(return_value=subprocess.CompletedProcess([], 0, '', ''))
+        smoke.cleanup_device = Mock()
+        with patch('smoke_simulator_launch.time.sleep'):
+            smoke.finish()
+        smoke.command.assert_called_once_with(['/usr/bin/top', '-l', '1', '-n', '0'],
+                                              timeout=10, label='host-resources', check=False)
+        log_call = smoke.simctl.call_args
+        predicate = log_call.args[log_call.args.index('--predicate') + 1]
+        for service in ['installd', 'lsd', 'containermanagerd']:
+            self.assertIn(f'process == "{service}"', predicate)
+        self.assertEqual(log_call.kwargs['timeout'], 30)
+        self.assertFalse(smoke.report['passed'])
+
+    def test_screenshot_failure_does_not_suppress_unified_logs_or_cleanup(self):
+        smoke = self.smoke()
+        smoke.command = Mock(return_value=subprocess.CompletedProcess([], 0, '', ''))
+        smoke.screenshot.side_effect = SmokeFailure('simulator screenshot timed out')
+        smoke.cleanup_device = Mock()
+        with patch('smoke_simulator_launch.time.sleep'):
+            smoke.finish()
+        smoke.collect_crashes.assert_called_once()
+        smoke.screenshot.assert_called_once_with('final-state')
+        self.assertEqual(smoke.simctl.call_args.args[:3], ('spawn', 'fresh-simulator', 'log'))
+        self.assertEqual(smoke.simctl.call_args.kwargs['label'], 'simulator-unified-log')
+        smoke.cleanup_device.assert_called_once()
+        self.assertIn('simulator screenshot timed out', smoke.report['diagnosticWarnings'])
+        self.assertFalse(smoke.report['passed'])
 
     def test_readiness_failure_is_recorded_and_never_retried_or_followed_by_boot(self):
         smoke = self.prepared_fixture()

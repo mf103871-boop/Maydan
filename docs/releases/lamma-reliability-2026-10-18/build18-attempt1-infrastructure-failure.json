@@ -1,0 +1,30 @@
+{
+  "workflowRun": 39161749336,
+  "workflowAttempt": 1,
+  "workflowJob": 117776311682,
+  "sourceCommit": "2e5e30c051096c577373861a246e85a868e9d40f",
+  "version": "1.8",
+  "build": "18",
+  "javascript": {
+    "passed": 856,
+    "failed": 0,
+    "skipped": 1
+  },
+  "iosPython": {
+    "testsRun": 37,
+    "passed": 37
+  },
+  "nativeSmoke": {
+    "passed": false,
+    "normalStartup": false,
+    "updateGate": false,
+    "sameInstalledApp": true,
+    "error": "Normal startup failed; update scenario was not run.",
+    "normalEvidence": "/Users/runner/work/Maydan/Maydan/ios/build/release-smoke/launch-smoke",
+    "updateEvidence": "/Users/runner/work/Maydan/Maydan/ios/build/release-smoke/update-gate-smoke"
+  },
+  "failureScope": "Simulator installation timeout before first app launch; no crash reports; signing/export/upload steps skipped.",
+  "retryStarted": true,
+  "retryWorkflowJob": 117778722973,
+  "retrySameSource": true
+}
