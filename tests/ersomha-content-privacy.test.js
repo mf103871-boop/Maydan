@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { createHash } from 'node:crypto';
 import { assertNoPrivateBrowserContent, assertPrivacyUnitProof, assertMicrophoneFixture, assertMicrophoneReceipt,
-  ERSOMHA_PRIVACY_UNIT_PROOFS } from '../scripts/ersomha-content-privacy.mjs';
+  ERSOMHA_PRIVACY_UNIT_PROOFS, normalizePrivacySourceInputs } from '../scripts/ersomha-content-privacy.mjs';
 
 const now = Date.now(), hash = value => createHash('sha256').update(value).digest('hex');
 function microphone() {
@@ -57,4 +57,13 @@ test('a reused fixture summary needs its current exact source-bound execution re
     value => { value.finishedAt = new Date(now + 1).toISOString(); },
   ]) { const value = structuredClone(receipt); change(value); assert.throws(() => assertMicrophoneReceipt(value, summaryBytes, provenance, sourceInputs, now)); }
   assert.throws(() => assertMicrophoneReceipt({ passed: true }, summaryBytes, provenance, sourceInputs, now));
+});
+test('real esbuild define identifiers and JSON import attributes bind actual inputs without trying to read synthetic filenames', () => {
+  const input = normalizePrivacySourceInputs(['src/main.jsx', '<define:__MAYDAN_MEDIA_VERSIONS__>',
+    "src/data/games/fabraka/pictures.json with { type: 'json' }", 'src/data/games/fabraka/pictures.json'], { __MAYDAN_MEDIA_VERSIONS__: '{}' });
+  assert.deepEqual(input.filenames, ['src/data/games/fabraka/pictures.json', 'src/main.jsx']);
+  assert.deepEqual(input.virtualInputs, { '<define:__MAYDAN_MEDIA_VERSIONS__>': { define: '__MAYDAN_MEDIA_VERSIONS__', sha256: hash('{}'), bytes: 2 } });
+  assert.throws(() => normalizePrivacySourceInputs(['<stdin>']));
+  assert.throws(() => normalizePrivacySourceInputs(['<define:UNKNOWN>'], { __MAYDAN_MEDIA_VERSIONS__: '{}' }));
+  assert.throws(() => normalizePrivacySourceInputs(["src/main.jsx with { type: 'json' }"]));
 });

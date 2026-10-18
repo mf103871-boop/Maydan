@@ -88,6 +88,25 @@ export function assertMicrophoneReceipt(receipt, summaryBytes, provenance, sourc
   return assertMicrophoneFixture(JSON.parse(summaryBytes));
 }
 
+export function normalizePrivacySourceInputs(filenames, defines = {}) {
+  const files = new Set(), virtualInputs = {};
+  for (const filename of filenames) {
+    const virtual = /^<define:(.+)>$/.exec(filename);
+    if (virtual) {
+      assert.ok(Object.hasOwn(defines, virtual[1]) && typeof defines[virtual[1]] === 'string', 'Unknown virtual esbuild define in privacy proof.');
+      virtualInputs[filename] = { define: virtual[1], sha256: hash(defines[virtual[1]]), bytes: Buffer.byteLength(defines[virtual[1]]) };
+      continue;
+    }
+    assert.ok(!filename.startsWith('<'), 'Unknown virtual esbuild input in privacy proof.');
+    // esbuild includes import attributes in metafile identifiers, but they are
+    // not part of the on-disk JSON pathname. Hash the real source file once.
+    const attribute = /^(.*\.json) with \{ type: (['"])json\2 \}$/.exec(filename);
+    assert.ok(attribute || !filename.includes(' with {'), 'Unsupported esbuild import attribute in privacy proof.');
+    files.add(attribute ? attribute[1] : filename);
+  }
+  return { filenames: [...files].sort(), virtualInputs };
+}
+
 async function sourceDigests(filenames) {
   return Object.fromEntries(await Promise.all([...new Set(filenames)].sort().map(async filename => {
     const relative = path.relative(ROOT, path.resolve(ROOT, filename)).split(path.sep).join('/');
@@ -120,13 +139,16 @@ export async function runErsomhaContentPrivacy({ outputDirectory = '.cache/ersom
     passed: false, checks: [], scope: 'Local compilation and automated private-state/D1 tests plus Chromium/WebKit microphone UI fixture; external media is simulated. No remote writes, actual LiveKit media, physical iPhone performance or human player trial is claimed.', physicalDeviceTrialCompleted: false };
   const saveReport = () => writeFile(path.join(out, 'content-privacy-result.json'), JSON.stringify(report, null, 2) + '\n', { mode: 0o600 });
   try {
+    report.stage = 'clean-backend-provenance';
     Object.assign(report, await getBackendProvenance(ROOT, { requireClean: true }));
     const provenance = { sourceCommit: report.sourceCommit, sourceServerTree: report.sourceServerTree, backendTreeSha256: report.backendTreeSha256 };
     const editorial = ersomhaReviewReport(); report.editorial = editorial;
     assert.equal(editorial.validation.ok, true); assert.equal(editorial.validation.total, 1200); assert.equal(editorial.validation.independentPending, 0, 'All 1200 concepts require current independent editorial review.');
     assert.ok(editorial.entries.every(entry => entry.independent === 'reviewed')); assert.equal(editorial.physicalPlaytest, false);
     const pkg = JSON.parse(await readFile(path.join(ROOT, 'package.json'), 'utf8'));
-    const browser = await build({ ...esbuildOptions({ minify: true, version: pkg.version }), absWorkingDir: ROOT, metafile: true });
+    report.stage = 'browser-compilation';
+    const browserOptions = esbuildOptions({ minify: true, version: pkg.version });
+    const browser = await build({ ...browserOptions, absWorkingDir: ROOT, metafile: true });
     assert.equal(browser.outputFiles.length, 1);
     report.browser = assertNoPrivateBrowserContent(browser.metafile, Buffer.from(browser.outputFiles[0].contents));
     const metafileBytes = Buffer.from(JSON.stringify(browser.metafile, null, 2));
@@ -135,18 +157,24 @@ export async function runErsomhaContentPrivacy({ outputDirectory = '.cache/ersom
     const backend = await bundleErsomhaWorker('maydan-rooms'); report.testedModuleSHA256 = backend.sha256;
     // Metafile closure includes local test helpers. Dynamic UI imports inside the
     // fixture are covered by compiling the complete real application above.
+    report.stage = 'proof-dependency-graph';
     const proofGraph = await build({ entryPoints: [...ERSOMHA_PRIVACY_SUITES, E2E, 'scripts/ersomha-content-privacy.mjs'], absWorkingDir: ROOT, outdir: '.cache/ersomha-proof-unused',
       bundle: true, write: false, metafile: true, platform: 'node', format: 'esm', packages: 'external', external: ['cloudflare:*'],
       jsx: 'automatic', loader: { '.css': 'text', '.webp': 'dataurl', '.png': 'dataurl', '.woff2': 'dataurl' }, logLevel: 'silent' });
-    const sourceInputs = await sourceDigests([...Object.keys(browser.metafile.inputs), ...Object.keys(backend.sourceInputs), ...Object.keys(proofGraph.metafile.inputs),
-      'scripts/ersomha-content-privacy.mjs', 'scripts/lib.mjs', 'scripts/lib/lamma-provenance.mjs', 'package.json', 'package-lock.json']);
+    report.stage = 'proof-source-digests';
+    const normalizedInputs = normalizePrivacySourceInputs([...Object.keys(browser.metafile.inputs), ...Object.keys(backend.sourceInputs), ...Object.keys(proofGraph.metafile.inputs),
+      'scripts/ersomha-content-privacy.mjs', 'scripts/lib.mjs', 'scripts/lib/lamma-provenance.mjs', 'package.json', 'package-lock.json'], browserOptions.define);
+    report.browser.virtualInputs = normalizedInputs.virtualInputs;
+    const sourceInputs = await sourceDigests(normalizedInputs.filenames);
     report.sourceInputs = sourceInputs; await cleanProofInputs(sourceInputs);
+    report.stage = 'privacy-unit-suites';
     const unit = await execute(process.execPath, ['--test', '--test-concurrency=2', '--test-reporter=tap', ...ERSOMHA_PRIVACY_SUITES],
       { cwd: ROOT, windowsHide: true, timeout: 240_000, maxBuffer: 16 * 1024 * 1024 });
     report.unit = assertPrivacyUnitProof(unit.stdout);
     const unitFile = `privacy-unit-${runId}.tap`; await writeFile(path.join(out, unitFile), unit.stdout, { mode: 0o600, flag: 'wx' });
     report.unit.outputPath = unitFile;
     let summaryBytes, receipt;
+    report.stage = microphoneReceiptPath ? 'verify-microphone-execution-receipt' : 'run-microphone-browser-fixture';
     if (microphoneReceiptPath) {
       const receiptFile = path.resolve(ROOT, microphoneReceiptPath); receipt = JSON.parse(await readFile(receiptFile, 'utf8'));
       assert.ok(typeof receipt.summaryPath === 'string' && receipt.summaryPath, 'Microphone receipt must locate its hashed summary.');
@@ -171,13 +199,15 @@ export async function runErsomhaContentPrivacy({ outputDirectory = '.cache/ersom
       report.microphone.receiptSHA256 = hash(await readFile(path.join(fixtureDir, 'execution-receipt.json'))); report.microphone.receiptPath = path.relative(out, path.join(fixtureDir, 'execution-receipt.json')).split(path.sep).join('/');
     }
     report.microphone.summarySHA256 = hash(summaryBytes);
+    report.stage = 'final-source-verification';
     await assertUnchanged(provenance, sourceInputs);
     report.checks = ERSOMHA_PRIVACY_CHECKS.map(name => ({ name, passed: true,
       evidence: name === 'private-bank-not-in-browser-bundle' ? { browserBundleSHA256: report.browser.bundleSHA256, inputCount: report.browser.inputCount }
         : name === 'drawing-microphone-privacy' ? { assertions: ERSOMHA_PRIVACY_UNIT_PROOFS[name], microphoneReceiptSHA256: report.microphone.receiptSHA256 }
           : { assertions: ERSOMHA_PRIVACY_UNIT_PROOFS[name], unitOutputSHA256: report.unit.stdoutSHA256 } }));
-    report.passed = true;
+    report.passed = true; report.stage = 'complete';
   } catch (error) {
+    if (typeof error.code === 'string') report.errorCode = error.code;
     report.error = error instanceof assert.AssertionError ? error.message.split('\n')[0] : 'Local privacy acceptance failed; inspect the selected test or fixture locally. External data and process output suppressed.';
     throw error;
   } finally { report.finishedAt = new Date().toISOString(); await saveReport(); }
