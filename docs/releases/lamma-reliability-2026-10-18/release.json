@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "status": "backend-verified-awaiting-signed-testflight-build",
+  "status": "available-internal-testflight-awaiting-physical-device-trial",
   "target": {
     "version": "1.8",
     "build": "18",
@@ -56,6 +56,25 @@
       "maximumConcurrentParticipants": 12,
       "physicalIPhone": false,
       "pushDelivery": false
+    },
+    "iosPythonLocal": {
+      "testsRun": 40,
+      "passed": 39,
+      "platformSkipped": 1,
+      "failed": 0
+    },
+    "finalCIJavaScript": {
+      "tests": 858,
+      "passed": 857,
+      "failed": 0,
+      "skipped": 1,
+      "skipScope": "Existing pre-build artifact check; actual exported IPA separately audited."
+    },
+    "finalCIIosPython": {
+      "testsRun": 40,
+      "passed": 40,
+      "failed": 0,
+      "skipped": 0
     }
   },
   "intermediateBuild17": {
@@ -65,7 +84,7 @@
     "uploadStepSucceeded": true,
     "supersededByBuild18For": "Preserve exit confirmation before allocating invited room seat"
   },
-  "sourceCommit": "2e5e30c051096c577373861a246e85a868e9d40f",
+  "sourceCommit": "107bd25724be2f9126a3af58e92c240682a61b23",
   "sourceServerTree": "4fdf118eb15cadb4e5eb496d82a1daa40dba4a80",
   "backendTreeSha256": "55a4a4af6e65753fd7b5dbb3e38db2a61aff2ecc92f22e2e02ba94ecbb73aadc",
   "backendDeployment": {
@@ -105,20 +124,71 @@
     "planSHA256": "af6b8228e0223ebcd2f8f281bbf7ac77a5d7d9f45e698521d77a31319e201eb2"
   },
   "nativeBuild": {
-    "workflowRun": 39161749336,
-    "workflowJob": 117778722973,
-    "workflowAttempt": 2,
-    "sourceCommit": "2e5e30c051096c577373861a246e85a868e9d40f",
-    "url": "https://github.com/mf103871-boop/Maydan/actions/runs/39161749336",
-    "state": "failed-simulator-install-preparation",
-    "previousAttempt": "build18-attempt1-infrastructure-failure.json",
-    "attempt2Failure": "build18-attempt2-infrastructure-failure.json"
+    "workflowRun": 39163718100,
+    "workflowJob": 117782195717,
+    "workflowAttempt": 1,
+    "sourceCommit": "107bd25724be2f9126a3af58e92c240682a61b23",
+    "url": "https://github.com/mf103871-boop/Maydan/actions/runs/39163718100",
+    "state": "success",
+    "supersededAttempts": [
+      "build18-attempt1-infrastructure-failure.json",
+      "build18-attempt2-infrastructure-failure.json"
+    ],
+    "singleInstallPreparationBudgetSeconds": 300,
+    "launchProcessGateSeconds": 45,
+    "coldSurvivalSeconds": 45,
+    "relaunchSurvivalSeconds": 15,
+    "gateBypassed": false,
+    "uploadAcceptedAt": "2026-10-18T20:46:29.471Z",
+    "artifactId": 12149973564,
+    "artifactZipSha256": "e543e9ce16a23f32d3e2bdda33d741418c26896ddaba6952da9502355a2122d5",
+    "ipaSha256": "e1baef922701cb8434ba9d18f5be87c4759cab4452ee8711e42e3937631cbac8",
+    "ipaBytes": 152691885,
+    "packageAudit": "package-audit.json",
+    "nativeLaunchEvidence": "native-launch-verification.json",
+    "nonfatalWarnings": [
+      "Apple accepted the upload with a missing LiveKitWebRTC framework dSYM warning; vendor framework crash symbolication may be limited."
+    ]
   },
   "preservedAppStoreReview": {
     "version": "1.7.1",
     "build": "13",
     "state": "WAITING_FOR_REVIEW",
-    "lastReadAt": "2026-10-18T20:14:16.525881+00:00",
+    "lastReadAt": "2026-10-18T20:54:00.041676+00:00",
     "modifiedByThisRelease": false
+  },
+  "appImplementationCommit": "2e5e30c051096c577373861a246e85a868e9d40f",
+  "completedAt": "2026-10-18T20:54:47.819302+00:00",
+  "testFlight": {
+    "verifiedAt": "2026-10-18T20:54:47.819302+00:00",
+    "appId": "6808385717",
+    "version": "1.8",
+    "build": "18",
+    "buildId": "4df4ad3f-4d33-469d-b865-051e991b1e65",
+    "processingState": "VALID",
+    "internalBuildState": "IN_BETA_TESTING",
+    "externalBuildState": "READY_FOR_BETA_SUBMISSION",
+    "autoNotifyEnabled": true,
+    "internalGroup": {
+      "id": "0f254efa-38d9-406c-9ab0-1664b99f3213",
+      "name": "Envysnowy Group",
+      "type": "Internal",
+      "testers": 1,
+      "verifiedFromBuildDetailUI": true
+    },
+    "testInformationSaved": {
+      "verified": true,
+      "verifiedAt": "2026-10-18T20:53:22.193267+00:00",
+      "buildId": "4df4ad3f-4d33-469d-b865-051e991b1e65",
+      "version": "1.8",
+      "build": "18",
+      "locale": "en-US",
+      "characters": 1253,
+      "sourceSHA256": "76d874e6048b7aafb33550501b4986e1fad3760bbee80ca44510101f0c067ad7",
+      "method": "App Store Connect UI save followed by independent API GET"
+    },
+    "url": "https://appstoreconnect.apple.com/teams/609ff8f7-15ce-48ec-9e60-e95f8ed24d3a/apps/6808385717/testflight/ios/4df4ad3f-4d33-469d-b865-051e991b1e65",
+    "publicSubmissionPerformed": false,
+    "physicalIPhoneTrialRequired": true
   }
 }
