@@ -61,6 +61,44 @@ export function parsePreviewD1Result(stdout) {
   return results.flatMap(result => result.results || []);
 }
 
+export function assertErsomhaStaleLeaseOutcome({ errorCode, before, states, selectedWord,
+  exposuresBefore, exposuresAfter, expectedLeases, observedLeases, now = Date.now() }) {
+  // advance() may stop the revoked match before the command is dispatched.
+  // A generic phase/stale rejection is evidence only alongside the fail-closed
+  // terminal state, unchanged exposure history and the new owner's live fences.
+  assert.ok(['ERSOMHA_ACTIVE_ELSEWHERE', 'PHASE', 'STALE'].includes(errorCode), 'The old room command must be rejected.');
+  assert.equal(before?.phase, 'draw', 'The fixture must have exposed only its initial drawing word.');
+  assert.ok(Number.isSafeInteger(before.matchId) && Number.isSafeInteger(before.round) && before.round > 0
+    && typeof before.drawerId === 'string' && before.drawerId, 'The original match identity must be recorded.');
+  assert.ok(typeof selectedWord === 'string' && selectedWord, 'The original selected word must be recorded privately.');
+  assert.ok(Array.isArray(states) && states.length === 2, 'Both old-room seats must observe the terminal state.');
+  for (const state of states) {
+    assert.equal(state?.phase, 'over', 'A stale match must terminate safely.');
+    assert.equal(state.reason, 'account_active_elsewhere', 'A generic phase error alone does not establish fencing.');
+    for (const field of ['matchId', 'round', 'drawerId']) assert.equal(state[field], before[field], 'The old match cannot advance to another word.');
+    assert.deepEqual(state.myChoices, [], 'A fenced room cannot expose new choices.');
+    assert.equal(state.myWord, null, 'The stale drawer cannot retain an active private word.');
+    assert.equal(state.revealedWord, selectedWord, 'Only the already selected word may appear in the terminal reveal.');
+    assert.equal(state.deadlineAt, null, 'A fenced room cannot retain a next-turn deadline.');
+  }
+  assert.ok(Number.isSafeInteger(exposuresBefore) && exposuresBefore > 0, 'Initial exposure evidence is required.');
+  assert.equal(exposuresAfter, exposuresBefore, 'Old room cannot persist a new exposure after being fenced.');
+  assert.equal(expectedLeases.length, 2, 'Both shared accounts must belong to the replacement room.');
+  assert.equal(new Set(expectedLeases.map(row => row.account_hash)).size, 2, 'Expected lease accounts must be distinct.');
+  assert.equal(new Set(expectedLeases.map(row => row.room_key)).size, 1, 'The replacement room must own the full lease set.');
+  assert.equal(observedLeases.length, expectedLeases.length, 'Fencing and old-room cleanup must preserve both replacement leases.');
+  assert.equal(new Set(observedLeases.map(row => row.account_hash)).size, expectedLeases.length, 'Observed leases cannot duplicate an account.');
+  for (const expected of expectedLeases) {
+    const observed = observedLeases.find(row => row.account_hash === expected.account_hash);
+    assert.ok(observed, 'The replacement room cannot lose an account lease.');
+    assert.equal(observed.room_key, expected.room_key, 'The stale room cannot reclaim or release the new owner.');
+    assert.equal(observed.fence, expected.fence, 'The replacement lease generation must remain unchanged.');
+    assert.ok(Number.isFinite(observed.expires_at) && observed.expires_at > now
+      && observed.expires_at >= expected.expires_at, 'The replacement leases must stay live; normal renewal is allowed.');
+  }
+  return true;
+}
+
 async function until(predicate, label, timeout = 25_000) {
   const deadline = Date.now() + timeout;
   while (Date.now() < deadline) { if (await predicate()) return; await wait(40); }
@@ -315,24 +353,37 @@ export async function runErsomhaPreviewAcceptance(argv = process.argv.slice(2)) 
     await check('stale-lease-fencing', async () => {
       const a = await createRoom([users[3], users[4]]), b = await createRoom([users[4], users[3]]);
       await start(a); const { drawer, answer } = await select(a), hashes = [users[3], users[4]].map(user => literal(user.accountHash)).join(',');
+      const before = structuredClone(state(a));
       const old = await d1(`SELECT account_hash,room_key,fence FROM ersomha_leases WHERE account_hash IN (${hashes});`, { captureResults: true }); assert.equal(old.length, 2);
       const oldKey = old[0].room_key;
-      const oldExposureCount = await count(`SELECT COUNT(*) AS n FROM ersomha_seen WHERE account_hash IN (${hashes}) AND exposure_id LIKE ${literal(oldKey + ':%')};`);
+      const exposureQuery = `SELECT COUNT(*) AS n FROM ersomha_seen WHERE account_hash IN (${hashes}) AND exposure_id LIKE ${literal(oldKey + ':%')};`;
+      const leaseQuery = `SELECT account_hash,room_key,fence,expires_at FROM ersomha_leases WHERE account_hash IN (${hashes});`;
+      const oldExposureCount = await count(exposureQuery);
       await d1(`UPDATE ersomha_leases SET expires_at=0 WHERE account_hash IN (${hashes}) AND room_key=${literal(oldKey)};`);
       await start(b);
-      const current = await d1(`SELECT account_hash,room_key,fence FROM ersomha_leases WHERE account_hash IN (${hashes});`, { captureResults: true });
+      const current = await d1(leaseQuery, { captureResults: true }); assert.equal(current.length, 2);
       assert.ok(current.every(row => row.room_key !== oldKey && row.fence > old.find(previous => previous.account_hash === row.account_hash).fence), 'New room must increment every lease generation.');
       const guesser = a.seats.find(seat => seat !== drawer);
-      let fenced = false;
-      try { await guesser.client.command('guess', { text: answer }); } catch (error) { assert.equal(error.code, 'ERSOMHA_ACTIVE_ELSEWHERE'); fenced = true; }
-      if (!fenced) {
-        await until(() => state(a).phase === 'result', 'old room reaches its reveal');
-        const revealEnd = state(a).deadlineAt - (a.seats[0].client.clockOffset || 0);
-        if (revealEnd > Date.now()) await wait(Math.min(8_000, revealEnd - Date.now() + 100));
-        await assert.rejects(a.seats[0].client.command('next'), error => error.code === 'ERSOMHA_ACTIVE_ELSEWHERE');
+      let errorCode;
+      try { await guesser.client.command('guess', { text: answer }); } catch (error) { errorCode = error.code; }
+      if (!errorCode) {
+        await until(() => ['result', 'over'].includes(state(a).phase), 'old room reaches its reveal or is safely stopped');
+        if (state(a).phase === 'result') {
+          const revealEnd = state(a).deadlineAt - (a.seats[0].client.clockOffset || 0);
+          if (revealEnd > Date.now()) await wait(Math.min(8_000, revealEnd - Date.now() + 100));
+        }
+        try { await a.seats[0].client.command('next'); } catch (error) { errorCode = error.code; }
       }
-      assert.equal(await count(`SELECT COUNT(*) AS n FROM ersomha_seen WHERE account_hash IN (${hashes}) AND exposure_id LIKE ${literal(oldKey + ':%')};`), oldExposureCount, 'Old room cannot persist a new exposure after being fenced.');
-      await closeRoom(a); await closeRoom(b); return { remoteFaultInjection: 'Only this run\'s fixture leases were expired in preview D1', increasedFences: 2, staleNewExposureDenied: true };
+      assert.ok(['ERSOMHA_ACTIVE_ELSEWHERE', 'PHASE', 'STALE'].includes(errorCode), 'A command in the revoked room must be rejected.');
+      await until(() => a.seats.every(seat => seat.client.state?.phase === 'over'), 'every old-room seat observes lease revocation', 35_000);
+      const stopped = a.seats.map(seat => structuredClone(seat.client.state));
+      const verify = async () => assertErsomhaStaleLeaseOutcome({ errorCode, before, states: stopped, selectedWord: answer,
+        exposuresBefore: oldExposureCount, exposuresAfter: await count(exposureQuery),
+        expectedLeases: current, observedLeases: await d1(leaseQuery, { captureResults: true }) });
+      await verify(); await closeRoom(a); await verify(); await closeRoom(b);
+      return { remoteFaultInjection: 'Only this run\'s fixture leases were expired in preview D1', increasedFences: 2,
+        staleNewExposureDenied: true, revokedRoomTerminated: true, replacementLeasesPreservedThroughOldRoomCleanup: true,
+        rejectedCommandCode: errorCode };
     });
     report.metrics = metrics;
     report.passed = true;

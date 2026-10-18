@@ -22,6 +22,11 @@ const front = http.createServer((req, res) => {
 await new Promise(resolve => front.listen(0, '127.0.0.1', resolve));
 const origin = `http://127.0.0.1:${front.address().port}`;
 const result = { scope: 'Real group launch, Ersomha canvas/guesses, Lamma privacy and room WebSockets against local workerd/D1; external media transport is simulated, no production writes', engines: [] };
+const drawerToolsVisible = () => {
+  const board = document.querySelector('canvas.ers-board')?.getBoundingClientRect();
+  const buttons = [...document.querySelectorAll('.ers-tools button')];
+  return board && board.top >= 0 && board.bottom <= innerHeight + 1 && buttons.length === 20 && buttons.every(button => { const r = button.getBoundingClientRect(); return r.top >= 0 && r.bottom <= innerHeight + 1 && r.left >= 0 && r.right <= innerWidth + 1 && r.width >= 44 && r.height >= 44; });
+};
 try {
   const scriptPath = path.join(dir, 'worker.mjs');
   await build({ entryPoints: ['server/worker.mjs'], outfile: scriptPath, bundle: true, format: 'esm', platform: 'browser', logLevel: 'silent' });
@@ -122,6 +127,12 @@ createRoot(document.getElementById('root')).render(<AccountContext.Provider valu
         assert.equal(await guesser.getByText(answer, { exact: true }).count(), 0);
         await drawer.locator('.ers-word-choices button').first().click();
         const canvas = drawer.locator('canvas.ers-board'); await canvas.waitFor();
+        await drawer.waitForFunction(drawerToolsVisible);
+        await drawer.setViewportSize({ width: 844, height: 390 });
+        await drawer.waitForFunction(drawerToolsVisible);
+        await drawer.screenshot({ path: path.join(out, `${engineName}-turn-${turn}-landscape-tools.png`), fullPage: true });
+        await drawer.setViewportSize({ width: 390, height: 844 });
+        await drawer.waitForFunction(drawerToolsVisible);
         const bounds = await canvas.boundingBox();
         const launcher = await drawer.locator('.online-social-slot .lamma-launcher').boundingBox();
         assert.ok(launcher && launcher.width >= 44 && launcher.height >= 44, 'friends remain available in the room header');

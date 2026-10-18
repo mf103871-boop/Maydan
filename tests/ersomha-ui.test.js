@@ -62,6 +62,8 @@ test('two-player mode displays a shared outcome and no individual winner', () =>
   const state = fixture({ mode: 'cooperative', phase: 'over', cooperative: { solvedTurns: 2, completedTurns: 2, totalTurns: 2, remainingMs: 31_000 } });
   const markup = html(state, 0);
   assert.match(markup, /معًا رسمتوها/); assert.match(markup, /لوحات محلولة/); assert.match(markup, /٣١/); assert.doesNotMatch(markup, /class="podium/);
+  const cooperativePlayers = html(fixture({ settings: { ...normalizeErsomhaOptions(), mode: 'cooperative' } })).match(/<ul class="ers-players"[\s\S]*?<\/ul>/)?.[0];
+  assert.ok(cooperativePlayers); assert.doesNotMatch(cooperativePlayers, /<strong>/, 'Authoritative settings.mode hides personal scores in cooperation');
   for (const reason of ['account_unavailable', 'active_elsewhere', 'account_active_elsewhere']) {
     const ended = html({ ...state, reason }); assert.match(ended, /حصيلة الأدوار المكتملة/); assert.doesNotMatch(ended, /معًا رسمتوها/);
     assert.match(ended, reason === 'account_unavailable' ? /لم يعد متاحًا للعب/ : /انتقل إلى غرفة أخرى/);
