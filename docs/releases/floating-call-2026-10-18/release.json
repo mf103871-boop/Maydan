@@ -1,0 +1,406 @@
+{
+  "schemaVersion": 1,
+  "status": "available-in-internal-testflight",
+  "intendedRelease": {
+    "appStoreId": "6808385717",
+    "version": "1.8",
+    "build": "15"
+  },
+  "implementationCommit": "03f139727d8a82b6a49e81c65bdc96bb08fbe549",
+  "branch": "codex/lamma-social",
+  "supersedesTestFlightBuild": "1.8 (14)",
+  "scope": {
+    "appearance": "Circular participant avatars and 44px translucent controls; transparent container and green active-speaker ring.",
+    "gameWidthChangedDuringCall": false,
+    "reservedSideGutterPx": 0,
+    "movement": "Free horizontal and vertical pointer dragging from an avatar or the grip; four arrow keys, Home and End.",
+    "dragClickThresholdPx": 5,
+    "dragOpensControls": false,
+    "transparentGapsPassPointerToGame": true,
+    "preferredPositionRestoredAfterKeyboard": true,
+    "positionLifetime": "Current call and account only; cleared on call end or account switch.",
+    "speakingMuteAndPrivacy": "Existing native/LiveKit state and private-turn microphone lock preserved.",
+    "memberProfileLoader": "Existing guarded group-detail-only loader; no message history fetched for avatars.",
+    "serverChanged": false,
+    "databaseChanged": false,
+    "publicWebChanged": false,
+    "nativeCodeChanged": false
+  },
+  "localValidation": {
+    "javascriptTests": {
+      "total": 800,
+      "passed": 800,
+      "failed": 0
+    },
+    "focusedModelAndUI": {
+      "passed": 18,
+      "failed": 0
+    },
+    "targetedLintErrors": 0,
+    "browser": {
+      "engines": [
+        "Chromium",
+        "WebKit 26.6"
+      ],
+      "viewports": [
+        [
+          375,
+          667
+        ],
+        [
+          390,
+          844
+        ],
+        [
+          844,
+          390
+        ]
+      ],
+      "games": [
+        "badeeha",
+        "beep",
+        "mamnoo",
+        "jabeen",
+        "fabraka",
+        "meenfina"
+      ],
+      "screens": [
+        "setup",
+        "active"
+      ],
+      "participantCounts": [
+        2,
+        12
+      ],
+      "coverage": [
+        "circular translucent styling",
+        "two-axis grip and avatar drag",
+        "drag click suppression",
+        "keyboard arrows",
+        "transparent gap click-through",
+        "preferred keyboard position restore",
+        "full game width",
+        "simultaneous and hidden speakers",
+        "mute and reconnect",
+        "private-turn lock",
+        "local timer and draft continuity",
+        "online deadlines",
+        "profile restore without message history",
+        "account switch reset"
+      ],
+      "evidenceDirectory": "outputs/floating-call-bubbles",
+      "physicalKeyboard": false,
+      "liveSFU": false,
+      "summaries": [
+        {
+          "name": "chromium-summary.json",
+          "completedAt": "2026-10-18T17:48:05.123Z",
+          "sha256": "b2e663bf97a92ef9048a9bf29abfc4a42938bee0968be7631846f3520e1101eb"
+        },
+        {
+          "name": "webkit-summary.json",
+          "completedAt": "2026-10-18T17:48:40.839Z",
+          "sha256": "430998cb8bc73e75ea3eb064cd093f73470623a1f73400253cf507629f66c94c"
+        }
+      ]
+    },
+    "iosPrepare": {
+      "files": 3298,
+      "htmlSHA256": "44db638354e6308596aef55f0363fda4d02348c2fd126729bde8d32f6e8bc5ff"
+    }
+  },
+  "ci": {
+    "status": "completed",
+    "runId": 39151487294,
+    "jobId": 117745873953,
+    "url": "https://github.com/mf103871-boop/Maydan/actions/runs/39151487294",
+    "sourceCommit": "03f139727d8a82b6a49e81c65bdc96bb08fbe549",
+    "uploadRequested": true,
+    "conclusion": "success",
+    "javascriptTests": {
+      "total": 800,
+      "passed": 799,
+      "skipped": 1,
+      "failed": 0
+    },
+    "pythonTestsPassed": 37,
+    "nativePreparedHTMLSHA256": "733337a4aed1d5f4ff2cd4aca88fa194758e6e8352188030905c517487ced2e9",
+    "signingAndRuntime": {
+      "macOSCodesignVerifyDeepStrictPassed": true,
+      "signedArchivePassed": true,
+      "ipaExportPassed": true,
+      "runtimeValidationPassedFor": [
+        "simulator",
+        "device archive",
+        "exported IPA"
+      ],
+      "binariesCheckedPerRuntimeValidation": 3,
+      "deviceArchitectures": [
+        "arm64"
+      ],
+      "simulatorArchitectures": [
+        "arm64",
+        "x86_64"
+      ],
+      "testFlightUploadAccepted": true,
+      "testFlightUploadAcceptedAt": "2026-10-18T18:01:18Z",
+      "cleanupPassed": true,
+      "nonBlockingWarnings": [
+        "Vendor LiveKitWebRTC.framework and RustLiveKitUniFFI.framework dSYM files were unavailable for symbol upload."
+      ]
+    }
+  },
+  "preservedReview": {
+    "version": "1.7.1",
+    "build": "13",
+    "appStoreVersionId": "b9fe0881-b915-4c75-90f2-db218081d482",
+    "reviewSubmissionId": "90541fc0-efb7-49c6-b254-34363b6410f2",
+    "state": "WAITING_FOR_REVIEW",
+    "modifiedByThisRelease": false,
+    "postUploadState": "WAITING_FOR_REVIEW"
+  },
+  "publicSubmissionOf18": false,
+  "outstanding": [
+    "Physical two-iPhone floating-circle and active-speaker trial before public 1.8 submission"
+  ],
+  "simulator": {
+    "device": {
+      "bundleIdentifier": "Maydan",
+      "version": "1.8",
+      "build": "15",
+      "simulatorModel": "iPhone SE (3rd generation)",
+      "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-26-2"
+    },
+    "normalStartup": {
+      "passed": true,
+      "launches": [
+        {
+          "name": "cold",
+          "pid": 20353,
+          "requiredSeconds": 45,
+          "passed": true,
+          "observedSeconds": 45.13,
+          "terminatedForRelaunch": true
+        },
+        {
+          "name": "relaunch",
+          "pid": 21188,
+          "requiredSeconds": 15,
+          "passed": true,
+          "observedSeconds": 15.18,
+          "terminatedForRelaunch": true
+        }
+      ],
+      "crashReports": [],
+      "diagnosticWarnings": [],
+      "screenshotsVisuallyInspected": [
+        "launch-smoke/cold.png",
+        "launch-smoke/relaunch.png"
+      ],
+      "screenshotFinding": "Both screenshots render the Arabic Maydan home screen without a blank page, crash screen, or update overlay."
+    },
+    "updateGate": {
+      "passed": true,
+      "sameInstalledAppAsNormalStartup": true,
+      "sameExecutableSha256": "2126896914b5973e4647c3ca53ae205cf0c0db6d6faba9e215a5611266efa798",
+      "gateChecks": {
+        "requiredHeadingAndActions": true,
+        "initialGameNotLoadedBehindGate": true,
+        "realRetryAction": true,
+        "offlineRecovery": true,
+        "evidence": "Mounted native view properties plus screenshots; no physical touch claim."
+      },
+      "offlineView": {
+        "initialLoadPermitted": true,
+        "blocked": false,
+        "panel": null,
+        "offline": true,
+        "fixture": "required-then-offline"
+      },
+      "crashReports": [],
+      "diagnosticWarnings": [],
+      "screenshotsVisuallyInspected": [
+        "update-gate-smoke/required-update-verified.png",
+        "update-gate-smoke/offline-recovery.png"
+      ],
+      "screenshotFinding": "Required-update screen shows the Arabic heading, App Store button, and retry button; offline recovery returns to rendered Maydan home screen."
+    },
+    "artifact": {
+      "id": 12145706616,
+      "name": "Maydan-launch-1.8-15",
+      "bytes": 5013955,
+      "sha256": "ea6be73c9cc80727bd4fb8bf8b157ca54c4878ee30570e12c5482968113f2f8a",
+      "metadataMatchesFinalSource": true,
+      "downloadDigestVerified": true,
+      "safelyExtracted": true
+    }
+  },
+  "package": {
+    "sourceSha": "03f139727d8a82b6a49e81c65bdc96bb08fbe549",
+    "workflowRun": 39151487294,
+    "workflowJob": 117745873953,
+    "ipaSha256": "ea1b4cdd7f6c20935a6197cc8381d74f1cfdf530145507d0d5680a3368768ded",
+    "ipaBytes": 152681009,
+    "baselineIpaSha256": "1a5569eb72374bc58fd0340146b14a04cba847f6706a64784f66bde24ce8383a",
+    "executableSha256": "381cb87f6c871e8ab45702747dfd8112e1338a31767e8ea4e28618e7ff4d1994",
+    "htmlSha256": "733337a4aed1d5f4ff2cd4aca88fa194758e6e8352188030905c517487ced2e9",
+    "htmlNormalizedEqualsLocallyPreparedSource": true,
+    "localPreparedHtmlSha256": "44db638354e6308596aef55f0363fda4d02348c2fd126729bde8d32f6e8bc5ff",
+    "htmlComparisonNormalization": "Only plain CRLF and escaped CR-before-LF in imported CSS template text are normalized.",
+    "version": "1.8",
+    "build": "15",
+    "bundleId": "Maydan",
+    "minimumOSVersion": "16.4",
+    "nativeConfigUnchangedFromBuild14": true,
+    "signedEntitlementsUnchangedFromBuild14": true,
+    "productionApiOrigin": "https://maydan-game.mf103871.workers.dev",
+    "subscriptionProducts": {
+      "monthly": "plus.monthly",
+      "yearly": "plus.yearly"
+    },
+    "productionAPNs": true,
+    "callBackgroundModesUnchanged": [
+      "audio",
+      "voip",
+      "remote-notification"
+    ],
+    "microphonePermissionDisclosureUnchanged": true,
+    "signInWithApple": true,
+    "debugEntitlement": false,
+    "fontSizesInActualBundledHTML": {
+      ".lamma-search input": 16,
+      ".lamma-panel .social-composer-row textarea": 16,
+      ".lamma-field input, .lamma-field select, .lamma-edit-message": 16,
+      ".lamma-member select": 16,
+      ".call-controls-actions select": 16,
+      ".social-search input": 16
+    },
+    "obsoleteCallBarAbsent": true,
+    "callDockMarkersInActualBundle": [
+      "call-dock-viewport",
+      "call-dock-participant",
+      "call-dock-more",
+      "call-dock-drag",
+      "call-dock-mute",
+      "call-dock-collapse",
+      "call-controls-dialog",
+      "call-dock-output",
+      "call-inline-controls",
+      "call-dock-promoted-name",
+      "call-dock-more-speaking",
+      "data-speaking",
+      "data-muted",
+      "data-collapsed",
+      "data-keyboard",
+      "data-position-x",
+      "data-position-y",
+      "--call-dock-height",
+      "--call-dock-top"
+    ],
+    "floatingLayoutMarkersInActualBundle": [
+      "data-call-dock-active",
+      "--call-dock-gutter",
+      "call-game-viewport",
+      ":root { --call-dock-gutter: 0px; }",
+      ".call-game-viewport { min-width: 0; width: 100%; margin: 0; }",
+      ".lamma-launcher-faces > .player-avatar + .player-avatar { display: none !important; }",
+      "border-radius: 50%; background: #17202d96",
+      ".call-dock-avatar > .player-avatar { border-radius: 50% !important; opacity: .82;"
+    ],
+    "twoDimensionalDragMarkersInActualBundle": [
+      "position.x+",
+      "position.y+",
+      "clientX",
+      "clientY",
+      "dockWidth",
+      "dockHeight",
+      "Math.hypot",
+      "ArrowLeft",
+      "ArrowRight",
+      "ArrowUp",
+      "ArrowDown",
+      "setPointerCapture",
+      "releasePointerCapture"
+    ],
+    "reservedSideGutterAbsent": true,
+    "callMemberLoaderMarkersInActualBundle": [
+      "loadCallMembers",
+      "assertCallMembers",
+      "invalidateCallMembers",
+      "callMembersGeneration",
+      "pendingCallMembers",
+      "revokedCallGroups",
+      "تغيّرت المكالمة."
+    ],
+    "finalCssIncludedInActualBundle": {
+      "call-dock.css": true,
+      "call-viewport.css": true
+    },
+    "imeCompositionAnd229GuardInActualBundle": true,
+    "visualViewportAndPinchGuardInActualBundle": true,
+    "manualZoomNotDisabled": true,
+    "simulatorFixtureMarkersAbsent": true,
+    "privacyManifestUnchangedFromBuild14": {
+      "PrivacyInfo.xcprivacy": true
+    },
+    "runtime": {
+      "ok": true,
+      "bundleId": "Maydan",
+      "version": "1.8",
+      "build": "15",
+      "binariesChecked": 3,
+      "platform": "ios",
+      "architectures": [
+        "arm64"
+      ],
+      "embeddedDependencyEdges": 2,
+      "mainRunpaths": [
+        "/usr/lib/swift",
+        "@executable_path/Frameworks"
+      ]
+    },
+    "signatureVerificationScope": "Cryptographic archive validation is performed by macOS CI; this Windows audit parses signed entitlement metadata only."
+  },
+  "ipaArtifact": {
+    "id": 12145094737,
+    "name": "Maydan-iOS-1.8-15",
+    "bytes": 152158184,
+    "sha256": "6a14ddee345c4f8a637168d94b39c79c04c78b5b61aa33cfd3f4c5f049df1e1f",
+    "metadataMatchesFinalSource": true,
+    "downloadDigestVerified": true
+  },
+  "packageAuditSHA256": "1f406c3cfd60938977a933f1165e141ee336ab559c75140f27212171bc2b88df",
+  "appleBuild": {
+    "id": "b4175145-ec0d-49f1-879f-30e619fc36a6",
+    "version": "1.8",
+    "build": "15",
+    "processingState": "VALID",
+    "internalBuildState": "IN_BETA_TESTING",
+    "externalBuildState": "READY_FOR_BETA_SUBMISSION",
+    "usesNonExemptEncryption": false,
+    "expired": false,
+    "listedInExistingInternalGroup": true,
+    "internalGroupId": "0f254efa-38d9-406c-9ab0-1664b99f3213",
+    "uploadAcceptedAt": "2026-10-18T18:01:18Z",
+    "availabilityVerifiedBy": [
+      "App Store Connect UI",
+      "read-only official App Store Connect API"
+    ]
+  },
+  "testFlightNotes": {
+    "saved": true,
+    "locale": "en-US",
+    "source": "testflight-notes-ar.txt",
+    "sha256": "03cf8ad33796a456f03fe8b1ba86a11154b7eb5851056f99bdcd85571627fc25",
+    "verifiedViaReadOnlyAPI": true
+  },
+  "uiProof": {
+    "readyBuildAndSavedNotes": "outputs/floating-call-bubbles/testflight-1.8-15-ready.png",
+    "sha256": "139006d0edbd0371be01948bc9c02b11c042781fbcfbf99b8fed69875809abd6"
+  },
+  "physicalTrial": {
+    "state": "awaiting-user-result",
+    "twoIPhonesVerified": false
+  },
+  "checkedAt": "2026-10-18T18:06:40.045873+00:00"
+}
