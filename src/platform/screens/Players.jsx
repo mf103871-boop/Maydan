@@ -7,6 +7,7 @@ import { addPlayer, ROSTER_LIMIT } from '../../shared/setup/roster.js';
 import { wait } from '../../shared/fx/index.js';
 import { usePlatform } from '../context.js';
 import { back, getDirection } from '../router.js';
+import { useSubmitKey } from '../../shared/ui/useSubmitKey.js';
 
 export function Players() {
   const { roster, setRoster, sound, toast } = usePlatform();
@@ -29,6 +30,7 @@ export function Players() {
     setName(''); setEmoji(null); setError('');
     sound.play('pop');
   };
+  const submitKeys = useSubmitKey(add);
   const remove = (player) => {
     setRemoving(null);
     setLeavingId(player.id);
@@ -52,7 +54,7 @@ export function Players() {
       <TopBar title="دفتر اللاعبين" eyebrow={`${roster.length} من ${ROSTER_LIMIT}`} start={<IconButton label="رجوع" onClick={back}><IconBack /></IconButton>} />
       <Card className="stack">
         <label className="field"><span>اسم اللاعب</span>
-          <input className="input" value={name} maxLength={20} placeholder="مثال: سارة" onChange={(e) => { setName(e.target.value); setError(''); }} onKeyDown={(e) => e.key === 'Enter' && add()} />
+          <input className="input" value={name} maxLength={20} placeholder="مثال: سارة" onChange={(e) => { setName(e.target.value); setError(''); }} {...submitKeys} />
         </label>
         <div className="field"><span>شخصيتك (اختياري)</span>
           <AvatarPicker value={emoji} onChange={setEmoji} />

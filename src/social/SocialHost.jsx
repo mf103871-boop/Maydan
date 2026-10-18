@@ -3,6 +3,7 @@ import { createPortal } from 'react-dom';
 import { useAccount } from '../shared/account/context.js';
 import { SignInSheet } from '../shared/account/SignInSheet.jsx';
 import { Button, Modal } from '../shared/ui/components.jsx';
+import { useVisualViewport } from '../shared/ui/useVisualViewport.js';
 import { usePlatform } from '../platform/context.js';
 import { navigate, useRoute } from '../platform/router.js';
 import { useProfiles } from '../profiles/ProfileProvider.jsx';
@@ -169,13 +170,7 @@ export function SocialHost() {
   }, [notify]);
   useEffect(() => () => clearTimeout(noticeTimer.current), []);
   useEffect(() => { if (!host) return undefined; host.className = 'lamma-host'; document.body.appendChild(host); return () => host.remove(); }, [host]);
-  useEffect(() => {
-    if (!host || !window.visualViewport) return undefined;
-    const viewport = window.visualViewport;
-    const resize = () => { host.style.setProperty('--lamma-height', viewport.height + 'px'); host.style.setProperty('--lamma-top', viewport.offsetTop + 'px'); };
-    resize(); viewport.addEventListener('resize', resize); viewport.addEventListener('scroll', resize);
-    return () => { viewport.removeEventListener('resize', resize); viewport.removeEventListener('scroll', resize); };
-  }, [host]);
+  useVisualViewport(host, { heightProperty: '--lamma-height', topProperty: '--lamma-top' });
   useEffect(() => {
     if (!panelOpen || !host) return undefined;
     const previous = document.activeElement;

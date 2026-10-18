@@ -1,11 +1,13 @@
 import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { Button, Modal } from '../shared/ui/components.jsx';
+import { useVisualViewport } from '../shared/ui/useVisualViewport.js';
 import { useAccount } from '../shared/account/context.js';
 import { SignInSheet } from '../shared/account/SignInSheet.jsx';
 import { navigate } from '../platform/router.js';
 import { useSocial } from './SocialProvider.jsx';
 import socialCss from './social.css';
 import { ProfileAvatar } from '../profiles/ProfileAvatar.jsx';
+import { useSubmitKey } from '../shared/ui/useSubmitKey.js';
 
 const MAX_TEXT = 2000;
 const EMPTY_CONVERSATION = { messages: [], loading: false };
@@ -202,6 +204,7 @@ export function Conversation({ friend, conversation = EMPTY_CONVERSATION, accoun
     catch (error) { notify(friendlyError(error), true); }
     finally { setSending(false); }
   };
+  const submitKeys = useSubmitKey(send);
   const loadOlder = async () => {
     const el = scroller.current;
     if (!el || conversation.loadingOlder) return;
@@ -228,7 +231,7 @@ export function Conversation({ friend, conversation = EMPTY_CONVERSATION, accoun
     </div>
     <form className="social-composer" onSubmit={send}>{composerExtras}
       {social.offline && <p className="social-composer-note" role="status">أنت غير متصل. ستتمكن من الإرسال عند عودة الاتصال.</p>}
-      <div className="social-composer-row"><textarea ref={composer} rows={1} maxLength={MAX_TEXT} value={text} aria-label="اكتب رسالة" placeholder="اكتب رسالة…" enterKeyHint="send" onChange={event => changeText(event.target.value)} onBlur={stopped} onKeyDown={event => { if (event.key === 'Enter' && !event.shiftKey && !event.nativeEvent.isComposing) { event.preventDefault(); send(); } }} /><button type="submit" className="social-send" aria-label="إرسال الرسالة" disabled={!text.trim() || sending || social.offline}><Icon name="send" /></button></div>
+      <div className="social-composer-row"><textarea ref={composer} rows={1} maxLength={MAX_TEXT} value={text} aria-label="اكتب رسالة" placeholder="اكتب رسالة…" enterKeyHint="send" onChange={event => changeText(event.target.value)} onBlur={stopped} {...submitKeys} /><button type="submit" className="social-send" aria-label="إرسال الرسالة" disabled={!text.trim() || sending || social.offline}><Icon name="send" /></button></div>
       {text.length > MAX_TEXT - 200 && <small className="social-character-count" role="status">{text.length.toLocaleString('ar')} / {MAX_TEXT.toLocaleString('ar')}</small>}
     </form>
   </section>;
@@ -312,12 +315,7 @@ export function SocialView({ account, social, friendId, onNavigate = navigate })
     setMenu(null); setAction(null); setSearchOpen(false); setBlockedOpen(false); setNotice(null); setCopied(false); setFilter('');
   }, [account.user?.id]);
   useEffect(() => { if (account.signedIn) Promise.resolve(social.refresh()).catch(error => notify(friendlyError(error), true)); }, [account.signedIn, social.refresh]);
-  useEffect(() => {
-    if (!window.visualViewport) return;
-    const update = () => { screen.current?.style.setProperty('--social-height', window.visualViewport.height + 'px'); };
-    update(); window.visualViewport.addEventListener('resize', update);
-    return () => window.visualViewport.removeEventListener('resize', update);
-  }, []);
+  useVisualViewport(screen, { heightProperty: '--social-height', topProperty: '--social-top' });
   const run = async (fn, key, success, onError) => {
     if (busy) return false;
     setBusy(key);
