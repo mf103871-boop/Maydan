@@ -1,32 +1,34 @@
-.call-dock-viewport { position: fixed; z-index: 360; right: env(safe-area-inset-right, 0px); top: calc(var(--call-dock-top, 0px) + env(safe-area-inset-top, 0px) + 8px); width: 56px; height: max(0px, calc(var(--call-dock-height, 100dvh) - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px) - 16px - 56px)); pointer-events: none; direction: rtl; }
-.call-dock { width: 52px; max-height: 100%; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 2px; padding: 4px; box-sizing: border-box; overflow-y: auto; overflow-x: hidden; scrollbar-width: none; border: 1px solid #42685e; border-radius: 24px; background: #153d38f5; color: #f2fff8; box-shadow: 0 5px 18px #12352e26; pointer-events: auto; font-family: var(--font-body, inherit); }
+.call-dock-viewport { position: fixed; z-index: 360; left: calc(env(safe-area-inset-left, 0px) + 8px); right: calc(env(safe-area-inset-right, 0px) + 8px); top: calc(var(--call-dock-top, 0px) + env(safe-area-inset-top, 0px) + 8px); height: max(0px, calc(var(--call-dock-height, 100dvh) - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px) - 16px - 56px)); pointer-events: none; direction: rtl; }
+.call-dock { position: absolute; top: 0; left: 0; width: 52px; max-height: 100%; margin: 0; display: flex; flex-direction: column; align-items: center; gap: 2px; padding: 4px; box-sizing: border-box; overflow-y: auto; overflow-x: hidden; scrollbar-width: none; border: 0; border-radius: 0; background: transparent; color: #fff; box-shadow: none; pointer-events: none; font-family: var(--font-body, inherit); }
 .call-dock::-webkit-scrollbar { display: none; }
-.call-dock-button, .call-dock-person { flex: 0 0 auto; position: relative; display: inline-flex; justify-content: center; align-items: center; width: 44px; min-width: 44px; min-height: 44px; padding: 4px; margin: 0; border: 0; border-radius: 15px; background: transparent; color: inherit; cursor: pointer; -webkit-tap-highlight-color: transparent; touch-action: manipulation; font-family: inherit; }
-.call-dock-button:hover, .call-dock-person:hover { background: #ffffff12; }
+.call-dock-button, .call-dock-person { flex: 0 0 auto; position: relative; display: inline-flex; justify-content: center; align-items: center; width: 44px; min-width: 44px; height: 44px; min-height: 44px; padding: 3px; margin: 0; box-sizing: border-box; border: 1px solid #ffffff38; border-radius: 50%; background: #17202d96; color: inherit; cursor: pointer; -webkit-tap-highlight-color: transparent; touch-action: manipulation; pointer-events: auto; font-family: inherit; box-shadow: 0 2px 6px #080d152b; -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); }
+.call-dock-button:hover, .call-dock-person:hover { background: #263444bd; }
 .call-dock-button:focus-visible, .call-dock-person:focus-visible, .call-controls-dialog button:focus-visible, .call-controls-dialog select:focus-visible, .call-inline-controls button:focus-visible { outline: 3px solid #eac96a; outline-offset: -3px; }
 .call-dock-button:disabled, .call-controls-actions button:disabled { opacity: .62; cursor: default; }
-.call-dock-button.is-muted { color: #ffe4c1; background: #7c56474d; }
-.call-dock-grip { flex-direction: column; gap: 0; touch-action: none; cursor: grab; }
+.call-dock-button.is-muted { color: #ffd4c5; background: #683c3a99; }
+.call-dock-grip { touch-action: none; cursor: grab; user-select: none; -webkit-user-select: none; }
 .call-dock-grip:active { cursor: grabbing; }
-.call-dock-grip-dots { font-family: sans-serif; font-size: 24px; letter-spacing: -2px; height: 24px; line-height: 24px; opacity: .6; }
-.call-dock-grip > i { width: 5px; height: 5px; background: #e3bc78; border-radius: 50%; }
+.call-dock-grip-dots { display: inline-flex; align-items: center; justify-content: center; font-family: sans-serif; font-size: 22px; width: 24px; height: 24px; line-height: 24px; opacity: .9; }
+.call-dock-grip > i { position: absolute; right: 2px; bottom: 2px; width: 6px; height: 6px; background: #e3bc78; border: 1px solid #263444; border-radius: 50%; }
 .call-dock-grip > i.is-connected { background: #7ae2a9; }
 .call-dock-people { display: flex; flex-direction: column; gap: 2px; flex: 0 0 auto; }
-.call-dock-person { flex-direction: column; gap: 1px; }
-.call-dock-avatar { display: inline-flex; position: relative; width: 36px; height: 36px; border-radius: 34%; }
-.call-dock-avatar > .player-avatar { outline: 2px solid transparent; outline-offset: 1px; transition: outline-color .12s ease; }
-.call-dock-person.is-speaking .call-dock-avatar > .player-avatar { outline-color: #70eda1; }
-.call-dock-muted-mark, .call-dock-voice-mark { position: absolute; left: -3px; bottom: -2px; display: inline-flex; align-items: center; justify-content: center; border-radius: 8px; width: 16px; height: 15px; background: #173d36; color: #f6d5bd; border: 1px solid #45635a; }
-.call-dock-voice-mark { gap: 1px; background: #73e7a1; color: #153d38; border-color: #153d38; }
+.call-dock-person { flex-direction: column; touch-action: none; user-select: none; -webkit-user-select: none; }
+.call-dock-avatar { display: inline-flex; position: relative; width: 36px; height: 36px; border-radius: 50%; }
+.call-dock-avatar > .player-avatar { border-radius: 50% !important; opacity: .82; outline: 2px solid transparent; outline-offset: 1px; transition: outline-color .12s ease, opacity .12s ease, box-shadow .12s ease; }
+.call-dock-person.is-speaking { background: #214b3699; border-color: #73edac70; }
+.call-dock-person.is-speaking .call-dock-avatar > .player-avatar { opacity: 1; outline-color: #64f19a; box-shadow: 0 0 10px #4fe58e6b; }
+.call-dock-person:focus-visible .call-dock-avatar > .player-avatar, .call-dock-person:hover .call-dock-avatar > .player-avatar { opacity: 1; }
+.call-dock-muted-mark, .call-dock-voice-mark { position: absolute; left: -3px; bottom: -2px; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; width: 16px; height: 16px; background: #3c3038ed; color: #ffd4c5; border: 1px solid #ffffff66; }
+.call-dock-voice-mark { gap: 1px; background: #64f19a; color: #173b29; border-color: #173b29; }
 .call-dock-voice-mark > i { width: 2px; height: 4px; background: currentColor; border-radius: 1px; }
 .call-dock-voice-mark > i:nth-child(2) { height: 9px; }
 .call-dock-voice-mark > i:nth-child(3) { height: 6px; }
-.call-dock-person.is-promoted { min-height: 57px; }
-.call-dock-promoted-name { display: block; width: 42px; max-width: 42px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; font-size: 10px; font-weight: 600; line-height: 13px; }
+.call-dock-person.is-promoted { margin-bottom: 13px; }
+.call-dock-promoted-name { position: absolute; top: 44px; left: -4px; display: block; box-sizing: border-box; width: 50px; max-width: 50px; padding: 0 3px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; border-radius: 7px; background: #17202db3; color: #fff; font-size: 10px; font-weight: 600; line-height: 13px; pointer-events: none; }
 .call-dock-button.has-speaking { color: #9bffc0; }
 .call-dock-more-speaking { position: absolute; bottom: 2px; left: 2px; min-width: 13px; padding: 1px 2px; border-radius: 8px; background: #7de5a1; color: #133e33; font-size: 9px; line-height: 12px; }
 .call-dock-small-count { position: absolute; bottom: 3px; left: 4px; min-width: 12px; border-radius: 6px; background: #173e37; font-size: 10px; line-height: 12px; }
-.call-dock-collapse { color: #a3c6ba; }
+.call-dock-collapse { color: #e0e9ef; }
 .call-dock-error-marker { position: absolute; top: 5px; left: 2px; width: 15px; height: 15px; padding: 0; border: 0; border-radius: 50%; background: #f6ba9c; color: #503527; font-size: 11px; font-weight: 800; pointer-events: none; }
 .call-dock-sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 .call-dock.is-connecting .call-dock-avatar { opacity: .7; }
@@ -55,5 +57,5 @@
 .call-inline-summary strong, .call-inline-summary small { display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .call-inline-summary strong { font-size: 13px; }
 .call-inline-summary small { margin-top: 3px; color: #bad3c4; font-size: 11px; }
-.call-inline-controls .call-dock-button { border-radius: 12px; }
+.call-inline-controls .call-dock-button { border-color: transparent; border-radius: 12px; background: transparent; box-shadow: none; -webkit-backdrop-filter: none; backdrop-filter: none; }
 @media (prefers-reduced-motion: reduce) { .call-dock-avatar > .player-avatar { transition: none; } }

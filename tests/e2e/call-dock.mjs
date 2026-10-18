@@ -79,28 +79,38 @@ const server = http.createServer(async (req, res) => {
 });
 await new Promise(resolve => server.listen(0, '127.0.0.1', resolve));
 const origin = `http://127.0.0.1:${server.address().port}`;
-const out = path.resolve(process.env.CALL_DOCK_SCREENSHOT_DIR || '.cache/call-dock-e2e'); await fs.mkdir(out, { recursive: true });
-const settle = page => page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))));
+const out = path.resolve(process.env.CALL_DOCK_SCREENSHOT_DIR || '.cache/floating-call-bubbles-e2e'); await fs.mkdir(out, { recursive: true });
+const settle = page => page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(() => requestAnimationFrame(resolve)))));
 const visibleIds = page => page.getByTestId('call-dock-participant').evaluateAll(elements => elements.map(el => el.dataset.userId));
 async function noOverflow(page, label) { assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1), `${label}: no horizontal overflow`); }
 async function patch(page, value) { await page.evaluate(value => window.fixture.patchMedia(value), value); await settle(page); }
 async function geometry(page, label) {
   await noOverflow(page, label);
   const dock = await page.getByTestId('call-dock').boundingBox(); assert.ok(dock, `${label}: dock visible`);
-  assert.ok(dock.x >= (await page.evaluate(() => innerWidth)) - 57 && dock.x + dock.width <= (await page.evaluate(() => innerWidth)) + 1, `${label}: physical right gutter ${JSON.stringify(dock)}`);
-  const problems = await page.locator('.game-frame button,.game-frame input,.game-frame select,.game-frame textarea').evaluateAll((elements, dock) => elements.filter(el => { const b = el.getBoundingClientRect(), style = getComputedStyle(el); return b.width > 0 && b.height > 0 && style.visibility !== 'hidden' && style.display !== 'none' && b.right > dock.x + 1 && b.left < dock.x + dock.width && b.bottom > dock.y && b.top < dock.y + dock.height; }).map(el => ({ text: el.getAttribute('aria-label') || el.textContent?.slice(0, 70), rect: el.getBoundingClientRect().toJSON() })), dock);
-  assert.deepEqual(problems, [], `${label}: game controls must not overlap the dock`);
+  const viewport = await page.evaluate(() => ({ width: visualViewport.width, height: visualViewport.height, left: visualViewport.offsetLeft, top: visualViewport.offsetTop }));
+  assert.ok(dock.x >= viewport.left - 1 && dock.x + dock.width <= viewport.left + viewport.width + 1 && dock.y >= viewport.top - 1 && dock.y + dock.height <= viewport.top + viewport.height + 1, `${label}: floating bubbles stay in visual viewport ${JSON.stringify({ dock, viewport })}`);
+  const layout = await page.getByTestId('call-game-viewport').evaluate(el => { const active = el.getBoundingClientRect().width, attr = document.documentElement.getAttribute('data-call-dock-active'); document.documentElement.removeAttribute('data-call-dock-active'); const inactive = el.getBoundingClientRect().width; if (attr !== null) document.documentElement.setAttribute('data-call-dock-active', attr); return { active, inactive, viewport: innerWidth }; });
+  assert.ok(Math.abs(layout.active - layout.inactive) < 1 && Math.abs(layout.active - layout.viewport) < 1, `${label}: call overlay reserves no game width ${JSON.stringify(layout)}`);
+  assert.equal(await page.getByTestId('call-dock').evaluate(el => getComputedStyle(el).pointerEvents), 'none', `${label}: transparent parent does not intercept the game`);
   const launcher = await page.locator('.lamma-launcher').boundingBox(); assert.ok(launcher, `${label}: friends remain reachable`);
-  assert.ok(launcher.x >= (await page.evaluate(() => innerWidth)) - 56 && launcher.x + launcher.width <= (await page.evaluate(() => innerWidth)) + 1, `${label}: friends launcher stays inside physical right gutter`);
+  assert.ok(launcher.x >= -1 && launcher.x + launcher.width <= (await page.evaluate(() => innerWidth)) + 1, `${label}: friends launcher stays inside the screen`);
   assert.ok(launcher.width >= 44 && launcher.height >= 44, `${label}: friends launcher has a 44px target`);
   const launcherAvatars = await page.locator('.lamma-launcher-faces > .player-avatar').evaluateAll(elements => elements.filter(el => getComputedStyle(el).display !== 'none' && getComputedStyle(el).visibility !== 'hidden' && el.getBoundingClientRect().width > 0).map(el => el.getBoundingClientRect().toJSON()));
   assert.equal(launcherAvatars.length, 1, `${label}: compact launcher paints exactly one avatar despite inline avatar styles`);
   const launcherChildOverflow = await page.locator('.lamma-launcher *').evaluateAll(elements => elements.filter(el => { const style = getComputedStyle(el), rect = el.getBoundingClientRect(); return style.display !== 'none' && style.visibility !== 'hidden' && rect.width > 0 && rect.height > 0 && (rect.left < innerWidth - 56 - 1 || rect.right > innerWidth + 1 || rect.top < -1 || rect.bottom > innerHeight + 1); }).map(el => ({ className: el.getAttribute('class'), rect: el.getBoundingClientRect().toJSON() })));
-  assert.deepEqual(launcherChildOverflow, [], `${label}: painted launcher children stay inside the viewport and reserved gutter`);
-  assert.ok(dock.y + dock.height <= launcher.y + 1 || launcher.y + launcher.height <= dock.y + 1, `${label}: call rail and launcher do not overlap`);
-  const launcherProblems = await page.locator('.game-frame button,.game-frame input,.game-frame select,.game-frame textarea').evaluateAll((elements, launcher) => elements.filter(el => { const b = el.getBoundingClientRect(), style = getComputedStyle(el); return b.width > 0 && b.height > 0 && style.visibility !== 'hidden' && style.display !== 'none' && b.right > launcher.x + 1 && b.left < launcher.x + launcher.width && b.bottom > launcher.y && b.top < launcher.y + launcher.height; }).map(el => ({ text: el.getAttribute('aria-label') || el.textContent?.slice(0, 70), rect: el.getBoundingClientRect().toJSON() })), launcher);
-  assert.deepEqual(launcherProblems, [], `${label}: game controls must not overlap the friends launcher`);
-  const width = await page.locator('.game-frame').evaluate(el => el.getBoundingClientRect().right); assert.ok(width <= dock.x + 1, `${label}: frame reserves gutter`);
+  assert.deepEqual(launcherChildOverflow, [], `${label}: painted launcher children stay inside the viewport`);
+}
+async function clickThroughGap(page) {
+  const point = await page.getByTestId('call-dock').evaluate(el => { const buttons = [...el.querySelectorAll('button')].map(button => button.getBoundingClientRect()).sort((a,b) => a.top - b.top); const first = buttons[0], next = buttons.find(button => button.top > first.bottom + 1); return next ? { x: first.x + first.width / 2, y: (first.bottom + next.top) / 2 } : { x: el.getBoundingClientRect().left + 1, y: el.getBoundingClientRect().top + 1 }; });
+  await page.evaluate(({x,y}) => { const button = document.createElement('button'); button.id='behind-call-gap';button.style.cssText=`position:fixed;left:${x-1}px;top:${y-1}px;width:2px;height:2px;padding:0;border:0;z-index:350`;button.addEventListener('click',()=>window.gapClicked=true);document.body.append(button); }, point);
+  await page.mouse.click(point.x, point.y);
+  assert.equal(await page.evaluate(() => window.gapClicked), true, 'the transparent gap passes pointer input to the game underneath');
+  await page.evaluate(() => document.getElementById('behind-call-gap').remove());
+}
+async function dragDock(page, locator, dx, dy) {
+  const box = await locator.boundingBox(), before = await page.getByTestId('call-dock').boundingBox();
+  await page.mouse.move(box.x + box.width / 2, box.y + box.height / 2); await page.mouse.down(); await page.mouse.move(box.x + box.width / 2 + dx, box.y + box.height / 2 + dy, { steps: 10 }); await page.mouse.up(); await settle(page);
+  return { before, after: await page.getByTestId('call-dock').boundingBox() };
 }
 async function screenshot(page, name) { await page.evaluate(() => document.fonts.ready); await page.screenshot({ path: path.join(out, name + '.png') }); }
 async function startFabraka(page) {
@@ -112,13 +122,20 @@ async function startFabraka(page) {
 async function inputKeyboardCollapse(page) {
   // A focused ordinary input exercises the shared dock viewport listener. The
   // real social composer is separately checked below with the drawer mounted.
+  await page.getByTestId('call-dock-drag').press('End'); await page.getByTestId('call-dock-drag').press('ArrowLeft'); await settle(page);
+  const before = await page.getByTestId('call-dock').boundingBox();
   await page.evaluate(() => { const input = document.createElement('input'); input.id = 'keyboard-fixture'; input.setAttribute('aria-label', 'حقل اختبار الكيبورد'); input.style.cssText = 'position:fixed;left:8px;bottom:8px;width:180px;font-size:16px'; document.body.append(input); input.focus(); window.setFixtureViewport({ height: 420, offsetTop: 24 }); });
   await page.waitForFunction(() => document.querySelector('[data-testid="call-dock"]')?.dataset.keyboard === 'true');
+  await settle(page);
   assert.equal(await page.getByTestId('call-dock').getAttribute('data-collapsed'), 'true', 'keyboard automatically compacts the rail');
   await noOverflow(page, 'keyboard compact');
+  const compact = await page.getByTestId('call-dock').boundingBox();
+  assert.ok(compact.y + compact.height <= 444 + 1, `keyboard clamps the displayed bubbles to the visible viewport ${JSON.stringify(compact)}`);
   await page.evaluate(() => { document.getElementById('keyboard-fixture').remove(); window.setFixtureViewport({ height: 844, offsetTop: 0 }); });
   await page.waitForFunction(() => document.querySelector('[data-testid="call-dock"]')?.dataset.keyboard === 'false');
   assert.equal(await page.getByTestId('call-dock').getAttribute('data-collapsed'), 'false', 'keyboard dismissal restores the previous expanded state');
+  await settle(page); const after = await page.getByTestId('call-dock').boundingBox();
+  assert.ok(Math.abs(before.x-after.x)<1 && Math.abs(before.y-after.y)<1, 'keyboard dismissal restores the preferred two-dimensional position');
 }
 async function exerciseGame(page, id, label) {
   if (id === 'badeeha') {
@@ -170,6 +187,11 @@ async function run(browser, name) {
     const buttonBoxes = await page.getByTestId('call-dock').locator('button').evaluateAll(elements => elements.map(el => ({ text: el.getAttribute('aria-label'), width: el.getBoundingClientRect().width, height: el.getBoundingClientRect().height })));
     assert.ok(buttonBoxes.every(box => box.width >= 44 && box.height >= 44), `rail targets at least44px ${JSON.stringify(buttonBoxes)}`);
     await geometry(page, 'initial390'); await screenshot(page, `${name}-12-participants`);
+    const style = await page.getByTestId('call-dock-participant').first().evaluate(el => { const button=getComputedStyle(el), parent=getComputedStyle(el.closest('.call-dock')), avatar=getComputedStyle(el.querySelector('.player-avatar')); return { radius: button.borderRadius, background: button.backgroundColor, parentBackground: parent.backgroundColor, parentShadow: parent.boxShadow, avatarRadius: avatar.borderRadius, pointer: button.pointerEvents }; });
+    assert.equal(style.radius, '50%', 'participant controls are true circles'); assert.equal(style.avatarRadius, '50%', 'profile photos are circular');
+    assert.match(style.background, /rgba\(.+,\s*0\.\d+\)/, 'bubbles have a semi-transparent background');
+    assert.match(style.parentBackground, /rgba\(.+,\s*0\)/, 'no opaque strip joins the bubbles'); assert.equal(style.parentShadow, 'none'); assert.equal(style.pointer, 'auto');
+    await clickThroughGap(page);
     const media = await page.evaluate(() => window.fixture.getMedia());
     await patch(page, { participants: [...media.participants].reverse() });
     assert.deepEqual(await visibleIds(page), initialIds, 'transport reorder does not move participant slots');
@@ -181,6 +203,8 @@ async function run(browser, name) {
     assert.match(await page.getByTestId('call-dock-more').getAttribute('aria-label'), /8 آخرون.*1 يتحدثون الآن/, 'additional speakers/count is accessible');
     assert.ok(await page.locator('[data-testid="call-dock-participant"][data-user-id="person-1"][data-speaking="true"]').count());
     assert.equal(await page.locator('[data-testid="call-dock-participant"][data-speaking="true"]').count(), 2, 'simultaneous visible speakers are highlighted together');
+    const speakingColor = await page.locator('[data-testid="call-dock-participant"][data-speaking="true"] .player-avatar').first().evaluate(el => getComputedStyle(el).outlineColor);
+    const rgb = speakingColor.match(/[\d.]+/g).map(Number); assert.ok(rgb[1] > rgb[0] && rgb[1] > rgb[2], 'active speaker ring is green');
     await screenshot(page, `${name}-speaking`);
     await patch(page, { participants: media.participants.map(person => ({ ...person, speaking: person.userId === 'person-1', muted: person.userId === 'person-1' })) });
     assert.equal(await page.locator('[data-testid="call-dock-participant"][data-user-id="person-1"][data-speaking="true"]').count(), 0, 'muted never speaks');
@@ -204,18 +228,24 @@ async function run(browser, name) {
     const audioBefore = await page.evaluate(() => nativeLog.filter(event => /socialCall(Mute|End|Speaker|Connect)/.test(event.type)).length);
     await page.getByTestId('call-dock-collapse').click(); await settle(page); assert.equal(await page.getByTestId('call-dock-participant').count(), 0);
     await geometry(page, 'collapsed390');
-    const handle = await page.getByTestId('call-dock-drag').boundingBox(), dockBefore = await page.getByTestId('call-dock').boundingBox();
-    await page.mouse.move(handle.x + handle.width / 2, handle.y + handle.height / 2); await page.mouse.down(); await page.mouse.move(handle.x + handle.width / 2, Math.min(650, handle.y + 130), { steps: 8 }); await page.mouse.up(); await settle(page);
-    const dockAfter = await page.getByTestId('call-dock').boundingBox(); assert.ok(Math.abs(dockAfter.y - dockBefore.y) > 30, 'drag moves rail vertically');
+    const moved = await dragDock(page, page.getByTestId('call-dock-drag'), -130, 130);
+    assert.ok(Math.abs(moved.after.y - moved.before.y) > 30 && Math.abs(moved.after.x - moved.before.x) > 30, 'grip drags bubbles freely on both axes');
+    assert.equal(await page.locator('.call-controls-dialog').count(), 0, 'dragging does not open call controls');
+    const keyboardBefore = await page.getByTestId('call-dock').boundingBox(); await page.getByTestId('call-dock-drag').press('ArrowLeft'); await page.getByTestId('call-dock-drag').press('ArrowDown'); await settle(page); const keyboardAfter=await page.getByTestId('call-dock').boundingBox();
+    assert.ok(keyboardAfter.x < keyboardBefore.x && keyboardAfter.y > keyboardBefore.y, 'keyboard arrows move both axes');
     await page.getByTestId('call-dock-drag').press('End'); await settle(page); await geometry(page, 'dragged to bottom');
     assert.equal(await page.evaluate(() => nativeLog.filter(event => /socialCall(Mute|End|Speaker|Connect)/.test(event.type)).length), audioBefore, 'collapse/drag never changes audio');
     await page.getByTestId('call-dock-collapse').click(); await settle(page);
+    const avatarMoved = await dragDock(page, page.getByTestId('call-dock-participant').first(), 60, -100);
+    assert.ok(Math.abs(avatarMoved.after.x - avatarMoved.before.x)>30 && Math.abs(avatarMoved.after.y-avatarMoved.before.y)>30, 'a participant circle can directly drag the floating group');
+    assert.equal(await page.locator('.call-controls-dialog').count(), 0, 'dragging an avatar suppresses its click action');
+    await geometry(page, 'avatar-dragged'); await screenshot(page, `${name}-moved-bubbles`);
     await patch(page, { error: 'اضغط تشغيل الصوت لسماع المكالمة.' });
     await page.getByTestId('call-dock-participant').first().click(); await page.getByTestId('call-dock-resume').click(); await page.waitForFunction(() => !window.fixture.getMedia().error);
     assert.equal(await page.locator('.call-controls-dialog').getByRole('button', { name: 'إنهاء المكالمة', exact: true }).count(), 1, 'end remains accessible in expanded controls');
     await page.locator('.call-controls-dialog').getByTestId('call-dock-end').click(); await page.getByTestId('call-dock').waitFor({ state: 'detached' });
     await patch(page, { state: 'connected', error: '', muted: false }); await page.getByTestId('call-dock').waitFor();
-    assert.equal(await page.getByTestId('call-dock').evaluate(el => el.style.transform), 'translateY(0px)', 'new call resets the drag position');
+    const reset = await page.getByTestId('call-dock').boundingBox(); assert.ok(reset.x >= 330 && reset.y < 20, 'new call resets to the default physical right/top position');
     assert.equal(await page.getByTestId('call-dock').getAttribute('data-collapsed'), 'false', 'new call resets collapse');
     assert.ok(await page.evaluate(() => nativeLog.some(event => event.type === 'socialCallEnd')), 'end control reaches existing media action');
     await page.evaluate(() => window.fixture.private()); await settle(page);
@@ -263,10 +293,16 @@ async function run(browser, name) {
     await page.waitForTimeout(300); assert.equal(await page.evaluate(() => window.interruption.getSnapshot().turnDeadline), onlineDeadline, 'online deadline stays authoritative');
     await page.keyboard.press('Escape'); await page.locator('.call-controls-dialog').waitFor({ state: 'detached' });
     await page.evaluate(() => window.fixture.setOwner(null)); await page.getByTestId('call-dock').waitFor({ state: 'detached' });
-    assert.equal(await page.getByTestId('call-inline-controls').count(), 0); assert.equal(await page.locator('html').getAttribute('data-call-dock-active'), null, 'logout releases gutter');
+    assert.equal(await page.getByTestId('call-inline-controls').count(), 0); assert.equal(await page.locator('html').getAttribute('data-call-dock-active'), null, 'logout clears active-call layout state');
     assert.equal(await page.locator('[data-user-id="person-10"]').count(), 0, 'logout removes participant details');
-    assert.deepEqual(errors, []); console.log(`PASS ${name}:2/12participants,stable/speaking/muted/reconnecting,controls/drag/privacy,inline keyboard,6game setup+active geometry,real timer andlogout`);
-    await fs.writeFile(path.join(out, `${name}-summary.json`), JSON.stringify({ browser: name, passed: true, completedAt: new Date().toISOString(), viewportSizes: [[375,667],[390,844],[844,390]], actualGames: ['badeeha','beep','mamnoo','jabeen','fabraka','meenfina'], gameScreens: ['setup','active'], participantCounts: [2,12], physicalKeyboard: false, liveSFU: false, accountCleanup: true }, null, 2));
+    await page.evaluate(() => window.fixture.setOwner('other-account')); await settle(page);
+    assert.equal(await page.getByTestId('call-dock').count(), 0, 'a different account cannot inherit the previous native call');
+    await page.evaluate(() => window.fixture.setOwner('me')); await page.getByTestId('call-dock').waitFor(); await settle(page);
+    const relogin = await page.getByTestId('call-dock').boundingBox();
+    assert.ok(relogin.x >= 330 && relogin.y < 20, 'switching accounts resets the floating position');
+    assert.equal(await page.getByTestId('call-dock').getAttribute('data-collapsed'), 'false', 'switching accounts resets collapse');
+    assert.deepEqual(errors, []); console.log(`PASS ${name}:2/12participants,circular/translucent/click-through,speaking/muted/reconnecting,2Dgrip+avatar+keyboarddrag,keyboardpositionrestore,6game setup+active fullwidth,real timer andlogout`);
+    await fs.writeFile(path.join(out, `${name}-summary.json`), JSON.stringify({ browser: name, passed: true, completedAt: new Date().toISOString(), viewportSizes: [[375,667],[390,844],[844,390]], actualGames: ['badeeha','beep','mamnoo','jabeen','fabraka','meenfina'], gameScreens: ['setup','active'], participantCounts: [2,12], freeTwoAxisMovement: true, circleButtons: true, translucentBubbles: true, pointerGapPassthrough: true, gameWidthUnchanged: true, keyboardRestoresPreferredPosition: true, physicalKeyboard: false, liveSFU: false, accountCleanup: true }, null, 2));
   } catch (error) { await screenshot(page, `${name}-failure`); await fs.writeFile(path.join(out, `${name}-failure.txt`), await page.locator('body').innerText()); await fs.writeFile(path.join(out, `${name}-failure.json`), JSON.stringify(await page.evaluate(() => ({ scrollY, viewport: { height: visualViewport.height, top: visualViewport.offsetTop }, nodes: [...document.querySelectorAll('.dialog-host,.modal-layer,.modal,.modal-body,[data-testid="call-dock-resume"]')].map(el => ({ tag: el.className, inline: el.style.cssText, rect: el.getBoundingClientRect().toJSON(), scrollTop: el.scrollTop, scrollHeight: el.scrollHeight, clientHeight: el.clientHeight, height: getComputedStyle(el).height, maxHeight: getComputedStyle(el).maxHeight, overflow: getComputedStyle(el).overflow, transform: getComputedStyle(el).transform })) })), null, 2)); throw error; }
   finally { await context.close(); }
 }

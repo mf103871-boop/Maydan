@@ -53,3 +53,14 @@ export function dockCapacity(availableHeight, participantCount) {
 export function clampDockPosition(position, availableHeight, dockHeight) {
   return Math.max(0, Math.min(Number(position) || 0, Math.max(0, (Number(availableHeight) || 0) - (Number(dockHeight) || 0))));
 }
+
+// Null X starts on the physical right. Keep the preferred position separately:
+// a keyboard or rotation may temporarily reduce the space without losing it.
+export function clampFloatingDockPosition(position = {}, bounds = {}) {
+  const size = value => Number.isFinite(Number(value)) ? Math.max(0, Number(value)) : 0;
+  const maxX = Math.max(0, size(bounds.width) - size(bounds.dockWidth));
+  const maxY = Math.max(0, size(bounds.height) - size(bounds.dockHeight));
+  const x = position.x == null || !Number.isFinite(Number(position.x)) ? maxX : Number(position.x);
+  const y = Number.isFinite(Number(position.y)) ? Number(position.y) : 0;
+  return { x: Math.max(0, Math.min(x, maxX)), y: Math.max(0, Math.min(y, maxY)) };
+}

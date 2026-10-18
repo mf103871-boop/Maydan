@@ -4,8 +4,8 @@ import callViewportCss from './call-viewport.css';
 const owners = new Set();
 let previousAttribute = null;
 
-// The space belongs to the whole call, not to its expanded/collapsed UI. Keeping
-// the route wrapper mounted also keeps a match and its input drafts intact.
+// Mark the shell for compact call-time controls without changing game width.
+// Keeping the route wrapper mounted preserves matches and input drafts.
 export function useCallDockLayout(active) {
   useLayoutEffect(() => {
     if (!active || typeof document === 'undefined') return undefined;
