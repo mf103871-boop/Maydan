@@ -49,6 +49,7 @@ import React,{useState,useEffect,useSyncExternalStore} from 'react';import{creat
 import{AccountContext,NULL_ACCOUNT}from'./src/shared/account/context.js';import{PlatformContext}from'./src/platform/context.js';
 import{SocialProvider}from'./src/social/SocialProvider.jsx';import{LammaProvider}from'./src/social/LammaProvider.jsx';import{SocialUIProvider,useSocialUI}from'./src/social/SocialUIProvider.jsx';import{ProfileProvider}from'./src/profiles/ProfileProvider.jsx';import{SocialHost}from'./src/social/SocialHost.jsx';import{socialInterruption}from'./src/social/interruption.js';import{navigate,useRoute}from'./src/platform/router.js';
 import{BrandFonts}from'./src/shared/brand/art.jsx';import css from'./src/shared/ui/ui.css';import tokens from'./src/shared/theme/tokens.css';import brand from'./src/shared/brand/brand.css';
+window.interruption=socialInterruption;
 const platform={sound:{play(){},setDucking(){}},toast(){},settings:{},roster:[],haptics:{vibrate(){}},storage:{get(){},set(){}}};
 const request=async(path,options={})=>{const r=await fetch(path,{method:options.method||'GET',headers:{'content-type':'application/json'},body:options.body===undefined?undefined:JSON.stringify(options.body)});if(options.raw)return r;const data=await r.json();if(data.error)throw Object.assign(new Error(data.error),{code:data.error});return data};
 function Screen(){const route=useRoute(),ui=useSocialUI();window.fixture={...window.fixture,navigate,show:ui.show,chat:ui.openChat,group:ui.openGroup,close:ui.close,reset:ui.resetSection,state:()=>({open:ui.open,presentation:ui.presentation,view:ui.view,drafts:ui.drafts,listState:ui.listState})};useEffect(()=>{socialInterruption.setContext({local:route.name==='play'});return()=>socialInterruption.setContext({local:false})},[route.name]);return <>{['friends','friend-group'].includes(route.name)?<div data-social-page-slot/>:<main><h1>{route.name}</h1><button onClick={()=>ui.show()}>افتح الأصدقاء</button></main>}<nav aria-label="التنقل التجريبي"><button onClick={()=>navigate('/')}>الألعاب</button><button onClick={()=>navigate('/friends')}>الأصدقاء</button><button onClick={()=>navigate('/store')}>المتجر</button><button onClick={()=>navigate('/settings')}>الإعدادات</button></nav></>}
@@ -75,7 +76,7 @@ try {
   await panel.getByRole('button',{name:'محادثة مع أحمد',exact:true}).waitFor();
   assert.equal(await page.locator('#root').evaluate(el=>el.inert),false);
   assert.notEqual(await page.locator('body').evaluate(el=>el.style.overflow),'hidden');
-  assert.equal(await page.evaluate(()=>window.interruption?.getSnapshot().open||false),false);
+  assert.equal(await page.evaluate(()=>window.interruption.getSnapshot().open),false);
   await page.getByRole('textbox',{name:'البحث في اللّمة'}).fill('ليان');
   await page.getByRole('navigation',{name:'التنقل التجريبي'}).getByRole('button',{name:'المتجر',exact:true}).click();
   await panel.waitFor({state:'detached'});
@@ -95,7 +96,6 @@ try {
   await page.waitForFunction(()=>document.querySelector('.lamma-list-scroll').scrollTop===0);
   await page.screenshot({path:path.join(out,'friends-page-landscape.png')});
   await page.setViewportSize({width:390,height:844});
-  await page.evaluate(()=>document.fonts.ready);await page.screenshot({path:path.join(out,'friends-page.png')});
   await page.getByRole('button',{name:'محادثة مع أحمد',exact:true}).click();
   await page.getByRole('textbox',{name:'اكتب رسالة'}).fill('مسودة الصفحة تبقى معي');
   assert.equal(await page.evaluate(()=>location.hash),'#/friends/friend');
@@ -114,7 +114,7 @@ try {
   assert.equal(await page.evaluate(()=>location.hash),'#/friends/group/group-1');
   await page.reload();await page.getByText('أهلًا بالشلّة!',{exact:true}).waitFor();
   await page.getByRole('button',{name:'العودة للّمة',exact:true}).click();
-  await page.evaluate(()=>document.fonts.ready);await page.screenshot({path:path.join(out,'friends-groups-page.png')});
+  await page.evaluate(()=>document.fonts.ready);await page.screenshot({path:path.join(out,'friends-page.png')});
   await page.evaluate(()=>window.fixture.navigate('/play/fabraka'));
   await page.getByRole('heading',{name:'play',exact:true}).waitFor();
   await page.evaluate(()=>window.fixture.chat('friend'));
