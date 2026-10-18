@@ -1,0 +1,134 @@
+{
+  "schemaVersion": 1,
+  "kind": "ersomha-api-storage",
+  "runId": "3c02e650-1180-4ccb-9c91-8e4d1e9ac380",
+  "startedAt": "2026-10-18T22:29:22.040Z",
+  "previewOrigin": "https://maydan-lamma-preview.mf103871.workers.dev",
+  "scope": "Real remote preview Worker, isolated D1 and authenticated WebSocket peers; synthetic fixtures only",
+  "checks": [
+    {
+      "name": "two-player-cooperative",
+      "passed": true,
+      "scope": "remote-preview",
+      "details": {
+        "completedMatches": 1,
+        "solvedTurns": 2,
+        "physicalTrial": false
+      }
+    },
+    {
+      "name": "three-to-eight-competitive",
+      "passed": true,
+      "scope": "remote-preview",
+      "details": {
+        "completeMatchSizes": [
+          3,
+          8
+        ],
+        "authenticatedLobbySizes": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "note": "Boundary matches exercise competitive scoring; intermediate population sizes are admission/lobby checks, not six separate full-match trials."
+      }
+    },
+    {
+      "name": "eight-authenticated-peers",
+      "passed": true,
+      "scope": "remote-preview",
+      "details": {
+        "distinctAccountSessions": 8,
+        "simultaneousAuthenticatedWebSockets": 8
+      }
+    },
+    {
+      "name": "server-only-choices",
+      "passed": true,
+      "scope": "remote-preview",
+      "details": {
+        "turnsChecked": 13,
+        "selectedWordOnlyOnDrawerBeforeReveal": true,
+        "noBankOrEditorialEvidenceInSnapshots": true
+      }
+    },
+    {
+      "name": "history-no-repeat",
+      "passed": true,
+      "scope": "remote-preview",
+      "details": {
+        "turnsChecked": 13,
+        "exclusions": "Exact union of persisted account concept/family history before each match and all offered within-match families."
+      }
+    },
+    {
+      "name": "private-drawing-reports",
+      "passed": true,
+      "scope": "remote-preview",
+      "details": {
+        "persistedReports": 1,
+        "idempotentRetry": true,
+        "unauthorizedApiReadsDenied": true,
+        "answerExcludedFromEvidence": true
+      }
+    },
+    {
+      "name": "concurrent-account-lock",
+      "passed": true,
+      "scope": "remote-preview",
+      "details": {
+        "competingRooms": 2,
+        "sharedAuthenticatedAccounts": 2,
+        "exactlyOneWinner": true
+      }
+    },
+    {
+      "name": "history-exhaustion-safe",
+      "passed": true,
+      "scope": "remote-preview",
+      "details": {
+        "remoteFaultInjection": "Synthetic fixture history saturation in isolated preview D1 only",
+        "silentReplay": false,
+        "trialConsumed": false
+      }
+    },
+    {
+      "name": "stale-lease-fencing",
+      "passed": false,
+      "scope": "remote-preview",
+      "error": "The validation function is expected to return \"true\". Received false"
+    },
+    {
+      "name": "account-and-report-cleanup",
+      "passed": true,
+      "scope": "remote-preview",
+      "details": {
+        "accountDeletionViaAuthenticatedApi": true,
+        "closedRoomsVerifiedViaDeniedRejoin": 8,
+        "d1ZeroCountsVerified": true
+      }
+    }
+  ],
+  "passed": false,
+  "authenticatedPeers": 8,
+  "cleanup": {
+    "remainingUsersAndSessions": 0,
+    "remainingRooms": 0,
+    "remainingReports": 0,
+    "remainingLeases": 0,
+    "remainingHistory": 0,
+    "verificationFailed": false
+  },
+  "physicalDeviceTrialCompleted": false,
+  "sourceCommit": "ae2652180e2896c0483052a3fe5e551bd3966f8e",
+  "sourceServerTree": "4e7c95a26cd68045ef7a503699ec86c4178e45d5",
+  "backendTreeSha256": "536dce48ccfa8eda40f0b8e03602f8e1d7bafef55710781d7f0df0a2c9ef90e1",
+  "testedModuleSHA256": "c0a75e11239707201fd3fd69fbd3f7787668dd1a1365a959aa1246b4523d858b",
+  "previewDeploymentVersion": "2de455e4-1a8f-40d2-96a4-6bf3dc57e8bb",
+  "error": "FAILED stale-lease-fencing",
+  "finishedPreviewDeploymentVersion": "2de455e4-1a8f-40d2-96a4-6bf3dc57e8bb",
+  "finishedAt": "2026-10-18T22:33:15.749Z"
+}

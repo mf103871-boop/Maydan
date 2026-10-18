@@ -1,0 +1,13 @@
+{
+  "ok": true,
+  "buildId": "08126e51-9288-4ce7-bfaa-0da4b7443524",
+  "version": "1.8",
+  "buildNumber": "19",
+  "method": "Saved existing build localization in App Store Connect UI, observed disabled Saved button, then independently read exact content with official GET build/betaBuildLocalizations.",
+  "locale": "en-US",
+  "characters": 929,
+  "notesUtf8SHA256": "1956bb16f4c984f0a6582c6619a7c53d383998cf3807dd144ccc319ebd17ee30",
+  "apiReceiptSHA256": "b4af50d8c5350acc79da1306fcf8a6491699b2a10681a675afb17c14deae425a",
+  "screenshotAvailable": false,
+  "screenshotLimitation": "Final UI screenshot returned a zero-width viewport; saved state was confirmed by accessibility UI and independent official API content readback."
+}

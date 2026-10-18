@@ -1,0 +1,612 @@
+{
+  "schemaVersion": 1,
+  "kind": "ersomha-local-planner-history-stress",
+  "passed": true,
+  "scope": "Actual buildErsomhaTurnPlan function and final private word bank; per-account history/exposure persistence simulated in local Maps only.",
+  "sourceCommit": "f23033d5364b6cdda1df851ed2aa9ee9bdbb69ba",
+  "bankVersion": 1,
+  "bankSha256": "a7d85eaad53e7ec6385b8394b1ccf62bf6ef8da75284e2141f3878b10bfd76b1",
+  "startedAt": "2026-10-18T22:41:36.899Z",
+  "finishedAt": "2026-10-18T22:41:45.648Z",
+  "elapsedMs": 8748.0745,
+  "fixtureSeed": "0x6572736f",
+  "plannerRandomness": "Actual production crypto.getRandomValues; fixture histories use a fixed local xorshift seed.",
+  "counters": {
+    "plannerCalls": 11181,
+    "plannerMs": 6394,
+    "oracleCalls": 4068,
+    "oracleMs": 66,
+    "coreSuccessfulMatches": 3633,
+    "coreCohortsExhausted": 264,
+    "coreTurns": 26067,
+    "allSuccessfulPlans": 9333,
+    "offeredOptions": 153318,
+    "selectedTurns": 28610,
+    "drawerChoiceWrites": 85830,
+    "selectedAllAccountWrites": 164692,
+    "historyRowsSeeded": 9648,
+    "distinctAccountHistoriesVerified": 264,
+    "explicitExhaustions": 1386,
+    "replayPlans": 924,
+    "strictFailuresOnUnchangedHistory": 264,
+    "restrictedFreshPlans": 2376,
+    "restrictedFreshFailures": 264,
+    "restrictedCategoryExhaustions": 660,
+    "twoCategoryFailures": 198,
+    "conceptOnlyChecks": 1200,
+    "familyOnlyChecks": 1200
+  },
+  "coverage": [
+    {
+      "players": 2,
+      "cycles": 1,
+      "difficulty": "easy",
+      "successfulMatches": 114,
+      "exhaustedCohorts": 2,
+      "replayChecks": 2,
+      "minimumMatchesPerCohort": 57,
+      "maximumMatchesPerCohort": 57
+    },
+    {
+      "players": 2,
+      "cycles": 1,
+      "difficulty": "medium",
+      "successfulMatches": 91,
+      "exhaustedCohorts": 1,
+      "replayChecks": 1,
+      "minimumMatchesPerCohort": 91,
+      "maximumMatchesPerCohort": 91
+    },
+    {
+      "players": 2,
+      "cycles": 1,
+      "difficulty": "hard",
+      "successfulMatches": 111,
+      "exhaustedCohorts": 3,
+      "replayChecks": 3,
+      "minimumMatchesPerCohort": 37,
+      "maximumMatchesPerCohort": 37
+    },
+    {
+      "players": 2,
+      "cycles": 2,
+      "difficulty": "easy",
+      "successfulMatches": 84,
+      "exhaustedCohorts": 3,
+      "replayChecks": 3,
+      "minimumMatchesPerCohort": 28,
+      "maximumMatchesPerCohort": 28
+    },
+    {
+      "players": 2,
+      "cycles": 2,
+      "difficulty": "medium",
+      "successfulMatches": 90,
+      "exhaustedCohorts": 2,
+      "replayChecks": 2,
+      "minimumMatchesPerCohort": 45,
+      "maximumMatchesPerCohort": 45
+    },
+    {
+      "players": 2,
+      "cycles": 2,
+      "difficulty": "hard",
+      "successfulMatches": 90,
+      "exhaustedCohorts": 5,
+      "replayChecks": 5,
+      "minimumMatchesPerCohort": 18,
+      "maximumMatchesPerCohort": 18
+    },
+    {
+      "players": 3,
+      "cycles": 1,
+      "difficulty": "easy",
+      "successfulMatches": 111,
+      "exhaustedCohorts": 3,
+      "replayChecks": 3,
+      "minimumMatchesPerCohort": 37,
+      "maximumMatchesPerCohort": 37
+    },
+    {
+      "players": 3,
+      "cycles": 1,
+      "difficulty": "medium",
+      "successfulMatches": 120,
+      "exhaustedCohorts": 2,
+      "replayChecks": 2,
+      "minimumMatchesPerCohort": 60,
+      "maximumMatchesPerCohort": 60
+    },
+    {
+      "players": 3,
+      "cycles": 1,
+      "difficulty": "hard",
+      "successfulMatches": 96,
+      "exhaustedCohorts": 4,
+      "replayChecks": 4,
+      "minimumMatchesPerCohort": 24,
+      "maximumMatchesPerCohort": 24
+    },
+    {
+      "players": 3,
+      "cycles": 2,
+      "difficulty": "easy",
+      "successfulMatches": 90,
+      "exhaustedCohorts": 5,
+      "replayChecks": 5,
+      "minimumMatchesPerCohort": 18,
+      "maximumMatchesPerCohort": 18
+    },
+    {
+      "players": 3,
+      "cycles": 2,
+      "difficulty": "medium",
+      "successfulMatches": 90,
+      "exhaustedCohorts": 3,
+      "replayChecks": 3,
+      "minimumMatchesPerCohort": 30,
+      "maximumMatchesPerCohort": 30
+    },
+    {
+      "players": 3,
+      "cycles": 2,
+      "difficulty": "hard",
+      "successfulMatches": 84,
+      "exhaustedCohorts": 7,
+      "replayChecks": 7,
+      "minimumMatchesPerCohort": 12,
+      "maximumMatchesPerCohort": 12
+    },
+    {
+      "players": 4,
+      "cycles": 1,
+      "difficulty": "easy",
+      "successfulMatches": 81,
+      "exhaustedCohorts": 3,
+      "replayChecks": 3,
+      "minimumMatchesPerCohort": 27,
+      "maximumMatchesPerCohort": 27
+    },
+    {
+      "players": 4,
+      "cycles": 1,
+      "difficulty": "medium",
+      "successfulMatches": 90,
+      "exhaustedCohorts": 2,
+      "replayChecks": 2,
+      "minimumMatchesPerCohort": 45,
+      "maximumMatchesPerCohort": 45
+    },
+    {
+      "players": 4,
+      "cycles": 1,
+      "difficulty": "hard",
+      "successfulMatches": 90,
+      "exhaustedCohorts": 5,
+      "replayChecks": 5,
+      "minimumMatchesPerCohort": 18,
+      "maximumMatchesPerCohort": 18
+    },
+    {
+      "players": 4,
+      "cycles": 2,
+      "difficulty": "easy",
+      "successfulMatches": 78,
+      "exhaustedCohorts": 6,
+      "replayChecks": 6,
+      "minimumMatchesPerCohort": 13,
+      "maximumMatchesPerCohort": 13
+    },
+    {
+      "players": 4,
+      "cycles": 2,
+      "difficulty": "medium",
+      "successfulMatches": 88,
+      "exhaustedCohorts": 4,
+      "replayChecks": 4,
+      "minimumMatchesPerCohort": 22,
+      "maximumMatchesPerCohort": 22
+    },
+    {
+      "players": 4,
+      "cycles": 2,
+      "difficulty": "hard",
+      "successfulMatches": 81,
+      "exhaustedCohorts": 9,
+      "replayChecks": 9,
+      "minimumMatchesPerCohort": 9,
+      "maximumMatchesPerCohort": 9
+    },
+    {
+      "players": 5,
+      "cycles": 1,
+      "difficulty": "easy",
+      "successfulMatches": 88,
+      "exhaustedCohorts": 4,
+      "replayChecks": 4,
+      "minimumMatchesPerCohort": 22,
+      "maximumMatchesPerCohort": 22
+    },
+    {
+      "players": 5,
+      "cycles": 1,
+      "difficulty": "medium",
+      "successfulMatches": 105,
+      "exhaustedCohorts": 3,
+      "replayChecks": 3,
+      "minimumMatchesPerCohort": 35,
+      "maximumMatchesPerCohort": 35
+    },
+    {
+      "players": 5,
+      "cycles": 1,
+      "difficulty": "hard",
+      "successfulMatches": 84,
+      "exhaustedCohorts": 6,
+      "replayChecks": 6,
+      "minimumMatchesPerCohort": 14,
+      "maximumMatchesPerCohort": 14
+    },
+    {
+      "players": 5,
+      "cycles": 2,
+      "difficulty": "easy",
+      "successfulMatches": 77,
+      "exhaustedCohorts": 7,
+      "replayChecks": 7,
+      "minimumMatchesPerCohort": 11,
+      "maximumMatchesPerCohort": 11
+    },
+    {
+      "players": 5,
+      "cycles": 2,
+      "difficulty": "medium",
+      "successfulMatches": 85,
+      "exhaustedCohorts": 5,
+      "replayChecks": 5,
+      "minimumMatchesPerCohort": 17,
+      "maximumMatchesPerCohort": 17
+    },
+    {
+      "players": 5,
+      "cycles": 2,
+      "difficulty": "hard",
+      "successfulMatches": 77,
+      "exhaustedCohorts": 11,
+      "replayChecks": 11,
+      "minimumMatchesPerCohort": 7,
+      "maximumMatchesPerCohort": 7
+    },
+    {
+      "players": 6,
+      "cycles": 1,
+      "difficulty": "easy",
+      "successfulMatches": 90,
+      "exhaustedCohorts": 5,
+      "replayChecks": 5,
+      "minimumMatchesPerCohort": 18,
+      "maximumMatchesPerCohort": 18
+    },
+    {
+      "players": 6,
+      "cycles": 1,
+      "difficulty": "medium",
+      "successfulMatches": 87,
+      "exhaustedCohorts": 3,
+      "replayChecks": 3,
+      "minimumMatchesPerCohort": 29,
+      "maximumMatchesPerCohort": 29
+    },
+    {
+      "players": 6,
+      "cycles": 1,
+      "difficulty": "hard",
+      "successfulMatches": 77,
+      "exhaustedCohorts": 7,
+      "replayChecks": 7,
+      "minimumMatchesPerCohort": 11,
+      "maximumMatchesPerCohort": 11
+    },
+    {
+      "players": 6,
+      "cycles": 2,
+      "difficulty": "easy",
+      "successfulMatches": 81,
+      "exhaustedCohorts": 9,
+      "replayChecks": 9,
+      "minimumMatchesPerCohort": 9,
+      "maximumMatchesPerCohort": 9
+    },
+    {
+      "players": 6,
+      "cycles": 2,
+      "difficulty": "medium",
+      "successfulMatches": 84,
+      "exhaustedCohorts": 6,
+      "replayChecks": 6,
+      "minimumMatchesPerCohort": 14,
+      "maximumMatchesPerCohort": 14
+    },
+    {
+      "players": 6,
+      "cycles": 2,
+      "difficulty": "hard",
+      "successfulMatches": 75,
+      "exhaustedCohorts": 15,
+      "replayChecks": 15,
+      "minimumMatchesPerCohort": 5,
+      "maximumMatchesPerCohort": 5
+    },
+    {
+      "players": 7,
+      "cycles": 1,
+      "difficulty": "easy",
+      "successfulMatches": 75,
+      "exhaustedCohorts": 5,
+      "replayChecks": 5,
+      "minimumMatchesPerCohort": 15,
+      "maximumMatchesPerCohort": 15
+    },
+    {
+      "players": 7,
+      "cycles": 1,
+      "difficulty": "medium",
+      "successfulMatches": 75,
+      "exhaustedCohorts": 3,
+      "replayChecks": 3,
+      "minimumMatchesPerCohort": 25,
+      "maximumMatchesPerCohort": 25
+    },
+    {
+      "players": 7,
+      "cycles": 1,
+      "difficulty": "hard",
+      "successfulMatches": 81,
+      "exhaustedCohorts": 9,
+      "replayChecks": 9,
+      "minimumMatchesPerCohort": 9,
+      "maximumMatchesPerCohort": 9
+    },
+    {
+      "players": 7,
+      "cycles": 2,
+      "difficulty": "easy",
+      "successfulMatches": 77,
+      "exhaustedCohorts": 11,
+      "replayChecks": 11,
+      "minimumMatchesPerCohort": 7,
+      "maximumMatchesPerCohort": 7
+    },
+    {
+      "players": 7,
+      "cycles": 2,
+      "difficulty": "medium",
+      "successfulMatches": 84,
+      "exhaustedCohorts": 7,
+      "replayChecks": 7,
+      "minimumMatchesPerCohort": 12,
+      "maximumMatchesPerCohort": 12
+    },
+    {
+      "players": 7,
+      "cycles": 2,
+      "difficulty": "hard",
+      "successfulMatches": 76,
+      "exhaustedCohorts": 19,
+      "replayChecks": 19,
+      "minimumMatchesPerCohort": 4,
+      "maximumMatchesPerCohort": 4
+    },
+    {
+      "players": 8,
+      "cycles": 1,
+      "difficulty": "easy",
+      "successfulMatches": 78,
+      "exhaustedCohorts": 6,
+      "replayChecks": 6,
+      "minimumMatchesPerCohort": 13,
+      "maximumMatchesPerCohort": 13
+    },
+    {
+      "players": 8,
+      "cycles": 1,
+      "difficulty": "medium",
+      "successfulMatches": 84,
+      "exhaustedCohorts": 4,
+      "replayChecks": 4,
+      "minimumMatchesPerCohort": 21,
+      "maximumMatchesPerCohort": 21
+    },
+    {
+      "players": 8,
+      "cycles": 1,
+      "difficulty": "hard",
+      "successfulMatches": 80,
+      "exhaustedCohorts": 10,
+      "replayChecks": 10,
+      "minimumMatchesPerCohort": 8,
+      "maximumMatchesPerCohort": 8
+    },
+    {
+      "players": 8,
+      "cycles": 2,
+      "difficulty": "easy",
+      "successfulMatches": 78,
+      "exhaustedCohorts": 13,
+      "replayChecks": 13,
+      "minimumMatchesPerCohort": 6,
+      "maximumMatchesPerCohort": 6
+    },
+    {
+      "players": 8,
+      "cycles": 2,
+      "difficulty": "medium",
+      "successfulMatches": 80,
+      "exhaustedCohorts": 8,
+      "replayChecks": 8,
+      "minimumMatchesPerCohort": 10,
+      "maximumMatchesPerCohort": 10
+    },
+    {
+      "players": 8,
+      "cycles": 2,
+      "difficulty": "hard",
+      "successfulMatches": 76,
+      "exhaustedCohorts": 19,
+      "replayChecks": 19,
+      "minimumMatchesPerCohort": 4,
+      "maximumMatchesPerCohort": 4
+    }
+  ],
+  "distinctConceptsOffered": 1200,
+  "distinctFamiliesOffered": 1109,
+  "distinctConceptsSelectedForSimulatedAccountHistory": 1197,
+  "bankTotal": 1200,
+  "checks": [
+    {
+      "name": "3150-plus-full-plans-with-independent-account-history-unions",
+      "passed": true,
+      "durationMs": 4869.493299999999,
+      "successfulMatches": 3633,
+      "settingsCells": 42,
+      "minimumSuccessesPerCell": 75,
+      "note": "Planner plus simulated history writes only; these are not rooms, WebSockets, clock/scoring simulations or device trials."
+    },
+    {
+      "name": "all-cohorts-continue-to-confirmed-fresh-exhaustion-then-explicit-replay",
+      "passed": true,
+      "exhaustedCohorts": 264,
+      "explicitReplayChecks": 264
+    },
+    {
+      "name": "all-220-category-triples-and-pair-exhaustion",
+      "passed": true,
+      "durationMs": 1330.5285000000003,
+      "categoryTriples": 220,
+      "freshTripleAttempts": 2640,
+      "freshPlans": 2376,
+      "genuinelyInfeasibleFreshAttempts": 264,
+      "depletedCategoryCases": 660,
+      "invalidTwoCategoryPlannerInputs": 198,
+      "note": "Two-category cases exercise planner safety directly; the UI rejects such settings earlier."
+    },
+    {
+      "name": "each-final-concept-and-family-excluded-independently",
+      "passed": true,
+      "durationMs": 2351.4217,
+      "conceptOnlyCases": 1200,
+      "familyOnlyCases": 1200,
+      "note": "Separate adversarial planner inputs model a legacy identity mismatch; normal simulated histories always store the real concept/family pair."
+    },
+    {
+      "name": "frozen-bank-and-tracked-source-unchanged-no-network",
+      "passed": true
+    }
+  ],
+  "exhaustionExamples": [
+    {
+      "players": 2,
+      "cycles": 1,
+      "difficulty": "easy",
+      "completedFreshMatches": 57,
+      "requiredOptions": 6,
+      "freshMatchingCapacity": 1
+    },
+    {
+      "players": 2,
+      "cycles": 1,
+      "difficulty": "easy",
+      "completedFreshMatches": 57,
+      "requiredOptions": 6,
+      "freshMatchingCapacity": 1
+    },
+    {
+      "players": 2,
+      "cycles": 1,
+      "difficulty": "medium",
+      "completedFreshMatches": 91,
+      "requiredOptions": 6,
+      "freshMatchingCapacity": 2
+    },
+    {
+      "players": 2,
+      "cycles": 1,
+      "difficulty": "hard",
+      "completedFreshMatches": 37,
+      "requiredOptions": 6,
+      "freshMatchingCapacity": 2
+    },
+    {
+      "players": 2,
+      "cycles": 1,
+      "difficulty": "hard",
+      "completedFreshMatches": 37,
+      "requiredOptions": 6,
+      "freshMatchingCapacity": 2
+    },
+    {
+      "players": 2,
+      "cycles": 1,
+      "difficulty": "hard",
+      "completedFreshMatches": 37,
+      "requiredOptions": 6,
+      "freshMatchingCapacity": 2
+    },
+    {
+      "players": 2,
+      "cycles": 2,
+      "difficulty": "easy",
+      "completedFreshMatches": 28,
+      "requiredOptions": 12,
+      "freshMatchingCapacity": 7
+    },
+    {
+      "players": 2,
+      "cycles": 2,
+      "difficulty": "easy",
+      "completedFreshMatches": 28,
+      "requiredOptions": 12,
+      "freshMatchingCapacity": 7
+    },
+    {
+      "players": 2,
+      "cycles": 2,
+      "difficulty": "easy",
+      "completedFreshMatches": 28,
+      "requiredOptions": 12,
+      "freshMatchingCapacity": 7
+    },
+    {
+      "players": 2,
+      "cycles": 2,
+      "difficulty": "medium",
+      "completedFreshMatches": 45,
+      "requiredOptions": 12,
+      "freshMatchingCapacity": 8
+    },
+    {
+      "players": 2,
+      "cycles": 2,
+      "difficulty": "medium",
+      "completedFreshMatches": 45,
+      "requiredOptions": 12,
+      "freshMatchingCapacity": 8
+    },
+    {
+      "players": 2,
+      "cycles": 2,
+      "difficulty": "hard",
+      "completedFreshMatches": 18,
+      "requiredOptions": 12,
+      "freshMatchingCapacity": 8
+    }
+  ],
+  "limitations": [
+    "No WebSocket or HTTP rooms created.",
+    "No D1, lease, concurrency, timing, scoring, drawing transport, moderation or cleanup API exercised here.",
+    "No human playtest, drawing ease, puzzle quality or player retention measured.",
+    "Explicit replay intentionally permits earlier-match families while preserving uniqueness within the new match."
+  ],
+  "remoteCalls": 0,
+  "sourceEdited": false
+}

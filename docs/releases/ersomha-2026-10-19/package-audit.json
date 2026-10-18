@@ -1,0 +1,84 @@
+{
+  "ok": true,
+  "expectedCommit": "f23033d5364b6cdda1df851ed2aa9ee9bdbb69ba",
+  "version": "1.8",
+  "build": "19",
+  "bundleId": "Maydan",
+  "minimumOSVersion": "16.4",
+  "ipaSha256": "11eaa72f566d0e0cc40f655183c12318d4f18cb885e53c5920dcba9211e8e3dd",
+  "ipaBytes": 152711456,
+  "executableSha256": "f3da024b0c05c325558a31d83d90ba04168bc099dbaa8fc5deb237bc22988fca",
+  "htmlSha256": "d8d7a6893d5e4af98d277bfd4da8ef262ca10505d3b6c0fb6b148d387c900474",
+  "runtime": {
+    "ok": true,
+    "bundleId": "Maydan",
+    "version": "1.8",
+    "build": "19",
+    "binariesChecked": 3,
+    "platform": "ios",
+    "architectures": [
+      "arm64"
+    ],
+    "embeddedDependencyEdges": 2,
+    "mainRunpaths": [
+      "/usr/lib/swift",
+      "@executable_path/Frameworks"
+    ]
+  },
+  "embeddedFrameworks": [
+    "Frameworks/LiveKitWebRTC.framework",
+    "Frameworks/RustLiveKitUniFFI.framework"
+  ],
+  "productionAPNs": true,
+  "signInWithApple": true,
+  "debugEntitlement": false,
+  "nativeMicrophonePrivacyCommandMarkersPresent": true,
+  "nativeCallKitPushKitDependenciesPresent": true,
+  "backgroundModes": [
+    "audio",
+    "voip",
+    "remote-notification"
+  ],
+  "microphoneUsageDisclosurePresent": true,
+  "simulatorFixtureMarkersAbsent": true,
+  "productionApiOrigin": "https://maydan-game.mf103871.workers.dev",
+  "subscriptionProducts": {
+    "monthly": "plus.monthly",
+    "yearly": "plus.yearly"
+  },
+  "ersomhaUIAndControlsPresent": true,
+  "privateBankScan": {
+    "concepts": 1200,
+    "textResourcesScanned": 19,
+    "embeddedConceptIds": 0,
+    "embeddedAuthorClues": 0,
+    "privateAuthoringFiles": 0,
+    "answerTableMarkers": 0,
+    "scope": "Scans actual exported text resources for exact private concept IDs, long author-only clues, source/schema filenames and table markers. Common Arabic answers legitimately shared with other games are not individually forbidden."
+  },
+  "privacyManifests": [
+    "Frameworks/LiveKitWebRTC.framework/PrivacyInfo.xcprivacy",
+    "Frameworks/RustLiveKitUniFFI.framework/PrivacyInfo.xcprivacy",
+    "LiveKit_LiveKit.bundle/PrivacyInfo.xcprivacy",
+    "PrivacyInfo.xcprivacy"
+  ],
+  "baseline": {
+    "ipaSha256": "e1baef922701cb8434ba9d18f5be87c4759cab4452ee8711e42e3937631cbac8",
+    "version": "1.8",
+    "build": "18",
+    "entitlementsConfigRuntimeAndPrivacyMatch": true
+  },
+  "preparedHtmlComparison": null,
+  "ciEvidence": {
+    "sourceCommitProven": true,
+    "compiledHtmlHashProven": true,
+    "archiveSignatureVerifiedByCI": true,
+    "exportedIPASignatureVerifiedByCI": false,
+    "basis": "Provided successful GitHub run metadata matches expected commit, and its compiled HTML digest equals the actual IPA HTML.",
+    "workflowRun": 39173097745,
+    "ciRunJSONSha256": "64aca0abe118d63d7c69a73fc687dedb7be1c6b363fd9bbb5e7b119e47d9b71a",
+    "ciLogSha256": "be01169fcf67126fb1a6db80977665522bd2d1afd54bc94b196ed9956850a996"
+  },
+  "signatureVerificationScope": "Windows parses embedded entitlement metadata and native runtime dependencies. It does not perform cryptographic codesign verification; any CI verification is separately attributed above.",
+  "uiVerificationScope": "Exported archive contents only; no binary execution, screenshot or physical-device keyboard/audio/gameplay validation is claimed."
+}
