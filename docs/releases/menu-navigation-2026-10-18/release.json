@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "status": "validated-ready-for-testflight-build",
+  "status": "available-in-internal-testflight",
   "intendedRelease": {
     "appStoreId": "6808385717",
     "version": "1.8",
@@ -303,13 +303,299 @@
         "name": "webkit-settings.png",
         "sha256": "8c6d09b43e445d545cdba2bcb8ba654343375c10bba2fe14b7f2eff74d5fde40"
       }
-    ]
+    ],
+    "coldAccountHydration": {
+      "chromium": {
+        "browser": "chromium",
+        "passed": true,
+        "paths": [
+          "/friends/person-1",
+          "/friends/group/group-1"
+        ],
+        "firstRealAccountPreservesDeepLink": true,
+        "completedAt": "2026-10-18T18:32:44.685Z"
+      },
+      "webkit": {
+        "browser": "webkit",
+        "passed": true,
+        "paths": [
+          "/friends/person-1",
+          "/friends/group/group-1"
+        ],
+        "firstRealAccountPreservesDeepLink": true,
+        "completedAt": "2026-10-18T18:32:46.827Z"
+      }
+    }
   },
   "preservedAppStoreReview": {
     "version": "1.7.1",
     "build": "13",
-    "stateBefore": "WAITING_FOR_REVIEW"
+    "stateBefore": "WAITING_FOR_REVIEW",
+    "versionId": "b9fe0881-b915-4c75-90f2-db218081d482",
+    "stateAfter": "WAITING_FOR_REVIEW",
+    "changedByThisRelease": false,
+    "buildId": "4d6f0b15-9050-4f2f-b34a-7432dca51beb"
   },
   "publicRelease": "No merge, public deployment, App Store submission or required update activation is authorized by this receipt. Physical iPhone validation precedes public release.",
-  "evidenceDirectory": "outputs/menu-navigation"
+  "evidenceDirectory": "outputs/menu-navigation",
+  "implementationCommit": "359aec7bbe4fad67265210c7bca50fd7d963814a",
+  "sourceCommit": "57e6648b5ff1c6de0527a8a655cb97a407da9306",
+  "workflow": {
+    "runId": 39154835631,
+    "jobId": 117755805148,
+    "url": "https://github.com/mf103871-boop/Maydan/actions/runs/39154835631",
+    "conclusion": "success",
+    "uploadAcceptedAtUtc": "2026-10-18T18:49:34Z",
+    "javascriptTests": {
+      "total": 808,
+      "passed": 807,
+      "skipped": 1,
+      "failed": 0
+    },
+    "iOSPythonTests": {
+      "total": 37,
+      "passed": 37,
+      "failed": 0
+    }
+  },
+  "packageAudit": {
+    "ok": true,
+    "sourceSha": "57e6648b5ff1c6de0527a8a655cb97a407da9306",
+    "workflowRun": 39154835631,
+    "workflowJob": 117755805148,
+    "version": "1.8",
+    "build": "16",
+    "bundleId": "Maydan",
+    "minimumOSVersion": "16.4",
+    "ipaSha256": "c00ced592ff087451da03a878453b8fe4a9024b84e348fa5bab9eab2fa523297",
+    "ipaBytes": 152684470,
+    "baselineIpaSha256": "ea1b4cdd7f6c20935a6197cc8381d74f1cfdf530145507d0d5680a3368768ded",
+    "executableSha256": "01ab8407f3d7fdae92c77b35aaa04f6164c56253e6ff3d5e76d60c5d14962a2e",
+    "htmlSha256": "9bbd83b9e271fdc4435b1b29a946effda545dd99402a266a5c6d736d32b97e1a",
+    "localPreparedHtmlSha256": "42afed73bb62a5ba1ffb66c653d1fb16b1fea7c875419e5d79720eebb1a57a9f",
+    "htmlNormalizedEqualsLocallyPreparedSource": true,
+    "htmlComparisonNormalization": "Only plain CRLF and escaped CR-before-LF in imported CSS template text are normalized.",
+    "finalCssIncludedSha256": {
+      "platform/bottom-navigation.css": "91e5c6882ca3374a4c862e3aa59a1d3e5fcb63e49073f0e4e6a2d998d4f713f7",
+      "social/lamma.css": "1b9483cb331627daa807dbc1abb31ed7de02f33b4de6902f5a70468d0827572e",
+      "social/call-dock.css": "cc4ee93b74c866e256f81bc17691f0c29a2c8173976c5edec3f61ad8f9102c9c",
+      "social/call-viewport.css": "55df6ec6f683dbc01a57ee5b0d596d0823f0ea7091ffbf00d4014aa2e28fd031"
+    },
+    "newRoutesAndFriendsPageInActualBundle": true,
+    "menuBarPortraitHeightPx": 76,
+    "menuBarLandscapeHeightPx": 64,
+    "fourMenuSectionsAndDynamicSafeArea": true,
+    "dynamicCallBoundsAndPreferredPositionRetained": true,
+    "twoDimensionalCallDragAndSpeakingMarkersRetained": true,
+    "reservedSideGutterAbsent": true,
+    "fontSizesInActualBundledHTML": {
+      ".lamma-search input": 16,
+      ".lamma-panel .social-composer-row textarea": 16,
+      ".lamma-field input, .lamma-field select, .lamma-edit-message": 16,
+      ".lamma-member select": 16,
+      ".call-controls-actions select": 16,
+      ".social-search input": 16
+    },
+    "imeCompositionAnd229GuardInActualBundle": true,
+    "visualViewportAndPinchGuardInActualBundle": true,
+    "manualZoomNotDisabled": true,
+    "nativeConfigUnchangedFromBuild15": true,
+    "signedEntitlementsUnchangedFromBuild15": true,
+    "productionApiOrigin": "https://maydan-game.mf103871.workers.dev",
+    "subscriptionProducts": {
+      "monthly": "plus.monthly",
+      "yearly": "plus.yearly"
+    },
+    "productionAPNs": true,
+    "signInWithApple": true,
+    "debugEntitlement": false,
+    "callBackgroundModesUnchanged": [
+      "audio",
+      "voip",
+      "remote-notification"
+    ],
+    "microphonePermissionDisclosureUnchanged": true,
+    "privacyManifestsUnchangedFromBuild15": [
+      "Frameworks/LiveKitWebRTC.framework/PrivacyInfo.xcprivacy",
+      "Frameworks/RustLiveKitUniFFI.framework/PrivacyInfo.xcprivacy",
+      "LiveKit_LiveKit.bundle/PrivacyInfo.xcprivacy",
+      "PrivacyInfo.xcprivacy"
+    ],
+    "nativeRuntimeLoadCommandsUnchangedFromBuild15": true,
+    "embeddedFrameworksUnchanged": [
+      "Frameworks/LiveKitWebRTC.framework",
+      "Frameworks/RustLiveKitUniFFI.framework"
+    ],
+    "runtime": {
+      "ok": true,
+      "bundleId": "Maydan",
+      "version": "1.8",
+      "build": "16",
+      "binariesChecked": 3,
+      "platform": "ios",
+      "architectures": [
+        "arm64"
+      ],
+      "embeddedDependencyEdges": 2,
+      "mainRunpaths": [
+        "/usr/lib/swift",
+        "@executable_path/Frameworks"
+      ]
+    },
+    "simulatorFixtureMarkersAbsent": true,
+    "signatureVerificationScope": "Cryptographic archive validation is performed by macOS CI; this Windows audit parses signed entitlement metadata only.",
+    "uiVerificationScope": "Archive content and native metadata only; physical iPhone keyboard, audio, and interaction tests are separate."
+  },
+  "simulatorLaunch": {
+    "startedAt": "2026-10-18T18:40:19Z",
+    "passed": true,
+    "launches": [
+      {
+        "name": "cold",
+        "pid": 17093,
+        "requiredSeconds": 45,
+        "passed": true,
+        "observedSeconds": 45.18,
+        "terminatedForRelaunch": true
+      },
+      {
+        "name": "relaunch",
+        "pid": 18833,
+        "requiredSeconds": 15,
+        "passed": true,
+        "observedSeconds": 15.14,
+        "terminatedForRelaunch": true
+      }
+    ],
+    "crashReports": [],
+    "diagnosticWarnings": [],
+    "preparation": [
+      {
+        "step": "runtime-cache-readiness",
+        "timeoutSeconds": 300,
+        "passed": true,
+        "elapsedSeconds": 4.45
+      },
+      {
+        "step": "simulator-inventory",
+        "timeoutSeconds": 45,
+        "passed": true,
+        "elapsedSeconds": 0.36
+      },
+      {
+        "step": "simulator-create",
+        "timeoutSeconds": 45,
+        "passed": true,
+        "elapsedSeconds": 0.34
+      },
+      {
+        "step": "simulator-boot",
+        "timeoutSeconds": 60,
+        "passed": true,
+        "elapsedSeconds": 5.77
+      },
+      {
+        "step": "simulator-bootstatus",
+        "timeoutSeconds": 180,
+        "passed": true,
+        "elapsedSeconds": 97.31
+      },
+      {
+        "step": "simulator-install",
+        "timeoutSeconds": 90,
+        "passed": true,
+        "elapsedSeconds": 27.21
+      },
+      {
+        "step": "installed-app",
+        "timeoutSeconds": 180,
+        "passed": true,
+        "elapsedSeconds": 67.89
+      }
+    ],
+    "limits": [
+      "Checks simulator process survival and launch crash reports only.",
+      "Does not certify rendered UI, device-only code, or exported IPA packaging."
+    ],
+    "bundleIdentifier": "Maydan",
+    "version": "1.8",
+    "build": "16",
+    "executableSha256": "6f45ef7e959675ef3dfc83d5afdda18b9db11cf1f7c09bfcd6c35544b5930c9e",
+    "simulatorUdid": "e58bf1cf-a85c-41d8-b04d-0188ece21b72",
+    "simulatorModel": "iPhone SE (3rd generation)",
+    "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-26-2",
+    "finishedAt": "2026-10-18T18:45:11Z"
+  },
+  "simulatorUpdateGate": {
+    "passed": true,
+    "normalStartup": true,
+    "updateGate": true,
+    "sameInstalledApp": true,
+    "normalEvidence": "/Users/runner/work/Maydan/Maydan/ios/build/release-smoke/launch-smoke",
+    "updateEvidence": "/Users/runner/work/Maydan/Maydan/ios/build/release-smoke/update-gate-smoke"
+  },
+  "artifacts": [
+    {
+      "id": 12147082184,
+      "name": "Maydan-iOS-1.8-16",
+      "zipSHA256": "b806e427267f362f201ac271fe51a25e8a8da7d0af18c7f77691151c51ece22a"
+    },
+    {
+      "id": 12146987064,
+      "name": "Maydan-launch-1.8-16",
+      "zipSHA256": "27bd2dd4b8619146d47def499433746137c34724fb016154f0c2823ac2297dab"
+    }
+  ],
+  "verifiedAtUtc": "2026-10-18T18:55:51.039791+00:00",
+  "appStoreConnect": {
+    "buildId": "38480cc7-5d5a-4d00-962d-c57df7300e82",
+    "version": "1.8",
+    "build": "16",
+    "processingState": "VALID",
+    "uploadedDate": "2026-10-18T11:51:10-07:00",
+    "betaDetail": {
+      "autoNotifyEnabled": true,
+      "internalBuildState": "IN_BETA_TESTING",
+      "externalBuildState": "READY_FOR_BETA_SUBMISSION"
+    },
+    "groups": [
+      {
+        "id": "0f254efa-38d9-406c-9ab0-1664b99f3213",
+        "name": "Envysnowy Group",
+        "isInternalGroup": true,
+        "hasAccessToAllBuilds": true,
+        "publicLinkEnabled": null
+      }
+    ],
+    "notes": {
+      "verified": true,
+      "unchanged": true,
+      "buildId": "38480cc7-5d5a-4d00-962d-c57df7300e82",
+      "version": "1.8",
+      "build": "16",
+      "locale": "en-US",
+      "characters": 760,
+      "sourceSHA256": "df5eae846042269d4cd16e0ebfaf7510814d4ed84a63b841baac8a4bb1f7ecf6"
+    },
+    "notesSavedThrough": "App Store Connect UI; independently verified by read-only official API",
+    "testersObservedInUI": 1
+  },
+  "evidenceFiles": [
+    {
+      "name": "testflight-build16.png",
+      "sha256": "5fa2a892de0874c8675a771a446589a7a469e2c79684d6a1be4e02955f27d40e"
+    },
+    {
+      "name": "iphone-simulator.png",
+      "sha256": "408ae9dc0a2f96ac636ac6eedb9c0204a33fc720f51ce00a1c2f482eeb60d859"
+    },
+    {
+      "name": "iphone-launch-summary.json",
+      "sha256": "875db6d35844dfb0d1da32ba4fd1a74e2a20158d514b9547ac39e636bc985bef"
+    },
+    {
+      "name": "signed-iphone-package-audit.json",
+      "sha256": "ceba11b83115500976affba990419a737a0439fcd3833d3651ee2ca5c67f05e3"
+    }
+  ]
 }
