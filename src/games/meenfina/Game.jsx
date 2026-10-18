@@ -1,5 +1,6 @@
 import { Avatar, GameArtwork } from '../../shared/brand/art.jsx';
 import React, { useEffect, useMemo, useReducer, useRef, useState } from 'react';
+import { socialInterruption } from '../../social/interruption.js';
 import { Screen, Button, Podium, Segment, Card, Scoreboard } from '../../shared/ui/components.jsx';
 import { PassPhoneScreen } from '../../shared/setup/PassPhoneScreen.jsx';
 import { trimSeen } from '../../shared/lib/noRepeat.js';
@@ -44,9 +45,10 @@ function Countdown({ api, statement, onDone }) {
   // العدّ يتوقف والصفحة مخفية ويعود من الرقم نفسه؛ وإلا أُشير قبل أن يرى أحد.
   const [hidden, setHidden] = useState(() => typeof document !== 'undefined' && document.hidden);
   useEffect(() => {
-    const onVisibility = () => setHidden(document.hidden);
+    const onVisibility = () => setHidden(document.hidden || socialInterruption.getSnapshot().paused);
     document.addEventListener('visibilitychange', onVisibility);
-    return () => document.removeEventListener('visibilitychange', onVisibility);
+    const unsubscribe = socialInterruption.subscribe(onVisibility);
+    return () => { document.removeEventListener('visibilitychange', onVisibility); unsubscribe(); };
   }, []);
   useEffect(() => {
     if (hidden) return undefined;

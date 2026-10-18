@@ -1,0 +1,33 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import { mkdtemp, mkdir, writeFile, rm } from 'node:fs/promises';
+import os from 'node:os';
+import path from 'node:path';
+import { backendTreeSha256 } from '../scripts/lib/lamma-provenance.mjs';
+
+test('release fingerprint ignores line-ending differences but detects backend and migration changes', async t => {
+  const root = await mkdtemp(path.join(os.tmpdir(), 'lamma-provenance-'));
+  t.after(async () => { assert.ok(path.basename(root).startsWith('lamma-provenance-')); await rm(root, { recursive: true, force: true }); });
+  await mkdir(path.join(root, 'server', 'migrations'), { recursive: true });
+  await mkdir(path.join(root, 'src'), { recursive: true });
+  await writeFile(path.join(root, 'server', 'full-worker.mjs'), "export { shared } from '../src/shared.js';\n");
+  const shared = path.join(root, 'src', 'shared.js'), lock = path.join(root, 'package-lock.json');
+  await writeFile(shared, 'export const shared = 1;\n');
+  await writeFile(lock, '{"lockfileVersion":3}\n');
+  const source = path.join(root, 'server', 'worker.mjs'), migration = path.join(root, 'server', 'migrations', '0001.sql');
+  await writeFile(source, 'export const value = 1;\r\n'); await writeFile(migration, 'CREATE TABLE test(id);\r\n');
+  const initial = await backendTreeSha256(root);
+  await writeFile(source, 'export const value = 1;\n'); await writeFile(migration, 'CREATE TABLE test(id);\n');
+  assert.equal(await backendTreeSha256(root), initial);
+  await writeFile(path.join(root, 'server', 'notes.md'), 'A documentation-only update');
+  assert.equal(await backendTreeSha256(root), initial);
+  await writeFile(shared, 'export const shared = 2;\n'); assert.notEqual(await backendTreeSha256(root), initial);
+  await writeFile(shared, 'export const shared = 1;\n');
+  await writeFile(lock, '{"lockfileVersion":2}\n'); assert.notEqual(await backendTreeSha256(root), initial);
+  await writeFile(lock, '{"lockfileVersion":3}\n');
+  await writeFile(source, 'export const value = 2;\n'); assert.notEqual(await backendTreeSha256(root), initial);
+  await writeFile(source, 'export const value = 1;\n'); await writeFile(migration, 'CREATE TABLE changed(id);\n');
+  assert.notEqual(await backendTreeSha256(root), initial);
+  await writeFile(migration, 'CREATE TABLE test(id);\n'); await writeFile(path.join(root, 'server', 'new.mjs'), 'export const other = true;');
+  assert.notEqual(await backendTreeSha256(root), initial);
+});

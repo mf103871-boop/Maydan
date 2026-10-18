@@ -84,6 +84,20 @@ final class GameViewController: UIViewController, WKNavigationDelegate, WKUIDele
     private var isRecoveringWebContent = false
     private var migration: StorageMigration?
     private var isCommittingMigration = false
+    private var didLoadBundledGame = false
+    private lazy var appUpdate = AppUpdateCoordinator(host: self, canPresent: { [weak self] in
+        guard let self, self.presentedViewController == nil else { return false }
+        return !self.didLoadBundledGame || AppUpdatePolicy.isIdleMenu(fragment: self.webView.url?.fragment)
+    }, setBlocked: { [weak self] blocked in
+        guard let self else { return }
+        self.webView.isUserInteractionEnabled = !blocked
+        self.webView.accessibilityElementsHidden = blocked
+        self.webView.setAllMediaPlaybackSuspended(blocked, completionHandler: nil)
+    }, permitInitialLoad: { [weak self] in
+        guard let self, !self.didLoadBundledGame else { return }
+        self.didLoadBundledGame = true
+        self.loadBundledGame()
+    })
     private lazy var auth = AuthCoordinator(anchor: { [weak self] in
         self?.view.window ?? ASPresentationAnchor()
     })
@@ -148,7 +162,17 @@ final class GameViewController: UIViewController, WKNavigationDelegate, WKUIDele
             self?.emit(event: "transaction", payload: ["jws": jws])
         }
         StoreManager.shared.startListening()
-        loadBundledGame()
+        SocialCoordinator.shared.onEvent = { [weak self] name, payload in
+            self?.emit(event: name, payload: payload)
+        }
+        SocialCoordinator.shared.onAudioActivityChange = { [weak self] in
+            self?.appUpdate.audioActivityChanged()
+        }
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        appUpdate.start()
     }
 
     deinit {
@@ -164,6 +188,7 @@ final class GameViewController: UIViewController, WKNavigationDelegate, WKUIDele
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask { .allButUpsideDown }
 
     override func accessibilityPerformEscape() -> Bool {
+        guard !appUpdate.isCoveringGame else { return true }
         invokeWebBack()
         return true
     }
@@ -215,6 +240,7 @@ final class GameViewController: UIViewController, WKNavigationDelegate, WKUIDele
     }
 
     @objc private func handleEdgeBackGesture(_ gesture: UIScreenEdgePanGestureRecognizer) {
+        guard !appUpdate.isCoveringGame else { return }
         guard gesture.state == .ended else { return }
         invokeWebBack()
     }
@@ -299,6 +325,7 @@ final class GameViewController: UIViewController, WKNavigationDelegate, WKUIDele
     func webViewWebContentProcessDidTerminate(_ webView: WKWebView) {
         guard !isRecoveringWebContent else { return }
         isRecoveringWebContent = true
+        SocialCoordinator.shared.webDidReload()
 
         // Loading the bundled entry point recreates the UI; localStorage remains available so
         // the web app can offer to resume the saved match.
@@ -343,6 +370,23 @@ final class GameViewController: UIViewController, WKNavigationDelegate, WKUIDele
     // MARK: - Account and store commands
 
     private func handle(command: String, id: String, payload: [String: Any]) {
+        let socialCommands: Set<String> = [
+            "socialStoredSession", "socialSession", "socialLogout", "socialNotifications",
+            "socialCallConnect", "socialCallMute", "socialCallSpeaker", "socialCallEnd",
+            "socialVoiceStart", "socialVoiceStop", "socialVoiceCancel", "socialAudioPrivacy"
+        ]
+        if socialCommands.contains(command) {
+            Task { @MainActor [weak self] in
+                do {
+                    let result = try await SocialCoordinator.shared.handle(command, payload: payload)
+                    self?.reply(id, result: result)
+                } catch {
+                    let body: [String: Any] = ["ok": false, "error": SocialCoordinator.errorCode(error)]
+                    self?.evaluate("window.maydanNative && window.maydanNative.resolve(\(Self.json([id]))[0], \(Self.json(body)));")
+                }
+            }
+            return
+        }
         switch command {
         case "storeStatus":
             reply(id, result: StoreManager.shared.catalogStatus())

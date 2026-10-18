@@ -18,6 +18,35 @@ test('a server echo replaces a pending message once and tombstones replace old t
   messages = mergeMessages(messages,[ack,message(2,{text:'',deletedAt:9000})],8);
   assert.equal(messages.length,2); assert.equal(messages[0].text,''); assert.equal(messages[1].read,true);
 });
+
+test('confirmed outgoing voice appears immediately without waiting for history and deduplicates its echo', t => {
+  const client = setup(t);
+  const voice = message(9, { senderId: 'alice', kind: 'voice', attachment: { id: 'audio', durationMs: 1000 } });
+  assert.equal(client.receiveOwnMessage(voice, 'chat'), true);
+  assert.equal(client.state.conversations.bob.messages[0].attachment.id, 'audio');
+  client.receiveOwnMessage(voice, 'chat'); assert.equal(client.state.conversations.bob.messages.length, 1);
+  client.receiveOwnMessage({ ...voice, deletedAt: 100, attachment: null }, 'chat');
+  client.receiveOwnMessage(voice, 'chat'); assert.equal(client.state.conversations.bob.messages[0].deletedAt, 100);
+});
+
+test('confirmed messages resolve a legacy friend through the authorized conversation list', t => {
+  const client = setup(t);
+  client.update({ friends: [{ id: 'bob' }], conversationList: [{ id: 'chat', user: { id: 'bob' } }] });
+  assert.equal(client.receiveOwnMessage(message(9, { senderId: 'alice', kind: 'voice' }), 'chat'), true);
+  assert.equal(client.state.conversations.bob.messages[0].seq, 9);
+  client.update({ friends: [] });
+  assert.equal(client.receiveOwnMessage(message(10, { senderId: 'alice' }), 'chat'), false);
+});
+
+test('confirmed-message optimization refuses another account or removed friendship', t => {
+  const client = setup(t);
+  assert.equal(client.receiveOwnMessage(message(9), 'chat'), false);
+  assert.equal(client.receiveOwnMessage(message(9, { senderId: 'alice' }), 'other-chat'), false);
+  client.userId = 'charlie'; assert.equal(client.receiveOwnMessage(message(9, { senderId: 'alice' }), 'chat'), false);
+  client.userId = 'alice'; client.state.friends = [];
+  assert.equal(client.receiveOwnMessage(message(9, { senderId: 'alice' }), 'chat'), false);
+  assert.deepEqual(client.state.conversations, {});
+});
 test('retry after an uncertain delivery reuses clientId and cannot duplicate the message', async t => {
   const bodies=[];
   const client=setup(t,async (path,options)=>{

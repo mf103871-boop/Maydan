@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { Button, Card, Modal } from '../ui/components.jsx';
 import { IconPlus } from '../ui/icons.jsx';
 import { addPlayer, ROSTER_LIMIT } from './roster.js';
+import { useSubmitKey } from '../ui/useSubmitKey.js';
 
 export function PlayersSetup({ roster, setRoster, min = 2, max = 10, accent, onStart, children, startLabel = 'ابدأ اللعب', startDisabled = false, api }) {
   const [selected, setSelected] = useState(() => roster.slice(0, Math.min(max, roster.length)).map((p) => p.id));
@@ -25,6 +26,7 @@ export function PlayersSetup({ roster, setRoster, min = 2, max = 10, accent, onS
     setName(''); setEmoji(null); setAdding(false); setError('');
     api && api.sound.play('pop');
   };
+  const submitKeys = useSubmitKey(submitAdd);
   const players = selected.map((id) => roster.find((p) => p.id === id)).filter(Boolean);
   const canStart = players.length >= min && !startDisabled;
 
@@ -59,7 +61,7 @@ export function PlayersSetup({ roster, setRoster, min = 2, max = 10, accent, onS
       </div>
       {adding && (
         <Modal title="لاعب جديد" onClose={() => { setAdding(false); setError(''); }} footer={<Button variant="primary" size="lg" full onClick={submitAdd}>إضافة</Button>}>
-          <label className="field"><span>الاسم</span><input className="input" value={name} maxLength={20} autoFocus onChange={(e) => { setName(e.target.value); setError(''); }} onKeyDown={(e) => e.key === 'Enter' && submitAdd()} placeholder="مثال: نورة" /></label>
+          <label className="field"><span>الاسم</span><input className="input" value={name} maxLength={20} autoFocus onChange={(e) => { setName(e.target.value); setError(''); }} {...submitKeys} placeholder="مثال: نورة" /></label>
           <div className="field"><span>اختر شخصيتك</span>
             <AvatarPicker value={emoji} onChange={setEmoji} />
           </div>

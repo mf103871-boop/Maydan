@@ -55,6 +55,8 @@ def validate_profile(profile, identities, now=None):
     require('iOS' in profile.get('Platform', []), 'An iOS provisioning profile is required.')
     require('Default' in entitlements.get('com.apple.developer.applesignin', []),
             'The provisioning profile must enable Sign in with Apple.')
+    require(entitlements.get('aps-environment') == 'production',
+            'The provisioning profile must enable production Push Notifications for Lamma. Enable Push on the explicit Maydan App ID and regenerate the App Store profile.')
     expires = profile.get('ExpirationDate')
     require(isinstance(expires, datetime.datetime), 'The provisioning profile has no expiration date.')
     expires = expires.replace(tzinfo=datetime.timezone.utc) if expires.tzinfo is None else expires

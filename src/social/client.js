@@ -34,6 +34,7 @@ export class SocialClient {
   constructor({ request, server, socketFactory = url => new WebSocket(url), now = () => Date.now() }) {
     this.request = request; this.server = server; this.socketFactory = socketFactory; this.now = now;
     this.state = initial(); this.listeners = new Set(); this.epoch = 0; this.userId = null;
+    this.visibleConversations = new Map();
     this.typingTimers = new Map(); this.sentTyping = new Map(); this.sending = new Map(); this.reading = new Map();
     this.subscribe = listener => { this.listeners.add(listener); return () => this.listeners.delete(listener); };
     this.getSnapshot = () => this.state;
@@ -69,6 +70,7 @@ export class SocialClient {
     }, 30_000);
   }
   stop() {
+    this.visibleConversations.clear();
     this.epoch++; this.userId = null; this.activeFriend = null; this.refreshing = null;
     this.refreshAgain = false; this.connecting = false; this.attempt = 0;
     clearInterval(this.poll); clearInterval(this.ping); clearTimeout(this.reconnect); clearTimeout(this.refreshTimer);
@@ -150,8 +152,29 @@ export class SocialClient {
   unblockUser(id) { return this.action(`/blocks/${encodeURIComponent(id)}`, 'DELETE'); }
   reportUser(userId, value) { return this.action('/reports', 'POST', { userId, ...value }); }
   selectConversation(friendId) { this.activeFriend = friendId || null; }
+  // Views register only while actually visible. A drawer and a routed screen may
+  // overlap briefly; disposing one must not clear the other's read ownership.
+  registerConversation(friendId) {
+    const token = Symbol('conversation-view');
+    this.visibleConversations.set(token, friendId);
+    this.selectConversation(friendId);
+    return () => {
+      this.visibleConversations.delete(token);
+      this.selectConversation([...this.visibleConversations.values()].at(-1) || null);
+    };
+  }
   findConversation(friendId) {
     return this.state.friends.find(f => f.id === friendId)?.conversationId || this.state.conversationList.find(c => c.user.id === friendId)?.id;
+  }
+  receiveOwnMessage(message, conversationId = message?.conversationId) {
+    // Only a confirmed outbound message from this account can bypass a history
+    // fetch. Revoked friendships and callbacks from a previous account lose here.
+    const friend = this.state.friends.find(item => this.findConversation(item.id) === conversationId);
+    if (!this.userId || message?.senderId !== this.userId || !Number.isSafeInteger(message.seq) || message.seq < 1 || !friend ||
+      (message.conversationId && message.conversationId !== conversationId)) return false;
+    const current = this.state.conversations[friend.id] || emptyConversation();
+    this.conversation(friend.id, { id: conversationId, messages: mergeMessages(current.messages, [message], current.peerReadSeq) });
+    return true;
   }
   async openConversation(friendId, { quiet = false } = {}) {
     const id = this.findConversation(friendId); if (!id) return;
@@ -278,7 +301,11 @@ export class SocialClient {
   async receive(event) {
     const epoch = this.epoch;
     let message; try { message = JSON.parse(event.data); } catch { return; }
+    if (!message || typeof message !== 'object' || typeof message.type !== 'string') return;
     if (message.type === 'pong') { this.lastPong = this.now(); return; }
+    if (typeof window !== 'undefined' && typeof CustomEvent === 'function') {
+      window.dispatchEvent(new CustomEvent('maydan-social-event', { detail: message }));
+    }
     if (message.type === 'typing' && this.state.friends.some(f => f.id === message.userId)) {
       const id = message.userId; clearTimeout(this.typingTimers.get(id));
       this.conversation(id, { typing: !!message.active });

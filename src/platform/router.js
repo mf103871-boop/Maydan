@@ -9,9 +9,11 @@ const ROUTES = [
   ['online', /^\/online(?:\/(meenfina|fabraka))?$/],
   ['room', /^\/room\/(\d{6})$/],
   ['players', /^\/players$/],
+  ['friend-group', /^\/friends\/group\/([a-zA-Z0-9_-]+)$/],
   ['friends', /^\/friends(?:\/([a-zA-Z0-9_-]+))?$/],
   ['profile', /^\/profile(?:\/([a-zA-Z0-9_-]+))?$/],
   ['settings', /^\/settings$/],
+  ['store', /^\/store$/],
   ['moderation', /^\/moderation$/],
   ['about', /^\/about$/],
   ['terms', /^\/terms$/],
@@ -50,6 +52,7 @@ let guardRestore = null;
 
 export function getRoute() { return current; }
 export function getDirection() { return direction; }
+export function getPreviousPath() { return stack.length > 1 ? stack[stack.length - 2] : null; }
 
 function emit() { listeners.forEach((fn) => fn(current)); }
 

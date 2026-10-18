@@ -5,6 +5,11 @@ import * as db from './db.mjs';
 import { clientIdOf, pagination, publicProfile, sequenceOf, textOf, userId } from './model.mjs';
 import { notifyUsers } from './realtime.mjs';
 import { profileSummaries } from '../profiles/db.mjs';
+import { routeLamma } from '../lamma/router.mjs';
+import { messageContent,enrichMessages,collectDeletedAudio } from '../lamma/media.mjs';
+import { wakeJobs } from '../lamma/notifications.mjs';
+import { revokeInvalidCalls } from '../lamma/calls.mjs';
+import { afterCommit } from '../lamma/after-commit.mjs';
 
 export const isSocialPath = (path) => path === '/api/social' || path.startsWith('/api/social/');
 async function notify(env, ids, event = { type: 'refresh' }) {
@@ -16,13 +21,14 @@ export async function deleteSocialUser(env, id) {
   await notify(env, [id, ...peers]);
 }
 
-export async function routeSocial(request, env, url = new URL(request.url), charge) {
+export async function routeSocial(request, env, url = new URL(request.url), charge, context) {
   if (!isSocialPath(url.pathname)) return null;
   if (!env.DB) fail('NOT_FOUND', 404);
-  if (charge) await charge(request.method === 'GET' ? 'socialRead' : 'socialWrite');
+  if (charge) await charge(request.method === 'GET' ? 'socialReadIP' : 'socialWriteIP');
   const auth = await requireSession(env, request);
   try {
-    let response = await dispatch(request, env, url, auth.user.id, Date.now());
+    if (charge && request.method === 'GET') await charge('socialRead', 'RATE_LIMIT', auth.user.id);
+    let response = await dispatch(request, env, url, auth.user.id, Date.now(),auth.rotated?.id||auth.session.id,context);
     if (response.ok && ['/api/social/me', '/api/social/state', '/api/social/search', '/api/social/friends', '/api/social/requests', '/api/social/blocks', '/api/social/conversations'].includes(url.pathname)) {
       const body = await response.json();
       const users = [body.user, body.request?.user, ...(body.users || []), ...(body.blocked || []), ...(body.friends || []),
@@ -32,16 +38,22 @@ export async function routeSocial(request, env, url = new URL(request.url), char
       for (const user of users) Object.assign(user, summaries.get(user.id) || {});
       response = json(body);
     }
+    if(response.ok && response.headers.get('content-type')?.startsWith('application/json')) {
+      const body=await response.json();
+      await enrichMessages(env,[body.message,...(Array.isArray(body.messages)?body.messages:[]),...(Array.isArray(body.conversations)?body.conversations:[]).map(c=>c.lastMessage)]);
+      response=json(body);
+    }
     return withRotation(response, auth.rotated);
   } catch (error) {
     return withRotation(errorResponse(error), auth.rotated);
   }
 }
-async function dispatch(request, env, url, id, now) {
+async function dispatch(request, env, url, id, now,sessionId,context) {
   const method = request.method;
   const path = url.pathname.slice('/api/social'.length);
   const profile = await db.ensureProfile(env, id, now);
   if (method !== 'GET') await db.chargeUser(env, id, 'write', now);
+  const lamma=await routeLamma(request,env,path,id,sessionId,context);if(lamma)return lamma;
   if (path === '/me' && method === 'GET') return json({ user: publicProfile(profile) });
   // One read for the whole social screen. The client used to issue five requests
   // per refresh, and a refresh followed every message, send and read receipt.
@@ -61,6 +73,7 @@ async function dispatch(request, env, url, id, now) {
   if (path === '/requests' && method === 'POST') {
     const otherId = userId((await readJson(request)).userId);
     const friendRequest = await db.requestFriend(env, id, otherId, now);
+    await wakeJobs(env);
     await notify(env, [id, otherId]);
     return json({ request: friendRequest });
   }
@@ -81,6 +94,7 @@ async function dispatch(request, env, url, id, now) {
   if (friend && method === 'DELETE') {
     const otherId = userId(friend[1]);
     await db.removeFriend(env, id, otherId);
+    await revokeInvalidCalls(env);
     await notify(env, [id, otherId]);
     return json({ ok: true });
   }
@@ -88,6 +102,7 @@ async function dispatch(request, env, url, id, now) {
   if (path === '/blocks' && method === 'POST') {
     const otherId = userId((await readJson(request)).userId);
     await db.blockUser(env, id, otherId, now);
+    await revokeInvalidCalls(env,id,otherId);
     await notify(env, [id, otherId]);
     return json({ ok: true });
   }
@@ -109,8 +124,12 @@ async function dispatch(request, env, url, id, now) {
   if (messages && method === 'GET') return json(await db.messagesOf(env, id, messages[1], pagination(url.searchParams)));
   if (messages && method === 'POST') {
     const body = await readJson(request, 20_480);
-    const result = await db.sendMessage(env, id, messages[1], textOf(body.text), clientIdOf(body.clientId), now);
-    await notify(env, [id, result.otherId], { type: 'message', conversationId: result.message.conversationId, messageSeq: result.message.seq });
+    const content=await messageContent(env,id,'direct',messages[1],body);
+    const result = await db.sendMessage(env, id, messages[1], content.text, clientIdOf(body.clientId), now,content);
+    await afterCommit(context, () => Promise.allSettled([
+      db.areFriends(env, id, result.otherId).then(allowed => allowed && notify(env, [id, result.otherId], { type: 'message', reason: 'message', conversationId: result.message.conversationId, messageSeq: result.message.seq })),
+      wakeJobs(env),
+    ]));
     return json({ message: result.message });
   }
   const message = /^\/messages\/([0-9]+)$/.exec(path);
@@ -122,14 +141,15 @@ async function dispatch(request, env, url, id, now) {
   if (message && (method === 'PATCH' || method === 'DELETE')) {
     const text = method === 'DELETE' ? null : textOf((await readJson(request, 20_480)).text);
     const result = await db.changeMessage(env, id, sequenceOf(message[1]), text, now);
-    await notify(env, [id, result.otherId], { type: 'message', conversationId: result.message.conversationId, messageSeq: result.message.seq });
+    await collectDeletedAudio(env);
+    await notify(env, [id, result.otherId], { type: 'message', reason: method === 'DELETE' ? 'deleted' : 'edited', conversationId: result.message.conversationId, messageSeq: result.message.seq });
     return json({ message: result.message });
   }
   const read = /^\/conversations\/([a-zA-Z0-9_-]+)\/read$/.exec(path);
   if (read && method === 'POST') {
     const seq = sequenceOf((await readJson(request)).seq, true);
     const result = await db.markRead(env, id, read[1], seq, now);
-    await notify(env, [id, result.otherId]);
+    await notify(env, [id, result.otherId], { type: 'refresh', reason: 'read' });
     return json({ readSeq: result.readSeq });
   }
   fail('NOT_FOUND', 404);

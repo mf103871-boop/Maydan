@@ -5,7 +5,7 @@ import { Illustration } from '../games/fabraka/Illustration.jsx';
 import { pictures, questions, categories } from '../games/fabraka/content.js';
 import { normalizeOptions, questionPool, ROUNDS, validateLie, awards, bestLies } from '../games/fabraka/logic.js';
 import css from '../games/fabraka/fabraka.css';
-import { arabicNumber } from './shared.js';
+import { arabicNumber, minimumOnlinePlayers } from './shared.js';
 import { usePlatform } from '../platform/context.js';
 import { vignette } from '../shared/fx/index.js';
 
@@ -35,6 +35,7 @@ export function FabrakaSettings({ value, onChange, disabled }) {
       {Object.entries(FABRAKA_MODES).map(([id, label]) => <option key={id} value={id}>{label}</option>)}
     </select></label>
     <p className="online-footnote">{modeHints[value.mode]}</p>
+    <p className="online-footnote">{value.mode === 'friends' ? 'نمط أصحابنا يحتاج ٣–٨ لاعبين.' : 'متاح لشخصين أو أكثر · ٢–٨ لاعبين.'}</p>
     {value.mode === 'friends' ? <label className="online-field">دورات الأصحاب<select value={value.friendCycles} onChange={(e) => update({ friendCycles: Number(e.target.value) })}>
       <option value={1}>دور لكل لاعب</option><option value={2}>دوران لكل لاعب</option>
     </select></label> : <label className="online-field">عدد جولات فبركة<select value={value.rounds} onChange={(e) => update({ rounds: Number(e.target.value) })}>
@@ -68,6 +69,7 @@ export function FabrakaSettings({ value, onChange, disabled }) {
 }
 export function FabrakaRules() {
   return <details className="online-fab-details"><summary>قواعد فبركة والنقاط</summary><ul className="fab-rules">
+    <li>لشخصين: امزج فبركتك بخيارات اللعبة وحاول كشف الحقيقة. الحقائق والصور والمزيج تدعم ٢–٨؛ نمط الأصحاب يحتاج ٣–٨.</li>
     <li>١٠٠٠ نقطة لاكتشاف الحقيقة، و٥٠٠ عن كل لاعب ينخدع بفبركتك.</li>
     <li>إذا كتبت الحقيقة تكسب نقاطها مرة واحدة؛ تصويتك لا يمنح الآخرين نقاط خداع في تلك الجولة.</li>
     <li>تُدمج الإجابات المتطابقة. لا يمكنك اختيار إجابتك، ولكل كاتب مؤهل نقاط الخداع كاملة.</li>
@@ -160,7 +162,7 @@ function Final({ state, sorted, isHost, disabled, act }) {
   const honors = awards(result), highlights = bestLies(result);
   const names = (ids) => ids.map((id) => sorted.find((m) => m.id === id)?.name).filter(Boolean).join('، ');
   return <>
-    {state.reason === 'players_left' && <p className="online-notice">انتهت اللعبة لأن عدد اللاعبين أصبح أقل من ٣. هذه نقاط الجولات المكتملة.</p>}
+    {state.reason === 'players_left' && <p className="online-notice">انتهت اللعبة لأن عدد اللاعبين أصبح أقل من {number(minimumOnlinePlayers('fabraka', state.settings))}. هذه نقاط الجولات المكتملة.</p>}
     <Podium entries={sorted} />
     <div className="fab-awards">{honors.map((award) => <Card key={award.stat}><span className="fab-award-icon" aria-hidden="true">{award.emoji}</span><h3>{award.title}</h3><p>{award.players.map((p) => p.name).join('، ')}</p></Card>)}</div>
     <Card className="stack"><h2>حصيلة الجلسة</h2>{sorted.map((p, i) => <div className="online-fab-total" key={p.id} style={{ '--i': i }}><Avatar index={p.avatar} /><div className="grow"><b>{p.name}</b><small>{number(p.stats.truths)} حقائق · {number(p.stats.fooled)} خدعات{state.settings.funnyVote && ` · ${number(p.stats.laughs)} ضحكات`}</small></div><strong>{number(p.score)}</strong></div>)}</Card>

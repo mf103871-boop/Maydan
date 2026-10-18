@@ -3,8 +3,9 @@ import { fail } from '../room-model.mjs';
 import { randomToken } from '../accounts/jwt.mjs';
 import { requireSession, withRotation } from '../accounts/session.mjs';
 import { first } from '../accounts/db.mjs';
-import { areFriends, friendIds, touchPresence } from './db.mjs';
+import { areFriends, friendIds, touchPresence, messageForUser } from './db.mjs';
 import { userId as validUserId, ONLINE_WINDOW } from './model.mjs';
+import { ident, member, scopeAllowed, unblocked, live } from '../lamma/common.mjs';
 
 export const LIVE_TICKET_TTL = 60_000;
 export const LIVE_HEARTBEAT_MS = 20_000;
@@ -26,6 +27,34 @@ const hub = (env, userId) => env.SOCIAL_HUB.get(env.SOCIAL_HUB.idFromName(userId
 const internal = (path, body) => new Request(`https://social.internal/${path}`, {
   method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(body),
 });
+
+// Authorize content metadata at the receiving hub, after its socket auth/queue
+// wait. A permission check in the sender's earlier HTTP request is not enough
+// when a block or group removal commits while notification delivery is queued.
+export async function allowsRealtimeContent(env, userId, event) {
+  if (event.reason === 'deleted') return true; // Keep deletion invalidation working.
+  if (event.type === 'message') {
+    if (!Number.isSafeInteger(event.messageSeq) || event.messageSeq < 1) return false;
+    const message = await messageForUser(env, userId, event.messageSeq);
+    return !!message && !message.deletedAt && message.conversationId === event.conversationId;
+  }
+  const user = ident(userId);
+  if (event.type === 'group' && ['message', 'edited'].includes(event.reason)) {
+    if (!Number.isSafeInteger(event.messageSeq) || event.messageSeq < 1) return false;
+    return !!await first(env, `SELECT 1 FROM social_group_messages m JOIN social_group_members gm ON gm.group_id=m.group_id AND gm.user_id=?
+      WHERE m.seq=? AND m.group_id=? AND m.deleted_at IS NULL AND m.seq>gm.visible_after_seq AND gm.left_at IS NULL
+      AND ${member('m.group_id', user)} AND ${unblocked('m.sender_id', user)} AND ${live('m.sender_id')}`, userId, event.messageSeq, event.groupId);
+  }
+  if (event.type === 'call') {
+    return !!await first(env, `SELECT 1 FROM social_calls sc WHERE sc.id=?
+      AND ((sc.scope='group' AND ${member('sc.conversation_id', user)}) OR (sc.scope='direct' AND ${scopeAllowed('direct', 'sc.conversation_id', user)}))
+      AND ${unblocked('sc.initiator_id', user)}
+      AND NOT EXISTS(SELECT 1 FROM social_call_participants cp WHERE cp.call_id=sc.id AND cp.state='active' AND NOT (${unblocked('cp.user_id', user)}))`, event.callId);
+  }
+  // Membership/removal/close/read and generic refresh events must still clear
+  // stale screens even after access was revoked. They contain no new content.
+  return true;
+}
 
 // Delivery is best effort after a successful database mutation. Missing bindings
 // keep older account/room deployments operational, and no notification failure
@@ -258,6 +287,7 @@ export class SocialHub {
           // the event: outbound delivery re-checks every socket. These are D1 reads;
           // the writes that used to follow each heartbeat are the ones now leased.
           await this.sweep(now, true);
+          if (!(await allowsRealtimeContent(this.env, userId, event))) return json({ ok: true });
           // A block or unfriend that raced the sender's check wins at delivery.
           if ((event.type === 'typing' || event.reason === 'presence') && !(await areFriends(this.env, userId, event.userId))) return json({ ok: true });
           let changed = false;

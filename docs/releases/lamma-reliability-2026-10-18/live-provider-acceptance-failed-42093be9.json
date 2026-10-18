@@ -1,0 +1,63 @@
+{
+  "runId": "42093be9-46dd-4cf4-b354-050417205db4",
+  "startedAt": "2026-10-18T20:09:11.521Z",
+  "origin": "https://maydan-lamma-preview.mf103871.workers.dev",
+  "checks": [
+    {
+      "name": "preview capability and accepted synthetic friendships",
+      "passed": true
+    },
+    {
+      "name": "direct real audio, other-device guard, and room-ending token revocation",
+      "passed": true
+    },
+    {
+      "name": "twelve accepted group members connect and receive actual audio",
+      "passed": true
+    },
+    {
+      "name": "real provider join webhooks bind every participant SID",
+      "passed": true
+    },
+    {
+      "name": "blocking revokes media and old token while unrelated group members stay connected",
+      "passed": false,
+      "error": "blocked shared call: HTTP 200 (no error code)\n\n200 !== 409\n"
+    }
+  ],
+  "cleanup": {
+    "accountsSeeded": 12,
+    "accountsDeleted": 12,
+    "callsCreated": 2,
+    "callEndRequestsAccepted": 2,
+    "credentials": "memory-only; D1 stores one-hour hashes",
+    "providerJobsRemaining": 0,
+    "remainingUsersAndSessions": 0
+  },
+  "providerProjectId": "p_6asugsl60h0",
+  "providerHost": "maydan-test-lab-831mi2tl.livekit.cloud",
+  "sourceCommit": "2e5e30c051096c577373861a246e85a868e9d40f",
+  "sourceServerTree": "4fdf118eb15cadb4e5eb496d82a1daa40dba4a80",
+  "backendTreeSha256": "55a4a4af6e65753fd7b5dbb3e38db2a61aff2ecc92f22e2e02ba94ecbb73aadc",
+  "previewDeploymentVersion": "e1c33d9b-1609-48fd-9f9e-4a3eccaa0742",
+  "fixtureRooms": [
+    {
+      "callId": "26a1ebe5-dc88-458a-a49d-fd504bf28bda",
+      "roomName": "lamma-26a1ebe5-dc88-458a-a49d-fd504bf28bda",
+      "scope": "direct"
+    },
+    {
+      "callId": "0882e457-aa6b-4cff-976e-adaa38ccf27d",
+      "roomName": "lamma-0882e457-aa6b-4cff-976e-adaa38ccf27d",
+      "scope": "group"
+    }
+  ],
+  "providerMetadataEchoes": 14,
+  "refreshedTokenMetadataEchoes": 14,
+  "maximumConnectedParticipants": 12,
+  "passed": false,
+  "error": "FAILED blocking revokes media and old token while unrelated group members stay connected; see sanitized report.",
+  "sourceCommitAtFinish": "2e5e30c051096c577373861a246e85a868e9d40f",
+  "finishedPreviewDeploymentVersion": "e1c33d9b-1609-48fd-9f9e-4a3eccaa0742",
+  "finishedAt": "2026-10-18T20:12:41.176Z"
+}

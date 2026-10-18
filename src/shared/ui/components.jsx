@@ -5,6 +5,7 @@ import { createPortal } from 'react-dom';
 import { IconClose } from './icons.jsx';
 import { burstConfetti } from '../fx/confetti.js';
 import { prefersReducedMotion, wait } from '../fx/screen.js';
+import { useVisualViewport } from './useVisualViewport.js';
 
 // ── ripple ───────────────────────────────────────────────────
 export function ripple(event) {
@@ -122,6 +123,7 @@ function useDialogHost() {
     document.body.appendChild(host);
     return () => { host.remove(); };
   }, [host]);
+  useVisualViewport(host);
   // تُنادى عند الفتح: المرساة موجودة في مكان الحوار الأصلي داخل الشاشة.
   const syncVars = useCallback(() => {
     try {

@@ -131,6 +131,14 @@ export function sameAnswer(a, b) {
   return Boolean(n) && n === arabicNormalizeLoose(b);
 }
 export function matchesTruth(text, question) { return [question.answer, ...(question.aliases || [])].some((answer) => sameAnswer(text, answer)); }
+export function duoQuestion(question) {
+  const decoys = [];
+  for (const text of question.decoys || []) {
+    if (typeof text !== 'string' || !text.trim() || matchesTruth(text, question) || decoys.some((value) => sameAnswer(value, text))) continue;
+    decoys.push(text);
+  }
+  return decoys.length >= 2;
+}
 
 // A replacer FUNCTION is required: a plain string replacement would let a name
 // containing $&, $` , $' or $$ rewrite the question text for the whole table.

@@ -71,8 +71,27 @@ jobs:
         run: |
           npm ci --no-audit --no-fund
           npm test
-          python3 -m unittest discover -s scripts/ios -p 'test_signing.py'
+          python3 -m unittest discover -s scripts/ios -p 'test_*.py'
           npm run ios:prepare
+      - name: Build and launch the Release app on iPhone Simulator
+        run: |
+          xcodebuild -project ios/Maydan.xcodeproj -scheme Maydan \
+            -configuration Release -sdk iphonesimulator \
+            -destination 'generic/platform=iOS Simulator' \
+            -derivedDataPath ios/build/simulator CODE_SIGNING_ALLOWED=NO \
+            "MARKETING_VERSION=$IOS_VERSION" "CURRENT_PROJECT_VERSION=$IOS_BUILD" build
+          python3 scripts/ios/verify_runtime_dependencies.py ios/build/simulator/Build/Products/Release-iphonesimulator/Maydan.app
+          python3 scripts/ios/smoke_release.py \
+            --app ios/build/simulator/Build/Products/Release-iphonesimulator/Maydan.app \
+            --output-dir ios/build/release-smoke
+      - name: Preserve simulator launch evidence
+        if: ${{ always() }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: Maydan-launch-${{ inputs.version }}-${{ inputs.build }}
+          path: ios/build/release-smoke
+          if-no-files-found: warn
+          retention-days: 7
       - name: Install and validate signing assets
         env:
           IOS_DISTRIBUTION_P12_BASE64: ${{ secrets.IOS_DISTRIBUTION_P12_BASE64 }}
@@ -108,20 +127,26 @@ jobs:
       - name: Archive the signed iPhone app
         run: |
           xcodebuild -version
+          # Only the app target maps this custom profile setting. Swift Package
+          # resource bundles must retain their own bundle IDs and no profile.
           xcodebuild -project ios/Maydan.xcodeproj -scheme Maydan \
             -configuration Release -sdk iphoneos -destination 'generic/platform=iOS' \
             -archivePath ios/build/Maydan.xcarchive \
             "MARKETING_VERSION=$IOS_VERSION" "CURRENT_PROJECT_VERSION=$IOS_BUILD" \
-            PRODUCT_BUNDLE_IDENTIFIER=Maydan DEVELOPMENT_TEAM=96WJBK2MB2 \
+            DEVELOPMENT_TEAM=96WJBK2MB2 \
             CODE_SIGN_STYLE=Manual "CODE_SIGN_IDENTITY=$IOS_SIGNING_IDENTITY" \
-            "PROVISIONING_PROFILE_SPECIFIER=$IOS_PROFILE_UUID" archive
+            "MAYDAN_PROVISIONING_PROFILE_SPECIFIER=$IOS_PROFILE_UUID" archive
           codesign --verify --deep --strict ios/build/Maydan.xcarchive/Products/Applications/Maydan.app
           python3 scripts/ios/signing.py archive ios/build/Maydan.xcarchive/Products/Applications/Maydan.app/Info.plist
+          python3 scripts/ios/verify_runtime_dependencies.py ios/build/Maydan.xcarchive/Products/Applications/Maydan.app
       - name: Export the signed IPA without uploading
         run: |
           xcodebuild -exportArchive -archivePath ios/build/Maydan.xcarchive \
             -exportOptionsPlist "$RUNNER_TEMP/maydan-signing/ExportOptions.plist" \
             -exportPath ios/build/export
+          for ipa in ios/build/export/*.ipa; do
+            python3 scripts/ios/verify_runtime_dependencies.py "$ipa"
+          done
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
         with:
           name: Maydan-iOS-${{ inputs.version }}-${{ inputs.build }}

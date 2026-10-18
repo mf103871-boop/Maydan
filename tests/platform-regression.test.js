@@ -68,6 +68,10 @@ test('parseHash يغطي كل مسار مدعوم', () => {
     ['#/online/fabraka', 'online', { id: 'fabraka' }],
     ['#/room/123456', 'room', { id: '123456' }],
     ['#/players', 'players', {}],
+    ['#/store', 'store', {}],
+    ['#/friends', 'friends', {}],
+    ['#/friends/person_123', 'friends', { id: 'person_123' }],
+    ['#/friends/group/group-123', 'friend-group', { id: 'group-123' }],
     ['#/settings', 'settings', {}],
     ['#/about', 'about', {}],
   ];

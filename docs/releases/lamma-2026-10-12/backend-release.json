@@ -1,0 +1,39 @@
+{
+  "verifiedAt": "2026-10-12T08:53:42.908Z",
+  "sourceCommit": "f5a0e60dfe04d72d1736fa6cebe923e4dc9ec6b4",
+  "sourceServerTree": "6f3f37b811d1df6bddb7b3e8b4ff74749475a1cc",
+  "backendTreeSha256": "b048b0f4b4a081a353f394d16e9308b15b5825fbd3baef30fcf5a975ed9f4be5",
+  "versions": {
+    "maydan-game": "2cda020a-e86c-470e-8585-6bba6d47040d",
+    "maydan-rooms": "de6bd8e1-10ff-4d18-998a-76a058a783ef"
+  },
+  "bundleSHA256": {
+    "maydan-game": "760b3e3c26a9ac167be8094956e9684f2479b9252660e97cf492672978839baa",
+    "maydan-rooms": "386fb29eaa92f5118bd176be460dde93822ed1690d0bbc407b8dcaf598b62cb2"
+  },
+  "assetsUnchanged": true,
+  "checkedAssets": 63,
+  "publicManifestSHA256": "4a940ab4d302e39cbe99ee781515a882f38f079ade1541591d56058ebd934b76",
+  "assetCoverage": "Entry documents and explicit local references; keep_assets preserves the full existing Cloudflare asset set.",
+  "originalBindingsAndSettingsUnchanged": true,
+  "reviewedWorkerCodeVerified": true,
+  "migrationAppliedOnce": "0008_lamma.sql",
+  "encryptedBackupVerified": true,
+  "privateAudioBucket": "maydan-social-audio",
+  "schedules": {
+    "maydan-game": ["17 3 * * *", "* * * * *"],
+    "maydan-rooms": []
+  },
+  "recovery": {
+    "reason": "Cloudflare error 10072: existing Workers Free account limit of five cron triggers.",
+    "operation": "deduplicate-rooms-daily-cron",
+    "originalPlanSHA256": "cb955bb8a93348ba232ebbbfddb327d42bffce117fd0000adcc1420e351feaa5",
+    "recoveryPlanSHA256": "3d54f84fc75615c26f9dc0821f1b039f63d9d84dddaad9be6742582d9fa7458b",
+    "originalPlanPreserved": true,
+    "sqlReplayed": false,
+    "mainCodeReuploaded": false,
+    "paidPlanUpgrade": false
+  },
+  "publicFrontendPublished": false,
+  "physicalIPhoneAcceptanceComplete": false
+}

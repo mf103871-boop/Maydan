@@ -1,0 +1,64 @@
+// Real Play + Fabraka + the global drawer; only remote account services are fixtures.
+import assert from 'node:assert/strict';
+import { build } from 'esbuild';
+import { chromium } from 'playwright';
+import http from 'node:http';
+import fs from 'node:fs/promises';
+import path from 'node:path';
+
+const bundle = await build({ stdin: { contents: `
+import React from'react';import{createRoot}from'react-dom/client';import{AccountContext,NULL_ACCOUNT}from'./src/shared/account/context.js';import{PlatformContext}from'./src/platform/context.js';
+import{SocialProvider}from'./src/social/SocialProvider.jsx';import{LammaProvider}from'./src/social/LammaProvider.jsx';import{SocialUIProvider}from'./src/social/SocialUIProvider.jsx';import{ProfileProvider}from'./src/profiles/ProfileProvider.jsx';import{SocialHost}from'./src/social/SocialHost.jsx';import{Play}from'./src/platform/screens/Play.jsx';import{socialInterruption}from'./src/social/interruption.js';
+import{BrandFonts}from'./src/shared/brand/art.jsx';import css from'./src/shared/ui/ui.css';import tokens from'./src/shared/theme/tokens.css';import brand from'./src/shared/brand/brand.css';
+const me={id:'me',name:'عمر'};const sound={play(){},setDucking(){},music:{play(){},sting(){}}};const platform={sound,toast(){},settings:{},setSettings(){},haptics:{vibrate(){}},confetti:{fire(){}},roster:[{id:'a',name:'أحمد',color:'#178879',emoji:'🦊'},{id:'b',name:'عمر',color:'#dc7849',emoji:'🐻'},{id:'c',name:'ليان',color:'#7768b6',emoji:'🐱'}],setRoster(){}};
+const request=async(path)=>{if(path==='/api/social/state')return{user:me,friends:[],incoming:[],outgoing:[],blocked:[],conversations:[]};if(path==='/api/social/groups')return{groups:[],incoming:[]};if(path==='/api/social/calls')return{calls:[]};if(path==='/api/social/capabilities')return{capabilities:{voiceMessages:false,liveCalls:false,pushNotifications:false}};if(path==='/api/social/preferences')return{preferences:{messages:true,previews:false,sound:false}};if(path.includes('/profiles/'))return{profile:{...me,relationship:'self',stats:{},achievements:[]}};if(path.includes('live-ticket'))throw Object.assign(Error(),{code:'SOCIAL_UNAVAILABLE'});return{};};
+window.interruption=socialInterruption;const account={...NULL_ACCOUNT,ready:true,signedIn:true,user:me,requestAuthenticated:request};
+createRoot(document.getElementById('root')).render(<AccountContext.Provider value={account}><PlatformContext.Provider value={platform}><BrandFonts/><style>{tokens}</style><style>{css}</style><style>{brand}</style><SocialProvider><LammaProvider><SocialUIProvider><ProfileProvider><Play id="fabraka"/><SocialHost/></ProfileProvider></SocialUIProvider></LammaProvider></SocialProvider></PlatformContext.Provider></AccountContext.Provider>);`, resolveDir: process.cwd(), loader: 'jsx' }, bundle: true, write: false, format: 'iife', jsx: 'automatic', loader: { '.css': 'text', '.webp': 'dataurl', '.woff2': 'dataurl', '.svg': 'dataurl' }, logLevel: 'silent' });
+const server = http.createServer((req, res) => { res.writeHead(200, { 'content-type': 'text/html;charset=utf-8' }); res.end(`<!doctype html><html lang="ar" dir="rtl"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><div id="root"></div><script>${bundle.outputFiles[0].text}</script></html>`); });
+await new Promise(resolve => server.listen(0, '127.0.0.1', resolve)); let browser;
+const out = path.join(process.cwd(), '.cache', 'lamma-e2e'); await fs.mkdir(out, { recursive: true });
+try {
+  browser = await chromium.launch(process.env.CHROMIUM_PATH ? { executablePath: process.env.CHROMIUM_PATH } : {});
+  const page = await browser.newPage({ viewport: { width: 390, height: 844 }, reducedMotion: 'reduce' }); const errors = []; page.on('pageerror', error => errors.push(error.message));
+  const origin = `http://127.0.0.1:${server.address().port}`;
+  await page.route('**/*', route => new URL(route.request().url()).origin === origin ? route.continue() : route.abort());
+  await page.goto(origin + '/#/play/fabraka');
+  await page.getByRole('button', { name: 'سريع · 30', exact: true }).click();
+  await page.getByRole('button', { name: /ابدأ اللعب · 3 لاعبين/ }).click();
+  await page.getByRole('button', { name: 'ابدأ الجولة', exact: true }).click();
+  await page.getByRole('button', { name: 'فهمنا السؤال، نبدأ الكتابة', exact: true }).click();
+  await page.getByRole('button', { name: /أنا .+، جاهز/ }).click();
+  await page.locator('.fab-input').fill('إجابة خاصة لا تظهر للآخرين');
+  const saved = () => page.evaluate(() => JSON.parse(localStorage.getItem('maydan:fabraka:session-v2')));
+  await page.waitForFunction(() => JSON.parse(localStorage.getItem('maydan:fabraka:session-v2'))?.remaining < 30);
+  const before = await saved(); assert.equal(before.draft, 'إجابة خاصة لا تظهر للآخرين');
+  await page.getByRole('button', { name: /الأصدقاء،|افتح الأصدقاء واللّمة/ }).click();
+  await page.getByRole('dialog', { name: 'الأصدقاء واللّمة' }).waitFor();
+  assert.equal(await page.locator('#root').evaluate(el => el.inert), true);
+  assert.equal(await page.locator('.fab-input').count(), 0, 'secret input must be removed, not merely covered');
+  const paused = await saved(); assert.equal(paused.paused, true); assert.equal(paused.draft, before.draft);
+  await page.waitForTimeout(1400); assert.equal((await saved()).remaining, paused.remaining, 'real game timer must freeze');
+  await page.screenshot({ path: path.join(out, 'real-game-drawer.png') });
+  await page.getByRole('button', { name: 'إغلاق اللّمة والعودة للعبة' }).click();
+  await page.getByRole('heading', { name: 'اللعبة بانتظاركم' }).waitFor();
+  assert.equal(await page.locator('#root').evaluate(el => el.inert), false);
+  assert.equal(await page.locator('.game-body > div[inert]').count(), 1);
+  assert.equal(await page.evaluate(() => location.hash), '#/play/fabraka');
+  await page.screenshot({ path: path.join(out, 'real-game-paused.png') });
+  await page.getByRole('button', { name: 'متابعة اللعب', exact: true }).click();
+  await page.getByTestId('privacy-gate').waitFor(); assert.equal(await page.locator('.fab-input').count(), 0);
+  await page.getByRole('button', { name: /أنا .+، جاهز/ }).click();
+  assert.equal(await page.locator('.fab-input').inputValue(), before.draft);
+  const resumed = await saved(); assert.equal(resumed.round, before.round); assert.equal(resumed.writer, before.writer); assert.equal(resumed.seed, before.seed);
+  await page.waitForFunction(remaining => JSON.parse(localStorage.getItem('maydan:fabraka:session-v2')).remaining < remaining, resumed.remaining);
+  await page.getByRole('button', { name: 'إيقاف مؤقت', exact: true }).click();
+  await page.getByRole('heading', { name: 'خذوا راحتكم' }).waitFor();
+  const manual = await saved();
+  await page.getByRole('button', { name: /الأصدقاء،|افتح الأصدقاء واللّمة/ }).click();
+  await page.getByRole('button', { name: 'إغلاق اللّمة والعودة للعبة' }).click();
+  await page.getByRole('button', { name: 'متابعة اللعب', exact: true }).click();
+  await page.getByRole('heading', { name: 'خذوا راحتكم' }).waitFor();
+  await page.waitForTimeout(1200); assert.equal((await saved()).remaining, manual.remaining); assert.equal((await saved()).paused, true, 'manual pause must survive social resume');
+  assert.deepEqual(errors, []);
+  console.log('PASS: real Play/Fabraka timer freeze, inert hidden game, preserved round/draft, explicit continuation + privacy gate, manual pause preserved');
+} finally { await browser?.close(); await new Promise(resolve => server.close(resolve)); }

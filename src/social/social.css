@@ -24,7 +24,7 @@
 .social-badge { min-width: 20px; height: 20px; display: inline-flex; align-items: center; justify-content: center; border-radius: 8px; padding: 0 5px; background: var(--accent); color: #fff; font-size: 10px; font-weight: 800; line-height: 1; }
 .social-tabs .social-badge { min-width: 17px; height: 17px; border-radius: 6px; font-size: 9px; }
 .social-search { display: flex; align-items: center; gap: 8px; border: 1px solid var(--stroke); background: #fffdf8; border-radius: 13px; padding: 0 12px; color: var(--muted); }
-.social-search input { background: transparent; border: 0; width: 100%; min-width: 0; height: 46px; outline: none; font-size: 14px; color: var(--text); }
+.social-search input { background: transparent; border: 0; width: 100%; min-width: 0; height: 46px; outline: none; font-size: 16px; color: var(--text); }
 .social-search:focus-within { border-color: var(--accent); box-shadow: 0 0 0 3px #087d8910; }
 .social-list-search { margin: 0 16px 10px; }
 .social-list-panel { flex: 1; min-height: 0; overflow-y: auto; overscroll-behavior: contain; padding: 3px 8px 14px; scrollbar-width: thin; scrollbar-color: var(--stroke) transparent; }
@@ -81,6 +81,8 @@
 .social-bubble { min-width: 82px; border-radius: 17px 5px 17px 17px; padding: 10px 13px 7px; background: #e2eee7; border: 1px solid #cfe1d7; box-shadow: 0 2px 2px #54402e04; min-width: 0; overflow: hidden; }
 .is-theirs .social-bubble { border-radius: 5px 17px 17px 17px; background: #fffef9; border-color: #e8ddca; }
 .social-bubble > p { white-space: pre-wrap; overflow-wrap: anywhere; font-size: 15px; line-height: 1.75; text-align: start; unicode-bidi: plaintext; }
+.social-message-sender { display: flex; align-items: center; gap: 7px; margin-bottom: 5px; color: var(--accent); min-width: 0; }
+.social-message-sender > strong { min-width: 0; max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 11px; }
 .social-bubble.is-deleted { background: transparent; border-style: dashed; color: var(--muted); }.social-bubble.is-deleted > p { font-style: italic; font-size: 13px; }
 .social-message-meta { display: flex; justify-content: flex-end; align-items: center; gap: 7px; font-size: 9px; color: #777164; margin-top: 5px; flex-wrap: wrap; }
 .social-delivery { display: inline-flex; align-items: center; gap: 3px; }.social-delivery.is-read { color: #076e74; }.social-delivery > span { font-size: 9px; }

@@ -1,0 +1,31 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "maydan-lamma-preview",
+  "main": "server/worker.mjs",
+  "compatibility_date": "2026-09-01",
+  "workers_dev": true,
+  // API-only preview. No production assets, D1, buckets, or cross-script DOs.
+  "vars": {
+    "APP_ORIGIN": "http://localhost:5173",
+    "ALLOWED_ORIGINS": "http://localhost:5173,http://127.0.0.1:5173,maydan://app",
+    "EXTRA_ORIGINS": "maydan://app",
+    "APPLE_BUNDLE_ID": "Maydan"
+  },
+  "durable_objects": {
+    "bindings": [
+      { "name": "ROOMS", "class_name": "Room" },
+      { "name": "LIMITERS", "class_name": "RequestLimiter" },
+      { "name": "SOCIAL_HUB", "class_name": "SocialHub" },
+      { "name": "SOCIAL_JOBS", "class_name": "LammaJobs" }
+    ]
+  },
+  "migrations": [
+    { "tag": "v1-lamma-preview", "new_sqlite_classes": ["Room", "RequestLimiter", "SocialHub", "LammaJobs"] }
+  ],
+  // Isolated preview database: contains only synthetic acceptance-test accounts.
+  "d1_databases": [{ "binding": "DB", "database_name": "maydan-lamma-preview-accounts", "database_id": "346a7165-9989-4fe2-a5a3-aec017a2d21b", "migrations_dir": "server/migrations" }],
+  "r2_buckets": [{ "binding": "SOCIAL_AUDIO", "bucket_name": "maydan-lamma-preview-audio" }],
+  // Use a separate LiveKit preview project and preview/test APNs credentials.
+  "triggers": { "crons": ["17 3 * * *", "* * * * *"] },
+  "observability": { "enabled": true }
+}

@@ -1,7 +1,7 @@
 // الإعدادات: الصوت، الموسيقى، الاهتزاز، تقليل الحركة، مسح البيانات، الإصدار، وبلاغات أسئلة بَديهة.
 import React, { useState } from 'react';
-import { Screen, TopBar, IconButton, Button, Card, ConfirmModal } from '../../shared/ui/components.jsx';
-import { IconBack, IconVolume, IconMusic, IconVibrate, IconMotion, IconTrash, IconFlag, IconShare } from '../../shared/ui/icons.jsx';
+import { Screen, TopBar, Button, Card, ConfirmModal } from '../../shared/ui/components.jsx';
+import { IconVolume, IconMusic, IconVibrate, IconMotion, IconTrash, IconFlag, IconShare, IconInfo } from '../../shared/ui/icons.jsx';
 import { clearAllPlatformData, createStorage } from '../../shared/lib/storage.js';
 import { AccountCard } from '../../shared/account/AccountCard.jsx';
 import { LEGAL_ROUTES, PUBLIC_SITE_ORIGIN } from '../../shared/account/config.js';
@@ -9,7 +9,7 @@ import { isNativeShell } from '../../shared/account/native.js';
 import { ACCOUNT_PREFIX } from '../../shared/account/store.js';
 import { shareText } from '../../shared/fx/haptics.js';
 import { usePlatform } from '../context.js';
-import { back, getDirection } from '../router.js';
+import { navigate, getDirection } from '../router.js';
 import { ModerationSettingsLink } from '../../moderation/ModerationScreen.jsx';
 
 // index: تدرّج دخول الصفوف (45ms لكل صف) عبر --delay
@@ -21,6 +21,10 @@ function Toggle({ icon, title, sub, checked, onChange, index = 0 }) {
       <button type="button" className="switch" role="switch" aria-checked={checked} aria-label={title} onClick={() => onChange(!checked)} />
     </div>
   );
+}
+
+function SettingsGroup({ id, title, children }) {
+  return <section className="settings-group" aria-labelledby={id}><h2 id={id}>{title}</h2><div className="stack">{children}</div></section>;
 }
 
 export function Settings() {
@@ -35,9 +39,10 @@ export function Settings() {
     toast(result === 'copied' ? 'تم نسخ البلاغات' : result === 'failed' ? 'تعذرت المشاركة على هذا الجهاز' : 'تمت المشاركة');
   };
   return (
-    <Screen dir={getDirection()} className="stack" aria-label="الإعدادات">
-      <TopBar title="الإعدادات" start={<IconButton label="رجوع" onClick={back}><IconBack /></IconButton>} />
-      <div className="stack">
+    <Screen dir={getDirection()} className="stack settings-screen" aria-label="الإعدادات">
+      <TopBar title="الإعدادات" eyebrow="ميدان على راحتك" />
+      <SettingsGroup id="settings-account" title="حسابك وميدان بلس"><AccountCard /></SettingsGroup>
+      <SettingsGroup id="settings-audio" title="الصوت والموسيقى">
         <Toggle index={0} icon={<IconVolume />} title="الصوت" sub="المؤثرات ومقاطع الأسئلة والموسيقى معًا" checked={settings.soundOn} onChange={(v) => { setSettings({ soundOn: v }); if (v) sound.play('pop'); }} />
         <div className="setting setting-volume">
           <label htmlFor="sound-volume"><b>مستوى الصوت</b><output htmlFor="sound-volume">{Math.round(sound.volume * 100)}٪</output></label>
@@ -55,25 +60,35 @@ export function Settings() {
             onChange={(event) => setSettings({ musicVolume: Number(event.target.value) / 100 })}
             onPointerUp={() => sound.play('pop')} onKeyUp={(event) => { if (event.key.startsWith('Arrow') || event.key === 'Home' || event.key === 'End') sound.play('pop'); }} />
         </div>
-        <Toggle index={2} icon={<IconVibrate />} title="الاهتزاز" sub="عند الإجابات والمؤقت (حيث يتوفر)" checked={settings.hapticsOn} onChange={(v) => { setSettings({ hapticsOn: v }); if (v) haptics.vibrate('light'); }} />
-        <Toggle index={3} icon={<IconMotion />} title="تقليل الحركة" sub="يعطّل الجسيمات والانتقالات مع بقاء الوظائف" checked={settings.reducedMotion} onChange={(v) => setSettings({ reducedMotion: v })} />
-      </div>
-      <AccountCard />
-      <ModerationSettingsLink />
+      </SettingsGroup>
+      <SettingsGroup id="settings-experience" title="تجربة اللعب">
+        <Toggle index={0} icon={<IconVibrate />} title="الاهتزاز" sub="عند الإجابات والمؤقت (حيث يتوفر)" checked={settings.hapticsOn} onChange={(v) => { setSettings({ hapticsOn: v }); if (v) haptics.vibrate('light'); }} />
+        <Toggle index={1} icon={<IconMotion />} title="تقليل الحركة" sub="يعطّل الجسيمات والانتقالات مع بقاء الوظائف" checked={settings.reducedMotion} onChange={(v) => setSettings({ reducedMotion: v })} />
+      </SettingsGroup>
+      <SettingsGroup id="settings-privacy" title="الخصوصية والأمان">
+        <Card className="settings-legal-card legal-links">
+          <a href={LEGAL_ROUTES.privacy}>سياسة الخصوصية</a>
+          <a href={LEGAL_ROUTES.terms}>شروط الاستخدام</a>
+          <a href={native ? `${PUBLIC_SITE_ORIGIN}/refunds/` : 'refunds/'}>سياسة الاسترداد</a>
+          {!native && <a href="pricing/">التسعير</a>}
+        </Card>
+        <ModerationSettingsLink />
+      </SettingsGroup>
+      <SettingsGroup id="settings-support" title="المساعدة وعن ميدان">
       <Card className="stack">
         <div className="row"><IconFlag style={{ color: 'var(--accent)' }} /><span className="card-title">الإبلاغ عن سؤال</span></div>
         <p className="card-muted">تُحفظ البلاغات التي ترسلها من داخل بَديهة على هذا الجهاز. عدد البلاغات الحالية: <b style={{ color: 'var(--text)' }}>{reports.length}</b>.</p>
         <Button variant="secondary" icon={<IconShare />} disabled={!reports.length} onClick={share}>مشاركة البلاغات</Button>
       </Card>
+      <Button variant="secondary" icon={<IconInfo />} onClick={() => navigate('/about')}>عن ميدان</Button>
+      </SettingsGroup>
+      <SettingsGroup id="settings-local" title="بيانات هذا الجهاز">
       <Card className="stack">
         <span className="card-title">مسح البيانات</span>
         <p className="card-muted">يحذف دفتر اللاعبين، والإعدادات، وسجلات الألعاب، ومفاتيح العودة للغرف من هذا الجهاز. يبقى حسابك واشتراكك.</p>
         <Button variant="danger" icon={<IconTrash />} onClick={() => setConfirmClear(true)}>مسح كل البيانات</Button>
       </Card>
-      <p className="muted center legal-links" style={{ fontSize: 13 }}>
-        {!native && <><a href="pricing/">التسعير</a> · </>}
-        <a href={native ? `${PUBLIC_SITE_ORIGIN}/refunds/` : 'refunds/'}>سياسة الاسترداد</a> · <a href={LEGAL_ROUTES.terms}>شروط الاستخدام</a> · <a href={LEGAL_ROUTES.privacy}>سياسة الخصوصية</a>
-      </p>
+      </SettingsGroup>
       <p className="muted center" style={{ fontSize: 13 }}>ميدان: ألعاب جمعتنا · الإصدار {version}</p>
       {confirmClear && (
         <ConfirmModal title="مسح كل البيانات؟" danger message="لا يمكن التراجع. ستُحذف أسماء اللاعبين والنتائج والمباريات المحفوظة ومفاتيح العودة للغرف من هذا الجهاز. يبقى حسابك واشتراكك." confirmLabel="نعم، امسح" cancelLabel="إلغاء"

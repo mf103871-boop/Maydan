@@ -1,0 +1,141 @@
+{
+  "sourceCommit": "107bd25724be2f9126a3af58e92c240682a61b23",
+  "workflowRun": 39163718100,
+  "workflowJob": 117782195717,
+  "workflowAttempt": 1,
+  "evidenceArtifactId": 12149938356,
+  "evidenceArchiveSha256": "98eb4f00626a6997e056a5cc7dbc55f20e32d2e8ae9ce76779a649da2d3ed1f3",
+  "release": {
+    "passed": true,
+    "normalStartup": true,
+    "updateGate": true,
+    "sameInstalledApp": true,
+    "normalEvidence": "/Users/runner/work/Maydan/Maydan/ios/build/release-smoke/launch-smoke",
+    "updateEvidence": "/Users/runner/work/Maydan/Maydan/ios/build/release-smoke/update-gate-smoke"
+  },
+  "normal": {
+    "startedAt": "2026-10-18T20:37:21Z",
+    "passed": true,
+    "launches": [
+      {
+        "name": "cold",
+        "pid": 25273,
+        "requiredSeconds": 45,
+        "passed": true,
+        "observedSeconds": 45.11,
+        "terminatedForRelaunch": true
+      },
+      {
+        "name": "relaunch",
+        "pid": 27145,
+        "requiredSeconds": 15,
+        "passed": true,
+        "observedSeconds": 15.17,
+        "terminatedForRelaunch": true
+      }
+    ],
+    "crashReports": [],
+    "diagnosticWarnings": [],
+    "preparation": [
+      {
+        "step": "runtime-cache-readiness",
+        "timeoutSeconds": 300,
+        "passed": true,
+        "elapsedSeconds": 2.5
+      },
+      {
+        "step": "simulator-inventory",
+        "timeoutSeconds": 45,
+        "passed": true,
+        "elapsedSeconds": 0.4
+      },
+      {
+        "step": "simulator-create",
+        "timeoutSeconds": 45,
+        "passed": true,
+        "elapsedSeconds": 0.32
+      },
+      {
+        "step": "simulator-boot",
+        "timeoutSeconds": 60,
+        "passed": true,
+        "elapsedSeconds": 9.97
+      },
+      {
+        "step": "simulator-bootstatus",
+        "timeoutSeconds": 180,
+        "passed": true,
+        "elapsedSeconds": 76.47
+      },
+      {
+        "step": "simulator-install",
+        "timeoutSeconds": 300,
+        "passed": true,
+        "elapsedSeconds": 27.22
+      },
+      {
+        "step": "installed-app",
+        "timeoutSeconds": 180,
+        "passed": true,
+        "elapsedSeconds": 36.16
+      }
+    ],
+    "limits": [
+      "Checks simulator process survival and launch crash reports only.",
+      "Does not certify rendered UI, device-only code, or exported IPA packaging."
+    ],
+    "bundleIdentifier": "Maydan",
+    "version": "1.8",
+    "build": "18",
+    "executableSha256": "844daec677520a35611fb0451bef134d3f076e88c8a5f32ede7961fd5764feca",
+    "simulatorUdid": "991e1349-3745-42f8-955f-30adf8337947",
+    "simulatorModel": "iPhone SE (3rd generation)",
+    "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-26-2",
+    "finishedAt": "2026-10-18T20:41:35Z"
+  },
+  "updateGate": {
+    "startedAt": "2026-10-18T20:37:21Z",
+    "passed": true,
+    "launches": [
+      {
+        "name": "required-update",
+        "pid": 28245,
+        "requiredSeconds": 5,
+        "passed": true,
+        "observedSeconds": 5.18
+      }
+    ],
+    "crashReports": [],
+    "diagnosticWarnings": [],
+    "preparation": [
+      {
+        "step": "data-container",
+        "timeoutSeconds": 180,
+        "passed": true,
+        "elapsedSeconds": 0.84
+      }
+    ],
+    "limits": [
+      "Checks simulator process survival and launch crash reports only.",
+      "Does not certify rendered UI, device-only code, or exported IPA packaging."
+    ],
+    "bundleIdentifier": "Maydan",
+    "version": "1.8",
+    "build": "18",
+    "executableSha256": "844daec677520a35611fb0451bef134d3f076e88c8a5f32ede7961fd5764feca",
+    "simulatorUdid": "991e1349-3745-42f8-955f-30adf8337947",
+    "simulatorModel": "iPhone SE (3rd generation)",
+    "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-26-2",
+    "reusedVerifiedSimulator": true,
+    "updateGate": {
+      "requiredHeadingAndActions": true,
+      "initialGameNotLoadedBehindGate": true,
+      "realRetryAction": true,
+      "offlineRecovery": true,
+      "evidence": "Mounted native view properties plus screenshots; no physical touch claim."
+    },
+    "finishedAt": "2026-10-18T20:42:17Z"
+  },
+  "survivalWindowIsNotMeasuredStartupLatency": true,
+  "physicalDeviceVerification": false
+}

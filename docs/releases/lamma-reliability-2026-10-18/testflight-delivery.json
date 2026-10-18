@@ -1,0 +1,32 @@
+{
+  "verifiedAt": "2026-10-18T20:54:47.819302+00:00",
+  "appId": "6808385717",
+  "version": "1.8",
+  "build": "18",
+  "buildId": "4df4ad3f-4d33-469d-b865-051e991b1e65",
+  "processingState": "VALID",
+  "internalBuildState": "IN_BETA_TESTING",
+  "externalBuildState": "READY_FOR_BETA_SUBMISSION",
+  "autoNotifyEnabled": true,
+  "internalGroup": {
+    "id": "0f254efa-38d9-406c-9ab0-1664b99f3213",
+    "name": "Envysnowy Group",
+    "type": "Internal",
+    "testers": 1,
+    "verifiedFromBuildDetailUI": true
+  },
+  "testInformationSaved": {
+    "verified": true,
+    "verifiedAt": "2026-10-18T20:53:22.193267+00:00",
+    "buildId": "4df4ad3f-4d33-469d-b865-051e991b1e65",
+    "version": "1.8",
+    "build": "18",
+    "locale": "en-US",
+    "characters": 1253,
+    "sourceSHA256": "76d874e6048b7aafb33550501b4986e1fad3760bbee80ca44510101f0c067ad7",
+    "method": "App Store Connect UI save followed by independent API GET"
+  },
+  "url": "https://appstoreconnect.apple.com/teams/609ff8f7-15ce-48ec-9e60-e95f8ed24d3a/apps/6808385717/testflight/ios/4df4ad3f-4d33-469d-b865-051e991b1e65",
+  "publicSubmissionPerformed": false,
+  "physicalIPhoneTrialRequired": true
+}

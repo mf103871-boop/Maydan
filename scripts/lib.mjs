@@ -9,6 +9,7 @@ import { fileURLToPath } from 'node:url';
 import { checkMedia, copyMedia, fmtMB } from './media.mjs';
 import { fabrakaMediaManifest } from './fabraka-media.mjs';
 import { SAMPLE_BANK } from '../src/shared/fx/sample-bank.js';
+import { LIVEKIT_VERSION, LIVEKIT_MODULE } from '../src/social/media-version.js';
 
 export const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 export const DIST = path.join(ROOT, 'dist');
@@ -122,6 +123,10 @@ export async function buildOnce({ minify = true } = {}) {
   await rm(DIST, { recursive: true, force: true });
   await mkdir(DIST, { recursive: true });
   await copyPublic({ id: buildId(pkg.version, html), fabrakaImages });
+  if (pkg.dependencies['livekit-client'] !== LIVEKIT_VERSION) throw new Error('Update the versioned LiveKit module filename with its pinned dependency.');
+  await esbuildBuild({ stdin: { contents: "export { Room, RoomEvent, Track } from 'livekit-client';", resolveDir: ROOT, sourcefile: 'lamma-web-audio.js' },
+    outfile: path.join(DIST, LIVEKIT_MODULE), bundle: true, format: 'esm', target: ['es2020', 'safari14'], minify: true,
+    define: { 'process.env.NODE_ENV': '"production"' }, legalComments: 'eof', logLevel: 'silent' });
   // الوسائط تُفحص قبل النسخ: سؤال يشير إلى ملف غير موجود يوقف البناء.
   const media = await checkMedia(ROOT);
   if (media.errors.length) {

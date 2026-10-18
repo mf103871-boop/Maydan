@@ -42,17 +42,17 @@
 .badge-accent { background: color-mix(in srgb, var(--game-accent, var(--accent)) 18%, transparent); color: var(--game-accent, var(--accent)); border-color: color-mix(in srgb, var(--game-accent, var(--accent)) 40%, transparent); }
 
 /* modal + sheet (بلا backdrop-filter: التعتيم يكفي ويوفّر للحركة) */
-.modal-layer { position: fixed; inset: 0; z-index: 400; display: flex; align-items: center; justify-content: center; padding: 18px; padding-bottom: max(18px, var(--safe-bottom)); background: rgba(53,37,71,.48); animation: ui-fade .22s ease-out both; }
+.modal-layer { position: fixed; inset: 0; top: var(--dialog-viewport-top, 0px); bottom: auto; height: var(--dialog-viewport-height, 100dvh); z-index: 400; display: flex; align-items: center; justify-content: center; padding: 18px; padding-bottom: max(18px, var(--safe-bottom)); background: rgba(53,37,71,.48); animation: ui-fade .22s ease-out both; }
 .modal-layer.is-closing { animation: ui-fade-out .18s ease-in both; }
 .modal-layer.is-sheet { align-items: flex-end; padding: 0; }
-.modal { width: min(100%, 520px); max-height: min(88dvh, 760px); overflow: auto; overscroll-behavior: contain; background: var(--bg-2); border: 1px solid var(--stroke-strong); border-radius: 26px; padding: 18px; box-shadow: var(--shadow); animation: ui-modal-in .34s var(--ease-spring) both; }
+.modal { width: min(100%, 520px); max-height: min(88dvh, 760px, 100%); overflow: auto; overscroll-behavior: contain; background: var(--bg-2); border: 1px solid var(--stroke-strong); border-radius: 26px; padding: 18px; box-shadow: var(--shadow); animation: ui-modal-in .34s var(--ease-spring) both; }
 .modal.is-danger { animation: ui-modal-in .34s var(--ease-spring) both, ui-nudge .4s ease-out .3s; }
 .modal-layer.is-closing .modal { animation: ui-modal-out .18s ease-in both; }
 .modal-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 12px; }
 .modal-head h2 { font-size: 20px; }
 .modal-body { display: grid; gap: 12px; }
 .modal-foot { display: grid; gap: 8px; margin-top: 14px; }
-.sheet { width: 100%; max-width: 640px; margin: 0 auto; max-height: 90dvh; overflow: auto; overscroll-behavior: contain; background: var(--bg-2); border: 1px solid var(--stroke-strong); border-bottom: 0; border-radius: 26px 26px 0 0; padding: 8px 18px max(18px, var(--safe-bottom)); box-shadow: var(--shadow); animation: ui-sheet-in var(--dur) var(--ease-spring) both; touch-action: pan-y; }
+.sheet { width: 100%; max-width: 640px; margin: 0 auto; max-height: min(90dvh, 100%); overflow: auto; overscroll-behavior: contain; background: var(--bg-2); border: 1px solid var(--stroke-strong); border-bottom: 0; border-radius: 26px 26px 0 0; padding: 8px 18px max(18px, var(--safe-bottom)); box-shadow: var(--shadow); animation: ui-sheet-in var(--dur) var(--ease-spring) both; touch-action: pan-y; }
 .sheet.is-closing { animation: ui-sheet-out 220ms ease-in both; }
 .sheet-handle { position: relative; width: 44px; height: 5px; border-radius: 99px; background: rgba(255,255,255,.28); margin: 6px auto 14px; }
 .sheet-handle::after { content: ""; position: absolute; inset: -3px -6px; border-radius: 99px; box-shadow: 0 0 0 3px #9250BD33; opacity: 0; pointer-events: none; animation: ui-glow 1.6s ease-in-out .4s 2; }

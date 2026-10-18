@@ -398,10 +398,10 @@ async function redeem(request, env, now) {
 
 // ── بوابة إنشاء الغرف ───────────────────────────────────────────────────────
 export const gameOf = (input) => (TRIAL_GAMES.includes(input?.game) ? input.game : 'meenfina');
-// المجهول يبقى مسموحًا (العلامة محلية)؛ المسجّل غير المشترك يُحسب له إنشاء واحد لكل لعبة.
-// المجهول يُحسب له أيضًا: معرّف جهاز عشوائي يولّده العميل ويحتفظ به، وتُسجَّل تجربته في
+// Waiting rooms stay free until a valid first match start. A random device ID
+// also accounts for guests: their spent match is stored in
 // جدول التجارب نفسه تحت `device:<id>`. مسح التخزين يعطي معرّفًا جديدًا (كما هو حال بقية
-// المحتوى المحلي)، لكن الخادم صار مصدر الحقيقة بدل علامة في localStorage وحدها.
+// المحتوى المحلي)، لكن الخادم مصدر الحقيقة بدل علامة في localStorage وحدها.
 const DEVICE_ID = /^[a-f0-9]{32}$/;
 const deviceKeyOf = (input) => (typeof input?.deviceId === 'string' && DEVICE_ID.test(input.deviceId) ? `device:${input.deviceId}` : null);
 export async function roomGate(request, env, input, now = Date.now()) {
@@ -427,10 +427,33 @@ export async function roomGate(request, env, input, now = Date.now()) {
   if (!premium && (trials[game] || deviceTrials[game])) failure('PLUS_REQUIRED');
   return { userId: found.user.id, device, game, premium };
 }
-export async function markRoomTrial(env, gate, now = Date.now()) {
-  if (!gate) return;
-  for (const key of [gate.userId, gate.device]) {
-    if (!key) continue;
-    try { await db.addTrial(env, key, gate.game, now); } catch { /* الغرفة أُنشئت فعلًا */ }
+// The caller supplies a private, server-created claim ID stored with the room.
+// This is also the recovery key if D1 succeeds but the Durable Object commit
+// fails: retrying that same room can proceed; another room cannot use its claim.
+export async function consumeRoomTrial(env, gate, claimId, now = Date.now(), ownerPresent = true) {
+  if (!env.DB || !gate) return;
+  const keys = [...new Set([gate.userId, gate.device].filter(Boolean))];
+  if (!keys.length) return;
+  if (gate.userId) {
+    if (!await db.userById(env, gate.userId)) failure('AUTH');
+    const subscriptions = await db.subscriptionsOf(env, gate.userId);
+    if (premiumActive(premiumOf(subscriptions, now, env), now)) {
+      await Promise.all(keys.map((key) => db.addTrial(env, key, gate.game, now)));
+      return;
+    }
   }
+  if (!ownerPresent) throw new RoomError('TRIAL_OWNER_LEFT', 409);
+  if (!/^[a-zA-Z0-9-]{1,80}$/.test(claimId || '')) failure('INVALID');
+  const placeholders = keys.map(() => '?').join(',');
+  const statement = (sql, ...args) => env.DB.prepare(sql).bind(...args);
+  const claims = keys.map((key) => statement(`INSERT OR IGNORE INTO online_room_trial_claims(user_id,game,claim_id,created_at)
+    SELECT ?,?,?,? WHERE NOT EXISTS(SELECT 1 FROM trials WHERE user_id IN (${placeholders}) AND game=?)
+    AND NOT EXISTS(SELECT 1 FROM online_room_trial_claims WHERE user_id IN (${placeholders}) AND game=? AND claim_id!=?)`,
+  key, gate.game, claimId, now, ...keys, gate.game, ...keys, gate.game, claimId));
+  const marks = keys.map((key) => statement(`INSERT OR IGNORE INTO trials(user_id,game,created_at)
+    SELECT ?,?,? WHERE (SELECT COUNT(*) FROM online_room_trial_claims WHERE user_id IN (${placeholders}) AND game=? AND claim_id=?)=?`,
+  key, gate.game, now, ...keys, gate.game, claimId, keys.length));
+  await env.DB.batch([...claims, ...marks]);
+  const won = await db.first(env, `SELECT COUNT(*) AS n FROM online_room_trial_claims WHERE user_id IN (${placeholders}) AND game=? AND claim_id=?`, ...keys, gate.game, claimId);
+  if (won?.n !== keys.length) failure('PLUS_REQUIRED');
 }

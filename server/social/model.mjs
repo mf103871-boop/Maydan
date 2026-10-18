@@ -46,4 +46,5 @@ export const messageView = (row) => ({
   seq: row.seq, conversationId: row.conversation_id, senderId: row.sender_id,
   text: row.deleted_at === null ? row.text : '', clientId: row.client_id,
   createdAt: row.created_at, editedAt: row.edited_at, deletedAt: row.deleted_at,
+  ...(row.kind && row.kind !== 'text' ? {kind:row.kind,attachmentId:row.deleted_at?null:row.attachment_id,roomInvitationId:row.deleted_at?null:row.room_invite_id} : {}),
 });

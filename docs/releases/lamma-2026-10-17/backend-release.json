@@ -1,0 +1,85 @@
+{
+  "schemaVersion": 1,
+  "scope": "Main Worker only: public privacy HTML and dormant iOS update policy",
+  "status": "verified",
+  "localReleaseDate": "2026-10-17",
+  "timeZone": "Asia/Amman",
+  "origin": "https://maydan-game.mf103871.workers.dev",
+  "worker": "maydan-game",
+  "initialAttempt": {
+    "sourceCommit": "b7d9f61243b059f3a1086a16e7096d10219a3981",
+    "planSHA256": "7e7729fd786dddc448b3807de7551a742e251a6729c34a4ac463262aaaadab83",
+    "startedAt": "2026-10-16T21:36:10.116Z",
+    "previousVersionId": "2cda020a-e86c-470e-8585-6bba6d47040d",
+    "uploadedVersionId": "4c68257e-b288-4aac-9194-9aaf0a3b2bd8",
+    "bundleSHA256": "83ed0047d7918656e9c194d1c1663bf0d4a9cb86d0b98af17c98f5e01b20e391",
+    "status": "upload completed; post-upload asset routing verification failed",
+    "failure": "The planned /privacy and /privacy/ worker-first routes were not applied. keep_assets retained the complete original asset configuration, so those paths still returned the existing SPA.",
+    "diagnosedAt": "2026-10-16T21:38:21.020Z",
+    "diagnosis": {
+      "exactUploadedBundleVerified": true,
+      "rawAssetConfigurationUnchanged": true,
+      "bindingsUnchanged": true,
+      "settingsUnchanged": true,
+      "schedulesUnchanged": true,
+      "migrationTag": "v3-lamma",
+      "publicReferenceAssetsUnchanged": 63,
+      "policyEnabled": false,
+      "healthPassed": true,
+      "unrelatedAPIOriginGuardPassed": true,
+      "privacyPagePassed": false
+    },
+    "response": "Stopped without automatic retry or rollback; retained the original plan and journal, inspected production read-only, then prepared a fresh repair plan."
+  },
+  "repair": {
+    "operation": "ios-policy-and-api-privacy-preserve-assets-v2",
+    "sourceCommit": "78e6e1725369626f7ecbee388e65ef17e9f77c9f",
+    "sourceServerTree": "feced8f5e962d13a8d95916cfc4cf83adcbf9c8e",
+    "planSHA256": "578192591269a94b39aa385b31ff65f4daad02bd7efb5a8bf44f58fbf16fb6a5",
+    "startedAt": "2026-10-16T21:41:40.713Z",
+    "verifiedAt": "2026-10-16T21:42:07.324Z",
+    "previousVersionId": "4c68257e-b288-4aac-9194-9aaf0a3b2bd8",
+    "activeVersionId": "745b3112-099a-4d68-b16c-ddb958eb8bfe",
+    "bundleSHA256": "9420dc602902ac66bff9e3ac3b3f7c4252e40ade0cdd759e8a4094db89fa77c6",
+    "change": "Serve standalone privacy HTML under /api/legal/privacy and /api/legal/privacy/, within the existing /api/* worker-first route. Preserve the entire original asset configuration without additions.",
+    "oldPlanReuseRejected": true,
+    "checks": {
+      "exactDeployedBundleVerified": true,
+      "bindingsUnchanged": true,
+      "settingsUnchanged": true,
+      "schedulesUnchanged": true,
+      "rawAssetConfigurationUnchanged": true,
+      "migrationTag": "v3-lamma",
+      "publicReferenceAssetsUnchanged": 63,
+      "publicReferenceHeadersUnchanged": true,
+      "privacyHTMLMatchesReviewedSource": true,
+      "privacyPaths": ["/api/legal/privacy", "/api/legal/privacy/"],
+      "policyEnabled": false,
+      "healthPassed": true
+    }
+  },
+  "publicPrivacyURL": "https://maydan-game.mf103871.workers.dev/api/legal/privacy/",
+  "policyEndpoint": "https://maydan-game.mf103871.workers.dev/api/app-policy/ios",
+  "preservation": {
+    "keepAssets": true,
+    "coverage": "63 public entry documents and explicit local references, including their bytes and security/routing headers. This is not an enumeration of every stored asset; keep_assets retains the complete existing set.",
+    "publicFrontendUploaded": false,
+    "databaseOperations": false,
+    "roomsWorkerUploaded": false,
+    "cronWrites": false,
+    "durableObjectMigration": false,
+    "mandatoryUpdateActivated": false
+  },
+  "localValidation": {
+    "appPolicyPrivacyAndReleaseHelperTestsPassed": 20,
+    "testsFailed": 0,
+    "targetedESLintPassed": true,
+    "independentRepairReviewPassed": true
+  },
+  "nativeRelease": {
+    "target": "1.7 (12)",
+    "completionEstablishedByThisReceipt": false,
+    "note": "Backend verification does not establish native CI completion, Apple processing, TestFlight availability, physical-device acceptance or App Store publication."
+  },
+  "privateEvidenceStored": true
+}

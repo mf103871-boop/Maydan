@@ -1,5 +1,6 @@
 // شاشة اللعب: إعداد اللاعبين/الفرق (للألعاب التي لا تدير إعدادها بنفسها) ثم مكوّن اللعبة داخل الإطار.
-import React, { useMemo, useState, useCallback, useEffect, useRef } from 'react';
+import React, { useMemo, useState, useCallback, useEffect, useRef, useSyncExternalStore } from 'react';
+import { socialInterruption } from '../../social/interruption.js';
 import { Screen, TopBar, Segment } from '../../shared/ui/components.jsx';
 import { PlayersSetup } from '../../shared/setup/PlayersSetup.jsx';
 import { TeamsSetup } from '../../shared/setup/TeamsSetup.jsx';
@@ -45,6 +46,9 @@ export function Play({ id }) {
   const [teams, setTeams] = useState([]);
   const [mode, setMode] = useState(game && game.players.mode === 'both' ? 'individual' : (game && game.players.mode) || 'individual');
   const [inGame, setInGame] = useState(game ? game.setup === 'self' : false);
+  const interruption = useSyncExternalStore(socialInterruption.subscribe, socialInterruption.getSnapshot, socialInterruption.getSnapshot);
+  useEffect(() => { socialInterruption.setContext({ local: inGame, online: false, turnDeadline: null });
+    return () => socialInterruption.setContext({ local: false }); }, [inGame]);
   const [session, setSession] = useState(0);
   // مقطع اللعبة يبدأ مع المباراة (وعند إعادتها)، وشاشة الإعداد تبقى على مقطع «البيت».
   useEffect(() => {
@@ -125,6 +129,7 @@ export function Play({ id }) {
 
   return (
     <GameFrame game={game} inGame={ready && inGame} exitMessage={exitMessage || game.exitMessage} beforeExit={beforeExit}>
+      <div inert={interruption.paused || undefined} aria-hidden={interruption.paused || undefined} style={interruption.paused ? { visibility: 'hidden', pointerEvents: 'none' } : undefined}>
       {!ready ? <GameLoading game={game} progress={progress} /> : stage === 'setup' ? (
         <Screen dir={getDirection()} className="stack" style={{ '--game-accent': game.accent }} aria-label={`إعداد ${game.name}`}>
           <TopBar title="من يلعب؟" eyebrow={game.name} />
@@ -144,6 +149,11 @@ export function Play({ id }) {
       ) : (
         <Component key={session} api={api} players={players} teams={teams} mode={mode} savedSession={savedSession} gameOptions={gameOptions} onExit={api.requestExit} />
       )}
+      </div>
+      {interruption.paused && <div className="stack center" role="status" style={{ position: 'fixed', inset: 0, zIndex: 70, background: 'var(--bg, #fff8eb)', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', justifyContent: 'center', padding: 24 }}>
+        <h2>اللعبة بانتظاركم</h2><p>الوقت متوقف والمحتوى مخفي. سلّم الهاتف للاعب قبل المتابعة.</p>
+        <button className="btn accent" style={{ width: 'min(100%, 320px)', minHeight: 48 }} disabled={interruption.open} onClick={() => socialInterruption.resume()}>متابعة اللعب</button>
+      </div>}
       {curtain > 0 && <div key={`curtain-${curtain}`} className="game-curtain" aria-hidden="true" />}
     </GameFrame>
   );

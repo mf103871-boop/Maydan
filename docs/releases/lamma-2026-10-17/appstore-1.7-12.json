@@ -1,0 +1,297 @@
+{
+  "schemaVersion": 1,
+  "status": "waiting-for-review",
+  "preparedAt": "2026-10-17",
+  "intendedRelease": {
+    "appStoreId": "6808385717",
+    "version": "1.7",
+    "build": "12"
+  },
+  "ci": {
+    "runId": 38976930635,
+    "jobId": 117228516613,
+    "url": "https://github.com/mf103871-boop/Maydan/actions/runs/38976930635",
+    "sourceCommit": "f4610be0d2bc290e520d063c452892ae71c1fdaf",
+    "conclusion": "success",
+    "javascriptTests": {
+      "total": 773,
+      "passed": 772,
+      "failed": 0,
+      "skipped": 1
+    },
+    "pythonTests": {
+      "total": 37,
+      "passed": 37,
+      "failed": 0,
+      "skipped": 0
+    },
+    "swiftPolicyTestsPassed": 40,
+    "signingCleanupPassed": true,
+    "lastConfirmedStage": "Signed workflow, signing cleanup and independent final-IPA inspection passed. Apple validated build 12, which is selected in the submitted version now waiting for review.",
+    "signingAssetsValidated": true
+  },
+  "simulator": {
+    "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-26-2",
+    "deviceModel": "iPhone SE (3rd generation)",
+    "sourceExecutableSHA256": "6f45ef7e959675ef3dfc83d5afdda18b9db11cf1f7c09bfcd6c35544b5930c9e",
+    "sameInstalledAppAcrossPhases": true,
+    "runtimeCacheReadinessPassed": true,
+    "normalColdLaunchSeconds": 45.13,
+    "normalRelaunchSeconds": 15.08,
+    "crashReports": 0,
+    "updateGate": {
+      "mountedArabicHeadingAndMessage": true,
+      "initialGameNotLoadedBehindGate": true,
+      "updateButton": {
+        "accessibilityLabel": "تحديث ميدان من متجر التطبيقات",
+        "height": 52,
+        "accessible": true,
+        "enabled": true,
+        "hidden": false,
+        "buttonTrait": true,
+        "width": 319,
+        "title": "تحديث من App Store"
+      },
+      "retryButton": {
+        "enabled": true,
+        "title": "إعادة التحقق",
+        "hidden": false,
+        "width": 319,
+        "accessible": true,
+        "buttonTrait": true,
+        "accessibilityLabel": "إعادة التحقق من التحديث",
+        "height": 52
+      },
+      "arabicAccessibilityLabelsAndButtonTraits": true,
+      "realRetryActionInvoked": true,
+      "offlineRecovery": true,
+      "screenshotsInspected": true,
+      "physicalTouchClaim": false,
+      "visualReview": "Required-update and offline-recovery screenshots inspected by the release lead and native reviewer; recovery shows the game home screen.",
+      "requiredState": {
+        "blocked": true,
+        "initialLoadPermitted": false,
+        "panelMounted": true
+      },
+      "offlineState": {
+        "initialLoadPermitted": true,
+        "blocked": false,
+        "offline": true,
+        "fixture": "required-then-offline",
+        "panel": null
+      }
+    },
+    "observedVersion": "1.7",
+    "observedBuild": "12",
+    "preparation": [
+      {
+        "step": "runtime-cache-readiness",
+        "timeoutSeconds": 300,
+        "passed": true,
+        "elapsedSeconds": 2.24
+      },
+      {
+        "step": "simulator-inventory",
+        "timeoutSeconds": 45,
+        "passed": true,
+        "elapsedSeconds": 0.26
+      },
+      {
+        "step": "simulator-create",
+        "timeoutSeconds": 45,
+        "passed": true,
+        "elapsedSeconds": 0.23
+      },
+      {
+        "step": "simulator-boot",
+        "timeoutSeconds": 60,
+        "passed": true,
+        "elapsedSeconds": 1.73
+      },
+      {
+        "step": "simulator-bootstatus",
+        "timeoutSeconds": 180,
+        "passed": true,
+        "elapsedSeconds": 81.96
+      },
+      {
+        "step": "simulator-install",
+        "timeoutSeconds": 90,
+        "passed": true,
+        "elapsedSeconds": 65.23
+      },
+      {
+        "step": "installed-app",
+        "timeoutSeconds": 180,
+        "passed": true,
+        "elapsedSeconds": 53.61
+      },
+      {
+        "step": "data-container",
+        "timeoutSeconds": 180,
+        "passed": true,
+        "elapsedSeconds": 0.27
+      }
+    ],
+    "updateFixtureLaunchSeconds": 5.16,
+    "diagnosticWarnings": 0,
+    "normalFinishedAt": "2026-10-16T22:47:13Z",
+    "updateGateFinishedAt": "2026-10-16T22:47:35Z"
+  },
+  "artifacts": {
+    "launchEvidence": {
+      "id": 12080191156,
+      "zipSHA256": "af20801b23fd28b99b800b5937a0db970aad322248986b0bb593368d87eb81bc",
+      "bytes": 5013862,
+      "files": [
+        {
+          "path": "release-smoke-summary.json",
+          "sha256": "875db6d35844dfb0d1da32ba4fd1a74e2a20158d514b9547ac39e636bc985bef",
+          "bytes": 287
+        },
+        {
+          "path": "launch-smoke/summary.json",
+          "sha256": "7130f6ff3914b8651106dae400679637581c374adb8ff2a98b3b4c5c29368ead",
+          "bytes": 1943
+        },
+        {
+          "path": "update-gate-smoke/summary.json",
+          "sha256": "60193bc5c85d21b34e180dec3e70f7a91b16a002faa19415b728f29c9ab4961e",
+          "bytes": 1255
+        },
+        {
+          "path": "update-gate-smoke/required-view.json",
+          "sha256": "4c017cb4bc86ae3e077b74fd5ad0c0a9b324d7e75b0eb43ad3b9292baa57744b",
+          "bytes": 945
+        },
+        {
+          "path": "update-gate-smoke/offline-recovery-view.json",
+          "sha256": "41a2beb249ef6e5b22a5d8c473fef5b1cc72cf0b332b757b73b361e43e37f8ad",
+          "bytes": 128
+        },
+        {
+          "path": "update-gate-smoke/required-update-verified.png",
+          "sha256": "deab1c493cbf8ad835984a1a6dbf2e36a49e89bd0cfb34ce369b9f18f6738eac",
+          "bytes": 74169
+        },
+        {
+          "path": "update-gate-smoke/offline-recovery.png",
+          "sha256": "43e73f26ca487afd38d8beee27a411c010a3e470343f6226dde0a133eb06fafa",
+          "bytes": 879763
+        }
+      ]
+    },
+    "signedPackage": {
+      "id": 12080071306,
+      "zipSHA256": "f0f42ea9501bfe57b82878d58990ad6d557b0f216d5431fe983d11d2dfcdc2f7",
+      "expiresAt": "2026-10-23T22:50:44Z"
+    },
+    "ipa": {
+      "sha256": "eab7cb9c47e5fadee567e79f5cf446e5dff1a41d3109285fd84fca61aa59ef7a",
+      "bytes": 152674204,
+      "bundleVersion": "1.7",
+      "bundleBuild": "12",
+      "bundleIdentifier": "Maydan",
+      "minimumOSVersion": "16.4",
+      "executableSHA256": "e1cab41e7db9a30256390ddcc5fe60f972a119bdfa0415219cd5ba4db0b9a894"
+    },
+    "runtimeDependencies": {
+      "passed": true,
+      "binariesChecked": 3,
+      "embeddedEdgesChecked": 2,
+      "executableRunpaths": [
+        "/usr/lib/swift",
+        "@executable_path/Frameworks"
+      ],
+      "platform": "iOS",
+      "architecture": "arm64"
+    },
+    "archiveValidationPassed": true,
+    "signatureValidationPassed": true,
+    "independentAuditStatus": "passed",
+    "signingMetadata": {
+      "profileType": "App Store distribution",
+      "profileExpiration": "2027-09-25T10:28:39Z",
+      "productionAPNs": true,
+      "signInWithApple": true,
+      "getTaskAllow": false,
+      "profileAndEntitlementsMatch": true,
+      "simulatorFixtureMarkersAbsent": {
+        "MAYDAN_SIMULATOR_APP_POLICY": true,
+        "required-then-offline": true
+      },
+      "codeResourcesCount": 4,
+      "verificationScope": "Archive codesign --verify --deep --strict passed in macOS CI; local Windows inspection verifies embedded entitlement/profile metadata only."
+    },
+    "packageAuditReportSHA256": "0ac9639de5a54f8dfd795c575fa4c441576e7b1ab3a10b0da30800fa0b1bd89d"
+  },
+  "appleBuild": {
+    "id": "ec80090a-5787-4764-b301-74d5c1e026f0",
+    "version": "1.7",
+    "build": "12",
+    "uploadedAt": "2026-10-16T22:53:16Z",
+    "processingState": "VALID",
+    "internalBuildState": "IN_BETA_TESTING",
+    "checkedAt": "2026-10-16T22:57:59.636032+00:00",
+    "uploadAccepted": true,
+    "uploadAcceptedAt": "2026-10-16T22:51:58Z",
+    "externalBuildState": "READY_FOR_BETA_SUBMISSION",
+    "usesNonExemptEncryption": false,
+    "expired": false,
+    "buildAudienceType": "APP_STORE_ELIGIBLE"
+  },
+  "submission": {
+    "appStoreVersionId": "e956921e-b535-4cee-813d-35e540198941",
+    "reviewSubmissionId": "93054fb8-1f2b-4324-a21d-c6fe8fe703fd",
+    "submittedAt": "2026-10-16T22:57:13.617Z",
+    "state": "WAITING_FOR_REVIEW",
+    "selectedBuildId": "ec80090a-5787-4764-b301-74d5c1e026f0",
+    "releaseMode": "AFTER_APPROVAL",
+    "publicationState": "Not publicly released; waiting for Apple review, with automatic release after approval.",
+    "checkedAt": "2026-10-16T22:57:59.636032+00:00",
+    "submittedAtAsiaAmman": "2026-10-17T01:57:13.617000+03:00",
+    "versionState": "WAITING_FOR_REVIEW",
+    "publiclyReleased": false,
+    "verificationSources": [
+      "App Store Connect submission UI",
+      "Independent read-only App Store Connect API"
+    ],
+    "sanitizedAPIReportSHA256": "384719b34b1594c0a5145faae0e291bdd8705cfb75abb48004196f9909f697ed",
+    "uiScreenshotSHA256": "6a5f28bb23fe51156d931964c174634feceb1b3ddc0d8d48fbbb0c9cb71a00fd"
+  },
+  "backendEvidence": {
+    "receipt": "docs/releases/lamma-2026-10-17/backend-release.json",
+    "verifiedAt": "2026-10-16T21:42:07.324Z",
+    "workerVersionId": "745b3112-099a-4d68-b16c-ddb958eb8bfe",
+    "policyEnabledAtVerification": false,
+    "publicPrivacyURL": "https://maydan-game.mf103871.workers.dev/api/legal/privacy/",
+    "publicAssetReferencesUnchanged": 63,
+    "publicFrontendUploaded": false
+  },
+  "deviceEvidenceAndAuthorization": {
+    "build11Startup": "Tester confirmed normal opening and reopening on a physical iPhone on 2026-10-16.",
+    "appStoreSubmissionAuthorized": true,
+    "build12PhysicalDeviceAcceptance": "not established",
+    "broaderPhysicalCallPushMatrix": "unverified",
+    "noClaim": "CI, simulator view evidence and provider media tests do not establish actual iPhone push delivery, locked/background calling or the wider physical-device matrix."
+  },
+  "warnings": [
+    {
+      "kind": "missing-vendor-dsym",
+      "framework": "LiveKitWebRTC.framework",
+      "blockingUpload": false,
+      "impact": "Vendor-framework crash symbolication is limited; Apple accepted the upload."
+    },
+    {
+      "kind": "missing-vendor-dsym",
+      "framework": "RustLiveKitUniFFI.framework",
+      "blockingUpload": false,
+      "impact": "Vendor-framework crash symbolication is limited; Apple accepted the upload."
+    }
+  ],
+  "checkedAt": "2026-10-16T22:57:59.636032+00:00",
+  "outstanding": [
+    "Apple App Review",
+    "Automatic public release after approval"
+  ]
+}

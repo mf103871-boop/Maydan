@@ -16,6 +16,9 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         self.window = window
         window.makeKeyAndVisible()
         handle(connectionOptions.urlContexts, in: controller)
+        if let response = connectionOptions.notificationResponse {
+            SocialCoordinator.shared.openNotification(response.notification.request.content.userInfo)
+        }
     }
 
     func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {

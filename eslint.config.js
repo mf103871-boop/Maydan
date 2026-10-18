@@ -6,7 +6,7 @@ import reactHooks from 'eslint-plugin-react-hooks';
 export default [
   {
     // scripts/bank/workflows/*.js نصوص لأداة سير العمل (return في المستوى الأعلى)، لا وحدات Node.
-    ignores: ['dist/**', 'node_modules/**', '.wrangler/**', 'ios/build/**', 'ios/Maydan/www/**', 'public/**', 'src/data/**', 'scripts/bank/workflows/**'],
+    ignores: ['dist/**', 'node_modules/**', '.cache/**', '.wrangler/**', 'ios/build/**', 'ios/Maydan/www/**', 'public/**', 'src/data/**', 'scripts/bank/workflows/**'],
   },
   {
     files: ['src/**/*.{js,jsx}'],

@@ -1,0 +1,32 @@
+{
+  "reviewedAt": "2026-10-12T08:49:30Z",
+  "phase": "partial backend rollout; migration 0008 and main worker upload completed, cron and rooms recovery pending",
+  "sourceCommit": "f5a0e60",
+  "method": "Unauthenticated GET and OPTIONS only; OAuth redirects were not followed. No account creation, provider API call, or content mutation.",
+  "mainOrigin": "https://maydan-game.mf103871.workers.dev",
+  "roomsOrigin": "https://maydan-rooms.mf103871.workers.dev",
+  "checks": [
+    { "name": "public HTML", "status": 200, "bytes": 3446447, "sha256": "5106f5d909dde9c2606b9d972424e89b8e673297248e33bddc973751937f7e82", "contentType": "text/html", "contentSecurityPolicyPresent": true },
+    { "name": "service worker", "status": 200, "bytes": 15101, "sha256": "fb19ebd8a3c8eb9bda13d90eec7ed8042fb65125e8a76d4a9f94b250993cb4d5", "contentType": "text/javascript", "contentSecurityPolicyPresent": true },
+    { "name": "main health", "status": 200, "ok": true, "protocol": 1, "version": "1.4.1", "accounts": true },
+    { "name": "rooms health", "status": 200, "ok": true, "protocol": 1, "version": "1.4.1", "accounts": true },
+    { "name": "native unauthenticated account", "status": 401, "error": "AUTH_REQUIRED", "allowedOrigin": "maydan://app" },
+    { "name": "web unauthenticated account", "status": 401, "error": "AUTH_REQUIRED", "allowedOrigin": "https://maydan-game.mf103871.workers.dev" },
+    { "name": "legacy unauthenticated social state", "status": 401, "error": "AUTH_REQUIRED", "allowedOrigin": "https://maydan-game.mf103871.workers.dev" },
+    { "name": "native unauthenticated capabilities", "status": 401, "error": "AUTH_REQUIRED", "allowedOrigin": "maydan://app" },
+    { "name": "billing configuration", "status": 200, "appleLoginConfigured": true, "googleLoginConfigured": true, "applePurchasesConfigured": true, "products": ["plus.monthly", "plus.yearly"] },
+    { "name": "foreign account origin refused", "status": 403, "error": "ORIGIN", "accessControlAllowOriginPresent": false },
+    { "name": "native preflight", "status": 204, "allowedOrigin": "maydan://app" },
+    { "name": "foreign preflight refused", "status": 403, "error": "ORIGIN", "accessControlAllowOriginPresent": false },
+    { "name": "native Apple OAuth start", "status": 302, "providerOrigin": "https://appleid.apple.com", "callbackOrigin": "https://maydan-game.mf103871.workers.dev", "callbackPath": "/api/auth/apple/callback", "signedStatePresent": true, "noStore": true, "setsCookie": false },
+    { "name": "native Google OAuth start", "status": 302, "providerOrigin": "https://accounts.google.com", "callbackOrigin": "https://maydan-game.mf103871.workers.dev", "callbackPath": "/api/auth/google/callback", "signedStatePresent": true, "noStore": true, "setsCookie": false },
+    { "name": "foreign Apple OAuth return refused", "status": 400, "error": "STATE" },
+    { "name": "foreign Google OAuth return refused", "status": 400, "error": "STATE" }
+  ],
+  "passed": true,
+  "limits": [
+    "Does not certify cron configuration or completion of the rooms worker update.",
+    "Does not exercise authenticated user state, account creation, live calls, notifications, or physical iPhone behavior.",
+    "Public content hashes must be compared with the preflight baseline to establish byte preservation."
+  ]
+}

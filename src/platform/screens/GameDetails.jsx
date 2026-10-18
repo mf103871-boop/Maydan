@@ -61,7 +61,7 @@ export function GameDetails({ id }) {
       </div>
       <div className="setup-sticky stack">
         {/* الزر الرئيسي «مسلّح» (is-armed): تنفّس ×3 ووهج ×2 من brand.css */}
-        {online && <Button variant="accent" size="lg" full className="is-armed" onClick={() => navigate(`/online/${game.id}`)}>العب من كل جوال · غرف جماعية</Button>}
+        {online && <Button variant="accent" size="lg" full className="is-armed" onClick={() => navigate(`/online/${game.id}`)}>{game.id === 'fabraka' ? 'العب أونلاين · لشخصين أو أكثر' : 'العب من كل جوال · غرف جماعية'}</Button>}
         <Button variant={online ? 'secondary' : 'accent'} size="lg" full className={online ? '' : 'is-armed'} icon={<IconPlay />} onClick={play}>{online ? 'العب على جهاز واحد' : 'العب'}</Button>
       </div>
     </Screen>

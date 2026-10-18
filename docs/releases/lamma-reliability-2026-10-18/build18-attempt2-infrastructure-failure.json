@@ -1,0 +1,70 @@
+{
+  "workflowRun": 39161749336,
+  "workflowAttempt": 2,
+  "workflowJob": 117778722973,
+  "artifactId": 12148973511,
+  "sourceCommit": "2e5e30c051096c577373861a246e85a868e9d40f",
+  "version": "1.8",
+  "build": "18",
+  "nativeSmoke": {
+    "startedAt": "2026-10-18T20:21:15Z",
+    "passed": false,
+    "launches": [],
+    "crashReports": [],
+    "diagnosticWarnings": [
+      "Timed out after 20s: xcrun simctl io ed49a1fd-7320-4f5e-8a91-e56407889ac8"
+    ],
+    "preparation": [
+      {
+        "step": "runtime-cache-readiness",
+        "timeoutSeconds": 300,
+        "passed": true,
+        "elapsedSeconds": 2.75
+      },
+      {
+        "step": "simulator-inventory",
+        "timeoutSeconds": 45,
+        "passed": true,
+        "elapsedSeconds": 0.28
+      },
+      {
+        "step": "simulator-create",
+        "timeoutSeconds": 45,
+        "passed": true,
+        "elapsedSeconds": 0.48
+      },
+      {
+        "step": "simulator-boot",
+        "timeoutSeconds": 60,
+        "passed": true,
+        "elapsedSeconds": 2.11
+      },
+      {
+        "step": "simulator-bootstatus",
+        "timeoutSeconds": 180,
+        "passed": true,
+        "elapsedSeconds": 79.12
+      },
+      {
+        "step": "simulator-install",
+        "timeoutSeconds": 90,
+        "passed": false,
+        "elapsedSeconds": 93.76
+      }
+    ],
+    "limits": [
+      "Checks simulator process survival and launch crash reports only.",
+      "Does not certify rendered UI, device-only code, or exported IPA packaging."
+    ],
+    "bundleIdentifier": "Maydan",
+    "version": "1.8",
+    "build": "18",
+    "executableSha256": "5e4540c4065fee30c19f89c183e84939b1bf194783d8d00433ddadefd1fa315a",
+    "simulatorUdid": "ed49a1fd-7320-4f5e-8a91-e56407889ac8",
+    "simulatorModel": "iPhone SE (3rd generation)",
+    "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-26-2",
+    "error": "Timed out after 90s: xcrun simctl install ed49a1fd-7320-4f5e-8a91-e56407889ac8",
+    "finishedAt": "2026-10-18T20:24:45Z"
+  },
+  "failureScope": "Simulator install preparation timed out at 90 seconds before any app launch; no IPA export or Apple upload. Next attempt extends only preparation budget and retains app survival/crash/UI gates."
+}
