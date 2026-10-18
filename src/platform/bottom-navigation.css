@@ -1,0 +1,20 @@
+:root { --menu-nav-space: 0px; }
+.menu-navigation { position: fixed; z-index: 90; left: max(0px, env(safe-area-inset-left, 0px)); right: max(0px, env(safe-area-inset-right, 0px)); bottom: 0; width: min(calc(100% - env(safe-area-inset-left, 0px) - env(safe-area-inset-right, 0px)), 860px); margin-inline: auto; height: calc(76px + env(safe-area-inset-bottom, 0px)); padding: 6px 10px calc(6px + env(safe-area-inset-bottom, 0px)); display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 4px; background: rgba(255, 251, 242, .97); border: 1px solid #e6d9c6; border-bottom: 0; border-radius: 26px 26px 0 0; box-shadow: 0 -5px 25px #35254710; }
+.menu-navigation[hidden] { display: none; }
+.menu-navigation-item { position: relative; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 4px; min-width: 0; min-height: 52px; border-radius: 18px; text-decoration: none; color: #7a6b81; font-size: 13px; line-height: 1.2; font-weight: 800; -webkit-tap-highlight-color: transparent; transition: background .16s ease, color .16s ease; }
+.menu-navigation-item::before { content: ''; position: absolute; top: 1px; width: 20px; height: 3px; background: transparent; border-radius: 4px; }
+.menu-navigation-item.is-active { color: #006e79; background: #def3ee; }
+.menu-navigation-item.is-active::before { background: #078797; }
+.menu-navigation-item:active { background: #d9ebe7; }
+.menu-navigation-item:focus-visible { outline: 3px solid #80639a; outline-offset: 1px; }
+.menu-navigation-icon { position: relative; display: grid; place-items: center; width: 32px; height: 28px; }
+.menu-navigation-badge { position: absolute; top: -5px; right: -9px; display: grid; place-items: center; min-width: 18px; min-height: 18px; padding: 1px 4px; border: 2px solid #fffbf2; border-radius: 12px; color: white; background: #a34972; font-size: 10px; line-height: 1; }
+.menu-navigation-dot { position: absolute; right: -3px; top: -2px; width: 9px; height: 9px; border: 2px solid #fffbf2; border-radius: 50%; background: #a34972; }
+html[data-menu-nav-visible] .call-game-viewport > .screen,
+html[data-menu-nav-visible] .call-game-viewport > .profile-screen { padding-bottom: calc(28px + var(--menu-nav-space) + var(--screen-bottom-reserve, 0px)); }
+html[data-menu-nav-visible] .setup-sticky { bottom: calc(var(--menu-nav-space) + 10px); }
+html[data-menu-nav-visible] .lamma-launcher { display: none; }
+html[data-menu-nav-visible] .lamma-notification { bottom: calc(var(--menu-nav-space) + 12px); }
+@media (orientation: landscape) { .menu-navigation { height: calc(64px + env(safe-area-inset-bottom, 0px)); padding-top: 4px; padding-bottom: calc(4px + env(safe-area-inset-bottom, 0px)); border-radius: 20px 20px 0 0; }.menu-navigation-item { gap: 2px; font-size: 12px; min-height: 48px; }.menu-navigation-icon svg { width: 24px; height: 24px; } }
+@media (prefers-reduced-motion: reduce) { .menu-navigation-item { transition: none; } }
+html[data-reduced-motion="true"] .menu-navigation-item { transition: none; }

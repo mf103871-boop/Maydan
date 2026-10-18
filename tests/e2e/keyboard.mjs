@@ -87,7 +87,7 @@ async function run(browser, name, width, height) {
     window.setFixtureViewport = patch => { Object.assign(viewport, patch); viewport.dispatchEvent(new Event('resize')); viewport.dispatchEvent(new Event('scroll')); };
   });
   try {
-    await page.goto(origin); await page.getByRole('button', { name: /الأصدقاء،|افتح الأصدقاء واللّمة/ }).click();
+    await page.goto(origin + '/#/play/fabraka'); await page.getByRole('button', { name: /الأصدقاء،|افتح الأصدقاء واللّمة/ }).click();
     const search = page.getByRole('textbox', { name: 'البحث في اللّمة', exact: true }); await fontSafe(search, 'friends search');
     await search.fill('أح'); await search.evaluate(el => el.setSelectionRange(1, 1));
     await viewport(page, { height: 440, offsetTop: 24 });

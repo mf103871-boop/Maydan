@@ -103,7 +103,7 @@ try {
     check(`${name}: volume survives reload`, await slider.inputValue() === '40');
     await tap(page.getByRole('switch', { name: 'الصوت', exact: true }), 'mute switch', { expect: 'none' });
     check(`${name}: mute disables volume/preview`, await slider.isDisabled() && await page.getByRole('button', { name: 'تجربة الصوت', exact: true }).isDisabled());
-    await tap(page.getByRole('button', { name: 'رجوع', exact: true }), 'back while muted', { expect: 'none' });
+    await tap(page.getByRole('navigation', { name: 'أقسام ميدان' }).getByRole('link', { name: 'الألعاب', exact: true }), 'games tab while muted', { expect: 'none' });
     await go('settings');
     await tap(page.getByRole('switch', { name: 'الصوت', exact: true }), 'unmute switch');
     await tap(page.getByRole('switch', { name: 'تقليل الحركة', exact: true }), 'reduced motion switch', { expect: 'click' });

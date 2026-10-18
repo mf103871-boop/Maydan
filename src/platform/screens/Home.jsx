@@ -1,11 +1,10 @@
-// الرئيسية: الشعار، الإعدادات، دفتر اللاعبين، وشبكة بطاقات الألعاب.
+// تبويب الألعاب: الألعاب أولًا، مع حضور الأصدقاء وأدوات اللّمّة.
 import React, { useRef, useState, useEffect } from 'react';
-import { Screen, IconButton, ripple } from '../../shared/ui/components.jsx';
-import { IconSettings, IconUsers, IconClock, IconInfo } from '../../shared/ui/icons.jsx';
+import { Screen, ripple } from '../../shared/ui/components.jsx';
+import { IconUsers, IconClock, IconBack } from '../../shared/ui/icons.jsx';
 import { usePlatform } from '../context.js';
 import { useAccount } from '../../shared/account/context.js';
 import { useSocial } from '../../social/SocialProvider.jsx';
-import { useSocialUI } from '../../social/SocialUIProvider.jsx';
 import { useLamma } from '../../social/LammaProvider.jsx';
 import { PersonAvatar } from '../../social/SocialScreen.jsx';
 import { LammaIcon } from '../../social/LammaMedia.jsx';
@@ -96,7 +95,6 @@ export function Home() {
   const { roster, sound, haptics, version } = usePlatform();
   const account = useAccount();
   const social = useSocial() || { friends: [], incoming: [], unreadCount: 0 };
-  const socialUI = useSocialUI();
   const lamma = useLamma();
   const profiles = useProfiles();
   // فتح لعبة: البطاقة تنطلق (is-launch) ثم الملاحة بعد 140ms (صفر تحت تقليل الحركة)؛ النقر المزدوج محروس بمرجع.
@@ -112,32 +110,36 @@ export function Home() {
     launchTimer.current = setTimeout(() => { navigate(`/game/${game.id}`); launching.current = false; }, wait(140));
   };
   const cards = GAMES;
+  const onlineFriends = social.friends.filter(friend => friend.online);
+  const presenceFriends = [...social.friends].sort((a, b) => Number(!!b.online) - Number(!!a.online)).slice(0, 3);
+  const activeGroups = new Set((lamma?.calls || []).filter(call => call.scope === 'group' && call.status === 'active').map(call => call.conversationId)).size;
   return (
-    <Screen dir={getDirection()} className="stack home-screen" aria-label="الرئيسية">
+    <Screen dir={getDirection()} className="stack home-screen" aria-label="الألعاب">
       <header className="home-head">
         <div className="brand">
           <BrandMark />
           <div><Wordmark /><div className="brand-sub">ألعاب جمعتنا</div></div>
         </div>
-        <div className="row">
-          <IconButton label="عن المنصة" onClick={() => navigate('/about')}><IconInfo /></IconButton>
-          <IconButton label="الإعدادات" onClick={() => navigate('/settings')}><IconSettings /></IconButton>
-          <button type="button" aria-label="بروفايلي" title="بروفايلي" onClick={() => navigate('/profile')} style={{ border: 0, padding: 0, background: 'transparent', borderRadius: 14, cursor: 'pointer' }}><ProfileAvatar user={profiles?.mine || account.user} /></button>
-        </div>
+        <button type="button" className="home-profile" aria-label="بروفايلي" title="بروفايلي" onClick={() => navigate('/profile')}><ProfileAvatar user={profiles?.mine || account.user} /></button>
       </header>
 
-      <button type="button" className="card online-home-card" onClick={() => navigate('/online')} onPointerDown={ripple}>
-        <ClayStage className="clay-static"><GameArtwork game="meenfina" /></ClayStage>
-        <span><strong>اللّمّة من كل جوال</strong><small>غرف «مين فينا؟» و«فبركة» · دخول برمز وتصويت سري</small></span>
-        <span className="online-new">تجريبي</span>
+      <button type="button" className="home-presence" onClick={() => navigate('/friends')} onPointerDown={ripple} aria-label="افتح الأصدقاء والمحادثات">
+        <span className="home-presence-faces" aria-hidden="true">{presenceFriends.length ? presenceFriends.map(friend => <PersonAvatar key={friend.id} user={friend} presence />) : <span className="home-presence-symbol"><IconUsers /></span>}</span>
+        <span className="home-presence-copy"><strong>{onlineFriends.length ? `${onlineFriends.length} من أصحابك متصل الآن` : 'اللّمة تبدأ بأصحابك'}</strong><small>{!account.signedIn ? 'سجّل دخولك وابدأ السوالف' : activeGroups ? `${activeGroups} من شِلَلك في مكالمة الآن` : 'سوالف، صوت، ودعوة للعب'}</small></span>
+        <IconBack className="home-presence-arrow" />
       </button>
 
-      <section className="lamma-home-card" aria-label="الأصدقاء والمحادثات">
-        <div className="lamma-home-heading"><div><strong>الميدان يحلى بأصحابك</strong><small>{account.signedIn ? `${social.friends.filter(f => f.online).length} متصل الآن · السالفة تبدأ من هنا` : 'سوالف، صوت، ولعبة تجمعكم'}</small></div><button type="button" onClick={() => socialUI ? socialUI.show() : navigate('/friends')}>افتح اللّمة{social.unreadCount + social.incoming.length > 0 && <b className="lamma-unread">{social.unreadCount + social.incoming.length}</b>}</button></div>
-        <div className="lamma-home-friends">{social.friends.slice().sort((a, b) => Number(!!b.online) - Number(!!a.online)).slice(0, 7).map(friend => <button type="button" className="lamma-home-friend" key={friend.id} onClick={() => socialUI ? socialUI.openChat(friend.id) : navigate('/friends/' + friend.id)} aria-label={'محادثة مع ' + friend.name}><PersonAvatar user={friend} presence /><span>{friend.name}</span></button>)}<button type="button" className="lamma-home-friend" onClick={() => socialUI ? socialUI.show() : navigate('/friends')}><span className="lamma-home-add"><LammaIcon name="plus" size={22} /></span><span>أصحابك</span></button></div>
-        <HomeGroups account={account} groups={lamma?.groups} calls={lamma?.calls} onOpen={id => socialUI?.openGroup(id)} />
+      <section className="home-games" aria-labelledby="home-games-title">
+        <div className="home-section-heading"><div><h1 id="home-games-title">اختار لعبتك</h1><p>كل جمعة لها ميدان</p></div><span className="badge">{gamesLabel(GAMES.length)}</span></div>
+        <div className="games-grid">{cards.map((g, i) => <GameCard key={g.id} game={g} index={i} launching={launchId === g.id} badge={plusBadge(account, g)} onOpen={open} />)}</div>
       </section>
 
+      <section className="home-tools" aria-label="الغرف واللاعبون">
+      <button type="button" className="card online-home-card" onClick={() => navigate('/online')} onPointerDown={ripple}>
+        <ClayStage className="clay-static"><GameArtwork game="meenfina" /></ClayStage>
+        <span><strong>اللّمّة من كل جوال</strong><small>غرف «مين فينا؟» و«فبركة» · ادخل برمز وابدأوا اللعب</small></span>
+        <IconBack className="home-tool-arrow" />
+      </button>
       <button type="button" className="card roster-card" onClick={() => navigate('/players')} aria-label="دفتر اللاعبين" onPointerDown={ripple}>
         <span className="grow" style={{ textAlign: 'start' }}>
           <span className="card-title" style={{ display: 'block' }}>دفتر اللاعبين</span>
@@ -149,16 +151,7 @@ export function Home() {
             : [0, 1, 2, 3].map((index) => <ClayStage key={index} className="clay-static no-contact"><Avatar index={index} /></ClayStage>)}
         </span>
       </button>
-
-      <div>
-        <div className="row-between" style={{ marginBottom: 10 }}>
-          <span className="section-title">الألعاب</span>
-          <span className="badge"><IconClock style={{ width: 14, height: 14 }} /> {gamesLabel(GAMES.length)}</span>
-        </div>
-        <div className="games-grid">
-          {cards.map((g, i) => <GameCard key={g.id} game={g} index={i} launching={launchId === g.id} badge={plusBadge(account, g)} onOpen={open} />)}
-        </div>
-      </div>
+      </section>
       <p className="home-footer">ألعاب الجهاز الواحد تعمل دون إنترنت · الغرف تحتاج اتصالًا <span>الإصدار {version}</span></p>
       <nav className="muted center legal-links" aria-label="الأسعار والسياسات" style={{ fontSize: 13 }}>
         {account.platform !== 'ios' && <><a href="pricing/">التسعير</a> · </>}

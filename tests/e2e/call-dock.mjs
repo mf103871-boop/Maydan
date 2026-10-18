@@ -86,8 +86,13 @@ async function noOverflow(page, label) { assert.ok(await page.evaluate(() => doc
 async function patch(page, value) { await page.evaluate(value => window.fixture.patchMedia(value), value); await settle(page); }
 async function geometry(page, label) {
   await noOverflow(page, label);
-  const dock = await page.getByTestId('call-dock').boundingBox(); assert.ok(dock, `${label}: dock visible`);
-  const viewport = await page.evaluate(() => ({ width: visualViewport.width, height: visualViewport.height, left: visualViewport.offsetLeft, top: visualViewport.offsetTop }));
+  // ResizeObserver and React both update after a viewport change. Read the
+  // settled dock and visual viewport atomically, rather than on separate frames.
+  await page.waitForFunction(() => {
+    const dock = document.querySelector('[data-testid="call-dock"]')?.getBoundingClientRect();
+    return dock && dock.x >= visualViewport.offsetLeft - 1 && dock.right <= visualViewport.offsetLeft + visualViewport.width + 1 && dock.y >= visualViewport.offsetTop - 1 && dock.bottom <= visualViewport.offsetTop + visualViewport.height + 1;
+  });
+  const { dock, viewport } = await page.evaluate(() => ({ dock: document.querySelector('[data-testid="call-dock"]').getBoundingClientRect().toJSON(), viewport: { width: visualViewport.width, height: visualViewport.height, left: visualViewport.offsetLeft, top: visualViewport.offsetTop } }));
   assert.ok(dock.x >= viewport.left - 1 && dock.x + dock.width <= viewport.left + viewport.width + 1 && dock.y >= viewport.top - 1 && dock.y + dock.height <= viewport.top + viewport.height + 1, `${label}: floating bubbles stay in visual viewport ${JSON.stringify({ dock, viewport })}`);
   const layout = await page.getByTestId('call-game-viewport').evaluate(el => { const active = el.getBoundingClientRect().width, attr = document.documentElement.getAttribute('data-call-dock-active'); document.documentElement.removeAttribute('data-call-dock-active'); const inactive = el.getBoundingClientRect().width; if (attr !== null) document.documentElement.setAttribute('data-call-dock-active', attr); return { active, inactive, viewport: innerWidth }; });
   assert.ok(Math.abs(layout.active - layout.inactive) < 1 && Math.abs(layout.active - layout.viewport) < 1, `${label}: call overlay reserves no game width ${JSON.stringify(layout)}`);
@@ -136,6 +141,46 @@ async function inputKeyboardCollapse(page) {
   assert.equal(await page.getByTestId('call-dock').getAttribute('data-collapsed'), 'false', 'keyboard dismissal restores the previous expanded state');
   await settle(page); const after = await page.getByTestId('call-dock').boundingBox();
   assert.ok(Math.abs(before.x-after.x)<1 && Math.abs(before.y-after.y)<1, 'keyboard dismissal restores the preferred two-dimensional position');
+}
+async function menuBarBounds(page) {
+  // The shell publishes a measured bar size including the device safe area.
+  // Change it without resizing the window to exercise the real dock observers.
+  await page.getByTestId('call-dock-collapse').click();
+  await page.getByTestId('call-dock-drag').press('End'); await settle(page);
+  const before = await page.getByTestId('call-dock').boundingBox();
+  const nativeActionsBefore = await page.evaluate(() => nativeLog.length);
+  await page.evaluate(() => {
+    document.documentElement.style.setProperty('--menu-nav-space', '110px');
+    document.documentElement.setAttribute('data-menu-nav-visible', '');
+    const bar = document.createElement('div'); bar.id = 'menu-nav-fixture';
+    bar.style.cssText = 'position:fixed;left:0;right:0;bottom:0;height:110px;pointer-events:none;z-index:300;background:#168d8955';
+    document.body.append(bar);
+  });
+  await page.waitForFunction(() => document.querySelector('.call-dock-viewport').clientHeight === 844 - 16 - 110);
+  await settle(page);
+  const menu = await page.getByTestId('call-dock').boundingBox();
+  const bar = await page.locator('#menu-nav-fixture').boundingBox();
+  assert.ok(menu.y + menu.height <= bar.y - 8 + 1, 'floating call stays above the measured menu including its safe area');
+  assert.ok(Math.abs(before.x - menu.x) < 1 && menu.y < before.y, 'menu insertion only clamps the displayed vertical position');
+  await page.evaluate(() => {
+    document.documentElement.style.setProperty('--menu-nav-space', '130px');
+    document.getElementById('menu-nav-fixture').style.height = '130px';
+  });
+  await page.waitForFunction(() => document.querySelector('.call-dock-viewport').clientHeight === 844 - 16 - 130);
+  await settle(page);
+  const tallerMenu = await page.getByTestId('call-dock').boundingBox();
+  assert.ok(Math.abs(menu.y - tallerMenu.y - 20) < 1, 'updated bar measurement reclamps without a route or viewport resize');
+  await page.evaluate(() => {
+    document.documentElement.style.setProperty('--menu-nav-space', '0px');
+    document.documentElement.removeAttribute('data-menu-nav-visible');
+    document.getElementById('menu-nav-fixture').remove();
+  });
+  await page.waitForFunction(() => document.querySelector('.call-dock-viewport').clientHeight === 844 - 16 - 56);
+  await settle(page);
+  const restored = await page.getByTestId('call-dock').boundingBox();
+  assert.ok(Math.abs(before.x - restored.x) < 1 && Math.abs(before.y - restored.y) < 1, 'hiding the menu restores the preferred position above the in-game friends launcher');
+  assert.equal(await page.evaluate(() => nativeLog.length), nativeActionsBefore, 'menu changes never reinitialize or change call media');
+  await page.getByTestId('call-dock-collapse').click(); await settle(page);
 }
 async function exerciseGame(page, id, label) {
   if (id === 'badeeha') {
@@ -253,6 +298,7 @@ async function run(browser, name) {
     assert.equal(await mute.getAttribute('aria-pressed'), 'true');
     await page.evaluate(() => window.fixture.releasePrivate()); await settle(page); assert.equal(await mute.isDisabled(), false);
     await mute.click(); await page.waitForFunction(() => window.fixture.getMedia().muted === false);
+    await menuBarBounds(page);
     await inputKeyboardCollapse(page);
     await page.getByTestId('call-dock-participant').first().click(); await page.locator('.call-controls-dialog').getByTestId('call-dock-return').click();
     await page.getByRole('dialog', { name: 'الأصدقاء واللّمة', exact: true }).waitFor(); await page.getByText('جاهزين نلعب مع بعض؟', { exact: true }).waitFor();

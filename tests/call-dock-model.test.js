@@ -102,3 +102,16 @@ test('temporary keyboard bounds do not overwrite the preferred bubble position',
   assert.deepEqual(clampFloatingDockPosition(preferred, { ...portrait, width: 200 }), { x: 148, y: 420 });
   assert.deepEqual(clampFloatingDockPosition(preferred, portrait), preferred);
 });
+
+test('menu-bar bounds clamp the displayed bubbles and restore their preferred position when hidden', () => {
+  const preferred = { x: 146, y: 410 };
+  const gameplay = { width: 374, height: 772, dockWidth: 52, dockHeight: 350 };
+  // The 110px menu measurement already includes the phone's bottom safe area;
+  // it replaces the old 90px launcher exclusion instead of adding to it.
+  const menu = { ...gameplay, height: gameplay.height - (110 - 90) };
+  assert.deepEqual(clampFloatingDockPosition(preferred, menu), { x: 146, y: 402 });
+  assert.deepEqual(preferred, { x: 146, y: 410 });
+  assert.deepEqual(clampFloatingDockPosition(preferred, gameplay), preferred);
+  assert.equal(dockCapacity(310, 12), 2);
+  assert.equal(dockCapacity(290, 12), 1);
+});

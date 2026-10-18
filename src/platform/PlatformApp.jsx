@@ -20,6 +20,8 @@ import { GameDetails } from './screens/GameDetails.jsx';
 import { Play } from './screens/Play.jsx';
 import { Players } from './screens/Players.jsx';
 import { Settings } from './screens/Settings.jsx';
+import { Store } from './screens/Store.jsx';
+import { BottomNavigation, MenuScrollRestoration } from './BottomNavigation.jsx';
 import { About } from './screens/About.jsx';
 import { Terms, Privacy } from './screens/Legal.jsx';
 import { Online } from '../online/Online.jsx';
@@ -28,7 +30,6 @@ import { AccountProvider } from '../shared/account/AccountProvider.jsx';
 import { PaywallHost } from '../shared/account/PaywallHost.jsx';
 import accountCss from '../shared/account/account.css';
 import { SocialProvider } from '../social/SocialProvider.jsx';
-import { SocialScreen } from '../social/SocialScreen.jsx';
 import { LammaProvider } from '../social/LammaProvider.jsx';
 import { SocialUIProvider } from '../social/SocialUIProvider.jsx';
 import { SocialHost } from '../social/SocialHost.jsx';
@@ -60,9 +61,10 @@ function ScreenHost({ route }) {
   else if (route.name === 'game') screen = <GameDetails key={`game-${route.params.id}`} id={route.params.id} />;
   else if (route.name === 'play') screen = <Play key={`play-${route.params.id}`} id={route.params.id} />;
   else if (route.name === 'players') screen = <Players key="players" />;
-  else if (route.name === 'friends') screen = <SocialScreen key="friends" friendId={route.params.id || null} />;
+  else if (route.name === 'friends' || route.name === 'friend-group') screen = <div key="friends" data-social-page-slot />;
   else if (route.name === 'profile') screen = <ProfileScreen key={`profile-${route.params.id || 'me'}`} profileId={route.params.id || null} />;
   else if (route.name === 'settings') screen = <Settings key="settings" />;
+  else if (route.name === 'store') screen = <Store key="store" />;
   else if (route.name === 'moderation') screen = <ModerationScreen key="moderation" />;
   else if (route.name === 'about') screen = <About key="about" />;
   else if (route.name === 'terms') screen = <Terms key="terms" />;
@@ -111,7 +113,7 @@ function Providers({ children }) {
 }
 
 // عنوان المستند يتبع الشاشة (قارئات الشاشة والتبويبات والسجل)، والألعاب تحمل اسمها.
-const SCREEN_TITLES = { players: 'اللاعبون', friends: 'الأصدقاء', profile: 'الملف', settings: 'الإعدادات', about: 'عن ميدان', terms: 'شروط الاستخدام', privacy: 'سياسة الخصوصية', online: 'اللّمّة', room: 'الغرفة' };
+const SCREEN_TITLES = { players: 'اللاعبون', friends: 'الأصدقاء', 'friend-group': 'الشِّلّة', store: 'المتجر', profile: 'الملف', settings: 'الإعدادات', about: 'عن ميدان', terms: 'شروط الاستخدام', privacy: 'سياسة الخصوصية', online: 'اللّمّة', room: 'الغرفة' };
 const BASE_TITLE = 'ميدان: ألعاب جمعتنا';
 const IN_GAME_ROUTES = new Set(['play', 'online', 'room']);
 export const UPDATE_READY_MESSAGE = 'تحديث ميدان جاهز — يعمل عند الفتح التالي.';
@@ -175,6 +177,8 @@ function Shell() {
       >
         <CallViewport><ScreenHost route={route} /></CallViewport>
       </ErrorBoundary>}
+      {booted && <MenuScrollRestoration route={route} />}
+      {booted && <BottomNavigation route={route} />}
       {booted && <PaywallHost />}
       {booted && <ErrorBoundary title="تعذّر فتح اللّمة" message="أعد فتح ميدان لتتصل بأصحابك." onHome={() => navigate('/')}><SocialHost /></ErrorBoundary>}
       <style>{brandCss}</style>
@@ -193,3 +197,5 @@ export function PlatformApp() {
     </ToastProvider>
   );
 }
+
+export { Shell as PlatformShell };

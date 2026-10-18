@@ -209,3 +209,56 @@ body:has(.splash) .screen, body:has(.splash) .screen * { animation-play-state: p
 .legal-links a { color: #087D89; font-weight: 800; text-decoration: underline; text-underline-offset: 3px; }
 .legal .legal-section p { margin: 0; line-height: 1.85; }
 .legal .legal-section b { color: var(--text); }
+
+/* ── أقسام القوائم: ألعاب واضحة، إعدادات منظّمة، ومتجر قادم ── */
+.home-profile { display: inline-grid; place-items: center; flex: 0 0 auto; width: 50px; height: 50px; padding: 2px; border: 1px solid #D7C8DE; border-radius: 18px; background: #FFFCF5; box-shadow: 0 3px 0 #E0D3C5; cursor: pointer; }
+.home-profile:focus-visible, .home-presence:focus-visible { outline: 3px solid #087D89; outline-offset: 3px; }
+.home-presence { position: relative; isolation: isolate; display: flex; align-items: center; gap: 12px; min-width: 0; width: 100%; padding: 10px 12px; border: 1px solid #D0E1D8; border-radius: 20px; background: linear-gradient(110deg, #F8FBF2, #E9F3EC); box-shadow: 0 3px 0 #DDE5D8; text-align: start; color: var(--plum); font: inherit; cursor: pointer; overflow: hidden; }
+.home-presence-faces { display: flex; align-items: center; flex: 0 0 auto; padding-inline-end: 7px; }
+.home-presence-faces .social-avatar { width: 36px; height: 36px; flex-basis: 36px; margin-inline-end: -7px; border-radius: 13px; border-color: #F1F8EE; }
+.home-presence-faces .social-avatar > i { width: 10px; height: 10px; }
+.home-presence-symbol { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 14px; background: #D8EBE4; color: #227A76; }
+.home-presence-symbol svg { width: 23px; height: 23px; }
+.home-presence-copy { display: grid; gap: 2px; flex: 1; min-width: 0; }
+.home-presence-copy strong { font-size: 14px; font-weight: 800; line-height: 1.5; }
+.home-presence-copy small { color: #57716B; font-size: 12px; line-height: 1.5; }
+.home-presence-arrow, .home-tool-arrow { width: 18px; height: 18px; flex: 0 0 auto; color: #357B7D; transform: scaleX(-1); }
+.home-games { display: grid; gap: 13px; }
+.home-section-heading { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.home-section-heading h1 { margin: 0; color: var(--plum); font-size: 27px; line-height: 1.4; font-weight: 900; }
+.home-section-heading p { margin: 2px 0 0; color: var(--muted); font-size: 13px; }
+.home-section-heading .badge { flex-shrink: 0; color: #66536D; background: #F5EDE0; }
+.home-tools { display: grid; gap: 12px; margin-top: 4px; }
+.home-screen .home-tools > button { min-width: 0; padding: 13px 14px; border-radius: 20px; }
+.home-screen .online-home-card { gap: 10px; background: linear-gradient(115deg, #EEF5EC, #F1EAF7) !important; border: 1px solid #D6CADF !important; }
+.home-screen .online-home-card > span:not(.clay-stage) { min-width: 0; flex: 1; }
+.home-screen .online-home-card .clay-art { width: 52px; height: 52px; }
+.home-screen .online-home-card strong { font-size: 16px; }
+.home-screen .online-home-card small { font-size: 12px; line-height: 1.6; }
+.home-screen .roster-card .card-title { font-size: 16px; }
+.home-screen .roster-faces .clay-stage { width: 32px; height: 40px; }
+.home-screen .roster-faces .clay-avatar { width: 40px; height: 40px; }
+.settings-screen, .store-screen { gap: 24px; padding-top: calc(20px + var(--safe-top)); }
+.settings-screen > .topbar, .store-screen > .topbar { margin-bottom: 0; }
+.settings-screen > .topbar h1, .store-screen > .topbar h1 { font-size: 29px; color: var(--plum); }
+.settings-screen .topbar .eyebrow, .store-screen .topbar .eyebrow { margin-bottom: 4px; color: #6B5A70; font-size: 13px; }
+.settings-group { min-width: 0; display: grid; gap: 10px; }
+.settings-group > h2 { margin: 0; padding-inline: 3px; color: #6C527D; font-size: 15px; font-weight: 800; }
+.settings-group .setting, .settings-group .card { border-radius: 19px; }
+.settings-legal-card { display: grid; gap: 0; padding-block: 3px; }
+.settings-legal-card > a { display: flex; align-items: center; min-height: 48px; padding-block: 9px; font-size: 15px; text-decoration: none; }
+.settings-legal-card > a + a { border-top: 1px solid var(--stroke); }
+.settings-legal-card > a:hover { text-decoration: underline; }
+.settings-legal-card > a:focus-visible { outline: 3px solid #087D89; outline-offset: 2px; border-radius: 8px; }
+.store-screen { max-width: 720px; }
+.store-coming-soon { position: relative; isolation: isolate; display: grid; justify-items: center; align-content: center; gap: 16px; min-height: min(570px, calc(100dvh - var(--safe-top) - var(--safe-bottom) - var(--menu-nav-space, 76px) - 134px)); padding: 24px 16px 34px; text-align: center; border: 1px solid #E1D3C8; border-radius: 30px; background: radial-gradient(ellipse at 50% 28%, #EEF5E7 0%, #FFF9EE 54%, #F8F0E7 100%); box-shadow: inset 0 1px 0 #fff, 0 5px 0 #E6D9CB; }
+.store-art { width: min(220px, 64vw); }
+.store-art svg { display: block; width: 100%; height: auto; }
+.store-soon-label { border: 1px solid #DDCBE7; border-radius: 999px; padding: 4px 16px; background: #EDE1F4; color: #714C8B; font-size: 13px; font-weight: 800; }
+.store-coming-soon h2 { margin: 0; color: var(--plum); font-size: clamp(24px, 6.4vw, 32px); line-height: 1.5; font-weight: 900; }
+.store-coming-soon p { max-width: 350px; margin: 0; color: #766778; font-size: 15px; line-height: 1.9; }
+.store-coming-note { margin-top: 8px; font-size: 12px; color: #74647E; }
+@media (min-width: 620px) { .home-tools { grid-template-columns: repeat(2, minmax(0, 1fr)); } .home-presence { padding: 11px 16px; } .home-presence-copy strong { font-size: 15px; } }
+@media (max-width: 350px) { .home-section-heading h1 { font-size: 24px; } .home-presence { gap: 9px; padding-inline: 9px; } .home-presence-copy strong { font-size: 12px; } .home-presence-copy small { font-size: 11px; } .home-presence-faces .social-avatar { width: 31px; height: 31px; flex-basis: 31px; } .store-coming-soon { padding-inline: 12px; } .store-copy-break { display: none; } }
+@media (orientation: landscape) and (max-height: 540px) { .home-screen { padding-top: calc(12px + var(--safe-top)); gap: 14px; } .settings-screen, .store-screen { padding-top: calc(12px + var(--safe-top)); } .store-coming-soon { grid-template-columns: 150px minmax(0, 1fr); column-gap: 20px; min-height: 230px; padding: 18px 24px; } .store-art { width: 150px; grid-row: 1 / 5; } .store-coming-soon h2 { font-size: 25px; } .store-coming-soon p { font-size: 13px; } .store-coming-note { margin-top: 0; } .store-copy-break { display: none; } }
+@media (prefers-reduced-motion: reduce) { .home-profile, .home-presence, .settings-screen .setting { animation: none; transition: none; } }

@@ -1,0 +1,315 @@
+{
+  "schemaVersion": 1,
+  "status": "validated-ready-for-testflight-build",
+  "intendedRelease": {
+    "appStoreId": "6808385717",
+    "version": "1.8",
+    "build": "16"
+  },
+  "branch": "codex/lamma-social",
+  "supersedesTestFlightBuild": "1.8 (15)",
+  "scope": {
+    "menuOrderRightToLeft": [
+      "games",
+      "friends",
+      "store",
+      "settings"
+    ],
+    "barHeightPx": {
+      "portrait": 76,
+      "landscape": 64,
+      "safeAreaAdditional": true
+    },
+    "hiddenDuring": [
+      "play setup and match",
+      "room lobby and match",
+      "conversation",
+      "keyboard",
+      "modal"
+    ],
+    "modernFriendsPage": true,
+    "existingInGameDrawerPreserved": true,
+    "sharedPersistentCallsAndDrafts": true,
+    "store": "Intentional empty state for future profile and avatar cosmetics; no products or prices",
+    "callBounds": "Measured bottom bar exclusion without double-counting the safe area; preferred bubble position preserved",
+    "serverChanged": false,
+    "databaseChanged": false,
+    "purchasesChanged": false,
+    "publicWebChanged": false,
+    "nativeCodeChanged": false
+  },
+  "localValidation": {
+    "javascriptTests": {
+      "total": 808,
+      "passed": 808,
+      "failed": 0
+    },
+    "lint": {
+      "errors": 0,
+      "preExistingWarnings": 33
+    },
+    "browserEngines": [
+      "Chromium",
+      "WebKit"
+    ],
+    "guestScreenViewports": [
+      [
+        375,
+        667
+      ],
+      [
+        390,
+        844
+      ],
+      [
+        844,
+        390
+      ]
+    ],
+    "allSixGameDetailsChecked": true,
+    "callParticipantFixtures": [
+      2,
+      12
+    ],
+    "physicalIPhoneTested": false,
+    "liveSFUTestedForThisUI": false,
+    "iosPrepare": {
+      "files": 3298,
+      "htmlSHA256": "42afed73bb62a5ba1ffb66c653d1fb16b1fea7c875419e5d79720eebb1a57a9f"
+    },
+    "iOSPythonTests": {
+      "total": 37,
+      "passed": 36,
+      "skipped": 1,
+      "failed": 0
+    },
+    "menuBrowserChecks": {
+      "chromium": {
+        "browser": "chromium",
+        "passed": true,
+        "completedAt": "2026-10-18T18:30:32.425Z",
+        "actualShell": true,
+        "viewports": [
+          [
+            390,
+            844
+          ],
+          [
+            844,
+            390
+          ]
+        ],
+        "fourMenuSections": true,
+        "actualGames": [
+          "badeeha",
+          "beep",
+          "mamnoo",
+          "jabeen",
+          "fabraka",
+          "meenfina"
+        ],
+        "nativeCallFixture": true,
+        "liveSFU": false,
+        "physicalKeyboard": false,
+        "keyboardViewportFixture": true,
+        "callSurvivesNavigation": true,
+        "callBoundsAvoidActualMenu": true,
+        "directAndGroupDeepLinks": true,
+        "browserAndUIBack": true,
+        "conversationDrafts": true,
+        "searchAndFilters": true,
+        "windowAndFriendsScrollRestore": true,
+        "modalAndKeyboardHideMenu": true,
+        "guestAndAccountPrivacy": true
+      },
+      "webkit": {
+        "browser": "webkit",
+        "passed": true,
+        "completedAt": "2026-10-18T18:30:44.896Z",
+        "actualShell": true,
+        "viewports": [
+          [
+            390,
+            844
+          ],
+          [
+            844,
+            390
+          ]
+        ],
+        "fourMenuSections": true,
+        "actualGames": [
+          "badeeha",
+          "beep",
+          "mamnoo",
+          "jabeen",
+          "fabraka",
+          "meenfina"
+        ],
+        "nativeCallFixture": true,
+        "liveSFU": false,
+        "physicalKeyboard": false,
+        "keyboardViewportFixture": true,
+        "callSurvivesNavigation": true,
+        "callBoundsAvoidActualMenu": true,
+        "directAndGroupDeepLinks": true,
+        "browserAndUIBack": true,
+        "conversationDrafts": true,
+        "searchAndFilters": true,
+        "windowAndFriendsScrollRestore": true,
+        "modalAndKeyboardHideMenu": true,
+        "guestAndAccountPrivacy": true
+      }
+    },
+    "guestScreenChecks": {
+      "results": [
+        {
+          "browser": "chromium",
+          "viewport": "small",
+          "navHeight": 76,
+          "tabs": 4,
+          "gameDetails": 6,
+          "overflow": false
+        },
+        {
+          "browser": "chromium",
+          "viewport": "phone",
+          "navHeight": 76,
+          "tabs": 4,
+          "gameDetails": 6,
+          "overflow": false
+        },
+        {
+          "browser": "chromium",
+          "viewport": "landscape",
+          "navHeight": 64,
+          "tabs": 4,
+          "gameDetails": 6,
+          "overflow": false
+        },
+        {
+          "browser": "webkit",
+          "viewport": "small",
+          "navHeight": 76,
+          "tabs": 4,
+          "gameDetails": 6,
+          "overflow": false
+        },
+        {
+          "browser": "webkit",
+          "viewport": "phone",
+          "navHeight": 76,
+          "tabs": 4,
+          "gameDetails": 6,
+          "overflow": false
+        },
+        {
+          "browser": "webkit",
+          "viewport": "landscape",
+          "navHeight": 64,
+          "tabs": 4,
+          "gameDetails": 6,
+          "overflow": false
+        }
+      ],
+      "errors": []
+    },
+    "keyboardAndModalChecks": [
+      {
+        "browser": "chromium",
+        "viewport": "small",
+        "simulatedKeyboardHidden": true,
+        "keyboardRestores": true,
+        "modalHides": true,
+        "backgroundInert": true,
+        "modalRestores": true
+      },
+      {
+        "browser": "chromium",
+        "viewport": "phone",
+        "simulatedKeyboardHidden": true,
+        "keyboardRestores": true,
+        "modalHides": true,
+        "backgroundInert": true,
+        "modalRestores": true
+      },
+      {
+        "browser": "chromium",
+        "viewport": "landscape",
+        "simulatedKeyboardHidden": true,
+        "keyboardRestores": true,
+        "modalHides": true,
+        "backgroundInert": true,
+        "modalRestores": true
+      },
+      {
+        "browser": "webkit",
+        "viewport": "small",
+        "simulatedKeyboardHidden": true,
+        "keyboardRestores": true,
+        "modalHides": true,
+        "backgroundInert": true,
+        "modalRestores": true
+      },
+      {
+        "browser": "webkit",
+        "viewport": "phone",
+        "simulatedKeyboardHidden": true,
+        "keyboardRestores": true,
+        "modalHides": true,
+        "backgroundInert": true,
+        "modalRestores": true
+      },
+      {
+        "browser": "webkit",
+        "viewport": "landscape",
+        "simulatedKeyboardHidden": true,
+        "keyboardRestores": true,
+        "modalHides": true,
+        "backgroundInert": true,
+        "modalRestores": true
+      }
+    ],
+    "reviewedScreenshots": [
+      {
+        "name": "chromium-games.png",
+        "sha256": "048b475161c87abb161109118207d0af8675940de6d5b370a1c4b6dca6b18f3b"
+      },
+      {
+        "name": "chromium-friends.png",
+        "sha256": "f652ac5890dac54174c333a9de7502267b5396f9e42b0018ae02b617eeaa76d4"
+      },
+      {
+        "name": "chromium-store.png",
+        "sha256": "9542fa03b5a4b6e75a5dff95b8f481fd09d4b1ac19f5ac2596ba4a0b96e439c1"
+      },
+      {
+        "name": "chromium-settings.png",
+        "sha256": "b57cdc7d170d0c3d5cc0548a2b5d97b3f451f20d2f785197d8c636ec77592b52"
+      },
+      {
+        "name": "webkit-games.png",
+        "sha256": "c2562c45999d08d806414823a907e49372d80468ac064cb27fe358995f6b0377"
+      },
+      {
+        "name": "webkit-friends.png",
+        "sha256": "cb3598bd68d778591bc10efad55068f631489b3023c22758ee8262acbb6ecc1a"
+      },
+      {
+        "name": "webkit-store.png",
+        "sha256": "c8986c6d6d526b175943c47881d2789b45a45a15758c0060bd1df0e13385d3dc"
+      },
+      {
+        "name": "webkit-settings.png",
+        "sha256": "8c6d09b43e445d545cdba2bcb8ba654343375c10bba2fe14b7f2eff74d5fde40"
+      }
+    ]
+  },
+  "preservedAppStoreReview": {
+    "version": "1.7.1",
+    "build": "13",
+    "stateBefore": "WAITING_FOR_REVIEW"
+  },
+  "publicRelease": "No merge, public deployment, App Store submission or required update activation is authorized by this receipt. Physical iPhone validation precedes public release.",
+  "evidenceDirectory": "outputs/menu-navigation"
+}

@@ -69,8 +69,9 @@ function ActiveCallControls({ call, media, currentUserId, privateTurn, panelOpen
   const participants = useMemo(() => normalizeCallParticipants(media.participants || EMPTY, { currentUserId: currentUserId || media.userId, muted: media.muted, connected: media.connected, connecting: media.connecting, privateTurn }), [media.participants, media.userId, media.muted, media.connected, media.connecting, currentUserId, privateTurn]);
   const ordered = stableCallParticipants(order.current, participants);
   order.current = ordered.map(person => person.id);
-  // Leave the bottom friends button reachable while allowing free X/Y movement.
-  const availableHeight = Math.max(0, viewport.height - 32 - 56);
+  // The measured viewport already excludes either the menu bar (including its
+  // safe area) or the in-game friends button. Use that same space for seats.
+  const availableHeight = bounds.height;
   const compact = collapsed || viewport.keyboard;
   const tiny = availableHeight < 230;
   const capacity = dockCapacity(availableHeight, ordered.length);
@@ -97,7 +98,11 @@ function ActiveCallControls({ call, media, currentUserId, privateTurn, panelOpen
     const observer = typeof ResizeObserver === 'undefined' ? null : new ResizeObserver(measure);
     if (viewportElement) observer?.observe(viewportElement);
     if (rail) observer?.observe(rail);
-    return () => observer?.disconnect();
+    // Menu visibility and its measured CSS property can change without a
+    // window resize. Keep the preferred X/Y; only reclamp its displayed value.
+    const menuObserver = typeof MutationObserver === 'undefined' ? null : new MutationObserver(measure);
+    menuObserver?.observe(document.documentElement, { attributes: true, attributeFilter: ['style', 'data-menu-nav-visible'] });
+    return () => { observer?.disconnect(); menuObserver?.disconnect(); };
   }, [viewport.width, viewport.height, compact, tiny, selection.visible.length, selection.hidden.length, panelOpen]);
   const act = async work => {
     setActionError('');
