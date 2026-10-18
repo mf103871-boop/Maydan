@@ -78,6 +78,32 @@ createRoot(document.getElementById('root')).render(<AccountContext.Provider valu
       const code = host.url().match(/room\/(\d{6})$/)[1];
       assert.equal((await DB.prepare('SELECT COUNT(*) AS n FROM trials WHERE user_id=?').bind(users[0].id).first()).n, 0);
       await guest.evaluate(() => window.fixture.refresh());
+      // Accepting an invitation during another real room must preserve that
+      // room's exit guard. Cancelling may not leave a ghost seat in the invite.
+      const before = await host.locator('.online-players > li').count();
+      const otherSession = { id: crypto.randomUUID().replaceAll('-', ''), token: crypto.randomUUID().replaceAll('-', '') + crypto.randomUUID().replaceAll('-', '') };
+      const otherRoom = await api(users[1], '/api/rooms', 'POST', { ...otherSession, name: users[1].name, avatar: 1, game: 'fabraka', settings: { mode: 'classic', rounds: 3 } });
+      await guest.evaluate(({ server, code, session }) => {
+        localStorage.setItem(`maydan:online:${server}:${code}`, JSON.stringify(session));
+        window.fixture.navigate(`/room/${code}`);
+      }, { server: apiOrigin, code: otherRoom.code, session: otherSession });
+      await guest.waitForURL(new RegExp(`#/room/${otherRoom.code}$`));
+      await guest.getByText('متصل · كل واحد بجواله', { exact: true }).waitFor();
+      await guest.evaluate(() => window.fixture.group());
+      await guest.getByRole('button', { name: 'انضم للّمة', exact: false }).click();
+      await guest.getByRole('heading', { name: 'تطلع من الغرفة؟', exact: true }).waitFor();
+      await guest.getByRole('button', { name: 'خلّيني ألعب', exact: true }).click();
+      await guest.waitForURL(new RegExp(`#/room/${otherRoom.code}$`));
+      assert.equal(await host.locator('.online-players > li').count(), before);
+      assert.equal(before, 1, 'a cancelled invitation cannot allocate a guest seat');
+      assert.deepEqual(await guest.evaluate(() => window.fixture.call()), callsBefore[1]);
+      await guest.screenshot({ path: path.join(out, `${engineName}-cancelled-invite-no-ghost.png`) });
+      // Leave through that same guard, then verify the ordinary outside-game
+      // path still enters the invitation automatically without a name form.
+      await guest.evaluate(group => window.fixture.navigate(`/friends/group/${group}`), group);
+      await guest.getByRole('heading', { name: 'تطلع من الغرفة؟', exact: true }).waitFor();
+      await guest.getByRole('button', { name: 'الخروج', exact: true }).click();
+      await guest.waitForURL(new RegExp(`#/friends/group/${group}$`));
       await guest.getByRole('button', { name: 'انضم للّمة', exact: false }).click();
       await guest.waitForURL(new RegExp(`#/room/${code}$`));
       assert.equal(await guest.getByRole('textbox', { name: 'اسمك في الغرفة', exact: true }).count(), 0, 'accepted invitation joins directly with the signed-in profile');
@@ -107,7 +133,7 @@ createRoot(document.getElementById('root')).render(<AccountContext.Provider valu
       assert.equal((await DB.prepare('SELECT COUNT(*) AS n FROM trials WHERE user_id=?').bind(users[0].id).first()).n, 1);
       assert.deepEqual(errors, []);
       await host.screenshot({ path: path.join(out, `${engineName}-two-player-result-with-call.png`) });
-      result.engines.push({ engine: engineName, groupLaunch: true, automaticGuestJoin: true, roomCode: code, completedRounds: 3, bothCallStatesPreserved: true, mediaConnectCount: callsAfter.map(call => call.connections), mediaDisconnectCount: callsAfter.map(call => call.disconnects), browserErrors: errors });
+      result.engines.push({ engine: engineName, groupLaunch: true, cancelledActiveRoomInvitationAllocatesNoSeat: true, automaticGuestJoin: true, roomCode: code, completedRounds: 3, bothCallStatesPreserved: true, mediaConnectCount: callsAfter.map(call => call.connections), mediaDisconnectCount: callsAfter.map(call => call.disconnects), browserErrors: errors });
     } finally { await browser.close(); }
   }
   result.providerRequests = requests;

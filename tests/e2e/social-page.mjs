@@ -10,6 +10,9 @@ import path from 'node:path';
 const me = { id: 'me', name: 'عمر', code: 'MDN-OMAR', avatarPreset: 'falcon', theme: 'teal' };
 const peer = { id: 'friend', name: 'أحمد', code: 'MDN-AHMAD', avatarPreset: 'lion', theme: 'teal', online: true, conversationId: 'direct-1', unreadCount: 1 };
 const offlinePeer = { id: 'offline-friend', name: 'ليان', code: 'MDN-LAYAN', avatarPreset: 'cat', online: false, conversationId: 'direct-2', unreadCount: 0 };
+// Scroll restoration needs genuinely overflowing content. Two friends fit in
+// some landscape font/layout combinations and cannot exercise this behavior.
+const extraFriends = Array.from({ length: 24 }, (_, i) => ({ id: `extra-${i}`, name: `صديق اختبار ${i + 1}`, avatarPreset: 'falcon', online: false, conversationId: `direct-extra-${i}`, unreadCount: 0 }));
 let messages = [{ seq: 1, clientId: 'first', senderId: 'friend', conversationId: 'direct-1', kind: 'text', text: 'شو رأيك نلعب فبركة الليلة؟', createdAt: Date.now() - 20000 }];
 let groupMessages = [{ seq: 20, clientId: 'group-first', senderId: 'friend', kind: 'text', text: 'أهلًا بالشلّة!', createdAt: Date.now() - 4000 }];
 let group = { id: 'group-1', name: 'شلّة الخميس', ownerId: 'me', role: 'owner', memberCount: 2, unreadCount: 1, avatarPreset: 'falcon', lastMessage: groupMessages[0] };
@@ -19,7 +22,7 @@ let recording;
 const profile = user => ({ ...user, friendCount: 3, bio: 'الجمعة مع الأصحاب أحلى', relationship: user.id === 'me' ? 'self' : 'friend', earnedBadges: [], featuredBadges: [], earnedTitles: [], achievements: [], stats: { localSessions: 12, onlineMatches: 8, onlineWins: 3, distinctGames: 4 } });
 const fixture = async (url, method, body) => {
   if (method !== 'GET') writes.push({ url, method, body });
-  if (url === '/api/social/state') return { user: me, friends: [{ ...peer, lastMessage: messages.at(-1) }, offlinePeer], incoming: [], outgoing: [], blocked: [], conversations: [{ id: 'direct-1', user: peer, unreadCount: peer.unreadCount, lastMessage: messages.at(-1) }] };
+  if (url === '/api/social/state') return { user: me, friends: [{ ...peer, lastMessage: messages.at(-1) }, offlinePeer, ...extraFriends], incoming: [], outgoing: [], blocked: [], conversations: [{ id: 'direct-1', user: peer, unreadCount: peer.unreadCount, lastMessage: messages.at(-1) }] };
   if (url.startsWith('/api/social/conversations/direct-1/messages')) {
     if (method === 'POST') { const message = { ...body, seq: messages.length + 1, senderId: 'me', conversationId: 'direct-1', createdAt: Date.now(), ...(body.kind === 'voice' ? { attachment: { id: 'voice-1', durationMs: recording.durationMs, mimeType: recording.mimeType } } : {}) }; messages.push(message); return { message }; }
     return { messages, peerReadSeq: 0, readSeq: 0, hasMore: false };
@@ -84,6 +87,9 @@ try {
   assert.equal(await page.getByRole('textbox',{name:'البحث في اللّمة'}).inputValue(),'ليان');
   await page.evaluate(()=>window.fixture.reset());
   await page.setViewportSize({width:844,height:390});
+  await page.getByRole('button',{name:'محادثة مع صديق اختبار 24',exact:true}).waitFor();
+  const scrollRange=await panel.locator('.lamma-list-scroll').evaluate(el=>el.scrollHeight-el.clientHeight);
+  assert.ok(scrollRange>100,'the fixture must contain enough friends to verify scroll restoration');
   await panel.locator('.lamma-list-scroll').evaluate(el=>el.scrollTop=el.scrollHeight);
   await page.waitForFunction(()=>window.fixture.state().listState.friends?.scrollTop>10);
   const scrollTop=await panel.locator('.lamma-list-scroll').evaluate(el=>el.scrollTop);

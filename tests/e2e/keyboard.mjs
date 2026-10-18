@@ -125,7 +125,7 @@ async function run(browser, name, width, height) {
     assert.equal(await composer.inputValue(), 'سطر أول\nسطر ثاني', 'closing/reopening retains Arabic draft');
     await page.getByRole('button', { name: 'خيارات المحادثة', exact: true }).click();
     await page.getByRole('button', { name: 'دعوة للعبة', exact: true }).click();
-    const invite = page.getByRole('dialog', { name: 'ادعُه للّعب', exact: true }); const code = invite.getByRole('textbox', { name: 'رمز الغرفة' });
+    const invite = page.getByRole('dialog', { name: 'يلا نلعب', exact: true }); const code = invite.getByRole('textbox', { name: 'رمز الغرفة' });
     await fontSafe(code, 'game invite code'); await code.fill('123456'); await viewport(page, { height: 360, offsetTop: 45 });
     await bounds(invite, 45, 360, 'invite modal'); await bounds(invite.getByRole('button', { name: 'إرسال الدعوة', exact: true }), 45, 360, 'invite submit');
     await page.keyboard.press('Escape'); await invite.waitFor({ state: 'detached' });

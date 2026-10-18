@@ -32,6 +32,7 @@ await build({ stdin: { loader: 'jsx', resolveDir: root, contents: `
   import React from 'react';
   import { renderToStaticMarkup } from 'react-dom/server';
   import { PlatformContext } from './src/platform/context.js';
+  import { AccountContext, NULL_ACCOUNT } from './src/shared/account/context.js';
   import { Online, Lobby } from './src/online/Online.jsx';
   import { questions } from './src/games/fabraka/content.js';
   export { save } from './src/online/client.js';
@@ -39,6 +40,7 @@ await build({ stdin: { loader: 'jsx', resolveDir: root, contents: `
   const wrap = (Component, props) => renderToStaticMarkup(
     React.createElement(PlatformContext.Provider, { value: platform }, React.createElement(Component, props)));
   export const entry = (props) => wrap(Online, props);
+  export const accountEntry = (props, account) => renderToStaticMarkup(React.createElement(AccountContext.Provider, {value:{...NULL_ACCOUNT,...account}}, React.createElement(PlatformContext.Provider, {value:platform}, React.createElement(Online,props))));
   export const lobby = (props) => wrap(Lobby, props);
   // A real but temporarily small topic keeps the insufficient-pool regression
   // meaningful even when every topic in the current bank has ten questions.
@@ -377,6 +379,17 @@ test('two ready Fabraka players can start standard modes, while personal-owner a
   assert.match(start({ ...state, settings: { ...state.settings, mode: 'friends' } }), /disabled/);
   assert.match(start({ ...state, game: 'meenfina' }), /disabled/);
   assert.match(ui.lobby({ state, me: members[0], isHost: true, disabled: false, act() {} }), /تحدّي لشخصين/);
+});
+
+test('the guarded invitation entry pre-fills the signed-in name and shows name-conflict recovery clearly', () => {
+  ui.save(ROOMS_URL, 'profile', null);
+  const owner = 'signed-in-player', code = '654321', name = '  عبد الله   الصادق صاحبنا  ';
+  const clean = Array.from(name.normalize('NFKC').trim().replace(/\s+/g, ' ')).slice(0, 20).join('');
+  assert.ok(ui.accountEntry({ code }, { user: { id: owner, name } }).includes(`value="${clean}"`));
+  ui.save(ROOMS_URL, `socialJoinFallback:${owner}:${code}`, { name: 'اسم موجود', avatar: 2, session: { id: 'retained', token: 'retained' }, error: 'NAME_TAKEN' });
+  const fallback = ui.accountEntry({ code }, { user: { id: owner, name } });
+  assert.match(fallback, /value="اسم موجود"/); assert.match(fallback, /هذا الاسم مستخدم في الغرفة/);
+  ui.save(ROOMS_URL, `socialJoinFallback:${owner}:${code}`, null);
 });
 
 test('statements a room already showed go to the back of the next deck', () => {

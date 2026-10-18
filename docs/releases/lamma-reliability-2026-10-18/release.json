@@ -1,7 +1,11 @@
 {
   "schemaVersion": 1,
-  "status": "local-validation-in-progress",
-  "target": { "version": "1.8", "build": "17", "distribution": "TestFlight" },
+  "status": "local-validation-passed",
+  "target": {
+    "version": "1.8",
+    "build": "18",
+    "distribution": "TestFlight"
+  },
   "scope": [
     "Group sender identity and resilient text outbox",
     "Correct per-game room invitation capacity",
@@ -28,5 +32,21 @@
     "physicalLatencyMeasured": false,
     "publicReleaseApprovedByThisReceipt": false,
     "note": "Browser fixtures validate call continuity and UI but do not prove native background audio or end-user network latency."
+  },
+  "validation": {
+    "javascriptPassed": 857,
+    "javascriptFailed": 0,
+    "chromiumAndWebKitGroupLaunchFullMatch": true,
+    "cancelledMatchExitAllocatesNoSeat": true,
+    "callContinuityUsesFixtureMedia": true,
+    "preparedHTMLSHA256": "cb5f8fb51163595efd9948159d97343f40258e119547f478a2b247500f00429b",
+    "providerAcceptance": "pending-isolated-provider-project"
+  },
+  "intermediateBuild17": {
+    "sourceCommit": "b9530d953702b5bcb0996196452dfefe5649d4d9",
+    "workflowRun": 39160159701,
+    "workflowJob": 117771603493,
+    "uploadStepSucceeded": true,
+    "supersededByBuild18For": "Preserve exit confirmation before allocating invited room seat"
   }
 }

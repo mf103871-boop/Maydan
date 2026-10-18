@@ -3,7 +3,7 @@ import { useAccount } from '../shared/account/context.js';
 import { resolveAccountServer } from '../shared/account/api.js';
 import { callNative, isNativeShell, onNativeEvent } from '../shared/account/native.js';
 import { usePlatform } from '../platform/context.js';
-import { navigate } from '../platform/router.js';
+import { getRoute, navigate } from '../platform/router.js';
 import { useSocial } from './SocialProvider.jsx';
 import { LammaClient, emptyLamma, lammaId } from './lamma-client.js';
 import { CallMedia, emptyMedia } from './media.js';
@@ -214,6 +214,12 @@ export function LammaProvider({ children }) {
   async function acceptGameInvite(id) {
     const epoch = client.epoch, ownerId = ownerRef.current, account = accountRef.current;
     const result = await client.acceptGameInvite(id); client.assert(epoch);
+    // A match may reject navigation until its own exit confirmation succeeds.
+    // Do not allocate a seat elsewhere while the player can still choose to stay.
+    if (['play', 'room'].includes(getRoute().name)) {
+      navigate(`/room/${encodeURIComponent(result.roomCode)}`);
+      return { ...result, joined: false };
+    }
     const joined = await joinSocialGameRoom({ account, roomCode: result.roomCode, server: resolveAccountServer(),
       isCurrent: () => client.epoch === epoch && ownerRef.current === ownerId });
     client.assert(epoch); navigate(`/room/${encodeURIComponent(result.roomCode)}`);

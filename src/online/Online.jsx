@@ -25,7 +25,7 @@ function Entry({ initialCode = '', initialGame = 'meenfina', onJoined }) {
   const [mode, setMode] = useState(initialCode ? 'join' : 'create');
   const [game, setGame] = useState(ONLINE_GAMES[initialGame] ? initialGame : 'meenfina');
   const [fabrakaSettings, setFabrakaSettings] = useState(() => normalizeContentOptions(readSaved(SERVER, 'fabrakaSettings')));
-  const [name, setName] = useState(() => fallback?.name || readSaved(SERVER, 'profile')?.name || '');
+  const [name, setName] = useState(() => fallback?.name || readSaved(SERVER, 'profile')?.name || Array.from(account.user?.name?.normalize('NFKC').trim().replace(/\s+/g, ' ') || '').slice(0, 20).join(''));
   const [avatar, setAvatar] = useState(() => fallback?.avatar ?? readSaved(SERVER, 'profile')?.avatar ?? 0);
   const [code, setCode] = useState(initialCode);
   const [rounds, setRounds] = useState(5);
