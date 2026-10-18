@@ -1,0 +1,224 @@
+{
+  "schemaVersion": 1,
+  "status": "waiting-for-review",
+  "preparedAt": "2026-10-18",
+  "intendedRelease": {
+    "appStoreId": "6808385717",
+    "version": "1.7.1",
+    "build": "13"
+  },
+  "implementationCommit": "96cb8cc9ee44937c9e6e84ab1ccc18fa50f0ff94",
+  "branch": "codex/lamma-social",
+  "scope": {
+    "inputFontMinimumPx": 16,
+    "keyboardViewport": "Shared visualViewport height and top-offset handling for Modal, Sheet and social drawer; pinch zoom remains available.",
+    "composition": "Ref-based composition tracking and Safari key-code 229 Enter guard for chat and player-name submission.",
+    "publicWebChanged": false,
+    "serverChanged": false
+  },
+  "localValidation": {
+    "javascriptTests": {
+      "total": 777,
+      "passed": 777,
+      "failed": 0
+    },
+    "targetedLint": {
+      "errors": 0,
+      "preExistingWarnings": 6
+    },
+    "browser": {
+      "engines": [
+        "Chromium (Playwright build 1243)",
+        "WebKit 26.6 (Playwright build 2359)"
+      ],
+      "viewports": [
+        {
+          "width": 375,
+          "height": 812
+        },
+        {
+          "width": 390,
+          "height": 844
+        }
+      ],
+      "passedConfigurations": 4,
+      "keyboardMethod": "Mock visualViewport resize/scroll changes; not a physical iPhone keyboard.",
+      "successfulScreenshots": 12,
+      "evidenceDirectory": "outputs/keyboard-fix"
+    },
+    "iosPrepare": {
+      "files": 3298,
+      "htmlSHA256": "b2c3f5ab137cfccc38545e8942d662dbefa6e57e2b6443d8b84106faa1b37e97",
+      "comparisonWithSignedPackage": "Only plain CRLF and escaped CR-before-LF in imported CSS template text are normalized.",
+      "normalizedHTMLMatchesSignedPackage": true
+    },
+    "physicalIPhoneKeyboard": "unverified"
+  },
+  "ci": {
+    "status": "completed",
+    "runId": 39144329195,
+    "jobId": 117724980224,
+    "url": "https://github.com/mf103871-boop/Maydan/actions/runs/39144329195",
+    "sourceCommit": "96cb8cc9ee44937c9e6e84ab1ccc18fa50f0ff94",
+    "uploadRequested": true,
+    "conclusion": "success",
+    "javascriptTests": {
+      "total": 777,
+      "passed": 776,
+      "failed": 0,
+      "skipped": 1
+    },
+    "pythonTestsPassed": 37,
+    "swiftPolicyTestsPassed": 40,
+    "signingCleanupPassed": true,
+    "nativePreparedHTMLSHA256": "f38dc2ad7892b75c3f8fdbe5d68c8f90cf34d65db27a341cc02f7de3189d6319",
+    "signatureAndRuntimePassed": true,
+    "uploadToApplePassed": true
+  },
+  "package": {
+    "status": "verified",
+    "artifactId": 12143315771,
+    "artifactSHA256": "d55a8f635f772e5f168635277beda6f63e921a6ccfe4ddf092de9856105ef251",
+    "artifactBytes": 152151912,
+    "ipaSHA256": "91b49fe36898c34f6e39eaa5aaccb69d7be2e59cadb8a8ba22783b4b731df171",
+    "ipaBytes": 152674383,
+    "executableSHA256": "0a65f6ffa87efefdd8e268161ec4ad61b2f48ba46c2c6b3fb7d1eec5252e4adb",
+    "htmlSHA256": "f38dc2ad7892b75c3f8fdbe5d68c8f90cf34d65db27a341cc02f7de3189d6319",
+    "auditSHA256": "37fd29643ef49ea19dfcf1b5ce66b224decdf6bd49cc08933ff81ef53490ce29",
+    "runtimeValidation": {
+      "ok": true,
+      "bundleId": "Maydan",
+      "version": "1.7.1",
+      "build": "13",
+      "binariesChecked": 3,
+      "platform": "ios",
+      "architectures": [
+        "arm64"
+      ],
+      "embeddedDependencyEdges": 2,
+      "mainRunpaths": [
+        "/usr/lib/swift",
+        "@executable_path/Frameworks"
+      ]
+    },
+    "minimumOSVersion": "16.4",
+    "nativeConfigUnchangedFromBuild12": true,
+    "productionApiOrigin": "https://maydan-game.mf103871.workers.dev",
+    "subscriptionProducts": {
+      "monthly": "plus.monthly",
+      "yearly": "plus.yearly"
+    },
+    "productionAPNs": true,
+    "signInWithApple": true,
+    "debugEntitlement": false,
+    "signatureVerificationScope": "Cryptographic archive validation is performed by macOS CI; this Windows audit parses signed entitlement metadata only.",
+    "privacyManifestUnchanged": {
+      "PrivacyInfo.xcprivacy": true
+    },
+    "bundledFixChecks": {
+      "fontSizes": {
+        ".lamma-search input": 16,
+        ".lamma-panel .social-composer-row textarea": 16,
+        ".lamma-field input, .lamma-field select, .lamma-edit-message": 16,
+        ".lamma-member select": 16,
+        ".lamma-call-bar select": 16,
+        ".social-search input": 16
+      },
+      "imeCompositionAnd229Guard": true,
+      "visualViewportAndPinchGuard": true,
+      "manualZoomNotDisabled": true,
+      "simulatorFixtureMarkersAbsent": true
+    }
+  },
+  "appleBuild": {
+    "status": "validated",
+    "id": "4d6f0b15-9050-4f2f-b34a-7432dca51beb",
+    "processingState": "VALID",
+    "version": "1.7.1",
+    "build": "13",
+    "internalBuildState": "IN_BETA_TESTING",
+    "usesNonExemptEncryption": false,
+    "uploadAcceptedAt": "2026-10-18T16:30:53.820102Z",
+    "externalBuildState": "READY_FOR_BETA_SUBMISSION",
+    "expired": false,
+    "listedInExistingInternalGroup": true,
+    "checkedAt": "2026-10-18T16:36:38.251757+00:00"
+  },
+  "submission": {
+    "status": "waiting-for-review",
+    "appStoreVersionId": "b9fe0881-b915-4c75-90f2-db218081d482",
+    "reviewSubmissionId": "90541fc0-efb7-49c6-b254-34363b6410f2",
+    "submittedAt": "2026-10-18T16:35:51.438Z",
+    "state": "WAITING_FOR_REVIEW",
+    "releaseMode": "AFTER_APPROVAL",
+    "publiclyReleased": false,
+    "submittedAtAsiaAmman": "2026-10-18T19:35:51.438000+03:00",
+    "versionState": "WAITING_FOR_REVIEW",
+    "selectedBuildId": "4d6f0b15-9050-4f2f-b34a-7432dca51beb",
+    "checkedAt": "2026-10-18T16:36:38.251757+00:00",
+    "publicationState": "Submitted and waiting for Apple review; public release is configured for after approval.",
+    "verificationSources": [
+      "App Store Connect submission UI",
+      "Independent read-only App Store Connect API"
+    ],
+    "sanitizedAPIReportSHA256": "73249e4a723eb0acbe3debbf8663b9719f8982e3052055de04e4dfc1830c84e3",
+    "uiScreenshotSHA256": "05ec41748d363a1f1ca3513823443dcae6ff52bcb44dae9b68fc49e4dcae7286"
+  },
+  "outstanding": [
+    "Apple App Review and automatic public release after approval",
+    "Physical iPhone keyboard validation remains unverified"
+  ],
+  "simulator": {
+    "artifactId": 12142957570,
+    "artifactSHA256": "baa24812b65f94038284c3881000a88820548d9caa089fc6b2ee68bcea16a0fe",
+    "passed": true,
+    "sameInstalledApp": true,
+    "model": "iPhone SE (3rd generation)",
+    "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-26-2",
+    "sourceExecutableSHA256": "6f45ef7e959675ef3dfc83d5afdda18b9db11cf1f7c09bfcd6c35544b5930c9e",
+    "coldLaunchSeconds": 45.15,
+    "relaunchSeconds": 15.03,
+    "requiredUpdateSeconds": 5.05,
+    "crashReports": 0,
+    "diagnosticWarnings": 0,
+    "updateGate": {
+      "requiredHeadingAndActions": true,
+      "initialGameNotLoadedBehindGate": true,
+      "realRetryAction": true,
+      "offlineRecovery": true,
+      "evidence": "Mounted native view properties plus screenshots; no physical touch claim."
+    },
+    "physicalIPhoneKeyboardVerified": false,
+    "artifactBytes": 4999284
+  },
+  "metadataVerification": {
+    "checkedAt": "2026-10-18T16:21:21.119137+00:00",
+    "allVerified": true,
+    "localizations": [
+      {
+        "locale": "ar-SA",
+        "whatsNewMatchesPreparedFile": true,
+        "whatsNewCharacters": 231,
+        "whatsNewSHA256": "cb22e5ca0c08b9ab971f54a56c7f28d8be9840eee9cb3035c875363e17c11ba6",
+        "screenshotsComplete": 3,
+        "screenshotsMatchExpected": true,
+        "allUrlsMatchExpected": true
+      },
+      {
+        "locale": "en-US",
+        "whatsNewMatchesPreparedFile": true,
+        "whatsNewCharacters": 282,
+        "whatsNewSHA256": "8363ecb5674b4c5b582bb8ad5a1e454b24776acc260a48d2e22b6aaf7d1c0a5e",
+        "screenshotsComplete": 3,
+        "screenshotsMatchExpected": true,
+        "allUrlsMatchExpected": true
+      }
+    ],
+    "reviewNotes": {
+      "matchesPreparedFile": true,
+      "characters": 3002,
+      "sha256": "b5d6eaf167c502df955563d09e343375b86c751a9c79aba4cfaf268cdef3cdae"
+    }
+  },
+  "checkedAt": "2026-10-18T16:36:38.251757+00:00"
+}
