@@ -1,0 +1,59 @@
+{
+  "scope": "Real group launch, Ersomha canvas/guesses, Lamma privacy and room WebSockets against local workerd/D1; external media transport is simulated, no production writes",
+  "engines": [
+    {
+      "engine": "chromium",
+      "groupLaunch": true,
+      "cancelledActiveRoomInvitationAllocatesNoSeat": true,
+      "automaticGuestJoin": true,
+      "roomCode": "975211",
+      "completedDrawingTurns": 2,
+      "bothDrawingsDelivered": true,
+      "drawerMutedBeforeWord": true,
+      "microphoneUnmuteBlockedDuringDrawing": true,
+      "microphoneNeverAutoReopened": true,
+      "bothCallStatesPreserved": true,
+      "mediaConnectCount": [
+        1,
+        1
+      ],
+      "mediaDisconnectCount": [
+        0,
+        0
+      ],
+      "browserErrors": []
+    },
+    {
+      "engine": "webkit",
+      "groupLaunch": true,
+      "cancelledActiveRoomInvitationAllocatesNoSeat": true,
+      "automaticGuestJoin": true,
+      "roomCode": "686238",
+      "completedDrawingTurns": 2,
+      "bothDrawingsDelivered": true,
+      "drawerMutedBeforeWord": true,
+      "microphoneUnmuteBlockedDuringDrawing": true,
+      "microphoneNeverAutoReopened": true,
+      "bothCallStatesPreserved": true,
+      "mediaConnectCount": [
+        1,
+        1
+      ],
+      "mediaDisconnectCount": [
+        0,
+        0
+      ],
+      "browserErrors": []
+    }
+  ],
+  "providerRequests": [
+    {
+      "provider": "fixture.livekit.cloud",
+      "path": "/twirp/livekit.RoomService/CreateRoom"
+    },
+    {
+      "provider": "fixture.livekit.cloud",
+      "path": "/twirp/livekit.RoomService/CreateRoom"
+    }
+  ]
+}

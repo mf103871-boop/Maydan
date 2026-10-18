@@ -1,0 +1,1809 @@
+{
+  "scope": "Current Ersomha UI and imperative canvas, synthetic transport only; no production writes, no physical device speed claim",
+  "browsers": [
+    {
+      "name": "chromium",
+      "localInkBeforeRemoteAck": true,
+      "localInkProbe": {
+        "scope": "Genuine browser pointer capture callback to first canvas stroke/fill with readable ink at its point; includes 1x1 pixel readback, does not measure physical display presentation",
+        "sampleCount": 61,
+        "p95Ms": 0.3999999761581421,
+        "maxMs": 1.2000000178813934,
+        "samplesMs": [
+          1.2000000178813934,
+          0.19999998807907104,
+          0.30000001192092896,
+          0.3999999761581421,
+          0.19999998807907104,
+          0.19999998807907104,
+          0.3999999761581421,
+          0.30000001192092896,
+          0.30000001192092896,
+          0.30000001192092896,
+          0.30000001192092896,
+          0.19999998807907104,
+          0.19999998807907104,
+          0.09999999403953552,
+          0.19999998807907104,
+          0.19999998807907104,
+          0.30000001192092896,
+          0.29999998211860657,
+          0.4000000059604645,
+          0.19999998807907104,
+          0.10000002384185791,
+          0.09999999403953552,
+          0.20000001788139343,
+          0.30000001192092896,
+          0.19999998807907104,
+          0.19999998807907104,
+          0.09999999403953552,
+          0.29999998211860657,
+          0.19999998807907104,
+          0.19999998807907104,
+          0.19999998807907104,
+          0.19999998807907104,
+          0.19999998807907104,
+          0.5,
+          0.19999998807907104,
+          0.19999998807907104,
+          0.19999998807907104,
+          0.20000001788139343,
+          0.09999999403953552,
+          0.19999998807907104,
+          0.20000001788139343,
+          0.30000001192092896,
+          0.09999999403953552,
+          0.09999999403953552,
+          0.30000001192092896,
+          0.20000001788139343,
+          0.20000001788139343,
+          0.20000001788139343,
+          0.20000001788139343,
+          0.09999999403953552,
+          0.20000001788139343,
+          0.09999999403953552,
+          0.20000001788139343,
+          0.10000002384185791,
+          0.20000001788139343,
+          0.19999998807907104,
+          0.20000001788139343,
+          0.19999998807907104,
+          0.09999999403953552,
+          0.09999999403953552,
+          0.09999999403953552
+        ]
+      },
+      "localGestureMeasurementMs": 151.7999999821186,
+      "batches": 2,
+      "undoRedo": true,
+      "clearConfirmation": true,
+      "backpressureResume": true,
+      "reconnectSync": true,
+      "mutePrivacyCurtain": true,
+      "guessing": true,
+      "imeGuard": true,
+      "keyboardSquareBoard": true,
+      "reducedMotion": true,
+      "layouts": [
+        {
+          "width": 320,
+          "overflow": false,
+          "board": {
+            "width": 252,
+            "height": 252,
+            "left": 34,
+            "right": 286,
+            "top": 231,
+            "bottom": 483
+          },
+          "tools": [
+            {
+              "label": "✎قلم",
+              "top": 493,
+              "bottom": 537,
+              "width": 53.1875,
+              "height": 44
+            },
+            {
+              "label": "▱ممحاة",
+              "top": 493,
+              "bottom": 537,
+              "width": 53.578125,
+              "height": 44
+            },
+            {
+              "label": "↶",
+              "top": 493,
+              "bottom": 537,
+              "width": 44,
+              "height": 44
+            },
+            {
+              "label": "↷",
+              "top": 493,
+              "bottom": 537,
+              "width": 44,
+              "height": 44
+            },
+            {
+              "label": "×مسح",
+              "top": 493,
+              "bottom": 537,
+              "width": 44.796875,
+              "height": 44
+            },
+            {
+              "label": "",
+              "top": 541,
+              "bottom": 585,
+              "width": 47,
+              "height": 44
+            },
+            {
+              "label": "",
+              "top": 541,
+              "bottom": 585,
+              "width": 47,
+              "height": 44
+            },
+            {
+              "label": "",
+              "top": 541,
+              "bottom": 585,
+              "width": 47,
+              "height": 44
+            },
+            {
+              "label": "",
+              "top": 541,
+              "bottom": 585,
+              "width": 47,
+              "height": 44
+            },
+            {
+              "label": "",
+              "top": 541,
+              "bottom": 585,
+              "width": 47,
+              "height": 44
+            },
+            {
+              "label": "",
+              "top": 541,
+              "bottom": 585,
+              "width": 47,
+              "height": 44
+            },
+            {
+              "label": "",
+              "top": 585,
+              "bottom": 629,
+              "width": 47,
+              "height": 44
+            },
+            {
+              "label": "",
+              "top": 585,
+              "bottom": 629,
+              "width": 47,
+              "height": 44
+            },
+            {
+              "label": "",
+              "top": 585,
+              "bottom": 629,
+              "width": 47,
+              "height": 44
+            },
+            {
+              "label": "",
+              "top": 585,
+              "bottom": 629,
+              "width": 47,
+              "height": 44
+            },
+            {
+              "label": "",
+              "top": 585,
+              "bottom": 629,
+              "width": 47,
+              "height": 44
+            },
+            {
+              "label": "",
+              "top": 585,
+              "bottom": 629,
+              "width": 47,
+              "height": 44
+            },
+            {
+              "label": "رفيع",
+              "top": 633,
+              "bottom": 677,
+              "width": 70,
+              "height": 44
+            },
+            {
+              "label": "متوسط",
+              "top": 633,
+              "bottom": 677,
+              "width": 75.359375,
+              "height": 44
+            },
+            {
+              "label": "عريض",
+              "top": 633,
+              "bottom": 677,
+              "width": 76.96875,
+              "height": 44
+            }
+          ],
+          "colours": [
+            {
+              "width": 47,
+              "height": 44
+            },
+            {
+              "width": 47,
+              "height": 44
+            },
+            {
+              "width": 47,
+              "height": 44
+            },
+            {
+              "width": 47,
+              "height": 44
+            },
+            {
+              "width": 47,
+              "height": 44
+            },
+            {
+              "width": 47,
+              "height": 44
+            },
+            {
+              "width": 47,
+              "height": 44
+            },
+            {
+              "width": 47,
+              "height": 44
+            },
+            {
+              "width": 47,
+              "height": 44
+            },
+            {
+              "width": 47,
+              "height": 44
+            },
+            {
+              "width": 47,
+              "height": 44
+            },
+            {
+              "width": 47,
+              "height": 44
+            }
+          ]
+        },
+        {
+          "width": 375,
+          "overflow": false,
+          "board": {
+            "width": 339,
+            "height": 339,
+            "left": 18,
+            "right": 357,
+            "top": 216,
+            "bottom": 555
+          },
+          "tools": [
+            {
+              "label": "✎قلم",
+              "top": 565,
+              "bottom": 609,
+              "width": 57.1875,
+              "height": 44
+            },
+            {
+              "label": "▱ممحاة",
+              "top": 565,
+              "bottom": 609,
+              "width": 57.578125,
+              "height": 44
+            },
+            {
+              "label": "↶",
+              "top": 565,
+              "bottom": 609,
+              "width": 44,
+              "height": 44
+            },
+            {
+              "label": "↷",
+              "top": 565,
+              "bottom": 609,
+              "width": 44,
+              "height": 44
+            },
+            {
+              "label": "×مسح",
+              "top": 565,
+              "bottom": 609,
+              "width": 48.796875,
+              "height": 44
+            },
+            {
+              "label": "",
+              "top": 613,
+              "bottom": 657,
+              "width": 56.15625,
+              "height": 44
+            },
+            {
+              "label": "",
+              "top": 613,
+              "bottom": 657,
+              "width": 56.171875,
+              "height": 44
+            },
+            {
+              "label": "",
+              "top": 613,
+              "bottom": 657,
+              "width": 56.171875,
+              "height": 44
+            },
+            {
+              "label": "",
+              "top": 613,
+              "bottom": 657,
+              "width": 56.15625,
+              "height": 44
+            },
+            {
+              "label": "",
+              "top": 613,
+              "bottom": 657,
+              "width": 56.171875,
+              "height": 44
+            },
+            {
+              "label": "",
+              "top": 613,
+              "bottom": 657,
+              "width": 56.171875,
+              "height": 44
+            },
+            {
+              "label": "",
+              "top": 657,
+              "bottom": 701,
+              "width": 56.15625,
+              "height": 44
+            },
+            {
+              "label": "",
+              "top": 657,
+              "bottom": 701,
+              "width": 56.171875,
+              "height": 44
+            },
+            {
+              "label": "",
+              "top": 657,
+              "bottom": 701,
+              "width": 56.171875,
+              "height": 44
+            },
+            {
+              "label": "",
+              "top": 657,
+              "bottom": 701,
+              "width": 56.15625,
+              "height": 44
+            },
+            {
+              "label": "",
+              "top": 657,
+              "bottom": 701,
+              "width": 56.171875,
+              "height": 44
+            },
+            {
+              "label": "",
+              "top": 657,
+              "bottom": 701,
+              "width": 56.171875,
+              "height": 44
+            },
+            {
+              "label": "رفيع",
+              "top": 705,
+              "bottom": 749,
+              "width": 70,
+              "height": 44
+            },
+            {
+              "label": "متوسط",
+              "top": 705,
+              "bottom": 749,
+              "width": 75.359375,
+              "height": 44
+            },
+            {
+              "label": "عريض",
+              "top": 705,
+              "bottom": 749,
+              "width": 76.96875,
+              "height": 44
+            }
+          ],
+          "colours": [
+            {
+              "width": 56.15625,
+              "height": 44
+            },
+            {
+              "width": 56.171875,
+              "height": 44
+            },
+            {
+              "width": 56.171875,
+              "height": 44
+            },
+            {
+              "width": 56.15625,
+              "height": 44
+            },
+            {
+              "width": 56.171875,
+              "height": 44
+            },
+            {
+              "width": 56.171875,
+              "height": 44
+            },
+            {
+              "width": 56.15625,
+              "height": 44
+            },
+            {
+              "width": 56.171875,
+              "height": 44
+            },
+            {
+              "width": 56.171875,
+              "height": 44
+            },
+            {
+              "width": 56.15625,
+              "height": 44
+            },
+            {
+              "width": 56.171875,
+              "height": 44
+            },
+            {
+              "width": 56.171875,
+              "height": 44
+            }
+          ]
+        },
+        {
+          "width": 390,
+          "overflow": false,
+          "board": {
+            "width": 358,
+            "height": 358,
+            "left": 16,
+            "right": 374,
+            "top": 201,
+            "bottom": 559
+          },
+          "tools": [
+            {
+              "label": "✎قلم",
+              "top": 569,
+              "bottom": 613,
+              "width": 57.1875,
+              "height": 44
+            },
+            {
+              "label": "▱ممحاة",
+              "top": 569,
+              "bottom": 613,
+              "width": 57.578125,
+              "height": 44
+            },
+            {
+              "label": "↶",
+              "top": 569,
+              "bottom": 613,
+              "width": 44,
+              "height": 44
+            },
+            {
+              "label": "↷",
+              "top": 569,
+              "bottom": 613,
+              "width": 44,
+              "height": 44
+            },
+            {
+              "label": "×مسح",
+              "top": 569,
+              "bottom": 613,
+              "width": 48.796875,
+              "height": 44
+            },
+            {
+              "label": "",
+              "top": 617,
+              "bottom": 661,
+              "width": 58.65625,
+              "height": 44
+            },
+            {
+              "label": "",
+              "top": 617,
+              "bottom": 661,
+              "width": 58.671875,
+              "height": 44
+            },
+            {
+              "label": "",
+              "top": 617,
+              "bottom": 661,
+              "width": 58.671875,
+              "height": 44
+            },
+            {
+              "label": "",
+              "top": 617,
+              "bottom": 661,
+              "width": 58.65625,
+              "height": 44
+            },
+            {
+              "label": "",
+              "top": 617,
+              "bottom": 661,
+              "width": 58.671875,
+              "height": 44
+            },
+            {
+              "label": "",
+              "top": 617,
+              "bottom": 661,
+              "width": 58.671875,
+              "height": 44
+            },
+            {
+              "label": "",
+              "top": 661,
+              "bottom": 705,
+              "width": 58.65625,
+              "height": 44
+            },
+            {
+              "label": "",
+              "top": 661,
+              "bottom": 705,
+              "width": 58.671875,
+              "height": 44
+            },
+            {
+              "label": "",
+              "top": 661,
+              "bottom": 705,
+              "width": 58.671875,
+              "height": 44
+            },
+            {
+              "label": "",
+              "top": 661,
+              "bottom": 705,
+              "width": 58.65625,
+              "height": 44
+            },
+            {
+              "label": "",
+              "top": 661,
+              "bottom": 705,
+              "width": 58.671875,
+              "height": 44
+            },
+            {
+              "label": "",
+              "top": 661,
+              "bottom": 705,
+              "width": 58.671875,
+              "height": 44
+            },
+            {
+              "label": "رفيع",
+              "top": 709,
+              "bottom": 753,
+              "width": 70,
+              "height": 44
+            },
+            {
+              "label": "متوسط",
+              "top": 709,
+              "bottom": 753,
+              "width": 75.359375,
+              "height": 44
+            },
+            {
+              "label": "عريض",
+              "top": 709,
+              "bottom": 753,
+              "width": 76.96875,
+              "height": 44
+            }
+          ],
+          "colours": [
+            {
+              "width": 58.65625,
+              "height": 44
+            },
+            {
+              "width": 58.671875,
+              "height": 44
+            },
+            {
+              "width": 58.671875,
+              "height": 44
+            },
+            {
+              "width": 58.65625,
+              "height": 44
+            },
+            {
+              "width": 58.671875,
+              "height": 44
+            },
+            {
+              "width": 58.671875,
+              "height": 44
+            },
+            {
+              "width": 58.65625,
+              "height": 44
+            },
+            {
+              "width": 58.671875,
+              "height": 44
+            },
+            {
+              "width": 58.671875,
+              "height": 44
+            },
+            {
+              "width": 58.65625,
+              "height": 44
+            },
+            {
+              "width": 58.671875,
+              "height": 44
+            },
+            {
+              "width": 58.671875,
+              "height": 44
+            }
+          ]
+        },
+        {
+          "width": 844,
+          "overflow": false,
+          "board": {
+            "width": 249,
+            "height": 249,
+            "left": 497,
+            "right": 746,
+            "top": 121,
+            "bottom": 370
+          },
+          "tools": [
+            {
+              "label": "✎قلم",
+              "top": 119,
+              "bottom": 163,
+              "width": 44,
+              "height": 44
+            },
+            {
+              "label": "▱ممحاة",
+              "top": 119,
+              "bottom": 163,
+              "width": 44,
+              "height": 44
+            },
+            {
+              "label": "↶",
+              "top": 119,
+              "bottom": 163,
+              "width": 44,
+              "height": 44
+            },
+            {
+              "label": "↷",
+              "top": 119,
+              "bottom": 163,
+              "width": 44,
+              "height": 44
+            },
+            {
+              "label": "×مسح",
+              "top": 119,
+              "bottom": 163,
+              "width": 44,
+              "height": 44
+            },
+            {
+              "label": "",
+              "top": 163,
+              "bottom": 207,
+              "width": 59.328125,
+              "height": 44
+            },
+            {
+              "label": "",
+              "top": 163,
+              "bottom": 207,
+              "width": 59.328125,
+              "height": 44
+            },
+            {
+              "label": "",
+              "top": 163,
+              "bottom": 207,
+              "width": 59.328125,
+              "height": 44
+            },
+            {
+              "label": "",
+              "top": 163,
+              "bottom": 207,
+              "width": 59.34375,
+              "height": 44
+            },
+            {
+              "label": "",
+              "top": 163,
+              "bottom": 207,
+              "width": 59.328125,
+              "height": 44
+            },
+            {
+              "label": "",
+              "top": 163,
+              "bottom": 207,
+              "width": 59.328125,
+              "height": 44
+            },
+            {
+              "label": "",
+              "top": 207,
+              "bottom": 251,
+              "width": 59.328125,
+              "height": 44
+            },
+            {
+              "label": "",
+              "top": 207,
+              "bottom": 251,
+              "width": 59.328125,
+              "height": 44
+            },
+            {
+              "label": "",
+              "top": 207,
+              "bottom": 251,
+              "width": 59.328125,
+              "height": 44
+            },
+            {
+              "label": "",
+              "top": 207,
+              "bottom": 251,
+              "width": 59.34375,
+              "height": 44
+            },
+            {
+              "label": "",
+              "top": 207,
+              "bottom": 251,
+              "width": 59.328125,
+              "height": 44
+            },
+            {
+              "label": "",
+              "top": 207,
+              "bottom": 251,
+              "width": 59.328125,
+              "height": 44
+            },
+            {
+              "label": "رفيع",
+              "top": 119,
+              "bottom": 163,
+              "width": 44,
+              "height": 44
+            },
+            {
+              "label": "متوسط",
+              "top": 119,
+              "bottom": 163,
+              "width": 44,
+              "height": 44
+            },
+            {
+              "label": "عريض",
+              "top": 119,
+              "bottom": 163,
+              "width": 44,
+              "height": 44
+            }
+          ],
+          "colours": [
+            {
+              "width": 59.328125,
+              "height": 44
+            },
+            {
+              "width": 59.328125,
+              "height": 44
+            },
+            {
+              "width": 59.328125,
+              "height": 44
+            },
+            {
+              "width": 59.34375,
+              "height": 44
+            },
+            {
+              "width": 59.328125,
+              "height": 44
+            },
+            {
+              "width": 59.328125,
+              "height": 44
+            },
+            {
+              "width": 59.328125,
+              "height": 44
+            },
+            {
+              "width": 59.328125,
+              "height": 44
+            },
+            {
+              "width": 59.328125,
+              "height": 44
+            },
+            {
+              "width": 59.34375,
+              "height": 44
+            },
+            {
+              "width": 59.328125,
+              "height": 44
+            },
+            {
+              "width": 59.328125,
+              "height": 44
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "webkit",
+      "localInkBeforeRemoteAck": true,
+      "localInkProbe": {
+        "scope": "Genuine browser pointer capture callback to first canvas stroke/fill with readable ink at its point; includes 1x1 pixel readback, does not measure physical display presentation",
+        "sampleCount": 61,
+        "p95Ms": 4,
+        "maxMs": 21,
+        "samplesMs": [
+          10,
+          21,
+          3,
+          2,
+          2,
+          2,
+          2,
+          2,
+          3,
+          2,
+          2,
+          1,
+          3,
+          2,
+          2,
+          3,
+          2,
+          3,
+          2,
+          2,
+          3,
+          3,
+          2,
+          2,
+          1,
+          2,
+          2,
+          3,
+          2,
+          3,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          1,
+          4,
+          3,
+          3,
+          2,
+          2,
+          2,
+          2,
+          3,
+          3,
+          3,
+          2,
+          4,
+          4,
+          3,
+          4,
+          4,
+          5,
+          3
+        ]
+      },
+      "localGestureMeasurementMs": 123,
+      "batches": 2,
+      "undoRedo": true,
+      "clearConfirmation": true,
+      "backpressureResume": true,
+      "reconnectSync": true,
+      "mutePrivacyCurtain": true,
+      "guessing": true,
+      "imeGuard": true,
+      "keyboardSquareBoard": true,
+      "reducedMotion": true,
+      "layouts": [
+        {
+          "width": 320,
+          "overflow": false,
+          "board": {
+            "width": 266,
+            "height": 266,
+            "left": 27,
+            "right": 293,
+            "top": 230.953125,
+            "bottom": 496.953125
+          },
+          "tools": [
+            {
+              "label": "✎قلم",
+              "top": 506.953125,
+              "bottom": 550.953125,
+              "width": 53.1875,
+              "height": 44
+            },
+            {
+              "label": "▱ممحاة",
+              "top": 506.953125,
+              "bottom": 550.953125,
+              "width": 53.578125,
+              "height": 44
+            },
+            {
+              "label": "↶",
+              "top": 506.953125,
+              "bottom": 550.953125,
+              "width": 44,
+              "height": 44
+            },
+            {
+              "label": "↷",
+              "top": 506.953125,
+              "bottom": 550.953125,
+              "width": 44,
+              "height": 44
+            },
+            {
+              "label": "×مسح",
+              "top": 506.953125,
+              "bottom": 550.953125,
+              "width": 44.796875,
+              "height": 44
+            },
+            {
+              "label": "",
+              "top": 554.953125,
+              "bottom": 598.953125,
+              "width": 47,
+              "height": 44
+            },
+            {
+              "label": "",
+              "top": 554.953125,
+              "bottom": 598.953125,
+              "width": 47,
+              "height": 44
+            },
+            {
+              "label": "",
+              "top": 554.953125,
+              "bottom": 598.953125,
+              "width": 47,
+              "height": 44
+            },
+            {
+              "label": "",
+              "top": 554.953125,
+              "bottom": 598.953125,
+              "width": 47,
+              "height": 44
+            },
+            {
+              "label": "",
+              "top": 554.953125,
+              "bottom": 598.953125,
+              "width": 47,
+              "height": 44
+            },
+            {
+              "label": "",
+              "top": 554.953125,
+              "bottom": 598.953125,
+              "width": 47,
+              "height": 44
+            },
+            {
+              "label": "",
+              "top": 598.953125,
+              "bottom": 642.953125,
+              "width": 47,
+              "height": 44
+            },
+            {
+              "label": "",
+              "top": 598.953125,
+              "bottom": 642.953125,
+              "width": 47,
+              "height": 44
+            },
+            {
+              "label": "",
+              "top": 598.953125,
+              "bottom": 642.953125,
+              "width": 47,
+              "height": 44
+            },
+            {
+              "label": "",
+              "top": 598.953125,
+              "bottom": 642.953125,
+              "width": 47,
+              "height": 44
+            },
+            {
+              "label": "",
+              "top": 598.953125,
+              "bottom": 642.953125,
+              "width": 47,
+              "height": 44
+            },
+            {
+              "label": "",
+              "top": 598.953125,
+              "bottom": 642.953125,
+              "width": 47,
+              "height": 44
+            },
+            {
+              "label": "رفيع",
+              "top": 646.953125,
+              "bottom": 690.953125,
+              "width": 70,
+              "height": 44
+            },
+            {
+              "label": "متوسط",
+              "top": 646.953125,
+              "bottom": 690.953125,
+              "width": 75.359375,
+              "height": 44
+            },
+            {
+              "label": "عريض",
+              "top": 646.953125,
+              "bottom": 690.953125,
+              "width": 76.96875,
+              "height": 44
+            }
+          ],
+          "colours": [
+            {
+              "width": 47,
+              "height": 44
+            },
+            {
+              "width": 47,
+              "height": 44
+            },
+            {
+              "width": 47,
+              "height": 44
+            },
+            {
+              "width": 47,
+              "height": 44
+            },
+            {
+              "width": 47,
+              "height": 44
+            },
+            {
+              "width": 47,
+              "height": 44
+            },
+            {
+              "width": 47,
+              "height": 44
+            },
+            {
+              "width": 47,
+              "height": 44
+            },
+            {
+              "width": 47,
+              "height": 44
+            },
+            {
+              "width": 47,
+              "height": 44
+            },
+            {
+              "width": 47,
+              "height": 44
+            },
+            {
+              "width": 47,
+              "height": 44
+            }
+          ]
+        },
+        {
+          "width": 375,
+          "overflow": false,
+          "board": {
+            "width": 338,
+            "height": 338,
+            "left": 18.5,
+            "right": 356.5,
+            "top": 230.953125,
+            "bottom": 568.953125
+          },
+          "tools": [
+            {
+              "label": "✎قلم",
+              "top": 578.953125,
+              "bottom": 622.953125,
+              "width": 57.1875,
+              "height": 44
+            },
+            {
+              "label": "▱ممحاة",
+              "top": 578.953125,
+              "bottom": 622.953125,
+              "width": 57.578125,
+              "height": 44
+            },
+            {
+              "label": "↶",
+              "top": 578.953125,
+              "bottom": 622.953125,
+              "width": 44,
+              "height": 44
+            },
+            {
+              "label": "↷",
+              "top": 578.953125,
+              "bottom": 622.953125,
+              "width": 44,
+              "height": 44
+            },
+            {
+              "label": "×مسح",
+              "top": 578.953125,
+              "bottom": 622.953125,
+              "width": 48.796875,
+              "height": 44
+            },
+            {
+              "label": "",
+              "top": 626.953125,
+              "bottom": 670.953125,
+              "width": 56.15625,
+              "height": 44
+            },
+            {
+              "label": "",
+              "top": 626.953125,
+              "bottom": 670.953125,
+              "width": 56.171875,
+              "height": 44
+            },
+            {
+              "label": "",
+              "top": 626.953125,
+              "bottom": 670.953125,
+              "width": 56.15625,
+              "height": 44
+            },
+            {
+              "label": "",
+              "top": 626.953125,
+              "bottom": 670.953125,
+              "width": 56.171875,
+              "height": 44
+            },
+            {
+              "label": "",
+              "top": 626.953125,
+              "bottom": 670.953125,
+              "width": 56.171875,
+              "height": 44
+            },
+            {
+              "label": "",
+              "top": 626.953125,
+              "bottom": 670.953125,
+              "width": 56.15625,
+              "height": 44
+            },
+            {
+              "label": "",
+              "top": 670.953125,
+              "bottom": 714.953125,
+              "width": 56.15625,
+              "height": 44
+            },
+            {
+              "label": "",
+              "top": 670.953125,
+              "bottom": 714.953125,
+              "width": 56.171875,
+              "height": 44
+            },
+            {
+              "label": "",
+              "top": 670.953125,
+              "bottom": 714.953125,
+              "width": 56.15625,
+              "height": 44
+            },
+            {
+              "label": "",
+              "top": 670.953125,
+              "bottom": 714.953125,
+              "width": 56.171875,
+              "height": 44
+            },
+            {
+              "label": "",
+              "top": 670.953125,
+              "bottom": 714.953125,
+              "width": 56.171875,
+              "height": 44
+            },
+            {
+              "label": "",
+              "top": 670.953125,
+              "bottom": 714.953125,
+              "width": 56.15625,
+              "height": 44
+            },
+            {
+              "label": "رفيع",
+              "top": 718.953125,
+              "bottom": 762.953125,
+              "width": 70,
+              "height": 44
+            },
+            {
+              "label": "متوسط",
+              "top": 718.953125,
+              "bottom": 762.953125,
+              "width": 75.359375,
+              "height": 44
+            },
+            {
+              "label": "عريض",
+              "top": 718.953125,
+              "bottom": 762.953125,
+              "width": 76.96875,
+              "height": 44
+            }
+          ],
+          "colours": [
+            {
+              "width": 56.15625,
+              "height": 44
+            },
+            {
+              "width": 56.171875,
+              "height": 44
+            },
+            {
+              "width": 56.15625,
+              "height": 44
+            },
+            {
+              "width": 56.171875,
+              "height": 44
+            },
+            {
+              "width": 56.171875,
+              "height": 44
+            },
+            {
+              "width": 56.15625,
+              "height": 44
+            },
+            {
+              "width": 56.15625,
+              "height": 44
+            },
+            {
+              "width": 56.171875,
+              "height": 44
+            },
+            {
+              "width": 56.15625,
+              "height": 44
+            },
+            {
+              "width": 56.171875,
+              "height": 44
+            },
+            {
+              "width": 56.171875,
+              "height": 44
+            },
+            {
+              "width": 56.15625,
+              "height": 44
+            }
+          ]
+        },
+        {
+          "width": 390,
+          "overflow": false,
+          "board": {
+            "width": 358,
+            "height": 358,
+            "left": 16,
+            "right": 374,
+            "top": 230.953125,
+            "bottom": 588.953125
+          },
+          "tools": [
+            {
+              "label": "✎قلم",
+              "top": 598.953125,
+              "bottom": 642.953125,
+              "width": 57.1875,
+              "height": 44
+            },
+            {
+              "label": "▱ممحاة",
+              "top": 598.953125,
+              "bottom": 642.953125,
+              "width": 57.578125,
+              "height": 44
+            },
+            {
+              "label": "↶",
+              "top": 598.953125,
+              "bottom": 642.953125,
+              "width": 44,
+              "height": 44
+            },
+            {
+              "label": "↷",
+              "top": 598.953125,
+              "bottom": 642.953125,
+              "width": 44,
+              "height": 44
+            },
+            {
+              "label": "×مسح",
+              "top": 598.953125,
+              "bottom": 642.953125,
+              "width": 48.796875,
+              "height": 44
+            },
+            {
+              "label": "",
+              "top": 646.953125,
+              "bottom": 690.953125,
+              "width": 58.65625,
+              "height": 44
+            },
+            {
+              "label": "",
+              "top": 646.953125,
+              "bottom": 690.953125,
+              "width": 58.671875,
+              "height": 44
+            },
+            {
+              "label": "",
+              "top": 646.953125,
+              "bottom": 690.953125,
+              "width": 58.65625,
+              "height": 44
+            },
+            {
+              "label": "",
+              "top": 646.953125,
+              "bottom": 690.953125,
+              "width": 58.671875,
+              "height": 44
+            },
+            {
+              "label": "",
+              "top": 646.953125,
+              "bottom": 690.953125,
+              "width": 58.671875,
+              "height": 44
+            },
+            {
+              "label": "",
+              "top": 646.953125,
+              "bottom": 690.953125,
+              "width": 58.65625,
+              "height": 44
+            },
+            {
+              "label": "",
+              "top": 690.953125,
+              "bottom": 734.953125,
+              "width": 58.65625,
+              "height": 44
+            },
+            {
+              "label": "",
+              "top": 690.953125,
+              "bottom": 734.953125,
+              "width": 58.671875,
+              "height": 44
+            },
+            {
+              "label": "",
+              "top": 690.953125,
+              "bottom": 734.953125,
+              "width": 58.65625,
+              "height": 44
+            },
+            {
+              "label": "",
+              "top": 690.953125,
+              "bottom": 734.953125,
+              "width": 58.671875,
+              "height": 44
+            },
+            {
+              "label": "",
+              "top": 690.953125,
+              "bottom": 734.953125,
+              "width": 58.671875,
+              "height": 44
+            },
+            {
+              "label": "",
+              "top": 690.953125,
+              "bottom": 734.953125,
+              "width": 58.65625,
+              "height": 44
+            },
+            {
+              "label": "رفيع",
+              "top": 738.953125,
+              "bottom": 782.953125,
+              "width": 70,
+              "height": 44
+            },
+            {
+              "label": "متوسط",
+              "top": 738.953125,
+              "bottom": 782.953125,
+              "width": 75.359375,
+              "height": 44
+            },
+            {
+              "label": "عريض",
+              "top": 738.953125,
+              "bottom": 782.953125,
+              "width": 76.96875,
+              "height": 44
+            }
+          ],
+          "colours": [
+            {
+              "width": 58.65625,
+              "height": 44
+            },
+            {
+              "width": 58.671875,
+              "height": 44
+            },
+            {
+              "width": 58.65625,
+              "height": 44
+            },
+            {
+              "width": 58.671875,
+              "height": 44
+            },
+            {
+              "width": 58.671875,
+              "height": 44
+            },
+            {
+              "width": 58.65625,
+              "height": 44
+            },
+            {
+              "width": 58.65625,
+              "height": 44
+            },
+            {
+              "width": 58.671875,
+              "height": 44
+            },
+            {
+              "width": 58.65625,
+              "height": 44
+            },
+            {
+              "width": 58.671875,
+              "height": 44
+            },
+            {
+              "width": 58.671875,
+              "height": 44
+            },
+            {
+              "width": 58.65625,
+              "height": 44
+            }
+          ]
+        },
+        {
+          "width": 844,
+          "overflow": false,
+          "board": {
+            "width": 205,
+            "height": 205,
+            "left": 541,
+            "right": 746,
+            "top": 165.953125,
+            "bottom": 370.953125
+          },
+          "tools": [
+            {
+              "label": "✎قلم",
+              "top": 163.953125,
+              "bottom": 207.953125,
+              "width": 44,
+              "height": 44
+            },
+            {
+              "label": "▱ممحاة",
+              "top": 163.953125,
+              "bottom": 207.953125,
+              "width": 44,
+              "height": 44
+            },
+            {
+              "label": "↶",
+              "top": 163.953125,
+              "bottom": 207.953125,
+              "width": 44,
+              "height": 44
+            },
+            {
+              "label": "↷",
+              "top": 163.953125,
+              "bottom": 207.953125,
+              "width": 44,
+              "height": 44
+            },
+            {
+              "label": "×مسح",
+              "top": 163.953125,
+              "bottom": 207.953125,
+              "width": 44,
+              "height": 44
+            },
+            {
+              "label": "",
+              "top": 207.953125,
+              "bottom": 251.953125,
+              "width": 59.328125,
+              "height": 44
+            },
+            {
+              "label": "",
+              "top": 207.953125,
+              "bottom": 251.953125,
+              "width": 59.328125,
+              "height": 44
+            },
+            {
+              "label": "",
+              "top": 207.953125,
+              "bottom": 251.953125,
+              "width": 59.34375,
+              "height": 44
+            },
+            {
+              "label": "",
+              "top": 207.953125,
+              "bottom": 251.953125,
+              "width": 59.328125,
+              "height": 44
+            },
+            {
+              "label": "",
+              "top": 207.953125,
+              "bottom": 251.953125,
+              "width": 59.328125,
+              "height": 44
+            },
+            {
+              "label": "",
+              "top": 207.953125,
+              "bottom": 251.953125,
+              "width": 59.34375,
+              "height": 44
+            },
+            {
+              "label": "",
+              "top": 251.953125,
+              "bottom": 295.953125,
+              "width": 59.328125,
+              "height": 44
+            },
+            {
+              "label": "",
+              "top": 251.953125,
+              "bottom": 295.953125,
+              "width": 59.328125,
+              "height": 44
+            },
+            {
+              "label": "",
+              "top": 251.953125,
+              "bottom": 295.953125,
+              "width": 59.34375,
+              "height": 44
+            },
+            {
+              "label": "",
+              "top": 251.953125,
+              "bottom": 295.953125,
+              "width": 59.328125,
+              "height": 44
+            },
+            {
+              "label": "",
+              "top": 251.953125,
+              "bottom": 295.953125,
+              "width": 59.328125,
+              "height": 44
+            },
+            {
+              "label": "",
+              "top": 251.953125,
+              "bottom": 295.953125,
+              "width": 59.34375,
+              "height": 44
+            },
+            {
+              "label": "رفيع",
+              "top": 163.953125,
+              "bottom": 207.953125,
+              "width": 44,
+              "height": 44
+            },
+            {
+              "label": "متوسط",
+              "top": 163.953125,
+              "bottom": 207.953125,
+              "width": 44,
+              "height": 44
+            },
+            {
+              "label": "عريض",
+              "top": 163.953125,
+              "bottom": 207.953125,
+              "width": 44,
+              "height": 44
+            }
+          ],
+          "colours": [
+            {
+              "width": 59.328125,
+              "height": 44
+            },
+            {
+              "width": 59.328125,
+              "height": 44
+            },
+            {
+              "width": 59.34375,
+              "height": 44
+            },
+            {
+              "width": 59.328125,
+              "height": 44
+            },
+            {
+              "width": 59.328125,
+              "height": 44
+            },
+            {
+              "width": 59.34375,
+              "height": 44
+            },
+            {
+              "width": 59.328125,
+              "height": 44
+            },
+            {
+              "width": 59.328125,
+              "height": 44
+            },
+            {
+              "width": 59.34375,
+              "height": 44
+            },
+            {
+              "width": 59.328125,
+              "height": 44
+            },
+            {
+              "width": 59.328125,
+              "height": 44
+            },
+            {
+              "width": 59.34375,
+              "height": 44
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

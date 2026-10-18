@@ -86,7 +86,7 @@ export function GameInviteDialog({ target, lamma, initialCode = '', canCreate = 
   return <Modal title="يلا نلعب" className="lamma-dialog lamma-game-dialog" onClose={busy ? null : onClose} footer={<><Button variant="ghost" disabled={busy} onClick={onClose}>إلغاء</Button><Button variant="primary" disabled={busy || (mode === 'existing' && !validCode(normalizeCode(code)))} loading={busy} onClick={submit}>{mode === 'existing' || created ? 'إرسال الدعوة' : 'ابدأ وادعُ أصحابك'}</Button></>}>
     {mode === 'create' ? <>
       <p className="lamma-muted">اختر اللعبة. نجهّز الغرفة ونرسل دعوتها هنا، وكل واحد يدخل من جواله. مكالمتكم تبقى معكم.</p>
-      <div className="lamma-game-options" role="group" aria-label="اختيار لعبة للّمة">{[['fabraka', 'فبركة', 'من شخصين إلى ٨', 'حقيقة بين إجابات مضحكة — ٣ جولات'], ['meenfina', 'مين فينا', 'من ٣ إلى ١٢', 'تصويت سري وأسئلة تعرفكم على بعض']].map(([id, name, count, description]) => <button type="button" key={id} aria-pressed={game === id} disabled={busy || !!created} onClick={() => setGame(id)}><LammaIcon name="game" size={27} /><strong>{name}</strong><span>{count}</span><small>{description}</small></button>)}</div>
+      <div className="lamma-game-options" role="group" aria-label="اختيار لعبة للّمة">{[['ersomha', 'ارسمها', 'من شخصين إلى ٨', 'رسم حي وتخمين متزامن — تعاون لشخصين'], ['fabraka', 'فبركة', 'من شخصين إلى ٨', 'حقيقة بين إجابات مضحكة — ٣ جولات'], ['meenfina', 'مين فينا', 'من ٣ إلى ١٢', 'تصويت سري وأسئلة تعرفكم على بعض']].map(([id, name, count, description]) => <button type="button" key={id} aria-pressed={game === id} disabled={busy || !!created} onClick={() => setGame(id)}><LammaIcon name="game" size={27} /><strong>{name}</strong><span>{count}</span><small>{description}</small></button>)}</div>
       {created && <p role="status" className="lamma-muted">الغرفة <bdi>{created.code}</bdi> جاهزة. أعد إرسال الدعوة؛ لن ننشئ غرفة ثانية.</p>}
       {!created && <button type="button" className="lamma-text-button" disabled={busy} onClick={() => { setMode('existing'); setError(''); }}>عندي رمز غرفة</button>}
     </> : <>
@@ -183,6 +183,7 @@ export function SocialHost() {
   const [host] = useState(() => typeof document === 'undefined' ? null : document.createElement('div'));
   const [callInlineHost, setCallInlineHost] = useState(null);
   const [pageHost, setPageHost] = useState(null);
+  const [gameLauncherHost, setGameLauncherHost] = useState(null);
   const listScroll = useRef(null);
   const panel = useRef(null); const trigger = useRef(null); const noticeTimer = useRef(null);
   const friends = social.friends || EMPTY; const groups = lamma.groups || EMPTY; const invites = lamma.groupInvites || EMPTY;
@@ -221,6 +222,13 @@ export function SocialHost() {
   useEffect(() => { if (!host) return undefined; host.className = 'lamma-host'; document.body.appendChild(host); return () => host.remove(); }, [host]);
   useVisualViewport(host, { heightProperty: '--lamma-height', topProperty: '--lamma-top' });
   useVisualViewport(pageHost, { heightProperty: '--lamma-page-height', topProperty: '--lamma-page-top' });
+  useLayoutEffect(() => {
+    const locate = () => setGameLauncherHost(document.querySelector('[data-social-game-launcher]'));
+    locate();
+    const observer = new MutationObserver(locate);
+    observer.observe(document.getElementById('root') || document.body, { childList: true, subtree: true });
+    return () => observer.disconnect();
+  }, [route.path]);
   useLayoutEffect(() => {
     if (ui.presentation !== 'page') { setPageHost(null); return undefined; }
     // ScreenHost commits before this persistent host. Observe replacement too:
@@ -322,8 +330,9 @@ export function SocialHost() {
         </div>}
       </>}
     </section>;
+  const launcher = !ui.open && <button ref={trigger} type="button" className={'lamma-launcher' + (unread ? ' has-unread' : '')} aria-label={unread ? `الأصدقاء، ${unread} تنبيه` : 'افتح الأصدقاء واللّمة'} aria-expanded={false} onClick={() => ui.show()}><span className="lamma-launcher-faces">{account.signedIn && friends.some(item => item.online) ? friends.filter(item => item.online).slice(0, 2).map(item => <ProfileAvatar key={item.id} user={item} size={30} />) : <LammaIcon name="people" />}</span><strong>اللّمة</strong>{unread > 0 && <b className="lamma-unread">{unread > 99 ? '99+' : unread}</b>}</button>;
   const tree = <><style>{socialCss}</style><style>{lammaCss}</style>
-    {!ui.open && <button ref={trigger} type="button" className={'lamma-launcher' + (unread ? ' has-unread' : '')} aria-label={unread ? `الأصدقاء، ${unread} تنبيه` : 'افتح الأصدقاء واللّمة'} aria-expanded={false} onClick={() => ui.show()}><span className="lamma-launcher-faces">{account.signedIn && friends.some(item => item.online) ? friends.filter(item => item.online).slice(0, 2).map(item => <ProfileAvatar key={item.id} user={item} size={30} />) : <LammaIcon name="people" />}</span><strong>اللّمة</strong>{unread > 0 && <b className="lamma-unread">{unread > 99 ? '99+' : unread}</b>}</button>}
+    {gameLauncherHost ? createPortal(launcher, gameLauncherHost) : launcher}
     {callOwned && <CallControls call={lamma.activeCall} media={callMedia} currentUserId={account.user.id} privateTurn={interruption.privateTurn} panelOpen={ui.open} inlineHost={callInlineHost} onMute={value => lamma.setCallMuted(value)} onEnd={() => lamma.endCall()} onOpen={() => openCall(lamma.activeCall)} onOutput={id => lamma.setAudioOutput(id)} onResume={() => lamma.resumeCallAudio()} />}
     {!ui.open && notification && lamma.notifications?.enabled !== false && !notificationMuted && <div className="lamma-notification" role="status"><button type="button" onClick={() => { dismissNotification(); if (notification.friend) ui.openChat(notification.friend.id); else ui.show({ type: 'list', tab: 'requests' }); }}><span><LammaIcon name={notification.type === 'request' ? 'people' : 'chat'} /></span><div><strong>{notification.type === 'request' ? 'وصلك طلب صداقة' : privateSurface ? 'رسالة جديدة في ميدان' : `رسالة من ${nameOf(notification.friend)}`}</strong><small>{lamma.notifications?.previews && !privateSurface ? notification.friend?.lastMessage?.text || 'افتح اللّمة لتشوف الجديد' : 'اضغط لفتح اللّمة'}</small></div></button><LammaButton label="إخفاء التنبيه" icon="close" onClick={dismissNotification} /></div>}
     {!ui.open && !notification && lamma.notification && lamma.notifications?.enabled !== false && <div className="lamma-notification" role="status"><button type="button" onClick={() => { const id = lamma.notification.groupId || lamma.notification.conversationId; lamma.clearNotification(); ui.openGroup(id); }}><span><LammaIcon name="people" /></span><div><strong>{privateSurface ? 'رسالة جديدة في ميدان' : lamma.notification.title}</strong><small>اضغط لفتح اللّمة</small></div></button><LammaButton label="إخفاء التنبيه" icon="close" onClick={lamma.clearNotification} /></div>}

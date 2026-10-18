@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import QRCode from 'qrcode';
 import config from '../../online.config.json';
 import { Screen, TopBar, Button, Card, ConfirmModal, Podium, Scoreboard } from '../shared/ui/components.jsx';
@@ -8,11 +8,15 @@ import { navigate, setExitGuard } from '../platform/router.js';
 import { usePlatform } from '../platform/context.js';
 import { useAccount } from '../shared/account/context.js';
 import { socialInterruption } from '../social/interruption.js';
+import { useLamma } from '../social/LammaProvider.jsx';
 import { socialJoinFallbackKey } from '../social/game-launch.js';
-import { AVATARS, ROUND_OPTIONS, ONLINE_GAMES, minimumOnlinePlayers, EXPIRY_WARNING, normalizeCode, validCode, resolveServerUrl, errorText, arabicNumber } from './shared.js';
+import { AVATARS, ROUND_OPTIONS, ONLINE_GAMES, ROOM_CAPABILITIES, minimumOnlinePlayers, EXPIRY_WARNING, normalizeCode, validCode, resolveServerUrl, errorText, arabicNumber } from './shared.js';
 import { RoomClient, newCredentials, post, readSaved, save, clearSession, deviceId } from './client.js';
 import { normalizeContentOptions } from '../games/fabraka/content.js';
 import { FabrakaSettings, FabrakaRules, FabrakaMatch, FABRAKA_MODES, fabrakaTopics } from './Fabraka.jsx';
+import { ErsomhaSettings, ErsomhaRules, ErsomhaLobbySettings, ErsomhaMatch } from './Ersomha.jsx';
+import { ErsomhaIcon } from '../games/ersomha/icon.jsx';
+import { normalizeErsomhaOptions, enoughErsomhaCategories } from '../games/ersomha/options.js';
 
 const SERVER = resolveServerUrl(typeof __MAYDAN_ROOMS_URL__ !== 'undefined' && __MAYDAN_ROOMS_URL__ || config.serverUrl, typeof location === 'undefined' ? '' : location.origin);
 const arabic = arabicNumber;
@@ -25,6 +29,7 @@ function Entry({ initialCode = '', initialGame = 'meenfina', onJoined }) {
   const [mode, setMode] = useState(initialCode ? 'join' : 'create');
   const [game, setGame] = useState(ONLINE_GAMES[initialGame] ? initialGame : 'meenfina');
   const [fabrakaSettings, setFabrakaSettings] = useState(() => normalizeContentOptions(readSaved(SERVER, 'fabrakaSettings')));
+  const [ersomhaSettings, setErsomhaSettings] = useState(() => normalizeErsomhaOptions(readSaved(SERVER, 'ersomhaSettings')));
   const [name, setName] = useState(() => fallback?.name || readSaved(SERVER, 'profile')?.name || Array.from(account.user?.name?.normalize('NFKC').trim().replace(/\s+/g, ' ') || '').slice(0, 20).join(''));
   const [avatar, setAvatar] = useState(() => fallback?.avatar ?? readSaved(SERVER, 'profile')?.avatar ?? 0);
   const [code, setCode] = useState(initialCode);
@@ -34,11 +39,12 @@ function Entry({ initialCode = '', initialGame = 'meenfina', onJoined }) {
   const credentialsRef = useRef(fallback?.session || null);
   const lastRoom = readSaved(SERVER, 'lastRoom');
   // The server rejects these settings with QUESTIONS; keep the button honest instead.
-  const topicsReady = !(mode === 'create' && game === 'fabraka') || fabrakaTopics(fabrakaSettings).enough;
+  const topicsReady = mode !== 'create' || (game === 'fabraka' ? fabrakaTopics(fabrakaSettings).enough : game === 'ersomha' ? enoughErsomhaCategories(ersomhaSettings) : true);
   async function submit(event) {
     event.preventDefault(); if (busy) return;
     setError('');
     if (!name.trim()) { setError('NAME'); return; }
+    if (mode === 'create' && game === 'ersomha' && !account.user?.id) { setError('AUTH_REQUIRED'); return; }
     const normalized = normalizeCode(code);
     if (mode === 'join' && !validCode(normalized)) { setError('INVALID'); return; }
     // Waiting for friends never consumes the trial. It is marked only after
@@ -51,9 +57,9 @@ function Entry({ initialCode = '', initialGame = 'meenfina', onJoined }) {
       session ||= credentialsRef.current || readSaved(SERVER, pendingKey) || newCredentials();
       credentialsRef.current = session;
       save(SERVER, pendingKey, session); // Persist before HTTP so a retry can reclaim the same seat.
-      const result = await post(SERVER, mode === 'create' ? '/api/rooms' : `/api/rooms/${normalized}/join`, { ...session, name: name.trim(), avatar, rounds,
+      const result = await post(SERVER, mode === 'create' ? '/api/rooms' : `/api/rooms/${normalized}/join`, { ...session, name: name.trim(), avatar, rounds, capabilities: ROOM_CAPABILITIES,
         // معرّف الجهاز يحتسب الغرفة المجانية لغير المسجّل على الخادم؛ الدخول برمز لا يحتاجه.
-        ...(mode === 'create' ? { game, deviceId: deviceId(), ...(game === 'fabraka' ? { settings: fabrakaSettings } : {}) } : {}) }, { headers: account.authHeaders() });
+        ...(mode === 'create' ? { game, deviceId: deviceId(), ...(game === 'fabraka' ? { settings: fabrakaSettings } : game === 'ersomha' ? { settings: ersomhaSettings } : {}) } : {}) }, { headers: account.authHeaders() });
       const stored = save(SERVER, result.code, session);
       if (account.user?.id) {
         save(SERVER, `roomOwner:${result.code}`, account.user.id);
@@ -72,11 +78,11 @@ function Entry({ initialCode = '', initialGame = 'meenfina', onJoined }) {
   return <>
     <Card className="online-intro">
       {/* الحامل مفتاحه اللعبة: يعيد الهبوط عند التبديل ثم يطفو؛ النص مفتاحه الوضع فيدخل كصف */}
-      <ClayStage key={game} className="clay-idle" aria-hidden="true"><GameArtwork game={game} /></ClayStage>
+      <ClayStage key={game} className="clay-idle" aria-hidden="true">{game === 'ersomha' ? <ErsomhaIcon /> : <GameArtwork game={game} />}</ClayStage>
       <div key={mode} className="online-intro-copy">
         <span className="online-label">{mode === 'create' ? ONLINE_GAMES[game].name : 'غرف ميدان'} · تجربة جماعية</span>
         <h1>اللّمّة وحدة، وكل واحد بجواله</h1>
-        <p>{mode === 'join' ? 'رمز واحد يجمعكم في نفس اللعبة' : game === 'fabraka' ? '٢–٨ لاعبين · كتابة متزامنة · تصويت سري' : '٣–١٢ لاعبًا · تصويت سري · نفس السؤال للجميع'}</p>
+        <p>{mode === 'join' ? 'رمز واحد يجمعكم في نفس اللعبة' : game === 'ersomha' ? '٢–٨ لاعبين · رسم حي · تخمين معًا' : game === 'fabraka' ? '٢–٨ لاعبين · كتابة متزامنة · تصويت سري' : '٣–١٢ لاعبًا · تصويت سري · نفس السؤال للجميع'}</p>
       </div>
     </Card>
     {!SERVER && <p className="online-notice" role="status">الغرف غير متاحة بعد. تقدر تلعب ألعاب ميدان على جهاز واحد من الرئيسية.</p>}
@@ -87,13 +93,15 @@ function Entry({ initialCode = '', initialGame = 'meenfina', onJoined }) {
         <Button variant={mode === 'join' ? 'primary' : 'ghost'} aria-pressed={mode === 'join'} onClick={() => { setMode('join'); setError(''); credentialsRef.current = null; }}>دخول برمز</Button>
       </div>
       <form className="stack" onSubmit={submit}>
-        {mode === 'create' && <div className="online-game-picker" role="group" aria-label="لعبة الغرفة">{Object.entries(ONLINE_GAMES).map(([id, info]) => <button key={id} type="button" disabled={busy} aria-pressed={game === id} className={game === id ? 'selected' : ''} onClick={() => { setGame(id); setError(''); credentialsRef.current = null; }}><ClayStage className="clay-static" aria-hidden="true"><GameArtwork game={id} /></ClayStage><b>{info.name}</b><small>{arabic(info.min)}–{arabic(info.max)} لاعبين</small></button>)}</div>}
+        {mode === 'create' && <div className="online-game-picker" role="group" aria-label="لعبة الغرفة">{Object.entries(ONLINE_GAMES).map(([id, info]) => <button key={id} type="button" disabled={busy} aria-pressed={game === id} className={game === id ? 'selected' : ''} onClick={() => { setGame(id); setError(''); credentialsRef.current = null; }}><ClayStage className="clay-static" aria-hidden="true">{id === 'ersomha' ? <ErsomhaIcon /> : <GameArtwork game={id} />}</ClayStage><b>{info.name}</b><small>{arabic(info.min)}–{arabic(info.max)} لاعبين</small></button>)}</div>}
         <label className="online-field">اسمك في الغرفة<input autoComplete="nickname" maxLength={20} value={name} onChange={(e) => setName(e.target.value)} placeholder="اكتب اسمك" required /></label>
         <div><span className="online-field-label">اختر شخصيتك</span><AvatarPicker value={AVATARS[avatar]} onChange={(emoji) => setAvatar(AVATARS.indexOf(emoji))} /></div>
         {mode === 'join' ? <label className="online-field">رمز الغرفة<input className="online-code-input" dir="ltr" inputMode="numeric" autoComplete="off" maxLength={8} value={code} onChange={(e) => { setCode(normalizeCode(e.target.value)); credentialsRef.current = null; }} placeholder="123456" required /></label>
           : game === 'fabraka' ? <FabrakaSettings value={fabrakaSettings} disabled={busy} onChange={(next) => { setFabrakaSettings(next); save(SERVER, 'fabrakaSettings', next); }} />
+          : game === 'ersomha' ? <ErsomhaSettings value={ersomhaSettings} disabled={busy} onChange={(next) => { setErsomhaSettings(next); save(SERVER, 'ersomhaSettings', next); }} />
           : <label className="online-field">عدد الجولات<select value={rounds} onChange={(e) => setRounds(Number(e.target.value))}>{ROUND_OPTIONS.map((n) => <option key={n} value={n}>{arabic(n)} جولات</option>)}</select></label>}
         {mode === 'create' && game === 'fabraka' && <FabrakaRules />}
+        {mode === 'create' && game === 'ersomha' && <><ErsomhaRules />{!account.user?.id && <p className="online-notice" role="status">ارسمها تحتاج حسابًا ليُحفظ تاريخ الأفكار عبر أجهزتك. <Button size="sm" onClick={() => navigate('/settings')}>تسجيل الدخول</Button></p>}</>}
         <ErrorNotice code={error} />
         <Button type="submit" variant="primary" size="lg" full disabled={!SERVER || busy || !topicsReady} loading={busy}>{mode === 'create' ? 'أنشئ الغرفة' : 'ادخل الغرفة'}</Button>
       </form>
@@ -143,8 +151,10 @@ export function Lobby({ state, me, isHost, disabled, act }) {
       {isHost ? <Button full variant="primary" size="lg" className={canStart ? 'is-armed' : ''} disabled={disabled || !canStart} onClick={() => act('start')}>ابدأ اللعب</Button> : <p className="online-footnote">المضيف يبدأ الجولة عندما يجهز الجميع.</p>}
       {!canStart && isHost && <p className="online-footnote">{minimum === 2 ? 'نحتاج لاعبين على الأقل، متصلين وجاهزين جميعًا.' : 'نحتاج ٣ لاعبين على الأقل، متصلين وجاهزين جميعًا.'} تقدر تزيل مقعدًا منقطعًا من الانتظار.</p>}
       {state.game === 'fabraka' && minimum === 2 && players.length === 2 && <p className="online-footnote" role="status">تحدّي لشخصين: فبركة صاحبك تمتزج بخيارات اللعبة، والحقيقة تبقى سرّية حتى الكشف.</p>}
+      {state.game === 'ersomha' && <p className="online-footnote" role="status">{players.length === 2 ? 'ثنائي متعاون: تتبادلان الرسم ضد الوقت، ونتيجتكما مشتركة.' : 'من ٣ لاعبين: منافسة فردية وأدوار رسم متوازنة للجميع.'} يثبت نمط المباراة عند البداية.</p>}
     </Card>
     {state.game === 'fabraka' ? <Card className="stack"><h2>فبركة · {FABRAKA_MODES[state.settings.mode]}</h2><p>{arabic(state.rounds)} جولات · {state.settings.writeSeconds ? `${arabic(state.settings.writeSeconds)} ثانية للكتابة` : 'كتابة براحتنا'} · {state.settings.discussionSeconds ? `${arabic(state.settings.discussionSeconds)} ثانية للنقاش` : 'بدون نقاش'} · ٣٠ ثانية للتصويت.</p><FabrakaRules /></Card>
+      : state.game === 'ersomha' ? <ErsomhaLobbySettings state={state} isHost={isHost} disabled={disabled} act={act} />
       : <p className="online-footnote">{arabic(state.rounds)} جولات · ٣٠ ثانية لكل تصويت · الأعلى أصواتًا يكسب نقطة، والتعادل يحتسب للجميع.</p>}
     {kickTarget && <ConfirmModal title={`تزيل ${kickTarget.name}؟`} message="يخرج من الغرفة ولا يستطيع العودة إليها بهذا الرمز." confirmLabel="إزالة" cancelLabel="إبقاؤه" onConfirm={() => { const target = kickTarget; setKickTarget(null); act('kick', { targetId: target.id }); }} onCancel={() => setKickTarget(null)} />}
   </>;
@@ -211,6 +221,7 @@ function Match({ state, disabled, isHost, act, clockOffset }) {
 function ConnectedRoom({ code, session, stored, onLeft }) {
   const { toast, sound, haptics, confetti } = usePlatform();
   const account = useAccount();
+  const lamma = useLamma();
   const [state, setState] = useState(null);
   const [status, setStatus] = useState('connecting');
   const [error, setError] = useState(stored ? '' : 'STORAGE');
@@ -219,6 +230,14 @@ function ConnectedRoom({ code, session, stored, onLeft }) {
   const clientRef = useRef(null);
   const busyRef = useRef(false);
   const trialMarked = useRef(false);
+  const reportRef = useRef(null);
+  const accountRef = useRef(account); accountRef.current = account;
+  const ownerRef = useRef(readSaved(SERVER, `roomOwner:${code}`) || account.user?.id || null);
+  const ownershipMismatch = state?.game === 'ersomha' && (!ownerRef.current || ownerRef.current !== account.user?.id);
+  useLayoutEffect(() => {
+    if (!ownershipMismatch || account.ready === false) return;
+    clientRef.current?.stop(); clearSession(SERVER, code); setState(null); setExitGuard(null); onLeft(); navigate('/online/ersomha', { replace: true });
+  }, [ownershipMismatch, account.ready, code, onLeft]);
   useEffect(() => { trialMarked.current = false; }, [code, session.id]);
   useEffect(() => {
     if (!state || trialMarked.current || !state.trialStarted || state.trialOwnerId !== session.id) return;
@@ -226,7 +245,7 @@ function ConnectedRoom({ code, session, stored, onLeft }) {
     account.markTrial(state.game || 'meenfina');
   }, [state, session.id, account]);
   useEffect(() => {
-    const client = new RoomClient({ server: SERVER, code, session, onState: setState, onStatus: setStatus, onError: setError });
+    const client = new RoomClient({ server: SERVER, code, session, getAccountAuthorization: () => accountRef.current.authHeaders()?.Authorization, onState: setState, onStatus: setStatus, onError: setError });
     clientRef.current = client; client.start();
     const wake = () => { if (!document.hidden) client.wake(); };
     document.addEventListener('visibilitychange', wake); window.addEventListener('online', wake);
@@ -235,6 +254,10 @@ function ConnectedRoom({ code, session, stored, onLeft }) {
   }, [code, session]);
   useEffect(() => { if (status === 'connected') setError((old) => old === 'STORAGE' ? old : ''); }, [status]);
   const phase = state?.phase;
+  useLayoutEffect(() => {
+    if (ownershipMismatch || state?.game !== 'ersomha' || state.drawerId !== session.id || !['select', 'draw'].includes(phase)) return;
+    return socialInterruption.private(`ersomha:${code}:${state.matchId}:${state.round}`);
+  }, [code, state?.game, state?.drawerId, state?.matchId, state?.round, phase, session.id, ownershipMismatch]);
   useEffect(() => {
     socialInterruption.setContext({ local: false, online: true, turnDeadline: state?.deadlineAt ? state.deadlineAt - (clientRef.current?.clockOffset || 0) : null });
     return () => socialInterruption.setContext({ online: false, turnDeadline: null });
@@ -244,7 +267,7 @@ function ConnectedRoom({ code, session, stored, onLeft }) {
     else if (phase === 'over') { sound.play('fanfare'); haptics.vibrate('win'); confetti?.fire(); }   // احتفال النهاية (مرئي/صوتي فقط)
   }, [phase]);
   async function act(type, fields) {
-    if (busyRef.current) return;
+    if (busyRef.current || ownershipMismatch) return;
     busyRef.current = true; setBusy(true); setError('');
     try { await clientRef.current.command(type, { ...fields, matchId: state.matchId, round: state.round }); return true; }
     catch (e) { if (e.code === 'PLUS_REQUIRED') account.openPaywall({ reason: 'room', game: state.game || 'meenfina' }); else setError(e.code); return false; }
@@ -260,6 +283,12 @@ function ConnectedRoom({ code, session, stored, onLeft }) {
     }
     clientRef.current.stop(); setExitGuard(null); onLeft(); navigate(target, { replace: true });
   }
+  async function reportDrawing(reason) {
+    if (!account.user?.id || !account.requestAuthenticated) throw Object.assign(new Error('AUTH_REQUIRED'), { code: 'AUTH_REQUIRED' });
+    const key = `${account.user.id}:${code}:${state.matchId}:${state.round}`;
+    if (reportRef.current?.key !== key) reportRef.current = { key, clientId: crypto.randomUUID() };
+    return account.requestAuthenticated('/api/games/ersomha/reports', { method: 'POST', body: { roomCode: code, matchId: state.matchId, round: state.round, reason, clientId: reportRef.current.clientId } });
+  }
   const me = state?.members.find((m) => m.id === session.id);
   const isHost = state?.hostId === session.id;
   const disabled = busy || status !== 'connected';
@@ -270,8 +299,9 @@ function ConnectedRoom({ code, session, stored, onLeft }) {
   const expiring = Boolean(state) && msLeft < EXPIRY_WARNING && !['over', 'closed'].includes(state.phase);
   // مقاعد انقطعت أثناء المباراة: الجولة لا تنتظرها بعد مهلتها، ويستطيع المضيف إزالتها.
   const dropped = state && isHost && state.phase !== 'lobby' ? state.members.filter((m) => state.participants.includes(m.id) && !m.left && !m.connected) : [];
+  if (ownershipMismatch) return <Card role="status">نحمي أفكار حسابك… سجّل الدخول إلى حساب اللاعب للعودة.</Card>;
   return <>
-    <TopBar title={state ? ONLINE_GAMES[state.game || 'meenfina'].name : 'غرف ميدان'} eyebrow={`غرفة ${code}`} end={<Button size="sm" onClick={() => setExitTarget(state?.game === 'fabraka' ? '/online/fabraka' : '/online')}>خروج</Button>} />
+    <TopBar title={state ? ONLINE_GAMES[state.game || 'meenfina']?.name || 'غرف ميدان' : 'غرف ميدان'} eyebrow={`غرفة ${code}`} end={<span className="online-room-actions">{state?.game === 'ersomha' && <span className="online-social-slot" data-social-game-launcher />}<Button size="sm" onClick={() => setExitTarget(state?.game && state.game !== 'meenfina' ? `/online/${state.game}` : '/online')}>خروج</Button></span>} />
     <p className={`online-connection ${status === 'connected' ? 'connected' : ''}`} role="status">{status === 'connected' ? 'متصل · كل واحد بجواله' : status === 'ended' ? 'انتهى الاتصال بالغرفة' : status === 'replaced' ? 'الجلسة مفتوحة في تبويب آخر' : 'جاري الاتصال بالغرفة…'}</p>
     <ErrorNotice code={error} />
     {state?.hostMissingSince && <p className="online-notice is-host-missing">انقطع اتصال المضيف. تنتقل الإدارة للاعب متصل بعد ٢٠ ثانية إذا لم يعد.</p>}
@@ -281,6 +311,7 @@ function ConnectedRoom({ code, session, stored, onLeft }) {
     {status === 'ended' ? <Button full onClick={() => { clearSession(SERVER, code); setExitGuard(null); onLeft(); navigate('/online', { replace: true }); }}>العودة إلى الغرف</Button>
       : state && (state.phase === 'lobby' ? <Lobby state={state} me={me} isHost={isHost} disabled={disabled} act={act} /> : state.game === 'fabraka'
         ? <FabrakaMatch state={state} me={me} disabled={disabled} isHost={isHost} act={act} clockOffset={clientRef.current?.clockOffset || 0} />
+        : state.game === 'ersomha' ? <ErsomhaMatch state={state} me={me} disabled={disabled} isHost={isHost} act={act} client={clientRef.current} status={status} clockOffset={clientRef.current?.clockOffset || 0} drawerReady={!lamma?.activeCall || (lamma.activeCall._ownerId === account.user?.id && lamma.media?.userId === account.user?.id && lamma.media?.muted === true)} onReport={['draw', 'result'].includes(state.phase) ? reportDrawing : undefined} />
         : <Match state={state} disabled={disabled} isHost={isHost} act={act} clockOffset={clientRef.current?.clockOffset || 0} />)}
     {exitTarget && <ConfirmModal title="تطلع من الغرفة؟" message="مغادرتك تنهي مقعدك الحالي. إذا كنت المضيف تنتقل الإدارة للاعب متصل." confirmLabel="الخروج" cancelLabel="خلّيني ألعب" onConfirm={leave} onCancel={() => setExitTarget(null)} />}
   </>;

@@ -28,7 +28,7 @@ export function gamesLabel(n) {
 // المشترك لا يرى شارة، والبطاقات تبقى مفعّلة في كل الحالات (القفل يظهر داخل اللعبة لا هنا).
 export function plusBadge(account, game) {
   if (account.premium) return '';
-  if (game.setup === 'self') return '١٠ فئات مجانية';
+  if (game.id === 'badeeha') return '١٠ فئات مجانية';
   const access = account.gameAccess(game.id);
   if (access === 'premium') return '';
   return access === 'locked' ? 'بلس' : 'مباراة مجانية';
@@ -137,7 +137,7 @@ export function Home() {
       <section className="home-tools" aria-label="الغرف واللاعبون">
       <button type="button" className="card online-home-card" onClick={() => navigate('/online')} onPointerDown={ripple}>
         <ClayStage className="clay-static"><GameArtwork game="meenfina" /></ClayStage>
-        <span><strong>اللّمّة من كل جوال</strong><small>فبركة من شخصين · مين فينا من ثلاثة · ادخلوا برمز أو بدعوة</small></span>
+        <span><strong>اللّمّة من كل جوال</strong><small>ارسمها وفبركة من شخصين · مين فينا من ثلاثة · برمز أو بدعوة</small></span>
         <IconBack className="home-tool-arrow" />
       </button>
       <button type="button" className="card roster-card" onClick={() => navigate('/players')} aria-label="دفتر اللاعبين" onPointerDown={ripple}>

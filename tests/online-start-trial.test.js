@@ -8,13 +8,32 @@ import { Miniflare, convertV4MiniflareOptions } from 'miniflare';
 import { WebSocket } from 'ws';
 import { RoomClient, newCredentials } from '../src/online/client.js';
 import { startLocalServer } from '../server/local.mjs';
-import { migrationSql } from '../server/local-d1.mjs';
-import { deleteUser } from '../server/accounts/db.mjs';
+import { migrationSql, createLocalD1 } from '../server/local-d1.mjs';
+import { deleteUser, upsertSubscription } from '../server/accounts/db.mjs';
+import { consumeRoomTrial } from '../server/accounts/router.mjs';
 import { cleanup } from '../server/accounts/cleanup.mjs';
 import { errorText } from '../src/online/shared.js';
 import questions from '../src/data/games/fabraka/questions.json' with { type: 'json' };
 
 const ORIGIN = 'http://localhost:3000';
+test('account deletion between eligibility and the trial transaction cannot resurrect free claims or premium marks', async () => {
+  for (const premium of [false, true]) {
+    const DB = createLocalD1(), env = { DB };
+    try {
+      await DB.prepare('INSERT INTO users(id,name,created_at,updated_at) VALUES(?,?,?,?)').bind('trial-owner', 'owner', 1000, 1000).run();
+      if (premium) await upsertSubscription(env, { source: 'promo', external_id: 'owner-promo', user_id: 'trial-owner', status: 'active', until: 100_000 });
+      const batch = DB.batch.bind(DB);
+      DB.batch = async queries => {
+        DB.batch = batch;
+        await deleteUser(env, 'trial-owner');
+        return batch(queries);
+      };
+      await assert.rejects(consumeRoomTrial(env, { userId: 'trial-owner', device: 'device:trial-device', game: 'ersomha', premium }, 'room-claim', 1100), error => error.code === 'AUTH');
+      assert.equal((await DB.prepare('SELECT COUNT(*) AS n FROM trials').first()).n, 0, `no ${premium ? 'premium' : 'free'} write after deletion`);
+      assert.equal((await DB.prepare('SELECT COUNT(*) AS n FROM online_room_trial_claims').first()).n, 0);
+    } finally { DB.close(); }
+  }
+});
 class BrowserSocket extends WebSocket { constructor(url) { super(url, { origin: ORIGIN }); } }
 async function until(fn, label = 'condition') {
   const limit = Date.now() + 6000;

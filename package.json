@@ -3,7 +3,7 @@
   "version": "1.4.1",
   "private": true,
   "type": "module",
-  "description": "ميدان: ألعاب جمعتنا — ألعاب على جهاز واحد وغرف مين فينا وفبركة من عدة هواتف",
+  "description": "ميدان: ألعاب جمعتنا — ألعاب جماعية وغرف رسم وتخمين وصوت من عدة هواتف",
   "scripts": {
     "dev": "node scripts/dev.mjs",
     "build": "node scripts/build.mjs",
@@ -26,6 +26,9 @@
     "e2e:offline": "node scripts/e2e/media-offline.cjs",
     "e2e:paywall": "node scripts/e2e/paywall.mjs",
     "rooms:dev": "node scripts/rooms-dev.mjs",
+    "ersomha:check": "node scripts/ersomha-content.mjs",
+    "ersomha:latency": "node scripts/ersomha-latency.mjs",
+    "e2e:ersomha": "node tests/e2e/ersomha-online.mjs",
     "rooms:check": "wrangler deploy --config wrangler.rooms.jsonc --dry-run --outdir .wrangler/check",
     "rooms:deploy": "wrangler deploy --config wrangler.rooms.jsonc",
     "test:rooms": "node --test --test-concurrency=2 tests/online-*.test.js",

@@ -70,3 +70,7 @@ export function reviewPreviewPath(value) {
 export function reviewAudioPath(value) {
   return typeof value === 'string' && /^\/api\/moderation\/reports\/[a-zA-Z0-9_-]+\/audio$/.test(value) ? value : null;
 }
+
+export function reviewDrawingPath(value) {
+  return typeof value === 'string' && /^\/api\/moderation\/reports\/[a-zA-Z0-9_-]+\/drawing$/.test(value) ? value : null;
+}

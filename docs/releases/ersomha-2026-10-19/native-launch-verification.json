@@ -1,0 +1,136 @@
+{
+  "passed": true,
+  "version": "1.8",
+  "build": "19",
+  "bundleIdentifier": "Maydan",
+  "sourceCommit": "f23033d5364b6cdda1df851ed2aa9ee9bdbb69ba",
+  "workflowRun": 39173097745,
+  "sourceAttribution": "Successful CI run metadata matches the expected source; the package audit separately matches its compiled HTML digest to the exported IPA.",
+  "artifact": {
+    "name": "Maydan-launch-1.8-19.zip",
+    "bytes": 5389256,
+    "sha256": "f8aa6bc9dfb665307e2165053fa5e8887d52da92ac2a86e64c345f5837bb3589"
+  },
+  "evidenceEntrySHA256": {
+    "launch-smoke/summary.json": "4cf08fe9df44b0af68fac8f31fbf2dcb615c5019d07119c837bb524c56de59c3",
+    "release-smoke-summary.json": "875db6d35844dfb0d1da32ba4fd1a74e2a20158d514b9547ac39e636bc985bef",
+    "update-gate-smoke/summary.json": "ee8bc37a8ad3ab5da49a3365e49b5c5a048c19027f7556a2c8a0ed5cd2fc86ad",
+    "update-gate-smoke/required-view.json": "3040394f08eff7744f7c53adc671e77b41c708248c84c4bb535ee2e315cdc422",
+    "update-gate-smoke/offline-recovery-view.json": "879f002eb9f78d49e1c487505c8581d75e72e46ad05fd10fd0a99760f07bb8f4"
+  },
+  "simulatorScreenshotReview": {
+    "reviewed": true,
+    "sha256": {
+      "launch-smoke/cold.png": "8f301cc6ba5e5b67e077976db77dc2127a8ba5c02513c02411b7ffed26d7793a",
+      "launch-smoke/relaunch.png": "8f301cc6ba5e5b67e077976db77dc2127a8ba5c02513c02411b7ffed26d7793a",
+      "update-gate-smoke/required-update-verified.png": "deab1c493cbf8ad835984a1a6dbf2e36a49e89bd0cfb34ce369b9f18f6738eac",
+      "update-gate-smoke/offline-recovery.png": "8f301cc6ba5e5b67e077976db77dc2127a8ba5c02513c02411b7ffed26d7793a"
+    },
+    "observations": [
+      "Cold and relaunch screenshots both show the games home, the Ersomha tile and all four navigation sections.",
+      "The required-update screenshot shows the Arabic required-update heading, App Store action and Retry action, with the home absent behind the gate.",
+      "The offline-recovery screenshot returns to the games home."
+    ],
+    "scope": "Static simulator screenshot review only; no physical device screenshot or interaction is claimed."
+  },
+  "simulator": {
+    "model": "iPhone SE (3rd generation)",
+    "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-26-2",
+    "executableSha256": "5e4540c4065fee30c19f89c183e84939b1bf194783d8d00433ddadefd1fa315a",
+    "sameInstalledAppAcrossScenarios": true,
+    "reusedVerifiedSimulatorForUpdateGate": true
+  },
+  "normalStartup": {
+    "passed": true,
+    "launches": [
+      {
+        "name": "cold",
+        "requiredSeconds": 45,
+        "observedSeconds": 45.16,
+        "passed": true,
+        "terminatedForRelaunch": true
+      },
+      {
+        "name": "relaunch",
+        "requiredSeconds": 15,
+        "observedSeconds": 15.16,
+        "passed": true,
+        "terminatedForRelaunch": true
+      }
+    ],
+    "totalObservedSeconds": 60.32,
+    "preparationStepsPassed": 7,
+    "crashReportCount": 0,
+    "diagnosticWarningCount": 0
+  },
+  "updateGate": {
+    "passed": true,
+    "launches": [
+      {
+        "name": "required-update",
+        "requiredSeconds": 5,
+        "observedSeconds": 5.08,
+        "passed": true
+      }
+    ],
+    "requiredHeadingAndActions": true,
+    "initialGameNotLoadedBehindGate": true,
+    "realRetryAction": true,
+    "offlineRecovery": true,
+    "evidence": "Mounted native view properties plus screenshots; no physical touch claim.",
+    "requiredViewBlocksInitialGameLoad": true,
+    "offlineRecoveryPermitsInitialGameLoad": true,
+    "crashReportCount": 0,
+    "diagnosticWarningCount": 0
+  },
+  "totalObservedSecondsAllScenarios": 65.4,
+  "ciTests": {
+    "javascript": {
+      "total": 959,
+      "passed": 958,
+      "skipped": 1,
+      "failed": 0,
+      "skippedTest": "the shipped page only needs the sources the policy allows",
+      "skipReason": "The test is skipped when dist/index.html does not exist; the CI suite runs before compiled resources are prepared.",
+      "skipConditionSource": "tests/rooms-regression.test.js:276"
+    },
+    "nativePython": {
+      "total": 40,
+      "passed": 40,
+      "skipped": 0,
+      "failed": 0
+    },
+    "note": "The additional '40 native app-update decisions' message describes cases exercised within the native tests and is not counted as another 40 tests. Failure text emitted by fault-injection unit fixtures is not an actual failed release smoke run."
+  },
+  "localWindowsTests": {
+    "javascript": {
+      "total": 959,
+      "passed": 959,
+      "skipped": 0,
+      "failed": 0
+    },
+    "javascriptEvidence": {
+      "path": ".wrangler/ersomha-final-suite.log",
+      "sha256": "783d521ed853d6978925e9b8a5f8937048787b8008578c517e6a33662ecca6d7"
+    },
+    "nativePython": {
+      "total": 40,
+      "passed": 39,
+      "skipped": 1,
+      "failed": 0,
+      "skippedTest": "test_app_update_policy.AppUpdatePolicyTests.test_compiled_swift_policy_decisions",
+      "skipReason": "Swift compiler is unavailable on this Windows host; the macOS CI run executes these decisions."
+    },
+    "nativePythonEvidence": {
+      "path": "work/ersomha-build19-39173097745/audit/native-python-windows.log",
+      "sha256": "29994e85634133b3c161dff909905fb2e061f2cf3e6f2ab89d377a960681e45d"
+    }
+  },
+  "limits": [
+    "Process-survival observation durations are not startup latency measurements.",
+    "The simulator executable is distinct from the arm64 device executable inspected in package-audit.json.",
+    "Update-gate checks use mounted native view properties, an invoked real Retry action and simulator screenshots; they are not physical-touch or live update-policy-server acceptance.",
+    "No physical iPhone, microphone, background call, notification delivery, keyboard or full gameplay validation is established by this artifact.",
+    "Cryptographic signature verification is separately scoped in package-audit.json; the exported IPA was not cryptographically verified on this Windows host."
+  ]
+}

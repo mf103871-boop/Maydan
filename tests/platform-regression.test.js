@@ -66,6 +66,7 @@ test('parseHash يغطي كل مسار مدعوم', () => {
     ['#/online', 'online', {}],
     ['#/online/meenfina', 'online', { id: 'meenfina' }],
     ['#/online/fabraka', 'online', { id: 'fabraka' }],
+    ['#/online/ersomha', 'online', { id: 'ersomha' }],
     ['#/room/123456', 'room', { id: '123456' }],
     ['#/players', 'players', {}],
     ['#/store', 'store', {}],

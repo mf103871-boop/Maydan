@@ -6,6 +6,7 @@ import { moderationError } from './client.js';
 import { useModeration } from './useModeration.js';
 import { ReviewImage } from './ReviewImage.jsx';
 import { ReviewAudio } from './ReviewAudio.jsx';
+import { ReviewDrawing } from './ReviewDrawing.jsx';
 import css from './moderation.css';
 import { profileAssetUrl } from '../profiles/identity.js';
 import { resolveAccountServer } from '../shared/account/api.js';
@@ -43,6 +44,7 @@ export function ReportCard({ report, disabled = false, onDecision }) {
   return <Card className="stack moderation-report">
     <header className="moderation-card-head"><div><h2><bdi>{name}</bdi></h2><span className="muted"><bdi>{user.code || ''}</bdi> · {date(report.createdAt)}</span></div><span className={'moderation-status' + (report.resolvedAt ? ' is-closed' : '')}>{report.resolvedAt ? 'مغلق' : 'بانتظار المراجعة'}</span></header>
     <div className="moderation-evidence"><h3>سبب البلاغ</h3><p dir="auto">{report.reason}</p>{report.messageSeq && <><h3>نسخة الرسالة وقت البلاغ{report.scope === 'group' ? ' · محادثة اللّمة' : ''}</h3>{report.messageText ? <blockquote dir="auto">{report.messageText}</blockquote> : !report.audioUrl && <p>لا يتوفر نص.</p>}{report.audioUrl && <ReviewAudio path={report.audioUrl} />}</>}
+      {report.drawingUrl && <><h3>الرسمة المبلّغ عنها</h3><ReviewDrawing path={report.drawingUrl} /></>}
       {user.bio && <><h3>النبذة الحالية</h3><p dir="auto">{user.bio}</p></>}
     </div>
     {(user.avatarUrl || user.coverUrl) && <div className="moderation-public-images">{[['avatar', user.avatarUrl], ['cover', user.coverUrl]].map(([kind, value]) => { const url = profileAssetUrl(value, resolveAccountServer()); return url && <figure key={kind}><img src={url} alt={kindName(kind) + ' المنشورة'} loading="lazy" /><figcaption>{kindName(kind)} المنشورة</figcaption></figure>; })}</div>}

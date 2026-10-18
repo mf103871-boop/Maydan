@@ -8,6 +8,7 @@ import { friendIds,chargeUser } from '../social/db.mjs';
 import { notifyUsers,forgetSocialUser } from '../social/realtime.mjs';
 import { reportAudioResponse,collectDeletedAudio } from '../lamma/media.mjs';
 import { revokeInvalidCalls } from '../lamma/calls.mjs';
+import { drawingReportEvidence } from '../ersomha-reports.mjs';
 
 export async function routeModeration(request,env,url=new URL(request.url),charge) {
   if(!url.pathname.startsWith('/api/moderation/'))return null;
@@ -35,6 +36,8 @@ export async function routeModeration(request,env,url=new URL(request.url),charg
       } catch {/* Moderation is committed; reconnect/refresh also enforces it. */}
       response=json({ok:true,actionId:result.actionId});
     } else {
+      const drawing=/^\/reports\/([A-Za-z0-9_-]{1,100})\/drawing$/.exec(path);
+      if(drawing&&request.method==='GET')return withRotation(await drawingReportEvidence(env,drawing[1]),auth.rotated);
       const audio=/^\/reports\/([A-Za-z0-9_-]{1,100})\/audio$/.exec(path);
       if(audio&&request.method==='GET')return withRotation(await reportAudioResponse(env,audio[1]),auth.rotated);
       const image=/^\/images\/([A-Za-z0-9_-]{1,100})\/([a-f0-9]{64})$/.exec(path);

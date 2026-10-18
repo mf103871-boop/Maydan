@@ -212,3 +212,11 @@ test('تفاصيل اللعبة: المباراة المجانية الأولى 
   const plusBadeeha = ui.detailsTree('badeeha', fakeAccount({ premium: true }));
   assert.doesNotMatch(plusBadeeha.markup, /details-plus-note/);
 });
+
+test('ارسمها تعرض استضافة الغرف والانضمام المجاني ولا تعرض جهازًا واحدًا أو حزم بديهة', () => {
+  const { markup } = ui.detailsTree('ersomha', fakeAccount({ trials: { ersomha: true } }));
+  assert.match(markup, /الانضمام مجاني/);
+  assert.match(markup, /العب أونلاين/);
+  assert.doesNotMatch(markup, /العب على جهاز واحد|١٠ فئات مجانية/);
+  assert.doesNotMatch(markup, /disabled/);
+});

@@ -59,7 +59,7 @@ function ScreenHost({ route }) {
   // عودة الدخول (#/auth?code=) تعرض الرئيسية بينما يبدّل AccountProvider الرمز بجلسة.
   if (route.name === 'home' || route.name === 'auth') screen = <Home key="home" />;
   else if (route.name === 'game') screen = <GameDetails key={`game-${route.params.id}`} id={route.params.id} />;
-  else if (route.name === 'play') screen = <Play key={`play-${route.params.id}`} id={route.params.id} />;
+  else if (route.name === 'play') screen = getGame(route.params.id)?.onlineOnly ? <Online key={`online-${route.params.id}`} game={route.params.id} /> : <Play key={`play-${route.params.id}`} id={route.params.id} />;
   else if (route.name === 'players') screen = <Players key="players" />;
   else if (route.name === 'friends' || route.name === 'friend-group') screen = <div key="friends" data-social-page-slot />;
   else if (route.name === 'profile') screen = <ProfileScreen key={`profile-${route.params.id || 'me'}`} profileId={route.params.id || null} />;

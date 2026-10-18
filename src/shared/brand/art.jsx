@@ -1,4 +1,5 @@
 import React from 'react';
+import { ErsomhaIcon } from '../../games/ersomha/icon.jsx';
 import gameIcons from './assets/game-icons.webp';
 import avatarSheet from './assets/avatars.webp';
 import trophy from './assets/trophy.webp';
@@ -25,6 +26,7 @@ export function BrandFonts() {
 }
 
 export function GameArtwork({ game, className = '', style = {} }) {
+  if (game === 'ersomha') return <span className={`clay-art ${className}`} data-game={game} aria-hidden="true" style={style}><ErsomhaIcon /></span>;
   const [column, row] = GAMES[game] || GAMES.badeeha;
   return <span className={`clay-art ${className}`} data-game={game} aria-hidden="true" style={{ backgroundImage: `url(${gameIcons})`, backgroundPosition: `${column * 50}% ${row * 100}%`, ...style }} />;
 }

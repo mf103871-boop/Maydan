@@ -1,13 +1,26 @@
 // Values shared by the browser and the authoritative room server.
 export const PROTOCOL = 1;
 export const FABRAKA_PROTOCOL = 3;
+export const ERSOMHA_PROTOCOL = 1;
+export const GAME_PROTOCOLS = Object.freeze({ meenfina: PROTOCOL, fabraka: FABRAKA_PROTOCOL, ersomha: ERSOMHA_PROTOCOL });
+export const ROOM_CAPABILITIES = Object.freeze({ ersomha: ERSOMHA_PROTOCOL });
+export const ERSOMHA_CATEGORIES = Object.freeze([
+  { id: 'animals', label: 'الحيوانات' }, { id: 'nature', label: 'الطبيعة' },
+  { id: 'food', label: 'الأطعمة' }, { id: 'home', label: 'المنزل' },
+  { id: 'places', label: 'الأماكن' }, { id: 'jobs', label: 'المهن' },
+  { id: 'sports', label: 'الرياضة' }, { id: 'transport', label: 'المواصلات' },
+  { id: 'technology', label: 'التقنية' }, { id: 'actions', label: 'الأفعال' },
+  { id: 'situations', label: 'المواقف الطريفة' }, { id: 'expressions', label: 'التعابير العربية' },
+]);
+export const ERSOMHA_DEFAULT_SETTINGS = Object.freeze({ cycles: 1, drawSeconds: 60, difficulty: 'medium', categories: [] });
 export const ONLINE_GAMES = {
   meenfina: { name: 'مين فينا؟', min: 3, max: 12 },
   fabraka: { name: 'فبركة', min: 2, max: 8 },
+  ersomha: { name: 'ارسمها', min: 2, max: 8 },
 };
 // A personal truth round needs its owner and at least two writers. The other
 // Fabraka modes keep a real choice for two players by adding house decoys.
-export const minimumOnlinePlayers = (game, settings) => game === 'fabraka' && settings?.mode !== 'friends' ? 2 : 3;
+export const minimumOnlinePlayers = (game, settings) => game === 'ersomha' || (game === 'fabraka' && settings?.mode !== 'friends') ? 2 : 3;
 export const MIN_PLAYERS = 3;
 export const MAX_PLAYERS = 12;
 export const ROUND_OPTIONS = [5, 8, 12];
@@ -62,7 +75,28 @@ export const ERRORS = {
   CONTENT_REJECTED: 'يحتوي النص على محتوى غير مسموح. عدّله وحاول مجددًا.',
   FULL: 'الغرفة ممتلئة؛ الحد الأعلى ١٢ لاعبًا.',
   FULL_FABRAKA: 'غرفة فبركة ممتلئة؛ الحد الأعلى ٨ لاعبين.',
-  GAME: 'هذه اللعبة غير متاحة للغرف. اختر مين فينا أو فبركة.',
+  FULL_ERSOMHA: 'غرفة ارسمها ممتلئة؛ الحد الأعلى ٨ لاعبين.',
+  GAME: 'هذه اللعبة غير متاحة للغرف. اختر لعبة من قائمة غرف ميدان.',
+  UPDATE_REQUIRED: 'هذه الغرفة تحتاج إصدارًا أحدث من ميدان. حدّث التطبيق ثم افتح الدعوة مجددًا.',
+  AUTH_REQUIRED: 'سجّل الدخول للعب ارسمها وحفظ الكلمات التي شاهدتها عبر أجهزتك.',
+  ERSOMHA_BUSY: 'لديك مباراة ارسمها جارية في غرفة أخرى. عُد إليها أو غادرها قبل البدء هنا.',
+  ERSOMHA_EXHAUSTED: 'لا توجد كلمات جديدة كافية لهذه المجموعة. وسّع الفئات أو اختر إعادة الكلمات القديمة بوضوح.',
+  ERSOMHA_CONTENT_EXHAUSTED: 'لا توجد كلمات جديدة كافية لهذه المجموعة. وسّع الفئات أو اختر إعادة الكلمات القديمة بوضوح.',
+  ERSOMHA_ACTIVE_ELSEWHERE: 'لديك مباراة ارسمها جارية في غرفة أخرى. عُد إليها أو غادرها قبل البدء هنا.',
+  ERSOMHA_HISTORY_CONFLICT: 'تغيّر سجل الكلمات أثناء التجهيز. أعد المحاولة لنختار أفكارًا جديدة.',
+  ERSOMHA_UNAVAILABLE: 'تعذّر تجهيز ارسمها الآن. أعد المحاولة بعد لحظات.',
+  ERSOMHA_CANVAS_LIMIT: 'وصلت اللوحة إلى حدها. يمكنك التراجع أو مسحها للمتابعة.',
+  ERSOMHA_CANVAS_STALE: 'تغيّرت اللوحة؛ نزامنها قبل متابعة الرسم.',
+  ERSOMHA_CANVAS_UNAVAILABLE: 'تعذّرت مزامنة اللوحة. أعد الاتصال لاسترجاع الرسم المحفوظ.',
+  ERSOMHA_DRAWER_ONLY: 'أدوات الرسم متاحة للرسّام الحالي فقط.',
+  ERSOMHA_GUESSER_ONLY: 'دورك الآن ترسم؛ أصحابك يتولّون التخمين.',
+  LOGIN_REQUIRED: 'سجّل الدخول للعب ارسمها وحفظ الكلمات التي شاهدتها عبر أجهزتك.',
+  ERSOMHA_CATEGORIES: 'اختر ثلاث فئات على الأقل لتتنوع خيارات الرسم.',
+  DRAWER_ONLY: 'أدوات الرسم متاحة للرسّام الحالي فقط.',
+  GUESSED: 'عرفت الحل بالفعل؛ انتظر الكشف وشاهد رسم صاحبك.',
+  DRAWING_LIMIT: 'وصلت اللوحة إلى حدها. يمكنك التراجع أو مسحها للمتابعة.',
+  DRAWING_SYNC: 'نزامن اللوحة الآن؛ انتظر لحظة قبل متابعة الرسم.',
+  HISTORY_UNAVAILABLE: 'تعذّر تجهيز كلمات جديدة الآن. أعد المحاولة؛ لم تبدأ المباراة.',
   ANSWER: 'اكتب إجابة واضحة من حرف إلى ٦٠ حرفًا.',
   SUBMITTED: 'تم تثبيت إجابتك لهذه الجولة بالفعل.',
   OWN_ANSWER: 'لا يمكنك التصويت لإجابة كتبتها بنفسك.',

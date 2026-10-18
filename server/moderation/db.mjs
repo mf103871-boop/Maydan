@@ -20,7 +20,7 @@ function page(rows,limit,key) {
 }
 export async function reportsOf(env,{before,limit},status='open') {
   if(!['open','resolved'].includes(status)) fail('INVALID',400);
-  const rows=await all(env,`SELECT r.*,r.rowid AS seq,d.resolved_at,d.reason AS resolution,u.name,p.bio,p.revision,s.code,gr.group_id,ra.attachment_id,
+  const rows=await all(env,`SELECT r.*,r.rowid AS seq,d.resolved_at,d.reason AS resolution,u.name,p.bio,p.revision,s.code,gr.group_id,ra.attachment_id,dr.turn AS drawing_turn,
     EXISTS(SELECT 1 FROM moderation_suspensions ms WHERE ms.user_id=r.reported_id) AS suspended,
     CASE WHEN ${approvedImageSql('p','avatar')} THEN p.avatar_version END AS avatar_version,
     CASE WHEN ${approvedImageSql('p','cover')} THEN p.cover_version END AS cover_version
@@ -28,12 +28,14 @@ export async function reportsOf(env,{before,limit},status='open') {
     JOIN users u ON u.id=r.reported_id LEFT JOIN player_profiles p ON p.user_id=r.reported_id
     LEFT JOIN social_profiles s ON s.user_id=r.reported_id
     LEFT JOIN social_group_reports gr ON gr.id=r.id LEFT JOIN social_report_attachments ra ON ra.report_id=r.id
+    LEFT JOIN ersomha_drawing_reports dr ON dr.report_id=r.id
     WHERE r.rowid<? AND d.report_id IS ${status==='open'?'':'NOT '}NULL ORDER BY r.rowid DESC LIMIT ?`,before,limit+1);
   return page(rows.map(r=>({id:r.id,seq:r.seq,reporterId:r.reporter_id,reportedUser:{id:r.reported_id,name:publicName(r.name),
     code:r.code,bio:r.bio||'',revision:r.revision||0,suspended:!!r.suspended,avatarVersion:r.avatar_version,coverVersion:r.cover_version,
     avatarUrl:imageUrl(r.reported_id,'avatar',r.avatar_version),coverUrl:imageUrl(r.reported_id,'cover',r.cover_version)},
     messageSeq:r.message_seq,messageText:r.message_text,reason:r.reason,createdAt:r.created_at,resolvedAt:r.resolved_at,resolution:r.resolution,
-    ...(r.group_id?{scope:'group',groupId:r.group_id}:{}),...(r.attachment_id?{audioUrl:`/api/moderation/reports/${r.id}/audio`}:{}),})),limit,'reports');
+    ...(r.group_id?{scope:'group',groupId:r.group_id}:{}),...(r.attachment_id?{audioUrl:`/api/moderation/reports/${r.id}/audio`}:{}),
+    ...(r.drawing_turn?{scope:'drawing',drawingTurn:r.drawing_turn,drawingUrl:`/api/moderation/reports/${r.id}/drawing`}:{}),})),limit,'reports');
 }
 export async function imagesOf(env,{before,limit}) {
   const rows=await all(env,`SELECT r.seq,r.id,r.user_id,r.kind,r.version,r.created_at,u.name,s.code
