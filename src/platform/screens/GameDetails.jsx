@@ -28,13 +28,15 @@ export function GameDetails({ id }) {
   const account = useAccount();
   if (!game) return <MissingGame id={id} />;
   const Icon = game.icon;
-  const modeLabel = game.players.mode === 'teams' ? 'فرق' : game.players.mode === 'both' ? 'فردي أو فرق' : 'فردي';
-  const online = ['meenfina', 'fabraka'].includes(game.id);
+  const onlineOnly = game.onlineOnly === true;
+  const modeLabel = game.id === 'ersomha' ? 'تعاون لشخصين · منافسة من ثلاثة' : game.players.mode === 'teams' ? 'فرق' : game.players.mode === 'both' ? 'فردي أو فرق' : 'فردي';
+  const online = ['meenfina', 'fabraka', 'ersomha'].includes(game.id);
   const factDelay = (i) => ({ '--delay': `${250 + i * 50}ms` });
   // القفل: بَديهة تُلعب دائمًا (القفل في حزمها) وبقية الألعاب مباراة واحدة مجانية ثم «ميدان بلس».
-  const packs = game.setup === 'self';
+  const packs = game.id === 'badeeha';
   const locked = !packs && account.gameAccess(game.id) === 'locked';
   const note = account.premium ? '' : packs ? '١٠ فئات مجانية، والباقي ضمن ميدان بلس'
+    : onlineOnly ? locked ? 'استضافة الغرف ضمن ميدان بلس؛ الانضمام مجاني' : 'استضافة مباراة مجانية، والانضمام للغرف مجاني'
     : locked ? 'لعبت مباراتك المجانية — اشترك للمتابعة' : 'مباراة واحدة مجانية، ثم ميدان بلس';
   const play = () => {
     if (locked) { sound.play('click'); account.openPaywall({ reason: 'trial', game: game.id }); return; }
@@ -61,8 +63,8 @@ export function GameDetails({ id }) {
       </div>
       <div className="setup-sticky stack">
         {/* الزر الرئيسي «مسلّح» (is-armed): تنفّس ×3 ووهج ×2 من brand.css */}
-        {online && <Button variant="accent" size="lg" full className="is-armed" onClick={() => navigate(`/online/${game.id}`)}>{game.id === 'fabraka' ? 'العب أونلاين · لشخصين أو أكثر' : 'العب من كل جوال · غرف جماعية'}</Button>}
-        <Button variant={online ? 'secondary' : 'accent'} size="lg" full className={online ? '' : 'is-armed'} icon={<IconPlay />} onClick={play}>{online ? 'العب على جهاز واحد' : 'العب'}</Button>
+        {online && <Button variant="accent" size="lg" full className="is-armed" onClick={() => navigate(`/online/${game.id}`)}>{['fabraka', 'ersomha'].includes(game.id) ? 'العب أونلاين · لشخصين أو أكثر' : 'العب من كل جوال · غرف جماعية'}</Button>}
+        {!onlineOnly && <Button variant={online ? 'secondary' : 'accent'} size="lg" full className={online ? '' : 'is-armed'} icon={<IconPlay />} onClick={play}>{online ? 'العب على جهاز واحد' : 'العب'}</Button>}
       </div>
     </Screen>
   );

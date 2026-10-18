@@ -2,6 +2,8 @@
 // المنتهية، وسجل أحداث webhooks القديم، وصفوف حجز الحذف العالقة، والرسائل والبلاغات
 // الأقدم من نافذة الاحتفاظ. لا يمسّ المستخدمين ولا الاشتراكات.
 import { run, DELETION_STALE_MS } from './db.mjs';
+import { cleanupErsomha } from '../ersomha-history.mjs';
+import { cleanupDrawingReports } from '../ersomha-reports.mjs';
 
 export const SESSION_RETENTION_MS = 30 * 86_400_000;   // بعد الانتهاء/الإبطال
 export const WEBHOOK_RETENTION_MS = 90 * 86_400_000;   // نافذة منع التكرار أطول بكثير من إعادة إرسال المزوّدين
@@ -22,6 +24,8 @@ export async function cleanup(env, now = Date.now()) {
   const deletions = await run(env, 'DELETE FROM account_deletions WHERE created_at < ?', now - DELETION_STALE_MS);
   const messages = await run(env, 'DELETE FROM social_messages WHERE created_at < ?', now - messageRetentionMs(env));
   const reports = await run(env, 'DELETE FROM social_reports WHERE created_at < ?', now - reportRetentionMs(env));
+  await cleanupErsomha(env, now);
+  await cleanupDrawingReports(env, now - reportRetentionMs(env));
   return { sessions: count(sessions), authCodes: count(codes), webhookEvents: count(events),
     staleDeletions: count(deletions), messages: count(messages), reports: count(reports) };
 }

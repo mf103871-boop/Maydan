@@ -1,4 +1,5 @@
 import { newCredentials, deviceId, post, readSaved, save } from '../online/client.js';
+import { ROOM_CAPABILITIES, ERSOMHA_DEFAULT_SETTINGS, ONLINE_GAMES } from '../online/shared.js';
 
 const stale = () => Object.assign(new Error('تغيّر الحساب. افتح المحادثة مجددًا.'), { code: 'STALE' });
 export const socialJoinFallbackKey = (owner, code) => `socialJoinFallback:${owner}:${code}`;
@@ -20,7 +21,7 @@ export async function joinSocialGameRoom({ account, roomCode, isCurrent = () => 
   const profile = roomProfile(account, read(server, 'profile'));
   store(server, key, session);
   try {
-    const result = await joinRoom(server, `/api/rooms/${roomCode}/join`, { ...session, ...profile }, { headers: account.authHeaders() });
+    const result = await joinRoom(server, `/api/rooms/${roomCode}/join`, { ...session, ...profile, capabilities: ROOM_CAPABILITIES }, { headers: account.authHeaders() });
     assertCurrent();
     if (result?.code !== roomCode) throw Object.assign(new Error('تعذّر تأكيد الدخول للغرفة. حاول مجددًا.'), { code: 'NETWORK' });
     const stored = store(server, roomCode, session);
@@ -55,7 +56,7 @@ export function createSocialGameLauncher({ account, target, isCurrent = () => tr
       if (pending) return pending;
       const task = (async () => {
         assertCurrent();
-        if (!['fabraka', 'meenfina'].includes(game)) throw Object.assign(new Error('اختر لعبة متاحة.'), { code: 'INVALID' });
+        if (!Object.hasOwn(ONLINE_GAMES, game)) throw Object.assign(new Error('اختر لعبة متاحة.'), { code: 'INVALID' });
         if (!room) {
           if (account.gameAccess(game) === 'locked') throw Object.assign(new Error('تحتاج ميدان بلس لبدء مباراة جديدة.'), { code: 'PLUS_REQUIRED' });
           const key = `pendingSocialCreate:${owner}:${target.targetType}:${target.targetId}:${game}`;
@@ -64,7 +65,8 @@ export function createSocialGameLauncher({ account, target, isCurrent = () => tr
           const previous = read(server, 'profile');
           const { name, avatar } = roomProfile(account, previous);
           const result = await createRoom(server, '/api/rooms', { ...session, name, avatar, game,
-            deviceId: getDeviceId(), rounds: 5,
+            deviceId: getDeviceId(), rounds: 5, capabilities: ROOM_CAPABILITIES,
+            ...(game === 'ersomha' ? { settings: { ...ERSOMHA_DEFAULT_SETTINGS } } : {}),
             ...(game === 'fabraka' ? { settings: { mode: 'classic', rounds: 3, style: 'curious', categories: [], writeSeconds: 30, discussionSeconds: 15, funnyVote: true, finalDouble: false } } : {}) },
           { headers: account.authHeaders() });
           assertCurrent();

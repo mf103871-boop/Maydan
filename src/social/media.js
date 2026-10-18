@@ -182,7 +182,7 @@ export class CallMedia {
   }
   clearElements() { for (const element of this.elements) element.remove(); this.elements.clear(); }
   async mute(muted) {
-    if (!muted && socialInterruption.getSnapshot().privateTurn) throw mediaError('الميكروفون مكتوم أثناء عرض الدور السري.', 'AUDIO_PRIVATE');
+    if (!muted && socialInterruption.getSnapshot().privateTurn) throw mediaError('الميكروفون مكتوم خلال هذا الدور.', 'AUDIO_PRIVATE');
     this.desiredMuted = muted;
     const epoch = this.generation;
     if (isNativeShell()) await callNative('socialCallMute', { callId: this.state.callId, muted });

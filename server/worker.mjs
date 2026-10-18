@@ -14,6 +14,8 @@ import { drainJobs } from './lamma/jobs.mjs';
 import { liveKitWebhook } from './lamma/webhook.mjs';
 import { messageRetentionMs,reportRetentionMs } from './accounts/cleanup.mjs';
 import { iosAppPolicy } from './app-policy.mjs';
+import { ERSOMHA_PROTOCOL, ONLINE_GAMES } from '../src/online/shared.js';
+import { routeDrawingReports } from './ersomha-reports.mjs';
 export { LammaJobs } from './lamma/jobs.mjs';
 export { SocialHub } from './social/realtime.mjs';
 export { Room };
@@ -88,7 +90,7 @@ export async function routeRequest(request, env, context) {
   // HEAD keeps `curl -I` and uptime monitors working; it must not fall through
   // to the origin check and answer 403/404.
   if (url.pathname === '/health' && ['GET', 'HEAD'].includes(request.method)) {
-    const health = json({ ok: true, protocol: 1, game: 'meenfina', games: ['meenfina', 'fabraka'], version: packageInfo.version, accounts: !!env.DB });
+    const health = json({ ok: true, protocol: 1, game: 'meenfina', games: Object.keys(ONLINE_GAMES), version: packageInfo.version, accounts: !!env.DB });
     return request.method === 'HEAD' ? new Response(null, { status: health.status, headers: health.headers }) : health;
   }
   const origin = allowedOrigin(request, env);
@@ -122,7 +124,8 @@ export async function routeRequest(request, env, context) {
   }
   try {
     // الحسابات أولًا: مساراتها تحت /api/ ولا تتقاطع مع تعبير الغرف.
-    response = await routeSocialLive(request, env, url, charge)
+    response = await routeDrawingReports(request, env, url, charge)
+      || await routeSocialLive(request, env, url, charge)
       || await routeModeration(request, env, url, charge)
       || await routeProfiles(request, env, url, charge)
       || await routeSocial(request, env, url, charge, context)
@@ -139,6 +142,7 @@ export async function routeRequest(request, env, context) {
       if (create) {
         const input = await readJson(request);
         await credentials(input); // Validate before allocating a room.
+        if (input.game === 'ersomha' && input.capabilities?.ersomha !== ERSOMHA_PROTOCOL) fail('CONFIG', 409);
         // Check eligibility now, but consume the trial only at the room's first
         // successful match start. Never trust a gate supplied by the browser.
         const gate = await roomGate(request, env, input);
