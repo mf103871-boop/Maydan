@@ -82,3 +82,11 @@ test('cold-launch credentials and notifications remain account-scoped', () => {
   assert.equal((coordinator.match(/data\["recipientId"\] as\? String ==/g) || []).length, 2);
   assert.match(coordinator, /session\.clear\(\)[\s\S]*await finish\(reason: \.remoteEnded\)/, 'clear local credential before asynchronous network cleanup');
 });
+
+test('foreground CallKit answer reuses authenticated connection while lock-screen answer retains its API check', () => {
+  const answer = coordinator.slice(coordinator.indexOf('perform action: CXAnswerCallAction'), coordinator.indexOf('perform action: CXEndCallAction'));
+  assert.match(answer, /if current\.connection == nil \{[\s\S]*session\.request\([\s\S]*\/accept/);
+  assert.match(answer, /self\.call\?\.id == current\.id, self\.session\.credential\?\.userId == current\.userId/);
+  assert.match(answer, /try await self\.connectRoom\(\)/);
+  assert.match(coordinator, /private func pollCall\(\)[\s\S]*5_000_000_000[\s\S]*authorization-revoked/);
+});

@@ -81,6 +81,8 @@
 .social-bubble { min-width: 82px; border-radius: 17px 5px 17px 17px; padding: 10px 13px 7px; background: #e2eee7; border: 1px solid #cfe1d7; box-shadow: 0 2px 2px #54402e04; min-width: 0; overflow: hidden; }
 .is-theirs .social-bubble { border-radius: 5px 17px 17px 17px; background: #fffef9; border-color: #e8ddca; }
 .social-bubble > p { white-space: pre-wrap; overflow-wrap: anywhere; font-size: 15px; line-height: 1.75; text-align: start; unicode-bidi: plaintext; }
+.social-message-sender { display: flex; align-items: center; gap: 7px; margin-bottom: 5px; color: var(--accent); min-width: 0; }
+.social-message-sender > strong { min-width: 0; max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 11px; }
 .social-bubble.is-deleted { background: transparent; border-style: dashed; color: var(--muted); }.social-bubble.is-deleted > p { font-style: italic; font-size: 13px; }
 .social-message-meta { display: flex; justify-content: flex-end; align-items: center; gap: 7px; font-size: 9px; color: #777164; margin-top: 5px; flex-wrap: wrap; }
 .social-delivery { display: inline-flex; align-items: center; gap: 3px; }.social-delivery.is-read { color: #076e74; }.social-delivery > span { font-size: 9px; }

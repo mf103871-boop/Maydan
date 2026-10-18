@@ -1,6 +1,7 @@
 import React, { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState, useSyncExternalStore } from 'react';
 import { createPortal } from 'react-dom';
 import { useAccount } from '../shared/account/context.js';
+import { resolveAccountServer } from '../shared/account/api.js';
 import { SignInSheet } from '../shared/account/SignInSheet.jsx';
 import { Button, Modal } from '../shared/ui/components.jsx';
 import { useVisualViewport } from '../shared/ui/useVisualViewport.js';
@@ -19,6 +20,8 @@ import { CallControls } from './CallDock.jsx';
 import { useCallDockLayout } from './CallViewport.jsx';
 import { ActionDialog, Conversation, PersonAvatar, SearchDialog, presenceLabel } from './SocialScreen.jsx';
 import { LammaButton, LammaIcon, VoiceRecorder, VoiceMessage, GameInviteCard, mediaError } from './LammaMedia.jsx';
+import { createSocialGameLauncher } from './game-launch.js';
+import { errorText as roomErrorText } from '../online/shared.js';
 import socialCss from './social.css';
 import lammaCss from './lamma.css';
 
@@ -51,9 +54,47 @@ function ProfilePreview({ id, onBack, onInvite, run }) {
   return <div className="lamma-profile-preview">{friend && <div className="lamma-profile-actions"><button type="button" disabled={!lamma.capabilities?.liveCalls || !!lamma.activeCall || !conversationId} onClick={() => run(() => lamma.startCall({ targetType: 'direct', targetId: conversationId }), 'profile-call')}><LammaIcon name="phone" size={18} />مكالمة صوتية</button><button type="button" disabled={!conversationId} onClick={() => onInvite({ targetType: 'direct', targetId: conversationId })}><LammaIcon name="game" size={18} />دعوة للعبة</button></div>}<ProfileView account={account} profiles={profiles} social={social} profileId={id} onNavigate={move} /></div>;
 }
 
-function GameInviteDialog({ target, lamma, initialCode = '', onClose, notify }) {
+export function GameInviteDialog({ target, lamma, initialCode = '', canCreate = true, memberCount = 2, onClose, onLaunched, notify }) {
+  const account = useAccount();
+  const [mode, setMode] = useState(initialCode || !canCreate ? 'existing' : 'create');
+  const [game, setGame] = useState(memberCount > 8 ? 'meenfina' : 'fabraka');
   const [code, setCode] = useState(initialCode); const [busy, setBusy] = useState(false); const [error, setError] = useState('');
-  return <Modal title="ادعُه للّعب" className="lamma-dialog" onClose={busy ? null : onClose} footer={<><Button variant="ghost" disabled={busy} onClick={onClose}>إلغاء</Button><Button variant="primary" disabled={!validCode(normalizeCode(code))} loading={busy} onClick={async () => { setBusy(true); setError(''); try { await lamma.sendGameInvite({ ...target, roomCode: normalizeCode(code) }); notify('وصلت دعوة اللعب'); onClose(); } catch (err) { setError(mediaError(err)); } finally { setBusy(false); } }}>إرسال الدعوة</Button></>}><p className="lamma-muted">أدخل رمز غرفة أنت موجود فيها. تصله دعوة يقدر ينضم منها مباشرة.</p><label className="lamma-field">رمز الغرفة<input inputMode="numeric" autoComplete="off" maxLength={6} dir="ltr" value={code} onChange={event => setCode(normalizeCode(event.target.value))} placeholder="000000" /></label>{error && <p className="lamma-error" role="alert">{error}</p>}</Modal>;
+  const [created, setCreated] = useState(null);
+  const alive = useRef(true); const owner = useRef(account.user?.id); owner.current = account.user?.id;
+  useLayoutEffect(() => { alive.current = true; return () => { alive.current = false; }; }, []);
+  const launcher = useRef(null);
+  if (!launcher.current) { const id = account.user?.id; launcher.current = createSocialGameLauncher({ account, target, server: resolveAccountServer(), isCurrent: () => alive.current && owner.current === id }); }
+  const submit = async () => {
+    if (busy) return;
+    setBusy(true); setError('');
+    try {
+      if (mode === 'create') {
+        const room = await launcher.current.launch(game, payload => lamma.sendGameInvite(payload));
+        if (!alive.current) return;
+        notify('وصلت الدعوة، ننتظركم في الغرفة'); onClose(); onLaunched(room.code);
+      } else {
+        await lamma.sendGameInvite({ ...target, roomCode: normalizeCode(code) });
+        if (alive.current) { notify('وصلت دعوة اللعب'); onClose(); }
+      }
+    } catch (err) {
+      if (!alive.current) return;
+      setCreated(launcher.current.room);
+      if (err.code === 'PLUS_REQUIRED') { onClose(); account.openPaywall({ reason: 'room', game }); }
+      else setError(/[\u0600-\u06ff]/.test(err.message || '') ? err.message : roomErrorText(err.code));
+    } finally { if (alive.current) setBusy(false); }
+  };
+  return <Modal title="يلا نلعب" className="lamma-dialog lamma-game-dialog" onClose={busy ? null : onClose} footer={<><Button variant="ghost" disabled={busy} onClick={onClose}>إلغاء</Button><Button variant="primary" disabled={busy || (mode === 'existing' && !validCode(normalizeCode(code)))} loading={busy} onClick={submit}>{mode === 'existing' || created ? 'إرسال الدعوة' : 'ابدأ وادعُ أصحابك'}</Button></>}>
+    {mode === 'create' ? <>
+      <p className="lamma-muted">اختر اللعبة. نجهّز الغرفة ونرسل دعوتها هنا، وكل واحد يدخل من جواله. مكالمتكم تبقى معكم.</p>
+      <div className="lamma-game-options" role="group" aria-label="اختيار لعبة للّمة">{[['fabraka', 'فبركة', 'من شخصين إلى ٨', 'حقيقة بين إجابات مضحكة — ٣ جولات'], ['meenfina', 'مين فينا', 'من ٣ إلى ١٢', 'تصويت سري وأسئلة تعرفكم على بعض']].map(([id, name, count, description]) => <button type="button" key={id} aria-pressed={game === id} disabled={busy || !!created} onClick={() => setGame(id)}><LammaIcon name="game" size={27} /><strong>{name}</strong><span>{count}</span><small>{description}</small></button>)}</div>
+      {created && <p role="status" className="lamma-muted">الغرفة <bdi>{created.code}</bdi> جاهزة. أعد إرسال الدعوة؛ لن ننشئ غرفة ثانية.</p>}
+      {!created && <button type="button" className="lamma-text-button" disabled={busy} onClick={() => { setMode('existing'); setError(''); }}>عندي رمز غرفة</button>}
+    </> : <>
+      <p className="lamma-muted">أرسل دعوة لغرفة أنت موجود فيها.</p><label className="lamma-field">رمز الغرفة<input inputMode="numeric" autoComplete="off" maxLength={6} dir="ltr" disabled={busy} value={code} onChange={event => setCode(normalizeCode(event.target.value))} placeholder="000000" /></label>
+      {canCreate && <button type="button" className="lamma-text-button" disabled={busy} onClick={() => { setMode('create'); setError(''); }}>ابدأ غرفة جديدة بدلًا منها</button>}
+    </>}
+    {error && <p className="lamma-error" role="alert">{error}</p>}
+  </Modal>;
 }
 
 function GroupEditor({ group, detail, friends, accountId, lamma, onClose, onCreated, notify }) {
@@ -129,7 +170,7 @@ function GroupMessageAction({ action, lamma, social, onClose, notify }) {
 export function SocialHost() {
   const account = useAccount(); const social = useSocial(); const ui = useSocialUI(); const lamma = useLamma();
   const { open: panelOpen, drawerOpen, close: closePanel, show: showPanel, openChat, openGroup } = ui;
-  const { selectGroup, loadGroup, loadOlderGroup, sendGroupMessage, markGroupRead, offline: groupOffline } = lamma;
+  const { selectGroup, loadGroup, loadOlderGroup, sendGroupMessage, retryGroupMessage, markGroupRead, offline: groupOffline } = lamma;
   const profiles = useProfiles(); const route = useRoute(); const { sound } = usePlatform();
   const interruption = useSyncExternalStore(socialInterruption.subscribe, socialInterruption.getSnapshot, socialInterruption.getSnapshot);
   const [search, setSearch] = useState(false); const [signIn, setSignIn] = useState(false);
@@ -232,8 +273,8 @@ export function SocialHost() {
     sendMessage: (id, text) => sendGroupMessage(id, text),
     markRead: id => markGroupRead(id, Math.max(0, ...(groupChatRef.current?.messages || []).map(message => message.seq || 0))),
     setTyping: () => {},
-    retryMessage: () => Promise.reject(new Error('أعد كتابة الرسالة وحاول مجددًا.')),
-  }), [groupOffline, loadGroup, loadOlderGroup, sendGroupMessage, markGroupRead]);
+    retryMessage: (id, clientId) => retryGroupMessage(id, clientId),
+  }), [groupOffline, loadGroup, loadOlderGroup, sendGroupMessage, retryGroupMessage, markGroupRead]);
   const dismissNotification = social.clearNotification;
   const notification = social.notification;
   const notificationId = notification?.id;
@@ -271,7 +312,7 @@ export function SocialHost() {
       {notice && <div className={'lamma-notice' + (notice.error ? ' is-error' : '')} role={notice.error ? 'alert' : 'status'}>{notice.text}<LammaButton label="إخفاء" icon="close" onClick={() => setNotice(null)} /></div>}
       {!account.ready ? <Empty title="نجهّز لمّتك…">لحظات ونكون معك.</Empty> : !account.signedIn ? <Empty title="الجمعة تبدأ بأصحابك" action={<Button variant="primary" onClick={() => setSignIn(true)}>سجّل الدخول وخلّك قريب</Button>}>أضف أصحابك، اسأل عنهم، واجمعهم على لعبة أو مكالمة. اللّمة مجانية للجميع.</Empty> : <>
         {(social.error || lamma.error) && <div className="lamma-connection" role="status">{social.error || lamma.error}<button type="button" className="lamma-text-button" onClick={() => run(() => Promise.allSettled([social.refresh(), lamma.refreshGroups()]), 'refresh')}>إعادة المحاولة</button></div>}{(social.offline || lamma.offline) && <p className="lamma-connection" role="status">انقطع الاتصال · رسائلك المحمّلة ما زالت هنا</p>}
-        {view.type === 'profile' ? <ProfilePreview id={view.id} onBack={ui.back} onInvite={setInviteTarget} run={run} /> : view.type === 'direct' || view.type === 'group' ? friend || group ? <Conversation key={view.type + view.id} friend={friend || { ...group, online: false }} conversation={friend ? social.conversations?.[friend.id] : groupChat} account={account} social={friend ? social : groupSocial} onBack={ui.back} onProfile={() => friend ? ui.openProfile(friend.id) : setGroupEditor(group)} onMenu={() => setMenu(friend || group)} onAction={next => setAction(group ? { ...next, groupId: group.id, user: groupChat?.members?.find(member => (member.userId || member.id) === next.message?.senderId) || { id: next.message?.senderId, name: 'عضو اللّمة' } } : next)} notify={notify} subtitle={group ? `${groupMemberCount(group)} من الأصحاب${ongoingGroupCall ? ' · مكالمة جارية' : ''}` : undefined} draftValue={ui.drafts[conversationDraftKey(view.type, view.id)] || ''} onDraftChange={text => ui.setDraft(conversationDraftKey(view.type, view.id), text)} renderContent={content} headerActions={<LammaButton label={lamma.capabilities?.liveCalls ? ongoingGroupCall ? 'انضم للمكالمة الجارية' : 'مكالمة صوتية' : 'المكالمات غير متاحة في هذه النسخة'} icon="phone" disabled={!lamma.capabilities?.liveCalls || !!lamma.activeCall || busy === 'call' || !targetId || social.offline} onClick={startCall} />} composerExtras={<VoiceRecorder key={view.type + view.id} disabled={social.offline || lamma.offline || !!lamma.activeCall} unavailableReason={!lamma.capabilities?.voiceMessages ? 'الرسائل الصوتية غير متاحة في هذه النسخة.' : lamma.activeCall ? 'أنهِ المكالمة قبل تسجيل رسالة صوتية.' : ''} onError={text => notify(text, true)} onSend={clip => lamma.sendVoiceNote({ targetType, targetId, ...clip }).then(() => friend ? social.openConversation(friend.id, { quiet: true }) : lamma.loadGroup(group.id))} />} /> : <Empty title="هذه المحادثة غير متاحة" action={<Button variant="secondary" onClick={ui.back}>العودة للأصدقاء</Button>}>قد تكون الصداقة أو عضويتك في اللّمة تغيّرت.</Empty> : <div ref={listScroll} className="lamma-list-content lamma-list-scroll" onScroll={event => ui.updateListState(view.tab, { scrollTop: event.currentTarget.scrollTop })}>
+        {view.type === 'profile' ? <ProfilePreview id={view.id} onBack={ui.back} onInvite={setInviteTarget} run={run} /> : view.type === 'direct' || view.type === 'group' ? friend || group ? <Conversation key={view.type + view.id} friend={friend || { ...group, online: false }} conversation={friend ? social.conversations?.[friend.id] : groupChat} account={account} social={friend ? social : groupSocial} onBack={ui.back} onProfile={() => friend ? ui.openProfile(friend.id) : setGroupEditor(group)} onMenu={() => setMenu(friend || group)} onAction={next => setAction(group ? { ...next, groupId: group.id, user: groupChat?.members?.find(member => (member.userId || member.id) === next.message?.senderId) || { id: next.message?.senderId, name: 'عضو اللّمة' } } : next)} notify={notify} subtitle={busy === 'call' ? <span role="status">جارٍ الاتصال…</span> : group ? `${groupMemberCount(group)} من الأصحاب${ongoingGroupCall ? ' · مكالمة جارية' : ''}` : undefined} draftValue={ui.drafts[conversationDraftKey(view.type, view.id)] || ''} onDraftChange={text => ui.setDraft(conversationDraftKey(view.type, view.id), text)} renderContent={content} headerActions={<><LammaButton label="يلا نلعب" icon="game" disabled={!targetId || social.offline || lamma.offline} onClick={() => setInviteTarget({ targetType, targetId })} /><LammaButton label={lamma.capabilities?.liveCalls ? ongoingGroupCall ? 'انضم للمكالمة الجارية' : 'مكالمة صوتية' : 'المكالمات غير متاحة في هذه النسخة'} icon="phone" disabled={!lamma.capabilities?.liveCalls || !!lamma.activeCall || busy === 'call' || !targetId || social.offline} onClick={startCall} /></>} composerExtras={<VoiceRecorder key={view.type + view.id} disabled={social.offline || lamma.offline || !!lamma.activeCall} unavailableReason={!lamma.capabilities?.voiceMessages ? 'الرسائل الصوتية غير متاحة في هذه النسخة.' : lamma.activeCall ? 'أنهِ المكالمة قبل تسجيل رسالة صوتية.' : ''} onError={text => notify(text, true)} onSend={clip => lamma.sendVoiceNote({ targetType, targetId, ...clip })} />} /> : <Empty title="هذه المحادثة غير متاحة" action={<Button variant="secondary" onClick={ui.back}>العودة للأصدقاء</Button>}>قد تكون الصداقة أو عضويتك في اللّمة تغيّرت.</Empty> : <div ref={listScroll} className="lamma-list-content lamma-list-scroll" onScroll={event => ui.updateListState(view.tab, { scrollTop: event.currentTarget.scrollTop })}>
           <div className="lamma-me"><button type="button" className="lamma-me-profile" onClick={() => ui.openProfile(account.user.id)}><ProfileAvatar user={profiles.mine || account.user} size={42} /><span><strong><bdi>{nameOf(profiles.mine || account.user)}</bdi></strong><small>ملفك في الميدان</small></span></button><button type="button" className="lamma-add" onClick={() => setSearch(true)}><LammaIcon name="plus" size={18} />أضف صديقًا</button></div>
           <nav className="lamma-tabs" aria-label="أقسام اللّمة">{[['friends', 'الأصدقاء', 0], ['chats', 'السوالف', social.unreadCount || 0], ['groups', 'اللّمات', groupUnread], ['requests', 'الطلبات', totalRequests]].map(([tab, label, count]) => <button type="button" key={tab} aria-current={view.tab === tab ? 'page' : undefined} className={view.tab === tab ? 'is-active' : ''} onClick={() => ui.show({ type: 'list', tab })}>{label}{count > 0 && <b>{count > 99 ? '99+' : count}</b>}</button>)}</nav>
           {view.tab !== 'requests' && <label className="lamma-search"><LammaIcon name="search" size={18} /><input value={filter} placeholder={view.tab === 'groups' ? 'ابحث في لمّاتك' : 'دوّر على صاحبك'} aria-label="البحث في اللّمة" onChange={event => setFilter(event.target.value)} /></label>}
@@ -290,7 +331,7 @@ export function SocialHost() {
     {ui.presentation === 'page' && pageHost && createPortal(panelContent, pageHost)}
     <SignInSheet open={signIn} onClose={() => setSignIn(false)} note="سجّل الدخول للّمة، أصحابك ينتظرونك." />
     {dialogsOwned && search && <SearchDialog social={social} onClose={() => setSearch(false)} run={run} busy={busy} onOpen={ui.openChat} onProfile={ui.openProfile} />}
-    {dialogsOwned && inviteTarget && <GameInviteDialog target={inviteTarget} lamma={lamma} initialCode={ui.invite?.roomCode || (route.name === 'room' ? route.params.id : '')} onClose={() => setInviteTarget(null)} notify={notify} />}{dialogsOwned && preferences && <Preferences lamma={lamma} social={social} onClose={() => setPreferences(false)} notify={notify} />}
+    {dialogsOwned && inviteTarget && <GameInviteDialog key={`${account.user?.id}:${inviteTarget.targetType}:${inviteTarget.targetId}`} target={inviteTarget} lamma={lamma} initialCode={ui.invite?.roomCode || (route.name === 'room' ? route.params.id : '')} canCreate={!['play', 'room'].includes(route.name)} memberCount={inviteTarget.targetType === 'group' ? groupMemberCount(groups.find(item => item.id === inviteTarget.targetId)) : 2} onClose={() => setInviteTarget(null)} onLaunched={code => { ui.close(); navigate(`/room/${code}`); }} notify={notify} />}{dialogsOwned && preferences && <Preferences lamma={lamma} social={social} onClose={() => setPreferences(false)} notify={notify} />}
     {dialogsOwned && groupEditor && <GroupEditor key={groupEditor.id || 'new'} group={groupEditor.create ? null : groupEditor} detail={lamma.groupConversations?.[groupEditor.id]} friends={friends} accountId={account.user?.id} lamma={lamma} onClose={() => setGroupEditor(null)} onCreated={ui.openGroup} notify={notify} />}
     {dialogsOwned && menu && <Modal title={group ? 'خيارات اللّمة' : nameOf(menu)} className="lamma-dialog" onClose={() => setMenu(null)}><div className="lamma-menu"><button type="button" onClick={() => { setInviteTarget({ targetType, targetId }); setMenu(null); }}><LammaIcon name="game" />دعوة للعبة</button>{group ? <button type="button" onClick={() => { setGroupEditor(group); setMenu(null); }}><LammaIcon name="people" />الأعضاء وإدارة اللّمة</button> : <button type="button" onClick={() => { ui.openProfile(menu.id); setMenu(null); }}><LammaIcon name="people" />عرض البروفايل</button>}<button type="button" onClick={async () => { const muted = isConversationMuted(lamma.notifications, targetType, targetId); if (await run(() => lamma.setConversationMuted({ targetType, targetId, muted: !muted }), 'mute-chat', muted ? 'شُغّلت تنبيهات المحادثة' : 'كُتمت تنبيهات المحادثة')) setMenu(null); }}><LammaIcon name="bell" />{isConversationMuted(lamma.notifications, targetType, targetId) ? 'تشغيل التنبيهات' : 'كتم تنبيهات المحادثة'}</button>{!group && <><button type="button" onClick={() => { setAction({ kind: 'remove', user: menu }); setMenu(null); }}>إزالة من الأصدقاء</button><button type="button" className="is-danger" onClick={() => { setAction({ kind: 'block', user: menu }); setMenu(null); }}>حظر الحساب</button><button type="button" onClick={() => { setAction({ kind: 'report', user: menu }); setMenu(null); }}>إبلاغ عن الحساب</button></>}</div></Modal>}
     {dialogsOwned && action && (action.groupId ? <GroupMessageAction action={action} lamma={lamma} social={social} onClose={() => setAction(null)} notify={notify} /> : <ActionDialog action={action} social={social} onClose={() => setAction(null)} onComplete={kind => { notify(kind === 'report' ? 'وصل بلاغك' : 'تمّ'); if (kind === 'block' || kind === 'remove') ui.show(); }} />)}

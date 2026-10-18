@@ -354,15 +354,29 @@ test('7 · a protocol mismatch ends the session instead of offering a retry', ()
   assert.match(errorText('CONFIG'), /حدّث صفحة اللعبة/);
 });
 
-test('anonymous room creation counts the device: the second free room needs Plus, another device does not', async (t) => {
+test('anonymous waiting rooms do not consume a device trial; used device trials still gate new rooms', async (t) => {
   const app = await startLocalServer({ port: 0 }); t.after(() => app.close());
   const body = (deviceId) => ({ ...newCredentials(), name: 'أحمد', avatar: 0, rounds: 5, ...(deviceId ? { deviceId } : {}) });
   const device = 'd'.repeat(32);
   assert.equal((await api(app, '/api/rooms', body(device))).status, 201);
   const second = await api(app, '/api/rooms', body(device));
-  assert.equal(second.status, 402); assert.equal(second.body.error, 'PLUS_REQUIRED');
+  assert.equal(second.status, 201);
+  await app.env.DB.prepare('INSERT INTO trials(user_id,game,created_at) VALUES(?,?,?)').bind(`device:${device}`, 'meenfina', Date.now()).run();
+  const played = await api(app, '/api/rooms', body(device));
+  assert.equal(played.status, 402); assert.equal(played.body.error, 'PLUS_REQUIRED');
   assert.equal((await api(app, '/api/rooms', body('e'.repeat(32)))).status, 201);
   assert.equal((await api(app, '/api/rooms', body(null))).status, 201, 'without a device id the client-side mark remains the gate');
+});
+
+test('two ready Fabraka players can start standard modes, while personal-owner and Meenfina still require three', () => {
+  globalThis.location ??= { href: 'https://game.example/#/room/123456' };
+  const members = ['h', 'p'].map((id, avatar) => ({ id, name: `لاعب ${avatar}`, avatar, ready: true, connected: true, left: false }));
+  const state = { code: '123456', game: 'fabraka', rounds: 3, hostId: 'h', members, settings: { mode: 'classic', writeSeconds: 45, discussionSeconds: 20 } };
+  const start = (value) => ui.lobby({ state: value, me: members[0], isHost: true, disabled: false, act() {} }).match(/<button[^>]*>ابدأ اللعب<\/button>/)?.[0];
+  assert.ok(start(state)); assert.doesNotMatch(start(state), /disabled/);
+  assert.match(start({ ...state, settings: { ...state.settings, mode: 'friends' } }), /disabled/);
+  assert.match(start({ ...state, game: 'meenfina' }), /disabled/);
+  assert.match(ui.lobby({ state, me: members[0], isHost: true, disabled: false, act() {} }), /تحدّي لشخصين/);
 });
 
 test('statements a room already showed go to the back of the next deck', () => {

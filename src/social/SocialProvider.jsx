@@ -6,7 +6,7 @@ import { SocialClient, emptySocialState } from './client.js';
 const SocialContext = createContext(null);
 export const useSocial = () => useContext(SocialContext);
 const METHODS = ['refresh','searchUsers','sendRequest','acceptRequest','rejectRequest','cancelRequest','openConversation','loadOlder',
-  'sendMessage','retryMessage','editMessage','deleteMessage','markRead','setTyping','removeFriend','blockUser','unblockUser','reportUser','registerConversation'];
+  'sendMessage','retryMessage','editMessage','deleteMessage','markRead','setTyping','removeFriend','blockUser','unblockUser','reportUser','registerConversation','receiveOwnMessage'];
 export function SocialProvider({ children }) {
   const account = useAccount(); const accountRef = useRef(account); accountRef.current = account;
   const clientRef = useRef(null);

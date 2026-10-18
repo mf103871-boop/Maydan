@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "status": "local-validation-in-progress",
+  "target": { "version": "1.8", "build": "17", "distribution": "TestFlight" },
+  "scope": [
+    "Group sender identity and resilient text outbox",
+    "Correct per-game room invitation capacity",
+    "Free room trial claimed at valid first match start, with atomic account/device claims",
+    "Independent authenticated social quotas for players sharing a network",
+    "Durable notifications dispatched after sender acknowledgement with delivery authorization",
+    "Reduced duplicate polling, history downloads and native call acceptance",
+    "Direct chat-to-room launch and authorized automatic invite join",
+    "Meaningful two-player standard online Fabraka with private answers and house decoys"
+  ],
+  "compatibility": {
+    "existingAccountsAndScoresPreserved": true,
+    "existingDirectMessageAPIsPreserved": true,
+    "friendsPersonalModeMinimum": 3,
+    "meenfinaMinimum": 3,
+    "fabrakaStandardOnlineMinimum": 2,
+    "appStoreReview171Modified": false,
+    "mandatoryUpdateActivated": false,
+    "publicFrontendDeployed": false
+  },
+  "requiredMigration": "0009_online_room_trials.sql",
+  "acceptance": {
+    "physicalIPhoneTested": false,
+    "physicalLatencyMeasured": false,
+    "publicReleaseApprovedByThisReceipt": false,
+    "note": "Browser fixtures validate call continuity and UI but do not prove native background audio or end-user network latency."
+  }
+}

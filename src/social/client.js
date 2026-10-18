@@ -166,6 +166,16 @@ export class SocialClient {
   findConversation(friendId) {
     return this.state.friends.find(f => f.id === friendId)?.conversationId || this.state.conversationList.find(c => c.user.id === friendId)?.id;
   }
+  receiveOwnMessage(message, conversationId = message?.conversationId) {
+    // Only a confirmed outbound message from this account can bypass a history
+    // fetch. Revoked friendships and callbacks from a previous account lose here.
+    const friend = this.state.friends.find(item => this.findConversation(item.id) === conversationId);
+    if (!this.userId || message?.senderId !== this.userId || !Number.isSafeInteger(message.seq) || message.seq < 1 || !friend ||
+      (message.conversationId && message.conversationId !== conversationId)) return false;
+    const current = this.state.conversations[friend.id] || emptyConversation();
+    this.conversation(friend.id, { id: conversationId, messages: mergeMessages(current.messages, [message], current.peerReadSeq) });
+    return true;
+  }
   async openConversation(friendId, { quiet = false } = {}) {
     const id = this.findConversation(friendId); if (!id) return;
     const epoch = this.epoch;

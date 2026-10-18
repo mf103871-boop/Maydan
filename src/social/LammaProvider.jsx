@@ -1,5 +1,6 @@
 import React, { createContext, useContext, useEffect, useRef, useState, useSyncExternalStore } from 'react';
 import { useAccount } from '../shared/account/context.js';
+import { resolveAccountServer } from '../shared/account/api.js';
 import { callNative, isNativeShell, onNativeEvent } from '../shared/account/native.js';
 import { usePlatform } from '../platform/context.js';
 import { navigate } from '../platform/router.js';
@@ -8,12 +9,14 @@ import { LammaClient, emptyLamma, lammaId } from './lamma-client.js';
 import { CallMedia, emptyMedia } from './media.js';
 import { socialInterruption } from './interruption.js';
 import { createCallAuthorization } from './call-authorization.js';
+import { LAMMA_POLL_MS, lammaPollDue, refreshesLamma, rechecksCall } from './sync-policy.js';
+import { joinSocialGameRoom } from './game-launch.js';
 
 const Context = createContext(null);
 export const useLamma = () => useContext(Context);
 const METHODS = ['createGroup', 'loadGroup', 'loadCallMembers', 'loadOlderGroup', 'sendGroupMessage', 'inviteGroupMembers', 'removeGroupMember',
   'leaveGroup', 'renameGroup', 'acceptGroupInvite', 'rejectGroupInvite', 'setGroupRole', 'transferGroupOwnership', 'selectGroup',
-  'markGroupRead', 'changeGroupMessage', 'sendVoiceNote', 'getVoiceUrl', 'setNotificationPreferences', 'setConversationMuted',
+  'markGroupRead', 'changeGroupMessage', 'retryGroupMessage', 'sendVoiceNote', 'getVoiceUrl', 'setNotificationPreferences', 'setConversationMuted',
   'sendGameInvite', 'rejectGameInvite', 'updateGroupAvatar', 'reportGroupMessage'];
 const ended = call => !call || ['ended', 'rejected', 'cancelled', 'missed', 'expired'].includes(call.status);
 const callEndNotice = reason => reason === 'ownership-lost' ? 'انتقلت المكالمة إلى جهازك الآخر.' :
@@ -37,7 +40,10 @@ export function LammaProvider({ children }) {
   const clientRef = useRef(null), mediaRef = useRef(null);
   if (!clientRef.current) {
     clientRef.current = new LammaClient({ request: (path, options) => accountRef.current.requestAuthenticated(path, options),
-      onDirectChange: () => socialRef.current?.refresh({ quiet: true }) });
+      onDirectChange: (message, conversationId) => {
+        if (message) socialRef.current?.receiveOwnMessage(message, conversationId);
+        return socialRef.current?.refresh({ quiet: true });
+      } });
     clientRef.current.actions = Object.fromEntries(METHODS.map(name => [name, clientRef.current[name].bind(clientRef.current)]));
   }
   if (!mediaRef.current) mediaRef.current = new CallMedia(setMedia);
@@ -65,16 +71,16 @@ export function LammaProvider({ children }) {
   useEffect(() => () => { engine.dispose().catch(() => {}); }, [engine]);
   useEffect(() => {
     if (!owner) return;
-    let timer;
-    const refresh = () => { if (document.hidden) return; client.refresh({ quiet: true }).catch(() => {}); };
+    let timer, lastRefreshAt = Date.now();
+    const refresh = () => { if (document.hidden) return; lastRefreshAt = Date.now(); client.refresh({ quiet: true }).catch(() => {}); };
     const event = e => {
-      if (['typing', 'pong'].includes(e.detail?.type)) return;
       const { type, reason } = e.detail || {};
       if ((type === 'refresh' && !['read', 'presence'].includes(reason)) || (type === 'group' && ['membership', 'removed', 'closed', 'deleted'].includes(reason)) ||
         (type === 'message' && reason === 'deleted')) client.invalidateAudio();
+      if (!refreshesLamma(e.detail)) return;
       clearTimeout(timer); timer = setTimeout(refresh, 200);
     };
-    const interval = setInterval(refresh, 15_000);
+    const interval = setInterval(() => { if (lammaPollDue(lastRefreshAt, Date.now(), socialRef.current?.connected)) refresh(); }, LAMMA_POLL_MS);
     window.addEventListener('maydan-social-event', event); window.addEventListener('online', refresh); document.addEventListener('visibilitychange', refresh);
     return () => { clearTimeout(timer); clearInterval(interval); window.removeEventListener('maydan-social-event', event); window.removeEventListener('online', refresh); document.removeEventListener('visibilitychange', refresh); };
   }, [client, owner]);
@@ -130,7 +136,10 @@ export function LammaProvider({ children }) {
   // The list intentionally omits ended and unauthorized calls. Ask for the exact
   // active call to distinguish a real revocation from a stale list response.
   useEffect(() => {
-    if (!ownedCallId || !owner) return;
+    // The native coordinator owns the same authorization check while locked or
+    // foregrounded, and emits authoritative end/ownership events. Duplicating it
+    // in WebKit doubled traffic on every iPhone without improving revocation.
+    if (!ownedCallId || !owner || isNativeShell()) return;
     const id = ownedCallId, epoch = client.epoch;
     let cancelled = false, checking = false;
     const authorization = createCallAuthorization();
@@ -158,9 +167,10 @@ export function LammaProvider({ children }) {
         if (reason) await terminate(reason);
       } finally { checking = false; }
     };
+    const event = e => { if (rechecksCall(e.detail, id)) check(); };
     const timer = setInterval(check, 5000); check();
-    window.addEventListener('maydan-social-event', check);
-    return () => { cancelled = true; clearInterval(timer); window.removeEventListener('maydan-social-event', check); };
+    window.addEventListener('maydan-social-event', event);
+    return () => { cancelled = true; clearInterval(timer); window.removeEventListener('maydan-social-event', event); };
   }, [ownedCallId, owner, client, engine]);
   const incomingCall = !ownedCall && safe.preferences.calls ? safe.calls.find(call => call.scope === 'direct' && call.initiatorId !== owner &&
     !ended(call) && call.expiresAt > Date.now() && call.participants?.some(p => p.userId === owner && ['invited', 'ringing'].includes(p.state)) &&
@@ -169,6 +179,9 @@ export function LammaProvider({ children }) {
   async function connect(action) {
     if (connecting.current || activeRef.current) throw new Error('لديك مكالمة جارية بالفعل.');
     connecting.current = true; const epoch = client.epoch, attempt = ++connectGeneration.current; let result;
+    // Fetch the web SDK alongside the authenticated call request, rather than
+    // waiting for its response to start loading it. This never opens a microphone.
+    engine.prepare().catch(() => {});
     try {
       const deviceId = await deviceReady.current; client.assert(epoch);
       if (!deviceId || attempt !== connectGeneration.current) throw new Error('تم إلغاء المكالمة.');
@@ -199,7 +212,12 @@ export function LammaProvider({ children }) {
     setNotificationPermission(result?.authorized ? 'granted' : 'denied'); return result;
   }
   async function acceptGameInvite(id) {
-    const result = await client.acceptGameInvite(id); navigate(`/room/${encodeURIComponent(result.roomCode)}`); return result;
+    const epoch = client.epoch, ownerId = ownerRef.current, account = accountRef.current;
+    const result = await client.acceptGameInvite(id); client.assert(epoch);
+    const joined = await joinSocialGameRoom({ account, roomCode: result.roomCode, server: resolveAccountServer(),
+      isCurrent: () => client.epoch === epoch && ownerRef.current === ownerId });
+    client.assert(epoch); navigate(`/room/${encodeURIComponent(result.roomCode)}`);
+    return { ...result, ...joined };
   }
   const notifications = { ...safe.preferences, enabled: safe.preferences.messages, permission: notificationPermission };
   return <Context.Provider value={{ ...safe, ...client.actions, notifications, activeCall: ownedCall, incomingCall, media: ownedMedia,

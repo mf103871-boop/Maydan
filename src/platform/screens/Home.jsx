@@ -137,7 +137,7 @@ export function Home() {
       <section className="home-tools" aria-label="الغرف واللاعبون">
       <button type="button" className="card online-home-card" onClick={() => navigate('/online')} onPointerDown={ripple}>
         <ClayStage className="clay-static"><GameArtwork game="meenfina" /></ClayStage>
-        <span><strong>اللّمّة من كل جوال</strong><small>غرف «مين فينا؟» و«فبركة» · ادخل برمز وابدأوا اللعب</small></span>
+        <span><strong>اللّمّة من كل جوال</strong><small>فبركة من شخصين · مين فينا من ثلاثة · ادخلوا برمز أو بدعوة</small></span>
         <IconBack className="home-tool-arrow" />
       </button>
       <button type="button" className="card roster-card" onClick={() => navigate('/players')} aria-label="دفتر اللاعبين" onPointerDown={ripple}>

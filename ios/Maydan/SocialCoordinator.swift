@@ -496,12 +496,20 @@ extension SocialCoordinator: CXProviderDelegate {
             do {
                 guard await SocialVoiceRecorder.permission() else { throw SocialNativeError.failed("MICROPHONE_DENIED") }
                 guard self.call?.id == current.id else { action.fail(); return }
-                let response = try await self.session.request("/api/social/calls/\(current.id.uuidString.lowercased())/accept", body: ["deviceId": self.session.deviceId])
-                guard self.call?.id == current.id,
-                      let connection = response["connection"] as? [String: String], let url = connection["url"],
-                      URL(string: url)?.scheme == "wss", URL(string: url)?.host?.hasSuffix(".livekit.cloud") == true,
-                      let token = connection["token"] else { throw SocialNativeError.failed("CALL_INVALID") }
-                self.call?.connection = (url, token)
+                // Foreground acceptance already received scoped credentials from
+                // the authenticated API before invoking CallKit. Only a cold or
+                // lock-screen answer needs to make that request here.
+                if current.connection == nil {
+                    let response = try await self.session.request("/api/social/calls/\(current.id.uuidString.lowercased())/accept", body: ["deviceId": self.session.deviceId])
+                    guard self.call?.id == current.id,
+                          let connection = response["connection"] as? [String: String], let url = connection["url"],
+                          URL(string: url)?.scheme == "wss", URL(string: url)?.host?.hasSuffix(".livekit.cloud") == true,
+                          let token = connection["token"] else { throw SocialNativeError.failed("CALL_INVALID") }
+                    self.call?.connection = (url, token)
+                }
+                guard self.call?.id == current.id, self.session.credential?.userId == current.userId else {
+                    throw SocialNativeError.failed("AUTH_REQUIRED")
+                }
                 try AVAudioSession.sharedInstance().setCategory(.playAndRecord, mode: .voiceChat, options: [.allowBluetooth, .mixWithOthers])
                 action.fulfill()
                 fulfilled = true

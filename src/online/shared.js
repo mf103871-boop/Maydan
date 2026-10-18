@@ -3,8 +3,11 @@ export const PROTOCOL = 1;
 export const FABRAKA_PROTOCOL = 3;
 export const ONLINE_GAMES = {
   meenfina: { name: 'مين فينا؟', min: 3, max: 12 },
-  fabraka: { name: 'فبركة', min: 3, max: 8 },
+  fabraka: { name: 'فبركة', min: 2, max: 8 },
 };
+// A personal truth round needs its owner and at least two writers. The other
+// Fabraka modes keep a real choice for two players by adding house decoys.
+export const minimumOnlinePlayers = (game, settings) => game === 'fabraka' && settings?.mode !== 'friends' ? 2 : 3;
 export const MIN_PLAYERS = 3;
 export const MAX_PLAYERS = 12;
 export const ROUND_OPTIONS = [5, 8, 12];
@@ -75,6 +78,8 @@ export const ERRORS = {
   AUTH: 'تعذرت العودة بهذا الجهاز. افتح غرفة جديدة أو انضم باسم آخر بعد انتهاء اللعبة.',
   HOST_ONLY: 'هذا الزر متاح لمضيف الغرفة.',
   NOT_READY: 'نحتاج ٣ لاعبين على الأقل، متصلين وجاهزين جميعًا.',
+  NOT_READY_DUO: 'نحتاج لاعبين على الأقل، متصلين وجاهزين جميعًا.',
+  TRIAL_OWNER_LEFT: 'منشئ الغرفة غادر قبل بدء المباراة. أنشئوا غرفة جديدة لبدء اللعب.',
   PHASE: 'تغيّرت الجولة. راجع الحالة الحالية وحاول مجددًا.',
   STALE: 'انتهت هذه الجولة. انتظر تحديث الشاشة.',
   VOTED: 'تم اعتماد تصويتك لهذه الجولة بالفعل.',

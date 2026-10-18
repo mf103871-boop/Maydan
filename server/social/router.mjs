@@ -9,6 +9,7 @@ import { routeLamma } from '../lamma/router.mjs';
 import { messageContent,enrichMessages,collectDeletedAudio } from '../lamma/media.mjs';
 import { wakeJobs } from '../lamma/notifications.mjs';
 import { revokeInvalidCalls } from '../lamma/calls.mjs';
+import { afterCommit } from '../lamma/after-commit.mjs';
 
 export const isSocialPath = (path) => path === '/api/social' || path.startsWith('/api/social/');
 async function notify(env, ids, event = { type: 'refresh' }) {
@@ -20,13 +21,14 @@ export async function deleteSocialUser(env, id) {
   await notify(env, [id, ...peers]);
 }
 
-export async function routeSocial(request, env, url = new URL(request.url), charge) {
+export async function routeSocial(request, env, url = new URL(request.url), charge, context) {
   if (!isSocialPath(url.pathname)) return null;
   if (!env.DB) fail('NOT_FOUND', 404);
-  if (charge) await charge(request.method === 'GET' ? 'socialRead' : 'socialWrite');
+  if (charge) await charge(request.method === 'GET' ? 'socialReadIP' : 'socialWriteIP');
   const auth = await requireSession(env, request);
   try {
-    let response = await dispatch(request, env, url, auth.user.id, Date.now(),auth.rotated?.id||auth.session.id);
+    if (charge && request.method === 'GET') await charge('socialRead', 'RATE_LIMIT', auth.user.id);
+    let response = await dispatch(request, env, url, auth.user.id, Date.now(),auth.rotated?.id||auth.session.id,context);
     if (response.ok && ['/api/social/me', '/api/social/state', '/api/social/search', '/api/social/friends', '/api/social/requests', '/api/social/blocks', '/api/social/conversations'].includes(url.pathname)) {
       const body = await response.json();
       const users = [body.user, body.request?.user, ...(body.users || []), ...(body.blocked || []), ...(body.friends || []),
@@ -46,12 +48,12 @@ export async function routeSocial(request, env, url = new URL(request.url), char
     return withRotation(errorResponse(error), auth.rotated);
   }
 }
-async function dispatch(request, env, url, id, now,sessionId) {
+async function dispatch(request, env, url, id, now,sessionId,context) {
   const method = request.method;
   const path = url.pathname.slice('/api/social'.length);
   const profile = await db.ensureProfile(env, id, now);
   if (method !== 'GET') await db.chargeUser(env, id, 'write', now);
-  const lamma=await routeLamma(request,env,path,id,sessionId);if(lamma)return lamma;
+  const lamma=await routeLamma(request,env,path,id,sessionId,context);if(lamma)return lamma;
   if (path === '/me' && method === 'GET') return json({ user: publicProfile(profile) });
   // One read for the whole social screen. The client used to issue five requests
   // per refresh, and a refresh followed every message, send and read receipt.
@@ -124,8 +126,10 @@ async function dispatch(request, env, url, id, now,sessionId) {
     const body = await readJson(request, 20_480);
     const content=await messageContent(env,id,'direct',messages[1],body);
     const result = await db.sendMessage(env, id, messages[1], content.text, clientIdOf(body.clientId), now,content);
-    await notify(env, [id, result.otherId], { type: 'message', reason: 'message', conversationId: result.message.conversationId, messageSeq: result.message.seq });
-    await wakeJobs(env);
+    await afterCommit(context, () => Promise.allSettled([
+      db.areFriends(env, id, result.otherId).then(allowed => allowed && notify(env, [id, result.otherId], { type: 'message', reason: 'message', conversationId: result.message.conversationId, messageSeq: result.message.seq })),
+      wakeJobs(env),
+    ]));
     return json({ message: result.message });
   }
   const message = /^\/messages\/([0-9]+)$/.exec(path);

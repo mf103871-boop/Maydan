@@ -13,4 +13,5 @@ export const leaveRoom = (room, id, now) => model(room).leaveRoom(room, id, now)
 export const action = (room, id, command, now, deck) => model(room).action(room, id, command, now, deck);
 export const tick = (room, now) => model(room).tick(room, now);
 export const nextAlarm = (room, now) => model(room).nextAlarm(room, now);
-export const snapshot = (room, id, now) => ({ ...model(room).snapshot(room, id, now), game: room.game || 'meenfina' });
+export const snapshot = (room, id, now) => ({ ...model(room).snapshot(room, id, now), game: room.game || 'meenfina',
+  trialStarted: Boolean(room.trialStarted), ...(room.trialOwnerId ? { trialOwnerId: room.trialOwnerId } : {}) });

@@ -41,7 +41,7 @@ export function secured(response) {
   return new Response(response.body, { status: response.status, statusText: response.statusText, headers });
 }
 export default {
-  async fetch(request, env) {
+  async fetch(request, env, context) {
     const url = new URL(request.url);
     if (['/api/legal/privacy', '/api/legal/privacy/'].includes(url.pathname) && ['GET', 'HEAD'].includes(request.method)) {
       return privacyPageResponse(request.method);
@@ -49,7 +49,7 @@ export default {
     if (url.pathname === '/api' || url.pathname.startsWith('/api/') || url.pathname === '/health') {
       // أصل الموقع نفسه دائمًا مسموح، ويُضاف إليه EXTRA_ORIGINS (مخطط تطبيق iOS مثلًا).
       const extra = String(env.EXTRA_ORIGINS || '').split(',').map((value) => value.trim()).filter(Boolean);
-      return routeRequest(request, { ...env, ALLOWED_ORIGINS: [url.origin, ...extra].join(',') });
+      return routeRequest(request, { ...env, ALLOWED_ORIGINS: [url.origin, ...extra].join(',') }, context);
     }
     return secured(await env.ASSETS.fetch(request));
   },

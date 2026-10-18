@@ -239,6 +239,13 @@ html[data-menu-nav-visible] .lamma-launcher { display: none; }
   .lamma-page-panel .lamma-panel-head { padding-inline: 18px; }
   .lamma-page-panel .lamma-panel-title h2 { font-size: 24px; }
 }
+.lamma-game-options { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 10px; margin-block: 16px; }
+.lamma-game-options button { display: flex; flex-direction: column; align-items: center; gap: 7px; min-width: 0; min-height: 164px; padding: 16px 10px; color: var(--ink,#35224a); background: var(--paper,#fffaf1); border: 2px solid #e8ded0; border-radius: 20px; font: inherit; cursor: pointer; }
+.lamma-game-options button[aria-pressed="true"] { border-color: #16878b; background: #e5f4ef; box-shadow: 0 3px 0 #c3dfd8; }
+.lamma-game-options button:focus-visible { outline: 3px solid #82519b; outline-offset: 3px; }
+.lamma-game-options button strong { font-size: 20px; }
+.lamma-game-options button span { font-size: 14px; }
+.lamma-game-options button small { line-height: 1.5; color: #766a7c; }
 @media (orientation: landscape) and (max-height: 540px) {
   .lamma-page-panel .lamma-panel-head { padding-block: 8px; }
   .lamma-page-panel .lamma-panel-title h2 { font-size: 20px; }
@@ -250,3 +257,8 @@ html[data-menu-nav-visible] .lamma-launcher { display: none; }
   .lamma-page-panel .lamma-search { margin-bottom: 6px; min-height: 38px; }
   .lamma-page-panel .lamma-friend-filters { margin-bottom: 4px; }
 }
+
+.lamma-game-dialog { display: flex; flex-direction: column; overflow: hidden; }
+.lamma-game-dialog .modal-head, .lamma-game-dialog .modal-foot { flex-shrink: 0; }
+.lamma-game-dialog .modal-body { min-height: 0; overflow-y: auto; overscroll-behavior: contain; }
+.lamma-game-dialog .lamma-text-button { max-width: none; width: fit-content; font-size: 13px; padding-inline: 4px; }

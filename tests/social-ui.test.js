@@ -9,7 +9,7 @@ const root = process.cwd();
 mkdirSync(path.join(root, '.cache'), { recursive: true });
 const dir = mkdtempSync(path.join(root, '.cache', 'social-ui-'));
 after(() => rmSync(dir, { recursive: true, force: true }));
-await build({ stdin: { contents: `import React from 'react'; import {renderToStaticMarkup} from 'react-dom/server'; import {SocialView,MessageBubble,dayLabel,presenceLabel,messageKey} from './src/social/SocialScreen.jsx'; export {dayLabel,presenceLabel,messageKey}; export const screen=p=>renderToStaticMarkup(React.createElement(SocialView,p)).replace(/<style>[\\s\\S]*?<\\/style>/g,''); export const bubble=p=>renderToStaticMarkup(React.createElement(MessageBubble,p));`, resolveDir: root, loader: 'jsx' },
+await build({ stdin: { contents: `import React from 'react'; import {renderToStaticMarkup} from 'react-dom/server'; import {SocialView,MessageBubble,Conversation,messageSender,dayLabel,presenceLabel,messageKey} from './src/social/SocialScreen.jsx'; export {dayLabel,presenceLabel,messageKey,messageSender}; export const screen=p=>renderToStaticMarkup(React.createElement(SocialView,p)).replace(/<style>[\\s\\S]*?<\\/style>/g,''); export const bubble=p=>renderToStaticMarkup(React.createElement(MessageBubble,p)); export const conversation=p=>renderToStaticMarkup(React.createElement(Conversation,p));`, resolveDir: root, loader: 'jsx' },
   outfile: path.join(dir, 'render.mjs'), bundle: true, platform: 'node', format: 'esm', packages: 'external', jsx: 'automatic', loader: { '.css': 'text', '.webp': 'dataurl', '.woff2': 'dataurl' }, logLevel: 'silent' });
 const render = await import(pathToFileURL(path.join(dir, 'render.mjs')));
 const now = new Date(2026, 8, 25, 12).getTime();
@@ -59,6 +59,20 @@ test('pending and failed messages distinguish retry from sent editing', () => {
   assert.match(failed, /لم تُرسل/); assert.match(failed, /إعادة الإرسال/); assert.doesNotMatch(failed, /خيارات رسالتك/);
   const sent = render.bubble({ message, mine: true });
   assert.match(sent, /خيارات رسالتك/); assert.match(sent, /أُرسلت/); assert.doesNotMatch(sent, /إعادة الإرسال/);
+});
+
+test('group conversations identify each sender with their profile and keep direct chats uncluttered', () => {
+  const members = [{ id: 'peer', name: 'أحمد', avatarPreset: 'falcon' }, { userId: 'second', user: { id: 'second', name: 'ليلى', avatarPreset: 'moon' } }];
+  const messages = [{ ...message, senderId: 'peer' }, { ...message, seq: 24, senderId: 'second' }, { ...message, seq: 25, senderId: 'me' }];
+  const props = { friend: { id: 'g', name: 'الشلة' }, conversation: { group: { id: 'g' }, members, messages }, account, social: {}, notify() {} };
+  const html = render.conversation(props);
+  assert.match(html, /aria-label="رسالة من أحمد"/); assert.match(html, /aria-label="رسالة من ليلى"/);
+  assert.equal((html.match(/class="social-message-sender"/g) || []).length, 3);
+  assert.match(html, /<bdi>أنت<\/bdi>/);
+  assert.equal(render.messageSender(messages[1], props.conversation, account).name, 'ليلى');
+  assert.equal(render.messageSender({ senderId: 'former' }, props.conversation, account).name, 'عضو اللّمة');
+  const direct = render.conversation({ ...props, friend, conversation: { messages } });
+  assert.doesNotMatch(direct, /social-message-sender/);
 });
 
 test('deleted messages hide prior text and action controls; user text is escaped', () => {

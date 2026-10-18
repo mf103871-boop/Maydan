@@ -18,6 +18,7 @@ export async function cleanup(env, now = Date.now()) {
   const codes = await run(env, 'DELETE FROM auth_codes WHERE expires_at < ?', now - 3_600_000);
   await run(env, 'DELETE FROM auth_code_attempts WHERE expires_at < ?', now - 3_600_000);
   const events = await run(env, 'DELETE FROM webhook_events WHERE received_at < ?', now - WEBHOOK_RETENTION_MS);
+  await run(env, 'DELETE FROM online_room_trial_claims WHERE created_at < ?', now - 86_400_000);
   const deletions = await run(env, 'DELETE FROM account_deletions WHERE created_at < ?', now - DELETION_STALE_MS);
   const messages = await run(env, 'DELETE FROM social_messages WHERE created_at < ?', now - messageRetentionMs(env));
   const reports = await run(env, 'DELETE FROM social_reports WHERE created_at < ?', now - reportRetentionMs(env));

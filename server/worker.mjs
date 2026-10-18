@@ -1,7 +1,7 @@
 import { Room } from './room.mjs';
 import { readJson, json, errorResponse, sha256, credentials } from './protocol.mjs';
 import { fail } from './room-model.mjs';
-import { isPublicAccountPath, markRoomTrial, roomGate, routeAccounts } from './accounts/router.mjs';
+import { isPublicAccountPath, roomGate, routeAccounts } from './accounts/router.mjs';
 import { cleanup } from './accounts/cleanup.mjs';
 import { readSession, rotations, SESSION_HEADER } from './accounts/session.mjs';
 import packageInfo from '../package.json' with { type: 'json' };
@@ -22,12 +22,16 @@ export { Room };
 // Keys contain only a digest; no raw address is persisted. These are not DDoS protection.
 export const LIMIT_WINDOWS = { create: 600_000, join: 60_000, leave: 60_000, socket: 60_000,
   auth: 600_000, me: 60_000, billing: 600_000, trial: 60_000, socialRead: 60_000, socialWrite: 60_000,
+  socialReadIP: 60_000, socialWriteIP: 60_000,
   profileRead: 60_000, profileWrite: 60_000, profileImage: 60_000, webhook: 60_000 };
 // حدّ كل نوع داخل نافذته. مسارات الحسابات أقلّ سخاءً من قراءة الحالة لأنها تكتب أو تنادي مزوّدًا.
 // `webhook` سخيّ عمدًا (إشعارات آبل قد تصل دفعة)، لكنه يمنع سيلًا من عنوان واحد
 // على مسار عام يتحقق من توقيع قبل أي مصادقة.
 export const LIMITS = { create: 8, join: 40, leave: 100, socket: 100,
   auth: 40, me: 120, billing: 30, trial: 60, socialRead: 240, socialWrite: 60,
+  // A party shares one router. Keep a broad network flood guard, then enforce
+  // the existing read quota per authenticated account (writes also have D1 quotas).
+  socialReadIP: 2400, socialWriteIP: 1200,
   profileRead: 240, profileWrite: 30, profileImage: 600, webhook: 300 };
 export class RequestLimiter {
   constructor(ctx) { this.ctx = ctx; }
@@ -77,7 +81,7 @@ async function roomAccountId(request, env) {
   try { return (await readSession(env, request, { rotate: false }))?.user.id || null; }
   catch (error) { if (error.status === 401) return null; throw error; }
 }
-export async function routeRequest(request, env) {
+export async function routeRequest(request, env, context) {
   const url = new URL(request.url);
   if (url.pathname === '/api/app-policy/ios') return iosAppPolicy(request, env);
   if(url.pathname==='/api/social/livekit/webhook'){try{return await liveKitWebhook(request,env);}catch(error){return errorResponse(error);}}
@@ -100,13 +104,20 @@ export async function routeRequest(request, env) {
   if (request.method === 'OPTIONS') return new Response(null, { status: 204, headers });
   let response; let limiter = null; let charged = null;
   // حصّة واحدة لكل عنوان يوميًا، تتفرّع بالنوع؛ المفتاح ملخّص فقط ولا يُخزَّن العنوان.
-  async function charge(kind, code = 'RATE_LIMIT') {
-    if (!limiter) {
+  async function charge(kind, code = 'RATE_LIMIT', authenticatedUserId = null) {
+    let target = limiter;
+    if (authenticatedUserId) {
+      // Only the verified session may select this bucket. Raw tokens, user
+      // supplied IDs and the IP must never be substitutes for an account ID.
+      const key = await sha256(`${new Date().toISOString().slice(0, 10)}:social-account:${authenticatedUserId}`);
+      target = env.LIMITERS.get(env.LIMITERS.idFromName(key));
+    } else if (!target) {
       const address = request.headers.get('cf-connecting-ip') || 'local';
       const key = await sha256(`${new Date().toISOString().slice(0, 10)}:${address}`);
       limiter = env.LIMITERS.get(env.LIMITERS.idFromName(key));
+      target = limiter;
     }
-    const limited = await limiter.fetch(new Request('https://internal/limit', { method: 'POST', body: JSON.stringify({ kind }) }));
+    const limited = await target.fetch(new Request('https://internal/limit', { method: 'POST', body: JSON.stringify({ kind }) }));
     if (!limited.ok) fail(code, 429);
   }
   try {
@@ -114,7 +125,7 @@ export async function routeRequest(request, env) {
     response = await routeSocialLive(request, env, url, charge)
       || await routeModeration(request, env, url, charge)
       || await routeProfiles(request, env, url, charge)
-      || await routeSocial(request, env, url, charge)
+      || await routeSocial(request, env, url, charge, context)
       || await routeAccounts(request, env, url, charge);
     if (!response) {
       const create = request.method === 'POST' && url.pathname === '/api/rooms';
@@ -128,12 +139,13 @@ export async function routeRequest(request, env) {
       if (create) {
         const input = await readJson(request);
         await credentials(input); // Validate before allocating a room.
-        // إنشاء الغرفة يُحسب مباراة للّعبة: المسجّل غير المشترك يُرفض بـPLUS_REQUIRED
-        // بعد تجربته، والمجهول يبقى مسموحًا (علامته محلية عند العميل).
+        // Check eligibility now, but consume the trial only at the room's first
+        // successful match start. Never trust a gate supplied by the browser.
         const gate = await roomGate(request, env, input);
         // Ignore any account ID supplied by the client. The seat's account
         // association comes only from the authenticated bearer session.
         input.accountUserId = gate?.userId || null;
+        input.roomTrialGate = gate;
         // Attempt 0 stays derived from the token so a retried creation is idempotent
         // without a global directory; later attempts are random so a collision run
         // never reproduces the same five codes.
@@ -149,7 +161,6 @@ export async function routeRequest(request, env) {
         }
         // Exhausted candidates are a code-space collision, not a flood by this phone.
         if (!response) fail('COLLISION', 409);
-        if (response.status === 201) await markRoomTrial(env, gate);
       } else {
         const room = env.ROOMS.get(env.ROOMS.idFromName(match[1]));
         if (kind === 'join') {

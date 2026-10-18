@@ -114,6 +114,17 @@ export class CallMedia {
     this.nativeCall = null;
   }
   update(patch) { this.state = { ...this.state, ...patch }; this.onChange(this.state); }
+  prepare() {
+    if (isNativeShell()) return Promise.resolve(null);
+    if (!this.sdk) {
+      let pending;
+      try { pending = Promise.resolve(this.loadSDK ? this.loadSDK() : import(new URL(LIVEKIT_MODULE, document.baseURI).href)); }
+      catch (error) { return Promise.reject(error); }
+      this.sdk = pending;
+      pending.catch(() => { if (this.sdk === pending) this.sdk = null; });
+    }
+    return this.sdk;
+  }
   async connect({ call, connection }, { muted = false } = {}) {
     if (!this.accountId) throw mediaError('سجّل الدخول أولًا.', 'AUTH_REQUIRED');
     claim(this.owner); const epoch = ++this.generation;
@@ -130,7 +141,7 @@ export class CallMedia {
       }
       // The web SDK is a separate, versioned local module. Native iPhone calls
       // never fetch it, and ordinary game startup never parses it.
-      const { Room, RoomEvent, Track } = await (this.loadSDK ? this.loadSDK() : import(new URL(LIVEKIT_MODULE, document.baseURI).href));
+      const { Room, RoomEvent, Track } = await this.prepare();
       if (epoch !== this.generation) return;
       const room = new Room({ adaptiveStream: false, dynacast: true, audioCaptureDefaults: { echoCancellation: true, noiseSuppression: true, autoGainControl: true } });
       this.room = room;

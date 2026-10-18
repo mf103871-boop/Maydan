@@ -4,6 +4,7 @@ import { buildFabrakaDeck } from './fabraka-content.mjs';
 import { credentials, readJson, json, errorResponse, shuffled } from './protocol.mjs';
 import { bindSeatAccount, prepareRoomStats } from './room-stats.mjs';
 import { recordOnlineResult } from './profiles/db.mjs';
+import { consumeRoomTrial } from './accounts/router.mjs';
 const SOCKET_IDLE = 45_000;
 const STATS_RETRY = 30_000;
 const STATS_MAX_ATTEMPTS = 48; // a day of half-minute retries
@@ -171,6 +172,10 @@ export class Room {
             return json({ code: this.room.code, id: input.id, game: this.room.game || 'meenfina' });
           }
           const created = createRoom(code, input, Date.now());
+          created.roomTrialGate = input.roomTrialGate || null;
+          created.roomTrialClaim = crypto.randomUUID();
+          created.trialOwnerId = input.id;
+          created.trialStarted = false;
           bindSeatAccount(created, input.id, input.accountUserId);
           // Reject empty topic selections while the creator can still edit them,
           // rather than trapping an assembled group in an unstartable lobby.
@@ -184,7 +189,8 @@ export class Room {
           const {accountUserId}=await readJson(request);
           if(typeof accountUserId!=='string'||!this.room.members.some(m=>!m.left&&m.accountUserId===accountUserId))fail('NOT_FOUND',404);
           if(this.room.phase!=='lobby')fail('STARTED',409);
-          if(this.room.members.filter(m=>!m.left).length>=12)fail('FULL',409);
+          const fabraka = this.room.game === 'fabraka';
+          if(this.room.members.filter(m=>!m.left).length >= (fabraka ? 8 : 12))fail(fabraka ? 'FULL_FABRAKA' : 'FULL',409);
           return json({game:this.room.game||'meenfina',expiresAt:this.room.expiresAt});
         }
         if (request.method === 'POST' && endpoint === 'join') {
@@ -259,6 +265,13 @@ export class Room {
         const candidate = structuredClone(this.room);
         const deck = command.type === 'start' ? (candidate.game === 'fabraka' ? buildFabrakaDeck(candidate) : meenfinaDeck(candidate)) : [];
         action(candidate, a.id, command, now, deck);
+        if (command.type === 'start' && !candidate.trialStarted) {
+          // Validate the engine action first. Failed readiness/settings never
+          // spend the allowance; a failed DO write can retry this private claim.
+          await consumeRoomTrial(this.env, candidate.roomTrialGate, candidate.roomTrialClaim, now,
+            candidate.members.some((member) => member.id === candidate.trialOwnerId && !member.left));
+          candidate.trialStarted = true;
+        }
         await this.commit(candidate);
         this.send(ws, { type: 'ack', requestId, ok: true });
       } catch (error) {

@@ -39,7 +39,7 @@ export async function blobBase64(blob) {
 export class LammaClient {
   constructor({ request, onDirectChange = () => {}, makeURL = blob => URL.createObjectURL(blob), revokeURL = url => URL.revokeObjectURL(url) }) {
     this.request = request; this.onDirectChange = onDirectChange; this.makeURL = makeURL; this.revokeURL = revokeURL;
-    this.state = emptyLamma(); this.userId = null; this.epoch = 0; this.authorizationEpoch = 0; this.listeners = new Set(); this.urls = new Map(); this.reads = new Map(); this.groupVersions = new Map(); this.pendingText = new Map(); this.pendingInvites = new Map(); this.pendingVoice = new WeakMap();
+    this.state = emptyLamma(); this.userId = null; this.epoch = 0; this.authorizationEpoch = 0; this.listeners = new Set(); this.urls = new Map(); this.reads = new Map(); this.groupVersions = new Map(); this.pendingText = new Map(); this.sendingText = new Map(); this.pendingInvites = new Map(); this.pendingVoice = new WeakMap();
     this.callContext = null; this.callMembersGeneration = 0; this.pendingCallMembers = new Map(); this.revokedCallGroups = new Set();
     this.subscribe = fn => { this.listeners.add(fn); return () => this.listeners.delete(fn); };
     this.getSnapshot = () => this.state;
@@ -73,7 +73,7 @@ export class LammaClient {
     if (this.revokedCallGroups.has(id)) throw Object.assign(new Error(ERRORS.FORBIDDEN), { code: 'FORBIDDEN' });
   }
   invalidateAudio() { this.authorizationEpoch++; this.invalidateCallMembers(); for (const url of this.urls.values()) this.revokeURL(url); this.urls.clear(); }
-  stop() { this.epoch++; this.userId = null; this.activeGroup = null; this.callContext = null; this.refreshing = null; this.reads.clear(); this.groupVersions.clear(); this.pendingText.clear(); this.pendingInvites.clear(); this.pendingVoice = new WeakMap(); this.revokedCallGroups.clear(); this.invalidateAudio(); this.update(emptyLamma()); }
+  stop() { this.epoch++; this.userId = null; this.activeGroup = null; this.callContext = null; this.refreshing = null; this.reads.clear(); this.groupVersions.clear(); this.pendingText.clear(); this.sendingText.clear(); this.pendingInvites.clear(); this.pendingVoice = new WeakMap(); this.revokedCallGroups.clear(); this.invalidateAudio(); this.update(emptyLamma()); }
   async refresh({ quiet = false } = {}) {
     if (!this.userId) return;
     if (this.refreshing) return this.refreshing;
@@ -90,6 +90,7 @@ export class LammaClient {
         // already in flight, including quiet reads with no conversation entry.
         for (const id of new Set([...this.groupVersions.keys(), ...Object.keys(this.state.groupConversations)]))
           if (!allowed.has(id)) this.groupVersions.set(id, (this.groupVersions.get(id) || 0) + 1);
+        for (const [clientId, message] of this.pendingText) if (!allowed.has(message.groupId)) this.pendingText.delete(clientId);
         const callGroup = this.callContext?.scope === 'group' ? this.callContext.conversationId : null;
         if (callGroup) {
           const before = this.state.groups.find(group => group.id === callGroup);
@@ -108,6 +109,11 @@ export class LammaClient {
     })(); this.refreshing = task; return task;
   }
   group(id, patch) { this.update({ groupConversations: { ...this.state.groupConversations, [id]: { messages: [], ...this.state.groupConversations[id], ...patch } } }); }
+  publishGroupMessage(id, message) {
+    // A history snapshot started before this acknowledgement must not erase it.
+    this.groupVersions.set(id, (this.groupVersions.get(id) || 0) + 1);
+    this.group(id, { messages: mergeMessages(this.state.groupConversations[id]?.messages || [], [message]), loading: false, loadingOlder: false });
+  }
   selectGroup(id) { this.activeGroup = id || null; }
   async loadCallMembers(id) {
     const epoch = this.epoch, authorizationEpoch = this.authorizationEpoch, generation = this.callMembersGeneration;
@@ -140,13 +146,19 @@ export class LammaClient {
       const [detail, history] = await Promise.all([this.call(`/groups/${enc(id)}`), this.call(`/groups/${enc(id)}/messages`)]);
       this.assertVisibility(epoch, authorizationEpoch, id, version);
       // Replace the current visibility window: removed/blocked senders must disappear.
-      this.group(id, { ...detail, ...history, messages: history.messages || [], loading: false, loadingOlder: false, error: '' });
+      // Keep only our unsent outbox while replacing the authorized history window.
+      // Previously a quiet refresh erased failed messages before they could be retried.
+      const outbox = (this.state.groupConversations[id]?.messages || []).filter(message => !Number.isSafeInteger(message.seq) && message.senderId === this.userId);
+      const messages = mergeMessages(outbox, history.messages || []);
+      for (const message of messages) if (Number.isSafeInteger(message.seq)) this.pendingText.delete(message.clientId);
+      this.group(id, { ...detail, ...history, messages, loading: false, loadingOlder: false, error: '' });
       if (this.callContext?.scope === 'group' && this.callContext.conversationId === id && callMembersGeneration === this.callMembersGeneration && !this.revokedCallGroups.has(id))
         this.update({ callMembers: { ...this.state.callMembers, [id]: normalizedMembers(detail.members) } });
       return this.state.groupConversations[id];
     } catch (e) {
       if (epoch === this.epoch && version === this.groupVersions.get(id) && authorizationEpoch === this.authorizationEpoch) {
         this.group(id, { loading: false, error: e.message, ...(inaccessible(e) ? { messages: [], members: [] } : {}) });
+        if (inaccessible(e)) for (const [clientId, message] of this.pendingText) if (message.groupId === id) this.pendingText.delete(clientId);
         if (inaccessible(e) && this.callContext?.scope === 'group' && this.callContext.conversationId === id) {
           this.revokedCallGroups.add(id); this.invalidateCallMembers();
         }
@@ -185,14 +197,41 @@ export class LammaClient {
   transferGroupOwnership(id, userId) { return this.groupAction(id, '/ownership', 'POST', { userId }); }
   async sendGroupMessage(id, text, clientId) {
     const epoch = this.epoch, authorizationEpoch = this.authorizationEpoch;
-    const previous = this.pendingText.get(id);
-    clientId ||= previous?.text === text ? previous.clientId : lammaId();
-    this.pendingText.set(id, { text, clientId });
-    const result = await this.call(`/groups/${enc(id)}/messages`, { method: 'POST', body: { kind: 'text', text, clientId } });
-    this.assertVisibility(epoch, authorizationEpoch);
-    if (this.pendingText.get(id)?.clientId === clientId) this.pendingText.delete(id);
-    this.group(id, { messages: mergeMessages(this.state.groupConversations[id]?.messages || [], [result.message]) });
-    this.refresh({ quiet: true }).catch(() => {}); return result.message;
+    this.assert(epoch); text = String(text || '').trim();
+    if (!text || text.length > 2000) throw Object.assign(new Error('اكتب رسالة من حرف إلى 2000 حرف.'), { code: 'INVALID' });
+    const previous = [...this.pendingText.values()].find(message => message.groupId === id && message.text === text);
+    clientId ||= previous?.clientId || lammaId();
+    const pending = this.pendingText.get(clientId) || { groupId: id, conversationId: id, senderId: this.userId,
+      kind: 'text', text, clientId, createdAt: Date.now(), status: 'pending' };
+    if (pending.groupId !== id || pending.text !== text) throw Object.assign(new Error('تغيّرت الرسالة. أعد المحاولة.'), { code: 'CONFLICT' });
+    if (this.sendingText.has(clientId)) return this.sendingText.get(clientId);
+    this.pendingText.set(clientId, pending);
+    const messages = this.state.groupConversations[id]?.messages || [];
+    this.group(id, { messages: messages.some(message => message.clientId === clientId)
+      ? messages.map(message => message.clientId === clientId && !Number.isSafeInteger(message.seq) ? { ...message, status: 'pending' } : message)
+      : [...messages, { ...pending, status: 'pending' }] });
+    const task = (async () => {
+      try {
+        const result = await this.call(`/groups/${enc(id)}/messages`, { method: 'POST', body: { kind: 'text', text, clientId } });
+        this.assertVisibility(epoch, authorizationEpoch);
+        if (!this.state.groupConversations[id]) throw Object.assign(new Error('تغيّرت صلاحية المحادثة.'), { code: 'STALE' });
+        this.pendingText.delete(clientId);
+        this.publishGroupMessage(id, result.message);
+        this.refresh({ quiet: true }).catch(() => {}); return result.message;
+      } catch (error) {
+        if (epoch === this.epoch && this.state.groupConversations[id]) {
+          if (inaccessible(error)) {
+            this.pendingText.delete(clientId); this.group(id, { messages: [], members: [], error: error.message });
+          } else this.group(id, { messages: this.state.groupConversations[id].messages.map(message => message.clientId === clientId && !Number.isSafeInteger(message.seq) ? { ...message, status: 'failed' } : message) });
+        }
+        throw error;
+      } finally { if (this.sendingText.get(clientId) === task) this.sendingText.delete(clientId); }
+    })();
+    this.sendingText.set(clientId, task); return task;
+  }
+  retryGroupMessage(id, clientId) {
+    const message = this.state.groupConversations[id]?.messages.find(value => value.clientId === clientId && value.status === 'failed' && value.senderId === this.userId && !Number.isSafeInteger(value.seq));
+    return message ? this.sendGroupMessage(id, message.text, clientId) : Promise.resolve();
   }
   async changeGroupMessage(id, seq, text) {
     const epoch = this.epoch;
@@ -206,20 +245,37 @@ export class LammaClient {
     this.update({ groups: this.state.groups.map(g => g.id === id ? { ...g, unreadCount: 0 } : g) });
   }
   async sendVoiceNote({ targetType, targetId, blob, durationMs, clientId }) {
-    const epoch = this.epoch; this.assert(epoch);
+    const epoch = this.epoch, authorizationEpoch = this.authorizationEpoch; this.assert(epoch);
     if (!blob || blob.size > 3 * 1024 * 1024 || durationMs > 120_000 || durationMs <= 0) throw new Error('مدة التسجيل دقيقتان كحد أقصى.');
+    if (targetType === 'group' && !this.state.groupConversations[targetId]) this.group(targetId, {});
     const key = `${targetType}:${targetId}`;
     let attempts = this.pendingVoice.get(blob); if (!attempts) { attempts = new Map(); this.pendingVoice.set(blob, attempts); }
-    clientId ||= attempts.get(key) || lammaId(); attempts.set(key, clientId);
-    const dataBase64 = await blobBase64(blob); this.assert(epoch);
-    const { attachment } = await this.call('/attachments', { method: 'POST', timeout: 60_000,
-      body: { scope: targetType, conversationId: targetId, clientId, dataBase64, mimeType: blob.type.split(';')[0], durationMs: Math.round(durationMs) } });
-    this.assert(epoch);
-    const path = targetType === 'group' ? `/groups/${enc(targetId)}/messages` : `/conversations/${enc(targetId)}/messages`;
-    const result = await this.call(path, { method: 'POST', body: { kind: 'voice', attachmentId: attachment.id, clientId } });
-    this.assert(epoch);
-    if (targetType === 'group') await this.loadGroup(targetId, { quiet: true }); else await this.onDirectChange();
-    this.assert(epoch); return result.message;
+    let attempt = attempts.get(key);
+    if (!attempt || (clientId && attempt.clientId !== clientId)) { attempt = { clientId: clientId || lammaId() }; attempts.set(key, attempt); }
+    if (attempt.sending) return attempt.sending;
+    clientId = attempt.clientId;
+    const task = (async () => {
+      // A confirmed upload is reusable after a lost message acknowledgement.
+      // The message POST still rechecks membership and attachment ownership.
+      if (!attempt.attachment) {
+        const dataBase64 = await blobBase64(blob); this.assertVisibility(epoch, authorizationEpoch);
+        const result = await this.call('/attachments', { method: 'POST', timeout: 60_000,
+          body: { scope: targetType, conversationId: targetId, clientId, dataBase64, mimeType: blob.type.split(';')[0], durationMs: Math.round(durationMs) } });
+        this.assertVisibility(epoch, authorizationEpoch); attempt.attachment = result.attachment;
+      }
+      const path = targetType === 'group' ? `/groups/${enc(targetId)}/messages` : `/conversations/${enc(targetId)}/messages`;
+      const result = await this.call(path, { method: 'POST', body: { kind: 'voice', attachmentId: attempt.attachment.id, clientId } });
+      this.assertVisibility(epoch, authorizationEpoch);
+      if (targetType === 'group') {
+        if (!this.state.groupConversations[targetId]) throw Object.assign(new Error('تغيّرت صلاحية المحادثة.'), { code: 'STALE' });
+        this.publishGroupMessage(targetId, result.message);
+        this.refresh({ quiet: true }).catch(() => {});
+      } else Promise.resolve().then(() => { this.assertVisibility(epoch, authorizationEpoch); return this.onDirectChange(result.message, targetId); }).catch(() => {});
+      // Sending finishes at the server acknowledgement, never after extra history downloads.
+      return result.message;
+    })();
+    attempt.sending = task;
+    try { return await task; } finally { if (attempt.sending === task) attempt.sending = null; }
   }
   async getVoiceUrl(id) {
     const epoch = this.epoch;
@@ -243,13 +299,17 @@ export class LammaClient {
     return this.setNotificationPreferences({ mutedConversations: muted ? [...rest, { scope: targetType, conversationId: targetId }] : rest });
   }
   async sendGameInvite({ targetType, targetId, roomCode, clientId }) {
-    const epoch = this.epoch;
+    const epoch = this.epoch, authorizationEpoch = this.authorizationEpoch;
     const pendingKey = JSON.stringify([targetType, targetId, roomCode]);
     clientId ||= this.pendingInvites.get(pendingKey) || lammaId(); this.pendingInvites.set(pendingKey, clientId);
     const result = await this.call('/room-invitations', { method: 'POST', body: { scope: targetType, conversationId: targetId, roomCode, clientId } });
-    this.assert(epoch);
+    this.assertVisibility(epoch, authorizationEpoch);
     if (this.pendingInvites.get(pendingKey) === clientId) this.pendingInvites.delete(pendingKey);
-    if (targetType === 'group') await this.loadGroup(targetId, { quiet: true }); else await this.onDirectChange(); this.assert(epoch); return result;
+    if (targetType === 'group') {
+      if (result.message && this.state.groupConversations[targetId]) this.publishGroupMessage(targetId, result.message);
+      this.refresh({ quiet: true }).catch(() => {});
+    } else Promise.resolve().then(() => { this.assertVisibility(epoch, authorizationEpoch); return this.onDirectChange(result.message, targetId); }).catch(() => {});
+    return result;
   }
   acceptGameInvite(id) { return this.call(`/room-invitations/${enc(id)}/accept`, { method: 'POST', body: {} }); }
   rejectGameInvite(id) { return this.call(`/room-invitations/${enc(id)}/reject`, { method: 'POST', body: {} }); }

@@ -140,3 +140,42 @@ test('stale recorder events cannot become the next recording or retain microphon
     await engine.connect(connection('three')); await engine.dispose();
   } finally { first.cancel(); second.cancel(); await Promise.resolve(); fixture.close(); }
 });
+
+test('preparing a web call overlaps SDK loading without opening media and reuses the same load; native skips it', async () => {
+  const fixture = nativeFixture();
+  let loads = 0;
+  const nativeEngine = new CallMedia(() => {}, { loadSDK: async () => { loads++; } });
+  try {
+    await nativeEngine.prepare(); assert.equal(loads, 0); assert.equal(fixture.commands.length, 0);
+    delete globalThis.window.webkit; globalThis.location.protocol = 'https:';
+    let finishSDK, rooms = 0; const mic = [];
+    class FakeRoom {
+      constructor() { rooms++; this.remoteParticipants = new Map(); this.localParticipant = {
+        identity: 'alice', isMicrophoneEnabled: false,
+        async setMicrophoneEnabled(enabled) { mic.push(enabled); this.isMicrophoneEnabled = enabled; },
+      }; }
+      on() {} async connect() {} async disconnect() {}
+    }
+    const engine = new CallMedia(() => {}, { loadSDK: () => { loads++; return new Promise(resolve => { finishSDK = resolve; }); } });
+    engine.setAccount('alice');
+    try {
+      const preparation = engine.prepare();
+      assert.equal(engine.prepare(), preparation); assert.equal(loads, 1); assert.equal(rooms, 0); assert.deepEqual(mic, []);
+      const connecting = engine.connect(connection('one'));
+      assert.equal(loads, 1); assert.equal(rooms, 0);
+      finishSDK({ Room: FakeRoom, RoomEvent: {}, Track: { Kind: { Audio: 'audio' } } });
+      await preparation; await connecting;
+      assert.equal(rooms, 1); assert.deepEqual(mic, [true]); assert.equal(engine.state.connected, true);
+    } finally { await engine.dispose(); }
+  } finally { await nativeEngine.dispose(); fixture.close(); }
+});
+
+test('a failed web SDK preparation can be retried without caching the failure or claiming the microphone', async () => {
+  const fixture = nativeFixture(); delete globalThis.window.webkit; globalThis.location.protocol = 'https:';
+  let loads = 0;
+  const engine = new CallMedia(() => {}, { loadSDK: async () => { loads++; if (loads === 1) throw new Error('offline'); return { ready: true }; } });
+  try {
+    await assert.rejects(engine.prepare(), /offline/);
+    assert.deepEqual(await engine.prepare(), { ready: true }); assert.equal(loads, 2); assert.equal(engine.state.connecting, false);
+  } finally { await engine.dispose(); fixture.close(); }
+});
