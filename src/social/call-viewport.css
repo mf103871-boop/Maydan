@@ -4,8 +4,9 @@ html[data-call-dock-active] { --call-dock-gutter: calc(56px + env(safe-area-inse
 
 /* Keep the friends entry point in the same reserved space during a call. */
 html[data-call-dock-active] .lamma-launcher { inset-inline-end: auto; left: auto; right: calc(6px + env(safe-area-inset-right, 0px)); bottom: calc(8px + env(safe-area-inset-bottom, 0px)); width: 44px; height: 44px; min-height: 44px; padding: 6px; gap: 0; justify-content: center; border-radius: 15px; transform: none; }
-html[data-call-dock-active] .lamma-launcher > strong,
-html[data-call-dock-active] .lamma-launcher-faces > .player-avatar + .player-avatar { display: none; }
+html[data-call-dock-active] .lamma-launcher > strong { display: none; }
+/* ProfileAvatar sets its display inline, so this compact mode must override it. */
+html[data-call-dock-active] .lamma-launcher-faces > .player-avatar + .player-avatar { display: none !important; }
 html[data-call-dock-active] .lamma-launcher > .lamma-unread { position: absolute; top: -4px; left: -1px; min-width: 18px; height: 18px; padding: 0 3px; font-size: 10px; }
 
 /* A translated screen becomes a containing block for its fixed game layers.
