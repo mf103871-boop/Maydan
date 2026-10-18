@@ -32,6 +32,7 @@ import { SocialScreen } from '../social/SocialScreen.jsx';
 import { LammaProvider } from '../social/LammaProvider.jsx';
 import { SocialUIProvider } from '../social/SocialUIProvider.jsx';
 import { SocialHost } from '../social/SocialHost.jsx';
+import { CallViewport } from '../social/CallViewport.jsx';
 import { ProfileProvider } from '../profiles/ProfileProvider.jsx';
 import { ProfileScreen } from '../profiles/ProfileScreen.jsx';
 import { ModerationScreen } from '../moderation/ModerationScreen.jsx';
@@ -172,7 +173,7 @@ function Shell() {
         onHome={() => navigate('/', { replace: true })}
         onClear={resetKeepingAccount}
       >
-        <ScreenHost route={route} />
+        <CallViewport><ScreenHost route={route} /></CallViewport>
       </ErrorBoundary>}
       {booted && <PaywallHost />}
       {booted && <ErrorBoundary title="تعذّر فتح اللّمة" message="أعد فتح ميدان لتتصل بأصحابك." onHome={() => navigate('/')}><SocialHost /></ErrorBoundary>}

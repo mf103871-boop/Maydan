@@ -150,9 +150,10 @@ try {
   await page.getByRole('button', { name: /افتح الأصدقاء واللّمة|الأصدقاء،/ }).click();
   await page.evaluate(() => document.fonts.ready); await page.waitForTimeout(300); await page.screenshot({ path: path.join(out, 'desktop-drawer.png') });
   await page.getByRole('button', { name: 'إغلاق اللّمة والعودة للعبة' }).click(); await page.setViewportSize({ width: 390, height: 844 });
-  await page.evaluate(() => window.showCall(true)); await page.getByRole('button', { name: 'عرض المشاركين في المكالمة، 12 مشارك', exact: true }).click();
+  await page.evaluate(() => window.showCall(true)); await page.getByTestId('call-dock-participant').first().click();
   const callSheet = page.getByRole('dialog', { name: 'المشاركون في المكالمة', exact: true }); await callSheet.waitFor();
-  assert.equal(await callSheet.locator('.lamma-call-member').count(), 12); assert.equal(await callSheet.getByText('مشارك 12', { exact: true }).count(), 1);
+  assert.equal(await callSheet.locator('.call-controls-member').count(), 12); assert.equal(await callSheet.getByText('مشارك 12', { exact: true }).count(), 1);
+  assert.equal(await callSheet.getByRole('button', { name: 'إنهاء المكالمة', exact: true }).count(), 1);
   assert.equal(await callSheet.getByText('يتحدث الآن', { exact: true }).count(), 1); assert.equal(await callSheet.getByText('الميكروفون مكتوم', { exact: true }).count(), 6);
   assert.equal(await page.evaluate(() => window.interruption.getSnapshot().open), true); assert.equal(await page.locator('#root').evaluate(element => element.inert), true);
   await page.waitForTimeout(400); await page.screenshot({ path: path.join(out, 'mobile-call-participants.png') }); await callSheet.getByRole('button', { name: 'إغلاق', exact: true }).click(); await callSheet.waitFor({ state: 'detached' });

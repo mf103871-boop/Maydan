@@ -15,8 +15,10 @@ import { useSocial } from './SocialProvider.jsx';
 import { useSocialUI, conversationDraftKey } from './SocialUIProvider.jsx';
 import { useLamma } from './LammaProvider.jsx';
 import { socialInterruption } from './interruption.js';
+import { CallControls } from './CallDock.jsx';
+import { useCallDockLayout } from './CallViewport.jsx';
 import { ActionDialog, Conversation, PersonAvatar, SearchDialog, presenceLabel } from './SocialScreen.jsx';
-import { LammaButton, LammaIcon, VoiceRecorder, VoiceMessage, GameInviteCard, mediaError, durationLabel } from './LammaMedia.jsx';
+import { LammaButton, LammaIcon, VoiceRecorder, VoiceMessage, GameInviteCard, mediaError } from './LammaMedia.jsx';
 import socialCss from './social.css';
 import lammaCss from './lamma.css';
 
@@ -106,20 +108,7 @@ function GroupEditor({ group, detail, friends, accountId, lamma, onClose, onCrea
   </Modal>{confirm && <Modal title={confirm.kind === 'leave' ? 'تغادر اللّمة؟' : confirm.kind === 'transfer' ? 'تنقل ملكية اللّمة؟' : 'تزيل العضو؟'} className="lamma-dialog" onClose={() => setConfirm(null)} footer={<><Button variant="ghost" disabled={!!busy} onClick={() => setConfirm(null)}>إلغاء</Button><Button variant="danger" loading={!!busy} onClick={async () => { const done = await act('confirm', () => confirm.kind === 'leave' ? lamma.leaveGroup(group.id) : confirm.kind === 'transfer' ? lamma.transferGroupOwnership(group.id, confirm.id) : lamma.removeGroupMember(group.id, confirm.id)); if (done !== false) { setConfirm(null); if (confirm.kind === 'leave') onClose(); else await lamma.loadGroup(group.id); } }}>تأكيد</Button></>}><p>{confirm.kind === 'leave' ? 'يمكن لأصحابك دعوتك مرة أخرى.' : confirm.kind === 'transfer' ? `${confirm.name} سيصبح صاحب اللّمة، وتصبح عضوًا فيها.` : `${confirm.name} لن يتمكن من قراءة الرسائل الجديدة في هذه اللّمة.`}</p></Modal>}</>;
 }
 
-export function CallControls({ call, media = {}, onMute, onEnd, onOpen, onOutput, onResume }) {
-  const [now, setNow] = useState(Date.now());
-  const [participantsFor, setParticipantsFor] = useState(null);
-  const ownsInterruption = useRef(false);
-  const closeParticipants = () => { setParticipantsFor(null); if (ownsInterruption.current) { ownsInterruption.current = false; socialInterruption.close(); } };
-  const openParticipants = () => { if (!socialInterruption.getSnapshot().open) { ownsInterruption.current = true; socialInterruption.open(); } setParticipantsFor(call.id); };
-  useEffect(() => { return () => { if (ownsInterruption.current) { ownsInterruption.current = false; socialInterruption.close(); } }; }, [call?.id]);
-  useEffect(() => { const timer = setInterval(() => setNow(Date.now()), 1000); return () => clearInterval(timer); }, []);
-  if (!call) return null;
-  const participants = media.participants || EMPTY;
-  const started = call.acceptedAt || call.startedAt;
-  const status = media.connected ? started ? durationLabel(now - Number(started)) : 'أنتم متصلون' : call.status === 'ringing' ? 'جارٍ الاتصال…' : 'جارٍ توصيل الصوت…';
-  return <><section className="lamma-call-bar" aria-label="المكالمة الحالية"><button type="button" className="lamma-call-summary" onClick={onOpen}><span className={'lamma-call-orb' + (media.connected ? ' is-connected' : '')}><LammaIcon name="phone" size={19} /></span><span><strong>{call.name || (call.scope === 'group' ? 'مكالمة اللّمة' : 'مكالمة صوتية')}</strong><small>{status}</small></span></button><div className="lamma-call-people">{participants.slice(0, 4).map(person => <span className={person.speaking ? 'is-speaking' : ''} key={person.userId || person.id} title={nameOf(person)}><ProfileAvatar user={person} size={27} /></span>)}</div><button type="button" className="lamma-call-count" aria-label={`عرض المشاركين في المكالمة، ${participants.length} مشارك`} disabled={!participants.length} onClick={openParticipants}><LammaIcon name="people" size={17} /><bdi>{participants.length}</bdi></button>{media.audioOutputs?.length > 1 && <select aria-label="مخرج صوت المكالمة" value={media.outputId || ''} onChange={event => onOutput(event.target.value)}>{media.audioOutputs.map(output => <option value={output.id || output.deviceId} key={output.id || output.deviceId}>{output.label || 'مكبر الصوت'}</option>)}</select>}<LammaButton label={media.muted ? 'تشغيل الميكروفون' : 'كتم الميكروفون'} icon={media.muted ? 'muted' : 'mic'} className={media.muted ? 'is-muted' : ''} onClick={() => onMute(!media.muted)} aria-pressed={!!media.muted} /><LammaButton label="إنهاء المكالمة" icon="end" className="lamma-call-end" onClick={onEnd} />{media.error && <p role="alert" className="lamma-call-error">{media.error}<button type="button" className="lamma-audio-resume" onClick={onResume}>تشغيل صوت المكالمة</button></p>}</section>{participantsFor === call.id && <Modal title="المشاركون في المكالمة" className="lamma-dialog" onClose={closeParticipants}><p className="lamma-muted">{participants.length} مشارك متصل الآن</p><div className="lamma-call-member-list">{participants.map(person => <div className={'lamma-call-member' + (person.speaking ? ' is-speaking' : '')} key={person.userId || person.id}><ProfileAvatar user={person} size={43} /><span><strong><bdi>{nameOf(person)}</bdi></strong><small>{person.muted ? 'الميكروفون مكتوم' : person.speaking ? 'يتحدث الآن' : 'الميكروفون مفتوح'}</small></span><LammaIcon name={person.muted ? 'muted' : 'mic'} size={20} /></div>)}</div></Modal>}</>;
-}
+export { CallControls } from './CallDock.jsx';
 
 function Preferences({ lamma, social, onClose, notify }) {
   const [busy, setBusy] = useState(false);
@@ -152,11 +141,23 @@ export function SocialHost() {
   const [dialogOwner, setDialogOwner] = useState(account.user?.id);
   const dialogsOwned = dialogOwner === account.user?.id;
   const [host] = useState(() => typeof document === 'undefined' ? null : document.createElement('div'));
+  const [callInlineHost, setCallInlineHost] = useState(null);
   const panel = useRef(null); const trigger = useRef(null); const noticeTimer = useRef(null);
   const friends = social.friends || EMPTY; const groups = lamma.groups || EMPTY; const invites = lamma.groupInvites || EMPTY;
   const view = ui.view; const friend = view.type === 'direct' ? friends.find(item => item.id === view.id) : null;
   const group = view.type === 'group' ? groups.find(item => item.id === view.id) : null;
   const groupChat = lamma.groupConversations?.[view.id];
+  const currentCall = lamma.activeCall;
+  const callOwned = !!currentCall && account.signedIn && !!account.user?.id && (!currentCall._ownerId || currentCall._ownerId === account.user.id);
+  useCallDockLayout(callOwned);
+  const callGroupId = currentCall?.scope === 'group' ? currentCall.conversationId : null;
+  const callMembersStore = lamma.callMembers;
+  const callMembers = callMembersStore?.[callGroupId];
+  const callGroupAllowed = !!callGroupId && groups.some(item => item.id === callGroupId);
+  const loadCallMembers = lamma.loadCallMembers;
+  useEffect(() => {
+    if (callOwned && callGroupAllowed && !callMembers && loadCallMembers) loadCallMembers(callGroupId).catch(() => {});
+  }, [callOwned, currentCall?.id, callGroupId, callGroupAllowed, callMembers, callMembersStore, loadCallMembers]);
   const directId = friend?.conversationId || social.conversationList?.find(item => item.user?.id === friend?.id)?.id;
   const targetType = group ? 'group' : 'direct'; const targetId = group?.id || directId;
   const groupUnread = groups.reduce((sum, item) => sum + (item.unreadCount || 0), 0);
@@ -236,7 +237,7 @@ export function SocialHost() {
   const displayedFriends = [...friends].filter(item => nameOf(item).toLocaleLowerCase('ar').includes(filter.trim().toLocaleLowerCase('ar'))).filter(item => activeFriendFilter === 'online' ? item.online : activeFriendFilter === 'favorites' ? favoriteIds.includes(item.id) : true).filter(item => view.tab !== 'chats' || item.lastMessage || item.unreadCount).sort((a, b) => view.tab === 'chats' ? (Number(b.lastMessage?.createdAt) || 0) - (Number(a.lastMessage?.createdAt) || 0) : Number(!!b.online) - Number(!!a.online));
   const totalRequests = social.incoming.length + invites.length;
   const openCall = call => { if (call.scope === 'group') ui.openGroup(call.conversationId); else { const peer = friends.find(item => item.conversationId === call.conversationId); if (peer) ui.openChat(peer.id); else ui.show(); } };
-  const knownMembers = [...friends, profiles.mine || account.user, ...Object.values(lamma.groupConversations || {}).flatMap(chat => chat.members || [])].filter(Boolean);
+  const knownMembers = [profiles.mine || account.user, ...(callMembers || EMPTY), ...friends, ...Object.values(lamma.groupConversations || {}).flatMap(chat => chat.members || [])].filter(Boolean);
   const callMedia = { ...lamma.media, participants: (lamma.media?.participants || []).map(participant => {
     const known = knownMembers.find(person => (person.userId || person.id) === (participant.userId || participant.id));
     return { ...known, ...participant, name: known?.name || participant.name };
@@ -244,10 +245,11 @@ export function SocialHost() {
   const title = view.type === 'profile' ? 'أهل الميدان' : friend ? nameOf(friend) : group ? group.name : 'اللّمة';
   const tree = <><style>{socialCss}</style><style>{lammaCss}</style>
     {!ui.open && <button ref={trigger} type="button" className={'lamma-launcher' + (unread ? ' has-unread' : '')} aria-label={unread ? `الأصدقاء، ${unread} تنبيه` : 'افتح الأصدقاء واللّمة'} aria-expanded={false} onClick={() => ui.show()}><span className="lamma-launcher-faces">{account.signedIn && friends.some(item => item.online) ? friends.filter(item => item.online).slice(0, 2).map(item => <ProfileAvatar key={item.id} user={item} size={30} />) : <LammaIcon name="people" />}</span><strong>اللّمة</strong>{unread > 0 && <b className="lamma-unread">{unread > 99 ? '99+' : unread}</b>}</button>}
-    {lamma.activeCall && <CallControls call={lamma.activeCall} media={callMedia} onMute={value => run(() => lamma.setCallMuted(value), 'mute')} onEnd={() => run(() => lamma.endCall(), 'end-call')} onOpen={() => openCall(lamma.activeCall)} onOutput={id => run(() => lamma.setAudioOutput(id), 'output')} onResume={() => run(() => lamma.resumeCallAudio(), 'resume-audio')} />}
+    {callOwned && <CallControls call={lamma.activeCall} media={callMedia} currentUserId={account.user.id} privateTurn={interruption.privateTurn} panelOpen={ui.open} inlineHost={callInlineHost} onMute={value => lamma.setCallMuted(value)} onEnd={() => lamma.endCall()} onOpen={() => openCall(lamma.activeCall)} onOutput={id => lamma.setAudioOutput(id)} onResume={() => lamma.resumeCallAudio()} />}
     {!ui.open && notification && lamma.notifications?.enabled !== false && !notificationMuted && <div className="lamma-notification" role="status"><button type="button" onClick={() => { dismissNotification(); if (notification.friend) ui.openChat(notification.friend.id); else ui.show({ type: 'list', tab: 'requests' }); }}><span><LammaIcon name={notification.type === 'request' ? 'people' : 'chat'} /></span><div><strong>{notification.type === 'request' ? 'وصلك طلب صداقة' : privateSurface ? 'رسالة جديدة في ميدان' : `رسالة من ${nameOf(notification.friend)}`}</strong><small>{lamma.notifications?.previews && !privateSurface ? notification.friend?.lastMessage?.text || 'افتح اللّمة لتشوف الجديد' : 'اضغط لفتح اللّمة'}</small></div></button><LammaButton label="إخفاء التنبيه" icon="close" onClick={dismissNotification} /></div>}
     {!ui.open && !notification && lamma.notification && lamma.notifications?.enabled !== false && <div className="lamma-notification" role="status"><button type="button" onClick={() => { const id = lamma.notification.groupId || lamma.notification.conversationId; lamma.clearNotification(); ui.openGroup(id); }}><span><LammaIcon name="people" /></span><div><strong>{privateSurface ? 'رسالة جديدة في ميدان' : lamma.notification.title}</strong><small>اضغط لفتح اللّمة</small></div></button><LammaButton label="إخفاء التنبيه" icon="close" onClick={lamma.clearNotification} /></div>}
-    {ui.open && <div className="lamma-layer" onPointerDown={event => { if (event.target === event.currentTarget) ui.close(); }}><section ref={panel} className={'lamma-panel' + (['direct', 'group'].includes(view.type) ? ' is-chat' : '') + (lamma.activeCall ? ' has-call' : '')} role="dialog" aria-modal="true" aria-label="الأصدقاء واللّمة" tabIndex={-1} dir="rtl"><header className="lamma-panel-head"><div className="lamma-panel-title">{view.type !== 'list' ? <LammaButton label="العودة للّمة" icon="back" onClick={ui.back} /> : <span className="lamma-logo"><LammaIcon name="people" size={23} /></span>}<div><span>أصحابك أقرب</span><h2><bdi>{title}</bdi></h2></div></div><div className="lamma-header-actions"><LammaButton label="إعدادات التنبيهات" icon="bell" onClick={() => setPreferences(true)} /><LammaButton label="إغلاق اللّمة والعودة للعبة" icon="close" onClick={ui.close} /></div></header>
+    {ui.open && <div className="lamma-layer" onPointerDown={event => { if (event.target === event.currentTarget) ui.close(); }}><section ref={panel} className={'lamma-panel' + (['direct', 'group'].includes(view.type) ? ' is-chat' : '')} role="dialog" aria-modal="true" aria-label="الأصدقاء واللّمة" tabIndex={-1} dir="rtl"><header className="lamma-panel-head"><div className="lamma-panel-title">{view.type !== 'list' ? <LammaButton label="العودة للّمة" icon="back" onClick={ui.back} /> : <span className="lamma-logo"><LammaIcon name="people" size={23} /></span>}<div><span>أصحابك أقرب</span><h2><bdi>{title}</bdi></h2></div></div><div className="lamma-header-actions"><LammaButton label="إعدادات التنبيهات" icon="bell" onClick={() => setPreferences(true)} /><LammaButton label="إغلاق اللّمة والعودة للعبة" icon="close" onClick={ui.close} /></div></header>
+      <div ref={setCallInlineHost} className="lamma-call-inline-host" />
       {interruption.online && interruption.turnDeadline && <div className="lamma-game-status"><LammaIcon name="game" size={17} />الجولة مستمرة. ارجع لدورك متى ما احتجت.<button type="button" onClick={ui.close}>العودة للعب</button></div>}
       {ui.invite && <div className="lamma-invite-banner"><LammaIcon name="game" /><span>ادعُ أصحابك للغرفة <bdi>{ui.invite.roomCode}</bdi></span><LammaButton label="إنهاء إرسال الدعوات" icon="close" onClick={ui.clearInvite} /></div>}
       {notice && <div className={'lamma-notice' + (notice.error ? ' is-error' : '')} role={notice.error ? 'alert' : 'status'}>{notice.text}<LammaButton label="إخفاء" icon="close" onClick={() => setNotice(null)} /></div>}

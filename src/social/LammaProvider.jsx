@@ -11,7 +11,7 @@ import { createCallAuthorization } from './call-authorization.js';
 
 const Context = createContext(null);
 export const useLamma = () => useContext(Context);
-const METHODS = ['createGroup', 'loadGroup', 'loadOlderGroup', 'sendGroupMessage', 'inviteGroupMembers', 'removeGroupMember',
+const METHODS = ['createGroup', 'loadGroup', 'loadCallMembers', 'loadOlderGroup', 'sendGroupMessage', 'inviteGroupMembers', 'removeGroupMember',
   'leaveGroup', 'renameGroup', 'acceptGroupInvite', 'rejectGroupInvite', 'setGroupRole', 'transferGroupOwnership', 'selectGroup',
   'markGroupRead', 'changeGroupMessage', 'sendVoiceNote', 'getVoiceUrl', 'setNotificationPreferences', 'setConversationMuted',
   'sendGameInvite', 'rejectGameInvite', 'updateGroupAvatar', 'reportGroupMessage'];
@@ -114,14 +114,17 @@ export function LammaProvider({ children }) {
       const localOnly = ownedMedia.callId === active.id && ownedMedia.localOnly;
       const title = callEndNotice(ownedMedia.endReason);
       if (title) setNotification({ id: lammaId(), userId: owner, scope: active.scope, conversationId: active.conversationId, title });
-      activeRef.current = null; setActiveCall(null);
+      activeRef.current = null; client.setCallContext(null); setActiveCall(null);
       engine.disconnect({ callId: active.id, localOnly, endReason: ownedMedia.endReason }).catch(() => {});
       if (!localOnly && client.userId) client.callAction(active.id, 'leave', deviceRef.current).catch(() => {});
     }
     // A native incoming call can be accepted from the lock screen before React exists.
     if (!active && owner && ownedMedia.connected && ownedMedia.callId) {
       const call = safe.calls.find(c => c.id === ownedMedia.callId);
-      if (call && !ended(call)) setActiveCall({ ...call, _ownerId: owner });
+      if (call && !ended(call)) {
+        const restored = { ...call, _ownerId: owner };
+        activeRef.current = restored; client.setCallContext(restored); setActiveCall(restored);
+      }
     }
   }, [ownedMedia.ended, ownedMedia.connected, ownedMedia.callId, ownedMedia.localOnly, ownedMedia.endReason, safe.calls, owner, client, engine]);
   // The list intentionally omits ended and unauthorized calls. Ask for the exact
@@ -136,7 +139,7 @@ export function LammaProvider({ children }) {
       cancelled = true;
       const call = activeRef.current, title = callEndNotice(reason);
       if (title) setNotification({ id: lammaId(), userId: owner, scope: call.scope, conversationId: call.conversationId, title });
-      activeRef.current = null; setActiveCall(null);
+      activeRef.current = null; client.setCallContext(null); setActiveCall(null);
       await engine.disconnect({ callId: id, localOnly: true, endReason: reason });
     };
     const check = async () => {
@@ -172,21 +175,21 @@ export function LammaProvider({ children }) {
       result = await action(deviceId); client.assert(epoch);
       if (attempt !== connectGeneration.current) throw new Error('تم إلغاء المكالمة.');
       const call = { ...result.call, _ownerId: owner };
-      setActiveCall(call); activeRef.current = call;
+      client.setCallContext(call); setActiveCall(call); activeRef.current = call;
       await engine.connect(result, { muted: socialInterruption.getSnapshot().privateTurn }); client.assert(epoch);
       if (attempt !== connectGeneration.current) throw new Error('تم إلغاء المكالمة.');
       client.refresh({ quiet: true }).catch(() => {}); return result.call;
     } catch (e) {
       if (epoch === client.epoch) {
         if (result?.call?.id) await client.callAction(result.call.id, 'leave', deviceRef.current).catch(() => {});
-        if (attempt === connectGeneration.current) { setActiveCall(null); activeRef.current = null; }
+        if (attempt === connectGeneration.current) { client.setCallContext(null); setActiveCall(null); activeRef.current = null; }
       }
       throw e;
     } finally { if (epoch === client.epoch && attempt === connectGeneration.current) connecting.current = false; }
   }
   async function endCall() {
     connectGeneration.current++; connecting.current = false;
-    const call = activeRef.current; activeRef.current = null; setActiveCall(null);
+    const call = activeRef.current; activeRef.current = null; client.setCallContext(null); setActiveCall(null);
     await engine.disconnect({ callId: call?.id || engine.state.callId });
     if (call && client.userId) { await client.callAction(call.id, 'leave', deviceRef.current); await client.refresh({ quiet: true }); }
   }

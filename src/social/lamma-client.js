@@ -13,9 +13,22 @@ const ERRORS = {
 export const lammaError = e => ERRORS[e?.code] || socialError(e);
 export const lammaId = () => globalThis.crypto.randomUUID();
 export const DEFAULT_PREFERENCES = { messages: true, friendRequests: true, groupInvites: true, calls: true, previews: false, sound: true, mutedConversations: [] };
-export const emptyLamma = () => ({ groups: [], groupInvites: [], groupConversations: {}, calls: [], loading: false,
+export const emptyLamma = () => ({ groups: [], groupInvites: [], groupConversations: {}, callMembers: {}, calls: [], loading: false,
   error: '', offline: false, preferences: { ...DEFAULT_PREFERENCES }, capabilities: { voiceMessages: false, liveCalls: false, pushNotifications: false } });
 const enc = encodeURIComponent;
+const inaccessible = e => ['NOT_FOUND', 'FORBIDDEN', 'BLOCKED'].includes(e?.code);
+const normalizedMembers = members => {
+  const seen = new Set();
+  return (Array.isArray(members) ? members : []).flatMap(member => {
+    const profile = member?.user || member?.profile || member;
+    const id = member?.userId || member?.id || profile?.userId || profile?.id;
+    if (typeof id !== 'string' || !id || seen.has(id)) return [];
+    seen.add(id);
+    return [{ ...profile, id, userId: id, name: profile?.name || member?.name || 'لاعب ميدان',
+      role: member.role, joinedAt: member.joinedAt }];
+  });
+};
+const membershipKey = group => JSON.stringify([group?.joinedAt, group?.role, group?.ownerId, group?.memberCount]);
 
 export async function blobBase64(blob) {
   const bytes = new Uint8Array(await blob.arrayBuffer());
@@ -27,6 +40,7 @@ export class LammaClient {
   constructor({ request, onDirectChange = () => {}, makeURL = blob => URL.createObjectURL(blob), revokeURL = url => URL.revokeObjectURL(url) }) {
     this.request = request; this.onDirectChange = onDirectChange; this.makeURL = makeURL; this.revokeURL = revokeURL;
     this.state = emptyLamma(); this.userId = null; this.epoch = 0; this.authorizationEpoch = 0; this.listeners = new Set(); this.urls = new Map(); this.reads = new Map(); this.groupVersions = new Map(); this.pendingText = new Map(); this.pendingInvites = new Map(); this.pendingVoice = new WeakMap();
+    this.callContext = null; this.callMembersGeneration = 0; this.pendingCallMembers = new Map(); this.revokedCallGroups = new Set();
     this.subscribe = fn => { this.listeners.add(fn); return () => this.listeners.delete(fn); };
     this.getSnapshot = () => this.state;
   }
@@ -43,8 +57,23 @@ export class LammaClient {
     catch (e) { this.assert(epoch); throw Object.assign(new Error(lammaError(e)), { code: e?.code || 'NETWORK' }); }
   }
   start(userId) { this.stop(); this.userId = userId; if (userId) this.refresh().catch(() => {}); }
-  invalidateAudio() { this.authorizationEpoch++; for (const url of this.urls.values()) this.revokeURL(url); this.urls.clear(); }
-  stop() { this.epoch++; this.userId = null; this.activeGroup = null; this.refreshing = null; this.reads.clear(); this.groupVersions.clear(); this.pendingText.clear(); this.pendingInvites.clear(); this.pendingVoice = new WeakMap(); this.invalidateAudio(); this.update(emptyLamma()); }
+  invalidateCallMembers() {
+    this.callMembersGeneration++; this.pendingCallMembers.clear();
+    this.update({ callMembers: {} });
+  }
+  setCallContext(call) {
+    const next = call?.id ? { id: call.id, scope: call.scope, conversationId: call.conversationId } : null;
+    if (JSON.stringify(next) === JSON.stringify(this.callContext)) return;
+    this.callContext = next; this.invalidateCallMembers();
+  }
+  assertCallMembers(epoch, authorizationEpoch, generation, id) {
+    this.assertVisibility(epoch, authorizationEpoch);
+    if (generation !== this.callMembersGeneration || this.callContext?.scope !== 'group' || this.callContext.conversationId !== id)
+      throw Object.assign(new Error('تغيّرت المكالمة.'), { code: 'STALE' });
+    if (this.revokedCallGroups.has(id)) throw Object.assign(new Error(ERRORS.FORBIDDEN), { code: 'FORBIDDEN' });
+  }
+  invalidateAudio() { this.authorizationEpoch++; this.invalidateCallMembers(); for (const url of this.urls.values()) this.revokeURL(url); this.urls.clear(); }
+  stop() { this.epoch++; this.userId = null; this.activeGroup = null; this.callContext = null; this.refreshing = null; this.reads.clear(); this.groupVersions.clear(); this.pendingText.clear(); this.pendingInvites.clear(); this.pendingVoice = new WeakMap(); this.revokedCallGroups.clear(); this.invalidateAudio(); this.update(emptyLamma()); }
   async refresh({ quiet = false } = {}) {
     if (!this.userId) return;
     if (this.refreshing) return this.refreshing;
@@ -57,6 +86,17 @@ export class LammaClient {
         ]);
         this.assertVisibility(epoch, authorizationEpoch);
         const allowed = new Set((groups.groups || []).map(g => g.id));
+        // Removing the visible snapshot must also fence detail/history reads
+        // already in flight, including quiet reads with no conversation entry.
+        for (const id of new Set([...this.groupVersions.keys(), ...Object.keys(this.state.groupConversations)]))
+          if (!allowed.has(id)) this.groupVersions.set(id, (this.groupVersions.get(id) || 0) + 1);
+        const callGroup = this.callContext?.scope === 'group' ? this.callContext.conversationId : null;
+        if (callGroup) {
+          const before = this.state.groups.find(group => group.id === callGroup);
+          const after = (groups.groups || []).find(group => group.id === callGroup);
+          if (!after) this.revokedCallGroups.add(callGroup); else this.revokedCallGroups.delete(callGroup);
+          if (!after || (before && membershipKey(before) !== membershipKey(after))) this.invalidateCallMembers();
+        }
         this.update({ groups: groups.groups || [], groupInvites: groups.incoming || [], calls: calls.calls || [],
           preferences: { ...DEFAULT_PREFERENCES, ...(preferences.preferences || preferences) }, capabilities: capabilities.capabilities || capabilities,
           groupConversations: Object.fromEntries(Object.entries(this.state.groupConversations).filter(([id]) => allowed.has(id))), loading: false, offline: false, error: '' });
@@ -69,8 +109,31 @@ export class LammaClient {
   }
   group(id, patch) { this.update({ groupConversations: { ...this.state.groupConversations, [id]: { messages: [], ...this.state.groupConversations[id], ...patch } } }); }
   selectGroup(id) { this.activeGroup = id || null; }
+  async loadCallMembers(id) {
+    const epoch = this.epoch, authorizationEpoch = this.authorizationEpoch, generation = this.callMembersGeneration;
+    this.assertCallMembers(epoch, authorizationEpoch, generation, id);
+    if (this.state.callMembers[id]) return this.state.callMembers[id];
+    if (this.pendingCallMembers.has(id)) return this.pendingCallMembers.get(id);
+    const task = (async () => {
+      try {
+        // Restoring a native call needs profiles, never the group's message history.
+        const detail = await this.call(`/groups/${enc(id)}`);
+        this.assertCallMembers(epoch, authorizationEpoch, generation, id);
+        const members = normalizedMembers(detail.members);
+        this.update({ callMembers: { ...this.state.callMembers, [id]: members } });
+        return members;
+      } catch (e) {
+        if (epoch === this.epoch && authorizationEpoch === this.authorizationEpoch && generation === this.callMembersGeneration && inaccessible(e)) {
+          this.revokedCallGroups.add(id); this.invalidateCallMembers();
+        }
+        throw e;
+      } finally { if (this.pendingCallMembers.get(id) === task) this.pendingCallMembers.delete(id); }
+    })();
+    this.pendingCallMembers.set(id, task); return task;
+  }
   async loadGroup(id, { quiet = false } = {}) {
     const epoch = this.epoch, authorizationEpoch = this.authorizationEpoch;
+    const callMembersGeneration = this.callMembersGeneration;
     const version = (this.groupVersions.get(id) || 0) + 1; this.groupVersions.set(id, version);
     if (!quiet) this.group(id, { loading: true, error: '' });
     try {
@@ -78,8 +141,18 @@ export class LammaClient {
       this.assertVisibility(epoch, authorizationEpoch, id, version);
       // Replace the current visibility window: removed/blocked senders must disappear.
       this.group(id, { ...detail, ...history, messages: history.messages || [], loading: false, loadingOlder: false, error: '' });
+      if (this.callContext?.scope === 'group' && this.callContext.conversationId === id && callMembersGeneration === this.callMembersGeneration && !this.revokedCallGroups.has(id))
+        this.update({ callMembers: { ...this.state.callMembers, [id]: normalizedMembers(detail.members) } });
       return this.state.groupConversations[id];
-    } catch (e) { if (epoch === this.epoch && version === this.groupVersions.get(id) && authorizationEpoch === this.authorizationEpoch) this.group(id, { loading: false, error: e.message, ...(['NOT_FOUND', 'FORBIDDEN', 'BLOCKED'].includes(e.code) ? { messages: [], members: [] } : {}) }); throw e; }
+    } catch (e) {
+      if (epoch === this.epoch && version === this.groupVersions.get(id) && authorizationEpoch === this.authorizationEpoch) {
+        this.group(id, { loading: false, error: e.message, ...(inaccessible(e) ? { messages: [], members: [] } : {}) });
+        if (inaccessible(e) && this.callContext?.scope === 'group' && this.callContext.conversationId === id) {
+          this.revokedCallGroups.add(id); this.invalidateCallMembers();
+        }
+      }
+      throw e;
+    }
   }
   async loadOlderGroup(id) {
     const current = this.state.groupConversations[id]; if (!current?.hasMore || current.loadingOlder) return;

@@ -54,9 +54,11 @@ test('non-text previews describe content without exposing attachment addresses',
   assert.equal(render.groupPreview({ lastMessage: { text: 'PRIVATE_TEXT', deletedAt: 1 } }), 'حُذفت رسالة');
 });
 
-test('minimized calls keep explicit microphone and end controls', () => {
+test('minimized calls keep an explicit microphone and an accessible path to all controls', () => {
   const html = render.call({ call: { id: 'call', scope: 'group', status: 'active' }, media: { muted: true, connected: true, participants: [] } });
-  assert.match(html, /تشغيل الميكروفون/); assert.match(html, /إنهاء المكالمة/); assert.match(html, /aria-pressed="true"/);
+  assert.match(html, /تشغيل الميكروفون/); assert.match(html, /عرض أدوات المكالمة/); assert.match(html, /aria-pressed="true"/);
+  assert.match(html, /data-testid="call-dock-mute"/); assert.match(html, /data-testid="call-dock-open"/);
+  assert.doesNotMatch(html, /lamma-call-bar/);
 });
 
 test('favorite toggle has an explicit accessible pressed state without replacing chat action', () => {
