@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import {createHash} from 'node:crypto';
 import {readFileSync} from 'node:fs';
 import {studioApiClient,studioUploadPlan,assertStudioMetadata,pendingStudioMigrations,assertStudioMigration,physicalStudioInputs,studioSourceInputs,STUDIO_MIGRATION} from '../scripts/studio-release.mjs';
+import {studioMediaEntries} from '../scripts/studio-media.mjs';
 test('provenance hashes physical dependencies and explicitly recognizes only the pinned synthetic media define',()=>{
   assert.deepEqual(physicalStudioInputs(['src/studio/main.jsx','<define:__MAYDAN_MEDIA_VERSIONS__>','node_modules/react/index.js']),['src/studio/main.jsx','node_modules/react/index.js']);
   assert.throws(()=>physicalStudioInputs(['<define:UNREVIEWED>']),/Unknown generated/);
@@ -12,6 +13,8 @@ test('provenance hashes physical dependencies and explicitly recognizes only the
 });
 test('actual five-entry Studio build graph resolves to existing hashed source files',async()=>{
   const inputs=await studioSourceInputs({requireClean:false});assert.match(inputs['src/design/DesignRuntime.jsx'],/^[a-f0-9]{64}$/);assert.match(inputs['src/data/games/fabraka/personal.json'],/^[a-f0-9]{64}$/);assert.equal(Object.keys(inputs).some(input=>input.includes(' with {') || input.startsWith('<')),false);
+  for(const entry of studioMediaEntries)assert.equal(inputs[entry.source],entry.sha256,'Every transformed asset must enter the frozen provenance graph');
+  assert.match(inputs['scripts/studio-media.mjs'],/^[a-f0-9]{64}$/);assert.match(inputs['server/design/media-manifest.json'],/^[a-f0-9]{64}$/);
 });
 const releaseId='studio-20261019-abcd1234',ownerUserId='verified-owner';
 function snapshot(name='maydan-game'){
@@ -47,4 +50,14 @@ test('new Cloudflare client permits exactly three frozen site keys and never gen
 test('owner verification uses one fixed parameterized active-account SELECT without logging or serializing credentials',async()=>{
   let seen;const api=studioApiClient('do-not-output',{fetchImpl:async(url,options)=>{seen={url,options};return Response.json({success:true,result:[{success:true,results:[{id:ownerUserId,code:'MDN-123456789A'}]}]});},baseApi:async()=>{throw new Error('unexpected');}});
   const rows=await api('/d1/database/9d863a31-6a5c-45f1-91f5-79ad400c3f6e/query',{ownerCode:'MDN-123456789A'});assert.equal(rows[0].results[0].id,ownerUserId);const body=JSON.parse(seen.options.body);assert.match(body.sql,/^SELECT /);assert.match(body.sql,/account_deletions/);assert.match(body.sql,/moderation_suspensions/);assert.deepEqual(body.params,['MDN-123456789A']);assert.equal(seen.options.body.includes('do-not-output'),false);await assert.rejects(api('/d1/database/9d863a31-6a5c-45f1-91f5-79ad400c3f6e/query',{ownerCode:"' OR 1=1"}));
+});
+test('R2 extension permits only the exact 69 reviewed WEBP keys/bytes and sets their public MIME/cache metadata',async()=>{
+  const entry=studioMediaEntries[0],bytes=readFileSync(entry.source),key=`studio-site/${releaseId}/${entry.keySuffix}`,calls=[];
+  const api=studioApiClient('no-log',{allowApply:true,releaseId,baseApi:async()=>{throw Error('not allowed');},fetchImpl:async(url,options)=>{calls.push({url,options});return new Response(options.method==='GET'?bytes:'{}');}});
+  await api('/r2/buckets/maydan-social-audio/objects',{objectPut:{key,bytes,sha256:entry.sha256}});assert.equal(calls[0].options.headers['content-type'],'image/webp');assert.match(calls[0].options.headers['cache-control'],/immutable/);
+  assert.deepEqual(await api('/r2/buckets/maydan-social-audio/objects',{objectGet:key}),bytes);
+  const corrupt=Buffer.from(bytes);corrupt[20]^=1;
+  await assert.rejects(api('/r2/buckets/maydan-social-audio/objects',{objectPut:{key,bytes:corrupt,sha256:createHash('sha256').update(corrupt).digest('hex')}}));
+  for(const invalid of [`studio-site/${releaseId}/media/${'0'.repeat(64)}.webp`,`studio-site/${releaseId}/media/${entry.sha256}.png`,`studio-site/other-release/${entry.keySuffix}`,'studio-assets/private'])await assert.rejects(api('/r2/buckets/maydan-social-audio/objects',{objectGet:invalid}));
+  assert.equal(calls.length,2);
 });

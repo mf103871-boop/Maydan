@@ -5,7 +5,9 @@ for(const name of ['localStorage','sessionStorage'])Object.defineProperty(window
 const originalFetch=window.fetch.bind(window);
 window.fetch=(input,options={})=>{
   const url=new URL(typeof input==='string'?input:input.url,location.href);
-  if(url.origin!==location.origin || !/^\/(media|audio|icons|vendor)\//.test(url.pathname))return Promise.reject(new Error('PREVIEW_NETWORK_DISABLED'));
+  const staticMedia=/^\/api\/studio\/media\/[a-f0-9]{64}\.webp$/.test(url.pathname);
+  const method=String(options.method||input?.method||'GET').toUpperCase();
+  if(url.origin!==location.origin || (!/^\/(media|audio|icons|vendor)\//.test(url.pathname) && !staticMedia) || staticMedia && !['GET','HEAD'].includes(method))return Promise.reject(new Error('PREVIEW_NETWORK_DISABLED'));
   return originalFetch(input,{...options,credentials:'omit',headers:{}});
 };
 window.WebSocket=class{constructor(){throw new Error('PREVIEW_SOCKET_DISABLED');}};

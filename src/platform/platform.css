@@ -174,9 +174,14 @@
 .startup-download-note { margin: 0; font-size: 13px; line-height: 1.8; color: #67546F; }
 .startup-download-actions { display: grid; gap: 8px; width: 100%; }
 .startup-download-actions small { color: #67546F; font-size: 11px; line-height: 1.7; }
-.startup-background { position: fixed; z-index: 80; inset-inline: 12px; bottom: calc(8px + var(--safe-bottom)); margin-inline: auto; width: fit-content; max-width: calc(100% - 24px); display: flex; align-items: center; gap: 8px; padding: 4px 10px; border: 1px solid #D8CEB8; border-radius: 16px; background: #FFF7E7F5; color: #513273; box-shadow: 0 3px 14px #35254718; font-size: 12px; }
-.startup-background button { border: 0; background: transparent; color: #087D89; font: inherit; font-weight: 800; cursor: pointer; min-height: 36px; }
-.startup-background .startup-background-close { flex-shrink: 0; min-width: 36px; font-size: 24px; }
+.startup-background { position: fixed; z-index: 80; inset-inline: 12px; bottom: calc(8px + max(var(--safe-bottom), var(--menu-nav-space, 0px))); margin-inline: auto; width: fit-content; max-width: calc(100% - 24px); display: flex; align-items: center; gap: 8px; padding: 4px 10px; border: 1px solid #D8CEB8; border-radius: 16px; background: #FFF7E7F5; color: #513273; box-shadow: 0 3px 14px #35254718; font-size: 12px; }
+.startup-background > [role="status"] { min-width: 0; }
+.startup-background button { border: 0; background: transparent; color: #087D89; font: inherit; font-weight: 800; cursor: pointer; min-width: 44px; min-height: 44px; }
+.startup-background .startup-background-close { flex-shrink: 0; min-width: 44px; font-size: 24px; }
+/* الحيز المقاس يترك آخر إجراء قابلًا للتمرير فوق الحالة، بما في ذلك الأزرار اللاصقة. */
+.call-game-viewport { padding-bottom: var(--startup-background-space, 0px); }
+html[data-startup-background-visible] .setup-sticky,
+html[data-startup-background-visible][data-menu-nav-visible] .setup-sticky { bottom: calc(10px + max(var(--safe-bottom), var(--menu-nav-space, 0px)) + var(--startup-background-space, 0px)); }
 @media (max-height: 540px) and (min-aspect-ratio: 1/1) {
   .splash .splash-inner { inset-inline: 52% 2%; top: calc(8px + var(--safe-top)); }
   .splash .splash-inner .wordmark-art { font-size: 64px; }
