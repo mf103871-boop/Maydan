@@ -28,8 +28,10 @@ final class SocialCoordinator: NSObject {
     private var bootstrapped = false
     private var observers: [NSObjectProtocol] = []
     private var audioActive = false
+    private var audioPolicy = NativeAudioPolicy()
     private var muted = false
     private var speaker = false
+    private var preferredSpeaker = false
     private var privateTurn = UserDefaults.standard.bool(forKey: "maydan.social.privateTurn")
     private var state = "idle"
     private var signingOut = false
@@ -38,7 +40,8 @@ final class SocialCoordinator: NSObject {
     private var pendingCallId: UUID?
     var onEvent: ((String, [String: Any]) -> Void)?
     var onAudioActivityChange: (() -> Void)?
-    var isBusyForAppUpdate: Bool { call != nil || pendingCallId != nil || voice.isRecording }
+    var onAudioLifecycle: (([String: Any]) -> Void)?
+    var isBusyForAppUpdate: Bool { call != nil || pendingCallId != nil || voice.isBusy }
 
     private struct NativeCall {
         let id: UUID
@@ -69,35 +72,138 @@ final class SocialCoordinator: NSObject {
             Task { @MainActor [weak self] in await self?.registerTokens() }
         }
         voice.onEvent = { [weak self] payload in self?.emit("socialVoice", payload) }
+        voice.onSessionReleased = { [weak self] in self?.restoreGameAudio() }
         let center = NotificationCenter.default
         observers.append(center.addObserver(forName: AVAudioSession.interruptionNotification, object: nil, queue: .main) { [weak self] note in
-            let began = (note.userInfo?[AVAudioSessionInterruptionTypeKey] as? UInt) == AVAudioSession.InterruptionType.began.rawValue
+            guard let type = (note.userInfo?[AVAudioSessionInterruptionTypeKey] as? UInt).flatMap(AVAudioSession.InterruptionType.init(rawValue:)) else { return }
+            let options = AVAudioSession.InterruptionOptions(rawValue: note.userInfo?[AVAudioSessionInterruptionOptionKey] as? UInt ?? 0)
             Task { @MainActor in
-                guard let self, began else { return }
-                self.voice.cancel(state: "interrupted")
-                if self.call != nil {
-                    self.muted = true
-                    _ = try? await self.room?.localParticipant.setMicrophone(enabled: false)
-                    self.emitCall(error: "AUDIO_INTERRUPTED")
+                guard let self else { return }
+                if type == .began {
+                    self.audioPolicy.interruptionBegan()
+                    self.voice.cancel(state: "interrupted")
+                    let currentRoom = self.room, callId = self.call?.id
+                    if callId != nil {
+                        self.muted = true
+                        try? AudioManager.shared.setEngineAvailability(.none)
+                    }
+                    self.audioLifecycle("interruption-began", shouldResume: false)
+                    _ = try? await currentRoom?.localParticipant.setMicrophone(enabled: false)
+                    if self.call?.id == callId { self.emitCall(error: "AUDIO_INTERRUPTED") }
+                } else {
+                    let shouldResume = options.contains(.shouldResume)
+                    self.audioPolicy.interruptionEnded(shouldResume: shouldResume)
+                    self.restoreCurrentAudio()
+                    self.audioLifecycle("interruption-ended", shouldResume: shouldResume && self.audioPolicy.resumeAllowed)
                 }
             }
         })
-        observers.append(center.addObserver(forName: AVAudioSession.routeChangeNotification, object: nil, queue: .main) { [weak self] _ in
+        observers.append(center.addObserver(forName: AVAudioSession.routeChangeNotification, object: nil, queue: .main) { [weak self] note in
+            let reason = (note.userInfo?[AVAudioSessionRouteChangeReasonKey] as? UInt).flatMap(AVAudioSession.RouteChangeReason.init(rawValue:))
             Task { @MainActor in
                 guard let self else { return }
                 self.speaker = AVAudioSession.sharedInstance().currentRoute.outputs.contains { $0.portType == .builtInSpeaker }
                 self.emitCall()
+                // Ignore category/override changes caused by our own setup.
+                if reason == .newDeviceAvailable { self.preferredSpeaker = false; self.restoreCurrentAudio(); self.audioLifecycle("session-restored") }
+                else if reason == .oldDeviceUnavailable { self.audioPolicy.holdForUserGesture(); self.audioLifecycle("session-restored", shouldResume: false) }
+            }
+        })
+        observers.append(center.addObserver(forName: AVAudioSession.mediaServicesWereLostNotification, object: nil, queue: .main) { [weak self] _ in
+            Task { @MainActor in
+                guard let self else { return }
+                self.audioPolicy.interruptionBegan()
+                self.voice.cancel(state: "interrupted")
+                let currentRoom = self.room
+                if self.call != nil { self.muted = true; try? AudioManager.shared.setEngineAvailability(.none); self.emitCall(error: "AUDIO_SESSION") }
+                self.audioLifecycle("interruption-began", shouldResume: false)
+                _ = try? await currentRoom?.localParticipant.setMicrophone(enabled: false)
+            }
+        })
+        observers.append(center.addObserver(forName: AVAudioSession.mediaServicesWereResetNotification, object: nil, queue: .main) { [weak self] _ in
+            Task { @MainActor in
+                guard let self else { return }
+                self.voice.cancel(state: "interrupted")
+                self.audioPolicy.mediaServicesReset()
+                let currentRoom = self.room
+                if self.call != nil { self.muted = true; self.emitCall(error: "AUDIO_SESSION") }
+                try? AudioManager.shared.setEngineAvailability(.none)
+                self.restoreCurrentAudio()
+                self.audioLifecycle("media-reset")
+                _ = try? await currentRoom?.localParticipant.setMicrophone(enabled: false)
             }
         })
         observers.append(center.addObserver(forName: UIApplication.didEnterBackgroundNotification, object: nil, queue: .main) { [weak self] _ in
-            Task { @MainActor in self?.voice.cancel(state: "interrupted") }
+            Task { @MainActor in
+                guard let self else { return }
+                self.audioPolicy.enteredBackground()
+                self.voice.cancel(state: "interrupted")
+                if self.audioOwner == .blocked { try? AVAudioSession.sharedInstance().setActive(false, options: .notifyOthersOnDeactivation) }
+                self.audioLifecycle("background", shouldResume: false)
+            }
         })
         observers.append(center.addObserver(forName: UIApplication.didBecomeActiveNotification, object: nil, queue: .main) { [weak self] _ in
-            Task { @MainActor in await self?.registerTokens() }
+            Task { @MainActor in
+                guard let self else { return }
+                self.audioPolicy.becameActive()
+                self.restoreCurrentAudio()
+                self.audioLifecycle("foreground")
+                await self.registerTokens()
+            }
         })
         // Establish PushKit before the web app loads. The Keychain credential may
         // be needed to answer a call delivered into a cold/locked application.
         if session.credential != nil { enablePushRegistry() }
+        if UIApplication.shared.applicationState == .active { audioPolicy.becameActive(); restoreGameAudio() }
+    }
+
+    private var audioOwner: NativeAudioPolicy.Owner {
+        audioPolicy.owner(hasCall: call != nil, pendingCall: pendingCallId != nil, recorderBusy: voice.isBusy)
+    }
+
+    private func audioLifecycle(_ state: String, shouldResume: Bool? = nil) {
+        onAudioLifecycle?(["state": state, "shouldResume": shouldResume ?? (!audioPolicy.interrupted && audioPolicy.resumeAllowed), "owner": audioOwner.rawValue])
+    }
+
+    // Playback uses a known baseline after recording/call categories are gone.
+    // CallKit remains the sole owner of activating a live call session.
+    private func restoreGameAudio() {
+        guard audioOwner == .game else { return }
+        do {
+            let session = AVAudioSession.sharedInstance()
+            try session.setCategory(.playback, mode: .default, options: [.mixWithOthers])
+            try session.setActive(true)
+            audioLifecycle("session-restored")
+        } catch { audioLifecycle("session-restored", shouldResume: false) }
+    }
+
+    private func restoreCallOutput() throws {
+        guard call != nil, audioPolicy.canRecoverCall(callKitActive: audioActive) else { throw SocialNativeError.failed("AUDIO_SESSION") }
+        let session = AVAudioSession.sharedInstance()
+        try session.setCategory(.playAndRecord, mode: .voiceChat, options: [.allowBluetooth, .mixWithOthers])
+        let availability = AudioManager.shared.engineAvailability
+        try AudioManager.shared.setEngineAvailability(AudioEngineAvailability(isInputAvailable: availability.isInputAvailable && !muted && !privateTurn, isOutputAvailable: true))
+        // Reapply a speaker override only when the user selected it. Preserve
+        // headset/Bluetooth routing otherwise, including after interruptions.
+        if preferredSpeaker { try session.overrideOutputAudioPort(.speaker) }
+    }
+
+    private func restoreCurrentAudio() {
+        if audioOwner == .call { try? restoreCallOutput() }
+        else { restoreGameAudio() }
+    }
+
+    func webAudioReady() {
+        if UIApplication.shared.applicationState == .active && !audioPolicy.foreground { audioPolicy.becameActive() }
+        restoreCurrentAudio()
+    }
+
+    func resumeGameAudioFromGesture() {
+        guard UIApplication.shared.applicationState == .active, !audioPolicy.interrupted,
+              call == nil, pendingCallId == nil, !voice.isBusy else { return }
+        audioPolicy.becameActive()
+        audioPolicy.userRequestedPlayback()
+        restoreGameAudio()
     }
 
     func webDidReload() { webReady = false }
@@ -156,7 +262,7 @@ final class SocialCoordinator: NSObject {
             callGeneration += 1
             let attempt = callGeneration
             pendingCallId = id
-            defer { if pendingCallId == id { pendingCallId = nil } }
+            defer { if pendingCallId == id { pendingCallId = nil }; restoreGameAudio() }
             voice.cancel()
             guard await SocialVoiceRecorder.permission() else { throw SocialNativeError.failed("MICROPHONE_DENIED") }
             guard !signingOut, session.credential?.userId == userId, attempt == callGeneration else { throw SocialNativeError.failed("CALL_CANCELLED") }
@@ -183,11 +289,20 @@ final class SocialCoordinator: NSObject {
             let value = payload["muted"] as? Bool ?? true
             try await transaction(CXSetMutedCallAction(call: current.id, muted: value))
             return callSnapshot()
+        case "socialCallResumeAudio":
+            guard let current = call, session.credential?.userId == current.userId,
+                  payload["callId"] as? String == current.id.uuidString.lowercased() else { throw SocialNativeError.failed("CALL_NOT_FOUND") }
+            if payload["userInitiated"] as? Bool == true { audioPolicy.userRequestedPlayback() }
+            try restoreCallOutput()
+            emitCall()
+            return callSnapshot()
         case "socialCallSpeaker":
             guard let current = call else { throw SocialNativeError.failed("CALL_NOT_FOUND") }
             guard payload["callId"] as? String == nil || payload["callId"] as? String == current.id.uuidString.lowercased() else { throw SocialNativeError.failed("CALL_NOT_FOUND") }
-            speaker = payload["speaker"] as? Bool ?? false
-            try AVAudioSession.sharedInstance().overrideOutputAudioPort(speaker ? .speaker : .none)
+            let requestedSpeaker = payload["speaker"] as? Bool ?? false
+            try AVAudioSession.sharedInstance().overrideOutputAudioPort(requestedSpeaker ? .speaker : .none)
+            preferredSpeaker = requestedSpeaker
+            speaker = requestedSpeaker
             emitCall()
             return callSnapshot()
         case "socialCallEnd":
@@ -224,6 +339,7 @@ final class SocialCoordinator: NSObject {
             if privateTurn {
                 voice.cancel(state: "interrupted")
                 muted = true
+                if audioActive { try? AudioManager.shared.setEngineAvailability(AudioEngineAvailability(isInputAvailable: false, isOutputAvailable: true)) }
                 _ = try? await room?.localParticipant.setMicrophone(enabled: false)
                 emitCall()
             }
@@ -335,7 +451,7 @@ final class SocialCoordinator: NSObject {
         room = next
         try await next.connect(url: connection.url, token: connection.token)
         guard call?.id == current.id, room === next else { await next.disconnect(); return }
-        if audioActive { try await next.localParticipant.setMicrophone(enabled: !muted) }
+        if audioActive { try await next.localParticipant.setMicrophone(enabled: !muted && !privateTurn) }
         guard call?.id == current.id, room === next else { await next.disconnect(); return }
         state = "connected"
         if !current.incoming { provider.reportOutgoingCall(with: current.id, connectedAt: Date()) }
@@ -408,6 +524,7 @@ final class SocialCoordinator: NSObject {
         ending["endReason"] = endedReason
         emit("socialCall", ending)
         try? AudioManager.shared.setEngineAvailability(.none)
+        audioActive = false
         call = nil
         callPoll?.cancel()
         callPoll = nil
@@ -423,6 +540,8 @@ final class SocialCoordinator: NSObject {
             audioActive = false
             muted = false
             speaker = false
+            preferredSpeaker = false
+            restoreGameAudio()
         }
         emit("socialCall", ["callId": current.id.uuidString.lowercased(), "conversationId": current.conversationId,
                             "userId": current.userId, "scope": current.scope, "state": "ended", "muted": true, "speaker": false, "participants": [],
@@ -538,23 +657,55 @@ extension SocialCoordinator: CXProviderDelegate {
         Task { @MainActor in
             guard self.call?.id == action.callUUID else { action.fail(); return }
             guard !self.privateTurn || action.isMuted else { action.fail(); return }
+            guard !self.audioPolicy.interrupted || action.isMuted else { action.fail(); return }
+            let currentRoom = self.room
             do {
+                if action.isMuted { self.muted = true }
+                else { self.audioPolicy.userRequestedPlayback() }
+                if self.audioActive {
+                    try AudioManager.shared.setEngineAvailability(AudioEngineAvailability(isInputAvailable: !action.isMuted, isOutputAvailable: true))
+                    _ = try await currentRoom?.localParticipant.setMicrophone(enabled: !action.isMuted)
+                }
+                guard self.call?.id == action.callUUID else { action.fail(); return }
+                guard !self.privateTurn || action.isMuted else {
+                    self.muted = true
+                    _ = try? await currentRoom?.localParticipant.setMicrophone(enabled: false)
+                    action.fail(); return
+                }
                 self.muted = action.isMuted
-                if self.audioActive { _ = try await self.room?.localParticipant.setMicrophone(enabled: !action.isMuted) }
                 action.fulfill()
                 self.emitCall()
-            } catch { action.fail(); self.emitCall(error: Self.errorCode(error)) }
+            } catch {
+                action.fail()
+                guard self.call?.id == action.callUUID else { return }
+                self.muted = true
+                try? AudioManager.shared.setEngineAvailability(AudioEngineAvailability(isInputAvailable: false, isOutputAvailable: self.audioActive))
+                _ = try? await currentRoom?.localParticipant.setMicrophone(enabled: false)
+                self.emitCall(error: Self.errorCode(error))
+            }
         }
     }
 
     nonisolated func provider(_ provider: CXProvider, didActivate audioSession: AVAudioSession) {
         Task { @MainActor in
             guard let callId = self.call?.id else { return }
+            let activeRoom = self.room
             do {
                 try audioSession.setCategory(.playAndRecord, mode: .voiceChat, options: [.allowBluetooth, .mixWithOthers])
-                try AudioManager.shared.setEngineAvailability(.default)
+                self.audioPolicy.callKitActivated()
+                try AudioManager.shared.setEngineAvailability(AudioEngineAvailability(isInputAvailable: !self.muted && !self.privateTurn, isOutputAvailable: true))
                 self.audioActive = true
-                if self.room?.connectionState == .connected { _ = try await self.room?.localParticipant.setMicrophone(enabled: !self.muted) }
+                if activeRoom?.connectionState == .connected { _ = try await activeRoom?.localParticipant.setMicrophone(enabled: !self.muted && !self.privateTurn) }
+                guard self.call?.id == callId, self.room === activeRoom else { return }
+                // Privacy or interruption may have changed while SDK capture
+                // awaited its worker. An older activation cannot reopen input.
+                if self.privateTurn || self.audioPolicy.interrupted || self.muted {
+                    self.muted = true
+                    try? AudioManager.shared.setEngineAvailability(AudioEngineAvailability(isInputAvailable: false, isOutputAvailable: self.audioActive && !self.audioPolicy.interrupted))
+                    _ = try? await activeRoom?.localParticipant.setMicrophone(enabled: false)
+                    guard self.call?.id == callId, self.room === activeRoom else { return }
+                }
+                self.audioLifecycle("session-restored")
             } catch {
                 guard self.call?.id == callId else { return }
                 self.emitCall(error: "AUDIO_SESSION")
@@ -567,6 +718,7 @@ extension SocialCoordinator: CXProviderDelegate {
         Task { @MainActor in
             self.audioActive = false
             try? AudioManager.shared.setEngineAvailability(.none)
+            self.restoreGameAudio()
         }
     }
 

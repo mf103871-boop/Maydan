@@ -1008,7 +1008,7 @@ function MediaImage({ question, url, effect, revealed, onSfx }) {
   );
 }
 
-function useQuestionMedia(ref, soundOn, volume, sound) {
+function useQuestionMedia(ref, soundOn, volume, sound, onInterrupt) {
   const [element, setElement] = useState(null);
   const attach = useCallback((node) => {
     ref.current = node;
@@ -1018,12 +1018,25 @@ function useQuestionMedia(ref, soundOn, volume, sound) {
     if (!element) return undefined;
     element.muted = !soundOn;
     element.volume = Math.max(0, Math.min(1, Number.isFinite(volume) ? volume : .75));
-    if (!soundOn) element.pause();
-    const pauseHidden = () => { if (document.hidden || socialInterruption.getSnapshot().paused) element.pause(); };
+    const pause = () => { element.pause(); onInterrupt?.(); };
+    if (!soundOn) pause();
+    const pauseHidden = () => { if (document.hidden || socialInterruption.getSnapshot().paused) pause(); };
+    const nativeAudio = (event) => {
+      if (["background", "interruption-began", "media-reset"].includes(event.detail?.state)) pause();
+    };
     document.addEventListener("visibilitychange", pauseHidden);
+    document.addEventListener("freeze", pause);
+    window.addEventListener("pagehide", pause);
+    window.addEventListener("maydan-audio-lifecycle", nativeAudio);
     const unsubscribe = socialInterruption.subscribe(pauseHidden);
-    return () => { document.removeEventListener("visibilitychange", pauseHidden); unsubscribe(); };
-  }, [element, soundOn, volume]);
+    return () => {
+      document.removeEventListener("visibilitychange", pauseHidden);
+      document.removeEventListener("freeze", pause);
+      window.removeEventListener("pagehide", pause);
+      window.removeEventListener("maydan-audio-lifecycle", nativeAudio);
+      unsubscribe();
+    };
+  }, [element, soundOn, volume, onInterrupt]);
   // يخفض المقطع الخلفية عند تشغيله ويرفعها عند توقفه أو انتهائه أو تعطّله؛ ولا يرفع إلا ما خفضه هو.
   useEffect(() => {
     if (!element) return undefined;
@@ -1045,15 +1058,16 @@ function useQuestionMedia(ref, soundOn, volume, sound) {
 
 function MediaAudio({ url, revealed, soundOn = true, volume = .75, sound }) {
   const ref = useRef(null);
-  const pending = useRef(false);
-  const attach = useQuestionMedia(ref, soundOn, volume, sound);
+  const pending = useRef(null);
+  const cancelPending = useCallback(() => { pending.current = null; }, []);
+  const attach = useQuestionMedia(ref, soundOn, volume, sound, cancelPending);
   const [playing, setPlaying] = useState(false);
   // تُحتسب المرة عند بدء التشغيل من أوله؛ الإيقاف المؤقت ثم الاستئناف لا يُحتسب.
   const [plays, setPlays] = useState(0);
   // متوقف في منتصف المقطع: استئنافه ليس مرة جديدة، فلا يُقفل الزر بعد نفاد المرات
   const [midway, setMidway] = useState(false);
-  useEffect(() => { setPlays(0); setPlaying(false); setMidway(false); }, [url]);
-  useEffect(() => () => { if (ref.current) ref.current.pause(); }, []);
+  useEffect(() => { cancelPending(); setPlays(0); setPlaying(false); setMidway(false); }, [url, cancelPending]);
+  useEffect(() => () => { cancelPending(); if (ref.current) ref.current.pause(); }, [cancelPending]);
   const spent = !revealed && plays >= MAX_AUDIO_PLAYS,
     left = Math.max(0, MAX_AUDIO_PLAYS - plays);
   const start = (fromStart) => {
@@ -1063,8 +1077,15 @@ function MediaAudio({ url, revealed, soundOn = true, volume = .75, sound }) {
     if (fresh && spent) return;
     if (fromStart) el.currentTime = 0;
     // العدّ بعد تأكد التشغيل: ضغطة على مقطع ما زال يُحمَّل ثم إيقافها كانت تحرق مرة بلا صوت
-    pending.current = true;
-    el.play().then(() => { setPlaying(!el.paused); if (fresh && !el.paused) setPlays((n) => n + 1); }).catch(() => setPlaying(false)).finally(() => { pending.current = false; });
+    // انقطاع النظام قد يترك وعد play معلقًا؛ لا يحبس زر الإعادة ولا يسمح لوعد
+    // قديم بتغيير حالة محاولة أحدث أو استهلاك مرة سماع بعد العودة.
+    const attempt = {};
+    pending.current = attempt;
+    el.play().then(() => {
+      if (pending.current !== attempt) return;
+      setPlaying(!el.paused);
+      if (fresh && !el.paused) setPlays((n) => n + 1);
+    }).catch(() => { if (pending.current === attempt) setPlaying(false); }).finally(() => { if (pending.current === attempt) pending.current = null; });
   };
   const toggle = () => {
     const el = ref.current;
@@ -1088,7 +1109,7 @@ function MediaAudio({ url, revealed, soundOn = true, volume = .75, sound }) {
           onError,
           // الحالة تتبع العنصر نفسه لا الأزرار فقط (إيقاف من النظام، انتهاء المقطع…)
           onPlay: () => { setPlaying(true); setMidway(false); },
-          onPause: () => { const el = ref.current; setPlaying(false); setMidway(!!el && el.currentTime > 0 && !el.ended); },
+          onPause: () => { cancelPending(); const el = ref.current; setPlaying(false); setMidway(!!el && el.currentTime > 0 && !el.ended); },
           onEnded: () => { setPlaying(false); setMidway(false); },
         }),
         hBeta(

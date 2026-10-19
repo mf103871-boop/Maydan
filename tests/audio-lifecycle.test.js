@@ -22,7 +22,7 @@ function audioEnvironment(t, { state = 'running', resume, decode = 'immediate', 
     createBufferSource() { return this.source({ playbackRate: param() }); }
     // Channel data is allocated on demand: a decoded music track is millions of frames.
     createBuffer(count, size, rate) { const channels = []; const buffer = { length: size, sampleRate: rate, numberOfChannels: count, duration: size / rate, getChannelData: (i) => (channels[i] ||= new Float32Array(size)) }; this.buffers.push(buffer); return buffer; }
-    async resume() { if (resume) await resume(); this.state = 'running'; }
+    async resume() { if (resume) await resume(this); this.state = 'running'; }
     async suspend() { this.state = 'suspended'; }
     async close() { this.state = 'closed'; }
     // Decoding yields a buffer whose length identifies the cue (see fetch below).
@@ -45,7 +45,7 @@ function audioEnvironment(t, { state = 'running', resume, decode = 'immediate', 
     return new Response(new Uint8Array(entry.frames), { status: 200, headers: { 'content-type': 'audio/mp4' } });
   };
   const document = { hidden: false, addEventListener(name, fn) { if (!listeners.has(name)) listeners.set(name, new Set()); listeners.get(name).add(fn); }, removeEventListener(name, fn) { listeners.get(name)?.delete(fn); } };
-  globalThis.window = { AudioContext: Context };
+  globalThis.window = { AudioContext: Context, addEventListener: document.addEventListener, removeEventListener: document.removeEventListener };
   globalThis.document = document;
   t.after(() => { globalThis.window = oldWindow; globalThis.document = oldDocument; globalThis.fetch = oldFetch; });
   return {
@@ -616,5 +616,180 @@ test('returning from the background asks the context to run again, and an interr
   assert.equal(c.sources.length, 0, 'waiting for the context');
   env.setState(c, 'running'); await settle();
   assert.equal(c.sources.length, 1, 'statechange to running releases the cue without a resume() promise');
+  sound.dispose();
+});
+
+test('native background and foreground recover music and fresh cues even without a document visibility event', async t => {
+  const env = audioEnvironment(t), sound = await warm(createSound()); sound.attach();
+  sound.music.play('home'); await settle();
+  const c = env.instances[0], loop = c.sources.at(-1);
+  sound.play('correct');
+  env.dispatch('pagehide');
+  env.dispatch('maydan-audio-lifecycle', {detail:{state:'background'}}); await settle();
+  assert.equal(c.nodes[0].gain.value, 0);
+  assert.equal(sound.play('wrong'), false);
+  env.dispatch('maydan-audio-lifecycle', {detail:{state:'foreground'}}); await settle();
+  assert.equal(c.state, 'running', 'native foreground also covers a missed WebKit pageshow');
+  assert.ok(c.nodes[0].gain.value > 0);
+  assert.equal(sound.music.current, 'home');
+  assert.equal(c.sources.filter(source => source.loop).length, 1, 'the preserved music loop is not duplicated');
+  assert.equal(loop.stops.length, 0);
+  assert.equal(sound.play('wrong'), true);
+  sound.dispose();
+  assert.ok([...env.listeners.values()].every(set => !set.size));
+  assert.equal(c.onstatechange, null);
+});
+
+test('pagehide/pageshow and focus recover an interrupted graph; an ended loop is restarted', async t => {
+  const env = audioEnvironment(t), sound = await warm(createSound()); sound.attach();
+  sound.music.play('calm'); await settle();
+  const c = env.instances[0], oldLoop = c.sources.at(-1);
+  env.dispatch('pagehide'); await settle();
+  assert.equal(c.state, 'suspended');
+  oldLoop.onended();
+  env.dispatch('pageshow'); await settle();
+  assert.equal(c.state, 'running');
+  assert.equal(sound.music.current, 'calm');
+  assert.equal(c.sources.filter(source => source.loop).length, 2, 'an ended source cannot masquerade as a playing loop');
+  env.setState(c, 'interrupted'); env.dispatch('focus'); await settle();
+  assert.equal(c.state, 'running');
+  sound.dispose();
+});
+
+test('a late background suspend finishing after foreground is resumed by statechange', async t => {
+  const env = audioEnvironment(t), sound = await warm(createSound()); sound.attach();
+  const c = env.instances[0];
+  env.document.hidden = true; env.dispatch('visibilitychange');
+  env.document.hidden = false; env.dispatch('visibilitychange'); await settle();
+  assert.equal(c.state, 'running');
+  env.setState(c, 'suspended'); await settle();
+  assert.equal(c.state, 'running');
+  assert.equal(sound.play('correct'), true);
+  sound.dispose();
+});
+
+test('a frozen running clock and hung resume get one bounded graph replacement without fetching again or replaying cues', async t => {
+  t.mock.timers.enable({apis:['setTimeout']});
+  const env = audioEnvironment(t), sound = await warm(createSound()); sound.attach();
+  sound.music.play('home'); await settle();
+  sound.setDucking(true, 'live-call'); sound.play('fanfare');
+  const old = env.instances[0], staleChange = old.onstatechange, fetched = env.fetched.length;
+  old.resume = () => new Promise(() => {});
+  env.dispatch('focus');
+  t.mock.timers.tick(300); await settle();
+  t.mock.timers.tick(200); await settle();
+  t.mock.timers.tick(500); await settle();
+  assert.equal(env.instances.length, 2);
+  assert.equal(old.state, 'closed');
+  assert.equal(old.onstatechange, null);
+  const fresh = env.instances[1];
+  assert.equal(sound.music.current, 'home');
+  assert.equal(fresh.sources.length, 1, 'only the current music is restored, never an old automatic cue');
+  assert.equal(fresh.nodes[0].gain.value, .75 ** 2 * .3, 'live duck owner survives rebuilding');
+  assert.equal(env.fetched.length, fetched, 'cached encoded files are decoded for the fresh graph');
+  staleChange(); t.mock.timers.tick(10000); await settle();
+  assert.equal(env.instances.length, 2, 'no recurring replacements or stale-context callback');
+  fresh.resume = () => new Promise(() => {});
+  env.setState(fresh, 'interrupted'); t.mock.timers.tick(10000); await settle();
+  env.setState(fresh, 'suspended'); t.mock.timers.tick(10000); await settle();
+  assert.equal(env.instances.length, 2, 'fresh-graph statechanges cannot renew the replacement budget');
+  env.setState(fresh, 'closed'); t.mock.timers.tick(10000); await settle();
+  assert.equal(env.instances.length, 2, 'a closed replacement also waits for a fresh external recovery intent');
+  env.dispatch('pointerdown'); await settle();
+  assert.equal(env.instances.length, 3, 'a new explicit gesture may create its own bounded recovery attempt');
+  assert.equal(sound.play('correct'), true);
+  sound.dispose();
+});
+
+test('normal audio clock progress avoids rebuilding and backgrounding cancels an in-flight recovery', async t => {
+  t.mock.timers.enable({apis:['setTimeout']});
+  const env = audioEnvironment(t), sound = await warm(createSound()); sound.attach();
+  const c = env.instances[0]; env.dispatch('focus');
+  c.currentTime += .2; t.mock.timers.tick(300); await settle();
+  assert.equal(env.instances.length, 1);
+  env.dispatch('focus'); t.mock.timers.tick(300); await settle();
+  env.dispatch('pagehide'); t.mock.timers.tick(5000); await settle();
+  assert.equal(env.instances.length, 1);
+  assert.equal(c.state, 'suspended', 'a stale recovery cannot restart the hidden page');
+  sound.dispose();
+});
+
+test('OS interruption without shouldResume waits for a gesture, and recovery never changes saved mute or music preferences', async t => {
+  const env = audioEnvironment(t), sound = await warm(createSound({music:false})); sound.attach();
+  sound.music.play('home');
+  env.dispatch('maydan-audio-lifecycle', {detail:{state:'interruption-began'}}); await settle();
+  assert.equal(sound.play('correct'), false);
+  env.dispatch('maydan-audio-lifecycle', {detail:{state:'interruption-ended',shouldResume:false}});
+  env.dispatch('focus'); await settle();
+  assert.equal(env.instances[0].state, 'suspended');
+  env.dispatch('pointerdown'); await settle();
+  assert.equal(sound.play('correct'), true);
+  assert.equal(sound.music.current, null);
+  assert.equal(sound.music.enabled, false);
+  sound.enable(false);
+  const count = env.instances.length, sources = env.instances.at(-1).sources.length;
+  for (const state of ['background','foreground','media-reset','session-restored']) env.dispatch('maydan-audio-lifecycle', {detail:{state}});
+  env.dispatch('focus'); env.dispatch('pageshow'); await settle();
+  assert.equal(sound.enabled, false);
+  assert.equal(env.instances.length, count);
+  assert.equal(env.instances.at(-1).sources.length, sources);
+  assert.equal(sound.play('correct'), false);
+  sound.dispose();
+});
+
+test('media service reset replaces the graph once and disposal cancels pending recovery', async t => {
+  t.mock.timers.enable({apis:['setTimeout']});
+  const env = audioEnvironment(t), sound = await warm(createSound()); sound.attach();
+  sound.music.play('tense'); await settle();
+  env.dispatch('maydan-audio-lifecycle', {detail:{state:'interruption-began',shouldResume:false}});
+  env.dispatch('maydan-audio-lifecycle', {detail:{state:'media-reset',shouldResume:true}}); await settle();
+  assert.equal(env.instances.length, 2);
+  assert.equal(sound.music.current, 'tense');
+  assert.equal(sound.play('correct'), true, 'a media reset ends the media-services-lost interruption without waiting for a separate ended notification');
+  const oldChange = env.instances[1].onstatechange;
+  sound.dispose(); oldChange(); t.mock.timers.tick(10000); await settle();
+  assert.equal(env.instances.length, 2);
+  assert.ok([...env.listeners.values()].every(set => !set.size));
+});
+
+test('headphone unplug keeps the game quiet until an explicit gesture requests native session activation', async t => {
+  const env = audioEnvironment(t), sound = await warm(createSound()); sound.attach();
+  const sent = [];
+  window.webkit = {messageHandlers:{maydan:{postMessage:message => sent.push(message)}}};
+  env.dispatch('maydan-audio-lifecycle', {detail:{state:'session-restored',shouldResume:false}});
+  env.dispatch('focus'); env.dispatch('pageshow'); await settle();
+  assert.equal(sound.play('correct'), false);
+  assert.equal(sent.length, 0, 'focus and lifecycle do not force output to the speaker');
+  env.dispatch('maydan-audio-lifecycle', {detail:{state:'interruption-began'}});
+  env.dispatch('maydan-audio-lifecycle', {detail:{state:'interruption-ended',shouldResume:true}});
+  assert.equal(sound.play('correct'), false, 'a later allowed interruption does not lift the earlier headphone privacy hold');
+  env.dispatch('pointerdown'); await settle();
+  assert.deepEqual(sent, [{type:'gameAudioResume'}]);
+  assert.equal(sound.play('correct'), true);
+  env.dispatch('pointerup'); assert.equal(sent.length, 1, 'one native activation request, not every touch event');
+  sound.dispose();
+});
+
+test('a held or background media reset is consumed by the next permitted gesture and a muted reset by enabling audio', async t => {
+  const env = audioEnvironment(t), sound = await warm(createSound()); sound.attach();
+  sound.music.play('home'); await settle();
+  env.dispatch('maydan-audio-lifecycle', {detail:{state:'session-restored',shouldResume:false}});
+  env.dispatch('maydan-audio-lifecycle', {detail:{state:'media-reset',shouldResume:false}});
+  assert.equal(env.instances.length, 1, 'held playback is not restarted by media reset');
+  env.dispatch('pointerdown'); await settle();
+  assert.equal(env.instances.length, 2, 'the held graph reset is retained, even if its old clock could advance');
+  assert.equal(sound.music.current, 'home');
+  env.dispatch('maydan-audio-lifecycle', {detail:{state:'background'}});
+  env.dispatch('maydan-audio-lifecycle', {detail:{state:'media-reset',shouldResume:true}});
+  assert.equal(env.instances.length, 2);
+  env.dispatch('maydan-audio-lifecycle', {detail:{state:'foreground',shouldResume:true}}); await settle();
+  assert.equal(env.instances.length, 3);
+  sound.enable(false);
+  env.dispatch('maydan-audio-lifecycle', {detail:{state:'media-reset',shouldResume:true}});
+  assert.equal(env.instances.length, 3);
+  assert.equal(sound.enabled, false);
+  sound.enable(true); await settle();
+  assert.equal(env.instances.length, 4, 'enabling audio consumes its queued reset exactly once');
+  assert.equal(sound.music.current, 'home');
   sound.dispose();
 });
