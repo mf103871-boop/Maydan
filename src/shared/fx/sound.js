@@ -554,7 +554,13 @@ export function createSound({ enabled = true, volume = 0.75, music = true, music
     }
     else if (detail.state === 'session-restored') {
       if (detail.shouldResume === false) { gestureRequired = true; pauseAudio(); }
-      else recoverAudio({ renew: true });
+      else {
+        // CallKit activation and an explicit native baseline restore need not be
+        // paired with interruption-ended. Native true confirms the OS session is
+        // available; any earlier sticky user-gesture hold still remains in force.
+        if (detail.shouldResume === true) interrupted = false;
+        recoverAudio({ renew: true });
+      }
     }
   }
   function onGesture() {

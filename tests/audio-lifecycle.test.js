@@ -793,3 +793,20 @@ test('a held or background media reset is consumed by the next permitted gesture
   assert.equal(sound.music.current, 'home');
   sound.dispose();
 });
+
+test('an authoritative native session restore releases transient interruption without clearing a sticky gesture hold', async t => {
+  const env = audioEnvironment(t), sound = await warm(createSound()); sound.attach();
+  sound.music.play('calm'); await settle();
+  env.dispatch('maydan-audio-lifecycle', {detail:{state:'interruption-began',shouldResume:false}});
+  assert.equal(sound.play('correct'), false);
+  env.dispatch('maydan-audio-lifecycle', {detail:{state:'session-restored',shouldResume:true}}); await settle();
+  assert.equal(sound.play('correct'), true, 'CallKit/native baseline restore needs no separate interruption-ended event');
+  assert.equal(sound.music.current, 'calm');
+  env.dispatch('maydan-audio-lifecycle', {detail:{state:'session-restored',shouldResume:false}});
+  env.dispatch('maydan-audio-lifecycle', {detail:{state:'interruption-began',shouldResume:false}});
+  env.dispatch('maydan-audio-lifecycle', {detail:{state:'session-restored',shouldResume:true}}); await settle();
+  assert.equal(sound.play('wrong'), false, 'a successful session restore does not erase the earlier explicit-playback requirement');
+  env.dispatch('pointerdown'); await settle();
+  assert.equal(sound.play('wrong'), true);
+  sound.dispose();
+});

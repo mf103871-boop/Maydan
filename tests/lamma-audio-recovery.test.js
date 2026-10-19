@@ -84,6 +84,20 @@ test('a synchronous playback failure is retryable and successful recovery clears
   finally { await engine.dispose(); h.close(); }
 });
 
+test('authoritative restored session clears transient interruption without lifting a sticky playback hold or mute', async () => {
+  const h = fixture(), f = webSDK(), engine = new CallMedia(() => {}, { loadSDK: async () => f.sdk }); engine.setAccount('alice');
+  try {
+    await engine.connect(connection('one'), { muted: true });
+    const lifecycle = (state, shouldResume) => window.dispatchEvent(new CustomEvent('maydan-audio-lifecycle', { detail: { state, shouldResume } }));
+    lifecycle('interruption-began', false); assert.equal(engine.audioInterrupted, true);
+    lifecycle('session-restored', true); await flush(); assert.equal(engine.audioInterrupted, false); assert.equal(f.rooms[0].startAudioCalls, 1);
+    lifecycle('session-restored', false); lifecycle('interruption-began', false); lifecycle('session-restored', true); await flush();
+    assert.equal(engine.audioInterrupted, false); assert.equal(engine.playbackHeld, true); assert.equal(f.rooms[0].startAudioCalls, 1, 'restoration does not override an earlier OS/user-gesture hold');
+    assert.equal(engine.state.muted, true); assert.deepEqual(f.mic, [false]);
+    await engine.resumeAudio(); assert.equal(f.rooms[0].startAudioCalls, 2); assert.equal(engine.playbackHeld, false); assert.deepEqual(f.mic, [false]);
+  } finally { await engine.dispose(); h.close(); }
+});
+
 test('native resume uses current call ID without microphone commands and fences an old completion', async () => {
   const h = fixture(true, command => command.type === 'socialCallResumeAudio' ? undefined : {}), engine = new CallMedia(); engine.setAccount('alice');
   const snapshot = id => ({ userId: 'alice', callId: id, state: 'connected', muted: true });

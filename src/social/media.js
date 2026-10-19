@@ -104,7 +104,7 @@ export class CallMedia {
       const detail = event.detail || {};
       if (detail.state === 'background') return;
       if (detail.state === 'interruption-began') { this.audioInterrupted = true; for (const element of this.elements) element.pause(); return; }
-      if (detail.state === 'interruption-ended' || detail.state === 'media-reset') this.audioInterrupted = false;
+      if (detail.state === 'interruption-ended' || detail.state === 'media-reset' || (detail.state === 'session-restored' && detail.shouldResume === true)) this.audioInterrupted = false;
       if (detail.shouldResume === false) { this.playbackHeld = true; for (const element of this.elements) element.pause(); if (this.state.connected && !this.state.ended) this.update({ error: 'اضغط تشغيل الصوت لسماع المكالمة.' }); return; }
       if (['foreground', 'media-reset', 'session-restored', 'interruption-ended'].includes(detail.state)) this.foreground();
     };
