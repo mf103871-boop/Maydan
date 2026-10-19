@@ -105,6 +105,10 @@ export function validateDesignDocument(input) {
 
 export function nodeStyle(style = {}) {
   const output = { ...style };
+  // A CSS background-image paints above background-color. An explicit Studio
+  // color must replace the component's default gradient while keeping its
+  // border, depth and interaction states; clearing it restores the base art.
+  if (style.backgroundColor) output.backgroundImage = 'none';
   if (style.boxShadow != null) output.boxShadow = { none:'none',soft:'0 4px 12px #35254718',raised:'0 12px 28px #35254730' }[style.boxShadow];
   if (style.fontFamily) output.fontFamily = style.fontFamily === 'system' ? 'system-ui, sans-serif' : '"Maydan Round", system-ui, sans-serif';
   return output;

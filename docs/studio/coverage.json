@@ -7833,6 +7833,16 @@
           "editableText": false,
           "editableIcon": false,
           "conditionalReason": null
+        },
+        {
+          "id": "sheet-drag-handle",
+          "label": "مقبض إغلاق اللوحة",
+          "kind": "button",
+          "required": true,
+          "repeated": false,
+          "editableText": false,
+          "editableIcon": false,
+          "conditionalReason": null
         }
       ]
     },
@@ -8070,6 +8080,16 @@
           "label": "طرق تسجيل الدخول",
           "kind": "container",
           "required": false,
+          "repeated": false,
+          "editableText": false,
+          "editableIcon": false,
+          "conditionalReason": null
+        },
+        {
+          "id": "sheet-drag-handle",
+          "label": "مقبض إغلاق اللوحة",
+          "kind": "button",
+          "required": true,
           "repeated": false,
           "editableText": false,
           "editableIcon": false,

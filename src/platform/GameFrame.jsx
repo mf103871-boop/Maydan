@@ -5,6 +5,7 @@ import { IconHome, IconVolume, IconVolumeOff } from '../shared/ui/icons.jsx';
 import { setExitGuard, navigate } from './router.js';
 import { usePlatform } from './context.js';
 import { createStorage } from '../shared/lib/storage.js';
+import { socialInterruption } from '../social/interruption.js';
 
 // «مسح بيانات اللعبة» من شاشة التعطّل كان يمسح النتائج والسجل أيضًا، والمباراة الجارية وحدها
 // هي سبب الأعطال المتكررة عادة. الضغطة الأولى تمسح مفاتيح المباراة الجارية التي تعلنها اللعبة
@@ -46,6 +47,15 @@ export function GameFrame({ game, inGame, exitMessage, beforeExit, children, onE
     setExitGuard((target) => { requestExit(target, { fromBack: true }); return true; });
     return () => setExitGuard(null);
   }, [requestExit]);
+
+  // Games with their own exit handler already pause their clocks. For the
+  // shared timer games, use the existing privacy/pause curtain while deciding;
+  // cancelling requires the same explicit resume as returning from the drawer.
+  useEffect(() => {
+    if (!confirming || beforeExit) return undefined;
+    socialInterruption.open();
+    return () => socialInterruption.close();
+  }, [confirming, beforeExit]);
 
   useEffect(() => {
     const meta = document.querySelector('meta[name="theme-color"]');

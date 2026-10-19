@@ -22,13 +22,14 @@
 
 /* بطاقات الألعاب */
 .game-card { --ga: var(--game-accent); position: relative; display: grid; justify-items: center; align-content: start; gap: 3px; text-align: center; padding: 9px 8px 12px; min-height: 179px; border-radius: 23px;
-  background: var(--top-light), linear-gradient(155deg, #FFFEF7, color-mix(in srgb, var(--ga) 9%, #FFF9ED));
-  border: 1px solid color-mix(in srgb, var(--ga) 24%, #EADFCF);
-  box-shadow: inset 0 2px 1px #FFFFFF, 0 4px 0 color-mix(in srgb, var(--ga) 22%, #D5C3B2), 0 10px 18px color-mix(in srgb, var(--ga) 12%, #6E4C3012);
+  background: var(--top-light), linear-gradient(155deg, color-mix(in srgb, var(--ga) 7%, #FFFEF7), color-mix(in srgb, var(--ga) 24%, #FFF7E7));
+  border: 1px solid color-mix(in srgb, var(--ga) 48%, #D9C7B4);
+  box-shadow: inset 0 2px 1px #FFFFFF, inset 0 -1px 0 color-mix(in srgb, var(--ga) 24%, transparent), 0 5px 0 color-mix(in srgb, var(--ga) 44%, #B89B85), 0 12px 18px color-mix(in srgb, var(--ga) 18%, #45245214);
   overflow: hidden; isolation: isolate; transition: transform .18s var(--ease-out), box-shadow .2s ease;
   animation: ui-card-pop .5s var(--ease-spring) backwards; animation-delay: var(--delay, 0ms); }
 /* backwards لا both: الإطار الأخير الصريح (transform: none) مع both يبقى مطبَّقًا ويطمس ميل tilt() والبارالاكس */
 .game-card:active { box-shadow: inset 0 2px 4px #64483618, 0 0 0 color-mix(in srgb, var(--ga) 22%, #D5C3B2), 0 2px 4px #6E4C3012; }
+.game-card:focus-visible { outline: 3px solid var(--purple); outline-offset: 4px; }
 .game-card.is-soon { opacity: .6; filter: saturate(.6); }
 .game-card .icon { width: 86px; height: 86px; display: grid; place-items: center; }
 /* بارالاكس ثنائي الأبعاد (كل المتصفحات): tilt() يكتب --tx/--ty في [-1,1].
@@ -51,6 +52,7 @@
 .details-plus-note { font-size: 12.5px; font-weight: 700; color: var(--muted); }
 .home-screen .section-title { color: var(--plum); font-size: 23px; }
 .home-footer { display: flex; justify-content: center; flex-wrap: wrap; gap: 8px; align-items: center; font-size: 12px; color: var(--muted); padding: 3px 0; }
+.home-screen .legal-links a { display: inline-flex; align-items: center; min-height: 44px; padding-block: 8px; text-underline-offset: 3px; }
 .home-footer span { padding-inline-start: 8px; border-inline-start: 1px solid var(--stroke); font-size: 11px; }
 @media (min-width: 620px) { .home-screen { padding-top: calc(30px + var(--safe-top)); gap: 22px; } .games-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; } .game-card { min-height: 235px; padding-block: 18px; } .game-card .icon { width: 122px; height: 122px; } .game-card .name { font-size: 26px; } .game-card .tagline { font-size: 14px; } .game-card .meta { font-size: 13px; } }
 @media (max-width: 350px) { .home-head .row { gap: 6px; } .home-head .brand { gap: 6px; } .home-head .brand-mark { width: 40px; height: 40px; } .home-head .brand-name { font-size: 30px; } .home-head .brand-sub { font-size: 12px; } .game-card .name { font-size: 21px; } .game-card .tagline { font-size: 11px; } .game-card .meta { font-size: 10px; } .games-grid { gap: 9px; } }
@@ -108,7 +110,7 @@
 .setting-volume input { width: 100%; min-width: 0; min-height: 44px; padding: 0; accent-color: var(--accent); cursor: pointer; direction: ltr; }
 .setting-volume input:disabled { opacity: .4; cursor: default; }
 /* المفتاح (منطقي: --flow) */
-.switch::before { content: ""; position: absolute; inset: -6px 0; }   /* هدف لمس ≥44px دون تغيير الشكل */
+.switch::before { content: ""; position: absolute; inset: -7px 0; }   /* هدف لمس ≥44px دون تغيير الشكل */
 .switch { width: 54px; height: 32px; border-radius: 999px; background: #DCCAE6; border: 1px solid var(--stroke-strong); position: relative; flex: 0 0 auto; box-shadow: inset 0 2px 3px rgba(53,37,71,.18); transition: background-color .2s ease; min-height: 32px; }
 .switch::after { content: ""; position: absolute; top: 3px; inset-inline-start: 3px; width: 24px; height: 24px; border-radius: 50%; background: #fff; box-shadow: 0 2px 3px rgba(53,37,71,.28), inset 0 -2px 0 #EFE6F2; transition: transform .28s var(--ease-spring); transform-origin: 50% 50%; }
 .switch[aria-checked="true"] { background: var(--success); box-shadow: inset 0 2px 3px rgba(0,0,0,.18); }
@@ -213,7 +215,7 @@ body:has(.splash) .screen, body:has(.splash) .screen * { animation-play-state: p
 /* ── أقسام القوائم: ألعاب واضحة، إعدادات منظّمة، ومتجر قادم ── */
 .home-profile { display: inline-grid; place-items: center; flex: 0 0 auto; width: 50px; height: 50px; padding: 2px; border: 1px solid #D7C8DE; border-radius: 18px; background: #FFFCF5; box-shadow: 0 3px 0 #E0D3C5; cursor: pointer; }
 .home-profile:focus-visible, .home-presence:focus-visible { outline: 3px solid #087D89; outline-offset: 3px; }
-.home-presence { position: relative; isolation: isolate; display: flex; align-items: center; gap: 12px; min-width: 0; width: 100%; padding: 10px 12px; border: 1px solid #D0E1D8; border-radius: 20px; background: linear-gradient(110deg, #F8FBF2, #E9F3EC); box-shadow: 0 3px 0 #DDE5D8; text-align: start; color: var(--plum); font: inherit; cursor: pointer; overflow: hidden; }
+.home-presence { position: relative; isolation: isolate; display: flex; align-items: center; gap: 12px; min-width: 0; width: 100%; padding: 10px 12px; border: 1px solid #D0E1D8; border-radius: 20px; background: linear-gradient(115deg, #F4FFFA, #CDEEE4); box-shadow: inset 0 2px 0 #FFFFFF, 0 4px 0 #9BCDBE, 0 8px 14px #1A6A6514; text-align: start; color: var(--plum); font: inherit; cursor: pointer; overflow: hidden; }
 .home-presence-faces { display: flex; align-items: center; flex: 0 0 auto; padding-inline-end: 7px; }
 .home-presence-faces .social-avatar { width: 36px; height: 36px; flex-basis: 36px; margin-inline-end: -7px; border-radius: 13px; border-color: #F1F8EE; }
 .home-presence-faces .social-avatar > i { width: 10px; height: 10px; }
@@ -230,7 +232,7 @@ body:has(.splash) .screen, body:has(.splash) .screen * { animation-play-state: p
 .home-section-heading .badge { flex-shrink: 0; color: #66536D; background: #F5EDE0; }
 .home-tools { display: grid; gap: 12px; margin-top: 4px; }
 .home-screen .home-tools > button { min-width: 0; padding: 13px 14px; border-radius: 20px; }
-.home-screen .online-home-card { gap: 10px; background: linear-gradient(115deg, #EEF5EC, #F1EAF7) !important; border: 1px solid #D6CADF !important; }
+.home-screen .online-home-card { gap: 10px; background: linear-gradient(115deg, #E3F5F0, #E4D0F5) !important; border: 1px solid #BCA0D5 !important; }
 .home-screen .online-home-card > span:not(.clay-stage) { min-width: 0; flex: 1; }
 .home-screen .online-home-card .clay-art { width: 52px; height: 52px; }
 .home-screen .online-home-card strong { font-size: 16px; }

@@ -49,7 +49,7 @@ globalThis.location = env.location;
 globalThis.history = env.history;
 
 const router = await import('../src/platform/router.js');
-const { parseHash, navigate, back, getRoute, getDirection, setExitGuard, useRoute, resetRouterForTests } = router;
+const { parseHash, navigate, back, getRoute, getDirection, setExitGuard, registerBackLayer, installNativeBackBridge, useRoute, resetRouterForTests } = router;
 
 const flush = async (times = 4) => { for (let i = 0; i < times; i += 1) await new Promise((r) => setTimeout(r, 1)); };
 const start = (hash = '#/') => { env.reset(hash); resetRouterForTests(); };
@@ -201,17 +201,120 @@ test('الخروج من زر المنصة (لا من الرجوع) لا يمرّ
   assert.equal(env.entries.length, before);
 });
 
+test('query parameters cannot replace the game, room or friend identity in a direct link', () => {
+  for (const [hash,id] of [['#/play/beep?id=badeeha','beep'],['#/room/123456?id=654321','123456'],['#/friends/alice?id=bob','alice']]) assert.equal(parseHash(hash).params.id,id);
+  assert.equal(parseHash('#/auth?code=fixture-code').params.code,'fixture-code');
+});
+
+test('the last rapid menu selection wins even before the first hash event is delivered', async () => {
+  start(); navigate('/store'); navigate('/'); await flush();
+  assert.equal(env.location.hash,'#/'); assert.equal(getRoute().path,'/');
+});
+
+test('a browser Back can cancel a pending tab navigation without leaving stale app history', async () => {
+  start(); navigate('/store'); env.pressBack(); await flush();
+  assert.equal(getRoute().path,'/'); assert.equal(router.getPreviousPath(),null);
+  navigate('/settings'); await flush(); back(); await flush();
+  assert.equal(getRoute().path,'/'); assert.equal(getDirection(),'back');
+});
+
+test('changing directly between local games preserves the running match until exit confirmation', async () => {
+  await enterGame(); const targets=[];
+  setExitGuard(target=>{targets.push(target);return true;});
+  navigate('/play/beep'); await flush();
+  assert.deepEqual(targets,['/play/beep']); assert.equal(getRoute().path,'/play/badeeha'); assert.equal(env.location.hash,'#/play/badeeha');
+  setExitGuard(null); navigate(targets[0],{replace:true}); await flush(); assert.equal(getRoute().path,'/play/beep');
+});
+
+test('an explicit replacement exit clears a previously cancelled Back destination', async () => {
+  await enterGame(); setExitGuard(()=>true);env.pressBack();await flush();
+  setExitGuard(null);navigate('/',{replace:true});await flush();const index=env.index;
+  navigate('/game/badeeha',{replace:true});await flush();
+  assert.equal(getRoute().path,'/game/badeeha');assert.equal(env.index,index,'the new replacement must not unexpectedly traverse old browser history');
+});
+
+test('Back dismisses the top dialog, then the friends drawer, then asks the game exit guard', async () => {
+  await enterGame(); const events=[];
+  setExitGuard(target=>{events.push('exit:'+target);return true;});
+  let removeDrawer=registerBackLayer(()=>{events.push('drawer');removeDrawer();},{priority:10});
+  let removeFirst=registerBackLayer(()=>{events.push('dialog');removeFirst();},{priority:20});
+  let removeTop=registerBackLayer(()=>{events.push('confirmation');removeTop();},{priority:20});
+  for(const expected of ['confirmation','dialog','drawer']) {env.pressBack();await flush();assert.equal(events.at(-1),expected);assert.equal(getRoute().path,'/play/badeeha');assert.equal(env.location.hash,'#/play/badeeha');}
+  env.pressBack();await flush();assert.equal(events.at(-1),'exit:/game/badeeha');
+});
+
+test('busy dialog consumes Back and explicit successful navigation does not dismiss a layer', async () => {
+  start();navigate('/settings');await flush();let count=0;
+  const remove=registerBackLayer(()=>{count++;},{priority:20});
+  back();assert.equal(count,1);assert.equal(getRoute().path,'/settings');
+  env.pressBack();await flush();assert.equal(count,2);assert.equal(getRoute().path,'/settings');
+  navigate('/store');await flush();assert.equal(getRoute().path,'/store');assert.equal(count,2);
+  remove();remove();back();await flush();assert.equal(getRoute().path,'/settings');
+});
+
+test('a second browser Back before the restoration event dismisses the next layer', async () => {
+  await enterGame();const events=[];
+  setExitGuard(target=>{events.push('exit:'+target);return true;});
+  let removeDrawer=registerBackLayer(()=>{events.push('drawer');removeDrawer();},{priority:10});
+  let removeDialog=registerBackLayer(()=>{
+    events.push('dialog');removeDialog();
+    // The second Back is already in flight when WebKit reports the restored hash.
+    env.pressBack();
+  },{priority:20});
+  env.pressBack();await flush();
+  assert.deepEqual(events,['dialog','drawer']);
+  assert.equal(getRoute().path,'/play/badeeha');assert.equal(env.location.hash,'#/play/badeeha');
+  env.pressBack();await flush();assert.equal(events.at(-1),'exit:/game/badeeha');
+});
+
+test('native Back bridge respects modal priority and IME, then releases its lifecycle listeners', async () => {
+  start();navigate('/settings');await flush();
+  const document=new EventTarget(),host={document},events=[];
+  const dispose=installNativeBackBridge(host),bridge=host.maydanNavigateBack;
+  let remove=registerBackLayer(()=>{events.push('dialog');remove();},{priority:20});
+  document.dispatchEvent(new Event('compositionstart'));
+  assert.equal(bridge(),true);assert.deepEqual(events,[]);assert.equal(getRoute().path,'/settings');
+  document.dispatchEvent(new Event('compositionend'));
+  assert.equal(bridge(),true);assert.deepEqual(events,['dialog']);
+  assert.equal(bridge(),true);await flush();assert.equal(getRoute().path,'/');
+  dispose();dispose();assert.equal(host.maydanNavigateBack,undefined);assert.equal(bridge(),false);
+  const prior=()=>false;host.maydanNavigateBack=prior;const restore=installNativeBackBridge(host);restore();assert.equal(host.maydanNavigateBack,prior);
+});
+
+test('Back from a cold direct game or room entry cannot bypass its exit guard', async () => {
+  for(const initial of ['#/play/beep','#/room/123456']) {
+    start(initial);let target=null;setExitGuard(value=>{target=value;return true;});
+    back();await flush();assert.equal(target,'/');assert.equal(env.location.hash,initial);assert.equal(getRoute().path,initial.slice(1));
+    setExitGuard(null);navigate(target,{replace:true});assert.equal(getRoute().path,'/');
+  }
+});
+
+test('native edge and accessibility Back enter the mounted router bridge instead of the legacy game handler', () => {
+  const native=readFileSync(path.resolve('ios/Maydan/GameViewController.swift'),'utf8');
+  const invoke=native.match(/private func invokeWebBack\(\) \{([\s\S]*?)\n    \}/)?.[1];
+  assert.match(invoke,/window\.maydanNavigateBack\(\)/);
+  assert.doesNotMatch(invoke,/window\.maydanBack\(/);
+  assert.match(native,/override func accessibilityPerformEscape\(\)[\s\S]{0,160}invokeWebBack\(\)/);
+  assert.match(native,/private func handleEdgeBackGesture[\s\S]{0,220}invokeWebBack\(\)/);
+  assert.match(readFileSync(path.resolve('src/platform/PlatformApp.jsx'),'utf8'),/useEffect\(\(\) => installNativeBackBridge\(\), \[\]\)/);
+  assert.match(readFileSync(path.resolve('src/platform/GameFrame.jsx'),'utf8'),/fromBack && typeof window\.maydanBack === 'function' && window\.maydanBack\(\)/);
+});
+
 // ── فحوص مصدرية للإصلاحات غير القابلة للتشغيل في Node ───────────────────────
 const read = (rel) => readFileSync(path.resolve(rel), 'utf8');
 
 test('نافذة «لاعب جديد» لا تعيد التركيز مع كل حرف', () => {
   const src = read('src/shared/ui/components.jsx');
-  assert.ok(!/document\.addEventListener\('keydown', onKey\);[\s\S]{0,400}\}, \[onClose\]\);/.test(src), 'تأثير التركيز يجب ألا يعتمد على onClose');
-  assert.match(src, /const closeRef = useRef\(onClose\)/);
-  assert.match(src, /\}, \[host\]\);/, 'تأثير الحوار يعمل عند الفتح فقط');
-  assert.match(src, /function focusFirst/);
-  assert.match(src, /function trapTab/);
-  assert.match(src, /el\.inert = true/);
+  const interaction = read('src/shared/ui/dialog-interaction.js');
+  assert.match(src, /handler=useRef\(onClose\)/, 'الإغلاق يقرأ آخر معالج دون تغيير أثر التركيز');
+  assert.match(src, /handler\.current=onClose/);
+  assert.match(src, /\},\[ref,host,syncVars,close,open\]\);/, 'أثر التركيز لا يعتمد على onClose أو نص الحقل');
+  assert.match(src, /activateDialog\(\{node:ref\.current,host,close\}\)/);
+  assert.match(interaction, /function focusFirst/);
+  assert.match(interaction, /event\.key!=='Tab'/);
+  assert.match(interaction, /event\.shiftKey && active===list\[0\]/);
+  assert.match(interaction, /child\.inert=active\?/);
+  assert.match(interaction, /document\.removeEventListener\('keydown',onKey,true\)/);
 });
 
 test('لا ملاحة أثناء التصيير في شاشات اللعبة', () => {

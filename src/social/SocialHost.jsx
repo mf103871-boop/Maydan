@@ -5,6 +5,7 @@ import { resolveAccountServer } from '../shared/account/api.js';
 import { SignInSheet } from '../shared/account/SignInSheet.jsx';
 import { Button, Modal } from '../shared/ui/components.jsx';
 import { useVisualViewport } from '../shared/ui/useVisualViewport.js';
+import { activateDialog } from '../shared/ui/dialog-interaction.js';
 import { usePlatform } from '../platform/context.js';
 import { navigate, useRoute } from '../platform/router.js';
 import { useProfiles } from '../profiles/ProfileProvider.jsx';
@@ -146,7 +147,7 @@ export function GroupEditor({ group, detail, friends, accountId, lamma, onClose,
     {invitations.length > 0 && <p className="lamma-muted">{invitations.length} دعوة بانتظار الرد</p>}
     {group && <button type="button" data-design-id="leave-group" data-design-required="true" className="lamma-leave" disabled={!!busy || (owner && members.length > 1)} onClick={() => setConfirm({ kind: 'leave' })}>مغادرة اللّمة</button>}{group && owner && members.length > 1 && <p className="lamma-muted">انقل ملكية اللّمة لأحد أعضائها قبل المغادرة.</p>}
     {error && <p role="alert" className="lamma-error">{error}</p>}
-  </Modal>{confirm && <Modal title={confirm.kind === 'leave' ? 'تغادر اللّمة؟' : confirm.kind === 'transfer' ? 'تنقل ملكية اللّمة؟' : 'تزيل العضو؟'} className="lamma-dialog" onClose={() => setConfirm(null)} footer={<><Button data-design-id="cancel" variant="ghost" disabled={!!busy} onClick={() => setConfirm(null)}>إلغاء</Button><Button data-design-id="confirm" variant="danger" loading={!!busy} onClick={async () => { const done = await act('confirm', () => confirm.kind === 'leave' ? lamma.leaveGroup(group.id) : confirm.kind === 'transfer' ? lamma.transferGroupOwnership(group.id, confirm.id) : lamma.removeGroupMember(group.id, confirm.id)); if (done !== false) { setConfirm(null); if (confirm.kind === 'leave') onClose(); else await lamma.loadGroup(group.id); } }}>تأكيد</Button></>}><p>{confirm.kind === 'leave' ? 'يمكن لأصحابك دعوتك مرة أخرى.' : confirm.kind === 'transfer' ? `${confirm.name} سيصبح صاحب اللّمة، وتصبح عضوًا فيها.` : `${confirm.name} لن يتمكن من قراءة الرسائل الجديدة في هذه اللّمة.`}</p></Modal>}</>;
+  </Modal>{confirm && <Modal title={confirm.kind === 'leave' ? 'تغادر اللّمة؟' : confirm.kind === 'transfer' ? 'تنقل ملكية اللّمة؟' : 'تزيل العضو؟'} className="lamma-dialog" onClose={busy ? null : () => setConfirm(null)} footer={<><Button data-design-id="cancel" variant="ghost" disabled={!!busy} onClick={() => setConfirm(null)}>إلغاء</Button><Button data-design-id="confirm" variant="danger" loading={!!busy} onClick={async () => { const done = await act('confirm', () => confirm.kind === 'leave' ? lamma.leaveGroup(group.id) : confirm.kind === 'transfer' ? lamma.transferGroupOwnership(group.id, confirm.id) : lamma.removeGroupMember(group.id, confirm.id)); if (done !== false) { setConfirm(null); if (confirm.kind === 'leave') onClose(); else await lamma.loadGroup(group.id); } }}>تأكيد</Button></>}><p>{confirm.kind === 'leave' ? 'يمكن لأصحابك دعوتك مرة أخرى.' : confirm.kind === 'transfer' ? `${confirm.name} سيصبح صاحب اللّمة، وتصبح عضوًا فيها.` : `${confirm.name} لن يتمكن من قراءة الرسائل الجديدة في هذه اللّمة.`}</p></Modal>}</>;
 }
 
 export { CallControls } from './CallDock.jsx';
@@ -244,21 +245,7 @@ export function SocialHost() {
   }, [panelOpen, ui.presentation, view.type, view.tab, pageHost, listScrollTop]);
   useEffect(() => {
     if (!drawerOpen || !host) return undefined;
-    const previous = document.activeElement;
-    const background = Array.from(document.body.children).filter(node => node !== host && !node.inert);
-    background.forEach(node => { node.inert = true; });
-    const originalOverflow = document.body.style.overflow; document.body.style.overflow = 'hidden';
-    panel.current?.focus();
-    const key = event => {
-      if (event.key === 'Escape' && panel.current?.contains(document.activeElement)) { event.preventDefault(); closePanel(); return; }
-      if (event.key !== 'Tab' || !panel.current?.contains(document.activeElement)) return;
-      const nodes = [...panel.current.querySelectorAll('button:not([disabled]),a[href],input:not([disabled]),select:not([disabled]),textarea:not([disabled]),[tabindex="0"]')].filter(node => node.getClientRects().length);
-      if (!nodes.length) { event.preventDefault(); panel.current.focus(); return; }
-      if (event.shiftKey && (document.activeElement === nodes[0] || document.activeElement === panel.current)) { event.preventDefault(); nodes.at(-1).focus(); }
-      else if (!event.shiftKey && document.activeElement === nodes.at(-1)) { event.preventDefault(); nodes[0].focus(); }
-    };
-    document.addEventListener('keydown', key);
-    return () => { background.forEach(node => { node.inert = false; }); document.body.style.overflow = originalOverflow; document.removeEventListener('keydown', key); if (previous?.isConnected) previous.focus(); };
+    return activateDialog({node:panel.current,host,close:closePanel,priority:10});
   }, [drawerOpen, closePanel, host]);
   useEffect(() => { setMenu(null); }, [view.type, view.id, view.tab]);
   useEffect(() => { setSearch(false); setSignIn(false); setPreferences(false); setGroupEditor(null); setMenu(null); setAction(null); setInviteTarget(null); setNotice(null); setDialogOwner(account.user?.id); }, [account.user?.id]);

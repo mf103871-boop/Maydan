@@ -5,7 +5,7 @@
 .lamma-host button { cursor: pointer; }
 .lamma-host button:disabled { cursor: default; opacity: .5; }
 .lamma-host button:focus-visible, .lamma-host input:focus-visible, .lamma-host textarea:focus-visible, .lamma-host select:focus-visible { outline: 3px solid #139a9b; outline-offset: 3px; }
-.lamma-icon-button { width: 42px; height: 42px; flex: 0 0 42px; display: inline-grid; place-items: center; border: 0; border-radius: 13px; background: transparent; color: #746679; transition: background .18s, color .18s; }
+.lamma-icon-button { width: 44px; height: 44px; min-width: 44px; min-height: 44px; flex: 0 0 44px; display: inline-grid; place-items: center; border: 0; border-radius: 13px; background: transparent; color: #746679; transition: background .18s, color .18s; }
 .lamma-icon-button:hover { background: #ece3ed; color: #462254; }
 .lamma-launcher { position: fixed; z-index: 80; inset-inline-end: max(20px, env(safe-area-inset-left)); bottom: calc(19px + env(safe-area-inset-bottom)); display: flex; align-items: center; gap: 10px; min-height: 57px; padding: 9px 18px; border: 1px solid #cfdbd6; border-radius: 22px; color: #1a514d; background: #fcfff9; box-shadow: 0 9px 35px #273b292c, 0 2px 0 #d4e5d9; font-size: 15px; }
 .lamma-launcher:hover { background: #eaf6ee; transform: translateY(-2px); }
@@ -29,18 +29,18 @@
 .lamma-me-profile span:not(.player-avatar) { display: grid; gap: 3px; min-width: 0; }
 .lamma-me-profile strong { font-size: 13px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .lamma-me-profile small { font-size: 10px; color: #8b7c87; }
-.lamma-add { border: 1px solid #ded3e1; border-radius: 12px; background: #fff; display: flex; align-items: center; gap: 5px; color: #634471; padding: 10px; white-space: nowrap; font-size: 11px !important; font-weight: 800 !important; min-height: 42px; }
+.lamma-add { border: 1px solid #ded3e1; border-radius: 12px; background: #fff; display: flex; align-items: center; gap: 5px; color: #634471; padding: 10px; white-space: nowrap; font-size: 11px !important; font-weight: 800 !important; min-height: 44px; }
 .lamma-tabs { display: grid; grid-template-columns: repeat(4,1fr); gap: 4px; margin: 0 20px 14px; border-radius: 14px; background: #eee8e1; padding: 4px; }
-.lamma-tabs button { border: 0; border-radius: 11px; color: #8a7b86; background: transparent; min-height: 40px; font-size: 12px; font-weight: 800; display: flex; justify-content: center; align-items: center; gap: 4px; }
+.lamma-tabs button { border: 0; border-radius: 11px; color: #8a7b86; background: transparent; min-height: 44px; font-size: 12px; font-weight: 800; display: flex; justify-content: center; align-items: center; gap: 4px; }
 .lamma-tabs button.is-active { color: #155b59; background: #fffdf8; box-shadow: 0 2px 6px #51403410; }
 .lamma-tabs b { font-size: 9px; min-width: 15px; border-radius: 5px; background: #0b7d7d; color: white; padding: 1px 3px; }
-.lamma-search { margin: 0 20px 10px; display: flex; align-items: center; gap: 10px; min-height: 43px; border: 1px solid #e4ddd4; border-radius: 13px; background: #fffdfa; padding: 0 12px; color: #9d919b; }
-.lamma-search input { min-width: 0; width: 100%; outline: none; border: 0; background: transparent; color: #44354a; font-size: 16px; }
+.lamma-search { margin: 0 20px 10px; display: flex; align-items: center; gap: 10px; min-height: 46px; border: 1px solid #e4ddd4; border-radius: 13px; background: #fffdfa; padding: 0 12px; color: #9d919b; }
+.lamma-search input { min-width: 0; min-height: 44px; width: 100%; outline: none; border: 0; background: transparent; color: #44354a; font-size: 16px; }
 .lamma-friend-filters { display: flex; gap: 7px; margin: 0 20px 8px; }
-.lamma-friend-filters button { display: inline-flex; justify-content: center; align-items: center; gap: 5px; min-height: 36px; padding: 5px 13px; border: 1px solid #e5ddd4; border-radius: 100px; background: transparent; color: #7c7080; font: inherit; font-size: 11px; font-weight: 700; }
+.lamma-friend-filters button { display: inline-flex; justify-content: center; align-items: center; gap: 5px; min-height: 44px; padding: 5px 13px; border: 1px solid #e5ddd4; border-radius: 100px; background: transparent; color: #7c7080; font: inherit; font-size: 11px; font-weight: 700; }
 .lamma-friend-filters button[aria-pressed="true"] { color: #166d68; background: #e4efe8; border-color: #c6dcd1; }
 .lamma-favorites-note { margin: 0 22px 7px; color: #8c7f8c; font-size: 10px; }
-.lamma-favorite { color: #a99d9b; width: 36px; min-width: 36px; height: 40px; }
+.lamma-favorite { color: #a99d9b; width: 44px; min-width: 44px; height: 44px; }
 .lamma-favorite.is-favorite { color: #b37c28; }
 .lamma-favorite.is-favorite svg { fill: #f9df9d; }
 .lamma-list-scroll { min-height: 0; overflow-y: auto; overscroll-behavior: contain; padding: 0 10px 16px; flex: 1; scrollbar-width: thin; scrollbar-color: #d4cbd4 transparent; }
@@ -152,7 +152,7 @@
 .lamma-member strong, .lamma-member small { display: block; }
 .lamma-member small { font-size: 10px; margin-top: 3px; color: #9d899a; }
 .lamma-member select { border: 1px solid #e0d7df; background: #fffaf6; border-radius: 8px; padding: 7px; font: inherit; font-size: 16px; min-height: 44px; max-width: 100px; }
-.lamma-member .lamma-icon-button { width: 34px; flex-basis: 34px; }
+.lamma-member .lamma-icon-button { width: 44px; flex-basis: 44px; }
 .lamma-text-button { border: 0; background: transparent; color: #796380; font: inherit; font-size: 9px; text-decoration: underline; max-width: 52px; min-height: 40px; }
 .lamma-muted { font-size: 11px; color: #92838e; line-height: 1.8; }
 .lamma-error { padding: 11px 14px; font-size: 12px; line-height: 1.7; background: #fff0e8; border-radius: 11px; color: #a9533f; }
@@ -259,9 +259,9 @@ html[data-call-dock-active] .online-social-slot .lamma-launcher { position: rela
   .lamma-page-panel .lamma-panel-title > div > span { display: none; }
   .lamma-page-panel .lamma-me { padding-block: 8px; }
   .lamma-page-panel .lamma-tabs { margin-bottom: 7px; }
-  .lamma-page-panel .lamma-tabs button { min-height: 36px; }
+  .lamma-page-panel .lamma-tabs button { min-height: 44px; }
   .lamma-page-panel .lamma-footer { padding-block: 2px; }
-  .lamma-page-panel .lamma-search { margin-bottom: 6px; min-height: 38px; }
+  .lamma-page-panel .lamma-search { margin-bottom: 6px; min-height: 46px; }
   .lamma-page-panel .lamma-friend-filters { margin-bottom: 4px; }
 }
 

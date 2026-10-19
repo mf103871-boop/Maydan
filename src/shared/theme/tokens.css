@@ -5,23 +5,23 @@
    ═══════════════════════════════════════════════════════════════════ */
 :root {
   color-scheme: light;
-  --bg: #FFF7E7;
+  --bg: #FFF6E5;
   --bg-2: #FFFCF4;
-  --surface: #FFFCF3;
-  --surface-2: #F2E7DB;
-  --stroke: #E6D4BE;
-  --stroke-strong: #CFB599;
-  --text: #352547;
-  --plum: #352547;
-  --muted: #77677C;
-  --accent: #087D89;
+  --surface: #FFFDF6;
+  --surface-2: #F0E3D4;
+  --stroke: #DBC5AC;
+  --stroke-strong: #BFA386;
+  --text: #30203F;
+  --plum: #30203F;
+  --muted: #6D5B75;
+  --accent: #06768B;
   --accent-ink: #FFFFFF;
-  --purple: #9250BD;
-  --gold: #FFC94D;
-  --turquoise: #18B7BE;
+  --purple: #8540B5;
+  --gold: #FFBF36;
+  --turquoise: #09B4BF;
   --danger: #AE343E;
   --success: #16775D;
-  --info: #087D89;
+  --info: #06768B;
   /* تحذير/عجلة الوقت: ذهبي فاتح (‎#F5B82E‎) يعطي ‎1.7:1‎ على الأرضية العاجية
      ولا يُقرأ؛ هذا العنبر الداكن يعطي ‎5.1:1‎ على ‎--bg‎ و‎5.3:1‎ على ‎--surface‎. */
   --warning: #9A5B00;
@@ -36,8 +36,8 @@
   --radius: 24px;
   --radius-sm: 16px;
   --radius-pill: 999px;
-  --shadow: 0 16px 40px rgba(91, 61, 36, 0.13);
-  --shadow-soft: 0 4px 12px rgba(91, 61, 36, 0.09);
+  --shadow: 0 16px 36px rgba(65, 36, 82, 0.16);
+  --shadow-soft: 0 5px 14px rgba(65, 36, 82, 0.12);
   --font: "Maydan Round", "SF Arabic", "Segoe UI", Tahoma, system-ui, sans-serif;
 
   --safe-top: env(safe-area-inset-top, 0px);
@@ -60,11 +60,11 @@
 
   --ledge: 3px;                                     /* ارتفاع الحافة الصلصالية */
   --ledge-lg: 4px;
-  --clay-ledge: #D9C5AB;                            /* حافة عاجية */
-  --clay-ledge-soft: #E3D3BE;                       /* حافة البطاقات */
+  --clay-ledge: #CCAF92;                            /* حافة عاجية */
+  --clay-ledge-soft: #D9C1A8;                       /* حافة البطاقات */
   --top-light: linear-gradient(180deg, rgba(255,255,255,.62), rgba(255,255,255,0) 46%);
-  --shadow-lift-1: inset 0 2px 1px #FFFFFF, 0 var(--ledge) 0 var(--clay-ledge-soft), 0 8px 16px rgba(91,61,36,.10);
-  --shadow-lift-2: inset 0 2px 1px #FFFFFF, 0 5px 0 var(--clay-ledge), 0 14px 28px rgba(91,61,36,.14);
+  --shadow-lift-1: inset 0 2px 1px #FFFFFF, inset 0 -1px 0 #CDB99D66, 0 4px 0 var(--clay-ledge-soft), 0 10px 18px rgba(65,36,82,.12);
+  --shadow-lift-2: inset 0 2px 1px #FFFFFF, inset 0 -1px 0 #CDB99D80, 0 6px 0 var(--clay-ledge), 0 15px 28px rgba(65,36,82,.16);
   --shadow-press:  inset 0 2px 4px rgba(91,61,36,.16), 0 0 0 var(--clay-ledge), 0 1px 2px rgba(91,61,36,.08);
   --shadow-tile:   inset 0 2px 1px #fff, 0 var(--ledge) 0 var(--clay-ledge-soft), 0 6px 12px rgba(91,61,36,.08);
   --shadow-row:    inset 0 1px 0 #fff, 0 2px 0 var(--clay-ledge-soft), 0 4px 8px rgba(91,61,36,.06);

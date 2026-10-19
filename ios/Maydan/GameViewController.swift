@@ -246,7 +246,7 @@ final class GameViewController: UIViewController, WKNavigationDelegate, WKUIDele
     }
 
     private func invokeWebBack() {
-        let script = "typeof window.maydanBack === 'function' ? Boolean(window.maydanBack()) : false"
+        let script = "typeof window.maydanNavigateBack === 'function' ? Boolean(window.maydanNavigateBack()) : false"
         webView.evaluateJavaScript(script) { _, _ in }
     }
 

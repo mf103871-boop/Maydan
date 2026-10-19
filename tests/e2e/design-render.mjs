@@ -118,3 +118,31 @@ test('canonical Studio API navigation bypasses the unchanged installed public se
     }finally{await browser.close();}
   }}finally{await new Promise(resolve=>server.close(resolve));}
 });
+
+test('a Studio background color replaces a real button gradient and reset restores its depth', {timeout:60000},async()=>{
+  const source=`import React,{useState}from'react';import{createRoot}from'react-dom/client';import{DesignProvider}from'./src/design/DesignProvider.jsx';import{createDefaultDesign}from'./src/design/schema.js';import{Button}from'./src/shared/ui/components.jsx';import tokens from'./src/shared/theme/tokens.css';import ui from'./src/shared/ui/ui.css';function App(){const[design,setDesign]=useState(createDefaultDesign);window.colorTrial={setDesign};return <DesignProvider document={design}><style>{tokens}</style><style>{ui}</style><section data-design-screen="players"><Button variant="primary" data-design-id="add-player" onClick={()=>window.colorClicks=(window.colorClicks||0)+1}>أضف لاعبًا</Button></section></DesignProvider>};createRoot(document.getElementById('root')).render(<App/>);`;
+  const result=await build({stdin:{contents:source,resolveDir:process.cwd(),loader:'jsx'},bundle:true,write:false,format:'iife',jsx:'automatic',alias:{'react/jsx-runtime':path.resolve('src/design/jsx-runtime.js')},loader:{'.css':'text','.woff2':'dataurl','.webp':'dataurl','.png':'dataurl'},logLevel:'silent'});
+  const server=http.createServer((request,response)=>{response.writeHead(200,{'content-type':'text/html;charset=utf-8'});response.end(`<!doctype html><html lang="ar" dir="rtl"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><body><div id="root"></div><script>${result.outputFiles[0].text.replace(/<\/script/gi,'<\\/script')}</script></body></html>`);});
+  await new Promise(resolve=>server.listen(0,'127.0.0.1',resolve));
+  try{for(const[name,engine]of[['chromium',chromium],['webkit',webkit]]){
+    const browser=await engine.launch({headless:true});
+    try{
+      const page=await browser.newPage({viewport:{width:390,height:844},reducedMotion:'reduce'}),errors=[];
+      page.on('pageerror',error=>errors.push(error.message));
+      await page.goto(`http://127.0.0.1:${server.address().port}`);
+      const button=page.getByRole('button',{name:'أضف لاعبًا',exact:true});await button.waitFor();
+      const original=await button.evaluate(element=>({image:getComputedStyle(element).backgroundImage,shadow:getComputedStyle(element).boxShadow,height:element.getBoundingClientRect().height}));
+      assert.match(original.image,/gradient/,`${name}: actual primary button has default gradient`);
+      await page.evaluate(()=>window.colorTrial.setDesign({schemaVersion:1,registryVersion:1,tokens:{},assets:[],screens:{players:{nodes:{'add-player':{style:{backgroundColor:'#6E2CA6',color:'#FFFFFF'}}}}}}));
+      await page.waitForFunction(()=>document.querySelector('[data-design-id="add-player"]').style.backgroundImage==='none');
+      await page.waitForFunction(()=>getComputedStyle(document.querySelector('[data-design-id="add-player"]')).backgroundColor==='rgb(110, 44, 166)');
+      const custom=await button.evaluate(element=>({color:getComputedStyle(element).backgroundColor,image:getComputedStyle(element).backgroundImage,shadow:getComputedStyle(element).boxShadow,height:element.getBoundingClientRect().height}));
+      assert.equal(custom.color,'rgb(110, 44, 166)');assert.equal(custom.image,'none');assert.equal(custom.shadow,original.shadow);assert.ok(custom.height>=44);
+      await button.click();assert.equal(await page.evaluate(()=>window.colorClicks),1,`${name}: color edit preserves button action`);
+      await page.evaluate(()=>window.colorTrial.setDesign({schemaVersion:1,registryVersion:1,tokens:{},screens:{},assets:[]}));
+      await page.waitForFunction(()=>!document.querySelector('[data-design-id="add-player"]').style.backgroundImage);
+      assert.equal(await button.evaluate(element=>getComputedStyle(element).backgroundImage),original.image,`${name}: reset restores the real gradient`);
+      assert.deepEqual(errors,[]);
+    }finally{await browser.close();}
+  }}finally{await new Promise(resolve=>server.close(resolve));}
+});

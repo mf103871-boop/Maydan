@@ -141,6 +141,7 @@ const extraNodes = [
   node('group-manage','إدارة اللّمّة','button',{editableText:false}),
   node('game-invite-join','الانضمام من الدعوة','button',{repeat:true,editableText:false}),
   node('media-close','إغلاق الصورة المكبرة','button',{required:true,editableText:false}),
+  node('sheet-drag-handle','مقبض إغلاق اللوحة','button',{required:true,editableText:false,editableIcon:false}),
   node('image-enlarge','تكبير صورة السؤال','button',{repeat:true,editableText:false,editableIcon:false}),
 ];
 
