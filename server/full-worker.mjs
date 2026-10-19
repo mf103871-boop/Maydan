@@ -1,6 +1,7 @@
 // One Cloudflare origin serves the game, assets, and room API.
 import { routeRequest, scheduled } from './worker.mjs';
 import { privacyPageResponse } from './legal/privacy.mjs';
+import { studioSiteResponse } from './design/site.mjs';
 export { Room, RequestLimiter, SocialHub, LammaJobs } from './worker.mjs';
 
 // The page is one self-contained document: inline script and styles, images and
@@ -43,6 +44,9 @@ export function secured(response) {
 export default {
   async fetch(request, env, context) {
     const url = new URL(request.url);
+    if(url.pathname==='/studio' || url.pathname.startsWith('/studio/') || url.pathname==='/api/studio' || url.pathname.startsWith('/api/studio/')){
+      const studio=await studioSiteResponse(request,env);if(studio)return studio;
+    }
     if (['/api/legal/privacy', '/api/legal/privacy/'].includes(url.pathname) && ['GET', 'HEAD'].includes(request.method)) {
       return privacyPageResponse(request.method);
     }

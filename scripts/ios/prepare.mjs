@@ -11,7 +11,7 @@ process.env.MAYDAN_ROOMS_URL = apiOrigin;
 const { buildOnce, ROOT, DIST } = await import('../lib.mjs');
 
 // Build from this checkout on every invocation; never ship a stale copied bank.
-const build = await buildOnce({ minify: true });
+const build = await buildOnce({ minify: true, includeStudio: false });
 const destination = path.join(ROOT, 'ios/Maydan/www');
 await rm(destination, { recursive: true, force: true });
 await mkdir(destination, { recursive: true });

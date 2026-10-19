@@ -37,6 +37,7 @@ import { CallViewport } from '../social/CallViewport.jsx';
 import { ProfileProvider } from '../profiles/ProfileProvider.jsx';
 import { ProfileScreen } from '../profiles/ProfileScreen.jsx';
 import { ModerationScreen } from '../moderation/ModerationScreen.jsx';
+import { DesignRuntime } from '../design/DesignRuntime.jsx';
 
 export const VERSION = typeof __MAYDAN_VERSION__ !== 'undefined' ? __MAYDAN_VERSION__ : '1.0.0';
 const platformStorage = createStorage('platform');
@@ -192,7 +193,7 @@ export function PlatformApp() {
   return (
     <ToastProvider>
       <Providers>
-        <Shell />
+        <DesignRuntime><Shell /></DesignRuntime>
       </Providers>
     </ToastProvider>
   );

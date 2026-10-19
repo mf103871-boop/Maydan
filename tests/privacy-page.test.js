@@ -22,7 +22,8 @@ test('production entry serves privacy inside the existing worker-first API route
 test('privacy paths need no new asset routing and reject other methods through the existing origin guard', async () => {
   const config = await readFile(new URL('wrangler.jsonc', root), 'utf8');
   const routes = JSON.parse(config.match(/"run_worker_first"\s*:\s*(\[[^\]]+\])/)[1]);
-  assert.deepEqual(routes, ['/api', '/api/*', '/health']);
+  assert.deepEqual(routes.filter(path=>!['/studio','/studio/*'].includes(path)), ['/api', '/api/*', '/health']);
+  assert.ok(!routes.some(path=>path==='/privacy' || path==='/privacy/*'));
   const response = await fullWorker.fetch(new Request('https://maydan.test/api/legal/privacy', { method: 'POST' }), {});
   assert.equal(response.status, 403);
   assert.deepEqual(await response.json(), { error: 'ORIGIN' });

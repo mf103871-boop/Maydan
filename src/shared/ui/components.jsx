@@ -57,8 +57,8 @@ export function IconButton({ label, children, className = '', ...rest }) {
 export function Card({ className = '', children, ...rest }) {
   return <div className={`card ${className}`} {...rest}>{children}</div>;
 }
-export function Badge({ variant = '', children }) {
-  return <span className={`badge ${variant ? `badge-${variant}` : ''}`}>{children}</span>;
+export function Badge({ variant = '', children, ...rest }) {
+  return <span className={`badge ${variant ? `badge-${variant}` : ''}`} {...rest}>{children}</span>;
 }
 
 // ── حوارات: تركيز محبوس وخلفية معطّلة ───────────────────────
@@ -149,7 +149,7 @@ export function ModalCloseButton({ onClick, ...props }) {
   return <Button {...props} onClick={(e) => { if (requestClose) requestClose(); else if (onClick) onClick(e); }} />;
 }
 
-export function Modal({ title, onClose, children, footer = null, closeLabel = 'إغلاق', className = '' }) {
+export function Modal({ title, onClose, children, footer = null, closeLabel = 'إغلاق', className = '', ...designProps }) {
   const ref = useRef(null);
   const closeRef = useRef(onClose);
   const [host, anchor, syncVars] = useDialogHost();
@@ -184,13 +184,13 @@ export function Modal({ title, onClose, children, footer = null, closeLabel = '�
   }, [host, syncVars]);
   const tree = (
     <div className={`modal-layer ${closing ? 'is-closing' : ''}`} role="presentation" onClick={requestClose}>
-      <section ref={ref} className={`modal ${className}`} role="dialog" aria-modal="true" aria-label={title} tabIndex={-1} onClick={(e) => e.stopPropagation()}>
-        <div className="modal-head">
+      <section ref={ref} data-design-screen="system.dialog" className={`modal ${className}`} role="dialog" aria-modal="true" aria-label={title} tabIndex={-1} onClick={(e) => e.stopPropagation()} {...designProps}>
+        <div data-design-id="header" className="modal-head">
           <h2>{title}</h2>
-          {onClose && <IconButton label={closeLabel} onClick={requestClose}><IconClose /></IconButton>}
+          {onClose && <IconButton data-design-id="close" data-design-required="true" label={closeLabel} onClick={requestClose}><IconClose /></IconButton>}
         </div>
-        <div className="modal-body">{children}</div>
-        {footer && <div className="modal-foot">{footer}</div>}
+        <div data-design-id="content" className="modal-body">{children}</div>
+        {footer && <div data-design-id="actions" className="modal-foot">{footer}</div>}
       </section>
     </div>
   );
@@ -201,8 +201,8 @@ export function Modal({ title, onClose, children, footer = null, closeLabel = '�
 export function ConfirmModal({ title, message, confirmLabel = 'نعم', cancelLabel = 'لا', danger = false, onConfirm, onCancel }) {
   return (
     <Modal title={title} onClose={onCancel} className={danger ? 'is-danger' : ''} footer={<>
-      <Button variant={danger ? 'danger' : 'primary'} size="lg" full onClick={onConfirm}>{confirmLabel}</Button>
-      <ModalCloseButton variant="ghost" full onClick={onCancel}>{cancelLabel}</ModalCloseButton>
+      <Button data-design-id="confirm" data-design-required="true" variant={danger ? 'danger' : 'primary'} size="lg" full onClick={onConfirm}>{confirmLabel}</Button>
+      <ModalCloseButton data-design-id="cancel" data-design-required="true" variant="ghost" full onClick={onCancel}>{cancelLabel}</ModalCloseButton>
     </>}>
       <p className="muted" style={{ lineHeight: 1.7 }}>{message}</p>
     </Modal>
@@ -210,7 +210,7 @@ export function ConfirmModal({ title, message, confirmLabel = 'نعم', cancelLa
 }
 
 // ── Sheet (bottom sheet, drag down to close) ─────────────────
-export function Sheet({ open, onClose, title, children }) {
+export function Sheet({ open, onClose, title, children, ...designProps }) {
   const [closing, setClosing] = useState(false);
   const drag = useRef({ y: 0, dy: 0, active: false });
   const ref = useRef(null);
@@ -255,12 +255,12 @@ export function Sheet({ open, onClose, title, children }) {
   };
   const tree = (
     <div className="modal-layer is-sheet" role="presentation" onClick={close}>
-      <section ref={ref} className={`sheet ${closing ? 'is-closing' : ''}`} role="dialog" aria-modal="true" aria-label={title} tabIndex={-1}
+      <section ref={ref} data-design-screen="system.sheet" className={`sheet ${closing ? 'is-closing' : ''}`} role="dialog" aria-modal="true" aria-label={title} tabIndex={-1} {...designProps}
         onClick={(e) => e.stopPropagation()}
         onTouchStart={onStart} onTouchMove={onMove} onTouchEnd={onEnd}>
         <div className="sheet-handle" aria-hidden="true" />
-        {title && <div className="modal-head"><h2>{title}</h2><IconButton label="إغلاق" onClick={close}><IconClose /></IconButton></div>}
-        <div className="modal-body">{children}</div>
+        {title && <div data-design-id="header" className="modal-head"><h2>{title}</h2><IconButton data-design-id="close" data-design-required="true" label="إغلاق" onClick={close}><IconClose /></IconButton></div>}
+        <div data-design-id="content" className="modal-body">{children}</div>
       </section>
     </div>
   );
@@ -346,14 +346,14 @@ export function ProgressRing({ value, max = 1, size = 132, stroke = 10, color = 
 
 // ── Scoreboard ───────────────────────────────────────────────
 // النقاط تُعدّ من القيمة السابقة (مرجع يحفظ آخر نقاط كل صف) وتُلكم عند التغيّر؛ +N يطير للأعلى.
-export function Scoreboard({ entries, unit = '' }) {
+export function Scoreboard({ entries, unit = '', ...rest }) {
   const max = Math.max(...entries.map((e) => e.score), -Infinity);
   const prev = useRef(new Map());
   const bumps = useRef(new Map());
   useEffect(() => { entries.forEach((e) => prev.current.set(e.id, e.score)); });
   const now = Date.now();
   return (
-    <div className="scoreboard">
+    <div className="scoreboard" {...rest}>
       {entries.map((e, i) => {
         const from = prev.current.get(e.id) ?? e.score;
         if (from !== e.score) bumps.current.set(e.id, now);
@@ -396,7 +396,7 @@ export function CountUp({ value, from = 0, duration = 900, delay = 0, className 
 }
 
 // ── Podium ───────────────────────────────────────────────────
-export function Podium({ entries, title, unit = '' }) {
+export function Podium({ entries, title, unit = '', ...domProps }) {
   const sorted = [...entries].sort((a, b) => b.score - a.score);
   const top = sorted.slice(0, 3);
   const rest = sorted.slice(3);
@@ -414,7 +414,7 @@ export function Podium({ entries, title, unit = '' }) {
     return () => clearTimeout(t);
   }, []);
   return (
-    <div className="podium">
+    <div className="podium" {...domProps}>
       <div className="podium-trophy clay-stage clay-idle" aria-hidden="true"><span className="clay-lift"><TrophyArtwork /></span></div>
       <h1 className="podium-title">{heading}</h1>
       <div className="podium-stage">
@@ -439,21 +439,21 @@ export function Screen({ dir = 'forward', className = '', children, ...rest }) {
   return <section className={`screen ${className}`} data-dir={dir} {...rest}>{children}</section>;
 }
 
-export function TopBar({ title, eyebrow, start = null, end = null }) {
+export function TopBar({ title, eyebrow, start = null, end = null, ...rest }) {
   return (
-    <header className="topbar">
+    <header className="topbar" {...rest}>
       {start}
-      <h1>{eyebrow && <span className="eyebrow">{eyebrow}</span>}{title}</h1>
+      <h1 data-design-id="title">{eyebrow && <span className="eyebrow">{eyebrow}</span>}{title}</h1>
       {end}
     </header>
   );
 }
 
-export function Segment({ options, value, onChange, accent = false, label }) {
+export function Segment({ options, value, onChange, accent = false, label, ...rest }) {
   return (
-    <div className="segment" role="group" aria-label={label}>
+    <div className="segment" role="group" aria-label={label} {...rest}>
       {options.map((o) => (
-        <button key={String(o.value)} type="button" className={`${value === o.value ? 'selected' : ''} ${accent ? 'accent' : ''}`} aria-pressed={value === o.value} onClick={() => onChange(o.value)}>
+        <button key={String(o.value)} type="button" data-design-id="segment-option" className={`${value === o.value ? 'selected' : ''} ${accent ? 'accent' : ''}`} aria-pressed={value === o.value} onClick={() => onChange(o.value)}>
           {o.label}
         </button>
       ))}

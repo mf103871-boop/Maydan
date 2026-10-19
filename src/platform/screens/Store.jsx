@@ -4,10 +4,10 @@ import { getDirection } from '../router.js';
 
 // A deliberate empty state: this release introduces navigation, not new purchases.
 export function Store() {
-  return <Screen dir={getDirection()} className="stack store-screen" aria-label="المتجر">
-    <TopBar title="المتجر" eyebrow="لمستك الخاصة في ميدان" />
-    <section className="store-coming-soon" aria-labelledby="store-coming-title">
-      <div className="store-art" aria-hidden="true">
+  return <Screen data-design-screen="store" dir={getDirection()} className="stack store-screen" aria-label="المتجر">
+    <TopBar data-design-id="topbar" title="المتجر" eyebrow="لمستك الخاصة في ميدان" />
+    <section data-design-id="store-empty" className="store-coming-soon" aria-labelledby="store-coming-title">
+      <div data-design-id="artwork" className="store-art" aria-hidden="true">
         <svg viewBox="0 0 240 220" fill="none" focusable="false">
           <ellipse cx="120" cy="190" rx="72" ry="12" fill="#352547" opacity=".07" />
           <circle cx="120" cy="103" r="84" fill="#E2F0E9" />

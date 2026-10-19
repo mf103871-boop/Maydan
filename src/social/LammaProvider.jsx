@@ -13,6 +13,7 @@ import { LAMMA_POLL_MS, lammaPollDue, refreshesLamma, rechecksCall } from './syn
 import { joinSocialGameRoom } from './game-launch.js';
 
 const Context = createContext(null);
+export const LammaContext = Context;
 export const useLamma = () => useContext(Context);
 const METHODS = ['createGroup', 'loadGroup', 'loadCallMembers', 'loadOlderGroup', 'sendGroupMessage', 'inviteGroupMembers', 'removeGroupMember',
   'leaveGroup', 'renameGroup', 'acceptGroupInvite', 'rejectGroupInvite', 'setGroupRole', 'transferGroupOwnership', 'selectGroup',

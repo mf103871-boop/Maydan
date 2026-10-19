@@ -8,7 +8,7 @@
   "assets": {
     "directory": "./dist",
     "binding": "ASSETS",
-    "run_worker_first": ["/api", "/api/*", "/health"],
+    "run_worker_first": ["/api", "/api/*", "/health", "/studio", "/studio/*"],
     "not_found_handling": "single-page-application"
   },
   // إعدادات عامة (غير سرّية). الأسرار عبر `wrangler secret put` — راجع docs/ACCOUNTS.md.

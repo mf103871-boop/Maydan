@@ -16,6 +16,7 @@ import { messageRetentionMs,reportRetentionMs } from './accounts/cleanup.mjs';
 import { iosAppPolicy } from './app-policy.mjs';
 import { ERSOMHA_PROTOCOL, ONLINE_GAMES } from '../src/online/shared.js';
 import { routeDrawingReports } from './ersomha-reports.mjs';
+import { routeDesign, isPublicDesignAssetPath } from './design/router.mjs';
 export { LammaJobs } from './lamma/jobs.mjs';
 export { SocialHub } from './social/realtime.mjs';
 export { Room };
@@ -25,7 +26,8 @@ export { Room };
 export const LIMIT_WINDOWS = { create: 600_000, join: 60_000, leave: 60_000, socket: 60_000,
   auth: 600_000, me: 60_000, billing: 600_000, trial: 60_000, socialRead: 60_000, socialWrite: 60_000,
   socialReadIP: 60_000, socialWriteIP: 60_000,
-  profileRead: 60_000, profileWrite: 60_000, profileImage: 60_000, webhook: 60_000 };
+  profileRead: 60_000, profileWrite: 60_000, profileImage: 60_000, webhook: 60_000,
+  designRead: 60_000, designWrite: 60_000, designWriteIP: 60_000 };
 // حدّ كل نوع داخل نافذته. مسارات الحسابات أقلّ سخاءً من قراءة الحالة لأنها تكتب أو تنادي مزوّدًا.
 // `webhook` سخيّ عمدًا (إشعارات آبل قد تصل دفعة)، لكنه يمنع سيلًا من عنوان واحد
 // على مسار عام يتحقق من توقيع قبل أي مصادقة.
@@ -34,7 +36,8 @@ export const LIMITS = { create: 8, join: 40, leave: 100, socket: 100,
   // A party shares one router. Keep a broad network flood guard, then enforce
   // the existing read quota per authenticated account (writes also have D1 quotas).
   socialReadIP: 2400, socialWriteIP: 1200,
-  profileRead: 240, profileWrite: 30, profileImage: 600, webhook: 300 };
+  profileRead: 240, profileWrite: 30, profileImage: 600, webhook: 300,
+  designRead: 1200, designWrite: 120, designWriteIP: 1200 };
 export class RequestLimiter {
   constructor(ctx) { this.ctx = ctx; }
   async fetch(request) {
@@ -96,11 +99,11 @@ export async function routeRequest(request, env, context) {
   const origin = allowedOrigin(request, env);
   // إعادة توجيه المزوّدات وwebhooks تصل بلا Origin: فحص الأصل لا ينطبق عليها،
   // وحمايتها هي توقيع المزوّد نفسه (state موقّع، HMAC، أو JWS من آبل).
-  const publicImage = ['GET', 'HEAD'].includes(request.method) && isPublicProfileImagePath(url.pathname);
+  const publicImage = ['GET', 'HEAD'].includes(request.method) && (isPublicProfileImagePath(url.pathname) || isPublicDesignAssetPath(url.pathname));
   if (!origin && !isPublicAccountPath(url.pathname) && !publicImage) return json({ error: 'ORIGIN' }, 403);
   const headers = origin ? { 'access-control-allow-origin': origin, vary: 'Origin',
     'access-control-allow-methods': 'GET, POST, PUT, PATCH, DELETE, OPTIONS',
-    'access-control-allow-headers': 'Content-Type, Authorization, Range',
+    'access-control-allow-headers': 'Content-Type, Authorization, Range, X-Design-Name',
     'access-control-expose-headers': 'x-maydan-session',
     'access-control-max-age': '600' } : {};
   if (request.method === 'OPTIONS') return new Response(null, { status: 204, headers });
@@ -124,7 +127,8 @@ export async function routeRequest(request, env, context) {
   }
   try {
     // الحسابات أولًا: مساراتها تحت /api/ ولا تتقاطع مع تعبير الغرف.
-    response = await routeDrawingReports(request, env, url, charge)
+    response = await routeDesign(request, env, url, charge)
+      || await routeDrawingReports(request, env, url, charge)
       || await routeSocialLive(request, env, url, charge)
       || await routeModeration(request, env, url, charge)
       || await routeProfiles(request, env, url, charge)

@@ -4,7 +4,7 @@ import { socialInterruption } from './interruption.js';
 import { back as routeBack, getPreviousPath, navigate, useRoute } from '../platform/router.js';
 import { socialListTab, socialPagePath, socialPageView, usesSocialDrawer } from './social-navigation.js';
 
-const SocialUIContext = createContext(null);
+export const SocialUIContext = createContext(null);
 export const useSocialUI = () => useContext(SocialUIContext);
 export const conversationDraftKey = (kind, id) => `${kind}:${id}`;
 const favoritesKey = accountKey => `maydan:social-ui:favorites:${encodeURIComponent(accountKey)}`;

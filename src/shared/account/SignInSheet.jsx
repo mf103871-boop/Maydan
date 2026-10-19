@@ -28,19 +28,19 @@ function GoogleMark() {
 }
 
 // الأزرار وحدها: تُستعمل داخل الجدار أيضًا حيث لا ورقة ثانية.
-export function SignInButtons({ onDone }) {
+export function SignInButtons({ onDone, designScreen = 'account.signin' }) {
   const account = useAccount();
   const providers = (account.billing && account.billing.providers) || null;
   const busy = account.busy === 'signin';
   const run = async (provider) => { const result = await account.signIn(provider); if (result && onDone) onDone(); };
   if (account.offline) return <p className="online-notice" role="status">{accountErrorText('OFFLINE')}</p>;
   return (
-    <div className="account-providers">
+    <div data-design-screen={designScreen || undefined} data-design-id="providers" className="account-providers">
       {(!providers || providers.apple !== false) && (
-        <Button variant="primary" size="lg" full loading={busy} icon={<AppleMark />} data-provider="apple" onClick={() => run('apple')}>المتابعة بحساب Apple</Button>
+        <Button variant="primary" size="lg" full loading={busy} icon={<AppleMark />} data-design-id="signin-apple" data-design-required="true" data-provider="apple" onClick={() => run('apple')}>المتابعة بحساب Apple</Button>
       )}
       {(!providers || providers.google !== false) && (
-        <Button variant="secondary" size="lg" full disabled={busy} icon={<GoogleMark />} data-provider="google" onClick={() => run('google')}>المتابعة بحساب Google</Button>
+        <Button variant="secondary" size="lg" full disabled={busy} icon={<GoogleMark />} data-design-id="signin-google" data-design-required="true" data-provider="google" onClick={() => run('google')}>المتابعة بحساب Google</Button>
       )}
       {account.error && <p className="online-notice error" role="alert">{accountErrorText(account.error)}</p>}
     </div>
@@ -51,14 +51,14 @@ export function SignInSheet({ open, onClose, title = 'تسجيل الدخول', 
   const account = useAccount();
   if (!open) return null;
   return (
-    <Sheet open={open} onClose={onClose} title={title}>
-      <div className="account-signin">
+    <Sheet data-design-screen="account.signin" open={open} onClose={onClose} title={title}>
+      <div data-design-id="content" className="account-signin">
         <p className="card-muted">{note}</p>
-        <SignInButtons onDone={onClose} />
+        <SignInButtons designScreen={null} onDone={onClose} />
         {account.error === 'PREVIEW_ONLY' && (
           <a className="btn btn-secondary btn-full" href={PUBLISHED_SETTINGS_URL} target="_blank" rel="noopener noreferrer">فتح الموقع المنشور لتسجيل الدخول ↗</a>
         )}
-        <p className="account-fineprint">لا نطلب كلمة مرور. يكفي حساب Apple أو Google لتتبع اشتراكك.</p>
+        <p data-design-id="privacy-note" data-design-required="true" className="account-fineprint">لا نطلب كلمة مرور. يكفي حساب Apple أو Google لتتبع اشتراكك.</p>
       </div>
     </Sheet>
   );
