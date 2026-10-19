@@ -1,0 +1,226 @@
+{
+  "version": "1.8",
+  "build": "22",
+  "sourceCommit": "2fe524e98f8a455b1b801ab4c0fdd9d82f9396ef",
+  "sourceHtmlSha256": "36d93c56fa8ebb945736e9b221497f88d5e262735ad40c05514c74a46ecd7fec",
+  "provenanceSha256": "d022c7bcb31e83cec17dc542614de50c07da585e6ced44317c7439dbbe971809",
+  "files": [
+    {
+      "file": "ar-1179x2556-01-home.png",
+      "scene": "home",
+      "locale": "ar",
+      "width": 1179,
+      "height": 2556,
+      "sha256": "2165d54dcbb9e964b054782aad7c800449bf65a484efe93794e465d6ffc81a77",
+      "displayOrder": 1
+    },
+    {
+      "file": "ar-1179x2556-02-ersomha.png",
+      "scene": "ersomha",
+      "locale": "ar",
+      "width": 1179,
+      "height": 2556,
+      "sha256": "0d830fb9f13ac3462a039cf9f638a26fbc7e3fd8e1eae89da5328f08e66645ae",
+      "displayOrder": 2
+    },
+    {
+      "file": "ar-1179x2556-03-badeeha.png",
+      "scene": "badeeha",
+      "locale": "ar",
+      "width": 1179,
+      "height": 2556,
+      "sha256": "0dec64803ce77ef993e5e85731e1fc8af0388937d084208a7533bdc5e3dd4f70",
+      "displayOrder": 3
+    },
+    {
+      "file": "ar-1179x2556-04-chat.png",
+      "scene": "chat",
+      "locale": "ar",
+      "width": 1179,
+      "height": 2556,
+      "sha256": "a3718d8fa30a0802e057dca19d282b8e881446a95bbcd5a1296b4825bd989ed6",
+      "displayOrder": 4
+    },
+    {
+      "file": "ar-1179x2556-05-friends.png",
+      "scene": "friends",
+      "locale": "ar",
+      "width": 1179,
+      "height": 2556,
+      "sha256": "c57e54fe73495ecf9accf04ced534e26a9a63141f7647360258f6f2a8c5cb9e1",
+      "displayOrder": 5
+    },
+    {
+      "file": "ar-1179x2556-06-fabraka.png",
+      "scene": "fabraka",
+      "locale": "ar",
+      "width": 1179,
+      "height": 2556,
+      "sha256": "46f2c53a9a8a669f99358079420bd41817cd518708903ad59d2441aff705b6e1",
+      "displayOrder": 6
+    },
+    {
+      "file": "en-1179x2556-01-home.png",
+      "scene": "home",
+      "locale": "en",
+      "width": 1179,
+      "height": 2556,
+      "sha256": "f0f88168252b83f48095193a8251cd0a316da9433b7a176087c9b5533094994f",
+      "displayOrder": 1
+    },
+    {
+      "file": "en-1179x2556-02-ersomha.png",
+      "scene": "ersomha",
+      "locale": "en",
+      "width": 1179,
+      "height": 2556,
+      "sha256": "feba452c62f559f45235a0e026cbda0b3ba6a4214328f3d11e9b6cfa37dacc0b",
+      "displayOrder": 2
+    },
+    {
+      "file": "en-1179x2556-03-badeeha.png",
+      "scene": "badeeha",
+      "locale": "en",
+      "width": 1179,
+      "height": 2556,
+      "sha256": "6ef461b6efb794ae73ae30fea2453b579e7d62dc4e6abc9d32840f12703173b9",
+      "displayOrder": 3
+    },
+    {
+      "file": "en-1179x2556-04-chat.png",
+      "scene": "chat",
+      "locale": "en",
+      "width": 1179,
+      "height": 2556,
+      "sha256": "1f995335d0e17393b9168cf13aa140573222ec1de950732f15db8131837ccfe5",
+      "displayOrder": 4
+    },
+    {
+      "file": "en-1179x2556-05-friends.png",
+      "scene": "friends",
+      "locale": "en",
+      "width": 1179,
+      "height": 2556,
+      "sha256": "70a3096ea6c0bc24a6262f9a629c839716581171c82f679964c5b689598708ab",
+      "displayOrder": 5
+    },
+    {
+      "file": "en-1179x2556-06-fabraka.png",
+      "scene": "fabraka",
+      "locale": "en",
+      "width": 1179,
+      "height": 2556,
+      "sha256": "a1f59bf9c47186b276cd21426686d53738f5e777da9eb3734580ea7d63ff8960",
+      "displayOrder": 6
+    },
+    {
+      "file": "ar-1290x2796-01-home.png",
+      "scene": "home",
+      "locale": "ar",
+      "width": 1290,
+      "height": 2796,
+      "sha256": "605ef7ada73c2c31ce0647d280b1d019f7aaaeb121d37c4638ea352bcd4efb2b",
+      "displayOrder": 1
+    },
+    {
+      "file": "ar-1290x2796-02-ersomha.png",
+      "scene": "ersomha",
+      "locale": "ar",
+      "width": 1290,
+      "height": 2796,
+      "sha256": "904148fc32759917d5198e2248be3446fca6b2885b8540a5d3b631b1f9d2da2f",
+      "displayOrder": 2
+    },
+    {
+      "file": "ar-1290x2796-03-badeeha.png",
+      "scene": "badeeha",
+      "locale": "ar",
+      "width": 1290,
+      "height": 2796,
+      "sha256": "67d51c85823ec0f361d862e6bb1cb81a01522c74e9e35d93db68f4d40876feb2",
+      "displayOrder": 3
+    },
+    {
+      "file": "ar-1290x2796-04-chat.png",
+      "scene": "chat",
+      "locale": "ar",
+      "width": 1290,
+      "height": 2796,
+      "sha256": "f3d4ac4fbb57599e181b0adb23914ee96b5ef81f3fd5117b91b44d7449c2d8dd",
+      "displayOrder": 4
+    },
+    {
+      "file": "ar-1290x2796-05-friends.png",
+      "scene": "friends",
+      "locale": "ar",
+      "width": 1290,
+      "height": 2796,
+      "sha256": "225588d54bfaed54c20d2e872ab37334f7c5e461c061c49e84bcf1b9a212537c",
+      "displayOrder": 5
+    },
+    {
+      "file": "ar-1290x2796-06-fabraka.png",
+      "scene": "fabraka",
+      "locale": "ar",
+      "width": 1290,
+      "height": 2796,
+      "sha256": "10f90e26755bb73374d119aee9c73a3cadb6bd66e16e50b582fa3ccced6ebd3d",
+      "displayOrder": 6
+    },
+    {
+      "file": "en-1290x2796-01-home.png",
+      "scene": "home",
+      "locale": "en",
+      "width": 1290,
+      "height": 2796,
+      "sha256": "2e4cd383df6e1a40d59968d67e04da6e6fa993b3079d74f2d2f599129fcd2138",
+      "displayOrder": 1
+    },
+    {
+      "file": "en-1290x2796-02-ersomha.png",
+      "scene": "ersomha",
+      "locale": "en",
+      "width": 1290,
+      "height": 2796,
+      "sha256": "6ade1a31670388ed21ddbaca9112b4b6d03d19cd2b3c25b0f2f5219f6a88ecc5",
+      "displayOrder": 2
+    },
+    {
+      "file": "en-1290x2796-03-badeeha.png",
+      "scene": "badeeha",
+      "locale": "en",
+      "width": 1290,
+      "height": 2796,
+      "sha256": "a30fb205cebf6f3d163ca28116f9bc7a77762e32aea307c2c7c7214822fd4f38",
+      "displayOrder": 3
+    },
+    {
+      "file": "en-1290x2796-04-chat.png",
+      "scene": "chat",
+      "locale": "en",
+      "width": 1290,
+      "height": 2796,
+      "sha256": "7f2b8ef2586147c36afecd42d23aa856d9f0699bdb0b54cb60421175b7e9c63e",
+      "displayOrder": 4
+    },
+    {
+      "file": "en-1290x2796-05-friends.png",
+      "scene": "friends",
+      "locale": "en",
+      "width": 1290,
+      "height": 2796,
+      "sha256": "54a349a7b5f9dedaa38a43f47428e9fc9e64b6dcb7da7153131aa8e910d30296",
+      "displayOrder": 5
+    },
+    {
+      "file": "en-1290x2796-06-fabraka.png",
+      "scene": "fabraka",
+      "locale": "en",
+      "width": 1290,
+      "height": 2796,
+      "sha256": "108f36ad375a77c162faa73aee817060b4b43abdc9600bc1a302e17215e64f1f",
+      "displayOrder": 6
+    }
+  ],
+  "exclude": "contact-*.png and review-*.png are proof previews, not App Store upload files"
+}

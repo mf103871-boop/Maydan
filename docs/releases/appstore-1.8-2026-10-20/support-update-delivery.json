@@ -1,0 +1,119 @@
+{
+  "schemaVersion": 1,
+  "recordedAtUtc": "2026-10-19T22:35:42.325Z",
+  "appId": "6808385717",
+  "nativeTarget": {
+    "version": "1.8",
+    "build": "22",
+    "buildId": "093728e9-5d77-4d9f-8725-5e1c4de8c5f9",
+    "sourceCommit": "2fe524e98f8a455b1b801ab4c0fdd9d82f9396ef",
+    "ownerReportedPhysicalAcceptance": true,
+    "independentlyObservedPhysicalAcceptance": false,
+    "nativeSourceChangedBySupportDeployment": false
+  },
+  "supportDeployment": {
+    "verifiedAt": "2026-10-19T22:22:49.563Z",
+    "planSHA256": "c23d5827e7a82cbfeca4d28bed5b630d60001c8f2198a0915c90d6eaf3744ab6",
+    "sourceCommit": "b496e1f11a38e8a7dfe413d08689d212f40e267c",
+    "mode": "support",
+    "versionId": "cc998aa6-bc10-4b0a-9cf7-860400cc183b",
+    "bundleSHA256": "3b1e3d4cb8b282c65c9c79a0d1f769842336724bbb8d7aeff9dbbaf472903df8",
+    "assetsChecked": 63,
+    "publicAssetsUnchanged": true,
+    "roomsUnchanged": true,
+    "studioOwnerAndPublishGateUnchanged": true,
+    "secretsUnchanged": true,
+    "schedulesUnchanged": true,
+    "assetConfigurationUnchanged": true,
+    "changes": {},
+    "applied": true,
+    "previousMainVersion": "987bbbc4-50d2-47d8-9b36-9d7d66bc6037",
+    "roomsVersionPreserved": "69c65d93-9f46-4af3-aaaa-bb34685dac9f",
+    "url": "https://maydan-game.mf103871.workers.dev/api/legal/support/",
+    "policyActivationPerformed": false
+  },
+  "independentPublicSupportCheck": {
+    "getAtUtc": "2026-10-19T22:34:48.804Z",
+    "headAtUtc": "2026-10-19T22:34:49.036Z",
+    "getStatus": 200,
+    "headStatus": 200,
+    "headBodyBytes": 0,
+    "getBodyBytes": 7257,
+    "bodySha256": "d1c6e96b6281e17660c4a2ed1fc6916f7cdbedbee49149eb97235de0e37a1f8a",
+    "matchesReviewedStandalonePage": true,
+    "cookiesSet": false
+  },
+  "negativeActivationCheck": {
+    "checkedAtUtc": "2026-10-19T22:34:16.340Z",
+    "method": "Direct exported verifyPublic18Release with narrowly scoped in-memory JWT; no plan/apply invocation",
+    "observedAppVersionState": "PREPARE_FOR_SUBMISSION",
+    "observedDownloadable": true,
+    "passed": true,
+    "officialGateRequests": 1,
+    "buildOrStorefrontRequests": 0,
+    "planCreated": false,
+    "productionMutations": 0
+  },
+  "activationRequirements": {
+    "officialPublicState": "READY_FOR_SALE / READY_FOR_DISTRIBUTION, without conflicting nonpublic state",
+    "officialDownloadable": true,
+    "exactVersion": "1.8",
+    "exactBuild": "22",
+    "exactBuildId": "093728e9-5d77-4d9f-8725-5e1c4de8c5f9",
+    "buildProcessingState": "VALID",
+    "buildExpired": false,
+    "allPublicStorefronts": [
+      "JO",
+      "SA",
+      "AE",
+      "US"
+    ],
+    "checksRepeatedImmediatelyBeforeApply": true,
+    "allowOnlyThreeFlags": {
+      "IOS_UPDATE_POLICY_ENABLED": "1",
+      "IOS_MIN_SUPPORTED_VERSION": "1.8",
+      "IOS_MIN_SUPPORTED_BUILD": "22"
+    },
+    "disableChangesOnly": {
+      "IOS_UPDATE_POLICY_ENABLED": "0"
+    },
+    "enabledByThisReceipt": false
+  },
+  "operator": {
+    "sourceCommit": "b496e1f11a38e8a7dfe413d08689d212f40e267c",
+    "helper": "scripts/ios/support-update-release.mjs",
+    "helperSha256": "d6cb77cf98d8a7e6bf30244e07acbc242fdc8469b28a88102f62801fb6f30f70",
+    "externalWrapper": "work/run_support_release.py",
+    "externalWrapperSha256": "a50b99e17e37d25aa8ed2657f9c51f593031cbb830e4f79ee6ccb41a462ef3dc",
+    "wrapperLocalChecksPassed": 30,
+    "wrapperGuards": [
+      "Canonical UUID before JWT scope construction",
+      "Exact command arity, absolute private directory and reviewed SHA-256 format",
+      "ASC JWT only for enable plan/apply, child environment only",
+      "Fresh exact method/path/query GET scopes; no unscoped token",
+      "Existing key only; no new credential or resource",
+      "No automatic retry, rollback or apply-lock deletion"
+    ],
+    "liveScopeVerification": {
+      "pathOnlyHTTP": 403,
+      "pathOnlyError": "FORBIDDEN.REQUEST_DOES_NOT_MATCH_SCOPE",
+      "exactPathAndQueryHTTP": 200
+    },
+    "jwtLifetimeSeconds": 1200,
+    "tokenWrittenToFileOrArgsOrStdout": false
+  },
+  "validation": {
+    "targetedTestsPassed": 36,
+    "targetedTestsFailed": 0,
+    "lintPassed": true,
+    "independentServerOperatorReviewPassed": true,
+    "independentSupportPageSourceReviewPassed": true
+  },
+  "limitations": [
+    "This records support deployment, not public App Store 1.8 publication or update-policy activation.",
+    "Do not enable while review is pending, while only TestFlight is available, or before all four required storefronts offer the exact release.",
+    "Native update checks exist from1.7(12); older installations cannot acquire them remotely.",
+    "The existing gate fails open offline or on verification failure, preserves running games and calls, and checks on launch/foreground rather than every match start.",
+    "A visible update gate is removed on its next successful disabled check or failed/offline retry; configuration changes are not pushed instantly to the screen."
+  ]
+}

@@ -1,0 +1,21 @@
+Maydan 1.8 (22) — Arabic party games and private social features.
+
+This update adds Ersomha (ارسمها), new bottom navigation and movable call controls, and fixes audio recovery after backgrounding, interruptions and output changes. The owner tested this exact TestFlight build on a physical iPhone and confirmed it works. Native audio-policy checks, simulator startup and update-gate checks also passed.
+
+Navigation: the bottom tabs, from right, are الألعاب (Games), الأصدقاء (Friends), المتجر (Store) and الإعدادات (Settings). Store is an explicitly labelled coming-soon page with no products, prices or currency. The binary display name remains “Maydan ميدان”; both localized store names retain Maydan/ميدان.
+
+Access: single-device games can be tried as a guest. Sign in with Apple or Google for profiles, accepted-friend chat, private groups, online rooms and linking purchases. There is no reviewer-only bypass.
+
+Ersomha: use two signed-in accounts on separate devices. Open ارسمها, create a private room and join using its code or chat invitation. Two players cooperate; 3–8 compete. The drawer chooses from three words and has 60 seconds to draw; the others guess. The drawer's microphone is intentionally locked from word selection until reveal. It stays muted afterwards until the player explicitly unmutes. Private-role microphone restrictions also remain active in other games.
+
+Online play: Fabraka supports two players outside its “friends” mode; Meen Fina requires at least three. Room creation follows the existing one-free-match-then-Plus rules; joining is free. No public random matchmaking is offered.
+
+Social features are free: find friends by name/code, accept a request, then open private text chat, voice notes or calls. Groups are invitation-only with up to 12 members. A voice note can be previewed/cancelled before sending, up to two minutes. iPhone microphone/notification permissions are requested when those features are used. Active calls use CallKit/PushKit for genuine incoming calls and APNs for messages. Calls are not recorded. Drawing canvases are temporary; reports preserve private moderation evidence.
+
+Safety and privacy: account blocking and reporting are available from profiles/chat/group content; messages and voice notes can be deleted. Account deletion is in Settings/account controls. Secret roles suppress message previews and lock microphone unmute. Published privacy labels already include linked Audio Data, messages, photos, gameplay content, identifiers and other applicable data for app functionality. Existing chat/user-generated-content age answers are retained.
+
+Purchases: the approved auto-renewable products are plus.monthly and plus.yearly. Ten Badeeha packs are always free; each other game includes one complete free match. The localized StoreKit price/period appears before purchase. Restore Purchases is in Settings. There is no external payment flow.
+
+Support: https://maydan-game.mf103871.workers.dev/api/legal/support/
+Privacy: https://maydan-game.mf103871.workers.dev/api/legal/privacy/
+Terms: https://maydan-game.mf103871.workers.dev/#/terms

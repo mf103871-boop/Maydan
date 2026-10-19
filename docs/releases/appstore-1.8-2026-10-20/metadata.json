@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 1,
+  "appId": "6808385717",
+  "platform": "IOS",
+  "version": "1.8",
+  "build": "22",
+  "buildId": "093728e9-5d77-4d9f-8725-5e1c4de8c5f9",
+  "sourceCommit": "2fe524e98f8a455b1b801ab4c0fdd9d82f9396ef",
+  "releaseType": "AFTER_APPROVAL",
+  "phasedRelease": false,
+  "resetRatings": false,
+  "preserveAgePrivacyCategoriesPricingTerritories": true,
+  "supportUrl": "https://maydan-game.mf103871.workers.dev/api/legal/support/",
+  "marketingUrl": "https://maydan-game.mf103871.workers.dev/",
+  "privacyPolicyUrl": "https://maydan-game.mf103871.workers.dev/api/legal/privacy/",
+  "localizations": {
+    "ar-SA": {
+      "name": "ميدان: ألعاب الشلة",
+      "subtitle": "رسم وتخمين ودردشة صوتية",
+      "keywords": "مسابقات,أسئلة,ثقافة,معلومات,ألغاز,ذكاء,فزورة,عائلة,سهرات,أونلاين,جماعية,بديهة,فبركة,كلمات,أصدقاء",
+      "descriptionFile": "description-ar.txt",
+      "promotionalTextFile": "promotional-ar.txt",
+      "whatsNewFile": "whatsnew-ar.txt"
+    },
+    "en-US": {
+      "name": "Maydan: Arabic Party Games",
+      "subtitle": "Draw, guess & voice chat",
+      "keywords": "quiz,multiplayer,online,offline,word,team,friends,sketch,questions,ميدان,بديهة,ارسمها",
+      "descriptionFile": "description-en.txt",
+      "promotionalTextFile": "promotional-en.txt",
+      "whatsNewFile": "whatsnew-en.txt"
+    }
+  },
+  "reviewNotesFile": "review-notes-en.txt",
+  "reviewNotesOwnerTranslationFile": "review-notes-ar.txt",
+  "files": {
+    "description-ar.txt": {
+      "sha256": "660bb2ba08f21143d86b885899faf595964215569eab50f0d70b2eb5a4a11d04",
+      "characters": 2117
+    },
+    "description-en.txt": {
+      "sha256": "88ff396eaace9362cc6ff06ee896a554814733a862395b49fa45d33840babbb2",
+      "characters": 2703
+    },
+    "promotional-ar.txt": {
+      "sha256": "2c3b550cee3a258106d641cbe92f6cadf1b45eb6c9fd8557e2638900135b5a21",
+      "characters": 139
+    },
+    "promotional-en.txt": {
+      "sha256": "ad07328f596c40d43151817897553c4686991b42e3687df17ec2e87e1ff1bd56",
+      "characters": 155
+    },
+    "review-notes-ar.txt": {
+      "sha256": "c89c1f325575093d1e45785496ca969493e6bbc5f2127ed3f2e7bffc7a2d14dd",
+      "characters": 2224
+    },
+    "review-notes-en.txt": {
+      "sha256": "2a48f9970435529ffd0bf5663965a045d6c57691132efd802c53c6d78ea6bc8f",
+      "characters": 3108
+    },
+    "whatsnew-ar.txt": {
+      "sha256": "e3130fdd0658bdcf26dc78e37bdca0e02b7798d35f45d66cc3ab806924cfd9e4",
+      "characters": 437
+    },
+    "whatsnew-en.txt": {
+      "sha256": "0de3d0fc28fce82b1e19d7f8043d1d5da2a020c2c0d2e6a34223011411484793",
+      "characters": 516
+    }
+  },
+  "status": "ROOT_APPROVED_METADATA_ONLY_NOT_APPLIED",
+  "physicalBuild22ConfirmedByOwner": true,
+  "reviewContactAndDemoFields": "preserve_existing_genuine_fields_without_printing",
+  "submissionGate": "ROOT_REVIEW_OF_24_SCREENSHOTS_AND_LIVE_SUPPORT_REQUIRED"
+}
