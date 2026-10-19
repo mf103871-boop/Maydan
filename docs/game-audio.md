@@ -202,6 +202,14 @@ checks do not establish iPhone Web Audio behavior. Native policy is separately
 executed in Swift in the macOS build. Physical iPhone backgrounding, interruptions,
 headsets and call/record transitions remain release acceptance checks.
 
+Delivered as TestFlight **1.8 (22)** from `2fe524e98f8a455b1b801ab4c0fdd9d82f9396ef`,
+with Apple processing and access through the existing internal group verified.
+The private Studio/play site uses the same frozen source. The
+[delivery receipt](studio/evidence/audio-delivery-receipt.json) records the actual
+IPA/artifact digests, final CI counts, executed Swift policy checks, browser
+limitations and web verification. Physical iPhone acceptance remains pending;
+public design publishing stays disabled and App Store 1.7.1 remains on build13.
+
 References: [Apple interruption handling](https://developer.apple.com/documentation/AVFAudio/handling-audio-interruptions),
 [WebKit's pending-resume report](https://bugs.webkit.org/show_bug.cgi?id=281566).
 
