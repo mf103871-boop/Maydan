@@ -2,7 +2,11 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {createHash} from 'node:crypto';
 import {readFileSync} from 'node:fs';
-import {studioApiClient,studioUploadPlan,assertStudioMetadata,pendingStudioMigrations,assertStudioMigration,STUDIO_MIGRATION} from '../scripts/studio-release.mjs';
+import {studioApiClient,studioUploadPlan,assertStudioMetadata,pendingStudioMigrations,assertStudioMigration,physicalStudioInputs,STUDIO_MIGRATION} from '../scripts/studio-release.mjs';
+test('provenance hashes physical dependencies and explicitly recognizes only the pinned synthetic media define',()=>{
+  assert.deepEqual(physicalStudioInputs(['src/studio/main.jsx','<define:__MAYDAN_MEDIA_VERSIONS__>','node_modules/react/index.js']),['src/studio/main.jsx','node_modules/react/index.js']);
+  assert.throws(()=>physicalStudioInputs(['<define:UNREVIEWED>']),/Unknown generated/);
+});
 const releaseId='studio-20261019-abcd1234',ownerUserId='verified-owner';
 function snapshot(name='maydan-game'){
   return{versionId:'old',latestVersionId:'old',settings:{compatibility_date:'2026-09-01',compatibility_flags:[],observability:{enabled:true},bindings:[
