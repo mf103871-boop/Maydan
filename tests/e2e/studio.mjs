@@ -19,7 +19,7 @@ const sweep = process.argv.includes('--sweep');
 await mkdir(OUT, { recursive: true });
 await buildStudio(); await buildDesignPreview({ version: '1.8' });
 const hash = (bytes) => createHash('sha256').update(bytes).digest('hex');
-const report = { startedAt: new Date().toISOString(), builds: { editorSha256: hash(await readFile('dist/studio/studio.js')), previewSha256: hash(await readFile('dist/studio/preview/index.html')) }, backend: 'real routeDesign + all migrations + SQLite D1 adapter + private memory R2', productionContacted: false, engines: [] };
+const report = { startedAt: new Date().toISOString(), builds: { editorSha256: hash(await readFile('dist/studio/studio.js')), editorHtmlSha256: hash(await readFile('dist/studio/index.html')), previewSha256: hash(await readFile('dist/studio/preview/index.html')) }, backend: 'real routeDesign + all migrations + SQLite D1 adapter + private memory R2', productionContacted: false, engines: [] };
 
 for (const [engineName, engine] of Object.entries(engines)) {
   const runtime = await startStudioLocal({ legacyServiceWorker: true });

@@ -10,11 +10,12 @@ import { buildStudio } from '../../scripts/studio-build.mjs';
 import { buildDesignPreview } from '../../scripts/design-preview-build.mjs';
 import { DESIGN_SCREENS } from '../../src/design/registry.js';
 
-const OUT = path.resolve('.cache/studio-publication');
+const outputIndex = process.argv.indexOf('--out');
+const OUT = path.resolve(outputIndex < 0 ? '.cache/studio-publication' : process.argv[outputIndex + 1]);
 await mkdir(OUT, { recursive: true });
 await buildStudio(); await buildDesignPreview({ version: '1.8' });
 const sha = (bytes) => createHash('sha256').update(bytes).digest('hex');
-const report = { startedAt: new Date().toISOString(), productionContacted: false, builds: { editorSha256: sha(await readFile('dist/studio/studio.js')), previewSha256: sha(await readFile('dist/studio/preview/index.html')) }, engines: [] };
+const report = { startedAt: new Date().toISOString(), productionContacted: false, builds: { editorSha256: sha(await readFile('dist/studio/studio.js')), editorHtmlSha256: sha(await readFile('dist/studio/index.html')), previewSha256: sha(await readFile('dist/studio/preview/index.html')) }, engines: [] };
 for (const [engineName, engine] of Object.entries({ chromium, webkit })) {
   const runtime = await startStudioLocal({ publishEnabled: true });
   const browser = await engine.launch({ headless: true });
