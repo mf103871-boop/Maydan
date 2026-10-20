@@ -1,0 +1,140 @@
+{
+  "capturedAtUtc": "2026-10-20T06:13:09.487Z",
+  "appId": "6808385717",
+  "publicVersion": "1.7.1",
+  "source": "Apple App Analytics UI / Acquisition / Sources",
+  "periodStartUtc": "2026-09-19",
+  "periodEndUtc": "2026-10-18",
+  "filters": "All sources, no additional filters",
+  "metrics": {
+    "productPageViewsBySource": [
+      [
+        "SOURCE TYPE",
+        "PRODUCT PAGE VIEWS\n \n􀆈"
+      ],
+      [
+        "App Store Search",
+        "113"
+      ],
+      [
+        "App Referrer",
+        "59"
+      ],
+      [
+        "App Store Browse",
+        "19"
+      ],
+      [
+        "Web Referrer",
+        "1"
+      ],
+      [
+        "Institutional Purchase",
+        "-"
+      ],
+      [
+        "Unavailable",
+        "-"
+      ]
+    ],
+    "firstTimeDownloadsBySource": [
+      [
+        "SOURCE TYPE",
+        "FIRST-TIME DOWNLOADS\n \n􀆈"
+      ],
+      [
+        "App Referrer",
+        "28"
+      ],
+      [
+        "App Store Search",
+        "20"
+      ],
+      [
+        "App Store Browse",
+        "1"
+      ],
+      [
+        "Institutional Purchase",
+        "-"
+      ],
+      [
+        "Unavailable",
+        "-"
+      ],
+      [
+        "Web Referrer",
+        "-"
+      ]
+    ],
+    "impressionsBySource": [
+      [
+        "SOURCE TYPE",
+        "IMPRESSIONS\n \n􀆈"
+      ],
+      [
+        "App Store Search",
+        "1,335"
+      ],
+      [
+        "App Referrer",
+        "59"
+      ],
+      [
+        "App Store Browse",
+        "38"
+      ],
+      [
+        "Web Referrer",
+        "1"
+      ],
+      [
+        "Institutional Purchase",
+        "-"
+      ],
+      [
+        "Unavailable",
+        "-"
+      ]
+    ],
+    "conversionRateBySource": [
+      [
+        "SOURCE TYPE",
+        "CONVERSION RATE\n•DAILY AVERAGE\n \n􀆈"
+      ],
+      [
+        "App Referrer",
+        "64.44%"
+      ],
+      [
+        "App Store Browse",
+        "4.35%"
+      ],
+      [
+        "App Store Search",
+        "2.02%"
+      ],
+      [
+        "Institutional Purchase",
+        "-"
+      ],
+      [
+        "Unavailable",
+        "-"
+      ],
+      [
+        "Web Referrer",
+        "-"
+      ]
+    ]
+  },
+  "notes": [
+    "Counts are the figures reported by Apple for the same30-day period. A dash is unavailable, not zero.",
+    "Conversion Rate table is DAILY AVERAGE by source; these percentages are neither additive nor a single global conversion rate."
+  ],
+  "reportedNumericSums": {
+    "impressions": 1433,
+    "productPageViews": 192,
+    "firstTimeDownloads": 49
+  }
+}

@@ -6,13 +6,14 @@ import { usePlatform } from '../platform/context.js';
 import { getRoute, navigate } from '../platform/router.js';
 import { useSocial } from './SocialProvider.jsx';
 import { LammaClient, emptyLamma, lammaId } from './lamma-client.js';
-import { CallMedia, emptyMedia } from './media.js';
+import { CallMedia, emptyMedia, activeAudioOwners } from './media.js';
 import { socialInterruption } from './interruption.js';
 import { createCallAuthorization } from './call-authorization.js';
 import { LAMMA_POLL_MS, lammaPollDue, refreshesLamma, rechecksCall } from './sync-policy.js';
 import { joinSocialGameRoom } from './game-launch.js';
 
 const Context = createContext(null);
+export const LammaContext = Context;
 export const useLamma = () => useContext(Context);
 const METHODS = ['createGroup', 'loadGroup', 'loadCallMembers', 'loadOlderGroup', 'sendGroupMessage', 'inviteGroupMembers', 'removeGroupMember',
   'leaveGroup', 'renameGroup', 'acceptGroupInvite', 'rejectGroupInvite', 'setGroupRole', 'transferGroupOwnership', 'selectGroup',
@@ -85,7 +86,8 @@ export function LammaProvider({ children }) {
     return () => { clearTimeout(timer); clearInterval(interval); window.removeEventListener('maydan-social-event', event); window.removeEventListener('online', refresh); document.removeEventListener('visibilitychange', refresh); };
   }, [client, owner]);
   useEffect(() => {
-    const owners = new Set();
+    const owners = new Set(activeAudioOwners());
+    sound.setDucking(owners.size > 0, 'lamma');
     const changed = event => { const { owner: key, active } = event.detail || {}; if (!key) return;
       if (active) owners.add(key); else owners.delete(key); sound.setDucking(owners.size > 0, 'lamma'); };
     window.addEventListener('maydan-social-audio', changed);

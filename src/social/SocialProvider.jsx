@@ -3,7 +3,7 @@ import { useAccount } from '../shared/account/context.js';
 import { resolveAccountServer } from '../shared/account/api.js';
 import { SocialClient, emptySocialState } from './client.js';
 
-const SocialContext = createContext(null);
+export const SocialContext = createContext(null);
 export const useSocial = () => useContext(SocialContext);
 const METHODS = ['refresh','searchUsers','sendRequest','acceptRequest','rejectRequest','cancelRequest','openConversation','loadOlder',
   'sendMessage','retryMessage','editMessage','deleteMessage','markRead','setTyping','removeFriend','blockUser','unblockUser','reportUser','registerConversation','receiveOwnMessage'];

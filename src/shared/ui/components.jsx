@@ -1,11 +1,13 @@
 import { Avatar, TrophyArtwork, ClayStage } from '../brand/art.jsx';
 // المكونات المشتركة: زر، بطاقة، شارة، نافذة، ورقة سفلية، تنبيه، حلقة تقدم، لوحة نتائج، منصة تتويج، شاشة.
-import React, { useEffect, useRef, useState, useCallback, createContext, useContext } from 'react';
+import React, { useEffect, useLayoutEffect, useRef, useState, useCallback, createContext, useContext } from 'react';
 import { createPortal } from 'react-dom';
 import { IconClose } from './icons.jsx';
 import { burstConfetti } from '../fx/confetti.js';
 import { prefersReducedMotion, wait } from '../fx/screen.js';
 import { useVisualViewport } from './useVisualViewport.js';
+import { activateDialog } from './dialog-interaction.js';
+import { registerBackLayer } from '../../platform/router.js';
 
 // ── ripple ───────────────────────────────────────────────────
 export function ripple(event) {
@@ -57,52 +59,31 @@ export function IconButton({ label, children, className = '', ...rest }) {
 export function Card({ className = '', children, ...rest }) {
   return <div className={`card ${className}`} {...rest}>{children}</div>;
 }
-export function Badge({ variant = '', children }) {
-  return <span className={`badge ${variant ? `badge-${variant}` : ''}`}>{children}</span>;
+export function Badge({ variant = '', children, ...rest }) {
+  return <span className={`badge ${variant ? `badge-${variant}` : ''}`} {...rest}>{children}</span>;
 }
 
 // ── حوارات: تركيز محبوس وخلفية معطّلة ───────────────────────
-const FOCUSABLE = 'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])';
-
-function focusables(node) {
-  if (!node) return [];
-  return Array.from(node.querySelectorAll(FOCUSABLE)).filter((el) => el.getClientRects().length > 0);
+function useAnimatedClose(onClose,duration){
+  const handler=useRef(onClose),timer=useRef(null),closingRef=useRef(false);
+  const[closing,setClosing]=useState(false);handler.current=onClose;
+  useEffect(()=>()=>clearTimeout(timer.current),[]);
+  const close=useCallback(()=>{
+    if(typeof handler.current!=='function' || closingRef.current)return;
+    closingRef.current=true;setClosing(true);
+    timer.current=setTimeout(()=>{timer.current=null;closingRef.current=false;setClosing(false);handler.current?.();},wait(duration));
+  },[duration]);
+  return[closing,close];
 }
-
-// التركيز الأول يذهب إلى أول عنصر داخل جسم الحوار (حقل الكتابة عادة) لا إلى
-// زر الإغلاق في الترويسة.
-function focusFirst(node) {
-  if (!node) return;
-  const marked = node.querySelector('[autofocus], [data-autofocus]');
-  const body = node.querySelector('.modal-body');
-  const target = marked || focusables(body)[0] || focusables(node)[0] || node;
-  try { target.focus({ preventScroll: true }); } catch (error) { /* ignore */ }
-}
-
-// Tab وShift+Tab يدوران داخل الحوار فقط.
-function trapTab(node, event) {
-  if (!node) return;
-  const list = focusables(node);
-  if (!list.length) { event.preventDefault(); return; }
-  const first = list[0];
-  const last = list[list.length - 1];
-  const active = document.activeElement;
-  if (!node.contains(active)) { event.preventDefault(); (event.shiftKey ? last : first).focus(); return; }
-  if (event.shiftKey && active === first) { event.preventDefault(); last.focus(); }
-  else if (!event.shiftKey && active === last) { event.preventDefault(); first.focus(); }
-}
-
-// ما خلف الحوار يصبح خارج الوصول (Tab وقارئ الشاشة والنقر)، ويعود كما كان عند الإغلاق.
-function deactivateBackground(except) {
-  if (typeof document === 'undefined' || !document.body) return () => {};
-  if (except && except.inert) except.inert = false; // حوار فوق حوار: الأعلى يبقى فعّالًا
-  const changed = [];
-  for (const el of Array.from(document.body.children)) {
-    if (el === except || (except && el.contains(except)) || el.inert) continue;
-    el.inert = true;
-    changed.push(el);
-  }
-  return () => { changed.forEach((el) => { el.inert = false; }); };
+function useDialogInteraction(ref,host,syncVars,close,open=true){
+  // A native Back can arrive again immediately after DOM removal. Remove its
+  // route interceptor in that commit, before passive focus cleanup is flushed.
+  useLayoutEffect(()=>open?registerBackLayer(close,{priority:20}):undefined,[close,open]);
+  useEffect(()=>{
+    if(!open)return undefined;
+    syncVars();
+    return activateDialog({node:ref.current,host,close});
+  },[ref,host,syncVars,close,open]);
 }
 
 // متغيّرات موروثة تهمّ داخل الحوار (لون اللعبة الحالية مثلًا): الحوار يخرج من
@@ -149,48 +130,23 @@ export function ModalCloseButton({ onClick, ...props }) {
   return <Button {...props} onClick={(e) => { if (requestClose) requestClose(); else if (onClick) onClick(e); }} />;
 }
 
-export function Modal({ title, onClose, children, footer = null, closeLabel = 'إغلاق', className = '' }) {
+export function Modal({ title, onClose, children, footer = null, closeLabel = 'إغلاق', className = '', ...designProps }) {
   const ref = useRef(null);
-  const closeRef = useRef(onClose);
   const [host, anchor, syncVars] = useDialogHost();
   // الإغلاق يمرّ بحالة is-closing (خروج قصير) ثم يستدعي onClose؛ صفر مهلة تحت تقليل الحركة.
-  const [closing, setClosing] = useState(false);
-  const closingRef = useRef(false);
-  const requestClose = () => {
-    if (!onClose || closingRef.current) return;
-    closingRef.current = true;
-    setClosing(true);
-    setTimeout(() => { closingRef.current = false; setClosing(false); onClose(); }, wait(180));
-  };
-  useEffect(() => { closeRef.current = requestClose; });
+  const [closing,requestClose]=useAnimatedClose(onClose,180);
   // عند الفتح فقط: كل تصيير يمرّر onClose جديدة، فلو اعتمد التأثير عليها لسُحب
   // التركيز من الحقل بعد كل حرف يُكتب.
-  useEffect(() => {
-    const node = ref.current;
-    const previous = document.activeElement;
-    syncVars();
-    const restore = deactivateBackground(host);
-    focusFirst(node);
-    const onKey = (e) => {
-      if (e.key === 'Escape') { e.preventDefault(); closeRef.current && closeRef.current(); }
-      else if (e.key === 'Tab') trapTab(node, e);
-    };
-    document.addEventListener('keydown', onKey);
-    return () => {
-      document.removeEventListener('keydown', onKey);
-      restore();
-      if (previous && previous.focus) previous.focus();
-    };
-  }, [host, syncVars]);
+  useDialogInteraction(ref,host,syncVars,requestClose);
   const tree = (
     <div className={`modal-layer ${closing ? 'is-closing' : ''}`} role="presentation" onClick={requestClose}>
-      <section ref={ref} className={`modal ${className}`} role="dialog" aria-modal="true" aria-label={title} tabIndex={-1} onClick={(e) => e.stopPropagation()}>
-        <div className="modal-head">
+      <section ref={ref} data-design-screen="system.dialog" className={`modal ${className}`} role="dialog" aria-modal="true" aria-label={title} tabIndex={-1} onClick={(e) => e.stopPropagation()} {...designProps}>
+        <div data-design-id="header" className="modal-head">
           <h2>{title}</h2>
-          {onClose && <IconButton label={closeLabel} onClick={requestClose}><IconClose /></IconButton>}
+          {onClose && <IconButton data-design-id="close" data-design-required="true" label={closeLabel} onClick={requestClose}><IconClose /></IconButton>}
         </div>
-        <div className="modal-body">{children}</div>
-        {footer && <div className="modal-foot">{footer}</div>}
+        <div data-design-id="content" className="modal-body">{children}</div>
+        {footer && <div data-design-id="actions" className="modal-foot">{footer}</div>}
       </section>
     </div>
   );
@@ -201,8 +157,8 @@ export function Modal({ title, onClose, children, footer = null, closeLabel = '�
 export function ConfirmModal({ title, message, confirmLabel = 'نعم', cancelLabel = 'لا', danger = false, onConfirm, onCancel }) {
   return (
     <Modal title={title} onClose={onCancel} className={danger ? 'is-danger' : ''} footer={<>
-      <Button variant={danger ? 'danger' : 'primary'} size="lg" full onClick={onConfirm}>{confirmLabel}</Button>
-      <ModalCloseButton variant="ghost" full onClick={onCancel}>{cancelLabel}</ModalCloseButton>
+      <Button data-design-id="confirm" data-design-required="true" variant={danger ? 'danger' : 'primary'} size="lg" full onClick={onConfirm}>{confirmLabel}</Button>
+      <ModalCloseButton data-design-id="cancel" data-design-required="true" variant="ghost" full onClick={onCancel}>{cancelLabel}</ModalCloseButton>
     </>}>
       <p className="muted" style={{ lineHeight: 1.7 }}>{message}</p>
     </Modal>
@@ -210,57 +166,34 @@ export function ConfirmModal({ title, message, confirmLabel = 'نعم', cancelLa
 }
 
 // ── Sheet (bottom sheet, drag down to close) ─────────────────
-export function Sheet({ open, onClose, title, children }) {
-  const [closing, setClosing] = useState(false);
+export function Sheet({ open, onClose, title, children, ...designProps }) {
+  const [closing,close]=useAnimatedClose(onClose,210);
   const drag = useRef({ y: 0, dy: 0, active: false });
   const ref = useRef(null);
   const [host, anchor, syncVars] = useDialogHost();
-  const close = useCallback(() => {
-    setClosing(true);
-    setTimeout(() => { setClosing(false); onClose && onClose(); }, wait(210));
-  }, [onClose]);
-  const closeRef = useRef(close);
-  useEffect(() => { closeRef.current = close; });
-  useEffect(() => {
-    if (!open) return undefined;
-    const node = ref.current;
-    const previous = document.activeElement;
-    syncVars();
-    const restore = deactivateBackground(host);
-    focusFirst(node);
-    const onKey = (e) => {
-      if (e.key === 'Escape') { e.preventDefault(); closeRef.current(); }
-      else if (e.key === 'Tab') trapTab(node, e);
-    };
-    document.addEventListener('keydown', onKey);
-    return () => {
-      document.removeEventListener('keydown', onKey);
-      restore();
-      if (previous && previous.focus) previous.focus();
-    };
-  }, [open, host, syncVars]);
+  useDialogInteraction(ref,host,syncVars,close,open);
   if (!open) return null;
-  const onStart = (e) => { drag.current = { y: e.touches ? e.touches[0].clientY : e.clientY, dy: 0, active: ref.current.scrollTop <= 0 }; };
+  const onStart = (e) => { if(e.defaultPrevented || e.button!==0 || e.isPrimary===false || !onClose)return;e.preventDefault();drag.current = { y:e.clientY,dy:0,active:true,pointerId:e.pointerId };e.currentTarget.setPointerCapture?.(e.pointerId); };
   const onMove = (e) => {
-    if (!drag.current.active) return;
-    const y = e.touches ? e.touches[0].clientY : e.clientY;
+    if (!drag.current.active || drag.current.pointerId!==e.pointerId) return;
+    const y = e.clientY;
     drag.current.dy = Math.max(0, y - drag.current.y);
     if (ref.current) ref.current.style.transform = `translateY(${drag.current.dy}px)`;
   };
-  const onEnd = () => {
+  const onEnd = (e) => {
     if (!drag.current.active) return;
     if (ref.current) ref.current.style.transform = '';
-    if (drag.current.dy > 80) close();
+    if (drag.current.dy > 80 && e.type!=='pointercancel') close();
     drag.current.active = false;
+    if(e.currentTarget.hasPointerCapture?.(e.pointerId))e.currentTarget.releasePointerCapture(e.pointerId);
   };
   const tree = (
     <div className="modal-layer is-sheet" role="presentation" onClick={close}>
-      <section ref={ref} className={`sheet ${closing ? 'is-closing' : ''}`} role="dialog" aria-modal="true" aria-label={title} tabIndex={-1}
-        onClick={(e) => e.stopPropagation()}
-        onTouchStart={onStart} onTouchMove={onMove} onTouchEnd={onEnd}>
-        <div className="sheet-handle" aria-hidden="true" />
-        {title && <div className="modal-head"><h2>{title}</h2><IconButton label="إغلاق" onClick={close}><IconClose /></IconButton></div>}
-        <div className="modal-body">{children}</div>
+      <section ref={ref} data-design-screen="system.sheet" className={`sheet ${closing ? 'is-closing' : ''}`} role="dialog" aria-modal="true" aria-label={title} tabIndex={-1} {...designProps}
+        onClick={(e) => e.stopPropagation()}>
+        {onClose ? <button type="button" data-design-id="sheet-drag-handle" data-design-required="true" className="sheet-drag-handle" aria-label="إغلاق اللوحة" onClick={event => {if(event.defaultPrevented)return;if(drag.current.dy>5){drag.current.dy=0;return;}close();}} onPointerDown={onStart} onPointerMove={onMove} onPointerUp={onEnd} onPointerCancel={onEnd}><span className="sheet-handle" aria-hidden="true" /></button> : <div className="sheet-handle" aria-hidden="true" />}
+        {title && <div data-design-id="header" className="modal-head"><h2>{title}</h2>{onClose && <IconButton data-design-id="close" data-design-required="true" label="إغلاق" onClick={close}><IconClose /></IconButton>}</div>}
+        <div data-design-id="content" className="modal-body">{children}</div>
       </section>
     </div>
   );
@@ -346,14 +279,14 @@ export function ProgressRing({ value, max = 1, size = 132, stroke = 10, color = 
 
 // ── Scoreboard ───────────────────────────────────────────────
 // النقاط تُعدّ من القيمة السابقة (مرجع يحفظ آخر نقاط كل صف) وتُلكم عند التغيّر؛ +N يطير للأعلى.
-export function Scoreboard({ entries, unit = '' }) {
+export function Scoreboard({ entries, unit = '', ...rest }) {
   const max = Math.max(...entries.map((e) => e.score), -Infinity);
   const prev = useRef(new Map());
   const bumps = useRef(new Map());
   useEffect(() => { entries.forEach((e) => prev.current.set(e.id, e.score)); });
   const now = Date.now();
   return (
-    <div className="scoreboard">
+    <div className="scoreboard" {...rest}>
       {entries.map((e, i) => {
         const from = prev.current.get(e.id) ?? e.score;
         if (from !== e.score) bumps.current.set(e.id, now);
@@ -396,7 +329,7 @@ export function CountUp({ value, from = 0, duration = 900, delay = 0, className 
 }
 
 // ── Podium ───────────────────────────────────────────────────
-export function Podium({ entries, title, unit = '' }) {
+export function Podium({ entries, title, unit = '', ...domProps }) {
   const sorted = [...entries].sort((a, b) => b.score - a.score);
   const top = sorted.slice(0, 3);
   const rest = sorted.slice(3);
@@ -414,7 +347,7 @@ export function Podium({ entries, title, unit = '' }) {
     return () => clearTimeout(t);
   }, []);
   return (
-    <div className="podium">
+    <div className="podium" {...domProps}>
       <div className="podium-trophy clay-stage clay-idle" aria-hidden="true"><span className="clay-lift"><TrophyArtwork /></span></div>
       <h1 className="podium-title">{heading}</h1>
       <div className="podium-stage">
@@ -439,21 +372,21 @@ export function Screen({ dir = 'forward', className = '', children, ...rest }) {
   return <section className={`screen ${className}`} data-dir={dir} {...rest}>{children}</section>;
 }
 
-export function TopBar({ title, eyebrow, start = null, end = null }) {
+export function TopBar({ title, eyebrow, start = null, end = null, ...rest }) {
   return (
-    <header className="topbar">
+    <header className="topbar" {...rest}>
       {start}
-      <h1>{eyebrow && <span className="eyebrow">{eyebrow}</span>}{title}</h1>
+      <h1 data-design-id="title">{eyebrow && <span className="eyebrow">{eyebrow}</span>}{title}</h1>
       {end}
     </header>
   );
 }
 
-export function Segment({ options, value, onChange, accent = false, label }) {
+export function Segment({ options, value, onChange, accent = false, label, ...rest }) {
   return (
-    <div className="segment" role="group" aria-label={label}>
+    <div className="segment" role="group" aria-label={label} {...rest}>
       {options.map((o) => (
-        <button key={String(o.value)} type="button" className={`${value === o.value ? 'selected' : ''} ${accent ? 'accent' : ''}`} aria-pressed={value === o.value} onClick={() => onChange(o.value)}>
+        <button key={String(o.value)} type="button" data-design-id="segment-option" className={`${value === o.value ? 'selected' : ''} ${accent ? 'accent' : ''}`} aria-pressed={value === o.value} onClick={() => onChange(o.value)}>
           {o.label}
         </button>
       ))}

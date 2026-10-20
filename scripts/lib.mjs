@@ -48,6 +48,7 @@ export function esbuildOptions({ minify = true, version = '0.0.0', media = {} } 
     format: 'iife',
     target: ['es2019', 'safari14'],
     jsx: 'automatic',
+    alias: { 'react/jsx-runtime': path.join(ROOT, 'src/design/jsx-runtime.js') },
     // New files are JSX; the migrated trivia game is plain React.createElement
     // in .js and parses fine under the jsx loader too.
     loader: { '.js': 'jsx', '.css': 'text', '.json': 'json', '.webp': 'dataurl', '.png': 'dataurl', '.woff2': 'dataurl' },
@@ -107,7 +108,7 @@ async function copyPublic({ id = 'dev', fabrakaImages = [] } = {}) {
   } catch { /* لا عامل خدمي في public */ }
 }
 
-export async function buildOnce({ minify = true } = {}) {
+export async function buildOnce({ minify = true, includeStudio = true } = {}) {
   const pkg = await readPkg();
   const versions = await mediaVersions(ROOT);
   const fabrakaImages = await fabrakaMediaManifest(ROOT, versions);
@@ -135,6 +136,12 @@ export async function buildOnce({ minify = true } = {}) {
   const copied = await copyMedia(ROOT, DIST);
   const out = path.join(DIST, 'index.html');
   await writeFile(out, html, 'utf8');
+  if (includeStudio) {
+    const { buildStudio } = await import('./studio-build.mjs');
+    const { buildDesignPreview } = await import('./design-preview-build.mjs');
+    await buildStudio({ outdir: path.join(DIST, 'studio'), minify });
+    await buildDesignPreview({ outdir: DIST, minify, version: pkg.version, media: versions });
+  }
   const bytes = Buffer.byteLength(html, 'utf8');
   const gzip = gzipSync(Buffer.from(html, 'utf8')).length;
   return { out, bytes, gzip, version: pkg.version, buildId: buildId(pkg.version, html), warnings: result.warnings, media: { packs: media.packs, files: copied.count, bytes: copied.total } };

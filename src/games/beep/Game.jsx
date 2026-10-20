@@ -24,38 +24,38 @@ export function SetupOptions({ storage, api }) {
   const [resume] = useState(() => loadSession(storage, restoreSession));
   const update = (patch) => { const next = normalizeOptions({ ...opts, ...patch }); setOpts(next); storage.set(OPTIONS_KEY, next); };
   return (
-    <>
+    <div data-design-screen="setup.beep" data-design-id="options" className="stack">
     {resume && <Card className="stack resume-card">
       <span className="card-title">لعبتكم بانتظاركم</span>
       <p className="card-muted">{resume.state.mode === 'three' ? `الجولة ${resume.state.round} من ${resume.state.rounds}` : `💣 القنبلة · ${resume.state.players.length - resume.state.eliminated.length} لاعبين باقين`} · {resume.players.map((p) => p.name).join('، ')}</p>
-      <Button variant="accent" full onClick={() => api.resumeGame(resume)}>استئناف اللعبة المحفوظة</Button>
+      <Button data-design-id="resume" data-design-required="true" variant="accent" full onClick={() => api.resumeGame(resume)}>استئناف اللعبة المحفوظة</Button>
       <p className="card-muted">بدء لعبة جديدة يستبدل هذا التقدم.</p>
     </Card>}
     <Card className="stack">
       <span className="card-title">إعدادات الجولة</span>
       <div className="field"><span>الوضع</span>
-        <Segment accent label="الوضع" value={opts.mode} onChange={(v) => update({ mode: v })} options={[{ value: 'three', label: '3 قبل الصفارة' }, { value: 'bomb', label: '💣 القنبلة' }]} />
+        <Segment data-design-id="setting-mode" accent label="الوضع" value={opts.mode} onChange={(v) => update({ mode: v })} options={[{ value: 'three', label: '3 قبل الصفارة' }, { value: 'bomb', label: '💣 القنبلة' }]} />
       </div>
       {opts.mode === 'three' && (
         <>
           <div className="field"><span>ثواني كل طلب</span>
-            <Segment accent label="الثواني" value={opts.seconds} onChange={(v) => update({ seconds: v })} options={SECONDS.map((s) => ({ value: s, label: `${s} ث` }))} />
+            <Segment data-design-id="setting-duration" accent label="الثواني" value={opts.seconds} onChange={(v) => update({ seconds: v })} options={SECONDS.map((s) => ({ value: s, label: `${s} ث` }))} />
           </div>
           <div className="field"><span>عدد الجولات</span>
-            <Segment accent label="الجولات" value={opts.rounds} onChange={(v) => update({ rounds: v })} options={ROUNDS.map((r) => ({ value: r, label: `${r} جولات` }))} />
+            <Segment data-design-id="setting-rounds" accent label="الجولات" value={opts.rounds} onChange={(v) => update({ rounds: v })} options={ROUNDS.map((r) => ({ value: r, label: `${r} جولات` }))} />
           </div>
         </>
       )}
       {opts.mode === 'bomb' && <p className="card-muted">مؤقت مخفي بين 20 و60 ثانية. كل لاعب 3 أرواح. آخر من يبقى يفوز.</p>}
     </Card>
-    </>
+    </div>
   );
 }
 
 function ThreeRound({ state, dispatch, api, source, timeLeftRef, resumeLeft }) {
   const player = currentPlayer(state);
   const verdict = useRef(null);
-  const timer = useTimer({ seconds: state.seconds, onEnd: () => { api.sound.play('buzzer'); api.haptics.vibrate('error'); flashScreen('bad'); dispatch({ type: 'FINISH', timedOut: true }); } });
+  const timer = useTimer({ frozen: !!api.designPreview, seconds: state.seconds, onEnd: () => { api.sound.play('buzzer'); api.haptics.vibrate('error'); flashScreen('bad'); dispatch({ type: 'FINISH', timedOut: true }); } });
   // طلب مستأنف يبدأ من الوقت المحفوظ مرة واحدة.
   useEffect(() => { if (state.phase === 'prompt') { timer.reset(resumeLeft.current ?? state.seconds); resumeLeft.current = null; timer.start(); } }, [state.phase, state.prompt && state.prompt.id]); // eslint-disable-line react-hooks/exhaustive-deps
   useEffect(() => { timeLeftRef.current = timer.left; }, [timer.left, timeLeftRef]);
@@ -64,12 +64,12 @@ function ThreeRound({ state, dispatch, api, source, timeLeftRef, resumeLeft }) {
 
   if (state.phase === 'intro') {
     return (
-      <div className={`beep-intro ${verdictFresh(verdict.current) && !verdict.current.ok ? 'is-after-bad' : ''}`}>
+      <div data-design-id="intro" className={`beep-intro ${verdictFresh(verdict.current) && !verdict.current.ok ? 'is-after-bad' : ''}`}>
         <div className={`big clay-stage clay-idle ${verdictFresh(verdict.current) && verdict.current.ok ? 'is-after-ok' : ''}`} aria-hidden="true"><span className="clay-lift"><Avatar player={player} /></span></div>
         <p className="muted">الجولة {state.round} من {state.rounds}</p>
         <h2>دور {player.name}</h2>
         <p className="muted">خذ الجوال واستعد. عندما تضغط «جاهز» يظهر الطلب ويبدأ المؤقت.</p>
-        <Button variant="accent" size="lg" full className="is-armed" onClick={() => { api.sound.play('whoosh'); dispatch({ type: 'BEGIN', prompt: source.next(state.round, state.rounds) }); }}>جاهز — {state.seconds} ثوانٍ</Button>
+        <Button variant="accent" size="lg" full data-design-id="start" data-design-required="true" className="is-armed" onClick={() => { api.sound.play('whoosh'); dispatch({ type: 'BEGIN', prompt: source.next(state.round, state.rounds) }); }}>جاهز — {state.seconds} ثوانٍ</Button>
         <PlayersStrip state={state} bump={verdictFresh(verdict.current) && verdict.current.ok ? verdict.current.id : null} />
       </div>
     );
@@ -77,22 +77,22 @@ function ThreeRound({ state, dispatch, api, source, timeLeftRef, resumeLeft }) {
   if (state.phase === 'prompt') {
     return (
       <>
-        <div className="beep-turn" key={state.turn} style={{ '--p-color': player.color }}><span className="avatar clay-stage"><span className="clay-lift"><Avatar player={player} /></span></span><div><b>{player.name}</b><small>قل ثلاثة بصوت عالٍ</small></div></div>
-        <Timer timer={timer} accent="#FF4D4D" />
-        <div className="beep-prompt" key={state.prompt.id}>{state.prompt.text}<small>{state.prompt.category}</small></div>
-        <Button variant="accent" size="lg" full onClick={() => { timer.pause(); api.sound.play('pop'); dispatch({ type: 'FINISH' }); }}>خلصت! ✋</Button>
+        <div data-design-id="turn" className="beep-turn" key={state.turn} style={{ '--p-color': player.color }}><span className="avatar clay-stage"><span className="clay-lift"><Avatar player={player} /></span></span><div><b>{player.name}</b><small>قل ثلاثة بصوت عالٍ</small></div></div>
+        <Timer data-design-id="timer" timer={timer} accent="#FF4D4D" />
+        <div data-design-id="prompt" className="beep-prompt" key={state.prompt.id}>{state.prompt.text}<small>{state.prompt.category}</small></div>
+        <Button data-design-id="continue" data-design-required="true" variant="accent" size="lg" full onClick={() => { timer.pause(); api.sound.play('pop'); dispatch({ type: 'FINISH' }); }}>خلصت! ✋</Button>
       </>
     );
   }
   if (state.phase === 'judge') {
     return (
       <>
-        <div className={`beep-prompt ${state.timedOut ? 'is-timeout' : ''}`} key={state.prompt.id}>{state.prompt.text}<small>{state.timedOut ? '⏰ طقّت الصفارة' : 'أنهى قبل الوقت'}</small></div>
+        <div data-design-id="prompt" className={`beep-prompt ${state.timedOut ? 'is-timeout' : ''}`} key={state.prompt.id}>{state.prompt.text}<small>{state.timedOut ? '⏰ طقّت الصفارة' : 'أنهى قبل الوقت'}</small></div>
         <p className="center muted">هل ذكر {player.name} ثلاثة صحيحة؟</p>
-        <div className="beep-judge">
+        <div data-design-id="judge" className="beep-judge">
           {/* الحكم يُرسل فورًا؛ الختم طبقة ثابتة فوق شاشة التمهيد التالية، وأثر الحكم (قفزة/نكزة) يُقرأ من verdict هناك */}
-          <Button variant="success" onClick={(e) => { api.sound.play('correct'); api.haptics.vibrate('success'); api.confetti.burst({ x: e.clientX, y: e.clientY }); stampScreen({ text: 'صح!', tone: 'good', points: '+١' }); verdict.current = { id: player.id, ok: true, at: Date.now() }; dispatch({ type: 'JUDGE', ok: true }); }}><span aria-hidden="true">✅</span>نعم +1</Button>
-          <Button variant="danger" onClick={() => { api.sound.play('wrong'); api.haptics.vibrate('error'); stampScreen({ text: 'خطأ', tone: 'bad' }); flashScreen('bad'); verdict.current = { id: player.id, ok: false, at: Date.now() }; dispatch({ type: 'JUDGE', ok: false }); }}><span aria-hidden="true">❌</span>لا</Button>
+          <Button data-design-id="correct" variant="success" onClick={(e) => { api.sound.play('correct'); api.haptics.vibrate('success'); api.confetti.burst({ x: e.clientX, y: e.clientY }); stampScreen({ text: 'صح!', tone: 'good', points: '+١' }); verdict.current = { id: player.id, ok: true, at: Date.now() }; dispatch({ type: 'JUDGE', ok: true }); }}><span aria-hidden="true">✅</span>نعم +1</Button>
+          <Button data-design-id="wrong" variant="danger" onClick={() => { api.sound.play('wrong'); api.haptics.vibrate('error'); stampScreen({ text: 'خطأ', tone: 'bad' }); flashScreen('bad'); verdict.current = { id: player.id, ok: false, at: Date.now() }; dispatch({ type: 'JUDGE', ok: false }); }}><span aria-hidden="true">❌</span>لا</Button>
         </div>
         <PlayersStrip state={state} />
       </>
@@ -112,7 +112,7 @@ function BombRound({ state, dispatch, api, source, random, timeLeftRef, resumeLe
     setTimeout(() => api.confetti.burst({ x, y, count: 44, colors: BOOM_COLORS }), wait(80));
     dispatch({ type: 'EXPLODE' });
   };
-  const timer = useTimer({ seconds: state.bombSeconds, onEnd: explode });
+  const timer = useTimer({ frozen: !!api.designPreview, seconds: state.bombSeconds, onEnd: explode });
   // كل قنبلة جديدة لها مدة عشوائية جديدة: نصفّر المؤقت عليها ثم نشغّله (القنبلة تستمر عبر التمرير لأن الطور يبقى prompt).
   // قنبلة مستأنفة تكمل من الوقت المحفوظ لا من فتيل جديد.
   useEffect(() => { if (state.phase === 'prompt') { timer.reset(resumeLeft.current ?? state.bombSeconds); resumeLeft.current = null; timer.start(); } }, [state.phase, state.round]); // eslint-disable-line react-hooks/exhaustive-deps
@@ -123,11 +123,11 @@ function BombRound({ state, dispatch, api, source, random, timeLeftRef, resumeLe
 
   if (state.phase === 'intro') {
     return (
-      <div className="beep-intro">
+      <div data-design-id="intro" className="beep-intro">
         <div className="big clay-stage clay-idle" aria-hidden="true"><span className="clay-lift"><GameArtwork game="beep" /></span></div>
         <h2>القنبلة مع {player.name}</h2>
         <p className="muted">أجب على الطلب ثم مرّر الجوال فورًا. المؤقت مخفي… قد ينفجر في أي لحظة.</p>
-        <Button variant="accent" size="lg" full className="is-armed" onClick={() => { api.sound.play('whoosh'); dispatch({ type: 'BEGIN', prompt: source.next(...bombPromptArgs(state.history.length)) }); }}>تشغيل القنبلة</Button>
+        <Button variant="accent" size="lg" full data-design-id="start" data-design-required="true" className="is-armed" onClick={() => { api.sound.play('whoosh'); dispatch({ type: 'BEGIN', prompt: source.next(...bombPromptArgs(state.history.length)) }); }}>تشغيل القنبلة</Button>
         <PlayersStrip state={state} />
       </div>
     );
@@ -135,11 +135,11 @@ function BombRound({ state, dispatch, api, source, random, timeLeftRef, resumeLe
   if (state.phase === 'prompt') {
     return (
       <>
-        <div className="beep-turn" key={state.turn} style={{ '--p-color': player.color }}><span className="avatar clay-stage"><span className="clay-lift"><Avatar player={player} /></span></span><div><b>{player.name}</b><small>أجب ثم مرّر بسرعة</small></div></div>
-        <div className={`beep-bomb clay-stage ${hot ? 'is-hot' : ''}`} aria-hidden="true"><span className="clay-lift"><GameArtwork game="beep" /></span></div>
+        <div data-design-id="turn" className="beep-turn" key={state.turn} style={{ '--p-color': player.color }}><span className="avatar clay-stage"><span className="clay-lift"><Avatar player={player} /></span></span><div><b>{player.name}</b><small>أجب ثم مرّر بسرعة</small></div></div>
+        <div data-design-id="bomb" className={`beep-bomb clay-stage ${hot ? 'is-hot' : ''}`} aria-hidden="true"><span className="clay-lift"><GameArtwork game="beep" /></span></div>
         <ResumeCountdown resuming={timer.resuming} />
-        <div className="beep-prompt" key={state.prompt.id}>{state.prompt.text}<small>{state.prompt.category}</small></div>
-        <Button variant="accent" size="lg" full onClick={() => { api.sound.play('pass'); api.haptics.vibrate('light'); dispatch({ type: 'PASS', prompt: source.next(...bombPromptArgs(state.history.length)) }); }}>أجبت — مرّر الجوال ⬅</Button>
+        <div data-design-id="prompt" className="beep-prompt" key={state.prompt.id}>{state.prompt.text}<small>{state.prompt.category}</small></div>
+        <Button data-design-id="continue" data-design-required="true" variant="accent" size="lg" full onClick={() => { api.sound.play('pass'); api.haptics.vibrate('light'); dispatch({ type: 'PASS', prompt: source.next(...bombPromptArgs(state.history.length)) }); }}>أجبت — مرّر الجوال ⬅</Button>
         <PlayersStrip state={state} />
       </>
     );
@@ -148,13 +148,13 @@ function BombRound({ state, dispatch, api, source, random, timeLeftRef, resumeLe
     const victim = state.players.find((p) => p.id === state.boomPlayerId);
     const livesLeft = state.lives[state.boomPlayerId];
     return (
-      <div className="beep-boom" role="alert">
+      <div data-design-id="results" className="beep-boom" role="alert">
         <div className="inner">
           <div className="big clay-stage" aria-hidden="true"><span className="clay-lift"><GameArtwork game="beep" /></span></div>
           <h2>انفجرت بيد {victim.name}!</h2>
           <p>{livesLeft > 0 ? `بقي له ${livesLeft === 1 ? 'حياة واحدة' : `${livesLeft} أرواح`}` : 'خرج من اللعبة'}</p>
           <Hearts lives={livesLeft} broken={livesLeft} />
-          <Button variant="secondary" size="lg" onClick={() => { api.sound.play('whoosh'); dispatch({ type: 'CONTINUE', bombSeconds: nextBombSeconds(random) }); }}>قنبلة جديدة</Button>
+          <Button data-design-id="continue" data-design-required="true" variant="secondary" size="lg" onClick={() => { api.sound.play('whoosh'); dispatch({ type: 'CONTINUE', bombSeconds: nextBombSeconds(random) }); }}>قنبلة جديدة</Button>
         </div>
       </div>
     );
@@ -165,7 +165,7 @@ function BombRound({ state, dispatch, api, source, random, timeLeftRef, resumeLe
 // القلوب بمفتاح لكل خانة: القلب المكسور حديثًا (index === broken) ينبض بـ heart-break، والأقدم يبهت فقط.
 function Hearts({ lives, broken = -1 }) {
   return (
-    <span className="beep-lives" aria-label={`${lives} أرواح`}>
+    <span data-design-id="lives" className="beep-lives" aria-label={`${lives} أرواح`}>
       {Array.from({ length: LIVES }).map((_, i) => <span key={i} className={i < lives ? '' : i === broken ? 'is-broken' : 'is-lost'}>{i < lives ? '❤️' : '🖤'}</span>)}
     </span>
   );
@@ -173,7 +173,7 @@ function Hearts({ lives, broken = -1 }) {
 
 function PlayersStrip({ state, bump = null }) {
   return (
-    <div className="beep-players" aria-label="اللاعبون">
+    <div data-design-id="players" className="beep-players" aria-label="اللاعبون">
       {state.players.map((p, i) => (
         <span key={p.id} className={`beep-chip ${state.eliminated.includes(p.id) ? 'is-out' : ''} ${i === state.turn ? 'is-turn' : ''} ${bump === p.id ? 'is-bumped' : ''}`} style={{ '--i': Math.min(i, 9) }}>
           <Avatar player={p} /> {p.name}
@@ -184,7 +184,7 @@ function PlayersStrip({ state, bump = null }) {
   );
 }
 
-export function Game({ api, players, onExit, savedSession = null }) {
+export function Game({ api, players, onExit, savedSession = null, designPreviewState = null }) {
   // لقطة محفوظة صالحة تعيد الحالة والمصدر بنفس البذرة والموضع؛ وإلا مباراة جديدة.
   const saved = useMemo(() => restoreSession(savedSession), [savedSession]);
   const seed = useRef(saved ? saved.seed : randomSeed());
@@ -195,7 +195,7 @@ export function Game({ api, players, onExit, savedSession = null }) {
     if (saved) promptSource.seek(saved.cursor);
     return promptSource;
   }, [random, api.storage, saved]);
-  const [state, dispatch] = useReducer(reduce, undefined, () => (saved ? saved.state : initialState(players, options, { random })));
+  const [state, dispatch] = useReducer(reduce, undefined, () => (designPreviewState || (saved ? saved.state : initialState(players, options, { random }))));
   const [session, setSession] = useState(0);
   const profileSession = useRef(saved ? saved.profileSession || null : api.matchSnapshot?.() || null);
   const timeLeftRef = useRef(saved?.timeLeft ?? null);
@@ -219,15 +219,15 @@ export function Game({ api, players, onExit, savedSession = null }) {
   const restart = () => { api.sound.play('whoosh'); setSession((s) => s + 1); api.restart(); };
 
   return (
-    <Screen className="beep" aria-label="قبل ما يطق">
+    <Screen data-design-screen={`beep.${state.mode}.${state.phase}`} className="beep" aria-label="قبل ما يطق">
       <style>{css}</style>
       {state.phase === 'over' ? (
         <div className="stack">
-          <Podium entries={standings(state).map((p) => ({ ...p, score: state.mode === 'three' ? p.score : p.lives }))} unit={state.mode === 'three' ? '' : ' ❤️'} />
-          <div className="beep-actions">
-            <Button variant="accent" size="lg" full onClick={restart}>العب مرة أخرى</Button>
-            <Button variant="secondary" full onClick={api.backToSetup}>تغيير اللاعبين أو الإعدادات</Button>
-            <Button variant="ghost" full onClick={onExit}>العودة للمنصة</Button>
+          <Podium data-design-id="podium" entries={standings(state).map((p) => ({ ...p, score: state.mode === 'three' ? p.score : p.lives }))} unit={state.mode === 'three' ? '' : ' ❤️'} />
+          <div data-design-id="actions" className="beep-actions">
+            <Button variant="accent" size="lg" full data-design-id="restart" onClick={restart}>العب مرة أخرى</Button>
+            <Button variant="secondary" full data-design-id="options" onClick={api.backToSetup}>تغيير اللاعبين أو الإعدادات</Button>
+            <Button variant="ghost" full data-design-id="exit" data-design-required="true" onClick={onExit}>العودة للمنصة</Button>
           </div>
         </div>
       ) : state.mode === 'three' ? (

@@ -7,18 +7,19 @@
   min-height: 52px; padding: 10px 20px; border-radius: 18px;
   font-size: 18px; font-weight: 800; line-height: 1.2;
   color: var(--btn-fg); background: var(--btn-bg); border: 1px solid var(--btn-border);
-  box-shadow: inset 0 1px rgba(255,255,255,.06), var(--shadow-soft);
+  box-shadow: inset 0 2px 1px #FFFFFFB3, 0 3px 0 var(--clay-ledge), var(--shadow-soft);
   position: relative; overflow: hidden; isolation: isolate;
   transition: transform .12s var(--ease-out), filter .15s ease, background-color .15s ease, border-color .15s ease, opacity .15s ease;
   -webkit-user-select: none; user-select: none;
 }
-.btn:active:not(:disabled) { transform: scale(.97); }
+.btn:active:not(:disabled) { transform: translateY(3px); box-shadow: inset 0 2px 3px #35254720, 0 1px 2px #35254714; }
+.btn:focus-visible { outline: 3px solid var(--purple); outline-offset: 4px; }
 .btn:disabled { opacity: .45; box-shadow: none; }
-.btn-primary { --btn-bg: linear-gradient(180deg, #FFD46A 0%, var(--accent) 55%, #D9981B 100%); --btn-fg: var(--accent-ink); --btn-border: #FFE6A8; box-shadow: inset 0 1px rgba(255,255,255,.55), 0 12px 28px rgba(245,184,46,.22); }
+.btn-primary { --btn-bg: linear-gradient(180deg, #0A8194, #065D76); --btn-fg: var(--accent-ink); --btn-border: #FFE6A8; box-shadow: inset 0 1px rgba(255,255,255,.55), 0 12px 28px rgba(245,184,46,.22); }
 .btn-accent { --btn-bg: var(--game-accent, var(--accent)); --btn-fg: #0B0E1A; --btn-border: color-mix(in srgb, var(--game-accent, var(--accent)) 70%, #fff); box-shadow: inset 0 1px rgba(255,255,255,.4), 0 12px 28px color-mix(in srgb, var(--game-accent, var(--accent)) 30%, transparent); }
-.btn-secondary { --btn-bg: rgba(255,255,255,.08); }
-.btn-danger { --btn-bg: rgba(255,77,77,.16); --btn-fg: #FFB4B4; --btn-border: rgba(255,77,77,.5); }
-.btn-success { --btn-bg: rgba(46,216,163,.16); --btn-fg: #BFFFE8; --btn-border: rgba(46,216,163,.5); }
+.btn-secondary { --btn-bg: linear-gradient(180deg, #FCF8FF, #EDE0F7); --btn-fg: var(--plum); --btn-border: #CEB0E3; }
+.btn-danger { --btn-bg: rgba(255,77,77,.16); --btn-fg: #992C3E; --btn-border: rgba(255,77,77,.5); }
+.btn-success { --btn-bg: rgba(46,216,163,.16); --btn-fg: #165F4D; --btn-border: rgba(46,216,163,.5); }
 .btn-ghost { --btn-bg: transparent; --btn-border: transparent; box-shadow: none; color: var(--muted); }
 .btn-lg { min-height: 62px; font-size: 20px; border-radius: 22px; }
 .btn-sm { min-height: 44px; padding: 6px 14px; font-size: 15px; border-radius: 14px; }
@@ -32,7 +33,7 @@
 
 .card {
   background: var(--surface); border: 1px solid var(--stroke); border-radius: var(--radius);
-  padding: 16px;
+  padding: 16px; box-shadow: var(--shadow-lift-1);
 }
 .card-title { font-size: 17px; font-weight: 800; color: var(--text); }
 .card-muted { color: var(--muted); font-size: 14px; line-height: 1.6; }
@@ -55,6 +56,8 @@
 .sheet { width: 100%; max-width: 640px; margin: 0 auto; max-height: min(90dvh, 100%); overflow: auto; overscroll-behavior: contain; background: var(--bg-2); border: 1px solid var(--stroke-strong); border-bottom: 0; border-radius: 26px 26px 0 0; padding: 8px 18px max(18px, var(--safe-bottom)); box-shadow: var(--shadow); animation: ui-sheet-in var(--dur) var(--ease-spring) both; touch-action: pan-y; }
 .sheet.is-closing { animation: ui-sheet-out 220ms ease-in both; }
 .sheet-handle { position: relative; width: 44px; height: 5px; border-radius: 99px; background: rgba(255,255,255,.28); margin: 6px auto 14px; }
+.sheet-drag-handle { display: block; min-width: 72px; min-height: 44px; margin: 0 auto; padding: 10px; border: 0; border-radius: 12px; background: transparent; touch-action: none; cursor: grab; }
+.sheet-drag-handle .sheet-handle { display: block; margin: 0 auto; }
 .sheet-handle::after { content: ""; position: absolute; inset: -3px -6px; border-radius: 99px; box-shadow: 0 0 0 3px #9250BD33; opacity: 0; pointer-events: none; animation: ui-glow 1.6s ease-in-out .4s 2; }
 @keyframes ui-fade { from { opacity: 0; } }
 @keyframes ui-modal-in { from { opacity: 0; transform: translateY(24px) scale(.94); } }

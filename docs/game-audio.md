@@ -163,6 +163,56 @@ at least one cue per tap, exactly one click for a plain control, silence while m
 
 ## Verifying and re-curating
 
+### Foreground and shared-session recovery (2026-10-19)
+
+The sound bus also handles `pagehide`, `pageshow`, window focus and the native
+`maydan-audio-lifecycle` event. Native states are `background`, `foreground`,
+`interruption-began`, `interruption-ended`, `media-reset` and `session-restored`.
+Backgrounding cancels stale cues. Returning restores the wanted music and fresh
+feedback; it does not replay old timer cues, question clips or voice messages.
+
+Recovery checks actual `AudioContext.currentTime` progress rather than trusting a
+`running` label or an indefinitely pending `resume()` promise. After a 300ms probe,
+a stalled graph gets one suspend/resume attempt and a further bounded check. At
+most one replacement graph is created per recovery attempt, retaining encoded
+assets and owner-scoped ducking. New backgrounding, mute and disposal cancel the
+attempt; late callbacks from a retired graph cannot revive it. Ended music sources
+are no longer treated as active loops. The replacement budget survives fresh-graph
+statechanges; only a new foreground/gesture intent renews it. A media reset received
+while muted, hidden or awaiting a gesture remains pending until playback is allowed.
+
+The native coordinator arbitrates game, call and recording ownership of the shared
+audio session. Recording completion/cancellation and call teardown restore game
+playback only when permitted. No recovery path changes microphone consent or
+automatically clears the player's mute/private-role lock. An interruption with
+`shouldResume: false`, or a disconnected headset, waits for explicit interaction.
+The next allowed game gesture sends `gameAudioResume`; native ownership checks
+still apply. User-disabled effects/music remain disabled.
+
+Question clips pause at background/interruption boundaries and remain paused on
+return. The player may retry a pending playback without being trapped behind a
+never-settled promise. Social playback releases its duck owner synchronously on
+stop/error, and call playback recovery is fenced to the current account/call.
+
+The unit tests cover frozen clocks, hanging resume, late suspend, graph retirement,
+OS resume policy, preserved preferences and ducking. Browser tests exercise real
+AAC/Web Audio where the engine exposes it and real question playback. Windows
+Playwright WebKit does not expose Web Audio in this environment; its HTMLAudio
+checks do not establish iPhone Web Audio behavior. Native policy is separately
+executed in Swift in the macOS build. Physical iPhone backgrounding, interruptions,
+headsets and call/record transitions remain release acceptance checks.
+
+Delivered as TestFlight **1.8 (22)** from `2fe524e98f8a455b1b801ab4c0fdd9d82f9396ef`,
+with Apple processing and access through the existing internal group verified.
+The private Studio/play site uses the same frozen source. The
+[delivery receipt](studio/evidence/audio-delivery-receipt.json) records the actual
+IPA/artifact digests, final CI counts, executed Swift policy checks, browser
+limitations and web verification. Physical iPhone acceptance remains pending;
+public design publishing stays disabled and App Store 1.7.1 remains on build13.
+
+References: [Apple interruption handling](https://developer.apple.com/documentation/AVFAudio/handling-audio-interruptions),
+[WebKit's pending-resume report](https://bugs.webkit.org/show_bug.cgi?id=281566).
+
 `npm test` covers the bus and the credits component, checks every shipped file against its
 manifest and every manifest against the committed masters; CI runs `npm run audio:check`. To try a
 new file: register it under `candidates` in `sources.json` (or add a provider with its license

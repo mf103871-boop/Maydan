@@ -4,6 +4,7 @@ import UIKit
 @MainActor
 final class SocialVoiceRecorder: NSObject, AVAudioRecorderDelegate {
     var onEvent: (([String: Any]) -> Void)?
+    var onSessionReleased: (() -> Void)?
     private var recorder: AVAudioRecorder?
     private var recordingURL: URL?
     private var startedAt: Date?
@@ -12,6 +13,7 @@ final class SocialVoiceRecorder: NSObject, AVAudioRecorderDelegate {
     private var ready: [String: Any]?
     private(set) var recordingId: String?
     var isRecording: Bool { recorder != nil }
+    var isBusy: Bool { recorder != nil || starting }
 
     static func permission() async -> Bool {
         await withCheckedContinuation { continuation in
@@ -25,15 +27,18 @@ final class SocialVoiceRecorder: NSObject, AVAudioRecorderDelegate {
         recordingId = id
         starting = true
         let attempt = generation
-        defer { starting = false }
+        defer {
+            starting = false
+            if recorder == nil { onSessionReleased?() }
+        }
         guard await Self.permission() else { throw SocialNativeError.failed("MICROPHONE_DENIED") }
         guard generation == attempt else { throw SocialNativeError.failed("AUDIO_CANCELLED") }
         guard UIApplication.shared.applicationState == .active else { throw SocialNativeError.failed("AUDIO_BUSY") }
         let session = AVAudioSession.sharedInstance()
-        try session.setCategory(.playAndRecord, mode: .default, options: [.defaultToSpeaker, .allowBluetooth])
-        try session.setActive(true)
         let url = FileManager.default.temporaryDirectory.appendingPathComponent("maydan-voice-\(UUID().uuidString).m4a")
         do {
+            try session.setCategory(.playAndRecord, mode: .default, options: [.defaultToSpeaker, .allowBluetooth])
+            try session.setActive(true)
             let audio = try AVAudioRecorder(url: url, settings: [
                 AVFormatIDKey: kAudioFormatMPEG4AAC, AVSampleRateKey: 24_000,
                 AVNumberOfChannelsKey: 1, AVEncoderBitRateKey: 48_000,
@@ -66,6 +71,7 @@ final class SocialVoiceRecorder: NSObject, AVAudioRecorderDelegate {
         defer {
             try? FileManager.default.removeItem(at: url)
             try? AVAudioSession.sharedInstance().setActive(false, options: .notifyOthersOnDeactivation)
+            onSessionReleased?()
         }
         let data = try Data(contentsOf: url)
         guard duration >= 0.3, !data.isEmpty, data.count <= 2_000_000 else { throw SocialNativeError.failed("AUDIO_TOO_SHORT") }
@@ -88,6 +94,7 @@ final class SocialVoiceRecorder: NSObject, AVAudioRecorderDelegate {
         recordingURL = nil
         startedAt = nil
         try? AVAudioSession.sharedInstance().setActive(false, options: .notifyOthersOnDeactivation)
+        onSessionReleased?()
         onEvent?(["state": state, "recordingId": cancelledId ?? ""])
     }
 

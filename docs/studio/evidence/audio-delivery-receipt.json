@@ -1,0 +1,115 @@
+{
+  "recordedAtUtc": "2026-10-19T19:47:14.625939+00:00",
+  "sourceCommit": "2fe524e98f8a455b1b801ab4c0fdd9d82f9396ef",
+  "testFlight": {
+    "version": "1.8",
+    "build": "22",
+    "workflowRun": 39311622700,
+    "workflowUrl": "https://github.com/mf103871-boop/Maydan/actions/runs/39311622700",
+    "workflowConclusion": "success",
+    "processingState": "VALID",
+    "internalBuildState": "IN_BETA_TESTING",
+    "existingInternalGroupMembershipVerifiedReadOnly": true,
+    "newTestersAdded": false,
+    "artifactId": 12217496179,
+    "artifactZipSha256": "6bd76753561ecf3c3f94594718aee6e7177e1af963ae1f2c13b74e9c53fe5033",
+    "ipaSha256": "2eff9e41aae92e4a4a6f360b4bc89bf21d4c593f73588455b644fbd14406248f",
+    "actualIPAAuditPassed": true,
+    "physicalIPhoneTested": false,
+    "notesSavedToApple": false
+  },
+  "web": {
+    "verifiedAt": "2026-10-19T19:50:33.216Z",
+    "releaseId": "studio-20261019-9217f768",
+    "versions": {
+      "maydan-game": "987bbbc4-50d2-47d8-9b36-9d7d66bc6037",
+      "maydan-rooms": "69c65d93-9f46-4af3-aaaa-bb34685dac9f"
+    },
+    "checkedAssets": 63,
+    "existingPublicAssetsUnchanged": true,
+    "publishEnabled": false,
+    "ownerOnly": true,
+    "site": {
+      "editor": {
+        "path": "dist/studio/index.html",
+        "key": "studio-site/studio-20261019-9217f768/editor.html",
+        "sha256": "31a356fd35cebc679802351090ae6037a03381f792956efb5b11444f1262dd5d",
+        "bytes": 474358
+      },
+      "preview": {
+        "path": "dist/studio/preview/index.html",
+        "key": "studio-site/studio-20261019-9217f768/preview.html",
+        "sha256": "fa3b4f77ddfe5c8ca06ab4919a6da1a9826780911de12562e7e117b000234135",
+        "bytes": 3367470
+      },
+      "play": {
+        "path": "dist/studio/play/index.html",
+        "key": "studio-site/studio-20261019-9217f768/play.html",
+        "sha256": "720d9d448715787c3942f2d98ec21d52aa2fb76c45923970b4b7486ade153ab7",
+        "bytes": 3778639
+      }
+    },
+    "mediaFiles": 69,
+    "mediaBytes": 12206350,
+    "addedMigrations": [],
+    "publicFrontendDeployed": false,
+    "transportRetryEvents": []
+  },
+  "validation": {
+    "finalCI": {
+      "tests": 1086,
+      "pass": 1085,
+      "fail": 0,
+      "skipped": 1
+    },
+    "executedNativeSwiftPolicyChecks": 37,
+    "browserSummarySha256": "77900bb50a5855732c0f87e0ddfb3829f18ee055f710f2c95f159210e5e30bed",
+    "gameBrowser": {
+      "passed": true,
+      "actualChecksPassed": 21,
+      "chromiumPassed": 15,
+      "webkitHtmlAudioPassed": 6,
+      "webkitWebAudioSkipped": 9,
+      "pageErrors": 0
+    },
+    "socialBrowser": {
+      "passed": true,
+      "chromiumPassed": 1,
+      "webkitPassed": 1,
+      "liveKitTransport": "deterministic test double",
+      "recordingCapture": "deterministic test double",
+      "htmlAudio": "real browser decoding via byte-identical HTTP PCM fixture"
+    }
+  },
+  "preservedAppStore": {
+    "version": "1.7.1",
+    "state": "READY_FOR_SALE",
+    "selectedBuild": "13",
+    "appStore18VersionCreated": false
+  },
+  "supersededRun": {
+    "id": 39308933073,
+    "conclusion": "cancelled",
+    "archiveExportAndUploadSkipped": true,
+    "artifacts": 0
+  },
+  "failedInfrastructureRun": {
+    "id": 39310037037,
+    "sourceCommit": "2fe524e98f8a455b1b801ab4c0fdd9d82f9396ef",
+    "conclusion": "failure",
+    "simulatorCompilationPassed": true,
+    "coldLaunchTimedOutBeforeReportedPid": true,
+    "observedHostLoadAverage": 364.44,
+    "observedHostCpuIdlePercent": 0,
+    "appCrashReports": 0,
+    "archiveExportAndUploadSkipped": true,
+    "interpretation": "Evidence points to an overloaded simulator host; it does not prove absence of an app defect. The same frozen source is tested on a fresh runner with unchanged launch/PID/UI gates."
+  },
+  "limitations": [
+    "Desktop Chromium and Windows Playwright WebKit; lifecycle notifications are simulated.",
+    "Windows WebKit exposes no AudioContext;9 WebAudio checks explicitly skipped.",
+    "No physical iPhone, AVAudioSession, actual microphone, speaker audibility, real LiveKit network, or Bluetooth result is claimed.",
+    "Recording preview uses an HTTP URL for the same PCM bytes because Windows WebKit rejects blob: WAV decoding.",
+    "Actual iPhone background/lock, recording/call audio transitions and native output routing require the build22 device trial before public release."
+  ]
+}

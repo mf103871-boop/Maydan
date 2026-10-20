@@ -1,0 +1,223 @@
+{
+  "schemaVersion": 1,
+  "appId": "6808385717",
+  "targetVersion": "1.8",
+  "targetBuild": "22",
+  "source": "user-supplied ZIPs; original PNG bytes unchanged",
+  "approvedRootPixelReview": true,
+  "captionLocalizations": [
+    "ar-SA",
+    "en-US"
+  ],
+  "appUiLanguage": "Arabic",
+  "screenshotDisplayType": "APP_IPHONE_67",
+  "files": [
+    {
+      "file": "images/ar/01-seven-games.png",
+      "locale": "ar-SA",
+      "displayOrder": 1,
+      "width": 1290,
+      "height": 2796,
+      "bytes": 2932798,
+      "sha256": "3dd5ea69e3f64bb79e61d1d73a0eba2f4b217deb704cb5932aa355fb3dc89c4b",
+      "md5": "43bd2db9a5f6116ccaff2463fde92bef"
+    },
+    {
+      "file": "images/ar/02-draw-live.png",
+      "locale": "ar-SA",
+      "displayOrder": 2,
+      "width": 1290,
+      "height": 2796,
+      "bytes": 1823603,
+      "sha256": "35004f532ebc94c0ea1ba21a5483cdeb2a3b57cfd5223bf2c249e7ffff75fabc",
+      "md5": "01e5d58782ae080a80246910d78b4616"
+    },
+    {
+      "file": "images/ar/03-play-and-talk.png",
+      "locale": "ar-SA",
+      "displayOrder": 3,
+      "width": 1290,
+      "height": 2796,
+      "bytes": 1798311,
+      "sha256": "ecc33cf436687d3b46092c05a2757691a7f4af5aed667e334fad9ec43e23cac6",
+      "md5": "d809c08bc74e5b2e28ce4c58680164f5"
+    },
+    {
+      "file": "images/ar/04-badeeha.png",
+      "locale": "ar-SA",
+      "displayOrder": 4,
+      "width": 1290,
+      "height": 2796,
+      "bytes": 2276923,
+      "sha256": "7967c7e3bee60b308f1d601a41292afcbc5076f595bed822d42a89e0ebc0ea3d",
+      "md5": "6dbb5a30d597afb64e2ac71207515110"
+    },
+    {
+      "file": "images/ar/05-fast-and-forbidden.png",
+      "locale": "ar-SA",
+      "displayOrder": 5,
+      "width": 1290,
+      "height": 2796,
+      "bytes": 2013295,
+      "sha256": "b20ff9c11c0bfddf8a63071f5f8f02f686017075c267dcf7a9497079b1569628",
+      "md5": "c57e7fcbc4e2f4e9be3c07f33ee6eb39"
+    },
+    {
+      "file": "images/ar/06-forehead.png",
+      "locale": "ar-SA",
+      "displayOrder": 6,
+      "width": 1290,
+      "height": 2796,
+      "bytes": 2451548,
+      "sha256": "8cb11ce7d22c5d60a244ebacd3aedd57250557921b99b5b3f930a16de192b8e5",
+      "md5": "b26510efc295ab5ca6dc9ca2fdd66652"
+    },
+    {
+      "file": "images/ar/07-fabraka.png",
+      "locale": "ar-SA",
+      "displayOrder": 7,
+      "width": 1290,
+      "height": 2796,
+      "bytes": 2055942,
+      "sha256": "7ca4b9c73b62033c1e712dfba2aff01accbfede8cf69c90809d7008e5e60de42",
+      "md5": "73928415a2bdcbe012a6edb84f670a7a"
+    },
+    {
+      "file": "images/ar/08-whos-most-likely.png",
+      "locale": "ar-SA",
+      "displayOrder": 8,
+      "width": 1290,
+      "height": 2796,
+      "bytes": 1518218,
+      "sha256": "bd5d9f51e106546cdc2abc2d59c7d7a0d2b5f304416cce3a741c9784815af60e",
+      "md5": "c216af9b2a9377f1ae5d459d4e557eb1"
+    },
+    {
+      "file": "images/ar/09-friends-and-chat.png",
+      "locale": "ar-SA",
+      "displayOrder": 9,
+      "width": 1290,
+      "height": 2796,
+      "bytes": 1786318,
+      "sha256": "6c1af5b0e42ee77b3a0b545a8c9c030cc58c2cca922ccff41c46abf6644c126c",
+      "md5": "b4276e4764c559666a9185efcc6981a5"
+    },
+    {
+      "file": "images/ar/10-your-profile.png",
+      "locale": "ar-SA",
+      "displayOrder": 10,
+      "width": 1290,
+      "height": 2796,
+      "bytes": 1624361,
+      "sha256": "ce29703eedb2cd146b0b859e93a1952e4256b6cecebc8e3c004d51feedc19b2e",
+      "md5": "15e06bcc9ef6fbf704f09b78d27fa90d"
+    },
+    {
+      "file": "images/en/01-seven-games.png",
+      "locale": "en-US",
+      "displayOrder": 1,
+      "width": 1290,
+      "height": 2796,
+      "bytes": 2930817,
+      "sha256": "b45ed779c48c45e4bc51e35be1a56cd9be05a2b516f6d30bf9ad286f7687033f",
+      "md5": "6221ab90117223d4d5eaf67b5bda4228"
+    },
+    {
+      "file": "images/en/02-draw-live.png",
+      "locale": "en-US",
+      "displayOrder": 2,
+      "width": 1290,
+      "height": 2796,
+      "bytes": 1823543,
+      "sha256": "43746b80b625c6ab4fc42a68c733530cfcfe28558a3a62e92fac2443cac30da5",
+      "md5": "a2b7d72cc5a48ee428db55813a59204f"
+    },
+    {
+      "file": "images/en/03-play-and-talk.png",
+      "locale": "en-US",
+      "displayOrder": 3,
+      "width": 1290,
+      "height": 2796,
+      "bytes": 1800043,
+      "sha256": "95a16a93afa7bba92284a764c3f89f7679292e19bdcaa073bd2e9d88b3be94f9",
+      "md5": "84b3319811578e5cd1e72b611e864a8b"
+    },
+    {
+      "file": "images/en/04-badeeha.png",
+      "locale": "en-US",
+      "displayOrder": 4,
+      "width": 1290,
+      "height": 2796,
+      "bytes": 2282895,
+      "sha256": "97e6e7f5efede0a554440f0d9b84249f953d026246e468622b24761b80211648",
+      "md5": "543a8fecfd9cc0550c04bcddac5332c9"
+    },
+    {
+      "file": "images/en/05-fast-and-forbidden.png",
+      "locale": "en-US",
+      "displayOrder": 5,
+      "width": 1290,
+      "height": 2796,
+      "bytes": 2013115,
+      "sha256": "44192d04d415f91748d1c40dd78524118d0eea0bce5fd4af0279e22955e10440",
+      "md5": "c4b7ce0dd9b857097bded1fdaf5c96fe"
+    },
+    {
+      "file": "images/en/06-forehead.png",
+      "locale": "en-US",
+      "displayOrder": 6,
+      "width": 1290,
+      "height": 2796,
+      "bytes": 2444880,
+      "sha256": "08e1d4ec7dbfd9dcc98f2bf9c7ab146e84b037965d3706179bb74a689f6be484",
+      "md5": "484fef922bc8edd4b9ffa6b659666fe4"
+    },
+    {
+      "file": "images/en/07-fabraka.png",
+      "locale": "en-US",
+      "displayOrder": 7,
+      "width": 1290,
+      "height": 2796,
+      "bytes": 2050464,
+      "sha256": "063be83d4d26104c5a3d080aebdfd39b46cc60475942bee507c72a51555a9530",
+      "md5": "5c88b5847cdcfdc0881a472d3d0d6b3a"
+    },
+    {
+      "file": "images/en/08-whos-most-likely.png",
+      "locale": "en-US",
+      "displayOrder": 8,
+      "width": 1290,
+      "height": 2796,
+      "bytes": 1517008,
+      "sha256": "2bfabb2de027d2d6d7acd7660ce6f5a1eddf218a91c2d1ca442460c39da2d8db",
+      "md5": "aad2c3c2315d07b9915d13e270a91638"
+    },
+    {
+      "file": "images/en/09-friends-and-chat.png",
+      "locale": "en-US",
+      "displayOrder": 9,
+      "width": 1290,
+      "height": 2796,
+      "bytes": 1783140,
+      "sha256": "878ec965a07e7bc4a78bcf4c6c7dfa8fb38a9a269b4b9e3175339e547ed22fb7",
+      "md5": "869604dc4e60939fa43fc73964e7cda0"
+    },
+    {
+      "file": "images/en/10-your-profile.png",
+      "locale": "en-US",
+      "displayOrder": 10,
+      "width": 1290,
+      "height": 2796,
+      "bytes": 1630831,
+      "sha256": "929c8a2bed51a338600ef2a5b59ff73c698f26b6bd8c76839103e3b25f428d64",
+      "md5": "c067c420628dd34b841ae1c01e99ce10"
+    }
+  ],
+  "exclude": [
+    "contact-sheet-*.png",
+    "previous-listing/*",
+    "raw/*",
+    "all editable source/runtime files"
+  ],
+  "uploadPerformed": false
+}

@@ -168,6 +168,9 @@ final class GameViewController: UIViewController, WKNavigationDelegate, WKUIDele
         SocialCoordinator.shared.onAudioActivityChange = { [weak self] in
             self?.appUpdate.audioActivityChanged()
         }
+        SocialCoordinator.shared.onAudioLifecycle = { [weak self] payload in
+            self?.evaluate("window.dispatchEvent(new CustomEvent('maydan-audio-lifecycle', {detail: \(Self.json(payload))}));")
+        }
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -246,7 +249,7 @@ final class GameViewController: UIViewController, WKNavigationDelegate, WKUIDele
     }
 
     private func invokeWebBack() {
-        let script = "typeof window.maydanBack === 'function' ? Boolean(window.maydanBack()) : false"
+        let script = "typeof window.maydanNavigateBack === 'function' ? Boolean(window.maydanNavigateBack()) : false"
         webView.evaluateJavaScript(script) { _, _ in }
     }
 
@@ -314,6 +317,7 @@ final class GameViewController: UIViewController, WKNavigationDelegate, WKUIDele
 
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         isRecoveringWebContent = false
+        SocialCoordinator.shared.webAudioReady()
         if isCommittingMigration {
             // زُرعت المحفوظات في الأصل الجديد وبدأت اللعبة بها: الانتقال منجز ولا يُعاد.
             isCommittingMigration = false
@@ -351,6 +355,8 @@ final class GameViewController: UIViewController, WKNavigationDelegate, WKUIDele
         }
 
         switch type {
+        case "gameAudioResume":
+            SocialCoordinator.shared.resumeGameAudioFromGesture()
         case "haptic":
             performHaptic(style: (payload["style"] as? String) ?? (payload["kind"] as? String))
         case "share":
@@ -372,7 +378,7 @@ final class GameViewController: UIViewController, WKNavigationDelegate, WKUIDele
     private func handle(command: String, id: String, payload: [String: Any]) {
         let socialCommands: Set<String> = [
             "socialStoredSession", "socialSession", "socialLogout", "socialNotifications",
-            "socialCallConnect", "socialCallMute", "socialCallSpeaker", "socialCallEnd",
+            "socialCallConnect", "socialCallMute", "socialCallSpeaker", "socialCallEnd", "socialCallResumeAudio",
             "socialVoiceStart", "socialVoiceStop", "socialVoiceCancel", "socialAudioPrivacy"
         ]
         if socialCommands.contains(command) {

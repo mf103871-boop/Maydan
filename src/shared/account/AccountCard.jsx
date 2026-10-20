@@ -48,7 +48,7 @@ export function AccountCard() {
   const redeemButton = canRedeem ? <Button variant="ghost" onClick={() => setRedeem(true)}>{REDEEM_PROMPT}</Button> : null;
 
   return (
-    <Card className="stack account-card" aria-label="الحساب">
+    <Card data-design-screen="account.card" className="stack account-card" aria-label="الحساب">
       <div className="row"><IconUsers style={{ color: 'var(--accent)' }} /><span className="card-title">الحساب</span></div>
       {!user ? (
         <>
@@ -57,7 +57,7 @@ export function AccountCard() {
           <p className="card-muted">سجّل الدخول ليعمل اشتراك {PLUS_NAME} على كل أجهزتك.</p>
           {account.offline
             ? <p className="online-notice" role="status">{accountErrorText('OFFLINE')}</p>
-            : <Button variant="primary" onClick={() => setSignIn(true)}>تسجيل الدخول</Button>}
+            : <Button variant="primary" data-design-id="account-signin" data-design-required="true" onClick={() => setSignIn(true)}>تسجيل الدخول</Button>}
           {redeemButton}
         </>
       ) : (
@@ -66,20 +66,20 @@ export function AccountCard() {
             <b>{user.name || 'لاعب ميدان'}</b>
             {user.email && <small className="muted">{user.email}</small>}
           </div>
-          {suspension ? <div className="online-notice error" role="status"><b>حسابك معلّق</b><p>الملف والتواصل والغرف غير متاحة أثناء التعليق. يمكنك إدارة اشتراكك واستعادة المشتريات أو حذف الحساب.</p>{suspension.reason && <p dir="auto">السبب: {suspension.reason}</p>}<a href={`mailto:${SUPPORT_EMAIL}`}>التواصل مع الدعم بخصوص التعليق</a></div> : <Button variant="secondary" icon={<IconUsers />} onClick={() => navigate('/profile')}>بروفايلي وإنجازاتي</Button>}
+          {suspension ? <div className="online-notice error" role="status"><b>حسابك معلّق</b><p>الملف والتواصل والغرف غير متاحة أثناء التعليق. يمكنك إدارة اشتراكك واستعادة المشتريات أو حذف الحساب.</p>{suspension.reason && <p dir="auto">السبب: {suspension.reason}</p>}<a href={`mailto:${SUPPORT_EMAIL}`}>التواصل مع الدعم بخصوص التعليق</a></div> : <Button variant="secondary" icon={<IconUsers />} data-design-id="profile" onClick={() => navigate('/profile')}>بروفايلي وإنجازاتي</Button>}
           <p className={`account-plan ${account.premium ? 'is-plus' : ''}`}>{subscriptionLine(account.me, account.premium, account.promo)}</p>
           {!account.premium && !suspension && (
-            <Button variant="primary" icon={<IconStar />} onClick={() => account.openPaywall({ reason: 'settings' })}>اشترك في {PLUS_NAME}</Button>
+            <Button variant="primary" icon={<IconStar />} data-design-id="purchase" onClick={() => account.openPaywall({ reason: 'settings' })}>اشترك في {PLUS_NAME}</Button>
           )}
           {!suspension && redeemButton}
           {managed && (
-            <Button variant="secondary" onClick={() => account.manageSubscription()}>إدارة الاشتراك</Button>
+            <Button variant="secondary" data-design-id="subscription" data-design-required="true" onClick={() => account.manageSubscription()}>إدارة الاشتراك</Button>
           )}
           {ios && (
-            <Button variant="secondary" icon={<IconRotate />} loading={account.busy === 'restore'} onClick={() => account.restore()}>استعادة المشتريات</Button>
+            <Button variant="secondary" icon={<IconRotate />} loading={account.busy === 'restore'} data-design-id="restore" data-design-required="true" onClick={() => account.restore()}>استعادة المشتريات</Button>
           )}
-          <Button variant="ghost" icon={<IconBack />} loading={account.busy === 'signout'} onClick={() => account.signOut()}>تسجيل الخروج</Button>
-          <Button variant="danger" icon={<IconTrash />} onClick={() => setConfirmDelete(true)}>حذف الحساب</Button>
+          <Button variant="ghost" icon={<IconBack />} loading={account.busy === 'signout'} data-design-id="account-signout" data-design-required="true" onClick={() => account.signOut()}>تسجيل الخروج</Button>
+          <Button variant="danger" icon={<IconTrash />} data-design-id="account-delete" data-design-required="true" onClick={() => setConfirmDelete(true)}>حذف الحساب</Button>
         </>
       )}
       {account.error && <p className="online-notice error" role="alert">{accountErrorText(account.error)}</p>}

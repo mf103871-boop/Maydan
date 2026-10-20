@@ -1,0 +1,318 @@
+{
+  "schemaVersion": 1,
+  "method": "Remove fully opaque alpha channel only; no resizing, recoloring, cropping, or UI changes",
+  "files": [
+    {
+      "file": "ar-1179x2556-01-home.png",
+      "inputSha256": "170ab65c8dab8bfc1d0793f1eb24cc3d962bfd65a37f92727f6b8a5aa7e9b0ef",
+      "outputSha256": "2165d54dcbb9e964b054782aad7c800449bf65a484efe93794e465d6ffc81a77",
+      "rgbPixelSha256": "f90b74bb899da9a650cf5a810f3f881d52edbc716cf0edf55fe6dc2d7accb1a9",
+      "inputAlphaRange": [
+        255,
+        255
+      ],
+      "rgbPixelsIdentical": true,
+      "width": 1179,
+      "height": 2556
+    },
+    {
+      "file": "ar-1179x2556-02-ersomha.png",
+      "inputSha256": "83872d0e7d529f3e459ffdb9dadc3dc2c2270eea1656a6f81b410191d385f2e8",
+      "outputSha256": "0d830fb9f13ac3462a039cf9f638a26fbc7e3fd8e1eae89da5328f08e66645ae",
+      "rgbPixelSha256": "bd8a2220f1103832fa1c4196c0fcea5e985d2468aff67f580955a28ca0f81aeb",
+      "inputAlphaRange": [
+        255,
+        255
+      ],
+      "rgbPixelsIdentical": true,
+      "width": 1179,
+      "height": 2556
+    },
+    {
+      "file": "ar-1179x2556-03-badeeha.png",
+      "inputSha256": "99fd63a715c8cdcb10a4b10ce719b0fb75c61eca6dde6daa0b402e8f8f7874c3",
+      "outputSha256": "0dec64803ce77ef993e5e85731e1fc8af0388937d084208a7533bdc5e3dd4f70",
+      "rgbPixelSha256": "dff1a6ea0a99ae2a17ff8944ffb0552948b170ac96c7b8154bb7e5ee50e1e724",
+      "inputAlphaRange": [
+        255,
+        255
+      ],
+      "rgbPixelsIdentical": true,
+      "width": 1179,
+      "height": 2556
+    },
+    {
+      "file": "ar-1179x2556-04-chat.png",
+      "inputSha256": "b57bb4fe0a18c78a4699f59c804a6bb7eb8b929f725de3000ca5777f28957b48",
+      "outputSha256": "a3718d8fa30a0802e057dca19d282b8e881446a95bbcd5a1296b4825bd989ed6",
+      "rgbPixelSha256": "be2ad2f8df509a96b432084d317162f666d08d1351ecefa3f423baa0ebbbe16d",
+      "inputAlphaRange": [
+        255,
+        255
+      ],
+      "rgbPixelsIdentical": true,
+      "width": 1179,
+      "height": 2556
+    },
+    {
+      "file": "ar-1179x2556-05-friends.png",
+      "inputSha256": "409f00aca342ef1e3006560d551b0d68c8d3c3cb62c2fa772c17460a8c0ba7f4",
+      "outputSha256": "c57e54fe73495ecf9accf04ced534e26a9a63141f7647360258f6f2a8c5cb9e1",
+      "rgbPixelSha256": "ec9fa206d9fc760ea0bebb6f1d2b61b96fc3a8c6defa62f9419cad7f133f9493",
+      "inputAlphaRange": [
+        255,
+        255
+      ],
+      "rgbPixelsIdentical": true,
+      "width": 1179,
+      "height": 2556
+    },
+    {
+      "file": "ar-1179x2556-06-fabraka.png",
+      "inputSha256": "b9aa8e16972e3ac3469ab4bba9d0aba02111a25c51588b21c08253763fe7147e",
+      "outputSha256": "46f2c53a9a8a669f99358079420bd41817cd518708903ad59d2441aff705b6e1",
+      "rgbPixelSha256": "0acf300a6ae089aa638b01dffd44820a739917a31aafc2185e0ab35f715a4075",
+      "inputAlphaRange": [
+        255,
+        255
+      ],
+      "rgbPixelsIdentical": true,
+      "width": 1179,
+      "height": 2556
+    },
+    {
+      "file": "en-1179x2556-01-home.png",
+      "inputSha256": "8a519fd71d9ed499001bc50a8c615c789d58f715cdb8552ca900709a9f16e49a",
+      "outputSha256": "f0f88168252b83f48095193a8251cd0a316da9433b7a176087c9b5533094994f",
+      "rgbPixelSha256": "a140254d19e3d519c644a8e648496032c138b4078bda3769700d683257175a73",
+      "inputAlphaRange": [
+        255,
+        255
+      ],
+      "rgbPixelsIdentical": true,
+      "width": 1179,
+      "height": 2556
+    },
+    {
+      "file": "en-1179x2556-02-ersomha.png",
+      "inputSha256": "ebb9c5794d11e487410b84ca116d74d415fb0db2f9bd5cf9c08a057071e87547",
+      "outputSha256": "feba452c62f559f45235a0e026cbda0b3ba6a4214328f3d11e9b6cfa37dacc0b",
+      "rgbPixelSha256": "da2924294fffe415e1c32c885c60347f0bfaafce6f347bc3423517b59d9cba55",
+      "inputAlphaRange": [
+        255,
+        255
+      ],
+      "rgbPixelsIdentical": true,
+      "width": 1179,
+      "height": 2556
+    },
+    {
+      "file": "en-1179x2556-03-badeeha.png",
+      "inputSha256": "79434c337338f2bc0b3c5513d2af2e3928d3b46ff1964bc42cb2cfbfb5aaedbb",
+      "outputSha256": "6ef461b6efb794ae73ae30fea2453b579e7d62dc4e6abc9d32840f12703173b9",
+      "rgbPixelSha256": "bb89352d9e129d6b1c4df2ff2adfba2c5dca37b1ba59a97a1083af54fd01d7b6",
+      "inputAlphaRange": [
+        255,
+        255
+      ],
+      "rgbPixelsIdentical": true,
+      "width": 1179,
+      "height": 2556
+    },
+    {
+      "file": "en-1179x2556-04-chat.png",
+      "inputSha256": "589ec3b87c9fe1a5eb5a05865e75d9f2057fb53d3007952442eb2e4424c207d8",
+      "outputSha256": "1f995335d0e17393b9168cf13aa140573222ec1de950732f15db8131837ccfe5",
+      "rgbPixelSha256": "02e6a0ddc40198957ee93c781aedc306f685a0f97499d905659e3fe800fa51e5",
+      "inputAlphaRange": [
+        255,
+        255
+      ],
+      "rgbPixelsIdentical": true,
+      "width": 1179,
+      "height": 2556
+    },
+    {
+      "file": "en-1179x2556-05-friends.png",
+      "inputSha256": "aded21cc2a24581ec03b51d9ec3aa07c77f671e22ac83f8982716783dabacab8",
+      "outputSha256": "70a3096ea6c0bc24a6262f9a629c839716581171c82f679964c5b689598708ab",
+      "rgbPixelSha256": "24535369af57ae5715d0c1e887dd78b56b46285ee6a553c0d33fa172958b0388",
+      "inputAlphaRange": [
+        255,
+        255
+      ],
+      "rgbPixelsIdentical": true,
+      "width": 1179,
+      "height": 2556
+    },
+    {
+      "file": "en-1179x2556-06-fabraka.png",
+      "inputSha256": "1e1401618b7604a8fb0e4ce9fb5efda2d40ec47aca3b8fc49a8849e1352ebdf8",
+      "outputSha256": "a1f59bf9c47186b276cd21426686d53738f5e777da9eb3734580ea7d63ff8960",
+      "rgbPixelSha256": "b9938a45d2ce2eb453c99e730e617fbd2ac0db1af22b2ff186159b0196145fe3",
+      "inputAlphaRange": [
+        255,
+        255
+      ],
+      "rgbPixelsIdentical": true,
+      "width": 1179,
+      "height": 2556
+    },
+    {
+      "file": "ar-1290x2796-01-home.png",
+      "inputSha256": "63251432ec80ea4531e21ed0d3fd44ec050fdb7a411aa93b76ac59038cc84bc8",
+      "outputSha256": "605ef7ada73c2c31ce0647d280b1d019f7aaaeb121d37c4638ea352bcd4efb2b",
+      "rgbPixelSha256": "dc89c320a5c1c71928b37b86535ddcbb24f1d86ae64bb0464c48031b08e7e98b",
+      "inputAlphaRange": [
+        255,
+        255
+      ],
+      "rgbPixelsIdentical": true,
+      "width": 1290,
+      "height": 2796
+    },
+    {
+      "file": "ar-1290x2796-02-ersomha.png",
+      "inputSha256": "f268276e8ab885384eca9dbe1526224fb77388ed9ce5caa6ae04480b52a388c4",
+      "outputSha256": "904148fc32759917d5198e2248be3446fca6b2885b8540a5d3b631b1f9d2da2f",
+      "rgbPixelSha256": "61e9266c2855f730d0cfd8f9b8341d13ffe5ef5bec1c909ce2bb61d38df96b03",
+      "inputAlphaRange": [
+        255,
+        255
+      ],
+      "rgbPixelsIdentical": true,
+      "width": 1290,
+      "height": 2796
+    },
+    {
+      "file": "ar-1290x2796-03-badeeha.png",
+      "inputSha256": "d2c9439c44b2ee8e2b2d114fcdf3bdf0ffc2ee98135047b53565075ad03d0982",
+      "outputSha256": "67d51c85823ec0f361d862e6bb1cb81a01522c74e9e35d93db68f4d40876feb2",
+      "rgbPixelSha256": "8faa00e9cd814af4808b90472d101cfd3a64d029dda68c77ca688dcdaa6019e2",
+      "inputAlphaRange": [
+        255,
+        255
+      ],
+      "rgbPixelsIdentical": true,
+      "width": 1290,
+      "height": 2796
+    },
+    {
+      "file": "ar-1290x2796-04-chat.png",
+      "inputSha256": "d175119efd73d5aadb0bf9c72aab17b15c47280b444d8dd922efbb293706c6aa",
+      "outputSha256": "f3d4ac4fbb57599e181b0adb23914ee96b5ef81f3fd5117b91b44d7449c2d8dd",
+      "rgbPixelSha256": "e7eecb2c863b3223d82a406cb3af3e10bbcc1be101890c659f860408062fcb9f",
+      "inputAlphaRange": [
+        255,
+        255
+      ],
+      "rgbPixelsIdentical": true,
+      "width": 1290,
+      "height": 2796
+    },
+    {
+      "file": "ar-1290x2796-05-friends.png",
+      "inputSha256": "57a5ef65a689f3771ad3d88d7d828c47178e5bc1bebfe7fd253747e2045de63b",
+      "outputSha256": "225588d54bfaed54c20d2e872ab37334f7c5e461c061c49e84bcf1b9a212537c",
+      "rgbPixelSha256": "61e780e04e643df6d76e959e8ea826fd0c58cc7213f74d630fbe67b327266f88",
+      "inputAlphaRange": [
+        255,
+        255
+      ],
+      "rgbPixelsIdentical": true,
+      "width": 1290,
+      "height": 2796
+    },
+    {
+      "file": "ar-1290x2796-06-fabraka.png",
+      "inputSha256": "74829a4bf5fae491f8d7a5b1006412b599b929350ae9567ed864b14561d01c0e",
+      "outputSha256": "10f90e26755bb73374d119aee9c73a3cadb6bd66e16e50b582fa3ccced6ebd3d",
+      "rgbPixelSha256": "be74a0ebffe4eeadd9de3b1702d20ae7ae6da767ff5bf138685386249c0c38e9",
+      "inputAlphaRange": [
+        255,
+        255
+      ],
+      "rgbPixelsIdentical": true,
+      "width": 1290,
+      "height": 2796
+    },
+    {
+      "file": "en-1290x2796-01-home.png",
+      "inputSha256": "179c9e0c38e0af62cc3f5fad791900df9929b59a6fcd166688e0dedf895831c1",
+      "outputSha256": "2e4cd383df6e1a40d59968d67e04da6e6fa993b3079d74f2d2f599129fcd2138",
+      "rgbPixelSha256": "01c793da728aadc5612f060c6be5c2e4f52e501692d37403e72c5766f8c26dc2",
+      "inputAlphaRange": [
+        255,
+        255
+      ],
+      "rgbPixelsIdentical": true,
+      "width": 1290,
+      "height": 2796
+    },
+    {
+      "file": "en-1290x2796-02-ersomha.png",
+      "inputSha256": "90eba501f7ad9be11825f427e9d667dd1f93fac73113393e9f5c39ef5b923943",
+      "outputSha256": "6ade1a31670388ed21ddbaca9112b4b6d03d19cd2b3c25b0f2f5219f6a88ecc5",
+      "rgbPixelSha256": "08dd79b82dc6059476d75c3185317d84f215fc6b68bfdd4e72438b722163b67a",
+      "inputAlphaRange": [
+        255,
+        255
+      ],
+      "rgbPixelsIdentical": true,
+      "width": 1290,
+      "height": 2796
+    },
+    {
+      "file": "en-1290x2796-03-badeeha.png",
+      "inputSha256": "a171660fdca6fc1d14291b11ff63204781dc900d2279f11b039624d093c98afa",
+      "outputSha256": "a30fb205cebf6f3d163ca28116f9bc7a77762e32aea307c2c7c7214822fd4f38",
+      "rgbPixelSha256": "7882b07dc576aede4443d8ede163878a435f2e2a4d0b69dfa465d27bf584be60",
+      "inputAlphaRange": [
+        255,
+        255
+      ],
+      "rgbPixelsIdentical": true,
+      "width": 1290,
+      "height": 2796
+    },
+    {
+      "file": "en-1290x2796-04-chat.png",
+      "inputSha256": "ae1db583760a2cb70437f01d85f85b799f0fb592471f8f844fc9528d08497d63",
+      "outputSha256": "7f2b8ef2586147c36afecd42d23aa856d9f0699bdb0b54cb60421175b7e9c63e",
+      "rgbPixelSha256": "fc8938da835d05727ed317f325fbc1e36855430d819e3a5958adde09c7bf1438",
+      "inputAlphaRange": [
+        255,
+        255
+      ],
+      "rgbPixelsIdentical": true,
+      "width": 1290,
+      "height": 2796
+    },
+    {
+      "file": "en-1290x2796-05-friends.png",
+      "inputSha256": "02bda128fc79d4bcc10e0dd8aa2510b680997702c37a0a2a16c9cec798a49d69",
+      "outputSha256": "54a349a7b5f9dedaa38a43f47428e9fc9e64b6dcb7da7153131aa8e910d30296",
+      "rgbPixelSha256": "6a9af9ff4eb14a534b53448d1000fd15f1a8cc7c86bb2c06b16aef46f4acbc90",
+      "inputAlphaRange": [
+        255,
+        255
+      ],
+      "rgbPixelsIdentical": true,
+      "width": 1290,
+      "height": 2796
+    },
+    {
+      "file": "en-1290x2796-06-fabraka.png",
+      "inputSha256": "d332d81c84e5adda78afb925319cf3f35c12fc455f90854f521e6d8bf56c95d8",
+      "outputSha256": "108f36ad375a77c162faa73aee817060b4b43abdc9600bc1a302e17215e64f1f",
+      "rgbPixelSha256": "0cc48e863f969d2b2894016d47e1794226934ba67a78b5c5c78edfba61d819d7",
+      "inputAlphaRange": [
+        255,
+        255
+      ],
+      "rgbPixelsIdentical": true,
+      "width": 1290,
+      "height": 2796
+    }
+  ]
+}

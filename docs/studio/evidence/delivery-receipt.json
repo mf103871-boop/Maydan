@@ -1,0 +1,37 @@
+{
+  "recordedAt": "2026-10-19T06:18:52.139964+00:00",
+  "studioUrl": "https://maydan-game.mf103871.workers.dev/api/studio/",
+  "deployedRelease": "studio-20261019-e59a5baf",
+  "backendSourceCommit": "7e2b98349c07dcdfb15d2b1bb8777e96a0f9f32d",
+  "publicPublishingEnabled": false,
+  "ownerLiveAccountTrialCompleted": false,
+  "testFlight": {
+    "version": "1.8",
+    "build": "20",
+    "buildId": "9f7b93ab-ce29-4ab1-8845-1c1302604211",
+    "processingState": "VALID",
+    "internalBuildState": "IN_BETA_TESTING",
+    "existingInternalGroup": "Envysnowy Group",
+    "groupMembershipVerified": true,
+    "newTestersAdded": false,
+    "workflowRun": 39207082925,
+    "workflowConclusion": "success",
+    "workflowUrl": "https://github.com/mf103871-boop/Maydan/actions/runs/39207082925",
+    "sourceCommit": "4b2134114d2204ef0962fd6e2b6389d15d8a0ab5",
+    "ipaSha256": "b19e3f74d8ca456a24a0c0ac688589f32bd61e31f35dd627ea9fd2a718cf60e6",
+    "packageAuditPassed": true,
+    "physicalIPhoneTested": false,
+    "notesFile": "../testflight-notes-ar.txt",
+    "notesSha256": "be102e73da9bdb4d5bbf28be0db70f80edfcdc6a8f90460ed8973c307418bfaa",
+    "notesSavedToApple": false,
+    "notesSaveBlocker": "Official PATCH returned 405; browser sign-in required."
+  },
+  "preservedAppStoreReview": {
+    "version": "1.7.1",
+    "state": "WAITING_FOR_REVIEW",
+    "sameReviewAndState": true,
+    "attachedBuildId": "4d6f0b15-9050-4f2f-b34a-7432dca51beb",
+    "newBuildNotAttachedToReview": true
+  },
+  "verificationScope": "Official ASC GET responses verify availability for the existing internal group. Physical-device trial and actual owner login remain pending; no public design was published."
+}

@@ -6,6 +6,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A10000000000000000000012 /* NativeAudioPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000000000000000014 /* NativeAudioPolicy.swift */; };
 		A10000000000000000000010 /* AppUpdatePolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000000000000000012 /* AppUpdatePolicy.swift */; };
 		A10000000000000000000011 /* AppUpdateCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000000000000000013 /* AppUpdateCoordinator.swift */; };
 		A1000000000000000000000C /* SocialSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1000000000000000000000F /* SocialSession.swift */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B10000000000000000000014 /* NativeAudioPolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeAudioPolicy.swift; sourceTree = "<group>"; };
 		B10000000000000000000012 /* AppUpdatePolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUpdatePolicy.swift; sourceTree = "<group>"; };
 		B10000000000000000000013 /* AppUpdateCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUpdateCoordinator.swift; sourceTree = "<group>"; };
 		B1000000000000000000000F /* SocialSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialSession.swift; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 				B1000000000000000000000F /* SocialSession.swift */,
 				B10000000000000000000010 /* SocialVoiceRecorder.swift */,
 				B10000000000000000000011 /* SocialCoordinator.swift */,
+				B10000000000000000000014 /* NativeAudioPolicy.swift */,
 				B10000000000000000000012 /* AppUpdatePolicy.swift */,
 				B10000000000000000000013 /* AppUpdateCoordinator.swift */,
 				B10000000000000000000002 /* SceneDelegate.swift */,
@@ -161,6 +164,7 @@
 				A1000000000000000000000C /* SocialSession.swift in Sources */,
 				A1000000000000000000000D /* SocialVoiceRecorder.swift in Sources */,
 				A1000000000000000000000E /* SocialCoordinator.swift in Sources */,
+				A10000000000000000000012 /* NativeAudioPolicy.swift in Sources */,
 				A10000000000000000000010 /* AppUpdatePolicy.swift in Sources */,
 				A10000000000000000000011 /* AppUpdateCoordinator.swift in Sources */,
 				A10000000000000000000001 /* AppDelegate.swift in Sources */,

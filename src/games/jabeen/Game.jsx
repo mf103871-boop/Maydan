@@ -20,12 +20,12 @@ export function SetupOptions({ storage, api }) {
   const [resume] = useState(() => loadSession(storage, (raw) => restoreSession(raw, categories)));
   const update = (patch) => { const next = normalizeOptions({ ...opts, ...patch }, categories); setOpts(next); storage.set(OPTIONS_KEY, next); };
   return (
-    <>
+    <div data-design-screen="setup.jabeen" data-design-id="options" className="stack">
     {resume && <Card className="stack resume-card">
       <style>{css}</style>
       <span className="card-title">لعبتكم بانتظاركم</span>
       <p className="card-muted">فئة «{resume.state.categoryName}» · دور {currentEntrant(resume.state)?.name} ({resume.state.turn + 1} من {resume.state.entrants.length})</p>
-      <Button variant="accent" full onClick={() => api.resumeGame(resume)}>استئناف اللعبة المحفوظة</Button>
+      <Button data-design-id="resume" data-design-required="true" variant="accent" full onClick={() => api.resumeGame(resume)}>استئناف اللعبة المحفوظة</Button>
       <p className="card-muted">بدء لعبة جديدة يستبدل هذا التقدم.</p>
     </Card>}
     <Card className="stack">
@@ -33,16 +33,16 @@ export function SetupOptions({ storage, api }) {
       <span className="card-title">الفئة والمدة</span>
       <div className="jabeen-cats">
         {categories.map((c) => (
-          <button key={c.id} type="button" className={`jabeen-cat ${opts.categoryId === c.id ? 'selected' : ''}`} aria-pressed={opts.categoryId === c.id} onClick={() => update({ categoryId: c.id })}>
+          <button data-design-id="category-card" key={c.id} type="button" className={`jabeen-cat ${opts.categoryId === c.id ? 'selected' : ''}`} aria-pressed={opts.categoryId === c.id} onClick={() => update({ categoryId: c.id })}>
             <span aria-hidden="true">{c.icon}</span>{c.name}<small>{c.items.length} كلمة</small>
           </button>
         ))}
       </div>
       <div className="field"><span>مدة الجولة</span>
-        <Segment accent label="المدة" value={opts.seconds} onChange={(v) => update({ seconds: v })} options={SECONDS.map((s) => ({ value: s, label: `${s} ث` }))} />
+        <Segment data-design-id="setting-duration" accent label="المدة" value={opts.seconds} onChange={(v) => update({ seconds: v })} options={SECONDS.map((s) => ({ value: s, label: `${s} ث` }))} />
       </div>
     </Card>
-    </>
+    </div>
   );
 }
 
@@ -54,27 +54,27 @@ function Stage({ state, timer, tilt, onAnswer, onEnd, flash, blocked }) {
   // التظليل الأحمر في آخر 3 ثوانٍ: عنصر ثابت في body (fx.vignette) يُطفأ عند إزالة المسرح.
   useEffect(() => { vignette(timer.running && timer.left > 0 && timer.left <= 3); return () => vignette(false); }, [timer.left, timer.running]);
   return (
-    <div className={`jabeen-stage ${flash}`} role="group" aria-label="جولة على جبينك" inert={blocked} aria-hidden={blocked || undefined}>
-      <div className="jabeen-stage-top">
+    <div data-design-id="content" className={`jabeen-stage ${flash}`} role="group" aria-label="جولة على جبينك" inert={blocked} aria-hidden={blocked || undefined}>
+      <div data-design-id="header" className="jabeen-stage-top">
         {/* في ثواني الخطر يُعاد تركيب الرقم كل ثانية (key) فيُلكم ثم ينبض */}
-        <span className={`num ${danger ? 'is-danger' : ''}`} dir="ltr" key={danger ? `t${timer.left}` : 'n'}>{timer.left}</span>
+        <span data-design-id="timer" className={`num ${danger ? 'is-danger' : ''}`} dir="ltr" key={danger ? `t${timer.left}` : 'n'}>{timer.left}</span>
         <span className="muted count" key={`c${okCount}`}>✅ {okCount}</span>
-        <Button size="sm" variant="ghost" onClick={onEnd}>إنهاء</Button>
+        <Button size="sm" variant="ghost" data-design-id="continue" data-design-required="true" onClick={onEnd}>إنهاء</Button>
       </div>
-      <div className="jabeen-word"><span key={state.item ? state.item.id : 'none'}>{state.item ? state.item.text : '…'}</span></div>
-      <div className="jabeen-controls">
+      <div data-design-id="word" className="jabeen-word"><span key={state.item ? state.item.id : 'none'}>{state.item ? state.item.text : '…'}</span></div>
+      <div data-design-id="controls" className="jabeen-controls">
         {tiltLive && <p className="jabeen-hint">{tilt.calibrated ? 'أَمِل للأسفل = صح · للأعلى = تخطي — أو استخدم الزرين.' : 'ثبّت الجوال على جبينك لحظة… تُعاير الحركة.'}</p>}
-        {tiltLost && <Button size="sm" variant="ghost" onClick={() => { tilt.retry(); }}>إعادة تفعيل الميلان</Button>}
+        {tiltLost && <Button data-design-id="tilt-retry" size="sm" variant="ghost" onClick={() => { tilt.retry(); }}>إعادة تفعيل الميلان</Button>}
         <div className="jabeen-touch">
-          <button type="button" className="ok" onClick={() => onAnswer(true)}><span aria-hidden="true">✅</span>صح</button>
-          <button type="button" className="skip" onClick={() => onAnswer(false)}><span aria-hidden="true">⏭</span>تخطي</button>
+          <button type="button" data-design-id="correct" className="ok" onClick={() => onAnswer(true)}><span aria-hidden="true">✅</span>صح</button>
+          <button type="button" data-design-id="skip" className="skip" onClick={() => onAnswer(false)}><span aria-hidden="true">⏭</span>تخطي</button>
         </div>
       </div>
     </div>
   );
 }
 
-export function Game({ api, players, onExit, savedSession = null }) {
+export function Game({ api, players, onExit, savedSession = null, designPreviewState = null }) {
   // لقطة محفوظة صالحة تعيد الحالة والمصدر بنفس البذرة والموضع؛ وإلا مباراة جديدة.
   const saved = useMemo(() => restoreSession(savedSession, categories), [savedSession]);
   const seed = useRef(saved ? saved.seed : randomSeed());
@@ -86,7 +86,7 @@ export function Game({ api, players, onExit, savedSession = null }) {
     if (saved) itemSource.seek(saved.cursor);
     return itemSource;
   }, [category, random, api.storage, saved]);
-  const [state, dispatch] = useReducer(reduce, undefined, () => (saved ? saved.state : initialState(players, category, options)));
+  const [state, dispatch] = useReducer(reduce, undefined, () => (designPreviewState || (saved ? saved.state : initialState(players, category, options))));
   const profileSession = useRef(saved ? saved.profileSession || null : api.matchSnapshot?.() || null);
   const timeLeftRef = useRef(saved?.timeLeft ?? null);
   const resumeLeft = useRef(saved?.timeLeft ?? null);
@@ -98,7 +98,7 @@ export function Game({ api, players, onExit, savedSession = null }) {
   const [landscape, setLandscape] = useState(true);
   const [flash, setFlash] = useState('');
   const flashTimer = useRef(null);
-  const timer = useTimer({ seconds: state.seconds, onEnd: () => { api.sound.play('buzzer'); api.haptics.vibrate('warning'); dispatch({ type: 'TIME_UP' }); } });
+  const timer = useTimer({ frozen: !!api.designPreview, seconds: state.seconds, onEnd: () => { api.sound.play('buzzer'); api.haptics.vibrate('warning'); dispatch({ type: 'TIME_UP' }); } });
   // آخر خمس ثوانٍ تُسمع (tick ثم tickFast) وتهتز، وعدّ 3-2-1 عند العودة من الإخفاء أو من وضع الجوال عموديًا.
   useTimerCues(timer, api);
 
@@ -159,22 +159,22 @@ export function Game({ api, players, onExit, savedSession = null }) {
   const entrant = state.phase === 'over' ? null : currentEntrant(state);
 
   return (
-    <Screen className="jabeen" aria-label="على جبينك">
+    <Screen data-design-screen={`jabeen.${state.phase}`} className="jabeen" aria-label="على جبينك">
       <style>{css}</style>
       {state.phase === 'intro' && (
-        <div className="jabeen-intro">
+        <div data-design-id="intro" className="jabeen-intro">
           <div className="big clay-stage" aria-hidden="true"><span className="clay-lift"><Avatar player={entrant} /></span></div>
           <h2>دور {entrant.name}</h2>
           <p className="muted">فئة «{state.categoryName}» · {state.seconds} ثانية</p>
           <p className="muted">ضع الجوال على جبينك والشاشة نحو الآخرين. هم يصفون وأنت تخمّن.</p>
           {tilt.needsPermission && <p className="jabeen-perm">قد يطلب جهازك إذن استخدام مستشعر الحركة عند البدء. إن رفضت، يمكنك اللعب باللمس.</p>}
           {exhausted && <p className="jabeen-perm">انتهت كلمات «{state.categoryName}» — سنعيد خلطها من جديد ليكمل كل لاعب دوره.</p>}
-          <Button variant="accent" size="lg" full className="is-armed" onClick={async () => { await tilt.request(); tilt.recalibrate(); api.sound.play('whoosh'); const draw = drawForTurn(); dispatch({ type: 'BEGIN', item: draw.item, recycled: draw.recycled }); }}>ابدأ الجولة</Button>
+          <Button data-design-id="start" data-design-required="true" variant="accent" size="lg" full className="is-armed" onClick={async () => { await tilt.request(); tilt.recalibrate(); api.sound.play('whoosh'); const draw = drawForTurn(); dispatch({ type: 'BEGIN', item: draw.item, recycled: draw.recycled }); }}>ابدأ الجولة</Button>
         </div>
       )}
       {state.phase === 'play' && (
         <>
-          {!landscape && <div className="jabeen-rotate" style={{ animation: 'none' }}><div><div className="big" aria-hidden="true">📱</div><p style={{ marginTop: 14, fontWeight: 800 }}>أدر الجوال أفقيًا</p><p className="muted">أسهل في القراءة من بعيد.</p><Button variant="ghost" onClick={() => setLandscape(true)}>تخطي هذا التنبيه</Button></div></div>}
+          {!landscape && <div data-design-id="rotate" data-design-required="true" className="jabeen-rotate" style={{ animation: 'none' }}><div><div className="big" aria-hidden="true">📱</div><p style={{ marginTop: 14, fontWeight: 800 }}>أدر الجوال أفقيًا</p><p className="muted">أسهل في القراءة من بعيد.</p><Button data-design-id="continue" data-design-required="true" variant="ghost" onClick={() => setLandscape(true)}>تخطي هذا التنبيه</Button></div></div>}
           <Stage state={state} timer={timer} tilt={tilt} flash={flash} blocked={!landscape} onAnswer={answer} onEnd={() => { timer.pause(); dispatch({ type: 'TIME_UP' }); }} />
           <ResumeCountdown resuming={timer.resuming} />
         </>
@@ -183,24 +183,24 @@ export function Game({ api, players, onExit, savedSession = null }) {
         <div className="stack">
           <h2 className="center" style={{ fontSize: 26, fontWeight: 900 }}>نتيجة {entrant.name}</h2>
           <p className="center muted">{state.results.filter((r) => r.ok).length} من {state.results.length} — المس أي كلمة لتصحيحها.</p>
-          <div className="jabeen-review">
+          <div data-design-id="results" className="jabeen-review">
             {state.results.map((r, i) => (
-              <button key={`${r.itemId}-${i}`} type="button" className={r.ok ? 'ok' : ''} aria-pressed={r.ok} onClick={() => dispatch({ type: 'TOGGLE_RESULT', index: i })}>
+              <button data-design-id="option" key={`${r.itemId}-${i}`} type="button" className={r.ok ? 'ok' : ''} aria-pressed={r.ok} onClick={() => dispatch({ type: 'TOGGLE_RESULT', index: i })}>
                 <span className="mark" aria-hidden="true" key={String(r.ok)}>{r.ok ? '✓' : '—'}</span><span className="grow">{r.text}</span>
               </button>
             ))}
             {state.results.length === 0 && <p className="muted center">لم تُعرض كلمات في هذه الجولة.</p>}
           </div>
           {state.recycled && <p className="center muted">أُعيد خلط كلمات «{state.categoryName}» بعد نفادها، فقد تتكرر كلمة مع لاعب سابق.</p>}
-          <Button variant="accent" size="lg" full onClick={() => { api.sound.play('pop'); const n = state.results.filter((r) => r.ok).length; if (api.toast) api.toast(`+${n} لـ ${entrant.name}`, { kind: 'success' }); dispatch({ type: 'CONFIRM' }); }}>{state.turn === state.entrants.length - 1 ? 'النتائج النهائية' : 'اللاعب التالي'}</Button>
+          <Button data-design-id="continue" data-design-required="true" variant="accent" size="lg" full onClick={() => { api.sound.play('pop'); const n = state.results.filter((r) => r.ok).length; if (api.toast) api.toast(`+${n} لـ ${entrant.name}`, { kind: 'success' }); dispatch({ type: 'CONFIRM' }); }}>{state.turn === state.entrants.length - 1 ? 'النتائج النهائية' : 'اللاعب التالي'}</Button>
         </div>
       )}
       {state.phase === 'over' && (
         <div className="stack">
-          <Podium entries={standings(state)} />
-          <Button variant="accent" size="lg" full onClick={() => { api.sound.play('whoosh'); api.restart(); }}>العب مرة أخرى</Button>
-          <Button variant="secondary" full onClick={api.backToSetup}>تغيير اللاعبين أو الفئة</Button>
-          <Button variant="ghost" full onClick={onExit}>العودة للمنصة</Button>
+          <Podium data-design-id="podium" entries={standings(state)} />
+          <Button data-design-id="restart" variant="accent" size="lg" full onClick={() => { api.sound.play('whoosh'); api.restart(); }}>العب مرة أخرى</Button>
+          <Button variant="secondary" full data-design-id="options" onClick={api.backToSetup}>تغيير اللاعبين أو الفئة</Button>
+          <Button variant="ghost" full data-design-id="exit" data-design-required="true" onClick={onExit}>العودة للمنصة</Button>
         </div>
       )}
     </Screen>

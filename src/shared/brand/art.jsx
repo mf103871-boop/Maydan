@@ -48,9 +48,9 @@ export function ClayStage({ className = '', idle = false, react = '', as: Tag = 
   </Tag>;
 }
 
-export function AvatarPicker({ value, onChange }) {
-  return <div className="avatar-picker" role="group" aria-label="اختر شخصيتك">{AVATAR_OPTIONS.map((option) => (
-    <button key={option.emoji} type="button" className={`avatar-choice ${value === option.emoji ? 'selected' : ''}`} aria-label={option.label} aria-pressed={value === option.emoji} onClick={() => onChange(option.emoji)}>
+export function AvatarPicker({ value, onChange, ...rest }) {
+  return <div data-design-id="avatar-picker" className="avatar-picker" role="group" aria-label="اختر شخصيتك" {...rest}>{AVATAR_OPTIONS.map((option) => (
+    <button key={option.emoji} type="button" data-design-id="avatar-choice" className={`avatar-choice ${value === option.emoji ? 'selected' : ''}`} aria-label={option.label} aria-pressed={value ===option.emoji} onClick={() => onChange(option.emoji)}>
       <ClayStage className="clay-static"><Avatar index={option.index} /></ClayStage>
     </button>
   ))}</div>;

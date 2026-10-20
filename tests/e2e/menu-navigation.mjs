@@ -75,6 +75,8 @@ const server = http.createServer(async (req, res) => {
 await new Promise(resolve => server.listen(0, '127.0.0.1', resolve));
 const origin = `http://127.0.0.1:${server.address().port}`;
 const out = path.resolve(process.env.MENU_NAV_SCREENSHOT_DIR || '.cache/menu-nav-e2e'); await fs.mkdir(out, { recursive: true });
+const nativeBackScript = (await fs.readFile('ios/Maydan/GameViewController.swift', 'utf8')).match(/private func invokeWebBack\(\)[\s\S]*?let script = "([^"]+)"/)?.[1];
+assert.ok(nativeBackScript, 'test exercises the exact native Back entry point');
 const nav = page => page.getByTestId('menu-navigation');
 const settle = page => page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(() => requestAnimationFrame(resolve)))));
 const tab = (page, name) => nav(page).getByRole('link').filter({ hasText: name });
@@ -192,6 +194,61 @@ async function run(browser, name) {
     await fs.writeFile(path.join(out, `${name}-failure.json`), JSON.stringify(await page.evaluate(() => ({ hash: location.hash, scrollY, ui: window.fixture?.getUI(), media: window.fixture?.getMedia(), viewport: { width: visualViewport.width, height: visualViewport.height }, nodes: [...document.querySelectorAll('[data-testid="menu-navigation"],.lamma-page-panel,.lamma-list-scroll,.call-dock-viewport,.call-dock')].map(el => ({ tag: el.className, hidden: el.hidden, rect: el.getBoundingClientRect().toJSON(), display: getComputedStyle(el).display, height: getComputedStyle(el).height, paddingBottom: getComputedStyle(el).paddingBottom, scrollHeight: el.scrollHeight, clientHeight: el.clientHeight })) })), null, 2)); throw error;
   } finally { await context.close(); }
 }
+async function runGameplayBack(browser, name, native = false) {
+  const label = name + (native ? '-native' : '');
+  const context = await browser.newContext({ viewport: { width: 390, height: 844 }, locale: 'ar', isMobile: true, hasTouch: true, reducedMotion: 'reduce' });
+  const page = await context.newPage(), errors = [];
+  page.setDefaultTimeout(9000); page.on('pageerror', error => errors.push(error.message));
+  await page.route('**/*', request => new URL(request.request().url()).origin === origin ? request.continue() : request.abort());
+  await context.addInitScript(() => localStorage.setItem('maydan:beep:options', JSON.stringify({ mode: 'three', seconds: 10, rounds: 3 })));
+  try {
+    await page.goto(origin + '/#/game/beep'); await nav(page).waitFor(); await page.getByTestId('call-dock').waitFor();
+    const pressBack = native ? async () => { assert.equal(await page.evaluate(nativeBackScript), true); } : () => page.goBack();
+    if (native) {
+      await route(page, '/settings'); await pressBack(); await page.waitForFunction(() => location.hash === '#/game/beep');
+      // A fresh document starts with one router entry: native Back must still
+      // ask the running game's guard instead of replacing it with Home.
+      await page.goto(origin + '/?nativeDirectEntry=1#/play/beep'); await page.getByTestId('call-dock').waitFor();
+      await page.evaluate(() => { window.fixtureLegacyBack = 0; window.maydanBack = () => { window.fixtureLegacyBack++; return false; }; });
+    }
+    const nativeBefore = await page.evaluate(() => nativeLog.filter(event => /socialCall(Connect|End)/.test(event.type)).length);
+    await route(page, '/play/beep'); await page.getByRole('button', { name: /^ابدأ اللعب/ }).click();
+    await page.getByRole('button', { name: 'جاهز — 10 ثوانٍ', exact: true }).click(); await page.locator('[data-design-screen="beep.three.prompt"]').waitFor();
+    const prompt = await page.locator('.beep-prompt').textContent();
+    const sameRound = async () => { assert.equal(await page.evaluate(() => location.hash), '#/play/beep'); assert.equal(await page.locator('.beep-prompt').textContent(), prompt); };
+    await page.locator('.lamma-launcher').click(); await page.getByRole('dialog', { name: 'الأصدقاء واللّمة', exact: true }).waitFor();
+    await page.getByRole('button', { name: 'أضف صديقًا', exact: true }).click(); await page.getByRole('dialog', { name: 'أضف صديقًا', exact: true }).waitFor();
+    if (native) {
+      const field = page.getByRole('textbox', { name: 'ابحث بالاسم أو رمز الصديق', exact: true });
+      await field.dispatchEvent('compositionstart', { bubbles: true }); await pressBack();
+      assert.equal(await page.getByRole('dialog', { name: 'أضف صديقًا', exact: true }).isVisible(), true, 'native Back leaves IME composition intact');
+      await field.dispatchEvent('compositionend', { bubbles: true });
+    }
+    await pressBack(); await page.getByRole('dialog', { name: 'أضف صديقًا', exact: true }).waitFor({ state: 'hidden' });
+    assert.equal(await page.getByRole('dialog', { name: 'الأصدقاء واللّمة', exact: true }).isVisible(), true, 'Back closes only the top dialog'); await sameRound();
+    await pressBack(); await page.getByRole('dialog', { name: 'الأصدقاء واللّمة', exact: true }).waitFor({ state: 'hidden' });
+    if (native) assert.equal(await page.evaluate(() => window.fixtureLegacyBack), 0, 'native layers cannot invoke Badeeha legacy Back behind an overlay');
+    await page.getByRole('heading', { name: 'اللعبة بانتظاركم', exact: true }).waitFor(); await sameRound();
+    await page.getByRole('button', { name: 'متابعة اللعب', exact: true }).click();
+    await pressBack(); const exit = page.getByRole('dialog', { name: 'الخروج من اللعبة؟', exact: true }); await exit.waitFor();
+    if (native) assert.equal(await page.evaluate(() => window.fixtureLegacyBack), 1, 'legacy game Back runs only inside the guarded GameFrame fallback');
+    await settle(page); const timer = await page.locator('[data-design-id="timer"]').textContent();
+    await page.waitForTimeout(1150); assert.equal(await page.locator('[data-design-id="timer"]').textContent(), timer, 'exit confirmation pauses the real local timer'); await sameRound();
+    await pressBack(); await exit.waitFor({ state: 'hidden' }); await sameRound();
+    await page.getByRole('button', { name: 'متابعة اللعب', exact: true }).click();
+    await page.evaluate(() => window.fixture.navigate('/play/mamnoo')); await exit.waitFor(); await sameRound();
+    await exit.getByRole('button', { name: 'متابعة اللعب', exact: true }).click(); await exit.waitFor({ state: 'hidden' }); await sameRound();
+    await page.getByRole('button', { name: 'متابعة اللعب', exact: true }).click();
+    await page.evaluate(() => window.fixture.navigate('/play/mamnoo')); await exit.waitFor(); await exit.getByRole('button', { name: 'خروج', exact: true }).click();
+    await page.waitForFunction(() => location.hash === '#/play/mamnoo'); await page.getByRole('button', { name: /^ابدأ اللعب/ }).waitFor();
+    assert.equal(await page.evaluate(() => nativeLog.filter(event => /socialCall(Connect|End)/.test(event.type)).length), nativeBefore, 'layer/game Back never reconnects or ends the call');
+    assert.deepEqual(errors, []);
+    await fs.writeFile(path.join(out, `${label}-gameplay-back.json`), JSON.stringify({ browser: name, nativeBridge: native, passed: true, actualRunningGame: 'beep', topDialogThenDrawerThenExit: true, samePromptAfterCancel: true, exitTimerPaused: true, directGameReplacementGuarded: true, callSurvives: true, completedAt: new Date().toISOString() }, null, 2));
+    console.log(`PASS ${label}: actual running Beep round retains prompt/call through modal, drawer, exit-cancel, paused confirmation and confirmed game replacement`);
+  } catch (error) { await page.screenshot({ path: path.join(out, `${label}-gameplay-back-failure.png`) }); await fs.writeFile(path.join(out, `${label}-gameplay-back-failure.txt`), await page.locator('body').innerText()); throw error; }
+  finally { await context.close(); }
+}
+
 async function runColdHydration(browser, name) {
   const context = await browser.newContext({ viewport: { width: 390, height: 844 }, locale: 'ar', isMobile: true, hasTouch: true, reducedMotion: 'reduce' });
   const tested = [];
@@ -214,8 +271,23 @@ async function runColdHydration(browser, name) {
 }
 let browser;
 try {
-  browser = await chromium.launch(process.env.CHROMIUM_PATH ? { executablePath: process.env.CHROMIUM_PATH } : {}); if (!process.env.MENU_NAV_COLD_ONLY) await run(browser, 'chromium'); await runColdHydration(browser, 'chromium'); await browser.close(); browser = null;
-  if (await fs.access(webkit.executablePath()).then(() => true, () => false)) { browser = await webkit.launch(); if (!process.env.MENU_NAV_COLD_ONLY) await run(browser, 'webkit'); await runColdHydration(browser, 'webkit'); }
+  browser = await chromium.launch(process.env.CHROMIUM_PATH ? { executablePath: process.env.CHROMIUM_PATH } : {});
+  if (!process.env.MENU_NAV_NATIVE_ONLY) {
+    if (!process.env.MENU_NAV_COLD_ONLY) await run(browser, 'chromium');
+    await runColdHydration(browser, 'chromium');
+    if (!process.env.MENU_NAV_COLD_ONLY) await runGameplayBack(browser, 'chromium');
+  }
+  if (!process.env.MENU_NAV_COLD_ONLY) await runGameplayBack(browser, 'chromium', true);
+  await browser.close(); browser = null;
+  if (await fs.access(webkit.executablePath()).then(() => true, () => false)) {
+    browser = await webkit.launch();
+    if (!process.env.MENU_NAV_NATIVE_ONLY) {
+      if (!process.env.MENU_NAV_COLD_ONLY) await run(browser, 'webkit');
+      await runColdHydration(browser, 'webkit');
+      if (!process.env.MENU_NAV_COLD_ONLY) await runGameplayBack(browser, 'webkit');
+    }
+    if (!process.env.MENU_NAV_COLD_ONLY) await runGameplayBack(browser, 'webkit', true);
+  }
   else console.log('SKIP WebKit: browser binary unavailable.');
   console.log(out);
 } finally { await browser?.close(); await new Promise(resolve => server.close(resolve)); }

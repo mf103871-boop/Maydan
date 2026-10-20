@@ -27,6 +27,9 @@ const ALIASES = { open: 'whoosh', steal: 'correct', win: 'fanfare', start: 'coun
 const LATE_MS = { default: 1200, tick: 400, tickFast: 400, countdown: 400, countdownGo: 400, timeout: 400 };
 const lateFor = (name) => LATE_MS[name] ?? LATE_MS.default;
 const RESUME_TIMEOUT_MS = 1500;
+const RECOVERY_PROBE_MS = 300;
+const RECOVERY_SETTLE_MS = 200;
+const RECOVERY_VERIFY_MS = 500;
 const CUE_IDS = Object.keys(SAMPLE_BANK);
 // Every activation of a control sounds, without wiring each handler: a capture `click`
 // listener on document plays `data-sound` (default `click`) for anything matching
@@ -61,6 +64,15 @@ export function createSound({ enabled = true, volume = 0.75, music = true, music
   let musicGain = null;
   let voiceContext = null;
   let attached = false;
+  let pageHidden = false;
+  let nativeHidden = false;
+  let interrupted = false;
+  let gestureRequired = false;
+  let hasRun = false;
+  let recoveryTimer = null;
+  let recoveryEpoch = 0;
+  let recoverySpent = false;
+  let pendingReset = false;
   // Every request and voice carries an ordinal and the wall-clock time it was asked for.
   // A full stop() voids everything asked for up to its ordinal; stop({ spare }) voids only
   // what was asked for before `spare` milliseconds ago, so a tap that changes the screen
@@ -100,7 +112,8 @@ export function createSound({ enabled = true, volume = 0.75, music = true, music
   const musicFetches = new Map();
   const musicBuffers = new Map();
   const musicDecodes = new Map();
-  const hidden = () => typeof document !== 'undefined' && document.hidden;
+  const pageUnavailable = () => pageHidden || nativeHidden || (typeof document !== 'undefined' && document.hidden);
+  const hidden = () => pageUnavailable() || interrupted || gestureRequired;
   const canPlay = () => on && level > 0 && !hidden();
   const canPlayMusic = () => on && musicOn && musicLevel > 0 && !hidden();
   // Per cue when named, the whole bank otherwise.
@@ -334,6 +347,7 @@ export function createSound({ enabled = true, volume = 0.75, music = true, music
       musicToken += 1;
       return;
     }
+    if (playing?.done) playing = null;
     if (playing?.id === musicWanted || Date.now() < stingHold) return;
     const id = musicWanted;
     const c = getContext();
@@ -384,17 +398,30 @@ export function createSound({ enabled = true, volume = 0.75, music = true, music
     unlockWaiters = [];
     clearTimeout(unlockTimer); unlockTimer = null;
     const ok = !!context && context.state === 'running';
+    hasRun ||= ok;
     for (const resolve of waiters) resolve(ok);
   }
-  function onStateChange() {
-    if (context?.state === 'running') settleUnlock();
+  function onStateChange(c) {
+    if (c !== context) return;
+    if (c.state === 'closed') {
+      if (!recoverySpent && on && !hidden()) recoverAudio();
+      return;
+    }
+    if (recoverySpent && c.state !== 'running') { mix(); return; }
+    if (c.state === 'running') { hasRun = true; settleUnlock(); }
     mix(); syncMusic();
+    // A late suspend can finish after the foreground resume. Repair that race too,
+    // without recursively resuming every statechange or fighting an OS interruption.
+    if (c.state !== 'running' && on && !hidden() && hasRun) recoverAudio();
   }
   function getContext() {
+    if (pendingReset && on && !hidden()) return replaceContext();
     if (context && context.state !== 'closed') return context;
+    if (context && recoverySpent) return null;
     try {
       const AC = typeof window !== 'undefined' && (window.AudioContext || window.webkitAudioContext);
       if (!AC) return null;
+      if (context) { context.onstatechange = null; recoverySpent = true; }
       stop(); haltMusic(); buffers.clear(); decodes.clear(); musicBuffers.clear(); musicDecodes.clear(); bankDecode = null; settleUnlock();
       context = new AC({ latencyHint: 'interactive' });
       master = context.createGain();
@@ -416,7 +443,9 @@ export function createSound({ enabled = true, volume = 0.75, music = true, music
       master.gain.value = canPlay() ? level * level * (ducked ? 0.3 : 1) : 0;
       // iOS moves the context to "interrupted" during a call and back; resolve waiters
       // the moment it runs again instead of trusting a resume() promise that may never settle.
-      try { context.onstatechange = onStateChange; } catch { /* read-only in a fake */ }
+      const c = context;
+      hasRun ||= c.state === 'running';
+      try { c.onstatechange = () => onStateChange(c); } catch { /* read-only in a fake */ }
       return context;
     } catch {
       try { Promise.resolve(context?.close()).catch(() => {}); } catch { /* unavailable */ }
@@ -428,9 +457,10 @@ export function createSound({ enabled = true, volume = 0.75, music = true, music
   // or after RESUME_TIMEOUT_MS with the truth. WebKit only honours resume() issued inside a
   // user gesture, so every caller asks again rather than waiting on an earlier attempt.
   function unlock() {
+    if (hidden()) return Promise.resolve(false);
     const c = getContext();
     if (!c) return Promise.resolve(false);
-    if (c.state === 'running') return Promise.resolve(true);
+    if (c.state === 'running') { hasRun = true; return Promise.resolve(true); }
     try { Promise.resolve(c.resume()).then(() => { if (c === context && c.state === 'running') settleUnlock(); }, () => {}); } catch { /* unavailable */ }
     return new Promise((resolve) => {
       unlockWaiters.push(resolve);
@@ -444,23 +474,113 @@ export function createSound({ enabled = true, volume = 0.75, music = true, music
     const decoded = name ? decodeCue(c, CUE_SAMPLES[name]).then((ok) => { void decodeBank(c); return ok; }) : decodeBank(c);
     return Promise.all([unlock(), decoded]).then(([running, ok]) => running && ok && c === context);
   }
+  function cancelRecovery() {
+    recoveryEpoch += 1;
+    clearTimeout(recoveryTimer); recoveryTimer = null;
+  }
+  function replaceContext() {
+    const c = context;
+    pendingReset = false; recoverySpent = true;
+    // Retire the listener before close(): a queued event from the old graph must
+    // never rebuild a disposed bus or settle a newer graph's unlock waiters.
+    if (c) c.onstatechange = null;
+    stop(); haltMusic();
+    context = null; master = null; musicGain = null; voiceContext = null;
+    buffers.clear(); decodes.clear(); musicBuffers.clear(); musicDecodes.clear(); bankDecode = null;
+    settleUnlock();
+    try { Promise.resolve(c?.close()).catch(() => {}); } catch { /* already closed */ }
+    return getContext();
+  }
+  // WebKit can say "running" while its clock is frozen, or leave resume() pending
+  // forever after backgrounding. Probe actual progress, then try one suspend/resume
+  // cycle and at most one replacement. No polling loop, replay of old cues or changes
+  // to the player's sound/music settings. Encoded assets survive graph replacement.
+  function recoverAudio({ reset = false, renew = false } = {}) {
+    if (reset) pendingReset = true;
+    if (!on || hidden()) return;
+    if (renew && !recoveryTimer) recoverySpent = false;
+    if (recoverySpent && !pendingReset) return;
+    if (pendingReset) cancelRecovery();
+    const c = getContext();
+    if (!c) return;
+    void unlock(); mix(); syncMusic(0.4);
+    if (recoveryTimer || !hasRun || recoverySpent) return;
+    const epoch = recoveryEpoch;
+    const valid = () => epoch === recoveryEpoch && c === context && on && !hidden();
+    const advancing = (time) => c.state === 'running' && c.currentTime > time + 0.01;
+    const before = c.currentTime;
+    recoveryTimer = setTimeout(() => {
+      recoveryTimer = null;
+      if (!valid() || advancing(before)) return;
+      try { Promise.resolve(c.suspend()).catch(() => {}); } catch { /* unavailable */ }
+      recoveryTimer = setTimeout(() => {
+        recoveryTimer = null;
+        if (!valid()) return;
+        const retriedAt = c.currentTime;
+        void unlock();
+        recoveryTimer = setTimeout(() => {
+          recoveryTimer = null;
+          if (!valid() || advancing(retriedAt)) return;
+          const fresh = replaceContext();
+          if (fresh) { void decodeBank(fresh); void unlock(); mix(); syncMusic(0.4); }
+        }, RECOVERY_VERIFY_MS);
+      }, RECOVERY_SETTLE_MS);
+    }, RECOVERY_PROBE_MS);
+  }
+  function pauseAudio() {
+    cancelRecovery(); stop(); mix();
+    try { Promise.resolve(context?.suspend()).catch(() => {}); } catch { /* unavailable */ }
+  }
   function onVisibility() {
     if (hidden()) {
-      stop(); mix();
-      try { Promise.resolve(context?.suspend()).catch(() => {}); } catch { /* unavailable */ }
+      pauseAudio();
     } else {
-      // Ask to run again (it works outside a gesture on most engines; a gesture will
-      // repeat the request otherwise) and let the music gain climb back with a short fade.
-      try { Promise.resolve(context?.resume()).then(() => { if (context?.state === 'running') settleUnlock(); }, () => {}); } catch { /* unavailable */ }
-      mix(); syncMusic(0.4);
+      recoverAudio({ renew: true });
+    }
+  }
+  function onPageHide() { pageHidden = true; pauseAudio(); }
+  function onPageShow() { pageHidden = false; onVisibility(); }
+  function onNativeAudio(event) {
+    const detail = event?.detail || {};
+    if (detail.state === 'background') { nativeHidden = true; pauseAudio(); }
+    else if (detail.state === 'foreground') { nativeHidden = false; pageHidden = false; gestureRequired ||= detail.shouldResume === false; onVisibility(); }
+    else if (detail.state === 'interruption-began') { interrupted = true; pauseAudio(); }
+    else if (detail.state === 'interruption-ended') {
+      interrupted = false; gestureRequired ||= detail.shouldResume === false;
+      onVisibility();
+    } else if (detail.state === 'media-reset') {
+      interrupted = false; gestureRequired ||= detail.shouldResume === false;
+      recoverAudio({ reset: true });
+    }
+    else if (detail.state === 'session-restored') {
+      if (detail.shouldResume === false) { gestureRequired = true; pauseAudio(); }
+      else {
+        // CallKit activation and an explicit native baseline restore need not be
+        // paired with interruption-ended. Native true confirms the OS session is
+        // available; any earlier sticky user-gesture hold still remains in force.
+        if (detail.shouldResume === true) interrupted = false;
+        recoverAudio({ renew: true });
+      }
     }
   }
   function onGesture() {
+    if (pageUnavailable() || interrupted || !on) return;
+    if (!recoveryTimer) recoverySpent = false;
+    const needsNativeActivation = gestureRequired;
+    gestureRequired = false;
+    if (needsNativeActivation) {
+      // A system interruption or unplugged headset can leave the shared iPhone
+      // session inactive. Only this explicit gesture may ask native to restore it;
+      // native still refuses while a call/recording or OS interruption owns audio.
+      try { window.webkit?.messageHandlers?.maydan?.postMessage({ type: 'gameAudioResume' }); } catch { /* web or older shell */ }
+    }
     const c = getContext();
     if (!c) return;
+    hasRun ||= c.state === 'running';
     if (c.state !== 'running') { try { Promise.resolve(c.resume()).then(() => { if (c === context && c.state === 'running') settleUnlock(); }, () => {}); } catch { /* unavailable */ } }
     void decodeBank(c);
-    syncMusic();
+    mix(); syncMusic();
+    if (c.state !== 'running') recoverAudio();
   }
   function tapTarget(event) {
     const target = event?.target;
@@ -498,17 +618,27 @@ export function createSound({ enabled = true, volume = 0.75, music = true, music
     for (const type of GESTURE_EVENTS) document.addEventListener(type, onGesture, type.startsWith('touch') ? { capture: true, passive: true } : true);
     document.addEventListener('click', onTap, true);
     document.addEventListener('visibilitychange', onVisibility);
+    window.addEventListener?.('pagehide', onPageHide);
+    window.addEventListener?.('pageshow', onPageShow);
+    window.addEventListener?.('focus', onVisibility);
+    window.addEventListener?.('maydan-audio-lifecycle', onNativeAudio);
   }
   function dispose() {
+    cancelRecovery();
     stop(); haltMusic(); buffers.clear(); decodes.clear(); musicBuffers.clear(); musicDecodes.clear(); bankDecode = null;
     clearTimeout(tap.timer); tap.pending = null;
     if (attached) {
       for (const type of GESTURE_EVENTS) document.removeEventListener(type, onGesture, true);
       document.removeEventListener('click', onTap, true);
       document.removeEventListener('visibilitychange', onVisibility);
+      window.removeEventListener?.('pagehide', onPageHide);
+      window.removeEventListener?.('pageshow', onPageShow);
+      window.removeEventListener?.('focus', onVisibility);
+      window.removeEventListener?.('maydan-audio-lifecycle', onNativeAudio);
       attached = false;
     }
     const c = context;
+    if (c) c.onstatechange = null;
     context = null; master = null; musicGain = null; voiceContext = null; settleUnlock();
     try { Promise.resolve(c?.close()).catch(() => {}); } catch { /* already closed */ }
   }
@@ -574,7 +704,7 @@ export function createSound({ enabled = true, volume = 0.75, music = true, music
     get enabled() { return on; },
     get volume() { return level; },
     get ready() { return ready(); },
-    enable(value) { on = !!value; if (!on) stop(); mix(); syncMusic(); },
+    enable(value) { on = !!value; if (!on) { cancelRecovery(); stop(); } else if (pendingReset) recoverAudio({ renew: true }); mix(); syncMusic(); },
     setVolume(value) { level = clampVolume(value); if (!level) stop(); mix(); },
     setDucking(value, owner = 'question-media') { if (value) duckOwners.add(owner); else duckOwners.delete(owner); ducked = duckOwners.size > 0; mix(); },
     attach, dispose, stop, unlock, synth,

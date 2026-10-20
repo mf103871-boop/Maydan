@@ -15,14 +15,14 @@ const Section = ({ title, children }) => (
 
 function Contact() {
   return SUPPORT_EMAIL
-    ? <p className="card-muted">للتواصل: <a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a>.</p>
+    ? <p className="card-muted">للتواصل: <a data-design-id="support-link" href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a>.</p>
     : <p className="card-muted">للتواصل: عبر صفحة الدعم المرتبطة بالتطبيق في المتجر.</p>;
 }
 
 export function Terms() {
   return (
-    <Screen dir={getDirection()} className="stack legal" aria-label="شروط الاستخدام">
-      <TopBar title="شروط الاستخدام" eyebrow="ميدان" start={<IconButton label="رجوع" onClick={back}><IconBack /></IconButton>} />
+    <Screen data-design-screen="legal" dir={getDirection()} className="stack legal" aria-label="شروط الاستخدام">
+      <TopBar data-design-id="topbar" title="شروط الاستخدام" eyebrow="ميدان" start={<IconButton data-design-id="back" label="رجوع" onClick={back}><IconBack /></IconButton>} />
       <p className="muted" style={{ fontSize: 13 }}>آخر تحديث: {LEGAL_UPDATED}</p>
       <Section title="الخدمة">
         <p className="card-muted">ميدان منصة ألعاب جماعية عربية. باستخدامك التطبيق أو الموقع توافق على هذه الشروط. الألعاب مخصصة للتسلية بين الأصدقاء والعائلة، ولا تُقدَّم أي ضمانات بخصوص دقة محتوى الأسئلة.</p>
@@ -34,7 +34,7 @@ export function Terms() {
         <p className="card-muted">{PLUS_NAME} اشتراك يفتح كل فئات بَديهة، ومباريات بلا حدود في بقية الألعاب، وإنشاء غرف جماعية بلا حدود. تُعرض الخطط المتاحة وأسعارها ومدة كل منها قبل الشراء.</p>
         <p className="card-muted">يتجدد الاشتراك تلقائيًا ما لم يُلغَ وفق الموعد والشروط المعروضة لدى مزوّد الدفع. يُدار الاشتراك ويُلغى من حساب App Store عند الشراء داخل تطبيق iOS، أو من بوابة إدارة الاشتراك عند الشراء عبر الموقع. إلغاء التجديد يبقي الوصول حتى نهاية الفترة المدفوعة، ما لم تُسترد الدفعة أو يُسحب الاستحقاق.</p>
         <p className="card-muted">يعمل الاشتراك على كل أجهزتك متى سجّلت الدخول بالحساب نفسه. المشتريات عبر App Store تخضع لشروط Apple، وطلبات الاسترداد تُقدَّم إلى Apple مباشرة.</p>
-        <p className="card-muted">توضح <a href={`${PUBLIC_SITE_ORIGIN}/refunds/`}>سياسة الاسترداد</a> إجراءات طلب استرداد مشتريات الموقع والتطبيق، والفرق بين الاسترداد وإلغاء التجديد.</p>
+        <p className="card-muted">توضح <a data-design-id="refunds-link" href={`${PUBLIC_SITE_ORIGIN}/refunds/`}>سياسة الاسترداد</a> إجراءات طلب استرداد مشتريات الموقع والتطبيق، والفرق بين الاسترداد وإلغاء التجديد.</p>
       </Section>
       <Section title="المحتوى المجاني">
         <p className="card-muted">عشر فئات في بَديهة مجانية دائمًا، وكل لعبة أخرى تُلعب مباراة كاملة واحدة مجانًا على الجهاز أو الحساب. الدخول إلى الغرف الجماعية برمز مجاني دائمًا.</p>
@@ -55,8 +55,8 @@ export function Terms() {
 
 export function Privacy() {
   return (
-    <Screen dir={getDirection()} className="stack legal" aria-label="سياسة الخصوصية">
-      <TopBar title="سياسة الخصوصية" eyebrow="ميدان" start={<IconButton label="رجوع" onClick={back}><IconBack /></IconButton>} />
+    <Screen data-design-screen="legal" dir={getDirection()} className="stack legal" aria-label="سياسة الخصوصية">
+      <TopBar data-design-id="topbar" title="سياسة الخصوصية" eyebrow="ميدان" start={<IconButton data-design-id="back" label="رجوع" onClick={back}><IconBack /></IconButton>} />
       <p className="muted" style={{ fontSize: 13 }}>آخر تحديث: {LEGAL_UPDATED}</p>
       <Section title="ما نجمعه">
         <p className="card-muted"><b>ألعاب الجهاز الواحد بلا حساب:</b> تُحفظ أسماء اللاعبين والنتائج والإعدادات على جهازك. عند استخدام الغرف عبر الإنترنت تُرسل بيانات الجلسة الموضحة أدناه إلى الخادم حتى لو لم تسجّل الدخول.</p>

@@ -7,7 +7,7 @@ import { useRoute } from '../platform/router.js';
 import { createStorage } from '../shared/lib/storage.js';
 import { LocalSessionRecorder } from './record-session.js';
 
-const ProfileContext = createContext(null);
+export const ProfileContext = createContext(null);
 export const useProfiles = () => useContext(ProfileContext);
 const METHODS = ['loadProfile', 'saveProfile', 'uploadImage', 'removeImage', 'beginSession', 'completeSession'];
 export function ProfileProvider({ children }) {

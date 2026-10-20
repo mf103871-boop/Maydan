@@ -1,10 +1,10 @@
-import React, { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
+import React, { createContext, useCallback, useContext, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import { useAccount } from '../shared/account/context.js';
 import { socialInterruption } from './interruption.js';
-import { back as routeBack, getPreviousPath, navigate, useRoute } from '../platform/router.js';
+import { back as routeBack, getPreviousPath, navigate, registerBackLayer, useRoute } from '../platform/router.js';
 import { socialListTab, socialPagePath, socialPageView, usesSocialDrawer } from './social-navigation.js';
 
-const SocialUIContext = createContext(null);
+export const SocialUIContext = createContext(null);
 export const useSocialUI = () => useContext(SocialUIContext);
 export const conversationDraftKey = (kind, id) => `${kind}:${id}`;
 const favoritesKey = accountKey => `maydan:social-ui:favorites:${encodeURIComponent(accountKey)}`;
@@ -77,6 +77,7 @@ function AccountSocialUI({ children, accountKey }) {
   // Closing is a drawer action. A game invitation may already have navigated to
   // its room before calling close, so it must never navigate away from the room.
   const close = useCallback(() => setSurface(current => ({ ...current, drawerOpen: false })), []);
+  useLayoutEffect(()=>drawerOpen?registerBackLayer(close,{priority:10}):undefined,[drawerOpen,close]);
   const back = useCallback(() => {
     if (surface.path === route.path && surface.history.length) {
       setSurface(current => ({ ...current, view: current.history.at(-1), history: current.history.slice(0, -1) }));

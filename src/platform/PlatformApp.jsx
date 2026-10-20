@@ -1,7 +1,7 @@
 // غلاف المنصة: المزوّدون (صوت/اهتزاز/تخزين/دفتر اللاعبين/إعدادات)، الموجّه، وانتقالات الشاشات.
 import React, { useEffect, useMemo, useState, useCallback, useRef } from 'react';
 import { PlatformContext, usePlatform } from './context.js';
-import { useRoute, navigate, getDirection, getRoute } from './router.js';
+import { useRoute, navigate, getDirection, getRoute, installNativeBackBridge } from './router.js';
 import { getGame } from './registry.js';
 import { createStorage, clearAllPlatformData } from '../shared/lib/storage.js';
 import { ACCOUNT_PREFIX } from '../shared/account/store.js';
@@ -37,6 +37,7 @@ import { CallViewport } from '../social/CallViewport.jsx';
 import { ProfileProvider } from '../profiles/ProfileProvider.jsx';
 import { ProfileScreen } from '../profiles/ProfileScreen.jsx';
 import { ModerationScreen } from '../moderation/ModerationScreen.jsx';
+import { DesignRuntime } from '../design/DesignRuntime.jsx';
 
 export const VERSION = typeof __MAYDAN_VERSION__ !== 'undefined' ? __MAYDAN_VERSION__ : '1.0.0';
 const platformStorage = createStorage('platform');
@@ -122,6 +123,7 @@ function Shell() {
   const route = useRoute();
   const { settings, setSettings, sound, confetti, toast } = usePlatform();
   const [booted, setBooted] = useState(false);
+  useEffect(() => installNativeBackBridge(), []);
   useEffect(() => {
     const game = (route.name === 'game' || route.name === 'play') ? getGame(route.params.id) : null;
     const title = game ? game.name : SCREEN_TITLES[route.name];
@@ -192,7 +194,7 @@ export function PlatformApp() {
   return (
     <ToastProvider>
       <Providers>
-        <Shell />
+        <DesignRuntime><Shell /></DesignRuntime>
       </Providers>
     </ToastProvider>
   );

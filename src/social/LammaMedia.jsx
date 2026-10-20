@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react';
-import { createVoiceRecorder } from './media.js';
+import { createVoiceRecorder, audioActivity } from './media.js';
 import { validCode } from '../online/shared.js';
 import { useAccount } from '../shared/account/context.js';
 import { useLamma } from './LammaProvider.jsx';
@@ -25,7 +25,7 @@ export function LammaIcon({ name, size = 22 }) {
   return <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d={PATHS[name] || PATHS.chat} /></svg>;
 }
 export function LammaButton({ label, icon, children, className = '', ...props }) {
-  return <button type="button" className={'lamma-icon-button ' + className} aria-label={label} title={label} {...props}><LammaIcon name={icon} />{children}</button>;
+  return <button type="button" data-design-id={props['data-design-id'] || ({ mic:'record', muted:'mute', phone:'call', end:'end-call', people:'members', chat:'friend-chat', game:'game-invite', bell:'preferences', plus:'add-friend', close:'close', back:'back', search:'search', more:'menu', send:'send', stop:'record-stop', play:'voice-play', pause:'voice-play', settings:'preferences', star:'favorite', shield:'report' })[icon]} className={'lamma-icon-button ' + className} aria-label={label} title={label} {...props}><LammaIcon name={icon} />{children}</button>;
 }
 export const mediaError = error => error?.message && /[\u0600-\u06ff]/.test(error.message) ? error.message : 'تعذّر تشغيل الصوت. تحقق من إذن الميكروفون وحاول مجددًا.';
 export const durationLabel = value => `${Math.floor(Math.max(0, value || 0) / 60000)}:${String(Math.floor(Math.max(0, value || 0) / 1000) % 60).padStart(2, '0')}`;
@@ -41,14 +41,15 @@ export function VoiceRecorder({ onSend, disabled, unavailableReason, onError }) 
   const stopping = useRef(false);
   const session = useRef(0);
   const previewPlayer = useRef(null);
-  const attachPreview = useCallback(element => { if (previewPlayer.current && previewPlayer.current !== element) previewPlayer.current.pause(); previewPlayer.current = element; }, []);
+  const previewOwner = useRef(`voice-preview-${globalThis.crypto.randomUUID()}`);
+  const attachPreview = useCallback(element => { if (previewPlayer.current && previewPlayer.current !== element) { previewPlayer.current.pause(); audioActivity(previewOwner.current, false); } previewPlayer.current = element; }, []);
   const liveCalls = useRef(new Set());
   const [phase, setPhase] = useState('idle');
   const [elapsed, setElapsed] = useState(0);
   const [clip, setClip] = useState(null);
   const [preview, setPreview] = useState('');
   const pauseForCall = useCallback(() => {
-    previewPlayer.current?.pause(); ++session.current; recorder.current?.cancel(); recorder.current = null;
+    previewPlayer.current?.pause(); audioActivity(previewOwner.current, false); ++session.current; recorder.current?.cancel(); recorder.current = null;
     setPhase(value => ['recording', 'starting'].includes(value) ? 'idle' : value);
   }, []);
   useLayoutEffect(() => { if (callActive) pauseForCall(); }, [callActive, pauseForCall]);
@@ -60,9 +61,9 @@ export function VoiceRecorder({ onSend, disabled, unavailableReason, onError }) 
       if (!detail.active) { liveCalls.current.delete(detail.owner); return; }
       liveCalls.current.add(detail.owner); pauseForCall();
     };
-    const hidden = () => { if (document.hidden) previewPlayer.current?.pause(); };
+    const hidden = () => { if (document.hidden) pauseForCall(); };
     window.addEventListener('maydan-social-audio', interrupt); document.addEventListener('visibilitychange', hidden);
-    const teardown = () => { alive.current = false; ++session.current; recorder.current?.cancel(); previewPlayer.current?.pause(); };
+    const teardown = () => { alive.current = false; ++session.current; recorder.current?.cancel(); previewPlayer.current?.pause(); audioActivity(previewOwner.current, false); };
     return () => { teardown(); window.removeEventListener('maydan-social-audio', interrupt); document.removeEventListener('visibilitychange', hidden); };
   }, [pauseForCall]);
   useEffect(() => {
@@ -100,15 +101,16 @@ export function VoiceRecorder({ onSend, disabled, unavailableReason, onError }) 
       setElapsed(0); setPhase('recording');
     } catch (error) { if (alive.current && ticket === session.current) { setPhase('idle'); onError(mediaError(error)); } }
   };
-  const discard = () => { ++session.current; previewPlayer.current?.pause(); recorder.current?.cancel(); recorder.current = null; setClip(null); setPhase('idle'); };
+  const discard = () => { ++session.current; previewPlayer.current?.pause(); audioActivity(previewOwner.current, false); recorder.current?.cancel(); recorder.current = null; setClip(null); setPhase('idle'); };
   const send = async () => {
     if (!clip || phase === 'sending') return;
     setPhase('sending');
     try { await onSend(clip); if (alive.current) discard(); }
     catch (error) { if (alive.current) { setPhase('preview'); onError(mediaError(error)); } }
   };
-  return <div className={'lamma-recorder is-' + phase}>
-    {phase === 'idle' || phase === 'starting' ? <><button type="button" className="lamma-voice-start" disabled={disabled || callActive || !!unavailableReason || phase === 'starting'} onClick={start}><LammaIcon name="mic" size={18} />{phase === 'starting' ? 'فتح الميكروفون…' : 'رسالة صوتية'}<small>حتى دقيقتين</small></button>{unavailableReason && <small className="lamma-unavailable">{unavailableReason}</small>}</> : phase === 'recording' ? <><span className="lamma-recording-dot" /><span role="status">جارٍ التسجيل <bdi>{durationLabel(elapsed)}</bdi></span><LammaButton label="إنهاء التسجيل ومراجعته" icon="stop" onClick={finish} /><LammaButton label="إلغاء التسجيل" icon="close" onClick={discard} /></> : <><div className="lamma-recorded-preview"><span>اسمعها قبل الإرسال · <bdi>{durationLabel(clip?.durationMs)}</bdi></span>{preview && <audio ref={attachPreview} onPlay={() => { if (callActiveRef.current || liveCalls.current.size) previewPlayer.current?.pause(); }} controls={!callActive} preload="metadata" src={preview} aria-label="معاينة الرسالة الصوتية" />}</div><LammaButton label={phase === 'sending' ? 'جارٍ إرسال الصوت' : 'إرسال الرسالة الصوتية'} icon="send" disabled={disabled || callActive || phase === 'sending'} onClick={send} /><LammaButton label="حذف التسجيل" icon="close" disabled={phase === 'sending'} onClick={discard} /></>}
+  const previewStopped = () => audioActivity(previewOwner.current, false);
+  return <div data-design-screen="social.voice" className={'lamma-recorder is-' + phase}>
+    {phase === 'idle' || phase === 'starting' ? <><button type="button" data-design-id="record" className="lamma-voice-start" disabled={disabled || callActive || !!unavailableReason || phase === 'starting'} onClick={start}><LammaIcon name="mic" size={18} />{phase === 'starting' ? 'فتح الميكروفون…' : 'رسالة صوتية'}<small>حتى دقيقتين</small></button>{unavailableReason && <small className="lamma-unavailable">{unavailableReason}</small>}</> : phase === 'recording' ? <><span className="lamma-recording-dot" /><span role="status">جارٍ التسجيل <bdi>{durationLabel(elapsed)}</bdi></span><LammaButton label="إنهاء التسجيل ومراجعته" icon="stop" onClick={finish} /><LammaButton data-design-id="record-cancel" label="إلغاء التسجيل" icon="close" onClick={discard} /></> : <><div data-design-id="record-preview" className="lamma-recorded-preview"><span>اسمعها قبل الإرسال · <bdi>{durationLabel(clip?.durationMs)}</bdi></span>{preview && <audio ref={attachPreview} onPlay={() => { if (callActiveRef.current || liveCalls.current.size || document.hidden) { previewPlayer.current?.pause(); previewStopped(); } else audioActivity(previewOwner.current, true); }} onPause={previewStopped} onEnded={previewStopped} onError={previewStopped} onEmptied={previewStopped} controls={!callActive} preload="metadata" src={preview} aria-label="معاينة الرسالة الصوتية" />}</div><LammaButton label={phase === 'sending' ? 'جارٍ إرسال الصوت' : 'إرسال الرسالة الصوتية'} icon="send" disabled={disabled || callActive || phase === 'sending'} onClick={send} /><LammaButton data-design-id="record-cancel" label="حذف التسجيل" icon="close" disabled={phase === 'sending'} onClick={discard} /></>}
   </div>;
 }
 
@@ -127,17 +129,16 @@ export function VoiceMessage({ attachment, getVoiceUrl }) {
   const epoch = useRef(0);
   const liveCalls = useRef(new Set());
   const identity = useRef(null); identity.current = { userId, attachmentId: attachment?.id };
-  const owner = useRef(`voice-${attachment?.id}`);
-  const activity = active => { if (typeof window !== 'undefined') window.dispatchEvent(new CustomEvent('maydan-social-audio', { detail: { owner: owner.current, active } })); };
+  const owner = useRef(`voice-${globalThis.crypto.randomUUID()}`);
+  const activity = active => audioActivity(owner.current, active);
   useLayoutEffect(() => {
     if (!callActive) return;
-    ++epoch.current; player.current?.pause(); player.current?.removeAttribute('src'); player.current?.load(); setLoading(false); setPlaying(false);
+    ++epoch.current; player.current?.pause(); player.current?.removeAttribute('src'); player.current?.load(); activity(false); setLoading(false); setPlaying(false);
   }, [callActive]);
   useEffect(() => {
     alive.current = true;
     const element = player.current;
-    owner.current = `voice-${attachment?.id}`;
-    const stop = (update = true) => { ++epoch.current; element?.pause(); element?.removeAttribute('src'); element?.load(); if (update) { setLoading(false); setPlaying(false); } };
+    const stop = (update = true) => { ++epoch.current; element?.pause(); element?.removeAttribute('src'); element?.load(); activity(false); if (update) { setLoading(false); setPlaying(false); } };
     stop(); setPosition(0); setError('');
     const hidden = () => { if (document.hidden) stop(); };
     const update = event => { if (invalidatesVoice(event.detail)) stop(); };
@@ -149,7 +150,7 @@ export function VoiceMessage({ attachment, getVoiceUrl }) {
   const toggle = async () => {
     if (!attachment?.id || loading) return;
     if (callActiveRef.current || liveCalls.current.size) { setError('أنهِ المكالمة قبل تشغيل الرسالة الصوتية.'); return; }
-    if (playing) { player.current?.pause(); return; }
+    if (playing) { player.current?.pause(); activity(false); setPlaying(false); return; }
     setLoading(true); setError('');
     const ticket = ++epoch.current;
     const current = () => alive.current && ticket === epoch.current && identity.current.userId === userId && identity.current.attachmentId === attachment.id && !document.hidden && !callActiveRef.current && !liveCalls.current.size;
@@ -157,10 +158,10 @@ export function VoiceMessage({ attachment, getVoiceUrl }) {
       const next = await getVoiceUrl(attachment.id);
       if (current() && player.current) { player.current.src = next; player.current.currentTime = position; await player.current.play(); }
     }
-    catch { if (current()) setError('تعذّر تحميل الصوت. حاول مجددًا.'); }
+    catch { if (current()) { activity(false); setPlaying(false); setError('تعذّر تحميل الصوت. حاول مجددًا.'); } }
     finally { if (current()) setLoading(false); }
   };
-  return <div className="lamma-voice-message"><div><LammaIcon name="mic" size={17} /><span>رسالة صوتية</span><bdi>{durationLabel(attachment?.durationMs)}</bdi></div><div className="lamma-voice-player"><button type="button" onClick={toggle} disabled={loading || callActive || !attachment?.id} title={callActive ? 'أنهِ المكالمة قبل تشغيل الرسالة الصوتية' : undefined} aria-label={playing ? 'إيقاف الرسالة الصوتية مؤقتًا' : 'تشغيل الرسالة الصوتية'}><LammaIcon name={playing ? 'pause' : 'play'} size={17} /></button><progress max={attachment?.durationMs || 1} value={position * 1000} aria-label="تقدم الرسالة الصوتية" /><bdi>{loading ? '…' : durationLabel(position * 1000)}</bdi></div><audio ref={player} preload="none" onPlay={() => { if (callActiveRef.current || liveCalls.current.size) { player.current?.pause(); return; } setPlaying(true); activity(true); }} onPause={() => { setPlaying(false); activity(false); }} onEnded={() => { setPlaying(false); setPosition(0); activity(false); }} onTimeUpdate={() => setPosition(player.current?.currentTime || 0)} />{error && <small role="alert">{error}</small>}</div>;
+  return <div data-design-id="voice-message" className="lamma-voice-message"><div><LammaIcon name="mic" size={17} /><span>رسالة صوتية</span><bdi>{durationLabel(attachment?.durationMs)}</bdi></div><div className="lamma-voice-player"><button data-design-id="voice-play" type="button" onClick={toggle} disabled={loading || callActive || !attachment?.id} title={callActive ? 'أنهِ المكالمة قبل تشغيل الرسالة الصوتية' : undefined} aria-label={playing ? 'إيقاف الرسالة الصوتية مؤقتًا' : 'تشغيل الرسالة الصوتية'}><LammaIcon name={playing ? 'pause' : 'play'} size={17} /></button><progress max={attachment?.durationMs || 1} value={position * 1000} aria-label="تقدم الرسالة الصوتية" /><bdi>{loading ? '…' : durationLabel(position * 1000)}</bdi></div><audio ref={player} preload="none" onPlay={() => { if (callActiveRef.current || liveCalls.current.size || document.hidden) { player.current?.pause(); activity(false); return; } setPlaying(true); activity(true); }} onPause={() => { setPlaying(false); activity(false); }} onError={() => { setPlaying(false); activity(false); setError('تعذّر تشغيل الصوت. حاول مجددًا.'); }} onAbort={() => { if (player.current?.paused) { setPlaying(false); activity(false); } }} onEmptied={() => { if (player.current?.paused) { setPlaying(false); activity(false); } }} onEnded={() => { setPlaying(false); setPosition(0); activity(false); }} onTimeUpdate={() => setPosition(player.current?.currentTime || 0)} />{error && <small role="alert">{error}</small>}</div>;
 }
 
 export function GameInviteCard({ invite, onJoin }) {
@@ -168,5 +169,5 @@ export function GameInviteCard({ invite, onJoin }) {
   const code = String(invite?.roomCode || invite?.code || '');
   const expired = invite?.status === 'expired' || (invite?.expiresAt && invite.expiresAt < Date.now());
   const valid = validCode(code) && !!invite?.id && !expired;
-  return <div className="lamma-game-invite"><span className="lamma-game-icon"><LammaIcon name="game" size={27} /></span><strong>مكانك معنا في الميدان</strong><p>{invite?.game === 'ersomha' ? 'ارسمها' : invite?.game === 'fabraka' ? 'فبركة' : invite?.game === 'meenfina' ? 'مين فينا؟' : 'غرفة ميدان'} · <bdi>{code}</bdi></p><button type="button" onClick={async () => { if (joining) return; setJoining(true); try { await onJoin(invite.id); } finally { setJoining(false); } }} disabled={!valid || joining}>{expired ? 'انتهت هذه الدعوة' : joining ? 'نفتح الغرفة…' : 'انضم للّمة'} <LammaIcon name="back" size={17} /></button></div>;
+  return <div data-design-id="game-invite-card" className="lamma-game-invite"><span className="lamma-game-icon"><LammaIcon name="game" size={27} /></span><strong>مكانك معنا في الميدان</strong><p>{invite?.game === 'ersomha' ? 'ارسمها' : invite?.game === 'fabraka' ? 'فبركة' : invite?.game === 'meenfina' ? 'مين فينا؟' : 'غرفة ميدان'} · <bdi>{code}</bdi></p><button data-design-id="game-invite-join" type="button" onClick={async () => { if (joining) return; setJoining(true); try { await onJoin(invite.id); } finally { setJoining(false); } }} disabled={!valid || joining}>{expired ? 'انتهت هذه الدعوة' : joining ? 'نفتح الغرفة…' : 'انضم للّمة'} <LammaIcon name="back" size={17} /></button></div>;
 }

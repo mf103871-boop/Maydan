@@ -24,15 +24,15 @@ function Credits() {
       ) : (
         <>
           <p className="card-muted">{items.length} ملفًا مع بيانات الإنشاء والإسناد: {Object.entries(byLicense).map(([l, n]) => `${l} (${n})`).join(' · ')}.</p>
-          <button type="button" className="btn btn-ghost" onClick={() => setOpen((v) => !v)} aria-expanded={open}>{open ? 'إخفاء القائمة' : 'عرض القائمة الكاملة'}</button>
+          <button data-design-id="show-all" type="button" className="btn btn-ghost" onClick={() => setOpen((v) => !v)} aria-expanded={open}>{open ? 'إخفاء القائمة' : 'عرض القائمة الكاملة'}</button>
           {open && (
             <ul className="credits-list">
               {items.map((c) => (
                 <li key={c.url}>
                   <b>{c.title || c.url.split('/').pop()}</b>
                   <span className="muted"> — {c.author || 'مؤلف غير مذكور'} · </span>
-                  {c.generated ? <span>{c.disclosure}</span> : c.licenseUrl ? <a href={c.licenseUrl} target="_blank" rel="noreferrer noopener">{c.license}</a> : <span>{c.license}</span>}
-                  {c.sourceUrl && <> · <a href={c.sourceUrl} target="_blank" rel="noreferrer noopener">المصدر</a></>}
+                  {c.generated ? <span>{c.disclosure}</span> : c.licenseUrl ? <a data-design-id="license-link" href={c.licenseUrl} target="_blank" rel="noreferrer noopener">{c.license}</a> : <span>{c.license}</span>}
+                  {c.sourceUrl && <> · <a data-design-id="source-link" href={c.sourceUrl} target="_blank" rel="noreferrer noopener">المصدر</a></>}
                   <span className="muted"> · {c.game} / {c.categoryName}</span>
                 </li>
               ))}
@@ -48,8 +48,8 @@ export function About() {
   const { version } = usePlatform();
   const native = isNativeShell();
   return (
-    <Screen dir={getDirection()} className="stack" aria-label="عن المنصة">
-      <TopBar title="عن ميدان" start={<IconButton label="رجوع" onClick={back}><IconBack /></IconButton>} />
+    <Screen data-design-screen="about" dir={getDirection()} className="stack" aria-label="عن المنصة">
+      <TopBar data-design-id="topbar" title="عن ميدان" start={<IconButton data-design-id="back" label="رجوع" onClick={back}><IconBack /></IconButton>} />
       <Card className="stack">
         <div className="brand">
           <BrandMark />
@@ -71,8 +71,8 @@ export function About() {
       </Card>
       <Credits />
       <p className="muted center legal-links" style={{ fontSize: 13 }}>
-        {!native && <><a href="pricing/">التسعير</a> · </>}
-        <a href={native ? `${PUBLIC_SITE_ORIGIN}/refunds/` : 'refunds/'}>سياسة الاسترداد</a> · <a href={LEGAL_ROUTES.terms}>شروط الاستخدام</a> · <a href={LEGAL_ROUTES.privacy}>سياسة الخصوصية</a>
+        {!native && <><a data-design-id="pricing-link" href="pricing/">التسعير</a> · </>}
+        <a data-design-id="refunds-link" href={native ? `${PUBLIC_SITE_ORIGIN}/refunds/` : 'refunds/'}>سياسة الاسترداد</a> · <a data-design-id="terms-link" href={LEGAL_ROUTES.terms}>شروط الاستخدام</a> · <a data-design-id="privacy-link" href={LEGAL_ROUTES.privacy}>سياسة الخصوصية</a>
       </p>
       <p className="muted center" style={{ fontSize: 13 }}>الإصدار {version} · صُنعت بحب للجلسات العائلية</p>
     </Screen>
