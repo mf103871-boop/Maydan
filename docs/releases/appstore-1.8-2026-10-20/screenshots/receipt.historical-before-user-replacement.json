@@ -1,0 +1,148 @@
+{
+  "schemaVersion": 1,
+  "deliveryDate": "2026-10-20",
+  "status": "prepared-and-reviewed",
+  "appStoreUploadStatus": "pending-separate-root-operator-action",
+  "artifactName": "app-store-1.8-22",
+  "version": "1.8",
+  "build": "22",
+  "sourceCommit": "2fe524e98f8a455b1b801ab4c0fdd9d82f9396ef",
+  "ciRunId": "39311622700",
+  "ipaArtifact": "Maydan-1.8-22.ipa",
+  "ipaSha256": "2eff9e41aae92e4a4a6f360b4bc89bf21d4c593f73588455b644fbd14406248f",
+  "compiledHtmlPath": "Payload/Maydan.app/www/index.html",
+  "compiledHtmlSha256": "36d93c56fa8ebb945736e9b221497f88d5e262735ad40c05514c74a46ecd7fec",
+  "method": {
+    "engine": "WebKit",
+    "mode": "production",
+    "sourceUi": "actual frozen build22 React components and styles",
+    "accountGameData": "synthetic, memory-only, network disabled",
+    "design": "default published design; no owner draft",
+    "captions": "marketing text outside app viewport",
+    "uiLanguage": "Arabic for both localized screenshot sets",
+    "englishLocalization": "English marketing captions only",
+    "nativeDeviceCapture": false,
+    "physicalAudioEvidence": false,
+    "generatedUiMockup": false
+  },
+  "upload": {
+    "manifest": "upload-manifest.json",
+    "manifestSha256": "ae6fa8767869505929a3613fbefa50b2542d078cf25c6bf145879af9fbd60ecb",
+    "files": 24,
+    "sizes": [
+      [
+        1179,
+        2556
+      ],
+      [
+        1290,
+        2796
+      ]
+    ],
+    "localizationMap": {
+      "ar": "ar-SA",
+      "en": "en-US"
+    },
+    "scenesInOrder": [
+      "home",
+      "ersomha",
+      "badeeha",
+      "chat",
+      "friends",
+      "fabraka"
+    ],
+    "totalPngBytes": 14081017,
+    "largestPngBytes": 1151779,
+    "uploadOnlyManifestFiles": true,
+    "excludePatterns": [
+      "contact-*.png",
+      "review-*.png"
+    ],
+    "imagesStoredInGit": false
+  },
+  "proof": {
+    "provenance": "provenance.json",
+    "provenanceSha256": "d022c7bcb31e83cec17dc542614de50c07da585e6ced44317c7439dbbe971809",
+    "cssFilesVerifiedAgainstActualIpa": 14,
+    "embeddedFontArtFilesVerifiedAgainstActualIpa": 6,
+    "sourceWorkingTreeClean": true,
+    "browserErrors": 0,
+    "exactImageDimensions": true,
+    "noHorizontalOverflow": true,
+    "allImagesAndFontsLoaded": true,
+    "noStudioPreviewOrLoader": true,
+    "marketingScrollZero": true,
+    "captionFullyVisible": true,
+    "contacts": [
+      {
+        "file": "contact-ar-1179.png",
+        "bytes": 507351,
+        "sha256": "45a0661ae55fe936faf7fa919efd2e0a47abd48b402664dc393206ba8866e80a",
+        "upload": false
+      },
+      {
+        "file": "contact-en-1179.png",
+        "bytes": 529184,
+        "sha256": "8f9c0fc8baa53237c5bb3026e31dabb85b6d4bf2f79503ba9b8c939302a31c31",
+        "upload": false
+      },
+      {
+        "file": "contact-ar-1290.png",
+        "bytes": 505752,
+        "sha256": "263c894107c573dd4139963cfd4f04c5e48ae49055b88500f1c7ce18f7a91169",
+        "upload": false
+      },
+      {
+        "file": "contact-en-1290.png",
+        "bytes": 522179,
+        "sha256": "b18430e3583802bed760e86c04e945297fee3e573dbd87220150ecbb64ac50ab",
+        "upload": false
+      }
+    ],
+    "questionImagesVerifiedAgainstActualIpa": 2,
+    "allPngWithoutAlpha": true,
+    "colorChannels": 3,
+    "normalization": {
+      "record": "png-normalization.json",
+      "sha256": "3c1ef713d5d378a5b4ec6f1b8c10f78e38596e4a2f46bd042d9930aea863775a",
+      "allInputPixelsFullyOpaque": true,
+      "rgbPixelsIdentical": true,
+      "sourceDimensionsPreserved": true
+    }
+  },
+  "toolingIsolation": {
+    "directory": "scripts/releases/app-store-1.8-22/",
+    "files": [
+      "fixture.jsx",
+      "capture.mjs",
+      "verify.mjs"
+    ],
+    "purpose": "manual local capture and provenance verification only",
+    "captureBuild": {
+      "entryPoint": "scripts/releases/app-store-1.8-22/fixture.jsx",
+      "write": false,
+      "output": "memory-only local HTTP bundle"
+    },
+    "productionEntry": "src/main.jsx",
+    "nativePreparation": "scripts/ios/prepare.mjs calls buildOnce with includeStudio:false and copies dist only",
+    "productionBuildReferencesToScreenshotFixture": 0,
+    "productionOrNativeSourceChanged": false,
+    "productionModuleGraph": {
+      "sourceCommit": "2fe524e98f8a455b1b801ab4c0fdd9d82f9396ef",
+      "entry": "src/main.jsx",
+      "inputCount": 330,
+      "screenshotFixtureInputs": 0,
+      "write": false
+    }
+  },
+  "limits": [
+    "source-rendered WebKit app UI, not physical iPhone/simulator captures",
+    "no native status bar, Apple purchase UI, actual microphone, live network or recorded call is represented",
+    "English captions only; app UI remains Arabic"
+  ],
+  "review": {
+    "finalContactSheetsApproved": true,
+    "appStoreWritePerformedByScreenshotTooling": false,
+    "repositoryStageCommitOrDeploy": false
+  }
+}

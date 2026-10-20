@@ -1,0 +1,1601 @@
+{
+  "schemaVersion": 1,
+  "archives": [
+    {
+      "label": "editable",
+      "archive": "Maydan-Store-Editable-Design.zip",
+      "bytes": 79737366,
+      "sha256": "bb4df249d1c70a51a1954474a03b49c891370664dc185913b8ac766147c0e451",
+      "entries": 230,
+      "uncompressedBytes": 82767335
+    },
+    {
+      "label": "images",
+      "archive": "Maydan-Store-Images-AR-EN.zip",
+      "bytes": 45700265,
+      "sha256": "a781a73743493433eff7225225727c6ef9bf86b5ae0072ef53b37f987a7c460d",
+      "entries": 31,
+      "uncompressedBytes": 46040046
+    }
+  ],
+  "safety": {
+    "pathTraversalRejected": true,
+    "symlinksEncryptedDuplicatesRejected": true,
+    "limits": {
+      "maxArchiveBytes": 536870912,
+      "maxUncompressedBytes": 1073741824,
+      "maxEntries": 5000,
+      "maxFileBytes": 104857600
+    },
+    "scriptsExecuted": false,
+    "originalImagesModified": false
+  },
+  "files": [
+    {
+      "archive": "editable",
+      "file": "editable/ar/01-seven-games.png",
+      "bytes": 2932798,
+      "sha256": "3dd5ea69e3f64bb79e61d1d73a0eba2f4b217deb704cb5932aa355fb3dc89c4b"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/ar/02-draw-live.png",
+      "bytes": 1823603,
+      "sha256": "35004f532ebc94c0ea1ba21a5483cdeb2a3b57cfd5223bf2c249e7ffff75fabc"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/ar/03-play-and-talk.png",
+      "bytes": 1798311,
+      "sha256": "ecc33cf436687d3b46092c05a2757691a7f4af5aed667e334fad9ec43e23cac6"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/ar/04-badeeha.png",
+      "bytes": 2276923,
+      "sha256": "7967c7e3bee60b308f1d601a41292afcbc5076f595bed822d42a89e0ebc0ea3d"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/ar/05-fast-and-forbidden.png",
+      "bytes": 2013295,
+      "sha256": "b20ff9c11c0bfddf8a63071f5f8f02f686017075c267dcf7a9497079b1569628"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/ar/06-forehead.png",
+      "bytes": 2451548,
+      "sha256": "8cb11ce7d22c5d60a244ebacd3aedd57250557921b99b5b3f930a16de192b8e5"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/ar/07-fabraka.png",
+      "bytes": 2055942,
+      "sha256": "7ca4b9c73b62033c1e712dfba2aff01accbfede8cf69c90809d7008e5e60de42"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/ar/08-whos-most-likely.png",
+      "bytes": 1518218,
+      "sha256": "bd5d9f51e106546cdc2abc2d59c7d7a0d2b5f304416cce3a741c9784815af60e"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/ar/09-friends-and-chat.png",
+      "bytes": 1786318,
+      "sha256": "6c1af5b0e42ee77b3a0b545a8c9c030cc58c2cca922ccff41c46abf6644c126c"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/ar/10-your-profile.png",
+      "bytes": 1624361,
+      "sha256": "ce29703eedb2cd146b0b859e93a1952e4256b6cecebc8e3c004d51feedc19b2e"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/assets/arabic.woff2",
+      "bytes": 38424,
+      "sha256": "643bd83b53ec8f25db2428e338673ddc85c345b976c449ccdad4d2b394f719e7"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/assets/avatars.webp",
+      "bytes": 112046,
+      "sha256": "0ea6036e32c0de3b328c03842612b1b2efb22539c626c1dc1979633b60f6ee39"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/assets/ersomha.svg",
+      "bytes": 1050,
+      "sha256": "1b29629b5f9cdcf2e652efdd6e3fcae4d407ef2ddb240b63336545b65f7b97ca"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/assets/game-icons.webp",
+      "bytes": 122258,
+      "sha256": "278ee2a803759c8b3f06c96a26e235b2a02c3cc9d61d9aeb242d21fe443624da"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/assets/latin.woff2",
+      "bytes": 34868,
+      "sha256": "332a4fc624d786925f03d480df6eb051aca5fb9f2a8f105f8300dcfac201425c"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/assets/mark.webp",
+      "bytes": 7784,
+      "sha256": "76e94e6ff9755e43f548870b7f5c99399f62ec05165fd2a1c112768c1a49e84e"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/assets/media/04bc9616e2628b809ab58dc6cf5d6ed304ae420702cd10a6dfc6cbb14d4c28ae.webp",
+      "bytes": 44770,
+      "sha256": "04bc9616e2628b809ab58dc6cf5d6ed304ae420702cd10a6dfc6cbb14d4c28ae"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/assets/media/07c1ef327f31799d93bef416cfabe19500f4bee47b743a58971cc9e74ff44a5d.webp",
+      "bytes": 254470,
+      "sha256": "07c1ef327f31799d93bef416cfabe19500f4bee47b743a58971cc9e74ff44a5d"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/assets/media/12880b8ff78c0f4ac0c4e2f2058e1ac53e36745cf25dc3f764bb9fb574895708.webp",
+      "bytes": 178038,
+      "sha256": "12880b8ff78c0f4ac0c4e2f2058e1ac53e36745cf25dc3f764bb9fb574895708"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/assets/media/19d365d6faef10503a91566e70354e9bd82e776b49b9ab69c807886eca3db33e.webp",
+      "bytes": 63278,
+      "sha256": "19d365d6faef10503a91566e70354e9bd82e776b49b9ab69c807886eca3db33e"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/assets/media/2000395819a9ee0d7f2c8c0ca17b22f960a8456982767d29585ecc90f010488c.webp",
+      "bytes": 206888,
+      "sha256": "2000395819a9ee0d7f2c8c0ca17b22f960a8456982767d29585ecc90f010488c"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/assets/media/20a14102d39d4cf9ef4485b1b522dc2d4ac4d007ebc395b6dfab50f9dbdeb0e8.webp",
+      "bytes": 237478,
+      "sha256": "20a14102d39d4cf9ef4485b1b522dc2d4ac4d007ebc395b6dfab50f9dbdeb0e8"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/assets/media/24ffca41f8685545324e47ac87893752b3c4827f86725c3d0f07eee94cb16e40.webp",
+      "bytes": 87770,
+      "sha256": "24ffca41f8685545324e47ac87893752b3c4827f86725c3d0f07eee94cb16e40"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/assets/media/27f06bedac82fb9c90984863ef5c6ecd5d0b634439cc3627bdc85702d2527dad.webp",
+      "bytes": 142214,
+      "sha256": "27f06bedac82fb9c90984863ef5c6ecd5d0b634439cc3627bdc85702d2527dad"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/assets/media/2b635395dd6ae59bf6045bb2f68fb15a8e9a02544a63067446a82800fa5251c0.webp",
+      "bytes": 235514,
+      "sha256": "2b635395dd6ae59bf6045bb2f68fb15a8e9a02544a63067446a82800fa5251c0"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/assets/media/2d172e7fb2526f5cda3ac1516caccb0690d168bdca438a24333dc07281966931.webp",
+      "bytes": 210074,
+      "sha256": "2d172e7fb2526f5cda3ac1516caccb0690d168bdca438a24333dc07281966931"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/assets/media/308acd9c9bed25a638d41de66d48a390e946e61fc66ab6e57c0a2fc0741a0733.webp",
+      "bytes": 240858,
+      "sha256": "308acd9c9bed25a638d41de66d48a390e946e61fc66ab6e57c0a2fc0741a0733"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/assets/media/30ca7c75245ceba8dbdbc711221c4b4dc016cbc65bebe60566fe1e3ff840395e.webp",
+      "bytes": 255210,
+      "sha256": "30ca7c75245ceba8dbdbc711221c4b4dc016cbc65bebe60566fe1e3ff840395e"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/assets/media/3893f5600b728214e01dd63ced4b1dfafd52a4a907ab4a1ab35c2cd9a07adfc0.webp",
+      "bytes": 67284,
+      "sha256": "3893f5600b728214e01dd63ced4b1dfafd52a4a907ab4a1ab35c2cd9a07adfc0"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/assets/media/3a3756967c2f5449295c1530196c2c5eca8f7b9acab83d0942d2695ec27af871.webp",
+      "bytes": 207018,
+      "sha256": "3a3756967c2f5449295c1530196c2c5eca8f7b9acab83d0942d2695ec27af871"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/assets/media/3b2318167b61a334f3b7def3736fc612dd92ac04a34ef258b80dcc123da38158.webp",
+      "bytes": 91546,
+      "sha256": "3b2318167b61a334f3b7def3736fc612dd92ac04a34ef258b80dcc123da38158"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/assets/media/4dd37e4531b32403f1e5df69726d84e351fd617ba6abf09071396496a67a3124.webp",
+      "bytes": 80664,
+      "sha256": "4dd37e4531b32403f1e5df69726d84e351fd617ba6abf09071396496a67a3124"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/assets/media/4f943d91191e0d810ad05381916d5cdcc8886c9c48f79a65e846ff87318fefc6.webp",
+      "bytes": 43000,
+      "sha256": "4f943d91191e0d810ad05381916d5cdcc8886c9c48f79a65e846ff87318fefc6"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/assets/media/526029fad2b532031671c67b94a6d32759b7333301a9a7513a4658b5a70f8a97.webp",
+      "bytes": 208770,
+      "sha256": "526029fad2b532031671c67b94a6d32759b7333301a9a7513a4658b5a70f8a97"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/assets/media/53a0efb990998ec66c0d279f178319a67c5abd7554c3525e775d4ba7cfa04dd4.webp",
+      "bytes": 149532,
+      "sha256": "53a0efb990998ec66c0d279f178319a67c5abd7554c3525e775d4ba7cfa04dd4"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/assets/media/55d55ea97ce36ece82ef2bb7d59ae0e8ca0903714bf0caa9b42bfdf70cd963f7.webp",
+      "bytes": 221024,
+      "sha256": "55d55ea97ce36ece82ef2bb7d59ae0e8ca0903714bf0caa9b42bfdf70cd963f7"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/assets/media/58037492e1f9fb0e769decd4ab57e013b6aa2e90557b2d11e4704b998aa8a284.webp",
+      "bytes": 119152,
+      "sha256": "58037492e1f9fb0e769decd4ab57e013b6aa2e90557b2d11e4704b998aa8a284"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/assets/media/58faebc77776f5f7510e69ec2506a59ea2588d36e59e8e954cd520e465a8ecec.webp",
+      "bytes": 254826,
+      "sha256": "58faebc77776f5f7510e69ec2506a59ea2588d36e59e8e954cd520e465a8ecec"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/assets/media/5b51618de6975592e4fa742f2316c6ea765e77f86dea18c134c6eb93a455a21a.webp",
+      "bytes": 171646,
+      "sha256": "5b51618de6975592e4fa742f2316c6ea765e77f86dea18c134c6eb93a455a21a"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/assets/media/5f6b8f03082eb528dfaf30f954839c35c8b7cdc4ee0d3eda9a8c318a5e2cfb02.webp",
+      "bytes": 250918,
+      "sha256": "5f6b8f03082eb528dfaf30f954839c35c8b7cdc4ee0d3eda9a8c318a5e2cfb02"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/assets/media/61aef8b9d49279c1ecf543ad1a5c979eafefbc5d6f15f16d8ac24b0b0f7829db.webp",
+      "bytes": 254940,
+      "sha256": "61aef8b9d49279c1ecf543ad1a5c979eafefbc5d6f15f16d8ac24b0b0f7829db"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/assets/media/64c27e995217ba7914047b95f79a861e71c99a721d394c83be19d268e1246d39.webp",
+      "bytes": 190082,
+      "sha256": "64c27e995217ba7914047b95f79a861e71c99a721d394c83be19d268e1246d39"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/assets/media/679c663241e0e630e5b1ae10fe0866c0b867682ac1d18e3019cbed4021713106.webp",
+      "bytes": 260680,
+      "sha256": "679c663241e0e630e5b1ae10fe0866c0b867682ac1d18e3019cbed4021713106"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/assets/media/68c0d8f9c41c5395291810f9100e853ecff316fb297258de841a50e4e8023d86.webp",
+      "bytes": 186314,
+      "sha256": "68c0d8f9c41c5395291810f9100e853ecff316fb297258de841a50e4e8023d86"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/assets/media/70185ff92141e501f1c565d7dca15c701ccb6807ed5a221e05b04892f2876899.webp",
+      "bytes": 131040,
+      "sha256": "70185ff92141e501f1c565d7dca15c701ccb6807ed5a221e05b04892f2876899"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/assets/media/72b0cbc692e7ed2d753b1eaa20ea1afef871d307b01537170a050e012a36dc78.webp",
+      "bytes": 64360,
+      "sha256": "72b0cbc692e7ed2d753b1eaa20ea1afef871d307b01537170a050e012a36dc78"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/assets/media/7dde662c5357178ea6e8d20c53d882b69ae934bba599e457b8b0b271e8b6bc15.webp",
+      "bytes": 243166,
+      "sha256": "7dde662c5357178ea6e8d20c53d882b69ae934bba599e457b8b0b271e8b6bc15"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/assets/media/7ebc21e437eade94f4f3df8871a278a229a180f85173b5b23fddce2de3ce8d5a.webp",
+      "bytes": 247564,
+      "sha256": "7ebc21e437eade94f4f3df8871a278a229a180f85173b5b23fddce2de3ce8d5a"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/assets/media/805220d50b888576509d4e1c569f453a0382ce2468b4fa60e5ae041643d5954f.webp",
+      "bytes": 261556,
+      "sha256": "805220d50b888576509d4e1c569f453a0382ce2468b4fa60e5ae041643d5954f"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/assets/media/847712bb04779b81e73d0b80f72047bd0ac8692ac58670baf2434ad70011f3b7.webp",
+      "bytes": 167012,
+      "sha256": "847712bb04779b81e73d0b80f72047bd0ac8692ac58670baf2434ad70011f3b7"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/assets/media/84d872a1a0d4521df37374bde3cc41b54f17ac6ec66de93469770839ac3e4cd8.webp",
+      "bytes": 113984,
+      "sha256": "84d872a1a0d4521df37374bde3cc41b54f17ac6ec66de93469770839ac3e4cd8"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/assets/media/8755e72c20ba65b4bd0a4462832644d89436db77a03cd27eb908d9bfcebe9589.webp",
+      "bytes": 73328,
+      "sha256": "8755e72c20ba65b4bd0a4462832644d89436db77a03cd27eb908d9bfcebe9589"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/assets/media/878b0009da3b34264517521799705b2b002019f161b1b9808747b672fbc5932f.webp",
+      "bytes": 151282,
+      "sha256": "878b0009da3b34264517521799705b2b002019f161b1b9808747b672fbc5932f"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/assets/media/8cbd6f6f03d8de912514e42d2f37f19c7954fd2faa6db4bc5a803cf53270d8c0.webp",
+      "bytes": 170388,
+      "sha256": "8cbd6f6f03d8de912514e42d2f37f19c7954fd2faa6db4bc5a803cf53270d8c0"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/assets/media/906346cbaf4a22e7d0e058b6afb79a203c8e22c954aaed595a2fb219842da114.webp",
+      "bytes": 205858,
+      "sha256": "906346cbaf4a22e7d0e058b6afb79a203c8e22c954aaed595a2fb219842da114"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/assets/media/90ed9873d7ae6b19865bdacdf5f1849a8a2762c9b0ac8b82921d897f3f459280.webp",
+      "bytes": 250266,
+      "sha256": "90ed9873d7ae6b19865bdacdf5f1849a8a2762c9b0ac8b82921d897f3f459280"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/assets/media/9168fd7bb42759f86ecff50689304381ccc6ea6167698f04425eef131968369d.webp",
+      "bytes": 160024,
+      "sha256": "9168fd7bb42759f86ecff50689304381ccc6ea6167698f04425eef131968369d"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/assets/media/92d5372704ae5ebcbdb7b6d7b284fe0e3ce1b1e89fc8873fa6107acef2f61778.webp",
+      "bytes": 217786,
+      "sha256": "92d5372704ae5ebcbdb7b6d7b284fe0e3ce1b1e89fc8873fa6107acef2f61778"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/assets/media/983d9ebeb48542f615e59eff7930ab67146d5001a8d3ade836563d7254a29b4b.webp",
+      "bytes": 250904,
+      "sha256": "983d9ebeb48542f615e59eff7930ab67146d5001a8d3ade836563d7254a29b4b"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/assets/media/994e813959778e8a54b3740c81685e35088ca0b40b41c30e303115073a32a55b.webp",
+      "bytes": 28554,
+      "sha256": "994e813959778e8a54b3740c81685e35088ca0b40b41c30e303115073a32a55b"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/assets/media/a222b08f6226612a185f33f297d511f040f735bb53267c81d5321cfbde14eec2.webp",
+      "bytes": 102388,
+      "sha256": "a222b08f6226612a185f33f297d511f040f735bb53267c81d5321cfbde14eec2"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/assets/media/a53e6dce4b2655806558ba90d797b7311295f1ab45ce17231d4df2b9b1e6ea94.webp",
+      "bytes": 231922,
+      "sha256": "a53e6dce4b2655806558ba90d797b7311295f1ab45ce17231d4df2b9b1e6ea94"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/assets/media/b37beba80ee282cf19122fe54b0dcc0286db6a76a36a504f43800a9a322afd87.webp",
+      "bytes": 108020,
+      "sha256": "b37beba80ee282cf19122fe54b0dcc0286db6a76a36a504f43800a9a322afd87"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/assets/media/b5bdc4b183b919d1a78cfdca5aca6026ed6f9a65e61d7a4a5cbbda054e786475.webp",
+      "bytes": 178550,
+      "sha256": "b5bdc4b183b919d1a78cfdca5aca6026ed6f9a65e61d7a4a5cbbda054e786475"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/assets/media/b6809ad37cc8672461fb69147731716642360d9ce4b6ff38bb347b2250e842a3.webp",
+      "bytes": 183850,
+      "sha256": "b6809ad37cc8672461fb69147731716642360d9ce4b6ff38bb347b2250e842a3"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/assets/media/b83ee4c126bf8a9b03653ca51b325ff279b994b772864f0d9fccc42777ffb19d.webp",
+      "bytes": 62718,
+      "sha256": "b83ee4c126bf8a9b03653ca51b325ff279b994b772864f0d9fccc42777ffb19d"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/assets/media/b92059b2eaa823e8378777675ac207bc9383fcb2473a9a638e9fd370e1f43238.webp",
+      "bytes": 160768,
+      "sha256": "b92059b2eaa823e8378777675ac207bc9383fcb2473a9a638e9fd370e1f43238"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/assets/media/bb7b721f1e8c92fa8e269849dd58d4683089088844d0460d508b290ff47301ca.webp",
+      "bytes": 196410,
+      "sha256": "bb7b721f1e8c92fa8e269849dd58d4683089088844d0460d508b290ff47301ca"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/assets/media/bf9b0fbde100cf99d5afb5d0b181d3b270ecdb14a5fe96a43d45eb45db6fd10f.webp",
+      "bytes": 113434,
+      "sha256": "bf9b0fbde100cf99d5afb5d0b181d3b270ecdb14a5fe96a43d45eb45db6fd10f"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/assets/media/d0976a23e107f5b9f0842e4e88d4ae57805175eb6f42e4f55a0dc472f31bbe6e.webp",
+      "bytes": 117606,
+      "sha256": "d0976a23e107f5b9f0842e4e88d4ae57805175eb6f42e4f55a0dc472f31bbe6e"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/assets/media/d0d9166153235584a6b36f49550e31931b5fbc64d75eda27f8fa51116984d0d5.webp",
+      "bytes": 221404,
+      "sha256": "d0d9166153235584a6b36f49550e31931b5fbc64d75eda27f8fa51116984d0d5"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/assets/media/d45d0a6b03a32d8c971b360769454c4d0befd16be0e9e7ef84a989b6f4435468.webp",
+      "bytes": 194062,
+      "sha256": "d45d0a6b03a32d8c971b360769454c4d0befd16be0e9e7ef84a989b6f4435468"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/assets/media/d6acafe593165ac7445d7354b846eeb33491f6c14add28cba5a98b56ba743bbe.webp",
+      "bytes": 192842,
+      "sha256": "d6acafe593165ac7445d7354b846eeb33491f6c14add28cba5a98b56ba743bbe"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/assets/media/d74809ddc6f492705ea2bb8854f1426f7fc011ac401d0df05003b9498b8d3be9.webp",
+      "bytes": 258446,
+      "sha256": "d74809ddc6f492705ea2bb8854f1426f7fc011ac401d0df05003b9498b8d3be9"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/assets/media/d7fb4fa65df415c71f1fa0e688004e804961e85ba549ddae895164d65ea85816.webp",
+      "bytes": 236226,
+      "sha256": "d7fb4fa65df415c71f1fa0e688004e804961e85ba549ddae895164d65ea85816"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/assets/media/dabc17d5b679a82de38bb8dea50aedd8e04ab14f95f615056886f1d55cc61ec7.webp",
+      "bytes": 256938,
+      "sha256": "dabc17d5b679a82de38bb8dea50aedd8e04ab14f95f615056886f1d55cc61ec7"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/assets/media/e4e3dfd021c2c0183ceb4fec254ff010c785622028cdd439897abdf48d306b9b.webp",
+      "bytes": 234420,
+      "sha256": "e4e3dfd021c2c0183ceb4fec254ff010c785622028cdd439897abdf48d306b9b"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/assets/media/e9d8b9cc98a06e0eaf68945e6a17d14da527b3b215c0b99f258bc4df813c9d25.webp",
+      "bytes": 159282,
+      "sha256": "e9d8b9cc98a06e0eaf68945e6a17d14da527b3b215c0b99f258bc4df813c9d25"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/assets/media/eddb930638b608096c6627a8f9f875ae6dff05fc210b584cecb83aa0bf4bc24e.webp",
+      "bytes": 43128,
+      "sha256": "eddb930638b608096c6627a8f9f875ae6dff05fc210b584cecb83aa0bf4bc24e"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/assets/media/ee0f617a822023e760ad352e4f9fd7967621413ed4553b77abc0b239b65026ec.webp",
+      "bytes": 257006,
+      "sha256": "ee0f617a822023e760ad352e4f9fd7967621413ed4553b77abc0b239b65026ec"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/assets/media/f45d527e00bc169c4b87e6aa0af2e1775193b8917e687b564a1ac94510748820.webp",
+      "bytes": 171612,
+      "sha256": "f45d527e00bc169c4b87e6aa0af2e1775193b8917e687b564a1ac94510748820"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/assets/media/f46b75cfcb58053a17a51a6e0713f65c45ad562d06438fb67d39b0c0d07dbcd4.webp",
+      "bytes": 231174,
+      "sha256": "f46b75cfcb58053a17a51a6e0713f65c45ad562d06438fb67d39b0c0d07dbcd4"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/assets/media/f728f78c32f593140bcdbe98a02386532308600a5ab159ac6d032068b934fc25.webp",
+      "bytes": 245100,
+      "sha256": "f728f78c32f593140bcdbe98a02386532308600a5ab159ac6d032068b934fc25"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/assets/media/f7e4fdc94d295d4dc1db5a79a76295b51ae2f1e400dbf36e449180be0edc3c4b.webp",
+      "bytes": 183226,
+      "sha256": "f7e4fdc94d295d4dc1db5a79a76295b51ae2f1e400dbf36e449180be0edc3c4b"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/assets/media/f965b4faff04f8fba3a85b0054452c91d9e4854c1438266e11a1e7d40d6fdbec.webp",
+      "bytes": 214788,
+      "sha256": "f965b4faff04f8fba3a85b0054452c91d9e4854c1438266e11a1e7d40d6fdbec"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/assets/trophy.webp",
+      "bytes": 42150,
+      "sha256": "a62635124851e62be6dca13bfb75c52d8ed52361ff3710cab9e36e16f5541623"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/capture-provenance.json",
+      "bytes": 35230,
+      "sha256": "26ffcd452e184e66180ff248aa4901aae42e6b970b1addc59d49d073090a1eeb"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/capture.html",
+      "bytes": 814,
+      "sha256": "bdbe34169824ddb532b21bb8e07d447a59845fd37588b21e23aa7967d2633f8e"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/contact-sheet-ar.png",
+      "bytes": 2659751,
+      "sha256": "54010f321a6005a570ee405d4a8402ad8a288b5f7442630be7e7a94a9c03d9b1"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/contact-sheet-en.png",
+      "bytes": 2665709,
+      "sha256": "508b35b0c37d69337bfad8b6c3966003638d3dffab6c3d337ca7f56b0132633a"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/crop-audit.json",
+      "bytes": 980,
+      "sha256": "2bf189f9685399d3ac63dc0983d4108fb21db3f245d3a0dcd49af6242b6555d2"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/delivery-manifest.json",
+      "bytes": 22258,
+      "sha256": "c7fd157825734f80905d5fdc7a0c3adbaa92e47411ba4b809a527cc9c9607910"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/editable-preview.png",
+      "bytes": 88218,
+      "sha256": "c30e4d36e15f437bcb73133dddca660bf6fc44d03dda305867cb56cc18dda4fd"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/en/01-seven-games.png",
+      "bytes": 2930817,
+      "sha256": "b45ed779c48c45e4bc51e35be1a56cd9be05a2b516f6d30bf9ad286f7687033f"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/en/02-draw-live.png",
+      "bytes": 1823543,
+      "sha256": "43746b80b625c6ab4fc42a68c733530cfcfe28558a3a62e92fac2443cac30da5"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/en/03-play-and-talk.png",
+      "bytes": 1800043,
+      "sha256": "95a16a93afa7bba92284a764c3f89f7679292e19bdcaa073bd2e9d88b3be94f9"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/en/04-badeeha.png",
+      "bytes": 2282895,
+      "sha256": "97e6e7f5efede0a554440f0d9b84249f953d026246e468622b24761b80211648"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/en/05-fast-and-forbidden.png",
+      "bytes": 2013115,
+      "sha256": "44192d04d415f91748d1c40dd78524118d0eea0bce5fd4af0279e22955e10440"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/en/06-forehead.png",
+      "bytes": 2444880,
+      "sha256": "08e1d4ec7dbfd9dcc98f2bf9c7ab146e84b037965d3706179bb74a689f6be484"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/en/07-fabraka.png",
+      "bytes": 2050464,
+      "sha256": "063be83d4d26104c5a3d080aebdfd39b46cc60475942bee507c72a51555a9530"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/en/08-whos-most-likely.png",
+      "bytes": 1517008,
+      "sha256": "2bfabb2de027d2d6d7acd7660ce6f5a1eddf218a91c2d1ca442460c39da2d8db"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/en/09-friends-and-chat.png",
+      "bytes": 1783140,
+      "sha256": "878ec965a07e7bc4a78bcf4c6c7dfa8fb38a9a269b4b9e3175339e547ed22fb7"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/en/10-your-profile.png",
+      "bytes": 1630831,
+      "sha256": "929c8a2bed51a338600ef2a5b59ff73c698f26b6bd8c76839103e3b25f428d64"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/handoff-to-main.json",
+      "bytes": 1518,
+      "sha256": "276f91f2cde0b28a80409289aee83bdad9fee8baebd90ad3c54560e54793ba0f"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/index.html",
+      "bytes": 9759,
+      "sha256": "0514b0b98f28e25116b17ebd5517ba690a561f885b3d3181e6521f1abb19d889"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/media/badeeha-covers/actors.webp",
+      "bytes": 43196,
+      "sha256": "d31e1f5035005b1ed13a7e12bf994f04d913c10c488d849005a523ba89fd98cb"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/media/badeeha-covers/animals.webp",
+      "bytes": 88052,
+      "sha256": "3b6c6d3840bb28203d65e0e047635bdd42147c2dcab7a876fbaab3e6e7f3d61d"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/media/badeeha-covers/anime.webp",
+      "bytes": 106438,
+      "sha256": "2d17fa41e24a63d1ee1bff5aed47a56a149429c5e6377e758770bc0c1944dbe2"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/media/badeeha-covers/aot.webp",
+      "bytes": 68124,
+      "sha256": "30330f68324046b8baea5fdd06a83465a0b2255d51ab79fa237a72fd58a9e615"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/media/badeeha-covers/apps.webp",
+      "bytes": 47460,
+      "sha256": "ece5738644c6b406863f8e4d5c66ade893c50f73d253aae9774a113e3d04d8fb"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/media/badeeha-covers/arabart.webp",
+      "bytes": 102334,
+      "sha256": "16e14406485151cdd6136a3fd79e809eee8c601bad32f890d64e80fe6747ed29"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/media/badeeha-covers/arabcelebs.webp",
+      "bytes": 38490,
+      "sha256": "941276437ab3cb99ca2f538dc472f0d0ed37399b1972cc2e91a43e15f6667719"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/media/badeeha-covers/arabic.webp",
+      "bytes": 61480,
+      "sha256": "8a24b8d669c0c02b8890407f7b7e1495b0533b9e1f57a383f73d681501c56a7d"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/media/badeeha-covers/arabliterature.webp",
+      "bytes": 135010,
+      "sha256": "098fa9119fe1028cb0f8af971854ca1dffaf705932e2e171cbc0f8ad9129eaa1"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/media/badeeha-covers/arabmovies.webp",
+      "bytes": 85982,
+      "sha256": "6c76b7a0a9132ecd665b8f14386d7c4f4606ff054b833b9fd0135e63073a6485"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/media/badeeha-covers/arabmusic.webp",
+      "bytes": 45718,
+      "sha256": "c131dbefb921f9708838b0c554a353e539ca8bce08b5186860e636a32e239c15"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/media/badeeha-covers/arabseries.webp",
+      "bytes": 97342,
+      "sha256": "7d8ae7e029ba32666620f792e0aa726ecd1bce7aa1d3a374076dc5640b61223a"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/media/badeeha-covers/babalhara.webp",
+      "bytes": 126148,
+      "sha256": "a05362c0b5da70fbfcdff70cdfab3d253583842456c940ba2339483a5fc7acf2"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/media/badeeha-covers/beforeafter.webp",
+      "bytes": 77096,
+      "sha256": "41ef5e806507b7f40c70a66431641a6588e0b75dc6f7f5d5511b3afcf3b8c0db"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/media/badeeha-covers/blur.webp",
+      "bytes": 73806,
+      "sha256": "e5c45d1e73298454a7fa67e7419e2fd7c9b58cfc441c750e73d31d127f6e44dd"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/media/badeeha-covers/books.webp",
+      "bytes": 61040,
+      "sha256": "e3b734fd6f32fc0be15b132d0df3916ddd9dbcaef663e63de34abb1cd86e9a3e"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/media/badeeha-covers/brands.webp",
+      "bytes": 43354,
+      "sha256": "78f6e01eede816692710d5587b4a926bbb74bb675e2fcf3a3a3ba957a0bdfe49"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/media/badeeha-covers/breakingbad.webp",
+      "bytes": 64278,
+      "sha256": "c835b6111a6c70b374a48cdad69e22a081c7a6511dcfeaafa99b66e312dbbafb"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/media/badeeha-covers/capitals.webp",
+      "bytes": 81246,
+      "sha256": "c7a0c7cc97975f93406ae23a4156ed5ff2a555a83560807a1f2ce2cf138fad49"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/media/badeeha-covers/cars.webp",
+      "bytes": 56402,
+      "sha256": "5bbd6011a6fafd659ab61bb98d935b47f571b065116ab10ae7ec04a81473e2c6"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/media/badeeha-covers/cartoon.webp",
+      "bytes": 90864,
+      "sha256": "9b7cd0eb9151f1ddbdd01fd32ff3d4a646c82c39479a4bf5ba30bbad4f776e37"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/media/badeeha-covers/code.webp",
+      "bytes": 82268,
+      "sha256": "f81a8b0f02293f15eff6d6ceddd10cad009acf3e3ffc2e0c21719f12188081fb"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/media/badeeha-covers/commonbond.webp",
+      "bytes": 52990,
+      "sha256": "bd170a220d4f2758964b3b4180e53df98f41371777046619e508f7328a510b71"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/media/badeeha-covers/completeproverb.webp",
+      "bytes": 109916,
+      "sha256": "11e012767f2625c0faaf33518414d4afb40d40ed865f9e6e7165fadef1969a92"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/media/badeeha-covers/deathnote.webp",
+      "bytes": 55110,
+      "sha256": "d73b1e344805567949458e79aa5b4ae0bb761cc1cd3ea620f508ac94db3d04e3"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/media/badeeha-covers/demonslayer.webp",
+      "bytes": 93726,
+      "sha256": "65a30dee5d5ed252fd60056ee8536d48445328c817da6fe382617aa1d2aff6a1"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/media/badeeha-covers/dialects.webp",
+      "bytes": 69460,
+      "sha256": "1ef879b7ad407b6e07fd54df364f11f8ce736c5b810d986b8541b6461f85a725"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/media/badeeha-covers/dragonball.webp",
+      "bytes": 96096,
+      "sha256": "bdaf9ff129ae6572b587503c3ec88df6abe53f310ec10bf782c25e538b20804d"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/media/badeeha-covers/egyptdrama.webp",
+      "bytes": 99498,
+      "sha256": "2678ee009196da300075f21edfed36ea0fb64ba8784c2cd58e2572b61dc0f284"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/media/badeeha-covers/emoji.webp",
+      "bytes": 58660,
+      "sha256": "1aabd771c9c398c929c44334b35d2f6233029b969718d80a543caad3e3c06a79"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/media/badeeha-covers/ertugrul.webp",
+      "bytes": 88848,
+      "sha256": "24605d7ed4099d566f8d25cde1d06a44c4a9b976a8b8934254cfd9d80f70cec3"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/media/badeeha-covers/flags.webp",
+      "bytes": 65178,
+      "sha256": "4e500d02c3db04a5d5401a9996df0a9e5de78a433aa7a585f9eed3901d7910e4"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/media/badeeha-covers/food.webp",
+      "bytes": 107204,
+      "sha256": "72376953bc8b9e5ade27eefe965eb816f1d48b0e64c49b8edad6c9bb2a80ac66"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/media/badeeha-covers/football.webp",
+      "bytes": 58620,
+      "sha256": "8c12f09cf2dc43ba8dceb25d95b421e5ab1eed6979973599c6b1d8148b1285b6"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/media/badeeha-covers/foreignseries.webp",
+      "bytes": 80116,
+      "sha256": "31443d75d0c01280f4d8131fcdf22c8764d747606956899733c8306928407216"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/media/badeeha-covers/fruitsveg.webp",
+      "bytes": 125002,
+      "sha256": "106c7b689cbf9a1fd426d04c77b3f49f4d0f9f0b4f6dd0d78692aae24350ad9e"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/media/badeeha-covers/general.webp",
+      "bytes": 87022,
+      "sha256": "9c39e42c5a3cf86c8ff965c7cbaa761fe8a8de53999981d7732cd1a0bef62efe"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/media/badeeha-covers/geo.webp",
+      "bytes": 90154,
+      "sha256": "6ec42170d59339ea28bebf34e8edd0769770afedd9b50b14b033a40b7cd6d518"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/media/badeeha-covers/guesscar.webp",
+      "bytes": 61886,
+      "sha256": "3a5c45db7bd27c6c170e2e0b97c5f09c8ea2f5ce9b13843096c74b72c110ec9d"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/media/badeeha-covers/hidden.webp",
+      "bytes": 77170,
+      "sha256": "7d6432dbf563eb1e28a1e60dbce02018f6b79500a5c4b9e153e8388a27352e47"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/media/badeeha-covers/hints.webp",
+      "bytes": 78318,
+      "sha256": "ba3f57396da0e070eb6f83d12c7c1fe310ae91f61b9fe819129c0754d5bc9ec4"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/media/badeeha-covers/history.webp",
+      "bytes": 118010,
+      "sha256": "5bbb87d94b30b5fc3ab1cf34abd8b78a8e0514d9ccc0223623626178068e5dcb"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/media/badeeha-covers/hunterxhunter.webp",
+      "bytes": 119654,
+      "sha256": "5cb84ef8c075d54daf222c378715f8ad54a743a4514f538d7c70307ab6c8ed42"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/media/badeeha-covers/islamiyat.webp",
+      "bytes": 77876,
+      "sha256": "88c1aa2bd4db34f30ac021329f7b2798a49af2b7a53a8367eeac8b43c3271664"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/media/badeeha-covers/jujutsu.webp",
+      "bytes": 73940,
+      "sha256": "cb34b388f7ec86ab290f6cc9a168dbdca4ee89b129faf8d06f8346c9a5cfb1cd"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/media/badeeha-covers/movies.webp",
+      "bytes": 35132,
+      "sha256": "82cdee667aa974b6339e552766abc6144fcc01d95244f43a0ea6d9f46173b20d"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/media/badeeha-covers/naruto.webp",
+      "bytes": 101070,
+      "sha256": "325949170700e6effb328f3210e5ff6a93e53f845999762b845c1c346280b124"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/media/badeeha-covers/onepiece.webp",
+      "bytes": 109596,
+      "sha256": "4ca8a4bc70b8c0f407eac8e9dc9a5c2c6998af534595aae55641ce2374163416"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/media/badeeha-covers/placefinder.webp",
+      "bytes": 103216,
+      "sha256": "bec61e8c15dafff900ad7d79b75157e7bd0de0c2bc30b642f43d1d101895517f"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/media/badeeha-covers/premier.webp",
+      "bytes": 113050,
+      "sha256": "75ac796a92aa400eab382ad329d21b5792e22ca2e983bbd13583fc3add68ad66"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/media/badeeha-covers/prophets.webp",
+      "bytes": 80184,
+      "sha256": "6ad869740e4de698da15f4c932d456bb07e03cabfd905a4b579bcaa9cba8d733"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/media/badeeha-covers/proverbs.webp",
+      "bytes": 120098,
+      "sha256": "3e0603e28c93d78a371046e427e136753d48afae14efa8150f60a407c9e95ef4"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/media/badeeha-covers/puzzles.webp",
+      "bytes": 54214,
+      "sha256": "b09a63d44fd179679adf5b6690271665708af01e9a824d965045273a841f5ea5"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/media/badeeha-covers/quotes.webp",
+      "bytes": 33102,
+      "sha256": "9dffd3992880b3894e06ac3071e00921bf3145981382e34bc87e218dd8540b5b"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/media/badeeha-covers/quran.webp",
+      "bytes": 66910,
+      "sha256": "60249df3c62a5c3cb65ec90489f3b2023629958831a9914c8a526ddbeadc2c50"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/media/badeeha-covers/ramadan.webp",
+      "bytes": 84004,
+      "sha256": "aeda512f5fa67b2a71ce31740f7aaa6d0866f07ac58b49b0440d80dad59240ab"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/media/badeeha-covers/ramadanseries.webp",
+      "bytes": 59114,
+      "sha256": "7ac9a695e8f5c0f49d28ef2cdeb9946e3b4e3d11669e261276d8b00c0e49a276"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/media/badeeha-covers/reveal.webp",
+      "bytes": 27208,
+      "sha256": "f7864ea58ec2e83e77a2ff5876a6f8a247ce7ada8fd851524782a9ce8db6f216"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/media/badeeha-covers/science.webp",
+      "bytes": 52414,
+      "sha256": "a6310bcafb7ac3cf27034a95c0202de88127396a98bd671f426af099d1f19ede"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/media/badeeha-covers/seerah.webp",
+      "bytes": 87972,
+      "sha256": "2dd9e4ff81c1457b6a4e9ad34d6168e6e98c37afb5ca2a0beb4e4bd82807b753"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/media/badeeha-covers/shopping.webp",
+      "bytes": 83482,
+      "sha256": "f5b8a7cea44b6f817e86fa7e4adaa4b9552b379391bb755fbbfe7d45f15f6f88"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/media/badeeha-covers/silhouette.webp",
+      "bytes": 29716,
+      "sha256": "d560277043e00b5b93f26e41be5472ccab911ca5bb686558594a8cc42cea17b9"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/media/badeeha-covers/sound.webp",
+      "bytes": 87518,
+      "sha256": "bffcabcc8c159025113da9ff86a5a359c53057df317743edd18b2de38184fc82"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/media/badeeha-covers/spacetoon.webp",
+      "bytes": 70992,
+      "sha256": "7ce075f8f3f89bc30db3f312bc76a511cfc0e95e3de96f57689220f498f3725f"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/media/badeeha-covers/sports.webp",
+      "bytes": 80656,
+      "sha256": "afb85979831cc376d54fd7e98046eaecd8cfa27a1ffb8558ccedd986cd1bc976"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/media/badeeha-covers/spotdiff.webp",
+      "bytes": 71328,
+      "sha256": "890068607698dfa5af20cfc585e96031472ff675bfc5efb841f58a9aa2d64271"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/media/badeeha-covers/squidgame.webp",
+      "bytes": 28954,
+      "sha256": "ed8c7e1c2ec8ddd320b0a26e3000d0d4417204eae7cac5c13a52f9ba22bb2186"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/media/badeeha-covers/syriandrama.webp",
+      "bytes": 90522,
+      "sha256": "31be23efeb21c3ec0a470f5e3f679cf6e06ef1e59b7f6a7586375870034b75da"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/media/badeeha-covers/tarab.webp",
+      "bytes": 55352,
+      "sha256": "b7463b90c23b030ed02649a57ccab51bde63dd1a9f343245b40766c34953198a"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/media/badeeha-covers/tech.webp",
+      "bytes": 72638,
+      "sha256": "4c2e02517e3535399869efe1f29174978c1ecd5b6b76ec46a499b32c010bba98"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/media/badeeha-covers/theater.webp",
+      "bytes": 45186,
+      "sha256": "398e73fc5ab69c86d69c4cac239fb4fc65bef1cf0032e890b52463a65005db87"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/media/badeeha-covers/tilepuzzle.webp",
+      "bytes": 93402,
+      "sha256": "04c149772f7f39c0a1ffda3f0dd496f1cbb2f4de545514e97d50893cfe08df82"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/media/badeeha-covers/turkishdrama.webp",
+      "bytes": 75948,
+      "sha256": "82c01307e537c519e6cd031df83063438a869984c3eaaf4fcbea94ddd8de5e68"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/media/badeeha-covers/ucl.webp",
+      "bytes": 65348,
+      "sha256": "2542a6947c3c65beaf0b2a6ad7c824b7815cb7c40a4bb282d2d515b482e4b69f"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/media/badeeha-covers/videogames.webp",
+      "bytes": 79996,
+      "sha256": "d7f6e74b75bf4bca19f5a07fc3a493c47fb9bfc220f89438bcf4fce12f3c3596"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/media/badeeha-covers/worldcup.webp",
+      "bytes": 83006,
+      "sha256": "2af1e2437c69074f158cbba190cb3e60d8fc83ccfc1287e3937b2fdabe3c133a"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/media/badeeha-covers/youtubers.webp",
+      "bytes": 76234,
+      "sha256": "90108e3962ef114a03a3abd2e8fbbcf22c239b71842cdbeddb551c8a185aa869"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/media/badeeha-covers/zoom.webp",
+      "bytes": 66024,
+      "sha256": "8191ecc726e4b67499eacb5af4ed88948681cb79236505bd4ca85c8f747191a9"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/previous-listing/01-previous.jpg",
+      "bytes": 32776,
+      "sha256": "593bd58ef0948c468246d4890792b43ade7d4e816cf0b641036dc1cda9361d16"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/previous-listing/02-previous.jpg",
+      "bytes": 26649,
+      "sha256": "f8d82b5048c25149593f3d9ead0e3ff662efda1c8ad111c35c4c9d6b48b4d88b"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/previous-listing/03-previous.jpg",
+      "bytes": 31993,
+      "sha256": "a340b0c664ffe00dde66d3b2db2464056b7298006d2f77a31eeee77cc923734c"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/previous-listing/backup.json",
+      "bytes": 1167,
+      "sha256": "471354c12483f115d4f17c93c85deb5a49d6a5ec5fb7afc64233c684a1f8e8cf"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/quality-review.json",
+      "bytes": 923,
+      "sha256": "0ed4980b5694fa120042f9bbb83e87d51f83aa955d9cbe4bb110e6c7d1f95ef4"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/raw/badeeha-categories.png",
+      "bytes": 3245779,
+      "sha256": "f281303f6e42aac839e6badf674770b0265e5f9adbe4f9893d71a6aa96ba9812"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/raw/badeeha-question.png",
+      "bytes": 1034080,
+      "sha256": "260065e0f73b5b76e18bb16d5ca29ae9f56c3f3749eef42cca6e9d17b9d685d1"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/raw/beep-window.png",
+      "bytes": 317250,
+      "sha256": "3e3ee322fd8b9dcb7dc8f0f66450028ee3602a4190cddac644ec1c47f82004b6"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/raw/beep.png",
+      "bytes": 359529,
+      "sha256": "9c8c354988714a03d597fb8b206a918cb5db113d203be76a6fc75f6faa1476a8"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/raw/ersomha-call.png",
+      "bytes": 312489,
+      "sha256": "e562a471a2382e72e4b25988b9f2010dafb95964ed9b757e13cb597f6d333caa"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/raw/ersomha-drawer.png",
+      "bytes": 303426,
+      "sha256": "d6f7412f966cabe408eac093e10b5dc22f882839ceceec121031c97b17a96a4b"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/raw/ersomha-guesser.png",
+      "bytes": 300124,
+      "sha256": "234bf3f6886e2d83629f1907c3eb438d22b07e2e820e3b4d408d2574787dcb9a"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/raw/ersomha-guesses-crop.png",
+      "bytes": 173726,
+      "sha256": "fee18a512566fe1e4b97e71bb0d99baa1800fad4a2cea947dd4d19bdb9ad6686"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/raw/fabraka-reveal-crop.png",
+      "bytes": 142373,
+      "sha256": "1cbda506e64058491257ce351c2238a57628adca87754c9feadeb147977e05d8"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/raw/fabraka-reveal.png",
+      "bytes": 305391,
+      "sha256": "3202b021206bf20f68d981cfa52958f2004e77ace1565badd227641f4afd4762"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/raw/fabraka-vote.png",
+      "bytes": 302044,
+      "sha256": "56991b19a59e397ce13c42bc7971b61ddeceec22ef31b991a612b2c936cede6a"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/raw/friends-window.png",
+      "bytes": 231519,
+      "sha256": "4dc5873b95ca8524bb9553911b054b7e556a5361028ad41dbd61137d6025db4e"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/raw/friends.png",
+      "bytes": 361504,
+      "sha256": "f103e2e7f3232d1a1735373f13a4164f9e6646969b5017416c178c2128260664"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/raw/group.png",
+      "bytes": 309417,
+      "sha256": "de9454a3a45ac5cb3a922aebfe591c642ae8899327ccdda8cbd35f3923437df3"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/raw/home-window.png",
+      "bytes": 1358889,
+      "sha256": "2ec3bbfb904400918dd5d06a909ebbb3a1ef2f4e95f0be2e4f52e437cf17fa76"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/raw/home.png",
+      "bytes": 2015533,
+      "sha256": "7447d9a715f68a65b1b20babc6f47fd1ab9efeca0a2c2db9eb77902c96146e33"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/raw/jabeen-intro.png",
+      "bytes": 295790,
+      "sha256": "8fd083b4a64537391d0dca9b39f4672c18564adeac98d53a25fb769aaa456da0"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/raw/jabeen.png",
+      "bytes": 76227,
+      "sha256": "2a7d44fd93560605cac1f16750174428234598ef65545e1262f3017bac825a8e"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/raw/mamnoo.png",
+      "bytes": 681243,
+      "sha256": "0cea397716b3dccf3f063de9c19f43edf28b71c828cc9a68da97772a58970aeb"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/raw/meenfina-result-crop.png",
+      "bytes": 366360,
+      "sha256": "3c1a34806412000738313b5311974697f18ba1905d7e9b0253587ca67c79bace"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/raw/meenfina-result.png",
+      "bytes": 501015,
+      "sha256": "4de54ac27ee3ac5f9ed7f2c6273a066f98e7f5798ebb9b5ae6824273839b9620"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/raw/meenfina.png",
+      "bytes": 516302,
+      "sha256": "95a5b6360eed915e0a608683397a705a64318625718f2daa0f8b0d8c5539360c"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/raw/profile.png",
+      "bytes": 830751,
+      "sha256": "691350223833535b16f2b9e4681e6f06a67745a9b8ffb2dacb0244990e06e9de"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/raw/voice.png",
+      "bytes": 147532,
+      "sha256": "e09a03b6d7fac0c01bb26a44019f7a1e915c2e73ad47b42b6b3384519839dd9f"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/raw-capture-audit.json",
+      "bytes": 18388,
+      "sha256": "a05aeb16c3023d6c55b5cebcf3a5b7f0cbacb05520f41a927ecc74e8c3803e32"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/README-ar.txt",
+      "bytes": 4019,
+      "sha256": "0a70a4c645d0e26d3961c7969d766d80f2af0675482531219a7cc6d9d6b04c25"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/runtime/capture.js",
+      "bytes": 3487537,
+      "sha256": "eddc4b7f2efddac9f7d57ee1085bda368c620741cb9886c9056a13fe38774806"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/source/backup-listing.mjs",
+      "bytes": 1746,
+      "sha256": "fbb334866650a4eddcab35710e3e46f936432e686375c135cf7fa6845414bfe2"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/source/bootstrap.js",
+      "bytes": 1143,
+      "sha256": "a60a1b465432f92a2808ce074d74c8a372485da06785c6800489cddeae9584b3"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/source/build.mjs",
+      "bytes": 4780,
+      "sha256": "f39802a54eba696151df899a082bea29d4227782da0431becbb843ef85c82ef9"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/source/campaign-data.js",
+      "bytes": 5803,
+      "sha256": "c4ce212bc857901b05237100f922d9bf6f1d7c85cb7b579ea9abeaf388743303"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/source/campaign.css",
+      "bytes": 8766,
+      "sha256": "803a647a9bad8d686af91b1b931fbc3531a61db239b1ebb9af542055896fe270"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/source/campaign.json",
+      "bytes": 5818,
+      "sha256": "14d0f44a44a09fdc0755938c4515ed83ffb707a8319941760f2e396d0612cfac"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/source/capture-render.mjs",
+      "bytes": 5535,
+      "sha256": "dec982bc81f839d98e024025dd21fa6c5361472a4229a89ab3b684dae37b4f2e"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/source/capture.jsx",
+      "bytes": 9348,
+      "sha256": "a1c08685121cc4e13f0462d23e5e4cad0fda6034fd03453df965269998601b64"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/source/package_delivery.py",
+      "bytes": 2878,
+      "sha256": "1431e86e39be2b22211751211f1651ed8ddabb972ff314bff9dc65be6898a435"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/source/poster.html",
+      "bytes": 902,
+      "sha256": "fc21d537c6654838fe16d548aea73ce1c78732c03aabdda82ba1502ba195925b"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/source/poster.js",
+      "bytes": 4524,
+      "sha256": "37a0132b8e3158260872d2e4b9b18193136faf2bacb4c3f18e538c81e2d44c5f"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/source/render-posters.mjs",
+      "bytes": 5851,
+      "sha256": "bcc719ba71af234d121420d7c274164c72401a6bd5431f2a57daaac4d733fe67"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/source/server.mjs",
+      "bytes": 1281,
+      "sha256": "ef503ba661075edea5ee9b060b5e87466b3acaf85d706446f4edd9f7f95ad507"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/source/snapshot.mjs",
+      "bytes": 2576,
+      "sha256": "daa6269ed564911eec217eb72613fe59a2e2e6bc192e1e5f64d19ef188db2e28"
+    },
+    {
+      "archive": "editable",
+      "file": "editable/source/verify-preview.mjs",
+      "bytes": 3251,
+      "sha256": "94adf0029a7f8d78ff35a466de1a8f8a56bb75c47125ea91a35c7c243e203041"
+    },
+    {
+      "archive": "images",
+      "file": "images/ar/01-seven-games.png",
+      "bytes": 2932798,
+      "sha256": "3dd5ea69e3f64bb79e61d1d73a0eba2f4b217deb704cb5932aa355fb3dc89c4b"
+    },
+    {
+      "archive": "images",
+      "file": "images/ar/02-draw-live.png",
+      "bytes": 1823603,
+      "sha256": "35004f532ebc94c0ea1ba21a5483cdeb2a3b57cfd5223bf2c249e7ffff75fabc"
+    },
+    {
+      "archive": "images",
+      "file": "images/ar/03-play-and-talk.png",
+      "bytes": 1798311,
+      "sha256": "ecc33cf436687d3b46092c05a2757691a7f4af5aed667e334fad9ec43e23cac6"
+    },
+    {
+      "archive": "images",
+      "file": "images/ar/04-badeeha.png",
+      "bytes": 2276923,
+      "sha256": "7967c7e3bee60b308f1d601a41292afcbc5076f595bed822d42a89e0ebc0ea3d"
+    },
+    {
+      "archive": "images",
+      "file": "images/ar/05-fast-and-forbidden.png",
+      "bytes": 2013295,
+      "sha256": "b20ff9c11c0bfddf8a63071f5f8f02f686017075c267dcf7a9497079b1569628"
+    },
+    {
+      "archive": "images",
+      "file": "images/ar/06-forehead.png",
+      "bytes": 2451548,
+      "sha256": "8cb11ce7d22c5d60a244ebacd3aedd57250557921b99b5b3f930a16de192b8e5"
+    },
+    {
+      "archive": "images",
+      "file": "images/ar/07-fabraka.png",
+      "bytes": 2055942,
+      "sha256": "7ca4b9c73b62033c1e712dfba2aff01accbfede8cf69c90809d7008e5e60de42"
+    },
+    {
+      "archive": "images",
+      "file": "images/ar/08-whos-most-likely.png",
+      "bytes": 1518218,
+      "sha256": "bd5d9f51e106546cdc2abc2d59c7d7a0d2b5f304416cce3a741c9784815af60e"
+    },
+    {
+      "archive": "images",
+      "file": "images/ar/09-friends-and-chat.png",
+      "bytes": 1786318,
+      "sha256": "6c1af5b0e42ee77b3a0b545a8c9c030cc58c2cca922ccff41c46abf6644c126c"
+    },
+    {
+      "archive": "images",
+      "file": "images/ar/10-your-profile.png",
+      "bytes": 1624361,
+      "sha256": "ce29703eedb2cd146b0b859e93a1952e4256b6cecebc8e3c004d51feedc19b2e"
+    },
+    {
+      "archive": "images",
+      "file": "images/capture-provenance.json",
+      "bytes": 35230,
+      "sha256": "26ffcd452e184e66180ff248aa4901aae42e6b970b1addc59d49d073090a1eeb"
+    },
+    {
+      "archive": "images",
+      "file": "images/contact-sheet-ar.png",
+      "bytes": 2659751,
+      "sha256": "54010f321a6005a570ee405d4a8402ad8a288b5f7442630be7e7a94a9c03d9b1"
+    },
+    {
+      "archive": "images",
+      "file": "images/contact-sheet-en.png",
+      "bytes": 2665709,
+      "sha256": "508b35b0c37d69337bfad8b6c3966003638d3dffab6c3d337ca7f56b0132633a"
+    },
+    {
+      "archive": "images",
+      "file": "images/delivery-manifest.json",
+      "bytes": 22258,
+      "sha256": "c7fd157825734f80905d5fdc7a0c3adbaa92e47411ba4b809a527cc9c9607910"
+    },
+    {
+      "archive": "images",
+      "file": "images/en/01-seven-games.png",
+      "bytes": 2930817,
+      "sha256": "b45ed779c48c45e4bc51e35be1a56cd9be05a2b516f6d30bf9ad286f7687033f"
+    },
+    {
+      "archive": "images",
+      "file": "images/en/02-draw-live.png",
+      "bytes": 1823543,
+      "sha256": "43746b80b625c6ab4fc42a68c733530cfcfe28558a3a62e92fac2443cac30da5"
+    },
+    {
+      "archive": "images",
+      "file": "images/en/03-play-and-talk.png",
+      "bytes": 1800043,
+      "sha256": "95a16a93afa7bba92284a764c3f89f7679292e19bdcaa073bd2e9d88b3be94f9"
+    },
+    {
+      "archive": "images",
+      "file": "images/en/04-badeeha.png",
+      "bytes": 2282895,
+      "sha256": "97e6e7f5efede0a554440f0d9b84249f953d026246e468622b24761b80211648"
+    },
+    {
+      "archive": "images",
+      "file": "images/en/05-fast-and-forbidden.png",
+      "bytes": 2013115,
+      "sha256": "44192d04d415f91748d1c40dd78524118d0eea0bce5fd4af0279e22955e10440"
+    },
+    {
+      "archive": "images",
+      "file": "images/en/06-forehead.png",
+      "bytes": 2444880,
+      "sha256": "08e1d4ec7dbfd9dcc98f2bf9c7ab146e84b037965d3706179bb74a689f6be484"
+    },
+    {
+      "archive": "images",
+      "file": "images/en/07-fabraka.png",
+      "bytes": 2050464,
+      "sha256": "063be83d4d26104c5a3d080aebdfd39b46cc60475942bee507c72a51555a9530"
+    },
+    {
+      "archive": "images",
+      "file": "images/en/08-whos-most-likely.png",
+      "bytes": 1517008,
+      "sha256": "2bfabb2de027d2d6d7acd7660ce6f5a1eddf218a91c2d1ca442460c39da2d8db"
+    },
+    {
+      "archive": "images",
+      "file": "images/en/09-friends-and-chat.png",
+      "bytes": 1783140,
+      "sha256": "878ec965a07e7bc4a78bcf4c6c7dfa8fb38a9a269b4b9e3175339e547ed22fb7"
+    },
+    {
+      "archive": "images",
+      "file": "images/en/10-your-profile.png",
+      "bytes": 1630831,
+      "sha256": "929c8a2bed51a338600ef2a5b59ff73c698f26b6bd8c76839103e3b25f428d64"
+    },
+    {
+      "archive": "images",
+      "file": "images/handoff-to-main.json",
+      "bytes": 1518,
+      "sha256": "276f91f2cde0b28a80409289aee83bdad9fee8baebd90ad3c54560e54793ba0f"
+    },
+    {
+      "archive": "images",
+      "file": "images/previous-listing/01-previous.jpg",
+      "bytes": 32776,
+      "sha256": "593bd58ef0948c468246d4890792b43ade7d4e816cf0b641036dc1cda9361d16"
+    },
+    {
+      "archive": "images",
+      "file": "images/previous-listing/02-previous.jpg",
+      "bytes": 26649,
+      "sha256": "f8d82b5048c25149593f3d9ead0e3ff662efda1c8ad111c35c4c9d6b48b4d88b"
+    },
+    {
+      "archive": "images",
+      "file": "images/previous-listing/03-previous.jpg",
+      "bytes": 31993,
+      "sha256": "a340b0c664ffe00dde66d3b2db2464056b7298006d2f77a31eeee77cc923734c"
+    },
+    {
+      "archive": "images",
+      "file": "images/previous-listing/backup.json",
+      "bytes": 1167,
+      "sha256": "471354c12483f115d4f17c93c85deb5a49d6a5ec5fb7afc64233c684a1f8e8cf"
+    },
+    {
+      "archive": "images",
+      "file": "images/quality-review.json",
+      "bytes": 923,
+      "sha256": "0ed4980b5694fa120042f9bbb83e87d51f83aa955d9cbe4bb110e6c7d1f95ef4"
+    },
+    {
+      "archive": "images",
+      "file": "images/README-ar.txt",
+      "bytes": 4019,
+      "sha256": "0a70a4c645d0e26d3961c7969d766d80f2af0675482531219a7cc6d9d6b04c25"
+    }
+  ]
+}

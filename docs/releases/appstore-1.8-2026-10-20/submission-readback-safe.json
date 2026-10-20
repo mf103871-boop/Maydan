@@ -1,0 +1,45 @@
+{
+  "checkedAtUtc": "2026-10-20T06:25:03.879250+00:00",
+  "readOnlyOfficialApi": true,
+  "appId": "6808385717",
+  "version": "1.8",
+  "versionId": "d15b847b-310e-441a-a579-1533a75c0b25",
+  "build": "22",
+  "buildId": "093728e9-5d77-4d9f-8725-5e1c4de8c5f9",
+  "sourceCommit": "2fe524e98f8a455b1b801ab4c0fdd9d82f9396ef",
+  "submissionId": "76f7ef79-7b4e-4f7f-8fd2-2cd6b25b7bb5",
+  "submittedDateUtc": "2026-10-20T06:23:41.201Z",
+  "submissionState": "WAITING_FOR_REVIEW",
+  "versionState": "WAITING_FOR_REVIEW",
+  "submittedItemCount": 1,
+  "submittedItemId": "NzZmN2VmNzktN2I0ZS00ZjdmLThmZDItMmNkNmIyNWI3YmI1fDZ8ODkzNDgxOTg2",
+  "submittedItemState": "READY_FOR_REVIEW",
+  "itemPointsToExactVersion": true,
+  "releaseType": "AFTER_APPROVAL",
+  "phasedRelease": false,
+  "metadataManifestSha256": "a310e1e2101de6d28751e4057ea4b6fcb9131c8807c37594a83f926df4daf35a",
+  "allSubmittedMetadataMatchesApprovedManifest": true,
+  "localizations": [
+    {
+      "locale": "ar-SA",
+      "name": "ميدان: ألعاب الشلة",
+      "subtitle": "رسم وتخمين ودردشة صوتية"
+    },
+    {
+      "locale": "en-US",
+      "name": "Maydan: Arabic Party Games",
+      "subtitle": "Draw, guess & voice chat"
+    }
+  ],
+  "genuineReviewerContactAndDemoFieldsPreserved": true,
+  "privacyAgeCategoriesPreserved": true,
+  "public171": {
+    "id": "b9fe0881-b915-4c75-90f2-db218081d482",
+    "state": "READY_FOR_SALE",
+    "buildId": "4d6f0b15-9050-4f2f-b34a-7432dca51beb"
+  },
+  "public171MetadataPreserved": true,
+  "screenshotsProof": "work/appstore-1.8-20261020-user20-readback1/user20-assets-readback-safe.json",
+  "apiMutationsPerformedByVerifier": false,
+  "privateValuesSuppressed": true
+}

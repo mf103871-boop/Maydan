@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 1,
+  "releaseDate": "2026-10-20",
+  "appId": "6808385717",
+  "targetVersion": "1.8",
+  "targetBuild": "22",
+  "selection": "User explicitly replaced the previous 24-image set with these supplied ZIP images.",
+  "artifactRootName": "app-store-user-zips-20261020",
+  "archives": [
+    {
+      "label": "editable",
+      "archive": "Maydan-Store-Editable-Design.zip",
+      "bytes": 79737366,
+      "sha256": "bb4df249d1c70a51a1954474a03b49c891370664dc185913b8ac766147c0e451",
+      "entries": 230,
+      "uncompressedBytes": 82767335
+    },
+    {
+      "label": "images",
+      "archive": "Maydan-Store-Images-AR-EN.zip",
+      "bytes": 45700265,
+      "sha256": "a781a73743493433eff7225225727c6ef9bf86b5ae0072ef53b37f987a7c460d",
+      "entries": 31,
+      "uncompressedBytes": 46040046
+    }
+  ],
+  "archiveInventory": {
+    "file": "archive-inventory.json",
+    "sha256": "09a3fc0cfc816da4d3447f2525433083f483ef5fa0034bb428fc045ef9e1612d"
+  },
+  "imageInventory": {
+    "file": "image-inventory.json",
+    "sha256": "015320393309c060aebecce310651aa2ec7bbdfb813b3499de70acc1d7076d60",
+    "role": "Root UI upload preflight pin"
+  },
+  "uploadManifest": {
+    "file": "upload-manifest.json",
+    "sha256": "51f676c533c3adca620d6059dea12a98359a5e8a38ffdb95a901777a3bea8489",
+    "pathBase": "artifactRootName",
+    "role": "Ordered exact-byte documentation; Root UI preflight used the image inventory pin"
+  },
+  "images": {
+    "count": 20,
+    "byLocale": {
+      "ar-SA": 10,
+      "en-US": 10
+    },
+    "order": "01 through 10 as supplied, separately for each locale",
+    "format": "PNG",
+    "width": 1290,
+    "height": 2796,
+    "colorMode": "RGB",
+    "pngColorType": 2,
+    "alpha": false,
+    "bytes": 40558053,
+    "originalBytesUnchanged": true,
+    "editableAndImagesZipCopiesIdentical": true,
+    "resizingOrReencodingPerformed": false,
+    "otherImageSizeSupplied": false,
+    "displayType": "APP_IPHONE_67",
+    "smallDisplayHandling": "Root selected Apple existing-asset scaling; no extra art or resized files were made.",
+    "appUiLanguage": "Arabic in both sets; marketing captions localized"
+  },
+  "scenesInOrder": [
+    "seven-games",
+    "draw-live",
+    "play-and-talk",
+    "badeeha",
+    "fast-and-forbidden",
+    "forehead",
+    "fabraka",
+    "whos-most-likely",
+    "friends-and-chat",
+    "your-profile"
+  ],
+  "safety": {
+    "extractedFiles": 261,
+    "outputOnlyExtraction": true,
+    "pathTraversalAbsoluteWindowsReservedNamesAndDuplicatesRejected": true,
+    "symlinksAndEncryptedEntriesRejected": true,
+    "boundedEntryCountAndFileSizes": true,
+    "attachedScriptsExecuted": false,
+    "attachedHtmlOrRuntimeLoaded": false,
+    "archiveDocumentsTreatedAsUntrustedData": true,
+    "archiveImagePngDecodeAndDimensionsVerified": true
+  },
+  "review": {
+    "rootPixelReview": "approved all 20",
+    "independentMarketingReview": "approved; no material inaccurate promise found",
+    "visiblePrivatePlayerDataFound": false,
+    "profileCode": "MDN-DEMO2026 is visibly demonstration data",
+    "reviewedFunctions": "Seven games; live drawing; voice calls and speaking bubbles; friends/groups/voice notes/game invites; profile/earned badges",
+    "limits": [
+      "Archive claims its captures use source 2fe524e98f8a455b1b801ab4c0fdd9d82f9396ef; this inspection did not execute or rebuild the attached capture tooling.",
+      "Source-rendered demonstration UI is not a physical iPhone screenshot or evidence of live audio.",
+      "Marketing composites intentionally crop and overlap UI panels; the source PNGs were accepted unchanged."
+    ]
+  },
+  "appStore": {
+    "uiUploadRootReported": true,
+    "rootReportedLocaleCounts": {
+      "ar-SA": 10,
+      "en-US": 10
+    },
+    "rootReportedOrder": "01 through 10",
+    "rootReportedOldDraftPlacements": "recoverably unlinked; old images retained in Apple Asset Library",
+    "officialGetVerification": "separate Root/auth receipt; this file does not assert a final submission or approval state",
+    "appStoreWritesByThisInspection": false
+  },
+  "repository": {
+    "pngFilesAdded": 0,
+    "stageCommitDeployPerformed": false,
+    "previousImageRecords": "../screenshots/receipt.json is explicitly superseded; original receipt preserved alongside it"
+  }
+}

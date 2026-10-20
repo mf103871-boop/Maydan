@@ -1,0 +1,266 @@
+{
+  "checkedAtUtc": "2026-10-20T06:21:10.439603+00:00",
+  "readOnlyOfficialApi": true,
+  "manifestSha256": "015320393309c060aebecce310651aa2ec7bbdfb813b3499de70acc1d7076d60",
+  "appId": "6808385717",
+  "versionId": "d15b847b-310e-441a-a579-1533a75c0b25",
+  "review": {
+    "versionId": "d15b847b-310e-441a-a579-1533a75c0b25",
+    "state": "PREPARE_FOR_SUBMISSION",
+    "appVersionState": "PREPARE_FOR_SUBMISSION",
+    "buildId": "093728e9-5d77-4d9f-8725-5e1c4de8c5f9",
+    "releaseType": "AFTER_APPROVAL",
+    "activeSubmissions": [],
+    "public171": {
+      "id": "b9fe0881-b915-4c75-90f2-db218081d482",
+      "state": "READY_FOR_SALE",
+      "buildId": "4d6f0b15-9050-4f2f-b34a-7432dca51beb"
+    }
+  },
+  "public171AndItsScreenshotsPreserved": true,
+  "former24ImageManifestsLoaded": false,
+  "screenshots": {
+    "expectedCount": 20,
+    "actualCount": 20,
+    "all20MatchReviewedBytesAndCanonicalOrder": true,
+    "missing": [],
+    "duplicates": [],
+    "mismatches": [],
+    "sets": [
+      {
+        "locale": "en-US",
+        "setId": "a2fb434b-88d7-49ec-b04b-1fd7574cceea",
+        "displayType": "APP_IPHONE_67",
+        "screenshots": [
+          {
+            "id": "2797cc81-9091-4b31-9021-4ddfd333e5f6",
+            "fileName": "01-seven-games.png",
+            "position": 1,
+            "state": "COMPLETE",
+            "width": 1290,
+            "height": 2796,
+            "fileSize": 2930817,
+            "sourceFileChecksum": "6221ab90117223d4d5eaf67b5bda4228",
+            "allChecksPass": true
+          },
+          {
+            "id": "318902f9-d638-4912-b1f1-b65702add91e",
+            "fileName": "02-draw-live.png",
+            "position": 2,
+            "state": "COMPLETE",
+            "width": 1290,
+            "height": 2796,
+            "fileSize": 1823543,
+            "sourceFileChecksum": "a2b7d72cc5a48ee428db55813a59204f",
+            "allChecksPass": true
+          },
+          {
+            "id": "973e2554-ddb6-4029-9fba-75a7f56e8957",
+            "fileName": "03-play-and-talk.png",
+            "position": 3,
+            "state": "COMPLETE",
+            "width": 1290,
+            "height": 2796,
+            "fileSize": 1800043,
+            "sourceFileChecksum": "84b3319811578e5cd1e72b611e864a8b",
+            "allChecksPass": true
+          },
+          {
+            "id": "0c67785d-07c4-4a0e-b857-9630ad447de9",
+            "fileName": "04-badeeha.png",
+            "position": 4,
+            "state": "COMPLETE",
+            "width": 1290,
+            "height": 2796,
+            "fileSize": 2282895,
+            "sourceFileChecksum": "543a8fecfd9cc0550c04bcddac5332c9",
+            "allChecksPass": true
+          },
+          {
+            "id": "daf6d39f-c2e5-41d1-bac2-30617174951d",
+            "fileName": "05-fast-and-forbidden.png",
+            "position": 5,
+            "state": "COMPLETE",
+            "width": 1290,
+            "height": 2796,
+            "fileSize": 2013115,
+            "sourceFileChecksum": "c4b7ce0dd9b857097bded1fdaf5c96fe",
+            "allChecksPass": true
+          },
+          {
+            "id": "dbcdb3b6-cab2-49d7-b531-358ef3154338",
+            "fileName": "06-forehead.png",
+            "position": 6,
+            "state": "COMPLETE",
+            "width": 1290,
+            "height": 2796,
+            "fileSize": 2444880,
+            "sourceFileChecksum": "484fef922bc8edd4b9ffa6b659666fe4",
+            "allChecksPass": true
+          },
+          {
+            "id": "4450a283-136f-4a0a-88df-878f268dbaa7",
+            "fileName": "07-fabraka.png",
+            "position": 7,
+            "state": "COMPLETE",
+            "width": 1290,
+            "height": 2796,
+            "fileSize": 2050464,
+            "sourceFileChecksum": "5c88b5847cdcfdc0881a472d3d0d6b3a",
+            "allChecksPass": true
+          },
+          {
+            "id": "c479bda0-05d9-4b7e-977b-150ff01b83c6",
+            "fileName": "08-whos-most-likely.png",
+            "position": 8,
+            "state": "COMPLETE",
+            "width": 1290,
+            "height": 2796,
+            "fileSize": 1517008,
+            "sourceFileChecksum": "aad2c3c2315d07b9915d13e270a91638",
+            "allChecksPass": true
+          },
+          {
+            "id": "31fe1cd2-eb83-423f-845e-97eebefcf24f",
+            "fileName": "09-friends-and-chat.png",
+            "position": 9,
+            "state": "COMPLETE",
+            "width": 1290,
+            "height": 2796,
+            "fileSize": 1783140,
+            "sourceFileChecksum": "869604dc4e60939fa43fc73964e7cda0",
+            "allChecksPass": true
+          },
+          {
+            "id": "87d248ba-cdcc-4471-a2fa-c7c706531411",
+            "fileName": "10-your-profile.png",
+            "position": 10,
+            "state": "COMPLETE",
+            "width": 1290,
+            "height": 2796,
+            "fileSize": 1630831,
+            "sourceFileChecksum": "c067c420628dd34b841ae1c01e99ce10",
+            "allChecksPass": true
+          }
+        ]
+      },
+      {
+        "locale": "ar-SA",
+        "setId": "05b4a014-256f-4968-a47f-8aa87d6bdc77",
+        "displayType": "APP_IPHONE_67",
+        "screenshots": [
+          {
+            "id": "93e940db-8b4d-49b5-ac25-45282d5604e7",
+            "fileName": "01-seven-games.png",
+            "position": 1,
+            "state": "COMPLETE",
+            "width": 1290,
+            "height": 2796,
+            "fileSize": 2932798,
+            "sourceFileChecksum": "43bd2db9a5f6116ccaff2463fde92bef",
+            "allChecksPass": true
+          },
+          {
+            "id": "ceeaaeb4-a0c7-4905-88f6-5046c3b6799b",
+            "fileName": "02-draw-live.png",
+            "position": 2,
+            "state": "COMPLETE",
+            "width": 1290,
+            "height": 2796,
+            "fileSize": 1823603,
+            "sourceFileChecksum": "01e5d58782ae080a80246910d78b4616",
+            "allChecksPass": true
+          },
+          {
+            "id": "10775d6f-9fe8-4708-be1d-ee3ef14c364e",
+            "fileName": "03-play-and-talk.png",
+            "position": 3,
+            "state": "COMPLETE",
+            "width": 1290,
+            "height": 2796,
+            "fileSize": 1798311,
+            "sourceFileChecksum": "d809c08bc74e5b2e28ce4c58680164f5",
+            "allChecksPass": true
+          },
+          {
+            "id": "986e5bbb-b799-47cb-b9e6-18af1f820e5e",
+            "fileName": "04-badeeha.png",
+            "position": 4,
+            "state": "COMPLETE",
+            "width": 1290,
+            "height": 2796,
+            "fileSize": 2276923,
+            "sourceFileChecksum": "6dbb5a30d597afb64e2ac71207515110",
+            "allChecksPass": true
+          },
+          {
+            "id": "d5e6c3ae-b46f-45fc-b2c9-bf150e87cc0b",
+            "fileName": "05-fast-and-forbidden.png",
+            "position": 5,
+            "state": "COMPLETE",
+            "width": 1290,
+            "height": 2796,
+            "fileSize": 2013295,
+            "sourceFileChecksum": "c57e7fcbc4e2f4e9be3c07f33ee6eb39",
+            "allChecksPass": true
+          },
+          {
+            "id": "2b0ad6b1-2ef8-4733-a283-bd0881d1b15d",
+            "fileName": "06-forehead.png",
+            "position": 6,
+            "state": "COMPLETE",
+            "width": 1290,
+            "height": 2796,
+            "fileSize": 2451548,
+            "sourceFileChecksum": "b26510efc295ab5ca6dc9ca2fdd66652",
+            "allChecksPass": true
+          },
+          {
+            "id": "51371f29-e2ca-4124-837f-03401b015351",
+            "fileName": "07-fabraka.png",
+            "position": 7,
+            "state": "COMPLETE",
+            "width": 1290,
+            "height": 2796,
+            "fileSize": 2055942,
+            "sourceFileChecksum": "73928415a2bdcbe012a6edb84f670a7a",
+            "allChecksPass": true
+          },
+          {
+            "id": "2893934a-3d86-48bf-86b8-d34795233ea2",
+            "fileName": "08-whos-most-likely.png",
+            "position": 8,
+            "state": "COMPLETE",
+            "width": 1290,
+            "height": 2796,
+            "fileSize": 1518218,
+            "sourceFileChecksum": "c216af9b2a9377f1ae5d459d4e557eb1",
+            "allChecksPass": true
+          },
+          {
+            "id": "30f303b8-1c2f-4fb4-8767-e5eca646c6ec",
+            "fileName": "09-friends-and-chat.png",
+            "position": 9,
+            "state": "COMPLETE",
+            "width": 1290,
+            "height": 2796,
+            "fileSize": 1786318,
+            "sourceFileChecksum": "b4276e4764c559666a9185efcc6981a5",
+            "allChecksPass": true
+          },
+          {
+            "id": "7f25eb2d-2655-4285-8eba-f87d5dd72758",
+            "fileName": "10-your-profile.png",
+            "position": 10,
+            "state": "COMPLETE",
+            "width": 1290,
+            "height": 2796,
+            "fileSize": 1624361,
+            "sourceFileChecksum": "15e06bcc9ef6fbf704f09b78d27fa90d",
+            "allChecksPass": true
+          }
+        ]
+      }
+    ]
+  }
+}

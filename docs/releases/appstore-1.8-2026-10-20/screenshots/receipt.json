@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "deliveryDate": "2026-10-20",
-  "status": "prepared-and-reviewed",
-  "appStoreUploadStatus": "pending-separate-root-operator-action",
+  "status": "superseded-by-user-supplied-zip-images",
+  "appStoreUploadStatus": "not-uploaded; superseded before upload",
   "artifactName": "app-store-1.8-22",
   "version": "1.8",
   "build": "22",
@@ -144,5 +144,11 @@
     "finalContactSheetsApproved": true,
     "appStoreWritePerformedByScreenshotTooling": false,
     "repositoryStageCommitOrDeploy": false
+  },
+  "supersededBy": "../user-screenshots/receipt.json",
+  "supersededReason": "User explicitly selected the 20 images in Maydan-Store-Images-AR-EN.zip instead of this historical 24-image set.",
+  "previousReceipt": {
+    "file": "receipt.historical-before-user-replacement.json",
+    "sha256": "2b73e889839a7c05dc567f67ec70dfad66672e8f5f87dc7eb70e1f986314e3b1"
   }
 }
