@@ -51,15 +51,21 @@ class UpdateGateSmoke(LaunchSmoke):
             raise SmokeFailure(f'The Retry action did not perform a new failing policy request: {measured}')
 
     @classmethod
-    def validate_exhausted_retries(cls, recovered, exhausted):
+    def validate_exhausted_retries(cls, required, recovered, exhausted):
         cls.validate_check_path(exhausted, 'failed-open')
         measured = json.dumps(exhausted, ensure_ascii=False, sort_keys=True)
-        remaining = recovered['maximumAutomaticRetries'] - recovered['automaticRetries']
+        # automaticRetries counts reserved timers, including one that may not
+        # have fired when recovery was sampled. Anchor the complete cycle to
+        # the required panel instead: one manual request plus three retries.
+        expected_requests = required['requestCount'] + 1 + exhausted['maximumAutomaticRetries']
+        new_requests = exhausted['requestCount'] > recovered['requestCount']
         if (exhausted['pendingRetry'] is not False or exhausted['automaticRetries'] != 3
                 or exhausted.get('failOpenReason') != 'network'
-                or exhausted['requestCount'] - recovered['requestCount'] != remaining
+                or exhausted['requestCount'] != expected_requests
+                or exhausted['requestCount'] < recovered['requestCount']
+                or exhausted['automaticRetries'] < recovered['automaticRetries']
                 or exhausted['generation'] < recovered['generation']
-                or (remaining > 0 and exhausted['generation'] == recovered['generation'])):
+                or (new_requests and exhausted['generation'] == recovered['generation'])):
             raise SmokeFailure(f'The offline retry cycle did not stop at its bounded budget: {measured}')
 
     def use_verified_simulator(self, source):
@@ -133,22 +139,27 @@ class UpdateGateSmoke(LaunchSmoke):
             # dispatches the production Retry UIButton target/action, then makes
             # the policy unavailable to prove the user is not trapped offline.
             state_path.with_name('command.txt').write_text('retry-offline', encoding='utf-8')
-            recovered = self.read_until(state_path, lambda value: value.get('offline') is True and value.get('blocked') is False and value.get('initialLoadPermitted') is True and value.get('panel') is None)
+            recovered = self.read_until(state_path, lambda value: value.get('phase') == 'failed-open'
+                                        and value.get('offline') is True and value.get('blocked') is False
+                                        and value.get('initialLoadPermitted') is True and value.get('panel') is None)
             (self.output / 'offline-recovery-view.json').write_text(json.dumps(recovered, ensure_ascii=False, indent=2), encoding='utf-8')
             self.validate_recovery(required, recovered)
             exhausted = self.read_until(state_path, lambda value: value.get('phase') == 'failed-open'
                                         and value.get('automaticRetries') == 3 and value.get('pendingRetry') is False,
                                         timeout=30)
             (self.output / 'offline-exhausted-view.json').write_text(json.dumps(exhausted, ensure_ascii=False, indent=2), encoding='utf-8')
-            self.validate_exhausted_retries(recovered, exhausted)
+            self.validate_exhausted_retries(required, recovered, exhausted)
             time.sleep(3)
             if not self.process_is_app(self.latest_pid):
                 raise SmokeFailure('The app exited after the update gate released gameplay.')
-            settled = self.read_until(state_path, lambda value: value.get('offline') is True and value.get('blocked') is False and value.get('panel') is None)
+            settled = self.read_until(state_path, lambda value: value.get('phase') == 'failed-open'
+                                     and value.get('offline') is True and value.get('blocked') is False and value.get('panel') is None)
             (self.output / 'offline-settled-view.json').write_text(json.dumps(settled, ensure_ascii=False, indent=2), encoding='utf-8')
             self.validate_check_path(settled, 'failed-open')
             if (settled['requestCount'] != exhausted['requestCount'] or settled['pendingRetry'] is not False
-                    or settled['automaticRetries'] != exhausted['automaticRetries']):
+                    or settled['automaticRetries'] != exhausted['automaticRetries']
+                    or settled['generation'] != exhausted['generation']
+                    or settled['storefrontAttempts'] != exhausted['storefrontAttempts']):
                 raise SmokeFailure('The native update check kept polling after exhausting its automatic retries.')
             self.screenshot('offline-recovery')
             self.report['updateGate'] = {'requiredHeadingAndActions': True,

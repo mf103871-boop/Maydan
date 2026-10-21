@@ -35,9 +35,19 @@
     "Physical iPhone acceptance is required before any public App Store repair release"
   ],
   "publicAppStoreSubmission": false,
+  "simulatorRunnerCorrection": {
+    "reviewedRun": 39554094897,
+    "attempt1": "Normal simctl launch timed out before a PID under host saturation; no upload",
+    "attempt2": "Normal startup and native required-update panel passed; offline release worked; runner retry-count assertion failed",
+    "artifactSHA256": "3d9d62f00e3f79bd7d323e25db682f593adad756fcf23dd2d07bb89b3ba2922d",
+    "cause": "Runner subtracted a reserved but not yet executed timer from its expected request count",
+    "correction": "Anchor the final request count to required-panel requests plus one manual request and exactly three automatic retries; retain post-exhaustion quiescence checks",
+    "nativeSourceChangedForCorrection": false,
+    "newFullCIStillRequired": true
+  },
   "localVerification": {
     "npm": { "passed": 1089, "failed": 0, "skipped": 1 },
-    "python": { "passed": 44, "failed": 0, "skipped": 1 },
+    "python": { "passed": 46, "failed": 0, "skipped": 1 },
     "swiftCompilerAvailableOnWindows": false,
     "independentSourceReview": "Passed; native compilation and simulator execution require macOS CI",
     "gitDiffCheck": "Passed"

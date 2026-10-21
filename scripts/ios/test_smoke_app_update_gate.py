@@ -13,14 +13,18 @@ from smoke_app_update_gate import UpdateGateSmoke
 
 
 class UpdateGateEvidenceTests(unittest.TestCase):
+    # Complete mounted snapshots captured by CI attempt 2, artifact SHA256
+    # 3d9d62f00e3f79bd7d323e25db682f593adad756fcf23dd2d07bb89b3ba2922d.
+    # Kept inline so regression tests do not depend on local downloaded evidence.
     @staticmethod
     def required_state():
         return {'fixture': 'required-then-offline', 'productionCheckPath': True, 'phase': 'required',
                 'observedUnavailableStorefront': True,
-                'storefrontAttempts': 2, 'requestCount': 1, 'generation': 2, 'pendingRetry': False,
-                'automaticRetries': 1, 'maximumAutomaticRetries': 3,
+                'storefrontAttempts': 2, 'requestCount': 1, 'generation': 4, 'pendingRetry': False,
+                'automaticRetries': 0, 'maximumAutomaticRetries': 3, 'needsCheck': False, 'failOpenReason': None,
                 'lastRequest': {'storefront': 'JOR', 'osVersion': '26.2'},
                 'blocked': True, 'initialLoadPermitted': True, 'offline': False, 'panel': {
+                    'width': 375, 'height': 667,
                     'mounted': True, 'heading': 'تحديث ميدان مطلوب',
                     'message': 'يتوفر تحديث مطلوب لميدان. حدّث التطبيق للمتابعة.', 'modalAccessibility': True,
                     'update': {'title': 'تحديث من App Store', 'hidden': False, 'enabled': True,
@@ -33,15 +37,15 @@ class UpdateGateEvidenceTests(unittest.TestCase):
     @classmethod
     def recovered_state(cls):
         state = cls.required_state()
-        state.update({'phase': 'failed-open', 'generation': 3, 'requestCount': 2, 'storefrontAttempts': 3,
+        state.update({'phase': 'failed-open', 'generation': 7, 'requestCount': 2, 'storefrontAttempts': 3,
                       'blocked': False, 'offline': True, 'panel': None, 'failOpenReason': 'network',
-                      'automaticRetries': 0, 'pendingRetry': True})
+                      'automaticRetries': 1, 'pendingRetry': True, 'needsCheck': True})
         return state
 
     @classmethod
     def exhausted_state(cls):
         state = cls.recovered_state()
-        state.update({'generation': 6, 'requestCount': 5, 'storefrontAttempts': 6,
+        state.update({'generation': 13, 'requestCount': 5, 'storefrontAttempts': 6,
                       'automaticRetries': 3, 'pendingRetry': False})
         return state
 
@@ -92,7 +96,7 @@ class UpdateGateEvidenceTests(unittest.TestCase):
                 self.assertNotIn('updateGate', smoke.report)
 
     def test_retry_needs_a_new_failed_request_and_generation(self):
-        for changed in ({'requestCount': 1}, {'generation': 2}, {'failOpenReason': ''},
+        for changed in ({'requestCount': 1}, {'generation': 4}, {'failOpenReason': ''},
                         {'productionCheckPath': False}, {'phase': 'required'}, {'pendingRetry': None}):
             with self.subTest(changed=changed), tempfile.TemporaryDirectory() as temporary:
                 required, recovered = self.required_state(), self.recovered_state()
@@ -127,9 +131,30 @@ class UpdateGateEvidenceTests(unittest.TestCase):
             self.assertEqual([call.args[0] for call in smoke.screenshot.call_args_list], ['required-update-verified', 'offline-recovery'])
             smoke.finish.assert_called_once()
 
+    def test_attempt2_captured_queued_retry_is_not_counted_as_completed(self):
+        required, recovered, exhausted = self.required_state(), self.recovered_state(), self.exhausted_state()
+        self.assertEqual((required['requestCount'], required['generation'], required['automaticRetries']), (1, 4, 0))
+        self.assertEqual((recovered['requestCount'], recovered['generation'], recovered['automaticRetries'], recovered['pendingRetry']), (2, 7, 1, True))
+        self.assertEqual((exhausted['requestCount'], exhausted['generation'], exhausted['automaticRetries'], exhausted['pendingRetry']), (5, 13, 3, False))
+        UpdateGateSmoke.validate_recovery(required, recovered)
+        UpdateGateSmoke.validate_exhausted_retries(required, recovered, exhausted)
+
+    def test_recovery_reader_waits_for_failed_open_instead_of_a_checking_frame(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            smoke = self.smoke(Path(temporary), [self.required_state(), self.recovered_state(),
+                                                self.exhausted_state(), self.exhausted_state()])
+            with patch('smoke_app_update_gate.time.sleep'), redirect_stdout(io.StringIO()):
+                self.assertEqual(smoke.run(), 0)
+            predicate = smoke.read_until.call_args_list[1].args[1]
+            self.assertTrue(predicate(self.recovered_state()))
+            for phase in ['checking-storefront', 'checking-policy', 'deferred']:
+                state = self.recovered_state()
+                state['phase'] = phase
+                self.assertFalse(predicate(state))
+
     def test_retry_budget_and_quiescence_are_both_required(self):
-        for changed in ({'requestCount': 6}, {'automaticRetries': 2}, {'pendingRetry': True},
-                        {'generation': 3}, {'failOpenReason': 'other'}):
+        for changed in ({'requestCount': 6}, {'requestCount': 4}, {'automaticRetries': 2}, {'pendingRetry': True},
+                        {'generation': 6}, {'generation': 7}, {'failOpenReason': 'other'}):
             with self.subTest(changed=changed), tempfile.TemporaryDirectory() as temporary:
                 exhausted = self.exhausted_state()
                 exhausted.update(changed)
@@ -138,23 +163,28 @@ class UpdateGateEvidenceTests(unittest.TestCase):
                     self.assertEqual(smoke.run(), 1)
                 self.assertEqual(json.loads((smoke.output / 'offline-exhausted-view.json').read_text(encoding='utf-8')), exhausted)
                 self.assertNotIn('updateGate', smoke.report)
-        with tempfile.TemporaryDirectory() as temporary:
-            settled = self.exhausted_state()
-            settled['requestCount'] += 1
-            smoke = self.smoke(Path(temporary), [self.required_state(), self.recovered_state(),
-                                                self.exhausted_state(), settled])
-            with patch('smoke_app_update_gate.time.sleep'), redirect_stdout(io.StringIO()):
-                self.assertEqual(smoke.run(), 1)
-            self.assertIn('kept polling', smoke.report['error'])
-            self.assertEqual(json.loads((smoke.output / 'offline-settled-view.json').read_text(encoding='utf-8')), settled)
+        for changed in ({'requestCount': 6}, {'generation': 14}, {'storefrontAttempts': 7}, {'pendingRetry': True}):
+            with self.subTest(settled=changed), tempfile.TemporaryDirectory() as temporary:
+                settled = self.exhausted_state()
+                settled.update(changed)
+                smoke = self.smoke(Path(temporary), [self.required_state(), self.recovered_state(),
+                                                    self.exhausted_state(), settled])
+                with patch('smoke_app_update_gate.time.sleep'), redirect_stdout(io.StringIO()):
+                    self.assertEqual(smoke.run(), 1)
+                self.assertIn('kept polling', smoke.report['error'])
+                self.assertEqual(json.loads((smoke.output / 'offline-settled-view.json').read_text(encoding='utf-8')), settled)
 
     def test_late_observation_of_offline_failure_keeps_the_same_budget(self):
-        with tempfile.TemporaryDirectory() as temporary:
-            recovered = self.exhausted_state()
-            smoke = self.smoke(Path(temporary), [self.required_state(), recovered,
-                                                self.exhausted_state(), self.exhausted_state()])
-            with patch('smoke_app_update_gate.time.sleep'), redirect_stdout(io.StringIO()):
-                self.assertEqual(smoke.run(), 0)
+        for completed in range(4):
+            with self.subTest(completed=completed), tempfile.TemporaryDirectory() as temporary:
+                recovered = self.recovered_state()
+                recovered.update({'requestCount': 2 + completed, 'generation': 7 + 2 * completed,
+                                  'storefrontAttempts': 3 + completed, 'automaticRetries': min(3, completed + 1),
+                                  'pendingRetry': completed < 3})
+                smoke = self.smoke(Path(temporary), [self.required_state(), recovered,
+                                                    self.exhausted_state(), self.exhausted_state()])
+                with patch('smoke_app_update_gate.time.sleep'), redirect_stdout(io.StringIO()):
+                    self.assertEqual(smoke.run(), 0)
 
 
 if __name__ == '__main__':
