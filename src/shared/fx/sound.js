@@ -94,7 +94,6 @@ export function createSound({ enabled = true, volume = 0.75, music = true, music
   let bankFetch = null;
   let bankDecode = null;
   let unlockWaiters = [];
-  let unlockTimer = null;
   const encoded = new Map();
   const fetches = new Map();
   const buffers = new Map();
@@ -491,10 +490,12 @@ export function createSound({ enabled = true, volume = 0.75, music = true, music
   function settleUnlock() {
     const waiters = unlockWaiters;
     unlockWaiters = [];
-    clearTimeout(unlockTimer); unlockTimer = null;
     const ok = !!context && context.state === 'running';
     hasRun ||= ok;
-    for (const resolve of waiters) resolve(ok);
+    for (const waiter of waiters) {
+      clearTimeout(waiter.timer);
+      waiter.resolve(ok && waiter.context === context);
+    }
   }
   function onStateChange(c) {
     if (c !== context) return;
@@ -558,8 +559,19 @@ export function createSound({ enabled = true, volume = 0.75, music = true, music
     if (c.state === 'running') { hasRun = true; return Promise.resolve(true); }
     try { Promise.resolve(c.resume()).then(() => { if (c === context && c.state === 'running') settleUnlock(); }, () => {}); } catch { /* unavailable */ }
     return new Promise((resolve) => {
-      unlockWaiters.push(resolve);
-      if (!unlockTimer) unlockTimer = setTimeout(settleUnlock, RESUME_TIMEOUT_MS);
+      // Startup may already have an unlock pending when the player first taps.
+      // Its nearly expired deadline must not cancel that fresh gesture's cue.
+      // Each request remains bounded without extending older requests forever.
+      const waiter = { context: c, resolve, timer: null };
+      waiter.timer = setTimeout(() => {
+        const index = unlockWaiters.indexOf(waiter);
+        if (index < 0) return;
+        unlockWaiters.splice(index, 1);
+        const ok = c === context && c.state === 'running';
+        hasRun ||= ok;
+        resolve(ok);
+      }, RESUME_TIMEOUT_MS);
+      unlockWaiters.push(waiter);
     });
   }
   // Resume and decode together; render only once the cue can actually sound.

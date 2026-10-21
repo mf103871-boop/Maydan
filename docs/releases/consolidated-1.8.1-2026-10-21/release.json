@@ -3,7 +3,7 @@
   "date": "2026-10-21",
   "timeZone": "Asia/Amman",
   "status": "candidate-under-verification",
-  "target": { "appId": "6808385717", "version": "1.8.1", "build": "24", "audience": "existing-internal-TestFlight-group" },
+  "target": { "appId": "6808385717", "version": "1.8.1", "build": "25", "audience": "existing-internal-TestFlight-group" },
   "base": {
     "publicNativeVersion": "1.8",
     "publicNativeBuild": "22",
@@ -18,14 +18,15 @@
     "Twelve synthetic colloquial spoken responses for correct/wrong events, variation without immediate repeats, bounded loading, no overlapping responses, call/recording priority",
     "Independent saved voice-response switch; existing player sound/music settings and volumes retained",
     "Baseline JPEG fallback only for IMAGE_INVALID, bounded to one retry; preserves crop, moderation and revision, cancels stale account/dialog work",
-    "Retained native build23 update-gate recovery fixes"
+    "Retained native build23 update-gate recovery fixes",
+    "Independent bounded audio-unlock deadlines prevent an old startup request from cancelling the first sound requested by a new player gesture"
   ],
   "alreadyInPublic22": ["seven games including Ersomha", "Badeeha content and cover overhaul", "Lamma groups, messages, voice notes and calls", "direct group game launch and two-player online support", "four-section bottom navigation", "floating movable call portraits", "keyboard and Back fixes", "owner-private Studio", "audio interruption recovery"],
   "excludedAsSuperseded": ["old social-ux dock prototype", "abandoned icon variants", "optional unmounted HomeGroups strip"],
   "publicWeb": {
     "gapConfirmed": true,
     "oldHtmlSHA256": "5106f5d909dde9c2606b9d972424e89b8e673297248e33bddc973751937f7e82",
-    "promotion": "Separate reviewed assets-only operation from public native22; never use this audition candidate or publicize owner-private Studio/play"
+    "promotion": "Public native22 assets promoted separately and verified 2026-10-21T09:01:06.119Z; live version f050f5ab-f9c3-40e5-927f-d147108c42ca, unchanged backend code. This audition candidate and owner-private Studio/play remain private."
   },
   "verification": {
     "newGate": "Actual simulator WKWebView, bundled maydan: media stream, advancing media/context clocks, mixer output, bounded decoded buffers and context replacement",
@@ -43,7 +44,7 @@
     "newCredentialsOrAccess": false
   },
   "limits": [
-    "Build23/24 cannot remotely replace native code already installed in1.7.1; that installation may need one manual App Store update.",
+    "New builds cannot remotely replace native code already installed in1.7.1; that installation may need one manual App Store update.",
     "Synthetic spoken previews require the owner's listening assessment before public inclusion.",
     "Browser/simulator output measurement does not certify physical speakers, Bluetooth, actual iOS background delivery or human-perceived quality."
   ]

@@ -139,6 +139,35 @@ test('pending browser unlock cannot resurrect a cancelled cue', async (t) => {
   sound.dispose();
 });
 
+test('an old startup unlock deadline cannot cancel feedback from a fresh first gesture', async (t) => {
+  const releases = [];
+  const env = audioEnvironment(t, { state: 'suspended', resume: () => new Promise((resolve) => releases.push(resolve)) });
+  t.mock.timers.enable({ apis: ['setTimeout'] });
+  const sound = createSound(); sound.attach(); await settle();
+  sound.music.play('home'); await settle();
+  t.mock.timers.tick(1400);
+  sound.play('correct'); await settle();
+  t.mock.timers.tick(110); // old request expires, fresh gesture still has 1390 ms
+  for (const release of releases) release();
+  await settle();
+  assert.equal(env.instances[0].sources.filter((source) => source.buffer?.length === SAMPLE_BANK.correct.frames).length, 1, 'the first answer sounds once after the real resume');
+  sound.dispose();
+});
+
+test('each unlock deadline is finite and disposal settles later requests without restarting audio', async (t) => {
+  audioEnvironment(t, { state: 'suspended', resume: () => new Promise(() => {}) });
+  t.mock.timers.enable({ apis: ['setTimeout'] });
+  const sound = createSound();
+  let first = 'pending', second = 'pending';
+  void sound.unlock().then((result) => first = result);
+  t.mock.timers.tick(1400);
+  void sound.unlock().then((result) => second = result);
+  t.mock.timers.tick(100); await settle();
+  assert.equal(first, false); assert.equal(second, 'pending');
+  sound.dispose(); await settle(); assert.equal(second, false);
+  t.mock.timers.tick(2000); assert.equal(second, false);
+});
+
 test('backgrounding stops voices; a later gesture recovers an interrupted context', async (t) => {
   const env = audioEnvironment(t);
   const sound = await warm(createSound()); sound.attach(); sound.play('fanfare');
