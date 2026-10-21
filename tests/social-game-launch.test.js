@@ -23,6 +23,14 @@ test('group launches create and persist the host before sending the invitation, 
   assert.deepEqual(invited, { targetType: 'group', targetId: 'g', roomCode: '234567' });
   assert.equal(result.code, '234567'); assert.equal(memory.get('lastRoom'), '234567');
 });
+test('Ersomha launched from a group starts with easy drawable concepts',async()=>{
+  const {launcher,calls}=fixture();
+  await launcher.launch('ersomha',async()=>{});
+  assert.equal(calls[0][2].game,'ersomha');
+  assert.equal(calls[0][2].settings.difficulty,'easy');
+  assert.equal(calls[0][2].settings.drawSeconds,60);
+  assert.equal(calls[0][2].settings.cycles,1);
+});
 
 test('invitation failure and repeated taps reuse the same room and credentials', async () => {
   const wait = deferred(); const { launcher, calls } = fixture(); let attempts = 0;

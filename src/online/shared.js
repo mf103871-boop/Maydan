@@ -12,7 +12,7 @@ export const ERSOMHA_CATEGORIES = Object.freeze([
   { id: 'technology', label: 'التقنية' }, { id: 'actions', label: 'الأفعال' },
   { id: 'situations', label: 'المواقف الطريفة' }, { id: 'expressions', label: 'التعابير العربية' },
 ]);
-export const ERSOMHA_DEFAULT_SETTINGS = Object.freeze({ cycles: 1, drawSeconds: 60, difficulty: 'medium', categories: [] });
+export const ERSOMHA_DEFAULT_SETTINGS = Object.freeze({ cycles: 1, drawSeconds: 60, difficulty: 'easy', categories: [] });
 export const ONLINE_GAMES = {
   meenfina: { name: 'مين فينا؟', min: 3, max: 12 },
   fabraka: { name: 'فبركة', min: 2, max: 8 },
