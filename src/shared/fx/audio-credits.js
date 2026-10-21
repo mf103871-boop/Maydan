@@ -4,17 +4,33 @@ export const AUDIO_CREDITS = {
   "attribution": [],
   "sources": [
     {
-      "provider": "dustyroom",
-      "name": "Dustyroom — Free Casual Game Sounds",
-      "url": "https://dustyroom.com/free-casual-game-sounds/",
+      "provider": "freesound-reviewed",
+      "name": "Freesound — accepted physical recordings",
+      "url": "https://freesound.org/",
       "license": "CC0 1.0",
       "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
       "attribution": false,
       "items": 6,
       "cues": [
-        "pop",
+        "click",
+        "tick",
+        "tickFast",
         "correct",
         "wrong",
+        "win"
+      ],
+      "tracks": []
+    },
+    {
+      "provider": "dustyroom",
+      "name": "Dustyroom â€” Free Casual Game Sounds",
+      "url": "https://dustyroom.com/free-casual-game-sounds/",
+      "license": "CC0 1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "attribution": false,
+      "items": 4,
+      "cues": [
+        "pop",
         "buzzer",
         "timeout",
         "whoosh"
@@ -37,13 +53,9 @@ export const AUDIO_CREDITS = {
   ],
   "inHouse": {
     "cues": [
-      "click",
-      "tick",
-      "tickFast",
       "countdown",
       "start",
       "reveal",
-      "win",
       "drumroll",
       "pass"
     ],

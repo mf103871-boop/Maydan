@@ -52,7 +52,8 @@ export function Settings() {
             onPointerUp={() => sound.play('pop')} onKeyUp={(event) => { if (event.key.startsWith('Arrow') || event.key === 'Home' || event.key === 'End') sound.play('pop'); }} />
           <Button data-design-id="sound-test" size="sm" disabled={!settings.soundOn || sound.volume === 0} onClick={() => sound.play('correct')}>تجربة الصوت</Button>
         </div>
-        <Toggle index={1} icon={<IconMusic />} title="الموسيقى" sub="خلفية هادئة في القوائم ومقاطع تناسب كل لعبة" checked={settings.musicOn} onChange={(v) => setSettings({ musicOn: v })} />
+        <Toggle index={1} icon={<IconVolume />} title="تعليقات الإجابات" sub="صوت محلي آلي للمعاينة · يصمت أثناء المكالمات والتسجيل ومقاطع الأسئلة" checked={settings.voiceOn} onChange={(v) => setSettings({ voiceOn: v })} />
+        <Toggle index={2} icon={<IconMusic />} title="الموسيقى" sub="خطوات شمس · خلفية طويلة ومتنوّعة تتغيّر مع الوقت" checked={settings.musicOn} onChange={(v) => setSettings({ musicOn: v })} />
         <div className="setting setting-volume">
           <label htmlFor="music-volume"><b>مستوى الموسيقى</b><output htmlFor="music-volume">{Math.round(sound.music.volume * 100)}٪</output></label>
           <input data-design-id="music-volume" id="music-volume" type="range" min="0" max="100" step="5" value={Math.round(sound.music.volume * 100)} disabled={!settings.soundOn || !settings.musicOn}

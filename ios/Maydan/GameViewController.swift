@@ -86,6 +86,13 @@ final class GameViewController: UIViewController, WKNavigationDelegate, WKUIDele
     private var migration: StorageMigration?
     private var isCommittingMigration = false
     private var didLoadBundledGame = false
+#if targetEnvironment(simulator)
+    // An opt-in release gate, absent from device binaries. It observes the real
+    // bundled app and media graph; no product debug bridge or network fixture.
+    private let simulatorAudioFixture = ProcessInfo.processInfo.environment["MAYDAN_SIMULATOR_AUDIO"] == "streaming-recovery"
+    private var simulatorAudioTimer: Timer?
+    private var simulatorAudioReading = false
+#endif
     private lazy var appUpdate = AppUpdateCoordinator(host: self, canPresent: { [weak self] in
         guard let self, self.presentedViewController == nil else { return false }
         return !self.didLoadBundledGame || (!self.webView.isLoading && AppUpdatePolicy.isIdleMenu(url: self.webView.url))
@@ -123,6 +130,12 @@ final class GameViewController: UIViewController, WKNavigationDelegate, WKUIDele
         let bridgeProxy = WeakScriptMessageHandler(delegate: self)
         self.bridgeProxy = bridgeProxy
         configuration.userContentController.add(bridgeProxy, name: Constants.bridgeName)
+#if targetEnvironment(simulator)
+        if simulatorAudioFixture {
+            configuration.userContentController.addUserScript(WKUserScript(
+                source: Self.simulatorAudioScript, injectionTime: .atDocumentStart, forMainFrameOnly: true))
+        }
+#endif
 
         let webView = WKWebView(frame: .zero, configuration: configuration)
         self.webView = webView
@@ -191,6 +204,9 @@ final class GameViewController: UIViewController, WKNavigationDelegate, WKUIDele
         webView?.uiDelegate = nil
         bridgeProxy?.delegate = nil
         updateNavigationObservation?.invalidate()
+#if targetEnvironment(simulator)
+        simulatorAudioTimer?.invalidate()
+#endif
     }
 
     override var prefersStatusBarHidden: Bool { true }
@@ -331,7 +347,107 @@ final class GameViewController: UIViewController, WKNavigationDelegate, WKUIDele
             migration?.markDone()
             webView.configuration.userContentController.removeAllUserScripts()
         }
+#if targetEnvironment(simulator)
+        if simulatorAudioFixture, simulatorAudioTimer == nil {
+            simulatorAudioTimer = Timer.scheduledTimer(withTimeInterval: 0.25, repeats: true) { [weak self] _ in
+                Task { @MainActor in self?.recordSimulatorAudio() }
+            }
+        }
+#endif
     }
+
+#if targetEnvironment(simulator)
+    private func recordSimulatorAudio() {
+        guard simulatorAudioFixture, !simulatorAudioReading,
+              let documents = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { return }
+        let folder = documents.appendingPathComponent("audio-stream-fixture", isDirectory: true)
+        do {
+            try FileManager.default.createDirectory(at: folder, withIntermediateDirectories: true)
+            let commandURL = folder.appendingPathComponent("command.json")
+            var command: [String: String]?
+            if let data = try? Data(contentsOf: commandURL),
+               let parsed = try? JSONSerialization.jsonObject(with: data) as? [String: String],
+               let name = parsed["command"], ["activate", "background", "foreground", "replace-context"].contains(name),
+               let id = parsed["id"], id.count <= 64 {
+                command = parsed
+                try FileManager.default.removeItem(at: commandURL)
+            }
+            let action = command.map { "window.__maydanAudioSmoke?.perform(\(Self.json($0)));" } ?? ""
+            simulatorAudioReading = true
+            webView.evaluateJavaScript(action + "JSON.stringify(window.__maydanAudioSmoke?.snapshot() || {error:'audio instrumentation missing'});") { [weak self] value, error in
+                self?.simulatorAudioReading = false
+                let state = (value as? String) ?? Self.json(["error": error?.localizedDescription ?? "No measured audio state"])
+                try? state.write(to: folder.appendingPathComponent("state.json"), atomically: true, encoding: .utf8)
+            }
+        } catch {
+            let state = Self.json(["error": "Simulator audio evidence file failed: \(error.localizedDescription)"])
+            try? state.write(to: folder.appendingPathComponent("state.json"), atomically: true, encoding: .utf8)
+        }
+    }
+
+    private static let simulatorAudioScript = #"""
+    (() => {
+      const proof = {fixture:'streaming-recovery',contexts:[],media:[],decoded:[],errors:[],lastCommand:null};
+      const NativeAC = window.AudioContext || window.webkitAudioContext;
+      proof.webAudioSupported = typeof NativeAC === 'function';
+      // This simulator is owned by the release gate and has no player account.
+      localStorage.setItem('maydan:platform:settings', JSON.stringify({soundOn:true,soundVolume:.75,voiceOn:false,musicOn:true,musicVolume:.5,musicLevel:2,splashSeen:true,reducedMotion:true}));
+      if (proof.webAudioSupported) {
+        class MeasuredAudioContext extends NativeAC {
+          constructor(options) { super(options); proof.contexts.push(this); }
+          createMediaElementSource(media) {
+            const node = super.createMediaElementSource(media);
+            proof.media.push({media,context:this});
+            return node;
+          }
+          createDynamicsCompressor() {
+            const node = super.createDynamicsCompressor(), meter = super.createAnalyser();
+            meter.fftSize = 256; node.connect(meter); this.proofMeter = meter;
+            return node;
+          }
+          decodeAudioData(bytes, success, failure) {
+            const record = buffer => { if (buffer) proof.decoded.push(buffer.duration); return buffer; };
+            // Promise-only recording avoids counting the same decode twice when
+            // production supports both the promise and callback Web Audio APIs.
+            const result = super.decodeAudioData(bytes, success, failure);
+            if (result && typeof result.then === 'function') result.then(record, () => {});
+            return result;
+          }
+        }
+        window.AudioContext = MeasuredAudioContext;
+        if (window.webkitAudioContext === NativeAC) window.webkitAudioContext = MeasuredAudioContext;
+      }
+      const lifecycle = state => window.dispatchEvent(new CustomEvent('maydan-audio-lifecycle',{detail:{state,shouldResume:true}}));
+      proof.perform = ({id,command}) => {
+        proof.lastCommand = {id,command};
+        if (command === 'activate') document.dispatchEvent(new Event('pointerdown',{bubbles:true}));
+        if (command === 'background') lifecycle('background');
+        if (command === 'foreground') { lifecycle('foreground'); document.dispatchEvent(new Event('pointerdown',{bubbles:true})); }
+        if (command === 'replace-context') {
+          const context = proof.contexts.at(-1);
+          if (!context) { proof.errors.push('No context to replace'); return; }
+          Promise.resolve(context.close()).then(() => {
+            window.dispatchEvent(new Event('focus'));
+            document.dispatchEvent(new Event('pointerdown',{bubbles:true}));
+          }, error => proof.errors.push(String(error)));
+        }
+      };
+      proof.snapshot = () => {
+        const context = proof.contexts.at(-1), samples = new Float32Array(256);
+        context?.proofMeter?.getFloatTimeDomainData(samples);
+        return {fixture:proof.fixture,generatedAt:Date.now(),documentURL:location.href,webAudioSupported:proof.webAudioSupported,
+          lastCommand:proof.lastCommand,contextCount:proof.contexts.length,contextState:context?.state || null,
+          contextTime:context?.currentTime || 0,rms:Math.sqrt(samples.reduce((sum,n)=>sum+n*n,0)/samples.length),
+          decodedCount:proof.decoded.length,decodedMaxSeconds:Math.max(0,...proof.decoded),errors:proof.errors.slice(),
+          media:proof.media.map(({media,context:owner})=>({url:media.currentSrc || media.src,duration:Number.isFinite(media.duration)?media.duration:null,
+            time:media.currentTime,paused:media.paused,readyState:media.readyState,error:media.error?.code || null,
+            contextIndex:proof.contexts.indexOf(owner),contextState:owner.state}))};
+      };
+      window.addEventListener('unhandledrejection',event=>proof.errors.push(String(event.reason)));
+      window.__maydanAudioSmoke = proof;
+    })();
+    """#
+#endif
 
     func webViewWebContentProcessDidTerminate(_ webView: WKWebView) {
         guard !isRecoveringWebContent else { return }

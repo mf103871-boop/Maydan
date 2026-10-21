@@ -8,6 +8,7 @@ import { GAMES } from '../registry.js';
 import { LEGAL_ROUTES, PUBLIC_SITE_ORIGIN } from '../../shared/account/config.js';
 import { isNativeShell } from '../../shared/account/native.js';
 import { AudioCredits } from './AudioCredits.jsx';
+import { JPEG_ENCODER_LICENSE } from '../../profiles/vendor/jpeg-license.js';
 
 // Imported media keeps its attribution; generated illustrations are disclosed
 // separately without inventing a photography license or an external source.
@@ -19,6 +20,7 @@ function Credits() {
     <Card className="stack" aria-label="المصادر والتراخيص">
       <span className="card-title">المصادر والتراخيص</span>
       <AudioCredits />
+      <details><summary data-design-id="license-link" style={{ minHeight: 44, paddingBlock: 10, boxSizing: 'border-box' }}>تراخيص تجهيز الصور</summary><pre dir="ltr" style={{ whiteSpace: 'pre-wrap', overflowWrap: 'anywhere', fontSize: 12 }}>{JPEG_ENCODER_LICENSE}</pre></details>
       {items.length === 0 ? (
         <p className="card-muted">تظهر هنا بيانات إنشاء وسائط الأسئلة، ومصادر الملفات الخارجية وتراخيصها.</p>
       ) : (

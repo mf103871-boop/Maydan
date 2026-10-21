@@ -41,7 +41,7 @@ import { DesignRuntime } from '../design/DesignRuntime.jsx';
 
 export const VERSION = typeof __MAYDAN_VERSION__ !== 'undefined' ? __MAYDAN_VERSION__ : '1.0.0';
 const platformStorage = createStorage('platform');
-const DEFAULT_SETTINGS = { soundOn: true, soundVolume: 0.75, musicOn: true, musicVolume: 0.35, musicLevel: 2, hapticsOn: true, reducedMotion: false, splashSeen: false };
+const DEFAULT_SETTINGS = { soundOn: true, soundVolume: 0.75, voiceOn: true, musicOn: true, musicVolume: 0.35, musicLevel: 2, hapticsOn: true, reducedMotion: false, splashSeen: false };
 // الموسيقى 3.1 أهدأ وأخفض: من حفظ مستوى الموسيقى قبلها يُنقل مرة واحدة إلى الافتراضي الجديد.
 function migrateSettings(saved) {
   const next = { ...DEFAULT_SETTINGS, ...(saved || {}) };
@@ -79,13 +79,14 @@ function Providers({ children }) {
   const toast = useToast();
   const [settings, setSettingsState] = useState(() => migrateSettings(platformStorage.get('settings', {})));
   const [roster, setRosterState] = useState(() => platformStorage.get('roster', []) || []);
-  const sound = useMemo(() => createSound({ enabled: settings.soundOn, volume: settings.soundVolume, music: settings.musicOn, musicVolume: settings.musicVolume }), []); // eslint-disable-line react-hooks/exhaustive-deps
+  const sound = useMemo(() => createSound({ enabled: settings.soundOn, volume: settings.soundVolume, voice: settings.voiceOn, music: settings.musicOn, musicVolume: settings.musicVolume }), []); // eslint-disable-line react-hooks/exhaustive-deps
   const haptics = useMemo(() => createHaptics({ enabled: settings.hapticsOn }), []); // eslint-disable-line react-hooks/exhaustive-deps
 
   const setSettings = useCallback((patch) => {
     // Apply in the gesture itself so enabling audio can play its confirmation.
     if ('soundOn' in patch) sound.enable(patch.soundOn);
     if ('soundVolume' in patch) sound.setVolume(patch.soundVolume);
+    if ('voiceOn' in patch) sound.voice.enable(patch.voiceOn);
     if ('musicOn' in patch) sound.music.enable(patch.musicOn);
     if ('musicVolume' in patch) sound.music.setVolume(patch.musicVolume);
     if ('hapticsOn' in patch) haptics.enable(patch.hapticsOn);
@@ -103,6 +104,7 @@ function Providers({ children }) {
   useEffect(() => { sound.attach(); return () => sound.dispose(); }, [sound]);
   useEffect(() => { sound.enable(settings.soundOn); }, [sound, settings.soundOn]);
   useEffect(() => { sound.setVolume(settings.soundVolume); }, [sound, settings.soundVolume]);
+  useEffect(() => { sound.voice.enable(settings.voiceOn); }, [sound, settings.voiceOn]);
   useEffect(() => { sound.music.enable(settings.musicOn); }, [sound, settings.musicOn]);
   useEffect(() => { sound.music.setVolume(settings.musicVolume); }, [sound, settings.musicVolume]);
   useEffect(() => { haptics.enable(settings.hapticsOn); }, [haptics, settings.hapticsOn]);

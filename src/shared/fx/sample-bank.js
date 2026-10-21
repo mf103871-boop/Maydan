@@ -4,11 +4,11 @@
 export const SAMPLE_RATE = 48000;
 export const SAMPLE_BANK = {
   "click": {
-    "url": "audio/click-6fa408.m4a",
-    "frames": 12000,
-    "bytes": 6530,
-    "sha256": "6fa40842c402fa9bd911ad76283b0908b54c53fa207cc5708bf0c4f441a85ac1",
-    "masterSha256": "775fa4e7ad25c687b1a9c89c6975a79b670e9f1e575a446393435b94f4b7a829"
+    "url": "audio/click-053180.m4a",
+    "frames": 6240,
+    "bytes": 5156,
+    "sha256": "0531806c836bc01141c900dd622bee981b0f2f83b25bc51e4cf39fa758950781",
+    "masterSha256": "262f2f9cc81729d5671b5e9d6cb4280a6ec56e482ee450e8f453a3f1df55a342"
   },
   "pop": {
     "url": "audio/pop-abb9bf.m4a",
@@ -18,18 +18,18 @@ export const SAMPLE_BANK = {
     "masterSha256": "69c6e539daffa44c5c460784609853bbac17ba9f47bdf6d5fa3fd8b049600af6"
   },
   "tick": {
-    "url": "audio/tick-844a01.m4a",
-    "frames": 4320,
-    "bytes": 2450,
-    "sha256": "844a01b1a023768b32fd7841fb510b9e6867d6d14d062a8fe51d8e00dd24779e",
-    "masterSha256": "4c200fa0a8b131b1a711a8736ea20136716f9d44ffd3b00cf6f206ec96950677"
+    "url": "audio/tick-245bb8.m4a",
+    "frames": 6720,
+    "bytes": 5878,
+    "sha256": "245bb816cc7049f641cdb42306f3029a8a2058b8c6378dd294f4f40b0a827673",
+    "masterSha256": "d608c698333508743d6702fe3e935901197d212b24edc31f562c387eea86c28a"
   },
   "tickFast": {
-    "url": "audio/tick-fast-db1a19.m4a",
-    "frames": 4320,
-    "bytes": 2743,
-    "sha256": "db1a19359ab22a7d1823e28c2fcc9f3496ee864deaaf7002657764a0f5be98d9",
-    "masterSha256": "04c4a5756a42b47c4cf6be50976a0981db0ea9c2613f4a91d4df514b795e16e4"
+    "url": "audio/tick-fast-b443e0.m4a",
+    "frames": 7920,
+    "bytes": 6535,
+    "sha256": "b443e0731060cf2fb9324c9627eefe73b74fd27df278c19140e4a108c8067cf7",
+    "masterSha256": "6a15ae9351a9b0c680db88dbdcae4d9dd7692689bab620a54c6932d380357a82"
   },
   "countdown": {
     "url": "audio/countdown-b231c6.m4a",
@@ -46,18 +46,18 @@ export const SAMPLE_BANK = {
     "masterSha256": "d4883adcc1b2affab491d66bcb6ef46bdffe260a83a0523b1cf9ee0488d5e8f0"
   },
   "correct": {
-    "url": "audio/correct-4958a5.m4a",
-    "frames": 14486,
-    "bytes": 7425,
-    "sha256": "4958a5292906d25481e551b0ad0cae3568d4657c845e254cd4b3a6688d19f220",
-    "masterSha256": "b4a6142ce1ee4aa8635a0b6596b1b82103d43983b53937a8069aff350f622d47"
+    "url": "audio/correct-8e2774.m4a",
+    "frames": 67680,
+    "bytes": 25344,
+    "sha256": "8e277402fef13ad82468d95aeab6307b5cad37e9d05dc2b57caa69a37501ecc0",
+    "masterSha256": "d94d2afa02419851937d68092295976713c96f1c8c0832691ec26aabdd15d1fc"
   },
   "wrong": {
-    "url": "audio/wrong-1a1155.m4a",
-    "frames": 10338,
-    "bytes": 4014,
-    "sha256": "1a11550c094069043ffa6ae7051ebfd427dd557576e8fcef62a9df955f5cedc7",
-    "masterSha256": "69ceacffcacefa3aeb8a9a81a0040210c0605438b0897375a291e6688dcefa79"
+    "url": "audio/wrong-3c4479.m4a",
+    "frames": 12480,
+    "bytes": 7771,
+    "sha256": "3c44791092f48d543597de43b4e15dae813df5e0e4f35f5889b4ca22b2cc7b61",
+    "masterSha256": "777dcff731b8f8a763663d9b14d9607d32a9106190f8c74d298efc801749ccb6"
   },
   "buzzer": {
     "url": "audio/buzzer-7bed47.m4a",
@@ -88,11 +88,11 @@ export const SAMPLE_BANK = {
     "masterSha256": "c2eb18ca142148d395965a19ca04074d81549c74c974119e25708e3e5bbfebc4"
   },
   "win": {
-    "url": "audio/win-77749b.m4a",
-    "frames": 153600,
-    "bytes": 66223,
-    "sha256": "77749bc29a38dd93520a82e0541bf24c3d7dd7c2d19f5c07201b0f7118d28c74",
-    "masterSha256": "aeac83dd4a6600529327f9ee8b4d170c36e1660bb7b89ed7821df19fd1302a6a"
+    "url": "audio/win-b26622.m4a",
+    "frames": 146880,
+    "bytes": 93623,
+    "sha256": "b266224791371e7e014bfff6bda7b2710bb1e290db366d9f674005f70400ac5c",
+    "masterSha256": "b5b497e44af4a8203ad250bcc3d8ae96f2a9043ded564653c245de50d6c59652"
   },
   "explosion": {
     "url": "audio/explosion-5c7ad4.m4a",

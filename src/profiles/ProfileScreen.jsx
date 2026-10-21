@@ -6,7 +6,7 @@ import { useSocial } from '../social/SocialProvider.jsx';
 import { navigate, back } from '../platform/router.js';
 import { useProfiles } from './ProfileProvider.jsx';
 import { PROFILE_THEMES, AVATAR_PRESETS, TITLES, ACHIEVEMENTS, profileTheme, avatarPreset, titleLabel } from './catalog.js';
-import { decodeProfileImage, cropProfileImage, cropRect } from './client-images.js';
+import { decodeProfileImage, uploadCroppedProfileImage, cropRect } from './client-images.js';
 import profileCss from './profile.css';
 import { ImageReviewStatus } from './ImageReviewStatus.jsx';
 
@@ -87,7 +87,9 @@ export function CropDialog({ crop, profiles, revision, onClose, onDone }) {
   const [error, setError] = useState('');
   const stage = useRef(null);
   const drag = useRef(null);
+  const alive = useRef(true);
   const { image, kind } = crop;
+  useEffect(() => { alive.current = true; return () => { alive.current = false; }; }, []);
   useEffect(() => {
     const node = stage.current;
     const update = () => { if (node) setWidth(node.clientWidth); };
@@ -101,8 +103,11 @@ export function CropDialog({ crop, profiles, revision, onClose, onDone }) {
   const apply = async () => {
     if (busy) return;
     setBusy(true); setError('');
-    try { const dataUrl = await cropProfileImage(image, { kind, zoom, offsetX: offset.x, offsetY: offset.y }); const updated = await profiles.uploadImage(kind, dataUrl, revision); onDone(updated); }
-    catch (err) { setError(errorText(err)); setBusy(false); }
+    try {
+      const updated = await uploadCroppedProfileImage(image, { kind, zoom, offsetX: offset.x, offsetY: offset.y }, dataUrl => profiles.uploadImage(kind, dataUrl, revision), { isCurrent: () => alive.current });
+      if (alive.current) onDone(updated);
+    }
+    catch (err) { if (alive.current) { setError(errorText(err)); setBusy(false); } }
   };
   return <Modal data-design-screen="profile.crop" title={kind === 'avatar' ? 'ضبط الصورة الشخصية' : 'ضبط صورة الغلاف'} className="profile-dialog profile-crop-dialog" onClose={busy ? null : onClose} footer={<div className="profile-edit-footer"><Button data-design-id="cancel" variant="ghost" onClick={onClose} disabled={busy}>إلغاء</Button><Button variant="primary" data-design-id="save" data-design-required="true" onClick={apply} loading={busy}>إرسال للمراجعة</Button></div>}><p className="profile-crop-hint">اسحب الصورة داخل الإطار، أو حرّكها بمفاتيح الأسهم. استخدم شريط التكبير لضبط القص.</p><div ref={stage} data-design-id="crop" className={'profile-crop-stage' + (kind === 'cover' ? ' is-cover' : '')} tabIndex={busy ? -1 : 0} role="group" aria-label="إطار قص الصورة؛ استخدم الأسهم لتحريكها" onKeyDown={event => {
     const moves = { ArrowLeft: [.06, 0], ArrowRight: [-.06, 0], ArrowUp: [0, .06], ArrowDown: [0, -.06] }; const move = moves[event.key];

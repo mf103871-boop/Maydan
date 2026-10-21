@@ -1,3 +1,5 @@
+import encodeJpeg from './vendor/jpeg-encoder.js';
+
 const MAX_BYTES = 12 * 1024 * 1024;
 const MAX_PIXELS = 24_000_000;
 export const IMAGE_LIMITS = { avatar: { width: 512, height: 512, bytes: 96 * 1024 }, cover: { width: 1200, height: 400, bytes: 220 * 1024 } };
@@ -80,8 +82,13 @@ export async function cropProfileImage(image, options) {
     canvas.width = Math.round(limit.width * scale); canvas.height = Math.round(limit.height * scale);
     context.fillStyle = '#fffaf0'; context.fillRect(0, 0, canvas.width, canvas.height);
     context.drawImage(image.element, crop.x, crop.y, crop.width, crop.height, 0, 0, canvas.width, canvas.height);
+    const pixels = options.portableJpeg ? context.getImageData(0, 0, canvas.width, canvas.height) : null;
     for (const quality of [0.88, 0.76, 0.64, 0.52, 0.40]) {
-      const blob = await new Promise(resolve => canvas.toBlob(resolve, 'image/jpeg', quality));
+      // ImageIO/browser encoders can choose a JPEG scan layout that the bounded
+      // upload validator does not accept. The fallback emits one baseline scan
+      // directly from the already-cropped pixels, with no EXIF or source metadata.
+      const blob = pixels ? new Blob([encodeJpeg(pixels, Math.round(quality * 100)).data], { type: 'image/jpeg' })
+        : await new Promise(resolve => canvas.toBlob(resolve, 'image/jpeg', quality));
       if (!blob || blob.type !== 'image/jpeg') throw invalid();
       if (blob.size > limit.bytes) continue;
       return await new Promise((resolve, reject) => {
@@ -90,4 +97,24 @@ export async function cropProfileImage(image, options) {
     }
   }
   throw new Error('تعذّر ضغط الصورة. جرّب صورة أخرى أقل تفاصيل.');
+}
+
+export async function uploadCroppedProfileImage(image, options, upload, { isCurrent = () => true } = {}) {
+  const checkCurrent = () => {
+    if (!isCurrent()) throw Object.assign(new Error('تغيّر الحساب أو أُغلقت نافذة الصورة. اختر الصورة مجددًا.'), { code: 'STALE' });
+  };
+  checkCurrent();
+  const dataUrl = await cropProfileImage(image, options);
+  checkCurrent();
+  try { return await upload(dataUrl); }
+  catch (error) {
+    if (error?.code !== 'IMAGE_INVALID') throw error;
+    // A rejected format has not been saved. Retry exactly once with a portable
+    // baseline encoding; auth, revision, moderation and network errors never retry.
+    await new Promise(resolve => setTimeout(resolve, 0));
+    checkCurrent();
+    const portable = await cropProfileImage(image, { ...options, portableJpeg: true });
+    checkCurrent();
+    return upload(portable);
+  }
 }

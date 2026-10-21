@@ -2,6 +2,7 @@
 // الإلزامي (CC BY ونحوها)، وما بقي من تأليف ميدان. البيانات مولَّدة من provenance (audio-credits.js).
 import React from 'react';
 import { AUDIO_CREDITS } from '../../shared/fx/audio-credits.js';
+import { SELECTED_AUDIO } from '../../shared/fx/selected-audio.js';
 
 const plural = (n, one, few, many) => (n === 1 ? one : n >= 3 && n <= 10 ? `${n} ${few}` : `${n} ${many}`);
 
@@ -36,6 +37,19 @@ export function AudioCredits({ credits = AUDIO_CREDITS }) {
           ))}
         </ul>
       )}
+      <details className="card-muted">
+        <summary>موسيقى «خطوات شمس» والعبارات التجريبية</summary>
+        <p>ترتيب أصلي مدته ثماني دقائق من نغمات آلات حقيقية مسجّلة، يتغيّر عبر ١٤ جزءًا. بعض المصادر الأصلية بدقة 44.1kHz و16-bit؛ تصدير المزيج بدقة أعلى لا يضيف تفاصيل إلى المصدر.</p>
+        <ul className="credits-list">
+          {SELECTED_AUDIO.sources.instrument_libraries.map((source) => (
+            <li key={source.name}>
+              <a href={source.source_url} target="_blank" rel="noreferrer noopener">{source.name}</a>
+              <span className="muted"> — {source.creator} · CC0 1.0</span>
+            </li>
+          ))}
+        </ul>
+        <p>العبارات صوت آلي تجريبي باستخدام <a href="https://huggingface.co/silma-ai/silma-tts" target="_blank" rel="noreferrer noopener">SILMA TTS</a> (أوزان Apache-2.0 وكود MIT)، وليست تسجيل مؤدٍ بشري. النموذج موثق للفصحى والإنجليزية؛ النطق المحلي يحتاج استماعك ولم يُعتمد للنشر العام. يمكن إيقاف العبارات من إعدادات الصوت.</p>
+      </details>
     </div>
   );
 }

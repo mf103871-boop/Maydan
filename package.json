@@ -41,9 +41,9 @@
     "art:check": "node scripts/art-alpha.mjs --check",
     "audio:fetch": "node scripts/audio/sources.mjs --fetch",
     "audio:screen": "node scripts/audio/screen.mjs",
-    "audio:build": "node scripts/audio/build.mjs && node scripts/audio/music.mjs && node scripts/audio/credits.mjs",
+    "audio:build": "node scripts/audio/build.mjs && node scripts/audio/music.mjs && node scripts/audio/credits.mjs && node scripts/audio/selected.mjs",
     "audio:audition": "node scripts/audio/audition.mjs",
-    "audio:check": "node scripts/audio/sources.mjs --check && node scripts/audio/build.mjs --check && node scripts/audio/music.mjs --check && node scripts/audio/credits.mjs --check"
+    "audio:check": "node scripts/audio/sources.mjs --check && node scripts/audio/build.mjs --check && node scripts/audio/music.mjs --check && node scripts/audio/credits.mjs --check && node scripts/audio/selected.mjs --check"
   },
   "engines": {
     "node": ">=22"

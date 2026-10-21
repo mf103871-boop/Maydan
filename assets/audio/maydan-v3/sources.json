@@ -30,7 +30,7 @@
   ],
   "providers": {
     "dustyroom": {
-      "name": "Dustyroom — Free Casual Game Sounds",
+      "name": "Dustyroom â€” Free Casual Game Sounds",
       "url": "https://dustyroom.com/free-casual-game-sounds/",
       "license": "CC0 1.0",
       "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
@@ -47,7 +47,7 @@
       }
     },
     "kenney-interface": {
-      "name": "Kenney — Interface Sounds",
+      "name": "Kenney â€” Interface Sounds",
       "url": "https://kenney.nl/assets/interface-sounds",
       "license": "CC0 1.0",
       "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
@@ -64,7 +64,7 @@
       }
     },
     "kenney-ui": {
-      "name": "Kenney — UI Audio",
+      "name": "Kenney â€” UI Audio",
       "url": "https://kenney.nl/assets/ui-audio",
       "license": "CC0 1.0",
       "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
@@ -81,7 +81,7 @@
       }
     },
     "kenney-jingles": {
-      "name": "Kenney — Music Jingles",
+      "name": "Kenney â€” Music Jingles",
       "url": "https://kenney.nl/assets/music-jingles",
       "license": "CC0 1.0",
       "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
@@ -98,7 +98,7 @@
       }
     },
     "kenney-digital": {
-      "name": "Kenney — Digital Audio",
+      "name": "Kenney â€” Digital Audio",
       "url": "https://kenney.nl/assets/digital-audio",
       "license": "CC0 1.0",
       "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
@@ -115,7 +115,7 @@
       }
     },
     "kenney-impact": {
-      "name": "Kenney — Impact Sounds",
+      "name": "Kenney â€” Impact Sounds",
       "url": "https://kenney.nl/assets/impact-sounds",
       "license": "CC0 1.0",
       "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
@@ -132,7 +132,7 @@
       }
     },
     "oga-kenney-ui": {
-      "name": "OpenGameArt — Kenney: 51 UI sound effects (buttons, switches and clicks)",
+      "name": "OpenGameArt â€” Kenney: 51 UI sound effects (buttons, switches and clicks)",
       "url": "https://opengameart.org/",
       "sourcePage": "https://opengameart.org/content/51-ui-sound-effects-buttons-switches-and-clicks",
       "license": "CC0 1.0",
@@ -174,8 +174,21 @@
       "hosts": [
         "incompetech.com"
       ],
-      "creditLine": "\"{title}\" Kevin MacLeod (incompetech.com). Licensed under Creative Commons: By Attribution 4.0 — https://creativecommons.org/licenses/by/4.0/",
+      "creditLine": "\"{title}\" Kevin MacLeod (incompetech.com). Licensed under Creative Commons: By Attribution 4.0 â€” https://creativecommons.org/licenses/by/4.0/",
       "catalog": "https://incompetech.com/music/royalty-free/pieces.json"
+    },
+    "freesound-reviewed": {
+      "name": "Freesound — accepted physical recordings",
+      "url": "https://freesound.org/",
+      "license": "CC0 1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "licenseFile": "licenses/freesound-reviewed-cc0.txt",
+      "attribution": false,
+      "verified": true,
+      "hosts": [
+        "freesound.org",
+        "cdn.freesound.org"
+      ]
     }
   },
   "candidates": [
@@ -10039,6 +10052,56 @@
       "sha256": "4e54edb6b0f7ee6ff9469f289c8902e8b96ed04dbb809b97c79a7fbca8a7d47c",
       "bytes": 6346627,
       "retrieved": "2026-09-27"
+    },
+    {
+      "id": "freesound-reviewed:clock-tick-tock",
+      "provider": "freesound-reviewed",
+      "url": "https://cdn.freesound.org/previews/265/265577_1042839-lq.mp3",
+      "sha256": "d1d04244b2ad8414209e3a3f780bff3e062784522aca251ecffabaddaf044feb",
+      "roles": [
+        "cue"
+      ],
+      "title": "Tick Tock Clock 01"
+    },
+    {
+      "id": "freesound-reviewed:desk-bell",
+      "provider": "freesound-reviewed",
+      "url": "https://cdn.freesound.org/previews/717/717564_97550-lq.mp3",
+      "sha256": "64aecf6f00ddfef41cb1e9a5680fbe66306dc19c191c684336579c68d4b0d20d",
+      "roles": [
+        "cue"
+      ],
+      "title": "220516 desk bell rings"
+    },
+    {
+      "id": "freesound-reviewed:physical-button",
+      "provider": "freesound-reviewed",
+      "url": "https://cdn.freesound.org/previews/858/858919_18964775-lq.mp3",
+      "sha256": "36426c52aab2aaec419b2fdc4768d5a00f1155711f3cf8dd6297a64a957748a8",
+      "roles": [
+        "cue"
+      ],
+      "title": "Button Click"
+    },
+    {
+      "id": "freesound-reviewed:small-applause",
+      "provider": "freesound-reviewed",
+      "url": "https://cdn.freesound.org/previews/462/462362_9159316-lq.mp3",
+      "sha256": "fb567be6e69487fb40b4fdcdfd09366b934fed0d230064c3303fef8d507f9194",
+      "roles": [
+        "cue"
+      ],
+      "title": "Small applause"
+    },
+    {
+      "id": "freesound-reviewed:wooden-thud",
+      "provider": "freesound-reviewed",
+      "url": "https://cdn.freesound.org/previews/449/449955_9159316-lq.mp3",
+      "sha256": "2a738e2ba4db9e897327401c611434c85aecc95f09e9429c253b12b86070f0d8",
+      "roles": [
+        "cue"
+      ],
+      "title": "Wooden Thud (Mono)"
     }
   ]
 }
