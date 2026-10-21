@@ -143,7 +143,10 @@ class LaunchSmoke:
         self.owns_device = True
         self.report.update({"simulatorUdid": self.device, "simulatorModel": name, "runtime": runtime_id})
         self.prepare_command("simulator-boot", 60, "boot", self.device)
-        self.prepare_command("simulator-bootstatus", 180, "bootstatus", self.device, "-b")
+        # A fresh iOS 26.2 first boot exceeded three minutes and was still in
+        # DataMigration before any app install. Bound that first-boot
+        # preparation to ten minutes; app launch and survival limits stay below.
+        self.prepare_command("simulator-bootstatus", 600, "bootstatus", self.device, "-b")
         # Fresh iOS 26 simulator services can still be provisioning after
         # bootstatus finishes. Builds 18/1 and 18/2 timed out installing before
         # any app launch, with empty installer output and a busy system UI.

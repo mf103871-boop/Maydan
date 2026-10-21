@@ -89,6 +89,25 @@ class LaunchSmokeTests(unittest.TestCase):
         run.assert_called_once()
         self.assertEqual(smoke.report['launches'], [])
 
+    def test_run_retains_cold_and_relaunch_survival_requirements(self):
+        smoke = self.smoke()
+        smoke.prepare, smoke.launch = Mock(), Mock()
+        smoke.terminate_for_relaunch, smoke.finish = Mock(), Mock()
+        self.assertEqual(smoke.run(), 0)
+        smoke.prepare.assert_called_once_with()
+        self.assertEqual([call.args for call in smoke.launch.call_args_list], [('cold', 45), ('relaunch', 15)])
+        smoke.terminate_for_relaunch.assert_called_once_with()
+        self.assertTrue(smoke.report['passed'])
+
+    def test_surviving_launch_still_fails_on_matching_crash_report(self):
+        smoke = self.smoke()
+        smoke.collect_crashes.side_effect = lambda: smoke.crashes.add(self.root / 'Maydan.ips')
+        with patch('smoke_simulator_launch.time.monotonic', side_effect=[0, 45]):
+            with self.assertRaisesRegex(SmokeFailure, 'matching application crash report'):
+                smoke.launch('cold', 45)
+        smoke.process_is_app.assert_called_once_with(123)
+        smoke.collect_crashes.assert_called_once()
+
     def prepared_fixture(self):
         app = self.root / 'Maydan.app'
         app.mkdir()
@@ -113,11 +132,36 @@ class LaunchSmokeTests(unittest.TestCase):
         self.assertEqual([call.args[0] for call in calls], ['runtime', 'list', 'create', 'boot', 'bootstatus', 'install', 'get_app_container'])
         self.assertEqual(calls[0].args, ('runtime', 'dyld_shared_cache', 'update', '--all'))
         self.assertEqual(calls[0].kwargs['timeout'], 300)
+        self.assertEqual(calls[4].args, ('bootstatus', smoke.device, '-b'))
+        self.assertEqual(calls[4].kwargs['timeout'], 600)
         self.assertEqual(calls[-2].args[0], 'install')
         self.assertEqual(calls[-2].kwargs['timeout'], 300)
         self.assertEqual(calls[-1].kwargs['timeout'], 180)
         self.assertTrue(all(item['passed'] and item['elapsedSeconds'] >= 0 for item in smoke.report['preparation']))
         self.assertEqual(smoke.report['launches'], [])
+
+    def test_bootstatus_timeout_prevents_install_and_launch_without_retry(self):
+        smoke = self.prepared_fixture()
+        previous = smoke.simctl.side_effect
+        def result(*args, **kwargs):
+            if args[0] == 'bootstatus':
+                self.assertEqual(kwargs['timeout'], 600)
+                raise SmokeFailure('Timed out after 600s: xcrun simctl bootstatus')
+            return previous(*args, **kwargs)
+        smoke.simctl.side_effect = result
+        smoke.launch, smoke.finish = Mock(), Mock()
+        with patch('smoke_simulator_launch.sys.platform', 'darwin'):
+            self.assertEqual(smoke.run(), 1)
+        self.assertEqual([call.args[0] for call in smoke.simctl.call_args_list],
+                         ['runtime', 'list', 'create', 'boot', 'bootstatus'])
+        record = smoke.report['preparation'][-1]
+        self.assertEqual(record['step'], 'simulator-bootstatus')
+        self.assertEqual(record['timeoutSeconds'], 600)
+        self.assertFalse(record['passed'])
+        self.assertFalse(smoke.report['passed'])
+        self.assertEqual(smoke.report['launches'], [])
+        self.assertIsNone(smoke.installed_app)
+        smoke.launch.assert_not_called()
 
     def test_install_timeout_remains_a_failed_preparation_without_retry_or_launch(self):
         smoke = self.prepared_fixture()
