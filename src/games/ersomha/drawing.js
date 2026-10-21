@@ -1,4 +1,5 @@
 // Public drawing primitives only. Answer content must never enter this module.
+import { cameraPoint, setDrawingTransform } from './camera.js';
 export const ERSOMHA_PALETTE = Object.freeze(['#35224a', '#ffffff', '#118d96', '#9250bd', '#ed6a5a', '#f4b942', '#64a66f', '#3b72b8', '#f08db4', '#8a563d', '#ef8a38', '#83929b']);
 export const ERSOMHA_WIDTHS = Object.freeze([2, 6, 12]);
 export const DRAW_BATCH_MS = 80;
@@ -6,7 +7,8 @@ export const DRAW_BATCH_POINTS = 32;
 export const DRAW_MAX_PENDING = 6;
 export const DRAW_MAX_BUFFERED_BYTES = 32 * 1024;
 
-export function drawingPoint(event, bounds) {
+export function drawingPoint(event, bounds, options) {
+  if (options?.view) return cameraPoint(event, bounds, options.view, options);
   if (!(bounds?.width > 0) || !(bounds?.height > 0)) return null;
   const x = (event.clientX - bounds.left) / bounds.width;
   const y = (event.clientY - bounds.top) / bounds.height;
@@ -45,9 +47,13 @@ export function applyDrawingEvent(model, event) {
   return true;
 }
 
-export function drawStroke(context, stroke) {
+export function drawStroke(context, stroke, view) {
   if (!context || !stroke?.points?.length) return;
   context.save();
+  if (view) {
+    setDrawingTransform(context, view);
+    context.beginPath(); context.rect(0, 0, 1000, 1000); context.clip();
+  }
   // White is an actual drawing colour. Erasure removes pixels and reveals the
   // same white board on every device, rather than painting a coloured patch.
   context.globalCompositeOperation = stroke.tool === 'eraser' ? 'destination-out' : 'source-over';
@@ -64,8 +70,11 @@ export function drawStroke(context, stroke) {
   context.restore();
 }
 
-export function paintDrawing(context, model, optimistic = new Map()) {
-  context.clearRect(0, 0, 1000, 1000);
-  for (const [id, stroke] of model.strokes) if (!model.undoneIds.has(id) && !optimistic.has(id)) drawStroke(context, stroke);
-  for (const stroke of optimistic.values()) drawStroke(context, stroke);
+export function paintDrawing(context, model, optimistic = new Map(), view) {
+  context.save();
+  context.setTransform?.(1, 0, 0, 1, 0, 0);
+  context.clearRect(0, 0, context.canvas?.width || 1000, context.canvas?.height || 1000);
+  context.restore();
+  for (const [id, stroke] of model.strokes) if (!model.undoneIds.has(id) && !optimistic.has(id)) drawStroke(context, stroke, view);
+  for (const stroke of optimistic.values()) drawStroke(context, stroke, view);
 }

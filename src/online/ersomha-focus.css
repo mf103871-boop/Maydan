@@ -1,6 +1,12 @@
 /* The drawing workspace uses the real viewport; normalized ink stays square. */
 .ers-canvas-panel { user-select:none; -webkit-user-select:none; -webkit-touch-callout:none; caret-color:transparent; }
-.ers-board { caret-color:transparent; -webkit-user-modify:read-only; -webkit-tap-highlight-color:transparent; }
+.ers-board { caret-color:transparent; -webkit-user-modify:read-only; -webkit-tap-highlight-color:transparent; background:transparent; }
+.ers-world-paper { position:absolute; left:0; top:0; width:100%; height:100%; background:white; pointer-events:none; }
+.ers-board-wrap { background:#e9e4da; }
+.ers-board.is-panning { cursor:grab; }
+.ers-board.is-panning:active { cursor:grabbing; }
+.ers-camera-controls { display:none; }
+.ers-camera-hint { position:absolute; bottom:8px; left:50%; transform:translateX(-50%); max-width:calc(100% - 16px); padding:5px 10px; border:1px solid #a9c9c0; border-radius:20px; background:#f1fff8e8; color:#386f65; font-size:.72rem; text-align:center; pointer-events:none; }
 .ers-tools-more { display:none; }
 .ers-focus-toggle,.ers-rotate-toggle { min-width:44px; min-height:44px; padding:6px; flex:none; }
 .ers-focus-toggle .ers-focus-label { display:none; }
@@ -12,7 +18,7 @@ body:has(.ersomha.is-drawing-focus) { overflow:hidden; }
 .online-room-chrome:has(>.ersomha.is-drawing-focus) .online-social-slot { visibility:hidden; pointer-events:none; }
 .screen:has(.ersomha.is-drawing-focus),.screen>:has(.ersomha.is-drawing-focus) { animation:none!important; transform:none!important; }
 .ersomha.is-drawing-focus {
-  position:fixed; z-index:70; top:var(--ers-visible-top,0px); left:0; right:0;
+  position:fixed!important; z-index:70; top:var(--ers-visible-top,0px); left:0; right:0;
   height:var(--ers-visible-height,100dvh); max-width:none; min-height:0;
   box-sizing:border-box; padding:max(8px,var(--safe-top,env(safe-area-inset-top))) max(8px,var(--safe-right,env(safe-area-inset-right))) max(8px,var(--safe-bottom,env(safe-area-inset-bottom))) max(8px,var(--safe-left,env(safe-area-inset-left)));
   display:grid!important; grid-template-columns:minmax(0,1fr); grid-template-rows:auto minmax(0,1fr);
@@ -50,23 +56,25 @@ html[data-call-dock-active] .ersomha.is-drawing-focus .ers-match-header { paddin
 
 @media(orientation:landscape) {
   .ersomha.is-drawing-focus .ers-canvas-panel {
-    display:grid; grid-template-columns:minmax(132px,1fr) var(--ers-board-limit,280px) minmax(132px,1fr);
-    grid-template-rows:minmax(0,1fr); gap:10px; align-items:center; direction:ltr;
+    display:grid; grid-template-columns:96px minmax(0,1fr);
+    grid-template-rows:minmax(0,1fr); gap:8px; align-items:center; direction:ltr;
+    padding:0 0 4px; box-sizing:border-box;
   }
-  .ersomha.is-drawing-focus .ers-canvas-panel.is-drawer .ers-board-wrap { grid-column:2; grid-row:1; justify-self:center; }
+  html[data-call-dock-active] .ersomha.is-drawing-focus .ers-canvas-panel { padding-right:56px; }
+  .ersomha.is-drawing-focus .ers-canvas-panel.is-drawer .ers-board-wrap { grid-column:2; grid-row:1; width:100%; max-width:none; height:100%; aspect-ratio:auto; justify-self:stretch; border-radius:18px; }
   .ersomha.is-drawing-focus .ers-tools {
-    grid-column:1; grid-row:1; align-self:center; justify-self:end; width:132px; direction:rtl;
-    grid-template-columns:minmax(0,1fr); grid-template-rows:44px 88px 44px 44px; gap:4px;
+    grid-column:1; grid-row:1; align-self:center; justify-self:center; width:96px; direction:rtl;
+    grid-template-columns:44px 44px; grid-template-rows:88px 88px 44px; gap:4px;
   }
-  .ersomha.is-drawing-focus .ers-tool-row { grid-column:1; grid-row:1; display:grid; grid-template-columns:repeat(3,44px); gap:0; }
+  .ersomha.is-drawing-focus .ers-tool-row { grid-column:1/-1; grid-row:1; display:grid; grid-template-columns:repeat(2,44px); gap:0; }
   .ersomha.is-drawing-focus .ers-tool-row .btn { width:44px; min-width:44px; padding:0; font-size:1rem; }
   .ersomha.is-drawing-focus .ers-tool-row [data-design-id=redo],.ersomha.is-drawing-focus .ers-tool-row [data-design-id=clear],.ersomha.is-drawing-focus .ers-tool-label,.ersomha.is-drawing-focus .ers-tool-divider { display:none; }
   .ersomha.is-drawing-focus .ers-eraser-mark { display:inline; }
-  .ersomha.is-drawing-focus .ers-colours { grid-column:1; grid-row:2; grid-template-columns:repeat(3,44px); }
-  .ersomha.is-drawing-focus .ers-colours>.ers-colour:nth-child(n+7) { display:none; }
-  .ersomha.is-drawing-focus .ers-widths { grid-column:1; grid-row:3; gap:0; }
-  .ersomha.is-drawing-focus .ers-widths button { min-width:44px; width:44px; padding:0; }
+  .ersomha.is-drawing-focus .ers-colours { grid-column:1/-1; grid-row:2; grid-template-columns:repeat(2,44px); }
+  .ersomha.is-drawing-focus .ers-colours>.ers-colour:nth-child(n+5) { display:none; }
+  .ersomha.is-drawing-focus .ers-widths { display:none; }
   .ersomha.is-drawing-focus .ers-widths span { display:none; }
-  .ersomha.is-drawing-focus .ers-tools-more { grid-column:1; grid-row:4; display:flex; width:132px; min-height:44px; padding:6px 8px; gap:8px; font-size:.85rem; }
-  .ers-tools-more i { width:17px; height:17px; border-radius:50%; background:var(--ink); border:2px solid white; box-shadow:0 0 0 1px #35224a55; }
+  .ersomha.is-drawing-focus .ers-camera-controls { grid-column:1/-1; grid-row:3; display:grid; grid-template-columns:repeat(2,44px); gap:4px; }
+  .ersomha.is-drawing-focus .ers-camera-controls .btn { width:44px; min-width:44px; min-height:44px; padding:0; }
+  .ersomha.is-drawing-focus .ers-tools-more { grid-column:2; grid-row:1; align-self:end; display:flex; width:44px; min-width:44px; height:44px; min-height:44px; padding:0; }
 }

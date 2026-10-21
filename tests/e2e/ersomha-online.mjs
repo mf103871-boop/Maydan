@@ -24,8 +24,26 @@ const origin = `http://127.0.0.1:${front.address().port}`;
 const result = { scope: 'Real group launch, Ersomha canvas/guesses, Lamma privacy and room WebSockets against local workerd/D1; external media transport is simulated, no production writes', engines: [] };
 const drawerToolsVisible = () => {
   const board = document.querySelector('canvas.ers-board')?.getBoundingClientRect();
-  const buttons = [...document.querySelectorAll('.ers-tools button')];
-  return board && board.top >= 0 && board.bottom <= innerHeight + 1 && buttons.length === 20 && buttons.every(button => { const r = button.getBoundingClientRect(); return r.top >= 0 && r.bottom <= innerHeight + 1 && r.left >= 0 && r.right <= innerWidth + 1 && r.width >= 44 && r.height >= 44; });
+  const visible = button => button.getClientRects().length && getComputedStyle(button).display !== 'none';
+  const buttons = [...document.querySelectorAll('.ers-tools button')].filter(visible);
+  const colours = [...document.querySelectorAll('.ers-tools .ers-colour')].filter(visible);
+  const more = document.querySelector('.ers-tools-more');
+  return board && document.querySelector('[data-ersomha-drawing-focus="true"]') && !document.querySelector('.ers-board-status') && board.top >= 0 && board.bottom <= innerHeight + 1 && colours.length === (innerWidth > innerHeight ? 4 : 12) && (innerWidth <= innerHeight || more && visible(more)) && buttons.every(button => { const r = button.getBoundingClientRect(); return r.top >= 0 && r.bottom <= innerHeight + 1 && r.left >= 0 && r.right <= innerWidth + 1 && r.width >= 44 && r.height >= 44; });
+};
+// Observe the receiving device's actual raster, not only normalized message
+// coordinates. Its square/portrait projection must keep a wide drawer's circle
+// round. The paper is a separate DOM layer, so alpha measures ink alone.
+const receivedInk = () => {
+  const canvas = document.querySelector('canvas.ers-board'); if (!canvas) return null;
+  const pixels = canvas.getContext('2d').getImageData(0, 0, canvas.width, canvas.height).data;
+  let left = canvas.width, top = canvas.height, right = -1, bottom = -1, count = 0, fingerprint = 2166136261;
+  for (let index = 3; index < pixels.length; index += 4) {
+    const alpha = pixels[index]; if (!alpha) continue;
+    const point = (index - 3) / 4, x = point % canvas.width, y = Math.floor(point / canvas.width);
+    left = Math.min(left, x); right = Math.max(right, x); top = Math.min(top, y); bottom = Math.max(bottom, y); count++;
+    fingerprint = Math.imul(fingerprint ^ point, 16777619); fingerprint = Math.imul(fingerprint ^ alpha, 16777619);
+  }
+  return { width: right - left + 1, height: bottom - top + 1, count, fingerprint: fingerprint >>> 0, rasterWidth: canvas.width, rasterHeight: canvas.height };
 };
 try {
   const scriptPath = path.join(dir, 'worker.mjs');
@@ -79,9 +97,16 @@ createRoot(document.getElementById('root')).render(<AccountContext.Provider valu
       await host.getByRole('dialog', { name: 'يلا نلعب', exact: true }).waitFor();
       await host.screenshot({ path: path.join(out, `${engineName}-choose-game.png`) });
       await host.locator('.lamma-game-options button').filter({ hasText: 'ارسمها' }).click();
-      await host.getByRole('button', { name: 'ابدأ وادعُ أصحابك', exact: true }).click();
+      const [createdRoomRequest] = await Promise.all([
+        host.waitForRequest(request => request.url() === `${apiOrigin}/api/rooms` && request.method() === 'POST'),
+        host.getByRole('button', { name: 'ابدأ وادعُ أصحابك', exact: true }).click(),
+      ]);
+      assert.equal(createdRoomRequest.postDataJSON().settings?.difficulty, 'easy', 'group launch sends the shared easy default to the real room service');
       await host.waitForURL(/#\/room\/\d{6}$/);
       const code = host.url().match(/room\/(\d{6})$/)[1];
+      await host.getByRole('button', { name: 'تعديل الصعوبة والفئات', exact: true }).click();
+      assert.equal(await host.getByRole('combobox', { name: 'مستوى الأفكار', exact: true }).inputValue(), 'easy', 'the actual server room keeps easy difficulty before either player starts');
+      await host.getByRole('button', { name: 'إغلاق إعدادات الغرفة', exact: true }).click();
       assert.equal((await DB.prepare('SELECT COUNT(*) AS n FROM trials WHERE user_id=?').bind(users[0].id).first()).n, 0);
       await guest.evaluate(() => window.fixture.refresh());
       // Accepting an invitation during another real room must preserve that
@@ -115,7 +140,7 @@ createRoot(document.getElementById('root')).render(<AccountContext.Provider valu
       assert.equal(await guest.getByRole('textbox', { name: 'اسمك في الغرفة', exact: true }).count(), 0, 'accepted invitation joins directly with the signed-in profile');
       await guest.getByRole('button', { name: 'أنا جاهز', exact: true }).click();
       await host.getByRole('button', { name: 'ابدأ اللعب', exact: true }).click();
-      const chosen = [];
+      const chosen = [], circleEvidence = [];
       for (let turn = 1; turn <= 2; turn++) {
         const drawer = pages[turn - 1], guesser = pages[2 - turn];
         await drawer.locator('.ers-word-choices button').first().waitFor();
@@ -128,28 +153,65 @@ createRoot(document.getElementById('root')).render(<AccountContext.Provider valu
         await drawer.locator('.ers-word-choices button').first().click();
         const canvas = drawer.locator('canvas.ers-board'); await canvas.waitFor();
         await drawer.waitForFunction(drawerToolsVisible);
+        assert.equal(await drawer.locator('.online-social-slot .lamma-launcher').isVisible(), false, 'the room launcher is hidden behind focused drawing, so it cannot cover rotation controls');
+        assert.equal(await drawer.getByText('انتهت هذه الجولة. انتظر تحديث الشاشة.', { exact: true }).count(), 0, 'initial drawing synchronization retains the numeric round identity required by the real server');
         await drawer.setViewportSize({ width: 844, height: 390 });
         await drawer.waitForFunction(drawerToolsVisible);
+        await drawer.waitForFunction(() => document.querySelector('[data-testid="call-dock"]')?.getBoundingClientRect().right >= innerWidth - 20);
+        const clearDrawing = await drawer.evaluate(() => {
+          const call = document.querySelector('[data-testid="call-dock"]').getBoundingClientRect();
+          return [...document.querySelectorAll('canvas.ers-board,.ers-tools button')].filter(node=>node.getClientRects().length&&getComputedStyle(node).display!=='none').every(node=>{const r=node.getBoundingClientRect();return r.right<=call.left||r.left>=call.right||r.bottom<=call.top||r.top>=call.bottom;});
+        });
+        assert.equal(clearDrawing, true, 'after orientation settles, the existing call stays beside the board and all drawing tools');
         await drawer.screenshot({ path: path.join(out, `${engineName}-turn-${turn}-landscape-tools.png`), fullPage: true });
-        await drawer.setViewportSize({ width: 390, height: 844 });
-        await drawer.waitForFunction(drawerToolsVisible);
-        const bounds = await canvas.boundingBox();
-        const launcher = await drawer.locator('.online-social-slot .lamma-launcher').boundingBox();
-        assert.ok(launcher && launcher.width >= 44 && launcher.height >= 44, 'friends remain available in the room header');
-        const intersects = (a, b) => a.x < b.x + b.width && a.x + a.width > b.x && a.y < b.y + b.height && a.y + a.height > b.y;
-        assert.equal(intersects(launcher, bounds), false, 'friends never cover the shared drawing');
-        for (const tool of await drawer.locator('.ers-tools button').all()) {
-          const button = await tool.boundingBox(); if (button) assert.equal(intersects(launcher, button), false, 'friends never cover drawing tools');
-        }
-        await drawer.mouse.move(bounds.x + bounds.width * .2, bounds.y + bounds.height * .3);
-        await drawer.mouse.down();
-        await drawer.mouse.move(bounds.x + bounds.width * .7, bounds.y + bounds.height * .6, { steps: 18 });
+        const landscapeBoard = await canvas.boundingBox();
+        assert.ok(landscapeBoard.width >= 600 && landscapeBoard.height >= 240 && landscapeBoard.width > landscapeBoard.height * 1.8, `the landscape camera makes the phone's empty width drawable: ${JSON.stringify(landscapeBoard)}`);
+        assert.equal(await canvas.getAttribute('data-camera-mode'), 'wide');
+        // This circle is drawn in physical landscape pixels and travels through
+        // the real room WebSocket and canonical square drawing reducer.
+        const center = { x: landscapeBoard.x + landscapeBoard.width / 2, y: landscapeBoard.y + landscapeBoard.height / 2 }, radius = 70;
+        await drawer.mouse.move(center.x + radius, center.y); await drawer.mouse.down();
+        for (let step = 1; step <= 64; step++) { const angle = 2 * Math.PI * step / 64; await drawer.mouse.move(center.x + radius * Math.cos(angle), center.y + radius * Math.sin(angle)); }
         await drawer.mouse.up();
+        await drawer.waitForFunction(() => !document.querySelector('[aria-label="تراجع عن آخر خط"]').disabled);
+        await guesser.waitForFunction(() => { const canvas = document.querySelector('canvas.ers-board'); if (!canvas) return false; const data = canvas.getContext('2d').getImageData(0, 0, canvas.width, canvas.height).data; let count = 0; for (let i = 3; i < data.length; i += 4) if (data[i]) count++; return count > 150; });
+        // The final end batch is broadcast before the drawer's undo becomes
+        // available; allow the receiving browser's paint callback to settle.
         await guesser.waitForFunction(() => {
           const canvas = document.querySelector('canvas.ers-board'); if (!canvas) return false;
-          const pixels = canvas.getContext('2d').getImageData(0, 0, 1000, 1000).data;
-          for (let i = 3; i < pixels.length; i += 4) if (pixels[i]) return true; return false;
+          const data = canvas.getContext('2d').getImageData(0, 0, canvas.width, canvas.height).data; let l=canvas.width,r=-1,t=canvas.height,b=-1;
+          for(let i=3;i<data.length;i+=4)if(data[i]){const p=(i-3)/4,x=p%canvas.width,y=Math.floor(p/canvas.width);l=Math.min(l,x);r=Math.max(r,x);t=Math.min(t,y);b=Math.max(b,y);}
+          const w=r-l+1,h=b-t+1;return w>45&&h>45&&Math.abs(w-h)<=2;
         });
+        const circle = await guesser.evaluate(receivedInk);
+        assert.ok(circle.width > 45 && circle.height > 45 && Math.abs(circle.width - circle.height) <= 2, `portrait guesser receives an undistorted circle: ${JSON.stringify(circle)}`);
+        circleEvidence.push({ turn, physicalDiameter: 140, drawerViewportWidth: landscapeBoard.width, drawerViewportHeight: landscapeBoard.height, portraitReceiver: circle });
+        await drawer.getByRole('button', { name: 'ألوان وأدوات إضافية', exact: true }).click();
+        const toolsDialog = drawer.getByRole('dialog', { name: 'ألوان وأدوات الرسم', exact: true });
+        await toolsDialog.waitFor();
+        assert.equal(await toolsDialog.locator('.ers-colour').count(), 12, 'compact tools retain the complete palette behind More');
+        await toolsDialog.getByRole('button', { name: 'إكمال الرسم', exact: true }).click();
+        await toolsDialog.waitFor({ state: 'hidden' });
+        await drawer.setViewportSize({ width: 390, height: 844 });
+        await drawer.waitForFunction(drawerToolsVisible);
+        await drawer.getByRole('button', { name: 'العودة للغرفة', exact: true }).click();
+        await drawer.locator('[data-ersomha-drawing-focus="true"]').waitFor({ state: 'hidden' });
+        const launcher = await drawer.locator('.online-social-slot .lamma-launcher').boundingBox();
+        assert.ok(launcher && launcher.width >= 44 && launcher.height >= 44, 'returning from the focused canvas restores the room friends launcher');
+        assert.equal(await drawer.locator('.online-social-slot .lamma-launcher').isVisible(), true);
+        await drawer.locator('.online-social-slot .lamma-launcher').click();
+        await drawer.getByRole('dialog', { name: 'الأصدقاء واللّمة', exact: true }).waitFor();
+        await drawer.getByRole('button', { name: 'إغلاق اللّمة والعودة للعبة', exact: true }).click();
+        await drawer.getByRole('dialog', { name: 'الأصدقاء واللّمة', exact: true }).waitFor({ state: 'hidden' });
+        await drawer.getByRole('button', { name: 'تكبير لوحة الرسم', exact: true }).click();
+        await drawer.waitForFunction(drawerToolsVisible);
+        const currentCall = await drawer.evaluate(() => window.fixture.call()), initialCall = callsBefore[turn - 1];
+        for (const key of ['id', 'connected', 'connections', 'disconnects']) assert.equal(currentCall[key], initialCall[key], `focus changes and friends navigation preserve the existing call's ${key}`);
+        assert.equal(currentCall.muted, true, 'opening friends and restoring drawing never reopens the private microphone');
+        const intersects = (a, b) => a.x < b.x + b.width && a.x + a.width > b.x && a.y < b.y + b.height && a.y + a.height > b.y;
+        const floatingCall = await drawer.getByTestId('call-dock').boundingBox();
+        assert.ok(floatingCall && !intersects(floatingCall, await drawer.locator('.ers-match-header h1').boundingBox()), 'call circles leave the drawer word readable');
+        assert.deepEqual(await guesser.evaluate(receivedInk), circle, 'drawer rotation, fit changes and friends navigation do not mutate the remote canonical ink');
         assert.equal((await guesser.evaluate(() => window.fixture.call())).connected, true);
         await drawer.screenshot({ path: path.join(out, `${engineName}-turn-${turn}-live-drawing.png`), fullPage: true });
         const input = guesser.locator('.ers-guess input');
@@ -166,7 +228,7 @@ createRoot(document.getElementById('root')).render(<AccountContext.Provider valu
       assert.equal((await DB.prepare('SELECT COUNT(*) AS n FROM trials WHERE user_id=?').bind(users[0].id).first()).n, 1);
       assert.deepEqual(errors, []);
       await host.screenshot({ path: path.join(out, `${engineName}-cooperative-result-with-call.png`) });
-      result.engines.push({ engine: engineName, groupLaunch: true, cancelledActiveRoomInvitationAllocatesNoSeat: true, automaticGuestJoin: true, roomCode: code, completedDrawingTurns: 2, bothDrawingsDelivered: true, drawerMutedBeforeWord: true, microphoneUnmuteBlockedDuringDrawing: true, microphoneNeverAutoReopened: true, bothCallStatesPreserved: true, mediaConnectCount: callsAfter.map(call => call.connections), mediaDisconnectCount: callsAfter.map(call => call.disconnects), browserErrors: errors });
+      result.engines.push({ engine: engineName, groupLaunch: true, groupRoomDifficulty: 'easy', cancelledActiveRoomInvitationAllocatesNoSeat: true, automaticGuestJoin: true, roomCode: code, completedDrawingTurns: 2, bothDrawingsDelivered: true, wideCanvasCircleCompatibility: circleEvidence, rotationAndFocusPreserveRemoteInk: true, drawerMutedBeforeWord: true, microphoneUnmuteBlockedDuringDrawing: true, microphoneNeverAutoReopened: true, bothCallStatesPreserved: true, mediaConnectCount: callsAfter.map(call => call.connections), mediaDisconnectCount: callsAfter.map(call => call.disconnects), browserErrors: errors });
     } finally { await browser.close(); }
   }
   result.providerRequests = requests;

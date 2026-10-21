@@ -24,19 +24,22 @@ test('semantic scene registry has stable unique identities and the seven actual 
 test('content and action containers cannot hide mandatory descendant controls', () => {
   for (const screen of DESIGN_SCREENS) for (const node of screen.nodes) {
     if (['content','actions','header','topbar','controls','canvas-panel','guess-form','composer','navigation','room-actions','settings-account','settings-privacy','legal'].includes(node.id)) assert.equal(node.required, true, `${screen.id}:${node.id}`);
-    if (node.kind === 'canvas') { assert.equal(node.aspectRatio, 1); assert.equal(node.required, true); }
+    if (node.kind === 'canvas') { assert.equal(node.canvasViewport ? node.worldAspectRatio : node.aspectRatio, 1); assert.equal(node.required, true); }
     if (['players','member','message','friend-row','option','color','width'].includes(node.id)) assert.equal(node.repeat, true, `${screen.id}:${node.id}`);
   }
 });
 
 test('drawing focus keeps its room return and compact tool access in the Studio contract', () => {
-  for (const id of ['canvas-panel', 'canvas', 'drawing-tools', 'focus-toggle', 'tools-more']) {
+  for (const id of ['canvas-panel', 'canvas', 'drawing-tools', 'focus-toggle', 'tools-more', 'camera-controls', 'camera-view', 'camera-hand']) {
     assert.equal(getNodeDefinition('ersomha.draw.drawer', id)?.required, true, id);
   }
-  for (const id of ['focus-toggle', 'orientation']) {
+  for (const id of ['focus-toggle', 'orientation', 'camera-view', 'camera-hand']) {
     assert.equal(getNodeDefinition('ersomha.draw.drawer', id)?.editableText, false, id);
     assert.equal(getNodeDefinition('ersomha.draw.drawer', id)?.editableIcon, false, id);
   }
+  const canvas=getNodeDefinition('ersomha.draw.drawer','canvas');
+  assert.equal(canvas.canvasViewport,true);
+  assert.equal(canvas.aspectRatio,undefined,'The visible viewport may be wide while canonical ink stays square.');
 });
 
 test('dynamic answers, account identity and tool meaning cannot be rewritten as decorative labels', () => {

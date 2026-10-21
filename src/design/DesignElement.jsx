@@ -84,8 +84,8 @@ export function DesignElement({ as, elementProps }) {
     return()=>{observer.disconnect();cancelAnimationFrame(frame);window.removeEventListener('resize',schedule);window.visualViewport?.removeEventListener('resize',schedule);};
   },[hasPositioned,runtime.profile]);
   useLayoutEffect(()=>{
-    if(!layout || !parentRef?.current || !ref.current) {setGeometry(previous=>previous===null?previous:null);return undefined;}
-    let frame;
+    if(!layout) {setGeometry(previous=>previous===null?previous:null);return undefined;}
+    let frame,initialFrame,observer;
     const measure=()=>{
       const el=ref.current,parent=parentRef.current;
       if(!el || !parent)return;
@@ -105,18 +105,25 @@ export function DesignElement({ as, elementProps }) {
         const next={position:'relative',left:boundedDelta((layout.x||0)*width,-minX,width-maxX),top:boundedDelta((layout.y||0)*height,-minY,height-maxY),...(requestedWidth===undefined?{}:{width:requestedWidth}),...(layout.height==null || layout.height==='auto'?{}:{height:Math.min(height,Math.max(interactive?44:1,height*layout.height))}),zIndex:layout.z||0,minHeight:interactive?44:undefined,minWidth:interactive?44:undefined};
         setGeometry(previous=>JSON.stringify(previous)===JSON.stringify(next)?previous:next);return;
       }
-      const rect=designRect(layout,{width,height},original,{required,interactive,square:definition?.aspectRatio===1 || definition?.kind==='canvas'});
+      const rect=designRect(layout,{width,height},original,{required,interactive,square:definition?.aspectRatio===1 || definition?.kind==='canvas' && !definition?.canvasViewport});
       const offset=el.offsetParent;
       const offsetBox=offset?.getBoundingClientRect?.() || {left:0,top:0};
       const next={position:'absolute',left:box.left-offsetBox.left+(offset?.scrollLeft||0)-(offset?.clientLeft||0)+rect.x,top:box.top-offsetBox.top+(offset?.scrollTop||0)-(offset?.clientTop||0)+rect.y,width:rect.width,height:rect.height,zIndex:rect.z,margin:0,maxWidth:'none',minHeight:interactive?44:undefined,minWidth:interactive?44:undefined};
       setGeometry(previous=>JSON.stringify(previous)===JSON.stringify(next)?previous:next);
     };
     const schedule=()=>{cancelAnimationFrame(frame);frame=requestAnimationFrame(measure);};
-    measure();
-    const observer=new ResizeObserver(schedule);observer.observe(parentRef.current);observer.observe(ref.current);
+    const observe=()=>{
+      const parent=parentRef?.current,element=ref.current;
+      if(!parent || !element)return;
+      measure();observer=new ResizeObserver(schedule);observer.observe(parent);observer.observe(element);
+    };
+    observe();
+    // A child's layout effect can precede its screen's ref attachment on the
+    // first commit. The saved layout must still apply without a later edit.
+    if(!observer)initialFrame=requestAnimationFrame(observe);
     window.visualViewport?.addEventListener('resize',schedule);window.addEventListener('resize',schedule);
-    return()=>{observer.disconnect();cancelAnimationFrame(frame);window.visualViewport?.removeEventListener('resize',schedule);window.removeEventListener('resize',schedule);};
-  },[layout,parentRef,required,interactive,definition?.aspectRatio,definition?.kind,runtime.profile,repeated,nodeId]);
+    return()=>{observer?.disconnect();cancelAnimationFrame(frame);cancelAnimationFrame(initialFrame);window.visualViewport?.removeEventListener('resize',schedule);window.removeEventListener('resize',schedule);};
+  },[layout,parentRef,required,interactive,definition?.aspectRatio,definition?.kind,definition?.canvasViewport,runtime.profile,repeated,nodeId]);
   const context=useMemo(()=>ownScreen?{screenId:ownScreen,ref,managedPosition}:ancestor,[ownScreen,ancestor,managedPosition]);
   const props={...elementProps,ref:setElement};
   if(repeated)props['data-design-layout-mode']='offset';

@@ -11,7 +11,7 @@ const bundle = await build({ stdin: { resolveDir: process.cwd(), loader: 'jsx', 
 import React,{useState} from 'react';import{createRoot}from'react-dom/client';import{ErsomhaMatch}from'./src/online/Ersomha.jsx';
 import{back}from'./src/platform/router.js';import{CallControls}from'./src/social/CallDock.jsx';import{useCallDockLayout}from'./src/social/CallViewport.jsx';import{BrandFonts}from'./src/shared/brand/art.jsx';import{TopBar,Button}from'./src/shared/ui/components.jsx';import ui from'./src/shared/ui/ui.css';import tokens from'./src/shared/theme/tokens.css';import brand from'./src/shared/brand/brand.css';import online from'./src/online/online.css';
 let inkMeasuring=false,inkSamples=[],inkEvent=null;
-for(const type of ['pointerdown','pointermove'])document.addEventListener(type,event=>{if(!inkMeasuring||!event.buttons||!event.target.classList?.contains('ers-board'))return;const started=performance.now(),bounds=event.target.getBoundingClientRect();inkEvent={started,canvas:event.target,x:Math.max(0,Math.min(999,Math.floor((event.clientX-bounds.left)/bounds.width*1000))),y:Math.max(0,Math.min(999,Math.floor((event.clientY-bounds.top)/bounds.height*1000))),recorded:false}},true);
+for(const type of ['pointerdown','pointermove'])document.addEventListener(type,event=>{if(!inkMeasuring||!event.buttons||!event.target.classList?.contains('ers-board'))return;const started=performance.now(),bounds=event.target.getBoundingClientRect();inkEvent={started,canvas:event.target,x:Math.max(0,Math.min(event.target.width-1,Math.floor((event.clientX-bounds.left)/bounds.width*event.target.width))),y:Math.max(0,Math.min(event.target.height-1,Math.floor((event.clientY-bounds.top)/bounds.height*event.target.height))),recorded:false}},true);
 for(const method of ['stroke','fill']){const original=CanvasRenderingContext2D.prototype[method];CanvasRenderingContext2D.prototype[method]=function(...args){const result=original.apply(this,args);if(inkMeasuring&&inkEvent&&!inkEvent.recorded&&inkEvent.canvas===this.canvas&&this.getImageData(inkEvent.x,inkEvent.y,1,1).data[3]){inkEvent.recorded=true;inkSamples.push(performance.now()-inkEvent.started)}return result}}
 window.beginInkProbe=()=>{inkSamples=[];inkEvent=null;inkMeasuring=true};window.finishInkProbe=()=>{inkMeasuring=false;return [...inkSamples]};
 const members=Array.from({length:8},(_,i)=>({id:'p'+i,name:['عمر','ليان','عبدالله','أحمد','نور','سارة','يزن','هبة'][i],avatar:i%4,score:i*50,connected:true}));
@@ -43,7 +43,7 @@ try {
       await page.mouse.move(box.x + box.width * .7, box.y + box.height * .7, { steps: 8 });
       const local = await board.evaluate(canvas => {
         const context = canvas.getContext('2d'); let ink = 0;
-        for (const channel of context.getImageData(180, 180, 550, 550).data) if (channel) ink++;
+        for (const channel of context.getImageData(0, 0, canvas.width, canvas.height).data) if (channel) ink++;
         return { ink, time: performance.now(), sent: window.harness.commands.filter(command => command.type === 'drawing_batch').length };
       });
       assert.ok(local.ink > 100, 'Local lines paint before the remote acknowledgement');
@@ -61,7 +61,7 @@ try {
       const heldBefore = await page.evaluate(() => window.harness.operations().length);
       await board.evaluate(canvas => {
         const rect = canvas.getBoundingClientRect();
-        window.heldDrawingPointer = (type, index) => canvas.dispatchEvent(new PointerEvent(type, { bubbles: true, cancelable: true, pointerId: 85, pointerType: 'touch', button: 0, buttons: type === 'pointerup' ? 0 : 1, clientX: rect.left + rect.width * (.1 + index * .01), clientY: rect.top + rect.height * .4 }));
+        window.heldDrawingPointer = (type, index) => canvas.dispatchEvent(new PointerEvent(type, { bubbles: true, cancelable: true, pointerId: 85, pointerType: 'touch', isPrimary: true, button: 0, buttons: type === 'pointerup' ? 0 : 1, clientX: rect.left + rect.width * (.1 + index * .01), clientY: rect.top + rect.height * .4 }));
         window.heldDrawingPointer('pointerdown', 0);
         for (let index = 1; index <= 36; index++) window.heldDrawingPointer('pointermove', index);
       });
@@ -96,15 +96,15 @@ try {
       assert.ok(touchStroke.points.length >= 3, 'Empty coalescing and an unrelated pointer cancel cannot discard touch movement');
       assert.ok(Math.abs(touchStroke.points.at(-1)[0] - .75) < .001 && Math.abs(touchStroke.points.at(-1)[1] - .2) < .001, 'Pointer-up contributes its final position');
       const quickBefore = await page.evaluate(() => window.harness.operations().length);
-      await board.evaluate(canvas => { const rect = canvas.getBoundingClientRect(); for (const [type, x, y] of [['pointerdown', .1, .8], ['pointerup', .8, .1]]) canvas.dispatchEvent(new PointerEvent(type, { bubbles: true, cancelable: true, pointerId: 83, pointerType: 'pen', button: 0, buttons: type === 'pointerup' ? 0 : 1, clientX: rect.left + rect.width * x, clientY: rect.top + rect.height * y })); });
+      await board.evaluate(canvas => { const rect = canvas.getBoundingClientRect(); for (const [type, x, y] of [['pointerdown', .1, .8], ['pointerup', .8, .1]]) canvas.dispatchEvent(new PointerEvent(type, { bubbles: true, cancelable: true, pointerId: 83, pointerType: 'pen', isPrimary: true, button: 0, buttons: type === 'pointerup' ? 0 : 1, clientX: rect.left + rect.width * x, clientY: rect.top + rect.height * y })); });
       await page.waitForFunction(before => window.harness.operations().length > before && window.harness.operations().at(-1).end, quickBefore);
       assert.equal(await page.evaluate(() => window.harness.operations().at(-1).points.length), 2, 'A quick down/up preserves both endpoints without a move event');
       const lostCaptureBefore = await page.evaluate(() => window.harness.operations().length);
       await board.evaluate(canvas => {
         const original = canvas.setPointerCapture; canvas.setPointerCapture = () => { throw new DOMException('Pointer retired', 'NotFoundError'); };
         const rect = canvas.getBoundingClientRect();
-        canvas.dispatchEvent(new PointerEvent('pointerdown', { bubbles: true, cancelable: true, pointerId: 84, pointerType: 'touch', button: 0, buttons: 1, clientX: rect.left + rect.width * .2, clientY: rect.top + rect.height * .2 }));
-        document.dispatchEvent(new PointerEvent('pointerup', { bubbles: true, cancelable: true, pointerId: 84, pointerType: 'touch', button: 0, buttons: 0, clientX: rect.right + 20, clientY: rect.top - 20 }));
+        canvas.dispatchEvent(new PointerEvent('pointerdown', { bubbles: true, cancelable: true, pointerId: 84, pointerType: 'touch', isPrimary: true, button: 0, buttons: 1, clientX: rect.left + rect.width * .2, clientY: rect.top + rect.height * .2 }));
+        document.dispatchEvent(new PointerEvent('pointerup', { bubbles: true, cancelable: true, pointerId: 84, pointerType: 'touch', isPrimary: true, button: 0, buttons: 0, clientX: rect.right + 20, clientY: rect.top - 20 }));
         canvas.setPointerCapture = original;
       });
       await page.waitForFunction(before => window.harness.operations().length > before && window.harness.operations().at(-1).end, lostCaptureBefore);
@@ -171,10 +171,10 @@ try {
       for (const viewport of [{ width: 320, height: 740 }, { width: 375, height: 812 }, { width: 390, height: 844 }, { width: 430, height: 932 }, { width: 620, height: 430 }, { width: 667, height: 375 }, { width: 740, height: 320 }, { width: 1024, height: 768 }, { width: 1440, height: 900 }, { width: 844, height: 390 }]) {
         await page.setViewportSize(viewport); await page.reload(); await page.locator('canvas').waitFor(); await page.locator('.ers-board-status').waitFor({ state: 'hidden' }); await page.evaluate(async () => { await document.fonts.ready; await Promise.all(document.getAnimations().filter(animation => animation.effect.getTiming().iterations !== Infinity).map(animation => animation.finished.catch(() => {}))); });
         const layout = await page.evaluate(() => ({ width: innerWidth, overflow: document.documentElement.scrollWidth > innerWidth, board: (() => { const r = document.querySelector('canvas').getBoundingClientRect(); return { width: r.width, height: r.height, left: r.left, right: r.right, top: r.top, bottom: r.bottom }; })(), tools:[...document.querySelectorAll('.ers-tools button')].filter(button=>button.getClientRects().length&&getComputedStyle(button).display!=='none').map(button=>{const r=button.getBoundingClientRect();return {label:button.textContent,top:r.top,bottom:r.bottom,width:r.width,height:r.height}}), colours: [...document.querySelectorAll('.ers-colour')].filter(button=>button.getClientRects().length&&getComputedStyle(button).display!=='none').map(button => { const r = button.getBoundingClientRect(); return { width: r.width, height: r.height }; }) }));
-        assert.equal(layout.overflow, false, JSON.stringify(layout)); assert.ok(layout.board.left >= 0 && layout.board.right <= viewport.width + 1); assert.ok(Math.abs(layout.board.width - layout.board.height) < 2); assert.ok(layout.colours.every(control => control.width >= 44 && control.height >= 44), JSON.stringify(layout));
-        if (viewport.width === 844) { assert.ok(layout.board.width >= 300, 'Landscape focus provides at least a300px square instead of the old approximately180–230px board'); assert.ok(Math.abs((layout.board.left + layout.board.right) / 2 - viewport.width / 2) <= 2, 'The landscape board is physically centered when space permits'); }
+        assert.equal(layout.overflow, false, JSON.stringify(layout)); assert.ok(layout.board.left >= 0 && layout.board.right <= viewport.width + 1); assert.ok(viewport.width > viewport.height ? layout.board.width > layout.board.height : Math.abs(layout.board.width - layout.board.height) < 2); assert.ok(layout.colours.every(control => control.width >= 44 && control.height >= 44), JSON.stringify(layout));
+        if (viewport.width === 844) { assert.ok(layout.board.width >= 620, 'Landscape drawing uses the empty phone width rather than a small centered square'); }
         if (viewport.width > viewport.height) {
-          assert.ok(Math.abs((layout.board.left + layout.board.right) / 2 - viewport.width / 2) <= 2, 'Landscape workspace keeps the square centered at short and tablet sizes');
+          assert.ok(layout.board.width >= viewport.width - 200, 'Landscape workspace uses the remaining width after its compact tools and call space');
           await page.evaluate(() => window.harness.set({ showCall: true })); await page.getByTestId('call-dock').waitFor();
           const overlaps = await page.evaluate(() => {
             const call = document.querySelector('[data-testid="call-dock"]').getBoundingClientRect();
@@ -218,6 +218,79 @@ try {
           assert.equal(await page.getByTestId('call-dock').locator('[role="status"]').innerText(), 'صوت المكالمة متصل');
         }
       }
+      // A real rectangular viewport must preserve world geometry, expose the
+      // whole drawing, and retain ink through pointer/camera lifecycle changes.
+      await board.evaluate(node => { window.wideCanvasIdentity = node; });
+      await page.waitForFunction(() => document.querySelector('canvas').dataset.cameraMode === 'wide');
+      const wideBox = await board.boundingBox(), circleBefore = await page.evaluate(() => window.harness.operations().length);
+      const radius = 65, cx = wideBox.x + wideBox.width / 2, cy = wideBox.y + wideBox.height / 2;
+      await page.mouse.move(cx + radius, cy); await page.mouse.down();
+      for (let index = 1; index <= 40; index++) await page.mouse.move(cx + radius * Math.cos(index * Math.PI / 20), cy + radius * Math.sin(index * Math.PI / 20));
+      await page.mouse.up();
+      await page.waitForFunction(before => window.harness.operations().length > before && window.harness.operations().at(-1).end, circleBefore);
+      const circle = await page.evaluate(() => window.harness.operations().at(-1).points);
+      for (const point of circle) assert.ok(Math.abs(Math.hypot(point[0] - .5, point[1] - .5) - radius / wideBox.width) < .004, 'A circle from the wide viewport stays circular in the legacy normalized square');
+      await page.getByRole('button', { name: 'عرض اللوحة كاملة', exact: true }).click();
+      await page.waitForFunction(() => document.querySelector('canvas').dataset.cameraMode === 'fit');
+      assert.equal(await page.getByRole('button', { name: 'تحريك اللوحة', exact: true }).isDisabled(), true, 'Hand is unavailable while the actual camera shows the complete square');
+      const letterboxCount = await page.evaluate(() => window.harness.operations().length), fitBox = await board.boundingBox();
+      await page.mouse.click(fitBox.x + 8, fitBox.y + fitBox.height / 2);
+      await page.waitForTimeout(200);
+      assert.equal(await page.evaluate(() => window.harness.operations().length), letterboxCount, 'A down in fit-all letterboxing cannot leave an edge dot');
+      await page.getByRole('button', { name: 'مساحة الرسم الواسعة', exact: true }).click();
+      await page.waitForFunction(() => document.querySelector('canvas').dataset.cameraMode === 'wide');
+      const panCount = await page.evaluate(() => window.harness.commands.filter(command => command.type === 'drawing_batch').length);
+      await page.getByRole('button', { name: 'تحريك اللوحة', exact: true }).click();
+      const panBox = await board.boundingBox();
+      await page.mouse.move(panBox.x + panBox.width / 2, panBox.y + panBox.height / 2); await page.mouse.down();
+      await page.mouse.move(panBox.x + panBox.width / 2, panBox.y + panBox.height / 2 - 65); await page.mouse.up();
+      assert.ok(Number(await board.getAttribute('data-camera-center')) > .55, 'Explicit hand motion pans the world vertically');
+      const hand = page.getByRole('button', { name: 'تحريك اللوحة', exact: true }); await hand.press('ArrowUp'); await hand.press('Home');
+      assert.equal(Number(await board.getAttribute('data-camera-center')), .5);
+      assert.equal(await page.evaluate(() => window.harness.commands.filter(command => command.type === 'drawing_batch').length), panCount, 'Camera gestures and keyboard panning never send drawing commands');
+      await page.getByRole('button', { name: 'قلم', exact: true }).click();
+      const activeBefore = await page.evaluate(() => window.harness.operations().length), activeBox = await board.boundingBox();
+      await page.mouse.move(activeBox.x + activeBox.width / 2, activeBox.y + activeBox.height * .25); await page.mouse.down();
+      await page.mouse.move(activeBox.x + activeBox.width / 2, activeBox.y + activeBox.height * .75);
+      await page.setViewportSize({ width: 390, height: 844 });
+      await page.waitForFunction(before => window.harness.operations().length > before && window.harness.operations().at(-1).end, activeBefore);
+      await page.mouse.up();
+      assert.equal(await board.evaluate(node => node === window.wideCanvasIdentity), true, 'Rotation preserves the canvas and closes the previous stroke before changing projection');
+      const rotatedStroke = await page.evaluate(() => window.harness.operations().at(-1));
+      assert.ok(Math.abs(rotatedStroke.points.at(-1)[1] - (.5 + .25 * activeBox.height / activeBox.width)) < .004, 'A resize cannot reinterpret the last old-view point as a portrait coordinate');
+      const tallBefore = await page.evaluate(() => window.harness.operations().length), tallBox = await board.boundingBox();
+      await page.mouse.move(tallBox.x + tallBox.width * .35, tallBox.y + tallBox.height * .05); await page.mouse.down();
+      await page.mouse.move(tallBox.x + tallBox.width * .35, tallBox.y + tallBox.height * .95, { steps: 12 }); await page.mouse.up();
+      await page.waitForFunction(before => window.harness.operations().length > before && window.harness.operations().at(-1).end, tallBefore);
+      const inkBeforeRotate = await page.evaluate(() => window.harness.operations());
+      await page.setViewportSize({ width: 844, height: 390 });
+      await page.waitForFunction(() => document.querySelector('canvas').dataset.cameraMode === 'fit');
+      assert.deepEqual(await page.evaluate(() => window.harness.operations()), inkBeforeRotate, 'Auto fit-all on rotation preserves every canonical point of a tall existing drawing');
+      await page.screenshot({ path: path.join(output, `${name}-wide-auto-fit-existing-ink.png`), fullPage: true });
+      await page.getByRole('button', { name: 'مساحة الرسم الواسعة', exact: true }).click();
+      await page.getByRole('button', { name: 'تحريك اللوحة', exact: true }).click();
+      for (let count = 0; count < 6; count++) await page.getByRole('button', { name: 'تحريك اللوحة', exact: true }).press('ArrowUp');
+      const topCenter = Number(await board.getAttribute('data-camera-center'));
+      assert.ok(topCenter < .3, 'Hand can reach the upper portion of existing world ink');
+      await page.setViewportSize({ width: 740, height: 320 });
+      await page.waitForFunction(() => document.querySelector('canvas').dataset.cameraMode === 'fit');
+      assert.equal(await page.getByRole('button', { name: 'تحريك اللوحة', exact: true }).isDisabled(), true);
+      assert.equal(await page.getByRole('button', { name: 'قلم', exact: true }).getAttribute('aria-pressed'), 'true', 'Auto fit caused by resize exits Hand so the next pointer can draw immediately');
+      await page.setViewportSize({ width: 844, height: 390 });
+      await page.getByRole('button', { name: 'مساحة الرسم الواسعة', exact: true }).click();
+      await page.getByRole('button', { name: 'تحريك اللوحة', exact: true }).click();
+      await page.getByRole('button', { name: 'تحريك اللوحة', exact: true }).press('ArrowUp');
+      const cameraBeforeReconnect = await board.getAttribute('data-camera-center');
+      await page.evaluate(() => window.harness.set({ status: 'reconnecting' }));
+      await page.evaluate(() => window.harness.set({ status: 'connected' })); await page.locator('.ers-board-status').waitFor({ state: 'hidden' });
+      assert.equal(await board.getAttribute('data-camera-center'), cameraBeforeReconnect, 'Reconnecting the same round retains the preferred camera');
+      await page.getByRole('button', { name: 'تحريك اللوحة', exact: true }).press('Home');
+      await page.getByRole('button', { name: 'قلم', exact: true }).click();
+      const outsideBefore = await page.evaluate(() => window.harness.operations().length);
+      await board.evaluate(canvas => { const rect=canvas.getBoundingClientRect(); for(const[type,y]of[['pointerdown',.5],['pointerup',2]])canvas.dispatchEvent(new PointerEvent(type,{bubbles:true,cancelable:true,pointerId:92,pointerType:'touch',isPrimary:true,button:0,buttons:type==='pointerup'?0:1,clientX:rect.left+rect.width*.8,clientY:rect.top+rect.height*y})); });
+      await page.waitForFunction(before => window.harness.operations().length > before && window.harness.operations().at(-1).end, outsideBefore);
+      const outsideEnd = await page.evaluate(() => window.harness.operations().at(-1).points.at(-1)[1]), outsideBox = await board.boundingBox();
+      assert.ok(Math.abs(outsideEnd - (.5 + outsideBox.height / (outsideBox.width * 2))) < .004, 'Captured release outside the wide canvas ends at its visible edge, without hidden ink');
       await page.evaluate(() => { document.documentElement.style.setProperty('--safe-bottom', '21px'); document.documentElement.style.setProperty('--safe-left', '44px'); document.documentElement.style.setProperty('--safe-right', '44px'); });
       const safeBoard = await board.boundingBox(); assert.ok(safeBoard.y + safeBoard.height <= 370, 'Landscape board respects the iPhone home-indicator inset');
       await page.evaluate(() => window.harness.set({ index: 1, state: { myWord: null } }));
@@ -225,9 +298,15 @@ try {
       assert.ok(guessLandscape.y >= 0 && guessLandscape.y + guessLandscape.height <= 370 && guessBoard.y + guessBoard.height <= 370, 'A landscape guesser sees the canvas and input together above the safe area');
       await page.screenshot({ path: path.join(output, `${name}-guess-landscape.png`), fullPage: true });
       await page.getByRole('button', { name: 'الإبلاغ عن الرسمة' }).click(); await page.getByRole('dialog').getByLabel('السبب').selectOption('محتوى غير مناسب'); await page.evaluate(() => window.harness.set({ state: { round: 2 } })); await page.getByRole('dialog').waitFor({ state: 'hidden' });
+      await page.evaluate(() => window.harness.set({ index: 0, state: { myWord: 'قطار' } })); await page.locator('.ers-board-status').waitFor({ state: 'hidden' });
+      await page.waitForFunction(() => { const button = document.querySelector('[aria-label="تراجع عن آخر خط"]'); return button && !button.disabled; });
+      await page.evaluate(() => window.harness.hold(true)); await page.getByRole('button', { name: 'تراجع عن آخر خط', exact: true }).click();
+      await page.evaluate(() => window.harness.set({ state: { round: 3 } })); await page.waitForFunction(() => window.harness.commands.some(command => command.type === 'drawing_sync' && command.fields.round === 3));
+      await page.evaluate(() => window.harness.hold(false)); await page.locator('.ers-board-status').waitFor({ state: 'hidden' });
+      assert.equal(await page.getByText('انتهت هذه الجولة. انتظر تحديث الشاشة.', { exact: true }).count(), 0, 'An obsolete history rejection cannot pollute the next round or request its synchronization');
       await page.emulateMedia({ reducedMotion: 'reduce' }); assert.equal(await page.locator('.ers-word-banner').evaluate(node => getComputedStyle(node).animationName), 'none');
       assert.deepEqual(errors, []);
-      result.browsers.push({ name, localInkBeforeRemoteAck: true, localInkProbe: { scope: 'Genuine browser pointer capture callback to first canvas stroke/fill with readable ink at its point; includes 1x1 pixel readback, does not measure physical display presentation', sampleCount: inkSamples.length, p95Ms: inkP95, maxMs: Math.max(...inkSamples), samplesMs: inkSamples }, localGestureMeasurementMs: local.time - start, batches: batches.length, localEditorBlurAndDraftPreservation: true, emptyCoalescedMovement: true, pointerEndAndForeignCancel: true, rejectedCaptureOutsideRelease: true, callControlsPreservedAndKeyboardCompacted: true, explicitDisplayedRoundIdentity: true, expandedLandscapeAndCompactTools: true, layeredBackAndCanvasPreservation: true, undoRedo: true, clearConfirmation: true, backpressureResume: true, reconnectSync: true, mutePrivacyCurtain: true, guessing: true, imeGuard: true, keyboardSquareBoard: true, reducedMotion: true, layouts });
+      result.browsers.push({ name, localInkBeforeRemoteAck: true, localInkProbe: { scope: 'Genuine browser pointer capture callback to first canvas stroke/fill with readable ink at its point; includes 1x1 pixel readback, does not measure physical display presentation', sampleCount: inkSamples.length, p95Ms: inkP95, maxMs: Math.max(...inkSamples), samplesMs: inkSamples }, localGestureMeasurementMs: local.time - start, batches: batches.length, localEditorBlurAndDraftPreservation: true, emptyCoalescedMovement: true, pointerEndAndForeignCancel: true, rejectedCaptureOutsideRelease: true, callControlsPreservedAndKeyboardCompacted: true, explicitDisplayedRoundIdentity: true, expandedLandscapeAndCompactTools: true, layeredBackAndCanvasPreservation: true, wideCircleKeepsLegacyGeometry: true, letterboxDownIgnored: true, panNeverSendsDrawingCommands: true, activeStrokeClosedBeforeResize: true, tallInkRotationFitsEntireBoard: true, cameraPreservedOnReconnect: true, capturedOutsidePointStopsAtVisibleEdge: true, staleHistoryErrorIgnored: true, undoRedo: true, clearConfirmation: true, backpressureResume: true, reconnectSync: true, mutePrivacyCurtain: true, guessing: true, imeGuard: true, keyboardSquareBoard: true, reducedMotion: true, layouts });
     } catch (error) {
       await page.screenshot({ path: path.join(output, `${name}-failure.png`), fullPage: true }).catch(() => {});
       await fs.writeFile(path.join(output, `${name}-failure.json`), JSON.stringify(await page.evaluate(() => ({ commands: window.harness?.commands, text: document.body.innerText, input: document.querySelector('.ers-guess input')?.value, guessDisabled: document.querySelector('.ers-guess button')?.disabled, active: document.activeElement?.tagName })).catch(() => ({})), null, 2));

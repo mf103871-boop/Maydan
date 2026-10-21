@@ -76,11 +76,14 @@ const onlineNodes = [
   node('expiry', 'انتهاء الغرفة', 'text', { required: true }),
 ];
 const drawNodes = [
-  node('canvas-panel', 'منطقة الرسم'), node('canvas', 'لوحة الرسم', 'canvas', { aspectRatio: 1, required: true }),
+  node('canvas-panel', 'منطقة الرسم'), node('canvas', 'لوحة الرسم', 'canvas', { canvasViewport: true, worldAspectRatio: 1, required: true }),
   node('canvas-status', 'حالة اللوحة', 'text', { required: true }), node('drawing-tools', 'أدوات الرسم', 'container', { required: true }),
   node('focus-toggle', 'تكبير اللوحة والرجوع للغرفة', 'button', { required: true, editableText: false, editableIcon: false }),
   node('orientation', 'توجيه الهاتف أثناء الرسم', 'button', { editableText: false, editableIcon: false }),
   node('tools-more', 'الألوان وأدوات الرسم الإضافية', 'button', { required: true, editableIcon: false }),
+  node('camera-controls', 'عرض وتحريك اللوحة', 'container', { required: true }),
+  node('camera-view', 'عرض اللوحة كاملة أو المساحة الواسعة', 'button', { required: true, editableText: false, editableIcon: false }),
+  node('camera-hand', 'تحريك اللوحة للوصول لبقية الرسم', 'button', { required: true, editableText: false, editableIcon: false }),
   node('pen', 'القلم', 'button'), node('eraser', 'الممحاة', 'button'), node('undo', 'التراجع', 'button'),
   node('redo', 'الإعادة', 'button'), node('clear', 'مسح اللوحة', 'button'), node('palette', 'لوحة الألوان'),
   node('color', 'قالب اللون', 'button', { repeat: true }), node('widths', 'سماكات الرسم'),
