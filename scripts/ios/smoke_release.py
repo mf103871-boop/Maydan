@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Run normal startup, update UI and streaming audio on one owned simulator.
+"""Run startup, update UI, streaming audio and drawing rotation on one owned simulator.
 
 Each phase launches a fresh app process and retains separate evidence. Reusing
 the verified device avoids a second independent OS boot/install window; it does
@@ -13,6 +13,7 @@ from pathlib import Path
 from smoke_simulator_launch import LaunchSmoke, SmokeFailure
 from smoke_app_update_gate import UpdateGateSmoke
 from smoke_audio_stream import AudioStreamSmoke
+from smoke_drawing_orientation import DrawingOrientationSmoke
 
 
 class ReleaseSmoke:
@@ -22,10 +23,11 @@ class ReleaseSmoke:
         self.normal = LaunchSmoke(app, self.output / 'launch-smoke')
         self.update = UpdateGateSmoke(app, self.output / 'update-gate-smoke')
         self.audio = AudioStreamSmoke(app, self.output / 'audio-stream-smoke')
-        self.report = {'passed': False, 'normalStartup': False, 'updateGate': False, 'audioStream': False, 'sameInstalledApp': True}
+        self.orientation = DrawingOrientationSmoke(app, self.output / 'drawing-orientation-smoke')
+        self.report = {'passed': False, 'normalStartup': False, 'updateGate': False, 'audioStream': False, 'drawingOrientation': False, 'sameInstalledApp': True}
 
     def run(self):
-        variables = ('SIMCTL_CHILD_MAYDAN_SIMULATOR_APP_POLICY', 'SIMCTL_CHILD_MAYDAN_SIMULATOR_AUDIO')
+        variables = ('SIMCTL_CHILD_MAYDAN_SIMULATOR_APP_POLICY', 'SIMCTL_CHILD_MAYDAN_SIMULATOR_AUDIO', 'SIMCTL_CHILD_MAYDAN_SIMULATOR_ORIENTATION')
         previous = {variable: os.environ.pop(variable, None) for variable in variables}
         try:
             # Leave the verified simulator alive, but not its app process. The
@@ -44,7 +46,13 @@ class ReleaseSmoke:
                         self.report['error'] = 'Actual WK streaming audio scenario failed.'
                     else:
                         self.report['audioStream'] = True
-                        self.report['passed'] = True
+                        self.audio.terminate_for_relaunch()
+                        self.audio.write_summary()
+                        if self.orientation.run(prepared=self.normal) != 0:
+                            self.report['error'] = 'Actual UIKit drawing orientation scenario failed.'
+                        else:
+                            self.report['drawingOrientation'] = True
+                            self.report['passed'] = True
         except (OSError, ValueError, SmokeFailure) as error:
             self.report['error'] = str(error)
         finally:
@@ -58,6 +66,7 @@ class ReleaseSmoke:
             self.report['normalEvidence'] = str(self.normal.output)
             self.report['updateEvidence'] = str(self.update.output)
             self.report['audioEvidence'] = str(self.audio.output)
+            self.report['drawingOrientationEvidence'] = str(self.orientation.output)
             (self.output / 'release-smoke-summary.json').write_text(json.dumps(self.report, indent=2) + '\n', encoding='utf-8')
         print(json.dumps(self.report))
         return 0 if self.report['passed'] else 1

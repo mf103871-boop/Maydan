@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { Button, Card, Modal, Podium } from '../shared/ui/components.jsx';
 import { Avatar } from '../shared/brand/art.jsx';
 import { ProfileAvatar } from '../profiles/ProfileAvatar.jsx';
@@ -6,7 +6,10 @@ import { ErsomhaIcon } from '../games/ersomha/icon.jsx';
 import { ERSOMHA_DIFFICULTIES, normalizeErsomhaOptions, enoughErsomhaCategories } from '../games/ersomha/options.js';
 import { ERSOMHA_CATEGORIES, arabicNumber as number, errorText } from './shared.js';
 import { ErsomhaCanvas } from './ErsomhaCanvas.jsx';
+import { registerBackLayer } from '../platform/router.js';
+import { useDrawingOrientation } from '../native/drawing-orientation.js';
 import css from './ersomha.css';
+import focusCss from './ersomha-focus.css';
 
 const categoryLabel = id => ERSOMHA_CATEGORIES.find(category => category.id === id)?.label || id || 'فكرة مرسومة';
 
@@ -72,10 +75,32 @@ function Report({ onClose, onReport }) {
 
 export function ErsomhaMatch({ state, me, disabled, isHost, act, client, status = 'connected', clockOffset = 0, drawerReady = true, onReport }) {
   const [now, setNow] = useState(Date.now()), [showReport, setShowReport] = useState(false), [canvasError, setCanvasError] = useState('');
-  const [keyboard, setKeyboard] = useState(false), hostRef = useRef(null);
+  const [keyboard, setKeyboard] = useState(false), [expanded, setExpanded] = useState(true), hostRef = useRef(null);
+  const roundKey = `${state.matchId}:${state.round}`, mine = me?.id === state.drawerId, playing = state.phase === 'draw';
+  const focusMode = mine && playing && drawerReady && expanded;
+  const { status: orientationStatus, requestLandscape } = useDrawingOrientation(focusMode && !state._designPreview, { roundKey });
   const reportTargetRef = useRef(null);
   useEffect(() => { if (state._designPreview) return undefined; const timer = setInterval(() => setNow(Date.now()), 200); return () => clearInterval(timer); }, [state._designPreview]);
   useEffect(() => { setCanvasError(''); setShowReport(false); }, [state.matchId, state.round]);
+  useEffect(() => { if (mine && playing && drawerReady) setExpanded(true); }, [roundKey, mine, playing, drawerReady]);
+  // Back leaves the enlarged canvas first. Friends and dialogs retain their
+  // higher-priority Back handlers; the normal room exit guard stays unchanged.
+  useLayoutEffect(() => focusMode ? registerBackLayer(() => setExpanded(false), { priority: 1 }) : undefined, [focusMode]);
+  useEffect(() => {
+    if (!focusMode || !hostRef.current) return undefined;
+    const host = hostRef.current, parent = host.parentElement, originals = new Map();
+    const protect = () => {
+      for (const sibling of parent?.children || []) {
+        if (sibling === host) continue;
+        if (!originals.has(sibling)) originals.set(sibling, sibling.inert);
+        sibling.inert = true;
+      }
+    };
+    protect();
+    const observer = typeof MutationObserver === 'undefined' ? null : new MutationObserver(protect);
+    if (parent) observer?.observe(parent, { childList: true });
+    return () => { observer?.disconnect(); for (const [sibling, inert] of originals) if (sibling.isConnected) sibling.inert = inert; };
+  }, [focusMode]);
   useEffect(() => {
     let frame;
     const measure = () => {
@@ -83,15 +108,20 @@ export function ErsomhaMatch({ state, me, disabled, isHost, act, client, status 
       const viewport = window.visualViewport, height = viewport?.height || window.innerHeight;
       if (viewport && Math.abs((viewport.scale || 1) - 1) > .001) return;
       hostRef.current?.style.setProperty('--ers-visible-height', `${height}px`);
+      hostRef.current?.style.setProperty('--ers-visible-top', `${viewport?.offsetTop || 0}px`);
       const board = hostRef.current?.querySelector('.ers-board-wrap');
       if (board) {
         // Read the used padding value so env(safe-area-inset-bottom) is already
         // resolved to pixels. Custom-property text can still contain env(...).
         const top = board.getBoundingClientRect().top, safeBottom = parseFloat(getComputedStyle(hostRef.current.parentElement).paddingBottom) || 0;
-        const landscape = window.innerWidth > window.innerHeight && window.innerHeight <= 520;
+        const landscape = window.innerWidth > window.innerHeight;
         const main = hostRef.current.querySelector('.ers-play-main');
         const remainingControls = landscape ? 0 : Math.max(0, (main?.getBoundingClientRect().bottom || board.getBoundingClientRect().bottom) - board.getBoundingClientRect().bottom);
-        const limit = Math.max(landscape ? 140 : 220, Math.floor(height - top - safeBottom - remainingControls - 8));
+        const panel = hostRef.current.querySelector('.ers-canvas-panel'), tools = hostRef.current.querySelector('.ers-tools');
+        const panelBounds = panel?.getBoundingClientRect();
+        const limit = focusMode && panelBounds
+          ? Math.max(80, Math.floor(Math.min(panelBounds.width - (landscape ? 284 : 0), panelBounds.height - (landscape ? 0 : (tools?.getBoundingClientRect().height || 0) + 8))))
+          : Math.max(landscape ? 140 : 220, Math.floor(height - top - safeBottom - remainingControls - 8));
         const value = `${limit}px`;
         if (hostRef.current.style.getPropertyValue('--ers-board-limit') !== value) hostRef.current.style.setProperty('--ers-board-limit', value);
       }
@@ -100,21 +130,24 @@ export function ErsomhaMatch({ state, me, disabled, isHost, act, client, status 
     const schedule = () => { if (frame == null) frame = requestAnimationFrame(measure); };
     const observer = typeof ResizeObserver === 'undefined' ? null : new ResizeObserver(schedule);
     if (hostRef.current?.parentElement) observer?.observe(hostRef.current.parentElement);
+    if (hostRef.current) {
+      observer?.observe(hostRef.current);
+      for (const node of hostRef.current.querySelectorAll('.ers-canvas-panel,.ers-tools')) observer?.observe(node);
+    }
     measure(); window.visualViewport?.addEventListener('resize', schedule); window.addEventListener('resize', schedule); document.addEventListener('focusin', schedule); document.addEventListener('focusout', schedule);
     return () => { observer?.disconnect(); if (frame != null) cancelAnimationFrame(frame); window.visualViewport?.removeEventListener('resize', schedule); window.removeEventListener('resize', schedule); document.removeEventListener('focusin', schedule); document.removeEventListener('focusout', schedule); };
-  }, [state.phase, drawerReady]);
-  const drawer = state.members.find(player => player.id === state.drawerId), mine = me?.id === state.drawerId;
+  }, [state.phase, drawerReady, focusMode]);
+  const drawer = state.members.find(player => player.id === state.drawerId);
   const paused = Boolean(state.pauseUntil), seconds = Math.max(0, Math.ceil(((paused ? state.pauseUntil : state.deadlineAt) - (now + clockOffset)) / 1000));
   const cooperative = (state.settings?.mode || state.mode) === 'cooperative';
-  const playing = state.phase === 'draw';
   const ordered = [...state.members.filter(player => state.participants?.includes(player.id))].sort((a, b) => b.score - a.score);
   const endedEarly = Boolean(state.reason);
   const endNotice = state.reason === 'players_left' ? 'انتهت المباراة بعد مغادرة لاعب. هذه نتيجة الأدوار المكتملة.' : state.reason === 'account_unavailable' ? 'توقفت المباراة لأن أحد حسابات اللاعبين لم يعد متاحًا للعب. حفظنا نتيجة الأدوار المكتملة.' : ['active_elsewhere', 'account_active_elsewhere'].includes(state.reason) ? 'توقفت المباراة لأن حساب أحد اللاعبين انتقل إلى غرفة أخرى. حفظنا نتيجة الأدوار المكتملة.' : endedEarly ? 'توقفت المباراة. هذه نتيجة الأدوار المكتملة.' : '';
   const report = onReport ? () => { reportTargetRef.current = { roundKey: `${state.matchId}:${state.round}`, submit: onReport }; setShowReport(true); } : null;
   if (mine && !drawerReady && ['select', 'draw'].includes(state.phase)) return <div data-design-screen="ersomha.private-wait" className="ersomha stack"><style>{css}</style><Card data-design-id="privacy" data-design-required="true" className="ers-selection-wait" role="status"><ErsomhaIcon /><h1 data-design-id="title">نجهّز دورك…</h1><p>نكتم الميكروفون أولًا، ثم تظهر فكرتك السرّية.</p></Card></div>;
   if (state.phase === 'over') return <div data-design-screen="ersomha.over" className="ersomha stack"><style>{css}</style><Card data-design-id="results" className="ers-finish stack"><ErsomhaIcon /><span className="ers-eyebrow">حصيلة اللوحات</span><h1 data-design-id="title">{endedEarly ? 'حصيلة الأدوار المكتملة' : cooperative ? 'معًا رسمتوها!' : 'كل رسمة لها حكاية'}</h1>{endNotice && <p role="status">{endNotice}</p>}{cooperative ? <CoopResult state={state} /> : <Podium data-design-id="podium" entries={ordered} />}{isHost ? <Button data-design-id="restart" full size="lg" variant="primary" disabled={disabled} onClick={() => act('restart')}>لوحات جديدة · العودة للانتظار</Button> : <p>بانتظار المضيف لمباراة أخرى.</p>}</Card></div>;
-  return <div data-design-screen={`ersomha.${state.phase}.${mine ? 'drawer' : 'guesser'}`} ref={hostRef} className={`ersomha stack ${playing ? 'is-drawing' : ''} ${keyboard ? 'is-keyboard' : ''}`}><style>{css}</style>
-    <header data-design-id="header" className="ers-match-header"><div><span className="ers-eyebrow">{cooperative ? 'تعاون ضد الوقت' : 'كل رسمة تقرّبك'} · {ERSOMHA_DIFFICULTIES[state.settings?.difficulty] || 'متوسط'}</span><h1 data-design-id="title">{state.phase === 'select' ? mine ? 'اختَر فكرتك' : `${drawer?.name || 'صاحب الدور'} يختار فكرة…` : state.phase === 'result' ? 'كانت الرسمة…' : mine ? 'دورك ترسمها!' : `${drawer?.name || 'صاحبك'} يرسم الآن`}</h1><span className="ers-turn">الدور {number(state.round)} / {number(state.rounds)}</span></div>{report && <Button data-design-id="report" className="ers-header-report" size="sm" aria-label="الإبلاغ عن الرسمة" onClick={report}>⚑</Button>}<span data-design-id="timer" className={`ers-timer ${seconds <= 10 && !paused ? 'is-urgent' : ''}`} role="timer" aria-label={`${paused ? 'ننتظر الرسام، متبقي' : 'متبقي'} ${number(seconds)} ثانية`}><b>{number(seconds)}</b><small>{paused ? 'عودة' : 'ثانية'}</small></span></header>
+  return <div data-design-screen={`ersomha.${state.phase}.${mine ? 'drawer' : 'guesser'}`} data-ersomha-drawing-focus={focusMode ? 'true' : undefined} ref={hostRef} className={`ersomha stack ${playing ? 'is-drawing' : ''} ${focusMode ? 'is-drawing-focus' : ''} ${keyboard ? 'is-keyboard' : ''}`} onKeyDown={event => { if (focusMode && event.key === 'Escape' && !event.defaultPrevented && !event.nativeEvent.isComposing && event.keyCode !== 229) { event.preventDefault(); setExpanded(false); } }}><style>{css}{focusCss}</style>
+    <header data-design-id="header" className="ers-match-header"><div><span className="ers-eyebrow">{focusMode ? 'فكرتك · الميكروفون مكتوم' : `${cooperative ? 'تعاون ضد الوقت' : 'كل رسمة تقرّبك'} · ${ERSOMHA_DIFFICULTIES[state.settings?.difficulty] || 'سهل'}`}</span><h1 data-design-id="title">{focusMode ? state.myWord : state.phase === 'select' ? mine ? 'اختَر فكرتك' : `${drawer?.name || 'صاحب الدور'} يختار فكرة…` : state.phase === 'result' ? 'كانت الرسمة…' : mine ? 'دورك ترسمها!' : `${drawer?.name || 'صاحبك'} يرسم الآن`}</h1><span className="ers-turn">الدور {number(state.round)} / {number(state.rounds)}</span></div>{mine && playing && <><Button data-design-id="orientation" className="ers-rotate-toggle" size="sm" aria-label="عرض الرسم أفقيًا" onClick={() => { setExpanded(true); requestLandscape(); }} title={orientationStatus === 'rotate' ? 'اقلب الهاتف للعرض؛ قد يمنع قفل الاتجاه التدوير' : 'عرض الرسم أفقيًا'}><span aria-hidden="true">⤾</span></Button><Button data-design-id="focus-toggle" data-design-required="true" className="ers-focus-toggle" size="sm" aria-expanded={focusMode} aria-label={focusMode ? 'العودة للغرفة' : 'تكبير لوحة الرسم'} onClick={() => setExpanded(value => !value)}><span aria-hidden="true">{focusMode ? '↙' : '⛶'}</span><span className="ers-focus-label">{focusMode ? 'الغرفة' : 'كبّر اللوحة'}</span></Button></>}{report && <Button data-design-id="report" className="ers-header-report" size="sm" aria-label="الإبلاغ عن الرسمة" onClick={report}>⚑</Button>}<span data-design-id="timer" className={`ers-timer ${seconds <= 10 && !paused ? 'is-urgent' : ''}`} role="timer" aria-label={`${paused ? 'ننتظر الرسام، متبقي' : 'متبقي'} ${number(seconds)} ثانية`}><b>{number(seconds)}</b><small>{paused ? 'عودة' : 'ثانية'}</small></span></header>
     {state.phase === 'select' ? <Card className="ers-choice-card stack">{mine ? <><p>ثلاث أفكار، وثلاث طرق للحكاية. اختَر ما تقدر ترسمه.</p><div data-design-id="word-choices" className="ers-word-choices">{(state.myChoices || []).map(choice => <button data-design-id="word-choice" type="button" key={choice.id} disabled={disabled || seconds === 0 || paused} onClick={() => act('select_word', { choiceId: choice.id })}><small>{categoryLabel(choice.category)}</small><strong>{choice.text}</strong><span>ارسمها ←</span></button>)}</div><p className="ers-small">الميكروفون مكتوم لحماية الفكرة. إذا انتهى الوقت نختار لك تلقائيًا.</p></> : <div className="ers-selection-wait"><ErsomhaIcon /><b>جهّز خيالك…</b><p>بعد لحظات تشوفون أول خط معًا.</p></div>}</Card> : <>
       <div data-design-id="word-banner" className={`ers-word-banner ${mine || state.phase === 'result' ? 'is-known' : ''}`}><span>{state.phase === 'result' ? 'الحل' : mine ? 'فكرتك · الميكروفون مكتوم' : categoryLabel(state.category || state.publicWord?.category)}</span>{state.phase === 'result' ? <strong>{state.revealedWord}</strong> : mine ? <strong>{state.myWord}</strong> : <ErsomhaHints value={state.publicWord} />}</div>
       {mine && playing && <p data-design-id="mic-note" data-design-required="true" className="ers-mic-note">الميكروفون مكتوم طوال الرسم. وضّحها بخطوطك، دون حروف أو أرقام تكشف الحل.</p>}

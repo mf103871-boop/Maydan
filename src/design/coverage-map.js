@@ -64,7 +64,7 @@ export const DESIGN_RENDERED_NODE_IDS = Object.freeze({
   "online.fabraka.over": Object.freeze(["podium","restart","round-scores"]),
   "ersomha.select.drawer": Object.freeze(["header","report","timer","title","word-choice","word-choices"]),
   "ersomha.select.guesser": Object.freeze(["header","report","timer","title"]),
-  "ersomha.draw.drawer": Object.freeze(["aside","canvas","canvas-panel","clear","color","drawing-tools","eraser","guesses","header","mic-note","palette","pen","players","redo","report","timer","title","undo","width","widths","word-banner"]),
+  "ersomha.draw.drawer": Object.freeze(["aside","canvas","canvas-panel","clear","color","drawing-tools","eraser","focus-toggle","guesses","header","mic-note","orientation","palette","pen","players","redo","report","timer","title","tools-more","undo","width","widths","word-banner"]),
   "ersomha.draw.guesser": Object.freeze(["aside","canvas","canvas-panel","guess-form","guess-input","guess-send","guesses","header","players","report","timer","title","word-banner"]),
   "ersomha.result.drawer": Object.freeze(["aside","canvas","canvas-panel","guesses","header","players","report","results","timer","title","word-banner"]),
   "ersomha.result.guesser": Object.freeze(["aside","canvas","canvas-panel","guesses","header","players","report","results","timer","title","word-banner"]),

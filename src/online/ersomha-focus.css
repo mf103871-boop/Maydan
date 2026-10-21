@@ -1,0 +1,72 @@
+/* The drawing workspace uses the real viewport; normalized ink stays square. */
+.ers-canvas-panel { user-select:none; -webkit-user-select:none; -webkit-touch-callout:none; caret-color:transparent; }
+.ers-board { caret-color:transparent; -webkit-user-modify:read-only; -webkit-tap-highlight-color:transparent; }
+.ers-tools-more { display:none; }
+.ers-focus-toggle,.ers-rotate-toggle { min-width:44px; min-height:44px; padding:6px; flex:none; }
+.ers-focus-toggle .ers-focus-label { display:none; }
+.ers-focus-toggle>span[aria-hidden],.ers-rotate-toggle>span { font-size:1.35rem; line-height:1; }
+.ers-tools-modal .ers-colours { grid-template-columns:repeat(6,minmax(44px,1fr)); }
+.ers-tools-modal .ers-tool-row { gap:8px; }
+
+body:has(.ersomha.is-drawing-focus) { overflow:hidden; }
+.online-room-chrome:has(>.ersomha.is-drawing-focus) .online-social-slot { visibility:hidden; pointer-events:none; }
+.screen:has(.ersomha.is-drawing-focus),.screen>:has(.ersomha.is-drawing-focus) { animation:none!important; transform:none!important; }
+.ersomha.is-drawing-focus {
+  position:fixed; z-index:70; top:var(--ers-visible-top,0px); left:0; right:0;
+  height:var(--ers-visible-height,100dvh); max-width:none; min-height:0;
+  box-sizing:border-box; padding:max(8px,var(--safe-top,env(safe-area-inset-top))) max(8px,var(--safe-right,env(safe-area-inset-right))) max(8px,var(--safe-bottom,env(safe-area-inset-bottom))) max(8px,var(--safe-left,env(safe-area-inset-left)));
+  display:grid!important; grid-template-columns:minmax(0,1fr); grid-template-rows:auto minmax(0,1fr);
+  gap:8px!important; align-content:stretch; overflow:hidden; background:#fff8e9;
+}
+.ersomha.is-drawing-focus .ers-match-header { grid-column:1; min-height:44px; gap:6px; margin:0; }
+html[data-call-dock-active] .ersomha.is-drawing-focus .ers-match-header { padding-right:56px; }
+.ersomha.is-drawing-focus .ers-match-header h1 { font-size:clamp(1rem,3.5vw,1.3rem); line-height:1.2; margin:1px 0!important; }
+.ersomha.is-drawing-focus .ers-eyebrow { font-size:.61rem; line-height:1.2; }
+.ersomha.is-drawing-focus .ers-turn { display:none; }
+.ersomha.is-drawing-focus .ers-focus-toggle,.ersomha.is-drawing-focus .ers-rotate-toggle { width:44px; padding:0; }
+.ersomha.is-drawing-focus .ers-word-banner,.ersomha.is-drawing-focus .ers-play-aside { display:none!important; }
+.ersomha.is-drawing-focus .ers-mic-note { position:absolute; width:1px; height:1px; overflow:hidden; clip-path:inset(50%); padding:0; }
+.ersomha.is-drawing-focus .ers-play-grid { grid-column:1/-1; height:100%; min-height:0; display:block; }
+.ersomha.is-drawing-focus .ers-play-main { height:100%; min-height:0; display:grid; grid-template-columns:minmax(0,1fr); grid-template-rows:minmax(0,1fr) auto; gap:4px; align-content:stretch; }
+.ersomha.is-drawing-focus .ers-canvas-panel {
+  height:100%; min-height:0; max-height:100%; display:flex; flex-direction:column;
+  justify-content:center; align-items:center; gap:8px; container-type:size;
+}
+.ersomha.is-drawing-focus .ers-canvas-panel.is-drawer .ers-board-wrap {
+  flex:none; width:min(100%,var(--ers-board-limit,320px),100cqh); max-width:min(100%,var(--ers-board-limit,320px),100cqh);
+  margin:0; grid-column:auto; grid-row:auto; border-radius:16px;
+}
+.ersomha.is-drawing-focus .ers-tools {
+  flex:none; display:grid; grid-template-columns:minmax(0,1fr); grid-template-rows:auto;
+  width:min(100%,420px); min-height:0; max-height:100%; padding:0; gap:4px; overflow-y:auto; overscroll-behavior:contain;
+}
+.ersomha.is-drawing-focus .ers-tool-row { display:flex; grid-column:auto; grid-row:auto; gap:4px; flex-wrap:wrap; justify-content:center; }
+.ersomha.is-drawing-focus .ers-tool-row .btn { min-width:44px; min-height:44px; padding:6px 9px; }
+.ersomha.is-drawing-focus .ers-colours { grid-column:auto; grid-row:auto; display:grid; grid-template-columns:repeat(6,minmax(44px,1fr)); }
+.ersomha.is-drawing-focus .ers-widths { grid-column:auto; grid-row:auto; display:flex; gap:4px; }
+.ersomha.is-drawing-focus .ers-widths button { min-width:44px; min-height:44px; }
+.ersomha.is-drawing-focus .ers-canvas-note { margin:0; padding:4px; font-size:.72rem; line-height:1.3; }
+.ersomha.is-drawing-focus .ers-pause { position:absolute; bottom:max(8px,env(safe-area-inset-bottom)); left:8px; right:8px; margin:0; pointer-events:none; }
+
+@media(orientation:landscape) {
+  .ersomha.is-drawing-focus .ers-canvas-panel {
+    display:grid; grid-template-columns:minmax(132px,1fr) var(--ers-board-limit,280px) minmax(132px,1fr);
+    grid-template-rows:minmax(0,1fr); gap:10px; align-items:center; direction:ltr;
+  }
+  .ersomha.is-drawing-focus .ers-canvas-panel.is-drawer .ers-board-wrap { grid-column:2; grid-row:1; justify-self:center; }
+  .ersomha.is-drawing-focus .ers-tools {
+    grid-column:1; grid-row:1; align-self:center; justify-self:end; width:132px; direction:rtl;
+    grid-template-columns:minmax(0,1fr); grid-template-rows:44px 88px 44px 44px; gap:4px;
+  }
+  .ersomha.is-drawing-focus .ers-tool-row { grid-column:1; grid-row:1; display:grid; grid-template-columns:repeat(3,44px); gap:0; }
+  .ersomha.is-drawing-focus .ers-tool-row .btn { width:44px; min-width:44px; padding:0; font-size:1rem; }
+  .ersomha.is-drawing-focus .ers-tool-row [data-design-id=redo],.ersomha.is-drawing-focus .ers-tool-row [data-design-id=clear],.ersomha.is-drawing-focus .ers-tool-label,.ersomha.is-drawing-focus .ers-tool-divider { display:none; }
+  .ersomha.is-drawing-focus .ers-eraser-mark { display:inline; }
+  .ersomha.is-drawing-focus .ers-colours { grid-column:1; grid-row:2; grid-template-columns:repeat(3,44px); }
+  .ersomha.is-drawing-focus .ers-colours>.ers-colour:nth-child(n+7) { display:none; }
+  .ersomha.is-drawing-focus .ers-widths { grid-column:1; grid-row:3; gap:0; }
+  .ersomha.is-drawing-focus .ers-widths button { min-width:44px; width:44px; padding:0; }
+  .ersomha.is-drawing-focus .ers-widths span { display:none; }
+  .ersomha.is-drawing-focus .ers-tools-more { grid-column:1; grid-row:4; display:flex; width:132px; min-height:44px; padding:6px 8px; gap:8px; font-size:.85rem; }
+  .ers-tools-more i { width:17px; height:17px; border-radius:50%; background:var(--ink); border:2px solid white; box-shadow:0 0 0 1px #35224a55; }
+}

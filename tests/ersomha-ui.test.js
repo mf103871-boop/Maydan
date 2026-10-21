@@ -16,14 +16,14 @@ await build({ stdin: { contents: `import React from 'react'; import {renderToSta
 const render = await import(pathToFileURL(path.join(dir, 'render.mjs')));
 const noop = () => {};
 function fixture(patch = {}) {
-  return { game: 'ersomha', phase: 'draw', code: '123456', matchId: 'match-1', round: 1, rounds: 3, mode: 'competitive', drawerId: 'one', deadlineAt: Date.now() + 60_000, settings: normalizeErsomhaOptions(), participants: ['one', 'two', 'three'], members: [{ id: 'one', name: 'رسّام', avatar: 0, score: 100, connected: true }, { id: 'two', name: 'مخمّن', avatar: 1, score: 150, connected: true }, { id: 'three', name: 'صديق', avatar: 2, score: 0, connected: true }], drawing: { epoch: 1, seq: 0 }, myWord: null, myChoices: [], publicWord: { wordLengths: [], letters: [] }, guessedIds: [], recentGuesses: [], ...patch };
+  return { game: 'ersomha', phase: 'draw', code: '123456', matchId: 1, round: 1, rounds: 3, mode: 'competitive', drawerId: 'one', deadlineAt: Date.now() + 60_000, settings: normalizeErsomhaOptions(), participants: ['one', 'two', 'three'], members: [{ id: 'one', name: 'رسّام', avatar: 0, score: 100, connected: true }, { id: 'two', name: 'مخمّن', avatar: 1, score: 150, connected: true }, { id: 'three', name: 'صديق', avatar: 2, score: 0, connected: true }], drawing: { epoch: 1, seq: 0 }, myWord: null, myChoices: [], publicWord: { wordLengths: [], letters: [] }, guessedIds: [], recentGuesses: [], ...patch };
 }
 function html(state, index = 1, extra = {}) { return render.match({ state, me: state.members[index], disabled: false, isHost: index === 0, act: noop, ...extra }).replace(/<style>[\s\S]*?<\/style>/g, ''); }
 
 test('Ersomha options and metadata expose only supported private online play', () => {
-  assert.deepEqual(normalizeErsomhaOptions(), { cycles: 1, drawSeconds: 60, difficulty: 'medium', categories: [], allowReplay: false });
+  assert.deepEqual(normalizeErsomhaOptions(), { cycles: 1, drawSeconds: 60, difficulty: 'easy', categories: [], allowReplay: false });
   for (const emptyPreference of [null, false, 0, 'old-corrupt-pref', []]) assert.deepEqual(normalizeErsomhaOptions(emptyPreference), normalizeErsomhaOptions());
-  assert.deepEqual(normalizeErsomhaOptions({ cycles: 9, difficulty: 'unsafe', categories: ['animals', 'animals', 'unknown'], allowReplay: 1 }), { cycles: 1, drawSeconds: 60, difficulty: 'medium', categories: ['animals'], allowReplay: false });
+  assert.deepEqual(normalizeErsomhaOptions({ cycles: 9, difficulty: 'unsafe', categories: ['animals', 'animals', 'unknown'], allowReplay: 1 }), { cycles: 1, drawSeconds: 60, difficulty: 'easy', categories: ['animals'], allowReplay: false });
   assert.equal(enoughErsomhaCategories({ categories: ['animals', 'food'] }), false);
   assert.equal(enoughErsomhaCategories({ categories: ['animals', 'food', 'home'] }), true);
   assert.deepEqual(normalizeErsomhaOptions({ categories: ERSOMHA_CATEGORIES.map(category => category.id) }).categories, []);
@@ -56,6 +56,17 @@ test('drawing tools, hints, hidden correct guesses and result scores are accessi
   const waiting = html(draw, 2); assert.match(waiting, /حرف مخفي/); assert.match(waiting, /enterKeyHint="send"/i);
   const result = html(fixture({ phase: 'result', revealedWord: 'حل مكشوف', breakdown: { one: { guess: 0, draw: 50, points: 50 }, two: { guess: 150, draw: 0, points: 150 } } }));
   assert.match(result, /حل مكشوف/); assert.match(result, /\+١٥٠/); assert.match(result, /الدور التالي يبدأ تلقائيًا/);
+});
+
+test('the focused drawing workspace keeps its exit and tools reachable only for the ready drawer', () => {
+  const state = fixture({ myWord: 'PRIVATE_DRAW_WORD' });
+  const ready = html(state, 0);
+  assert.match(ready, /data-ersomha-drawing-focus="true"/);
+  for (const id of ['focus-toggle', 'drawing-tools', 'tools-more']) assert.match(ready, new RegExp(`data-design-id="${id}" data-design-required="true"`));
+  assert.match(ready, /aria-label="العودة للغرفة"/);
+  assert.match(ready, /contentEditable="false"/i);
+  assert.match(ready, /inputMode="none"/i);
+  for (const hidden of [html(state), html(state, 0, { drawerReady: false }), html({ ...state, phase: 'result' }, 0)]) assert.doesNotMatch(hidden, /data-ersomha-drawing-focus="true"/);
 });
 
 test('two-player mode displays a shared outcome and no individual winner', () => {

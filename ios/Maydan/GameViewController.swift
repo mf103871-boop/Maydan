@@ -86,12 +86,23 @@ final class GameViewController: UIViewController, WKNavigationDelegate, WKUIDele
     private var migration: StorageMigration?
     private var isCommittingMigration = false
     private var didLoadBundledGame = false
+    private var drawingOrientation = DrawingOrientationPolicy()
+    private var drawingWantsLandscape = false
+    private var drawingRestoreOrientation: UIInterfaceOrientation?
+    private var drawingOrientationExpiry: Timer?
+    private var drawingForegroundObserver: NSObjectProtocol?
+    private weak var edgeBackGesture: UIScreenEdgePanGestureRecognizer?
 #if targetEnvironment(simulator)
     // An opt-in release gate, absent from device binaries. It observes the real
     // bundled app and media graph; no product debug bridge or network fixture.
     private let simulatorAudioFixture = ProcessInfo.processInfo.environment["MAYDAN_SIMULATOR_AUDIO"] == "streaming-recovery"
     private var simulatorAudioTimer: Timer?
     private var simulatorAudioReading = false
+    private let simulatorOrientationFixture = ProcessInfo.processInfo.environment["MAYDAN_SIMULATOR_ORIENTATION"] == "lease-recovery"
+    private var simulatorOrientationTimer: Timer?
+    private var simulatorOrientationCommand: String?
+    private var simulatorOrientationLastCommand: [String: String]?
+    private var simulatorOrientationBaseline: Int?
 #endif
     private lazy var appUpdate = AppUpdateCoordinator(host: self, canPresent: { [weak self] in
         guard let self, self.presentedViewController == nil else { return false }
@@ -140,7 +151,10 @@ final class GameViewController: UIViewController, WKNavigationDelegate, WKUIDele
         let webView = WKWebView(frame: .zero, configuration: configuration)
         self.webView = webView
         updateNavigationObservation = webView.observe(\.url, options: [.new]) { [weak self] _, _ in
-            Task { @MainActor in self?.appUpdate.navigationChanged() }
+            Task { @MainActor in
+                self?.appUpdate.navigationChanged()
+                if let self, !DrawingOrientationPolicy.isRoomURL(self.webView.url) { self.releaseDrawingOrientation() }
+            }
         }
         webView.translatesAutoresizingMaskIntoConstraints = false
         webView.navigationDelegate = self
@@ -169,11 +183,17 @@ final class GameViewController: UIViewController, WKNavigationDelegate, WKUIDele
             action: #selector(handleEdgeBackGesture(_:))
         )
         edgeBackGesture.edges = .right
+        self.edgeBackGesture = edgeBackGesture
         containerView.addGestureRecognizer(edgeBackGesture)
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        drawingForegroundObserver = NotificationCenter.default.addObserver(
+            forName: UIApplication.didBecomeActiveNotification, object: nil, queue: .main
+        ) { [weak self] _ in
+            Task { @MainActor in self?.restoreDrawingOrientationIfPossible() }
+        }
         // تجديدات الاشتراك والمشتريات المعلّقة تصل هنا خارج الشراء المباشر؛ الويب يرسل توقيعها للخادم.
         StoreManager.shared.onTransaction = { [weak self] jws in
             self?.emit(event: "transaction", payload: ["jws": jws])
@@ -194,6 +214,13 @@ final class GameViewController: UIViewController, WKNavigationDelegate, WKUIDele
         super.viewDidAppear(animated)
         appUpdate.start()
         appUpdate.navigationChanged()
+#if targetEnvironment(simulator)
+        if simulatorOrientationFixture, simulatorOrientationTimer == nil {
+            simulatorOrientationTimer = Timer.scheduledTimer(withTimeInterval: 0.25, repeats: true) { [weak self] _ in
+                Task { @MainActor in self?.recordSimulatorOrientation() }
+            }
+        }
+#endif
     }
 
     deinit {
@@ -204,13 +231,99 @@ final class GameViewController: UIViewController, WKNavigationDelegate, WKUIDele
         webView?.uiDelegate = nil
         bridgeProxy?.delegate = nil
         updateNavigationObservation?.invalidate()
+        drawingOrientationExpiry?.invalidate()
+        if let drawingForegroundObserver { NotificationCenter.default.removeObserver(drawingForegroundObserver) }
 #if targetEnvironment(simulator)
         simulatorAudioTimer?.invalidate()
+        simulatorOrientationTimer?.invalidate()
 #endif
     }
 
     override var prefersStatusBarHidden: Bool { true }
-    override var supportedInterfaceOrientations: UIInterfaceOrientationMask { .allButUpsideDown }
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask { drawingWantsLandscape ? .landscape : .allButUpsideDown }
+
+    private static func orientationMask(_ orientation: UIInterfaceOrientation?) -> UIInterfaceOrientationMask? {
+        switch orientation {
+        case .portrait: return .portrait
+        case .landscapeLeft: return .landscapeLeft
+        case .landscapeRight: return .landscapeRight
+        default: return nil
+        }
+    }
+
+    private func releaseDrawingOrientation(_ lease: String? = nil) {
+        guard drawingOrientation.release(lease) else { return }
+        drawingOrientationExpiry?.invalidate(); drawingOrientationExpiry = nil
+        drawingWantsLandscape = false
+        edgeBackGesture?.isEnabled = true
+        setNeedsUpdateOfSupportedInterfaceOrientations()
+        restoreDrawingOrientationIfPossible()
+    }
+
+    private func restoreDrawingOrientationIfPossible() {
+        guard drawingOrientation.lease == nil, !drawingWantsLandscape,
+              let restore = Self.orientationMask(drawingRestoreOrientation),
+              let scene = view.window?.windowScene, UIApplication.shared.applicationState == .active else { return }
+        drawingRestoreOrientation = nil
+        scene.requestGeometryUpdate(.iOS(interfaceOrientations: restore)) { _ in /* normal device rotation remains available */ }
+    }
+
+    private func applyDrawingOrientation(lease: String, generation: UInt64) {
+        guard drawingOrientation.accepts(lease, generation: generation), let scene = view.window?.windowScene else { return }
+        if drawingRestoreOrientation == nil { drawingRestoreOrientation = scene.interfaceOrientation }
+        drawingWantsLandscape = true
+        // The expanded board reaches the physical edge. Its ink gesture must
+        // not also trigger room navigation; the visible room button stays usable.
+        edgeBackGesture?.isEnabled = false
+        setNeedsUpdateOfSupportedInterfaceOrientations()
+        drawingOrientationExpiry?.invalidate()
+        // A turn lasts 60 seconds with up to a 15-second disconnection pause. A finite safety
+        // lease also releases a hung web surface; no preference is persisted.
+        drawingOrientationExpiry = Timer.scheduledTimer(withTimeInterval: 90, repeats: false) { [weak self] _ in
+            Task { @MainActor in
+                guard let self, self.drawingOrientation.accepts(lease, generation: generation) else { return }
+                self.releaseDrawingOrientation(lease)
+            }
+        }
+        scene.requestGeometryUpdate(.iOS(interfaceOrientations: .landscape)) { [weak self] _ in
+            Task { @MainActor in
+                guard let self, self.drawingOrientation.accepts(lease, generation: generation) else { return }
+                // iOS may decline the requested geometry. Keep focus ownership
+                // and edge protection, while allowing ordinary manual rotation.
+                self.drawingWantsLandscape = false
+                self.setNeedsUpdateOfSupportedInterfaceOrientations()
+            }
+        }
+    }
+
+    private func requestDrawingOrientation(id: String, payload: [String: Any]) {
+        guard payload["game"] as? String == "ersomha", let active = payload["active"] as? Bool,
+              let lease = payload["lease"] as? String, DrawingOrientationPolicy.validLease(lease) else {
+            reply(id, error: .invalid); return
+        }
+        if !active {
+            releaseDrawingOrientation(lease)
+            reply(id, result: ["released": true]); return
+        }
+        guard UIDevice.current.userInterfaceIdiom == .phone,
+              UIApplication.shared.applicationState == .active, !appUpdate.isCoveringGame,
+              DrawingOrientationPolicy.isRoomURL(webView.url), let generation = drawingOrientation.acquire(lease) else {
+            reply(id, result: ["requested": false]); return
+        }
+        // Only the real current drawer's explicitly expanded surface may rotate
+        // the phone. The trusted-main-frame guard runs before this command.
+        let eligible = "Boolean(document.querySelector('[data-design-screen=\"ersomha.draw.drawer\"][data-ersomha-drawing-focus=\"true\"] .ers-canvas-panel.is-drawer'))"
+        webView.evaluateJavaScript(eligible) { [weak self] value, error in
+            guard let self, self.drawingOrientation.accepts(lease, generation: generation) else { return }
+            guard error == nil, value as? Bool == true, DrawingOrientationPolicy.isRoomURL(self.webView.url) else {
+                self.releaseDrawingOrientation(lease); self.reply(id, result: ["requested": false]); return
+            }
+            self.applyDrawingOrientation(lease: lease, generation: generation)
+            // Acceptance is not an assertion of rotation. Web UI measures its
+            // actual viewport and keeps a manual-rotation hint if iOS declines.
+            self.reply(id, result: ["requested": true])
+        }
+    }
 
     override func accessibilityPerformEscape() -> Bool {
         guard !appUpdate.isCoveringGame else { return true }
@@ -357,6 +470,58 @@ final class GameViewController: UIViewController, WKNavigationDelegate, WKUIDele
     }
 
 #if targetEnvironment(simulator)
+    /// CI injects only lease commands. Orientation and WK viewport values below
+    /// are read from UIKit after its real geometry request; none are fabricated.
+    private func recordSimulatorOrientation() {
+        guard simulatorOrientationFixture, let scene = view.window?.windowScene,
+              let documents = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { return }
+        let folder = documents.appendingPathComponent("drawing-orientation-fixture", isDirectory: true)
+        do {
+            try FileManager.default.createDirectory(at: folder, withIntermediateDirectories: true)
+            let commandURL = folder.appendingPathComponent("command.json")
+            if let data = try? Data(contentsOf: commandURL),
+               let command = try? JSONSerialization.jsonObject(with: data) as? [String: String],
+               let id = command["id"], id.count <= 64, id != simulatorOrientationCommand,
+               let name = command["command"], ["portrait", "acquire-first", "acquire-next", "release-stale", "release-current"].contains(name) {
+                simulatorOrientationCommand = id
+                simulatorOrientationLastCommand = command
+                try FileManager.default.removeItem(at: commandURL)
+                switch name {
+                case "portrait":
+                    releaseDrawingOrientation()
+                    scene.requestGeometryUpdate(.iOS(interfaceOrientations: .portrait)) { _ in }
+                case "acquire-first", "acquire-next":
+                    let lease = name == "acquire-first" ? "ers-simulator-first" : "ers-simulator-next"
+                    if let generation = drawingOrientation.acquire(lease) { applyDrawingOrientation(lease: lease, generation: generation) }
+                case "release-stale": releaseDrawingOrientation("ers-simulator-first")
+                case "release-current": releaseDrawingOrientation("ers-simulator-next")
+                default: break
+                }
+            }
+            if simulatorOrientationLastCommand?["command"] == "portrait", scene.interfaceOrientation == .portrait {
+                simulatorOrientationBaseline = scene.interfaceOrientation.rawValue
+            }
+            let state: [String: Any] = [
+                "fixture": "drawing-orientation-lease",
+                "generatedAt": Int(Date().timeIntervalSince1970 * 1000),
+                "lastCommand": simulatorOrientationLastCommand ?? [:],
+                "baselineRaw": simulatorOrientationBaseline.map { $0 as Any } ?? NSNull(),
+                "orientationRaw": scene.interfaceOrientation.rawValue,
+                "landscape": scene.interfaceOrientation.isLandscape,
+                "webWidth": webView.bounds.width,
+                "webHeight": webView.bounds.height,
+                "supportedMask": supportedInterfaceOrientations.rawValue,
+                "edgeBackEnabled": edgeBackGesture?.isEnabled ?? false,
+                "lease": drawingOrientation.lease.map { $0 as Any } ?? NSNull(),
+                "generation": drawingOrientation.generation,
+                "gameLoaded": didLoadBundledGame && !webView.isLoading && webView.url != nil,
+                "eligibilityInjected": true,
+                "geometryInjected": false
+            ]
+            try Self.json(state).write(to: folder.appendingPathComponent("state.json"), atomically: true, encoding: .utf8)
+        } catch { /* missing measurements fail the external release gate */ }
+    }
+
     private func recordSimulatorAudio() {
         guard simulatorAudioFixture, !simulatorAudioReading,
               let documents = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { return }
@@ -452,6 +617,7 @@ final class GameViewController: UIViewController, WKNavigationDelegate, WKUIDele
     func webViewWebContentProcessDidTerminate(_ webView: WKWebView) {
         guard !isRecoveringWebContent else { return }
         isRecoveringWebContent = true
+        releaseDrawingOrientation()
         SocialCoordinator.shared.webDidReload()
 
         // Loading the bundled entry point recreates the UI; localStorage remains available so
@@ -505,6 +671,7 @@ final class GameViewController: UIViewController, WKNavigationDelegate, WKUIDele
             "socialVoiceStart", "socialVoiceStop", "socialVoiceCancel", "socialAudioPrivacy"
         ]
         if socialCommands.contains(command) {
+            if command == "socialLogout" { releaseDrawingOrientation() }
             if command == "socialAudioPrivacy" { appUpdate.setPrivateTurn(payload["privateTurn"] as? Bool ?? false) }
             Task { @MainActor [weak self] in
                 // Several native commands release busy state after their last
@@ -521,6 +688,8 @@ final class GameViewController: UIViewController, WKNavigationDelegate, WKUIDele
             return
         }
         switch command {
+        case "drawingOrientation":
+            requestDrawingOrientation(id: id, payload: payload)
         case "storeStatus":
             reply(id, result: StoreManager.shared.catalogStatus())
         case "products":

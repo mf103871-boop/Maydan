@@ -26,15 +26,18 @@ class ReleaseSmokeTests(unittest.TestCase):
         self.assertEqual(order, ['prepare', ('cold', 45), 'terminate-verified', ('relaunch', 15), 'terminate-verified', ('finish', False)])
 
     def test_combined_runner_requires_all_phases_and_cleans_only_owner(self):
-        for normal_result, update_result, audio_result, expected in [(0, 0, 0, 0), (1, 0, 0, 1), (0, 1, 0, 1), (0, 0, 1, 1)]:
-            with self.subTest(normal=normal_result, update=update_result, audio=audio_result):
-                runner = ReleaseSmoke(self.root / 'Maydan.app', self.root / f'evidence-{normal_result}-{update_result}-{audio_result}')
+        for normal_result, update_result, audio_result, orientation_result, expected in [(0, 0, 0, 0, 0), (1, 0, 0, 0, 1), (0, 1, 0, 0, 1), (0, 0, 1, 0, 1), (0, 0, 0, 1, 1)]:
+            with self.subTest(normal=normal_result, update=update_result, audio=audio_result, orientation=orientation_result):
+                runner = ReleaseSmoke(self.root / 'Maydan.app', self.root / f'evidence-{normal_result}-{update_result}-{audio_result}-{orientation_result}')
                 order = []
                 runner.normal.run = Mock(side_effect=lambda **kwargs: order.append(('normal', kwargs)) or normal_result)
                 runner.update.run = Mock(side_effect=lambda **kwargs: order.append(('update', kwargs)) or update_result)
                 runner.update.terminate_for_relaunch = Mock(side_effect=lambda: order.append('terminate-update-process'))
                 runner.update.write_summary = Mock()
                 runner.audio.run = Mock(side_effect=lambda **kwargs: order.append(('audio', kwargs)) or audio_result)
+                runner.audio.terminate_for_relaunch = Mock(side_effect=lambda: order.append('terminate-audio-process'))
+                runner.audio.write_summary = Mock()
+                runner.orientation.run = Mock(side_effect=lambda **kwargs: order.append(('orientation', kwargs)) or orientation_result)
                 runner.normal.cleanup_device = Mock(side_effect=lambda: order.append('cleanup-owner'))
                 runner.normal.write_summary = Mock()
                 self.assertEqual(runner.run(), expected)
@@ -53,6 +56,13 @@ class ReleaseSmokeTests(unittest.TestCase):
                     self.assertEqual(order[2], 'terminate-update-process')
                     runner.audio.run.assert_called_once_with(prepared=runner.normal)
                     runner.update.terminate_for_relaunch.assert_called_once()
+                if normal_result or update_result or audio_result:
+                    runner.orientation.run.assert_not_called()
+                    runner.audio.terminate_for_relaunch.assert_not_called()
+                else:
+                    runner.audio.terminate_for_relaunch.assert_called_once()
+                    runner.orientation.run.assert_called_once_with(prepared=runner.normal)
+                    self.assertEqual(order[4], 'terminate-audio-process')
                 self.assertEqual(runner.report['passed'], expected == 0)
 
     def test_borrowed_gate_requires_verified_stopped_app_and_never_cleans_device(self):

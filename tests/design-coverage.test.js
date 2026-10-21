@@ -29,6 +29,16 @@ test('content and action containers cannot hide mandatory descendant controls', 
   }
 });
 
+test('drawing focus keeps its room return and compact tool access in the Studio contract', () => {
+  for (const id of ['canvas-panel', 'canvas', 'drawing-tools', 'focus-toggle', 'tools-more']) {
+    assert.equal(getNodeDefinition('ersomha.draw.drawer', id)?.required, true, id);
+  }
+  for (const id of ['focus-toggle', 'orientation']) {
+    assert.equal(getNodeDefinition('ersomha.draw.drawer', id)?.editableText, false, id);
+    assert.equal(getNodeDefinition('ersomha.draw.drawer', id)?.editableIcon, false, id);
+  }
+});
+
 test('dynamic answers, account identity and tool meaning cannot be rewritten as decorative labels', () => {
   for (const screen of DESIGN_SCREENS) for (const node of screen.nodes) {
     if (node.repeat || ['question','prompt','word','answer','timer','players','name','bio','code','room-code','word-banner','mic-note','privacy','connection'].includes(node.id)) assert.equal(node.editableText, false, `${screen.id}:${node.id}`);

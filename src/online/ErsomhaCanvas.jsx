@@ -1,9 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Button, ConfirmModal } from '../shared/ui/components.jsx';
+import { Button, ConfirmModal, Modal } from '../shared/ui/components.jsx';
 import { ERSOMHA_PALETTE, ERSOMHA_WIDTHS, DRAW_BATCH_MS, DRAW_BATCH_POINTS, DRAW_MAX_PENDING, DRAW_MAX_BUFFERED_BYTES, drawingPoint, createDrawingState, applyDrawingEvent, drawStroke, paintDrawing } from '../games/ersomha/drawing.js';
 
 const COLOUR_LABELS = ['بنفسجي داكن', 'أبيض', 'فيروزي', 'بنفسجي', 'أحمر', 'أصفر', 'أخضر', 'أزرق', 'وردي', 'بني', 'برتقالي', 'رمادي'];
 function strokeId() { return `s${Array.from(crypto.getRandomValues(new Uint8Array(10)), value => value.toString(16).padStart(2, '0')).join('')}`; }
+const drawingRound = key => { const [matchId, round] = String(key).split(':').map(Number); return { matchId, round }; };
 
 /** The high-frequency pointer path intentionally lives outside React state. */
 export function ErsomhaCanvas({ client, roundKey, epoch, serverSeq = 0, canDraw, paused, connected, onError = () => {}, onReport, label = 'لوحة الرسم المباشر' }) {
@@ -11,8 +12,9 @@ export function ErsomhaCanvas({ client, roundKey, epoch, serverSeq = 0, canDraw,
   const activeRef = useRef(null), queueRef = useRef([]), pendingRef = useRef(0), timerRef = useRef(null), mountedRef = useRef(false);
   const currentRef = useRef({}), syncPendingRef = useRef(false), wasConnectedRef = useRef(connected);
   const generationRef = useRef(0), syncRequestRef = useRef(0);
+  const pointerEndRef = useRef(null);
   const [colour, setColour] = useState(ERSOMHA_PALETTE[0]), [width, setWidth] = useState(6), [tool, setTool] = useState('pen');
-  const [clearConfirm, setClearConfirm] = useState(false), [history, setHistory] = useState({ undo: false, redo: false }), [syncing, setSyncing] = useState(true), [backpressure, setBackpressure] = useState(false);
+  const [clearConfirm, setClearConfirm] = useState(false), [moreTools, setMoreTools] = useState(false), [history, setHistory] = useState({ undo: false, redo: false }), [syncing, setSyncing] = useState(true), [backpressure, setBackpressure] = useState(false);
   currentRef.current = { client, canDraw, paused, connected, colour, width, tool, epoch, roundKey, onError };
   const repaint = () => { const context = canvasRef.current?.getContext('2d'); if (context) paintDrawing(context, modelRef.current, optimisticRef.current); };
   const updateHistory = () => setHistory({ undo: [...modelRef.current.strokes.values()].some(stroke => stroke.end && !modelRef.current.undoneIds.has(stroke.strokeId)), redo: modelRef.current.undoneIds.size > 0 });
@@ -22,12 +24,15 @@ export function ErsomhaCanvas({ client, roundKey, epoch, serverSeq = 0, canDraw,
     const request = ++syncRequestRef.current;
     syncPendingRef.current = true;
     setSyncing(true);
-    current.client.command('drawing_sync', { epoch: modelRef.current.epoch ?? current.epoch }).catch(error => { if (mountedRef.current && request === syncRequestRef.current) { setSyncing(false); currentRef.current.onError(error.code || 'DISCONNECTED'); } }).finally(() => { if (request === syncRequestRef.current) syncPendingRef.current = false; });
+    current.client.command('drawing_sync', { ...drawingRound(current.roundKey), epoch: modelRef.current.epoch ?? current.epoch }).catch(error => { if (mountedRef.current && request === syncRequestRef.current) { setSyncing(false); currentRef.current.onError(error.code || 'DISCONNECTED'); } }).finally(() => { if (request === syncRequestRef.current) syncPendingRef.current = false; });
   };
   const drain = () => {
     timerRef.current = null;
     const current = currentRef.current;
     if (!current.connected || current.paused || !current.canDraw || !current.client) return;
+    // A drain can replace the pointer's scheduled flush while older batches
+    // are queued. Flush its unsent tail here too, even if the finger now rests.
+    while (activeRef.current?.unsent.length) enqueueActive(false, false);
     if (pendingRef.current >= DRAW_MAX_PENDING || Number(current.client.ws?.bufferedAmount || 0) > DRAW_MAX_BUFFERED_BYTES) {
       setBackpressure(true); timerRef.current = setTimeout(drain, DRAW_BATCH_MS); return;
     }
@@ -37,7 +42,7 @@ export function ErsomhaCanvas({ client, roundKey, epoch, serverSeq = 0, canDraw,
     pendingRef.current++;
     const requestRound = current.roundKey;
     const generation = generationRef.current;
-    current.client.command('drawing_batch', { epoch: modelRef.current.epoch, ...next }).catch(error => {
+    current.client.command('drawing_batch', { ...drawingRound(current.roundKey), epoch: modelRef.current.epoch, ...next }).catch(error => {
       if (!mountedRef.current || currentRef.current.roundKey !== requestRound || generation !== generationRef.current) return;
       queueRef.current = []; activeRef.current = null; optimisticRef.current.clear(); repaint();
       currentRef.current.onError(error.code || 'DISCONNECTED'); requestSync();
@@ -49,13 +54,13 @@ export function ErsomhaCanvas({ client, roundKey, epoch, serverSeq = 0, canDraw,
     });
     if (queueRef.current.length) timerRef.current = setTimeout(drain, DRAW_BATCH_MS);
   };
-  const enqueueActive = (end = false) => {
+  const enqueueActive = (end = false, schedule = true) => {
     const active = activeRef.current;
     if (!active) return;
     const points = active.unsent.splice(0, DRAW_BATCH_POINTS);
     if (!points.length && !end) return;
     queueRef.current.push({ strokeId: active.strokeId, points, color: active.color, width: active.width, tool: active.tool, end });
-    if (!timerRef.current) timerRef.current = setTimeout(drain, DRAW_BATCH_MS);
+    if (schedule && !timerRef.current) timerRef.current = setTimeout(drain, DRAW_BATCH_MS);
   };
   const finishStroke = () => {
     const active = activeRef.current;
@@ -70,7 +75,7 @@ export function ErsomhaCanvas({ client, roundKey, epoch, serverSeq = 0, canDraw,
   useEffect(() => {
     generationRef.current++; syncRequestRef.current++;
     clearTimeout(timerRef.current); timerRef.current = null; queueRef.current = []; activeRef.current = null; optimisticRef.current.clear(); pendingRef.current = 0; syncPendingRef.current = false;
-    modelRef.current = createDrawingState(epoch); setSyncing(true); setBackpressure(false); setClearConfirm(false); setHistory({ undo: false, redo: false }); repaint();
+    modelRef.current = createDrawingState(epoch); setSyncing(true); setBackpressure(false); setClearConfirm(false); setMoreTools(false); setHistory({ undo: false, redo: false }); repaint();
     let pieces = null;
     const unsubscribe = client?.subscribeDrawing(event => {
       if (event.matchId != null && String(event.matchId) !== String(currentRef.current.roundKey.split(':')[0])) return;
@@ -108,7 +113,7 @@ export function ErsomhaCanvas({ client, roundKey, epoch, serverSeq = 0, canDraw,
   }, [connected]);
   useEffect(() => {
     if (!paused && canDraw) return;
-    setClearConfirm(false);
+    setClearConfirm(false); setMoreTools(false);
     clearTimeout(timerRef.current); timerRef.current = null; queueRef.current = []; activeRef.current = null; optimisticRef.current.clear(); repaint();
   }, [paused, canDraw]);
   // State snapshots can race a drawing delta after a dropped frame. One sync
@@ -116,12 +121,42 @@ export function ErsomhaCanvas({ client, roundKey, epoch, serverSeq = 0, canDraw,
   useEffect(() => {
     if (connected && serverSeq > modelRef.current.seq && !activeRef.current && pendingRef.current === 0) requestSync();
   }, [serverSeq]); // eslint-disable-line react-hooks/exhaustive-deps
+  useEffect(() => {
+    const board = canvasRef.current;
+    if (!board) return undefined;
+    // WebKit's long-press selection/callout is separate from Pointer Events.
+    // Keep the prevention local: guessing and chat inputs remain real editors.
+    const preventEditing = event => { if (currentRef.current.canDraw) event.preventDefault(); };
+    for (const type of ['selectstart', 'contextmenu', 'dragstart']) board.addEventListener(type, preventEditing);
+    return () => { for (const type of ['selectstart', 'contextmenu', 'dragstart']) board.removeEventListener(type, preventEditing); };
+  }, []);
+  useEffect(() => {
+    // A browser can reject capture after a transient app/keyboard change.
+    // Still close this pointer's stroke if its release lands outside the board.
+    const endOutside = event => {
+      const board = canvasRef.current;
+      if (!board || event.target === board || activeRef.current?.pointerId !== event.pointerId) return;
+      pointerEndRef.current?.({ type: event.type, pointerId: event.pointerId, clientX: event.clientX, clientY: event.clientY, currentTarget: board, nativeEvent: event, preventDefault: () => event.preventDefault() });
+    };
+    document.addEventListener('pointerup', endOutside); document.addEventListener('pointercancel', endOutside);
+    return () => { document.removeEventListener('pointerup', endOutside); document.removeEventListener('pointercancel', endOutside); };
+  }, []);
   const blocked = !canDraw || !connected || paused || syncing || backpressure;
   const pointerDown = event => {
+    if (canDraw) {
+      // End the previous text editor before drawing, without changing its draft.
+      // Prevent selection even while synchronizing or while a second finger lands.
+      event.preventDefault();
+      const editor = document.activeElement;
+      if (editor?.matches('input,textarea,[contenteditable="true"]')) editor.blur();
+      const selection = window.getSelection?.();
+      if (selection?.anchorNode && event.currentTarget.parentElement?.contains(selection.anchorNode)) selection.removeAllRanges();
+    }
     if (blocked || activeRef.current || event.button > 0 || queueRef.current.length >= DRAW_MAX_PENDING * 2) return;
     const point = drawingPoint(event, event.currentTarget.getBoundingClientRect());
     if (!point) return;
-    event.preventDefault(); event.currentTarget.setPointerCapture?.(event.pointerId);
+    event.preventDefault();
+    try { event.currentTarget.setPointerCapture?.(event.pointerId); } catch { /* A retiring pointer can already be unavailable. */ }
     const stroke = { strokeId: strokeId(), points: [point], unsent: [point], color: colour, width, tool, end: false, pointerId: event.pointerId };
     activeRef.current = stroke; optimisticRef.current.set(stroke.strokeId, stroke);
     drawStroke(event.currentTarget.getContext('2d'), { ...stroke, points: [point] });
@@ -131,7 +166,8 @@ export function ErsomhaCanvas({ client, roundKey, epoch, serverSeq = 0, canDraw,
     if (!active || active.pointerId !== event.pointerId || blocked) return;
     event.preventDefault();
     const bounds = event.currentTarget.getBoundingClientRect();
-    const events = event.nativeEvent?.getCoalescedEvents?.() || [event];
+    const coalesced = event.nativeEvent?.getCoalescedEvents?.();
+    const events = coalesced?.length ? coalesced : [event];
     for (const sample of events) {
       const point = drawingPoint(sample, bounds), previous = active.points.at(-1);
       if (!point || Math.hypot(point[0] - previous[0], point[1] - previous[1]) < 0.001) continue;
@@ -142,24 +178,37 @@ export function ErsomhaCanvas({ client, roundKey, epoch, serverSeq = 0, canDraw,
     if (active.unsent.length && !timerRef.current) timerRef.current = setTimeout(() => { enqueueActive(false); drain(); }, DRAW_BATCH_MS);
     if (queueRef.current.length >= DRAW_MAX_PENDING * 2) { finishStroke(); setBackpressure(true); }
   };
+  const pointerEnd = event => {
+    if (activeRef.current?.pointerId !== event.pointerId) return;
+    // A fast down/up can have no move callback; preserve its final position.
+    if (event.type === 'pointerup' && !blocked) pointerMove(event);
+    finishStroke();
+  };
+  pointerEndRef.current = pointerEnd;
   const changeHistory = async type => {
     finishStroke();
     if (queueRef.current.length || pendingRef.current) { currentRef.current.onError('DRAW_PENDING'); return; }
-    try { await client.command(type, { epoch: modelRef.current.epoch }); }
+    const current = currentRef.current;
+    try { await current.client.command(type, { ...drawingRound(current.roundKey), epoch: modelRef.current.epoch }); }
     catch (error) { onError(error.code || 'DISCONNECTED'); requestSync(); }
   };
   return <section data-design-id="canvas-panel" className={`ers-canvas-panel ${canDraw ? 'is-drawer' : ''}`} aria-label={label}>
     <div className="ers-board-wrap">
-      <canvas data-design-id="canvas" data-design-required="true" ref={canvasRef} width="1000" height="1000" className="ers-board" role="img" aria-label={canDraw ? 'لوحتك: ارسم بالإصبع أو القلم أو الفأرة. استخدم الأدوات أسفلها.' : 'لوحة مباشرة يرسم عليها صاحب الدور. اكتب تخمينك أسفل اللوحة.'} onPointerDown={pointerDown} onPointerMove={pointerMove} onPointerUp={event => { if (activeRef.current?.pointerId === event.pointerId) finishStroke(); }} onPointerCancel={finishStroke} onLostPointerCapture={finishStroke} style={{ touchAction: canDraw ? 'none' : 'pan-y' }} />
+      <canvas data-design-id="canvas" data-design-required="true" ref={canvasRef} width="1000" height="1000" className="ers-board" role="img" contentEditable={false} inputMode="none" draggable={false} aria-label={canDraw ? 'لوحتك: ارسم بالإصبع أو القلم أو الفأرة. الأدوات بجانب اللوحة أو أسفلها.' : 'لوحة مباشرة يرسم عليها صاحب الدور. اكتب تخمينك أسفل اللوحة.'} onPointerDown={pointerDown} onPointerMove={pointerMove} onPointerUp={pointerEnd} onPointerCancel={pointerEnd} onLostPointerCapture={pointerEnd} style={{ touchAction: canDraw ? 'none' : 'pan-y' }} />
       {(syncing || paused || !connected) && <div data-design-id="canvas-status" data-design-required="true" className="ers-board-status" role="status"><span>{!connected ? 'نستعيد اتصالك والرسمة…' : paused ? 'ننتظر عودة الرسّام…' : 'نحضّر اللوحة…'}</span></div>}
     </div>
-    {canDraw && <div data-design-id="drawing-tools" className="ers-tools" aria-label="أدوات الرسم">
+    {canDraw && <div data-design-id="drawing-tools" data-design-required="true" className="ers-tools" aria-label="أدوات الرسم">
       <div className="ers-tool-row" role="group" aria-label="نوع الأداة"><Button size="sm" data-design-id="pen" aria-label="قلم" aria-pressed={tool === 'pen'} onClick={() => setTool('pen')}><span aria-hidden="true">✎</span><span className="ers-tool-label">قلم</span></Button><Button size="sm" data-design-id="eraser" aria-label="ممحاة" aria-pressed={tool === 'eraser'} onClick={() => setTool('eraser')}><span className="ers-eraser-mark" aria-hidden="true">▱</span><span className="ers-tool-label">ممحاة</span></Button><span className="ers-tool-divider" /><Button size="sm" data-design-id="undo" aria-label="تراجع عن آخر خط" disabled={blocked || !history.undo} onClick={() => changeHistory('drawing_undo')}>↶</Button><Button size="sm" data-design-id="redo" aria-label="إعادة الخط المتراجع عنه" disabled={blocked || !history.redo} onClick={() => changeHistory('drawing_redo')}>↷</Button><Button size="sm" data-design-id="clear" aria-label="مسح اللوحة" disabled={blocked} onClick={() => setClearConfirm(true)}><span className="ers-clear-mark" aria-hidden="true">×</span><span className="ers-tool-label">مسح</span></Button></div>
       <div data-design-id="palette" className="ers-colours" role="group" aria-label="ألوان القلم">{ERSOMHA_PALETTE.map((value, index) => <button data-design-id="color" type="button" key={value} className={`ers-colour ${colour === value ? 'selected' : ''}`} style={{ '--ink': value }} aria-label={COLOUR_LABELS[index]} aria-pressed={colour === value} disabled={tool === 'eraser'} onClick={() => setColour(value)}><span /></button>)}</div>
       <div data-design-id="widths" className="ers-widths" role="group" aria-label="سماكة الخط">{ERSOMHA_WIDTHS.map((value, index) => <button data-design-id="width" type="button" key={value} aria-label={['خط رفيع', 'خط متوسط', 'خط عريض'][index]} aria-pressed={width === value} onClick={() => setWidth(value)}><i style={{ width: `${4 + index * 5}px`, height: `${4 + index * 5}px` }} /><span>{['رفيع', 'متوسط', 'عريض'][index]}</span></button>)}</div>
+      <Button data-design-id="tools-more" data-design-required="true" className="ers-tools-more" aria-label="ألوان وأدوات إضافية" aria-haspopup="dialog" style={{ '--ink': colour }} onClick={() => { finishStroke(); setMoreTools(true); }}><i aria-hidden="true" />المزيد</Button>
       {backpressure && <p className="ers-canvas-note" role="status">نثبت خطوطك… أمهل الاتصال لحظة قبل متابعة الرسم.</p>}
     </div>}
     {onReport && <button type="button" data-design-id="report" data-design-required="true" className="ers-report" onClick={onReport}>الإبلاغ عن الرسمة</button>}
+    {moreTools && <Modal title="ألوان وأدوات الرسم" className="ers-tools-modal" onClose={() => setMoreTools(false)} footer={<Button full variant="primary" onClick={() => setMoreTools(false)}>إكمال الرسم</Button>}>
+      <div className="ers-colours" role="group" aria-label="جميع ألوان القلم">{ERSOMHA_PALETTE.map((value, index) => <button type="button" key={value} className={`ers-colour ${colour === value ? 'selected' : ''}`} style={{ '--ink': value }} aria-label={COLOUR_LABELS[index]} aria-pressed={colour === value} disabled={tool === 'eraser'} onClick={() => setColour(value)}><span /></button>)}</div>
+      <div className="ers-tool-row"><Button aria-label="إعادة الخط المتراجع عنه" disabled={blocked || !history.redo} onClick={() => changeHistory('drawing_redo')}>↷ إعادة الخط</Button><Button aria-label="مسح اللوحة" disabled={blocked} onClick={() => { setMoreTools(false); setClearConfirm(true); }}>مسح اللوحة</Button></div>
+    </Modal>}
     {clearConfirm && <ConfirmModal title="تمسح اللوحة؟" message="تبدأ لوحة بيضاء جديدة لهذا الدور. لا يمكن التراجع عن المسح." confirmLabel="مسح اللوحة" cancelLabel="إكمال الرسم" onCancel={() => setClearConfirm(false)} onConfirm={() => { setClearConfirm(false); changeHistory('drawing_clear'); }} />}
   </section>;
 }

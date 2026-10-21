@@ -9,18 +9,20 @@ import path from 'node:path';
 
 const bundle = await build({ stdin: { resolveDir: process.cwd(), loader: 'jsx', contents: `
 import React,{useState} from 'react';import{createRoot}from'react-dom/client';import{ErsomhaMatch}from'./src/online/Ersomha.jsx';
-import{BrandFonts}from'./src/shared/brand/art.jsx';import{TopBar,Button}from'./src/shared/ui/components.jsx';import ui from'./src/shared/ui/ui.css';import tokens from'./src/shared/theme/tokens.css';import brand from'./src/shared/brand/brand.css';import online from'./src/online/online.css';
+import{back}from'./src/platform/router.js';import{CallControls}from'./src/social/CallDock.jsx';import{useCallDockLayout}from'./src/social/CallViewport.jsx';import{BrandFonts}from'./src/shared/brand/art.jsx';import{TopBar,Button}from'./src/shared/ui/components.jsx';import ui from'./src/shared/ui/ui.css';import tokens from'./src/shared/theme/tokens.css';import brand from'./src/shared/brand/brand.css';import online from'./src/online/online.css';
 let inkMeasuring=false,inkSamples=[],inkEvent=null;
 for(const type of ['pointerdown','pointermove'])document.addEventListener(type,event=>{if(!inkMeasuring||!event.buttons||!event.target.classList?.contains('ers-board'))return;const started=performance.now(),bounds=event.target.getBoundingClientRect();inkEvent={started,canvas:event.target,x:Math.max(0,Math.min(999,Math.floor((event.clientX-bounds.left)/bounds.width*1000))),y:Math.max(0,Math.min(999,Math.floor((event.clientY-bounds.top)/bounds.height*1000))),recorded:false}},true);
 for(const method of ['stroke','fill']){const original=CanvasRenderingContext2D.prototype[method];CanvasRenderingContext2D.prototype[method]=function(...args){const result=original.apply(this,args);if(inkMeasuring&&inkEvent&&!inkEvent.recorded&&inkEvent.canvas===this.canvas&&this.getImageData(inkEvent.x,inkEvent.y,1,1).data[3]){inkEvent.recorded=true;inkSamples.push(performance.now()-inkEvent.started)}return result}}
 window.beginInkProbe=()=>{inkSamples=[];inkEvent=null;inkMeasuring=true};window.finishInkProbe=()=>{inkMeasuring=false;return [...inkSamples]};
 const members=Array.from({length:8},(_,i)=>({id:'p'+i,name:['عمر','ليان','عبدالله','أحمد','نور','سارة','يزن','هبة'][i],avatar:i%4,score:i*50,connected:true}));
-let state={game:'ersomha',phase:'draw',code:'123456',matchId:'fixture',round:1,rounds:8,drawerId:'p0',mode:'competitive',settings:{cycles:1,difficulty:'medium',categories:[]},deadlineAt:Date.now()+60000,participants:members.map(p=>p.id),members,drawing:{epoch:1,seq:0},myWord:'قطار',category:'transport',publicWord:{wordLengths:[],letters:[]},guessedIds:[],recentGuesses:[]};
+const fixtureCall={id:'fixture-call',name:'مكالمة الشلّة',scope:'group',status:'active',acceptedAt:Date.now()-20000};
+const fixtureMedia={connected:true,connecting:false,muted:true,userId:'p0',participants:members.slice(0,2).map((person,index)=>({...person,userId:person.id,muted:!index,speaking:!!index}))};
+let state={game:'ersomha',phase:'draw',code:'123456',matchId:1,round:1,rounds:8,drawerId:'p0',mode:'competitive',settings:{cycles:1,difficulty:'medium',categories:[]},deadlineAt:Date.now()+60000,participants:members.map(p=>p.id),members,drawing:{epoch:1,seq:0},myWord:'قطار',category:'transport',publicWord:{wordLengths:[],letters:[]},guessedIds:[],recentGuesses:[]};
 let operations=[],undone=[],seq=0,epoch=1,hold=false,delayed=[];const commands=[],listeners=new Set();
 const emit=(kind,fields={})=>{const event={type:'drawing',kind,matchId:state.matchId,round:state.round,epoch,seq,...fields};for(const listener of listeners)listener(event)};
 const snapshot=()=>emit('sync',{ops:operations.map(o=>({...o,points:o.points.map(p=>[...p])})),undoneIds:undone,chunk:0,chunks:1});
-const client={ws:{bufferedAmount:0},subscribeDrawing(fn){listeners.add(fn);return()=>listeners.delete(fn)},command(type,fields={}){commands.push({type,fields,at:performance.now()});return new Promise((resolve,reject)=>{const run=()=>{if(type==='drawing_sync'){snapshot();resolve({ok:true});return}if(type!=='drawing_sync'&&fields.epoch!==epoch){reject(Object.assign(new Error('ERSOMHA_CANVAS_STALE'),{code:'ERSOMHA_CANVAS_STALE'}));return}if(type==='drawing_batch'){operations=operations.filter(op=>!undone.includes(op.strokeId));undone=[];let previous=operations.find(op=>op.strokeId===fields.strokeId);if(previous){previous.points.push(...fields.points);previous.end=fields.end}else operations.push({...fields,points:[...fields.points]});seq++;emit('append',{op:fields});resolve({ok:true,seq});return}if(type==='drawing_undo'){const found=[...operations].reverse().find(op=>op.end&&!undone.includes(op.strokeId));if(found){undone.push(found.strokeId);seq++;emit('undo',{strokeId:found.strokeId})}resolve({ok:true});return}if(type==='drawing_redo'){const id=undone.pop();if(id){seq++;emit('redo',{strokeId:id})}resolve({ok:true});return}if(type==='drawing_clear'){operations=[];undone=[];epoch++;seq=0;emit('clear');resolve({ok:true});return}reject(Error(type))};if(hold)delayed.push(run);else setTimeout(run,type==='drawing_batch'?120:0)})}};
-function App(){const[value,setValue]=useState({state,index:0,status:'connected',drawerReady:true});window.harness={set(patch){setValue(old=>{const next={...old,...patch,state:patch.state?{...old.state,...patch.state}:old.state};state=next.state;return next})},commands,client,snapshot,hold(value){hold=value;if(!value){const pending=delayed;delayed=[];pending.forEach(fn=>fn())}},operations:()=>operations,emit};return <><BrandFonts/><style>{tokens}</style><style>{ui}</style><style>{brand}</style><style>{online}</style><style>{'.fixture-room-header{height:80px;flex:none;overflow:hidden}.fixture-room-header .topbar{min-height:42px;margin:0}.fixture-room-header .topbar h1{font-size:1rem}.fixture-room-header .eyebrow{font-size:.6rem}.fixture-room-header .online-connection{padding:3px 8px;margin-top:3px;font-size:.7rem}'}</style><main className="screen online-screen stack"><div className="fixture-room-header"><TopBar title="ارسمها" eyebrow="غرفة 123456" end={<Button size="sm">خروج</Button>}/><p className="online-connection connected">متصل · كل واحد بجواله</p></div><ErsomhaMatch state={value.state} me={members[value.index]} disabled={value.status!=='connected'} isHost={value.index===0} act={async(type,fields)=>{commands.push({type,fields});if(type==='guess'){window.harness.set({state:{myGuessed:true,guessedIds:[members[value.index].id]}})}return true}} client={client} status={value.status} drawerReady={value.drawerReady} onReport={async()=>{}} /></main></>};createRoot(document.getElementById('root')).render(<App/>);` }, bundle: true, write: false, format: 'iife', jsx: 'automatic', loader: { '.css': 'text', '.webp': 'dataurl', '.woff2': 'dataurl' }, logLevel: 'silent' });
+const client={ws:{bufferedAmount:0},subscribeDrawing(fn){listeners.add(fn);return()=>listeners.delete(fn)},command(type,fields={}){commands.push({type,fields,at:performance.now()});return new Promise((resolve,reject)=>{const run=()=>{if(fields.matchId!==state.matchId||fields.round!==state.round){reject(Object.assign(new Error('STALE'),{code:'STALE'}));return}if(type==='drawing_sync'){snapshot();resolve({ok:true});return}if(type!=='drawing_sync'&&fields.epoch!==epoch){reject(Object.assign(new Error('ERSOMHA_CANVAS_STALE'),{code:'ERSOMHA_CANVAS_STALE'}));return}if(type==='drawing_batch'){operations=operations.filter(op=>!undone.includes(op.strokeId));undone=[];let previous=operations.find(op=>op.strokeId===fields.strokeId);if(previous){previous.points.push(...fields.points);previous.end=fields.end}else operations.push({...fields,points:[...fields.points]});seq++;emit('append',{op:fields});resolve({ok:true,seq});return}if(type==='drawing_undo'){const found=[...operations].reverse().find(op=>op.end&&!undone.includes(op.strokeId));if(found){undone.push(found.strokeId);seq++;emit('undo',{strokeId:found.strokeId})}resolve({ok:true});return}if(type==='drawing_redo'){const id=undone.pop();if(id){seq++;emit('redo',{strokeId:id})}resolve({ok:true});return}if(type==='drawing_clear'){operations=[];undone=[];epoch++;seq=0;emit('clear');resolve({ok:true});return}reject(Error(type))};if(hold)delayed.push(run);else setTimeout(run,type==='drawing_batch'?120:0)})}};
+function App(){const[value,setValue]=useState({state,index:0,status:'connected',drawerReady:true});useCallDockLayout(Boolean(value.showCall));window.harness={back,set(patch){setValue(old=>{const next={...old,...patch,state:patch.state?{...old.state,...patch.state}:old.state};state=next.state;return next})},commands,client,snapshot,hold(value){hold=value;if(!value){const pending=delayed;delayed=[];pending.forEach(fn=>fn())}},operations:()=>operations,emit};return <><BrandFonts/><style>{tokens}</style><style>{ui}</style><style>{brand}</style><style>{online}</style><style>{'.fixture-room-header{height:80px;flex:none;overflow:hidden}.fixture-room-header .topbar{min-height:42px;margin:0}.fixture-room-header .topbar h1{font-size:1rem}.fixture-room-header .eyebrow{font-size:.6rem}.fixture-room-header .online-connection{padding:3px 8px;margin-top:3px;font-size:.7rem}'}</style><main className="screen online-screen stack"><div className="fixture-room-header"><TopBar title="ارسمها" eyebrow="غرفة 123456" end={<Button size="sm">خروج</Button>}/><p className="online-connection connected">متصل · كل واحد بجواله</p></div><ErsomhaMatch state={value.state} me={members[value.index]} disabled={value.status!=='connected'} isHost={value.index===0} act={async(type,fields)=>{commands.push({type,fields});if(type==='guess'){window.harness.set({state:{myGuessed:true,guessedIds:[members[value.index].id]}})}return true}} client={client} status={value.status} drawerReady={value.drawerReady} onReport={async()=>{}} /></main>{value.showCall&&<CallControls call={fixtureCall} media={fixtureMedia} currentUserId="p0" privateTurn={value.index===0&&value.state.phase==="draw"} />}</>};createRoot(document.getElementById('root')).render(<App/>);` }, bundle: true, write: false, format: 'iife', jsx: 'automatic', loader: { '.css': 'text', '.webp': 'dataurl', '.woff2': 'dataurl' }, logLevel: 'silent' });
 const html = `<!doctype html><html lang="ar" dir="rtl"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><div id="root"></div><script>${bundle.outputFiles[0].text}</script></html>`;
 const server = http.createServer((request, response) => { response.writeHead(200, { 'content-type': 'text/html;charset=utf-8' }); response.end(html); });
 await new Promise(resolve => server.listen(0, '127.0.0.1', resolve));
@@ -33,7 +35,7 @@ try {
     const page = await browser.newPage({ viewport: { width: 390, height: 844 }, deviceScaleFactor: 1 });
     const errors = []; page.on('pageerror', error => errors.push(error.message));
     try {
-      await page.goto(origin); await page.locator('.ers-board-status').waitFor({ state: 'hidden' });
+      await page.goto(origin); await page.locator('canvas').waitFor(); await page.locator('.ers-board-status').waitFor({ state: 'hidden' });
       const board = page.locator('canvas'), box = await board.boundingBox();
       assert.ok(Math.abs(box.width - box.height) < 2, JSON.stringify(box));
       await page.mouse.move(box.x + box.width * .2, box.y + box.height * .2); await page.mouse.down();
@@ -54,6 +56,60 @@ try {
       const inkSamples = await page.evaluate(() => window.finishInkProbe()); const orderedInk = [...inkSamples].sort((a,b)=>a-b); const inkP95 = orderedInk[Math.ceil(orderedInk.length * .95) - 1];
       assert.ok(inkSamples.length >= 50, 'Measure at least 50 genuine pointer callbacks, not gesture wall time'); assert.ok(inkP95 <= 32, `Pointer callback to readable local ink P95 ${inkP95}ms exceeds 32ms`);
       await page.waitForFunction(() => window.harness.operations().filter(op => op.end).length >= 2);
+      // Regression: a batch drain used to consume the same timer as an active
+      // stroke's flush, leaving newer tail points local until pointer-up.
+      const heldBefore = await page.evaluate(() => window.harness.operations().length);
+      await board.evaluate(canvas => {
+        const rect = canvas.getBoundingClientRect();
+        window.heldDrawingPointer = (type, index) => canvas.dispatchEvent(new PointerEvent(type, { bubbles: true, cancelable: true, pointerId: 85, pointerType: 'touch', button: 0, buttons: type === 'pointerup' ? 0 : 1, clientX: rect.left + rect.width * (.1 + index * .01), clientY: rect.top + rect.height * .4 }));
+        window.heldDrawingPointer('pointerdown', 0);
+        for (let index = 1; index <= 36; index++) window.heldDrawingPointer('pointermove', index);
+      });
+      await page.waitForTimeout(110);
+      await page.evaluate(() => { for (let index = 37; index <= 40; index++) window.heldDrawingPointer('pointermove', index); });
+      await page.waitForFunction(before => window.harness.operations().length > before && window.harness.operations().at(-1).points.length >= 41, heldBefore, { timeout: 1000 });
+      const heldStroke = await page.evaluate(() => window.harness.operations().at(-1));
+      assert.equal(heldStroke.end, false, 'The remaining line reaches the remote side while the drawing finger is still held');
+      assert.ok(Math.abs(heldStroke.points.at(-1)[0] - .5) < .001, 'The newer tail cannot wait for pointer-up behind a scheduled drain');
+      await page.evaluate(() => window.heldDrawingPointer('pointerup', 40));
+      await page.waitForFunction(() => window.harness.operations().at(-1).end);
+      // Reproduce iOS-style editor and empty-coalesced-pointer paths. The actual
+      // canvas/component handles these events; only transport and edge timing
+      // are synthetic. No physical Pencil/keyboard claim is made here.
+      const gestureBefore = await page.evaluate(() => window.harness.operations().length);
+      const gesture = await board.evaluate(canvas => {
+        const editor = document.createElement('input'); editor.value = 'مسودة محفوظة'; editor.id = 'previous-editor'; document.body.append(editor); editor.focus();
+        window.harness.client.state = { matchId: 99, round: 99 };
+        const rect = canvas.getBoundingClientRect();
+        const send = (type, id, x, y) => canvas.dispatchEvent(new PointerEvent(type, { bubbles: true, cancelable: true, pointerId: id, pointerType: 'touch', isPrimary: id === 81, button: 0, buttons: type === 'pointerup' ? 0 : 1, clientX: rect.left + rect.width * x, clientY: rect.top + rect.height * y }));
+        const downPrevented = !send('pointerdown', 81, .2, .25);
+        send('pointercancel', 82, .4, .4); // A different finger must not finish 81.
+        send('pointermove', 81, .5, .45); // Synthetic events expose [] coalescing.
+        send('pointerup', 81, .75, .2);
+        const editorBlurred = document.activeElement !== editor, draft = editor.value; editor.remove();
+        const blocked = ['selectstart', 'contextmenu', 'dragstart'].map(type => { const event = new Event(type, { bubbles: true, cancelable: true }); canvas.dispatchEvent(event); return event.defaultPrevented; });
+        return { downPrevented, editorBlurred, draft, blocked };
+      });
+      assert.deepEqual(gesture, { downPrevented: true, editorBlurred: true, draft: 'مسودة محفوظة', blocked: [true, true, true] });
+      await page.waitForFunction(before => window.harness.operations().length > before && window.harness.operations().at(-1).end, gestureBefore);
+      const touchStroke = await page.evaluate(() => window.harness.operations().at(-1));
+      assert.ok(touchStroke.points.length >= 3, 'Empty coalescing and an unrelated pointer cancel cannot discard touch movement');
+      assert.ok(Math.abs(touchStroke.points.at(-1)[0] - .75) < .001 && Math.abs(touchStroke.points.at(-1)[1] - .2) < .001, 'Pointer-up contributes its final position');
+      const quickBefore = await page.evaluate(() => window.harness.operations().length);
+      await board.evaluate(canvas => { const rect = canvas.getBoundingClientRect(); for (const [type, x, y] of [['pointerdown', .1, .8], ['pointerup', .8, .1]]) canvas.dispatchEvent(new PointerEvent(type, { bubbles: true, cancelable: true, pointerId: 83, pointerType: 'pen', button: 0, buttons: type === 'pointerup' ? 0 : 1, clientX: rect.left + rect.width * x, clientY: rect.top + rect.height * y })); });
+      await page.waitForFunction(before => window.harness.operations().length > before && window.harness.operations().at(-1).end, quickBefore);
+      assert.equal(await page.evaluate(() => window.harness.operations().at(-1).points.length), 2, 'A quick down/up preserves both endpoints without a move event');
+      const lostCaptureBefore = await page.evaluate(() => window.harness.operations().length);
+      await board.evaluate(canvas => {
+        const original = canvas.setPointerCapture; canvas.setPointerCapture = () => { throw new DOMException('Pointer retired', 'NotFoundError'); };
+        const rect = canvas.getBoundingClientRect();
+        canvas.dispatchEvent(new PointerEvent('pointerdown', { bubbles: true, cancelable: true, pointerId: 84, pointerType: 'touch', button: 0, buttons: 1, clientX: rect.left + rect.width * .2, clientY: rect.top + rect.height * .2 }));
+        document.dispatchEvent(new PointerEvent('pointerup', { bubbles: true, cancelable: true, pointerId: 84, pointerType: 'touch', button: 0, buttons: 0, clientX: rect.right + 20, clientY: rect.top - 20 }));
+        canvas.setPointerCapture = original;
+      });
+      await page.waitForFunction(before => window.harness.operations().length > before && window.harness.operations().at(-1).end, lostCaptureBefore);
+      assert.deepEqual(await page.evaluate(() => window.harness.operations().at(-1).points.at(-1)), [1, 0], 'A rejected pointer capture still finishes an outside release and clamps its coordinate');
+      assert.ok(await page.evaluate(() => window.harness.commands.every(command => !command.type.startsWith('drawing_') || (command.fields.matchId === 1 && command.fields.round === 1))), 'Drawing commands retain the round displayed by React even when the client already knows round99');
       await page.getByRole('button', { name: 'تراجع عن آخر خط', exact: true }).click();
       await page.getByRole('button', { name: 'إعادة الخط المتراجع عنه', exact: true }).waitFor({ state: 'visible' });
       await page.waitForFunction(() => !document.querySelector('[aria-label="إعادة الخط المتراجع عنه"]').disabled);
@@ -97,26 +153,69 @@ try {
       await page.screenshot({ path: path.join(output, `${name}-choice-phone.png`), fullPage: true });
       await page.evaluate(() => window.harness.set({ index: 1, state: { phase: 'draw', myWord: null, myChoices: [], deadlineAt: Date.now() + 60000, publicWord: { wordLengths: [4], letters: [{ index: 1, char: 'ط' }] } } }));
       const guess = page.getByRole('textbox', { name: 'ما الذي يرسمه صاحبك؟' }); await guess.fill('قطار');
+      assert.equal(await guess.evaluate(node => document.activeElement === node && getComputedStyle(node).caretColor !== 'rgba(0, 0, 0, 0)'), true, 'Only the drawing surface suppresses caret/selection; the guess editor still works');
       await guess.dispatchEvent('compositionstart'); await guess.press('Enter'); assert.equal(await page.evaluate(() => window.harness.commands.filter(command => command.type === 'guess').length), 0, 'IME confirmation cannot submit an unfinished guess'); await guess.dispatchEvent('compositionend');
       await guess.press('Enter'); await page.getByText('عرفتها! ✨').waitFor({ timeout: 5000 });
       await page.evaluate(() => window.harness.set({ index: 2, state: { myGuessed: false } }));
+      await page.evaluate(() => window.harness.set({ showCall: true })); await page.getByTestId('call-dock').waitFor();
+      await page.getByTestId('call-dock').evaluate(node => { window.fixtureCallDock = node; });
       await page.getByRole('textbox', { name: 'ما الذي يرسمه صاحبك؟' }).focus();
       await page.evaluate(() => { const viewport = new EventTarget(); Object.defineProperties(viewport, { height: { value: 420 }, scale: { value: 1 } }); Object.defineProperty(window, 'visualViewport', { value: viewport, configurable: true }); document.dispatchEvent(new FocusEvent('focusin')); viewport.dispatchEvent(new Event('resize')); });
       await page.waitForFunction(() => document.querySelector('.ersomha').classList.contains('is-keyboard'));
+      await page.waitForFunction(() => document.querySelector('[data-testid="call-dock"]').dataset.keyboard === 'true');
+      assert.equal(await page.getByTestId('call-dock').getAttribute('data-collapsed'), 'true', 'The existing connected call compacts during guess keyboard input');
+      assert.equal(await page.getByTestId('call-dock').evaluate(node => node === window.fixtureCallDock), true, 'Guess keyboard changes keep the same call controls mounted');
       const keyboardBoard = await board.boundingBox(); assert.ok(Math.abs(keyboardBoard.width - keyboardBoard.height) < 2 && keyboardBoard.width <= 195);
       await page.screenshot({ path: path.join(output, `${name}-keyboard-phone.png`), fullPage: true });
       const layouts = [];
-      for (const viewport of [{ width: 320, height: 740 }, { width: 375, height: 812 }, { width: 390, height: 844 }, { width: 844, height: 390 }]) {
-        await page.setViewportSize(viewport); await page.reload(); await page.locator('.ers-board-status').waitFor({ state: 'hidden' }); await page.evaluate(async () => { await document.fonts.ready; await Promise.all(document.getAnimations().filter(animation => animation.effect.getTiming().iterations !== Infinity).map(animation => animation.finished.catch(() => {}))); });
-        const layout = await page.evaluate(() => ({ width: innerWidth, overflow: document.documentElement.scrollWidth > innerWidth, board: (() => { const r = document.querySelector('canvas').getBoundingClientRect(); return { width: r.width, height: r.height, left: r.left, right: r.right, top: r.top, bottom: r.bottom }; })(), tools:[...document.querySelectorAll('.ers-tools button')].map(button=>{const r=button.getBoundingClientRect();return {label:button.textContent,top:r.top,bottom:r.bottom,width:r.width,height:r.height}}), colours: [...document.querySelectorAll('.ers-colour')].map(button => { const r = button.getBoundingClientRect(); return { width: r.width, height: r.height }; }) }));
+      for (const viewport of [{ width: 320, height: 740 }, { width: 375, height: 812 }, { width: 390, height: 844 }, { width: 430, height: 932 }, { width: 620, height: 430 }, { width: 667, height: 375 }, { width: 740, height: 320 }, { width: 1024, height: 768 }, { width: 1440, height: 900 }, { width: 844, height: 390 }]) {
+        await page.setViewportSize(viewport); await page.reload(); await page.locator('canvas').waitFor(); await page.locator('.ers-board-status').waitFor({ state: 'hidden' }); await page.evaluate(async () => { await document.fonts.ready; await Promise.all(document.getAnimations().filter(animation => animation.effect.getTiming().iterations !== Infinity).map(animation => animation.finished.catch(() => {}))); });
+        const layout = await page.evaluate(() => ({ width: innerWidth, overflow: document.documentElement.scrollWidth > innerWidth, board: (() => { const r = document.querySelector('canvas').getBoundingClientRect(); return { width: r.width, height: r.height, left: r.left, right: r.right, top: r.top, bottom: r.bottom }; })(), tools:[...document.querySelectorAll('.ers-tools button')].filter(button=>button.getClientRects().length&&getComputedStyle(button).display!=='none').map(button=>{const r=button.getBoundingClientRect();return {label:button.textContent,top:r.top,bottom:r.bottom,width:r.width,height:r.height}}), colours: [...document.querySelectorAll('.ers-colour')].filter(button=>button.getClientRects().length&&getComputedStyle(button).display!=='none').map(button => { const r = button.getBoundingClientRect(); return { width: r.width, height: r.height }; }) }));
         assert.equal(layout.overflow, false, JSON.stringify(layout)); assert.ok(layout.board.left >= 0 && layout.board.right <= viewport.width + 1); assert.ok(Math.abs(layout.board.width - layout.board.height) < 2); assert.ok(layout.colours.every(control => control.width >= 44 && control.height >= 44), JSON.stringify(layout));
+        if (viewport.width === 844) { assert.ok(layout.board.width >= 300, 'Landscape focus provides at least a300px square instead of the old approximately180–230px board'); assert.ok(Math.abs((layout.board.left + layout.board.right) / 2 - viewport.width / 2) <= 2, 'The landscape board is physically centered when space permits'); }
+        if (viewport.width > viewport.height) {
+          assert.ok(Math.abs((layout.board.left + layout.board.right) / 2 - viewport.width / 2) <= 2, 'Landscape workspace keeps the square centered at short and tablet sizes');
+          await page.evaluate(() => window.harness.set({ showCall: true })); await page.getByTestId('call-dock').waitFor();
+          const overlaps = await page.evaluate(() => {
+            const call = document.querySelector('[data-testid="call-dock"]').getBoundingClientRect();
+            return [...document.querySelectorAll('.ers-tools button')].filter(button=>button.getClientRects().length&&getComputedStyle(button).display!=='none').some(button=>{const tool=button.getBoundingClientRect();return Math.min(tool.right,call.right)>Math.max(tool.left,call.left)&&Math.min(tool.bottom,call.bottom)>Math.max(tool.top,call.top);});
+          });
+          assert.equal(overlaps, false, 'The initial call circles do not cover landscape drawing tools');
+          const wordClear = await page.evaluate(() => {
+            const word = document.querySelector('.ers-match-header h1').getBoundingClientRect(), call = document.querySelector('[data-testid="call-dock"]').getBoundingClientRect();
+            return word.right <= call.left || word.left >= call.right || word.bottom <= call.top || word.top >= call.bottom;
+          });
+          assert.equal(wordClear, true, 'Initial call circles leave the private drawing word readable');
+        }
         if (viewport.width === 390 || viewport.width === 844) assert.ok(layout.board.top >= 0 && layout.board.bottom <= viewport.height + 1 && layout.tools.every(tool => tool.top >= 0 && tool.bottom <= viewport.height + 1), `Canvas and essential tools must be visible together after the 80px room header: ${JSON.stringify(layout)}`);
         layouts.push(layout); await page.screenshot({ path: path.join(output, `${name}-draw-${viewport.width}.png`), fullPage: true });
         if (viewport.width === 390 || viewport.width === 844) {
           await page.locator('.fixture-room-header').evaluate(node => { node.style.height = '140px'; });
-          await page.waitForFunction(height => { const board=document.querySelector('canvas').getBoundingClientRect();return board.bottom<=height+1&&[...document.querySelectorAll('.ers-tools button')].every(button=>button.getBoundingClientRect().bottom<=height+1); }, viewport.height);
+          await page.waitForFunction(height => { const board=document.querySelector('canvas').getBoundingClientRect();return board.bottom<=height+1&&[...document.querySelectorAll('.ers-tools button')].filter(button=>button.getClientRects().length&&getComputedStyle(button).display!=='none').every(button=>button.getBoundingClientRect().bottom<=height+1); }, viewport.height);
           await page.screenshot({ path: path.join(output, `${name}-draw-${viewport.width}-header140.png`), fullPage: true });
           await page.locator('.fixture-room-header').evaluate(node => { node.style.height = '80px'; });
+        }
+        if (viewport.width === 844) {
+          await page.evaluate(() => window.harness.set({ showCall: true })); await page.getByTestId('call-dock').waitFor();
+          await page.getByTestId('call-dock').evaluate(node => { window.fixtureCallDock = node; });
+          await page.screenshot({ path: path.join(output, `${name}-draw-844-call.png`), fullPage: true });
+          assert.equal(await page.getByTestId('call-dock-mute').isDisabled(), true, 'The drawer cannot unmute the ongoing call while its private word is visible');
+          const beforeFocusChange = await page.evaluate(() => ({ ink: window.harness.operations(), syncs: window.harness.commands.filter(item => item.type === 'drawing_sync').length }));
+          await page.getByRole('button', { name: 'ألوان وأدوات إضافية', exact: true }).click();
+          const toolsDialog = page.getByRole('dialog'); await toolsDialog.waitFor();
+          assert.equal(await toolsDialog.locator('.ers-colour').count(), 12, 'All12 colours remain reachable through the compact toolbar');
+          await toolsDialog.getByRole('button', { name: 'رمادي', exact: true }).click();
+          assert.equal(await toolsDialog.getByRole('button', { name: 'رمادي', exact: true }).getAttribute('aria-pressed'), 'true');
+          await page.evaluate(() => window.harness.back()); await toolsDialog.waitFor({ state: 'hidden' });
+          assert.equal(await page.locator('[data-ersomha-drawing-focus="true"]').count(), 1, 'Back closes the tools dialog before collapsing the drawing workspace');
+          await page.evaluate(() => window.harness.back());
+          await page.getByRole('button', { name: 'تكبير لوحة الرسم', exact: true }).waitFor();
+          assert.equal(await page.locator('[data-ersomha-drawing-focus="true"]').count(), 0);
+          await page.getByRole('button', { name: 'تكبير لوحة الرسم', exact: true }).click();
+          await page.locator('[data-ersomha-drawing-focus="true"]').waitFor();
+          assert.deepEqual(await page.evaluate(() => ({ ink: window.harness.operations(), syncs: window.harness.commands.filter(item => item.type === 'drawing_sync').length })), beforeFocusChange, 'Collapsing and expanding preserve the same canvas, ink and drawing subscription');
+          assert.equal(await page.getByTestId('call-dock').evaluate(node => node === window.fixtureCallDock), true, 'Room focus and dialog navigation preserve the same connected call controls');
+          assert.equal(await page.getByTestId('call-dock').locator('[role="status"]').innerText(), 'صوت المكالمة متصل');
         }
       }
       await page.evaluate(() => { document.documentElement.style.setProperty('--safe-bottom', '21px'); document.documentElement.style.setProperty('--safe-left', '44px'); document.documentElement.style.setProperty('--safe-right', '44px'); });
@@ -128,7 +227,7 @@ try {
       await page.getByRole('button', { name: 'الإبلاغ عن الرسمة' }).click(); await page.getByRole('dialog').getByLabel('السبب').selectOption('محتوى غير مناسب'); await page.evaluate(() => window.harness.set({ state: { round: 2 } })); await page.getByRole('dialog').waitFor({ state: 'hidden' });
       await page.emulateMedia({ reducedMotion: 'reduce' }); assert.equal(await page.locator('.ers-word-banner').evaluate(node => getComputedStyle(node).animationName), 'none');
       assert.deepEqual(errors, []);
-      result.browsers.push({ name, localInkBeforeRemoteAck: true, localInkProbe: { scope: 'Genuine browser pointer capture callback to first canvas stroke/fill with readable ink at its point; includes 1x1 pixel readback, does not measure physical display presentation', sampleCount: inkSamples.length, p95Ms: inkP95, maxMs: Math.max(...inkSamples), samplesMs: inkSamples }, localGestureMeasurementMs: local.time - start, batches: batches.length, undoRedo: true, clearConfirmation: true, backpressureResume: true, reconnectSync: true, mutePrivacyCurtain: true, guessing: true, imeGuard: true, keyboardSquareBoard: true, reducedMotion: true, layouts });
+      result.browsers.push({ name, localInkBeforeRemoteAck: true, localInkProbe: { scope: 'Genuine browser pointer capture callback to first canvas stroke/fill with readable ink at its point; includes 1x1 pixel readback, does not measure physical display presentation', sampleCount: inkSamples.length, p95Ms: inkP95, maxMs: Math.max(...inkSamples), samplesMs: inkSamples }, localGestureMeasurementMs: local.time - start, batches: batches.length, localEditorBlurAndDraftPreservation: true, emptyCoalescedMovement: true, pointerEndAndForeignCancel: true, rejectedCaptureOutsideRelease: true, callControlsPreservedAndKeyboardCompacted: true, explicitDisplayedRoundIdentity: true, expandedLandscapeAndCompactTools: true, layeredBackAndCanvasPreservation: true, undoRedo: true, clearConfirmation: true, backpressureResume: true, reconnectSync: true, mutePrivacyCurtain: true, guessing: true, imeGuard: true, keyboardSquareBoard: true, reducedMotion: true, layouts });
     } catch (error) {
       await page.screenshot({ path: path.join(output, `${name}-failure.png`), fullPage: true }).catch(() => {});
       await fs.writeFile(path.join(output, `${name}-failure.json`), JSON.stringify(await page.evaluate(() => ({ commands: window.harness?.commands, text: document.body.innerText, input: document.querySelector('.ers-guess input')?.value, guessDisabled: document.querySelector('.ers-guess button')?.disabled, active: document.activeElement?.tagName })).catch(() => ({})), null, 2));
