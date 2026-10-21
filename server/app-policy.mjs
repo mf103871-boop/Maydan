@@ -3,8 +3,30 @@ import { json } from './protocol.mjs';
 const APP_STORE_ID = '6808385717';
 const BUNDLE_ID = 'Maydan';
 const MESSAGE = 'يتوفر تحديث جديد لميدان. حدّث التطبيق من App Store للمتابعة.';
-const CACHE_TTL_MS = 5 * 60_000;
-const LOOKUP_TIMEOUT_MS = 1800;
+// Local candidate only: deployment of this alternative has not been approved.
+// This records a completed public-release check, not continuing Apple availability.
+// It intentionally has no expiry. Disable the existing flag to revoke enforcement;
+// a different threshold requires a newly reviewed, independently verified record.
+const VERIFIED_RELEASE = Object.freeze({
+  schemaVersion: 1,
+  appStoreId: APP_STORE_ID,
+  bundleId: BUNDLE_ID,
+  version: '1.8',
+  build: 22,
+  buildId: '093728e9-5d77-4d9f-8725-5e1c4de8c5f9',
+  appStoreVersionId: 'd15b847b-310e-441a-a579-1533a75c0b25',
+  sourceCommit: '2fe524e98f8a455b1b801ab4c0fdd9d82f9396ef',
+  verifiedAt: '2026-10-21T04:56:30.151Z',
+  evidenceSHA256: 'e01918ea6c1e87304f2c146b3c684b052b0bc842407700dffd13a1aac33a1206',
+  officialPublic: true,
+  downloadable: true,
+  countries: Object.freeze({
+    JO: Object.freeze({ minimumOS: '16.4' }),
+    SA: Object.freeze({ minimumOS: '16.4' }),
+    AE: Object.freeze({ minimumOS: '16.4' }),
+    US: Object.freeze({ minimumOS: '16.4' }),
+  }),
+});
 
 // ISO 3166-1 alpha-3 -> alpha-2, from Unicode CLDR codeMappings (CLDR 48).
 // Reserved/obsolete regions are excluded. Unknown StoreKit regions fail open.
@@ -54,56 +76,30 @@ function configuredPolicy(env) {
   return { minimumBuild: Number(env.IOS_MIN_SUPPORTED_BUILD), minimumVersion: env.IOS_MIN_SUPPORTED_VERSION, version };
 }
 
-function availableApp(data, country) {
-  if (!data || !Number.isInteger(data.resultCount) || !Array.isArray(data.results) || data.resultCount !== data.results.length) throw new Error('Invalid lookup');
-  if (data.resultCount === 0) return null;
-  if (data.resultCount !== 1) throw new Error('Unexpected lookup');
-  const app = data.results[0];
-  if (app?.trackId !== Number(APP_STORE_ID) || app.bundleId !== BUNDLE_ID || app.kind !== 'software' || app.wrapperType !== 'software') throw new Error('Wrong app');
-  const version = versionParts(app.version), minimumOS = versionParts(app.minimumOsVersion);
-  const url = new URL(app.trackViewUrl);
-  // Apple may fall back to another country. Never treat that as local availability.
-  if (!version || !minimumOS || url.protocol !== 'https:' || url.hostname !== 'apps.apple.com' || url.port || url.username || url.password
-      || url.pathname.split('/')[1]?.toUpperCase() !== country || !url.pathname.endsWith(`/id${APP_STORE_ID}`)) throw new Error('Unverified availability');
-  return { version, minimumOS };
+function verifiedRelease(record, instant) {
+  if (!record || Array.isArray(record) || typeof record !== 'object' || !Number.isFinite(instant)) return null;
+  // Pin the approved release identity and evidence. The factory override below is
+  // only a dependency-injection seam for tests; requests and env cannot supply it.
+  for (const field of ['schemaVersion', 'appStoreId', 'bundleId', 'version', 'build', 'buildId',
+    'appStoreVersionId', 'sourceCommit', 'evidenceSHA256', 'officialPublic', 'downloadable']) {
+    if (record[field] !== VERIFIED_RELEASE[field]) return null;
+  }
+  const verifiedAt = typeof record.verifiedAt === 'string' ? Date.parse(record.verifiedAt) : NaN;
+  if (!Number.isFinite(verifiedAt) || new Date(verifiedAt).toISOString() !== record.verifiedAt || verifiedAt > instant) return null;
+  if (!record.countries || typeof record.countries !== 'object' || Array.isArray(record.countries)) return null;
+  const countries = new Map();
+  for (const [country, evidence] of Object.entries(record.countries)) {
+    if (!Object.hasOwn(VERIFIED_RELEASE.countries, country)
+        || !evidence || evidence.minimumOS !== VERIFIED_RELEASE.countries[country].minimumOS) return null;
+    countries.set(country, versionParts(evidence.minimumOS));
+  }
+  return { version: record.version, build: record.build, countries };
 }
 
-// Public lookup exposes the marketing version, not CFBundleVersion. Operators must
-// first verify the configured build/version pair is the public ASC release, then
-// explicitly enable this policy. A future date or an uploaded TestFlight build is
-// never evidence of availability. The per-store lookup is a second, live guard.
-export function createIOSAppPolicy({ fetchImpl = (...args) => fetch(...args), now = Date.now, timeoutMs = LOOKUP_TIMEOUT_MS } = {}) {
-  const cache = new Map(), pending = new Map();
-  async function lookup(country, policy) {
-    const key = `${country}:${policy.minimumVersion}:${policy.minimumBuild}`;
-    const saved = cache.get(key);
-    if (saved && saved.expiresAt > now()) return saved.app;
-    cache.delete(key);
-    if (pending.has(key)) return pending.get(key);
-    const operation = (async () => {
-      const controller = new AbortController();
-      let timer;
-      try {
-        const timedOut = new Promise((_, reject) => {
-          timer = setTimeout(() => { controller.abort(); reject(new Error('Lookup timeout')); }, timeoutMs);
-        });
-        const request = (async () => {
-          const response = await fetchImpl(`https://itunes.apple.com/lookup?id=${APP_STORE_ID}&entity=software&country=${country.toLowerCase()}`, {
-            method: 'GET', headers: { accept: 'application/json' }, redirect: 'error', signal: controller.signal,
-          });
-          if (!response.ok) throw new Error('Lookup unavailable');
-          return availableApp(await response.json(), country);
-        })();
-        const app = await Promise.race([request, timedOut]);
-        // Bound isolate memory even if the operator repeatedly changes policy.
-        if (cache.size >= 256) cache.delete(cache.keys().next().value);
-        cache.set(key, { app, expiresAt: now() + CACHE_TTL_MS });
-        return app;
-      } finally { clearTimeout(timer); }
-    })();
-    pending.set(key, operation);
-    try { return await operation; } finally { pending.delete(key); }
-  }
+// Public availability and the exact ASC build were checked before this record was
+// bundled. The three existing policy flags remain the only activation controls.
+// No Apple transport, per-request availability check, or background refresh occurs.
+export function createIOSAppPolicy({ releaseRecord = VERIFIED_RELEASE, now = Date.now } = {}) {
 
   return async function iosAppPolicy(request, env) {
     if (!['GET', 'HEAD'].includes(request.method)) return json({ error: 'METHOD' }, 405, { allow: 'GET, HEAD' });
@@ -115,15 +111,17 @@ export function createIOSAppPolicy({ fetchImpl = (...args) => fetch(...args), no
     try {
       const policy = configuredPolicy(env);
       if (!policy) return send(response);
+      const release = verifiedRelease(releaseRecord, now());
+      if (!release || release.version !== policy.minimumVersion || release.build !== policy.minimumBuild) return send(response);
       const params = new URL(request.url).searchParams;
       if (params.getAll('storefront').length !== 1 || params.getAll('osVersion').length !== 1) return send(response);
       const country = countryOf(params.get('storefront')), osVersion = versionParts(params.get('osVersion'));
       if (!country || !osVersion) return send(response);
-      const app = await lookup(country, policy);
-      if (app && atLeast(app.version, policy.version) && atLeast(osVersion, app.minimumOS)) {
+      const minimumOS = release.countries.get(country);
+      if (minimumOS && atLeast(osVersion, minimumOS)) {
         Object.assign(response, { enabled: true, minimumBuild: policy.minimumBuild, minimumVersion: policy.minimumVersion });
       }
-    } catch { /* A policy/configuration/store outage must never lock a player out. */ }
+    } catch { /* Invalid configuration or unavailable policy data must never lock a player out. */ }
     return send(response);
   };
 }

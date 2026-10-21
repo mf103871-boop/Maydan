@@ -1,4 +1,5 @@
 import Foundation
+import Network
 import StoreKit
 import UIKit
 
@@ -29,6 +30,17 @@ final class AppUpdateCoordinator {
     }()
     private var task: Task<Void, Never>?
     private var deadline: Task<Void, Never>?
+    private var retryTask: Task<Void, Never>?
+    private var storefrontLookup: Task<Void, Never>?
+    private var storefrontUpdates: Task<Void, Never>?
+    private var waitingStorefrontAttempt: UInt64?
+    private var currentAttempt: UInt64?
+    private var retryState = AppUpdateRetryState()
+    private let network = NWPathMonitor()
+    private var networkSatisfied: Bool?
+    private var lastAudioBusy = false
+    private var keyboardVisible = false
+    private var privateTurn = false
     private var generation = AppUpdateCheckGeneration()
     private var observers: [NSObjectProtocol] = []
     private var panel: AppUpdatePanel?
@@ -42,6 +54,12 @@ final class AppUpdateCoordinator {
     private let simulatorFixture = ProcessInfo.processInfo.environment["MAYDAN_SIMULATOR_APP_POLICY"] == "required-then-offline"
     private var simulatorOffline = false
     private var simulatorTimer: Timer?
+    private var simulatorStorefrontAttempts = 0
+    private var simulatorObservedUnavailableStorefront = false
+    private var simulatorRequestCount = 0
+    private var simulatorLastRequest: [String: String]?
+    private var simulatorPhase = "idle"
+    private var simulatorFailOpenReason: String?
 #endif
 
     init(host: UIViewController, canPresent: @escaping () -> Bool,
@@ -55,6 +73,10 @@ final class AppUpdateCoordinator {
     deinit {
         task?.cancel()
         deadline?.cancel()
+        retryTask?.cancel()
+        storefrontLookup?.cancel()
+        storefrontUpdates?.cancel()
+        network.cancel()
         observers.forEach { NotificationCenter.default.removeObserver($0) }
 #if targetEnvironment(simulator)
         simulatorTimer?.invalidate()
@@ -66,13 +88,29 @@ final class AppUpdateCoordinator {
         started = true
         let center = NotificationCenter.default
         observers.append(center.addObserver(forName: UIApplication.didBecomeActiveNotification, object: nil, queue: .main) { [weak self] _ in
-            Task { @MainActor in self?.check() }
+            Task { @MainActor in self?.beginCycle() }
         })
         observers.append(center.addObserver(forName: UIApplication.willResignActiveNotification, object: nil, queue: .main) { [weak self] _ in
-            Task { @MainActor in self?.cancelCheck() }
+            Task { @MainActor in
+                self?.retryState.deferCheck()
+                self?.cancelCheck()
+            }
         })
+        observers.append(center.addObserver(forName: UIResponder.keyboardWillShowNotification, object: nil, queue: .main) { [weak self] _ in
+            Task { @MainActor in
+                guard let self else { return }
+                self.keyboardVisible = true
+                self.deferUntilSafe()
+            }
+        })
+        observers.append(center.addObserver(forName: UIResponder.keyboardDidHideNotification, object: nil, queue: .main) { [weak self] _ in
+            Task { @MainActor in self?.keyboardVisible = false; self?.resumePending() }
+        })
+        lastAudioBusy = SocialCoordinator.shared.isBusyForAppUpdate
+        observeConnectivity()
+        observeStorefrontUpdates()
         showChecking()
-        check()
+        beginCycle()
 #if targetEnvironment(simulator)
         if simulatorFixture {
             simulatorTimer = Timer.scheduledTimer(withTimeInterval: 0.25, repeats: true) { [weak self] _ in
@@ -82,76 +120,288 @@ final class AppUpdateCoordinator {
 #endif
     }
 
-    func audioActivityChanged() {
-        guard SocialCoordinator.shared.isBusyForAppUpdate else { return }
+    private func observeConnectivity() {
+#if targetEnvironment(simulator)
+        guard !simulatorFixture else { return }
+#endif
+        network.pathUpdateHandler = { [weak self] path in
+            let satisfied = path.status == .satisfied
+            Task { @MainActor in
+                guard let self else { return }
+                let recovered = self.networkSatisfied == false && satisfied
+                self.networkSatisfied = satisfied
+                if recovered { self.retryState.deferCheck(); self.resumePending() }
+            }
+        }
+        network.start(queue: DispatchQueue(label: "maydan.update-connectivity"))
+    }
+
+    func audioActivityChanged(commandCompleted: Bool = false) {
+        let busy = SocialCoordinator.shared.isBusyForAppUpdate
+        guard busy != lastAudioBusy else {
+            // Permission denial can clear `starting` without ever emitting a
+            // busy event. Explicit command completion is a recovery signal;
+            // repeated speaking snapshots are not.
+            if commandCompleted && !busy { resumePending() }
+            return
+        }
+        lastAudioBusy = busy
+        if busy { deferUntilSafe() }
+        else { resumePending() }
+    }
+
+    private func observeStorefrontUpdates() {
+#if targetEnvironment(simulator)
+        guard !simulatorFixture else { return }
+#endif
+        storefrontUpdates = Task { @MainActor [weak self] in
+            for await storefront in Storefront.updates {
+                guard !Task.isCancelled else { return }
+                self?.storefrontChanged(storefront.countryCode)
+            }
+        }
+    }
+
+    func navigationChanged() {
+        guard started else { return }
+        guard safeToCheck else {
+            if SocialCoordinator.shared.isBusyForAppUpdate { lastAudioBusy = true }
+            // A same-document route change can occur during StoreKit/HTTP work.
+            // Invalidate it immediately, rather than waiting for its completion.
+            if currentAttempt != nil || requiredPolicy != nil || retryTask != nil { deferUntilSafe() }
+            return
+        }
+        resumePending()
+    }
+
+    func setPrivateTurn(_ value: Bool) {
+        guard privateTurn != value else { return }
+        privateTurn = value
+        if value { deferUntilSafe() }
+        else { resumePending() }
+    }
+
+    private var safeToCheck: Bool {
+        !SocialCoordinator.shared.isBusyForAppUpdate && !privateTurn && !keyboardVisible && canPresent()
+    }
+
+    private func beginCycle() {
+        cancelCheck()
+        retryState.beginCycle()
+        check()
+    }
+
+    private func deferUntilSafe() {
+        guard started, retryState.needsCheck || currentAttempt != nil || requiredPolicy != nil else { return }
+        lastAudioBusy = SocialCoordinator.shared.isBusyForAppUpdate
+        retryState.deferCheck()
         cancelCheck()
         allowGame()
+#if targetEnvironment(simulator)
+        simulatorPhase = "deferred"
+#endif
+    }
+
+    private func resumePending() {
+        guard started, retryState.needsCheck, currentAttempt == nil,
+              UIApplication.shared.applicationState == .active else { return }
+        guard safeToCheck else {
+            if SocialCoordinator.shared.isBusyForAppUpdate { lastAudioBusy = true }
+            return
+        }
+        // Coalesce URL/keyboard/social notifications in the same UI transition.
+        // This does not reset or replenish the finite failure-retry budget.
+        retryTask?.cancel()
+        retryTask = Task { @MainActor [weak self] in
+            do { try await Task.sleep(nanoseconds: 150_000_000) } catch { return }
+            guard let self else { return }
+            self.retryTask = nil
+            self.check()
+        }
+    }
+
+    private func scheduleAutomaticRetry() {
+        guard retryTask == nil, UIApplication.shared.applicationState == .active,
+              safeToCheck, let delay = retryState.nextAutomaticDelay() else { return }
+        retryTask = Task { @MainActor [weak self] in
+            do { try await Task.sleep(nanoseconds: delay) } catch { return }
+            guard let self else { return }
+            self.retryTask = nil
+            self.check()
+        }
+    }
+
+    private func storefrontChanged(_ country: String) {
+        guard started else { return }
+        retryState.deferCheck()
+        guard UIApplication.shared.applicationState == .active, safeToCheck else { return }
+        // An update supplies a fresh StoreKit value even if an older current
+        // lookup ignores cancellation. No second lookup task is created.
+        cancelCheck()
+        check(storefrontHint: country)
     }
 
     private func cancelCheck() {
         _ = generation.advance()
         task?.cancel(); task = nil
         deadline?.cancel(); deadline = nil
+        retryTask?.cancel(); retryTask = nil
+        waitingStorefrontAttempt = nil
+        currentAttempt = nil
     }
 
-    private func check() {
-        cancelCheck()
-        guard UIApplication.shared.applicationState == .active else { return }
-        guard !SocialCoordinator.shared.isBusyForAppUpdate, canPresent() else { allowGame(); return }
-#if targetEnvironment(simulator)
-        if simulatorFixture {
-            let fixture = Data(#"{"schemaVersion":1,"enabled":true,"minimumBuild":999999,"minimumVersion":"999.0","appStoreId":"6808385717","message":"يتوفر تحديث مطلوب لميدان. حدّث التطبيق للمتابعة."}"#.utf8)
-            if !simulatorOffline, let policy = AppUpdatePolicy.required(data: fixture,
-                installedVersion: Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "",
-                installedBuild: Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as? String ?? "") {
-                showRequired(policy)
-            } else { allowGame() }
-            return
-        }
-#endif
-        guard let storefront = SKPaymentQueue.default().storefront?.countryCode,
-              storefront.range(of: "^[A-Z]{3}$", options: .regularExpression) != nil,
-              var url = URLComponents(string: NativeConfig.shared.apiOrigin), url.scheme == "https", url.host != nil else {
-            allowGame(); return
-        }
-        url.path = "/api/app-policy/ios"
-        url.queryItems = [URLQueryItem(name: "storefront", value: storefront),
-                          URLQueryItem(name: "osVersion", value: UIDevice.current.systemVersion)]
-        guard let endpoint = url.url else { allowGame(); return }
-        let attempt = generation.value
+    private func check(storefrontHint: String? = nil) {
+        guard currentAttempt == nil, UIApplication.shared.applicationState == .active else { return }
+        guard safeToCheck else { deferUntilSafe(); return }
+        retryTask?.cancel(); retryTask = nil
+        let attempt = generation.advance()
+        currentAttempt = attempt
         if requiredPolicy != nil { panel?.setChecking(true) }
-        // A separate deadline also covers DNS/transport implementations that
-        // outlive URLSession's own timeout. Late completions cannot re-lock UI.
+#if targetEnvironment(simulator)
+        simulatorPhase = "checking-storefront"
+        simulatorFailOpenReason = nil
+#endif
+        // One absolute deadline starts BEFORE Storefront.current. Cancellation-
+        // insensitive StoreKit or transport work cannot extend the UI deadline.
         deadline = Task { @MainActor [weak self] in
             do { try await Task.sleep(nanoseconds: 3_000_000_000) } catch { return }
-            guard let self, self.generation.accepts(attempt) else { return }
-            self.cancelCheck()
-            self.allowGame()
+            guard let self, self.generation.accepts(attempt), self.currentAttempt == attempt else { return }
+            self.failOpen(reason: "timeout", attempt: attempt)
         }
+        if let storefrontHint { receiveStorefront(storefrontHint, attempt: attempt) }
+        else {
+            waitingStorefrontAttempt = attempt
+            startStorefrontLookup()
+        }
+    }
+
+    private func startStorefrontLookup() {
+        // At most one StoreKit lookup exists, even if StoreKit ignores task
+        // cancellation across repeated foreground/timeouts. A completed result
+        // is consumed only by its original, still-current waiting generation.
+        guard storefrontLookup == nil, let lookupAttempt = waitingStorefrontAttempt else { return }
+#if targetEnvironment(simulator)
+        simulatorStorefrontAttempts += 1
+        let fixture = simulatorFixture
+        let fixtureMissing = !simulatorObservedUnavailableStorefront
+#endif
+        storefrontLookup = Task { @MainActor [weak self] in
+            let country: String?
+#if targetEnvironment(simulator)
+            if fixture {
+                // First launch fails open, then ordinary retry must use the
+                // production endpoint/decoder/UI path to display the panel.
+                try? await Task.sleep(nanoseconds: 100_000_000)
+                country = fixtureMissing ? nil : "JOR"
+            } else { country = await Storefront.current?.countryCode }
+#else
+            country = await Storefront.current?.countryCode
+#endif
+            guard let self else { return }
+            self.storefrontLookup = nil
+            guard let attempt = self.waitingStorefrontAttempt else { return }
+            guard attempt == lookupAttempt else {
+                // Do not turn a late result from a canceled generation into a
+                // fresh country's proof. Start one fresh lookup if still needed.
+                self.startStorefrontLookup()
+                return
+            }
+            self.waitingStorefrontAttempt = nil
+            self.receiveStorefront(country, attempt: attempt)
+        }
+    }
+
+    private func receiveStorefront(_ country: String?, attempt: UInt64) {
+        guard generation.accepts(attempt), currentAttempt == attempt else { return }
+        guard UIApplication.shared.applicationState == .active, safeToCheck else { deferUntilSafe(); return }
+        guard let country, country.range(of: "^[A-Z]{3}$", options: .regularExpression) != nil else {
+#if targetEnvironment(simulator)
+            if simulatorFixture { simulatorObservedUnavailableStorefront = true }
+#endif
+            failOpen(reason: "storefront-unavailable", attempt: attempt); return
+        }
+        guard var url = URLComponents(string: NativeConfig.shared.apiOrigin), url.scheme == "https", url.host != nil else {
+            failOpen(reason: "configuration", attempt: attempt); return
+        }
+        url.path = "/api/app-policy/ios"
+        url.queryItems = [URLQueryItem(name: "storefront", value: country),
+                          URLQueryItem(name: "osVersion", value: UIDevice.current.systemVersion)]
+        guard let endpoint = url.url else { failOpen(reason: "configuration", attempt: attempt); return }
+#if targetEnvironment(simulator)
+        simulatorPhase = "checking-policy"
+        simulatorRequestCount += 1
+        simulatorLastRequest = ["storefront": country, "osVersion": UIDevice.current.systemVersion]
+#endif
         task = Task { @MainActor [weak self] in
             guard let self else { return }
             var request = URLRequest(url: endpoint, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 2.5)
             request.setValue("application/json", forHTTPHeaderField: "Accept")
             request.setValue("maydan://app", forHTTPHeaderField: "Origin")
-            var policy: AppUpdatePolicy?
             do {
-                let (data, response) = try await self.http.data(for: request)
-                if let response = response as? HTTPURLResponse, response.statusCode == 200,
-                   response.url == endpoint, data.count <= 8_192 {
-                    policy = AppUpdatePolicy.required(data: data,
-                        installedVersion: Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "",
-                        installedBuild: Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as? String ?? "")
+                let (data, response) = try await self.loadPolicy(request)
+                guard !Task.isCancelled, self.generation.accepts(attempt), self.currentAttempt == attempt else { return }
+                guard let response = response as? HTTPURLResponse, response.statusCode == 200,
+                      response.url == endpoint, data.count <= 8_192 else {
+                    self.failOpen(reason: "response", attempt: attempt); return
                 }
-            } catch { /* Offline, cancellation and malformed data all fail open. */ }
-            guard !Task.isCancelled, self.generation.accepts(attempt) else { return }
-            self.deadline?.cancel(); self.deadline = nil
-            self.task = nil
-            guard UIApplication.shared.applicationState == .active,
-                  !SocialCoordinator.shared.isBusyForAppUpdate, self.canPresent(), let policy else {
-                self.allowGame(); return
+                let decision = AppUpdatePolicy.decision(data: data,
+                    installedVersion: Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "",
+                    installedBuild: Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as? String ?? "")
+                guard UIApplication.shared.applicationState == .active, self.safeToCheck else { self.deferUntilSafe(); return }
+                switch decision {
+                case let .required(policy):
+                    self.completeCheck()
+                    self.retryState.complete()
+                    self.showRequired(policy)
+                case .allowed:
+                    self.completeCheck()
+                    self.retryState.complete()
+                    self.allowGame()
+#if targetEnvironment(simulator)
+                    self.simulatorPhase = "allowed"
+#endif
+                case .unavailable:
+                    self.failOpen(reason: "invalid-policy", attempt: attempt)
+                }
+            } catch {
+                guard !Task.isCancelled, self.generation.accepts(attempt), self.currentAttempt == attempt else { return }
+                self.failOpen(reason: "network", attempt: attempt)
             }
-            self.showRequired(policy)
         }
+    }
+
+    private func loadPolicy(_ request: URLRequest) async throws -> (Data, URLResponse) {
+#if targetEnvironment(simulator)
+        if simulatorFixture {
+            // Provider injection only: check/deadline/generation/endpoint/decoder
+            // and mounted native controls execute exactly as in production.
+            try await Task.sleep(nanoseconds: 100_000_000)
+            if simulatorOffline { throw URLError(.notConnectedToInternet) }
+            let data = Data(#"{"schemaVersion":1,"enabled":true,"minimumBuild":999999,"minimumVersion":"999.0","appStoreId":"6808385717","message":"يتوفر تحديث مطلوب لميدان. حدّث التطبيق للمتابعة."}"#.utf8)
+            return (data, HTTPURLResponse(url: request.url!, statusCode: 200, httpVersion: "HTTP/1.1",
+                                         headerFields: ["Content-Type": "application/json", "Cache-Control": "no-store"])!)
+        }
+#endif
+        return try await http.data(for: request)
+    }
+
+    private func completeCheck() {
+        deadline?.cancel(); deadline = nil
+        task = nil
+        currentAttempt = nil
+        waitingStorefrontAttempt = nil
+    }
+
+    private func failOpen(reason: String, attempt: UInt64) {
+        guard generation.accepts(attempt), currentAttempt == attempt else { return }
+        cancelCheck()
+        retryState.deferCheck()
+        allowGame()
+#if targetEnvironment(simulator)
+        simulatorPhase = "failed-open"
+        simulatorFailOpenReason = reason
+#endif
+        scheduleAutomaticRetry()
     }
 
     private func showChecking() {
@@ -163,6 +413,10 @@ final class AppUpdateCoordinator {
 
     private func showRequired(_ policy: AppUpdatePolicy) {
         requiredPolicy = policy
+#if targetEnvironment(simulator)
+        simulatorPhase = "required"
+        simulatorFailOpenReason = nil
+#endif
         let view = makePanel()
         view.configure(message: policy.message, required: true)
         view.setChecking(false)
@@ -173,7 +427,7 @@ final class AppUpdateCoordinator {
         if let panel { return panel }
         let view = AppUpdatePanel()
         view.onUpdate = { [weak self] in self?.openStore() }
-        view.onRetry = { [weak self] in self?.check() }
+        view.onRetry = { [weak self] in self?.beginCycle() }
         guard let host else { return view }
         host.view.addSubview(view)
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -220,7 +474,15 @@ final class AppUpdateCoordinator {
                 panel?.performSimulatorRetry()
             }
             var snapshot: [String: Any] = ["fixture": "required-then-offline", "blocked": requiredPolicy != nil,
-                "initialLoadPermitted": initialLoadPermitted, "offline": simulatorOffline]
+                "initialLoadPermitted": initialLoadPermitted, "offline": simulatorOffline,
+                "productionCheckPath": true, "requestCount": simulatorRequestCount,
+                "storefrontAttempts": simulatorStorefrontAttempts, "phase": simulatorPhase,
+                "observedUnavailableStorefront": simulatorObservedUnavailableStorefront,
+                "generation": generation.value, "pendingRetry": retryTask != nil, "needsCheck": retryState.needsCheck,
+                "automaticRetries": retryState.automaticRetries,
+                "maximumAutomaticRetries": AppUpdateRetryState.delays.count]
+            snapshot["lastRequest"] = simulatorLastRequest.map { $0 as Any } ?? NSNull()
+            snapshot["failOpenReason"] = simulatorFailOpenReason.map { $0 as Any } ?? NSNull()
             if let panel { snapshot["panel"] = panel.simulatorSnapshot() }
             else { snapshot["panel"] = NSNull() }
             try JSONSerialization.data(withJSONObject: snapshot).write(to: folder.appendingPathComponent("state.json"), options: .atomic)

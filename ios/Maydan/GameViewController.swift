@@ -80,6 +80,7 @@ final class GameViewController: UIViewController, WKNavigationDelegate, WKUIDele
     }
 
     private var webView: WKWebView!
+    private var updateNavigationObservation: NSKeyValueObservation?
     private var bridgeProxy: WeakScriptMessageHandler?
     private var isRecoveringWebContent = false
     private var migration: StorageMigration?
@@ -87,7 +88,7 @@ final class GameViewController: UIViewController, WKNavigationDelegate, WKUIDele
     private var didLoadBundledGame = false
     private lazy var appUpdate = AppUpdateCoordinator(host: self, canPresent: { [weak self] in
         guard let self, self.presentedViewController == nil else { return false }
-        return !self.didLoadBundledGame || AppUpdatePolicy.isIdleMenu(fragment: self.webView.url?.fragment)
+        return !self.didLoadBundledGame || (!self.webView.isLoading && AppUpdatePolicy.isIdleMenu(url: self.webView.url))
     }, setBlocked: { [weak self] blocked in
         guard let self else { return }
         self.webView.isUserInteractionEnabled = !blocked
@@ -125,6 +126,9 @@ final class GameViewController: UIViewController, WKNavigationDelegate, WKUIDele
 
         let webView = WKWebView(frame: .zero, configuration: configuration)
         self.webView = webView
+        updateNavigationObservation = webView.observe(\.url, options: [.new]) { [weak self] _, _ in
+            Task { @MainActor in self?.appUpdate.navigationChanged() }
+        }
         webView.translatesAutoresizingMaskIntoConstraints = false
         webView.navigationDelegate = self
         webView.uiDelegate = self
@@ -176,6 +180,7 @@ final class GameViewController: UIViewController, WKNavigationDelegate, WKUIDele
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         appUpdate.start()
+        appUpdate.navigationChanged()
     }
 
     deinit {
@@ -185,6 +190,7 @@ final class GameViewController: UIViewController, WKNavigationDelegate, WKUIDele
         webView?.navigationDelegate = nil
         webView?.uiDelegate = nil
         bridgeProxy?.delegate = nil
+        updateNavigationObservation?.invalidate()
     }
 
     override var prefersStatusBarHidden: Bool { true }
@@ -318,6 +324,7 @@ final class GameViewController: UIViewController, WKNavigationDelegate, WKUIDele
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         isRecoveringWebContent = false
         SocialCoordinator.shared.webAudioReady()
+        appUpdate.navigationChanged()
         if isCommittingMigration {
             // زُرعت المحفوظات في الأصل الجديد وبدأت اللعبة بها: الانتقال منجز ولا يُعاد.
             isCommittingMigration = false
@@ -382,7 +389,11 @@ final class GameViewController: UIViewController, WKNavigationDelegate, WKUIDele
             "socialVoiceStart", "socialVoiceStop", "socialVoiceCancel", "socialAudioPrivacy"
         ]
         if socialCommands.contains(command) {
+            if command == "socialAudioPrivacy" { appUpdate.setPrivateTurn(payload["privateTurn"] as? Bool ?? false) }
             Task { @MainActor [weak self] in
+                // Several native commands release busy state after their last
+                // event (permission denial, recorder stop, failed connection).
+                defer { self?.appUpdate.audioActivityChanged(commandCompleted: true) }
                 do {
                     let result = try await SocialCoordinator.shared.handle(command, payload: payload)
                     self?.reply(id, result: result)

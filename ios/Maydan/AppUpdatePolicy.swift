@@ -14,18 +14,24 @@ struct AppUpdatePolicy: Decodable {
     let message: String
 
     static func required(data: Data, installedVersion: String, installedBuild: String) -> AppUpdatePolicy? {
+        if case let .required(policy) = decision(data: data, installedVersion: installedVersion, installedBuild: installedBuild) { return policy }
+        return nil
+    }
+
+    static func decision(data: Data, installedVersion: String, installedBuild: String) -> AppUpdateDecision {
         guard data.count <= 8_192,
               let policy = try? JSONDecoder().decode(Self.self, from: data),
-              policy.schemaVersion == 1, policy.enabled, policy.appStoreId == appStoreID,
-              (1...999_999).contains(policy.minimumBuild),
-              let minimum = versionParts(policy.minimumVersion), let current = versionParts(installedVersion),
-              let build = buildNumber(installedBuild),
+              policy.schemaVersion == 1, policy.appStoreId == appStoreID,
               (1...400).contains(policy.message.trimmingCharacters(in: .whitespacesAndNewlines).count),
-              !policy.message.unicodeScalars.contains(where: { CharacterSet.controlCharacters.contains($0) && $0 != "\n" }) else { return nil }
+              !policy.message.unicodeScalars.contains(where: { CharacterSet.controlCharacters.contains($0) && $0 != "\n" }) else { return .unavailable }
+        guard policy.enabled else { return .allowed }
+        guard (1...999_999).contains(policy.minimumBuild),
+              let minimum = versionParts(policy.minimumVersion), let current = versionParts(installedVersion),
+              let build = buildNumber(installedBuild) else { return .unavailable }
         // A later marketing version is never forced backwards because its build
         // numbering differs. Within one release, the required build still matters.
         let olderVersion = current.lexicographicallyPrecedes(minimum)
-        return olderVersion || (current == minimum && build < policy.minimumBuild) ? policy : nil
+        return olderVersion || (current == minimum && build < policy.minimumBuild) ? .required(policy) : .allowed
     }
 
     static func versionParts(_ value: String?) -> [Int]? {
@@ -47,6 +53,38 @@ struct AppUpdatePolicy: Decodable {
         guard let fragment else { return false }
         let path = fragment.split(separator: "?", maxSplits: 1, omittingEmptySubsequences: false).first.map(String.init) ?? ""
         return ["", "/", "/about"].contains(path) || path.range(of: "^/game/[a-z0-9-]+$", options: .regularExpression) != nil
+    }
+
+    /// A freshly loaded bundle has no hash. Treat only the trusted entry document
+    /// as home; a missing URL or an auth/foreign document remains unsafe.
+    static func isIdleMenu(url: URL?) -> Bool {
+        guard let url, url.scheme?.lowercased() == "maydan", url.host?.lowercased() == "app",
+              url.user == nil, url.password == nil, url.port == nil,
+              url.query == nil || url.query == "", ["/", "/index.html"].contains(url.path) else { return false }
+        return isIdleMenu(fragment: url.fragment ?? "/")
+    }
+}
+
+enum AppUpdateDecision {
+    case allowed
+    case required(AppUpdatePolicy)
+    case unavailable
+}
+
+/// Failure retries are finite per activation/user cycle. Safety and connectivity
+/// events can resume pending work without replenishing a timer's retry budget.
+struct AppUpdateRetryState {
+    static let delays: [UInt64] = [1_000_000_000, 3_000_000_000, 10_000_000_000]
+    private(set) var needsCheck = false
+    private(set) var automaticRetries = 0
+    mutating func beginCycle() { needsCheck = true; automaticRetries = 0 }
+    mutating func deferCheck() { needsCheck = true }
+    mutating func complete() { needsCheck = false }
+    mutating func nextAutomaticDelay() -> UInt64? {
+        guard needsCheck, automaticRetries < Self.delays.count else { return nil }
+        let delay = Self.delays[automaticRetries]
+        automaticRetries += 1
+        return delay
     }
 }
 

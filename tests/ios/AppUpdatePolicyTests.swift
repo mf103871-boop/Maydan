@@ -48,6 +48,43 @@ struct AppUpdatePolicyTests {
         expect(!AppUpdatePolicy.isIdleMenu(fragment: nil), "unknown web state never covered")
         expect(AppUpdatePolicy.isIdleMenu(fragment: "/"), "home is an idle surface")
         expect(AppUpdatePolicy.isIdleMenu(fragment: "/game/badeeha"), "game details has no running match")
+        expect(AppUpdatePolicy.isIdleMenu(url: URL(string: "maydan://app/index.html")), "hashless bundled entry is home")
+        expect(AppUpdatePolicy.isIdleMenu(url: URL(string: "maydan://app/")), "trusted hashless root is home")
+        expect(AppUpdatePolicy.isIdleMenu(url: URL(string: "maydan://app/index.html#/")), "explicit home hash remains idle")
+        expect(AppUpdatePolicy.isIdleMenu(url: URL(string: "maydan://app/index.html#/game/badeeha")), "trusted game details remain idle")
+        expect(!AppUpdatePolicy.isIdleMenu(url: nil), "absent document remains unsafe")
+        for value in ["https://app/index.html", "maydan://other/index.html", "maydan://app/auth",
+                      "maydan://app/index.html?code=secret", "maydan://user@app/index.html", "maydan://app:443/index.html",
+                      "maydan://app/index.html#/auth?code=secret", "maydan://app/index.html#/play/badeeha",
+                      "maydan://app/index.html#/room/123456", "maydan://app/index.html#/friends/group/abc",
+                      "maydan://app/index.html#/settings", "maydan://app/index.html#/unknown"] {
+            expect(!AppUpdatePolicy.isIdleMenu(url: URL(string: value)), "never cover untrusted or sensitive document \(value)")
+        }
+        let release22 = policy(["minimumVersion": "1.8", "minimumBuild": 22])
+        expect(required(release22, "1.7.1", "13"), "actual public build 13 requires the verified 1.8 build 22")
+        expect(required(release22, "1.8", "21"), "same release with older build requires update")
+        expect(!required(release22, "1.8.0", "22"), "current release 22 is allowed")
+        if case .unavailable = AppUpdatePolicy.decision(data: Data("broken".utf8), installedVersion: "1.7.1", installedBuild: "13") {
+            expect(true, "invalid transport payload remains retryable")
+        } else { expect(false, "invalid payload must not complete a valid allowed check") }
+        if case .allowed = AppUpdatePolicy.decision(data: policy(["enabled": false, "minimumBuild": 0, "minimumVersion": NSNull()]), installedVersion: "1.7.1", installedBuild: "13") {
+            expect(true, "explicit server disable completes without retry churn")
+        } else { expect(false, "disabled policy must be an allowed decision") }
+        var retry = AppUpdateRetryState()
+        expect(!retry.needsCheck && retry.nextAutomaticDelay() == nil, "no spontaneous checks before activation")
+        retry.beginCycle()
+        expect(retry.needsCheck, "foreground cycle records pending work")
+        expect(retry.nextAutomaticDelay() == 1_000_000_000, "nil storefront first retry is bounded at one second")
+        retry.deferCheck()
+        expect(retry.nextAutomaticDelay() == 3_000_000_000, "deferral or timer does not replenish retry budget")
+        expect(retry.nextAutomaticDelay() == 10_000_000_000, "third retry uses final backoff")
+        expect(retry.automaticRetries == 3 && retry.nextAutomaticDelay() == nil, "automatic retry count is capped at three")
+        retry.deferCheck()
+        expect(retry.needsCheck && retry.nextAutomaticDelay() == nil, "pending recovery events do not restart exhausted timers")
+        retry.complete()
+        expect(!retry.needsCheck && retry.nextAutomaticDelay() == nil, "valid policy removes pending work")
+        retry.beginCycle()
+        expect(retry.automaticRetries == 0 && retry.nextAutomaticDelay() == 1_000_000_000, "only a fresh foreground or user cycle resets the budget")
         var generation = AppUpdateCheckGeneration()
         let startup = generation.advance()
         let foreground = generation.advance()

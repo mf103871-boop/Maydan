@@ -1,0 +1,47 @@
+{
+  "scope": "Private TestFlight native update-gate repair",
+  "version": "1.8.1",
+  "intendedBuild": "23",
+  "appId": "6808385717",
+  "nativeBase": "2fe524e98f8a455b1b801ab4c0fdd9d82f9396ef",
+  "branch": "codex/maydan-update-gate-1-8-1",
+  "reportedFailure": {
+    "installedVersionReported": "1.71",
+    "interpretedVersion": "1.7.1",
+    "installedBuildDirectlyConfirmed": false,
+    "source": "App Store, online",
+    "foregroundOnIdleGameDetailsShowsRequiredUpdate": false
+  },
+  "changes": [
+    "Read Storefront.current asynchronously within one three-second check deadline",
+    "Keep at most one storefront lookup and reject stale generations",
+    "Retry transient failures at most three times per activation/user cycle",
+    "Resume pending checks after connectivity/storefront/audio/keyboard/safe-navigation changes",
+    "Recognize only the trusted hashless bundled entry as idle home",
+    "Cancel checks on unsafe navigation, private turns, calls and recording",
+    "Exercise production check path with simulator-only finite provider fixtures"
+  ],
+  "serverSourceAlignment": {
+    "reason": "Keep future source consistent with the separately approved live release-proof policy; no server deployment from this native release",
+    "liveVersion": "861659de-bb0e-4fc7-83ea-c2b2cda66d93",
+    "sourcePolicySHA256": "beb45edea71dfac09c1617faa1a64443c12be8b4c73c45e95b2e538d361c5b4c",
+    "policyRemainsVersion": "1.8",
+    "policyRemainsBuild": "22"
+  },
+  "limitations": [
+    "Cannot remotely replace code already installed in version 1.7.1",
+    "The exact early failure branch on the user's device is not proven",
+    "Simulator providers do not certify real StoreKit, DNS, TLS or physical taps",
+    "Physical iPhone acceptance is required before any public App Store repair release"
+  ],
+  "publicAppStoreSubmission": false,
+  "localVerification": {
+    "npm": { "passed": 1089, "failed": 0, "skipped": 1 },
+    "python": { "passed": 44, "failed": 0, "skipped": 1 },
+    "swiftCompilerAvailableOnWindows": false,
+    "independentSourceReview": "Passed; native compilation and simulator execution require macOS CI",
+    "gitDiffCheck": "Passed"
+  },
+  "productionServerWrites": 0,
+  "physicalIPhoneChecksPerformedOnRepair": false
+}
