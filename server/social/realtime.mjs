@@ -11,6 +11,8 @@ export const LIVE_TICKET_TTL = 60_000;
 export const LIVE_HEARTBEAT_MS = 20_000;
 const MAX_SOCKETS = 16;
 const MAX_TICKETS = 8;
+const MAX_QUEUED_SOCKET_MESSAGES = 32;
+const MAX_QUEUED_HUB_MESSAGES = 128;
 const TYPING_PER_SECOND = 3;
 const TICKET = /^[A-Za-z0-9_-]{43}$/;
 const METADATA_CHECK_MS = 24 * 60 * 60 * 1000;
@@ -112,6 +114,7 @@ export class SocialHub {
     this.ctx = ctx;
     this.env = env;
     this.queue = Promise.resolve();
+    this.inboundBySocket = new WeakMap(); this.inboundCount = 0;
     this.ready = ctx.blockConcurrencyWhile(async () => {
       this.state = await ctx.storage.get('social') || emptyState();
     });
@@ -283,6 +286,10 @@ export class SocialHub {
             await this.schedule();
             return json({ ok: true });
           }
+          // Offline recipients recover from authenticated message history when
+          // they reconnect. No live delivery means no content/session fanout
+          // queries are needed; the first sweep already reconciled presence.
+          if (!this.sockets().length) { await this.schedule(); return json({ ok: true }); }
           // A session revoked in the database (not through sign-out) must not receive
           // the event: outbound delivery re-checks every socket. These are D1 reads;
           // the writes that used to follow each heartbeat are the ones now leased.
@@ -307,13 +314,27 @@ export class SocialHub {
     });
   }
   webSocketMessage(ws, message) {
+    if (this.attachment(ws).closed || ws.readyState !== 1) return Promise.resolve();
+    const rejectFrame = (code, reason) => {
+      this.close(ws, code, reason);
+      // One cleanup per closed socket, ordered after earlier durable work.
+      // Further queued frames cannot authenticate or recreate its presence.
+      return this.serial(async () => {
+        try { await this.presence(); } catch { /* the presence lease still expires */ }
+        await this.schedule();
+      });
+    };
+    if (typeof message !== 'string' || message.length > 1024 || new TextEncoder().encode(message).length > 1024) return rejectFrame(1009, 'INVALID');
+    const queued = this.inboundBySocket.get(ws) || 0;
+    if (queued >= MAX_QUEUED_SOCKET_MESSAGES || this.inboundCount >= MAX_QUEUED_HUB_MESSAGES) return rejectFrame(4429, 'RATE_LIMIT');
+    this.inboundBySocket.set(ws, queued + 1); this.inboundCount++;
     return this.serial(async () => {
+      if (this.attachment(ws).closed || ws.readyState !== 1) return;
       try {
         const now = this.now();
         await this.sweep(now);
         if (this.attachment(ws).closed || ws.readyState !== 1) return;
         let a = this.attachment(ws);
-        if (typeof message !== 'string' || new TextEncoder().encode(message).length > 1024) { this.close(ws, 1009, 'INVALID'); return; }
         if (now - a.windowAt >= 10_000) { a.windowAt = now; a.count = 0; }
         a.count++;
         ws.serializeAttachment(a);
@@ -351,6 +372,9 @@ export class SocialHub {
         }
         await this.schedule();
       }
+    }).finally(() => {
+      this.inboundBySocket.set(ws, Math.max(0, (this.inboundBySocket.get(ws) || 1) - 1));
+      this.inboundCount = Math.max(0, this.inboundCount - 1);
     });
   }
   disconnected(ws) {

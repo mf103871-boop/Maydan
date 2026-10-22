@@ -38,7 +38,10 @@ export async function routeSocial(request, env, url = new URL(request.url), char
       for (const user of users) Object.assign(user, summaries.get(user.id) || {});
       response = json(body);
     }
-    if(response.ok && response.headers.get('content-type')?.startsWith('application/json')) {
+    // Lamma's group/invitation methods return enriched messages already. Only
+    // paired-message responses need enrichment here, once per response page.
+    const messagePayload = /^\/api\/social\/(?:state|conversations(?:\/[^/]+\/messages)?|messages\/\d+)$/.test(url.pathname);
+    if(response.ok && messagePayload && response.headers.get('content-type')?.startsWith('application/json')) {
       const body=await response.json();
       await enrichMessages(env,[body.message,...(Array.isArray(body.messages)?body.messages:[]),...(Array.isArray(body.conversations)?body.conversations:[]).map(c=>c.lastMessage)]);
       response=json(body);

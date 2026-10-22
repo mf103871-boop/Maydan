@@ -258,9 +258,19 @@ export class LammaClient {
       // A confirmed upload is reusable after a lost message acknowledgement.
       // The message POST still rechecks membership and attachment ownership.
       if (!attempt.attachment) {
-        const dataBase64 = await blobBase64(blob); this.assertVisibility(epoch, authorizationEpoch);
-        const result = await this.call('/attachments', { method: 'POST', timeout: 60_000,
-          body: { scope: targetType, conversationId: targetId, clientId, dataBase64, mimeType: blob.type.split(';')[0], durationMs: Math.round(durationMs) } });
+        let body;
+        // Negotiated in the existing capability refresh; no extra request before
+        // sending. Older servers and clients keep their JSON upload protocol.
+        if (this.state.capabilities.binaryVoiceUpload && typeof FormData !== 'undefined') {
+          body = new FormData();
+          for (const [key,value] of Object.entries({scope:targetType,conversationId:targetId,clientId,durationMs:Math.round(durationMs)})) body.append(key,String(value));
+          body.append('audio',blob,'voice');
+        } else {
+          const dataBase64 = await blobBase64(blob);
+          body = { scope: targetType, conversationId: targetId, clientId, dataBase64, mimeType: blob.type.split(';')[0], durationMs: Math.round(durationMs) };
+        }
+        this.assertVisibility(epoch, authorizationEpoch);
+        const result = await this.call('/attachments', { method: 'POST', timeout: 60_000, body });
         this.assertVisibility(epoch, authorizationEpoch); attempt.attachment = result.attachment;
       }
       const path = targetType === 'group' ? `/groups/${enc(targetId)}/messages` : `/conversations/${enc(targetId)}/messages`;
@@ -281,8 +291,8 @@ export class LammaClient {
     const epoch = this.epoch;
     const authorizationEpoch = this.authorizationEpoch;
     // Authorize every playback; cached Blob URLs must not bypass a later block/removal.
-    const response = await this.call(`/attachments/${enc(id)}/content`, { raw: true });
-    const blob = await response.blob(); this.assert(epoch);
+    const blob = await this.call(`/attachments/${enc(id)}/content`, { responseType: 'blob', timeout: 60_000 });
+    this.assert(epoch);
     if (authorizationEpoch !== this.authorizationEpoch) throw Object.assign(new Error('تغيّرت صلاحية الوصول للصوت؛ أعد المحاولة.'), { code: 'STALE' });
     if (this.urls.has(id)) this.revokeURL(this.urls.get(id));
     const url = this.makeURL(blob); this.urls.set(id, url); return url;

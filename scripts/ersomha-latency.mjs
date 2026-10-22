@@ -15,6 +15,7 @@ import { getBackendProvenance } from './lib/lamma-provenance.mjs';
 
 const ORIGIN = 'http://localhost:3000';
 const weakNetwork = process.argv.includes('--weak-network');
+const worktreeBenchmark = process.argv.includes('--worktree-benchmark');
 const ONE_WAY_MS = weakNetwork ? 240 : 60, BATCH_MS = 80, SAMPLES = 60, WARMUP = 5;
 const output = path.resolve(process.argv[2] || '.cache/ersomha-latency.json');
 const temporary = await mkdtemp(path.join(os.tmpdir(), 'maydan-ersomha-latency-'));
@@ -29,7 +30,7 @@ async function until(predicate, label, timeout = 15_000) {
 const percentile = (values, fraction) => [...values].sort((a, b) => a - b)[Math.ceil(values.length * fraction) - 1];
 try {
   const scriptPath = path.join(temporary, 'worker.mjs');
-  const provenance = await getBackendProvenance(process.cwd(), { requireClean: true });
+  const provenance = await getBackendProvenance(process.cwd(), { requireClean: !worktreeBenchmark });
   const frozen = await bundleErsomhaWorker('maydan-rooms');
   await writeFile(scriptPath, frozen.bytes);
   mf = new Miniflare(convertV4MiniflareOptions({ rootPath: temporary, name: 'ersomha-latency', modules: true, scriptPath,
@@ -93,6 +94,7 @@ try {
   await until(() => received.size === SAMPLES * 7, 'every committed batch delivered exactly once');
   const p95 = percentile(samples, .95), p50 = percentile(samples, .5);
   const report = { schemaVersion: 1, finishedAt: new Date().toISOString(), ...provenance, testedModuleSHA256: frozen.sha256,
+    worktreeBenchmark, releaseAcceptanceEvidence: !worktreeBenchmark,
     scope: 'Real local Cloudflare workerd, SQLite Durable Object, D1 and eight authenticated WebSocket clients through a controlled delay proxy; no physical screen or LiveKit audio latency claim',
     peers: 8, network: { profile: weakNetwork ? 'weak-480ms-rtt' : 'target-120ms-rtt', injectedRoundTripMs: ONE_WAY_MS * 2, implementation: `${ONE_WAY_MS} ms delay each direction; local loopback adds its measured scheduling overhead`, packetLossSimulated: false },
     pointBatchDelayMs: BATCH_MS, sentBatches: SAMPLES, observedRemoteDeliveries: received.size, expectedRemoteDeliveries: SAMPLES * 7,

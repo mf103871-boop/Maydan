@@ -187,8 +187,16 @@ export class CallMedia {
       if (epoch !== this.generation) { await room.disconnect(); return; }
       // Privacy or the mute button may change while network/permission prompts
       // are pending. Never reopen the mic using the initial connect argument.
-      await room.localParticipant.setMicrophoneEnabled(!this.desiredMuted && !socialInterruption.getSnapshot().privateTurn);
+      const enableMicrophone = !this.desiredMuted && !socialInterruption.getSnapshot().privateTurn;
+      await room.localParticipant.setMicrophoneEnabled(enableMicrophone);
       if (epoch !== this.generation) { await room.disconnect(); return; }
+      // Publishing itself can wait for capture/network negotiation. A secret
+      // role or mute arriving during that wait must also win after it completes.
+      if (enableMicrophone && (this.desiredMuted || socialInterruption.getSnapshot().privateTurn)) {
+        this.desiredMuted = true;
+        await room.localParticipant.setMicrophoneEnabled(false);
+        if (epoch !== this.generation) { await room.disconnect(); return; }
+      }
       this.update({ connected: true, connecting: false, error: '' }); sync();
       if (typeof HTMLMediaElement !== 'undefined' && 'setSinkId' in HTMLMediaElement.prototype) {
         const devices = await navigator.mediaDevices.enumerateDevices();

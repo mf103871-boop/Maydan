@@ -33,7 +33,7 @@ class Socket {
   }
   close(code, reason) { this.readyState = 3; this.closed = { code, reason }; }
 }
-async function fixture({ count = 3, trial = false } = {}) {
+async function fixture({ count = 3, trial = false, settings = {} } = {}) {
   const DB = createLocalD1(), now = Date.now(), storage = new Storage(), profiles = [];
   const observed = { reads: 0, failHistory: false };
   const env = { DB: {
@@ -42,7 +42,7 @@ async function fixture({ count = 3, trial = false } = {}) {
   } };
   for (let n = 0; n < count; n++) {
     await DB.prepare('INSERT INTO users(id,name,created_at,updated_at) VALUES(?,?,?,?)').bind(`account-${n}`, `لاعب ${n}`, now, now).run();
-    profiles.push({ id: `seat-${n}`, tokenHash: `token-${n}`, name: `لاعب ${n}`, avatar: n % 4, game: 'ersomha', settings: {} });
+    profiles.push({ id: `seat-${n}`, tokenHash: `token-${n}`, name: `لاعب ${n}`, avatar: n % 4, game: 'ersomha', settings });
   }
   const state = createRoom('123456', profiles[0], now);
   for (const p of profiles.slice(1)) joinRoom(state, p, now);
@@ -66,6 +66,55 @@ async function begin(f) {
   assert.equal((await f.command(0, 'select_word', { choiceId: f.room.room.draw.choices[0].id })).ok, true);
 }
 const stroke = (n, extra = {}) => ({ epoch: 1, strokeId: `stroke-${n}`, tool: 'pen', width: 6, color: '#118d96', points: [[0.1, 0.2], [0.2, 0.3]], end: true, ...extra });
+
+test('steady ink does not clone the private room plan on every batch while timed hints still commit before delivery', async () => {
+  const f = await fixture(), realNow = Date.now, realClone = structuredClone;
+  let roomClones = 0, now;
+  try {
+    await begin(f); now = realNow(); Date.now = () => now;
+    globalThis.structuredClone = value => { if (value === f.room.room) roomClones++; return realClone(value); };
+    for (let n = 0; n < 30; n++) { now += 80; assert.equal((await f.command(0, 'drawing_batch', stroke(n))).ok, true); }
+    assert.ok(roomClones <= 2, `steady deltas cloned the private plan ${roomClones} times`);
+    assert.equal(f.room.room.draw.lengthsRevealed, false);
+    now = f.room.room.draw.startedAt + 30_001;
+    assert.equal((await f.command(0, 'drawing_batch', stroke('hint'))).ok, true);
+    assert.equal(f.room.room.draw.lengthsRevealed, true);
+    assert.equal(f.storage.data.get('room').draw.lengthsRevealed, true);
+    await f.restore(); now = f.room.room.deadlineAt + 1;
+    assert.equal((await f.command(0, 'drawing_batch', stroke('expired'))).error, 'PHASE');
+    assert.equal(f.room.room.phase, 'result', 'rehydration cannot reuse a stale fast-path deadline');
+  } finally { Date.now = realNow; globalThis.structuredClone = realClone; f.close(); }
+});
+
+test('a blocked durable queue rejects flooding before retaining unbounded frames and still serves another seat', async () => {
+  const f = await fixture(); let release;
+  try {
+    await begin(f);
+    const blocker = f.room.serial(() => new Promise(resolve => { release = resolve; }));
+    await new Promise(resolve => setImmediate(resolve));
+    const frames = Array.from({ length: 100 }, (_, n) => f.room.webSocketMessage(f.sockets[0], JSON.stringify({
+      type: 'drawing_batch', requestId: `flood-${n}`, matchId: f.room.room.matchId, round: f.room.room.round, ...stroke(n),
+    })));
+    assert.equal(f.sockets[0].closed?.code, 4429);
+    assert.equal(f.room.inboundCount, 64, 'admission is bounded even before storage resumes');
+    const other = f.command(1, 'drawing_sync'); release(); await blocker; await Promise.all(frames);
+    assert.equal((await other).ok, true); assert.equal(f.sockets[1].readyState, 1);
+    assert.equal(f.room.inboundCount, 0); assert.equal(f.room.drawing.seq, 0, 'closed sender queued frames do not create ghost ink');
+  } finally { release?.(); f.close(); }
+});
+
+test('oversized UTF-8 and binary frames never enter the durable queue', async () => {
+  const f = await fixture(); let release;
+  try {
+    const blocker = f.room.serial(() => new Promise(resolve => { release = resolve; }));
+    await new Promise(resolve => setImmediate(resolve));
+    for (const [n, message] of ['x'.repeat(4097), 'ع'.repeat(2049), new ArrayBuffer(16)].entries()) {
+      await f.room.webSocketMessage(f.sockets[n], message);
+      assert.equal(f.sockets[n].closed?.code, 1009);
+    }
+    assert.equal(f.room.inboundCount, 0); release(); await blocker;
+  } finally { release?.(); f.close(); }
+});
 
 test('history failure does not expose choices or spend the free start, and retry preserves the room', async () => {
   const f = await fixture({ trial: true }); try {
@@ -93,8 +142,9 @@ test('a D1 trial claim followed by failed DO commit retries the same private cho
   } finally { f.close(); }
 });
 test('an insufficient fresh pool rejects before exposure/trial; explicit replay prepares the whole match first', async () => {
-  const f = await fixture({ trial: true }); try {
-    const pool = getErsomhaPool({ difficulty: 'medium' }), categories = [...new Set(pool.map(c => c.category))].slice(0, 3), allowed = new Set();
+  for (const difficulty of ['easy', 'medium', 'hard']) {
+  const f = await fixture({ trial: true, settings: { difficulty } }); try {
+    const pool = getErsomhaPool({ difficulty: f.room.room.settings.difficulty }), categories = [...new Set(pool.map(c => c.category))].slice(0, 3), allowed = new Set();
     for (const category of categories) for (const card of pool.filter(c => c.category === category).slice(0, 2)) allowed.add(card.familyId);
     const hash = await ersomhaAccountHash('account-0');
     await f.DB.batch(pool.filter(c => !allowed.has(c.familyId)).map(c => f.DB.prepare('INSERT OR IGNORE INTO ersomha_seen(account_hash,family_id,concept_id,exposure_id,seen_at) VALUES(?,?,?,?,?)').bind(hash, c.familyId, c.conceptId, 'old:match', 1000)));
@@ -105,7 +155,9 @@ test('an insufficient fresh pool rejects before exposure/trial; explicit replay 
     assert.equal((await f.command(0, 'settings', { settings: { ...f.room.room.settings, allowReplay: true } })).ok, true);
     assert.equal((await f.command(0, 'start')).ok, true); assert.equal(f.room.room.ersomhaPlan.length, 3);
     assert.equal(new Set(f.room.room.ersomhaPlan.flat().map(c => c.familyId)).size, 9);
+    assert.ok(f.room.room.ersomhaPlan.flat().every(card => card.difficulty === difficulty));
   } finally { f.close(); }
+  }
 });
 test('a departed participant releases only that account after the leave is durable', async () => {
   const f = await fixture({ count: 4 }); try {

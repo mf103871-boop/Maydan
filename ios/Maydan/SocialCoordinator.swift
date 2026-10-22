@@ -451,8 +451,18 @@ final class SocialCoordinator: NSObject {
         room = next
         try await next.connect(url: connection.url, token: connection.token)
         guard call?.id == current.id, room === next else { await next.disconnect(); return }
-        if audioActive { try await next.localParticipant.setMicrophone(enabled: !muted && !privateTurn) }
+        let attemptedMicrophone = audioActive && !muted && !privateTurn
+        if audioActive { try await next.localParticipant.setMicrophone(enabled: attemptedMicrophone) }
         guard call?.id == current.id, room === next else { await next.disconnect(); return }
+        // Capture/publication can finish after a secret role, interruption or
+        // mute changed the policy. Match the CallKit activation path: an older
+        // connect completion must never reopen input under the newer policy.
+        if attemptedMicrophone && (muted || privateTurn || audioPolicy.interrupted || !audioActive) {
+            if privateTurn || audioPolicy.interrupted { muted = true }
+            try? AudioManager.shared.setEngineAvailability(AudioEngineAvailability(isInputAvailable: false, isOutputAvailable: audioActive && !audioPolicy.interrupted))
+            _ = try await next.localParticipant.setMicrophone(enabled: false)
+            guard call?.id == current.id, room === next else { await next.disconnect(); return }
+        }
         state = "connected"
         if !current.incoming { provider.reportOutgoingCall(with: current.id, connectedAt: Date()) }
         emitCall()

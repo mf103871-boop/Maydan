@@ -26,7 +26,7 @@ export function SocialProvider({ children }) {
   useEffect(() => {
     const update = () => client.visibilityChanged();
     document.addEventListener('visibilitychange', update); window.addEventListener('online', update);
-    const offline = () => client.update({ offline: true }); window.addEventListener('offline', offline);
+    const offline = () => client.networkOffline(); window.addEventListener('offline', offline);
     return () => { document.removeEventListener('visibilitychange', update); window.removeEventListener('online', update); window.removeEventListener('offline', offline); };
   }, [client]);
   const previous = useRef(null);

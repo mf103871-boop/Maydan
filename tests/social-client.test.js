@@ -10,6 +10,27 @@ function setup(t, handler = () => { throw new Error('Unexpected request'); }) {
   client.userId = 'alice'; client.state.friends = [{ id: 'bob', conversationId: 'chat' }];
   client.scheduleRefresh = () => {}; t.after(() => client.stop()); return client;
 }
+
+test('a stalled social WebSocket opening expires and late callbacks cannot replace its successor',async t=>{
+  t.mock.timers.enable({apis:['setTimeout','setInterval']});
+  const client=setup(t,async()=>({userId:'alice',ticket:'one-use-ticket'})),sockets=[];
+  client.socketFactory=()=>{const socket={readyState:0,closed:0,close(){this.closed++;},send(){}};sockets.push(socket);return socket;};
+  let retries=0;client.reconnectLater=()=>{retries++;};
+  await client.connect();const staleOpen=sockets[0].onopen,staleClose=sockets[0].onclose;
+  t.mock.timers.tick(20_000);assert.equal(client.socket,null);assert.equal(sockets[0].closed,1);assert.equal(retries,1);
+  await client.connect();const current=sockets[1];current.readyState=1;current.onopen();
+  staleOpen();staleClose();assert.equal(client.socket,current);assert.equal(client.state.connected,true);
+  t.mock.timers.tick(20_000);assert.equal(client.socket,current);assert.equal(retries,1);
+});
+
+test('offline transition retires social transport immediately and prevents stale messages from arriving',async t=>{
+  const client=setup(t,async()=>({userId:'alice',ticket:'one-use-ticket'}));let received=0;
+  const socket={readyState:1,closed:0,close(){this.closed++;},send(){}};client.socketFactory=()=>socket;
+  await client.connect();socket.onopen();const staleMessage=socket.onmessage;
+  client.receive=async()=>{received++;};client.networkOffline();staleMessage({data:'{}'});
+  assert.equal(client.socket,null);assert.equal(client.state.connected,false);assert.equal(client.state.offline,true);assert.equal(socket.closed,1);assert.equal(received,0);
+  await client.connect();assert.equal(client.socket,null);
+});
 test('a server echo replaces a pending message once and tombstones replace old text', () => {
   const pending = { clientId: 'retry-stable', text: 'مرحبًا', status: 'pending' };
   const ack = message(8, { clientId: pending.clientId });

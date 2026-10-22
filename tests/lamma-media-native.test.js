@@ -109,6 +109,36 @@ test('privacy or a mute pressed during web connection cannot reopen the micropho
   } finally { clearPrivacy?.(); await engine.dispose(); fixture.close(); }
 });
 
+test('a microphone publish finishing after privacy mute cannot reopen input', async () => {
+  const fixture = nativeFixture(); delete globalThis.window.webkit; globalThis.location.protocol = 'https:';
+  let finishPublish, publishing, participant; const mic = [];
+  const entered = new Promise(resolve => { publishing = resolve; });
+  class FakeRoom {
+    constructor() {
+      this.remoteParticipants = new Map();
+      participant = this.localParticipant = { identity: 'alice', isMicrophoneEnabled: false, async setMicrophoneEnabled(enabled) {
+        mic.push(enabled);
+        if (enabled) { publishing(); await new Promise(resolve => { finishPublish = resolve; }); }
+        this.isMicrophoneEnabled = enabled;
+      } };
+    }
+    on() {} async connect() {} async disconnect() {}
+  }
+  const engine = new CallMedia(() => {}, { loadSDK: async () => ({ Room: FakeRoom, RoomEvent: {}, Track: { Kind: { Audio: 'audio' } } }) });
+  engine.setAccount('alice'); let clearPrivacy;
+  try {
+    const connecting = engine.connect(connection('delayed-publish'));
+    await entered;
+    clearPrivacy = socialInterruption.private('network-delayed-publish');
+    await engine.mute(true); assert.equal(participant.isMicrophoneEnabled, false);
+    finishPublish(); await connecting;
+    assert.deepEqual(mic, [true, false, false]);
+    assert.equal(participant.isMicrophoneEnabled, false); assert.equal(engine.state.muted, true);
+    clearPrivacy(); clearPrivacy = null;
+    assert.equal(engine.state.muted, true, 'leaving the secret role never auto-unmutes');
+  } finally { clearPrivacy?.(); finishPublish?.(); await engine.dispose(); fixture.close(); }
+});
+
 test('voice stop is shared and an automatic 120-second completion stays previewable', async () => {
   const fixture = nativeFixture(command => command.type === 'socialVoiceStop' ? undefined : {});
   const recorder = createVoiceRecorder();

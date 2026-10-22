@@ -8,7 +8,60 @@ import { build } from 'esbuild';
 import { Miniflare, convertV4MiniflareOptions } from 'miniflare';
 import { WebSocket } from 'ws';
 import { migrationSql } from '../server/local-d1.mjs';
-import { notifyUsers, routeSocialLive, forgetSocialUser } from '../server/social/realtime.mjs';
+import { SocialHub, notifyUsers, routeSocialLive, forgetSocialUser } from '../server/social/realtime.mjs';
+
+async function isolatedHub() {
+  const now = Date.now(), sockets = [], observed = { reads: 0, writes: 0 };
+  const state = { userId: 'owner', lastActiveAt: now, tickets: {}, typingAt: 0, typingCount: 0, onlineBroadcast: false, presenceWrittenAt: now };
+  const storage = { async get() { return structuredClone(state); }, async put() { observed.writes++; }, async setAlarm(at) { observed.alarm = at; }, async deleteAlarm() {} };
+  const ctx = { storage, getWebSockets: () => sockets, blockConcurrencyWhile: fn => fn(), waitUntil() {} };
+  const env = { DB: { prepare() { observed.reads++; throw Error('unexpected content or session query'); } } };
+  const hub = new SocialHub(ctx, env); await hub.ready;
+  const socket = () => {
+    const ws = { readyState: 1, data: { seenAt: now, validUntil: now + 60000, sessionId: 'fixture' },
+      serializeAttachment(a) { this.data = structuredClone(a); }, deserializeAttachment() { return structuredClone(this.data); },
+      close(code) { this.readyState = 3; this.closeCode = code; }, send() {} };
+    sockets.push(ws); return ws;
+  };
+  const notify = event => hub.fetch(new Request('https://social.internal/notify', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ userId: 'owner', event }) }));
+  return { hub, ctx, env, socket, observed, notify };
+}
+
+test('offline realtime notifications skip content queries but live delivery still reauthenticates before exposing anything', async () => {
+  const h = await isolatedHub();
+  const response = await h.notify({ type: 'message', conversationId: 'conversation', messageSeq: 1 });
+  assert.equal(response.status, 200); assert.equal(h.observed.reads, 0); assert.ok(h.observed.alarm > Date.now());
+  const ws = h.socket(), delivered = []; ws.send = data => delivered.push(data);
+  // D1 is intentionally unavailable. A newly connected recipient may not use
+  // the offline fast path or get an event without its current session check.
+  await h.notify({ type: 'message', conversationId: 'conversation', messageSeq: 1 });
+  assert.ok(h.observed.reads > 0); assert.equal(ws.readyState, 3); assert.deepEqual(delivered, []);
+});
+
+test('social frame admission bounds storage-blocked floods and discards queued frames of the closed session', async () => {
+  const h = await isolatedHub(), ws = h.socket(); let release;
+  const gate = h.hub.serial(() => new Promise(resolve => { release = resolve; }));
+  await new Promise(resolve => setImmediate(resolve));
+  const frames = Array.from({ length: 200 }, () => h.hub.webSocketMessage(ws, 'ping'));
+  assert.equal(ws.closeCode, 4429); assert.equal(h.hub.inboundCount, 32);
+  release(); await gate; await Promise.all(frames);
+  assert.equal(h.hub.inboundCount, 0); assert.equal(h.observed.reads, 0, 'closed frames perform no stale authentication or presence write');
+  assert.equal(h.hub.state.onlineBroadcast, false);
+});
+
+test('binary and oversized UTF-8 social frames are closed before queue admission and ordinary sessions remain independent', async () => {
+  const h = await isolatedHub(); let release;
+  const gate = h.hub.serial(() => new Promise(resolve => { release = resolve; }));
+  await new Promise(resolve => setImmediate(resolve));
+  const sockets = [h.socket(), h.socket(), h.socket()], other = h.socket();
+  const frames = ['x'.repeat(1025), 'ع'.repeat(513), new ArrayBuffer(10)].map((message, i) => h.hub.webSocketMessage(sockets[i], message));
+  assert.ok(sockets.every(ws => ws.closeCode === 1009)); assert.equal(h.hub.inboundCount, 0);
+  assert.equal(other.readyState, 1); assert.equal(other.data.closed, undefined);
+  // Avoid presence refresh work in this isolated admission test; session and
+  // recipient permission behavior is exercised by real workerd below.
+  h.hub.state.onlineBroadcast = true;
+  release(); await gate; await Promise.all(frames); assert.equal(h.observed.reads, 0);
+});
 
 async function until(check, label) {
   const deadline = Date.now() + 5000;

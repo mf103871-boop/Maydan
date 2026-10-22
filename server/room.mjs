@@ -16,6 +16,8 @@ import { ersomhaBoardId, emptyErsomhaDrawing, loadErsomhaDrawing, checkpointErso
 const SOCKET_IDLE = 45_000;
 const STATS_RETRY = 30_000;
 const STATS_MAX_ATTEMPTS = 48; // a day of half-minute retries
+const MAX_QUEUED_SOCKET_MESSAGES = 64;
+const MAX_QUEUED_ROOM_MESSAGES = 256;
 // Statements the room has already shown wait at the back of the queue, so a second
 // match in the same room does not repeat the first.
 export function meenfinaDeck(room) {
@@ -28,6 +30,7 @@ export function meenfinaDeck(room) {
 export class Room {
   constructor(ctx, env) {
     this.ctx = ctx; this.env = env; this.room = null; this.profileOutbox = []; this.queue = Promise.resolve();
+    this.inboundBySocket = new WeakMap(); this.inboundCount = 0;
     this.ready = ctx.blockConcurrencyWhile(async () => {
       this.room = await ctx.storage.get('room') || null;
       this.profileOutbox = await ctx.storage.get('profileOutbox') || [];
@@ -224,8 +227,13 @@ export class Room {
       this.send(ws, { type: 'state', state: this.stateFor(id) });
     }
   }
-  async advance() {
+  async advance({ force = false } = {}) {
     if (!this.room) return;
+    const now = Date.now();
+    // Between durable room changes only time can advance the game. Avoid
+    // cloning/stringifying the full private turn plan for every ink batch.
+    // Rehydration, a changed room object, and alarms always re-evaluate it.
+    if (!force && this.fastAdvanceRoom === this.room && now < this.fastAdvanceUntil) return;
     const candidate = structuredClone(this.room);
     // A phone can vanish without a TCP close. Hibernation auto-pongs provide
     // liveness without waking the object on every heartbeat.
@@ -261,6 +269,9 @@ export class Room {
         stopped.reason = error.code === 'AUTH' ? 'account_unavailable' : 'account_active_elsewhere';
         await this.commit(stopped);
       }
+    } else {
+      this.fastAdvanceRoom = this.room;
+      this.fastAdvanceUntil = this.alarmAt(this.room, now);
     }
   }
   async authenticate(input) {
@@ -377,13 +388,26 @@ export class Room {
     await this.schedule();
   }
   webSocketMessage(ws, message) {
+    // Reject oversized frames before they can wait behind storage. Checking
+    // character length first also bounds the temporary UTF-8 encoder buffer.
+    if (typeof message !== 'string' || message.length > 4096 || new TextEncoder().encode(message).length > 4096) {
+      this.send(ws, { type: 'error', error: 'INVALID' }); this.close(ws, 1009, 'INVALID'); return Promise.resolve();
+    }
+    const queued = this.inboundBySocket.get(ws) || 0;
+    // Admission happens before the serial queue and before storage. A slow
+    // write must not let one flooding client retain unbounded frames or delay
+    // every other seat; normal rate limits still run inside the durable order.
+    if (queued >= MAX_QUEUED_SOCKET_MESSAGES || this.inboundCount >= MAX_QUEUED_ROOM_MESSAGES) {
+      this.close(ws, 4429, 'RATE_LIMIT'); return Promise.resolve();
+    }
+    this.inboundBySocket.set(ws, queued + 1); this.inboundCount++;
     return this.serial(async () => {
       let requestId, attemptedStart;
       try {
+        if (ws.readyState !== 1) return;
         await this.advance();
         if (ws.readyState !== 1) return;
         if (!this.room) fail('NOT_FOUND', 404);
-        if (typeof message !== 'string' || new TextEncoder().encode(message).length > 4096) fail('INVALID');
         const a = this.attachment(ws);
         const now = Date.now();
         a.seenAt = now;
@@ -466,12 +490,15 @@ export class Room {
         const seated = Boolean(seat) && Boolean(this.room?.members.some((m) => m.id === seat && !m.left));
         if (['NOT_FOUND', 'EXPIRED'].includes(code) || (code === 'AUTH' && !seated)) this.close(ws, 4401, code);
       }
+    }).finally(() => {
+      this.inboundBySocket.set(ws, Math.max(0, (this.inboundBySocket.get(ws) || 1) - 1));
+      this.inboundCount = Math.max(0, this.inboundCount - 1);
     });
   }
   webSocketClose(ws) {
     return this.serial(async () => {
       this.close(ws, 1000, 'closed');
-      await this.advance();
+      await this.advance({ force: true });
       const { id } = this.attachment(ws);
       if (!id || !this.room || !this.room.members.some((m) => m.id === id && !m.left)) return;
       if (this.sockets().some((other) => other !== ws && this.attachment(other).id === id && other.readyState === 1)) return;
@@ -485,7 +512,7 @@ export class Room {
     let attemptedMatch;
     return this.serial(async () => {
       attemptedMatch = this.room && `${this.room.ersomhaKey}:${this.room.matchId}`;
-      await this.advance();
+      await this.advance({ force: true });
       for (const ws of this.sockets()) {
         const a = this.attachment(ws);
         if (!a.id && a.authDeadline <= Date.now()) this.close(ws, 4401, 'AUTH');

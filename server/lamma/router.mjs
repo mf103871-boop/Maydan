@@ -3,18 +3,21 @@ import { fail } from '../room-model.mjs';
 import { pagination,sequenceOf,userId } from '../social/model.mjs';
 import * as groups from './groups.mjs';
 import * as messages from './group-messages.mjs';
-import { uploadAttachment,audioResponse,deleteAttachment,MAX_AUDIO_BYTES } from './media.mjs';
+import { uploadAttachment,readBinaryAudio,audioResponse,deleteAttachment,MAX_AUDIO_BYTES } from './media.mjs';
 import { startCall,getCall,listCalls,joinCall,callAction,revokeInvalidCalls } from './calls.mjs';
 import { liveKitConfigured } from './provider.mjs';
 import { pushConfigured,preferences,setPreferences,registerDevice,deleteDevice } from './notifications.mjs';
 import { roomInvitation,respondRoomInvitation } from './room-invitations.mjs';
 const body=req=>req.body?readJson(req,16384):Promise.resolve({});
 export async function routeLamma(request,env,path,id,sessionId,context){const method=request.method;
-  if(path==='/capabilities'&&method==='GET')return json({groups:true,voiceMessages:!!env.SOCIAL_AUDIO,liveCalls:liveKitConfigured(env),pushNotifications:pushConfigured(env),maxGroupMembers:12,maxVoiceDurationMs:120000,maxVoiceBytes:MAX_AUDIO_BYTES});
+  if(path==='/capabilities'&&method==='GET')return json({groups:true,voiceMessages:!!env.SOCIAL_AUDIO,binaryVoiceUpload:!!env.SOCIAL_AUDIO,liveCalls:liveKitConfigured(env),pushNotifications:pushConfigured(env),maxGroupMembers:12,maxVoiceDurationMs:120000,maxVoiceBytes:MAX_AUDIO_BYTES});
   if(path==='/preferences'){if(method==='GET')return json(await preferences(env,id));if(method==='PUT')return json(await setPreferences(env,id,await body(request)));}
   if(path==='/devices'&&method==='PUT')return json(await registerDevice(env,id,sessionId,await body(request)));
   let m=/^\/devices\/([A-Za-z0-9_-]+)$/.exec(path);if(m&&method==='DELETE'){await deleteDevice(env,id,m[1],sessionId);return json({ok:true});}
-  if(path==='/attachments'&&method==='POST')return json(await uploadAttachment(env,id,await readJson(request,Math.ceil(MAX_AUDIO_BYTES/3)*4+4096)));
+  if(path==='/attachments'&&method==='POST'){
+    if(request.headers.get('content-type')?.toLowerCase().startsWith('multipart/form-data')){const {body,bytes}=await readBinaryAudio(request);return json(await uploadAttachment(env,id,body,bytes));}
+    return json(await uploadAttachment(env,id,await readJson(request,Math.ceil(MAX_AUDIO_BYTES/3)*4+4096)));
+  }
   m=/^\/attachments\/([A-Za-z0-9_-]+)(\/content)?$/.exec(path);if(m){if(m[2]&&method==='GET')return audioResponse(env,id,m[1],request);if(!m[2]&&method==='DELETE')return json(await deleteAttachment(env,id,m[1]));}
   if(path==='/groups'){if(method==='GET')return json(await groups.listGroups(env,id));if(method==='POST')return json(await groups.createGroup(env,id,await body(request)));}
   m=/^\/groups\/([A-Za-z0-9_-]+)(?:\/(.*))?$/.exec(path);if(m){const g=userId(m[1]),tail=m[2]||'';
@@ -30,7 +33,7 @@ export async function routeLamma(request,env,path,id,sessionId,context){const me
     const target=/^members\/([A-Za-z0-9_-]+)$/.exec(tail);if(target){if(method==='PATCH')return json(await groups.setRole(env,id,g,target[1],(await body(request)).role));if(method==='DELETE'){const result=await groups.leaveGroup(env,id,g,target[1]);await revokeInvalidCalls(env);return json(result);}}
     fail('NOT_FOUND',404);
   }
-  if(path==='/calls'){if(method==='GET')return json(await listCalls(env,id));if(method==='POST')return json(await startCall(env,id,await body(request),context));}
+  if(path==='/calls'){if(method==='GET')return json(await listCalls(env,id,context));if(method==='POST')return json(await startCall(env,id,await body(request),context));}
   m=/^\/calls\/([A-Za-z0-9_-]+)(?:\/(accept|join|reject|leave|end))?$/.exec(path);if(m){if(!m[2]&&method==='GET')return json({call:await getCall(env,id,m[1])});if(method==='POST'&&m[2])return json(['join','accept'].includes(m[2])?await joinCall(env,id,m[1],await body(request),context):await callAction(env,id,m[1],m[2],await body(request)));}
   if(path==='/room-invitations'&&method==='POST')return json(await roomInvitation(env,id,await body(request),context));
   m=/^\/room-invitations\/([A-Za-z0-9_-]+)\/(accept|reject)$/.exec(path);if(m&&method==='POST')return json(await respondRoomInvitation(env,id,m[1],m[2]));

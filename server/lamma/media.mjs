@@ -6,25 +6,50 @@ import { job,wakeJobs } from './notifications.mjs';
 export const MAX_AUDIO_BYTES=3*1024*1024;
 export const MAX_AUDIO_MS=120000;
 export const attachmentView=r=>({id:r.id,mimeType:r.mime_type,durationMs:r.duration_ms,byteLength:r.byte_length,url:`/api/social/attachments/${r.id}/content`});
-function decodeAudio(body){
+function validateAudio(body,bytes){
   const mime=String(body.mimeType||'').toLowerCase().split(';')[0].trim();
-  if(!['audio/mp4','audio/x-m4a','audio/aac','audio/webm','audio/ogg','audio/wav'].includes(mime)||!Number.isInteger(body.durationMs)||body.durationMs<100||body.durationMs>MAX_AUDIO_MS||typeof body.dataBase64!=='string'||body.dataBase64.length>Math.ceil(MAX_AUDIO_BYTES/3)*4||!/^[A-Za-z0-9+/]*={0,2}$/.test(body.dataBase64))fail('AUDIO_INVALID',400);
-  let bytes;try{bytes=Uint8Array.from(atob(body.dataBase64),c=>c.charCodeAt(0));}catch{fail('AUDIO_INVALID',400);}
-  if(bytes.length<12||bytes.length>MAX_AUDIO_BYTES)fail('AUDIO_INVALID',400);
+  if(!['audio/mp4','audio/x-m4a','audio/aac','audio/webm','audio/ogg','audio/wav'].includes(mime)||!Number.isInteger(body.durationMs)||body.durationMs<100||body.durationMs>MAX_AUDIO_MS||!(bytes instanceof Uint8Array)||bytes.length<12||bytes.length>MAX_AUDIO_BYTES)fail('AUDIO_INVALID',400);
   const ascii=(at,n)=>String.fromCharCode(...bytes.slice(at,at+n));
   const valid=mime==='audio/webm'?bytes[0]===0x1a&&bytes[1]===0x45&&bytes[2]===0xdf&&bytes[3]===0xa3:mime==='audio/ogg'?ascii(0,4)==='OggS':mime==='audio/wav'?ascii(0,4)==='RIFF'&&ascii(8,4)==='WAVE':mime==='audio/aac'?bytes[0]===255&&(bytes[1]&246)===240:ascii(4,4)==='ftyp';
   if(!valid)fail('AUDIO_INVALID',400);return {bytes,mime:mime==='audio/x-m4a'?'audio/mp4':mime};
 }
-export async function uploadAttachment(env,id,body){
+function decodeAudio(body){
+  if(typeof body.dataBase64!=='string'||body.dataBase64.length>Math.ceil(MAX_AUDIO_BYTES/3)*4||!/^[A-Za-z0-9+/]*={0,2}$/.test(body.dataBase64))fail('AUDIO_INVALID',400);
+  let bytes;try{bytes=Uint8Array.from(atob(body.dataBase64),c=>c.charCodeAt(0));}catch{fail('AUDIO_INVALID',400);}
+  return validateAudio(body,bytes);
+}
+function base64Bytes(bytes){let value='';for(let i=0;i<bytes.length;i+=8192)value+=String.fromCharCode(...bytes.subarray(i,i+8192));return btoa(value);}
+async function binaryHash(bytes){return 'bin1:'+Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',bytes)),b=>b.toString(16).padStart(2,'0')).join('');}
+// Binary uploads retain the existing authenticated endpoint. Bound the entire
+// multipart envelope before parsing it; no unbounded request.formData() buffering.
+export async function readBinaryAudio(request){
+  const max=MAX_AUDIO_BYTES+8192,type=request.headers.get('content-type')||'';
+  if(!/^multipart\/form-data;\s*boundary=/i.test(type)||type.length>256)fail('INVALID',415);
+  const declared=request.headers.get('content-length');
+  if(declared!==null&&(!/^\d+$/.test(declared)||Number(declared)>max))fail('TOO_LARGE',413);
+  const reader=request.body?.getReader();if(!reader)fail('AUDIO_INVALID',400);
+  const chunks=[];let length=0;
+  for(;;){const {done,value}=await reader.read();if(done)break;length+=value.byteLength;if(length>max){await reader.cancel();fail('TOO_LARGE',413);}chunks.push(value);}
+  const envelope=new Uint8Array(length);let offset=0;for(const chunk of chunks){envelope.set(chunk,offset);offset+=chunk.byteLength;}
+  let form;try{form=await new Response(envelope,{headers:{'content-type':type}}).formData();}catch{fail('AUDIO_INVALID',400);}
+  const keys=['scope','conversationId','clientId','durationMs','audio'];
+  if([...form.keys()].length!==keys.length||keys.some(key=>form.getAll(key).length!==1))fail('AUDIO_INVALID',400);
+  const fields=Object.fromEntries(keys.slice(0,-1).map(key=>[key,form.get(key)]));
+  if(Object.values(fields).some(value=>typeof value!=='string'||value.length>128)||!/^\d+$/.test(fields.durationMs))fail('AUDIO_INVALID',400);
+  const clip=form.get('audio');if(!(clip instanceof Blob)||clip.size>MAX_AUDIO_BYTES||clip.size<12)fail('AUDIO_INVALID',400);
+  return {body:{...fields,durationMs:Number(fields.durationMs),mimeType:clip.type},bytes:new Uint8Array(await clip.arrayBuffer())};
+}
+export async function uploadAttachment(env,id,body,inputBytes){
   if(!env.SOCIAL_AUDIO)fail('AUDIO_UNAVAILABLE',503);
   const scope=scopeOf(body.scope),conversationId=userId(body.conversationId),clientId=clientIdOf(body.clientId);
   await requireScope(env,id,scope,conversationId);
-  const {bytes,mime}=decodeAudio(body),hash=await sha256(body.dataBase64),attachmentId=await sha256(`${id}:${clientId}`),key=`voice/${attachmentId}`;
+  const {bytes,mime}=inputBytes===undefined?decodeAudio(body):validateAudio(body,inputBytes),hash=await binaryHash(bytes),attachmentId=await sha256(`${id}:${clientId}`),key=`voice/${attachmentId}`;
   const now=Date.now();
   await run(env,`INSERT OR IGNORE INTO social_attachments(id,user_id,scope,conversation_id,client_id,object_key,mime_type,duration_ms,byte_length,content_hash,created_at) SELECT ?,?,?,?,?,?,?,?,?,?,? WHERE ${scopeAllowed(scope,ident(conversationId),ident(id))} AND COALESCE((SELECT SUM(byte_length) FROM social_attachments WHERE user_id=? AND created_at>?),0)+?<=31457280`,attachmentId,id,scope,conversationId,clientId,key,mime,body.durationMs,bytes.length,hash,now,id,now-86400000,bytes.length);
   const row=await first(env,'SELECT * FROM social_attachments WHERE id=?',attachmentId);
   if(!row)fail('RATE_LIMIT',429);
-  if(row.deleted_at||row.content_hash!==hash||row.scope!==scope||row.conversation_id!==conversationId||row.duration_ms!==body.durationMs||row.mime_type!==mime)fail('CONFLICT',409);
+  const sameHash=row.content_hash===hash||(!row.content_hash.startsWith('bin1:')&&row.content_hash===await sha256(body.dataBase64??base64Bytes(bytes)));
+  if(row.deleted_at||!sameHash||row.scope!==scope||row.conversation_id!==conversationId||row.duration_ms!==body.durationMs||row.mime_type!==mime)fail('CONFLICT',409);
   if(!row.ready_at){
     await env.SOCIAL_AUDIO.put(key,bytes,{httpMetadata:{contentType:mime},customMetadata:{attachmentId}});
     await run(env,`UPDATE social_attachments SET ready_at=? WHERE id=? AND deleted_at IS NULL AND ${scopeAllowed(scope,ident(conversationId),ident(id))}`,Date.now(),attachmentId);
@@ -43,18 +68,32 @@ export async function messageContent(env,id,scope,conversationId,body){
   return {kind,text:'رسالة صوتية — حدّث التطبيق للاستماع',attachmentId,roomInvitationId:null};
 }
 export async function enrichMessages(env,messages){
-  for(const m of messages){if(!m||m.deletedAt)continue;
-    if(m.attachmentId){const a=await first(env,'SELECT * FROM social_attachments WHERE id=? AND deleted_at IS NULL AND ready_at IS NOT NULL',m.attachmentId);if(a)m.attachment=attachmentView(a);}
-    if(m.roomInvitationId){const r=await first(env,'SELECT * FROM social_room_invites WHERE id=?',m.roomInvitationId);if(r)m.roomInvitation={id:r.id,roomCode:r.room_code,game:r.game,expiresAt:r.expires_at,status:r.expires_at>Date.now()?'pending':'expired'};}
-  }return messages;
+  const visible=messages.filter(m=>m&&!m.deletedAt);
+  const lookup=async(field,table,suffix='')=>{
+    const ids=[...new Set(visible.map(m=>m[field]).filter(Boolean))],found=new Map();
+    // Stay below D1's bound-parameter limit, including larger history pages.
+    for(let at=0;at<ids.length;at+=80){const batch=ids.slice(at,at+80);for(const row of await all(env,`SELECT * FROM ${table} WHERE id IN (${batch.map(()=>'?').join(',')})${suffix}`,...batch))found.set(row.id,row);}
+    return found;
+  };
+  const [attachments,invites]=await Promise.all([
+    lookup('attachmentId','social_attachments',' AND deleted_at IS NULL AND ready_at IS NOT NULL'),
+    lookup('roomInvitationId','social_room_invites'),
+  ]);
+  for(const m of visible){
+    if(m.attachmentId){delete m.attachment;const a=attachments.get(m.attachmentId);if(a)m.attachment=attachmentView(a);}
+    if(m.roomInvitationId){delete m.roomInvitation;const r=invites.get(m.roomInvitationId);if(r)m.roomInvitation={id:r.id,roomCode:r.room_code,game:r.game,expiresAt:r.expires_at,status:r.expires_at>Date.now()?'pending':'expired'};}
+  }
+  return messages;
 }
 async function authorizedAttachment(env,id,attachmentId){
-  const a=await first(env,'SELECT * FROM social_attachments WHERE id=? AND ready_at IS NOT NULL AND deleted_at IS NULL',attachmentId);if(!a)fail('NOT_FOUND',404);
-  await requireScope(env,id,a.scope,a.conversation_id);
-  if(!await first(env,`SELECT 1 WHERE ${unblocked(ident(id),ident(a.user_id))} AND ${live(ident(a.user_id))}`))fail('NOT_FOUND',404);
-  if(a.message_seq===null){if(a.user_id!==id)fail('NOT_FOUND',404);return a;}
-  const found=a.scope==='direct'?await first(env,'SELECT 1 FROM social_messages WHERE seq=? AND attachment_id=? AND deleted_at IS NULL',a.message_seq,a.id):await first(env,`SELECT 1 FROM social_group_messages m JOIN social_group_members gm ON gm.group_id=m.group_id AND gm.user_id=? WHERE m.seq=? AND m.attachment_id=? AND m.deleted_at IS NULL AND gm.left_at IS NULL AND m.seq>gm.visible_after_seq`,id,a.message_seq,a.id);
-  if(!found)fail('NOT_FOUND',404);return a;
+  const actor=ident(id);
+  // One authorization snapshot covers ownership, friendship/membership, blocks,
+  // join history and message deletion. Call it again after awaiting R2 below.
+  const a=await first(env,`SELECT a.* FROM social_attachments a WHERE a.id=? AND a.ready_at IS NOT NULL AND a.deleted_at IS NULL AND ${unblocked(actor,'a.user_id')} AND ${live('a.user_id')} AND (
+    (a.scope='direct' AND ${scopeAllowed('direct','a.conversation_id',actor)} AND ((a.message_seq IS NULL AND a.user_id=${actor}) OR EXISTS(SELECT 1 FROM social_messages m WHERE m.seq=a.message_seq AND m.conversation_id=a.conversation_id AND m.attachment_id=a.id AND m.deleted_at IS NULL))) OR
+    (a.scope='group' AND ${scopeAllowed('group','a.conversation_id',actor)} AND ((a.message_seq IS NULL AND a.user_id=${actor}) OR EXISTS(SELECT 1 FROM social_group_messages m JOIN social_group_members gm ON gm.group_id=m.group_id AND gm.user_id=${actor} WHERE m.seq=a.message_seq AND m.group_id=a.conversation_id AND m.attachment_id=a.id AND m.deleted_at IS NULL AND gm.left_at IS NULL AND m.seq>gm.visible_after_seq)))
+  )`,attachmentId);
+  if(!a)fail('NOT_FOUND',404);return a;
 }
 export async function audioResponse(env,id,attachmentId,request){
   if(!env.SOCIAL_AUDIO)fail('AUDIO_UNAVAILABLE',503);const a=await authorizedAttachment(env,id,userId(attachmentId));

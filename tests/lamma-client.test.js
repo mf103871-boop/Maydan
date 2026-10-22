@@ -167,6 +167,22 @@ test('voice uploads retain their identity across retries and use a compatible ty
   assert.equal(sent[1].kind, 'voice'); assert.equal(uploads[0].scope, 'direct'); assert.equal(uploads[0].dataBase64, 'YXVkaW8=');
 });
 
+test('negotiated voice upload sends binary bytes without another capability call or duplicate upload on retry', async t => {
+  const uploads=[],sent=[];let fail=true;
+  const c=client(t,async(path,options)=>{
+    if(path.endsWith('/attachments')){uploads.push(options.body);return {attachment:{id:'audio'}};}
+    sent.push(options.body);if(fail){fail=false;throw {code:'NETWORK'};}return {message:{seq:5}};
+  });
+  c.state.capabilities.binaryVoiceUpload=true;
+  const bytes=Uint8Array.from([0,127,128,255]),blob=new Blob([bytes],{type:'audio/mp4'});
+  const clip={targetType:'direct',targetId:'dm',blob,durationMs:1200};
+  await assert.rejects(c.sendVoiceNote(clip));await c.sendVoiceNote(clip);
+  assert.equal(uploads.length,1);assert.ok(uploads[0] instanceof FormData);assert.equal(uploads[0].has('dataBase64'),false);
+  assert.equal(uploads[0].get('scope'),'direct');assert.equal(uploads[0].get('conversationId'),'dm');assert.equal(uploads[0].get('durationMs'),'1200');
+  assert.equal(uploads[0].get('clientId'),sent[0].clientId);assert.equal(sent[0].clientId,sent[1].clientId);
+  assert.deepEqual(new Uint8Array(await uploads[0].get('audio').arrayBuffer()),bytes);
+});
+
 test('group voice send publishes the canonical message and finishes before background history refresh', async t => {
   const wait = deferred(), requests = [];
   const c = client(t, async (path, options) => {
@@ -228,7 +244,7 @@ test('unauthorized or overlong recordings are rejected before upload', async t =
 });
 test('playback reauthorizes each time and a revocation while downloading discards the audio', async t => {
   let count = 0; const urls = [], wait = deferred();
-  const c = client(t, async () => { count++; return { blob: () => count === 3 ? wait.promise : Promise.resolve(new Blob(['audio'])) }; },
+  const c = client(t, async (_path,options) => { assert.equal(options.responseType,'blob'); count++; return count === 3 ? wait.promise : new Blob(['audio']); },
     { makeURL: () => 'blob:' + count, revokeURL: value => urls.push(value) });
   assert.equal(await c.getVoiceUrl('audio'), 'blob:1'); assert.equal(await c.getVoiceUrl('audio'), 'blob:2');
   assert.deepEqual(urls, ['blob:1']);

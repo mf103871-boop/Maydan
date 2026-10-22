@@ -35,6 +35,7 @@ export class SocialClient {
     this.request = request; this.server = server; this.socketFactory = socketFactory; this.now = now;
     this.state = initial(); this.listeners = new Set(); this.epoch = 0; this.userId = null;
     this.visibleConversations = new Map();
+    this.networkOnline = true;
     this.typingTimers = new Map(); this.sentTyping = new Map(); this.sending = new Map(); this.reading = new Map();
     this.subscribe = listener => { this.listeners.add(listener); return () => this.listeners.delete(listener); };
     this.getSnapshot = () => this.state;
@@ -59,6 +60,7 @@ export class SocialClient {
   }
   start(userId) {
     this.stop(); this.userId = userId; this.update({ ...initial(), loading: true });
+    this.networkOnline = typeof navigator === 'undefined' || navigator.onLine !== false;
     if (!userId) return;
     this.refresh().catch(() => {}); this.connect();
     // With a live socket the server pushes changes; the poll is only a safety net.
@@ -73,17 +75,25 @@ export class SocialClient {
     this.visibleConversations.clear();
     this.epoch++; this.userId = null; this.activeFriend = null; this.refreshing = null;
     this.refreshAgain = false; this.connecting = false; this.attempt = 0;
-    clearInterval(this.poll); clearInterval(this.ping); clearTimeout(this.reconnect); clearTimeout(this.refreshTimer);
+    clearInterval(this.poll); clearInterval(this.ping); clearTimeout(this.reconnect); clearTimeout(this.refreshTimer); clearTimeout(this.openTimeout);
     for (const timer of this.typingTimers.values()) clearTimeout(timer);
     this.typingTimers.clear(); this.sentTyping.clear(); this.sending.clear(); this.reading.clear();
     const socket = this.socket; this.socket = null; if (socket) { socket.onclose = null; socket.close(); }
     this.update(initial());
   }
   visible() { return typeof document === 'undefined' || document.visibilityState !== 'hidden'; }
+  networkOffline() {
+    this.networkOnline = false;
+    clearTimeout(this.reconnect); clearTimeout(this.openTimeout); clearInterval(this.ping); this.sentTyping.clear();
+    const socket = this.socket; this.socket = null;
+    if (socket) { socket.onclose = null; socket.close(); }
+    this.update({ connected: false, offline: true });
+  }
   visibilityChanged() {
     if (!this.userId) return;
+    this.networkOnline = typeof navigator === 'undefined' || navigator.onLine !== false;
     if (!this.visible()) {
-      clearTimeout(this.reconnect); clearInterval(this.ping); this.sentTyping.clear();
+      clearTimeout(this.reconnect); clearTimeout(this.openTimeout); clearInterval(this.ping); this.sentTyping.clear();
       const socket = this.socket; this.socket = null;
       if (socket) { socket.onclose = null; socket.close(1000, 'background'); }
       this.update({ connected: false });
@@ -326,17 +336,23 @@ export class SocialClient {
     } else if (message.type === 'refresh') this.scheduleRefresh();
   }
   async connect() {
-    if (!this.userId || !this.visible() || this.socket || this.connecting) return;
+    if (!this.userId || !this.networkOnline || !this.visible() || this.socket || this.connecting) return;
     const epoch = this.epoch; this.connecting = true;
     try {
       const ticket = await this.call('/live-ticket', { method: 'POST', body: {} });
-      if (epoch !== this.epoch || !this.visible()) return;
+      if (epoch !== this.epoch || !this.networkOnline || !this.visible()) return;
       const url = new URL('/api/social/socket', this.server());
       url.protocol = url.protocol === 'https:' ? 'wss:' : 'ws:';
       url.searchParams.set('userId', ticket.userId); url.searchParams.set('ticket', ticket.ticket);
       const socket = this.socketFactory(url.href); this.socket = socket;
+      this.openTimeout = setTimeout(() => {
+        if (epoch !== this.epoch || this.socket !== socket || socket.readyState === 1) return;
+        this.socket = null; socket.onclose = null; socket.close();
+        this.update({ connected: false }); this.reconnectLater();
+      }, 20_000);
       socket.onopen = () => {
-        if (epoch !== this.epoch) { socket.close(); return; }
+        if (epoch !== this.epoch || this.socket !== socket) { socket.close(); return; }
+        clearTimeout(this.openTimeout);
         this.attempt = 0; this.lastPong = this.now(); this.update({ connected: true });
         clearInterval(this.ping);
         this.ping = setInterval(() => {
@@ -345,17 +361,17 @@ export class SocialClient {
         }, 20_000);
         this.scheduleRefresh();
       };
-      socket.onmessage = event => { if (epoch === this.epoch) this.receive(event).catch(() => {}); };
+      socket.onmessage = event => { if (epoch === this.epoch && this.socket === socket) this.receive(event).catch(() => {}); };
       socket.onerror = () => { try { socket.close(); } catch { /* Already closed. */ } };
       socket.onclose = () => {
-        if (epoch !== this.epoch) return;
-        this.socket = null; this.sentTyping.clear(); clearInterval(this.ping); this.update({ connected: false }); this.reconnectLater();
+        if (epoch !== this.epoch || this.socket !== socket) return;
+        clearTimeout(this.openTimeout); this.socket = null; this.sentTyping.clear(); clearInterval(this.ping); this.update({ connected: false }); this.reconnectLater();
       };
     } catch { if (epoch === this.epoch) this.reconnectLater(); }
     finally { if (epoch === this.epoch) this.connecting = false; }
   }
   reconnectLater() {
-    if (!this.userId || !this.visible()) return;
+    if (!this.userId || !this.networkOnline || !this.visible()) return;
     clearTimeout(this.reconnect); this.attempt = (this.attempt || 0) + 1;
     this.reconnect = setTimeout(() => this.connect(), Math.min(30_000, 1000 * 2 ** Math.min(this.attempt, 5)));
   }
