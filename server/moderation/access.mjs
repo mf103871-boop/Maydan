@@ -1,7 +1,8 @@
 import { fail } from '../room-model.mjs';
 
 export function isModerator(env, userId) {
-  return String(env.MODERATOR_USER_IDS || '').split(',').map(id => id.trim())
+  return [env.MODERATOR_USER_IDS, env.MODERATOR_ADDITIONAL_USER_IDS]
+    .flatMap(value => String(value || '').split(',')).map(id => id.trim())
     .filter(id => /^[A-Za-z0-9_-]{1,80}$/.test(id)).includes(userId);
 }
 export const suspensionOf = async (env, userId) => env.DB && userId ? env.DB.prepare(
