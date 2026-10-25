@@ -76,11 +76,14 @@ test('native commits only the current complete acknowledgement and stages before
   assert.match(swift, /body\["succeeded"\] as\? Bool == true/);
   assert.match(game, /إعادة المحاولة/);
   assert.match(game, /المتابعة الآن/);
+  assert.doesNotMatch(game, /سنحاول النقل في التشغيل القادم/);
+  assert.match(game, /وقد تتقدم إعداداتك وحفظك الجديد على القديم/);
 });
 
 test('staging process and navigation failures retain recovery rather than initialize game defaults', () => {
   const process = game.slice(game.indexOf('func webViewWebContentProcessDidTerminate'), game.indexOf('didFail navigation:'));
   const beforeReload = process.slice(0, process.indexOf('DispatchQueue.main.async'));
+  assert.match(beforeReload, /if isCollectingMigration \{[\s\S]*?migration\?\.cancelCollection\(\)\s*return/);
   assert.match(beforeReload, /if isCommittingMigration \{\s*finishMigrationSeed\(succeeded: false\)\s*return/);
   assert.match(beforeReload, /if webView\.url == AppSchemeHandler\.migrationURL \{\s*showMigrationRecovery\(\)\s*return/);
   for (const name of ['didFail navigation:', 'didFailProvisionalNavigation navigation:']) {
@@ -93,4 +96,45 @@ test('staging process and navigation failures retain recovery rather than initia
   assert.match(finish, /migrationSeedNavigation = nil/);
   assert.match(finish, /migrationSeedTimeout\?\.invalidate\(\)/);
   assert.match(finish, /migration\?\.abandonSeed\(\)/);
+});
+
+test('collect and seed separate loading from acknowledgement and fence every old callback', () => {
+  assert.match(swift, /struct StorageMigrationWatchdog/);
+  assert.match(swift, /loadingBudget: TimeInterval = 30/);
+  assert.match(swift, /resultBudget: TimeInterval = 8/);
+  assert.match(swift, /deadline = min\(deadline \+ Self\.resultBudget, now \+ Self\.resultBudget\)/);
+  assert.match(swift, /candidate === webView, let current = readerNavigation, navigation === current/);
+  assert.match(swift, /watchdog\.hasExpired\(generation: generation/);
+  assert.match(swift, /guard watchdog\.finish\(generation: generation\) else \{ return \}/);
+  assert.match(swift, /webView\?\.navigationDelegate = nil/);
+  assert.match(swift, /webView\?\.stopLoading\(\)/);
+  assert.match(swift, /message\.frameInfo\.request\.url\?\.standardizedFileURL/);
+  assert.match(game, /guard !isCollectingMigration, !isCommittingMigration else \{ return \}/);
+  assert.match(game, /self\.isCollectingMigration = false/);
+  assert.match(game, /migrationSeedWatchdog\.hasExpired\(generation: generation/);
+  assert.match(game, /migrationSeedWatchdog\.documentReady\(generation: generation/);
+  assert.match(game, /guard let self, !self\.isCollectingMigration, !self\.isCommittingMigration/);
+  assert.match(game, /guard didLoadBundledGame, migrationMayLoadGame else \{ return \}/);
+  assert.match(game, /self\.didLoadBundledGame, self\.migrationMayLoadGame/);
+  const didFinish = game.slice(game.indexOf('didFinish navigation:'), game.indexOf('private func recordSimulatorLaunchReady'));
+  assert.match(didFinish, /guard !isCollectingMigration else \{ return \}/);
+  assert.match(didFinish, /guard !isCommittingMigration, migrationMayLoadGame/);
+  assert.match(game, /self\.didChooseMigrationContinue = true/);
+  assert.doesNotMatch(swift + game, /withTimeInterval: 4, repeats: false/);
+});
+
+test('startup proof requires real frontend initialization and completed migration, only in simulator', () => {
+  const start = game.indexOf('private func recordSimulatorLaunchReady');
+  const receipt = game.slice(start, game.indexOf('private func recordSimulatorOrientation', start));
+  assert.match(game.slice(start - 40, start), /#if targetEnvironment\(simulator\)/);
+  assert.match(receipt, /payload\["token"\] as\? String == token/);
+  assert.match(receipt, /!isCollectingMigration, !isCommittingMigration, migration\?\.isDone == true/);
+  assert.match(receipt, /pageURL\.path == AppSchemeHandler\.entryURL\.path/);
+  assert.match(receipt, /payload\["initialized"\] as\? Bool == true/);
+  assert.match(receipt, /"migrationComplete": true/);
+  assert.match(receipt, /options: \.atomic/);
+  assert.match(game, /let payload = Self\.json\(\["token": token\]\)/);
+  const didFinish = game.slice(game.indexOf('didFinish navigation:'), start);
+  assert.doesNotMatch(didFinish, /recordSimulatorLaunchReady\(/);
+  assert.match(game, /case "simulatorGameReady":\s*recordSimulatorLaunchReady\(payload, pageURL: pageURL\)/);
 });

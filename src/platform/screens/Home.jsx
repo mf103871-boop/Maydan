@@ -13,6 +13,7 @@ import { ProfileAvatar } from '../../profiles/ProfileAvatar.jsx';
 import { PUBLIC_SITE_ORIGIN, LEGAL_ROUTES } from '../../shared/account/config.js';
 import { navigate, getDirection } from '../router.js';
 import { GAMES } from '../registry.js';
+import { reportSimulatorHomeReady } from '../native-launch-ready.js';
 import { Avatar, BrandMark, Wordmark, GameArtwork, ClayStage } from '../../shared/brand/art.jsx';
 import { prefersReducedMotion, wait } from '../../shared/fx/index.js';
 
@@ -97,6 +98,7 @@ export function Home() {
   const social = useSocial() || { friends: [], incoming: [], unreadCount: 0 };
   const lamma = useLamma();
   const profiles = useProfiles();
+  useEffect(() => reportSimulatorHomeReady({ accountReady: account.ready, gameCount: GAMES.length }), [account.ready]);
   // فتح لعبة: البطاقة تنطلق (is-launch) ثم الملاحة بعد 140ms (صفر تحت تقليل الحركة)؛ النقر المزدوج محروس بمرجع.
   const launching = useRef(false);
   const launchTimer = useRef(0);

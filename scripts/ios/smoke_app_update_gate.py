@@ -18,6 +18,10 @@ from smoke_simulator_launch import LaunchSmoke, SmokeFailure
 
 
 class UpdateGateSmoke(LaunchSmoke):
+    # A deliberately blocked update panel cannot also render the home screen.
+    # This scenario and its audio/orientation subclasses keep their own gates.
+    requires_game_ready = False
+
     @staticmethod
     def validate_check_path(state, phase):
         """Reject UI-only fixtures that bypass storefront/request/decoding work."""

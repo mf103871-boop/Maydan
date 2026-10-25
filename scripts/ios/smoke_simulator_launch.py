@@ -1,13 +1,15 @@
 #!/usr/bin/env python3
 """Launch a Release .app on a temporary iPhone simulator and retain diagnostics.
 
-This checks startup survival, not UI correctness or physical-device behavior.
+This checks startup survival AND initialized game readiness on both launches,
+not complete UI correctness or physical-device behavior.
 Run after the simulator build; upload --output-dir even when this command fails.
 """
 
 import argparse
 import hashlib
 import json
+import os
 from pathlib import Path
 import plistlib
 import re
@@ -22,6 +24,8 @@ class SmokeFailure(RuntimeError):
 
 
 class LaunchSmoke:
+    requires_game_ready = True
+
     def __init__(self, app, output):
         self.app = app.resolve()
         self.output = output.resolve()
@@ -29,6 +33,7 @@ class LaunchSmoke:
         self.device = None
         self.owns_device = False
         self.installed_app = None
+        self.data_container = None
         self.bundle = None
         self.executable = None
         self.pids = set()
@@ -42,14 +47,14 @@ class LaunchSmoke:
             "diagnosticWarnings": [],
             "preparation": [],
             "limits": [
-                "Checks simulator process survival and launch crash reports only.",
-                "Does not certify rendered UI, device-only code, or exported IPA packaging.",
+                "Checks simulator process survival, launch crash reports and a fresh initialized-home receipt.",
+                "Does not certify all rendered UI, device-only code, or exported IPA packaging.",
             ],
         }
 
-    def command(self, args, *, timeout=45, label=None, check=True):
+    def command(self, args, *, timeout=45, label=None, check=True, env=None):
         try:
-            result = subprocess.run(args, text=True, capture_output=True, timeout=timeout)
+            result = subprocess.run(args, text=True, capture_output=True, timeout=timeout, env=env)
         except subprocess.TimeoutExpired as error:
             if label:
                 self.save_output(label, error.stdout, error.stderr)
@@ -160,6 +165,40 @@ class LaunchSmoke:
         ).stdout.strip()).resolve()
         if not (self.installed_app / self.executable).is_file():
             raise SmokeFailure("The installed simulator executable could not be found.")
+        if self.requires_game_ready:
+            self.data_container = Path(self.prepare_command(
+                "startup-data-container", 180, "get_app_container", self.device, self.bundle, "data"
+            ).stdout.strip()).resolve()
+            if not self.data_container.is_dir():
+                raise SmokeFailure("The startup readiness data container could not be found.")
+
+    @staticmethod
+    def validate_game_ready(value, token, pid):
+        if not isinstance(value, dict):
+            raise SmokeFailure("Game readiness receipt is not an object.")
+        if value.get("token") != token or type(value.get("pid")) is not int or value["pid"] != pid:
+            raise SmokeFailure("Game readiness receipt belongs to another launch or process.")
+        if any(value.get(key) is not True for key in ("ready", "initialized", "migrationComplete")):
+            raise SmokeFailure("Game readiness receipt lacks initialized game and completed migration.")
+        if value.get("phase") != "home-ready" or value.get("route") != "home":
+            raise SmokeFailure("Game readiness receipt does not identify the mounted home screen.")
+        if type(value.get("gameCardCount")) is not int or value["gameCardCount"] != 7:
+            raise SmokeFailure("Game readiness receipt does not contain all seven game controls.")
+
+    def read_game_ready(self, record, elapsed):
+        path = self.data_container / "Library/Caches/MaydanLaunchSmoke/ready.json"
+        try:
+            if path.stat().st_size > 16 * 1024:
+                raise SmokeFailure("Game readiness receipt exceeds its bounded size.")
+            value = json.loads(path.read_text(encoding="utf-8"))
+            self.validate_game_ready(value, record["launchToken"], record["pid"])
+        except (OSError, ValueError, SmokeFailure) as error:
+            record["readyStatus"] = type(error).__name__ if isinstance(error, OSError) else str(error)
+            return
+        filename = f"{record['name']}-ready.json"
+        (self.output / filename).write_text(json.dumps(value, indent=2) + "\n", encoding="utf-8")
+        record.update({"ready": True, "readyObservedSeconds": round(elapsed, 2),
+                       "readyReceiptFile": filename, "readyStatus": "initialized-home"})
 
     def process_is_app(self, pid):
         # A successful launch response is not sufficient: dyld can terminate the
@@ -174,18 +213,31 @@ class LaunchSmoke:
         # A new simulator has no earlier app process to terminate. A combined
         # launch/terminate request stalled in FrontBoard before app execution in
         # build 12; use a plain launch and terminate verified runs separately.
+        if self.requires_game_ready and self.data_container is None:
+            raise SmokeFailure("Startup readiness requires the verified app data container before launch.")
+        launch_token = str(uuid.uuid4()) if self.requires_game_ready else None
+        launch_env = dict(os.environ)
+        # The process token is scoped to this exact command. Specialized update,
+        # audio and orientation scenarios retain their own independent gates.
+        variable = "SIMCTL_CHILD_MAYDAN_SIMULATOR_LAUNCH_TOKEN"
+        launch_env.pop(variable, None)
+        if launch_token:
+            launch_env[variable] = launch_token
         result = self.simctl(
             "launch",
             f"--stdout={self.output / (name + '-app.stdout.log')}",
             f"--stderr={self.output / (name + '-app.stderr.log')}",
-            self.device, self.bundle, timeout=45, label=f"{name}-launch",
+            self.device, self.bundle, timeout=45, label=f"{name}-launch", env=launch_env,
         )
         match = re.search(rf"^{re.escape(self.bundle)}:\s*(\d+)\s*$", result.stdout, re.MULTILINE)
         if not match:
             raise SmokeFailure(f"{name}: simctl did not report the launched application's PID.")
         pid = int(match.group(1))
         self.pids.add(pid)
-        record = {"name": name, "pid": pid, "requiredSeconds": duration, "passed": False}
+        record = {"name": name, "pid": pid, "requiredSeconds": duration, "passed": False,
+                  "readyRequired": self.requires_game_ready, "ready": False if self.requires_game_ready else None}
+        if launch_token:
+            record["launchToken"] = launch_token
         self.report["launches"].append(record)
         print(f"Monitoring {name} launch for {duration}s (PID {pid}).", flush=True)
         started = time.monotonic()
@@ -194,14 +246,20 @@ class LaunchSmoke:
                 record["observedSeconds"] = round(time.monotonic() - started, 2)
                 raise SmokeFailure(f"{name}: the exact app process exited, became a zombie, or changed identity.")
             elapsed = time.monotonic() - started
+            if self.requires_game_ready and not record["ready"]:
+                self.read_game_ready(record, elapsed)
             if elapsed >= duration:
                 break
             time.sleep(min(1, duration - elapsed))
-        record.update({"observedSeconds": round(elapsed, 2), "passed": True})
+        record.update({"observedSeconds": round(elapsed, 2), "survived": True})
         self.screenshot(name)
         self.collect_crashes()
         if self.crashes:
             raise SmokeFailure("A matching application crash report was created during startup testing.")
+        if self.requires_game_ready and not record["ready"]:
+            raise SmokeFailure(f"{name}: the app survived but initialized game readiness was not proven within {duration}s: "
+                               f"{record.get('readyStatus', 'no current-launch receipt')}.")
+        record["passed"] = True
 
     def terminate_for_relaunch(self):
         previous = self.report["launches"][-1] if self.report["launches"] else None

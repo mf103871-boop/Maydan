@@ -1,6 +1,7 @@
 """Keep simulator preparation failures separate from actual app survival checks."""
 from pathlib import Path
 import json
+import os
 import plistlib
 import subprocess
 import tempfile
@@ -17,14 +18,32 @@ class LaunchSmokeTests(unittest.TestCase):
         self.addCleanup(self.temporary.cleanup)
         self.root = Path(self.temporary.name)
 
-    def smoke(self, kind=LaunchSmoke):
+    def smoke(self, kind=LaunchSmoke, auto_ready=True):
         smoke = kind(self.root / 'Maydan.app', self.root / 'evidence')
         smoke.device, smoke.bundle = 'fresh-simulator', 'Maydan'
         smoke.simctl = Mock(return_value=subprocess.CompletedProcess([], 0, 'Maydan: 123\n', ''))
+        smoke.data_container = self.root / 'data'
+        smoke.data_container.mkdir(exist_ok=True)
+        if auto_ready:
+            def launched(*args, **kwargs):
+                token = kwargs.get('env', {}).get('SIMCTL_CHILD_MAYDAN_SIMULATOR_LAUNCH_TOKEN')
+                if args[0] == 'launch' and token:
+                    self.write_ready(smoke, token)
+                return smoke.simctl.return_value
+            smoke.simctl.side_effect = launched
         smoke.process_is_app = Mock(return_value=True)
         smoke.screenshot = Mock()
         smoke.collect_crashes = Mock()
         return smoke
+
+    def write_ready(self, smoke, token, **changes):
+        value = {'token': token, 'pid': 123, 'ready': True, 'initialized': True, 'migrationComplete': True,
+                 'phase': 'home-ready', 'route': 'home', 'gameCardCount': 7}
+        value.update(changes)
+        path = smoke.data_container / 'Library/Caches/MaydanLaunchSmoke/ready.json'
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(json.dumps(value), encoding='utf-8')
+        return value
 
     def test_fresh_normal_and_update_gate_launch_without_termination(self):
         for kind in (LaunchSmoke, UpdateGateSmoke):
@@ -39,6 +58,7 @@ class LaunchSmokeTests(unittest.TestCase):
                 self.assertEqual(kwargs['timeout'], 45)
                 self.assertEqual(smoke.report['launches'][0]['requiredSeconds'], 45)
                 self.assertTrue(smoke.report['launches'][0]['passed'])
+                self.assertEqual(smoke.report['launches'][0]['readyRequired'], kind is LaunchSmoke)
                 smoke.process_is_app.assert_called_with(123)
                 smoke.collect_crashes.assert_called_once()
 
@@ -83,6 +103,7 @@ class LaunchSmokeTests(unittest.TestCase):
     def test_launch_timeout_still_fails_without_retrying_or_claiming_success(self):
         smoke = LaunchSmoke(self.root / 'Maydan.app', self.root / 'evidence')
         smoke.device, smoke.bundle = 'fresh-simulator', 'Maydan'
+        smoke.data_container = self.root
         with patch('smoke_simulator_launch.subprocess.run', side_effect=subprocess.TimeoutExpired('simctl', 45)) as run:
             with self.assertRaisesRegex(SmokeFailure, 'Timed out after 45s'):
                 smoke.launch('cold', 45)
@@ -129,14 +150,17 @@ class LaunchSmokeTests(unittest.TestCase):
         with patch('smoke_simulator_launch.sys.platform', 'darwin'):
             smoke.prepare()
         calls = smoke.simctl.call_args_list
-        self.assertEqual([call.args[0] for call in calls], ['runtime', 'list', 'create', 'boot', 'bootstatus', 'install', 'get_app_container'])
+        self.assertEqual([call.args[0] for call in calls], ['runtime', 'list', 'create', 'boot', 'bootstatus', 'install', 'get_app_container', 'get_app_container'])
         self.assertEqual(calls[0].args, ('runtime', 'dyld_shared_cache', 'update', '--all'))
         self.assertEqual(calls[0].kwargs['timeout'], 300)
         self.assertEqual(calls[4].args, ('bootstatus', smoke.device, '-b'))
         self.assertEqual(calls[4].kwargs['timeout'], 600)
-        self.assertEqual(calls[-2].args[0], 'install')
-        self.assertEqual(calls[-2].kwargs['timeout'], 300)
+        self.assertEqual(calls[-3].args[0], 'install')
+        self.assertEqual(calls[-3].kwargs['timeout'], 300)
+        self.assertEqual(calls[-2].kwargs['timeout'], 180)
+        self.assertEqual(calls[-2].args[-1], 'app')
         self.assertEqual(calls[-1].kwargs['timeout'], 180)
+        self.assertEqual(calls[-1].args[-1], 'data')
         self.assertTrue(all(item['passed'] and item['elapsedSeconds'] >= 0 for item in smoke.report['preparation']))
         self.assertEqual(smoke.report['launches'], [])
 
@@ -239,6 +263,84 @@ class LaunchSmokeTests(unittest.TestCase):
         smoke.read_until.assert_not_called()
         self.assertFalse(smoke.report['passed'])
         self.assertFalse(smoke.report['preparation'][0]['passed'])
+
+    def test_alive_blank_or_migration_recovery_screen_cannot_pass_startup(self):
+        for changes in [None, {'migrationComplete': False}, {'initialized': False},
+                        {'phase': 'document-finished'}, {'gameCardCount': 0}]:
+            with self.subTest(changes=changes):
+                smoke = self.smoke(auto_ready=False)
+                def launched(*args, **kwargs):
+                    path = smoke.data_container / 'Library/Caches/MaydanLaunchSmoke/ready.json'
+                    if path.exists():
+                        path.unlink()
+                    if changes is not None:
+                        self.write_ready(smoke, kwargs['env']['SIMCTL_CHILD_MAYDAN_SIMULATOR_LAUNCH_TOKEN'], **changes)
+                    return subprocess.CompletedProcess([], 0, 'Maydan: 123\n', '')
+                smoke.simctl.side_effect = launched
+                with patch('smoke_simulator_launch.time.monotonic', side_effect=[0, 45]):
+                    with self.assertRaisesRegex(SmokeFailure, 'survived but initialized game readiness'):
+                        smoke.launch('cold', 45)
+                record = smoke.report['launches'][0]
+                self.assertTrue(record['survived'])
+                self.assertFalse(record['passed'])
+                self.assertFalse(record['ready'])
+                smoke.collect_crashes.assert_called_once()
+
+    def test_each_cold_and_relaunch_requires_its_own_token_and_exact_pid(self):
+        smoke = self.smoke()
+        with patch.dict(os.environ, {'SIMCTL_CHILD_MAYDAN_SIMULATOR_LAUNCH_TOKEN': 'inherited-stale-token'}):
+            with patch('smoke_simulator_launch.time.monotonic', side_effect=[0, 45, 100, 115]):
+                smoke.launch('cold', 45)
+                smoke.launch('relaunch', 15)
+            self.assertEqual(os.environ['SIMCTL_CHILD_MAYDAN_SIMULATOR_LAUNCH_TOKEN'], 'inherited-stale-token')
+        cold, relaunch = smoke.report['launches']
+        self.assertNotEqual(cold['launchToken'], relaunch['launchToken'])
+        for record in [cold, relaunch]:
+            self.assertTrue(record['ready'])
+            self.assertTrue(record['readyRequired'])
+            self.assertTrue(record['passed'])
+            self.assertEqual(record['readyObservedSeconds'], record['requiredSeconds'])
+            receipt = json.loads((smoke.output / record['readyReceiptFile']).read_text())
+            self.assertEqual(receipt['token'], record['launchToken'])
+            self.assertEqual(receipt['pid'], record['pid'])
+        stale = self.smoke(auto_ready=False)
+        self.write_ready(stale, cold['launchToken'])
+        with patch('smoke_simulator_launch.time.monotonic', side_effect=[0, 15]):
+            with self.assertRaisesRegex(SmokeFailure, 'another launch or process'):
+                stale.launch('relaunch', 15)
+        self.assertFalse(stale.report['launches'][0]['ready'])
+
+    def test_receipt_rejects_wrong_identity_partial_values_and_unbounded_input(self):
+        token = '00000000-0000-4000-8000-000000000001'
+        smoke = self.smoke(auto_ready=False)
+        valid = self.write_ready(smoke, token)
+        smoke.validate_game_ready(valid, token, 123)
+        for changes in [{'token': 'another'}, {'pid': 124}, {'pid': True}, {'ready': 1},
+                        {'initialized': None}, {'migrationComplete': 'true'}, {'route': 'migration'},
+                        {'gameCardCount': 7.0}]:
+            with self.assertRaises(SmokeFailure):
+                smoke.validate_game_ready({**valid, **changes}, token, 123)
+        with self.assertRaises(SmokeFailure):
+            smoke.validate_game_ready([], token, 123)
+        path = smoke.data_container / 'Library/Caches/MaydanLaunchSmoke/ready.json'
+        for value in ['{partial', ' ' * (16 * 1024 + 1)]:
+            path.write_text(value)
+            record = {'name': 'cold', 'launchToken': token, 'pid': 123, 'ready': False}
+            smoke.read_game_ready(record, 1)
+            self.assertFalse(record['ready'])
+            self.assertNotIn('readyReceiptFile', record)
+
+    def test_early_readiness_does_not_shorten_process_survival_or_hide_later_crash(self):
+        smoke = self.smoke()
+        smoke.process_is_app.side_effect = [True, False]
+        with patch('smoke_simulator_launch.time.monotonic', side_effect=[0, 1, 2]), patch('smoke_simulator_launch.time.sleep'):
+            with self.assertRaisesRegex(SmokeFailure, 'exact app process exited'):
+                smoke.launch('cold', 45)
+        record = smoke.report['launches'][0]
+        self.assertTrue(record['ready'])
+        self.assertEqual(record['readyObservedSeconds'], 1)
+        self.assertFalse(record['passed'])
+        self.assertEqual(record['requiredSeconds'], 45)
 
 
 if __name__ == '__main__':

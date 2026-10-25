@@ -84,10 +84,15 @@ final class GameViewController: UIViewController, WKNavigationDelegate, WKUIDele
     private var bridgeProxy: WeakScriptMessageHandler?
     private var isRecoveringWebContent = false
     private var migration: StorageMigration?
+    private var isCollectingMigration = false
     private var isCommittingMigration = false
     private var migrationSeedScript: WKUserScript?
     private var migrationSeedTimeout: Timer?
     private var migrationSeedNavigation: WKNavigation?
+    private var migrationSeedWatchdog = StorageMigrationWatchdog()
+    private var migrationProgressView: UIView?
+    private var didChooseMigrationContinue = false
+    private var migrationMayLoadGame: Bool { migration?.isDone == true || didChooseMigrationContinue }
     private var didLoadBundledGame = false
     private var drawingOrientation = DrawingOrientationPolicy()
     private var drawingWantsLandscape = false
@@ -106,6 +111,12 @@ final class GameViewController: UIViewController, WKNavigationDelegate, WKUIDele
     private var simulatorOrientationCommand: String?
     private var simulatorOrientationLastCommand: [String: String]?
     private var simulatorOrientationBaseline: Int?
+    private let simulatorLaunchToken: String? = {
+        guard let value = ProcessInfo.processInfo.environment["MAYDAN_SIMULATOR_LAUNCH_TOKEN"],
+              let uuid = UUID(uuidString: value), uuid.uuidString.lowercased() == value else { return nil }
+        return value
+    }()
+    private var simulatorLaunchRecorded = false
 #endif
     private lazy var appUpdate = AppUpdateCoordinator(host: self, canPresent: { [weak self] in
         guard let self, self.presentedViewController == nil else { return false }
@@ -145,6 +156,12 @@ final class GameViewController: UIViewController, WKNavigationDelegate, WKUIDele
         self.bridgeProxy = bridgeProxy
         configuration.userContentController.add(bridgeProxy, name: Constants.bridgeName)
 #if targetEnvironment(simulator)
+        if let token = simulatorLaunchToken {
+            let payload = Self.json(["token": token])
+            configuration.userContentController.addUserScript(WKUserScript(
+                source: "window.__maydanSimulatorLaunchToken = (\(payload)).token;",
+                injectionTime: .atDocumentStart, forMainFrameOnly: true))
+        }
         if simulatorAudioFixture {
             configuration.userContentController.addUserScript(WKUserScript(
                 source: Self.simulatorAudioScript, injectionTime: .atDocumentStart, forMainFrameOnly: true))
@@ -338,6 +355,8 @@ final class GameViewController: UIViewController, WKNavigationDelegate, WKUIDele
     // MARK: - Loading
 
     private func loadBundledGame() {
+        guard !isCollectingMigration, !isCommittingMigration else { return }
+        didChooseMigrationContinue = false
         guard let directory = Self.gameDirectory else {
             assertionFailure("Bundled game file is missing")
             showBundledGameMissingMessage()
@@ -351,13 +370,18 @@ final class GameViewController: UIViewController, WKNavigationDelegate, WKUIDele
             return
         }
         // أول تشغيل بعد التحديث: انقل محفوظات file:// إلى الأصل الجديد قبل بدء اللعبة.
+        isCollectingMigration = true
+        showMigrationProgress()
         migration.collect(in: view) { [weak self] result in
             guard let self else { return }
+            self.isCollectingMigration = false
             guard result.succeeded else { self.showMigrationRecovery(); return }
             // A genuinely empty read is complete; failed/partial reads never
             // reach this path. No game defaults have been created yet.
             if result.entries.isEmpty {
+                StorageMigration.trace("read-verified-empty")
                 migration.markDone()
+                self.hideMigrationProgress()
                 self.webView.load(URLRequest(url: AppSchemeHandler.entryURL))
                 return
             }
@@ -365,21 +389,36 @@ final class GameViewController: UIViewController, WKNavigationDelegate, WKUIDele
             self.migrationSeedScript = script
             self.isCommittingMigration = true
             self.webView.configuration.userContentController.addUserScript(script)
-            self.migrationSeedTimeout = Timer.scheduledTimer(withTimeInterval: 4, repeats: false) { [weak self] _ in
-                Task { @MainActor in self?.finishMigrationSeed(succeeded: false) }
-            }
+            let generation = self.migrationSeedWatchdog.begin(at: ProcessInfo.processInfo.systemUptime)
+            StorageMigration.trace("seed-loading")
+            self.armMigrationSeedWatchdog(generation: generation)
             self.migrationSeedNavigation = self.webView.load(URLRequest(url: AppSchemeHandler.migrationURL))
+        }
+    }
+
+    private func armMigrationSeedWatchdog(generation: UInt64) {
+        migrationSeedTimeout?.invalidate()
+        guard let delay = migrationSeedWatchdog.remaining(generation: generation, at: ProcessInfo.processInfo.systemUptime) else { return }
+        migrationSeedTimeout = Timer.scheduledTimer(withTimeInterval: max(0.01, delay), repeats: false) { [weak self] _ in
+            Task { @MainActor in
+                guard let self, self.migrationSeedWatchdog.hasExpired(generation: generation, at: ProcessInfo.processInfo.systemUptime) else { return }
+                StorageMigration.trace(self.migrationSeedWatchdog.phase == .loading ? "seed-timeout-loading" : "seed-timeout-result")
+                self.finishMigrationSeed(succeeded: false)
+            }
         }
     }
 
     private func finishMigrationSeed(succeeded: Bool) {
         guard isCommittingMigration else { return }
+        migrationSeedWatchdog.finish(generation: migrationSeedWatchdog.generation)
+        StorageMigration.trace(succeeded ? "seed-result-verified" : "seed-failed")
         isCommittingMigration = false
         isRecoveringWebContent = false
         migrationSeedNavigation = nil
         migrationSeedTimeout?.invalidate()
         migrationSeedTimeout = nil
         migration?.abandonSeed()
+        if !succeeded { webView.stopLoading() }
         if let seed = migrationSeedScript {
             let controller = webView.configuration.userContentController
             let retained = controller.userScripts.filter { $0.source != seed.source }
@@ -387,18 +426,53 @@ final class GameViewController: UIViewController, WKNavigationDelegate, WKUIDele
             retained.forEach { controller.addUserScript($0) }
             migrationSeedScript = nil
         }
-        if succeeded { webView.load(URLRequest(url: AppSchemeHandler.entryURL)) }
+        if succeeded { hideMigrationProgress(); webView.load(URLRequest(url: AppSchemeHandler.entryURL)) }
         else { showMigrationRecovery() }
     }
 
+    private func showMigrationProgress() {
+        guard migrationProgressView == nil else { return }
+        let spinner = UIActivityIndicatorView(style: .medium)
+        spinner.startAnimating()
+        let label = UILabel()
+        label.text = "جاري تجهيز اللعبة والمحفوظات…"
+        label.textColor = .darkGray
+        label.font = .preferredFont(forTextStyle: .body)
+        label.adjustsFontForContentSizeCategory = true
+        label.textAlignment = .center
+        label.numberOfLines = 0
+        let progress = UIStackView(arrangedSubviews: [spinner, label])
+        progress.axis = .vertical
+        progress.spacing = 12
+        progress.translatesAutoresizingMaskIntoConstraints = false
+        progress.isAccessibilityElement = true
+        progress.accessibilityLabel = label.text
+        view.addSubview(progress)
+        NSLayoutConstraint.activate([
+            progress.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            progress.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            progress.leadingAnchor.constraint(greaterThanOrEqualTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 24),
+            progress.trailingAnchor.constraint(lessThanOrEqualTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -24)
+        ])
+        migrationProgressView = progress
+    }
+
+    private func hideMigrationProgress() {
+        migrationProgressView?.removeFromSuperview()
+        migrationProgressView = nil
+    }
+
     private func showMigrationRecovery() {
+        hideMigrationProgress()
         guard presentedViewController == nil else { return }
         let alert = UIAlertController(title: "تعذر نقل المحفوظات القديمة",
-            message: "محفوظاتك القديمة لم تُحذف. حرّر مساحة إن كانت ممتلئة ثم أعد المحاولة. يمكنك المتابعة الآن؛ سنحاول النقل في التشغيل القادم.",
+            message: "محفوظاتك القديمة لم تُحذف. أعد المحاولة، وحرّر مساحة إن كانت ممتلئة. المتابعة الآن تفتح اللعبة دون إكمال النقل؛ وقد تتقدم إعداداتك وحفظك الجديد على القديم عند المحاولة لاحقًا.",
             preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "إعادة المحاولة", style: .default) { [weak self] _ in self?.loadBundledGame() })
         alert.addAction(UIAlertAction(title: "المتابعة الآن", style: .cancel) { [weak self] _ in
-            self?.webView.load(URLRequest(url: AppSchemeHandler.entryURL))
+            guard let self else { return }
+            self.didChooseMigrationContinue = true
+            self.webView.load(URLRequest(url: AppSchemeHandler.entryURL))
         })
         present(alert, animated: true)
     }
@@ -493,8 +567,17 @@ final class GameViewController: UIViewController, WKNavigationDelegate, WKUIDele
     }
 
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        guard !isCollectingMigration else { return }
         isRecoveringWebContent = false
-        guard !isCommittingMigration, webView.url != AppSchemeHandler.migrationURL else { return }
+        if isCommittingMigration, let current = migrationSeedNavigation, navigation === current {
+            let generation = migrationSeedWatchdog.generation
+            if migrationSeedWatchdog.documentReady(generation: generation, at: ProcessInfo.processInfo.systemUptime) {
+                StorageMigration.trace("seed-awaiting-result")
+                armMigrationSeedWatchdog(generation: generation)
+            }
+            return
+        }
+        guard !isCommittingMigration, migrationMayLoadGame, webView.url != AppSchemeHandler.migrationURL else { return }
         SocialCoordinator.shared.webAudioReady()
         appUpdate.navigationChanged()
 #if targetEnvironment(simulator)
@@ -507,6 +590,26 @@ final class GameViewController: UIViewController, WKNavigationDelegate, WKUIDele
     }
 
 #if targetEnvironment(simulator)
+    private func recordSimulatorLaunchReady(_ payload: [String: Any], pageURL: URL) {
+        guard !simulatorLaunchRecorded, let token = simulatorLaunchToken,
+              payload["token"] as? String == token,
+              !isCollectingMigration, !isCommittingMigration, migration?.isDone == true,
+              pageURL.path == AppSchemeHandler.entryURL.path,
+              payload["initialized"] as? Bool == true, payload["route"] as? String == "home",
+              payload["gameCardCount"] as? Int == 7 else { return }
+        let receipt: [String: Any] = ["token": token, "pid": ProcessInfo.processInfo.processIdentifier,
+            "ready": true, "phase": "home-ready", "route": "home", "gameCardCount": 7,
+            "initialized": true, "migrationComplete": true]
+        do {
+            let directory = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask)[0]
+                .appendingPathComponent("MaydanLaunchSmoke", isDirectory: true)
+            try FileManager.default.createDirectory(at: directory, withIntermediateDirectories: true)
+            try JSONSerialization.data(withJSONObject: receipt, options: [.sortedKeys])
+                .write(to: directory.appendingPathComponent("ready.json"), options: .atomic)
+            simulatorLaunchRecorded = true
+        } catch { print("Maydan launch readiness: receipt-write-failed") }
+    }
+
     /// CI injects only lease commands. Orientation and WK viewport values below
     /// are read from UIKit after its real geometry request; none are fabricated.
     private func recordSimulatorOrientation() {
@@ -654,6 +757,12 @@ final class GameViewController: UIViewController, WKNavigationDelegate, WKUIDele
     func webViewWebContentProcessDidTerminate(_ webView: WKWebView) {
         // A failed staging process has not earned permission to initialize the
         // game. Clear the token/script/timer and retain explicit recovery.
+        if isCollectingMigration {
+            // This callback is for the main view, but the hidden reader may
+            // share its process. Never initialize defaults before its proof.
+            migration?.cancelCollection()
+            return
+        }
         if isCommittingMigration {
             finishMigrationSeed(succeeded: false)
             return
@@ -662,6 +771,9 @@ final class GameViewController: UIViewController, WKNavigationDelegate, WKUIDele
             showMigrationRecovery()
             return
         }
+        // A failed collection may leave the main URL blank. A subsequent
+        // process callback must not bypass the visible recovery choice.
+        guard didLoadBundledGame, migrationMayLoadGame else { return }
         guard !isRecoveringWebContent else { return }
         isRecoveringWebContent = true
         releaseDrawingOrientation()
@@ -670,7 +782,9 @@ final class GameViewController: UIViewController, WKNavigationDelegate, WKUIDele
         // Loading the bundled entry point recreates the UI; localStorage remains available so
         // the web app can offer to resume the saved match.
         DispatchQueue.main.async { [weak self] in
-            guard let self, !self.isCommittingMigration, self.webView.url != AppSchemeHandler.migrationURL else { return }
+            guard let self, !self.isCollectingMigration, !self.isCommittingMigration,
+                  self.didLoadBundledGame, self.migrationMayLoadGame,
+                  self.webView.url != AppSchemeHandler.migrationURL else { return }
             self.webView.load(URLRequest(url: AppSchemeHandler.entryURL))
         }
     }
@@ -702,6 +816,10 @@ final class GameViewController: UIViewController, WKNavigationDelegate, WKUIDele
         }
 
         switch type {
+#if targetEnvironment(simulator)
+        case "simulatorGameReady":
+            recordSimulatorLaunchReady(payload, pageURL: pageURL)
+#endif
         case "migrationSeedResult":
             guard isCommittingMigration, pageURL == AppSchemeHandler.migrationURL,
                   let succeeded = migration?.acceptSeedResult(payload) else { return }

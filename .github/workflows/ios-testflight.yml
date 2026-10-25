@@ -72,6 +72,7 @@ jobs:
           npm ci --no-audit --no-fund
           npm test
           python3 scripts/ios/verify_audio_policy.py
+          python3 scripts/ios/verify_storage_migration.py
           python3 -m unittest discover -s scripts/ios -p 'test_*.py'
           npm run ios:prepare
       - name: Build and launch the Release app on iPhone Simulator
