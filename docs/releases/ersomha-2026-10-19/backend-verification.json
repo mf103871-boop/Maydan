@@ -1,0 +1,58 @@
+{
+  "verifiedAt": "2026-10-18T22:47:03.676Z",
+  "operation": "ersomha-backend-update",
+  "versions": {
+    "maydan-game": "2510f99c-7c02-47cf-930a-04e6359d3e40",
+    "maydan-rooms": "a26b8905-0529-469e-87d2-83c7da196d64"
+  },
+  "bundles": {
+    "maydan-game": {
+      "sha256": "9c5282c896763e4543b6a80865b3eb2436419b8a0093ac2a1b6003c3e37ce627",
+      "byteLength": 1247389
+    },
+    "maydan-rooms": {
+      "sha256": "c0a75e11239707201fd3fd69fbd3f7787668dd1a1365a959aa1246b4523d858b",
+      "byteLength": 1205520
+    }
+  },
+  "sourceCommit": "f23033d5364b6cdda1df851ed2aa9ee9bdbb69ba",
+  "sourceServerTree": "4e7c95a26cd68045ef7a503699ec86c4178e45d5",
+  "backendTreeSha256": "536dce48ccfa8eda40f0b8e03602f8e1d7bafef55710781d7f0df0a2c9ef90e1",
+  "checkedAssets": 63,
+  "assetsUnchanged": true,
+  "originalBindingsUnchanged": true,
+  "originalSettingsUnchanged": true,
+  "originalCronsUnchanged": true,
+  "durableObjectMigrationsUnchanged": true,
+  "reviewedWorkerCodeVerified": true,
+  "addedMigrations": [
+    "0010_ersomha.sql",
+    "0011_ersomha_reports.sql"
+  ],
+  "privateAudioVerified": true,
+  "smoke": {
+    "maydan-game": {
+      "healthPassed": true,
+      "games": [
+        "ersomha",
+        "fabraka",
+        "meenfina"
+      ],
+      "mandatoryUpdateDisabled": true
+    },
+    "maydan-rooms": {
+      "healthPassed": true,
+      "games": [
+        "ersomha",
+        "fabraka",
+        "meenfina"
+      ],
+      "mandatoryUpdateDisabled": true
+    }
+  },
+  "applied": true,
+  "frontendDeployed": false,
+  "secretValuesWritten": false,
+  "resourcesProvisioned": false,
+  "testFlightUploaded": false
+}

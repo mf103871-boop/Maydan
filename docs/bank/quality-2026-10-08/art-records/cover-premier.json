@@ -1,0 +1,29 @@
+{
+  "id": "premier",
+  "kind": "cover",
+  "file": "public/media/badeeha-covers/premier.webp",
+  "style": "bold screen-print illustration",
+  "palette": "violet, lime green, black",
+  "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'الدوري الإنجليزي'. Landscape 4:3 artwork.\nMedium: bold screen-print illustration.\nIntentional palette: violet, lime green, black.\nScene: Football boots and a rolling ball crossing an English-style rainy pitch, energetic low diagonal perspective and halftone texture.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-10-08",
+  "sourceImage": {
+    "name": "exec-dcf33091-d966-431c-aab4-c2450c0ffd55.png",
+    "sha256": "24c18950cbd4124342c124ac78262d943c3fe1af675849a3518e61048742c8c5",
+    "width": 1448,
+    "height": 1086
+  },
+  "width": 640,
+  "height": 480,
+  "bytes": 113050,
+  "sha256": "75ac796a92aa400eab382ad329d21b5792e22ca2e983bbd13583fc3add68ad66",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "phone-size-reviewed",
+    "date": "2026-10-08",
+    "reviewer": "root",
+    "width": 160,
+    "method": "shipped cover CSS; baseline and replacement side by side",
+    "evidence": "docs/bank/quality-2026-10-08/preview/covers-1.jpg"
+  }
+}

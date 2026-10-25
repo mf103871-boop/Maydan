@@ -157,9 +157,56 @@ test('an absent truth owner and departing players cannot leave a room stuck or e
   assert.equal(left.view(1).roundReason, 'owner_left');
   const writing = fixture(); writing.act(0, 'start'); writing.act(0, 'lie', { text: q.answer });
   game.leaveRoom(writing.room, writing.players[2].id, 1001);
+  assert.equal(writing.room.phase, 'write', 'standard modes keep a fair two-player match running');
+  game.leaveRoom(writing.room, writing.players[0].id, 1002);
   assert.equal(writing.room.phase, 'over'); assert.equal(writing.view(1).question.answer, undefined);
   assert.equal(JSON.stringify(writing.view(1)).includes(q.answer), false);
   assert.ok(writing.view(1).members.every((m) => m.score === 0));
+});
+
+test('two-player standard Fabraka keeps anonymous choices, real bluff credit, completed rounds and safe rematches', () => {
+  const { room, players, act, view, option, reveal } = fixture({}, 2);
+  act(0, 'start');
+  assert.equal(view().writerCount, 2);
+  act(0, 'lie', { text: 'خدعة ألف' });
+  assert.equal(JSON.stringify(view(1)).includes('خدعة ألف'), false);
+  act(1, 'lie', { text: 'خدعة باء' });
+  assert.equal(view().options.length, 4);
+  assert.equal(view().options.filter((o) => !o.mine).length, 3);
+  assert.ok(view().options.every((o) => !('truth' in o) && !('owners' in o)));
+  assert.throws(() => act(0, 'vote', { optionId: option('خدعة ألف') }), error('OWN_ANSWER'));
+  act(0, 'vote', { optionId: option('خدعة باء') });
+  act(1, 'vote', { optionId: option(q.answer) });
+  reveal();
+  assert.deepEqual(view().members.map((m) => m.score), [0, 1500]);
+  for (let round = 2; round <= 3; round++) {
+    act(0, 'next');
+    act(0, 'lie', { text: 'فبركة مشتركة' }); act(1, 'lie', { text: 'فبركة مشتركة' });
+    assert.equal(view().options.filter((o) => !o.mine).length, 3, 'merged own answers still leave the truth and house decoys');
+    act(0, 'vote', { optionId: option(q.answer) }); act(1, 'vote', { optionId: option(q.answer) }); reveal();
+  }
+  act(0, 'next'); assert.equal(room.phase, 'over');
+  assert.deepEqual(view().members.map((m) => m.score), [2000, 3500]);
+  act(0, 'restart'); assert.equal(room.phase, 'lobby');
+  assert.equal(view().members[1].ready, false);
+  act(1, 'ready', { ready: true }); act(0, 'start');
+  game.leaveRoom(room, players[1].id, 1001);
+  assert.equal(room.phase, 'over'); assert.equal(room.reason, 'players_left');
+});
+
+test('two-player safeguards reject personal-owner rounds and trivial decks without mutating the lobby', () => {
+  const friends = fixture({ mode: 'friends' }, 2);
+  assert.throws(() => friends.act(0, 'start'), error('NOT_READY'));
+  assert.equal(friends.room.phase, 'lobby');
+  const trivial = fixture({}, 2, { ...q, decoys: [q.answer, '190', '١٩٠'] });
+  assert.throws(() => trivial.act(0, 'start'), error('QUESTIONS'));
+  assert.equal(trivial.room.matchId, 0);
+  for (const mode of ['classic', 'pictures', 'mixed']) {
+    const f = fixture({ mode, rounds: 7 }, 2), deck = buildFabrakaDeck(f.room);
+    assert.equal(deck.length, 7);
+    game.action(f.room, f.players[0].id, { type: 'start', matchId: 0 }, 1001, deck);
+    assert.equal(f.view().writerCount, 2);
+  }
 });
 test('all four game modes build server decks and pictures expose only display data', () => {
   for (const mode of ['classic', 'mixed', 'pictures', 'friends']) {

@@ -386,7 +386,7 @@ test('التجارب: إضافة ودمج، ولعبة خارج القائمة �
   assert.deepEqual(me.data.trials, { beep: true, mamnoo: true, jabeen: true });
 });
 
-test('إنشاء الغرف: مجاني للمجهول، مباراة واحدة للمسجّل، مفتوح للمشترك', { timeout: 30_000 }, async () => {
+test('waiting rooms preserve the free trial; played trials still gate creation and subscribers remain open', { timeout: 30_000 }, async () => {
   const anonymous = client();
   const anon = await anonymous.post('/api/rooms', { ...credentials(), name: 'ضيف', avatar: 0, rounds: 5, game: 'meenfina' });
   assert.equal(anon.status, 201, JSON.stringify(anon.data));
@@ -394,12 +394,16 @@ test('إنشاء الغرف: مجاني للمجهول، مباراة واحدة
   const { api, userId } = await signInDev('rooms-user');
   const created = await api.post('/api/rooms', { ...credentials(), name: 'مضيف', avatar: 1, rounds: 5, game: 'meenfina' });
   assert.equal(created.status, 201, JSON.stringify(created.data));
-  // الإنشاء سجّل التجربة على الخادم.
-  assert.deepEqual((await api.get('/api/me')).data.trials, { meenfina: true });
+  assert.deepEqual((await api.get('/api/me')).data.trials, {}, 'waiting is not a played match');
 
   const second = await api.post('/api/rooms', { ...credentials(), name: 'مضيف', avatar: 1, rounds: 5, game: 'meenfina' });
-  assert.equal(second.status, 402);
-  assert.equal(second.data.error, 'PLUS_REQUIRED');
+  assert.equal(second.status, 201);
+  // An actual room start is covered by the room-trial transport regressions.
+  // The existing trial endpoint simulates a separately completed local game.
+  await api.post('/api/trials/meenfina', {});
+  const played = await api.post('/api/rooms', { ...credentials(), name: 'مضيف', avatar: 1, rounds: 5, game: 'meenfina' });
+  assert.equal(played.status, 402);
+  assert.equal(played.data.error, 'PLUS_REQUIRED');
   // لعبة أخرى ما زالت مجانية مرة واحدة.
   const other = await api.post('/api/rooms', { ...credentials(), name: 'مضيف', avatar: 1, rounds: 5, game: 'fabraka' });
   assert.equal(other.status, 201, JSON.stringify(other.data));

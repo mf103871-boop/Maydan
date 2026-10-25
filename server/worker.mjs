@@ -1,7 +1,7 @@
 import { Room } from './room.mjs';
 import { readJson, json, errorResponse, sha256, credentials } from './protocol.mjs';
 import { fail } from './room-model.mjs';
-import { isPublicAccountPath, markRoomTrial, roomGate, routeAccounts } from './accounts/router.mjs';
+import { isPublicAccountPath, roomGate, routeAccounts } from './accounts/router.mjs';
 import { cleanup } from './accounts/cleanup.mjs';
 import { readSession, rotations, SESSION_HEADER } from './accounts/session.mjs';
 import packageInfo from '../package.json' with { type: 'json' };
@@ -9,6 +9,15 @@ import { routeSocial } from './social/router.mjs';
 import { routeSocialLive } from './social/realtime.mjs';
 import { routeProfiles, isPublicProfileImagePath } from './profiles/router.mjs';
 import { routeModeration } from './moderation/router.mjs';
+import { cleanupLamma } from './lamma/lifecycle.mjs';
+import { drainJobs } from './lamma/jobs.mjs';
+import { liveKitWebhook } from './lamma/webhook.mjs';
+import { messageRetentionMs,reportRetentionMs } from './accounts/cleanup.mjs';
+import { iosAppPolicy } from './app-policy.mjs';
+import { ERSOMHA_PROTOCOL, ONLINE_GAMES } from '../src/online/shared.js';
+import { routeDrawingReports } from './ersomha-reports.mjs';
+import { routeDesign, isPublicDesignAssetPath } from './design/router.mjs';
+export { LammaJobs } from './lamma/jobs.mjs';
 export { SocialHub } from './social/realtime.mjs';
 export { Room };
 
@@ -16,13 +25,19 @@ export { Room };
 // Keys contain only a digest; no raw address is persisted. These are not DDoS protection.
 export const LIMIT_WINDOWS = { create: 600_000, join: 60_000, leave: 60_000, socket: 60_000,
   auth: 600_000, me: 60_000, billing: 600_000, trial: 60_000, socialRead: 60_000, socialWrite: 60_000,
-  profileRead: 60_000, profileWrite: 60_000, profileImage: 60_000, webhook: 60_000 };
+  socialReadIP: 60_000, socialWriteIP: 60_000,
+  profileRead: 60_000, profileWrite: 60_000, profileImage: 60_000, webhook: 60_000,
+  designRead: 60_000, designWrite: 60_000, designWriteIP: 60_000 };
 // حدّ كل نوع داخل نافذته. مسارات الحسابات أقلّ سخاءً من قراءة الحالة لأنها تكتب أو تنادي مزوّدًا.
 // `webhook` سخيّ عمدًا (إشعارات آبل قد تصل دفعة)، لكنه يمنع سيلًا من عنوان واحد
 // على مسار عام يتحقق من توقيع قبل أي مصادقة.
 export const LIMITS = { create: 8, join: 40, leave: 100, socket: 100,
   auth: 40, me: 120, billing: 30, trial: 60, socialRead: 240, socialWrite: 60,
-  profileRead: 240, profileWrite: 30, profileImage: 600, webhook: 300 };
+  // A party shares one router. Keep a broad network flood guard, then enforce
+  // the existing read quota per authenticated account (writes also have D1 quotas).
+  socialReadIP: 2400, socialWriteIP: 1200,
+  profileRead: 240, profileWrite: 30, profileImage: 600, webhook: 300,
+  designRead: 1200, designWrite: 120, designWriteIP: 1200 };
 export class RequestLimiter {
   constructor(ctx) { this.ctx = ctx; }
   async fetch(request) {
@@ -71,42 +86,53 @@ async function roomAccountId(request, env) {
   try { return (await readSession(env, request, { rotate: false }))?.user.id || null; }
   catch (error) { if (error.status === 401) return null; throw error; }
 }
-export async function routeRequest(request, env) {
+export async function routeRequest(request, env, context) {
   const url = new URL(request.url);
+  if (url.pathname === '/api/app-policy/ios') return iosAppPolicy(request, env);
+  if(url.pathname==='/api/social/livekit/webhook'){try{return await liveKitWebhook(request,env);}catch(error){return errorResponse(error);}}
   // HEAD keeps `curl -I` and uptime monitors working; it must not fall through
   // to the origin check and answer 403/404.
   if (url.pathname === '/health' && ['GET', 'HEAD'].includes(request.method)) {
-    const health = json({ ok: true, protocol: 1, game: 'meenfina', games: ['meenfina', 'fabraka'], version: packageInfo.version, accounts: !!env.DB });
+    const health = json({ ok: true, protocol: 1, game: 'meenfina', games: Object.keys(ONLINE_GAMES), version: packageInfo.version, accounts: !!env.DB });
     return request.method === 'HEAD' ? new Response(null, { status: health.status, headers: health.headers }) : health;
   }
   const origin = allowedOrigin(request, env);
   // إعادة توجيه المزوّدات وwebhooks تصل بلا Origin: فحص الأصل لا ينطبق عليها،
   // وحمايتها هي توقيع المزوّد نفسه (state موقّع، HMAC، أو JWS من آبل).
-  const publicImage = ['GET', 'HEAD'].includes(request.method) && isPublicProfileImagePath(url.pathname);
+  const publicImage = ['GET', 'HEAD'].includes(request.method) && (isPublicProfileImagePath(url.pathname) || isPublicDesignAssetPath(url.pathname));
   if (!origin && !isPublicAccountPath(url.pathname) && !publicImage) return json({ error: 'ORIGIN' }, 403);
   const headers = origin ? { 'access-control-allow-origin': origin, vary: 'Origin',
     'access-control-allow-methods': 'GET, POST, PUT, PATCH, DELETE, OPTIONS',
-    'access-control-allow-headers': 'Content-Type, Authorization',
+    'access-control-allow-headers': 'Content-Type, Authorization, Range, X-Design-Name',
     'access-control-expose-headers': 'x-maydan-session',
     'access-control-max-age': '600' } : {};
   if (request.method === 'OPTIONS') return new Response(null, { status: 204, headers });
   let response; let limiter = null; let charged = null;
   // حصّة واحدة لكل عنوان يوميًا، تتفرّع بالنوع؛ المفتاح ملخّص فقط ولا يُخزَّن العنوان.
-  async function charge(kind, code = 'RATE_LIMIT') {
-    if (!limiter) {
+  async function charge(kind, code = 'RATE_LIMIT', authenticatedUserId = null) {
+    let target = limiter;
+    if (authenticatedUserId) {
+      // Only the verified session may select this bucket. Raw tokens, user
+      // supplied IDs and the IP must never be substitutes for an account ID.
+      const key = await sha256(`${new Date().toISOString().slice(0, 10)}:social-account:${authenticatedUserId}`);
+      target = env.LIMITERS.get(env.LIMITERS.idFromName(key));
+    } else if (!target) {
       const address = request.headers.get('cf-connecting-ip') || 'local';
       const key = await sha256(`${new Date().toISOString().slice(0, 10)}:${address}`);
       limiter = env.LIMITERS.get(env.LIMITERS.idFromName(key));
+      target = limiter;
     }
-    const limited = await limiter.fetch(new Request('https://internal/limit', { method: 'POST', body: JSON.stringify({ kind }) }));
+    const limited = await target.fetch(new Request('https://internal/limit', { method: 'POST', body: JSON.stringify({ kind }) }));
     if (!limited.ok) fail(code, 429);
   }
   try {
     // الحسابات أولًا: مساراتها تحت /api/ ولا تتقاطع مع تعبير الغرف.
-    response = await routeSocialLive(request, env, url, charge)
+    response = await routeDesign(request, env, url, charge)
+      || await routeDrawingReports(request, env, url, charge)
+      || await routeSocialLive(request, env, url, charge)
       || await routeModeration(request, env, url, charge)
       || await routeProfiles(request, env, url, charge)
-      || await routeSocial(request, env, url, charge)
+      || await routeSocial(request, env, url, charge, context)
       || await routeAccounts(request, env, url, charge);
     if (!response) {
       const create = request.method === 'POST' && url.pathname === '/api/rooms';
@@ -120,12 +146,14 @@ export async function routeRequest(request, env) {
       if (create) {
         const input = await readJson(request);
         await credentials(input); // Validate before allocating a room.
-        // إنشاء الغرفة يُحسب مباراة للّعبة: المسجّل غير المشترك يُرفض بـPLUS_REQUIRED
-        // بعد تجربته، والمجهول يبقى مسموحًا (علامته محلية عند العميل).
+        if (input.game === 'ersomha' && input.capabilities?.ersomha !== ERSOMHA_PROTOCOL) fail('CONFIG', 409);
+        // Check eligibility now, but consume the trial only at the room's first
+        // successful match start. Never trust a gate supplied by the browser.
         const gate = await roomGate(request, env, input);
         // Ignore any account ID supplied by the client. The seat's account
         // association comes only from the authenticated bearer session.
         input.accountUserId = gate?.userId || null;
+        input.roomTrialGate = gate;
         // Attempt 0 stays derived from the token so a retried creation is idempotent
         // without a global directory; later attempts are random so a collision run
         // never reproduces the same five codes.
@@ -141,7 +169,6 @@ export async function routeRequest(request, env) {
         }
         // Exhausted candidates are a code-space collision, not a flood by this phone.
         if (!response) fail('COLLISION', 409);
-        if (response.status === 201) await markRoomTrial(env, gate);
       } else {
         const room = env.ROOMS.get(env.ROOMS.idFromName(match[1]));
         if (kind === 'join') {
@@ -171,6 +198,9 @@ export async function routeRequest(request, env) {
 }
 // Cron Trigger (wrangler triggers.crons): تنظيف الجلسات ورموز الدخول وسجل webhooks.
 export async function scheduled(event, env) {
+  await cleanupLamma(env,Date.now(),messageRetentionMs(env),reportRetentionMs(env));
+  await drainJobs(env);
+  if(event?.cron==='* * * * *')return;
   const result = await cleanup(env, Date.now());
   console.log('accounts cleanup', JSON.stringify(result));
 }

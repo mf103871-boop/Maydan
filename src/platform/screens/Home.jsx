@@ -1,15 +1,19 @@
-// الرئيسية: الشعار، الإعدادات، دفتر اللاعبين، وشبكة بطاقات الألعاب.
+// تبويب الألعاب: الألعاب أولًا، مع حضور الأصدقاء وأدوات اللّمّة.
 import React, { useRef, useState, useEffect } from 'react';
-import { Screen, IconButton, ripple } from '../../shared/ui/components.jsx';
-import { IconSettings, IconUsers, IconClock, IconInfo } from '../../shared/ui/icons.jsx';
+import { Screen, ripple } from '../../shared/ui/components.jsx';
+import { IconUsers, IconClock, IconBack } from '../../shared/ui/icons.jsx';
 import { usePlatform } from '../context.js';
 import { useAccount } from '../../shared/account/context.js';
 import { useSocial } from '../../social/SocialProvider.jsx';
+import { useLamma } from '../../social/LammaProvider.jsx';
+import { PersonAvatar } from '../../social/SocialScreen.jsx';
+import { LammaIcon } from '../../social/LammaMedia.jsx';
 import { useProfiles } from '../../profiles/ProfileProvider.jsx';
 import { ProfileAvatar } from '../../profiles/ProfileAvatar.jsx';
 import { PUBLIC_SITE_ORIGIN, LEGAL_ROUTES } from '../../shared/account/config.js';
 import { navigate, getDirection } from '../router.js';
 import { GAMES } from '../registry.js';
+import { reportSimulatorHomeReady } from '../native-launch-ready.js';
 import { Avatar, BrandMark, Wordmark, GameArtwork, ClayStage } from '../../shared/brand/art.jsx';
 import { prefersReducedMotion, wait } from '../../shared/fx/index.js';
 
@@ -25,10 +29,19 @@ export function gamesLabel(n) {
 // المشترك لا يرى شارة، والبطاقات تبقى مفعّلة في كل الحالات (القفل يظهر داخل اللعبة لا هنا).
 export function plusBadge(account, game) {
   if (account.premium) return '';
-  if (game.setup === 'self') return '١٠ فئات مجانية';
+  if (game.id === 'badeeha') return '١٠ فئات مجانية';
   const access = account.gameAccess(game.id);
   if (access === 'premium') return '';
   return access === 'locked' ? 'بلس' : 'مباراة مجانية';
+}
+
+export function HomeGroups({ account, groups = [], calls = [], onOpen }) {
+  // LammaProvider supplies an identity-checked snapshot; guests never render cached groups.
+  if (!account?.ready || !account.signedIn) return null;
+  const active = new Set(calls.filter(call => call.scope === 'group' && call.status === 'active').map(call => call.conversationId));
+  const recent = [...groups].sort((a, b) => Number(active.has(b.id)) - Number(active.has(a.id)) || Number(!!b.unreadCount) - Number(!!a.unreadCount) || Number(b.lastMessage?.createdAt || b.updatedAt || b.createdAt || 0) - Number(a.lastMessage?.createdAt || a.updatedAt || a.createdAt || 0)).slice(0, 3);
+  if (!recent.length) return null;
+  return <div data-design-id="groups" className="lamma-home-groups" aria-label="لمّاتك الأخيرة">{recent.map(group => <button type="button" key={group.id} data-design-id="group-card" className={'lamma-home-group' + (active.has(group.id) ? ' has-live-call' : '')} onClick={() => onOpen(group.id)} aria-label={'افتح لمّة ' + group.name + (active.has(group.id) ? '، مكالمة جارية' : '')}><ProfileAvatar user={{ avatarPreset: group.avatarPreset, theme: 'teal' }} size={32} /><span><strong>{group.name}</strong><small>{active.has(group.id) ? <><LammaIcon name="phone" size={12} />مكالمة جارية</> : group.unreadCount > 0 ? `${group.unreadCount} رسالة جديدة` : 'افتح السوالف'}</small></span></button>)}</div>;
 }
 
 function GameCard({ game, index, launching, badge, onOpen }) {
@@ -64,7 +77,7 @@ function GameCard({ game, index, launching, badge, onOpen }) {
   useEffect(() => () => cancelAnimationFrame(frame.current), []);
   const Icon = game.icon;
   return (
-    <button ref={ref} type="button" className={`game-card ${game.soon ? 'is-soon' : ''} ${launching ? 'is-launch' : ''}`} style={{ '--game-accent': game.accent, '--delay': `${index * 55}ms` }}
+    <button ref={ref} type="button" data-design-id={`game-card.${game.id}`} className={`game-card ${game.soon ? 'is-soon' : ''} ${launching ? 'is-launch' : ''}`} style={{ '--game-accent': game.accent, '--delay': `${index * 55}ms` }}
       onPointerDown={(e) => { tilt(e); ripple(e); }} onPointerMove={tilt} onPointerUp={untilt} onPointerLeave={untilt} onPointerCancel={untilt}
       onClick={() => onOpen(game)} aria-label={`${game.name}: ${game.tagline}`} disabled={!!game.soon}>
       {badge && <span className="badge badge-accent card-badge">{badge}</span>}
@@ -83,7 +96,9 @@ export function Home() {
   const { roster, sound, haptics, version } = usePlatform();
   const account = useAccount();
   const social = useSocial() || { friends: [], incoming: [], unreadCount: 0 };
+  const lamma = useLamma();
   const profiles = useProfiles();
+  useEffect(() => reportSimulatorHomeReady({ accountReady: account.ready, gameCount: GAMES.length }), [account.ready]);
   // فتح لعبة: البطاقة تنطلق (is-launch) ثم الملاحة بعد 140ms (صفر تحت تقليل الحركة)؛ النقر المزدوج محروس بمرجع.
   const launching = useRef(false);
   const launchTimer = useRef(0);
@@ -97,37 +112,37 @@ export function Home() {
     launchTimer.current = setTimeout(() => { navigate(`/game/${game.id}`); launching.current = false; }, wait(140));
   };
   const cards = GAMES;
+  const onlineFriends = social.friends.filter(friend => friend.online);
+  const presenceFriends = [...social.friends].sort((a, b) => Number(!!b.online) - Number(!!a.online)).slice(0, 3);
+  const activeGroups = new Set((lamma?.calls || []).filter(call => call.scope === 'group' && call.status === 'active').map(call => call.conversationId)).size;
   return (
-    <Screen dir={getDirection()} className="stack home-screen" aria-label="الرئيسية">
-      <header className="home-head">
-        <div className="brand">
+    <Screen data-design-screen="home" dir={getDirection()} className="stack home-screen" aria-label="الألعاب">
+      <header data-design-id="header" className="home-head">
+        <div data-design-id="brand" className="brand">
           <BrandMark />
           <div><Wordmark /><div className="brand-sub">ألعاب جمعتنا</div></div>
         </div>
-        <div className="row">
-          <IconButton label="عن المنصة" onClick={() => navigate('/about')}><IconInfo /></IconButton>
-          <IconButton label="الإعدادات" onClick={() => navigate('/settings')}><IconSettings /></IconButton>
-          <button type="button" aria-label="بروفايلي" title="بروفايلي" onClick={() => navigate('/profile')} style={{ border: 0, padding: 0, background: 'transparent', borderRadius: 14, cursor: 'pointer' }}><ProfileAvatar user={profiles?.mine || account.user} /></button>
-        </div>
+        <button type="button" data-design-id="profile" className="home-profile" aria-label="بروفايلي" title="بروفايلي" onClick={() => navigate('/profile')}><ProfileAvatar user={profiles?.mine || account.user} /></button>
       </header>
 
-      <button type="button" className="card online-home-card" onClick={() => navigate('/online')} onPointerDown={ripple}>
+      <button type="button" data-design-id="presence" className="home-presence" onClick={() => navigate('/friends')} onPointerDown={ripple} aria-label="افتح الأصدقاء والمحادثات">
+        <span className="home-presence-faces" aria-hidden="true">{presenceFriends.length ? presenceFriends.map(friend => <PersonAvatar key={friend.id} user={friend} presence />) : <span className="home-presence-symbol"><IconUsers /></span>}</span>
+        <span className="home-presence-copy"><strong>{onlineFriends.length ? `${onlineFriends.length} من أصحابك متصل الآن` : 'اللّمة تبدأ بأصحابك'}</strong><small>{!account.signedIn ? 'سجّل دخولك وابدأ السوالف' : activeGroups ? `${activeGroups} من شِلَلك في مكالمة الآن` : 'سوالف، صوت، ودعوة للعب'}</small></span>
+        <IconBack className="home-presence-arrow" />
+      </button>
+
+      <section data-design-id="games" className="home-games" aria-labelledby="home-games-title">
+        <div className="home-section-heading"><div><h1 data-design-id="title" id="home-games-title">اختار لعبتك</h1><p>كل جمعة لها ميدان</p></div><span className="badge">{gamesLabel(GAMES.length)}</span></div>
+        <div className="games-grid">{cards.map((g, i) => <GameCard key={g.id} game={g} index={i} launching={launchId === g.id} badge={plusBadge(account, g)} onOpen={open} />)}</div>
+      </section>
+
+      <section data-design-id="tools" className="home-tools" aria-label="الغرف واللاعبون">
+      <button type="button" data-design-id="rooms" className="card online-home-card" onClick={() => navigate('/online')} onPointerDown={ripple}>
         <ClayStage className="clay-static"><GameArtwork game="meenfina" /></ClayStage>
-        <span><strong>اللّمّة من كل جوال</strong><small>غرف «مين فينا؟» و«فبركة» · دخول برمز وتصويت سري</small></span>
-        <span className="online-new">تجريبي</span>
+        <span><strong>اللّمّة من كل جوال</strong><small>ارسمها وفبركة من شخصين · مين فينا من ثلاثة · برمز أو بدعوة</small></span>
+        <IconBack className="home-tool-arrow" />
       </button>
-
-      <button type="button" className="card roster-card social-home-card" onClick={() => navigate('/friends')} aria-label="الأصدقاء والمحادثات" onPointerDown={ripple}>
-        <span className="grow" style={{ textAlign: 'start' }}>
-          <span className="card-title" style={{ display: 'block' }}>الأصدقاء والمحادثات</span>
-          <span className="card-muted">{account.signedIn ? `${social.friends.filter(f => f.online).length} متصل الآن · تواصل مع أصحابك` : 'أضف أصحابك وخليك قريب منهم'}</span>
-        </span>
-        {social.unreadCount + social.incoming.length > 0
-          ? <span className="badge badge-accent" aria-label="تنبيهات الأصدقاء">{social.unreadCount + social.incoming.length}</span>
-          : <IconUsers style={{ width: 34, height: 34, color: 'var(--accent)' }} />}
-      </button>
-
-      <button type="button" className="card roster-card" onClick={() => navigate('/players')} aria-label="دفتر اللاعبين" onPointerDown={ripple}>
+      <button type="button" data-design-id="roster" className="card roster-card" onClick={() => navigate('/players')} aria-label="دفتر اللاعبين" onPointerDown={ripple}>
         <span className="grow" style={{ textAlign: 'start' }}>
           <span className="card-title" style={{ display: 'block' }}>دفتر اللاعبين</span>
           <span key={roster.length} className="card-muted">{roster.length ? `${roster.length} لاعبين جاهزون لكل الألعاب` : 'أضف أسماء أصدقائك مرة واحدة'}</span>
@@ -138,20 +153,11 @@ export function Home() {
             : [0, 1, 2, 3].map((index) => <ClayStage key={index} className="clay-static no-contact"><Avatar index={index} /></ClayStage>)}
         </span>
       </button>
-
-      <div>
-        <div className="row-between" style={{ marginBottom: 10 }}>
-          <span className="section-title">الألعاب</span>
-          <span className="badge"><IconClock style={{ width: 14, height: 14 }} /> {gamesLabel(GAMES.length)}</span>
-        </div>
-        <div className="games-grid">
-          {cards.map((g, i) => <GameCard key={g.id} game={g} index={i} launching={launchId === g.id} badge={plusBadge(account, g)} onOpen={open} />)}
-        </div>
-      </div>
-      <p className="home-footer">ألعاب الجهاز الواحد تعمل دون إنترنت · الغرف تحتاج اتصالًا <span>الإصدار {version}</span></p>
+      </section>
+      <p data-design-id="footer" className="home-footer">ألعاب الجهاز الواحد تعمل دون إنترنت · الغرف تحتاج اتصالًا <span>الإصدار {version}</span></p>
       <nav className="muted center legal-links" aria-label="الأسعار والسياسات" style={{ fontSize: 13 }}>
-        {account.platform !== 'ios' && <><a href="pricing/">التسعير</a> · </>}
-        <a href={account.platform === 'ios' ? `${PUBLIC_SITE_ORIGIN}/refunds/` : 'refunds/'}>سياسة الاسترداد</a> · <a href={LEGAL_ROUTES.terms}>شروط الاستخدام</a> · <a href={LEGAL_ROUTES.privacy}>سياسة الخصوصية</a>
+        {account.platform !== 'ios' && <><a data-design-id="pricing-link" href="pricing/">التسعير</a> · </>}
+        <a data-design-id="refunds-link" href={account.platform === 'ios' ? `${PUBLIC_SITE_ORIGIN}/refunds/` : 'refunds/'}>سياسة الاسترداد</a> · <a data-design-id="terms-link" href={LEGAL_ROUTES.terms}>شروط الاستخدام</a> · <a data-design-id="privacy-link" href={LEGAL_ROUTES.privacy}>سياسة الخصوصية</a>
       </nav>
     </Screen>
   );

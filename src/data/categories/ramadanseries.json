@@ -25,7 +25,8 @@
       "a": "ثريا",
       "sourceUrl": "https://elcinema.com/work/2077046/episodes",
       "verified": true,
-      "difficultyTarget": 0.8
+      "difficultyTarget": 0.8,
+      "alt": []
     },
     {
       "qid": "ramadanseries-200-913",
@@ -35,7 +36,8 @@
       "a": "حنان",
       "sourceUrl": "https://elcinema.com/work/2077491/episodes",
       "verified": true,
-      "difficultyTarget": 0.8
+      "difficultyTarget": 0.8,
+      "alt": []
     },
     {
       "qid": "ramadanseries-200-914",
@@ -45,21 +47,8 @@
       "a": "فتحي",
       "sourceUrl": "https://elcinema.com/work/2059626/episodes",
       "verified": true,
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "ramadanseries-200-915",
-      "p": 200,
-      "topic": "بمئة وش",
-      "q": "في بداية «بـ100 وش»، ما المهنة التي ينتحلها عمر ليستولي على المجوهرات المسروقة من البطلة؟",
-      "a": "ضابط",
-      "alt": [
-        "ضابط شرطة",
-        "شرطي"
-      ],
-      "sourceUrl": "https://elcinema.com/work/2056512/episodes",
-      "verified": true,
-      "difficultyTarget": 0.8
+      "difficultyTarget": 0.8,
+      "alt": []
     },
     {
       "qid": "ramadanseries-200-916",
@@ -83,7 +72,8 @@
       "a": "رحاب",
       "sourceUrl": "https://elcinema.com/work/2068005/episodes",
       "verified": true,
-      "difficultyTarget": 0.8
+      "difficultyTarget": 0.8,
+      "alt": []
     },
     {
       "qid": "ramadanseries-200-918",
@@ -93,21 +83,23 @@
       "a": "إسراء",
       "sourceUrl": "https://elcinema.com/work/2010352/episodes",
       "verified": true,
-      "difficultyTarget": 0.8
+      "difficultyTarget": 0.8,
+      "alt": []
     },
     {
-      "qid": "ramadanseries-400-911",
-      "p": 400,
-      "topic": "الكبير أوي",
-      "q": "في «الكبير أوي»، ما اسم الأم الأمريكية للشقيقين؟",
-      "a": "سامانثا",
+      "qid": "ramadanseries-200-921",
+      "p": 200,
+      "topic": "البرنس",
+      "q": "في «البرنس»، ما الحرفة التي يمارسها البطل في ورشة والده؟",
+      "a": "دهان السيارات",
       "alt": [
-        "سمانثا",
-        "Samantha"
+        "الدوكو",
+        "رش السيارات",
+        "طلاء السيارات"
       ],
-      "sourceUrl": "https://elcinema.com/work/1096845/episodes",
+      "sourceUrl": "https://elcinema.com/work/2059626/episodes",
       "verified": true,
-      "difficultyTarget": 0.6
+      "difficultyTarget": 0.8
     },
     {
       "qid": "ramadanseries-400-912",
@@ -117,7 +109,8 @@
       "a": "دلال",
       "sourceUrl": "https://elcinema.com/work/2077046/episodes",
       "verified": true,
-      "difficultyTarget": 0.6
+      "difficultyTarget": 0.6,
+      "alt": []
     },
     {
       "qid": "ramadanseries-400-913",
@@ -127,7 +120,8 @@
       "a": "دمياط",
       "sourceUrl": "https://elcinema.com/work/2077491/episodes",
       "verified": true,
-      "difficultyTarget": 0.6
+      "difficultyTarget": 0.6,
+      "alt": []
     },
     {
       "qid": "ramadanseries-400-914",
@@ -137,17 +131,8 @@
       "a": "مريم",
       "sourceUrl": "https://elcinema.com/work/2059626/episodes",
       "verified": true,
-      "difficultyTarget": 0.6
-    },
-    {
-      "qid": "ramadanseries-400-915",
-      "p": 400,
-      "topic": "بمئة وش",
-      "q": "في «بـ100 وش»، من عضو العصابة الذي يتنكر في هيئة غزال لسحب أمواله؟",
-      "a": "سباعي",
-      "sourceUrl": "https://elcinema.com/work/2056512/episodes",
-      "verified": true,
-      "difficultyTarget": 0.6
+      "difficultyTarget": 0.6,
+      "alt": []
     },
     {
       "qid": "ramadanseries-400-916",
@@ -171,7 +156,8 @@
       "a": "حسن",
       "sourceUrl": "https://elcinema.com/work/2068005/episodes",
       "verified": true,
-      "difficultyTarget": 0.6
+      "difficultyTarget": 0.6,
+      "alt": []
     },
     {
       "qid": "ramadanseries-400-918",
@@ -179,6 +165,31 @@
       "topic": "اللعبة",
       "q": "في نهاية الموسم الأول من «اللعبة»، ما اسم الرجل الذي ينكشف أنه يدير التحديات الغامضة؟",
       "a": "سمير",
+      "sourceUrl": "https://elcinema.com/work/2010352/episodes",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "alt": []
+    },
+    {
+      "qid": "ramadanseries-400-921",
+      "p": 400,
+      "topic": "بمئة وش",
+      "q": "في «بـ100 وش»، ما اسم الممرضة التي تنضم إلى العصابة بعد سماع خطة الاستيلاء على ثروة غزال؟",
+      "a": "نجلاء",
+      "sourceUrl": "https://elcinema.com/work/2056512/episodes",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "alt": []
+    },
+    {
+      "qid": "ramadanseries-400-922",
+      "p": 400,
+      "topic": "اللعبة",
+      "q": "في الموسم الأول من «اللعبة»، ما الشيء الذي يُطلب من المتنافسين سرقته من منزل مهجور؟",
+      "a": "لوحة",
+      "alt": [
+        "لوحة فنية"
+      ],
       "sourceUrl": "https://elcinema.com/work/2010352/episodes",
       "verified": true,
       "difficultyTarget": 0.6
@@ -190,8 +201,7 @@
       "q": "في الجزء الأول من «الكبير أوي»، ما التقنية التي يمنعها الكبير ثم يتعلم استخدامها سرًا؟",
       "a": "الإنترنت",
       "alt": [
-        "النت",
-        "انترنت"
+        "النت"
       ],
       "sourceUrl": "https://elcinema.com/work/1096845/episodes",
       "verified": true,
@@ -218,32 +228,8 @@
       "a": "ربيع",
       "sourceUrl": "https://elcinema.com/work/2077491/episodes",
       "verified": true,
-      "difficultyTarget": 0.4
-    },
-    {
-      "qid": "ramadanseries-600-914",
-      "p": 600,
-      "topic": "البرنس",
-      "q": "في «البرنس»، ما الحرفة التي يمارسها البطل في ورشة والده؟",
-      "a": "دهان السيارات",
-      "alt": [
-        "الدوكو",
-        "رش السيارات",
-        "طلاء السيارات"
-      ],
-      "sourceUrl": "https://elcinema.com/work/2059626/episodes",
-      "verified": true,
-      "difficultyTarget": 0.4
-    },
-    {
-      "qid": "ramadanseries-600-915",
-      "p": 600,
-      "topic": "بمئة وش",
-      "q": "في «بـ100 وش»، ما اسم الممرضة التي تنضم إلى العصابة بعد سماع خطة الاستيلاء على ثروة غزال؟",
-      "a": "نجلاء",
-      "sourceUrl": "https://elcinema.com/work/2056512/episodes",
-      "verified": true,
-      "difficultyTarget": 0.4
+      "difficultyTarget": 0.4,
+      "alt": []
     },
     {
       "qid": "ramadanseries-600-916",
@@ -253,7 +239,8 @@
       "a": "آيلا",
       "sourceUrl": "https://elcinema.com/work/2083457/episodes",
       "verified": true,
-      "difficultyTarget": 0.4
+      "difficultyTarget": 0.4,
+      "alt": []
     },
     {
       "qid": "ramadanseries-600-917",
@@ -263,20 +250,47 @@
       "a": "مصباح",
       "sourceUrl": "https://elcinema.com/work/2068005/episodes",
       "verified": true,
+      "difficultyTarget": 0.4,
+      "alt": []
+    },
+    {
+      "qid": "ramadanseries-600-921",
+      "p": 600,
+      "topic": "بمئة وش",
+      "q": "في بداية «بـ100 وش»، بأي صفة يخدع عمر البطلة ليستولي على مجوهراتها؟",
+      "a": "ضابط",
+      "alt": [
+        "ضابط شرطة",
+        "شرطي"
+      ],
+      "sourceUrl": "https://elcinema.com/work/2056512/episodes",
+      "verified": true,
       "difficultyTarget": 0.4
     },
     {
-      "qid": "ramadanseries-600-918",
+      "qid": "ramadanseries-600-922",
       "p": 600,
-      "topic": "اللعبة",
-      "q": "في الموسم الأول من «اللعبة»، ما الشيء الذي يُطلب من المتنافسين سرقته من منزل مهجور؟",
-      "a": "لوحة",
+      "topic": "الكبير أوي",
+      "q": "في «الكبير أوي»، ما اسم الأم الأمريكية للشقيقين؟",
+      "a": "سامانثا",
       "alt": [
-        "لوحة فنية"
+        "سمانثا",
+        "Samantha"
       ],
-      "sourceUrl": "https://elcinema.com/work/2010352/episodes",
+      "sourceUrl": "https://elcinema.com/work/1096845/episodes",
       "verified": true,
       "difficultyTarget": 0.4
+    },
+    {
+      "qid": "ramadanseries-600-923",
+      "p": 600,
+      "topic": "بمئة وش",
+      "q": "في «بـ100 وش»، من عضو العصابة الذي يتنكر في هيئة غزال لسحب أمواله؟",
+      "a": "سباعي",
+      "sourceUrl": "https://elcinema.com/work/2056512/episodes",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "alt": []
     },
     {
       "topic": "الكبير أوي",
@@ -286,7 +300,8 @@
       "verified": true,
       "p": 800,
       "qid": "ramadanseries-800-911",
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.25,
+      "alt": []
     },
     {
       "topic": "جعفر العمدة",
@@ -296,7 +311,8 @@
       "verified": true,
       "p": 800,
       "qid": "ramadanseries-800-912",
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.25,
+      "alt": []
     },
     {
       "topic": "تحت الوصاية",
@@ -306,7 +322,8 @@
       "verified": true,
       "p": 800,
       "qid": "ramadanseries-800-913",
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.25,
+      "alt": []
     },
     {
       "topic": "البرنس",
@@ -316,7 +333,8 @@
       "verified": true,
       "p": 800,
       "qid": "ramadanseries-800-914",
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.25,
+      "alt": []
     },
     {
       "topic": "بمئة وش",
@@ -326,7 +344,8 @@
       "verified": true,
       "p": 800,
       "qid": "ramadanseries-800-915",
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.25,
+      "alt": []
     },
     {
       "topic": "أشغال شقة",
@@ -336,7 +355,8 @@
       "verified": true,
       "p": 800,
       "qid": "ramadanseries-800-916",
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.25,
+      "alt": []
     },
     {
       "topic": "المداح",
@@ -359,16 +379,17 @@
       "verified": true,
       "p": 800,
       "qid": "ramadanseries-800-918",
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.25,
+      "alt": []
     },
     {
       "topic": "الكبير أوي",
-      "q": "في الجزء الأول من «الكبير أوي»، ما الشيء الذي يمنع نجاح محاولة القنص؟",
-      "a": "آنية للغسيل",
+      "q": "في الجزء الأول من «الكبير أوي»، ما الوعاء الذي يفسد محاولة القنص؟",
+      "a": "طشت غسيل",
       "sourceUrl": "https://elcinema.com/work/1096845/episodes",
       "alt": [
-        "وعاء غسيل",
-        "طشت غسيل"
+        "آنية للغسيل",
+        "وعاء غسيل"
       ],
       "verified": true,
       "p": 1000,
@@ -383,7 +404,8 @@
       "verified": true,
       "p": 1000,
       "qid": "ramadanseries-1000-912",
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.15,
+      "alt": []
     },
     {
       "topic": "تحت الوصاية",
@@ -393,7 +415,8 @@
       "verified": true,
       "p": 1000,
       "qid": "ramadanseries-1000-913",
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.15,
+      "alt": []
     },
     {
       "topic": "البرنس",
@@ -403,7 +426,8 @@
       "verified": true,
       "p": 1000,
       "qid": "ramadanseries-1000-914",
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.15,
+      "alt": []
     },
     {
       "topic": "بمئة وش",
@@ -413,7 +437,8 @@
       "verified": true,
       "p": 1000,
       "qid": "ramadanseries-1000-915",
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.15,
+      "alt": []
     },
     {
       "topic": "أشغال شقة",
@@ -423,7 +448,8 @@
       "verified": true,
       "p": 1000,
       "qid": "ramadanseries-1000-916",
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.15,
+      "alt": []
     },
     {
       "topic": "المداح",
@@ -433,7 +459,8 @@
       "verified": true,
       "p": 1000,
       "qid": "ramadanseries-1000-917",
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.15,
+      "alt": []
     },
     {
       "topic": "اللعبة",
@@ -443,7 +470,8 @@
       "verified": true,
       "p": 1000,
       "qid": "ramadanseries-1000-918",
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.15,
+      "alt": []
     }
   ]
 }

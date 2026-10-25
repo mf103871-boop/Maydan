@@ -5,6 +5,8 @@ import { back, getDirection, navigate } from '../platform/router.js';
 import { moderationError } from './client.js';
 import { useModeration } from './useModeration.js';
 import { ReviewImage } from './ReviewImage.jsx';
+import { ReviewAudio } from './ReviewAudio.jsx';
+import { ReviewDrawing } from './ReviewDrawing.jsx';
 import css from './moderation.css';
 import { profileAssetUrl } from '../profiles/identity.js';
 import { resolveAccountServer } from '../shared/account/api.js';
@@ -41,7 +43,8 @@ export function ReportCard({ report, disabled = false, onDecision }) {
   const choose = (action, extra = {}, summary) => onDecision({ body: { action, targetId: user.id, reportId: report.id, ...extra }, summary: summary || `${ACTION_LABELS[action]} للحساب «${name}».` });
   return <Card className="stack moderation-report">
     <header className="moderation-card-head"><div><h2><bdi>{name}</bdi></h2><span className="muted"><bdi>{user.code || ''}</bdi> · {date(report.createdAt)}</span></div><span className={'moderation-status' + (report.resolvedAt ? ' is-closed' : '')}>{report.resolvedAt ? 'مغلق' : 'بانتظار المراجعة'}</span></header>
-    <div className="moderation-evidence"><h3>سبب البلاغ</h3><p dir="auto">{report.reason}</p>{report.messageSeq && <><h3>نسخة الرسالة وقت البلاغ</h3><blockquote dir="auto">{report.messageText || 'لا يتوفر نص.'}</blockquote></>}
+    <div className="moderation-evidence"><h3>سبب البلاغ</h3><p dir="auto">{report.reason}</p>{report.messageSeq && <><h3>نسخة الرسالة وقت البلاغ{report.scope === 'group' ? ' · محادثة اللّمة' : ''}</h3>{report.messageText ? <blockquote dir="auto">{report.messageText}</blockquote> : !report.audioUrl && <p>لا يتوفر نص.</p>}{report.audioUrl && <ReviewAudio path={report.audioUrl} />}</>}
+      {report.drawingUrl && <><h3>الرسمة المبلّغ عنها</h3><ReviewDrawing path={report.drawingUrl} /></>}
       {user.bio && <><h3>النبذة الحالية</h3><p dir="auto">{user.bio}</p></>}
     </div>
     {(user.avatarUrl || user.coverUrl) && <div className="moderation-public-images">{[['avatar', user.avatarUrl], ['cover', user.coverUrl]].map(([kind, value]) => { const url = profileAssetUrl(value, resolveAccountServer()); return url && <figure key={kind}><img src={url} alt={kindName(kind) + ' المنشورة'} loading="lazy" /><figcaption>{kindName(kind)} المنشورة</figcaption></figure>; })}</div>}
@@ -49,7 +52,7 @@ export function ReportCard({ report, disabled = false, onDecision }) {
     {report.resolvedAt && <p className="moderation-note">أُغلق في {date(report.resolvedAt)}{report.resolution ? ` · ${report.resolution}` : ''}</p>}
     <div className="moderation-actions">
       {!report.resolvedAt && <Button variant="primary" disabled={disabled} onClick={() => choose('resolve_report', { targetId: report.id }, 'إغلاق البلاغ بعد مراجعته. لا يحذف هذا الإجراء محتوى الحساب.')}>إغلاق البلاغ</Button>}
-      {report.messageSeq && <Button variant="secondary" disabled={disabled} onClick={() => choose('remove_message', { targetId: String(report.messageSeq) }, 'إزالة نص الرسالة من المحادثة للطرفين. تبقى نسخة البلاغ ضمن سجل المراجعة.')}>إزالة الرسالة</Button>}
+      {report.messageSeq && <Button variant="secondary" disabled={disabled} onClick={() => choose('remove_message', { targetId: String(report.messageSeq) }, 'إزالة الرسالة ومرفقاتها من المحادثة لجميع المشاركين. تبقى أدلة البلاغ متاحة لفريق المراجعة.')}>إزالة الرسالة</Button>}
       {user.id && <>
         <Button variant="secondary" disabled={disabled} onClick={() => choose('clear_profile_text', { field: 'all', revision: user.revision }, `إعادة اسم «${name}» إلى الاسم الافتراضي ومسح نبذته. راجع النص الحالي قبل التأكيد.`)}>إزالة الاسم والنبذة</Button>
         {['avatar', 'cover'].map(kind => user[kind + 'Version'] && <Button key={kind} variant="secondary" disabled={disabled} onClick={() => choose('remove_image', { kind, version: user[kind + 'Version'] }, `إزالة ${kindName(kind)} المنشورة للحساب «${name}».`)}>إزالة {kindName(kind)}</Button>)}

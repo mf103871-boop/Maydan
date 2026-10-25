@@ -5,6 +5,7 @@ import { IconHome, IconVolume, IconVolumeOff } from '../shared/ui/icons.jsx';
 import { setExitGuard, navigate } from './router.js';
 import { usePlatform } from './context.js';
 import { createStorage } from '../shared/lib/storage.js';
+import { socialInterruption } from '../social/interruption.js';
 
 // «مسح بيانات اللعبة» من شاشة التعطّل كان يمسح النتائج والسجل أيضًا، والمباراة الجارية وحدها
 // هي سبب الأعطال المتكررة عادة. الضغطة الأولى تمسح مفاتيح المباراة الجارية التي تعلنها اللعبة
@@ -47,6 +48,15 @@ export function GameFrame({ game, inGame, exitMessage, beforeExit, children, onE
     return () => setExitGuard(null);
   }, [requestExit]);
 
+  // Games with their own exit handler already pause their clocks. For the
+  // shared timer games, use the existing privacy/pause curtain while deciding;
+  // cancelling requires the same explicit resume as returning from the drawer.
+  useEffect(() => {
+    if (!confirming || beforeExit) return undefined;
+    socialInterruption.open();
+    return () => socialInterruption.close();
+  }, [confirming, beforeExit]);
+
   useEffect(() => {
     const meta = document.querySelector('meta[name="theme-color"]');
     const previous = meta && meta.getAttribute('content');
@@ -62,11 +72,11 @@ export function GameFrame({ game, inGame, exitMessage, beforeExit, children, onE
   };
 
   return (
-    <div className="game-frame" style={{ '--game-accent': game.accent }}>
-      <div className="game-bar">
-        <IconButton label="العودة إلى المنصة" onClick={() => requestExit('/')}><IconHome /></IconButton>
-        <span className="title">{game.name}</span>
-        <IconButton label={platform.settings.soundOn ? 'كتم الصوت' : 'تشغيل الصوت'} aria-pressed={!platform.settings.soundOn} onClick={() => platform.setSettings({ soundOn: !platform.settings.soundOn })}>
+    <div data-design-screen="shell.game-frame" className="game-frame" style={{ '--game-accent': game.accent }}>
+      <div data-design-id="header" className="game-bar">
+        <IconButton data-design-id="home" data-design-required="true" label="العودة إلى المنصة" onClick={() => requestExit('/')}><IconHome /></IconButton>
+        <span data-design-id="title" className="title">{game.name}</span>
+        <IconButton data-design-id="sound" label={platform.settings.soundOn ? 'كتم الصوت' : 'تشغيل الصوت'} aria-pressed={!platform.settings.soundOn} onClick={() => platform.setSettings({ soundOn: !platform.settings.soundOn })}>
           {/* الأيقونة مفتاحها حالة الصوت: تنبثق عند التبديل */}
           <span key={String(platform.settings.soundOn)} className="icon-swap">{platform.settings.soundOn ? <IconVolume /> : <IconVolumeOff />}</span>
         </IconButton>

@@ -1,0 +1,29 @@
+{
+  "id": "foreignseries",
+  "kind": "cover",
+  "file": "public/media/badeeha-covers/foreignseries.webp",
+  "style": "cinematic editorial illustration",
+  "palette": "electric blue, amber, deep violet",
+  "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'مسلسلات أجنبية'. Landscape 4:3 artwork.\nMedium: cinematic editorial illustration.\nIntentional palette: electric blue, amber, deep violet.\nScene: A rain-soaked fictional city crossroads viewed from a rooftop, luminous blank windows and a distant mysterious silhouette, restrained suspense.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-10-08",
+  "sourceImage": {
+    "name": "exec-39057ac3-0e90-4eba-bf5b-aba2e5e4da58.png",
+    "sha256": "e2c00330be6505beefce5089e9e3944f102c44cf0651f0ffa3d62dd7dc3a63b6",
+    "width": 1448,
+    "height": 1086
+  },
+  "width": 640,
+  "height": 480,
+  "bytes": 80116,
+  "sha256": "31443d75d0c01280f4d8131fcdf22c8764d747606956899733c8306928407216",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "phone-size-reviewed",
+    "date": "2026-10-08",
+    "reviewer": "root",
+    "width": 160,
+    "method": "shipped cover CSS; baseline and replacement side by side",
+    "evidence": "docs/bank/quality-2026-10-08/preview/covers-3.jpg"
+  }
+}

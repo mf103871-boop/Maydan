@@ -1,0 +1,20 @@
+{
+  "id": "zoom-800-904",
+  "prompt": "Create ONE landscape 4:3 high fidelity photographic puzzle image for an Arabic game for ages 16+. A detached unbranded camera lens seen straight from rear on midnight blue optical bench. Centre shows overlapping aperture blades forming a clear small hexagonal opening inside glass, fine concentric metal rings around it, complete cylindrical lens peripheral outline visible. Accurate photographic optical construction, cyan reflection, no text. IMPORTANT: this full image will be shown magnified 3.4x around the exact centre, leaving only approximately the central 29% visible during the question. Make that central area contain TWO coherent diagnostic material/structural details of the named object, not the entire silhouette, not blank texture, and not a disconnected fragment. Full image reveals the complete object naturally. Rich but restrained environment palette. No lettering, logos, watermark, hands, labels, borders, collages or question marks. No ivory studio background. Physical realism and fair visual evidence matter more than decoration.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-10-08",
+  "sourceFile": "exec-d53a7206-fc10-4429-b048-f1b71fd6d866.png",
+  "sourceSha256": "b968681d7f163aa60f9c53e6aa35f5b71d87ee2083aaa950007d707a40faf5fe",
+  "file": "media/zoom/quality-800-904.webp",
+  "sha256": "24ffca41f8685545324e47ac87893752b3c4827f86725c3d0f07eee94cb16e40",
+  "width": 960,
+  "height": 720,
+  "bytes": 87770,
+  "review": {
+    "status": "phone-size-reviewed",
+    "reviewedAt": "2026-10-08",
+    "method": "Original and shipped effect at phone width, including high-tier assistance; independent editorial review.",
+    "evidence": "docs/bank/quality-2026-10-08/independent-root-image-review.md",
+    "qid": "zoom-800-904"
+  }
+}

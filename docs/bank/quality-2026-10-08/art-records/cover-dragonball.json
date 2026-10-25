@@ -1,0 +1,29 @@
+{
+  "id": "dragonball",
+  "kind": "cover",
+  "file": "public/media/badeeha-covers/dragonball.webp",
+  "style": "energetic cel-shaded illustration",
+  "palette": "sunset orange, royal blue, lemon yellow",
+  "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'دراغون بول'. Landscape 4:3 artwork.\nMedium: energetic cel-shaded illustration.\nIntentional palette: sunset orange, royal blue, lemon yellow.\nScene: A rocky training plateau beneath dramatic streaked clouds and a glowing abstract energy arc, original martial-arts adventure environment, no exact characters.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-10-08",
+  "sourceImage": {
+    "name": "exec-dec48b7e-ea44-4f1a-be61-32947cb25c32.png",
+    "sha256": "112444d1c0b6961d127eeb5daba6dd79337559f6948ca12a68e7fabe10d96636",
+    "width": 1448,
+    "height": 1086
+  },
+  "width": 640,
+  "height": 480,
+  "bytes": 96096,
+  "sha256": "bdaf9ff129ae6572b587503c3ec88df6abe53f310ec10bf782c25e538b20804d",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "phone-size-reviewed",
+    "date": "2026-10-08",
+    "reviewer": "root",
+    "width": 160,
+    "method": "shipped cover CSS; baseline and replacement side by side",
+    "evidence": "docs/bank/quality-2026-10-08/preview/covers-3.jpg"
+  }
+}

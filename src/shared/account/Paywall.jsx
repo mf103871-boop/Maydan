@@ -83,7 +83,7 @@ export function Paywall({ open = true, reason = 'settings', game = null, pack = 
 
   return (
     <Sheet open={open} onClose={onClose} title={null}>
-      <section className="paywall" aria-label={`اشتراك ${PLUS_NAME}`} data-reason={reason} data-pack={pack || undefined}>
+      <section data-design-screen="account.paywall" className="paywall" aria-label={`اشتراك ${PLUS_NAME}`} data-reason={reason} data-pack={pack || undefined}>
         <ClayStage className="paywall-hero clay-idle" aria-hidden="true"><TrophyArtwork /></ClayStage>
         <h2 className="paywall-title">افتح كل ميدان مع {PLUS_NAME}</h2>
         {account.platform !== 'ios' && account.billing?.paddle?.environment === 'sandbox' && (
@@ -97,12 +97,12 @@ export function Paywall({ open = true, reason = 'settings', game = null, pack = 
         <ul className="paywall-bullets">
           {PAYWALL_BULLETS.map((text, i) => <li key={text} style={{ '--n': i }}>{text}</li>)}
         </ul>
-        <div className="paywall-plans" role="radiogroup" aria-label="اختر مدة الاشتراك">
+        <div data-design-id="products" className="paywall-plans" role="radiogroup" aria-label="اختر مدة الاشتراك">
           {plans.map((item) => {
             const product = products && products[item.key];
             const selected = selectedPlan === item.key;
             return (
-              <button key={item.key} type="button" role="radio" aria-checked={selected} data-plan={item.key}
+              <button key={item.key} data-design-id="plan-option" type="button" role="radio" aria-checked={selected} data-plan={item.key}
                 className={`paywall-plan ${selected ? 'is-selected' : ''}`} onClick={() => setPlan(item.key)}>
                 <span className="paywall-plan-name">{item.label}</span>
                 <span className="paywall-plan-price">{product && product.price ? product.price : PRICE_UNKNOWN}</span>
@@ -134,12 +134,12 @@ export function Paywall({ open = true, reason = 'settings', game = null, pack = 
         ) : (
           <>
             {account.platform === 'ios' && !account.signedIn && <p className="paywall-note">{SIGN_IN_NOTE}</p>}
-            <Button variant="primary" size="lg" full disabled={!!account.activationPending || !selectedPlan || productsLoading} loading={busy === 'purchase' || busy === 'signin'} onClick={() => account.purchase && account.purchase(selectedPlan)}>اشترك</Button>
+            <Button variant="primary" size="lg" full disabled={!!account.activationPending || !selectedPlan || productsLoading} loading={busy === 'purchase' || busy === 'signin'} data-design-id="purchase" onClick={() => account.purchase && account.purchase(selectedPlan)}>اشترك</Button>
             {account.activationPending && <Button variant="secondary" full onClick={() => account.refresh()}>تحديث حالة الاشتراك</Button>}
           </>
         )}
         {account.platform === 'ios' && (
-          <Button variant="ghost" full loading={busy === 'restore'} onClick={() => account.restore && account.restore()}>استعادة المشتريات</Button>
+          <Button variant="ghost" full loading={busy === 'restore'} data-design-id="restore" data-design-required="true" onClick={() => account.restore && account.restore()}>استعادة المشتريات</Button>
         )}
         {native && account.restoreDiagnostics && <details className="paywall-support">
           <summary>تفاصيل الاستعادة للدعم</summary>
@@ -152,15 +152,15 @@ export function Paywall({ open = true, reason = 'settings', game = null, pack = 
         {account.error === 'CHECKOUT_REVIEW' && !needsSignIn && SUPPORT_EMAIL && (
           <a className="btn btn-ghost btn-full" href={`mailto:${SUPPORT_EMAIL}?subject=${encodeURIComponent('مراجعة محاولة دفع ميدان')}`}>التواصل مع الدعم</a>
         )}
-        <p className="paywall-legal">
+        <p data-design-id="legal" data-design-required="true" className="paywall-legal">
           {PAYWALL_LEGAL}
           <span className="paywall-legal-links">
-            {account.platform !== 'ios' && <><a data-legal="pricing" href="pricing/" onClick={onClose}>التسعير</a><span aria-hidden="true"> · </span></>}
-            <a data-legal="terms" href={LEGAL_ROUTES.terms} onClick={onClose}>شروط الاستخدام</a>
+            {account.platform !== 'ios' && <><a data-design-id="legal-pricing" data-legal="pricing" href="pricing/" onClick={onClose}>التسعير</a><span aria-hidden="true"> · </span></>}
+            <a data-design-id="legal-terms" data-design-required="true" data-legal="terms" href={LEGAL_ROUTES.terms} onClick={onClose}>شروط الاستخدام</a>
             <span aria-hidden="true"> · </span>
-            <a data-legal="privacy" href={LEGAL_ROUTES.privacy} onClick={onClose}>سياسة الخصوصية</a>
+            <a data-design-id="legal-privacy" data-design-required="true" data-legal="privacy" href={LEGAL_ROUTES.privacy} onClick={onClose}>سياسة الخصوصية</a>
             <span aria-hidden="true"> · </span>
-            <a data-legal="refunds" href={account.platform === 'ios' ? `${PUBLIC_SITE_ORIGIN}/refunds/` : 'refunds/'} onClick={onClose}>سياسة الاسترداد</a>
+            <a data-design-id="legal-refunds" data-design-required="true" data-legal="refunds" href={account.platform === 'ios' ? `${PUBLIC_SITE_ORIGIN}/refunds/` : 'refunds/'} onClick={onClose}>سياسة الاسترداد</a>
           </span>
         </p>
           </>

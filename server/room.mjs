@@ -1,12 +1,23 @@
 import statements from '../src/data/games/meenfina/statements.json' with { type: 'json' };
-import { createRoom, joinRoom, connected, leaveRoom, action, tick, snapshot, nextAlarm, member, RoomError, fail } from './game-model.mjs';
+import { createRoom, joinRoom, connected, leaveRoom, action, tick, snapshot, nextAlarm, member, roomCapacity, RoomError, fail } from './game-model.mjs';
 import { buildFabrakaDeck } from './fabraka-content.mjs';
 import { credentials, readJson, json, errorResponse, shuffled } from './protocol.mjs';
 import { bindSeatAccount, prepareRoomStats } from './room-stats.mjs';
-import { recordOnlineResult } from './profiles/db.mjs';
+import { recordOnlineResult, profileSummaries } from './profiles/db.mjs';
+import { consumeRoomTrial } from './accounts/router.mjs';
+import { requireSession } from './accounts/session.mjs';
+import { liveAccountSql } from './moderation/access.mjs';
+import { ERSOMHA_PROTOCOL } from '../src/online/shared.js';
+import { getErsomhaPool } from './ersomha-content.mjs';
+import { setErsomhaChoices, ERSOMHA_PLAYING, ERSOMHA_SELECT_MS } from './ersomha-model.mjs';
+import { acquireErsomhaLease, assertErsomhaLease, renewErsomhaLease, releaseErsomhaLease, releaseErsomhaAccounts, ersomhaSeen, exposeErsomhaCards, buildErsomhaTurnPlan } from './ersomha-history.mjs';
+import { ersomhaBoardId, emptyErsomhaDrawing, loadErsomhaDrawing, checkpointErsomhaDrawing, persistErsomhaDrawing,
+  prepareErsomhaDrawing, ersomhaSyncMessages, ersomhaDrawingMeta, ersomhaVisibleCanvas, archiveErsomhaDrawing, deleteErsomhaDrawing } from './ersomha-drawing.mjs';
 const SOCKET_IDLE = 45_000;
 const STATS_RETRY = 30_000;
 const STATS_MAX_ATTEMPTS = 48; // a day of half-minute retries
+const MAX_QUEUED_SOCKET_MESSAGES = 64;
+const MAX_QUEUED_ROOM_MESSAGES = 256;
 // Statements the room has already shown wait at the back of the queue, so a second
 // match in the same room does not repeat the first.
 export function meenfinaDeck(room) {
@@ -19,9 +30,15 @@ export function meenfinaDeck(room) {
 export class Room {
   constructor(ctx, env) {
     this.ctx = ctx; this.env = env; this.room = null; this.profileOutbox = []; this.queue = Promise.resolve();
+    this.inboundBySocket = new WeakMap(); this.inboundCount = 0;
     this.ready = ctx.blockConcurrencyWhile(async () => {
       this.room = await ctx.storage.get('room') || null;
       this.profileOutbox = await ctx.storage.get('profileOutbox') || [];
+      if (this.room?.game === 'ersomha') {
+        const drawing = await loadErsomhaDrawing(ctx.storage, this.room);
+        this.drawing = drawing.board; this.drawingHead = drawing.head;
+        this.drawingArchives = await ctx.storage.get('ersomha:evidence') || [];
+      }
     });
     if (typeof WebSocketRequestResponsePair !== 'undefined') {
       ctx.setWebSocketAutoResponse(new WebSocketRequestResponsePair('ping', 'pong'));
@@ -55,23 +72,109 @@ export class Room {
     else if (this.outboxPending()) await this.ctx.storage.setAlarm(Date.now() + STATS_RETRY);
     else await this.ctx.storage.deleteAlarm();
   }
-  async commit(candidate) {
+  async commit(candidate, { prepared = false } = {}) {
+    const oldLease = this.room?.ersomhaLease;
+    if (candidate.game === 'ersomha' && !prepared) await this.prepareErsomha(candidate);
+    if (candidate.game === 'ersomha' && candidate.phase === 'select' && (this.room?.phase !== 'select' || this.room.round !== candidate.round || this.room.matchId !== candidate.matchId)) {
+      candidate.deadlineAt = Date.now() + ERSOMHA_SELECT_MS;
+    }
     candidate.revision++;
     const outbox = [...this.profileOutbox, ...prepareRoomStats(this.room, candidate)];
+    const resetDrawing = candidate.game === 'ersomha' && (!this.drawing || this.drawing.boardId !== ersomhaBoardId(candidate));
+    const nextDrawing = resetDrawing ? emptyErsomhaDrawing(candidate) : this.drawing;
+    let nextDrawingHead = this.drawingHead, nextArchives = this.drawingArchives || [];
     // KV writes and alarms are committed in a single storage transaction.
     await this.ctx.storage.transaction(async (tx) => {
       await tx.put('room', candidate);
+      if (resetDrawing) {
+        if (this.room?.draw && this.drawing?.boardId === ersomhaBoardId(this.room)) nextArchives = await archiveErsomhaDrawing(tx, this.room, this.drawing, nextArchives);
+        nextDrawingHead = await checkpointErsomhaDrawing(tx, nextDrawing, this.drawingHead);
+      }
       if (outbox.length) await tx.put('profileOutbox', outbox);
       await tx.setAlarm(Math.min(this.alarmAt(candidate, Date.now()), ...(outbox.length ? [Date.now() + STATS_RETRY] : [])));
     });
     this.room = candidate;
+    if (candidate.game === 'ersomha') { this.drawing = nextDrawing; this.drawingHead = nextDrawingHead; this.drawingArchives = nextArchives; }
     this.profileOutbox = outbox;
     this.broadcast();
+    if (candidate.game === 'ersomha' && !ERSOMHA_PLAYING.includes(candidate.phase) && candidate.ersomhaLease) {
+      // The final state is durable first. A failed lease release merely holds
+      // the account until its short expiry; it never exposes another word.
+      try { await releaseErsomhaLease(this.env, candidate.ersomhaLease); } catch { /* expiry is the fallback */ }
+    } else if (candidate.game === 'ersomha' && oldLease) {
+      const departed = oldLease.accounts.filter(a => !candidate.ersomhaLease?.accounts.some(next => next.hash === a.hash)).map(a => a.hash);
+      try { await releaseErsomhaAccounts(this.env, oldLease, departed); } catch { /* a failed cleanup expires, never grants a second room */ }
+    }
     if (outbox.length) {
       const task = this.flushStats();
       this.ctx.waitUntil?.(task);
       task.catch(() => {});
     }
+  }
+  async prepareErsomha(candidate) {
+    if (!ERSOMHA_PLAYING.includes(candidate.phase)) return;
+    if (candidate.ersomhaLease) {
+      const activeAccounts = new Set(candidate.members.filter(m => !m.left).map(m => m.accountUserId));
+      candidate.ersomhaLease = { ...candidate.ersomhaLease, accounts: candidate.ersomhaLease.accounts.filter(a => activeAccounts.has(a.userId)) };
+    }
+    const now = Date.now();
+    if (!candidate.ersomhaLease) candidate.ersomhaLease = await acquireErsomhaLease(this.env, candidate, now);
+    else if (now >= candidate.ersomhaLease.renewAt) candidate.ersomhaLease = await renewErsomhaLease(this.env, candidate.ersomhaLease, now);
+    const lease = candidate.ersomhaLease, exposure = `${candidate.ersomhaKey}:${candidate.matchId}:${candidate.round}`;
+    if (!candidate.ersomhaPlan) {
+      await assertErsomhaLease(this.env, lease, now);
+      const seen = await ersomhaSeen(this.env, lease), prefix = `${candidate.ersomhaKey}:${candidate.matchId}:`;
+      const prior = seen.filter(s => !s.exposure_id.startsWith(prefix));
+      const signature = JSON.stringify({ settings: candidate.settings, accounts: lease.accounts.map(a => a.hash).sort(), turns: candidate.rounds });
+      const pending = await this.ctx.storage.get('ersomha:plan'), pool = getErsomhaPool(candidate.settings);
+      const used = new Set(), valid = pending?.key === candidate.ersomhaKey && pending.matchId === candidate.matchId && pending.signature === signature
+        && pending.turns?.length === candidate.rounds && pending.turns.every(cards => cards.length === 3 && new Set(cards.map(c => c.category)).size === 3 && cards.every(card => {
+          if (used.has(card.familyId) || !pool.some(c => c.id === card.id && c.conceptId === card.conceptId && c.familyId === card.familyId)) return false;
+          used.add(card.familyId);
+          return candidate.settings.allowReplay || !prior.some(s => s.family_id === card.familyId || s.concept_id === card.conceptId);
+        }));
+      const turns = valid ? pending.turns : buildErsomhaTurnPlan(pool, candidate.rounds, { seen: prior, allowReplay: candidate.settings.allowReplay });
+      if (turns.length !== candidate.rounds) fail('ERSOMHA_CONTENT_EXHAUSTED', 409);
+      // This private checkpoint precedes both exposure and the free-start claim.
+      // A failed final room commit can retry exactly these same future choices.
+      if (!valid) await this.ctx.storage.put('ersomha:plan', { key: candidate.ersomhaKey, matchId: candidate.matchId, signature, turns });
+      candidate.ersomhaPlan = turns;
+    }
+    if (candidate.phase === 'select' && !candidate.draw.choices.length) {
+      await assertErsomhaLease(this.env, lease, now);
+      const choices = candidate.ersomhaPlan[candidate.round - 1] || [];
+      if (choices.length !== 3) fail('ERSOMHA_CONTENT_EXHAUSTED', 409);
+      const userId = candidate.members.find(m => m.id === candidate.draw.drawerId)?.accountUserId;
+      await exposeErsomhaCards(this.env, lease, choices, [userId], `${exposure}:choice`, { now, allowReplay: candidate.settings.allowReplay });
+      setErsomhaChoices(candidate, choices, Date.now());
+    }
+    if (candidate.phase === 'draw' && (this.room?.round !== candidate.round || this.room?.phase === 'select')) {
+      await exposeErsomhaCards(this.env, lease, [candidate.draw.word], lease.accounts.map(a => a.userId), `${exposure}:selected`,
+        { now, allowReplay: candidate.settings.allowReplay, acceptedExposureIds: [`${exposure}:choice`] });
+      const startedAt = Date.now(); candidate.deadlineAt += startedAt - candidate.draw.startedAt; candidate.draw.startedAt = startedAt;
+    }
+  }
+  stateFor(id) {
+    const state = snapshot(this.room, id, Date.now());
+    if (this.room.game === 'ersomha' && this.drawing?.boardId === ersomhaBoardId(this.room)) state.drawing = ersomhaDrawingMeta(this.drawing);
+    return state;
+  }
+  async drawingCommand(ws, id, command) {
+    member(this.room, id);
+    if (!this.drawing || this.drawing.boardId !== ersomhaBoardId(this.room)) fail('ERSOMHA_CANVAS_UNAVAILABLE', 503);
+    const change = prepareErsomhaDrawing(this.room, this.drawing, id, command);
+    if (change.sync) for (const message of ersomhaSyncMessages(this.room, this.drawing)) this.send(ws, message);
+    else if (change.event) {
+      // The small journal write is committed before any receiver or sender sees
+      // this sequence. No full game snapshot, D1 query or stats write is needed.
+      const head = await persistErsomhaDrawing(this.ctx.storage, change.board, change.event, this.drawingHead);
+      this.drawing = change.board; this.drawingHead = head;
+      for (const socket of this.sockets()) {
+        const seat = this.attachment(socket).id;
+        if (seat && this.room.members.some(m => m.id === seat && !m.left)) this.send(socket, change.event);
+      }
+    }
+    this.send(ws, { type: 'ack', requestId: command.requestId, ok: true, drawing: ersomhaDrawingMeta(this.drawing) });
   }
   flushStats() {
     if (this.flushingStats) return this.flushingStats;
@@ -121,11 +224,16 @@ export class Room {
       if (!id) continue;
       const m = this.room.members.find((p) => p.id === id && !p.left);
       if (!m) { this.send(ws, { type: 'error', error: 'REMOVED' }); this.close(ws, 4401, 'REMOVED'); continue; }
-      this.send(ws, { type: 'state', state: snapshot(this.room, id, Date.now()) });
+      this.send(ws, { type: 'state', state: this.stateFor(id) });
     }
   }
-  async advance() {
+  async advance({ force = false } = {}) {
     if (!this.room) return;
+    const now = Date.now();
+    // Between durable room changes only time can advance the game. Avoid
+    // cloning/stringifying the full private turn plan for every ink batch.
+    // Rehydration, a changed room object, and alarms always re-evaluate it.
+    if (!force && this.fastAdvanceRoom === this.room && now < this.fastAdvanceUntil) return;
     const candidate = structuredClone(this.room);
     // A phone can vanish without a TCP close. Hibernation auto-pongs provide
     // liveness without waking the object on every heartbeat.
@@ -141,11 +249,30 @@ export class Room {
     if (candidate.phase === 'closed') {
       const reason = candidate.reason === 'expired' ? 'EXPIRED' : 'NOT_FOUND';
       for (const ws of this.sockets()) { this.send(ws, { type: 'error', error: reason }); this.close(ws, 4404, reason); }
+      if (candidate.game === 'ersomha') {
+        try { await releaseErsomhaLease(this.env, candidate.ersomhaLease); } catch { /* short lease expiry remains safe */ }
+        await deleteErsomhaDrawing(this.ctx.storage, this.drawingHead, this.drawingArchives);
+      }
       if (this.profileOutbox.length) await this.deleteKey('room');
       else await this.ctx.storage.deleteAll();
       this.room = null;
+      this.drawing = null; this.drawingHead = null; this.drawingArchives = [];
       await this.schedule();
-    } else if (JSON.stringify(candidate) !== JSON.stringify(this.room)) await this.commit(candidate);
+    } else if (JSON.stringify(candidate) !== JSON.stringify(this.room)
+      || candidate.game === 'ersomha' && candidate.ersomhaLease && ERSOMHA_PLAYING.includes(candidate.phase) && Date.now() >= candidate.ersomhaLease.renewAt) {
+      try { await this.commit(candidate); }
+      catch (error) {
+        if (candidate.game !== 'ersomha' || !(error instanceof RoomError) || !['AUTH', 'ERSOMHA_ACTIVE_ELSEWHERE'].includes(error.code)) throw error;
+        // Every entry point advances first, including HTTP leave and socket
+        // close. End a revoked match here so cleanup never depends on its alarm.
+        const stopped = structuredClone(this.room); stopped.phase = 'over'; stopped.deadlineAt = null;
+        stopped.reason = error.code === 'AUTH' ? 'account_unavailable' : 'account_active_elsewhere';
+        await this.commit(stopped);
+      }
+    } else {
+      this.fastAdvanceRoom = this.room;
+      this.fastAdvanceUntil = this.alarmAt(this.room, now);
+    }
   }
   async authenticate(input) {
     if (!this.room) fail('NOT_FOUND', 404);
@@ -153,6 +280,12 @@ export class Room {
     const found = member(this.room, supplied.id);
     if (found.tokenHash !== supplied.tokenHash) fail('AUTH', 401);
     return found.id;
+  }
+  async hydrateErsomhaProfile(room, seatId) {
+    if (room.game !== 'ersomha') return;
+    const seat = member(room, seatId), profiles = await profileSummaries(this.env, [seat.accountUserId]);
+    const profile = profiles.get(seat.accountUserId);
+    seat.profile = profile ? { avatarPreset: profile.avatarPreset, theme: profile.theme, avatarUrl: profile.avatarUrl, revision: profile.revision } : null;
   }
   fetch(request) {
     return this.serial(async () => {
@@ -162,16 +295,26 @@ export class Room {
         const endpoint = url.pathname.split('/').at(-1);
         if (request.method === 'POST' && endpoint === 'create') {
           const input = await credentials(await readJson(request));
+          if (input.game === 'ersomha') {
+            if (input.capabilities?.ersomha !== ERSOMHA_PROTOCOL) fail('CONFIG', 409);
+            if (typeof input.accountUserId !== 'string' || !input.accountUserId) fail('AUTH_REQUIRED', 401);
+          }
           const code = url.searchParams.get('code');
           if (!/^\d{6}$/.test(code)) fail('INVALID');
           if (this.room) {
             const owner = this.room.members.find((m) => m.id === input.id && !m.left);
             if (!owner || owner.tokenHash !== input.tokenHash) return json({ error: 'COLLISION' }, 409);
             if ((this.room.game || 'meenfina') !== (input.game || 'meenfina')) fail('GAME');
+            if (this.room.game === 'ersomha' && owner.accountUserId !== input.accountUserId) fail('AUTH', 401);
             return json({ code: this.room.code, id: input.id, game: this.room.game || 'meenfina' });
           }
           const created = createRoom(code, input, Date.now());
+          created.roomTrialGate = input.roomTrialGate || null;
+          created.roomTrialClaim = crypto.randomUUID();
+          created.trialOwnerId = input.id;
+          created.trialStarted = false;
           bindSeatAccount(created, input.id, input.accountUserId);
+          await this.hydrateErsomhaProfile(created, input.id);
           // Reject empty topic selections while the creator can still edit them,
           // rather than trapping an assembled group in an unstartable lobby.
           if (created.game === 'fabraka' && buildFabrakaDeck(created).length < created.rounds) fail('QUESTIONS');
@@ -179,11 +322,44 @@ export class Room {
           return json({ code, id: input.id, game: this.room.game }, 201);
         }
         if (!this.room) fail('NOT_FOUND', 404);
+        if (request.method === 'POST' && endpoint === 'drawing-evidence') {
+          if (this.room.game !== 'ersomha') fail('NOT_FOUND', 404);
+          const input = await readJson(request), matchId = input.matchId, round = input.round;
+          if (typeof input.accountUserId !== 'string' || !Number.isSafeInteger(matchId) || !Number.isSafeInteger(round)) fail('INVALID');
+          let canvas, drawerUserId, viewers;
+          if (matchId === this.room.matchId && round === this.room.round && this.room.draw && this.drawing) {
+            canvas = ersomhaVisibleCanvas(this.drawing); viewers = this.room.draw.viewers;
+            drawerUserId = this.room.members.find(m => m.id === this.room.draw.drawerId)?.accountUserId;
+          } else {
+            const archived = this.drawingArchives?.find(a => a.matchId === matchId && a.round === round);
+            if (!archived) fail('NOT_FOUND', 404);
+            viewers = archived.viewers; drawerUserId = archived.drawerUserId;
+            if (!viewers.includes(input.accountUserId)) fail('NOT_FOUND', 404);
+            canvas = JSON.parse((await Promise.all(archived.parts.map(key => this.ctx.storage.get(key)))).join(''));
+          }
+          if (!viewers?.includes(input.accountUserId) || !drawerUserId) fail('NOT_FOUND', 404);
+          return json({ game: 'ersomha', roomCode: this.room.code, matchId, round, drawerUserId, canvas, createdAt: Date.now() });
+        }
+        // Internal binding only: routeRequest never exposes this endpoint publicly.
+        if(request.method==='POST'&&endpoint==='social-status') {
+          const {accountUserId}=await readJson(request);
+          if(typeof accountUserId!=='string'||!this.room.members.some(m=>!m.left&&m.accountUserId===accountUserId))fail('NOT_FOUND',404);
+          if(this.room.phase!=='lobby')fail('STARTED',409);
+          if(this.room.members.filter(m=>!m.left).length >= roomCapacity(this.room))fail(this.room.game === 'fabraka' ? 'FULL_FABRAKA' : this.room.game === 'ersomha' ? 'FULL_ERSOMHA' : 'FULL',409);
+          return json({game:this.room.game||'meenfina',expiresAt:this.room.expiresAt});
+        }
         if (request.method === 'POST' && endpoint === 'join') {
           const input = await credentials(await readJson(request));
+          if (this.room.game === 'ersomha') {
+            if (input.capabilities?.ersomha !== ERSOMHA_PROTOCOL) fail('CONFIG', 409);
+            if (typeof input.accountUserId !== 'string' || !input.accountUserId) fail('AUTH_REQUIRED', 401);
+            const previous = this.room.members.find(m => !m.left && m.id === input.id);
+            if (previous && previous.accountUserId !== input.accountUserId) fail('AUTH', 401);
+          }
           const candidate = structuredClone(this.room);
           joinRoom(candidate, input, Date.now());
           bindSeatAccount(candidate, input.id, input.accountUserId);
+          await this.hydrateErsomhaProfile(candidate, input.id);
           await this.commit(candidate);
           return json({ code: this.room.code, id: input.id, game: this.room.game || 'meenfina' });
         }
@@ -212,28 +388,65 @@ export class Room {
     await this.schedule();
   }
   webSocketMessage(ws, message) {
+    // Reject oversized frames before they can wait behind storage. Checking
+    // character length first also bounds the temporary UTF-8 encoder buffer.
+    if (typeof message !== 'string' || message.length > 4096 || new TextEncoder().encode(message).length > 4096) {
+      this.send(ws, { type: 'error', error: 'INVALID' }); this.close(ws, 1009, 'INVALID'); return Promise.resolve();
+    }
+    const queued = this.inboundBySocket.get(ws) || 0;
+    // Admission happens before the serial queue and before storage. A slow
+    // write must not let one flooding client retain unbounded frames or delay
+    // every other seat; normal rate limits still run inside the durable order.
+    if (queued >= MAX_QUEUED_SOCKET_MESSAGES || this.inboundCount >= MAX_QUEUED_ROOM_MESSAGES) {
+      this.close(ws, 4429, 'RATE_LIMIT'); return Promise.resolve();
+    }
+    this.inboundBySocket.set(ws, queued + 1); this.inboundCount++;
     return this.serial(async () => {
-      let requestId;
+      let requestId, attemptedStart;
       try {
+        if (ws.readyState !== 1) return;
         await this.advance();
         if (ws.readyState !== 1) return;
         if (!this.room) fail('NOT_FOUND', 404);
-        if (typeof message !== 'string' || new TextEncoder().encode(message).length > 4096) fail('INVALID');
         const a = this.attachment(ws);
         const now = Date.now();
         a.seenAt = now;
-        if (!a.windowAt || now - a.windowAt > 10_000) { a.windowAt = now; a.count = 0; }
-        a.count = (a.count || 0) + 1;
-        ws.serializeAttachment(a);
-        if (a.count > 35) { this.close(ws, 4429, 'RATE_LIMIT'); fail('RATE_LIMIT', 429); }
-        if (message === 'ping' && a.id) { this.send(ws, 'pong'); return; }
+        if (message === 'ping' && a.id) { ws.serializeAttachment(a); this.send(ws, 'pong'); return; }
         let command;
-        try { command = JSON.parse(message); } catch { fail('INVALID'); }
-        if (!command || Array.isArray(command) || typeof command !== 'object') fail('INVALID');
-        requestId = typeof command.requestId === 'string' && command.requestId.length <= 80 ? command.requestId : undefined;
+        try { command = JSON.parse(message); } catch { /* malformed messages still use the ordinary flood budget */ }
+        const validCommand = command && !Array.isArray(command) && typeof command === 'object';
+        requestId = validCommand && typeof command.requestId === 'string' && command.requestId.length <= 80 ? command.requestId : undefined;
+        if (this.room.game === 'ersomha' && validCommand && command.type === 'drawing_batch' && a.id) {
+          a.drawTokens = Math.min(30, (a.drawTokens ?? 30) + Math.max(0, now - (a.drawAt ?? now)) * 15 / 1000); a.drawAt = now;
+          if (a.drawTokens < 1) {
+            a.drawViolations = (a.drawViolations || 0) + 1; ws.serializeAttachment(a);
+            if (a.drawViolations > 30) this.close(ws, 4429, 'RATE_LIMIT'); fail('RATE_LIMIT', 429);
+          }
+          a.drawTokens--; a.drawViolations = Math.max(0, (a.drawViolations || 0) - 1);
+        } else {
+          if (!a.windowAt || now - a.windowAt > 10_000) { a.windowAt = now; a.count = 0; }
+          a.count = (a.count || 0) + 1;
+          if (a.count > 35) { ws.serializeAttachment(a); this.close(ws, 4429, 'RATE_LIMIT'); fail('RATE_LIMIT', 429); }
+        }
+        ws.serializeAttachment(a);
+        if (!validCommand) fail('INVALID');
         if (command.type === 'auth' && !a.id) {
+          if (this.room.game === 'ersomha' && command.capabilities?.ersomha !== ERSOMHA_PROTOCOL) fail('CONFIG', 409);
           if (now > a.authDeadline) fail('AUTH', 401);
           const id = await this.authenticate(command);
+          if (this.room.game === 'ersomha') {
+            // Room tokens identify a seat, not an account. Ask only Ersomha
+            // clients for a live bearer before revealing account-scoped words.
+            // Older games keep their original single-message seat handshake.
+            if (command.accountAuthorization === undefined) { this.send(ws, { type: 'account-auth', game: 'ersomha' }); return; }
+            if (typeof command.accountAuthorization !== 'string' || command.accountAuthorization.length > 512) fail('AUTH', 401);
+            const request = new Request(`https://room.internal/api/rooms/${this.room.code}/socket`, { headers: { authorization: command.accountAuthorization } });
+            let auth;
+            try { auth = await requireSession(this.env, request, { rotate: false }); }
+            catch (error) { if (error instanceof RoomError && error.status < 500) fail('AUTH', 401); throw error; }
+            const seat = member(this.room, id);
+            if (auth.user.id !== seat.accountUserId || !await this.env.DB.prepare(`SELECT 1 AS ok WHERE ${liveAccountSql('?')}`).bind(auth.user.id, auth.user.id).first()) fail('AUTH', 401);
+          }
           // Only one controlling connection per seat; old close cannot disconnect the replacement.
           for (const other of this.sockets()) if (other !== ws && this.attachment(other).id === id) {
             other.serializeAttachment({ replaced: true }); this.close(other, 4409, 'REPLACED');
@@ -248,12 +461,27 @@ export class Room {
         // failed login: answering with INVALID keeps the player's session alive.
         if (!a.id) fail('AUTH', 401);
         if (!requestId) fail('INVALID');
+        if (this.room.game === 'ersomha' && ['drawing_batch', 'drawing_undo', 'drawing_redo', 'drawing_clear', 'drawing_sync'].includes(command.type)) {
+          await this.drawingCommand(ws, a.id, command); return;
+        }
         const candidate = structuredClone(this.room);
-        const deck = command.type === 'start' ? (candidate.game === 'fabraka' ? buildFabrakaDeck(candidate) : meenfinaDeck(candidate)) : [];
+        const deck = command.type === 'start' && candidate.game !== 'ersomha' ? (candidate.game === 'fabraka' ? buildFabrakaDeck(candidate) : meenfinaDeck(candidate)) : [];
         action(candidate, a.id, command, now, deck);
-        await this.commit(candidate);
+        if (candidate.game === 'ersomha' && command.type === 'start') attemptedStart = candidate;
+        if (candidate.game === 'ersomha') await this.prepareErsomha(candidate);
+        if (command.type === 'start' && !candidate.trialStarted) {
+          // Validate the engine action first. Failed readiness/settings never
+          // spend the allowance; a failed DO write can retry this private claim.
+          await consumeRoomTrial(this.env, candidate.roomTrialGate, candidate.roomTrialClaim, now,
+            candidate.members.some((member) => member.id === candidate.trialOwnerId && !member.left));
+          candidate.trialStarted = true;
+        }
+        await this.commit(candidate, { prepared: candidate.game === 'ersomha' });
         this.send(ws, { type: 'ack', requestId, ok: true });
       } catch (error) {
+        if (attemptedStart?.ersomhaLease && this.room?.phase === 'lobby') {
+          try { await releaseErsomhaLease(this.env, attemptedStart.ersomhaLease); } catch { /* the short lease expires if D1 is unavailable */ }
+        }
         const code = error instanceof RoomError ? error.code : 'INTERNAL';
         this.send(ws, { type: requestId ? 'ack' : 'error', requestId, ok: false, error: code });
         // Only end the session when the failure is about this socket's own seat;
@@ -262,12 +490,15 @@ export class Room {
         const seated = Boolean(seat) && Boolean(this.room?.members.some((m) => m.id === seat && !m.left));
         if (['NOT_FOUND', 'EXPIRED'].includes(code) || (code === 'AUTH' && !seated)) this.close(ws, 4401, code);
       }
+    }).finally(() => {
+      this.inboundBySocket.set(ws, Math.max(0, (this.inboundBySocket.get(ws) || 1) - 1));
+      this.inboundCount = Math.max(0, this.inboundCount - 1);
     });
   }
   webSocketClose(ws) {
     return this.serial(async () => {
       this.close(ws, 1000, 'closed');
-      await this.advance();
+      await this.advance({ force: true });
       const { id } = this.attachment(ws);
       if (!id || !this.room || !this.room.members.some((m) => m.id === id && !m.left)) return;
       if (this.sockets().some((other) => other !== ws && this.attachment(other).id === id && other.readyState === 1)) return;
@@ -278,13 +509,29 @@ export class Room {
   }
   webSocketError(ws) { return this.webSocketClose(ws); }
   alarm() {
+    let attemptedMatch;
     return this.serial(async () => {
-      await this.advance();
+      attemptedMatch = this.room && `${this.room.ersomhaKey}:${this.room.matchId}`;
+      await this.advance({ force: true });
       for (const ws of this.sockets()) {
         const a = this.attachment(ws);
         if (!a.id && a.authDeadline <= Date.now()) this.close(ws, 4401, 'AUTH');
       }
       await this.schedule();
-    }).then(() => this.flushStats());
+    }).then(() => this.flushStats(), async error => {
+      if (this.room?.game !== 'ersomha') throw error;
+      if (error instanceof RoomError && ['AUTH', 'ERSOMHA_ACTIVE_ELSEWHERE'].includes(error.code)) {
+        await this.serial(async () => {
+          if (!this.room || `${this.room.ersomhaKey}:${this.room.matchId}` !== attemptedMatch) return;
+          const candidate = structuredClone(this.room); candidate.phase = 'over'; candidate.deadlineAt = null;
+          candidate.reason = error.code === 'AUTH' ? 'account_unavailable' : 'account_active_elsewhere';
+          await this.commit(candidate);
+        }); return;
+      }
+      // An unavailable database cannot expose a future card or spend a trial.
+      // Re-arm explicitly, including in the local adapter, rather than relying
+      // on the platform's finite automatic retries for a long outage.
+      await this.ctx.storage.setAlarm(Date.now() + 5_000);
+    });
   }
 }

@@ -1,0 +1,29 @@
+{
+  "id": "arabmusic",
+  "kind": "cover",
+  "file": "public/media/badeeha-covers/arabmusic.webp",
+  "style": "concert photography",
+  "palette": "wine red, brass gold, deep black",
+  "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'أغاني عربية'. Landscape 4:3 artwork.\nMedium: concert photography.\nIntentional palette: wine red, brass gold, deep black.\nScene: Close-up of an oud being played on a dark intimate stage, accurate strings and hands, amber rim light and distant blurred musicians.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-10-08",
+  "sourceImage": {
+    "name": "exec-71680331-844b-4ff9-a636-8361611de361.png",
+    "sha256": "72acc398102e0beaccc48cdbb056bbfc63c02a05ca2b68cf20b712460a1ee699",
+    "width": 1448,
+    "height": 1086
+  },
+  "width": 640,
+  "height": 480,
+  "bytes": 45718,
+  "sha256": "c131dbefb921f9708838b0c554a353e539ca8bce08b5186860e636a32e239c15",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "phone-size-reviewed",
+    "date": "2026-10-08",
+    "reviewer": "root",
+    "width": 160,
+    "method": "shipped cover CSS; baseline and replacement side by side",
+    "evidence": "docs/bank/quality-2026-10-08/preview/covers-2.jpg"
+  }
+}

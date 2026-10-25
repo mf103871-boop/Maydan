@@ -89,9 +89,7 @@
       "topic": "بداية الدعوة",
       "q": "ما اسم الدابة التي ركبها النبي ليلة الإسراء؟",
       "a": "البراق",
-      "alt": [
-        "براق"
-      ],
+      "alt": [],
       "sourceUrl": "https://sunnah.com/muslim:162a",
       "verified": true,
       "qid": "seerah-200-917",
@@ -100,7 +98,7 @@
     {
       "p": 200,
       "topic": "النشأة والأسرة",
-      "q": "بأي كنية اشتهر النبي محمد؟",
+      "q": "بأي كنية نادى رجل في السوق شخصًا، فالتفت النبي إليه؟",
       "a": "أبو القاسم",
       "alt": [
         "أبا القاسم"
@@ -108,7 +106,8 @@
       "sourceUrl": "https://sunnah.com/bukhari:3537",
       "verified": true,
       "qid": "seerah-200-918",
-      "difficultyTarget": 0.8
+      "difficultyTarget": 0.8,
+      "verifiedAt": "2026-10-08"
     },
     {
       "p": 400,
@@ -181,9 +180,7 @@
       "topic": "الحياة اليومية",
       "q": "من أي معدن كان خاتم النبي المنقوش عليه «محمد رسول الله» في رواية أنس؟",
       "a": "الفضة",
-      "alt": [
-        "فضة"
-      ],
+      "alt": [],
       "sourceUrl": "https://sunnah.com/bukhari:5877",
       "verified": true,
       "qid": "seerah-400-916",
@@ -194,9 +191,7 @@
       "topic": "الحياة اليومية",
       "q": "ما اسم ناقة النبي التي بركت أثناء مسيره إلى الحديبية؟",
       "a": "القصواء",
-      "alt": [
-        "قصواء"
-      ],
+      "alt": [],
       "sourceUrl": "https://sunnah.com/bukhari:2731",
       "verified": true,
       "qid": "seerah-400-917",
@@ -317,13 +312,13 @@
       "q": "ما الخضار الذي كان النبي يتتبعه من جوانب القصعة في طعام الخياط؟",
       "a": "الدباء",
       "alt": [
-        "القرع",
-        "اليقطين"
+        "القرع"
       ],
       "sourceUrl": "https://sunnah.com/bukhari:5439",
       "verified": true,
       "qid": "seerah-600-918",
-      "difficultyTarget": 0.4
+      "difficultyTarget": 0.4,
+      "verifiedAt": "2026-10-08"
     },
     {
       "p": 800,
@@ -396,9 +391,7 @@
       "topic": "الحياة اليومية",
       "q": "ما اسم فرس أبي طلحة الذي استعاره النبي حين فزع أهل المدينة؟",
       "a": "مندوب",
-      "alt": [
-        "المندوب"
-      ],
+      "alt": [],
       "sourceUrl": "https://sunnah.com/bukhari:2862",
       "verified": true,
       "qid": "seerah-800-916",
@@ -459,13 +452,13 @@
       "difficultyTarget": 0.15
     },
     {
-      "q": "أي زوجات النبي كانت أولهن وفاة بعده، واشتهرت بالعمل بيدها والصدقة؟",
+      "q": "أي زوجات النبي كانت تعمل بيدها وتتصدق حتى وُصفت بأنها أطولهن يدًا؟",
       "a": "زينب بنت جحش",
       "topic": "النشأة والأسرة",
       "sourceUrl": "https://sunnah.com/muslim:2452",
       "alt": [],
       "verified": true,
-      "verifiedAt": "2026-09-25",
+      "verifiedAt": "2026-10-08",
       "p": 1000,
       "qid": "seerah-1000-913",
       "difficultyTarget": 0.15
@@ -499,13 +492,13 @@
       "difficultyTarget": 0.15
     },
     {
-      "q": "ما اسم حادي الإبل الذي قال له النبي «رويدك» رفقًا بالقوارير؟",
+      "q": "من حادي الإبل حسن الصوت الذي خاطبه النبي بـ«رويدك» مراعاة للراكبات؟",
       "a": "أنجشة",
       "topic": "الحياة اليومية",
       "sourceUrl": "https://sunnah.com/bukhari:6211",
       "alt": [],
       "verified": true,
-      "verifiedAt": "2026-09-25",
+      "verifiedAt": "2026-10-08",
       "p": 1000,
       "qid": "seerah-1000-916",
       "difficultyTarget": 0.15

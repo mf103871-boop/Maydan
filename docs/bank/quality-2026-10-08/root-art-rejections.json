@@ -1,0 +1,14 @@
+[
+  {
+    "file": "media/blur/quality-1000-907.webp",
+    "reason": "Hammer-throw wire and grip disappear after blur, leaving insufficient evidence; replaced with water polo.",
+    "sha256": "23ad6565360a64ef93714c7b1b5012ba2ab38dee330a35d45f70872aade332fd",
+    "status": "rejected-not-shipped"
+  },
+  {
+    "file": "media/zoom/quality-600-904.webp",
+    "reason": "Generated USB-C plug geometry was inaccurate; replaced with a licensed real photograph.",
+    "sha256": "2f77f7d8d9f60d075866c968c31a2a0dd13b53f71c274466b1cf23f1873a342a",
+    "status": "rejected-not-shipped"
+  }
+]

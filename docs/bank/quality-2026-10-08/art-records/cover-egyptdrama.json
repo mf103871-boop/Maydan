@@ -1,0 +1,29 @@
+{
+  "id": "egyptdrama",
+  "kind": "cover",
+  "file": "public/media/badeeha-covers/egyptdrama.webp",
+  "style": "gouache city illustration",
+  "palette": "terracotta, aqua, cream",
+  "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'دراما مصرية'. Landscape 4:3 artwork.\nMedium: gouache city illustration.\nIntentional palette: terracotta, aqua, cream.\nScene: A lively fictional Cairo-style street corner with balconies and laundry catching afternoon light, bold painterly textures, no text or logos.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-10-08",
+  "sourceImage": {
+    "name": "exec-4aeb1fdf-46e9-4c3d-b5a0-9efea0445c2d.png",
+    "sha256": "92e607037e79339288b73bb26bed0f3461b6a861fac6c132e71add4af74eabcf",
+    "width": 1448,
+    "height": 1086
+  },
+  "width": 640,
+  "height": 480,
+  "bytes": 99498,
+  "sha256": "2678ee009196da300075f21edfed36ea0fb64ba8784c2cd58e2572b61dc0f284",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "phone-size-reviewed",
+    "date": "2026-10-08",
+    "reviewer": "root",
+    "width": 160,
+    "method": "shipped cover CSS; baseline and replacement side by side",
+    "evidence": "docs/bank/quality-2026-10-08/preview/covers-2.jpg"
+  }
+}

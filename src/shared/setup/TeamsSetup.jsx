@@ -17,22 +17,22 @@ export function TeamsSetup({ min = 2, max = 4, onStart, children, startLabel = '
   const options = [];
   for (let n = min; n <= max; n += 1) options.push({ value: n, label: `${n} فرق` });
   return (
-    <div className="stack">
+    <div data-design-screen="play-setup.teams" data-design-id="teams-setup" className="stack">
       <Card>
         <span className="card-title" style={{ display: 'block', marginBottom: 10 }}>الفرق</span>
-        <Segment label="عدد الفرق" accent options={options} value={count} onChange={(v) => { setCount(v); setError(''); }} />
+        <Segment data-design-id="team-count" label="عدد الفرق" accent options={options} value={count} onChange={(v) => { setCount(v); setError(''); }} />
         <div className="stack" style={{ marginTop: 12 }}>
           {teams.map((t, i) => (
-            <label key={t.id} className="team-input" style={{ '--team-color': t.color }}>
+            <label key={t.id} data-design-id="team-row" className="team-input" style={{ '--team-color': t.color }}>
               <Avatar index={i % 4} />
-              <input className="input" value={names[i]} maxLength={20} aria-label={`اسم الفريق ${i + 1}`} onChange={(e) => { const next = [...names]; next[i] = e.target.value; setNames(next); setError(''); }} />
+              <input data-design-id="team-name" className="input" value={names[i]} maxLength={20} aria-label={`اسم الفريق ${i + 1}`} onChange={(e) => { const next = [...names]; next[i] = e.target.value; setNames(next); setError(''); }} />
             </label>
           ))}
         </div>
       </Card>
       {children}
       {error && <p className="setup-error" role="alert">{error}</p>}
-      <div className="setup-sticky"><Button variant="accent" size="lg" full onClick={start}>{startLabel}</Button></div>
+      <div data-design-id="actions" className="setup-sticky"><Button variant="accent" size="lg" full data-design-id="start" data-design-required="true" onClick={start}>{startLabel}</Button></div>
     </div>
   );
 }

@@ -6,7 +6,8 @@ import { flashScreen, stampScreen, vignette, wait, burstConfetti, confetti as co
 // لعبة «بَديهة» (ميدان سابقًا) — الكود الأصلي منقول كما هو بأسلوب React.createElement.
 // التعديلات الوحيدة: الاستيرادات أعلاه بدل المتغيرات العامة، اسم اللعبة في النصوص،
 // ومفاتيح التخزين تحت النطاق maydan:badeeha (انظر keys.js).
-import React from "react";
+import React from "../../design/react.js";
+import { socialInterruption } from '../../social/interruption.js';
 import { CATS } from "../../data/categories/index.js";
 import MAYDAN_BETA_CSS from "./styles.css";
 import MaydanLogicBeta, {
@@ -143,7 +144,7 @@ const TOOLS = [
       return null;
     }
   },
-  saveKey = async (key, val) => {
+  saveBadeehaKey = async (key, val) => {
     try {
       localStorage.setItem(key, JSON.stringify(val));
     } catch (e) {}
@@ -690,7 +691,7 @@ function betaTeam(index, name) {
 function betaCloneTeams(teams) {
   return teams.map((team) => ({ ...team, tools: { ...team.tools } }));
 }
-function betaRemoveKey(key) {
+function removeBadeehaKey(key) {
   try {
     localStorage.removeItem(key);
   } catch (error) {}
@@ -767,6 +768,7 @@ function MaydanModal({ title, onClose, children, bottom = !1 }) {
         {
           ref: modalRef,
           className: "m-modal",
+          "data-design-screen": "system.dialog",
           role: "dialog",
           "aria-modal": "true",
           "aria-label": title,
@@ -774,11 +776,11 @@ function MaydanModal({ title, onClose, children, bottom = !1 }) {
         },
         hBeta(
           "div",
-          { className: "m-modal-head" },
+          { "data-design-id": "header", className: "m-modal-head" },
           hBeta("h2", null, title),
           hBeta(
             "button",
-            { type: "button", className: "m-icon-btn", onClick: requestClose, "aria-label": "إغلاق" },
+            { "data-design-id": "close", "data-design-required": "true", type: "button", className: "m-icon-btn", onClick: requestClose, "aria-label": "إغلاق" },
             "✕",
           ),
         ),
@@ -805,7 +807,7 @@ function MediaBox({ url, kind, className, alt, children }) {
   }
   return hBeta(
     "div",
-    { className: `m-media-box ${className || ""} ${state === "loading" ? "is-loading" : ""}` },
+    { "data-design-id": "question-media", className: `m-media-box ${className || ""} ${state === "loading" ? "is-loading" : ""}` },
     state === "error"
       ? hBeta(
           "div",
@@ -815,7 +817,7 @@ function MediaBox({ url, kind, className, alt, children }) {
           hBeta("small", null, navigator.onLine === false ? "لا يوجد اتصال بالإنترنت" : "تحقق من الاتصال ثم أعد المحاولة"),
           hBeta(
             "button",
-            { type: "button", className: "m-secondary m-small", onClick: () => { setState("loading"); preloadMedia([url]).then((r) => setState(r.failed === 0 ? "ready" : "error")); } },
+            { "data-design-id": "media-retry", type: "button", className: "m-secondary m-small", onClick: () => { setState("loading"); preloadMedia([url]).then((r) => setState(r.failed === 0 ? "ready" : "error")); } },
             "أعد المحاولة",
           ),
         )
@@ -878,6 +880,7 @@ function MediaImage({ question, url, effect, revealed, onSfx }) {
         {
           className: `m-media-stage ${canEnlarge ? "can-enlarge" : ""}`,
           onClick: canEnlarge ? () => { setEnlarged(true); onSfx && onSfx("click"); } : undefined,
+          "data-design-id": "image-enlarge",
           role: canEnlarge ? "button" : undefined,
           tabIndex: canEnlarge ? 0 : undefined,
           onKeyDown: canEnlarge ? (event) => { if (event.key === "Enter" || event.key === " ") { event.preventDefault(); event.currentTarget.click(); } } : undefined,
@@ -935,6 +938,8 @@ function MediaImage({ question, url, effect, revealed, onSfx }) {
               "button",
               {
                 type: "button",
+                "data-design-id": "media-close",
+                "data-design-required": "true",
                 className: "m-icon-btn m-lightbox-close",
                 "aria-label": "إغلاق الصورة",
                 onClick: (e) => { e.stopPropagation(); setEnlarged(false); setZoomed(false); },
@@ -983,6 +988,7 @@ function MediaImage({ question, url, effect, revealed, onSfx }) {
             "button",
             {
               type: "button",
+              "data-design-id": "tiles-reveal",
               className: "m-secondary m-small m-reveal-tile-btn",
               disabled: shown.length === 0,
               onClick: () => {
@@ -1002,7 +1008,7 @@ function MediaImage({ question, url, effect, revealed, onSfx }) {
   );
 }
 
-function useQuestionMedia(ref, soundOn, volume, sound) {
+function useQuestionMedia(ref, soundOn, volume, sound, onInterrupt) {
   const [element, setElement] = useState(null);
   const attach = useCallback((node) => {
     ref.current = node;
@@ -1012,11 +1018,25 @@ function useQuestionMedia(ref, soundOn, volume, sound) {
     if (!element) return undefined;
     element.muted = !soundOn;
     element.volume = Math.max(0, Math.min(1, Number.isFinite(volume) ? volume : .75));
-    if (!soundOn) element.pause();
-    const pauseHidden = () => { if (document.hidden) element.pause(); };
+    const pause = () => { element.pause(); onInterrupt?.(); };
+    if (!soundOn) pause();
+    const pauseHidden = () => { if (document.hidden || socialInterruption.getSnapshot().paused) pause(); };
+    const nativeAudio = (event) => {
+      if (["background", "interruption-began", "media-reset"].includes(event.detail?.state)) pause();
+    };
     document.addEventListener("visibilitychange", pauseHidden);
-    return () => document.removeEventListener("visibilitychange", pauseHidden);
-  }, [element, soundOn, volume]);
+    document.addEventListener("freeze", pause);
+    window.addEventListener("pagehide", pause);
+    window.addEventListener("maydan-audio-lifecycle", nativeAudio);
+    const unsubscribe = socialInterruption.subscribe(pauseHidden);
+    return () => {
+      document.removeEventListener("visibilitychange", pauseHidden);
+      document.removeEventListener("freeze", pause);
+      window.removeEventListener("pagehide", pause);
+      window.removeEventListener("maydan-audio-lifecycle", nativeAudio);
+      unsubscribe();
+    };
+  }, [element, soundOn, volume, onInterrupt]);
   // يخفض المقطع الخلفية عند تشغيله ويرفعها عند توقفه أو انتهائه أو تعطّله؛ ولا يرفع إلا ما خفضه هو.
   useEffect(() => {
     if (!element) return undefined;
@@ -1038,15 +1058,16 @@ function useQuestionMedia(ref, soundOn, volume, sound) {
 
 function MediaAudio({ url, revealed, soundOn = true, volume = .75, sound }) {
   const ref = useRef(null);
-  const pending = useRef(false);
-  const attach = useQuestionMedia(ref, soundOn, volume, sound);
+  const pending = useRef(null);
+  const cancelPending = useCallback(() => { pending.current = null; }, []);
+  const attach = useQuestionMedia(ref, soundOn, volume, sound, cancelPending);
   const [playing, setPlaying] = useState(false);
   // تُحتسب المرة عند بدء التشغيل من أوله؛ الإيقاف المؤقت ثم الاستئناف لا يُحتسب.
   const [plays, setPlays] = useState(0);
   // متوقف في منتصف المقطع: استئنافه ليس مرة جديدة، فلا يُقفل الزر بعد نفاد المرات
   const [midway, setMidway] = useState(false);
-  useEffect(() => { setPlays(0); setPlaying(false); setMidway(false); }, [url]);
-  useEffect(() => () => { if (ref.current) ref.current.pause(); }, []);
+  useEffect(() => { cancelPending(); setPlays(0); setPlaying(false); setMidway(false); }, [url, cancelPending]);
+  useEffect(() => () => { cancelPending(); if (ref.current) ref.current.pause(); }, [cancelPending]);
   const spent = !revealed && plays >= MAX_AUDIO_PLAYS,
     left = Math.max(0, MAX_AUDIO_PLAYS - plays);
   const start = (fromStart) => {
@@ -1056,8 +1077,15 @@ function MediaAudio({ url, revealed, soundOn = true, volume = .75, sound }) {
     if (fresh && spent) return;
     if (fromStart) el.currentTime = 0;
     // العدّ بعد تأكد التشغيل: ضغطة على مقطع ما زال يُحمَّل ثم إيقافها كانت تحرق مرة بلا صوت
-    pending.current = true;
-    el.play().then(() => { setPlaying(!el.paused); if (fresh && !el.paused) setPlays((n) => n + 1); }).catch(() => setPlaying(false)).finally(() => { pending.current = false; });
+    // انقطاع النظام قد يترك وعد play معلقًا؛ لا يحبس زر الإعادة ولا يسمح لوعد
+    // قديم بتغيير حالة محاولة أحدث أو استهلاك مرة سماع بعد العودة.
+    const attempt = {};
+    pending.current = attempt;
+    el.play().then(() => {
+      if (pending.current !== attempt) return;
+      setPlaying(!el.paused);
+      if (fresh && !el.paused) setPlays((n) => n + 1);
+    }).catch(() => { if (pending.current === attempt) setPlaying(false); }).finally(() => { if (pending.current === attempt) pending.current = null; });
   };
   const toggle = () => {
     const el = ref.current;
@@ -1081,13 +1109,14 @@ function MediaAudio({ url, revealed, soundOn = true, volume = .75, sound }) {
           onError,
           // الحالة تتبع العنصر نفسه لا الأزرار فقط (إيقاف من النظام، انتهاء المقطع…)
           onPlay: () => { setPlaying(true); setMidway(false); },
-          onPause: () => { const el = ref.current; setPlaying(false); setMidway(!!el && el.currentTime > 0 && !el.ended); },
+          onPause: () => { cancelPending(); const el = ref.current; setPlaying(false); setMidway(!!el && el.currentTime > 0 && !el.ended); },
           onEnded: () => { setPlaying(false); setMidway(false); },
         }),
         hBeta(
           "button",
           {
             type: "button",
+            "data-design-id": "audio-play",
             className: `m-audio-btn ${playing ? "is-playing" : ""}`,
             onClick: toggle,
             disabled: !soundOn || (spent && !playing && !midway),
@@ -1114,6 +1143,7 @@ function MediaAudio({ url, revealed, soundOn = true, volume = .75, sound }) {
           {
             type: "button",
             className: "m-secondary m-small",
+            "data-design-id": "audio-restart",
             disabled: spent || !soundOn,
             onClick: () => start(true),
           },
@@ -1214,6 +1244,7 @@ function OfflineMediaRowBeta({ offlineMedia, count, onDownload }) {
       {
         type: "button",
         className: "m-secondary m-small",
+        "data-design-id": "download-pack",
         disabled: state === "busy" || state === "done",
         onClick: onDownload,
       },
@@ -1223,9 +1254,13 @@ function OfflineMediaRowBeta({ offlineMedia, count, onDownload }) {
 }
 
 function MaydanBeta({ api } = {}) {
+  const designPreview = api?.designPreview || null;
+  const isDesignPreview = !!designPreview;
+  const saveKey = useCallback((key, value) => isDesignPreview ? Promise.resolve() : saveBadeehaKey(key, value), [isDesignPreview]);
+  const betaRemoveKey = useCallback((key) => isDesignPreview ? undefined : removeBadeehaKey(key), [isDesignPreview]);
   const logic = MaydanLogicBeta,
-    [hydrated, setHydrated] = useState(!1),
-    [screen, setScreenState] = useState("home"),
+    [hydrated, setHydrated] = useState(!!designPreview),
+    [screen, setScreenState] = useState(designPreview?.screen || "home"),
     // اتجاه الانتقال: «back» يبدّل إطارات دخول الشاشة (على .m-screen لا .m-root)
     [navDir, setNavDir] = useState("forward"),
     // حالات بصرية قصيرة العمر (تُصفَّر بمؤقّت يمرّ من wait)
@@ -1236,18 +1271,18 @@ function MaydanBeta({ api } = {}) {
     [deltaFx, setDeltaFx] = useState(null),
     [undoFx, setUndoFx] = useState(!1),
     [noticeLeaving, setNoticeLeaving] = useState(!1),
-    [teams, setTeams] = useState([betaTeam(0), betaTeam(1)]),
-    [selectedCategories, setSelectedCategories] = useState([]),
+    [teams, setTeams] = useState(designPreview?.teams || [betaTeam(0), betaTeam(1)]),
+    [selectedCategories, setSelectedCategories] = useState(designPreview?.selectedCategories || []),
     [timerLength, setTimerLength] = useState(60),
     [mode, setMode] = useState("expert"),
     [roundSize, setRoundSize] = useState(30),
-    [deck, setDeck] = useState({}),
+    [deck, setDeck] = useState(designPreview?.deck || {}),
     [used, setUsed] = useState({}),
     [turn, setTurn] = useState(0),
-    [current, setCurrent] = useState(null),
+    [current, setCurrent] = useState(designPreview?.current || null),
     [timeLeft, setTimeLeft] = useState(60),
-    [paused, setPaused] = useState(!1),
-    [revealed, setRevealed] = useState(!1),
+    [paused, setPaused] = useState(!!designPreview),
+    [revealed, setRevealed] = useState(!!designPreview?.revealed),
     // المضيف يخفي الإجابة بعد كشفها (كي لا يراها فريق يقرأ الشاشة) ثم يظهرها عند الحسم.
     [answerHidden, setAnswerHidden] = useState(!1),
     [mixedItems, setMixedItems] = useState([]),
@@ -1257,13 +1292,13 @@ function MaydanBeta({ api } = {}) {
     [roundLoading, setRoundLoading] = useState(null),
     [questionBaseTeams, setQuestionBaseTeams] = useState(null),
     [history, setHistory] = useState({}),
-    [results, setResults] = useState([]),
+    [results, setResults] = useState(designPreview?.results || []),
     [reports, setReports] = useState([]),
     [favorites, setFavorites] = useState([]),
     [savedActive, setSavedActive] = useState(null),
     [retiredActive, setRetiredActive] = useState(!1),
-    [finalResult, setFinalResult] = useState(null),
-    [soundOn, setSoundOn] = useState(!0),
+    [finalResult, setFinalResult] = useState(designPreview?.finalResult || null),
+    [soundOn, setSoundOn] = useState(!designPreview),
     [categoryFilter, setCategoryFilter] = useState("all"),
     [categorySearch, setCategorySearch] = useState(""),
     [setupError, setSetupError] = useState(""),
@@ -1274,6 +1309,7 @@ function MaydanBeta({ api } = {}) {
     [lastAction, setLastAction] = useState(null),
     [notice, setNotice] = useState(""),
     deadlineRef = useRef(null),
+    pausedRef = useRef(paused),
     // آخر قيمة للمؤقت دون أن تكون تبعية لتأثير الحفظ: الحفظ كل ثانية كان يبني لقطة
     // كاملة ويعيد تسليح المؤقت مع كل تكّة.
     timeLeftRef = useRef(60),
@@ -1306,6 +1342,7 @@ function MaydanBeta({ api } = {}) {
     account = (api && api.account) || null,
     premium = !!(account && account.premium),
     packLocked = (categoryId) => !!account && account.lockedPack(categoryId);
+  pausedRef.current = paused;
   // سقوط الاشتراك (انتهاء أو خروج) يسحب الحزم المقفولة من الاختيار كي لا تبدأ مباراة بها.
   useEffect(() => {
     if (premium) return;
@@ -1325,6 +1362,7 @@ function MaydanBeta({ api } = {}) {
     fxTimersRef.current[key] = window.setTimeout(() => setter(reset), wait(ms));
   }
   function playSfx(name) {
+    if (isDesignPreview) return;
     if (!effectiveSoundOn) return;
     // ناقل الصوت المشترك يعرف كل الأسماء (scoreUp/scoreDown عبر أسمائه البديلة)؛ الجدول المحلي للبديل فقط.
     if (api && api.sound && typeof api.sound.play === "function") {
@@ -1388,7 +1426,7 @@ function MaydanBeta({ api } = {}) {
     toast("بدأت الجولة؛ الوسائط غير الجاهزة ستُحمّل عند فتحها");
   }
   function haptic(kind) {
-    if (!hapticsOn) return;
+    if (isDesignPreview || !hapticsOn) return;
     const presets = {
         selection: { style: "selection", pattern: 12 },
         light: { style: "light", pattern: 18 },
@@ -1431,6 +1469,7 @@ function MaydanBeta({ api } = {}) {
     }
   }
   (useEffect(() => {
+    if (isDesignPreview) return undefined;
     let cancelled = !1;
     return (
       (async () => {
@@ -1463,11 +1502,11 @@ function MaydanBeta({ api } = {}) {
         cancelled = !0;
       }
     );
-  }, []),
+  }, [isDesignPreview, betaRemoveKey, logic.MODES, logic.ROUND_SIZES]),
     useEffect(() => {
       hydrated &&
         saveKey(MAYDAN_BETA_KEYS.settings, { soundOn, timerLength, mode, roundSize, favorites });
-    }, [hydrated, soundOn, timerLength, mode, roundSize, favorites]),
+    }, [hydrated, soundOn, timerLength, mode, roundSize, favorites, saveKey]),
     useEffect(() => {
       if (!effectiveSoundOn) {
         closeQuestionSoundTimer();
@@ -1543,6 +1582,7 @@ function MaydanBeta({ api } = {}) {
       questionBaseTeams,
       hintsUsed,
       lastAction,
+      saveKey,
     ]),
     useEffect(() => {
       // شاشة اللعب تفترض inGame=true لألعاب setup:'self'، فكان تأكيد الخروج يظهر
@@ -1561,7 +1601,7 @@ function MaydanBeta({ api } = {}) {
         window.addEventListener("pagehide", saveOnLeave),
         () => window.removeEventListener("pagehide", saveOnLeave)
       );
-    }, []),
+    }, [saveKey]),
     useEffect(() => {
       try {
         window.scrollTo({ top: 0, left: 0, behavior: "auto" });
@@ -1570,7 +1610,7 @@ function MaydanBeta({ api } = {}) {
       }
     }, [screen]),
     useEffect(() => {
-      if (screen !== "question" || !current || revealed || paused || timeLeft <= 0) return;
+      if (isDesignPreview || screen !== "question" || !current || revealed || paused || timeLeft <= 0) return;
       deadlineRef.current || (deadlineRef.current = Date.now() + timeLeft * 1e3);
       let interval = 0;
       const tick = () => {
@@ -1594,7 +1634,7 @@ function MaydanBeta({ api } = {}) {
       tick();
       interval = window.setInterval(tick, 250);
       return () => window.clearInterval(interval);
-    }, [screen, current && `${current.categoryId}:${current.index}`, revealed, paused, effectiveSoundOn]),
+    }, [screen, current && `${current.categoryId}:${current.index}`, revealed, paused, effectiveSoundOn, isDesignPreview]),
     useEffect(() => {
       const onVisibility = () => {
         document.hidden &&
@@ -1607,11 +1647,20 @@ function MaydanBeta({ api } = {}) {
         () => document.removeEventListener("visibilitychange", onVisibility)
       );
     }, [screen, revealed]),
+    useEffect(() => {
+      let pausedHere = false;
+      return socialInterruption.subscribe(() => {
+        if (socialInterruption.getSnapshot().paused && screen === "question" && !revealed && !pausedRef.current) {
+          pausedHere = true; pausedRef.current = true; deadlineRef.current = null; setPaused(true);
+        } else if (!socialInterruption.getSnapshot().paused && pausedHere) { pausedHere = false; setPaused(false); }
+      });
+    }, [screen, revealed]),
     // التظليل الأحمر في آخر ثلاث ثوانٍ (طبقة ثابتة في body)؛ يُطفأ عند تغيّر الشاشة أو الكشف أو التوقف
     useEffect(() => {
+      if (isDesignPreview) return undefined;
       vignette(screen === "question" && !!current && !revealed && !paused && timeLeft > 0 && timeLeft <= 3);
       return () => vignette(false);
-    }, [screen, current, revealed, paused, timeLeft]),
+    }, [screen, current, revealed, paused, timeLeft, isDesignPreview]),
     // النقاط السابقة تُحدَّث حيث تظهر بطاقات النقاط فقط، فيعدّ الرقم من قيمة ما قبل الحكم عند العودة إلى اللوحة
     useEffect(() => {
       if (screen === "board" || screen === "result" || showScore)
@@ -2140,12 +2189,12 @@ ${record.answered} من ${record.total} سؤالًا`,
   function Header({ title, back }) {
     return hBeta(
       "header",
-      { className: "m-header" },
+      { "data-design-id": "header", className: "m-header" },
       hBeta(
         "div",
         null,
         hBeta("div", { className: "m-kicker" }, "بَديهة · لعبة جماعية"),
-        hBeta("h1", { className: "m-title" }, title),
+        hBeta("h1", { "data-design-id": "title", className: "m-title" }, title),
       ),
       hBeta(
         "div",
@@ -2157,6 +2206,7 @@ ${record.answered} من ${record.total} سؤالًا`,
             {
               type: "button",
               className: "m-secondary m-small",
+              "data-design-id": "back",
               onClick: () => {
                 (playSfx("click"), back());
               },
@@ -2183,7 +2233,7 @@ ${record.answered} من ${record.total} سؤالًا`,
           "div",
           {
             key: team.id,
-            className: `m-score-card ${turn === team.originalIndex && screen === "board" ? "is-turn" : ""} ${bumpId === team.id ? "is-bumped" : ""} ${undoFx ? "is-undone" : ""}`,
+            "data-design-id": "score-cards", className: `m-score-card ${turn === team.originalIndex && screen === "board" ? "is-turn" : ""} ${bumpId === team.id ? "is-bumped" : ""} ${undoFx ? "is-undone" : ""}`,
             style: { "--team-color": TEAM_STYLE[team.originalIndex].solid, "--n": team.originalIndex },
           },
           hBeta(
@@ -2373,7 +2423,7 @@ ${record.answered} من ${record.total} سؤالًا`,
           hintsUsed < hints.length &&
           hBeta(
             "button",
-            {
+            { "data-design-id": "hint",
               type: "button",
               className: "m-secondary m-small",
               onClick: () => { setHintsUsed((n) => n + 1); playSfx("click"); },
@@ -2491,7 +2541,7 @@ ${record.answered} من ${record.total} سؤالًا`,
           : question.type === "sound"
             ? hBeta(
                 "button",
-                {
+                { "data-design-id": "question-audio",
                   type: "button",
                   className: "m-sound-play",
                   onClick: () => playQuestionSound(question.sound),
@@ -2524,8 +2574,8 @@ ${record.answered} من ${record.total} سؤالًا`,
       ),
       hBeta(
         "div",
-        { className: "m-home-copy" },
-        hBeta("h1", { className: "m-home-title" }, "المعرفة تُحسم بالنقاط"),
+        { "data-design-id": "intro", className: "m-home-copy" },
+        hBeta("h1", { "data-design-id": "title", className: "m-home-title" }, "المعرفة تُحسم بالنقاط"),
         hBeta(
           "p",
           { className: "m-muted m-center" },
@@ -2560,22 +2610,22 @@ ${record.answered} من ${record.total} سؤالًا`,
           ),
           hBeta(
             "button",
-            { type: "button", className: "m-primary", onClick: resumeGame },
+            { "data-design-id": "resume", "data-design-required": "true", type: "button", className: "m-primary", onClick: resumeGame },
             "متابعة",
           ),
           hBeta(
             "button",
-            { type: "button", className: "m-link", onClick: discardSavedGame },
+            { "data-design-id": "discard-save", type: "button", className: "m-link", onClick: discardSavedGame },
             "حذفها",
           ),
         ),
       retiredActive && hBeta("p", { className: "m-muted m-center", role: "status" }, RETIRED_GAME_NOTICE),
       hBeta(
         "div",
-        { className: "m-home-actions" },
+        { "data-design-id": "actions", className: "m-home-actions" },
         hBeta(
           "button",
-          {
+          { "data-design-id": "start", "data-design-required": "true",
             type: "button",
             className: "m-primary m-large m-hero-cta is-armed",
             onClick: () => {
@@ -2595,7 +2645,7 @@ ${record.answered} من ${record.total} سؤالًا`,
           { className: "m-two" },
           hBeta(
             "button",
-            {
+            { "data-design-id": "history",
               type: "button",
               className: "m-secondary",
               onClick: () => {
@@ -2607,7 +2657,7 @@ ${record.answered} من ${record.total} سؤالًا`,
           ),
           hBeta(
             "button",
-            {
+            { "data-design-id": "rules",
               type: "button",
               className: "m-secondary",
               onClick: () => {
@@ -2646,7 +2696,7 @@ ${record.answered} من ${record.total} سؤالًا`,
           [2, 3, 4].map((count) =>
             hBeta(
               "button",
-              {
+              { "data-design-id": "team-count",
                 key: count,
                 type: "button",
                 className: teams.length === count ? "selected" : "",
@@ -2670,6 +2720,7 @@ ${record.answered} من ${record.total} سؤالًا`,
               },
               hBeta("span", null, `الفريق ${index + 1}`),
               hBeta("input", {
+                "data-design-id": "team-name",
                 value: team.name,
                 onChange: (event) => setTeamName(index, event.target.value),
                 maxLength: 28,
@@ -2689,7 +2740,7 @@ ${record.answered} من ${record.total} سؤالًا`,
           Object.values(logic.MODES).map((item) =>
             hBeta(
               "button",
-              {
+              { "data-design-id": "mode-choice",
                 key: item.id,
                 type: "button",
                 className: `m-choice ${mode === item.id ? "selected" : ""}`,
@@ -2711,7 +2762,7 @@ ${record.answered} من ${record.total} سؤالًا`,
           logic.ROUND_SIZES.map((size) =>
             hBeta(
               "button",
-              {
+              { "data-design-id": "round-size",
                 key: size,
                 type: "button",
                 className: roundSize === size ? "selected" : "",
@@ -2731,7 +2782,7 @@ ${record.answered} من ${record.total} سؤالًا`,
           [30, 60, 90].map((seconds) =>
             hBeta(
               "button",
-              {
+              { "data-design-id": "timer-length",
                 key: seconds,
                 type: "button",
                 className: timerLength === seconds ? "selected" : "",
@@ -2764,6 +2815,7 @@ ${record.answered} من ${record.total} سؤالًا`,
           hBeta("span", { className: "sr-only" }, "ابحث عن فئة"),
           hBeta("span", { "aria-hidden": "true" }, "🔎"),
           hBeta("input", {
+            "data-design-id": "category-search",
             value: categorySearch,
             onChange: (event) => setCategorySearch(event.target.value),
             placeholder: "ابحث عن فئة…",
@@ -2778,6 +2830,7 @@ ${record.answered} من ${record.total} سؤالًا`,
               {
                 key: id,
                 type: "button",
+                "data-design-id": "category-filter",
                 className: categoryFilter === id ? "selected" : "",
                 onClick: () => {
                   (setCategoryFilter(id), playSfx("click"));
@@ -2793,7 +2846,7 @@ ${record.answered} من ${record.total} سؤالًا`,
           { className: "m-category-actions" },
           hBeta(
             "button",
-            { type: "button", className: "m-secondary", onClick: randomCategories },
+            { "data-design-id": "random-categories", type: "button", className: "m-secondary", onClick: randomCategories },
             "🎲 اختيار عشوائي",
           ),
           hBeta(
@@ -2801,6 +2854,7 @@ ${record.answered} من ${record.total} سؤالًا`,
             {
               type: "button",
               className: "m-secondary",
+              "data-design-id": "categories-reset",
               onClick: () => {
                 (setSelectedCategories([]), playSfx("click"));
               },
@@ -2821,7 +2875,7 @@ ${record.answered} من ${record.total} سؤالًا`,
               { key: category.id, className: `m-category-pick ${selected ? "selected" : ""}${locked ? " is-locked" : ""}`, style: { "--k": categoryIndex } },
               hBeta(
                 "button",
-                {
+                { "data-design-id": "category-card",
                   type: "button",
                   className: "m-category-main",
                   onClick: () => toggleCategory(category.id),
@@ -2840,7 +2894,7 @@ ${record.answered} من ${record.total} سؤالًا`,
               ),
               hBeta(
                 "button",
-                {
+                { "data-design-id": "favorite",
                   type: "button",
                   className: "m-favorite",
                   onClick: () => toggleFavorite(category.id),
@@ -2862,7 +2916,7 @@ ${record.answered} من ${record.total} سؤالًا`,
           hBeta("span", null, `لُعب ${currentQuestionHistoryCount(CATS, history)} سؤالًا من البنك الحالي؛ الجديد له الأولوية.`),
           hBeta(
             "button",
-            { type: "button", className: "m-link", onClick: clearQuestionHistory },
+            { "data-design-id": "clear-history", type: "button", className: "m-link", onClick: clearQuestionHistory },
             "تصفير السجل",
           ),
         ),
@@ -2871,7 +2925,7 @@ ${record.answered} من ${record.total} سؤالًا`,
       setupError && hBeta("p", { className: "m-error", role: "alert" }, setupError),
       hBeta(
         "button",
-        {
+        { "data-design-id": "start", "data-design-required": "true",
           type: "button",
           className: `m-primary m-large m-sticky-action ${selectedCategories.length === 6 ? "is-armed" : ""}`,
           onClick: beginGame,
@@ -2914,7 +2968,7 @@ ${record.answered} من ${record.total} سؤالًا`,
       { className: "m-screen" },
       hBeta(
         "header",
-        { className: "m-board-header" },
+        { "data-design-id": "header", className: "m-board-header" },
         hBeta(
           "div",
           null,
@@ -2936,7 +2990,7 @@ ${record.answered} من ${record.total} سؤالًا`,
           SoundButton(),
           hBeta(
             "button",
-            {
+            { "data-design-id": "scoreboard",
               type: "button",
               className: "m-icon-btn",
               onClick: () => setShowScore(!0),
@@ -2970,7 +3024,7 @@ ${record.answered} من ${record.total} سؤالًا`,
                 const done = !!used[question.qid];
                 return hBeta(
                   "button",
-                  {
+                  { "data-design-id": "tier",
                     key: question.qid,
                     type: "button",
                     className: `m-tier m-tier-${question.p} ${done ? "done" : ""} ${launchQid === question.qid ? "is-launch" : ""}`,
@@ -3007,10 +3061,10 @@ ${record.answered} من ${record.total} سؤالًا`,
       ),
       hBeta(
         "div",
-        { className: "m-board-actions" },
+        { "data-design-id": "actions", className: "m-board-actions" },
         hBeta(
           "button",
-          {
+          { "data-design-id": "undo",
             type: "button",
             className: "m-secondary",
             onClick: undoLastAction,
@@ -3025,18 +3079,18 @@ ${record.answered} من ${record.total} سؤالًا`,
               hBeta("span", null, "إنهاء المباراة؟"),
               hBeta(
                 "button",
-                { type: "button", className: "m-danger", onClick: () => finishGame(!0) },
+                { "data-design-id": "finish", type: "button", className: "m-danger", onClick: () => finishGame(!0) },
                 "نعم",
               ),
               hBeta(
                 "button",
-                { type: "button", className: "m-secondary", onClick: () => setConfirmEnd(!1) },
+                { "data-design-id": "cancel", "data-design-required": "true", type: "button", className: "m-secondary", onClick: () => setConfirmEnd(!1) },
                 "لا",
               ),
             )
           : hBeta(
               "button",
-              { type: "button", className: "m-link", onClick: () => setConfirmEnd(!0) },
+              { "data-design-id": "finish", type: "button", className: "m-link", onClick: () => setConfirmEnd(!0) },
               "إنهاء المباراة",
             ),
       ),
@@ -3046,7 +3100,7 @@ ${record.answered} من ${record.total} سؤالًا`,
   function AnswerToggle() {
     return hBeta(
       "button",
-      {
+      { "data-design-id": "answer-toggle",
         type: "button",
         className: "m-secondary m-small m-answer-toggle",
         onClick: toggleAnswerHidden,
@@ -3068,10 +3122,10 @@ ${record.answered} من ${record.total} سؤالًا`,
       { className: "m-screen m-question-screen" },
       hBeta(
         "header",
-        { className: "m-question-header" },
+        { "data-design-id": "header", className: "m-question-header" },
         hBeta(
           "button",
-          {
+          { "data-design-id": "cancel", "data-design-required": "true",
             type: "button",
             className: "m-secondary m-small",
             onClick: cancelQuestion,
@@ -3081,7 +3135,7 @@ ${record.answered} من ${record.total} سؤالًا`,
         ),
         hBeta(
           "div",
-          { className: "m-question-meta" },
+          { "data-design-id": "category", className: "m-question-meta" },
           hBeta("span", null, `${currentCategory.icon} ${currentCategory.name}`),
           hBeta(
             "b",
@@ -3106,7 +3160,7 @@ ${record.answered} من ${record.total} سؤالًا`,
       ),
       hBeta(
         "div",
-        { className: "m-turn-banner", style: { "--team-color": TEAM_STYLE[turn].solid } },
+        { "data-design-id": "turn", className: "m-turn-banner", style: { "--team-color": TEAM_STYLE[turn].solid } },
         hBeta("span", { "aria-hidden": "true" }),
         hBeta("strong", null, `السؤال لـ ${teams[turn].name}`),
         effect.two && hBeta("b", null, "جوابان مفعّلان"),
@@ -3120,7 +3174,7 @@ ${record.answered} من ${record.total} سؤالًا`,
         hBeta(
           "div",
           {
-            className: "m-timer-inner",
+            "data-design-id": "timer", className: "m-timer-inner",
             role: "timer",
             "aria-live": [10, 5, 0].includes(timeLeft) ? "assertive" : "off",
             "aria-label": `${timeLeft} ثانية متبقية`,
@@ -3134,7 +3188,7 @@ ${record.answered} من ${record.total} سؤالًا`,
         timeLeft > 0 &&
         hBeta(
           "button",
-          { type: "button", className: "m-secondary m-pause", onClick: togglePause },
+          { "data-design-id": "pause", type: "button", className: "m-secondary m-pause", onClick: togglePause },
           paused ? "▶ متابعة الوقت" : "⏸ إيقاف مؤقت",
         ),
       !revealed &&
@@ -3142,11 +3196,11 @@ ${record.answered} من ${record.total} سؤالًا`,
         hBeta("p", { className: "m-timeout", role: "alert" }, "انتهى الوقت ⏰"),
       hBeta(
         "article",
-        { className: `m-question-card ${revealed ? "is-revealed" : ""}` },
+        { "data-design-id": "question", className: `m-question-card ${revealed ? "is-revealed" : ""}` },
         prompt && hBeta("p", { className: "m-prompt" }, prompt),
         !revealed && assistance && (assistance.context || assistance.shape) && hBeta(
           "aside",
-          { className: "m-question-assistance", "aria-label": "مساعدة خفيفة بلا خصم نقاط" },
+          { "data-design-id": "assistance", className: "m-question-assistance", "aria-label": "مساعدة خفيفة بلا خصم نقاط" },
           assistance.context && hBeta("span", null, assistance.context),
           assistance.shape && hBeta("small", null, assistance.shape),
         ),
@@ -3155,7 +3209,7 @@ ${record.answered} من ${record.total} سؤالًا`,
           (answerShown
             ? hBeta(
                 "div",
-                { className: "m-answer", role: "status" },
+                { "data-design-id": "answer", className: "m-answer", role: "status" },
                 hBeta("small", null, "الإجابة"),
                 hBeta("strong", null, answerText(currentQuestion)),
                 // الصيغ المقبولة الأخرى (اسم بلغتين، لقب) تظهر للمضيف كي لا يظلم إجابة صحيحة بصياغة مختلفة
@@ -3175,7 +3229,7 @@ ${record.answered} من ${record.total} سؤالًا`,
       !revealed &&
         hBeta(
           "div",
-          { className: `m-tools ${timeLeft <= 0 ? "is-out" : ""}` },
+          { "data-design-id": "tools", className: `m-tools ${timeLeft <= 0 ? "is-out" : ""}` },
           hBeta("p", null, `وسائل ${teams[turn].name}`),
           hBeta(
             "div",
@@ -3184,7 +3238,7 @@ ${record.answered} من ${record.total} سؤالًا`,
               const available = teams[turn].tools[tool.id] && timeLeft > 0;
               return hBeta(
                 "button",
-                {
+                { "data-design-id": "tool",
                   key: tool.id,
                   type: "button",
                   className: `${available ? "" : "used"} ${effect[tool.id] ? "active" : ""}`,
@@ -3202,7 +3256,7 @@ ${record.answered} من ${record.total} سؤالًا`,
       revealed
         ? hBeta(
             "div",
-            { className: "m-judge" },
+            { "data-design-id": "judge", className: "m-judge" },
             hBeta(
               "div",
               { className: "m-row-between" },
@@ -3213,7 +3267,7 @@ ${record.answered} من ${record.total} سؤالًا`,
               ),
               hBeta(
                 "button",
-                {
+                { "data-design-id": "report", "data-design-required": "true",
                   type: "button",
                   className: "m-link",
                   onClick: () =>
@@ -3227,11 +3281,11 @@ ${record.answered} من ${record.total} سؤالًا`,
             ),
             hBeta(
               "div",
-              { className: "m-judge-grid" },
+              { "data-design-id": "options-list", className: "m-judge-grid" },
               teams.map((team, index) =>
                 hBeta(
                   "button",
-                  {
+                  { "data-design-id": "judge-team",
                     key: team.id,
                     type: "button",
                     style: { "--team-color": TEAM_STYLE[index].solid },
@@ -3253,7 +3307,7 @@ ${record.answered} من ${record.total} سؤالًا`,
             ),
             hBeta(
               "button",
-              {
+              { "data-design-id": "judge-nobody",
                 type: "button",
                 className: "m-secondary m-nobody",
                 onClick: () => judgeQuestion(null),
@@ -3263,7 +3317,7 @@ ${record.answered} من ${record.total} سؤالًا`,
           )
         : hBeta(
             "button",
-            {
+            { "data-design-id": "reveal",
               type: "button",
               className: "m-primary m-large m-reveal-action",
               onClick: revealAnswer,
@@ -3299,15 +3353,15 @@ ${record.answered} من ${record.total} سؤالًا`,
       ),
       hBeta(
         "div",
-        { className: "m-result-actions" },
+        { "data-design-id": "actions", className: "m-result-actions" },
         hBeta(
           "button",
-          { type: "button", className: "m-primary m-large", onClick: beginGame },
+          { "data-design-id": "start", "data-design-required": "true", type: "button", className: "m-primary m-large", onClick: beginGame },
           "إعادة بنفس الإعدادات",
         ),
         hBeta(
           "button",
-          { type: "button", className: "m-secondary", onClick: shareResult },
+          { "data-design-id": "share-result", type: "button", className: "m-secondary", onClick: shareResult },
           "مشاركة النتيجة",
         ),
         hBeta(
@@ -3315,12 +3369,12 @@ ${record.answered} من ${record.total} سؤالًا`,
           { className: "m-two" },
           hBeta(
             "button",
-            { type: "button", className: "m-secondary", onClick: () => setScreen("setup") },
+            { "data-design-id": "setup", type: "button", className: "m-secondary", onClick: () => setScreen("setup") },
             "لعبة جديدة",
           ),
           hBeta(
             "button",
-            { type: "button", className: "m-secondary", onClick: () => setScreen("history") },
+            { "data-design-id": "history", type: "button", className: "m-secondary", onClick: () => setScreen("history") },
             "سجل النتائج",
           ),
         ),
@@ -3377,7 +3431,7 @@ ${record.answered} من ${record.total} سؤالًا`,
           results.length > 0 &&
             hBeta(
               "button",
-              { type: "button", className: "m-link", onClick: clearResults },
+              { "data-design-id": "clear-results", type: "button", className: "m-link", onClick: clearResults },
               "مسح السجل",
             ),
         ),
@@ -3431,7 +3485,7 @@ ${record.answered} من ${record.total} سؤالًا`,
         reports.length > 0 &&
           hBeta(
             "button",
-            { type: "button", className: "m-secondary m-full", onClick: shareReports },
+            { "data-design-id": "share-reports", type: "button", className: "m-secondary m-full", onClick: shareReports },
             "مشاركة تقرير الاختبار",
           ),
       ),
@@ -3463,7 +3517,7 @@ ${record.answered} من ${record.total} سؤالًا`,
       ),
       hBeta(
         "button",
-        { type: "button", className: "m-primary m-full", onClick: () => setShowRules(!1) },
+        { "data-design-id": "rules", type: "button", className: "m-primary m-full", onClick: () => setShowRules(!1) },
         "فهمت",
       ),
     );
@@ -3483,7 +3537,7 @@ ${record.answered} من ${record.total} سؤالًا`,
             hBeta("b", null, team.name),
             hBeta(
               "button",
-              {
+              { "data-design-id": "score-minus",
                 type: "button",
                 className: "m-danger",
                 onClick: () => adjustScore(index, -100),
@@ -3493,7 +3547,7 @@ ${record.answered} من ${record.total} سؤالًا`,
             ),
             hBeta(
               "button",
-              {
+              { "data-design-id": "score-plus",
                 type: "button",
                 className: "m-success",
                 onClick: () => adjustScore(index, 100),
@@ -3506,7 +3560,7 @@ ${record.answered} من ${record.total} سؤالًا`,
       ),
       hBeta(
         "button",
-        {
+        { "data-design-id": "undo",
           type: "button",
           className: "m-secondary m-full",
           onClick: undoLastAction,
@@ -3533,7 +3587,7 @@ ${record.answered} من ${record.total} سؤالًا`,
         reasons.map((reason) =>
           hBeta(
             "button",
-            {
+            { "data-design-id": "report", "data-design-required": "true",
               key: reason,
               type: "button",
               className: "m-secondary",
@@ -3560,7 +3614,7 @@ ${record.answered} من ${record.total} سؤالًا`,
               : screen === "history" && (content = HistoryScreen()),
     hBeta(
       "div",
-      { dir: "rtl", className: `m-root m-screen-${screen}`, "data-dir": navDir },
+      { dir: "rtl", className: `m-root m-screen-${screen}`, "data-dir": navDir, "data-design-screen": `badeeha.${screen}` },
       hBeta("style", null, MAYDAN_BETA_CSS),
       // مفتاح الشاشة يعيد تركيب القسم فتعمل حركة الدخول عند كل انتقال (كلها عناصر section)
       hBeta(React.Fragment, { key: screen }, roundLoading ? hBeta(
@@ -3569,7 +3623,7 @@ ${record.answered} من ${record.total} سؤالًا`,
         hBeta("h2", null, "نجهّز أسئلتكم"),
         hBeta("p", { role: "status" }, `تحميل ${roundLoading.done.toLocaleString("ar")} من ${roundLoading.total.toLocaleString("ar")} ملفًا`),
         hBeta("progress", { max: roundLoading.total, value: roundLoading.done, "aria-label": "تحميل وسائط الجولة" }),
-        hBeta("button", { type: "button", className: "m-secondary", onClick: skipRoundLoading }, "متابعة اللعب الآن"),
+        hBeta("button", { "data-design-id": "continue", "data-design-required": "true", type: "button", className: "m-secondary", onClick: skipRoundLoading }, "متابعة اللعب الآن"),
       ) : content),
       showRules && RulesModal(),
       showScore && ScoreModal(),

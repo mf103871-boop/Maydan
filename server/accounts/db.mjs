@@ -6,6 +6,9 @@ import { paddleEnvironmentOf } from './billing-environment.mjs';
 import { socialDeleteStatements } from '../social/db.mjs';
 import { profileDeleteStatements } from '../profiles/db.mjs';
 import { moderationDeleteStatements } from '../moderation/db.mjs';
+import { ersomhaDeleteStatements } from '../ersomha-history.mjs';
+import { drawingReportDeleteStatements } from '../ersomha-reports.mjs';
+import { designDeleteStatements } from '../design/cleanup.mjs';
 
 function statement(env, sql, args) {
   const prepared = env.DB.prepare(sql);
@@ -160,11 +163,13 @@ export const releaseAccountDeletion = (env, userId, attemptId) => run(env, 'DELE
 
 // ── الحذف المتسلسل ──────────────────────────────────────────────────────────
 export async function deleteUser(env, userId) {
-  const statements = ['sessions', 'auth_codes', 'trials', 'subscriptions', 'paddle_customers', 'paddle_customers_scoped', 'paddle_checkouts', 'account_deletions', 'identities']
+  const statements = ['sessions', 'auth_codes', 'trials', 'online_room_trial_claims', 'subscriptions', 'paddle_customers', 'paddle_customers_scoped', 'paddle_checkouts', 'account_deletions', 'identities']
     .map((table) => statement(env, `DELETE FROM ${table} WHERE user_id = ?`, [userId]));
+  statements.push(...await ersomhaDeleteStatements(env, userId), ...drawingReportDeleteStatements(env, userId));
   statements.push(...moderationDeleteStatements(env, userId));
   statements.push(...socialDeleteStatements(env, userId));
   statements.push(...profileDeleteStatements(env, userId));
+  statements.push(...designDeleteStatements(env, userId));
   statements.push(statement(env, 'DELETE FROM users WHERE id = ?', [userId]));
   // D1 batch is transactional: a failed delete cannot strand a partial account.
   await env.DB.batch(statements);

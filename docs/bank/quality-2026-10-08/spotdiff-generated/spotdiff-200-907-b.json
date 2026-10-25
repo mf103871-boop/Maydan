@@ -1,0 +1,77 @@
+{
+  "pack": "spotdiff",
+  "oldQid": "spotdiff-200-907",
+  "side": "b",
+  "createdAt": "2026-10-08",
+  "kind": "ai-generated",
+  "tool": "OpenAI image generation (built-in)",
+  "mode": "edit",
+  "prompt": "Use case: precise-object-edit. Asset type: B photo for a mobile spot-the-difference puzzle. Input image is the EXACT A photo to edit, not general inspiration. Output ONE landscape 4:3 image matching original framing. Make exactly ONE semantic difference. Add ONLY ONE round natural cream wooden button to the front center of the folded brim of the RED knitted beanie, centered at approximately x=71%, y=61% of the image, diameter 5% of the image width. It has two small sewing holes and is visibly sewn onto the knit. Keep the hat RED and identical in size, position and knitted shape. No other button. Preserve the cream mittens, dark grey scarf and all its tassels, wooden bench, wall, textures, lighting, framing and all other elements exactly. Only this new single button differs.\nSTRICT: copy original photo everywhere outside the specified object change; preserve original colors, object counts, backgrounds, textures and composition. No global repaint, color swap, crop, camera move, extra decorative details, text, border, watermark or marks. The changed feature must be clear at 175 px image width.",
+  "asset": "media/spotdiff/spotdiff-200-907-b-q20261008.webp",
+  "sha256": "27f06bedac82fb9c90984863ef5c6ecd5d0b634439cc3627bdc85702d2527dad",
+  "inputSHA": "74e48bc3187c72cac82857815c36b34f5e4544ff33615792fa92737b028cda2e",
+  "outputSHA": "27f06bedac82fb9c90984863ef5c6ecd5d0b634439cc3627bdc85702d2527dad",
+  "rawOutputSHA": "b290c52a9f1692e0d37e7c5dc445a7c68a8cdb20688baf0a34546869c55f6623",
+  "rawGeneratedFile": "exec-aa157984-7ce6-465a-9257-0b22dec452ed.png",
+  "bytes": 142214,
+  "width": 1280,
+  "height": 960,
+  "inputImages": [
+    {
+      "file": "media/spotdiff/spotdiff-200-907-a.webp",
+      "sha256": "74e48bc3187c72cac82857815c36b34f5e4544ff33615792fa92737b028cda2e"
+    }
+  ],
+  "diff": {
+    "description": "One cream wooden button with two sewing holes is added to the front of the red beanie brim.",
+    "answer": "زر إضافي على القبعة",
+    "spot": {
+      "x": 72,
+      "y": 60,
+      "r": 6
+    },
+    "coordinates": "x is measured from physical left; y from top; r is a percentage of image width"
+  },
+  "invariants": [
+    "red beanie color and folded shape",
+    "cream mittens",
+    "grey scarf and tassels",
+    "wooden bench and wall",
+    "camera framing and colors"
+  ],
+  "review": {
+    "status": "phone-size-reviewed",
+    "originalCompared": true,
+    "oldAAndOldBViewed": true,
+    "semanticDifferenceCount": 1,
+    "invariantsReviewed": [
+      "red beanie color and folded shape",
+      "cream mittens",
+      "grey scarf and tassels",
+      "wooden bench and wall",
+      "camera framing and colors"
+    ],
+    "displayedEffect": "Unfiltered original A and edited B side-by-side; physical-left reveal circle only",
+    "mobileDeviceQA": false,
+    "limitation": "AI re-encoding produces minor texture variation. Review checks one meaningful object difference, preserved counts, colors and geometry; exact outside-region pixel identity is not claimed.",
+    "reviewedAt": "2026-10-12",
+    "reviewer": "finish_spotdiff",
+    "imageWidthCSS": 173,
+    "evidence": "docs/bank/quality-2026-10-08/preview/spotdiff-02.png"
+  },
+  "mobileQA": {
+    "method": "Viewed rendered pairs at 175px per image and vertically stacked originals at 359px width, then viewed circles over both A and B.",
+    "sideBySideImageWidth": 175,
+    "stackedImageWidth": 359,
+    "differenceVisible": true,
+    "circleEnclosesDifferenceInBothImages": true,
+    "physicalLeftCoordinates": true,
+    "deviceTested": false,
+    "artifacts": [
+      ".cache/badeeha-quality/spotdiff-eight-qa/spotdiff-200-907-175.png",
+      ".cache/badeeha-quality/spotdiff-eight-qa/spotdiff-200-907-359.png",
+      ".cache/badeeha-quality/spotdiff-eight-qa/spotdiff-200-907-circle175.png"
+    ]
+  },
+  "packaging": "Uniform landscape resize to 1280x960 and WebP quality 85 only; all scene changes made by built-in imagegen. Original A unchanged."
+}

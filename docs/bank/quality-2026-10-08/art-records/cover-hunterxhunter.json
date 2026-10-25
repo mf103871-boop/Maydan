@@ -1,0 +1,29 @@
+{
+  "id": "hunterxhunter",
+  "kind": "cover",
+  "file": "public/media/badeeha-covers/hunterxhunter.webp",
+  "style": "adventure gouache illustration",
+  "palette": "leaf green, coral, gold",
+  "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'هنتر × هنتر'. Landscape 4:3 artwork.\nMedium: adventure gouache illustration.\nIntentional palette: leaf green, coral, gold.\nScene: An original explorer compass and backpack at a forest trail branching toward distant mountains, vibrant hand-painted adventure scene.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-10-08",
+  "sourceImage": {
+    "name": "exec-939be204-dd10-4d59-bf54-f95881bd146e.png",
+    "sha256": "1727075035885a3adad3278f30f1f05d9c783d88c46f42844509b7a2f991c8f5",
+    "width": 1448,
+    "height": 1086
+  },
+  "width": 640,
+  "height": 480,
+  "bytes": 119654,
+  "sha256": "5cb84ef8c075d54daf222c378715f8ad54a743a4514f538d7c70307ab6c8ed42",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "phone-size-reviewed",
+    "date": "2026-10-08",
+    "reviewer": "root",
+    "width": 160,
+    "method": "shipped cover CSS; baseline and replacement side by side",
+    "evidence": "docs/bank/quality-2026-10-08/preview/covers-3.jpg"
+  }
+}

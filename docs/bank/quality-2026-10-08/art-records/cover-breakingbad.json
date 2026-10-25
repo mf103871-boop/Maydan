@@ -1,0 +1,29 @@
+{
+  "id": "breakingbad",
+  "kind": "cover",
+  "file": "public/media/badeeha-covers/breakingbad.webp",
+  "style": "cinematic desert landscape",
+  "palette": "ochre, turquoise sky, deep olive",
+  "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'بريكنغ باد'. Landscape 4:3 artwork.\nMedium: cinematic desert landscape.\nIntentional palette: ochre, turquoise sky, deep olive.\nScene: A distant generic recreational vehicle on an empty New Mexico-like desert road with long afternoon shadows and vast sky, no drugs or show logos.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-10-08",
+  "sourceImage": {
+    "name": "exec-51817a5d-854e-4cc8-96c2-28ac84eca0e6.png",
+    "sha256": "33d5b1e75e28fd4652eb8dc897b11f51f66d8773be2da5ae8640cb196d204071",
+    "width": 1448,
+    "height": 1086
+  },
+  "width": 640,
+  "height": 480,
+  "bytes": 64278,
+  "sha256": "c835b6111a6c70b374a48cdad69e22a081c7a6511dcfeaafa99b66e312dbbafb",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "phone-size-reviewed",
+    "date": "2026-10-08",
+    "reviewer": "root",
+    "width": 160,
+    "method": "shipped cover CSS; baseline and replacement side by side",
+    "evidence": "docs/bank/quality-2026-10-08/preview/covers-3.jpg"
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "pack": "spotdiff",
+  "oldQid": "spotdiff-800-904",
+  "side": "a",
+  "createdAt": "2026-10-08",
+  "kind": "ai-generated",
+  "tool": "OpenAI image generation (built-in)",
+  "mode": "generate",
+  "prompt": "Use case: illustration-story\nAsset type: original A of a mobile single-difference comparison puzzle.\nPrimary request: one landscape 4:3 image. A crisp handcrafted paper-cut / cel-shaded editorial illustration of a colorful wooden toy maker's workbench. Palette petrol blue, rust red, mustard, mint. Oblique overhead 4:3 composition. A wooden toy train center-left with three clearly visible wheels, a small robot back center, a row of four animal wooden silhouettes on a shelf, a stack of three cubes upper left, two smooth wooden balls lower left, a paint pot and brush right. At lower center-right is one small wooden toy boat with a WHITE TRIANGULAR SAIL tilted slightly right, supported by a dark mast rising through its center; sail is 18% image width. Sail's triangle apex points up. Clear wooden construction and no logos or text. About fourteen objects.\nNo comparison panels, people, labels, letters, digits, logos, border, watermark, highlights or UI. Essential items large enough to compare at 175px width; no miniature inaccessible details. This is the original unmodified scene.",
+  "asset": "media/spotdiff/spotdiff-800-904-a-q20261008.webp",
+  "sha256": "d0d9166153235584a6b36f49550e31931b5fbc64d75eda27f8fa51116984d0d5",
+  "bytes": 221404,
+  "width": 1280,
+  "height": 960,
+  "inputImages": [],
+  "review": {
+    "status": "phone-size-reviewed",
+    "originalCompared": true,
+    "displayedEffect": "Side-by-side unfiltered originals; reveal circle only",
+    "difference": "Toy boat white sail triangle becomes trapezoid",
+    "semanticDifferenceCount": 1,
+    "invariantsReviewed": [
+      "train three wheels",
+      "four animals",
+      "three cubes",
+      "robot face/buttons",
+      "two balls",
+      "tools",
+      "paint drips",
+      "plant",
+      "desk/light/framing"
+    ],
+    "mobileDeviceQA": false,
+    "reviewedAt": "2026-10-12",
+    "reviewer": "finish_spotdiff",
+    "imageWidthCSS": 173,
+    "evidence": "docs/bank/quality-2026-10-08/preview/spotdiff-07.png"
+  },
+  "packaging": "Uniform size/format encoding only; all scene changes created by built-in imagegen",
+  "packagingReview": {
+    "date": "2026-10-12",
+    "file": "media/spotdiff/spotdiff-800-904-a-q20261008.webp",
+    "beforeBytes": 302350,
+    "bytes": 221404,
+    "beforeSha256": "41db4d7213dc6b6bf7a09474723787cdec0a54dd38ee936ee883b9340d050464",
+    "sha256": "d0d9166153235584a6b36f49550e31931b5fbc64d75eda27f8fa51116984d0d5",
+    "quality": 88,
+    "dimensionsUnchanged": true,
+    "operation": "WebP encoding only; no scene edit",
+    "phoneReview": "phone-size-reviewed-after-compression",
+    "reviewRecord": "docs/bank/quality-2026-10-08/postcompression-review.json"
+  }
+}

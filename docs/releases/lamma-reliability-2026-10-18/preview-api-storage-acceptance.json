@@ -1,0 +1,87 @@
+{
+  "runId": "9e3ff19e-e1e1-4807-b5aa-3eaeab0abd24",
+  "startedAt": "2026-10-18T19:52:23.622Z",
+  "origin": "https://maydan-lamma-preview.mf103871.workers.dev",
+  "database": "maydan-lamma-preview-accounts",
+  "checks": [
+    {
+      "name": "authenticated synthetic accounts and honest provider capabilities",
+      "passed": true
+    },
+    {
+      "name": "friend request acceptance through remote REST",
+      "passed": true
+    },
+    {
+      "name": "direct v1 text DTO and retry identity",
+      "passed": true
+    },
+    {
+      "name": "private accepted group invitations and concurrent twelfth seat",
+      "passed": true
+    },
+    {
+      "name": "group blocking filters history without changing membership",
+      "passed": true
+    },
+    {
+      "name": "leave and accepted rejoin reset visible history",
+      "passed": true
+    },
+    {
+      "name": "notification preferences and conversation mutes persist",
+      "passed": true
+    },
+    {
+      "name": "private voice fallback or explicit unavailable storage",
+      "passed": true
+    },
+    {
+      "name": "configured call service reserved for separate live-provider acceptance",
+      "passed": true
+    },
+    {
+      "name": "revoked session cannot read social data",
+      "passed": true
+    }
+  ],
+  "cleanup": {
+    "accountsSeeded": 13,
+    "accountsDeleted": 13,
+    "credentials": "memory-only; D1 hashes expire after one hour",
+    "runScopedRemaining": [
+      {
+        "resource": "users",
+        "remaining": 0
+      },
+      {
+        "resource": "sessions",
+        "remaining": 0
+      },
+      {
+        "resource": "attachments",
+        "remaining": 0
+      },
+      {
+        "resource": "friendships",
+        "remaining": 0
+      }
+    ]
+  },
+  "capabilities": {
+    "voiceMessages": true,
+    "liveCalls": true,
+    "pushNotifications": true
+  },
+  "storageAcceptance": {
+    "uploadedBytes": 16044,
+    "byteExactPlayback": true,
+    "privateRange": true,
+    "unsentAndOutsiderDenied": true,
+    "deletedPlaybackDenied": true
+  },
+  "liveProviderAcceptance": "Separate authorized provider/device trial required",
+  "passed": true,
+  "finishedAt": "2026-10-18T19:54:17.630Z",
+  "cleanupVerifiedAt": "2026-10-18T19:54:49.014Z"
+}

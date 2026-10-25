@@ -1,0 +1,29 @@
+{
+  "id": "fruitsveg",
+  "kind": "cover",
+  "file": "public/media/badeeha-covers/fruitsveg.webp",
+  "style": "botanical watercolor",
+  "palette": "leaf green, blood orange, sky blue",
+  "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'فواكه وخضار'. Landscape 4:3 artwork.\nMedium: botanical watercolor.\nIntentional palette: leaf green, blood orange, sky blue.\nScene: Fresh produce growing in a sunlit garden bed, a cut pomegranate in foreground and leaves curving across the scene, painted paper texture.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-10-08",
+  "sourceImage": {
+    "name": "exec-317b722f-c61d-4eb4-ad3f-d309efb6d173.png",
+    "sha256": "8f56e57d55d6e0618b4c4efc937d9adfcf7254dad8da5a5631128d2e6562f4aa",
+    "width": 1448,
+    "height": 1086
+  },
+  "width": 640,
+  "height": 480,
+  "bytes": 125002,
+  "sha256": "106c7b689cbf9a1fd426d04c77b3f49f4d0f9f0b4f6dd0d78692aae24350ad9e",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "phone-size-reviewed",
+    "date": "2026-10-08",
+    "reviewer": "root",
+    "width": 160,
+    "method": "shipped cover CSS; baseline and replacement side by side",
+    "evidence": "docs/bank/quality-2026-10-08/preview/covers-1.jpg"
+  }
+}

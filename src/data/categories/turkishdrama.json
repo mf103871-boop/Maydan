@@ -102,17 +102,15 @@
       "difficultyTarget": 0.8
     },
     {
-      "qid": "turkishdrama-200-918",
+      "qid": "turkishdrama-200-921",
       "p": 200,
-      "topic": "وادي الذئاب",
-      "q": "ما اسم بطل «وادي الذئاب» الأصلي قبل تغيير وجهه وهويته؟",
-      "a": "علي جاندان",
+      "topic": "فاطمة",
+      "q": "إلى أي مدينة كبيرة تنتقل البطلة وعائلة زوجها لبدء حياة جديدة في «فاطمة»؟",
+      "a": "إسطنبول",
       "alt": [
-        "علي جندان",
-        "علي كاندان",
-        "Ali Candan"
+        "إستانبول"
       ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Valley_of_the_Wolves_(TV_series)",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Fatmagül%27ün_Suçu_Ne%3F",
       "verified": true,
       "difficultyTarget": 0.8
     },
@@ -186,21 +184,6 @@
       "difficultyTarget": 0.6
     },
     {
-      "qid": "turkishdrama-400-916",
-      "p": 400,
-      "topic": "الطائر المبكر",
-      "q": "في «الطائر المبكر»، بأي اسم طائر تلقب البطلة الرجل الغامض الذي قابلته على الشرفة؟",
-      "a": "القطرس",
-      "alt": [
-        "طائر القطرس",
-        "ألباتروس",
-        "Albatross"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Erkenci_Kuş",
-      "verified": true,
-      "difficultyTarget": 0.6
-    },
-    {
       "qid": "turkishdrama-400-917",
       "p": 400,
       "topic": "فاطمة",
@@ -228,6 +211,21 @@
         "Aslan Akbey"
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/Valley_of_the_Wolves_(TV_series)",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "turkishdrama-400-921",
+      "p": 400,
+      "topic": "العشق الممنوع",
+      "q": "في «العشق الممنوع»، ما وظيفة الآنسة لميس، المسماة دنيز في النسخة التركية، داخل المنزل؟",
+      "a": "مربية الطفلين",
+      "alt": [
+        "مربية",
+        "معلمة الطفلين",
+        "معلمة خاصة"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Aşk-ı_Memnu_(2008_TV_series)",
       "verified": true,
       "difficultyTarget": 0.6
     },
@@ -293,7 +291,6 @@
       "q": "ما المنتجات التي يصممها رجل الأعمال في «حب للإيجار» وتدور حولها شركته؟",
       "a": "الأحذية",
       "alt": [
-        "أحذية",
         "تصميم الأحذية"
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/Kiralık_Aşk",
@@ -315,19 +312,6 @@
       "difficultyTarget": 0.4
     },
     {
-      "qid": "turkishdrama-600-917",
-      "p": 600,
-      "topic": "فاطمة",
-      "q": "إلى أي مدينة كبيرة تنتقل البطلة وعائلة زوجها لبدء حياة جديدة في «فاطمة»؟",
-      "a": "إسطنبول",
-      "alt": [
-        "إستانبول"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Fatmagül%27ün_Suçu_Ne%3F",
-      "verified": true,
-      "difficultyTarget": 0.4
-    },
-    {
       "topic": "وادي الذئاب",
       "q": "من صديق مراد علمدار الذي كان ميماتي ذراعه اليمنى في «وادي الذئاب»؟",
       "a": "سليمان شاكر",
@@ -342,6 +326,21 @@
       "difficultyTarget": 0.4
     },
     {
+      "qid": "turkishdrama-600-921",
+      "p": 600,
+      "topic": "وادي الذئاب",
+      "q": "ما اسم بطل «وادي الذئاب» الأصلي قبل تغيير وجهه وهويته؟",
+      "a": "علي جاندان",
+      "alt": [
+        "علي جندان",
+        "علي كاندان",
+        "Ali Candan"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Valley_of_the_Wolves_(TV_series)",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
       "qid": "turkishdrama-800-911",
       "p": 800,
       "topic": "حريم السلطان",
@@ -351,21 +350,6 @@
         "رستم"
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/Muhteşem_Yüzyıl",
-      "verified": true,
-      "difficultyTarget": 0.25
-    },
-    {
-      "qid": "turkishdrama-800-912",
-      "p": 800,
-      "topic": "العشق الممنوع",
-      "q": "في «العشق الممنوع»، ما وظيفة الآنسة لميس، المسماة دنيز في النسخة التركية، داخل المنزل؟",
-      "a": "مربية الطفلين",
-      "alt": [
-        "مربية",
-        "معلمة الطفلين",
-        "معلمة خاصة"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Aşk-ı_Memnu_(2008_TV_series)",
       "verified": true,
       "difficultyTarget": 0.25
     },
@@ -448,10 +432,24 @@
       "q": "في ختام المسلسل الأصلي من «وادي الذئاب»، ما اسم الأسطوانة المشفرة التي يريد آمون ما بداخلها؟",
       "a": "كريبتكس",
       "alt": [
-        "الكريبتكس",
         "Cryptex"
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/Valley_of_the_Wolves_(TV_series)",
+      "verified": true,
+      "difficultyTarget": 0.25
+    },
+    {
+      "qid": "turkishdrama-800-921",
+      "p": 800,
+      "topic": "الطائر المبكر",
+      "q": "في «الطائر المبكر»، بأي اسم طائر تلقب البطلة الرجل الغامض الذي قابلته على الشرفة؟",
+      "a": "القطرس",
+      "alt": [
+        "طائر القطرس",
+        "ألباتروس",
+        "Albatross"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Erkenci_Kuş",
       "verified": true,
       "difficultyTarget": 0.25
     },
@@ -549,7 +547,7 @@
     },
     {
       "topic": "وادي الذئاب",
-      "q": "من معلم رئيس جهاز الاستخبارات الذي درّب مراد علمدار في «وادي الذئاب»، باسمه التركي؟",
+      "q": "في «وادي الذئاب»، ما الاسم التركي لمعلم مسؤول الاستخبارات الذي يدرب مراد علمدار؟",
       "a": "دوغو أشرف أوغلو",
       "sourceUrl": "https://en.wikipedia.org/wiki/Valley_of_the_Wolves_(TV_series)",
       "alt": [

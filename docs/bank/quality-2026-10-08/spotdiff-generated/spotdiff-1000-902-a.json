@@ -1,0 +1,53 @@
+{
+  "pack": "spotdiff",
+  "oldQid": "spotdiff-1000-902",
+  "side": "a",
+  "createdAt": "2026-10-08",
+  "kind": "ai-generated",
+  "tool": "OpenAI image generation (built-in)",
+  "mode": "generate",
+  "prompt": "Use case: photorealistic-natural\nAsset type: original A of a challenging fair single-difference mobile puzzle.\nPrimary request: one landscape4:3 image. A natural high-end overhead editorial photograph of a busy stationery desk, muted cool blue tabletop, warm walnut accents, no people. SIX small closed notebooks arranged loosely in two rows of three across upper half, separated, each different but harmonious graphic cover pattern: checked ochre, coral dots, green horizontal bands, cream botanical silhouette, navy diagonal stripes, and at LOWER LEFT of the six notebook group a petrol blue notebook with exactly THREE thick cream vertical parallel stripes down its cover. This blue striped notebook fully visible and 18% image width. Below notebooks are scissors, two short graphite pencils, a small tray with three metal binder clips, a glass of water at far right, eraser, folded blank letter paper and wooden ruler without numbers. No text or branding on covers. The cream stripes should be clear distinct graphic bars, not thin lines.\nNo comparison panels, labels, letters, digits, logos, border, watermark, highlights or UI. Do not modify any item yet; all critical shapes visible at175px width.",
+  "asset": "media/spotdiff/spotdiff-1000-902-a-q20261008.webp",
+  "sha256": "ee0f617a822023e760ad352e4f9fd7967621413ed4553b77abc0b239b65026ec",
+  "bytes": 257006,
+  "width": 1280,
+  "height": 960,
+  "inputImages": [],
+  "review": {
+    "status": "phone-size-reviewed",
+    "originalCompared": true,
+    "displayedEffect": "Side-by-side unfiltered originals; reveal circle only",
+    "difference": "Only central third of middle cream notebook stripe is interrupted; all three stripe positions otherwise retained",
+    "semanticDifferenceCount": 1,
+    "invariantsReviewed": [
+      "other five notebook patterns",
+      "all three stripe positions",
+      "clip count",
+      "paper clip group",
+      "pencil tips",
+      "scissors",
+      "plants",
+      "glass/letter/ruler/eraser",
+      "light/framing"
+    ],
+    "mobileDeviceQA": false,
+    "reviewedAt": "2026-10-12",
+    "reviewer": "finish_spotdiff",
+    "imageWidthCSS": 173,
+    "evidence": "docs/bank/quality-2026-10-08/preview/spotdiff-09.png"
+  },
+  "packaging": "Uniform size/format encoding only; all scene changes created by built-in imagegen",
+  "packagingReview": {
+    "date": "2026-10-12",
+    "file": "media/spotdiff/spotdiff-1000-902-a-q20261008.webp",
+    "beforeBytes": 270786,
+    "bytes": 257006,
+    "beforeSha256": "4c8e927ba7ab6266ce1b178948f1693aa16ba00a3c51c5ba0cf38c86ec6cbf33",
+    "sha256": "ee0f617a822023e760ad352e4f9fd7967621413ed4553b77abc0b239b65026ec",
+    "quality": 92,
+    "dimensionsUnchanged": true,
+    "operation": "WebP encoding only; no scene edit",
+    "phoneReview": "phone-size-reviewed-after-compression",
+    "reviewRecord": "docs/bank/quality-2026-10-08/postcompression-review.json"
+  }
+}

@@ -6,7 +6,7 @@
   "qs": [
     {
       "p": 200,
-      "q": "ما اسم هذا البرج الحديدي الشهير؟",
+      "q": "ما اسم البرج الظاهر في الصورة؟",
       "a": "برج إيفل",
       "qid": "placefinder-200-901",
       "type": "image",
@@ -18,24 +18,21 @@
       "topic": "أوروبا الغربية",
       "difficultyTarget": 0.8,
       "verified": true,
-      "sourceUrl": "https://www.toureiffel.paris/en/news/history-and-culture/iron-lady-nicknaming-eiffel-tower",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
       "media": {
         "src": "placefinder-200-901.webp",
         "type": "image",
-        "title": "معلم — رسم توضيحي",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-23",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/placefinder-200-901.json"
-        }
+        "title": "Tour Eiffel Wikimedia Commons.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tour_Eiffel_Wikimedia_Commons.jpg",
+        "author": "Benh LIEU SONG",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
       }
     },
     {
       "p": 200,
-      "q": "ما اسم هذا البرج الإيطالي المائل؟",
+      "q": "ما اسم هذا البرج؟",
       "a": "برج بيزا المائل",
       "qid": "placefinder-200-902",
       "type": "image",
@@ -47,24 +44,21 @@
       "topic": "أوروبا الجنوبية",
       "difficultyTarget": 0.8,
       "verified": true,
-      "sourceUrl": "https://whc.unesco.org/en/list/395/",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
       "media": {
         "src": "placefinder-200-902.webp",
         "type": "image",
-        "title": "معلم — رسم توضيحي",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-23",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/placefinder-200-902.json"
-        }
+        "title": "Campanile Dôme - Pise (IT52) - 2022-08-31 - 20.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Campanile_D%C3%B4me_-_Pise_(IT52)_-_2022-08-31_-_20.jpg",
+        "author": "Chabe01",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
       }
     },
     {
       "p": 200,
-      "q": "ما اسم ناطحة السحاب المصوّرة في دبي؟",
+      "q": "ما اسم ناطحة السحاب الظاهرة؟",
       "a": "برج خليفة",
       "qid": "placefinder-200-903",
       "type": "image",
@@ -75,24 +69,21 @@
       "topic": "العالم العربي",
       "difficultyTarget": 0.8,
       "verified": true,
-      "sourceUrl": "https://www.burjkhalifa.ae/the-tower/architecture-design/",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
       "media": {
         "src": "placefinder-200-903.webp",
         "type": "image",
-        "title": "معلم — رسم توضيحي",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-23",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/placefinder-200-903.json"
-        }
+        "title": "Dubai skyline 2015 (crop).jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Dubai_skyline_2015_(crop).jpg",
+        "author": "Tim.Reckmann",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
       }
     },
     {
       "p": 200,
-      "q": "ما اسم هذه المجموعة الأثرية المصرية؟",
+      "q": "ما اسم هذه المجموعة من الأهرامات؟",
       "a": "أهرامات الجيزة",
       "qid": "placefinder-200-904",
       "type": "image",
@@ -104,24 +95,21 @@
       "topic": "العالم العربي",
       "difficultyTarget": 0.8,
       "verified": true,
-      "sourceUrl": "https://whc.unesco.org/en/list/86/",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
       "media": {
         "src": "placefinder-200-904.webp",
         "type": "image",
-        "title": "معلم — رسم توضيحي",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-23",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/placefinder-200-904.json"
-        }
+        "title": "All Gizah Pyramids.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:All_Gizah_Pyramids.jpg",
+        "author": "Ricardo Liberato",
+        "license": "CC BY-SA 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
       }
     },
     {
       "p": 200,
-      "q": "ما اسم هذا التحصين الممتد فوق التلال؟",
+      "q": "ما اسم هذا المعلم الممتد فوق التلال؟",
       "a": "سور الصين العظيم",
       "qid": "placefinder-200-905",
       "type": "image",
@@ -133,24 +121,21 @@
       "topic": "شرق آسيا",
       "difficultyTarget": 0.8,
       "verified": true,
-      "sourceUrl": "https://whc.unesco.org/en/list/438/",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
       "media": {
         "src": "placefinder-200-905.webp",
         "type": "image",
-        "title": "معلم — رسم توضيحي",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-23",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/placefinder-200-905.json"
-        }
+        "title": "The Great Wall of China at Jinshanling-edit.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_Great_Wall_of_China_at_Jinshanling-edit.jpg",
+        "author": "Severin.stalder",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
       }
     },
     {
       "p": 200,
-      "q": "ما اسم هذا الضريح الرخامي الأبيض؟",
+      "q": "ما اسم هذا المعلم؟",
       "a": "تاج محل",
       "qid": "placefinder-200-906",
       "type": "image",
@@ -161,24 +146,21 @@
       "topic": "جنوب وجنوب شرق آسيا",
       "difficultyTarget": 0.8,
       "verified": true,
-      "sourceUrl": "https://whc.unesco.org/en/list/252/",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
       "media": {
         "src": "placefinder-200-906.webp",
         "type": "image",
-        "title": "معلم — رسم توضيحي",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-23",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/placefinder-200-906.json"
-        }
+        "title": "Taj Mahal, Agra, India edit3.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Taj_Mahal,_Agra,_India_edit3.jpg",
+        "author": "Taj_Mahal,_Agra,_India_edit2.jpg :  Yann ; edited by  King of Hearts  \n derivative work:  Jbarta  (  talk  )",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
       }
     },
     {
       "p": 200,
-      "q": "ما اسم هذا التمثال ذي الشعلة المرفوعة؟",
+      "q": "ما اسم هذا التمثال؟",
       "a": "تمثال الحرية",
       "qid": "placefinder-200-907",
       "type": "image",
@@ -189,24 +171,21 @@
       "topic": "الأمريكتان",
       "difficultyTarget": 0.8,
       "verified": true,
-      "sourceUrl": "https://whc.unesco.org/en/list/307/",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
       "media": {
         "src": "placefinder-200-907.webp",
         "type": "image",
-        "title": "معلم — رسم توضيحي",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-23",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/placefinder-200-907.json"
-        }
+        "title": "Statue of Liberty and a sightseeing boat, Liberty Island, New York.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Statue_of_Liberty_and_a_sightseeing_boat,_Liberty_Island,_New_York.jpg",
+        "author": "Christian David",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
       }
     },
     {
       "p": 200,
-      "q": "ما اسم هذا المبنى الأسترالي ذي الأسقف الشبيهة بالأشرعة؟",
+      "q": "ما اسم المبنى الظاهر في الصورة؟",
       "a": "دار أوبرا سيدني",
       "qid": "placefinder-200-908",
       "type": "image",
@@ -218,24 +197,21 @@
       "topic": "أوقيانوسيا",
       "difficultyTarget": 0.8,
       "verified": true,
-      "sourceUrl": "https://whc.unesco.org/en/list/166/",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
       "media": {
         "src": "placefinder-200-908.webp",
         "type": "image",
-        "title": "معلم — رسم توضيحي",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-23",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/placefinder-200-908.json"
-        }
+        "title": "00 1375 Sydney Opera House (Australia).jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:00_1375_Sydney_Opera_House_(Australia).jpg",
+        "author": "W. Bulach",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
       }
     },
     {
       "p": 400,
-      "q": "ما اسم هذا المدرج الأثري في روما؟",
+      "q": "ما اسم هذا المدرج الأثري؟",
       "a": "الكولوسيوم",
       "qid": "placefinder-400-901",
       "type": "image",
@@ -248,24 +224,21 @@
       "topic": "أوروبا الجنوبية",
       "difficultyTarget": 0.6,
       "verified": true,
-      "sourceUrl": "https://whc.unesco.org/en/list/91/",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
       "media": {
         "src": "placefinder-400-901.webp",
         "type": "image",
-        "title": "معلم — رسم توضيحي",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-25",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/placefinder-400-901.json"
-        }
+        "title": "Colosseum in Rome, Italy - April 2007.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Colosseum_in_Rome,_Italy_-_April_2007.jpg",
+        "author": "Diliff",
+        "license": "CC BY-SA 2.5",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.5",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
       }
     },
     {
       "p": 400,
-      "q": "ما اسم المدينة الأثرية الأردنية التي تنتمي إليها هذه الواجهة؟",
+      "q": "ما اسم المدينة الأثرية التي تضم هذه الواجهة؟",
       "a": "البتراء",
       "qid": "placefinder-400-902",
       "type": "image",
@@ -277,24 +250,21 @@
       "topic": "العالم العربي",
       "difficultyTarget": 0.6,
       "verified": true,
-      "sourceUrl": "https://whc.unesco.org/en/list/326/",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
       "media": {
         "src": "placefinder-400-902.webp",
         "type": "image",
-        "title": "معلم — رسم توضيحي",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-25",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/placefinder-400-902.json"
-        }
+        "title": "Petra Treasury.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Petra_Treasury.jpg",
+        "author": "David Bjorgen",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
       }
     },
     {
       "p": 400,
-      "q": "ما اسم هذا الجسر اللندني ذي البرجين؟",
+      "q": "ما اسم الجسر الظاهر في الصورة؟",
       "a": "جسر البرج",
       "qid": "placefinder-400-903",
       "type": "image",
@@ -306,24 +276,21 @@
       "topic": "أوروبا الغربية",
       "difficultyTarget": 0.6,
       "verified": true,
-      "sourceUrl": "https://www.towerbridge.org.uk/discover/history",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
       "media": {
         "src": "placefinder-400-903.webp",
         "type": "image",
-        "title": "معلم — رسم توضيحي",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-25",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/placefinder-400-903.json"
-        }
+        "title": "London - London Tower Bridge - 140806 171049.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:London_-_London_Tower_Bridge_-_140806_171049.jpg",
+        "author": "Barcex",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
       }
     },
     {
       "p": 400,
-      "q": "ما اسم هذا الجسر المعلّق عند مدخل خليج سان فرانسيسكو؟",
+      "q": "ما اسم هذا الجسر المعلق؟",
       "a": "جسر البوابة الذهبية",
       "qid": "placefinder-400-904",
       "type": "image",
@@ -336,24 +303,21 @@
       "topic": "الأمريكتان",
       "difficultyTarget": 0.6,
       "verified": true,
-      "sourceUrl": "https://www.goldengate.org/bridge/history-research/statistics-data/design-construction-stats/",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
       "media": {
         "src": "placefinder-400-904.webp",
         "type": "image",
-        "title": "معلم — رسم توضيحي",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-25",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/placefinder-400-904.json"
-        }
+        "title": "Golden gate2.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Golden_gate2.jpg",
+        "author": "Aslak Raanes  from Trondheim, Norway",
+        "license": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
       }
     },
     {
       "p": 400,
-      "q": "ما اسم التمثال الذي يطلّ على ريو دي جانيرو بذراعين ممدودتين؟",
+      "q": "ما اسم هذا التمثال؟",
       "a": "تمثال المسيح الفادي",
       "qid": "placefinder-400-905",
       "type": "image",
@@ -366,24 +330,22 @@
       "topic": "الأمريكتان",
       "difficultyTarget": 0.6,
       "verified": true,
-      "sourceUrl": "https://whc.unesco.org/en/list/1100/",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
       "media": {
         "src": "placefinder-400-905.webp",
         "type": "image",
-        "title": "معلم — رسم توضيحي",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-25",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/placefinder-400-905.json"
-        }
+        "title": "Christ the Redeemer - Cristo Redentor.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Christ_the_Redeemer_-_Cristo_Redentor.jpg",
+        "author": "Arne Müseler",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review.",
+        "licenseJurisdiction": "DE"
       }
     },
     {
       "p": 400,
-      "q": "ما اسم المتحف الذي يتوسط فناؤه هذا الهرم الزجاجي؟",
+      "q": "ما اسم المتحف الذي يظهر فناؤه؟",
       "a": "متحف اللوفر",
       "qid": "placefinder-400-906",
       "type": "image",
@@ -396,24 +358,21 @@
       "topic": "أوروبا الغربية",
       "difficultyTarget": 0.6,
       "verified": true,
-      "sourceUrl": "https://www.louvre.fr/en/explore/the-palace/a-pyramid-for-a-symbol",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
       "media": {
         "src": "placefinder-400-906.webp",
         "type": "image",
-        "title": "معلم — رسم توضيحي",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-25",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/placefinder-400-906.json"
-        }
+        "title": "Cour Napoléon at night - Louvre.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cour_Napol%C3%A9on_at_night_-_Louvre.jpg",
+        "author": "Benh LIEU SONG",
+        "license": "CC BY 2.5",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.5",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
       }
     },
     {
       "p": 400,
-      "q": "ما اسم هذا الجبل الياباني ذي القمة الثلجية؟",
+      "q": "ما اسم الجبل الظاهر في الصورة؟",
       "a": "جبل فوجي",
       "qid": "placefinder-400-907",
       "type": "image",
@@ -426,24 +385,21 @@
       "topic": "شرق آسيا",
       "difficultyTarget": 0.6,
       "verified": true,
-      "sourceUrl": "https://whc.unesco.org/en/list/1418/",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
       "media": {
         "src": "placefinder-400-907.webp",
         "type": "image",
-        "title": "معلم — رسم توضيحي",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-25",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/placefinder-400-907.json"
-        }
+        "title": "Kodaki fuji frm shojinko refurb.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kodaki_fuji_frm_shojinko_refurb.jpg",
+        "author": "名古屋太郎, (edited by  Hannes_24 )",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
       }
     },
     {
       "p": 400,
-      "q": "ما اسم هذا المعبد المصري ذي التماثيل الجالسة الضخمة؟",
+      "q": "ما اسم هذا المعبد؟",
       "a": "معبد أبو سمبل",
       "qid": "placefinder-400-908",
       "type": "image",
@@ -456,24 +412,21 @@
       "topic": "العالم العربي",
       "difficultyTarget": 0.6,
       "verified": true,
-      "sourceUrl": "https://whc.unesco.org/en/list/88/",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
       "media": {
         "src": "placefinder-400-908.webp",
         "type": "image",
-        "title": "معلم — رسم توضيحي",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-25",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/placefinder-400-908.json"
-        }
+        "title": "Großer Tempel (Abu Simbel) 31.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Gro%C3%9Fer_Tempel_(Abu_Simbel)_31.jpg",
+        "author": "Olaf Tausch",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
       }
     },
     {
       "p": 600,
-      "q": "ما اسم هذه المدينة الأثرية فوق جبال الأنديز؟",
+      "q": "ما اسم هذه المدينة الأثرية؟",
       "a": "ماتشو بيتشو",
       "qid": "placefinder-600-901",
       "type": "image",
@@ -486,24 +439,21 @@
       "topic": "الأمريكتان",
       "difficultyTarget": 0.4,
       "verified": true,
-      "sourceUrl": "https://whc.unesco.org/en/list/274/",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
       "media": {
         "src": "placefinder-600-901.webp",
         "type": "image",
-        "title": "معلم — رسم توضيحي",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-25",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/placefinder-600-901.json"
-        }
+        "title": "Machu Picchu, 2023 (012).jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Machu_Picchu,_2023_(012).jpg",
+        "author": "Draceane",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
       }
     },
     {
       "p": 600,
-      "q": "ما اسم الموقع الأثري المكسيكي الذي يضم هذا الهرم المدرّج؟",
+      "q": "ما اسم الموقع الأثري الذي يضم هذا الهرم؟",
       "a": "تشيتشن إيتزا",
       "qid": "placefinder-600-902",
       "type": "image",
@@ -515,24 +465,21 @@
       "topic": "الأمريكتان",
       "difficultyTarget": 0.4,
       "verified": true,
-      "sourceUrl": "https://whc.unesco.org/en/list/483/",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
       "media": {
         "src": "placefinder-600-902.webp",
         "type": "image",
-        "title": "معلم — رسم توضيحي",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-25",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/placefinder-600-902.json"
-        }
+        "title": "Chichen Itza 3.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Chichen_Itza_3.jpg",
+        "author": "Daniel Schwen",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
       }
     },
     {
       "p": 600,
-      "q": "ما اسم هذا التجمّع الحجري الدائري في بريطانيا؟",
+      "q": "ما اسم هذا المعلم الحجري؟",
       "a": "ستونهنج",
       "qid": "placefinder-600-903",
       "type": "image",
@@ -545,24 +492,21 @@
       "topic": "أوروبا الغربية",
       "difficultyTarget": 0.4,
       "verified": true,
-      "sourceUrl": "https://whc.unesco.org/en/list/373/",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
       "media": {
         "src": "placefinder-600-903.webp",
         "type": "image",
-        "title": "معلم — رسم توضيحي",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-25",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/placefinder-600-903.json"
-        }
+        "title": "Stonehenge, Salisbury retouched.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Stonehenge,_Salisbury_retouched.jpg",
+        "author": "Operarius",
+        "license": "CC BY 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
       }
     },
     {
       "p": 600,
-      "q": "ما اسم هذه البوابة ذات العربة البرونزية في برلين؟",
+      "q": "ما اسم هذه البوابة؟",
       "a": "بوابة براندنبورغ",
       "qid": "placefinder-600-904",
       "type": "image",
@@ -575,24 +519,21 @@
       "topic": "أوروبا الوسطى والشمالية",
       "difficultyTarget": 0.4,
       "verified": true,
-      "sourceUrl": "https://www.visitberlin.de/en/brandenburg-gate",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
       "media": {
         "src": "placefinder-600-904.webp",
         "type": "image",
-        "title": "معلم — رسم توضيحي",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-25",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/placefinder-600-904.json"
-        }
+        "title": "Brandenburger Tor morgens.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Brandenburger_Tor_morgens.jpg",
+        "author": "Thomas Wolf  ,   www.foto-tw.de",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
       }
     },
     {
       "p": 600,
-      "q": "ما اسم الكنيسة التي تظهر واجهتها المزخرفة في برشلونة؟",
+      "q": "ما اسم الكنيسة الظاهرة في الصورة؟",
       "a": "ساغرادا فاميليا",
       "qid": "placefinder-600-905",
       "type": "image",
@@ -605,24 +546,21 @@
       "topic": "أوروبا الجنوبية",
       "difficultyTarget": 0.4,
       "verified": true,
-      "sourceUrl": "https://sagradafamilia.org/documents/20142/1000561/Booklet_10.pdf/d5c2d0df-43ce-b6d2-0b51-103d5718820e",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
       "media": {
         "src": "placefinder-600-905.webp",
         "type": "image",
-        "title": "معلم — رسم توضيحي",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-25",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/placefinder-600-905.json"
-        }
+        "title": "Σαγράδα Φαμίλια 2941.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:%CE%A3%CE%B1%CE%B3%CF%81%CE%AC%CE%B4%CE%B1_%CE%A6%CE%B1%CE%BC%CE%AF%CE%BB%CE%B9%CE%B1_2941.jpg",
+        "author": "C messier",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
       }
     },
     {
       "p": 600,
-      "q": "ما اسم هذا المعبد الكمبودي الذي تنعكس أبراجه في الماء؟",
+      "q": "ما اسم هذا المعبد؟",
       "a": "أنغكور وات",
       "qid": "placefinder-600-906",
       "type": "image",
@@ -635,24 +573,21 @@
       "topic": "جنوب وجنوب شرق آسيا",
       "difficultyTarget": 0.4,
       "verified": true,
-      "sourceUrl": "https://whc.unesco.org/en/list/668/",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
       "media": {
         "src": "placefinder-600-906.webp",
         "type": "image",
-        "title": "معلم — رسم توضيحي",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-25",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/placefinder-600-906.json"
-        }
+        "title": "Angkor Wat W-Seite.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Angkor_Wat_W-Seite.jpg",
+        "author": "Manfred Werner  ( talk    ·    contribs )",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
       }
     },
     {
       "p": 600,
-      "q": "ما اسم هذا المجمّع الإمبراطوري ذي القاعة الدائرية في بكين؟",
+      "q": "ما اسم هذا المجمّع الإمبراطوري؟",
       "a": "معبد السماء",
       "qid": "placefinder-600-907",
       "type": "image",
@@ -665,24 +600,21 @@
       "topic": "شرق آسيا",
       "difficultyTarget": 0.4,
       "verified": true,
-      "sourceUrl": "https://whc.unesco.org/en/list/881/",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
       "media": {
         "src": "placefinder-600-907.webp",
         "type": "image",
-        "title": "معلم — رسم توضيحي",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-25",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/placefinder-600-907.json"
-        }
+        "title": "Temple of Heaven 20160323 01.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Temple_of_Heaven_20160323_01.jpg",
+        "author": "Shujianyang",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
       }
     },
     {
       "p": 600,
-      "q": "ما اسم هذا المسجد المطلّ على الأطلسي في الدار البيضاء؟",
+      "q": "ما اسم هذا المسجد؟",
       "a": "مسجد الحسن الثاني",
       "qid": "placefinder-600-908",
       "type": "image",
@@ -694,24 +626,21 @@
       "topic": "العالم العربي",
       "difficultyTarget": 0.4,
       "verified": true,
-      "sourceUrl": "https://www.fmh2.ma/en/history",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
       "media": {
         "src": "placefinder-600-908.webp",
         "type": "image",
-        "title": "معلم — رسم توضيحي",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-25",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/placefinder-600-908.json"
-        }
+        "title": "Sunshine on mosque Hassan II in Casablanca, Morocco - Flickr - Milamber's portfolio.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sunshine_on_mosque_Hassan_II_in_Casablanca,_Morocco_-_Flickr_-_Milamber%27s_portfolio.jpg",
+        "author": "Milamber's portfolio",
+        "license": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
       }
     },
     {
       "p": 800,
-      "q": "ما اسم هذه القلعة البافارية فوق التلّ المشجّر؟",
+      "q": "ما اسم هذه القلعة؟",
       "a": "قلعة نويشفانشتاين",
       "qid": "placefinder-800-901",
       "type": "image",
@@ -724,24 +653,22 @@
       "topic": "أوروبا الوسطى والشمالية",
       "difficultyTarget": 0.25,
       "verified": true,
-      "sourceUrl": "https://www.neuschwanstein.de/englisch/palace/index.htm",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
       "media": {
         "src": "placefinder-800-901.webp",
         "type": "image",
-        "title": "معلم — رسم توضيحي",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-25",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/placefinder-800-901.json"
-        }
+        "title": "Schloss Neuschwanstein 2013.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Schloss_Neuschwanstein_2013.jpg",
+        "author": "Thomas Wolf  ,   www.foto-tw.de",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review.",
+        "licenseJurisdiction": "DE"
       }
     },
     {
       "p": 800,
-      "q": "ما اسم القصر الغرناطي الذي يضم هذا الفناء ونافورته؟",
+      "q": "ما اسم القصر الذي يضم هذا الفناء؟",
       "a": "قصر الحمراء",
       "qid": "placefinder-800-902",
       "type": "image",
@@ -753,24 +680,21 @@
       "topic": "أوروبا الجنوبية",
       "difficultyTarget": 0.25,
       "verified": true,
-      "sourceUrl": "https://www.alhambra-patronato.es/en/edificios-lugares/the-court-of-the-lions",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
       "media": {
         "src": "placefinder-800-902.webp",
         "type": "image",
-        "title": "معلم — رسم توضيحي",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-25",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/placefinder-800-902.json"
-        }
+        "title": "Court of the lions .jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Court_of_the_lions_.jpg",
+        "author": "ZAINEB HACHAMI",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "changes": "Cropped to normalized bounds [0.15, 0.25, 1, 0.8]; resized and converted to WebP; architectural content not altered."
       }
     },
     {
       "p": 800,
-      "q": "ما اسم هذا المعبد المدرّج ذي الأبراج الجرسية في جزيرة جاوة؟",
+      "q": "ما اسم هذا المعبد؟",
       "a": "بوروبودور",
       "qid": "placefinder-800-903",
       "type": "image",
@@ -782,24 +706,21 @@
       "topic": "جنوب وجنوب شرق آسيا",
       "difficultyTarget": 0.25,
       "verified": true,
-      "sourceUrl": "https://whc.unesco.org/en/list/592/",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
       "media": {
         "src": "placefinder-800-903.webp",
         "type": "image",
-        "title": "معلم — رسم توضيحي",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-25",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/placefinder-800-903.json"
-        }
+        "title": "Borobudur-Nothwest-view.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Borobudur-Nothwest-view.jpg",
+        "author": "Gunawan Kartapranata",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
       }
     },
     {
       "p": 800,
-      "q": "ما اسم هذه البوابة اليابانية الحمراء القائمة في البحر؟",
+      "q": "ما اسم هذه البوابة؟",
       "a": "بوابة إتسوكوشيما",
       "qid": "placefinder-800-904",
       "type": "image",
@@ -813,24 +734,21 @@
       "topic": "شرق آسيا",
       "difficultyTarget": 0.25,
       "verified": true,
-      "sourceUrl": "https://www.miyajima.or.jp/english/spot/spot_ootorii.html",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
       "media": {
         "src": "placefinder-800-904.webp",
         "type": "image",
-        "title": "معلم — رسم توضيحي",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-25",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/placefinder-800-904.json"
-        }
+        "title": "Itsukushima Gate.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Itsukushima_Gate.jpg",
+        "author": "JordyMeow",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
       }
     },
     {
       "p": 800,
-      "q": "ما اسم الموقع الأثري السعودي الذي يضم هذه المقبرة المنحوتة؟",
+      "q": "ما اسم الموقع الأثري الذي يضم هذه المقابر؟",
       "a": "الحِجر",
       "qid": "placefinder-800-905",
       "type": "image",
@@ -844,24 +762,21 @@
       "topic": "العالم العربي",
       "difficultyTarget": 0.25,
       "verified": true,
-      "sourceUrl": "https://whc.unesco.org/en/list/1293/",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
       "media": {
         "src": "placefinder-800-905.webp",
         "type": "image",
-        "title": "معلم — رسم توضيحي",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-25",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/placefinder-800-905.json"
-        }
+        "title": "Qasr al Farid.JPG",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Qasr_al_Farid.JPG",
+        "author": "Richard.hargas",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
       }
     },
     {
       "p": 800,
-      "q": "ما اسم الموقع الأفريقي الذي يضم هذا السور وبرجه المخروطي؟",
+      "q": "ما اسم هذا الموقع الأثري؟",
       "a": "زيمبابوي العظمى",
       "qid": "placefinder-800-906",
       "type": "image",
@@ -874,55 +789,48 @@
       "topic": "أفريقيا جنوب الصحراء",
       "difficultyTarget": 0.25,
       "verified": true,
-      "sourceUrl": "https://whc.unesco.org/en/list/364/",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
       "media": {
         "src": "placefinder-800-906.webp",
         "type": "image",
-        "title": "معلم — رسم توضيحي",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-25",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/placefinder-800-906.json"
-        }
+        "title": "Conical tower – Great Zimbabwe.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Conical_tower_%E2%80%93_Great_Zimbabwe.jpg",
+        "author": "Fanny Schertzer",
+        "license": "CC BY 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+        "changes": "Cropped to normalized bounds [0, 0.38, 1, 0.93]; resized and converted to WebP; architectural content not altered."
       }
     },
     {
       "p": 800,
-      "q": "ما اسم هذه التماثيل الحجرية الضخمة في جزيرة القيامة؟",
+      "q": "ما اسم هذه التماثيل الحجرية؟",
       "a": "تماثيل المواي",
       "qid": "placefinder-800-907",
       "type": "image",
       "effect": "none",
       "alt": [
         "المواي",
-        "موآي",
         "موائي",
         "Moai"
       ],
       "topic": "أوقيانوسيا",
       "difficultyTarget": 0.25,
       "verified": true,
-      "sourceUrl": "https://whc.unesco.org/en/list/715/",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
       "media": {
         "src": "placefinder-800-907.webp",
         "type": "image",
-        "title": "معلم — رسم توضيحي",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-25",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/placefinder-800-907.json"
-        }
+        "title": "Easter Island 5.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Easter_Island_5.jpg",
+        "author": "kallerna",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
       }
     },
     {
       "p": 800,
-      "q": "ما اسم هذه الكتلة الصخرية الحمراء المنفردة وسط أستراليا؟",
+      "q": "ما اسم هذه الكتلة الصخرية؟",
       "a": "أولورو",
       "qid": "placefinder-800-908",
       "type": "image",
@@ -935,24 +843,21 @@
       "topic": "أوقيانوسيا",
       "difficultyTarget": 0.25,
       "verified": true,
-      "sourceUrl": "https://whc.unesco.org/en/list/447/",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
       "media": {
         "src": "placefinder-800-908.webp",
         "type": "image",
-        "title": "معلم — رسم توضيحي",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-25",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/placefinder-800-908.json"
-        }
+        "title": "Sunset at Uluru on July 30, 2005.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sunset_at_Uluru_on_July_30,_2005.jpg",
+        "author": "Thomas Schoch",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
       }
     },
     {
       "p": 1000,
-      "q": "ما اسم هذا المعبد الهندي المنحوت داخل كتلة صخرية في إلورا؟",
+      "q": "ما اسم هذا المعبد الهندي المنحوت في الصخر؟",
       "a": "معبد كايلاسا",
       "qid": "placefinder-1000-901",
       "type": "image",
@@ -965,24 +870,21 @@
       "topic": "جنوب وجنوب شرق آسيا",
       "difficultyTarget": 0.15,
       "verified": true,
-      "sourceUrl": "https://whc.unesco.org/en/list/243/",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
       "media": {
         "src": "placefinder-1000-901.webp",
         "type": "image",
-        "title": "معلم — رسم توضيحي",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-25",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/placefinder-1000-901.json"
-        }
+        "title": "Ellora Cave 16 si0308.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ellora_Cave_16_si0308.jpg",
+        "author": "G41rn8",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
       }
     },
     {
       "p": 1000,
-      "q": "ما اسم هذا المجمّع الإندونيسي ذي الأبراج الحجرية المدببة؟",
+      "q": "ما اسم هذا المجمّع من المعابد؟",
       "a": "برامبانان",
       "qid": "placefinder-1000-902",
       "type": "image",
@@ -994,24 +896,21 @@
       "topic": "جنوب وجنوب شرق آسيا",
       "difficultyTarget": 0.15,
       "verified": true,
-      "sourceUrl": "https://whc.unesco.org/en/list/642/",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
       "media": {
         "src": "placefinder-1000-902.webp",
         "type": "image",
-        "title": "معلم — رسم توضيحي",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-25",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/placefinder-1000-902.json"
-        }
+        "title": "Prambanan Complex 1.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Prambanan_Complex_1.jpg",
+        "author": "Gunawan Kartapranata",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
       }
     },
     {
       "p": 1000,
-      "q": "ما اسم هذه القلعة اليابانية ذات الجدران البيضاء والأسقف المتراكبة؟",
+      "q": "ما اسم هذه القلعة؟",
       "a": "قلعة هيميجي",
       "qid": "placefinder-1000-903",
       "type": "image",
@@ -1024,24 +923,21 @@
       "topic": "شرق آسيا",
       "difficultyTarget": 0.15,
       "verified": true,
-      "sourceUrl": "https://whc.unesco.org/en/list/661/",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
       "media": {
         "src": "placefinder-1000-903.webp",
         "type": "image",
-        "title": "معلم — رسم توضيحي",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-25",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/placefinder-1000-903.json"
-        }
+        "title": "Himeji Castle, Hyōgo Prefecture; August 2018 (04).jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Himeji_Castle,_Hy%C5%8Dgo_Prefecture;_August_2018_(04).jpg",
+        "author": "_steffen",
+        "license": "CC BY-SA 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
       }
     },
     {
       "p": 1000,
-      "q": "ما اسم هذا التمثال الصيني الجالس والمنحوت في الجرف؟",
+      "q": "ما اسم هذا التمثال المنحوت في الجرف؟",
       "a": "بوذا ليشان",
       "qid": "placefinder-1000-904",
       "type": "image",
@@ -1054,24 +950,21 @@
       "topic": "شرق آسيا",
       "difficultyTarget": 0.15,
       "verified": true,
-      "sourceUrl": "https://whc.unesco.org/en/list/779/",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
       "media": {
         "src": "placefinder-1000-904.webp",
         "type": "image",
-        "title": "معلم — رسم توضيحي",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-25",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/placefinder-1000-904.json"
-        }
+        "title": "Leshan Giant Buddha (1).jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Leshan_Giant_Buddha_(1).jpg",
+        "author": "xiquinhosilva",
+        "license": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
       }
     },
     {
       "p": 1000,
-      "q": "ما اسم هذا الموقع الميكرونيزي المبني بأعمدة البازلت قرب الماء؟",
+      "q": "ما اسم هذا الموقع الأثري في ميكرونيزيا؟",
       "a": "نان مادول",
       "qid": "placefinder-1000-905",
       "type": "image",
@@ -1083,24 +976,21 @@
       "topic": "أوقيانوسيا",
       "difficultyTarget": 0.15,
       "verified": true,
-      "sourceUrl": "https://whc.unesco.org/en/list/1503/",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
       "media": {
         "src": "placefinder-1000-905.webp",
         "type": "image",
-        "title": "معلم — رسم توضيحي",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-25",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/placefinder-1000-905.json"
-        }
+        "title": "Nan madol.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nan_madol.jpg",
+        "author": "NOAA",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
       }
     },
     {
       "p": 1000,
-      "q": "ما اسم هذا المسجد المالي المبني بالطين والعوارض الخشبية البارزة؟",
+      "q": "ما اسم هذا المسجد؟",
       "a": "مسجد جينيه الكبير",
       "qid": "placefinder-1000-906",
       "type": "image",
@@ -1114,24 +1004,21 @@
       "topic": "أفريقيا جنوب الصحراء",
       "difficultyTarget": 0.15,
       "verified": true,
-      "sourceUrl": "https://whc.unesco.org/en/list/116/",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
       "media": {
         "src": "placefinder-1000-906.webp",
         "type": "image",
-        "title": "معلم — رسم توضيحي",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-25",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/placefinder-1000-906.json"
-        }
+        "title": "Great Mosque of Djenné 1.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Great_Mosque_of_Djenn%C3%A9_1.jpg",
+        "author": "Andy Gilham",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
       }
     },
     {
       "p": 1000,
-      "q": "ما اسم الموقع الأثري الغواتيمالي الذي يضم هذا المعبد وسط الغابة؟",
+      "q": "ما اسم الموقع الأثري الذي يضم هذا المعبد؟",
       "a": "تيكال",
       "qid": "placefinder-1000-907",
       "type": "image",
@@ -1145,24 +1032,21 @@
       "topic": "الأمريكتان",
       "difficultyTarget": 0.15,
       "verified": true,
-      "sourceUrl": "https://whc.unesco.org/en/list/64/",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
       "media": {
         "src": "placefinder-1000-907.webp",
         "type": "image",
-        "title": "معلم — رسم توضيحي",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-25",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/placefinder-1000-907.json"
-        }
+        "title": "Tikal 3.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tikal_3.jpg",
+        "author": "Mundo Maya",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
       }
     },
     {
       "p": 1000,
-      "q": "ما اسم هذه القناة الرومانية ذات صفّي الأقواس في إسبانيا؟",
+      "q": "ما اسم هذه القناة الأثرية؟",
       "a": "قناة شقوبية",
       "qid": "placefinder-1000-908",
       "type": "image",
@@ -1176,19 +1060,16 @@
       "topic": "أوروبا الجنوبية",
       "difficultyTarget": 0.15,
       "verified": true,
-      "sourceUrl": "https://whc.unesco.org/en/list/311/",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
       "media": {
         "src": "placefinder-1000-908.webp",
         "type": "image",
-        "title": "معلم — رسم توضيحي",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation (built-in)",
-          "createdAt": "2026-09-25",
-          "record": "docs/bank/rebuild-2026-09-18/generated-records/placefinder-1000-908.json"
-        }
+        "title": "Aqueduct of Segovia 08.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Aqueduct_of_Segovia_08.jpg",
+        "author": "Bernard Gagnon",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
       }
     }
   ]

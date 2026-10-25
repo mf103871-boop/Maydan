@@ -36,7 +36,7 @@ async function main() {
   const text = await generate();
   if (process.argv.includes('--check')) {
     const current = await readFile(creditsFile, 'utf8').catch(() => '');
-    if (current !== text) throw new Error('src/shared/fx/audio-credits.js is stale; run node scripts/audio/credits.mjs');
+    if (current.replaceAll('\r\n', '\n') !== text) throw new Error('src/shared/fx/audio-credits.js is stale; run node scripts/audio/credits.mjs');
     console.log('Audio credits verified'); return;
   }
   await writeFile(creditsFile, text, 'utf8');

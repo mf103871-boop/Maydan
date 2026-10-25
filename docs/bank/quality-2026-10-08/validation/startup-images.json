@@ -1,0 +1,254 @@
+{
+  "startedAt": "2026-10-12T02:09:15.167Z",
+  "completedAt": "2026-10-12T02:09:35.999Z",
+  "scope": "Real unmodified dist, local static HTTP server, actual active image bytes and real headless Chromium; server response delay/503 only. No mocked account or network API, no source/image replacement, no payment or production requests.",
+  "sourceHashes": {
+    "html": "11bc518a63e9b6223a31704d256c7cc37972042563236726ed01758ce4629a45",
+    "serviceWorker": "0c06089c3368c03957b2d21867ae79caa55fcfb75bd518073ee74ec685230339"
+  },
+  "activeImages": 510,
+  "summary": {
+    "passed": 23,
+    "failed": 0,
+    "total": 23
+  },
+  "checks": [
+    {
+      "name": "real active manifest has 510 unique images",
+      "ok": true
+    },
+    {
+      "name": "failure target is side B of an active paired question outside the initial gate",
+      "ok": true,
+      "detail": {
+        "qid": "spotdiff-1000-928",
+        "url": "media/spotdiff/spotdiff-1000-908-b-q20261008.webp?v=9168fd"
+      }
+    },
+    {
+      "name": "real image responses advance progress while the game remains unmounted",
+      "ok": true,
+      "detail": {
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "scrollWidth": 390,
+        "splash": true,
+        "progress": {
+          "value": 6,
+          "max": 510,
+          "text": "6 من 510 صورة"
+        },
+        "mountedGame": false,
+        "text": "ميدان\nألعاب جمعتنا\nنجهّز كل الصور للّعب\nنحمّل صور الألعاب…\n1٪\n6 من 510 صورة\n\nستفتح اللعبة خلال لحظات، وتكتمل الصور في الخلفية. الصور المحفوظة لا نحمّلها مجددًا.\n\nالدخول بالصور المتاحة\nالتحميل يستمر أثناء اللعب دون انتظار.",
+        "background": ""
+      }
+    },
+    {
+      "name": "loading layout 390x844 has no horizontal overflow",
+      "ok": true,
+      "detail": {
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "scrollWidth": 390,
+        "splash": true,
+        "progress": {
+          "value": 7,
+          "max": 510,
+          "text": "7 من 510 صورة"
+        },
+        "mountedGame": false,
+        "text": "ميدان\nألعاب جمعتنا\nنجهّز كل الصور للّعب\nنحمّل صور الألعاب…\n1٪\n7 من 510 صورة\n\nستفتح اللعبة خلال لحظات، وتكتمل الصور في الخلفية. الصور المحفوظة لا نحمّلها مجددًا.\n\nالدخول بالصور المتاحة\nالتحميل يستمر أثناء اللعب دون انتظار.",
+        "background": ""
+      }
+    },
+    {
+      "name": "loading layout 320x640 has no horizontal overflow",
+      "ok": true,
+      "detail": {
+        "viewport": {
+          "width": 320,
+          "height": 640
+        },
+        "scrollWidth": 320,
+        "splash": true,
+        "progress": {
+          "value": 12,
+          "max": 510,
+          "text": "12 من 510 صورة"
+        },
+        "mountedGame": false,
+        "text": "ميدان\nألعاب جمعتنا\nنجهّز كل الصور للّعب\nنحمّل صور الألعاب…\n2٪\n12 من 510 صورة\n\nستفتح اللعبة خلال لحظات، وتكتمل الصور في الخلفية. الصور المحفوظة لا نحمّلها مجددًا.\n\nالدخول بالصور المتاحة\nالتحميل يستمر أثناء اللعب دون انتظار.",
+        "background": ""
+      }
+    },
+    {
+      "name": "loading layout 844x390 has no horizontal overflow",
+      "ok": true,
+      "detail": {
+        "viewport": {
+          "width": 844,
+          "height": 390
+        },
+        "scrollWidth": 844,
+        "splash": true,
+        "progress": {
+          "value": 12,
+          "max": 510,
+          "text": "12 من 510 صورة"
+        },
+        "mountedGame": false,
+        "text": "ميدان\nألعاب جمعتنا\nنجهّز كل الصور للّعب\nنحمّل صور الألعاب…\n2٪\n12 من 510 صورة\n\nستفتح اللعبة خلال لحظات، وتكتمل الصور في الخلفية. الصور المحفوظة لا نحمّلها مجددًا.\n\nالدخول بالصور المتاحة\nالتحميل يستمر أثناء اللعب دون انتظار.",
+        "background": ""
+      }
+    },
+    {
+      "name": "automatic game entry takes less than five seconds while image responses remain held",
+      "ok": true,
+      "detail": {
+        "autoEntryMs": 3493,
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "scrollWidth": 390,
+        "splash": false,
+        "progress": null,
+        "mountedGame": true,
+        "text": "",
+        "background": "نجهّز الصور بالخلفية · 12 / 510\n×"
+      }
+    },
+    {
+      "name": "pending image download remains visible and nonblocking after entry",
+      "ok": true,
+      "detail": {
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "scrollWidth": 390,
+        "splash": false,
+        "progress": null,
+        "mountedGame": true,
+        "text": "",
+        "background": "نجهّز الصور بالخلفية · 12 / 510\n×"
+      }
+    },
+    {
+      "name": "background download completes without leaving the mounted game",
+      "ok": true
+    },
+    {
+      "name": "all 510 active cached image bodies equal actual dist files",
+      "ok": true,
+      "detail": {
+        "total": 510,
+        "failures": []
+      }
+    },
+    {
+      "name": "second launch uses persistent images without repeat image requests",
+      "ok": true,
+      "detail": []
+    },
+    {
+      "name": "offline reopened application decodes every actual active image",
+      "ok": true,
+      "detail": {
+        "total": 510,
+        "failures": []
+      }
+    },
+    {
+      "name": "offline reopen sends no image request to server",
+      "ok": true
+    },
+    {
+      "name": "one failed image does not block automatic game entry",
+      "ok": true,
+      "detail": {
+        "failureEntryMs": 3624
+      }
+    },
+    {
+      "name": "one failed image has an honest nonblocking count and retry control",
+      "ok": true,
+      "detail": {
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "scrollWidth": 390,
+        "splash": false,
+        "progress": null,
+        "mountedGame": true,
+        "text": "",
+        "background": "باقي 1 صورة\nإعادة المحاولة\n×"
+      }
+    },
+    {
+      "name": "an image failure preserves the other 509 correct cached images",
+      "ok": true,
+      "detail": {
+        "total": 510,
+        "failures": [
+          {
+            "url": "media/spotdiff/spotdiff-1000-908-b-q20261008.webp?v=9168fd",
+            "ok": false,
+            "missing": true
+          }
+        ]
+      }
+    },
+    {
+      "name": "failed image has not entered persistent cache",
+      "ok": true
+    },
+    {
+      "name": "manual continue opens the game while preserving the incomplete download status",
+      "ok": true
+    },
+    {
+      "name": "a later launch retries only the missing image instead of treating entry as completion",
+      "ok": true,
+      "detail": [
+        {
+          "key": "/media/spotdiff/spotdiff-1000-908-b-q20261008.webp?v=9168fd",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "name": "retry downloads only the missing image",
+      "ok": true,
+      "detail": [
+        {
+          "key": "/media/spotdiff/spotdiff-1000-908-b-q20261008.webp?v=9168fd",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "name": "successful retry leaves all 510 correct images cached",
+      "ok": true,
+      "detail": {
+        "total": 510,
+        "failures": []
+      }
+    },
+    {
+      "name": "no browser JavaScript errors in any scenario",
+      "ok": true,
+      "detail": []
+    },
+    {
+      "name": "dist was unchanged during regression run",
+      "ok": true
+    }
+  ],
+  "errors": []
+}

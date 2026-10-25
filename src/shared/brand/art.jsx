@@ -1,4 +1,5 @@
 import React from 'react';
+import { ErsomhaIcon } from '../../games/ersomha/icon.jsx';
 import gameIcons from './assets/game-icons.webp';
 import avatarSheet from './assets/avatars.webp';
 import trophy from './assets/trophy.webp';
@@ -25,6 +26,7 @@ export function BrandFonts() {
 }
 
 export function GameArtwork({ game, className = '', style = {} }) {
+  if (game === 'ersomha') return <span className={`clay-art ${className}`} data-game={game} aria-hidden="true" style={style}><ErsomhaIcon /></span>;
   const [column, row] = GAMES[game] || GAMES.badeeha;
   return <span className={`clay-art ${className}`} data-game={game} aria-hidden="true" style={{ backgroundImage: `url(${gameIcons})`, backgroundPosition: `${column * 50}% ${row * 100}%`, ...style }} />;
 }
@@ -46,9 +48,9 @@ export function ClayStage({ className = '', idle = false, react = '', as: Tag = 
   </Tag>;
 }
 
-export function AvatarPicker({ value, onChange }) {
-  return <div className="avatar-picker" role="group" aria-label="اختر شخصيتك">{AVATAR_OPTIONS.map((option) => (
-    <button key={option.emoji} type="button" className={`avatar-choice ${value === option.emoji ? 'selected' : ''}`} aria-label={option.label} aria-pressed={value === option.emoji} onClick={() => onChange(option.emoji)}>
+export function AvatarPicker({ value, onChange, ...rest }) {
+  return <div data-design-id="avatar-picker" className="avatar-picker" role="group" aria-label="اختر شخصيتك" {...rest}>{AVATAR_OPTIONS.map((option) => (
+    <button key={option.emoji} type="button" data-design-id="avatar-choice" className={`avatar-choice ${value === option.emoji ? 'selected' : ''}`} aria-label={option.label} aria-pressed={value ===option.emoji} onClick={() => onChange(option.emoji)}>
       <ClayStage className="clay-static"><Avatar index={option.index} /></ClayStage>
     </button>
   ))}</div>;

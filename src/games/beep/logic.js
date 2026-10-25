@@ -151,16 +151,26 @@ export function reduce(state, action) {
   }
 }
 
-// ترتيب نهائي: three بحسب النقاط؛ bomb بحسب البقاء ثم الأرواح ثم عدد التمريرات.
+// ترتيب نهائي: الناجي أولًا؛ ثم آخر من خرج. التمريرات تفصل بين الأحياء
+// المتساوين فقط، ولا يمكنها شراء مرتبة أعلى من لاعب بقي مدة أطول.
 export function standings(state) {
   if (state.mode === 'three') {
     return state.players.map((p) => ({ ...p, score: state.scores[p.id] })).sort((a, b) => b.score - a.score);
   }
   const order = state.players.map((p) => {
     const outIndex = state.eliminated.indexOf(p.id);
-    return { ...p, alive: outIndex === -1, outIndex, lives: state.lives[p.id], passes: state.passes[p.id], score: (outIndex === -1 ? 100 : outIndex) + state.lives[p.id] * 10 + state.passes[p.id] };
+    return { ...p, alive: outIndex === -1, outIndex, lives: state.lives[p.id], passes: state.passes[p.id], score: state.lives[p.id] };
   });
-  return order.sort((a, b) => b.score - a.score);
+  const compare = (a, b) => Number(b.alive) - Number(a.alive)
+    || (a.alive ? b.lives - a.lives || b.passes - a.passes : b.outIndex - a.outIndex);
+  order.sort(compare);
+  // score remains the visible heart count; rankScore belongs only to ranking.
+  // Real ties (e.g. an early end with equal survivors) retain equal placement.
+  let rankScore = order.length;
+  return order.map((player, index) => {
+    if (index && compare(order[index - 1], player) !== 0) rankScore = order.length - index;
+    return { ...player, rankScore };
+  });
 }
 
 export function nextBombSeconds(random = Math.random) {

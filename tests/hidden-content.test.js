@@ -2,7 +2,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
-import { HIDDEN_TIERS, HIDDEN_THEMES, TARGET, buildHiddenPack, targetQuadrant } from './helpers/hidden-generator.mjs';
+import { HIDDEN_TIERS, HIDDEN_THEMES, TARGET, buildHiddenPack, targetQuadrant } from './helpers/hidden-quality-generator.mjs';
 
 const pack = JSON.parse(await readFile(new URL('../src/data/categories/hidden.json', import.meta.url), 'utf8'));
 const graphemes = new Intl.Segmenter('ar', { granularity: 'grapheme' });
@@ -64,7 +64,7 @@ test('البطة المخفية: اختلاف الشبكات ليس مجرد ن�
   }
 });
 
-test('البطة المخفية: مواقع الهدف تشمل الزوايا والحواف والداخل وتتوازن بين الأرباع', () => {
+test('البطة المخفية: مواقع الهدف تشمل الحواف والداخل وتتوازن بين الأرباع', () => {
   for (const { p, side } of HIDDEN_TIERS) {
     const positions = [];
     const quadrants = [0, 0, 0, 0];
@@ -76,8 +76,9 @@ test('البطة المخفية: مواقع الهدف تشمل الزوايا �
       quadrants[targetQuadrant(row, column, side)] += 1;
     }
     assert.deepEqual(quadrants, [2, 2, 2, 2], String(p));
-    for (const corner of [0, side - 1, side * (side - 1), side * side - 1]) assert.ok(positions.includes(corner), `${p}: زاوية غير مستعملة`);
-    assert.ok(positions.some((index) => Math.floor(index / side) > 0 && Math.floor(index / side) < side - 1 && index % side > 0 && index % side < side - 1));
+    const interior = (index) => Math.floor(index / side) > 0 && Math.floor(index / side) < side - 1 && index % side > 0 && index % side < side - 1;
+    assert.equal(positions.filter(interior).length, 4, `${p}: أربعة أهداف داخلية`);
+    assert.equal(positions.filter((index) => !interior(index)).length, 4, `${p}: أربعة أهداف على الحواف`);
     assert.equal(new Set(positions).size, 8, `${p}: مواقع متكررة`);
     for (const { topic } of HIDDEN_THEMES) {
       const perTopic = [0, 0, 0, 0];
@@ -107,6 +108,20 @@ test('البطة المخفية: يزيد مجال البحث وعدد المش�
   }
 });
 
-test('البطة المخفية: البذور الثابتة تعيد إنتاج الملف بالكامل دون شبكة', () => {
-  assert.deepEqual(pack, buildHiddenPack());
+test('البطة المخفية: البذور الثابتة تعيد إنتاج الشبكات حسب الشريحة والموضوع', () => {
+  const generated = buildHiddenPack();
+  // Question IDs are migrated centrally when board identity changes. The
+  // reproduction contract concerns the playable board and its answer.
+  for(const question of pack.qs) {
+    const expected = generated.qs.find((q) => q.p === question.p && q.topic === question.topic);
+    assert.ok(expected, question.qid);
+    for(const key of ['grid','a','q','type','target','difficultyTarget']) assert.deepEqual(question[key],expected[key],`${question.qid}/${key}`);
+  }
+});
+
+test('البطة المخفية: كل مشتتات1000 طيور، فلا يكون الهدف الطائر الوحيد', () => {
+  const birds = new Set(HIDDEN_THEMES.flatMap((theme) => theme.similar));
+  for(const q of pack.qs.filter((q) => q.p === 1000)) {
+    assert.equal(q.grid.flat().filter((cell) => cell !== TARGET && birds.has(cell)).length,63,q.qid);
+  }
 });

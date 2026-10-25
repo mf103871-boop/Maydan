@@ -1,0 +1,23 @@
+{
+  "checkedAt": "2026-10-12T08:54:20.326Z",
+  "endpoint": "https://maydan-game.mf103871.workers.dev/api/social/livekit/webhook",
+  "method": "Synthetic signed room_started for an unknown room; no provider API requests, account creation, or room creation.",
+  "checks": [
+    {
+      "name": "unsigned event rejected",
+      "status": 401,
+      "error": "AUTH",
+      "passed": true
+    },
+    {
+      "name": "correctly signed unknown-room event acknowledged",
+      "status": 200,
+      "ok": true,
+      "passed": true
+    }
+  ],
+  "limits": [
+    "Validates production signature handling only; does not prove webhook delivery from LiveKit."
+  ],
+  "passed": true
+}

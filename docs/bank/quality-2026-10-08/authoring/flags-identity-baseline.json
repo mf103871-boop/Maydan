@@ -1,0 +1,1184 @@
+{
+  "id": "flags",
+  "name": "أعلام",
+  "icon": "🚩",
+  "defaultType": "image",
+  "qs": [
+    {
+      "p": 200,
+      "q": "ما الدولة صاحبة هذا العلم ذي الشريط الأحمر العمودي؟",
+      "a": "الإمارات",
+      "qid": "flags-200-901",
+      "type": "image",
+      "effect": "none",
+      "alt": [
+        "الإمارات العربية المتحدة",
+        "United Arab Emirates",
+        "UAE"
+      ],
+      "topic": "غرب آسيا وشمال أفريقيا",
+      "difficultyTarget": 0.8,
+      "verified": true,
+      "sourceUrl": "https://vig.gmo.gov.ae/en/guideline/the-uae-flag",
+      "media": {
+        "src": "flags-200-901.webp",
+        "type": "image",
+        "title": "علم دولة — رسم توضيحي",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-200-901.json"
+        }
+      }
+    },
+    {
+      "p": 200,
+      "q": "أي دولة يمثلها العلم المصوّر ذو شبه المنحرف الأسود؟",
+      "a": "الكويت",
+      "qid": "flags-200-902",
+      "type": "image",
+      "effect": "none",
+      "alt": [
+        "دولة الكويت",
+        "Kuwait"
+      ],
+      "topic": "غرب آسيا وشمال أفريقيا",
+      "difficultyTarget": 0.8,
+      "verified": true,
+      "sourceUrl": "https://www.kuwaitmission.ch/KUFacts.aspx",
+      "media": {
+        "src": "flags-200-902.webp",
+        "type": "image",
+        "title": "علم دولة — رسم توضيحي",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-200-902.json"
+        }
+      }
+    },
+    {
+      "p": 200,
+      "q": "لأي دولة ينتمي العلم الأبيض الذي تتوسطه دائرة حمراء؟",
+      "a": "اليابان",
+      "qid": "flags-200-903",
+      "type": "image",
+      "effect": "none",
+      "alt": [
+        "Japan"
+      ],
+      "topic": "آسيا الشرقية",
+      "difficultyTarget": 0.8,
+      "verified": true,
+      "sourceUrl": "https://web-japan.org/factsheet/en/pdf/11NFlagAnthem.pdf",
+      "media": {
+        "src": "flags-200-903.webp",
+        "type": "image",
+        "title": "علم دولة — رسم توضيحي",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-200-903.json"
+        }
+      }
+    },
+    {
+      "p": 200,
+      "q": "ما الدولة التي يحمل علمها المصوّر خمس نجوم صفراء؟",
+      "a": "الصين",
+      "qid": "flags-200-904",
+      "type": "image",
+      "effect": "none",
+      "alt": [
+        "جمهورية الصين الشعبية",
+        "China",
+        "People's Republic of China"
+      ],
+      "topic": "آسيا الشرقية",
+      "difficultyTarget": 0.8,
+      "verified": true,
+      "sourceUrl": "https://english.court.gov.cn/2016-04/14/c_761456.htm",
+      "media": {
+        "src": "flags-200-904.webp",
+        "type": "image",
+        "title": "علم دولة — رسم توضيحي",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-200-904.json"
+        }
+      }
+    },
+    {
+      "p": 200,
+      "q": "لأي دولة ينتمي هذا العلم ذو الأشرطة العمودية الزرقاء والبيضاء والحمراء؟",
+      "a": "فرنسا",
+      "qid": "flags-200-905",
+      "type": "image",
+      "effect": "none",
+      "alt": [
+        "الجمهورية الفرنسية",
+        "France"
+      ],
+      "topic": "أوروبا",
+      "difficultyTarget": 0.8,
+      "verified": true,
+      "sourceUrl": "https://www.elysee.fr/la-presidence/le-drapeau-francais",
+      "media": {
+        "src": "flags-200-905.webp",
+        "type": "image",
+        "title": "علم دولة — رسم توضيحي",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-200-905.json"
+        }
+      }
+    },
+    {
+      "p": 200,
+      "q": "ما الدولة صاحبة العلم المكوّن من أشرطة أفقية سوداء وحمراء وذهبية؟",
+      "a": "ألمانيا",
+      "qid": "flags-200-906",
+      "type": "image",
+      "effect": "none",
+      "alt": [
+        "جمهورية ألمانيا الاتحادية",
+        "Germany"
+      ],
+      "topic": "أوروبا",
+      "difficultyTarget": 0.8,
+      "verified": true,
+      "sourceUrl": "https://www.gesetze-im-internet.de/flaggano_1996/i_.html",
+      "media": {
+        "src": "flags-200-906.webp",
+        "type": "image",
+        "title": "علم دولة — رسم توضيحي",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-200-906.json"
+        }
+      }
+    },
+    {
+      "p": 200,
+      "q": "ما الدولة التي تتوسط علمها المصوّر ورقة قيقب حمراء؟",
+      "a": "كندا",
+      "qid": "flags-200-907",
+      "type": "image",
+      "effect": "none",
+      "alt": [
+        "Canada"
+      ],
+      "topic": "أمريكا الشمالية",
+      "difficultyTarget": 0.8,
+      "verified": true,
+      "sourceUrl": "https://www.canada.ca/en/canadian-heritage/services/flag-canada-description.html",
+      "media": {
+        "src": "flags-200-907.webp",
+        "type": "image",
+        "title": "علم دولة — رسم توضيحي",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-200-907.json"
+        }
+      }
+    },
+    {
+      "p": 200,
+      "q": "أي دولة يمثلها هذا العلم الأخضر ذو الدائرة الحمراء؟",
+      "a": "بنغلاديش",
+      "qid": "flags-200-908",
+      "type": "image",
+      "effect": "none",
+      "alt": [
+        "بنجلاديش",
+        "Bangladesh"
+      ],
+      "topic": "جنوب وجنوب شرق آسيا",
+      "difficultyTarget": 0.8,
+      "verified": true,
+      "sourceUrl": "https://bdlaws.minlaw.gov.bd/act-print-367/section-print-24551.html",
+      "media": {
+        "src": "flags-200-908.webp",
+        "type": "image",
+        "title": "علم دولة — رسم توضيحي",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-200-908.json"
+        }
+      }
+    },
+    {
+      "p": 400,
+      "q": "لأي دولة ينتمي العلم الأحمر المصوّر ذو النجمة الخضراء؟",
+      "a": "المغرب",
+      "qid": "flags-400-901",
+      "type": "image",
+      "effect": "none",
+      "alt": [
+        "المملكة المغربية",
+        "Morocco"
+      ],
+      "topic": "غرب آسيا وشمال أفريقيا",
+      "difficultyTarget": 0.6,
+      "verified": true,
+      "sourceUrl": "https://www.maroc.ma/fr/actualites/lhistoire-des-drapeaux-du-maroc-mise-en-avant-rabat",
+      "media": {
+        "src": "flags-400-901.webp",
+        "type": "image",
+        "title": "علم دولة — رسم توضيحي",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-400-901.json"
+        }
+      }
+    },
+    {
+      "p": 400,
+      "q": "ما الدولة صاحبة هذا العلم بنصفيه الأخضر والأبيض وهلاله الأحمر؟",
+      "a": "الجزائر",
+      "qid": "flags-400-902",
+      "type": "image",
+      "effect": "none",
+      "alt": [
+        "الجمهورية الجزائرية الديمقراطية الشعبية",
+        "Algeria"
+      ],
+      "topic": "غرب آسيا وشمال أفريقيا",
+      "difficultyTarget": 0.6,
+      "verified": true,
+      "sourceUrl": "https://embwashington.mfa.gov.dz/discover-algeria-1/state-symbols-1",
+      "media": {
+        "src": "flags-400-902.webp",
+        "type": "image",
+        "title": "علم دولة — رسم توضيحي",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-400-902.json"
+        }
+      }
+    },
+    {
+      "p": 400,
+      "q": "أي دولة يمثلها هذا العلم الأزرق ذو الصليب الأصفر؟",
+      "a": "السويد",
+      "qid": "flags-400-903",
+      "type": "image",
+      "effect": "none",
+      "alt": [
+        "مملكة السويد",
+        "Sweden"
+      ],
+      "topic": "أوروبا",
+      "difficultyTarget": 0.6,
+      "verified": true,
+      "sourceUrl": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/lag-1982269-om-sveriges-flagga_sfs-1982-269/",
+      "media": {
+        "src": "flags-400-903.webp",
+        "type": "image",
+        "title": "علم دولة — رسم توضيحي",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-400-903.json"
+        }
+      }
+    },
+    {
+      "p": 400,
+      "q": "لأي دولة ينتمي العلم الأحمر بصليب أزرق تحيط به حواف بيضاء؟",
+      "a": "النرويج",
+      "qid": "flags-400-904",
+      "type": "image",
+      "effect": "none",
+      "alt": [
+        "مملكة النرويج",
+        "Norway"
+      ],
+      "topic": "أوروبا",
+      "difficultyTarget": 0.6,
+      "verified": true,
+      "sourceUrl": "https://www.regjeringen.no/no/dep/ud/dep/diplomatiske-forbindelser-og-protokoll/norges-flagg-forskrift/id449230/",
+      "media": {
+        "src": "flags-400-904.webp",
+        "type": "image",
+        "title": "علم دولة — رسم توضيحي",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-400-904.json"
+        }
+      }
+    },
+    {
+      "p": 400,
+      "q": "ما الدولة صاحبة هذا العلم ذي خمسة أشرطة وشريط أزرق عريض في الوسط؟",
+      "a": "تايلاند",
+      "qid": "flags-400-905",
+      "type": "image",
+      "effect": "none",
+      "alt": [
+        "تايلند",
+        "مملكة تايلاند",
+        "Thailand"
+      ],
+      "topic": "جنوب وجنوب شرق آسيا",
+      "difficultyTarget": 0.6,
+      "verified": true,
+      "sourceUrl": "https://www.boi.go.th/index.php?language=ko&page=social_and_culture",
+      "media": {
+        "src": "flags-400-905.webp",
+        "type": "image",
+        "title": "علم دولة — رسم توضيحي",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-400-905.json"
+        }
+      }
+    },
+    {
+      "p": 400,
+      "q": "أي دولة يمثلها العلم الأخضر ذو الهلال والنجمة والشريط الأبيض؟",
+      "a": "باكستان",
+      "qid": "flags-400-906",
+      "type": "image",
+      "effect": "none",
+      "alt": [
+        "جمهورية باكستان الإسلامية",
+        "Pakistan"
+      ],
+      "topic": "جنوب وجنوب شرق آسيا",
+      "difficultyTarget": 0.6,
+      "verified": true,
+      "sourceUrl": "https://pcgv.org/national-flag/",
+      "media": {
+        "src": "flags-400-906.webp",
+        "type": "image",
+        "title": "علم دولة — رسم توضيحي",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-400-906.json"
+        }
+      }
+    },
+    {
+      "p": 400,
+      "q": "ما الدولة المطلة على الكاريبي صاحبة هذا العلم الذي يحتل الأصفر نصفه العلوي؟",
+      "a": "كولومبيا",
+      "qid": "flags-400-907",
+      "type": "image",
+      "effect": "none",
+      "alt": [
+        "كولمبيا",
+        "Colombia"
+      ],
+      "topic": "أمريكا الجنوبية",
+      "difficultyTarget": 0.6,
+      "verified": true,
+      "sourceUrl": [
+        "https://www.cancilleria.gov.co/normograma/compilacion/docs/circular_minrelaciones_0036_2021.htm",
+        "https://cancilleria.gov.co/politica-exterior/asuntos-bilaterales/delimitacion-maritima-colombia-panama"
+      ],
+      "media": {
+        "src": "flags-400-907.webp",
+        "type": "image",
+        "title": "علم دولة — رسم توضيحي",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-400-907.json"
+        }
+      }
+    },
+    {
+      "p": 400,
+      "q": "ما الدولة صاحبة العلم بنجمة بيضاء داخل مربع أزرق في الزاوية العليا؟",
+      "a": "تشيلي",
+      "qid": "flags-400-908",
+      "type": "image",
+      "effect": "none",
+      "alt": [
+        "شيلي",
+        "Chile"
+      ],
+      "topic": "أمريكا الجنوبية",
+      "difficultyTarget": 0.6,
+      "verified": true,
+      "sourceUrl": "https://www.bcn.cl/leychile/navegar?idNorma=23382",
+      "media": {
+        "src": "flags-400-908.webp",
+        "type": "image",
+        "title": "علم دولة — رسم توضيحي",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-400-908.json"
+        }
+      }
+    },
+    {
+      "p": 600,
+      "q": "ما الدولة الأوروبية صاحبة هذا العلم ذي الأشرطة العمودية الزرقاء والصفراء والحمراء؟",
+      "a": "رومانيا",
+      "qid": "flags-600-901",
+      "type": "image",
+      "effect": "none",
+      "alt": [
+        "Romania"
+      ],
+      "topic": "أوروبا",
+      "difficultyTarget": 0.4,
+      "verified": true,
+      "sourceUrl": "https://www.cdep.ro/ords/pls/steno/steno2015.stenograma?idl=3&ids=6664",
+      "media": {
+        "src": "flags-600-901.webp",
+        "type": "image",
+        "title": "علم دولة — رسم توضيحي",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-600-901.json"
+        }
+      }
+    },
+    {
+      "p": 600,
+      "q": "أي دولة يمثلها هذا العلم بأشرطته الأفقية الزرقاء والسوداء والبيضاء؟",
+      "a": "إستونيا",
+      "qid": "flags-600-902",
+      "type": "image",
+      "effect": "none",
+      "alt": [
+        "Estonia"
+      ],
+      "topic": "أوروبا",
+      "difficultyTarget": 0.4,
+      "verified": true,
+      "sourceUrl": "https://president.ee/en/republic-of-estonia/symbols/",
+      "media": {
+        "src": "flags-600-902.webp",
+        "type": "image",
+        "title": "علم دولة — رسم توضيحي",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-600-902.json"
+        }
+      }
+    },
+    {
+      "p": 600,
+      "q": "لأي دولة ينتمي العلم ذو الشريط الأبيض العمودي بين شريطين أخضرين؟",
+      "a": "نيجيريا",
+      "qid": "flags-600-903",
+      "type": "image",
+      "effect": "none",
+      "alt": [
+        "جمهورية نيجيريا الاتحادية",
+        "Nigeria"
+      ],
+      "topic": "أفريقيا الغربية",
+      "difficultyTarget": 0.4,
+      "verified": true,
+      "sourceUrl": "https://ntda.gov.ng/media.assets.php",
+      "media": {
+        "src": "flags-600-903.webp",
+        "type": "image",
+        "title": "علم دولة — رسم توضيحي",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-600-903.json"
+        }
+      }
+    },
+    {
+      "p": 600,
+      "q": "ما الدولة التي تتوسط علمها نجمة سوداء فوق شريط ذهبي؟",
+      "a": "غانا",
+      "qid": "flags-600-904",
+      "type": "image",
+      "effect": "none",
+      "alt": [
+        "جمهورية غانا",
+        "Ghana"
+      ],
+      "topic": "أفريقيا الغربية",
+      "difficultyTarget": 0.4,
+      "verified": true,
+      "sourceUrl": "https://gis.gov.gh/wp-content/uploads/2024/02/FACTS-ABOUT-GHANA.pdf",
+      "media": {
+        "src": "flags-600-904.webp",
+        "type": "image",
+        "title": "علم دولة — رسم توضيحي",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-600-904.json"
+        }
+      }
+    },
+    {
+      "p": 600,
+      "q": "ما الدولة التي يظهر علمها بالأزرق الفاتح، ويتوسطه شريط أسود تحيط به حافتان بيضاوان؟",
+      "a": "بوتسوانا",
+      "qid": "flags-600-905",
+      "type": "image",
+      "effect": "none",
+      "alt": [
+        "Botswana",
+        "جمهورية بوتسوانا"
+      ],
+      "topic": "أفريقيا الشرقية والوسطى والجنوبية",
+      "difficultyTarget": 0.4,
+      "verified": true,
+      "sourceUrl": "https://www.gov.bw/about-our-country-0",
+      "media": {
+        "src": "flags-600-905.webp",
+        "type": "image",
+        "title": "علم دولة — رسم توضيحي",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-600-905.json"
+        }
+      }
+    },
+    {
+      "p": 600,
+      "q": "ما الدولة صاحبة هذا العلم ذي الشريط الأسود المائل بين الأخضر والأزرق؟",
+      "a": "تنزانيا",
+      "qid": "flags-600-906",
+      "type": "image",
+      "effect": "none",
+      "alt": [
+        "Tanzania",
+        "جمهورية تنزانيا المتحدة"
+      ],
+      "topic": "أفريقيا الشرقية والوسطى والجنوبية",
+      "difficultyTarget": 0.4,
+      "verified": true,
+      "sourceUrl": "https://embassyoftanzaniarome.info/en/about-tanzania/national-symbols",
+      "media": {
+        "src": "flags-600-906.webp",
+        "type": "image",
+        "title": "علم دولة — رسم توضيحي",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-600-906.json"
+        }
+      }
+    },
+    {
+      "p": 600,
+      "q": "ما الدولة صاحبة هذا العلم الأحمر الذي تتوسطه نجمة ذهبية خماسية؟",
+      "a": "فيتنام",
+      "qid": "flags-600-907",
+      "type": "image",
+      "effect": "none",
+      "alt": [
+        "Vietnam",
+        "Viet Nam",
+        "جمهورية فيتنام الاشتراكية"
+      ],
+      "topic": "جنوب وجنوب شرق آسيا",
+      "difficultyTarget": 0.4,
+      "verified": true,
+      "sourceUrl": "https://vietnam.gov.vn/default.aspx?catname=national-flag-emblem-anthem-declaration-of-independence-68960",
+      "media": {
+        "src": "flags-600-907.webp",
+        "type": "image",
+        "title": "علم دولة — رسم توضيحي",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-600-907.json"
+        }
+      }
+    },
+    {
+      "p": 600,
+      "q": "ما الدولة التي تتوسط علمها دائرة بيضاء على شريط أزرق عريض بين شريطين أحمرين؟",
+      "a": "لاوس",
+      "qid": "flags-600-908",
+      "type": "image",
+      "effect": "none",
+      "alt": [
+        "Laos",
+        "Lao PDR",
+        "جمهورية لاو الديمقراطية الشعبية"
+      ],
+      "topic": "جنوب وجنوب شرق آسيا",
+      "difficultyTarget": 0.4,
+      "verified": true,
+      "sourceUrl": "https://www.wipo.int/wipolex/en/legislation/details/5829",
+      "media": {
+        "src": "flags-600-908.webp",
+        "type": "image",
+        "title": "علم دولة — رسم توضيحي",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-600-908.json"
+        }
+      }
+    },
+    {
+      "p": 800,
+      "q": "ما الدولة التي يحمل علمها نجمة بيضاء في مربع أحمر، مع أشرطة خضراء وصفراء؟",
+      "a": "توغو",
+      "qid": "flags-800-901",
+      "type": "image",
+      "effect": "none",
+      "alt": [
+        "Togo",
+        "جمهورية توغو"
+      ],
+      "topic": "أفريقيا الغربية",
+      "difficultyTarget": 0.25,
+      "verified": true,
+      "sourceUrl": "https://presidenceduconseil.gouv.tg/symbole-des-de-la-republique-togolaise/",
+      "media": {
+        "src": "flags-800-901.webp",
+        "type": "image",
+        "title": "علم دولة — رسم توضيحي",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-800-901.json"
+        }
+      }
+    },
+    {
+      "p": 800,
+      "q": "ما الدولة صاحبة هذا العلم، بأخضر عمودي إلى جانب الأصفر والأحمر الأفقيين؟",
+      "a": "بنين",
+      "qid": "flags-800-902",
+      "type": "image",
+      "effect": "none",
+      "alt": [
+        "Benin",
+        "جمهورية بنين"
+      ],
+      "topic": "أفريقيا الغربية",
+      "difficultyTarget": 0.25,
+      "verified": true,
+      "sourceUrl": "https://sgg.gouv.bj/doc/loi-90-020/download",
+      "media": {
+        "src": "flags-800-902.webp",
+        "type": "image",
+        "title": "علم دولة — رسم توضيحي",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-800-902.json"
+        }
+      }
+    },
+    {
+      "p": 800,
+      "q": "ما الدولة التي يتكون علمها من أشرطة أفقية خضراء وصفراء وزرقاء؟",
+      "a": "الغابون",
+      "qid": "flags-800-903",
+      "type": "image",
+      "effect": "none",
+      "alt": [
+        "غابون",
+        "الجابون",
+        "Gabon",
+        "جمهورية الغابون"
+      ],
+      "topic": "أفريقيا الشرقية والوسطى والجنوبية",
+      "difficultyTarget": 0.25,
+      "verified": true,
+      "sourceUrl": "https://gabonembassyusa.org/en/about/about-us",
+      "media": {
+        "src": "flags-800-903.webp",
+        "type": "image",
+        "title": "علم دولة — رسم توضيحي",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-800-903.json"
+        }
+      }
+    },
+    {
+      "p": 800,
+      "q": "ما الدولة صاحبة هذا العلم، الذي يفصل فيه شريط أصفر مائل بين الأخضر والأحمر؟",
+      "a": "جمهورية الكونغو",
+      "qid": "flags-800-904",
+      "type": "image",
+      "effect": "none",
+      "alt": [
+        "الكونغو برازافيل",
+        "Congo-Brazzaville",
+        "Republic of the Congo"
+      ],
+      "topic": "أفريقيا الشرقية والوسطى والجنوبية",
+      "difficultyTarget": 0.25,
+      "verified": true,
+      "sourceUrl": "https://www.ambacongo-us.org/index.php/en/about-congo/national-symbols",
+      "media": {
+        "src": "flags-800-904.webp",
+        "type": "image",
+        "title": "علم دولة — رسم توضيحي",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-800-904.json"
+        }
+      }
+    },
+    {
+      "p": 800,
+      "q": "ما الدولة صاحبة هذا العلم ذي المثلث الأسود والأشرطة الفيروزية والذهبية؟",
+      "a": "الباهاما",
+      "qid": "flags-800-905",
+      "type": "image",
+      "effect": "none",
+      "alt": [
+        "باهاما",
+        "جزر الباهاما",
+        "Bahamas",
+        "The Bahamas"
+      ],
+      "topic": "الكاريبي",
+      "difficultyTarget": 0.25,
+      "verified": true,
+      "sourceUrl": "https://www.bahamasembdc.org/about/national-symbols/",
+      "media": {
+        "src": "flags-800-905.webp",
+        "type": "image",
+        "title": "علم دولة — رسم توضيحي",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-800-905.json"
+        }
+      }
+    },
+    {
+      "p": 800,
+      "q": "ما الدولة صاحبة العلم الأحمر الذي يعبره شريط أسود مائل محاط بالأبيض؟",
+      "a": "ترينيداد وتوباغو",
+      "qid": "flags-800-906",
+      "type": "image",
+      "effect": "none",
+      "alt": [
+        "ترينيداد وتوباجو",
+        "Trinidad and Tobago"
+      ],
+      "topic": "الكاريبي",
+      "difficultyTarget": 0.25,
+      "verified": true,
+      "sourceUrl": "https://foreign.gov.tt/about/trinidad-tobago/national-symbols/national-flag/",
+      "media": {
+        "src": "flags-800-906.webp",
+        "type": "image",
+        "title": "علم دولة — رسم توضيحي",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-800-906.json"
+        }
+      }
+    },
+    {
+      "p": 800,
+      "q": "ما الدولة صاحبة هذا العلم، الذي يفصل فيه شريط أصفر مائل بين الأزرق والأخضر؟",
+      "a": "جزر سليمان",
+      "qid": "flags-800-907",
+      "type": "image",
+      "effect": "none",
+      "alt": [
+        "جزر سولومون",
+        "Solomon Islands"
+      ],
+      "topic": "أوقيانوسيا",
+      "difficultyTarget": 0.25,
+      "verified": true,
+      "sourceUrl": [
+        "https://solomons.gov.sb/wp-content/uploads/2024/06/Policy-Statement-TUESDAY-6PM-Final.pdf",
+        "https://www.dfat.gov.au/geo/solomon-islands/solomon-islands-country-brief"
+      ],
+      "media": {
+        "src": "flags-800-907.webp",
+        "type": "image",
+        "title": "علم دولة — رسم توضيحي",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-800-907.json"
+        }
+      }
+    },
+    {
+      "p": 800,
+      "q": "ما الدولة صاحبة هذا العلم الأحمر، وفي ركنه الأزرق خمس نجوم بيضاء تمثل الصليب الجنوبي؟",
+      "a": "ساموا",
+      "qid": "flags-800-908",
+      "type": "image",
+      "effect": "none",
+      "alt": [
+        "Samoa",
+        "دولة ساموا المستقلة"
+      ],
+      "topic": "أوقيانوسيا",
+      "difficultyTarget": 0.25,
+      "verified": true,
+      "sourceUrl": "https://www.mfat.gov.ws/wp-content/uploads/2013/10/Flag-of-Samoa.pdf",
+      "media": {
+        "src": "flags-800-908.webp",
+        "type": "image",
+        "title": "علم دولة — رسم توضيحي",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-800-908.json"
+        }
+      }
+    },
+    {
+      "p": 1000,
+      "q": "ما الدولة التي يحمل علمها الأزرق الفاتح دائرة صفراء منحازة قليلًا نحو السارية؟",
+      "a": "بالاو",
+      "qid": "flags-1000-901",
+      "type": "image",
+      "effect": "none",
+      "alt": [
+        "Palau",
+        "جمهورية بالاو"
+      ],
+      "topic": "أوقيانوسيا",
+      "difficultyTarget": 0.15,
+      "verified": true,
+      "sourceUrl": "https://www.palaugov.pw/about-palau/flag/",
+      "media": {
+        "src": "flags-1000-901.webp",
+        "type": "image",
+        "title": "علم دولة — رسم توضيحي",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-1000-901.json"
+        }
+      }
+    },
+    {
+      "p": 1000,
+      "q": "ما الدولة صاحبة العلم الأزرق الذي يجمع شريطًا ذهبيًا ونجمة بيضاء ذات اثني عشر رأسًا؟",
+      "a": "ناورو",
+      "qid": "flags-1000-902",
+      "type": "image",
+      "effect": "none",
+      "alt": [
+        "Nauru",
+        "Naoero",
+        "جمهورية ناورو"
+      ],
+      "topic": "أوقيانوسيا",
+      "difficultyTarget": 0.15,
+      "verified": true,
+      "sourceUrl": "https://www.nauru.gov.nr/government-information-office/fact-sheet.aspx",
+      "media": {
+        "src": "flags-1000-902.webp",
+        "type": "image",
+        "title": "علم دولة — رسم توضيحي",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-1000-902.json"
+        }
+      }
+    },
+    {
+      "p": 1000,
+      "q": "ما الدولة التي يتوسط علمها الأزرق شكل مثلثي بالأسود والأبيض والذهبي؟",
+      "a": "سانت لوسيا",
+      "qid": "flags-1000-903",
+      "type": "image",
+      "effect": "none",
+      "alt": [
+        "Saint Lucia",
+        "St Lucia"
+      ],
+      "topic": "الكاريبي",
+      "difficultyTarget": 0.15,
+      "verified": true,
+      "sourceUrl": "https://www.govt.lc/stluciaflag",
+      "media": {
+        "src": "flags-1000-903.webp",
+        "type": "image",
+        "title": "علم دولة — رسم توضيحي",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-1000-903.json"
+        }
+      }
+    },
+    {
+      "p": 1000,
+      "q": "ما الدولة صاحبة هذا العلم الذي تظهر فيه معينات خضراء على خلفية ذهبية؟",
+      "a": "سانت فنسنت والغرينادين",
+      "qid": "flags-1000-904",
+      "type": "image",
+      "effect": "none",
+      "alt": [
+        "سانت فينسنت والغرينادين",
+        "سانت فنسنت وجزر غرينادين",
+        "Saint Vincent and the Grenadines"
+      ],
+      "topic": "الكاريبي",
+      "difficultyTarget": 0.15,
+      "verified": true,
+      "sourceUrl": "https://foreign.gov.vc/foreign/index.php/the-national-flag",
+      "media": {
+        "src": "flags-1000-904.webp",
+        "type": "image",
+        "title": "علم دولة — رسم توضيحي",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-1000-904.json"
+        }
+      }
+    },
+    {
+      "p": 1000,
+      "q": "ما الدولة صاحبة العلم المؤلف من أشرطة أفقية خضراء وبيضاء وزرقاء؟",
+      "a": "سيراليون",
+      "qid": "flags-1000-905",
+      "type": "image",
+      "effect": "none",
+      "alt": [
+        "Sierra Leone",
+        "جمهورية سيراليون"
+      ],
+      "topic": "أفريقيا الغربية",
+      "difficultyTarget": 0.15,
+      "verified": true,
+      "sourceUrl": "https://www.wipo.int/wipolex/en/legislation/details/20542",
+      "media": {
+        "src": "flags-1000-905.webp",
+        "type": "image",
+        "title": "علم دولة — رسم توضيحي",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-1000-905.json"
+        }
+      }
+    },
+    {
+      "p": 1000,
+      "q": "ما الدولة التي يفصل الأبيض في علمها بين الأشرطة الحمراء والزرقاء والخضراء؟",
+      "a": "غامبيا",
+      "qid": "flags-1000-906",
+      "type": "image",
+      "effect": "none",
+      "alt": [
+        "The Gambia",
+        "Gambia",
+        "جمهورية غامبيا"
+      ],
+      "topic": "أفريقيا الغربية",
+      "difficultyTarget": 0.15,
+      "verified": true,
+      "sourceUrl": "https://www.wipo.int/wipolex/en/text/221243",
+      "media": {
+        "src": "flags-1000-906.webp",
+        "type": "image",
+        "title": "علم دولة — رسم توضيحي",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-1000-906.json"
+        }
+      }
+    },
+    {
+      "p": 1000,
+      "q": "ما الدولة صاحبة هذا العلم ذي النجمة الصفراء وسط شريط أحمر، مع أشرطة خضراء وبيضاء؟",
+      "a": "سورينام",
+      "qid": "flags-1000-907",
+      "type": "image",
+      "effect": "none",
+      "alt": [
+        "Suriname",
+        "Surinam",
+        "جمهورية سورينام"
+      ],
+      "topic": "أمريكا الجنوبية",
+      "difficultyTarget": 0.15,
+      "verified": true,
+      "sourceUrl": "https://gov.sr/suriname/",
+      "media": {
+        "src": "flags-1000-907.webp",
+        "type": "image",
+        "title": "علم دولة — رسم توضيحي",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-1000-907.json"
+        }
+      }
+    },
+    {
+      "p": 1000,
+      "q": "ما الدولة صاحبة هذا العلم الذي يظهر فيه رأس سهم ذهبي ومثلث أحمر على خلفية خضراء؟",
+      "a": "غيانا",
+      "qid": "flags-1000-908",
+      "type": "image",
+      "effect": "none",
+      "alt": [
+        "Guyana",
+        "جمهورية غيانا التعاونية"
+      ],
+      "topic": "أمريكا الجنوبية",
+      "difficultyTarget": 0.15,
+      "verified": true,
+      "sourceUrl": "https://www.education.gov.gy/web2/index.php/students-resources/secondary-school-resources/grade7/grade7-worksheets/grade-7-worksheets-social-studies/2977-grade-7-social-studies-week-6-lesson-1/file",
+      "media": {
+        "src": "flags-1000-908.webp",
+        "type": "image",
+        "title": "علم دولة — رسم توضيحي",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/flags-1000-908.json"
+        }
+      }
+    }
+  ]
+}

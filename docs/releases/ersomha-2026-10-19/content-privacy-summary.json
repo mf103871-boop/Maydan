@@ -1,0 +1,261 @@
+{
+  "schemaVersion": 1,
+  "kind": "ersomha-content-privacy",
+  "runId": "fd99e8ce-f93e-4499-8f27-ffb376c20a6f",
+  "startedAt": "2026-10-18T22:36:45.428Z",
+  "passed": true,
+  "checks": [
+    {
+      "name": "independent-1200-concepts",
+      "passed": true,
+      "evidence": {
+        "assertions": [
+          "all 1200 rows have content-bound independent agent editorial reasons without claiming a player trial",
+          "an editorial content edit invalidates the old review fingerprint"
+        ],
+        "unitOutputSHA256": "3279cd662f14f5db652e936929662b114fa8fb75ed2dec4fb4ba7f257cec8138"
+      }
+    },
+    {
+      "name": "private-bank-not-in-browser-bundle",
+      "passed": true,
+      "evidence": {
+        "browserBundleSHA256": "2fe45e2f423d2594053680b3e5285cd0e05feda49436a545ecb404ee098636b1",
+        "inputCount": 319
+      }
+    },
+    {
+      "name": "secret-choices-and-answer-not-broadcast",
+      "passed": true,
+      "evidence": {
+        "assertions": [
+          "only the drawer receives choices/word, never future answers, aliases or account identifiers",
+          "drawing evidence is private to frozen viewers, survives the next turn and contains no word or guess history"
+        ],
+        "unitOutputSHA256": "3279cd662f14f5db652e936929662b114fa8fb75ed2dec4fb4ba7f257cec8138"
+      }
+    },
+    {
+      "name": "report-evidence-authorized-only",
+      "passed": true,
+      "evidence": {
+        "assertions": [
+          "failed evidence authorization and failed D1 transaction cannot leave a report",
+          "authenticated report and moderator evidence remain private and clear on account deletion",
+          "private evidence strips answers, accounts, guesses and unknown stroke metadata"
+        ],
+        "unitOutputSHA256": "3279cd662f14f5db652e936929662b114fa8fb75ed2dec4fb4ba7f257cec8138"
+      }
+    },
+    {
+      "name": "report-retention-and-account-deletion",
+      "passed": true,
+      "evidence": {
+        "assertions": [
+          "reported drawing retention follows the parent report rather than retaining orphan evidence",
+          "a fresh room preserves account history after release, and account deletion removes only its private records",
+          "account deletion racing an exposure cannot resurrect history or partially expose the remaining players"
+        ],
+        "unitOutputSHA256": "3279cd662f14f5db652e936929662b114fa8fb75ed2dec4fb4ba7f257cec8138"
+      }
+    },
+    {
+      "name": "drawing-microphone-privacy",
+      "passed": true,
+      "evidence": {
+        "assertions": [
+          "only the drawer sees word choices; native mute readiness shields all private content"
+        ],
+        "microphoneReceiptSHA256": "4211c3820e1e95bef2cadb885f1db14373eb6204645ed5788e4b677bd5f0e04e"
+      }
+    }
+  ],
+  "scope": "Local compilation and automated private-state/D1 tests plus Chromium/WebKit microphone UI fixture; external media is simulated. No remote writes, actual LiveKit media, physical iPhone performance or human player trial is claimed.",
+  "physicalDeviceTrialCompleted": false,
+  "stage": "complete",
+  "sourceCommit": "f23033d5364b6cdda1df851ed2aa9ee9bdbb69ba",
+  "sourceServerTree": "4e7c95a26cd68045ef7a503699ec86c4178e45d5",
+  "backendTreeSha256": "536dce48ccfa8eda40f0b8e03602f8e1d7bafef55710781d7f0df0a2c9ef90e1",
+  "browser": {
+    "inputCount": 319,
+    "bundleSHA256": "2fe45e2f423d2594053680b3e5285cd0e05feda49436a545ecb404ee098636b1",
+    "bytes": 3540065,
+    "scannedConcepts": 1200,
+    "privateBankDependencyCount": 0,
+    "embeddedConceptIds": 0,
+    "embeddedVisualClues": 0,
+    "metafilePath": "browser-metafile-fd99e8ce-f93e-4499-8f27-ffb376c20a6f.json",
+    "metafileSHA256": "d0ec8e2e6be68825bc6097ff20f5dcdfd8f53c2e93b7dcf5ee39a9f51145eb6f",
+    "virtualInputs": {
+      "<define:__MAYDAN_MEDIA_VERSIONS__>": {
+        "define": "__MAYDAN_MEDIA_VERSIONS__",
+        "sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "bytes": 2
+      }
+    }
+  },
+  "testedModuleSHA256": "c0a75e11239707201fd3fd69fbd3f7787668dd1a1365a959aa1246b4523d858b",
+  "unit": {
+    "tests": 59,
+    "passed": 59,
+    "failed": 0,
+    "skipped": 0,
+    "stdoutSHA256": "3279cd662f14f5db652e936929662b114fa8fb75ed2dec4fb4ba7f257cec8138",
+    "requiredAssertions": [
+      "all 1200 rows have content-bound independent agent editorial reasons without claiming a player trial",
+      "an editorial content edit invalidates the old review fingerprint",
+      "only the drawer receives choices/word, never future answers, aliases or account identifiers",
+      "drawing evidence is private to frozen viewers, survives the next turn and contains no word or guess history",
+      "failed evidence authorization and failed D1 transaction cannot leave a report",
+      "authenticated report and moderator evidence remain private and clear on account deletion",
+      "private evidence strips answers, accounts, guesses and unknown stroke metadata",
+      "reported drawing retention follows the parent report rather than retaining orphan evidence",
+      "a fresh room preserves account history after release, and account deletion removes only its private records",
+      "account deletion racing an exposure cannot resurrect history or partially expose the remaining players",
+      "only the drawer sees word choices; native mute readiness shields all private content"
+    ],
+    "outputPath": "privacy-unit-fd99e8ce-f93e-4499-8f27-ffb376c20a6f.tap"
+  },
+  "microphone": {
+    "engines": [
+      "chromium",
+      "webkit"
+    ],
+    "completedDrawingTurnsPerEngine": 2,
+    "actualLiveKitMedia": false,
+    "physicalDeviceTrialCompleted": false,
+    "drawerMutedBeforeWord": true,
+    "manualUnmuteDenied": true,
+    "microphoneNeverAutoReopened": true,
+    "sameCallPreserved": true,
+    "receiptSHA256": "4211c3820e1e95bef2cadb885f1db14373eb6204645ed5788e4b677bd5f0e04e",
+    "receiptPath": "microphone-fd99e8ce-f93e-4499-8f27-ffb376c20a6f/execution-receipt.json",
+    "summarySHA256": "96e84cf4eb4f0562917cb7ec6d31cef813c240d6bdb12c6adacaf44e0828a8e5"
+  },
+  "finishedAt": "2026-10-18T22:37:33.106Z",
+  "fullReportSHA256": "90bb976cfb5935138f7d025512f67df719125f4625af174c78b30769779635e2",
+  "editorial": {
+    "validation": {
+      "ok": true,
+      "errors": [],
+      "warnings": [],
+      "total": 1200,
+      "tiers": {
+        "easy": 360,
+        "medium": 600,
+        "hard": 240
+      },
+      "categories": {
+        "animals": {
+          "label": "الحيوانات",
+          "total": 100,
+          "easy": 36,
+          "medium": 59,
+          "hard": 5
+        },
+        "nature": {
+          "label": "الطبيعة",
+          "total": 100,
+          "easy": 30,
+          "medium": 47,
+          "hard": 23
+        },
+        "food": {
+          "label": "الأطعمة",
+          "total": 100,
+          "easy": 33,
+          "medium": 55,
+          "hard": 12
+        },
+        "home": {
+          "label": "المنزل",
+          "total": 100,
+          "easy": 34,
+          "medium": 57,
+          "hard": 9
+        },
+        "places": {
+          "label": "الأماكن",
+          "total": 100,
+          "easy": 30,
+          "medium": 45,
+          "hard": 25
+        },
+        "jobs": {
+          "label": "المهن",
+          "total": 100,
+          "easy": 30,
+          "medium": 51,
+          "hard": 19
+        },
+        "sports": {
+          "label": "الرياضة",
+          "total": 100,
+          "easy": 26,
+          "medium": 58,
+          "hard": 16
+        },
+        "transport": {
+          "label": "المواصلات",
+          "total": 100,
+          "easy": 30,
+          "medium": 50,
+          "hard": 20
+        },
+        "technology": {
+          "label": "التقنية",
+          "total": 100,
+          "easy": 32,
+          "medium": 47,
+          "hard": 21
+        },
+        "actions": {
+          "label": "الأفعال",
+          "total": 100,
+          "easy": 31,
+          "medium": 62,
+          "hard": 7
+        },
+        "situations": {
+          "label": "المواقف الطريفة",
+          "total": 100,
+          "easy": 30,
+          "medium": 35,
+          "hard": 35
+        },
+        "expressions": {
+          "label": "التعابير العربية",
+          "total": 100,
+          "easy": 18,
+          "medium": 34,
+          "hard": 48
+        }
+      },
+      "uniqueFamilies": 1109,
+      "relatedFamilies": 62,
+      "normalizedAcceptedAnswers": 2513,
+      "reviewedLexicalOverlaps": [
+        {
+          "conceptIds": [
+            "ers-nature-018",
+            "ers-food-046"
+          ],
+          "normalizedTextSha256": "6464a0f9e3bbf6a6b3421b411062cbef6fbf655d15a6e3b621d166665fcc862c",
+          "reasonCode": "reviewed-distinct-senses"
+        },
+        {
+          "conceptIds": [
+            "ers-places-001",
+            "ers-jobs-003"
+          ],
+          "normalizedTextSha256": "b0b3027c46f634ed2a10f1ef57b418e19bb1703652441b3f9e055b29f2e1e90b",
+          "reasonCode": "reviewed-distinct-senses"
+        }
+      ],
+      "independentPending": 0
+    },
+    "entries": 1200,
+    "physicalPlaytest": false
+  },
+  "sourceInputsCount": 408
+}

@@ -40,7 +40,7 @@ function mapError(status, bodyCode) {
 // request(path, { method, body, token, timeout, raw })
 // raw: يعيد الاستجابة كما هي بلا تحليل JSON (للردود 204).
 // onSession: يُنادى بالرمز الجديد حين يدوّر الخادم الجلسة (حتى مع خطأ).
-export async function request(path, { method = 'GET', body, token, timeout = DEFAULT_TIMEOUT, raw = false, onSession, fetchImpl, server } = {}) {
+export async function request(path, { method = 'GET', body, token, timeout = DEFAULT_TIMEOUT, raw = false, responseType = 'json', onSession, fetchImpl, server } = {}) {
   const base = server === undefined ? resolveAccountServer() : server;
   if (!base) throw new ClientError('OFFLINE');
   const doFetch = fetchImpl || (typeof fetch === 'function' ? fetch : null);
@@ -50,33 +50,38 @@ export async function request(path, { method = 'GET', body, token, timeout = DEF
   let response;
   try {
     const headers = {};
-    if (body !== undefined) headers['content-type'] = 'application/json';
+    const multipart = typeof FormData !== 'undefined' && body instanceof FormData;
+    // Fetch owns multipart boundaries. Audio bytes need not become base64 JSON.
+    if (body !== undefined && !multipart) headers['content-type'] = 'application/json';
     if (token) headers.authorization = `Bearer ${token}`;
     response = await doFetch(`${base}${path}`, {
       method,
       headers,
-      body: body === undefined ? undefined : JSON.stringify(body),
+      body: body === undefined ? undefined : multipart ? body : JSON.stringify(body),
       signal: controller ? controller.signal : undefined,
       credentials: 'omit',
       cache: 'no-store',
     });
+    const rotated = readRotatedSession(response);
+    if (rotated && onSession) { try { onSession(rotated); } catch (error) { /* المستدعي مسؤول */ } }
+    if (raw) {
+      if (!response.ok) throw new ClientError(mapError(response.status, null));
+      return response;
+    }
+    // Keep the abort deadline through body consumption. Receiving HTTP headers
+    // alone must not leave a stalled JSON/audio download pending indefinitely.
+    if (response.ok && responseType === 'blob') return await response.blob();
+    let payload = null;
+    if (response.status !== 204) { try { payload = await response.json(); } catch (error) { payload = null; } }
+    if (!response.ok) throw new ClientError(mapError(response.status, payload && payload.error));
+    if (response.status === 204) return null;
+    if (payload === null) throw new ClientError('NETWORK');
+    return payload;
   } catch (error) {
     throw error instanceof ClientError ? error : new ClientError('NETWORK');
   } finally {
     if (timer) clearTimeout(timer);
   }
-  const rotated = readRotatedSession(response);
-  if (rotated && onSession) { try { onSession(rotated); } catch (error) { /* المستدعي مسؤول */ } }
-  if (raw) {
-    if (!response.ok) throw new ClientError(mapError(response.status, null));
-    return response;
-  }
-  let payload = null;
-  if (response.status !== 204) { try { payload = await response.json(); } catch (error) { payload = null; } }
-  if (!response.ok) throw new ClientError(mapError(response.status, payload && payload.error));
-  if (response.status === 204) return null;
-  if (payload === null) throw new ClientError('NETWORK');
-  return payload;
 }
 
 // ── نداءات المسارات (كلها تمرّر options إلى request) ───────────────────────

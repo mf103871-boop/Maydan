@@ -1,0 +1,79 @@
+{
+  "pack": "spotdiff",
+  "oldQid": "spotdiff-200-908",
+  "side": "b",
+  "createdAt": "2026-10-08",
+  "kind": "ai-generated",
+  "tool": "OpenAI image generation (built-in)",
+  "mode": "edit",
+  "prompt": "Use case: precise-object-edit. Asset type: B photo for a mobile spot-the-difference puzzle. Input image is the EXACT A photo to edit, not general inspiration. Output ONE landscape 4:3 image matching original framing. Make exactly ONE semantic difference. Change ONLY the single central silver latch on the front of the ORANGE toolbox from CLOSED to UNCLIPPED OPEN. Its hinged silver upper clasp should be flipped upward, visibly clear of the lower receiver, which remains attached at its existing position. Toolbox LID remains FULLY CLOSED, exactly in its original position with original seam. The open clasp occupies only the latch region near x=63%, y=44% (including a little directly above it), not any other part. Keep the toolbox ORANGE and its black carrying handle unchanged. Preserve hammer, wrench, bench, wall, scratches, framing, all shadows and other shapes. No missing or extra tools.\nSTRICT: copy original photo everywhere outside the specified object change; preserve original colors, object counts, backgrounds, textures and composition. No global repaint, color swap, crop, camera move, extra decorative details, text, border, watermark or marks. The changed feature must be clear at 175 px image width.",
+  "asset": "media/spotdiff/spotdiff-200-908-b-q20261008.webp",
+  "sha256": "8755e72c20ba65b4bd0a4462832644d89436db77a03cd27eb908d9bfcebe9589",
+  "inputSHA": "38c04ca5f4ae9646689927773bcdc9452670ed14be1cba9368c0182b43aa341f",
+  "outputSHA": "8755e72c20ba65b4bd0a4462832644d89436db77a03cd27eb908d9bfcebe9589",
+  "rawOutputSHA": "efc0fdfe8eb57c420889b08553a004e9389bbed243c934705602bd4fae8d6898",
+  "rawGeneratedFile": "exec-22b0ecb8-dec9-4cbc-9d35-877a54749c3f.png",
+  "bytes": 73328,
+  "width": 1280,
+  "height": 960,
+  "inputImages": [
+    {
+      "file": "media/spotdiff/spotdiff-200-908-a.webp",
+      "sha256": "38c04ca5f4ae9646689927773bcdc9452670ed14be1cba9368c0182b43aa341f"
+    }
+  ],
+  "diff": {
+    "description": "The central silver toolbox clasp is unlatched and flipped upward while the orange lid remains shut.",
+    "answer": "قفل صندوق الأدوات أصبح مفتوحًا",
+    "spot": {
+      "x": 63,
+      "y": 44,
+      "r": 10
+    },
+    "coordinates": "x is measured from physical left; y from top; r is a percentage of image width"
+  },
+  "invariants": [
+    "orange toolbox and shut lid seam",
+    "black carry handle",
+    "hammer and wrench",
+    "lower fixed latch receiver",
+    "grey bench and wall",
+    "camera framing and colors"
+  ],
+  "review": {
+    "status": "phone-size-reviewed",
+    "originalCompared": true,
+    "oldAAndOldBViewed": true,
+    "semanticDifferenceCount": 1,
+    "invariantsReviewed": [
+      "orange toolbox and shut lid seam",
+      "black carry handle",
+      "hammer and wrench",
+      "lower fixed latch receiver",
+      "grey bench and wall",
+      "camera framing and colors"
+    ],
+    "displayedEffect": "Unfiltered original A and edited B side-by-side; physical-left reveal circle only",
+    "mobileDeviceQA": false,
+    "limitation": "AI re-encoding produces minor texture variation. Review checks one meaningful object difference, preserved counts, colors and geometry; exact outside-region pixel identity is not claimed.",
+    "reviewedAt": "2026-10-12",
+    "reviewer": "finish_spotdiff",
+    "imageWidthCSS": 173,
+    "evidence": "docs/bank/quality-2026-10-08/preview/spotdiff-02.png"
+  },
+  "mobileQA": {
+    "method": "Viewed rendered pairs at 175px per image and vertically stacked originals at 359px width, then viewed circles over both A and B.",
+    "sideBySideImageWidth": 175,
+    "stackedImageWidth": 359,
+    "differenceVisible": true,
+    "circleEnclosesDifferenceInBothImages": true,
+    "physicalLeftCoordinates": true,
+    "deviceTested": false,
+    "artifacts": [
+      ".cache/badeeha-quality/spotdiff-eight-qa/spotdiff-200-908-175.png",
+      ".cache/badeeha-quality/spotdiff-eight-qa/spotdiff-200-908-359.png",
+      ".cache/badeeha-quality/spotdiff-eight-qa/spotdiff-200-908-circle175.png"
+    ]
+  },
+  "packaging": "Uniform landscape resize to 1280x960 and WebP quality 85 only; all scene changes made by built-in imagegen. Original A unchanged."
+}

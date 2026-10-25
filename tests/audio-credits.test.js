@@ -15,7 +15,9 @@ const cues = read('provenance.json'), music = read('music/provenance.json'), reg
 
 test('audio-credits.js is generated from provenance and every attribution license is listed', () => {
   const credits = buildCredits(cues, music, registry);
-  assert.equal(readFileSync(path.join(root, 'src/shared/fx/audio-credits.js'), 'utf8'), renderCredits(credits), 'run node scripts/audio/credits.mjs');
+  // Git may check text out with CRLF on Windows; generated content is otherwise exact.
+  const lf = (text) => text.replaceAll('\r\n', '\n');
+  assert.equal(lf(readFileSync(path.join(root, 'src/shared/fx/audio-credits.js'), 'utf8')), lf(renderCredits(credits)), 'run node scripts/audio/credits.mjs');
   assert.deepEqual(AUDIO_CREDITS, credits);
   const sourced = [...Object.entries(cues.cues), ...Object.entries(music.tracks)].filter(([, info]) => info.source);
   assert.equal(credits.sources.reduce((n, s) => n + s.items, 0), sourced.length);

@@ -20,7 +20,7 @@ export function ResumeCountdown({ resuming }) {
   );
 }
 
-export function Timer({ timer, size = 140, label = 'ثانية', accent = '#F5B82E' }) {
+export function Timer({ timer, size = 140, label = 'ثانية', accent = '#F5B82E', ...rest }) {
   const { left, total, running, paused, resuming } = timer;
   const fraction = total > 0 ? left / total : 0;
   const danger = left <= 5 && left > 0 && running;
@@ -31,7 +31,7 @@ export function Timer({ timer, size = 140, label = 'ثانية', accent = '#F5B8
 
   // role/aria-live على الأصل الثابت؛ الرقم وحده يُعاد تركيبه (key) في ثواني الخطر ليُلكم كل ثانية.
   return (
-    <div className={`timer ${danger ? 'is-danger' : ''} ${paused ? 'is-paused' : ''}`} role="timer" aria-live={left <= 5 ? 'assertive' : 'off'} aria-label={`${left} ${label}`}>
+    <div {...rest} className={`timer ${danger ? 'is-danger' : ''} ${paused ? 'is-paused' : ''}`} role="timer" aria-live={left <= 5 ? 'assertive' : 'off'} aria-label={`${left} ${label}`}>
       <ProgressRing value={left} max={total} size={size} color={color}>
         <div className="center">
           <div className="timer-num" dir="ltr" key={danger ? left : 'n'}>{left}</div>

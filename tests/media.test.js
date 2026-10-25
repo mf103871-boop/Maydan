@@ -16,7 +16,7 @@ import { mediaRefs, checkMedia, copyMedia } from '../scripts/media.mjs';
 
 test('resolveMedia: المرجع القصير يكمله مجلد الحزمة', () => {
   assert.equal(resolveMedia('pepsi.webp', 'logos'), 'media/logos/pepsi.webp');
-  assert.equal(resolveMedia('/pepsi.webp', 'logos'), 'media/logos/pepsi.webp', 'الشرطة البادئة تُزال');
+  assert.equal(resolveMedia('/pepsi.webp', 'logos'), '/pepsi.webp', 'المسار من أصل الموقع لا يُلحق باسم الحزمة');
   assert.equal(resolveMedia('  pepsi.webp  ', 'logos'), 'media/logos/pepsi.webp');
   assert.equal(resolveMedia('media/other/x.webp', 'logos'), 'media/other/x.webp', 'مسار كامل يُترك كما هو');
   assert.equal(resolveMedia('pepsi.webp', null), null, 'بلا حزمة لا يمكن إكمال المسار');

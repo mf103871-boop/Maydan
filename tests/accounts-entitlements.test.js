@@ -226,14 +226,30 @@ test('ترحيلات D1 جمل مستقلة بسطر واحد يقبلها exec'
   // Existing account identities may receive missing profile rows. OR IGNORE
   // preserves existing rows; no update/delete/upsert or other table is allowed.
   const allowed = statement => /^CREATE (TABLE|INDEX) IF NOT EXISTS /.test(statement) ||
+    // The additive Lamma protocol preserves every existing row and v1 column.
+    // Only these exact additions and concurrency indexes are approved here.
+    ["ALTER TABLE social_messages ADD COLUMN kind TEXT NOT NULL DEFAULT 'text';",
+      'ALTER TABLE social_messages ADD COLUMN attachment_id TEXT;',
+      'ALTER TABLE social_messages ADD COLUMN room_invite_id TEXT;',
+      // 0013: nullable creation identity; deletion clears the creator link only.
+      'ALTER TABLE social_groups ADD COLUMN creator_id TEXT REFERENCES users(id) ON DELETE SET NULL;',
+      'ALTER TABLE social_groups ADD COLUMN creation_client_id TEXT;',
+      'ALTER TABLE social_groups ADD COLUMN creation_hash TEXT;',
+      'CREATE UNIQUE INDEX IF NOT EXISTS social_groups_creation ON social_groups(creator_id,creation_client_id) WHERE creation_client_id IS NOT NULL;'].includes(statement) ||
+    /^CREATE UNIQUE INDEX IF NOT EXISTS social_(group_invites_pending|calls_open|call_one_active) /.test(statement) ||
     (/^INSERT OR IGNORE INTO (social_profiles|player_profiles)\(/.test(statement) &&
       !/\b(UPDATE|DELETE|REPLACE|DROP|ALTER)\b/i.test(statement)) ||
+    ["INSERT OR IGNORE INTO design_draft(id) VALUES('main');", "INSERT OR IGNORE INTO design_publication(id) VALUES('main');"].includes(statement) ||
     /^INSERT OR IGNORE INTO moderation_image_reviews\(id,user_id,kind,version,data_base64,width,height,byte_length,created_at\) SELECT 'legacy-' \|\| i\.user_id \|\| '-' \|\| i\.kind,i\.user_id,i\.kind,i\.version,i\.data_base64,i\.width,i\.height,i\.byte_length,i\.updated_at FROM player_images i JOIN users u ON u\.id=i\.user_id WHERE NOT EXISTS\(SELECT 1 FROM account_deletions d WHERE d\.user_id=i\.user_id\) AND NOT EXISTS\(SELECT 1 FROM moderation_image_approvals a WHERE a\.user_id=i\.user_id AND a\.kind=i\.kind AND a\.version=i\.version\);$/.test(statement);
   for (const unsafe of [
     'INSERT OR IGNORE INTO users(id) VALUES(1);',
     'INSERT OR REPLACE INTO player_profiles(user_id) VALUES(1);',
     'INSERT OR IGNORE INTO player_profiles(user_id) VALUES(1) ON CONFLICT(user_id) DO UPDATE SET bio=1;',
     'DELETE FROM player_profiles;',
+    'ALTER TABLE social_groups ADD COLUMN creator_id TEXT REFERENCES users(id) ON DELETE CASCADE;',
+    'ALTER TABLE social_groups ADD COLUMN creation_hash TEXT NOT NULL;',
+    'CREATE UNIQUE INDEX IF NOT EXISTS social_groups_creation ON social_groups(name);',
+    "INSERT OR IGNORE INTO design_draft(id,document_json) VALUES('main','unreviewed');",
   ]) assert.equal(allowed(unsafe), false, `جملة غير آمنة: ${unsafe}`);
   assert.ok(statements.length >= 10, 'الترحيل الأول ينشئ جداول الحسابات كلها');
   for (const statement of statements) {
@@ -246,7 +262,7 @@ test('ترحيلات D1 جمل مستقلة بسطر واحد يقبلها exec'
   }
   // معاملة آبل الواحدة لا تُربط بحسابين: المفتاح الأساسي يمنع ذلك.
   assert.ok(statements.some((s) => s.includes('subscriptions') && s.includes('PRIMARY KEY (source, external_id)')));
-  assert.ok(TRIAL_GAMES.length === 5);
+  assert.deepEqual(TRIAL_GAMES, ['beep', 'mamnoo', 'jabeen', 'fabraka', 'meenfina', 'ersomha']);
 });
 
 // بلا ربط D1 (قبل إنشاء القاعدة) ينشر العامل ويعمل: الحسابات 404 والغرف كما كانت.

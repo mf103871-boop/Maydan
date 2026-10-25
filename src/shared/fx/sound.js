@@ -1,5 +1,7 @@
 import { SAMPLE_BANK, SAMPLE_RATE } from './sample-bank.js';
 import { MUSIC_BANK } from './music-bank.js';
+import { SELECTED_AUDIO } from './selected-audio.js';
+import { createStreamingMusic } from './streaming-music.js';
 
 // Maydan's cue bank: sixteen mastered AAC files (scripts/audio/build.mjs), in-house
 // designs and cues from licensed libraries alike, all tuned to D so they sit inside the
@@ -27,6 +29,9 @@ const ALIASES = { open: 'whoosh', steal: 'correct', win: 'fanfare', start: 'coun
 const LATE_MS = { default: 1200, tick: 400, tickFast: 400, countdown: 400, countdownGo: 400, timeout: 400 };
 const lateFor = (name) => LATE_MS[name] ?? LATE_MS.default;
 const RESUME_TIMEOUT_MS = 1500;
+const RECOVERY_PROBE_MS = 300;
+const RECOVERY_SETTLE_MS = 200;
+const RECOVERY_VERIFY_MS = 500;
 const CUE_IDS = Object.keys(SAMPLE_BANK);
 // Every activation of a control sounds, without wiring each handler: a capture `click`
 // listener on document plays `data-sound` (default `click`) for anything matching
@@ -51,16 +56,32 @@ const MUSIC_BUFFERS = 3;
 // A sting that arrives this long after its moment (slow network) is dropped.
 const LATE_STING_MS = 2500;
 
-export function createSound({ enabled = true, volume = 0.75, music = true, musicVolume = 0.5 } = {}) {
+export function createSound({ enabled = true, volume = 0.75, music = true, musicVolume = 0.5, voice = false } = {}) {
   let on = !!enabled;
   let level = clampVolume(volume);
   let musicOn = !!music;
   let musicLevel = clampVolume(musicVolume, 0.5);
+  let responseOn = !!voice;
+  let responseToken = 0;
+  let responsePending = null;
+  let responseActive = null;
+  let responseLastAt = -Infinity;
+  const responseLast = new Map();
+  const responseEncoded = new Map(), responseFetches = new Map(), responseBuffers = new Map(), responseDecodes = new Map();
   let context = null;
   let master = null;
   let musicGain = null;
   let voiceContext = null;
   let attached = false;
+  let pageHidden = false;
+  let nativeHidden = false;
+  let interrupted = false;
+  let gestureRequired = false;
+  let hasRun = false;
+  let recoveryTimer = null;
+  let recoveryEpoch = 0;
+  let recoverySpent = false;
+  let pendingReset = false;
   // Every request and voice carries an ordinal and the wall-clock time it was asked for.
   // A full stop() voids everything asked for up to its ordinal; stop({ spare }) voids only
   // what was asked for before `spare` milliseconds ago, so a tap that changes the screen
@@ -69,10 +90,10 @@ export function createSound({ enabled = true, volume = 0.75, music = true, music
   let cutoffSeq = 0;
   let cutoffAt = 0;
   let ducked = false;
+  const duckOwners = new Set();
   let bankFetch = null;
   let bankDecode = null;
   let unlockWaiters = [];
-  let unlockTimer = null;
   const encoded = new Map();
   const fetches = new Map();
   const buffers = new Map();
@@ -99,7 +120,9 @@ export function createSound({ enabled = true, volume = 0.75, music = true, music
   const musicFetches = new Map();
   const musicBuffers = new Map();
   const musicDecodes = new Map();
-  const hidden = () => typeof document !== 'undefined' && document.hidden;
+  const streamedMusic = createStreamingMusic(SELECTED_AUDIO.music, { onFailure: () => syncMusic() });
+  const pageUnavailable = () => pageHidden || nativeHidden || (typeof document !== 'undefined' && document.hidden);
+  const hidden = () => pageUnavailable() || interrupted || gestureRequired;
   const canPlay = () => on && level > 0 && !hidden();
   const canPlayMusic = () => on && musicOn && musicLevel > 0 && !hidden();
   // Per cue when named, the whole bank otherwise.
@@ -118,7 +141,7 @@ export function createSound({ enabled = true, volume = 0.75, music = true, music
     try { master.gain.setTargetAtTime(gain, context.currentTime, 0.012); } catch { master.gain.value = gain; }
   }
   function duckFor(levelUnder, seconds) {
-    if (!playing && !sting) return;
+    if (!playing && !sting && !streamedMusic.current) return;
     duckLevel = Date.now() < duckUntil ? Math.min(duckLevel, levelUnder) : levelUnder;
     duckUntil = Math.max(duckUntil, Date.now() + seconds * 1000);
     musicMix(0.02);
@@ -131,10 +154,12 @@ export function createSound({ enabled = true, volume = 0.75, music = true, music
   function stop({ spare = 0 } = {}) {
     if (spare) {
       cutoffAt = Math.max(cutoffAt, Date.now() - spare);
+      if (responsePending && responsePending.at < cutoffAt) invalidateResponse();
       for (const voice of [...voices]) if (voice.at < cutoffAt) cutVoice(voice);
       return;
     }
     cutoffSeq = seq;
+    invalidateResponse();
     lastPlayed.clear(); lastVoice.clear(); tap.pending = null; tap.voice = null;
     for (const voice of [...voices]) cutVoice(voice);
   }
@@ -219,8 +244,8 @@ export function createSound({ enabled = true, volume = 0.75, music = true, music
     };
     return firstId && !buffers.has(firstId) ? decodeCue(c, firstId).then(all) : all();
   }
-  function sample(id, { at = 0, gain = 1, rate = 1, name = null, requested = Date.now(), ordinal = undefined } = {}) {
-    const buffer = buffers.get(id);
+  function sample(id, { at = 0, gain = 1, rate = 1, name = null, requested = Date.now(), ordinal = undefined, buffer: providedBuffer } = {}) {
+    const buffer = providedBuffer || buffers.get(id);
     if (!buffer) return null;
     const source = context.createBufferSource();
     source.buffer = buffer;
@@ -232,6 +257,77 @@ export function createSound({ enabled = true, volume = 0.75, music = true, music
     const voice = track(source, [source, voiceGain], { name, at: requested, ordinal, gain: voiceGain });
     source.start(context.currentTime + at);
     return voice;
+  }
+  function fetchResponse(entry) {
+    if (responseEncoded.has(entry.id)) return Promise.resolve(true);
+    if (responseFetches.has(entry.id)) return responseFetches.get(entry.id);
+    const controller = typeof AbortController === 'function' ? new AbortController() : null;
+    const task = boundedResponse(Promise.resolve().then(() => fetch(entry.url, controller ? { signal: controller.signal } : undefined)).then(async (result) => {
+      if (!result?.ok) return false;
+      return result.arrayBuffer();
+    }), 3500, () => controller?.abort()).then((data) => {
+      if (!data) return false;
+      responseEncoded.set(entry.id, data); return true;
+    }).catch(() => false);
+    responseFetches.set(entry.id, task);
+    void task.finally(() => responseFetches.delete(entry.id));
+    return task;
+  }
+  function loadResponse(c, entry) {
+    if (responseBuffers.has(entry.id)) return Promise.resolve(responseBuffers.get(entry.id));
+    if (responseDecodes.has(entry.id)) return responseDecodes.get(entry.id);
+    const task = fetchResponse(entry).then(async (ok) => {
+      if (!ok || c !== context) return null;
+      const buffer = await boundedResponse(decode(c, responseEncoded.get(entry.id).slice(0)), 1500);
+      if (!buffer || c !== context) return null;
+      responseBuffers.set(entry.id, buffer); return buffer;
+    }).catch(() => null);
+    responseDecodes.set(entry.id, task);
+    void task.finally(() => { if (responseDecodes.get(entry.id) === task) responseDecodes.delete(entry.id); });
+    return task;
+  }
+  function warmResponses(c) {
+    if (!responseOn || !c) return Promise.resolve();
+    return Promise.all(SELECTED_AUDIO.voices.map((entry) => loadResponse(c, entry)));
+  }
+  function boundedResponse(promise, milliseconds, onTimeout = () => {}) {
+    return new Promise((resolve) => {
+      let settled = false;
+      const finish = (value) => { if (settled) return; settled = true; clearTimeout(timer); resolve(value); };
+      const timer = setTimeout(() => { try { onTimeout(); } catch { /* cancelled */ } finish(null); }, milliseconds);
+      timer.unref?.();
+      Promise.resolve(promise).then(finish, () => finish(null));
+    });
+  }
+  function invalidateResponse() {
+    responseToken += 1;
+    clearTimeout(responsePending?.timer);
+    responsePending = null;
+  }
+  function speakResponse(event, c, at, ordinal) {
+    if (!responseOn || ducked || responsePending || (responseActive && voices.has(responseActive)) || Date.now() - responseLastAt < 1600) return;
+    const choices = SELECTED_AUDIO.voices.filter((entry) => entry.event === event && entry.id !== responseLast.get(event));
+    if (!choices.length) return;
+    const cached = choices.filter((entry) => responseBuffers.has(entry.id));
+    const available = cached.length ? cached : choices.filter((entry) => !responseDecodes.has(entry.id));
+    if (!available.length) return;
+    const entry = available[Math.floor(Math.random() * available.length)];
+    const token = responseToken;
+    const render = (buffer) => {
+      if (!buffer || token !== responseToken || c !== context || !responseOn || !canPlay() || ducked || voided(ordinal, at) || Date.now() - at > 500) return;
+      if (responseActive && voices.has(responseActive)) return;
+      responseLast.set(event, entry.id); responseLastAt = Date.now();
+      responseActive = sample(null, { name: 'spoken-response', buffer, requested: at, ordinal, gain: 0.95 });
+      duckFor(0.16, buffer.duration || entry.seconds);
+    };
+    if (responseBuffers.has(entry.id)) render(responseBuffers.get(entry.id));
+    else {
+      const pending = { at, timer: null };
+      responsePending = pending;
+      const clear = () => { clearTimeout(pending.timer); if (responsePending === pending) responsePending = null; };
+      pending.timer = setTimeout(clear, 500); pending.timer.unref?.();
+      void loadResponse(c, entry).then((buffer) => { if (responsePending === pending) render(buffer); }).finally(clear);
+    }
   }
   // Music files are large (a minute of stereo AAC each), so a track is fetched the first
   // time a screen asks for it and decoded once per context; decoded loops are kept for
@@ -315,6 +411,7 @@ export function createSound({ enabled = true, volume = 0.75, music = true, music
     clearTimeout(stingTimer); clearTimeout(duckTimer); duckUntil = 0;
     fadeOutVoice(playing, 0); fadeOutVoice(sting, 0);
     playing = null; sting = null;
+    streamedMusic.reset();
   }
   // Bring the sounding loop in line with what the screen wants: fade it out when music
   // is off or unwanted, keep it while merely hidden (the context suspends anyway), and
@@ -322,21 +419,32 @@ export function createSound({ enabled = true, volume = 0.75, music = true, music
   function syncMusic(tc) {
     musicMix(tc);
     if (!on || !musicOn || !musicLevel) {
+      streamedMusic.pause();
       if (playing) { fadeOutVoice(playing, 0.35); playing = null; }
       if (sting) { fadeOutVoice(sting, 0.35); sting = null; stingHold = 0; }
       musicToken += 1; stingToken += 1;
       return;
     }
-    if (hidden()) return;
+    if (hidden()) { streamedMusic.pause(); return; }
     if (!musicWanted) {
+      streamedMusic.pause({ clear: true });
       if (playing) { fadeOutVoice(playing, MUSIC_FADE_OUT); playing = null; }
       musicToken += 1;
       return;
     }
+    if (playing?.done) playing = null;
     if (playing?.id === musicWanted || Date.now() < stingHold) return;
     const id = musicWanted;
     const c = getContext();
     if (!c) return;
+    if (musicWanted !== 'finale' && streamedMusic.supported(c)) {
+      // A music-only route must also resume its Web Audio graph. Issue the call
+      // now, inside a possible gesture, without delaying media.play behind await.
+      void unlock();
+      if (playing) { fadeOutVoice(playing, MUSIC_FADE_OUT); playing = null; }
+      if (streamedMusic.play(c, musicGain, id)) return;
+    }
+    if (id === 'finale') streamedMusic.pause();
     const token = ++musicToken;
     void Promise.all([unlock(), loadTrack(c, id)]).then(([running, buffer]) => {
       if (!running || !buffer || token !== musicToken || c !== context || c.state !== 'running') return;
@@ -362,6 +470,7 @@ export function createSound({ enabled = true, volume = 0.75, music = true, music
       }
       if (sting) fadeOutVoice(sting, 0.2);
       if (playing) { fadeOutVoice(playing, 1); playing = null; }
+      streamedMusic.pause();
       const seconds = buffer.duration || MUSIC_BANK[id].seconds;
       const voice = musicVoice(c, id, buffer, { loop: false, fadeIn: 0 });
       sting = voice;
@@ -381,20 +490,35 @@ export function createSound({ enabled = true, volume = 0.75, music = true, music
   function settleUnlock() {
     const waiters = unlockWaiters;
     unlockWaiters = [];
-    clearTimeout(unlockTimer); unlockTimer = null;
     const ok = !!context && context.state === 'running';
-    for (const resolve of waiters) resolve(ok);
+    hasRun ||= ok;
+    for (const waiter of waiters) {
+      clearTimeout(waiter.timer);
+      waiter.resolve(ok && waiter.context === context);
+    }
   }
-  function onStateChange() {
-    if (context?.state === 'running') settleUnlock();
+  function onStateChange(c) {
+    if (c !== context) return;
+    if (c.state === 'closed') {
+      if (!recoverySpent && on && !hidden()) recoverAudio();
+      return;
+    }
+    if (recoverySpent && c.state !== 'running') { mix(); return; }
+    if (c.state === 'running') { hasRun = true; settleUnlock(); }
     mix(); syncMusic();
+    // A late suspend can finish after the foreground resume. Repair that race too,
+    // without recursively resuming every statechange or fighting an OS interruption.
+    if (c.state !== 'running' && on && !hidden() && hasRun) recoverAudio();
   }
   function getContext() {
+    if (pendingReset && on && !hidden()) return replaceContext();
     if (context && context.state !== 'closed') return context;
+    if (context && recoverySpent) return null;
     try {
       const AC = typeof window !== 'undefined' && (window.AudioContext || window.webkitAudioContext);
       if (!AC) return null;
-      stop(); haltMusic(); buffers.clear(); decodes.clear(); musicBuffers.clear(); musicDecodes.clear(); bankDecode = null; settleUnlock();
+      if (context) { context.onstatechange = null; recoverySpent = true; }
+      stop(); haltMusic(); buffers.clear(); decodes.clear(); musicBuffers.clear(); musicDecodes.clear(); responseBuffers.clear(); responseDecodes.clear(); bankDecode = null; settleUnlock();
       context = new AC({ latencyHint: 'interactive' });
       master = context.createGain();
       const compressor = context.createDynamicsCompressor();
@@ -415,7 +539,9 @@ export function createSound({ enabled = true, volume = 0.75, music = true, music
       master.gain.value = canPlay() ? level * level * (ducked ? 0.3 : 1) : 0;
       // iOS moves the context to "interrupted" during a call and back; resolve waiters
       // the moment it runs again instead of trusting a resume() promise that may never settle.
-      try { context.onstatechange = onStateChange; } catch { /* read-only in a fake */ }
+      const c = context;
+      hasRun ||= c.state === 'running';
+      try { c.onstatechange = () => onStateChange(c); } catch { /* read-only in a fake */ }
       return context;
     } catch {
       try { Promise.resolve(context?.close()).catch(() => {}); } catch { /* unavailable */ }
@@ -427,13 +553,25 @@ export function createSound({ enabled = true, volume = 0.75, music = true, music
   // or after RESUME_TIMEOUT_MS with the truth. WebKit only honours resume() issued inside a
   // user gesture, so every caller asks again rather than waiting on an earlier attempt.
   function unlock() {
+    if (hidden()) return Promise.resolve(false);
     const c = getContext();
     if (!c) return Promise.resolve(false);
-    if (c.state === 'running') return Promise.resolve(true);
+    if (c.state === 'running') { hasRun = true; return Promise.resolve(true); }
     try { Promise.resolve(c.resume()).then(() => { if (c === context && c.state === 'running') settleUnlock(); }, () => {}); } catch { /* unavailable */ }
     return new Promise((resolve) => {
-      unlockWaiters.push(resolve);
-      if (!unlockTimer) unlockTimer = setTimeout(settleUnlock, RESUME_TIMEOUT_MS);
+      // Startup may already have an unlock pending when the player first taps.
+      // Its nearly expired deadline must not cancel that fresh gesture's cue.
+      // Each request remains bounded without extending older requests forever.
+      const waiter = { context: c, resolve, timer: null };
+      waiter.timer = setTimeout(() => {
+        const index = unlockWaiters.indexOf(waiter);
+        if (index < 0) return;
+        unlockWaiters.splice(index, 1);
+        const ok = c === context && c.state === 'running';
+        hasRun ||= ok;
+        resolve(ok);
+      }, RESUME_TIMEOUT_MS);
+      unlockWaiters.push(waiter);
     });
   }
   // Resume and decode together; render only once the cue can actually sound.
@@ -443,23 +581,114 @@ export function createSound({ enabled = true, volume = 0.75, music = true, music
     const decoded = name ? decodeCue(c, CUE_SAMPLES[name]).then((ok) => { void decodeBank(c); return ok; }) : decodeBank(c);
     return Promise.all([unlock(), decoded]).then(([running, ok]) => running && ok && c === context);
   }
+  function cancelRecovery() {
+    recoveryEpoch += 1;
+    clearTimeout(recoveryTimer); recoveryTimer = null;
+  }
+  function replaceContext() {
+    const c = context;
+    pendingReset = false; recoverySpent = true;
+    // Retire the listener before close(): a queued event from the old graph must
+    // never rebuild a disposed bus or settle a newer graph's unlock waiters.
+    if (c) c.onstatechange = null;
+    stop(); haltMusic();
+    context = null; master = null; musicGain = null; voiceContext = null;
+    buffers.clear(); decodes.clear(); musicBuffers.clear(); musicDecodes.clear(); responseBuffers.clear(); responseDecodes.clear(); bankDecode = null;
+    settleUnlock();
+    try { Promise.resolve(c?.close()).catch(() => {}); } catch { /* already closed */ }
+    return getContext();
+  }
+  // WebKit can say "running" while its clock is frozen, or leave resume() pending
+  // forever after backgrounding. Probe actual progress, then try one suspend/resume
+  // cycle and at most one replacement. No polling loop, replay of old cues or changes
+  // to the player's sound/music settings. Encoded assets survive graph replacement.
+  function recoverAudio({ reset = false, renew = false } = {}) {
+    if (reset) pendingReset = true;
+    if (!on || hidden()) return;
+    if (renew && !recoveryTimer) recoverySpent = false;
+    if (recoverySpent && !pendingReset) return;
+    if (pendingReset) cancelRecovery();
+    const c = getContext();
+    if (!c) return;
+    void unlock(); mix(); syncMusic(0.4);
+    if (recoveryTimer || !hasRun || recoverySpent) return;
+    const epoch = recoveryEpoch;
+    const valid = () => epoch === recoveryEpoch && c === context && on && !hidden();
+    const advancing = (time) => c.state === 'running' && c.currentTime > time + 0.01;
+    const before = c.currentTime;
+    recoveryTimer = setTimeout(() => {
+      recoveryTimer = null;
+      if (!valid() || advancing(before)) return;
+      try { Promise.resolve(c.suspend()).catch(() => {}); } catch { /* unavailable */ }
+      recoveryTimer = setTimeout(() => {
+        recoveryTimer = null;
+        if (!valid()) return;
+        const retriedAt = c.currentTime;
+        void unlock();
+        recoveryTimer = setTimeout(() => {
+          recoveryTimer = null;
+          if (!valid() || advancing(retriedAt)) return;
+          const fresh = replaceContext();
+          if (fresh) { void decodeBank(fresh); void unlock(); mix(); syncMusic(0.4); }
+        }, RECOVERY_VERIFY_MS);
+      }, RECOVERY_SETTLE_MS);
+    }, RECOVERY_PROBE_MS);
+  }
+  function pauseAudio() {
+    cancelRecovery(); stop(); streamedMusic.pause(); mix();
+    try { Promise.resolve(context?.suspend()).catch(() => {}); } catch { /* unavailable */ }
+  }
   function onVisibility() {
     if (hidden()) {
-      stop(); mix();
-      try { Promise.resolve(context?.suspend()).catch(() => {}); } catch { /* unavailable */ }
+      pauseAudio();
     } else {
-      // Ask to run again (it works outside a gesture on most engines; a gesture will
-      // repeat the request otherwise) and let the music gain climb back with a short fade.
-      try { Promise.resolve(context?.resume()).then(() => { if (context?.state === 'running') settleUnlock(); }, () => {}); } catch { /* unavailable */ }
-      mix(); syncMusic(0.4);
+      recoverAudio({ renew: true });
+    }
+  }
+  function onPageHide() { pageHidden = true; pauseAudio(); }
+  function onPageShow() { pageHidden = false; onVisibility(); }
+  function onNativeAudio(event) {
+    const detail = event?.detail || {};
+    if (detail.state === 'background') { nativeHidden = true; pauseAudio(); }
+    else if (detail.state === 'foreground') { nativeHidden = false; pageHidden = false; gestureRequired ||= detail.shouldResume === false; onVisibility(); }
+    else if (detail.state === 'interruption-began') { interrupted = true; pauseAudio(); }
+    else if (detail.state === 'interruption-ended') {
+      interrupted = false; gestureRequired ||= detail.shouldResume === false;
+      onVisibility();
+    } else if (detail.state === 'media-reset') {
+      interrupted = false; gestureRequired ||= detail.shouldResume === false;
+      recoverAudio({ reset: true });
+    }
+    else if (detail.state === 'session-restored') {
+      if (detail.shouldResume === false) { gestureRequired = true; pauseAudio(); }
+      else {
+        // CallKit activation and an explicit native baseline restore need not be
+        // paired with interruption-ended. Native true confirms the OS session is
+        // available; any earlier sticky user-gesture hold still remains in force.
+        if (detail.shouldResume === true) interrupted = false;
+        recoverAudio({ renew: true });
+      }
     }
   }
   function onGesture() {
+    if (pageUnavailable() || interrupted || !on) return;
+    if (!recoveryTimer) recoverySpent = false;
+    const needsNativeActivation = gestureRequired;
+    gestureRequired = false;
+    if (needsNativeActivation) {
+      // A system interruption or unplugged headset can leave the shared iPhone
+      // session inactive. Only this explicit gesture may ask native to restore it;
+      // native still refuses while a call/recording or OS interruption owns audio.
+      try { window.webkit?.messageHandlers?.maydan?.postMessage({ type: 'gameAudioResume' }); } catch { /* web or older shell */ }
+    }
     const c = getContext();
     if (!c) return;
+    hasRun ||= c.state === 'running';
     if (c.state !== 'running') { try { Promise.resolve(c.resume()).then(() => { if (c === context && c.state === 'running') settleUnlock(); }, () => {}); } catch { /* unavailable */ } }
     void decodeBank(c);
-    syncMusic();
+    void warmResponses(c);
+    mix(); syncMusic();
+    if (c.state !== 'running') recoverAudio();
   }
   function tapTarget(event) {
     const target = event?.target;
@@ -493,21 +722,32 @@ export function createSound({ enabled = true, volume = 0.75, music = true, music
     attached = true;
     void fetchBank();
     const c = getContext();
-    if (c) void decodeBank(c);
+    if (c) { void decodeBank(c); void warmResponses(c); }
     for (const type of GESTURE_EVENTS) document.addEventListener(type, onGesture, type.startsWith('touch') ? { capture: true, passive: true } : true);
     document.addEventListener('click', onTap, true);
     document.addEventListener('visibilitychange', onVisibility);
+    window.addEventListener?.('pagehide', onPageHide);
+    window.addEventListener?.('pageshow', onPageShow);
+    window.addEventListener?.('focus', onVisibility);
+    window.addEventListener?.('maydan-audio-lifecycle', onNativeAudio);
   }
   function dispose() {
-    stop(); haltMusic(); buffers.clear(); decodes.clear(); musicBuffers.clear(); musicDecodes.clear(); bankDecode = null;
+    cancelRecovery();
+    stop(); haltMusic(); streamedMusic.dispose(); invalidateResponse();
+    buffers.clear(); decodes.clear(); musicBuffers.clear(); musicDecodes.clear(); responseBuffers.clear(); responseDecodes.clear(); responseEncoded.clear(); bankDecode = null;
     clearTimeout(tap.timer); tap.pending = null;
     if (attached) {
       for (const type of GESTURE_EVENTS) document.removeEventListener(type, onGesture, true);
       document.removeEventListener('click', onTap, true);
       document.removeEventListener('visibilitychange', onVisibility);
+      window.removeEventListener?.('pagehide', onPageHide);
+      window.removeEventListener?.('pageshow', onPageShow);
+      window.removeEventListener?.('focus', onVisibility);
+      window.removeEventListener?.('maydan-audio-lifecycle', onNativeAudio);
       attached = false;
     }
     const c = context;
+    if (c) c.onstatechange = null;
     context = null; master = null; musicGain = null; voiceContext = null; settleUnlock();
     try { Promise.resolve(c?.close()).catch(() => {}); } catch { /* already closed */ }
   }
@@ -558,7 +798,9 @@ export function createSound({ enabled = true, volume = 0.75, music = true, music
       lastPlayed.set(name, Date.now());
       if (DUCKS[name]) duckFor(DUCKS[name], SAMPLE_BANK[CUE_SAMPLES[name]].frames / SAMPLE_RATE);
       let voice = null;
-      try { voice = RECIPES[name](voiceContext, { name, requested: now, ordinal }); } catch { /* never break the game */ }
+      const underSpeech = responseOn && !ducked && (name === 'correct' || name === 'wrong');
+      try { voice = RECIPES[name](voiceContext, { name, requested: now, ordinal, gain: underSpeech ? 0.3 : 1 }); } catch { /* never break the game */ }
+      if (name === 'correct' || name === 'wrong') speakResponse(name, c, now, ordinal);
       if (source === 'tap') tap.voice = voice;
       return true;
     };
@@ -573,9 +815,23 @@ export function createSound({ enabled = true, volume = 0.75, music = true, music
     get enabled() { return on; },
     get volume() { return level; },
     get ready() { return ready(); },
-    enable(value) { on = !!value; if (!on) stop(); mix(); syncMusic(); },
+    enable(value) { on = !!value; if (!on) { cancelRecovery(); stop(); } else if (pendingReset) recoverAudio({ renew: true }); mix(); syncMusic(); },
     setVolume(value) { level = clampVolume(value); if (!level) stop(); mix(); },
-    setDucking(value) { ducked = !!value; mix(); },
+    setDucking(value, owner = 'question-media') {
+      if (value) duckOwners.add(owner); else duckOwners.delete(owner);
+      ducked = duckOwners.size > 0;
+      // Calls, recordings and question audio take priority over spoken feedback.
+      if (ducked) { invalidateResponse(); cutVoice(responseActive, 0.03); }
+      mix();
+    },
+    voice: {
+      enable(value) {
+        responseOn = !!value;
+        if (!responseOn) { invalidateResponse(); cutVoice(responseActive, 0.03); }
+        else void warmResponses(getContext());
+      },
+      get enabled() { return responseOn; },
+    },
     attach, dispose, stop, unlock, synth,
     names: [...Object.keys(RECIPES), ...Object.keys(ALIASES)],
     // Background music: `play(id)` names the track a screen wants (it starts on the next
@@ -596,7 +852,9 @@ export function createSound({ enabled = true, volume = 0.75, music = true, music
       setVolume(value) { musicLevel = clampVolume(value, 0.5); syncMusic(); },
       get enabled() { return musicOn; },
       get volume() { return musicLevel; },
-      get current() { return playing?.id ?? null; },
+      get current() { return streamedMusic.current ?? playing?.id ?? null; },
+      get transport() { return streamedMusic.current ? 'stream' : playing ? 'buffer' : null; },
+      get position() { return streamedMusic.position; },
       get wanted() { return musicWanted; },
       get stingId() { return sting?.id ?? null; },
       names: Object.keys(MUSIC_BANK),

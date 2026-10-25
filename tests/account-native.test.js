@@ -29,7 +29,7 @@ test('native-config: أصل https مطلق ومنتجا الاشتراك نفس�
 test('migrate.html يرسل كل localStorage عبر جسر maydan برسالة migrate', () => {
   const html = migrateHtml();
   assert.match(html, /localStorage\.key\(i\)/);
-  assert.match(html, /messageHandlers\.maydan\.postMessage\(\{ type: 'migrate', entries: entries \}\)/);
+  assert.match(html, /messageHandlers\.maydan\.postMessage\(\{ type: 'migrate', entries: entries, succeeded: succeeded \}\)/);
   assert.doesNotMatch(html, /maydan:/, 'لا ترشيح بالبادئة: كل مفاتيح الأصل القديم تنتقل');
   assert.match(swift['StorageMigration.swift'], /body\["type"\] as\? String == "migrate"/);
   assert.match(swift['StorageMigration.swift'], /localStorage\.getItem\(key\) === null/, 'الزرع لا يكتب فوق مفتاح موجود');
@@ -39,7 +39,11 @@ test('كل أمر يناديه الويب عبر callNative له حالة في G
   const commands = [...webAccount.matchAll(/callNative\('([a-zA-Z]+)'/g)].map((m) => m[1]);
   assert.ok(commands.length >= 6, `أوامر الويب: ${commands.join(', ')}`);
   for (const command of new Set(commands)) {
-    assert.match(swift['GameViewController.swift'], new RegExp(`case "${command}":`), `الغلاف لا يعرف الأمر ${command}`);
+    if (command.startsWith('social')) {
+      const delegated = swift['GameViewController.swift'].match(/let socialCommands: Set<String> = \[([\s\S]*?)\]/)?.[1] || '';
+      assert.ok(delegated.includes(`"${command}"`), `الأمر ${command} غير مسموح في الجسر`);
+      assert.match(swift['SocialCoordinator.swift'], new RegExp(`case "${command}":`), `الغلاف لا ينفذ الأمر ${command}`);
+    } else assert.match(swift['GameViewController.swift'], new RegExp(`case "${command}":`), `الغلاف لا يعرف الأمر ${command}`);
   }
   // الأوامر القديمة بلا وعد تبقى كما هي.
   for (const legacy of ['haptic', 'share']) assert.match(swift['GameViewController.swift'], new RegExp(`case "${legacy}":`));

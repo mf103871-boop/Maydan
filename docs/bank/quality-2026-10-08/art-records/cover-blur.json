@@ -1,0 +1,29 @@
+{
+  "id": "blur",
+  "kind": "cover",
+  "file": "public/media/badeeha-covers/blur.webp",
+  "style": "cinematic environmental photography",
+  "palette": "dark teal, amber, soft coral",
+  "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'وضّح شوي'. Landscape 4:3 artwork.\nMedium: cinematic environmental photography.\nIntentional palette: dark teal, amber, soft coral.\nScene: A rain-speckled glass pane partly obscures a luminous street scene, one sharp droplet in foreground, atmospheric focus contrast, no question subject.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-10-08",
+  "sourceImage": {
+    "name": "exec-2ecb02f1-34bc-4f6b-8888-0cb24c48ede9.png",
+    "sha256": "09bb53c5f96862b49ca374d788516db920ea210207dfbeb3dc7f4ef9a88b9391",
+    "width": 1448,
+    "height": 1086
+  },
+  "width": 640,
+  "height": 480,
+  "bytes": 73806,
+  "sha256": "e5c45d1e73298454a7fa67e7419e2fd7c9b58cfc441c750e73d31d127f6e44dd",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "phone-size-reviewed",
+    "date": "2026-10-08",
+    "reviewer": "root",
+    "width": 160,
+    "method": "shipped cover CSS; baseline and replacement side by side",
+    "evidence": "docs/bank/quality-2026-10-08/preview/covers-4.jpg"
+  }
+}

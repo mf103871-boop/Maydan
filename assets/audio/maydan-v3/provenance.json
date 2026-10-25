@@ -3,28 +3,50 @@
   "key": "D",
   "cues": {
     "click": {
-      "file": "audio/click-6fa408.m4a",
+      "file": "audio/click-053180.m4a",
       "master": "assets/audio/maydan-v3/click.wav",
-      "seconds": 0.25,
-      "frames": 12000,
-      "room": "room",
-      "targetTruePeakDb": -10,
+      "seconds": 0.13,
+      "frames": 6240,
+      "room": null,
+      "targetTruePeakDb": null,
       "measured": {
         "lufs": -70,
         "lra": 0,
-        "truePeak": -10,
-        "rmsPeak": -17.451868,
-        "rms": -19.769866,
-        "samplePeak": -10.070176
+        "truePeak": -5.1,
+        "rmsPeak": -29.120911,
+        "rms": -30.897883,
+        "samplePeak": -5.114141
       },
-      "masterSha256": "775fa4e7ad25c687b1a9c89c6975a79b670e9f1e575a446393435b94f4b7a829",
-      "encodedSha256": "6fa40842c402fa9bd911ad76283b0908b54c53fa207cc5708bf0c4f441a85ac1",
-      "encodedBytes": 6530,
-      "origin": "in-house",
+      "masterSha256": "262f2f9cc81729d5671b5e9d6cb4280a6ec56e482ee450e8f453a3f1df55a342",
+      "encodedSha256": "0531806c836bc01141c900dd622bee981b0f2f83b25bc51e4cf39fa758950781",
+      "encodedBytes": 5156,
+      "origin": "sourced",
       "decision": {
-        "kept": "in-house",
-        "reason": "best challenger dustyroom:DM-CGS-07 scored 92 vs 94 (needs ≥ 70 and ≥ baseline + 5)"
-      }
+        "kept": "owner-approved sound-lab recording",
+        "reason": "Same accepted export, no synthesized replacement"
+      },
+      "reviewedAsset": true,
+      "source": {
+        "id": "freesound-reviewed:physical-button",
+        "provider": "freesound-reviewed",
+        "title": "Button Click",
+        "author": "DeWildAshDev",
+        "sourcePage": "https://freesound.org/people/DeWildAshDev/sounds/858919/",
+        "license": "CC0 1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "licenseFile": "licenses/freesound-reviewed-cc0.txt",
+        "attribution": false,
+        "sourceSha256": "36426c52aab2aaec419b2fdc4768d5a00f1155711f3cf8dd6297a64a957748a8"
+      },
+      "encodedMeasured": {
+        "lufs": -70,
+        "lra": 0,
+        "truePeak": -5.6,
+        "rmsPeak": -29.543159,
+        "rms": -31.923043,
+        "samplePeak": -5.605521
+      },
+      "measurementNote": "Measured accepted artifact; no remaster toward the former synthesized cue target."
     },
     "pop": {
       "file": "audio/pop-abb9bf.m4a",
@@ -48,7 +70,7 @@
       "source": {
         "id": "dustyroom:DM-CGS-22",
         "provider": "dustyroom",
-        "providerName": "Dustyroom — Free Casual Game Sounds",
+        "providerName": "Dustyroom â€” Free Casual Game Sounds",
         "title": "DM-CGS-22",
         "author": "Dustyroom",
         "sourcePage": "https://dustyroom.com/free-casual-game-sounds/",
@@ -84,52 +106,96 @@
       }
     },
     "tick": {
-      "file": "audio/tick-844a01.m4a",
+      "file": "audio/tick-245bb8.m4a",
       "master": "assets/audio/maydan-v3/tick.wav",
-      "seconds": 0.09,
-      "frames": 4320,
+      "seconds": 0.14,
+      "frames": 6720,
       "room": null,
-      "targetTruePeakDb": -15,
+      "targetTruePeakDb": null,
       "measured": {
         "lufs": -70,
         "lra": 0,
-        "truePeak": -15,
-        "rmsPeak": -31.074265,
-        "rms": -30.103311,
-        "samplePeak": -15.010405
+        "truePeak": -3.4,
+        "rmsPeak": -20.104516,
+        "rms": -22.863585,
+        "samplePeak": -3.530517
       },
-      "masterSha256": "4c200fa0a8b131b1a711a8736ea20136716f9d44ffd3b00cf6f206ec96950677",
-      "encodedSha256": "844a01b1a023768b32fd7841fb510b9e6867d6d14d062a8fe51d8e00dd24779e",
-      "encodedBytes": 2450,
-      "origin": "in-house",
+      "masterSha256": "d608c698333508743d6702fe3e935901197d212b24edc31f562c387eea86c28a",
+      "encodedSha256": "245bb816cc7049f641cdb42306f3029a8a2058b8c6378dd294f4f40b0a827673",
+      "encodedBytes": 5878,
+      "origin": "sourced",
       "decision": {
-        "kept": "in-house",
-        "reason": "best challenger dustyroom:DM-CGS-34 scored 97 vs 97 (needs ≥ 70 and ≥ baseline + 5)"
-      }
+        "kept": "owner-approved real clock crop",
+        "reason": "Strong recorded clock used in accepted audition"
+      },
+      "reviewedAsset": true,
+      "source": {
+        "id": "freesound-reviewed:clock-tick-tock",
+        "provider": "freesound-reviewed",
+        "title": "Tick Tock Clock 01",
+        "author": "aglinder",
+        "sourcePage": "https://freesound.org/people/aglinder/sounds/265577/",
+        "license": "CC0 1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "licenseFile": "licenses/freesound-reviewed-cc0.txt",
+        "attribution": false,
+        "sourceSha256": "d1d04244b2ad8414209e3a3f780bff3e062784522aca251ecffabaddaf044feb"
+      },
+      "encodedMeasured": {
+        "lufs": -70,
+        "lra": 0,
+        "truePeak": -3.4,
+        "rmsPeak": -20.127961,
+        "rms": -23.168275,
+        "samplePeak": -3.548197
+      },
+      "measurementNote": "Measured accepted artifact; no remaster toward the former synthesized cue target."
     },
     "tickFast": {
-      "file": "audio/tick-fast-db1a19.m4a",
+      "file": "audio/tick-fast-b443e0.m4a",
       "master": "assets/audio/maydan-v3/tick-fast.wav",
-      "seconds": 0.09,
-      "frames": 4320,
+      "seconds": 0.165,
+      "frames": 7920,
       "room": null,
-      "targetTruePeakDb": -12,
+      "targetTruePeakDb": null,
       "measured": {
         "lufs": -70,
         "lra": 0,
-        "truePeak": -12,
-        "rmsPeak": -27.031279,
-        "rms": -26.116941,
-        "samplePeak": -11.973675
+        "truePeak": -3.5,
+        "rmsPeak": -21.784206,
+        "rms": -24.912276,
+        "samplePeak": -3.530517
       },
-      "masterSha256": "04c4a5756a42b47c4cf6be50976a0981db0ea9c2613f4a91d4df514b795e16e4",
-      "encodedSha256": "db1a19359ab22a7d1823e28c2fcc9f3496ee864deaaf7002657764a0f5be98d9",
-      "encodedBytes": 2743,
-      "origin": "in-house",
+      "masterSha256": "6a15ae9351a9b0c680db88dbdcae4d9dd7692689bab620a54c6932d380357a82",
+      "encodedSha256": "b443e0731060cf2fb9324c9627eefe73b74fd27df278c19140e4a108c8067cf7",
+      "encodedBytes": 6535,
+      "origin": "sourced",
       "decision": {
-        "kept": "in-house",
-        "reason": "best challenger dustyroom:DM-CGS-34 scored 98 vs 97 (needs ≥ 70 and ≥ baseline + 5)"
-      }
+        "kept": "owner-approved real clock crop",
+        "reason": "Strong recorded clock used in accepted audition"
+      },
+      "reviewedAsset": true,
+      "source": {
+        "id": "freesound-reviewed:clock-tick-tock",
+        "provider": "freesound-reviewed",
+        "title": "Tick Tock Clock 01",
+        "author": "aglinder",
+        "sourcePage": "https://freesound.org/people/aglinder/sounds/265577/",
+        "license": "CC0 1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "licenseFile": "licenses/freesound-reviewed-cc0.txt",
+        "attribution": false,
+        "sourceSha256": "d1d04244b2ad8414209e3a3f780bff3e062784522aca251ecffabaddaf044feb"
+      },
+      "encodedMeasured": {
+        "lufs": -70,
+        "lra": 0,
+        "truePeak": -3.5,
+        "rmsPeak": -21.804444,
+        "rms": -25.079847,
+        "samplePeak": -3.53297
+      },
+      "measurementNote": "Measured accepted artifact; no remaster toward the former synthesized cue target."
     },
     "countdown": {
       "file": "audio/countdown-b231c6.m4a",
@@ -152,7 +218,7 @@
       "origin": "in-house",
       "decision": {
         "kept": "in-house",
-        "reason": "best challenger dustyroom:DM-CGS-30 scored 95 vs 94 (needs ≥ 70 and ≥ baseline + 5)"
+        "reason": "best challenger dustyroom:DM-CGS-30 scored 95 vs 94 (needs â‰¥ 70 and â‰¥ baseline + 5)"
       }
     },
     "start": {
@@ -176,125 +242,100 @@
       "origin": "in-house",
       "decision": {
         "kept": "in-house",
-        "reason": "best challenger dustyroom:DM-CGS-30 scored 93 vs 93 (needs ≥ 70 and ≥ baseline + 5)"
+        "reason": "best challenger dustyroom:DM-CGS-30 scored 93 vs 93 (needs â‰¥ 70 and â‰¥ baseline + 5)"
       }
     },
     "correct": {
-      "file": "audio/correct-4958a5.m4a",
+      "file": "audio/correct-8e2774.m4a",
       "master": "assets/audio/maydan-v3/correct.wav",
-      "seconds": 0.3018,
-      "frames": 14486,
+      "seconds": 1.41,
+      "frames": 67680,
       "room": null,
-      "targetTruePeakDb": -6,
+      "targetTruePeakDb": null,
       "measured": {
-        "lufs": -70,
+        "lufs": -25.2,
         "lra": 0,
-        "truePeak": -5.9,
-        "rmsPeak": -18.489373,
-        "rms": -23.771048,
-        "samplePeak": -5.929062
+        "truePeak": -8.6,
+        "rmsPeak": -22.909724,
+        "rms": -30.246793,
+        "samplePeak": -8.635965
       },
-      "masterSha256": "b4a6142ce1ee4aa8635a0b6596b1b82103d43983b53937a8069aff350f622d47",
-      "encodedSha256": "4958a5292906d25481e551b0ad0cae3568d4657c845e254cd4b3a6688d19f220",
-      "encodedBytes": 7425,
+      "masterSha256": "d94d2afa02419851937d68092295976713c96f1c8c0832691ec26aabdd15d1fc",
+      "encodedSha256": "8e277402fef13ad82468d95aeab6307b5cad37e9d05dc2b57caa69a37501ecc0",
+      "encodedBytes": 25344,
       "origin": "sourced",
       "source": {
-        "id": "dustyroom:DM-CGS-46",
-        "provider": "dustyroom",
-        "providerName": "Dustyroom — Free Casual Game Sounds",
-        "title": "DM-CGS-46",
-        "author": "Dustyroom",
-        "sourcePage": "https://dustyroom.com/free-casual-game-sounds/",
-        "archiveUrl": "https://dustyroom.com/casualgamesounds/DM-CGS.zip",
-        "archiveSha256": "7ffc649a641a8b8ee0136d431b5dd69bcf9eeabc250a18285ad984ad09bd4a4f",
-        "path": "DM-CGS/WAV/DM-CGS-46.wav",
-        "originalSha256": "b7b1754f0bd236b6e63769cc960799fabd1d86113f8231f520aa33b10914f714",
-        "originalBytes": 100428,
-        "originalFormat": {
-          "codec": "pcm_s24le",
-          "sampleRate": 44100,
-          "bitDepth": 24,
-          "channels": 2,
-          "seconds": 0.36,
-          "kbps": 2116,
-          "lossy": false
-        },
-        "retrieved": "2026-09-27",
+        "id": "freesound-reviewed:desk-bell",
+        "provider": "freesound-reviewed",
+        "title": "220516 desk bell rings",
+        "author": "TRP",
+        "sourcePage": "https://freesound.org/people/TRP/sounds/717564/",
         "license": "CC0 1.0",
         "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
-        "licenseFile": "licenses/dustyroom-cc0.txt",
+        "licenseFile": "licenses/freesound-reviewed-cc0.txt",
         "attribution": false,
-        "modifications": [
-          "converted from pcm_s24le 44100 Hz stereo 24-bit to 48 kHz stereo PCM24 (soxr)",
-          "pitch shifted -1 semitones (rubberband) to sit on D",
-          "leading silence trimmed (0.059 s below -45 dBFS)",
-          "1 ms entry fade, 60 ms release fade",
-          "high-pass 80 Hz"
-        ],
-        "screening": {
-          "total": 94,
-          "baseline": 85,
-          "decision": "sourced"
-        }
-      }
+        "sourceSha256": "64aecf6f00ddfef41cb1e9a5680fbe66306dc19c191c684336579c68d4b0d20d"
+      },
+      "reviewedAsset": true,
+      "decision": {
+        "kept": "owner-approved sound-lab recording",
+        "reason": "Same accepted export, no synthesized replacement"
+      },
+      "encodedMeasured": {
+        "lufs": -25.3,
+        "lra": 0,
+        "truePeak": -8.6,
+        "rmsPeak": -22.921767,
+        "rms": -30.315209,
+        "samplePeak": -8.658654
+      },
+      "measurementNote": "Measured accepted artifact; no remaster toward the former synthesized cue target."
     },
     "wrong": {
-      "file": "audio/wrong-1a1155.m4a",
+      "file": "audio/wrong-3c4479.m4a",
       "master": "assets/audio/maydan-v3/wrong.wav",
-      "seconds": 0.2154,
-      "frames": 10338,
+      "seconds": 0.26,
+      "frames": 12480,
       "room": null,
-      "targetTruePeakDb": -7,
+      "targetTruePeakDb": null,
       "measured": {
         "lufs": -70,
         "lra": 0,
-        "truePeak": -7,
-        "rmsPeak": -14.736252,
-        "rms": -18.257081,
-        "samplePeak": -7.002647
+        "truePeak": -7.4,
+        "rmsPeak": -17.417204,
+        "rms": -21.174035,
+        "samplePeak": -7.42201
       },
-      "masterSha256": "69ceacffcacefa3aeb8a9a81a0040210c0605438b0897375a291e6688dcefa79",
-      "encodedSha256": "1a11550c094069043ffa6ae7051ebfd427dd557576e8fcef62a9df955f5cedc7",
-      "encodedBytes": 4014,
+      "masterSha256": "777dcff731b8f8a763663d9b14d9607d32a9106190f8c74d298efc801749ccb6",
+      "encodedSha256": "3c44791092f48d543597de43b4e15dae813df5e0e4f35f5889b4ca22b2cc7b61",
+      "encodedBytes": 7771,
       "origin": "sourced",
       "source": {
-        "id": "dustyroom:DM-CGS-03",
-        "provider": "dustyroom",
-        "providerName": "Dustyroom — Free Casual Game Sounds",
-        "title": "DM-CGS-03",
-        "author": "Dustyroom",
-        "sourcePage": "https://dustyroom.com/free-casual-game-sounds/",
-        "archiveUrl": "https://dustyroom.com/casualgamesounds/DM-CGS.zip",
-        "archiveSha256": "7ffc649a641a8b8ee0136d431b5dd69bcf9eeabc250a18285ad984ad09bd4a4f",
-        "path": "DM-CGS/WAV/DM-CGS-03.wav",
-        "originalSha256": "cb6febbba59dce8ef1bee80b48891c74280f26f34502ae4b70bb48b466394e8e",
-        "originalBytes": 61980,
-        "originalFormat": {
-          "codec": "pcm_s24le",
-          "sampleRate": 44100,
-          "bitDepth": 24,
-          "channels": 2,
-          "seconds": 0.22,
-          "kbps": 2116,
-          "lossy": false
-        },
-        "retrieved": "2026-09-27",
+        "id": "freesound-reviewed:wooden-thud",
+        "provider": "freesound-reviewed",
+        "title": "Wooden Thud (Mono)",
+        "author": "Breviceps",
+        "sourcePage": "https://freesound.org/people/Breviceps/sounds/449955/",
         "license": "CC0 1.0",
         "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
-        "licenseFile": "licenses/dustyroom-cc0.txt",
+        "licenseFile": "licenses/freesound-reviewed-cc0.txt",
         "attribution": false,
-        "modifications": [
-          "converted from pcm_s24le 44100 Hz stereo 24-bit to 48 kHz stereo PCM24 (soxr)",
-          "pitch shifted -1 semitones (rubberband) to sit on D",
-          "1 ms entry fade, 60 ms release fade",
-          "high-pass 80 Hz"
-        ],
-        "screening": {
-          "total": 96,
-          "baseline": 83,
-          "decision": "sourced"
-        }
-      }
+        "sourceSha256": "2a738e2ba4db9e897327401c611434c85aecc95f09e9429c253b12b86070f0d8"
+      },
+      "reviewedAsset": true,
+      "decision": {
+        "kept": "owner-approved sound-lab recording",
+        "reason": "Same accepted export, no synthesized replacement"
+      },
+      "encodedMeasured": {
+        "lufs": -70,
+        "lra": 0,
+        "truePeak": -7.4,
+        "rmsPeak": -17.413741,
+        "rms": -21.453743,
+        "samplePeak": -7.38815
+      },
+      "measurementNote": "Measured accepted artifact; no remaster toward the former synthesized cue target."
     },
     "buzzer": {
       "file": "audio/buzzer-7bed47.m4a",
@@ -318,7 +359,7 @@
       "source": {
         "id": "dustyroom:DM-CGS-27",
         "provider": "dustyroom",
-        "providerName": "Dustyroom — Free Casual Game Sounds",
+        "providerName": "Dustyroom â€” Free Casual Game Sounds",
         "title": "DM-CGS-27",
         "author": "Dustyroom",
         "sourcePage": "https://dustyroom.com/free-casual-game-sounds/",
@@ -376,7 +417,7 @@
       "source": {
         "id": "dustyroom:DM-CGS-23",
         "provider": "dustyroom",
-        "providerName": "Dustyroom — Free Casual Game Sounds",
+        "providerName": "Dustyroom â€” Free Casual Game Sounds",
         "title": "DM-CGS-23",
         "author": "Dustyroom",
         "sourcePage": "https://dustyroom.com/free-casual-game-sounds/",
@@ -435,7 +476,7 @@
       "source": {
         "id": "dustyroom:DM-CGS-08",
         "provider": "dustyroom",
-        "providerName": "Dustyroom — Free Casual Game Sounds",
+        "providerName": "Dustyroom â€” Free Casual Game Sounds",
         "title": "DM-CGS-08",
         "author": "Dustyroom",
         "sourcePage": "https://dustyroom.com/free-casual-game-sounds/",
@@ -491,32 +532,54 @@
       "origin": "in-house",
       "decision": {
         "kept": "in-house",
-        "reason": "best challenger dustyroom:DM-CGS-50 scored 91 vs 93 (needs ≥ 70 and ≥ baseline + 5)"
+        "reason": "best challenger dustyroom:DM-CGS-50 scored 91 vs 93 (needs â‰¥ 70 and â‰¥ baseline + 5)"
       }
     },
     "win": {
-      "file": "audio/win-77749b.m4a",
+      "file": "audio/win-b26622.m4a",
       "master": "assets/audio/maydan-v3/win.wav",
-      "seconds": 3.2,
-      "frames": 153600,
-      "room": "hall",
-      "targetTruePeakDb": -3,
+      "seconds": 3.06,
+      "frames": 146880,
+      "room": null,
+      "targetTruePeakDb": null,
       "measured": {
-        "lufs": -13.4,
-        "lra": 20.2,
-        "truePeak": -3.2,
-        "rmsPeak": -12.252357,
-        "rms": -17.973162,
-        "samplePeak": -3.243486
+        "lufs": -18.9,
+        "lra": 20,
+        "truePeak": -4.6,
+        "rmsPeak": -18.097113,
+        "rms": -23.969769,
+        "samplePeak": -4.553568
       },
-      "masterSha256": "aeac83dd4a6600529327f9ee8b4d170c36e1660bb7b89ed7821df19fd1302a6a",
-      "encodedSha256": "77749bc29a38dd93520a82e0541bf24c3d7dd7c2d19f5c07201b0f7118d28c74",
-      "encodedBytes": 66223,
-      "origin": "in-house",
+      "masterSha256": "b5b497e44af4a8203ad250bcc3d8ae96f2a9043ded564653c245de50d6c59652",
+      "encodedSha256": "b266224791371e7e014bfff6bda7b2710bb1e290db366d9f674005f70400ac5c",
+      "encodedBytes": 93623,
+      "origin": "sourced",
       "decision": {
-        "kept": "in-house",
-        "reason": "best challenger mixkit:269 scored 94 vs 93 (needs ≥ 70 and ≥ baseline + 5)"
-      }
+        "kept": "owner-approved sound-lab recording",
+        "reason": "Same accepted export, no synthesized replacement"
+      },
+      "reviewedAsset": true,
+      "source": {
+        "id": "freesound-reviewed:small-applause",
+        "provider": "freesound-reviewed",
+        "title": "Small applause",
+        "author": "Breviceps",
+        "sourcePage": "https://freesound.org/people/Breviceps/sounds/462362/",
+        "license": "CC0 1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "licenseFile": "licenses/freesound-reviewed-cc0.txt",
+        "attribution": false,
+        "sourceSha256": "fb567be6e69487fb40b4fdcdfd09366b934fed0d230064c3303fef8d507f9194"
+      },
+      "encodedMeasured": {
+        "lufs": -18.9,
+        "lra": 20,
+        "truePeak": -4.6,
+        "rmsPeak": -18.103121,
+        "rms": -24.000397,
+        "samplePeak": -4.565974
+      },
+      "measurementNote": "Measured accepted artifact; no remaster toward the former synthesized cue target."
     },
     "explosion": {
       "file": "audio/explosion-5c7ad4.m4a",
@@ -564,7 +627,7 @@
         "modifications": [
           "converted from pcm_s24le 44100 Hz stereo 24-bit to 48 kHz stereo PCM24 (soxr)",
           "leading silence trimmed (0.084 s below -45 dBFS)",
-          "cut to 0.291–1.623 s",
+          "cut to 0.291â€“1.623 s",
           "1 ms entry fade, 200 ms release fade",
           "high-pass 35 Hz"
         ],
@@ -596,7 +659,7 @@
       "origin": "in-house",
       "decision": {
         "kept": "in-house",
-        "reason": "best challenger mixkit:227 scored 68 vs 83 (needs ≥ 70 and ≥ baseline + 5)"
+        "reason": "best challenger mixkit:227 scored 68 vs 83 (needs â‰¥ 70 and â‰¥ baseline + 5)"
       }
     },
     "pass": {
@@ -620,7 +683,7 @@
       "origin": "in-house",
       "decision": {
         "kept": "in-house",
-        "reason": "best challenger dustyroom:DM-CGS-30 scored 94 vs 91 (needs ≥ 70 and ≥ baseline + 5)"
+        "reason": "best challenger dustyroom:DM-CGS-30 scored 94 vs 91 (needs â‰¥ 70 and â‰¥ baseline + 5)"
       }
     }
   }

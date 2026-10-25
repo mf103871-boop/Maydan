@@ -1,0 +1,20 @@
+{
+  "id": "zoom-800-907",
+  "prompt": "Create ONE landscape 4:3 high fidelity photographic puzzle image for an Arabic game for ages 16+. Realistic low-level close photograph of a railway rail joint with fishplate and four heavy horizontal bolts, central two bolts aligned at centre under polished rail head. Brown sleepers and stone ballast in peripheral view. Natural overcast steel-grey and rust tones, no train, accurate engineering. IMPORTANT: this full image will be shown magnified 3.4x around the exact centre, leaving only approximately the central 29% visible during the question. Make that central area contain TWO coherent diagnostic material/structural details of the named object, not the entire silhouette, not blank texture, and not a disconnected fragment. Full image reveals the complete object naturally. Rich but restrained environment palette. No lettering, logos, watermark, hands, labels, borders, collages or question marks. No ivory studio background. Physical realism and fair visual evidence matter more than decoration.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-10-08",
+  "sourceFile": "exec-c7e3d81a-079b-49a9-94ea-44fa60b88264.png",
+  "sourceSha256": "3ff4268752ae9c0d8e7790fe7970f6beff32ba998f5e8d383e9796676915b508",
+  "file": "media/zoom/quality-800-907.webp",
+  "sha256": "d6acafe593165ac7445d7354b846eeb33491f6c14add28cba5a98b56ba743bbe",
+  "width": 960,
+  "height": 720,
+  "bytes": 192842,
+  "review": {
+    "status": "phone-size-reviewed",
+    "reviewedAt": "2026-10-08",
+    "method": "Original and shipped effect at phone width, including high-tier assistance; independent editorial review.",
+    "evidence": "docs/bank/quality-2026-10-08/independent-root-image-review.md",
+    "qid": "zoom-800-907"
+  }
+}

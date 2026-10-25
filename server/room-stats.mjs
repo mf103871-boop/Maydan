@@ -22,6 +22,7 @@ export function prepareRoomStats(previous, candidate, now = Date.now()) {
   if (candidate.phase !== 'over' || previous?.phase !== 'result' || candidate.reason || candidate.round !== candidate.rounds || !candidate.statsMatch) return [];
   // An abandoned Fabraka round is not a completed competition.
   if (candidate.game === 'fabraka' && candidate.history.length < candidate.rounds) return [];
+  if (candidate.game === 'ersomha' && (candidate.history.length < candidate.rounds || candidate.history.some(turn => !turn.completed))) return [];
   const seats = candidate.participants.filter((id) => candidate.members.some((m) => m.id === id && !m.left));
   const maximum = Math.max(0, ...seats.map((id) => candidate.scores[id] || 0));
   const leaders = maximum > 0 ? seats.filter((id) => candidate.scores[id] === maximum) : [];
@@ -30,7 +31,8 @@ export function prepareRoomStats(previous, candidate, now = Date.now()) {
     const userId = candidate.statsMatch.accounts[id];
     if (!userId || awarded.has(userId)) return [];
     awarded.add(userId);
-    const leader = candidate.game === 'fabraka' && leaders.includes(id);
+    const competitive = candidate.game === 'fabraka' || candidate.game === 'ersomha' && candidate.settings.mode === 'competitive';
+    const leader = competitive && leaders.includes(id);
     return [{ userId, eventId: candidate.statsMatch.eventId, game: candidate.game || 'meenfina',
       won: leader && leaders.length === 1, draw: leader && leaders.length > 1, finishedAt: now }];
   });

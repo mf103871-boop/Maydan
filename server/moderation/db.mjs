@@ -20,18 +20,22 @@ function page(rows,limit,key) {
 }
 export async function reportsOf(env,{before,limit},status='open') {
   if(!['open','resolved'].includes(status)) fail('INVALID',400);
-  const rows=await all(env,`SELECT r.*,r.rowid AS seq,d.resolved_at,d.reason AS resolution,u.name,p.bio,p.revision,s.code,
+  const rows=await all(env,`SELECT r.*,r.rowid AS seq,d.resolved_at,d.reason AS resolution,u.name,p.bio,p.revision,s.code,gr.group_id,ra.attachment_id,dr.turn AS drawing_turn,
     EXISTS(SELECT 1 FROM moderation_suspensions ms WHERE ms.user_id=r.reported_id) AS suspended,
     CASE WHEN ${approvedImageSql('p','avatar')} THEN p.avatar_version END AS avatar_version,
     CASE WHEN ${approvedImageSql('p','cover')} THEN p.cover_version END AS cover_version
     FROM social_reports r LEFT JOIN moderation_report_decisions d ON d.report_id=r.id
     JOIN users u ON u.id=r.reported_id LEFT JOIN player_profiles p ON p.user_id=r.reported_id
     LEFT JOIN social_profiles s ON s.user_id=r.reported_id
+    LEFT JOIN social_group_reports gr ON gr.id=r.id LEFT JOIN social_report_attachments ra ON ra.report_id=r.id
+    LEFT JOIN ersomha_drawing_reports dr ON dr.report_id=r.id
     WHERE r.rowid<? AND d.report_id IS ${status==='open'?'':'NOT '}NULL ORDER BY r.rowid DESC LIMIT ?`,before,limit+1);
   return page(rows.map(r=>({id:r.id,seq:r.seq,reporterId:r.reporter_id,reportedUser:{id:r.reported_id,name:publicName(r.name),
     code:r.code,bio:r.bio||'',revision:r.revision||0,suspended:!!r.suspended,avatarVersion:r.avatar_version,coverVersion:r.cover_version,
     avatarUrl:imageUrl(r.reported_id,'avatar',r.avatar_version),coverUrl:imageUrl(r.reported_id,'cover',r.cover_version)},
-    messageSeq:r.message_seq,messageText:r.message_text,reason:r.reason,createdAt:r.created_at,resolvedAt:r.resolved_at,resolution:r.resolution})),limit,'reports');
+    messageSeq:r.message_seq,messageText:r.message_text,reason:r.reason,createdAt:r.created_at,resolvedAt:r.resolved_at,resolution:r.resolution,
+    ...(r.group_id?{scope:'group',groupId:r.group_id}:{}),...(r.attachment_id?{audioUrl:`/api/moderation/reports/${r.id}/audio`}:{}),
+    ...(r.drawing_turn?{scope:'drawing',drawingTurn:r.drawing_turn,drawingUrl:`/api/moderation/reports/${r.id}/drawing`}:{}),})),limit,'reports');
 }
 export async function imagesOf(env,{before,limit}) {
   const rows=await all(env,`SELECT r.seq,r.id,r.user_id,r.kind,r.version,r.created_at,u.name,s.code
@@ -76,15 +80,19 @@ export async function performAction(env,actor,body,now=Date.now()) {
   const input=actionOf(body);const hash=await sha256(JSON.stringify(input));
   const prior=await first(env,'SELECT id,request_hash FROM moderation_actions WHERE actor_id=? AND client_id=?',actor.userId,input.clientId);
   if(prior){if(prior.request_hash!==hash)fail('CONFLICT',409);return {ok:true,actionId:prior.id};}
-  const {action,targetId,reason,reportId}=input;let subject=targetId;let guard;let args=[];let snapshot='NULL';let related=[];let image;
+  const {action,targetId,reason,reportId}=input;let subject=targetId;let guard;let args=[];let snapshot='NULL';let related=[];let image;let groupMessage=false;
   if(action==='resolve_report') {
     const report=await first(env,'SELECT reported_id FROM social_reports WHERE id=?',targetId);if(!report)fail('NOT_FOUND',404);
     subject=report.reported_id;guard='EXISTS(SELECT 1 FROM social_reports WHERE id=?)';args=[targetId];
   } else if(action==='remove_message') {
-    const message=await first(env,`SELECT m.sender_id,c.user_low,c.user_high FROM social_messages m JOIN social_conversations c ON c.id=m.conversation_id WHERE m.seq=?`,Number(targetId));
+    const groupReport=reportId?await first(env,'SELECT group_id,message_seq FROM social_group_reports WHERE id=?',reportId):null;
+    groupMessage=!!groupReport;
+    if(groupReport&&groupReport.message_seq!==Number(targetId))fail('NOT_FOUND',404);
+    const message=groupMessage?await first(env,'SELECT sender_id,group_id FROM social_group_messages WHERE seq=? AND group_id=?',Number(targetId),groupReport.group_id):await first(env,`SELECT m.sender_id,c.user_low,c.user_high FROM social_messages m JOIN social_conversations c ON c.id=m.conversation_id WHERE m.seq=?`,Number(targetId));
     if(!message)fail('NOT_FOUND',404);subject=message.sender_id;related=[message.user_low,message.user_high];
     guard='EXISTS(SELECT 1 FROM social_messages WHERE seq=? AND deleted_at IS NULL)';args=[Number(targetId)];
     snapshot=`(SELECT json_object('text',text,'conversationId',conversation_id) FROM social_messages WHERE seq=${Number(targetId)})`;
+    if(groupMessage){related=(await all(env,'SELECT user_id FROM social_group_members WHERE group_id=? AND left_at IS NULL',message.group_id)).map(r=>r.user_id);guard='EXISTS(SELECT 1 FROM social_group_messages WHERE seq=? AND deleted_at IS NULL)';snapshot=`(SELECT json_object('text',text,'groupId',group_id) FROM social_group_messages WHERE seq=${Number(targetId)})`;}
   } else if(['approve_image','reject_image'].includes(action)) {
     image=await first(env,'SELECT user_id,kind FROM moderation_image_reviews WHERE id=? AND version=? AND status=\'pending\'',targetId,input.version);
     if(!image)fail('CONFLICT',409);subject=image.user_id;
@@ -110,7 +118,11 @@ export async function performAction(env,actor,body,now=Date.now()) {
     id,actor.userId,input.clientId,hash,action,targetId,subject,reason,reportId||null,...snapshotArgs,now,
     ...args,subject,subject,actor.sessionId,actor.userId,now,now,actor.userId,...(reportId?[reportId,subject]:[]))];
   const run=(sql,...values)=>statements.push(stmt(env,sql,...values,id));
-  if(action==='remove_message')run(`UPDATE social_messages SET deleted_at=?,edited_at=? WHERE seq=? AND ${newAction}`,now,now,Number(targetId));
+  if(action==='remove_message'){
+    const table=groupMessage?'social_group_messages':'social_messages';
+    run(`UPDATE ${table} SET deleted_at=?,edited_at=? WHERE seq=? AND ${newAction}`,now,now,Number(targetId));
+    run(`UPDATE social_attachments SET deleted_at=? WHERE id=(SELECT attachment_id FROM ${table} WHERE seq=?) AND ${newAction}`,now,Number(targetId));
+  }
   if(action==='clear_profile_text') {
     if(['name','all'].includes(input.field))run(`UPDATE users SET name='لاعب ميدان',updated_at=? WHERE id=? AND ${newAction}`,now,subject);
     if(['bio','all'].includes(input.field))run(`UPDATE player_profiles SET bio='' WHERE user_id=? AND ${newAction}`,subject);

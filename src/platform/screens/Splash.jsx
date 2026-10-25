@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { Wordmark, WorldArtwork, GameArtwork, ClayStage } from '../../shared/brand/art.jsx';
 import { prepareVisuals } from '../../shared/fx/readiness.js';
 import { Button } from '../../shared/ui/components.jsx';
@@ -57,7 +57,41 @@ export function Splash({ onDone, visible = true, reducedMotion = false }) {
   const [phase, setPhase] = useState('loading');
   const [canLeave, setCanLeave] = useState(false);
   const [statusHidden, setStatusHidden] = useState(false);
-  const finished = useRef(false);
+  const finished = useRef(false), statusRef = useRef(null);
+  const showingBackground = !visible && !['ready', 'skipped'].includes(phase) && !statusHidden;
+  useLayoutEffect(() => {
+    const node = statusRef.current;
+    if (!showingBackground || !node) return undefined;
+    const root = document.documentElement, property = '--startup-background-space';
+    const previous = root.style.getPropertyValue(property), previousVisible = root.hasAttribute('data-startup-background-visible');
+    const previousVisibility = node.style.visibility, previousPointerEvents = node.style.pointerEvents;
+    let frame;
+    const measure = () => {
+      const typing = document.activeElement?.matches?.('textarea,[contenteditable="true"],input:not([type="range"]):not([type="checkbox"]):not([type="radio"])');
+      const modal = [...document.querySelectorAll('[role="dialog"][aria-modal="true"]')].some(dialog => dialog.getClientRects().length && getComputedStyle(dialog).visibility !== 'hidden');
+      const shown = !typing && !modal && node.getClientRects().length > 0;
+      node.style.visibility = shown ? previousVisibility : 'hidden';
+      node.style.pointerEvents = shown ? previousPointerEvents : 'none';
+      root.style.setProperty(property, shown ? `${Math.ceil(node.getBoundingClientRect().height) + 8}px` : '0px');
+      root.toggleAttribute('data-startup-background-visible', Boolean(shown));
+    };
+    const schedule = () => { cancelAnimationFrame(frame); frame = requestAnimationFrame(measure); };
+    const focusChanged = () => { measure(); schedule(); };
+    measure();
+    const resize = new ResizeObserver(schedule); resize.observe(node);
+    // Keep suppression and measured space atomic: focus and dialog portals may
+    // change without resizing this fixed element.
+    const mutations = new MutationObserver(schedule); mutations.observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ['hidden', 'aria-modal', 'class'] });
+    document.addEventListener('focusin', focusChanged); document.addEventListener('focusout', focusChanged);
+    window.addEventListener('resize', schedule); window.visualViewport?.addEventListener('resize', schedule);
+    return () => {
+      cancelAnimationFrame(frame); resize.disconnect(); mutations.disconnect();
+      document.removeEventListener('focusin', focusChanged); document.removeEventListener('focusout', focusChanged); window.removeEventListener('resize', schedule); window.visualViewport?.removeEventListener('resize', schedule);
+      if (previous) root.style.setProperty(property, previous); else root.style.removeProperty(property);
+      root.toggleAttribute('data-startup-background-visible', previousVisible);
+      node.style.visibility = previousVisibility; node.style.pointerEvents = previousPointerEvents;
+    };
+  }, [showingBackground]);
 
   useEffect(() => {
     let active = true;
@@ -108,7 +142,7 @@ export function Splash({ onDone, visible = true, reducedMotion = false }) {
 
   if (!visible) {
     if (['ready', 'skipped'].includes(phase) || statusHidden) return null;
-    return <aside className="startup-background" aria-label="حالة تحميل الصور">
+    return <aside ref={statusRef} className="startup-background" aria-label="حالة تحميل الصور">
       <span role="status">{phase === 'error' ? `باقي ${number(incomplete)} صورة` : phase === 'unsaved' ? 'الصور نُزّلت لكن المتصفح لم يحفظها؛ ستُجلب عند الحاجة.' : `نجهّز الصور بالخلفية · ${number(images.ok)} / ${number(images.total)}`}</span>
       {phase === 'error' && <button type="button" onClick={() => setAttempt((value) => value + 1)}>إعادة المحاولة</button>}
       <button type="button" className="startup-background-close" aria-label="إخفاء حالة الصور" onClick={() => setStatusHidden(true)}>×</button>

@@ -1,0 +1,79 @@
+{
+  "pack": "spotdiff",
+  "oldQid": "spotdiff-200-904",
+  "side": "b",
+  "createdAt": "2026-10-08",
+  "kind": "ai-generated",
+  "tool": "OpenAI image generation (built-in)",
+  "mode": "edit",
+  "prompt": "Use case: precise-object-edit. Asset type: B photo for a mobile spot-the-difference puzzle. Input image is the EXACT A photo to edit, not general inspiration. Output ONE landscape 4:3 image matching original framing. Make exactly ONE semantic difference. In the SMALL stacking ring tower at the left-center, between the big five-ring tower and yellow car, remove ONLY its middle BLUE wooden ring. This small tower has green top / blue middle / purple bottom in A; it must have exactly TWO rings in B: green and purple. Lower its green ring onto its existing purple ring naturally, retaining the same upright wooden peg and base. Keep the LARGE five-ring tower's red/orange/yellow/green/blue rings exactly intact, the teddy identical and the large wooden car YELLOW and identical with its same two black wheels/windows. Every other object, surface, shadow and position stays identical.\nSTRICT: copy original photo everywhere outside the specified object change; preserve original colors, object counts, backgrounds, textures and composition. No global repaint, color swap, crop, camera move, extra decorative details, text, border, watermark or marks. The changed feature must be clear at 175 px image width.",
+  "asset": "media/spotdiff/spotdiff-200-904-b-q20261008.webp",
+  "sha256": "04bc9616e2628b809ab58dc6cf5d6ed304ae420702cd10a6dfc6cbb14d4c28ae",
+  "inputSHA": "fb9548186adc05cee4583bb027731744e9bd004a68c286061ad018111bdbd141",
+  "outputSHA": "04bc9616e2628b809ab58dc6cf5d6ed304ae420702cd10a6dfc6cbb14d4c28ae",
+  "rawOutputSHA": "d4e79e3bc0a90f00010e684cccff7413040434573537968ccbf944f65111c331",
+  "rawGeneratedFile": "exec-d9955e78-cbf5-4225-8ce2-cdb40e612374.png",
+  "bytes": 44770,
+  "width": 1280,
+  "height": 960,
+  "inputImages": [
+    {
+      "file": "media/spotdiff/spotdiff-200-904-a.webp",
+      "sha256": "fb9548186adc05cee4583bb027731744e9bd004a68c286061ad018111bdbd141"
+    }
+  ],
+  "diff": {
+    "description": "Small ring tower loses its blue middle ring: green and purple remain, stacked together. Three rings become two.",
+    "answer": "حلقات البرج الصغير أصبحت اثنتين",
+    "spot": {
+      "x": 26,
+      "y": 58,
+      "r": 12
+    },
+    "coordinates": "x is measured from physical left; y from top; r is a percentage of image width"
+  },
+  "invariants": [
+    "large five-ring tower and ring colors",
+    "teddy bear",
+    "yellow car and two wheels/windows",
+    "small purple ring and base",
+    "table and background",
+    "camera framing and colors"
+  ],
+  "review": {
+    "status": "phone-size-reviewed",
+    "originalCompared": true,
+    "oldAAndOldBViewed": true,
+    "semanticDifferenceCount": 1,
+    "invariantsReviewed": [
+      "large five-ring tower and ring colors",
+      "teddy bear",
+      "yellow car and two wheels/windows",
+      "small purple ring and base",
+      "table and background",
+      "camera framing and colors"
+    ],
+    "displayedEffect": "Unfiltered original A and edited B side-by-side; physical-left reveal circle only",
+    "mobileDeviceQA": false,
+    "limitation": "AI re-encoding produces minor texture variation. Review checks one meaningful object difference, preserved counts, colors and geometry; exact outside-region pixel identity is not claimed.",
+    "reviewedAt": "2026-10-12",
+    "reviewer": "finish_spotdiff",
+    "imageWidthCSS": 173,
+    "evidence": "docs/bank/quality-2026-10-08/preview/spotdiff-01.png"
+  },
+  "mobileQA": {
+    "method": "Viewed rendered pairs at 175px per image and vertically stacked originals at 359px width, then viewed circles over both A and B.",
+    "sideBySideImageWidth": 175,
+    "stackedImageWidth": 359,
+    "differenceVisible": true,
+    "circleEnclosesDifferenceInBothImages": true,
+    "physicalLeftCoordinates": true,
+    "deviceTested": false,
+    "artifacts": [
+      ".cache/badeeha-quality/spotdiff-eight-qa/spotdiff-200-904-175.png",
+      ".cache/badeeha-quality/spotdiff-eight-qa/spotdiff-200-904-359.png",
+      ".cache/badeeha-quality/spotdiff-eight-qa/spotdiff-200-904-circle175.png"
+    ]
+  },
+  "packaging": "Uniform landscape resize to 1280x960 and WebP quality 85 only; all scene changes made by built-in imagegen. Original A unchanged."
+}

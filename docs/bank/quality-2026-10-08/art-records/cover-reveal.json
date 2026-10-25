@@ -1,0 +1,29 @@
+{
+  "id": "reveal",
+  "kind": "cover",
+  "file": "public/media/badeeha-covers/reveal.webp",
+  "style": "editorial layered-paper portrait",
+  "palette": "burgundy, navy, soft peach",
+  "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'إكشفني'. Landscape 4:3 artwork.\nMedium: editorial layered-paper portrait.\nIntentional palette: burgundy, navy, soft peach.\nScene: An anonymous fictional adult face partly concealed by sliding colorful paper panels, artful portrait with clear expression, not a real question identity.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-10-08",
+  "sourceImage": {
+    "name": "exec-4c08305b-1c00-4b6f-be31-dc256f014926.png",
+    "sha256": "a58f76692c1dd2b89b53391a120067fd132c329bc361341ed545e5427f0fa216",
+    "width": 1448,
+    "height": 1086
+  },
+  "width": 640,
+  "height": 480,
+  "bytes": 27208,
+  "sha256": "f7864ea58ec2e83e77a2ff5876a6f8a247ce7ada8fd851524782a9ce8db6f216",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "phone-size-reviewed",
+    "date": "2026-10-08",
+    "reviewer": "root",
+    "width": 160,
+    "method": "shipped cover CSS; baseline and replacement side by side",
+    "evidence": "docs/bank/quality-2026-10-08/preview/covers-4.jpg"
+  }
+}

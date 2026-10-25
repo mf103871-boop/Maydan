@@ -426,7 +426,7 @@ test('useTimerCues: طلب جديد بعد «خلصت!» يسمع ثانيته �
 });
 
 test('مصدر واحد لإشارات المؤقت: الحلقة بصرية، والألعاب تستعمل useTimerCues بلا tick مباشر', () => {
-  const src = (rel) => readFileSync(path.resolve(rel), 'utf8');
+  const src = (rel) => readFileSync(path.resolve(rel), 'utf8').replaceAll('\r\n', '\n');
   const ring = src('src/shared/ui/Timer.jsx');
   assert.doesNotMatch(ring, /sound\.play|haptics/, 'Timer.jsx لا يصدر أصواتًا');
   assert.match(ring, /export function ResumeCountdown/);

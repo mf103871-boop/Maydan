@@ -1,0 +1,56 @@
+Social stability implementation handoff, 2026-10-25
+Checkout: maydan-ersomha-native26; branch codex/stability-20261025.
+No commit, push, deploy, credentials, production data or release configuration changed by this agent.
+
+IMPLEMENTED
+SOC01: LammaClient revalidates all previously loaded group-history pages before replacing its snapshot. It preserves the oldest returned cursor, failed outbox, account/member/version fences, and rejects broken continuation cursors. The shared Conversation anchors the first still-visible message while older pages, incoming messages or removal of earlier rows alter layout. No stale-page merge around a block.
+SOC02: Group creation returns after the acknowledged mutation/invitations, independently of subsequent list failures. A list revision fence prevents a pre-creation GET from erasing a new acknowledged group. Concurrent client submissions coalesce; lost POST responses reuse a creation identity. Server records creator/clientId/original payload hash, surviving name/ownership changes, with real D1 unique-key serialization. Replays require current membership and cannot reopen a closed/left group. Terminal failures release the pending attempt.
+SOC03: Outgoing call retry retains its clientId across uncertain delivery/reconnecting, coalesces duplicate requests, and reuses the server's prior-call join path. Successful or terminal attempts release the key; logout fences/clears it. No second CreateRoom for an acknowledged-but-lost response.
+Scale risk: Ordinary call invalidation scopes to the affected group/user(s), preserving per-user scope/block authorization and provider revocation. Only maintenance retains the global sweep.
+
+EXACT CHANGED FILES OWNED BY THIS TASK
+src/social/lamma-client.js
+src/social/SocialScreen.jsx
+server/lamma/groups.mjs
+server/lamma/calls.mjs
+server/lamma/router.mjs
+server/social/router.mjs
+server/moderation/router.mjs
+server/migrations/0013_social_group_creation.sql (new)
+tests/lamma-stability.test.js (new, 13 fault-injection/migration tests)
+tests/lamma-cloudflare.test.js (real D1 simultaneous duplicate creation + payload conflict assertions)
+tests/accounts-entitlements.test.js (exact migration allowlist + negative cases only)
+tests/e2e/lamma-history-recovery.mjs (new)
+docs/releases/stability-20261025/SOCIAL-FIXES.txt (this file)
+LammaProvider.jsx and SocialHost.jsx were not changed.
+
+MIGRATION / COMPATIBILITY
+0013 was unused before this work. Four additive statements only:
+1. social_groups.creator_id nullable TEXT FK users(id), ON DELETE SET NULL.
+2. social_groups.creation_client_id nullable TEXT.
+3. social_groups.creation_hash nullable TEXT.
+4. Unique partial index on creator_id/creation_client_id where clientId is not null.
+Apply migration once BEFORE serving the new groups.mjs create handler. New server creation requires these columns; there is no implicit schema update on requests.
+Existing group IDs, names, ownership and memberships remain unchanged. Old clients may omit clientId; multiple intentional legacy creations keep working with null identities. Old server code also tolerates the additive columns/index if a code rollback is needed; do not drop columns to roll back code.
+No new server module/dependency, no account token/secret format or other API change. Group-create clientId is optional. Creator deletion clears the new creator link while keeping the inherited group.
+
+CALL INVALIDATION CALLER MAP
+server/lamma/router.mjs closeGroup: groupId only (all active members in that group).
+server/lamma/router.mjs leaveGroup: groupId + leaving user.
+server/lamma/router.mjs removeGroupMember: groupId + removed user.
+server/social/router.mjs removeFriend: both affected users.
+server/social/router.mjs blockUser: existing actorId/blockedId call now scopes automatically to actor; block predicate remains checked within shared call.
+server/moderation/router.mjs suspend_user: subjectUserId only.
+server/lamma/lifecycle.mjs cleanupLamma remains the explicit global maintenance path.
+
+VALIDATION COMPLETED
+64/64: lamma-stability, lamma-client, lamma-server, social-ui (latest after added stale-list/terminal-key tests).
+101/101: lamma-cloudflare, lamma-performance, social-server, moderation-client, profiles-server, lamma-call-authorization, lamma-device-races, lamma-media-native, social-client, social-media-network, social-realtime, lamma-webhook-lifecycle.
+30/30 final targeted: accounts-entitlements, lamma-stability, lamma-cloudflare (overlaps the earlier totals). The exact 0013 migration allowlist integrated-test failure was corrected and retested.
+Local Chromium + WebKit history E2E: 100 loaded rows -> 101 after incoming message -> 91 after revoking ten earlier rows; anchor stayed at 20px Chromium / 20.25px WebKit; logout left zero rows; zero page errors.
+Existing social-message-reliability E2E passes Chromium + WebKit: sender profiles, failed outbox retained across navigation, retry identity, single delivered row and logout clearing.
+Evidence generated by E2Es: .cache/lamma-history-recovery/results.json and .cache/social-message-reliability/results.json (plus screenshots).
+
+LIMITS / REMAINING RELEASE CHECKS
+These are local SQLite, local workerd, Chromium and WebKit validations, not hosted latency, APNs/LiveKit production or physical-iPhone evidence. Parent integrates/builds/TestFlight and applies the migration/backend patch.
+The existing pending-operation model remains account-scoped in memory; no private message/outbox history was added to persistent storage. Device/process termination still uses existing server expiry/native restoration paths; real airplane-mode/relaunch validation remains part of device testing.

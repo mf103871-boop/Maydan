@@ -109,7 +109,12 @@ try {
   sourceHashes = { html: hash(html), serviceWorker: hash(sw) };
   // Compile only the list for inspection; the browser still runs unmodified dist.
   const manifest = await build({
-    entryPoints: [path.join(ROOT, 'src/shared/media/startup-images.js')], bundle: true, write: false,
+    stdin: {
+      contents: `export { startupImageUrls } from './src/shared/media/startup-images.js';
+        export { CATS } from './src/data/categories/index.js';
+        export { questionMedia } from './src/shared/media/resolve.js';`,
+      resolveDir: ROOT,
+    }, bundle: true, write: false,
     format: 'iife', globalName: 'StartupImageManifest', platform: 'browser',
     define: { __MAYDAN_MEDIA_VERSIONS__: JSON.stringify(await mediaVersions(ROOT)) },
     logLevel: 'silent',
@@ -124,8 +129,18 @@ try {
   }));
   check('real active manifest has 510 unique images', expected.length === 510 && new Set(expected.map((x) => x.url)).size === 510);
   const allowedFirst = new Set(expected.slice(0, 12).map((x) => x.key));
-  const target = expected.find((x) => x.url.includes('spotdiff-1000-908-b.webp'));
-  if (!target) throw new Error('Expected failure target absent from active manifest');
+  // Derive the second side from the live bank with the same resolver and file
+  // versions as the manifest. Editorial replacements may rename either side.
+  const differencePack = scope.StartupImageManifest.CATS.find((pack) => pack.id === 'spotdiff');
+  const differenceQuestion = differencePack?.qs.at(-1);
+  if (!differenceQuestion || (differenceQuestion.type || differencePack.defaultType) !== 'diff') {
+    throw new Error('Expected active paired question absent from spotdiff');
+  }
+  const pair = Array.from(scope.StartupImageManifest.questionMedia(differenceQuestion, differencePack.id));
+  if (pair.length !== 2 || new Set(pair).size !== 2) throw new Error('Expected two distinct active spotdiff sides');
+  const target = expected.find((entry) => entry.url === pair[1]);
+  if (!target) throw new Error('Active spotdiff side B absent from startup manifest');
+  check('failure target is side B of an active paired question outside the initial gate', !allowedFirst.has(target.key), { qid: differenceQuestion.qid, url: target.url });
   server = http.createServer(async (req, res) => {
     try {
       const parsed = new URL(req.url, 'http://localhost'), key = parsed.pathname + parsed.search;

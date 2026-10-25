@@ -1,0 +1,29 @@
+{
+  "id": "theater",
+  "kind": "cover",
+  "file": "public/media/badeeha-covers/theater.webp",
+  "style": "dramatic theatrical photography",
+  "palette": "scarlet, black, warm gold",
+  "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'مسرح'. Landscape 4:3 artwork.\nMedium: dramatic theatrical photography.\nIntentional palette: scarlet, black, warm gold.\nScene: A partly opened crimson stage curtain reveals an empty spotlight circle and a wooden stage, sweeping composition and theatrical depth.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-10-08",
+  "sourceImage": {
+    "name": "exec-b2efc549-cb2a-4517-85f0-b329187b5457.png",
+    "sha256": "140ca89a96ff6f3afab1a46737c96c14e3cb024ba1fe6375d0232ff4ae108e0d",
+    "width": 1448,
+    "height": 1086
+  },
+  "width": 640,
+  "height": 480,
+  "bytes": 45186,
+  "sha256": "398e73fc5ab69c86d69c4cac239fb4fc65bef1cf0032e890b52463a65005db87",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "phone-size-reviewed",
+    "date": "2026-10-08",
+    "reviewer": "root",
+    "width": 160,
+    "method": "shipped cover CSS; baseline and replacement side by side",
+    "evidence": "docs/bank/quality-2026-10-08/preview/covers-2.jpg"
+  }
+}

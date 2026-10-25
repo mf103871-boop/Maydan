@@ -1,0 +1,53 @@
+{
+  "pack": "spotdiff",
+  "oldQid": "spotdiff-800-906",
+  "side": "a",
+  "createdAt": "2026-10-08",
+  "kind": "ai-generated",
+  "tool": "OpenAI image generation (built-in)",
+  "mode": "generate",
+  "prompt": "Use case: photorealistic-natural\nAsset type: original A for a one-difference mobile comparison puzzle.\nPrimary request: one landscape 4:3 image. A cinematic documentary style photograph of a campsite packing table at dusk, wide 4:3 landscape. Twilight purple and teal sky, warm lantern glow with readable foreground, lakeside pine forest. On rustic table are an open rolled route map showing abstract terrain but NO writing, brass compass at upper LEFT on the map with a clearly visible red-and-black needle pointing diagonally upper RIGHT, a dark metal mug, pocket flashlight, two carabiners, small binoculars, coiled rope, gloves, pinecone, a folded olive blanket. A backpack and closed tent visible in background. Compass diameter 18% image width, all needle geometry distinct. Sixteen objects total, believable real equipment; no brands, letters or numbers.\nNo comparison panels, writing, people, captions, digits, labels, logos, border, watermark, highlight or UI. Do not make the future difference yet.",
+  "asset": "media/spotdiff/spotdiff-800-906-a-q20261008.webp",
+  "sha256": "dabc17d5b679a82de38bb8dea50aedd8e04ab14f95f615056886f1d55cc61ec7",
+  "bytes": 256938,
+  "width": 1280,
+  "height": 960,
+  "inputImages": [],
+  "review": {
+    "status": "phone-size-reviewed",
+    "originalCompared": true,
+    "displayedEffect": "Side-by-side unfiltered originals; reveal circle only",
+    "difference": "Compass needle diagonal reverses",
+    "semanticDifferenceCount": 1,
+    "invariantsReviewed": [
+      "same brass face/pivot",
+      "map",
+      "two carabiners",
+      "gloves",
+      "lantern",
+      "tent",
+      "backpack",
+      "mug",
+      "sky/light/framing"
+    ],
+    "mobileDeviceQA": false,
+    "reviewedAt": "2026-10-12",
+    "reviewer": "finish_spotdiff",
+    "imageWidthCSS": 173,
+    "evidence": "docs/bank/quality-2026-10-08/preview/spotdiff-08.png"
+  },
+  "packaging": "Uniform size/format encoding only; all scene changes created by built-in imagegen",
+  "packagingReview": {
+    "date": "2026-10-12",
+    "file": "media/spotdiff/spotdiff-800-906-a-q20261008.webp",
+    "beforeBytes": 340006,
+    "bytes": 256938,
+    "beforeSha256": "9a422ccad3ddf46bec2a24e45d5aedc6b9537a1985bc86cec445be65f13a8bcd",
+    "sha256": "dabc17d5b679a82de38bb8dea50aedd8e04ab14f95f615056886f1d55cc61ec7",
+    "quality": 88,
+    "dimensionsUnchanged": true,
+    "operation": "WebP encoding only; no scene edit",
+    "phoneReview": "phone-size-reviewed-after-compression",
+    "reviewRecord": "docs/bank/quality-2026-10-08/postcompression-review.json"
+  }
+}

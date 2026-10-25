@@ -11,12 +11,12 @@ import { getGame } from '../registry.js';
 // يشتركوا بعد، فتبقى الصفحة بيضاء إلى الأبد. نعرض رسالة وزر عودة بدلًا منها.
 export function MissingGame({ id }) {
   return (
-    <Screen dir={getDirection()} className="stack" aria-label="لعبة غير موجودة">
-      <TopBar title="لعبة غير موجودة" start={<IconButton label="رجوع" onClick={back}><IconBack /></IconButton>} />
+    <Screen data-design-screen="game-details" dir={getDirection()} className="stack" aria-label="لعبة غير موجودة">
+      <TopBar data-design-id="topbar" title="لعبة غير موجودة" start={<IconButton data-design-id="back" label="رجوع" onClick={back}><IconBack /></IconButton>} />
       <Card className="stack">
         <span className="card-title">لا توجد لعبة بهذا المعرّف</span>
         <p className="card-muted">الرابط يشير إلى «<bdi>{id}</bdi>» ولا توجد لعبة بهذا الاسم في ميدان.</p>
-        <Button variant="accent" size="lg" full onClick={() => navigate('/', { replace: true })}>العودة إلى الرئيسية</Button>
+        <Button data-design-id="home" variant="accent" size="lg" full onClick={() => navigate('/', { replace: true })}>العودة إلى الرئيسية</Button>
       </Card>
     </Screen>
   );
@@ -28,27 +28,29 @@ export function GameDetails({ id }) {
   const account = useAccount();
   if (!game) return <MissingGame id={id} />;
   const Icon = game.icon;
-  const modeLabel = game.players.mode === 'teams' ? 'فرق' : game.players.mode === 'both' ? 'فردي أو فرق' : 'فردي';
-  const online = ['meenfina', 'fabraka'].includes(game.id);
+  const onlineOnly = game.onlineOnly === true;
+  const modeLabel = game.id === 'ersomha' ? 'تعاون لشخصين · منافسة من ثلاثة' : game.players.mode === 'teams' ? 'فرق' : game.players.mode === 'both' ? 'فردي أو فرق' : 'فردي';
+  const online = ['meenfina', 'fabraka', 'ersomha'].includes(game.id);
   const factDelay = (i) => ({ '--delay': `${250 + i * 50}ms` });
   // القفل: بَديهة تُلعب دائمًا (القفل في حزمها) وبقية الألعاب مباراة واحدة مجانية ثم «ميدان بلس».
-  const packs = game.setup === 'self';
+  const packs = game.id === 'badeeha';
   const locked = !packs && account.gameAccess(game.id) === 'locked';
   const note = account.premium ? '' : packs ? '١٠ فئات مجانية، والباقي ضمن ميدان بلس'
+    : onlineOnly ? locked ? 'استضافة الغرف ضمن ميدان بلس؛ الانضمام مجاني' : 'استضافة مباراة مجانية، والانضمام للغرف مجاني'
     : locked ? 'لعبت مباراتك المجانية — اشترك للمتابعة' : 'مباراة واحدة مجانية، ثم ميدان بلس';
   const play = () => {
     if (locked) { sound.play('click'); account.openPaywall({ reason: 'trial', game: game.id }); return; }
     sound.play('whoosh'); haptics.vibrate('medium'); navigate(`/play/${game.id}`);
   };
   return (
-    <Screen dir={getDirection()} className="stack" style={{ '--game-accent': game.accent }} aria-label={game.name}>
-      <TopBar title={game.name} eyebrow="لعبة" start={<IconButton label="رجوع" onClick={back}><IconBack /></IconButton>} />
-      <div className="details-hero">
+    <Screen data-design-screen="game-details" dir={getDirection()} className="stack" style={{ '--game-accent': game.accent }} aria-label={game.name}>
+      <TopBar data-design-id="topbar" title={game.name} eyebrow="لعبة" start={<IconButton data-design-id="back" label="رجوع" onClick={back}><IconBack /></IconButton>} />
+      <div data-design-id="hero" className="details-hero">
         {/* الحامل: الرسم يهبط ثم يطفو (clay-idle)؛ الحركة على .clay-lift لا على الرسم */}
-        <div className="icon clay-stage clay-idle" aria-hidden="true"><span className="clay-lift">{Icon ? <Icon /> : '🎮'}</span></div>
-        <h1>{game.name}</h1>
-        <p><b style={{ color: 'var(--text)' }}>{game.tagline}</b><br />{game.description}</p>
-        <div className="facts">
+        <div data-design-id="game-icon" className="icon clay-stage clay-idle" aria-hidden="true"><span className="clay-lift">{Icon ? <Icon /> : '🎮'}</span></div>
+        <h1 data-design-id="game-name">{game.name}</h1>
+        <p data-design-id="game-description"><b style={{ color: 'var(--text)' }}>{game.tagline}</b><br />{game.description}</p>
+        <div data-design-id="facts" className="facts">
           <span className="fact" style={factDelay(0)}><IconUsers /> {game.players.min}–{game.players.max} · {modeLabel}</span>
           <span className="fact" style={factDelay(1)}><IconClock /> {game.duration}</span>
           {game.tags.map((t, i) => <span key={t} className="fact" style={factDelay(2 + i)}>#{t}</span>)}
@@ -57,12 +59,12 @@ export function GameDetails({ id }) {
       </div>
       <div>
         <div className="section-title" style={{ marginBottom: 10 }}>كيف تلعب؟</div>
-        <ol className="steps">{game.howToPlay.map((s, i) => <li key={i} className="step" style={{ '--delay': `${120 + i * 90}ms` }}>{s}</li>)}</ol>
+        <ol data-design-id="steps" className="steps">{game.howToPlay.map((s, i) => <li key={i} className="step" style={{ '--delay': `${120 + i * 90}ms` }}>{s}</li>)}</ol>
       </div>
-      <div className="setup-sticky stack">
+      <div data-design-id="actions" className="setup-sticky stack">
         {/* الزر الرئيسي «مسلّح» (is-armed): تنفّس ×3 ووهج ×2 من brand.css */}
-        {online && <Button variant="accent" size="lg" full className="is-armed" onClick={() => navigate(`/online/${game.id}`)}>العب من كل جوال · غرف جماعية</Button>}
-        <Button variant={online ? 'secondary' : 'accent'} size="lg" full className={online ? '' : 'is-armed'} icon={<IconPlay />} onClick={play}>{online ? 'العب على جهاز واحد' : 'العب'}</Button>
+        {online && <Button data-design-id="online" variant="accent" size="lg" full className="is-armed" onClick={() => navigate(`/online/${game.id}`)}>{['fabraka', 'ersomha'].includes(game.id) ? 'العب أونلاين · لشخصين أو أكثر' : 'العب من كل جوال · غرف جماعية'}</Button>}
+        {!onlineOnly && <Button data-design-id="local" variant={online ? 'secondary' : 'accent'} size="lg" full className={online ? '' : 'is-armed'} icon={<IconPlay />} onClick={play}>{online ? 'العب على جهاز واحد' : 'العب'}</Button>}
       </div>
     </Screen>
   );

@@ -16,7 +16,7 @@
       "topic": "فواكه وخضار",
       "difficultyTarget": 0.8,
       "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/visual-evidence.md",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-root-images.json",
       "media": {
         "src": "zoom-200-901.webp",
         "type": "image",
@@ -43,7 +43,7 @@
       "topic": "أدوات منزلية",
       "difficultyTarget": 0.8,
       "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/visual-evidence.md",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-root-images.json",
       "media": {
         "src": "zoom-200-902.webp",
         "type": "image",
@@ -70,7 +70,7 @@
       "topic": "أغراض شخصية",
       "difficultyTarget": 0.8,
       "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/visual-evidence.md",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-root-images.json",
       "media": {
         "src": "zoom-200-903.webp",
         "type": "image",
@@ -97,7 +97,7 @@
       "topic": "أجهزة وتقنية",
       "difficultyTarget": 0.8,
       "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/visual-evidence.md",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-root-images.json",
       "media": {
         "src": "zoom-200-904.webp",
         "type": "image",
@@ -124,7 +124,7 @@
       "topic": "رياضة",
       "difficultyTarget": 0.8,
       "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/visual-evidence.md",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-root-images.json",
       "media": {
         "src": "zoom-200-905.webp",
         "type": "image",
@@ -148,12 +148,13 @@
       "effect": "zoom",
       "origin": "40% 50%",
       "alt": [
-        "جيتار"
+        "جيتار",
+        "قيثارة"
       ],
       "topic": "موسيقى",
       "difficultyTarget": 0.8,
       "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/visual-evidence.md",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-root-images.json",
       "media": {
         "src": "zoom-200-906.webp",
         "type": "image",
@@ -180,7 +181,7 @@
       "topic": "وسائل نقل",
       "difficultyTarget": 0.8,
       "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/visual-evidence.md",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-root-images.json",
       "media": {
         "src": "zoom-200-907.webp",
         "type": "image",
@@ -204,12 +205,13 @@
       "effect": "zoom",
       "origin": "50% 50%",
       "alt": [
-        "عباد الشمس"
+        "عباد الشمس",
+        "زهرة عباد الشمس"
       ],
       "topic": "طبيعة",
       "difficultyTarget": 0.8,
       "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/visual-evidence.md",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-root-images.json",
       "media": {
         "src": "zoom-200-908.webp",
         "type": "image",
@@ -236,7 +238,7 @@
       "topic": "فواكه وخضار",
       "difficultyTarget": 0.6,
       "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/visual-evidence.md",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-root-images.json",
       "media": {
         "src": "zoom-400-901.webp",
         "type": "image",
@@ -259,150 +261,15 @@
       "type": "image",
       "effect": "zoom",
       "origin": "25% 65%",
-      "alt": [],
+      "alt": [
+        "فتاحة معلبات"
+      ],
       "topic": "أدوات منزلية",
       "difficultyTarget": 0.6,
       "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/visual-evidence.md",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-root-images.json",
       "media": {
         "src": "zoom-400-902.webp",
-        "type": "image",
-        "title": "لغز بصري مولّد",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation",
-          "createdAt": "2026-09-18",
-          "record": "docs/bank/rebuild-2026-09-18/generated-art.json"
-        }
-      }
-    },
-    {
-      "p": 400,
-      "q": "ما الشيء الظاهر في اللقطة المقرّبة؟",
-      "a": "مشط",
-      "qid": "zoom-400-903",
-      "type": "image",
-      "effect": "zoom",
-      "origin": "50% 63%",
-      "alt": [],
-      "topic": "أغراض شخصية",
-      "difficultyTarget": 0.6,
-      "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/visual-evidence.md",
-      "media": {
-        "src": "zoom-400-903.webp",
-        "type": "image",
-        "title": "لغز بصري مولّد",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation",
-          "createdAt": "2026-09-18",
-          "record": "docs/bank/rebuild-2026-09-18/generated-art.json"
-        }
-      }
-    },
-    {
-      "p": 400,
-      "q": "ما الشيء الظاهر في اللقطة المقرّبة؟",
-      "a": "جهاز تحكم",
-      "qid": "zoom-400-904",
-      "type": "image",
-      "effect": "zoom",
-      "origin": "50% 50%",
-      "alt": [],
-      "topic": "أجهزة وتقنية",
-      "difficultyTarget": 0.6,
-      "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/visual-evidence.md",
-      "media": {
-        "src": "zoom-400-904.webp",
-        "type": "image",
-        "title": "لغز بصري مولّد",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation",
-          "createdAt": "2026-09-18",
-          "record": "docs/bank/rebuild-2026-09-18/generated-art.json"
-        }
-      }
-    },
-    {
-      "p": 400,
-      "q": "ما الشيء الظاهر في اللقطة المقرّبة؟",
-      "a": "مضرب تنس",
-      "qid": "zoom-400-905",
-      "type": "image",
-      "effect": "zoom",
-      "origin": "32% 45%",
-      "alt": [],
-      "topic": "رياضة",
-      "difficultyTarget": 0.6,
-      "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/visual-evidence.md",
-      "media": {
-        "src": "zoom-400-905.webp",
-        "type": "image",
-        "title": "لغز بصري مولّد",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation",
-          "createdAt": "2026-09-18",
-          "record": "docs/bank/rebuild-2026-09-18/generated-art.json"
-        }
-      }
-    },
-    {
-      "p": 400,
-      "q": "ما الشيء الظاهر في اللقطة المقرّبة؟",
-      "a": "طبل",
-      "qid": "zoom-400-906",
-      "type": "image",
-      "effect": "zoom",
-      "origin": "50% 60%",
-      "alt": [],
-      "topic": "موسيقى",
-      "difficultyTarget": 0.6,
-      "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/visual-evidence.md",
-      "media": {
-        "src": "zoom-400-906.webp",
-        "type": "image",
-        "title": "لغز بصري مولّد",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation",
-          "createdAt": "2026-09-18",
-          "record": "docs/bank/rebuild-2026-09-18/generated-art.json"
-        }
-      }
-    },
-    {
-      "p": 400,
-      "q": "ما الشيء الظاهر في اللقطة المقرّبة؟",
-      "a": "سكوتر",
-      "qid": "zoom-400-907",
-      "type": "image",
-      "effect": "zoom",
-      "origin": "66% 80%",
-      "alt": [
-        "سكوتر دفع"
-      ],
-      "topic": "وسائل نقل",
-      "difficultyTarget": 0.6,
-      "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/visual-evidence.md",
-      "media": {
-        "src": "zoom-400-907.webp",
         "type": "image",
         "title": "لغز بصري مولّد",
         "author": "Maydan / OpenAI image generation",
@@ -423,11 +290,13 @@
       "type": "image",
       "effect": "zoom",
       "origin": "50% 50%",
-      "alt": [],
+      "alt": [
+        "كوز صنوبر"
+      ],
       "topic": "طبيعة",
       "difficultyTarget": 0.6,
       "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/visual-evidence.md",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-root-images.json",
       "media": {
         "src": "zoom-400-908.webp",
         "type": "image",
@@ -443,20 +312,167 @@
       }
     },
     {
-      "p": 600,
+      "p": 400,
       "q": "ما الشيء الظاهر في اللقطة المقرّبة؟",
-      "a": "رمان",
-      "qid": "zoom-600-901",
+      "a": "مشبك غسيل",
+      "qid": "zoom-400-921",
       "type": "image",
       "effect": "zoom",
       "origin": "50% 50%",
+      "alt": [
+        "ملقط غسيل"
+      ],
+      "topic": "أغراض شخصية",
+      "difficultyTarget": 0.6,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-root-images.json",
+      "media": {
+        "src": "quality-400-903.webp",
+        "type": "image",
+        "title": "لغز بصري توضيحي",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-10-08",
+          "record": "docs/bank/quality-2026-10-08/art-records/zoom-400-903.json"
+        }
+      }
+    },
+    {
+      "p": 400,
+      "q": "ما الشيء الظاهر في اللقطة المقرّبة؟",
+      "a": "فأرة حاسوب",
+      "qid": "zoom-400-922",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "50% 50%",
+      "alt": [
+        "ماوس",
+        "فأرة كمبيوتر"
+      ],
+      "topic": "أجهزة وتقنية",
+      "difficultyTarget": 0.6,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-root-images.json",
+      "media": {
+        "src": "quality-400-904.webp",
+        "type": "image",
+        "title": "لغز بصري توضيحي",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-10-08",
+          "record": "docs/bank/quality-2026-10-08/art-records/zoom-400-904.json"
+        }
+      }
+    },
+    {
+      "p": 400,
+      "q": "ما الشيء الظاهر في اللقطة المقرّبة؟",
+      "a": "مضرب تنس طاولة",
+      "qid": "zoom-400-923",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "47% 67%",
+      "alt": [
+        "مضرب بينغ بونغ",
+        "مضرب بينج بونج"
+      ],
+      "topic": "رياضة",
+      "difficultyTarget": 0.6,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-root-images.json",
+      "media": {
+        "src": "quality-400-905.webp",
+        "type": "image",
+        "title": "لغز بصري توضيحي",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-10-08",
+          "record": "docs/bank/quality-2026-10-08/art-records/zoom-400-905.json"
+        }
+      }
+    },
+    {
+      "p": 400,
+      "q": "ما الشيء الظاهر في اللقطة المقرّبة؟",
+      "a": "طبل",
+      "qid": "zoom-400-924",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "55% 35%",
       "alt": [],
-      "topic": "فواكه وخضار",
+      "topic": "موسيقى",
+      "difficultyTarget": 0.6,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-root-images.json",
+      "media": {
+        "src": "zoom-400-906.webp",
+        "type": "image",
+        "title": "لغز بصري مولّد",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation",
+          "createdAt": "2026-09-18",
+          "record": "docs/bank/rebuild-2026-09-18/generated-art.json"
+        }
+      }
+    },
+    {
+      "p": 400,
+      "q": "ما الشيء الظاهر في اللقطة المقرّبة؟",
+      "a": "حزام أمان",
+      "qid": "zoom-400-925",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "50% 50%",
+      "alt": [
+        "حزام السيارة"
+      ],
+      "topic": "وسائل نقل",
+      "difficultyTarget": 0.6,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-root-images.json",
+      "media": {
+        "src": "quality-400-907.webp",
+        "type": "image",
+        "title": "لغز بصري توضيحي",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-10-08",
+          "record": "docs/bank/quality-2026-10-08/art-records/zoom-400-907.json"
+        }
+      }
+    },
+    {
+      "p": 600,
+      "q": "ما الشيء الظاهر في اللقطة المقرّبة؟",
+      "a": "ريشة طائر",
+      "qid": "zoom-600-908",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "55% 50%",
+      "alt": [
+        "ريشة"
+      ],
+      "topic": "طبيعة",
       "difficultyTarget": 0.4,
       "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/visual-evidence.md",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-root-images.json",
       "media": {
-        "src": "zoom-600-901.webp",
+        "src": "zoom-600-908.webp",
         "type": "image",
         "title": "لغز بصري مولّد",
         "author": "Maydan / OpenAI image generation",
@@ -472,18 +488,78 @@
     {
       "p": 600,
       "q": "ما الشيء الظاهر في اللقطة المقرّبة؟",
-      "a": "خفاقة",
-      "qid": "zoom-600-902",
+      "a": "عصارة ثوم",
+      "qid": "zoom-600-921",
       "type": "image",
       "effect": "zoom",
-      "origin": "35% 55%",
+      "origin": "28% 60%",
       "alt": [
-        "مضرب بيض"
+        "هراسة ثوم",
+        "مكبس ثوم"
       ],
       "topic": "أدوات منزلية",
       "difficultyTarget": 0.4,
       "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/visual-evidence.md",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-root-images.json",
+      "media": {
+        "src": "zoom-1000-902.webp",
+        "type": "image",
+        "title": "لغز بصري مولّد",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-art.json"
+        }
+      }
+    },
+    {
+      "p": 600,
+      "q": "ما الشيء الظاهر في اللقطة المقرّبة؟",
+      "a": "تين",
+      "qid": "zoom-600-922",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "62% 59%",
+      "alt": [
+        "ثمرة تين"
+      ],
+      "topic": "فواكه وخضار",
+      "difficultyTarget": 0.4,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-root-images.json",
+      "media": {
+        "src": "quality-600-901.webp",
+        "type": "image",
+        "title": "لغز بصري توضيحي",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-10-08",
+          "record": "docs/bank/quality-2026-10-08/art-records/zoom-600-901.json"
+        }
+      }
+    },
+    {
+      "p": 600,
+      "q": "ما الشيء الظاهر في اللقطة المقرّبة؟",
+      "a": "خفاقة",
+      "qid": "zoom-600-923",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "8% 65%",
+      "alt": [
+        "مضرب خفق",
+        "خفاقة يدوية"
+      ],
+      "topic": "أدوات منزلية",
+      "difficultyTarget": 0.4,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-root-images.json",
       "media": {
         "src": "zoom-600-902.webp",
         "type": "image",
@@ -501,308 +577,119 @@
     {
       "p": 600,
       "q": "ما الشيء الظاهر في اللقطة المقرّبة؟",
-      "a": "سحّاب",
-      "qid": "zoom-600-903",
+      "a": "موصل يو إس بي سي",
+      "qid": "zoom-600-924",
       "type": "image",
       "effect": "zoom",
-      "origin": "50% 50%",
+      "origin": "50% 51%",
       "alt": [
-        "سوستة"
-      ],
-      "topic": "أغراض شخصية",
-      "difficultyTarget": 0.4,
-      "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/visual-evidence.md",
-      "media": {
-        "src": "zoom-600-903.webp",
-        "type": "image",
-        "title": "لغز بصري مولّد",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation",
-          "createdAt": "2026-09-18",
-          "record": "docs/bank/rebuild-2026-09-18/generated-art.json"
-        }
-      }
-    },
-    {
-      "p": 600,
-      "q": "ما الشيء الظاهر في اللقطة المقرّبة؟",
-      "a": "سماعات رأس",
-      "qid": "zoom-600-904",
-      "type": "image",
-      "effect": "zoom",
-      "origin": "25% 65%",
-      "alt": [
-        "هيدفون"
+        "USB-C",
+        "يو إس بي سي",
+        "منفذ USB-C",
+        "موصل USB-C"
       ],
       "topic": "أجهزة وتقنية",
       "difficultyTarget": 0.4,
       "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/visual-evidence.md",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-root-images.json",
       "media": {
-        "src": "zoom-600-904.webp",
+        "src": "quality-usbc-reference.webp",
         "type": "image",
-        "title": "لغز بصري مولّد",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation",
-          "createdAt": "2026-09-18",
-          "record": "docs/bank/rebuild-2026-09-18/generated-art.json"
-        }
+        "title": "USB-C.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:USB-C.jpg",
+        "author": "Wikideas1",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "changes": "Resized and converted to WebP; photographic content unchanged"
       }
     },
     {
       "p": 600,
       "q": "ما الشيء الظاهر في اللقطة المقرّبة؟",
-      "a": "ريشة بادمنتون",
-      "qid": "zoom-600-905",
+      "a": "خوذة دراجة",
+      "qid": "zoom-600-925",
       "type": "image",
       "effect": "zoom",
-      "origin": "35% 70%",
+      "origin": "50% 50%",
       "alt": [
-        "ريشة تنس الريشة",
-        "كرة الريشة",
-        "ريشة بدمينتون",
-        "shuttlecock"
+        "خوذة دراجة هوائية"
       ],
       "topic": "رياضة",
       "difficultyTarget": 0.4,
       "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/visual-evidence.md",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-root-images.json",
       "media": {
-        "src": "zoom-600-905.webp",
+        "src": "quality-600-905.webp",
         "type": "image",
-        "title": "لغز بصري مولّد",
+        "title": "لغز بصري توضيحي",
         "author": "Maydan / OpenAI image generation",
         "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
         "provenance": {
           "kind": "ai-generated",
-          "tool": "OpenAI image generation",
-          "createdAt": "2026-09-18",
-          "record": "docs/bank/rebuild-2026-09-18/generated-art.json"
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-10-08",
+          "record": "docs/bank/quality-2026-10-08/art-records/zoom-600-905.json"
         }
       }
     },
     {
       "p": 600,
       "q": "ما الشيء الظاهر في اللقطة المقرّبة؟",
-      "a": "كمان",
-      "qid": "zoom-600-906",
+      "a": "هارمونيكا",
+      "qid": "zoom-600-926",
       "type": "image",
       "effect": "zoom",
-      "origin": "45% 50%",
-      "alt": [],
+      "origin": "50% 52%",
+      "alt": [
+        "هارمونيكا فموية",
+        "هارمونيكة"
+      ],
       "topic": "موسيقى",
       "difficultyTarget": 0.4,
       "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/visual-evidence.md",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-root-images.json",
       "media": {
-        "src": "zoom-600-906.webp",
+        "src": "quality-600-906.webp",
         "type": "image",
-        "title": "لغز بصري مولّد",
+        "title": "لغز بصري توضيحي",
         "author": "Maydan / OpenAI image generation",
         "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
         "provenance": {
           "kind": "ai-generated",
-          "tool": "OpenAI image generation",
-          "createdAt": "2026-09-18",
-          "record": "docs/bank/rebuild-2026-09-18/generated-art.json"
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-10-08",
+          "record": "docs/bank/quality-2026-10-08/art-records/zoom-600-906.json"
         }
       }
     },
     {
       "p": 600,
       "q": "ما الشيء الظاهر في اللقطة المقرّبة؟",
-      "a": "دراجة نارية",
-      "qid": "zoom-600-907",
+      "a": "ترس دراجة",
+      "qid": "zoom-600-927",
       "type": "image",
       "effect": "zoom",
-      "origin": "50% 60%",
-      "alt": [],
+      "origin": "48% 42%",
+      "alt": [
+        "مسنن دراجة",
+        "تروس دراجة",
+        "ترس دراجة هوائية"
+      ],
       "topic": "وسائل نقل",
       "difficultyTarget": 0.4,
       "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/visual-evidence.md",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-root-images.json",
       "media": {
-        "src": "zoom-600-907.webp",
+        "src": "quality-600-907.webp",
         "type": "image",
-        "title": "لغز بصري مولّد",
+        "title": "لغز بصري توضيحي",
         "author": "Maydan / OpenAI image generation",
         "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
         "provenance": {
           "kind": "ai-generated",
-          "tool": "OpenAI image generation",
-          "createdAt": "2026-09-18",
-          "record": "docs/bank/rebuild-2026-09-18/generated-art.json"
-        }
-      }
-    },
-    {
-      "p": 600,
-      "q": "ما الشيء الظاهر في اللقطة المقرّبة؟",
-      "a": "ريشة طائر",
-      "qid": "zoom-600-908",
-      "type": "image",
-      "effect": "zoom",
-      "origin": "55% 50%",
-      "alt": [],
-      "topic": "طبيعة",
-      "difficultyTarget": 0.4,
-      "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/visual-evidence.md",
-      "media": {
-        "src": "zoom-600-908.webp",
-        "type": "image",
-        "title": "لغز بصري مولّد",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation",
-          "createdAt": "2026-09-18",
-          "record": "docs/bank/rebuild-2026-09-18/generated-art.json"
-        }
-      }
-    },
-    {
-      "p": 800,
-      "q": "ما الشيء الظاهر في اللقطة المقرّبة؟",
-      "a": "كيوي",
-      "qid": "zoom-800-901",
-      "type": "image",
-      "effect": "zoom",
-      "origin": "50% 50%",
-      "alt": [],
-      "topic": "فواكه وخضار",
-      "difficultyTarget": 0.25,
-      "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/visual-evidence.md",
-      "media": {
-        "src": "zoom-800-901.webp",
-        "type": "image",
-        "title": "لغز بصري مولّد",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation",
-          "createdAt": "2026-09-18",
-          "record": "docs/bank/rebuild-2026-09-18/generated-art.json"
-        }
-      }
-    },
-    {
-      "p": 800,
-      "q": "ما الشيء الظاهر في اللقطة المقرّبة؟",
-      "a": "مبشرة",
-      "qid": "zoom-800-902",
-      "type": "image",
-      "effect": "zoom",
-      "origin": "50% 50%",
-      "alt": [],
-      "topic": "أدوات منزلية",
-      "difficultyTarget": 0.25,
-      "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/visual-evidence.md",
-      "media": {
-        "src": "zoom-800-902.webp",
-        "type": "image",
-        "title": "لغز بصري مولّد",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation",
-          "createdAt": "2026-09-23",
-          "record": "docs/bank/rebuild-2026-09-18/generated-art.json"
-        }
-      }
-    },
-    {
-      "p": 800,
-      "q": "ما الشيء الظاهر في اللقطة المقرّبة؟",
-      "a": "دبوس أمان",
-      "qid": "zoom-800-903",
-      "type": "image",
-      "effect": "zoom",
-      "origin": "85% 62%",
-      "alt": [],
-      "topic": "أغراض شخصية",
-      "difficultyTarget": 0.25,
-      "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/visual-evidence.md",
-      "media": {
-        "src": "zoom-800-903.webp",
-        "type": "image",
-        "title": "لغز بصري مولّد",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation",
-          "createdAt": "2026-09-23",
-          "record": "docs/bank/rebuild-2026-09-18/generated-art.json"
-        }
-      }
-    },
-    {
-      "p": 800,
-      "q": "ما الشيء الظاهر في اللقطة المقرّبة؟",
-      "a": "كاميرا ويب",
-      "qid": "zoom-800-904",
-      "type": "image",
-      "effect": "zoom",
-      "origin": "50% 30%",
-      "alt": [
-        "ويب كام"
-      ],
-      "topic": "أجهزة وتقنية",
-      "difficultyTarget": 0.25,
-      "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/visual-evidence.md",
-      "media": {
-        "src": "zoom-800-904.webp",
-        "type": "image",
-        "title": "لغز بصري مولّد",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation",
-          "createdAt": "2026-09-23",
-          "record": "docs/bank/rebuild-2026-09-18/generated-art.json"
-        }
-      }
-    },
-    {
-      "p": 800,
-      "q": "ما الشيء الظاهر في اللقطة المقرّبة؟",
-      "a": "كرة غولف",
-      "qid": "zoom-800-905",
-      "type": "image",
-      "effect": "zoom",
-      "origin": "50% 50%",
-      "alt": [],
-      "topic": "رياضة",
-      "difficultyTarget": 0.25,
-      "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/visual-evidence.md",
-      "media": {
-        "src": "zoom-800-905.webp",
-        "type": "image",
-        "title": "لغز بصري مولّد",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation",
-          "createdAt": "2026-09-23",
-          "record": "docs/bank/rebuild-2026-09-18/generated-art.json"
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-10-08",
+          "record": "docs/bank/quality-2026-10-08/art-records/zoom-600-907.json"
         }
       }
     },
@@ -817,7 +704,7 @@
       "topic": "موسيقى",
       "difficultyTarget": 0.25,
       "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/visual-evidence.md",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-root-images.json",
       "media": {
         "src": "zoom-800-906.webp",
         "type": "image",
@@ -830,25 +717,27 @@
           "createdAt": "2026-09-23",
           "record": "docs/bank/rebuild-2026-09-18/generated-art.json"
         }
-      }
+      },
+      "alt": []
     },
     {
       "p": 800,
       "q": "ما الشيء الظاهر في اللقطة المقرّبة؟",
-      "a": "حذاء تزلج",
-      "qid": "zoom-800-907",
+      "a": "شريحة إلكترونية",
+      "qid": "zoom-800-921",
       "type": "image",
       "effect": "zoom",
-      "origin": "55% 82%",
+      "origin": "25% 50%",
       "alt": [
-        "رولر سكيت"
+        "دارة متكاملة",
+        "دائرة متكاملة"
       ],
-      "topic": "وسائل نقل",
+      "topic": "أجهزة وتقنية",
       "difficultyTarget": 0.25,
       "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/visual-evidence.md",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-root-images.json",
       "media": {
-        "src": "zoom-800-907.webp",
+        "src": "zoom-1000-904.webp",
         "type": "image",
         "title": "لغز بصري مولّد",
         "author": "Maydan / OpenAI image generation",
@@ -864,21 +753,20 @@
     {
       "p": 800,
       "q": "ما الشيء الظاهر في اللقطة المقرّبة؟",
-      "a": "صدفة بحرية",
-      "qid": "zoom-800-908",
+      "a": "سرخس",
+      "qid": "zoom-800-922",
       "type": "image",
       "effect": "zoom",
-      "origin": "50% 50%",
+      "origin": "48% 45%",
       "alt": [
-        "محارة",
-        "صدفة"
+        "نبات السرخس"
       ],
       "topic": "طبيعة",
       "difficultyTarget": 0.25,
       "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/visual-evidence.md",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-root-images.json",
       "media": {
-        "src": "zoom-800-908.webp",
+        "src": "zoom-1000-908.webp",
         "type": "image",
         "title": "لغز بصري مولّد",
         "author": "Maydan / OpenAI image generation",
@@ -888,6 +776,156 @@
           "tool": "OpenAI image generation",
           "createdAt": "2026-09-23",
           "record": "docs/bank/rebuild-2026-09-18/generated-art.json"
+        }
+      }
+    },
+    {
+      "p": 800,
+      "q": "ما الشيء الظاهر في اللقطة المقرّبة؟",
+      "a": "بامية",
+      "qid": "zoom-800-923",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "50% 50%",
+      "alt": [
+        "قرن بامية"
+      ],
+      "topic": "فواكه وخضار",
+      "difficultyTarget": 0.25,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-root-images.json",
+      "media": {
+        "src": "quality-800-901.webp",
+        "type": "image",
+        "title": "لغز بصري توضيحي",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-10-08",
+          "record": "docs/bank/quality-2026-10-08/art-records/zoom-800-901.json"
+        }
+      }
+    },
+    {
+      "p": 800,
+      "q": "ما الشيء الظاهر في اللقطة المقرّبة؟",
+      "a": "فتاحة فلين",
+      "qid": "zoom-800-924",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "48% 47%",
+      "alt": [
+        "لولب فلين",
+        "مفتاح فلين",
+        "فتاحة سدادات"
+      ],
+      "topic": "أدوات منزلية",
+      "difficultyTarget": 0.25,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-root-images.json",
+      "media": {
+        "src": "quality-800-902.webp",
+        "type": "image",
+        "title": "لغز بصري توضيحي",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-10-08",
+          "record": "docs/bank/quality-2026-10-08/art-records/zoom-800-902.json"
+        }
+      }
+    },
+    {
+      "p": 800,
+      "q": "ما الشيء الظاهر في اللقطة المقرّبة؟",
+      "a": "قصاصة أظافر",
+      "qid": "zoom-800-925",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "42% 52%",
+      "alt": [
+        "مقص أظافر",
+        "قلامة أظافر"
+      ],
+      "topic": "أغراض شخصية",
+      "difficultyTarget": 0.25,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-root-images.json",
+      "media": {
+        "src": "quality-800-903.webp",
+        "type": "image",
+        "title": "لغز بصري توضيحي",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-10-08",
+          "record": "docs/bank/quality-2026-10-08/art-records/zoom-800-903.json"
+        }
+      }
+    },
+    {
+      "p": 800,
+      "q": "ما الشيء الظاهر في اللقطة المقرّبة؟",
+      "a": "قناع مبارزة",
+      "qid": "zoom-800-926",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "63% 53%",
+      "alt": [
+        "قناع رياضة المبارزة",
+        "خوذة مبارزة"
+      ],
+      "topic": "رياضة",
+      "difficultyTarget": 0.25,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-root-images.json",
+      "media": {
+        "src": "quality-800-905.webp",
+        "type": "image",
+        "title": "لغز بصري توضيحي",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-10-08",
+          "record": "docs/bank/quality-2026-10-08/art-records/zoom-800-905.json"
+        }
+      }
+    },
+    {
+      "p": 800,
+      "q": "ما الشيء الظاهر في اللقطة المقرّبة؟",
+      "a": "سكة حديد",
+      "qid": "zoom-800-927",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "48% 50%",
+      "alt": [
+        "قضيب سكة حديد",
+        "مسار قطار"
+      ],
+      "topic": "وسائل نقل",
+      "difficultyTarget": 0.25,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-root-images.json",
+      "media": {
+        "src": "quality-800-907.webp",
+        "type": "image",
+        "title": "لغز بصري توضيحي",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-10-08",
+          "record": "docs/bank/quality-2026-10-08/art-records/zoom-800-907.json"
         }
       }
     },
@@ -900,99 +938,15 @@
       "effect": "zoom",
       "origin": "50% 50%",
       "alt": [
-        "أرضي شوكي"
+        "أرضي شوكي",
+        "أرضي شوكة"
       ],
       "topic": "فواكه وخضار",
       "difficultyTarget": 0.15,
       "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/visual-evidence.md",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-root-images.json",
       "media": {
         "src": "zoom-1000-901.webp",
-        "type": "image",
-        "title": "لغز بصري مولّد",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation",
-          "createdAt": "2026-09-23",
-          "record": "docs/bank/rebuild-2026-09-18/generated-art.json"
-        }
-      }
-    },
-    {
-      "p": 1000,
-      "q": "ما الشيء الظاهر في اللقطة المقرّبة؟",
-      "a": "عصارة ثوم",
-      "qid": "zoom-1000-902",
-      "type": "image",
-      "effect": "zoom",
-      "origin": "22% 68%",
-      "alt": [
-        "هراسة ثوم"
-      ],
-      "topic": "أدوات منزلية",
-      "difficultyTarget": 0.15,
-      "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/visual-evidence.md",
-      "media": {
-        "src": "zoom-1000-902.webp",
-        "type": "image",
-        "title": "لغز بصري مولّد",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation",
-          "createdAt": "2026-09-23",
-          "record": "docs/bank/rebuild-2026-09-18/generated-art.json"
-        }
-      }
-    },
-    {
-      "p": 1000,
-      "q": "ما الشيء الظاهر في اللقطة المقرّبة؟",
-      "a": "كشتبان",
-      "qid": "zoom-1000-903",
-      "type": "image",
-      "effect": "zoom",
-      "origin": "50% 50%",
-      "alt": [
-        "قمع خياطة"
-      ],
-      "topic": "أغراض شخصية",
-      "difficultyTarget": 0.15,
-      "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/visual-evidence.md",
-      "media": {
-        "src": "zoom-1000-903.webp",
-        "type": "image",
-        "title": "لغز بصري مولّد",
-        "author": "Maydan / OpenAI image generation",
-        "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
-        "provenance": {
-          "kind": "ai-generated",
-          "tool": "OpenAI image generation",
-          "createdAt": "2026-09-23",
-          "record": "docs/bank/rebuild-2026-09-18/generated-art.json"
-        }
-      }
-    },
-    {
-      "p": 1000,
-      "q": "ما الشيء الظاهر في اللقطة المقرّبة؟",
-      "a": "شريحة إلكترونية",
-      "qid": "zoom-1000-904",
-      "type": "image",
-      "effect": "zoom",
-      "origin": "18% 55%",
-      "alt": [],
-      "topic": "أجهزة وتقنية",
-      "difficultyTarget": 0.15,
-      "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/visual-evidence.md",
-      "media": {
-        "src": "zoom-1000-904.webp",
         "type": "image",
         "title": "لغز بصري مولّد",
         "author": "Maydan / OpenAI image generation",
@@ -1017,7 +971,7 @@
       "topic": "رياضة",
       "difficultyTarget": 0.15,
       "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/visual-evidence.md",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-root-images.json",
       "media": {
         "src": "zoom-1000-905.webp",
         "type": "image",
@@ -1041,12 +995,13 @@
       "effect": "zoom",
       "origin": "50% 50%",
       "alt": [
-        "كلارنيت"
+        "كلارنيت",
+        "كلارنيت خشبي"
       ],
       "topic": "موسيقى",
       "difficultyTarget": 0.15,
       "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/visual-evidence.md",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-root-images.json",
       "media": {
         "src": "zoom-1000-906.webp",
         "type": "image",
@@ -1064,22 +1019,48 @@
     {
       "p": 1000,
       "q": "ما الشيء الظاهر في اللقطة المقرّبة؟",
-      "a": "صمام إطار",
-      "qid": "zoom-1000-907",
+      "a": "كشتبان",
+      "qid": "zoom-1000-921",
       "type": "image",
       "effect": "zoom",
-      "origin": "50% 20%",
+      "origin": "65% 78%",
       "alt": [
-        "صمام دراجة",
+        "قمع خياطة"
+      ],
+      "topic": "أغراض شخصية",
+      "difficultyTarget": 0.15,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-root-images.json",
+      "media": {
+        "src": "zoom-1000-903.webp",
+        "type": "image",
+        "title": "لغز بصري مولّد",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-art.json"
+        }
+      }
+    },
+    {
+      "p": 1000,
+      "q": "ما الشيء الظاهر في اللقطة المقرّبة؟",
+      "a": "صمام إطار",
+      "qid": "zoom-1000-922",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "50% 10%",
+      "alt": [
         "بلف إطار",
-        "بلف",
-        "صمام شريدر",
-        "صمام هواء"
+        "صمام هواء إطار"
       ],
       "topic": "وسائل نقل",
       "difficultyTarget": 0.15,
       "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/visual-evidence.md",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-root-images.json",
       "media": {
         "src": "zoom-1000-907.webp",
         "type": "image",
@@ -1097,27 +1078,90 @@
     {
       "p": 1000,
       "q": "ما الشيء الظاهر في اللقطة المقرّبة؟",
-      "a": "سرخس",
-      "qid": "zoom-1000-908",
+      "a": "بكرة خيط",
+      "qid": "zoom-1000-923",
       "type": "image",
       "effect": "zoom",
-      "origin": "50% 50%",
-      "alt": [],
-      "topic": "طبيعة",
+      "origin": "50% 38%",
+      "alt": [
+        "بكرة خياطة",
+        "مكوك ماكينة خياطة"
+      ],
+      "topic": "أغراض شخصية",
       "difficultyTarget": 0.15,
       "verified": true,
-      "sourceUrl": "docs/bank/rebuild-2026-09-18/visual-evidence.md",
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-root-images.json",
       "media": {
-        "src": "zoom-1000-908.webp",
+        "src": "quality-600-903.webp",
         "type": "image",
-        "title": "لغز بصري مولّد",
+        "title": "لغز بصري توضيحي",
         "author": "Maydan / OpenAI image generation",
         "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
         "provenance": {
           "kind": "ai-generated",
-          "tool": "OpenAI image generation",
-          "createdAt": "2026-09-23",
-          "record": "docs/bank/rebuild-2026-09-18/generated-art.json"
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-10-08",
+          "record": "docs/bank/quality-2026-10-08/art-records/zoom-600-903.json"
+        }
+      }
+    },
+    {
+      "p": 1000,
+      "q": "ما الشيء الظاهر في اللقطة المقرّبة؟",
+      "a": "عدسة كاميرا",
+      "qid": "zoom-1000-924",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "50% 50%",
+      "alt": [
+        "عدسة تصوير",
+        "عدسة فوتوغرافية"
+      ],
+      "topic": "أجهزة وتقنية",
+      "difficultyTarget": 0.15,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-root-images.json",
+      "media": {
+        "src": "quality-800-904.webp",
+        "type": "image",
+        "title": "لغز بصري توضيحي",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-10-08",
+          "record": "docs/bank/quality-2026-10-08/art-records/zoom-800-904.json"
+        }
+      }
+    },
+    {
+      "p": 1000,
+      "q": "ما الشيء الظاهر في اللقطة المقرّبة؟",
+      "a": "صدفة بحرية",
+      "qid": "zoom-1000-925",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "53% 53%",
+      "alt": [
+        "صدفة",
+        "قوقعة بحرية"
+      ],
+      "topic": "طبيعة",
+      "difficultyTarget": 0.15,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-root-images.json",
+      "media": {
+        "src": "quality-800-908.webp",
+        "type": "image",
+        "title": "لغز بصري توضيحي",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-10-08",
+          "record": "docs/bank/quality-2026-10-08/art-records/zoom-800-908.json"
         }
       }
     }

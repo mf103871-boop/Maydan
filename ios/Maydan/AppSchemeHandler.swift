@@ -11,6 +11,9 @@ final class AppSchemeHandler: NSObject, WKURLSchemeHandler {
     static let host = "app"
     static let rootURL = URL(string: "\(scheme)://\(host)/")!
     static let entryURL = rootURL.appendingPathComponent("index.html")
+    // Empty same-origin staging document: failed migration cannot let game
+    // initialization create default keys over recoverable legacy progress.
+    static let migrationURL = rootURL.appendingPathComponent("__storage_migration__.html")
 
     private struct Reply {
         let response: URLResponse
@@ -114,6 +117,13 @@ final class AppSchemeHandler: NSObject, WKURLSchemeHandler {
 
     private func reply(for request: URLRequest) -> Reply {
         let method = (request.httpMethod ?? "GET").uppercased()
+        if let url = request.url, url == Self.migrationURL, method == "GET" || method == "HEAD" {
+            let html = Data("<!doctype html><html lang=\"ar\"><meta charset=\"utf-8\"><title>نقل المحفوظات</title><body></body></html>".utf8)
+            return Reply(response: HTTPURLResponse(url: url, statusCode: 200, httpVersion: "HTTP/1.1", headerFields: [
+                "Content-Type": "text/html; charset=utf-8", "Content-Length": String(html.count),
+                "Cache-Control": "no-store", "Content-Security-Policy": Self.contentSecurityPolicy
+            ])!, body: method == "HEAD" ? nil : html)
+        }
         guard let url = request.url,
               Self.isAppURL(url),
               method == "GET" || method == "HEAD",

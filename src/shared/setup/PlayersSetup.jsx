@@ -4,10 +4,11 @@ import React, { useState } from 'react';
 import { Button, Card, Modal } from '../ui/components.jsx';
 import { IconPlus } from '../ui/icons.jsx';
 import { addPlayer, ROSTER_LIMIT } from './roster.js';
+import { useSubmitKey } from '../ui/useSubmitKey.js';
 
-export function PlayersSetup({ roster, setRoster, min = 2, max = 10, accent, onStart, children, startLabel = 'ابدأ اللعب', startDisabled = false, api }) {
+export function PlayersSetup({ roster, setRoster, min = 2, max = 10, accent, onStart, children, startLabel = 'ابدأ اللعب', startDisabled = false, api, designPreviewAdding = false }) {
   const [selected, setSelected] = useState(() => roster.slice(0, Math.min(max, roster.length)).map((p) => p.id));
-  const [adding, setAdding] = useState(false);
+  const [adding, setAdding] = useState(!!designPreviewAdding);
   const [name, setName] = useState('');
   const [emoji, setEmoji] = useState(null);
   const [error, setError] = useState('');
@@ -25,28 +26,29 @@ export function PlayersSetup({ roster, setRoster, min = 2, max = 10, accent, onS
     setName(''); setEmoji(null); setAdding(false); setError('');
     api && api.sound.play('pop');
   };
+  const submitKeys = useSubmitKey(submitAdd);
   const players = selected.map((id) => roster.find((p) => p.id === id)).filter(Boolean);
   const canStart = players.length >= min && !startDisabled;
 
   return (
-    <div className="stack">
+    <div data-design-screen="play-setup" data-design-id="players-setup" className="stack">
       <Card>
         <div className="row-between" style={{ marginBottom: 10 }}>
           <span className="card-title">اللاعبون</span>
           <span className="badge">{players.length}/{max}</span>
         </div>
-        <div className="chips">
+        <div data-design-id="players" className="chips">
           {roster.map((p) => {
             const order = selected.indexOf(p.id);
             return (
-              <button key={p.id} type="button" className={`chip ${order >= 0 ? 'selected' : ''}`} style={{ '--chip-color': p.color }} aria-pressed={order >= 0} onClick={() => toggle(p.id)}>
+              <button key={p.id} type="button" data-design-id="player-choice" className={`chip ${order >= 0 ? 'selected' : ''}`} style={{ '--chip-color': p.color }} aria-pressed={order >= 0} onClick={() => toggle(p.id)}>
                 {order >= 0 && <span className="order" aria-hidden="true">{order + 1}</span>}
                 <ClayStage className="clay-static no-contact"><Avatar player={p} className="avatar" /></ClayStage>{p.name}
               </button>
             );
           })}
           {roster.length < ROSTER_LIMIT && (
-            <button type="button" className="chip chip-add" onClick={() => setAdding(true)}><IconPlus /> لاعب جديد</button>
+            <button type="button" data-design-id="add-player" className="chip chip-add" onClick={() => setAdding(true)}><IconPlus /> لاعب جديد</button>
           )}
         </div>
         {roster.length === 0 && <p className="card-muted" style={{ marginTop: 10 }}>أضف لاعبين إلى الدفتر مرة واحدة، ويُعاد استخدامهم في كل الألعاب.</p>}
@@ -54,12 +56,12 @@ export function PlayersSetup({ roster, setRoster, min = 2, max = 10, accent, onS
       </Card>
       {children}
       {error && <p className="setup-error" role="alert">{error}</p>}
-      <div className="setup-sticky">
-        <Button variant="accent" size="lg" full disabled={!canStart} onClick={() => onStart(players)}>{startLabel} · {players.length} لاعبين</Button>
+      <div data-design-id="actions" className="setup-sticky">
+        <Button variant="accent" size="lg" full disabled={!canStart} data-design-id="start" data-design-required="true" onClick={() => onStart(players)}>{startLabel} · {players.length} لاعبين</Button>
       </div>
       {adding && (
-        <Modal title="لاعب جديد" onClose={() => { setAdding(false); setError(''); }} footer={<Button variant="primary" size="lg" full onClick={submitAdd}>إضافة</Button>}>
-          <label className="field"><span>الاسم</span><input className="input" value={name} maxLength={20} autoFocus onChange={(e) => { setName(e.target.value); setError(''); }} onKeyDown={(e) => e.key === 'Enter' && submitAdd()} placeholder="مثال: نورة" /></label>
+        <Modal data-design-screen="setup.add-player" title="لاعب جديد" onClose={() => { setAdding(false); setError(''); }} footer={<Button variant="primary" size="lg" full data-design-id="add-player" onClick={submitAdd}>إضافة</Button>}>
+          <label className="field"><span>الاسم</span><input data-design-id="name-input" className="input" value={name} maxLength={20} autoFocus onChange={(e) => { setName(e.target.value); setError(''); }} {...submitKeys} placeholder="مثال: نورة" /></label>
           <div className="field"><span>اختر شخصيتك</span>
             <AvatarPicker value={emoji} onChange={setEmoji} />
           </div>

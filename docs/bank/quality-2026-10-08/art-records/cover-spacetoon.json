@@ -1,0 +1,29 @@
+{
+  "id": "spacetoon",
+  "kind": "cover",
+  "file": "public/media/badeeha-covers/spacetoon.webp",
+  "style": "nostalgic 2D space illustration",
+  "palette": "cobalt, tangerine, star yellow",
+  "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'سبيستون'. Landscape 4:3 artwork.\nMedium: nostalgic 2D space illustration.\nIntentional palette: cobalt, tangerine, star yellow.\nScene: A friendly imaginary small spaceship arcs between colorful planets and stars, hand-painted television-animation warmth, no brand logo or characters.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-10-08",
+  "sourceImage": {
+    "name": "exec-582ea748-c55e-4d9a-b021-5fd1368615d1.png",
+    "sha256": "62c58939e49d3bda50cd4ecfa108c30f63ac0d63ade276fce5948ec5f86ecb0f",
+    "width": 1448,
+    "height": 1086
+  },
+  "width": 640,
+  "height": 480,
+  "bytes": 70992,
+  "sha256": "7ce075f8f3f89bc30db3f312bc76a511cfc0e95e3de96f57689220f498f3725f",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "phone-size-reviewed",
+    "date": "2026-10-08",
+    "reviewer": "root",
+    "width": 160,
+    "method": "shipped cover CSS; baseline and replacement side by side",
+    "evidence": "docs/bank/quality-2026-10-08/preview/covers-3.jpg"
+  }
+}

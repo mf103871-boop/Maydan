@@ -1,0 +1,21 @@
+Maydan is an Arabic party-game collection. Version 1.7 adds Lamma voice notes, audio calls, private groups and game invitations, plus the Badeeha content refresh since public version 1.5. The interface and games are in Arabic.
+
+ACCOUNT AND PURCHASE ACCESS
+Local free play is available without signing in. Sign in with Apple or Google for social features, profiles and purchases linked to an account. There is no separate Maydan password or reviewer bypass. Social features are free. Maydan Plus uses StoreKit products plus.monthly and plus.yearly for the same game entitlement; prices and periods are shown before purchase. Restore Purchases and subscription management are in Settings. Ten Badeeha categories, one complete trial in each other game and joining rooms by code are free.
+
+TWO-ACCOUNT SOCIAL TEST
+1. Sign in on two devices with separate Apple or Google accounts. Open “اللّمة”. Copy the first account's friend code from the panel footer. On the second account choose “أضف صديقًا”, search that code and send a request. Accept it from the requests tab on the first account.
+2. Open the friend's conversation. Send a text, then choose “رسالة صوتية”, allow microphone access, record, stop, preview and send. Voice notes are limited to two minutes. Use the phone button for an audio call and accept it on the other device.
+3. Create “لمّة جديدة”, name it and invite the accepted friend. Accept the group invitation on the second account. Groups are private and limited to 12 accepted members; there is no public feed or random matching.
+4. To share a game invitation, create or join a Meen Fina/Fabraka room, then use “دعوة للعبة” with that room's code. The sender must be in the room.
+
+SAFETY AND PRIVACY
+The received-message menu provides reporting for text and voice notes. The direct-conversation menu provides “حظر الحساب” and “إبلاغ عن الحساب”; a member profile also provides block/report controls. Your own message menu provides deletion. Text is filtered, profile photos/covers require moderator approval, and authorized moderators can review reports and remove content or suspend accounts. Calls are not recorded. Stored conversations and live calls are not represented as end-to-end encrypted. Notification text previews are off by default.
+
+Delete the signed-in account through Settings > account card > “حذف الحساب” and confirm. Deletion removes its related social/profile data; an App Store subscription is managed separately in the Apple account.
+
+The minimum-version update gate is disabled by default. It is separate from Apple installation and does not install an update itself.
+
+Privacy: https://maydan-game.mf103871.workers.dev/api/legal/privacy/
+Terms: https://maydan-game.mf103871.workers.dev/#/terms
+Support: mf103871@gmail.com

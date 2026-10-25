@@ -1,0 +1,29 @@
+{
+  "id": "beforeafter",
+  "kind": "cover",
+  "file": "public/media/badeeha-covers/beforeafter.webp",
+  "style": "conceptual split-light illustration",
+  "palette": "dawn coral, midnight blue, gold",
+  "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'قبل ولا بعد'. Landscape 4:3 artwork.\nMedium: conceptual split-light illustration.\nIntentional palette: dawn coral, midnight blue, gold.\nScene: One winding pathway transitions from sunrise to starry night across a single coherent landscape, symbolic passage of time, no clocks with legible numbers.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-10-08",
+  "sourceImage": {
+    "name": "exec-82a591c1-683a-4f77-b9b5-f25092b28d4f.png",
+    "sha256": "72fb2c635b142fe50c856fd13bdbc2f1b89cd2b617f8ae5b2babcd7cae3de650",
+    "width": 1448,
+    "height": 1086
+  },
+  "width": 640,
+  "height": 480,
+  "bytes": 77096,
+  "sha256": "41ef5e806507b7f40c70a66431641a6588e0b75dc6f7f5d5511b3afcf3b8c0db",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "phone-size-reviewed",
+    "date": "2026-10-08",
+    "reviewer": "root",
+    "width": 160,
+    "method": "shipped cover CSS; baseline and replacement side by side",
+    "evidence": "docs/bank/quality-2026-10-08/preview/covers-4.jpg"
+  }
+}

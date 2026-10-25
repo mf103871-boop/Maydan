@@ -1,7 +1,7 @@
 // غلاف المنصة: المزوّدون (صوت/اهتزاز/تخزين/دفتر اللاعبين/إعدادات)، الموجّه، وانتقالات الشاشات.
 import React, { useEffect, useMemo, useState, useCallback, useRef } from 'react';
 import { PlatformContext, usePlatform } from './context.js';
-import { useRoute, navigate, getDirection, getRoute } from './router.js';
+import { useRoute, navigate, getDirection, getRoute, installNativeBackBridge } from './router.js';
 import { getGame } from './registry.js';
 import { createStorage, clearAllPlatformData } from '../shared/lib/storage.js';
 import { ACCOUNT_PREFIX } from '../shared/account/store.js';
@@ -20,6 +20,8 @@ import { GameDetails } from './screens/GameDetails.jsx';
 import { Play } from './screens/Play.jsx';
 import { Players } from './screens/Players.jsx';
 import { Settings } from './screens/Settings.jsx';
+import { Store } from './screens/Store.jsx';
+import { BottomNavigation, MenuScrollRestoration } from './BottomNavigation.jsx';
 import { About } from './screens/About.jsx';
 import { Terms, Privacy } from './screens/Legal.jsx';
 import { Online } from '../online/Online.jsx';
@@ -28,14 +30,18 @@ import { AccountProvider } from '../shared/account/AccountProvider.jsx';
 import { PaywallHost } from '../shared/account/PaywallHost.jsx';
 import accountCss from '../shared/account/account.css';
 import { SocialProvider } from '../social/SocialProvider.jsx';
-import { SocialScreen } from '../social/SocialScreen.jsx';
+import { LammaProvider } from '../social/LammaProvider.jsx';
+import { SocialUIProvider } from '../social/SocialUIProvider.jsx';
+import { SocialHost } from '../social/SocialHost.jsx';
+import { CallViewport } from '../social/CallViewport.jsx';
 import { ProfileProvider } from '../profiles/ProfileProvider.jsx';
 import { ProfileScreen } from '../profiles/ProfileScreen.jsx';
 import { ModerationScreen } from '../moderation/ModerationScreen.jsx';
+import { DesignRuntime } from '../design/DesignRuntime.jsx';
 
 export const VERSION = typeof __MAYDAN_VERSION__ !== 'undefined' ? __MAYDAN_VERSION__ : '1.0.0';
 const platformStorage = createStorage('platform');
-const DEFAULT_SETTINGS = { soundOn: true, soundVolume: 0.75, musicOn: true, musicVolume: 0.35, musicLevel: 2, hapticsOn: true, reducedMotion: false, splashSeen: false };
+const DEFAULT_SETTINGS = { soundOn: true, soundVolume: 0.75, voiceOn: true, musicOn: true, musicVolume: 0.35, musicLevel: 2, hapticsOn: true, reducedMotion: false, splashSeen: false };
 // الموسيقى 3.1 أهدأ وأخفض: من حفظ مستوى الموسيقى قبلها يُنقل مرة واحدة إلى الافتراضي الجديد.
 function migrateSettings(saved) {
   const next = { ...DEFAULT_SETTINGS, ...(saved || {}) };
@@ -54,11 +60,12 @@ function ScreenHost({ route }) {
   // عودة الدخول (#/auth?code=) تعرض الرئيسية بينما يبدّل AccountProvider الرمز بجلسة.
   if (route.name === 'home' || route.name === 'auth') screen = <Home key="home" />;
   else if (route.name === 'game') screen = <GameDetails key={`game-${route.params.id}`} id={route.params.id} />;
-  else if (route.name === 'play') screen = <Play key={`play-${route.params.id}`} id={route.params.id} />;
+  else if (route.name === 'play') screen = getGame(route.params.id)?.onlineOnly ? <Online key={`online-${route.params.id}`} game={route.params.id} /> : <Play key={`play-${route.params.id}`} id={route.params.id} />;
   else if (route.name === 'players') screen = <Players key="players" />;
-  else if (route.name === 'friends') screen = <SocialScreen key="friends" friendId={route.params.id || null} />;
+  else if (route.name === 'friends' || route.name === 'friend-group') screen = <div key="friends" data-social-page-slot />;
   else if (route.name === 'profile') screen = <ProfileScreen key={`profile-${route.params.id || 'me'}`} profileId={route.params.id || null} />;
   else if (route.name === 'settings') screen = <Settings key="settings" />;
+  else if (route.name === 'store') screen = <Store key="store" />;
   else if (route.name === 'moderation') screen = <ModerationScreen key="moderation" />;
   else if (route.name === 'about') screen = <About key="about" />;
   else if (route.name === 'terms') screen = <Terms key="terms" />;
@@ -72,13 +79,14 @@ function Providers({ children }) {
   const toast = useToast();
   const [settings, setSettingsState] = useState(() => migrateSettings(platformStorage.get('settings', {})));
   const [roster, setRosterState] = useState(() => platformStorage.get('roster', []) || []);
-  const sound = useMemo(() => createSound({ enabled: settings.soundOn, volume: settings.soundVolume, music: settings.musicOn, musicVolume: settings.musicVolume }), []); // eslint-disable-line react-hooks/exhaustive-deps
+  const sound = useMemo(() => createSound({ enabled: settings.soundOn, volume: settings.soundVolume, voice: settings.voiceOn, music: settings.musicOn, musicVolume: settings.musicVolume }), []); // eslint-disable-line react-hooks/exhaustive-deps
   const haptics = useMemo(() => createHaptics({ enabled: settings.hapticsOn }), []); // eslint-disable-line react-hooks/exhaustive-deps
 
   const setSettings = useCallback((patch) => {
     // Apply in the gesture itself so enabling audio can play its confirmation.
     if ('soundOn' in patch) sound.enable(patch.soundOn);
     if ('soundVolume' in patch) sound.setVolume(patch.soundVolume);
+    if ('voiceOn' in patch) sound.voice.enable(patch.voiceOn);
     if ('musicOn' in patch) sound.music.enable(patch.musicOn);
     if ('musicVolume' in patch) sound.music.setVolume(patch.musicVolume);
     if ('hapticsOn' in patch) haptics.enable(patch.hapticsOn);
@@ -96,6 +104,7 @@ function Providers({ children }) {
   useEffect(() => { sound.attach(); return () => sound.dispose(); }, [sound]);
   useEffect(() => { sound.enable(settings.soundOn); }, [sound, settings.soundOn]);
   useEffect(() => { sound.setVolume(settings.soundVolume); }, [sound, settings.soundVolume]);
+  useEffect(() => { sound.voice.enable(settings.voiceOn); }, [sound, settings.voiceOn]);
   useEffect(() => { sound.music.enable(settings.musicOn); }, [sound, settings.musicOn]);
   useEffect(() => { sound.music.setVolume(settings.musicVolume); }, [sound, settings.musicVolume]);
   useEffect(() => { haptics.enable(settings.hapticsOn); }, [haptics, settings.hapticsOn]);
@@ -103,11 +112,11 @@ function Providers({ children }) {
 
   const value = useMemo(() => ({ sound, haptics, confetti, toast, settings, setSettings, roster, setRoster, navigate, storage: platformStorage, version: VERSION }), [sound, haptics, toast, settings, setSettings, roster, setRoster]);
   // الحساب داخل مزوّد المنصة: يحتاج التنبيهات (toast) والإعدادات، وتحتاجه كل الشاشات.
-  return <PlatformContext.Provider value={value}><AccountProvider><SocialProvider><ProfileProvider>{children}</ProfileProvider></SocialProvider></AccountProvider></PlatformContext.Provider>;
+  return <PlatformContext.Provider value={value}><AccountProvider><SocialProvider><LammaProvider><SocialUIProvider><ProfileProvider>{children}</ProfileProvider></SocialUIProvider></LammaProvider></SocialProvider></AccountProvider></PlatformContext.Provider>;
 }
 
 // عنوان المستند يتبع الشاشة (قارئات الشاشة والتبويبات والسجل)، والألعاب تحمل اسمها.
-const SCREEN_TITLES = { players: 'اللاعبون', friends: 'الأصدقاء', profile: 'الملف', settings: 'الإعدادات', about: 'عن ميدان', terms: 'شروط الاستخدام', privacy: 'سياسة الخصوصية', online: 'اللّمّة', room: 'الغرفة' };
+const SCREEN_TITLES = { players: 'اللاعبون', friends: 'الأصدقاء', 'friend-group': 'الشِّلّة', store: 'المتجر', profile: 'الملف', settings: 'الإعدادات', about: 'عن ميدان', terms: 'شروط الاستخدام', privacy: 'سياسة الخصوصية', online: 'اللّمّة', room: 'الغرفة' };
 const BASE_TITLE = 'ميدان: ألعاب جمعتنا';
 const IN_GAME_ROUTES = new Set(['play', 'online', 'room']);
 export const UPDATE_READY_MESSAGE = 'تحديث ميدان جاهز — يعمل عند الفتح التالي.';
@@ -116,6 +125,7 @@ function Shell() {
   const route = useRoute();
   const { settings, setSettings, sound, confetti, toast } = usePlatform();
   const [booted, setBooted] = useState(false);
+  useEffect(() => installNativeBackBridge(), []);
   useEffect(() => {
     const game = (route.name === 'game' || route.name === 'play') ? getGame(route.params.id) : null;
     const title = game ? game.name : SCREEN_TITLES[route.name];
@@ -169,9 +179,12 @@ function Shell() {
         onHome={() => navigate('/', { replace: true })}
         onClear={resetKeepingAccount}
       >
-        <ScreenHost route={route} />
+        <CallViewport><ScreenHost route={route} /></CallViewport>
       </ErrorBoundary>}
+      {booted && <MenuScrollRestoration route={route} />}
+      {booted && <BottomNavigation route={route} />}
       {booted && <PaywallHost />}
+      {booted && <ErrorBoundary title="تعذّر فتح اللّمة" message="أعد فتح ميدان لتتصل بأصحابك." onHome={() => navigate('/')}><SocialHost /></ErrorBoundary>}
       <style>{brandCss}</style>
       <style>{onlineCss}</style>
       <style>{accountCss}</style>
@@ -183,8 +196,10 @@ export function PlatformApp() {
   return (
     <ToastProvider>
       <Providers>
-        <Shell />
+        <DesignRuntime><Shell /></DesignRuntime>
       </Providers>
     </ToastProvider>
   );
 }
+
+export { Shell as PlatformShell };

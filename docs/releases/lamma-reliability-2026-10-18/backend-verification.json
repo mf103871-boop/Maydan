@@ -1,0 +1,36 @@
+{
+  "verifiedAt": "2026-10-18T20:24:53.610Z",
+  "operation": "lamma-social-update",
+  "versions": {
+    "maydan-game": "da6bff68-3009-482b-b6ea-a7cd06f84711",
+    "maydan-rooms": "523ab5dc-9ff4-48d7-8601-4a2f9f84eff0"
+  },
+  "assetsUnchanged": true,
+  "checkedAssets": 63,
+  "originalBindingsUnchanged": true,
+  "originalSettingsUnchanged": true,
+  "originalCronsUnchanged": true,
+  "durableObjectMigrationsUnchanged": true,
+  "reviewedWorkerCodeVerified": true,
+  "onlyMigration0009Added": true,
+  "smoke": {
+    "maydan-game": {
+      "healthPassed": true,
+      "accounts": true,
+      "protocol": 1,
+      "mandatoryUpdatePolicyChecked": true,
+      "mandatoryUpdateDisabled": true
+    },
+    "maydan-rooms": {
+      "healthPassed": true,
+      "accounts": true,
+      "protocol": 1,
+      "mandatoryUpdatePolicyChecked": true,
+      "mandatoryUpdateDisabled": true
+    }
+  },
+  "applied": true,
+  "frontendDeployed": false,
+  "secretValuesWritten": false,
+  "planSHA256": "af6b8228e0223ebcd2f8f281bbf7ac77a5d7d9f45e698521d77a31319e201eb2"
+}

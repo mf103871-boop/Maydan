@@ -166,7 +166,7 @@ export async function checkSources(items) {
 }
 
 async function main() {
-  const existing = (check || only) ? JSON.parse(await readFile(provenanceFile, 'utf8')) : null;
+  const existing = JSON.parse(await readFile(provenanceFile, 'utf8').catch(() => '{}'));
   await mkdir(workDir, { recursive: true }); await mkdir(mastersDir, { recursive: true }); await mkdir(outDir, { recursive: true });
   const irs = {};
   for (const [name, spec] of Object.entries(ROOMS)) { irs[name] = path.join(workDir, `ir-${name}.wav`); if (!check) await writeWav(irs[name], impulseResponse(spec)); }
@@ -174,7 +174,9 @@ async function main() {
   const referenced = new Set();
   for (const [id, cue] of Object.entries(CUES)) {
     let info;
-    if (check || (only && id !== only)) {
+    // Audition-approved recorded edits are pinned artifacts, never replaced by the
+    // former synthesizer when someone runs audio:build.
+    if (check || existing?.cues?.[id]?.reviewedAsset || (only && id !== only)) {
       info = existing?.cues?.[id];
       if (!info) throw new Error(`provenance lacks ${id}`);
     } else {
@@ -205,7 +207,7 @@ async function main() {
     + `export const SAMPLE_RATE = 48000;\nexport const SAMPLE_BANK = ${JSON.stringify(bank, null, 2)};\n`;
   if (check) {
     if (orphans.length) throw new Error(`public/audio holds files no cue references: ${orphans.join(', ')}`);
-    if (await readFile(manifestFile, 'utf8') !== text) throw new Error('sample-bank.js differs from public/audio; run node scripts/audio/build.mjs');
+    if ((await readFile(manifestFile, 'utf8')).replaceAll('\r\n', '\n') !== text) throw new Error('sample-bank.js differs from public/audio; run node scripts/audio/build.mjs');
     await checkSources(provenance.cues);
     console.log(`Audio bank verified: ${Object.keys(bank).length} cues (${Object.values(provenance.cues).filter((c) => c.source).length} from licensed sources)`);
     return;

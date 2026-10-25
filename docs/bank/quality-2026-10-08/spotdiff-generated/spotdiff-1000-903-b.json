@@ -1,0 +1,46 @@
+{
+  "pack": "spotdiff",
+  "oldQid": "spotdiff-1000-903",
+  "side": "b",
+  "createdAt": "2026-10-12",
+  "kind": "ai-generated",
+  "tool": "OpenAI image generation (built-in)",
+  "mode": "edit",
+  "prompt": "Use case: precise-object-edit\nAsset type: second matching image of one-difference observation puzzle, to be displayed at 173 px width.\nInput is the exact EDIT TARGET. Remove ONLY the lower-left BLACK WING SPOT of the largest ladybird at lower right (the spot closest to the viewer, near x=89.5%, y=82.5%). Fill that one circular spot with matching red wing pigment and continuous subtle texture, preserving beetle outline and all other anatomy. The largest ladybird now has THREE black wing spots instead of FOUR: upper-left, upper-right, lower-right stay exactly where they were. This is precisely ONE spot-count difference, not a position or shape difference.\nKeep everything else identical: all spots and anatomy of the other two ladybirds, every leaf and vein, five pots with their exact motifs, illustrated plant markers, shears, twine, watering can, mister, flowers and greenhouse details. Keep framing, size, style and all colors unchanged. No circles, arrows, new text, UI or other differences.",
+  "asset": "media/spotdiff/spotdiff-1000-903-b-q20261008.webp",
+  "sha256": "92d5372704ae5ebcbdb7b6d7b284fe0e3ce1b1e89fc8873fa6107acef2f61778",
+  "bytes": 217786,
+  "width": 960,
+  "height": 720,
+  "inputImages": [
+    {
+      "file": "spotdiff-1000-903-a-q20261008.webp",
+      "sha256": "f092275da0d942277fafa720452a75aa6cdeb672b9d8b9c6520a005aea4122b8"
+    }
+  ],
+  "review": {
+    "status": "phone-size-reviewed",
+    "originalCompared": true,
+    "difference": "Largest ladybird has three black wing spots instead of four; the lower-left spot is removed.",
+    "answer": "نقصت بقعة سوداء من الدعسوقة الكبيرة",
+    "spot": {
+      "x": 89.5,
+      "y": 82.5,
+      "r": 4.5
+    },
+    "semanticDifferenceCount": 1,
+    "mobileDeviceQA": false,
+    "displayedEffect": "Unfiltered side-by-side originals; reveal circle only",
+    "reviewedAt": "2026-10-12",
+    "reviewer": "finish_spotdiff",
+    "imageWidthCSS": 173,
+    "evidence": "docs/bank/quality-2026-10-08/preview/spotdiff-09.png",
+    "independentReviewer": "root"
+  },
+  "packaging": "Uniform size/format encoding only; all scene changes created by built-in imagegen",
+  "revision": {
+    "reason": "Previous tiny spot shift unfair at phone size; replace with distinct spot-count difference.",
+    "previousSha256": "8ef6a2661a9827bc7d1c0073c31952fb661579ec9fece32cab1065d68559ba90",
+    "previousPrompt": "Use case: precise-object-edit\nAsset type: strict matching B of a single-difference comparison puzzle.\nInput image1 is the exact EDIT TARGET. Move ONLY the LOWER-RIGHT black round wing spot of the largest lower-right ladybird UPWARD along its same right wing, to halfway between its previous location and the upper-right spot. Keep its size, shape and black color exactly identical. There must still be FOUR black wing spots on this largest ladybird: two unchanged spots on its left wing, unchanged upper-right spot, and the moved right-wing spot. The red surface must naturally fill the old footprint. This is one spot-position difference. Do not change any other beetle anatomy.\nMake exactly this one semantic difference. Keep all other objects and pixels identical including other three spots of largest beetle, all three ladybirds with four spots each, all six legs and antennae per visible beetle, leaves and veins, five pots and motifs, labels icons, shears, twine, plant mister, watering can, flowers, greenhouse details and art/framing. No annotations, highlights, new text or UI. Preserve4:3 framing and original style."
+  }
+}

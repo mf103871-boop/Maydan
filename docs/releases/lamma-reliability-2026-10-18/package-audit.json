@@ -1,0 +1,121 @@
+{
+  "ok": true,
+  "sourceSha": "107bd25724be2f9126a3af58e92c240682a61b23",
+  "workflowRun": 39163718100,
+  "workflowJob": 117782195717,
+  "workflowAttempt": 1,
+  "previousWorkflowAttempts": [
+    {
+      "workflowRun": 39161749336,
+      "attempt": 1,
+      "job": 117776311682,
+      "conclusion": "failure",
+      "evidenceArtifact": 12149745528,
+      "failedStep": "simulator-install",
+      "timeoutSeconds": 90,
+      "observedElapsedSeconds": 99.48,
+      "applicationLaunchesAttempted": 0,
+      "crashReportsPresent": false,
+      "ipaExported": false,
+      "appStoreUploadAttempted": false
+    },
+    {
+      "workflowRun": 39161749336,
+      "attempt": 2,
+      "job": 117778722973,
+      "conclusion": "failure",
+      "evidenceArtifact": 12148973511,
+      "failedStep": "simulator-install",
+      "timeoutSeconds": 90,
+      "observedElapsedSeconds": 93.76,
+      "applicationLaunchesAttempted": 0,
+      "crashReportsPresent": false,
+      "ipaExported": false,
+      "appStoreUploadAttempted": false
+    }
+  ],
+  "previousAttemptsScope": "Both earlier attempts timed out during simulator installation before application launch; they do not establish an application startup failure.",
+  "version": "1.8",
+  "build": "18",
+  "bundleId": "Maydan",
+  "minimumOSVersion": "16.4",
+  "ipaSha256": "e1baef922701cb8434ba9d18f5be87c4759cab4452ee8711e42e3937631cbac8",
+  "ipaBytes": 152691885,
+  "baselineIpaSha256": "c00ced592ff087451da03a878453b8fe4a9024b84e348fa5bab9eab2fa523297",
+  "executableSha256": "bd5413106abea92b7d8148eadc74ef8d628e35528afc37db0145085e57e86de4",
+  "htmlSha256": "ed26ee4a6c78eff649de3056363ba7ea9865e78dd073be4877e3c6079ac5e209",
+  "localPreparedHtmlSha256": "cb5f8fb51163595efd9948159d97343f40258e119547f478a2b247500f00429b",
+  "htmlNormalizedEqualsLocallyPreparedSource": true,
+  "activeGameInvitationExitGuardBeforeAutoJoinInActualBundle": true,
+  "htmlComparisonNormalization": "Only plain CRLF and escaped CR-before-LF in imported CSS template text are normalized.",
+  "finalCssIncludedSha256": {
+    "platform/bottom-navigation.css": "91e5c6882ca3374a4c862e3aa59a1d3e5fcb63e49073f0e4e6a2d998d4f713f7",
+    "social/lamma.css": "47538c2529dfeff1b3c40c384ba9a38b9491abf58909999056cc204db0711674",
+    "social/call-dock.css": "cc4ee93b74c866e256f81bc17691f0c29a2c8173976c5edec3f61ad8f9102c9c",
+    "social/call-viewport.css": "55df6ec6f683dbc01a57ee5b0d596d0823f0ea7091ffbf00d4014aa2e28fd031"
+  },
+  "newRoutesAndFriendsPageInActualBundle": true,
+  "menuBarPortraitHeightPx": 76,
+  "menuBarLandscapeHeightPx": 64,
+  "fourMenuSectionsAndDynamicSafeArea": true,
+  "dynamicCallBoundsAndPreferredPositionRetained": true,
+  "twoDimensionalCallDragAndSpeakingMarkersRetained": true,
+  "reservedSideGutterAbsent": true,
+  "fontSizesInActualBundledHTML": {
+    ".lamma-search input": 16,
+    ".lamma-panel .social-composer-row textarea": 16,
+    ".lamma-field input, .lamma-field select, .lamma-edit-message": 16,
+    ".lamma-member select": 16,
+    ".call-controls-actions select": 16,
+    ".social-search input": 16
+  },
+  "imeCompositionAnd229GuardInActualBundle": true,
+  "visualViewportAndPinchGuardInActualBundle": true,
+  "manualZoomNotDisabled": true,
+  "nativeConfigUnchangedFromBuild16": true,
+  "signedEntitlementsUnchangedFromBuild16": true,
+  "productionApiOrigin": "https://maydan-game.mf103871.workers.dev",
+  "subscriptionProducts": {
+    "monthly": "plus.monthly",
+    "yearly": "plus.yearly"
+  },
+  "productionAPNs": true,
+  "signInWithApple": true,
+  "debugEntitlement": false,
+  "callBackgroundModesUnchanged": [
+    "audio",
+    "voip",
+    "remote-notification"
+  ],
+  "microphonePermissionDisclosureUnchanged": true,
+  "privacyManifestsUnchangedFromBuild16": [
+    "Frameworks/LiveKitWebRTC.framework/PrivacyInfo.xcprivacy",
+    "Frameworks/RustLiveKitUniFFI.framework/PrivacyInfo.xcprivacy",
+    "LiveKit_LiveKit.bundle/PrivacyInfo.xcprivacy",
+    "PrivacyInfo.xcprivacy"
+  ],
+  "nativeRuntimeLoadCommandsUnchangedFromBuild16": true,
+  "embeddedFrameworksUnchanged": [
+    "Frameworks/LiveKitWebRTC.framework",
+    "Frameworks/RustLiveKitUniFFI.framework"
+  ],
+  "runtime": {
+    "ok": true,
+    "bundleId": "Maydan",
+    "version": "1.8",
+    "build": "18",
+    "binariesChecked": 3,
+    "platform": "ios",
+    "architectures": [
+      "arm64"
+    ],
+    "embeddedDependencyEdges": 2,
+    "mainRunpaths": [
+      "/usr/lib/swift",
+      "@executable_path/Frameworks"
+    ]
+  },
+  "simulatorFixtureMarkersAbsent": true,
+  "signatureVerificationScope": "Cryptographic archive validation is performed by macOS CI; this Windows audit parses signed entitlement metadata only.",
+  "uiVerificationScope": "Archive content and native metadata only; physical iPhone keyboard, audio, and interaction tests are separate."
+}

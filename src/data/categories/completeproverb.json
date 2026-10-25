@@ -6,20 +6,6 @@
   "qs": [
     {
       "p": 200,
-      "q": "أكمل: الباب اللي يجي لك منه الريح ___",
-      "a": "سدّه واستريح",
-      "qid": "completeproverb-200-911",
-      "type": "complete",
-      "topic": "التدبير",
-      "alt": [
-        "سده واسترح"
-      ],
-      "verified": true,
-      "difficultyTarget": 0.8,
-      "sourceUrl": "https://www.safahat.org/books/75241938/2/"
-    },
-    {
-      "p": 200,
       "q": "أكمل: رُبّ أخٍ لك ___",
       "a": "لم تلده أمك",
       "qid": "completeproverb-200-912",
@@ -27,7 +13,8 @@
       "topic": "العلاقات",
       "verified": true,
       "difficultyTarget": 0.8,
-      "sourceUrl": "https://islamport.com/l/adb/5497/143.htm"
+      "sourceUrl": "https://islamport.com/l/adb/5497/143.htm",
+      "alt": []
     },
     {
       "p": 200,
@@ -45,17 +32,6 @@
     },
     {
       "p": 200,
-      "q": "أكمل: وافق شنّ ___",
-      "a": "طبقة",
-      "qid": "completeproverb-200-914",
-      "type": "complete",
-      "topic": "العلاقات",
-      "verified": true,
-      "difficultyTarget": 0.8,
-      "sourceUrl": "https://islamport.com/l/adb/5494/4439.htm"
-    },
-    {
-      "p": 200,
       "q": "أكمل: بلغ السيل ___",
       "a": "الزُّبى",
       "qid": "completeproverb-200-915",
@@ -63,7 +39,8 @@
       "topic": "الصبر",
       "verified": true,
       "difficultyTarget": 0.8,
-      "sourceUrl": "https://islamport.com/l/adb/5494/447.htm"
+      "sourceUrl": "https://islamport.com/l/adb/5494/447.htm",
+      "alt": []
     },
     {
       "p": 200,
@@ -74,7 +51,8 @@
       "topic": "العواقب",
       "verified": true,
       "difficultyTarget": 0.8,
-      "sourceUrl": "https://islamport.com/l/adb/5494/1605.htm"
+      "sourceUrl": "https://islamport.com/l/adb/5494/1605.htm",
+      "alt": []
     },
     {
       "p": 200,
@@ -85,7 +63,8 @@
       "topic": "العواقب",
       "verified": true,
       "difficultyTarget": 0.8,
-      "sourceUrl": "https://islamport.com/l/adb/5494/1807.htm"
+      "sourceUrl": "https://islamport.com/l/adb/5494/1807.htm",
+      "alt": []
     },
     {
       "p": 200,
@@ -96,21 +75,34 @@
       "topic": "الحظ",
       "verified": true,
       "difficultyTarget": 0.8,
-      "sourceUrl": "https://islamport.com/l/adb/5497/19.htm"
+      "sourceUrl": "https://islamport.com/l/adb/5497/19.htm",
+      "alt": []
     },
     {
-      "p": 400,
+      "p": 200,
       "q": "أكمل: ___ مدّ رجلك",
       "a": "على قد لحافك",
-      "qid": "completeproverb-400-911",
+      "qid": "completeproverb-200-921",
       "type": "complete",
       "topic": "التدبير",
       "alt": [
         "على قدر لحافك"
       ],
       "verified": true,
-      "difficultyTarget": 0.6,
+      "difficultyTarget": 0.8,
       "sourceUrl": "https://www.safahat.org/books/75241938/17/"
+    },
+    {
+      "p": 200,
+      "q": "أكمل: زمّار الحيّ لا ___",
+      "a": "يطرب",
+      "qid": "completeproverb-200-922",
+      "type": "complete",
+      "topic": "العلاقات",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://www.safahat.org/books/37938293/6/",
+      "alt": []
     },
     {
       "p": 400,
@@ -121,7 +113,8 @@
       "topic": "الخبرة",
       "verified": true,
       "difficultyTarget": 0.6,
-      "sourceUrl": "https://islamport.com/l/adb/5494/2452.htm"
+      "sourceUrl": "https://islamport.com/l/adb/5494/2452.htm",
+      "alt": []
     },
     {
       "p": 400,
@@ -132,7 +125,8 @@
       "topic": "الخبرة",
       "verified": true,
       "difficultyTarget": 0.6,
-      "sourceUrl": "https://islamport.com/l/adb/5494/2514.htm"
+      "sourceUrl": "https://islamport.com/l/adb/5494/2514.htm",
+      "alt": []
     },
     {
       "p": 400,
@@ -143,18 +137,8 @@
       "topic": "التدبير",
       "verified": true,
       "difficultyTarget": 0.6,
-      "sourceUrl": "https://islamport.com/l/adb/5494/2801.htm"
-    },
-    {
-      "p": 400,
-      "q": "أكمل: زمّار الحيّ لا ___",
-      "a": "يطرب",
-      "qid": "completeproverb-400-915",
-      "type": "complete",
-      "topic": "العلاقات",
-      "verified": true,
-      "difficultyTarget": 0.6,
-      "sourceUrl": "https://www.safahat.org/books/37938293/6/"
+      "sourceUrl": "https://islamport.com/l/adb/5494/2801.htm",
+      "alt": []
     },
     {
       "p": 400,
@@ -165,18 +149,8 @@
       "topic": "العواقب",
       "verified": true,
       "difficultyTarget": 0.6,
-      "sourceUrl": "https://islamport.com/l/adb/5494/845.htm"
-    },
-    {
-      "p": 400,
-      "q": "أكمل: قطعت جهيزة ___",
-      "a": "قول كل خطيب",
-      "qid": "completeproverb-400-917",
-      "type": "complete",
-      "topic": "الكلام",
-      "verified": true,
-      "difficultyTarget": 0.6,
-      "sourceUrl": "https://islamport.com/l/adb/5494/2910.htm"
+      "sourceUrl": "https://islamport.com/l/adb/5494/845.htm",
+      "alt": []
     },
     {
       "q": "أكمل: كثرة العتاب تورث ___",
@@ -187,7 +161,46 @@
       "sourceUrl": "https://www.safahat.org/books/92480704/22/",
       "p": 400,
       "qid": "completeproverb-400-918",
-      "difficultyTarget": 0.6
+      "difficultyTarget": 0.6,
+      "alt": []
+    },
+    {
+      "p": 400,
+      "q": "أكمل: الباب اللي يجي لك منه الريح ___",
+      "a": "سدّه واستريح",
+      "qid": "completeproverb-400-921",
+      "type": "complete",
+      "topic": "التدبير",
+      "alt": [
+        "سده واسترح"
+      ],
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://www.safahat.org/books/75241938/2/"
+    },
+    {
+      "p": 400,
+      "q": "أكمل: وافق شنّ ___",
+      "a": "طبقة",
+      "qid": "completeproverb-400-922",
+      "type": "complete",
+      "topic": "العلاقات",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://islamport.com/l/adb/5494/4439.htm",
+      "alt": []
+    },
+    {
+      "q": "أكمل: إن غدًا ___",
+      "a": "لناظره قريب",
+      "topic": "الصبر",
+      "type": "complete",
+      "verified": true,
+      "sourceUrl": "https://www.safahat.org/books/92480704/1/",
+      "p": 400,
+      "qid": "completeproverb-400-923",
+      "difficultyTarget": 0.6,
+      "alt": []
     },
     {
       "p": 600,
@@ -198,7 +211,8 @@
       "topic": "العلاقات",
       "verified": true,
       "difficultyTarget": 0.4,
-      "sourceUrl": "https://islamport.com/l/adb/5494/4161.htm"
+      "sourceUrl": "https://islamport.com/l/adb/5494/4161.htm",
+      "alt": []
     },
     {
       "p": 600,
@@ -209,40 +223,32 @@
       "topic": "الخبرة",
       "verified": true,
       "difficultyTarget": 0.4,
-      "sourceUrl": "https://islamport.com/l/adb/5494/668.htm"
+      "sourceUrl": "https://islamport.com/l/adb/5494/668.htm",
+      "alt": []
     },
     {
       "p": 600,
-      "q": "أكمل: أحشفًا وسوء ___",
+      "q": "في اجتماع رداءة الشيء وسوء التعامل، أكمل: أحشفًا وسوء ___",
       "a": "كِيلة",
       "qid": "completeproverb-600-913",
       "type": "complete",
       "topic": "التدبير",
       "verified": true,
       "difficultyTarget": 0.4,
-      "sourceUrl": "https://www.safahat.org/books/92480704/1/"
+      "sourceUrl": "https://www.safahat.org/books/92480704/1/",
+      "alt": []
     },
     {
       "p": 600,
-      "q": "أكمل: يداك أوكتا ___",
+      "q": "في تحمل نتيجة فعل النفس، أكمل: يداك أوكتا ___",
       "a": "وفوك نفخ",
       "qid": "completeproverb-600-914",
       "type": "complete",
       "topic": "العواقب",
       "verified": true,
       "difficultyTarget": 0.4,
-      "sourceUrl": "https://islamport.com/l/adb/5497/293.htm"
-    },
-    {
-      "q": "أكمل: إن غدًا ___",
-      "a": "لناظره قريب",
-      "topic": "الصبر",
-      "type": "complete",
-      "verified": true,
-      "sourceUrl": "https://www.safahat.org/books/92480704/1/",
-      "p": 600,
-      "qid": "completeproverb-600-915",
-      "difficultyTarget": 0.4
+      "sourceUrl": "https://islamport.com/l/adb/5497/293.htm",
+      "alt": []
     },
     {
       "q": "أكمل: أسمع جعجعة ___",
@@ -253,7 +259,8 @@
       "sourceUrl": "https://www.safahat.org/books/92480704/1/",
       "p": 600,
       "qid": "completeproverb-600-916",
-      "difficultyTarget": 0.4
+      "difficultyTarget": 0.4,
+      "alt": []
     },
     {
       "q": "أكمل: ألقِ دلوك ___",
@@ -264,7 +271,8 @@
       "sourceUrl": "https://www.safahat.org/books/92480704/1/",
       "p": 600,
       "qid": "completeproverb-600-917",
-      "difficultyTarget": 0.4
+      "difficultyTarget": 0.4,
+      "alt": []
     },
     {
       "q": "أكمل: كالمستغيث من الرمضاء ___",
@@ -275,10 +283,23 @@
       "sourceUrl": "https://www.safahat.org/books/92480704/22/",
       "p": 600,
       "qid": "completeproverb-600-918",
-      "difficultyTarget": 0.4
+      "difficultyTarget": 0.4,
+      "alt": []
     },
     {
-      "q": "أكمل: إن المنبتّ لا أرضًا قطع ___",
+      "p": 600,
+      "q": "أكمل: قطعت جهيزة ___",
+      "a": "قول كل خطيب",
+      "qid": "completeproverb-600-921",
+      "type": "complete",
+      "topic": "الكلام",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://islamport.com/l/adb/5494/2910.htm",
+      "alt": []
+    },
+    {
+      "q": "في الإفراط الذي يهدر الجهد، أكمل: إن المنبتّ لا أرضًا قطع ___",
       "a": "ولا ظهرًا أبقى",
       "topic": "السعي",
       "type": "complete",
@@ -286,7 +307,8 @@
       "sourceUrl": "https://www.safahat.org/books/92480704/1/",
       "p": 800,
       "qid": "completeproverb-800-911",
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.25,
+      "alt": []
     },
     {
       "q": "أكمل: اتسع الخرق ___",
@@ -297,10 +319,11 @@
       "sourceUrl": "https://www.safahat.org/books/92480704/1/",
       "p": 800,
       "qid": "completeproverb-800-912",
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.25,
+      "alt": []
     },
     {
-      "q": "أكمل: قبل الرمي ___",
+      "q": "في الاستعداد للأمر، أكمل: قبل الرمي ___",
       "a": "يراش السهم",
       "topic": "التدبير",
       "type": "complete",
@@ -308,10 +331,11 @@
       "sourceUrl": "https://www.safahat.org/books/92480704/21/",
       "p": 800,
       "qid": "completeproverb-800-913",
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.25,
+      "alt": []
     },
     {
-      "q": "أكمل: القول ما قالت ___",
+      "q": "في تصديق صاحب خبر موثوق، أكمل: القول ما قالت ___",
       "a": "حذام",
       "topic": "الكلام",
       "type": "complete",
@@ -319,10 +343,11 @@
       "sourceUrl": "https://www.safahat.org/books/92480704/21/",
       "p": 800,
       "qid": "completeproverb-800-914",
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.25,
+      "alt": []
     },
     {
-      "q": "أكمل: لا ينتطح فيها ___",
+      "q": "في أمر ينتهي بلا مطالبة، أكمل: لا ينتطح فيها ___",
       "a": "عنزان",
       "topic": "العواقب",
       "type": "complete",
@@ -330,10 +355,11 @@
       "sourceUrl": "https://www.safahat.org/books/92480704/23/",
       "p": 800,
       "qid": "completeproverb-800-915",
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.25,
+      "alt": []
     },
     {
-      "q": "أكمل: المزاح لقاح ___",
+      "q": "في المزاح المؤذي للعلاقات، أكمل: المزاح لقاح ___",
       "a": "الضغائن",
       "topic": "العلاقات",
       "type": "complete",
@@ -341,10 +367,11 @@
       "sourceUrl": "https://www.safahat.org/books/92480704/24/",
       "p": 800,
       "qid": "completeproverb-800-916",
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.25,
+      "alt": []
     },
     {
-      "q": "أكمل: سحابة صيف ___",
+      "q": "في أمر سريع الزوال، أكمل: سحابة صيف ___",
       "a": "عن قليل تقشع",
       "topic": "الصبر",
       "type": "complete",
@@ -352,10 +379,11 @@
       "sourceUrl": "https://www.safahat.org/books/92480704/12/",
       "p": 800,
       "qid": "completeproverb-800-917",
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.25,
+      "alt": []
     },
     {
-      "q": "أكمل: ما كل بيضاء شحمة ___",
+      "q": "في الحذر من المظاهر، أكمل: ما كل بيضاء شحمة ___",
       "a": "ولا كل سوداء تمرة",
       "topic": "الخبرة",
       "type": "complete",
@@ -363,10 +391,11 @@
       "sourceUrl": "https://www.safahat.org/books/92480704/24/",
       "p": 800,
       "qid": "completeproverb-800-918",
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.25,
+      "alt": []
     },
     {
-      "q": "أكمل: سمنكم هُريق ___",
+      "q": "في من ينفق على نفسه ثم يمنّ به، أكمل: سمنكم هُريق ___",
       "a": "في أديمكم",
       "topic": "التدبير",
       "type": "complete",
@@ -374,10 +403,11 @@
       "sourceUrl": "https://www.safahat.org/books/92480704/12/",
       "p": 1000,
       "qid": "completeproverb-1000-911",
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.15,
+      "alt": []
     },
     {
-      "q": "أكمل: بكل وادٍ ___",
+      "q": "في تشابه ما تراه لدى جماعات مختلفة، أكمل: بكل وادٍ ___",
       "a": "بنو سعد",
       "topic": "الخبرة",
       "type": "complete",
@@ -385,10 +415,11 @@
       "sourceUrl": "https://www.safahat.org/books/92480704/2/",
       "p": 1000,
       "qid": "completeproverb-1000-912",
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.15,
+      "alt": []
     },
     {
-      "q": "أكمل: إن المقدرة تذهب ___",
+      "q": "في العفو عند القدرة، أكمل: إن المقدرة تذهب ___",
       "a": "الحفيظة",
       "topic": "العلاقات",
       "type": "complete",
@@ -396,10 +427,11 @@
       "sourceUrl": "https://www.safahat.org/books/92480704/1/",
       "p": 1000,
       "qid": "completeproverb-1000-913",
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.15,
+      "alt": []
     },
     {
-      "q": "أكمل: المنّة تهدم ___",
+      "q": "في إفساد الإحسان بالتذكير به، أكمل: المنّة تهدم ___",
       "a": "الصنيعة",
       "topic": "العلاقات",
       "type": "complete",
@@ -407,10 +439,11 @@
       "sourceUrl": "https://www.safahat.org/books/92480704/24/",
       "p": 1000,
       "qid": "completeproverb-1000-914",
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.15,
+      "alt": []
     },
     {
-      "q": "أكمل: إن الحديد بالحديد ___",
+      "q": "في مقابلة القوة بمثلها، أكمل: إن الحديد بالحديد ___",
       "a": "يفلح",
       "topic": "التدبير",
       "type": "complete",
@@ -418,10 +451,11 @@
       "sourceUrl": "https://www.safahat.org/books/92480704/1/",
       "p": 1000,
       "qid": "completeproverb-1000-915",
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.15,
+      "alt": []
     },
     {
-      "q": "أكمل: مرعى ولا ___",
+      "q": "في تفضيل المرعى الأجود، أكمل: مرعى ولا ___",
       "a": "كالسعدان",
       "topic": "الخبرة",
       "type": "complete",
@@ -429,10 +463,11 @@
       "sourceUrl": "https://www.safahat.org/books/92480704/24/",
       "p": 1000,
       "qid": "completeproverb-1000-916",
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.15,
+      "alt": []
     },
     {
-      "q": "أكمل: ليس هذا بعشك ___",
+      "q": "في صرف المتدخل فيما لا يعنيه، أكمل: ليس هذا بعشك ___",
       "a": "فادرجي",
       "topic": "العواقب",
       "type": "complete",
@@ -440,10 +475,11 @@
       "sourceUrl": "https://www.safahat.org/books/92480704/23/",
       "p": 1000,
       "qid": "completeproverb-1000-917",
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.15,
+      "alt": []
     },
     {
-      "q": "أكمل: قد يبلغ الخضم ___",
+      "q": "في بلوغ الغاية بالرفق، أكمل: قد يبلغ الخضم ___",
       "a": "بالقضم",
       "topic": "السعي",
       "type": "complete",
@@ -451,7 +487,8 @@
       "sourceUrl": "https://www.safahat.org/books/92480704/21/",
       "p": 1000,
       "qid": "completeproverb-1000-918",
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.15,
+      "alt": []
     }
   ]
 }

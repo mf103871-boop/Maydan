@@ -1,0 +1,20 @@
+{
+  "id": "blur-400-904",
+  "prompt": "Edit target: the referenced brass trumpet photograph. Preserve exactly the same structurally correct trumpet and 4:3 landscape composition. Change the dark purple background and bench to a simple matte pale cool cyan studio surface and background. Use bright even daylight fill so the entire gold body forms a strong, well-lit solid silhouette, including the coiled tubing, three raised valves, and large bell at the right. Keep the trumpet large, fully in frame. This is a recognition puzzle viewed with 16px blur at 366px width: strong warm-gold versus pale-cyan separation must survive blur. No text, other objects, or logos.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-10-08",
+  "sourceFile": "exec-a6668b94-4d1d-4a14-abe7-0afa4c642ac2.png",
+  "sourceSha256": "855943aee261186312193d1135f1d6ad4ae2b56a4a41568d08120c91d823d91d",
+  "file": "media/blur/quality-400-904.webp",
+  "sha256": "72b0cbc692e7ed2d753b1eaa20ea1afef871d307b01537170a050e012a36dc78",
+  "width": 960,
+  "height": 720,
+  "bytes": 64360,
+  "review": {
+    "status": "phone-size-reviewed",
+    "reviewedAt": "2026-10-08",
+    "method": "Original and shipped effect at phone width, including high-tier assistance; independent editorial review.",
+    "evidence": "docs/bank/quality-2026-10-08/independent-root-image-review.md",
+    "qid": "blur-400-904"
+  }
+}

@@ -1,6 +1,6 @@
 // Authoritative simultaneous Fabraka. Only snapshot() may leave the room server.
-import { FABRAKA_PROTOCOL, ROOM_TTL, HOST_GRACE, AVATARS, VOTE_SECONDS } from '../src/online/shared.js';
-import { normalizeOptions, validateLie, matchesTruth, sameAnswer, roundBreakdown, fillName, TRUTH_ID } from '../src/games/fabraka/logic.js';
+import { FABRAKA_PROTOCOL, ROOM_TTL, HOST_GRACE, AVATARS, VOTE_SECONDS, minimumOnlinePlayers } from '../src/online/shared.js';
+import { normalizeOptions, validateLie, matchesTruth, sameAnswer, duoQuestion, roundBreakdown, fillName, TRUTH_ID } from '../src/games/fabraka/logic.js';
 import { pictureAsset, PICTURE_CREDIT } from '../src/games/fabraka/pictureAssets.js';
 import { active, member, memberOrNull, profile, transferHost, joinRoom as joinMember, fail, hasInvisible, absent, graceDeadlines, extendForMatch, kickSeat, colorOf } from './room-model.mjs';
 import { shuffled } from './protocol.mjs';
@@ -157,7 +157,7 @@ export function leaveRoom(room, id, now) {
   transferHost(room, now, room.hostId === id);
   if (!active(room).length) { room.phase = 'closed'; room.deadlineAt = null; return; }
   dropParticipant(room, id);
-  if (PLAYING.includes(room.phase) && active(room).length < 3) {
+  if (PLAYING.includes(room.phase) && active(room).length < minimumOnlinePlayers('fabraka', room.settings)) {
     room.phase = 'over'; room.reason = 'players_left'; room.deadlineAt = null;
   } else if (room.phase === 'host' && room.fab.truthHostId === id) abortRound(room, 'owner_left');
   else if (room.fab) maybeAdvance(room, now);
@@ -198,9 +198,14 @@ export function action(room, actorId, command, now, deck = []) {
     case 'start': {
       host(); phase('lobby');
       const players = active(room);
-      if (players.length < 3 || players.length > 8 || !players.every((m) => m.connected && m.ready)) fail('NOT_READY', 409);
+      const minimum = minimumOnlinePlayers('fabraka', room.settings);
+      if (players.length < minimum || players.length > 8 || !players.every((m) => m.connected && m.ready)) fail(minimum === 2 ? 'NOT_READY_DUO' : 'NOT_READY', 409);
       const rounds = room.settings.mode === 'friends' ? players.length * room.settings.friendCycles : room.settings.rounds;
       if (deck.length < rounds) fail('QUESTIONS');
+      // Two writers can identify their own submission. Require distinct house
+      // decoys so duplicate answers or a skipped writer never reduce the
+      // remaining choice to the truth alone.
+      if (players.length === 2 && deck.slice(0, rounds).some((q) => !duoQuestion(q))) fail('QUESTIONS');
       extendForMatch(room, now);
       room.matchId++; room.round = 1; room.rounds = rounds; room.reason = null; room.ownerShift = 0;
       room.participants = players.map((m) => m.id);

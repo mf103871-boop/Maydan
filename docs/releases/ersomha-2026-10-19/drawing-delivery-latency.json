@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "finishedAt": "2026-10-18T22:27:01.633Z",
+  "sourceCommit": "72b9581a0aa52fdf1bc0bbd438b8e98536ea427f",
+  "sourceServerTree": "4e7c95a26cd68045ef7a503699ec86c4178e45d5",
+  "backendTreeSha256": "536dce48ccfa8eda40f0b8e03602f8e1d7bafef55710781d7f0df0a2c9ef90e1",
+  "testedModuleSHA256": "c0a75e11239707201fd3fd69fbd3f7787668dd1a1365a959aa1246b4523d858b",
+  "scope": "Real local Cloudflare workerd, SQLite Durable Object, D1 and eight authenticated WebSocket clients through a controlled delay proxy; no physical screen or LiveKit audio latency claim",
+  "peers": 8,
+  "network": {
+    "profile": "target-120ms-rtt",
+    "injectedRoundTripMs": 120,
+    "implementation": "60 ms delay each direction; local loopback adds its measured scheduling overhead",
+    "packetLossSimulated": false
+  },
+  "pointBatchDelayMs": 80,
+  "sentBatches": 60,
+  "observedRemoteDeliveries": 420,
+  "expectedRemoteDeliveries": 420,
+  "warmupBatchesExcluded": 5,
+  "measuredRemoteDeliveries": 385,
+  "remotePointToDeliveryMs": {
+    "p50": 217.75,
+    "p95": 235.15,
+    "maximum": 239.09
+  },
+  "targetP95Ms": 250,
+  "targetApplies": true,
+  "passed": true,
+  "physicalDeviceTrialCompleted": false
+}

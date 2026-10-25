@@ -1,0 +1,29 @@
+{
+  "id": "tech",
+  "kind": "cover",
+  "file": "public/media/badeeha-covers/tech.webp",
+  "style": "precise isometric technical illustration",
+  "palette": "cyan, navy, mint",
+  "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'تقنية'. Landscape 4:3 artwork.\nMedium: precise isometric technical illustration.\nIntentional palette: cyan, navy, mint.\nScene: A small imaginary data city built from a computer chip, elegant illuminated pathways and layered translucent architecture, restrained clean geometry.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-10-08",
+  "sourceImage": {
+    "name": "exec-176dd550-956b-4b4e-a4c2-2e5ff1149e28.png",
+    "sha256": "b8615919e7f67032b4c8ff97b4e79834363beb796f64a9291bdef3f5059d754c",
+    "width": 1448,
+    "height": 1086
+  },
+  "width": 640,
+  "height": 480,
+  "bytes": 72638,
+  "sha256": "4c2e02517e3535399869efe1f29174978c1ecd5b6b76ec46a499b32c010bba98",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "phone-size-reviewed",
+    "date": "2026-10-08",
+    "reviewer": "root",
+    "width": 160,
+    "method": "shipped cover CSS; baseline and replacement side by side",
+    "evidence": "docs/bank/quality-2026-10-08/preview/covers-1.jpg"
+  }
+}

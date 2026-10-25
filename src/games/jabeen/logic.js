@@ -174,6 +174,7 @@ export function restoreSession(raw, categories) {
   if (!Array.isArray(s.results) || s.results.length > 500 || !s.results.every(resultOk)) return null;
   if (!Array.isArray(s.log) || s.log.length > ids.length || !s.log.every((e) => e && ids.includes(e.entrantId) && isNonNegInt(e.correct) && isNonNegInt(e.total))) return null;
   if (!isSeed(raw.seed) || !isNonNegInt(raw.cursor)) return null;
+  if (raw.cycle != null && (!isNonNegInt(raw.cycle) || raw.cycle > 2000)) return null;
   if (raw.timeLeft != null && !(Number.isFinite(raw.timeLeft) && raw.timeLeft >= 0 && raw.timeLeft <= 600)) return null;
   return { ...raw, settings, state: { ...s } };
 }

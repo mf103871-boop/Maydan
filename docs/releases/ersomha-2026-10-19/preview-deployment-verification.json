@@ -1,0 +1,44 @@
+{
+  "verifiedAt": "2026-10-18T22:28:34.934Z",
+  "operation": "ersomha-preview-update",
+  "versions": {
+    "maydan-lamma-preview": "2de455e4-1a8f-40d2-96a4-6bf3dc57e8bb"
+  },
+  "bundles": {
+    "maydan-lamma-preview": {
+      "sha256": "c0a75e11239707201fd3fd69fbd3f7787668dd1a1365a959aa1246b4523d858b",
+      "byteLength": 1205520
+    }
+  },
+  "sourceCommit": "72b9581a0aa52fdf1bc0bbd438b8e98536ea427f",
+  "sourceServerTree": "4e7c95a26cd68045ef7a503699ec86c4178e45d5",
+  "backendTreeSha256": "536dce48ccfa8eda40f0b8e03602f8e1d7bafef55710781d7f0df0a2c9ef90e1",
+  "checkedAssets": 63,
+  "assetsUnchanged": true,
+  "originalBindingsUnchanged": true,
+  "originalSettingsUnchanged": true,
+  "originalCronsUnchanged": true,
+  "durableObjectMigrationsUnchanged": true,
+  "reviewedWorkerCodeVerified": true,
+  "addedMigrations": [
+    "0010_ersomha.sql",
+    "0011_ersomha_reports.sql"
+  ],
+  "privateAudioVerified": true,
+  "smoke": {
+    "maydan-lamma-preview": {
+      "healthPassed": true,
+      "games": [
+        "ersomha",
+        "fabraka",
+        "meenfina"
+      ],
+      "mandatoryUpdateDisabled": true
+    }
+  },
+  "applied": true,
+  "frontendDeployed": false,
+  "secretValuesWritten": false,
+  "resourcesProvisioned": false,
+  "testFlightUploaded": false
+}

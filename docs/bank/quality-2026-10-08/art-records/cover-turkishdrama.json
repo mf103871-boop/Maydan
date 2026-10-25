@@ -1,0 +1,29 @@
+{
+  "id": "turkishdrama",
+  "kind": "cover",
+  "file": "public/media/badeeha-covers/turkishdrama.webp",
+  "style": "cinematic waterfront scene",
+  "palette": "petrol blue, burgundy, warm pearl",
+  "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'مسلسلات تركية'. Landscape 4:3 artwork.\nMedium: cinematic waterfront scene.\nIntentional palette: petrol blue, burgundy, warm pearl.\nScene: An elegant fictional waterside mansion seen through rain on a window at dusk, dramatic depth and romantic color contrast, no identifiable filming location.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-10-08",
+  "sourceImage": {
+    "name": "exec-a73c5b76-596e-4f04-8044-c778a24a94fc.png",
+    "sha256": "41a0a363e6119aef85d9202d0bacc3b83ac6971e113f12843247ce40c0d43308",
+    "width": 1448,
+    "height": 1086
+  },
+  "width": 640,
+  "height": 480,
+  "bytes": 75948,
+  "sha256": "82c01307e537c519e6cd031df83063438a869984c3eaaf4fcbea94ddd8de5e68",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "phone-size-reviewed",
+    "date": "2026-10-08",
+    "reviewer": "root",
+    "width": 160,
+    "method": "shipped cover CSS; baseline and replacement side by side",
+    "evidence": "docs/bank/quality-2026-10-08/preview/covers-3.jpg"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "projectName": "Maydan Test Lab",
+  "projectId": "p_6asugsl60h0",
+  "host": "maydan-test-lab-831mi2tl.livekit.cloud",
+  "plan": "Build",
+  "nextInvoiceUSD": 0,
+  "dataRegion": "United States",
+  "agentObservabilityAtCreation": "Disabled",
+  "webhook": "https://maydan-lamma-preview.mf103871.workers.dev/api/social/livekit/webhook",
+  "credentialStorage": "DPAPI encrypted current-user local backup and preview worker secrets only",
+  "temporaryUnusedKeyRevoked": true,
+  "productionWebhookVerifiedUnchanged": "https://maydan-game.mf103871.workers.dev/api/social/livekit/webhook",
+  "recordingConfigured": false,
+  "paidPlanSelected": false,
+  "proofScreenshotsRetainedInLocalTaskOutputs": true
+}

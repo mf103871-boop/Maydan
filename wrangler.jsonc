@@ -8,7 +8,7 @@
   "assets": {
     "directory": "./dist",
     "binding": "ASSETS",
-    "run_worker_first": ["/api", "/api/*", "/health"],
+    "run_worker_first": ["/api", "/api/*", "/health", "/studio", "/studio/*"],
     "not_found_handling": "single-page-application"
   },
   // إعدادات عامة (غير سرّية). الأسرار عبر `wrangler secret put` — راجع docs/ACCOUNTS.md.
@@ -27,7 +27,8 @@
     "bindings": [
       { "name": "ROOMS", "class_name": "Room" },
       { "name": "LIMITERS", "class_name": "RequestLimiter" },
-      { "name": "SOCIAL_HUB", "class_name": "SocialHub" }
+      { "name": "SOCIAL_HUB", "class_name": "SocialHub" },
+      { "name": "SOCIAL_JOBS", "class_name": "LammaJobs" }
     ]
   },
   // قاعدة الحسابات (اختيارية حتى تُنشأ): بدون الربط ينشر العامل ويعمل، والغرف كما
@@ -40,10 +41,14 @@
   ],
   "migrations": [
     { "tag": "v1", "new_sqlite_classes": ["Room", "RequestLimiter"] },
-    { "tag": "v2-social", "new_sqlite_classes": ["SocialHub"] }
+    { "tag": "v2-social", "new_sqlite_classes": ["SocialHub"] },
+    { "tag": "v3-lamma", "new_sqlite_classes": ["LammaJobs"] }
   ],
   // تنظيف يومي للجلسات المنتهية ورموز الدخول وسجل webhooks والرسائل القديمة
   // (server/accounts/cleanup.mjs). يعمل من هذا العامل وحده؛ `maydan-rooms` بلا cron.
-  "triggers": { "crons": ["17 3 * * *"] },
+  "triggers": { "crons": ["17 3 * * *", "* * * * *"] },
+  "r2_buckets": [{ "binding": "SOCIAL_AUDIO", "bucket_name": "maydan-social-audio" }],
+  // Secrets: LIVEKIT_URL (wss://...), LIVEKIT_API_KEY, LIVEKIT_API_SECRET,
+  // APNS_KEY_ID, APNS_TEAM_ID, APNS_PRIVATE_KEY. No credentials are bundled.
   "observability": { "enabled": true }
 }

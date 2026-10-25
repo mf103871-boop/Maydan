@@ -253,7 +253,7 @@ async function main() {
     + `export const MUSIC_BANK = ${JSON.stringify(bank, null, 2)};\n`;
   if (check) {
     if (orphans.length) throw new Error(`public/audio/music holds files no track references: ${orphans.join(', ')}`);
-    if (await readFile(manifestFile, 'utf8') !== text) throw new Error('music-bank.js differs from public/audio/music; run node scripts/audio/music.mjs');
+    if ((await readFile(manifestFile, 'utf8')).replaceAll('\r\n', '\n') !== text) throw new Error('music-bank.js differs from public/audio/music; run node scripts/audio/music.mjs');
     await checkSources(provenance.tracks);
     console.log(`Music bank verified: ${Object.keys(bank).length} tracks (${Object.values(provenance.tracks).filter((t) => t.source).length} from licensed sources)`); return;
   }

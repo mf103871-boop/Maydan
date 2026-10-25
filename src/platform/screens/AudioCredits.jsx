@@ -2,6 +2,7 @@
 // الإلزامي (CC BY ونحوها)، وما بقي من تأليف ميدان. البيانات مولَّدة من provenance (audio-credits.js).
 import React from 'react';
 import { AUDIO_CREDITS } from '../../shared/fx/audio-credits.js';
+import { SELECTED_AUDIO } from '../../shared/fx/selected-audio.js';
 
 const plural = (n, one, few, many) => (n === 1 ? one : n >= 3 && n <= 10 ? `${n} ${few}` : `${n} ${many}`);
 
@@ -9,7 +10,7 @@ export function AudioCredits({ credits = AUDIO_CREDITS }) {
   const sourced = credits.sources.reduce((n, s) => n + s.items, 0);
   const own = credits.inHouse.cues.length + credits.inHouse.tracks.length;
   return (
-    <div className="stack audio-credits" aria-label="اعتماد الصوت">
+    <div data-design-screen="audio-credits" data-design-id="content" className="stack audio-credits" aria-label="اعتماد الصوت">
       <p className="card-muted">
         المؤثرات الصوتية والموسيقى: {sourced ? `${plural(sourced, 'ملف واحد', 'ملفات', 'ملفًا')} من مكتبات مفتوحة الرخصة، مع القصّ والضبط والإتقان لميدان، و` : ''}
         {plural(own, 'ملف واحد', 'ملفات', 'ملفًا')} ({plural(credits.inHouse.cues.length, 'مؤثر', 'مؤثرات', 'مؤثرًا')} و{plural(credits.inHouse.tracks.length, 'مقطوعة', 'مقطوعات', 'مقطوعة')}) من تأليف ميدان وتصنيعه رقميًا.
@@ -18,9 +19,9 @@ export function AudioCredits({ credits = AUDIO_CREDITS }) {
         <ul className="credits-list">
           {credits.sources.map((s) => (
             <li key={s.provider}>
-              <a href={s.url} target="_blank" rel="noreferrer noopener">{s.name}</a>
+              <a data-design-id="source-link" href={s.url} target="_blank" rel="noreferrer noopener">{s.name}</a>
               <span className="muted"> — {plural(s.items, 'ملف واحد', 'ملفات', 'ملفًا')} · </span>
-              <a href={s.licenseUrl} target="_blank" rel="noreferrer noopener">{s.license}</a>
+              <a data-design-id="license-link" href={s.licenseUrl} target="_blank" rel="noreferrer noopener">{s.license}</a>
             </li>
           ))}
         </ul>
@@ -30,12 +31,25 @@ export function AudioCredits({ credits = AUDIO_CREDITS }) {
           {credits.attribution.map((a) => (
             <li key={a.id}>
               <b>{a.title}</b><span className="muted"> — {a.author} · </span>
-              <a href={a.licenseUrl} target="_blank" rel="noreferrer noopener">{a.license}</a>
-              {a.sourceUrl && <> · <a href={a.sourceUrl} target="_blank" rel="noreferrer noopener">المصدر</a></>}
+              <a data-design-id="license-link" href={a.licenseUrl} target="_blank" rel="noreferrer noopener">{a.license}</a>
+              {a.sourceUrl && <> · <a data-design-id="source-link" href={a.sourceUrl} target="_blank" rel="noreferrer noopener">المصدر</a></>}
             </li>
           ))}
         </ul>
       )}
+      <details className="card-muted">
+        <summary>موسيقى «خطوات شمس» والعبارات التجريبية</summary>
+        <p>ترتيب أصلي مدته ثماني دقائق من نغمات آلات حقيقية مسجّلة، يتغيّر عبر ١٤ جزءًا. بعض المصادر الأصلية بدقة 44.1kHz و16-bit؛ تصدير المزيج بدقة أعلى لا يضيف تفاصيل إلى المصدر.</p>
+        <ul className="credits-list">
+          {SELECTED_AUDIO.sources.instrument_libraries.map((source) => (
+            <li key={source.name}>
+              <a href={source.source_url} target="_blank" rel="noreferrer noopener">{source.name}</a>
+              <span className="muted"> — {source.creator} · CC0 1.0</span>
+            </li>
+          ))}
+        </ul>
+        <p>العبارات صوت آلي تجريبي باستخدام <a href="https://huggingface.co/silma-ai/silma-tts" target="_blank" rel="noreferrer noopener">SILMA TTS</a> (أوزان Apache-2.0 وكود MIT)، وليست تسجيل مؤدٍ بشري. النموذج موثق للفصحى والإنجليزية؛ النطق المحلي يحتاج استماعك ولم يُعتمد للنشر العام. يمكن إيقاف العبارات من إعدادات الصوت.</p>
+      </details>
     </div>
   );
 }

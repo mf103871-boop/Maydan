@@ -5,19 +5,6 @@
   "style": "story",
   "qs": [
     {
-      "qid": "hunterxhunter-200-911",
-      "p": 200,
-      "q": "من النينجا الذي يرفض غون الاستسلام له في آخر مراحل الامتحان؟",
-      "a": "هانزو",
-      "alt": [
-        "Hanzo"
-      ],
-      "topic": "امتحان الصيادين",
-      "verified": true,
-      "sourceUrl": "https://www.ntv.co.jp/hunterhunter/story/019.html",
-      "difficultyTarget": 0.8
-    },
-    {
       "qid": "hunterxhunter-200-912",
       "p": 200,
       "q": "ما اسم والد كيلوا الذي يسمح له بالعودة إلى أصدقائه؟",
@@ -113,6 +100,19 @@
       "verified": true,
       "sourceUrl": "https://www.ntv.co.jp/hunterhunter/story/145.html",
       "difficultyTarget": 0.8
+    },
+    {
+      "topic": "امتحان الصيادين",
+      "q": "من قاد المتقدمين في ركض المرحلة الأولى من امتحان الصيادين؟",
+      "a": "ساتوتز",
+      "alt": [
+        "Satotz"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_characters",
+      "qid": "hunterxhunter-200-921",
+      "p": 200,
+      "difficultyTarget": 0.8,
+      "verified": true
     },
     {
       "qid": "hunterxhunter-400-911",
@@ -328,16 +328,16 @@
       "difficultyTarget": 0.4
     },
     {
-      "qid": "hunterxhunter-600-918",
+      "qid": "hunterxhunter-600-921",
       "p": 600,
-      "q": "ما الحيوان الذي يمثله غينغ ضمن البروج الاثني عشر؟",
-      "a": "الخنزير البري",
+      "q": "من النينجا الذي يرفض غون الاستسلام له في آخر مراحل الامتحان؟",
+      "a": "هانزو",
       "alt": [
-        "Boar"
+        "Hanzo"
       ],
-      "topic": "رحلة غون",
+      "topic": "امتحان الصيادين",
       "verified": true,
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_characters#Ging_Freecss",
+      "sourceUrl": "https://www.ntv.co.jp/hunterhunter/story/019.html",
       "difficultyTarget": 0.4
     },
     {
@@ -384,19 +384,6 @@
       "difficultyTarget": 0.25
     },
     {
-      "topic": "امتحان الصيادين",
-      "q": "من قاد المتقدمين في ركض المرحلة الأولى من امتحان الصيادين؟",
-      "a": "ساتوتز",
-      "alt": [
-        "Satotz"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_characters",
-      "qid": "hunterxhunter-800-914",
-      "p": 800,
-      "difficultyTarget": 0.25,
-      "verified": true
-    },
-    {
       "topic": "قدرات النين",
       "q": "من الفتى الذي يتدرب على النين في برج السماء قبل لقاء غون وكيلوا؟",
       "a": "زوشي",
@@ -411,7 +398,7 @@
     },
     {
       "topic": "قدرات النين",
-      "q": "ما قدرة كورابيكا التي تتيح إتقان جميع أنواع النين مؤقتًا؟",
+      "q": "ما قدرة كورابيكا التي تتيح له إتقان جميع أنواع النين مؤقتًا؟",
       "a": "إمبراطور الزمن",
       "alt": [
         "Emperor Time",
@@ -449,6 +436,19 @@
       "p": 800,
       "difficultyTarget": 0.25,
       "verified": true
+    },
+    {
+      "qid": "hunterxhunter-800-921",
+      "p": 800,
+      "q": "ما الحيوان الذي يمثله غينغ ضمن البروج الاثني عشر؟",
+      "a": "الخنزير البري",
+      "alt": [
+        "Boar"
+      ],
+      "topic": "رحلة غون",
+      "verified": true,
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_characters#Ging_Freecss",
+      "difficultyTarget": 0.25
     },
     {
       "qid": "hunterxhunter-1000-911",

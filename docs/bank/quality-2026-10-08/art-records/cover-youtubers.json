@@ -1,0 +1,29 @@
+{
+  "id": "youtubers",
+  "kind": "cover",
+  "file": "public/media/badeeha-covers/youtubers.webp",
+  "style": "contemporary editorial illustration",
+  "palette": "tangerine, aqua, charcoal",
+  "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'يوتيوبرز وصنّاع محتوى'. Landscape 4:3 artwork.\nMedium: contemporary editorial illustration.\nIntentional palette: tangerine, aqua, charcoal.\nScene: A creator desk seen from a bold overhead angle with camera, ring light, headphones and blank monitor, lively purposeful composition, no platform logos.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-10-08",
+  "sourceImage": {
+    "name": "exec-b96b909d-5ddc-4408-884e-98c98ede98a6.png",
+    "sha256": "16273b4f0659cf66d3f36b8b443ead8e1a76156c873f36c0a199d3f9f044143a",
+    "width": 1448,
+    "height": 1086
+  },
+  "width": 640,
+  "height": 480,
+  "bytes": 76234,
+  "sha256": "90108e3962ef114a03a3abd2e8fbbcf22c239b71842cdbeddb551c8a185aa869",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "phone-size-reviewed",
+    "date": "2026-10-08",
+    "reviewer": "root",
+    "width": 160,
+    "method": "shipped cover CSS; baseline and replacement side by side",
+    "evidence": "docs/bank/quality-2026-10-08/preview/covers-2.jpg"
+  }
+}

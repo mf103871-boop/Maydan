@@ -196,6 +196,26 @@ test('api: المهلة تُجهض الطلب وتعيد NETWORK، ورابط ب
   assert.equal(api.authStartUrl('apple', { server: '' }), '');
 });
 
+test('api: multipart audio keeps native bytes and fetch chooses the boundary', async () => {
+  const form=new FormData();form.append('audio',new Blob([Uint8Array.from([0,127,128,255])],{type:'audio/mp4'}),'voice');
+  let seen;
+  await api.request('/api/social/attachments',{server:SERVER,method:'POST',token:'session',body:form,fetchImpl:async(_url,init)=>{seen=init;return fakeResponse(200,{attachment:{id:'audio'}});}});
+  assert.equal(seen.body,form);assert.equal(seen.headers['content-type'],undefined);assert.equal(seen.headers.authorization,'Bearer session');
+  assert.deepEqual(new Uint8Array(await seen.body.get('audio').arrayBuffer()),Uint8Array.from([0,127,128,255]));
+});
+
+test('api: JSON and private audio deadlines include a response body stalled after headers', async () => {
+  for(const responseType of ['json','blob']){
+    let aborted=false;
+    const fetchImpl=async(_url,init)=>new Response(new ReadableStream({start(controller){init.signal.addEventListener('abort',()=>{aborted=true;controller.error(new Error('aborted body'));});}}),{headers:{'content-type':responseType==='blob'?'audio/mp4':'application/json'}});
+    await assert.rejects(api.request('/api/social/content',{server:SERVER,responseType,timeout:10,fetchImpl}),e=>e.code==='NETWORK');
+    assert.equal(aborted,true);
+  }
+  const data=await api.request('/api/social/content',{server:SERVER,responseType:'blob',fetchImpl:async()=>new Response(Uint8Array.from([0,128,255]),{headers:{'content-type':'audio/mp4'}})});
+  assert.equal(data.type,'audio/mp4');assert.deepEqual(new Uint8Array(await data.arrayBuffer()),Uint8Array.from([0,128,255]));
+  await assert.rejects(api.request('/api/social/content',{server:SERVER,responseType:'blob',fetchImpl:async()=>Response.json({error:'NOT_FOUND'},{status:404})}),e=>e.code==='NOT_FOUND');
+});
+
 // ── native.js ───────────────────────────────────────────────────────────────
 test('جسر الغلاف: وعد لكل نداء، ورفض بالكود، ومهلة تعيد NETWORK', async () => {
   const sent = [];

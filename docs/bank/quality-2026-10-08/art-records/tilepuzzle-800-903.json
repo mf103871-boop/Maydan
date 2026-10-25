@@ -1,0 +1,21 @@
+{
+  "id": "tilepuzzle-800-903",
+  "prompt": "Create one landscape 4:3 illustration for an adult visual reasoning puzzle, no text. Cutaway of a plausible traditional water-powered grain mill beside a fast narrow stream. Visually distribute three linked clues: on left a wooden undershot water wheel with stream visibly pushing bottom paddles; through middle a horizontal shaft and simple bevel gears connect it to a vertical shaft; on right two horizontal millstones with a hopper of wheat above and flour falling into a sack below. Restrained scientific editorial illustration, detailed clean shapes, cool blue water, deep teal shadows, copper and warm ochre wood, muted burgundy accents. Three-quarter cutaway perspective. Fill the composition, linked mechanism occupies 85%, avoid empty borders. This will be scrambled into a 4 by 3 tile grid: each major clue should cross multiple tile boundaries, and users must infer that flowing water powers milling. Mechanically coherent, no electric motor, no sails, no labels, arrows, numerals, logo, watermark, or printed text.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-10-08",
+  "sourceFile": "exec-2e413b5b-bd1e-442e-a2c8-c88f7b51f85b.png",
+  "sourceSha256": "996e80b92e1c9fb604bdca18ac90e19eea66c73532b68c453c4bd64c963b649d",
+  "file": "media/tilepuzzle/quality-watermill.webp",
+  "sha256": "a53e6dce4b2655806558ba90d797b7311295f1ab45ce17231d4df2b9b1e6ea94",
+  "width": 960,
+  "height": 720,
+  "bytes": 231922,
+  "review": {
+    "status": "phone-size-reviewed",
+    "date": "2026-10-08",
+    "width": 366,
+    "method": "Shipped CSS, complete image and 4x3 shuffled grid",
+    "evidence": ".cache/badeeha-quality/shape-final/tilepuzzle-effect-04.jpg"
+  },
+  "compressionQuality": 82
+}

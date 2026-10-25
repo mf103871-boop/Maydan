@@ -1,0 +1,86 @@
+{
+  "pack": "spotdiff",
+  "oldQid": "spotdiff-1000-907",
+  "side": "a",
+  "createdAt": "2026-10-08",
+  "kind": "ai-generated",
+  "tool": "OpenAI image generation (built-in)",
+  "mode": "generate",
+  "prompt": "Use case: illustration-story. Asset type: original A of single-difference mobile puzzle. One landscape 4:3 editorial block-print illustration, olive green and burgundy with pale dusty pink highlights, strong broad carved lines. High view over tailor's sewing table. One olive shirt laid on the left, burgundy folded fabric on right, large bronze scissors at upper right, pincushion, two thread spools, a rolled measuring tape with tick marks but no numbers, triangular chalk, paper pattern and buttons in a small dish. The shirt's right sleeve extends into the lower middle with its broad pale cuff unfolded flat, cuff is 26 percent image width and clearly bounded. The cuff has EXACTLY TWO conspicuous dark burgundy parallel buttonholes, each a thick simple short horizontal slit, vertically arranged one above another; no buttons on this unfolded cuff. The slits are easily countable at 175px full-scene width, not tiny dots. Shirt placket has its own four dark buttons, keep separate. No labels, text, numbers, people, hands, border, marks or watermark. Rich detailed but clean composition.",
+  "asset": "media/spotdiff/spotdiff-1000-907-a-q20261008.webp",
+  "generatedOriginal": "C:\\Users\\user\\.codex\\generated_images\\01a11a56-e9d4-7570-aca6-dec9cf1d8f58\\exec-103ffb54-382b-40ff-97c8-2176d74ec99b.png",
+  "inputImages": [],
+  "review": {
+    "status": "phone-size-reviewed",
+    "originalCompared": true,
+    "displayedEffect": "Side-by-side unfiltered originals; reveal circle only. Stacked below 359px viewport.",
+    "difference": "The lower cuff buttonhole rotates from horizontal to vertical; upper buttonhole remains horizontal; exactly two buttonholes remain.",
+    "answer": "تغيّر اتجاه عروة الكم السفلية",
+    "spot": {
+      "x": 64.7,
+      "y": 70.9,
+      "r": 4.5
+    },
+    "semanticDifferenceCount": 1,
+    "invariantsReviewed": [
+      "upper cuff buttonhole",
+      "four placket buttons",
+      "shirt pocket and seams",
+      "four dish buttons",
+      "two spools",
+      "scissors",
+      "pincushion pins",
+      "measuring tape and patterns",
+      "fabric placement and palette"
+    ],
+    "mobileDeviceQA": false,
+    "browserDisplayQA": {
+      "usedShippedCSS": true,
+      "source": "src/games/badeeha/styles.css",
+      "markupMatches": "App.js .m-diff/.m-diff-frame with physical left/top circle",
+      "viewports": [
+        390,
+        350
+      ],
+      "imageWidths": [
+        173,
+        316
+      ],
+      "views": [
+        "side-by-side before reveal",
+        "side-by-side with reveal",
+        "stacked before reveal",
+        "stacked with reveal"
+      ],
+      "evidence": [
+        ".cache/badeeha-quality/spotdiff-shape/spotdiff-1000-907-390.png",
+        ".cache/badeeha-quality/spotdiff-shape/spotdiff-1000-907-350.png"
+      ],
+      "reviewer": "shape_visual_audit",
+      "notes": "One semantic difference confirmed; generated texture variations do not add an identifiable object/count/layout difference. Diagnostic browser rendering, not on-device iPhone QA."
+    },
+    "reviewedAt": "2026-10-12",
+    "reviewer": "finish_spotdiff",
+    "imageWidthCSS": 173,
+    "evidence": "docs/bank/quality-2026-10-08/preview/spotdiff-10.png"
+  },
+  "packaging": "Uniform proportional resize to1280x960 and WebP encoding only; every scene edit made by built-in imagegen.",
+  "sha256": "d74809ddc6f492705ea2bb8854f1426f7fc011ac401d0df05003b9498b8d3be9",
+  "bytes": 258446,
+  "width": 1280,
+  "height": 960,
+  "generatedOriginalSha256": "e5c553a399684bf7d369e564bfacea8a0a35f64301d55988a242191787449c3c",
+  "packagingReview": {
+    "date": "2026-10-12",
+    "file": "media/spotdiff/spotdiff-1000-907-a-q20261008.webp",
+    "beforeBytes": 341842,
+    "bytes": 258446,
+    "beforeSha256": "e1d6256c5b535a857f18b5e975fada2b651e510a7b280766a182ba0537db8362",
+    "sha256": "d74809ddc6f492705ea2bb8854f1426f7fc011ac401d0df05003b9498b8d3be9",
+    "quality": 72,
+    "dimensionsUnchanged": true,
+    "operation": "WebP encoding only; no scene edit",
+    "phoneReview": "phone-size-reviewed-after-compression",
+    "reviewRecord": "docs/bank/quality-2026-10-08/postcompression-review.json"
+  }
+}

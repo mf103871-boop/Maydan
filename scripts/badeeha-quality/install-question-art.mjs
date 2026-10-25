@@ -1,0 +1,17 @@
+import { readFile, writeFile, mkdir } from 'node:fs/promises';
+import path from 'node:path';
+import { createHash } from 'node:crypto';
+import sharp from 'sharp';
+const [id,source,planPath='docs/bank/quality-2026-10-08/question-art-plan.json']=process.argv.slice(2);
+const plan=JSON.parse(await readFile(planPath,'utf8'));
+const job=plan.jobs.find(j=>j.id===id);
+if(!job||!source) throw new Error('Expected planned id and local source image');
+const original=await readFile(source);
+const image=await sharp(original).resize(960,720,{fit:'cover'}).webp({quality:89}).toBuffer();
+await mkdir(path.dirname(job.file),{recursive:true});
+await writeFile(job.file,image);
+const record=`docs/bank/quality-2026-10-08/art-records/${id}.json`;
+await writeFile(record,JSON.stringify({id,prompt:job.prompt,tool:'OpenAI image generation (built-in)',createdAt:'2026-10-08',sourceFile:path.basename(source),sourceSha256:createHash('sha256').update(original).digest('hex'),file:job.file,sha256:createHash('sha256').update(image).digest('hex'),width:960,height:720,bytes:image.length,review:{status:'pending-phone-size-review'}},null,2)+'\n');
+job.status='generated-installed';job.record=record;
+await writeFile(planPath,JSON.stringify(plan,null,2)+'\n');
+console.log(JSON.stringify({id,file:job.file,bytes:image.length}));

@@ -1,0 +1,29 @@
+{
+  "id": "placefinder",
+  "kind": "cover",
+  "file": "public/media/badeeha-covers/placefinder.webp",
+  "style": "architectural travel illustration",
+  "palette": "sandstone, sky blue, burnt orange",
+  "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'وين المكان؟'. Landscape 4:3 artwork.\nMedium: architectural travel illustration.\nIntentional palette: sandstone, sky blue, burnt orange.\nScene: A winding path through an imaginary richly detailed hilltop town and a small map pin shape, warm travel-poster composition, not a real answer landmark.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-10-08",
+  "sourceImage": {
+    "name": "exec-5d20aa81-a912-49cf-8f58-9bf7cd7c7ab1.png",
+    "sha256": "0c80097a5b027bdd61c4beb9c2fcec1099fcf86a1203ad1fcde9011a5d674654",
+    "width": 1448,
+    "height": 1086
+  },
+  "width": 640,
+  "height": 480,
+  "bytes": 103216,
+  "sha256": "bec61e8c15dafff900ad7d79b75157e7bd0de0c2bc30b642f43d1d101895517f",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "phone-size-reviewed",
+    "date": "2026-10-08",
+    "reviewer": "root",
+    "width": 160,
+    "method": "shipped cover CSS; baseline and replacement side by side",
+    "evidence": "docs/bank/quality-2026-10-08/preview/covers-4.jpg"
+  }
+}

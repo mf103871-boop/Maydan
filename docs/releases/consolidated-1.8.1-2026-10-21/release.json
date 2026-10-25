@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-21",
+  "timeZone": "Asia/Amman",
+  "status": "candidate-under-verification",
+  "target": { "appId": "6808385717", "version": "1.8.1", "build": "25", "audience": "existing-internal-TestFlight-group" },
+  "base": {
+    "publicNativeVersion": "1.8",
+    "publicNativeBuild": "22",
+    "publicSource": "2fe524e98f8a455b1b801ab4c0fdd9d82f9396ef",
+    "privateNativeBuild": "23",
+    "privateSourceLocal": "f68d4e281ca061f37c41a8430c98c9f99eb95696",
+    "privateSourceGitHub": "4eafe2577e83222f6db0b20fd891798d01d7576d"
+  },
+  "newlyIntegrated": [
+    "Selected original Sunny Steps recording: 480 seconds, 14 musical sections, streamed through the existing mixer rather than decoded as one large AudioBuffer",
+    "Six approved physical-source sound effects including real clock tick/tock, plus the existing remaining event cues",
+    "Twelve synthetic colloquial spoken responses for correct/wrong events, variation without immediate repeats, bounded loading, no overlapping responses, call/recording priority",
+    "Independent saved voice-response switch; existing player sound/music settings and volumes retained",
+    "Baseline JPEG fallback only for IMAGE_INVALID, bounded to one retry; preserves crop, moderation and revision, cancels stale account/dialog work",
+    "Retained native build23 update-gate recovery fixes",
+    "Independent bounded audio-unlock deadlines prevent an old startup request from cancelling the first sound requested by a new player gesture"
+  ],
+  "alreadyInPublic22": ["seven games including Ersomha", "Badeeha content and cover overhaul", "Lamma groups, messages, voice notes and calls", "direct group game launch and two-player online support", "four-section bottom navigation", "floating movable call portraits", "keyboard and Back fixes", "owner-private Studio", "audio interruption recovery"],
+  "excludedAsSuperseded": ["old social-ux dock prototype", "abandoned icon variants", "optional unmounted HomeGroups strip"],
+  "publicWeb": {
+    "gapConfirmed": true,
+    "oldHtmlSHA256": "5106f5d909dde9c2606b9d972424e89b8e673297248e33bddc973751937f7e82",
+    "promotion": "Public native22 assets promoted separately and verified 2026-10-21T09:01:06.119Z; live version f050f5ab-f9c3-40e5-927f-d147108c42ca, unchanged backend code. This audition candidate and owner-private Studio/play remain private."
+  },
+  "verification": {
+    "newGate": "Actual simulator WKWebView, bundled maydan: media stream, advancing media/context clocks, mixer output, bounded decoded buffers and context replacement",
+    "browserChecks": "Real crop/upload and navigation components; synthetic account/network/native lifecycle inputs are explicitly identified",
+    "physicalIPhoneTestsPerformed": false,
+    "nativeSpeakerListeningApproved": false,
+    "voicesProductionApproved": false
+  },
+  "preservation": {
+    "publicSubmission": false,
+    "nativeMinimumStill": "1.8 (22)",
+    "productionBackendDeploymentFromThisBranch": false,
+    "accountAndResultsMigration": false,
+    "studioDraftOrPublishPermissionChanged": false,
+    "newCredentialsOrAccess": false
+  },
+  "limits": [
+    "New builds cannot remotely replace native code already installed in1.7.1; that installation may need one manual App Store update.",
+    "Synthetic spoken previews require the owner's listening assessment before public inclusion.",
+    "Browser/simulator output measurement does not certify physical speakers, Bluetooth, actual iOS background delivery or human-perceived quality."
+  ]
+}

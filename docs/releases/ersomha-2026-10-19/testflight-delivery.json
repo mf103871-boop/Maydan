@@ -1,0 +1,40 @@
+{
+  "ok": true,
+  "recordedAt": "2026-10-18T22:58:20.673491+00:00",
+  "sourceCommit": "f23033d5364b6cdda1df851ed2aa9ee9bdbb69ba",
+  "workflowRun": 39173097745,
+  "workflowURL": "https://github.com/mf103871-boop/Maydan/actions/runs/39173097745",
+  "workflowConclusion": "success",
+  "version": "1.8",
+  "buildNumber": "19",
+  "appleBuildId": "08126e51-9288-4ce7-bfaa-0da4b7443524",
+  "processingState": "VALID",
+  "internalBuildState": "IN_BETA_TESTING",
+  "externalBuildState": "READY_FOR_BETA_SUBMISSION",
+  "uploadedDate": "2026-10-18T15:51:52-07:00",
+  "expired": false,
+  "existingInternalGroup": {
+    "name": "Envysnowy Group",
+    "testers": 1,
+    "basis": "Observed on build details App Store Connect UI; no new tester or group access created."
+  },
+  "appleStatusReceiptSHA256": "6febd78572d7c6923aae8466fceae15e878fd1b942b1e96218ea076e76476c77",
+  "existingReview": {
+    "version": "1.7.1",
+    "state": "WAITING_FOR_REVIEW",
+    "receiptSHA256": "4bfdcbb5e40197b8a5ec0897887400c94f418e4fd6373ae8d867df2709c27a18",
+    "mutationPerformed": false
+  },
+  "ipa": {
+    "bytes": 152711456,
+    "sha256": "11eaa72f566d0e0cc40f655183c12318d4f18cb885e53c5920dcba9211e8e3dd",
+    "packageAudit": "package-audit.json"
+  },
+  "testNotesVerified": true,
+  "physicalIPhoneTrial": "pending",
+  "publicFrontendPublished": false,
+  "publicAppStoreReviewSubmitted": false,
+  "mandatoryUpdateEnabled": false,
+  "backendDeploymentReceipt": "backend-verification.json",
+  "scope": "Apple accepted the signed CI upload and exposes it to the pre-existing internal tester. This is not a public App Store release or a claim of physical iPhone gameplay testing."
+}

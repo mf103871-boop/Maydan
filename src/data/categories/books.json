@@ -20,7 +20,7 @@
     {
       "qid": "books-200-912",
       "p": 200,
-      "q": "ما اسم الشاب الذي يصادق آثوس وبورثوس وآراميس في «الفرسان الثلاثة»؟",
+      "q": "آثوس وبورثوس وآراميس يصادقون شابًا في «الفرسان الثلاثة»؛ ما اسمه؟",
       "a": "دارتانيان",
       "topic": "الرواية الفرنسية",
       "verified": true,
@@ -111,7 +111,8 @@
       "topic": "حكايات الطفولة",
       "verified": true,
       "difficultyTarget": 0.8,
-      "sourceUrl": "https://www.gutenberg.org/cache/epub/1448/pg1448-images.html"
+      "sourceUrl": "https://www.gutenberg.org/cache/epub/1448/pg1448-images.html",
+      "alt": []
     },
     {
       "qid": "books-400-911",
@@ -172,7 +173,7 @@
     {
       "qid": "books-400-915",
       "p": 400,
-      "q": "من الكاتبة التي ابتكرت سلسلة الكتب عن الصبي صاحب الندبة البرقية؟",
+      "q": "صبي بندبة برقية بطل سلسلة كتب؛ من الكاتبة التي ابتكرتها؟",
       "a": "ج. ك. رولينغ",
       "topic": "الخيال والفانتازيا",
       "verified": true,
@@ -219,7 +220,8 @@
       "topic": "الكتب العربية",
       "verified": true,
       "difficultyTarget": 0.6,
-      "sourceUrl": "https://www.safahat.org/contributors/59624258/"
+      "sourceUrl": "https://www.safahat.org/contributors/59624258/",
+      "alt": []
     },
     {
       "qid": "books-600-911",
@@ -268,7 +270,7 @@
     {
       "qid": "books-600-914",
       "p": 600,
-      "q": "بأي اسم يعرّف الراوي نفسه في الجملة الأولى من «موبي ديك»؟",
+      "q": "يفتتح راوي «موبي ديك» بقوله «نادوني...»؛ بأي اسم؟",
       "a": "إسماعيل",
       "topic": "روايات عالمية",
       "verified": true,
@@ -287,7 +289,8 @@
       "topic": "الكتب العربية",
       "verified": true,
       "difficultyTarget": 0.4,
-      "sourceUrl": "https://www.safahat.org/books/62575295/"
+      "sourceUrl": "https://www.safahat.org/books/62575295/",
+      "alt": []
     },
     {
       "qid": "books-600-916",
@@ -377,7 +380,7 @@
     {
       "qid": "books-800-914",
       "p": 800,
-      "q": "بأي مادة جعل المجرم كلب باسكرفيل يبدو مضيئًا في الظلام داخل الرواية؟",
+      "q": "كلب باسكرفيل يبدو مضيئًا ليلًا؛ بأي مادة حقق المجرم ذلك داخل الرواية؟",
       "a": "الفوسفور",
       "topic": "الأدب البوليسي",
       "verified": true,
@@ -441,7 +444,8 @@
       "topic": "الكتب العربية",
       "verified": true,
       "difficultyTarget": 0.25,
-      "sourceUrl": "https://www.safahat.org/contributors/19203514/"
+      "sourceUrl": "https://www.safahat.org/contributors/19203514/",
+      "alt": []
     },
     {
       "topic": "الرواية الفرنسية",
@@ -512,7 +516,7 @@
     },
     {
       "topic": "حكايات الطفولة",
-      "q": "في أي حقل يقنع المحتالان الدمية الخشبية بدفن نقوده لتنمو في رواية كولودي؟",
+      "q": "أين أقنع المحتالان دمية كولودي بدفن نقودها بزعم أنها ستنمو؟",
       "a": "حقل المعجزات",
       "sourceUrl": "https://www.gutenberg.org/files/500/500-h/500-h.htm",
       "alt": [
@@ -546,7 +550,8 @@
       "verified": true,
       "p": 1000,
       "qid": "books-1000-918",
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.15,
+      "alt": []
     }
   ]
 }

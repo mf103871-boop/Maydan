@@ -1,0 +1,45 @@
+{
+  "preparedAt": "2026-10-17",
+  "appId": "6808385717",
+  "version": "1.7",
+  "appStoreVersionId": "e956921e-b535-4cee-813d-35e540198941",
+  "publicBaseline": "1.5 (8)",
+  "localizations": {
+    "ar-SA": {
+      "description": "description-ar.txt",
+      "whatsNew": "whats-new-ar.txt"
+    },
+    "en-US": {
+      "description": "description-en.txt",
+      "whatsNew": "whats-new-en.txt"
+    }
+  },
+  "appReviewNotes": "review-notes-en.txt",
+  "appReviewNotesArabicReference": "review-notes-ar.txt",
+  "privacyPolicyUrl": "https://maydan-game.mf103871.workers.dev/api/legal/privacy/",
+  "termsUrl": "https://maydan-game.mf103871.workers.dev/#/terms",
+  "supportEmail": "mf103871@gmail.com",
+  "screenshotReview": "screenshots-review.txt",
+  "scope": {
+    "freeSocial": ["private text messages", "voice notes", "audio calls", "invitation-only groups with up to 12 accepted members", "game-room invitations"],
+    "accountProviders": ["Apple", "Google"],
+    "guestAccess": "Local free games do not require an account.",
+    "accountRequiredFor": ["social features", "profiles", "purchases linked to the account"],
+    "badeehaCategories": 78,
+    "badeehaQuestions": 3120,
+    "updateGate": "Disabled by default. Does not install an update."
+  },
+  "contentEvidence": {
+    "categorySource": "src/data/categories/*.json",
+    "coverPlan": "docs/bank/quality-2026-10-08/cover-plan.json",
+    "coverEvidence": "78 generated-installed covers, 78 phone-size-reviewed entries, all 78 installed SHA-256 values match their art records; created 2026-10-08.",
+    "socialSource": ["src/social/SocialHost.jsx", "ios/Maydan/SocialCoordinator.swift", "ios/Maydan/SocialVoiceRecorder.swift"],
+    "legalSource": "src/platform/screens/Legal.jsx"
+  },
+  "constraints": [
+    "Use the English review-notes file for the single App Review notes field; Arabic is a reusable reference.",
+    "No reviewer credentials or reviewer bypass were invented.",
+    "No physical multi-device or 12-participant call test is claimed by these files.",
+    "This manifest does not attest that metadata was uploaded, reviewed or published."
+  ]
+}

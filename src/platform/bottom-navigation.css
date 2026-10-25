@@ -1,0 +1,21 @@
+:root { --menu-nav-space: 0px; }
+.menu-navigation { position: fixed; z-index: 90; left: max(0px, env(safe-area-inset-left, 0px)); right: max(0px, env(safe-area-inset-right, 0px)); bottom: 0; width: min(calc(100% - env(safe-area-inset-left, 0px) - env(safe-area-inset-right, 0px)), 860px); margin-inline: auto; height: calc(76px + env(safe-area-inset-bottom, 0px)); padding: 6px 10px calc(6px + env(safe-area-inset-bottom, 0px)); display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 4px; background: linear-gradient(180deg, #FFFEF8, #F3E6D8); border: 1px solid #D0B79F; border-bottom: 0; border-radius: 26px 26px 0 0; box-shadow: inset 0 2px 0 #FFFFFF, 0 -3px 0 #E7D5BF, 0 -8px 24px #3525471A; }
+.menu-navigation[hidden] { display: none; }
+.menu-navigation-item { position: relative; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 4px; min-width: 0; min-height: 52px; border-radius: 18px; text-decoration: none; color: #6B5678; font-size: 13px; line-height: 1.2; font-weight: 800; -webkit-tap-highlight-color: transparent; transition: background .16s ease, color .16s ease, box-shadow .16s ease; }
+.menu-navigation-item::before { content: ''; position: absolute; top: 1px; width: 20px; height: 3px; background: transparent; border-radius: 4px; }
+.menu-navigation-item.is-active { color: #FFFFFF; background: linear-gradient(160deg, #0C7C8D, #075D73); box-shadow: inset 0 2px 0 #FFFFFF66, inset 0 -1px 0 #03465A, 0 3px 0 #03465A, 0 5px 9px #08647C26; }
+.menu-navigation-item.is-active::before { background: #A0F0E8; }
+.menu-navigation-item:active { background: #E6D9F1; box-shadow: inset 0 2px 3px #3525471A; }
+.menu-navigation-item.is-active:active { background: #075D73; box-shadow: inset 0 2px 3px #03465A88, 0 1px 0 #03465A; }
+.menu-navigation-item:focus-visible { outline: 3px solid var(--purple, #8540B5); outline-offset: 1px; }
+.menu-navigation-icon { position: relative; display: grid; place-items: center; width: 32px; height: 28px; }
+.menu-navigation-badge { position: absolute; top: -5px; right: -9px; display: grid; place-items: center; min-width: 18px; min-height: 18px; padding: 1px 4px; border: 2px solid #fffbf2; border-radius: 12px; color: white; background: #8C3DA8; font-size: 10px; line-height: 1; }
+.menu-navigation-dot { position: absolute; right: -3px; top: -2px; width: 9px; height: 9px; border: 2px solid #fffbf2; border-radius: 50%; background: #8C3DA8; }
+html[data-menu-nav-visible] .call-game-viewport > .screen,
+html[data-menu-nav-visible] .call-game-viewport > .profile-screen { padding-bottom: calc(28px + var(--menu-nav-space) + var(--screen-bottom-reserve, 0px)); }
+html[data-menu-nav-visible] .setup-sticky { bottom: calc(var(--menu-nav-space) + 10px); }
+html[data-menu-nav-visible] .lamma-launcher { display: none; }
+html[data-menu-nav-visible] .lamma-notification { bottom: calc(var(--menu-nav-space) + 12px); }
+@media (orientation: landscape) { .menu-navigation { height: calc(64px + env(safe-area-inset-bottom, 0px)); padding-top: 4px; padding-bottom: calc(4px + env(safe-area-inset-bottom, 0px)); border-radius: 20px 20px 0 0; }.menu-navigation-item { gap: 2px; font-size: 12px; min-height: 48px; }.menu-navigation-icon svg { width: 24px; height: 24px; } }
+@media (prefers-reduced-motion: reduce) { .menu-navigation-item { transition: none; } }
+html[data-reduced-motion="true"] .menu-navigation-item { transition: none; }

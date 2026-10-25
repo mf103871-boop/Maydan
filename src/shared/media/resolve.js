@@ -31,6 +31,7 @@ export function resolveMedia(ref, packId) {
   const value = String(ref || '').trim();
   if (!value) return null;
   if (isExternal(value)) return value;
+  if (value.startsWith('/')) return value;
   if (value.startsWith(`${MEDIA_ROOT}/`)) return withVersion(value);
   if (!packId) return null;
   return withVersion(`${MEDIA_ROOT}/${packId}/${value.replace(/^\/+/, '')}`);

@@ -1,0 +1,29 @@
+{
+  "id": "seerah",
+  "kind": "cover",
+  "file": "public/media/badeeha-covers/seerah.webp",
+  "style": "historical landscape watercolor",
+  "palette": "sand gold, date-palm green, dawn blue",
+  "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'السيرة النبوية'. Landscape 4:3 artwork.\nMedium: historical landscape watercolor.\nIntentional palette: sand gold, date-palm green, dawn blue.\nScene: An empty historic Arabian desert route toward a distant mud-brick oasis settlement, peaceful dawn, no people, no invented sacred-site details.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-10-08",
+  "sourceImage": {
+    "name": "exec-229b747b-060e-47f5-86a5-cc12279f36ef.png",
+    "sha256": "64ce366daca78ac8a2eec58d363380285e714875e7ba79dd2653cf6c602f0106",
+    "width": 1448,
+    "height": 1086
+  },
+  "width": 640,
+  "height": 480,
+  "bytes": 87972,
+  "sha256": "2dd9e4ff81c1457b6a4e9ad34d6168e6e98c37afb5ca2a0beb4e4bd82807b753",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "phone-size-reviewed",
+    "date": "2026-10-08",
+    "reviewer": "root",
+    "width": 160,
+    "method": "shipped cover CSS; baseline and replacement side by side",
+    "evidence": "docs/bank/quality-2026-10-08/preview/covers-2.jpg"
+  }
+}

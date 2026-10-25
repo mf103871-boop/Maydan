@@ -1,0 +1,39 @@
+{
+  "pack": "spotdiff",
+  "oldQid": "spotdiff-600-904",
+  "side": "b",
+  "createdAt": "2026-10-08",
+  "kind": "ai-generated",
+  "tool": "OpenAI image generation (built-in)",
+  "mode": "edit",
+  "prompt": "Use case: precise-object-edit\nAsset type: matching B of a one-difference comparison puzzle.\nInput image1 is exact EDIT TARGET. Change ONLY the cab window in the wooden toy train at right: replace its square/rectangular hole with a circular hole in exactly the same center and approximately same width/height. Preserve bare wood color and thickness, interior shading matched physically. Keep train chimney RED, body GREEN, and all three wheels exactly unchanged.\nOnly ONE semantic difference. Keep everything else identical including red chimney and cap, green engine/body, three wheel shapes and silver hubs, two blue blocks at left, all wooden grain, shelf/wall, light/framing. No new items, text, markers, annotations, border, panel, or UI. Preserve4:3 framing.",
+  "asset": "media/spotdiff/spotdiff-600-904-b-q20261008.webp",
+  "sha256": "70185ff92141e501f1c565d7dca15c701ccb6807ed5a221e05b04892f2876899",
+  "bytes": 131040,
+  "width": 1280,
+  "height": 960,
+  "inputImages": [
+    {
+      "file": "spotdiff-600-904-a.webp",
+      "sha256": "279359bc8a8263c999f7039caa43e1ce0086c81136f3a1b4e627f41e860d2913"
+    }
+  ],
+  "review": {
+    "status": "phone-size-reviewed",
+    "originalCompared": true,
+    "displayedEffect": "Side-by-side unfiltered originals; reveal circle only",
+    "difference": "تغيّر شكل نافذة القطار",
+    "semanticDifferenceCount": 1,
+    "invariantsReviewed": [
+      "نافذة القمرة المستطيلة أصبحت دائرية",
+      "المدخنة الحمراء والجسم الأخضر والعجلات الثلاث ثابتة",
+      "المكعبان الأزرقان والخشب والإضاءة ثابتة"
+    ],
+    "mobileDeviceQA": false,
+    "reviewedAt": "2026-10-12",
+    "reviewer": "finish_spotdiff",
+    "imageWidthCSS": 173,
+    "evidence": "docs/bank/quality-2026-10-08/preview/spotdiff-05.png"
+  },
+  "packaging": "Uniform size/format encoding only; all scene changes created by built-in imagegen"
+}

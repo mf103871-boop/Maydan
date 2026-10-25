@@ -1,0 +1,27 @@
+-- Additive Lamma protocol: the original paired conversations remain compatible.
+ALTER TABLE social_messages ADD COLUMN kind TEXT NOT NULL DEFAULT 'text';
+ALTER TABLE social_messages ADD COLUMN attachment_id TEXT;
+ALTER TABLE social_messages ADD COLUMN room_invite_id TEXT;
+CREATE TABLE IF NOT EXISTS social_groups (id TEXT PRIMARY KEY,name TEXT NOT NULL,avatar_preset TEXT NOT NULL DEFAULT 'spark',owner_id TEXT NOT NULL,created_at INTEGER NOT NULL,updated_at INTEGER NOT NULL,closed_at INTEGER);
+CREATE TABLE IF NOT EXISTS social_group_members (group_id TEXT NOT NULL,user_id TEXT NOT NULL,role TEXT NOT NULL CHECK(role IN ('owner','admin','member')),joined_at INTEGER NOT NULL,visible_after_seq INTEGER NOT NULL DEFAULT 0,read_seq INTEGER NOT NULL DEFAULT 0,left_at INTEGER,PRIMARY KEY(group_id,user_id));
+CREATE INDEX IF NOT EXISTS social_group_members_user ON social_group_members(user_id,left_at);
+CREATE TABLE IF NOT EXISTS social_group_invites (id TEXT PRIMARY KEY,group_id TEXT NOT NULL,inviter_id TEXT NOT NULL,user_id TEXT NOT NULL,created_at INTEGER NOT NULL,expires_at INTEGER NOT NULL,status TEXT NOT NULL CHECK(status IN ('pending','accepted','rejected','cancelled')));
+CREATE UNIQUE INDEX IF NOT EXISTS social_group_invites_pending ON social_group_invites(group_id,user_id) WHERE status='pending';
+CREATE INDEX IF NOT EXISTS social_group_invites_user ON social_group_invites(user_id,status,expires_at);
+CREATE TABLE IF NOT EXISTS social_group_messages (seq INTEGER PRIMARY KEY AUTOINCREMENT,group_id TEXT NOT NULL,sender_id TEXT NOT NULL,client_id TEXT NOT NULL,kind TEXT NOT NULL CHECK(kind IN ('text','voice','room_invite')),text TEXT NOT NULL,attachment_id TEXT,room_invite_id TEXT,original_hash TEXT NOT NULL,created_at INTEGER NOT NULL,edited_at INTEGER,deleted_at INTEGER,UNIQUE(sender_id,client_id));
+CREATE INDEX IF NOT EXISTS social_group_messages_group ON social_group_messages(group_id,seq);
+CREATE TABLE IF NOT EXISTS social_group_reports (id TEXT PRIMARY KEY,reporter_id TEXT NOT NULL,reported_id TEXT NOT NULL,group_id TEXT NOT NULL,message_seq INTEGER,message_text TEXT,attachment_id TEXT,reason TEXT NOT NULL,created_at INTEGER NOT NULL);
+CREATE TABLE IF NOT EXISTS social_report_attachments (report_id TEXT PRIMARY KEY,attachment_id TEXT NOT NULL);
+CREATE TABLE IF NOT EXISTS social_attachments (id TEXT PRIMARY KEY,user_id TEXT NOT NULL,scope TEXT NOT NULL CHECK(scope IN ('direct','group')),conversation_id TEXT NOT NULL,client_id TEXT NOT NULL,object_key TEXT NOT NULL UNIQUE,mime_type TEXT NOT NULL,duration_ms INTEGER NOT NULL,byte_length INTEGER NOT NULL,content_hash TEXT NOT NULL,created_at INTEGER NOT NULL,ready_at INTEGER,message_seq INTEGER,deleted_at INTEGER,UNIQUE(user_id,client_id));
+CREATE INDEX IF NOT EXISTS social_attachments_cleanup ON social_attachments(deleted_at,created_at);
+CREATE TABLE IF NOT EXISTS social_room_invites (id TEXT PRIMARY KEY,scope TEXT NOT NULL,conversation_id TEXT NOT NULL,inviter_id TEXT NOT NULL,room_code TEXT NOT NULL,game TEXT NOT NULL,created_at INTEGER NOT NULL,expires_at INTEGER NOT NULL);
+CREATE TABLE IF NOT EXISTS social_room_invite_responses (invite_id TEXT NOT NULL,user_id TEXT NOT NULL,status TEXT NOT NULL,PRIMARY KEY(invite_id,user_id));
+CREATE TABLE IF NOT EXISTS social_calls (id TEXT PRIMARY KEY,scope TEXT NOT NULL CHECK(scope IN ('direct','group')),conversation_id TEXT NOT NULL,initiator_id TEXT NOT NULL,client_id TEXT NOT NULL,status TEXT NOT NULL CHECK(status IN ('ringing','active','ended','missed')),created_at INTEGER NOT NULL,ring_until INTEGER NOT NULL,expires_at INTEGER NOT NULL,ended_at INTEGER,room_name TEXT NOT NULL UNIQUE,UNIQUE(initiator_id,client_id));
+CREATE UNIQUE INDEX IF NOT EXISTS social_calls_open ON social_calls(scope,conversation_id) WHERE status IN ('ringing','active');
+CREATE TABLE IF NOT EXISTS social_call_participants (call_id TEXT NOT NULL,user_id TEXT NOT NULL,state TEXT NOT NULL CHECK(state IN ('invited','active','rejected','left')),device_id TEXT,provider_sid TEXT,joined_at INTEGER,left_at INTEGER,revoked_before INTEGER NOT NULL DEFAULT 0,PRIMARY KEY(call_id,user_id));
+CREATE UNIQUE INDEX IF NOT EXISTS social_call_one_active ON social_call_participants(user_id) WHERE state='active';
+CREATE TABLE IF NOT EXISTS social_devices (user_id TEXT NOT NULL,device_id TEXT NOT NULL,kind TEXT NOT NULL CHECK(kind IN ('apns','voip')),environment TEXT NOT NULL CHECK(environment IN ('sandbox','production')),token TEXT NOT NULL,session_id TEXT NOT NULL,updated_at INTEGER NOT NULL,PRIMARY KEY(user_id,device_id,kind),UNIQUE(token,kind,environment));
+CREATE TABLE IF NOT EXISTS social_preferences (user_id TEXT PRIMARY KEY,messages INTEGER NOT NULL DEFAULT 1,friend_requests INTEGER NOT NULL DEFAULT 1,group_invites INTEGER NOT NULL DEFAULT 1,calls INTEGER NOT NULL DEFAULT 1,previews INTEGER NOT NULL DEFAULT 0,sound INTEGER NOT NULL DEFAULT 1);
+CREATE TABLE IF NOT EXISTS social_mutes (user_id TEXT NOT NULL,scope TEXT NOT NULL,conversation_id TEXT NOT NULL,PRIMARY KEY(user_id,scope,conversation_id));
+CREATE TABLE IF NOT EXISTS social_jobs (id TEXT PRIMARY KEY,kind TEXT NOT NULL,payload TEXT NOT NULL,user_id TEXT,created_at INTEGER NOT NULL,due_at INTEGER NOT NULL,attempts INTEGER NOT NULL DEFAULT 0,lease_until INTEGER NOT NULL DEFAULT 0,lease_id TEXT);
+CREATE INDEX IF NOT EXISTS social_jobs_due ON social_jobs(due_at,lease_until);

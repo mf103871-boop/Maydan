@@ -1,0 +1,29 @@
+{
+  "id": "football",
+  "kind": "cover",
+  "file": "public/media/badeeha-covers/football.webp",
+  "style": "sports photography",
+  "palette": "pitch green, floodlight white, deep navy",
+  "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'كرة القدم'. Landscape 4:3 artwork.\nMedium: sports photography.\nIntentional palette: pitch green, floodlight white, deep navy.\nScene: A football on wet grass in the foreground beneath dramatic stadium floodlights, low camera viewpoint, distant goal and authentic turf.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-10-08",
+  "sourceImage": {
+    "name": "exec-52932eaf-5298-4ec4-a604-24aad1b4785b.png",
+    "sha256": "0180285c8f12eb330eccceb7db63e0e47b07e86d5448fdca03b4fa2cac145100",
+    "width": 1448,
+    "height": 1086
+  },
+  "width": 640,
+  "height": 480,
+  "bytes": 58620,
+  "sha256": "8c12f09cf2dc43ba8dceb25d95b421e5ab1eed6979973599c6b1d8148b1285b6",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "phone-size-reviewed",
+    "date": "2026-10-08",
+    "reviewer": "root",
+    "width": 160,
+    "method": "shipped cover CSS; baseline and replacement side by side",
+    "evidence": "docs/bank/quality-2026-10-08/preview/covers-1.jpg"
+  }
+}

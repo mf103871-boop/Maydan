@@ -1,0 +1,29 @@
+{
+  "id": "general",
+  "kind": "cover",
+  "file": "public/media/badeeha-covers/general.webp",
+  "style": "editorial cut-paper collage",
+  "palette": "midnight blue, coral, golden yellow",
+  "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'معلومات عامة'. Landscape 4:3 artwork.\nMedium: editorial cut-paper collage.\nIntentional palette: midnight blue, coral, golden yellow.\nScene: An open circular portal joining an observatory, a tiny earth and branching human curiosity paths; layered paper, asymmetrical diagonal composition.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-10-08",
+  "sourceImage": {
+    "name": "exec-2462e23a-45a8-4ebe-aca5-4e9c35248b1c.png",
+    "sha256": "385c2872752070aa30dc05002d475c3b36ba7634c631fc3cf774b4da5909cc2f",
+    "width": 1448,
+    "height": 1086
+  },
+  "width": 640,
+  "height": 480,
+  "bytes": 87022,
+  "sha256": "9c39e42c5a3cf86c8ff965c7cbaa761fe8a8de53999981d7732cd1a0bef62efe",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "phone-size-reviewed",
+    "date": "2026-10-08",
+    "reviewer": "root",
+    "width": 160,
+    "method": "shipped cover CSS; baseline and replacement side by side",
+    "evidence": "docs/bank/quality-2026-10-08/preview/covers-1.jpg"
+  }
+}

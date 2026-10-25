@@ -1,0 +1,39 @@
+{
+  "pack": "spotdiff",
+  "oldQid": "spotdiff-600-903",
+  "side": "b",
+  "createdAt": "2026-10-08",
+  "kind": "ai-generated",
+  "tool": "OpenAI image generation (built-in)",
+  "mode": "edit",
+  "prompt": "Use case: precise-object-edit\nAsset type: matching B of a one-difference comparison puzzle.\nInput image1 is exact EDIT TARGET. Change ONLY the angle of the slender SPOUT on the small cream watering can at the far right. It currently points diagonally upper left. Make the same spout point horizontally left, connected at the same location on the can. Preserve spout material, thickness and length; adjust only its orientation and physically consistent silhouette. Keep pot rim BLUE and all fern leaves unchanged.\nOnly ONE semantic difference. Keep everything else identical including blue plant-pot rim and orange pot shape, every fern frond, cream watering-can body/rim/handle, all stone paving seams, wall texture, light/framing. No new items, text, markers, annotations, border, panel, or UI. Preserve4:3 framing.",
+  "asset": "media/spotdiff/spotdiff-600-903-b-q20261008.webp",
+  "sha256": "3a3756967c2f5449295c1530196c2c5eca8f7b9acab83d0942d2695ec27af871",
+  "bytes": 207018,
+  "width": 1280,
+  "height": 960,
+  "inputImages": [
+    {
+      "file": "spotdiff-600-903-a.webp",
+      "sha256": "0aff2ba8c1204a2d0c2d01fc2cc7bf68f7b02da70a7947151223bbaf1cc880f2"
+    }
+  ],
+  "review": {
+    "status": "phone-size-reviewed",
+    "originalCompared": true,
+    "displayedEffect": "Side-by-side unfiltered originals; reveal circle only",
+    "difference": "تغيّر اتجاه فوهة إبريق الري",
+    "semanticDifferenceCount": 1,
+    "invariantsReviewed": [
+      "زاوية الفوهة فقط، مع ثبات مادة الإبريق وجسمه",
+      "حافة الأصيص الزرقاء وأوراق السرخس ثابتة",
+      "الأرضية والجدار والإضاءة ثابتة"
+    ],
+    "mobileDeviceQA": false,
+    "reviewedAt": "2026-10-12",
+    "reviewer": "finish_spotdiff",
+    "imageWidthCSS": 173,
+    "evidence": "docs/bank/quality-2026-10-08/preview/spotdiff-05.png"
+  },
+  "packaging": "Uniform size/format encoding only; all scene changes created by built-in imagegen"
+}

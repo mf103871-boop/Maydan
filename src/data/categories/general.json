@@ -35,14 +35,12 @@
     },
     {
       "p": 200,
-      "q": "إلى أي معدن ثمين يشير الرمز الكيميائي Au؟",
+      "q": "تحمل قطعة حلي الرمز Au؛ ما المعدن الذي يشير إليه؟",
       "a": "الذهب",
       "qid": "general-200-913",
       "topic": "عملات ورموز",
       "verified": true,
-      "alt": [
-        "ذهب"
-      ],
+      "alt": [],
       "difficultyTarget": 0.8,
       "sourceUrl": "https://periodic-table.rsc.org/element/79/"
     },
@@ -118,7 +116,7 @@
     },
     {
       "p": 400,
-      "q": "لماذا توجد نتوءات صغيرة على مفتاحي F و J في لوحات المفاتيح؟",
+      "q": "كاتب لا ينظر إلى لوحة المفاتيح؛ كيف تساعده نتوءات F وJ؟",
       "a": "تحديد موضع الأصابع دون النظر",
       "qid": "general-400-911",
       "topic": "أشياء يومية",
@@ -181,7 +179,6 @@
       "topic": "عملات ورموز",
       "verified": true,
       "alt": [
-        "زلوتي",
         "złoty"
       ],
       "difficultyTarget": 0.6,
@@ -222,25 +219,10 @@
       "topic": "الفضاء والكواكب",
       "verified": true,
       "alt": [
-        "الأزرق",
         "أزرق مائل للرمادي"
       ],
       "difficultyTarget": 0.6,
       "sourceUrl": "https://science.nasa.gov/resource/sunset-at-mars-gale-crater-curiosity/"
-    },
-    {
-      "p": 600,
-      "q": "ما اسم الغدة الصغيرة في الدماغ التي تفرز هرمون الميلاتونين؟",
-      "a": "الغدة الصنوبرية",
-      "qid": "general-600-911",
-      "topic": "جسم الإنسان",
-      "verified": true,
-      "alt": [
-        "الصنوبرية",
-        "الغدة الصنوبرانية"
-      ],
-      "difficultyTarget": 0.4,
-      "sourceUrl": "https://www.nichd.nih.gov/health/topics/sleep/conditioninfo/causes"
     },
     {
       "p": 600,
@@ -302,7 +284,7 @@
     },
     {
       "p": 600,
-      "q": "ما اسم وحدة المسافة الفلكية التي تساوي نحو 3.26 سنة ضوئية؟",
+      "q": "مسافة مقدارها نحو 3.26 سنة ضوئية تعادل وحدة فلكية واحدة؛ ما اسمها؟",
       "a": "البارسِك",
       "qid": "general-600-916",
       "topic": "الفضاء والكواكب",
@@ -344,6 +326,20 @@
       "sourceUrl": "https://www.weather.gov/media/chs/newsletters/StormCourier_2010.pdf#page=8"
     },
     {
+      "q": "ما المادة الهلامية الشفافة التي تملأ معظم تجويف العين؟",
+      "a": "الجسم الزجاجي",
+      "topic": "جسم الإنسان",
+      "sourceUrl": "https://www.nei.nih.gov/eye-health-information/eye-conditions-and-diseases/vitreous-detachment",
+      "alt": [
+        "الخلط الزجاجي"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 600,
+      "qid": "general-600-921",
+      "difficultyTarget": 0.4
+    },
+    {
       "p": 800,
       "q": "ما النفق السويسري الذي تعبر فيه القطارات تحت الألب لمسافة نحو 57 كيلومترًا؟",
       "a": "نفق غوتهارد القاعدي",
@@ -360,7 +356,7 @@
     },
     {
       "p": 800,
-      "q": "ما اسم الأنبوب الزجاجي الذي يخلّفه البرق حين يضرب كثبان الصحراء؟",
+      "q": "صاعقة صهرت رملًا وتركت أنبوبًا زجاجيًا؛ ماذا يسمى هذا الأثر؟",
       "a": "الفولغوريت",
       "qid": "general-800-912",
       "topic": "ظواهر طبيعية",
@@ -373,19 +369,6 @@
       ],
       "difficultyTarget": 0.25,
       "sourceUrl": "https://www.nps.gov/articles/grsa-fulgurites.htm"
-    },
-    {
-      "p": 800,
-      "q": "ما الغشاء الغني بالأعصاب والأوعية الدموية الذي يغطي العظام من الخارج؟",
-      "a": "السمحاق",
-      "qid": "general-800-913",
-      "topic": "جسم الإنسان",
-      "verified": true,
-      "alt": [
-        "الغشاء السمحاقي"
-      ],
-      "difficultyTarget": 0.25,
-      "sourceUrl": "https://www.niams.nih.gov/health-topics/educational-resources/health-lesson-learning-about-bones"
     },
     {
       "p": 800,
@@ -459,21 +442,21 @@
       "sourceUrl": "https://www.metoffice.gov.uk/blog/2026/deep-dive-from-mountain-waves-to-mammatus"
     },
     {
-      "q": "ما المادة الهلامية الشفافة التي تملأ معظم تجويف العين؟",
-      "a": "الجسم الزجاجي",
+      "p": 800,
+      "q": "ما اسم الغدة الصغيرة في الدماغ التي تفرز هرمون الميلاتونين؟",
+      "a": "الغدة الصنوبرية",
+      "qid": "general-800-921",
       "topic": "جسم الإنسان",
-      "sourceUrl": "https://www.nei.nih.gov/eye-health-information/eye-conditions-and-diseases/vitreous-detachment",
-      "alt": [
-        "الخلط الزجاجي"
-      ],
       "verified": true,
-      "verifiedAt": "2026-09-25",
-      "p": 1000,
-      "qid": "general-1000-911",
-      "difficultyTarget": 0.15
+      "alt": [
+        "الصنوبرية",
+        "الغدة الصنوبرانية"
+      ],
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://www.nichd.nih.gov/health/topics/sleep/conditioninfo/causes"
     },
     {
-      "q": "ما الحد الذي قد يتمزق داخله قمر بفعل قوى المد للكوكب الذي يدور حوله؟",
+      "q": "قمر يقترب من كوكب حتى تمزقه قوى المد؛ داخل أي حد دخل؟",
       "a": "حد روش",
       "topic": "الفضاء والكواكب",
       "sourceUrl": "https://www.nasa.gov/solar-system/new-simulations-shed-light-on-origins-of-saturns-rings-and-icy-moons/",
@@ -518,7 +501,7 @@
       "difficultyTarget": 0.15
     },
     {
-      "q": "ما تقنية الطباعة التي تستخدم لوحًا معدنيًا محفورًا لإنتاج حبر بارز يمكن لمسه على الأوراق النقدية؟",
+      "q": "على ورقة نقدية حبر بارز من لوح معدني محفور؛ أي تقنية طباعة أنتجته؟",
       "a": "الطباعة الغائرة",
       "topic": "عملات ورموز",
       "sourceUrl": "https://www.bankofengland.co.uk/-/media/boe/files/museum/museum-loan-box-service/victorian-banknote-characters-loan-box-notes-for-teachers.pdf",
@@ -539,7 +522,6 @@
       "sourceUrl": "https://blogs.loc.gov/thesignal/2011/10/information-or-artifact-digitizing-a-book-part-2/",
       "alt": [
         "باليمبسست",
-        "طرس",
         "Palimpsest"
       ],
       "verified": true,
@@ -579,6 +561,19 @@
       "p": 1000,
       "qid": "general-1000-918",
       "difficultyTarget": 0.15
+    },
+    {
+      "p": 1000,
+      "q": "ما الغشاء الغني بالأعصاب والأوعية الدموية الذي يغطي العظام من الخارج؟",
+      "a": "السمحاق",
+      "qid": "general-1000-921",
+      "topic": "جسم الإنسان",
+      "verified": true,
+      "alt": [
+        "الغشاء السمحاقي"
+      ],
+      "difficultyTarget": 0.15,
+      "sourceUrl": "https://www.niams.nih.gov/health-topics/educational-resources/health-lesson-learning-about-bones"
     }
   ]
 }

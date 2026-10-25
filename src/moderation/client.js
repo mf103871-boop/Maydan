@@ -66,3 +66,11 @@ export function reviewPreviewPath(value) {
   return typeof value === 'string' && (/^\/api\/moderation\/images\/[a-zA-Z0-9_-]+\/[a-f0-9]{64}$/.test(value)
     || /^\/api\/profiles\/me\/images\/(avatar|cover)\/pending\/[a-f0-9]{64}$/.test(value)) ? value : null;
 }
+
+export function reviewAudioPath(value) {
+  return typeof value === 'string' && /^\/api\/moderation\/reports\/[a-zA-Z0-9_-]+\/audio$/.test(value) ? value : null;
+}
+
+export function reviewDrawingPath(value) {
+  return typeof value === 'string' && /^\/api\/moderation\/reports\/[a-zA-Z0-9_-]+\/drawing$/.test(value) ? value : null;
+}

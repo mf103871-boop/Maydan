@@ -1,0 +1,431 @@
+{
+  "version": "badeeha-quality-2026-10-08",
+  "checks": [
+    {
+      "name": "عائلي: six real packs selected",
+      "ok": true
+    },
+    {
+      "name": "عائلي: difficulty cap",
+      "ok": true,
+      "detail": [
+        "200",
+        "400",
+        "600",
+        "400",
+        "600",
+        "400",
+        "600",
+        "200",
+        "600",
+        "200",
+        "600",
+        "200",
+        "400",
+        "200",
+        "400",
+        "200",
+        "400",
+        "600",
+        "400",
+        "600",
+        "400",
+        "600",
+        "200",
+        "600",
+        "200",
+        "600",
+        "200",
+        "400",
+        "200",
+        "400"
+      ]
+    },
+    {
+      "name": "عائلي/zoom: media rendered",
+      "ok": true
+    },
+    {
+      "name": "عائلي/zoom: high-tier assistance displayed",
+      "ok": true
+    },
+    {
+      "name": "عائلي/zoom: assisted image effect applied",
+      "ok": true
+    },
+    {
+      "name": "600-zoom: answer is visible",
+      "ok": true
+    },
+    {
+      "name": "عائلي/blur: media rendered",
+      "ok": true
+    },
+    {
+      "name": "عائلي/blur: high-tier assistance displayed",
+      "ok": true
+    },
+    {
+      "name": "عائلي/blur: assisted image effect applied",
+      "ok": true
+    },
+    {
+      "name": "600-blur: answer is visible",
+      "ok": true
+    },
+    {
+      "name": "عائلي/silhouette: media rendered",
+      "ok": true
+    },
+    {
+      "name": "عائلي/silhouette: high-tier assistance displayed",
+      "ok": true
+    },
+    {
+      "name": "عائلي/silhouette: assisted image effect applied",
+      "ok": true
+    },
+    {
+      "name": "600-silhouette: answer is visible",
+      "ok": true
+    },
+    {
+      "name": "عائلي/tilepuzzle: media rendered",
+      "ok": true
+    },
+    {
+      "name": "twelve distinct jumbled pieces",
+      "ok": true
+    },
+    {
+      "name": "600-tilepuzzle: answer is visible",
+      "ok": true
+    },
+    {
+      "name": "jumble resolves on reveal",
+      "ok": true
+    },
+    {
+      "name": "عائلي/reveal: media rendered",
+      "ok": true
+    },
+    {
+      "name": "one reveal tile opens",
+      "ok": true
+    },
+    {
+      "name": "600-reveal: answer is visible",
+      "ok": true
+    },
+    {
+      "name": "all twelve tiles open on reveal",
+      "ok": true
+    },
+    {
+      "name": "عائلي/spotdiff: media rendered",
+      "ok": true
+    },
+    {
+      "name": "600-spotdiff: answer is visible",
+      "ok": true
+    },
+    {
+      "name": "difference marker on both pictures",
+      "ok": true
+    },
+    {
+      "name": "عائلي: current bank saved",
+      "ok": true
+    },
+    {
+      "name": "عائلي: saved game resumes with scores",
+      "ok": true
+    },
+    {
+      "name": "تحدّي: six real packs selected",
+      "ok": true
+    },
+    {
+      "name": "تحدّي: difficulty cap",
+      "ok": true,
+      "detail": [
+        "200",
+        "400",
+        "600",
+        "800",
+        "400",
+        "400",
+        "600",
+        "800",
+        "200",
+        "600",
+        "600",
+        "800",
+        "200",
+        "400",
+        "800",
+        "800",
+        "200",
+        "400",
+        "600",
+        "200",
+        "200",
+        "400",
+        "600",
+        "800",
+        "400",
+        "400",
+        "600",
+        "800",
+        "200",
+        "600"
+      ]
+    },
+    {
+      "name": "تحدّي/emoji: media rendered",
+      "ok": true
+    },
+    {
+      "name": "800-emoji: answer is visible",
+      "ok": true
+    },
+    {
+      "name": "تحدّي/hidden: media rendered",
+      "ok": true
+    },
+    {
+      "name": "800-hidden: answer is visible",
+      "ok": true
+    },
+    {
+      "name": "تحدّي/hints: media rendered",
+      "ok": true
+    },
+    {
+      "name": "hint changes visible award by 25%",
+      "ok": true
+    },
+    {
+      "name": "800-hints: answer is visible",
+      "ok": true
+    },
+    {
+      "name": "تحدّي/code: media rendered",
+      "ok": true
+    },
+    {
+      "name": "800-code: answer is visible",
+      "ok": true
+    },
+    {
+      "name": "تحدّي/beforeafter: media rendered",
+      "ok": true
+    },
+    {
+      "name": "800-beforeafter: answer is visible",
+      "ok": true
+    },
+    {
+      "name": "تحدّي/sound: media rendered",
+      "ok": true
+    },
+    {
+      "name": "audio plays",
+      "ok": true
+    },
+    {
+      "name": "800-sound: answer is visible",
+      "ok": true
+    },
+    {
+      "name": "تحدّي: current bank saved",
+      "ok": true
+    },
+    {
+      "name": "تحدّي: saved game resumes with scores",
+      "ok": true
+    },
+    {
+      "name": "خبراء: six real packs selected",
+      "ok": true
+    },
+    {
+      "name": "visual packs cached by the actual offline control",
+      "ok": true
+    },
+    {
+      "name": "خبراء: difficulty cap",
+      "ok": true,
+      "detail": [
+        "200",
+        "400",
+        "600",
+        "800",
+        "1000",
+        "400",
+        "600",
+        "800",
+        "1000",
+        "200",
+        "600",
+        "800",
+        "1000",
+        "200",
+        "400",
+        "800",
+        "1000",
+        "200",
+        "400",
+        "600",
+        "1000",
+        "200",
+        "400",
+        "600",
+        "800",
+        "200",
+        "400",
+        "600",
+        "800",
+        "1000"
+      ]
+    },
+    {
+      "name": "خبراء/zoom: media rendered",
+      "ok": true
+    },
+    {
+      "name": "خبراء/zoom: high-tier assistance displayed",
+      "ok": true
+    },
+    {
+      "name": "خبراء/zoom: assisted image effect applied",
+      "ok": true
+    },
+    {
+      "name": "1000-zoom: answer is visible",
+      "ok": true
+    },
+    {
+      "name": "خبراء/blur: media rendered",
+      "ok": true
+    },
+    {
+      "name": "خبراء/blur: high-tier assistance displayed",
+      "ok": true
+    },
+    {
+      "name": "خبراء/blur: assisted image effect applied",
+      "ok": true
+    },
+    {
+      "name": "1000-blur: answer is visible",
+      "ok": true
+    },
+    {
+      "name": "خبراء/silhouette: media rendered",
+      "ok": true
+    },
+    {
+      "name": "خبراء/silhouette: high-tier assistance displayed",
+      "ok": true
+    },
+    {
+      "name": "خبراء/silhouette: assisted image effect applied",
+      "ok": true
+    },
+    {
+      "name": "1000-silhouette: answer is visible",
+      "ok": true
+    },
+    {
+      "name": "خبراء/tilepuzzle: media rendered",
+      "ok": true
+    },
+    {
+      "name": "twelve distinct jumbled pieces",
+      "ok": true
+    },
+    {
+      "name": "1000-tilepuzzle: answer is visible",
+      "ok": true
+    },
+    {
+      "name": "jumble resolves on reveal",
+      "ok": true
+    },
+    {
+      "name": "خبراء/reveal: media rendered",
+      "ok": true
+    },
+    {
+      "name": "one reveal tile opens",
+      "ok": true
+    },
+    {
+      "name": "1000-reveal: answer is visible",
+      "ok": true
+    },
+    {
+      "name": "all twelve tiles open on reveal",
+      "ok": true
+    },
+    {
+      "name": "خبراء/spotdiff: media rendered",
+      "ok": true
+    },
+    {
+      "name": "1000-spotdiff: answer is visible",
+      "ok": true
+    },
+    {
+      "name": "difference marker on both pictures",
+      "ok": true
+    },
+    {
+      "name": "خبراء: current bank saved",
+      "ok": true
+    },
+    {
+      "name": "خبراء: saved game resumes with scores",
+      "ok": true
+    },
+    {
+      "name": "old-bank game displays the existing update notice",
+      "ok": true
+    },
+    {
+      "name": "old-bank game is unavailable for resume",
+      "ok": true
+    },
+    {
+      "name": "content update preserves stored scores, history, settings and account",
+      "ok": true
+    },
+    {
+      "name": "no browser exceptions",
+      "ok": true,
+      "detail": []
+    }
+  ],
+  "errors": [],
+  "snapshots": [
+    "600-zoom",
+    "600-blur",
+    "600-silhouette",
+    "600-tilepuzzle",
+    "600-reveal",
+    "600-spotdiff",
+    "800-emoji",
+    "800-hidden",
+    "800-hints",
+    "800-code",
+    "800-beforeafter",
+    "800-sound",
+    "1000-zoom",
+    "1000-blur",
+    "1000-silhouette",
+    "1000-tilepuzzle",
+    "1000-reveal",
+    "1000-spotdiff"
+  ]
+}

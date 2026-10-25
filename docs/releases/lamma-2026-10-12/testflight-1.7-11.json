@@ -1,0 +1,122 @@
+{
+  "version": "1.7",
+  "build": "11",
+  "runId": 38231151756,
+  "runUrl": "https://github.com/mf103871-boop/Maydan/actions/runs/38231151756",
+  "headSHA": "57bddb1b189bdfa0c3e629065ae8e51b4f3a38d4",
+  "conclusion": "success",
+  "npmTest": {
+    "tests": 753,
+    "suites": 0,
+    "pass": 752,
+    "fail": 0,
+    "cancelled": 0,
+    "skipped": 1,
+    "todo": 0,
+    "duration_ms": 27149.984834
+  },
+  "pythonTests": {
+    "passed": 22,
+    "failed": 0
+  },
+  "compiledPageTest": "Skipped in clean CI before resource preparation; passed locally against prepared resources.",
+  "requiredSteps": [
+    {
+      "name": "Test and prepare the current game",
+      "conclusion": "success"
+    },
+    {
+      "name": "Build and launch the Release app on iPhone Simulator",
+      "conclusion": "success"
+    },
+    {
+      "name": "Preserve simulator launch evidence",
+      "conclusion": "success"
+    },
+    {
+      "name": "Install and validate signing assets",
+      "conclusion": "success"
+    },
+    {
+      "name": "Archive the signed iPhone app",
+      "conclusion": "success"
+    },
+    {
+      "name": "Export the signed IPA without uploading",
+      "conclusion": "success"
+    },
+    {
+      "name": "Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02",
+      "conclusion": "success"
+    },
+    {
+      "name": "Upload to App Store Connect for TestFlight",
+      "conclusion": "success"
+    },
+    {
+      "name": "Remove signing secrets and temporary keychain",
+      "conclusion": "success"
+    }
+  ],
+  "simulator": {
+    "passed": true,
+    "model": "iPhone SE (3rd generation)",
+    "os": "iOS 26.2",
+    "coldLaunchSeconds": 45.29,
+    "relaunchSeconds": 15.16,
+    "crashReports": 0,
+    "homeScreenVisuallyVerified": true,
+    "diagnosticWarning": "One screenshot command timed out after20s; cold/relaunch/final PNG files exist and were visually verified."
+  },
+  "package": {
+    "ipaSHA256": "7e6b873c3391ae71f5105043a68031406fea133bf6fc6dba646468217731b0f5",
+    "platform": "ios",
+    "architecture": "arm64",
+    "binariesChecked": 3,
+    "embeddedDependencyEdges": 2,
+    "mainRunpaths": [
+      "/usr/lib/swift",
+      "@executable_path/Frameworks"
+    ],
+    "independentlyRecheckedOn": "2026-10-16"
+  },
+  "artifacts": [
+    {
+      "id": 11739601119,
+      "name": "Maydan-iOS-1.7-11",
+      "size_in_bytes": 152115701,
+      "created_at": "2026-10-12T09:51:27Z",
+      "expires_at": "2026-10-19T09:51:20Z",
+      "digest": "sha256:72f9393ef11dd7be43c929bd10f230866b7ac9a588051198a817bbcacc5fcdd7"
+    },
+    {
+      "id": 11738613261,
+      "name": "Maydan-launch-1.7-11",
+      "size_in_bytes": 2754795,
+      "created_at": "2026-10-12T09:48:32Z",
+      "expires_at": "2026-10-19T09:48:30Z",
+      "digest": "sha256:096f5e5d831d60e97e90e7234d776f4c5b374bc2e063d0d8bc57e8c79cad0109"
+    }
+  ],
+  "asc": {
+    "verifiedOn": "2026-10-16",
+    "buildId": "c822237d-5b69-488d-a5aa-ec9759375b82",
+    "processingState": "VALID",
+    "internalBuildState": "IN_BETA_TESTING",
+    "externalBuildState": "READY_FOR_BETA_SUBMISSION",
+    "usesNonExemptEncryption": false,
+    "testingNotesSaved": false,
+    "testingNotesLimitation": "API returned405; browser session expired. Build availability was verified through the read-only API."
+  },
+  "physicalDeviceAcceptance": {
+    "startup": "passed",
+    "reportedBy": "Internal tester (user)",
+    "reportedOn": "2026-10-16",
+    "checks": [
+      "Open app after updating to1.7(11)",
+      "Close and reopen; home screen remains accessible"
+    ],
+    "remaining": "Real-device calling, push delivery, audio routing, privacy and account-switch acceptance before public release."
+  },
+  "publicReleasePerformed": false
+}

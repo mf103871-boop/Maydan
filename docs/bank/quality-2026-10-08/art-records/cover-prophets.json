@@ -1,0 +1,29 @@
+{
+  "id": "prophets",
+  "kind": "cover",
+  "file": "public/media/badeeha-covers/prophets.webp",
+  "style": "symbolic landscape painting",
+  "palette": "deep blue, golden light, earth brown",
+  "prompt": "Create ONE finished premium category-cover image for the Arabic social knowledge game Maydan, category 'قصص الأنبياء'. Landscape 4:3 artwork.\nMedium: symbolic landscape painting.\nIntentional palette: deep blue, golden light, earth brown.\nScene: A mountain path opening toward a luminous distant horizon beyond water and desert, dignified abstract journey, no human or prophet depictions.\nMake this a distinctive complete environment or illustration, not an isolated object on an ivory studio background. Sophisticated, inviting art for ages 16+, strong readable composition at 160px width. Keep key features within the central 70% and leave the upper corners relatively quiet for game badges. Full-bleed image, no decorative border, no text, no typography, no watermark, no UI, no logos. Do not make a multi-image grid or contact sheet. The category name is rendered separately by the app.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-10-08",
+  "sourceImage": {
+    "name": "exec-6973b367-fdc1-4766-af7b-c9812df75889.png",
+    "sha256": "938c9a6336ff0597b9b14ef1c69cac356f3db89b9a10075bd21e22523dcdbd11",
+    "width": 1448,
+    "height": 1086
+  },
+  "width": 640,
+  "height": 480,
+  "bytes": 80184,
+  "sha256": "6ad869740e4de698da15f4c932d456bb07e03cabfd905a4b579bcaa9cba8d733",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "phone-size-reviewed",
+    "date": "2026-10-08",
+    "reviewer": "root",
+    "width": 160,
+    "method": "shipped cover CSS; baseline and replacement side by side",
+    "evidence": "docs/bank/quality-2026-10-08/preview/covers-2.jpg"
+  }
+}

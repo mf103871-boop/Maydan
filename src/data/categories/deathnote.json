@@ -21,13 +21,13 @@
     {
       "p": 200,
       "topic": "الشينيغامي",
-      "q": "ما اسم إله الموت الذي مات ليحمي ميسا؟",
+      "q": "من إله الموت الذي أنقذ ميسا من معتدٍ فمات، قبل أن تنقل ريم دفتره إليها؟",
       "a": "جيلوس",
       "alt": [
         "غيلوس",
         "Gelus"
       ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Misa_Amane#In_Death_Note",
+      "sourceUrl": "https://www.ntv.co.jp/deathnote/static/story.html",
       "verified": true,
       "qid": "deathnote-200-912",
       "difficultyTarget": 0.8
@@ -292,7 +292,7 @@
       "alt": [
         "بورقة مخبأة في ساعته"
       ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Death_Note_characters#Kyosuke_Higuchi",
+      "sourceUrl": "https://www.ntv.co.jp/deathnote/static/story2.html",
       "verified": true,
       "qid": "deathnote-600-916",
       "difficultyTarget": 0.4
@@ -430,55 +430,6 @@
       "verified": true
     },
     {
-      "p": 1000,
-      "topic": "إل والتحقيق",
-      "q": "ما الاسم الحقيقي للمحتال الذي ساعد إل في التحقيق مع الشركة؟",
-      "a": "تيري موريلو",
-      "alt": [
-        "تييري موريلو"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Death_Note_characters#Aiber",
-      "verified": true,
-      "qid": "deathnote-1000-911",
-      "difficultyTarget": 0.15
-    },
-    {
-      "p": 1000,
-      "topic": "إل والتحقيق",
-      "q": "ما الاسم الحقيقي للصة التي زرعت أجهزة تنصت لحساب إل؟",
-      "a": "ماري كينوود",
-      "alt": [
-        "ماري كنوود"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Death_Note_characters#Wedy",
-      "verified": true,
-      "qid": "deathnote-1000-912",
-      "difficultyTarget": 0.15
-    },
-    {
-      "p": 1000,
-      "topic": "فريق التحقيق",
-      "q": "ما الاسم المستعار الذي استخدمه موغي لحماية هويته؟",
-      "a": "كانيتشي موجي",
-      "alt": [
-        "موجي كانيتشي"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Death_Note_characters#Kanzo_Mogi",
-      "verified": true,
-      "qid": "deathnote-1000-913",
-      "difficultyTarget": 0.15
-    },
-    {
-      "p": 1000,
-      "topic": "فريق التحقيق",
-      "q": "ما الاسم المستعار الذي استخدمه أيزاوا لحماية هويته؟",
-      "a": "آيهارا",
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Death_Note_characters#Shuichi_Aizawa",
-      "verified": true,
-      "qid": "deathnote-1000-914",
-      "difficultyTarget": 0.15
-    },
-    {
       "topic": "خلفاء إل",
       "q": "ما اسم مدير مكتب التحقيقات الفيدرالي الذي ساعد نير على تأسيس فريقه؟",
       "a": "ستيف مايسون",
@@ -531,6 +482,66 @@
       "p": 1000,
       "difficultyTarget": 0.15,
       "verified": true
+    },
+    {
+      "p": 1000,
+      "topic": "إل والتحقيق",
+      "q": "لماذا يذهب ميكامي إلى البنك خارج عادته، فيكشف موضع دفتره الحقيقي لنير؟",
+      "a": "ليقتل تاكادا دون انتظار لايت",
+      "alt": [
+        "قتل تاكادا بأمر مستقل",
+        "كتابة اسم تاكادا",
+        "قتل تاكادا"
+      ],
+      "sourceUrl": "https://www.ntv.co.jp/deathnote/static/story2.html",
+      "verified": true,
+      "qid": "deathnote-1000-921",
+      "difficultyTarget": 0.15
+    },
+    {
+      "p": 1000,
+      "topic": "إل والتحقيق",
+      "q": "عند تطويق رجل الأعمال حامل الدفتر، كيف يحمي أيزاوا رجال الشرطة من كشف وجوههم؟",
+      "a": "بتعتيم نوافذ سيارات الشرطة",
+      "alt": [
+        "تعتيم نوافذ السيارات",
+        "إخفاء الوجوه بزجاج معتم",
+        "نوافذ مظللة"
+      ],
+      "sourceUrl": "https://www.ntv.co.jp/deathnote/static/story2.html",
+      "verified": true,
+      "qid": "deathnote-1000-922",
+      "difficultyTarget": 0.15
+    },
+    {
+      "p": 1000,
+      "topic": "فريق التحقيق",
+      "q": "ما الخطر الذي يدفع ريم لقتل إل عندما يعتزم اختبار قاعدة الأيام الثلاثة عشر؟",
+      "a": "انكشاف تورط ميسا",
+      "alt": [
+        "إثبات أن ميسا كيرا الثانية",
+        "كشف ميسا كيرا الثانية",
+        "إدانة ميسا"
+      ],
+      "sourceUrl": "https://www.ntv.co.jp/deathnote/static/story2.html",
+      "verified": true,
+      "qid": "deathnote-1000-923",
+      "difficultyTarget": 0.15
+    },
+    {
+      "p": 1000,
+      "topic": "فريق التحقيق",
+      "q": "كيف يمحو لايت ذاكرته عن كيرا أثناء احتجازه، مع استمرار الجرائم بواسطة حامل آخر؟",
+      "a": "بالتخلي عن ملكية الدفتر",
+      "sourceUrl": "https://www.ntv.co.jp/deathnote/static/story2.html",
+      "verified": true,
+      "qid": "deathnote-1000-924",
+      "difficultyTarget": 0.15,
+      "alt": [
+        "التنازل عن ملكية الدفتر",
+        "التخلي عن الدفتر",
+        "التنازل عن ملكية دفتر الموت"
+      ]
     }
   ]
 }

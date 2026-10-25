@@ -1,0 +1,16 @@
+{
+  "id": "zoom-600-904",
+  "prompt": "Create ONE landscape 4:3 high fidelity photographic puzzle image for an Arabic game for ages 16+. Extreme product photograph of an unbranded USB-C cable plug, metallic rounded symmetrical oval opening clearly at centre, internal central contact tongue correctly visible; black cable extends diagonally backwards across cyan workbench. Plug fills 65% frame, clean controlled light, accurate real connector geometry, no USB symbols or text. IMPORTANT: this full image will be shown magnified 3.4x around the exact centre, leaving only approximately the central 29% visible during the question. Make that central area contain TWO coherent diagnostic material/structural details of the named object, not the entire silhouette, not blank texture, and not a disconnected fragment. Full image reveals the complete object naturally. Rich but restrained environment palette. No lettering, logos, watermark, hands, labels, borders, collages or question marks. No ivory studio background. Physical realism and fair visual evidence matter more than decoration.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-10-08",
+  "sourceFile": "exec-0f58ac5c-c3a8-4432-94ee-110346e4cd9a.png",
+  "sourceSha256": "e83af74c4dfeb4a8131c52f33d9b97feef9e754b5b45cfbed2b4732f6613d71d",
+  "file": "media/zoom/quality-600-904.webp",
+  "sha256": "2f77f7d8d9f60d075866c968c31a2a0dd13b53f71c274466b1cf23f1873a342a",
+  "width": 960,
+  "height": 720,
+  "bytes": 72262,
+  "review": {
+    "status": "pending-phone-size-review"
+  }
+}
