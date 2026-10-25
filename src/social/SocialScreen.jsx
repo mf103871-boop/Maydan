@@ -111,7 +111,7 @@ export function MessageBubble({ message, mine, sender, read = false, onEdit, onD
   const deleted = Boolean(message.deletedAt);
   const [menu, setMenu] = useState(false);
   const sentLabel = failed ? 'لم تُرسل' : pending ? 'جارٍ الإرسال' : read || message.read ? 'قُرئت' : 'أُرسلت';
-  return <article className={'social-message ' + (mine ? 'is-mine' : 'is-theirs') + (failed ? ' is-failed' : '')} aria-label={mine ? 'رسالتك' : sender ? 'رسالة من ' + displayName(sender) : 'رسالة صديقك'}>
+  return <article data-message-key={messageKey(message)} className={'social-message ' + (mine ? 'is-mine' : 'is-theirs') + (failed ? ' is-failed' : '')} aria-label={mine ? 'رسالتك' : sender ? 'رسالة من ' + displayName(sender) : 'رسالة صديقك'}>
     <div data-design-id="message" className={'social-bubble' + (deleted ? ' is-deleted' : '')}>{sender && <div className="social-message-sender"><ProfileAvatar user={sender} size={24} /><strong><bdi>{mine ? 'أنت' : displayName(sender)}</bdi></strong></div>}{!deleted && content ? content : <p dir="auto">{deleted ? 'حُذفت هذه الرسالة' : message.text}</p>}<div className="social-message-meta">{message.editedAt && !deleted && <span>معدّلة</span>}<time dateTime={timestamp(message.createdAt) ? new Date(timestamp(message.createdAt)).toISOString() : undefined}>{timeLabel(message.createdAt)}</time>{mine && <span className={'social-delivery' + (read || message.read ? ' is-read' : '')} aria-label={sentLabel} title={sentLabel}><Icon name={pending ? 'clock' : read || message.read ? 'double' : 'check'} size={15} /><span>{sentLabel}</span></span>}</div></div>
     {!deleted && !pending && !failed && <div className="social-message-actions"><IconAction label={mine ? 'خيارات رسالتك' : 'خيارات الرسالة'} icon="more" aria-expanded={menu} onClick={() => setMenu(v => !v)} />{menu && <div className="social-message-menu">{mine ? <>{(!message.kind || message.kind === 'text') && <button data-design-id="message-edit" type="button" onClick={() => { setMenu(false); onEdit?.(); }}>تعديل</button>}<button data-design-id="message-delete" type="button" className="is-danger" onClick={() => { setMenu(false); onDelete?.(); }}>حذف</button></> : <button data-design-id="report" type="button" onClick={() => { setMenu(false); onReport?.(); }}>إبلاغ عن الرسالة</button>}</div>}</div>}
     {mine && failed && <button type="button" className="social-retry" data-design-id="message-retry" onClick={onRetry}>إعادة الإرسال</button>}
@@ -129,10 +129,29 @@ export function Conversation({ friend, conversation = EMPTY_CONVERSATION, accoun
   const nearBottom = useRef(true);
   const initialScroll = useRef(false);
   const olderAnchor = useRef(null);
+  const readingAnchor = useRef(null);
   const lastKey = useRef('');
   const typingTimer = useRef(null);
   const typingActive = useRef(false);
   const typingSentAt = useRef(0);
+  const rememberReading = () => {
+    const el = scroller.current;
+    if (!el || nearBottom.current) { readingAnchor.current = null; return; }
+    const bounds = el.getBoundingClientRect();
+    readingAnchor.current = [...el.querySelectorAll('[data-message-key]')].map(node => ({ key: node.dataset.messageKey, box: node.getBoundingClientRect() }))
+      .filter(item => item.box.bottom > bounds.top && item.box.top < bounds.bottom)
+      .map(item => ({ key: item.key, offset: item.box.top - bounds.top }));
+  };
+  const restoreReading = () => {
+    const el = scroller.current;
+    if (!el || !readingAnchor.current?.length) return false;
+    const nodes = [...el.querySelectorAll('[data-message-key]')];
+    for (const item of readingAnchor.current) {
+      const node = nodes.find(value => value.dataset.messageKey === item.key);
+      if (node) { el.scrollTop += node.getBoundingClientRect().top - el.getBoundingClientRect().top - item.offset; return true; }
+    }
+    return false;
+  };
   useEffect(() => visible ? social.registerConversation?.(friend.id) : undefined, [friend.id, visible, social.registerConversation]);
   const stopped = () => {
     clearTimeout(typingTimer.current);
@@ -158,13 +177,17 @@ export function Conversation({ friend, conversation = EMPTY_CONVERSATION, accoun
     if (!el || conversation.loading) return;
     const key = messages.length ? messageKey(messages[messages.length - 1]) : '';
     if (olderAnchor.current && !conversation.loadingOlder) {
-      el.scrollTop = olderAnchor.current.top + el.scrollHeight - olderAnchor.current.height;
+      if (!restoreReading()) el.scrollTop = olderAnchor.current.top + el.scrollHeight - olderAnchor.current.height;
       olderAnchor.current = null;
     } else if (!initialScroll.current || (key !== lastKey.current && nearBottom.current)) {
       el.scrollTop = el.scrollHeight;
       initialScroll.current = true;
-    } else if (key !== lastKey.current) setNewBelow(true);
+    } else {
+      if (!nearBottom.current) restoreReading();
+      if (key !== lastKey.current) setNewBelow(true);
+    }
     lastKey.current = key;
+    rememberReading();
   }, [messages, conversation.loading, conversation.loadingOlder, friend.id, social.markRead]);
   // A cached conversation can render before the provider has selected its route.
   // Retry after its refreshed messages arrive, even when the last message is unchanged.
@@ -213,6 +236,7 @@ export function Conversation({ friend, conversation = EMPTY_CONVERSATION, accoun
   const loadOlder = async () => {
     const el = scroller.current;
     if (!el || conversation.loadingOlder) return;
+    nearBottom.current = false; rememberReading();
     olderAnchor.current = { top: el.scrollTop, height: el.scrollHeight };
     try { await social.loadOlder(friend.id); }
     catch (error) { olderAnchor.current = null; notify(friendlyError(error), true); }
@@ -220,7 +244,7 @@ export function Conversation({ friend, conversation = EMPTY_CONVERSATION, accoun
   return <section data-design-screen={designScreen || undefined} className="social-chat" aria-label={'المحادثة مع ' + displayName(friend)}>
     <header data-design-id="header" className="social-chat-head"><IconAction label="العودة للأصدقاء" icon="back" className="social-mobile-back" onClick={onBack} /><button data-design-id="profile" type="button" className="social-icon-button" aria-label={'عرض بروفايل ' + displayName(friend)} onClick={onProfile}><PersonAvatar user={friend} presence /></button><div className="social-chat-person"><h2><button data-design-id="profile" type="button" className="social-profile-link" onClick={onProfile}><bdi>{displayName(friend)}</bdi></button></h2><p className={friend.online || conversation.typing ? 'is-online' : ''}>{subtitle || (conversation.typing ? 'يكتب الآن…' : presenceLabel(friend))}</p></div>{headerActions}<IconAction label="خيارات المحادثة" icon="more" onClick={onMenu} /></header>
     <div data-design-id="messages" className="social-message-area">
-      <div ref={scroller} className="social-message-scroll" role="log" aria-label="الرسائل" aria-live="polite" aria-relevant="additions text" onScroll={() => { const el = scroller.current; nearBottom.current = el.scrollHeight - el.scrollTop - el.clientHeight < 72; if (nearBottom.current) { setNewBelow(false); Promise.resolve(social.markRead(friend.id)).catch(() => {}); } }}>
+      <div ref={scroller} className="social-message-scroll" role="log" aria-label="الرسائل" aria-live="polite" aria-relevant="additions text" onScroll={() => { const el = scroller.current; nearBottom.current = el.scrollHeight - el.scrollTop - el.clientHeight < 72; rememberReading(); if (nearBottom.current) { setNewBelow(false); Promise.resolve(social.markRead(friend.id)).catch(() => {}); } }}>
         {conversation.hasMore && <button type="button" data-design-id="older-messages" className="social-load-older" onClick={loadOlder} disabled={conversation.loadingOlder}>{conversation.loadingOlder ? 'جارٍ التحميل…' : 'تحميل الرسائل الأقدم'}</button>}
         {conversation.loading && messages.length === 0 ? <LoadingRows /> : messages.length === 0 && !conversation.error ? <EmptyState compact title="هنا تبدأ السوالف" icon="chat">أرسل أول رسالة إلى {displayName(friend)}.</EmptyState> : null}
         {conversation.error && <Notice error>{conversation.error}<button data-design-id="retry" type="button" className="social-inline-link" onClick={() => Promise.resolve(social.openConversation(friend.id)).catch(error => notify(friendlyError(error), true))}>حاول مجددًا</button></Notice>}

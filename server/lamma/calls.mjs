@@ -93,4 +93,14 @@ export async function sweepCalls(env,now=Date.now(),context) {const rows=await a
   const guard=`EXISTS(SELECT 1 FROM social_calls expired WHERE expired.id=${ident(c.id)} AND (expired.expires_at<=${Number(now)} OR NOT EXISTS(SELECT 1 FROM social_call_participants p WHERE p.call_id=expired.id AND p.state='active')))`;
   await finishCall(env,c.id,c.status==='ringing'?'missed':'ended',guard,{context});
 }}
-export async function revokeInvalidCalls(env,actorId=null,blockedId=null){const rows=await all(env,"SELECT c.*,p.user_id FROM social_calls c JOIN social_call_participants p ON p.call_id=c.id WHERE c.status IN ('ringing','active') AND p.state='active'");for(const c of rows){const allowed=await first(env,`SELECT 1 WHERE ${scopeAllowed(c.scope,ident(c.conversation_id),ident(c.user_id))}`);const blocked=actorId===c.user_id&&blockedId&&await first(env,"SELECT 1 FROM social_call_participants WHERE call_id=? AND user_id=? AND state='active'",c.id,blockedId);if(!allowed||blocked)await callAction(env,c.user_id,c.id,'leave');}await wakeJobs(env);}
+export async function revokeInvalidCalls(env,actorId=null,blockedId=null,{groupId,userIds}={}){
+  const conditions=[],args=[];
+  if(groupId){conditions.push("c.scope='group' AND c.conversation_id=?");args.push(userId(groupId));}
+  const affected=[...new Set(userIds|| (actorId?[actorId]:[]))].map(userId);
+  if(affected.length){conditions.push(`p.user_id IN (${affected.map(()=>'?').join(',')})`);args.push(...affected);}
+  // Only scheduled maintenance uses the global sweep. A member action should
+  // not wait on every unrelated LiveKit participant in the application.
+  const rows=await all(env,`SELECT c.*,p.user_id FROM social_calls c JOIN social_call_participants p ON p.call_id=c.id WHERE c.status IN ('ringing','active') AND p.state='active'${conditions.length?' AND '+conditions.join(' AND '):''}`,...args);
+  for(const c of rows){const allowed=await first(env,`SELECT 1 WHERE ${scopeAllowed(c.scope,ident(c.conversation_id),ident(c.user_id))}`);const blocked=actorId===c.user_id&&blockedId&&await first(env,"SELECT 1 FROM social_call_participants WHERE call_id=? AND user_id=? AND state='active'",c.id,blockedId);if(!allowed||blocked)await callAction(env,c.user_id,c.id,'leave');}
+  await wakeJobs(env);
+}

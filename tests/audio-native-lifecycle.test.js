@@ -55,8 +55,9 @@ test('native call recovery cannot publish a microphone or bypass CallKit activat
   assert.match(game, /"socialCallResumeAudio"/);
   const activation = section(coordinator, 'didActivate audioSession:', 'didDeactivate audioSession:');
   assert.match(activation, /let activeRoom = self\.room/);
-  assert.match(activation, /await activeRoom\?\.localParticipant\.setMicrophone[\s\S]*guard self\.call\?\.id == callId, self\.room === activeRoom/);
-  assert.match(activation, /self\.privateTurn \|\| self\.audioPolicy\.interrupted \|\| self\.muted/);
+  assert.match(activation, /await self\.changeMicrophone\([\s\S]*guard self\.call\?\.id == callId, self\.room === activeRoom/);
+  assert.match(activation, /requiresCurrentPreference: true/);
+  assert.match(activation, /isInputAvailable: false, isOutputAvailable: true/);
   const finish = section(coordinator, 'private func finish(reason:', 'private func callSnapshot()');
   assert.match(finish, /audioActive = false[\s\S]*call = nil[\s\S]*await previousRoom\?\.disconnect\(\)/);
 });
@@ -69,6 +70,43 @@ test('gesture recovery is trusted, fire-and-forget, foreground-only and refuses 
   assert.match(gesture, /call == nil, pendingCallId == nil, !voice\.isBusy/);
   assert.match(gesture, /audioPolicy\.userRequestedPlayback\(\)/);
   assert.doesNotMatch(gesture, /setMicrophone|muted = false|overrideOutputAudioPort/);
+});
+
+test('CallKit mute completion rechecks generation, room identity, privacy and audio ownership after publication', () => {
+  const action = section(coordinator, 'perform action: CXSetMutedCallAction', 'didActivate audioSession:');
+  const transition = section(coordinator, 'private func changeMicrophone', 'private func connectRoom');
+  assert.match(action, /let generation = self\.audioPolicy\.invalidateMicrophoneChange\(\)/);
+  assert.match(action, /await self\.changeMicrophone\(enabled: !action\.isMuted, in: currentRoom\) \{[\s\S]*self\.muted = action\.isMuted/);
+  assert.match(transition, /guard let self, self\.call\?\.id == callId, self\.room === target/);
+  assert.match(transition, /acceptsMicrophoneChange\(generation, muted: !enabled,[\s\S]*callKitActive: self\.audioActive, privateTurn: self\.privateTurn/);
+  assert.match(transition, /!requiresCurrentPreference \|\| enabled == \(!self\.muted && !self\.privateTurn\)/);
+  const retire = transition.slice(transition.indexOf('retire: {'));
+  assert.match(retire, /if let self, self\.call\?\.id == callId, self\.room === target[\s\S]*self\.muted = true[\s\S]*isInputAvailable: false/);
+  assert.doesNotMatch(retire, /invalidateMicrophoneChange/);
+  const lateCatch = action.slice(action.indexOf('} catch {'));
+  assert.doesNotMatch(lateCatch, /self\.muted =|setEngineAvailability|setMicrophone\(/);
+  assert.match(lateCatch, /self\.audioPolicy\.microphoneGeneration == generation/);
+  const privacy = section(coordinator, 'case "socialAudioPrivacy":', 'default: throw SocialNativeError');
+  assert.match(privacy, /if privateTurn[\s\S]*invalidateMicrophoneChange/);
+  const deactivation = section(coordinator, 'didDeactivate audioSession:', 'timedOutPerforming action:');
+  assert.match(deactivation, /invalidateMicrophoneChange\(\)[\s\S]*audioActive = false/);
+});
+
+test('every SDK microphone publication uses the per-room serialized transition queue', () => {
+  const transition = section(coordinator, 'private func changeMicrophone', 'private func connectRoom');
+  assert.equal((coordinator.match(/\.setMicrophone\(/g) || []).length, 2);
+  assert.equal((transition.match(/\.setMicrophone\(/g) || []).length, 2, 'only publication and captured-room retirement may call SDK directly');
+  const connect = section(coordinator, 'private func connectRoom', 'private func pollCall');
+  assert.match(connect, /room = next\s*microphoneQueue = NativeMicrophoneTransitionQueue\(\)/);
+  assert.match(connect, /changeMicrophone\(enabled: attemptedMicrophone, in: next, requiresCurrentPreference: true\)/);
+  const nativePolicy = read('ios/Maydan/NativeAudioPolicy.swift');
+  const queue = nativePolicy.slice(nativePolicy.indexOf('final class NativeMicrophoneTransitionQueue'));
+  assert.match(queue, /await previous\?\.value[\s\S]*guard isValid\(\)[\s\S]*try await publish\(\)/);
+  assert.match(queue, /catch \{ await retire\(\); throw error \}/);
+  assert.match(queue, /guard isValid\(\) else \{ await retire\(\); return false \}\s*commit\(\)/);
+  const executable = read('tests/native/audio-policy.swift');
+  for (const evidence of ['New intent waits for old SDK completion AND cleanup', 'A newer unmute wins after old mute/unmute success or failure',
+    'Safety events close input immediately', 'Retired room failure cannot mute or clear']) assert.ok(executable.includes(evidence));
 });
 
 test('production policy is built into the application and executable ownership tests are mandatory in native CI', () => {

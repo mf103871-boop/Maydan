@@ -83,7 +83,7 @@ export function Game({ api, players, onExit, savedSession = null, designPreviewS
   const category = useMemo(() => categories.find((c) => c.id === options.categoryId) || categories[0], [options.categoryId]);
   const source = useMemo(() => {
     const itemSource = createItemSource(category, { random, seen: api.storage.get(SEEN_KEY, {}) || {} });
-    if (saved) itemSource.seek(saved.cursor);
+    if (saved) itemSource.seek(saved.cursor, { cycles: saved.cycle ?? 0 });
     return itemSource;
   }, [category, random, api.storage, saved]);
   const [state, dispatch] = useReducer(reduce, undefined, () => (designPreviewState || (saved ? saved.state : initialState(players, category, options))));
@@ -92,7 +92,7 @@ export function Game({ api, players, onExit, savedSession = null, designPreviewS
   const resumeLeft = useRef(saved?.timeLeft ?? null);
   useSessionSave({
     api, state, active: state.phase !== 'over', phaseKey: `${state.phase}:${state.turn}`,
-    snapshot: (current) => sessionSnapshot({ players: current.entrants, settings: options, seed: seed.current, cursor: source.cursor,
+    snapshot: (current) => sessionSnapshot({ players: current.entrants, settings: options, seed: seed.current, cursor: source.cursor, cycle: source.cycle,
       timeLeft: current.phase === 'play' ? timeLeftRef.current : null, profileSession: profileSession.current, state: current }),
   });
   const [landscape, setLandscape] = useState(true);
@@ -107,7 +107,7 @@ export function Game({ api, players, onExit, savedSession = null, designPreviewS
   const drawForTurn = () => {
     let item = source.next();
     let recycled = false;
-    if (!item) { source.reset(); recycled = true; item = source.next(); }
+    if (!item) { source.reset({ reshuffle: true }); recycled = true; item = source.next(); }
     return { item, recycled };
   };
 

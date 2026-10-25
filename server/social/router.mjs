@@ -97,7 +97,7 @@ async function dispatch(request, env, url, id, now,sessionId,context) {
   if (friend && method === 'DELETE') {
     const otherId = userId(friend[1]);
     await db.removeFriend(env, id, otherId);
-    await revokeInvalidCalls(env);
+    await revokeInvalidCalls(env,null,null,{userIds:[id,otherId]});
     await notify(env, [id, otherId]);
     return json({ ok: true });
   }

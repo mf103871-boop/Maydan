@@ -26,14 +26,16 @@ export function migrateHtml() {
 <html lang="ar"><head><meta charset="utf-8"><title>انتقال المحفوظات</title></head>
 <body><script>
 (function () {
-  var entries = {};
+  var entries = Object.create(null);
+  var succeeded = false;
   try {
     for (var i = 0; i < localStorage.length; i += 1) {
       var key = localStorage.key(i);
       if (key !== null) entries[key] = localStorage.getItem(key);
     }
-  } catch (error) {}
-  try { window.webkit.messageHandlers.maydan.postMessage({ type: 'migrate', entries: entries }); } catch (error) {}
+    succeeded = true;
+  } catch (error) { entries = Object.create(null); }
+  try { window.webkit.messageHandlers.maydan.postMessage({ type: 'migrate', entries: entries, succeeded: succeeded }); } catch (error) {}
 })();
 </script></body></html>
 `;

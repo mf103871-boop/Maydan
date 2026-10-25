@@ -1,0 +1,48 @@
+Gameplay corrections — 2026-10-25
+
+قبل ما يطق / القنبلة
+Survival and elimination order now determine placement lexicographically. Passing
+many prompts cannot outrank a player who survived longer. The podium accepts a
+separate rankScore while retaining remaining hearts as the visible score, so
+zero-heart eliminated players no longer all display second place. Ordinary
+score-based games and genuine ties retain their existing behavior.
+
+على جبينك
+Explicit exhaustion now creates a fresh seeded permutation, avoids repeating
+the last visible word immediately, and guarantees a changed order for pools
+of at least three items. For one item a repeat is unavoidable; for two items
+avoiding the immediate repeat takes priority over a changed permutation.
+Saved sessions record the shuffle cycle. Resume replays the seeded completed
+cycles before restoring the cursor, preserving the current and future queue.
+Existing sessions without a cycle field restore using their original first
+permutation. The existing visible repeat notice remains.
+
+Verification
+52 focused tests passed, zero failures/skips, covering shared list behavior,
+Beep/Jabeen engines, saved sessions, ten-player exhaustion, Ersomha/Fabraka
+rendering and four new regression cases. The new regression renders the real
+Podium, checks extreme pass counts, tests degenerate RNG streams and small
+pools, and compares 30 future draws after resuming three completed shuffles.
+Command: node --test --test-concurrency=2 tests/game-stability-20261025.test.js
+tests/beep-logic.test.js tests/jabeen-logic.test.js
+tests/jabeen-meenfina-regression.test.js tests/lib.test.js
+tests/ersomha-ui.test.js tests/fabraka-ui.test.js
+
+Content boundary
+The native checkout's 1,200-row Ersomha source fixture is not production.
+Production was independently reconciled by the root agent to private source
+b936635 in maydan-ersomha-26: catalog1,432, retired32, active1,400, bank v2.
+No bank files were modified or copied into this native/public checkout.
+The bounded approved-alias update belongs to the private backend release;
+TestFlight by itself does not apply that server-side change.
+No new progression system, arbitrary content padding, room migration, public
+release, deployment or physical-device test is represented by these changes.
+
+Residual fairness scope
+Old Ersomha concepts and offline Fabraka answers already exist in public Git
+history. Removing current files or changing ignore rules cannot revoke those
+copies. A new protected online bank requires an isolated private content
+pipeline and new concepts, preserving old identities/history as retired or
+legacy records. Existing online rooms must retain their captured questions.
+Do not claim the app-bundle privacy checks alone make exposed content secret.
+No destructive history rewrite or in-flight bank replacement is included here.

@@ -29,7 +29,7 @@ export async function routeModeration(request,env,url=new URL(request.url),charg
       const result=await db.performAction(env,{userId:auth.user.id,sessionId:auth.rotated?.id||auth.session.id},await readJson(request,8192));
       try {
         if(result.action==='suspend_user')await forgetSocialUser(env,result.subjectUserId);
-        if(result.action==='suspend_user')await revokeInvalidCalls(env);
+        if(result.action==='suspend_user')await revokeInvalidCalls(env,null,null,{userIds:[result.subjectUserId]});
         if(result.action==='remove_message')await collectDeletedAudio(env);
         const peers=result.subjectUserId?await friendIds(env,result.subjectUserId):[];
         await notifyUsers(env,[auth.user.id,result.subjectUserId,...peers,...(result.relatedUsers||[])].filter(Boolean),{type:'refresh',reason:'moderation'});

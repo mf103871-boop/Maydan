@@ -28,7 +28,7 @@ test('انحدار: فئة صغيرة وعشرة لاعبين — لا أحد ي
   const drawForTurn = () => {
     let item = source.next();
     let recycled = false;
-    if (!item) { source.reset(); recycled = true; item = source.next(); }
+    if (!item) { source.reset({ reshuffle: true }); recycled = true; item = source.next(); }
     return { item, recycled };
   };
 

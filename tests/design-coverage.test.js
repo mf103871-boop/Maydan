@@ -1,4 +1,4 @@
-import { test, after } from 'node:test';
+import { test, before, after } from 'node:test';
 import assert from 'node:assert/strict';
 import { mkdtempSync, mkdirSync, rmSync, readFileSync, readdirSync } from 'node:fs';
 import path from 'node:path';
@@ -100,16 +100,23 @@ test('every explicit semantic attribute in game, room, social and profile source
   assert.ok(checked >= 330, `Only ${checked} explicit semantic annotations`);
 });
 
+let directory;
+let renderer;
+// Keep asynchronous fixture creation in the runner lifecycle. Top-level await
+// after registering tests allowed the file's after hook to delete this module
+// before its dynamic import completed under concurrent test execution.
+before(async () => {
 mkdirSync(path.resolve('.cache'), { recursive: true });
-const directory = mkdtempSync(path.resolve('.cache/design-coverage-'));
-after(() => { assert.ok(directory.startsWith(path.resolve('.cache') + path.sep)); rmSync(directory, { recursive: true, force: true }); });
+directory = mkdtempSync(path.resolve('.cache/design-coverage-'));
 await build({ stdin: { contents: `
 import React from 'react';import{renderToStaticMarkup}from'react-dom/server';
 import{DesignScene,createDesignGameApi}from'./src/design/preview-scenes.jsx';
 import{PlatformContext}from'./src/platform/context.js';
 export function renderScene(id){const api=createDesignGameApi(),previous=globalThis.location;globalThis.location={href:'https://preview.invalid/studio-preview.html',hash:''};try{return renderToStaticMarkup(<PlatformContext.Provider value={api}><DesignScene sceneId={id} platform={api}/></PlatformContext.Provider>);}finally{globalThis.location=previous;}}
 `, resolveDir: process.cwd(), loader: 'jsx' }, outfile: path.join(directory, 'render.mjs'), bundle: true, platform: 'node', format: 'esm', packages: 'external', jsx: 'automatic', loader: { '.js':'jsx','.css':'text','.webp':'dataurl','.woff2':'dataurl' }, logLevel: 'silent' });
-const renderer = await import(pathToFileURL(path.join(directory, 'render.mjs')));
+renderer = await import(pathToFileURL(path.join(directory, 'render.mjs')));
+});
+after(() => { if (directory) { assert.ok(directory.startsWith(path.resolve('.cache') + path.sep)); rmSync(directory, { recursive: true, force: true }); } });
 
 test('actual local game components render every catalogued phase without bypassing production restore validation', () => {
   const scenes = DESIGN_SCENES.filter(scene => scene.renderer === 'local-game');

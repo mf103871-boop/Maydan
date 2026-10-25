@@ -1,7 +1,8 @@
 import { fail } from '../room-model.mjs';
 import { publicName } from '../profiles/model.mjs';
 import { profileSummaries } from '../profiles/db.mjs';
-import { userId } from '../social/model.mjs';
+import { userId,clientIdOf } from '../social/model.mjs';
+import { sha256 } from '../protocol.mjs';
 import { notifyUsers } from '../social/realtime.mjs';
 import { all,first,run,stmt,changed,ident,live,member,admin,friends,unblocked,cleanText } from './common.mjs';
 import { pushJob,wakeJobs } from './notifications.mjs';
@@ -25,7 +26,22 @@ export async function listGroups(env,id){
 }
 export async function groupDetail(env,id,groupId){const row=await requireGroup(env,id,groupId);const members=await groupMembers(env,groupId);const summaries=await profileSummaries(env,members.map(m=>m.user_id));return {group:{...groupView(row),memberCount:members.length},members:members.map(m=>({id:m.user_id,userId:m.user_id,name:publicName(m.name),role:m.role,joinedAt:m.joined_at,...summaries.get(m.user_id)})),invitations:['owner','admin'].includes(row.role)?await all(env,"SELECT id,user_id AS userId,inviter_id AS inviterId,expires_at AS expiresAt FROM social_group_invites WHERE group_id=? AND status='pending' AND expires_at>?",groupId,Date.now()):[]};}
 export async function previewInvite(env,id,g,inviteId){const invite=await first(env,`SELECT i.id,i.group_id AS groupId,i.inviter_id AS inviterId,i.expires_at AS expiresAt,g.name AS groupName,g.avatar_preset AS avatarPreset FROM social_group_invites i JOIN social_groups g ON g.id=i.group_id WHERE i.id=? AND i.group_id=? AND i.user_id=? AND i.status='pending' AND i.expires_at>? AND g.closed_at IS NULL AND ${friends('i.inviter_id','i.user_id')} AND NOT EXISTS(SELECT 1 FROM social_group_members x WHERE x.group_id=i.group_id AND x.left_at IS NULL AND NOT (${unblocked('x.user_id','i.user_id')}))`,inviteId,g,id,Date.now());if(!invite)fail('NOT_FOUND',404);return {invitation:invite,members:(await groupMembers(env,g)).map(m=>({id:m.user_id,name:publicName(m.name),role:m.role}))};}
-export async function createGroup(env,id,body){const name=cleanText(body.name,50);const groupId=crypto.randomUUID(),now=Date.now();await env.DB.batch([stmt(env,`INSERT INTO social_groups(id,name,owner_id,created_at,updated_at) SELECT ?,?,?,?,? WHERE ${live(ident(id))} AND (SELECT COUNT(*) FROM social_group_members WHERE user_id=? AND left_at IS NULL)<50`,groupId,name,id,now,now,id),stmt(env,`INSERT INTO social_group_members(group_id,user_id,role,joined_at) SELECT ?,?,'owner',? WHERE EXISTS(SELECT 1 FROM social_groups WHERE id=?)`,groupId,id,now,groupId)]);if(!await first(env,'SELECT id FROM social_groups WHERE id=?',groupId))fail('GROUP_LIMIT',429);return groupDetail(env,id,groupId);}
+export async function createGroup(env,id,body){
+  const name=cleanText(body.name,50),clientId=body.clientId==null?null:clientIdOf(body.clientId),hash=clientId?await sha256(JSON.stringify({name})):null;
+  const existing=()=>clientId?first(env,'SELECT id,creation_hash FROM social_groups WHERE creator_id=? AND creation_client_id=?',id,clientId):null;
+  const prior=await existing();
+  if(prior){if(prior.creation_hash!==hash)fail('CONFLICT',409);return groupDetail(env,id,prior.id);}
+  const groupId=crypto.randomUUID(),now=Date.now();
+  await env.DB.batch([
+    stmt(env,`INSERT OR IGNORE INTO social_groups(id,name,owner_id,created_at,updated_at,creator_id,creation_client_id,creation_hash) SELECT ?,?,?,?,?,?,?,? WHERE ${live(ident(id))} AND (SELECT COUNT(*) FROM social_group_members WHERE user_id=? AND left_at IS NULL)<50`,groupId,name,id,now,now,clientId?id:null,clientId,hash,id),
+    stmt(env,`INSERT OR IGNORE INTO social_group_members(group_id,user_id,role,joined_at) SELECT ?,?,'owner',? WHERE EXISTS(SELECT 1 FROM social_groups WHERE id=?)`,groupId,id,now,groupId),
+  ]);
+  // Concurrent retries can lose the unique-key insertion to the first request.
+  // Read the winning creation; never reinsert membership for an old closed/left group.
+  const row=clientId?await existing():await first(env,'SELECT id FROM social_groups WHERE id=?',groupId);
+  if(!row)fail('GROUP_LIMIT',429);if(clientId&&row.creation_hash!==hash)fail('CONFLICT',409);
+  return groupDetail(env,id,row.id);
+}
 export async function renameGroup(env,id,g,body){if(!Object.keys(body).length||Object.keys(body).some(k=>!['name','avatarPreset'].includes(k)))fail('INVALID',400);const fields=[],args=[];if('name'in body){fields.push('name=?');args.push(cleanText(body.name,50));}if('avatarPreset'in body){if(!AVATAR_PRESETS.some(x=>x.id===body.avatarPreset))fail('INVALID',400);fields.push('avatar_preset=?');args.push(body.avatarPreset);}if(!changed(await run(env,`UPDATE social_groups SET ${fields.join(',')},updated_at=? WHERE id=? AND ${admin('social_groups.id',ident(id))}`,...args,Date.now(),g)))fail('NOT_FOUND',404);await groupNotify(env,g,'updated');return groupDetail(env,id,g);}
 export async function inviteMember(env,id,g,target){userId(target);if(target===id)fail('INVALID',400);await requireGroup(env,id,g,true);const now=Date.now(),invite=crypto.randomUUID();
   await run(env,"UPDATE social_group_invites SET status='cancelled' WHERE group_id=? AND status='pending' AND expires_at<=?",g,now);

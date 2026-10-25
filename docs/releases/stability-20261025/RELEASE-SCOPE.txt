@@ -1,0 +1,39 @@
+Maydan stability candidate — 1.8.1 (28)
+
+Client baseline: e144aaa1060f60b2661e4036dfd561d8822973f1.
+Its tree matches public codex/network27 commit f271d6310feb38de7c984d7f46f5d2ce253d628c.
+
+Scope
+- Re-authorize the complete loaded group history and preserve the reading anchor.
+- Recover committed group creations and calls after lost acknowledgements without duplicates.
+- Restrict membership/block/moderation call revocation to affected participants.
+- Correct survival ranking in Beep and preserve podium rank separately from displayed hearts.
+- Reshuffle Jabeen on exhaustion, avoid an immediate repeat, and persist the shuffled cycle.
+- Serialize native microphone publication/cleanup; revalidate call, room, ownership and privacy.
+- Stage legacy-storage migration before the app starts; verify writes and retry failures.
+- Repair release test fixtures for async setup, the seventh game and current cue manifests.
+
+Backend prerequisite
+0013_social_group_creation.sql is additive and must precede the new group handler.
+Deployment is a reviewed replacement of named compiled sections on the current live workers.
+It must inherit existing bindings/secrets, assets, settings, schedules and update policy.
+The public website, Studio, existing accounts, rooms and store submission are not replaced.
+
+Private content
+The live Ersomha v2 bank has 1,400 active concepts and 32 retired records.
+The separately retained private source adds 33 exact aliases to 23 concepts.
+Concept identities, families, difficulty and history remain intact. Existing room plans remain fixed.
+The private content change is not copied into this public client repository or app assets.
+
+Acceptance
+Local suites, browser checks, native compilation, simulator evidence, IPA verification and
+Apple processing are separate gates. Only successful Apple processing plus inclusion in the
+existing internal test group establishes TestFlight delivery. Two physical iPhones must still
+verify microphone privacy, audio recovery, networking and upgrade behavior before public release.
+Current App Store release and mandatory-update minimum remain 1.8 (22).
+
+Known content boundary
+Fabraka's existing offline bank is distributed to clients and has public source history.
+Moving or obfuscating it cannot make previously published answers secret. A future ranked or
+prize-based mode needs a new independently reviewed private online bank and new concept IDs;
+this stability release does not claim cheat-resistant ranked play.

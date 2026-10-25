@@ -230,7 +230,12 @@ test('ترحيلات D1 جمل مستقلة بسطر واحد يقبلها exec'
     // Only these exact additions and concurrency indexes are approved here.
     ["ALTER TABLE social_messages ADD COLUMN kind TEXT NOT NULL DEFAULT 'text';",
       'ALTER TABLE social_messages ADD COLUMN attachment_id TEXT;',
-      'ALTER TABLE social_messages ADD COLUMN room_invite_id TEXT;'].includes(statement) ||
+      'ALTER TABLE social_messages ADD COLUMN room_invite_id TEXT;',
+      // 0013: nullable creation identity; deletion clears the creator link only.
+      'ALTER TABLE social_groups ADD COLUMN creator_id TEXT REFERENCES users(id) ON DELETE SET NULL;',
+      'ALTER TABLE social_groups ADD COLUMN creation_client_id TEXT;',
+      'ALTER TABLE social_groups ADD COLUMN creation_hash TEXT;',
+      'CREATE UNIQUE INDEX IF NOT EXISTS social_groups_creation ON social_groups(creator_id,creation_client_id) WHERE creation_client_id IS NOT NULL;'].includes(statement) ||
     /^CREATE UNIQUE INDEX IF NOT EXISTS social_(group_invites_pending|calls_open|call_one_active) /.test(statement) ||
     (/^INSERT OR IGNORE INTO (social_profiles|player_profiles)\(/.test(statement) &&
       !/\b(UPDATE|DELETE|REPLACE|DROP|ALTER)\b/i.test(statement)) ||
@@ -241,6 +246,9 @@ test('ترحيلات D1 جمل مستقلة بسطر واحد يقبلها exec'
     'INSERT OR REPLACE INTO player_profiles(user_id) VALUES(1);',
     'INSERT OR IGNORE INTO player_profiles(user_id) VALUES(1) ON CONFLICT(user_id) DO UPDATE SET bio=1;',
     'DELETE FROM player_profiles;',
+    'ALTER TABLE social_groups ADD COLUMN creator_id TEXT REFERENCES users(id) ON DELETE CASCADE;',
+    'ALTER TABLE social_groups ADD COLUMN creation_hash TEXT NOT NULL;',
+    'CREATE UNIQUE INDEX IF NOT EXISTS social_groups_creation ON social_groups(name);',
     "INSERT OR IGNORE INTO design_draft(id,document_json) VALUES('main','unreviewed');",
   ]) assert.equal(allowed(unsafe), false, `جملة غير آمنة: ${unsafe}`);
   assert.ok(statements.length >= 10, 'الترحيل الأول ينشئ جداول الحسابات كلها');

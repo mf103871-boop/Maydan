@@ -330,12 +330,14 @@ export function CountUp({ value, from = 0, duration = 900, delay = 0, className 
 
 // ── Podium ───────────────────────────────────────────────────
 export function Podium({ entries, title, unit = '', ...domProps }) {
-  const sorted = [...entries].sort((a, b) => b.score - a.score);
+  // Some games rank survival separately from the visible score (remaining hearts).
+  const ranking = (entry) => Number.isFinite(entry.rankScore) ? entry.rankScore : entry.score;
+  const sorted = [...entries].sort((a, b) => ranking(b) - ranking(a));
   const top = sorted.slice(0, 3);
   const rest = sorted.slice(3);
   const order = top.length === 3 ? [top[1], top[0], top[2]] : top.length === 2 ? [top[1], top[0]] : top;
   const heights = { 0: 92, 1: 66, 2: 48 };
-  const winners = sorted.filter((e) => e.score === sorted[0].score);
+  const winners = sorted.filter((e) => ranking(e) === ranking(sorted[0]));
   const heading = title || (winners.length > 1 ? 'تعادل جميل!' : `فاز ${sorted[0].name}`);
   // التسلسل: الأعمدة تصعد 3→2→1 (الفائز آخرًا)، ثم دفعة قصاصات صغيرة عند عمود الفائز (~1.1s).
   const winnerRef = useRef(null);
@@ -354,10 +356,10 @@ export function Podium({ entries, title, unit = '', ...domProps }) {
         {order.map((e) => {
           const rank = sorted.indexOf(e);
           return (
-            <div key={e.id} ref={rank === 0 ? winnerRef : null} data-rank={sorted.findIndex((entry) => entry.score === e.score) + 1} className="podium-col" style={{ '--col-color': e.color, '--delay': `${(2 - rank) * 260 + 300}ms`, '--h': `${heights[rank]}px` }}>
+            <div key={e.id} ref={rank === 0 ? winnerRef : null} data-rank={sorted.findIndex((entry) => ranking(entry) === ranking(e)) + 1} className="podium-col" style={{ '--col-color': e.color, '--delay': `${(2 - rank) * 260 + 300}ms`, '--h': `${heights[rank]}px` }}>
               <ClayStage className="avatar-wrap"><Avatar player={e} className="avatar" /></ClayStage>
               <span className="name">{e.name}</span>
-              <div className="block"><span className="rank" aria-label="الترتيب">{sorted.findIndex((entry) => entry.score === e.score) + 1}</span><span><CountUp value={e.score} delay={(2 - rank) * 260 + 600} />{unit}</span></div>
+              <div className="block"><span className="rank" aria-label="الترتيب">{sorted.findIndex((entry) => ranking(entry) === ranking(e)) + 1}</span><span><CountUp value={e.score} delay={(2 - rank) * 260 + 600} />{unit}</span></div>
             </div>
           );
         })}

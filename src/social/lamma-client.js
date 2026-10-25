@@ -41,6 +41,7 @@ export class LammaClient {
     this.request = request; this.onDirectChange = onDirectChange; this.makeURL = makeURL; this.revokeURL = revokeURL;
     this.state = emptyLamma(); this.userId = null; this.epoch = 0; this.authorizationEpoch = 0; this.listeners = new Set(); this.urls = new Map(); this.reads = new Map(); this.groupVersions = new Map(); this.pendingText = new Map(); this.sendingText = new Map(); this.pendingInvites = new Map(); this.pendingVoice = new WeakMap();
     this.callContext = null; this.callMembersGeneration = 0; this.pendingCallMembers = new Map(); this.revokedCallGroups = new Set();
+    this.pendingGroupCreates = new Map(); this.pendingCalls = new Map(); this.groupsRevision = 0;
     this.subscribe = fn => { this.listeners.add(fn); return () => this.listeners.delete(fn); };
     this.getSnapshot = () => this.state;
   }
@@ -73,11 +74,11 @@ export class LammaClient {
     if (this.revokedCallGroups.has(id)) throw Object.assign(new Error(ERRORS.FORBIDDEN), { code: 'FORBIDDEN' });
   }
   invalidateAudio() { this.authorizationEpoch++; this.invalidateCallMembers(); for (const url of this.urls.values()) this.revokeURL(url); this.urls.clear(); }
-  stop() { this.epoch++; this.userId = null; this.activeGroup = null; this.callContext = null; this.refreshing = null; this.reads.clear(); this.groupVersions.clear(); this.pendingText.clear(); this.sendingText.clear(); this.pendingInvites.clear(); this.pendingVoice = new WeakMap(); this.revokedCallGroups.clear(); this.invalidateAudio(); this.update(emptyLamma()); }
+  stop() { this.epoch++; this.userId = null; this.activeGroup = null; this.callContext = null; this.refreshing = null; this.reads.clear(); this.groupVersions.clear(); this.pendingText.clear(); this.sendingText.clear(); this.pendingInvites.clear(); this.pendingVoice = new WeakMap(); this.pendingGroupCreates.clear(); this.pendingCalls.clear(); this.revokedCallGroups.clear(); this.invalidateAudio(); this.update(emptyLamma()); }
   async refresh({ quiet = false } = {}) {
     if (!this.userId) return;
     if (this.refreshing) return this.refreshing;
-    const epoch = this.epoch, authorizationEpoch = this.authorizationEpoch;
+    const epoch = this.epoch, authorizationEpoch = this.authorizationEpoch, groupsRevision = this.groupsRevision;
     if (!quiet) this.update({ loading: true, error: '' });
     const task = (async () => {
       try {
@@ -85,6 +86,7 @@ export class LammaClient {
           this.call('/groups'), this.call('/preferences'), this.call('/capabilities'), this.call('/calls'),
         ]);
         this.assertVisibility(epoch, authorizationEpoch);
+        if (groupsRevision !== this.groupsRevision) throw Object.assign(new Error('تحدّثت قائمة الشلل.'), { code: 'STALE' });
         const allowed = new Set((groups.groups || []).map(g => g.id));
         // Removing the visible snapshot must also fence detail/history reads
         // already in flight, including quiet reads with no conversation entry.
@@ -103,7 +105,7 @@ export class LammaClient {
           groupConversations: Object.fromEntries(Object.entries(this.state.groupConversations).filter(([id]) => allowed.has(id))), loading: false, offline: false, error: '' });
         if (this.activeGroup && allowed.has(this.activeGroup)) await this.loadGroup(this.activeGroup, { quiet: true });
       } catch (e) {
-        if (epoch === this.epoch) this.update({ loading: false, error: e.code === 'NOT_FOUND' ? 'الشِلَل تحتاج تحديث الخدمة. محادثات الأصدقاء متاحة.' : e.message, offline: e.code === 'NETWORK' });
+        if (epoch === this.epoch && e.code !== 'STALE') this.update({ loading: false, error: e.code === 'NOT_FOUND' ? 'الشِلَل تحتاج تحديث الخدمة. محادثات الأصدقاء متاحة.' : e.message, offline: e.code === 'NETWORK' });
         throw e;
       } finally { if (epoch === this.epoch) this.refreshing = null; }
     })(); this.refreshing = task; return task;
@@ -140,18 +142,29 @@ export class LammaClient {
   async loadGroup(id, { quiet = false } = {}) {
     const epoch = this.epoch, authorizationEpoch = this.authorizationEpoch;
     const callMembersGeneration = this.callMembersGeneration;
+    const firstLoaded = this.state.groupConversations[id]?.messages.find(message => Number.isSafeInteger(message.seq))?.seq;
     const version = (this.groupVersions.get(id) || 0) + 1; this.groupVersions.set(id, version);
     if (!quiet) this.group(id, { loading: true, error: '' });
     try {
       const [detail, history] = await Promise.all([this.call(`/groups/${enc(id)}`), this.call(`/groups/${enc(id)}/messages`)]);
       this.assertVisibility(epoch, authorizationEpoch, id, version);
-      // Replace the current visibility window: removed/blocked senders must disappear.
-      // Keep only our unsent outbox while replacing the authorized history window.
-      // Previously a quiet refresh erased failed messages before they could be retried.
+      // Re-authorize the whole loaded window, not only its last page. Reusing the
+      // old rows would restore blocked/deleted content; replacing just the last
+      // page discarded history whenever a message or recovery poll arrived.
+      let page = history, authorized = history.messages || [];
+      while (Number.isSafeInteger(firstLoaded) && page.hasMore && Number.isSafeInteger(page.nextBefore) && page.nextBefore > firstLoaded) {
+        const before = page.nextBefore;
+        page = await this.call(`/groups/${enc(id)}/messages?before=${enc(before)}`);
+        this.assertVisibility(epoch, authorizationEpoch, id, version);
+        if (page.hasMore && (!Number.isSafeInteger(page.nextBefore) || page.nextBefore >= before))
+          throw Object.assign(new Error('تعذّر تحديث سجل المحادثة. حاول مجددًا.'), { code: 'NETWORK' });
+        authorized = mergeMessages(page.messages || [], authorized);
+      }
+      // Only our unsent outbox survives without a fresh server authorization.
       const outbox = (this.state.groupConversations[id]?.messages || []).filter(message => !Number.isSafeInteger(message.seq) && message.senderId === this.userId);
-      const messages = mergeMessages(outbox, history.messages || []);
+      const messages = mergeMessages(outbox, authorized);
       for (const message of messages) if (Number.isSafeInteger(message.seq)) this.pendingText.delete(message.clientId);
-      this.group(id, { ...detail, ...history, messages, loading: false, loadingOlder: false, error: '' });
+      this.group(id, { ...detail, ...history, hasMore: page.hasMore, nextBefore: page.nextBefore, messages, loading: false, loadingOlder: false, error: '' });
       if (this.callContext?.scope === 'group' && this.callContext.conversationId === id && callMembersGeneration === this.callMembersGeneration && !this.revokedCallGroups.has(id))
         this.update({ callMembers: { ...this.state.callMembers, [id]: normalizedMembers(detail.members) } });
       return this.state.groupConversations[id];
@@ -180,10 +193,32 @@ export class LammaClient {
   }
   async createGroup({ name, memberIds = [] }) {
     const epoch = this.epoch;
-    const result = await this.call('/groups', { method: 'POST', body: { name } }); this.assert(epoch);
-    const group = result.group || result; const failedInvites = [];
-    for (const userId of memberIds) { try { await this.call(`/groups/${enc(group.id)}/invites`, { method: 'POST', body: { userId } }); this.assert(epoch); } catch (e) { this.assert(epoch); if (e.code === 'STALE') throw e; failedInvites.push(userId); } }
-    await this.refresh({ quiet: true }); this.assert(epoch); return { ...group, failedInvites };
+    name = String(name || '').trim(); memberIds = [...new Set(memberIds)].sort();
+    const key = JSON.stringify([name, memberIds]);
+    let attempt = this.pendingGroupCreates.get(key);
+    if (!attempt) { attempt = { clientId: lammaId() }; this.pendingGroupCreates.set(key, attempt); }
+    if (attempt.sending) return attempt.sending;
+    const task = (async () => {
+      const result = await this.call('/groups', { method: 'POST', body: { name, clientId: attempt.clientId } }); this.assert(epoch);
+      const group = result.group || result; const failedInvites = [];
+      for (const userId of memberIds) { try { await this.call(`/groups/${enc(group.id)}/invites`, { method: 'POST', body: { userId } }); this.assert(epoch); } catch (e) { this.assert(epoch); if (e.code === 'STALE') throw e; failedInvites.push(userId); } }
+      // The mutation is already committed. A later GET must not turn it into a
+      // failed creation or encourage the player to create the same group twice.
+      this.groupsRevision++;
+      this.update({ groups: [group, ...this.state.groups.filter(value => value.id !== group.id)], loading: false });
+      if (this.pendingGroupCreates.get(key) === attempt) this.pendingGroupCreates.delete(key);
+      // Drain a pre-creation list read before starting its replacement. Its
+      // revision fence above prevents it from erasing this acknowledged group.
+      Promise.resolve(this.refreshing).catch(() => {}).then(() => { this.assert(epoch); return this.refresh({ quiet: true }); }).catch(() => {});
+      return { ...group, failedInvites };
+    })();
+    attempt.sending = task;
+    try { return await task; }
+    catch (error) {
+      if (epoch === this.epoch && !['NETWORK', 'TIMEOUT', 'SERVICE_UNAVAILABLE'].includes(error.code) && this.pendingGroupCreates.get(key) === attempt)
+        this.pendingGroupCreates.delete(key);
+      throw error;
+    } finally { if (attempt.sending === task) attempt.sending = null; }
   }
   async inviteGroupMembers(id, userIds) { const epoch = this.epoch; for (const userId of userIds) { await this.groupAction(id, '/invites', 'POST', { userId }); this.assert(epoch); } return this.loadGroup(id); }
   acceptGroupInvite(id, inviteId) { return this.groupAction(id, `/invites/${enc(inviteId)}/accept`); }
@@ -323,7 +358,25 @@ export class LammaClient {
   }
   acceptGameInvite(id) { return this.call(`/room-invitations/${enc(id)}/accept`, { method: 'POST', body: {} }); }
   rejectGameInvite(id) { return this.call(`/room-invitations/${enc(id)}/reject`, { method: 'POST', body: {} }); }
-  startCall({ targetType, targetId, deviceId }) { return this.call('/calls', { method: 'POST', body: { scope: targetType, conversationId: targetId, clientId: lammaId(), deviceId } }); }
+  async startCall({ targetType, targetId, deviceId }) {
+    const epoch = this.epoch, key = JSON.stringify([targetType, targetId, deviceId]);
+    let attempt = this.pendingCalls.get(key);
+    if (!attempt) { attempt = { clientId: lammaId() }; this.pendingCalls.set(key, attempt); }
+    if (attempt.sending) return attempt.sending;
+    // Retrying an uncertain response re-joins the exact committed call through
+    // the server's existing idempotency path, without ringing a second call.
+    const task = this.call('/calls', { method: 'POST', body: { scope: targetType, conversationId: targetId, clientId: attempt.clientId, deviceId } });
+    attempt.sending = task;
+    try {
+      const result = await task; this.assert(epoch);
+      if (this.pendingCalls.get(key) === attempt) this.pendingCalls.delete(key);
+      return result;
+    } catch (error) {
+      if (epoch === this.epoch && !['NETWORK', 'TIMEOUT', 'CALLS_UNAVAILABLE', 'CALL_RECONNECTING', 'SERVICE_UNAVAILABLE'].includes(error.code) && this.pendingCalls.get(key) === attempt)
+        this.pendingCalls.delete(key);
+      throw error;
+    } finally { if (attempt.sending === task) attempt.sending = null; }
+  }
   acceptCall(id, deviceId) { return this.call(`/calls/${enc(id)}/accept`, { method: 'POST', body: { deviceId } }); }
   callStatus(id) { return this.call(`/calls/${enc(id)}`); }
   callAction(id, action, deviceId) { return this.call(`/calls/${enc(id)}/${action}`, { method: 'POST', body: deviceId ? { deviceId } : {} }); }

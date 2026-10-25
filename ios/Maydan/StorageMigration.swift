@@ -5,7 +5,7 @@ import WebKit
 /// يحمّل صفحة `www/migrate.html` (يولّدها `scripts/ios/prepare.mjs`) في عرض مخفي على
 /// مخزن WebKit الافتراضي نفسه، فترسل الصفحة كل المدخلات عبر الجسر، ثم تُزرع في
 /// الأصل الجديد بسكربت مستخدم قبل تشغيل اللعبة. لا يُعلَّم الانتقال منجزًا إلا بعد
-/// نجاح الزرع، ويُعاد بحدّ أقصى ثلاث محاولات.
+/// إقرار الزرع والتحقق من كل كتابة. الفشل يبقى قابلًا للمحاولة ولا يحذف المخزن القديم.
 final class StorageMigration: NSObject, WKScriptMessageHandler {
     struct Result {
         let entries: [String: String]
@@ -19,7 +19,6 @@ final class StorageMigration: NSObject, WKScriptMessageHandler {
 
     private static let bridgeName = "maydan"
     private static let timeout: TimeInterval = 4
-    private static let maximumAttempts = 3
 
     private let directory: URL
     private let processPool: WKProcessPool
@@ -27,6 +26,8 @@ final class StorageMigration: NSObject, WKScriptMessageHandler {
     private var webView: WKWebView?
     private var completion: ((Result) -> Void)?
     private var timer: Timer?
+    private var seedToken: String?
+    private var expectedSeedCount = 0
 
     init(directory: URL, processPool: WKProcessPool) {
         self.directory = directory
@@ -45,13 +46,12 @@ final class StorageMigration: NSObject, WKScriptMessageHandler {
     /// أن الصفحة لم تردّ في الوقت المحدد؛ عندها لا يُعلَّم الانتقال منجزًا.
     func collect(in container: UIView, completion: @escaping (Result) -> Void) {
         let page = directory.appendingPathComponent("migrate.html")
-        let attempts = defaults.integer(forKey: Keys.attempts)
-        guard !isDone, attempts < Self.maximumAttempts, FileManager.default.fileExists(atPath: page.path) else {
-            // لا صفحة انتقال أو استُنفدت المحاولات: نكمل بلا زرع ونغلق الباب.
-            completion(Result(entries: [:], succeeded: true))
+        guard !isDone, FileManager.default.fileExists(atPath: page.path) else {
+            completion(Result(entries: [:], succeeded: isDone))
             return
         }
-        defaults.set(attempts + 1, forKey: Keys.attempts)
+        // A failed previous launch must never turn an unread store into an
+        // empty, successful one. Retry is explicit or on the next launch.
         self.completion = completion
 
         let configuration = WKWebViewConfiguration()
@@ -72,37 +72,64 @@ final class StorageMigration: NSObject, WKScriptMessageHandler {
     }
 
     /// سكربت يزرع المدخلات في الأصل الجديد قبل أي سطر من اللعبة، دون الكتابة فوق مفتاح موجود.
-    static func seedScript(entries: [String: String]) -> WKUserScript? {
-        guard !entries.isEmpty,
-              let data = try? JSONSerialization.data(withJSONObject: entries),
+    func seedScript(entries: [String: String]) -> WKUserScript? {
+        // Pairs also preserve keys such as __proto__ in the JS literal.
+        let pairs = entries.keys.sorted().map { [$0, entries[$0]!] }
+        guard let data = try? JSONSerialization.data(withJSONObject: pairs),
               let json = String(data: data, encoding: .utf8) else {
             return nil
         }
+        let token = UUID().uuidString.lowercased()
+        seedToken = token
+        expectedSeedCount = entries.count
         let source = """
         (function () {
+          var succeeded = false, verified = 0;
           try {
             var entries = \(json);
-            for (var key in entries) {
-              if (Object.prototype.hasOwnProperty.call(entries, key) && localStorage.getItem(key) === null) {
-                localStorage.setItem(key, entries[key]);
+            for (var i = 0; i < entries.length; i += 1) {
+              var key = entries[i][0], value = entries[i][1];
+              if (localStorage.getItem(key) === null) {
+                localStorage.setItem(key, value);
+                if (localStorage.getItem(key) !== value) throw new Error('Migration write not retained');
               }
+              verified += 1;
             }
+            succeeded = true;
           } catch (error) {}
+          try { window.webkit.messageHandlers.maydan.postMessage({ type: 'migrationSeedResult',
+            token: '\(token)', succeeded: succeeded, verifiedCount: verified }); } catch (error) {}
         })();
         """
         return WKUserScript(source: source, injectionTime: .atDocumentStart, forMainFrameOnly: true)
     }
 
+    /// nil rejects stale/foreign messages. Only the current, fully verified
+    /// seed may commit; navigation completion is not a storage acknowledgement.
+    func acceptSeedResult(_ payload: [String: Any]) -> Bool? {
+        guard let token = seedToken, payload["token"] as? String == token else { return nil }
+        let succeeded = payload["succeeded"] as? Bool == true && payload["verifiedCount"] as? Int == expectedSeedCount
+        seedToken = nil
+        if succeeded { markDone() }
+        return succeeded
+    }
+
+    func abandonSeed() { seedToken = nil }
+
     // MARK: - WKScriptMessageHandler
 
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
         guard message.name == Self.bridgeName,
-              message.webView === webView,
+              message.webView === webView, message.frameInfo.isMainFrame,
               let body = message.body as? [String: Any],
               body["type"] as? String == "migrate" else {
             return
         }
-        let raw = body["entries"] as? [String: Any] ?? [:]
+        guard body["succeeded"] as? Bool == true, let raw = body["entries"] as? [String: Any],
+              raw.values.allSatisfy({ $0 is String }) else {
+            finish(Result(entries: [:], succeeded: false))
+            return
+        }
         finish(Result(entries: raw.compactMapValues { $0 as? String }, succeeded: true))
     }
 

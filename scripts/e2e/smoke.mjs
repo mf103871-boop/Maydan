@@ -14,7 +14,7 @@ const results = [], errors = [], responses = [];
 const browser = await chromium.launch({ executablePath: process.env.CHROMIUM_PATH || undefined, headless: true, args: ['--autoplay-policy=no-user-gesture-required'] });
 // Cue voices are short buffers (the longest cue, the fanfare, is 3.2 s); music loops run for tens of seconds.
 const CUE_MAX_FRAMES = 48000 * 10;
-const CLICK_FRAMES = 12000, TICK_FRAMES = 4320;
+const CLICK_FRAMES = SAMPLE_BANK.click.frames, TICK_FRAMES = SAMPLE_BANK.tick.frames;
 // Playwright's Chromium ships without an AAC decoder, so the m4a files fail to decode there. The page
 // shim below replaces a failed decode of a known file with a silent buffer of the manifest's length
 // (music gets a long one), which is all the counting needs; real browsers decode natively.
@@ -26,6 +26,7 @@ const DECODE_FRAMES = Object.fromEntries([
 if (Object.keys(DECODE_FRAMES).length !== Object.keys(SAMPLE_BANK).length + Object.keys(MUSIC_BANK).length) throw new Error('two audio files share a byte length; the decode shim needs another key');
 const near = (frames, target) => Math.abs(frames - target) <= 2;
 const games = ['badeeha', 'beep', 'mamnoo', 'jabeen', 'fabraka', 'meenfina'];
+const registeredGames = [...games, 'ersomha'];
 function check(name, ok, detail = '') { results.push({ name, ok: !!ok, detail }); console.log(`${ok ? 'PASS' : 'FAIL'} ${name} ${detail}`); }
 try {
   for (const profile of [
@@ -92,8 +93,16 @@ try {
       check(`${name}: ${label} fits viewport`, value.scroll <= value.width + 1, JSON.stringify(value));
     };
     await go('');
-    check(`${name}: six games after automatic startup`, await page.locator('.game-card').count() === 6);
+    check(`${name}: seven games after automatic startup`, await page.locator('.game-card').count() === registeredGames.length);
     await overflow('home'); await shot('home');
+
+    // This guest/local journey verifies the seventh card's real details and
+    // entry affordance. Authenticated drawing is covered by e2e:ersomha; never
+    // count these checks as a multiplayer/audio acceptance test.
+    await go('game/ersomha');
+    check(`${name}: ersomha online entry exists`, await page.getByRole('button', { name: 'العب أونلاين · لشخصين أو أكثر', exact: true }).isVisible());
+    check(`${name}: ersomha does not offer a local-only match`, await page.getByRole('button', { name: 'العب على جهاز واحد', exact: true }).count() === 0);
+    await overflow('ersomha details');
 
     await go('settings');
     const slider = page.locator('#sound-volume');

@@ -223,7 +223,7 @@ export function Game({ api, players, onExit, savedSession = null, designPreviewS
       <style>{css}</style>
       {state.phase === 'over' ? (
         <div className="stack">
-          <Podium data-design-id="podium" entries={standings(state).map((p) => ({ ...p, score: state.mode === 'three' ? p.score : p.lives }))} unit={state.mode === 'three' ? '' : ' ❤️'} />
+          <Podium data-design-id="podium" entries={standings(state)} unit={state.mode === 'three' ? '' : ' ❤️'} />
           <div data-design-id="actions" className="beep-actions">
             <Button variant="accent" size="lg" full data-design-id="restart" onClick={restart}>العب مرة أخرى</Button>
             <Button variant="secondary" full data-design-id="options" onClick={api.backToSetup}>تغيير اللاعبين أو الإعدادات</Button>

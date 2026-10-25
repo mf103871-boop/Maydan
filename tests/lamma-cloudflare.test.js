@@ -24,6 +24,14 @@ test('D1/workerd serializes final group seat, voice attachment claim and multi-d
   const user=async()=>await (await mf.dispatchFetch('https://test.local/test/user',{method:'POST'})).json();
   async function api(u,p,method='GET',body){const multipart=body instanceof FormData,url=`https://test.local/api/social${p}`,init={method,headers:{authorization:`Bearer ${u.token}`,...(body===undefined||multipart?{}:{'content-type':'application/json'})},...(body===undefined?{}:{body:multipart?body:JSON.stringify(body)})};if(multipart){const encoded=new Request(url,init);init.headers=Object.fromEntries(encoded.headers);init.body=new Uint8Array(await encoded.arrayBuffer());}const response=await mf.dispatchFetch(url,init);return {status:response.status,body:await response.json()};}
   const owner=await user(),users=[];for(let i=0;i<12;i++)users.push(await user());
+  // Real D1 serializes simultaneous retries under the durable creation key.
+  const creation={name:'إنشاء واحد',clientId:crypto.randomUUID()};
+  const created=await Promise.all([1,2,3].map(()=>api(owner,'/groups','POST',creation)));
+  assert.ok(created.every(r=>r.status===200),JSON.stringify(created));
+  assert.equal(new Set(created.map(r=>r.body.group.id)).size,1);
+  assert.equal((await query('SELECT COUNT(*) AS n FROM social_groups WHERE creator_id=? AND creation_client_id=?',owner.id,creation.clientId).first()).n,1);
+  const conflictKey=crypto.randomUUID(),conflicting=await Promise.all(['أ','ب'].map(name=>api(owner,'/groups','POST',{name,clientId:conflictKey})));
+  assert.deepEqual(conflicting.map(r=>r.status).sort(),[200,409]);
   const g=(await api(owner,'/groups','POST',{name:'لمة الاختبار'})).body.group.id,now=Date.now();
   for(const u of users){const [a,b]=[owner.id,u.id].sort();await query("INSERT INTO social_friendships(id,user_low,user_high,requester_id,status,created_at,accepted_at) VALUES(?,?,?,?,'accepted',?,?)",crypto.randomUUID(),a,b,owner.id,now,now).run();}
   for(const u of users.slice(0,10))await query("INSERT INTO social_group_members(group_id,user_id,role,joined_at) VALUES(?,?,'member',?)",g,u.id,now).run();

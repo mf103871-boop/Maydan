@@ -85,6 +85,9 @@ final class GameViewController: UIViewController, WKNavigationDelegate, WKUIDele
     private var isRecoveringWebContent = false
     private var migration: StorageMigration?
     private var isCommittingMigration = false
+    private var migrationSeedScript: WKUserScript?
+    private var migrationSeedTimeout: Timer?
+    private var migrationSeedNavigation: WKNavigation?
     private var didLoadBundledGame = false
     private var drawingOrientation = DrawingOrientationPolicy()
     private var drawingWantsLandscape = false
@@ -232,6 +235,7 @@ final class GameViewController: UIViewController, WKNavigationDelegate, WKUIDele
         bridgeProxy?.delegate = nil
         updateNavigationObservation?.invalidate()
         drawingOrientationExpiry?.invalidate()
+        migrationSeedTimeout?.invalidate()
         if let drawingForegroundObserver { NotificationCenter.default.removeObserver(drawingForegroundObserver) }
 #if targetEnvironment(simulator)
         simulatorAudioTimer?.invalidate()
@@ -349,16 +353,54 @@ final class GameViewController: UIViewController, WKNavigationDelegate, WKUIDele
         // أول تشغيل بعد التحديث: انقل محفوظات file:// إلى الأصل الجديد قبل بدء اللعبة.
         migration.collect(in: view) { [weak self] result in
             guard let self else { return }
-            if result.succeeded {
-                if let script = StorageMigration.seedScript(entries: result.entries) {
-                    self.webView.configuration.userContentController.addUserScript(script)
-                    self.isCommittingMigration = true
-                } else {
-                    migration.markDone()
-                }
+            guard result.succeeded else { self.showMigrationRecovery(); return }
+            // A genuinely empty read is complete; failed/partial reads never
+            // reach this path. No game defaults have been created yet.
+            if result.entries.isEmpty {
+                migration.markDone()
+                self.webView.load(URLRequest(url: AppSchemeHandler.entryURL))
+                return
             }
-            self.webView.load(URLRequest(url: AppSchemeHandler.entryURL))
+            guard let script = migration.seedScript(entries: result.entries) else { self.showMigrationRecovery(); return }
+            self.migrationSeedScript = script
+            self.isCommittingMigration = true
+            self.webView.configuration.userContentController.addUserScript(script)
+            self.migrationSeedTimeout = Timer.scheduledTimer(withTimeInterval: 4, repeats: false) { [weak self] _ in
+                Task { @MainActor in self?.finishMigrationSeed(succeeded: false) }
+            }
+            self.migrationSeedNavigation = self.webView.load(URLRequest(url: AppSchemeHandler.migrationURL))
         }
+    }
+
+    private func finishMigrationSeed(succeeded: Bool) {
+        guard isCommittingMigration else { return }
+        isCommittingMigration = false
+        isRecoveringWebContent = false
+        migrationSeedNavigation = nil
+        migrationSeedTimeout?.invalidate()
+        migrationSeedTimeout = nil
+        migration?.abandonSeed()
+        if let seed = migrationSeedScript {
+            let controller = webView.configuration.userContentController
+            let retained = controller.userScripts.filter { $0.source != seed.source }
+            controller.removeAllUserScripts()
+            retained.forEach { controller.addUserScript($0) }
+            migrationSeedScript = nil
+        }
+        if succeeded { webView.load(URLRequest(url: AppSchemeHandler.entryURL)) }
+        else { showMigrationRecovery() }
+    }
+
+    private func showMigrationRecovery() {
+        guard presentedViewController == nil else { return }
+        let alert = UIAlertController(title: "تعذر نقل المحفوظات القديمة",
+            message: "محفوظاتك القديمة لم تُحذف. حرّر مساحة إن كانت ممتلئة ثم أعد المحاولة. يمكنك المتابعة الآن؛ سنحاول النقل في التشغيل القادم.",
+            preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "إعادة المحاولة", style: .default) { [weak self] _ in self?.loadBundledGame() })
+        alert.addAction(UIAlertAction(title: "المتابعة الآن", style: .cancel) { [weak self] _ in
+            self?.webView.load(URLRequest(url: AppSchemeHandler.entryURL))
+        })
+        present(alert, animated: true)
     }
 
     private func showBundledGameMissingMessage() {
@@ -452,14 +494,9 @@ final class GameViewController: UIViewController, WKNavigationDelegate, WKUIDele
 
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         isRecoveringWebContent = false
+        guard !isCommittingMigration, webView.url != AppSchemeHandler.migrationURL else { return }
         SocialCoordinator.shared.webAudioReady()
         appUpdate.navigationChanged()
-        if isCommittingMigration {
-            // زُرعت المحفوظات في الأصل الجديد وبدأت اللعبة بها: الانتقال منجز ولا يُعاد.
-            isCommittingMigration = false
-            migration?.markDone()
-            webView.configuration.userContentController.removeAllUserScripts()
-        }
 #if targetEnvironment(simulator)
         if simulatorAudioFixture, simulatorAudioTimer == nil {
             simulatorAudioTimer = Timer.scheduledTimer(withTimeInterval: 0.25, repeats: true) { [weak self] _ in
@@ -615,6 +652,16 @@ final class GameViewController: UIViewController, WKNavigationDelegate, WKUIDele
 #endif
 
     func webViewWebContentProcessDidTerminate(_ webView: WKWebView) {
+        // A failed staging process has not earned permission to initialize the
+        // game. Clear the token/script/timer and retain explicit recovery.
+        if isCommittingMigration {
+            finishMigrationSeed(succeeded: false)
+            return
+        }
+        if webView.url == AppSchemeHandler.migrationURL {
+            showMigrationRecovery()
+            return
+        }
         guard !isRecoveringWebContent else { return }
         isRecoveringWebContent = true
         releaseDrawingOrientation()
@@ -623,8 +670,19 @@ final class GameViewController: UIViewController, WKNavigationDelegate, WKUIDele
         // Loading the bundled entry point recreates the UI; localStorage remains available so
         // the web app can offer to resume the saved match.
         DispatchQueue.main.async { [weak self] in
-            self?.webView.load(URLRequest(url: AppSchemeHandler.entryURL))
+            guard let self, !self.isCommittingMigration, self.webView.url != AppSchemeHandler.migrationURL else { return }
+            self.webView.load(URLRequest(url: AppSchemeHandler.entryURL))
         }
+    }
+
+    func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
+        guard isCommittingMigration, let current = migrationSeedNavigation, navigation === current else { return }
+        finishMigrationSeed(succeeded: false)
+    }
+
+    func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
+        guard isCommittingMigration, let current = migrationSeedNavigation, navigation === current else { return }
+        finishMigrationSeed(succeeded: false)
     }
 
     // MARK: - Narrow native bridge
@@ -644,6 +702,10 @@ final class GameViewController: UIViewController, WKNavigationDelegate, WKUIDele
         }
 
         switch type {
+        case "migrationSeedResult":
+            guard isCommittingMigration, pageURL == AppSchemeHandler.migrationURL,
+                  let succeeded = migration?.acceptSeedResult(payload) else { return }
+            finishMigrationSeed(succeeded: succeeded)
         case "gameAudioResume":
             SocialCoordinator.shared.resumeGameAudioFromGesture()
         case "haptic":

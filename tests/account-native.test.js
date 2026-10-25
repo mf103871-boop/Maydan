@@ -29,7 +29,7 @@ test('native-config: أصل https مطلق ومنتجا الاشتراك نفس�
 test('migrate.html يرسل كل localStorage عبر جسر maydan برسالة migrate', () => {
   const html = migrateHtml();
   assert.match(html, /localStorage\.key\(i\)/);
-  assert.match(html, /messageHandlers\.maydan\.postMessage\(\{ type: 'migrate', entries: entries \}\)/);
+  assert.match(html, /messageHandlers\.maydan\.postMessage\(\{ type: 'migrate', entries: entries, succeeded: succeeded \}\)/);
   assert.doesNotMatch(html, /maydan:/, 'لا ترشيح بالبادئة: كل مفاتيح الأصل القديم تنتقل');
   assert.match(swift['StorageMigration.swift'], /body\["type"\] as\? String == "migrate"/);
   assert.match(swift['StorageMigration.swift'], /localStorage\.getItem\(key\) === null/, 'الزرع لا يكتب فوق مفتاح موجود');
