@@ -6,7 +6,12 @@ import path from 'node:path';
 import os from 'node:os';
 import { SAMPLE_BANK } from '../../src/shared/fx/sample-bank.js';
 import { MUSIC_BANK } from '../../src/shared/fx/music-bank.js';
+import { configOf } from '../../server/design/db.mjs';
 const BASE = process.env.E2E_BASE_URL || 'http://localhost:3000';
+const PREVIEW_URL = new URL(BASE);
+const IS_LOCAL_PREVIEW = PREVIEW_URL.protocol === 'http:' && ['localhost', '127.0.0.1', '[::1]'].includes(PREVIEW_URL.hostname);
+const UI_CONFIG_URL = new URL('/api/ui-config?schemaVersion=1&registryVersion=1', BASE).href;
+const DEFAULT_UI_CONFIG = JSON.stringify(await configOf({}));
 const OUT = path.resolve(process.argv[2] || path.join(os.tmpdir(), 'maydan-e2e', 'smoke'));
 await fs.mkdir(OUT, { recursive: true });
 const results = [], errors = [], responses = [];
@@ -59,6 +64,15 @@ try {
       };
     }, { max: CUE_MAX_FRAMES, frames: DECODE_FRAMES });
     const page = await context.newPage();
+    // The file-only preview intentionally returns 503 for APIs. Supply only the
+    // real default-design contract with an empty environment: no DB, account,
+    // remote service or published design. Other API failures remain test errors;
+    // hosted targets always exercise their real design-config endpoint.
+    if (IS_LOCAL_PREVIEW) await page.route(UI_CONFIG_URL, (route) => {
+      if (route.request().method() !== 'GET') return route.continue();
+      return route.fulfill({ status: 200, contentType: 'application/json',
+        headers: { 'Cache-Control': 'no-store' }, body: DEFAULT_UI_CONFIG });
+    });
     page.setDefaultTimeout(12000);
     const cueCount = () => page.evaluate(() => window.__cues.length);
     // tap(): clicks and asserts what the tap delegate produced — at least one cue for a plain
