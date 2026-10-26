@@ -66,3 +66,49 @@ for (const base of ['/', '/Maydan/']) {
     await page.reload(); assert.equal(await page.locator('main').textContent(), 'Maydan offline shell');
   });
 }
+
+// The brand art and fonts are content-hashed files the first frame needs. They are
+// installed before activation, kept offline, and a release that reuses the same
+// hashed name takes the copy the previous release cached instead of downloading it.
+test('brand assets are installed with the shell, reused by the next release and served offline', { timeout: 30000 }, async (t) => {
+  const source = await readFile(new URL('../../public/sw.js', import.meta.url), 'utf8');
+  const PNG = Buffer.from('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==', 'base64');
+  const asset = './assets/brand/art-TESTHASH.png';
+  let release = 1, assetRequests = 0;
+  const html = `<!doctype html><html><head><meta charset="utf-8"><title>Maydan</title></head><body><img id="art" src="${asset}" alt=""><script>navigator.serviceWorker.register("./sw.js");</script></body></html>`;
+  const brandServer = http.createServer((req, res) => {
+    const pathname = new URL(req.url, 'http://localhost').pathname;
+    if (pathname === '/sw.js') {
+      res.writeHead(200, { 'content-type': 'text/javascript', 'cache-control': 'no-store' });
+      res.end(source.replaceAll('__BUILD_ID__', `brand-${release}`).replace('/*__BRAND_ASSETS__*/[]', JSON.stringify([asset])));
+      return;
+    }
+    if (pathname === '/' || pathname === '/index.html') { res.writeHead(200, { 'content-type': 'text/html', 'cache-control': 'no-store' }); res.end(html); return; }
+    if (pathname === '/assets/brand/art-TESTHASH.png') { assetRequests += 1; res.writeHead(200, { 'content-type': 'image/png', 'cache-control': 'no-store' }); res.end(PNG); return; }
+    res.writeHead(404); res.end();
+  });
+  await new Promise((resolve) => brandServer.listen(0, '127.0.0.1', resolve));
+  t.after(() => new Promise((resolve) => brandServer.close(resolve)));
+  const base = `http://127.0.0.1:${brandServer.address().port}/`;
+  const context = await browser.newContext(); t.after(() => context.close());
+  const page = await context.newPage();
+  await page.goto(base);
+  await page.waitForFunction(() => navigator.serviceWorker.controller);
+  const cached = (name) => page.evaluate(async ({ name, asset }) => !!(await (await caches.open(name)).match(new URL(asset, location.href))), { name, asset });
+  assert.equal(await cached('maydan-platform-brand-1'), true, 'installed with the first release');
+  const afterFirst = assetRequests;
+
+  release = 2;
+  await page.evaluate(async () => { await (await navigator.serviceWorker.getRegistration()).update(); });
+  // waitForFunction would take the async predicate's Promise itself as truthy: poll instead.
+  const activated = async () => { const keys = await page.evaluate(() => caches.keys()); return keys.includes('maydan-platform-brand-2') && !keys.includes('maydan-platform-brand-1'); };
+  for (let i = 0; i < 100 && !(await activated()); i++) await page.waitForTimeout(100);
+  assert.equal(await activated(), true, 'the second release activated');
+  assert.equal(await cached('maydan-platform-brand-2'), true, 'present in the second release');
+  assert.equal(assetRequests, afterFirst, 'the second release reused the cached copy');
+
+  await context.setOffline(true);
+  const response = await page.reload(); assert.equal(response.status(), 200);
+  await page.waitForFunction(() => document.getElementById('art').complete);
+  assert.equal(await page.evaluate(() => document.getElementById('art').naturalWidth), 1, 'served offline');
+});

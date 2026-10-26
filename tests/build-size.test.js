@@ -9,15 +9,18 @@ import { esbuildOptions, renderHtml, mediaVersions, ROOT } from '../scripts/lib.
 
 const MB = 1024 * 1024;
 const BUDGET = {
-  document: 4.0 * MB,   // dist/index.html خام (كان 6.2 MB قبل إخراج الأصوات)
-  gzip: 1.6 * MB,       // ما ينزل فعليًا على الهاتف
+  document: 3.25 * MB,  // dist/index.html خام (6.2 MB قبل إخراج الأصوات، 3.7 MB قبل إخراج الرسوم والخطوط)
+  gzip: 0.9 * MB,       // ما ينزل فعليًا على الهاتف
   input: 560 * 1024,    // أكبر ملف مصدر واحد داخل الحزمة (react-dom نحو 523 KB)
 };
 
 test('the shipped document and its largest inputs stay inside the size budget', { timeout: 120_000 }, async () => {
-  const result = await build({ ...esbuildOptions({ minify: true, version: '0.0.0-test', media: await mediaVersions(ROOT) }), metafile: true });
+  const result = await build({ ...esbuildOptions({ minify: true, version: '0.0.0-test', media: await mediaVersions(ROOT), assets: 'files' }), metafile: true });
   const js = result.outputFiles.find((f) => f.path.endsWith('.js')).text;
   const html = await renderHtml(js, { version: '0.0.0-test' });
+  // الرسوم والخطوط ملفات مبصومة بجانب المستند لا base64 داخله.
+  assert.ok(!/data:(image\/webp|image\/png|font\/woff2)/.test(html), 'brand art and fonts must ship as files, not data: URLs inside the document');
+  assert.ok(result.outputFiles.some((f) => /assets\/brand\/world-[A-Z0-9]+\.webp$/.test(f.path)), 'the splash art is emitted as a hashed file');
   const raw = Buffer.byteLength(html, 'utf8');
   const gzip = gzipSync(Buffer.from(html, 'utf8')).length;
   assert.ok(raw <= BUDGET.document, `index.html is ${(raw / MB).toFixed(2)} MB, budget ${(BUDGET.document / MB).toFixed(2)} MB`);

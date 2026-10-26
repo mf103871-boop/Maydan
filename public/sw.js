@@ -18,6 +18,10 @@ const MEDIA_PATH = /\/media\//;
 // installed before activation, so a new offline game can draw an unseen card.
 // The build inserts versioned local URLs after verifying every file exists.
 const FABRAKA_IMAGES = /*__FABRAKA_IMAGES__*/[];
+// The brand art and the two fonts used to be data: URLs inside the document. They
+// are now content-hashed files (assets/brand/<name>-<hash>.ext) the first frame
+// needs, so they are required for activation exactly like the document itself.
+const BRAND_ASSETS = /*__BRAND_ASSETS__*/[];
 
 // './' and './index.html' are the same 6.9 MB document. Precaching both fetched
 // it twice on install (on top of the page's own load) and stored it twice, and
@@ -65,6 +69,15 @@ self.addEventListener('install', (event) => {
           const response = await fetch(url);
           if (!response.ok || !/^image\//i.test(response.headers.get('content-type') || '')) throw new Error('Fabraka image unavailable');
           await images.put(url, response);
+        }));
+        // A hashed name never changes content: a copy kept by the previous release is
+        // reused instead of downloading the same art again with every update.
+        await Promise.all(BRAND_ASSETS.map(async (url) => {
+          const kept = await caches.match(url);
+          if (kept && kept.ok) { await cache.put(url, kept); return; }
+          const response = await fetch(url);
+          if (!response.ok) throw new Error('Brand asset unavailable');
+          await cache.put(url, response);
         }));
         await Promise.all(ASSETS.slice(1).map((url) => cache.add(url).catch(() => {})));
       })
