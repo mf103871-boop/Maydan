@@ -27,4 +27,12 @@ test('the shipped document and its largest inputs stay inside the size budget', 
   assert.ok(bytes <= BUDGET.input, `${largest} is ${(bytes / 1024).toFixed(0)} KB, budget ${(BUDGET.input / 1024).toFixed(0)} KB`);
   // الأصوات لم تعد داخل المستند: ملفات صغيرة تُجلب عند الحاجة.
   assert.ok(!inputs.some(([file, size]) => file.endsWith('sample-bank.js') && size > 8 * 1024), 'the sound bank manifest must not embed audio data');
+  // ملف JSON يُستورد مرة بـ`with { type: 'json' }` ومرة بدونها يصير وحدتين منفصلتين في
+  // الحزمة: نسختان كاملتان من البيانات نفسها (صور فبركة شُحنت مرتين هكذا).
+  const seen = new Map();
+  for (const file of Object.keys(result.metafile.inputs)) {
+    const plain = file.replace(/ with \{.*\}$/, '');
+    assert.ok(!seen.has(plain), `${plain} is bundled twice (${seen.get(plain)} and ${file}); import it the same way everywhere`);
+    seen.set(plain, file);
+  }
 });

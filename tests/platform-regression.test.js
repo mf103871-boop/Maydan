@@ -2,7 +2,7 @@
 // router.js نقي بما يكفي ليُستورد في Node فوق متصفح وهمي صغير.
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { readFileSync } from 'node:fs';
+import { readFileSync, readdirSync } from 'node:fs';
 import path from 'node:path';
 
 // ── متصفح وهمي: سجل مُدخلات + hashchange غير متزامن كما في المتصفح ──────────
@@ -302,6 +302,22 @@ test('native edge and accessibility Back enter the mounted router bridge instead
 
 // ── فحوص مصدرية للإصلاحات غير القابلة للتشغيل في Node ───────────────────────
 const read = (rel) => readFileSync(path.resolve(rel), 'utf8');
+
+// غلاف iOS لا ينفّذ runJavaScriptConfirmPanel/AlertPanel/TextInputPanel، فيعامل WKWebView
+// confirm كـ«إلغاء» ويتجاهل alert وprompt: زرّا المسح في بَديهة لم يفعلا شيئًا على iPhone.
+test('shipped code uses in-app dialogs, never the native JavaScript panels the iOS shell lacks', () => {
+  const native = read('ios/Maydan/GameViewController.swift');
+  assert.doesNotMatch(native, /runJavaScript(Confirm|Alert|TextInput)Panel/, 'إن نُفّذت الألواح في الغلاف فحدّث هذا الاختبار');
+  const files = [];
+  const walk = (dir) => { for (const entry of readdirSync(dir, { withFileTypes: true })) {
+    const full = path.join(dir, entry.name);
+    if (entry.isDirectory()) { if (!['data', 'vendor'].includes(entry.name)) walk(full); }
+    else if (/\.(js|jsx)$/.test(entry.name)) files.push(full);
+  } };
+  walk(path.resolve('src'));
+  const offenders = files.filter((file) => /(^|[^.\w])(window\.)?(confirm|alert|prompt)\(\s*["'`]/.test(readFileSync(file, 'utf8')));
+  assert.deepEqual(offenders.map((file) => path.relative(process.cwd(), file)), []);
+});
 
 test('نافذة «لاعب جديد» لا تعيد التركيز مع كل حرف', () => {
   const src = read('src/shared/ui/components.jsx');

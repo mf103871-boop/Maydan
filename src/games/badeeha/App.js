@@ -1306,6 +1306,9 @@ function MaydanBeta({ api } = {}) {
     [showScore, setShowScore] = useState(!1),
     [confirmEnd, setConfirmEnd] = useState(!1),
     [reportQuestion, setReportQuestion] = useState(null),
+    // تأكيد المسح داخل اللعبة: window.confirm لا يظهر في غلاف iOS (WKWebView بلا
+    // runJavaScriptConfirmPanel يعامله كـ«إلغاء») فكان زرّا المسح لا يفعلان شيئًا هناك.
+    [pendingClear, setPendingClear] = useState(null),
     [lastAction, setLastAction] = useState(null),
     [notice, setNotice] = useState(""),
     deadlineRef = useRef(null),
@@ -1455,8 +1458,13 @@ function MaydanBeta({ api } = {}) {
     if (!betaNativeMessage({ type: "share", title, text })) {
       try {
         if (navigator.share) {
-          await navigator.share({ title, text });
-          return;
+          try {
+            await navigator.share({ title, text });
+            return;
+          } catch (error) {
+            // إلغاء اللاعب نهائي؛ أي رفض آخر (NotAllowedError على سطح المكتب مثلًا) يجرّب النسخ.
+            if (error && error.name === "AbortError") return;
+          }
         }
         if (navigator.clipboard && navigator.clipboard.writeText) {
           (await navigator.clipboard.writeText(text), toast("تم نسخ النص"));
@@ -1696,7 +1704,9 @@ function MaydanBeta({ api } = {}) {
   useEffect(
     () => (
       (window.maydanBack = () =>
-        reportQuestion
+        pendingClear
+          ? (setPendingClear(null), !0)
+          : reportQuestion
           ? (setReportQuestion(null), !0)
           : showScore
             ? (setShowScore(!1), !0)
@@ -1713,7 +1723,7 @@ function MaydanBeta({ api } = {}) {
         delete window.maydanBack;
       }
     ),
-    [screen, revealed, reportQuestion, showScore, showRules, questionBaseTeams],
+    [screen, revealed, reportQuestion, pendingClear, showScore, showRules, questionBaseTeams],
   );
   function setTeamCount(count) {
     (setTeams((existing) =>
@@ -2150,12 +2160,17 @@ ${record.answered} من ${record.total} سؤالًا`,
     shareText("تقارير أسئلة بَديهة", text);
   }
   function clearQuestionHistory() {
-    window.confirm("هل تريد تصفير سجل الأسئلة التي لُعبت؟") &&
-      (setHistory({}), saveKey(MAYDAN_BETA_KEYS.history, {}), toast("تم تصفير سجل الأسئلة"));
+    setPendingClear("history");
   }
   function clearResults() {
-    window.confirm("هل تريد مسح سجل النتائج؟") &&
-      (setResults([]), saveKey(MAYDAN_BETA_KEYS.results, []), toast("تم مسح سجل النتائج"));
+    setPendingClear("results");
+  }
+  function confirmClear() {
+    pendingClear === "history"
+      ? (setHistory({}), saveKey(MAYDAN_BETA_KEYS.history, {}), toast("تم تصفير سجل الأسئلة"))
+      : pendingClear === "results" &&
+        (setResults([]), saveKey(MAYDAN_BETA_KEYS.results, []), toast("تم مسح سجل النتائج"));
+    setPendingClear(null);
   }
   function SoundButton() {
     // شريط المنصة يعرض زر كتم يتحكم بالإعداد نفسه؛ زر ثانٍ هنا كان يناقضه.
@@ -3599,6 +3614,28 @@ ${record.answered} من ${record.total} سؤالًا`,
       ),
     );
   }
+  function ClearModal() {
+    const history = pendingClear === "history";
+    return hBeta(
+      MaydanModal,
+      { title: history ? "تصفير سجل الأسئلة" : "مسح سجل النتائج", onClose: () => setPendingClear(null) },
+      hBeta("p", { className: "m-muted" }, history ? "هل تريد تصفير سجل الأسئلة التي لُعبت؟" : "هل تريد مسح سجل النتائج؟"),
+      hBeta(
+        "div",
+        { className: "m-report-reasons" },
+        hBeta(
+          "button",
+          { "data-design-id": history ? "clear-history" : "clear-results", type: "button", className: "m-danger", onClick: confirmClear },
+          history ? "نعم، صفّر السجل" : "نعم، امسح النتائج",
+        ),
+        hBeta(
+          "button",
+          { "data-design-id": "cancel", "data-design-required": "true", type: "button", className: "m-secondary", onClick: () => setPendingClear(null) },
+          "لا",
+        ),
+      ),
+    );
+  }
   let content = null;
   return (
     screen === "home"
@@ -3628,6 +3665,7 @@ ${record.answered} من ${record.total} سؤالًا`,
       showRules && RulesModal(),
       showScore && ScoreModal(),
       reportQuestion && ReportModal(),
+      pendingClear && ClearModal(),
       notice && hBeta("div", { className: `m-toast ${noticeLeaving ? "is-leaving" : ""}`, role: "status" }, notice),
       !hydrated &&
         hBeta("div", { className: "m-hydrating", "aria-label": "جارٍ استعادة البيانات" }, "…"),

@@ -1,6 +1,6 @@
-import questions from '../../data/games/fabraka/questions.json';
-import pictures from '../../data/games/fabraka/pictures.json';
-import personal from '../../data/games/fabraka/personal.json';
+import questions from '../../data/games/fabraka/questions.json' with { type: 'json' };
+import pictures from '../../data/games/fabraka/pictures.json' with { type: 'json' };
+import personal from '../../data/games/fabraka/personal.json' with { type: 'json' };
 import { normalizeOptions } from './logic.js';
 export { questions, pictures, personal };
 export const categories = [...new Set(questions.map((q) => q.category))].sort((a, b) => a.localeCompare(b, 'ar'));

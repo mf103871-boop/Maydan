@@ -109,6 +109,9 @@ self.addEventListener('fetch', (event) => {
   if (/^\/(?:pricing|refunds)(?:\/|\.html)?$/.test(pathname)
       || /^\/(?:pricing|refunds)\/index\.html$/.test(pathname)
       || pathname === '/commerce.css') return;
+  // The Worker redirects /studio to the owner-only editor under /api/studio/. Answering
+  // that navigation with the cached game document opened the game instead.
+  if (pathname === '/studio' || pathname.startsWith('/studio/')) return;
 
   // Navigations: serve the cached document immediately (a launch from the home
   // screen must not wait on the network, or on there being one), then refresh

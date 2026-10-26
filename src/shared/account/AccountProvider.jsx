@@ -22,6 +22,9 @@ import { rememberProfileReturn, consumeProfileReturn } from './return-path.js';
 import { beginAuthAttempt, currentAuthAttempt, clearAuthAttempt } from './attempt.js';
 
 const EMPTY = Object.freeze({});
+// بديل ثابت حين لا يوفّر المزوّد تنبيهات: دالة جديدة في كل رسم كانت تعيد بناء كل
+// استدعاء وأثر يعتمد على toast في كل رسم.
+const NO_TOAST = () => {};
 // أوراق النظام (Apple، المتجر) قد تنتظر المستخدم طويلًا: مهلة أطول من مهلة الجسر الافتراضية.
 const NATIVE_SHEET_TIMEOUT = 10 * 60_000;
 const codeOf = (error) => (error && error.code) || 'NETWORK';
@@ -38,7 +41,7 @@ function listOf(result, key) {
 
 export function AccountProvider({ children }) {
   const platformValue = usePlatform();
-  const toast = (platformValue && platformValue.toast) || (() => {});
+  const toast = (platformValue && platformValue.toast) || NO_TOAST;
   const route = useRoute();
 
   const native = useMemo(() => isNativeShell(), []);
