@@ -2,10 +2,11 @@
 import * as meenfina from './room-model.mjs';
 import * as fabraka from './fabraka-model.mjs';
 import * as ersomha from './ersomha-model.mjs';
+import * as badeeha from './badeeha-model.mjs';
 export { member, memberOrNull, RoomError, fail } from './room-model.mjs';
-const models = { meenfina, fabraka, ersomha };
+const models = { meenfina, fabraka, ersomha, badeeha };
 const model = room => models[room.game || 'meenfina'] || meenfina.fail('GAME');
-export const roomCapacity = room => room.game === 'fabraka' || room.game === 'ersomha' ? 8 : 12;
+export const roomCapacity = room => room.game === 'badeeha' ? 4 : room.game === 'fabraka' || room.game === 'ersomha' ? 8 : 12;
 export function createRoom(code, input, now) {
   const game = input.game ?? 'meenfina';
   if (!Object.hasOwn(models, game)) meenfina.fail('GAME');

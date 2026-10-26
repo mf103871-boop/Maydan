@@ -1,7 +1,7 @@
 import statements from '../src/data/games/meenfina/statements.json' with { type: 'json' };
 import { createRoom, joinRoom, connected, leaveRoom, action, tick, snapshot, nextAlarm, member, roomCapacity, RoomError, fail } from './game-model.mjs';
 import { buildFabrakaDeck } from './fabraka-content.mjs';
-import { credentials, readJson, json, errorResponse, shuffled } from './protocol.mjs';
+import { credentials, readJson, json, errorResponse, shuffled, createLimit } from './protocol.mjs';
 import { bindSeatAccount, prepareRoomStats } from './room-stats.mjs';
 import { recordOnlineResult, profileSummaries } from './profiles/db.mjs';
 import { consumeRoomTrial } from './accounts/router.mjs';
@@ -312,7 +312,7 @@ export class Room {
         const url = new URL(request.url);
         const endpoint = url.pathname.split('/').at(-1);
         if (request.method === 'POST' && endpoint === 'create') {
-          const input = await credentials(await readJson(request));
+          const input = await credentials(await readJson(request, 4096, createLimit));
           if (input.game === 'ersomha') {
             if (input.capabilities?.ersomha !== ERSOMHA_PROTOCOL) fail('CONFIG', 409);
             if (typeof input.accountUserId !== 'string' || !input.accountUserId) fail('AUTH_REQUIRED', 401);
@@ -363,7 +363,7 @@ export class Room {
           const {accountUserId}=await readJson(request);
           if(typeof accountUserId!=='string'||!this.room.members.some(m=>!m.left&&m.accountUserId===accountUserId))fail('NOT_FOUND',404);
           if(this.room.phase!=='lobby')fail('STARTED',409);
-          if(this.room.members.filter(m=>!m.left).length >= roomCapacity(this.room))fail(this.room.game === 'fabraka' ? 'FULL_FABRAKA' : this.room.game === 'ersomha' ? 'FULL_ERSOMHA' : 'FULL',409);
+          if(this.room.members.filter(m=>!m.left).length >= roomCapacity(this.room))fail(this.room.game === 'fabraka' ? 'FULL_FABRAKA' : this.room.game === 'ersomha' ? 'FULL_ERSOMHA' : this.room.game === 'badeeha' ? 'FULL_BADEEHA' : 'FULL',409);
           return json({game:this.room.game||'meenfina',expiresAt:this.room.expiresAt});
         }
         if (request.method === 'POST' && endpoint === 'join') {
@@ -484,7 +484,7 @@ export class Room {
           await this.drawingCommand(ws, a.id, command); return;
         }
         const candidate = structuredClone(this.room);
-        const deck = command.type === 'start' && candidate.game !== 'ersomha' ? (candidate.game === 'fabraka' ? buildFabrakaDeck(candidate) : meenfinaDeck(candidate)) : [];
+        const deck = command.type === 'start' && !['ersomha', 'badeeha'].includes(candidate.game) ? (candidate.game === 'fabraka' ? buildFabrakaDeck(candidate) : meenfinaDeck(candidate)) : [];
         action(candidate, a.id, command, now, deck);
         if (candidate.game === 'ersomha' && command.type === 'start') attemptedStart = candidate;
         if (candidate.game === 'ersomha') await this.prepareErsomha(candidate);

@@ -125,7 +125,7 @@ async function pickDemoCategories(page, check) {
   await p.waitForSelector('.splash', { state: 'detached', timeout: 8000 });
   await p.evaluate(() => { location.hash = '#/game/badeeha'; });
   await p.waitForSelector('.details-hero h1');
-  await tapText('العب');
+  await tapText('العب على جهاز واحد');
   await p.waitForSelector('.game-frame .m-root .m-home');
   await tap('.m-hero-cta');
   await p.waitForSelector('.m-category-pick');

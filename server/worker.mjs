@@ -1,5 +1,5 @@
 import { Room } from './room.mjs';
-import { readJson, json, errorResponse, sha256, credentials } from './protocol.mjs';
+import { readJson, json, errorResponse, sha256, credentials, createLimit } from './protocol.mjs';
 import { fail } from './room-model.mjs';
 import { isPublicAccountPath, roomGate, routeAccounts } from './accounts/router.mjs';
 import { cleanup } from './accounts/cleanup.mjs';
@@ -144,7 +144,7 @@ export async function routeRequest(request, env, context) {
       // the limiter keeps discouraging code guessing.
       charged = create ? kind : null;
       if (create) {
-        const input = await readJson(request);
+        const input = await readJson(request, 4096, createLimit);
         await credentials(input); // Validate before allocating a room.
         if (input.game === 'ersomha' && input.capabilities?.ersomha !== ERSOMHA_PROTOCOL) fail('CONFIG', 409);
         // Check eligibility now, but consume the trial only at the room's first

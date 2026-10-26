@@ -43,12 +43,12 @@ export function AudioCredits({ credits = AUDIO_CREDITS }) {
         <ul className="credits-list">
           {SELECTED_AUDIO.sources.instrument_libraries.map((source) => (
             <li key={source.name}>
-              <a href={source.source_url} target="_blank" rel="noreferrer noopener">{source.name}</a>
+              <a data-design-id="source-link" href={source.source_url} target="_blank" rel="noreferrer noopener">{source.name}</a>
               <span className="muted"> — {source.creator} · CC0 1.0</span>
             </li>
           ))}
         </ul>
-        <p>العبارات صوت آلي تجريبي باستخدام <a href="https://huggingface.co/silma-ai/silma-tts" target="_blank" rel="noreferrer noopener">SILMA TTS</a> (أوزان Apache-2.0 وكود MIT)، وليست تسجيل مؤدٍ بشري. النموذج موثق للفصحى والإنجليزية؛ النطق المحلي يحتاج استماعك ولم يُعتمد للنشر العام. يمكن إيقاف العبارات من إعدادات الصوت.</p>
+        <p>العبارات صوت آلي تجريبي باستخدام <a data-design-id="source-link" href="https://huggingface.co/silma-ai/silma-tts" target="_blank" rel="noreferrer noopener">SILMA TTS</a> (أوزان Apache-2.0 وكود MIT)، وليست تسجيل مؤدٍ بشري. النموذج موثق للفصحى والإنجليزية؛ النطق المحلي يحتاج استماعك ولم يُعتمد للنشر العام. يمكن إيقاف العبارات من إعدادات الصوت.</p>
       </details>
     </div>
   );

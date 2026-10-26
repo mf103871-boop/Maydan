@@ -55,8 +55,8 @@ const lockedCounts = async () => {
   // شاشة التفاصيل وزرها فعلًا بدل مهلة ثابتة.
   await go('#/game/badeeha', 0);
   await page.waitForFunction(() => location.hash === '#/game/badeeha'
-    && [...document.querySelectorAll('button')].some((b) => !b.disabled && b.offsetParent !== null && b.textContent.trim() === 'العب'));
-  await tap('العب'); await page.waitForSelector('.m-home');
+    && [...document.querySelectorAll('button')].some((b) => !b.disabled && b.offsetParent !== null && b.textContent.trim() === 'العب على جهاز واحد'));
+  await tap('العب على جهاز واحد'); await page.waitForSelector('.m-home');
   await page.evaluate(() => document.querySelector('.m-hero-cta').click()); await page.waitForSelector('.m-category-pick'); await page.waitForTimeout(500);
   return page.evaluate(() => ({ locked: document.querySelectorAll('.m-category-pick.is-locked').length, total: document.querySelectorAll('.m-category-pick').length }));
 };

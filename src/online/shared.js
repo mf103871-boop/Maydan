@@ -2,7 +2,11 @@
 export const PROTOCOL = 1;
 export const FABRAKA_PROTOCOL = 3;
 export const ERSOMHA_PROTOCOL = 1;
-export const GAME_PROTOCOLS = Object.freeze({ meenfina: PROTOCOL, fabraka: FABRAKA_PROTOCOL, ersomha: ERSOMHA_PROTOCOL });
+export const BADEEHA_PROTOCOL = 1;
+export const GAME_PROTOCOLS = Object.freeze({ meenfina: PROTOCOL, fabraka: FABRAKA_PROTOCOL, ersomha: ERSOMHA_PROTOCOL, badeeha: BADEEHA_PROTOCOL });
+// بَديهة أونلاين: جوال لكل فريق (من فريقين إلى أربعة)، والمؤقت كما في اللعبة على جهاز واحد.
+export const BADEEHA_MAX_TEAMS = 4;
+export const BADEEHA_TIMERS = Object.freeze([30, 60, 90]);
 export const ROOM_CAPABILITIES = Object.freeze({ ersomha: ERSOMHA_PROTOCOL });
 // تفاعلات سريعة داخل الغرفة: طقم رموز ثابت بلا نص حر، يُبث للحاضرين ولا يُحفظ.
 // رسالة `reaction` جديدة لا تكسر عميلًا أقدم (يتجاهل الأنواع التي لا يعرفها)، فلا يُرفع البروتوكول.
@@ -27,10 +31,11 @@ export const ONLINE_GAMES = {
   meenfina: { name: 'مين فينا؟', min: 3, max: 12 },
   fabraka: { name: 'فبركة', min: 2, max: 8 },
   ersomha: { name: 'ارسمها', min: 2, max: 8 },
+  badeeha: { name: 'بَديهة', min: 2, max: 4 },
 };
 // A personal truth round needs its owner and at least two writers. The other
 // Fabraka modes keep a real choice for two players by adding house decoys.
-export const minimumOnlinePlayers = (game, settings) => game === 'ersomha' || (game === 'fabraka' && settings?.mode !== 'friends') ? 2 : 3;
+export const minimumOnlinePlayers = (game, settings) => game === 'ersomha' || game === 'badeeha' || (game === 'fabraka' && settings?.mode !== 'friends') ? 2 : 3;
 export const MIN_PLAYERS = 3;
 export const MAX_PLAYERS = 12;
 export const ROUND_OPTIONS = [5, 8, 12];
@@ -85,6 +90,11 @@ export const ERRORS = {
   CONTENT_REJECTED: 'يحتوي النص على محتوى غير مسموح. عدّله وحاول مجددًا.',
   FULL: 'الغرفة ممتلئة؛ الحد الأعلى ١٢ لاعبًا.',
   FULL_FABRAKA: 'غرفة فبركة ممتلئة؛ الحد الأعلى ٨ لاعبين.',
+  FULL_BADEEHA: 'غرفة بَديهة ممتلئة؛ الحد الأعلى أربعة فرق، جوال لكل فريق.',
+  NOT_READY_BADEEHA: 'نحتاج فريقين على الأقل (جوال لكل فريق)، متصلين وجاهزين جميعًا.',
+  TURN: 'هذا ليس دور فريقك. المضيف أو الفريق صاحب الدور يختار.',
+  CELL: 'لُعب هذا السؤال أو لم يعد في اللوحة.',
+  TOOL_USED: 'استعمل فريقك هذه الوسيلة في هذه المباراة.',
   FULL_ERSOMHA: 'غرفة ارسمها ممتلئة؛ الحد الأعلى ٨ لاعبين.',
   GAME: 'هذه اللعبة غير متاحة للغرف. اختر لعبة من قائمة غرف ميدان.',
   UPDATE_REQUIRED: 'هذه الغرفة تحتاج إصدارًا أحدث من ميدان. حدّث التطبيق ثم افتح الدعوة مجددًا.',

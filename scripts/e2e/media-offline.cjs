@@ -99,7 +99,7 @@ async function pickDemoCategories(page) {
   await p.waitForSelector('.splash', { state: 'detached' });
   await p.evaluate(() => { location.hash = '#/game/badeeha'; });
   await p.waitForSelector('.details-hero h1');
-  await tapText('العب');
+  await tapText('العب على جهاز واحد');
   await p.waitForSelector('.game-frame .m-root .m-home');
   await p.click('.m-hero-cta');
   await p.waitForSelector('.m-category-pick');

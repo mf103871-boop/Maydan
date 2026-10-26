@@ -11,7 +11,11 @@ export function errorResponse(error) {
   if (!(error instanceof RoomError)) return json({ error: 'INTERNAL' }, 500);
   return json(error.detail ? { error: error.code, detail: error.detail } : { error: error.code }, error.status);
 }
-export async function readJson(request, max = 2048) {
+// A Badeeha room carries its deck of question IDs (up to sixty, about 2.5 KB); every
+// other creation keeps the tight limit.
+export const createLimit = (input) => (input.game === 'badeeha' ? 4096 : 2048);
+// limitOf: a tighter limit decided by the parsed body (still read at most max bytes).
+export async function readJson(request, max = 2048, limitOf = null) {
   if (!request.headers.get('content-type')?.toLowerCase().startsWith('application/json')) fail('INVALID', 415);
   const reader = request.body?.getReader();
   if (!reader) fail('INVALID');
@@ -28,6 +32,7 @@ export async function readJson(request, max = 2048) {
   try {
     const value = JSON.parse(new TextDecoder().decode(bytes));
     if (!value || Array.isArray(value) || typeof value !== 'object') fail('INVALID');
+    if (limitOf && length > limitOf(value)) fail('INVALID', 413);
     return value;
   } catch (error) { if (error instanceof RoomError) throw error; fail('INVALID'); }
 }

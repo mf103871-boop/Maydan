@@ -19,6 +19,9 @@ import { FabrakaSettings, FabrakaRules, FabrakaMatch, FABRAKA_MODES, fabrakaTopi
 import { ErsomhaSettings, ErsomhaRules, ErsomhaLobbySettings, ErsomhaMatch } from './Ersomha.jsx';
 import { ErsomhaIcon } from '../games/ersomha/icon.jsx';
 import { normalizeErsomhaOptions, enoughErsomhaCategories } from '../games/ersomha/options.js';
+import { BadeehaSettings, BadeehaRules, BadeehaLobbyInfo, BadeehaMatch, normalizeBadeehaOptions, buildBadeehaRoom, badeehaReady } from './Badeeha.jsx';
+import { CATS } from '../data/categories/index.js';
+import { readBadeehaState } from '../games/badeeha/persistence.js';
 
 const SERVER = resolveServerUrl(typeof __MAYDAN_ROOMS_URL__ !== 'undefined' && __MAYDAN_ROOMS_URL__ || config.serverUrl, typeof location === 'undefined' ? '' : location.origin);
 const arabic = arabicNumber;
@@ -32,6 +35,7 @@ export function Entry({ initialCode = '', initialGame = 'meenfina', onJoined }) 
   const [game, setGame] = useState(ONLINE_GAMES[initialGame] ? initialGame : 'meenfina');
   const [fabrakaSettings, setFabrakaSettings] = useState(() => normalizeContentOptions(readSaved(SERVER, 'fabrakaSettings')));
   const [ersomhaSettings, setErsomhaSettings] = useState(() => normalizeErsomhaOptions(readSaved(SERVER, 'ersomhaSettings')));
+  const [badeehaSettings, setBadeehaSettings] = useState(() => normalizeBadeehaOptions(readSaved(SERVER, 'badeehaSettings')));
   const [name, setName] = useState(() => fallback?.name || readSaved(SERVER, 'profile')?.name || Array.from(account.user?.name?.normalize('NFKC').trim().replace(/\s+/g, ' ') || '').slice(0, 20).join(''));
   const [avatar, setAvatar] = useState(() => fallback?.avatar ?? readSaved(SERVER, 'profile')?.avatar ?? 0);
   const [code, setCode] = useState(initialCode);
@@ -41,7 +45,7 @@ export function Entry({ initialCode = '', initialGame = 'meenfina', onJoined }) 
   const credentialsRef = useRef(fallback?.session || null);
   const lastRoom = readSaved(SERVER, 'lastRoom');
   // The server rejects these settings with QUESTIONS; keep the button honest instead.
-  const topicsReady = mode !== 'create' || (game === 'fabraka' ? fabrakaTopics(fabrakaSettings).enough : game === 'ersomha' ? enoughErsomhaCategories(ersomhaSettings) : true);
+  const topicsReady = mode !== 'create' || (game === 'fabraka' ? fabrakaTopics(fabrakaSettings).enough : game === 'ersomha' ? enoughErsomhaCategories(ersomhaSettings) : game === 'badeeha' ? badeehaSettings.categories.length === 6 && badeehaReady(badeehaSettings).ok : true);
   async function submit(event) {
     event.preventDefault(); if (busy) return;
     setError('');
@@ -52,6 +56,11 @@ export function Entry({ initialCode = '', initialGame = 'meenfina', onJoined }) 
     // Waiting for friends never consumes the trial. It is marked only after
     // the authoritative server confirms the first actual match start.
     if (mode === 'create' && account.gameAccess(game) === 'locked') { account.openPaywall({ reason: 'room', game }); return; }
+    // جولة بَديهة تُبنى على جوال المضيف من بنكه وسجلّه، فتُفضَّل الأسئلة التي لم تُلعب بعد.
+    let badeehaRoom = null;
+    if (mode === 'create' && game === 'badeeha') {
+      try { badeehaRoom = buildBadeehaRoom(badeehaSettings, readBadeehaState(CATS).history); } catch { setError('QUESTIONS'); return; }
+    }
     setBusy(true);
     try {
       const pendingKey = mode === 'create' ? (game === 'meenfina' ? 'pendingCreate' : `pendingCreate:${game}`) : `pendingJoin:${normalized}`;
@@ -61,7 +70,7 @@ export function Entry({ initialCode = '', initialGame = 'meenfina', onJoined }) 
       save(SERVER, pendingKey, session); // Persist before HTTP so a retry can reclaim the same seat.
       const result = await post(SERVER, mode === 'create' ? '/api/rooms' : `/api/rooms/${normalized}/join`, { ...session, name: name.trim(), avatar, rounds, capabilities: ROOM_CAPABILITIES,
         // معرّف الجهاز يحتسب الغرفة المجانية لغير المسجّل على الخادم؛ الدخول برمز لا يحتاجه.
-        ...(mode === 'create' ? { game, deviceId: deviceId(), ...(game === 'fabraka' ? { settings: fabrakaSettings } : game === 'ersomha' ? { settings: ersomhaSettings } : {}) } : {}) }, { headers: account.authHeaders() });
+        ...(mode === 'create' ? { game, deviceId: deviceId(), ...(game === 'fabraka' ? { settings: fabrakaSettings } : game === 'ersomha' ? { settings: ersomhaSettings } : game === 'badeeha' ? { settings: badeehaRoom } : {}) } : {}) }, { headers: account.authHeaders() });
       const stored = save(SERVER, result.code, session);
       if (account.user?.id) {
         save(SERVER, `roomOwner:${result.code}`, account.user.id);
@@ -84,7 +93,7 @@ export function Entry({ initialCode = '', initialGame = 'meenfina', onJoined }) 
       <div key={mode} className="online-intro-copy">
         <span className="online-label">{mode === 'create' ? ONLINE_GAMES[game].name : 'غرف ميدان'} · تجربة جماعية</span>
         <h1>اللّمّة وحدة، وكل واحد بجواله</h1>
-        <p>{mode === 'join' ? 'رمز واحد يجمعكم في نفس اللعبة' : game === 'ersomha' ? '٢–٨ لاعبين · رسم حي · تخمين معًا' : game === 'fabraka' ? '٢–٨ لاعبين · كتابة متزامنة · تصويت سري' : '٣–١٢ لاعبًا · تصويت سري · نفس السؤال للجميع'}</p>
+        <p>{mode === 'join' ? 'رمز واحد يجمعكم في نفس اللعبة' : game === 'ersomha' ? '٢–٨ لاعبين · رسم حي · تخمين معًا' : game === 'fabraka' ? '٢–٨ لاعبين · كتابة متزامنة · تصويت سري' : game === 'badeeha' ? '٢–٤ فرق · جوال لكل فريق · لوحة أسئلة ووسائل' : '٣–١٢ لاعبًا · تصويت سري · نفس السؤال للجميع'}</p>
       </div>
     </Card>
     {!SERVER && <p className="online-notice" role="status">الغرف غير متاحة بعد. تقدر تلعب ألعاب ميدان على جهاز واحد من الرئيسية.</p>}
@@ -101,8 +110,10 @@ export function Entry({ initialCode = '', initialGame = 'meenfina', onJoined }) 
         {mode === 'join' ? <label className="online-field">رمز الغرفة<input data-design-id="room-code" className="online-code-input" dir="ltr" inputMode="numeric" autoComplete="off" maxLength={8} value={code} onChange={(e) => { setCode(normalizeCode(e.target.value)); credentialsRef.current = null; }} placeholder="123456" required /></label>
           : game === 'fabraka' ? <FabrakaSettings value={fabrakaSettings} disabled={busy} onChange={(next) => { setFabrakaSettings(next); save(SERVER, 'fabrakaSettings', next); }} />
           : game === 'ersomha' ? <ErsomhaSettings value={ersomhaSettings} disabled={busy} onChange={(next) => { setErsomhaSettings(next); save(SERVER, 'ersomhaSettings', next); }} />
+          : game === 'badeeha' ? <BadeehaSettings value={badeehaSettings} disabled={busy} onChange={(next) => { setBadeehaSettings(next); save(SERVER, 'badeehaSettings', next); }} />
           : <label className="online-field">عدد الجولات<select data-design-id="round-count" value={rounds} onChange={(e) => setRounds(Number(e.target.value))}>{ROUND_OPTIONS.map((n) => <option key={n} value={n}>{arabic(n)} جولات</option>)}</select></label>}
         {mode === 'create' && game === 'fabraka' && <FabrakaRules />}
+        {mode === 'create' && game === 'badeeha' && <BadeehaRules />}
         {mode === 'create' && game === 'ersomha' && <><ErsomhaRules />{!account.user?.id && <p className="online-notice" role="status">ارسمها تحتاج حسابًا ليُحفظ تاريخ الأفكار عبر أجهزتك. <Button size="sm" onClick={() => navigate('/settings')}>تسجيل الدخول</Button></p>}</>}
         <ErrorNotice code={error} />
         <Button data-design-id="start" data-design-required="true" type="submit" variant="primary" size="lg" full disabled={!SERVER || busy || !topicsReady} loading={busy}>{mode === 'create' ? 'أنشئ الغرفة' : 'ادخل الغرفة'}</Button>
@@ -157,6 +168,7 @@ export function Lobby({ state, me, isHost, disabled, act }) {
     </Card>
     {state.game === 'fabraka' ? <Card className="stack"><h2>فبركة · {FABRAKA_MODES[state.settings.mode]}</h2><p>{arabic(state.rounds)} جولات · {state.settings.writeSeconds ? `${arabic(state.settings.writeSeconds)} ثانية للكتابة` : 'كتابة براحتنا'} · {state.settings.discussionSeconds ? `${arabic(state.settings.discussionSeconds)} ثانية للنقاش` : 'بدون نقاش'} · ٣٠ ثانية للتصويت.</p><FabrakaRules /></Card>
       : state.game === 'ersomha' ? <ErsomhaLobbySettings state={state} isHost={isHost} disabled={disabled} act={act} />
+      : state.game === 'badeeha' ? <BadeehaLobbyInfo state={state} />
       : <p className="online-footnote">{arabic(state.rounds)} جولات · ٣٠ ثانية لكل تصويت · الأعلى أصواتًا يكسب نقطة، والتعادل يحتسب للجميع.</p>}
     {kickTarget && <ConfirmModal title={`تزيل ${kickTarget.name}؟`} message="يخرج من الغرفة ولا يستطيع العودة إليها بهذا الرمز." confirmLabel="إزالة" cancelLabel="إبقاؤه" onConfirm={() => { const target = kickTarget; setKickTarget(null); act('kick', { targetId: target.id }); }} onCancel={() => setKickTarget(null)} />}
   </section>;
@@ -380,6 +392,7 @@ function ConnectedRoom({ code, session, stored, onLeft }) {
       : state && <>{spectating && <p className="online-notice" role="status">انضممت بعد بداية المباراة: تتفرج الآن، وتلعب معهم من المباراة القادمة.</p>}{state.phase === 'lobby' ? <Lobby state={state} me={me} isHost={isHost} disabled={disabled} act={act} /> : state.game === 'fabraka'
         ? <FabrakaMatch state={state} me={me} disabled={disabled} isHost={isHost} act={act} clockOffset={clientRef.current?.clockOffset || 0} spectating={spectating} />
         : state.game === 'ersomha' ? <ErsomhaMatch state={state} me={me} disabled={disabled} isHost={isHost} act={act} client={clientRef.current} status={status} clockOffset={clientRef.current?.clockOffset || 0} drawerReady={!lamma?.activeCall || (lamma.activeCall._ownerId === account.user?.id && lamma.media?.userId === account.user?.id && lamma.media?.muted === true)} onReport={['draw', 'result'].includes(state.phase) ? reportDrawing : undefined} />
+        : state.game === 'badeeha' ? <BadeehaMatch state={state} me={me} disabled={disabled} isHost={isHost} act={act} clockOffset={clientRef.current?.clockOffset || 0} spectating={spectating} />
         : <Match state={state} disabled={disabled} isHost={isHost} act={act} clockOffset={clientRef.current?.clockOffset || 0} spectating={spectating} />}</>)}
     {watchers.length > 0 && !outdated && status !== 'ended' && <Card className="stack online-watchers"><p className="online-footnote">يتفرجون الآن ويلعبون من المباراة القادمة: {watchers.map((m) => m.name).join('، ')}</p>
       {isHost && watchers.filter((m) => m.id !== me?.id).map((m) => <Button key={m.id} size="sm" variant="ghost" disabled={disabled} onClick={() => act('kick', { targetId: m.id })}>إزالة {m.name}</Button>)}</Card>}

@@ -49,7 +49,7 @@ export const DESIGN_RENDERED_NODE_IDS = Object.freeze({
   "fabraka.local.reveal": Object.freeze(["header","pause","question","reveal","reveal-card"]),
   "fabraka.local.roundEnd": Object.freeze(["continue","header","pause","round-scores"]),
   "fabraka.local.over": Object.freeze(["exit","options","podium","restart"]),
-  "online.entry": Object.freeze(["avatar-choice","avatar-picker","categories-reset","category-choice","cycles","difficulty","entry","entry-create","entry-join","entry-mode","game-choice.ersomha","game-choice.fabraka","game-choice.meenfina","game-picker","hero","name-input","room-code","start"]),
+  "online.entry": Object.freeze(["avatar-choice","avatar-picker","categories-reset","category-choice","cycles","difficulty","entry","entry-create","entry-join","entry-mode","game-choice.badeeha","game-choice.ersomha","game-choice.fabraka","game-choice.meenfina","game-picker","hero","name-input","room-code","start"]),
   "online.lobby": Object.freeze(["allow-replay","categories-reset","category-choice","cycles","difficulty","header","invite","invite-code","invite-copy","invite-qr","invite-share","member","member-remove","players","ready","room-settings","save","start"]),
   "online.chrome": Object.freeze(["connection","exit","room-actions","title","topbar"]),
   "online.meenfina.vote": Object.freeze(["abstain","option","options-list","question","scoreboard","submit","timer","vote-panel"]),
