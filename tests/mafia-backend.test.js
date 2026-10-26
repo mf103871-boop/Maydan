@@ -9,6 +9,7 @@ import { decodeJws } from '../server/accounts/jwt.mjs';
 import { tick,technicalAbort } from '../server/mafia-model.mjs';
 import { first,run } from '../server/lamma/common.mjs';
 import { mafiaDeleteStatements, persistMafiaResult } from '../server/mafia-results.mjs';
+import { mafiaVoiceRequest } from '../server/mafia-voice.mjs';
 const ORIGIN='http://localhost:3000';
 class BrowserSocket extends WebSocket {constructor(url){super(url,{origin:ORIGIN});}}
 async function until(fn,label='state'){const end=Date.now()+5000;while(Date.now()<end){if(await fn())return;await new Promise(r=>setTimeout(r,10));}assert.fail(`Timed out ${label}`);}
@@ -359,4 +360,77 @@ test('ordinary action ignores a different revoked session of the same account an
   assert.equal(item.instance.room.mafiaMedia.authSessions[p.accountId].id,p.sessionId);assert.equal(h.provider.filter(r=>r.method==='RemoveParticipant').length,before);
   await run(h.app.env,'UPDATE sessions SET revoked_at=? WHERE id=?',Date.now()-1,p.sessionId);
   await assert.rejects(g.clients[0].command('react',{emoji:'👍'}),e=>e.code==='AUTH');
+});
+
+test('voice sync checks the live session and owned lease in one fresh read per request',async t=>{
+  const h=await setup(t),g=await h.group();await g.clients[0].command('start');await h.phase(g.code);
+  const p=g.people[0],item=h.app.rooms.get(g.code),path=`/api/rooms/${g.code}/voice`;
+  const joined=await h.api(p,path,{deviceId:'phone'});assert.equal(joined.status,200);
+  const now=Date.now(),body={deviceId:'phone',voiceSessionId:'fixture-phone',operation:'sync',knownEpoch:joined.body.mediaEpoch,accountSessionId:p.sessionId};
+  const prepare=h.app.env.DB.prepare.bind(h.app.env.DB),sql=[];t.mock.method(h.app.env.DB,'prepare',s=>{sql.push(s);return prepare(s);});
+  await item.instance.serial(async()=>{
+    for(let n=0;n<3;n++)assert.equal((await mafiaVoiceRequest(item.ctx,h.app.env,item.instance.room,p.accountId,body,now)).unchanged,true);
+    assert.equal(sql.length,3);assert.ok(sql.every(s=>s.includes('LEFT JOIN mafia_media_leases')),'one actual SQLite read per sync');
+    const before=structuredClone(item.instance.room.mafiaMedia);
+    await run(h.app.env,'UPDATE sessions SET revoked_at=? WHERE id=?',now,p.sessionId);
+    await assert.rejects(mafiaVoiceRequest(item.ctx,h.app.env,item.instance.room,p.accountId,body,now),e=>e.code==='AUTH');
+    assert.deepEqual(item.instance.room.mafiaMedia,before,'the previous successful read grants no cached authorization');
+  });
+});
+
+test('voice JOIN preserves distinct authentication and lease failures without issuing or mutating a grant',async t=>{
+  const h=await setup(t),g=await h.group();await g.clients[0].command('start');await h.phase(g.code);
+  const p=g.people[0],peer=g.people[1],item=h.app.rooms.get(g.code),now=Date.now();
+  const joined=await h.api(p,`/api/rooms/${g.code}/voice`,{deviceId:'phone'});assert.equal(joined.status,200);
+  const body={deviceId:'phone',voiceSessionId:'fixture-phone',operation:'sync',knownEpoch:joined.body.mediaEpoch,accountSessionId:p.sessionId};
+  const originalSession=await first(h.app.env,'SELECT * FROM sessions WHERE id=?',p.sessionId),lease=await first(h.app.env,'SELECT * FROM mafia_media_leases WHERE user_id=?',p.accountId);
+  const cases=[
+    {name:'absent session',body:{accountSessionId:'missing'},code:'AUTH'},
+    {name:'another account session',body:{accountSessionId:peer.sessionId},code:'AUTH'},
+    {name:'exact session expiry',sql:'UPDATE sessions SET expires_at=? WHERE id=?',args:[now,p.sessionId],code:'AUTH'},
+    {name:'exact revocation cutoff',sql:'UPDATE sessions SET revoked_at=? WHERE id=?',args:[now,p.sessionId],code:'AUTH'},
+    {name:'suspension',sql:'INSERT INTO moderation_suspensions VALUES(?,?,?,?,?)',args:[p.accountId,peer.accountId,'fixture',now,now],code:'AUTH'},
+    {name:'account deletion',sql:'INSERT INTO account_deletions VALUES(?,?,?)',args:[p.accountId,'fixture',now],code:'AUTH'},
+    {name:'missing own lease despite other live leases',sql:'DELETE FROM mafia_media_leases WHERE user_id=?',args:[p.accountId],code:'MAFIA_ACTIVE_ELSEWHERE'},
+    {name:'exact lease expiry',sql:'UPDATE mafia_media_leases SET expires_at=? WHERE user_id=?',args:[now,p.accountId],code:'MAFIA_ACTIVE_ELSEWHERE'},
+    {name:'different room lease',sql:'UPDATE mafia_media_leases SET room_key=? WHERE user_id=?',args:['another-room',p.accountId],code:'MAFIA_ACTIVE_ELSEWHERE'},
+    {name:'different call lease',sql:'UPDATE mafia_media_leases SET call_id=? WHERE user_id=?',args:['another-call',p.accountId],code:'MAFIA_ACTIVE_ELSEWHERE'},
+  ];
+  await item.instance.serial(async()=>{
+    for(const entry of cases){
+      if(entry.sql)await run(h.app.env,entry.sql,...entry.args);
+      const before=structuredClone(item.instance.room.mafiaMedia),providerCalls=h.provider.length;
+      await assert.rejects(mafiaVoiceRequest(item.ctx,h.app.env,item.instance.room,p.accountId,{...body,...entry.body},now),e=>e.code===entry.code,entry.name);
+      assert.deepEqual(item.instance.room.mafiaMedia,before,entry.name);assert.equal(h.provider.length,providerCalls,entry.name);
+      await run(h.app.env,'UPDATE sessions SET expires_at=?,revoked_at=? WHERE id=?',originalSession.expires_at,originalSession.revoked_at,p.sessionId);
+      await run(h.app.env,'DELETE FROM moderation_suspensions WHERE user_id=?',p.accountId);await run(h.app.env,'DELETE FROM account_deletions WHERE user_id=?',p.accountId);
+      await run(h.app.env,'INSERT OR REPLACE INTO mafia_media_leases(user_id,room_key,call_id,expires_at,updated_at) VALUES(?,?,?,?,?)',p.accountId,lease.room_key,lease.call_id,lease.expires_at,lease.updated_at);
+    }
+    assert.equal((await mafiaVoiceRequest(item.ctx,h.app.env,item.instance.room,p.accountId,body,now)).unchanged,true);
+    const prepare=h.app.env.DB.prepare.bind(h.app.env.DB),before=structuredClone(item.instance.room.mafiaMedia);
+    t.mock.method(h.app.env.DB,'prepare',sql=>sql.includes('LEFT JOIN mafia_media_leases')?{bind:()=>({first:async()=>{throw new Error('fresh read unavailable');}})}:prepare(sql));
+    await assert.rejects(mafiaVoiceRequest(item.ctx,h.app.env,item.instance.room,p.accountId,body,now),/fresh read unavailable/);
+    assert.deepEqual(item.instance.room.mafiaMedia,before,'D1 failure never turns the prior grant into authority');
+  });
+});
+
+test('unchanged Mafia voice skips only an identical durable alarm and preserves changed auth, phase and presence deadlines',async t=>{
+  const h=await setup(t),g=await h.group();await g.clients[0].command('start');await h.phase(g.code);
+  const p=g.people[0],item=h.app.rooms.get(g.code),path=`/api/rooms/${g.code}/voice`,now=Date.now();t.mock.method(Date,'now',()=>now);
+  const joined=await h.api(p,path,{deviceId:'phone'});assert.equal(joined.status,200);
+  const setAlarm=item.storage.setAlarm.bind(item.storage),getAlarm=item.storage.getAlarm.bind(item.storage),writes=[];let reads=0;
+  t.mock.method(item.storage,'setAlarm',async at=>{writes.push(at);return setAlarm(at);});t.mock.method(item.storage,'getAlarm',async()=>{reads++;return getAlarm();});
+  const body={deviceId:'phone',operation:'sync',knownEpoch:joined.body.mediaEpoch};
+  for(let i=0;i<3;i++)assert.equal((await h.api(p,path,body)).body.unchanged,true);
+  assert.equal(reads,3);assert.deepEqual(writes,[],'three heartbeats do not rewrite the exact same deadline');
+  assert.equal((await h.api(p,path,{...body,operation:'join'})).body.unchanged,true);assert.equal(writes.length,1,'even an unchanged repeated join retains normal scheduling');
+  await run(h.app.env,'UPDATE sessions SET expires_at=? WHERE id=?',now+10000,p.sessionId);assert.equal((await h.api(p,path,body)).body.unchanged,true);assert.equal(writes.at(-1),now+10000);
+  await run(h.app.env,'UPDATE sessions SET expires_at=? WHERE id=?',now+20000,p.sessionId);assert.equal((await h.api(p,path,body)).body.unchanged,true);assert.equal(writes.at(-1),now+20000,'a later changed deadline is written too');
+  await item.instance.serial(async()=>{
+    item.instance.room.deadlineAt=now+5000;await item.instance.schedule({skipIdenticalMafiaAlarm:true});assert.equal(writes.at(-1),now+5000);
+    const ws=item.instance.sockets().find(s=>item.instance.attachment(s).id===p.id),a=item.instance.attachment(ws);ws.serializeAttachment({...a,seenAt:now-41000});
+    await item.instance.schedule({skipIdenticalMafiaAlarm:true});assert.equal(writes.at(-1),now+4000,'socket liveness still supplies the earliest deadline');
+    const n=writes.length;await item.instance.schedule();assert.equal(writes.length,n+1,'normal scheduling is unchanged');
+    const getter=item.storage.getAlarm;item.storage.getAlarm=undefined;try{await item.instance.schedule({skipIdenticalMafiaAlarm:true});assert.equal(writes.length,n+2,'adapters without getAlarm use normal scheduling');}finally{item.storage.getAlarm=getter;}
+  });
 });

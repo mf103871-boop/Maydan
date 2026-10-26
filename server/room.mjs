@@ -86,8 +86,14 @@ export class Room {
     }).filter(Number.isFinite);
     return Math.max(now + 1, Math.min(nextAlarm(room, now), ...deadlines, ...(room.game==='mafia'?[room.mafiaRenewAt||now+30_000,this.mafiaAuthDeadline(room)]:[]), ...(this.outboxPending() ? [now + STATS_RETRY] : [])));
   }
-  async schedule() {
-    if (this.room) await this.ctx.storage.setAlarm(this.alarmAt(this.room, Date.now()));
+  async schedule({ skipIdenticalMafiaAlarm = false } = {}) {
+    if (this.room) {
+      const at=this.alarmAt(this.room,Date.now());
+      // An unchanged voice heartbeat can share the exact installed deadline.
+      // Read storage afresh: never cache or postpone auth, phase or presence.
+      if(skipIdenticalMafiaAlarm&&this.room.game==='mafia'&&typeof this.ctx.storage.getAlarm==='function'&&await this.ctx.storage.getAlarm()===at)return;
+      await this.ctx.storage.setAlarm(at);
+    }
     else if (this.outboxPending()) await this.ctx.storage.setAlarm(Date.now() + STATS_RETRY);
     else await this.ctx.storage.deleteAlarm();
   }
@@ -513,7 +519,7 @@ export class Room {
         if(request.method==='POST'&&endpoint==='mafia-voice') {
           if(this.room.game!=='mafia')fail('NOT_FOUND',404);
           const body=await readJson(request),response=await mafiaVoiceRequest(this.ctx,this.env,this.room,body.accountUserId,body);
-          this.fastAdvanceRoom=null;await this.schedule();return json(response);
+          this.fastAdvanceRoom=null;await this.schedule({skipIdenticalMafiaAlarm:body.operation==='sync'&&response.unchanged===true});return json(response);
         }
         if(request.method==='POST'&&endpoint==='mafia-evidence') {
           if(this.room.game!=='mafia')fail('NOT_FOUND',404);

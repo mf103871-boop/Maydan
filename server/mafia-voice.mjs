@@ -3,7 +3,7 @@ import { voiceAudience, technicalAbort } from './mafia-model.mjs';
 import { liveKitConfigured, providerRequest, gameConnection } from './lamma/provider.mjs';
 import { all, first, run } from './lamma/common.mjs';
 import { liveAccountSql } from './moderation/access.mjs';
-import { activateMafiaMedia, mafiaPlaying, mafiaMediaLease, releaseMafiaMedia, refundMafiaTrial } from './mafia-access.mjs';
+import { activateMafiaMedia, mafiaPlaying, releaseMafiaMedia, refundMafiaTrial } from './mafia-access.mjs';
 
 // The durable journal is the authorization source. Provider failure never opens
 // the next channel and a restarted object must finish its revocations first.
@@ -105,10 +105,12 @@ export async function mafiaVoiceRequest(ctx,env,room,userId,body,now=Date.now())
   if(typeof voiceSessionId!=='string'||!/^[A-Za-z0-9_-]{8,100}$/.test(voiceSessionId)||!['join','sync','leave'].includes(body.operation))fail('INVALID');
   // Overwritten by the authenticated router, never chosen by the phone.
   // Recheck here to close the worker-to-room revocation race.
-  const accountSession=await first(env,`SELECT id,expires_at,revoked_at FROM sessions WHERE id=? AND user_id=? AND expires_at>? AND (revoked_at IS NULL OR revoked_at>?) AND ${liveAccountSql('sessions.user_id')}`,body.accountSessionId||'',userId,now,now);
+  // A missing/expired lease must not hide an otherwise valid account session:
+  // keep lease restrictions in the LEFT JOIN, and retain distinct error paths.
+  // Both checks are fresh in this one read; no authorization survives a request.
+  const accountSession=await first(env,`SELECT s.id,s.expires_at,s.revoked_at,l.room_key AS lease_room_key,l.call_id AS lease_call_id FROM sessions s LEFT JOIN mafia_media_leases l ON l.user_id=s.user_id AND l.expires_at>? WHERE s.id=? AND s.user_id=? AND s.expires_at>? AND (s.revoked_at IS NULL OR s.revoked_at>?) AND ${liveAccountSql('s.user_id')}`,now,body.accountSessionId||'',userId,now,now);
   if(!accountSession)fail('AUTH',401);
-  const lease=await mafiaMediaLease(env,userId,now);
-  if(!lease||lease.room_key!==room.mafiaKey||lease.call_id!==media.callId)fail('MAFIA_ACTIVE_ELSEWHERE',409);
+  if(accountSession.lease_room_key!==room.mafiaKey||accountSession.lease_call_id!==media.callId)fail('MAFIA_ACTIVE_ELSEWHERE',409);
   const oldDevice=media.devices[userId];
   if(oldDevice&&oldDevice!==deviceId)fail('MAFIA_VOICE_DEVICE',409);
   if(await ctx.storage.get('mafia:voice-transition'))fail('MAFIA_VOICE_TRANSITION',409);
