@@ -29,7 +29,10 @@ async function createChannel(env,name){let last;for(let i=0;i<REVOKE_ATTEMPTS;i+
 async function collectSocial(env,room,now) {
   const ids=room.members.filter(m=>room.participants.includes(m.id)&&!m.left).map(m=>m.accountUserId);
   if(!ids.length) return [];
-  const rows=await all(env,`SELECT c.id,c.room_name,p.user_id FROM social_calls c JOIN social_call_participants p ON p.call_id=c.id WHERE p.user_id IN (${ids.map(()=>'?').join(',')}) AND p.state='active'`,...ids);
+  // Social leave commits before its retryable provider cleanup. A left row is
+  // safe only once a confirmed cutoff is strictly later than that departure.
+  // Keep the millisecond/second boundary inclusive to cover same-second tokens.
+  const rows=await all(env,`SELECT c.id,c.room_name,p.user_id FROM social_calls c JOIN social_call_participants p ON p.call_id=c.id WHERE p.user_id IN (${ids.map(()=>'?').join(',')}) AND (p.state='active' OR (p.state='left' AND COALESCE(p.left_at,0)>=COALESCE(p.revoked_before,0)*1000))`,...ids);
   return rows.map(row=>({room:row.room_name,identity:row.user_id,socialCallId:row.id,cutoff:Math.floor(now/1000)+1}));
 }
 export async function prepareMafiaVoice(ctx,env,previous,candidate,now=Date.now()) {

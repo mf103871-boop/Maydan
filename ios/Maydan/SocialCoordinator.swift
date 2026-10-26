@@ -412,7 +412,13 @@ final class SocialCoordinator: NSObject {
         guard !signingOut, session.credential?.userId == userId, attempt == callGeneration, call?.mediaEpoch == mediaEpoch else { throw SocialNativeError.failed("CALL_CANCELLED") }
         // Listening never requests microphone permission. Unmuting is an
         // explicit user action and the server independently enforces publishing.
-        if payload["muted"] as? Bool == false && mayPublish && !privateTurn && AVAudioApplication.shared.recordPermission == .granted { muted = false }
+        let recordingGranted: Bool
+        if #available(iOS 17.0, *) {
+            recordingGranted = AVAudioApplication.shared.recordPermission == .granted
+        } else {
+            recordingGranted = AVAudioSession.sharedInstance().recordPermission == .granted
+        }
+        if payload["muted"] as? Bool == false && mayPublish && !privateTurn && recordingGranted { muted = false }
         state = quiet ? "silent" : "connecting"
         if existing {
             if quiet { emitCall(); pollCall() } else { try await connectRoom() }

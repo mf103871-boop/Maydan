@@ -70,6 +70,9 @@ export function Entry({ initialCode = '', initialGame = 'meenfina', onJoined }) 
   const [error, setError] = useState(fallback?.error || '');
   const credentialsRef = useRef(fallback?.session || null);
   const lastRoom = readSaved(SERVER, 'lastRoom');
+  const mafiaCreation = mode === 'create' && game === 'mafia';
+  const mafiaChecking = mafiaCreation && (directory.loading || (directory.enabled == null && !directory.error));
+  const mafiaCreationBlocked = mafiaCreation && (mafiaChecking || Boolean(directory.error) || directory.enabled !== true);
   // The server rejects these settings with QUESTIONS; keep the button honest instead.
   const topicsReady = mode !== 'create' || (game === 'fabraka' ? fabrakaTopics(fabrakaSettings).enough : game === 'ersomha' ? enoughErsomhaCategories(ersomhaSettings) : game === 'badeeha' ? badeehaSettings.categories.length === 6 && badeehaReady(badeehaSettings).ok : true);
   async function submit(event) {
@@ -77,7 +80,8 @@ export function Entry({ initialCode = '', initialGame = 'meenfina', onJoined }) 
     setError('');
     if (!name.trim()) { setError('NAME'); return; }
     if (mode === 'create' && ['ersomha','mafia'].includes(game) && !account.user?.id) { setError('AUTH_REQUIRED'); return; }
-    if (mode === 'create' && game === 'mafia' && directory.enabled !== true) { setError(directory.error || 'MAFIA_DISABLED'); return; }
+    // A pending/failed availability read is not evidence that the feature is off.
+    if (mafiaCreationBlocked) return;
     const normalized = normalizeCode(code);
     if (mode === 'join' && !validCode(normalized)) { setError('INVALID'); return; }
     // Waiting for friends never consumes the trial. It is marked only after
@@ -164,9 +168,9 @@ export function Entry({ initialCode = '', initialGame = 'meenfina', onJoined }) 
         {mode === 'create' && game === 'badeeha' && <BadeehaRules />}
         {mode === 'create' && game === 'ersomha' && <><ErsomhaRules />{!account.user?.id && <p className="online-notice" role="status">ارسمها تحتاج حسابًا ليُحفظ تاريخ الأفكار عبر أجهزتك. <Button size="sm" onClick={() => navigate('/settings')}>تسجيل الدخول</Button></p>}</>}
         {mode === 'create' && game === 'mafia' && !account.user?.id && <p className="online-notice">مافيا تحتاج حسابًا لكل لاعب. <Button onClick={() => navigate('/settings')}>تسجيل الدخول</Button></p>}
-        {mode === 'create' && game === 'mafia' && directory.enabled === false && <p className="online-notice" role="status">إنشاء مجالس مافيا متوقف حاليًا.</p>}
+        {mafiaCreation && <div data-design-fixed="mafia-availability" aria-live="polite">{mafiaChecking ? <p className="online-notice" role="status">نتحقق من توفر مجالس مافيا…</p> : directory.error ? <><p className="online-notice error" role="alert">تعذّر التحقق من توفر المجالس. أعد المحاولة قبل إنشاء الغرفة.</p><Button onClick={() => {setError('');setDirectoryRefresh(n=>n+1);}}>إعادة التحقق</Button></> : directory.enabled === false ? <><p className="online-notice" role="status">إنشاء مجالس مافيا متوقف حاليًا.</p><Button onClick={() => {setError('');setDirectoryRefresh(n=>n+1);}}>إعادة التحقق</Button></> : null}</div>}
         <ErrorNotice code={error} />
-        <Button data-design-id="start" data-design-required="true" type="submit" variant="primary" size="lg" full disabled={!SERVER || busy || !topicsReady} loading={busy}>{mode === 'create' ? 'أنشئ الغرفة' : 'ادخل الغرفة'}</Button>
+        <Button data-design-id="start" data-design-required="true" type="submit" variant="primary" size="lg" full disabled={!SERVER || busy || !topicsReady || mafiaCreationBlocked} loading={busy || mafiaChecking}>{mode === 'create' ? 'أنشئ الغرفة' : 'ادخل الغرفة'}</Button>
       </form>}
     </Card>
     {game === 'mafia' && account.user?.id && <Button data-design-id="my-history" onClick={() => setHistoryOpen(true)}>سجل مجالسي ونتائجي</Button>}

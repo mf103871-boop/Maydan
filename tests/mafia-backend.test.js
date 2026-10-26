@@ -127,6 +127,17 @@ test('journal failure precedes social mutations, and a retry removes only playin
   assert.equal((await first(h.app.env,'SELECT state FROM social_call_participants WHERE call_id=? AND user_id=?',callId,other.accountId)).state,'active');
   assert.equal(h.provider.filter(p=>p.method==='RemoveParticipant'&&p.body.identity===other.accountId).length,0);
 });
+test('Mafia start revokes departed social grants until provider cleanup is proven past their leave timestamp',async t=>{
+  const h=await setup(t),g=await h.group(),callId=crypto.randomUUID(),now=Date.now(),second=Math.floor(now/1000);
+  await run(h.app.env,"INSERT INTO social_calls(id,scope,conversation_id,initiator_id,client_id,status,created_at,ring_until,expires_at,room_name) VALUES(?,'group','group-fixture',?,?,'ended',?,?,?,'departed-social-room')",callId,g.people[0].accountId,crypto.randomUUID(),now-60000,now-10000,now);
+  const departures=[{person:g.people[0],leftAt:now,cutoff:0},{person:g.people[1],leftAt:now,cutoff:second+2},{person:g.people[2],leftAt:second*1000,cutoff:second},{person:g.people[3],leftAt:null,cutoff:0}];
+  for(const {person,leftAt,cutoff}of departures)await run(h.app.env,"INSERT INTO social_call_participants(call_id,user_id,state,device_id,joined_at,left_at,revoked_before) VALUES(?,?,'left','social-phone',?,?,?)",callId,person.accountId,now-60000,leftAt,cutoff);
+  await g.clients[0].command('start');
+  const revoked=h.provider.filter(p=>p.method==='RemoveParticipant'&&p.body.room==='departed-social-room');
+  assert.deepEqual(new Set(revoked.map(p=>p.body.identity)),new Set([g.people[0].accountId,g.people[2].accountId,g.people[3].accountId]));
+  assert.ok(revoked.every(p=>p.body.revoke_token_ts>second));
+  assert.equal(h.app.rooms.get(g.code).instance.room.phase,'role');
+});
 test('revocation outage retains a fail-closed room slot until the durable retry succeeds',async t=>{
   const h=await setup(t),g=await h.group();await g.clients[0].command('start');await h.phase(g.code);
   await h.api(g.people[0],`/api/rooms/${g.code}/voice`,{deviceId:'phone'});h.failRemovals();await h.phase(g.code);
