@@ -12,6 +12,8 @@ import { useLamma } from '../social/LammaProvider.jsx';
 import { socialJoinFallbackKey } from '../social/game-launch.js';
 import { AVATARS, ROUND_OPTIONS, ONLINE_GAMES, ROOM_CAPABILITIES, minimumOnlinePlayers, EXPIRY_WARNING, normalizeCode, validCode, resolveServerUrl, errorText, arabicNumber } from './shared.js';
 import { RoomClient, newCredentials, post, readSaved, save, clearSession, deviceId } from './client.js';
+import { reloadWithLatestVersion } from './update.js';
+import { isNativeShell } from '../shared/account/native.js';
 import { normalizeContentOptions } from '../games/fabraka/content.js';
 import { FabrakaSettings, FabrakaRules, FabrakaMatch, FABRAKA_MODES, fabrakaTopics } from './Fabraka.jsx';
 import { ErsomhaSettings, ErsomhaRules, ErsomhaLobbySettings, ErsomhaMatch } from './Ersomha.jsx';
@@ -224,7 +226,7 @@ export function Match({ state, disabled, isHost, act, clockOffset }) {
 export function RoomChrome({ state, code, status, error, expiring = false, msLeft = Infinity, dropped = [], disabled = false, onExit, onKick, onReconnect, children }) {
   return <div data-design-screen="online.chrome" className="stack online-room-chrome">
     <TopBar data-design-id="topbar" title={state ? ONLINE_GAMES[state.game || 'meenfina']?.name || 'غرف ميدان' : 'غرف ميدان'} eyebrow={`غرفة ${code}`} end={<span data-design-id="room-actions" className="online-room-actions">{state?.game === 'ersomha' && <span className="online-social-slot" data-social-game-launcher />}<Button data-design-id="exit" data-design-required="true" size="sm" onClick={onExit}>خروج</Button></span>} />
-    <p data-design-id="connection" data-design-required="true" className={`online-connection ${status === 'connected' ? 'connected' : ''}`} role="status">{status === 'connected' ? 'متصل · كل واحد بجواله' : status === 'ended' ? 'انتهى الاتصال بالغرفة' : status === 'replaced' ? 'الجلسة مفتوحة في تبويب آخر' : 'جاري الاتصال بالغرفة…'}</p>
+    <p data-design-id="connection" data-design-required="true" className={`online-connection ${status === 'connected' ? 'connected' : ''}`} role="status">{status === 'connected' ? 'متصل · كل واحد بجواله' : status === 'ended' ? 'انتهى الاتصال بالغرفة' : status === 'outdated' ? 'نسخة اللعبة أقدم من الغرفة' : status === 'replaced' ? 'الجلسة مفتوحة في تبويب آخر' : 'جاري الاتصال بالغرفة…'}</p>
     <ErrorNotice code={error} />
     {state?.hostMissingSince && <p className="online-notice is-host-missing">انقطع اتصال المضيف. تنتقل الإدارة للاعب متصل بعد ٢٠ ثانية إذا لم يعد.</p>}
     {expiring && <p className="online-notice" role="status">تنتهي الغرفة بعد {minutesLabel(Math.max(1, Math.ceil(msLeft / 60_000)))}. أكملوا الجولة الحالية أو أنشئوا غرفة جديدة بعدها.</p>}
@@ -243,6 +245,7 @@ function ConnectedRoom({ code, session, stored, onLeft }) {
   const [error, setError] = useState(stored ? '' : 'STORAGE');
   const [busy, setBusy] = useState(false);
   const [exitTarget, setExitTarget] = useState(null);
+  const [updating, setUpdating] = useState(false);
   const clientRef = useRef(null);
   const busyRef = useRef(false);
   const trialMarked = useRef(false);
@@ -316,15 +319,24 @@ function ConnectedRoom({ code, session, stored, onLeft }) {
   // مقاعد انقطعت أثناء المباراة: الجولة لا تنتظرها بعد مهلتها، ويستطيع المضيف إزالتها.
   const dropped = state && isHost && state.phase !== 'lobby' ? state.members.filter((m) => state.participants.includes(m.id) && !m.left && !m.connected) : [];
   if (ownershipMismatch) return <Card role="status">نحمي أفكار حسابك… سجّل الدخول إلى حساب اللاعب للعودة.</Card>;
-  return <RoomChrome state={state} code={code} status={status} error={error} expiring={expiring} msLeft={msLeft} dropped={dropped} disabled={disabled}
+  // نسخة الغرف على الخادم أحدث من هذه الصفحة: المقعد يبقى محفوظًا، والويب يحدّث ويعود إليه
+  // تلقائيًا؛ تطبيق iPhone يحمل صفحته داخله فيحتاج تحديثًا من المتجر.
+  const native = isNativeShell();
+  const leaveKeepingSeat = () => { setExitGuard(null); onLeft(); navigate('/online', { replace: true }); };
+  const outdated = status === 'outdated' ? <Card className="stack">
+    {!native && <Button data-design-id="reconnect" data-design-required="true" variant="accent" full loading={updating} disabled={updating}
+      onClick={() => { setUpdating(true); setExitGuard(null); reloadWithLatestVersion(); }}>حدّث وتابع في الغرفة</Button>}
+    <Button full variant="ghost" disabled={updating} onClick={leaveKeepingSeat}>العودة إلى الغرف</Button>
+  </Card> : null;
+  return <RoomChrome state={state} code={code} status={status} error={error === 'ROOM_OUTDATED' && native ? 'ROOM_OUTDATED_APP' : error} expiring={expiring} msLeft={msLeft} dropped={dropped} disabled={disabled}
     onExit={() => setExitTarget(state?.game && state.game !== 'meenfina' ? `/online/${state.game}` : '/online')}
     onKick={targetId => act('kick', { targetId })}
     onReconnect={() => { clientRef.current.stop(); clientRef.current.start(); }}>
-    {status === 'ended' ? <Button full onClick={() => { clearSession(SERVER, code); setExitGuard(null); onLeft(); navigate('/online', { replace: true }); }}>العودة إلى الغرف</Button>
+    {outdated || (status === 'ended' ? <Button full onClick={() => { clearSession(SERVER, code); setExitGuard(null); onLeft(); navigate('/online', { replace: true }); }}>العودة إلى الغرف</Button>
       : state && (state.phase === 'lobby' ? <Lobby state={state} me={me} isHost={isHost} disabled={disabled} act={act} /> : state.game === 'fabraka'
         ? <FabrakaMatch state={state} me={me} disabled={disabled} isHost={isHost} act={act} clockOffset={clientRef.current?.clockOffset || 0} />
         : state.game === 'ersomha' ? <ErsomhaMatch state={state} me={me} disabled={disabled} isHost={isHost} act={act} client={clientRef.current} status={status} clockOffset={clientRef.current?.clockOffset || 0} drawerReady={!lamma?.activeCall || (lamma.activeCall._ownerId === account.user?.id && lamma.media?.userId === account.user?.id && lamma.media?.muted === true)} onReport={['draw', 'result'].includes(state.phase) ? reportDrawing : undefined} />
-        : <Match state={state} disabled={disabled} isHost={isHost} act={act} clockOffset={clientRef.current?.clockOffset || 0} />)}
+        : <Match state={state} disabled={disabled} isHost={isHost} act={act} clockOffset={clientRef.current?.clockOffset || 0} />))}
     {exitTarget && <ConfirmModal title="تطلع من الغرفة؟" message="مغادرتك تنهي مقعدك الحالي. إذا كنت المضيف تنتقل الإدارة للاعب متصل." confirmLabel="الخروج" cancelLabel="خلّيني ألعب" onConfirm={leave} onCancel={() => setExitTarget(null)} />}
   </RoomChrome>;
 }

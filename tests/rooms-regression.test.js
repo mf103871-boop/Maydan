@@ -16,6 +16,7 @@ import { meenfinaDeck } from '../server/room.mjs';
 import { securityHeaders } from '../server/full-worker.mjs';
 import * as model from '../server/room-model.mjs';
 import { RoomClient, newCredentials } from '../src/online/client.js';
+import { reloadWithLatestVersion } from '../src/online/update.js';
 import { arabicNumber, errorText, ERRORS } from '../src/online/shared.js';
 
 const ORIGIN = 'http://localhost:3000';
@@ -338,7 +339,7 @@ test('5 · generated numbers use Arabic-Indic digits everywhere', () => {
   assert.equal(arabicNumber('غير رقم'), '');
 });
 
-test('7 · a protocol mismatch ends the session instead of offering a retry', () => {
+test('7 · a protocol mismatch stops as outdated, keeps the seat and asks for the newer version', async () => {
   const events = [];
   class FakeSocket {
     constructor() { this.readyState = 1; FakeSocket.last = this; }
@@ -349,11 +350,47 @@ test('7 · a protocol mismatch ends the session instead of offering a retry', ()
     WebSocketImpl: FakeSocket, onError: (code) => events.push(code) });
   client.start();
   FakeSocket.last.onopen();
-  FakeSocket.last.onmessage({ data: JSON.stringify({ type: 'state', state: { protocol: 99, game: 'meenfina', revision: 1, serverNow: Date.now() } }) });
-  assert.deepEqual(events, ['CONFIG']);
-  assert.equal(client.connectionStatus, 'ended'); // 'disconnected' would render a retry button that can never work.
+  FakeSocket.last.onmessage({ data: JSON.stringify({ type: 'state', state: { protocol: 1, game: 'meenfina', revision: 1, serverNow: Date.now() } }) });
+  const inFlight = client.command('vote', { targetId: null }).catch((error) => error.code);
+  FakeSocket.last.onmessage({ data: JSON.stringify({ type: 'state', state: { protocol: 99, game: 'meenfina', revision: 2, serverNow: Date.now() } }) });
+  assert.deepEqual(events, ['ROOM_OUTDATED']);
+  assert.equal(await inFlight, 'ROOM_OUTDATED', 'a command in flight reports the update, not a lost connection');
+  // Not 'disconnected': a socket retry can never work against a newer server. Not
+  // 'ended' either: that screen clears the seat, and the match is still running.
+  assert.equal(client.connectionStatus, 'outdated');
   assert.equal(client.stopped, true);
-  assert.match(errorText('CONFIG'), /حدّث صفحة اللعبة/);
+  assert.match(errorText('ROOM_OUTDATED'), /مقعدك محفوظ/);
+  assert.match(errorText('ROOM_OUTDATED_APP'), /App Store/);
+  const room = readFileSync(new URL('../src/online/Online.jsx', import.meta.url), 'utf8');
+  const recovery = room.match(/const outdated = status === 'outdated'[\s\S]*?<\/Card> : null;/)?.[0];
+  assert.ok(recovery, 'the outdated room renders its own recovery card');
+  assert.doesNotMatch(recovery, /clearSession/, 'leaving an outdated room keeps the stored seat');
+  assert.match(recovery, /reloadWithLatestVersion\(\)/);
+});
+
+test('7b · updating fetches the newer service worker before reloading back into the room', async () => {
+  const run = async ({ registration, throws = false }) => {
+    const calls = []; const listeners = {};
+    const environment = {
+      navigator: { serviceWorker: {
+        getRegistration: async () => { if (throws) throw new Error('blocked'); return registration; },
+        addEventListener: (type, fn) => { listeners[type] = fn; calls.push(`listen:${type}`); },
+      } },
+      location: { reload: () => calls.push('reload') },
+    };
+    if (registration) registration.update = async () => { calls.push('update'); if (registration.found) { registration.installing = {}; setTimeout(() => listeners.controllerchange?.(), 5); } };
+    await reloadWithLatestVersion({ environment, timeout: 1000 });
+    return calls;
+  };
+  assert.deepEqual(await run({ registration: { found: true } }), ['listen:controllerchange', 'update', 'reload']);
+  assert.deepEqual(await run({ registration: { found: false } }), ['listen:controllerchange', 'update', 'reload']);
+  assert.deepEqual(await run({ registration: null }), ['reload']);
+  assert.deepEqual(await run({ registration: null, throws: true }), ['reload']);
+  // A worker that never takes over cannot strand the player: the timeout reloads anyway.
+  const stuck = { update: async () => { stuck.installing = {}; } };
+  const started = Date.now(); const calls = [];
+  await reloadWithLatestVersion({ timeout: 50, environment: { navigator: { serviceWorker: { getRegistration: async () => stuck, addEventListener() {} } }, location: { reload: () => calls.push('reload') } } });
+  assert.deepEqual(calls, ['reload']); assert.ok(Date.now() - started >= 45);
 });
 
 test('anonymous waiting rooms do not consume a device trial; used device trials still gate new rooms', async (t) => {

@@ -124,9 +124,11 @@ export class RoomClient {
         catch { this.reconnectNow(); }
       } else if (message.type === 'state') {
         const protocol = GAME_PROTOCOLS[message.state.game || 'meenfina'];
-        // A version mismatch can never be retried: end the session so the screen
-        // offers the way out instead of a reconnect button that cannot work.
-        if (!protocol || message.state.protocol !== protocol) { this.onError('CONFIG'); this.stop('ended'); return; }
+        // The room server was updated under this open page (or speaks a game this
+        // copy does not know). Retrying the socket cannot help, but the seat is
+        // still valid: stop as 'outdated' and keep the stored credentials, so the
+        // newer version reconnects to the same room and seat after a reload.
+        if (!protocol || message.state.protocol !== protocol) { this.onError('ROOM_OUTDATED'); this.stop('outdated'); return; }
         if (this.state && message.state.revision < this.state.revision) return;
         clearTimeout(this.openTimer); this.attempt = 0;
         this.state = message.state; this.clockOffset = message.state.serverNow - Date.now();
@@ -194,6 +196,8 @@ export class RoomClient {
   }
   stop(status = 'disconnected') {
     this.stopped = true; this.clearConnectionTimers();
-    this.rejectPending('DISCONNECTED'); this.ws?.close(); this.status(status);
+    // A command still in flight when the server turns out newer must report the
+    // same reason; DISCONNECTED would replace the update notice with a wrong one.
+    this.rejectPending(status === 'outdated' ? 'ROOM_OUTDATED' : 'DISCONNECTED'); this.ws?.close(); this.status(status);
   }
 }
