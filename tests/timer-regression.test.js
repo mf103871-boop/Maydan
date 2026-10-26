@@ -451,6 +451,6 @@ test('مصدر واحد لإشارات المؤقت: الحلقة بصرية، �
   const badeeha = src('src/games/badeeha/App.js');
   assert.match(badeeha, /if \(!effectiveSoundOn\) return;\n[^\n]*\n\s*if \(api && api\.sound && typeof api\.sound\.play === "function"\) \{\n\s*api\.sound\.play\(name\);\n\s*return;\n\s*\}\n\s*if \(!SFX\[name\]\) return;/, 'بَديهة: الناقل المشترك يسمع scoreUp/scoreDown');
   assert.match(badeeha, /timeLeftRef\.current = Number\.isFinite\(savedActive\.timeLeft\)/, 'بَديهة: الاستئناف لا يكرّر تكّة الثانية المحفوظة');
-  assert.match(badeeha, /const releasing = \["pause", "ended", "error", "abort", "emptied"\]/, 'بَديهة: خفض الخلفية يُرفع عند تعطّل المقطع');
+  assert.match(src('src/games/badeeha/media.js'), /const releasing = \["pause", "ended", "error", "abort", "emptied"\]/, 'بَديهة: خفض الخلفية يُرفع عند تعطّل المقطع');
   assert.match(src('src/games/meenfina/Game.jsx'), /if \(hidden\) return undefined;/, 'مين فينا: العدّ يتوقف والصفحة مخفية');
 });
