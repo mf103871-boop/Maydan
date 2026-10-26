@@ -7,7 +7,7 @@ import { recordOnlineResult, profileSummaries } from './profiles/db.mjs';
 import { consumeRoomTrial } from './accounts/router.mjs';
 import { requireSession } from './accounts/session.mjs';
 import { liveAccountSql } from './moderation/access.mjs';
-import { ERSOMHA_PROTOCOL } from '../src/online/shared.js';
+import { ERSOMHA_PROTOCOL, ROOM_REACTIONS, REACTION_BURST, REACTION_REFILL_MS, reactionsAllowed } from '../src/online/shared.js';
 import { getErsomhaPool } from './ersomha-content.mjs';
 import { setErsomhaChoices, ERSOMHA_PLAYING, ERSOMHA_SELECT_MS } from './ersomha-model.mjs';
 import { acquireErsomhaLease, assertErsomhaLease, renewErsomhaLease, releaseErsomhaLease, releaseErsomhaAccounts, ersomhaSeen, exposeErsomhaCards, buildErsomhaTurnPlan } from './ersomha-history.mjs';
@@ -175,6 +175,24 @@ export class Room {
       }
     }
     this.send(ws, { type: 'ack', requestId: command.requestId, ok: true, drawing: ersomhaDrawingMeta(this.drawing) });
+  }
+  // Quick reactions are ephemeral: a fixed emoji set broadcast to the seated sockets,
+  // never written to storage or to the room snapshot. Their own small bucket keeps a
+  // tapping thumb from spending the seat's general command budget.
+  reaction(ws, a, command, now) {
+    if (!ROOM_REACTIONS.includes(command.emoji)) fail('INVALID');
+    member(this.room, a.id);
+    if (!reactionsAllowed(this.room, a.id)) fail('PRIVATE', 409);
+    a.reactTokens = Math.min(REACTION_BURST, (a.reactTokens ?? REACTION_BURST) + Math.max(0, now - (a.reactAt ?? now)) / REACTION_REFILL_MS);
+    a.reactAt = now;
+    if (a.reactTokens < 1) { ws.serializeAttachment(a); fail('RATE_LIMIT', 429); }
+    a.reactTokens -= 1; ws.serializeAttachment(a);
+    this.reactionCounter = (this.reactionCounter || 0) + 1;
+    const event = { type: 'reaction', id: `${now.toString(36)}-${this.reactionCounter}`, seatId: a.id, emoji: command.emoji, at: now };
+    for (const socket of this.sockets()) {
+      const seat = this.attachment(socket).id;
+      if (seat && this.room.members.some((m) => m.id === seat && !m.left)) this.send(socket, event);
+    }
   }
   flushStats() {
     if (this.flushingStats) return this.flushingStats;
@@ -461,6 +479,7 @@ export class Room {
         // failed login: answering with INVALID keeps the player's session alive.
         if (!a.id) fail('AUTH', 401);
         if (!requestId) fail('INVALID');
+        if (command.type === 'react') { this.reaction(ws, a, command, now); this.send(ws, { type: 'ack', requestId, ok: true }); return; }
         if (this.room.game === 'ersomha' && ['drawing_batch', 'drawing_undo', 'drawing_redo', 'drawing_clear', 'drawing_sync'].includes(command.type)) {
           await this.drawingCommand(ws, a.id, command); return;
         }

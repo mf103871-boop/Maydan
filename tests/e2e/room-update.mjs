@@ -88,6 +88,14 @@ test('an updated room server keeps the seat and the reloaded page rejoins the sa
     return !document.querySelector('.splash') && document.querySelector('[data-design-screen]');
   }, null, { timeout: 20_000 });
   await enter();
+  // Quick reactions both ways while waiting in the lobby.
+  const heard = []; const unsubscribe = guests[0].subscribeReactions((event) => heard.push(event));
+  await page.getByRole('button', { name: 'أرسل 😂' }).click();
+  await until(() => heard.some((event) => event.emoji === '😂' && event.seatId === host.id), 'the page reaction reached a guest');
+  unsubscribe();
+  await guests[0].react('👏');
+  await page.locator('.room-reaction-float', { hasText: 'ليان' }).waitFor({ timeout: 5_000 });
+  if (process.env.E2E_SHOTS) await page.screenshot({ path: `${process.env.E2E_SHOTS}/room-reactions.png` });
   await page.getByRole('button', { name: 'ابدأ اللعب' }).click();
   await until(() => guests[0].state?.phase === 'vote', 'match started');
   const matchId = guests[0].state.matchId;

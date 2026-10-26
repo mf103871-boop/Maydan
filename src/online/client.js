@@ -55,7 +55,7 @@ export async function post(server, path, data, options = fetch) {
 export class RoomClient {
   constructor({ server, code, session, getAccountAuthorization = () => null, onState = () => {}, onStatus = () => {}, onError = () => {}, WebSocketImpl = WebSocket }) {
     Object.assign(this, { server, code, session, getAccountAuthorization, onState, onStatus, onError, WebSocketImpl });
-    this.pending = new Map(); this.drawingListeners = new Set(); this.stopped = true; this.attempt = 0; this.counter = 0; this.state = null;
+    this.pending = new Map(); this.drawingListeners = new Set(); this.reactionListeners = new Set(); this.stopped = true; this.attempt = 0; this.counter = 0; this.state = null;
   }
   start() { if (!this.stopped) { this.wake(); return; } this.stopped = false; this.attempt = 0; this.connect(); }
   status(value) { this.connectionStatus = value; this.onStatus(value); }
@@ -136,6 +136,9 @@ export class RoomClient {
       } else if (message.type === 'drawing') {
         if (this.state?.game !== 'ersomha' || message.matchId !== this.state.matchId || message.round !== this.state.round) return;
         for (const listener of this.drawingListeners) listener(message);
+      } else if (message.type === 'reaction') {
+        if (typeof message.seatId !== 'string' || typeof message.emoji !== 'string') return;
+        for (const listener of this.reactionListeners) listener(message);
       } else if (message.type === 'ack') {
         const pending = this.pending.get(message.requestId);
         if (pending) { clearTimeout(pending.timer); this.pending.delete(message.requestId); message.ok ? pending.resolve(message) : pending.reject(new ClientError(message.error)); }
@@ -172,6 +175,8 @@ export class RoomClient {
     this.reconnectNow();
   }
   subscribeDrawing(listener) { this.drawingListeners.add(listener); return () => this.drawingListeners.delete(listener); }
+  subscribeReactions(listener) { this.reactionListeners.add(listener); return () => this.reactionListeners.delete(listener); }
+  react(emoji) { return this.command('react', { emoji }); }
   command(type, fields = {}) {
     if (this.connectionStatus !== 'connected' || this.ws?.readyState !== 1 || !this.state) return Promise.reject(new ClientError('DISCONNECTED'));
     if (this.pending.size >= MAX_PENDING_COMMANDS || (this.ws.bufferedAmount || 0) > MAX_BUFFERED_BYTES) {

@@ -4,6 +4,16 @@ export const FABRAKA_PROTOCOL = 3;
 export const ERSOMHA_PROTOCOL = 1;
 export const GAME_PROTOCOLS = Object.freeze({ meenfina: PROTOCOL, fabraka: FABRAKA_PROTOCOL, ersomha: ERSOMHA_PROTOCOL });
 export const ROOM_CAPABILITIES = Object.freeze({ ersomha: ERSOMHA_PROTOCOL });
+// تفاعلات سريعة داخل الغرفة: طقم رموز ثابت بلا نص حر، يُبث للحاضرين ولا يُحفظ.
+// رسالة `reaction` جديدة لا تكسر عميلًا أقدم (يتجاهل الأنواع التي لا يعرفها)، فلا يُرفع البروتوكول.
+export const ROOM_REACTIONS = Object.freeze(['😂', '👏', '😮', '🔥', '😅', '❤️']);
+export const REACTION_BURST = 4;
+export const REACTION_REFILL_MS = 1500;
+// رسّام «ارسمها» صامت أثناء الاختيار والرسم (كتم الميكروفون شرط لبدء دوره)؛ رمز مثل 🔥 يصير تلميحًا.
+export function reactionsAllowed(state, seatId) {
+  if (!state || state.game !== 'ersomha' || !['select', 'draw'].includes(state.phase)) return true;
+  return seatId !== (state.draw?.drawerId ?? state.drawerId);
+}
 export const ERSOMHA_CATEGORIES = Object.freeze([
   { id: 'animals', label: 'الحيوانات' }, { id: 'nature', label: 'الطبيعة' },
   { id: 'food', label: 'الأطعمة' }, { id: 'home', label: 'المنزل' },

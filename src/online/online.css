@@ -99,3 +99,15 @@
 .online-fab-details .fab-rules li + li { margin-top: 9px; }
 .online-seat{width:10px;height:10px;border-radius:50%;flex:none;box-shadow:inset 0 1px 0 #ffffff88,0 1px 0 #00000022}
 .online-dropped{gap:8px}.online-dropped .btn{width:100%}
+.room-reactions{display:flex;justify-content:center;flex-wrap:wrap;gap:6px}
+.room-reaction{min-width:46px;min-height:46px;border-radius:23px;border:1px solid #e7d6b8;background:#fffaf0;font-size:1.35rem;line-height:1;cursor:pointer;box-shadow:0 2px 0 #e7d6b8;transition:transform .12s ease,opacity .2s ease}
+.room-reaction:active:not(:disabled){transform:translateY(2px) scale(.92);box-shadow:none}
+.room-reaction:disabled{opacity:.45;cursor:default}
+.room-reaction-layer{position:fixed;inset-inline:0;bottom:calc(110px + var(--safe-bottom,0px));height:0;pointer-events:none;z-index:40}
+.room-reaction-float{position:absolute;bottom:0;display:grid;justify-items:center;gap:2px;animation:room-reaction-rise 2.6s ease-out forwards}
+.room-reaction-float b{font-size:2.1rem;line-height:1;font-weight:400}
+.room-reaction-float small{font-size:.72rem;font-weight:800;color:#5b3d24;background:#fffaf0e6;border-radius:10px;padding:1px 8px;max-width:120px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.room-reaction-float.lane-0{inset-inline-start:10%}.room-reaction-float.lane-1{inset-inline-start:28%}.room-reaction-float.lane-2{inset-inline-start:46%}.room-reaction-float.lane-3{inset-inline-start:64%}.room-reaction-float.lane-4{inset-inline-start:80%}
+@keyframes room-reaction-rise{0%{opacity:0;transform:translateY(12px) scale(.6)}12%{opacity:1;transform:translateY(0) scale(1.08)}75%{opacity:1}100%{opacity:0;transform:translateY(-170px) scale(1)}}
+html[data-reduced-motion="true"] .room-reaction-float{animation:none}
+

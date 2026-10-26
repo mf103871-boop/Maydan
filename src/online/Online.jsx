@@ -10,7 +10,7 @@ import { useAccount } from '../shared/account/context.js';
 import { socialInterruption } from '../social/interruption.js';
 import { useLamma } from '../social/LammaProvider.jsx';
 import { socialJoinFallbackKey } from '../social/game-launch.js';
-import { AVATARS, ROUND_OPTIONS, ONLINE_GAMES, ROOM_CAPABILITIES, minimumOnlinePlayers, EXPIRY_WARNING, normalizeCode, validCode, resolveServerUrl, errorText, arabicNumber } from './shared.js';
+import { AVATARS, ROUND_OPTIONS, ONLINE_GAMES, ROOM_CAPABILITIES, ROOM_REACTIONS, reactionsAllowed, minimumOnlinePlayers, EXPIRY_WARNING, normalizeCode, validCode, resolveServerUrl, errorText, arabicNumber } from './shared.js';
 import { RoomClient, newCredentials, post, readSaved, save, clearSession, deviceId } from './client.js';
 import { reloadWithLatestVersion } from './update.js';
 import { isNativeShell } from '../shared/account/native.js';
@@ -236,6 +236,47 @@ export function RoomChrome({ state, code, status, error, expiring = false, msLef
   </div>;
 }
 
+// تفاعلات سريعة: طقم رموز ثابت، وكل تفاعل يطفو باسم صاحبه ثم يختفي. لا نص حر ولا حفظ؛
+// الخادم يحدّ كل مقعد بدفعة صغيرة، والزر يهدأ لحظة إن بلغها اللاعب.
+export function RoomReactions({ client, state, me, status }) {
+  const [floating, setFloating] = useState([]);
+  const [resting, setResting] = useState(false);
+  const membersRef = useRef([]); membersRef.current = state?.members || [];
+  const meId = me?.id;
+  useEffect(() => {
+    if (!client) return undefined;
+    const timers = new Set();
+    const unsubscribe = client.subscribeReactions((event) => {
+      const sender = membersRef.current.find((m) => m.id === event.seatId && !m.left);
+      if (!sender || !ROOM_REACTIONS.includes(event.emoji)) return;
+      const item = { key: event.id || `${event.seatId}-${event.at}`, emoji: event.emoji, name: event.seatId === meId ? 'أنت' : sender.name, lane: Math.floor(Math.random() * 5) };
+      setFloating((list) => [...list.filter((x) => x.key !== item.key).slice(-7), item]);
+      const timer = setTimeout(() => { timers.delete(timer); setFloating((list) => list.filter((x) => x.key !== item.key)); }, 2600);
+      timers.add(timer);
+    });
+    return () => { unsubscribe(); timers.forEach(clearTimeout); };
+  }, [client, meId]);
+  const restTimer = useRef(0);
+  useEffect(() => () => clearTimeout(restTimer.current), []);
+  if (!state || !me || !client) return null;
+  const allowed = reactionsAllowed(state, me.id);
+  const send = async (emoji) => {
+    try { await client.react(emoji); }
+    catch (error) {
+      if (error?.code !== 'RATE_LIMIT') return;
+      setResting(true); clearTimeout(restTimer.current); restTimer.current = setTimeout(() => setResting(false), 1500);
+    }
+  };
+  return <>
+    <div className="room-reactions" role="group" aria-label={allowed ? 'تفاعل سريع' : 'التفاعل متوقف خلال دورك في الرسم'}>
+      {ROOM_REACTIONS.map((emoji) => <button key={emoji} type="button" className="room-reaction" disabled={status !== 'connected' || !allowed || resting} aria-label={`أرسل ${emoji}`} onClick={() => send(emoji)}>{emoji}</button>)}
+    </div>
+    <div className="room-reaction-layer" aria-live="polite">
+      {floating.map((item) => <span key={item.key} className={`room-reaction-float lane-${item.lane}`}><b>{item.emoji}</b><small>{item.name}</small></span>)}
+    </div>
+  </>;
+}
+
 function ConnectedRoom({ code, session, stored, onLeft }) {
   const { toast, sound, haptics, confetti } = usePlatform();
   const account = useAccount();
@@ -337,6 +378,7 @@ function ConnectedRoom({ code, session, stored, onLeft }) {
         ? <FabrakaMatch state={state} me={me} disabled={disabled} isHost={isHost} act={act} clockOffset={clientRef.current?.clockOffset || 0} />
         : state.game === 'ersomha' ? <ErsomhaMatch state={state} me={me} disabled={disabled} isHost={isHost} act={act} client={clientRef.current} status={status} clockOffset={clientRef.current?.clockOffset || 0} drawerReady={!lamma?.activeCall || (lamma.activeCall._ownerId === account.user?.id && lamma.media?.userId === account.user?.id && lamma.media?.muted === true)} onReport={['draw', 'result'].includes(state.phase) ? reportDrawing : undefined} />
         : <Match state={state} disabled={disabled} isHost={isHost} act={act} clockOffset={clientRef.current?.clockOffset || 0} />))}
+    {!outdated && status !== 'ended' && <RoomReactions client={clientRef.current} state={state} me={me} status={status} />}
     {exitTarget && <ConfirmModal title="تطلع من الغرفة؟" message="مغادرتك تنهي مقعدك الحالي. إذا كنت المضيف تنتقل الإدارة للاعب متصل." confirmLabel="الخروج" cancelLabel="خلّيني ألعب" onConfirm={leave} onCancel={() => setExitTarget(null)} />}
   </RoomChrome>;
 }
