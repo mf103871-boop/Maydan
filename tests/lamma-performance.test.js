@@ -78,6 +78,10 @@ test('twelve accounts sharing Wi-Fi retain separate read quotas; changing IP/ses
 });
 
 test('shared-WiFi writes remain usable for a party while preserving account and network flood guards', async t => {
+  // Account quotas use fixed minute windows. Keep this burst in one window;
+  // wall-clock rollover during CI must not be mistaken for a missing limit.
+  let now = Math.floor(Date.now() / 60_000) * 60_000 + 1000;
+  t.mock.method(Date, 'now', () => now);
   const h = await fixture(t), users = [];
   for (let i = 0; i < 12; i++) users.push(await h.user());
   for (let i = 0; i < 6; i++) {
@@ -86,6 +90,8 @@ test('shared-WiFi writes remain usable for a party while preserving account and 
   }
   for (let i = 6; i < 120; i++) assert.equal((await routeRequest(h.request(users[0], '/preferences', 'PUT', { previews: false }), h.env)).status, 200);
   assert.equal((await routeRequest(h.request(users[0], '/preferences', 'PUT', { previews: false }), h.env)).status, 429);
+  now += 60_000;
+  assert.equal((await routeRequest(h.request(users[0], '/preferences', 'PUT', { previews: false }), h.env)).status, 200, 'the next minute resets the account quota');
   const storage = new MemoryStorage(); t.after(() => storage.dispose());
   const limiter = new RequestLimiter({ storage });
   for (let i = 0; i < LIMITS.socialReadIP; i++) assert.equal((await limiter.fetch(new Request('https://internal', { method: 'POST', body: JSON.stringify({ kind: 'socialReadIP' }) }))).status, 200);
