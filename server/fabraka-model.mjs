@@ -2,7 +2,7 @@
 import { FABRAKA_PROTOCOL, ROOM_TTL, HOST_GRACE, AVATARS, VOTE_SECONDS, minimumOnlinePlayers } from '../src/online/shared.js';
 import { normalizeOptions, validateLie, matchesTruth, sameAnswer, duoQuestion, roundBreakdown, fillName, TRUTH_ID } from '../src/games/fabraka/logic.js';
 import { pictureAsset, PICTURE_CREDIT } from '../src/games/fabraka/pictureAssets.js';
-import { active, member, memberOrNull, profile, transferHost, joinRoom as joinMember, fail, hasInvisible, absent, graceDeadlines, extendForMatch, kickSeat, colorOf } from './room-model.mjs';
+import { active, playing, member, memberOrNull, profile, transferHost, admitMember, fail, hasInvisible, absent, graceDeadlines, extendForMatch, kickSeat, colorOf } from './room-model.mjs';
 import { shuffled } from './protocol.mjs';
 import { objectionableText } from './moderation/filter.mjs';
 
@@ -65,7 +65,7 @@ export function createRoom(code, input, now) {
 }
 export function joinRoom(room, input, now) {
   if (!room.members.some((m) => m.id === input.id && !m.left) && active(room).length >= 8) fail('FULL_FABRAKA', 409);
-  return joinMember(room, input, now);
+  return admitMember(room, input, now, { lateJoin: true });
 }
 function abortRound(room, reason) {
   room.fab.aborted = reason; room.phase = 'result'; room.deadlineAt = null;
@@ -78,7 +78,7 @@ function beginRound(room, now) {
   const owner = room.settings.mode === 'friends' ? pickOwner(room) : null;
   const truthHostId = owner?.id || null;
   Object.assign(f, { question: truthHostId ? { ...raw, text: fillName(raw.text, owner.name), answer: '', aliases: [] } : raw,
-    truthHostId, writers: active(room).map((m) => m.id).filter((id) => id !== truthHostId),
+    truthHostId, writers: playing(room).filter((id) => id !== truthHostId),
     submissions: {}, options: [], votes: {}, truthWriters: [], helped: {}, revealGroups: [], revealIndex: 0,
     revealedIds: [], groupShown: false, scored: false, aborted: null, breakdown: {} });
   const fact = raw.factId || raw.id;
@@ -157,7 +157,7 @@ export function leaveRoom(room, id, now) {
   transferHost(room, now, room.hostId === id);
   if (!active(room).length) { room.phase = 'closed'; room.deadlineAt = null; return; }
   dropParticipant(room, id);
-  if (PLAYING.includes(room.phase) && active(room).length < minimumOnlinePlayers('fabraka', room.settings)) {
+  if (PLAYING.includes(room.phase) && playing(room).length < minimumOnlinePlayers('fabraka', room.settings)) {
     room.phase = 'over'; room.reason = 'players_left'; room.deadlineAt = null;
   } else if (room.phase === 'host' && room.fab.truthHostId === id) abortRound(room, 'owner_left');
   else if (room.fab) maybeAdvance(room, now);

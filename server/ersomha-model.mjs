@@ -1,7 +1,7 @@
 // Authoritative game state. Word cards and account/lease identifiers are private:
 // snapshot() is the only projection allowed onto a player's state channel.
 import { ERSOMHA_PROTOCOL, ERSOMHA_CATEGORIES, ROOM_TTL, HOST_GRACE, AVATARS } from '../src/online/shared.js';
-import { active, member, profile, transferHost, joinRoom as joinMember, fail, hasInvisible, extendForMatch, kickSeat, colorOf } from './room-model.mjs';
+import { active, member, profile, transferHost, admitMember, fail, hasInvisible, extendForMatch, kickSeat, colorOf } from './room-model.mjs';
 import { objectionableText } from './moderation/filter.mjs';
 import { matchesErsomhaAnswer, getErsomhaPool } from './ersomha-content.mjs';
 
@@ -37,7 +37,7 @@ export function createRoom(code, input, now) {
 }
 export function joinRoom(room, input, now) {
   if (!room.members.some(m => m.id === input.id && !m.left) && active(room).length >= 8) fail('FULL_ERSOMHA', 409);
-  return joinMember(room, input, now);
+  return admitMember(room, input, now);
 }
 function drawer(room) { return room.members.find(m => m.id === room.draw?.drawerId && !m.left); }
 function beginTurn(room, now) {

@@ -32,8 +32,45 @@ test('join is idempotent, authenticated, unique and limited to twelve players', 
   const small = lobby();
   rejects('NAME_TAKEN', () => joinRoom(small, { ...people[3], name: people[1].name }, 2000));
   command(small, 'p0', 'start');
-  rejects('STARTED', () => joinRoom(small, people[3], 2000));
+  joinRoom(small, people[3], 2000); // A late seat watches instead of being turned away.
+  assert.equal(small.participants.includes('p3'), false);
   joinRoom(small, people[1], 2000); // Same seat may reconnect during a match.
+  assert.equal(small.members.length, 4);
+});
+test('a seat that joins during a match watches it and plays from the next match', () => {
+  const r = playing();
+  joinRoom(r, people[3], 1200); connected(r, 'p3', true, 1200);
+  assert.deepEqual(r.participants, ['p0', 'p1', 'p2']);
+  rejects('AUTH', () => command(r, 'p3', 'vote', { targetId: 'p1' }, 1300));
+  rejects('TARGET', () => command(r, 'p0', 'vote', { targetId: 'p3' }, 1300));
+  for (const id of ['p0', 'p1', 'p2']) command(r, id, 'vote', { targetId: 'p1' }, 1300);
+  assert.equal(r.phase, 'result', 'the round never waits for the watcher');
+  assert.equal(snapshot(r, 'p3', 1300).myVote.submitted, false);
+  // The host may remove a connected watcher during a match, never a connected player.
+  joinRoom(r, people[4], 1400); connected(r, 'p4', true, 1400);
+  command(r, 'p0', 'kick', { targetId: 'p4' }, 1400);
+  assert.equal(r.members.some((m) => m.id === 'p4' && !m.left), false);
+  rejects('INVALID', () => command(r, 'p0', 'kick', { targetId: 'p1' }, 1400));
+  // Watchers do not keep a match alive: two players left of three ends it.
+  leaveRoom(r, 'p2', 1500);
+  assert.equal(r.phase, 'over'); assert.equal(r.reason, 'players_left');
+  command(r, 'p0', 'restart', {}, 1600);
+  assert.equal(r.phase, 'lobby');
+  const watcher = r.members.find((m) => m.id === 'p3');
+  assert.equal(watcher.ready, false, 'a watcher readies up like everyone in the lobby');
+  watcher.ready = true; r.members.find((m) => m.id === 'p1').ready = true;
+  command(r, 'p0', 'start', {}, 1700);
+  assert.deepEqual(r.participants, ['p0', 'p1', 'p3']);
+});
+test('a watcher runs the room only when no connected player of the match remains', () => {
+  const r = playing();
+  joinRoom(r, people[3], 1200); connected(r, 'p3', true, 1200);
+  connected(r, 'p1', false, 1200);
+  leaveRoom(r, 'p0', 1250);
+  assert.equal(r.hostId, 'p2', 'a connected player is preferred');
+  connected(r, 'p2', false, 1300);
+  tick(r, 1300 + HOST_GRACE);
+  assert.equal(r.hostId, 'p3', 'nobody playing is connected: the watcher keeps the room moving');
 });
 test('only host may start, with three connected and ready players', () => {
   const r = lobby();

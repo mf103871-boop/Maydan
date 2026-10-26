@@ -75,6 +75,8 @@ jobs:
         run: E2E_PORT=3101 node scripts/e2e/paywall.mjs "$RUNNER_TEMP/e2e/paywall"
       - name: A room protocol update keeps the seat and rejoins the same match
         run: node --test tests/e2e/room-update.mjs
+      - name: A late phone watches the running match and plays the next one
+        run: node --test tests/e2e/room-watch.mjs
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
         if: ${{ always() }}
         with:

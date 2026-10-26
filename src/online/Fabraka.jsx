@@ -170,7 +170,7 @@ function Final({ state, sorted, isHost, disabled, act }) {
     {isHost ? <Button data-design-id="restart" full size="lg" variant="primary" disabled={disabled} onClick={() => act('restart')}>العودة للانتظار ولعب مرة ثانية</Button> : <p className="online-footnote">بانتظار المضيف لبدء لعبة جديدة.</p>}
   </>;
 }
-export function FabrakaMatch({ state, me, isHost, disabled, act, clockOffset }) {
+export function FabrakaMatch({ state, me, isHost, disabled, act, clockOffset, spectating = false }) {
   const platform = usePlatform();
   const [now, setNow] = useState(Date.now()), [confirmFinish, setConfirmFinish] = useState(false), [confirmSkip, setConfirmSkip] = useState(false);
   useEffect(() => {
@@ -209,6 +209,7 @@ export function FabrakaMatch({ state, me, isHost, disabled, act, clockOffset }) 
       </Card>}
       {state.phase === 'write' && <Card className="stack">
         {truthOwner ? <div role="status" className="online-waiting"><h2>أصحابك يفبركون الآن</h2><p>حقيقتك: {state.myTruth}. تابع الجولة دون تلميحات.</p></div>
+          : spectating ? <div role="status" className="online-waiting"><h2>اللاعبون يفبركون الآن</h2><p>تتفرج على هذه المباراة، وتكتب معهم من المباراة القادمة.</p></div>
           : state.mySubmission.submitted ? <div className="online-voted" role="status"><strong>وصلت إجابتك ✓</strong><p>{state.mySubmission.skipped ? 'مرّرت بدون إجابة.' : `إجابتك: ${state.mySubmission.text}`}</p><p>بانتظار الباقي…</p></div>
           : <Draft key={`${roundKey}:write`} state={state} me={me} disabled={disabled} expired={expired} act={act} />}
         <p className="online-footnote" role="status">ثبّت {number(state.writingCount)} من {number(state.writerCount)} إجاباتهم.</p>
@@ -219,7 +220,7 @@ export function FabrakaMatch({ state, me, isHost, disabled, act, clockOffset }) 
         {isHost && <Button data-design-id="continue" full variant="primary" disabled={disabled || expired} onClick={() => act('start_vote')}>ابدأ التصويت</Button>}
         <p className="online-footnote">يبدأ التصويت تلقائيًا عند انتهاء النقاش.</p>
       </Card>}
-      {state.phase === 'vote' && <Card className="stack">{truthOwner ? <div role="status" className="online-waiting"><h2>أصحابك يصوّتون</h2><p>صاحب الحقيقة لا يصوّت في جولته.</p></div> : <Vote key={`${roundKey}:vote`} state={state} disabled={disabled} expired={expired} act={act} />}
+      {state.phase === 'vote' && <Card className="stack">{truthOwner ? <div role="status" className="online-waiting"><h2>أصحابك يصوّتون</h2><p>صاحب الحقيقة لا يصوّت في جولته.</p></div> : spectating ? <div role="status" className="online-waiting"><h2>اللاعبون يصوّتون</h2><p>من يصدّقون؟ تابع الكشف معهم.</p></div> : <Vote key={`${roundKey}:vote`} state={state} disabled={disabled} expired={expired} act={act} />}
         <p className="online-footnote" role="status">وصل {number(state.submittedCount)} من {number(state.writerCount)} أصوات.</p>
       </Card>}
       {state.phase === 'reveal' && <Card className="stack"><h2>{state.reveal.final ? 'الحقيقة… أم أقوى فبركة؟' : 'من كتبها؟ ومن صدّقها؟'}</h2>

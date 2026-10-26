@@ -252,3 +252,33 @@ test('a disconnected truth owner is skipped, the host can skip a stalled truth r
   free.act(0, 'vote', { optionId: free.option('ب') }); free.act(1, 'vote', { optionId: free.option('أ') });
   assert.equal(free.room.phase, 'reveal', 'two present votes reveal without waiting thirty seconds');
 });
+test('a seat that joins a running Fabraka match watches: it neither writes nor votes, and plays the next match', () => {
+  const { room, players, act, view } = fixture();
+  act(0, 'start');
+  const watcher = { id: '9'.repeat(32), tokenHash: '8'.repeat(64), name: 'متفرج', avatar: 1 };
+  game.joinRoom(room, watcher, 1100); game.connected(room, watcher.id, true, 1100);
+  const watch = (type, fields = {}) => game.action(room, watcher.id, { type, matchId: room.matchId, round: room.round, ...fields }, 1100, []);
+  assert.equal(room.participants.includes(watcher.id), false);
+  assert.throws(() => watch('lie', { text: 'خمسمئة' }), error('TRUTH_OWNER'));
+  assert.equal(view(0).writerCount, 3, 'the round waits only for its own writers');
+  for (const n of [0, 1, 2]) act(n, 'lie', { text: ['١٩٩', '٢٢٢', '٢٤٤'][n] });
+  assert.equal(room.phase, 'vote');
+  assert.throws(() => watch('vote', { optionId: room.fab.options[0].id }), error('TRUTH_OWNER'));
+  assert.equal(game.snapshot(room, watcher.id, 1100).helpAvailable, false);
+  // Later rounds of this match still leave the watcher out.
+  for (const n of [0, 1, 2]) act(n, 'vote', { optionId: room.fab.options.find((o) => !o.owners.includes(players[n].id)).id });
+  while (room.phase === 'reveal') act(0, room.fab.groupShown ? 'next_reveal' : 'reveal');
+  act(0, 'next');
+  assert.equal(room.fab.writers.includes(watcher.id), false);
+  // Leaving players end the match by their own count, whatever the watchers.
+  game.leaveRoom(room, players[2].id, 1200); game.leaveRoom(room, players[1].id, 1200);
+  assert.equal(room.phase, 'over'); assert.equal(room.reason, 'players_left');
+  act(0, 'restart');
+  assert.ok(room.members.some((m) => m.id === watcher.id), 'the watcher is in the next lobby');
+});
+test('Ersomha keeps lobby-only admission', () => {
+  const owner = { id: '1'.repeat(32), tokenHash: '2'.repeat(64), name: 'المضيف', avatar: 0, accountUserId: 'u1' };
+  const room = game.createRoom('123456', { ...owner, game: 'ersomha' }, 1000);
+  room.phase = 'draw';
+  assert.throws(() => game.joinRoom(room, { id: '3'.repeat(32), tokenHash: '4'.repeat(64), name: 'زائر', avatar: 1 }, 1001), error('STARTED'));
+});
