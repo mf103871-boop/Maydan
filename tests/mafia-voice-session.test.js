@@ -100,3 +100,10 @@ test('native continuity restores only the authorized active match and retains it
   await f.session.stop(); f.session.configure(room(3, { phase: 'over' })); f.session.mediaChanged(snapshot);
   assert.equal(f.session.state.requested, false);
 });
+
+test('a native authorization grant does not claim connected before the matching SDK snapshot',async()=>{
+  const f=fixture();f.session.native=true;await f.session.start();
+  assert.equal(f.session.state.requested,true);assert.equal(f.session.state.status,'connecting');
+  f.session.mediaChanged({scope:'mafia',callId:'call',mediaEpoch:2,voiceSessionId:f.session.voiceSessionId,connected:true,muted:true});
+  assert.equal(f.session.state.status,'connected');
+});

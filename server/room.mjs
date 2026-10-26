@@ -10,7 +10,7 @@ import { liveAccountSql } from './moderation/access.mjs';
 import { ERSOMHA_PROTOCOL, BADEEHA_PROTOCOL, MAFIA_PROTOCOL, ROOM_REACTIONS, REACTION_BURST, REACTION_REFILL_MS, reactionsAllowed } from '../src/online/shared.js';
 import { requireMafiaEnabled, claimMafiaSeat, renewMafiaSeats, cleanupMafiaSeats, updateMafiaDirectory, mafiaPlaying, activateMafiaMedia } from './mafia-access.mjs';
 import { prepareMafiaVoice, committedMafiaVoice, mafiaVoiceView, mafiaVoiceRequest } from './mafia-voice.mjs';
-import { technicalAbort, snapshot as mafiaSnapshot } from './mafia-model.mjs';
+import { technicalAbort, snapshot as mafiaSnapshot, voiceAudience } from './mafia-model.mjs';
 import { persistMafiaResult, prepareMafiaResult } from './mafia-results.mjs';
 import { blockUser } from './social/db.mjs';
 import { getErsomhaPool } from './ersomha-content.mjs';
@@ -172,12 +172,29 @@ export class Room {
       await this.ctx.storage.put('mafiaResultOutbox',rest);this.mafiaResultOutbox=rest;
     }
   }
-  async validateMafiaSessions(candidate,now=Date.now()) {
+  mafiaSessionScope(candidate) {
+    const sockets=this.sockets().map(ws=>this.attachment(ws)).filter(a=>a.id&&a.accountSessionId);
+    const bindings=[...sockets.map(a=>[a.accountSessionId,a.accountUserId]),...Object.entries(candidate.mafiaMedia?.authSessions||{}).map(([userId,a])=>[a.id,userId])];
+    const ids=[...new Set(bindings.map(b=>b[0]))].sort();
+    const audience=candidate.members.filter(m=>!m.left).map(m=>[m.id,voiceAudience(candidate,m.id)]);
+    return {ids,bindings,key:JSON.stringify([candidate.matchId,candidate.phaseId,ids,audience]),revoked:sockets.some(a=>a.revoked)};
+  }
+  async readMafiaSessions(candidate,now=Date.now()) {
+    const scope=this.mafiaSessionScope(candidate),ids=scope.ids;
+    const sessions=ids.length?(await this.env.DB.prepare(`SELECT id,user_id,expires_at,revoked_at FROM sessions WHERE id IN (${ids.map(()=>'?').join(',')}) AND expires_at>? AND (revoked_at IS NULL OR revoked_at>?) AND ${liveAccountSql('sessions.user_id')}`).bind(...ids,now,now).all()).results||[]:[];
+    return {scope:scope.key,sessions};
+  }
+  mafiaSessionValid(proof,id,userId,now=Date.now()) {
+    return proof.sessions.find(s=>s.id===id&&s.user_id===userId&&s.expires_at>now&&(s.revoked_at==null||s.revoked_at>now));
+  }
+  async validateMafiaSessions(candidate,now=Date.now(),proof=null) {
+    // A proof is a local value in one serialized command, never an authorization
+    // cache. Changed membership/session sets or phase boundaries require a new read.
+    const scope=this.mafiaSessionScope(candidate);
+    if(!proof||proof.scope!==scope.key||scope.revoked||!scope.bindings.every(([id,userId])=>this.mafiaSessionValid(proof,id,userId,now)))proof=await this.readMafiaSessions(candidate,now);
     const sockets=this.sockets().map(ws=>({ws,...this.attachment(ws)})).filter(a=>a.id&&a.accountSessionId);
     const media=candidate.mafiaMedia;
-    const ids=[...new Set([...sockets.map(a=>a.accountSessionId),...Object.values(media?.authSessions||{}).map(a=>a.id)])];
-    const sessions=ids.length?(await this.env.DB.prepare(`SELECT id,user_id,expires_at,revoked_at FROM sessions WHERE id IN (${ids.map(()=>'?').join(',')}) AND expires_at>? AND (revoked_at IS NULL OR revoked_at>?) AND ${liveAccountSql('sessions.user_id')}`).bind(...ids,now,now).all()).results||[]:[];
-    const valid=(id,userId)=>sessions.find(s=>s.id===id&&s.user_id===userId);
+    const valid=(id,userId)=>this.mafiaSessionValid(proof,id,userId,Date.now());
     const affected=new Set();
     for(const a of sockets) {
       const session=valid(a.accountSessionId,a.accountUserId);
@@ -217,8 +234,9 @@ export class Room {
     }
     if(candidate.mafiaMedia?.failed)fail('MAFIA_VOICE_UNAVAILABLE',503);
   }
-  async prepareMafia(candidate) {
-    await this.validateMafiaSessions(candidate);
+  async prepareMafia(candidate,sessionProof=null) {
+    if(sessionProof&&(Date.now()>=(candidate.mafiaRenewAt||0)||candidate.mafiaMedia?.signature===null||await this.ctx.storage.get('mafia:voice-transition')))sessionProof=null;
+    await this.validateMafiaSessions(candidate,Date.now(),sessionProof);
     if((!candidate.mafiaRenewAt||Date.now()>=candidate.mafiaRenewAt)&&!(candidate.mafiaMedia?.failed&&!mafiaPlaying(candidate))) {
       await renewMafiaSeats(this.env,candidate);
       if(mafiaPlaying(candidate)&&candidate.mafiaMedia)await activateMafiaMedia(this.env,candidate);
@@ -676,7 +694,15 @@ export class Room {
         // failed login: answering with INVALID keeps the player's session alive.
         if (!a.id) fail('AUTH', 401);
         if (!requestId) fail('INVALID');
-        if(this.room.game==='mafia'&&!await this.env.DB.prepare(`SELECT 1 FROM sessions WHERE id=? AND user_id=? AND expires_at>? AND (revoked_at IS NULL OR revoked_at>?) AND ${liveAccountSql('sessions.user_id')}`).bind(a.accountSessionId||'',a.accountUserId||'',now,now).first())fail('AUTH',401);
+        let mafiaSessionProof=null;
+        if(this.room.game==='mafia') {
+          if(['ready','night_action','mafia_vote','nominate','verdict','herald','chat'].includes(command.type)) {
+            // A pure model action can share one fresh D1 result with preparation,
+            // which rechecks its scope and falls back at authorization boundaries.
+            mafiaSessionProof=await this.readMafiaSessions(this.room);
+            if(a.revoked||!this.mafiaSessionValid(mafiaSessionProof,a.accountSessionId,a.accountUserId))fail('AUTH',401);
+          } else if(!await this.env.DB.prepare(`SELECT 1 FROM sessions WHERE id=? AND user_id=? AND expires_at>? AND (revoked_at IS NULL OR revoked_at>?) AND ${liveAccountSql('sessions.user_id')}`).bind(a.accountSessionId||'',a.accountUserId||'',now,now).first())fail('AUTH',401);
+        }
         if (command.type === 'react') { this.reaction(ws, a, command, now); this.send(ws, { type: 'ack', requestId, ok: true }); return; }
         if (this.room.game === 'ersomha' && ['drawing_batch', 'drawing_undo', 'drawing_redo', 'drawing_clear', 'drawing_sync'].includes(command.type)) {
           await this.drawingCommand(ws, a.id, command); return;
@@ -687,7 +713,7 @@ export class Room {
         action(candidate, a.id, command, now, deck);
         if (candidate.game === 'ersomha' && command.type === 'start') attemptedStart = candidate;
         if (candidate.game === 'ersomha') await this.prepareErsomha(candidate);
-        if (candidate.game === 'mafia') await this.prepareMafia(candidate);
+        if (candidate.game === 'mafia') await this.prepareMafia(candidate,mafiaSessionProof);
         if (command.type === 'start' && !candidate.trialStarted && !(candidate.game==='mafia'&&candidate.phase==='over')) {
           // Validate the engine action first. Failed readiness/settings never
           // spend the allowance; a failed DO write can retry this private claim.

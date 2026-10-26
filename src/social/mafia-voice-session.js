@@ -1,6 +1,7 @@
 // A match owns one visible call. Credentials belong to a server-selected media
 // epoch, never to the faction named by the UI. No credentials are persisted.
 const closed = new Set(['over', 'closed', 'lobby']);
+const terminalDenials = new Set(['AUTH','AUTH_REQUIRED','AUTH_EXPIRED','ACCOUNT_SUSPENDED','NOT_FOUND','CALL_NOT_FOUND','CALL_UNAVAILABLE','CALL_FORBIDDEN','FORBIDDEN','BLOCKED','CALL_ANSWERED','MAFIA_VOICE_DEVICE','MAFIA_ACTIVE_ELSEWHERE','MAFIA_VOICE_SESSION']);
 export const mafiaCommunicationLocked = state => state?.game === 'mafia' && !closed.has(state.phase) && !!state.you?.roleId && state.members?.some(member => member.id === state.you.id && member.alive);
 export const emptyMafiaVoice = () => ({ requested: false, status: 'off', muted: true, canPublish: false, participants: [], error: '', previousCall: null });
 export class MafiaVoiceSession {
@@ -70,6 +71,12 @@ export class MafiaVoiceSession {
           this.again = true; continue;
         }
         if (response.mediaEpoch < this.epoch) return;
+        // A provider retirement may invalidate our transport while an earlier
+        // same-epoch sync is in flight. Its unchanged reply has no credential.
+        if (response.unchanged && this.epoch !== response.mediaEpoch) {
+          if (++staleReplies >= 3) throw new Error('تغيّرت قناة الصوت. نعيد التحقق من الاتصال.');
+          this.again = true; continue;
+        }
         this.call = { ...response.call, scope: 'mafia', name: 'مافيا ميدان', conversationId: code };
         this.setCall(this.call);
         if (!response.unchanged || this.epoch !== response.mediaEpoch) {
@@ -78,7 +85,9 @@ export class MafiaVoiceSession {
           if (!current()) return;
           this.epoch = response.mediaEpoch;
         }
-        this.update({ status: response.quiet ? 'silent' : 'connected', muted: this.media.state.muted,
+        const nativeConnected = this.media.state.connected && this.media.state.callId === this.call.id &&
+          this.media.state.voiceSessionId === this.voiceSessionId && this.media.state.mediaEpoch === response.mediaEpoch;
+        this.update({ status: response.quiet ? 'silent' : this.native && !nativeConnected ? 'connecting' : 'connected', muted: this.media.state.muted,
           canPublish: !!response.canPublish, error: '' });
       } while (this.again && current());
     })();
@@ -86,7 +95,7 @@ export class MafiaVoiceSession {
     try { return await task; }
     catch (error) {
       if (current()) {
-        if (['AUTH_REQUIRED', 'AUTH_EXPIRED', 'ACCOUNT_SUSPENDED', 'CALL_UNAVAILABLE', 'MAFIA_VOICE_SESSION', 'MAFIA_VOICE_DEVICE', 'MAFIA_ACTIVE_ELSEWHERE'].includes(error.code)) {
+        if (terminalDenials.has(error.code)) {
           await this.stop({ notify: false });
           this.update({ error: 'انتهت صلاحية صوت المباراة. أعد الانضمام عند توفره.' });
           throw error;
@@ -116,6 +125,12 @@ export class MafiaVoiceSession {
     if (!this.state.requested || media.callId !== this.call?.id) return;
     if (media.voiceSessionId && media.voiceSessionId !== this.voiceSessionId) return;
     if (Number.isSafeInteger(media.mediaEpoch) && media.mediaEpoch < this.epoch) return;
+    if (media.scope === 'mafia' && media.authorizationRequired) {
+      this.epoch = -1;
+      this.update({ status: 'reconnecting', muted: true, canPublish: false, participants: [] });
+      this.sync().catch(() => {});
+      return;
+    }
     if (this.native && Number.isSafeInteger(media.mediaEpoch)) this.epoch = Math.max(this.epoch, media.mediaEpoch);
     const participants = (media.participants || []).map(participant => {
       const seat = this.call.participants?.find(member => member.userId === (participant.userId || participant.id));

@@ -93,9 +93,20 @@ function reportText(report,members) {
 
 function MafiaVoice({ voice = {}, state }) {
   const connected = ['connected','on','silent'].includes(voice.status);
+  const recovering = ['connecting','reconnecting'].includes(voice.status);
+  const quiet = voice.status === 'silent' || (state.phase === 'night' && state.you?.voice?.canListen === false);
   const [actionError,setActionError] = useState('');
   const run = async task => {setActionError('');try{await task?.();}catch(error){setActionError(/[\u0600-\u06ff]/.test(error?.message || '')?error.message:'تعذّر تنفيذ أمر الصوت. حاول مجددًا.');}};
-  return <div data-design-id="voice" data-design-required="true" className="mafia-voice"><div><b>{connected ? 'صوت المجلس متصل' : voice.status === 'connecting' || voice.status === 'reconnecting' ? 'نؤمّن الاتصال الصوتي…' : 'اسمع المجلس وشارك بصوتك'}</b><small>{state.phase === 'night' ? 'مسارات الليل معزولة حسب الفريق' : state.phase === 'defense' ? 'الصوت للمرشح فقط أثناء الدفاع' : 'الميكروفون اختياري؛ الكتابة متاحة حسب المرحلة'}</small></div><div className="mafia-voice-actions">{connected ? <><Button data-design-id="mute" disabled={!voice.onMute || !voice.canPublish} onClick={() => run(() => voice.onMute(!voice.muted))}>{voice.muted || !voice.canPublish ? 'شغّل الميكروفون' : 'اكتم الميكروفون'}</Button>{voice.onSpeaker && voice.audioOutputs?.length > 0 && <label><span className="sr-only">مخرج الصوت</span><select aria-label="مخرج الصوت" data-design-id="audio-output" value={voice.outputId || 'default'} onChange={event => run(() => voice.onSpeaker(event.target.value))}>{voice.audioOutputs.map(output => <option key={output.id || output.deviceId} value={output.id || output.deviceId}>{output.label || 'السماعة'}</option>)}</select></label>}<Button data-design-id="voice-leave" variant="ghost" onClick={() => run(voice.onLeave)}>افصل الصوت</Button></> : <Button data-design-id="voice-join" disabled={!voice.onJoin || voice.status === 'connecting'} onClick={() => run(voice.onJoin)}>الانضمام بالصوت</Button>}</div>{(voice.error || actionError) && <p role="alert">{actionError || (/[\u0600-\u06ff]/.test(voice.error) ? voice.error : errorText(voice.error))}</p>}</div>;
+  return <div data-design-id="voice" data-design-required="true" className="mafia-voice">
+    <div><b>{recovering ? 'نؤمّن الاتصال الصوتي…' : quiet ? 'الليل هادئ الآن' : connected ? 'صوت المجلس متصل' : 'اسمع المجلس وشارك بصوتك'}</b>
+      <small>{quiet ? voice.requested ? 'سيعود صوت المجلس تلقائيًا عندما تبدأ مرحلة الاستماع.' : 'فعّل صوت النهار الآن ليعود تلقائيًا عند بدء النقاش.' : state.phase === 'night' ? 'مسارات الليل معزولة حسب الفريق' : state.phase === 'defense' ? 'الصوت للمرشح فقط أثناء الدفاع' : 'الميكروفون اختياري؛ الكتابة متاحة حسب المرحلة'}</small></div>
+    <div className="mafia-voice-actions">{connected || voice.requested ? <>
+      <Button data-design-id="mute" disabled={!voice.onMute || !voice.canPublish || recovering} onClick={() => run(() => voice.onMute(!voice.muted))}>{!voice.canPublish || recovering ? 'الميكروفون مغلق' : voice.muted ? 'شغّل الميكروفون' : 'اكتم الميكروفون'}</Button>
+      {connected && voice.onSpeaker && voice.audioOutputs?.length > 0 && <label><span className="sr-only">مخرج الصوت</span><select aria-label="مخرج الصوت" data-design-id="audio-output" value={voice.outputId || 'default'} onChange={event => run(() => voice.onSpeaker(event.target.value))}>{voice.audioOutputs.map(output => <option key={output.id || output.deviceId} value={output.id || output.deviceId}>{output.label || 'السماعة'}</option>)}</select></label>}
+      <Button data-design-id="voice-leave" variant="ghost" disabled={!voice.onLeave} onClick={() => run(voice.onLeave)}>افصل الصوت</Button>
+    </> : <Button data-design-id="voice-join" disabled={!voice.onJoin || recovering} onClick={() => run(voice.onJoin)}>{quiet ? 'تفعيل صوت النهار' : 'الانضمام بالصوت'}</Button>}</div>
+    {(voice.error || actionError) && <p role="alert">{actionError || (/[\u0600-\u06ff]/.test(voice.error) ? voice.error : errorText(voice.error))}</p>}
+  </div>;
 }
 
 function MafiaChat({ state, you, me, members, disabled, act }) {

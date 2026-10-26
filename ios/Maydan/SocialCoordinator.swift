@@ -421,12 +421,19 @@ final class SocialCoordinator: NSObject {
         if payload["muted"] as? Bool == false && mayPublish && !privateTurn && recordingGranted { muted = false }
         state = quiet ? "silent" : "connecting"
         if existing {
-            if quiet { emitCall(); pollCall() } else { try await connectRoom() }
+            // Also completes CallKit after an initial transport failure that
+            // recovers into a quiet night instead of an audible channel.
+            try await connectRoom()
         } else {
             let action = CXStartCallAction(call: id, handle: CXHandle(type: .generic, value: "مافيا ميدان"))
             action.isVideo = false
             do { try await transaction(action) }
-            catch { await finish(reason: .failed, expectedCallId: id); throw error }
+            catch {
+                guard attempt == callGeneration, call?.id == id, call?.voiceSessionId == voiceSessionId,
+                      call?.mediaEpoch == mediaEpoch else { throw SocialNativeError.failed("CALL_CANCELLED") }
+                await finish(reason: .failed, expectedCallId: id)
+                throw error
+            }
         }
         return callSnapshot()
     }
@@ -437,16 +444,28 @@ final class SocialCoordinator: NSObject {
         muted = true; call?.canPublish = false; call?.quiet = true; call?.connection = nil
         let old = room; room = nil
         state = "reconnecting"
-        try? AudioManager.shared.setEngineAvailability(AudioEngineAvailability(isInputAvailable: false, isOutputAvailable: audioActive))
+        try? AudioManager.shared.setEngineAvailability(.none)
         emitCall()
         await old?.disconnect()
     }
 
     private func syncMafiaCall(_ current: NativeCall) async throws {
+        guard !Task.isCancelled, call?.id == current.id, call?.userId == current.userId,
+              call?.voiceSessionId == current.voiceSessionId else { return }
+        let attempt = callGeneration
         let knownEpoch = room == nil && state != "silent" ? -1 : current.mediaEpoch
-        let response = try await session.request("/api/rooms/\(current.conversationId)/voice", body:
-            ["deviceId": session.deviceId, "voiceSessionId": current.voiceSessionId, "operation": "sync", "knownEpoch": knownEpoch])
-        guard !Task.isCancelled, let live = call, live.id == current.id, live.userId == current.userId, live.voiceSessionId == current.voiceSessionId else { return }
+        let response: [String: Any]
+        do {
+            response = try await session.request("/api/rooms/\(current.conversationId)/voice", body:
+                ["deviceId": session.deviceId, "voiceSessionId": current.voiceSessionId, "operation": "sync", "knownEpoch": knownEpoch])
+        } catch {
+            // A pre-pause reply (including a denial) cannot resurrect the old
+            // audience or terminate a replacement gesture with the same call ID.
+            guard !Task.isCancelled, attempt == callGeneration, call?.id == current.id,
+                  call?.userId == current.userId, call?.voiceSessionId == current.voiceSessionId else { return }
+            throw error
+        }
+        guard !Task.isCancelled, attempt == callGeneration, let live = call, live.id == current.id, live.userId == current.userId, live.voiceSessionId == current.voiceSessionId else { return }
         guard let remote = response["call"] as? [String: Any], remote["id"] as? String == current.id.uuidString.lowercased(),
               response["voiceSessionId"] as? String == current.voiceSessionId,
               let epoch = response["mediaEpoch"] as? Int, epoch >= live.mediaEpoch else { return }
@@ -458,6 +477,26 @@ final class SocialCoordinator: NSObject {
             "quiet": response["quiet"] as? Bool ?? true, "muted": true, "voiceSessionId": current.voiceSessionId]
         payload["url"] = connection["url"]; payload["token"] = connection["token"]
         _ = try await connectMafia(payload)
+    }
+
+    private func recoverMafiaTransport(_ previousRoom: Room, requestImmediately: Bool = true) async {
+        guard room === previousRoom, let current = call, current.scope == "mafia" else { return }
+        await pauseMafiaTransport()
+        guard call?.id == current.id, call?.userId == current.userId, call?.voiceSessionId == current.voiceSessionId else { return }
+        // Initial connection failure can precede pollCall. Keep CallKit and the
+        // gesture alive, but never reconnect with the previous room/token.
+        if callPoll == nil { pollCall() }
+        guard requestImmediately else { return }
+        do { try await syncMafiaCall(current) }
+        catch {
+            if Self.isTerminalCallAuthorization(error) {
+                await finish(reason: .remoteEnded, endReason: "authorization-revoked", expectedCallId: current.id)
+            } else { callAuthorizationFailures += 1; emitCall(error: Self.errorCode(error)) }
+        }
+    }
+
+    private static func isTerminalCallAuthorization(_ error: Error) -> Bool {
+        ["AUTH", "AUTH_REQUIRED", "AUTH_EXPIRED", "ACCOUNT_SUSPENDED", "NOT_FOUND", "CALL_NOT_FOUND", "CALL_UNAVAILABLE", "CALL_FORBIDDEN", "FORBIDDEN", "BLOCKED", "CALL_ANSWERED", "MAFIA_VOICE_DEVICE", "MAFIA_ACTIVE_ELSEWHERE", "MAFIA_VOICE_SESSION"].contains(errorCode(error))
     }
 
     private func enablePushRegistry() {
@@ -601,7 +640,16 @@ final class SocialCoordinator: NSObject {
         let next = Room(delegate: self)
         room = next
         microphoneQueue = NativeMicrophoneTransitionQueue()
-        try await next.connect(url: connection.url, token: connection.token)
+        do { try await next.connect(url: connection.url, token: connection.token) }
+        catch {
+            // Revocation can race the initial SDK handshake too. A Mafia
+            // transport error is not a user leave or a terminal authorization.
+            if current.scope == "mafia" {
+                await recoverMafiaTransport(next, requestImmediately: false)
+                return
+            }
+            throw error
+        }
         guard call?.id == current.id, room === next else { await next.disconnect(); return }
         let attemptedMicrophone = audioActive && !muted && !privateTurn
         let microphoneGeneration = audioPolicy.microphoneGeneration
@@ -676,7 +724,7 @@ final class SocialCoordinator: NSObject {
                     self.callAuthorizationFailures = 0
                 } catch {
                     guard !Task.isCancelled, self.call?.id == current.id else { return }
-                    if ["AUTH_REQUIRED", "AUTH_EXPIRED", "ACCOUNT_SUSPENDED", "NOT_FOUND", "CALL_NOT_FOUND", "CALL_UNAVAILABLE", "CALL_FORBIDDEN", "FORBIDDEN", "BLOCKED", "CALL_ANSWERED", "MAFIA_VOICE_DEVICE", "MAFIA_ACTIVE_ELSEWHERE", "MAFIA_VOICE_SESSION"].contains(Self.errorCode(error)) {
+                    if Self.isTerminalCallAuthorization(error) {
                         await self.finish(reason: .remoteEnded, endReason: "authorization-revoked", expectedCallId: current.id)
                         return
                     }
@@ -780,12 +828,15 @@ extension SocialCoordinator: CXProviderDelegate {
     nonisolated func provider(_ provider: CXProvider, perform action: CXStartCallAction) {
         Task { @MainActor in
             guard self.call?.id == action.callUUID else { action.fail(); return }
+            var fulfilled = false
             do {
                 try AVAudioSession.sharedInstance().setCategory(.playAndRecord, mode: .voiceChat, options: [.allowBluetooth, .mixWithOthers])
                 provider.reportOutgoingCall(with: action.callUUID, startedConnectingAt: Date())
                 action.fulfill()
+                fulfilled = true
                 try await self.connectRoom()
             } catch {
+                if !fulfilled { action.fail() }
                 guard self.call?.id == action.callUUID else { return }
                 self.emitCall(error: Self.errorCode(error))
                 await self.finish(reason: .failed, notifyServer: true, expectedCallId: action.callUUID)
@@ -1021,17 +1072,18 @@ extension SocialCoordinator: RoomDelegate {
         Task { @MainActor in if self.room === room { self.emitCall() } }
     }
     nonisolated func room(_ room: Room, didStartReconnectWithMode reconnectMode: ReconnectMode) {
-        Task { @MainActor in if self.room === room { self.state = "reconnecting"; self.emitCall() } }
+        Task { @MainActor in
+            if self.room === room, self.call?.scope == "mafia" { await self.recoverMafiaTransport(room); return }
+            if self.room === room { self.state = "reconnecting"; self.emitCall() }
+        }
     }
     nonisolated func room(_ room: Room, didCompleteReconnectWithMode reconnectMode: ReconnectMode) {
         Task { @MainActor in if self.room === room { self.state = "connected"; self.emitCall() } }
     }
     nonisolated func room(_ room: Room, didDisconnectWithError error: LiveKitError?) {
         Task { @MainActor in
-            if self.room === room, let current = self.call, current.scope == "mafia" {
-                await self.pauseMafiaTransport()
-                do { try await self.syncMafiaCall(current) }
-                catch { self.callAuthorizationFailures += 1; self.emitCall(error: Self.errorCode(error)) }
+            if self.room === room, self.call?.scope == "mafia" {
+                await self.recoverMafiaTransport(room)
                 return
             }
             if self.room === room { await self.finish(reason: error == nil ? .remoteEnded : .failed, notifyServer: true) }

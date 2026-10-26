@@ -138,16 +138,18 @@ test('Mafia start revokes departed social grants until provider cleanup is prove
   assert.ok(revoked.every(p=>p.body.revoke_token_ts>second));
   assert.equal(h.app.rooms.get(g.code).instance.room.phase,'role');
 });
-test('unchanged private commands skip metadata writes while retaining both live session checks',async t=>{
+test('ordinary private commands authorize actor and peers from one live read without metadata writes or cross-request reuse',async t=>{
   const h=await setup(t),g=await h.group();await g.clients[0].command('start');await h.phase(g.code);await h.phase(g.code);
   await until(()=>g.clients.every(c=>c.state.phase==='night'));
   const index=g.clients.findIndex(c=>c.state.you.faction==='mafia'),actor=g.clients[index],target=g.people.find(p=>p.id!==g.people[index].id).id;
   const prepare=h.app.env.DB.prepare.bind(h.app.env.DB),sql=[];t.mock.method(h.app.env.DB,'prepare',text=>{sql.push(text);return prepare(text);});
   await actor.command('mafia_vote',{targetId:target});
-  assert.equal(sql.filter(s=>/^SELECT .*sessions/.test(s)).length,2,'sender and room sessions remain live-authorized');
+  assert.equal(sql.filter(s=>/^SELECT .*sessions/.test(s)).length,1,'one live union read authorizes the actor and every socket/native binding');
   assert.equal(sql.filter(s=>/^(DELETE|INSERT|UPDATE).*mafia_/.test(s)).length,0,'no unchanged metadata writes enter the room queue');
+  const previous=structuredClone(h.app.rooms.get(g.code).instance.room.killVotes);
   await run(h.app.env,'UPDATE sessions SET revoked_at=? WHERE user_id=?',Date.now()-1,g.people[index].accountId);
   await assert.rejects(actor.command('mafia_vote',{targetId:target}),e=>e.code==='AUTH');
+  assert.deepEqual(h.app.rooms.get(g.code).instance.room.killVotes,previous,'revoked actor never mutates the command state');
 });
 test('metadata sync retries failed directory writes, resynchronizes on cold start and refreshes lobby expiry',async t=>{
   const h=await setup(t),g=await h.group(),prepare=h.app.env.DB.prepare.bind(h.app.env.DB);let failed=false;
@@ -301,4 +303,60 @@ test('moderator suspension revokes native Mafia media immediately after its sock
   const result=await h.api(moderator,'/api/moderation/actions',{action:'suspend_user',targetId:p.accountId,clientId:crypto.randomUUID(),reason:'test moderation suspension'});assert.equal(result.status,200,JSON.stringify(result));
   assert.ok(h.provider.some(r=>r.method==='RemoveParticipant'&&r.body.identity===p.accountId));assert.equal(item.instance.room.members.find(m=>m.id===p.id).connected,false);
   assert.equal(item.instance.room.mafiaMedia.authSessions[p.accountId],undefined);
+});
+
+test('ordinary action reconciles another revoked native peer before its command can be committed or acknowledged',async t=>{
+  const h=await setup(t),g=await h.group();await g.clients[0].command('start');await h.phase(g.code);
+  const item=h.app.rooms.get(g.code),peer=g.people[1];await h.api(peer,`/api/rooms/${g.code}/voice`,{deviceId:'peer-phone'});
+  await run(h.app.env,'UPDATE sessions SET revoked_at=? WHERE id=?',Date.now()-1,peer.sessionId);
+  let release,entered=false,settled=false;const barrier=new Promise(resolve=>{release=resolve;}),fetch=globalThis.fetch;
+  t.mock.method(globalThis,'fetch',async(url,options)=>{if(String(url).includes('mafia-tests.livekit.cloud')&&String(url).endsWith('/RemoveParticipant')){entered=true;await barrier;}return fetch(url,options);});
+  const pending=g.clients[0].command('chat',{channel:'public',text:'بعد الحاجز فقط',clientId:crypto.randomUUID()}).finally(()=>{settled=true;});
+  try{await until(()=>entered,'provider barrier');assert.equal(settled,false);assert.equal(JSON.stringify(item.instance.room.chats).includes('بعد الحاجز فقط'),false);}
+  finally{release();}
+  await pending;assert.equal(settled,true);assert.equal(item.instance.room.members.find(m=>m.id===peer.id).connected,false);
+  assert.ok(h.provider.some(r=>r.method==='RemoveParticipant'&&r.body.identity===peer.accountId));assert.equal(item.instance.room.mafiaMedia.authSessions[peer.accountId],undefined);
+  assert.equal(JSON.stringify(item.instance.room.chats).includes('بعد الحاجز فقط'),true);
+});
+
+test('a failed live union read commits no action and a subsequent request performs its own authorization',async t=>{
+  const h=await setup(t),g=await h.group();await g.clients[0].command('start');await h.phase(g.code);
+  const item=h.app.rooms.get(g.code),prepare=h.app.env.DB.prepare.bind(h.app.env.DB);let fail=true,reads=0;
+  t.mock.method(h.app.env.DB,'prepare',sql=>{if(sql.startsWith('SELECT id,user_id,expires_at,revoked_at FROM sessions')){reads++;if(fail){fail=false;return{bind:()=>({all:async()=>{throw new Error('injected live authorization outage');}})};}}return prepare(sql);});
+  const body={channel:'public',text:'تحقق جديد',clientId:crypto.randomUUID()};
+  await assert.rejects(g.clients[0].command('chat',body),e=>e.code==='INTERNAL');assert.equal(JSON.stringify(item.instance.room.chats).includes(body.text),false);
+  await g.clients[0].command('chat',body);assert.equal(reads,2);assert.equal(item.instance.room.chats.public.filter(m=>m.clientId===body.clientId).length,1);
+});
+
+test('one read per private command preserves durable ordering through a concurrent burst',async t=>{
+  const h=await setup(t),g=await h.group();await g.clients[0].command('start');await h.phase(g.code);await h.phase(g.code);await until(()=>g.clients.every(c=>c.state.phase==='night'));
+  const actorIndex=g.clients.findIndex(c=>c.state.you.faction==='mafia'),actor=g.clients[actorIndex],targets=g.people.filter((_,i)=>i!==actorIndex).map(p=>p.id),prepare=h.app.env.DB.prepare.bind(h.app.env.DB);let reads=0;
+  t.mock.method(h.app.env.DB,'prepare',sql=>{if(sql.startsWith('SELECT id,user_id,expires_at,revoked_at FROM sessions'))reads++;return prepare(sql);});
+  const order=[],choices=Array.from({length:8},(_,i)=>targets[i%targets.length]);await Promise.all(choices.map((targetId,i)=>actor.command('mafia_vote',{targetId}).then(()=>order.push(i))));
+  assert.equal(reads,8);assert.deepEqual(order,[0,1,2,3,4,5,6,7]);const item=h.app.rooms.get(g.code);
+  assert.equal(item.instance.room.killVotes[g.people[actorIndex].id],choices.at(-1));assert.equal((await item.storage.get('room')).killVotes[g.people[actorIndex].id],choices.at(-1));
+});
+
+test('same-task authorization rejects expired rows and rereads when phase, audience or session set changes',async t=>{
+  const h=await setup(t),g=await h.group();await g.clients[0].command('start');await h.phase(g.code);
+  const instance=h.app.rooms.get(g.code).instance,proof=await instance.readMafiaSessions(instance.room),p=g.people[0];
+  const actor=proof.sessions.find(s=>s.id===p.sessionId);assert.ok(instance.mafiaSessionValid(proof,p.sessionId,p.accountId));
+  assert.equal(instance.mafiaSessionValid(proof,p.sessionId,p.accountId,actor.expires_at),undefined,'expiry is rechecked when consuming rows');
+  const another=await issueSession(h.app.env,p.accountId),prepare=h.app.env.DB.prepare.bind(h.app.env.DB);let reads=0;
+  t.mock.method(h.app.env.DB,'prepare',sql=>{if(sql.startsWith('SELECT id,user_id,expires_at,revoked_at FROM sessions'))reads++;return prepare(sql);});
+  await instance.serial(async()=>{
+    let candidate=structuredClone(instance.room);candidate.phaseId++;await instance.validateMafiaSessions(candidate,Date.now(),proof);assert.equal(reads,1);
+    candidate=structuredClone(instance.room);candidate.members.find(m=>m.id===p.id).connected=false;await instance.validateMafiaSessions(candidate,Date.now(),proof);assert.equal(reads,2);
+    candidate=structuredClone(instance.room);candidate.mafiaMedia.authSessions||={};candidate.mafiaMedia.authSessions[p.accountId]={id:another.id,expiresAt:another.expiresAt};await instance.validateMafiaSessions(candidate,Date.now(),proof);assert.equal(reads,3);
+  });
+});
+
+test('ordinary action ignores a different revoked session of the same account and reactions still require a live actor',async t=>{
+  const h=await setup(t),g=await h.group();await g.clients[0].command('start');await h.phase(g.code);
+  const p=g.people[0],item=h.app.rooms.get(g.code);await h.api(p,`/api/rooms/${g.code}/voice`,{deviceId:'primary-phone'});
+  const other=await issueSession(h.app.env,p.accountId);await run(h.app.env,'UPDATE sessions SET revoked_at=? WHERE id=?',Date.now()-1,other.id);
+  const before=h.provider.filter(r=>r.method==='RemoveParticipant').length;await g.clients[0].command('chat',{channel:'public',text:'الجلسة الأصلية سليمة',clientId:crypto.randomUUID()});
+  assert.equal(item.instance.room.mafiaMedia.authSessions[p.accountId].id,p.sessionId);assert.equal(h.provider.filter(r=>r.method==='RemoveParticipant').length,before);
+  await run(h.app.env,'UPDATE sessions SET revoked_at=? WHERE id=?',Date.now()-1,p.sessionId);
+  await assert.rejects(g.clients[0].command('react',{emoji:'👍'}),e=>e.code==='AUTH');
 });

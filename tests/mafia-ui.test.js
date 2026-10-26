@@ -44,6 +44,21 @@ test('night chat uses team projection only; public text is not mixed into the se
   const html=render('match',props);
   assert.match(html,/TEAM_SENTINEL/);assert.doesNotMatch(html,/PUBLIC_SENTINEL|OBSERVER_SENTINEL/);
 });
+
+test('quiet night voice explains automatic return and never promises an available microphone',()=>{
+  const props=fixture();props.state.you.voice={canListen:false,canSpeak:false};
+  props.voice={status:'silent',requested:true,muted:true,canPublish:false,onMute:()=>{},onLeave:()=>{}};
+  const html=render('match',props);assert.match(html,/الليل هادئ الآن/);assert.match(html,/سيعود صوت المجلس تلقائيًا/);
+  assert.match(html,/<button(?=[^>]*data-design-id="mute")(?=[^>]*disabled)[^>]*>/);assert.doesNotMatch(html,/الانضمام بالصوت|شغّل الميكروفون/);
+});
+
+test('a requested voice connection always offers an explicit cancel while connecting or recovering',()=>{
+  for(const status of ['connecting','reconnecting']){
+    const props=fixture();props.voice={status,requested:true,canPublish:true,onMute:()=>{},onLeave:()=>{}};
+    const html=render('match',props);assert.match(html,/<button(?=[^>]*data-design-id="voice-leave")(?![^>]*disabled)[^>]*>/);
+    assert.match(html,/<button(?=[^>]*data-design-id="mute")(?=[^>]*disabled)[^>]*>/);assert.doesNotMatch(html,/data-design-id="voice-join"/);
+  }
+});
 test('confirmed daytime ballots cannot be resubmitted from the UI, including abstention',()=>{
   const props=fixture('online.mafia.nomination');props.state.you.nominationSubmitted=true;props.state.you.myNomination=null;
   assert.doesNotMatch(render('match',props),/ability-submit|data-design-id="abstain"/);

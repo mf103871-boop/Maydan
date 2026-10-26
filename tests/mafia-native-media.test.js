@@ -46,6 +46,26 @@ test('native older audience events and credentials cannot replace a newer Mafia 
   } finally { await media.dispose(); fixture.close(); }
 });
 
+test('native provider pause keeps the logical call while rejecting queued older-generation audience snapshots', async () => {
+  const fixture = nativeFixture(), media = new CallMedia(); media.setAccount('alice');
+  try {
+    await media.transitionGame(grant(6), { muted: true });
+    emitNativeEvent('socialCall', event(6, { mediaGeneration: 2 }));
+    emitNativeEvent('socialCall', event(6, { mediaGeneration: 3, state: 'reconnecting', quiet: true, canPublish: false, participants: [] }));
+    assert.equal(media.state.ended, false); assert.equal(media.state.connecting, true);
+    assert.equal(media.state.callId, CALL); assert.equal(media.state.voiceSessionId, SESSION);
+    assert.deepEqual(media.state.participants, []); assert.equal(media.state.canPublish, false);
+    emitNativeEvent('socialCall', event(6, { mediaGeneration: 2, muted: false }));
+    assert.equal(media.state.connecting, true); assert.equal(media.state.canPublish, false);
+    assert.deepEqual(media.state.participants, []);
+    emitNativeEvent('socialCall', event(7, { mediaGeneration: 4 }));
+    assert.equal(media.state.connected, true); assert.equal(media.state.mediaEpoch, 7);
+    assert.equal(fixture.commands.some(c => c.type === 'socialCallEnd'), false);
+    emitNativeEvent('socialCall', event(7, { mediaGeneration: 5, state: 'ended', quiet: true, canPublish: false, participants: [], endReason: 'authorization-revoked' }));
+    assert.equal(media.state.ended, true); assert.deepEqual(media.state.participants, []);
+  } finally { await media.dispose(); fixture.close(); }
+});
+
 test('a native quiet phase keeps one call identifier and rejects unmute before sending a bridge command', async () => {
   const fixture = nativeFixture(), media = new CallMedia(); media.setAccount('alice');
   try {
@@ -174,6 +194,43 @@ test('native source contracts keep listening permission-free, fixed trusted rout
   assert.match(session, /\^\/api\/rooms\/\[0-9\]\{6\}\/voice\$/);
   assert.match(session, /NativeConfig\.shared\.isTrustedAuthURL\(url\)/);
   assert.match(session, /completionHandler\(nil\)/);
+});
+
+test('native disconnect and reconnect use silent fresh authorization, with stale HTTP success and errors fenced', async () => {
+  // Source contract only; actual Swift compilation and native SDK behavior
+  // require the macOS build and device test, respectively.
+  const source = await readFile(new URL('../ios/Maydan/SocialCoordinator.swift', import.meta.url), 'utf8');
+  const between = (start, end) => source.slice(source.indexOf(start), source.indexOf(end, source.indexOf(start) + start.length));
+  const pause = between('private func pauseMafiaTransport(', 'private func syncMafiaCall(');
+  assert.match(pause, /callGeneration \+= 1; audioPolicy\.invalidateMicrophoneChange\(\)/);
+  assert.match(pause, /call\?\.connection = nil/); assert.match(pause, /let old = room; room = nil/);
+  assert.match(pause, /setEngineAvailability\(\.none\)/); assert.match(pause, /state = "reconnecting"/);
+  assert.doesNotMatch(pause, /finish\(|notifyServer|reportCall\(/);
+  const sync = between('private func syncMafiaCall(', 'private func recoverMafiaTransport(');
+  assert.match(sync, /let attempt = callGeneration/);
+  assert.equal((sync.match(/attempt == callGeneration/g) || []).length, 2, 'both successful and failed stale HTTP replies are rejected');
+  assert.match(sync, /room == nil && state != "silent" \? -1/);
+  const recovery = between('private func recoverMafiaTransport(', 'private static func isTerminalCallAuthorization(');
+  assert.match(recovery, /guard room === previousRoom/);
+  assert.match(recovery, /await pauseMafiaTransport\(\)/);
+  assert.match(recovery, /if callPoll == nil \{ pollCall\(\) \}/);
+  assert.match(recovery, /guard requestImmediately else \{ return \}/);
+  assert.match(recovery, /if Self\.isTerminalCallAuthorization\(error\)/);
+  assert.doesNotMatch(recovery, /notifyServer: true|\.connect\(url:|\.connection/);
+  const connect = between('private func connectRoom(', 'private func pollCall(');
+  assert.match(connect, /if current\.scope == "mafia" \{\s*await recoverMafiaTransport\(next, requestImmediately: false\)\s*return/);
+  const gameConnect = between('private func connectMafia(', 'private func pauseMafiaTransport(');
+  assert.match(gameConnect, /catch \{\s*guard attempt == callGeneration, call\?\.id == id, call\?\.voiceSessionId == voiceSessionId,\s*call\?\.mediaEpoch == mediaEpoch else/);
+  const startAction = between('nonisolated func provider(_ provider: CXProvider, perform action: CXStartCallAction)', 'nonisolated func provider(_ provider: CXProvider, perform action: CXAnswerCallAction)');
+  assert.match(startAction, /var fulfilled = false/);
+  assert.match(startAction, /action\.fulfill\(\)\s*fulfilled = true\s*try await self\.connectRoom\(\)/);
+  assert.match(startAction, /catch \{\s*if !fulfilled \{ action\.fail\(\) \}/);
+  for (const callback of ['didStartReconnectWithMode', 'didDisconnectWithError']) {
+    const body = source.slice(source.indexOf(`nonisolated func room(_ room: Room, ${callback}`));
+    assert.match(body.split('\n    }')[0], /current\.scope == "mafia"|call\?\.scope == "mafia"/);
+    assert.match(body.split('\n    }')[0], /recoverMafiaTransport\(room\)/);
+  }
+  assert.match(between('private static func isTerminalCallAuthorization(', 'private func enablePushRegistry('), /"AUTH"/);
 });
 
 test('native lifecycle covers the whole window synchronously before an inactive snapshot, independently of WebKit or voice', async () => {

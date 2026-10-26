@@ -93,7 +93,7 @@ export function createVoiceRecorder({ onInterrupted = () => {} } = {}) {
 
 export const emptyMedia = () => ({ connected: false, connecting: false, muted: false, participants: [], audioOutputs: [], outputId: 'default', error: '',
   userId: null, callId: null, scope: null, conversationId: null, ended: false, ending: false, localOnly: false, endReason: null,
-  mediaEpoch: -1, voiceSessionId: null, nativeMediaGeneration: -1, canPublish: true, quiet: false });
+  mediaEpoch: -1, voiceSessionId: null, nativeMediaGeneration: -1, canPublish: true, quiet: false, authorizationRequired: false });
 export class CallMedia {
   constructor(onChange = () => {}, { loadSDK } = {}) {
     this.onChange = onChange; this.state = emptyMedia(); this.generation = 0; this.elements = new Set(); this.owner = `live-call-${globalThis.crypto.randomUUID()}`;
@@ -117,6 +117,7 @@ export class CallMedia {
       if (this.state.callId && !this.state.ended && this.state.callId !== event.callId) return;
       if (event.scope === 'mafia' && event.callId === this.state.callId && Number.isSafeInteger(event.mediaEpoch) && event.mediaEpoch < this.state.mediaEpoch) return;
       if (event.scope === 'mafia' && event.callId === this.state.callId && this.state.voiceSessionId && event.voiceSessionId !== this.state.voiceSessionId) return;
+      if (event.scope === 'mafia' && event.callId === this.state.callId && Number.isSafeInteger(event.mediaGeneration) && event.mediaGeneration < this.state.nativeMediaGeneration) return;
       if (event.scope === 'mafia' && this.pausedMafia?.callId === event.callId && event.state === 'connected' &&
         event.mediaEpoch <= this.pausedMafia.epoch && !(event.mediaGeneration > this.pausedMafia.generation)) return;
       this.nativeCall = event;
@@ -192,7 +193,18 @@ export class CallMedia {
       room.on(RoomEvent.Reconnected, () => { if (epoch === this.generation) this.update({ connecting: false, connected: true, error: '' }); });
       room.on(RoomEvent.Disconnected, () => {
         if (epoch !== this.generation) return;
-        this.clearElements(); release(this.owner); audioActivity(this.owner, false); this.update({ connected: false, connecting: false, ended: true });
+        this.clearElements(); release(this.owner); audioActivity(this.owner, false);
+        if (this.state.scope === 'mafia') {
+          // The server revokes the old RTC room before broadcasting the next
+          // phase. This is not a user hang-up. Fence its late SDK events and
+          // require a fresh grant; never reconnect with a cached credential.
+          this.generation++; this.room = null; this.desiredMuted = true;
+          room.localParticipant.setMicrophoneEnabled(false).catch(() => {});
+          this.update({ connected: false, connecting: true, ended: false, muted: true, canPublish: false,
+            participants: [], quiet: false, authorizationRequired: true, error: '' });
+          return;
+        }
+        this.update({ connected: false, connecting: false, ended: true });
       });
       await room.connect(connection.url, connection.token, { autoSubscribe: true });
       if (epoch !== this.generation) { await room.disconnect(); return; }
@@ -224,7 +236,7 @@ export class CallMedia {
     this.pausedMafia = { callId: this.state.callId, epoch: this.state.mediaEpoch, generation: this.state.nativeMediaGeneration };
     const callId = this.state.callId, epoch = ++this.generation, room = this.room;
     this.room = null; this.desiredMuted = true; this.clearElements();
-    this.update({ connected: false, connecting: false, quiet: true, muted: true, canPublish: false, participants: [] });
+    this.update({ connected: false, connecting: false, quiet: true, muted: true, canPublish: false, participants: [], authorizationRequired: false });
     if (isNativeShell()) await callNative('socialCallPauseGame', { callId, expectedMediaEpoch: this.state.mediaEpoch }, { timeout: 5000 });
     else await room?.disconnect();
     if (epoch !== this.generation) return;
