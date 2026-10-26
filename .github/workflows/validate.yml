@@ -69,6 +69,10 @@ jobs:
           E2E_BASE_URL=http://localhost:3000 node scripts/e2e/smoke.mjs "$RUNNER_TEMP/e2e/smoke"
       - name: Startup images are cached and served offline
         run: node scripts/e2e/startup-images.mjs "$RUNNER_TEMP/e2e/startup-images"
+      # Locks, trials, the paywall and gift codes against the local accounts server.
+      # Port 3000 is still held by the smoke preview above.
+      - name: Paywall, trials and Plus entitlements
+        run: E2E_PORT=3101 node scripts/e2e/paywall.mjs "$RUNNER_TEMP/e2e/paywall"
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
         if: ${{ always() }}
         with:
