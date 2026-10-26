@@ -5,10 +5,12 @@
 // «المصادر والتراخيص». ليس ضمن `npm test` لأنه يحتاج Playwright وChromium:
 //
 //   npm i -D playwright   (أو NODE_PATH يشير إلى تثبيت عام)
-//   node scripts/demo-packs.mjs && npm run build && node scripts/e2e/media-render.cjs
+//   node scripts/demo-packs.mjs && npm run build:cloudflare && node scripts/e2e/media-render.cjs
 //   node scripts/demo-packs.mjs --remove
 //
-// متغيرات اختيارية: CHROMIUM_PATH (مسار متصفح بديل)، E2E_PORT.
+// الحزم التجريبية خارج الفئات العشر المجانية: الاختبار يدخل بحساب «بلس» من خادم
+// الحسابات المحلي (plus-session.mjs)، فيلزم مستند بالـAPI على الأصل نفسه (build:cloudflare).
+// متغيرات اختيارية: CHROMIUM_PATH (مسار متصفح بديل)، E2E_PORT، E2E_API_PORT.
 // Drives the built platform through a full بَديهة round whose deck is entirely
 // media/special questions, and asserts each visual actually renders and plays.
 let chromium;
@@ -22,7 +24,9 @@ const TYPES = { '.html': 'text/html; charset=utf-8', '.js': 'text/javascript; ch
 const PORT = Number(process.env.E2E_PORT || 8098);
 const SHOTS = path.join(require('os').tmpdir(), 'maydan-e2e');
 fs.mkdirSync(SHOTS, { recursive: true });
+let plus = null;
 const server = http.createServer((req, res) => {
+  if (plus && plus.proxy(req, res)) return;
   let p = decodeURIComponent(url.parse(req.url).pathname);
   if (p.endsWith('/')) p += 'index.html';
   const f = path.join(ROOT, p);
@@ -39,7 +43,7 @@ const DEMO_IDS = ['demoa', 'demob', 'democ', 'demod', 'demoe', 'demof'];
 const demoPacks = DEMO_IDS.map((id) => {
   const file = path.join(CATS, `${id}.json`);
   if (!fs.existsSync(file)) {
-    console.error(`الحزم التجريبية غير مركّبة (${id}.json مفقود). شغّل أولًا: node scripts/demo-packs.mjs && npm run build`);
+    console.error(`الحزم التجريبية غير مركّبة (${id}.json مفقود). شغّل أولًا: node scripts/demo-packs.mjs && npm run build:cloudflare`);
     process.exit(2);
   }
   return JSON.parse(fs.readFileSync(file, 'utf8'));
@@ -84,11 +88,14 @@ async function pickDemoCategories(page, check) {
 
 (async () => {
   await new Promise((r) => server.listen(PORT, r));
+  const session = await import('./plus-session.mjs');
+  plus = await session.startPlusSession({ webOrigin: `http://127.0.0.1:${PORT}`, apiPort: Number(process.env.E2E_API_PORT || 8796) });
   const b = await chromium.launch({
     executablePath: process.env.CHROMIUM_PATH || undefined,
     args: ['--no-sandbox', '--autoplay-policy=no-user-gesture-required'],
   });
   const ctx = await b.newContext({ viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, isMobile: true, hasTouch: true, locale: 'ar' });
+  await session.installSession(ctx, plus.token);
   const p = await ctx.newPage();
   p.setDefaultTimeout(10000);
   const errs = [], net404 = [];
@@ -112,7 +119,9 @@ async function pickDemoCategories(page, check) {
   let fails = 0;
   const check = (ok, msg) => { if (!ok) { fails += 1; console.log('   ✗', msg); } };
 
+  const premium = session.watchPremium(p);
   await p.goto(`http://127.0.0.1:${PORT}/`, { waitUntil: 'load' });
+  await premium;
   await p.waitForSelector('.splash', { state: 'detached', timeout: 8000 });
   await p.evaluate(() => { location.hash = '#/game/badeeha'; });
   await p.waitForSelector('.details-hero h1');
@@ -342,7 +351,12 @@ async function pickDemoCategories(page, check) {
     return { found: true, text: (card.textContent || '').slice(0, 160) };
   });
   await p.waitForTimeout(200);
-  const creditRows = await p.$$eval('.credits-list li', (e) => e.length);
+  // بطاقة المصادر تضم أيضًا قوائم إسناد الأصوات (AudioCredits) بالصنف نفسه؛ قائمة
+  // الوسائط هي الابن المباشر للبطاقة.
+  const creditRows = await p.evaluate(() => {
+    const card = [...document.querySelectorAll('.card')].find((c) => (c.textContent || '').includes('المصادر والتراخيص'));
+    return card ? card.querySelectorAll(':scope > .credits-list > li').length : 0;
+  });
   // المتوقع = عدد الملفات المميزة التي تشير إليها الحزم المركّبة فعلًا. المفتاح
   // هو المسار بعد الحلّ لا نص src، تمامًا كما يفعل collectCredits: اسم ملف واحد
   // في حزمتين مختلفتين ملفان، وكان عدّه واحدًا يجعل الصفوف المتوقَّعة أقل.
@@ -367,7 +381,8 @@ async function pickDemoCategories(page, check) {
   const want = ['image-none', 'image-zoom', 'image-blur', 'image-silhouette', 'image-reveal', 'image-jumble', 'fourpics', 'audio', 'video', 'diff', 'truefalse', 'choice', 'code', 'scramble', 'complete', 'common', 'hints'];
   for (const k of want) check(seen[k] > 0, `النوع «${k}» لم يظهر`);
   if (errs.length) { fails += errs.length; console.log('page errors:', errs); }
-  const bad404 = net404.filter((u) => !u.includes('favicon'));
+  // اللّمة الحية غير متاحة في خادم الحسابات المحلي (503 مقصود)؛ الفحص هنا للوسائط.
+  const bad404 = net404.filter((u) => !u.includes('favicon') && !u.includes('/api/social/live-ticket'));
   if (bad404.length) { fails += bad404.length; console.log('bad responses:', bad404); }
   console.log(fails ? `\n✗ ${fails} إخفاقًا` : '\n✓ كل الأنواع تعمل');
   await b.close();
