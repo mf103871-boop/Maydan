@@ -1,0 +1,84 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "maydan-mafia-preview",
+  "main": "server/full-worker.mjs",
+  "compatibility_date": "2026-09-01",
+  "workers_dev": true,
+  "assets": {
+    "directory": "dist",
+    "binding": "ASSETS",
+    "not_found_handling": "single-page-application",
+    "run_worker_first": [
+      "/api",
+      "/api/*",
+      "/health",
+      "/studio",
+      "/studio/*"
+    ]
+  },
+  "vars": {
+    "APP_ORIGIN": "https://maydan-mafia-preview.mf103871.workers.dev",
+    "EXTRA_ORIGINS": "maydan://app",
+    "APPLE_BUNDLE_ID": "Maydan",
+    "MAFIA_ENABLED": "1",
+    "MAFIA_MAX_ACTIVE_ROOMS": "1",
+    "MAFIA_MAX_VOICE_PARTICIPANTS": "80",
+    "IOS_UPDATE_POLICY_ENABLED": "0",
+    "APPLE_SERVICES_ID": "app.maydan.web",
+    "GOOGLE_CLIENT_ID": "436944195283-042ike8qeg0636ndima1ehj17bhh3acb.apps.googleusercontent.com"
+  },
+  "durable_objects": {
+    "bindings": [
+      {
+        "name": "ROOMS",
+        "class_name": "Room"
+      },
+      {
+        "name": "LIMITERS",
+        "class_name": "RequestLimiter"
+      },
+      {
+        "name": "SOCIAL_HUB",
+        "class_name": "SocialHub"
+      },
+      {
+        "name": "SOCIAL_JOBS",
+        "class_name": "LammaJobs"
+      }
+    ]
+  },
+  "migrations": [
+    {
+      "tag": "v1-mafia-preview",
+      "new_sqlite_classes": [
+        "Room",
+        "RequestLimiter",
+        "SocialHub",
+        "LammaJobs"
+      ]
+    }
+  ],
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "maydan-mafia-preview-accounts",
+      "database_id": "cf5fb670-9fb5-4eeb-9717-ed76edb152e1",
+      "migrations_dir": "server/migrations"
+    }
+  ],
+  "r2_buckets": [
+    {
+      "binding": "SOCIAL_AUDIO",
+      "bucket_name": "maydan-mafia-preview-audio"
+    }
+  ],
+  "triggers": {
+    "crons": [
+      "17 3 * * *",
+      "* * * * *"
+    ]
+  },
+  "observability": {
+    "enabled": true
+  }
+}

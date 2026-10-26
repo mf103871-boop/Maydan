@@ -1,7 +1,8 @@
+import { environmentStorageKey } from '../lib/environment.js';
 // سرّ محاولة الدخول: يولّده هذا المتصفح قبل التحويل إلى المزوّد ويحتفظ به وحده؛ يسافر
 // إلى الخادم بصمته في `state`، ولا يُقبل رمز الدخول العائد (#/auth?code=) إلا معه.
 // بلا هذا كان يمكن دفع متصفح لاعب إلى رابط دخول شخص آخر فيدخل بحسابه.
-const KEY = 'maydan:auth:attempt';
+const KEY = environmentStorageKey('maydan:auth:attempt');
 const TTL = 15 * 60_000;
 const stores = () => {
   const list = [];

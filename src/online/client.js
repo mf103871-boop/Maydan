@@ -99,7 +99,7 @@ export class RoomClient {
       if (ws !== this.ws || this.stopped) return;
       // A prior authenticated state tells us this seat needs an account. Read
       // its current bearer again, saving one round trip during reconnection.
-      const accountAuthorization = this.state?.game === 'ersomha' ? this.accountAuthorization() : undefined;
+      const accountAuthorization = ['ersomha','mafia'].includes(this.state?.game) ? this.accountAuthorization() : undefined;
       if (this.stopped) return;
       try { ws.send(JSON.stringify({ type: 'auth', ...this.session, capabilities: ROOM_CAPABILITIES, ...(accountAuthorization ? { accountAuthorization } : {}) })); }
       catch { this.reconnectNow(); return; }
@@ -115,7 +115,7 @@ export class RoomClient {
       if (event.data === 'pong') return;
       let message;
       try { message = JSON.parse(event.data); } catch { return; }
-      if (message.type === 'account-auth' && message.game === 'ersomha') {
+      if (message.type === 'account-auth' && ['ersomha','mafia'].includes(message.game)) {
         // Read the account at challenge time, including on reconnect. Never
         // persist the bearer with the seat or place it in the WebSocket URL.
         const authorization = this.accountAuthorization();
@@ -186,12 +186,12 @@ export class RoomClient {
     }
     // UI commands belong to the round the player saw, even if a newer snapshot
     // arrived before React rendered it. Protocol scripts default to current state.
-    const { matchId = this.state.matchId, round = this.state.round, ...payload } = fields;
+    const { matchId = this.state.matchId, round = this.state.round, phaseId = this.state.phaseId, ...payload } = fields;
     const requestId = `${Date.now()}-${++this.counter}`;
     return new Promise((resolve, reject) => {
       const timer = setTimeout(() => { this.pending.delete(requestId); reject(new ClientError('TIMEOUT')); }, 10_000);
       this.pending.set(requestId, { resolve, reject, timer });
-      try { this.ws.send(JSON.stringify({ type, ...payload, requestId, matchId, round })); }
+      try { this.ws.send(JSON.stringify({ type, ...payload, requestId, matchId, round, ...(this.state.game === 'mafia' ? { phaseId } : {}) })); }
       catch { clearTimeout(timer); this.pending.delete(requestId); reject(new ClientError('DISCONNECTED')); }
     });
   }
@@ -205,4 +205,22 @@ export class RoomClient {
     // same reason; DISCONNECTED would replace the update notice with a wrong one.
     this.rejectPending(status === 'outdated' ? 'ROOM_OUTDATED' : 'DISCONNECTED'); this.ws?.close(); this.status(status);
   }
+}
+
+// Public directory is always read from the server; an empty list is not an offline room.
+export const getPublicRooms = (server,mode = 'classic',options = {}) => getRoomResource(server,`/api/rooms/public?game=mafia&mode=${mode === 'shadow' ? 'shadow' : 'classic'}`,options);
+export const getMafiaHistory = (server,options = {}) => getRoomResource(server,'/api/mafia/history',options);
+async function getRoomResource(server, path, { headers = {}, signal } = {}) {
+  if (!validateServerUrl(server)) throw new ClientError('CONFIG');
+  const controller = new AbortController();
+  const abort = () => controller.abort(); signal?.addEventListener('abort',abort,{once:true});
+  if(signal?.aborted) controller.abort();
+  const timeout = setTimeout(abort,15000);
+  try {
+    const response = await fetch(`${server}${path}`, { headers, signal: controller.signal, credentials:'omit', cache:'no-store' });
+    const result = await response.json();
+    if(!response.ok) throw new ClientError(result.error || 'NETWORK');
+    return result;
+  } catch(error) { throw error instanceof ClientError ? error : new ClientError('NETWORK'); }
+  finally { clearTimeout(timeout); signal?.removeEventListener('abort',abort); }
 }

@@ -52,7 +52,7 @@ export function createSocialGameLauncher({ account, target, isCurrent = () => tr
   const assertCurrent = () => { if (!owner || !isCurrent()) throw stale(); };
   return {
     get room() { return room; },
-    launch(game, sendInvite) {
+    launch(game, sendInvite, { settings } = {}) {
       if (pending) return pending;
       const task = (async () => {
         assertCurrent();
@@ -66,6 +66,7 @@ export function createSocialGameLauncher({ account, target, isCurrent = () => tr
           const { name, avatar } = roomProfile(account, previous);
           const result = await createRoom(server, '/api/rooms', { ...session, name, avatar, game,
             deviceId: getDeviceId(), rounds: 5, capabilities: ROOM_CAPABILITIES,
+            ...(game === 'mafia' ? { settings: settings || { mode:'classic', capacity:8, visibility:'private' } } : {}),
             ...(game === 'ersomha' ? { settings: { ...ERSOMHA_DEFAULT_SETTINGS } } : {}),
             ...(game === 'fabraka' ? { settings: { mode: 'classic', rounds: 3, style: 'curious', categories: [], writeSeconds: 30, discussionSeconds: 15, funnyVote: true, finalDouble: false } } : {}) },
           { headers: account.authHeaders() });

@@ -3,6 +3,14 @@ name: iOS signed build and optional TestFlight upload
 on:
   workflow_dispatch:
     inputs:
+      environment:
+        description: 'production for the public game; mafia-preview for the isolated Mafia TestFlight'
+        required: true
+        type: choice
+        default: production
+        options:
+          - production
+          - mafia-preview
       version:
         description: 'App version checked in App Store Connect (for example 1.5)'
         required: true
@@ -29,6 +37,7 @@ jobs:
     runs-on: macos-15
     timeout-minutes: 45
     env:
+      IOS_RELEASE_ENVIRONMENT: ${{ inputs.environment || 'production' }}
       IOS_VERSION: ${{ inputs.version }}
       IOS_BUILD: ${{ inputs.build }}
       IOS_UPLOAD: ${{ inputs.upload_to_testflight }}
@@ -49,6 +58,8 @@ jobs:
         with:
           node-version: 22
           cache: npm
+      - name: Select the approved API environment
+        run: node scripts/ios/release-environment.mjs --github-env
       - name: Select a stable Xcode 26 or newer
         run: |
           python3 - <<'PY'
@@ -73,8 +84,10 @@ jobs:
           npm test
           python3 scripts/ios/verify_audio_policy.py
           python3 scripts/ios/verify_storage_migration.py
+          python3 scripts/ios/verify_environment_storage.py
           python3 -m unittest discover -s scripts/ios -p 'test_*.py'
           npm run ios:prepare
+          node scripts/ios/release-environment.mjs --verify-native ios/Maydan/www/native-config.json
       - name: Build and launch the Release app on iPhone Simulator
         run: |
           xcodebuild -project ios/Maydan.xcodeproj -scheme Maydan \
@@ -140,6 +153,7 @@ jobs:
             "MAYDAN_PROVISIONING_PROFILE_SPECIFIER=$IOS_PROFILE_UUID" archive
           codesign --verify --deep --strict ios/build/Maydan.xcarchive/Products/Applications/Maydan.app
           python3 scripts/ios/signing.py archive ios/build/Maydan.xcarchive/Products/Applications/Maydan.app/Info.plist
+          node scripts/ios/release-environment.mjs --verify-native ios/build/Maydan.xcarchive/Products/Applications/Maydan.app/www/native-config.json
           python3 scripts/ios/verify_runtime_dependencies.py ios/build/Maydan.xcarchive/Products/Applications/Maydan.app
       - name: Export the signed IPA without uploading
         run: |

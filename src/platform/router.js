@@ -6,7 +6,7 @@ const ROUTES = [
   ['home', /^\/?$/],
   ['game', /^\/game\/([a-z0-9-]+)$/],
   ['play', /^\/play\/([a-z0-9-]+)$/],
-  ['online', /^\/online(?:\/(meenfina|fabraka|ersomha|badeeha))?$/],
+  ['online', /^\/online(?:\/(meenfina|fabraka|ersomha|badeeha|mafia))?$/],
   ['room', /^\/room\/(\d{6})$/],
   ['players', /^\/players$/],
   ['friend-group', /^\/friends\/group\/([a-zA-Z0-9_-]+)$/],

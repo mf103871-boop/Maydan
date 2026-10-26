@@ -9,7 +9,9 @@ import fabraka from '../games/fabraka/index.js';
 import meenfina from '../games/meenfina/index.js';
 import ersomha from '../games/ersomha/index.js';
 
-export const GAMES = [badeeha, ersomha, beep, mamnoo, jabeen, fabraka, meenfina];
+import mafia from '../games/mafia/index.js';
+
+export const GAMES = [badeeha, mafia, ersomha, beep, mamnoo, jabeen, fabraka, meenfina];
 
 export function getGame(id) {
   return GAMES.find((game) => game.id === id) || null;

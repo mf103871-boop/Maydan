@@ -1,7 +1,7 @@
 // إعدادات «ميدان بلس»: ما هو مجاني، وما يُعدّ تجربة، ومعرّفات المنتجات. الأسعار تُقرأ من المتاجر وقت العرض.
 // FREE_PACKS = أول عشر حزم بترتيب bank-status (يثبّته tests/account-gating.test.js).
 export const FREE_PACKS = ['general', 'geo', 'capitals', 'science', 'animals', 'history', 'food', 'fruitsveg', 'sports', 'football'];
-export const TRIAL_GAMES = ['beep', 'mamnoo', 'jabeen', 'fabraka', 'meenfina', 'ersomha'];
+export const TRIAL_GAMES = ['beep', 'mamnoo', 'jabeen', 'fabraka', 'meenfina', 'ersomha', 'mafia'];
 export const PRODUCTS = { monthly: 'plus.monthly', yearly: 'plus.yearly' };
 export const PLUS_NAME = 'ميدان بلس';
 // سماح بعد انتهاء الاشتراك: يغطي تأخر الإشعارات وفترة السماح في المتاجر.

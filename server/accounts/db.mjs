@@ -1,6 +1,7 @@
 // طبقة D1 رقيقة: كل استعلامات الحسابات في مكان واحد، بلا SQL مبعثر في المسارات.
 // تستعمل فقط prepare().bind().first()/all()/run() كي يعمل غلاف node:sqlite المحلي بالواجهة نفسها.
 import { TRIAL_GAMES } from '../../src/shared/account/config.js';
+import { mafiaDeleteStatements } from '../mafia-results.mjs';
 import { failure } from './errors.mjs';
 import { paddleEnvironmentOf } from './billing-environment.mjs';
 import { socialDeleteStatements } from '../social/db.mjs';
@@ -166,6 +167,7 @@ export async function deleteUser(env, userId) {
   const statements = ['sessions', 'auth_codes', 'trials', 'online_room_trial_claims', 'subscriptions', 'paddle_customers', 'paddle_customers_scoped', 'paddle_checkouts', 'account_deletions', 'identities']
     .map((table) => statement(env, `DELETE FROM ${table} WHERE user_id = ?`, [userId]));
   statements.push(...await ersomhaDeleteStatements(env, userId), ...drawingReportDeleteStatements(env, userId));
+  statements.push(...mafiaDeleteStatements(env,userId));
   statements.push(...moderationDeleteStatements(env, userId));
   statements.push(...socialDeleteStatements(env, userId));
   statements.push(...profileDeleteStatements(env, userId));

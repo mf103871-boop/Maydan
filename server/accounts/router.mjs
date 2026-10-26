@@ -1,6 +1,7 @@
 // موجّه مسارات الحسابات: يُستدعى من routeRequest قبل مسارات الغرف.
 // يُعيد Response إن كان المسار له، أو null ليكمل الموجّه الأصلي طريقه.
 import { TRIAL_GAMES, PRODUCTS, PROMO_DURATION_MS } from '../../src/shared/account/config.js';
+import { removeMafiaAccount } from '../mafia-access.mjs';
 import { codeHash, isValidCode } from '../../src/shared/account/redeem.js';
 import { json, readJson, sha256 } from '../protocol.mjs';
 import { failure, RoomError } from './errors.mjs';
@@ -366,6 +367,7 @@ async function deleteAccount(request, env, now) {
     for (const identity of identities) {
       if (identity.provider === 'apple' && identity.refresh_token) await apple.revokeToken(env, identity.refresh_token);
     }
+    await removeMafiaAccount(env,user.id);
     await db.deleteUser(env, user.id);
     await forgetSocialUser(env, user.id);
     await notifyUsers(env, formerFriends, { type: 'refresh' });
@@ -409,10 +411,10 @@ export async function roomGate(request, env, input, now = Date.now()) {
   // بَديهة مجانية على جهاز واحد (القفل في الحزم لا في المباراة)، وكذلك استضافتها أونلاين.
   if (input?.game === 'badeeha') return null;
   const game = gameOf(input);
-  if (!env.DB) { if (game === 'ersomha') failure('AUTH_REQUIRED'); return null; }
+  if (!env.DB) { if (game === 'ersomha' || game === 'mafia') failure('AUTH_REQUIRED'); return null; }
   const device = deviceKeyOf(input);
   let found = null;
-  if (game === 'ersomha') found = await requireSession(env, request, { now, rotate: false });
+  if (game === 'ersomha' || game === 'mafia') found = await requireSession(env, request, { now, rotate: false });
   else if (bearer(request)) {
     try { found = await readSession(env, request, { now, rotate: false }); }
     catch (error) { if (!(error instanceof RoomError)) throw error; } // رمز قديم = ضيف، لا رفض
@@ -468,4 +470,19 @@ export async function consumeRoomTrial(env, gate, claimId, now = Date.now(), own
   await assertOwner();
   const won = await db.first(env, `SELECT COUNT(*) AS n FROM online_room_trial_claims WHERE user_id IN (${placeholders}) AND game=? AND claim_id=?`, ...keys, gate.game, claimId);
   if (won?.n !== keys.length) failure('PLUS_REQUIRED');
+}
+// Host transfer cannot transfer a paid entitlement. Recheck at each Mafia
+// start, while preserving the room's idempotent free-start claim on retries.
+export async function recheckMafiaHost(env,room,now=Date.now()) {
+  const host=room.members.find(m=>m.id===room.hostId&&!m.left);
+  if(!host?.accountUserId||!env.DB) failure('AUTH_REQUIRED');
+  const id=host.accountUserId;
+  if(!await env.DB.prepare(`SELECT 1 WHERE ${liveAccountSql('?')}`).bind(id,id).first())failure('AUTH');
+  const premium=premiumActive(premiumOf(await db.subscriptionsOf(env,id),now,env),now);
+  const prior=await env.DB.prepare("SELECT claim_id FROM online_room_trial_claims WHERE user_id=? AND game='mafia'").bind(id).first();
+  const trials=await db.trialsOf(env,id);
+  if(!trials.mafia)room.trialStarted=false;
+  if(!premium&&trials.mafia&&prior?.claim_id!==room.roomTrialClaim)failure('PLUS_REQUIRED');
+  if(room.trialOwnerId!==host.id) {room.roomTrialClaim=crypto.randomUUID();room.trialStarted=false;room.trialOwnerId=host.id;}
+  room.roomTrialGate={userId:id,device:room.roomTrialGate?.userId===id?room.roomTrialGate.device:null,game:'mafia',premium};
 }

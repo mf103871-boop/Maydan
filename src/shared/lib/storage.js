@@ -1,3 +1,4 @@
+import { belongsToStorageEnvironment } from './environment.js';
 // تخزين محلي بنطاق: كل لعبة تحصل على مخزن مفاتيحه تحت `maydan:<gameId>:`
 // فلا تتداخل بيانات لعبة مع أخرى، ويمكن مسحها بمفردها.
 export const PLATFORM_PREFIX = 'maydan:';
@@ -76,7 +77,7 @@ export function createStorage(scope, backend) {
 // كما كان تمامًا. يقبل clearAllPlatformData({ keep }) أو (backend, { keep }).
 export function clearAllPlatformData(backend, options = {}) {
   const isOptions = backend && typeof backend === 'object' && typeof backend.getItem !== 'function';
-  const { keep = [] } = isOptions ? backend : (options || {});
+  const { keep = [], apiOrigin } = isOptions ? backend : (options || {});
   const store = resolveBackend(isOptions ? null : backend);
   if (!store) return 0;
   const spared = Array.isArray(keep) ? keep.filter((prefix) => typeof prefix === 'string' && prefix) : [];
@@ -85,6 +86,7 @@ export function clearAllPlatformData(backend, options = {}) {
     for (let i = 0; i < store.length; i += 1) {
       const k = store.key(i);
       if (!k || !(k.startsWith(PLATFORM_PREFIX) || k.startsWith('maydan-'))) continue;
+      if (!belongsToStorageEnvironment(k, apiOrigin)) continue;
       if (spared.some((prefix) => k.startsWith(prefix))) continue;
       doomed.push(k);
     }

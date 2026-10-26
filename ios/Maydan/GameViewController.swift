@@ -22,7 +22,7 @@ private final class WeakScriptMessageHandler: NSObject, WKScriptMessageHandler {
 /// مرآة المباريات المجانية المستهلكة في UserDefaults: مسح بيانات WebKit لا يعيد التجربة.
 /// الخادم يبقى مصدر الحقيقة للمسجَّلين؛ هذه للمجهول على هذا الجهاز.
 enum TrialMirror {
-    private static let key = "maydan.trials.marks"
+    private static let key = NativeConfig.shared.scopedStorageKey("maydan.trials.marks")
     private static let maximumEntries = 32
 
     static func isValidGame(_ game: String) -> Bool {
@@ -847,7 +847,7 @@ final class GameViewController: UIViewController, WKNavigationDelegate, WKUIDele
     private func handle(command: String, id: String, payload: [String: Any]) {
         let socialCommands: Set<String> = [
             "socialStoredSession", "socialSession", "socialLogout", "socialNotifications",
-            "socialCallConnect", "socialCallMute", "socialCallSpeaker", "socialCallEnd", "socialCallResumeAudio",
+            "socialCallConnect", "socialCallMute", "socialCallSpeaker", "socialCallEnd", "socialCallResumeAudio", "socialCallPauseGame",
             "socialVoiceStart", "socialVoiceStop", "socialVoiceCancel", "socialAudioPrivacy"
         ]
         if socialCommands.contains(command) {

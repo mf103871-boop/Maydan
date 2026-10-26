@@ -5,6 +5,7 @@ import { Screen, TopBar, Segment } from '../../shared/ui/components.jsx';
 import { PlayersSetup } from '../../shared/setup/PlayersSetup.jsx';
 import { TeamsSetup } from '../../shared/setup/TeamsSetup.jsx';
 import { createStorage } from '../../shared/lib/storage.js';
+import { environmentStorageKey } from '../../shared/lib/environment.js';
 import { createWakeLock } from '../../shared/lib/wakeLock.js';
 import { flashScreen, stampScreen, vignette, prefersReducedMotion, wait } from '../../shared/fx/index.js';
 import { usePlatform } from '../context.js';
@@ -28,7 +29,7 @@ export function Play({ id }) {
   const profilesRef = useRef(profiles); profilesRef.current = profiles;
   const recorderRef = useRef(null);
   if (!recorderRef.current) recorderRef.current = new LocalSessionRecorder({
-    storage: createStorage('profile-sessions'),
+    storage: createStorage(environmentStorageKey('maydan:profile-sessions:')),
     beginSession: (gameId) => profilesRef.current.beginSession(gameId),
     completeSession: (sessionId) => profilesRef.current.completeSession(sessionId),
   });

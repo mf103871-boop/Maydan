@@ -191,7 +191,7 @@ function recountStats(env,userId) {
       OR player_stats.online_wins!=excluded.online_wins OR player_stats.online_draws!=excluded.online_draws`,userId,userId,userId,userId);
 }
 export async function recordOnlineResult(env,{userId,eventId,game,won,draw,finishedAt}) {
-  if (!['meenfina','fabraka','ersomha','badeeha'].includes(game) || typeof eventId !== 'string' || !/^online:[A-Za-z0-9:_-]{1,170}$/.test(eventId)
+  if (!['meenfina','fabraka','ersomha','badeeha','mafia'].includes(game) || typeof eventId !== 'string' || !/^online:[A-Za-z0-9:_-]{1,170}$/.test(eventId)
     || typeof won !== 'boolean' || typeof draw !== 'boolean' || (won && draw) || (game==='meenfina' && (won || draw))
     || !Number.isSafeInteger(finishedAt) || finishedAt<=0 || finishedAt>Date.now()+60_000) fail('INVALID',400);
   if (!(await isLiveAccount(env,userId))) return false;

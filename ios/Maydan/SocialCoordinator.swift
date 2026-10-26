@@ -33,12 +33,14 @@ final class SocialCoordinator: NSObject {
     private var muted = false
     private var speaker = false
     private var preferredSpeaker = false
-    private var privateTurn = UserDefaults.standard.bool(forKey: "maydan.social.privateTurn")
+    private var privateTurn = UserDefaults.standard.bool(forKey: NativeConfig.shared.scopedStorageKey("maydan.social.privateTurn"))
+    private var gameCommunicationLocked = false
     private var state = "idle"
     private var signingOut = false
     private var accountGeneration = 0
     private var callGeneration = 0
     private var pendingCallId: UUID?
+    private var mafiaEndingCallId: UUID?
     var onEvent: ((String, [String: Any]) -> Void)?
     var onAudioActivityChange: (() -> Void)?
     var onAudioLifecycle: (([String: Any]) -> Void)?
@@ -52,6 +54,10 @@ final class SocialCoordinator: NSObject {
         let incoming: Bool
         let userId: String
         var connection: (url: String, token: String)?
+        var mediaEpoch: Int = -1
+        var canPublish: Bool = true
+        var quiet: Bool = false
+        var voiceSessionId: String = ""
     }
 
     func bootstrap() {
@@ -250,6 +256,8 @@ final class SocialCoordinator: NSObject {
             if granted { UIApplication.shared.registerForRemoteNotifications() }
             return ["authorized": granted, "status": settings.authorizationStatus.rawValue, "deviceId": session.deviceId]
         case "socialCallConnect":
+            if payload["scope"] as? String == "mafia" { return try await connectMafia(payload) }
+            guard !gameCommunicationLocked else { throw SocialNativeError.failed("AUDIO_PRIVATE") }
             guard let userId = session.credential?.userId,
                   let rawId = payload["callId"] as? String, let id = UUID(uuidString: rawId),
                   let conversationId = Self.identifier(payload["conversationId"]),
@@ -288,6 +296,7 @@ final class SocialCoordinator: NSObject {
             guard let current = call else { throw SocialNativeError.failed("CALL_NOT_FOUND") }
             guard payload["callId"] as? String == nil || payload["callId"] as? String == current.id.uuidString.lowercased() else { throw SocialNativeError.failed("CALL_NOT_FOUND") }
             let value = payload["muted"] as? Bool ?? true
+            if !value && current.scope == "mafia" && (!current.canPublish || current.quiet) { throw SocialNativeError.failed("AUDIO_PRIVATE") }
             try await transaction(CXSetMutedCallAction(call: current.id, muted: value))
             return callSnapshot()
         case "socialCallResumeAudio":
@@ -307,6 +316,8 @@ final class SocialCoordinator: NSObject {
             emitCall()
             return callSnapshot()
         case "socialCallEnd":
+            if let expected = payload["expectedVoiceSessionId"] as? String, call?.scope == "mafia", call?.voiceSessionId != expected { return callSnapshot() }
+            if let expected = payload["expectedMediaEpoch"] as? Int, call?.scope == "mafia", call?.mediaEpoch != expected { return callSnapshot() }
             if let target = payload["callId"] as? String,
                target != call?.id.uuidString.lowercased(), target != pendingCallId?.uuidString.lowercased() {
                 return ["state": "ended"]
@@ -324,9 +335,14 @@ final class SocialCoordinator: NSObject {
                 }
             }
             return ["state": "ended"]
+        case "socialCallPauseGame":
+            guard let current = call, current.scope == "mafia", payload["callId"] as? String == current.id.uuidString.lowercased() else { return ["state": "idle"] }
+            if let expected = payload["expectedMediaEpoch"] as? Int, expected != current.mediaEpoch { return callSnapshot() }
+            await pauseMafiaTransport()
+            return callSnapshot()
         case "socialVoiceStart":
             guard session.credential != nil else { throw SocialNativeError.failed("AUTH_REQUIRED") }
-            guard call == nil, !privateTurn else { throw SocialNativeError.failed("AUDIO_BUSY") }
+            guard call == nil, !privateTurn, !gameCommunicationLocked else { throw SocialNativeError.failed("AUDIO_BUSY") }
             return try await voice.start(id: Self.identifier(payload["recordingId"]) ?? UUID().uuidString.lowercased())
         case "socialVoiceStop":
             guard payload["recordingId"] as? String == nil || payload["recordingId"] as? String == voice.recordingId else { throw SocialNativeError.failed("AUDIO_NOT_RECORDING") }
@@ -336,7 +352,8 @@ final class SocialCoordinator: NSObject {
             return ["state": "cancelled"]
         case "socialAudioPrivacy":
             privateTurn = payload["privateTurn"] as? Bool ?? false
-            UserDefaults.standard.set(privateTurn, forKey: "maydan.social.privateTurn")
+            gameCommunicationLocked = payload["communicationLocked"] as? Bool ?? false
+            UserDefaults.standard.set(privateTurn, forKey: NativeConfig.shared.scopedStorageKey("maydan.social.privateTurn"))
             if privateTurn {
                 audioPolicy.invalidateMicrophoneChange()
                 voice.cancel(state: "interrupted")
@@ -348,6 +365,93 @@ final class SocialCoordinator: NSObject {
             return ["privateTurn": privateTurn, "muted": muted]
         default: throw SocialNativeError.failed("CALL_INVALID")
         }
+    }
+
+    // Every media epoch is issued by the game server after revoking the previous
+    // audience. CallKit keeps the same call; the underlying LiveKit room changes.
+    private func connectMafia(_ payload: [String: Any]) async throws -> [String: Any] {
+        guard let userId = session.credential?.userId,
+              let rawId = payload["callId"] as? String, let id = UUID(uuidString: rawId),
+              let code = payload["conversationId"] as? String,
+              code.range(of: "^[0-9]{6}$", options: .regularExpression) != nil,
+              let voiceSessionId = payload["voiceSessionId"] as? String, UUID(uuidString: voiceSessionId) != nil,
+              let mediaEpoch = payload["mediaEpoch"] as? Int, mediaEpoch >= 0 else { throw SocialNativeError.failed("CALL_INVALID") }
+        guard mafiaEndingCallId != id else { throw SocialNativeError.failed("CALL_ENDING") }
+        guard payload["userId"] as? String == nil || payload["userId"] as? String == userId else { throw SocialNativeError.failed("AUTH_REQUIRED") }
+        guard call == nil || (call?.id == id && call?.scope == "mafia") else { throw SocialNativeError.failed("CALL_BUSY") }
+        if let current = call, mediaEpoch < current.mediaEpoch { return callSnapshot() }
+        let quiet = payload["quiet"] as? Bool ?? true
+        let mayPublish = payload["canPublish"] as? Bool == true && !quiet
+        var connection: (url: String, token: String)?
+        if !quiet {
+            guard let url = payload["url"] as? String, let parsed = URL(string: url), parsed.scheme == "wss",
+                  parsed.host?.hasSuffix(".livekit.cloud") == true, parsed.user == nil, parsed.password == nil,
+                  let token = payload["token"] as? String, (32...16_384).contains(token.count) else { throw SocialNativeError.failed("CALL_INVALID") }
+            connection = (url, token)
+        }
+        if let current = call, current.voiceSessionId == voiceSessionId, current.mediaEpoch == mediaEpoch, room != nil, !quiet { return callSnapshot() }
+        if let current = call, current.voiceSessionId == voiceSessionId, current.mediaEpoch == mediaEpoch, current.quiet, quiet, state == "silent" { return callSnapshot() }
+        callGeneration += 1
+        let attempt = callGeneration
+        let existing = call != nil
+        audioPolicy.invalidateMicrophoneChange(); voice.cancel()
+        muted = true
+        // Store the epoch before suspension so a late HTTP/bridge response can
+        // never reconnect an older audience with the same CallKit identifier.
+        if existing {
+            call?.mediaEpoch = mediaEpoch; call?.canPublish = mayPublish; call?.quiet = quiet; call?.connection = connection
+            call?.voiceSessionId = voiceSessionId
+            let old = room; room = nil
+            try? AudioManager.shared.setEngineAvailability(AudioEngineAvailability(isInputAvailable: false, isOutputAvailable: audioActive))
+            state = "connecting"; emitCall()
+            await old?.disconnect()
+        } else {
+            call = NativeCall(id: id, conversationId: code, scope: "mafia", name: "مافيا ميدان", incoming: false,
+                              userId: userId, connection: connection, mediaEpoch: mediaEpoch, canPublish: mayPublish, quiet: quiet, voiceSessionId: voiceSessionId)
+        }
+        guard !signingOut, session.credential?.userId == userId, attempt == callGeneration, call?.mediaEpoch == mediaEpoch else { throw SocialNativeError.failed("CALL_CANCELLED") }
+        // Listening never requests microphone permission. Unmuting is an
+        // explicit user action and the server independently enforces publishing.
+        if payload["muted"] as? Bool == false && mayPublish && !privateTurn && AVAudioApplication.shared.recordPermission == .granted { muted = false }
+        state = quiet ? "silent" : "connecting"
+        if existing {
+            if quiet { emitCall(); pollCall() } else { try await connectRoom() }
+        } else {
+            let action = CXStartCallAction(call: id, handle: CXHandle(type: .generic, value: "مافيا ميدان"))
+            action.isVideo = false
+            do { try await transaction(action) }
+            catch { await finish(reason: .failed, expectedCallId: id); throw error }
+        }
+        return callSnapshot()
+    }
+
+    private func pauseMafiaTransport() async {
+        guard call?.scope == "mafia" else { return }
+        callGeneration += 1; audioPolicy.invalidateMicrophoneChange()
+        muted = true; call?.canPublish = false; call?.quiet = true; call?.connection = nil
+        let old = room; room = nil
+        state = "reconnecting"
+        try? AudioManager.shared.setEngineAvailability(AudioEngineAvailability(isInputAvailable: false, isOutputAvailable: audioActive))
+        emitCall()
+        await old?.disconnect()
+    }
+
+    private func syncMafiaCall(_ current: NativeCall) async throws {
+        let knownEpoch = room == nil && state != "silent" ? -1 : current.mediaEpoch
+        let response = try await session.request("/api/rooms/\(current.conversationId)/voice", body:
+            ["deviceId": session.deviceId, "voiceSessionId": current.voiceSessionId, "operation": "sync", "knownEpoch": knownEpoch])
+        guard !Task.isCancelled, let live = call, live.id == current.id, live.userId == current.userId, live.voiceSessionId == current.voiceSessionId else { return }
+        guard let remote = response["call"] as? [String: Any], remote["id"] as? String == current.id.uuidString.lowercased(),
+              response["voiceSessionId"] as? String == current.voiceSessionId,
+              let epoch = response["mediaEpoch"] as? Int, epoch >= live.mediaEpoch else { return }
+        lastCallAuthorization = ProcessInfo.processInfo.systemUptime; callAuthorizationFailures = 0
+        if response["unchanged"] as? Bool == true && epoch == live.mediaEpoch { return }
+        let connection = response["connection"] as? [String: Any] ?? [:]
+        var payload: [String: Any] = ["callId": current.id.uuidString.lowercased(), "userId": current.userId,
+            "conversationId": current.conversationId, "mediaEpoch": epoch, "canPublish": response["canPublish"] as? Bool ?? false,
+            "quiet": response["quiet"] as? Bool ?? true, "muted": true, "voiceSessionId": current.voiceSessionId]
+        payload["url"] = connection["url"]; payload["token"] = connection["token"]
+        _ = try await connectMafia(payload)
     }
 
     private func enablePushRegistry() {
@@ -406,6 +510,7 @@ final class SocialCoordinator: NSObject {
 
     private func logout() async {
         signingOut = true
+        gameCommunicationLocked = false
         callGeneration += 1
         pendingCallId = nil
         let previous = session.credential
@@ -452,6 +557,7 @@ final class SocialCoordinator: NSObject {
             guard let self, self.call?.id == callId, self.room === target else { return false }
             return self.audioPolicy.acceptsMicrophoneChange(generation, muted: !enabled,
                 callKitActive: self.audioActive, privateTurn: self.privateTurn)
+                && (!enabled || (self.call?.canPublish != false && self.call?.quiet != true))
                 && (!requiresCurrentPreference || enabled == (!self.muted && !self.privateTurn))
         }, publish: { [weak self] in
             guard let self else { return }
@@ -473,6 +579,13 @@ final class SocialCoordinator: NSObject {
     }
 
     private func connectRoom() async throws {
+        if let current = call, current.scope == "mafia", current.quiet {
+            guard session.credential?.userId == current.userId else { throw SocialNativeError.failed("AUTH_REQUIRED") }
+            // A quiet night is an authorized connected match, not an outgoing
+            // telephone call that should keep ringing until the next daytime.
+            if !current.incoming { provider.reportOutgoingCall(with: current.id, connectedAt: Date()) }
+            state = "silent"; emitCall(); pollCall(); return
+        }
         guard let current = call, let connection = current.connection, session.credential?.userId == current.userId else {
             throw SocialNativeError.failed("AUTH_REQUIRED")
         }
@@ -515,8 +628,14 @@ final class SocialCoordinator: NSObject {
             while !Task.isCancelled {
                 try? await Task.sleep(nanoseconds: 1_000_000_000)
                 guard !Task.isCancelled, let self, self.call?.id == callId else { return }
-                if self.callAuthorizationFailures >= 2,
-                   ProcessInfo.processInfo.systemUptime - self.lastCallAuthorization >= 60 {
+                let game = self.call?.scope == "mafia"
+                if (game || self.callAuthorizationFailures >= 2),
+                   ProcessInfo.processInfo.systemUptime - self.lastCallAuthorization >= (game ? 4 : 60) {
+                    if game {
+                        if self.room != nil || self.call?.canPublish == true { await self.pauseMafiaTransport() }
+                        self.emitCall(error: "MAFIA_VOICE_VERIFY")
+                        continue
+                    }
                     await self.finish(reason: .failed, endReason: "authorization-timeout", expectedCallId: callId)
                     return
                 }
@@ -524,9 +643,13 @@ final class SocialCoordinator: NSObject {
         }
         callPoll = Task { @MainActor [weak self] in
             while !Task.isCancelled {
-                try? await Task.sleep(nanoseconds: 5_000_000_000)
+                try? await Task.sleep(nanoseconds: self?.call?.scope == "mafia" ? 1_000_000_000 : 5_000_000_000)
                 guard !Task.isCancelled, let self, let current = self.call else { return }
                 do {
+                    if current.scope == "mafia" {
+                        try await self.syncMafiaCall(current)
+                        continue
+                    }
                     let response = try await self.session.request("/api/social/calls/\(current.id.uuidString.lowercased())", method: "GET")
                     guard !Task.isCancelled, self.call?.id == current.id else { return }
                     guard let remote = response["call"] as? [String: Any] else { throw SocialNativeError.failed("NETWORK") }
@@ -547,7 +670,7 @@ final class SocialCoordinator: NSObject {
                     self.callAuthorizationFailures = 0
                 } catch {
                     guard !Task.isCancelled, self.call?.id == current.id else { return }
-                    if ["AUTH_REQUIRED", "AUTH_EXPIRED", "ACCOUNT_SUSPENDED", "NOT_FOUND", "CALL_NOT_FOUND", "CALL_UNAVAILABLE", "CALL_FORBIDDEN", "FORBIDDEN", "BLOCKED"].contains(Self.errorCode(error)) {
+                    if ["AUTH_REQUIRED", "AUTH_EXPIRED", "ACCOUNT_SUSPENDED", "NOT_FOUND", "CALL_NOT_FOUND", "CALL_UNAVAILABLE", "CALL_FORBIDDEN", "FORBIDDEN", "BLOCKED", "CALL_ANSWERED", "MAFIA_VOICE_DEVICE", "MAFIA_ACTIVE_ELSEWHERE", "MAFIA_VOICE_SESSION"].contains(Self.errorCode(error)) {
                         await self.finish(reason: .remoteEnded, endReason: "authorization-revoked", expectedCallId: current.id)
                         return
                     }
@@ -560,6 +683,9 @@ final class SocialCoordinator: NSObject {
     private func finish(reason: CXCallEndedReason, notifyServer: Bool = false, endReason: String? = nil, expectedCallId: UUID? = nil) async {
         guard let current = call else { return }
         guard expectedCallId == nil || expectedCallId == current.id else { return }
+        callGeneration += 1
+        if current.scope == "mafia" { mafiaEndingCallId = current.id }
+        defer { if mafiaEndingCallId == current.id { mafiaEndingCallId = nil } }
         let endedReason = endReason ?? (reason == .answeredElsewhere ? "ownership-lost" : "call-ended")
         audioPolicy.invalidateMicrophoneChange()
         muted = true
@@ -590,8 +716,14 @@ final class SocialCoordinator: NSObject {
         }
         emit("socialCall", ["callId": current.id.uuidString.lowercased(), "conversationId": current.conversationId,
                             "userId": current.userId, "scope": current.scope, "state": "ended", "muted": true, "speaker": false, "participants": [],
+                            "mediaEpoch": current.mediaEpoch, "canPublish": false, "quiet": true,
+                            "voiceSessionId": current.voiceSessionId, "mediaGeneration": callGeneration,
                             "localOnly": !notifyServer, "endReason": endedReason])
         if notifyServer, session.credential?.userId == current.userId {
+            if current.scope == "mafia" {
+                _ = try? await session.request("/api/rooms/\(current.conversationId)/voice", body: ["deviceId": session.deviceId, "operation": "leave", "callId": current.id.uuidString.lowercased(), "voiceSessionId": current.voiceSessionId])
+                return
+            }
             let operation = current.incoming && current.connection == nil ? "reject" : "leave"
             _ = try? await session.request("/api/social/calls/\(current.id.uuidString.lowercased())/\(operation)", body: ["deviceId": session.deviceId])
         }
@@ -602,6 +734,8 @@ final class SocialCoordinator: NSObject {
         let participants: [Participant] = room.map { [$0.localParticipant as Participant] + $0.remoteParticipants.values.map { $0 as Participant } } ?? []
         return ["callId": call.id.uuidString.lowercased(), "conversationId": call.conversationId, "scope": call.scope,
                 "userId": call.userId,
+                "mediaEpoch": call.mediaEpoch, "canPublish": call.canPublish, "quiet": call.quiet,
+                "voiceSessionId": call.voiceSessionId, "mediaGeneration": callGeneration,
                 "state": state, "muted": muted, "speaker": speaker,
                 "participants": participants.map { ["id": $0.identity?.stringValue ?? "", "name": $0.name ?? "", "speaking": $0.isSpeaking, "muted": !$0.isMicrophoneEnabled()] as [String: Any] }]
     }
@@ -702,6 +836,13 @@ extension SocialCoordinator: CXProviderDelegate {
         Task { @MainActor in
             guard self.call?.id == action.callUUID else { action.fail(); return }
             guard !self.privateTurn || action.isMuted else { action.fail(); return }
+            if !action.isMuted, let current = self.call, current.scope == "mafia" {
+                guard current.canPublish, !current.quiet else { action.fail(); return }
+                guard await SocialVoiceRecorder.permission(), self.call?.id == current.id,
+                      self.call?.voiceSessionId == current.voiceSessionId,
+                      self.call?.mediaEpoch == current.mediaEpoch, self.call?.canPublish == true,
+                      self.call?.quiet == false else { action.fail(); self.emitCall(error: "MICROPHONE_DENIED"); return }
+            }
             guard !self.audioPolicy.interrupted || action.isMuted else { action.fail(); return }
             let currentRoom = self.room
             // Unmuting needs actual CallKit ownership. A UI request while the
@@ -815,7 +956,7 @@ extension SocialCoordinator: PKPushRegistryDelegate {
                 completion()
                 Task { @MainActor in
                     guard error == nil else { return }
-                    guard parsedId != nil, self.call == nil,
+                    guard parsedId != nil, self.call == nil, !self.gameCommunicationLocked,
                           let auth = self.session.credential,
                           data["recipientId"] as? String == auth.userId,
                           let conversationId = Self.identifier(data["conversationId"]),
@@ -881,6 +1022,12 @@ extension SocialCoordinator: RoomDelegate {
     }
     nonisolated func room(_ room: Room, didDisconnectWithError error: LiveKitError?) {
         Task { @MainActor in
+            if self.room === room, let current = self.call, current.scope == "mafia" {
+                await self.pauseMafiaTransport()
+                do { try await self.syncMafiaCall(current) }
+                catch { self.callAuthorizationFailures += 1; self.emitCall(error: Self.errorCode(error)) }
+                return
+            }
             if self.room === room { await self.finish(reason: error == nil ? .remoteEnded : .failed, notifyServer: true) }
         }
     }

@@ -10,6 +10,7 @@ import { messageContent,enrichMessages,collectDeletedAudio } from '../lamma/medi
 import { wakeJobs } from '../lamma/notifications.mjs';
 import { revokeInvalidCalls } from '../lamma/calls.mjs';
 import { afterCommit } from '../lamma/after-commit.mjs';
+import { mafiaMediaLease, leaveMafiaOnBlock } from '../mafia-access.mjs';
 
 export const isSocialPath = (path) => path === '/api/social' || path.startsWith('/api/social/');
 async function notify(env, ids, event = { type: 'refresh' }) {
@@ -27,10 +28,17 @@ export async function routeSocial(request, env, url = new URL(request.url), char
   if (charge) await charge(request.method === 'GET' ? 'socialReadIP' : 'socialWriteIP');
   const auth = await requireSession(env, request);
   try {
+    const mafiaLocked=!!await mafiaMediaLease(env,auth.user.id);
+    if(mafiaLocked) {
+      const safety=/\/(?:blocks|reports)(?:\/|$)/.test(url.pathname)||/\/(?:leave|reject|decline|end)$/.test(url.pathname)||url.pathname==='/api/social/presence';
+      const contentRead=/\/(?:messages|attachments|calls)(?:\/|$)/.test(url.pathname)||/^\/api\/social\/groups(?:\/[^/]+)?$/.test(url.pathname);
+      if((request.method!=='GET'&&!safety)||contentRead)fail('MAFIA_SOCIAL_LOCKED',409);
+    }
     if (charge && request.method === 'GET') await charge('socialRead', 'RATE_LIMIT', auth.user.id);
     let response = await dispatch(request, env, url, auth.user.id, Date.now(),auth.rotated?.id||auth.session.id,context);
     if (response.ok && ['/api/social/me', '/api/social/state', '/api/social/search', '/api/social/friends', '/api/social/requests', '/api/social/blocks', '/api/social/conversations'].includes(url.pathname)) {
       const body = await response.json();
+      if(mafiaLocked) for(const conversation of body.conversations||[])if(conversation.lastMessage)conversation.lastMessage={seq:conversation.lastMessage.seq,kind:'text',text:'رسالة جديدة',createdAt:conversation.lastMessage.createdAt};
       const users = [body.user, body.request?.user, ...(body.users || []), ...(body.blocked || []), ...(body.friends || []),
         ...(body.incoming || []).map(item => item.user), ...(body.outgoing || []).map(item => item.user),
         ...(body.conversations || []).map(item => item.user)].filter(Boolean);
@@ -105,9 +113,10 @@ async function dispatch(request, env, url, id, now,sessionId,context) {
   if (path === '/blocks' && method === 'POST') {
     const otherId = userId((await readJson(request)).userId);
     await db.blockUser(env, id, otherId, now);
+    const gameLeft=await leaveMafiaOnBlock(env,id,otherId);
     await revokeInvalidCalls(env,id,otherId);
     await notify(env, [id, otherId]);
-    return json({ ok: true });
+    return json({ ok: true, ...(gameLeft?{gameLeft:true}:{}) });
   }
   const unblock = /^\/blocks\/([a-zA-Z0-9_-]+)$/.exec(path);
   if (unblock && method === 'DELETE') {

@@ -11,6 +11,7 @@ import { socialInterruption } from './interruption.js';
 import { createCallAuthorization } from './call-authorization.js';
 import { LAMMA_POLL_MS, lammaPollDue, refreshesLamma, rechecksCall } from './sync-policy.js';
 import { joinSocialGameRoom } from './game-launch.js';
+import { MafiaVoiceSession, emptyMafiaVoice } from './mafia-voice-session.js';
 
 const Context = createContext(null);
 export const LammaContext = Context;
@@ -37,6 +38,8 @@ export function LammaProvider({ children }) {
   const activeRef = useRef(ownedCall); activeRef.current = ownedCall;
   const [notification, setNotification] = useState(null);
   const [notificationPermission, setNotificationPermission] = useState('unknown');
+  const [mafiaVoice, setMafiaVoice] = useState(emptyMafiaVoice);
+  const mafiaRef = useRef(null);
   const connecting = useRef(false), connectGeneration = useRef(0), deviceRef = useRef(isNativeShell() ? null : lammaId()), deviceReady = useRef(null);
   const clientRef = useRef(null), mediaRef = useRef(null);
   if (!clientRef.current) {
@@ -49,6 +52,27 @@ export function LammaProvider({ children }) {
   }
   if (!mediaRef.current) mediaRef.current = new CallMedia(setMedia);
   const client = clientRef.current, engine = mediaRef.current;
+  if (!mafiaRef.current) mafiaRef.current = new MafiaVoiceSession({
+    request: (code, body) => accountRef.current.requestAuthenticated('/api/rooms/' + encodeURIComponent(code) + '/voice', { method: 'POST', body }),
+    deviceId: async () => { await deviceReady.current; return deviceRef.current; },
+    media: engine, native: isNativeShell(), onChange: setMafiaVoice,
+    beforeJoin: async () => {
+      const before = activeRef.current;
+      if (before?.scope === 'mafia') return null;
+      if (before) {
+        await engine.disconnect({ callId: before.id, localOnly: true, endReason: 'game-voice' });
+        await client.callAction(before.id, 'leave', deviceRef.current).catch(() => {});
+        activeRef.current = null; setActiveCall(null); client.setCallContext(null);
+      }
+      return before ? { scope: before.scope, conversationId: before.conversationId, name: before.name } : null;
+    },
+    setCall: call => {
+      if (!call) { if (activeRef.current?.scope === 'mafia') { activeRef.current = null; setActiveCall(null); client.setCallContext(null); } return; }
+      const owned = { ...call, _ownerId: ownerRef.current };
+      activeRef.current = owned; setActiveCall(owned); client.setCallContext(owned);
+    },
+  });
+  const mafiaSession = mafiaRef.current;
   const state = useSyncExternalStore(client.subscribe, client.getSnapshot, client.getSnapshot);
   const safe = client.userId === owner ? state : emptyLamma();
   const ownedMedia = client.userId === owner && media.userId === owner ? media : emptyMedia();
@@ -56,6 +80,7 @@ export function LammaProvider({ children }) {
   useEffect(() => {
     const connectionEpoch = connectGeneration;
     connectGeneration.current++; client.start(owner); engine.setAccount(owner);
+    mafiaSession.clear();
     setActiveCall(null); setNotification(null); previous.current = null; connecting.current = false;
     if (owner && isNativeShell()) {
       deviceRef.current = null;
@@ -68,7 +93,15 @@ export function LammaProvider({ children }) {
       deviceReady.current.catch(() => {});
     } else deviceReady.current = Promise.resolve(deviceRef.current);
     return () => { connectionEpoch.current++; client.stop(); };
-  }, [client, engine, owner]);
+  }, [client, engine, owner, mafiaSession]);
+  useEffect(() => { mafiaSession.mediaChanged(media); }, [mafiaSession, media]);
+  useEffect(() => {
+    if (!owner || !mafiaVoice.requested || isNativeShell()) return;
+    const tick = () => mafiaSession.sync().catch(() => {});
+    const timer = setInterval(tick, 1000);
+    window.addEventListener('online', tick);
+    return () => { clearInterval(timer); window.removeEventListener('online', tick); };
+  }, [owner, mafiaVoice.requested, mafiaSession]);
   useEffect(() => () => { engine.dispose().catch(() => {}); }, [engine]);
   useEffect(() => {
     if (!owner) return;
@@ -95,8 +128,8 @@ export function LammaProvider({ children }) {
   }, [sound]);
   useEffect(() => {
     const sync = () => {
-    const { privateTurn } = socialInterruption.getSnapshot();
-    if (isNativeShell()) callNative('socialAudioPrivacy', { privateTurn }, { timeout: 5000 }).catch(() => {});
+    const { privateTurn, communicationLocked } = socialInterruption.getSnapshot();
+    if (isNativeShell()) callNative('socialAudioPrivacy', { privateTurn, communicationLocked }, { timeout: 5000 }).catch(() => {});
     if (privateTurn && (engine.state.connected || engine.state.connecting)) engine.mute(true).catch(() => {});
     }; sync(); return socialInterruption.subscribe(sync);
   }, [engine]);
@@ -112,7 +145,7 @@ export function LammaProvider({ children }) {
       const group = safe.groups.find(g => g.unreadCount > (before[g.id] || 0) && client.activeGroup !== g.id &&
         !safe.preferences.mutedConversations.some(m => m.scope === 'group' && m.conversationId === g.id));
       if (group) setNotification({ id: lammaId(), userId: owner, scope: 'group', groupId: group.id, conversationId: group.id,
-        title: socialInterruption.getSnapshot().local || !safe.preferences.previews ? 'رسالة جديدة في ميدان' : `رسالة جديدة في ${group.name}` });
+        title: socialInterruption.getSnapshot().local || socialInterruption.getSnapshot().communicationLocked || !safe.preferences.previews ? 'رسالة جديدة في ميدان' : `رسالة جديدة في ${group.name}` });
     }
     previous.current = Object.fromEntries(safe.groups.map(g => [g.id, g.unreadCount]));
   }, [safe.groups, safe.loading, safe.preferences, owner, client]);
@@ -124,7 +157,8 @@ export function LammaProvider({ children }) {
       if (title) setNotification({ id: lammaId(), userId: owner, scope: active.scope, conversationId: active.conversationId, title });
       activeRef.current = null; client.setCallContext(null); setActiveCall(null);
       engine.disconnect({ callId: active.id, localOnly, endReason: ownedMedia.endReason }).catch(() => {});
-      if (!localOnly && client.userId) client.callAction(active.id, 'leave', deviceRef.current).catch(() => {});
+      if (active.scope === 'mafia') mafiaSession.stop().catch(() => {});
+      else if (!localOnly && client.userId) client.callAction(active.id, 'leave', deviceRef.current).catch(() => {});
     }
     // A native incoming call can be accepted from the lock screen before React exists.
     if (!active && owner && ownedMedia.connected && ownedMedia.callId) {
@@ -134,14 +168,14 @@ export function LammaProvider({ children }) {
         activeRef.current = restored; client.setCallContext(restored); setActiveCall(restored);
       }
     }
-  }, [ownedMedia.ended, ownedMedia.connected, ownedMedia.callId, ownedMedia.localOnly, ownedMedia.endReason, safe.calls, owner, client, engine]);
+  }, [ownedMedia.ended, ownedMedia.connected, ownedMedia.callId, ownedMedia.localOnly, ownedMedia.endReason, safe.calls, owner, client, engine, mafiaSession]);
   // The list intentionally omits ended and unauthorized calls. Ask for the exact
   // active call to distinguish a real revocation from a stale list response.
   useEffect(() => {
     // The native coordinator owns the same authorization check while locked or
     // foregrounded, and emits authoritative end/ownership events. Duplicating it
     // in WebKit doubled traffic on every iPhone without improving revocation.
-    if (!ownedCallId || !owner || isNativeShell()) return;
+    if (!ownedCallId || !owner || isNativeShell() || activeRef.current?.scope === 'mafia') return;
     const id = ownedCallId, epoch = client.epoch;
     let cancelled = false, checking = false;
     const authorization = createCallAuthorization();
@@ -179,6 +213,7 @@ export function LammaProvider({ children }) {
     !safe.preferences.mutedConversations.some(m => m.scope === 'direct' && m.conversationId === call.conversationId)) || null : null;
 
   async function connect(action) {
+    if (socialInterruption.getSnapshot().communicationLocked) throw new Error('التواصل خلال المباراة متاح داخل مجلس مافيا فقط.');
     if (connecting.current || activeRef.current) throw new Error('لديك مكالمة جارية بالفعل.');
     connecting.current = true; const epoch = client.epoch, attempt = ++connectGeneration.current; let result;
     // Fetch the web SDK alongside the authenticated call request, rather than
@@ -203,6 +238,7 @@ export function LammaProvider({ children }) {
     } finally { if (epoch === client.epoch && attempt === connectGeneration.current) connecting.current = false; }
   }
   async function endCall() {
+    if (activeRef.current?.scope === 'mafia') { await mafiaSession.stop(); return; }
     connectGeneration.current++; connecting.current = false;
     const call = activeRef.current; activeRef.current = null; client.setCallContext(null); setActiveCall(null);
     await engine.disconnect({ callId: call?.id || engine.state.callId });
@@ -235,5 +271,9 @@ export function LammaProvider({ children }) {
     acceptCall: id => connect(deviceId => client.acceptCall(id, deviceId)),
     declineCall: async id => { await client.callAction(id, 'reject', await deviceReady.current); await client.refresh({ quiet: true }); },
     endCall, setCallMuted: muted => engine.mute(muted), setAudioOutput: id => engine.output(id), resumeCallAudio: () => engine.resumeAudio(),
+    mafiaVoice, configureMafiaRoom: state => mafiaSession.configure(state),
+    joinMafiaVoice: () => mafiaSession.start(), leaveMafiaVoice: () => mafiaSession.stop(), muteMafiaVoice: muted => mafiaSession.mute(muted),
+    returnFromMafiaVoice: async () => { const previous = mafiaSession.state.previousCall; await mafiaSession.stop();
+      if (previous) return connect(deviceId => client.startCall({ targetType: previous.scope, targetId: previous.conversationId, deviceId })); },
   }}>{children}</Context.Provider>;
 }

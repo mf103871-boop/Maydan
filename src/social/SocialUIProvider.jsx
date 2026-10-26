@@ -1,3 +1,4 @@
+import { environmentStorageKey } from '../shared/lib/environment.js';
 import React, { createContext, useCallback, useContext, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import { useAccount } from '../shared/account/context.js';
 import { socialInterruption } from './interruption.js';
@@ -7,7 +8,7 @@ import { socialListTab, socialPagePath, socialPageView, usesSocialDrawer } from 
 export const SocialUIContext = createContext(null);
 export const useSocialUI = () => useContext(SocialUIContext);
 export const conversationDraftKey = (kind, id) => `${kind}:${id}`;
-const favoritesKey = accountKey => `maydan:social-ui:favorites:${encodeURIComponent(accountKey)}`;
+const favoritesKey = accountKey => environmentStorageKey(`maydan:social-ui:favorites:${encodeURIComponent(accountKey)}`);
 const loadFavorites = accountKey => {
   if (!accountKey || accountKey === 'guest') return [];
   try {
@@ -62,6 +63,7 @@ function AccountSocialUI({ children, accountKey }) {
     setFavorites(current => current.includes(id) ? current.filter(value => value !== id) : [...current, id]);
   }, [owned, accountKey]);
   const show = useCallback((next = { type: 'list', tab: 'friends' }) => {
+    if (socialInterruption.getSnapshot().communicationLocked) { window.dispatchEvent(new Event('maydan-social-locked')); return; }
     if (next.type === 'list') setListTab(socialListTab(next.tab));
     const drawer = usesSocialDrawer(route);
     const path = drawer ? route.path : socialPagePath(next);
@@ -69,6 +71,7 @@ function AccountSocialUI({ children, accountKey }) {
     if (!drawer) navigate(path);
   }, [route]);
   const push = useCallback(next => {
+    if (socialInterruption.getSnapshot().communicationLocked) { window.dispatchEvent(new Event('maydan-social-locked')); return; }
     const drawer = usesSocialDrawer(route);
     const path = drawer || pageView ? route.path : '/friends';
     setSurface(current => ({ path, view: next, history: [...(current.path === path ? current.history : []), view], drawerOpen: drawer }));
@@ -77,6 +80,7 @@ function AccountSocialUI({ children, accountKey }) {
   // Closing is a drawer action. A game invitation may already have navigated to
   // its room before calling close, so it must never navigate away from the room.
   const close = useCallback(() => setSurface(current => ({ ...current, drawerOpen: false })), []);
+  useEffect(() => socialInterruption.subscribe(() => { if (socialInterruption.getSnapshot().communicationLocked) close(); }), [close]);
   useLayoutEffect(()=>drawerOpen?registerBackLayer(close,{priority:10}):undefined,[drawerOpen,close]);
   const back = useCallback(() => {
     if (surface.path === route.path && surface.history.length) {

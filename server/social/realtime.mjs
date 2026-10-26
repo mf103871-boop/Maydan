@@ -6,6 +6,7 @@ import { first } from '../accounts/db.mjs';
 import { areFriends, friendIds, touchPresence, messageForUser } from './db.mjs';
 import { userId as validUserId, ONLINE_WINDOW } from './model.mjs';
 import { ident, member, scopeAllowed, unblocked, live } from '../lamma/common.mjs';
+import { assertSocialAllowed, mafiaMediaLease } from '../mafia-access.mjs';
 
 export const LIVE_TICKET_TTL = 60_000;
 export const LIVE_HEARTBEAT_MS = 20_000;
@@ -35,6 +36,13 @@ const internal = (path, body) => new Request(`https://social.internal/${path}`, 
 // when a block or group removal commits while notification delivery is queued.
 export async function allowsRealtimeContent(env, userId, event) {
   if (event.reason === 'deleted') return true; // Keep deletion invalidation working.
+  // A socket opened before the match remains authenticated, but cannot become
+  // an alternate discussion channel on a second device. Check the live lease
+  // at delivery; disabling the game later must not unlock an ongoing match.
+  const communication = ['message', 'call', 'typing'].includes(event.type)
+    || event.type === 'group' && ['message', 'edited'].includes(event.reason);
+  if (communication && await mafiaMediaLease(env, userId)) return false;
+  if (event.type === 'typing' && event.userId && await mafiaMediaLease(env, event.userId)) return false;
   if (event.type === 'message') {
     if (!Number.isSafeInteger(event.messageSeq) || event.messageSeq < 1) return false;
     const message = await messageForUser(env, userId, event.messageSeq);
@@ -351,6 +359,7 @@ export class SocialHub {
           await this.presence();
           this.send(ws, message === 'ping' ? 'pong' : { type: 'pong' });
         } else if (command.type === 'typing') {
+          await assertSocialAllowed(this.env, this.state.userId);
           const peerId = validUserId(command.peerId);
           if (typeof command.active !== 'boolean') fail('INVALID', 400);
           // Always let an authorized stop clear the peer's indicator. Rapid

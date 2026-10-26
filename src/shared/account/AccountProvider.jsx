@@ -1,3 +1,4 @@
+import { isMafiaPreview } from '../lib/environment.js';
 // مزوّد الحساب: مصدر واحد لحالة الاشتراك والتجارب والجدار في الواجهة كلها.
 // الخادم هو مصدر الحقيقة؛ ما هنا نسخة مخزّنة تُحدَّث عند الإقلاع وعند العودة
 // للتطبيق وبعد كل دخول أو شراء. بلا خادم مضبوط تعمل الطبقة «دون اتصال»:
@@ -815,5 +816,5 @@ export function AccountProvider({ children }) {
   }), [ready, user, me, premium, promo, trials, platform, products, productsStatus, productsError, productsDiagnostics, storeProbeStatus, storeProbeDiagnostics, restoreDiagnostics, offline, session, busy, error, paywall, billing, activationPending,
     signIn, signOut, refresh, requestAuthenticated, ensureNativeSocialSession, markTrial, localTrials, openPaywall, closePaywall, restore, deleteAccount, purchase, manageSubscription, loadProducts, retryProducts, probeStore, redeem]);
 
-  return <AccountContext.Provider value={value}>{children}</AccountContext.Provider>;
+  return <AccountContext.Provider value={value}>{isMafiaPreview() && !['room','play'].includes(route.name) && <aside data-design-fixed="isolated-test-environment" role="status" style={{margin:'8px 12px',padding:'10px 14px',border:'1px solid #8c6daa',borderRadius:14,background:'#eee2f7',color:'#402451',fontSize:13,lineHeight:1.7,textAlign:'center'}}><strong>بيئة اختبار مافيا</strong><br/>حسابات وتجارب منفصلة عن ميدان الأساسية. استخدم حساب التجربة.</aside>}{children}</AccountContext.Provider>;
 }

@@ -1,4 +1,5 @@
 import { fail } from '../room-model.mjs';
+import { mafiaMediaLease } from '../mafia-access.mjs';
 import { signEs256 } from '../accounts/jwt.mjs';
 import { userId } from '../social/model.mjs';
 import { all, first, stmt, run, live, unblocked, friends, ident, scopeAllowed, requireScope, scopeOf } from './common.mjs';
@@ -84,6 +85,8 @@ async function eligible(env,id,p) {
 }
 export async function deliverPush(env,row) {
   const p=JSON.parse(row.payload), id=row.user_id;
+  const mafiaLocked=!!await mafiaMediaLease(env,id);
+  if(mafiaLocked&&p.category==='calls')return 'done';
   if(!await eligible(env,id,p)) return 'done';
   let pref=await preferences(env,id);
   if(!pref[p.category]||pref.mutedConversations.some(m=>m.scope===p.scope&&m.conversationId===p.conversationId)) return 'done';
@@ -107,8 +110,9 @@ export async function deliverPush(env,row) {
     pref=await preferences(env,id);
     if(!pref[p.category]||pref.mutedConversations.some(m=>m.scope===p.scope&&m.conversationId===p.conversationId))return 'done';
     if(!await first(env,'SELECT 1 FROM social_devices d JOIN sessions s ON s.id=d.session_id AND s.user_id=d.user_id WHERE d.user_id=? AND d.device_id=? AND d.kind=? AND d.environment=? AND d.token=? AND s.expires_at>? AND (s.revoked_at IS NULL OR s.revoked_at>?)',id,d.device_id,d.kind,d.environment,d.token,Date.now(),Date.now()))continue;
+    if(p.category==='calls'&&await mafiaMediaLease(env,id))return 'done';
     let preview=null;
-    if(pref.previews&&p.category==='messages'&&p.messageSeq){const m=await first(env,`SELECT kind,text FROM ${p.scope==='group'?'social_group_messages':'social_messages'} WHERE seq=? AND deleted_at IS NULL`,p.messageSeq);if(m?.kind==='text')preview=Array.from(m.text).slice(0,100).join('');}
+    if(!mafiaLocked&&!await mafiaMediaLease(env,id)&&pref.previews&&p.category==='messages'&&p.messageSeq){const m=await first(env,`SELECT kind,text FROM ${p.scope==='group'?'social_group_messages':'social_messages'} WHERE seq=? AND deleted_at IS NULL`,p.messageSeq);if(m?.kind==='text')preview=Array.from(m.text).slice(0,100).join('');}
     const body=voip?{aps:{},recipientId:id,callId:p.callId,scope:p.scope,conversationId:p.conversationId,callerName:'مكالمة ميدان',expiresAt:p.expiresAt}:{aps:{alert:{title:'ميدان',body:preview||(p.category==='calls'?'انضم للمكالمة الجماعية':p.category==='friendRequests'?'وصلك طلب صداقة':p.category==='groupInvites'?'وصلتك دعوة للمة':'وصلتك رسالة جديدة')},...(pref.sound?{sound:'default'}:{})},recipientId:id,eventId:row.id,category:p.category,scope:p.scope,conversationId:p.category==='groupInvites'?undefined:p.conversationId,groupId:p.scope==='group'?p.conversationId:undefined,requestId:p.requestId,callId:p.callId};
     let response;
     try { response=await fetch(`https://${d.environment==='sandbox'?'api.sandbox.push.apple.com':'api.push.apple.com'}/3/device/${d.token}`,{method:'POST',headers:{authorization:`bearer ${auth}`,'apns-topic':`${env.APPLE_BUNDLE_ID}${voip?'.voip':''}`,'apns-push-type':voip?'voip':'alert','apns-priority':'10','apns-expiration':voip?'0':String(Math.floor((row.created_at+86400000)/1000)),'apns-collapse-id':row.id.slice(-64),'content-type':'application/json'},body:JSON.stringify(body),signal:AbortSignal.timeout(10000)}); }

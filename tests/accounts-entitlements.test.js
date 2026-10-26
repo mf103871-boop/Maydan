@@ -262,7 +262,7 @@ test('ترحيلات D1 جمل مستقلة بسطر واحد يقبلها exec'
   }
   // معاملة آبل الواحدة لا تُربط بحسابين: المفتاح الأساسي يمنع ذلك.
   assert.ok(statements.some((s) => s.includes('subscriptions') && s.includes('PRIMARY KEY (source, external_id)')));
-  assert.deepEqual(TRIAL_GAMES, ['beep', 'mamnoo', 'jabeen', 'fabraka', 'meenfina', 'ersomha']);
+  assert.deepEqual(TRIAL_GAMES, ['beep', 'mamnoo', 'jabeen', 'fabraka', 'meenfina', 'ersomha', 'mafia']);
 });
 
 // بلا ربط D1 (قبل إنشاء القاعدة) ينشر العامل ويعمل: الحسابات 404 والغرف كما كانت.

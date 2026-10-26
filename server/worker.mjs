@@ -14,7 +14,9 @@ import { drainJobs } from './lamma/jobs.mjs';
 import { liveKitWebhook } from './lamma/webhook.mjs';
 import { messageRetentionMs,reportRetentionMs } from './accounts/cleanup.mjs';
 import { iosAppPolicy } from './app-policy.mjs';
-import { ERSOMHA_PROTOCOL, BADEEHA_PROTOCOL, ONLINE_GAMES } from '../src/online/shared.js';
+import { ERSOMHA_PROTOCOL, BADEEHA_PROTOCOL, MAFIA_PROTOCOL, ONLINE_GAMES } from '../src/online/shared.js';
+import { routeMafia } from './mafia-router.mjs';
+import { requireMafiaEnabled, cleanupMafia } from './mafia-access.mjs';
 import { routeDrawingReports } from './ersomha-reports.mjs';
 import { routeDesign, isPublicDesignAssetPath } from './design/router.mjs';
 export { LammaJobs } from './lamma/jobs.mjs';
@@ -127,7 +129,8 @@ export async function routeRequest(request, env, context) {
   }
   try {
     // الحسابات أولًا: مساراتها تحت /api/ ولا تتقاطع مع تعبير الغرف.
-    response = await routeDesign(request, env, url, charge)
+    response = await routeMafia(request, env, url, charge)
+      || await routeDesign(request, env, url, charge)
       || await routeDrawingReports(request, env, url, charge)
       || await routeSocialLive(request, env, url, charge)
       || await routeModeration(request, env, url, charge)
@@ -148,6 +151,7 @@ export async function routeRequest(request, env, context) {
         await credentials(input); // Validate before allocating a room.
         if (input.game === 'ersomha' && input.capabilities?.ersomha !== ERSOMHA_PROTOCOL) fail('CONFIG', 409);
         if (input.game === 'badeeha' && input.capabilities?.badeeha !== BADEEHA_PROTOCOL) fail('UPDATE_REQUIRED', 409);
+        if (input.game === 'mafia') { requireMafiaEnabled(env); if(input.capabilities?.mafia!==MAFIA_PROTOCOL)fail('UPDATE_REQUIRED',409); }
         // Check eligibility now, but consume the trial only at the room's first
         // successful match start. Never trust a gate supplied by the browser.
         const gate = await roomGate(request, env, input);
@@ -199,6 +203,7 @@ export async function routeRequest(request, env, context) {
 }
 // Cron Trigger (wrangler triggers.crons): تنظيف الجلسات ورموز الدخول وسجل webhooks.
 export async function scheduled(event, env) {
+  await cleanupMafia(env,Date.now(),reportRetentionMs(env));
   await cleanupLamma(env,Date.now(),messageRetentionMs(env),reportRetentionMs(env));
   await drainJobs(env);
   if(event?.cron==='* * * * *')return;

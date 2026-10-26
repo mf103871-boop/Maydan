@@ -3,11 +3,12 @@ export const PROTOCOL = 1;
 export const FABRAKA_PROTOCOL = 3;
 export const ERSOMHA_PROTOCOL = 1;
 export const BADEEHA_PROTOCOL = 1;
-export const GAME_PROTOCOLS = Object.freeze({ meenfina: PROTOCOL, fabraka: FABRAKA_PROTOCOL, ersomha: ERSOMHA_PROTOCOL, badeeha: BADEEHA_PROTOCOL });
+export const MAFIA_PROTOCOL = 1;
+export const GAME_PROTOCOLS = Object.freeze({ meenfina: PROTOCOL, fabraka: FABRAKA_PROTOCOL, ersomha: ERSOMHA_PROTOCOL, badeeha: BADEEHA_PROTOCOL, mafia: MAFIA_PROTOCOL });
 // بَديهة أونلاين: جوال لكل فريق (من فريقين إلى أربعة)، والمؤقت كما في اللعبة على جهاز واحد.
 export const BADEEHA_MAX_TEAMS = 4;
 export const BADEEHA_TIMERS = Object.freeze([30, 60, 90]);
-export const ROOM_CAPABILITIES = Object.freeze({ ersomha: ERSOMHA_PROTOCOL, badeeha: BADEEHA_PROTOCOL });
+export const ROOM_CAPABILITIES = Object.freeze({ ersomha: ERSOMHA_PROTOCOL, badeeha: BADEEHA_PROTOCOL, mafia: MAFIA_PROTOCOL });
 // تفاعلات سريعة داخل الغرفة: طقم رموز ثابت بلا نص حر، يُبث للحاضرين ولا يُحفظ.
 // رسالة `reaction` جديدة لا تكسر عميلًا أقدم (يتجاهل الأنواع التي لا يعرفها)، فلا يُرفع البروتوكول.
 export const ROOM_REACTIONS = Object.freeze(['😂', '👏', '😮', '🔥', '😅', '❤️']);
@@ -15,6 +16,7 @@ export const REACTION_BURST = 4;
 export const REACTION_REFILL_MS = 1500;
 // رسّام «ارسمها» صامت أثناء الاختيار والرسم (كتم الميكروفون شرط لبدء دوره)؛ رمز مثل 🔥 يصير تلميحًا.
 export function reactionsAllowed(state, seatId) {
+  if (state?.game === 'mafia') return ['lobby','over'].includes(state.phase);
   if (!state || state.game !== 'ersomha' || !['select', 'draw'].includes(state.phase)) return true;
   return seatId !== (state.draw?.drawerId ?? state.drawerId);
 }
@@ -32,10 +34,11 @@ export const ONLINE_GAMES = {
   fabraka: { name: 'فبركة', min: 2, max: 8 },
   ersomha: { name: 'ارسمها', min: 2, max: 8 },
   badeeha: { name: 'بَديهة', min: 2, max: 4 },
+  mafia: { name: 'مافيا ميدان', min: 6, max: 12 },
 };
 // A personal truth round needs its owner and at least two writers. The other
 // Fabraka modes keep a real choice for two players by adding house decoys.
-export const minimumOnlinePlayers = (game, settings) => game === 'ersomha' || game === 'badeeha' || (game === 'fabraka' && settings?.mode !== 'friends') ? 2 : 3;
+export const minimumOnlinePlayers = (game, settings) => game === 'mafia' ? (settings?.mode === 'shadow' ? 9 : 6) : game === 'ersomha' || game === 'badeeha' || (game === 'fabraka' && settings?.mode !== 'friends') ? 2 : 3;
 export const MIN_PLAYERS = 3;
 export const MAX_PLAYERS = 12;
 export const ROUND_OPTIONS = [5, 8, 12];
@@ -82,6 +85,17 @@ export function resolveServerUrl(value, pageOrigin = '') {
   return validateServerUrl(value === 'same-origin' ? pageOrigin : value);
 }
 export const ERRORS = {
+  MAFIA_DISABLED: 'مافيا ميدان غير متاحة لبدء مباريات جديدة حاليًا.',
+  MAFIA_ACTIVE_ELSEWHERE: 'لديك مقعد مافيا في غرفة أخرى. عُد إليه أو غادره أولًا.',
+  MAFIA_NO_ROOMS: 'لا توجد غرفة مناسبة الآن. جرّب مرة أخرى أو أنشئ غرفة.',
+  MAFIA_BLOCKED: 'لا يمكن جمع حسابات بينها حظر في هذه الغرفة.',
+  MAFIA_UNAVAILABLE: 'تعذّر تجهيز غرفة مافيا. حاول مجددًا بعد قليل.',
+  MAFIA_VOICE_UNAVAILABLE: 'تعذّر تأمين قنوات الصوت. لم نفتح قناة سرية.',
+  MAFIA_VOICE_CAPACITY: 'غرف مافيا الصوتية مشغولة حاليًا. انتظر انتهاء مباراة ثم جرّب.',
+  MAFIA_VOICE_TRANSITION: 'يجري تأمين قناة الصوت للمرحلة الجديدة.',
+  MAFIA_VOICE_DEVICE: 'صوت المباراة مفتوح على جهازك الآخر. أغلقه هناك أولًا.',
+  MAFIA_VOICE_SESSION: 'انتهت جلسة الاتصال السابقة. اضغط الانضمام للصوت مجددًا.',
+  MAFIA_SOCIAL_LOCKED: 'التواصل متاح من داخل مباراة مافيا حتى نهايتها.',
   INVALID: 'تحقق من البيانات وحاول مرة ثانية.',
   NAME: 'اكتب اسمًا من حرف إلى ٢٠ حرفًا.',
   NAME_TAKEN: 'هذا الاسم مستخدم في الغرفة. اختر اسمًا آخر.',
@@ -98,7 +112,7 @@ export const ERRORS = {
   FULL_ERSOMHA: 'غرفة ارسمها ممتلئة؛ الحد الأعلى ٨ لاعبين.',
   GAME: 'هذه اللعبة غير متاحة للغرف. اختر لعبة من قائمة غرف ميدان.',
   UPDATE_REQUIRED: 'هذه الغرفة تحتاج إصدارًا أحدث من ميدان. حدّث التطبيق ثم افتح الدعوة مجددًا.',
-  AUTH_REQUIRED: 'سجّل الدخول للعب ارسمها وحفظ الكلمات التي شاهدتها عبر أجهزتك.',
+  AUTH_REQUIRED: 'سجّل الدخول للانضمام إلى هذه اللعبة وحفظ تقدمك عبر أجهزتك.',
   ERSOMHA_BUSY: 'لديك مباراة ارسمها جارية في غرفة أخرى. عُد إليها أو غادرها قبل البدء هنا.',
   ERSOMHA_EXHAUSTED: 'لا توجد كلمات جديدة كافية لهذه المجموعة. وسّع الفئات أو اختر إعادة الكلمات القديمة بوضوح.',
   ERSOMHA_CONTENT_EXHAUSTED: 'لا توجد كلمات جديدة كافية لهذه المجموعة. وسّع الفئات أو اختر إعادة الكلمات القديمة بوضوح.',

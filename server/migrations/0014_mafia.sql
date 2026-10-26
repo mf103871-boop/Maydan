@@ -1,0 +1,10 @@
+CREATE TABLE IF NOT EXISTS mafia_seats (user_id TEXT PRIMARY KEY,room_key TEXT NOT NULL,room_code TEXT NOT NULL,seat_id TEXT NOT NULL,expires_at INTEGER NOT NULL,updated_at INTEGER NOT NULL);
+CREATE INDEX IF NOT EXISTS mafia_seats_room ON mafia_seats(room_key);
+CREATE TABLE IF NOT EXISTS mafia_media_leases (user_id TEXT PRIMARY KEY,room_key TEXT NOT NULL,call_id TEXT NOT NULL,expires_at INTEGER NOT NULL,updated_at INTEGER NOT NULL);
+CREATE TABLE IF NOT EXISTS mafia_media_slots (room_key TEXT PRIMARY KEY,call_id TEXT NOT NULL,capacity INTEGER NOT NULL,updated_at INTEGER NOT NULL);
+CREATE TABLE IF NOT EXISTS mafia_public_rooms (room_key TEXT PRIMARY KEY,room_code TEXT NOT NULL UNIQUE,mode TEXT NOT NULL,capacity INTEGER NOT NULL,players INTEGER NOT NULL,ready INTEGER NOT NULL,host_name TEXT NOT NULL,expires_at INTEGER NOT NULL,updated_at INTEGER NOT NULL);
+CREATE TABLE IF NOT EXISTS mafia_results (user_id TEXT NOT NULL,match_key TEXT NOT NULL,role_id TEXT NOT NULL,initial_faction TEXT NOT NULL,faction TEXT NOT NULL,won INTEGER NOT NULL,draw INTEGER NOT NULL,forfeited INTEGER NOT NULL,finished_at INTEGER NOT NULL,PRIMARY KEY(user_id,match_key));
+CREATE INDEX IF NOT EXISTS mafia_results_retention ON mafia_results(finished_at);
+CREATE TABLE IF NOT EXISTS mafia_history (match_key TEXT PRIMARY KEY,room_code TEXT NOT NULL,ruleset_version INTEGER NOT NULL,finished_at INTEGER NOT NULL,summary TEXT NOT NULL);
+CREATE TABLE IF NOT EXISTS mafia_reports (id TEXT PRIMARY KEY,reporter_id TEXT NOT NULL,reported_id TEXT NOT NULL,room_code TEXT NOT NULL,match_key TEXT NOT NULL,reason TEXT NOT NULL,evidence TEXT NOT NULL,created_at INTEGER NOT NULL);
+CREATE INDEX IF NOT EXISTS mafia_reports_retention ON mafia_reports(created_at);

@@ -8,7 +8,7 @@ import { DESIGN_SCREENS, DESIGN_REGISTRY_VERSION, getScreenDefinition, getNodeDe
 import { DESIGN_SCENES, createDesignFixture } from '../src/design/screen-catalog.js';
 import { DESIGN_RENDERED_NODE_IDS } from '../src/design/coverage-map.js';
 
-test('semantic scene registry has stable unique identities and the seven actual games', () => {
+test('semantic scene registry has stable unique identities and the eight actual games', () => {
   assert.equal(DESIGN_REGISTRY_VERSION, 1);
   assert.equal(new Set(DESIGN_SCREENS.map(screen => screen.id)).size, DESIGN_SCREENS.length);
   assert.ok(DESIGN_SCREENS.length >= 80);
@@ -18,7 +18,7 @@ test('semantic scene registry has stable unique identities and the seven actual 
     assert.equal(new Set(screen.nodes.map(node => node.id)).size, screen.nodes.length);
     for (const node of screen.nodes) assert.equal(getNodeDefinition(screen.id, node.id), node);
   }
-  assert.deepEqual([...new Set(DESIGN_SCENES.map(scene => scene.game).filter(Boolean))].sort(), ['badeeha','beep','ersomha','fabraka','jabeen','mamnoo','meenfina']);
+  assert.deepEqual([...new Set(DESIGN_SCENES.map(scene => scene.game).filter(Boolean))].sort(), ['badeeha','beep','ersomha','fabraka','jabeen','mafia','mamnoo','meenfina']);
 });
 
 test('content and action containers cannot hide mandatory descendant controls', () => {

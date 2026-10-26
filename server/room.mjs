@@ -4,10 +4,15 @@ import { buildFabrakaDeck } from './fabraka-content.mjs';
 import { credentials, readJson, json, errorResponse, shuffled, createLimit } from './protocol.mjs';
 import { bindSeatAccount, prepareRoomStats } from './room-stats.mjs';
 import { recordOnlineResult, profileSummaries } from './profiles/db.mjs';
-import { consumeRoomTrial } from './accounts/router.mjs';
+import { consumeRoomTrial, recheckMafiaHost } from './accounts/router.mjs';
 import { requireSession } from './accounts/session.mjs';
 import { liveAccountSql } from './moderation/access.mjs';
-import { ERSOMHA_PROTOCOL, BADEEHA_PROTOCOL, ROOM_REACTIONS, REACTION_BURST, REACTION_REFILL_MS, reactionsAllowed } from '../src/online/shared.js';
+import { ERSOMHA_PROTOCOL, BADEEHA_PROTOCOL, MAFIA_PROTOCOL, ROOM_REACTIONS, REACTION_BURST, REACTION_REFILL_MS, reactionsAllowed } from '../src/online/shared.js';
+import { requireMafiaEnabled, claimMafiaSeat, renewMafiaSeats, cleanupMafiaSeats, updateMafiaDirectory, mafiaPlaying, activateMafiaMedia } from './mafia-access.mjs';
+import { prepareMafiaVoice, committedMafiaVoice, mafiaVoiceView, mafiaVoiceRequest } from './mafia-voice.mjs';
+import { technicalAbort, snapshot as mafiaSnapshot } from './mafia-model.mjs';
+import { persistMafiaResult, prepareMafiaResult } from './mafia-results.mjs';
+import { blockUser } from './social/db.mjs';
 import { getErsomhaPool } from './ersomha-content.mjs';
 import { setErsomhaChoices, ERSOMHA_PLAYING, ERSOMHA_SELECT_MS } from './ersomha-model.mjs';
 import { acquireErsomhaLease, assertErsomhaLease, renewErsomhaLease, releaseErsomhaLease, releaseErsomhaAccounts, ersomhaSeen, exposeErsomhaCards, buildErsomhaTurnPlan } from './ersomha-history.mjs';
@@ -31,9 +36,12 @@ export class Room {
   constructor(ctx, env) {
     this.ctx = ctx; this.env = env; this.room = null; this.profileOutbox = []; this.queue = Promise.resolve();
     this.inboundBySocket = new WeakMap(); this.inboundCount = 0;
+    this.mafiaLastSnapshots = new WeakMap();
+    this.mafiaResultOutbox=[];
     this.ready = ctx.blockConcurrencyWhile(async () => {
       this.room = await ctx.storage.get('room') || null;
       this.profileOutbox = await ctx.storage.get('profileOutbox') || [];
+      this.mafiaResultOutbox=await ctx.storage.get('mafiaResultOutbox')||[];
       if (this.room?.game === 'ersomha') {
         const drawing = await loadErsomhaDrawing(ctx.storage, this.room);
         this.drawing = drawing.board; this.drawingHead = drawing.head;
@@ -59,13 +67,18 @@ export class Room {
     return Math.max(attachment.seenAt || 0, pong?.getTime() || 0);
   }
   // Without a database binding the outbox can never drain; do not wake every 30 s for it.
-  outboxPending() { return Boolean(this.env.DB) && this.profileOutbox.length > 0; }
+  outboxPending() { return Boolean(this.env.DB) && (this.profileOutbox.length > 0||this.mafiaResultOutbox.length>0); }
+  mafiaVoiceAlive(room,id,now=Date.now()) {
+    const account=room.members.find(m=>m.id===id)?.accountUserId;
+    return room.game==='mafia'&&Boolean(room.mafiaMedia?.devices?.[account])&&now-(room.mafiaMedia?.presence?.[account]||0)<SOCKET_IDLE;
+  }
   alarmAt(room, now) {
+    if(room.game==='mafia'&&this.mafiaCleanupRetryAt>now)return this.mafiaCleanupRetryAt;
     const deadlines = this.sockets().map((ws) => {
       const a = this.attachment(ws);
       return a.id ? this.lastSeen(ws, a) + SOCKET_IDLE : a.authDeadline;
     }).filter(Number.isFinite);
-    return Math.max(now + 1, Math.min(nextAlarm(room, now), ...deadlines, ...(this.outboxPending() ? [now + STATS_RETRY] : [])));
+    return Math.max(now + 1, Math.min(nextAlarm(room, now), ...deadlines, ...(room.game==='mafia'?[room.mafiaRenewAt||now+30_000]:[]), ...(this.outboxPending() ? [now + STATS_RETRY] : [])));
   }
   async schedule() {
     if (this.room) await this.ctx.storage.setAlarm(this.alarmAt(this.room, Date.now()));
@@ -75,11 +88,14 @@ export class Room {
   async commit(candidate, { prepared = false } = {}) {
     const oldLease = this.room?.ersomhaLease;
     if (candidate.game === 'ersomha' && !prepared) await this.prepareErsomha(candidate);
+    if (candidate.game === 'mafia' && !prepared) await this.prepareMafia(candidate);
     if (candidate.game === 'ersomha' && candidate.phase === 'select' && (this.room?.phase !== 'select' || this.room.round !== candidate.round || this.room.matchId !== candidate.matchId)) {
       candidate.deadlineAt = Date.now() + ERSOMHA_SELECT_MS;
     }
     candidate.revision++;
     const outbox = [...this.profileOutbox, ...prepareRoomStats(this.room, candidate)];
+    const mafiaResult=candidate.game==='mafia'&&candidate.phase==='over'&&this.room?.phase!=='over'?prepareMafiaResult(candidate):null;
+    const mafiaOutbox=[...this.mafiaResultOutbox,...(mafiaResult?[mafiaResult]:[])];
     const resetDrawing = candidate.game === 'ersomha' && (!this.drawing || this.drawing.boardId !== ersomhaBoardId(candidate));
     const nextDrawing = resetDrawing ? emptyErsomhaDrawing(candidate) : this.drawing;
     let nextDrawingHead = this.drawingHead, nextArchives = this.drawingArchives || [];
@@ -91,12 +107,21 @@ export class Room {
         nextDrawingHead = await checkpointErsomhaDrawing(tx, nextDrawing, this.drawingHead);
       }
       if (outbox.length) await tx.put('profileOutbox', outbox);
+      if(mafiaOutbox.length)await tx.put('mafiaResultOutbox',mafiaOutbox);
       await tx.setAlarm(Math.min(this.alarmAt(candidate, Date.now()), ...(outbox.length ? [Date.now() + STATS_RETRY] : [])));
     });
     this.room = candidate;
     if (candidate.game === 'ersomha') { this.drawing = nextDrawing; this.drawingHead = nextDrawingHead; this.drawingArchives = nextArchives; }
     this.profileOutbox = outbox;
+    this.mafiaResultOutbox=mafiaOutbox;
     this.broadcast();
+    if(candidate.game==='mafia') {
+      // Directory is advisory; admission always checks the committed room.
+      await committedMafiaVoice(this.ctx,this.env,candidate);
+      await cleanupMafiaSeats(this.env,candidate);
+      await updateMafiaDirectory(this.env,candidate);
+      if(this.mafiaResultOutbox.length)await this.flushMafiaResults();
+    }
     if (candidate.game === 'ersomha' && !ERSOMHA_PLAYING.includes(candidate.phase) && candidate.ersomhaLease) {
       // The final state is durable first. A failed lease release merely holds
       // the account until its short expiry; it never exposes another word.
@@ -110,6 +135,30 @@ export class Room {
       this.ctx.waitUntil?.(task);
       task.catch(() => {});
     }
+  }
+  async flushMafiaResults() {
+    if(!this.env.DB)return;
+    while(this.mafiaResultOutbox.length) {
+      const event=this.mafiaResultOutbox[0];
+      try {await persistMafiaResult(this.env,event);}catch {await this.ctx.storage.setAlarm(Date.now()+STATS_RETRY);return;}
+      const rest=this.mafiaResultOutbox.slice(1);
+      await this.ctx.storage.put('mafiaResultOutbox',rest);this.mafiaResultOutbox=rest;
+    }
+  }
+  async prepareMafia(candidate) {
+    const sockets=this.sockets().map(ws=>({ws,...this.attachment(ws)})).filter(a=>a.id&&a.accountSessionId);
+    if(sockets.length) {
+      const now=Date.now(),sessions=(await this.env.DB.prepare(`SELECT id,user_id FROM sessions WHERE id IN (${sockets.map(()=>'?').join(',')}) AND expires_at>? AND (revoked_at IS NULL OR revoked_at>?) AND ${liveAccountSql('sessions.user_id')}`).bind(...sockets.map(a=>a.accountSessionId),now,now).all()).results||[];
+      for(const a of sockets)if(!sessions.some(s=>s.id===a.accountSessionId&&s.user_id===a.accountUserId)) {
+        a.ws.serializeAttachment({revoked:true});this.close(a.ws,4401,'AUTH');
+        if(candidate.members.some(m=>m.id===a.id&&!m.left))connected(candidate,a.id,false,now);
+      }
+    }
+    if((!candidate.mafiaRenewAt||Date.now()>=candidate.mafiaRenewAt)&&!(candidate.mafiaMedia?.failed&&!mafiaPlaying(candidate))) {
+      await renewMafiaSeats(this.env,candidate);
+      if(mafiaPlaying(candidate)&&candidate.mafiaMedia)await activateMafiaMedia(this.env,candidate);
+    }
+    await prepareMafiaVoice(this.ctx,this.env,this.room,candidate);
   }
   async prepareErsomha(candidate) {
     if (!ERSOMHA_PLAYING.includes(candidate.phase)) return;
@@ -157,6 +206,7 @@ export class Room {
   stateFor(id) {
     const state = snapshot(this.room, id, Date.now());
     if (this.room.game === 'ersomha' && this.drawing?.boardId === ersomhaBoardId(this.room)) state.drawing = ersomhaDrawingMeta(this.drawing);
+    if (this.room.game === 'mafia') state.mafiaVoice=mafiaVoiceView(this.room,id);
     return state;
   }
   async drawingCommand(ws, id, command) {
@@ -242,12 +292,21 @@ export class Room {
       if (!id) continue;
       const m = this.room.members.find((p) => p.id === id && !p.left);
       if (!m) { this.send(ws, { type: 'error', error: 'REMOVED' }); this.close(ws, 4401, 'REMOVED'); continue; }
-      this.send(ws, { type: 'state', state: this.stateFor(id) });
+      const state=this.stateFor(id);
+      if(this.room.game==='mafia') {
+        // Identical snapshots are not emitted to uninvolved viewers for secret
+        // commands; even their message timing must not reveal team activity.
+        const comparison=JSON.stringify({...state,serverNow:0});
+        if(this.mafiaLastSnapshots.get(ws)===comparison)continue;
+        this.mafiaLastSnapshots.set(ws,comparison);
+      }
+      this.send(ws, { type: 'state', state });
     }
   }
   async advance({ force = false } = {}) {
     if (!this.room) return;
     const now = Date.now();
+    if(this.room.game==='mafia'&&this.mafiaCleanupRetryAt>now)return;
     // Between durable room changes only time can advance the game. Avoid
     // cloning/stringifying the full private turn plan for every ink batch.
     // Rehydration, a changed room object, and alarms always re-evaluate it.
@@ -260,9 +319,10 @@ export class Room {
       if (a.id && Date.now() - this.lastSeen(ws, a) >= SOCKET_IDLE) {
         ws.serializeAttachment({ timedOut: true });
         this.close(ws, 4000, 'DISCONNECTED');
-        if (candidate.members.some((m) => m.id === a.id && !m.left)) connected(candidate, a.id, false, Date.now());
+        if (candidate.members.some((m) => m.id === a.id && !m.left)&&!this.mafiaVoiceAlive(candidate,a.id)) connected(candidate, a.id, false, Date.now());
       }
     }
+    if(candidate.game==='mafia')for(const m of candidate.members.filter(m=>!m.left&&m.connected))if(!this.sockets().some(ws=>this.attachment(ws).id===m.id)&&!this.mafiaVoiceAlive(candidate,m.id))connected(candidate,m.id,false,Date.now());
     tick(candidate, Date.now());
     if (candidate.phase === 'closed') {
       const reason = candidate.reason === 'expired' ? 'EXPIRED' : 'NOT_FOUND';
@@ -271,15 +331,24 @@ export class Room {
         try { await releaseErsomhaLease(this.env, candidate.ersomhaLease); } catch { /* short lease expiry remains safe */ }
         await deleteErsomhaDrawing(this.ctx.storage, this.drawingHead, this.drawingArchives);
       }
-      if (this.profileOutbox.length) await this.deleteKey('room');
+      if(candidate.game==='mafia') {await prepareMafiaVoice(this.ctx,this.env,this.room,candidate);await committedMafiaVoice(this.ctx,this.env,candidate);if(candidate.mafiaMedia?.failed){this.mafiaCleanupRetryAt=Date.now()+STATS_RETRY;await this.ctx.storage.setAlarm(this.mafiaCleanupRetryAt);return;}await cleanupMafiaSeats(this.env,candidate);await updateMafiaDirectory(this.env,candidate);}
+      if (this.profileOutbox.length||this.mafiaResultOutbox.length) await this.deleteKey('room');
       else await this.ctx.storage.deleteAll();
       this.room = null;
       this.drawing = null; this.drawingHead = null; this.drawingArchives = [];
       await this.schedule();
+      await this.flushMafiaResults();
     } else if (JSON.stringify(candidate) !== JSON.stringify(this.room)
-      || candidate.game === 'ersomha' && candidate.ersomhaLease && ERSOMHA_PLAYING.includes(candidate.phase) && Date.now() >= candidate.ersomhaLease.renewAt) {
+      || candidate.game === 'ersomha' && candidate.ersomhaLease && ERSOMHA_PLAYING.includes(candidate.phase) && Date.now() >= candidate.ersomhaLease.renewAt
+      || candidate.game === 'mafia' && Date.now()>=(candidate.mafiaRenewAt||0)) {
       try { await this.commit(candidate); }
       catch (error) {
+        if(candidate.game==='mafia') {
+          if(!mafiaPlaying(this.room))throw error;
+          const stopped=structuredClone(this.room);technicalAbort(stopped,Date.now(),'account_unavailable');
+          await prepareMafiaVoice(this.ctx,this.env,this.room,stopped);
+          await this.commit(stopped,{prepared:true});return;
+        }
         if (candidate.game !== 'ersomha' || !(error instanceof RoomError) || !['AUTH', 'ERSOMHA_ACTIVE_ELSEWHERE'].includes(error.code)) throw error;
         // Every entry point advances first, including HTTP leave and socket
         // close. End a revoked match here so cleanup never depends on its alarm.
@@ -300,7 +369,7 @@ export class Room {
     return found.id;
   }
   async hydrateErsomhaProfile(room, seatId) {
-    if (room.game !== 'ersomha') return;
+    if (!['ersomha','mafia'].includes(room.game)) return;
     const seat = member(room, seatId), profiles = await profileSummaries(this.env, [seat.accountUserId]);
     const profile = profiles.get(seat.accountUserId);
     seat.profile = profile ? { avatarPreset: profile.avatarPreset, theme: profile.theme, avatarUrl: profile.avatarUrl, revision: profile.revision } : null;
@@ -314,6 +383,7 @@ export class Room {
         if (request.method === 'POST' && endpoint === 'create') {
           const input = await credentials(await readJson(request, 4096, createLimit));
           if (input.game === 'badeeha' && input.capabilities?.badeeha !== BADEEHA_PROTOCOL) fail('UPDATE_REQUIRED', 409);
+          if(input.game==='mafia') {requireMafiaEnabled(this.env);if(input.capabilities?.mafia!==MAFIA_PROTOCOL)fail('UPDATE_REQUIRED',409);if(!input.accountUserId)fail('AUTH_REQUIRED',401);}
           if (input.game === 'ersomha') {
             if (input.capabilities?.ersomha !== ERSOMHA_PROTOCOL) fail('CONFIG', 409);
             if (typeof input.accountUserId !== 'string' || !input.accountUserId) fail('AUTH_REQUIRED', 401);
@@ -324,7 +394,7 @@ export class Room {
             const owner = this.room.members.find((m) => m.id === input.id && !m.left);
             if (!owner || owner.tokenHash !== input.tokenHash) return json({ error: 'COLLISION' }, 409);
             if ((this.room.game || 'meenfina') !== (input.game || 'meenfina')) fail('GAME');
-            if (this.room.game === 'ersomha' && owner.accountUserId !== input.accountUserId) fail('AUTH', 401);
+            if (['ersomha','mafia'].includes(this.room.game) && owner.accountUserId !== input.accountUserId) fail('AUTH', 401);
             return json({ code: this.room.code, id: input.id, game: this.room.game || 'meenfina' });
           }
           const created = createRoom(code, input, Date.now());
@@ -333,6 +403,7 @@ export class Room {
           created.trialOwnerId = input.id;
           created.trialStarted = false;
           bindSeatAccount(created, input.id, input.accountUserId);
+          if(created.game==='mafia') {created.mafiaKey=crypto.randomUUID();await claimMafiaSeat(this.env,created,input.id);}
           await this.hydrateErsomhaProfile(created, input.id);
           // Reject empty topic selections while the creator can still edit them,
           // rather than trapping an assembled group in an unstartable lobby.
@@ -341,6 +412,44 @@ export class Room {
           return json({ code, id: input.id, game: this.room.game }, 201);
         }
         if (!this.room) fail('NOT_FOUND', 404);
+        if(request.method==='POST'&&endpoint==='mafia-account-removed') {
+          if(this.room.game!=='mafia')fail('NOT_FOUND',404);
+          const body=await readJson(request),seat=this.room.members.find(m=>!m.left&&m.accountUserId===body.accountUserId);
+          if(!seat){if(this.room.mafiaMedia?.failed)fail('MAFIA_VOICE_UNAVAILABLE',503);return json({ok:true});}
+          const candidate=structuredClone(this.room);leaveRoom(candidate,seat.id,Date.now());
+          await prepareMafiaVoice(this.ctx,this.env,this.room,candidate);await this.commit(candidate,{prepared:true});
+          if(candidate.mafiaMedia?.failed)fail('MAFIA_VOICE_UNAVAILABLE',503);
+          return json({ok:true});
+        }
+        if(request.method==='POST'&&endpoint==='mafia-voice') {
+          if(this.room.game!=='mafia')fail('NOT_FOUND',404);
+          const body=await readJson(request);return json(await mafiaVoiceRequest(this.ctx,this.env,this.room,body.accountUserId,body));
+        }
+        if(request.method==='POST'&&endpoint==='mafia-evidence') {
+          if(this.room.game!=='mafia')fail('NOT_FOUND',404);
+          const body=await readJson(request),seat=this.room.members.find(m=>m.accountUserId===body.accountUserId);
+          if(!seat||body.matchId!==this.room.matchId)fail('NOT_FOUND',404);
+          const target=this.room.members.find(m=>m.id===body.targetId);if(!target?.accountUserId)fail('NOT_FOUND',404);
+          // Capture only evidence the reporter was authorized to see. No role
+          // map, other faction chat, or voice recording enters the report.
+          const view=mafiaSnapshot(this.room,seat.id,Date.now());
+          return json({matchKey:`${this.room.mafiaKey}:${this.room.matchId}`,reportedUserId:target.accountUserId,phase:this.room.phase,publicHistory:view.log||[],messages:Object.values(view.chats||{}).flat().filter(m=>!body.messageId||m.id===body.messageId)});
+        }
+        if(request.method==='POST'&&endpoint==='mafia-block-account') {
+          if(this.room.game!=='mafia')fail('NOT_FOUND',404);
+          const body=await readJson(request),seat=this.room.members.find(m=>!m.left&&m.accountUserId===body.accountUserId),target=this.room.members.find(m=>!m.left&&m.accountUserId===body.targetAccountUserId);
+          if(!seat||!target||seat.id===target.id)return json({ok:true,left:false});
+          const candidate=structuredClone(this.room);leaveRoom(candidate,seat.id,Date.now());await this.commit(candidate);
+          return json({ok:true,left:true});
+        }
+        if(request.method==='POST'&&endpoint==='mafia-block') {
+          if(this.room.game!=='mafia')fail('NOT_FOUND',404);
+          const body=await readJson(request),seat=this.room.members.find(m=>!m.left&&m.accountUserId===body.accountUserId),target=this.room.members.find(m=>m.id===body.targetId);
+          if(!seat||!target?.accountUserId||seat.id===target.id)fail('NOT_FOUND',404);
+          await blockUser(this.env,seat.accountUserId,target.accountUserId,Date.now());
+          const candidate=structuredClone(this.room);leaveRoom(candidate,seat.id,Date.now());await this.commit(candidate);
+          return json({ok:true,left:true});
+        }
         if (request.method === 'POST' && endpoint === 'drawing-evidence') {
           if (this.room.game !== 'ersomha') fail('NOT_FOUND', 404);
           const input = await readJson(request), matchId = input.matchId, round = input.round;
@@ -370,6 +479,14 @@ export class Room {
         if (request.method === 'POST' && endpoint === 'join') {
           const input = await credentials(await readJson(request));
           if (this.room.game === 'badeeha' && input.capabilities?.badeeha !== BADEEHA_PROTOCOL) fail('UPDATE_REQUIRED', 409);
+          if(this.room.game==='mafia') {
+            if(input.capabilities?.mafia!==MAFIA_PROTOCOL)fail('UPDATE_REQUIRED',409);
+            if(!input.accountUserId)fail('AUTH_REQUIRED',401);
+            const previous=this.room.members.find(m=>!m.left&&m.id===input.id);
+            if(previous&&previous.accountUserId!==input.accountUserId)fail('AUTH',401);
+            if(!previous&&this.room.phase==='lobby')requireMafiaEnabled(this.env);
+            if(input.matchmaking&&(this.room.phase!=='lobby'||this.room.settings.visibility!=='public'))fail('STARTED',409);
+          }
           if (this.room.game === 'ersomha') {
             if (input.capabilities?.ersomha !== ERSOMHA_PROTOCOL) fail('CONFIG', 409);
             if (typeof input.accountUserId !== 'string' || !input.accountUserId) fail('AUTH_REQUIRED', 401);
@@ -379,12 +496,14 @@ export class Room {
           const candidate = structuredClone(this.room);
           joinRoom(candidate, input, Date.now());
           bindSeatAccount(candidate, input.id, input.accountUserId);
+          if(candidate.game==='mafia')await claimMafiaSeat(this.env,candidate,input.id);
           await this.hydrateErsomhaProfile(candidate, input.id);
           await this.commit(candidate);
           return json({ code: this.room.code, id: input.id, game: this.room.game || 'meenfina' });
         }
         if (request.method === 'POST' && endpoint === 'leave') {
           const id = await this.authenticate(await readJson(request));
+          if(this.room.game==='mafia'){const auth=await requireSession(this.env,request,{rotate:false});if(member(this.room,id).accountUserId!==auth.user.id)fail('AUTH',401);}
           const candidate = structuredClone(this.room);
           leaveRoom(candidate, id, Date.now());
           await this.commit(candidate);
@@ -453,13 +572,15 @@ export class Room {
         if (command.type === 'auth' && !a.id) {
           if (this.room.game === 'badeeha' && command.capabilities?.badeeha !== BADEEHA_PROTOCOL) fail('UPDATE_REQUIRED', 409);
           if (this.room.game === 'ersomha' && command.capabilities?.ersomha !== ERSOMHA_PROTOCOL) fail('CONFIG', 409);
+          if (this.room.game === 'mafia' && command.capabilities?.mafia !== MAFIA_PROTOCOL) fail('UPDATE_REQUIRED', 409);
           if (now > a.authDeadline) fail('AUTH', 401);
           const id = await this.authenticate(command);
-          if (this.room.game === 'ersomha') {
+          let accountIdentity={};
+          if (['ersomha','mafia'].includes(this.room.game)) {
             // Room tokens identify a seat, not an account. Ask only Ersomha
             // clients for a live bearer before revealing account-scoped words.
             // Older games keep their original single-message seat handshake.
-            if (command.accountAuthorization === undefined) { this.send(ws, { type: 'account-auth', game: 'ersomha' }); return; }
+            if (command.accountAuthorization === undefined) { this.send(ws, { type: 'account-auth', game: this.room.game }); return; }
             if (typeof command.accountAuthorization !== 'string' || command.accountAuthorization.length > 512) fail('AUTH', 401);
             const request = new Request(`https://room.internal/api/rooms/${this.room.code}/socket`, { headers: { authorization: command.accountAuthorization } });
             let auth;
@@ -467,12 +588,13 @@ export class Room {
             catch (error) { if (error instanceof RoomError && error.status < 500) fail('AUTH', 401); throw error; }
             const seat = member(this.room, id);
             if (auth.user.id !== seat.accountUserId || !await this.env.DB.prepare(`SELECT 1 AS ok WHERE ${liveAccountSql('?')}`).bind(auth.user.id, auth.user.id).first()) fail('AUTH', 401);
+            if(this.room.game==='mafia')accountIdentity={accountSessionId:auth.session.id,accountUserId:auth.user.id};
           }
           // Only one controlling connection per seat; old close cannot disconnect the replacement.
           for (const other of this.sockets()) if (other !== ws && this.attachment(other).id === id) {
             other.serializeAttachment({ replaced: true }); this.close(other, 4409, 'REPLACED');
           }
-          ws.serializeAttachment({ id, seenAt: now, windowAt: now, count: 1 });
+          ws.serializeAttachment({ id, seenAt: now, windowAt: now, count: 1,...accountIdentity });
           const candidate = structuredClone(this.room);
           connected(candidate, id, true, now);
           await this.commit(candidate);
@@ -482,23 +604,26 @@ export class Room {
         // failed login: answering with INVALID keeps the player's session alive.
         if (!a.id) fail('AUTH', 401);
         if (!requestId) fail('INVALID');
+        if(this.room.game==='mafia'&&!await this.env.DB.prepare(`SELECT 1 FROM sessions WHERE id=? AND user_id=? AND expires_at>? AND (revoked_at IS NULL OR revoked_at>?) AND ${liveAccountSql('sessions.user_id')}`).bind(a.accountSessionId||'',a.accountUserId||'',now,now).first())fail('AUTH',401);
         if (command.type === 'react') { this.reaction(ws, a, command, now); this.send(ws, { type: 'ack', requestId, ok: true }); return; }
         if (this.room.game === 'ersomha' && ['drawing_batch', 'drawing_undo', 'drawing_redo', 'drawing_clear', 'drawing_sync'].includes(command.type)) {
           await this.drawingCommand(ws, a.id, command); return;
         }
         const candidate = structuredClone(this.room);
-        const deck = command.type === 'start' && !['ersomha', 'badeeha'].includes(candidate.game) ? (candidate.game === 'fabraka' ? buildFabrakaDeck(candidate) : meenfinaDeck(candidate)) : [];
+        const deck = command.type === 'start' && !['ersomha', 'badeeha','mafia'].includes(candidate.game) ? (candidate.game === 'fabraka' ? buildFabrakaDeck(candidate) : meenfinaDeck(candidate)) : [];
+        if(candidate.game==='mafia'&&command.type==='start') {requireMafiaEnabled(this.env);await recheckMafiaHost(this.env,candidate,now);}
         action(candidate, a.id, command, now, deck);
         if (candidate.game === 'ersomha' && command.type === 'start') attemptedStart = candidate;
         if (candidate.game === 'ersomha') await this.prepareErsomha(candidate);
-        if (command.type === 'start' && !candidate.trialStarted) {
+        if (candidate.game === 'mafia') await this.prepareMafia(candidate);
+        if (command.type === 'start' && !candidate.trialStarted && !(candidate.game==='mafia'&&candidate.phase==='over')) {
           // Validate the engine action first. Failed readiness/settings never
           // spend the allowance; a failed DO write can retry this private claim.
           await consumeRoomTrial(this.env, candidate.roomTrialGate, candidate.roomTrialClaim, now,
             candidate.members.some((member) => member.id === candidate.trialOwnerId && !member.left));
           candidate.trialStarted = true;
         }
-        await this.commit(candidate, { prepared: candidate.game === 'ersomha' });
+        await this.commit(candidate, { prepared: ['ersomha','mafia'].includes(candidate.game) });
         this.send(ws, { type: 'ack', requestId, ok: true });
       } catch (error) {
         if (attemptedStart?.ersomhaLease && this.room?.phase === 'lobby') {
@@ -510,7 +635,7 @@ export class Room {
         // an error about another player (a kick target) must not sign the host out.
         const seat = this.attachment(ws).id;
         const seated = Boolean(seat) && Boolean(this.room?.members.some((m) => m.id === seat && !m.left));
-        if (['NOT_FOUND', 'EXPIRED'].includes(code) || (code === 'AUTH' && !seated)) this.close(ws, 4401, code);
+        if (['NOT_FOUND', 'EXPIRED'].includes(code) || (code === 'AUTH' && (!seated||this.room?.game==='mafia'))) {if(this.room?.game==='mafia')ws.serializeAttachment({revoked:true});this.close(ws, 4401, code);}
       }
     }).finally(() => {
       this.inboundBySocket.set(ws, Math.max(0, (this.inboundBySocket.get(ws) || 1) - 1));
@@ -524,6 +649,7 @@ export class Room {
       const { id } = this.attachment(ws);
       if (!id || !this.room || !this.room.members.some((m) => m.id === id && !m.left)) return;
       if (this.sockets().some((other) => other !== ws && this.attachment(other).id === id && other.readyState === 1)) return;
+      if(this.mafiaVoiceAlive(this.room,id))return;
       const candidate = structuredClone(this.room);
       connected(candidate, id, false, Date.now());
       await this.commit(candidate);
@@ -540,7 +666,9 @@ export class Room {
         if (!a.id && a.authDeadline <= Date.now()) this.close(ws, 4401, 'AUTH');
       }
       await this.schedule();
+      await this.flushMafiaResults();
     }).then(() => this.flushStats(), async error => {
+      if(this.room?.game==='mafia'){this.mafiaCleanupRetryAt=Date.now()+STATS_RETRY;await this.ctx.storage.setAlarm(this.mafiaCleanupRetryAt);return;}
       if (this.room?.game !== 'ersomha') throw error;
       if (error instanceof RoomError && ['AUTH', 'ERSOMHA_ACTIVE_ELSEWHERE'].includes(error.code)) {
         await this.serial(async () => {

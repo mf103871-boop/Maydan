@@ -1,3 +1,4 @@
+import { MafiaSettings } from '../online/Mafia.jsx';
 import React, { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState, useSyncExternalStore } from 'react';
 import { createPortal } from 'react-dom';
 import { useAccount } from '../shared/account/context.js';
@@ -59,6 +60,7 @@ export function GameInviteDialog({ target, lamma, initialCode = '', canCreate = 
   const account = useAccount();
   const [mode, setMode] = useState(initialCode || !canCreate ? 'existing' : 'create');
   const [game, setGame] = useState(memberCount > 8 ? 'meenfina' : 'fabraka');
+  const [mafiaSettings,setMafiaSettings] = useState({mode:memberCount>8?'shadow':'classic',capacity:memberCount>8?Math.max(10,Math.min(12,memberCount)):8,visibility:'private'});
   const [code, setCode] = useState(initialCode); const [busy, setBusy] = useState(false); const [error, setError] = useState('');
   const [created, setCreated] = useState(null);
   const alive = useRef(true); const owner = useRef(account.user?.id); owner.current = account.user?.id;
@@ -70,7 +72,7 @@ export function GameInviteDialog({ target, lamma, initialCode = '', canCreate = 
     setBusy(true); setError('');
     try {
       if (mode === 'create') {
-        const room = await launcher.current.launch(game, payload => lamma.sendGameInvite(payload));
+        const room = await launcher.current.launch(game, payload => lamma.sendGameInvite(payload), game === 'mafia' ? { settings:mafiaSettings } : {});
         if (!alive.current) return;
         notify('وصلت الدعوة، ننتظركم في الغرفة'); onClose(); onLaunched(room.code);
       } else {
@@ -86,8 +88,9 @@ export function GameInviteDialog({ target, lamma, initialCode = '', canCreate = 
   };
   return <Modal data-design-screen="social.invite" title="يلا نلعب" className="lamma-dialog lamma-game-dialog" onClose={busy ? null : onClose} footer={<><Button data-design-id="cancel" variant="ghost" disabled={busy} onClick={onClose}>إلغاء</Button><Button data-design-id="submit" variant="primary" disabled={busy || (mode === 'existing' && !validCode(normalizeCode(code)))} loading={busy} onClick={submit}>{mode === 'existing' || created ? 'إرسال الدعوة' : 'ابدأ وادعُ أصحابك'}</Button></>}>
     {mode === 'create' ? <>
-      <p className="lamma-muted">اختر اللعبة. نجهّز الغرفة ونرسل دعوتها هنا، وكل واحد يدخل من جواله. مكالمتكم تبقى معكم.</p>
-      <div data-design-id="options-list" className="lamma-game-options" role="group" aria-label="اختيار لعبة للّمة">{[['ersomha', 'ارسمها', 'من شخصين إلى ٨', 'رسم حي وتخمين متزامن — تعاون لشخصين'], ['fabraka', 'فبركة', 'من شخصين إلى ٨', 'حقيقة بين إجابات مضحكة — ٣ جولات'], ['meenfina', 'مين فينا', 'من ٣ إلى ١٢', 'تصويت سري وأسئلة تعرفكم على بعض']].map(([id, name, count, description]) => <button data-design-id="game-choice" type="button" key={id} aria-pressed={game === id} disabled={busy || !!created} onClick={() => setGame(id)}><LammaIcon name="game" size={27} /><strong>{name}</strong><span>{count}</span><small>{description}</small></button>)}</div>
+      <p className="lamma-muted">اختر اللعبة. نجهّز الغرفة ونرسل دعوتها هنا، وكل واحد يدخل من جواله. {game === 'mafia' ? 'عند البداية ينتقل المشاركون إلى صوت المجلس الآمن، وبقية الشلة تبقى في مكالمتها.' : 'مكالمتكم تبقى معكم.'}</p>
+      <div data-design-id="options-list" className="lamma-game-options" role="group" aria-label="اختيار لعبة للّمة">{[['mafia', 'مافيا ميدان', 'من ٦ إلى ١٢', 'مجلس صوتي وأدوار سرية — يبدأ الأساسي من ٦'], ['ersomha', 'ارسمها', 'من شخصين إلى ٨', 'رسم حي وتخمين متزامن — تعاون لشخصين'], ['fabraka', 'فبركة', 'من شخصين إلى ٨', 'حقيقة بين إجابات مضحكة — ٣ جولات'], ['meenfina', 'مين فينا', 'من ٣ إلى ١٢', 'تصويت سري وأسئلة تعرفكم على بعض']].map(([id, name, count, description]) => <button data-design-id="game-choice" type="button" key={id} aria-pressed={game === id} disabled={busy || !!created} onClick={() => setGame(id)}><LammaIcon name="game" size={27} /><strong>{name}</strong><span>{count}</span><small>{description}</small></button>)}</div>
+      {game === 'mafia' && !created && <MafiaSettings value={mafiaSettings} onChange={setMafiaSettings} disabled={busy}/>}
       {created && <p role="status" className="lamma-muted">الغرفة <bdi>{created.code}</bdi> جاهزة. أعد إرسال الدعوة؛ لن ننشئ غرفة ثانية.</p>}
       {!created && <button data-design-id="entry-join" type="button" className="lamma-text-button" disabled={busy} onClick={() => { setMode('existing'); setError(''); }}>عندي رمز غرفة</button>}
     </> : <>
@@ -220,6 +223,8 @@ export function SocialHost() {
     finally { setBusy(''); }
   }, [notify]);
   useEffect(() => () => clearTimeout(noticeTimer.current), []);
+  useEffect(() => { const locked = () => notify('التواصل أثناء المباراة داخل مجلس مافيا. تعود محادثاتك بعد الإقصاء أو نهاية المباراة.');
+    window.addEventListener('maydan-social-locked', locked); return () => window.removeEventListener('maydan-social-locked', locked); }, [notify]);
   useEffect(() => { if (!host) return undefined; host.className = 'lamma-host'; document.body.appendChild(host); return () => host.remove(); }, [host]);
   useVisualViewport(host, { heightProperty: '--lamma-height', topProperty: '--lamma-top' });
   useVisualViewport(pageHost, { heightProperty: '--lamma-page-height', topProperty: '--lamma-page-top' });
@@ -282,7 +287,7 @@ export function SocialHost() {
     if (lamma.notifications?.enabled && lamma.notifications?.sound && !interruption.privateTurn && !lamma.activeCall) sound.play('pop');
     return () => clearTimeout(timer);
   }, [notificationId, dismissNotification, sound, lamma.notifications?.enabled, lamma.notifications?.sound, interruption.privateTurn, lamma.activeCall]);
-  const privateSurface = interruption.privateTurn || (route.name === 'play');
+  const privateSurface = interruption.privateTurn || interruption.communicationLocked || (route.name === 'play');
   const notificationMuted = notification?.friend && isConversationMuted(lamma.notifications, 'direct', notification.friend.conversationId);
   const join = id => run(async () => { await lamma.acceptGameInvite(id); ui.close(); }, 'join-invite');
   const content = message => message.kind === 'voice' ? <VoiceMessage attachment={message.attachment} getVoiceUrl={lamma.getVoiceUrl} /> : ['game_invite', 'room_invite', 'invite'].includes(message.kind) ? <GameInviteCard invite={message.roomInvitation || message.invite || message.gameInvite || message} onJoin={join} /> : null;
@@ -331,7 +336,7 @@ export function SocialHost() {
     {dialogsOwned && groupEditor && <GroupEditor key={groupEditor.id || 'new'} group={groupEditor.create ? null : groupEditor} detail={lamma.groupConversations?.[groupEditor.id]} friends={friends} accountId={account.user?.id} lamma={lamma} onClose={() => setGroupEditor(null)} onCreated={ui.openGroup} notify={notify} />}
     {dialogsOwned && menu && <Modal title={group ? 'خيارات اللّمة' : nameOf(menu)} className="lamma-dialog" onClose={() => setMenu(null)}><div className="lamma-menu"><button type="button" onClick={() => { setInviteTarget({ targetType, targetId }); setMenu(null); }}><LammaIcon name="game" />دعوة للعبة</button>{group ? <button data-design-id="group-manage" type="button" onClick={() => { setGroupEditor(group); setMenu(null); }}><LammaIcon name="people" />الأعضاء وإدارة اللّمة</button> : <button type="button" onClick={() => { ui.openProfile(menu.id); setMenu(null); }}><LammaIcon name="people" />عرض البروفايل</button>}<button type="button" onClick={async () => { const muted = isConversationMuted(lamma.notifications, targetType, targetId); if (await run(() => lamma.setConversationMuted({ targetType, targetId, muted: !muted }), 'mute-chat', muted ? 'شُغّلت تنبيهات المحادثة' : 'كُتمت تنبيهات المحادثة')) setMenu(null); }}><LammaIcon name="bell" />{isConversationMuted(lamma.notifications, targetType, targetId) ? 'تشغيل التنبيهات' : 'كتم تنبيهات المحادثة'}</button>{!group && <><button type="button" onClick={() => { setAction({ kind: 'remove', user: menu }); setMenu(null); }}>إزالة من الأصدقاء</button><button type="button" className="is-danger" onClick={() => { setAction({ kind: 'block', user: menu }); setMenu(null); }}>حظر الحساب</button><button type="button" onClick={() => { setAction({ kind: 'report', user: menu }); setMenu(null); }}>إبلاغ عن الحساب</button></>}</div></Modal>}
     {dialogsOwned && action && (action.groupId ? <GroupMessageAction action={action} lamma={lamma} social={social} onClose={() => setAction(null)} notify={notify} /> : <ActionDialog action={action} social={social} onClose={() => setAction(null)} onComplete={kind => { notify(kind === 'report' ? 'وصل بلاغك' : 'تمّ'); if (kind === 'block' || kind === 'remove') ui.show(); }} />)}
-    {lamma.incomingCall && !lamma.activeCall && <div className="lamma-incoming-call" role="alertdialog" aria-label="مكالمة واردة" aria-modal="false"><span className="lamma-ringing-avatar"><LammaIcon name="phone" size={29} /></span><div><small>مكالمة صوتية واردة</small><strong>{privateSurface ? 'أحد أصحابك يتصل' : lamma.incomingCall.name || nameOf(friends.find(item => item.id === lamma.incomingCall.initiatorId))}</strong></div><LammaButton label="رفض المكالمة" icon="end" className="lamma-call-end" disabled={!!busy} onClick={() => run(() => lamma.declineCall(lamma.incomingCall.id), 'decline')} /><LammaButton label="قبول المكالمة" icon="phone" className="lamma-call-accept" disabled={!!busy || !lamma.capabilities?.liveCalls} onClick={() => run(() => lamma.acceptCall(lamma.incomingCall.id), 'accept')} /></div>}
+    {!interruption.communicationLocked && lamma.incomingCall && !lamma.activeCall && <div className="lamma-incoming-call" role="alertdialog" aria-label="مكالمة واردة" aria-modal="false"><span className="lamma-ringing-avatar"><LammaIcon name="phone" size={29} /></span><div><small>مكالمة صوتية واردة</small><strong>{privateSurface ? 'أحد أصحابك يتصل' : lamma.incomingCall.name || nameOf(friends.find(item => item.id === lamma.incomingCall.initiatorId))}</strong></div><LammaButton label="رفض المكالمة" icon="end" className="lamma-call-end" disabled={!!busy} onClick={() => run(() => lamma.declineCall(lamma.incomingCall.id), 'decline')} /><LammaButton label="قبول المكالمة" icon="phone" className="lamma-call-accept" disabled={!!busy || !lamma.capabilities?.liveCalls} onClick={() => run(() => lamma.acceptCall(lamma.incomingCall.id), 'accept')} /></div>}
   </>;
   return host ? createPortal(tree, host) : tree;
 }

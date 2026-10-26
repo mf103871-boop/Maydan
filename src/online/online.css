@@ -111,3 +111,5 @@
 @keyframes room-reaction-rise{0%{opacity:0;transform:translateY(12px) scale(.6)}12%{opacity:1;transform:translateY(0) scale(1.08)}75%{opacity:1}100%{opacity:0;transform:translateY(-170px) scale(1)}}
 html[data-reduced-motion="true"] .room-reaction-float{animation:none}
 
+
+.online-room-chrome.mafia-room-compact{gap:8px}.mafia-room-tools{display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:44px}.mafia-room-tools strong{font-size:13px}.mafia-room-tools .online-connection{font-size:11px;padding:5px 8px;margin:0}.online-screen:has(.phase-night){padding-top:calc(8px + var(--safe-top,0px));padding-inline:10px}

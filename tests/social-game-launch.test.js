@@ -32,6 +32,15 @@ test('Ersomha launched from a group starts with easy drawable concepts',async()=
   assert.equal(calls[0][2].settings.cycles,1);
 });
 
+test('a Mafia group launch preserves the chosen three-team room and capability without charging a trial',async()=>{
+  const {launcher,calls}=fixture();
+  const settings={mode:'shadow',capacity:12,visibility:'private'};
+  await launcher.launch('mafia',async()=>{}, {settings});
+  assert.equal(calls[0][2].game,'mafia');assert.deepEqual(calls[0][2].settings,settings);
+  assert.equal(calls[0][2].capabilities.mafia,1);
+  assert.equal(calls[0][3].headers.Authorization,'Bearer fixture');
+});
+
 test('invitation failure and repeated taps reuse the same room and credentials', async () => {
   const wait = deferred(); const { launcher, calls } = fixture(); let attempts = 0;
   const first = launcher.launch('fabraka', async () => { ++attempts; await wait.promise; });

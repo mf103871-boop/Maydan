@@ -1,3 +1,4 @@
+import { environmentStorageKey } from '../shared/lib/environment.js';
 import React, { createContext, useContext, useEffect, useRef, useSyncExternalStore } from 'react';
 import { useAccount } from '../shared/account/context.js';
 import { resolveAccountServer } from '../shared/account/api.js';
@@ -22,7 +23,7 @@ export function ProfileProvider({ children }) {
   }
   const client = clientRef.current;
   const pendingRef = useRef(null);
-  if (!pendingRef.current) pendingRef.current = new LocalSessionRecorder({ storage: createStorage('profile-sessions'),
+  if (!pendingRef.current) pendingRef.current = new LocalSessionRecorder({ storage: createStorage(environmentStorageKey('maydan:profile-sessions:')),
     beginSession: game => client.beginSession(game), completeSession: id => client.completeSession(id) });
   const pending = pendingRef.current;
   const state = useSyncExternalStore(client.subscribe, client.getSnapshot, client.getSnapshot);

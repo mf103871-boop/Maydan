@@ -16,7 +16,7 @@ final class SocialSession: NSObject, URLSessionTaskDelegate {
         var token: String
         var previous: [String]
     }
-    private static let service = "Maydan.social.session"
+    private static let service = NativeConfig.shared.scopedStorageKey("Maydan.social.session")
     private(set) var credential: Credential?
     var onRotation: ((String, String, String) -> Void)?
     let deviceId: String
@@ -29,7 +29,7 @@ final class SocialSession: NSObject, URLSessionTaskDelegate {
     }()
 
     override init() {
-        let key = "maydan.social.deviceId"
+        let key = NativeConfig.shared.scopedStorageKey("maydan.social.deviceId")
         if let stored = UserDefaults.standard.string(forKey: key), UUID(uuidString: stored) != nil {
             deviceId = stored
         } else {
@@ -93,7 +93,8 @@ final class SocialSession: NSObject, URLSessionTaskDelegate {
     }
 
     func request(_ path: String, method: String = "POST", body: [String: Any] = [:], retiring: Credential? = nil) async throws -> [String: Any] {
-        guard path.hasPrefix("/api/social/"), !path.contains(".."), !path.contains("?"),
+        let gameVoice = method == "POST" && path.range(of: "^/api/rooms/[0-9]{6}/voice$", options: .regularExpression) != nil
+        guard (path.hasPrefix("/api/social/") || gameVoice), !path.contains(".."), !path.contains("?"),
               let origin = URL(string: NativeConfig.shared.apiOrigin), origin.scheme == "https",
               let url = URL(string: path, relativeTo: origin)?.absoluteURL,
               NativeConfig.shared.isTrustedAuthURL(url), let auth = retiring ?? credential else {

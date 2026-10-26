@@ -22,6 +22,8 @@ def require(condition, message):
 
 
 def validate_inputs(env, identity):
+    require(env.get('IOS_RELEASE_ENVIRONMENT', 'production') in ('production', 'mafia-preview'),
+            'IOS_RELEASE_ENVIRONMENT must be production or mafia-preview.')
     require(re.fullmatch(r'(?:0|[1-9]\d*)\.(?:0|[1-9]\d*)(?:\.(?:0|[1-9]\d*))?', env.get('IOS_VERSION', '')),
             'Provide an explicit version such as 1.5 or 1.5.0.')
     require(re.fullmatch(r'[1-9]\d{0,3}', env.get('IOS_BUILD', '')),
