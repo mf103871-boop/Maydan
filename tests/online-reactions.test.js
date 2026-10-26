@@ -76,3 +76,12 @@ test('the Ersomha drawer cannot react while choosing or drawing; everyone else c
   for (const phase of ['lobby', 'result', 'over']) assert.equal(reactionsAllowed(draw(phase), 'drawer'), true, phase);
   assert.equal(reactionsAllowed({ game: 'fabraka', phase: 'vote' }, 'anyone'), true);
 });
+
+test('throttled valid reactions do not consume the game command budget or disconnect the seat', async (t) => {
+  const { clients } = await room(t);
+  for (let n = 0; n < 38; n++) {
+    await clients[0].react('👏').catch((error) => assert.equal(error.code, 'RATE_LIMIT'));
+  }
+  assert.equal(clients[0].connectionStatus, 'connected');
+  await clients[0].command('ready', { ready: true });
+});

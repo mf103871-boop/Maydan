@@ -106,7 +106,7 @@ test('HTTP origin, body size, member tokens and creation rate limits are enforce
   assert.equal(blocked.status, 403); assert.equal(blocked.headers.has('access-control-allow-origin'), false);
   const tooBig = await api(app, '/api/rooms', { ...p, extra: 'x'.repeat(2100) }); assert.equal(tooBig.status, 413);
   // Only a Badeeha room, whose settings carry a deck of question IDs, may send more.
-  assert.equal((await api(app, '/api/rooms', { ...p, game: 'badeeha', extra: 'x'.repeat(2100) })).status, 400, 'read, then refused for its settings');
+  assert.equal((await api(app, '/api/rooms', { ...p, game: 'badeeha', capabilities: { badeeha: 1 }, extra: 'x'.repeat(2100) })).status, 400, 'read, then refused for its settings');
   assert.equal((await api(app, '/api/rooms', { ...p, game: 'badeeha', extra: 'x'.repeat(4100) })).status, 413);
   const created = await api(app, '/api/rooms', p); assert.equal(created.status, 201);
   const forged = await api(app, `/api/rooms/${created.body.code}/join`, { ...p, token: 'a'.repeat(64) }); assert.equal(forged.status, 401);

@@ -126,31 +126,26 @@ self.addEventListener('fetch', (event) => {
   // that navigation with the cached game document opened the game instead.
   if (pathname === '/studio' || pathname.startsWith('/studio/')) return;
 
-  // Navigations: serve the cached document immediately (a launch from the home
-  // screen must not wait on the network, or on there being one), then refresh
-  // the copy in the background for the next launch.
+  // The document and its hashed dependencies form one installed release. Never
+  // refresh only its HTML: a newer worker may fail to install a required font
+  // or image, leaving that new document unusable offline. The installer is the
+  // only release writer; activation replaces this cache after dependencies pass.
+  // Scope the lookup to this worker too, not a partially staged newer cache.
   if (request.mode === 'navigate') {
     event.respondWith(
-      caches.match('./index.html').then((cached) => {
+      caches.open(CACHE).then(async (cache) => {
+        let cached = await cache.match('./index.html');
         // Repair a shell saved by an older worker too. A worker-only update can
         // retain the same document hash/cache name, and recovery must work offline.
         if (cached && cached.redirected) {
           cached = navigationResponse(cached);
           const copy = cached.clone();
-          event.waitUntil(caches.open(CACHE).then((cache) => cache.put('./index.html', copy)).catch(() => {}));
+          event.waitUntil(cache.put('./index.html', copy).catch(() => {}));
         }
-        const fresh = fetch(request)
-          .then((response) => {
-            response = navigationResponse(response);
-            if (response && response.ok) {
-              const copy = response.clone();
-              event.waitUntil(caches.open(CACHE).then((cache) => cache.put('./index.html', copy)).catch(() => {}));
-            }
-            return response;
-          })
-          .catch(() => cached);
-        event.waitUntil(fresh.then(() => {}));
-        return cached || fresh;
+        if (cached) return cached;
+        // Storage eviction can remove a working shell. Permit network recovery
+        // without stamping an unverified newer document into this release cache.
+        return navigationResponse(await fetch(request));
       })
     );
     return;

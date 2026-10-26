@@ -145,3 +145,30 @@ test('rooms hold four teams; a fifth phone is refused and a late phone watches',
   assert.equal(small.room.participants.includes('9'.repeat(32)), false);
   void act;
 });
+
+test('delayed question commands cannot reveal or score a later Badeeha round', () => {
+  const f = fixture(2);
+  f.act(0, 'start'); f.act(0, 'open', f.firstOpen());
+  const oldRound = f.room.round;
+  f.act(0, 'reveal'); f.act(0, 'judge', { teamId: f.teams[0].id });
+  f.act(1, 'open', f.firstOpen());
+  for (const type of ['hint', 'reveal', 'end']) {
+    assert.throws(() => f.act(0, type, { round: oldRound }), error('STALE'), type);
+    assert.equal(f.room.phase, 'question');
+  }
+  f.act(0, 'reveal');
+  const before = structuredClone(f.room.scores);
+  assert.throws(() => f.act(0, 'judge', { round: oldRound, teamId: f.teams[0].id }), error('STALE'));
+  assert.deepEqual(f.room.scores, before);
+});
+
+test('undo after a team leaves restores points without handing a departed team the turn', () => {
+  const f = fixture(3);
+  f.act(0, 'start'); f.act(0, 'open', f.firstOpen());
+  f.act(0, 'reveal'); f.act(0, 'judge', { teamId: f.teams[0].id });
+  game.leaveRoom(f.room, f.teams[0].id, 1100);
+  f.act(1, 'undo');
+  assert.notEqual(f.room.participants[f.room.turn], f.teams[0].id);
+  f.act(1, 'open', f.firstOpen()); f.act(1, 'reveal');
+  assert.throws(() => f.act(1, 'judge', { teamId: f.teams[0].id }), error('TARGET'));
+});

@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import logic, { BANK_CONTENT_VERSION, currentQuestionHistoryCount } from '../src/games/badeeha/logic.js';
-import { readBadeehaState, RETIRED_GAME_NOTICE } from '../src/games/badeeha/persistence.js';
+import { readBadeehaState, rememberBadeehaQuestions, RETIRED_GAME_NOTICE } from '../src/games/badeeha/persistence.js';
 import { BADEEHA_KEYS } from '../src/games/badeeha/keys.js';
 import { fakeStorage } from './helpers.js';
 
@@ -39,4 +39,20 @@ test('new identifiers ignore retired seen history and current progress counts on
   const selected = logic.buildDeck(categories, ids, history, logic.MODES.expert.tiers, 30);
   assert.ok(selected.c0.every(q => q.qid !== 'c0-200-901'), 'unseen current alternatives get priority');
   assert.equal(history['retired-200-999'], 100);
+});
+
+test('online revealed questions join local history without recording the upcoming deck or losing saved games', () => {
+  const storage = fakeStorage({ [BADEEHA_KEYS.history]: '{"retired-200-999":100,"c0-200-901":200}', [BADEEHA_KEYS.active]: JSON.stringify(session) });
+  assert.equal(rememberBadeehaQuestions(categories, ['c0-200-901', 'c0-400-902', 'unknown', 'c0-400-902'], { storage, now: 300 }), true);
+  const history = readBadeehaState(categories, storage).history;
+  assert.deepEqual(history, { 'retired-200-999': 100, 'c0-200-901': 200, 'c0-400-902': 300 });
+  assert.deepEqual(readBadeehaState(categories, storage).active, session);
+  assert.equal(rememberBadeehaQuestions(categories, ['c0-400-902'], { storage, now: 400 }), false, 'reconnect does not rewrite the same seen event');
+  const selected = logic.buildDeck(categories, ids, history, logic.MODES.expert.tiers, 30);
+  assert.ok(selected.c0.every(q => q.qid !== 'c0-200-901' && q.qid !== 'c0-400-902'), 'online seen questions lose priority to unseen ones');
+});
+
+test('online history tolerates blocked storage without deleting or resetting other player data', () => {
+  assert.equal(rememberBadeehaQuestions(categories, ['c0-200-901'], { storage: { getItem() { throw Error('blocked'); } } }), false);
+  assert.equal(rememberBadeehaQuestions(categories, ['unknown'], { storage: fakeStorage() }), false);
 });

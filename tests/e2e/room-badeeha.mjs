@@ -31,8 +31,9 @@ after(async () => {
   if (web?.listening) await new Promise((resolve) => web.close(resolve));
 });
 
-async function phone(hash) {
+async function phone(hash, initialize) {
   const context = await browser.newContext({ viewport: { width: 390, height: 844 }, locale: 'ar', reducedMotion: 'reduce' });
+  if (initialize) await initialize(context);
   const page = await context.newPage();
   const errors = []; page.on('pageerror', (error) => errors.push(error.message));
   await page.goto(`${webOrigin}/${hash}`);
@@ -49,6 +50,8 @@ const shot = (page, name) => process.env.E2E_SHOTS ? page.screenshot({ path: `${
 test('two phones play Badeeha: turns, aids, reveal, judge, steal, undo and end', { timeout: 120_000 }, async () => {
   const host = await phone('#/online/badeeha');
   const { page: h } = host;
+  assert.equal(await h.locator('.badeeha-picker').evaluate(element => getComputedStyle(element).maxHeight), '300px', 'all categories stay inside a bounded scrolling picker');
+  assert.equal(await h.locator('.badeeha-picker button').first().evaluate(element => getComputedStyle(element).minHeight), '44px', 'category controls keep a full touch target');
   await h.locator('[data-design-id="name-input"]').fill('المضيف');
   const create = h.getByRole('button', { name: 'أنشئ الغرفة' });
   assert.equal(await create.isDisabled(), true, 'six categories are needed first');
@@ -86,6 +89,7 @@ test('two phones play Badeeha: turns, aids, reveal, judge, steal, undo and end',
   await h.getByRole('button', { name: 'اكشف الإجابة' }).click();
   await g.locator('.badeeha-answer').waitFor();
   assert.equal(await answer(g), await answer(h), 'both phones show the same question');
+  for (const page of [h, g]) await page.waitForFunction(() => Object.keys(JSON.parse(localStorage.getItem('maydan:badeeha:question-history-v4') || '{}')).length === 1);
   const right = h.locator('.badeeha-judge button').filter({ hasText: '✓ المضيف' });
   const doubled = Number((await right.textContent()).match(/\+([\d٠-٩]+)/)[1].replace(/[٠-٩]/g, (d) => '٠١٢٣٤٥٦٧٨٩'.indexOf(d)));
   await right.click();
@@ -122,8 +126,28 @@ test('two phones play Badeeha: turns, aids, reveal, judge, steal, undo and end',
   await g.getByText('أنهى المضيف المباراة قبل آخر سؤال.').waitFor();
   await g.locator('[data-design-id="podium"]').waitFor();
   await shot(g, 'badeeha-over');
-  await h.getByRole('button', { name: 'العودة للانتظار ولعب مرة ثانية' }).click();
+  await h.getByRole('button', { name: 'العودة للانتظار وإعادة نفس الأسئلة' }).click();
   await g.getByRole('button', { name: 'أنا جاهز' }).waitFor();
   assert.deepEqual([...host.errors, ...guest.errors], []);
   await host.context.close(); await guest.context.close();
+});
+
+test('a saved Plus selection cannot host locked packs after the player returns as a guest', { timeout: 45_000 }, async () => {
+  const host = await phone('#/online/badeeha', (context) => context.addInitScript(([server, categories]) => {
+    localStorage.setItem(`maydan:online:${server}:badeehaSettings`, JSON.stringify({ mode: 'standard', roundSize: 20, timer: 60, categories }));
+  }, [app.url, ['general', 'geo', 'capitals', 'science', 'animals', 'flags']]));
+  const { page } = host;
+  let creates = 0;
+  page.on('request', (request) => { if (request.method() === 'POST' && request.url() === `${app.url}/api/rooms`) creates++; });
+  await page.locator('[data-design-id="name-input"]').fill('ضيف');
+  assert.equal(await page.locator('.badeeha-picker button.is-locked[aria-pressed="true"]').count(), 1);
+  await page.getByRole('button', { name: 'أنشئ الغرفة' }).click();
+  await page.locator('.paywall').waitFor();
+  assert.equal(creates, 0, 'current pack access is checked before creating the room');
+  await page.keyboard.press('Escape');
+  await page.locator('.paywall').waitFor({ state: 'hidden' });
+  await page.locator('.badeeha-picker button.is-locked[aria-pressed="true"]').click();
+  assert.equal(await page.locator('.badeeha-picker button.is-locked[aria-pressed="true"]').count(), 0, 'a now-locked saved choice can still be removed');
+  assert.deepEqual(host.errors, []);
+  await host.context.close();
 });

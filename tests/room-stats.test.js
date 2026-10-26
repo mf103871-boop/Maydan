@@ -26,6 +26,22 @@ test('seat account binding rejects duplicate accounts and is frozen after the lo
   assert.equal(room.members[0].accountUserId, 'account-0');
 });
 
+test('late spectators bind accounts for the next match without changing current participant identity', () => {
+  const room = lobby();
+  room.phase = 'vote'; room.participants = room.members.map((m) => m.id);
+  joinRoom(room, input(3), 2000);
+  assert.throws(() => bindSeatAccount(room, 'seat-3', 'account-0'), { code: 'ACCOUNT_IN_ROOM' });
+  bindSeatAccount(room, 'seat-3', 'watcher-account');
+  assert.equal(room.members.find((m) => m.id === 'seat-3').accountUserId, 'watcher-account');
+  bindSeatAccount(room, 'seat-0', 'switched-account');
+  assert.equal(room.members[0].accountUserId, 'account-0');
+  const waiting = structuredClone(room); waiting.phase = 'lobby'; waiting.participants = [];
+  const started = structuredClone(waiting); started.phase = 'vote'; started.matchId++; started.round = 1;
+  started.participants = started.members.map((m) => m.id);
+  prepareRoomStats(waiting, started, 3000);
+  assert.equal(started.statsMatch.accounts['seat-3'], 'watcher-account');
+});
+
 test('natural Meenfina completion counts authenticated seats only, without competitive wins or account leakage', () => {
   const { previous, over } = markedResult(); over.scores['seat-0'] = 10;
   const events = prepareRoomStats(previous, over, 4000);

@@ -88,6 +88,7 @@ export function action(room, actorId, command, now) {
   const actor = member(room, actorId);
   if (!actor.connected) fail('DISCONNECTED', 409);
   if (command.matchId !== room.matchId) fail('STALE', 409);
+  if (['open', 'tool', 'hint', 'reveal', 'judge', 'undo', 'end'].includes(command.type) && command.round !== room.round) fail('STALE', 409);
   const host = () => { if (room.hostId !== actorId) fail('HOST_ONLY', 403); };
   const phase = (value) => { if (room.phase !== value) fail('PHASE', 409); };
   switch (command.type) {
@@ -139,7 +140,7 @@ export function action(room, actorId, command, now) {
     case 'judge': {
       host(); phase('reveal');
       const winner = command.teamId ?? null;
-      if (winner !== null && !room.participants.includes(winner)) fail('TARGET');
+      if (winner !== null && !playing(room).includes(winner)) fail('TARGET');
       room.undo = { scores: { ...room.scores }, teams: structuredClone(room.teams), used: { ...room.used }, turn: room.turn, round: room.round };
       const { qid, p } = room.current, turnId = turnTeam(room);
       let points = 0, steal = false;
@@ -163,6 +164,7 @@ export function action(room, actorId, command, now) {
       host(); phase('board');
       if (!room.undo) fail('PHASE', 409);
       Object.assign(room, { scores: room.undo.scores, teams: room.undo.teams, used: room.undo.used, turn: room.undo.turn, round: room.undo.round });
+      if (!playing(room).includes(turnTeam(room))) room.turn = nextTurn(room);
       room.undo = null; room.verdict = null; break;
     }
     case 'end':

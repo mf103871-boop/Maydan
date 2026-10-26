@@ -67,11 +67,20 @@ export function admitMember(room, input, now, { lateJoin = false } = {}) {
     return existing; // Retries and reconnects never allocate a second seat.
   }
   if (isBanned(room, input)) fail('BANNED', 403);
+  // A departed participant's public ID still owns its historical votes/scores.
+  // It cannot be resurrected as a new spectator with another token mid-match.
+  const departed = room.members.find((m) => m.id === input.id && m.left);
+  if (departed && room.phase !== 'lobby') {
+    if (departed.tokenHash !== input.tokenHash) fail('AUTH', 401);
+    fail('STARTED', 409);
+  }
   if (room.phase !== 'lobby' && !lateJoin) fail('STARTED', 409);
   if (active(room).length >= MAX_PLAYERS) fail('FULL', 409);
   const p = profile(input);
   if (active(room).some((m) => sameName(m.name, p.name))) fail('NAME_TAKEN', 409);
-  room.members = room.members.filter((m) => !m.left);
+  // Retain only current-match tombstones (at most the original player count),
+  // so late arrivals cannot erase the departed players' names or identities.
+  room.members = room.members.filter((m) => !m.left || (room.phase !== 'lobby' && ((room.participants || []).includes(m.id) || Object.hasOwn(room.scores || {}, m.id))));
   const joined = newMember(input, now, { colorIndex: seatColor(room) });
   room.members.push(joined);
   return joined;

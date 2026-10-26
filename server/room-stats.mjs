@@ -4,7 +4,10 @@ import { fail } from './room-model.mjs';
 // Room tokens identify seats; they are never treated as account credentials.
 export function bindSeatAccount(room, seatId, accountUserId) {
   const seat = room.members.find((m) => m.id === seatId && !m.left);
-  if (!seat || room.phase !== 'lobby') return;
+  // Match participants remain frozen. A new spectator still needs its verified
+  // account now, or it would play the next match anonymously without rejoining.
+  const watcher = room.participants?.length > 0 && !room.participants.includes(seatId);
+  if (!seat || (room.phase !== 'lobby' && !watcher)) return;
   const userId = typeof accountUserId === 'string' ? accountUserId : null;
   if (userId && room.members.some((m) => !m.left && m.id !== seatId && m.accountUserId === userId)) fail('ACCOUNT_IN_ROOM', 409);
   seat.accountUserId = userId;

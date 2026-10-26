@@ -7,7 +7,7 @@ import { recordOnlineResult, profileSummaries } from './profiles/db.mjs';
 import { consumeRoomTrial } from './accounts/router.mjs';
 import { requireSession } from './accounts/session.mjs';
 import { liveAccountSql } from './moderation/access.mjs';
-import { ERSOMHA_PROTOCOL, ROOM_REACTIONS, REACTION_BURST, REACTION_REFILL_MS, reactionsAllowed } from '../src/online/shared.js';
+import { ERSOMHA_PROTOCOL, BADEEHA_PROTOCOL, ROOM_REACTIONS, REACTION_BURST, REACTION_REFILL_MS, reactionsAllowed } from '../src/online/shared.js';
 import { getErsomhaPool } from './ersomha-content.mjs';
 import { setErsomhaChoices, ERSOMHA_PLAYING, ERSOMHA_SELECT_MS } from './ersomha-model.mjs';
 import { acquireErsomhaLease, assertErsomhaLease, renewErsomhaLease, releaseErsomhaLease, releaseErsomhaAccounts, ersomhaSeen, exposeErsomhaCards, buildErsomhaTurnPlan } from './ersomha-history.mjs';
@@ -313,6 +313,7 @@ export class Room {
         const endpoint = url.pathname.split('/').at(-1);
         if (request.method === 'POST' && endpoint === 'create') {
           const input = await credentials(await readJson(request, 4096, createLimit));
+          if (input.game === 'badeeha' && input.capabilities?.badeeha !== BADEEHA_PROTOCOL) fail('UPDATE_REQUIRED', 409);
           if (input.game === 'ersomha') {
             if (input.capabilities?.ersomha !== ERSOMHA_PROTOCOL) fail('CONFIG', 409);
             if (typeof input.accountUserId !== 'string' || !input.accountUserId) fail('AUTH_REQUIRED', 401);
@@ -368,6 +369,7 @@ export class Room {
         }
         if (request.method === 'POST' && endpoint === 'join') {
           const input = await credentials(await readJson(request));
+          if (this.room.game === 'badeeha' && input.capabilities?.badeeha !== BADEEHA_PROTOCOL) fail('UPDATE_REQUIRED', 409);
           if (this.room.game === 'ersomha') {
             if (input.capabilities?.ersomha !== ERSOMHA_PROTOCOL) fail('CONFIG', 409);
             if (typeof input.accountUserId !== 'string' || !input.accountUserId) fail('AUTH_REQUIRED', 401);
@@ -441,7 +443,7 @@ export class Room {
             if (a.drawViolations > 30) this.close(ws, 4429, 'RATE_LIMIT'); fail('RATE_LIMIT', 429);
           }
           a.drawTokens--; a.drawViolations = Math.max(0, (a.drawViolations || 0) - 1);
-        } else {
+        } else if (!(a.id && requestId && validCommand && command.type === 'react' && ROOM_REACTIONS.includes(command.emoji))) {
           if (!a.windowAt || now - a.windowAt > 10_000) { a.windowAt = now; a.count = 0; }
           a.count = (a.count || 0) + 1;
           if (a.count > 35) { ws.serializeAttachment(a); this.close(ws, 4429, 'RATE_LIMIT'); fail('RATE_LIMIT', 429); }
@@ -449,6 +451,7 @@ export class Room {
         ws.serializeAttachment(a);
         if (!validCommand) fail('INVALID');
         if (command.type === 'auth' && !a.id) {
+          if (this.room.game === 'badeeha' && command.capabilities?.badeeha !== BADEEHA_PROTOCOL) fail('UPDATE_REQUIRED', 409);
           if (this.room.game === 'ersomha' && command.capabilities?.ersomha !== ERSOMHA_PROTOCOL) fail('CONFIG', 409);
           if (now > a.authDeadline) fail('AUTH', 401);
           const id = await this.authenticate(command);

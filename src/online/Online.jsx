@@ -59,6 +59,10 @@ export function Entry({ initialCode = '', initialGame = 'meenfina', onJoined }) 
     // جولة بَديهة تُبنى على جوال المضيف من بنكه وسجلّه، فتُفضَّل الأسئلة التي لم تُلعب بعد.
     let badeehaRoom = null;
     if (mode === 'create' && game === 'badeeha') {
+      // Saved selections can outlive a subscription or account. Recheck current
+      // access when creating, not only when the category was first selected.
+      const locked = badeehaSettings.categories.find((id) => account.lockedPack(id));
+      if (locked) { account.openPaywall({ reason: 'pack', pack: locked }); return; }
       try { badeehaRoom = buildBadeehaRoom(badeehaSettings, readBadeehaState(CATS).history); } catch { setError('QUESTIONS'); return; }
     }
     setBusy(true);

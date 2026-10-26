@@ -62,6 +62,11 @@ export const DESIGN_RENDERED_NODE_IDS = Object.freeze({
   "online.fabraka.reveal": Object.freeze(["question","reveal","scoreboard","timer"]),
   "online.fabraka.result": Object.freeze(["continue","question","round-scores","scoreboard","timer"]),
   "online.fabraka.over": Object.freeze(["podium","restart","round-scores"]),
+  "online.badeeha.setup": Object.freeze(["category-choice","mode-choice","random-categories","round-size","timer-length"]),
+  "online.badeeha.board": Object.freeze(["board","finish","round","scoreboard","tier","turn","undo"]),
+  "online.badeeha.question": Object.freeze(["assistance","category","hint","prompt","question","reveal","round","scoreboard","timer","tool","tools","turn"]),
+  "online.badeeha.reveal": Object.freeze(["answer","category","judge","judge-nobody","judge-team","prompt","question","round","scoreboard","turn"]),
+  "online.badeeha.over": Object.freeze(["podium","restart"]),
   "ersomha.select.drawer": Object.freeze(["header","report","timer","title","word-choice","word-choices"]),
   "ersomha.select.guesser": Object.freeze(["header","report","timer","title"]),
   "ersomha.draw.drawer": Object.freeze(["aside","camera-controls","camera-hand","camera-view","canvas","canvas-panel","clear","color","drawing-tools","eraser","focus-toggle","guesses","header","mic-note","orientation","palette","pen","players","redo","report","timer","title","tools-more","undo","width","widths","word-banner"]),
@@ -169,6 +174,27 @@ export const DESIGN_CONDITIONAL_NODE_REASONS = Object.freeze({
     "dropped": "Disconnected host seats and WebSocket reconnection states reveal these actual room recovery controls.",
     "member-remove": "Disconnected host seats and WebSocket reconnection states reveal these actual room recovery controls.",
     "reconnect": "Disconnected host seats and WebSocket reconnection states reveal these actual room recovery controls."
+  },
+  "online.badeeha.question": {
+    "question-media": "Other question types render image/audio/video media; the isolated online fixture shows a clue question.",
+    "image-enlarge": "Image questions expose enlargement after their image loads; the isolated online fixture shows a clue question.",
+    "media-close": "An enlarged image exposes its close control; the isolated online fixture does not open an image.",
+    "media-retry": "Failed question media exposes the retry control; the isolated online fixture shows no failed media.",
+    "tiles-reveal": "The composition image question exposes progressive tiles; the isolated online fixture shows a clue question.",
+    "audio-play": "Audio questions expose playback and repeat controls; the isolated online fixture shows a clue question.",
+    "audio-restart": "Audio questions expose playback and repeat controls; the isolated online fixture shows a clue question.",
+    "question-audio": "A synthetic sound question exposes this play button; the isolated online fixture shows a clue question.",
+    "options-list": "Choice and ordering question variants render their option list; the isolated fixture shows a clue question."
+  },
+  "online.badeeha.reveal": {
+    "question-media": "Revealed image/audio/video question variants retain media; the isolated online fixture shows a clue question.",
+    "image-enlarge": "Revealed image questions expose enlargement; the isolated online fixture shows a clue question.",
+    "media-close": "An enlarged revealed image exposes its close control; the isolated online fixture does not open an image.",
+    "media-retry": "Failed revealed media exposes a retry control; the isolated online fixture shows no failed media.",
+    "audio-play": "Revealed audio questions retain playback controls; the isolated online fixture shows a clue question.",
+    "audio-restart": "Revealed audio questions retain repeat controls; the isolated online fixture shows a clue question.",
+    "question-audio": "A revealed synthetic sound question retains playback; the isolated online fixture shows a clue question.",
+    "options-list": "Revealed choice/order question variants render the options; the isolated online fixture shows a clue question."
   },
   "ersomha.draw.drawer": {
     "canvas-status": "Canvas synchronization, paused rounds and network reconnect states show this required status overlay."

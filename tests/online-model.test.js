@@ -72,6 +72,17 @@ test('a watcher runs the room only when no connected player of the match remains
   tick(r, 1300 + HOST_GRACE);
   assert.equal(r.hostId, 'p3', 'nobody playing is connected: the watcher keeps the room moving');
 });
+
+test('late joins preserve departed participant identity and cannot replace its token', () => {
+  const r = playing(4);
+  leaveRoom(r, 'p3', 1200);
+  joinRoom(r, people[4], 1300);
+  assert.equal(r.members.find((m) => m.id === 'p3')?.left, true, 'retain the historical score/name');
+  rejects('AUTH', () => joinRoom(r, { ...people[3], tokenHash: 'attacker' }, 1301));
+  rejects('STARTED', () => joinRoom(r, people[3], 1302));
+  joinRoom(r, people[1], 1303);
+  assert.equal(r.members.find((m) => m.id === 'p1').tokenHash, people[1].tokenHash, 'ordinary reconnect remains valid');
+});
 test('only host may start, with three connected and ready players', () => {
   const r = lobby();
   rejects('HOST_ONLY', () => command(r, 'p1', 'start'));

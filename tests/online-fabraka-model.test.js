@@ -282,3 +282,14 @@ test('Ersomha keeps lobby-only admission', () => {
   room.phase = 'draw';
   assert.throws(() => game.joinRoom(room, { id: '3'.repeat(32), tokenHash: '4'.repeat(64), name: 'زائر', avatar: 1 }, 1001), error('STARTED'));
 });
+
+test('a late spectator cannot take over a departed Fabraka friends writer after another join', () => {
+  const personal = { ...q, id: 'friend', kind: 'friend', text: '{name} يحب ___', answer: '', aliases: [] };
+  const f = fixture({ mode: 'friends' }, 4, personal);
+  f.act(0, 'start'); f.act(0, 'truth', { text: 'كبسة' });
+  game.leaveRoom(f.room, f.players[3].id, 1100);
+  assert.equal(f.room.participants.includes(f.players[3].id), false, 'friends mode removes the future owner turn');
+  game.joinRoom(f.room, { id: '9'.repeat(32), tokenHash: '8'.repeat(64), name: 'متفرج', avatar: 1 }, 1200);
+  assert.equal(f.room.members.find((m) => m.id === f.players[3].id)?.left, true);
+  assert.throws(() => game.joinRoom(f.room, { ...f.players[3], tokenHash: 'attacker' }, 1201), error('AUTH'));
+});

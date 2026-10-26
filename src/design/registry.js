@@ -165,6 +165,7 @@ definitions.push(screen('online.entry', 'إنشاء الغرف والانضما�
 definitions.push(screen('online.lobby', 'انتظار الغرفة', 'الغرف', [...gameNodes, ...onlineNodes]));
 definitions.push(screen('online.chrome', 'شريط الغرفة والاتصال', 'الغرف', onlineNodes));
 for (const [game, phases] of [['meenfina', ['vote', 'result', 'over']], ['fabraka', ['host', 'write', 'discussion', 'vote', 'reveal', 'result', 'over']]]) for (const phase of phases) definitions.push(screen(`online.${game}.${phase}`, `${game === 'fabraka' ? 'فبركة' : 'مين فينا'} أونلاين · ${phase}`, 'الغرف', [...gameNodes, ...onlineNodes], { game, phase, mode: 'online' }));
+for (const phase of ['setup', 'board', 'question', 'reveal', 'over']) definitions.push(screen(`online.badeeha.${phase}`, `بَديهة أونلاين · ${phase}`, 'الغرف', [...gameNodes, ...onlineNodes], { game: 'badeeha', phase, mode: 'online' }));
 for (const phase of ['select', 'draw', 'result']) for (const role of ['drawer', 'guesser']) definitions.push(screen(`ersomha.${phase}.${role}`, `ارسمها · ${phase} · ${role === 'drawer' ? 'الرسّام' : 'المخمّن'}`, 'ارسمها', [...gameNodes, ...drawNodes], { game: 'ersomha', phase, role }));
 definitions.push(screen('ersomha.over', 'ارسمها · النتيجة النهائية', 'ارسمها', [...gameNodes, ...drawNodes], { game: 'ersomha', phase: 'over' }));
 definitions.push(screen('ersomha.private-wait', 'ارسمها · حماية الفكرة', 'ارسمها', [...gameNodes, ...drawNodes], { game: 'ersomha', phase: 'private-wait' }));

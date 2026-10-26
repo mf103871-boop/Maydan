@@ -4,6 +4,7 @@ import { initialState as mamnooInitial } from '../games/mamnoo/logic.js';
 import { initialState as jabeenInitial } from '../games/jabeen/logic.js';
 import { initialState as meenInitial } from '../games/meenfina/logic.js';
 import { initialState as fabInitial, TRUTH_ID, roundBreakdown } from '../games/fabraka/logic.js';
+import { CATS } from '../data/categories/index.js';
 
 export const DESIGN_SCENES = Object.freeze(DESIGN_SCREENS.map(screen => Object.freeze({
   id: screen.id, screenId: screen.id, label: screen.label, group: screen.group,
@@ -52,7 +53,7 @@ export function createDesignFixture(id, { now = DESIGN_FIXTURE_TIME } = {}) {
     state.revealGroups = [['design-lie-2'], [TRUTH_ID, 'design-lie-1']]; state.revealed = false;
     state.breakdown = roundBreakdown(state); state.roundScores = Object.fromEntries(Object.entries(state.breakdown).map(([key, value]) => [key, value.points]));
     fixture.state = state;
-  } else if (scene.game === 'badeeha') {
+  } else if (scene.game === 'badeeha' && scene.mode !== 'online') {
     const bteams = teams.map(t => ({ ...t, score: t.id === teams[0].id ? 600 : 400, correct: 2, steals: 0, tools: { double: true, two: true, switch: true } }));
     const record = { id: 'design-result', teams: bteams, winner: bteams[0].name, answered: 8, total: 12, mode: 'expert', date: now, at: now, early: false };
     fixture.badeeha = { screen: scene.phase, teams: bteams, selectedCategories: ['general'], current: { categoryId: 'general', index: 0 }, deck: { general: [{ qid: 'design-badeeha', p: 600, q: 'أي حيوان بحري له ثلاثة قلوب؟', a: 'الأخطبوط', alt: [], type: 'text' }] }, finalResult: record, results: [record], revealed: false };
@@ -62,7 +63,20 @@ export function createDesignFixture(id, { now = DESIGN_FIXTURE_TIME } = {}) {
     const game = scene.game || (scene.id === 'online.lobby' ? 'ersomha' : 'meenfina');
     const options = [{ id: TRUTH_ID, text: 'ثلاثة', truth: true, mine: false, owners: [], earners: [], voters: [players[0].id], funnyVoters: [], fooled: 0 }, { id: 'design-choice-1', text: 'قلبان', truth: false, mine: false, owners: [players[1].id], earners: [players[1].id], voters: [players[2].id], funnyVoters: [], fooled: 1 }, { id: 'design-choice-2', text: 'خمسة', truth: false, mine: false, owners: [players[2].id], earners: [players[2].id], voters: [], funnyVoters: [], fooled: 0 }];
     const state = { _designPreview: true, game, phase: scene.phase || 'lobby', code: '123456', matchId: 1, hostId: players[0].id, members, participants: players.map(p => p.id), round: 1, rounds: 4, settings: { mode: 'classic', cycles: 1, difficulty: 'medium', categories: [], drawSeconds: 60, writeSeconds: 45, discussionSeconds: 20, funnyVote: true, finalDouble: false }, deadlineAt: now + 45_000, reason: null, question: game === 'meenfina' ? { text: 'مين فينا يخطط للرحلة قبل الجميع؟' } : question, myVote: { submitted: false }, submittedCount: 1, winners: [players[1].id], counts: Object.fromEntries(players.map(p => [p.id, p.id === players[1].id ? 3 : 0])), history: [], options, writingCount: 1, writerCount: 4, mySubmission: { submitted: false }, helpAvailable: true, myHelp: '', truthHostId: scene.phase === 'host' ? players[0].id : null, reveal: { final: false, shown: true, options }, breakdown: Object.fromEntries(players.map(p => [p.id, { truth: 1, fooled: 0, laughs: 0, points: 1000 }])), scores: Object.fromEntries(players.map(p => [p.id, p.id === players[0].id ? 250 : 100])) };
-    if (game === 'ersomha') {
+    if (game === 'badeeha') {
+      const clueCategory = CATS.find(category => category.qs.some(q => q.type === 'hints' && q.p === 600));
+      const clue = clueCategory.qs.find(q => q.type === 'hints' && q.p === 600);
+      const selected = [clueCategory, ...CATS.filter(category => category.id !== clueCategory.id).slice(0, 5)];
+      const deck = Object.fromEntries(selected.map((category, index) => [category.id, category.qs.filter(q => q.p <= 800).slice(0, index < 2 ? 4 : 3).map(q => ({ qid: q.qid, p: q.p }))]));
+      deck[clueCategory.id][0] = { qid: clue.qid, p: clue.p };
+      state.settings = { mode: 'standard', roundSize: 20, timer: 60, categories: selected.map(category => category.id), deck };
+      state.rounds = 20; state.turnId = members[0].id;
+      state.teams = members.map(m => ({ id: m.id, score: m.score, correct: 1, steals: 0, tools: { double: true, two: true, time: true } }));
+      state.used = []; state.hintsUsed = 0; state.effect = { double: false, two: false }; state.verdict = null; state.canUndo = true;
+      state.current = ['question','reveal'].includes(state.phase) ? { categoryId: clueCategory.id, index: 0, qid: clue.qid, p: clue.p } : null;
+      state.deadlineAt = state.phase === 'question' ? now + 45_000 : null;
+      fixture.me = members[0];
+    } else if (game === 'ersomha') {
       if (scene.id === 'ersomha.private-wait') state.phase = 'select';
       state.settings.mode = 'competitive'; state.drawerId = players[0].id; state.drawing = { epoch: 1, seq: 0 };
       state.myChoices = scene.role === 'drawer' ? [{ id: 'demo-choice-1', text: 'قطار', category: 'transport' }, { id: 'demo-choice-2', text: 'حديقة', category: 'nature' }, { id: 'demo-choice-3', text: 'مكتبة', category: 'places' }] : undefined;

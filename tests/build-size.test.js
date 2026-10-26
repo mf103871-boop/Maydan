@@ -20,7 +20,7 @@ test('the shipped document and its largest inputs stay inside the size budget', 
   const html = await renderHtml(js, { version: '0.0.0-test' });
   // الرسوم والخطوط ملفات مبصومة بجانب المستند لا base64 داخله.
   assert.ok(!/data:(image\/webp|image\/png|font\/woff2)/.test(html), 'brand art and fonts must ship as files, not data: URLs inside the document');
-  assert.ok(result.outputFiles.some((f) => /assets\/brand\/world-[A-Z0-9]+\.webp$/.test(f.path)), 'the splash art is emitted as a hashed file');
+  assert.ok(result.outputFiles.some((f) => /assets\/brand\/world-[A-Z0-9]+\.webp$/.test(f.path.replaceAll('\\', '/'))), 'the splash art is emitted as a hashed file');
   const raw = Buffer.byteLength(html, 'utf8');
   const gzip = gzipSync(Buffer.from(html, 'utf8')).length;
   assert.ok(raw <= BUDGET.document, `index.html is ${(raw / MB).toFixed(2)} MB, budget ${(BUDGET.document / MB).toFixed(2)} MB`);

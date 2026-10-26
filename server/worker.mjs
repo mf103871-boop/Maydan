@@ -14,7 +14,7 @@ import { drainJobs } from './lamma/jobs.mjs';
 import { liveKitWebhook } from './lamma/webhook.mjs';
 import { messageRetentionMs,reportRetentionMs } from './accounts/cleanup.mjs';
 import { iosAppPolicy } from './app-policy.mjs';
-import { ERSOMHA_PROTOCOL, ONLINE_GAMES } from '../src/online/shared.js';
+import { ERSOMHA_PROTOCOL, BADEEHA_PROTOCOL, ONLINE_GAMES } from '../src/online/shared.js';
 import { routeDrawingReports } from './ersomha-reports.mjs';
 import { routeDesign, isPublicDesignAssetPath } from './design/router.mjs';
 export { LammaJobs } from './lamma/jobs.mjs';
@@ -147,12 +147,13 @@ export async function routeRequest(request, env, context) {
         const input = await readJson(request, 4096, createLimit);
         await credentials(input); // Validate before allocating a room.
         if (input.game === 'ersomha' && input.capabilities?.ersomha !== ERSOMHA_PROTOCOL) fail('CONFIG', 409);
+        if (input.game === 'badeeha' && input.capabilities?.badeeha !== BADEEHA_PROTOCOL) fail('UPDATE_REQUIRED', 409);
         // Check eligibility now, but consume the trial only at the room's first
         // successful match start. Never trust a gate supplied by the browser.
         const gate = await roomGate(request, env, input);
         // Ignore any account ID supplied by the client. The seat's account
         // association comes only from the authenticated bearer session.
-        input.accountUserId = gate?.userId || null;
+        input.accountUserId = gate?.userId || (input.game === 'badeeha' ? await roomAccountId(request, env) : null);
         input.roomTrialGate = gate;
         // Attempt 0 stays derived from the token so a retried creation is idempotent
         // without a global directory; later attempts are random so a collision run

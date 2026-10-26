@@ -13,7 +13,7 @@ const js = result.outputFiles[0].contents;
 const html = `<!doctype html><html lang="ar" dir="rtl"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><body><div id="root"></div><script>const mem=()=>{const m=new Map;return{getItem:k=>m.get(k)??null,setItem:(k,v)=>m.set(k,String(v)),removeItem:k=>m.delete(k),clear:()=>m.clear(),key:i=>[...m.keys()][i],get length(){return m.size}}};Object.defineProperty(window,'localStorage',{value:mem()});Object.defineProperty(window,'sessionStorage',{value:mem()});window.fetch=()=>Promise.reject(new Error('PREVIEW_NETWORK_DISABLED'));</script><script src="/bundle.js"></script></body></html>`;
 const server = createServer((req,res)=>{res.setHeader('content-type',req.url==='/bundle.js'?'text/javascript':'text/html;charset=utf-8');res.end(req.url==='/bundle.js'?js:html);});
 await new Promise(resolve=>server.listen(0,'127.0.0.1',resolve));
-const browser = await chromium.launch({headless:true});
+const browser = await chromium.launch({headless:true, ...(process.env.CHROMIUM_PATH ? { executablePath: process.env.CHROMIUM_PATH } : {})});
 const page = await browser.newPage({viewport:{width:390,height:844},reducedMotion:'reduce'});
 const errors = [], scenes = [];
 page.on('pageerror',error=>errors.push(error.message));
