@@ -1,6 +1,24 @@
 # Mafia Maydan validation record
 
-Date: 2026-10-26. This is implementation evidence for the isolated `codex/mafia-maydan-20261026` branch, not approval to expose the feature in production.
+Updated 2026-10-27 (Asia/Amman). The tested application source is `5918620adef2f10dbd7f026df1dd1f01ae8eecb4`; subsequent validation-document changes do not change its compiled code. This is implementation evidence for the isolated `codex/mafia-maydan-20261026` branch, not approval to expose the feature in production.
+
+## Experimental TestFlight delivery
+
+- **1.9 (30)** is `VALID`, unexpired and `IN_BETA_TESTING` in App Store Connect. Build ID: `b29389ec-94d9-4f1c-957f-79450b08462c`. Existing internal testers have all-builds access. External beta review and public App Store submission are not included.
+- Arabic and English What to Test notes were written once using the reviewed corrective transport and independently read back successfully at 21:24:51 and 21:25:04 UTC on 2026-10-26. The original failed scoped-token AR intent remains preserved; it was not replayed or removed. No build, group, public metadata, key or account-permission change accompanied these two beta-note updates.
+- GitHub run [40399682117](https://github.com/mf103871-boop/Maydan/actions/runs/40399682117), job `121841884499`, succeeded on the source above and uploaded at 2026-10-26 21:11:33 UTC. All four actual simulator gates passed: cold/relaunch, required-update UI, WKWebView audio stream and UIKit drawing orientation. Cold Home readiness was 11.75s with 45.09s survival; relaunch was 7.74s with 15.16s survival. Both receipts contain exactly eight cards, completed migration, matching launch token/PID and no crash report.
+- The clean macOS CI ran 1,350 Node tests: 1,349 passed, none failed, and one generated-page CSP test was skipped because `dist/index.html` had not yet been built at that step. The local suite exercised that test and passed all 1,350. Native executable checks also passed. No release gate was bypassed.
+- Original GitHub launch ZIP SHA256: `e66f2a3639d9abd02cf80dc356aafd994e5ee273d67059e50a38af0a4becfba1`. Original IPA ZIP SHA256: `ddb539a7f6144551594dd9094afd531ba3e1e70cc71b229c7cb3e44c510571e1`. Independent inspection confirmed source, version/build, ARM64 App Store packaging and the isolated preview API origin. Windows inspection does not independently rerun Apple's cryptographic `codesign` verifier; CI performed signing validation.
+- Actual Google browser login was verified; native Apple/Google login, background CallKit, phone interruption/headset behavior and the native App Switcher privacy curtain still require physical iPhones. Human understanding, fun and role balance remain unverified.
+- On a 390px browser viewport the movable call column partly covers phase text and an edge of the inline voice controls; essential timer/leave/night actions remained usable. The dismissible image-preparation notice can also cover lower content. These are remaining visual-polish items, not a claim of an entirely unobstructed layout.
+
+## Final hosted check on the delivered source
+
+Preview Worker `b4b3bbef-1f58-4515-b738-2ab9367f4f3c` serves the tested source. The final twelve-React-client diagnostic passed six assertions, including the original twelve-second threshold: **132/132 active inbound RTP streams and 132/132 allowed SDK subscriptions** were present by 6.420s from joining. Night isolation separated three Mafia participants and one shadow participant while all eight town clients had zero active inbound/outbound RTP. Private RTC connections completed 2.194–2.679s after their respective night snapshots; this is not the complete server-deadline-to-audio latency. One signal reconnect recovered before night, with no stale public reconnect after transition. No subscription-failure event was observed.
+
+In the matched first 17s after voice joining, synchronization HTTP p95 fell from 3,637ms (114 completed requests) to 873ms (165 requests). This is an observed comparison across different runs, not controlled causal proof. Across the final whole run, 521 voice requests had p50 577ms/p95 1,466ms/max 6,237ms; 33 game acknowledgments had p95 922ms and 121 WebSocket pings had p95 204ms. This was not a controlled <=150ms RTT network, and the overall 300ms/3s acceptance remains open. Twelve browsers shared one PC, microphones were synthetic, and the exact hosted SDK was preloaded for observation. The earlier 131/132 deadline failure remains preserved and its missing SID cannot be reconstructed; its cause was not proven.
+
+Independent cleanup reconfirmed zero preview room slots, seats and media leases; production workers, resources and deployments remained unchanged. Actual minute/daily preview Cron Triggers and the 30-day Mafia history/result cleanup path were verified read-only. This confirms configuration, not a successful aged-row hosted deletion test. The preview remains capped at one active Mafia voice room.
 
 ## Integrated source freeze checks
 
