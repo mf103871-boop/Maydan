@@ -149,7 +149,7 @@ try {
         await go(`game/${game}`);
         await page.locator('.details-hero').waitFor();
         await overflow(`${game} details`);
-        const button = page.getByRole('button', { name: ['fabraka', 'meenfina'].includes(game) ? 'العب على جهاز واحد' : 'العب', exact: true });
+        const button = page.getByRole('button', { name: ['fabraka', 'meenfina', 'badeeha'].includes(game) ? 'العب على جهاز واحد' : 'العب', exact: true });
         await tap(button, `${game} play`);
         await page.waitForURL((url) => url.hash === `#/play/${game}`);
         await page.locator('.game-loading').waitFor({ state: 'detached' });

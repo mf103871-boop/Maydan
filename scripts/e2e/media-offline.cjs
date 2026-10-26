@@ -5,10 +5,12 @@
 // «المصادر والتراخيص». ليس ضمن `npm test` لأنه يحتاج Playwright وChromium:
 //
 //   npm i -D playwright   (أو NODE_PATH يشير إلى تثبيت عام)
-//   node scripts/demo-packs.mjs && npm run build && node scripts/e2e/media-offline.cjs
+//   node scripts/demo-packs.mjs && npm run build:cloudflare && node scripts/e2e/media-offline.cjs
 //   node scripts/demo-packs.mjs --remove
 //
-// متغيرات اختيارية: CHROMIUM_PATH (مسار متصفح بديل)، E2E_PORT.
+// الحزم التجريبية خارج الفئات العشر المجانية: الاختبار يدخل بحساب «بلس» من خادم
+// الحسابات المحلي (plus-session.mjs)، فيلزم مستند بالـAPI على الأصل نفسه (build:cloudflare).
+// متغيرات اختيارية: CHROMIUM_PATH (مسار متصفح بديل)، E2E_PORT، E2E_API_PORT.
 // يثبت أن زر «حمّل» يخزّن وسائط الفئات في العامل الخدمي، وأن اللعب يستمر
 // بعد قطع الشبكة تمامًا.
 let chromium;
@@ -22,7 +24,9 @@ const TYPES = { '.html': 'text/html; charset=utf-8', '.js': 'text/javascript; ch
 const PORT = Number(process.env.E2E_PORT || 8099);
 const SHOTS = path.join(require('os').tmpdir(), 'maydan-e2e');
 fs.mkdirSync(SHOTS, { recursive: true });
+let plus = null;
 const server = http.createServer((req, res) => {
+  if (plus && plus.proxy(req, res)) return;
   let p = decodeURIComponent(url.parse(req.url).pathname);
   if (p.endsWith('/')) p += 'index.html';
   const f = path.join(ROOT, p);
@@ -39,7 +43,7 @@ const DEMO_IDS = ['demoa', 'demob', 'democ', 'demod', 'demoe', 'demof'];
 const DEMO_NAMES = DEMO_IDS.map((id) => {
   const file = path.join(CATS, `${id}.json`);
   if (!fs.existsSync(file)) {
-    console.error(`الحزم التجريبية غير مركّبة (${id}.json مفقود). شغّل أولًا: node scripts/demo-packs.mjs && npm run build`);
+    console.error(`الحزم التجريبية غير مركّبة (${id}.json مفقود). شغّل أولًا: node scripts/demo-packs.mjs && npm run build:cloudflare`);
     process.exit(2);
   }
   return JSON.parse(fs.readFileSync(file, 'utf8')).name;
@@ -69,8 +73,11 @@ async function pickDemoCategories(page) {
 
 (async () => {
   await new Promise((r) => server.listen(PORT, r));
+  const session = await import('./plus-session.mjs');
+  plus = await session.startPlusSession({ webOrigin: `http://127.0.0.1:${PORT}`, apiPort: Number(process.env.E2E_API_PORT || 8797) });
   const b = await chromium.launch({ executablePath: process.env.CHROMIUM_PATH || undefined, args: ['--no-sandbox'] });
   const ctx = await b.newContext({ viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, isMobile: true, hasTouch: true, locale: 'ar' });
+  await session.installSession(ctx, plus.token);
   const p = await ctx.newPage();
   p.setDefaultTimeout(15000);
   await p.addInitScript(() => { Math.random = () => 0; });
@@ -82,7 +89,9 @@ async function pickDemoCategories(page) {
     await p.waitForTimeout(100);
   };
 
+  const premium = session.watchPremium(p);
   await p.goto(`http://127.0.0.1:${PORT}/`, { waitUntil: 'load' });
+  await premium;
   await p.evaluate(() => navigator.serviceWorker.ready);
   await p.reload({ waitUntil: 'load' });
   check(await p.evaluate(() => !!navigator.serviceWorker.controller), 'العامل الخدمي يتحكم بالصفحة');
@@ -90,7 +99,7 @@ async function pickDemoCategories(page) {
   await p.waitForSelector('.splash', { state: 'detached' });
   await p.evaluate(() => { location.hash = '#/game/badeeha'; });
   await p.waitForSelector('.details-hero h1');
-  await tapText('العب');
+  await tapText('العب على جهاز واحد');
   await p.waitForSelector('.game-frame .m-root .m-home');
   await p.click('.m-hero-cta');
   await p.waitForSelector('.m-category-pick');

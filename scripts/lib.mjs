@@ -39,7 +39,14 @@ export async function mediaVersions(root = ROOT) {
   return versions;
 }
 
-export function esbuildOptions({ minify = true, version = '0.0.0', media = {} } = {}) {
+// assets: 'inline' embeds the brand art and fonts as data: URLs (pages served under
+// another path, like the studio previews, and the test harnesses that serve only the
+// document). 'files' emits them as content-hashed files under assets/brand/ next to
+// index.html: the game document stops carrying ~730 KB of base64, and a release that
+// does not touch the art lets browsers keep the files they already have.
+export const BRAND_ASSET_DIR = 'assets/brand';
+export function esbuildOptions({ minify = true, version = '0.0.0', media = {}, assets = 'inline' } = {}) {
+  const art = assets === 'files' ? 'file' : 'dataurl';
   return {
     entryPoints: [path.join(ROOT, 'src/main.jsx')],
     outfile: path.join(DIST, 'bundle.js'),
@@ -51,7 +58,8 @@ export function esbuildOptions({ minify = true, version = '0.0.0', media = {} } 
     alias: { 'react/jsx-runtime': path.join(ROOT, 'src/design/jsx-runtime.js') },
     // New files are JSX; the migrated trivia game is plain React.createElement
     // in .js and parses fine under the jsx loader too.
-    loader: { '.js': 'jsx', '.css': 'text', '.json': 'json', '.webp': 'dataurl', '.png': 'dataurl', '.woff2': 'dataurl' },
+    loader: { '.js': 'jsx', '.css': 'text', '.json': 'json', '.webp': art, '.png': art, '.woff2': art },
+    ...(assets === 'files' ? { assetNames: `${BRAND_ASSET_DIR}/[name]-[hash]` } : {}),
     define: {
       'process.env.NODE_ENV': JSON.stringify(minify ? 'production' : 'development'),
       __MAYDAN_VERSION__: JSON.stringify(version),
@@ -71,10 +79,21 @@ export function escapeInlineScript(js) {
   return js.replace(/<\/script/gi, '<\\/script').replace(/<!--/g, '<\\!--');
 }
 
-export async function renderHtml(js, { version }) {
+// The splash art and the two fonts are needed for the first frame: preloading them
+// lets their download start while the inline script is still being parsed.
+const PRELOAD = [
+  { pattern: /\/(world|game-icons|avatars)-[^/]+\.webp$/, tag: (href) => `<link rel="preload" as="image" href="${href}">` },
+  { pattern: /\/(arabic|latin)-[^/]+\.woff2$/, tag: (href) => `<link rel="preload" as="font" type="font/woff2" href="${href}" crossorigin>` },
+];
+export function preloadLinks(assets = []) {
+  return assets.flatMap((href) => PRELOAD.filter((rule) => rule.pattern.test(href)).map((rule) => rule.tag(href))).join('\n');
+}
+
+export async function renderHtml(js, { version, assets = [] }) {
   const template = await readFile(path.join(ROOT, 'src/index.template.html'), 'utf8');
   const tokens = await readFile(path.join(ROOT, 'src/shared/theme/tokens.css'), 'utf8');
   return template
+    .replace('<!--PRELOAD-->', () => preloadLinks(assets))
     .replace('<!--TOKENS_CSS-->', () => tokens)
     .replace('<!--BUNDLE_JS-->', () => escapeInlineScript(js))
     .replaceAll('<!--VERSION-->', version);
@@ -88,14 +107,15 @@ export function buildId(version, html) {
 
 // العامل الخدمي يتلقّى من البناء: معرّف الإصدار، صور فبركة، وأسماء ملفات المؤثرات (بأسمائها
 // المبصومة من sample-bank.js) كي يبقى manifest المؤثرات المصدر الوحيد لقائمة التخزين المسبق.
-export function renderServiceWorker(src, { id = 'dev', fabrakaImages = [], audioCues = [] } = {}) {
+export function renderServiceWorker(src, { id = 'dev', fabrakaImages = [], audioCues = [], brandAssets = [] } = {}) {
   return src.replaceAll('__BUILD_ID__', id)
     .replace('/*__FABRAKA_IMAGES__*/[]', JSON.stringify(fabrakaImages))
-    .replace('/*__AUDIO_CUES__*/[]', JSON.stringify(audioCues));
+    .replace('/*__AUDIO_CUES__*/[]', JSON.stringify(audioCues))
+    .replace('/*__BRAND_ASSETS__*/[]', JSON.stringify(brandAssets));
 }
 export const audioCueAssets = () => Object.values(SAMPLE_BANK).map((entry) => `./${entry.url}`);
 
-async function copyPublic({ id = 'dev', fabrakaImages = [] } = {}) {
+async function copyPublic({ id = 'dev', fabrakaImages = [], brandAssets = [] } = {}) {
   const pub = path.join(ROOT, 'public');
   try { await stat(pub); } catch { return; }
   for (const entry of await readdir(pub)) {
@@ -104,7 +124,7 @@ async function copyPublic({ id = 'dev', fabrakaImages = [] } = {}) {
   const sw = path.join(DIST, 'sw.js');
   try {
     const src = await readFile(sw, 'utf8');
-    await writeFile(sw, renderServiceWorker(src, { id, fabrakaImages, audioCues: audioCueAssets() }), 'utf8');
+    await writeFile(sw, renderServiceWorker(src, { id, fabrakaImages, audioCues: audioCueAssets(), brandAssets }), 'utf8');
   } catch { /* لا عامل خدمي في public */ }
 }
 
@@ -114,16 +134,23 @@ export async function buildOnce({ minify = true, includeStudio = true } = {}) {
   const fabrakaImages = await fabrakaMediaManifest(ROOT, versions);
   let result;
   try {
-    result = await esbuildBuild(esbuildOptions({ minify, version: pkg.version, media: versions }));
+    result = await esbuildBuild(esbuildOptions({ minify, version: pkg.version, media: versions, assets: 'files' }));
   } catch (error) {
     const messages = (error.errors || []).map((e) => `${e.location ? `${e.location.file}:${e.location.line}:${e.location.column} ` : ''}${e.text}`);
     throw new Error(messages.length ? messages.join('\n') : error.message);
   }
   const js = result.outputFiles.find((f) => f.path.endsWith('.js')).text;
-  const html = await renderHtml(js, { version: pkg.version });
+  const art = result.outputFiles.filter((f) => !f.path.endsWith('.js'));
+  const brandAssets = art.map((f) => `./${path.relative(DIST, f.path).split(path.sep).join('/')}`).sort();
+  if (!brandAssets.every((url) => url.startsWith(`./${BRAND_ASSET_DIR}/`))) throw new Error(`Unexpected bundle output: ${brandAssets.join(', ')}`);
+  const html = await renderHtml(js, { version: pkg.version, assets: brandAssets });
   await rm(DIST, { recursive: true, force: true });
   await mkdir(DIST, { recursive: true });
-  await copyPublic({ id: buildId(pkg.version, html), fabrakaImages });
+  for (const file of art) {
+    await mkdir(path.dirname(file.path), { recursive: true });
+    await writeFile(file.path, file.contents);
+  }
+  await copyPublic({ id: buildId(pkg.version, html), fabrakaImages, brandAssets });
   if (pkg.dependencies['livekit-client'] !== LIVEKIT_VERSION) throw new Error('Update the versioned LiveKit module filename with its pinned dependency.');
   await esbuildBuild({ stdin: { contents: "export { Room, RoomEvent, Track } from 'livekit-client';", resolveDir: ROOT, sourcefile: 'lamma-web-audio.js' },
     outfile: path.join(DIST, LIVEKIT_MODULE), bundle: true, format: 'esm', target: ['es2020', 'safari14'], minify: true,
@@ -144,7 +171,7 @@ export async function buildOnce({ minify = true, includeStudio = true } = {}) {
   }
   const bytes = Buffer.byteLength(html, 'utf8');
   const gzip = gzipSync(Buffer.from(html, 'utf8')).length;
-  return { out, bytes, gzip, version: pkg.version, buildId: buildId(pkg.version, html), warnings: result.warnings, media: { packs: media.packs, files: copied.count, bytes: copied.total } };
+  return { out, bytes, gzip, version: pkg.version, buildId: buildId(pkg.version, html), warnings: result.warnings, brandAssets, media: { packs: media.packs, files: copied.count, bytes: copied.total } };
 }
 
 export function fmtKB(n) {

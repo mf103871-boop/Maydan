@@ -91,6 +91,6 @@ test('room transport advertises Ersomha support and isolates drawing events from
     const sent = socket.sent.at(-1); assert.equal(sent.matchId, 'match'); assert.equal(sent.round, 2);
     socket.receive({ type: 'ack', requestId: sent.requestId, ok: true, seq: 1 }); assert.equal((await command).seq, 1);
     unsubscribe(); socket.receive({ type: 'drawing', kind: 'append', epoch: 1, seq: 2, matchId: 'match', round: 2, op: op('b') }); assert.equal(events.length, 1);
-    socket.receive({ type: 'state', state: { game: 'unrecognized', protocol: 1, revision: 2 } }); assert.deepEqual(errors, ['CONFIG']); assert.equal(client.connectionStatus, 'ended');
+    socket.receive({ type: 'state', state: { game: 'unrecognized', protocol: 1, revision: 2 } }); assert.deepEqual(errors, ['ROOM_OUTDATED']); assert.equal(client.connectionStatus, 'outdated');
   } finally { client.stop(); }
 });

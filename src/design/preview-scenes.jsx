@@ -18,6 +18,7 @@ import { Game as Meenfina, SetupOptions as MeenfinaSetup } from '../games/meenfi
 import { Game as Fabraka, SetupOptions as FabrakaSetup } from '../games/fabraka/Game.jsx';
 import { Entry, Lobby, Match, RoomChrome } from '../online/Online.jsx';
 import { FabrakaMatch } from '../online/Fabraka.jsx';
+import { BadeehaMatch, BadeehaSettings } from '../online/Badeeha.jsx';
 import { ErsomhaMatch } from '../online/Ersomha.jsx';
 import { ProfileView, ProfileEditor, CropDialog, SafetyDialog } from '../profiles/ProfileScreen.jsx';
 import { SocialHost, GameInviteDialog, GroupEditor, Preferences } from '../social/SocialHost.jsx';
@@ -65,7 +66,7 @@ export function DesignScene({ sceneId = 'home', previewState, platform, account,
   const client = useMemo(createDesignDrawingClient, [sceneId]);
   const state = previewState || fixture.state;
   const common = { api, players: fixture.players, teams: fixture.teams, designPreviewState: state, onExit: noop };
-  if (fixture.scene.game === 'badeeha') return <Badeeha key={sceneId} api={api} />;
+  if (fixture.scene.game === 'badeeha' && fixture.scene.mode !== 'online') return <Badeeha key={sceneId} api={api} />;
   const local = { beep: Beep, mamnoo: Mamnoo, jabeen: Jabeen, meenfina: Meenfina, fabraka: Fabraka };
   if (fixture.scene.renderer === 'local-game' && local[fixture.scene.game]) { const Game = local[fixture.scene.game]; return <Game key={sceneId} {...common} />; }
   const setup = { 'setup.beep': BeepSetup, 'setup.mamnoo': MamnooSetup, 'setup.jabeen': JabeenSetup, 'setup.meenfina': MeenfinaSetup, 'setup.fabraka': FabrakaSetup }[sceneId];
@@ -76,6 +77,8 @@ export function DesignScene({ sceneId = 'home', previewState, platform, account,
   if (sceneId === 'online.chrome') return <RoomChrome state={state} code="123456" status="connected" error={null} onExit={noop} onKick={noop} onReconnect={noop}><Lobby {...roomProps} /></RoomChrome>;
   if (sceneId.startsWith('online.meenfina.')) return <Match {...roomProps} />;
   if (sceneId.startsWith('online.fabraka.')) return <FabrakaMatch {...roomProps} />;
+  if (sceneId === 'online.badeeha.setup') return <BadeehaSettings value={state.settings} onChange={noop} disabled={false} />;
+  if (sceneId.startsWith('online.badeeha.')) return <BadeehaMatch {...roomProps} />;
   if (fixture.scene.game === 'ersomha') return <ErsomhaMatch {...roomProps} client={client} status="connected" drawerReady={sceneId !== 'ersomha.private-wait'} onReport={resolved} />;
   const profile = fixture.profile;
   const fakeProfiles = profiles || { mine: profile, profiles: {}, ready: true, errors: {}, loadProfile: resolved, saveProfile: resolved };

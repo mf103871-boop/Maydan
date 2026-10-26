@@ -8,7 +8,8 @@ import mark from './assets/mark.webp';
 import arabicFont from './assets/arabic.woff2';
 import latinFont from './assets/latin.woff2';
 
-// Data URLs keep the approved art and Arabic font available offline.
+// The build ships the art and fonts as content-hashed files the service worker
+// installs before activation, so they stay available offline.
 // Sprite windows preserve the original artwork and share one decoded image.
 const GAMES = { badeeha: [0, 0], beep: [1, 0], mamnoo: [2, 0], jabeen: [0, 1], fabraka: [1, 1], meenfina: [2, 1] };
 export const AVATAR_OPTIONS = [

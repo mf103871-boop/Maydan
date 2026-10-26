@@ -130,13 +130,15 @@ test('actual local game components render every catalogued phase without bypassi
 });
 
 test('actual online match components render host/guesser/result phases with correct secret visibility', () => {
-  const scenes = DESIGN_SCENES.filter(scene => scene.id.startsWith('online.meenfina.') || scene.id.startsWith('online.fabraka.') || scene.game === 'ersomha');
+  const scenes = DESIGN_SCENES.filter(scene => scene.id.startsWith('online.meenfina.') || scene.id.startsWith('online.fabraka.') || scene.id.startsWith('online.badeeha.') || scene.game === 'ersomha');
   for (const scene of scenes) {
     const html = renderer.renderScene(scene.id);
     assert.ok(html.includes(`data-design-screen="${scene.id}"`), scene.id);
     if (scene.id === 'ersomha.draw.guesser') { assert.doesNotMatch(html, /قطار/); assert.match(html, /لوحة مباشرة/); }
     if (scene.id === 'ersomha.select.drawer') assert.match(html, /قطار/);
     if (scene.id === 'ersomha.private-wait') assert.match(html, /نكتم الميكروفون أولًا/);
+    if (scene.id === 'online.badeeha.question') assert.doesNotMatch(html, /data-design-id="answer"|data-design-id="judge"/);
+    if (scene.id === 'online.badeeha.reveal') assert.match(html, /data-design-id="answer"/);
   }
 });
 

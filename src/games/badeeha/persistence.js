@@ -19,3 +19,18 @@ export function readBadeehaState(categories, storage = typeof localStorage === '
     active: valid ? active : null, retiredActive, invalidActive: Boolean(active && !valid && !retiredActive),
   };
 }
+
+// Online rooms reuse the same bank/history as local games. Only revealed/played
+// question IDs are recorded; the upcoming deck must never count as seen.
+export function rememberBadeehaQuestions(categories, ids, { storage = typeof localStorage === 'undefined' ? null : localStorage, now = Date.now() } = {}) {
+  if (!storage || !Array.isArray(ids) || !Number.isFinite(now) || now <= 0) return false;
+  const valid = new Set(categories.flatMap((category) => category.qs.map((question, index) => logic.questionId(category.id, question, index))));
+  try {
+    const saved = JSON.parse(storage.getItem(BADEEHA_KEYS.history) || 'null');
+    const history = saved && typeof saved === 'object' && !Array.isArray(saved) ? { ...saved } : {};
+    let changed = false;
+    for (const id of ids) if (valid.has(id) && !history[id]) { history[id] = now; changed = true; }
+    if (changed) storage.setItem(BADEEHA_KEYS.history, JSON.stringify(history));
+    return changed;
+  } catch { return false; }
+}

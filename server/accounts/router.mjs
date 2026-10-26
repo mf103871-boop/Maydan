@@ -406,6 +406,8 @@ export const gameOf = (input) => (TRIAL_GAMES.includes(input?.game) ? input.game
 const DEVICE_ID = /^[a-f0-9]{32}$/;
 const deviceKeyOf = (input) => (typeof input?.deviceId === 'string' && DEVICE_ID.test(input.deviceId) ? `device:${input.deviceId}` : null);
 export async function roomGate(request, env, input, now = Date.now()) {
+  // بَديهة مجانية على جهاز واحد (القفل في الحزم لا في المباراة)، وكذلك استضافتها أونلاين.
+  if (input?.game === 'badeeha') return null;
   const game = gameOf(input);
   if (!env.DB) { if (game === 'ersomha') failure('AUTH_REQUIRED'); return null; }
   const device = deviceKeyOf(input);

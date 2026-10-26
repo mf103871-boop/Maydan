@@ -24,6 +24,9 @@ export function profile(value) {
 // «أحمد» و«احمد» اسم واحد في غرفة تصويت؛ التطبيع العربي يوحّد الهمزة والتاء المربوطة والتشكيل.
 export const sameName = (a, b) => a.toLocaleLowerCase('ar') === b.toLocaleLowerCase('ar') || (arabicNormalize(a) !== '' && arabicNormalize(a) === arabicNormalize(b));
 export function active(room) { return room.members.filter((m) => !m.left); }
+// The seats playing the running match. A seat that joined after the start watches
+// from outside `participants` until the next match, so it never counts here.
+export function playing(room) { return (room.participants || []).filter((id) => room.members.some((m) => m.id === id && !m.left)); }
 // A seat that dropped its connection keeps its place for SEAT_GRACE; after that the
 // round no longer waits for it. Reconnecting restores it at once.
 export const absent = (m, now) => m.left || (!m.connected && (m.disconnectedAt == null || now - m.disconnectedAt >= SEAT_GRACE));
@@ -54,27 +57,42 @@ export function createRoom(code, input, now) {
 export function isBanned(room, input) {
   return (room.banned || []).some((entry) => entry.id === input.id || entry.tokenHash === input.tokenHash);
 }
-export function joinRoom(room, input, now) {
+// lateJoin admits a new seat during a match: it watches (it is not in `participants`,
+// so it cannot vote or write and nothing waits for it) and plays from the next match.
+// Ersomha keeps lobby-only admission because its words are exposed per account.
+export function admitMember(room, input, now, { lateJoin = false } = {}) {
   const existing = room.members.find((m) => m.id === input.id && !m.left);
   if (existing) {
     if (existing.tokenHash !== input.tokenHash) fail('AUTH', 401);
     return existing; // Retries and reconnects never allocate a second seat.
   }
   if (isBanned(room, input)) fail('BANNED', 403);
-  if (room.phase !== 'lobby') fail('STARTED', 409);
+  // A departed participant's public ID still owns its historical votes/scores.
+  // It cannot be resurrected as a new spectator with another token mid-match.
+  const departed = room.members.find((m) => m.id === input.id && m.left);
+  if (departed && room.phase !== 'lobby') {
+    if (departed.tokenHash !== input.tokenHash) fail('AUTH', 401);
+    fail('STARTED', 409);
+  }
+  if (room.phase !== 'lobby' && !lateJoin) fail('STARTED', 409);
   if (active(room).length >= MAX_PLAYERS) fail('FULL', 409);
   const p = profile(input);
   if (active(room).some((m) => sameName(m.name, p.name))) fail('NAME_TAKEN', 409);
-  room.members = room.members.filter((m) => !m.left);
+  // Retain only current-match tombstones (at most the original player count),
+  // so late arrivals cannot erase the departed players' names or identities.
+  room.members = room.members.filter((m) => !m.left || (room.phase !== 'lobby' && ((room.participants || []).includes(m.id) || Object.hasOwn(room.scores || {}, m.id))));
   const joined = newMember(input, now, { colorIndex: seatColor(room) });
   room.members.push(joined);
   return joined;
 }
+export const joinRoom = (room, input, now) => admitMember(room, input, now, { lateJoin: true });
 export function transferHost(room, now, immediate = false) {
   const host = room.members.find((m) => m.id === room.hostId && !m.left);
   if (host?.connected) { room.hostMissingSince = null; return; }
   room.hostMissingSince ??= now;
-  const next = active(room).find((m) => m.connected);
+  // A watcher may run the room only when no connected player of the match is left.
+  const candidates = active(room).filter((m) => m.connected);
+  const next = candidates.find((m) => (room.participants || []).includes(m.id)) || candidates[0];
   // A host who left the room has no seat to come back to: hand over at once.
   if (next && (immediate || !host || now >= room.hostMissingSince + HOST_GRACE)) {
     room.hostId = next.id;
@@ -104,8 +122,9 @@ export function kickSeat(room, actorId, command, now, isHost) {
   // A seat that already left is not an authentication failure for the host.
   const target = memberOrNull(room, command.targetId);
   if (!target) fail('TARGET_GONE', 409);
-  // In the waiting room anyone may be removed; during a match only a seat that dropped.
-  if (target.connected && room.phase !== 'lobby') fail('INVALID');
+  // In the waiting room anyone may be removed; during a match a seat that dropped, or a
+  // watcher who is not playing it.
+  if (target.connected && room.phase !== 'lobby' && (room.participants || []).includes(target.id)) fail('INVALID');
   room.banned = [...(room.banned || []), { id: target.id, tokenHash: target.tokenHash }].slice(-32);
   return target.id;
 }
@@ -113,7 +132,7 @@ export function leaveRoom(room, id, now) {
   const m = member(room, id);
   m.left = true; m.connected = false; m.ready = false;
   transferHost(room, now, room.hostId === id);
-  if (['vote', 'result'].includes(room.phase) && active(room).length < MIN_PLAYERS) {
+  if (['vote', 'result'].includes(room.phase) && playing(room).length < MIN_PLAYERS) {
     room.phase = 'over'; room.deadlineAt = null; room.reason = 'players_left';
   } else if (room.phase === 'vote') maybeReveal(room, now);
   if (room.phase === 'lobby') room.members = active(room);

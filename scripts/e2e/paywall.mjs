@@ -51,7 +51,12 @@ const shot = (n) => page.screenshot({ path: path.join(OUT, `${n}.png`) });
 const go = async (h, ms = 900) => { await page.evaluate((x) => { location.hash = x; }, h); await page.waitForTimeout(ms); };
 const tap = async (t) => { const ok = await page.evaluate((x) => { const el = [...document.querySelectorAll('button')].find((b) => !b.disabled && b.offsetParent !== null && (b.textContent || '').includes(x)); if (!el) return false; el.click(); return true; }, t); await page.waitForTimeout(400); return ok; };
 const lockedCounts = async () => {
-  await go('#/game/badeeha'); await tap('العب'); await page.waitForSelector('.m-home');
+  // الخروج من شاشة اللعب يمر بحارس الخروج (استعادة ثم رجوع خطوة)، فمدته متغيرة: ننتظر
+  // شاشة التفاصيل وزرها فعلًا بدل مهلة ثابتة.
+  await go('#/game/badeeha', 0);
+  await page.waitForFunction(() => location.hash === '#/game/badeeha'
+    && [...document.querySelectorAll('button')].some((b) => !b.disabled && b.offsetParent !== null && b.textContent.trim() === 'العب على جهاز واحد'));
+  await tap('العب على جهاز واحد'); await page.waitForSelector('.m-home');
   await page.evaluate(() => document.querySelector('.m-hero-cta').click()); await page.waitForSelector('.m-category-pick'); await page.waitForTimeout(500);
   return page.evaluate(() => ({ locked: document.querySelectorAll('.m-category-pick.is-locked').length, total: document.querySelectorAll('.m-category-pick').length }));
 };
@@ -61,10 +66,20 @@ const apiCall = (p, body, token) => page.evaluate(async ({ API, p, body, token }
   const r = await fetch(`${API}${p}`, { method: 'POST', headers: { 'content-type': 'application/json', ...(token ? { authorization: `Bearer ${token}` } : {}) }, body: JSON.stringify(body) });
   return { status: r.status, body: await r.json().catch(() => null) };
 }, { API, p, body, token });
-const reload = async () => { await page.evaluate(() => localStorage.removeItem('maydan:account:me')); await page.reload({ waitUntil: 'load' }); await page.waitForTimeout(700); await page.evaluate(() => { const s = document.querySelector('.splash'); if (s) s.click(); }); await page.waitForTimeout(800); };
+// شاشة البداية لا تُغلق بالنقر عليها: تنتظر الصور حتى ثلاث ثوانٍ أو زر «الدخول بالصور المتاحة».
+// النقر على `.splash` نفسها كان ينجح مصادفةً حين تجهز الصور قبل أول خطوة، ويفشل حين تتأخر.
+// الشاشات لا تُركَّب قبل انتهاء البداية، فالانتظار على أول شاشة لا على غياب `.splash`
+// (قد لا تكون رُسمت بعد لحظة حدث load).
+const enter = () => page.waitForFunction(() => {
+  const splash = document.querySelector('.splash');
+  const button = splash && [...splash.querySelectorAll('button')].find((b) => !b.disabled && b.textContent.includes('الدخول بالصور المتاحة'));
+  if (button) button.click();
+  return !splash && !!document.querySelector('[data-design-screen]');
+}, null, { timeout: 15_000, polling: 200 });
+const reload = async () => { await page.evaluate(() => localStorage.removeItem('maydan:account:me')); await page.reload({ waitUntil: 'load' }); await enter(); await page.waitForTimeout(300); };
 
 await page.goto(`http://localhost:${WEB_PORT}/#/`, { waitUntil: 'load' }); await page.waitForTimeout(700);
-await page.evaluate(() => { const s = document.querySelector('.splash'); if (s) s.click(); }); await page.waitForTimeout(800);
+await enter(); await page.waitForTimeout(300);
 
 // ١) مجهول: 68 مقفولة، والنقر يفتح الجدار (بلا إشعار «دون اتصال»).
 let c = await lockedCounts(); check('anon locked 68/78', c.locked === 68 && c.total === 78, JSON.stringify(c));
@@ -131,7 +146,9 @@ await tap('العب'); await page.waitForTimeout(700); await shot('05-trial-payw
 const pw2 = await page.evaluate(() => { const s = document.querySelector('.paywall'); return { open: !!s, reason: s && s.dataset.reason }; });
 check('second play opens paywall reason=trial', pw2.open && pw2.reason === 'trial', JSON.stringify(pw2));
 // الرئيسية: شارات.
-await page.keyboard.press('Escape'); await go('#/'); await page.waitForTimeout(500); await shot('06-home-badges');
+// الحوار يبقى مسجّلًا كطبقة رجوع طوال حركة الإغلاق، فتغيير العنوان يدويًا خلالها يُعامَل
+// كرجوع يغلق الحوار؛ ننتظر خروجه قبل الانتقال كما يفعل اللاعب.
+await page.keyboard.press('Escape'); await page.waitForSelector('.paywall', { state: 'detached' }); await go('#/'); await page.waitForTimeout(500); await shot('06-home-badges');
 const badges = await page.evaluate(() => [...document.querySelectorAll('.card-badge')].map((b) => b.textContent.trim()));
 check('home badges present', badges.length >= 5, JSON.stringify(badges));
 

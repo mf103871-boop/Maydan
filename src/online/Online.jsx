@@ -10,13 +10,18 @@ import { useAccount } from '../shared/account/context.js';
 import { socialInterruption } from '../social/interruption.js';
 import { useLamma } from '../social/LammaProvider.jsx';
 import { socialJoinFallbackKey } from '../social/game-launch.js';
-import { AVATARS, ROUND_OPTIONS, ONLINE_GAMES, ROOM_CAPABILITIES, minimumOnlinePlayers, EXPIRY_WARNING, normalizeCode, validCode, resolveServerUrl, errorText, arabicNumber } from './shared.js';
+import { AVATARS, ROUND_OPTIONS, ONLINE_GAMES, ROOM_CAPABILITIES, ROOM_REACTIONS, reactionsAllowed, minimumOnlinePlayers, EXPIRY_WARNING, normalizeCode, validCode, resolveServerUrl, errorText, arabicNumber } from './shared.js';
 import { RoomClient, newCredentials, post, readSaved, save, clearSession, deviceId } from './client.js';
+import { reloadWithLatestVersion } from './update.js';
+import { isNativeShell } from '../shared/account/native.js';
 import { normalizeContentOptions } from '../games/fabraka/content.js';
 import { FabrakaSettings, FabrakaRules, FabrakaMatch, FABRAKA_MODES, fabrakaTopics } from './Fabraka.jsx';
 import { ErsomhaSettings, ErsomhaRules, ErsomhaLobbySettings, ErsomhaMatch } from './Ersomha.jsx';
 import { ErsomhaIcon } from '../games/ersomha/icon.jsx';
 import { normalizeErsomhaOptions, enoughErsomhaCategories } from '../games/ersomha/options.js';
+import { BadeehaSettings, BadeehaRules, BadeehaLobbyInfo, BadeehaMatch, normalizeBadeehaOptions, buildBadeehaRoom, badeehaReady } from './Badeeha.jsx';
+import { CATS } from '../data/categories/index.js';
+import { readBadeehaState } from '../games/badeeha/persistence.js';
 
 const SERVER = resolveServerUrl(typeof __MAYDAN_ROOMS_URL__ !== 'undefined' && __MAYDAN_ROOMS_URL__ || config.serverUrl, typeof location === 'undefined' ? '' : location.origin);
 const arabic = arabicNumber;
@@ -30,6 +35,7 @@ export function Entry({ initialCode = '', initialGame = 'meenfina', onJoined }) 
   const [game, setGame] = useState(ONLINE_GAMES[initialGame] ? initialGame : 'meenfina');
   const [fabrakaSettings, setFabrakaSettings] = useState(() => normalizeContentOptions(readSaved(SERVER, 'fabrakaSettings')));
   const [ersomhaSettings, setErsomhaSettings] = useState(() => normalizeErsomhaOptions(readSaved(SERVER, 'ersomhaSettings')));
+  const [badeehaSettings, setBadeehaSettings] = useState(() => normalizeBadeehaOptions(readSaved(SERVER, 'badeehaSettings')));
   const [name, setName] = useState(() => fallback?.name || readSaved(SERVER, 'profile')?.name || Array.from(account.user?.name?.normalize('NFKC').trim().replace(/\s+/g, ' ') || '').slice(0, 20).join(''));
   const [avatar, setAvatar] = useState(() => fallback?.avatar ?? readSaved(SERVER, 'profile')?.avatar ?? 0);
   const [code, setCode] = useState(initialCode);
@@ -39,7 +45,7 @@ export function Entry({ initialCode = '', initialGame = 'meenfina', onJoined }) 
   const credentialsRef = useRef(fallback?.session || null);
   const lastRoom = readSaved(SERVER, 'lastRoom');
   // The server rejects these settings with QUESTIONS; keep the button honest instead.
-  const topicsReady = mode !== 'create' || (game === 'fabraka' ? fabrakaTopics(fabrakaSettings).enough : game === 'ersomha' ? enoughErsomhaCategories(ersomhaSettings) : true);
+  const topicsReady = mode !== 'create' || (game === 'fabraka' ? fabrakaTopics(fabrakaSettings).enough : game === 'ersomha' ? enoughErsomhaCategories(ersomhaSettings) : game === 'badeeha' ? badeehaSettings.categories.length === 6 && badeehaReady(badeehaSettings).ok : true);
   async function submit(event) {
     event.preventDefault(); if (busy) return;
     setError('');
@@ -50,6 +56,15 @@ export function Entry({ initialCode = '', initialGame = 'meenfina', onJoined }) 
     // Waiting for friends never consumes the trial. It is marked only after
     // the authoritative server confirms the first actual match start.
     if (mode === 'create' && account.gameAccess(game) === 'locked') { account.openPaywall({ reason: 'room', game }); return; }
+    // جولة بَديهة تُبنى على جوال المضيف من بنكه وسجلّه، فتُفضَّل الأسئلة التي لم تُلعب بعد.
+    let badeehaRoom = null;
+    if (mode === 'create' && game === 'badeeha') {
+      // Saved selections can outlive a subscription or account. Recheck current
+      // access when creating, not only when the category was first selected.
+      const locked = badeehaSettings.categories.find((id) => account.lockedPack(id));
+      if (locked) { account.openPaywall({ reason: 'pack', pack: locked }); return; }
+      try { badeehaRoom = buildBadeehaRoom(badeehaSettings, readBadeehaState(CATS).history); } catch { setError('QUESTIONS'); return; }
+    }
     setBusy(true);
     try {
       const pendingKey = mode === 'create' ? (game === 'meenfina' ? 'pendingCreate' : `pendingCreate:${game}`) : `pendingJoin:${normalized}`;
@@ -59,7 +74,7 @@ export function Entry({ initialCode = '', initialGame = 'meenfina', onJoined }) 
       save(SERVER, pendingKey, session); // Persist before HTTP so a retry can reclaim the same seat.
       const result = await post(SERVER, mode === 'create' ? '/api/rooms' : `/api/rooms/${normalized}/join`, { ...session, name: name.trim(), avatar, rounds, capabilities: ROOM_CAPABILITIES,
         // معرّف الجهاز يحتسب الغرفة المجانية لغير المسجّل على الخادم؛ الدخول برمز لا يحتاجه.
-        ...(mode === 'create' ? { game, deviceId: deviceId(), ...(game === 'fabraka' ? { settings: fabrakaSettings } : game === 'ersomha' ? { settings: ersomhaSettings } : {}) } : {}) }, { headers: account.authHeaders() });
+        ...(mode === 'create' ? { game, deviceId: deviceId(), ...(game === 'fabraka' ? { settings: fabrakaSettings } : game === 'ersomha' ? { settings: ersomhaSettings } : game === 'badeeha' ? { settings: badeehaRoom } : {}) } : {}) }, { headers: account.authHeaders() });
       const stored = save(SERVER, result.code, session);
       if (account.user?.id) {
         save(SERVER, `roomOwner:${result.code}`, account.user.id);
@@ -82,7 +97,7 @@ export function Entry({ initialCode = '', initialGame = 'meenfina', onJoined }) 
       <div key={mode} className="online-intro-copy">
         <span className="online-label">{mode === 'create' ? ONLINE_GAMES[game].name : 'غرف ميدان'} · تجربة جماعية</span>
         <h1>اللّمّة وحدة، وكل واحد بجواله</h1>
-        <p>{mode === 'join' ? 'رمز واحد يجمعكم في نفس اللعبة' : game === 'ersomha' ? '٢–٨ لاعبين · رسم حي · تخمين معًا' : game === 'fabraka' ? '٢–٨ لاعبين · كتابة متزامنة · تصويت سري' : '٣–١٢ لاعبًا · تصويت سري · نفس السؤال للجميع'}</p>
+        <p>{mode === 'join' ? 'رمز واحد يجمعكم في نفس اللعبة' : game === 'ersomha' ? '٢–٨ لاعبين · رسم حي · تخمين معًا' : game === 'fabraka' ? '٢–٨ لاعبين · كتابة متزامنة · تصويت سري' : game === 'badeeha' ? '٢–٤ فرق · جوال لكل فريق · لوحة أسئلة ووسائل' : '٣–١٢ لاعبًا · تصويت سري · نفس السؤال للجميع'}</p>
       </div>
     </Card>
     {!SERVER && <p className="online-notice" role="status">الغرف غير متاحة بعد. تقدر تلعب ألعاب ميدان على جهاز واحد من الرئيسية.</p>}
@@ -99,8 +114,10 @@ export function Entry({ initialCode = '', initialGame = 'meenfina', onJoined }) 
         {mode === 'join' ? <label className="online-field">رمز الغرفة<input data-design-id="room-code" className="online-code-input" dir="ltr" inputMode="numeric" autoComplete="off" maxLength={8} value={code} onChange={(e) => { setCode(normalizeCode(e.target.value)); credentialsRef.current = null; }} placeholder="123456" required /></label>
           : game === 'fabraka' ? <FabrakaSettings value={fabrakaSettings} disabled={busy} onChange={(next) => { setFabrakaSettings(next); save(SERVER, 'fabrakaSettings', next); }} />
           : game === 'ersomha' ? <ErsomhaSettings value={ersomhaSettings} disabled={busy} onChange={(next) => { setErsomhaSettings(next); save(SERVER, 'ersomhaSettings', next); }} />
+          : game === 'badeeha' ? <BadeehaSettings value={badeehaSettings} disabled={busy} onChange={(next) => { setBadeehaSettings(next); save(SERVER, 'badeehaSettings', next); }} />
           : <label className="online-field">عدد الجولات<select data-design-id="round-count" value={rounds} onChange={(e) => setRounds(Number(e.target.value))}>{ROUND_OPTIONS.map((n) => <option key={n} value={n}>{arabic(n)} جولات</option>)}</select></label>}
         {mode === 'create' && game === 'fabraka' && <FabrakaRules />}
+        {mode === 'create' && game === 'badeeha' && <BadeehaRules />}
         {mode === 'create' && game === 'ersomha' && <><ErsomhaRules />{!account.user?.id && <p className="online-notice" role="status">ارسمها تحتاج حسابًا ليُحفظ تاريخ الأفكار عبر أجهزتك. <Button size="sm" onClick={() => navigate('/settings')}>تسجيل الدخول</Button></p>}</>}
         <ErrorNotice code={error} />
         <Button data-design-id="start" data-design-required="true" type="submit" variant="primary" size="lg" full disabled={!SERVER || busy || !topicsReady} loading={busy}>{mode === 'create' ? 'أنشئ الغرفة' : 'ادخل الغرفة'}</Button>
@@ -155,6 +172,7 @@ export function Lobby({ state, me, isHost, disabled, act }) {
     </Card>
     {state.game === 'fabraka' ? <Card className="stack"><h2>فبركة · {FABRAKA_MODES[state.settings.mode]}</h2><p>{arabic(state.rounds)} جولات · {state.settings.writeSeconds ? `${arabic(state.settings.writeSeconds)} ثانية للكتابة` : 'كتابة براحتنا'} · {state.settings.discussionSeconds ? `${arabic(state.settings.discussionSeconds)} ثانية للنقاش` : 'بدون نقاش'} · ٣٠ ثانية للتصويت.</p><FabrakaRules /></Card>
       : state.game === 'ersomha' ? <ErsomhaLobbySettings state={state} isHost={isHost} disabled={disabled} act={act} />
+      : state.game === 'badeeha' ? <BadeehaLobbyInfo state={state} />
       : <p className="online-footnote">{arabic(state.rounds)} جولات · ٣٠ ثانية لكل تصويت · الأعلى أصواتًا يكسب نقطة، والتعادل يحتسب للجميع.</p>}
     {kickTarget && <ConfirmModal title={`تزيل ${kickTarget.name}؟`} message="يخرج من الغرفة ولا يستطيع العودة إليها بهذا الرمز." confirmLabel="إزالة" cancelLabel="إبقاؤه" onConfirm={() => { const target = kickTarget; setKickTarget(null); act('kick', { targetId: target.id }); }} onCancel={() => setKickTarget(null)} />}
   </section>;
@@ -165,7 +183,7 @@ function minutesLabel(n) {
   if (n === 2) return 'دقيقتين';
   return `${arabic(n)} ${n <= 10 ? 'دقائق' : 'دقيقة'}`;
 }
-export function Match({ state, disabled, isHost, act, clockOffset }) {
+export function Match({ state, disabled, isHost, act, clockOffset, spectating = false }) {
   const platform = usePlatform();
   const [now, setNow] = useState(Date.now());
   const [choice, setChoice] = useState(undefined);
@@ -202,7 +220,7 @@ export function Match({ state, disabled, isHost, act, clockOffset }) {
     <div className="row-between"><b>الجولة {arabic(state.round)} من {arabic(state.rounds)}</b>{state.phase === 'vote' && <span data-design-id="timer" className={`online-timer ${seconds <= 5 ? 'urgent' : ''}`} aria-label={`متبقي ${seconds} ثانية`}><b key={seconds <= 5 ? seconds : 'n'}><bdi>{arabic(seconds)}</bdi></b> ث</span>}</div>
     <Card data-design-id="question" className="online-question" key={state.round}><ClayStage aria-hidden="true"><GameArtwork game="meenfina" /></ClayStage><h1>{state.question?.text}</h1></Card>
     {state.phase === 'vote' ? <Card data-design-id="vote-panel" className="stack">
-      {state.myVote.submitted ? <div className="online-voted" role="status"><strong>وصل تصويتك ✓</strong><p>اختيارك: {state.myVote.targetId === null ? 'لا أحد' : players.find((p) => p.id === state.myVote.targetId)?.name}. بانتظار الباقي…</p></div> : <>
+      {spectating ? <div className="online-voted" role="status"><strong>تتفرج على هذه الجولة</strong><p>اللاعبون يصوّتون الآن، وتشارك معهم من المباراة القادمة.</p></div> : state.myVote.submitted ? <div className="online-voted" role="status"><strong>وصل تصويتك ✓</strong><p>اختيارك: {state.myVote.targetId === null ? 'لا أحد' : players.find((p) => p.id === state.myVote.targetId)?.name}. بانتظار الباقي…</p></div> : <>
         <p className="online-footnote">اختَر الشخص الأقرب للعبارة. تقدر تختار نفسك. بعد التأكيد لا يمكن تغيير التصويت.</p>
         <div data-design-id="options-list" className="online-vote-grid" role="group" aria-label="اختر لاعبًا">{players.map((p, i) => <button data-design-id="option" className={`online-vote-choice ${choice === p.id ? 'selected' : ''}`} type="button" key={p.id} style={{ '--i': i }} disabled={disabled || seconds === 0} aria-pressed={choice === p.id} onClick={() => setChoice(p.id)}><ClayStage className="clay-static" aria-hidden="true"><Avatar index={p.avatar} /></ClayStage><b>{p.name}</b>{p.left && <small>غادر الجولة</small>}</button>)}</div>
         <Button data-design-id="abstain" aria-pressed={choice === null} variant={choice === null ? 'secondary' : 'ghost'} disabled={disabled || seconds === 0} onClick={() => setChoice(null)}>لا أحد</Button>
@@ -224,7 +242,7 @@ export function Match({ state, disabled, isHost, act, clockOffset }) {
 export function RoomChrome({ state, code, status, error, expiring = false, msLeft = Infinity, dropped = [], disabled = false, onExit, onKick, onReconnect, children }) {
   return <div data-design-screen="online.chrome" className="stack online-room-chrome">
     <TopBar data-design-id="topbar" title={state ? ONLINE_GAMES[state.game || 'meenfina']?.name || 'غرف ميدان' : 'غرف ميدان'} eyebrow={`غرفة ${code}`} end={<span data-design-id="room-actions" className="online-room-actions">{state?.game === 'ersomha' && <span className="online-social-slot" data-social-game-launcher />}<Button data-design-id="exit" data-design-required="true" size="sm" onClick={onExit}>خروج</Button></span>} />
-    <p data-design-id="connection" data-design-required="true" className={`online-connection ${status === 'connected' ? 'connected' : ''}`} role="status">{status === 'connected' ? 'متصل · كل واحد بجواله' : status === 'ended' ? 'انتهى الاتصال بالغرفة' : status === 'replaced' ? 'الجلسة مفتوحة في تبويب آخر' : 'جاري الاتصال بالغرفة…'}</p>
+    <p data-design-id="connection" data-design-required="true" className={`online-connection ${status === 'connected' ? 'connected' : ''}`} role="status">{status === 'connected' ? 'متصل · كل واحد بجواله' : status === 'ended' ? 'انتهى الاتصال بالغرفة' : status === 'outdated' ? 'نسخة اللعبة أقدم من الغرفة' : status === 'replaced' ? 'الجلسة مفتوحة في تبويب آخر' : 'جاري الاتصال بالغرفة…'}</p>
     <ErrorNotice code={error} />
     {state?.hostMissingSince && <p className="online-notice is-host-missing">انقطع اتصال المضيف. تنتقل الإدارة للاعب متصل بعد ٢٠ ثانية إذا لم يعد.</p>}
     {expiring && <p className="online-notice" role="status">تنتهي الغرفة بعد {minutesLabel(Math.max(1, Math.ceil(msLeft / 60_000)))}. أكملوا الجولة الحالية أو أنشئوا غرفة جديدة بعدها.</p>}
@@ -232,6 +250,47 @@ export function RoomChrome({ state, code, status, error, expiring = false, msLef
     {['replaced', 'reconnecting', 'disconnected'].includes(status) && <Button data-design-id="reconnect" data-design-required="true" onClick={onReconnect}>إعادة الاتصال</Button>}
     {children}
   </div>;
+}
+
+// تفاعلات سريعة: طقم رموز ثابت، وكل تفاعل يطفو باسم صاحبه ثم يختفي. لا نص حر ولا حفظ؛
+// الخادم يحدّ كل مقعد بدفعة صغيرة، والزر يهدأ لحظة إن بلغها اللاعب.
+export function RoomReactions({ client, state, me, status }) {
+  const [floating, setFloating] = useState([]);
+  const [resting, setResting] = useState(false);
+  const membersRef = useRef([]); membersRef.current = state?.members || [];
+  const meId = me?.id;
+  useEffect(() => {
+    if (!client) return undefined;
+    const timers = new Set();
+    const unsubscribe = client.subscribeReactions((event) => {
+      const sender = membersRef.current.find((m) => m.id === event.seatId && !m.left);
+      if (!sender || !ROOM_REACTIONS.includes(event.emoji)) return;
+      const item = { key: event.id || `${event.seatId}-${event.at}`, emoji: event.emoji, name: event.seatId === meId ? 'أنت' : sender.name, lane: Math.floor(Math.random() * 5) };
+      setFloating((list) => [...list.filter((x) => x.key !== item.key).slice(-7), item]);
+      const timer = setTimeout(() => { timers.delete(timer); setFloating((list) => list.filter((x) => x.key !== item.key)); }, 2600);
+      timers.add(timer);
+    });
+    return () => { unsubscribe(); timers.forEach(clearTimeout); };
+  }, [client, meId]);
+  const restTimer = useRef(0);
+  useEffect(() => () => clearTimeout(restTimer.current), []);
+  if (!state || !me || !client) return null;
+  const allowed = reactionsAllowed(state, me.id);
+  const send = async (emoji) => {
+    try { await client.react(emoji); }
+    catch (error) {
+      if (error?.code !== 'RATE_LIMIT') return;
+      setResting(true); clearTimeout(restTimer.current); restTimer.current = setTimeout(() => setResting(false), 1500);
+    }
+  };
+  return <>
+    <div className="room-reactions" role="group" aria-label={allowed ? 'تفاعل سريع' : 'التفاعل متوقف خلال دورك في الرسم'}>
+      {ROOM_REACTIONS.map((emoji) => <button key={emoji} type="button" className="room-reaction" disabled={status !== 'connected' || !allowed || resting} aria-label={`أرسل ${emoji}`} onClick={() => send(emoji)}>{emoji}</button>)}
+    </div>
+    <div className="room-reaction-layer" aria-live="polite">
+      {floating.map((item) => <span key={item.key} className={`room-reaction-float lane-${item.lane}`}><b>{item.emoji}</b><small>{item.name}</small></span>)}
+    </div>
+  </>;
 }
 
 function ConnectedRoom({ code, session, stored, onLeft }) {
@@ -243,6 +302,7 @@ function ConnectedRoom({ code, session, stored, onLeft }) {
   const [error, setError] = useState(stored ? '' : 'STORAGE');
   const [busy, setBusy] = useState(false);
   const [exitTarget, setExitTarget] = useState(null);
+  const [updating, setUpdating] = useState(false);
   const clientRef = useRef(null);
   const busyRef = useRef(false);
   const trialMarked = useRef(false);
@@ -307,6 +367,9 @@ function ConnectedRoom({ code, session, stored, onLeft }) {
   }
   const me = state?.members.find((m) => m.id === session.id);
   const isHost = state?.hostId === session.id;
+  // دخل بعد بداية المباراة: يتفرج من خارج participants ويلعب من المباراة التالية.
+  const spectating = Boolean(state && me && state.phase !== 'lobby' && !state.participants.includes(me.id));
+  const watchers = state && state.phase !== 'lobby' ? state.members.filter((m) => !m.left && !state.participants.includes(m.id)) : [];
   const disabled = busy || status !== 'connected';
   // تنبيه قبل انتهاء عمر الغرفة (يُمدَّد مع كل مباراة حتى ست ساعات) بدل قطع الجولة بلا سابق إنذار.
   const [clock, setClock] = useState(() => Date.now());
@@ -316,15 +379,28 @@ function ConnectedRoom({ code, session, stored, onLeft }) {
   // مقاعد انقطعت أثناء المباراة: الجولة لا تنتظرها بعد مهلتها، ويستطيع المضيف إزالتها.
   const dropped = state && isHost && state.phase !== 'lobby' ? state.members.filter((m) => state.participants.includes(m.id) && !m.left && !m.connected) : [];
   if (ownershipMismatch) return <Card role="status">نحمي أفكار حسابك… سجّل الدخول إلى حساب اللاعب للعودة.</Card>;
-  return <RoomChrome state={state} code={code} status={status} error={error} expiring={expiring} msLeft={msLeft} dropped={dropped} disabled={disabled}
+  // نسخة الغرف على الخادم أحدث من هذه الصفحة: المقعد يبقى محفوظًا، والويب يحدّث ويعود إليه
+  // تلقائيًا؛ تطبيق iPhone يحمل صفحته داخله فيحتاج تحديثًا من المتجر.
+  const native = isNativeShell();
+  const leaveKeepingSeat = () => { setExitGuard(null); onLeft(); navigate('/online', { replace: true }); };
+  const outdated = status === 'outdated' ? <Card className="stack">
+    {!native && <Button data-design-id="reconnect" data-design-required="true" variant="accent" full loading={updating} disabled={updating}
+      onClick={() => { setUpdating(true); setExitGuard(null); reloadWithLatestVersion(); }}>حدّث وتابع في الغرفة</Button>}
+    <Button full variant="ghost" disabled={updating} onClick={leaveKeepingSeat}>العودة إلى الغرف</Button>
+  </Card> : null;
+  return <RoomChrome state={state} code={code} status={status} error={error === 'ROOM_OUTDATED' && native ? 'ROOM_OUTDATED_APP' : error} expiring={expiring} msLeft={msLeft} dropped={dropped} disabled={disabled}
     onExit={() => setExitTarget(state?.game && state.game !== 'meenfina' ? `/online/${state.game}` : '/online')}
     onKick={targetId => act('kick', { targetId })}
     onReconnect={() => { clientRef.current.stop(); clientRef.current.start(); }}>
-    {status === 'ended' ? <Button full onClick={() => { clearSession(SERVER, code); setExitGuard(null); onLeft(); navigate('/online', { replace: true }); }}>العودة إلى الغرف</Button>
-      : state && (state.phase === 'lobby' ? <Lobby state={state} me={me} isHost={isHost} disabled={disabled} act={act} /> : state.game === 'fabraka'
-        ? <FabrakaMatch state={state} me={me} disabled={disabled} isHost={isHost} act={act} clockOffset={clientRef.current?.clockOffset || 0} />
+    {outdated || (status === 'ended' ? <Button full onClick={() => { clearSession(SERVER, code); setExitGuard(null); onLeft(); navigate('/online', { replace: true }); }}>العودة إلى الغرف</Button>
+      : state && <>{spectating && <p className="online-notice" role="status">انضممت بعد بداية المباراة: تتفرج الآن، وتلعب معهم من المباراة القادمة.</p>}{state.phase === 'lobby' ? <Lobby state={state} me={me} isHost={isHost} disabled={disabled} act={act} /> : state.game === 'fabraka'
+        ? <FabrakaMatch state={state} me={me} disabled={disabled} isHost={isHost} act={act} clockOffset={clientRef.current?.clockOffset || 0} spectating={spectating} />
         : state.game === 'ersomha' ? <ErsomhaMatch state={state} me={me} disabled={disabled} isHost={isHost} act={act} client={clientRef.current} status={status} clockOffset={clientRef.current?.clockOffset || 0} drawerReady={!lamma?.activeCall || (lamma.activeCall._ownerId === account.user?.id && lamma.media?.userId === account.user?.id && lamma.media?.muted === true)} onReport={['draw', 'result'].includes(state.phase) ? reportDrawing : undefined} />
-        : <Match state={state} disabled={disabled} isHost={isHost} act={act} clockOffset={clientRef.current?.clockOffset || 0} />)}
+        : state.game === 'badeeha' ? <BadeehaMatch state={state} me={me} disabled={disabled} isHost={isHost} act={act} clockOffset={clientRef.current?.clockOffset || 0} spectating={spectating} />
+        : <Match state={state} disabled={disabled} isHost={isHost} act={act} clockOffset={clientRef.current?.clockOffset || 0} spectating={spectating} />}</>)}
+    {watchers.length > 0 && !outdated && status !== 'ended' && <Card className="stack online-watchers"><p className="online-footnote">يتفرجون الآن ويلعبون من المباراة القادمة: {watchers.map((m) => m.name).join('، ')}</p>
+      {isHost && watchers.filter((m) => m.id !== me?.id).map((m) => <Button key={m.id} size="sm" variant="ghost" disabled={disabled} onClick={() => act('kick', { targetId: m.id })}>إزالة {m.name}</Button>)}</Card>}
+    {!outdated && status !== 'ended' && <RoomReactions client={clientRef.current} state={state} me={me} status={status} />}
     {exitTarget && <ConfirmModal title="تطلع من الغرفة؟" message="مغادرتك تنهي مقعدك الحالي. إذا كنت المضيف تنتقل الإدارة للاعب متصل." confirmLabel="الخروج" cancelLabel="خلّيني ألعب" onConfirm={leave} onCancel={() => setExitTarget(null)} />}
   </RoomChrome>;
 }

@@ -9,10 +9,10 @@
 # dist/ as-is. Keep it identical to CONTENT_SECURITY_POLICY in
 # server/full-worker.mjs so the two paths cannot drift.
 #
-# The page is one self-contained document: inline <script> and <style> (hence
-# 'unsafe-inline'), fonts embedded as data: URIs, images and audio from this
-# origin plus data:/blob:, question media that may be hosted elsewhere over
-# https, and a rooms WebSocket that may live on another host (wss:). Paddle.js
+# The page is one document with inline <script> and <style> (hence
+# 'unsafe-inline'), its fonts and brand art as files under /assets/brand/,
+# images and audio from this origin plus data:/blob:, question media that may be
+# hosted elsewhere over https, and a rooms WebSocket that may live on another host (wss:). Paddle.js
 # (web checkout only) is the single allowed third-party script, and its checkout
 # renders in an iframe from buy.paddle.com / sandbox-buy.paddle.com.
 /*
@@ -21,12 +21,14 @@
   X-Frame-Options: DENY
   Referrer-Policy: same-origin
 
-# Versioned media (?v=<hash of the file>) and the audio files (named after their
-# content hash) never change under the same URL; the document itself is revalidated
-# on every launch.
+# Versioned media (?v=<hash of the file>), the audio files and the brand art and
+# fonts (named after their content hash) never change under the same URL; the
+# document itself is revalidated on every launch.
 /media/*
   Cache-Control: public, max-age=31536000, immutable
 /audio/*
+  Cache-Control: public, max-age=31536000, immutable
+/assets/brand/*
   Cache-Control: public, max-age=31536000, immutable
 /index.html
   Cache-Control: no-cache

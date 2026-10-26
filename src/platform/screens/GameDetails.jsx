@@ -30,7 +30,7 @@ export function GameDetails({ id }) {
   const Icon = game.icon;
   const onlineOnly = game.onlineOnly === true;
   const modeLabel = game.id === 'ersomha' ? 'تعاون لشخصين · منافسة من ثلاثة' : game.players.mode === 'teams' ? 'فرق' : game.players.mode === 'both' ? 'فردي أو فرق' : 'فردي';
-  const online = ['meenfina', 'fabraka', 'ersomha'].includes(game.id);
+  const online = ['meenfina', 'fabraka', 'ersomha', 'badeeha'].includes(game.id);
   const factDelay = (i) => ({ '--delay': `${250 + i * 50}ms` });
   // القفل: بَديهة تُلعب دائمًا (القفل في حزمها) وبقية الألعاب مباراة واحدة مجانية ثم «ميدان بلس».
   const packs = game.id === 'badeeha';
@@ -63,7 +63,7 @@ export function GameDetails({ id }) {
       </div>
       <div data-design-id="actions" className="setup-sticky stack">
         {/* الزر الرئيسي «مسلّح» (is-armed): تنفّس ×3 ووهج ×2 من brand.css */}
-        {online && <Button data-design-id="online" variant="accent" size="lg" full className="is-armed" onClick={() => navigate(`/online/${game.id}`)}>{['fabraka', 'ersomha'].includes(game.id) ? 'العب أونلاين · لشخصين أو أكثر' : 'العب من كل جوال · غرف جماعية'}</Button>}
+        {online && <Button data-design-id="online" variant="accent" size="lg" full className="is-armed" onClick={() => navigate(`/online/${game.id}`)}>{['fabraka', 'ersomha'].includes(game.id) ? 'العب أونلاين · لشخصين أو أكثر' : game.id === 'badeeha' ? 'العب أونلاين · جوال لكل فريق' : 'العب من كل جوال · غرف جماعية'}</Button>}
         {!onlineOnly && <Button data-design-id="local" variant={online ? 'secondary' : 'accent'} size="lg" full className={online ? '' : 'is-armed'} icon={<IconPlay />} onClick={play}>{online ? 'العب على جهاز واحد' : 'العب'}</Button>}
       </div>
     </Screen>

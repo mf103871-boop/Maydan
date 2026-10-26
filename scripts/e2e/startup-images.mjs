@@ -144,7 +144,10 @@ try {
   server = http.createServer(async (req, res) => {
     try {
       const parsed = new URL(req.url, 'http://localhost'), key = parsed.pathname + parsed.search;
-      const isImage = imagePath(parsed.href);
+      // The brand art and fonts under /assets/brand/ belong to the app shell (they were
+      // data: URLs inside the document until they became hashed files); the held
+      // responses model slow question images.
+      const isImage = imagePath(parsed.href) && !parsed.pathname.startsWith('/assets/brand/');
       requests.push({ scenario, key, image: isImage });
       if (isImage && gateEnabled && !allowedFirst.has(key)) await gate;
       if (res.destroyed) return;

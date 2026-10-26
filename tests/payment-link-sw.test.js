@@ -17,3 +17,14 @@ test('payment and public policy pages bypass the game cache and cannot replace i
     assert.equal(intercepted, false, pathname);
   }
 });
+
+test('the studio short links reach the Worker redirect instead of the cached game document', async () => {
+  const handlers = {};
+  const script = await readFile(new URL('../public/sw.js', import.meta.url), 'utf8');
+  vm.runInNewContext(script, { URL, self: { location: { origin: 'https://maydan.example' }, addEventListener(name, handler) { handlers[name] = handler; } } });
+  for (const pathname of ['/studio', '/studio/', '/studio/preview', '/studio/play/']) {
+    let intercepted = false;
+    handlers.fetch({ request: { method: 'GET', mode: 'navigate', url: `https://maydan.example${pathname}` }, respondWith() { intercepted = true; } });
+    assert.equal(intercepted, false, pathname);
+  }
+});

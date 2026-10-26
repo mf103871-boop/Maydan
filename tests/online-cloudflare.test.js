@@ -37,6 +37,11 @@ test('Cloudflare workerd: SQLite transactions, WebSocket authentication and five
     }
     await until(() => clients.every((c) => c.state?.members.every((m) => m.connected)), 'authenticated sockets');
     await Promise.all(clients.slice(1).map((c) => c.command('ready', { ready: true })));
+    // Hibernatable sockets: the reaction bucket lives in the socket attachment.
+    const reactions = clients.map(() => []);
+    clients.forEach((c, index) => c.subscribeReactions((event) => reactions[index].push(event.emoji)));
+    await clients[1].react('🔥');
+    await until(() => reactions.every((list) => list.join() === '🔥'), 'reaction broadcast under workerd');
     await clients[0].command('start');
     for (let round = 1; round <= 5; round++) {
       await until(() => clients.every((c) => c.state.phase === 'vote' && c.state.round === round), `round ${round}`);

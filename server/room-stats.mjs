@@ -4,7 +4,10 @@ import { fail } from './room-model.mjs';
 // Room tokens identify seats; they are never treated as account credentials.
 export function bindSeatAccount(room, seatId, accountUserId) {
   const seat = room.members.find((m) => m.id === seatId && !m.left);
-  if (!seat || room.phase !== 'lobby') return;
+  // Match participants remain frozen. A new spectator still needs its verified
+  // account now, or it would play the next match anonymously without rejoining.
+  const watcher = room.participants?.length > 0 && !room.participants.includes(seatId);
+  if (!seat || (room.phase !== 'lobby' && !watcher)) return;
   const userId = typeof accountUserId === 'string' ? accountUserId : null;
   if (userId && room.members.some((m) => !m.left && m.id !== seatId && m.accountUserId === userId)) fail('ACCOUNT_IN_ROOM', 409);
   seat.accountUserId = userId;
@@ -19,7 +22,10 @@ export function prepareRoomStats(previous, candidate, now = Date.now()) {
       accounts: Object.fromEntries(candidate.participants.map((id) => [id, candidate.members.find((m) => m.id === id)?.accountUserId || null])),
     };
   }
-  if (candidate.phase !== 'over' || previous?.phase !== 'result' || candidate.reason || candidate.round !== candidate.rounds || !candidate.statsMatch) return [];
+  // Badeeha's last question ends from its reveal (the host's verdict), the others from a result.
+  const finalPhase = candidate.game === 'badeeha' ? 'reveal' : 'result';
+  if (candidate.phase !== 'over' || previous?.phase !== finalPhase || candidate.reason || candidate.round !== candidate.rounds || !candidate.statsMatch) return [];
+  if (candidate.game === 'badeeha' && Object.keys(candidate.used || {}).length < candidate.rounds) return [];
   // An abandoned Fabraka round is not a completed competition.
   if (candidate.game === 'fabraka' && candidate.history.length < candidate.rounds) return [];
   if (candidate.game === 'ersomha' && (candidate.history.length < candidate.rounds || candidate.history.some(turn => !turn.completed))) return [];
@@ -31,7 +37,7 @@ export function prepareRoomStats(previous, candidate, now = Date.now()) {
     const userId = candidate.statsMatch.accounts[id];
     if (!userId || awarded.has(userId)) return [];
     awarded.add(userId);
-    const competitive = candidate.game === 'fabraka' || candidate.game === 'ersomha' && candidate.settings.mode === 'competitive';
+    const competitive = candidate.game === 'fabraka' || candidate.game === 'badeeha' || candidate.game === 'ersomha' && candidate.settings.mode === 'competitive';
     const leader = competitive && leaders.includes(id);
     return [{ userId, eventId: candidate.statsMatch.eventId, game: candidate.game || 'meenfina',
       won: leader && leaders.length === 1, draw: leader && leaders.length > 1, finishedAt: now }];
