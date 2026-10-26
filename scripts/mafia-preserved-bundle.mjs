@@ -52,34 +52,39 @@ export function privateBankOverlay(manifest, { repositoryRoot = ROOT, loaded = n
   assert.equal(manifest.publicUploadAllowed, false);
   const pinned = new Map(manifest.modules.map(item => [item.file, item.sha256]));
   assert.equal(pinned.size, manifest.modules.length, 'Duplicate private source entries.');
-  return { name: 'mafia-preserve-private-live-bank', setup(builder) {
+  return { name: 'mafia-preserve-private-live-bank', async setup(builder) {
     assert.equal(builder.initialOptions.write, false, 'Private server bundles must stay in memory for sealed storage.');
     assert.equal(builder.initialOptions.outdir, undefined); assert.equal(builder.initialOptions.outfile, undefined);
     assert.ok(builder.initialOptions.entryPoints.every(entry => ['server/full-worker.mjs', 'server/worker.mjs'].includes(entry)), 'Private overlay is restricted to the two server entrypoints.');
+    // esbuild resolves symlinks by default. In particular macOS temp paths may
+    // arrive as /private/var even when the caller used /var. Compare physical
+    // paths on both sides, without relaxing the pinned relative file allowlist.
+    const repo = await realpath(repositoryRoot);
     builder.onLoad({ filter: /[\\/]server[\\/]/ }, async args => {
-      const file = relative(repositoryRoot, args.path);
+      const sourcePath = await realpath(args.path), file = relative(repo, sourcePath);
       if (!PRIVATE_FILE.test(file)) return;
       assert.ok(pinned.has(file), 'A private bank runtime dependency is not in the frozen manifest.');
       const bytes = await readFile(path.join(manifest.sourceRoot, file));
       assert.equal(preservedHash(bytes), pinned.get(file), 'Private source changed after review.');
       loaded.add(file);
-      return { contents: bytes.toString('utf8'), loader: 'js', resolveDir: path.dirname(args.path) };
+      return { contents: bytes.toString('utf8'), loader: 'js', resolveDir: path.dirname(sourcePath) };
     });
   } };
 }
 
 export async function bundlePreservedMafiaWorker(name, manifest, { repositoryRoot = ROOT } = {}) {
   assert.ok(WORKERS.includes(name));
+  const repo = await realpath(repositoryRoot);
   const loaded = new Set();
-  const compiled = await build({ absWorkingDir: repositoryRoot, entryPoints: [name === 'maydan-game' ? 'server/full-worker.mjs' : 'server/worker.mjs'],
+  const compiled = await build({ absWorkingDir: repo, entryPoints: [name === 'maydan-game' ? 'server/full-worker.mjs' : 'server/worker.mjs'],
     bundle: true, write: false, metafile: true, platform: 'browser', format: 'esm', target: 'es2022', minify: false, sourcemap: false, logLevel: 'silent',
-    plugins: [privateBankOverlay(manifest, { repositoryRoot, loaded })] });
+    plugins: [privateBankOverlay(manifest, { repositoryRoot: repo, loaded })] });
   assert.equal(compiled.outputFiles.length, 1); assert.deepEqual([...loaded].sort(), manifest.modules.map(item => item.file).sort());
   const bytes = Buffer.from(compiled.outputFiles[0].contents), sourceInputs = {};
   const privateFiles = new Set(manifest.modules.map(item => item.file));
   for (const file of Object.keys(compiled.metafile.inputs)) {
     assert.ok(!file.startsWith('../') && !path.isAbsolute(file), 'Source dependency escaped the checkout.');
-    sourceInputs[file] = privateFiles.has(file) ? manifest.modules.find(item => item.file === file).sha256 : preservedHash(await readFile(path.join(repositoryRoot, file)));
+    sourceInputs[file] = privateFiles.has(file) ? manifest.modules.find(item => item.file === file).sha256 : preservedHash(await readFile(path.join(repo, file)));
   }
   return { bytes, sha256: preservedHash(bytes), byteLength: bytes.length, sourceInputs, sourceInputsSHA256: preservedHash(canonical(sourceInputs)), privateBank: { semanticSHA256: manifest.semanticSHA256, sourceManifestSHA256: manifest.sourceManifestSHA256, catalog: manifest.catalog, active: manifest.active, retired: manifest.retired, version: manifest.version }, containsPrivateContent: true };
 }

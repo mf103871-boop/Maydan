@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { mkdtemp, mkdir, writeFile, readFile, rm } from 'node:fs/promises';
+import { mkdtemp, mkdir, writeFile, readFile, rm, symlink } from 'node:fs/promises';
 import path from 'node:path';
 import os from 'node:os';
 import { build } from 'esbuild';
@@ -45,6 +45,30 @@ test('private bank verification refuses source inside the public checkout, inven
     await assert.rejects(privateBankManifest(f.repo, f.expected, { repositoryRoot: f.repo }), /outside/);
     await assert.rejects(privateBankManifest(f.source, { ...f.expected, semanticSHA256: 'a'.repeat(64) }, { repositoryRoot: f.repo }), /semantic/);
     await assert.rejects(privateBankManifest(f.source, { ...f.expected, counts: { ...f.expected.counts, active: 2 } }, { repositoryRoot: f.repo }), /inventory/);
+  } finally { await f.close(); }
+});
+
+test('directory aliases preserve exact private overlays and still reject changed source after review', async () => {
+  const f = await fixture();
+  try {
+    // A Windows junction needs no symbolic-link privilege. POSIX uses a real
+    // symlink, reproducing macOS /var -> /private/var with any temporary root.
+    const alias = path.join(f.root, 'repository-alias');
+    await symlink(f.repo, alias, process.platform === 'win32' ? 'junction' : 'dir');
+    await writeFile(path.join(f.repo, 'server/data/ersomha/fixture.mjs'), 'export default [{id:"public-fixture-only"}];');
+    const manifest = await privateBankManifest(f.source, f.expected, { repositoryRoot: alias });
+    const direct = await bundlePreservedMafiaWorker('maydan-game', manifest, { repositoryRoot: f.repo });
+    const linked = await bundlePreservedMafiaWorker('maydan-game', manifest, { repositoryRoot: alias });
+    assert.equal(linked.sha256, direct.sha256); assert.equal(linked.sourceInputsSHA256, direct.sourceInputsSHA256);
+    assert.ok(linked.bytes.includes(Buffer.from('synthetic-fixture-only')));
+    assert.equal(linked.bytes.includes(Buffer.from('public-fixture-only')), false);
+    const loaded = new Set();
+    await build({ absWorkingDir: alias, entryPoints: ['server/worker.mjs'], bundle: true, write: false, logLevel: 'silent',
+      plugins: [privateBankOverlay(manifest, { repositoryRoot: alias, loaded })] });
+    assert.deepEqual([...loaded].sort(), manifest.modules.map(item => item.file).sort());
+    await assert.rejects(privateBankManifest(alias, f.expected, { repositoryRoot: f.repo }), /outside/);
+    await writeFile(path.join(f.source, 'server/data/ersomha/fixture.mjs'), 'export default [];');
+    await assert.rejects(bundlePreservedMafiaWorker('maydan-game', manifest, { repositoryRoot: alias }), /changed after review/);
   } finally { await f.close(); }
 });
 
