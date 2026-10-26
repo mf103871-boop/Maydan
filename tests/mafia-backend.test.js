@@ -17,8 +17,8 @@ async function setup(t,{enabled=true}={}) {
   const clients=[],provider=[],nativeFetch=globalThis.fetch;let failRemovals=false;
   t.mock.method(globalThis,'fetch',async(url,options)=>{if(String(url).includes('mafia-tests.livekit.cloud')){const body=JSON.parse(options.body);provider.push({method:new URL(url).pathname.split('/').at(-1),body});return Response.json({}, {status:failRemovals&&String(url).endsWith('/RemoveParticipant')?503:200});}return nativeFetch(url,options);});
   t.after(async()=>{clients.forEach(c=>c.stop());await app.close();});
-  async function user(n){const u=await createUser(app.env,{name:`لاعب ${n}`,email:`${crypto.randomUUID()}@example.test`}),s=await issueSession(app.env,u.id);return {...newCredentials(),accountId:u.id,authorization:s.token,name:u.name,avatar:n%4,game:'mafia',capabilities:{mafia:1},settings:{mode:'classic',capacity:8,visibility:'public'}};}
-  async function api(p,path,body,method=body===undefined?'GET':'POST'){if(path.endsWith('/voice')&&body)body={voiceSessionId:`fixture-${body.deviceId}`,operation:'join',...body};const r=await fetch(app.url+path,{method,headers:{origin:ORIGIN,...(p?.authorization?{authorization:`Bearer ${p.authorization}`}:{ }),...(body===undefined?{}:{'content-type':'application/json'})},...(body===undefined?{}:{body:JSON.stringify(body)})});return {status:r.status,body:await r.json()};}
+  async function user(n){const u=await createUser(app.env,{name:`لاعب ${n}`,email:`${crypto.randomUUID()}@example.test`}),s=await issueSession(app.env,u.id);return {...newCredentials(),accountId:u.id,sessionId:s.id,authorization:s.token,name:u.name,avatar:n%4,game:'mafia',capabilities:{mafia:1},settings:{mode:'classic',capacity:8,visibility:'public'}};}
+  async function api(p,path,body,method=body===undefined?'GET':'POST'){if(path.endsWith('/voice')&&body)body={voiceSessionId:`fixture-${body.deviceId}`,operation:'join',...body};const r=await fetch(app.url+path,{method,headers:{origin:ORIGIN,...(p?.authorization?{authorization:`Bearer ${p.authorization}`}:{ }),...(body===undefined?{}:{'content-type':'application/json'})},...(body===undefined?{}:{body:JSON.stringify(body)})});return {status:r.status,body:r.status===204?null:await r.json()};}
   async function group(count=6){const people=[];for(let n=0;n<count;n++)people.push(await user(n));if(count>=9)people[0].settings={mode:'shadow',capacity:count,visibility:'public'};
     const created=await api(people[0],'/api/rooms',people[0]);assert.equal(created.status,201,JSON.stringify(created));const code=created.body.code;
     for(const p of people.slice(1))assert.equal((await api(p,`/api/rooms/${code}/join`,p)).status,200);
@@ -138,6 +138,36 @@ test('Mafia start revokes departed social grants until provider cleanup is prove
   assert.ok(revoked.every(p=>p.body.revoke_token_ts>second));
   assert.equal(h.app.rooms.get(g.code).instance.room.phase,'role');
 });
+test('unchanged private commands skip metadata writes while retaining both live session checks',async t=>{
+  const h=await setup(t),g=await h.group();await g.clients[0].command('start');await h.phase(g.code);await h.phase(g.code);
+  await until(()=>g.clients.every(c=>c.state.phase==='night'));
+  const index=g.clients.findIndex(c=>c.state.you.faction==='mafia'),actor=g.clients[index],target=g.people.find(p=>p.id!==g.people[index].id).id;
+  const prepare=h.app.env.DB.prepare.bind(h.app.env.DB),sql=[];t.mock.method(h.app.env.DB,'prepare',text=>{sql.push(text);return prepare(text);});
+  await actor.command('mafia_vote',{targetId:target});
+  assert.equal(sql.filter(s=>/^SELECT .*sessions/.test(s)).length,2,'sender and room sessions remain live-authorized');
+  assert.equal(sql.filter(s=>/^(DELETE|INSERT|UPDATE).*mafia_/.test(s)).length,0,'no unchanged metadata writes enter the room queue');
+  await run(h.app.env,'UPDATE sessions SET revoked_at=? WHERE user_id=?',Date.now()-1,g.people[index].accountId);
+  await assert.rejects(actor.command('mafia_vote',{targetId:target}),e=>e.code==='AUTH');
+});
+test('metadata sync retries failed directory writes, resynchronizes on cold start and refreshes lobby expiry',async t=>{
+  const h=await setup(t),g=await h.group(),prepare=h.app.env.DB.prepare.bind(h.app.env.DB);let failed=false;
+  const oldReady=(await first(h.app.env,'SELECT ready FROM mafia_public_rooms')).ready;
+  t.mock.method(h.app.env.DB,'prepare',sql=>{
+    if(!failed&&sql.includes('INSERT INTO mafia_public_rooms'))return {bind:()=>({run:async()=>{failed=true;throw new Error('injected directory outage');}})};
+    return prepare(sql);
+  });
+  await assert.rejects(g.clients[1].command('ready',{ready:false}),e=>e.code==='INTERNAL');
+  assert.equal((await first(h.app.env,'SELECT ready FROM mafia_public_rooms')).ready,oldReady);
+  let instance=h.app.rooms.get(g.code).instance;
+  await instance.serial(()=>instance.commit(structuredClone(instance.room)));
+  assert.equal((await first(h.app.env,'SELECT ready FROM mafia_public_rooms')).ready,oldReady-1,'failed sync is not cached as successful');
+  await run(h.app.env,'DELETE FROM mafia_public_rooms');await h.app.rehydrate(g.code);instance=h.app.rooms.get(g.code).instance;
+  await instance.serial(()=>instance.commit(structuredClone(instance.room)));
+  const before=await first(h.app.env,'SELECT ready,expires_at FROM mafia_public_rooms');assert.equal(before.ready,oldReady-1,'cold object restores advisory metadata');
+  const later=Date.now()+31_000;t.mock.method(Date,'now',()=>later);
+  await instance.serial(()=>instance.commit(structuredClone(instance.room)));
+  assert.ok((await first(h.app.env,'SELECT expires_at FROM mafia_public_rooms')).expires_at>before.expires_at,'unchanged public lobby does not expire');
+});
 test('revocation outage retains a fail-closed room slot until the durable retry succeeds',async t=>{
   const h=await setup(t),g=await h.group();await g.clients[0].command('start');await h.phase(g.code);
   await h.api(g.people[0],`/api/rooms/${g.code}/voice`,{deviceId:'phone'});h.failRemovals();await h.phase(g.code);
@@ -180,4 +210,95 @@ test('a timed-out old leave or join cannot revoke or reclaim a newer same-device
   assert.equal(h.app.rooms.get(g.code).instance.room.mafiaMedia.sessions[g.people[0].accountId],'second-session');
   assert.equal((await h.api(g.people[0],path,{deviceId:'same-phone',voiceSessionId:'first-session',operation:'join'})).body.error,'MAFIA_VOICE_SESSION');
   assert.equal((await h.api(g.people[0],path,{deviceId:'same-phone',voiceSessionId:'first-session',operation:'sync'})).body.error,'MAFIA_VOICE_SESSION');
+});
+
+for(const background of [false,true])test(`signout strictly revokes session-bound Mafia voice with ${background?'native audio and a closed':'a live'} socket`,async t=>{
+  const h=await setup(t),g=await h.group();await g.clients[0].command('start');await h.phase(g.code);
+  const person=g.people[0],path=`/api/rooms/${g.code}/voice`,voice=await h.api(person,path,{deviceId:'native-phone',accountSessionId:'untrusted-client-value'});
+  assert.equal(voice.status,200);const item=h.app.rooms.get(g.code),channel=decodeJws(voice.body.connection.token).payload.video.room;
+  assert.equal(item.instance.room.mafiaMedia.authSessions[person.accountId].id,person.sessionId,'the router replaces any client-supplied binding');
+  assert.equal(JSON.stringify(voice.body).includes(person.sessionId),false,'account session identity is not exposed in media responses');
+  if(background) {
+    g.clients[0].stop();await until(()=>!item.instance.sockets().some(s=>item.instance.attachment(s).id===person.id));
+    await item.instance.queue;assert.equal(item.instance.room.members.find(m=>m.id===person.id).connected,true,'valid native background voice retains ordinary seat presence');
+  }
+  const response=await h.api(person,'/api/auth/signout',{});assert.equal(response.status,204);
+  assert.ok(h.provider.some(p=>p.method==='RemoveParticipant'&&p.body.identity===person.accountId&&p.body.room===channel&&p.body.revoke_token_ts>Math.floor(Date.now()/1000)));
+  const room=item.instance.room,seat=room.members.find(m=>m.id===person.id);
+  assert.equal(seat.connected,false);assert.equal(seat.left,false,'the 90-second return seat is retained');
+  assert.equal(room.mafiaMedia.authSessions[person.accountId],undefined);assert.equal(room.mafiaMedia.devices[person.accountId],undefined);
+  assert.equal(room.mafiaMedia.issued.some(i=>i.identity===person.accountId),false);assert.equal(await item.storage.get('mafia:voice-transition'),null);
+  assert.equal(item.instance.stateFor(person.id).mafiaVoice.quiet,true);
+});
+
+test('an AUTH command preserves seat identity until revocation and cannot turn into native presence grace',async t=>{
+  const h=await setup(t),g=await h.group();await g.clients[0].command('start');await h.phase(g.code);
+  const p=g.people[0],item=h.app.rooms.get(g.code);await h.api(p,`/api/rooms/${g.code}/voice`,{deviceId:'native-phone'});
+  const ws=item.instance.sockets().find(s=>item.instance.attachment(s).id===p.id);
+  await run(h.app.env,'UPDATE sessions SET revoked_at=? WHERE id=?',Date.now()-1,p.sessionId);
+  await assert.rejects(g.clients[0].command('chat',{channel:'public',text:'must not send',clientId:crypto.randomUUID()}),e=>e.code==='AUTH');
+  await until(()=>h.provider.some(r=>r.method==='RemoveParticipant'&&r.body.identity===p.accountId));await item.instance.queue;
+  assert.equal(item.instance.attachment(ws).id,p.id);assert.equal(item.instance.attachment(ws).revoked,true);
+  assert.equal(item.instance.room.members.find(m=>m.id===p.id).connected,false);
+  assert.equal(JSON.stringify(item.instance.stateFor(g.people[1].id)).includes('must not send'),false);
+});
+
+test('an unrelated session signout leaves the authorized native call and socket intact',async t=>{
+  const h=await setup(t),g=await h.group();await g.clients[0].command('start');await h.phase(g.code);
+  const p=g.people[0],path=`/api/rooms/${g.code}/voice`;await h.api(p,path,{deviceId:'native-phone'});
+  const item=h.app.rooms.get(g.code),epoch=item.instance.room.mafiaMedia.epoch,removals=h.provider.filter(r=>r.method==='RemoveParticipant').length;
+  const second=await issueSession(h.app.env,p.accountId);
+  const attempt=await h.api({...p,authorization:second.token},path,{deviceId:'native-phone',operation:'sync'});assert.equal(attempt.body.error,'MAFIA_VOICE_SESSION','unrelated bearer cannot steal an existing media nonce');
+  assert.equal((await h.api({...p,authorization:second.token},'/api/auth/signout',{})).status,204);
+  assert.equal(item.instance.room.mafiaMedia.epoch,epoch);assert.equal(h.provider.filter(r=>r.method==='RemoveParticipant').length,removals);
+  assert.equal(item.instance.room.mafiaMedia.authSessions[p.accountId].id,p.sessionId);assert.equal(item.instance.room.members.find(m=>m.id===p.id).connected,true);
+  assert.equal((await h.api(p,path,{deviceId:'native-phone',operation:'sync',knownEpoch:epoch})).body.unchanged,true);
+});
+
+test('native session expiry schedules an exact alarm and revokes without waiting for voice presence expiry',async t=>{
+  const h=await setup(t),g=await h.group();await g.clients[0].command('start');await h.phase(g.code);
+  const p=g.people[0],item=h.app.rooms.get(g.code),expiresAt=Date.now()+10_000;
+  await run(h.app.env,'UPDATE sessions SET expires_at=? WHERE id=?',expiresAt,p.sessionId);
+  await h.api(p,`/api/rooms/${g.code}/voice`,{deviceId:'native-phone'});
+  g.clients[0].stop();await until(()=>!item.instance.sockets().some(s=>item.instance.attachment(s).id===p.id));await item.instance.queue;
+  assert.ok((await item.storage.getAlarm())<=expiresAt);assert.equal(item.instance.room.members.find(m=>m.id===p.id).connected,true);
+  await h.app.rehydrate(g.code);const instance=h.app.rooms.get(g.code).instance;
+  assert.equal(instance.room.mafiaMedia.authSessions[p.accountId].expiresAt,expiresAt,'binding survives object hibernation');
+  t.mock.method(Date,'now',()=>expiresAt+1);await instance.alarm();
+  assert.ok(h.provider.some(r=>r.method==='RemoveParticipant'&&r.body.identity===p.accountId));
+  assert.equal(instance.room.members.find(m=>m.id===p.id).connected,false);assert.equal(instance.room.mafiaMedia.authSessions[p.accountId],undefined);
+  assert.equal(instance.room.members.find(m=>m.id===p.id).left,false);
+});
+
+test('explicit bearer rotation transfers media binding, and revoking the retired bearer does not revoke its successor',async t=>{
+  const h=await setup(t),g=await h.group();await g.clients[0].command('start');await h.phase(g.code);
+  const p=g.people[0],path=`/api/rooms/${g.code}/voice`;await h.api(p,path,{deviceId:'native-phone'});
+  const next=await issueSession(h.app.env,p.accountId);await run(h.app.env,'UPDATE sessions SET replaced_by=?,revoked_at=? WHERE id=?',next.id,Date.now()+300_000,p.sessionId);
+  const sync=await h.api({...p,authorization:next.token},path,{deviceId:'native-phone',operation:'sync'});assert.equal(sync.status,200);
+  const item=h.app.rooms.get(g.code),before=h.provider.filter(r=>r.method==='RemoveParticipant').length;
+  assert.equal(item.instance.room.mafiaMedia.authSessions[p.accountId].id,next.id);
+  assert.equal((await h.api(p,'/api/auth/signout',{})).status,204);assert.equal(h.provider.filter(r=>r.method==='RemoveParticipant').length,before);
+  assert.equal(item.instance.room.members.find(m=>m.id===p.id).connected,true);assert.equal(item.instance.room.mafiaMedia.authSessions[p.accountId].id,next.id);
+});
+
+test('session revocation provider outage aborts and retains the durable journal and quarantined leases until cleanup succeeds',async t=>{
+  const h=await setup(t),g=await h.group();await g.clients[0].command('start');await h.phase(g.code);
+  const p=g.people[0],item=h.app.rooms.get(g.code);await h.api(p,`/api/rooms/${g.code}/voice`,{deviceId:'native-phone'});
+  g.clients[0].stop();await until(()=>!item.instance.sockets().some(s=>item.instance.attachment(s).id===p.id));await item.instance.queue;
+  h.failRemovals();const result=await h.api(p,'/api/auth/signout',{});assert.equal(result.status,503);
+  assert.equal(item.instance.room.phase,'over');assert.equal(item.instance.room.mafiaMedia.failed,true);assert.ok(await item.storage.get('mafia:voice-transition'));
+  assert.equal((await first(h.app.env,'SELECT COUNT(*) AS n FROM mafia_media_slots')).n,1);
+  assert.equal((await first(h.app.env,'SELECT expires_at FROM mafia_media_leases WHERE user_id=?',p.accountId)).expires_at,Number.MAX_SAFE_INTEGER);
+  assert.equal((await h.api(g.people[1],`/api/rooms/${g.code}/voice`,{deviceId:'other-phone'})).body.error,'CALL_UNAVAILABLE');
+  h.failRemovals(false);await item.instance.serial(()=>item.instance.commit(structuredClone(item.instance.room)));
+  assert.equal(await item.storage.get('mafia:voice-transition'),null);assert.equal((await first(h.app.env,'SELECT COUNT(*) AS n FROM mafia_media_leases')).n,0);
+});
+
+test('moderator suspension revokes native Mafia media immediately after its socket has closed',async t=>{
+  const h=await setup(t),g=await h.group(),moderator=await h.user(99);h.app.env.MODERATOR_USER_IDS=moderator.accountId;
+  await g.clients[0].command('start');await h.phase(g.code);const p=g.people[0],item=h.app.rooms.get(g.code);
+  await h.api(p,`/api/rooms/${g.code}/voice`,{deviceId:'native-phone'});g.clients[0].stop();await until(()=>!item.instance.sockets().some(s=>item.instance.attachment(s).id===p.id));await item.instance.queue;
+  const result=await h.api(moderator,'/api/moderation/actions',{action:'suspend_user',targetId:p.accountId,clientId:crypto.randomUUID(),reason:'test moderation suspension'});assert.equal(result.status,200,JSON.stringify(result));
+  assert.ok(h.provider.some(r=>r.method==='RemoveParticipant'&&r.body.identity===p.accountId));assert.equal(item.instance.room.members.find(m=>m.id===p.id).connected,false);
+  assert.equal(item.instance.room.mafiaMedia.authSessions[p.accountId],undefined);
 });

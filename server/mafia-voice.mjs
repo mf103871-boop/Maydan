@@ -2,6 +2,7 @@ import { fail } from './room-model.mjs';
 import { voiceAudience, technicalAbort } from './mafia-model.mjs';
 import { liveKitConfigured, providerRequest, gameConnection } from './lamma/provider.mjs';
 import { all, first, run } from './lamma/common.mjs';
+import { liveAccountSql } from './moderation/access.mjs';
 import { activateMafiaMedia, mafiaPlaying, mafiaMediaLease, releaseMafiaMedia, refundMafiaTrial } from './mafia-access.mjs';
 
 // The durable journal is the authorization source. Provider failure never opens
@@ -102,14 +103,26 @@ export async function mafiaVoiceRequest(ctx,env,room,userId,body,now=Date.now())
   if(typeof deviceId!=='string'||!/^[A-Za-z0-9_-]{1,160}$/.test(deviceId))fail('INVALID');
   const voiceSessionId=body.voiceSessionId;
   if(typeof voiceSessionId!=='string'||!/^[A-Za-z0-9_-]{8,100}$/.test(voiceSessionId)||!['join','sync','leave'].includes(body.operation))fail('INVALID');
+  // Overwritten by the authenticated router, never chosen by the phone.
+  // Recheck here to close the worker-to-room revocation race.
+  const accountSession=await first(env,`SELECT id,expires_at,revoked_at FROM sessions WHERE id=? AND user_id=? AND expires_at>? AND (revoked_at IS NULL OR revoked_at>?) AND ${liveAccountSql('sessions.user_id')}`,body.accountSessionId||'',userId,now,now);
+  if(!accountSession)fail('AUTH',401);
   const lease=await mafiaMediaLease(env,userId,now);
   if(!lease||lease.room_key!==room.mafiaKey||lease.call_id!==media.callId)fail('MAFIA_ACTIVE_ELSEWHERE',409);
   const oldDevice=media.devices[userId];
   if(oldDevice&&oldDevice!==deviceId)fail('MAFIA_VOICE_DEVICE',409);
   if(await ctx.storage.get('mafia:voice-transition'))fail('MAFIA_VOICE_TRANSITION',409);
-  media.sessions||={};media.retiredSessions||={};const previousSession=media.sessions[userId];
+  media.sessions||={};media.retiredSessions||={};media.authSessions||={};const previousSession=media.sessions[userId];
   const retired=media.retiredSessions[userId]||[];
   if(body.operation==='leave'&&previousSession!==voiceSessionId)return {call:{id:media.callId,scope:'mafia',conversationId:room.code,status:'ended',voiceSessionId,mediaEpoch:media.epoch,canPublish:false},connection:null,voiceSessionId,mediaEpoch:media.epoch,canPublish:false,quiet:true,stale:true};
+  const previousAuth=media.authSessions[userId];
+  if(previousSession===voiceSessionId&&previousAuth&&previousAuth.id!==accountSession.id) {
+    // Bearer rotation can move a call to its explicit successor. A separate
+    // login must start a new voice gesture/session instead.
+    const rotated=body.operation!=='leave'&&await first(env,'SELECT 1 FROM sessions WHERE id=? AND user_id=? AND replaced_by=?',previousAuth.id,userId,accountSession.id);
+    if(!rotated)fail('MAFIA_VOICE_SESSION',409);
+  }
+  const authBinding={id:accountSession.id,expiresAt:Math.min(accountSession.expires_at,accountSession.revoked_at??Number.MAX_SAFE_INTEGER)};
   if(body.operation!=='leave'&&previousSession!==voiceSessionId) {
     if(body.operation!=='join'||retired.includes(voiceSessionId))fail('MAFIA_VOICE_SESSION',409);
     if(retired.length>=128)fail('RATE_LIMIT',429);
@@ -120,8 +133,11 @@ export async function mafiaVoiceRequest(ctx,env,room,userId,body,now=Date.now())
       media.issued=media.issued.filter(i=>i.identity!==userId);media.revokedUntil||={};media.revokedUntil[userId]=(Math.floor(Date.now()/1000)+2)*1000;
     }
     if(previousSession)media.retiredSessions[userId]=[...retired,previousSession];
-    media.sessions[userId]=voiceSessionId;media.devices[userId]=deviceId;
+    media.sessions[userId]=voiceSessionId;media.devices[userId]=deviceId;media.authSessions[userId]=authBinding;
     await ctx.storage.put('room',room);await deleteKey(ctx,'mafia:voice-transition');
+  }
+  if(media.authSessions[userId]?.id!==authBinding.id||media.authSessions[userId]?.expiresAt!==authBinding.expiresAt) {
+    media.authSessions[userId]=authBinding;await ctx.storage.put('room',room);
   }
   media.presence||={};media.presence[userId]=now;media.presenceSavedAt||={};
   if(now-(media.presenceSavedAt[userId]||0)>=10_000){media.presenceSavedAt[userId]=now;await ctx.storage.put('room',room);}
@@ -134,7 +150,7 @@ export async function mafiaVoiceRequest(ctx,env,room,userId,body,now=Date.now())
     const issued=media.issued.filter(i=>i.identity===userId);
     await ctx.storage.put('mafia:voice-transition',{removals:issued.map(i=>({...i,cutoff:Math.floor(now/1000)+1})),createdAt:now});
     await Promise.all(issued.map(i=>revoke(env,{...i,cutoff:Math.floor(now/1000)+1})));
-    media.issued=media.issued.filter(i=>i.identity!==userId); delete media.devices[userId];delete media.presence[userId];media.retiredSessions[userId]=[...retired,voiceSessionId];delete media.sessions[userId];media.revokedUntil||={};media.revokedUntil[userId]=(Math.floor(Date.now()/1000)+2)*1000;
+    media.issued=media.issued.filter(i=>i.identity!==userId); delete media.devices[userId];delete media.presence[userId];media.retiredSessions[userId]=[...retired,voiceSessionId];delete media.sessions[userId];delete media.authSessions[userId];media.revokedUntil||={};media.revokedUntil[userId]=(Math.floor(Date.now()/1000)+2)*1000;
     await ctx.storage.put('room',room); await deleteKey(ctx,'mafia:voice-transition');
     return {...response,quiet:true,canPublish:false,call:{...call,status:'ended',canPublish:false}};
   }

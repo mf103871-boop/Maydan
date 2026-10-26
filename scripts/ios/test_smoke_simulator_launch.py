@@ -38,7 +38,7 @@ class LaunchSmokeTests(unittest.TestCase):
 
     def write_ready(self, smoke, token, **changes):
         value = {'token': token, 'pid': 123, 'ready': True, 'initialized': True, 'migrationComplete': True,
-                 'phase': 'home-ready', 'route': 'home', 'gameCardCount': 7}
+                 'phase': 'home-ready', 'route': 'home', 'gameCardCount': 8}
         value.update(changes)
         path = smoke.data_container / 'Library/Caches/MaydanLaunchSmoke/ready.json'
         path.parent.mkdir(parents=True, exist_ok=True)
@@ -317,7 +317,7 @@ class LaunchSmokeTests(unittest.TestCase):
         smoke.validate_game_ready(valid, token, 123)
         for changes in [{'token': 'another'}, {'pid': 124}, {'pid': True}, {'ready': 1},
                         {'initialized': None}, {'migrationComplete': 'true'}, {'route': 'migration'},
-                        {'gameCardCount': 7.0}]:
+                        {'gameCardCount': 7}, {'gameCardCount': 8.0}, {'gameCardCount': 9}]:
             with self.assertRaises(SmokeFailure):
                 smoke.validate_game_ready({**valid, **changes}, token, 123)
         with self.assertRaises(SmokeFailure):
@@ -329,6 +329,14 @@ class LaunchSmokeTests(unittest.TestCase):
             smoke.read_game_ready(record, 1)
             self.assertFalse(record['ready'])
             self.assertNotIn('readyReceiptFile', record)
+
+    def test_current_eight_game_catalog_passes_but_old_seven_game_receipt_is_rejected(self):
+        token = '00000000-0000-4000-8000-000000000001'
+        smoke = self.smoke(auto_ready=False)
+        receipt = self.write_ready(smoke, token, gameCardCount=8)
+        smoke.validate_game_ready(receipt, token, 123)
+        with self.assertRaisesRegex(SmokeFailure, 'all eight game controls'):
+            smoke.validate_game_ready({**receipt, 'gameCardCount': 7}, token, 123)
 
     def test_early_readiness_does_not_shorten_process_survival_or_hide_later_crash(self):
         smoke = self.smoke()

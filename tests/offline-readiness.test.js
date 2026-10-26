@@ -74,6 +74,23 @@ test('a missing or HTML Fabraka picture cannot activate an incomplete offline re
   }
 });
 
+test('Fabraka install bounds cold downloads and still waits for all image bodies before activation', async () => {
+  const urls = Array.from({ length: 32 }, (_, index) => `./media/fabraka-v3/fab3-${index}.webp?v=fixture`);
+  let active = 0, peak = 0, complete = 0;
+  const w = await worker({ fabrakaImages: urls, fetcher: async (url, options) => {
+    assert.equal(options.priority, 'low'); active++; peak = Math.max(peak, active);
+    return new Response(new ReadableStream({ start(controller) {
+      setTimeout(() => { controller.enqueue(new Uint8Array([1, 2])); controller.close(); active--; complete++; }, 2);
+    } }), { headers: { 'content-type': 'image/webp' } });
+  } });
+  const media = await w.caches.open('maydan-media-v1'), put = media.put;
+  media.put = async (url, response) => { const body = await response.arrayBuffer(); return put(url, new Response(body, { headers: response.headers })); };
+  await w.dispatch('install');
+  assert.equal(peak, 3); assert.equal(complete, 32); assert.equal(media.size(), 32); assert.equal(w.skipped(), true);
+  for (const url of urls) assert.deepEqual(new Uint8Array(await (await media.match(url)).arrayBuffer()), new Uint8Array([1, 2]));
+  await w.dispatch('install'); assert.equal(complete, 32, 'cached versioned Fabraka pictures are reused');
+});
+
 test('upgrade preserves other applications and never reloads an active round', async () => {
   const w = await worker();
   await w.caches.open('maydan-platform-old');

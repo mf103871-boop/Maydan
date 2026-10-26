@@ -1,7 +1,7 @@
 // موجّه مسارات الحسابات: يُستدعى من routeRequest قبل مسارات الغرف.
 // يُعيد Response إن كان المسار له، أو null ليكمل الموجّه الأصلي طريقه.
 import { TRIAL_GAMES, PRODUCTS, PROMO_DURATION_MS } from '../../src/shared/account/config.js';
-import { removeMafiaAccount } from '../mafia-access.mjs';
+import { removeMafiaAccount, recheckMafiaAuthorization } from '../mafia-access.mjs';
 import { codeHash, isValidCode } from '../../src/shared/account/redeem.js';
 import { json, readJson, sha256 } from '../protocol.mjs';
 import { failure, RoomError } from './errors.mjs';
@@ -88,6 +88,10 @@ function billingConfig(env) {
     products: PRODUCTS,
     // المزوّد الوهمي لا يُعلَن في الإعداد العام؛ اختبارات التطوير تعرف مساره.
     providers: { apple: apple.configured(env), google: google.configured(env) },
+    providerPlatforms: {
+      ios: { apple: Boolean(env.APPLE_BUNDLE_ID?.trim()), google: google.configured(env) },
+      web: { apple: Boolean(env.APPLE_SERVICES_ID?.trim()), google: google.configured(env) },
+    },
   });
 }
 
@@ -202,6 +206,7 @@ async function signout(request, env, now) {
   const found = await readSession(env, request, { now, rotate: false });
   if (found) {
     await db.revokeSession(env, found.session.id, now);
+    await recheckMafiaAuthorization(env,found.user.id);
     // Tell the live hub at once, so its sockets need not poll the session table.
     await notifyUsers(env, [found.user.id], { type: 'session_revoked', sessionId: found.session.id });
   }

@@ -9,6 +9,7 @@ import { notifyUsers,forgetSocialUser } from '../social/realtime.mjs';
 import { reportAudioResponse,collectDeletedAudio } from '../lamma/media.mjs';
 import { revokeInvalidCalls } from '../lamma/calls.mjs';
 import { drawingReportEvidence } from '../ersomha-reports.mjs';
+import { recheckMafiaAuthorization } from '../mafia-access.mjs';
 
 export async function routeModeration(request,env,url=new URL(request.url),charge) {
   if(!url.pathname.startsWith('/api/moderation/'))return null;
@@ -27,6 +28,7 @@ export async function routeModeration(request,env,url=new URL(request.url),charg
     else if(path==='/actions' && request.method==='POST') {
       await chargeUser(env,auth.user.id,'write');
       const result=await db.performAction(env,{userId:auth.user.id,sessionId:auth.rotated?.id||auth.session.id},await readJson(request,8192));
+      if(result.action==='suspend_user')await recheckMafiaAuthorization(env,result.subjectUserId);
       try {
         if(result.action==='suspend_user')await forgetSocialUser(env,result.subjectUserId);
         if(result.action==='suspend_user')await revokeInvalidCalls(env,null,null,{userIds:[result.subjectUserId]});

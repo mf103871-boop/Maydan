@@ -1,10 +1,10 @@
 // تسجيل الدخول: أزرار المزوّدين في ورقة سفلية، وتُعاد في الجدار وفي الإعدادات.
 // الدخول يخدم غرضًا واحدًا: أن يعمل الاشتراك على كل أجهزة اللاعب.
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Sheet, Button } from '../ui/components.jsx';
 import { useAccount } from './context.js';
 import { accountErrorText } from './errors.js';
-import { PUBLISHED_SETTINGS_URL } from './config.js';
+import { PUBLISHED_SETTINGS_URL, signInProviders } from './config.js';
 
 export const SIGN_IN_NOTE = 'الاشتراك يُربط بحسابك ليعمل على كل أجهزتك';
 
@@ -30,10 +30,15 @@ function GoogleMark() {
 // الأزرار وحدها: تُستعمل داخل الجدار أيضًا حيث لا ورقة ثانية.
 export function SignInButtons({ onDone, designScreen = 'account.signin' }) {
   const account = useAccount();
-  const providers = (account.billing && account.billing.providers) || null;
+  const providers = signInProviders(account.billing, account.platform);
+  const loadProviders = account.loadSignInProviders;
+  useEffect(() => { if (loadProviders) void loadProviders(); }, [loadProviders]);
   const busy = account.busy === 'signin';
   const run = async (provider) => { const result = await account.signIn(provider); if (result && onDone) onDone(); };
   if (account.offline) return <p className="online-notice" role="status">{accountErrorText('OFFLINE')}</p>;
+  if (loadProviders && ['idle','loading'].includes(account.signInProvidersStatus)) return <p className="online-notice" role="status">نتحقق من طرق تسجيل الدخول…</p>;
+  if (loadProviders && account.signInProvidersStatus === 'error') return <div className="stack"><p className="online-notice error" role="alert">{accountErrorText(account.signInProvidersError)}</p><Button onClick={() => loadProviders({retry:true})}>إعادة محاولة تسجيل الدخول</Button></div>;
+  if (providers?.apple === false && providers?.google === false) return <p className="online-notice" role="status">تسجيل الدخول غير متاح حاليًا. جرّب مجددًا بعد قليل.</p>;
   return (
     <div data-design-screen={designScreen || undefined} data-design-id="providers" className="account-providers">
       {(!providers || providers.apple !== false) && (
@@ -42,7 +47,7 @@ export function SignInButtons({ onDone, designScreen = 'account.signin' }) {
       {(!providers || providers.google !== false) && (
         <Button variant="secondary" size="lg" full disabled={busy} icon={<GoogleMark />} data-design-id="signin-google" data-design-required="true" data-provider="google" onClick={() => run('google')}>المتابعة بحساب Google</Button>
       )}
-      {account.error && <p className="online-notice error" role="alert">{accountErrorText(account.error)}</p>}
+        {account.error && account.signInProvidersStatus !== 'error' && <p className="online-notice error" role="alert">{accountErrorText(account.error)}</p>}
     </div>
   );
 }
@@ -55,7 +60,7 @@ export function SignInSheet({ open, onClose, title = 'تسجيل الدخول', 
       <div data-design-id="content" className="account-signin">
         <p className="card-muted">{note}</p>
         <SignInButtons designScreen={null} onDone={onClose} />
-        {account.error === 'PREVIEW_ONLY' && (
+        {(account.error === 'PREVIEW_ONLY' || account.signInProvidersError === 'PREVIEW_ONLY') && (
           <a className="btn btn-secondary btn-full" href={PUBLISHED_SETTINGS_URL} target="_blank" rel="noopener noreferrer">فتح الموقع المنشور لتسجيل الدخول ↗</a>
         )}
         <p data-design-id="privacy-note" data-design-required="true" className="account-fineprint">لا نطلب كلمة مرور. يكفي حساب Apple أو Google لتتبع اشتراكك.</p>

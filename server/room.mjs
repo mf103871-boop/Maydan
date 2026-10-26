@@ -38,6 +38,9 @@ export class Room {
     this.inboundBySocket = new WeakMap(); this.inboundCount = 0;
     this.mafiaLastSnapshots = new WeakMap();
     this.mafiaResultOutbox=[];
+    // These are successful D1 synchronization fingerprints, never authority.
+    // A cold/rehydrated object starts empty and safely resynchronizes them.
+    this.mafiaMetadata={};
     this.ready = ctx.blockConcurrencyWhile(async () => {
       this.room = await ctx.storage.get('room') || null;
       this.profileOutbox = await ctx.storage.get('profileOutbox') || [];
@@ -70,7 +73,10 @@ export class Room {
   outboxPending() { return Boolean(this.env.DB) && (this.profileOutbox.length > 0||this.mafiaResultOutbox.length>0); }
   mafiaVoiceAlive(room,id,now=Date.now()) {
     const account=room.members.find(m=>m.id===id)?.accountUserId;
-    return room.game==='mafia'&&Boolean(room.mafiaMedia?.devices?.[account])&&now-(room.mafiaMedia?.presence?.[account]||0)<SOCKET_IDLE;
+    return room.game==='mafia'&&Boolean(room.mafiaMedia?.devices?.[account])&&room.mafiaMedia?.authSessions?.[account]?.expiresAt>now&&now-(room.mafiaMedia?.presence?.[account]||0)<SOCKET_IDLE;
+  }
+  mafiaAuthDeadline(room) {
+    return Math.min(...Object.values(room.mafiaMedia?.authSessions||{}).map(s=>s.expiresAt),...this.sockets().map(ws=>this.attachment(ws).accountExpiresAt).filter(Number.isFinite));
   }
   alarmAt(room, now) {
     if(room.game==='mafia'&&this.mafiaCleanupRetryAt>now)return this.mafiaCleanupRetryAt;
@@ -78,7 +84,7 @@ export class Room {
       const a = this.attachment(ws);
       return a.id ? this.lastSeen(ws, a) + SOCKET_IDLE : a.authDeadline;
     }).filter(Number.isFinite);
-    return Math.max(now + 1, Math.min(nextAlarm(room, now), ...deadlines, ...(room.game==='mafia'?[room.mafiaRenewAt||now+30_000]:[]), ...(this.outboxPending() ? [now + STATS_RETRY] : [])));
+    return Math.max(now + 1, Math.min(nextAlarm(room, now), ...deadlines, ...(room.game==='mafia'?[room.mafiaRenewAt||now+30_000,this.mafiaAuthDeadline(room)]:[]), ...(this.outboxPending() ? [now + STATS_RETRY] : [])));
   }
   async schedule() {
     if (this.room) await this.ctx.storage.setAlarm(this.alarmAt(this.room, Date.now()));
@@ -116,10 +122,7 @@ export class Room {
     this.mafiaResultOutbox=mafiaOutbox;
     this.broadcast();
     if(candidate.game==='mafia') {
-      // Directory is advisory; admission always checks the committed room.
-      await committedMafiaVoice(this.ctx,this.env,candidate);
-      await cleanupMafiaSeats(this.env,candidate);
-      await updateMafiaDirectory(this.env,candidate);
+      await this.settleMafiaMetadata(candidate);
       if(this.mafiaResultOutbox.length)await this.flushMafiaResults();
     }
     if (candidate.game === 'ersomha' && !ERSOMHA_PLAYING.includes(candidate.phase) && candidate.ersomhaLease) {
@@ -136,6 +139,30 @@ export class Room {
       task.catch(() => {});
     }
   }
+  async settleMafiaMetadata(room) {
+    const members=room.members.filter(m=>!m.left);
+    const accounts=members.map(m=>m.accountUserId).sort();
+    const media=room.mafiaMedia;
+    const mediaKey=JSON.stringify([room.mafiaKey,room.matchId,room.phase,media?.callId,media?.epoch,media?.failed,media?.quarantineUntil,room.technicalAbort,room.reason,room.trialStarted,room.roomTrialClaim,members.filter(m=>room.participants.includes(m.id)).map(m=>m.accountUserId).sort()]);
+    if(this.mafiaMetadata.media!==mediaKey) {
+      await committedMafiaVoice(this.ctx,this.env,room);
+      this.mafiaMetadata.media=mediaKey;
+    }
+    const seatKey=JSON.stringify([room.mafiaKey,room.phase==='closed',accounts]);
+    if(this.mafiaMetadata.seats!==seatKey) {
+      await cleanupMafiaSeats(this.env,room);
+      this.mafiaMetadata.seats=seatKey;
+    }
+    const listed=room.phase==='lobby'&&room.settings.visibility==='public'&&members.length>0;
+    const directoryKey=JSON.stringify([room.mafiaKey,listed?{settings:room.settings,hostId:room.hostId,expiresAt:room.expiresAt,members:members.map(m=>[m.id,m.name,!!m.ready])}:null]);
+    if(this.mafiaMetadata.directory!==directoryKey||(listed&&Date.now()>=this.mafiaMetadata.directoryRefreshAt)) {
+      // Directory is advisory; admission always checks the committed room.
+      // Its90s expiry is renewed even when the public lobby does not change.
+      await updateMafiaDirectory(this.env,room);
+      this.mafiaMetadata.directory=directoryKey;
+      this.mafiaMetadata.directoryRefreshAt=Date.now()+30_000;
+    }
+  }
   async flushMafiaResults() {
     if(!this.env.DB)return;
     while(this.mafiaResultOutbox.length) {
@@ -145,15 +172,53 @@ export class Room {
       await this.ctx.storage.put('mafiaResultOutbox',rest);this.mafiaResultOutbox=rest;
     }
   }
-  async prepareMafia(candidate) {
+  async validateMafiaSessions(candidate,now=Date.now()) {
     const sockets=this.sockets().map(ws=>({ws,...this.attachment(ws)})).filter(a=>a.id&&a.accountSessionId);
-    if(sockets.length) {
-      const now=Date.now(),sessions=(await this.env.DB.prepare(`SELECT id,user_id FROM sessions WHERE id IN (${sockets.map(()=>'?').join(',')}) AND expires_at>? AND (revoked_at IS NULL OR revoked_at>?) AND ${liveAccountSql('sessions.user_id')}`).bind(...sockets.map(a=>a.accountSessionId),now,now).all()).results||[];
-      for(const a of sockets)if(!sessions.some(s=>s.id===a.accountSessionId&&s.user_id===a.accountUserId)) {
-        a.ws.serializeAttachment({revoked:true});this.close(a.ws,4401,'AUTH');
-        if(candidate.members.some(m=>m.id===a.id&&!m.left))connected(candidate,a.id,false,now);
+    const media=candidate.mafiaMedia;
+    const ids=[...new Set([...sockets.map(a=>a.accountSessionId),...Object.values(media?.authSessions||{}).map(a=>a.id)])];
+    const sessions=ids.length?(await this.env.DB.prepare(`SELECT id,user_id,expires_at,revoked_at FROM sessions WHERE id IN (${ids.map(()=>'?').join(',')}) AND expires_at>? AND (revoked_at IS NULL OR revoked_at>?) AND ${liveAccountSql('sessions.user_id')}`).bind(...ids,now,now).all()).results||[]:[];
+    const valid=(id,userId)=>sessions.find(s=>s.id===id&&s.user_id===userId);
+    const affected=new Set();
+    for(const a of sockets) {
+      const session=valid(a.accountSessionId,a.accountUserId);
+      if(!session||a.revoked) {
+        // Keep identity until durable media reconciliation, including when the
+        // provider fails. The close callback must never turn AUTH into grace.
+        a.ws.serializeAttachment({...this.attachment(a.ws),revoked:true});this.close(a.ws,4401,'AUTH');affected.add(a.accountUserId);
+      } else {
+        const accountExpiresAt=Math.min(session.expires_at,session.revoked_at??Number.MAX_SAFE_INTEGER);
+        if(a.accountExpiresAt!==accountExpiresAt)a.ws.serializeAttachment({...this.attachment(a.ws),accountExpiresAt});
       }
     }
+    for(const userId of new Set([...Object.keys(media?.sessions||{}),...Object.keys(media?.devices||{}),...(media?.issued||[]).map(i=>i.identity)])) {
+      const binding=media.authSessions?.[userId],session=binding&&valid(binding.id,userId);
+      if(session) {binding.expiresAt=Math.min(session.expires_at,session.revoked_at??Number.MAX_SAFE_INTEGER);continue;}
+      affected.add(userId);
+      const nonce=media.sessions?.[userId];media.retiredSessions||={};media.retiredSessions[userId]=[...new Set([...(media.retiredSessions[userId]||[]),...(nonce?[nonce]:[])])];
+      delete media.sessions?.[userId];delete media.authSessions?.[userId];delete media.devices?.[userId];delete media.presence?.[userId];
+      // Keep issued grants until prepareMafiaVoice has durably journaled and
+      // strictly revoked them. Even an otherwise unchanged audience needs it.
+      media.signature=null;
+    }
+    for(const userId of affected) {
+      const seat=candidate.members.find(m=>m.accountUserId===userId&&!m.left);
+      const otherSocket=sockets.some(a=>a.accountUserId===userId&&!a.revoked&&a.ws.readyState===1&&valid(a.accountSessionId,userId));
+      const otherMedia=media?.authSessions?.[userId]&&valid(media.authSessions[userId].id,userId);
+      if(seat&&!otherSocket&&!otherMedia)connected(candidate,seat.id,false,now);
+    }
+  }
+  async reconcileMafiaSessions() {
+    if(this.room?.game!=='mafia')return;
+    const candidate=structuredClone(this.room);
+    await this.validateMafiaSessions(candidate);
+    if(JSON.stringify(candidate)!==JSON.stringify(this.room)||await this.ctx.storage.get('mafia:voice-transition')) {
+      await prepareMafiaVoice(this.ctx,this.env,this.room,candidate);
+      await this.commit(candidate,{prepared:true});
+    }
+    if(candidate.mafiaMedia?.failed)fail('MAFIA_VOICE_UNAVAILABLE',503);
+  }
+  async prepareMafia(candidate) {
+    await this.validateMafiaSessions(candidate);
     if((!candidate.mafiaRenewAt||Date.now()>=candidate.mafiaRenewAt)&&!(candidate.mafiaMedia?.failed&&!mafiaPlaying(candidate))) {
       await renewMafiaSeats(this.env,candidate);
       if(mafiaPlaying(candidate)&&candidate.mafiaMedia)await activateMafiaMedia(this.env,candidate);
@@ -340,7 +405,7 @@ export class Room {
       await this.flushMafiaResults();
     } else if (JSON.stringify(candidate) !== JSON.stringify(this.room)
       || candidate.game === 'ersomha' && candidate.ersomhaLease && ERSOMHA_PLAYING.includes(candidate.phase) && Date.now() >= candidate.ersomhaLease.renewAt
-      || candidate.game === 'mafia' && Date.now()>=(candidate.mafiaRenewAt||0)) {
+      || candidate.game === 'mafia' && (Date.now()>=(candidate.mafiaRenewAt||0)||Date.now()>=this.mafiaAuthDeadline(candidate))) {
       try { await this.commit(candidate); }
       catch (error) {
         if(candidate.game==='mafia') {
@@ -412,6 +477,12 @@ export class Room {
           return json({ code, id: input.id, game: this.room.game }, 201);
         }
         if (!this.room) fail('NOT_FOUND', 404);
+        if(request.method==='POST'&&endpoint==='mafia-session-revoked') {
+          if(this.room.game!=='mafia')fail('NOT_FOUND',404);
+          // Internal wake-up only: current D1 authorization decides what is
+          // revoked, so an old notification cannot remove a successor session.
+          await this.reconcileMafiaSessions();await this.schedule();return json({ok:true});
+        }
         if(request.method==='POST'&&endpoint==='mafia-account-removed') {
           if(this.room.game!=='mafia')fail('NOT_FOUND',404);
           const body=await readJson(request),seat=this.room.members.find(m=>!m.left&&m.accountUserId===body.accountUserId);
@@ -423,7 +494,8 @@ export class Room {
         }
         if(request.method==='POST'&&endpoint==='mafia-voice') {
           if(this.room.game!=='mafia')fail('NOT_FOUND',404);
-          const body=await readJson(request);return json(await mafiaVoiceRequest(this.ctx,this.env,this.room,body.accountUserId,body));
+          const body=await readJson(request),response=await mafiaVoiceRequest(this.ctx,this.env,this.room,body.accountUserId,body);
+          this.fastAdvanceRoom=null;await this.schedule();return json(response);
         }
         if(request.method==='POST'&&endpoint==='mafia-evidence') {
           if(this.room.game!=='mafia')fail('NOT_FOUND',404);
@@ -588,7 +660,7 @@ export class Room {
             catch (error) { if (error instanceof RoomError && error.status < 500) fail('AUTH', 401); throw error; }
             const seat = member(this.room, id);
             if (auth.user.id !== seat.accountUserId || !await this.env.DB.prepare(`SELECT 1 AS ok WHERE ${liveAccountSql('?')}`).bind(auth.user.id, auth.user.id).first()) fail('AUTH', 401);
-            if(this.room.game==='mafia')accountIdentity={accountSessionId:auth.session.id,accountUserId:auth.user.id};
+            if(this.room.game==='mafia')accountIdentity={accountSessionId:auth.session.id,accountUserId:auth.user.id,accountExpiresAt:Math.min(auth.session.expires_at,auth.session.revoked_at??Number.MAX_SAFE_INTEGER)};
           }
           // Only one controlling connection per seat; old close cannot disconnect the replacement.
           for (const other of this.sockets()) if (other !== ws && this.attachment(other).id === id) {
@@ -635,7 +707,11 @@ export class Room {
         // an error about another player (a kick target) must not sign the host out.
         const seat = this.attachment(ws).id;
         const seated = Boolean(seat) && Boolean(this.room?.members.some((m) => m.id === seat && !m.left));
-        if (['NOT_FOUND', 'EXPIRED'].includes(code) || (code === 'AUTH' && (!seated||this.room?.game==='mafia'))) {if(this.room?.game==='mafia')ws.serializeAttachment({revoked:true});this.close(ws, 4401, code);}
+        if(code==='AUTH'&&seated&&this.room?.game==='mafia') {
+          ws.serializeAttachment({...this.attachment(ws),revoked:true});
+          try {await this.reconcileMafiaSessions();}catch {await this.ctx.storage.setAlarm(Date.now()+STATS_RETRY);}
+        }
+        if (['NOT_FOUND', 'EXPIRED'].includes(code) || (code === 'AUTH' && (!seated||this.room?.game==='mafia'))) this.close(ws, 4401, code);
       }
     }).finally(() => {
       this.inboundBySocket.set(ws, Math.max(0, (this.inboundBySocket.get(ws) || 1) - 1));

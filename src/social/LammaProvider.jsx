@@ -33,6 +33,7 @@ export function LammaProvider({ children }) {
   const socialRef = useRef(social); socialRef.current = social;
   const [media, setMedia] = useState(emptyMedia);
   const [activeCall, setActiveCall] = useState(null);
+  const [connectingCall, setConnectingCall] = useState(null);
   const ownedCall = activeCall?._ownerId === owner ? activeCall : null;
   const ownedCallId = ownedCall?.id;
   const activeRef = useRef(ownedCall); activeRef.current = ownedCall;
@@ -81,7 +82,7 @@ export function LammaProvider({ children }) {
     const connectionEpoch = connectGeneration;
     connectGeneration.current++; client.start(owner); engine.setAccount(owner);
     mafiaSession.clear();
-    setActiveCall(null); setNotification(null); previous.current = null; connecting.current = false;
+    setActiveCall(null); setConnectingCall(null); setNotification(null); previous.current = null; connecting.current = false;
     if (owner && isNativeShell()) {
       deviceRef.current = null;
       deviceReady.current = accountRef.current.ensureNativeSocialSession().then(result => {
@@ -216,6 +217,7 @@ export function LammaProvider({ children }) {
     if (socialInterruption.getSnapshot().communicationLocked) throw new Error('التواصل خلال المباراة متاح داخل مجلس مافيا فقط.');
     if (connecting.current || activeRef.current) throw new Error('لديك مكالمة جارية بالفعل.');
     connecting.current = true; const epoch = client.epoch, attempt = ++connectGeneration.current; let result;
+    setConnectingCall({ owner, attempt });
     // Fetch the web SDK alongside the authenticated call request, rather than
     // waiting for its response to start loading it. This never opens a microphone.
     engine.prepare().catch(() => {});
@@ -235,11 +237,16 @@ export function LammaProvider({ children }) {
         if (attempt === connectGeneration.current) { client.setCallContext(null); setActiveCall(null); activeRef.current = null; }
       }
       throw e;
-    } finally { if (epoch === client.epoch && attempt === connectGeneration.current) connecting.current = false; }
+    } finally {
+      if (epoch === client.epoch && attempt === connectGeneration.current && ownerRef.current === owner) {
+        connecting.current = false;
+        setConnectingCall(current => current?.owner === owner && current?.attempt === attempt ? null : current);
+      }
+    }
   }
   async function endCall() {
     if (activeRef.current?.scope === 'mafia') { await mafiaSession.stop(); return; }
-    connectGeneration.current++; connecting.current = false;
+    connectGeneration.current++; connecting.current = false; setConnectingCall(null);
     const call = activeRef.current; activeRef.current = null; client.setCallContext(null); setActiveCall(null);
     await engine.disconnect({ callId: call?.id || engine.state.callId });
     if (call && client.userId) { await client.callAction(call.id, 'leave', deviceRef.current); await client.refresh({ quiet: true }); }
@@ -265,6 +272,7 @@ export function LammaProvider({ children }) {
   }
   const notifications = { ...safe.preferences, enabled: safe.preferences.messages, permission: notificationPermission };
   return <Context.Provider value={{ ...safe, ...client.actions, notifications, activeCall: ownedCall, incomingCall, media: ownedMedia,
+    callConnecting: connectingCall?.owner === owner && connectingCall?.attempt === connectGeneration.current,
     notification: notification?.userId === owner ? notification : null,
     clearNotification: () => setNotification(null), refreshGroups: options => client.refresh(options), requestNotifications, acceptGameInvite,
     startCall: target => connect(deviceId => client.startCall({ ...target, deviceId })),

@@ -19,6 +19,10 @@ export const LEGAL_ROUTES = { terms: '#/terms', privacy: '#/privacy' };
 export const PUBLIC_SITE_ORIGIN = 'https://maydan-game.mf103871.workers.dev';
 export const PUBLISHED_SETTINGS_URL = `${PUBLIC_SITE_ORIGIN}/#/settings`;
 
+// Older servers return one provider map. New ones distinguish native Apple
+// from its separately configured web redirect, without exposing credentials.
+export const signInProviders = (billing, platform) => billing?.providerPlatforms?.[platform === 'ios' ? 'ios' : 'web'] || billing?.providers || null;
+
 // لا رموز قبول في العميل. الخادم يقرأ بصمات الرموز من السرّ REDEEM_CODE_HASHES فقط.
 export const REDEEM_CODE_HASHES = []; // القبول على الخادم فقط؛ لا مفاتيح عامة داخل الحزمة.
 // مدة التفعيل بالرمز على الحساب (فعليًا دائم).

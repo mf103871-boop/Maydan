@@ -591,14 +591,16 @@ final class GameViewController: UIViewController, WKNavigationDelegate, WKUIDele
 
 #if targetEnvironment(simulator)
     private func recordSimulatorLaunchReady(_ payload: [String: Any], pageURL: URL) {
+        // Eight registered games, including Mafia. A catalog change deliberately
+        // updates this exact gate together with the Python and actual-Home tests.
         guard !simulatorLaunchRecorded, let token = simulatorLaunchToken,
               payload["token"] as? String == token,
               !isCollectingMigration, !isCommittingMigration, migration?.isDone == true,
               pageURL.path == AppSchemeHandler.entryURL.path,
               payload["initialized"] as? Bool == true, payload["route"] as? String == "home",
-              payload["gameCardCount"] as? Int == 7 else { return }
+              payload["gameCardCount"] as? Int == 8 else { return }
         let receipt: [String: Any] = ["token": token, "pid": ProcessInfo.processInfo.processIdentifier,
-            "ready": true, "phase": "home-ready", "route": "home", "gameCardCount": 7,
+            "ready": true, "phase": "home-ready", "route": "home", "gameCardCount": 8,
             "initialized": true, "migrationComplete": true]
         do {
             let directory = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask)[0]

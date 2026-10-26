@@ -9,7 +9,7 @@ function fixture() {
   let next = 0;
   const node = () => ({ hidden: false, disabled: false, closest: () => null,
     getBoundingClientRect: () => ({ width: 100, height: 100 }) });
-  const cards = Array.from({ length: 7 }, node), home = node(), navigation = node();
+  const cards = Array.from({ length: 8 }, node), home = node(), navigation = node();
   home.querySelectorAll = () => cards;
   const host = { __maydanSimulatorLaunchToken: token,
     webkit: { messageHandlers: { maydan: { postMessage: message => messages.push(message) } } },
@@ -23,13 +23,13 @@ function fixture() {
 
 test('home-ready requires initialized account, simulator opt-in, mounted visible controls and two frames', () => {
   const f = fixture();
-  reportSimulatorHomeReady({ accountReady: false, gameCount: 7, host: f.host });
+  reportSimulatorHomeReady({ accountReady: false, gameCount: 8, host: f.host });
   assert.equal(f.frames.size, 0);
-  const stop = reportSimulatorHomeReady({ accountReady: true, gameCount: 7, host: f.host });
+  const stop = reportSimulatorHomeReady({ accountReady: true, gameCount: 8, host: f.host });
   assert.equal(f.messages.length, 0);
   f.tick(); assert.equal(f.messages.length, 0);
   f.tick();
-  assert.deepEqual(f.messages, [{ type: 'simulatorGameReady', token, route: 'home', gameCardCount: 7, initialized: true }]);
+  assert.deepEqual(f.messages, [{ type: 'simulatorGameReady', token, route: 'home', gameCardCount: 8, initialized: true }]);
   stop();
 });
 
@@ -42,7 +42,7 @@ test('blank/error/hidden/partial pages never produce game readiness despite a va
     f => { f.host.getComputedStyle = () => ({ display: 'none', visibility: 'visible' }); }];
   for (const change of cases) {
     const f = fixture(); change(f);
-    reportSimulatorHomeReady({ accountReady: true, gameCount: 7, host: f.host });
+    reportSimulatorHomeReady({ accountReady: true, gameCount: 8, host: f.host });
     f.tick(); f.tick(); assert.deepEqual(f.messages, []);
   }
 });
@@ -50,12 +50,12 @@ test('blank/error/hidden/partial pages never produce game readiness despite a va
 test('no simulator token means no scheduling; unmount or token change retires a pending receipt', () => {
   for (const value of [undefined, '', 'previous-run', token.toUpperCase()]) {
     const f = fixture(); f.host.__maydanSimulatorLaunchToken = value;
-    assert.equal(reportSimulatorHomeReady({ accountReady: true, gameCount: 7, host: f.host }), undefined);
+    assert.equal(reportSimulatorHomeReady({ accountReady: true, gameCount: 8, host: f.host }), undefined);
     assert.equal(f.frames.size, 0);
   }
-  const f = fixture(), stop = reportSimulatorHomeReady({ accountReady: true, gameCount: 7, host: f.host });
+  const f = fixture(), stop = reportSimulatorHomeReady({ accountReady: true, gameCount: 8, host: f.host });
   f.tick(); stop(); f.tick(); assert.deepEqual(f.messages, []);
-  const g = fixture(); reportSimulatorHomeReady({ accountReady: true, gameCount: 7, host: g.host });
+  const g = fixture(); reportSimulatorHomeReady({ accountReady: true, gameCount: 8, host: g.host });
   g.tick(); g.host.__maydanSimulatorLaunchToken = '00000000-0000-4000-8000-000000000002'; g.tick();
   assert.deepEqual(g.messages, []);
 });
@@ -63,4 +63,18 @@ test('no simulator token means no scheduling; unmount or token change retires a 
 test('actual Home initialization owns the receipt, not a document-load or splash callback', () => {
   const source = readFileSync(new URL('../src/platform/screens/Home.jsx', import.meta.url), 'utf8');
   assert.match(source, /useEffect\(\(\) => reportSimulatorHomeReady\(\{ accountReady: account\.ready, gameCount: GAMES\.length \}\), \[account\.ready\]\)/);
+});
+
+test('the exact eight-game launch gate follows the current catalog across JS, native and Python', () => {
+  const read = file => readFileSync(new URL(`../${file}`, import.meta.url), 'utf8');
+  const catalog = read('src/platform/registry.js').match(/export const GAMES = \[([^\]]+)\]/)?.[1].split(',').map(id => id.trim());
+  assert.equal(catalog?.length, 8, 'adding/removing a game must intentionally update every readiness gate');
+  assert.ok(catalog.includes('mafia'));
+  const native = read('ios/Maydan/GameViewController.swift');
+  assert.match(native, /payload\["gameCardCount"\] as\? Int == 8 else \{ return \}/);
+  assert.match(native, /"phase": "home-ready", "route": "home", "gameCardCount": 8/);
+  assert.match(read('scripts/ios/smoke_simulator_launch.py'), /type\(value\.get\("gameCardCount"\)\) is not int or value\["gameCardCount"\] != 8/);
+  const missing = fixture(); missing.cards.pop();
+  reportSimulatorHomeReady({ accountReady: true, gameCount: 8, host: missing.host });
+  missing.tick(); missing.tick(); assert.deepEqual(missing.messages, [], 'seven mounted controls cannot pass the current catalog');
 });

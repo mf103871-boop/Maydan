@@ -8,10 +8,10 @@ export const urls = (env) => ({
   token: env.GOOGLE_TOKEN_URL || 'https://oauth2.googleapis.com/token',
   jwks: env.GOOGLE_JWKS_URL || 'https://www.googleapis.com/oauth2/v3/certs',
 });
-export const configured = (env) => !!env.GOOGLE_CLIENT_ID;
+export const configured = (env) => [env.GOOGLE_CLIENT_ID, env.GOOGLE_CLIENT_SECRET].every(value => typeof value === 'string' && value.trim().length > 0);
 
 export function authorizeUrl(env, { redirectUri, state, nonce }) {
-  if (!env.GOOGLE_CLIENT_ID) failure('NOT_ELIGIBLE');
+  if (!configured(env)) failure('NOT_ELIGIBLE');
   const query = new URLSearchParams({
     response_type: 'code', client_id: env.GOOGLE_CLIENT_ID, redirect_uri: redirectUri,
     scope: 'openid email profile', state, nonce, prompt: 'select_account',

@@ -13,6 +13,16 @@ export async function mafiaMediaLease(env,id,now=Date.now()) {
   catch (error) { if (!mafiaEnabled(env) && /no such table.*mafia_media_leases/i.test(error.message)) return null; throw error; }
 }
 export async function assertSocialAllowed(env,id) { if (await mafiaMediaLease(env,id)) fail('MAFIA_SOCIAL_LOCKED',409); }
+// Session revocation is different from a network loss. Wake the owning room
+// even if the native SDK is the only remaining connection. The room checks D1
+// itself, so delayed notifications cannot revoke another authorized session.
+export async function recheckMafiaAuthorization(env,id) {
+  if(!env.DB||!env.ROOMS)return;
+  let seat;try{seat=await first(env,'SELECT room_code FROM mafia_seats WHERE user_id=?',id);}catch(error){if(!mafiaEnabled(env)&&/no such table.*mafia_/i.test(error.message))return;throw error;}
+  if(!seat)return;
+  const response=await env.ROOMS.get(env.ROOMS.idFromName(seat.room_code)).fetch(new Request('https://internal/mafia-session-revoked',{method:'POST'}));
+  if(!response.ok&&response.status!==404)fail('MAFIA_VOICE_UNAVAILABLE',503);
+}
 export async function leaveMafiaOnBlock(env,id,targetAccountUserId) {
   if(!env.DB||!env.ROOMS)return false;
   let seat;try{seat=await first(env,'SELECT room_code FROM mafia_seats WHERE user_id=?',id);}catch(error){if(!mafiaEnabled(env)&&/no such table.*mafia_/i.test(error.message))return false;throw error;}

@@ -4,13 +4,28 @@ Date: 2026-10-26. This is implementation evidence for the isolated `codex/mafia-
 
 ## Integrated source freeze checks
 
-- The complete Node suite passed **1,302 / 1,302 tests**, with no skipped tests, in 93.2 seconds (`.cache/mafia-root-freeze-suite.log`). This includes existing games, account rules, environment isolation and new Mafia coverage.
+- The complete Node suite passed **1,331 / 1,331 tests**, with no skipped tests, in 100.4 seconds (`.cache/mafia-final-suite.log`). This includes existing games, account rules, environment isolation and new Mafia coverage.
 - Repository ESLint completed with **0 errors and 23 existing warnings**. The focused new-file checks are clean.
-- Python release-tool tests completed **63 tests with 2 platform skips** on Windows. Printed simulator failure/timeout lines are deliberate unit-test fixtures, not an actual simulator run. Swift/UIKit compilation and the four real simulator release gates remain required in CI.
+- Python release-tool tests completed **64 tests with 2 platform skips** on Windows. Printed simulator failure/timeout lines are deliberate unit-test fixtures, not an actual simulator run. The four real simulator release gates remain required in CI for the final source.
 - The preview uses a separate account/session namespace in web storage and native Keychain while preserving production key names. Same-origin production web builds retain their existing account keys. Preview cleanup preserves production identity and local game progress.
 - The test environment is a separate worker, database, Durable Object namespaces, audio bucket and LiveKit test project. No production deployment or migration is part of this source freeze.
 
 ## Automated evidence completed locally
+
+### Final hardening after the first hosted runs
+
+- Account provider capabilities are now advertised separately for native iOS and web. Google requires both its client ID and secret; a native Apple bundle ID does not imply that Apple web redirect login is configured. Sign-in loads this public configuration independently of StoreKit, deduplicates concurrent reads, exposes retry on failure, and rechecks before authorization. The isolated Google client is restricted to the preview origin and callback; production credentials are unchanged.
+- The actual browser/native-bridge provider, sign-in and StoreKit regressions passed **47/47**, plus **14/14** catalog/readiness/environment checks. Correcting the old unscoped test account fixtures exposed a missing `getMe` import in purchase preflight; restoring it is covered by the successful purchase test. These fixtures do not prove a real Apple purchase or Google login.
+- Optional web image prefetch now pauses before dequeuing work during online play, calls, recording/playback and hidden pages. Already-started requests finish and preserve progress. Native bundled-resource behavior remains unchanged. Mandatory Fabraka service-worker installation keeps all 32 prerequisites while bounding concurrency to three. Actual Chromium Splash/Lamma integration and focused regression checks passed; this is not a hosted latency measurement.
+- Successful D1 metadata synchronization is cached only for unchanged room metadata. Private choices retain their durable commit and both live authorization reads. Membership, media epoch/failure and terminal changes still synchronize; cold objects and failed writes do not reuse success fingerprints.
+- Mafia voice grants are bound to the authenticated account session and its expiry on the server. Signout and suspension wake the owning room even after its WebSocket closes; exact expiry survives rehydration. Strict provider cleanup, quarantine, legitimate rotation and separate valid sessions are covered by **23/23** Mafia backend tests and **105/105** combined backend regressions.
+- Swift release compilation passed for source `f787b5e561cbda4140bcf04018477bd5c96955ba`. Its simulator launch gate correctly refused an outdated seven-card expectation while the healthy Home screen displayed eight games. The Swift receipt, Python verifier and actual-Home tests now require exactly eight, including Mafia; no readiness, migration, token, PID, survival or timeout gate was weakened. A fresh complete signed workflow is still required.
+
+### Hosted evidence before the final hardening deployment
+
+The isolated server at source `f787b5e561cbda4140bcf04018477bd5c96955ba` passed six-client WebSocket checks and two real LiveKit connections with synthetic microphones, bidirectional audio bytes, and rejection of both original and provider-refreshed prior-phase credentials. A separate twelve-client run observed twelve published participants through the provider API, then distinct opaque night channels for three Mafia and one shadow participant while eight town participants were quiet. An eliminated participant received listen-only grants, defense allowed one publisher, and cleanup returned capacity to zero. These are automated browser/provider tests, not physical phones or human playtests.
+
+Performance acceptance is **not established** by that run: ready acknowledgements had p95 380ms, voice API requests p95 1427ms, initial SDK publication median 5617ms (maximum 14247ms), private-channel publication median 1951ms, and WebSocket ping p95 2534ms. Twelve RTC clients shared one PC. Provider latency, request queues, network conditions and optional asset downloads were not isolated, so these figures cannot be attributed only to the external network. The final source must be redeployed and remeasured with an independent RTT baseline; the 300ms/3s targets remain open until supported by those results.
 
 Commands:
 

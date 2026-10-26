@@ -17,7 +17,7 @@ export async function routeMafia(request,env,url,charge) {
   const block=/^\/api\/rooms\/(\d{6})\/mafia-block$/.exec(path);
   if(!voice&&!report&&!block&&!['/api/rooms/public','/api/matchmaking/join','/api/mafia/history','/api/mafia/capabilities'].includes(path))return null;
   if(path==='/api/mafia/capabilities'&&method==='GET')return json({enabled:mafiaEnabled(env),capabilities:{mafia:MAFIA_PROTOCOL}});
-  const {user}=await requireSession(env,request,{rotate:false});
+  const {user,session}=await requireSession(env,request,{rotate:false});
   if(charge)await charge(method==='GET'||voice?'socialRead':'socialWrite','RATE_LIMIT',user.id);
   if(path==='/api/rooms/public'&&method==='GET') {
     if(url.searchParams.get('game')&&url.searchParams.get('game')!=='mafia')fail('GAME');
@@ -44,7 +44,7 @@ export async function routeMafia(request,env,url,charge) {
     }
     fail('MAFIA_NO_ROOMS',409);
   }
-  if(voice&&method==='POST') return roomFetch(env,voice[1],'mafia-voice',{...await readJson(request),accountUserId:user.id});
+  if(voice&&method==='POST') return roomFetch(env,voice[1],'mafia-voice',{...await readJson(request),accountUserId:user.id,accountSessionId:session.id});
   if(block&&method==='POST') return roomFetch(env,block[1],'mafia-block',{...await readJson(request),accountUserId:user.id});
   if(report&&method==='POST') {
     const body=await readJson(request);

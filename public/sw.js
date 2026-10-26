@@ -63,12 +63,18 @@ self.addEventListener('install', (event) => {
         if (!document.ok) throw new Error('Offline document unavailable');
         await cache.put('./index.html', navigationResponse(document));
         const images = await caches.open(MEDIA_CACHE);
-        await Promise.all(FABRAKA_IMAGES.map(async (url) => {
-          const cached = await images.match(url);
-          if (cached && /^image\//i.test(cached.headers.get('content-type') || '')) return;
-          const response = await fetch(url);
-          if (!response.ok || !/^image\//i.test(response.headers.get('content-type') || '')) throw new Error('Fabraka image unavailable');
-          await images.put(url, response);
+        // These remain required for offline activation, but a cold installation
+        // must not launch all 32 images alongside an active game's connection.
+        let imageIndex = 0;
+        await Promise.all(Array.from({ length: Math.min(3, FABRAKA_IMAGES.length) }, async () => {
+          while (imageIndex < FABRAKA_IMAGES.length) {
+            const url = FABRAKA_IMAGES[imageIndex++];
+            const cached = await images.match(url);
+            if (cached && /^image\//i.test(cached.headers.get('content-type') || '')) continue;
+            const response = await fetch(url, { priority: 'low' });
+            if (!response.ok || !/^image\//i.test(response.headers.get('content-type') || '')) throw new Error('Fabraka image unavailable');
+            await images.put(url, response);
+          }
         }));
         // A hashed name never changes content: a copy kept by the previous release is
         // reused instead of downloading the same art again with every update.

@@ -59,8 +59,9 @@ async function fresh(t, ready, { failed = false, unfinished = false } = {}) {
   readiness = ready; failConfig = failed; configCalls = 0; deliveries = 0;
   const context = await browser.newContext(); t.after(() => context.close());
   await context.addInitScript(({ cached }) => {
-    localStorage.setItem('maydan:account:session', JSON.stringify('unit-session'));
-    localStorage.setItem('maydan:account:me', JSON.stringify({ data: cached, fetchedAt: Date.now() }));
+    const accountPrefix=`maydan:environment:${encodeURIComponent(location.origin)}:account:`;
+    localStorage.setItem(`${accountPrefix}session`, JSON.stringify('unit-session'));
+    localStorage.setItem(`${accountPrefix}me`, JSON.stringify({ data: cached, fetchedAt: Date.now() }));
     window.nativeCalls = [];
     window.testUnfinished = false;
     window.MaydanNative = { postMessage(raw) {

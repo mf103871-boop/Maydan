@@ -182,8 +182,10 @@ class LaunchSmoke:
             raise SmokeFailure("Game readiness receipt lacks initialized game and completed migration.")
         if value.get("phase") != "home-ready" or value.get("route") != "home":
             raise SmokeFailure("Game readiness receipt does not identify the mounted home screen.")
-        if type(value.get("gameCardCount")) is not int or value["gameCardCount"] != 7:
-            raise SmokeFailure("Game readiness receipt does not contain all seven game controls.")
+        # This exact catalog gate changes intentionally with a registered game;
+        # keep the native receipt and actual-Home regression in agreement.
+        if type(value.get("gameCardCount")) is not int or value["gameCardCount"] != 8:
+            raise SmokeFailure("Game readiness receipt does not contain all eight game controls.")
 
     def read_game_ready(self, record, elapsed):
         path = self.data_container / "Library/Caches/MaydanLaunchSmoke/ready.json"
