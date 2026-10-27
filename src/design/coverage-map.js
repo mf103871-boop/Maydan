@@ -8,7 +8,7 @@ export const DESIGN_RENDERED_NODE_IDS = Object.freeze({
   "online.mafia.safety": Object.freeze(["block-exit","close","content","header","report-details","submit"]),
   "online.mafia.setup": Object.freeze(["capacity","mode-choice","mode-option","rules","visibility"]),
   "online.mafia.directory": Object.freeze(["actions","create-public-room","directory-mode","header","quick-join","refresh","room-join","rooms"]),
-  "online.mafia.lobby": Object.freeze(["rules"]),
+  "online.mafia.lobby": Object.freeze(["capacity","mode-choice","mode-option","room-settings","rules","save","visibility"]),
   "online.mafia.role": Object.freeze(["audio-output","chat","event","header","messages","mute","narrative","phase-title","player-rail","player-seat","players","role-card","role-toggle","rules","tab.clues","tab.council","tab.notes","tabs","timer","voice","voice-leave"]),
   "online.mafia.opening": Object.freeze(["audio-output","chat","composer","event","header","message-input","messages","mute","narrative","phase-title","player-rail","player-seat","players","role-card","role-toggle","rules","send","tab.clues","tab.council","tab.notes","tabs","timer","voice","voice-leave"]),
   "online.mafia.night": Object.freeze(["ability","ability-submit","audio-output","chat","event","header","messages","mute","narrative","phase-title","player-rail","player-seat","players","role-card","role-toggle","rules","tab.clues","tab.council","tab.notes","tabs","target","targets","timer","voice","voice-leave"]),
@@ -230,6 +230,9 @@ export const DESIGN_CONDITIONAL_NODE_REASONS = Object.freeze({
     "topbar": "The full Online route adds the shared TopBar around Entry; the narrow isolated Entry fixture omits that route wrapper.",
     "title": "The full Online route adds the shared TopBar around Entry; the narrow isolated Entry fixture omits that route wrapper."
   },
+  "online.lobby": {
+    "host-handover": "Shown only to a Mafia host while another seat is connected; the waiting-room fixture is an Ersomha room."
+  },
   "online.chrome": {
     "dropped": "Disconnected host seats and WebSocket reconnection states reveal these actual room recovery controls.",
     "member-remove": "Disconnected host seats and WebSocket reconnection states reveal these actual room recovery controls.",
@@ -349,6 +352,7 @@ export const DESIGN_CONDITIONAL_NODE_REASONS = Object.freeze({
     "legal-pricing": "Web checkout alone shows its pricing policy link; the baseline fixture is iPhone."
   },
   "system.dialog": {
+    "member-host": "The Mafia host's handover dialog lists each other connected seat as a choice; the generic fixture is a confirmation.",
     "rules": "Stable MaydanModal/Profile modal content exposes these real child controls when rules, score editing, question reports or share-link dialogs are opened.",
     "score-cards": "Stable MaydanModal/Profile modal content exposes these real child controls when rules, score editing, question reports or share-link dialogs are opened.",
     "score-minus": "Stable MaydanModal/Profile modal content exposes these real child controls when rules, score editing, question reports or share-link dialogs are opened.",

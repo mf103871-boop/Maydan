@@ -25,7 +25,7 @@
 .mafia-noir .mafia-mode-picker button[aria-pressed=true]:after{content:'✓';position:absolute;left:8px;top:6px;color:var(--m-gold);font-size:12px}
 .mafia-noir .mafia-mode-picker strong{font-size:14px}.mafia-noir .mafia-mode-picker small{font-size:11px;color:#b5becc}
 .mafia-noir .mafia-settings-row{display:flex;gap:10px;flex-wrap:wrap}.mafia-noir .mafia-settings-row>*{flex:1 1 135px;min-width:0}
-.mafia-noir.mafia-settings label,.mafia-noir.mafia-directory label{display:grid;gap:7px;font-size:13px;font-weight:700}.mafia-noir.mafia-settings select,.mafia-noir.mafia-directory select{width:100%}
+.mafia-noir.mafia-settings label,.mafia-noir.mafia-directory label,.mafia-noir .mafia-lobby-settings label{display:grid;gap:7px;font-size:13px;font-weight:700}.mafia-noir.mafia-settings select,.mafia-noir.mafia-directory select,.mafia-noir .mafia-lobby-settings select{width:100%}
 .mafia-noir.mafia-directory{gap:13px;margin-block:10px}
 .mafia-noir .mafia-directory-heading{display:flex;justify-content:space-between;align-items:center;gap:14px}
 .mafia-noir .mafia-directory-heading p{font-size:12px;color:var(--m-soft);line-height:1.8;margin-top:4px}
@@ -46,7 +46,7 @@
 .mafia-noir .mafia-lobby-art{position:relative;display:flex;align-items:center;gap:14px;padding:32px 20px 22px;background:linear-gradient(90deg,#0d14279a,#101723ee),var(--mafia-environment) center 48%/cover}
 .mafia-noir .mafia-lobby-art .mafia-noir-icon{width:80px;height:80px}.mafia-noir .mafia-lobby-art h2{font-size:24px}.mafia-noir .mafia-lobby-art p{font-size:12px;color:#c5c8d0}
 .mafia-noir .mafia-lobby-brief{display:grid;gap:12px;padding:0 16px;font-size:13px;line-height:1.8}.mafia-noir .mafia-composition{display:flex;gap:6px;flex-wrap:wrap}.mafia-noir .mafia-composition span{padding:4px 9px;background:#56627422;border:1px solid #69768a3b;border-radius:6px;color:#d8c29c;font-size:11px}
-.mafia-noir.mafia-lobby-info>.btn{margin:0 12px 12px;width:calc(100% - 24px)}
+.mafia-noir.mafia-lobby-info>.btn{margin:0 12px 12px;width:calc(100% - 24px)}.mafia-noir .mafia-lobby-settings{display:grid;gap:12px;margin:0 12px}
 .mafia-noir.mafia-online-shell{animation:none!important;transform:none}
 .mafia-noir.mafia-online-shell>.online-room-chrome{animation:none}
 /* Match: compact stage, usable actions, narrative conversation, player rail. */

@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { WebSocket } from 'ws';
 import { startLocalServer } from '../server/local.mjs';
-import { createUser } from '../server/accounts/db.mjs';
+import { createUser, upsertSubscription } from '../server/accounts/db.mjs';
 import { issueSession } from '../server/accounts/session.mjs';
 import { newCredentials,RoomClient } from '../src/online/client.js';
 import { decodeJws } from '../server/accounts/jwt.mjs';
@@ -540,7 +540,7 @@ test('a voice seat that leaves a kept channel and returns waits out the revocati
   for(let i=0;i<4;i++)await h.phase(g.code);
   const item=h.app.rooms.get(g.code),path=`/api/rooms/${g.code}/voice`;
   const channel=response=>decodeJws(response.body.connection.token).payload.video.room;
-  const first=await h.api(g.people[1],path,{deviceId:'phone-1'}),stays=await h.api(g.people[2],path,{deviceId:'phone-2'});
+  const first=await h.api(g.people[1],path,{deviceId:'phone-1'});await h.api(g.people[2],path,{deviceId:'phone-2'});
   const kept=channel(first),stayEpoch=mafiaUserEpoch(item.instance.room.mafiaMedia,g.people[2].accountId);
   // Its voice presence lapses and its socket closes: it leaves the audience.
   await item.instance.serial(async()=>{const r=structuredClone(item.instance.room);r.mafiaMedia.presence[g.people[1].accountId]=0;await item.instance.commit(r);});
@@ -555,5 +555,20 @@ test('a voice seat that leaves a kept channel and returns waits out the revocati
   await until(async()=>(await h.api(g.people[1],path,{deviceId:'phone-1'})).status===200,'a fresh token after the cutoff',5000);
   const again=await h.api(g.people[1],path,{deviceId:'phone-1'});assert.equal(channel(again),kept,'the kept channel is the same');
   assert.ok(decodeJws(again.body.connection?.token||first.body.connection.token).payload.nbf>=Math.floor(item.instance.room.mafiaMedia.revokedUntil[g.people[1].accountId]/1000)-1);
-  void stays;
+});
+
+test('each seat learns at join whether its account could start the room, and a vacant host seat goes to one that can',async t=>{
+  const h=await setup(t),people=[];for(let n=0;n<4;n++)people.push(await h.user(n));
+  const now=Date.now(),usedTrial=async p=>{await run(h.app.env,'INSERT INTO trials(user_id,game,created_at) VALUES(?,?,?)',p.accountId,'mafia',now);await run(h.app.env,'INSERT INTO online_room_trial_claims(user_id,game,claim_id,created_at) VALUES(?,?,?,?)',p.accountId,'mafia',`elsewhere-${p.accountId}`,now);};
+  await usedTrial(people[1]);await usedTrial(people[2]);
+  await upsertSubscription(h.app.env,{source:'apple',external_id:`plus-${people[2].accountId}`,user_id:people[2].accountId,product:'plus',status:'active',until:now+86_400_000,will_renew:true,environment:'Production',occurred_at:now});
+  const created=await h.api(people[0],'/api/rooms',people[0]);assert.equal(created.status,201);const code=created.body.code;
+  for(const p of people.slice(1))assert.equal((await h.api(p,`/api/rooms/${code}/join`,p)).status,200);
+  const item=h.app.rooms.get(code);
+  assert.deepEqual(item.instance.room.members.map(m=>m.canHost),[true,false,true,true],'creator, trial spent elsewhere, Plus, unused trial');
+  for(const p of people.slice(0,3)){const c=new RoomClient({server:h.app.url,code,session:{id:p.id,token:p.token},getAccountAuthorization:()=>`Bearer ${p.authorization}`,WebSocketImpl:BrowserSocket});h.clients.push(c);c.start();}
+  await until(()=>h.clients.every(c=>c.state?.members.filter(m=>m.connected).length===3),'three phones connected');
+  assert.equal(JSON.stringify(h.clients[1].state).includes('canHost'),false,'eligibility stays on the server');
+  assert.equal((await h.api(people[0],`/api/rooms/${code}/leave`,{id:people[0].id,token:people[0].token})).status,200);
+  assert.equal(item.instance.room.hostId,people[2].id,'the Plus seat, not the first connected one');
 });

@@ -2,7 +2,7 @@
 // are projections; never send this room object or audit trail to a live client.
 import { ROOM_TTL, HOST_GRACE, AVATARS, arabicNumber } from '../src/online/shared.js';
 import { MAFIA_PROTOCOL, MAFIA_RULESET_VERSION, MAFIA_ROLES, MAFIA_SUPPORT_ROLES, MAFIA_TIMERS, MAFIA_RECONNECT_MS, MAFIA_MAX_DAYS, MAFIA_MAX_MATCH_MS, mafiaComposition, mafiaMinimumPlayers, normalizeMafiaSettings } from '../src/online/mafia-shared.js';
-import { active, member, newMember, admitMember, transferHost, extendForMatch, colorOf, fail, hasInvisible, profile, sameName } from './room-model.mjs';
+import { active, member, newMember, admitMember, extendForMatch, colorOf, fail, hasInvisible, profile, sameName } from './room-model.mjs';
 import { objectionableText } from './moderation/filter.mjs';
 
 const FINISHED = new Set(['lobby', 'over', 'closed']);
@@ -22,6 +22,18 @@ const state = (room, id) => room.roleStates[id] || null;
 const aliveState = (room, id) => { const s = state(room, id); if (!s?.alive) fail('ELIMINATED', 403); return s; };
 const isRunning = room => !FINISHED.has(room.phase);
 
+// The host only deals, restarts and kicks in the lobby. When the seat must be
+// handed over (left, or gone past its grace), prefer a connected member who can
+// actually start a match (canHost: Plus, an unused trial or this room's claim,
+// set on the server at join), then a player of the current match.
+function transferHost(room, now, immediate = false) {
+  const host = room.members.find(m => m.id === room.hostId && !m.left);
+  if (host?.connected) { room.hostMissingSince = null; return; }
+  room.hostMissingSince ??= now;
+  const candidates = active(room).filter(m => m.connected), playing = m => (room.participants || []).includes(m.id);
+  const next = candidates.find(m => m.canHost && playing(m)) || candidates.find(m => m.canHost) || candidates.find(playing) || candidates[0];
+  if (next && (immediate || !host || now >= room.hostMissingSince + HOST_GRACE)) { room.hostId = next.id; room.hostMissingSince = null; }
+}
 function publicEvent(room, type, now, data = {}) {
   room.publicSequence += 1;
   room.history.push({ id: room.publicSequence, type, at: now, round: room.round, ...data });
@@ -477,6 +489,9 @@ export function action(room, actorId, command, now, options = {}) {
       host(); if (room.phase !== 'lobby') fail('PHASE', 409);
       const settings = normalizeMafiaSettings(command.settings);
       if (!settings || settings.capacity < active(room).length) fail('INVALID');
+      // Another mode, or a room opened to or closed from strangers, is not the
+      // match the others readied for, so they confirm again.
+      if (settings.mode !== room.settings.mode || settings.visibility !== room.settings.visibility) for (const m of active(room)) m.ready = m.id === room.hostId;
       room.settings = settings; publicChange(room); break;
     }
     case 'start': host(); start(room, now, options?.randomWord); break;
@@ -489,6 +504,14 @@ export function action(room, actorId, command, now, options = {}) {
       room.outcome = null; room.technicalAbort = false; room.winners = []; room.round = 0; room.startedAt = null; room.nomineeId = null; room.reason = null;
       for (const m of room.members) m.ready = m.id === room.hostId;
       phase(room, 'lobby', now, 0); break;
+    case 'host': {
+      // A host may hand the waiting room to a connected member, e.g. one who can start it.
+      host(); if (room.phase !== 'lobby') fail('PHASE', 409);
+      const target = room.members.find(m => m.id === command.targetId && !m.left);
+      if (!target || target.id === actorId || !target.connected) fail('TARGET', 409);
+      room.hostId = target.id; room.hostMissingSince = null;
+      publicEvent(room, 'host_changed', now, { playerId: target.id }); break;
+    }
     case 'kick': {
       host(); if (room.phase !== 'lobby') fail('PHASE', 409);
       if (command.targetId === actorId) fail('INVALID');

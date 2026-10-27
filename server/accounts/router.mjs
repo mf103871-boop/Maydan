@@ -476,6 +476,16 @@ export async function consumeRoomTrial(env, gate, claimId, now = Date.now(), own
   const won = await db.first(env, `SELECT COUNT(*) AS n FROM online_room_trial_claims WHERE user_id IN (${placeholders}) AND game=? AND claim_id=?`, ...keys, gate.game, claimId);
   if (won?.n !== keys.length) failure('PLUS_REQUIRED');
 }
+// Whether this account could start the room's next Mafia match if it hosted:
+// Plus, an unused trial, or this room's own trial claim. Kept on the seat for
+// host handover only; it never leaves the server.
+export async function mafiaHostEligible(env,id,room,now=Date.now()) {
+  if(!id||!env.DB)return false;
+  if(premiumActive(premiumOf(await db.subscriptionsOf(env,id),now,env),now))return true;
+  if(!(await db.trialsOf(env,id)).mafia)return true;
+  const prior=await env.DB.prepare("SELECT claim_id FROM online_room_trial_claims WHERE user_id=? AND game='mafia'").bind(id).first();
+  return Boolean(room.roomTrialClaim)&&prior?.claim_id===room.roomTrialClaim;
+}
 // Host transfer cannot transfer a paid entitlement. Recheck at each Mafia
 // start, while preserving the room's idempotent free-start claim on retries.
 export async function recheckMafiaHost(env,room,now=Date.now()) {

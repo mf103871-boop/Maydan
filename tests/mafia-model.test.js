@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import * as mafia from '../server/mafia-model.mjs';
 import { MAFIA_ROLES, MAFIA_SUPPORT_ROLES, MAFIA_RECONNECT_MS, mafiaComposition, normalizeMafiaSettings } from '../src/online/mafia-shared.js';
+import { HOST_GRACE } from '../src/online/shared.js';
 
 const NOW = 1_800_000_000_000;
 const input = n => ({ id: `p${n}`, tokenHash: `token${n}`, name: `لاعب ${n}`, avatar: n % 4 });
@@ -372,6 +373,54 @@ test('a public waiting room releases a seat whose phone is gone for two minutes;
   // A seat that joined but never opened its socket counts from its arrival.
   const never = mafia.createRoom('ABC124', { ...input(0), settings: { mode: 'classic', capacity: 8, visibility: 'public' } }, NOW);
   mafia.tick(never, NOW + mafia.MAFIA_PUBLIC_LOBBY_IDLE_MS); assert.equal(never.phase, 'closed');
+});
+
+test('a vacant host seat goes to a connected member who can start the next match', () => {
+  const room = lobby(8);
+  room.members.find(m => m.id === 'p5').canHost = true; // Plus, an unused trial or this room's claim
+  mafia.connected(room, 'p0', false, NOW + 1);
+  mafia.tick(room, NOW + HOST_GRACE);
+  assert.equal(room.hostId, 'p0', 'the host keeps the seat through its grace');
+  mafia.tick(room, NOW + 1 + HOST_GRACE);
+  assert.equal(room.hostId, 'p5', 'not the first seat in line, which could not start');
+  assert.equal(room.history.at(-1).type, 'host_changed');
+  mafia.leaveRoom(room, 'p5', NOW + 2 + HOST_GRACE);
+  assert.equal(room.hostId, 'p1', 'with nobody able to start, the first connected seat still runs the room');
+  // During a match a connected player who can start comes before a waiting watcher who can.
+  const playing = lobby(6);
+  act(playing, 'p0', { type: 'settings', settings: { mode: 'classic', capacity: 8, visibility: 'private' } });
+  act(playing, 'p0', { type: 'start' }, NOW, { randomWord: rng() });
+  mafia.joinRoom(playing, input(9), NOW); mafia.connected(playing, 'p9', true, NOW);
+  Object.assign(playing.members.find(m => m.id === 'p9'), { canHost: true });
+  Object.assign(playing.members.find(m => m.id === 'p4'), { canHost: true });
+  mafia.leaveRoom(playing, 'p0', NOW + 1);
+  assert.equal(playing.hostId, 'p4');
+  assert.equal(JSON.stringify(mafia.snapshot(playing, 'p1', NOW + 1)).includes('canHost'), false, 'eligibility never reaches a phone');
+});
+
+test('the host hands a waiting room to a connected member and edits its settings', () => {
+  const room = lobby(6);
+  assert.throws(() => act(room, 'p1', { type: 'host', targetId: 'p2' }), { code: 'HOST_ONLY' });
+  assert.throws(() => act(room, 'p0', { type: 'host', targetId: 'p0' }), { code: 'TARGET' });
+  assert.throws(() => act(room, 'p0', { type: 'host', targetId: 'nobody' }), { code: 'TARGET' });
+  mafia.connected(room, 'p3', false, NOW);
+  assert.throws(() => act(room, 'p0', { type: 'host', targetId: 'p3' }), { code: 'TARGET' }, 'an absent phone cannot start anything');
+  act(room, 'p0', { type: 'host', targetId: 'p2' });
+  assert.equal(room.hostId, 'p2');
+  assert.deepEqual(room.history.at(-1), { id: room.publicSequence, type: 'host_changed', at: NOW, round: 0, playerId: 'p2' });
+  assert.throws(() => act(room, 'p0', { type: 'kick', targetId: 'p1' }), { code: 'HOST_ONLY' }, 'the former host has no host powers left');
+  // Capacity alone keeps everyone ready; another mode or visibility asks them again.
+  mafia.connected(room, 'p3', true, NOW);
+  act(room, 'p2', { type: 'settings', settings: { mode: 'classic', capacity: 7, visibility: 'private' } });
+  assert.equal(room.members.every(m => m.ready), true);
+  assert.throws(() => act(room, 'p2', { type: 'settings', settings: { mode: 'classic', capacity: 5, visibility: 'private' } }), { code: 'INVALID' });
+  act(room, 'p2', { type: 'settings', settings: { mode: 'classic', capacity: 7, visibility: 'public' } });
+  assert.deepEqual(room.members.filter(m => m.ready).map(m => m.id), ['p2']);
+  assert.deepEqual(room.settings, { mode: 'classic', capacity: 7, visibility: 'public' });
+  assert.throws(() => act(room, 'p2', { type: 'settings', settings: { mode: 'shadow', capacity: 6, visibility: 'public' } }), { code: 'INVALID' });
+  for (const m of room.members) act(room, m.id, { type: 'ready', ready: true });
+  act(room, 'p2', { type: 'start' }, NOW, { randomWord: rng() });
+  assert.throws(() => act(room, 'p2', { type: 'host', targetId: 'p1' }), { code: 'PHASE' });
 });
 
 test('a match finished over text during a voice outage is a real result; a technical abort is not', async () => {

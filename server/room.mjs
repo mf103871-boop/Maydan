@@ -4,7 +4,7 @@ import { buildFabrakaDeck } from './fabraka-content.mjs';
 import { credentials, readJson, json, errorResponse, shuffled, createLimit } from './protocol.mjs';
 import { bindSeatAccount, prepareRoomStats } from './room-stats.mjs';
 import { recordOnlineResult, profileSummaries } from './profiles/db.mjs';
-import { consumeRoomTrial, recheckMafiaHost } from './accounts/router.mjs';
+import { consumeRoomTrial, recheckMafiaHost, mafiaHostEligible } from './accounts/router.mjs';
 import { requireSession } from './accounts/session.mjs';
 import { liveAccountSql } from './moderation/access.mjs';
 import { ERSOMHA_PROTOCOL, BADEEHA_PROTOCOL, MAFIA_PROTOCOL, ROOM_REACTIONS, REACTION_BURST, REACTION_REFILL_MS, reactionsAllowed } from '../src/online/shared.js';
@@ -492,7 +492,8 @@ export class Room {
           created.trialOwnerId = input.id;
           created.trialStarted = false;
           bindSeatAccount(created, input.id, input.accountUserId);
-          if(created.game==='mafia') {created.mafiaKey=crypto.randomUUID();await claimMafiaSeat(this.env,created,input.id);}
+          // The creator passed the room gate, so it can start; joiners are checked as they arrive.
+          if(created.game==='mafia') {created.mafiaKey=crypto.randomUUID();await claimMafiaSeat(this.env,created,input.id);created.members[0].canHost=true;}
           await this.hydrateErsomhaProfile(created, input.id);
           // Reject empty topic selections while the creator can still edit them,
           // rather than trapping an assembled group in an unstartable lobby.
@@ -592,7 +593,7 @@ export class Room {
           const candidate = structuredClone(this.room);
           joinRoom(candidate, input, Date.now());
           bindSeatAccount(candidate, input.id, input.accountUserId);
-          if(candidate.game==='mafia')await claimMafiaSeat(this.env,candidate,input.id);
+          if(candidate.game==='mafia') {await claimMafiaSeat(this.env,candidate,input.id);member(candidate,input.id).canHost=await mafiaHostEligible(this.env,input.accountUserId,candidate);}
           await this.hydrateErsomhaProfile(candidate, input.id);
           await this.commit(candidate);
           return json({ code: this.room.code, id: input.id, game: this.room.game || 'meenfina' });

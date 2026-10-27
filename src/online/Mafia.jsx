@@ -23,12 +23,20 @@ export function normalizeMafiaSettings(value = {}) {
   return { mode, capacity: Math.max(min, Math.min(max, Number(value.capacity) || (mode === 'shadow' ? 10 : 8))), visibility: value.visibility === 'public' ? 'public' : 'private' };
 }
 
+// Shared by room creation and the host's lobby editor. `present` counts the
+// seats already taken: the server refuses a capacity below it.
+function MafiaSettingsFields({ settings, onChange, disabled, present = 0 }) {
+  return <>
+    <div data-design-id="mode-choice" className="mafia-mode-picker" role="group" aria-label="طور المباراة">{[['classic','المجلس الأساسي','٦–٨ لاعبين · فريقان'],['shadow','رابطة الظل','٩–١٢ لاعبًا · ثلاثة أطراف']].map(([mode,title,detail]) => <button data-design-id="mode-option" type="button" key={mode} disabled={disabled || present > (mode === 'shadow' ? 12 : 8)} aria-pressed={settings.mode === mode} onClick={() => onChange(normalizeMafiaSettings({ ...settings, mode, capacity: mode === 'shadow' ? Math.max(10, present) : 8 }))}><strong>{title}</strong><small>{detail}</small></button>)}</div>
+    <div className="mafia-settings-row"><label>سعة المجلس<select data-design-id="capacity" value={settings.capacity} disabled={disabled} onChange={event => onChange({ ...settings, capacity: Number(event.target.value) })}>{(settings.mode === 'shadow' ? [9,10,11,12] : [6,7,8]).map(n => <option key={n} value={n} disabled={n < present}>{ar(n)} لاعبين</option>)}</select></label>
+      <label>ظهور الغرفة<select data-design-id="visibility" disabled={disabled} value={settings.visibility} onChange={event => onChange({ ...settings, visibility: event.target.value })}><option value="private">خاصة · برمز أو دعوة</option><option value="public">عامة · يستقبل المجلس لاعبين</option></select></label></div>
+  </>;
+}
+
 export function MafiaSettings({ value = MAFIA_DEFAULT_SETTINGS, onChange = noop, disabled = false }) {
   const settings = normalizeMafiaSettings(value);
   return <section data-design-screen="online.mafia.setup" className="mafia-noir mafia-settings stack" aria-label="إعداد مافيا ميدان"><style>{css}</style>
-    <div data-design-id="mode-choice" className="mafia-mode-picker" role="group" aria-label="طور المباراة">{[['classic','المجلس الأساسي','٦–٨ لاعبين · فريقان'],['shadow','رابطة الظل','٩–١٢ لاعبًا · ثلاثة أطراف']].map(([mode,title,detail]) => <button data-design-id="mode-option" type="button" key={mode} disabled={disabled} aria-pressed={settings.mode === mode} onClick={() => onChange(normalizeMafiaSettings({ ...settings, mode, capacity: mode === 'shadow' ? 10 : 8 }))}><strong>{title}</strong><small>{detail}</small></button>)}</div>
-    <div className="mafia-settings-row"><label>سعة المجلس<select data-design-id="capacity" value={settings.capacity} disabled={disabled} onChange={event => onChange({ ...settings, capacity: Number(event.target.value) })}>{(settings.mode === 'shadow' ? [9,10,11,12] : [6,7,8]).map(n => <option key={n} value={n}>{ar(n)} لاعبين</option>)}</select></label>
-      <label>ظهور الغرفة<select data-design-id="visibility" disabled={disabled} value={settings.visibility} onChange={event => onChange({ ...settings, visibility: event.target.value })}><option value="private">خاصة · برمز أو دعوة</option><option value="public">عامة · يستقبل المجلس لاعبين</option></select></label></div>
+    <MafiaSettingsFields settings={settings} onChange={onChange} disabled={disabled}/>
     <p className="mafia-muted">حساب لكل لاعب. استضافة تجربة مجانية ثم بلس؛ الانضمام مجاني. لا تُباع قوة أو أفضلية في الأدوار.</p><MafiaRules />
   </section>;
 }
@@ -56,8 +64,17 @@ export function MafiaDirectory({ rooms = [], enabled, loading, error, mode, onMo
   </section>;
 }
 
-export function MafiaLobbyInfo({ state }) {
-  return <section className="mafia-noir mafia-lobby-info stack"><style>{css}</style><div className="mafia-lobby-art" style={{'--mafia-environment':`url("${MAFIA_NOIR_ASSETS.environment}")`}}><MafiaIcon/><div><span className="mafia-kicker">كل وجه يخفي حكاية</span><h2>{state.settings?.mode === 'shadow' ? 'رابطة الظل' : 'المجلس الأساسي'}</h2><p>{ar(state.settings?.capacity || 8)} مقاعد · {state.settings?.visibility === 'public' ? 'غرفة عامة' : 'غرفة خاصة'}</p></div></div><div className="mafia-lobby-brief"><p>جهّز السماعات إن أمكن. استمع واكتب دون تشغيل الميكروفون، واكشف بطاقتك سرًا عند البداية.</p>{state.composition && <p className="mafia-composition"><span>{ar(state.composition.mafia)} مافيا</span><span>{ar(state.composition.town)} أهل الميدان</span>{state.composition.shadow>0 && <span>{ar(state.composition.shadow)} قائد للرابطة</span>}</p>}<p className="mafia-muted">التوزيع يثبت بحسب عدد الجاهزين. الأدوار الفعلية لا يراها المضيف، والقادم بعد البداية ينتظر المباراة التالية.</p></div><MafiaRules possibleRoles={state.possibleRoles}/></section>;
+// Only the host edits the waiting room; unsaved edits live until saved or closed.
+function MafiaLobbySettings({ state, disabled, act }) {
+  const [editing, setEditing] = useState(false), [draft, setDraft] = useState(null);
+  const value = draft || normalizeMafiaSettings(state.settings);
+  const close = () => { setEditing(false); setDraft(null); };
+  return <div className="mafia-lobby-settings"><Button data-design-id="room-settings" full aria-expanded={editing} disabled={disabled} onClick={() => (editing ? close() : setEditing(true))}>{editing ? 'إغلاق إعدادات المجلس' : 'تعديل إعدادات المجلس'}</Button>
+    {editing && <><MafiaSettingsFields settings={value} onChange={setDraft} disabled={disabled} present={state.members.filter(m => !m.left).length}/><p className="mafia-muted">تغيير الطور أو ظهور الغرفة يعيد الآخرين إلى «يستعد» حتى يؤكدوا من جديد.</p><Button data-design-id="save" full variant="primary" disabled={disabled} onClick={async () => { if (await act('settings', { settings: value })) close(); }}>حفظ إعدادات المجلس</Button></>}</div>;
+}
+
+export function MafiaLobbyInfo({ state, isHost = false, disabled = false, act = noop }) {
+  return <section data-design-screen="online.mafia.lobby" className="mafia-noir mafia-lobby-info stack"><style>{css}</style><div className="mafia-lobby-art" style={{'--mafia-environment':`url("${MAFIA_NOIR_ASSETS.environment}")`}}><MafiaIcon/><div><span className="mafia-kicker">كل وجه يخفي حكاية</span><h2>{state.settings?.mode === 'shadow' ? 'رابطة الظل' : 'المجلس الأساسي'}</h2><p>{ar(state.settings?.capacity || 8)} مقاعد · {state.settings?.visibility === 'public' ? 'غرفة عامة' : 'غرفة خاصة'}</p></div></div><div className="mafia-lobby-brief"><p>جهّز السماعات إن أمكن. استمع واكتب دون تشغيل الميكروفون، واكشف بطاقتك سرًا عند البداية.</p>{state.composition && <p className="mafia-composition"><span>{ar(state.composition.mafia)} مافيا</span><span>{ar(state.composition.town)} أهل الميدان</span>{state.composition.shadow>0 && <span>{ar(state.composition.shadow)} قائد للرابطة</span>}</p>}<p className="mafia-muted">التوزيع يثبت بحسب عدد الجاهزين. الأدوار الفعلية لا يراها المضيف، والقادم بعد البداية ينتظر المباراة التالية.</p></div>{isHost && <MafiaLobbySettings state={state} disabled={disabled} act={act}/>}<MafiaRules possibleRoles={state.possibleRoles}/></section>;
 }
 
 function useCountdown(deadline, offset, preview, serverNow) {
