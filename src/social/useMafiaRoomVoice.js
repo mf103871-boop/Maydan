@@ -15,6 +15,7 @@ export function useMafiaRoomVoice(state) {
   }, [locked]);
   useEffect(() => () => { current.current?.configureMafiaRoom(null); }, []);
   return { ...(lamma?.mafiaVoice || emptyMafiaVoice()),
+    audioBlocked: Boolean(lamma?.media?.audioBlocked),
     audioOutputs: lamma?.media?.audioOutputs || [], outputId: lamma?.media?.outputId || 'default',
     onJoin: () => current.current?.joinMafiaVoice(), onLeave: () => current.current?.leaveMafiaVoice(),
     onMute: muted => current.current?.muteMafiaVoice(muted), onSpeaker: id => current.current?.setAudioOutput(id),

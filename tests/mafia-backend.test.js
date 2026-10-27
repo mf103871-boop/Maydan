@@ -52,6 +52,30 @@ test('public matchmaking fills existing rooms, deduplicates retries and excludes
   assert.equal((await h.api(blocked,`/api/rooms/${code}/join`,blocked)).body.error,'MAFIA_BLOCKED');
   assert.equal((await first(h.app.env,'SELECT COUNT(*) AS n FROM trials')).n,0);
 });
+test('public discovery is available to unrelated accounts, excludes private/full/blocked rooms and keeps joining free',async t=>{
+  const h=await setup(t),host=await h.user(0),guest=await h.user(1),privateHost=await h.user(2),blockedPeer=await h.user(3);
+  const create=await h.api(host,'/api/rooms',host),code=create.body.code;
+  const hidden=await h.api(privateHost,'/api/rooms',{...privateHost,settings:{mode:'classic',capacity:8}});assert.equal(hidden.status,201);
+  assert.equal(h.app.rooms.get(hidden.body.code).instance.room.settings.visibility,'private','backend compatibility default stays private');
+  const path='/api/rooms/public?game=mafia&mode=classic';
+  assert.equal((await h.api(null,path)).status,401);
+  const rows=(await h.api(guest,path)).body.rooms;assert.deepEqual(rows.map(r=>r.code),[code]);assert.deepEqual(Object.keys(rows[0]).sort(),['capacity','code','expiresAt','game','hostName','mode','players','ready'].sort());
+  assert.equal((await first(h.app.env,'SELECT COUNT(*) AS n FROM social_friendships')).n,0,'discovery does not require a friendship');
+  assert.deepEqual((await h.api(guest,'/api/rooms/public?game=mafia&mode=shadow')).body.rooms,[]);
+  assert.equal((await h.api(blockedPeer,`/api/rooms/${code}/join`,blockedPeer)).status,200);
+  for(const [blocker,blocked]of [[guest,blockedPeer],[blockedPeer,guest]]){
+    await run(h.app.env,'INSERT INTO social_blocks(blocker_id,blocked_id,created_at) VALUES(?,?,?)',blocker.accountId,blocked.accountId,Date.now());
+    assert.deepEqual((await h.api(guest,path)).body.rooms,[],'a blocked peer, not only a blocked host, hides the room in either direction');
+    assert.equal((await h.api(guest,'/api/matchmaking/join',guest)).body.error,'MAFIA_NO_ROOMS');
+    assert.equal((await h.api(guest,`/api/rooms/${code}/join`,{...guest,matchmaking:true})).body.error,'MAFIA_BLOCKED');
+    await run(h.app.env,'DELETE FROM social_blocks WHERE blocker_id=? AND blocked_id=?',blocker.accountId,blocked.accountId);
+  }
+  assert.equal((await h.api(guest,`/api/rooms/${hidden.body.code}/join`,{...guest,matchmaking:true})).body.error,'STARTED','a public card cannot fall through to a now-private room');
+  assert.equal((await h.api(guest,`/api/rooms/${code}/join`,{...guest,matchmaking:true})).status,200);
+  assert.equal((await first(h.app.env,'SELECT COUNT(*) AS n FROM trials')).n,0);
+  for(let i=4;i<9;i++){const p=await h.user(i);assert.equal((await h.api(p,`/api/rooms/${code}/join`,p)).status,200);}
+  const outside=await h.user(20);assert.deepEqual((await h.api(outside,path)).body.rooms,[],'full rooms are not advertised as joinable');
+});
 test('real six-client socket game keeps private actions private, isolates voice phases and fences devices',async t=>{
   const h=await setup(t),g=await h.group();await g.clients[0].command('start');await until(()=>g.clients.every(c=>c.state.phase==='role'));
   assert.equal((await first(h.app.env,"SELECT COUNT(*) AS n FROM trials WHERE game='mafia'")).n,1);

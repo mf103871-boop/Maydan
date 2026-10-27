@@ -20,6 +20,7 @@ import { useLamma } from './LammaProvider.jsx';
 import { socialInterruption } from './interruption.js';
 import { CallControls } from './CallDock.jsx';
 import { useCallDockLayout } from './CallViewport.jsx';
+import { hasVisibleMafiaCallControls } from './mafia-call-controls.js';
 import { ActionDialog, Conversation, PersonAvatar, SearchDialog, presenceLabel } from './SocialScreen.jsx';
 import { LammaButton, LammaIcon, VoiceRecorder, VoiceMessage, GameInviteCard, mediaError } from './LammaMedia.jsx';
 import { createSocialGameLauncher } from './game-launch.js';
@@ -188,6 +189,7 @@ export function SocialHost() {
   const [callInlineHost, setCallInlineHost] = useState(null);
   const [pageHost, setPageHost] = useState(null);
   const [gameLauncherHost, setGameLauncherHost] = useState(null);
+  const [mafiaControlsOwnCall, setMafiaControlsOwnCall] = useState(false);
   const listScroll = useRef(null);
   const panel = useRef(null); const trigger = useRef(null); const noticeTimer = useRef(null);
   const friends = social.friends || EMPTY; const groups = lamma.groups || EMPTY; const invites = lamma.groupInvites || EMPTY;
@@ -201,8 +203,19 @@ export function SocialHost() {
   const group = view.type === 'group' ? groups.find(item => item.id === view.id) : null;
   const groupChat = lamma.groupConversations?.[view.id];
   const currentCall = lamma.activeCall;
+  const currentCallId = currentCall?.id, currentCallScope = currentCall?.scope;
   const callOwned = !!currentCall && account.signedIn && !!account.user?.id && (!currentCall._ownerId || currentCall._ownerId === account.user.id);
-  useCallDockLayout(callOwned);
+  const useFloatingCall = callOwned && !(currentCall.scope === 'mafia' && mafiaControlsOwnCall);
+  useCallDockLayout(useFloatingCall);
+  useLayoutEffect(() => {
+    if (!callOwned || currentCallScope !== 'mafia') { setMafiaControlsOwnCall(false); return undefined; }
+    const locate = () => setMafiaControlsOwnCall(hasVisibleMafiaCallControls(document, { id: currentCallId, scope: currentCallScope }));
+    locate();
+    const observer = new MutationObserver(locate);
+    observer.observe(document.getElementById('root') || document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ['data-mafia-call-controls', 'data-mafia-controls-ready', 'hidden', 'aria-hidden', 'inert', 'class', 'style'] });
+    window.addEventListener('resize', locate);
+    return () => { observer.disconnect(); window.removeEventListener('resize', locate); };
+  }, [callOwned, currentCallId, currentCallScope, account.user?.id]);
   const callGroupId = currentCall?.scope === 'group' ? currentCall.conversationId : null;
   const callMembersStore = lamma.callMembers;
   const callMembers = callMembersStore?.[callGroupId];
@@ -325,7 +338,7 @@ export function SocialHost() {
   const launcher = !ui.open && <button ref={trigger} type="button" className={'lamma-launcher' + (unread ? ' has-unread' : '')} aria-label={unread ? `الأصدقاء، ${unread} تنبيه` : 'افتح الأصدقاء واللّمة'} aria-expanded={false} onClick={() => ui.show()}><span className="lamma-launcher-faces">{account.signedIn && friends.some(item => item.online) ? friends.filter(item => item.online).slice(0, 2).map(item => <ProfileAvatar key={item.id} user={item} size={30} />) : <LammaIcon name="people" />}</span><strong>اللّمة</strong>{unread > 0 && <b className="lamma-unread">{unread > 99 ? '99+' : unread}</b>}</button>;
   const tree = <><style>{socialCss}</style><style>{lammaCss}</style>
     {gameLauncherHost ? createPortal(launcher, gameLauncherHost) : launcher}
-    {callOwned && <CallControls call={lamma.activeCall} media={callMedia} currentUserId={account.user.id} privateTurn={interruption.privateTurn} panelOpen={ui.open} inlineHost={callInlineHost} onMute={value => lamma.setCallMuted(value)} onEnd={() => lamma.endCall()} onOpen={() => openCall(lamma.activeCall)} onOutput={id => lamma.setAudioOutput(id)} onResume={() => lamma.resumeCallAudio()} />}
+    {useFloatingCall && <CallControls call={lamma.activeCall} media={callMedia} currentUserId={account.user.id} privateTurn={interruption.privateTurn} panelOpen={ui.open} inlineHost={callInlineHost} onMute={value => lamma.setCallMuted(value)} onEnd={() => lamma.endCall()} onOpen={() => openCall(lamma.activeCall)} onOutput={id => lamma.setAudioOutput(id)} onResume={() => lamma.resumeCallAudio()} />}
     {!ui.open && notification && lamma.notifications?.enabled !== false && !notificationMuted && <div className="lamma-notification" role="status"><button type="button" onClick={() => { dismissNotification(); if (notification.friend) ui.openChat(notification.friend.id); else ui.show({ type: 'list', tab: 'requests' }); }}><span><LammaIcon name={notification.type === 'request' ? 'people' : 'chat'} /></span><div><strong>{notification.type === 'request' ? 'وصلك طلب صداقة' : privateSurface ? 'رسالة جديدة في ميدان' : `رسالة من ${nameOf(notification.friend)}`}</strong><small>{lamma.notifications?.previews && !privateSurface ? notification.friend?.lastMessage?.text || 'افتح اللّمة لتشوف الجديد' : 'اضغط لفتح اللّمة'}</small></div></button><LammaButton label="إخفاء التنبيه" icon="close" onClick={dismissNotification} /></div>}
     {!ui.open && !notification && lamma.notification && lamma.notifications?.enabled !== false && <div className="lamma-notification" role="status"><button type="button" onClick={() => { const id = lamma.notification.groupId || lamma.notification.conversationId; lamma.clearNotification(); ui.openGroup(id); }}><span><LammaIcon name="people" /></span><div><strong>{privateSurface ? 'رسالة جديدة في ميدان' : lamma.notification.title}</strong><small>اضغط لفتح اللّمة</small></div></button><LammaButton label="إخفاء التنبيه" icon="close" onClick={lamma.clearNotification} /></div>}
     {drawerOpen && <div className="lamma-layer" onPointerDown={event => { if (event.target === event.currentTarget) ui.close(); }}>{panelContent}</div>}

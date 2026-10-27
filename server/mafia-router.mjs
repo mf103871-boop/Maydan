@@ -6,9 +6,11 @@ import { mafiaEnabled, requireMafiaEnabled } from './mafia-access.mjs';
 import { MAFIA_PROTOCOL } from '../src/online/shared.js';
 
 const roomFetch=(env,code,endpoint,body)=>env.ROOMS.get(env.ROOMS.idFromName(code)).fetch(new Request(`https://internal/${code}/${endpoint}`,{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify(body)}));
-async function directory(env,mode,now=Date.now()) {
+async function directory(env,mode,userId,now=Date.now()) {
   if(!mafiaEnabled(env)||!env.DB)return [];
-  return all(env,`SELECT room_code AS code,'mafia' AS game,mode,capacity,players,ready,host_name AS hostName,expires_at AS expiresAt FROM mafia_public_rooms WHERE expires_at>? AND players<capacity${mode?' AND mode=?':''} ORDER BY players DESC,updated_at DESC LIMIT 40`,now,...(mode?[mode]:[]));
+  // Discovery should offer rooms the account can actually join. The room
+  // repeats this check atomically; this advisory list never reserves a seat.
+  return all(env,`SELECT room_code AS code,'mafia' AS game,mode,capacity,players,ready,host_name AS hostName,expires_at AS expiresAt FROM mafia_public_rooms r WHERE expires_at>? AND players<capacity AND NOT EXISTS(SELECT 1 FROM mafia_seats s JOIN social_blocks b ON (b.blocker_id=? AND b.blocked_id=s.user_id) OR (b.blocked_id=? AND b.blocker_id=s.user_id) WHERE s.room_key=r.room_key AND s.expires_at>?)${mode?' AND mode=?':''} ORDER BY players DESC,updated_at DESC LIMIT 40`,now,userId,userId,now,...(mode?[mode]:[]));
 }
 export async function routeMafia(request,env,url,charge) {
   const path=url.pathname,method=request.method;
@@ -22,7 +24,7 @@ export async function routeMafia(request,env,url,charge) {
   if(path==='/api/rooms/public'&&method==='GET') {
     if(url.searchParams.get('game')&&url.searchParams.get('game')!=='mafia')fail('GAME');
     const mode=url.searchParams.get('mode'); if(mode&&!['classic','shadow'].includes(mode))fail('INVALID');
-    return json({enabled:mafiaEnabled(env),rooms:await directory(env,mode),capabilities:{mafia:MAFIA_PROTOCOL}});
+    return json({enabled:mafiaEnabled(env),rooms:await directory(env,mode,user.id),capabilities:{mafia:MAFIA_PROTOCOL}});
   }
   if(path==='/api/matchmaking/join'&&method==='POST') {
     requireMafiaEnabled(env); const body=await readJson(request);await credentials(body);
@@ -35,7 +37,7 @@ export async function routeMafia(request,env,url,charge) {
       if(held.seat_id!==body.id)fail('MAFIA_ACTIVE_ELSEWHERE',409);
       return roomFetch(env,held.room_code,'join',{...body,accountUserId:user.id});
     }
-    const rooms=await directory(env,body.mode);
+    const rooms=await directory(env,body.mode,user.id);
     for(const candidate of rooms.slice(0,8)) {
       const response=await roomFetch(env,candidate.code,'join',{...body,accountUserId:user.id,matchmaking:true});
       if(response.ok)return response;

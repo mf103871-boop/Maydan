@@ -81,6 +81,9 @@ export function createDesignFixture(id, { now = DESIGN_FIXTURE_TIME } = {}) {
       state.nomineeId='design-player-2';state.chats={public:[{id:1,playerId:'design-player-2',text:'خلينا نراجع رواية الليلة الماضية.',at:now}],team:[],observers:[]};
       state.log=[{id:1,type:'match_started',at:now,round:1},{id:2,type:'dawn',peaceful:true,at:now,round:1}];
       state.previewScene=scene.id;state.previewReveal=scene.phase==='role';state.previewTab=['clues','notes'].includes(scene.role)?scene.role:'council';
+      // The private modal owns its semantic root; the surrounding council keeps
+      // its public phase identity, just as it does during a real card reveal.
+      if(scene.id==='online.mafia.role-card')state.previewScene='online.mafia.role';
       if(scene.phase==='waiting'){state.waiting=true;delete state.you;state.chats={};state.log=[];state.deadlineAt=null;}
       if(['over','closed'].includes(scene.phase)){state.deadlineAt=null;state.outcome={faction:scene.phase==='closed'?'draw':'town'};state.replay={players:state.members.map((p,i)=>({playerId:p.id,roleId:i===0?'investigator':i===1?'mafia':'citizen',faction:i===1?'mafia':'town'})),events:state.log};}
     }

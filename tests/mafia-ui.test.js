@@ -92,3 +92,23 @@ test('private reports explain conversion, failed recruitment and consumed defens
   const props=fixture('online.mafia.clues');props.state.previewTab='clues';props.state.you.reports=[{id:1,type:'converted',faction:'shadow'},{id:2,type:'recruitment',success:false},{id:3,type:'shield_used'},{id:4,type:'no_result'}];
   const html=render('match',props);assert.match(html,/انضممت إلى رابطة الظل/);assert.match(html,/لا يُكشف سبب الفشل/);assert.match(html,/استُهلكت الحماية الوحيدة/);assert.match(html,/تعذّر النتيجة/);assert.doesNotMatch(html,/لاعب: رابطة الظل/);
 });
+
+
+test('noir public room cards expose only the received directory and preserve verified enablement',()=>{
+  const props={enabled:true,mode:'classic',rooms:[{code:'123456',hostName:'ليان',mode:'classic',capacity:8,players:5,ready:2}],onCreate:()=>{}};
+  const html=render('directory',props);assert.match(html,/الغرف العامة/);assert.match(html,/data-room-code="123456"/);assert.match(html,/مجلس ليان/);assert.match(html,/data-design-id="create-public-room"/);
+  for(const loading of [true,false]){const blocked=render('directory',{...props,disabled:true,loading});assert.match(blocked,/<select(?=[^>]*data-design-id="directory-mode")(?=[^>]*disabled)/);assert.match(blocked,/<button(?=[^>]*data-design-id="refresh")(?=[^>]*disabled)/);}
+});
+test('integrated Mafia controls retain audio recovery and identify the exact owned replacement',()=>{
+  const props=fixture('online.mafia.discussion');props.state.mafiaVoice={callId:'owned-call'};props.voice={status:'connected',requested:true,muted:true,canPublish:true,audioBlocked:true,onResume:()=>{},onLeave:()=>{}};
+  const html=render('match',props);assert.match(html,/data-mafia-call-controls="owned-call"/);assert.match(html,/data-mafia-controls-ready="true"/);assert.match(html,/data-design-id="voice-resume"/);assert.match(html,/اضغط لاستعادة الصوت/);
+  props.voice.onLeave=undefined;assert.match(render('match',props),/data-mafia-controls-ready="false"/);
+});
+test('narrative public events and messages sort by their server times and escape user text',()=>{
+  const props=fixture('online.mafia.discussion');props.state.log=[{id:'late',type:'dawn',at:30,text:'LATE_EVENT'}];props.state.chats={public:[{id:'early',at:10,playerId:props.me.id,text:'<script>EARLY_MESSAGE</script>'}],team:[{id:'private',text:'PRIVATE_SENTINEL'}]};
+  const html=render('match',props);assert.ok(html.indexOf('EARLY_MESSAGE')<html.indexOf('LATE_EVENT'));assert.match(html,/&lt;script&gt;/);assert.doesNotMatch(html,/<script>|PRIVATE_SENTINEL/);assert.match(html,/data-design-id="player-rail"/);
+});
+test('an account mismatch never renders another player private card, actions or reports',()=>{
+  const props=fixture('online.mafia.clues');props.state.previewReveal=true;props.state.previewTab='clues';props.state.you.id='different-owner';props.state.you.reports=[{text:'OTHER_OWNER_SECRET'}];
+  const html=render('match',props);assert.doesNotMatch(html,/role-card|role-content|ability-submit|OTHER_OWNER_SECRET/);
+});

@@ -16,12 +16,14 @@ const browser=await chromium.launch({headless:true,...(process.env.CHROMIUM_PATH
 try{
   const page=await browser.newPage({viewport:{width:390,height:844}}),errors=[];page.on('pageerror',error=>errors.push(error.message));
   await page.goto(`http://127.0.0.1:${server.address().port}/`);const start=page.locator('form [data-design-id="start"]');
+  await page.getByRole('button',{name:'إنشاء غرفة',exact:true}).click();
+  await page.waitForFunction(()=>window.directoryRequests.length>=2);
   await page.getByText('نتحقق من توفر مجالس مافيا…',{exact:true}).waitFor();assert.equal(await start.isDisabled(),true);
   await page.locator('form').evaluate(form=>form.requestSubmit());assert.equal(await page.evaluate(()=>window.createRequests.length),0);assert.equal(await page.getByText('مافيا ميدان غير متاحة لبدء مباريات جديدة حاليًا.',{exact:true}).count(),0);
-  await page.evaluate(()=>window.directoryRequests[0].reject());await page.getByText('تعذّر التحقق من توفر المجالس. أعد المحاولة قبل إنشاء الغرفة.',{exact:true}).waitFor();assert.equal(await start.isDisabled(),true);
-  await page.getByRole('button',{name:'إعادة التحقق',exact:true}).click();await page.waitForFunction(()=>window.directoryRequests.length===2);await page.evaluate(()=>window.directoryRequests[1].resolve({enabled:false,rooms:[]}));
+  await page.evaluate(()=>window.directoryRequests.at(-1).reject());await page.getByText('تعذّر التحقق من توفر المجالس. أعد المحاولة قبل إنشاء الغرفة.',{exact:true}).waitFor();assert.equal(await start.isDisabled(),true);
+  await page.getByRole('button',{name:'إعادة التحقق',exact:true}).click();await page.waitForFunction(()=>window.directoryRequests.length===3);await page.evaluate(()=>window.directoryRequests.at(-1).resolve({enabled:false,rooms:[]}));
   await page.getByText('إنشاء مجالس مافيا متوقف حاليًا.',{exact:true}).waitFor();assert.equal(await start.isDisabled(),true);
-  await page.getByRole('button',{name:'إعادة التحقق',exact:true}).click();await page.waitForFunction(()=>window.directoryRequests.length===3);await page.evaluate(()=>window.directoryRequests[2].resolve({enabled:true,rooms:[]}));
+  await page.getByRole('button',{name:'إعادة التحقق',exact:true}).click();await page.waitForFunction(()=>window.directoryRequests.length===4);await page.evaluate(()=>window.directoryRequests.at(-1).resolve({enabled:true,rooms:[]}));
   await page.waitForFunction(()=>!document.querySelector('form [data-design-id="start"]').disabled);await start.click();await page.waitForFunction(()=>window.joined==='123456');assert.equal(await page.evaluate(()=>window.createRequests.length),1);assert.equal(await page.evaluate(()=>window.createRequests[0].game),'mafia');assert.deepEqual(errors,[]);
   console.log(JSON.stringify({checks:['pending request blocks first tap without false disabled error','directory failure exposes retry','confirmed disabled stays blocked','retry enables one authorized create'],passed:4,hosted:false}));
 }finally{await browser.close();server.close();}

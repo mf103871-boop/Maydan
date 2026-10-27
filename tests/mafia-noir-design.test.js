@@ -1,0 +1,53 @@
+import { test } from 'node:test';
+import assert from 'node:assert/strict';
+import { DESIGN_SCREENS, getNodeDefinition } from '../src/design/registry.js';
+import { createDefaultDesign, validateDesignDocument } from '../src/design/schema.js';
+import { createDesignFixture } from '../src/design/screen-catalog.js';
+
+const customized = (screen, id, patch) => ({ ...createDefaultDesign(), screens: { [screen]: { nodes: { [id]: patch }, decorations: [] } } });
+const allowed = (screen, id, patch) => validateDesignDocument(customized(screen, id, patch)).ok;
+
+test('Mafia private modal has its own registered layout without revealing the card in ordinary scene fixtures', () => {
+  const card = createDesignFixture('online.mafia.role-card');
+  assert.equal(card.state._designPreview, true);
+  assert.equal(card.state.phase, 'role');
+  assert.equal(card.state.previewScene, 'online.mafia.role', 'surrounding council retains its public phase root');
+  assert.equal(card.state.previewReveal, true);
+  assert.equal(createDesignFixture('online.mafia.night').state.previewReveal, false);
+  assert.ok(getNodeDefinition('online.mafia.role-card', 'role-content'));
+  assert.equal(getNodeDefinition('online.mafia.night', 'role-content'), null, 'private modal contents are not a public phase child');
+});
+
+test('Studio cannot hide Mafia disconnect, audio recovery, private-card close or the only report/block path', () => {
+  const controls = [
+    ['online.mafia.role-card', 'role-hide'], ['online.mafia.role-card', 'close'], ['online.mafia.role-card', 'role-content'],
+    ['online.mafia.discussion', 'voice'], ['online.mafia.discussion', 'voice-leave'], ['online.mafia.discussion', 'voice-resume'],
+    ['online.mafia.discussion', 'player-rail'], ['online.mafia.discussion', 'players'], ['online.mafia.discussion', 'player-seat'],
+  ];
+  for (const [screen, id] of controls) {
+    assert.equal(getNodeDefinition(screen, id)?.required, true, `${screen}:${id}`);
+    assert.equal(allowed(screen, id, { visible: false }), false, `${screen}:${id}:hidden`);
+    assert.equal(allowed(screen, id, { style: { opacity: .5 } }), false, `${screen}:${id}:opacity`);
+    assert.equal(allowed(screen, id, { style: { borderRadius: 12 } }), true, `${screen}:${id}:style`);
+  }
+});
+
+test('new narrative and event templates retain authoritative text while optional decoration and public-room actions remain editable', () => {
+  assert.equal(getNodeDefinition('online.mafia.directory', 'create-public-room').kind, 'button');
+  assert.equal(allowed('online.mafia.directory', 'create-public-room', { style: { borderRadius: 12 } }), true);
+  for (const id of ['narrative', 'event']) {
+    assert.equal(getNodeDefinition('online.mafia.discussion', id).editableText, false);
+    assert.equal(allowed('online.mafia.discussion', id, { text: 'رسالة مزيفة عن دور اللاعب' }), false);
+  }
+  assert.equal(getNodeDefinition('online.mafia.discussion', 'event').repeat, true);
+  assert.equal(allowed('online.mafia.discussion', 'narrative', { visible: false }), true);
+});
+
+test('all live Mafia seat rails protect nested safety access and retired folded-seat controls are not offered by Studio', () => {
+  for (const screen of DESIGN_SCREENS.filter(screen => screen.id.startsWith('online.mafia.'))) {
+    if (getNodeDefinition(screen.id, 'player-rail')) {
+      for (const id of ['player-rail', 'players', 'player-seat']) assert.equal(getNodeDefinition(screen.id, id)?.required, true, `${screen.id}:${id}`);
+    }
+    for (const removed of ['players-fold', 'players-toggle', 'events']) assert.equal(getNodeDefinition(screen.id, removed), null, `${screen.id}:${removed}`);
+  }
+});

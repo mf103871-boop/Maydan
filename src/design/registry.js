@@ -153,9 +153,13 @@ const extraNodes = [
 
 
 const mafiaNodes = [
+  ...[['create-public-room','إنشاء مجلس عام'],['role-hide','إخفاء البطاقة الخاصة'],['voice-resume','استعادة صوت المجلس']].map(([id,label]) => node(id,label,'button',{editableText:false,editableIcon:false,required:['role-hide','voice-resume'].includes(id)})),
+  node('narrative','حكاية المرحلة','container',{editableText:false}),
+  node('event','قالب الحدث العام','container',{repeat:true,editableText:false}),
+  node('player-rail','شريط مقاعد المجلس','container',{required:true,editableText:false}),
   ...[['capacity','سعة المجلس'],['visibility','ظهور الغرفة'],['directory-mode','نمط المجالس'],['message-input','نص الرسالة'],['notes-input','ملاحظاتي']].map(([id,label]) => node(id,label,'input',{editableText:false,editableIcon:false})),
   ...[['players-toggle','عرض مقاعد المجلس'],['night-attack-tab','اختيار الهجوم'],['night-ability-tab','اختيار القدرة'],['my-history','سجل مجالسي'],['cancel-ability','إلغاء اختيار الليل'],['mode-option','اختيار الطور'],['chat-channel','قناة المحادثة'],['block-exit','الحظر والخروج'],['tab.council','المجلس'],['tab.clues','أدلتي'],['tab.notes','دفتر الشكوك'],['entry-public','المجالس العامة'],['quick-join','الانضمام السريع'],['refresh','تحديث المجالس'],['room-join','دخول المجلس'],['role-toggle','ستر البطاقة'],['voice-join','الاتصال الصوتي'],['voice-leave','قطع الاستماع'],['ability-submit','تأكيد القدرة'],['abstain','الامتناع'],['verdict-yes','إقرار الإقصاء'],['verdict-no','رفض الإقصاء'],['herald','تمديد النقاش'],['return-call','العودة لمكالمة الشلة']].map(([id,label]) => node(id,label,'button',{editableText:false,editableIcon:false,required:['role-toggle','voice-leave'].includes(id)})),
-  ...[['player-seat','قالب مقعد اللاعب'],['target','قالب هدف القدرة'],['mafia-vote','قالب اختيار الهجوم']].map(([id,label]) => node(id,label,'button',{repeat:true,editableText:false,editableIcon:false})),
+  ...[['player-seat','قالب مقعد اللاعب'],['target','قالب هدف القدرة'],['mafia-vote','قالب اختيار الهجوم']].map(([id,label]) => node(id,label,'button',{repeat:true,editableText:false,editableIcon:false,required:id==='player-seat'})),
   ...[['phase-title','اسم المرحلة'],['observer-notice','حالة المقصي'],['defense','دفاع المرشح']].map(([id,label]) => node(id,label,'text',{editableText:false,required:true})),
   ...[['players-fold','طي مقاعد المجلس'],['rooms','قائمة المجالس'],['empty','مجالس فارغة'],['role-card','البطاقة السرية'],['role-content','تفاصيل الدور'],['ability','القدرة المسموحة'],['targets','الأهداف المتاحة'],['voice','صوت المجلس'],['chat','محادثة المرحلة'],['events','الأحداث العامة'],['reports','أدلتي الخاصة'],['notebook','دفتر الشكوك'],['recap','كشف المباراة']].map(([id,label]) => node(id,label,'container',{editableText:false,required:['role-card','role-content','ability','targets','voice','chat','reports'].includes(id)})),
 ];
@@ -178,6 +182,7 @@ for (const phase of ['setup', 'board', 'question', 'reveal', 'over']) definition
 definitions.push(screen('online.mafia.privacy','مافيا ميدان · حماية الأسرار','مافيا ميدان',[node('privacy','ستار الأسرار','container',{required:true,editableText:false})],{game:'mafia',phase:'privacy',mode:'online'}));
 definitions.push(screen('online.mafia.history','مافيا ميدان · السجل','مافيا ميدان',[...mafiaNodes,...profileNodes],{game:'mafia',phase:'history',mode:'online'}));
 definitions.push(screen('online.mafia.guide','مافيا ميدان · الدليل','مافيا ميدان',mafiaNodes,{game:'mafia',phase:'guide',mode:'online'}));
+definitions.push(screen('online.mafia.role-card','مافيا ميدان · البطاقة الخاصة','مافيا ميدان',mafiaNodes,{game:'mafia',phase:'role',mode:'online'}));
 definitions.push(screen('online.mafia.safety','مافيا ميدان · الأمان','مافيا ميدان',[...mafiaNodes,...profileNodes],{game:'mafia',phase:'safety',mode:'online'}));
 for (const phase of ['setup','directory','lobby','role','opening','night','dawn','discussion','nomination','defense','verdict','over','closed','waiting']) definitions.push(screen(`online.mafia.${phase}`, `مافيا ميدان · ${phase}`, 'مافيا ميدان', [...gameNodes,...onlineNodes,...mafiaNodes], {game:'mafia',phase,mode:'online'}));
 for (const role of ['citizen','investigator','doctor','guard','observer','reporter','herald','analyst','mafia','masker','blocker','leader']) definitions.push(screen(`online.mafia.night.${role}`, `مافيا ميدان · الليل · ${role}`, 'مافيا ميدان', [...gameNodes,...onlineNodes,...mafiaNodes], {game:'mafia',phase:'night',mode:'online',role}));
@@ -219,6 +224,9 @@ export const DESIGN_SCREENS = Object.freeze(definitions.map(definition => {
     if (id === 'history' || id === 'rules' || id === 'hint' || id === 'options' && definition.id.endsWith('.over')) Object.assign(patch,{kind:'button',repeat:false});
     if (id === 'question-media') Object.assign(patch,{repeat:true,editableText:false});
     if (definition.id === 'social.call' && ['call-open','speaker'].includes(id)) patch.required = true;
+    // Seats are the only in-match route to report/block a participant. Styling
+    // the rail must not hide its nested list or every repeated seat button.
+    if (definition.id.startsWith('online.mafia.') && id === 'players') patch.required = true;
     if (definition.id === 'system.dialog' && id === 'report') Object.assign(patch,{repeat:true,editableText:false});
     if (id === 'search') Object.assign(patch,{kind:'container',editableText:false});
     if (id === 'team-count' && definition.id === 'play-setup.teams') Object.assign(patch,{kind:'container',repeat:false,editableText:false});

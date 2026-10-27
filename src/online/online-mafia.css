@@ -1,0 +1,32 @@
+body:has(.mafia-online-shell){background:#0c1019}
+.mafia-online-shell,.mafia-entry,.mafia-room-shell{color:var(--m-ink,#e9e5dc);color-scheme:dark;--online-ink:var(--m-ink,#e9e5dc)}
+.mafia-online-shell{min-height:100dvh;background:radial-gradient(ellipse at 12% 0%,#27334855,transparent 48%),var(--m-bg,#0c1019);border-radius:24px;padding:clamp(12px,3vw,24px);isolation:isolate}
+.mafia-online-shell .topbar,.mafia-room-shell .topbar{color:var(--m-ink,#e9e5dc)}
+.mafia-entry .card,.mafia-room-shell>.card,.mafia-room-shell>section>.card{background:linear-gradient(135deg,#1b2231,#121823);border:1px solid var(--m-border,#76829430);color:var(--m-ink,#e9e5dc);box-shadow:0 5px 16px #0003}
+.mafia-entry .online-intro{position:relative;overflow:hidden;gap:18px;padding:20px;background:linear-gradient(120deg,#182333,#111722);border-color:#c7aa7740;box-shadow:inset 0 1px #e8d9b918,0 8px 24px #0004}
+.mafia-entry .online-intro h1{font-size:clamp(22px,6vw,34px);line-height:1.35;color:var(--m-ink,#e9e5dc);margin:6px 0 10px;text-shadow:0 2px 8px #0008}
+.mafia-entry .online-intro>.clay-stage{width:92px;min-width:72px;filter:drop-shadow(0 6px 9px #0008)}
+.mafia-entry .online-label,.mafia-room-shell .online-label{color:var(--m-gold,#c7aa77);letter-spacing:.03em}
+.mafia-entry .online-intro p,.mafia-entry .online-footnote,.mafia-room-shell .online-footnote,.mafia-room-shell small,.mafia-create-heading p{color:var(--m-soft,#a4acba);line-height:1.75}
+.mafia-entry .online-tabs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;padding:5px;border:1px solid var(--m-border,#76829430);border-radius:14px;background:#090d15;margin-bottom:18px}
+.mafia-entry .online-tabs>.btn{min-width:0;min-height:46px;padding:8px 5px;font-size:13px;border-radius:9px;white-space:normal;box-shadow:none}
+.mafia-entry .online-tabs>.btn[aria-pressed=true]{background:linear-gradient(#bfa474,#927348);color:#17130c;border-color:#dbc28f;box-shadow:inset 0 1px #fff3,0 2px 7px #0005}
+.mafia-entry .btn,.mafia-room-shell .btn{background:#202a3a;color:var(--m-ink,#e9e5dc);border:1px solid #71809766;box-shadow:0 3px 0 #080c13}
+.mafia-entry .btn.primary,.mafia-entry .btn-primary,.mafia-entry .btn[data-variant=primary],.mafia-room-shell .btn-primary{background:linear-gradient(#c7aa77,#98794d);color:#15120c;border-color:#e0c797}
+.mafia-entry .btn:disabled,.mafia-room-shell .btn:disabled{opacity:.5;box-shadow:none}
+.mafia-entry .online-field,.mafia-entry .online-field-label{color:var(--m-ink,#e9e5dc)}
+.mafia-entry input,.mafia-entry select,.mafia-room-shell input{background:#0c121d;color:var(--m-ink,#e9e5dc);border:1px solid #63718988;box-shadow:inset 0 2px 4px #0005;font-size:16px}
+.mafia-entry input::placeholder{color:#a4acba}
+.mafia-entry :is(button,input,select,a):focus-visible,.mafia-room-shell :is(button,input,select,a):focus-visible{outline:3px solid #efcd8c;outline-offset:3px}
+.mafia-entry .online-notice,.mafia-room-shell .online-notice{background:#142b36;color:#cce6e8;border:1px solid #5c9ca477;border-radius:12px;line-height:1.75}
+.mafia-entry .online-notice.error,.mafia-room-shell .online-notice.error{background:#3c2028;color:#ffe0d8;border-color:#c58479}
+.mafia-create-heading{border-inline-start:3px solid var(--m-gold,#c7aa77);padding-inline-start:14px}
+.mafia-create-heading h2{margin:0 0 5px;color:var(--m-ink,#e9e5dc)}
+.mafia-room-shell .online-players li{background:#121b29;color:var(--m-ink,#e9e5dc);border:1px solid var(--m-border,#76829430);box-shadow:0 3px 0 #080c13}
+.mafia-room-shell .online-connection{color:#b4c5d6}.mafia-room-shell .online-connection.connected{color:#9ed7c2}
+.mafia-room-shell .online-invite{background:linear-gradient(135deg,#202839,#101722);border-color:#c7aa7744;color:var(--m-ink,#e9e5dc)}
+.mafia-room-shell .online-room-code{color:#e4c991;text-shadow:0 2px 3px #000}
+.mafia-room-shell .online-invite img{background:white;border-radius:12px;padding:5px}
+.mafia-room-shell .online-invite .btn{font-size:13px;padding-inline:10px}
+@media(max-width:380px){.mafia-entry .online-intro{padding:14px;gap:10px}.mafia-entry .online-intro>.clay-stage{width:70px;min-width:60px}.mafia-entry .online-tabs>.btn{font-size:12px}.mafia-online-shell{border-radius:16px}}
+@media(prefers-reduced-motion:reduce){.mafia-entry .clay-idle,.mafia-entry .online-intro-copy{animation:none!important;transform:none!important}}
