@@ -152,3 +152,11 @@ html[data-reduced-motion=true] .mafia-noir *{animation:none!important;transition
 .mafia-noir .mafia-result-art{height:180px;border-radius:12px;border:1px solid #bda37155;mask-image:linear-gradient(#000 70%,transparent)}
 .mafia-noir .mafia-seat .player-avatar:not(:has(img)){filter:grayscale(.8) saturate(.35) brightness(.88)}
 .mafia-noir .mafia-seat.eliminated .player-avatar:not(:has(img)){filter:grayscale(1) brightness(.68)}
+/* The floating call column (shown only when the voice panel cannot own the
+   call) sits over the right edge from the top. On narrow screens the room
+   leaves that column free, so it never covers the phase title or a control. */
+@media(max-width:767px){html[data-call-dock-active] .mafia-noir.mafia-shell{padding-right:calc(56px + env(safe-area-inset-right,0px))}}
+/* The image-preparation notice is fixed at the bottom. Lift the seat rail
+   above it and keep the room's last content clear of both. */
+html[data-startup-background-visible] .mafia-noir .mafia-player-rail{bottom:calc(var(--startup-background-space,0px) + max(env(safe-area-inset-bottom,0px),var(--menu-nav-space,0px)))}
+html[data-startup-background-visible] .mafia-noir.mafia-shell.has-player-rail{margin-bottom:var(--startup-background-space,0px)}
