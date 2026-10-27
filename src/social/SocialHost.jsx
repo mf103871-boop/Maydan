@@ -1,4 +1,8 @@
 import { MafiaSettings } from '../online/Mafia.jsx';
+import { BadeehaSettings, normalizeBadeehaOptions, buildBadeehaRoom, badeehaReady } from '../online/Badeeha.jsx';
+import { CATS } from '../data/categories/index.js';
+import { readBadeehaState } from '../games/badeeha/persistence.js';
+import { readSaved, save } from '../online/client.js';
 import React, { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState, useSyncExternalStore } from 'react';
 import { createPortal } from 'react-dom';
 import { useAccount } from '../shared/account/context.js';
@@ -62,6 +66,9 @@ export function GameInviteDialog({ target, lamma, initialCode = '', canCreate = 
   const [mode, setMode] = useState(initialCode || !canCreate ? 'existing' : 'create');
   const [game, setGame] = useState(memberCount > 8 ? 'meenfina' : 'fabraka');
   const [mafiaSettings,setMafiaSettings] = useState({mode:memberCount>8?'shadow':'classic',capacity:memberCount>8?Math.max(10,Math.min(12,memberCount)):8,visibility:'private'});
+  // The same saved choice as the rooms screen: the host's last six categories.
+  const [badeehaSettings, setBadeehaSettings] = useState(() => normalizeBadeehaOptions(readSaved(resolveAccountServer(), 'badeehaSettings')));
+  const badeehaOk = useMemo(() => game === 'badeeha' && badeehaSettings.categories.length === 6 && badeehaReady(badeehaSettings).ok, [game, badeehaSettings]);
   const [code, setCode] = useState(initialCode); const [busy, setBusy] = useState(false); const [error, setError] = useState('');
   const [created, setCreated] = useState(null);
   const alive = useRef(true); const owner = useRef(account.user?.id); owner.current = account.user?.id;
@@ -73,7 +80,14 @@ export function GameInviteDialog({ target, lamma, initialCode = '', canCreate = 
     setBusy(true); setError('');
     try {
       if (mode === 'create') {
-        const room = await launcher.current.launch(game, payload => lamma.sendGameInvite(payload), game === 'mafia' ? { settings:mafiaSettings } : {});
+        let settings = game === 'mafia' ? mafiaSettings : null;
+        // A Badeeha round is dealt on the host's phone from its own bank and history, as on the rooms screen.
+        if (game === 'badeeha' && !launcher.current.room && account.gameAccess(game) !== 'locked') {
+          const locked = badeehaSettings.categories.find(id => account.lockedPack(id));
+          if (locked) { onClose(); account.openPaywall({ reason: 'pack', pack: locked }); return; }
+          settings = buildBadeehaRoom(badeehaSettings, readBadeehaState(CATS).history);
+        }
+        const room = await launcher.current.launch(game, payload => lamma.sendGameInvite(payload), settings ? { settings } : {});
         if (!alive.current) return;
         notify('وصلت الدعوة، ننتظركم في الغرفة'); onClose(); onLaunched(room.code);
       } else {
@@ -87,11 +101,12 @@ export function GameInviteDialog({ target, lamma, initialCode = '', canCreate = 
       else setError(/[\u0600-\u06ff]/.test(err.message || '') ? err.message : roomErrorText(err.code));
     } finally { if (alive.current) setBusy(false); }
   };
-  return <Modal data-design-screen="social.invite" title="يلا نلعب" className="lamma-dialog lamma-game-dialog" onClose={busy ? null : onClose} footer={<><Button data-design-id="cancel" variant="ghost" disabled={busy} onClick={onClose}>إلغاء</Button><Button data-design-id="submit" variant="primary" disabled={busy || (mode === 'existing' && !validCode(normalizeCode(code)))} loading={busy} onClick={submit}>{mode === 'existing' || created ? 'إرسال الدعوة' : 'ابدأ وادعُ أصحابك'}</Button></>}>
+  return <Modal data-design-screen="social.invite" title="يلا نلعب" className="lamma-dialog lamma-game-dialog" onClose={busy ? null : onClose} footer={<><Button data-design-id="cancel" variant="ghost" disabled={busy} onClick={onClose}>إلغاء</Button><Button data-design-id="submit" variant="primary" disabled={busy || (mode === 'existing' && !validCode(normalizeCode(code))) || (mode === 'create' && game === 'badeeha' && !created && !badeehaOk)} loading={busy} onClick={submit}>{mode === 'existing' || created ? 'إرسال الدعوة' : 'ابدأ وادعُ أصحابك'}</Button></>}>
     {mode === 'create' ? <>
       <p className="lamma-muted">اختر اللعبة. نجهّز الغرفة ونرسل دعوتها هنا، وكل واحد يدخل من جواله. {game === 'mafia' ? 'عند البداية ينتقل المشاركون إلى صوت المجلس الآمن، وبقية الشلة تبقى في مكالمتها.' : 'مكالمتكم تبقى معكم.'}</p>
-      <div data-design-id="options-list" className="lamma-game-options" role="group" aria-label="اختيار لعبة للّمة">{[['mafia', 'مافيا ميدان', 'من ٦ إلى ١٢', 'مجلس صوتي وأدوار سرية — يبدأ الأساسي من ٦'], ['ersomha', 'ارسمها', 'من شخصين إلى ٨', 'رسم حي وتخمين متزامن — تعاون لشخصين'], ['fabraka', 'فبركة', 'من شخصين إلى ٨', 'حقيقة بين إجابات مضحكة — ٣ جولات'], ['meenfina', 'مين فينا', 'من ٣ إلى ١٢', 'تصويت سري وأسئلة تعرفكم على بعض']].map(([id, name, count, description]) => <button data-design-id="game-choice" type="button" key={id} aria-pressed={game === id} disabled={busy || !!created} onClick={() => setGame(id)}><LammaIcon name="game" size={27} /><strong>{name}</strong><span>{count}</span><small>{description}</small></button>)}</div>
+      <div data-design-id="options-list" className="lamma-game-options" role="group" aria-label="اختيار لعبة للّمة">{[['badeeha', 'بَديهة', 'من فريقين إلى ٤', 'جوال لكل فريق — ست فئات وأسئلة بالنقاط'], ['mafia', 'مافيا ميدان', 'من ٦ إلى ١٢', 'مجلس صوتي وأدوار سرية — يبدأ الأساسي من ٦'], ['ersomha', 'ارسمها', 'من شخصين إلى ٨', 'رسم حي وتخمين متزامن — تعاون لشخصين'], ['fabraka', 'فبركة', 'من شخصين إلى ٨', 'حقيقة بين إجابات مضحكة — ٣ جولات'], ['meenfina', 'مين فينا', 'من ٣ إلى ١٢', 'تصويت سري وأسئلة تعرفكم على بعض']].map(([id, name, count, description]) => <button data-design-id="game-choice" type="button" key={id} aria-pressed={game === id} disabled={busy || !!created} onClick={() => setGame(id)}><LammaIcon name="game" size={27} /><strong>{name}</strong><span>{count}</span><small>{description}</small></button>)}</div>
       {game === 'mafia' && !created && <MafiaSettings value={mafiaSettings} onChange={setMafiaSettings} disabled={busy}/>}
+      {game === 'badeeha' && !created && <BadeehaSettings value={badeehaSettings} disabled={busy} onChange={next => { setBadeehaSettings(next); save(resolveAccountServer(), 'badeehaSettings', next); }} />}
       {created && <p role="status" className="lamma-muted">الغرفة <bdi>{created.code}</bdi> جاهزة. أعد إرسال الدعوة؛ لن ننشئ غرفة ثانية.</p>}
       {!created && <button data-design-id="entry-join" type="button" className="lamma-text-button" disabled={busy} onClick={() => { setMode('existing'); setError(''); }}>عندي رمز غرفة</button>}
     </> : <>

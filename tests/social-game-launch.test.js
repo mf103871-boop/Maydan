@@ -41,6 +41,16 @@ test('a Mafia group launch preserves the chosen three-team room and capability w
   assert.equal(calls[0][3].headers.Authorization,'Bearer fixture');
 });
 
+test('a Badeeha group launch sends the round dealt on the host phone and refuses one without it', async () => {
+  const { launcher, calls } = fixture();
+  await assert.rejects(launcher.launch('badeeha', async () => {}), { code: 'INVALID' });
+  assert.equal(calls.length, 0, 'no room without a dealt round');
+  const settings = { mode: 'standard', roundSize: 30, timer: 60, categories: ['a', 'b', 'c', 'd', 'e', 'f'], deck: { a: [{ qid: 'a:1', p: 200 }] } };
+  await launcher.launch('badeeha', async () => {}, { settings });
+  assert.equal(calls[0][2].game, 'badeeha'); assert.deepEqual(calls[0][2].settings, settings);
+  assert.equal(calls[0][2].capabilities.badeeha, 1);
+});
+
 test('invitation failure and repeated taps reuse the same room and credentials', async () => {
   const wait = deferred(); const { launcher, calls } = fixture(); let attempts = 0;
   const first = launcher.launch('fabraka', async () => { ++attempts; await wait.promise; });
