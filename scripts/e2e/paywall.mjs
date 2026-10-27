@@ -8,8 +8,8 @@
 //   npm run e2e:paywall            (اللقطات في $TMPDIR/maydan-e2e/paywall أو المسار الممرَّر)
 //
 // متغيرات اختيارية: CHROMIUM_PATH، E2E_PORT (واجهة، 3000)، E2E_API_PORT (خادم، 8790).
-// ملاحظة: بعد كل تعديل يجريه الفحص على الخادم مباشرةً (منح/تجربة) يحذف النسخة
-// المخزّنة من /api/me قبل إعادة التحميل، لأن الواجهة تحدّثها كل عشر دقائق فقط.
+// بعد تعديل المنح/التجارب مباشرةً على خادم الاختبار نحذف نسخته المحلية من
+// /api/me قبل إعادة التحميل، ثم نفحص حالة الحساب المعروضة فعلًا.
 const API_PORT = Number(process.env.E2E_API_PORT || 8790); const WEB_PORT = Number(process.env.E2E_PORT || 3000);
 // كما في النشر الكامل على Cloudflare: الـAPI على أصل الصفحة نفسه (خادم الصفحة يمرّر /api و/health).
 process.env.MAYDAN_ROOMS_URL = 'same-origin';
@@ -44,16 +44,31 @@ web = http.createServer((req, res) => {
 await new Promise((r) => web.listen(WEB_PORT, r));
 browser = await chromium.launch(process.env.CHROMIUM_PATH ? { executablePath: process.env.CHROMIUM_PATH } : {});
 const ctx = await browser.newContext({ viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, locale: 'ar', isMobile: true, hasTouch: true });
-// A same-origin build away from the production host keeps its account under an
-// environment prefix (src/shared/lib/environment.js); the page sees the same name.
-const ACCOUNT = environmentStorageKey('maydan:account:', `http://localhost:${WEB_PORT}`);
-await ctx.addInitScript((value) => { globalThis.ACCOUNT = value; }, ACCOUNT);
 const page = await ctx.newPage();
+// same-origin builds scope account data to their served origin. Seed/clear
+// the local test account, never the unrelated production storage keys.
+const accountKey = (name) => environmentStorageKey(`maydan:account:${name}`, `http://localhost:${WEB_PORT}`);
+const readAccount = (name) => page.evaluate((key) => localStorage.getItem(key), accountKey(name));
+const writeAccount = (name, value) => page.evaluate(({ key, value }) => localStorage.setItem(key, JSON.stringify(value)), { key: accountKey(name), value });
+const clearAccount = (...names) => page.evaluate((keys) => keys.forEach((key) => localStorage.removeItem(key)), names.map(accountKey));
 const errors = []; page.on('pageerror', (e) => errors.push(e.message));
 page.on('console', (m) => { if (m.type() === 'error' && !/unsupported MIME type|Failed to load resource/.test(m.text())) errors.push(m.text()); });
 const results = []; const check = (name, ok, extra = '') => { results.push({ name, ok, extra }); console.log(`${ok ? 'PASS' : 'FAIL'} ${name} ${extra}`); };
 const shot = (n) => page.screenshot({ path: path.join(OUT, `${n}.png`) });
-const go = async (h, ms = 900) => { await page.evaluate((x) => { location.hash = x; }, h); await page.waitForTimeout(ms); };
+const go = async (h, ms = 900) => {
+  // A raw hash change is browser Back while inside a game: it deliberately
+  // consumes the game's internal step first. Leave through the actual platform
+  // control and its confirmation before asking for a different destination.
+  if (await page.locator('.game-frame').count() && await page.evaluate(() => location.hash) !== h) {
+    await page.getByRole('button', { name: 'العودة إلى المنصة', exact: true }).click();
+    const confirm = page.getByRole('dialog').filter({ has: page.getByRole('heading', { name: 'الخروج من اللعبة؟', exact: true }) });
+    if (await confirm.count()) await confirm.getByRole('button', { name: 'خروج', exact: true }).click();
+    await page.locator('.game-frame').waitFor({ state: 'detached' });
+  }
+  await page.evaluate((x) => { location.hash = x; }, h);
+  await page.waitForFunction((target) => location.hash === target, h);
+  if (ms) await page.waitForTimeout(ms);
+};
 const tap = async (t) => { const ok = await page.evaluate((x) => { const el = [...document.querySelectorAll('button')].find((b) => !b.disabled && b.offsetParent !== null && (b.textContent || '').includes(x)); if (!el) return false; el.click(); return true; }, t); await page.waitForTimeout(400); return ok; };
 const lockedCounts = async () => {
   // الخروج من شاشة اللعب يمر بحارس الخروج (استعادة ثم رجوع خطوة)، فمدته متغيرة: ننتظر
@@ -81,7 +96,7 @@ const enter = () => page.waitForFunction(() => {
   if (button) button.click();
   return !splash && !!document.querySelector('[data-design-screen]');
 }, null, { timeout: 15_000, polling: 200 });
-const reload = async () => { await page.evaluate(() => localStorage.removeItem(ACCOUNT + 'me')); await page.reload({ waitUntil: 'load' }); await enter(); await page.waitForTimeout(300); };
+const reload = async () => { await clearAccount('me'); await page.reload({ waitUntil: 'load' }); await enter(); await page.waitForTimeout(300); };
 
 await page.goto(`http://localhost:${WEB_PORT}/#/`, { waitUntil: 'load' }); await page.waitForTimeout(700);
 await enter(); await page.waitForTimeout(300);
@@ -109,20 +124,20 @@ await page.evaluate(() => document.querySelector('.m-category-pick.is-locked .m-
 check('reopened paywall starts on plans', await page.evaluate(() => !!document.querySelector('.paywall .paywall-plans') && !document.querySelector('.paywall form')));
 await page.evaluate(() => document.querySelector('.paywall-redeem').click()); await page.waitForTimeout(300);
 await page.keyboard.press('Escape'); await page.waitForTimeout(300);
-await page.evaluate(() => localStorage.setItem(ACCOUNT + 'promo', JSON.stringify({ code: 'legacy-public-code', hash: 'legacy-hash', redeemedAt: Date.now() })));
+await writeAccount('promo', { code: 'legacy-public-code', hash: 'legacy-hash', redeemedAt: Date.now() });
 await reload();
 c = await lockedCounts(); check('legacy local promo cannot unlock packs', c.locked === 68, JSON.stringify(c));
-check('legacy raw gift code removed from storage', await page.evaluate(() => localStorage.getItem(ACCOUNT + 'promo') === null));
+check('legacy raw gift code removed from storage', await readAccount('promo') === null);
 
 // ٢) دخول وهمي عبر الخادم ثم حقن الجلسة.
 const signin = await apiCall('/api/auth/dev', { subject: 'e2e-user', name: 'مختبر', client: 'web' });
 check('dev sign-in 200', signin.status === 200 && !!signin.body?.session?.token, String(signin.status));
 const token = signin.body?.session?.token;
-await page.evaluate((t) => localStorage.setItem(ACCOUNT + 'session', JSON.stringify(t)), token);
+await writeAccount('session', token);
 await reload();
 await go('#/settings'); await page.waitForTimeout(800); await shot('02-settings-signed-in');
-const settingsText = await page.evaluate(() => document.body.textContent);
-check('settings shows user name', settingsText.includes('مختبر'));
+const settingsName = await page.locator('.account-identity b').innerText();
+check('settings shows user name', settingsName === 'مختبر');
 c = await lockedCounts(); check('signed-in free still locked 68', c.locked === 68, JSON.stringify(c));
 // ٣) منح اشتراك → صفر مقفول، وتفاصيل اللعبة بلا ملاحظة.
 const grant = await apiCall('/api/dev/grant', { until: Date.now() + 30 * 86400e3, product: 'plus.yearly' }, token);
@@ -130,13 +145,13 @@ check('dev grant 200 premium', grant.status === 200 && grant.body?.premium?.acti
 await reload();
 c = await lockedCounts(); check('premium locked 0', c.locked === 0, JSON.stringify(c)); await shot('03-premium-picker');
 await go('#/settings'); await page.waitForTimeout(600); await shot('04-settings-premium');
-const st2 = await page.evaluate(() => document.body.textContent); check('settings shows plus active', /بلس/.test(st2) && /سنوي|فعّال|نشط|حتى/.test(st2));
+const st2 = await page.locator('.account-plan.is-plus').innerText(); check('settings shows plus active', /بلس فعّال/.test(st2));
 await go('#/game/beep'); const note1 = await page.evaluate(() => (document.querySelector('.details-plus-note') || {}).textContent || '');
 check('premium: no plus note on beep details', note1 === '', note1);
 
 // ٤) مستخدم ثانٍ بلا اشتراك: التجربة تمر ثم الجدار.
 const s2 = await apiCall('/api/auth/dev', { subject: 'e2e-trial', name: 'تجريبي', client: 'web' }); const token2 = s2.body?.session?.token;
-await page.evaluate((t) => { localStorage.setItem(ACCOUNT + 'session', JSON.stringify(t)); localStorage.removeItem(ACCOUNT + 'me'); localStorage.removeItem(ACCOUNT + 'trials'); }, token2);
+await writeAccount('session', token2); await clearAccount('me', 'trials');
 await reload(); await go('#/game/beep'); await page.waitForTimeout(500);
 const note2 = await page.evaluate(() => (document.querySelector('.details-plus-note') || {}).textContent || '');
 check('free user: one free match note', /مباراة واحدة مجانية/.test(note2), note2);
@@ -164,36 +179,42 @@ const room201 = await apiCall('/api/rooms', { ...creds(), game: 'fabraka', name:
 const roomAnon = await apiCall('/api/rooms', { ...creds(), game: 'fabraka', name: 'مجهول' }); check('anon room create allowed', roomAnon.status === 201, String(roomAnon.status));
 
 // ٦) خروج من الإعدادات.
-await go('#/settings'); await page.waitForTimeout(500);
-const out = await tap('خروج'); check('sign-out button present', out);
-await page.waitForTimeout(800); const tokenAfter = await page.evaluate(() => localStorage.getItem(ACCOUNT + 'session'));
+await go('#/settings');
+const signoutButton = page.locator('[data-design-id="account-signout"]');
+check('sign-out button present', await signoutButton.isVisible());
+await Promise.all([page.waitForResponse(response => response.url().endsWith('/api/auth/signout') && response.request().method() === 'POST'), signoutButton.click()]);
+await signoutButton.waitFor({ state: 'detached' });
+const tokenAfter = await readAccount('session');
 check('sign-out clears session', tokenAfter === null, String(tokenAfter));
 const me401 = await page.evaluate(async ({ API, token2 }) => (await fetch(`${API}/api/me`, { headers: { authorization: `Bearer ${token2}` } })).status, { API, token2 });
 check('revoked token → 401', me401 === 401, String(me401));
 
 // ٧) الدخول لا يحول رمز جهاز قديم إلى منحة على الخادم.
-await page.evaluate(() => localStorage.setItem(ACCOUNT + 'promo', JSON.stringify({ code: 'legacy-public-code', hash: 'legacy-hash', redeemedAt: Date.now() })));
+await writeAccount('promo', { code: 'legacy-public-code', hash: 'legacy-hash', redeemedAt: Date.now() });
 const s3 = await apiCall('/api/auth/dev', { subject: 'e2e-sync', name: 'مزامن', client: 'web' }); const token3 = s3.body?.session?.token;
-await page.evaluate((t) => localStorage.setItem(ACCOUNT + 'session', JSON.stringify(t)), token3);
+await writeAccount('session', token3);
 await reload(); await page.waitForTimeout(400);
-const meSync = await page.evaluate(async () => (await fetch('/api/me', { headers: { authorization: 'Bearer ' + JSON.parse(localStorage.getItem(ACCOUNT + 'session')) } })).json());
+const meSync = await page.evaluate(async (key) => (await fetch('/api/me', { headers: { authorization: 'Bearer ' + JSON.parse(localStorage.getItem(key)) } })).json(), accountKey('session'));
 check('legacy device promo never creates a server grant after sign-in', !meSync.premium.active && meSync.premium.source === null, JSON.stringify(meSync.premium));
-check('legacy raw code erased after sign-in', await page.evaluate(() => localStorage.getItem(ACCOUNT + 'promo') === null));
+check('legacy raw code erased after sign-in', await readAccount('promo') === null);
 
 // ٨) رمز يعرفه الخادم وحده: ليس في الحزمة، ومع جلسة يُقبل عبر الواجهة نفسها.
-await page.evaluate(() => { localStorage.removeItem(ACCOUNT + 'promo'); localStorage.removeItem(ACCOUNT + 'me'); });
+await clearAccount('promo', 'me');
 const s4 = await apiCall('/api/auth/dev', { subject: 'e2e-secret', name: 'سرّي', client: 'web' }); const token4 = s4.body?.session?.token;
-await page.evaluate((t) => localStorage.setItem(ACCOUNT + 'session', JSON.stringify(t)), token4);
+await writeAccount('session', token4);
 await reload(); await go('#/settings'); await page.waitForTimeout(500);
 await tap('لديك رمز هدية؟'); await page.waitForTimeout(300);
 await page.fill('input[aria-label="رمز الهدية"]', 'wrong-secret');
-await page.evaluate(() => [...document.querySelectorAll('.account-redeem button')].find((b) => b.textContent.includes('تفعيل')).click()); await page.waitForTimeout(800);
+await Promise.all([page.waitForResponse(response => response.url().endsWith('/api/redeem') && response.request().method() === 'POST'), page.locator('.account-redeem').getByRole('button', { name: 'تفعيل', exact: true }).click()]);
+await page.locator('.account-redeem .online-notice.error').waitFor();
 check('unknown code rejected by server too', await page.evaluate(() => !!document.querySelector('.account-redeem .online-notice.error')));
 await page.fill('input[aria-label="رمز الهدية"]', SECRET_CODE.toLowerCase());
-await page.evaluate(() => [...document.querySelectorAll('.account-redeem button')].find((b) => b.textContent.includes('تفعيل')).click()); await page.waitForTimeout(1000);
-const meSecret = await page.evaluate(async () => (await fetch('/api/me', { headers: { authorization: `Bearer ${JSON.parse(localStorage.getItem(ACCOUNT + 'session'))}` } })).json());
+await Promise.all([page.waitForResponse(response => response.url().endsWith('/api/redeem') && response.request().method() === 'POST'), page.locator('.account-redeem').getByRole('button', { name: 'تفعيل', exact: true }).click()]);
+await page.locator('.account-redeem').waitFor({ state: 'detached' });
+await page.locator('.account-plan.is-plus').waitFor();
+const meSecret = await page.evaluate(async (key) => (await fetch('/api/me', { headers: { authorization: `Bearer ${JSON.parse(localStorage.getItem(key))}` } })).json(), accountKey('session'));
 check('server-only code redeemed from the UI → premium', meSecret.premium && meSecret.premium.active && meSecret.premium.source === 'promo', JSON.stringify(meSecret.premium));
-check('server-only code leaves no device promo', await page.evaluate(() => localStorage.getItem(ACCOUNT + 'promo') === null));
+check('server-only code leaves no device promo', await readAccount('promo') === null);
 c = await lockedCounts(); check('server-only code unlocks packs', c.locked === 0, JSON.stringify(c));
 
 

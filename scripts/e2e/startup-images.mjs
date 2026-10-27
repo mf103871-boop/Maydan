@@ -68,15 +68,9 @@ async function newPage(context) {
   page.on('pageerror', (error) => errors.push({ scenario, message: error.message }));
   return page;
 }
-async function ready(page) {
+async function ready(page, screen = '.home-screen') {
   await page.locator('.splash').waitFor({ state: 'detached', timeout: 10000 });
-  await page.locator('.m-home').waitFor({ timeout: 10000 });
-}
-// The elective download now yields to local and online play (background-gate.js),
-// so the scenarios that watch it finish run on the home screen.
-async function readyHome(page) {
-  await page.locator('.splash').waitFor({ state: 'detached', timeout: 10000 });
-  await page.locator('.home-screen').waitFor({ timeout: 10000 });
+  await page.locator(screen).waitFor({ timeout: 10000 });
 }
 async function allCached(page, expected) {
   await page.waitForFunction(async (urls) => {
@@ -134,6 +128,9 @@ try {
     return { url, key: parsed.pathname + parsed.search, bytes: bytes.length, sha256: hash(bytes) };
   }));
   check('real active manifest has 510 unique images', expected.length === 510 && new Set(expected.map((x) => x.url)).size === 510);
+  // The service worker independently installs its 32 required Fabraka pictures.
+  // The elective startup queue yields to play; that shell work is not this queue.
+  const electiveKeys = new Set(expected.filter(entry => !new URL(entry.url, 'http://localhost/').pathname.startsWith('/media/fabraka-v3/')).map(entry => entry.key));
   const allowedFirst = new Set(expected.slice(0, 12).map((x) => x.key));
   // Derive the second side from the live bank with the same resolver and file
   // versions as the manifest. Editorial replacements may rename either side.
@@ -172,13 +169,15 @@ try {
   base = `http://127.0.0.1:${server.address().port}`;
   browser = await chromium.launch({ headless: true, ...(process.env.CHROMIUM_PATH ? { executablePath: process.env.CHROMIUM_PATH } : {}) });
 
-  scenario = 'first-launch-delayed';
+  scenario = 'first-launch-delayed-menu';
   const context = await newContext(), page = await newPage(context);
   const firstLaunchAt = Date.now();
+  // A safe menu permits elective downloads, including while the splash is up.
+  // Direct /play intentionally pauses that queue before its first image request.
   await page.goto(`${base}/#/`, { waitUntil: 'domcontentloaded' });
   await page.waitForFunction(() => { const p = document.querySelector('progress[aria-label="تحميل صور اللعبة"]'); return p && p.value > 0 && p.value < p.max; });
   const progress = await layout(page);
-  check('real image responses advance progress while the app remains unmounted', progress.splash && !progress.mountedGame && progress.progress.max === expected.length && progress.progress.value > 0 && progress.progress.value < expected.length, progress);
+  check('real image responses advance progress while the game remains unmounted', progress.splash && !progress.mountedGame && progress.progress.max === expected.length && progress.progress.value > 0 && progress.progress.value < expected.length, progress);
   for (const viewport of [{ width: 390, height: 844 }, { width: 320, height: 640 }, { width: 844, height: 390 }]) {
     await page.setViewportSize(viewport);
     const view = await layout(page);
@@ -186,22 +185,45 @@ try {
     await screenshot(page, `loading-${viewport.width}x${viewport.height}`);
   }
   await page.setViewportSize({ width: 390, height: 844 });
-  await readyHome(page);
+  await ready(page);
   const autoEntryMs = Date.now() - firstLaunchAt;
   const whileHeld = await layout(page);
-  check('automatic entry takes less than five seconds while image responses remain held', gateEnabled && autoEntryMs < 5000 && whileHeld.mountedGame && !whileHeld.splash, { autoEntryMs, ...whileHeld });
+  check('automatic menu entry takes less than five seconds while image responses remain held', gateEnabled && autoEntryMs < 5000 && whileHeld.mountedGame && !whileHeld.splash, { autoEntryMs, ...whileHeld });
   check('pending image download remains visible and nonblocking after entry', await page.locator('.startup-background').isVisible() && whileHeld.background.includes('بالخلفية'), whileHeld);
   await screenshot(page, 'automatic-entry-background');
+
+  scenario = 'play-pauses-elective-downloads';
+  await page.goto(`${base}/#/play/badeeha`, { waitUntil: 'domcontentloaded' });
+  await ready(page, '.m-home');
+  await page.waitForFunction(() => document.querySelector('.startup-background')?.innerText.includes('متوقف مؤقتًا'));
+  const beforePlayDrain = requestCounts();
   gateEnabled = false; gateRelease();
+  // Three image bodies already in flight may finish, but the play route must not
+  // advance the elective queue afterwards. Verify their actual bytes, not a delay
+  // alone, before observing the paused queue for one second.
+  await page.waitForFunction(async urls => {
+    const cache = await caches.open('maydan-media-v1');
+    return (await Promise.all(urls.map(url => cache.match(new URL(url, location.href).href)))).every(Boolean);
+  }, expected.slice(0, 15).map(entry => entry.url), { timeout: 30000, polling: 100 });
+  await page.waitForTimeout(1000);
+  const duringPlay = countDelta(beforePlayDrain).filter(entry => electiveKeys.has(entry.key));
+  const drained = await inspectCache(page, expected.slice(0, 15));
+  check('play pauses new elective image traffic while preserving already in-flight bodies', duringPlay.length === 0 && drained.every(entry => entry.ok), { requests: duringPlay, completedBodies: drained.length, failures: drained.filter(entry => !entry.ok) });
+  check('paused download is explicit and never blocks the mounted game', await page.locator('.m-home').isVisible() && (await layout(page)).background.includes('متوقف مؤقتًا'));
+  await screenshot(page, 'play-download-paused');
+
+  scenario = 'menu-resumes-downloads';
+  await page.goto(`${base}/#/`, { waitUntil: 'domcontentloaded' });
+  await ready(page);
   await allCached(page, expected); await controlled(page);
-  check('background download completes without leaving the mounted screen', await page.locator('.home-screen').isVisible() && !(await page.locator('.startup-background').count()));
+  check('returning to the menu resumes and completes the pending image queue', await page.locator('.home-screen').isVisible() && !(await page.locator('.startup-background').count()));
   cachedAfterFirst = await inspectCache(page, expected);
   check('all 510 active cached image bodies equal actual dist files', cachedAfterFirst.length === expected.length && cachedAfterFirst.every((x) => x.ok), { total: cachedAfterFirst.length, failures: cachedAfterFirst.filter((x) => !x.ok) });
   await screenshot(page, 'first-launch-ready');
 
   scenario = 'second-launch';
   const beforeSecond = requestCounts();
-  await page.reload({ waitUntil: 'domcontentloaded' }); await readyHome(page); await controlled(page);
+  await page.reload({ waitUntil: 'domcontentloaded' }); await ready(page); await controlled(page);
   const repeated = countDelta(beforeSecond);
   check('second launch uses persistent images without repeat image requests', repeated.length === 0, repeated);
   await screenshot(page, 'second-launch-ready');
@@ -209,7 +231,8 @@ try {
   scenario = 'offline-reopen';
   const beforeOffline = requestCounts();
   await context.setOffline(true);
-  await page.reload({ waitUntil: 'domcontentloaded' }); await readyHome(page);
+  await page.reload({ waitUntil: 'domcontentloaded' }); await ready(page);
+  await page.goto(`${base}/#/play/badeeha`, { waitUntil: 'domcontentloaded' }); await ready(page, '.m-home');
   const decoded = await page.evaluate(async (urls) => {
     const rows = [], queue = [...urls];
     async function run() { while (queue.length) { const url = queue.shift(), image = new Image(); image.src = url;
@@ -227,10 +250,15 @@ try {
   failedPath = new URL(target.url, base).pathname;
   const failureContext = await newContext(), failurePage = await newPage(failureContext);
   const failureLaunchAt = Date.now();
-  await failurePage.goto(`${base}/#/`, { waitUntil: 'domcontentloaded' });
-  await readyHome(failurePage);
+  const beforeDirectPlay = requestCounts();
+  await failurePage.goto(`${base}/#/play/badeeha`, { waitUntil: 'domcontentloaded' });
+  await failurePage.waitForFunction(() => { const p = document.querySelector('progress[aria-label="تحميل صور اللعبة"]'); return p && p.max === 510 && p.value === 0; });
+  await ready(failurePage, '.m-home');
   const failureEntryMs = Date.now() - failureLaunchAt;
-  check('one failed image does not block automatic entry', failureEntryMs < 5000 && await failurePage.locator('.home-screen').isVisible(), { failureEntryMs });
+  check('direct game entry takes less than five seconds without starting elective image traffic', failureEntryMs < 5000 && await failurePage.locator('.m-home').isVisible() && countDelta(beforeDirectPlay).filter(entry => electiveKeys.has(entry.key)).length === 0, { failureEntryMs, requests: countDelta(beforeDirectPlay).filter(entry => electiveKeys.has(entry.key)) });
+  check('the pending direct-entry download is reported as paused, not complete', (await layout(failurePage)).background.includes('متوقف مؤقتًا'));
+  // The injected failure is exercised only after returning to an allowed menu.
+  await failurePage.goto(`${base}/#/`, { waitUntil: 'domcontentloaded' }); await ready(failurePage);
   const retry = failurePage.locator('.startup-background').getByRole('button', { name: 'إعادة المحاولة', exact: true });
   await retry.waitFor({ timeout: 120000 });
   const failed = await layout(failurePage);
@@ -245,8 +273,8 @@ try {
   const beforeMissingReload = requestCounts();
   await failurePage.reload({ waitUntil: 'domcontentloaded' });
   await failurePage.getByRole('button', { name: 'الدخول بالصور المتاحة', exact: true }).click();
-  await readyHome(failurePage); await retry.waitFor({ timeout: 120000 });
-  check('manual continue opens the app while preserving the incomplete download status', await failurePage.locator('.home-screen').isVisible() && /باقي\s+[1١]\s+صورة/u.test((await layout(failurePage)).background));
+  await ready(failurePage); await retry.waitFor({ timeout: 120000 });
+  check('manual continue opens the menu while preserving the incomplete download status', await failurePage.locator('.home-screen').isVisible() && /باقي\s+[1١]\s+صورة/u.test((await layout(failurePage)).background));
   check('a later launch retries only the missing image instead of treating entry as completion', countDelta(beforeMissingReload).length > 0 && countDelta(beforeMissingReload).every((x) => new URL(x.key, base).pathname === new URL(target.url, base).pathname), countDelta(beforeMissingReload));
   await screenshot(failurePage, 'continue-with-available');
   scenario = 'retry-success';
@@ -257,19 +285,6 @@ try {
   cachedAfterRetry = await inspectCache(failurePage, expected);
   check('successful retry leaves all 510 correct images cached', cachedAfterRetry.length === expected.length && cachedAfterRetry.every((x) => x.ok), { total: cachedAfterRetry.length, failures: cachedAfterRetry.filter((x) => !x.ok) });
   await screenshot(failurePage, 'retry-success');
-
-  // A game opened directly owns the connection: the elective download waits, says
-  // so without blocking the game, and resumes by itself once the player leaves.
-  scenario = 'play-pauses-download';
-  const playContext = await newContext(), playPage = await newPage(playContext);
-  await playPage.goto(`${base}/#/play/badeeha`, { waitUntil: 'domcontentloaded' });
-  await ready(playPage);
-  const pausedText = await playPage.locator('.startup-background').innerText().catch(() => '');
-  check('a game opened directly pauses the elective image download and says so', /متوقف مؤقتًا/u.test(pausedText) && await playPage.locator('.m-home').isVisible(), pausedText);
-  await playPage.evaluate(() => { location.hash = '#/'; });
-  await playPage.locator('.home-screen').waitFor({ timeout: 10000 });
-  await allCached(playPage, expected);
-  check('leaving the game resumes the download until every image is cached', (await inspectCache(playPage, expected)).every((x) => x.ok));
   check('no browser JavaScript errors in any scenario', errors.length === 0, errors);
   check('dist was unchanged during regression run', sourceHashes.html === hash(await fs.readFile(path.join(DIST, 'index.html'))) && sourceHashes.serviceWorker === hash(await fs.readFile(path.join(DIST, 'sw.js'))));
 } catch (error) {
