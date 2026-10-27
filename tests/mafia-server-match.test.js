@@ -107,7 +107,13 @@ async function playMatch(h, { count, seed }) {
       joined = true;
       const channels = new Map();
       for (const [i, p] of people.entries()) {
-        const response = await h.api(p, `/api/rooms/${code}/voice`, { deviceId: `phone-${i}`, voiceSessionId: `fixture-session-${seed}-${i}`, operation: 'join' });
+        // Like the app, wait out a brief MAFIA_VOICE_TRANSITION (a revocation cutoff).
+        let response;
+        for (let tries = 0; tries < 30; tries++) {
+          response = await h.api(p, `/api/rooms/${code}/voice`, { deviceId: `phone-${i}`, voiceSessionId: `fixture-session-${seed}-${i}`, operation: 'join' });
+          if (response.body.error !== 'MAFIA_VOICE_TRANSITION') break;
+          await new Promise(r => setTimeout(r, 200));
+        }
         assert.equal(response.status, 200, `${room.phase} voice for ${i}: ${JSON.stringify(response.body)}`);
         const s = room.roleStates[p.id], voice = voiceOf(response);
         if (room.phase === 'dawn' || (room.phase === 'night' && (!s.alive || s.faction === 'town'))) {
@@ -127,7 +133,7 @@ async function playMatch(h, { count, seed }) {
         }
       }
       if (room.phase === 'night') assert.notEqual(channels.get('mafia'), channels.get('shadow'));
-      channelsByPhase.push(new Set(channels.values()));
+      channelsByPhase.push({ phase: room.phase, round: room.round, names: new Set(channels.values()) });
     }
     const alive = room.participants.filter(id => room.roleStates[id].alive);
     const clientOf = id => clients[people.findIndex(p => p.id === id)];
@@ -176,8 +182,19 @@ async function playMatch(h, { count, seed }) {
   assert.deepEqual(errors, [], 'every command a seat was offered is accepted');
   assert.equal(room.technicalAbort, undefined);
   if (room.outcome.reason === 'faction') assert.equal(room.outcome.faction, winningFaction(room));
-  // A new channel for every phase: an old grant never reaches a later audience.
-  for (let i = 1; i < channelsByPhase.length; i++) for (const name of channelsByPhase[i]) assert.equal(channelsByPhase[i - 1].has(name), false);
+  // A channel never outlives its night or its day, so an old grant cannot reach a
+  // later audience. Within a day, discussion → nomination keeps the call, and the
+  // defense (a speaking right changes) rotates it.
+  const period = ({ phase, round }) => phase === 'night' ? `night-${round}` : `day-${round}`, owner = new Map();
+  for (const entry of channelsByPhase) for (const name of entry.names) {
+    if (owner.has(name)) assert.equal(owner.get(name), period(entry), `${name} crossed into ${entry.phase}`);
+    owner.set(name, period(entry));
+  }
+  for (let i = 1; i < channelsByPhase.length; i++) {
+    const [a, b] = [channelsByPhase[i - 1], channelsByPhase[i]];
+    if (a.phase === 'discussion' && b.phase === 'nomination') assert.deepEqual([...b.names], [...a.names], 'nomination keeps the discussion call');
+    if (b.phase === 'defense' || b.phase === 'verdict') assert.ok([...b.names].every(name => !a.names.has(name)), `${b.phase} rotates the public call`);
+  }
   await until(() => clients.every(c => c.state.phase === 'over'), 'everyone sees the result');
   for (const c of clients) assert.equal(c.state.replay.players.length, count);
   await until(async () => (await all(h.app.env, 'SELECT user_id FROM mafia_results')).length >= count, 'results stored');

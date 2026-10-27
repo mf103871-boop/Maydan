@@ -107,3 +107,16 @@ test('a native authorization grant does not claim connected before the matching 
   f.session.mediaChanged({scope:'mafia',callId:'call',mediaEpoch:2,voiceSessionId:f.session.voiceSessionId,connected:true,muted:true});
   assert.equal(f.session.state.status,'connected');
 });
+test('a provider outage pauses audible media once, keeps the logical call, and resumes on the next secured epoch', async () => {
+  let result = response(); const f = fixture(async () => result); await f.session.start();
+  const asked = f.requests.length;
+  for (let i = 0; i < 3; i++) f.session.configure(room(3, { mafiaVoice: { callId: 'call', mediaEpoch: 3, canPublish: false, quiet: true, outage: true } }));
+  await new Promise(resolve => setTimeout(resolve, 0));
+  assert.equal(f.paused, 1, 'audible media stops at once, a single time');
+  assert.equal(f.requests.length, asked, 'no voice request storm while the server reports an outage');
+  assert.equal(f.session.state.requested, true, 'the player stays in the call');
+  assert.equal(f.session.state.status, 'reconnecting'); assert.equal(f.session.state.canPublish, false);
+  result = response(4); f.session.configure(room(4));
+  await new Promise(resolve => setTimeout(resolve, 0)); await f.session.pending;
+  assert.equal(f.requests.length, asked + 1); assert.equal(f.session.state.status, 'connected'); assert.equal(f.transitions.at(-1).value.mediaEpoch, 4);
+});

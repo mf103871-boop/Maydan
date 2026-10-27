@@ -123,18 +123,21 @@ function MafiaVoice({ voice = {}, state }) {
   const connected = ['connected','on','silent'].includes(voice.status);
   const recovering = ['connecting','reconnecting'].includes(voice.status);
   const quiet = voice.status === 'silent' || (state.phase === 'night' && state.you?.voice?.canListen === false);
+  // The provider could not secure a channel: the match goes on over text and
+  // voice returns by itself once the server confirms the old grants are gone.
+  const outage = Boolean(state.mafiaVoice?.outage);
   const [actionError,setActionError] = useState('');
   const run = async task => {setActionError('');try{await task?.();}catch(error){setActionError(/[\u0600-\u06ff]/.test(error?.message || '')?error.message:'تعذّر تنفيذ أمر الصوت. حاول مجددًا.');}};
   return <div data-design-id="voice" data-design-required="true" className="mafia-voice" data-mafia-call-controls={state.mafiaVoice?.callId} data-mafia-controls-ready={Boolean((connected || voice.requested) && typeof voice.onLeave==='function') ? 'true' : 'false'}>
-    <div><b>{recovering ? 'نؤمّن الاتصال الصوتي…' : quiet ? (state.phase === 'night' ? 'الليل هادئ الآن' : 'المجلس هادئ لحظات') : connected ? 'صوت المجلس متصل' : 'اسمع المجلس وشارك بصوتك'}</b>
-      <small>{quiet ? voice.requested ? 'سيعود صوت المجلس تلقائيًا عندما تبدأ مرحلة الاستماع.' : 'فعّل صوت النهار الآن ليعود تلقائيًا عند بدء النقاش.' : state.phase === 'night' ? 'مسارات الليل معزولة حسب الفريق' : state.phase === 'defense' ? 'الصوت للمرشح فقط أثناء الدفاع' : 'الميكروفون اختياري؛ الكتابة متاحة حسب المرحلة'}</small></div>
+    <div><b>{outage ? 'الصوت متوقف مؤقتًا' : recovering ? 'نؤمّن الاتصال الصوتي…' : quiet ? (state.phase === 'night' ? 'الليل هادئ الآن' : 'المجلس هادئ لحظات') : connected ? 'صوت المجلس متصل' : 'اسمع المجلس وشارك بصوتك'}</b>
+      <small>{outage ? 'تعذّر تأمين قناة الصوت، فلم نفتح قناة جديدة. المباراة مستمرة بالكتابة، ويعود الصوت تلقائيًا عند توفره.' : quiet ? voice.requested ? 'سيعود صوت المجلس تلقائيًا عندما تبدأ مرحلة الاستماع.' : 'فعّل صوت النهار الآن ليعود تلقائيًا عند بدء النقاش.' : state.phase === 'night' ? 'مسارات الليل معزولة حسب الفريق' : state.phase === 'defense' ? 'الصوت للمرشح فقط أثناء الدفاع' : 'الميكروفون اختياري؛ الكتابة متاحة حسب المرحلة'}</small></div>
     <div className="mafia-voice-actions">{connected || voice.requested ? <>
       <Button data-design-id="mute" disabled={!voice.onMute || !voice.canPublish || recovering} onClick={() => run(() => voice.onMute(!voice.muted))}>{!voice.canPublish || recovering ? 'الميكروفون مغلق' : voice.muted ? 'شغّل الميكروفون' : 'اكتم الميكروفون'}</Button>
       {connected && voice.onSpeaker && voice.audioOutputs?.length > 0 && <label><span className="sr-only">مخرج الصوت</span><select aria-label="مخرج الصوت" data-design-id="audio-output" value={voice.outputId || 'default'} onChange={event => run(() => voice.onSpeaker(event.target.value))}>{voice.audioOutputs.map(output => <option key={output.id || output.deviceId} value={output.id || output.deviceId}>{output.label || 'السماعة'}</option>)}</select></label>}
       <Button data-design-id="voice-leave" variant="ghost" disabled={!voice.onLeave} onClick={() => run(voice.onLeave)}>افصل الصوت</Button>
-    </> : <Button data-design-id="voice-join" disabled={!voice.onJoin || recovering} onClick={() => run(voice.onJoin)}>{quiet ? 'تفعيل صوت النهار' : 'الانضمام بالصوت'}</Button>}</div>
+    </> : <Button data-design-id="voice-join" disabled={!voice.onJoin || recovering || outage} onClick={() => run(voice.onJoin)}>{quiet ? 'تفعيل صوت النهار' : 'الانضمام بالصوت'}</Button>}</div>
     {(connected || voice.requested) && voice.onResume && voice.audioBlocked && <Button data-design-id="voice-resume" onClick={() => run(voice.onResume)}>اضغط لاستعادة الصوت</Button>}
-    {(voice.error || actionError) && <p role="alert">{actionError || (/[\u0600-\u06ff]/.test(voice.error) ? voice.error : errorText(voice.error))}</p>}
+    {!outage && (voice.error || actionError) && <p role="alert">{actionError || (/[\u0600-\u06ff]/.test(voice.error) ? voice.error : errorText(voice.error))}</p>}
   </div>;
 }
 

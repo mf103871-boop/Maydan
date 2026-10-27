@@ -9,7 +9,7 @@ import { decodeJws } from '../server/accounts/jwt.mjs';
 import { tick,technicalAbort } from '../server/mafia-model.mjs';
 import { first,run } from '../server/lamma/common.mjs';
 import { mafiaDeleteStatements, persistMafiaResult } from '../server/mafia-results.mjs';
-import { mafiaVoiceRequest } from '../server/mafia-voice.mjs';
+import { mafiaVoiceRequest, mafiaUserEpoch } from '../server/mafia-voice.mjs';
 const ORIGIN='http://localhost:3000';
 class BrowserSocket extends WebSocket {constructor(url){super(url,{origin:ORIGIN});}}
 async function until(fn,label='state'){const end=Date.now()+5000;while(Date.now()<end){if(await fn())return;await new Promise(r=>setTimeout(r,10));}assert.fail(`Timed out ${label}`);}
@@ -96,15 +96,40 @@ test('real six-client socket game keeps private actions private, isolates voice 
   assert.equal((await h.api(g.people[mi],`/api/rooms/${g.code}/voice`,{deviceId:mi===0?'phone-a':'mafia-phone',operation:'leave',callId:'old-match'})).body.error,'STALE');
   const send=await h.api(g.people[ti],'/api/social/conversations/fake/messages',{text:'side channel',clientId:crypto.randomUUID()});assert.equal(send.body.error,'MAFIA_SOCIAL_LOCKED');
 });
-test('failed provider revocation aborts without next secret grants and refunds only the room trial',async t=>{
+test('a mid-match provider outage keeps the match going over text with no new grant, then restores voice after confirmed revocation',async t=>{
   const h=await setup(t),g=await h.group();await g.clients[0].command('start');await h.phase(g.code);
   const call=await h.api(g.people[0],`/api/rooms/${g.code}/voice`,{deviceId:'phone-a'});assert.equal(call.status,200);
   const before=h.provider.filter(p=>p.method==='CreateRoom').length;h.failRemovals();await h.phase(g.code);
-  const room=h.app.rooms.get(g.code).instance.room;assert.equal(room.phase,'over');assert.equal(room.technicalAbort,true);assert.equal(room.mafiaMedia.failed,true);
-  assert.equal(h.provider.filter(p=>p.method==='CreateRoom').length,before);
-  assert.equal((await first(h.app.env,"SELECT COUNT(*) AS n FROM trials WHERE game='mafia'")).n,0);
-  assert.equal((await h.api(g.people[0],`/api/rooms/${g.code}/voice`,{deviceId:'phone-a'})).body.error,'CALL_UNAVAILABLE');
-  assert.equal((await first(h.app.env,'SELECT COUNT(*) AS n FROM mafia_results')).n,0);
+  const item=h.app.rooms.get(g.code);let room=item.instance.room;
+  assert.equal(room.phase,'night','the match carries on');assert.equal(room.technicalAbort,undefined);assert.equal(room.mafiaMedia.failed,true);
+  assert.equal(h.provider.filter(p=>p.method==='CreateRoom').length,before,'no channel opens before the old grants are revoked');
+  await until(()=>g.clients.every(c=>c.state.phase==='night'&&c.state.mafiaVoice.outage===true&&c.state.mafiaVoice.quiet===true&&c.state.mafiaVoice.canPublish===false),'everyone is told voice is paused');
+  const mafiaIndex=g.people.findIndex(p=>room.roleStates[p.id].faction==='mafia'),townId=room.participants.find(id=>room.roleStates[id].faction==='town');
+  assert.equal((await h.api(g.people[mafiaIndex],`/api/rooms/${g.code}/voice`,{deviceId:`phone-${mafiaIndex}`})).body.error,'MAFIA_VOICE_UNAVAILABLE','even the Mafia gets no night channel');
+  assert.equal((await first(h.app.env,"SELECT COUNT(*) AS n FROM trials WHERE game='mafia'")).n,1,'a match that is still played keeps its trial');
+  // Night play continues, and a command never waits on the provider before the backoff.
+  const removals=h.provider.filter(p=>p.method==='RemoveParticipant').length;
+  await g.clients[mafiaIndex].command('mafia_vote',{targetId:townId});
+  assert.equal(h.provider.filter(p=>p.method==='RemoveParticipant').length,removals,'no provider retry on an ordinary command');
+  await g.clients[mafiaIndex].command('chat',{channel:'team',text:'نكمل بالكتابة',clientId:crypto.randomUUID()});
+  // Recovery: confirmed revocation of the journal, then a fresh secured epoch.
+  h.failRemovals(false);
+  await item.instance.serial(async()=>{const r=structuredClone(item.instance.room);r.mafiaMedia.retryAt=0;await item.instance.commit(r);});
+  room=item.instance.room;assert.equal(room.mafiaMedia.failed,false);assert.equal(await item.storage.get('mafia:voice-transition'),null);
+  assert.ok(h.provider.filter(p=>p.method==='CreateRoom').length>before,'the night channel opens only now');
+  const secret=await h.api(g.people[mafiaIndex],`/api/rooms/${g.code}/voice`,{deviceId:`phone-${mafiaIndex}`});
+  assert.equal(secret.status,200,JSON.stringify(secret.body));assert.ok(secret.body.connection);
+  await until(()=>g.clients.every(c=>c.state.mafiaVoice.outage===false),'the pause notice clears');
+});
+test('a provider failure while dealing a new match still ends it before play and refunds the trial',async t=>{
+  const h=await setup(t),g=await h.group(),callId=crypto.randomUUID(),now=Date.now();
+  await run(h.app.env,"INSERT INTO social_calls(id,scope,conversation_id,initiator_id,client_id,status,created_at,ring_until,expires_at,room_name) VALUES(?,'group','group-fixture',?,?,'active',?,?,?,'social-fixture-room')",callId,g.people[0].accountId,crypto.randomUUID(),now,now+45000,now+3600000);
+  await run(h.app.env,"INSERT INTO social_call_participants(call_id,user_id,state,device_id,joined_at) VALUES(?,?,'active','social-phone',?)",callId,g.people[0].accountId,now);
+  h.failRemovals();await g.clients[0].command('start');
+  const room=h.app.rooms.get(g.code).instance.room;
+  assert.equal(room.phase,'over');assert.equal(room.technicalAbort,true);assert.equal(room.reason,'voice_unavailable');
+  assert.equal((await first(h.app.env,"SELECT COUNT(*) AS n FROM trials WHERE game='mafia'")).n,0,'the trial is not spent');
+  assert.equal((await first(h.app.env,'SELECT COUNT(*) AS n FROM mafia_results')).n,0,'an unplayed match records no result');
 });
 test('feature disable stops new starts but an existing match advances; report sees only viewer evidence',async t=>{
   const h=await setup(t),g=await h.group();await g.clients[0].command('start');h.app.env.MAFIA_ENABLED='0';await h.phase(g.code);
@@ -201,10 +226,14 @@ test('revocation outage retains a fail-closed room slot until the durable retry 
   const item=h.app.rooms.get(g.code);assert.ok(await item.storage.get('mafia:voice-transition'));
   assert.equal((await first(h.app.env,'SELECT COUNT(*) AS n FROM mafia_media_slots')).n,1);
   assert.ok((await first(h.app.env,'SELECT expires_at FROM mafia_media_leases')).expires_at>Date.now()+86400000);
-  h.failRemovals(false);await item.instance.serial(()=>item.instance.commit(structuredClone(item.instance.room)));
+  // The match is still running: a successful retry clears the journal and keeps
+  // the slot; only the end of the match releases the slot and every lease.
+  h.failRemovals(false);await item.instance.serial(async()=>{const r=structuredClone(item.instance.room);r.mafiaMedia.retryAt=0;await item.instance.commit(r);});
+  assert.equal(await item.storage.get('mafia:voice-transition'),null);assert.equal(item.instance.room.mafiaMedia.failed,false);
+  assert.equal((await first(h.app.env,'SELECT COUNT(*) AS n FROM mafia_media_slots')).n,1);
+  await item.instance.serial(async()=>{const r=structuredClone(item.instance.room);technicalAbort(r,Date.now(),'players_left');await item.instance.commit(r);});
   assert.equal((await first(h.app.env,'SELECT COUNT(*) AS n FROM mafia_media_slots')).n,0);
   assert.equal((await first(h.app.env,'SELECT COUNT(*) AS n FROM mafia_media_leases')).n,0);
-  assert.equal(await item.storage.get('mafia:voice-transition'),null);
 });
 test('voice quota rejects new starts without spending the host trial',async t=>{
   const h=await setup(t),g=await h.group();await run(h.app.env,'INSERT INTO mafia_media_slots(room_key,call_id,capacity,updated_at) VALUES(?,?,?,?)','another-live-room','another-live-call',12,Date.now());
@@ -274,12 +303,13 @@ test('an unrelated session signout leaves the authorized native call and socket 
   const h=await setup(t),g=await h.group();await g.clients[0].command('start');await h.phase(g.code);
   const p=g.people[0],path=`/api/rooms/${g.code}/voice`;await h.api(p,path,{deviceId:'native-phone'});
   const item=h.app.rooms.get(g.code),epoch=item.instance.room.mafiaMedia.epoch,removals=h.provider.filter(r=>r.method==='RemoveParticipant').length;
+  const known=mafiaUserEpoch(item.instance.room.mafiaMedia,p.accountId);
   const second=await issueSession(h.app.env,p.accountId);
   const attempt=await h.api({...p,authorization:second.token},path,{deviceId:'native-phone',operation:'sync'});assert.equal(attempt.body.error,'MAFIA_VOICE_SESSION','unrelated bearer cannot steal an existing media nonce');
   assert.equal((await h.api({...p,authorization:second.token},'/api/auth/signout',{})).status,204);
   assert.equal(item.instance.room.mafiaMedia.epoch,epoch);assert.equal(h.provider.filter(r=>r.method==='RemoveParticipant').length,removals);
   assert.equal(item.instance.room.mafiaMedia.authSessions[p.accountId].id,p.sessionId);assert.equal(item.instance.room.members.find(m=>m.id===p.id).connected,true);
-  assert.equal((await h.api(p,path,{deviceId:'native-phone',operation:'sync',knownEpoch:epoch})).body.unchanged,true);
+  assert.equal((await h.api(p,path,{deviceId:'native-phone',operation:'sync',knownEpoch:known})).body.unchanged,true);
 });
 
 test('native session expiry schedules an exact alarm and revokes without waiting for voice presence expiry',async t=>{
@@ -308,17 +338,19 @@ test('explicit bearer rotation transfers media binding, and revoking the retired
   assert.equal(item.instance.room.members.find(m=>m.id===p.id).connected,true);assert.equal(item.instance.room.mafiaMedia.authSessions[p.accountId].id,next.id);
 });
 
-test('session revocation provider outage aborts and retains the durable journal and quarantined leases until cleanup succeeds',async t=>{
+test('session revocation provider outage pauses voice, retains the durable journal and quarantined lease, and resumes without the revoked account',async t=>{
   const h=await setup(t),g=await h.group();await g.clients[0].command('start');await h.phase(g.code);
   const p=g.people[0],item=h.app.rooms.get(g.code);await h.api(p,`/api/rooms/${g.code}/voice`,{deviceId:'native-phone'});
   g.clients[0].stop();await until(()=>!item.instance.sockets().some(s=>item.instance.attachment(s).id===p.id));await item.instance.queue;
   h.failRemovals();const result=await h.api(p,'/api/auth/signout',{});assert.equal(result.status,503);
-  assert.equal(item.instance.room.phase,'over');assert.equal(item.instance.room.mafiaMedia.failed,true);assert.ok(await item.storage.get('mafia:voice-transition'));
+  assert.equal(item.instance.room.phase,'opening','the match continues over text');assert.equal(item.instance.room.mafiaMedia.failed,true);assert.ok(await item.storage.get('mafia:voice-transition'));
   assert.equal((await first(h.app.env,'SELECT COUNT(*) AS n FROM mafia_media_slots')).n,1);
   assert.equal((await first(h.app.env,'SELECT expires_at FROM mafia_media_leases WHERE user_id=?',p.accountId)).expires_at,Number.MAX_SAFE_INTEGER);
-  assert.equal((await h.api(g.people[1],`/api/rooms/${g.code}/voice`,{deviceId:'other-phone'})).body.error,'CALL_UNAVAILABLE');
-  h.failRemovals(false);await item.instance.serial(()=>item.instance.commit(structuredClone(item.instance.room)));
-  assert.equal(await item.storage.get('mafia:voice-transition'),null);assert.equal((await first(h.app.env,'SELECT COUNT(*) AS n FROM mafia_media_leases')).n,0);
+  assert.equal((await h.api(g.people[1],`/api/rooms/${g.code}/voice`,{deviceId:'other-phone'})).body.error,'MAFIA_VOICE_UNAVAILABLE');
+  h.failRemovals(false);await item.instance.serial(async()=>{const r=structuredClone(item.instance.room);r.mafiaMedia.retryAt=0;await item.instance.commit(r);});
+  assert.equal(await item.storage.get('mafia:voice-transition'),null);assert.equal(item.instance.room.mafiaMedia.failed,false);
+  assert.equal((await h.api(g.people[1],`/api/rooms/${g.code}/voice`,{deviceId:'other-phone'})).status,200,'voice returns for the others');
+  assert.equal((await h.api(p,`/api/rooms/${g.code}/voice`,{deviceId:'native-phone'})).status,401,'never for the signed-out account');
 });
 
 test('moderator suspension revokes native Mafia media immediately after its socket has closed',async t=>{
@@ -473,4 +505,55 @@ test('a kicked account cannot walk back into a public room, and quick join moves
   // A repeated display name gets a number in a public join instead of a refusal.
   const join=await h.api(namesake,`/api/rooms/${code}/join`,{...namesake,name:host.name,matchmaking:true});assert.equal(join.status,200,JSON.stringify(join.body));
   assert.deepEqual(h.app.rooms.get(code).instance.room.members.filter(m=>!m.left).map(m=>m.name),[host.name,`${host.name} ٢`]);
+});
+test('targeted voice changes: one phone dropping touches no other call, nomination keeps the call, defense rotates it',async t=>{
+  const h=await setup(t),g=await h.group();await g.clients[0].command('start');
+  for(let i=0;i<4;i++)await h.phase(g.code);
+  const item=h.app.rooms.get(g.code);assert.equal(item.instance.room.phase,'discussion');
+  const path=`/api/rooms/${g.code}/voice`,voice=i=>h.api(g.people[i],path,{deviceId:`phone-${i}`});
+  const channel=response=>decodeJws(response.body.connection.token).payload.video.room;
+  const joined=[];for(const i of [0,1,2]){const r=await voice(i);assert.equal(r.status,200);joined.push(channel(r));}
+  assert.equal(new Set(joined).size,1);
+  const epochs=()=>[0,1,2].map(i=>mafiaUserEpoch(item.instance.room.mafiaMedia,g.people[i].accountId)),removals=()=>h.provider.filter(p=>p.method==='RemoveParticipant').length;
+  const before={epochs:epochs(),removals:removals(),shared:item.instance.room.mafiaMedia.epoch};
+  // A player who never joined voice loses its room socket and comes back.
+  g.clients[5].stop();await until(()=>!item.instance.room.members.find(m=>m.id===g.people[5].id).connected,'the phone drops');
+  const back=new RoomClient({server:h.app.url,code:g.code,session:{id:g.people[5].id,token:g.people[5].token},getAccountAuthorization:()=>`Bearer ${g.people[5].authorization}`,WebSocketImpl:BrowserSocket});h.clients.push(back);back.start();
+  await until(()=>item.instance.room.members.find(m=>m.id===g.people[5].id).connected,'the phone returns');
+  assert.deepEqual(epochs(),before.epochs,'no voice seat resyncs');assert.equal(removals(),before.removals,'no call is revoked');
+  assert.equal(item.instance.room.mafiaMedia.epoch,before.shared);
+  // discussion → nomination: the same audience keeps the same call.
+  await h.phase(g.code);assert.equal(item.instance.room.phase,'nomination');
+  assert.deepEqual(epochs(),before.epochs);assert.equal(removals(),before.removals);
+  assert.equal((await h.api(g.people[0],path,{deviceId:'phone-0',operation:'sync',knownEpoch:before.epochs[0]})).body.unchanged,true);
+  // nomination → defense: speaking rights change, so the public call rotates at once.
+  const nominee=g.people[3];for(const c of g.clients.slice(0,5))await c.command('nominate',{targetId:nominee.id});await back.command('nominate',{targetId:nominee.id});
+  await h.phase(g.code);assert.equal(item.instance.room.phase,'defense');
+  assert.equal(removals(),before.removals+3,'each held grant is revoked once');
+  const listener=await voice(0);assert.equal(listener.status,200,'no wait for a rotated channel');assert.notEqual(channel(listener),joined[0]);
+  assert.equal(decodeJws(listener.body.connection.token).payload.video.canPublish,false);
+  const speaker=await h.api(nominee,path,{deviceId:'phone-3'});assert.equal(decodeJws(speaker.body.connection.token).payload.video.canPublish,true);
+  assert.equal(channel(speaker),channel(listener));
+});
+test('a voice seat that leaves a kept channel and returns waits out the revocation cutoff on that same channel',async t=>{
+  const h=await setup(t),g=await h.group();await g.clients[0].command('start');
+  for(let i=0;i<4;i++)await h.phase(g.code);
+  const item=h.app.rooms.get(g.code),path=`/api/rooms/${g.code}/voice`;
+  const channel=response=>decodeJws(response.body.connection.token).payload.video.room;
+  const first=await h.api(g.people[1],path,{deviceId:'phone-1'}),stays=await h.api(g.people[2],path,{deviceId:'phone-2'});
+  const kept=channel(first),stayEpoch=mafiaUserEpoch(item.instance.room.mafiaMedia,g.people[2].accountId);
+  // Its voice presence lapses and its socket closes: it leaves the audience.
+  await item.instance.serial(async()=>{const r=structuredClone(item.instance.room);r.mafiaMedia.presence[g.people[1].accountId]=0;await item.instance.commit(r);});
+  g.clients[1].stop();await until(()=>!item.instance.room.members.find(m=>m.id===g.people[1].id).connected,'the seat leaves');
+  assert.ok(h.provider.some(p=>p.method==='RemoveParticipant'&&p.body.identity===g.people[1].accountId&&p.body.room===kept));
+  assert.equal(h.provider.some(p=>p.method==='RemoveParticipant'&&p.body.identity===g.people[2].accountId),false,'the others keep their call');
+  assert.equal(mafiaUserEpoch(item.instance.room.mafiaMedia,g.people[2].accountId),stayEpoch);
+  const back=new RoomClient({server:h.app.url,code:g.code,session:{id:g.people[1].id,token:g.people[1].token},getAccountAuthorization:()=>`Bearer ${g.people[1].authorization}`,WebSocketImpl:BrowserSocket});h.clients.push(back);back.start();
+  await until(()=>item.instance.room.members.find(m=>m.id===g.people[1].id).connected,'the seat returns');
+  const early=await h.api(g.people[1],path,{deviceId:'phone-1'});
+  if(early.status===409)assert.equal(early.body.error,'MAFIA_VOICE_TRANSITION','a same-room token waits for the cutoff');
+  await until(async()=>(await h.api(g.people[1],path,{deviceId:'phone-1'})).status===200,'a fresh token after the cutoff',5000);
+  const again=await h.api(g.people[1],path,{deviceId:'phone-1'});assert.equal(channel(again),kept,'the kept channel is the same');
+  assert.ok(decodeJws(again.body.connection?.token||first.body.connection.token).payload.nbf>=Math.floor(item.instance.room.mafiaMedia.revokedUntil[g.people[1].accountId]/1000)-1);
+  void stays;
 });

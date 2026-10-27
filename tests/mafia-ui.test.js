@@ -146,3 +146,11 @@ test('a quiet voice panel outside the night does not call the moment night',()=>
   for(const phase of ['role','dawn']){const props=fixture(`online.mafia.${phase}`);props.voice={status:'silent',requested:true,muted:true,canPublish:false,onMute:()=>{},onLeave:()=>{}};
     const html=render('match',props);assert.match(html,/المجلس هادئ لحظات/,phase);assert.doesNotMatch(html,/الليل هادئ الآن/,phase);}
 });
+test('a voice outage tells everyone the match continues over text and offers no join',()=>{
+  const props=fixture('online.mafia.discussion');props.state.mafiaVoice={callId:'call',mediaEpoch:3,quiet:true,canPublish:false,outage:true};
+  props.voice={status:'off',requested:false,onJoin:()=>{}};
+  const html=render('match',props);
+  assert.match(html,/الصوت متوقف مؤقتًا/);assert.match(html,/المباراة مستمرة بالكتابة/);
+  assert.match(html,/<button(?=[^>]*data-design-id="voice-join")(?=[^>]*disabled)[^>]*>/);
+  assert.match(html,/data-design-id="message-input"/,'text stays open');
+});

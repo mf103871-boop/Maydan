@@ -373,3 +373,14 @@ test('a public waiting room releases a seat whose phone is gone for two minutes;
   const never = mafia.createRoom('ABC124', { ...input(0), settings: { mode: 'classic', capacity: 8, visibility: 'public' } }, NOW);
   mafia.tick(never, NOW + mafia.MAFIA_PUBLIC_LOBBY_IDLE_MS); assert.equal(never.phase, 'closed');
 });
+
+test('a match finished over text during a voice outage is a real result; a technical abort is not', async () => {
+  const { prepareMafiaResult } = await import('../server/mafia-results.mjs');
+  const room = setup(['mafia', 'investigator', 'doctor', 'citizen', 'citizen', 'citizen']);
+  Object.assign(room, { mafiaKey: 'key', mafiaMedia: { failed: true } });
+  room.participants.filter(id => room.roleStates[id].faction === 'mafia').forEach(id => { room.roleStates[id].alive = false; });
+  mafia.tick(room, room.deadlineAt);
+  assert.equal(room.phase, 'over'); assert.equal(room.outcome.faction, 'town');
+  assert.ok(prepareMafiaResult(room), 'played to the end over text');
+  room.technicalAbort = true; assert.equal(prepareMafiaResult(room), null);
+});

@@ -149,7 +149,7 @@ export class Room {
     const members=room.members.filter(m=>!m.left);
     const accounts=members.map(m=>m.accountUserId).sort();
     const media=room.mafiaMedia;
-    const mediaKey=JSON.stringify([room.mafiaKey,room.matchId,room.phase,media?.callId,media?.epoch,media?.failed,media?.quarantineUntil,room.technicalAbort,room.reason,room.trialStarted,room.roomTrialClaim,members.filter(m=>room.participants.includes(m.id)).map(m=>m.accountUserId).sort()]);
+    const mediaKey=JSON.stringify([room.mafiaKey,room.matchId,room.phase,media?.callId,media?.epoch,media?.signature,media?.failed,media?.quarantineUntil,room.technicalAbort,room.reason,room.trialStarted,room.roomTrialClaim,members.filter(m=>room.participants.includes(m.id)).map(m=>m.accountUserId).sort()]);
     if(this.mafiaMetadata.media!==mediaKey) {
       await committedMafiaVoice(this.ctx,this.env,room);
       this.mafiaMetadata.media=mediaKey;
