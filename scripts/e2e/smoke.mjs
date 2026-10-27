@@ -31,7 +31,8 @@ const DECODE_FRAMES = Object.fromEntries([
 if (Object.keys(DECODE_FRAMES).length !== Object.keys(SAMPLE_BANK).length + Object.keys(MUSIC_BANK).length) throw new Error('two audio files share a byte length; the decode shim needs another key');
 const near = (frames, target) => Math.abs(frames - target) <= 2;
 const games = ['badeeha', 'beep', 'mamnoo', 'jabeen', 'fabraka', 'meenfina'];
-const registeredGames = [...games, 'ersomha'];
+// Ersomha and Mafia are online-only: they appear on the home grid but are not played locally below.
+const registeredGames = [...games, 'ersomha', 'mafia'];
 function check(name, ok, detail = '') { results.push({ name, ok: !!ok, detail }); console.log(`${ok ? 'PASS' : 'FAIL'} ${name} ${detail}`); }
 try {
   for (const profile of [
@@ -107,7 +108,7 @@ try {
       check(`${name}: ${label} fits viewport`, value.scroll <= value.width + 1, JSON.stringify(value));
     };
     await go('');
-    check(`${name}: seven games after automatic startup`, await page.locator('.game-card').count() === registeredGames.length);
+    check(`${name}: all ${registeredGames.length} games after automatic startup`, await page.locator('.game-card').count() === registeredGames.length);
     await overflow('home'); await shot('home');
 
     // This guest/local journey verifies the seventh card's real details and
@@ -117,6 +118,12 @@ try {
     check(`${name}: ersomha online entry exists`, await page.getByRole('button', { name: 'العب أونلاين · لشخصين أو أكثر', exact: true }).isVisible());
     check(`${name}: ersomha does not offer a local-only match`, await page.getByRole('button', { name: 'العب على جهاز واحد', exact: true }).count() === 0);
     await overflow('ersomha details');
+    // The eighth card: Mafia is online-only too. Its matches are covered by
+    // tests/e2e/mafia-match.mjs against the room server.
+    await go('game/mafia');
+    check(`${name}: mafia online entry exists`, await page.getByRole('button', { name: 'ادخل المجلس · غرف عامة وخاصة', exact: true }).isVisible());
+    check(`${name}: mafia does not offer a local-only match`, await page.getByRole('button', { name: 'العب على جهاز واحد', exact: true }).count() === 0);
+    await overflow('mafia details');
 
     await go('settings');
     const slider = page.locator('#sound-volume');

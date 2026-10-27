@@ -16,6 +16,7 @@ process.env.MAYDAN_ROOMS_URL = 'same-origin';
 import { build as esbuildBuild } from 'esbuild';
 import { esbuildOptions, renderHtml, readPkg, mediaVersions } from '../lib.mjs';
 import { startLocalServer } from '../../server/local.mjs';
+import { environmentStorageKey } from '../../src/shared/lib/environment.js';
 import { createRequire } from 'node:module';
 import fs from 'node:fs'; import path from 'node:path'; import http from 'node:http'; import os from 'node:os'; import { createHash } from 'node:crypto';
 const require = createRequire(import.meta.url);
@@ -43,6 +44,10 @@ web = http.createServer((req, res) => {
 await new Promise((r) => web.listen(WEB_PORT, r));
 browser = await chromium.launch(process.env.CHROMIUM_PATH ? { executablePath: process.env.CHROMIUM_PATH } : {});
 const ctx = await browser.newContext({ viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, locale: 'ar', isMobile: true, hasTouch: true });
+// A same-origin build away from the production host keeps its account under an
+// environment prefix (src/shared/lib/environment.js); the page sees the same name.
+const ACCOUNT = environmentStorageKey('maydan:account:', `http://localhost:${WEB_PORT}`);
+await ctx.addInitScript((value) => { globalThis.ACCOUNT = value; }, ACCOUNT);
 const page = await ctx.newPage();
 const errors = []; page.on('pageerror', (e) => errors.push(e.message));
 page.on('console', (m) => { if (m.type() === 'error' && !/unsupported MIME type|Failed to load resource/.test(m.text())) errors.push(m.text()); });
@@ -76,7 +81,7 @@ const enter = () => page.waitForFunction(() => {
   if (button) button.click();
   return !splash && !!document.querySelector('[data-design-screen]');
 }, null, { timeout: 15_000, polling: 200 });
-const reload = async () => { await page.evaluate(() => localStorage.removeItem('maydan:account:me')); await page.reload({ waitUntil: 'load' }); await enter(); await page.waitForTimeout(300); };
+const reload = async () => { await page.evaluate(() => localStorage.removeItem(ACCOUNT + 'me')); await page.reload({ waitUntil: 'load' }); await enter(); await page.waitForTimeout(300); };
 
 await page.goto(`http://localhost:${WEB_PORT}/#/`, { waitUntil: 'load' }); await page.waitForTimeout(700);
 await enter(); await page.waitForTimeout(300);
@@ -104,16 +109,16 @@ await page.evaluate(() => document.querySelector('.m-category-pick.is-locked .m-
 check('reopened paywall starts on plans', await page.evaluate(() => !!document.querySelector('.paywall .paywall-plans') && !document.querySelector('.paywall form')));
 await page.evaluate(() => document.querySelector('.paywall-redeem').click()); await page.waitForTimeout(300);
 await page.keyboard.press('Escape'); await page.waitForTimeout(300);
-await page.evaluate(() => localStorage.setItem('maydan:account:promo', JSON.stringify({ code: 'legacy-public-code', hash: 'legacy-hash', redeemedAt: Date.now() })));
+await page.evaluate(() => localStorage.setItem(ACCOUNT + 'promo', JSON.stringify({ code: 'legacy-public-code', hash: 'legacy-hash', redeemedAt: Date.now() })));
 await reload();
 c = await lockedCounts(); check('legacy local promo cannot unlock packs', c.locked === 68, JSON.stringify(c));
-check('legacy raw gift code removed from storage', await page.evaluate(() => localStorage.getItem('maydan:account:promo') === null));
+check('legacy raw gift code removed from storage', await page.evaluate(() => localStorage.getItem(ACCOUNT + 'promo') === null));
 
 // ٢) دخول وهمي عبر الخادم ثم حقن الجلسة.
 const signin = await apiCall('/api/auth/dev', { subject: 'e2e-user', name: 'مختبر', client: 'web' });
 check('dev sign-in 200', signin.status === 200 && !!signin.body?.session?.token, String(signin.status));
 const token = signin.body?.session?.token;
-await page.evaluate((t) => localStorage.setItem('maydan:account:session', JSON.stringify(t)), token);
+await page.evaluate((t) => localStorage.setItem(ACCOUNT + 'session', JSON.stringify(t)), token);
 await reload();
 await go('#/settings'); await page.waitForTimeout(800); await shot('02-settings-signed-in');
 const settingsText = await page.evaluate(() => document.body.textContent);
@@ -131,7 +136,7 @@ check('premium: no plus note on beep details', note1 === '', note1);
 
 // ٤) مستخدم ثانٍ بلا اشتراك: التجربة تمر ثم الجدار.
 const s2 = await apiCall('/api/auth/dev', { subject: 'e2e-trial', name: 'تجريبي', client: 'web' }); const token2 = s2.body?.session?.token;
-await page.evaluate((t) => { localStorage.setItem('maydan:account:session', JSON.stringify(t)); localStorage.removeItem('maydan:account:me'); localStorage.removeItem('maydan:account:trials'); }, token2);
+await page.evaluate((t) => { localStorage.setItem(ACCOUNT + 'session', JSON.stringify(t)); localStorage.removeItem(ACCOUNT + 'me'); localStorage.removeItem(ACCOUNT + 'trials'); }, token2);
 await reload(); await go('#/game/beep'); await page.waitForTimeout(500);
 const note2 = await page.evaluate(() => (document.querySelector('.details-plus-note') || {}).textContent || '');
 check('free user: one free match note', /مباراة واحدة مجانية/.test(note2), note2);
@@ -161,24 +166,24 @@ const roomAnon = await apiCall('/api/rooms', { ...creds(), game: 'fabraka', name
 // ٦) خروج من الإعدادات.
 await go('#/settings'); await page.waitForTimeout(500);
 const out = await tap('خروج'); check('sign-out button present', out);
-await page.waitForTimeout(800); const tokenAfter = await page.evaluate(() => localStorage.getItem('maydan:account:session'));
+await page.waitForTimeout(800); const tokenAfter = await page.evaluate(() => localStorage.getItem(ACCOUNT + 'session'));
 check('sign-out clears session', tokenAfter === null, String(tokenAfter));
 const me401 = await page.evaluate(async ({ API, token2 }) => (await fetch(`${API}/api/me`, { headers: { authorization: `Bearer ${token2}` } })).status, { API, token2 });
 check('revoked token → 401', me401 === 401, String(me401));
 
 // ٧) الدخول لا يحول رمز جهاز قديم إلى منحة على الخادم.
-await page.evaluate(() => localStorage.setItem('maydan:account:promo', JSON.stringify({ code: 'legacy-public-code', hash: 'legacy-hash', redeemedAt: Date.now() })));
+await page.evaluate(() => localStorage.setItem(ACCOUNT + 'promo', JSON.stringify({ code: 'legacy-public-code', hash: 'legacy-hash', redeemedAt: Date.now() })));
 const s3 = await apiCall('/api/auth/dev', { subject: 'e2e-sync', name: 'مزامن', client: 'web' }); const token3 = s3.body?.session?.token;
-await page.evaluate((t) => localStorage.setItem('maydan:account:session', JSON.stringify(t)), token3);
+await page.evaluate((t) => localStorage.setItem(ACCOUNT + 'session', JSON.stringify(t)), token3);
 await reload(); await page.waitForTimeout(400);
-const meSync = await page.evaluate(async () => (await fetch('/api/me', { headers: { authorization: 'Bearer ' + JSON.parse(localStorage.getItem('maydan:account:session')) } })).json());
+const meSync = await page.evaluate(async () => (await fetch('/api/me', { headers: { authorization: 'Bearer ' + JSON.parse(localStorage.getItem(ACCOUNT + 'session')) } })).json());
 check('legacy device promo never creates a server grant after sign-in', !meSync.premium.active && meSync.premium.source === null, JSON.stringify(meSync.premium));
-check('legacy raw code erased after sign-in', await page.evaluate(() => localStorage.getItem('maydan:account:promo') === null));
+check('legacy raw code erased after sign-in', await page.evaluate(() => localStorage.getItem(ACCOUNT + 'promo') === null));
 
 // ٨) رمز يعرفه الخادم وحده: ليس في الحزمة، ومع جلسة يُقبل عبر الواجهة نفسها.
-await page.evaluate(() => { localStorage.removeItem('maydan:account:promo'); localStorage.removeItem('maydan:account:me'); });
+await page.evaluate(() => { localStorage.removeItem(ACCOUNT + 'promo'); localStorage.removeItem(ACCOUNT + 'me'); });
 const s4 = await apiCall('/api/auth/dev', { subject: 'e2e-secret', name: 'سرّي', client: 'web' }); const token4 = s4.body?.session?.token;
-await page.evaluate((t) => localStorage.setItem('maydan:account:session', JSON.stringify(t)), token4);
+await page.evaluate((t) => localStorage.setItem(ACCOUNT + 'session', JSON.stringify(t)), token4);
 await reload(); await go('#/settings'); await page.waitForTimeout(500);
 await tap('لديك رمز هدية؟'); await page.waitForTimeout(300);
 await page.fill('input[aria-label="رمز الهدية"]', 'wrong-secret');
@@ -186,9 +191,9 @@ await page.evaluate(() => [...document.querySelectorAll('.account-redeem button'
 check('unknown code rejected by server too', await page.evaluate(() => !!document.querySelector('.account-redeem .online-notice.error')));
 await page.fill('input[aria-label="رمز الهدية"]', SECRET_CODE.toLowerCase());
 await page.evaluate(() => [...document.querySelectorAll('.account-redeem button')].find((b) => b.textContent.includes('تفعيل')).click()); await page.waitForTimeout(1000);
-const meSecret = await page.evaluate(async () => (await fetch('/api/me', { headers: { authorization: `Bearer ${JSON.parse(localStorage.getItem('maydan:account:session'))}` } })).json());
+const meSecret = await page.evaluate(async () => (await fetch('/api/me', { headers: { authorization: `Bearer ${JSON.parse(localStorage.getItem(ACCOUNT + 'session'))}` } })).json());
 check('server-only code redeemed from the UI → premium', meSecret.premium && meSecret.premium.active && meSecret.premium.source === 'promo', JSON.stringify(meSecret.premium));
-check('server-only code leaves no device promo', await page.evaluate(() => localStorage.getItem('maydan:account:promo') === null));
+check('server-only code leaves no device promo', await page.evaluate(() => localStorage.getItem(ACCOUNT + 'promo') === null));
 c = await lockedCounts(); check('server-only code unlocks packs', c.locked === 0, JSON.stringify(c));
 
 

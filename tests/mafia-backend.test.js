@@ -458,3 +458,19 @@ test('unchanged Mafia voice skips only an identical durable alarm and preserves 
     const getter=item.storage.getAlarm;item.storage.getAlarm=undefined;try{await item.instance.schedule({skipIdenticalMafiaAlarm:true});assert.equal(writes.length,n+2,'adapters without getAlarm use normal scheduling');}finally{item.storage.getAlarm=getter;}
   });
 });
+test('a kicked account cannot walk back into a public room, and quick join moves past rooms it cannot enter',async t=>{
+  const h=await setup(t),host=await h.user(0),troll=await h.user(1),other=await h.user(2),namesake=await h.user(3);
+  const code=(await h.api(host,'/api/rooms',host)).body.code;
+  assert.equal((await h.api(troll,'/api/matchmaking/join',troll)).body.code,code);
+  const client=new RoomClient({server:h.app.url,code,session:{id:host.id,token:host.token},getAccountAuthorization:()=>`Bearer ${host.authorization}`,WebSocketImpl:BrowserSocket});h.clients.push(client);client.start();
+  await until(()=>client.state?.members.length===2,'host sees the guest');
+  await client.command('kick',{targetId:troll.id});await until(()=>client.state.members.length===1,'guest removed');
+  const fresh={...troll,...newCredentials()};
+  assert.equal((await h.api(troll,`/api/rooms/${code}/join`,{...fresh,matchmaking:true})).body.error,'BANNED','a public card refuses the account, not only its old seat');
+  assert.equal((await h.api(troll,'/api/matchmaking/join',fresh)).body.error,'MAFIA_NO_ROOMS');
+  const second=(await h.api(other,'/api/rooms',other)).body.code;
+  assert.equal((await h.api(troll,'/api/matchmaking/join',fresh)).body.code,second,'quick join skips the room it was removed from');
+  // A repeated display name gets a number in a public join instead of a refusal.
+  const join=await h.api(namesake,`/api/rooms/${code}/join`,{...namesake,name:host.name,matchmaking:true});assert.equal(join.status,200,JSON.stringify(join.body));
+  assert.deepEqual(h.app.rooms.get(code).instance.room.members.filter(m=>!m.left).map(m=>m.name),[host.name,`${host.name} ٢`]);
+});

@@ -1,11 +1,17 @@
 // Authoritative Mafia rules. Only snapshot(), voiceAudience() and matchResults()
 // are projections; never send this room object or audit trail to a live client.
-import { ROOM_TTL, HOST_GRACE, AVATARS } from '../src/online/shared.js';
+import { ROOM_TTL, HOST_GRACE, AVATARS, arabicNumber } from '../src/online/shared.js';
 import { MAFIA_PROTOCOL, MAFIA_RULESET_VERSION, MAFIA_ROLES, MAFIA_SUPPORT_ROLES, MAFIA_TIMERS, MAFIA_RECONNECT_MS, MAFIA_MAX_DAYS, MAFIA_MAX_MATCH_MS, mafiaComposition, mafiaMinimumPlayers, normalizeMafiaSettings } from '../src/online/mafia-shared.js';
-import { active, member, newMember, admitMember, transferHost, extendForMatch, colorOf, fail, hasInvisible } from './room-model.mjs';
+import { active, member, newMember, admitMember, transferHost, extendForMatch, colorOf, fail, hasInvisible, profile, sameName } from './room-model.mjs';
 import { objectionableText } from './moderation/filter.mjs';
 
 const FINISHED = new Set(['lobby', 'over', 'closed']);
+// A public waiting room fills with strangers. A seat whose phone has been gone
+// this long frees its place (and its account's Mafia lease) instead of keeping
+// the room listed with absent players and blocking the start.
+export const MAFIA_PUBLIC_LOBBY_IDLE_MS = 120_000;
+const idleSince = m => m.disconnectedAt ?? m.joinedAt ?? null;
+const publicLobby = room => room.phase === 'lobby' && room.settings.visibility === 'public';
 const DAY_VOICE = new Set(['opening', 'discussion', 'nomination', 'defense', 'verdict', 'over']);
 const own = (object, key) => Object.hasOwn(object, key);
 const copy = value => structuredClone(value);
@@ -68,11 +74,27 @@ export function createRoom(code, input, now) {
   };
 }
 
+// A public card or quick join has no name field to correct, so a repeated name
+// takes the first free number ("سارة ٢") instead of refusing the seat.
+function freeName(room, name) {
+  const taken = candidate => active(room).some(m => sameName(m.name, candidate));
+  if (!taken(name)) return name;
+  for (let n = 2; n <= 13; n++) {
+    const suffix = ` ${arabicNumber(n)}`;
+    const candidate = Array.from(name).slice(0, 20 - Array.from(suffix).length).join('').trim() + suffix;
+    if (!taken(candidate)) return candidate;
+  }
+  return name;
+}
 export function joinRoom(room, input, now) {
   if (room.phase === 'closed') fail('CLOSED', 409);
-  if (!room.members.some(m => m.id === input.id && !m.left) && active(room).length >= room.settings.capacity) fail('FULL', 409);
   const wasPresent = room.members.some(m => m.id === input.id && !m.left);
-  const result = admitMember(room, input, now, { lateJoin: true });
+  // A kick removes the account, not only its seat: a fresh seat from the same
+  // account cannot walk back in through a public card or quick join.
+  if (!wasPresent && input.accountUserId && room.banned.some(entry => entry.accountUserId === input.accountUserId)) fail('BANNED', 403);
+  if (!wasPresent && active(room).length >= room.settings.capacity) fail('FULL', 409);
+  const seat = !wasPresent && input.matchmaking ? { ...input, name: freeName(room, profile(input).name) } : input;
+  const result = admitMember(room, seat, now, { lateJoin: true });
   if (!wasPresent) publicChange(room);
   return result;
 }
@@ -259,7 +281,9 @@ function settleNight(room, now) {
     const s = state(room, a.id);
     if (s.roleId === 'reporter') {
       const target = state(room, a.targetId);
-      if (target?.factionAtDeath) publicEvent(room, 'faction_revealed', now, { playerId: a.targetId, faction: target.factionAtDeath, reporterId: a.id });
+      // The reveal is public; who revealed it is not. Naming the reporter here would
+      // reach every phone and hand the Mafia its next target. The replay keeps it.
+      if (target?.factionAtDeath) publicEvent(room, 'faction_revealed', now, { playerId: a.targetId, faction: target.factionAtDeath });
     }
     if (!s.alive) continue;
     if (s.roleId === 'investigator') report(room, a.id, 'investigation', now, { targetId: a.targetId, faction: apparentFaction(a.targetId) });
@@ -312,6 +336,8 @@ export function tick(room, now) {
     if (isRunning(room)) finish(room, now, 'draw', 'expired');
     room.phase = 'closed'; room.phaseId += 1; room.reason = 'expired'; room.deadlineAt = null; publicChange(room); return;
   }
+  if (publicLobby(room)) for (const m of active(room)) if (!m.connected && idleSince(m) != null && now >= idleSince(m) + MAFIA_PUBLIC_LOBBY_IDLE_MS && room.phase === 'lobby') leaveRoom(room, m.id, now);
+  if (room.phase === 'closed') return;
   const oldHost = room.hostId;
   transferHost(room, now);
   if (oldHost !== room.hostId) publicEvent(room, 'host_changed', now, { playerId: room.hostId });
@@ -335,6 +361,7 @@ export function nextAlarm(room, now) {
     }
   }
   if (room.hostMissingSince != null && active(room).some(m => m.connected)) deadlines.push(room.hostMissingSince + HOST_GRACE);
+  if (publicLobby(room)) for (const m of active(room)) if (!m.connected && idleSince(m) != null) deadlines.push(idleSince(m) + MAFIA_PUBLIC_LOBBY_IDLE_MS);
   return Math.max(now + 1, Math.min(...deadlines.filter(Number.isFinite)));
 }
 
@@ -466,7 +493,7 @@ export function action(room, actorId, command, now, options = {}) {
       host(); if (room.phase !== 'lobby') fail('PHASE', 409);
       if (command.targetId === actorId) fail('INVALID');
       const target = member(room, command.targetId);
-      room.banned = [...room.banned, { id: target.id, tokenHash: target.tokenHash }].slice(-32);
+      room.banned = [...room.banned, { id: target.id, tokenHash: target.tokenHash, ...(target.accountUserId ? { accountUserId: target.accountUserId } : {}) }].slice(-32);
       leaveRoom(room, target.id, now); break;
     }
     case 'night_action': chooseNightAction(room, actorId, command); break;
@@ -548,6 +575,9 @@ export function snapshot(room, viewerId, now) {
     allies: s.alive && s.faction !== 'town' ? living(room).filter(id => id !== viewerId && state(room, id).faction === s.faction) : [],
     resources: copy(s.resources), actions: availableActions(room, viewerId),
     nightAction: copy(room.nightActions[viewerId] || null), killTarget: room.killVotes[viewerId] ?? null,
+    // A tie cancels the attack, so the Mafia sees its own team's current ballot.
+    // Only living Mafia viewers receive it; nobody else's snapshot changes.
+    teamVotes: room.phase === 'night' && s.alive && s.faction === 'mafia' ? Object.fromEntries(living(room).filter(id => id !== viewerId && state(room, id).faction === 'mafia' && own(room.killVotes, id)).map(id => [id, room.killVotes[id]])) : {},
     reports: copy(room.privateEvents[viewerId] || []),
     myNomination: own(room.nominationVotes, viewerId) ? room.nominationVotes[viewerId] : null,
     myVerdict: own(room.verdictVotes, viewerId) ? room.verdictVotes[viewerId] : null,

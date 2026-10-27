@@ -166,7 +166,7 @@ export function Entry({ initialCode = '', initialGame = 'meenfina', onJoined, on
       const result = await post(SERVER, roomCode ? `/api/rooms/${roomCode}/join` : '/api/matchmaking/join', { ...session, name: name.trim() || account.user.name, avatar, mode: directoryMode, game: 'mafia', capabilities: ROOM_CAPABILITIES,...(roomCode?{matchmaking:true}:{}) }, { headers: account.authHeaders() });
       if (!requestCurrent(owner,generation)) return;
       const stored = save(SERVER,result.code,session); save(SERVER,`roomOwner:${result.code}`,owner); save(SERVER,'lastRoom',result.code); save(SERVER,'persistence',stored); save(SERVER,pendingKey,null); onJoined(result.code,session,stored);
-    } catch(error) { if (requestCurrent(owner,generation)) {setError(error.code || 'NETWORK');if(['FULL','FULL_MAFIA','STARTED','NOT_FOUND','MAFIA_BLOCKED','MAFIA_NO_ROOMS'].includes(error.code))setDirectoryRefresh(n=>n+1);} }
+    } catch(error) { if (requestCurrent(owner,generation)) {setError(error.code || 'NETWORK');if(['FULL','FULL_MAFIA','STARTED','NOT_FOUND','MAFIA_BLOCKED','MAFIA_NO_ROOMS','BANNED'].includes(error.code))setDirectoryRefresh(n=>n+1);} }
     finally { if(requestCurrent(owner,generation))setBusy(false); }
   }
   return <section className={`online-entry stack ${game==='mafia'?'mafia-noir mafia-entry':''}`}>

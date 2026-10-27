@@ -155,6 +155,9 @@ test('reporter reveals immutable faction at elimination and no hidden role', () 
   kill(room, 'p11'); step(room); until(room, 'night'); choose(room, 'p8', 'p11'); step(room);
   const event = room.history.find(e => e.type === 'faction_revealed');
   assert.equal(event.faction, 'town'); assert.equal(event.playerId, 'p11'); assert.equal(event.roleId, undefined);
+  assert.equal(event.reporterId, undefined, 'the public log never names the reporter');
+  assert.doesNotMatch(JSON.stringify(mafia.snapshot(room, 'p0', NOW).log), /"p8"/, 'nor does any viewer\'s copy of it');
+  assert.ok(room.audit.some(e => e.type === 'night_action' && e.playerId === 'p8' && e.targetId === 'p11'), 'the end-of-match replay keeps it');
   assert.equal(room.roleStates.p8.resources.charges, 0);
 });
 
@@ -315,4 +318,58 @@ test('accepted night actions settle equivalently regardless of message order', (
   step(left); step(right);
   assert.deepEqual(left.roleStates, right.roleStates); assert.deepEqual(left.privateEvents, right.privateEvents);
   assert.deepEqual(left.history, right.history); assert.deepEqual(left.audit, right.audit);
+});
+
+test('living Mafia see each ally\'s current attack choice; nobody else\'s snapshot changes', () => {
+  const room = setup(ROLES12), citizen = mafia.snapshot(room, 'p11', NOW);
+  act(room, 'p0', { type: 'mafia_vote', targetId: 'p11' }); act(room, 'p1', { type: 'mafia_vote', targetId: null });
+  assert.deepEqual(mafia.snapshot(room, 'p2', NOW).you.teamVotes, { p0: 'p11', p1: null });
+  assert.deepEqual(mafia.snapshot(room, 'p0', NOW).you.teamVotes, { p1: null }, 'a viewer\'s own vote stays in killTarget');
+  assert.deepEqual(mafia.snapshot(room, 'p11', NOW), citizen);
+  assert.deepEqual(mafia.snapshot(room, 'p3', NOW).you.teamVotes, {}, 'the shadow leader never sees the Mafia ballot');
+  step(room);
+  assert.deepEqual(mafia.snapshot(room, 'p2', NOW).you.teamVotes, {}, 'the ballot closes with the night');
+});
+
+test('a kick removes the account: a fresh seat from it is refused, and public joins number a repeated name', () => {
+  const room = mafia.createRoom('ABC123', { ...input(0), accountUserId: 'u0', settings: { mode: 'classic', capacity: 8, visibility: 'public' } }, NOW);
+  mafia.connected(room, 'p0', true, NOW);
+  mafia.joinRoom(room, { ...input(1), accountUserId: 'u1' }, NOW); room.members[1].accountUserId = 'u1';
+  act(room, 'p0', { type: 'kick', targetId: 'p1' });
+  assert.throws(() => mafia.joinRoom(room, { id: 'p9', tokenHash: 'fresh', name: 'اسم جديد', avatar: 0, accountUserId: 'u1' }, NOW), { code: 'BANNED' });
+  mafia.joinRoom(room, { ...input(2), name: 'سارة', accountUserId: 'u2' }, NOW);
+  assert.throws(() => mafia.joinRoom(room, { ...input(3), name: 'ساره', accountUserId: 'u3' }, NOW), { code: 'NAME_TAKEN' }, 'an invite code join can still fix its own name');
+  mafia.joinRoom(room, { ...input(3), name: 'ساره', accountUserId: 'u3', matchmaking: true }, NOW);
+  mafia.joinRoom(room, { ...input(4), name: 'سارة', accountUserId: 'u4', matchmaking: true }, NOW);
+  assert.deepEqual(room.members.filter(m => !m.left).map(m => m.name).slice(-3), ['سارة', 'ساره ٢', 'سارة ٣']);
+  mafia.joinRoom(room, { ...input(5), name: 'ا'.repeat(20), accountUserId: 'u5', matchmaking: true }, NOW);
+  mafia.joinRoom(room, { ...input(6), name: 'ا'.repeat(20), accountUserId: 'u6', matchmaking: true }, NOW);
+  assert.equal(Array.from(room.members.at(-1).name).length, 20, 'a numbered name keeps the 20-character limit');
+});
+
+test('a public waiting room releases a seat whose phone is gone for two minutes; a private one keeps it for the host', () => {
+  const make = visibility => {
+    const room = mafia.createRoom('ABC123', { ...input(0), settings: { mode: 'classic', capacity: 8, visibility } }, NOW);
+    for (let i = 1; i < 3; i++) mafia.joinRoom(room, input(i), NOW);
+    for (const m of room.members) mafia.connected(room, m.id, true, NOW);
+    mafia.connected(room, 'p0', false, NOW + 1000); mafia.connected(room, 'p2', false, NOW + 2000);
+    return room;
+  };
+  const room = make('public');
+  const seated = r => r.members.filter(m => !m.left).map(m => m.id);
+  assert.equal(mafia.nextAlarm(room, NOW + 2000), NOW + 1000 + 20_000, 'the host grace still comes first');
+  mafia.tick(room, NOW + 1000 + 20_000);
+  assert.equal(mafia.nextAlarm(room, NOW + 1000 + 20_000), NOW + 1000 + mafia.MAFIA_PUBLIC_LOBBY_IDLE_MS, 'then the first absent seat wakes the room');
+  mafia.tick(room, NOW + 1000 + mafia.MAFIA_PUBLIC_LOBBY_IDLE_MS - 1);
+  assert.deepEqual(seated(room), ['p0', 'p1', 'p2']);
+  assert.equal(room.hostId, 'p1', 'the connected seat already runs the room after the host grace');
+  mafia.tick(room, NOW + 2000 + mafia.MAFIA_PUBLIC_LOBBY_IDLE_MS);
+  assert.deepEqual(room.members.map(m => m.id), ['p1'], 'both absent seats are released');
+  mafia.connected(room, 'p1', false, NOW + 3000); mafia.tick(room, NOW + 3000 + mafia.MAFIA_PUBLIC_LOBBY_IDLE_MS);
+  assert.equal(room.phase, 'closed', 'a public room nobody is in closes and leaves the list');
+  const kept = make('private'); mafia.tick(kept, NOW + 10 * mafia.MAFIA_PUBLIC_LOBBY_IDLE_MS);
+  assert.equal(seated(kept).length, 3, 'friends in a private room wait for each other');
+  // A seat that joined but never opened its socket counts from its arrival.
+  const never = mafia.createRoom('ABC124', { ...input(0), settings: { mode: 'classic', capacity: 8, visibility: 'public' } }, NOW);
+  mafia.tick(never, NOW + mafia.MAFIA_PUBLIC_LOBBY_IDLE_MS); assert.equal(never.phase, 'closed');
 });

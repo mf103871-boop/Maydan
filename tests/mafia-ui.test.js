@@ -112,3 +112,37 @@ test('an account mismatch never renders another player private card, actions or 
   const props=fixture('online.mafia.clues');props.state.previewReveal=true;props.state.previewTab='clues';props.state.you.id='different-owner';props.state.you.reports=[{text:'OTHER_OWNER_SECRET'}];
   const html=render('match',props);assert.doesNotMatch(html,/role-card|role-content|ability-submit|OTHER_OWNER_SECRET/);
 });
+test('the Mafia ballot shows each ally’s current choice, so a silent tie is visible before the night closes',()=>{
+  const props=fixture('online.mafia.night.mafia'),target=props.state.you.actions.find(a=>a.type==='mafia_vote').targets[0];
+  props.state.you.teamVotes={'design-player-2':target};
+  let html=render('match',props);
+  assert.match(html,/اختيارات فريقك: [^<]+: [^<]+/);assert.match(html,/✦١/);assert.doesNotMatch(html,/لم يختر بعد/);
+  props.state.you.teamVotes={};html=render('match',props);assert.match(html,/لم يختر بعد/);assert.doesNotMatch(html,/✦/);
+  props.state.you.teamVotes={'design-player-2':null};assert.match(render('match',props),/بلا هدف/);
+});
+test('public text stays open for the living through nomination and verdict, and the defense belongs to the nominee',()=>{
+  for(const phase of ['opening','discussion','nomination','verdict'])assert.match(render('match',fixture(`online.mafia.${phase}`)),/data-design-id="message-input"/,phase);
+  const defense=fixture('online.mafia.defense');defense.state.nomineeId='someone-else';
+  assert.doesNotMatch(render('match',defense),/data-design-id="message-input"/);
+  defense.state.nomineeId=defense.me.id;assert.match(render('match',defense),/data-design-id="message-input"/);
+});
+test('a herald’s public extension names its user, as the rules promise',()=>{
+  const props=fixture('online.mafia.discussion');props.state.log=[{id:9,type:'extended',at:Date.now(),playerId:props.state.members[3].id,seconds:20}];
+  assert.match(render('match',props),new RegExp(`${props.state.members[3].name} استخدم قدرة المنادي`));
+});
+test('a confirmed ballot names what was recorded, and each elimination says how it happened',()=>{
+  const props=fixture('online.mafia.nomination'),suspect=props.state.members[2];
+  Object.assign(props.state.you,{nominationSubmitted:true,myNomination:suspect.id});
+  assert.match(render('match',props),new RegExp(`سُجّل ترشيحك: ${suspect.name}`));
+  props.state.you.myNomination=null;assert.match(render('match',props),/سُجّل امتناعك عن الترشيح/);
+  const verdict=fixture('online.mafia.verdict');Object.assign(verdict.state.you,{verdictSubmitted:true,myVerdict:false});
+  assert.match(render('match',verdict),/سُجّل حكمك: ترفض الإقصاء/);
+  const day=fixture('online.mafia.discussion'),[a,b,c]=day.state.members.slice(1,4);
+  day.state.log=[{id:1,type:'eliminated',at:1,playerId:a.id,reason:'night'},{id:2,type:'eliminated',at:2,playerId:b.id,reason:'verdict'},{id:3,type:'eliminated',at:3,playerId:c.id,reason:'forfeit'}];
+  const html=render('match',day);
+  assert.match(html,new RegExp(`${a.name} خرج من المجلس بهجوم ليلي`));assert.match(html,new RegExp(`أقصى المجلس ${b.name}`));assert.match(html,new RegExp(`${c.name} انسحب من المجلس`));
+});
+test('a quiet voice panel outside the night does not call the moment night',()=>{
+  for(const phase of ['role','dawn']){const props=fixture(`online.mafia.${phase}`);props.voice={status:'silent',requested:true,muted:true,canPublish:false,onMute:()=>{},onLeave:()=>{}};
+    const html=render('match',props);assert.match(html,/المجلس هادئ لحظات/,phase);assert.doesNotMatch(html,/الليل هادئ الآن/,phase);}
+});

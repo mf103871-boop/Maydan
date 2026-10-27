@@ -4,6 +4,7 @@
 // يتطلب مستندًا مبنيًا بالـAPI على الأصل نفسه: npm run build:cloudflare
 import http from 'node:http';
 import { startLocalServer } from '../../server/local.mjs';
+import { PRODUCTION_API_ORIGIN } from '../../src/shared/lib/environment.js';
 
 export const SESSION_KEY = 'maydan:account:session';
 
@@ -38,10 +39,14 @@ export async function startPlusSession({ webOrigin, apiPort = 8797 }) {
 }
 
 // تُحقن قبل أي سكربت في الصفحة: الجلسة كما يحفظها AccountProvider بعد الدخول.
+// A same-origin build away from the production host stores its account under an
+// environment prefix: the same naming as environmentStorageKey() in
+// src/shared/lib/environment.js, computed from the page's own origin.
 export function installSession(context, token) {
-  return context.addInitScript(([key, value]) => {
+  return context.addInitScript(([base, value, production]) => {
+    const key = location.origin === production ? base : `maydan:environment:${encodeURIComponent(location.origin)}:${base.replace(/^maydan:/, '')}`;
     try { if (!localStorage.getItem(key)) localStorage.setItem(key, JSON.stringify(value)); } catch { /* storage blocked */ }
-  }, [SESSION_KEY, token]);
+  }, [SESSION_KEY, token, PRODUCTION_API_ORIGIN]);
 }
 
 // مستند بُني بلا API (npm run build) لا يطلب /api/me أبدًا فتبقى الحزم مقفولة؛
