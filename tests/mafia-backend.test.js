@@ -105,7 +105,9 @@ test('a mid-match provider outage keeps the match going over text with no new gr
   assert.equal(h.provider.filter(p=>p.method==='CreateRoom').length,before,'no channel opens before the old grants are revoked');
   await until(()=>g.clients.every(c=>c.state.phase==='night'&&c.state.mafiaVoice.outage===true&&c.state.mafiaVoice.quiet===true&&c.state.mafiaVoice.canPublish===false),'everyone is told voice is paused');
   const mafiaIndex=g.people.findIndex(p=>room.roleStates[p.id].faction==='mafia'),townId=room.participants.find(id=>room.roleStates[id].faction==='town');
-  assert.equal((await h.api(g.people[mafiaIndex],`/api/rooms/${g.code}/voice`,{deviceId:`phone-${mafiaIndex}`})).body.error,'MAFIA_VOICE_UNAVAILABLE','even the Mafia gets no night channel');
+  // One phone per account: the first player already joined from phone-a.
+  const mafiaPhone=mafiaIndex===0?'phone-a':`phone-${mafiaIndex}`;
+  assert.equal((await h.api(g.people[mafiaIndex],`/api/rooms/${g.code}/voice`,{deviceId:mafiaPhone})).body.error,'MAFIA_VOICE_UNAVAILABLE','even the Mafia gets no night channel');
   assert.equal((await first(h.app.env,"SELECT COUNT(*) AS n FROM trials WHERE game='mafia'")).n,1,'a match that is still played keeps its trial');
   // Night play continues, and a command never waits on the provider before the backoff.
   const removals=h.provider.filter(p=>p.method==='RemoveParticipant').length;
@@ -117,7 +119,7 @@ test('a mid-match provider outage keeps the match going over text with no new gr
   await item.instance.serial(async()=>{const r=structuredClone(item.instance.room);r.mafiaMedia.retryAt=0;await item.instance.commit(r);});
   room=item.instance.room;assert.equal(room.mafiaMedia.failed,false);assert.equal(await item.storage.get('mafia:voice-transition'),null);
   assert.ok(h.provider.filter(p=>p.method==='CreateRoom').length>before,'the night channel opens only now');
-  const secret=await h.api(g.people[mafiaIndex],`/api/rooms/${g.code}/voice`,{deviceId:`phone-${mafiaIndex}`});
+  const secret=await h.api(g.people[mafiaIndex],`/api/rooms/${g.code}/voice`,{deviceId:mafiaPhone});
   assert.equal(secret.status,200,JSON.stringify(secret.body));assert.ok(secret.body.connection);
   await until(()=>g.clients.every(c=>c.state.mafiaVoice.outage===false),'the pause notice clears');
 });
