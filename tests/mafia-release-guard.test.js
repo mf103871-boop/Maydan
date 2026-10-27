@@ -59,6 +59,16 @@ test('Mafia release guard rejects stale/mismatched evidence, missing provider pr
   for (const mutate of mutations) { const f = fixture(); mutate(f); assert.throws(() => run(f)); }
 });
 
+test('Mafia capacity follows the verified provider quota, not a fixed six rooms', () => {
+  const configure = (f, rooms, participants) => { for (const worker of Object.values(f.after.workers)) for (const [name, text] of [['MAFIA_MAX_ACTIVE_ROOMS', rooms], ['MAFIA_MAX_VOICE_PARTICIPANTS', participants]]) worker.settings.bindings.find(b => b.name === name).text = String(text); };
+  const big = fixture(); big.evidence.providerCapacity = { confirmedLimit: 1000, socialReserve: 100 }; configure(big, 20, 240);
+  assert.equal(run(big).passed, true, 'twenty twelve-seat rooms inside a 1,000-participant plan');
+  for (const [rooms, participants] of [[20, 200], [80, 960], [1001, 12_012]]) {
+    const f = fixture(); f.evidence.providerCapacity = { confirmedLimit: 1000, socialReserve: 100 }; configure(f, rooms, participants);
+    assert.throws(() => run(f), undefined, `${rooms} rooms / ${participants} participants`);
+  }
+});
+
 test('public activation requires separately recorded physical and human acceptance for all seven player counts', () => {
   const f = fixture(); for (const worker of Object.values(f.after.workers)) worker.settings.bindings.find(b => b.name === 'MAFIA_ENABLED').text = '1';
   assert.throws(() => run(f), /iPhones/);

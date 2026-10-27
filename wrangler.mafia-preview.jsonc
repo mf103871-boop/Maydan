@@ -21,7 +21,7 @@
     "EXTRA_ORIGINS": "maydan://app",
     "APPLE_BUNDLE_ID": "Maydan",
     "MAFIA_ENABLED": "1",
-    "MAFIA_MAX_ACTIVE_ROOMS": "1",
+    "MAFIA_MAX_ACTIVE_ROOMS": "6",
     "MAFIA_MAX_VOICE_PARTICIPANTS": "80",
     "IOS_UPDATE_POLICY_ENABLED": "0",
     "GOOGLE_CLIENT_ID": "436944195283-8vg5ni6dnnesk8neurdt30grlmhca923.apps.googleusercontent.com"

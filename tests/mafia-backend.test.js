@@ -240,6 +240,16 @@ test('voice quota rejects new starts without spending the host trial',async t=>{
   await assert.rejects(g.clients[0].command('start'),e=>e.code==='MAFIA_VOICE_CAPACITY');
   assert.equal(h.app.rooms.get(g.code).instance.room.phase,'lobby');assert.equal((await first(h.app.env,"SELECT COUNT(*) AS n FROM trials WHERE game='mafia'")).n,0);
 });
+test('a configured cap above six admits a seventh live room; the participant budget still decides',async t=>{
+  const h=await setup(t),g=await h.group();
+  for(let i=0;i<6;i++)await run(h.app.env,'INSERT INTO mafia_media_slots(room_key,call_id,capacity,updated_at) VALUES(?,?,?,?)',`live-room-${i}`,`live-call-${i}`,12,Date.now());
+  Object.assign(h.app.env,{MAFIA_MAX_ACTIVE_ROOMS:'7',MAFIA_MAX_VOICE_PARTICIPANTS:'79'});
+  await assert.rejects(g.clients[0].command('start'),e=>e.code==='MAFIA_VOICE_CAPACITY','72 seats in use plus 8 exceeds 79');
+  h.app.env.MAFIA_MAX_VOICE_PARTICIPANTS='84';await g.clients[0].command('start');
+  assert.equal(h.app.rooms.get(g.code).instance.room.phase,'role');
+  assert.equal((await first(h.app.env,'SELECT COUNT(*) AS n FROM mafia_media_slots')).n,7);
+});
+
 test('finished results survive a departed first player and a D1 write outage through durable outbox',async t=>{
   const h=await setup(t),g=await h.group();await g.clients[0].command('start');
   const item=h.app.rooms.get(g.code),original=h.app.env.DB.batch.bind(h.app.env.DB);let unavailable=true;
