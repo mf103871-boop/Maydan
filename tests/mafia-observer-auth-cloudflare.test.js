@@ -11,7 +11,7 @@ import { newCredentials,RoomClient } from '../src/online/client.js';
 import { MAFIA_PROTOCOL } from '../src/online/shared.js';
 
 const origin='https://test.local',pause=ms=>new Promise(resolve=>setTimeout(resolve,ms));
-async function until(predicate){for(let n=0;n<500;n++){if(predicate())return;await pause(10);}assert.fail('websocket state timeout');}
+async function until(predicate,attempts=500){for(let n=0;n<attempts;n++){if(predicate())return;await pause(10);}assert.fail('websocket state timeout');}
 
 test('workerd/D1: a fresh observer RoomClient securely completes the account challenge and reconnects', {timeout:60000}, async()=>{
   const tempRoot=path.resolve(os.tmpdir()),dir=await mkdtemp(path.join(tempRoot,'maydan-observer-auth-'));let mf;
@@ -45,6 +45,8 @@ test('workerd/D1: a fresh observer RoomClient securely completes the account cha
     const pending=new BrowserSocket(address);await new Promise(resolve=>pending.once('open',resolve));pending.send(JSON.stringify(auth));await until(()=>pending.received.length>0);assert.deepEqual(pending.received,[{type:'account-auth',game:'mafia'}]);await pause(30);assert.equal(pending.received.some(m=>m.type==='state'),false,'valid observer token alone cannot reveal even delayed state');
     pending.send(JSON.stringify({...auth,accountAuthorization:`Bearer ${outsider.authorization}`}));await until(()=>pending.readyState===WebSocket.CLOSED);assert.equal(pending.received.some(m=>m.type==='state'),false);assert.equal(client.connectionStatus,'connected','wrong account cannot replace the current observer connection');
     const forged=new BrowserSocket(address);await new Promise(resolve=>forged.once('open',resolve));forged.send(JSON.stringify({...auth,token:'f'.repeat(64)}));await until(()=>forged.readyState===WebSocket.CLOSED);assert.equal(forged.received.some(m=>m.type==='state'||m.type==='account-auth'),false,'invalid observer token is rejected before the challenge');
+    await until(()=>client.state.phase==='lobby',3500);assert.deepEqual(client.state.log,[]);assert.deepEqual(client.state.chats,{public:[],team:[],observers:[]});
+    const visibleSocket=client.ws;client.reconnectNow();await until(()=>client.ws!==visibleSocket&&client.connectionStatus==='connected');assert.equal(client.state.phase,'lobby');assert.deepEqual(client.state.log,[]);assert.deepEqual(client.state.chats,{public:[],team:[],observers:[]});assert.equal(bearerReads,3);
     assert.equal((await db.prepare('SELECT COUNT(*) n FROM mafia_observer_memberships WHERE user_id=?').bind(watcher.accountId).first()).n,1);assert.equal((await db.prepare('SELECT COUNT(*) n FROM mafia_seats WHERE user_id=?').bind(watcher.accountId).first()).n,0);
   }finally{
     clients.forEach(client=>client.stop());sockets.forEach(socket=>socket.terminate());if(mf)await mf.dispose();assert.equal(path.dirname(path.resolve(dir)),tempRoot);assert.match(path.basename(dir),/^maydan-observer-auth-/);await rm(dir,{recursive:true,force:true});

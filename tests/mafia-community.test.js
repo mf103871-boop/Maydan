@@ -24,6 +24,23 @@ async function setup(t){const app=await startLocalServer({port:0,vars:{MAFIA_ENA
 }
 function pure(){const room=createRoom('123456',{id:'p0',tokenHash:'t0',name:'الأول',avatar:0,settings:{mode:'classic',capacity:8,visibility:'public',voiceMode:'off'}},1000);for(let n=1;n<6;n++)joinRoom(room,{id:`p${n}`,tokenHash:`t${n}`,name:`شخص ${n}`,avatar:0},1000);for(const m of room.members){connected(room,m.id,true,1000);m.ready=true;}action(room,'p0',{type:'start',requestId:'start',matchId:0,phaseId:room.phaseId},1000,{randomWord:()=>123456789});return room;}
 
+test('initial empty observer checkpoint has stable collections before and after release, storage and legacy restore',async()=>{
+  const room=createRoom('123456',{id:'p0',tokenHash:'t0',name:'الأول',avatar:0,settings:{mode:'classic',capacity:8,visibility:'public',voiceMode:'off'}},1000),watcher={id:'watch',matchAtJoin:0};
+  let stream=advanceObserverStream(null,room,1000);const waiting=observerView(room,stream,watcher,30999);assert.deepEqual(waiting.log,[]);assert.deepEqual(waiting.chats,{public:[],team:[],observers:[]});
+  stream=advanceObserverStream(stream,null,31000);assert.deepEqual(stream.visible.log,[]);assert.deepEqual(stream.visible.chats,{public:[],team:[],observers:[]});
+  const storage=new MemoryStorage();await storage.transaction(tx=>saveObserverStream(tx,stream));const restored=(await loadObserverStream(storage)).stream,view=observerView(room,restored,watcher,31000);assert.equal(view.phase,'lobby');assert.deepEqual(view.log,[]);assert.deepEqual(view.chats,{public:[],team:[],observers:[]});
+  const legacy=structuredClone(restored);delete legacy.visible.log;delete legacy.visible.chats;await storage.transaction(tx=>saveObserverStream(tx,legacy));const old=(await loadObserverStream(storage)).stream;assert.deepEqual(observerView(room,old,watcher,31000),view,'old stored empty checkpoints return the same complete public schema');
+  old.visible.chats={public:[],team:[{text:'PRIVATE_TEAM'}],observers:[{text:'PRIVATE_OBSERVER'}],mafia:[{text:'PRIVATE_MAFIA'}]};assert.deepEqual(observerView(room,old,watcher,31000),view,'a legacy private channel never escapes through public collection normalization');
+});
+
+test('fresh observer RoomClient keeps collection shape after the first30s checkpoint and a legacy checkpoint reconnect',async t=>{
+  let clock=Date.now();t.mock.method(Date,'now',()=>clock);const h=await setup(t),g=await h.group(),watch=await h.user(40);await h.api(watch,`/api/rooms/${g.code}/observe`,watch);
+  const client=new RoomClient({server:h.app.url,code:g.code,session:{id:watch.id,token:watch.token,scope:'observer'},getAccountAuthorization:()=>`Bearer ${watch.authorization}`,WebSocketImpl:Socket});t.after(()=>client.stop());client.start();await until(()=>client.connectionStatus==='connected');assert.equal(client.state.phase,'waiting');assert.deepEqual(client.state.chats.public,[]);
+  clock+=30000;await h.app.rehydrate(g.code);await g.item.instance.serial(()=>g.item.instance.advanceObservers());await until(()=>client.state.phase==='lobby');assert.ok(Array.isArray(client.state.log));assert.deepEqual(client.state.chats,{public:[],team:[],observers:[]});
+  await g.item.instance.serial(async()=>{const legacy=structuredClone(g.item.instance.observerStream);delete legacy.visible.log;delete legacy.visible.chats;await g.item.storage.transaction(tx=>saveObserverStream(tx,legacy,g.item.instance.observerChunks));});await h.app.rehydrate(g.code);
+  const previousSocket=client.ws;client.reconnectNow();await until(()=>client.ws!==previousSocket&&client.connectionStatus==='connected');assert.equal(client.state.phase,'lobby');assert.deepEqual(client.state.log,[]);assert.deepEqual(client.state.chats,{public:[],team:[],observers:[]});assert.equal(client.state.you,null);assert.equal(client.state.mafiaVoice.available,false);
+});
+
 test('every public field, timer, roster, text and final roles waits 30 seconds; private changes create no observer frame',async()=>{
   const room=pure(),watcher={id:'watch',matchAtJoin:room.matchId};let stream=advanceObserverStream(null,room,1000);
   assert.equal(observerView(room,stream,watcher,30999).phase,'waiting');stream=advanceObserverStream(stream,null,31000);let view=observerView(room,stream,watcher,31000);assert.equal(view.phase,'role');assert.equal(view.deadlineAt,room.deadlineAt+30000);assert.equal(view.you,null);assert.equal(JSON.stringify(view).includes('roleStates'),false);

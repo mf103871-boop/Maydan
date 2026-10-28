@@ -9,6 +9,9 @@ export async function loadObserverStream(storage){const manifest=await storage.g
 export async function saveObserverStream(storage,stream,previousChunks=0){const bytes=new TextEncoder().encode(JSON.stringify(stream)),chunks=Math.ceil(bytes.length/STORAGE_CHUNK);for(let i=0;i<chunks;i++)await storage.put(`mafia:observer:${i}`,bytes.slice(i*STORAGE_CHUNK,(i+1)*STORAGE_CHUNK));for(let i=chunks;i<previousChunks;i++)await storage.put(`mafia:observer:${i}`,null);await storage.put('mafia:observer-stream',{schemaVersion:2,chunks});return chunks;}
 const clone=value=>structuredClone(value);
 const same=(a,b)=>JSON.stringify(a)===JSON.stringify(b);
+// Empty collections may be omitted by a delta or an older persisted checkpoint.
+// Public observers always receive the same shape and no private chat channels.
+function publicCollections(view){return {...view,log:Array.isArray(view.log)?view.log:[],chats:{public:Array.isArray(view.chats?.public)?view.chats.public:[],team:[],observers:[]}};}
 function reportSubjects(room){const excluded=new Set(room.mafiaEvidenceExcludedSeats||[]);return Object.fromEntries(room.members.filter(m=>m.accountUserId&&!excluded.has(m.id)).map(m=>[m.id,m.accountUserId]));}
 function subjectMaps(stream){return [stream?.latestSubjects,stream?.visibleSubjects,...(stream?.pending||[]).map(e=>e.subjects),...Object.values(stream?.endBuffers||{}).map(e=>e.subjects)].filter(Boolean);}
 export function observerEvidenceAccounts(stream){return [...new Set(subjectMaps(stream).flatMap(map=>Object.values(map)))];}
@@ -19,7 +22,7 @@ export function dropObserverEvidenceAccounts(previous,accountIds){
 }
 function arrayPatch(before,after){let drop=0;while(drop<before.length&&before[drop]?.id!==after[0]?.id)drop++;const kept=before.slice(drop);if(kept.every((item,i)=>same(item,after[i])))return {drop,add:after.slice(kept.length)};return {drop:before.length,add:after};}
 function diff(before,after){const set={},arrays={};for(const [key,value]of Object.entries(after)){if(key==='log') {if(!same(before?.log||[],value))arrays.log=arrayPatch(before?.log||[],value);}else if(key==='chats'){if(!same(before?.chats?.public||[],value.public))arrays.chat=arrayPatch(before?.chats?.public||[],value.public);}else if(!same(before?.[key],value))set[key]=value;}return {set,arrays};}
-function apply(view,patch){const result={...(view||{}),...clone(patch.set)};for(const [key,p]of Object.entries(patch.arrays)){if(key==='log')result.log=[...(result.log||[]).slice(p.drop),...clone(p.add)];else result.chats={public:[...(result.chats?.public||[]).slice(p.drop),...clone(p.add)],team:[],observers:[]};}return result;}
+function apply(view,patch){const result={...(view||{}),...clone(patch.set)};for(const [key,p]of Object.entries(patch.arrays)){if(key==='log')result.log=[...(result.log||[]).slice(p.drop),...clone(p.add)];else result.chats={public:[...(result.chats?.public||[]).slice(p.drop),...clone(p.add)],team:[],observers:[]};}return publicCollections(result);}
 export function advanceObserverStream(previous,room,now=Date.now()) {
   const next=room?publicSnapshot(room):null,patch=next?diff(previous?.latest,next):null,changed=patch&&(Object.keys(patch.set).length||Object.keys(patch.arrays).length);
   const initializeSubjects=room&&previous?.subjectsVersion!==1;
@@ -58,7 +61,7 @@ export function observerView(room,stream,observer,now=Date.now()) {
   // This is only a delayed offer. The promotion POST rechecks the live room.
   // A live boolean/revision here would itself reveal a new phase or roster early.
   const offer=Boolean(delayed&&observerCanPromote(delayed,stream,{...observer,matchAtJoin:delayed.matchId||0},now));
-  const state=visible?clone(visible):{protocol:room.protocol||2,game:'mafia',code:room.code,phase:'waiting',matchId:0,round:null,deadlineAt:null,members:[],participants:[],log:[],chats:{public:[],team:[],observers:[]},outcome:null,replay:null};
+  const state=publicCollections(visible?clone(visible):{protocol:room.protocol||2,game:'mafia',code:room.code,phase:'waiting',matchId:0,round:null,deadlineAt:null,members:[],participants:[],outcome:null,replay:null});
   if(state.deadlineAt!=null)state.deadlineAt+=OBSERVER_DELAY;
   return {...state,scope:'observer',delayed:true,delayMs:OBSERVER_DELAY,you:null,serverNow:now,revision:stream?.visibleSeq||0,
     observer:{id:observer.id,delayMs:OBSERVER_DELAY,viewTime:ending?.releaseAt<=now?ending.at:stream?.visibleAt??null,canPromote:offer,...(offer?{promotionSettingsRevision:delayed.settingsRevision||0}:{}),completedMatches:Object.values(stream?.endBuffers||{}).filter(e=>e.releaseAt<=now).map(e=>({matchId:e.view.matchId,outcome:e.view.outcome,replay:e.view.replay}))},
