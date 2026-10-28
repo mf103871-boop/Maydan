@@ -381,6 +381,9 @@ export class Room {
   async authenticateObserverSocket(ws,command,a,now){
     if(command.capabilities?.mafia!==MAFIA_PROTOCOL||(this.room.protocol||1)<2)fail('UPDATE_REQUIRED',409);if(now>a.authDeadline)fail('AUTH',401);
     const input=await credentials(command),observer=this.observer(input.id);if(!observer||observer.tokenHash!==input.tokenHash||observer.expiresAt<=now)fail('AUTH',401);
+    // A fresh RoomClient obtains its live bearer only after this challenge.
+    // Keep the socket unauthenticated and its original deadline until verified.
+    if(command.accountAuthorization===undefined){this.send(ws,{type:'account-auth',game:'mafia'});return;}
     if(typeof command.accountAuthorization!=='string'||command.accountAuthorization.length>512)fail('AUTH',401);
     const auth=await requireSession(this.env,new Request('https://internal/mafia-observer-auth',{headers:{authorization:command.accountAuthorization}}),{rotate:false});if(auth.user.id!==observer.accountUserId)fail('AUTH',401);
     await claimObserver(this.env,this.room,observer,now);const candidate=structuredClone(this.room);candidate.observers[observer.id]={...observer,accountSessionId:auth.session.id,expiresAt:now+OBSERVER_LEASE};await this.ctx.storage.put('room',candidate);this.room=candidate;
