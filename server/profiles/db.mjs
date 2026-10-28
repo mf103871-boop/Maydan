@@ -4,6 +4,7 @@ import { ACHIEVEMENTS } from '../../src/profiles/catalog.js';
 import { earnedState, imageUrl, publicName, gameOf, EMPTY_STATS } from './model.mjs';
 import { liveAccountSql, approvedImageSql } from '../moderation/access.mjs';
 import { effectiveCosmetics, effectiveCosmeticsMany } from '../plus/access.mjs';
+import { assertSocialAllowed, noMafiaMediaLeaseSql } from '../mafia-access.mjs';
 
 const stmt = (env, sql, ...args) => env.DB.prepare(sql).bind(...args);
 const first = (env, sql, ...args) => stmt(env, sql, ...args).first();
@@ -111,9 +112,10 @@ export async function searchProfiles(env, viewerId, query, now = Date.now()) {
   });
 }
 function mutationGuard(revision) { return revision === null ? { sql: '', args: [] } : { sql: ' AND revision=?', args: [revision] }; }
-async function checkMutation(env, userId, result) {
+async function checkMutation(env, userId, result, publicWrite=false) {
   if (changed(result)) return;
   if (!(await isLiveAccount(env, userId))) fail('NOT_FOUND', 404);
+  if(publicWrite) await assertSocialAllowed(env,userId);
   fail('CONFLICT', 409);
 }
 export async function patchProfile(env, userId, patch, revision = null, now = Date.now()) {
@@ -123,7 +125,7 @@ export async function patchProfile(env, userId, patch, revision = null, now = Da
   if ('avatarPreset' in patch) assignments.push('avatar_version=NULL');
   assignments.push('revision=revision+1','updated_at=?','last_mutation=?'); args.push(now,mutation,userId);
   const guard = mutationGuard(revision);
-  const statements = [stmt(env, `UPDATE player_profiles SET ${assignments.join(',')} WHERE user_id=? AND ${live('player_profiles.user_id')}${guard.sql}`, ...args,...guard.args)];
+  const statements = [stmt(env, `UPDATE player_profiles SET ${assignments.join(',')} WHERE user_id=? AND ${live('player_profiles.user_id')} AND ${noMafiaMediaLeaseSql('player_profiles.user_id',now)}${guard.sql}`, ...args,...guard.args)];
   if ('name' in patch) statements.push(stmt(env, `UPDATE users SET name=?,updated_at=? WHERE id=?
     AND EXISTS(SELECT 1 FROM player_profiles p WHERE p.user_id=users.id AND p.last_mutation=?)`, patch.name,now,userId,mutation));
   if ('avatarPreset' in patch) statements.push(stmt(env, `DELETE FROM player_images WHERE user_id=? AND kind='avatar'
@@ -132,14 +134,14 @@ export async function patchProfile(env, userId, patch, revision = null, now = Da
     statements.push(stmt(env,`DELETE FROM ${table} WHERE user_id=? AND kind='avatar' AND EXISTS(SELECT 1 FROM player_profiles p WHERE p.user_id=? AND p.last_mutation=?)`,userId,userId,mutation));
   statements.push(...profileAchievementStatements(env,userId,now));
   const result = await env.DB.batch(statements);
-  await checkMutation(env,userId,result[0]);
+  await checkMutation(env,userId,result[0],true);
 }
 export async function setImage(env, userId, kind, image, revision = null, now = Date.now()) {
   if (!['avatar','cover'].includes(kind)) fail('INVALID',400);
   const mutation = crypto.randomUUID(); const guard = mutationGuard(revision);
   const statements = [
     stmt(env, `UPDATE player_profiles SET ${image?`${kind}_version=CASE WHEN EXISTS(SELECT 1 FROM moderation_image_approvals a WHERE a.user_id=player_profiles.user_id AND a.kind='${kind}' AND a.version=player_profiles.${kind}_version AND a.hidden_at IS NULL) THEN player_profiles.${kind}_version ELSE NULL END,`:`${kind}_version=NULL,`}revision=revision+1,updated_at=?,last_mutation=?
-      WHERE user_id=? AND ${live('player_profiles.user_id')}${guard.sql}`, now,mutation,userId,...guard.args),
+      WHERE user_id=? AND ${live('player_profiles.user_id')}${image?'':` AND ${noMafiaMediaLeaseSql('player_profiles.user_id',now)}`}${guard.sql}`, now,mutation,userId,...guard.args),
     image ? stmt(env, `INSERT INTO moderation_image_reviews(id,user_id,kind,version,data_base64,width,height,byte_length,created_at)
       SELECT ?,?,?,?,?,?,?,?,? WHERE EXISTS(SELECT 1 FROM player_profiles p WHERE p.user_id=? AND p.last_mutation=?)
       ON CONFLICT(user_id,kind) DO UPDATE SET id=excluded.id,version=excluded.version,data_base64=excluded.data_base64,width=excluded.width,
@@ -151,7 +153,7 @@ export async function setImage(env, userId, kind, image, revision = null, now = 
   if(!image) for(const table of ['moderation_image_reviews','moderation_image_approvals'])
     statements.push(stmt(env,`DELETE FROM ${table} WHERE user_id=? AND kind=? AND EXISTS(SELECT 1 FROM player_profiles p WHERE p.user_id=? AND p.last_mutation=?)`,userId,kind,userId,mutation));
   const result=await env.DB.batch(statements);
-  await checkMutation(env,userId,result[0]);
+  await checkMutation(env,userId,result[0],!image);
 }
 export const currentImage = (env,userId,kind,version) => first(env, `SELECT i.data_base64,i.byte_length FROM player_images i
   JOIN player_profiles p ON p.user_id=i.user_id WHERE i.user_id=? AND i.kind=? AND i.version=?

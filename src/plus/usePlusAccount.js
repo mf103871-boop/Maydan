@@ -50,6 +50,7 @@ export function usePlusResource(path, enabled = true) {
 }
 
 export function plusError(error) {
+  if (error?.code === 'MAFIA_SOCIAL_LOCKED') return 'يمكنك تغيير مظهرك بعد انتهاء مباراة مافيا.';
   if (error?.code === 'CONFLICT') return 'تغيّرت الإعدادات على جهاز آخر. أعد التحميل ثم حاول مجددًا.';
   if (error?.code === 'PLUS_REQUIRED') return 'هذه اللمسة تحتاج ميدان بلس. كل الألعاب مجانية.';
   if (error?.code === 'LIMIT' || error?.code === 'PRESET_LIMIT') return 'وصلت إلى عشر جلسات. احذف جلسة قديمة لإضافة غيرها.';

@@ -686,3 +686,20 @@ test('workerd serves the Plus catalog and enforces paid cosmetics, revision CAS 
   assert.equal((await owner.api.post(endpoint+'/apply',{})).status,402);
   assert.equal((await owner.api.del(endpoint,{body:{revision:preset.revision}})).status,200);
 });
+
+test('workerd D1 blocks public appearance changes for a live Mafia lease without blocking profile reads',async()=>{
+  const owner=await signInDev('mafia-appearance-workerd');
+  const profile=await owner.api.get('/api/profiles/me');assert.equal(profile.status,200);
+  await d1.prepare('INSERT INTO mafia_media_leases(user_id,room_key,call_id,expires_at,updated_at) VALUES(?,?,?,?,?)')
+    .bind(owner.userId,'owned-privacy-match','owned-privacy-call',Number.MAX_SAFE_INTEGER,Date.now()).run();
+  for(const response of [
+    await owner.api.patch('/api/me/cosmetics',{revision:0,selection:{frameId:null,badge:false}}),
+    await owner.api.patch('/api/profiles/me',{revision:profile.data.profile.revision,theme:'violet'}),
+    await owner.api.del('/api/profiles/me/images/avatar',{body:{revision:profile.data.profile.revision}}),
+  ]){assert.equal(response.status,409,JSON.stringify(response.data));assert.equal(response.data.error,'MAFIA_SOCIAL_LOCKED');}
+  assert.equal((await owner.api.get('/api/profiles/me')).data.profile.theme,profile.data.profile.theme);
+  assert.equal((await owner.api.get('/api/me/cosmetics')).data.revision,0);
+  await d1.prepare('DELETE FROM mafia_media_leases WHERE user_id=?').bind(owner.userId).run();
+  assert.equal((await owner.api.patch('/api/me/cosmetics',{revision:0,selection:{badge:false}})).status,200);
+  assert.equal((await owner.api.patch('/api/profiles/me',{theme:'violet'})).status,200);
+});

@@ -14,6 +14,9 @@ export async function mafiaMediaLease(env,id,now=Date.now()) {
   catch (error) { if (!mafiaEnabled(env) && /no such table.*mafia_media_leases/i.test(error.message)) return null; throw error; }
 }
 export async function assertSocialAllowed(env,id) { if (await mafiaMediaLease(env,id)) fail('MAFIA_SOCIAL_LOCKED',409); }
+// Used inside the same D1 write as a public appearance change. A route-level
+// check alone races with the room acquiring its live-match lease.
+export const noMafiaMediaLeaseSql = (userExpression,now=Date.now()) => `NOT EXISTS(SELECT 1 FROM mafia_media_leases mml WHERE mml.user_id=${userExpression} AND mml.expires_at>${Math.floor(now)})`;
 // Session revocation is different from a network loss. Wake the owning room
 // even if the native SDK is the only remaining connection. The room checks D1
 // itself, so delayed notifications cannot revoke another authorized session.

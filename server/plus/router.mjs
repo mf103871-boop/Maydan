@@ -2,6 +2,7 @@ import { json, readJson } from '../protocol.mjs';
 import { fail } from '../room-model.mjs';
 import { requireSession, withRotation } from '../accounts/session.mjs';
 import { liveAccountSql } from '../moderation/access.mjs';
+import { assertSocialAllowed, noMafiaMediaLeaseSql } from '../mafia-access.mjs';
 import { notifyUsers } from '../social/realtime.mjs';
 import { friendIds } from '../social/db.mjs';
 import { ensurePlayerRow } from '../profiles/db.mjs';
@@ -34,6 +35,7 @@ async function dispatch(request,env,url,id,now) {
   if(path==='/api/me/cosmetics') {
     if(method==='GET')return json({...await cosmeticsFor(env,id,now),catalogVersion:PLUS_CATALOG_VERSION});
     if(method==='PATCH') {
+      await assertSocialAllowed(env,id);
       const body=await readJson(request,4096);exactKeys(body,['selection','revision']);
       const revision=revisionOf(body.revision),patch=normalizeSelection(body.selection,now);
       if(!Object.keys(patch).length)fail('INVALID',400);
@@ -46,10 +48,10 @@ async function dispatch(request,env,url,id,now) {
       const preferred={...EMPTY_COSMETICS,...previous.preferred,...patch};
       const grant=paid?plusAccessSql(env,"'"+id.replaceAll("'","''")+"'",now):'1';
       const result=await env.DB.batch([
-        statement(env,`INSERT INTO plus_cosmetics(user_id,selection_json,revision,updated_at) SELECT ?,?,1,? WHERE ${liveAccountSql('?')} AND ${grant} AND (?=0 OR EXISTS(SELECT 1 FROM plus_cosmetics WHERE user_id=? AND revision=?)) ON CONFLICT(user_id) DO UPDATE SET selection_json=excluded.selection_json,revision=plus_cosmetics.revision+1,updated_at=excluded.updated_at WHERE plus_cosmetics.revision=?`,id,JSON.stringify(preferred),now,id,id,revision,id,revision,revision),
+        statement(env,`INSERT INTO plus_cosmetics(user_id,selection_json,revision,updated_at) SELECT ?,?,1,? WHERE ${liveAccountSql('?')} AND ${grant} AND ${noMafiaMediaLeaseSql('?',now)} AND (?=0 OR EXISTS(SELECT 1 FROM plus_cosmetics WHERE user_id=? AND revision=?)) ON CONFLICT(user_id) DO UPDATE SET selection_json=excluded.selection_json,revision=plus_cosmetics.revision+1,updated_at=excluded.updated_at WHERE plus_cosmetics.revision=?`,id,JSON.stringify(preferred),now,id,id,id,revision,id,revision,revision),
         statement(env,'UPDATE player_profiles SET revision=revision+1,updated_at=? WHERE user_id=? AND changes()>0',now,id),
       ]);
-      if(!changed(result[0]))fail('CONFLICT',409);
+      if(!changed(result[0])){await assertSocialAllowed(env,id);fail('CONFLICT',409);}
       await notifyAppearance(env,id);
       return json({...await cosmeticsFor(env,id,now),catalogVersion:PLUS_CATALOG_VERSION});
     }

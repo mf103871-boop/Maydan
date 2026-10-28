@@ -41,7 +41,11 @@ export async function allowsRealtimeContent(env, userId, event) {
   // at delivery; disabling the game later must not unlock an ongoing match.
   const communication = ['message', 'call', 'typing'].includes(event.type)
     || event.type === 'group' && ['message', 'edited'].includes(event.reason);
-  if (communication && await mafiaMediaLease(env, userId)) return false;
+  const appearance = event.type === 'refresh' && event.reason === 'profile';
+  if ((communication || appearance) && await mafiaMediaLease(env, userId)) return false;
+  // A profile save may have committed before the sender entered the match,
+  // while this notification waited in the receiving hub's queue.
+  if (appearance && event.userId && await mafiaMediaLease(env, event.userId)) return false;
   if (event.type === 'typing' && event.userId && await mafiaMediaLease(env, event.userId)) return false;
   if (event.type === 'message') {
     if (!Number.isSafeInteger(event.messageSeq) || event.messageSeq < 1) return false;
