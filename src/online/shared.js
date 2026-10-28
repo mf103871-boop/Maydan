@@ -3,7 +3,8 @@ export const PROTOCOL = 1;
 export const FABRAKA_PROTOCOL = 3;
 export const ERSOMHA_PROTOCOL = 1;
 export const BADEEHA_PROTOCOL = 1;
-export const MAFIA_PROTOCOL = 1;
+export { MAFIA_PROTOCOL } from './mafia-shared.js';
+import { MAFIA_PROTOCOL } from './mafia-shared.js';
 export const GAME_PROTOCOLS = Object.freeze({ meenfina: PROTOCOL, fabraka: FABRAKA_PROTOCOL, ersomha: ERSOMHA_PROTOCOL, badeeha: BADEEHA_PROTOCOL, mafia: MAFIA_PROTOCOL });
 // بَديهة أونلاين: جوال لكل فريق (من فريقين إلى أربعة)، والمؤقت كما في اللعبة على جهاز واحد.
 export const BADEEHA_MAX_TEAMS = 4;
@@ -87,6 +88,12 @@ export function resolveServerUrl(value, pageOrigin = '') {
 export const ERRORS = {
   MAFIA_DISABLED: 'مافيا ميدان غير متاحة لبدء مباريات جديدة حاليًا.',
   MAFIA_ACTIVE_ELSEWHERE: 'لديك مقعد مافيا في غرفة أخرى. عُد إليه أو غادره أولًا.',
+  MAFIA_OBSERVER_ACTIVE: 'أنت تتابع مجلسًا الآن. اخرج من المشاهدة قبل حجز مقعد.',
+  OBSERVER_FULL: 'اكتمل عدد المشاهدين في هذا المجلس. جرّب مجلسًا آخر.',
+  OBSERVER_PRIVATE: 'المشاهدة متاحة للمجالس العامة فقط.',
+  OBSERVER_WAIT: 'يمكنك أخذ مقعد بعد ظهور النتيجة المتأخرة وعودة المجلس إلى الانتظار.',
+  OBSERVER_READ_ONLY: 'المشاهدة للأحداث العامة فقط، دون إرسال رسائل أو صوت.',
+  INVALID_CURSOR: 'تغيّرت قائمة المجالس. حدّث القائمة للمتابعة.',
   MAFIA_NO_ROOMS: 'لا توجد غرفة مناسبة الآن. جرّب مرة أخرى أو أنشئ غرفة.',
   MAFIA_BLOCKED: 'لا يمكن جمع حسابات بينها حظر في هذه الغرفة.',
   MAFIA_UNAVAILABLE: 'تعذّر تجهيز غرفة مافيا. حاول مجددًا بعد قليل.',

@@ -41,7 +41,7 @@ function PresetPanel({ game, settings, onApply, disabled = false }) {
   };
   return <section className="plus-presets" aria-label="جلساتي الجاهزة">
     <style>{css}</style>
-    <button className="plus-presets-toggle" type="button" aria-expanded={open} disabled={disabled} onClick={() => setOpen(value => !value)}><span>✦ جلساتي الجاهزة <small>بلس</small></span><span aria-hidden="true">{open ? '−' : '+'}</span></button>
+    <button data-design-id="setup-presets-toggle" className="plus-presets-toggle" type="button" aria-expanded={open} disabled={disabled} onClick={() => setOpen(value => !value)}><span>✦ جلساتي الجاهزة <small>بلس</small></span><span aria-hidden="true">{open ? '−' : '+'}</span></button>
     {open && <div className="plus-presets-body stack">
       <p>احفظ خيارات اللعب فقط. الأسئلة والكلمات تتجدد عند بدء المباراة.</p>
       {!owner ? <Button onClick={() => navigate('/settings')}>سجّل الدخول لحفظ جلساتك</Button> : <>

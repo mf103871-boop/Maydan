@@ -56,7 +56,7 @@ export function normalizePresetSettings(game,raw) {
       return {mode:pick(raw.mode,['competitive','cooperative'],'competitive'),cycles:pick(raw.cycles,[1,2],1),difficulty:pick(raw.difficulty,['easy','medium','hard'],'easy'),categories:categories(raw.categories,ERSOMHA_CATEGORIES.map(c=>c.id),{min:3,max:12}),drawSeconds:pick(raw.drawSeconds,[60],60)};
     }
     case 'mafia': {
-      keys(raw,['mode','capacity','visibility']);const result=normalizeMafiaSettings(raw);if(!result)fail('INVALID',400);return result;
+      keys(raw,['mode','capacity','visibility','roomName','voiceMode','community']);const result=normalizeMafiaSettings(raw);if(!result)fail('INVALID',400);if(objectionableText(result.roomName))fail('CONTENT_REJECTED',422);return result;
     }
     default: fail('INVALID',400);
   }

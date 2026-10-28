@@ -27,7 +27,7 @@ export function prepareRoomStats(previous, candidate, now = Date.now()) {
     if(candidate.phase!=='over'||previous?.phase==='over'||!candidate.statsMatch||candidate.technicalAbort)return [];
     return matchResults(candidate).flatMap(result=>{
       const userId=candidate.statsMatch.accounts[result.playerId];if(!userId)return [];
-      return [{userId,eventId:candidate.statsMatch.eventId,game:'mafia',won:!!result.won,draw:candidate.outcome?.faction==='draw',finishedAt:now}];
+      return [{userId,eventId:candidate.statsMatch.eventId,game:'mafia',won:!!result.won,draw:candidate.outcome?.faction==='draw',finishedAt:now,...((candidate.protocol||1)>=2?{notBefore:now+30000}:{})}];
     });
   }
   // Badeeha's last question ends from its reveal (the host's verdict), the others from a result.

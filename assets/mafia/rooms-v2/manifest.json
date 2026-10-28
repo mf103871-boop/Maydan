@@ -1,0 +1,25 @@
+{
+  "schema": 1,
+  "generator": "built-in image_gen",
+  "generatedDate": "2026-10-28",
+  "prompts": "docs/mafia/ROOM-ART-PROMPTS.json",
+  "derivative": "Resize/format optimization only; no painted content changed",
+  "assets": {
+    "scenes-wide": {
+      "sourceSHA256": "d5e0a69e0c472e24e3029ca33718c344eeb1004080398d9496f92638ef4dcb91",
+      "outputSHA256": "108cd6a11747b22896db14144c42aabf916bc77e745730a39594d89e991eefea",
+      "bytes": 359110,
+      "width": 1182,
+      "height": 1330,
+      "alpha": false
+    },
+    "card-back": {
+      "sourceSHA256": "53d61196932ff7ada6ed3032a201b197dd2baa7486598af2d36c762630dbcb75",
+      "outputSHA256": "28e8dbe97707a7981f9507cec8ac6a69b94f5210216e4bfb719816d262f11b0a",
+      "bytes": 59676,
+      "width": 384,
+      "height": 512,
+      "alpha": false
+    }
+  }
+}

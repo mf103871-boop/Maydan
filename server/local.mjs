@@ -73,9 +73,9 @@ export function localEnvironment({ origins, vars = loadDevVars(), db = createLoc
   env.ROOMS = { idFromName: (name) => name, get: (id) => ({ fetch: async (request) => {
     const item = record(rooms, id, Room);
     if (request.headers.get('upgrade')?.toLowerCase() === 'websocket') {
-      return item.instance.serial(async () => { await item.instance.advance();
+      return item.instance.serial(async () => { if(new URL(request.url).pathname.endsWith('/mafia-directory-socket')){await item.instance.directoryFeed.activate();return json({upgradeAllowed:true});}await item.instance.advance();
         if (!item.instance.room) return json({ error: 'NOT_FOUND' }, 404);
-        if (item.ctx.getWebSockets().length >= 32) return json({ error: 'RATE_LIMIT' }, 429);
+        if (item.ctx.getWebSockets().length >= 48) return json({ error: 'RATE_LIMIT' }, 429);
         return json({ upgradeAllowed: true });
       });
     }
@@ -115,7 +115,7 @@ export async function startLocalServer({ port = 8787, host = '127.0.0.1', origin
       if (response.status !== 200 || !(await response.json()).upgradeAllowed) {
         socket.end(`HTTP/1.1 ${response.status} Rejected\r\nConnection: close\r\n\r\n`); return;
       }
-      const code = req.url.match(/\/rooms\/(\d{6})\/socket/)?.[1];
+      const code = req.url.startsWith('/api/rooms/public/stream')?'mafia:directory:ar':req.url.match(/\/rooms\/(\d{6})\/socket/)?.[1];
       const item = runtime.rooms.get(code);
       wss.handleUpgrade(req, socket, head, (ws) => {
         let attachment = {};

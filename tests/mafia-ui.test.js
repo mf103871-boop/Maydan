@@ -10,7 +10,7 @@ import { createDesignFixture } from '../src/design/screen-catalog.js';
 let directory, render;
 before(async () => {
   mkdirSync('.cache',{recursive:true}); directory=mkdtempSync(path.resolve('.cache/mafia-ui-'));
-  await build({stdin:{contents:`import React from 'react';import{renderToStaticMarkup}from'react-dom/server';import{MafiaMatch,MafiaDirectory,MafiaSettings}from'./src/online/Mafia.jsx';const c={match:MafiaMatch,directory:MafiaDirectory,settings:MafiaSettings};export const render=(name,p)=>renderToStaticMarkup(React.createElement(c[name],p)).replace(/<style>[\\s\\S]*?<\\/style>/g,'');`,resolveDir:process.cwd(),loader:'jsx'},outfile:path.join(directory,'renderer.mjs'),bundle:true,platform:'node',format:'esm',packages:'external',jsx:'automatic',loader:{'.js':'jsx','.css':'text','.webp':'dataurl','.woff2':'dataurl'},logLevel:'silent'});
+  await build({stdin:{contents:`import React from 'react';import{renderToStaticMarkup}from'react-dom/server';import{MafiaMatch,MafiaDirectory,MafiaSettings}from'./src/online/Mafia.jsx';const c={match:MafiaMatch,directory:MafiaDirectory,settings:MafiaSettings};export const render=(name,p)=>renderToStaticMarkup(React.createElement(c[name],p)).replace(/<style>[\\s\\S]*?<\\/style>/g,'').replace(/data:image[^)\"]+/g,'asset');`,resolveDir:process.cwd(),loader:'jsx'},outfile:path.join(directory,'renderer.mjs'),bundle:true,platform:'node',format:'esm',packages:'external',jsx:'automatic',loader:{'.js':'jsx','.css':'text','.webp':'dataurl','.woff2':'dataurl'},logLevel:'silent'});
   ({render}=await import(pathToFileURL(path.join(directory,'renderer.mjs'))));
 });
 after(()=>{if(directory){assert.ok(directory.startsWith(path.resolve('.cache')+path.sep));rmSync(directory,{recursive:true,force:true});}});
@@ -116,7 +116,7 @@ test('the Mafia ballot shows each ally’s current choice, so a silent tie is vi
   const props=fixture('online.mafia.night.mafia'),target=props.state.you.actions.find(a=>a.type==='mafia_vote').targets[0];
   props.state.you.teamVotes={'design-player-2':target};
   let html=render('match',props);
-  assert.match(html,/اختيارات فريقك: [^<]+: [^<]+/);assert.match(html,/✦١/);assert.doesNotMatch(html,/لم يختر بعد/);
+  assert.match(html,/اختيارات فريقك: [^<]+: [^<]+/);assert.match(html,/اعتماد هدف الهجوم/);assert.doesNotMatch(html,/لم يختر بعد/);
   props.state.you.teamVotes={};html=render('match',props);assert.match(html,/لم يختر بعد/);assert.doesNotMatch(html,/✦/);
   props.state.you.teamVotes={'design-player-2':null};assert.match(render('match',props),/بلا هدف/);
 });
@@ -153,4 +153,31 @@ test('a voice outage tells everyone the match continues over text and offers no 
   assert.match(html,/الصوت متوقف مؤقتًا/);assert.match(html,/المباراة مستمرة بالكتابة/);
   assert.match(html,/<button(?=[^>]*data-design-id="voice-join")(?=[^>]*disabled)[^>]*>/);
   assert.match(html,/data-design-id="message-input"/,'text stays open');
+});
+
+test('delayed observer remains public-only even if a stale player projection is accidentally supplied',()=>{
+  const props=fixture('online.mafia.night.mafia');props.state.scope='observer';props.state.previewReveal=true;props.state.you.reports=[{text:'PRIVATE_SENTINEL'}];props.state.chats.team=[{text:'TEAM_SENTINEL'}];
+  const html=render('match',props);assert.match(html,/مشاهدة متأخرة ٣٠ ثانية/);assert.doesNotMatch(html,/role-toggle|role-content|ability-submit|message-input|voice-join|PRIVATE_SENTINEL|TEAM_SENTINEL/);
+});
+test('text-only rooms mount no audio controls while preserving text',()=>{
+  const props=fixture('online.mafia.discussion');props.state.settings.voiceMode='off';props.voice={status:'connected',requested:true,muted:false,onMute:()=>{},onLeave:()=>{}};
+  const html=render('match',props);assert.doesNotMatch(html,/data-design-id="voice"|voice-join|voice-leave|data-design-id="mute"/);assert.match(html,/message-input/);
+});
+test('directory keeps full and playing rooms visible as delayed-watch actions, separately from seats',()=>{
+  const html=render('directory',{enabled:true,rooms:[{code:'123456',protocol:2,roomName:'مجلس أول',mode:'classic',capacity:8,players:8,full:true,status:'waiting',voiceMode:'off'},{code:'654321',protocol:2,roomName:'مجلس ثان',mode:'shadow',capacity:10,players:9,status:'playing',voiceMode:'optional'}],nextCursor:'next'});
+  assert.equal((html.match(/data-design-id="room-observe"/g)||[]).length,2);assert.doesNotMatch(html,/data-design-id="room-join"/);assert.match(html,/نص فقط/);assert.match(html,/directory-next/);
+});
+
+test('speaker cards discard stale quiet, recovering, muted and older media epochs',()=>{
+  const props=fixture('online.mafia.night.analyst');props.voice={status:'connected',mediaEpoch:4,participants:[{id:'design-player-2',speaking:true,muted:false}]};props.state.mafiaVoice={mediaEpoch:4,quiet:false};
+  assert.doesNotMatch(render('match',props),/يتحدث الآن/,'Town night is private and quiet');
+  props.state.you.voice.canListen=true;assert.match(render('match',props),/يتحدث الآن/,'A valid listening team sees its approved speakers');
+  for(const patch of [{quiet:true},{outage:true},{mediaEpoch:5}]){props.state.mafiaVoice={mediaEpoch:4,quiet:false,...patch};assert.doesNotMatch(render('match',props),/يتحدث الآن/);}
+  props.state.mafiaVoice={mediaEpoch:4,quiet:false};props.voice.status='reconnecting';assert.doesNotMatch(render('match',props),/يتحدث الآن/);
+  props.voice.status='connected';props.voice.participants[0].muted=true;assert.doesNotMatch(render('match',props),/يتحدث الآن/);
+});
+
+test('legacy protocol rooms remain visible but never offer unsupported watching',()=>{
+ const html=render('directory',{enabled:true,rooms:[{code:'123456',protocol:1,mode:'classic',capacity:8,players:8,status:'playing'}]});
+ assert.doesNotMatch(html,/data-design-id="room-observe"/);assert.match(html,/غرفة بإصدار سابق/);
 });

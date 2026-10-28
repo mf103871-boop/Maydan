@@ -6,7 +6,7 @@ const FIELDS = Object.freeze({
   meenfina: ['mode', 'rounds'],
   fabraka: ['rounds', 'mode', 'style', 'categories', 'writeSeconds', 'discussionSeconds', 'funnyVote', 'finalDouble', 'friendCycles'],
   ersomha: ['cycles', 'drawSeconds', 'difficulty', 'categories'],
-  mafia: ['mode', 'capacity', 'visibility'],
+  mafia: ['mode', 'capacity', 'visibility', 'roomName', 'voiceMode', 'community'],
 });
 export function presetSettings(game, settings = {}) {
   if (game === 'badeeha' && !Object.hasOwn(settings, 'timer') && Object.hasOwn(settings, 'timerLength')) settings = { ...settings, timer: settings.timerLength };

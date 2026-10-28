@@ -389,6 +389,7 @@ test('a vacant host seat goes to a connected member who can start the next match
   // During a match a connected player who can start comes before a waiting watcher who can.
   const playing = lobby(6);
   act(playing, 'p0', { type: 'settings', settings: { mode: 'classic', capacity: 8, visibility: 'private' } });
+  for(const m of playing.members)act(playing,m.id,{type:'ready',ready:true});
   act(playing, 'p0', { type: 'start' }, NOW, { randomWord: rng() });
   mafia.joinRoom(playing, input(9), NOW); mafia.connected(playing, 'p9', true, NOW);
   Object.assign(playing.members.find(m => m.id === 'p9'), { canHost: true });
@@ -409,14 +410,14 @@ test('the host hands a waiting room to a connected member and edits its settings
   assert.equal(room.hostId, 'p2');
   assert.deepEqual(room.history.at(-1), { id: room.publicSequence, type: 'host_changed', at: NOW, round: 0, playerId: 'p2' });
   assert.throws(() => act(room, 'p0', { type: 'kick', targetId: 'p1' }), { code: 'HOST_ONLY' }, 'the former host has no host powers left');
-  // Capacity alone keeps everyone ready; another mode or visibility asks them again.
+  // Any room setting change requires every player to confirm readiness again.
   mafia.connected(room, 'p3', true, NOW);
   act(room, 'p2', { type: 'settings', settings: { mode: 'classic', capacity: 7, visibility: 'private' } });
-  assert.equal(room.members.every(m => m.ready), true);
+  assert.equal(room.members.every(m => !m.ready), true);
   assert.throws(() => act(room, 'p2', { type: 'settings', settings: { mode: 'classic', capacity: 5, visibility: 'private' } }), { code: 'INVALID' });
   act(room, 'p2', { type: 'settings', settings: { mode: 'classic', capacity: 7, visibility: 'public' } });
-  assert.deepEqual(room.members.filter(m => m.ready).map(m => m.id), ['p2']);
-  assert.deepEqual(room.settings, { mode: 'classic', capacity: 7, visibility: 'public' });
+  assert.deepEqual(room.members.filter(m => m.ready).map(m => m.id), []);
+  assert.deepEqual(room.settings, { mode: 'classic', capacity: 7, visibility: 'public',roomName:'مجلس لاعب 2',community:'ar',voiceMode:'optional' });
   assert.throws(() => act(room, 'p2', { type: 'settings', settings: { mode: 'shadow', capacity: 6, visibility: 'public' } }), { code: 'INVALID' });
   for (const m of room.members) act(room, m.id, { type: 'ready', ready: true });
   act(room, 'p2', { type: 'start' }, NOW, { randomWord: rng() });

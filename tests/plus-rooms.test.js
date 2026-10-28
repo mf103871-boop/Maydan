@@ -76,7 +76,7 @@ test('premium reactions require live account plus entitlement and cannot borrow 
 test('Plus stickers never bypass Mafia private-phase communication rules',async t=>{
   const h=await setup(t,6),host=h.people[0];await h.grant(host);
   Object.assign(h.app.env,{MAFIA_ENABLED:'1',LIVEKIT_URL:'wss://plus-mafia-fixture.livekit.cloud',LIVEKIT_API_KEY:'fixture-key',LIVEKIT_API_SECRET:'fixture-secret'});
-  for(const person of h.people){person.game='mafia';person.capabilities={mafia:1};person.settings={mode:'classic',capacity:6,visibility:'private'};}
+  for(const person of h.people){person.game='mafia';person.capabilities={mafia:2};person.settings={mode:'classic',capacity:6,visibility:'private'};}
   const nativeFetch=globalThis.fetch;t.mock.method(globalThis,'fetch',async(url,options)=>String(url).includes('plus-mafia-fixture.livekit.cloud')?Response.json({}):nativeFetch(url,options));
   const {room}=await h.open(),events=[];h.clients[1].subscribeReactions(e=>events.push(e));
   await h.clients[0].reactCosmetic('noir.sticker.1');await until(()=>events.length===1);

@@ -24,6 +24,27 @@ test('game voice starts in listen-only mode without requesting a microphone', as
   assert.deepEqual(f.requests[0].body, { deviceId: 'device', operation: 'join', knownEpoch: -1, voiceSessionId: f.session.voiceSessionId });
   assert.equal(f.calls[0].name, 'مافيا ميدان');
 });
+
+test('optional lobby joins without preallocated call and remutes before role delivery', async () => {
+  let current=response();const f=fixture(async()=>current);
+  f.session.configure(room(0,{phase:'lobby',settings:{voiceMode:'optional'},you:{id:'seat',roleId:null},mafiaVoice:{callId:null,available:true,mediaEpoch:0,canPublish:true}}));
+  assert.equal(f.requests.length,0,'opening a lobby does not allocate voice');
+  await f.session.start();assert.equal(f.transitions[0].options.muted,true);
+  await f.session.mute(false);assert.equal(f.session.userMuted,false);
+  current=response(3,{quiet:true,canPublish:false,connection:null});
+  f.session.configure(room(3,{phase:'role',mafiaVoice:{callId:'call',available:true,mediaEpoch:3,canPublish:false}}));
+  await f.session.pending;
+  assert.equal(f.session.state.requested,true);assert.equal(f.session.userMuted,true);assert.equal(f.media.state.muted,true);
+  assert.equal(f.requests.filter(r=>r.body.operation==='join').length,1);
+});
+
+test('text rooms and observers never request a voice connection', async () => {
+  for(const extra of [{settings:{voiceMode:'off'}},{you:{id:'observer',spectator:true}}]) {
+    const f=fixture();f.session.configure(room(0,extra));
+    await assert.rejects(f.session.start(),/متاح/);assert.equal(f.requests.length,0);
+  }
+  assert.equal(mafiaCommunicationLocked(room(1,{settings:{voiceMode:'off'}})),true,'text play retains anti-collusion restrictions');
+});
 test('same authorized epoch does not reconnect media; new audience clears participants', async () => {
   let result = response(); const f = fixture(async () => result); await f.session.start();
   f.session.mediaChanged({ callId: 'call', mediaEpoch: 2, participants: [{ id: 'other' }], connected: true });

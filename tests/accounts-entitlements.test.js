@@ -230,9 +230,12 @@ test('ترحيلات D1 جمل مستقلة بسطر واحد يقبلها exec'
   const stickerMigration = readFileSync(new URL('../server/migrations/0016_plus_stickers.sql', import.meta.url), 'utf8').replace(/\r\n?/g, '\n');
   assert.equal(createHash('sha256').update(stickerMigration).digest('hex'), '0695e5be9b39a724ece2bf69d6b510d7782eba453ce9f9d43ee2f43aa4ca6c6a');
   const stickerStatements = new Set(stickerMigration.split('\n').map(line => line.replace(/--.*$/, '')).join('\n').split(';').map(part => part.replace(/\s+/g, ' ').trim()).filter(Boolean).map(part => part + ';'));
+  const communityMigration=readFileSync(new URL('../server/migrations/0017_mafia_community.sql',import.meta.url),'utf8').replace(/\r\n?/g,'\n');
+  assert.equal(createHash('sha256').update(communityMigration).digest('hex'),'cfb23cbea00525853037d71a6ec2ef9d1d621825d717ec7abe94832ba786121b');
+  const communityStatements=new Set(communityMigration.split('\n').map(line=>line.replace(/--.*$/,'')).join('\n').split(';').map(part=>part.replace(/\s+/g,' ').trim()).filter(Boolean).map(part=>part+';'));
   // Existing account identities may receive missing profile rows. OR IGNORE
   // preserves existing rows; no update/delete/upsert or other table is allowed.
-  const allowed = statement => stickerStatements.has(statement) || /^CREATE (TABLE|INDEX) IF NOT EXISTS /.test(statement) ||
+  const allowed = statement => stickerStatements.has(statement) || communityStatements.has(statement) || /^CREATE (TABLE|INDEX) IF NOT EXISTS /.test(statement) ||
     // The additive Lamma protocol preserves every existing row and v1 column.
     // Only these exact additions and concurrency indexes are approved here.
     ["ALTER TABLE social_messages ADD COLUMN kind TEXT NOT NULL DEFAULT 'text';",

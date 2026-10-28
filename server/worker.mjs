@@ -160,6 +160,7 @@ export async function routeRequest(request, env, context) {
         // Ignore any account ID supplied by the client. The seat's account
         // association comes only from the authenticated bearer session.
         input.accountUserId = gate?.userId || null;
+        if(input.accountUserId&&env.DB&&await env.DB.prepare('SELECT 1 FROM mafia_observer_memberships WHERE user_id=? AND expires_at>?').bind(input.accountUserId,Date.now()).first())fail('MAFIA_OBSERVER_ACTIVE',409);
         input.roomTrialGate = gate;
         // Attempt 0 stays derived from the token so a retried creation is idempotent
         // without a global directory; later attempts are random so a collision run
@@ -182,6 +183,7 @@ export async function routeRequest(request, env, context) {
           const input = await readJson(request);
           await credentials(input);
           input.accountUserId = await roomAccountId(request, env);
+          if(input.accountUserId&&env.DB&&await env.DB.prepare('SELECT 1 FROM mafia_observer_memberships WHERE user_id=? AND expires_at>?').bind(input.accountUserId,Date.now()).first())fail('MAFIA_OBSERVER_ACTIVE',409);
           response = await room.fetch(new Request(`https://internal/${match[1]}/join`, {
             method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(input),
           }));

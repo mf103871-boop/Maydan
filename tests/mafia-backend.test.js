@@ -18,7 +18,7 @@ async function setup(t,{enabled=true}={}) {
   const clients=[],provider=[],nativeFetch=globalThis.fetch;let failRemovals=false;
   t.mock.method(globalThis,'fetch',async(url,options)=>{if(String(url).includes('mafia-tests.livekit.cloud')){const body=JSON.parse(options.body);provider.push({method:new URL(url).pathname.split('/').at(-1),body});return Response.json({}, {status:failRemovals&&String(url).endsWith('/RemoveParticipant')?503:200});}return nativeFetch(url,options);});
   t.after(async()=>{clients.forEach(c=>c.stop());await app.close();});
-  async function user(n){const u=await createUser(app.env,{name:`لاعب ${n}`,email:`${crypto.randomUUID()}@example.test`}),s=await issueSession(app.env,u.id);return {...newCredentials(),accountId:u.id,sessionId:s.id,authorization:s.token,name:u.name,avatar:n%4,game:'mafia',capabilities:{mafia:1},settings:{mode:'classic',capacity:8,visibility:'public'}};}
+  async function user(n){const u=await createUser(app.env,{name:`لاعب ${n}`,email:`${crypto.randomUUID()}@example.test`}),s=await issueSession(app.env,u.id);return {...newCredentials(),accountId:u.id,sessionId:s.id,authorization:s.token,name:u.name,avatar:n%4,game:'mafia',capabilities:{mafia:2},settings:{mode:'classic',capacity:8,visibility:'public'}};}
   async function api(p,path,body,method=body===undefined?'GET':'POST'){if(path.endsWith('/voice')&&body)body={voiceSessionId:`fixture-${body.deviceId}`,operation:'join',...body};const r=await fetch(app.url+path,{method,headers:{origin:ORIGIN,...(p?.authorization?{authorization:`Bearer ${p.authorization}`}:{ }),...(body===undefined?{}:{'content-type':'application/json'})},...(body===undefined?{}:{body:JSON.stringify(body)})});return {status:r.status,body:r.status===204?null:await r.json()};}
   async function group(count=6){const people=[];for(let n=0;n<count;n++)people.push(await user(n));if(count>=9)people[0].settings={mode:'shadow',capacity:count,visibility:'public'};
     const created=await api(people[0],'/api/rooms',people[0]);assert.equal(created.status,201,JSON.stringify(created));const code=created.body.code;
@@ -52,14 +52,14 @@ test('public matchmaking fills existing rooms, deduplicates retries and excludes
   assert.equal((await h.api(blocked,`/api/rooms/${code}/join`,blocked)).body.error,'MAFIA_BLOCKED');
   assert.equal((await first(h.app.env,'SELECT COUNT(*) AS n FROM trials')).n,0);
 });
-test('public discovery is available to unrelated accounts, excludes private/full/blocked rooms and keeps joining free',async t=>{
+test('public discovery is available to unrelated accounts, excludes private/blocked rooms and lists full rooms for watching',async t=>{
   const h=await setup(t),host=await h.user(0),guest=await h.user(1),privateHost=await h.user(2),blockedPeer=await h.user(3);
   const create=await h.api(host,'/api/rooms',host),code=create.body.code;
-  const hidden=await h.api(privateHost,'/api/rooms',{...privateHost,settings:{mode:'classic',capacity:8}});assert.equal(hidden.status,201);
-  assert.equal(h.app.rooms.get(hidden.body.code).instance.room.settings.visibility,'private','backend compatibility default stays private');
+  const hidden=await h.api(privateHost,'/api/rooms',{...privateHost,settings:{mode:'classic',capacity:8,visibility:'private'}});assert.equal(hidden.status,201);
+  assert.equal(h.app.rooms.get(hidden.body.code).instance.room.settings.visibility,'private');
   const path='/api/rooms/public?game=mafia&mode=classic';
   assert.equal((await h.api(null,path)).status,401);
-  const rows=(await h.api(guest,path)).body.rooms;assert.deepEqual(rows.map(r=>r.code),[code]);assert.deepEqual(Object.keys(rows[0]).sort(),['capacity','code','expiresAt','game','hostName','mode','players','ready'].sort());
+  const rows=(await h.api(guest,path)).body.rooms;assert.deepEqual(rows.map(r=>r.code),[code]);assert.equal(rows[0].community,'ar');assert.equal(rows[0].status,'waiting');assert.equal(rows[0].voiceMode,'optional');assert.equal(rows[0].protocol,2);assert.equal(rows[0].full,false);
   assert.equal((await first(h.app.env,'SELECT COUNT(*) AS n FROM social_friendships')).n,0,'discovery does not require a friendship');
   assert.deepEqual((await h.api(guest,'/api/rooms/public?game=mafia&mode=shadow')).body.rooms,[]);
   assert.equal((await h.api(blockedPeer,`/api/rooms/${code}/join`,blockedPeer)).status,200);
@@ -74,7 +74,7 @@ test('public discovery is available to unrelated accounts, excludes private/full
   assert.equal((await h.api(guest,`/api/rooms/${code}/join`,{...guest,matchmaking:true})).status,200);
   assert.equal((await first(h.app.env,'SELECT COUNT(*) AS n FROM trials')).n,0);
   for(let i=4;i<9;i++){const p=await h.user(i);assert.equal((await h.api(p,`/api/rooms/${code}/join`,p)).status,200);}
-  const outside=await h.user(20);assert.deepEqual((await h.api(outside,path)).body.rooms,[],'full rooms are not advertised as joinable');
+  const outside=await h.user(20);assert.equal((await h.api(outside,path)).body.rooms[0].full,true,'full rooms remain visible for watching');assert.equal((await h.api(outside,'/api/matchmaking/join',outside)).body.error,'MAFIA_NO_ROOMS');
 });
 test('real six-client socket game keeps private actions private, isolates voice phases and fences devices',async t=>{
   const h=await setup(t),g=await h.group();await g.clients[0].command('start');await until(()=>g.clients.every(c=>c.state.phase==='role'));
@@ -259,6 +259,8 @@ test('finished results survive a departed first player and a D1 write outage thr
   await item.instance.serial(async()=>{const r=structuredClone(item.instance.room);r.members[0].left=true;r.phase='over';r.phaseId++;r.outcome={faction:'town',endedAt:Date.now(),reason:'faction'};r.winners=r.participants.filter(id=>r.roleStates[id].faction==='town');r.roleStates[r.members[0].id].forfeited=true;await item.instance.commit(r);});
   assert.equal((await item.storage.get('mafiaResultOutbox')).length,1);assert.equal((await first(h.app.env,'SELECT COUNT(*) AS n FROM mafia_results')).n,0);
   await item.instance.flushingStats;
+  const releaseAt=item.instance.mafiaResultOutbox[0].notBefore;t.mock.method(Date,'now',()=>releaseAt);
+  await item.instance.serial(()=>item.instance.flushMafiaResults());assert.equal((await item.storage.get('mafiaResultOutbox')).length,1,'due result remains durable during D1 failure');
   unavailable=false;await h.app.rehydrate(g.code);await h.app.rooms.get(g.code).instance.alarm();
   assert.equal((await first(h.app.env,'SELECT COUNT(*) AS n FROM mafia_results')).n,6);
   assert.equal((await item.storage.get('mafiaResultOutbox')).length,0);

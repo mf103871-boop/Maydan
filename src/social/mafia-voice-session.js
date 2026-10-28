@@ -1,9 +1,9 @@
 // A match owns one visible call. Credentials belong to a server-selected media
 // epoch, never to the faction named by the UI. No credentials are persisted.
-const closed = new Set(['over', 'closed', 'lobby']);
-const terminalDenials = new Set(['AUTH','AUTH_REQUIRED','AUTH_EXPIRED','ACCOUNT_SUSPENDED','NOT_FOUND','CALL_NOT_FOUND','CALL_UNAVAILABLE','CALL_FORBIDDEN','FORBIDDEN','BLOCKED','CALL_ANSWERED','MAFIA_VOICE_DEVICE','MAFIA_ACTIVE_ELSEWHERE','MAFIA_VOICE_SESSION']);
-export const mafiaCommunicationLocked = state => state?.game === 'mafia' && !closed.has(state.phase) && !!state.you?.roleId && state.members?.some(member => member.id === state.you.id && member.alive);
-export const emptyMafiaVoice = () => ({ requested: false, status: 'off', muted: true, canPublish: false, participants: [], error: '', previousCall: null });
+const closed = new Set(['over', 'closed']);
+const terminalDenials = new Set(['AUTH','AUTH_REQUIRED','AUTH_EXPIRED','ACCOUNT_SUSPENDED','NOT_FOUND','CALL_NOT_FOUND','CALL_UNAVAILABLE','CALL_FORBIDDEN','FORBIDDEN','BLOCKED','CALL_ANSWERED','MAFIA_VOICE_DEVICE','MAFIA_ACTIVE_ELSEWHERE','MAFIA_VOICE_SESSION','MAFIA_VOICE_CAPACITY']);
+export const mafiaCommunicationLocked = state => state?.game === 'mafia' && state.phase !== 'lobby' && !closed.has(state.phase) && !!state.you?.roleId && state.members?.some(member => member.id === state.you.id && member.alive);
+export const emptyMafiaVoice = () => ({ requested: false, status: 'off', mediaEpoch: -1, muted: true, canPublish: false, participants: [], error: '', previousCall: null });
 export class MafiaVoiceSession {
   constructor({ request, deviceId, media, native = false, beforeJoin = async () => null, setCall = () => {}, onChange = () => {} }) {
     Object.assign(this, { request, deviceId, media, native, beforeJoin, setCall, onChange });
@@ -11,8 +11,9 @@ export class MafiaVoiceSession {
   }
   update(patch) { this.state = { ...this.state, ...patch }; this.onChange(this.state); }
   configure(room) {
-    const next = room?.game === 'mafia' && !closed.has(room.phase) && room.you?.roleId && room.mafiaVoice?.callId ? room : null;
-    if (this.room && (!next || this.room.code !== next.code || this.room.mafiaVoice.callId !== next.mafiaVoice.callId)) {
+    const next = room?.game === 'mafia' && !closed.has(room.phase) && room.settings?.voiceMode !== 'off' && !room.you?.spectator && (room.you?.roleId || room.phase === 'lobby' && room.you?.id) && room.mafiaVoice?.available !== false && (room.mafiaVoice?.callId || room.phase === 'lobby') ? room : null;
+    if(this.room?.phase==='lobby'&&next&&next.phase!=='lobby') {this.userMuted=true;this.media.mute(true).catch(()=>{});this.update({muted:true});}
+    if (this.room && (!next || this.room.code !== next.code || this.room.mafiaVoice.callId && next.mafiaVoice.callId && this.room.mafiaVoice.callId !== next.mafiaVoice.callId)) {
       this.stop().catch(() => {});
     }
     this.room = next;
@@ -25,7 +26,7 @@ export class MafiaVoiceSession {
     if (next.mafiaVoice.outage) {
       if (this.state.requested) {
         if (this.epoch !== -1) { this.epoch = -1; this.media.pauseGame().catch(() => {}); }
-        this.update({ status: 'reconnecting', participants: [], muted: true, canPublish: false, error: '' });
+        this.update({ status: 'reconnecting', mediaEpoch: -1, participants: [], muted: true, canPublish: false, error: '' });
       }
       return;
     }
@@ -76,11 +77,12 @@ export class MafiaVoiceSession {
         if (response.voiceSessionId !== this.voiceSessionId) throw new Error('انتهت صلاحية جلسة الصوت. أعد الانضمام.');
         this.joined = true;
         if (!response.call?.id || !Number.isSafeInteger(response.mediaEpoch)) throw new Error('تعذّر التحقق من قناة المباراة.');
-        if (response.call.id !== this.room.mafiaVoice.callId || response.mediaEpoch < this.room.mafiaVoice.mediaEpoch) {
+        if (this.room.mafiaVoice.callId && response.call.id !== this.room.mafiaVoice.callId || response.mediaEpoch < (this.room.mafiaVoice.mediaEpoch || 0)) {
           if (++staleReplies >= 3) throw new Error('تغيّرت مرحلة المباراة. أعد الاتصال.');
           this.again = true; continue;
         }
         if (response.mediaEpoch < this.epoch) return;
+        if(!this.room.mafiaVoice.callId)this.room={...this.room,mafiaVoice:{...this.room.mafiaVoice,callId:response.call.id}};
         // A provider retirement may invalidate our transport while an earlier
         // same-epoch sync is in flight. Its unchanged reply has no credential.
         if (response.unchanged && this.epoch !== response.mediaEpoch) {
@@ -90,14 +92,14 @@ export class MafiaVoiceSession {
         this.call = { ...response.call, scope: 'mafia', name: 'مافيا ميدان', conversationId: code };
         this.setCall(this.call);
         if (!response.unchanged || this.epoch !== response.mediaEpoch) {
-          this.update({ status: 'connecting', participants: [], error: '' });
+          this.update({ status: 'connecting', mediaEpoch: -1, participants: [], error: '' });
           await this.media.transitionGame({ ...response, call: this.call }, { muted: this.userMuted || !response.canPublish });
           if (!current()) return;
           this.epoch = response.mediaEpoch;
         }
         const nativeConnected = this.media.state.connected && this.media.state.callId === this.call.id &&
           this.media.state.voiceSessionId === this.voiceSessionId && this.media.state.mediaEpoch === response.mediaEpoch;
-        this.update({ status: response.quiet ? 'silent' : this.native && !nativeConnected ? 'connecting' : 'connected', muted: this.media.state.muted,
+        this.update({ status: response.quiet ? 'silent' : this.native && !nativeConnected ? 'connecting' : 'connected', mediaEpoch: this.epoch, muted: this.media.state.muted,
           canPublish: !!response.canPublish, error: '' });
       } while (this.again && current());
     })();
@@ -107,14 +109,14 @@ export class MafiaVoiceSession {
       if (current()) {
         if (terminalDenials.has(error.code)) {
           await this.stop({ notify: false });
-          this.update({ error: 'انتهت صلاحية صوت المباراة. أعد الانضمام عند توفره.' });
+          this.update({ error: error.code === 'MAFIA_VOICE_CAPACITY' ? 'السعة الصوتية ممتلئة الآن. حاول لاحقًا؛ الغرفة لم تتحول إلى كتابية.' : 'انتهت صلاحية صوت المباراة. أعد الانضمام عند توفره.' });
           throw error;
         }
         // A transport may be healthy while authorization is lost. Stop audible
         // media immediately and require fresh server proof before reconnecting.
         await this.media.pauseGame();
         this.epoch = -1;
-        this.update({ status: 'reconnecting', participants: [], muted: true, error: 'تعذّر التحقق من صوت المباراة. نعيد الاتصال بأمان…' });
+        this.update({ status: 'reconnecting', mediaEpoch: -1, participants: [], muted: true, error: 'تعذّر التحقق من صوت المباراة. نعيد الاتصال بأمان…' });
       }
       throw error;
     } finally { if (this.pending === task) this.pending = null; }
@@ -127,7 +129,7 @@ export class MafiaVoiceSession {
     this.epoch = Number.isSafeInteger(media.mediaEpoch) ? media.mediaEpoch : -1;
     this.call = { id: media.callId, scope: 'mafia', conversationId: this.room.code, name: 'مافيا ميدان', voiceSessionId: media.voiceSessionId };
     this.setCall(this.call);
-    this.update({ requested: true, status: 'reconnecting', muted: !!media.muted, canPublish: false });
+    this.update({ requested: true, status: 'reconnecting', mediaEpoch: -1, muted: !!media.muted, canPublish: false });
     this.sync().catch(() => {});
   }
   mediaChanged(media) {
@@ -137,7 +139,7 @@ export class MafiaVoiceSession {
     if (Number.isSafeInteger(media.mediaEpoch) && media.mediaEpoch < this.epoch) return;
     if (media.scope === 'mafia' && media.authorizationRequired) {
       this.epoch = -1;
-      this.update({ status: 'reconnecting', muted: true, canPublish: false, participants: [] });
+      this.update({ status: 'reconnecting', mediaEpoch: -1, muted: true, canPublish: false, participants: [] });
       this.sync().catch(() => {});
       return;
     }
@@ -146,7 +148,7 @@ export class MafiaVoiceSession {
       const seat = this.call.participants?.find(member => member.userId === (participant.userId || participant.id));
       return { ...participant, ...(seat?.seatId ? { id: seat.seatId, seatId: seat.seatId } : {}) };
     });
-    this.update({ participants, muted: !!media.muted,
+    this.update({ participants, mediaEpoch: this.epoch, muted: !!media.muted,
       ...(typeof media.canPublish === 'boolean' ? { canPublish: media.canPublish } : {}),
       status: media.quiet ? 'silent' : media.connecting ? 'connecting' : media.connected ? 'connected' : media.ended ? 'off' : this.state.status,
       ...(media.error ? { error: media.error } : {}) });

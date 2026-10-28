@@ -9,10 +9,10 @@ export function prepareMafiaResult(room,now=Date.now()) {
   const results=matchResults(room);
   // A game summary contains the public end-of-match reveal, never private chat.
   const summary=JSON.stringify({mode:room.settings.mode,outcome:room.outcome,history:room.history,reveal:{players:results,events:room.audit}});
-  return {key,roomCode:room.code,rulesetVersion:room.rulesetVersion||1,finishedAt:now,summary,draw:room.outcome?.faction==='draw',results:results.map(r=>({...r,userId:room.members.find(m=>m.id===r.playerId)?.accountUserId})).filter(r=>r.userId)};
+  return {key,roomCode:room.code,rulesetVersion:room.rulesetVersion||1,finishedAt:now,...((room.protocol||1)>=2?{notBefore:now+30000}:{}),summary,draw:room.outcome?.faction==='draw',results:results.map(r=>({...r,userId:room.members.find(m=>m.id===r.playerId)?.accountUserId})).filter(r=>r.userId)};
 }
 export async function persistMafiaResult(env,event) {
-  if(!env.DB||!event)return;
+  if(!env.DB||!event||event.notBefore>Date.now())return;
   const {key,summary,finishedAt:now}=event;
   const ids=[...new Set(event.results.map(result=>result.userId))];
   await env.DB.batch([
@@ -28,7 +28,7 @@ export async function persistMafiaResult(env,event) {
 export function mafiaDeleteStatements(env,id) {
   return [
     stmt(env,'DELETE FROM mafia_history WHERE match_key IN (SELECT match_key FROM mafia_results WHERE user_id=?)',id),
-    ...['mafia_results','mafia_seats','mafia_media_leases'].map(table=>stmt(env,`DELETE FROM ${table} WHERE user_id=?`,id)),
+    ...['mafia_results','mafia_seats','mafia_media_leases','mafia_match_leases','mafia_observer_memberships'].map(table=>stmt(env,`DELETE FROM ${table} WHERE user_id=?`,id)),
     stmt(env,'DELETE FROM mafia_reports WHERE reporter_id=? OR reported_id=?',id,id),
   ];
 }

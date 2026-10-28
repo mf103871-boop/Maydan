@@ -12,10 +12,10 @@ const html='<!doctype html><html lang="ar" dir="rtl"><meta charset="utf-8"><meta
 const server=createServer((req,res)=>{res.setHeader('content-type',req.url==='/bundle.js'?'text/javascript':'text/html');res.end(req.url==='/bundle.js'?built.outputFiles[0].contents:html);});
 await new Promise(resolve=>server.listen(0,'127.0.0.1',resolve));
 const browser=await chromium.launch({headless:true,...(process.env.CHROMIUM_PATH?{executablePath:process.env.CHROMIUM_PATH}:{})});
-const checks=[],errors=[],room={code:'123456',mode:'classic',hostName:'مضيف حقيقي',capacity:8,players:3,ready:2};
+const checks=[],errors=[],room={code:'123456',protocol:2,mode:'classic',hostName:'مضيف حقيقي',capacity:8,players:3,ready:2};
 async function page(query=''){const p=await browser.newPage({viewport:{width:390,height:844}});p.on('pageerror',e=>errors.push(e.message));await p.goto(`http://127.0.0.1:${server.address().port}/${query}`);return p;}
 async function respond(p,rooms=[],enabled=true){await p.waitForFunction(()=>window.directoryRequests.length>0);await p.evaluate(({rooms,enabled})=>window.directoryRequests.at(-1).resolve({enabled,rooms}),{rooms,enabled});await p.waitForFunction(()=>!document.querySelector('[data-design-id="loading"]'));}
-async function settleCreate(p){await p.getByRole('button',{name:'إنشاء غرفة',exact:true}).click();await p.waitForFunction(()=>window.directoryRequests.length>=2);await respond(p);}
+async function settleCreate(p){await respond(p);await p.locator('[data-design-id="create-public-room"]').click();await p.waitForFunction(()=>window.directoryRequests.length>=2);await respond(p);}
 try{
   {
     const p=await page();await p.getByRole('heading',{name:'الغرف العامة',exact:true}).waitFor();
@@ -32,7 +32,7 @@ try{
     const p=await page();await respond(p,[room]);await p.locator('[data-design-id="room-join"]').click();await p.waitForFunction(()=>window.joined==='654321');const [request]=await p.evaluate(()=>window.mutations);assert.equal(request.url,'https://mafia-fixture.invalid/api/rooms/123456/join');assert.equal(request.body.matchmaking,true);checks.push('public card joins real code with authoritative waiting/public fence');await p.close();
   }
   {
-    const p=await page();await respond(p,[room]);await p.locator('[data-design-id="quick-join"]').click();await p.waitForFunction(()=>window.joined==='654321');const requests=await p.evaluate(()=>window.mutations);assert.equal(requests.length,1);assert.equal(requests[0].url,'https://mafia-fixture.invalid/api/matchmaking/join');checks.push('quick join never creates a room');await p.close();
+    const p=await page();await respond(p,[room]);await p.locator('[data-design-id="directory-voice"]').selectOption('off');await p.waitForFunction(()=>window.directoryRequests.length===2);await respond(p,[room]);await p.locator('[data-design-id="quick-join"]').click();await p.waitForFunction(()=>window.joined==='654321');const requests=await p.evaluate(()=>window.mutations);assert.equal(requests.length,1);assert.equal(requests[0].url,'https://mafia-fixture.invalid/api/matchmaking/join');assert.equal(requests[0].body.voiceMode,'off');checks.push('quick join never creates a room');await p.close();
   }
   {
     const p=await page();await respond(p,[room]);await p.evaluate(()=>window.switchOwner('second-owner'));await p.waitForFunction(()=>window.directoryRequests.length===2);assert.equal(await p.locator('[data-design-id="room-join"]').count(),0);await respond(p);assert.equal(await p.locator('[data-design-id="room-join"]').count(),0);assert.equal(await p.evaluate(()=>window.directoryRequests.at(-1).headers.authorization),'Bearer second-owner');
@@ -58,6 +58,12 @@ try{
   }
   {
     const p=await page('?game=meenfina');await p.locator('form [data-design-id="start"]').waitFor();assert.equal(await p.getByRole('heading',{name:'الغرف العامة',exact:true}).count(),0);assert.equal(await p.evaluate(()=>window.directoryRequests.length),0);checks.push('other game creation stays unchanged');await p.close();
+  }
+  {
+    const p=await page();await respond(p,[{...room,full:true,status:'playing',voiceMode:'off'}]);await p.locator('[data-design-id="room-observe"]').click();await p.waitForFunction(()=>window.joined==='654321');const request=await p.evaluate(()=>window.mutations[0]);assert.equal(request.url,'https://mafia-fixture.invalid/api/rooms/123456/observe');assert.equal(request.body.capabilities.mafia,2);const storage=await p.evaluate(()=>({observer:JSON.parse(localStorage.getItem('maydan:online:https://mafia-fixture.invalid:observer:654321')),player:localStorage.getItem('maydan:online:https://mafia-fixture.invalid:654321')}));assert.equal(storage.observer.scope,'observer');assert.equal(storage.player,null);checks.push('full/running room observation uses separate credentials without consuming a seat');await p.close();
+  }
+  {
+    const p=await page();await respond(p,[room]);await p.locator('[data-design-id="directory-voice"]').selectOption('off');await p.waitForFunction(()=>window.directoryRequests.length===2);assert.ok((await p.evaluate(()=>window.directoryRequests.at(-1).url)).includes('voice=off'));await p.evaluate(room=>window.directoryRequests.at(-1).resolve({enabled:true,rooms:[room],nextCursor:'opaque-page-two'}),room);await p.locator('[data-design-id="directory-next"]').click();await p.waitForFunction(()=>window.directoryRequests.length===3);assert.ok((await p.evaluate(()=>window.directoryRequests.at(-1).url)).includes('cursor=opaque-page-two'));await respond(p);await p.locator('[data-design-id="directory-status"]').selectOption('playing');await p.waitForFunction(()=>window.directoryRequests.length===4);assert.ok(!(await p.evaluate(()=>window.directoryRequests.at(-1).url)).includes('cursor='));await respond(p);checks.push('voice/status filters and opaque pagination are sent without mixing pages');await p.close();
   }
   assert.deepEqual(errors,[]);console.log(JSON.stringify({checks,passed:checks.length,hosted:false}));
 }finally{await browser.close();server.close();}

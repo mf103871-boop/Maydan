@@ -7,8 +7,9 @@
 import { test, before, after } from 'node:test';
 import assert from 'node:assert/strict';
 import http from 'node:http';
+import {mkdir,writeFile} from 'node:fs/promises';
 import { build } from 'esbuild';
-import { chromium } from 'playwright';
+import { chromium, webkit } from 'playwright';
 import { WebSocket } from 'ws';
 import { startLocalServer } from '../../server/local.mjs';
 import { createUser } from '../../server/accounts/db.mjs';
@@ -41,7 +42,8 @@ before(async () => {
   html = await renderHtml(result.outputFiles.find((file) => file.path.endsWith('.js')).text, { version: pkg.version });
   // The same optional calling module the build writes to dist (scripts/lib.mjs).
   livekit = (await build({ stdin: { contents: "export { Room, RoomEvent, Track } from 'livekit-client';", resolveDir: process.cwd(), sourcefile: 'lamma-web-audio.js' }, bundle: true, format: 'esm', write: false })).outputFiles[0].text;
-  browser = await chromium.launch(process.env.CHROMIUM_PATH ? { executablePath: process.env.CHROMIUM_PATH } : {});
+  const engine = process.env.MAFIA_E2E_ENGINE === 'webkit' ? webkit : chromium;
+  browser = await engine.launch(engine === chromium && process.env.CHROMIUM_PATH ? { executablePath: process.env.CHROMIUM_PATH } : {});
 });
 after(async () => {
   for (const client of clients) client.stop();
@@ -64,7 +66,7 @@ const api = async (person, path, body) => {
 };
 async function person(n) {
   const user = await createUser(app.env, { name: `لاعب ${n}`, email: `${crypto.randomUUID()}@example.test` }), session = await issueSession(app.env, user.id);
-  return { ...newCredentials(), accountId: user.id, authorization: session.token, name: ['ليان', 'عمر', 'سارة', 'وسام', 'هند', 'يوسف'][n], avatar: n % 4, game: 'mafia', capabilities: { mafia: 1 } };
+  return { ...newCredentials(), accountId: user.id, authorization: session.token, name: ['ليان', 'عمر', 'سارة', 'وسام', 'هند', 'يوسف'][n], avatar: n % 4, game: 'mafia', capabilities: { mafia: 2 } };
 }
 
 test('one browser player plays a whole public Mafia match through the real UI', { timeout: 240_000 }, async () => {
@@ -94,6 +96,7 @@ test('one browser player plays a whole public Mafia match through the real UI', 
   const context = await browser.newContext({ viewport: { width: 390, height: 844 }, locale: 'ar', reducedMotion: 'reduce' });
   await context.addInitScript(([key, value]) => { try { localStorage.setItem(key, JSON.stringify(value)); } catch { /* storage blocked */ } },
     [environmentStorageKey('maydan:account:', app.url) + 'session', player.authorization]);
+  await context.addInitScript(()=>{const trace=window.__mafiaUITrace={events:[],commands:[]};for(const type of ['pointerdown','pointerup','click','focusin','focusout','submit'])document.addEventListener(type,event=>{const target=event.target;const id=target?.closest?.('[data-design-id]')?.getAttribute('data-design-id');if(['message-input','send','composer'].includes(id))trace.events.push({type,id,active:document.activeElement?.getAttribute('data-design-id'),prevented:event.defaultPrevented,inputLength:document.querySelector('[data-design-id="message-input"]')?.value.length});},true);const Native=window.WebSocket;window.WebSocket=class extends Native{send(data){try{const body=JSON.parse(data);if(body.requestId)trace.commands.push({type:body.type,requestId:body.requestId});}catch{}return super.send(data);}};});
   const page = await context.newPage();
   const errors = []; page.on('pageerror', (error) => errors.push(error.message));
   // The provider cannot be reached from this machine: refuse its socket at once.
@@ -131,8 +134,14 @@ test('one browser player plays a whole public Mafia match through the real UI', 
   await until(() => Boolean(room().mafiaMedia?.devices?.[player.accountId]), 'the browser asked for its voice seat');
   await page.locator('[data-design-id="message-input"]').fill('مساء الخير يا مجلس');
   await page.locator('[data-design-id="send"]').click();
-  await until(() => bots[1].state.chats.public.some((m) => m.text === 'مساء الخير يا مجلس'), 'a bot reads the browser message');
+  try{await until(() => bots[1].state.chats.public.some((m) => m.text === 'مساء الخير يا مجلس'), 'a bot reads the browser message');}catch(error){await mkdir('.cache/mafia-whole-match',{recursive:true});await page.screenshot({path:'.cache/mafia-whole-match/send-failure.png'});await writeFile('.cache/mafia-whole-match/send-failure.json',JSON.stringify({server:{phase:room().phase,chatCount:room().chats?.public?.length,phaseId:room().phaseId},ui:await page.evaluate(()=>({trace:window.__mafiaUITrace,phase:document.querySelector('[data-design-id="phase-title"]')?.textContent,input:document.querySelector('[data-design-id="message-input"]')?.value,sendDisabled:document.querySelector('[data-design-id="send"]')?.disabled,alerts:[...document.querySelectorAll('[role="alert"]')].map(e=>e.textContent),active:document.activeElement?.outerHTML?.slice(0,300)}))},null,2));throw error;}
 
+  const sendTrace=await page.evaluate(()=>window.__mafiaUITrace);
+  assert.equal(sendTrace.commands.filter(command=>command.type==='chat').length,1,'one click emits one real chat command');
+  assert.ok(sendTrace.events.some(event=>event.type==='submit'&&event.id==='composer'),'the real form submission ran after the pointer click');
+  await until(async()=>await page.locator('[data-design-id="message-input"]').inputValue()==='', 'successful acknowledgement clears the draft');
+  await mkdir('.cache/mafia-whole-match',{recursive:true});await page.screenshot({path:'.cache/mafia-whole-match/send-success.png'});
+  await writeFile('.cache/mafia-whole-match/send-success.json',JSON.stringify({phase:room().phase,chatCount:room().chats.public.length,trace:sendTrace,actualServer:true,providerUnavailable:true},null,2));
   const phasesSeen = new Set();
   for (let step = 0; step < 60 && room().phase !== 'over'; step++) {
     await endPhase();
@@ -147,11 +156,12 @@ test('one browser player plays a whole public Mafia match through the real UI', 
       for (const id of alive.filter((id) => id !== seatId && r.roleStates[id].faction === 'mafia')) await botOf(id).command('mafia_vote', { targetId: target });
       if (me.alive) {
         if (me.faction === 'mafia') {
+          await page.locator('[data-design-id="player-seat"].is-target').first().click();
           await page.locator('[data-design-id="mafia-vote"]').first().click();
           await until(() => room().killVotes[seatId] !== undefined, 'the browser Mafia vote reached the server');
         } else if (await page.locator('[data-design-id="ability-submit"]').count()) {
-          await page.locator('[data-design-id="target"]').first().click();
-          if (mine().roleId === 'analyst') await page.locator('[data-design-id="target"]').nth(1).click();
+          await page.locator('[data-design-id="player-seat"].is-target').first().click();
+          if (mine().roleId === 'analyst') await page.locator('[data-design-id="player-seat"].is-target').nth(1).click();
           await page.locator('[data-design-id="ability-submit"]').click();
           await until(() => Boolean(room().nightActions[seatId]), 'the browser night ability reached the server');
         } else await page.getByText('لا إجراء متاح لك الآن').waitFor();
@@ -163,7 +173,7 @@ test('one browser player plays a whole public Mafia match through the real UI', 
       if (me.alive) {
         // Text stays open for the living during nomination.
         await page.locator('[data-design-id="message-input"]').waitFor();
-        await page.locator('[data-design-id="target"]').first().click();
+        await page.locator('[data-design-id="player-seat"].is-target').first().click();
         await page.locator('[data-design-id="ability-submit"]').click();
         await page.getByRole('button', { name: 'اعتمد اختياري' }).click();
         await until(() => Object.hasOwn(room().nominationVotes, seatId), 'the browser nomination reached the server');
@@ -186,7 +196,7 @@ test('one browser player plays a whole public Mafia match through the real UI', 
   assert.equal(await page.locator('[data-design-id="recap"] article').count(), 6, 'the recap reveals all six roles');
   if (process.env.E2E_SHOTS) await page.screenshot({ path: `${process.env.E2E_SHOTS}/mafia-over.png`, fullPage: true });
   await bots[0].command('restart');
-  await page.getByText('غرفة الانتظار').waitFor({ timeout: 15_000 });
+  await page.locator('[data-design-screen="online.mafia.lobby"]').waitFor({ timeout: 15_000 });
   assert.deepEqual(errors, []);
   await context.close();
 });

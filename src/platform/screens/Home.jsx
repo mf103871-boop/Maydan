@@ -102,7 +102,7 @@ export function Home() {
     launching.current = true;
     setLaunchId(game.id);
     sound.play('pop'); haptics.vibrate('selection');
-    launchTimer.current = setTimeout(() => { navigate(`/game/${game.id}`); launching.current = false; }, wait(140));
+    launchTimer.current = setTimeout(() => { navigate(game.id === 'mafia' ? '/online/mafia' : `/game/${game.id}`); launching.current = false; }, wait(140));
   };
   const cards = GAMES;
   const onlineFriends = social.friends.filter(friend => friend.online);

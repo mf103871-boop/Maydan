@@ -72,7 +72,7 @@ function ScreenHost({ route }) {
   else if (route.name === 'terms') screen = <Terms key="terms" />;
   else if (route.name === 'privacy') screen = <Privacy key="privacy" />;
   else if (route.name === 'online') screen = <Online key={`online-${route.params.id || 'meenfina'}`} game={route.params.id || 'meenfina'} />;
-  else if (route.name === 'room') screen = <Online key={`room-${route.params.id}`} code={route.params.id} />;
+  else if (route.name === 'room') screen = <Online key={`room-${route.params.id}-${route.params.watch==='1'?'observer':'player'}`} code={route.params.id} observer={route.params.watch==='1'} />;
   return screen;
 }
 

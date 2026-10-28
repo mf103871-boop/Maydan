@@ -34,10 +34,10 @@ test('Ersomha launched from a group starts with easy drawable concepts',async()=
 
 test('a Mafia group launch preserves the chosen three-team room and capability without charging a trial',async()=>{
   const {launcher,calls}=fixture();
-  const settings={mode:'shadow',capacity:12,visibility:'private'};
+  const settings={mode:'shadow',capacity:12,visibility:'private',voiceMode:'off',roomName:'مجلس الشلّة',community:'ar'};
   await launcher.launch('mafia',async()=>{}, {settings});
   assert.equal(calls[0][2].game,'mafia');assert.deepEqual(calls[0][2].settings,settings);
-  assert.equal(calls[0][2].capabilities.mafia,1);
+  assert.equal(calls[0][2].capabilities.mafia,2);
   assert.equal(calls[0][3].headers.Authorization,'Bearer fixture');
 });
 

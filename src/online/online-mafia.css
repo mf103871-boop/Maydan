@@ -30,3 +30,14 @@ body:has(.mafia-online-shell){background:#0c1019}
 .mafia-room-shell .online-invite .btn{font-size:13px;padding-inline:10px}
 @media(max-width:380px){.mafia-entry .online-intro{padding:14px;gap:10px}.mafia-entry .online-intro>.clay-stage{width:70px;min-width:60px}.mafia-entry .online-tabs>.btn{font-size:12px}.mafia-online-shell{border-radius:16px}}
 @media(prefers-reduced-motion:reduce){.mafia-entry .clay-idle,.mafia-entry .online-intro-copy{animation:none!important;transform:none!important}}
+/* Mafia alone owns its compact full-height room, without shrinking other games. */
+.mafia-online-shell:has(.mafia-compact-game:not(.is-finished)){width:100%;max-width:1100px;height:100dvh;min-height:0;padding:calc(4px + env(safe-area-inset-top,0px)) max(6px,env(safe-area-inset-right,0px)) calc(4px + env(safe-area-inset-bottom,0px)) max(6px,env(safe-area-inset-left,0px));gap:4px;border-radius:0;overflow:hidden}
+.mafia-room-shell:has(.mafia-compact-game:not(.is-finished)){height:calc(var(--mafia-visible-height,100dvh) - env(safe-area-inset-top,0px) - env(safe-area-inset-bottom,0px) - 8px - var(--startup-background-space,0px));min-height:210px;display:flex;flex-direction:column;gap:4px;overflow:hidden}
+.mafia-room-shell .mafia-room-tools{min-height:44px;flex-shrink:0}.mafia-room-shell>.mafia-compact-game{flex:1;min-height:0}
+.mafia-room-shell .mafia-room-tools .btn{min-width:44px;min-height:44px;font-size:12px;padding:5px 9px}
+.mafia-room-shell .online-room-tools .online-connection{font-size:11px}.mafia-entry>.card{padding:10px!important}
+.mafia-entry .online-tabs:has(>button:only-child){display:flex;justify-content:flex-end;background:transparent;border:0;margin-bottom:5px;padding:0}
+.mafia-entry .online-tabs:has(>button:only-child)>.btn{min-width:44px;padding-inline:10px}
+.mafia-entry .mafia-directory{margin-top:0}.mafia-entry .mafia-directory-heading h2{font-size:22px}.mafia-entry .online-footnote{font-size:12px}
+.mafia-room-shell .room-reactions{display:none}
+@media(orientation:landscape) and (max-height:550px){.mafia-online-shell:has(.mafia-compact-game:not(.is-finished)){max-width:none}.mafia-room-shell:has(.mafia-compact-game:not(.is-finished)){min-height:200px}}

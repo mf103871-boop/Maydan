@@ -73,8 +73,10 @@ function shuffle(values, randomWord) {
 export function createRoom(code, input, now) {
   const settings = normalizeMafiaSettings(input.settings);
   if (!settings) fail('INVALID');
+  settings.roomName ||= Array.from(`مجلس ${profile(input).name}`).slice(0,30).join('');
+  if (objectionableText(settings.roomName)) fail('CONTENT_REJECTED',422);
   return {
-    game: 'mafia', code, revision: 0, publicRevision: 0, publicSequence: 0,
+    game: 'mafia', protocol: MAFIA_PROTOCOL, code, revision: 0, publicRevision: 0, publicSequence: 0, settingsRevision: 0,
     rulesetVersion: MAFIA_RULESET_VERSION, createdAt: now, expiresAt: now + ROOM_TTL,
     hostId: input.id, hostMissingSince: now, phase: 'lobby', phaseId: 0, matchId: 0,
     round: 0, settings, deadlineAt: null, startedAt: null, reason: null,
@@ -426,6 +428,7 @@ export function voiceGroups(room) {
   return ['public', 'mafia', 'shadow'].map(key => ({ key, epoch: room.phaseId, members: room.participants.map(id => ({ playerId: id, ...voiceAudience(room, id) })).filter(a => a.key === key) })).filter(group => group.members.length);
 }
 function chatPermission(room, id, requested) {
+  if(room.phase==='lobby'&&requested==='public')return 'public';
   const s = state(room, id);
   if (!s) fail('WAITING', 403);
   if (requested === 'team') {
@@ -450,7 +453,7 @@ function sendChat(room, id, command, now) {
   const recent = (room.chatRate[id] || []).filter(at => now - at < 10_000);
   if (recent.length >= 6) fail('RATE_LIMIT', 429);
   room.chatRate[id] = [...recent, now];
-  const recipients = channel === 'public' ? [...room.participants] : room.participants.filter(other => {
+  const recipients = channel === 'public' ? (room.phase==='lobby'?active(room).map(m=>m.id):[...room.participants]) : room.participants.filter(other => {
     const s = state(room, other);
     return channel === 'observers' ? !s.alive : s.alive && s.faction === channel;
   });
@@ -460,7 +463,8 @@ function sendChat(room, id, command, now) {
     room.chatSequences[key] = (room.chatSequences[key] || 0) + 1;
     viewIds[recipient] = String(room.chatSequences[key]);
   }
-  room.chats[channel].push({ clientId: command.clientId, playerId: id, text, at: now, recipients, viewIds });
+  if(channel==='public')room.publicChatSequence=(room.publicChatSequence||0)+1;
+  room.chats[channel].push({ clientId: command.clientId, playerId: id, text, at: now, recipients, viewIds, ...(channel==='public'?{publicId:`${room.matchId}:${room.publicChatSequence}`}:{}) });
   if (room.chats[channel].length > 100) room.chats[channel].shift();
   if (channel === 'public') publicChange(room);
 }
@@ -489,9 +493,13 @@ export function action(room, actorId, command, now, options = {}) {
       host(); if (room.phase !== 'lobby') fail('PHASE', 409);
       const settings = normalizeMafiaSettings(command.settings);
       if (!settings || settings.capacity < active(room).length) fail('INVALID');
+      settings.roomName ||= Array.from(`مجلس ${actor.name}`).slice(0,30).join('');
+      if(objectionableText(settings.roomName))fail('CONTENT_REJECTED',422);
+      if(command.expectedSettingsRevision!=null&&command.expectedSettingsRevision!==(room.settingsRevision||0))fail('CONFLICT',409);
       // Another mode, or a room opened to or closed from strangers, is not the
       // match the others readied for, so they confirm again.
-      if (settings.mode !== room.settings.mode || settings.visibility !== room.settings.visibility) for (const m of active(room)) m.ready = m.id === room.hostId;
+      if (JSON.stringify(settings)!==JSON.stringify(normalizeMafiaSettings(room.settings))) for (const m of active(room)) m.ready = false;
+      room.settingsRevision=(room.settingsRevision||0)+1;
       room.settings = settings; publicChange(room); break;
     }
     case 'start': host(); start(room, now, options?.randomWord); break;
@@ -562,6 +570,7 @@ function availableActions(room, id) {
   return actions;
 }
 function visibleChats(room, id) {
+  if(room.phase==='lobby')return {public:room.chats.public.map(({recipients:_r,viewIds:_v,clientId:_c,...m})=>({...m,id:m.publicId})),team:[],observers:[]};
   const s = state(room, id);
   if (!s) return { public: [], team: [], observers: [] };
   const project = (list, label) => list.filter(m => m.recipients.includes(id)).map(({ recipients: _recipients, viewIds, ...m }) => ({ ...m, id: `${label}:${viewIds[id]}` }));
@@ -606,13 +615,13 @@ export function snapshot(room, viewerId, now) {
     myVerdict: own(room.verdictVotes, viewerId) ? room.verdictVotes[viewerId] : null,
     nominationSubmitted: own(room.nominationVotes, viewerId), verdictSubmitted: own(room.verdictVotes, viewerId),
     voice: voiceAudience(room, viewerId),
-  } : null;
+  } : room.phase==='lobby'?{id:viewerId,roleId:null,spectator:false}:null;
   return {
-    protocol: MAFIA_PROTOCOL, game: 'mafia', rulesetVersion: room.rulesetVersion,
+    protocol: room.protocol||1, game: 'mafia', rulesetVersion: room.rulesetVersion,
     code: room.code, revision: room.publicRevision, serverNow: now, expiresAt: room.expiresAt,
     hostId: room.hostId, phase: waiting ? 'waiting' : room.phase, phaseId: waiting ? null : room.phaseId,
     matchId: room.matchId, round: waiting ? null : room.round, deadlineAt: waiting ? null : room.deadlineAt,
-    settings: copy(room.settings), waiting, members,
+    settings: copy(room.settings), settingsRevision:room.settingsRevision||0, waiting, members,
     participants: waiting ? [] : [...room.participants],
     composition: mafiaComposition(room.participants.length || room.settings.capacity),
     possibleRoles: Object.keys(MAFIA_ROLES).filter(id => {
@@ -625,4 +634,19 @@ export function snapshot(room, viewerId, now) {
     replay: ended && s ? { players: matchResults(room), events: copy(room.audit) } : null,
     reason: waiting ? null : room.reason,
   };
+}
+
+// This allowlist is the only source for delayed observers. Never derive it by
+// deleting fields from a player's private snapshot or by returning the audit.
+export function publicSnapshot(room) {
+  const ended=['over','closed'].includes(room.phase)&&Boolean(room.outcome);
+  return {protocol:room.protocol||1,game:'mafia',rulesetVersion:room.rulesetVersion,code:room.code,
+    matchId:room.matchId,phase:room.phase,phaseId:room.phaseId,round:room.round,deadlineAt:room.deadlineAt,
+    hostId:room.hostId,settings:copy(room.settings),settingsRevision:room.settingsRevision||0,
+    members:room.members.map((m,index)=>{const s=state(room,m.id);return {id:m.id,name:m.name,avatar:m.avatar,emoji:AVATARS[m.avatar],color:colorOf(m),seat:index+1,connected:m.connected,ready:m.ready,left:m.left,alive:s?.alive??null,eliminatedAt:s?.eliminatedAt??null,forfeited:s?.forfeited||false,...(m.profile?{profile:copy(m.profile)}:{})};}),
+    participants:[...room.participants],nomineeId:room.nomineeId,composition:mafiaComposition(room.participants.length||room.settings.capacity),
+    log:copy(room.history),chats:{public:room.chats.public.map(m=>({id:m.publicId||`public:${m.at}:${m.playerId}`,playerId:m.playerId,text:m.text,at:m.at})),team:[],observers:[]},
+    outcome:ended?copy(room.outcome):null,winners:ended?[...room.winners]:[],
+    replay:ended?{players:matchResults(room),events:copy(room.history)}:null,
+    reason:room.reason,appearance:copy(room.appearance||null)};
 }

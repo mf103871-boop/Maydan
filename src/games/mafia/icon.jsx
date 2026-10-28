@@ -9,6 +9,9 @@ export function MafiaIcon({ className = '' }) {
 export function MafiaRoleArt({ roleId, className = '' }) {
   return <span className={`mafia-role-art ${className}`} style={mafiaRoleArtStyle(roleId)} aria-hidden="true"/>;
 }
+export function MafiaCardBack({ className = '' }) {
+  return <img className={`mafia-card-back ${className}`} src={MAFIA_NOIR_ASSETS.cardBack} width="48" height="64" alt="" aria-hidden="true" draggable="false" decoding="async"/>;
+}
 export function MafiaSceneArt({ sceneId, className = '' }) {
   return <span className={`mafia-scene-art ${className}`} aria-hidden="true"><span style={mafiaSceneArtStyle(sceneId)}/></span>;
 }

@@ -34,7 +34,7 @@ async function setup(t) {
   };
   async function user(n) {
     const u = await createUser(app.env, { name: `لاعب ${n}`, email: `${crypto.randomUUID()}@example.test` }), s = await issueSession(app.env, u.id);
-    return { ...newCredentials(), accountId: u.id, authorization: s.token, name: `لاعب ${n}`, avatar: n % 4, game: 'mafia', capabilities: { mafia: 1 } };
+    return { ...newCredentials(), accountId: u.id, authorization: s.token, name: `لاعب ${n}`, avatar: n % 4, game: 'mafia', capabilities: { mafia: 2 } };
   }
   function connect(p, code) {
     const c = new RoomClient({ server: app.url, code, session: { id: p.id, token: p.token }, getAccountAuthorization: () => `Bearer ${p.authorization}`, WebSocketImpl: BrowserSocket });
@@ -87,7 +87,7 @@ async function playMatch(h, { count, seed }) {
     assert.equal(joined.status, 200, JSON.stringify(joined.body)); assert.equal(joined.body.code, code);
   }
   const outsider = await h.user(99);
-  assert.deepEqual((await h.api(outsider, `/api/rooms/public?game=mafia&mode=${settings.mode}`)).body.rooms, [], 'a full room leaves the directory');
+  const fullCard=(await h.api(outsider, `/api/rooms/public?game=mafia&mode=${settings.mode}`)).body.rooms.find(r=>r.code===code);assert.equal(fullCard.full,true,'a full room remains visible for spectators');assert.equal(fullCard.status,'waiting');assert.equal((await h.api(outsider,'/api/matchmaking/join',{...outsider,mode:settings.mode})).body.error,'MAFIA_NO_ROOMS','quick join never allocates a spectator or overfills a room');
   clients = people.map(p => h.connect(p, code));
   await until(() => clients.every(c => c.state?.members.filter(m => m.connected).length === count), 'all connected');
   for (let i = 1; i < count; i++) await send(i, 'ready', { ready: true });
@@ -197,7 +197,8 @@ async function playMatch(h, { count, seed }) {
   }
   await until(() => clients.every(c => c.state.phase === 'over'), 'everyone sees the result');
   for (const c of clients) assert.equal(c.state.replay.players.length, count);
-  await until(async () => (await all(h.app.env, 'SELECT user_id FROM mafia_results')).length >= count, 'results stored');
+  assert.equal((await all(h.app.env,'SELECT user_id FROM mafia_results')).length,0,'results cannot bypass the spectator delay through match history');
+  await until(async () => (await all(h.app.env, 'SELECT user_id FROM mafia_results')).length >= count, 'results stored after30s',45000);
   const history = await h.api(people[1], '/api/mafia/history');
   assert.equal(history.status, 200); assert.equal(history.body.matches.length >= 1, true);
   // Rematch: the room reopens its public seats and the same table can start again.

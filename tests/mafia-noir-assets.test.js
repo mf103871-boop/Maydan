@@ -10,9 +10,10 @@ import { MAFIA_ROLES } from '../src/online/mafia-shared.js';
 
 const names = ['environment', 'roles', 'scenes', 'spy'];
 const hash = bytes => createHash('sha256').update(bytes).digest('hex');
-let manifest, bundle, art, helpers;
+let manifest, roomManifest, bundle, art, helpers;
 before(async () => {
   manifest = JSON.parse(await readFile(path.join(ROOT, 'assets/mafia/noir-v1/manifest.json'), 'utf8'));
+  roomManifest = JSON.parse(await readFile(path.join(ROOT, 'assets/mafia/rooms-v2/manifest.json'), 'utf8'));
   // Exercise the production file-loader options without touching dist or native
   // resources. The narrow entrypoint exports the same helpers the game imports.
   bundle = await build({ ...esbuildOptions({ assets: 'files' }), entryPoints: [path.join(ROOT, 'src/games/mafia/noir-assets.js')], format: 'esm' });
@@ -40,16 +41,19 @@ test('original noir sources and optimized files match their reviewed manifest an
   assert.ok(bytes < 1024 * 1024, `Mafia runtime artwork uses ${bytes} bytes; budget is 1 MiB`);
 });
 
-test('all four noir illustrations enter the hashed asset and offline manifest pipeline, never the JS image payload', async () => {
-  assert.equal(art.length, 4);
+test('current room illustrations enter the hashed offline/native asset pipeline without shipping the retired square atlas', async () => {
+  assert.equal(art.length, 5);
   const source = bundle.outputFiles.find(file => file.path.endsWith('.js')).text;
   assert.doesNotMatch(source, /data:image|https?:\/\//);
   const paths = art.map(file => './' + path.relative(path.join(ROOT, 'dist'), file.path).replaceAll('\\', '/')).sort();
-  for (const name of names) {
+  const runtimeAssets = { environment: manifest.assets.environment, roles: manifest.assets.roles, spy: manifest.assets.spy, ...roomManifest.assets };
+  for (const [name, item] of Object.entries(runtimeAssets)) {
     const file = art.find(item => new RegExp(`/noir-${name}-[A-Z0-9]+\\.webp$`).test(item.path.replaceAll('\\', '/')));
     assert.ok(file, `${name}: missing hashed output`);
-    assert.equal(hash(file.contents), manifest.assets[name].outputSHA256);
+    assert.equal(hash(file.contents), item.outputSHA256);
   }
+  assert.ok(art.reduce((bytes, file) => bytes + file.contents.length, 0) < 1400 * 1024, 'all runtime Mafia art must stay below 1.4 MiB');
+  assert.ok(!art.some(file => /\/noir-scenes-[A-Z0-9]+\.webp$/.test(file.path.replaceAll('\\', '/'))));
   const worker = renderServiceWorker(await readFile(path.join(ROOT, 'public/sw.js'), 'utf8'), { brandAssets: paths });
   const installed = JSON.parse(worker.match(/const BRAND_ASSETS = (\[[^;]*\]);/)[1]);
   assert.deepEqual(installed, paths);
@@ -88,9 +92,26 @@ test('all twelve public roles receive unique in-bounds portraits and unknown rol
   }
 });
 
-test('six public event illustrations tile their atlas without crossing into another event', () => {
+test('eight neutral widescreen events tile their atlas without crossing into another event', () => {
   const scenes = Object.keys(helpers.MAFIA_NOIR_SCENE_INDEX).map(helpers.mafiaSceneArtStyle);
-  assert.equal(scenes.length, 6);
-  partition(scenes, manifest.assets.scenes.width, manifest.assets.scenes.height);
+  assert.equal(scenes.length, 8);
+  partition(scenes, roomManifest.assets['scenes-wide'].width, roomManifest.assets['scenes-wide'].height);
+  for (const scene of scenes) {
+    const [width, height] = scene.aspectRatio.split('/').map(Number);
+    assert.ok(Math.abs(width / height - 16 / 9) < .01);
+  }
   assert.deepEqual(helpers.mafiaSceneArtStyle('unknown'), helpers.mafiaSceneArtStyle('night'));
+  assert.deepEqual(helpers.mafiaSceneArtStyle('__proto__'), helpers.mafiaSceneArtStyle('night'));
+});
+
+test('room art masters and compressed assets match the reviewed hashes; neutral card has portrait dimensions', async () => {
+  for (const [name, item] of Object.entries(roomManifest.assets)) {
+    const original = await readFile(path.join(ROOT, `assets/mafia/rooms-v2/${name}.png`));
+    const encoded = await readFile(path.join(ROOT, `src/games/mafia/assets/noir-${name}.webp`));
+    assert.equal(hash(original), item.sourceSHA256);
+    assert.equal(hash(encoded), item.outputSHA256);
+    const info = await sharp(encoded).metadata();
+    assert.equal(info.width, item.width); assert.equal(info.height, item.height);
+    if (name === 'card-back') assert.equal(info.width / info.height, .75);
+  }
 });

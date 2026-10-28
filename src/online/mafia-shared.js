@@ -1,7 +1,8 @@
 // Public rules only. Role assignments and all night choices live on the server.
-export const MAFIA_PROTOCOL = 1;
+export const MAFIA_PROTOCOL = 2;
+export const supportsMafiaProtocol = (capability, protocol = 1) => [1,2].includes(protocol) && [1,2].includes(capability) && capability >= protocol;
 export const MAFIA_RULESET_VERSION = 1;
-export const MAFIA_DEFAULT_SETTINGS = Object.freeze({ mode: 'classic', capacity: 8, visibility: 'private' });
+export const MAFIA_DEFAULT_SETTINGS = Object.freeze({ mode: 'classic', capacity: 8, visibility: 'public', roomName: '', community: 'ar', voiceMode: 'optional' });
 export const MAFIA_TIMERS = Object.freeze({ role: 10, opening: 45, night: 35, dawn: 8, discussion: 90, shadowDiscussion: 120, nomination: 20, defense: 20, verdict: 15 });
 export const MAFIA_RECONNECT_MS = 90_000;
 export const MAFIA_MAX_DAYS = 8;
@@ -37,8 +38,12 @@ export function normalizeMafiaSettings(input = {}) {
   if (!input || typeof input !== 'object' || Array.isArray(input)) return null;
   const mode = input.mode ?? MAFIA_DEFAULT_SETTINGS.mode;
   const capacity = input.capacity ?? (mode === 'shadow' ? 10 : 8);
-  const visibility = input.visibility ?? 'private';
+  const visibility = input.visibility ?? 'public';
+  const community = input.community ?? 'ar', voiceMode = input.voiceMode ?? 'optional';
+  if (typeof (input.roomName ?? '') !== 'string') return null;
+  const roomName = (input.roomName ?? '').normalize('NFKC').trim().replace(/\s+/g,' ');
+  if (Array.from(roomName).length > 30 || /[\p{Cc}\p{Cf}]/u.test(roomName) || community !== 'ar' || !['optional','off'].includes(voiceMode)) return null;
   if (!['classic', 'shadow'].includes(mode) || !['private', 'public'].includes(visibility) || !Number.isInteger(capacity) || capacity < (mode === 'shadow' ? 9 : 6) || capacity > (mode === 'shadow' ? 12 : 8)) return null;
-  return { mode, capacity, visibility };
+  return { mode, capacity, visibility, roomName, community, voiceMode };
 }
 export function mafiaMinimumPlayers(mode) { return mode === 'shadow' ? 9 : 6; }

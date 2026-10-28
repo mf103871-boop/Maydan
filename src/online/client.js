@@ -123,12 +123,13 @@ export class RoomClient {
         try { ws.send(JSON.stringify({ type: 'auth', ...this.session, capabilities: ROOM_CAPABILITIES, accountAuthorization: authorization })); }
         catch { this.reconnectNow(); }
       } else if (message.type === 'state') {
+        if(this.session?.scope==='observer'&&message.state?.scope!=='observer'){this.onError('AUTH');this.stop('ended');return;}
         const protocol = GAME_PROTOCOLS[message.state.game || 'meenfina'];
         // The room server was updated under this open page (or speaks a game this
         // copy does not know). Retrying the socket cannot help, but the seat is
         // still valid: stop as 'outdated' and keep the stored credentials, so the
         // newer version reconnects to the same room and seat after a reload.
-        if (!protocol || message.state.protocol !== protocol) { this.onError('ROOM_OUTDATED'); this.stop('outdated'); return; }
+        if (!protocol || (message.state.game === 'mafia' ? ![1, protocol].includes(message.state.protocol) : message.state.protocol !== protocol)) { this.onError('ROOM_OUTDATED'); this.stop('outdated'); return; }
         if (this.state && message.state.revision < this.state.revision) return;
         clearTimeout(this.openTimer); this.attempt = 0;
         this.state = message.state; this.clockOffset = message.state.serverNow - Date.now();
@@ -179,6 +180,7 @@ export class RoomClient {
   react(emoji) { return this.command('react', { emoji }); }
   reactCosmetic(reactionId) { return this.command('react', { reactionId, accountAuthorization: this.getAccountAuthorization() }); }
   command(type, fields = {}) {
+    if(this.session?.scope==='observer')return Promise.reject(new ClientError('WAITING'));
     if (this.connectionStatus !== 'connected' || this.ws?.readyState !== 1 || !this.state) return Promise.reject(new ClientError('DISCONNECTED'));
     if (this.pending.size >= MAX_PENDING_COMMANDS || (this.ws.bufferedAmount || 0) > MAX_BUFFERED_BYTES) {
       // Never build an unbounded queue of stale game actions. Reconcile from
@@ -209,7 +211,31 @@ export class RoomClient {
 }
 
 // Public directory is always read from the server; an empty list is not an offline room.
-export const getPublicRooms = (server,mode = 'classic',options = {}) => getRoomResource(server,`/api/rooms/public?game=mafia&mode=${mode === 'shadow' ? 'shadow' : 'classic'}`,options);
+export function getPublicRooms(server, filters = 'all', options = {}) {
+  const value = typeof filters === 'string' ? {mode:filters} : filters;
+  const query = new URLSearchParams({game:'mafia',mode:['classic','shadow'].includes(value.mode)?value.mode:'all',voice:['optional','off'].includes(value.voice)?value.voice:'all',status:['waiting','playing','finished'].includes(value.status)?value.status:'all'});
+  if(value.cursor) query.set('cursor',value.cursor);
+  return getRoomResource(server,`/api/rooms/public?${query}`,options);
+}
+// Invalidations carry no room data. HTTP remains authoritative; visible-tab polling
+// survives proxy/socket failures. Teardown fences every late callback.
+export function subscribePublicRooms(server,{getAccountAuthorization,onInvalidate,WebSocketImpl=globalThis.WebSocket}={}) {
+  if(!validateServerUrl(server)||!WebSocketImpl)return()=>{};
+  let closed=false,socket=null,retry=null,ping=null,debounce=null,attempt=0,lastRevision=null;
+  const clear=()=>{clearTimeout(retry);clearInterval(ping);clearTimeout(debounce);retry=null;ping=null;debounce=null;};
+  const open=()=>{
+    if(closed||globalThis.document?.hidden)return;
+    const url=new URL('/api/rooms/public/stream',server);url.protocol=url.protocol==='https:'?'wss:':'ws:';
+    let current;try{current=new WebSocketImpl(url.toString());socket=current;}catch{return;}
+    current.onopen=()=>{if(closed||socket!==current)return;const auth=getAccountAuthorization?.();if(!auth){current.close();return;}current.send(JSON.stringify({type:'auth',accountAuthorization:auth}));ping=setInterval(()=>{if(!closed&&socket===current&&current.readyState===1)current.send(JSON.stringify({type:'ping'}));},25000);};
+    current.onmessage=event=>{if(closed||socket!==current)return;let message;try{message=JSON.parse(event.data);}catch{return;}if(message.type==='directory-ready'){attempt=0;lastRevision=message.revision;return;}if(message.type==='directory-invalidated'&&message.revision!==lastRevision){lastRevision=message.revision;clearTimeout(debounce);debounce=setTimeout(()=>{if(!closed&&!globalThis.document?.hidden)onInvalidate?.();},180);}};
+    current.onerror=()=>{};
+    current.onclose=()=>{if(closed||socket!==current)return;clearInterval(ping);socket=null;retry=setTimeout(open,Math.min(15000,1000*2**Math.min(attempt++,4)));};
+  };
+  const wake=()=>{if(globalThis.document?.hidden){clear();const old=socket;socket=null;old?.close();}else if(!socket){onInvalidate?.();open();}};
+  globalThis.document?.addEventListener('visibilitychange',wake);globalThis.window?.addEventListener('online',wake);open();
+  return()=>{closed=true;clear();const old=socket;socket=null;old?.close();globalThis.document?.removeEventListener('visibilitychange',wake);globalThis.window?.removeEventListener('online',wake);};
+}
 export const getMafiaHistory = (server,options = {}) => getRoomResource(server,'/api/mafia/history',options);
 async function getRoomResource(server, path, { headers = {}, signal } = {}) {
   if (!validateServerUrl(server)) throw new ClientError('CONFIG');

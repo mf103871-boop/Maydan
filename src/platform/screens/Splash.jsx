@@ -92,9 +92,14 @@ export function Splash({ onDone, visible = true, reducedMotion = false }) {
     const root = document.documentElement, property = '--startup-background-space';
     const previous = root.style.getPropertyValue(property), previousVisible = root.hasAttribute('data-startup-background-visible');
     const previousVisibility = node.style.visibility, previousPointerEvents = node.style.pointerEvents;
-    let frame;
-    const measure = () => {
-      const typing = document.activeElement?.matches?.('textarea,[contenteditable="true"],input:not([type="range"]):not([type="checkbox"]):not([type="radio"])');
+    let frame, gestureTimer, typingForm = null, pointerForm = null;
+    const measure = (focused = document.activeElement) => {
+      const editable = focused?.matches?.('textarea,[contenteditable="true"],input:not([type="range"]):not([type="checkbox"]):not([type="radio"])');
+      // Keep the notice suppressed through input → submit-button focus. Changing
+      // reserved height between pointerdown and pointerup moves the send target.
+      if (editable) typingForm = focused.closest('form');
+      else if (!typingForm?.contains(focused)) typingForm = null;
+      const typing = editable || Boolean(typingForm || pointerForm);
       const modal = [...document.querySelectorAll('[role="dialog"][aria-modal="true"]')].some(dialog => dialog.getClientRects().length && getComputedStyle(dialog).visibility !== 'hidden');
       const shown = !typing && !modal && node.getClientRects().length > 0;
       node.style.visibility = shown ? previousVisibility : 'hidden';
@@ -102,18 +107,29 @@ export function Splash({ onDone, visible = true, reducedMotion = false }) {
       root.style.setProperty(property, shown ? `${Math.ceil(node.getBoundingClientRect().height) + 8}px` : '0px');
       root.toggleAttribute('data-startup-background-visible', Boolean(shown));
     };
-    const schedule = () => { cancelAnimationFrame(frame); frame = requestAnimationFrame(measure); };
-    const focusChanged = () => { measure(); schedule(); };
+    const schedule = () => { cancelAnimationFrame(frame); frame = requestAnimationFrame(() => measure()); };
+    const focusChanged = event => { measure(event.type === 'focusout' ? event.relatedTarget : document.activeElement); schedule(); };
+    const releasePointer = () => { pointerForm = null; measure(); schedule(); };
+    const pointerStarted = event => {
+      // Safari may blur an input without focusing the tapped button. Preserve
+      // the form geometry until that pointer's click/submission has completed.
+      if (typingForm?.contains(event.target)) { clearTimeout(gestureTimer); pointerForm = typingForm; }
+    };
+    const pointerEnded = () => { if (pointerForm) { clearTimeout(gestureTimer); gestureTimer = setTimeout(releasePointer, 250); } };
+    const clicked = () => { if (pointerForm) { clearTimeout(gestureTimer); gestureTimer = setTimeout(releasePointer, 0); } };
+    const pointerCancelled = () => { clearTimeout(gestureTimer); releasePointer(); };
     measure();
     const resize = new ResizeObserver(schedule); resize.observe(node);
     // Keep suppression and measured space atomic: focus and dialog portals may
     // change without resizing this fixed element.
     const mutations = new MutationObserver(schedule); mutations.observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ['hidden', 'aria-modal', 'class'] });
     document.addEventListener('focusin', focusChanged); document.addEventListener('focusout', focusChanged);
+    document.addEventListener('pointerdown', pointerStarted, true); document.addEventListener('pointerup', pointerEnded, true); document.addEventListener('pointercancel', pointerCancelled, true); document.addEventListener('click', clicked, true);
     window.addEventListener('resize', schedule); window.visualViewport?.addEventListener('resize', schedule);
     return () => {
-      cancelAnimationFrame(frame); resize.disconnect(); mutations.disconnect();
-      document.removeEventListener('focusin', focusChanged); document.removeEventListener('focusout', focusChanged); window.removeEventListener('resize', schedule); window.visualViewport?.removeEventListener('resize', schedule);
+      cancelAnimationFrame(frame); clearTimeout(gestureTimer); resize.disconnect(); mutations.disconnect();
+      document.removeEventListener('focusin', focusChanged); document.removeEventListener('focusout', focusChanged);
+      document.removeEventListener('pointerdown', pointerStarted, true); document.removeEventListener('pointerup', pointerEnded, true); document.removeEventListener('pointercancel', pointerCancelled, true); document.removeEventListener('click', clicked, true); window.removeEventListener('resize', schedule); window.visualViewport?.removeEventListener('resize', schedule);
       if (previous) root.style.setProperty(property, previous); else root.style.removeProperty(property);
       root.toggleAttribute('data-startup-background-visible', previousVisible);
       node.style.visibility = previousVisibility; node.style.pointerEvents = previousPointerEvents;
