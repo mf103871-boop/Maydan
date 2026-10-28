@@ -1,3 +1,48 @@
+// Identical metadata is shared, not repeated in the shipped document.
+// Exact explanations retain every Studio meaning; each node list keeps its identity.
+
+const reasonPrivacy = "The entire live council is replaced by the privacy screen when the application is backgrounded.";
+const reasonVoiceJoin = "Displayed when voice is disconnected; joining is optional and never assumes microphone consent.";
+const reasonObserverNotice = "Displayed only to an eliminated player who remains to observe the ongoing council.";
+const reasonChatChannel = "An eliminated observer can switch between public read-only chat and observer chat.";
+const reasonComposer = "Shown only when the viewer may speak in the selected channel and current authoritative phase.";
+const reasonMessageInput = "Available inside the composer only when this viewer may write in the authoritative phase.";
+const reasonSend = "Enabled only for a non-empty permitted message while the authenticated room is connected.";
+const reasonHerald = "Displayed only for a living Herald with an unused charge during the discussion phase.";
+const reasonReports = "Private evidence is mounted only when the player selects the evidence tab.";
+const reasonNotebook = "Session-local notes are mounted only when the player selects the notebook tab.";
+const reasonNotesInput = "The notebook text field is mounted only inside the explicitly selected private notebook tab.";
+const reasonVoiceResume = "Displayed only when the owned active Mafia call reports blocked audio, allowing the player to resume playback with a gesture.";
+const reasonCancelAbility = "Displayed after a valid night choice is stored, allowing its owner to cancel before the deadline.";
+const reasonReturnCall = "Displayed only when a previous social call can be explicitly resumed after the match ends.";
+const reasonAbilitySubmit = "Night action confirmation appears for an available power; Mafia helpers first choose the ability tab.";
+const reasonAbility = "Authoritative ability controls are mounted in the council tab for a living assigned player.";
+const reasonChat = "Permitted phase messages are mounted only while the council tab is selected by the viewer.";
+const reasonMessages = "The list of messages belongs to the currently visible permitted channel in the council tab.";
+const reasonNarrative = "The public phase illustration and explanation appear when the player switches from private notes or evidence to the council tab.";
+const reasonEvent = "Public event cards appear in the council timeline only when the player selects that tab and the server has supplied public events.";
+const reasonGroups = "Stable exported HomeGroups component; the current Home does not mount this optional group strip.";
+const reasonResume = "A resumable stored match adds these actions; the isolated default fixture starts without a saved session.";
+const reasonAssistance = "Question type, media load state and reveal stage determine these real puzzle controls; the baseline fixture is a text question.";
+const reasonResume2 = "SetupOptions shows resume only when memory storage contains a valid resumable match.";
+const reasonHome = "The full Online route adds the shared TopBar around Entry; the narrow isolated Entry fixture omits that route wrapper.";
+const reasonDropped = "Disconnected host seats and WebSocket reconnection states reveal these actual room recovery controls.";
+const reasonAudioPlay = "Audio questions expose playback and repeat controls; the isolated online fixture shows a clue question.";
+const reasonCanvasStatus = "Canvas synchronization, paused rounds and network reconnect states show this required status overlay.";
+const reasonCooperativeResult = "Two-player cooperative matches render the shared cooperative result; baseline fixtures use competitive mode.";
+const reasonGroupAccept = "Pending group invitations and outgoing friend requests reveal their matching request actions.";
+const reasonGroupManage = "Group conversations expose member and management controls; the baseline conversation fixture is direct.";
+const reasonOlderMessages = "Pagination, off-screen new arrivals, message menus and failed outgoing messages reveal these existing actions.";
+const reasonRecordStop = "The real microphone recording/review phases reveal these controls; preview never captures microphone data.";
+const reasonGameInviteCard = "A valid game-invitation message renders its existing join card; the default sample contains text and voice messages.";
+const reasonGameChoice = "Creating a new game invite shows game choices and the existing-room toggle; the baseline fixture starts with a supplied room code.";
+const reasonMembers = "The blocked-account list appears only when the account has blocked another user.";
+const reasonReportReason = "Reporting a user/message shows reason and detail fields; the default action fixture edits a message.";
+const reasonCallOpen = "Collapsed/inline call UI, available output devices and audio-permission recovery reveal these existing controls.";
+const reasonAddFriend = "Relationship-specific actions appear on another player profile for none/incoming/outgoing request states.";
+const reasonAvatarRemove = "Image removal actions appear only when an approved image or pending image review exists.";
+const reasonRules = "Stable MaydanModal/Profile modal content exposes these real child controls when rules, score editing, question reports or share-link dialogs are opened.";
+
 // Actual production-node inventory verified by the semantic browser coverage test.
 // Each template ID names a semantic component; it never identifies an array index or a user.
 export const DESIGN_RENDERED_NODE_IDS = Object.freeze({
@@ -160,34 +205,34 @@ export const DESIGN_CONDITIONAL_NODE_REASONS = Object.freeze({
   "online.mafia.spectator": {},
   "online.mafia.history": {"loading":"Displayed only while the authenticated history request is pending for this account.","error":"Displayed when the history request fails; old account data is never retained as a fallback.","empty":"Displayed only after the server returns a successful empty result for this account."},
   "online.mafia.directory": {"loading":"Displayed only while the authenticated public-room directory request is in flight.","empty":"Displayed only when the feature is enabled and no suitable waiting rooms are returned.","notice":"Displayed only when the service explicitly reports that new Mafia matches are disabled."},
-  "online.mafia.role": {"privacy":"The entire live council is replaced by the privacy screen when the application is backgrounded.","voice-join":"Displayed when voice is disconnected; joining is optional and never assumes microphone consent.","observer-notice":"Displayed only to an eliminated player who remains to observe the ongoing council.","chat-channel":"An eliminated observer can switch between public read-only chat and observer chat.","composer":"Shown only when the viewer may speak in the selected channel and current authoritative phase.","message-input":"Available inside the composer only when this viewer may write in the authoritative phase.","send":"Enabled only for a non-empty permitted message while the authenticated room is connected.","herald":"Displayed only for a living Herald with an unused charge during the discussion phase.","reports":"Private evidence is mounted only when the player selects the evidence tab.","notebook":"Session-local notes are mounted only when the player selects the notebook tab.","notes-input":"The notebook text field is mounted only inside the explicitly selected private notebook tab.","voice-resume":"Displayed only when the owned active Mafia call reports blocked audio, allowing the player to resume playback with a gesture."},
-  "online.mafia.opening": {"cancel-ability":"Displayed after a valid night choice is stored, allowing its owner to cancel before the deadline.","privacy":"The entire live council is replaced by the privacy screen when the application is backgrounded.","voice-join":"Displayed when voice is disconnected; joining is optional and never assumes microphone consent.","observer-notice":"Displayed only to an eliminated player who remains to observe the ongoing council.","chat-channel":"An eliminated observer can switch between public read-only chat and observer chat.","herald":"Displayed only for a living Herald with an unused charge during the discussion phase.","reports":"Private evidence is mounted only when the player selects the evidence tab.","notebook":"Session-local notes are mounted only when the player selects the notebook tab.","notes-input":"The notebook text field is mounted only inside the explicitly selected private notebook tab.","voice-resume":"Displayed only when the owned active Mafia call reports blocked audio, allowing the player to resume playback with a gesture."},
-  "online.mafia.night": {"cancel-ability":"Displayed after a valid night choice is stored, allowing its owner to cancel before the deadline.","privacy":"The entire live council is replaced by the privacy screen when the application is backgrounded.","voice-join":"Displayed when voice is disconnected; joining is optional and never assumes microphone consent.","observer-notice":"Displayed only to an eliminated player who remains to observe the ongoing council.","chat-channel":"An eliminated observer can switch between public read-only chat and observer chat.","composer":"Shown only when the viewer may speak in the selected channel and current authoritative phase.","message-input":"Available inside the composer only when this viewer may write in the authoritative phase.","send":"Enabled only for a non-empty permitted message while the authenticated room is connected.","herald":"Displayed only for a living Herald with an unused charge during the discussion phase.","reports":"Private evidence is mounted only when the player selects the evidence tab.","notebook":"Session-local notes are mounted only when the player selects the notebook tab.","notes-input":"The notebook text field is mounted only inside the explicitly selected private notebook tab.","voice-resume":"Displayed only when the owned active Mafia call reports blocked audio, allowing the player to resume playback with a gesture."},
-  "online.mafia.dawn": {"cancel-ability":"Displayed after a valid night choice is stored, allowing its owner to cancel before the deadline.","privacy":"The entire live council is replaced by the privacy screen when the application is backgrounded.","voice-join":"Displayed when voice is disconnected; joining is optional and never assumes microphone consent.","observer-notice":"Displayed only to an eliminated player who remains to observe the ongoing council.","chat-channel":"An eliminated observer can switch between public read-only chat and observer chat.","composer":"Shown only when the viewer may speak in the selected channel and current authoritative phase.","message-input":"Available inside the composer only when this viewer may write in the authoritative phase.","send":"Enabled only for a non-empty permitted message while the authenticated room is connected.","herald":"Displayed only for a living Herald with an unused charge during the discussion phase.","reports":"Private evidence is mounted only when the player selects the evidence tab.","notebook":"Session-local notes are mounted only when the player selects the notebook tab.","notes-input":"The notebook text field is mounted only inside the explicitly selected private notebook tab.","voice-resume":"Displayed only when the owned active Mafia call reports blocked audio, allowing the player to resume playback with a gesture."},
-  "online.mafia.discussion": {"cancel-ability":"Displayed after a valid night choice is stored, allowing its owner to cancel before the deadline.","privacy":"The entire live council is replaced by the privacy screen when the application is backgrounded.","voice-join":"Displayed when voice is disconnected; joining is optional and never assumes microphone consent.","observer-notice":"Displayed only to an eliminated player who remains to observe the ongoing council.","chat-channel":"An eliminated observer can switch between public read-only chat and observer chat.","herald":"Displayed only for a living Herald with an unused charge during the discussion phase.","reports":"Private evidence is mounted only when the player selects the evidence tab.","notebook":"Session-local notes are mounted only when the player selects the notebook tab.","notes-input":"The notebook text field is mounted only inside the explicitly selected private notebook tab.","voice-resume":"Displayed only when the owned active Mafia call reports blocked audio, allowing the player to resume playback with a gesture."},
-  "online.mafia.nomination": {"cancel-ability":"Displayed after a valid night choice is stored, allowing its owner to cancel before the deadline.","privacy":"The entire live council is replaced by the privacy screen when the application is backgrounded.","voice-join":"Displayed when voice is disconnected; joining is optional and never assumes microphone consent.","observer-notice":"Displayed only to an eliminated player who remains to observe the ongoing council.","chat-channel":"An eliminated observer can switch between public read-only chat and observer chat.","composer":"Shown only when the viewer may speak in the selected channel and current authoritative phase.","message-input":"Available inside the composer only when this viewer may write in the authoritative phase.","send":"Enabled only for a non-empty permitted message while the authenticated room is connected.","herald":"Displayed only for a living Herald with an unused charge during the discussion phase.","reports":"Private evidence is mounted only when the player selects the evidence tab.","notebook":"Session-local notes are mounted only when the player selects the notebook tab.","notes-input":"The notebook text field is mounted only inside the explicitly selected private notebook tab.","voice-resume":"Displayed only when the owned active Mafia call reports blocked audio, allowing the player to resume playback with a gesture."},
-  "online.mafia.defense": {"cancel-ability":"Displayed after a valid night choice is stored, allowing its owner to cancel before the deadline.","privacy":"The entire live council is replaced by the privacy screen when the application is backgrounded.","voice-join":"Displayed when voice is disconnected; joining is optional and never assumes microphone consent.","observer-notice":"Displayed only to an eliminated player who remains to observe the ongoing council.","chat-channel":"An eliminated observer can switch between public read-only chat and observer chat.","composer":"Shown only when the viewer may speak in the selected channel and current authoritative phase.","message-input":"Available inside the composer only when this viewer may write in the authoritative phase.","send":"Enabled only for a non-empty permitted message while the authenticated room is connected.","herald":"Displayed only for a living Herald with an unused charge during the discussion phase.","reports":"Private evidence is mounted only when the player selects the evidence tab.","notebook":"Session-local notes are mounted only when the player selects the notebook tab.","notes-input":"The notebook text field is mounted only inside the explicitly selected private notebook tab.","voice-resume":"Displayed only when the owned active Mafia call reports blocked audio, allowing the player to resume playback with a gesture."},
-  "online.mafia.verdict": {"cancel-ability":"Displayed after a valid night choice is stored, allowing its owner to cancel before the deadline.","privacy":"The entire live council is replaced by the privacy screen when the application is backgrounded.","voice-join":"Displayed when voice is disconnected; joining is optional and never assumes microphone consent.","observer-notice":"Displayed only to an eliminated player who remains to observe the ongoing council.","chat-channel":"An eliminated observer can switch between public read-only chat and observer chat.","composer":"Shown only when the viewer may speak in the selected channel and current authoritative phase.","message-input":"Available inside the composer only when this viewer may write in the authoritative phase.","send":"Enabled only for a non-empty permitted message while the authenticated room is connected.","herald":"Displayed only for a living Herald with an unused charge during the discussion phase.","reports":"Private evidence is mounted only when the player selects the evidence tab.","notebook":"Session-local notes are mounted only when the player selects the notebook tab.","notes-input":"The notebook text field is mounted only inside the explicitly selected private notebook tab.","voice-resume":"Displayed only when the owned active Mafia call reports blocked audio, allowing the player to resume playback with a gesture."},
-  "online.mafia.over": {"return-call":"Displayed only when a previous social call can be explicitly resumed after the match ends."},
-  "online.mafia.closed": {"return-call":"Displayed only when a previous social call can be explicitly resumed after the match ends."},
-  "online.mafia.night.citizen": {"ability-submit":"Night action confirmation appears for an available power; Mafia helpers first choose the ability tab.","cancel-ability":"Displayed after a valid night choice is stored, allowing its owner to cancel before the deadline.","privacy":"The entire live council is replaced by the privacy screen when the application is backgrounded.","voice-join":"Displayed when voice is disconnected; joining is optional and never assumes microphone consent.","observer-notice":"Displayed only to an eliminated player who remains to observe the ongoing council.","chat-channel":"An eliminated observer can switch between public read-only chat and observer chat.","composer":"Shown only when the viewer may speak in the selected channel and current authoritative phase.","message-input":"Available inside the composer only when this viewer may write in the authoritative phase.","send":"Enabled only for a non-empty permitted message while the authenticated room is connected.","herald":"Displayed only for a living Herald with an unused charge during the discussion phase.","reports":"Private evidence is mounted only when the player selects the evidence tab.","notebook":"Session-local notes are mounted only when the player selects the notebook tab.","notes-input":"The notebook text field is mounted only inside the explicitly selected private notebook tab.","voice-resume":"Displayed only when the owned active Mafia call reports blocked audio, allowing the player to resume playback with a gesture."},
-  "online.mafia.night.investigator": {"cancel-ability":"Displayed after a valid night choice is stored, allowing its owner to cancel before the deadline.","privacy":"The entire live council is replaced by the privacy screen when the application is backgrounded.","voice-join":"Displayed when voice is disconnected; joining is optional and never assumes microphone consent.","observer-notice":"Displayed only to an eliminated player who remains to observe the ongoing council.","chat-channel":"An eliminated observer can switch between public read-only chat and observer chat.","composer":"Shown only when the viewer may speak in the selected channel and current authoritative phase.","message-input":"Available inside the composer only when this viewer may write in the authoritative phase.","send":"Enabled only for a non-empty permitted message while the authenticated room is connected.","herald":"Displayed only for a living Herald with an unused charge during the discussion phase.","reports":"Private evidence is mounted only when the player selects the evidence tab.","notebook":"Session-local notes are mounted only when the player selects the notebook tab.","notes-input":"The notebook text field is mounted only inside the explicitly selected private notebook tab.","voice-resume":"Displayed only when the owned active Mafia call reports blocked audio, allowing the player to resume playback with a gesture."},
-  "online.mafia.night.doctor": {"cancel-ability":"Displayed after a valid night choice is stored, allowing its owner to cancel before the deadline.","privacy":"The entire live council is replaced by the privacy screen when the application is backgrounded.","voice-join":"Displayed when voice is disconnected; joining is optional and never assumes microphone consent.","observer-notice":"Displayed only to an eliminated player who remains to observe the ongoing council.","chat-channel":"An eliminated observer can switch between public read-only chat and observer chat.","composer":"Shown only when the viewer may speak in the selected channel and current authoritative phase.","message-input":"Available inside the composer only when this viewer may write in the authoritative phase.","send":"Enabled only for a non-empty permitted message while the authenticated room is connected.","herald":"Displayed only for a living Herald with an unused charge during the discussion phase.","reports":"Private evidence is mounted only when the player selects the evidence tab.","notebook":"Session-local notes are mounted only when the player selects the notebook tab.","notes-input":"The notebook text field is mounted only inside the explicitly selected private notebook tab.","voice-resume":"Displayed only when the owned active Mafia call reports blocked audio, allowing the player to resume playback with a gesture."},
-  "online.mafia.night.guard": {"ability-submit":"Night action confirmation appears for an available power; Mafia helpers first choose the ability tab.","cancel-ability":"Displayed after a valid night choice is stored, allowing its owner to cancel before the deadline.","privacy":"The entire live council is replaced by the privacy screen when the application is backgrounded.","voice-join":"Displayed when voice is disconnected; joining is optional and never assumes microphone consent.","observer-notice":"Displayed only to an eliminated player who remains to observe the ongoing council.","chat-channel":"An eliminated observer can switch between public read-only chat and observer chat.","composer":"Shown only when the viewer may speak in the selected channel and current authoritative phase.","message-input":"Available inside the composer only when this viewer may write in the authoritative phase.","send":"Enabled only for a non-empty permitted message while the authenticated room is connected.","herald":"Displayed only for a living Herald with an unused charge during the discussion phase.","reports":"Private evidence is mounted only when the player selects the evidence tab.","notebook":"Session-local notes are mounted only when the player selects the notebook tab.","notes-input":"The notebook text field is mounted only inside the explicitly selected private notebook tab.","voice-resume":"Displayed only when the owned active Mafia call reports blocked audio, allowing the player to resume playback with a gesture."},
-  "online.mafia.night.observer": {"cancel-ability":"Displayed after a valid night choice is stored, allowing its owner to cancel before the deadline.","privacy":"The entire live council is replaced by the privacy screen when the application is backgrounded.","voice-join":"Displayed when voice is disconnected; joining is optional and never assumes microphone consent.","observer-notice":"Displayed only to an eliminated player who remains to observe the ongoing council.","chat-channel":"An eliminated observer can switch between public read-only chat and observer chat.","composer":"Shown only when the viewer may speak in the selected channel and current authoritative phase.","message-input":"Available inside the composer only when this viewer may write in the authoritative phase.","send":"Enabled only for a non-empty permitted message while the authenticated room is connected.","herald":"Displayed only for a living Herald with an unused charge during the discussion phase.","reports":"Private evidence is mounted only when the player selects the evidence tab.","notebook":"Session-local notes are mounted only when the player selects the notebook tab.","notes-input":"The notebook text field is mounted only inside the explicitly selected private notebook tab.","voice-resume":"Displayed only when the owned active Mafia call reports blocked audio, allowing the player to resume playback with a gesture."},
-  "online.mafia.night.reporter": {"cancel-ability":"Displayed after a valid night choice is stored, allowing its owner to cancel before the deadline.","privacy":"The entire live council is replaced by the privacy screen when the application is backgrounded.","voice-join":"Displayed when voice is disconnected; joining is optional and never assumes microphone consent.","observer-notice":"Displayed only to an eliminated player who remains to observe the ongoing council.","chat-channel":"An eliminated observer can switch between public read-only chat and observer chat.","composer":"Shown only when the viewer may speak in the selected channel and current authoritative phase.","message-input":"Available inside the composer only when this viewer may write in the authoritative phase.","send":"Enabled only for a non-empty permitted message while the authenticated room is connected.","herald":"Displayed only for a living Herald with an unused charge during the discussion phase.","reports":"Private evidence is mounted only when the player selects the evidence tab.","notebook":"Session-local notes are mounted only when the player selects the notebook tab.","notes-input":"The notebook text field is mounted only inside the explicitly selected private notebook tab.","voice-resume":"Displayed only when the owned active Mafia call reports blocked audio, allowing the player to resume playback with a gesture."},
-  "online.mafia.night.herald": {"ability-submit":"Night action confirmation appears for an available power; Mafia helpers first choose the ability tab.","cancel-ability":"Displayed after a valid night choice is stored, allowing its owner to cancel before the deadline.","privacy":"The entire live council is replaced by the privacy screen when the application is backgrounded.","voice-join":"Displayed when voice is disconnected; joining is optional and never assumes microphone consent.","observer-notice":"Displayed only to an eliminated player who remains to observe the ongoing council.","chat-channel":"An eliminated observer can switch between public read-only chat and observer chat.","composer":"Shown only when the viewer may speak in the selected channel and current authoritative phase.","message-input":"Available inside the composer only when this viewer may write in the authoritative phase.","send":"Enabled only for a non-empty permitted message while the authenticated room is connected.","herald":"Displayed only for a living Herald with an unused charge during the discussion phase.","reports":"Private evidence is mounted only when the player selects the evidence tab.","notebook":"Session-local notes are mounted only when the player selects the notebook tab.","notes-input":"The notebook text field is mounted only inside the explicitly selected private notebook tab.","voice-resume":"Displayed only when the owned active Mafia call reports blocked audio, allowing the player to resume playback with a gesture."},
-  "online.mafia.night.analyst": {"cancel-ability":"Displayed after a valid night choice is stored, allowing its owner to cancel before the deadline.","privacy":"The entire live council is replaced by the privacy screen when the application is backgrounded.","voice-join":"Displayed when voice is disconnected; joining is optional and never assumes microphone consent.","observer-notice":"Displayed only to an eliminated player who remains to observe the ongoing council.","chat-channel":"An eliminated observer can switch between public read-only chat and observer chat.","composer":"Shown only when the viewer may speak in the selected channel and current authoritative phase.","message-input":"Available inside the composer only when this viewer may write in the authoritative phase.","send":"Enabled only for a non-empty permitted message while the authenticated room is connected.","herald":"Displayed only for a living Herald with an unused charge during the discussion phase.","reports":"Private evidence is mounted only when the player selects the evidence tab.","notebook":"Session-local notes are mounted only when the player selects the notebook tab.","notes-input":"The notebook text field is mounted only inside the explicitly selected private notebook tab.","voice-resume":"Displayed only when the owned active Mafia call reports blocked audio, allowing the player to resume playback with a gesture."},
-  "online.mafia.night.mafia": {"ability-submit":"Night action confirmation appears for an available power; Mafia helpers first choose the ability tab.","cancel-ability":"Displayed after a valid night choice is stored, allowing its owner to cancel before the deadline.","privacy":"The entire live council is replaced by the privacy screen when the application is backgrounded.","voice-join":"Displayed when voice is disconnected; joining is optional and never assumes microphone consent.","observer-notice":"Displayed only to an eliminated player who remains to observe the ongoing council.","chat-channel":"An eliminated observer can switch between public read-only chat and observer chat.","herald":"Displayed only for a living Herald with an unused charge during the discussion phase.","reports":"Private evidence is mounted only when the player selects the evidence tab.","notebook":"Session-local notes are mounted only when the player selects the notebook tab.","notes-input":"The notebook text field is mounted only inside the explicitly selected private notebook tab.","voice-resume":"Displayed only when the owned active Mafia call reports blocked audio, allowing the player to resume playback with a gesture."},
-  "online.mafia.night.masker": {"ability-submit":"Night action confirmation appears for an available power; Mafia helpers first choose the ability tab.","cancel-ability":"Displayed after a valid night choice is stored, allowing its owner to cancel before the deadline.","privacy":"The entire live council is replaced by the privacy screen when the application is backgrounded.","voice-join":"Displayed when voice is disconnected; joining is optional and never assumes microphone consent.","observer-notice":"Displayed only to an eliminated player who remains to observe the ongoing council.","chat-channel":"An eliminated observer can switch between public read-only chat and observer chat.","herald":"Displayed only for a living Herald with an unused charge during the discussion phase.","reports":"Private evidence is mounted only when the player selects the evidence tab.","notebook":"Session-local notes are mounted only when the player selects the notebook tab.","notes-input":"The notebook text field is mounted only inside the explicitly selected private notebook tab.","voice-resume":"Displayed only when the owned active Mafia call reports blocked audio, allowing the player to resume playback with a gesture."},
-  "online.mafia.night.blocker": {"ability-submit":"Night action confirmation appears for an available power; Mafia helpers first choose the ability tab.","cancel-ability":"Displayed after a valid night choice is stored, allowing its owner to cancel before the deadline.","privacy":"The entire live council is replaced by the privacy screen when the application is backgrounded.","voice-join":"Displayed when voice is disconnected; joining is optional and never assumes microphone consent.","observer-notice":"Displayed only to an eliminated player who remains to observe the ongoing council.","chat-channel":"An eliminated observer can switch between public read-only chat and observer chat.","herald":"Displayed only for a living Herald with an unused charge during the discussion phase.","reports":"Private evidence is mounted only when the player selects the evidence tab.","notebook":"Session-local notes are mounted only when the player selects the notebook tab.","notes-input":"The notebook text field is mounted only inside the explicitly selected private notebook tab.","voice-resume":"Displayed only when the owned active Mafia call reports blocked audio, allowing the player to resume playback with a gesture."},
-  "online.mafia.night.leader": {"cancel-ability":"Displayed after a valid night choice is stored, allowing its owner to cancel before the deadline.","privacy":"The entire live council is replaced by the privacy screen when the application is backgrounded.","voice-join":"Displayed when voice is disconnected; joining is optional and never assumes microphone consent.","observer-notice":"Displayed only to an eliminated player who remains to observe the ongoing council.","chat-channel":"An eliminated observer can switch between public read-only chat and observer chat.","herald":"Displayed only for a living Herald with an unused charge during the discussion phase.","reports":"Private evidence is mounted only when the player selects the evidence tab.","notebook":"Session-local notes are mounted only when the player selects the notebook tab.","notes-input":"The notebook text field is mounted only inside the explicitly selected private notebook tab.","voice-resume":"Displayed only when the owned active Mafia call reports blocked audio, allowing the player to resume playback with a gesture."},
-  "online.mafia.clues": {"cancel-ability":"Displayed after a valid night choice is stored, allowing its owner to cancel before the deadline.","privacy":"The entire live council is replaced by the privacy screen when the application is backgrounded.","voice-join":"Displayed when voice is disconnected; joining is optional and never assumes microphone consent.","observer-notice":"Displayed only to an eliminated player who remains to observe the ongoing council.","chat-channel":"An eliminated observer can switch between public read-only chat and observer chat.","composer":"Shown only when the viewer may speak in the selected channel and current authoritative phase.","message-input":"Available inside the composer only when this viewer may write in the authoritative phase.","send":"Enabled only for a non-empty permitted message while the authenticated room is connected.","herald":"Displayed only for a living Herald with an unused charge during the discussion phase.","notebook":"Session-local notes are mounted only when the player selects the notebook tab.","notes-input":"The notebook text field is mounted only inside the explicitly selected private notebook tab.","ability":"Authoritative ability controls are mounted in the council tab for a living assigned player.","chat":"Permitted phase messages are mounted only while the council tab is selected by the viewer.","messages":"The list of messages belongs to the currently visible permitted channel in the council tab.","voice-resume":"Displayed only when the owned active Mafia call reports blocked audio, allowing the player to resume playback with a gesture.","narrative":"The public phase illustration and explanation appear when the player switches from private notes or evidence to the council tab.","event":"Public event cards appear in the council timeline only when the player selects that tab and the server has supplied public events."},
-  "online.mafia.notes": {"cancel-ability":"Displayed after a valid night choice is stored, allowing its owner to cancel before the deadline.","privacy":"The entire live council is replaced by the privacy screen when the application is backgrounded.","voice-join":"Displayed when voice is disconnected; joining is optional and never assumes microphone consent.","observer-notice":"Displayed only to an eliminated player who remains to observe the ongoing council.","chat-channel":"An eliminated observer can switch between public read-only chat and observer chat.","composer":"Shown only when the viewer may speak in the selected channel and current authoritative phase.","message-input":"Available inside the composer only when this viewer may write in the authoritative phase.","send":"Enabled only for a non-empty permitted message while the authenticated room is connected.","herald":"Displayed only for a living Herald with an unused charge during the discussion phase.","reports":"Private evidence is mounted only when the player selects the evidence tab.","ability":"Authoritative ability controls are mounted in the council tab for a living assigned player.","chat":"Permitted phase messages are mounted only while the council tab is selected by the viewer.","messages":"The list of messages belongs to the currently visible permitted channel in the council tab.","voice-resume":"Displayed only when the owned active Mafia call reports blocked audio, allowing the player to resume playback with a gesture.","narrative":"The public phase illustration and explanation appear when the player switches from private notes or evidence to the council tab.","event":"Public event cards appear in the council timeline only when the player selects that tab and the server has supplied public events."},
+  "online.mafia.role": {"privacy":reasonPrivacy,"voice-join":reasonVoiceJoin,"observer-notice":reasonObserverNotice,"chat-channel":reasonChatChannel,"composer":reasonComposer,"message-input":reasonMessageInput,"send":reasonSend,"herald":reasonHerald,"reports":reasonReports,"notebook":reasonNotebook,"notes-input":reasonNotesInput,"voice-resume":reasonVoiceResume},
+  "online.mafia.opening": {"cancel-ability":reasonCancelAbility,"privacy":reasonPrivacy,"voice-join":reasonVoiceJoin,"observer-notice":reasonObserverNotice,"chat-channel":reasonChatChannel,"herald":reasonHerald,"reports":reasonReports,"notebook":reasonNotebook,"notes-input":reasonNotesInput,"voice-resume":reasonVoiceResume},
+  "online.mafia.night": {"cancel-ability":reasonCancelAbility,"privacy":reasonPrivacy,"voice-join":reasonVoiceJoin,"observer-notice":reasonObserverNotice,"chat-channel":reasonChatChannel,"composer":reasonComposer,"message-input":reasonMessageInput,"send":reasonSend,"herald":reasonHerald,"reports":reasonReports,"notebook":reasonNotebook,"notes-input":reasonNotesInput,"voice-resume":reasonVoiceResume},
+  "online.mafia.dawn": {"cancel-ability":reasonCancelAbility,"privacy":reasonPrivacy,"voice-join":reasonVoiceJoin,"observer-notice":reasonObserverNotice,"chat-channel":reasonChatChannel,"composer":reasonComposer,"message-input":reasonMessageInput,"send":reasonSend,"herald":reasonHerald,"reports":reasonReports,"notebook":reasonNotebook,"notes-input":reasonNotesInput,"voice-resume":reasonVoiceResume},
+  "online.mafia.discussion": {"cancel-ability":reasonCancelAbility,"privacy":reasonPrivacy,"voice-join":reasonVoiceJoin,"observer-notice":reasonObserverNotice,"chat-channel":reasonChatChannel,"herald":reasonHerald,"reports":reasonReports,"notebook":reasonNotebook,"notes-input":reasonNotesInput,"voice-resume":reasonVoiceResume},
+  "online.mafia.nomination": {"cancel-ability":reasonCancelAbility,"privacy":reasonPrivacy,"voice-join":reasonVoiceJoin,"observer-notice":reasonObserverNotice,"chat-channel":reasonChatChannel,"composer":reasonComposer,"message-input":reasonMessageInput,"send":reasonSend,"herald":reasonHerald,"reports":reasonReports,"notebook":reasonNotebook,"notes-input":reasonNotesInput,"voice-resume":reasonVoiceResume},
+  "online.mafia.defense": {"cancel-ability":reasonCancelAbility,"privacy":reasonPrivacy,"voice-join":reasonVoiceJoin,"observer-notice":reasonObserverNotice,"chat-channel":reasonChatChannel,"composer":reasonComposer,"message-input":reasonMessageInput,"send":reasonSend,"herald":reasonHerald,"reports":reasonReports,"notebook":reasonNotebook,"notes-input":reasonNotesInput,"voice-resume":reasonVoiceResume},
+  "online.mafia.verdict": {"cancel-ability":reasonCancelAbility,"privacy":reasonPrivacy,"voice-join":reasonVoiceJoin,"observer-notice":reasonObserverNotice,"chat-channel":reasonChatChannel,"composer":reasonComposer,"message-input":reasonMessageInput,"send":reasonSend,"herald":reasonHerald,"reports":reasonReports,"notebook":reasonNotebook,"notes-input":reasonNotesInput,"voice-resume":reasonVoiceResume},
+  "online.mafia.over": {"return-call":reasonReturnCall},
+  "online.mafia.closed": {"return-call":reasonReturnCall},
+  "online.mafia.night.citizen": {"ability-submit":reasonAbilitySubmit,"cancel-ability":reasonCancelAbility,"privacy":reasonPrivacy,"voice-join":reasonVoiceJoin,"observer-notice":reasonObserverNotice,"chat-channel":reasonChatChannel,"composer":reasonComposer,"message-input":reasonMessageInput,"send":reasonSend,"herald":reasonHerald,"reports":reasonReports,"notebook":reasonNotebook,"notes-input":reasonNotesInput,"voice-resume":reasonVoiceResume},
+  "online.mafia.night.investigator": {"cancel-ability":reasonCancelAbility,"privacy":reasonPrivacy,"voice-join":reasonVoiceJoin,"observer-notice":reasonObserverNotice,"chat-channel":reasonChatChannel,"composer":reasonComposer,"message-input":reasonMessageInput,"send":reasonSend,"herald":reasonHerald,"reports":reasonReports,"notebook":reasonNotebook,"notes-input":reasonNotesInput,"voice-resume":reasonVoiceResume},
+  "online.mafia.night.doctor": {"cancel-ability":reasonCancelAbility,"privacy":reasonPrivacy,"voice-join":reasonVoiceJoin,"observer-notice":reasonObserverNotice,"chat-channel":reasonChatChannel,"composer":reasonComposer,"message-input":reasonMessageInput,"send":reasonSend,"herald":reasonHerald,"reports":reasonReports,"notebook":reasonNotebook,"notes-input":reasonNotesInput,"voice-resume":reasonVoiceResume},
+  "online.mafia.night.guard": {"ability-submit":reasonAbilitySubmit,"cancel-ability":reasonCancelAbility,"privacy":reasonPrivacy,"voice-join":reasonVoiceJoin,"observer-notice":reasonObserverNotice,"chat-channel":reasonChatChannel,"composer":reasonComposer,"message-input":reasonMessageInput,"send":reasonSend,"herald":reasonHerald,"reports":reasonReports,"notebook":reasonNotebook,"notes-input":reasonNotesInput,"voice-resume":reasonVoiceResume},
+  "online.mafia.night.observer": {"cancel-ability":reasonCancelAbility,"privacy":reasonPrivacy,"voice-join":reasonVoiceJoin,"observer-notice":reasonObserverNotice,"chat-channel":reasonChatChannel,"composer":reasonComposer,"message-input":reasonMessageInput,"send":reasonSend,"herald":reasonHerald,"reports":reasonReports,"notebook":reasonNotebook,"notes-input":reasonNotesInput,"voice-resume":reasonVoiceResume},
+  "online.mafia.night.reporter": {"cancel-ability":reasonCancelAbility,"privacy":reasonPrivacy,"voice-join":reasonVoiceJoin,"observer-notice":reasonObserverNotice,"chat-channel":reasonChatChannel,"composer":reasonComposer,"message-input":reasonMessageInput,"send":reasonSend,"herald":reasonHerald,"reports":reasonReports,"notebook":reasonNotebook,"notes-input":reasonNotesInput,"voice-resume":reasonVoiceResume},
+  "online.mafia.night.herald": {"ability-submit":reasonAbilitySubmit,"cancel-ability":reasonCancelAbility,"privacy":reasonPrivacy,"voice-join":reasonVoiceJoin,"observer-notice":reasonObserverNotice,"chat-channel":reasonChatChannel,"composer":reasonComposer,"message-input":reasonMessageInput,"send":reasonSend,"herald":reasonHerald,"reports":reasonReports,"notebook":reasonNotebook,"notes-input":reasonNotesInput,"voice-resume":reasonVoiceResume},
+  "online.mafia.night.analyst": {"cancel-ability":reasonCancelAbility,"privacy":reasonPrivacy,"voice-join":reasonVoiceJoin,"observer-notice":reasonObserverNotice,"chat-channel":reasonChatChannel,"composer":reasonComposer,"message-input":reasonMessageInput,"send":reasonSend,"herald":reasonHerald,"reports":reasonReports,"notebook":reasonNotebook,"notes-input":reasonNotesInput,"voice-resume":reasonVoiceResume},
+  "online.mafia.night.mafia": {"ability-submit":reasonAbilitySubmit,"cancel-ability":reasonCancelAbility,"privacy":reasonPrivacy,"voice-join":reasonVoiceJoin,"observer-notice":reasonObserverNotice,"chat-channel":reasonChatChannel,"herald":reasonHerald,"reports":reasonReports,"notebook":reasonNotebook,"notes-input":reasonNotesInput,"voice-resume":reasonVoiceResume},
+  "online.mafia.night.masker": {"ability-submit":reasonAbilitySubmit,"cancel-ability":reasonCancelAbility,"privacy":reasonPrivacy,"voice-join":reasonVoiceJoin,"observer-notice":reasonObserverNotice,"chat-channel":reasonChatChannel,"herald":reasonHerald,"reports":reasonReports,"notebook":reasonNotebook,"notes-input":reasonNotesInput,"voice-resume":reasonVoiceResume},
+  "online.mafia.night.blocker": {"ability-submit":reasonAbilitySubmit,"cancel-ability":reasonCancelAbility,"privacy":reasonPrivacy,"voice-join":reasonVoiceJoin,"observer-notice":reasonObserverNotice,"chat-channel":reasonChatChannel,"herald":reasonHerald,"reports":reasonReports,"notebook":reasonNotebook,"notes-input":reasonNotesInput,"voice-resume":reasonVoiceResume},
+  "online.mafia.night.leader": {"cancel-ability":reasonCancelAbility,"privacy":reasonPrivacy,"voice-join":reasonVoiceJoin,"observer-notice":reasonObserverNotice,"chat-channel":reasonChatChannel,"herald":reasonHerald,"reports":reasonReports,"notebook":reasonNotebook,"notes-input":reasonNotesInput,"voice-resume":reasonVoiceResume},
+  "online.mafia.clues": {"cancel-ability":reasonCancelAbility,"privacy":reasonPrivacy,"voice-join":reasonVoiceJoin,"observer-notice":reasonObserverNotice,"chat-channel":reasonChatChannel,"composer":reasonComposer,"message-input":reasonMessageInput,"send":reasonSend,"herald":reasonHerald,"notebook":reasonNotebook,"notes-input":reasonNotesInput,"ability":reasonAbility,"chat":reasonChat,"messages":reasonMessages,"voice-resume":reasonVoiceResume,"narrative":reasonNarrative,"event":reasonEvent},
+  "online.mafia.notes": {"cancel-ability":reasonCancelAbility,"privacy":reasonPrivacy,"voice-join":reasonVoiceJoin,"observer-notice":reasonObserverNotice,"chat-channel":reasonChatChannel,"composer":reasonComposer,"message-input":reasonMessageInput,"send":reasonSend,"herald":reasonHerald,"reports":reasonReports,"ability":reasonAbility,"chat":reasonChat,"messages":reasonMessages,"voice-resume":reasonVoiceResume,"narrative":reasonNarrative,"event":reasonEvent},
   "home": {
     "pricing-link": "Web accounts show the pricing link; the iPhone fixture intentionally omits web checkout.",
-    "groups": "Stable exported HomeGroups component; the current Home does not mount this optional group strip.",
-    "group-card": "Stable exported HomeGroups component; the current Home does not mount this optional group strip."
+    "groups": reasonGroups,
+    "group-card": reasonGroups
   },
   "game-details": {
     "local": "Local play is available for the six local games; the baseline fixture shows the online-only drawing game.",
@@ -195,8 +240,8 @@ export const DESIGN_CONDITIONAL_NODE_REASONS = Object.freeze({
   },
   "settings": {},
   "badeeha.home": {
-    "resume": "A resumable stored match adds these actions; the isolated default fixture starts without a saved session.",
-    "discard-save": "A resumable stored match adds these actions; the isolated default fixture starts without a saved session."
+    "resume": reasonResume,
+    "discard-save": reasonResume
   },
   "badeeha.setup": {
     "download-pack": "Media-bearing selected categories add the download action; the baseline fixture selects a text category."
@@ -205,34 +250,34 @@ export const DESIGN_CONDITIONAL_NODE_REASONS = Object.freeze({
     "cancel": "The finish-match confirmation adds a cancel action after the finish button is pressed."
   },
   "badeeha.question": {
-    "assistance": "Question type, media load state and reveal stage determine these real puzzle controls; the baseline fixture is a text question.",
-    "hint": "Question type, media load state and reveal stage determine these real puzzle controls; the baseline fixture is a text question.",
-    "question-media": "Question type, media load state and reveal stage determine these real puzzle controls; the baseline fixture is a text question.",
-    "image-enlarge": "Question type, media load state and reveal stage determine these real puzzle controls; the baseline fixture is a text question.",
-    "media-close": "Question type, media load state and reveal stage determine these real puzzle controls; the baseline fixture is a text question.",
-    "media-retry": "Question type, media load state and reveal stage determine these real puzzle controls; the baseline fixture is a text question.",
-    "tiles-reveal": "Question type, media load state and reveal stage determine these real puzzle controls; the baseline fixture is a text question.",
-    "audio-play": "Question type, media load state and reveal stage determine these real puzzle controls; the baseline fixture is a text question.",
-    "audio-restart": "Question type, media load state and reveal stage determine these real puzzle controls; the baseline fixture is a text question.",
-    "question-audio": "Question type, media load state and reveal stage determine these real puzzle controls; the baseline fixture is a text question."
+    "assistance": reasonAssistance,
+    "hint": reasonAssistance,
+    "question-media": reasonAssistance,
+    "image-enlarge": reasonAssistance,
+    "media-close": reasonAssistance,
+    "media-retry": reasonAssistance,
+    "tiles-reveal": reasonAssistance,
+    "audio-play": reasonAssistance,
+    "audio-restart": reasonAssistance,
+    "question-audio": reasonAssistance
   },
   "badeeha.history": {
     "share-reports": "The action appears only when locally saved question reports exist."
   },
   "setup.beep": {
-    "resume": "SetupOptions shows resume only when memory storage contains a valid resumable match."
+    "resume": reasonResume2
   },
   "setup.mamnoo": {
-    "resume": "SetupOptions shows resume only when memory storage contains a valid resumable match."
+    "resume": reasonResume2
   },
   "setup.jabeen": {
-    "resume": "SetupOptions shows resume only when memory storage contains a valid resumable match."
+    "resume": reasonResume2
   },
   "setup.meenfina": {
-    "resume": "SetupOptions shows resume only when memory storage contains a valid resumable match."
+    "resume": reasonResume2
   },
   "setup.fabraka": {
-    "resume": "SetupOptions shows resume only when memory storage contains a valid resumable match.",
+    "resume": reasonResume2,
     "setting-cycles": "Friend mode replaces round-count settings with the existing per-player cycle selector.",
     "history": "A previous completed Fabraka session adds the existing result-history action."
   },
@@ -245,17 +290,17 @@ export const DESIGN_CONDITIONAL_NODE_REASONS = Object.freeze({
   "online.entry": {
     "my-history":"Displayed only for a signed-in account while Mafia is the selected game; its data is account scoped.","entry-public":"Available only after selecting Mafia; opens the existing-room directory without creating a paid room.",
     "round-count": "Meenfina room creation uses this round selector; the default creation fixture shows Ersomha settings.",
-    "home": "The full Online route adds the shared TopBar around Entry; the narrow isolated Entry fixture omits that route wrapper.",
-    "topbar": "The full Online route adds the shared TopBar around Entry; the narrow isolated Entry fixture omits that route wrapper.",
-    "title": "The full Online route adds the shared TopBar around Entry; the narrow isolated Entry fixture omits that route wrapper."
+    "home": reasonHome,
+    "topbar": reasonHome,
+    "title": reasonHome
   },
   "online.lobby": {
     "host-handover": "Shown only to a Mafia host while another seat is connected; the waiting-room fixture is an Ersomha room."
   },
   "online.chrome": {"observer-join":"Shown only for an authenticated delayed observer when the authoritative snapshot permits promotion to a waiting seat.",
-    "dropped": "Disconnected host seats and WebSocket reconnection states reveal these actual room recovery controls.",
-    "member-remove": "Disconnected host seats and WebSocket reconnection states reveal these actual room recovery controls.",
-    "reconnect": "Disconnected host seats and WebSocket reconnection states reveal these actual room recovery controls."
+    "dropped": reasonDropped,
+    "member-remove": reasonDropped,
+    "reconnect": reasonDropped
   },
   "online.badeeha.question": {
     "question-media": "Other question types render image/audio/video media; the isolated online fixture shows a clue question.",
@@ -263,8 +308,8 @@ export const DESIGN_CONDITIONAL_NODE_REASONS = Object.freeze({
     "media-close": "An enlarged image exposes its close control; the isolated online fixture does not open an image.",
     "media-retry": "Failed question media exposes the retry control; the isolated online fixture shows no failed media.",
     "tiles-reveal": "The composition image question exposes progressive tiles; the isolated online fixture shows a clue question.",
-    "audio-play": "Audio questions expose playback and repeat controls; the isolated online fixture shows a clue question.",
-    "audio-restart": "Audio questions expose playback and repeat controls; the isolated online fixture shows a clue question.",
+    "audio-play": reasonAudioPlay,
+    "audio-restart": reasonAudioPlay,
     "question-audio": "A synthetic sound question exposes this play button; the isolated online fixture shows a clue question.",
     "options-list": "Choice and ordering question variants render their option list; the isolated fixture shows a clue question."
   },
@@ -279,90 +324,90 @@ export const DESIGN_CONDITIONAL_NODE_REASONS = Object.freeze({
     "options-list": "Revealed choice/order question variants render the options; the isolated online fixture shows a clue question."
   },
   "ersomha.draw.drawer": {
-    "canvas-status": "Canvas synchronization, paused rounds and network reconnect states show this required status overlay."
+    "canvas-status": reasonCanvasStatus
   },
   "ersomha.draw.guesser": {
-    "canvas-status": "Canvas synchronization, paused rounds and network reconnect states show this required status overlay."
+    "canvas-status": reasonCanvasStatus
   },
   "ersomha.result.drawer": {
-    "canvas-status": "Canvas synchronization, paused rounds and network reconnect states show this required status overlay.",
-    "cooperative-result": "Two-player cooperative matches render the shared cooperative result; baseline fixtures use competitive mode."
+    "canvas-status": reasonCanvasStatus,
+    "cooperative-result": reasonCooperativeResult
   },
   "ersomha.result.guesser": {
-    "canvas-status": "Canvas synchronization, paused rounds and network reconnect states show this required status overlay.",
-    "cooperative-result": "Two-player cooperative matches render the shared cooperative result; baseline fixtures use competitive mode."
+    "canvas-status": reasonCanvasStatus,
+    "cooperative-result": reasonCooperativeResult
   },
   "ersomha.over": {
-    "cooperative-result": "Two-player cooperative matches render the shared cooperative result; baseline fixtures use competitive mode."
+    "cooperative-result": reasonCooperativeResult
   },
   "social.list": {
     "friend-invite": "An active room-invitation workflow adds invite buttons to friend and group rows.",
-    "group-accept": "Pending group invitations and outgoing friend requests reveal their matching request actions.",
-    "group-reject": "Pending group invitations and outgoing friend requests reveal their matching request actions.",
-    "friend-cancel": "Pending group invitations and outgoing friend requests reveal their matching request actions."
+    "group-accept": reasonGroupAccept,
+    "group-reject": reasonGroupAccept,
+    "friend-cancel": reasonGroupAccept
   },
   "social.conversation": {
-    "group-manage": "Group conversations expose member and management controls; the baseline conversation fixture is direct.",
-    "members": "Group conversations expose member and management controls; the baseline conversation fixture is direct.",
-    "older-messages": "Pagination, off-screen new arrivals, message menus and failed outgoing messages reveal these existing actions.",
-    "new-messages": "Pagination, off-screen new arrivals, message menus and failed outgoing messages reveal these existing actions.",
-    "message-edit": "Pagination, off-screen new arrivals, message menus and failed outgoing messages reveal these existing actions.",
-    "message-delete": "Pagination, off-screen new arrivals, message menus and failed outgoing messages reveal these existing actions.",
-    "message-retry": "Pagination, off-screen new arrivals, message menus and failed outgoing messages reveal these existing actions.",
-    "report": "Pagination, off-screen new arrivals, message menus and failed outgoing messages reveal these existing actions.",
-    "record-stop": "The real microphone recording/review phases reveal these controls; preview never captures microphone data.",
-    "record-preview": "The real microphone recording/review phases reveal these controls; preview never captures microphone data.",
-    "record-cancel": "The real microphone recording/review phases reveal these controls; preview never captures microphone data.",
-    "game-invite-card": "A valid game-invitation message renders its existing join card; the default sample contains text and voice messages.",
-    "game-invite-join": "A valid game-invitation message renders its existing join card; the default sample contains text and voice messages."
+    "group-manage": reasonGroupManage,
+    "members": reasonGroupManage,
+    "older-messages": reasonOlderMessages,
+    "new-messages": reasonOlderMessages,
+    "message-edit": reasonOlderMessages,
+    "message-delete": reasonOlderMessages,
+    "message-retry": reasonOlderMessages,
+    "report": reasonOlderMessages,
+    "record-stop": reasonRecordStop,
+    "record-preview": reasonRecordStop,
+    "record-cancel": reasonRecordStop,
+    "game-invite-card": reasonGameInviteCard,
+    "game-invite-join": reasonGameInviteCard
   },
   "social.voice": {
-    "older-messages": "Pagination, off-screen new arrivals, message menus and failed outgoing messages reveal these existing actions.",
-    "new-messages": "Pagination, off-screen new arrivals, message menus and failed outgoing messages reveal these existing actions.",
-    "message-edit": "Pagination, off-screen new arrivals, message menus and failed outgoing messages reveal these existing actions.",
-    "message-delete": "Pagination, off-screen new arrivals, message menus and failed outgoing messages reveal these existing actions.",
-    "message-retry": "Pagination, off-screen new arrivals, message menus and failed outgoing messages reveal these existing actions.",
-    "report": "Pagination, off-screen new arrivals, message menus and failed outgoing messages reveal these existing actions.",
-    "record-stop": "The real microphone recording/review phases reveal these controls; preview never captures microphone data.",
-    "record-preview": "The real microphone recording/review phases reveal these controls; preview never captures microphone data.",
-    "record-cancel": "The real microphone recording/review phases reveal these controls; preview never captures microphone data.",
-    "game-invite-card": "A valid game-invitation message renders its existing join card; the default sample contains text and voice messages.",
-    "game-invite-join": "A valid game-invitation message renders its existing join card; the default sample contains text and voice messages."
+    "older-messages": reasonOlderMessages,
+    "new-messages": reasonOlderMessages,
+    "message-edit": reasonOlderMessages,
+    "message-delete": reasonOlderMessages,
+    "message-retry": reasonOlderMessages,
+    "report": reasonOlderMessages,
+    "record-stop": reasonRecordStop,
+    "record-preview": reasonRecordStop,
+    "record-cancel": reasonRecordStop,
+    "game-invite-card": reasonGameInviteCard,
+    "game-invite-join": reasonGameInviteCard
   },
   "social.group-editor": {
     "member-select": "Only friends outside the group and pending invitations are selectable; the baseline group already contains its sample friends."
   },
   "social.invite": {
-    "game-choice": "Creating a new game invite shows game choices and the existing-room toggle; the baseline fixture starts with a supplied room code.",
-    "options-list": "Creating a new game invite shows game choices and the existing-room toggle; the baseline fixture starts with a supplied room code.",
-    "entry-join": "Creating a new game invite shows game choices and the existing-room toggle; the baseline fixture starts with a supplied room code.",
-    "entry-create": "Creating a new game invite shows game choices and the existing-room toggle; the baseline fixture starts with a supplied room code."
+    "game-choice": reasonGameChoice,
+    "options-list": reasonGameChoice,
+    "entry-join": reasonGameChoice,
+    "entry-create": reasonGameChoice
   },
   "social.preferences": {
-    "members": "The blocked-account list appears only when the account has blocked another user.",
-    "member": "The blocked-account list appears only when the account has blocked another user.",
-    "unblock": "The blocked-account list appears only when the account has blocked another user."
+    "members": reasonMembers,
+    "member": reasonMembers,
+    "unblock": reasonMembers
   },
   "social.search": {
     "friend-chat": "Search returns this action only for an existing friend; other results show the add-friend action."
   },
   "social.action": {
-    "report-reason": "Reporting a user/message shows reason and detail fields; the default action fixture edits a message.",
-    "report-details": "Reporting a user/message shows reason and detail fields; the default action fixture edits a message."
+    "report-reason": reasonReportReason,
+    "report-details": reasonReportReason
   },
   "social.call": {
-    "call-open": "Collapsed/inline call UI, available output devices and audio-permission recovery reveal these existing controls.",
-    "audio-output": "Collapsed/inline call UI, available output devices and audio-permission recovery reveal these existing controls.",
-    "resume-audio": "Collapsed/inline call UI, available output devices and audio-permission recovery reveal these existing controls."
+    "call-open": reasonCallOpen,
+    "audio-output": reasonCallOpen,
+    "resume-audio": reasonCallOpen
   },
   "profile": {
-    "add-friend": "Relationship-specific actions appear on another player profile for none/incoming/outgoing request states.",
-    "friend-accept": "Relationship-specific actions appear on another player profile for none/incoming/outgoing request states.",
-    "friend-cancel": "Relationship-specific actions appear on another player profile for none/incoming/outgoing request states."
+    "add-friend": reasonAddFriend,
+    "friend-accept": reasonAddFriend,
+    "friend-cancel": reasonAddFriend
   },
   "profile.editor": {
-    "avatar-remove": "Image removal actions appear only when an approved image or pending image review exists.",
-    "cover-remove": "Image removal actions appear only when an approved image or pending image review exists."
+    "avatar-remove": reasonAvatarRemove,
+    "cover-remove": reasonAvatarRemove
   },
   "account.card": {
     "subscription": "The active subscription state shows manage-subscription instead of the purchase offer."
@@ -372,13 +417,13 @@ export const DESIGN_CONDITIONAL_NODE_REASONS = Object.freeze({
   },
   "system.dialog": {
     "member-host": "The Mafia host's handover dialog lists each other connected seat as a choice; the generic fixture is a confirmation.",
-    "rules": "Stable MaydanModal/Profile modal content exposes these real child controls when rules, score editing, question reports or share-link dialogs are opened.",
-    "score-cards": "Stable MaydanModal/Profile modal content exposes these real child controls when rules, score editing, question reports or share-link dialogs are opened.",
-    "score-minus": "Stable MaydanModal/Profile modal content exposes these real child controls when rules, score editing, question reports or share-link dialogs are opened.",
-    "score-plus": "Stable MaydanModal/Profile modal content exposes these real child controls when rules, score editing, question reports or share-link dialogs are opened.",
-    "undo": "Stable MaydanModal/Profile modal content exposes these real child controls when rules, score editing, question reports or share-link dialogs are opened.",
-    "report": "Stable MaydanModal/Profile modal content exposes these real child controls when rules, score editing, question reports or share-link dialogs are opened.",
-    "field": "Stable MaydanModal/Profile modal content exposes these real child controls when rules, score editing, question reports or share-link dialogs are opened.",
-    "share-link": "Stable MaydanModal/Profile modal content exposes these real child controls when rules, score editing, question reports or share-link dialogs are opened."
+    "rules": reasonRules,
+    "score-cards": reasonRules,
+    "score-minus": reasonRules,
+    "score-plus": reasonRules,
+    "undo": reasonRules,
+    "report": reasonRules,
+    "field": reasonRules,
+    "share-link": reasonRules
   }
 });

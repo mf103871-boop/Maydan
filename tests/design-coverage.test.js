@@ -2,11 +2,20 @@ import { test, before, after } from 'node:test';
 import assert from 'node:assert/strict';
 import { mkdtempSync, mkdirSync, rmSync, readFileSync, readdirSync } from 'node:fs';
 import path from 'node:path';
+import { createHash } from 'node:crypto';
 import { pathToFileURL } from 'node:url';
 import { build } from 'esbuild';
 import { DESIGN_SCREENS, DESIGN_REGISTRY_VERSION, getScreenDefinition, getNodeDefinition } from '../src/design/registry.js';
 import { DESIGN_SCENES, createDesignFixture } from '../src/design/screen-catalog.js';
-import { DESIGN_RENDERED_NODE_IDS } from '../src/design/coverage-map.js';
+import { DESIGN_RENDERED_NODE_IDS, DESIGN_CONDITIONAL_NODE_REASONS } from '../src/design/coverage-map.js';
+
+test('coverage inventory preserves every node and exact conditional explanation after deduplication', () => {
+  // Captured from the reviewed Phase2 inventory before sharing repeated copy.
+  // A deliberate coverage/content change must update this semantic baseline;
+  // whitespace, constant names and sharing structure do not affect it.
+  const semantics = JSON.stringify({ DESIGN_CONDITIONAL_NODE_REASONS, DESIGN_RENDERED_NODE_IDS });
+  assert.equal(createHash('sha256').update(semantics).digest('hex'), '809c8697930b72d647918038dffdaf5167f96746126c79b6959314b06d52aff8');
+});
 
 test('semantic scene registry has stable unique identities and the eight actual games', () => {
   assert.equal(DESIGN_REGISTRY_VERSION, 1);

@@ -59,7 +59,7 @@ test('workerd/D1: tutorial migration and authenticated terminal status preserve 
     `},bundle:true,format:'esm',platform:'browser',outfile:scriptPath,logLevel:'silent'});
     mf=new Miniflare(convertV4MiniflareOptions({rootPath:dir,name:'tutorial-edge-test',modules:true,scriptPath,compatibilityDate:'2026-09-01',d1Databases:{DB:'tutorial-edge-test'},durableObjects:{ROOMS:{className:'Room',useSQLite:true},LIMITERS:{className:'RequestLimiter',useSQLite:true}},bindings:{ALLOWED_ORIGINS:ORIGIN},cf:false}));
     await mf.ready;const db=await mf.getD1Database('DB');
-    const statements=migrationStatements(),migration=statements.filter(sql=>sql.startsWith('CREATE TABLE mafia_tutorial_status'));
+    const statements=migrationStatements(),migration=statements.filter(sql=>sql.startsWith('CREATE TABLE IF NOT EXISTS mafia_tutorial_status'));
     assert.equal(migration.length,1);await db.exec(statements.filter(sql=>!migration.includes(sql)).join('\n'));
     let address=0;
     async function person(){const response=await mf.dispatchFetch(ORIGIN+'/__fixture/user',{method:'POST'});assert.equal(response.status,200);return {...await response.json(),ip:`192.0.2.${++address}`};}
