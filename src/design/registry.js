@@ -155,6 +155,7 @@ const extraNodes = [
 
 
 const mafiaNodes = [
+  node('tutorial-start','تدريب مع الشخصيات','button',{editableText:false,editableIcon:false}),
   ...[['mafia-tools','أدوات المجلس'],['player-safety','إجراءات اللاعب'],['observer-join','الانتقال من المشاهدة'],['room-observe','مشاهدة المجلس'],['directory-next','المجالس التالية'],['directory-previous','المجالس السابقة']].map(([id,label])=>node(id,label,'button',{editableText:false,editableIcon:false,required:['mafia-tools','player-safety'].includes(id),repeat:id==='player-safety'||id==='room-observe'})),
   node('observer-delay','تنبيه المشاهدة المؤجلة','text',{required:true,editableText:false}),
   ...[['room-name','اسم المجلس'],['voice-mode','الصوت في المجلس'],['directory-voice','تصفية التواصل'],['directory-status','تصفية حالة المجلس'],['room-theme','ستايل المجلس']].map(([id,label])=>node(id,label,'input',{editableText:false,editableIcon:false})),
@@ -188,6 +189,8 @@ definitions.push(screen('online.mafia.tools','مافيا ميدان · أدوا�
 definitions.push(screen('online.mafia.spectator','مافيا ميدان · المشاهدة المؤجلة','مافيا ميدان',[...onlineNodes,...mafiaNodes],{game:'mafia',phase:'discussion',mode:'online'}));
 definitions.push(screen('online.mafia.privacy','مافيا ميدان · حماية الأسرار','مافيا ميدان',[node('privacy','ستار الأسرار','container',{required:true,editableText:false})],{game:'mafia',phase:'privacy',mode:'online'}));
 definitions.push(screen('online.mafia.history','مافيا ميدان · السجل','مافيا ميدان',[...mafiaNodes,...profileNodes],{game:'mafia',phase:'history',mode:'online'}));
+const tutorialIds=['tutorial-disclosure','tutorial-coach','tutorial-exit','tutorial-help-toggle','tutorial-retry','tutorial-answer','tutorial-continue','tutorial-finish','tutorial-save-exit','tutorial-stay','tutorial-resume','tutorial-restart'];
+definitions.push(screen('mafia.tutorial','مافيا ميدان · أول ليلة في الميدان','مافيا ميدان',tutorialIds.map(id=>node(id,id==='tutorial-disclosure'?'إفصاح التدريب المحلي':id==='tutorial-coach'?'المرشد التدريبي':'إجراء التدريب',id==='tutorial-disclosure'?'text':id==='tutorial-coach'?'container':'button',{required:true,editableText:false,editableIcon:false,repeat:id==='tutorial-answer'})),{game:'mafia',phase:'tutorial',mode:'local'}));
 definitions.push(screen('online.mafia.guide','مافيا ميدان · الدليل','مافيا ميدان',mafiaNodes,{game:'mafia',phase:'guide',mode:'online'}));
 definitions.push(screen('online.mafia.role-card','مافيا ميدان · البطاقة الخاصة','مافيا ميدان',mafiaNodes,{game:'mafia',phase:'role',mode:'online'}));
 definitions.push(screen('online.mafia.safety','مافيا ميدان · الأمان','مافيا ميدان',[...mafiaNodes,...profileNodes],{game:'mafia',phase:'safety',mode:'online'}));

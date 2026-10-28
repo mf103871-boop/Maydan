@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 
 const ROUTES = [
   ['home', /^\/?$/],
+  ['mafia-tutorial', /^\/tutorial\/mafia$/],
   ['game', /^\/game\/([a-z0-9-]+)$/],
   ['play', /^\/play\/([a-z0-9-]+)$/],
   ['online', /^\/online(?:\/(meenfina|fabraka|ersomha|badeeha|mafia))?$/],
@@ -109,7 +110,7 @@ export function back() {
   if (consumeBackLayer()) return;
   if (typeof history === 'undefined') return;
   if (stack.length > 1) history.back();
-  else if (['play', 'room'].includes(current.name) && exitGuard) exitGuard('/');
+  else if (['play', 'room', 'mafia-tutorial'].includes(current.name) && exitGuard) exitGuard('/');
   else navigate('/', { replace: true });
 }
 
@@ -175,7 +176,7 @@ function onHashChange() {
     consumeBackLayer();
     return;
   }
-  const leavingPlay = (previous.name === 'play' && next.path !== previous.path) || (previous.name === 'room' && routeLocation(next) !== routeLocation(previous));
+  const leavingPlay = (['play', 'mafia-tutorial'].includes(previous.name) && next.path !== previous.path) || (previous.name === 'room' && routeLocation(next) !== routeLocation(previous));
   if (leavingPlay && exitGuard) {
     // أعد المسار كما كان، ثم اسأل الحارس؛ الحارس ينادي navigate بنفسه عند التأكيد.
     // الاستعادة تدفع مُدخلًا جديدًا فوق مُدخل الوجهة، فالمكدس يبقى مطابقًا

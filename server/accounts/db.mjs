@@ -164,7 +164,7 @@ export const releaseAccountDeletion = (env, userId, attemptId) => run(env, 'DELE
 
 // ── الحذف المتسلسل ──────────────────────────────────────────────────────────
 export async function deleteUser(env, userId) {
-  const statements = ['sessions', 'auth_codes', 'trials', 'online_room_trial_claims', 'subscriptions', 'paddle_customers', 'paddle_customers_scoped', 'paddle_checkouts', 'account_deletions', 'identities', 'plus_cosmetics', 'plus_setup_presets']
+  const statements = ['sessions', 'auth_codes', 'trials', 'online_room_trial_claims', 'subscriptions', 'paddle_customers', 'paddle_customers_scoped', 'paddle_checkouts', 'account_deletions', 'identities', 'plus_cosmetics', 'plus_setup_presets', 'mafia_tutorial_status']
     .map((table) => statement(env, `DELETE FROM ${table} WHERE user_id = ?`, [userId]));
   statements.push(...await ersomhaDeleteStatements(env, userId), ...drawingReportDeleteStatements(env, userId));
   statements.push(...mafiaDeleteStatements(env,userId));

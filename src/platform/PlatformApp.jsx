@@ -26,6 +26,8 @@ import { BottomNavigation, MenuScrollRestoration } from './BottomNavigation.jsx'
 import { About } from './screens/About.jsx';
 import { Terms, Privacy } from './screens/Legal.jsx';
 import { Online } from '../online/Online.jsx';
+import { MafiaEntry } from '../games/mafia/tutorial/MafiaEntry.jsx';
+import { MafiaTutorial } from '../games/mafia/tutorial/MafiaTutorial.jsx';
 import onlineCss from '../online/online.css';
 import { AccountProvider } from '../shared/account/AccountProvider.jsx';
 import { PaywallHost } from '../shared/account/PaywallHost.jsx';
@@ -61,6 +63,8 @@ function ScreenHost({ route }) {
   // عودة الدخول (#/auth?code=) تعرض الرئيسية بينما يبدّل AccountProvider الرمز بجلسة.
   if (route.name === 'home' || route.name === 'auth') screen = <Home key="home" />;
   else if (route.name === 'game') screen = <GameDetails key={`game-${route.params.id}`} id={route.params.id} />;
+  else if (route.name === 'mafia-tutorial') screen = <MafiaTutorial key="mafia-tutorial" />;
+  else if (route.name === 'play' && route.params.id === 'mafia') screen = <MafiaEntry key="mafia-entry" />;
   else if (route.name === 'play') screen = getGame(route.params.id)?.onlineOnly ? <Online key={`online-${route.params.id}`} game={route.params.id} /> : <Play key={`play-${route.params.id}`} id={route.params.id} />;
   else if (route.name === 'players') screen = <Players key="players" />;
   else if (route.name === 'friends' || route.name === 'friend-group') screen = <div key="friends" data-social-page-slot />;
@@ -71,6 +75,7 @@ function ScreenHost({ route }) {
   else if (route.name === 'about') screen = <About key="about" />;
   else if (route.name === 'terms') screen = <Terms key="terms" />;
   else if (route.name === 'privacy') screen = <Privacy key="privacy" />;
+  else if (route.name === 'online' && route.params.id === 'mafia') screen = <MafiaEntry key="mafia-entry" />;
   else if (route.name === 'online') screen = <Online key={`online-${route.params.id || 'meenfina'}`} game={route.params.id || 'meenfina'} />;
   else if (route.name === 'room') screen = <Online key={`room-${route.params.id}-${route.params.watch==='1'?'observer':'player'}`} code={route.params.id} observer={route.params.watch==='1'} />;
   return screen;
@@ -117,9 +122,9 @@ function Providers({ children }) {
 }
 
 // عنوان المستند يتبع الشاشة (قارئات الشاشة والتبويبات والسجل)، والألعاب تحمل اسمها.
-const SCREEN_TITLES = { players: 'اللاعبون', friends: 'الأصدقاء', 'friend-group': 'الشِّلّة', store: 'المتجر', profile: 'الملف', settings: 'الإعدادات', about: 'عن ميدان', terms: 'شروط الاستخدام', privacy: 'سياسة الخصوصية', online: 'اللّمّة', room: 'الغرفة' };
+const SCREEN_TITLES = { 'mafia-tutorial': 'تدريب مافيا', players: 'اللاعبون', friends: 'الأصدقاء', 'friend-group': 'الشِّلّة', store: 'المتجر', profile: 'الملف', settings: 'الإعدادات', about: 'عن ميدان', terms: 'شروط الاستخدام', privacy: 'سياسة الخصوصية', online: 'اللّمّة', room: 'الغرفة' };
 const BASE_TITLE = 'ميدان: ألعاب جمعتنا';
-const IN_GAME_ROUTES = new Set(['play', 'online', 'room']);
+const IN_GAME_ROUTES = new Set(['play', 'online', 'room', 'mafia-tutorial']);
 export const UPDATE_READY_MESSAGE = 'تحديث ميدان جاهز — يعمل عند الفتح التالي.';
 
 function Shell() {

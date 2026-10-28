@@ -1,15 +1,16 @@
 // Actual production-node inventory verified by the semantic browser coverage test.
 // Each template ID names a semantic component; it never identifies an array index or a user.
 export const DESIGN_RENDERED_NODE_IDS = Object.freeze({
+  "mafia.tutorial": Object.freeze(["tutorial-disclosure","tutorial-coach","tutorial-exit","tutorial-help-toggle","tutorial-continue"]),
   "online.mafia.tools": Object.freeze(["close","content","header","player-safety","rules"]),
   "online.mafia.spectator": Object.freeze(["chat","event","header","mafia-tools","messages","narrative","observer-delay","phase-title","player-rail","player-seat","players","timer"]),
   "online.mafia.role-card": Object.freeze(["actions","close","content","header","role-content","role-hide"]),
   "online.mafia.history": Object.freeze(["close","content","header","history","refresh","stats"]),
   "online.mafia.privacy": Object.freeze(["privacy"]),
-  "online.mafia.guide": Object.freeze(["back","close","content","continue","header"]),
+  "online.mafia.guide": Object.freeze(["tutorial-start","back","close","content","continue","header"]),
   "online.mafia.safety": Object.freeze(["block-exit","close","content","header","report-details","submit"]),
   "online.mafia.setup": Object.freeze(["capacity","mode-choice","mode-option","room-name","rules","visibility","voice-mode"]),
-  "online.mafia.directory": Object.freeze(["actions","create-public-room","directory-mode","directory-next","directory-previous","directory-status","directory-voice","header","quick-join","refresh","room-join","room-observe","rooms"]),
+  "online.mafia.directory": Object.freeze(["rules","actions","create-public-room","directory-mode","directory-next","directory-previous","directory-status","directory-voice","header","quick-join","refresh","room-join","room-observe","rooms"]),
   "online.mafia.lobby": Object.freeze(["chat","close","composer","content","event","header","invite","message-input","messages","player-rail","player-seat","players","ready","room-settings","room-theme","rules","send","start","voice","voice-join"]),
   "online.mafia.role": Object.freeze(["audio-output","chat","event","header","mafia-tools","messages","mute","narrative","phase-title","player-rail","player-seat","players","role-card","role-toggle","tab.clues","tab.council","tab.notes","tabs","timer","voice","voice-leave"]),
   "online.mafia.opening": Object.freeze(["audio-output","chat","composer","event","header","mafia-tools","message-input","messages","mute","narrative","phase-title","player-rail","player-seat","players","role-card","role-toggle","send","tab.clues","tab.council","tab.notes","tabs","timer","voice","voice-leave"]),
@@ -141,6 +142,19 @@ export const DESIGN_RENDERED_NODE_IDS = Object.freeze({
 
 // These controls are state-dependent and intentionally absent from the default fixture.
 export const DESIGN_CONDITIONAL_NODE_REASONS = Object.freeze({
+  "mafia.tutorial": {
+    "tutorial-retry":"The actual rule-engine decision consequence exposes this whole-checkpoint retry only after an incorrect action or a missed deadline.",
+    "tutorial-answer":"The two local learning checks expose their explicit choices only after the full two-night scenario has reached its real ending.",
+    "tutorial-finish":"Entering live rooms becomes available only after the local scenario, two learning checks and role encyclopedia have been completed.",
+    "tutorial-resume":"The resume chooser is mounted only for validated current-owner, current-version decision history saved on this device.",
+    "tutorial-restart":"Starting over is offered beside resume for a validated saved lesson; completed lessons replay from the beginning on explicit request.",
+    "tutorial-save-exit":"The actual exit confirmation saves the owner-scoped decision prefix and marks the skippable lesson dismissed before navigating.",
+    "tutorial-stay":"The actual exit confirmation lets the learner dismiss the dialog and keep the current local checkpoint without changing accounts.",
+    "rules":"The real twelve-role encyclopedia is available at the final required reference step, after the scenario and learning checks.",
+    "close":"The training exit confirmation exposes the common close action only while its accessible dialog is mounted.",
+    "content":"The training exit confirmation owns this common dialog content container only while the learner asks to leave.",
+    "header":"The training exit confirmation owns the common dialog heading and close area only during an explicit exit request."
+  },
   "online.mafia.lobby": {"event":"Waiting-room event cards appear only when a public event is supplied by the server; a fresh lobby has no dawn or elimination from a prior match."},
   "online.mafia.tools": {},
   "online.mafia.spectator": {},

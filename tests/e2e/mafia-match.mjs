@@ -108,6 +108,10 @@ test('one browser player plays a whole public Mafia match through the real UI', 
     return !document.querySelector('.splash') && document.querySelector('[data-design-screen]');
   }, null, { timeout: 30_000 });
 
+  // A genuinely new account sees the real skippable intro before its first directory visit.
+  await page.waitForFunction(()=>document.querySelector('[data-design-id="tutorial-exit"]')||document.querySelector('[data-room-code]'));
+  if(await page.locator('[data-design-id="tutorial-exit"]').count()){await page.locator('[data-design-id="tutorial-exit"]').click();await page.locator('[data-design-id="tutorial-save-exit"]').click();}
+
   // The public directory lists the waiting room; its card seats the player.
   const card = page.locator(`[data-room-code="${code}"]`);
   await card.waitFor({ timeout: 20_000 });

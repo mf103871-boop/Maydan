@@ -11,7 +11,7 @@ import { accountErrorText } from './errors.js';
 import { accountStore, ACCOUNT_PREFIX, KEYS } from './store.js';
 import {
   ClientError, accountOffline, authStartUrl, appleNative, createPaddleCheckout, deleteAccountRequest,
-  exchangeCode, getBillingConfig, getMe, getPaddlePortal, mergeTrialsRequest, postAppleTransaction, postTrial, redeemRequest, signout, request,
+  exchangeCode, getBillingConfig, getMe, getPaddlePortal, mergeTrialsRequest, postAppleTransaction, postTrial, redeemRequest, signout, request, resolveAccountServer,
 } from './api.js';
 import { deliverAppleTransaction, waitForEntitlement } from './purchases.js';
 import { callNative, isNativeShell, onNativeEvent } from './native.js';
@@ -21,6 +21,7 @@ import { usePlatform } from '../../platform/context.js';
 import { navigate, useRoute } from '../../platform/router.js';
 import { rememberProfileReturn, consumeProfileReturn } from './return-path.js';
 import { beginAuthAttempt, currentAuthAttempt, clearAuthAttempt } from './attempt.js';
+import { clearDeletedTutorialAccount } from '../../games/mafia/tutorial/progress.js';
 
 const EMPTY = Object.freeze({});
 // بديل ثابت حين لا يوفّر المزوّد تنبيهات: دالة جديدة في كل رسم كانت تعيد بناء كل
@@ -631,20 +632,29 @@ export function AccountProvider({ children }) {
   }, [options, applyMe, clearLocalAuth, closePaywall, toast]);
 
   const deleteAccount = useCallback(async () => {
+    const epoch = authEpochRef.current;
+    const deletedOwner = { userId: meRef.current?.user?.id, server: resolveAccountServer() };
+    let clearedOwner = false;
     setBusy('delete');
     try {
       if (accountOffline()) throw new ClientError('OFFLINE');
       if (!sessionRef.current) throw new ClientError('AUTH_REQUIRED');
-      await deleteAccountRequest(options());
-      clearLocalAuth();
-      toast('حُذف حسابك');
+      await deleteAccountRequest({ ...options(), server: deletedOwner.server });
+      clearDeletedTutorialAccount(deletedOwner);
+      if (epoch === authEpochRef.current) {
+        clearLocalAuth();
+        clearedOwner = true;
+        toast('حُذف حسابك');
+      }
       return true;
     } catch (err) {
+      if (epoch !== authEpochRef.current) return false;
+      clearedOwner = isAuthError(codeOf(err));
       const code = handleError(err);
       toast(accountErrorText(code));
       return false;
     } finally {
-      setBusy(false);
+      if (epoch === authEpochRef.current || clearedOwner) setBusy(false);
     }
   }, [options, clearLocalAuth, handleError, toast]);
 
