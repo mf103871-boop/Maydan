@@ -84,8 +84,15 @@ test('real six-client socket game keeps private actions private, isolates voice 
   const grant=decodeJws(a.body.connection.token).payload;assert.equal(grant.video.canPublishData,false);assert.equal(grant.exp-grant.iat,300);assert.equal(grant.metadata,undefined);assert.match(grant.video.room,/^g-[a-f0-9-]+$/);
   assert.equal((await h.api(g.people[0],`/api/rooms/${g.code}/voice`,{deviceId:'phone-b',knownEpoch:a.body.mediaEpoch})).body.error,'MAFIA_VOICE_DEVICE');
   const refreshed=await h.api(g.people[0],`/api/rooms/${g.code}/voice`,{deviceId:'phone-a'});assert.equal(refreshed.status,200);
+  const refreshedGrant=decodeJws(refreshed.body.connection.token).payload,transitionAt=Date.now(),providerBeforeTransition=h.provider.length;
   await h.phase(g.code);await until(()=>g.clients.every(c=>c.state.phase==='night'));
-  assert.ok(h.provider.some(p=>p.method==='RemoveParticipant'&&p.body.room===grant.video.room&&p.body.revoke_token_ts>=Math.floor(Date.now()/1000)));
+  const transitionRemoval=h.provider.slice(providerBeforeTransition).find(p=>p.method==='RemoveParticipant'&&p.body.identity===g.people[0].accountId&&p.body.room===grant.video.room);
+  assert.ok(transitionRemoval,'the phase transition revokes this participant in the previous channel');
+  assert.ok(transitionRemoval.body.revoke_token_ts>Math.floor(transitionAt/1000));
+  for(const issued of [grant,refreshedGrant]){
+    assert.ok(transitionRemoval.body.revoke_token_ts>issued.iat);
+    assert.ok(transitionRemoval.body.revoke_token_ts>issued.nbf);
+  }
   const room=h.app.rooms.get(g.code).instance.room,mafia=room.participants.find(id=>room.roleStates[id].faction==='mafia'),town=room.participants.find(id=>room.roleStates[id].faction==='town');
   const mi=g.people.findIndex(p=>p.id===mafia),ti=g.people.findIndex(p=>p.id===town),before=g.clients[ti].state;
   const muted=await h.api(g.people[ti],`/api/rooms/${g.code}/voice`,{deviceId:ti===0?'phone-a':'town-phone'});assert.equal(muted.body.quiet,true);assert.equal(muted.body.connection,null);
@@ -285,15 +292,26 @@ test('a timed-out old leave or join cannot revoke or reclaim a newer same-device
 for(const background of [false,true])test(`signout strictly revokes session-bound Mafia voice with ${background?'native audio and a closed':'a live'} socket`,async t=>{
   const h=await setup(t),g=await h.group();await g.clients[0].command('start');await h.phase(g.code);
   const person=g.people[0],path=`/api/rooms/${g.code}/voice`,voice=await h.api(person,path,{deviceId:'native-phone',accountSessionId:'untrusted-client-value'});
-  assert.equal(voice.status,200);const item=h.app.rooms.get(g.code),channel=decodeJws(voice.body.connection.token).payload.video.room;
+  assert.equal(voice.status,200);const item=h.app.rooms.get(g.code),grant=decodeJws(voice.body.connection.token).payload,channel=grant.video.room;
   assert.equal(item.instance.room.mafiaMedia.authSessions[person.accountId].id,person.sessionId,'the router replaces any client-supplied binding');
   assert.equal(JSON.stringify(voice.body).includes(person.sessionId),false,'account session identity is not exposed in media responses');
   if(background) {
     g.clients[0].stop();await until(()=>!item.instance.sockets().some(s=>item.instance.attachment(s).id===person.id));
     await item.instance.queue;assert.equal(item.instance.room.members.find(m=>m.id===person.id).connected,true,'valid native background voice retains ordinary seat presence');
   }
+  // Revocation is issued at the final millisecond of a second; the HTTP response
+  // may be observed in the next second. Its cutoff must fence the issued token,
+  // not remain in the future relative to an arbitrarily later assertion.
+  const signoutAt=Math.floor(Date.now()/1000)*1000+999,providerBeforeSignout=h.provider.length;
+  let clock=signoutAt;t.mock.method(Date,'now',()=>clock);
   const response=await h.api(person,'/api/auth/signout',{});assert.equal(response.status,204);
-  assert.ok(h.provider.some(p=>p.method==='RemoveParticipant'&&p.body.identity===person.accountId&&p.body.room===channel&&p.body.revoke_token_ts>Math.floor(Date.now()/1000)));
+  clock+=1;
+  assert.equal(Math.floor(Date.now()/1000),Math.floor(signoutAt/1000)+1,'the response observation crosses the second boundary');
+  const removal=h.provider.slice(providerBeforeSignout).find(p=>p.method==='RemoveParticipant'&&p.body.identity===person.accountId&&p.body.room===channel);
+  assert.ok(removal,'signout revokes this account in its issued voice channel');
+  assert.ok(removal.body.revoke_token_ts>Math.floor(signoutAt/1000));
+  assert.ok(removal.body.revoke_token_ts>grant.iat);
+  assert.ok(removal.body.revoke_token_ts>grant.nbf);
   const room=item.instance.room,seat=room.members.find(m=>m.id===person.id);
   assert.equal(seat.connected,false);assert.equal(seat.left,false,'the 90-second return seat is retained');
   assert.equal(room.mafiaMedia.authSessions[person.accountId],undefined);assert.equal(room.mafiaMedia.devices[person.accountId],undefined);
