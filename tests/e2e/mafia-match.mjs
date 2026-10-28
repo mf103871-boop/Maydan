@@ -200,3 +200,75 @@ test('one browser player plays a whole public Mafia match through the real UI', 
   assert.deepEqual(errors, []);
   await context.close();
 });
+
+test('real host lobby controls remain hit-testable with the startup notice in both orientations', { timeout: 180_000 }, async () => {
+  const people = []; for (let n = 0; n < 12; n++) people.push({ ...await person(n % 6), name: `لاعب العرض ${n + 1}` });
+  const [host] = people;
+  const { code } = await api(host, '/api/rooms', { ...host, settings: { mode: 'shadow', capacity: 12, visibility: 'public', voiceMode: 'off', roomName: 'فحص عناصر المجلس' } });
+  const bots = [];
+  for (const p of people.slice(1)) {
+    await api(p, `/api/rooms/${code}/join`, p);
+    const client = new RoomClient({ server: app.url, code, session: { id: p.id, token: p.token }, getAccountAuthorization: () => `Bearer ${p.authorization}`, WebSocketImpl: OriginSocket });
+    bots.push(client); clients.push(client); client.start();
+  }
+  await until(() => bots.every(client => client.state?.members.filter(member => member.connected).length === 11), 'layout bots connected');
+  for (const client of bots) await client.command('ready', { ready: true });
+  const context = await browser.newContext({ viewport: { width: 390, height: 844 }, locale: 'ar', reducedMotion: 'reduce' });
+  await context.addInitScript(({ key, token, server, code, seat, owner }) => {
+    localStorage.setItem(key, JSON.stringify(token));
+    localStorage.setItem(`maydan:online:${server}:${code}`, JSON.stringify(seat));
+    localStorage.setItem(`maydan:online:${server}:roomOwner:${code}`, JSON.stringify(owner));
+  }, { key: environmentStorageKey('maydan:account:', app.url) + 'session', token: host.authorization, server: app.url, code, seat: { id: host.id, token: host.token }, owner: host.accountId });
+  const page = await context.newPage(), errors = [], checks = [];
+  page.on('pageerror', error => errors.push(error.message));
+  const output = `.cache/mafia-layout-${process.env.MAFIA_E2E_ENGINE === 'webkit' ? 'webkit' : 'chromium'}`;
+  await mkdir(output, { recursive: true });
+  const settle = () => page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))));
+  async function controls(notice, width, height) {
+    await page.locator('[data-design-id="player-rail"]').evaluate(rail => { rail.scrollTop = 0; });
+    await settle();
+    const values = await page.evaluate(() => {
+      const result = { width: innerWidth, height: innerHeight, overflow: document.documentElement.scrollWidth > innerWidth + 1, notice: document.documentElement.hasAttribute('data-startup-background-visible'), floatingLauncherVisible: [...document.querySelectorAll('.lamma-launcher')].some(element => getComputedStyle(element).display !== 'none'), controls: [] };
+      for (const id of ['message-input', 'send', 'ready', 'start', 'exit']) {
+        const element = document.querySelector(`[data-design-id="${id}"]`), rect = element.getBoundingClientRect();
+        const points = [[.5,.5],[.25,.25],[.75,.75]].map(([x,y]) => { const hit = document.elementFromPoint(rect.x + rect.width*x, rect.y + rect.height*y); return hit === element || element.contains(hit) || element.disabled && getComputedStyle(element).pointerEvents === 'none' && hit === element.parentElement; });
+        result.controls.push({ id, x: rect.x, y: rect.y, width: rect.width, height: rect.height, bottom: rect.bottom, disabled: !!element.disabled, hit: points.every(Boolean), hits: points });
+      }
+      return result;
+    });
+    await page.screenshot({ path: `${output}/${notice}-${width}x${height}.png` }); checks.push({ notice, width, height, ...values });
+    assert.equal(values.floatingLauncherVisible, false, 'Mafia hides only the redundant global launcher');
+    assert.equal(values.overflow, false, `${notice} ${width}: horizontal overflow`);
+    for (const control of values.controls) {
+      assert.ok(control.width >= 44 && control.height >= 44, `${notice} ${width}: touch target ${JSON.stringify(control)}`);
+      assert.ok(control.y >= 0 && control.bottom <= height + 1 && control.hit, `${notice} ${width}: obscured control ${JSON.stringify(control)}`);
+    }
+    assert.equal(values.controls.find(control => control.id === 'start').disabled, false, 'the real ready host can start');
+    assert.equal(await page.locator('[data-design-id="player-seat"]').count(), 12);
+    const lastCard = await page.locator('[data-design-id="player-seat"]').last().evaluate(card => {
+      const rail = card.closest('.mafia-player-rail'), grid = card.closest('.mafia-seats');
+      rail.scrollTop = rail.scrollHeight; grid.scrollTop = grid.scrollHeight;
+      const rect = card.getBoundingClientRect(), hit = document.elementFromPoint(rect.x + rect.width/2, rect.y + rect.height/2);
+      const result = { hit: hit === card || card.contains(hit), top: rect.top, bottom: rect.bottom };
+      rail.scrollTop = 0; grid.scrollTop = 0; return result;
+    });
+    assert.ok(lastCard.hit && lastCard.top >= 0 && lastCard.bottom <= height + 1, `${notice} ${width}: twelfth player is unreachable ${JSON.stringify(lastCard)}`);
+  }
+  try {
+    await page.goto(`${webOrigin}/#/room/${code}`);
+    await page.waitForFunction(() => { const button = [...document.querySelectorAll('.splash button')].find(node => !node.disabled && node.textContent.includes('الدخول بالصور المتاحة')); button?.click(); return !document.querySelector('.splash') && document.querySelector('[data-design-screen="online.mafia.lobby"]'); }, null, { timeout: 30000 });
+    await until(() => bots.every(client => client.state?.members.every(member => member.connected && member.ready)), 'layout host and bots ready');
+    await page.waitForFunction(() => document.documentElement.hasAttribute('data-startup-background-visible'));
+    for (const [width, height] of [[320,568],[390,844],[430,932],[844,390]]) { await page.setViewportSize({ width, height }); await page.evaluate(() => document.activeElement?.blur()); await controls('notice-visible', width, height); }
+    await page.setViewportSize({ width: 390, height: 490 }); await page.locator('[data-design-id="message-input"]').fill('مسودة لا تُرسل');
+    await page.waitForFunction(() => !document.documentElement.hasAttribute('data-startup-background-visible')); await controls('keyboard-focused',390,490);
+    await page.locator('[data-design-id="message-input"]').fill(''); await page.evaluate(() => document.activeElement?.blur());
+    await page.waitForFunction(() => document.documentElement.hasAttribute('data-startup-background-visible')); await page.getByRole('button', { name: 'إخفاء حالة الصور', exact: true }).click();
+    await page.waitForFunction(() => !document.querySelector('.startup-background'));
+    for (const [width, height] of [[320,568],[390,844],[430,932],[844,390]]) { await page.setViewportSize({ width, height }); await controls('notice-closed', width, height); }
+    assert.deepEqual(errors, []);
+  } finally {
+    await writeFile(`${output}/results.json`, JSON.stringify({ checks, errors, realApp: true, realLocalRoom: true, realSplash: true, physicalIPhone: false }, null, 2));
+    await context.close();
+  }
+});

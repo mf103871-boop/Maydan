@@ -41,3 +41,7 @@ body:has(.mafia-online-shell){background:#0c1019}
 .mafia-entry .mafia-directory{margin-top:0}.mafia-entry .mafia-directory-heading h2{font-size:22px}.mafia-entry .online-footnote{font-size:12px}
 .mafia-room-shell .room-reactions{display:none}
 @media(orientation:landscape) and (max-height:550px){.mafia-online-shell:has(.mafia-compact-game:not(.is-finished)){max-width:none}.mafia-room-shell:has(.mafia-compact-game:not(.is-finished)){min-height:200px}}
+
+/* Mafia owns its compact room controls. The redundant global launcher must not
+   cover the card dock or image-status close button; dialogs and calls stay intact. */
+body:has(.mafia-room-shell) .lamma-launcher{display:none}
