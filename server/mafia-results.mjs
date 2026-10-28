@@ -3,7 +3,8 @@ import { stmt } from './lamma/common.mjs';
 import { liveAccountSql } from './moderation/access.mjs';
 
 export function prepareMafiaResult(room,now=Date.now()) {
-  if(room.phase!=='over'||!room.matchId||room.technicalAbort||room.mafiaMedia?.failed||!room.participants?.length)return null;
+  // A match that finished over text during a voice outage is a real result.
+  if(room.phase!=='over'||!room.matchId||room.technicalAbort||!room.participants?.length)return null;
   const key=`${room.mafiaKey}:${room.matchId}`;
   const results=matchResults(room);
   // A game summary contains the public end-of-match reveal, never private chat.

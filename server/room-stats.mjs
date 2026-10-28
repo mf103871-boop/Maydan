@@ -24,7 +24,7 @@ export function prepareRoomStats(previous, candidate, now = Date.now()) {
     };
   }
   if(candidate.game==='mafia') {
-    if(candidate.phase!=='over'||previous?.phase==='over'||!candidate.statsMatch||candidate.technicalAbort||candidate.mafiaMedia?.failed)return [];
+    if(candidate.phase!=='over'||previous?.phase==='over'||!candidate.statsMatch||candidate.technicalAbort)return [];
     return matchResults(candidate).flatMap(result=>{
       const userId=candidate.statsMatch.accounts[result.playerId];if(!userId)return [];
       return [{userId,eventId:candidate.statsMatch.eventId,game:'mafia',won:!!result.won,draw:candidate.outcome?.faction==='draw',finishedAt:now}];

@@ -1,7 +1,7 @@
 import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import QRCode from 'qrcode';
 import config from '../../online.config.json';
-import { Screen, TopBar, Button, Card, ConfirmModal, Podium, Scoreboard } from '../shared/ui/components.jsx';
+import { Screen, TopBar, Button, Card, ConfirmModal, Modal, Podium, Scoreboard } from '../shared/ui/components.jsx';
 import { Avatar, AvatarPicker, GameArtwork, ClayStage } from '../shared/brand/art.jsx';
 import { burstConfetti, vignette } from '../shared/fx/index.js';
 import { navigate, setExitGuard } from '../platform/router.js';
@@ -145,7 +145,7 @@ export function Entry({ initialCode = '', initialGame = 'meenfina', onJoined, on
       save(SERVER, 'profile', { name: name.trim(), avatar }); save(SERVER, 'lastRoom', result.code); save(SERVER, pendingKey, null);
       onJoined(result.code, session, stored);
     } catch (e) {
-      // الخادم يردّ PLUS_REQUIRED لمسجّل غير مشترك استهلك تجربته: الجدار أوضح من تنبيه أحمر.
+      // A legacy server may still request paid hosting; do not turn free gameplay into a paywall.
       if (!requestCurrent(submitOwner,generation)) return;
       if (e.code === 'PLUS_REQUIRED') setError('UPDATE_REQUIRED');
       else setError(e.code || 'NETWORK');
@@ -163,7 +163,7 @@ export function Entry({ initialCode = '', initialGame = 'meenfina', onJoined, on
       const result = await post(SERVER, roomCode ? `/api/rooms/${roomCode}/join` : '/api/matchmaking/join', { ...session, name: name.trim() || account.user.name, avatar, mode: directoryMode, game: 'mafia', capabilities: ROOM_CAPABILITIES,...(roomCode?{matchmaking:true}:{}) }, { headers: account.authHeaders() });
       if (!requestCurrent(owner,generation)) return;
       const stored = save(SERVER,result.code,session); save(SERVER,`roomOwner:${result.code}`,owner); save(SERVER,'lastRoom',result.code); save(SERVER,'persistence',stored); save(SERVER,pendingKey,null); onJoined(result.code,session,stored);
-    } catch(error) { if (requestCurrent(owner,generation)) {setError(error.code || 'NETWORK');if(['FULL','FULL_MAFIA','STARTED','NOT_FOUND','MAFIA_BLOCKED','MAFIA_NO_ROOMS'].includes(error.code))setDirectoryRefresh(n=>n+1);} }
+    } catch(error) { if (requestCurrent(owner,generation)) {setError(error.code || 'NETWORK');if(['FULL','FULL_MAFIA','STARTED','NOT_FOUND','MAFIA_BLOCKED','MAFIA_NO_ROOMS','BANNED'].includes(error.code))setDirectoryRefresh(n=>n+1);} }
     finally { if(requestCurrent(owner,generation))setBusy(false); }
   }
   return <section className={`online-entry stack ${game==='mafia'?'mafia-noir mafia-entry':''}`}>
@@ -248,6 +248,9 @@ export function Lobby({ state, me, isHost, disabled, act }) {
   const canStart = players.length >= minimum && players.every((m) => m.connected && m.ready);
   // إزالة لاعب متصل قرار يستحق تأكيدًا؛ المقعد المنقطع يُزال مباشرة. الإزالة تمنع العودة إلى هذه الغرفة.
   const [kickTarget, setKickTarget] = useState(null);
+  // A Mafia host can hand the room to someone who can start it (Plus or a free trial).
+  const [handover, setHandover] = useState(false);
+  const successors = state.game === 'mafia' && isHost ? players.filter((m) => m.id !== me?.id && m.connected) : [];
   return <section data-design-screen="online.lobby" className="stack">
     <Invite code={state.code} />
     {isHost && <label className="online-field plus-room-picker">ستايل المجلس<select aria-label="ستايل المجلس" disabled={disabled} value={state.appearance?.themeId || ''} onChange={event => {
@@ -263,6 +266,7 @@ export function Lobby({ state, me, isHost, disabled, act }) {
       </li>)}</ul>
       <Button data-design-id="ready" full disabled={disabled} variant={me?.ready ? 'secondary' : 'primary'} onClick={() => act('ready', { ready: !me?.ready })}>{me?.ready ? 'أنا جاهز ✓ — إلغاء الجاهزية' : 'أنا جاهز'}</Button>
       {isHost ? <Button full variant="primary" size="lg" className={canStart ? 'is-armed' : ''} disabled={disabled || !canStart} data-design-id="start" data-design-required="true" onClick={() => act('start')}>ابدأ اللعب</Button> : <p className="online-footnote">المضيف يبدأ الجولة عندما يجهز الجميع.</p>}
+      {successors.length > 0 && <Button data-design-id="host-handover" full variant="ghost" disabled={disabled} onClick={() => setHandover(true)}>تسليم الاستضافة لغيرك</Button>}
       {!canStart && isHost && <p className="online-footnote">{state.game === 'mafia' ? `نحتاج ${arabic(minimum)} لاعبين على الأقل، متصلين وجاهزين جميعًا.` : minimum === 2 ? 'نحتاج لاعبين على الأقل، متصلين وجاهزين جميعًا.' : 'نحتاج ٣ لاعبين على الأقل، متصلين وجاهزين جميعًا.'} تقدر تزيل مقعدًا منقطعًا من الانتظار.</p>}
       {state.game === 'fabraka' && minimum === 2 && players.length === 2 && <p className="online-footnote" role="status">تحدّي لشخصين: فبركة صاحبك تمتزج بخيارات اللعبة، والحقيقة تبقى سرّية حتى الكشف.</p>}
       {state.game === 'ersomha' && <p className="online-footnote" role="status">{players.length === 2 ? 'ثنائي متعاون: تتبادلان الرسم ضد الوقت، ونتيجتكما مشتركة.' : 'من ٣ لاعبين: منافسة فردية وأدوار رسم متوازنة للجميع.'} يثبت نمط المباراة عند البداية.</p>}
@@ -270,9 +274,10 @@ export function Lobby({ state, me, isHost, disabled, act }) {
     {state.game === 'fabraka' ? <Card className="stack"><h2>فبركة · {FABRAKA_MODES[state.settings.mode]}</h2><p>{arabic(state.rounds)} جولات · {state.settings.writeSeconds ? `${arabic(state.settings.writeSeconds)} ثانية للكتابة` : 'كتابة براحتنا'} · {state.settings.discussionSeconds ? `${arabic(state.settings.discussionSeconds)} ثانية للنقاش` : 'بدون نقاش'} · ٣٠ ثانية للتصويت.</p><FabrakaRules /></Card>
       : state.game === 'ersomha' ? <ErsomhaLobbySettings state={state} isHost={isHost} disabled={disabled} act={act} />
       : state.game === 'badeeha' ? <BadeehaLobbyInfo state={state} />
-      : state.game === 'mafia' ? <MafiaLobbyInfo state={state}/>
+      : state.game === 'mafia' ? <MafiaLobbyInfo state={state} isHost={isHost} disabled={disabled} act={act}/>
       : <p className="online-footnote">{arabic(state.rounds)} جولات · ٣٠ ثانية لكل تصويت · الأعلى أصواتًا يكسب نقطة، والتعادل يحتسب للجميع.</p>}
     {kickTarget && <ConfirmModal title={`تزيل ${kickTarget.name}؟`} message="يخرج من الغرفة ولا يستطيع العودة إليها بهذا الرمز." confirmLabel="إزالة" cancelLabel="إبقاؤه" onConfirm={() => { const target = kickTarget; setKickTarget(null); act('kick', { targetId: target.id }); }} onCancel={() => setKickTarget(null)} />}
+    {handover && <Modal title="تسليم استضافة المجلس" onClose={() => setHandover(false)}><div className="stack"><p className="muted">المضيف الجديد يبدأ المباراة ويعدّل الإعدادات ويزيل المقاعد بدلًا منك، واستضافة اللعب مجانية للجميع. لا تعود الاستضافة إليك إلا إذا سلّمها لك.</p>{successors.map((m) => <Button data-design-id="member-host" key={m.id} full disabled={disabled} onClick={() => { setHandover(false); act('host', { targetId: m.id }); }}>{m.name}</Button>)}</div></Modal>}
   </section>;
 }
 // «دقيقة واحدة»، «دقيقتان»، «٣–١٠ دقائق»، ثم «١١ دقيقة».

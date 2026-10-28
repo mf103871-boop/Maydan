@@ -6,7 +6,7 @@ import { createUser, upsertSubscription, revokeSession } from '../server/account
 import { issueSession } from '../server/accounts/session.mjs';
 import { RoomClient, newCredentials } from '../src/online/client.js';
 import { GRACE_MS } from '../src/shared/account/config.js';
-import { ROOM_REACTIONS } from '../src/online/shared.js';
+import { ROOM_REACTIONS, BADEEHA_PROTOCOL } from '../src/online/shared.js';
 
 const ORIGIN='http://localhost:3000';
 class BrowserSocket extends WebSocket {constructor(url){super(url,{origin:ORIGIN});}}
@@ -83,4 +83,22 @@ test('Plus stickers never bypass Mafia private-phase communication rules',async 
   for(const c of h.clients.slice(1))await c.command('ready',{ready:true});await h.clients[0].command('start');assert.equal(room.room.phase,'role');
   await assert.rejects(h.clients[0].reactCosmetic('noir.sticker.2'),{code:'PRIVATE'});
   await assert.rejects(h.clients[0].react(ROOM_REACTIONS[0]),{code:'PRIVATE'});assert.equal(events.length,1);
+});
+
+
+test('Badeeha keeps optional account identity, free hosting and the live-host suspension check',async t=>{
+  const h=await setup(t,2),host=h.people[0];
+  const categories=['c1','c2','c3','c4','c5','c6'],deck=Object.fromEntries(categories.map(id=>[id,[]]));
+  for(let n=0;n<20;n++)deck[categories[n%6]].push({qid:`question-${n}`,p:200});
+  for(const person of h.people){person.game='badeeha';person.capabilities={badeeha:BADEEHA_PROTOCOL};person.settings={mode:'standard',roundSize:20,timer:60,categories,deck};}
+  const {room}=await h.open();assert.equal(room.room.members[0].accountUserId,host.accountId);
+  await assert.rejects(h.clients[0].command('appearance',{themeId:'sahra.roomTheme',accountAuthorization:`Bearer ${host.accountToken}`}),{code:'PLUS_REQUIRED'});
+  await h.grant(host);await h.clients[0].command('appearance',{themeId:'sahra.roomTheme',accountAuthorization:`Bearer ${host.accountToken}`});
+  await h.clients[1].command('ready',{ready:true});
+  const now=Date.now();await h.app.env.DB.prepare('INSERT INTO moderation_suspensions(user_id,actor_id,reason,created_at,updated_at) VALUES(?,?,?,?,?)').bind(host.accountId,'fixture-moderator','test',now,now).run();
+  await assert.rejects(h.clients[0].command('start'),{code:'AUTH'});assert.equal(room.room.phase,'lobby','free gameplay never bypasses suspension');
+  await h.app.env.DB.prepare('DELETE FROM moderation_suspensions WHERE user_id=?').bind(host.accountId).run();
+  await h.grant(host,Date.now()-GRACE_MS-1000,'expired');h.clients[0].start();await until(()=>h.clients[0].connectionStatus==='connected');
+  await h.clients[0].command('start');assert.equal(room.room.phase,'board');assert.equal(room.room.appearance,null);
+  assert.equal((await h.app.env.DB.prepare('SELECT COUNT(*) AS n FROM trials').first()).n,0);
 });

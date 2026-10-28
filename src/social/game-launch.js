@@ -58,6 +58,8 @@ export function createSocialGameLauncher({ account, target, isCurrent = () => tr
         assertCurrent();
         if (!Object.hasOwn(ONLINE_GAMES, game)) throw Object.assign(new Error('اختر لعبة متاحة.'), { code: 'INVALID' });
         if (!room) {
+          // Badeeha's round is dealt by the caller on the host's phone (six categories and question IDs).
+          if (game === 'badeeha' && !settings?.deck) throw Object.assign(new Error('اختر ست فئات لبَديهة.'), { code: 'INVALID' });
           const key = `pendingSocialCreate:${owner}:${target.targetType}:${target.targetId}:${game}`;
           const session = read(server, key) || credentials();
           store(server, key, session);
@@ -66,6 +68,7 @@ export function createSocialGameLauncher({ account, target, isCurrent = () => tr
           const result = await createRoom(server, '/api/rooms', { ...session, name, avatar, game,
             deviceId: getDeviceId(), rounds: 5, capabilities: ROOM_CAPABILITIES,
             ...(game === 'mafia' ? { settings: settings || { mode:'classic', capacity:8, visibility:'private' } } : {}),
+            ...(game === 'badeeha' ? { settings } : {}),
             ...(game === 'ersomha' ? { settings: { ...ERSOMHA_DEFAULT_SETTINGS } } : {}),
             ...(game === 'fabraka' ? { settings: { mode: 'classic', rounds: 3, style: 'curious', categories: [], writeSeconds: 30, discussionSeconds: 15, funnyVote: true, finalDouble: false } } : {}) },
           { headers: account.authHeaders() });

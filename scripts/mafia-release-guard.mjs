@@ -3,6 +3,7 @@
 // A release operator must supply independently captured/frozen evidence; passing
 // a fixture does not establish that production or physical devices were checked.
 import assert from 'node:assert/strict';
+import { MAFIA_ROOMS_CEILING, MAFIA_VOICE_CEILING } from '../server/mafia-limits.mjs';
 
 const WORKERS = ['maydan-game', 'maydan-rooms'];
 const SHA256 = /^[a-f0-9]{64}$/;
@@ -73,8 +74,8 @@ export function assertMafiaReleasePreservation(before, after, evidence, now = Da
   for (const worker of Object.values(after.workers)) {
     const rooms = Number(variable(worker, 'MAFIA_MAX_ACTIVE_ROOMS'));
     const participants = Number(variable(worker, 'MAFIA_MAX_VOICE_PARTICIPANTS'));
-    assert.ok(Number.isInteger(rooms) && rooms >= 1 && rooms <= 6);
-    assert.ok(Number.isInteger(participants) && participants >= 12 && participants <= 80);
+    assert.ok(Number.isInteger(rooms) && rooms >= 1 && rooms <= MAFIA_ROOMS_CEILING);
+    assert.ok(Number.isInteger(participants) && participants >= 12 && participants <= MAFIA_VOICE_CEILING);
     assert.ok(rooms * 12 <= participants && participants + capacity.socialReserve <= capacity.confirmedLimit, 'Configured Mafia capacity exceeds the verified reserved quota.');
   }
   return { passed: true, scope: evidence.scope, sourceCommit: evidence.sourceCommit, pendingMigrations: pending,

@@ -23,12 +23,20 @@ export function normalizeMafiaSettings(value = {}) {
   return { mode, capacity: Math.max(min, Math.min(max, Number(value.capacity) || (mode === 'shadow' ? 10 : 8))), visibility: value.visibility === 'public' ? 'public' : 'private' };
 }
 
+// Shared by room creation and the host's lobby editor. `present` counts the
+// seats already taken: the server refuses a capacity below it.
+function MafiaSettingsFields({ settings, onChange, disabled, present = 0 }) {
+  return <>
+    <div data-design-id="mode-choice" className="mafia-mode-picker" role="group" aria-label="طور المباراة">{[['classic','المجلس الأساسي','٦–٨ لاعبين · فريقان'],['shadow','رابطة الظل','٩–١٢ لاعبًا · ثلاثة أطراف']].map(([mode,title,detail]) => <button data-design-id="mode-option" type="button" key={mode} disabled={disabled || present > (mode === 'shadow' ? 12 : 8)} aria-pressed={settings.mode === mode} onClick={() => onChange(normalizeMafiaSettings({ ...settings, mode, capacity: mode === 'shadow' ? Math.max(10, present) : 8 }))}><strong>{title}</strong><small>{detail}</small></button>)}</div>
+    <div className="mafia-settings-row"><label>سعة المجلس<select data-design-id="capacity" value={settings.capacity} disabled={disabled} onChange={event => onChange({ ...settings, capacity: Number(event.target.value) })}>{(settings.mode === 'shadow' ? [9,10,11,12] : [6,7,8]).map(n => <option key={n} value={n} disabled={n < present}>{ar(n)} لاعبين</option>)}</select></label>
+      <label>ظهور الغرفة<select data-design-id="visibility" disabled={disabled} value={settings.visibility} onChange={event => onChange({ ...settings, visibility: event.target.value })}><option value="private">خاصة · برمز أو دعوة</option><option value="public">عامة · يستقبل المجلس لاعبين</option></select></label></div>
+  </>;
+}
+
 export function MafiaSettings({ value = MAFIA_DEFAULT_SETTINGS, onChange = noop, disabled = false }) {
   const settings = normalizeMafiaSettings(value);
   return <section data-design-screen="online.mafia.setup" className="mafia-noir mafia-settings stack" aria-label="إعداد مافيا ميدان"><style>{css}</style>
-    <div data-design-id="mode-choice" className="mafia-mode-picker" role="group" aria-label="طور المباراة">{[['classic','المجلس الأساسي','٦–٨ لاعبين · فريقان'],['shadow','رابطة الظل','٩–١٢ لاعبًا · ثلاثة أطراف']].map(([mode,title,detail]) => <button data-design-id="mode-option" type="button" key={mode} disabled={disabled} aria-pressed={settings.mode === mode} onClick={() => onChange(normalizeMafiaSettings({ ...settings, mode, capacity: mode === 'shadow' ? 10 : 8 }))}><strong>{title}</strong><small>{detail}</small></button>)}</div>
-    <div className="mafia-settings-row"><label>سعة المجلس<select data-design-id="capacity" value={settings.capacity} disabled={disabled} onChange={event => onChange({ ...settings, capacity: Number(event.target.value) })}>{(settings.mode === 'shadow' ? [9,10,11,12] : [6,7,8]).map(n => <option key={n} value={n}>{ar(n)} لاعبين</option>)}</select></label>
-      <label>ظهور الغرفة<select data-design-id="visibility" disabled={disabled} value={settings.visibility} onChange={event => onChange({ ...settings, visibility: event.target.value })}><option value="private">خاصة · برمز أو دعوة</option><option value="public">عامة · يستقبل المجلس لاعبين</option></select></label></div>
+    <MafiaSettingsFields settings={settings} onChange={onChange} disabled={disabled}/>
     <p className="mafia-muted">حساب لكل لاعب. استضافة الغرف والانضمام واللعب مجانية بالكامل. لا تُباع قوة أو أفضلية في الأدوار.</p><MafiaRules />
   </section>;
 }
@@ -56,8 +64,17 @@ export function MafiaDirectory({ rooms = [], enabled, loading, error, mode, onMo
   </section>;
 }
 
-export function MafiaLobbyInfo({ state }) {
-  return <section className="mafia-noir mafia-lobby-info stack"><style>{css}</style><div className="mafia-lobby-art" style={{'--mafia-environment':`url("${MAFIA_NOIR_ASSETS.environment}")`}}><MafiaIcon/><div><span className="mafia-kicker">كل وجه يخفي حكاية</span><h2>{state.settings?.mode === 'shadow' ? 'رابطة الظل' : 'المجلس الأساسي'}</h2><p>{ar(state.settings?.capacity || 8)} مقاعد · {state.settings?.visibility === 'public' ? 'غرفة عامة' : 'غرفة خاصة'}</p></div></div><div className="mafia-lobby-brief"><p>جهّز السماعات إن أمكن. استمع واكتب دون تشغيل الميكروفون، واكشف بطاقتك سرًا عند البداية.</p>{state.composition && <p className="mafia-composition"><span>{ar(state.composition.mafia)} مافيا</span><span>{ar(state.composition.town)} أهل الميدان</span>{state.composition.shadow>0 && <span>{ar(state.composition.shadow)} قائد للرابطة</span>}</p>}<p className="mafia-muted">التوزيع يثبت بحسب عدد الجاهزين. الأدوار الفعلية لا يراها المضيف، والقادم بعد البداية ينتظر المباراة التالية.</p></div><MafiaRules possibleRoles={state.possibleRoles}/></section>;
+// Only the host edits the waiting room; unsaved edits live until saved or closed.
+function MafiaLobbySettings({ state, disabled, act }) {
+  const [editing, setEditing] = useState(false), [draft, setDraft] = useState(null);
+  const value = draft || normalizeMafiaSettings(state.settings);
+  const close = () => { setEditing(false); setDraft(null); };
+  return <div className="mafia-lobby-settings"><Button data-design-id="room-settings" full aria-expanded={editing} disabled={disabled} onClick={() => (editing ? close() : setEditing(true))}>{editing ? 'إغلاق إعدادات المجلس' : 'تعديل إعدادات المجلس'}</Button>
+    {editing && <><MafiaSettingsFields settings={value} onChange={setDraft} disabled={disabled} present={state.members.filter(m => !m.left).length}/><p className="mafia-muted">تغيير الطور أو ظهور الغرفة يعيد الآخرين إلى «يستعد» حتى يؤكدوا من جديد.</p><Button data-design-id="save" full variant="primary" disabled={disabled} onClick={async () => { if (await act('settings', { settings: value })) close(); }}>حفظ إعدادات المجلس</Button></>}</div>;
+}
+
+export function MafiaLobbyInfo({ state, isHost = false, disabled = false, act = noop }) {
+  return <section data-design-screen="online.mafia.lobby" className="mafia-noir mafia-lobby-info stack"><style>{css}</style><div className="mafia-lobby-art" style={{'--mafia-environment':`url("${MAFIA_NOIR_ASSETS.environment}")`}}><MafiaIcon/><div><span className="mafia-kicker">كل وجه يخفي حكاية</span><h2>{state.settings?.mode === 'shadow' ? 'رابطة الظل' : 'المجلس الأساسي'}</h2><p>{ar(state.settings?.capacity || 8)} مقاعد · {state.settings?.visibility === 'public' ? 'غرفة عامة' : 'غرفة خاصة'}</p></div></div><div className="mafia-lobby-brief"><p>جهّز السماعات إن أمكن. استمع واكتب دون تشغيل الميكروفون، واكشف بطاقتك سرًا عند البداية.</p>{state.composition && <p className="mafia-composition"><span>{ar(state.composition.mafia)} مافيا</span><span>{ar(state.composition.town)} أهل الميدان</span>{state.composition.shadow>0 && <span>{ar(state.composition.shadow)} قائد للرابطة</span>}</p>}<p className="mafia-muted">التوزيع يثبت بحسب عدد الجاهزين. الأدوار الفعلية لا يراها المضيف، والقادم بعد البداية ينتظر المباراة التالية.</p></div>{isHost && <MafiaLobbySettings state={state} disabled={disabled} act={act}/>}<MafiaRules possibleRoles={state.possibleRoles}/></section>;
 }
 
 function useCountdown(deadline, offset, preview, serverNow) {
@@ -90,7 +107,7 @@ function eventText(event, members) {
   if (typeof event === 'string') return event;
   if (event.text || event.message) return event.text || event.message;
   const person = nameOf(members, event.playerId || event.targetId);
-  const texts = { eliminated: `${person} غادر المجلس`, dawn: event.peaceful ? 'أشرقت الشمس دون إقصاء ليلي' : 'أشرقت شمس جديدة على المجلس', match_started:'بدأ المجلس وتوزعت الأدوار سرًا', night_started:'بدأ الليل؛ اتبع قناتك وتعليمات دورك', match_ended:'انتهت المباراة', host_changed:`انتقلت إدارة الغرفة إلى ${person}`, nomination_closed:event.nomineeId ? `المرشح للدفاع: ${nameOf(members,event.nomineeId)}` : 'تعادل الترشيح؛ لا مرشح لهذه الليلة', verdict_closed:event.passed ? 'وافق المجلس على الإقصاء' : 'رفض المجلس الإقصاء', no_elimination: 'مرّت الليلة دون إقصاء', extended: 'المنادي أضاف ٢٠ ثانية للنقاش', nomination_tie: 'تعادل الترشيح، يواصل الجميع إلى الليل', faction_revealed: `${person}: ${factionLabel(event.faction)}`, disconnected: `${person} انقطع اتصاله`, reconnected: `${person} عاد للمجلس`, withdrawal: `${person} انسحب` };
+  const texts = { eliminated: event.reason === 'verdict' ? `أقصى المجلس ${person}` : event.reason === 'forfeit' ? `${person} انسحب من المجلس` : event.reason === 'night' ? `${person} خرج من المجلس بهجوم ليلي` : `${person} غادر المجلس`, dawn: event.peaceful ? 'أشرقت الشمس دون إقصاء ليلي' : 'أشرقت شمس جديدة على المجلس', match_started:'بدأ المجلس وتوزعت الأدوار سرًا', night_started:'بدأ الليل؛ اتبع قناتك وتعليمات دورك', match_ended:'انتهت المباراة', host_changed:`انتقلت إدارة الغرفة إلى ${person}`, nomination_closed:event.nomineeId ? `المرشح للدفاع: ${nameOf(members,event.nomineeId)}` : 'تعادل الترشيح؛ لا مرشح لهذه الليلة', verdict_closed:event.passed ? 'وافق المجلس على الإقصاء' : 'رفض المجلس الإقصاء', no_elimination: 'مرّت الليلة دون إقصاء', extended: `${person} استخدم قدرة المنادي وأضاف ٢٠ ثانية للنقاش`, nomination_tie: 'تعادل الترشيح، يواصل الجميع إلى الليل', faction_revealed: `${person}: ${factionLabel(event.faction)}`, disconnected: `${person} انقطع اتصاله`, reconnected: `${person} عاد للمجلس`, withdrawal: `${person} انسحب` };
   if(event.type==='roles') return 'توزعت الأدوار الأولية كما تظهر في البطاقات.';
   if(event.type==='night_action') return `${person} استخدم قدرة ${MAFIA_ROLES[event.roleId]?.name || 'دوره'} تجاه ${(event.targetIds || [event.targetId]).filter(Boolean).map(id=>nameOf(members,id)).join(' و') || 'هدفه'}.`;
   if(event.type==='attack_vote') return `${person} اختار ${nameOf(members,event.targetId)} لهجوم المافيا.`;
@@ -99,6 +116,12 @@ function eventText(event, members) {
   if(event.type==='converted') return `انضم ${person} إلى رابطة الظل بتجنيد ${nameOf(members,event.recruiterId)}.`;
   if(event.type==='shield_used') return `${person} نجا بحمايته الذاتية.`;
   return texts[event.type] || texts[event.kind] || 'تحديث في المجلس';
+}
+
+// Each living ally's current attack choice, as the server shows it to the Mafia only.
+function teamBallotText(you, members) {
+  const votes = you?.teamVotes || {};
+  return (you?.allies || []).map(ally => typeof ally === 'string' ? ally : ally.id).map(id => `${nameOf(members,id)}: ${!Object.hasOwn(votes,id) ? 'لم يختر بعد' : votes[id] ? nameOf(members,votes[id]) : 'بلا هدف'}`).join('، ');
 }
 
 function reportText(report,members) {
@@ -117,18 +140,21 @@ function MafiaVoice({ voice = {}, state }) {
   const connected = ['connected','on','silent'].includes(voice.status);
   const recovering = ['connecting','reconnecting'].includes(voice.status);
   const quiet = voice.status === 'silent' || (state.phase === 'night' && state.you?.voice?.canListen === false);
+  // The provider could not secure a channel: the match goes on over text and
+  // voice returns by itself once the server confirms the old grants are gone.
+  const outage = Boolean(state.mafiaVoice?.outage);
   const [actionError,setActionError] = useState('');
   const run = async task => {setActionError('');try{await task?.();}catch(error){setActionError(/[\u0600-\u06ff]/.test(error?.message || '')?error.message:'تعذّر تنفيذ أمر الصوت. حاول مجددًا.');}};
   return <div data-design-id="voice" data-design-required="true" className="mafia-voice" data-mafia-call-controls={state.mafiaVoice?.callId} data-mafia-controls-ready={Boolean((connected || voice.requested) && typeof voice.onLeave==='function') ? 'true' : 'false'}>
-    <div><b>{recovering ? 'نؤمّن الاتصال الصوتي…' : quiet ? 'الليل هادئ الآن' : connected ? 'صوت المجلس متصل' : 'اسمع المجلس وشارك بصوتك'}</b>
-      <small>{quiet ? voice.requested ? 'سيعود صوت المجلس تلقائيًا عندما تبدأ مرحلة الاستماع.' : 'فعّل صوت النهار الآن ليعود تلقائيًا عند بدء النقاش.' : state.phase === 'night' ? 'مسارات الليل معزولة حسب الفريق' : state.phase === 'defense' ? 'الصوت للمرشح فقط أثناء الدفاع' : 'الميكروفون اختياري؛ الكتابة متاحة حسب المرحلة'}</small></div>
+    <div><b>{outage ? 'الصوت متوقف مؤقتًا' : recovering ? 'نؤمّن الاتصال الصوتي…' : quiet ? (state.phase === 'night' ? 'الليل هادئ الآن' : 'المجلس هادئ لحظات') : connected ? 'صوت المجلس متصل' : 'اسمع المجلس وشارك بصوتك'}</b>
+      <small>{outage ? 'تعذّر تأمين قناة الصوت، فلم نفتح قناة جديدة. المباراة مستمرة بالكتابة، ويعود الصوت تلقائيًا عند توفره.' : quiet ? voice.requested ? 'سيعود صوت المجلس تلقائيًا عندما تبدأ مرحلة الاستماع.' : 'فعّل صوت النهار الآن ليعود تلقائيًا عند بدء النقاش.' : state.phase === 'night' ? 'مسارات الليل معزولة حسب الفريق' : state.phase === 'defense' ? 'الصوت للمرشح فقط أثناء الدفاع' : 'الميكروفون اختياري؛ الكتابة متاحة حسب المرحلة'}</small></div>
     <div className="mafia-voice-actions">{connected || voice.requested ? <>
       <Button data-design-id="mute" disabled={!voice.onMute || !voice.canPublish || recovering} onClick={() => run(() => voice.onMute(!voice.muted))}>{!voice.canPublish || recovering ? 'الميكروفون مغلق' : voice.muted ? 'شغّل الميكروفون' : 'اكتم الميكروفون'}</Button>
       {connected && voice.onSpeaker && voice.audioOutputs?.length > 0 && <label><span className="sr-only">مخرج الصوت</span><select aria-label="مخرج الصوت" data-design-id="audio-output" value={voice.outputId || 'default'} onChange={event => run(() => voice.onSpeaker(event.target.value))}>{voice.audioOutputs.map(output => <option key={output.id || output.deviceId} value={output.id || output.deviceId}>{output.label || 'السماعة'}</option>)}</select></label>}
       <Button data-design-id="voice-leave" variant="ghost" disabled={!voice.onLeave} onClick={() => run(voice.onLeave)}>افصل الصوت</Button>
-    </> : <Button data-design-id="voice-join" disabled={!voice.onJoin || recovering} onClick={() => run(voice.onJoin)}>{quiet ? 'تفعيل صوت النهار' : 'الانضمام بالصوت'}</Button>}</div>
+    </> : <Button data-design-id="voice-join" disabled={!voice.onJoin || recovering || outage} onClick={() => run(voice.onJoin)}>{quiet ? 'تفعيل صوت النهار' : 'الانضمام بالصوت'}</Button>}</div>
     {(connected || voice.requested) && voice.onResume && voice.audioBlocked && <Button data-design-id="voice-resume" onClick={() => run(voice.onResume)}>اضغط لاستعادة الصوت</Button>}
-    {(voice.error || actionError) && <p role="alert">{actionError || (/[\u0600-\u06ff]/.test(voice.error) ? voice.error : errorText(voice.error))}</p>}
+    {!outage && (voice.error || actionError) && <p role="alert">{actionError || (/[\u0600-\u06ff]/.test(voice.error) ? voice.error : errorText(voice.error))}</p>}
   </div>;
 }
 
@@ -145,7 +171,8 @@ function MafiaChat({ state, you, me, members, disabled, act }) {
   const team = alive && state.phase === 'night' && ['mafia','shadow'].includes(you?.faction);
   const observer = !alive && !!you?.roleId;
   const allowedChannel = team ? 'team' : observer ? 'observers' : 'public';
-  const writable = team || observer || (alive && ['opening','discussion'].includes(state.phase)) || (alive && state.phase === 'defense' && state.nomineeId === me.id);
+  // The day is one public channel (voice and text alike); only the defense belongs to the nominee.
+  const writable = team || observer || (alive && ['opening','discussion','nomination','verdict'].includes(state.phase)) || (alive && state.phase === 'defense' && state.nomineeId === me.id);
   const actualChannel = channel === 'public' && observer ? 'public' : allowedChannel;
   const chats = Array.isArray(state.chats) ? state.chats : state.chats?.[actualChannel] || [];
   const messages = chats.filter(item => !item.channel || item.channel === actualChannel);
@@ -189,11 +216,11 @@ function ActionPanel({ state, you, me, members, disabled, act }) {
   if (!['night','nomination','verdict'].includes(state.phase) && !hasHerald) return null;
   const submit = async () => { await act(nomination ? 'nominate' : 'night_action', nomination ? { targetId: selected[0] || null } : you.roleId === 'analyst' ? { targetIds: selected } : { targetId: selected[0] }); };
   return <section data-design-id="ability" className="mafia-ability"><div className="mafia-ability-heading"><h3>{showBallot ? 'اختيار المافيا الليلي' : actionLabel}</h3>{ability?.remaining != null && <small>متاح: {ar(ability.remaining)}</small>}</div>{rawAbility && ballot && <div className="mafia-action-tabs" role="group" aria-label="إجراءاتك الليلية"><Button data-design-id="night-attack-tab" aria-pressed={nightTool==='attack'} onClick={()=>setNightTool('attack')}>الهجوم المشترك</Button><Button data-design-id="night-ability-tab" aria-pressed={nightTool==='ability'} onClick={()=>setNightTool('ability')}>قدرتي · {ar(rawAbility.remaining)} متاح</Button></div>}{(ability || nomination) && <><p>{nomination ? 'اختر مشتبهًا أو امتنع. لا يتغير صوتك بعد التأكيد.' : you.roleId === 'analyst' ? 'اختر لاعبين مختلفين للمقارنة.' : 'اختر الهدف. يمكنك تغيير اختيارك حتى ينتهي الليل.'}</p><div data-design-id="targets" className="mafia-target-grid">{targetIds.map(target => { const id = typeof target === 'string' ? target : target.id; const player = members.find(p => p.id === id); return player && <button data-sound="mafiaSelect" data-design-id="target" type="button" key={id} aria-pressed={selected.includes(id)} disabled={disabled} onClick={() => pick(id)}><span>#{ar(player.seat || members.indexOf(player) + 1)}</span>{player.name}</button>; })}</div><Button data-design-id="ability-submit" disabled={disabled || selected.length < (you.roleId === 'analyst' && ability ? 2 : 1)} onClick={() => nomination ? setConfirm({ kind: 'nominate', targetId: selected[0] }) : submit()}>{nomination ? 'تأكيد الترشيح' : 'اعتماد اختيار الليل'}</Button>{nomination && <Button data-design-id="abstain" variant="ghost" disabled={disabled} onClick={() => setConfirm({ kind: 'nominate', targetId: null })}>امتنع عن الترشيح</Button>}{you.nightAction && <><p role="status">اختيارك محفوظ لهذه الليلة. يمكنك تغييره قبل نهاية الوقت.</p><Button data-design-id="cancel-ability" variant="ghost" disabled={disabled} onClick={() => act('night_action',{targetId:null})}>إلغاء اختيار الليل</Button></>}</>}
-    {showBallot && <div className="mafia-kill-ballot"><p>الأعلى أصواتًا يُستهدف؛ التعادل يعني عدم الهجوم.</p><div className="mafia-target-grid">{ballot.targets.map(target => { const id = typeof target === 'string' ? target : target.id; const player = members.find(p => p.id === id); return player && <button data-sound="mafiaSelect" data-design-id="mafia-vote" key={id} type="button" aria-pressed={you.killTarget === id} disabled={disabled} onClick={() => act('mafia_vote', { targetId: id })}>{player.name}</button>; })}</div><Button data-design-id="abstain" variant="ghost" disabled={disabled} onClick={() => act('mafia_vote', { targetId: null })}>لا أختار هدفًا</Button></div>}
+    {showBallot && <div className="mafia-kill-ballot"><p>الأعلى أصواتًا يُستهدف؛ التعادل يعني عدم الهجوم.</p><div className="mafia-target-grid">{ballot.targets.map(target => { const id = typeof target === 'string' ? target : target.id; const player = members.find(p => p.id === id); const picks = Object.values(you.teamVotes || {}).filter(choice => choice === id).length; return player && <button data-sound="mafiaSelect" data-design-id="mafia-vote" key={id} type="button" aria-pressed={you.killTarget === id} disabled={disabled} onClick={() => act('mafia_vote', { targetId: id })}>{player.name}{picks > 0 && <span aria-label={`اختاره ${ar(picks)} من فريقك`}> ✦{ar(picks)}</span>}</button>; })}</div>{teamBallotText(you, members) && <p className="mafia-muted" role="status">اختيارات فريقك: {teamBallotText(you, members)}</p>}<Button data-design-id="abstain" variant="ghost" disabled={disabled} onClick={() => act('mafia_vote', { targetId: null })}>لا أختار هدفًا</Button></div>}
     {verdict && <><p>هل تؤيد إقصاء <b>{nameOf(members,state.nomineeId)}</b>؟ يلزم أكثر من نصف الأحياء. صوتك نهائي.</p><div className="mafia-settings-row"><Button data-design-id="verdict-yes" disabled={disabled} onClick={() => setConfirm({ kind:'verdict', approve:true })}>أوافق على الإقصاء</Button><Button data-design-id="verdict-no" variant="secondary" disabled={disabled} onClick={() => setConfirm({ kind:'verdict', approve:false })}>أرفض الإقصاء</Button></div></>}
     {actions.some(action => action.type === 'herald') && <Button data-design-id="herald" disabled={disabled} onClick={() => setConfirm({kind:'herald'})}>استخدم المنادي · أضف ٢٠ ثانية</Button>}
-    {!ability && !ballot && !nomination && !verdict && <p className="mafia-muted">{state.phase === 'night' ? 'لا إجراء متاح لك الآن. تابع المرحلة واحتفظ بملاحظاتك.' : 'تابع النقاش؛ الإجراءات المتاحة تظهر هنا في وقتها.'}</p>}
-    {confirm && <MafiaConfirmModal title="تؤكد اختيارك؟" message={confirm.kind === 'herald' ? 'تُستخدم قدرة المنادي مرة واحدة في المباراة.' : confirm.kind === 'verdict' ? confirm.approve ? 'تؤيد إقصاء المرشح. لا يمكنك تغيير الحكم بعد التأكيد.' : 'ترفض إقصاء المرشح. لا يمكنك تغيير الحكم بعد التأكيد.' : confirm.targetId ? `ترشّح ${nameOf(members,confirm.targetId)}. لن يتغير صوتك بعد التأكيد.` : 'تمتنع عن الترشيح لهذه الجولة.'} confirmLabel="اعتمد اختياري" onCancel={() => setConfirm(null)} onConfirm={async () => { const {kind,...fields} = confirm; const ok = await act(kind,fields); if (ok !== false) setConfirm(null); }}/>}
+    {!ability && !ballot && !nomination && !verdict && <p className="mafia-muted" role="status">{state.phase === 'nomination' && you.nominationSubmitted ? (you.myNomination ? `سُجّل ترشيحك: ${nameOf(members,you.myNomination)}. لا يتغير بعد التأكيد.` : 'سُجّل امتناعك عن الترشيح في هذه الجولة.') : state.phase === 'verdict' && you.verdictSubmitted ? `سُجّل حكمك: ${you.myVerdict ? 'تؤيد الإقصاء' : 'ترفض الإقصاء'}. النتيجة عند انتهاء الوقت.` : state.phase === 'night' ? 'لا إجراء متاح لك الآن. تابع المرحلة واحتفظ بملاحظاتك.' : 'تابع النقاش؛ الإجراءات المتاحة تظهر هنا في وقتها.'}</p>}
+    {confirm && <MafiaConfirmModal title="تؤكد اختيارك؟" message={confirm.kind === 'herald' ? 'تُستخدم قدرة المنادي مرة واحدة في المباراة، ويرى المجلس أنك من استخدمها.' : confirm.kind === 'verdict' ? confirm.approve ? 'تؤيد إقصاء المرشح. لا يمكنك تغيير الحكم بعد التأكيد.' : 'ترفض إقصاء المرشح. لا يمكنك تغيير الحكم بعد التأكيد.' : confirm.targetId ? `ترشّح ${nameOf(members,confirm.targetId)}. لن يتغير صوتك بعد التأكيد.` : 'تمتنع عن الترشيح لهذه الجولة.'} confirmLabel="اعتمد اختياري" onCancel={() => setConfirm(null)} onConfirm={async () => { const {kind,...fields} = confirm; const ok = await act(kind,fields); if (ok !== false) setConfirm(null); }}/>}
   </section>;
 }
 

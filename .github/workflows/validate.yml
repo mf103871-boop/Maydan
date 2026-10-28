@@ -79,6 +79,10 @@ jobs:
         run: node --test tests/e2e/room-watch.mjs
       - name: Badeeha from two phones (turns, aids, judging, undo)
         run: node --test tests/e2e/room-badeeha.mjs
+      - name: Mafia — a browser player plays a whole public match against the room server
+        run: node --test tests/e2e/mafia-match.mjs
+      - name: Mafia — public entry, entry loading and match screens
+        run: node --test tests/e2e/mafia-public-entry.mjs tests/e2e/mafia-entry-loading.mjs tests/e2e/mafia-ui.mjs
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
         if: ${{ always() }}
         with:

@@ -1,8 +1,7 @@
-// فحص شامل لجدار «ميدان بلس» ضد الخادم المحلي بالمزوّد الوهمي (AUTH_DEV_FAKE=1):
-// يبني الحزمة في الذاكرة وهي تشير إلى الخادم، ثم يتحقق عبر Playwright من أن
-// 68 حزمة مقفولة للمجهول والمسجَّل غير المشترك، وصفر بعد منح الاشتراك؛ وأن
-// المباراة المجانية الأولى تمر والثانية تفتح الجدار؛ وأن إنشاء الغرف يُرفض بـ
-// PLUS_REQUIRED بعد التجربة ويُقبل للمشترك والمجهول؛ وأن الخروج يُبطل الرمز.
+// فحص اللعب المجاني وبلس الاختياري ضد خادم محلي بمزوّد وهمي (AUTH_DEV_FAKE=1):
+// يتحقق عبر Playwright من إتاحة الحزم وتكرار اللعب وإنشاء الغرف دون شراء،
+// مع الحفاظ على حالة الاشتراك الصادرة عن الخادم وإبطال الجلسة عند تسجيل الخروج.
+// يبقى اسم الملف متوافقًا مع أوامر الفحص السابقة.
 // ليس ضمن `npm test` لأنه يحتاج Playwright وChromium:
 //
 //   npm run e2e:paywall            (اللقطات في $TMPDIR/maydan-e2e/paywall أو المسار الممرَّر)
@@ -101,11 +100,11 @@ const reload = async () => { await clearAccount('me'); await page.reload({ waitU
 await page.goto(`http://localhost:${WEB_PORT}/#/`, { waitUntil: 'load' }); await page.waitForTimeout(700);
 await enter(); await page.waitForTimeout(300);
 
-// ١) كل الفئات مجانية؛ عرض بلس من الإعدادات يخص التخصيص فقط.
+// ١) كل الفئات مجانية؛ عرض بلس من المتجر يخص التخصيص فقط.
 let c = await lockedCounts(); check('anon all 78 packs free', c.locked === 0 && c.total === 78, JSON.stringify(c));
-await go('#/settings'); await page.locator('[data-design-id="purchase"]').click(); await page.waitForTimeout(600); await shot('01-anon-paywall');
+await go('#/store'); await page.getByRole('button', { name: 'مزايا وأسعار ميدان بلس', exact: true }).click(); await page.waitForTimeout(600); await shot('01-anon-paywall');
 const pw = await page.evaluate(() => { const s = document.querySelector('.paywall'); return { open: !!s, reason: s && s.dataset.reason, text: s ? s.textContent : '' }; });
-check('optional cosmetics paywall opens from settings', pw.open && pw.reason === 'settings', pw.reason);
+check('optional cosmetics paywall opens from store', pw.open && pw.reason === 'cosmetics', pw.reason);
 check('paywall online (no offline notice)', !/دون اتصال/.test(pw.text));
 check('paywall shows sign-in block (providers unconfigured in dev → note only)', await page.evaluate(() => !!document.querySelector('.paywall-auth .paywall-note')));
 
@@ -120,7 +119,7 @@ await page.evaluate(() => [...document.querySelectorAll('.paywall .account-redee
 check('back returns to plans and focuses the redeem trigger', await page.evaluate(() => !document.querySelector('.paywall form') && !!document.querySelector('.paywall-plans') && document.activeElement && document.activeElement.classList.contains('paywall-redeem')));
 await page.evaluate(() => document.querySelector('.paywall-redeem').click()); await page.waitForTimeout(200);
 await page.keyboard.press('Escape'); await page.waitForTimeout(600);
-await go('#/settings'); await page.locator('[data-design-id="purchase"]').click(); await page.waitForTimeout(600);
+await go('#/store'); await page.getByRole('button', { name: 'مزايا وأسعار ميدان بلس', exact: true }).click(); await page.waitForTimeout(600);
 check('reopened paywall starts on plans', await page.evaluate(() => !!document.querySelector('.paywall .paywall-plans') && !document.querySelector('.paywall form')));
 await page.evaluate(() => document.querySelector('.paywall-redeem').click()); await page.waitForTimeout(300);
 await page.keyboard.press('Escape'); await page.waitForTimeout(300);
@@ -171,6 +170,17 @@ check('repeat play has no paywall', !pw2.open, JSON.stringify(pw2));
 await go('#/'); await page.waitForTimeout(500); await shot('06-home-badges');
 const badges = await page.evaluate(() => [...document.querySelectorAll('.card-badge')].map((b) => b.textContent.trim()));
 check('home badges present', badges.length >= 5, JSON.stringify(badges));
+
+// Old clients may retain spent-trial flags locally; every local setup remains accessible.
+await writeAccount('trials', { beep:true, mamnoo:true, jabeen:true, fabraka:true, meenfina:true, ersomha:true, mafia:true });
+await reload();
+for (const game of ['beep','mamnoo','jabeen','fabraka','meenfina']) {
+  await go(`#/game/${game}`);
+  await page.locator('[data-design-id="local"]').click();
+  await page.locator('.game-frame [aria-label^="إعداد"]').waitFor();
+  check(`spent legacy trial: ${game} setup opens freely`, !(await page.locator('.paywall').count()));
+}
+await go('#/');
 
 // ٥) إنشاء الغرف مجاني لغير المشترك والمشترك وفق متطلبات الهوية الحالية.
 const tf = await apiCall('/api/trials/fabraka', {}, token2);

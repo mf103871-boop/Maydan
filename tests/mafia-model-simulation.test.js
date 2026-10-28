@@ -51,7 +51,9 @@ test('3,150 seeded full matches across 6–12 seats: ordering, private projectio
       // Observing a private choice must not expose a counter or payload to any
       // unrelated living participant, including an opponent in the same room.
       for (const [id, command] of selected) {
-        const observer = room.participants.find(other => other !== id && room.roleStates[other].alive);
+        // Living Mafia allies see each other's attack choice by design; everyone else must not.
+        const ally = other => command.type === 'mafia_vote' && room.roleStates[other].faction === 'mafia';
+        const observer = room.participants.find(other => other !== id && room.roleStates[other].alive && !ally(other));
         const before = observer && mafia.snapshot(room, observer, at);
         act(room, id, command, at);
         if (observer && !['herald', 'chat'].includes(command.type)) assert.deepEqual(mafia.snapshot(room, observer, at), before);

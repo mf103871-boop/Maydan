@@ -42,7 +42,8 @@ export async function routeMafia(request,env,url,charge) {
       const response=await roomFetch(env,candidate.code,'join',{...body,accountUserId:user.id,matchmaking:true});
       if(response.ok)return response;
       const error=await response.clone().json();
-      if(!['FULL','FULL_MAFIA','STARTED','NOT_FOUND','MAFIA_BLOCKED'].includes(error.error))return response;
+      // A room this account was removed from does not end the search.
+      if(!['FULL','FULL_MAFIA','STARTED','NOT_FOUND','MAFIA_BLOCKED','BANNED','NAME_TAKEN'].includes(error.error))return response;
     }
     fail('MAFIA_NO_ROOMS',409);
   }

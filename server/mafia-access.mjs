@@ -1,6 +1,7 @@
 import { fail } from './room-model.mjs';
 import { liveAccountSql } from './moderation/access.mjs';
 import { all, first, run, stmt } from './lamma/common.mjs';
+import { MAFIA_ROOMS_CEILING, MAFIA_VOICE_CEILING } from './mafia-limits.mjs';
 
 export const MAFIA_LEASE_MS = 180_000;
 export const mafiaEnabled = env => String(env.MAFIA_ENABLED || '') === '1';
@@ -78,7 +79,7 @@ export async function cleanupMafiaSeats(env,room) {
 export async function activateMafiaMedia(env,room,now=Date.now()) {
   const seats=room.members.filter(m=>room.participants.includes(m.id)&&!m.left);
   const ids=seats.map(m=>m.accountUserId); if(!ids.length||ids.some(id=>!id)) fail('AUTH_REQUIRED',401);
-  const maxRooms=Math.max(1,Math.min(6,Math.floor(Number(env.MAFIA_MAX_ACTIVE_ROOMS)||1))),maxParticipants=Math.max(12,Math.min(80,Math.floor(Number(env.MAFIA_MAX_VOICE_PARTICIPANTS)||80)));
+  const maxRooms=Math.max(1,Math.min(MAFIA_ROOMS_CEILING,Math.floor(Number(env.MAFIA_MAX_ACTIVE_ROOMS)||1))),maxParticipants=Math.max(12,Math.min(MAFIA_VOICE_CEILING,Math.floor(Number(env.MAFIA_MAX_VOICE_PARTICIPANTS)||80)));
   await run(env,`INSERT INTO mafia_media_slots(room_key,call_id,capacity,updated_at) SELECT ?,?,?,? WHERE (SELECT COUNT(*) FROM mafia_media_slots WHERE room_key!=?)<? AND COALESCE((SELECT SUM(capacity) FROM mafia_media_slots WHERE room_key!=?),0)+?<=? ON CONFLICT(room_key) DO UPDATE SET call_id=excluded.call_id,capacity=excluded.capacity,updated_at=excluded.updated_at`,room.mafiaKey,room.mafiaMedia.callId,room.settings.capacity,now,room.mafiaKey,maxRooms,room.mafiaKey,room.settings.capacity,maxParticipants);
   if(!await first(env,'SELECT 1 FROM mafia_media_slots WHERE room_key=? AND call_id=?',room.mafiaKey,room.mafiaMedia.callId))fail('MAFIA_VOICE_CAPACITY',503);
   const conflict=`NOT EXISTS(SELECT 1 FROM mafia_media_leases WHERE user_id IN (${placeholders(ids)}) AND room_key!=? AND expires_at>?)`;

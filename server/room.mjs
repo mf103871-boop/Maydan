@@ -4,7 +4,7 @@ import { buildFabrakaDeck } from './fabraka-content.mjs';
 import { credentials, readJson, json, errorResponse, shuffled, createLimit } from './protocol.mjs';
 import { bindSeatAccount, prepareRoomStats } from './room-stats.mjs';
 import { recordOnlineResult, profileSummaries } from './profiles/db.mjs';
-import { recheckMafiaHost } from './accounts/router.mjs';
+import { recheckMafiaHost, mafiaHostEligible } from './accounts/router.mjs';
 import { getCosmetic } from '../src/plus/catalog.js';
 import { plusActiveFor } from './plus/access.mjs';
 import { prepareRoomAppearance, selectRoomAppearance } from './plus/room-appearance.mjs';
@@ -153,7 +153,7 @@ export class Room {
     const members=room.members.filter(m=>!m.left);
     const accounts=members.map(m=>m.accountUserId).sort();
     const media=room.mafiaMedia;
-    const mediaKey=JSON.stringify([room.mafiaKey,room.matchId,room.phase,media?.callId,media?.epoch,media?.failed,media?.quarantineUntil,room.technicalAbort,room.reason,room.trialStarted,room.roomTrialClaim,members.filter(m=>room.participants.includes(m.id)).map(m=>m.accountUserId).sort()]);
+    const mediaKey=JSON.stringify([room.mafiaKey,room.matchId,room.phase,media?.callId,media?.epoch,media?.signature,media?.failed,media?.quarantineUntil,room.technicalAbort,room.reason,room.trialStarted,room.roomTrialClaim,members.filter(m=>room.participants.includes(m.id)).map(m=>m.accountUserId).sort()]);
     if(this.mafiaMetadata.media!==mediaKey) {
       await committedMafiaVoice(this.ctx,this.env,room);
       this.mafiaMetadata.media=mediaKey;
@@ -517,7 +517,8 @@ export class Room {
           created.trialOwnerId = input.id;
           created.trialStarted = false;
           bindSeatAccount(created, input.id, input.accountUserId);
-          if(created.game==='mafia') {created.mafiaKey=crypto.randomUUID();await claimMafiaSeat(this.env,created,input.id);}
+          // The creator passed the room gate, so it can start; joiners are checked as they arrive.
+          if(created.game==='mafia') {created.mafiaKey=crypto.randomUUID();await claimMafiaSeat(this.env,created,input.id);created.members[0].canHost=true;}
           await this.hydrateErsomhaProfile(created, input.id);
           // Reject empty topic selections while the creator can still edit them,
           // rather than trapping an assembled group in an unstartable lobby.
@@ -617,7 +618,7 @@ export class Room {
           const candidate = structuredClone(this.room);
           joinRoom(candidate, input, Date.now());
           bindSeatAccount(candidate, input.id, input.accountUserId);
-          if(candidate.game==='mafia')await claimMafiaSeat(this.env,candidate,input.id);
+          if(candidate.game==='mafia') {await claimMafiaSeat(this.env,candidate,input.id);member(candidate,input.id).canHost=await mafiaHostEligible(this.env,input.accountUserId,candidate);}
           await this.hydrateErsomhaProfile(candidate, input.id);
           await this.commit(candidate);
           return json({ code: this.room.code, id: input.id, game: this.room.game || 'meenfina' });
@@ -717,6 +718,8 @@ export class Room {
           }
           ws.serializeAttachment({ id, seenAt: now, windowAt: now, count: 1,...accountIdentity });
           const candidate = structuredClone(this.room);
+          // Retire persisted billing-derived host flags after verified account auth.
+          if(candidate.game==='mafia')member(candidate,id).canHost=true;
           connected(candidate, id, true, now);
           await this.commit(candidate);
           return;

@@ -10,13 +10,27 @@ import { activateMafiaMedia, mafiaPlaying, releaseMafiaMedia, refundMafiaTrial }
 // Real Cloud control-plane revocations can exceed 700 ms even with low media
 // latency. Two bounded attempts avoid false aborts without indefinite waits.
 const REVOKE_ATTEMPTS=2, PROVIDER_TIMEOUT=1500;
+// During a mid-match outage the journal is retried on this backoff (and by the
+// room's regular renewal alarm), never on every command: a down provider would
+// otherwise add both revocation timeouts to each player action.
+export const MAFIA_VOICE_RETRY_MS=20_000;
 const deleteKey=(ctx,key)=>ctx.storage.delete?ctx.storage.delete(key):ctx.storage.put(key,null);
 const identityOf=(room,id)=>room.members.find(m=>m.id===id)?.accountUserId;
 const audience=(room,id)=>voiceAudience(room,id)||{key:null,canSpeak:false,canListen:false};
-const signature=room=>JSON.stringify([room.matchId,room.phaseId,room.phase,room.members.filter(m=>!m.left).map(m=>[m.id,audience(room,m.id)])]);
+// What each account may hear and say right now. A phase change only matters to
+// the seats whose entry changes, so the signature ignores the phase itself:
+// discussion → nomination keeps every call, and one phone's dropped socket
+// no longer rebuilds everyone else's channel.
+const audienceMap=room=>Object.fromEntries(room.members.filter(m=>!m.left&&m.accountUserId).map(m=>{const a=audience(room,m.id);return [m.accountUserId,a.key&&a.canListen?[a.key,!!a.canSpeak]:null];}));
+const signature=room=>JSON.stringify([room.matchId,audienceMap(room)]);
+// Each account sees its own media epoch: the shared epoch (a full rebuild) plus
+// its own count of targeted changes. A seat whose audience changes resyncs; the
+// others keep their connection. Strictly increasing per account.
+export const mafiaUserEpoch=(media,userId)=>(media?.epoch||0)*1_000_000+(media?.userEpochs?.[userId]||0);
 export function mafiaVoiceView(room,id) {
   const media=room.mafiaMedia, policy=audience(room,id);
-  return {callId:media?.callId||null,mediaEpoch:media?.epoch||0,canPublish:!!policy.canSpeak&&!media?.failed,quiet:!policy.key||!policy.canListen||!!media?.failed};
+  // outage: the match continues over text while no new channel can be secured.
+  return {callId:media?.callId||null,mediaEpoch:mafiaUserEpoch(media,identityOf(room,id)),canPublish:!!policy.canSpeak&&!media?.failed,quiet:!policy.key||!policy.canListen||!!media?.failed,outage:!!media?.failed&&mafiaPlaying(room)};
 }
 async function revoke(env,item) {
   let last;
@@ -45,16 +59,30 @@ export async function prepareMafiaVoice(ctx,env,previous,candidate,now=Date.now(
   candidate.mafiaMedia ||= {callId:pending?.callId||crypto.randomUUID(),epoch:0,channels:{},devices:{},issued:[],signature:null,presence:{}};
   const media=candidate.mafiaMedia, nextSignature=signature(candidate);
   if(media.signature===nextSignature&&!pending) return;
+  if(playing&&media.failed&&pending?.failed&&now<(media.retryAt||0)) return;
   if(playing) {
     if(!liveKitConfigured(env)) fail('MAFIA_VOICE_UNAVAILABLE',503);
     await activateMafiaMedia(env,candidate,now);
   }
   const cutoff=Math.floor(now/1000)+1;
   const oldIssued=media.issued||[];
+  const nextAudiences=audienceMap(candidate),previousAudiences=media.audiences;
+  // Within a running match only the accounts whose audience changed lose their
+  // grants (and refetch); every other call and channel stays as it is. A start,
+  // an end, a retry after an outage and a revoked session still rebuild it all.
+  const targeted=playing&&wasPlaying&&previous?.matchId===candidate.matchId&&!pending&&!media.failed&&media.signature!==null&&Boolean(previousAudiences);
+  // An account entering or leaving a channel touches only itself. A speaking right
+  // that changes inside a channel (defense, verdict) rotates that channel for all
+  // its members instead: a same-name token would wait out the revocation cutoff.
+  const keyOf=entry=>entry?.[0]??null;
+  const changed=targeted?new Set(Object.keys({...previousAudiences,...nextAudiences}).filter(id=>JSON.stringify(previousAudiences[id]??null)!==JSON.stringify(nextAudiences[id]??null))):null;
+  const rotated=targeted?new Set([...changed].filter(id=>keyOf(previousAudiences[id])&&keyOf(previousAudiences[id])===keyOf(nextAudiences[id])).map(id=>keyOf(nextAudiences[id]))):null;
+  const affected=targeted?new Set([...changed,...Object.keys({...previousAudiences,...nextAudiences}).filter(id=>rotated.has(keyOf(previousAudiences[id]))||rotated.has(keyOf(nextAudiences[id])))]):null;
+  const revoked=targeted?oldIssued.filter(i=>affected.has(i.identity)):oldIssued;
   const social=!wasPlaying&&playing?await collectSocial(env,candidate,now):[];
-  const removals=[...(pending?.removals||[]),...oldIssued.map(i=>({room:i.room,identity:i.identity,cutoff})),...social];
+  const removals=[...(pending?.removals||[]),...revoked.map(i=>({room:i.room,identity:i.identity,cutoff})),...social];
   const unique=[...new Map(removals.map(i=>[`${i.room}:${i.identity}`,i])).values()];
-  const journal={callId:media.callId,fromEpoch:media.epoch,toEpoch:media.epoch+1,removals:unique,createdAt:now};
+  const journal={callId:media.callId,fromEpoch:media.epoch,toEpoch:targeted?media.epoch:media.epoch+1,removals:unique,createdAt:now};
   await ctx.storage.put('mafia:voice-transition',journal);
   try {
     // The complete durable revocation journal precedes D1 state changes. A
@@ -62,22 +90,42 @@ export async function prepareMafiaVoice(ctx,env,previous,candidate,now=Date.now(
     for(const item of unique.filter(i=>i.socialCallId))await run(env,"UPDATE social_call_participants SET state='left',left_at=?,revoked_before=? WHERE call_id=? AND user_id=?",now,item.cutoff,item.socialCallId,item.identity);
     const results=await Promise.allSettled(unique.map(item=>revoke(env,item)));
     if(results.some(r=>r.status==='rejected')) throw results.find(r=>r.status==='rejected').reason;
-    media.epoch++; media.channels={}; media.issued=[]; media.signature=nextSignature; media.failed=false;media.quarantineUntil=0;
-    // Opaque, fresh channel names each phase. A prior credential can never be
-    // reused for a future night or discover a faction by its room name.
-    if(playing) for(const m of candidate.members.filter(m=>!m.left)) {
-      const a=audience(candidate,m.id); if(a.key&&a.canListen&&!media.channels[a.key]) media.channels[a.key]=`g-${crypto.randomUUID()}`;
+    const keys=new Set(Object.values(nextAudiences).filter(Boolean).map(([key])=>key));
+    let fresh;
+    if(targeted) {
+      // Revoked accounts refetch through their own epoch. A channel lives while
+      // its key is in use: one nobody may hear any more is dropped, and a key
+      // coming into use (the next night, the next day) gets a fresh opaque name.
+      media.issued=oldIssued.filter(i=>!affected.has(i.identity));
+      media.userEpochs||={};for(const id of affected)media.userEpochs[id]=(media.userEpochs[id]||0)+1;
+      for(const key of Object.keys(media.channels))if(!keys.has(key)||rotated.has(key))delete media.channels[key];
+      // A kept channel can outlive one account's revocation: that account's next
+      // token for the same room must start after the cutoff, or it is refused too.
+      const kept=new Set(Object.values(media.channels));
+      media.revokedUntil||={};const settled=(Math.floor(Date.now()/1000)+2)*1000;for(const i of revoked)if(kept.has(i.room))media.revokedUntil[i.identity]=settled;
+      fresh=[...keys].filter(key=>!media.channels[key]);
+    } else {
+      media.epoch++; media.channels={}; media.issued=[]; media.userEpochs={};
+      fresh=playing?[...keys]:[];
     }
-    const created=await Promise.allSettled(Object.values(media.channels).map(name=>createChannel(env,name)));
+    // Opaque, fresh channel names. A prior credential can never be reused for a
+    // future night or discover a faction by its room name.
+    for(const key of fresh)media.channels[key]=`g-${crypto.randomUUID()}`;
+    media.signature=nextSignature;media.audiences=nextAudiences;media.failed=false;media.quarantineUntil=0;media.retryAt=0;
+    const created=await Promise.allSettled(fresh.map(key=>createChannel(env,media.channels[key])));
     if(created.some(r=>r.status==='rejected'))throw created.find(r=>r.status==='rejected').reason;
     await ctx.storage.put('mafia:voice-transition',{...journal,revoked:true,ready:true});
   } catch(error) {
     // No next credentials exist. An old live connection can outlast its token;
     // retain its account lock until a later alarm confirms provider revocation.
-    technicalAbort(candidate,now,'voice_unavailable');
-    console.error('[mafia-media] transition failed',JSON.stringify({kind:error?.name||'Error',providerStatus:error?.providerStatus||null,elapsedMs:Date.now()-now}));
-    media.epoch++; media.failed=true;media.channels={};media.issued=[];media.signature=signature(candidate);
-    media.quarantineUntil=Number.MAX_SAFE_INTEGER;
+    // Dealing a new match still ends it (nobody has played; the trial is refunded).
+    // Mid-match only voice stops: everyone is quiet, nobody receives a grant until
+    // the journal's revocations succeed, and the match carries on over text.
+    const ongoing=playing&&wasPlaying&&previous?.matchId===candidate.matchId;
+    if(!ongoing)technicalAbort(candidate,now,'voice_unavailable');
+    console.error('[mafia-media] transition failed',JSON.stringify({kind:error?.name||'Error',providerStatus:error?.providerStatus||null,elapsedMs:Date.now()-now,ongoing}));
+    media.epoch++; media.failed=true;media.channels={};media.issued=[];media.userEpochs={};media.audiences=null;media.signature=signature(candidate);
+    media.quarantineUntil=Number.MAX_SAFE_INTEGER;media.retryAt=now+MAFIA_VOICE_RETRY_MS;
     await ctx.storage.put('mafia:voice-transition',{...journal,failed:true});
   }
 }
@@ -97,7 +145,9 @@ export async function mafiaVoiceRequest(ctx,env,room,userId,body,now=Date.now())
   const seat=room.members.find(m=>!m.left&&m.accountUserId===userId);
   if(!seat||!room.participants.includes(seat.id))fail('NOT_FOUND',404);
   const media=room.mafiaMedia;
-  if(!media||!mafiaPlaying(room)||media.failed)fail('CALL_UNAVAILABLE',409);
+  if(!media||!mafiaPlaying(room))fail('CALL_UNAVAILABLE',409);
+  // A mid-match outage is temporary: the client keeps its call and retries.
+  if(media.failed)fail('MAFIA_VOICE_UNAVAILABLE',503);
   if((body.callId&&body.callId!==media.callId)||(body.operation==='leave'&&body.callId!==media.callId))fail('STALE',409);
   const deviceId=body.deviceId;
   if(typeof deviceId!=='string'||!/^[A-Za-z0-9_-]{1,160}$/.test(deviceId))fail('INVALID');
@@ -116,7 +166,7 @@ export async function mafiaVoiceRequest(ctx,env,room,userId,body,now=Date.now())
   if(await ctx.storage.get('mafia:voice-transition'))fail('MAFIA_VOICE_TRANSITION',409);
   media.sessions||={};media.retiredSessions||={};media.authSessions||={};const previousSession=media.sessions[userId];
   const retired=media.retiredSessions[userId]||[];
-  if(body.operation==='leave'&&previousSession!==voiceSessionId)return {call:{id:media.callId,scope:'mafia',conversationId:room.code,status:'ended',voiceSessionId,mediaEpoch:media.epoch,canPublish:false},connection:null,voiceSessionId,mediaEpoch:media.epoch,canPublish:false,quiet:true,stale:true};
+  if(body.operation==='leave'&&previousSession!==voiceSessionId)return {call:{id:media.callId,scope:'mafia',conversationId:room.code,status:'ended',voiceSessionId,mediaEpoch:mafiaUserEpoch(media,userId),canPublish:false},connection:null,voiceSessionId,mediaEpoch:mafiaUserEpoch(media,userId),canPublish:false,quiet:true,stale:true};
   const previousAuth=media.authSessions[userId];
   if(previousSession===voiceSessionId&&previousAuth&&previousAuth.id!==accountSession.id) {
     // Bearer rotation can move a call to its explicit successor. A separate
@@ -146,8 +196,8 @@ export async function mafiaVoiceRequest(ctx,env,room,userId,body,now=Date.now())
   const policy=audience(room,seat.id),quiet=!policy.key||!policy.canListen;
   const canPublish=!!policy.canSpeak&&!body.listenOnly;
   const participants=quiet?[]:room.members.filter(m=>!m.left&&audience(room,m.id).key===policy.key&&audience(room,m.id).canListen).map(m=>({userId:m.accountUserId,seatId:m.id,name:m.name,state:'active',...(m.profile||{})}));
-  const call={id:media.callId,scope:'mafia',conversationId:room.code,name:'مافيا ميدان',status:'active',mediaEpoch:media.epoch,canPublish,participants,voiceSessionId};
-  const response={call,connection:null,mediaEpoch:media.epoch,canPublish,quiet,voiceSessionId};
+  const call={id:media.callId,scope:'mafia',conversationId:room.code,name:'مافيا ميدان',status:'active',mediaEpoch:mafiaUserEpoch(media,userId),canPublish,participants,voiceSessionId};
+  const response={call,connection:null,mediaEpoch:mafiaUserEpoch(media,userId),canPublish,quiet,voiceSessionId};
   if(body.operation==='leave') {
     const issued=media.issued.filter(i=>i.identity===userId);
     await ctx.storage.put('mafia:voice-transition',{removals:issued.map(i=>({...i,cutoff:Math.floor(now/1000)+1})),createdAt:now});
@@ -160,7 +210,7 @@ export async function mafiaVoiceRequest(ctx,env,room,userId,body,now=Date.now())
   if(!oldDevice)await ctx.storage.put('room',room);
   const channel=media.channels[policy.key];
   const issued=media.issued.find(i=>i.identity===userId&&i.room===channel);
-  if(body.knownEpoch===media.epoch&&(quiet||issued&&issued.expiresAt>now+60_000&&issued.canPublish===canPublish))return {...response,unchanged:true};
+  if(body.knownEpoch===mafiaUserEpoch(media,userId)&&(quiet||issued&&issued.expiresAt>now+60_000&&issued.canPublish===canPublish))return {...response,unchanged:true};
   if(quiet) {await ctx.storage.put('room',room);return response;}
   if(!channel)fail('MAFIA_VOICE_TRANSITION',409);
   if(issued&&issued.canPublish!==canPublish) {
@@ -174,5 +224,5 @@ export async function mafiaVoiceRequest(ctx,env,room,userId,body,now=Date.now())
   const entry={room:channel,identity:userId,expiresAt:now+300_000,canPublish};
   media.issued=media.issued.filter(i=>!(i.identity===userId&&i.room===channel));media.issued.push(entry);
   await ctx.storage.put('room',room); // durable authorization before token delivery
-  return {...response,connection:{...await gameConnection(env,channel,userId,seat.name,canPublish),mediaEpoch:media.epoch,canPublish,voiceSessionId},expiresAt:entry.expiresAt};
+  return {...response,connection:{...await gameConnection(env,channel,userId,seat.name,canPublish),mediaEpoch:mafiaUserEpoch(media,userId),canPublish,voiceSessionId},expiresAt:entry.expiresAt};
 }

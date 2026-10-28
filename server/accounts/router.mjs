@@ -424,6 +424,12 @@ export async function roomGate(request, env, input, now = Date.now()) {
 export async function consumeRoomTrial(env, gate) {
   if (env.DB && gate?.userId && !await env.DB.prepare(`SELECT 1 WHERE ${liveAccountSql('?')}`).bind(gate.userId,gate.userId).first()) failure('AUTH');
 }
+// Host handover eligibility is account validity, never a payment advantage.
+// The current host is checked again at start; this flag remains server-private.
+export async function mafiaHostEligible(env,id) {
+  if(!id||!env.DB)return false;
+  return Boolean(await env.DB.prepare(`SELECT 1 WHERE ${liveAccountSql('?')}`).bind(id,id).first());
+}
 export async function recheckMafiaHost(env,room) {
   const host=room.members.find(m=>m.id===room.hostId&&!m.left);
   if(!host?.accountUserId||!env.DB) failure('AUTH_REQUIRED');

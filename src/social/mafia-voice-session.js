@@ -19,6 +19,16 @@ export class MafiaVoiceSession {
     if (!next) return;
     this.update({ canPublish: !!next.mafiaVoice.canPublish });
     this.restoreNative(this.media.state);
+    // A provider outage stops voice for everyone while the match continues over
+    // text. Keep the logical call silent and wait for the server's next secured
+    // epoch rather than asking again on every snapshot.
+    if (next.mafiaVoice.outage) {
+      if (this.state.requested) {
+        if (this.epoch !== -1) { this.epoch = -1; this.media.pauseGame().catch(() => {}); }
+        this.update({ status: 'reconnecting', participants: [], muted: true, canPublish: false, error: '' });
+      }
+      return;
+    }
     if (this.state.requested && this.epoch !== next.mafiaVoice.mediaEpoch) this.sync().catch(() => {});
   }
   async start() {
