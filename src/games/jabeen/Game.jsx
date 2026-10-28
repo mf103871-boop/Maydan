@@ -1,3 +1,4 @@
+import { SetupPresets } from '../../plus/SetupPresets.jsx';
 import { Avatar, GameArtwork } from '../../shared/brand/art.jsx';
 import React, { useEffect, useMemo, useReducer, useRef, useState } from 'react';
 import { Screen, Button, Podium, Segment, Card } from '../../shared/ui/components.jsx';
@@ -21,6 +22,7 @@ export function SetupOptions({ storage, api }) {
   const update = (patch) => { const next = normalizeOptions({ ...opts, ...patch }, categories); setOpts(next); storage.set(OPTIONS_KEY, next); };
   return (
     <div data-design-screen="setup.jabeen" data-design-id="options" className="stack">
+    {!api.designPreview && <SetupPresets game="jabeen" settings={opts} onApply={update} />}
     {resume && <Card className="stack resume-card">
       <style>{css}</style>
       <span className="card-title">لعبتكم بانتظاركم</span>

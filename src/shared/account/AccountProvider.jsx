@@ -404,19 +404,8 @@ export function AccountProvider({ children }) {
   }, [loadProducts, refresh]);
   const closePaywall = useCallback(() => setPaywall((prev) => ({ ...prev, open: false })), []);
 
-  const markTrial = useCallback((game) => {
-    if (!TRIAL_GAMES.includes(game)) return;
-    setLocalTrials(accountStore.addMark(game));
-    // مرآة الغلاف (UserDefaults): تصمد أمام مسح بيانات WebKit.
-    if (native) callNative('markTrial', { game }, { timeout: 5_000 }).catch(() => {});
-    if (!sessionRef.current || accountOffline()) return;
-    postTrial(game, options())
-      .then((result) => applyTrials(result && result.trials))
-      .catch((err) => {
-        if (isAuthError(codeOf(err))) clearLocalAuth();
-        setLocalTrials(accountStore.addPending(game));
-      });
-  }, [native, options, applyTrials, clearLocalAuth]);
+  // Keep the old game integration callable without consuming any new trials.
+  const markTrial = useCallback(() => {}, []);
 
   // الغلاف يبثّ authReturn بالرمز، أو بخطأ (إلغاء المستخدم مثلًا) فيُرفض الانتظار فورًا.
   const waitForAuthReturn = useCallback((timeout = 5 * 60_000) => new Promise((resolve, reject) => {
@@ -842,7 +831,7 @@ export function AccountProvider({ children }) {
     markTrial,
     trialAvailable: (game) => trialAvailableOf(me, localTrials.marks, game, premium),
     lockedPack: (id) => lockedPackOf(id, premium),
-    gameAccess: (game) => (premium ? 'premium' : gameAccessOf(me, localTrials.marks, game)),
+    gameAccess: (game) => gameAccessOf(me, localTrials.marks, game),
     openPaywall, closePaywall, restore, deleteAccount,
     purchase, manageSubscription, loadProducts, retryProducts, probeStore,
     clearError: () => setError(null),

@@ -39,7 +39,7 @@ export const DESIGN_RENDERED_NODE_IDS = Object.freeze({
   "players": Object.freeze(["add-player","avatar-choice","avatar-picker","back","name-input","player-remove","player-row","players","title","topbar"]),
   "settings": Object.freeze(["about","clear-data","music-volume","pricing-link","privacy-link","refunds-link","setting","setting-toggle","settings-account","settings-audio","settings-experience","settings-local","settings-privacy","settings-support","share-reports","sound-test","sound-volume","terms-link","title","topbar"]),
   "account.card": Object.freeze(["account-delete","account-signin","account-signout","profile","purchase","restore","title"]),
-  "store": Object.freeze(["artwork","store-empty","title","topbar"]),
+  "store": Object.freeze(["artwork","collection","collections","store-empty","title","topbar"]),
   "about": Object.freeze(["back","license-link","pricing-link","privacy-link","refunds-link","show-all","source-link","terms-link","title","topbar"]),
   "audio-credits": Object.freeze(["content","license-link","source-link"]),
   "legal": Object.freeze(["back","support-link","title","topbar"]),

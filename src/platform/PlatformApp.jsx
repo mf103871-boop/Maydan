@@ -1,5 +1,6 @@
 // غلاف المنصة: المزوّدون (صوت/اهتزاز/تخزين/دفتر اللاعبين/إعدادات)، الموجّه، وانتقالات الشاشات.
 import React, { useEffect, useMemo, useState, useCallback, useRef } from 'react';
+import { PlusStyles } from '../plus/PlusStyles.jsx';
 import { PlatformContext, usePlatform } from './context.js';
 import { useRoute, navigate, getDirection, getRoute, installNativeBackBridge } from './router.js';
 import { getGame } from './registry.js';
@@ -166,6 +167,7 @@ function Shell() {
   return (
     <>
       <BrandFonts />
+      <PlusStyles />
       <style>{uiCss}</style>
       <style>{setupCss}</style>
       <style>{platformCss}</style>

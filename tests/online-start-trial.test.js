@@ -12,22 +12,16 @@ import { migrationSql, createLocalD1 } from '../server/local-d1.mjs';
 import { deleteUser, upsertSubscription } from '../server/accounts/db.mjs';
 import { consumeRoomTrial } from '../server/accounts/router.mjs';
 import { cleanup } from '../server/accounts/cleanup.mjs';
-import { errorText } from '../src/online/shared.js';
 import questions from '../src/data/games/fabraka/questions.json' with { type: 'json' };
 
 const ORIGIN = 'http://localhost:3000';
-test('account deletion between eligibility and the trial transaction cannot resurrect free claims or premium marks', async () => {
+test('legacy trial compatibility cannot resurrect deleted accounts or consume free games', async () => {
   for (const premium of [false, true]) {
     const DB = createLocalD1(), env = { DB };
     try {
       await DB.prepare('INSERT INTO users(id,name,created_at,updated_at) VALUES(?,?,?,?)').bind('trial-owner', 'owner', 1000, 1000).run();
       if (premium) await upsertSubscription(env, { source: 'promo', external_id: 'owner-promo', user_id: 'trial-owner', status: 'active', until: 100_000 });
-      const batch = DB.batch.bind(DB);
-      DB.batch = async queries => {
-        DB.batch = batch;
-        await deleteUser(env, 'trial-owner');
-        return batch(queries);
-      };
+      await deleteUser(env, 'trial-owner');
       await assert.rejects(consumeRoomTrial(env, { userId: 'trial-owner', device: 'device:trial-device', game: 'ersomha', premium }, 'room-claim', 1100), error => error.code === 'AUTH');
       assert.equal((await DB.prepare('SELECT COUNT(*) AS n FROM trials').first()).n, 0, `no ${premium ? 'premium' : 'free'} write after deletion`);
       assert.equal((await DB.prepare('SELECT COUNT(*) AS n FROM online_room_trial_claims').first()).n, 0);
@@ -60,7 +54,7 @@ async function joinedPair(server, api, clients, body = {}) {
   return { pair, profiles, code: created.body.code };
 }
 
-test('workerd starts exactly one pre-created free room, supports two-player play, and never exposes trial identities', { timeout: 40_000 }, async () => {
+test('workerd starts free rooms without billing races, supports two-player play and protects identity', { timeout: 40_000 }, async () => {
   const dir = await mkdtemp(path.join(os.tmpdir(), 'maydan-start-trial-'));
   let mf; const clients = [];
   try {
@@ -82,17 +76,15 @@ test('workerd starts exactly one pre-created free room, supports two-player play
     assert.equal((await DB.prepare('SELECT COUNT(*) AS n FROM trials').first()).n, 0, 'an invalid start cannot consume');
     for (const room of [first, second]) await room.pair[1].command('ready', { ready: true });
     const result = await Promise.allSettled([first.pair[0].command('start'), second.pair[0].command('start')]);
-    assert.equal(result.filter((r) => r.status === 'fulfilled').length, 1);
-    assert.equal(result.find((r) => r.status === 'rejected').reason.code, 'PLUS_REQUIRED');
-    const winning = result[0].status === 'fulfilled' ? first : second;
+    assert.equal(result.filter((r) => r.status === 'fulfilled').length, 2);
+    const winning = first;
     await until(() => winning.pair.every((c) => c.state?.phase === 'write'));
-    assert.deepEqual((await DB.prepare('SELECT user_id,game FROM trials ORDER BY user_id').all()).results,
-      [{ user_id: `device:${deviceId}`, game: 'fabraka' }, { user_id: ownerId, game: 'fabraka' }].sort((a, b) => a.user_id.localeCompare(b.user_id)));
+    assert.deepEqual((await DB.prepare('SELECT user_id,game FROM trials ORDER BY user_id').all()).results, []);
     const view = JSON.stringify(winning.pair[1].state);
     for (const secret of [deviceId, ownerId, 'roomTrialGate', 'roomTrialClaim']) assert.equal(view.includes(secret), false);
     assert.equal(winning.pair[0].state.trialOwnerId, winning.profiles[0].id);
     assert.equal(winning.pair[0].state.trialStarted, true);
-    assert.equal((await api('/api/rooms', { ...newCredentials(), name: 'المضيف', avatar: 0, game: 'fabraka', deviceId })).body.error, 'PLUS_REQUIRED');
+    assert.equal((await api('/api/rooms', { ...newCredentials(), name: 'المضيف', avatar: 0, game: 'fabraka', deviceId })).status, 201);
     const [host, guest] = winning.pair;
     for (let round = 1; round <= 3; round++) {
       const q = questions.find((q) => q.text === host.state.question.text); assert.ok(q);
@@ -112,15 +104,15 @@ test('workerd starts exactly one pre-created free room, supports two-player play
     assert.equal(host.state.phase, 'write', 'rematch in the already-started room preserves existing allowance');
     await deleteUser({ DB }, ownerId);
     assert.equal(await DB.prepare('SELECT 1 FROM online_room_trial_claims WHERE user_id=?').bind(ownerId).first(), null);
-    assert.ok(await DB.prepare('SELECT 1 FROM trials WHERE user_id=?').bind(`device:${deviceId}`).first(), 'existing device trial policy remains');
+    assert.equal(await DB.prepare('SELECT 1 FROM trials WHERE user_id=?').bind(`device:${deviceId}`).first(), null, 'no device trial was consumed');
     await DB.prepare('UPDATE online_room_trial_claims SET created_at=?').bind(Date.now() - 2 * 86400000).run();
     await cleanup({ DB });
     assert.equal((await DB.prepare('SELECT COUNT(*) AS n FROM online_room_trial_claims').first()).n, 0);
-    assert.ok(await DB.prepare('SELECT 1 FROM trials WHERE user_id=?').bind(`device:${deviceId}`).first(), 'claim cleanup never restores a spent trial');
+    assert.equal(await DB.prepare('SELECT 1 FROM trials WHERE user_id=?').bind(`device:${deviceId}`).first(), null);
   } finally { clients.forEach((c) => c.stop()); if (mf) await mf.dispose(); await rm(dir, { recursive: true, force: true }); }
 });
 
-test('a consumed start retries after a Durable Object storage failure and full Fabraka invitations stop at eight seats', { timeout: 20_000 }, async (t) => {
+test('a free start retries after a Durable Object storage failure and full Fabraka invitations stop at eight seats', { timeout: 20_000 }, async (t) => {
   const app = await startLocalServer({ port: 0, vars: {} }); t.after(() => app.close());
   const api = transport(app.url), clients = []; t.after(() => clients.forEach((c) => c.stop()));
   const joined = await joinedPair(app.url, api, clients, { deviceId: 'e'.repeat(32) });
@@ -130,7 +122,7 @@ test('a consumed start retries after a Durable Object storage failure and full F
   item.storage.transaction = async (fn) => { if (fail) { fail = false; throw new Error('test storage failure'); } return transaction(fn); };
   await assert.rejects(joined.pair[0].command('start'), (e) => e.code === 'INTERNAL');
   assert.equal(joined.pair[0].state.phase, 'lobby');
-  assert.equal((await app.env.DB.prepare('SELECT COUNT(*) AS n FROM trials').first()).n, 1);
+  assert.equal((await app.env.DB.prepare('SELECT COUNT(*) AS n FROM trials').first()).n, 0);
   await joined.pair[0].command('start'); assert.equal(joined.pair[0].state.phase, 'write');
   const full = await api('/api/rooms', { ...newCredentials(), name: 'مدير', avatar: 0, game: 'fabraka' });
   const record = app.rooms.get(full.body.code); await record.instance.ready;
@@ -140,7 +132,7 @@ test('a consumed start retries after a Durable Object storage failure and full F
   assert.equal(status.status, 409); assert.equal((await status.json()).error, 'FULL_FABRAKA');
 });
 
-test('host transfer cannot spend a departed creator free trial, but the creator active subscription still supports the room', { timeout: 20_000 }, async (t) => {
+test('host transfer supports free play without depending on the departed creators billing', { timeout: 20_000 }, async (t) => {
   const app = await startLocalServer({ port: 0, vars: { AUTH_DEV_FAKE: '1', SESSION_SECRET: 'transfer-test-key' } }); t.after(() => app.close());
   const publicApi = transport(app.url), clients = []; t.after(() => clients.forEach((c) => c.stop()));
   const signed = await publicApi('/api/auth/dev', { subject: 'transfer-owner', name: 'منشئ الغرفة' });
@@ -157,13 +149,12 @@ test('host transfer cannot spend a departed creator free trial, but the creator 
     return group;
   }
   const free = await transferred({ deviceId: 'f'.repeat(32) });
-  await assert.rejects(free.pair[1].command('start'), (error) => error.code === 'TRIAL_OWNER_LEFT');
-  assert.equal(free.pair[1].state.phase, 'lobby');
+  await free.pair[1].command('start');
+  assert.equal(free.pair[1].state.phase, 'write');
   assert.equal((await app.env.DB.prepare('SELECT COUNT(*) AS n FROM trials').first()).n, 0);
   assert.equal((await app.env.DB.prepare('SELECT COUNT(*) AS n FROM online_room_trial_claims').first()).n, 0);
-  assert.match(errorText('TRIAL_OWNER_LEFT'), /منشئ الغرفة غادر/);
   assert.equal((await ownerApi('/api/dev/grant', { until: Date.now() + 86400000 })).status, 200);
   const premium = await transferred({ deviceId: 'f'.repeat(32) });
   await premium.pair[1].command('start'); assert.equal(premium.pair[1].state.phase, 'write');
-  assert.ok(await app.env.DB.prepare('SELECT 1 FROM trials WHERE user_id=?').bind(ownerId).first());
+  assert.equal(await app.env.DB.prepare('SELECT 1 FROM trials WHERE user_id=?').bind(ownerId).first(), null);
 });

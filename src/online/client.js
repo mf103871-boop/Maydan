@@ -177,6 +177,7 @@ export class RoomClient {
   subscribeDrawing(listener) { this.drawingListeners.add(listener); return () => this.drawingListeners.delete(listener); }
   subscribeReactions(listener) { this.reactionListeners.add(listener); return () => this.reactionListeners.delete(listener); }
   react(emoji) { return this.command('react', { emoji }); }
+  reactCosmetic(reactionId) { return this.command('react', { reactionId, accountAuthorization: this.getAccountAuthorization() }); }
   command(type, fields = {}) {
     if (this.connectionStatus !== 'connected' || this.ws?.readyState !== 1 || !this.state) return Promise.reject(new ClientError('DISCONNECTED'));
     if (this.pending.size >= MAX_PENDING_COMMANDS || (this.ws.bufferedAmount || 0) > MAX_BUFFERED_BYTES) {

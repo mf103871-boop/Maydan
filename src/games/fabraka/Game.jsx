@@ -1,3 +1,4 @@
+import { SetupPresets } from '../../plus/SetupPresets.jsx';
 import { Avatar, GameArtwork } from '../../shared/brand/art.jsx';
 import React, { useCallback, useEffect, useReducer, useRef, useState } from 'react';
 import { socialInterruption } from '../../social/interruption.js';
@@ -35,6 +36,7 @@ export function SetupOptions({ storage, api }) {
   useEffect(() => { api.setSetupValid?.(valid); return () => api.setSetupValid?.(true); }, [api, valid]);
   useEffect(() => { api.setGameOptions?.(opts); }, [api, opts]);
   return <div data-design-screen="setup.fabraka" data-design-id="options" className="fabraka fab-setup stack">
+    {!api.designPreview && <SetupPresets game="fabraka" settings={opts} onApply={update} />}
     <style>{css}</style>
     {retiredSession && <p className="fab-note" role="status">تجدّدت أسئلة فبركة وصورها. ابدأوا جلسة جديدة؛ الجلسة القديمة غير قابلة للاستئناف، ونتائجكم السابقة محفوظة.</p>}
     {resume && <Card className="fab-resume stack">

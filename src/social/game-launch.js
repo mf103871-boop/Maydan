@@ -58,7 +58,6 @@ export function createSocialGameLauncher({ account, target, isCurrent = () => tr
         assertCurrent();
         if (!Object.hasOwn(ONLINE_GAMES, game)) throw Object.assign(new Error('اختر لعبة متاحة.'), { code: 'INVALID' });
         if (!room) {
-          if (account.gameAccess(game) === 'locked') throw Object.assign(new Error('تحتاج ميدان بلس لبدء مباراة جديدة.'), { code: 'PLUS_REQUIRED' });
           const key = `pendingSocialCreate:${owner}:${target.targetType}:${target.targetId}:${game}`;
           const session = read(server, key) || credentials();
           store(server, key, session);

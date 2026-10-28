@@ -2,6 +2,7 @@ import { randomHex } from '../accounts/jwt.mjs';
 import { fail } from '../room-model.mjs';
 import { sha256 } from '../protocol.mjs';
 import { pairOf, publicProfile, messageView } from './model.mjs';
+import { plusAccessSql, plusActiveFor } from '../plus/access.mjs';
 import { ensurePlayerProfile, profileAchievementStatements } from '../profiles/db.mjs';
 import { objectionableText } from '../moderation/filter.mjs';
 import { attachmentGuard } from '../lamma/media.mjs';
@@ -192,7 +193,7 @@ export async function conversationsOf(env, userId, now) {
     (SELECT COUNT(*) FROM social_messages m WHERE m.conversation_id=c.id AND m.sender_id!=? AND m.deleted_at IS NULL AND m.seq>COALESCE(r.last_read_seq,0)) AS unread_count,
     lm.seq AS lm_seq,lm.conversation_id AS lm_conversation_id,lm.sender_id AS lm_sender_id,lm.client_id AS lm_client_id,lm.text AS lm_text,
     lm.original_hash AS lm_original_hash,lm.created_at AS lm_created_at,lm.edited_at AS lm_edited_at,lm.deleted_at AS lm_deleted_at,
-    lm.kind AS lm_kind,lm.attachment_id AS lm_attachment_id,lm.room_invite_id AS lm_room_invite_id
+    lm.kind AS lm_kind,lm.attachment_id AS lm_attachment_id,lm.room_invite_id AS lm_room_invite_id,lm.sticker_id AS lm_sticker_id,lm.sticker_version AS lm_sticker_version
     FROM social_conversations c JOIN social_profiles p ON p.user_id=CASE WHEN c.user_low=? THEN c.user_high ELSE c.user_low END
     JOIN users u ON u.id=p.user_id LEFT JOIN social_reads r ON r.conversation_id=c.id AND r.user_id=?
     LEFT JOIN social_reads pr ON pr.conversation_id=c.id AND pr.user_id=p.user_id
@@ -202,7 +203,7 @@ export async function conversationsOf(env, userId, now) {
   return rows.map((row) => ({ id: row.id, user: publicProfile(row, { presence: true, now }),
     lastMessage: row.lm_seq ? messageView({ seq: row.lm_seq, conversation_id: row.lm_conversation_id, sender_id: row.lm_sender_id, client_id: row.lm_client_id,
       text: row.lm_text, original_hash: row.lm_original_hash, created_at: row.lm_created_at, edited_at: row.lm_edited_at, deleted_at: row.lm_deleted_at,
-      kind: row.lm_kind, attachment_id: row.lm_attachment_id, room_invite_id: row.lm_room_invite_id }) : null,
+      kind: row.lm_kind, attachment_id: row.lm_attachment_id, room_invite_id: row.lm_room_invite_id, sticker_id: row.lm_sticker_id, sticker_version: row.lm_sticker_version }) : null,
     unreadCount: row.unread_count, readSeq: row.read_seq, peerReadSeq: row.peer_read_seq }));
 }
 export async function messageForUser(env, userId, seq) {
@@ -229,15 +230,22 @@ export async function messagesOf(env, userId, conversationId, { before, after, l
     peerReadSeq: reads.find((r) => r.user_id === peerOf(convo, userId))?.last_read_seq || 0 };
 }
 export async function sendMessage(env, userId, conversationId, text, clientId, now, content = {}) {
-  await chargeUser(env, userId, 'message_day', now);
   if(objectionableText(text))fail('CONTENT_REJECTED',422);
   const kind=content.kind||'text';
-  const hash = await sha256(kind==='text'?text:JSON.stringify({kind,attachmentId:content.attachmentId,roomInvitationId:content.roomInvitationId}));
+  const hash = await sha256(kind==='text'?text:JSON.stringify(kind==='sticker'?{kind,stickerId:content.stickerId,stickerVersion:content.stickerVersion}:{kind,attachmentId:content.attachmentId,roomInvitationId:content.roomInvitationId}));
   const convo=await requireConversation(env,userId,conversationId),otherId=peerOf(convo,userId);
-  const insert=stmt(env, `INSERT OR IGNORE INTO social_messages(conversation_id,sender_id,client_id,text,original_hash,created_at,kind,attachment_id,room_invite_id)
-    SELECT c.id,?,?,?,?,?,?,?,? FROM social_conversations c WHERE c.id=? AND (c.user_low=? OR c.user_high=?)
-    AND ${allowedConversation('c')} ${content.attachmentId?`AND ${attachmentGuard('direct',conversationId,userId,content.attachmentId)}`:''} AND (SELECT COUNT(*) FROM social_messages WHERE sender_id=? AND created_at>?)<60`,
-  userId, clientId, text, hash, now,kind,content.attachmentId||null,content.roomInvitationId||null, conversationId, userId, userId, userId, now - 60_000);
+  if(kind==='sticker') {
+    const prior=await first(env,'SELECT * FROM social_messages WHERE sender_id=? AND client_id=?',userId,clientId);
+    if(prior) {
+      if(prior.conversation_id!==conversationId||prior.original_hash!==hash)fail('CONFLICT',409);
+      return {message:messageView(prior),otherId,idempotent:true};
+    }
+  }
+  await chargeUser(env, userId, 'message_day', now);
+  const insert=stmt(env, `INSERT OR IGNORE INTO social_messages(conversation_id,sender_id,client_id,text,original_hash,created_at,kind,attachment_id,room_invite_id,sticker_id,sticker_version)
+    SELECT c.id,?,?,?,?,?,?,?,?,?,? FROM social_conversations c WHERE c.id=? AND (c.user_low=? OR c.user_high=?)
+    AND ${allowedConversation('c')} ${kind==='sticker'?`AND ${plusAccessSql(env,ident(userId))}`:''} ${content.attachmentId?`AND ${attachmentGuard('direct',conversationId,userId,content.attachmentId)}`:''} AND (SELECT COUNT(*) FROM social_messages WHERE sender_id=? AND created_at>?)<60`,
+  userId, clientId, text, hash, now,kind,content.attachmentId||null,content.roomInvitationId||null,content.stickerId||null,content.stickerVersion||null, conversationId, userId, userId, userId, now - 60_000);
   const statements=[insert,pushJob(env,`direct-${userId}-${clientId}`,otherId,{category:'messages',actorId:userId,scope:'direct',conversationId,clientId},`EXISTS(SELECT 1 FROM social_messages WHERE sender_id=${ident(userId)} AND client_id=${ident(clientId)} AND conversation_id=${ident(conversationId)})`)];
   if(content.attachmentId)statements.push(stmt(env,'UPDATE social_attachments SET message_seq=(SELECT seq FROM social_messages WHERE sender_id=? AND client_id=? AND attachment_id=?) WHERE id=? AND message_seq IS NULL',userId,clientId,content.attachmentId,content.attachmentId));
   await env.DB.batch(statements);
@@ -245,6 +253,7 @@ export async function sendMessage(env, userId, conversationId, text, clientId, n
     WHERE m.sender_id=? AND m.client_id=? AND (c.user_low=? OR c.user_high=?) AND ${allowedConversation('c')}`, userId, clientId, userId, userId);
   if (!row) {
     await requireConversation(env, userId, conversationId);
+    if(kind==='sticker'&&!await plusActiveFor(env,userId))fail('PLUS_REQUIRED',403);
     fail('RATE_LIMIT', 429);
   }
   if (row.conversation_id !== conversationId || row.original_hash !== hash) fail('CONFLICT', 409);
@@ -284,16 +293,16 @@ export async function reportUser(env, userId, otherId, messageSeq, reason, now) 
   let message = null;
   if (messageSeq !== null) {
     // A member can report received evidence even after blocking/removing a friend.
-    message = await first(env, `SELECT m.text,m.attachment_id FROM social_messages m JOIN social_conversations c ON c.id=m.conversation_id
+    message = await first(env, `SELECT m.text,m.attachment_id,m.sticker_id,m.sticker_version FROM social_messages m JOIN social_conversations c ON c.id=m.conversation_id
       WHERE m.seq=? AND m.sender_id=? AND (c.user_low=? OR c.user_high=?) AND m.deleted_at IS NULL`, messageSeq, otherId, userId, userId);
     if (!message) fail('NOT_FOUND', 404);
   }
   const reportId=crypto.randomUUID();
-  const insert = stmt(env, `INSERT INTO social_reports(id,reporter_id,reported_id,message_seq,message_text,reason,created_at)
-    SELECT ?,?,?,?,?,?,? WHERE EXISTS(SELECT 1 FROM users WHERE id=?) AND EXISTS(SELECT 1 FROM users WHERE id=?)
+  const insert = stmt(env, `INSERT INTO social_reports(id,reporter_id,reported_id,message_seq,message_text,reason,created_at,sticker_id,sticker_version)
+    SELECT ?,?,?,?,?,?,?,?,? WHERE EXISTS(SELECT 1 FROM users WHERE id=?) AND EXISTS(SELECT 1 FROM users WHERE id=?)
     AND NOT EXISTS(SELECT 1 FROM (SELECT user_id FROM account_deletions UNION ALL SELECT user_id FROM moderation_suspensions) WHERE user_id IN (?,?))
     AND (SELECT COUNT(*) FROM social_reports WHERE reporter_id=? AND created_at>?)<10`,
-  reportId, userId, otherId, messageSeq, message?.text || null, reason, now, userId, otherId, userId, otherId, userId, now - 3_600_000);
+  reportId, userId, otherId, messageSeq, message?.text || null, reason, now,message?.sticker_id||null,message?.sticker_version||null, userId, otherId, userId, otherId, userId, now - 3_600_000);
   const results=await env.DB.batch([insert,...(message?.attachment_id?[stmt(env,'INSERT INTO social_report_attachments(report_id,attachment_id) SELECT ?,? WHERE EXISTS(SELECT 1 FROM social_reports WHERE id=?)',reportId,message.attachment_id,reportId)]:[])]);
   if (!changed(results[0])) fail('RATE_LIMIT', 429);
 }

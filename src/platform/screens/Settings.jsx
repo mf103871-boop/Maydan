@@ -1,3 +1,4 @@
+import { SubscriptionTransition } from '../../plus/SubscriptionTransition.jsx';
 // الإعدادات: الصوت، الموسيقى، الاهتزاز، تقليل الحركة، مسح البيانات، الإصدار، وبلاغات أسئلة بَديهة.
 import React, { useState } from 'react';
 import { Screen, TopBar, Button, Card, ConfirmModal } from '../../shared/ui/components.jsx';
@@ -41,7 +42,7 @@ export function Settings() {
   return (
     <Screen data-design-screen="settings" dir={getDirection()} className="stack settings-screen" aria-label="الإعدادات">
       <TopBar data-design-id="topbar" title="الإعدادات" eyebrow="ميدان على راحتك" />
-      <SettingsGroup id="settings-account" title="حسابك وميدان بلس"><AccountCard /></SettingsGroup>
+      <SettingsGroup id="settings-account" title="حسابك وميدان بلس"><SubscriptionTransition /><AccountCard /><Button onClick={() => navigate('/store')}>تخصيص مظهري ومتجر بلس</Button></SettingsGroup>
       <SettingsGroup id="settings-audio" title="الصوت والموسيقى">
         <Toggle index={0} icon={<IconVolume />} title="الصوت" sub="المؤثرات ومقاطع الأسئلة والموسيقى معًا" checked={settings.soundOn} onChange={(v) => { setSettings({ soundOn: v }); if (v) sound.play('pop'); }} />
         <div className="setting setting-volume">

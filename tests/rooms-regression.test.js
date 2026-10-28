@@ -393,7 +393,7 @@ test('7b · updating fetches the newer service worker before reloading back into
   assert.deepEqual(calls, ['reload']); assert.ok(Date.now() - started >= 45);
 });
 
-test('anonymous waiting rooms do not consume a device trial; used device trials still gate new rooms', async (t) => {
+test('anonymous waiting rooms remain free even with historical spent device trials', async (t) => {
   const app = await startLocalServer({ port: 0 }); t.after(() => app.close());
   const body = (deviceId) => ({ ...newCredentials(), name: 'أحمد', avatar: 0, rounds: 5, ...(deviceId ? { deviceId } : {}) });
   const device = 'd'.repeat(32);
@@ -402,7 +402,7 @@ test('anonymous waiting rooms do not consume a device trial; used device trials 
   assert.equal(second.status, 201);
   await app.env.DB.prepare('INSERT INTO trials(user_id,game,created_at) VALUES(?,?,?)').bind(`device:${device}`, 'meenfina', Date.now()).run();
   const played = await api(app, '/api/rooms', body(device));
-  assert.equal(played.status, 402); assert.equal(played.body.error, 'PLUS_REQUIRED');
+  assert.equal(played.status, 201, JSON.stringify(played.body));
   assert.equal((await api(app, '/api/rooms', body('e'.repeat(32)))).status, 201);
   assert.equal((await api(app, '/api/rooms', body(null))).status, 201, 'without a device id the client-side mark remains the gate');
 });

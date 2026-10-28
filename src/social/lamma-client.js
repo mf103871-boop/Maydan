@@ -1,4 +1,5 @@
 import { mergeMessages, socialError } from './client.js';
+import { getCosmetic } from '../plus/catalog.js';
 
 const ERRORS = {
   GROUP_FULL: 'الشلّة ممتلئة؛ الحد الأقصى ١٢ عضوًا.', GROUP_LIMIT: 'وصلت إلى الحد الأقصى للشِلَل.',
@@ -230,15 +231,19 @@ export class LammaClient {
   removeGroupMember(id, userId) { return this.groupAction(id, `/members/${enc(userId)}`, 'DELETE'); }
   setGroupRole(id, userId, role) { return this.groupAction(id, `/members/${enc(userId)}`, 'PATCH', { role }); }
   transferGroupOwnership(id, userId) { return this.groupAction(id, '/ownership', 'POST', { userId }); }
-  async sendGroupMessage(id, text, clientId) {
+  async sendGroupMessage(id, text, clientId, stickerId) {
     const epoch = this.epoch, authorizationEpoch = this.authorizationEpoch;
+    const sticker = stickerId ? getCosmetic(stickerId, { kind: 'sticker' }) : null;
+    if (stickerId && !sticker) throw Object.assign(new Error('هذا الملصق غير متاح.'), { code: 'INVALID' });
+    if (sticker) text = `ملصق: ${sticker.label}`;
+    const kind = sticker ? 'sticker' : 'text';
     this.assert(epoch); text = String(text || '').trim();
     if (!text || text.length > 2000) throw Object.assign(new Error('اكتب رسالة من حرف إلى 2000 حرف.'), { code: 'INVALID' });
-    const previous = [...this.pendingText.values()].find(message => message.groupId === id && message.text === text);
+    const previous = [...this.pendingText.values()].find(message => message.groupId === id && message.text === text && message.kind === kind && message.stickerId === stickerId);
     clientId ||= previous?.clientId || lammaId();
     const pending = this.pendingText.get(clientId) || { groupId: id, conversationId: id, senderId: this.userId,
-      kind: 'text', text, clientId, createdAt: Date.now(), status: 'pending' };
-    if (pending.groupId !== id || pending.text !== text) throw Object.assign(new Error('تغيّرت الرسالة. أعد المحاولة.'), { code: 'CONFLICT' });
+      kind, text, clientId, ...(sticker ? { stickerId, stickerVersion: sticker.version } : {}), createdAt: Date.now(), status: 'pending' };
+    if (pending.groupId !== id || pending.text !== text || pending.kind !== kind || pending.stickerId !== stickerId) throw Object.assign(new Error('تغيّرت الرسالة. أعد المحاولة.'), { code: 'CONFLICT' });
     if (this.sendingText.has(clientId)) return this.sendingText.get(clientId);
     this.pendingText.set(clientId, pending);
     const messages = this.state.groupConversations[id]?.messages || [];
@@ -247,7 +252,7 @@ export class LammaClient {
       : [...messages, { ...pending, status: 'pending' }] });
     const task = (async () => {
       try {
-        const result = await this.call(`/groups/${enc(id)}/messages`, { method: 'POST', body: { kind: 'text', text, clientId } });
+        const result = await this.call(`/groups/${enc(id)}/messages`, { method: 'POST', body: sticker ? { kind, stickerId, clientId } : { kind, text, clientId } });
         this.assertVisibility(epoch, authorizationEpoch);
         if (!this.state.groupConversations[id]) throw Object.assign(new Error('تغيّرت صلاحية المحادثة.'), { code: 'STALE' });
         this.pendingText.delete(clientId);
@@ -266,8 +271,9 @@ export class LammaClient {
   }
   retryGroupMessage(id, clientId) {
     const message = this.state.groupConversations[id]?.messages.find(value => value.clientId === clientId && value.status === 'failed' && value.senderId === this.userId && !Number.isSafeInteger(value.seq));
-    return message ? this.sendGroupMessage(id, message.text, clientId) : Promise.resolve();
+    return message ? this.sendGroupMessage(id, message.text, clientId, message.stickerId) : Promise.resolve();
   }
+  sendGroupSticker(id, stickerId) { return this.sendGroupMessage(id, '', undefined, stickerId); }
   async changeGroupMessage(id, seq, text) {
     const epoch = this.epoch;
     const result = await this.call(`/groups/${enc(id)}/messages/${enc(seq)}`, { method: text === null ? 'DELETE' : 'PATCH', body: text === null ? undefined : { text } });

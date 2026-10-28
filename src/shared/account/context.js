@@ -8,7 +8,7 @@ export const NULL_ACCOUNT = Object.freeze({
   probeStore: async () => null,
   redeem: async () => false,
   signIn: async () => {}, signOut: async () => {}, refresh: async () => null,
-  markTrial: () => {}, trialAvailable: () => true, lockedPack: () => false, gameAccess: () => 'premium',
+  markTrial: () => {}, trialAvailable: () => true, lockedPack: () => false, gameAccess: () => 'free',
   openPaywall: () => {}, closePaywall: () => {}, restore: async () => {}, deleteAccount: async () => {},
   // ترويسات المصادقة لطلبات الغرف: {} حين لا جلسة، وإلا { Authorization: 'Bearer …' }
   authHeaders: () => ({}),

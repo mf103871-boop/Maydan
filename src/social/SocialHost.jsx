@@ -175,7 +175,7 @@ function GroupMessageAction({ action, lamma, social, onClose, notify }) {
 export function SocialHost() {
   const account = useAccount(); const social = useSocial(); const ui = useSocialUI(); const lamma = useLamma();
   const { open: panelOpen, drawerOpen, close: closePanel, show: showPanel, openChat, openGroup } = ui;
-  const { selectGroup, loadGroup, loadOlderGroup, sendGroupMessage, retryGroupMessage, markGroupRead, offline: groupOffline } = lamma;
+  const { selectGroup, loadGroup, loadOlderGroup, sendGroupMessage, sendGroupSticker, retryGroupMessage, markGroupRead, offline: groupOffline } = lamma;
   const profiles = useProfiles(); const route = useRoute(); const { sound } = usePlatform();
   const interruption = useSyncExternalStore(socialInterruption.subscribe, socialInterruption.getSnapshot, socialInterruption.getSnapshot);
   const [search, setSearch] = useState(false); const [signIn, setSignIn] = useState(false);
@@ -284,10 +284,11 @@ export function SocialHost() {
     openConversation: id => loadGroup(id),
     loadOlder: id => loadOlderGroup(id),
     sendMessage: (id, text) => sendGroupMessage(id, text),
+    sendSticker: (id, stickerId) => sendGroupSticker(id, stickerId),
     markRead: id => markGroupRead(id, Math.max(0, ...(groupChatRef.current?.messages || []).map(message => message.seq || 0))),
     setTyping: () => {},
     retryMessage: (id, clientId) => retryGroupMessage(id, clientId),
-  }), [groupOffline, loadGroup, loadOlderGroup, sendGroupMessage, retryGroupMessage, markGroupRead]);
+  }), [groupOffline, loadGroup, loadOlderGroup, sendGroupMessage, sendGroupSticker, retryGroupMessage, markGroupRead]);
   const dismissNotification = social.clearNotification;
   const notification = social.notification;
   const notificationId = notification?.id;

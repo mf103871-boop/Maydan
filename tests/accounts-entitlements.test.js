@@ -2,6 +2,8 @@
 // العميل يملك نسخته في src/shared/account/entitlements.js؛ هذه هي التي تبني me.
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import { readFileSync } from 'node:fs';
+import { createHash } from 'node:crypto';
 import { premiumOf, premiumActive, meResponse } from '../server/accounts/entitlements.mjs';
 import { isPremium } from '../src/shared/account/entitlements.js';
 import { GRACE_MS, PRODUCTS, TRIAL_GAMES } from '../src/shared/account/config.js';
@@ -67,7 +69,7 @@ test('السماح بعد الانتهاء يطابق ما يحسبه العمي
 
 test('meResponse يطابق عقد العميل ولا يسرّب حقول القاعدة', () => {
   const me = meResponse({ user: { id: 'u1', name: 'أحمد', email: null, created_at: 1 }, subscriptions: [row()], trials: { beep: true }, now: NOW });
-  assert.deepEqual(Object.keys(me).sort(), ['premium', 'serverTime', 'trials', 'user']);
+  assert.deepEqual(Object.keys(me).sort(), ['gameplay', 'plus', 'premium', 'serverTime', 'trials', 'user']);
   assert.deepEqual(me.user, { id: 'u1', name: 'أحمد', email: null });
   assert.deepEqual(Object.keys(me.premium).sort(), ['active', 'source', 'status', 'until', 'willRenew']);
   assert.deepEqual(me.trials, { beep: true });
@@ -223,9 +225,14 @@ test('cleanup يحذف الجلسات المنتهية قديمًا ورموز �
 
 test('ترحيلات D1 جمل مستقلة بسطر واحد يقبلها exec', () => {
   const statements = migrationStatements();
+  // The one reviewed CHECK-table rebuild is covered by the preservation and
+  // high-water-mark test in plus-stickers.test.js. Pin it, not arbitrary DDL.
+  const stickerMigration = readFileSync(new URL('../server/migrations/0016_plus_stickers.sql', import.meta.url), 'utf8').replace(/\r\n?/g, '\n');
+  assert.equal(createHash('sha256').update(stickerMigration).digest('hex'), '0695e5be9b39a724ece2bf69d6b510d7782eba453ce9f9d43ee2f43aa4ca6c6a');
+  const stickerStatements = new Set(stickerMigration.split('\n').map(line => line.replace(/--.*$/, '')).join('\n').split(';').map(part => part.replace(/\s+/g, ' ').trim()).filter(Boolean).map(part => part + ';'));
   // Existing account identities may receive missing profile rows. OR IGNORE
   // preserves existing rows; no update/delete/upsert or other table is allowed.
-  const allowed = statement => /^CREATE (TABLE|INDEX) IF NOT EXISTS /.test(statement) ||
+  const allowed = statement => stickerStatements.has(statement) || /^CREATE (TABLE|INDEX) IF NOT EXISTS /.test(statement) ||
     // The additive Lamma protocol preserves every existing row and v1 column.
     // Only these exact additions and concurrency indexes are approved here.
     ["ALTER TABLE social_messages ADD COLUMN kind TEXT NOT NULL DEFAULT 'text';",

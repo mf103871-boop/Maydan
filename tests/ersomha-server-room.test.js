@@ -123,22 +123,22 @@ test('history failure does not expose choices or spend the free start, and retry
     assert.equal((await f.DB.prepare('SELECT COUNT(*) AS n FROM trials').first()).n, 0);
     assert.equal(f.sockets.some(s => s.messages.some(m => m.type === 'state' && m.state.myChoices?.length)), false);
     f.observed.failHistory = false; assert.equal((await f.command(0, 'start')).ok, true);
-    assert.equal(f.room.room.phase, 'select'); assert.equal((await f.DB.prepare('SELECT COUNT(*) AS n FROM trials').first()).n, 1);
+    assert.equal(f.room.room.phase, 'select'); assert.equal((await f.DB.prepare('SELECT COUNT(*) AS n FROM trials').first()).n, 0);
   } finally { f.close(); }
 });
-test('a D1 trial claim followed by failed DO commit retries the same private choices without a second charge', async () => {
+test('a persisted word exposure followed by failed DO commit retries the same private choices without trial writes', async () => {
   const f = await fixture({ trial: true }); try {
     f.storage.failRoomOnce = true; assert.equal((await f.command(0, 'start')).ok, false);
     assert.equal(f.room.room.phase, 'lobby');
     const before = (await f.DB.prepare('SELECT concept_id FROM ersomha_seen ORDER BY concept_id').all()).results;
     const pending = await f.storage.get('ersomha:plan'); assert.equal(pending.turns.length, 3);
     assert.equal(new Set(pending.turns.flat().map(card => card.familyId)).size, 9);
-    assert.equal(before.length, 3, 'future private plan cards are not marked seen before their turns'); assert.equal((await f.DB.prepare('SELECT COUNT(*) AS n FROM online_room_trial_claims').first()).n, 1);
+    assert.equal(before.length, 3, 'future private plan cards are not marked seen before their turns'); assert.equal((await f.DB.prepare('SELECT COUNT(*) AS n FROM online_room_trial_claims').first()).n, 0);
     assert.equal((await f.command(0, 'start')).ok, true);
     assert.deepEqual(f.room.room.draw.choices.map(c => c.conceptId).sort(), before.map(r => r.concept_id));
     assert.deepEqual(f.room.room.ersomhaPlan, pending.turns, 'the entire private plan is recovered after a failed room write');
-    assert.equal((await f.DB.prepare('SELECT COUNT(*) AS n FROM trials').first()).n, 1);
-    assert.equal((await f.DB.prepare('SELECT COUNT(*) AS n FROM online_room_trial_claims').first()).n, 1);
+    assert.equal((await f.DB.prepare('SELECT COUNT(*) AS n FROM trials').first()).n, 0);
+    assert.equal((await f.DB.prepare('SELECT COUNT(*) AS n FROM online_room_trial_claims').first()).n, 0);
   } finally { f.close(); }
 });
 test('an insufficient fresh pool rejects before exposure/trial; explicit replay prepares the whole match first', async () => {

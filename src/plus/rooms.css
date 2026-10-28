@@ -1,0 +1,10 @@
+/* Cosmetics decorate surfaces only: status colors, tools and secret states stay intact. */
+.online-room-chrome[data-plus-room-theme]{border-inline:3px solid var(--plus-room-accent);border-radius:22px;padding-inline:8px;background:linear-gradient(180deg,color-mix(in srgb,var(--plus-room-accent) 13%,transparent),transparent 250px)}
+.online-room-chrome[data-plus-room-theme] .online-players>li{box-shadow:inset 0 -3px 0 color-mix(in srgb,var(--plus-room-accent) 28%,transparent)}
+.plus-room-picker{border:1px solid var(--plus-room-accent,#cabbad);padding:12px;border-radius:16px;background:var(--surface,#fff9ed)}
+.plus-room-picker select{min-height:44px;max-width:100%}.plus-room-picker small{font-size:12px;color:var(--text-muted,#74687d)}
+.room-reactions{flex-wrap:wrap}.plus-room-stickers{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;max-height:300px;overflow-y:auto;padding:8px;border-radius:16px;background:var(--surface,#fff9ed)}
+.plus-room-stickers button{min-height:44px;border:1px solid #d8c8df;border-radius:12px;background:#fff9ed;display:flex;align-items:center;flex-direction:column;justify-content:center;color:#352547;padding:4px;cursor:pointer;font:inherit}
+.plus-room-stickers img{width:64px;height:64px;object-fit:contain}.plus-room-stickers span{font-size:12px}.plus-room-reaction-art{width:92px;height:92px;object-fit:contain}
+@media(max-width:360px){.plus-room-stickers{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(prefers-reduced-motion:reduce){.plus-room-reaction-art{animation:none}}

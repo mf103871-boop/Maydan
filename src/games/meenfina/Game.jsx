@@ -1,3 +1,4 @@
+import { SetupPresets } from '../../plus/SetupPresets.jsx';
 import { Avatar, GameArtwork } from '../../shared/brand/art.jsx';
 import React, { useEffect, useMemo, useReducer, useRef, useState } from 'react';
 import { socialInterruption } from '../../social/interruption.js';
@@ -21,6 +22,7 @@ export function SetupOptions({ storage, api }) {
   const update = (patch) => { const next = normalizeOptions({ ...opts, ...patch }); setOpts(next); storage.set(OPTIONS_KEY, next); };
   return (
     <div data-design-screen="setup.meenfina" data-design-id="options" className="stack">
+    {!api.designPreview && <SetupPresets game="meenfina" settings={opts} onApply={update} />}
     {resume && <Card className="stack resume-card">
       <span className="card-title">لعبتكم بانتظاركم</span>
       <p className="card-muted">العبارة {resume.state.round} من {resume.state.rounds} · {resume.players.map((p) => p.name).join('، ')}</p>

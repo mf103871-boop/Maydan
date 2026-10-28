@@ -33,7 +33,7 @@ export async function reportsOf(env,{before,limit},status='open') {
   return page(rows.map(r=>({id:r.id,seq:r.seq,reporterId:r.reporter_id,reportedUser:{id:r.reported_id,name:publicName(r.name),
     code:r.code,bio:r.bio||'',revision:r.revision||0,suspended:!!r.suspended,avatarVersion:r.avatar_version,coverVersion:r.cover_version,
     avatarUrl:imageUrl(r.reported_id,'avatar',r.avatar_version),coverUrl:imageUrl(r.reported_id,'cover',r.cover_version)},
-    messageSeq:r.message_seq,messageText:r.message_text,reason:r.reason,createdAt:r.created_at,resolvedAt:r.resolved_at,resolution:r.resolution,
+    messageSeq:r.message_seq,messageText:r.message_text,...(r.sticker_id?{stickerId:r.sticker_id,stickerVersion:r.sticker_version}:{}),reason:r.reason,createdAt:r.created_at,resolvedAt:r.resolved_at,resolution:r.resolution,
     ...(r.group_id?{scope:'group',groupId:r.group_id}:{}),...(r.attachment_id?{audioUrl:`/api/moderation/reports/${r.id}/audio`}:{}),
     ...(r.drawing_turn?{scope:'drawing',drawingTurn:r.drawing_turn,drawingUrl:`/api/moderation/reports/${r.id}/drawing`}:{}),})),limit,'reports');
 }

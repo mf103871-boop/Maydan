@@ -1,3 +1,4 @@
+import { SetupPresets } from '../../plus/SetupPresets.jsx';
 import { Avatar, GameArtwork } from '../../shared/brand/art.jsx';
 // واجهة «قبل ما يطق!» — تعتمد على logic.js للحالة وعلى المكونات المشتركة للمؤقت والنتائج.
 // الحركة: أختام ووميض من shared/fx (طبقات ثابتة في body)، والرسوم على حوامل clay-stage (brand.css).
@@ -25,6 +26,7 @@ export function SetupOptions({ storage, api }) {
   const update = (patch) => { const next = normalizeOptions({ ...opts, ...patch }); setOpts(next); storage.set(OPTIONS_KEY, next); };
   return (
     <div data-design-screen="setup.beep" data-design-id="options" className="stack">
+    {!api.designPreview && <SetupPresets game="beep" settings={opts} onApply={update} />}
     {resume && <Card className="stack resume-card">
       <span className="card-title">لعبتكم بانتظاركم</span>
       <p className="card-muted">{resume.state.mode === 'three' ? `الجولة ${resume.state.round} من ${resume.state.rounds}` : `💣 القنبلة · ${resume.state.players.length - resume.state.eliminated.length} لاعبين باقين`} · {resume.players.map((p) => p.name).join('، ')}</p>

@@ -4,7 +4,10 @@ import { buildFabrakaDeck } from './fabraka-content.mjs';
 import { credentials, readJson, json, errorResponse, shuffled, createLimit } from './protocol.mjs';
 import { bindSeatAccount, prepareRoomStats } from './room-stats.mjs';
 import { recordOnlineResult, profileSummaries } from './profiles/db.mjs';
-import { consumeRoomTrial, recheckMafiaHost } from './accounts/router.mjs';
+import { recheckMafiaHost } from './accounts/router.mjs';
+import { getCosmetic } from '../src/plus/catalog.js';
+import { plusActiveFor } from './plus/access.mjs';
+import { prepareRoomAppearance, selectRoomAppearance } from './plus/room-appearance.mjs';
 import { requireSession } from './accounts/session.mjs';
 import { liveAccountSql } from './moderation/access.mjs';
 import { ERSOMHA_PROTOCOL, BADEEHA_PROTOCOL, MAFIA_PROTOCOL, ROOM_REACTIONS, REACTION_BURST, REACTION_REFILL_MS, reactionsAllowed } from '../src/online/shared.js';
@@ -104,6 +107,7 @@ export class Room {
     if (candidate.game === 'ersomha' && candidate.phase === 'select' && (this.room?.phase !== 'select' || this.room.round !== candidate.round || this.room.matchId !== candidate.matchId)) {
       candidate.deadlineAt = Date.now() + ERSOMHA_SELECT_MS;
     }
+    await prepareRoomAppearance(this.env, this.room, candidate);
     candidate.revision++;
     const outbox = [...this.profileOutbox, ...prepareRoomStats(this.room, candidate)];
     const mafiaResult=candidate.game==='mafia'&&candidate.phase==='over'&&this.room?.phase!=='over'?prepareMafiaResult(candidate):null;
@@ -294,6 +298,11 @@ export class Room {
   }
   stateFor(id) {
     const state = snapshot(this.room, id, Date.now());
+    state.appearance = this.room.appearance || null;
+    state.members = state.members.map(m => {
+      const profile = this.room.members.find(seat => seat.id === m.id)?.profile;
+      return profile ? { ...m, profile } : m;
+    });
     if (this.room.game === 'ersomha' && this.drawing?.boardId === ersomhaBoardId(this.room)) state.drawing = ersomhaDrawingMeta(this.drawing);
     if (this.room.game === 'mafia') state.mafiaVoice=mafiaVoiceView(this.room,id);
     return state;
@@ -318,16 +327,22 @@ export class Room {
   // Quick reactions are ephemeral: a fixed emoji set broadcast to the seated sockets,
   // never written to storage or to the room snapshot. Their own small bucket keeps a
   // tapping thumb from spending the seat's general command budget.
-  reaction(ws, a, command, now) {
-    if (!ROOM_REACTIONS.includes(command.emoji)) fail('INVALID');
+  async reaction(ws, a, command, now) {
+    const cosmetic = command.reactionId ? getCosmetic(command.reactionId, { kind: 'sticker', now }) : null;
+    if (command.reactionId ? !cosmetic : !ROOM_REACTIONS.includes(command.emoji)) fail('INVALID');
     member(this.room, a.id);
     if (!reactionsAllowed(this.room, a.id)) fail('PRIVATE', 409);
     a.reactTokens = Math.min(REACTION_BURST, (a.reactTokens ?? REACTION_BURST) + Math.max(0, now - (a.reactAt ?? now)) / REACTION_REFILL_MS);
     a.reactAt = now;
     if (a.reactTokens < 1) { ws.serializeAttachment(a); fail('RATE_LIMIT', 429); }
     a.reactTokens -= 1; ws.serializeAttachment(a);
+    if (cosmetic) {
+      const userId = await this.cosmeticActor(a.id, command);
+      if (!await plusActiveFor(this.env, userId, now)) fail('PLUS_REQUIRED', 403);
+    }
     this.reactionCounter = (this.reactionCounter || 0) + 1;
-    const event = { type: 'reaction', id: `${now.toString(36)}-${this.reactionCounter}`, seatId: a.id, emoji: command.emoji, at: now };
+    const event = { type: 'reaction', id: `${now.toString(36)}-${this.reactionCounter}`, seatId: a.id, emoji: cosmetic?.emoji || command.emoji, at: now,
+      ...(cosmetic ? { reactionId: cosmetic.id, version: cosmetic.version } : {}) };
     for (const socket of this.sockets()) {
       const seat = this.attachment(socket).id;
       if (seat && this.room.members.some((m) => m.id === seat && !m.left)) this.send(socket, event);
@@ -458,10 +473,20 @@ export class Room {
     return found.id;
   }
   async hydrateErsomhaProfile(room, seatId) {
-    if (!['ersomha','mafia'].includes(room.game)) return;
-    const seat = member(room, seatId), profiles = await profileSummaries(this.env, [seat.accountUserId]);
-    const profile = profiles.get(seat.accountUserId);
-    seat.profile = profile ? { avatarPreset: profile.avatarPreset, theme: profile.theme, avatarUrl: profile.avatarUrl, revision: profile.revision } : null;
+    const seat = member(room, seatId);
+    if (!seat.accountUserId || !this.env.DB) return;
+    try {
+      const profiles = await profileSummaries(this.env, [seat.accountUserId]), profile = profiles.get(seat.accountUserId);
+      seat.profile = profile ? { avatarPreset: profile.avatarPreset, theme: profile.theme, avatarUrl: profile.avatarUrl, revision: profile.revision, cosmetics: profile.cosmetics } : null;
+    } catch { seat.profile = null; }
+  }
+  async cosmeticActor(seatId, command) {
+    const seat = member(this.room, seatId);
+    if (!seat.accountUserId || typeof command.accountAuthorization !== 'string' || command.accountAuthorization.length > 512) fail('AUTH_REQUIRED', 401);
+    const request = new Request('https://room.internal/api/cosmetics', { headers: { authorization: command.accountAuthorization } });
+    const auth = await requireSession(this.env, request, { rotate: false });
+    if (auth.user.id !== seat.accountUserId) fail('AUTH', 401);
+    return auth.user.id;
   }
   fetch(request) {
     return this.serial(async () => {
@@ -658,7 +683,7 @@ export class Room {
             if (a.drawViolations > 30) this.close(ws, 4429, 'RATE_LIMIT'); fail('RATE_LIMIT', 429);
           }
           a.drawTokens--; a.drawViolations = Math.max(0, (a.drawViolations || 0) - 1);
-        } else if (!(a.id && requestId && validCommand && command.type === 'react' && ROOM_REACTIONS.includes(command.emoji))) {
+        } else if (!(a.id && requestId && validCommand && command.type === 'react' && (command.reactionId ? getCosmetic(command.reactionId, { kind: 'sticker', now }) : ROOM_REACTIONS.includes(command.emoji)))) {
           if (!a.windowAt || now - a.windowAt > 10_000) { a.windowAt = now; a.count = 0; }
           a.count = (a.count || 0) + 1;
           if (a.count > 35) { ws.serializeAttachment(a); this.close(ws, 4429, 'RATE_LIMIT'); fail('RATE_LIMIT', 429); }
@@ -709,22 +734,30 @@ export class Room {
             if(a.revoked||!this.mafiaSessionValid(mafiaSessionProof,a.accountSessionId,a.accountUserId))fail('AUTH',401);
           } else if(!await this.env.DB.prepare(`SELECT 1 FROM sessions WHERE id=? AND user_id=? AND expires_at>? AND (revoked_at IS NULL OR revoked_at>?) AND ${liveAccountSql('sessions.user_id')}`).bind(a.accountSessionId||'',a.accountUserId||'',now,now).first())fail('AUTH',401);
         }
-        if (command.type === 'react') { this.reaction(ws, a, command, now); this.send(ws, { type: 'ack', requestId, ok: true }); return; }
+        if (command.type === 'react') { await this.reaction(ws, a, command, now); this.send(ws, { type: 'ack', requestId, ok: true }); return; }
+        if (command.type === 'appearance') {
+          if (command.themeId != null) await this.cosmeticActor(a.id, command);
+          const themed = structuredClone(this.room);
+          await selectRoomAppearance(this.env, themed, a.id, command.themeId);
+          await this.commit(themed);
+          this.send(ws, { type: 'ack', requestId, ok: true }); return;
+        }
         if (this.room.game === 'ersomha' && ['drawing_batch', 'drawing_undo', 'drawing_redo', 'drawing_clear', 'drawing_sync'].includes(command.type)) {
           await this.drawingCommand(ws, a.id, command); return;
         }
         const candidate = structuredClone(this.room);
         const deck = command.type === 'start' && !['ersomha', 'badeeha','mafia'].includes(candidate.game) ? (candidate.game === 'fabraka' ? buildFabrakaDeck(candidate) : meenfinaDeck(candidate)) : [];
+        if (command.type === 'start' && this.env.DB) {
+          const hostAccount = candidate.members.find(m => m.id === candidate.hostId && !m.left)?.accountUserId;
+          if (hostAccount && !await this.env.DB.prepare(`SELECT 1 AS ok WHERE ${liveAccountSql('?')}`).bind(hostAccount, hostAccount).first()) fail('AUTH', 401);
+        }
         if(candidate.game==='mafia'&&command.type==='start') {requireMafiaEnabled(this.env);await recheckMafiaHost(this.env,candidate,now);}
         action(candidate, a.id, command, now, deck);
         if (candidate.game === 'ersomha' && command.type === 'start') attemptedStart = candidate;
         if (candidate.game === 'ersomha') await this.prepareErsomha(candidate);
         if (candidate.game === 'mafia') await this.prepareMafia(candidate,mafiaSessionProof);
         if (command.type === 'start' && !candidate.trialStarted && !(candidate.game==='mafia'&&candidate.phase==='over')) {
-          // Validate the engine action first. Failed readiness/settings never
-          // spend the allowance; a failed DO write can retry this private claim.
-          await consumeRoomTrial(this.env, candidate.roomTrialGate, candidate.roomTrialClaim, now,
-            candidate.members.some((member) => member.id === candidate.trialOwnerId && !member.left));
+          // Legacy snapshots retain the started marker; no free allowance is spent.
           candidate.trialStarted = true;
         }
         await this.commit(candidate, { prepared: ['ersomha','mafia'].includes(candidate.game) });

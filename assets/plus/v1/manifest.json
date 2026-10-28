@@ -1,0 +1,185 @@
+{
+  "schema": 1,
+  "generator": "built-in image_gen",
+  "prompts": "docs/plus/ART-PROMPTS.json",
+  "generatedDate": "2026-10-28",
+  "artwork": {
+    "sahra": {
+      "sourceSHA256": "3c2ede7c7448a993da93904bfbcc85760db1355341c92f6821c0f03873f98d89",
+      "sha256": "1c87a5874db1046687b826a0ba8f139003d127ddb210fb44ef6d55921217af27",
+      "bytes": 181916
+    },
+    "artist": {
+      "sourceSHA256": "0939c1e1245f1ff2c45a28420f9ff1b2cec28038c7d5887ad51bcdf021aad003",
+      "sha256": "049eaf8bbfda263d935be3e1a5b195eeb2e5e58569acb28f33113d1bb9c95a52",
+      "bytes": 165888
+    },
+    "noir": {
+      "sourceSHA256": "7522ed7323122badc8da91c9c0e731b9aff2d59b3ab2e6c4f5ac84fa20346d02",
+      "sha256": "a58d72a6006dfa647abcb2ad17a0d82cd893e4a4e3cc2febc20315e45c4f0667",
+      "bytes": 145412
+    },
+    "olive": {
+      "sourceSHA256": "9a786c5d39c284ae0281e0473f8f7f580539394410b15432fcfd796baf91815b",
+      "sha256": "2a5f2af5452f2b26eea879f34bc28b6103babdcf1a0d894707eef24a0631fc1d",
+      "bytes": 276476
+    },
+    "starlight": {
+      "sourceSHA256": "1e2c5a8023ab8d0e818de4f23f382176d8d99286f7a8df424af37489ce4042ed",
+      "sha256": "7a50fa4a62347fe88dbcf1e15c8c990d5dc0b7b476a5ff8cbbe1ff9b628df5d7",
+      "bytes": 197234
+    }
+  },
+  "stickers": {
+    "sahra.sticker.1": {
+      "sha256": "cd2630b2fbfd16a91cb36a6d79d2614b1134651e15a472f451ecada7b0cd628e",
+      "bytes": 1000,
+      "originalVector": true
+    },
+    "sahra.sticker.2": {
+      "sha256": "a710ca40dfdf80e1cd8770ad51f01ef0d3fbf9b9ed9c1c0581d32e06c7f52b17",
+      "bytes": 1090,
+      "originalVector": true
+    },
+    "sahra.sticker.3": {
+      "sha256": "664891dfe10da65d4c0756b5b0e689b69a93ca8b19ac126ff4082bd5ff6c952c",
+      "bytes": 1081,
+      "originalVector": true
+    },
+    "sahra.sticker.4": {
+      "sha256": "4680f599567f1f6026d2f05f5d09529565ecd664c19e174c6d4a13e10fc59ac8",
+      "bytes": 1097,
+      "originalVector": true
+    },
+    "sahra.sticker.5": {
+      "sha256": "76b8985afb7c9f41a7adc665e79e354fabbf288bf71e7c8b569bb2a661af20bf",
+      "bytes": 1094,
+      "originalVector": true
+    },
+    "sahra.sticker.6": {
+      "sha256": "be5c68faa6112e3b792ec5b887ca728760b12e1087694d2d5291ef89184a4896",
+      "bytes": 1089,
+      "originalVector": true
+    },
+    "artist.sticker.1": {
+      "sha256": "4f0caac1e6e3c3cd328d4a04c409b41ebb4e19338cfe0959df823b6cc68b0615",
+      "bytes": 1002,
+      "originalVector": true
+    },
+    "artist.sticker.2": {
+      "sha256": "88eec856999cd359c76e4c9ca8866d8e5041fea1ad919ff86dc21e673a4c19ca",
+      "bytes": 1089,
+      "originalVector": true
+    },
+    "artist.sticker.3": {
+      "sha256": "6810a6e38031ee2f41581fd662320d7097979290f70e62011032bef5af30a038",
+      "bytes": 1077,
+      "originalVector": true
+    },
+    "artist.sticker.4": {
+      "sha256": "da16f531c1c2098a59b507721f1dc23137e57590a407c52073475ce9a8eba084",
+      "bytes": 1108,
+      "originalVector": true
+    },
+    "artist.sticker.5": {
+      "sha256": "9a6d612397cd757d82d1bee47f2ba74b8805271a50f2caec21af60e538f58c09",
+      "bytes": 1085,
+      "originalVector": true
+    },
+    "artist.sticker.6": {
+      "sha256": "2712ff3f9eb539b5a9d3466cac156407b8253fb90b220dc8cd213c8b01d90915",
+      "bytes": 1088,
+      "originalVector": true
+    },
+    "noir.sticker.1": {
+      "sha256": "ac6a31036d990778e85adb16c1f8a1d33d3165cf4861696ef44d6da40736a60d",
+      "bytes": 1020,
+      "originalVector": true
+    },
+    "noir.sticker.2": {
+      "sha256": "acd939e7ed3f90184540314aad9061087bda1a6cff544ba4c0fe9bddfa55ef26",
+      "bytes": 1094,
+      "originalVector": true
+    },
+    "noir.sticker.3": {
+      "sha256": "2b97f341db86b34293b80cbb26b54d5f618434d41bffdc54f840d74db40f00c7",
+      "bytes": 1081,
+      "originalVector": true
+    },
+    "noir.sticker.4": {
+      "sha256": "9022a963e46facb6370ed6a8d163a9a62f65782bade1d5547592dc2ebb111be3",
+      "bytes": 1095,
+      "originalVector": true
+    },
+    "noir.sticker.5": {
+      "sha256": "a4626e0f4ee3998c7b25129d638bc96eb9e258251aebfb99676e4ca588c588f5",
+      "bytes": 1099,
+      "originalVector": true
+    },
+    "noir.sticker.6": {
+      "sha256": "792ef7e39e3d4320bad0e085c316598ad154efe8ec2728f0ca68c265907fa931",
+      "bytes": 1093,
+      "originalVector": true
+    },
+    "olive.sticker.1": {
+      "sha256": "4798644d1c78bec731ad0041539de6e6d052b7575f8c15661553b9e2f3cd55a3",
+      "bytes": 1009,
+      "originalVector": true
+    },
+    "olive.sticker.2": {
+      "sha256": "2de029d419d27b1c0837561cde0cbad9c00410cec6b099c6cce66fcdbd81ba3b",
+      "bytes": 1090,
+      "originalVector": true
+    },
+    "olive.sticker.3": {
+      "sha256": "35a7c71b710d5c65a0c9e61763ba0341035afb796a65c1f246c1a69184a43f2c",
+      "bytes": 1072,
+      "originalVector": true
+    },
+    "olive.sticker.4": {
+      "sha256": "dd676f752470d5f207f7b75a4af0976eb875152e52794ba5da63cec47a09574d",
+      "bytes": 1104,
+      "originalVector": true
+    },
+    "olive.sticker.5": {
+      "sha256": "517e7223db0c6fcb59ea543cfa0c86d38dfed6b4427f39297fcfc8443da7d160",
+      "bytes": 1086,
+      "originalVector": true
+    },
+    "olive.sticker.6": {
+      "sha256": "b5279d6a669cbe0e061bbc9e41033d314db880c595155271dd5a8cc8fe33d640",
+      "bytes": 1091,
+      "originalVector": true
+    },
+    "starlight.sticker.1": {
+      "sha256": "4bd839314e7d3796e623381b5df2c58633b7a67c8bb001ed05ba905dd960b66c",
+      "bytes": 1008,
+      "originalVector": true
+    },
+    "starlight.sticker.2": {
+      "sha256": "7c75a1835a5484fd5798f7b6141ce02ce3e081840ec7eedbb4374b53fa05afd9",
+      "bytes": 1096,
+      "originalVector": true
+    },
+    "starlight.sticker.3": {
+      "sha256": "a680992fc6bdb555984e7ec446044d7c27c01b07168c7224fee5679651a94661",
+      "bytes": 1077,
+      "originalVector": true
+    },
+    "starlight.sticker.4": {
+      "sha256": "c94c4287e14895746b753e9b62f09e882fc3f40ae07b3575aadbea7de2d05909",
+      "bytes": 1095,
+      "originalVector": true
+    },
+    "starlight.sticker.5": {
+      "sha256": "9f04cf1f94ca06938fa7bd4770e979f7d7e275a997dbcceb619435e43f15e5e9",
+      "bytes": 1085,
+      "originalVector": true
+    },
+    "starlight.sticker.6": {
+      "sha256": "b26e9302bdd1134c3dcc3f015220aee1887d0eab782db23785245383262eb327",
+      "bytes": 1093,
+      "originalVector": true
+    }
+  }
+}

@@ -78,7 +78,7 @@ test('public discovery is available to unrelated accounts, excludes private/full
 });
 test('real six-client socket game keeps private actions private, isolates voice phases and fences devices',async t=>{
   const h=await setup(t),g=await h.group();await g.clients[0].command('start');await until(()=>g.clients.every(c=>c.state.phase==='role'));
-  assert.equal((await first(h.app.env,"SELECT COUNT(*) AS n FROM trials WHERE game='mafia'")).n,1);
+  assert.equal((await first(h.app.env,"SELECT COUNT(*) AS n FROM trials WHERE game='mafia'")).n,0);
   await h.phase(g.code);await until(()=>g.clients.every(c=>c.state.phase==='opening'));
   const a=await h.api(g.people[0],`/api/rooms/${g.code}/voice`,{deviceId:'phone-a',operation:'join'});assert.equal(a.status,200,JSON.stringify(a));
   const grant=decodeJws(a.body.connection.token).payload;assert.equal(grant.video.canPublishData,false);assert.equal(grant.exp-grant.iat,300);assert.equal(grant.metadata,undefined);assert.match(grant.video.room,/^g-[a-f0-9-]+$/);

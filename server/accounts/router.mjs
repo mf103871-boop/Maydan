@@ -244,15 +244,13 @@ async function meRoute(request, env, now) {
 async function addTrial(request, env, game, now) {
   if (!TRIAL_GAMES.includes(game)) failure('NOT_FOUND');
   const { user, rotated } = await requireSession(env, request, { now });
-  await db.addTrial(env, user.id, game, now);
+  // Legacy clients may still call this endpoint; gameplay no longer consumes trials.
   return withRotation(json({ trials: await db.trialsOf(env, user.id) }), rotated);
 }
 // الدمج اتحاد: علامة محلية من زمن المجهول لا تُمحى بالدخول ولا تُستعاد تجربة مستهلكة.
 async function mergeTrials(request, env, now) {
   const { user, rotated } = await requireSession(env, request, { now });
-  const body = await readJson(request);
-  const games = Array.isArray(body.games) ? body.games.filter((game) => TRIAL_GAMES.includes(game)) : [];
-  for (const game of games) await db.addTrial(env, user.id, game, now);
+  await readJson(request); // Drain/validate the legacy request without changing historical trials.
   return withRotation(json({ trials: await db.trialsOf(env, user.id) }), rotated);
 }
 
@@ -404,90 +402,33 @@ async function redeem(request, env, now) {
   return withRotation(json(await meOf(env, user, now)), rotated);
 }
 
-// ── بوابة إنشاء الغرف ───────────────────────────────────────────────────────
-export const gameOf = (input) => (TRIAL_GAMES.includes(input?.game) ? input.game : 'meenfina');
-// Waiting rooms stay free until a valid first match start. A random device ID
-// also accounts for guests: their spent match is stored in
-// جدول التجارب نفسه تحت `device:<id>`. مسح التخزين يعطي معرّفًا جديدًا (كما هو حال بقية
-// المحتوى المحلي)، لكن الخادم مصدر الحقيقة بدل علامة في localStorage وحدها.
-const DEVICE_ID = /^[a-f0-9]{32}$/;
-const deviceKeyOf = (input) => (typeof input?.deviceId === 'string' && DEVICE_ID.test(input.deviceId) ? `device:${input.deviceId}` : null);
+// Gameplay eligibility and verified account identity are independent of Plus.
+export const gameOf = input => input?.game === 'badeeha' ? 'badeeha' : (TRIAL_GAMES.includes(input?.game) ? input.game : 'meenfina');
 export async function roomGate(request, env, input, now = Date.now()) {
-  // بَديهة مجانية على جهاز واحد (القفل في الحزم لا في المباراة)، وكذلك استضافتها أونلاين.
-  if (input?.game === 'badeeha') return null;
   const game = gameOf(input);
   if (!env.DB) { if (game === 'ersomha' || game === 'mafia') failure('AUTH_REQUIRED'); return null; }
-  const device = deviceKeyOf(input);
   let found = null;
   if (game === 'ersomha' || game === 'mafia') found = await requireSession(env, request, { now, rotate: false });
   else if (bearer(request)) {
     try { found = await readSession(env, request, { now, rotate: false }); }
-    catch (error) { if (!(error instanceof RoomError)) throw error; } // رمز قديم = ضيف، لا رفض
+    catch (error) { if (!(error instanceof RoomError) || error.code !== 'AUTH_EXPIRED') throw error; }
   }
-  if (!found) {
-    if (!device) return null; // لا هوية إطلاقًا: تبقى علامة العميل المحلية هي الحارس
-    const trials = await db.trialsOf(env, device);
-    if (trials[game]) failure('PLUS_REQUIRED');
-    return { userId: null, device, game, premium: false };
-  }
-  const [subscriptions, trials, deviceTrials] = await Promise.all([
-    db.subscriptionsOf(env, found.user.id), db.trialsOf(env, found.user.id), device ? db.trialsOf(env, device) : {},
-  ]);
-  const premium = premiumActive(premiumOf(subscriptions, now, env), now);
-  // اتحاد الحساب والجهاز، كما يتحد المحلي والخادم في العميل: الدخول لا يستعيد تجربة مستهلكة.
-  if (!premium && (trials[game] || deviceTrials[game])) failure('PLUS_REQUIRED');
-  return { userId: found.user.id, device, game, premium };
+  if (!found) return null;
+  if (!await env.DB.prepare(`SELECT 1 WHERE ${liveAccountSql('?')}`).bind(found.user.id,found.user.id).first()) failure('AUTH');
+  // Preserve this identity contract for persisted rooms and older room workers.
+  // It grants gameplay only; premium remains the real billing result in /api/me.
+  return { userId: found.user.id, device: null, game, gameplay: 'free' };
 }
-// The caller supplies a private, server-created claim ID stored with the room.
-// This is also the recovery key if D1 succeeds but the Durable Object commit
-// fails: retrying that same room can proceed; another room cannot use its claim.
-export async function consumeRoomTrial(env, gate, claimId, now = Date.now(), ownerPresent = true) {
-  if (!env.DB || !gate) return;
-  const keys = [...new Set([gate.userId, gate.device].filter(Boolean))];
-  if (!keys.length) return;
-  const statement = (sql, ...args) => env.DB.prepare(sql).bind(...args);
-  const ownerGuard = gate.userId ? liveAccountSql('?') : '1';
-  const ownerArgs = gate.userId ? [gate.userId, gate.userId] : [];
-  const assertOwner = async () => {
-    if (gate.userId && !await statement(`SELECT 1 AS ok WHERE ${ownerGuard}`, ...ownerArgs).first()) failure('AUTH');
-  };
-  if (gate.userId) {
-    await assertOwner();
-    const subscriptions = await db.subscriptionsOf(env, gate.userId);
-    if (premiumActive(premiumOf(subscriptions, now, env), now)) {
-      await env.DB.batch(keys.map(key => statement(`INSERT OR IGNORE INTO trials(user_id,game,created_at) SELECT ?,?,? WHERE ${ownerGuard}`,
-        key, gate.game, now, ...ownerArgs)));
-      await assertOwner();
-      return;
-    }
-  }
-  if (!ownerPresent) throw new RoomError('TRIAL_OWNER_LEFT', 409);
-  if (!/^[a-zA-Z0-9-]{1,80}$/.test(claimId || '')) failure('INVALID');
-  const placeholders = keys.map(() => '?').join(',');
-  const claims = keys.map((key) => statement(`INSERT OR IGNORE INTO online_room_trial_claims(user_id,game,claim_id,created_at)
-    SELECT ?,?,?,? WHERE ${ownerGuard} AND NOT EXISTS(SELECT 1 FROM trials WHERE user_id IN (${placeholders}) AND game=?)
-    AND NOT EXISTS(SELECT 1 FROM online_room_trial_claims WHERE user_id IN (${placeholders}) AND game=? AND claim_id!=?)`,
-  key, gate.game, claimId, now, ...ownerArgs, ...keys, gate.game, ...keys, gate.game, claimId));
-  const marks = keys.map((key) => statement(`INSERT OR IGNORE INTO trials(user_id,game,created_at)
-    SELECT ?,?,? WHERE ${ownerGuard} AND (SELECT COUNT(*) FROM online_room_trial_claims WHERE user_id IN (${placeholders}) AND game=? AND claim_id=?)=?`,
-  key, gate.game, now, ...ownerArgs, ...keys, gate.game, claimId, keys.length));
-  await env.DB.batch([...claims, ...marks]);
-  await assertOwner();
-  const won = await db.first(env, `SELECT COUNT(*) AS n FROM online_room_trial_claims WHERE user_id IN (${placeholders}) AND game=? AND claim_id=?`, ...keys, gate.game, claimId);
-  if (won?.n !== keys.length) failure('PLUS_REQUIRED');
+// Compatibility entrypoint for persisted rooms. It no longer consumes any trial,
+// but a deleted/suspended account cannot use it to start a game.
+export async function consumeRoomTrial(env, gate) {
+  if (env.DB && gate?.userId && !await env.DB.prepare(`SELECT 1 WHERE ${liveAccountSql('?')}`).bind(gate.userId,gate.userId).first()) failure('AUTH');
 }
-// Host transfer cannot transfer a paid entitlement. Recheck at each Mafia
-// start, while preserving the room's idempotent free-start claim on retries.
-export async function recheckMafiaHost(env,room,now=Date.now()) {
+export async function recheckMafiaHost(env,room) {
   const host=room.members.find(m=>m.id===room.hostId&&!m.left);
   if(!host?.accountUserId||!env.DB) failure('AUTH_REQUIRED');
   const id=host.accountUserId;
   if(!await env.DB.prepare(`SELECT 1 WHERE ${liveAccountSql('?')}`).bind(id,id).first())failure('AUTH');
-  const premium=premiumActive(premiumOf(await db.subscriptionsOf(env,id),now,env),now);
-  const prior=await env.DB.prepare("SELECT claim_id FROM online_room_trial_claims WHERE user_id=? AND game='mafia'").bind(id).first();
-  const trials=await db.trialsOf(env,id);
-  if(!trials.mafia)room.trialStarted=false;
-  if(!premium&&trials.mafia&&prior?.claim_id!==room.roomTrialClaim)failure('PLUS_REQUIRED');
-  if(room.trialOwnerId!==host.id) {room.roomTrialClaim=crypto.randomUUID();room.trialStarted=false;room.trialOwnerId=host.id;}
-  room.roomTrialGate={userId:id,device:room.roomTrialGate?.userId===id?room.roomTrialGate.device:null,game:'mafia',premium};
+  room.roomTrialGate={userId:id,device:null,game:'mafia',gameplay:'free'};
+  room.trialOwnerId=host.id;
 }

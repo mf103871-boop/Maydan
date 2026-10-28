@@ -18,7 +18,7 @@ export function lammaDeleteStatements(env,id,now=Date.now()){
     stmt(env,`UPDATE social_group_members SET role='owner' WHERE user_id!=${u} AND left_at IS NULL AND user_id=(SELECT owner_id FROM social_groups WHERE id=group_id)`),
     stmt(env,'DELETE FROM social_group_members WHERE user_id=?',id),
     stmt(env,'UPDATE social_groups SET closed_at=? WHERE closed_at IS NULL AND NOT EXISTS(SELECT 1 FROM social_group_members WHERE group_id=social_groups.id AND left_at IS NULL)',now),
-    stmt(env,"UPDATE social_group_messages SET text='',attachment_id=NULL,room_invite_id=NULL,sender_id='deleted',deleted_at=? WHERE sender_id=?",now,id),
+    stmt(env,"UPDATE social_group_messages SET text='',attachment_id=NULL,room_invite_id=NULL,sticker_id=NULL,sticker_version=NULL,sender_id='deleted',deleted_at=? WHERE sender_id=?",now,id),
     ...['social_group_invites','social_group_reports'].map(table=>stmt(env,`DELETE FROM ${table} WHERE ${table==='social_group_invites'?'user_id=? OR inviter_id=?':'reporter_id=? OR reported_id=?'}`,id,id)),
     ...['social_devices','social_preferences','social_mutes','social_room_invite_responses'].map(table=>stmt(env,`DELETE FROM ${table} WHERE user_id=?`,id)),
     stmt(env,'DELETE FROM social_jobs WHERE user_id=?',id),

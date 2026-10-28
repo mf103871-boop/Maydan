@@ -1,3 +1,4 @@
+import { SetupPresets } from '../../plus/SetupPresets.jsx';
 import { Avatar, GameArtwork } from '../../shared/brand/art.jsx';
 import React, { useEffect, useMemo, useReducer, useRef, useState } from 'react';
 import { Screen, Button, Podium, Segment, Card, Scoreboard } from '../../shared/ui/components.jsx';
@@ -20,6 +21,7 @@ export function SetupOptions({ storage, api }) {
   const update = (patch) => { const next = normalizeOptions({ ...opts, ...patch }); setOpts(next); storage.set(OPTIONS_KEY, next); };
   return (
     <div data-design-screen="setup.mamnoo" data-design-id="options" className="stack">
+    {!api.designPreview && <SetupPresets game="mamnoo" settings={opts} onApply={update} />}
     {resume && <Card className="stack resume-card">
       <span className="card-title">لعبتكم بانتظاركم</span>
       <p className="card-muted">الجولة {resume.state.round} من {resume.state.rounds} · {resume.teams.map((t) => t.name).join(' و')}</p>

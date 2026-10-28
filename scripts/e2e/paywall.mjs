@@ -101,11 +101,11 @@ const reload = async () => { await clearAccount('me'); await page.reload({ waitU
 await page.goto(`http://localhost:${WEB_PORT}/#/`, { waitUntil: 'load' }); await page.waitForTimeout(700);
 await enter(); await page.waitForTimeout(300);
 
-// ١) مجهول: 68 مقفولة، والنقر يفتح الجدار (بلا إشعار «دون اتصال»).
-let c = await lockedCounts(); check('anon locked 68/78', c.locked === 68 && c.total === 78, JSON.stringify(c));
-await page.evaluate(() => document.querySelector('.m-category-pick.is-locked .m-category-main').click()); await page.waitForTimeout(600); await shot('01-anon-paywall');
+// ١) كل الفئات مجانية؛ عرض بلس من الإعدادات يخص التخصيص فقط.
+let c = await lockedCounts(); check('anon all 78 packs free', c.locked === 0 && c.total === 78, JSON.stringify(c));
+await go('#/settings'); await page.locator('[data-design-id="purchase"]').click(); await page.waitForTimeout(600); await shot('01-anon-paywall');
 const pw = await page.evaluate(() => { const s = document.querySelector('.paywall'); return { open: !!s, reason: s && s.dataset.reason, text: s ? s.textContent : '' }; });
-check('anon paywall opens reason=pack', pw.open && pw.reason === 'pack', pw.reason);
+check('optional cosmetics paywall opens from settings', pw.open && pw.reason === 'settings', pw.reason);
 check('paywall online (no offline notice)', !/دون اتصال/.test(pw.text));
 check('paywall shows sign-in block (providers unconfigured in dev → note only)', await page.evaluate(() => !!document.querySelector('.paywall-auth .paywall-note')));
 
@@ -120,13 +120,13 @@ await page.evaluate(() => [...document.querySelectorAll('.paywall .account-redee
 check('back returns to plans and focuses the redeem trigger', await page.evaluate(() => !document.querySelector('.paywall form') && !!document.querySelector('.paywall-plans') && document.activeElement && document.activeElement.classList.contains('paywall-redeem')));
 await page.evaluate(() => document.querySelector('.paywall-redeem').click()); await page.waitForTimeout(200);
 await page.keyboard.press('Escape'); await page.waitForTimeout(600);
-await page.evaluate(() => document.querySelector('.m-category-pick.is-locked .m-category-main').click()); await page.waitForTimeout(600);
+await go('#/settings'); await page.locator('[data-design-id="purchase"]').click(); await page.waitForTimeout(600);
 check('reopened paywall starts on plans', await page.evaluate(() => !!document.querySelector('.paywall .paywall-plans') && !document.querySelector('.paywall form')));
 await page.evaluate(() => document.querySelector('.paywall-redeem').click()); await page.waitForTimeout(300);
 await page.keyboard.press('Escape'); await page.waitForTimeout(300);
 await writeAccount('promo', { code: 'legacy-public-code', hash: 'legacy-hash', redeemedAt: Date.now() });
 await reload();
-c = await lockedCounts(); check('legacy local promo cannot unlock packs', c.locked === 68, JSON.stringify(c));
+c = await lockedCounts(); check('legacy local promo leaves already free packs accessible', c.locked === 0, JSON.stringify(c));
 check('legacy raw gift code removed from storage', await readAccount('promo') === null);
 
 // ٢) دخول وهمي عبر الخادم ثم حقن الجلسة.
@@ -138,7 +138,7 @@ await reload();
 await go('#/settings'); await page.waitForTimeout(800); await shot('02-settings-signed-in');
 const settingsName = await page.locator('.account-identity b').innerText();
 check('settings shows user name', settingsName === 'مختبر');
-c = await lockedCounts(); check('signed-in free still locked 68', c.locked === 68, JSON.stringify(c));
+c = await lockedCounts(); check('signed-in free has no locked packs', c.locked === 0, JSON.stringify(c));
 // ٣) منح اشتراك → صفر مقفول، وتفاصيل اللعبة بلا ملاحظة.
 const grant = await apiCall('/api/dev/grant', { until: Date.now() + 30 * 86400e3, product: 'plus.yearly' }, token);
 check('dev grant 200 premium', grant.status === 200 && grant.body?.premium?.active === true, JSON.stringify(grant.body?.premium));
@@ -147,34 +147,34 @@ c = await lockedCounts(); check('premium locked 0', c.locked === 0, JSON.stringi
 await go('#/settings'); await page.waitForTimeout(600); await shot('04-settings-premium');
 const st2 = await page.locator('.account-plan.is-plus').innerText(); check('settings shows plus active', /بلس فعّال/.test(st2));
 await go('#/game/beep'); const note1 = await page.evaluate(() => (document.querySelector('.details-plus-note') || {}).textContent || '');
-check('premium: no plus note on beep details', note1 === '', note1);
+check('premium: same free gameplay note', /مجانية|مجانًا/.test(note1), note1);
 
-// ٤) مستخدم ثانٍ بلا اشتراك: التجربة تمر ثم الجدار.
+// ٤) مستخدم ثانٍ بلا اشتراك: اللعب مجاني حتى بعد استدعاء واجهة التجربة القديمة.
 const s2 = await apiCall('/api/auth/dev', { subject: 'e2e-trial', name: 'تجريبي', client: 'web' }); const token2 = s2.body?.session?.token;
 await writeAccount('session', token2); await clearAccount('me', 'trials');
 await reload(); await go('#/game/beep'); await page.waitForTimeout(500);
 const note2 = await page.evaluate(() => (document.querySelector('.details-plus-note') || {}).textContent || '');
-check('free user: one free match note', /مباراة واحدة مجانية/.test(note2), note2);
+check('free user: all gameplay free note', /مجانية|مجانًا/.test(note2), note2);
 await tap('العب'); await page.waitForTimeout(600);
 check('first play goes to setup (no paywall)', await page.evaluate(() => !document.querySelector('.paywall') && !!document.querySelector('[aria-label^="إعداد"]')));
-// أعلن انتهاء مباراة كما تفعل اللعبة: عبر الخادم مباشرة (نفس ما يفعله markTrial).
-const tr = await apiCall('/api/trials/beep', {}, token2); check('POST /api/trials/beep 200', tr.status === 200 && tr.body?.trials?.beep, JSON.stringify(tr.body?.trials));
+// الواجهة القديمة لا تستهلك تجربة جديدة، و markTrial لم يعد يرسلها.
+const tr = await apiCall('/api/trials/beep', {}, token2); check('legacy trial endpoint does not charge play', tr.status === 200 && !tr.body?.trials?.beep, JSON.stringify(tr.body?.trials));
 await reload(); await go('#/game/beep'); await page.waitForTimeout(500);
 const note3 = await page.evaluate(() => (document.querySelector('.details-plus-note') || {}).textContent || '');
-check('after trial: locked note', /لعبت مباراتك/.test(note3), note3);
+check('after legacy trial request: still free', /مجانية|مجانًا/.test(note3), note3);
 await tap('العب'); await page.waitForTimeout(700); await shot('05-trial-paywall');
 const pw2 = await page.evaluate(() => { const s = document.querySelector('.paywall'); return { open: !!s, reason: s && s.dataset.reason }; });
-check('second play opens paywall reason=trial', pw2.open && pw2.reason === 'trial', JSON.stringify(pw2));
+check('repeat play has no paywall', !pw2.open, JSON.stringify(pw2));
 // الرئيسية: شارات.
 // الحوار يبقى مسجّلًا كطبقة رجوع طوال حركة الإغلاق، فتغيير العنوان يدويًا خلالها يُعامَل
 // كرجوع يغلق الحوار؛ ننتظر خروجه قبل الانتقال كما يفعل اللاعب.
-await page.keyboard.press('Escape'); await page.waitForSelector('.paywall', { state: 'detached' }); await go('#/'); await page.waitForTimeout(500); await shot('06-home-badges');
+await go('#/'); await page.waitForTimeout(500); await shot('06-home-badges');
 const badges = await page.evaluate(() => [...document.querySelectorAll('.card-badge')].map((b) => b.textContent.trim()));
 check('home badges present', badges.length >= 5, JSON.stringify(badges));
 
-// ٥) الغرف: إنشاء غرفة لمستخدم استهلك تجربته → 402؛ وللمشترك 201.
+// ٥) إنشاء الغرف مجاني لغير المشترك والمشترك وفق متطلبات الهوية الحالية.
 const tf = await apiCall('/api/trials/fabraka', {}, token2);
-const room402 = await apiCall('/api/rooms', { ...creds(), game: 'fabraka', name: 'تجريبي' }, token2); check('room create after trial → 402 PLUS_REQUIRED', room402.status === 402 && room402.body?.error === 'PLUS_REQUIRED', JSON.stringify(room402));
+const room402 = await apiCall('/api/rooms', { ...creds(), game: 'fabraka', name: 'تجريبي' }, token2); check('room create after legacy trial request stays free', room402.status === 201, JSON.stringify(room402));
 const room201 = await apiCall('/api/rooms', { ...creds(), game: 'fabraka', name: 'مختبر' }, token); check('premium room create → 201', room201.status === 201, String(room201.status));
 const roomAnon = await apiCall('/api/rooms', { ...creds(), game: 'fabraka', name: 'مجهول' }); check('anon room create allowed', roomAnon.status === 201, String(roomAnon.status));
 

@@ -3,6 +3,8 @@ import { sha256 } from '../protocol.mjs';
 import { clientIdOf,userId } from '../social/model.mjs';
 import { all,first,run,stmt,ident,scopeOf,scopeAllowed,requireScope,unblocked,cleanText,live } from './common.mjs';
 import { job,wakeJobs } from './notifications.mjs';
+import { getCosmetic } from '../../src/plus/catalog.js';
+import { plusActiveFor } from '../plus/access.mjs';
 export const MAX_AUDIO_BYTES=3*1024*1024;
 export const MAX_AUDIO_MS=120000;
 export const attachmentView=r=>({id:r.id,mimeType:r.mime_type,durationMs:r.duration_ms,byteLength:r.byte_length,url:`/api/social/attachments/${r.id}/content`});
@@ -62,6 +64,23 @@ export function attachmentGuard(scope,conversationId,id,attachmentId){return `EX
 export async function messageContent(env,id,scope,conversationId,body){
   const kind=body.kind||'text';
   if(kind==='text')return {kind,text:cleanText(body.text,2000),attachmentId:null,roomInvitationId:null};
+  if(kind==='sticker') {
+    if(Object.keys(body).some(key=>!['kind','stickerId','clientId'].includes(key))||typeof body.stickerId!=='string')fail('INVALID',400);
+    const clientId=clientIdOf(body.clientId);
+    await requireScope(env,id,scope,conversationId);
+    const table=scope==='group'?'social_group_messages':'social_messages',column=scope==='group'?'group_id':'conversation_id';
+    const prior=await first(env,`SELECT * FROM ${table} WHERE sender_id=? AND client_id=?`,id,clientId);
+    if(prior) {
+      if(prior[column]!==conversationId||prior.kind!=='sticker'||prior.sticker_id!==body.stickerId)fail('CONFLICT',409);
+      // A lost acknowledgement remains retryable after expiry, or after the
+      // catalogue changes. This branch never grants permission to a new send.
+      return {kind,text:prior.text,attachmentId:null,roomInvitationId:null,stickerId:prior.sticker_id,stickerVersion:prior.sticker_version};
+    }
+    const sticker=getCosmetic(body.stickerId,{kind:'sticker'});
+    if(!sticker)fail('INVALID',400);
+    if(!await plusActiveFor(env,id))fail('PLUS_REQUIRED',403);
+    return {kind,text:`ملصق: ${sticker.label} — حدّث التطبيق لعرضه`,attachmentId:null,roomInvitationId:null,stickerId:sticker.id,stickerVersion:sticker.version};
+  }
   if(kind!=='voice')fail('INVALID',400);
   const attachmentId=userId(body.attachmentId),a=await first(env,'SELECT * FROM social_attachments WHERE id=? AND user_id=? AND scope=? AND conversation_id=? AND ready_at IS NOT NULL AND deleted_at IS NULL',attachmentId,id,scope,conversationId);
   if(!a)fail('NOT_FOUND',404);
@@ -80,6 +99,7 @@ export async function enrichMessages(env,messages){
     lookup('roomInvitationId','social_room_invites'),
   ]);
   for(const m of visible){
+    if(m.kind==='sticker'&&m.stickerId){const item=getCosmetic(m.stickerId,{kind:'sticker',now:Number.MAX_SAFE_INTEGER});if(item&&item.version===m.stickerVersion)m.sticker={id:item.id,version:item.version,label:item.label,assetUrl:item.assetUrl};}
     if(m.attachmentId){delete m.attachment;const a=attachments.get(m.attachmentId);if(a)m.attachment=attachmentView(a);}
     if(m.roomInvitationId){delete m.roomInvitation;const r=invites.get(m.roomInvitationId);if(r)m.roomInvitation={id:r.id,roomCode:r.room_code,game:r.game,expiresAt:r.expires_at,status:r.expires_at>Date.now()?'pending':'expired'};}
   }

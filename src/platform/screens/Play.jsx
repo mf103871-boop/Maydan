@@ -112,9 +112,6 @@ export function Play({ id }) {
   }), [platform, storage, raiseCurtain, account, id]);
 
   const start = useCallback((list) => {
-    // حراسة دفاعية: لعبة استُهلكت مباراتها المجانية لا تبدأ من الإعداد إلا بـ«ميدان بلس»
-    // (بَديهة setup:'self' لا تمرّ من هنا أصلًا، وقفلها في الحزم لا في المباراة).
-    if (account.gameAccess(id) === 'locked') { account.openPaywall({ reason: 'trial', game: id }); return; }
     recorder.start(id);
     setSavedSession(null);
     if (mode === 'teams') setTeams(list); else setPlayers(list);

@@ -29,7 +29,7 @@ export function MafiaSettings({ value = MAFIA_DEFAULT_SETTINGS, onChange = noop,
     <div data-design-id="mode-choice" className="mafia-mode-picker" role="group" aria-label="طور المباراة">{[['classic','المجلس الأساسي','٦–٨ لاعبين · فريقان'],['shadow','رابطة الظل','٩–١٢ لاعبًا · ثلاثة أطراف']].map(([mode,title,detail]) => <button data-design-id="mode-option" type="button" key={mode} disabled={disabled} aria-pressed={settings.mode === mode} onClick={() => onChange(normalizeMafiaSettings({ ...settings, mode, capacity: mode === 'shadow' ? 10 : 8 }))}><strong>{title}</strong><small>{detail}</small></button>)}</div>
     <div className="mafia-settings-row"><label>سعة المجلس<select data-design-id="capacity" value={settings.capacity} disabled={disabled} onChange={event => onChange({ ...settings, capacity: Number(event.target.value) })}>{(settings.mode === 'shadow' ? [9,10,11,12] : [6,7,8]).map(n => <option key={n} value={n}>{ar(n)} لاعبين</option>)}</select></label>
       <label>ظهور الغرفة<select data-design-id="visibility" disabled={disabled} value={settings.visibility} onChange={event => onChange({ ...settings, visibility: event.target.value })}><option value="private">خاصة · برمز أو دعوة</option><option value="public">عامة · يستقبل المجلس لاعبين</option></select></label></div>
-    <p className="mafia-muted">حساب لكل لاعب. استضافة تجربة مجانية ثم بلس؛ الانضمام مجاني. لا تُباع قوة أو أفضلية في الأدوار.</p><MafiaRules />
+    <p className="mafia-muted">حساب لكل لاعب. استضافة الغرف والانضمام واللعب مجانية بالكامل. لا تُباع قوة أو أفضلية في الأدوار.</p><MafiaRules />
   </section>;
 }
 

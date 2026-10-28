@@ -1,4 +1,5 @@
 // Account-scoped social state. No private message history is written to browser storage.
+import { getCosmetic } from '../plus/catalog.js';
 export const SOCIAL_ERRORS = {
   AUTH_REQUIRED: 'سجّل الدخول للتواصل مع أصدقائك.', AUTH_EXPIRED: 'انتهت جلستك، سجّل الدخول من جديد.',
   NOT_FRIENDS: 'تحتاجان إلى قبول طلب الصداقة أولًا.', BLOCKED: 'التواصل مع هذا الحساب غير متاح.',
@@ -9,6 +10,7 @@ export const SOCIAL_ERRORS = {
   CONTENT_REJECTED: 'يحتوي النص على محتوى غير مسموح. عدّله قبل الإرسال.',
   ACCOUNT_SUSPENDED: 'حسابك معلّق. راجع الحالة ووسيلة التواصل من الإعدادات.',
   SOCIAL_UNAVAILABLE: 'التحديث المباشر غير متاح مؤقتًا.', STALE: 'تغيّر الحساب أثناء الطلب.',
+  PLUS_REQUIRED: 'إرسال هذا الملصق يحتاج ميدان بلس. الرسائل العادية مجانية.',
 };
 export const socialError = error => SOCIAL_ERRORS[error?.code] || SOCIAL_ERRORS.NETWORK;
 export const emptyConversation = () => ({ id: null, messages: [], loading: false, loadingOlder: false, hasMore: false,
@@ -255,7 +257,7 @@ export class SocialClient {
     const task = (async () => {
       try {
         const { message } = await this.call(`/conversations/${encodeURIComponent(pending.conversationId)}/messages`,
-          { method: 'POST', body: { text: pending.text, clientId: pending.clientId } });
+          { method: 'POST', body: pending.kind === 'sticker' ? { kind: 'sticker', stickerId: pending.stickerId, clientId: pending.clientId } : { text: pending.text, clientId: pending.clientId } });
         if (!this.currentConversation(epoch, friendId, pending.conversationId)) return;
         const current = this.state.conversations[friendId];
         if (current) this.conversation(friendId, { messages: mergeMessages(current.messages, [message], current.peerReadSeq) });
@@ -274,6 +276,17 @@ export class SocialClient {
     if (!pending) return Promise.resolve();
     this.conversation(friendId, { messages: current.messages.map(m => m === pending ? { ...m, status: 'pending' } : m) });
     return this.deliver(friendId, pending);
+  }
+  async sendSticker(friendId, stickerId) {
+    const sticker = getCosmetic(stickerId, { kind: 'sticker' });
+    if (!sticker) throw Object.assign(new Error(SOCIAL_ERRORS.INVALID), { code: 'INVALID' });
+    const id = this.findConversation(friendId); if (!id) throw new Error(SOCIAL_ERRORS.NOT_FRIENDS);
+    const message = { clientId: crypto.randomUUID(), conversationId: id, senderId: this.userId,
+      kind: 'sticker', stickerId, stickerVersion: sticker.version, text: `ملصق: ${sticker.label}`,
+      createdAt: this.now(), editedAt: null, deletedAt: null, status: 'pending' };
+    const current = this.state.conversations[friendId] || emptyConversation();
+    this.conversation(friendId, { id, messages: [...current.messages, message] });
+    this.setTyping(friendId, false); return this.deliver(friendId, message);
   }
   async changeMessage(friendId, seq, method, body) {
     const epoch = this.epoch; const id = this.findConversation(friendId);

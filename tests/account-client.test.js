@@ -364,7 +364,7 @@ test('AccountProvider يصيّر أبناءه ويقدّم قيمة السياق
   assert.match(html, /data-signed="false"/);
   assert.match(html, /data-auth="\{\}"/);
   assert.match(html, /data-trials="\{\}"/);
-  assert.match(html, /data-locked="true"/, 'بلا اشتراك تبقى الحزم غير المجانية مقفولة');
+  assert.match(html, /data-locked="false"/, 'كل الحزم مجانية دون منح اشتراك وهمي');
   assert.equal(fetchCalls, before, 'التصيير وحده لا يلمس الشبكة');
 });
 
@@ -374,15 +374,15 @@ test('NULL_ACCOUNT هو الافتراضي حين لا مزوّد: لا قفل �
   assert.match(html, /data-locked="false"/);
   assert.equal(mod.NULL_ACCOUNT.lockedPack('anime'), false);
   assert.equal(mod.NULL_ACCOUNT.trialAvailable('beep'), true);
-  assert.equal(mod.NULL_ACCOUNT.gameAccess('beep'), 'premium');
+  assert.equal(mod.NULL_ACCOUNT.gameAccess('beep'), 'free');
   assert.deepEqual(mod.NULL_ACCOUNT.authHeaders(), {});
 });
 
 test('الجدار يعرض السبب والخطتين والشروط وروابطها', () => {
   const html = mod.renderPaywall({ reason: 'trial', game: 'beep' });
-  assert.match(html, /افتح كل ميدان مع ميدان بلس/);
-  assert.match(html, /لعبت مباراتك المجانية في قبل ما يطق!/);
-  for (const bullet of ['كل فئات بَديهة', 'مباريات بلا حدود', 'غرف جماعية بلا حدود', 'اشتراك واحد على كل أجهزتك']) assert.match(html, new RegExp(bullet));
+  assert.match(html, /خلّي لك بصمة مع ميدان بلس/);
+  assert.match(html, /كل الألعاب والحزم والغرف مجانية/);
+  for (const bullet of ['إطارات وصور وبطاقات بروفايل مميزة', 'ثيمات مجلسك لكل الموجودين', 'ملصقات وتفاعلات أصلية', 'مجموعة جديدة كل شهر', 'عشر جلسات جاهزة على أجهزتك']) assert.match(html, new RegExp(bullet));
   assert.match(html, /data-plan="monthly"/);
   assert.doesNotMatch(html, /data-plan="yearly"/, 'لا خطة سنوية قبل توفر سعرها');
   assert.doesNotMatch(html, /الأوفر/, 'لا ادعاء توفير بلا مقارنة أسعار المتجر');
@@ -397,10 +397,7 @@ test('الجدار يعرض السبب والخطتين والشروط وروا�
   assert.doesNotMatch(html, /استعادة المشتريات/, 'الاستعادة لأجهزة iOS فقط');
 });
 
-test('نص السبب يتبدّل مع كل باب من أبواب الجدار', () => {
-  assert.match(mod.renderPaywall({ reason: 'pack', pack: 'anime' }), /هذه الفئة ضمن ميدان بلس/);
-  assert.match(mod.renderPaywall({ reason: 'room' }), /الدخول برمز مجاني دائمًا/);
-  assert.match(mod.renderPaywall({ reason: 'resume' }), /هذه المباراة المحفوظة تحتوي فئات ضمن ميدان بلس/);
-  const settings = mod.renderPaywall({ reason: 'settings' });
-  assert.doesNotMatch(settings, /paywall-reason/, 'الفتح من الإعدادات بلا سطر سبب');
+test('legacy paywall reasons explain free play, while presets describe paid convenience', () => {
+  for (const reason of ['pack','room','resume','settings']) assert.match(mod.renderPaywall({reason}),/كل الألعاب والحزم والغرف مجانية/);
+  assert.match(mod.renderPaywall({reason:'presets'}),/كل خيارات اللعب اليدوية مجانية/);
 });

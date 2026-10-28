@@ -138,7 +138,7 @@ async function dispatch(request, env, url, id, now,sessionId,context) {
     const body = await readJson(request, 20_480);
     const content=await messageContent(env,id,'direct',messages[1],body);
     const result = await db.sendMessage(env, id, messages[1], content.text, clientIdOf(body.clientId), now,content);
-    await afterCommit(context, () => Promise.allSettled([
+    if(!result.idempotent)await afterCommit(context, () => Promise.allSettled([
       db.areFriends(env, id, result.otherId).then(allowed => allowed && notify(env, [id, result.otherId], { type: 'message', reason: 'message', conversationId: result.message.conversationId, messageSeq: result.message.seq })),
       wakeJobs(env),
     ]));

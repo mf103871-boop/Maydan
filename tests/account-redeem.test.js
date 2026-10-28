@@ -99,8 +99,8 @@ test('المزوّد لا يقبل هدية محلية بلا جلسة وبلا 
   const html = mod.renderProvider();
   assert.match(html, /data-premium="false"/);
   assert.match(html, /data-promo="false"/);
-  assert.match(html, /data-locked="true"/);
-  assert.match(html, /data-access="trial"/);
+  assert.match(html, /data-locked="false"/);
+  assert.match(html, /data-access="free"/);
   mod.accountStore.clearPromo();
 });
 

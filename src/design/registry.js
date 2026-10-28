@@ -41,7 +41,7 @@ const platformNodes = [
   node('settings-local', 'بيانات الجهاز'), node('setting', 'قالب الإعداد', 'container', { repeat: true }),
   node('setting-toggle', 'قالب مفتاح الإعداد', 'button', { repeat: true }), node('sound-volume', 'مستوى الصوت', 'input'),
   node('music-volume', 'مستوى الموسيقى', 'input'), node('clear-data', 'مسح البيانات', 'button'),
-  node('store-empty', 'رسالة المتجر'), node('name-input', 'اسم اللاعب', 'input'),
+  node('store-empty', 'مقدمة المتجر'), node('collections', 'أطقم بلس', 'list', { repeat: true }), node('collection', 'قالب الطقم', 'container', { repeat: true }), node('name-input', 'اسم اللاعب', 'input'),
   node('add-player', 'إضافة لاعب', 'button'), node('player-row', 'قالب اللاعب', 'container', { repeat: true }),
   node('players-setup','اختيار اللاعبين'), node('teams-setup','إعداد الفرق'), node('player-choice','قالب اختيار اللاعب','button',{repeat:true}),
   node('team-row','قالب الفريق','container',{repeat:true}), node('team-name','اسم الفريق','input',{repeat:true,editableText:false}),

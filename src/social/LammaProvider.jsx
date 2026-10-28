@@ -16,7 +16,7 @@ import { MafiaVoiceSession, emptyMafiaVoice } from './mafia-voice-session.js';
 const Context = createContext(null);
 export const LammaContext = Context;
 export const useLamma = () => useContext(Context);
-const METHODS = ['createGroup', 'loadGroup', 'loadCallMembers', 'loadOlderGroup', 'sendGroupMessage', 'inviteGroupMembers', 'removeGroupMember',
+const METHODS = ['createGroup', 'loadGroup', 'loadCallMembers', 'loadOlderGroup', 'sendGroupMessage', 'sendGroupSticker', 'inviteGroupMembers', 'removeGroupMember',
   'leaveGroup', 'renameGroup', 'acceptGroupInvite', 'rejectGroupInvite', 'setGroupRole', 'transferGroupOwnership', 'selectGroup',
   'markGroupRead', 'changeGroupMessage', 'retryGroupMessage', 'sendVoiceNote', 'getVoiceUrl', 'setNotificationPreferences', 'setConversationMuted',
   'sendGameInvite', 'rejectGameInvite', 'updateGroupAvatar', 'reportGroupMessage'];

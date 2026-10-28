@@ -3,6 +3,7 @@ import { ensureProfile as ensureSocialProfile } from '../social/db.mjs';
 import { ACHIEVEMENTS } from '../../src/profiles/catalog.js';
 import { earnedState, imageUrl, publicName, gameOf, EMPTY_STATS } from './model.mjs';
 import { liveAccountSql, approvedImageSql } from '../moderation/access.mjs';
+import { effectiveCosmetics, effectiveCosmeticsMany } from '../plus/access.mjs';
 
 const stmt = (env, sql, ...args) => env.DB.prepare(sql).bind(...args);
 const first = (env, sql, ...args) => stmt(env, sql, ...args).first();
@@ -92,6 +93,7 @@ export async function profileFor(env, viewerId, targetId, now = Date.now()) {
   if (!row) fail('NOT_FOUND', 404);
   const earned = JSON.parse(row.earned_ids || '[]').map(achievement_id=>({achievement_id}));
   const result=view(row, viewerId, earned, now);
+  result.cosmetics=await effectiveCosmetics(env,targetId,now);
   if(viewerId===targetId) result.imageReviews=await imageReviews(env,targetId);
   return result;
 }
@@ -101,10 +103,11 @@ export async function searchProfiles(env, viewerId, query, now = Date.now()) {
     AND (s.code=? OR (?=0 AND u.name NOT LIKE '%@%' AND u.name LIKE ? ESCAPE '\\'))
     ORDER BY CASE WHEN s.code=? THEN 0 ELSE 1 END,u.name COLLATE NOCASE,p.user_id LIMIT 20`,
   viewerId, viewerId, viewerId, viewerId, viewerId, viewerId, viewerId, code, /^MDN-[A-F0-9]{10}$/.test(code) ? 1 : 0, pattern, code);
+  const cosmetics=await effectiveCosmeticsMany(env,rows.map(row=>row.user_id),now);
   return rows.map(row => {
     const profile = view(row, viewerId, [], now);
     const { id,name,code,theme,avatarPreset,avatarUrl,relationship,requestId,online,lastActiveAt } = profile;
-    return { id,name,code,theme,avatarPreset,avatarUrl,relationship,requestId,...(online === undefined ? {} : { online,lastActiveAt }) };
+    return { id,name,code,theme,avatarPreset,avatarUrl,relationship,requestId,cosmetics:cosmetics.get(id),...(online === undefined ? {} : { online,lastActiveAt }) };
   });
 }
 function mutationGuard(revision) { return revision === null ? { sql: '', args: [] } : { sql: ' AND revision=?', args: [revision] }; }
@@ -171,13 +174,14 @@ export async function imageReviews(env,id) {
 export async function profileSummaries(env,userIds) {
   const ids=[...new Set(userIds)].filter(id=>typeof id==='string' && /^[A-Za-z0-9_-]{1,80}$/.test(id));
   const result=new Map();
+  const cosmetics=await effectiveCosmeticsMany(env,ids);
   for(let start=0;start<ids.length;start+=80) {
     const batch=ids.slice(start,start+80);
     const rows=await all(env,`SELECT p.user_id,p.avatar_preset,p.theme,
       CASE WHEN ${approvedImageSql('p','avatar')} THEN p.avatar_version END AS avatar_version,p.selected_title,p.revision
       FROM player_profiles p WHERE p.user_id IN (${batch.map(()=>'?').join(',')}) AND ${live('p.user_id')}`, ...batch);
     for(const row of rows) result.set(row.user_id,{avatarPreset:row.avatar_preset,theme:row.theme,
-      avatarUrl:imageUrl(row.user_id,'avatar',row.avatar_version),selectedTitle:row.selected_title,revision:row.revision});
+      avatarUrl:imageUrl(row.user_id,'avatar',row.avatar_version),selectedTitle:row.selected_title,revision:row.revision,cosmetics:cosmetics.get(row.user_id)});
   }
   return result;
 }

@@ -21,7 +21,7 @@ import { BADEEHA_KEYS as MAYDAN_BETA_KEYS } from "./keys.js";
 import { readBadeehaState, RETIRED_GAME_NOTICE } from "./persistence.js";
 import { questionAssistance } from "./assistance.js";
 import { CategoryCover } from "./Cover.jsx";
-import { FREE_PACKS } from "../../shared/account/config.js";
+import { SetupPresets } from "../../plus/SetupPresets.jsx";
 import { questionMedia, deckMedia } from "../../shared/media/resolve.js";
 import {
   preloadMedia,
@@ -131,20 +131,8 @@ function MaydanBeta({ api } = {}) {
     effectiveSoundOn = platformSettings ? platformSettings.soundOn !== !1 : soundOn,
     hapticsOn = platformSettings ? platformSettings.hapticsOn !== !1 : !0,
     reducedMotion = platformSettings ? !!platformSettings.reducedMotion : !1,
-    // الاستحقاقات تصل من شاشة اللعب عبر api.account؛ بلا مزوّد لا قفل إطلاقًا.
-    account = (api && api.account) || null,
-    premium = !!(account && account.premium),
-    packLocked = (categoryId) => !!account && account.lockedPack(categoryId);
+    packLocked = () => false;
   pausedRef.current = paused;
-  // سقوط الاشتراك (انتهاء أو خروج) يسحب الحزم المقفولة من الاختيار كي لا تبدأ مباراة بها.
-  useEffect(() => {
-    if (premium) return;
-    setSelectedCategories((existing) =>
-      existing.some((categoryId) => packLocked(categoryId))
-        ? existing.filter((categoryId) => !packLocked(categoryId))
-        : existing,
-    );
-  }, [premium]); // eslint-disable-line react-hooks/exhaustive-deps
   function setScreen(next, dir) {
     (setNavDir(dir || "forward"), setScreenState(next));
   }
@@ -523,11 +511,6 @@ function MaydanBeta({ api } = {}) {
       setSetupError(""));
   }
   function toggleCategory(categoryId) {
-    // حزمة مقفولة: النقر يفتح جدار «ميدان بلس» بدل أن يختارها (وإلغاء اختيار قديم يبقى ممكنًا).
-    if (packLocked(categoryId) && !selectedCategories.includes(categoryId)) {
-      (account.openPaywall({ reason: "pack", pack: categoryId }), playSfx("click"));
-      return;
-    }
     (setSetupError(""),
       setSelectedCategories((existing) =>
         existing.includes(categoryId)
@@ -546,17 +529,17 @@ function MaydanBeta({ api } = {}) {
     ),
       playSfx("click"));
   }
-  // مرشّح «مجاني» لا يعرفه logic.js (وهو لا يُمسّ): نمرّر "all" ثم نقصر النتيجة على الحزم المجانية.
+  // Legacy saved free-filter now includes the entire free bank.
   const visibleCategories = filterCategories(CATS, {
     filter: categoryFilter === "free" ? "all" : categoryFilter,
     search: categorySearch,
     favorites,
-  }).filter((category) => categoryFilter !== "free" || FREE_PACKS.includes(category.id));
+  });
   function randomCategories() {
     // الاختيار العشوائي لا يسحب حزمة مقفولة أبدًا: نستبعدها من البركة قبل الخلط.
     const pool = visibleCategories.filter((category) => !packLocked(category.id));
     if (pool.length < 6) {
-      setSetupError("الفئات المتاحة أقل من ست؛ اشترك في ميدان بلس أو وسّع التصفية");
+      setSetupError("الفئات الظاهرة أقل من ست؛ وسّع التصفية أو البحث");
       return;
     }
     (setSelectedCategories(
@@ -574,11 +557,6 @@ function MaydanBeta({ api } = {}) {
     }
     if (selectedCategories.length !== 6) {
       setSetupError("اختر ست فئات بالضبط");
-      return;
-    }
-    // حزمة مقفولة بقيت في الاختيار (لقطة قديمة أو سقوط اشتراك): جدار قبل بناء اللوحة.
-    if (selectedCategories.some((categoryId) => packLocked(categoryId))) {
-      (setSetupError("بعض الفئات المختارة ضمن ميدان بلس"), account.openPaywall({ reason: "pack" }));
       return;
     }
     let nextDeck;
@@ -619,11 +597,6 @@ function MaydanBeta({ api } = {}) {
       (betaRemoveKey(MAYDAN_BETA_KEYS.active),
         setSavedActive(null),
         toast("تعذر استعادة المباراة القديمة"));
-      return;
-    }
-    // المباراة المحفوظة تبقى كما هي؛ الجدار فقط يمنع استئنافها بحزم صارت مقفولة.
-    if ((savedActive.selectedCategories || []).some((categoryId) => packLocked(categoryId))) {
-      account.openPaywall({ reason: "resume" });
       return;
     }
     const restoredDeck = logic.idsToDeck(CATS, savedActive.deck);
@@ -1187,7 +1160,6 @@ ${record.answered} من ${record.total} سؤالًا`,
     // المجموعات مشتقة من أنواع أسئلة الحزمة نفسها (79 حزمة = 61 معلومات + 7 خاصة + 11 وسائط).
     const filters = [
       ["all", "الكل"],
-      ["free", "مجاني"],
       ["info", "معلومات"],
       ["special", "خاصة"],
       ["media", "وسائط"],
@@ -1197,6 +1169,7 @@ ${record.answered} من ${record.total} سؤالًا`,
       "section",
       { className: "m-screen" },
       Header({ title: "جهّزوا الميدان", back: () => setScreen("home", "back") }),
+      !isDesignPreview && hBeta(SetupPresets, { game: "badeeha", settings: { mode, roundSize, timerLength, categories: selectedCategories }, onApply: (settings) => { setMode(settings.mode); setRoundSize(settings.roundSize); setTimerLength(settings.timer); setSelectedCategories(settings.categories); setSetupError(""); } }),
       hBeta(
         "div",
         { className: "m-panel m-setup-panel", "data-step": "١" },

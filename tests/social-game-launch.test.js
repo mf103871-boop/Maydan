@@ -67,10 +67,11 @@ test('account change during room creation cannot persist or invite the previous 
   await assert.rejects(task, { code: 'STALE' }); assert.equal(sent, false); assert.equal(memory.has('234567'), false);
 });
 
-test('locked access and malformed rooms cannot send invitations', async () => {
-  const locked = fixture({ account: { user: { id: 'alice' }, gameAccess: () => 'locked' } });
-  await assert.rejects(locked.launcher.launch('fabraka', async () => { throw new Error('must not invite'); }), { code: 'PLUS_REQUIRED' });
-  assert.equal(locked.calls.length, 0);
+test('legacy locked access no longer blocks free hosting, while malformed rooms cannot invite', async () => {
+  const free = fixture({ account: { user: { id: 'alice' }, gameAccess: () => 'locked', authHeaders:()=>({Authorization:'Bearer fixture'}) } });
+  let invited=false;
+  await free.launcher.launch('fabraka', async () => { invited=true; });
+  assert.equal(free.calls.length,1);assert.equal(invited,true);
   const broken = fixture({ createRoom: async () => ({ code: 'bad' }) });
   await assert.rejects(broken.launcher.launch('fabraka', async () => { throw new Error('must not invite'); }), { code: 'NETWORK' });
 });
