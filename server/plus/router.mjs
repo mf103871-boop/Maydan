@@ -7,7 +7,7 @@ import { notifyUsers } from '../social/realtime.mjs';
 import { friendIds } from '../social/db.mjs';
 import { ensurePlayerRow } from '../profiles/db.mjs';
 import { PLUS_CATALOG_VERSION, availableCollections, availableItems } from '../../src/plus/catalog.js';
-import { EMPTY_COSMETICS, statement, cosmeticsFor, normalizeSelection, plusActiveFor, requirePlus, plusAccessSql } from './access.mjs';
+import { EMPTY_COSMETICS, statement, cosmeticsFor, normalizeSelection, plusActiveFor, requirePlus, plusAccessSql, cosmeticAccessSql } from './access.mjs';
 import { PRESET_LIMIT, PRESET_SCHEMA_VERSION, normalizePresetSettings, presetName, presetView } from './presets.mjs';
 
 const revisionOf=v=>Number.isSafeInteger(v)&&v>=0?v:fail('INVALID',400);
@@ -39,14 +39,16 @@ async function dispatch(request,env,url,id,now) {
       const body=await readJson(request,4096);exactKeys(body,['selection','revision']);
       const revision=revisionOf(body.revision),patch=normalizeSelection(body.selection,now);
       if(!Object.keys(patch).length)fail('INVALID',400);
-      const paid=Object.entries(patch).some(([key,value])=>key==='badge'?value===true:value!==null);
-      if(paid)await requirePlus(env,id,now);
       const previous=await cosmeticsFor(env,id,now);
+      const requested=Object.entries(patch).filter(([key,value])=>key==='badge'?value===true:value!==null);
+      const owned=new Set(previous.grants.map(grant=>grant.itemId));
+      if(!previous.plusActive&&requested.some(([key,value])=>key==='badge'||!owned.has(value)))fail('PLUS_REQUIRED',402);
       if(previous.revision!==revision)fail('CONFLICT',409);
       // A player can equip from the store before opening their profile once.
       await ensurePlayerRow(env,id,now);
       const preferred={...EMPTY_COSMETICS,...previous.preferred,...patch};
-      const grant=paid?plusAccessSql(env,"'"+id.replaceAll("'","''")+"'",now):'1';
+      const actor="'"+id.replaceAll("'","''")+"'";
+      const grant=requested.map(([key,value])=>key==='badge'?plusAccessSql(env,actor,now):cosmeticAccessSql(env,actor,value,now)).join(' AND ')||'1';
       const result=await env.DB.batch([
         statement(env,`INSERT INTO plus_cosmetics(user_id,selection_json,revision,updated_at) SELECT ?,?,1,? WHERE ${liveAccountSql('?')} AND ${grant} AND ${noMafiaMediaLeaseSql('?',now)} AND (?=0 OR EXISTS(SELECT 1 FROM plus_cosmetics WHERE user_id=? AND revision=?)) ON CONFLICT(user_id) DO UPDATE SET selection_json=excluded.selection_json,revision=plus_cosmetics.revision+1,updated_at=excluded.updated_at WHERE plus_cosmetics.revision=?`,id,JSON.stringify(preferred),now,id,id,id,revision,id,revision,revision),
         statement(env,'UPDATE player_profiles SET revision=revision+1,updated_at=? WHERE user_id=? AND changes()>0',now,id),

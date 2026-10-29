@@ -3,6 +3,7 @@
 import { fail } from '../src/shared/room-primitives.mjs';
 import { MAFIA_ROLES } from '../src/online/mafia-shared.js';
 import { liveAccountSql } from './moderation/access.mjs';
+import { mafiaAchievementStatements } from './mafia-achievements.mjs';
 
 export const MAFIA_PROGRESS_POLICY_VERSION = 1;
 export const MAFIA_MASTERY_THRESHOLDS = Object.freeze([1, 5, 15, 40, 100]);
@@ -112,6 +113,7 @@ export async function mafiaProgressStatements(env, input, { claimToken = crypto.
         wins=mafia_role_progress.wins+excluded.wins,draws=mafia_role_progress.draws+excluded.draws,
         legacy_matches=mafia_role_progress.legacy_matches+excluded.legacy_matches,updated_at=MAX(mafia_role_progress.updated_at,excluded.updated_at)`,
     result.won?1:0,event.draw?1:0,now,...args));
+    if (!legacy) statements.push(...mafiaAchievementStatements(env, { userId:id, matchKey:event.key, claimToken, eventDigest, now }));
     statements.push(stmt(env,`UPDATE mafia_progress_events SET status='processed',processed_at=? WHERE ${owned}`,now,...args));
   }
   return statements;
@@ -129,5 +131,5 @@ export async function persistMafiaProgress(env, event) {
 }
 
 export function mafiaProgressDeleteStatements(env, id) {
-  return ['mafia_progress_events','mafia_player_progress','mafia_role_progress'].map(table => stmt(env,`DELETE FROM ${table} WHERE user_id=?`,id));
+  return ['mafia_cosmetic_grants','mafia_achievements','mafia_profile_preferences','mafia_progress_events','mafia_player_progress','mafia_role_progress'].map(table => stmt(env,`DELETE FROM ${table} WHERE user_id=?`,id));
 }

@@ -123,6 +123,11 @@ export class Room {
     candidate.revision++;
     const completedAt=Date.now();
     const mafiaResult=candidate.game==='mafia'&&candidate.phase==='over'&&this.room?.phase!=='over'?prepareMafiaResult(candidate,completedAt):null;
+    if(mafiaResult?.rewardPolicyVersion===1&&candidate.statsMatch) {
+      // A small owner-only locator survives outbox acknowledgement/reconnect.
+      // The receipt endpoint remains the sole source of awarded amounts.
+      candidate.statsMatch.rewardReceipt={matchKey:mafiaResult.key,notBefore:mafiaResult.notBefore};
+    }
     const outbox = [...this.profileOutbox, ...prepareRoomStats(this.room,candidate,completedAt,{mafiaProgressEnabled:mafiaProgressEnabled(this.env),mafiaResult})];
     const mafiaOutbox=[...this.mafiaResultOutbox,...(mafiaResult?[mafiaResult]:[])];
     const resetDrawing = candidate.game === 'ersomha' && (!this.drawing || this.drawing.boardId !== ersomhaBoardId(candidate));
@@ -421,7 +426,14 @@ export class Room {
       return profile ? { ...m, profile } : m;
     });
     if (this.room.game === 'ersomha' && this.drawing?.boardId === ersomhaBoardId(this.room)) state.drawing = ersomhaDrawingMeta(this.drawing);
-    if (this.room.game === 'mafia') state.mafiaVoice=mafiaVoiceView(this.room,id);
+    if (this.room.game === 'mafia') {
+      state.mafiaVoice=mafiaVoiceView(this.room,id);
+      const marker=this.room.statsMatch,account=this.room.members.find(seat=>seat.id===id)?.accountUserId;
+      if(['over','closed'].includes(state.phase)&&!state.waiting&&this.room.participants.includes(id)
+        &&account&&marker?.accounts?.[id]===account&&marker?.rewardPolicyVersion===1&&marker.rewardReceipt) {
+        state.rewardReceipt={matchKey:marker.rewardReceipt.matchKey,notBefore:marker.rewardReceipt.notBefore};
+      }
+    }
     return state;
   }
   async drawingCommand(ws, id, command) {

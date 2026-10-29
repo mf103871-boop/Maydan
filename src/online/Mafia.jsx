@@ -8,6 +8,7 @@ import { arabicNumber, errorText } from './shared.js';
 import css from './mafia.css';
 import { MAFIA_NOIR_ASSETS } from '../games/mafia/noir-assets.js';
 import { useMafiaSound } from '../games/mafia/useMafiaSound.js';
+import { MafiaRewardSummary } from './MafiaRewardSummary.jsx';
 
 const ar = arabicNumber;
 const label = value => typeof value === 'string' ? value : value?.name || value?.label || '';
@@ -299,7 +300,7 @@ function ActionPanel({ state, you, me, members, disabled, act, selection }) {
   </section>;
 }
 
-export function MafiaMatchView({ state, me, isHost, disabled = false, act = noop, clockOffset = 0, accountId = '', voice = {}, onSafety, clock, tutorial }) {
+export function MafiaMatchView({ state, me, isHost, disabled = false, act = noop, clockOffset = 0, accountId = '', voice = {}, onSafety, clock, tutorial, rewardServer }) {
   const [hidden, setHidden] = useState(() => typeof document !== 'undefined' && document.hidden);
   const notesKey = `${accountId}:${state.matchId}`;
   const [noteDraft, setNoteDraft] = useState({key:notesKey,text:''});
@@ -343,6 +344,7 @@ export function MafiaMatchView({ state, me, isHost, disabled = false, act = noop
         {!observer && tab === 'notes' && <section data-design-id="notebook" className="mafia-notebook"><h3>دفتر الشكوك</h3><p>ملاحظاتك تبقى في هذه الجلسة، ولا تُرسل إلى المجلس. تُمسح عند تبديل الحساب أو بدء مباراة جديدة.</p><label htmlFor="mafia-notes">ملاحظاتي<textarea data-design-id="notes-input" id="mafia-notes" maxLength={2000} value={notes} onChange={e => setNotes(e.target.value)} placeholder="مين غيّر روايته؟ أي معلومة تحتاج سؤالًا؟"/></label></section>}
       </div></main> : <section data-design-id="results" className="mafia-results"><MafiaSceneArt sceneId="ending" className="mafia-result-art"/><h2>{resultTitle}</h2><p>{state.reason === 'voice_unavailable' ? 'تعذّر تأمين قنوات الصوت. لا نفتح قناة قد تكشف الأسرار.' : 'تُكشف الأدوار والأحداث المهمة هنا؛ المحادثات السرية تبقى خاصة.'}</p><div data-design-id="recap" className="mafia-recap">{(Array.isArray(state.replay) ? state.replay : state.replay?.players || state.replay?.roles || []).map((item,i) => <article key={item.id || i}><MafiaRoleArt roleId={item.roleId}/><b>{nameOf(members,item.playerId || item.id)}</b><span>{MAFIA_ROLES[item.roleId]?.name || 'دور'}</span><small>{factionLabel(item.faction)}{item.initialFaction && item.initialFaction!==item.faction ? ` · بدأ مع ${factionLabel(item.initialFaction)}` : ''}</small></article>)}</div>{state.replay?.events && <ol>{state.replay.events.map((event,i) => <li key={event.id || i}>{eventText(event,members)}</li>)}</ol>}{!tutorial && isHost && state.phase === 'over' && <Button data-design-id="restart" disabled={disabled} full onClick={() => act('restart')}>إلى الانتظار · مجلس جديد</Button>}{voice.onReturnToCall && voice.previousCall && <Button data-design-id="return-call" onClick={voice.onReturnToCall}>العودة لمكالمة الشلّة</Button>}</section>}
     {toolsOpen && <Modal className="mafia-noir mafia-tools-panel" data-design-screen="online.mafia.tools" title="أدوات المجلس" onClose={()=>setToolsOpen(false)}><style>{css}</style><MafiaRules possibleRoles={state.possibleRoles} onGuide={tutorial?.onGuide}/><p>{tutorial ? 'هذه شخصيات تدريب محلية، وليست حسابات لاعبين.' : 'الإبلاغ والحظر لا يكشفان أدوار اللاعبين.'}</p><div className="stack">{(tutorial ? [] : members).filter(player=>player.id!==me?.id&&!player.spectator).map(player=><Button key={player.id} data-design-id="player-safety" onClick={()=>{setToolsOpen(false);setSafety(player);}}>إجراءات {player.name}</Button>)}</div></Modal>}
+    {finished&&!observer&&!tutorial&&!state._designPreview&&state.rewardReceipt&&<MafiaRewardSummary key={`${accountId}:${state.matchId}`} server={rewardServer} accountId={accountId} receipt={state.rewardReceipt} clockOffset={clockOffset}/>}
     {finished && <MafiaRules possibleRoles={state.possibleRoles} onGuide={tutorial?.onGuide}/>}
     {!finished && <footer data-design-id="player-rail" className="mafia-player-rail"><div className="mafia-rail-heading"><span>المجلس · {ar(members.filter(p=>p.alive).length)} أحياء</span><span>{targets.length ? 'حدّد هدفك ثم أكّد' : 'بطاقات اللاعبين'}</span></div>{seats}</footer>}
     {safety && <MafiaSafety player={safety} onClose={() => setSafety(null)} onSafety={onSafety}/>}
