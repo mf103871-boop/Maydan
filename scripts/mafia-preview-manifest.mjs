@@ -83,11 +83,12 @@ export function assertMafiaPreviewConfig(config) {
   keys(config.assets, ['directory', 'binding', 'not_found_handling', 'run_worker_first'], 'Assets');
   check(config.assets.binding === 'ASSETS' && config.assets.directory === 'dist', 'Exact local preview assets required.');
   keys(config.vars, ['APP_ORIGIN', 'EXTRA_ORIGINS', 'APPLE_BUNDLE_ID', 'MAFIA_ENABLED', 'MAFIA_ACCEPT_NEW_MATCHES',
-    'MAFIA_MAX_ACTIVE_ROOMS', 'MAFIA_MAX_VOICE_PARTICIPANTS', 'IOS_UPDATE_POLICY_ENABLED', 'GOOGLE_CLIENT_ID'], 'Variables');
+    'MAFIA_PROGRESS_ENABLED', 'MAFIA_MAX_ACTIVE_ROOMS', 'MAFIA_MAX_VOICE_PARTICIPANTS', 'IOS_UPDATE_POLICY_ENABLED', 'GOOGLE_CLIENT_ID'], 'Variables');
   check(config.vars.APP_ORIGIN === target.origin && config.vars.EXTRA_ORIGINS === 'maydan://app', 'Exact preview origins required.');
   check(config.vars.IOS_UPDATE_POLICY_ENABLED === '0', 'Preview update policy must remain disabled.');
   check(['0', '1'].includes(config.vars.MAFIA_ENABLED), 'Explicit MAFIA_ENABLED gate required.');
   check(['0', '1'].includes(config.vars.MAFIA_ACCEPT_NEW_MATCHES), 'Explicit MAFIA_ACCEPT_NEW_MATCHES gate required.');
+  check(['0', '1'].includes(config.vars.MAFIA_PROGRESS_ENABLED ?? '0'), 'Invalid Mafia progression gate.');
   check(config.vars.MAFIA_MAX_ACTIVE_ROOMS === '1' && config.vars.MAFIA_MAX_VOICE_PARTICIPANTS === '80',
     'Preview capacity must remain exactly 1 active room / 80 voice participants.');
   return config;
@@ -143,7 +144,7 @@ export function createMafiaPreviewManifest({ configSource, migrations, ledger = 
     migrations: { directory: MIGRATIONS, files }, migrationSetSHA256: mafiaPreviewSHA256(canonical(files)),
     rules: { rulesetVersion: MAFIA_RULESET_VERSION, protocol: MAFIA_PROTOCOL, supportedRulesetVersions: [...MAFIA_SUPPORTED_RULESET_VERSIONS] },
     capacity: { maxActiveRooms: Number(config.vars.MAFIA_MAX_ACTIVE_ROOMS), maxVoiceParticipants: Number(config.vars.MAFIA_MAX_VOICE_PARTICIPANTS) },
-    gates: { mafiaEnabled: config.vars.MAFIA_ENABLED === '1', acceptNewMatches: config.vars.MAFIA_ACCEPT_NEW_MATCHES === '1' },
+    gates: { mafiaEnabled: config.vars.MAFIA_ENABLED === '1', acceptNewMatches: config.vars.MAFIA_ACCEPT_NEW_MATCHES === '1', progressEnabled: config.vars.MAFIA_PROGRESS_ENABLED === '1' },
     migrationLedger: supplied.ledger, pendingMigrations: supplied.pending,
     reviewedManifest: reviewedManifest == null ? 'not-supplied' : 'matched',
     ready: false, liveVerified: false,

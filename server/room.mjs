@@ -16,6 +16,7 @@ import { requireMafiaNewMatches, assertSupportedMafiaRuleset } from './mafia-rul
 import { prepareMafiaVoice, committedMafiaVoice, mafiaVoiceView, mafiaVoiceRequest } from './mafia-voice.mjs';
 import { technicalAbort, snapshot as mafiaSnapshot, voiceAudience } from './mafia-model.mjs';
 import { persistMafiaResult, prepareMafiaResult } from './mafia-results.mjs';
+import { persistMafiaProgress, mafiaProgressEnabled } from './mafia-progression.mjs';
 import { supportsMafiaProtocol } from '../src/online/mafia-shared.js';
 import { MafiaDirectoryFeed } from './mafia-directory-feed.mjs';
 import { advanceObserverStream,observerNextAlarm,observerView,observerCanPromote,claimObserver,releaseObserver,promoteObserverClaim,observerAuthorizations,OBSERVER_CAP,OBSERVER_LEASE,assertObserverAdmission,loadObserverStream,saveObserverStream,observerEvidenceAccount,observerEvidenceAccounts,dropObserverEvidenceAccounts } from './mafia-observers.mjs';
@@ -28,6 +29,7 @@ import { ersomhaBoardId, emptyErsomhaDrawing, loadErsomhaDrawing, checkpointErso
 const SOCKET_IDLE = 45_000;
 const STATS_RETRY = 30_000;
 const STATS_MAX_ATTEMPTS = 48; // a day of half-minute retries
+const MAFIA_RESULT_FAILURE_CODES=new Set(['MAFIA_PROGRESS_DISABLED','MAFIA_PROGRESS_UNAVAILABLE','MAFIA_PROGRESS_PENDING','MAFIA_PROGRESS_INVALID']);
 const MAX_QUEUED_SOCKET_MESSAGES = 64;
 const MAX_QUEUED_ROOM_MESSAGES = 256;
 // Statements the room has already shown wait at the back of the queue, so a second
@@ -119,8 +121,9 @@ export class Room {
     }
     await prepareRoomAppearance(this.env, this.room, candidate);
     candidate.revision++;
-    const outbox = [...this.profileOutbox, ...prepareRoomStats(this.room, candidate)];
-    const mafiaResult=candidate.game==='mafia'&&candidate.phase==='over'&&this.room?.phase!=='over'?prepareMafiaResult(candidate):null;
+    const completedAt=Date.now();
+    const mafiaResult=candidate.game==='mafia'&&candidate.phase==='over'&&this.room?.phase!=='over'?prepareMafiaResult(candidate,completedAt):null;
+    const outbox = [...this.profileOutbox, ...prepareRoomStats(this.room,candidate,completedAt,{mafiaProgressEnabled:mafiaProgressEnabled(this.env),mafiaResult})];
     const mafiaOutbox=[...this.mafiaResultOutbox,...(mafiaResult?[mafiaResult]:[])];
     const resetDrawing = candidate.game === 'ersomha' && (!this.drawing || this.drawing.boardId !== ersomhaBoardId(candidate));
     const nextDrawing = resetDrawing ? emptyErsomhaDrawing(candidate) : this.drawing;
@@ -193,10 +196,25 @@ export class Room {
     while(this.mafiaResultOutbox.length) {
       const event=this.mafiaResultOutbox[0];
       if(event.notBefore>Date.now()){await this.schedule();return;}
-      try {await persistMafiaResult(this.env,event);}catch {await this.ctx.storage.setAlarm(Date.now()+STATS_RETRY);return;}
+      // Archive and progression both deduplicate independently. A crash after
+      // either D1 batch retries both; INSERT OR IGNORE is not a consumed event.
+      try {await persistMafiaResult(this.env,event);await persistMafiaProgress(this.env,event);}catch(error){await this.recordMafiaResultFailure(event,error);return;}
       const rest=this.mafiaResultOutbox.slice(1);
-      await this.ctx.storage.put('mafiaResultOutbox',rest);this.mafiaResultOutbox=rest;
+      try {await this.ctx.storage.put('mafiaResultOutbox',rest);}catch(error){await this.recordMafiaResultFailure(event,error);fail('MAFIA_RESULT_RETRY',503);}
+      // Removing the recovered event also clears its diagnostic. Never retain
+      // raw SQL/provider errors or any role, account, chat or target in it.
+      this.mafiaResultOutbox=rest;
     }
+  }
+  async recordMafiaResultFailure(event,error) {
+    const previous=event.lastFailure?.attempts;
+    const lastFailure={code:MAFIA_RESULT_FAILURE_CODES.has(error?.code)?error.code:'MAFIA_RESULT_RETRY',
+      attempts:Math.min(255,(Number.isSafeInteger(previous)&&previous>=0?previous:0)+1),at:Date.now()};
+    const pending=this.mafiaResultOutbox.map(item=>item===event?{...item,lastFailure}:item);
+    try {
+      await this.ctx.storage.put('mafiaResultOutbox',pending);this.mafiaResultOutbox=pending;
+      await this.ctx.storage.setAlarm(Date.now()+STATS_RETRY);
+    } catch {fail('MAFIA_RESULT_RETRY',503);}
   }
   mafiaSessionScope(candidate) {
     const sockets=this.sockets().map(ws=>this.attachment(ws)).filter(a=>a.id&&a.accountSessionId&&a.scope!=='observer');
