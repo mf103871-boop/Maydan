@@ -138,7 +138,8 @@ export function Game({ api, teams, onExit, savedSession = null, designPreviewSta
   useEffect(() => {
     if (state.phase !== 'over') return;
     api.storage.set(SEEN_KEY, trimSeen(source.seen(), 1500));
-    api.sound.play('fanfare'); api.haptics.vibrate('win'); api.confetti.fire();
+    // The platform owns the single completed-match sound.
+    if (state.completed === true) { api.haptics.vibrate('win'); api.confetti.fire(); }
     api.matchOver?.({ completed: state.completed === true });
   }, [state.phase]); // eslint-disable-line react-hooks/exhaustive-deps
   return (

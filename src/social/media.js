@@ -13,6 +13,58 @@ export function audioActivity(owner, active) {
   if (typeof window !== 'undefined') window.dispatchEvent(new CustomEvent('maydan-social-audio', { detail: { owner, active } }));
 }
 export const activeAudioOwners = () => [...audioOwners];
+
+// Each binding owns its leases. Cleanup from a previous provider must never
+// release a newer recording/preview's suppression.
+export function bindSocialAudio(sound) {
+  const lease = Symbol('social-audio'), owners = new Set(activeAudioOwners());
+  const sync = () => {
+    const exclusive = [...owners].some(key => /^(recorder-|voice-)/.test(String(key)));
+    sound.setSuppressed?.(exclusive, lease);
+    sound.music?.setSuppressed?.(exclusive, lease);
+    sound.setDucking?.(owners.size > 0, lease);
+  };
+  const changed = event => {
+    const { owner, active } = event.detail || {};
+    if (!owner) return;
+    if (active) owners.add(owner); else owners.delete(owner);
+    sync();
+  };
+  sync();
+  globalThis.window?.addEventListener('maydan-social-audio', changed);
+  return () => {
+    globalThis.window?.removeEventListener('maydan-social-audio', changed);
+    sound.setDucking?.(false, lease);
+    sound.setSuppressed?.(false, lease);
+    sound.music?.setSuppressed?.(false, lease);
+  };
+}
+
+// Notification renders, preference changes and game audio scope resets do not
+// turn one received message into several sounds. Consume even muted messages.
+export function createSocialNotificationAudio(sound) {
+  let identity = null, generation = 0;
+  const seen = new Set();
+  const setIdentity = owner => {
+    if (owner === identity) return;
+    identity = owner; generation++; seen.clear();
+  };
+  return {
+    setIdentity,
+    emit(notification, { owner, scope = 'direct', messageId, muted = false, guard } = {}) {
+      setIdentity(owner);
+      if (!owner || notification?.userId !== owner || notification?.id == null) return false;
+      const kind = notification.type === 'request' ? 'social.invite' : 'social.message';
+      const conversationId = notification.conversationId || notification.friend?.conversationId || notification.groupId || '';
+      const id = JSON.stringify([owner, scope, kind, conversationId, messageId || notification.messageId || notification.friend?.lastMessage?.id || notification.id]);
+      if (seen.has(id)) return false;
+      seen.add(id);
+      while (seen.size > 512) seen.delete(seen.values().next().value);
+      const epoch = generation;
+      return sound.emit?.(kind, { id, muted, guard: () => identity === owner && generation === epoch && (typeof guard !== 'function' || guard()) }) ?? false;
+    },
+  };
+}
 function nativeAudio(result) {
   const binary = atob(result.base64 || ''); const bytes = Uint8Array.from(binary, char => char.charCodeAt(0));
   return { blob: new Blob([bytes], { type: result.mimeType || 'audio/mp4' }), durationMs: result.durationMs };
@@ -27,6 +79,8 @@ export function createVoiceRecorder({ onInterrupted = () => {} } = {}) {
     async start() {
       if (recording) throw mediaError('التسجيل جارٍ بالفعل.', 'CALL_BUSY');
       claim(owner); const epoch = ++generation, captureId = `${owner}-${epoch}`; recordingId = captureId; recording = true;
+      // Reserve silence before requesting permission or opening native capture.
+      audioActivity(owner, true);
       unsubscribe?.(); stopped = null; stopPromise = null; interrupted = null; chunks = [];
       try {
         if (native) {

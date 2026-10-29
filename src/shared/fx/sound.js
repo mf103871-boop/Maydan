@@ -1,4 +1,9 @@
-import { SAMPLE_BANK, SAMPLE_RATE } from './sample-bank.js';
+import { createAudioEvents } from './audio-events.js';
+import { resolveAudioScene, createSceneLeases } from './audio-scenes.js';
+import { SAMPLE_BANK as BASE_SAMPLE_BANK, SAMPLE_RATE } from './sample-bank.js';
+import { reviewedEffectBank } from './reviewed-effects.js';
+const extraEffects = reviewedEffectBank();
+const SAMPLE_BANK = { ...BASE_SAMPLE_BANK, ...extraEffects };
 import { MUSIC_BANK } from './music-bank.js';
 import { SELECTED_AUDIO } from './selected-audio.js';
 import { createStreamingMusic } from './streaming-music.js';
@@ -13,6 +18,7 @@ export const CUE_SAMPLES = {
   click: 'click', pop: 'pop', tick: 'tick', tickFast: 'tickFast', correct: 'correct', wrong: 'wrong',
   buzzer: 'buzzer', whoosh: 'whoosh', fanfare: 'win', explosion: 'explosion', drumroll: 'drumroll',
   countdown: 'countdown', countdownGo: 'start', reveal: 'reveal', pass: 'pass', timeout: 'timeout',
+  ...Object.fromEntries(Object.keys(extraEffects).map(name => [name, name])),
   ...Object.fromEntries(Object.entries(MAFIA_CUES).map(([name, cue]) => [name, cue.sample])),
 };
 export const RECIPES = Object.fromEntries(Object.entries(CUE_SAMPLES).map(([name, id]) => [name, (c, meta) => c.sample(id, meta)]));
@@ -21,7 +27,7 @@ for (const name of Object.keys(MAFIA_CUES)) RECIPES[name] = (c, meta) => renderM
 const clampVolume = (value, fallback = 0.75) => typeof value === 'number' && Number.isFinite(value) ? Math.min(1, Math.max(0, value)) : fallback;
 // A repeat inside the cooldown restarts a user cue (the tap happened, the sound must
 // follow) and is dropped for an automatic one (ticks and countdowns keep their rhythm).
-const COOLDOWNS = { click: 65, pop: 70, tick: 100, tickFast: 100, countdown: 120, correct: 150, wrong: 180,
+const COOLDOWNS = { click: 70, pop: 70, tick: 100, tickFast: 100, countdown: 120, correct: 150, wrong: 180,
   buzzer: 300, whoosh: 100, fanfare: 500, explosion: 400, drumroll: 300, countdownGo: 180, reveal: 160, timeout: 300, pass: 80,
   mafiaSelect: 80, mafiaRole: 160, mafiaNight: 1000, mafiaDawn: 1000, mafiaVerdict: 500, mafiaFinal: 1000 };
 const USER_CUES = new Set(['click', 'pop', 'whoosh', 'correct', 'wrong', 'buzzer', 'pass', 'reveal', 'drumroll', 'mafiaRole', 'mafiaSelect']);
@@ -30,7 +36,7 @@ const RETRIGGER_FLOOR_MS = 40;
 const ALIASES = { open: 'whoosh', steal: 'correct', win: 'fanfare', start: 'countdownGo', tool: 'reveal', scoreUp: 'pop', scoreDown: 'wrong' };
 // A cue that arrives while the bank is still decoding or the context resuming plays a
 // little late; feedback for a tap is still welcome after a second, a timer tick is not.
-const LATE_MS = { default: 1200, tick: 400, tickFast: 400, countdown: 400, countdownGo: 400, timeout: 400,
+const LATE_MS = { default: 1000, click: 250, whoosh: 250, tick: 400, tickFast: 400, countdown: 400, countdownGo: 400, timeout: 400,
   mafiaNight: 400, mafiaDawn: 400, mafiaVerdict: 400, mafiaFinal: 400, mafiaSelect: 400 };
 const lateFor = (name) => LATE_MS[name] ?? LATE_MS.default;
 const RESUME_TIMEOUT_MS = 1500;
@@ -58,16 +64,21 @@ const DUCKS = { fanfare: 0.3, explosion: 0.35, drumroll: 0.4, countdownGo: 0.45,
 const MUSIC_FADE_IN = 1.4;
 const MUSIC_FADE_OUT = 0.8;
 const MUSIC_BUFFERS = 3;
+const MAX_EFFECT_VOICES = 3;
 // A sting that arrives this long after its moment (slow network) is dropped.
 const LATE_STING_MS = 2500;
 
-export function createSound({ enabled = true, volume = 0.75, music = true, musicVolume = 0.5, voice = false } = {}) {
+export function createSound({ enabled = true, volume = 0.75, music = true, musicVolume = 0.5, voice = false, creatorMode = false, allowPreviewVoices = false } = {}) {
   let on = !!enabled;
   let level = clampVolume(volume);
   let musicOn = !!music;
   const musicSuppressors = new Set();
   let musicLevel = clampVolume(musicVolume, 0.5);
-  let responseOn = !!voice;
+  const voicesAllowed = SELECTED_AUDIO.voicesProductionApproved === true || allowPreviewVoices;
+  let responseOn = voicesAllowed && !!voice;
+  let broadcastMode = !!creatorMode;
+  let activeScene = null;
+  const effectSuppressors = new Set();
   let responseToken = 0;
   let responsePending = null;
   let responseActive = null;
@@ -129,15 +140,19 @@ export function createSound({ enabled = true, volume = 0.75, music = true, music
   const streamedMusic = createStreamingMusic(SELECTED_AUDIO.music, { onFailure: () => syncMusic() });
   const pageUnavailable = () => pageHidden || nativeHidden || (typeof document !== 'undefined' && document.hidden);
   const hidden = () => pageUnavailable() || interrupted || gestureRequired;
-  const canPlay = () => on && level > 0 && !hidden();
-  const canPlayMusic = () => on && musicOn && musicLevel > 0 && musicSuppressors.size === 0 && !hidden();
+  const canPlay = () => on && level > 0 && effectSuppressors.size === 0 && !hidden();
+  const canPlayMusic = () => on && musicOn && !broadcastMode && musicLevel > 0 && musicSuppressors.size === 0 && !hidden();
+  const eventAudio = createAudioEvents(play, { available: canPlay });
+  const sceneLeases = createSceneLeases(scene => { activeScene = scene; syncMusic(); });
+  const scenePlan = () => activeScene ? resolveAudioScene(activeScene.game, activeScene.phase, { creatorMode: broadcastMode }) : null;
+  const wantedTrack = () => { const scene = scenePlan(); return scene ? (scene.track?.id || scene.fallback) : musicWanted; };
   // Per cue when named, the whole bank otherwise.
   const ready = (name = null) => (name ? buffers.has(CUE_SAMPLES[name]) : CUE_IDS.every((id) => buffers.has(id)));
 
   function musicMix(tc = 0.08) {
     if (!musicGain || !context) return;
     const duck = (Date.now() < duckUntil ? duckLevel : 1) * (ducked ? 0.25 : 1);
-    const gain = canPlayMusic() ? musicLevel * musicLevel * duck : 0;
+    const gain = canPlayMusic() ? musicLevel * musicLevel * duck * (scenePlan()?.gain ?? 1) : 0;
     try { musicGain.gain.setTargetAtTime(gain, context.currentTime, tc); } catch { musicGain.gain.value = gain; }
   }
   function mix() {
@@ -178,9 +193,9 @@ export function createSound({ enabled = true, volume = 0.75, music = true, music
       } else { voice.source.stop(); voice.cleanup(); }
     } catch { voice.cleanup(); }
   }
-  function track(source, nodes, { name = null, at = Date.now(), ordinal = ++seq, gain = null } = {}) {
+  function track(source, nodes, { name = null, at = Date.now(), ordinal = ++seq, gain = null, priority = 2 } = {}) {
     if (voices.size >= 20) cutVoice(voices.values().next().value);
-    const voice = { source, name, at, ordinal, gain, cleanup() {
+    const voice = { source, name, at, ordinal, gain, priority, cleanup() {
       voices.delete(voice);
       source.onended = null;
       for (const node of nodes) { try { node.disconnect(); } catch { /* disconnected */ } }
@@ -250,9 +265,21 @@ export function createSound({ enabled = true, volume = 0.75, music = true, music
     };
     return firstId && !buffers.has(firstId) ? decodeCue(c, firstId).then(all) : all();
   }
-  function sample(id, { at = 0, gain = 1, rate = 1, name = null, requested = Date.now(), ordinal = undefined, buffer: providedBuffer } = {}) {
+  function sample(id, { at = 0, gain = 1, rate = 1, name = null, requested = Date.now(), ordinal = undefined, priority = 2, buffer: providedBuffer } = {}) {
     const buffer = providedBuffer || buffers.get(id);
     if (!buffer) return null;
+    // Admit every source, including the later strokes of a composite cue. A
+    // pre-recipe check lets one three-stroke cue exceed the complete voice budget.
+    if (name && !name.startsWith('response:')) {
+      const audible = [...voices].filter(voice => voice.name && !voice.name.startsWith('response:'));
+      if (audible.length >= MAX_EFFECT_VOICES) {
+        // Keep the early strokes of this cue if only part of its pattern fits;
+        // otherwise later scheduled strokes would cancel its immediate feedback.
+        const lowest = audible.filter(voice => voice.ordinal !== ordinal).sort((a, b) => a.priority - b.priority || a.at - b.at)[0];
+        if (!lowest || lowest.priority > priority) return null;
+        cutVoice(lowest); // disconnect now; a release overlap would exceed the cap
+      }
+    }
     const source = context.createBufferSource();
     source.buffer = buffer;
     source.playbackRate.value = rate;
@@ -260,7 +287,7 @@ export function createSound({ enabled = true, volume = 0.75, music = true, music
     voiceGain.gain.value = gain;
     source.connect(voiceGain);
     voiceGain.connect(master);
-    const voice = track(source, [source, voiceGain], { name, at: requested, ordinal, gain: voiceGain });
+    const voice = track(source, [source, voiceGain], { name, at: requested, ordinal, gain: voiceGain, priority });
     source.start(context.currentTime + at);
     return voice;
   }
@@ -424,26 +451,30 @@ export function createSound({ enabled = true, volume = 0.75, music = true, music
   // otherwise start the wanted track once the context runs and the file is decoded.
   function syncMusic(tc) {
     musicMix(tc);
-    if (!on || !musicOn || !musicLevel || musicSuppressors.size) {
+    if (!on || !musicOn || broadcastMode || !musicLevel || musicSuppressors.size) {
       streamedMusic.pause();
-      if (playing) { fadeOutVoice(playing, 0.35); playing = null; }
-      if (sting) { fadeOutVoice(sting, 0.35); sting = null; stingHold = 0; }
+      if (playing) { fadeOutVoice(playing, 0); playing = null; }
+      if (sting) { fadeOutVoice(sting, 0); sting = null; stingHold = 0; }
       musicToken += 1; stingToken += 1;
       return;
     }
     if (hidden()) { streamedMusic.pause(); return; }
-    if (!musicWanted) {
+    const wanted = wantedTrack();
+    if (!wanted) {
       streamedMusic.pause({ clear: true });
       if (playing) { fadeOutVoice(playing, MUSIC_FADE_OUT); playing = null; }
       musicToken += 1;
       return;
     }
     if (playing?.done) playing = null;
-    if (playing?.id === musicWanted || Date.now() < stingHold) return;
-    const id = musicWanted;
+    if (playing?.id === wanted || Date.now() < stingHold) return;
+    const id = wanted;
+    const scene = scenePlan();
+    const selected = scene ? (scene.track || (scene.game === 'home' ? SELECTED_AUDIO.music : MUSIC_BANK[id])) : SELECTED_AUDIO.music;
+    if (selected) streamedMusic.setTrack({ ...selected, crossfadeSeconds: selected.crossfadeSeconds ?? 1.5 });
     const c = getContext();
     if (!c) return;
-    if (musicWanted !== 'finale' && streamedMusic.supported(c)) {
+    if (id !== 'finale' && selected && streamedMusic.supported(c)) {
       // A music-only route must also resume its Web Audio graph. Issue the call
       // now, inside a possible gesture, without delaying media.play behind await.
       void unlock();
@@ -454,7 +485,7 @@ export function createSound({ enabled = true, volume = 0.75, music = true, music
     const token = ++musicToken;
     void Promise.all([unlock(), loadTrack(c, id)]).then(([running, buffer]) => {
       if (!running || !buffer || token !== musicToken || c !== context || c.state !== 'running') return;
-      if (musicWanted !== id || !canPlayMusic() || Date.now() < stingHold || playing?.id === id) return;
+      if (wantedTrack() !== id || !canPlayMusic() || Date.now() < stingHold || playing?.id === id) return;
       if (playing) fadeOutVoice(playing, MUSIC_FADE_OUT);
       playing = musicVoice(c, id, buffer, { loop: MUSIC_BANK[id].loop, fadeIn: MUSIC_FADE_IN });
     });
@@ -739,6 +770,7 @@ export function createSound({ enabled = true, volume = 0.75, music = true, music
   }
   function dispose() {
     cancelRecovery();
+    eventAudio.reset();
     stop(); haltMusic(); streamedMusic.dispose(); invalidateResponse();
     buffers.clear(); decodes.clear(); musicBuffers.clear(); musicDecodes.clear(); responseBuffers.clear(); responseDecodes.clear(); responseEncoded.clear(); bankDecode = null;
     clearTimeout(tap.timer); tap.pending = null;
@@ -784,7 +816,7 @@ export function createSound({ enabled = true, volume = 0.75, music = true, music
   }
   // `source: 'tap'` marks the delegate's own click; any other cue requested while a tap
   // click is pending replaces it, and one arriving shortly after cuts the click voice.
-  function play(rawName, { source = 'code', guard } = {}) {
+  function play(rawName, { source = 'code', guard, priority = 2 } = {}) {
     const name = ALIASES[rawName] || rawName;
     if (!canPlay() || !RECIPES[name]) return false;
     const now = Date.now();
@@ -801,12 +833,13 @@ export function createSound({ enabled = true, volume = 0.75, music = true, music
     const render = () => {
       if (typeof guard === 'function') { try { if (!guard()) return false; } catch { return false; } }
       if (!canPlay() || voided(ordinal, now) || c !== context || c.state !== 'running' || !ready(name)) return false;
-      // The cooldown clock starts when the cue actually sounds, not when it was asked for.
-      lastPlayed.set(name, Date.now());
-      if (DUCKS[name]) duckFor(DUCKS[name], SAMPLE_BANK[CUE_SAMPLES[name]].frames / SAMPLE_RATE);
       let voice = null;
       const underSpeech = responseOn && !ducked && (name === 'correct' || name === 'wrong');
-      try { voice = RECIPES[name](voiceContext, { name, requested: now, ordinal, gain: underSpeech ? 0.3 : 1 }); } catch { /* never break the game */ }
+      try { voice = RECIPES[name](voiceContext, { name, requested: now, ordinal, priority, gain: underSpeech ? 0.3 : 1 }); } catch { /* never break the game */ }
+      if (!voice) return false;
+      // Rejected low-priority effects neither duck the music nor spend cooldowns.
+      lastPlayed.set(name, Date.now());
+      if (DUCKS[name]) duckFor(DUCKS[name], SAMPLE_BANK[CUE_SAMPLES[name]].frames / SAMPLE_RATE);
       if (name === 'correct' || name === 'wrong') speakResponse(name, c, now, ordinal);
       if (source === 'tap') tap.voice = voice;
       return true;
@@ -817,6 +850,14 @@ export function createSound({ enabled = true, volume = 0.75, music = true, music
   }
   return {
     play,
+    emit: eventAudio.emit,
+    resetScope(scope = '') { eventAudio.reset(scope); stop(); },
+    resetIdentity(scope = '') { eventAudio.reset(scope); stop(); haltMusic(); streamedMusic.dispose(); },
+    setSuppressed(value, owner) {
+      if (owner == null) return;
+      if (value) { effectSuppressors.add(owner); stop(); } else effectSuppressors.delete(owner);
+      mix();
+    },
     stopCues(names) {
       const selected = new Set(Array.isArray(names) ? names : []);
       for (const voice of [...voices]) if (selected.has(voice.name)) cutVoice(voice, 0.025);
@@ -837,7 +878,7 @@ export function createSound({ enabled = true, volume = 0.75, music = true, music
     },
     voice: {
       enable(value) {
-        responseOn = !!value;
+        responseOn = voicesAllowed && !!value;
         if (!responseOn) { invalidateResponse(); cutVoice(responseActive, 0.03); }
         else void warmResponses(getContext());
       },
@@ -849,6 +890,10 @@ export function createSound({ enabled = true, volume = 0.75, music = true, music
     // gesture if the browser has not unlocked audio yet and crossfades from the current
     // one), `stop()` fades out, `sting(id, { after })` plays a one-shot over silence.
     music: {
+      scene(owner, game, phase = 'idle', priority = 10) { sceneLeases.set(owner, { game, phase }, priority); },
+      releaseScene(owner) { sceneLeases.release(owner); },
+      setCreatorMode(value) { broadcastMode = !!value; syncMusic(); },
+      get creatorMode() { return broadcastMode; },
       play(id) {
         const next = MUSIC_BANK[id] ? id : null;
         if (next === musicWanted) { syncMusic(); return; }

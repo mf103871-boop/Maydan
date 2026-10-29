@@ -27,6 +27,7 @@ import { useCallDockLayout } from './CallViewport.jsx';
 import { hasVisibleMafiaCallControls } from './mafia-call-controls.js';
 import { ActionDialog, Conversation, PersonAvatar, SearchDialog, presenceLabel } from './SocialScreen.jsx';
 import { LammaButton, LammaIcon, VoiceRecorder, VoiceMessage, GameInviteCard, mediaError } from './LammaMedia.jsx';
+import { createSocialNotificationAudio } from './media.js';
 import { createSocialGameLauncher } from './game-launch.js';
 import { errorText as roomErrorText } from '../online/shared.js';
 import socialCss from './social.css';
@@ -306,14 +307,33 @@ export function SocialHost() {
   const notification = social.notification;
   const notificationId = notification?.id;
   const groupNotificationId = lamma.notification?.id;
+  const incomingAudio = useMemo(() => createSocialNotificationAudio(sound), [sound]);
+  const audioOwner = account.ready && account.signedIn ? account.user?.id || null : null;
+  useLayoutEffect(() => { incomingAudio.setIdentity(audioOwner); return () => incomingAudio.setIdentity(null); }, [incomingAudio, audioOwner]);
+  const incomingContext = useRef(null);
+  incomingContext.current = { preferences: lamma.notifications, callActive: !!(lamma.activeCall || lamma.media?.connected || lamma.media?.connecting || lamma.media?.ending) };
+  const incomingAllowed = (scope, conversationId) => {
+    const current = incomingContext.current, privacy = socialInterruption.getSnapshot();
+    return !!current.preferences?.enabled && !!current.preferences?.sound && !current.callActive && !privacy.privateTurn && !privacy.communicationLocked && !isConversationMuted(current.preferences, scope, conversationId);
+  };
   const dismissGroupNotification = useRef(lamma.clearNotification); dismissGroupNotification.current = lamma.clearNotification;
   useEffect(() => { if (!groupNotificationId) return undefined; const timer = setTimeout(() => dismissGroupNotification.current(), 6500); return () => clearTimeout(timer); }, [groupNotificationId]);
   useEffect(() => {
     if (!notificationId) return undefined;
     const timer = setTimeout(dismissNotification, 6500);
-    if (lamma.notifications?.enabled && lamma.notifications?.sound && !interruption.privateTurn && !lamma.activeCall) sound.play('pop');
     return () => clearTimeout(timer);
-  }, [notificationId, dismissNotification, sound, lamma.notifications?.enabled, lamma.notifications?.sound, interruption.privateTurn, lamma.activeCall]);
+  }, [notificationId, dismissNotification]);
+  useEffect(() => {
+    if (!notification) return;
+    const allowed = () => incomingAllowed('direct', notification.friend?.conversationId);
+    incomingAudio.emit(notification, { owner: audioOwner, muted: !allowed(), guard: allowed });
+  }, [incomingAudio, audioOwner, notification, lamma.notifications, interruption.privateTurn, interruption.communicationLocked, lamma.activeCall]);
+  useEffect(() => {
+    const groupNotification = lamma.notification;
+    if (!groupNotification) return;
+    const allowed = () => incomingAllowed('group', groupNotification.conversationId || groupNotification.groupId);
+    incomingAudio.emit(groupNotification, { owner: audioOwner, scope: 'group', muted: !allowed(), guard: allowed });
+  }, [incomingAudio, audioOwner, lamma.notification, lamma.notifications, interruption.privateTurn, interruption.communicationLocked, lamma.activeCall]);
   const privateSurface = interruption.privateTurn || interruption.communicationLocked || (route.name === 'play');
   const notificationMuted = notification?.friend && isConversationMuted(lamma.notifications, 'direct', notification.friend.conversationId);
   const join = id => run(async () => { await lamma.acceptGameInvite(id); ui.close(); }, 'join-invite');

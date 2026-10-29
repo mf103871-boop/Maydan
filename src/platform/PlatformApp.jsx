@@ -44,7 +44,7 @@ import { DesignRuntime } from '../design/DesignRuntime.jsx';
 
 export const VERSION = typeof __MAYDAN_VERSION__ !== 'undefined' ? __MAYDAN_VERSION__ : '1.0.0';
 const platformStorage = createStorage('platform');
-const DEFAULT_SETTINGS = { soundOn: true, soundVolume: 0.75, voiceOn: true, musicOn: true, musicVolume: 0.35, musicLevel: 2, hapticsOn: true, reducedMotion: false, splashSeen: false };
+const DEFAULT_SETTINGS = { soundOn: true, soundVolume: 0.75, voiceOn: false, creatorMode: false, musicOn: true, musicVolume: 0.35, musicLevel: 2, hapticsOn: true, reducedMotion: false, splashSeen: false };
 // الموسيقى 3.1 أهدأ وأخفض: من حفظ مستوى الموسيقى قبلها يُنقل مرة واحدة إلى الافتراضي الجديد.
 function migrateSettings(saved) {
   const next = { ...DEFAULT_SETTINGS, ...(saved || {}) };
@@ -85,7 +85,7 @@ function Providers({ children }) {
   const toast = useToast();
   const [settings, setSettingsState] = useState(() => migrateSettings(platformStorage.get('settings', {})));
   const [roster, setRosterState] = useState(() => platformStorage.get('roster', []) || []);
-  const sound = useMemo(() => createSound({ enabled: settings.soundOn, volume: settings.soundVolume, voice: settings.voiceOn, music: settings.musicOn, musicVolume: settings.musicVolume }), []); // eslint-disable-line react-hooks/exhaustive-deps
+  const sound = useMemo(() => createSound({ enabled: settings.soundOn, volume: settings.soundVolume, voice: settings.voiceOn, music: settings.musicOn, musicVolume: settings.musicVolume, creatorMode: settings.creatorMode }), []); // eslint-disable-line react-hooks/exhaustive-deps
   const haptics = useMemo(() => createHaptics({ enabled: settings.hapticsOn }), []); // eslint-disable-line react-hooks/exhaustive-deps
 
   const setSettings = useCallback((patch) => {
@@ -94,6 +94,7 @@ function Providers({ children }) {
     if ('soundVolume' in patch) sound.setVolume(patch.soundVolume);
     if ('voiceOn' in patch) sound.voice.enable(patch.voiceOn);
     if ('musicOn' in patch) sound.music.enable(patch.musicOn);
+    if ('creatorMode' in patch) sound.music.setCreatorMode(patch.creatorMode);
     if ('musicVolume' in patch) sound.music.setVolume(patch.musicVolume);
     if ('hapticsOn' in patch) haptics.enable(patch.hapticsOn);
     setSettingsState((prev) => {
@@ -112,6 +113,7 @@ function Providers({ children }) {
   useEffect(() => { sound.setVolume(settings.soundVolume); }, [sound, settings.soundVolume]);
   useEffect(() => { sound.voice.enable(settings.voiceOn); }, [sound, settings.voiceOn]);
   useEffect(() => { sound.music.enable(settings.musicOn); }, [sound, settings.musicOn]);
+  useEffect(() => { sound.music.setCreatorMode(settings.creatorMode); }, [sound, settings.creatorMode]);
   useEffect(() => { sound.music.setVolume(settings.musicVolume); }, [sound, settings.musicVolume]);
   useEffect(() => { haptics.enable(settings.hapticsOn); }, [haptics, settings.hapticsOn]);
   useEffect(() => { document.documentElement.dataset.reducedMotion = settings.reducedMotion ? 'true' : 'false'; }, [settings.reducedMotion]);
@@ -166,7 +168,9 @@ function Shell() {
   useEffect(() => () => { sound.stop({ spare: 350 }); confetti.clear(); }, [route.path, sound, confetti]);
   // الموسيقى تتبع الشاشة: القوائم واللّمّة على مقطع «البيت»، وشاشة اللعب تختار مقطعها بنفسها
   // (الإعداد على «البيت»، ثم مقطع اللعبة عند البدء؛ انظر Play.jsx).
-  useEffect(() => { if (route.name !== 'play') sound.music.play('home'); }, [route.name, sound]);
+  const shellMusic = useRef(Symbol('menu-music'));
+  useEffect(() => { sound.music.scene(shellMusic.current, 'home', route.name, 0); }, [route.name, sound]);
+  useEffect(() => { const lease = shellMusic.current; return () => sound.music.releaseScene(lease); }, [sound]);
   // «مسح كل البيانات» من الشاشة الحمراء يبقي الحساب كما تفعل الإعدادات.
   const resetKeepingAccount = () => { clearAllPlatformData({ keep: [ACCOUNT_PREFIX] }); location.reload(); };
   return (

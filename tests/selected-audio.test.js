@@ -118,6 +118,54 @@ test('loop overlap is limited to two streaming decoders and backgrounding drops 
   stream.dispose(); assert.equal(stream.decoderCount, 0);
 });
 
+test('scene recordings crossfade on playback, retain per-track positions and pause both decoders immediately', t => {
+  const env = environment(t), context = new env.Context(), output = context.createGain();
+  const stream = createStreamingMusic(SELECTED_AUDIO.music);
+  stream.play(context, output, 'home'); const first = env.media[0]; first.currentTime = 83.25;
+  const calm = { ...MUSIC_BANK.calm, crossfadeSeconds: 1.5 };
+  stream.setTrack(calm); stream.play(context, output, 'calm'); const second = env.media[1];
+  assert.equal(first.paused, false, 'keep the old recording audible during loading');
+  assert.equal(second.currentTime, 0); assert.equal(stream.decoderCount, 2);
+  const incomingGain = context.mediaNodes[1].connected[0];
+  assert.equal(incomingGain.gain.value, 0); second.onplaying();
+  assert.deepEqual(incomingGain.gain.events.at(-1), { value: 1, at: context.currentTime + 1.5 });
+  second.currentTime = 12.5; const oldPlaying = second.onplaying;
+  stream.pause(); assert.equal(stream.decoderCount, 1);
+  assert.ok(env.media.every(media => media.paused));
+  assert.equal(oldPlaying, null);
+  stream.play(context, output, 'calm');
+  stream.setTrack(SELECTED_AUDIO.music); stream.play(context, output, 'home');
+  assert.equal(env.media.at(-1).currentTime, 83.25, 'return to the stored position of this recording');
+  assert.equal(stream.decoderCount, 2); stream.dispose();
+});
+
+test('rapid scene changes retire the unstarted recording and ignore stale playback callbacks', t => {
+  const env = environment(t), context = new env.Context(), output = context.createGain();
+  const stream = createStreamingMusic(SELECTED_AUDIO.music);
+  stream.play(context, output, 'home'); const first = env.media[0]; first.currentTime = 44;
+  stream.setTrack(MUSIC_BANK.calm); stream.play(context, output, 'calm');
+  const intermediate = env.media[1], stalePlaying = intermediate.onplaying;
+  stream.setTrack(MUSIC_BANK.tense); stream.play(context, output, 'tense');
+  assert.equal(first.paused, false); assert.equal(intermediate.paused, true);
+  assert.equal(stream.decoderCount, 2); stalePlaying();
+  assert.equal(first.paused, false); assert.equal(stream.current, 'tense');
+  const currentPlaying = env.media.at(-1).onplaying;
+  stream.pause(); currentPlaying();
+  assert.ok(env.media.every(media => media.paused));
+  assert.equal(stream.decoderCount, 1, 'late onplaying cannot resurrect the outgoing recording');
+  stream.dispose();
+});
+
+test('a graph replacement during a scene change starts the new recording at its own stored position', t => {
+  const env = environment(t), firstContext = new env.Context();
+  const stream = createStreamingMusic(SELECTED_AUDIO.music);
+  stream.play(firstContext, firstContext.createGain(), 'home'); env.media[0].currentTime = 100;
+  stream.setTrack(MUSIC_BANK.calm);
+  const nextContext = new env.Context(); stream.play(nextContext, nextContext.createGain(), 'calm');
+  assert.equal(env.media.at(-1).currentTime, 0, 'do not apply the retired recording position to another track');
+  assert.equal(stream.decoderCount, 1); stream.dispose();
+});
+
 test('a stale media play rejection cannot fail a replacement graph or a newer loop slot', async (t) => {
   const env = environment(t), firstContext = new env.Context(), output = firstContext.createGain();
   let failures = 0, rejectOld;
@@ -150,7 +198,7 @@ test('a direct finale request retires the long recording before the short musica
 
 test('spoken responses are varied, never overlap or queue, stop for calls, and obey their separate switch', async (t) => {
   const env = environment(t); let now = 10000; t.mock.method(Date, 'now', () => now); t.mock.method(Math, 'random', () => 0);
-  const sound = createSound({ voice: true }); sound.attach(); sound.music.play('home'); await settle();
+  const sound = createSound({ voice: true, allowPreviewVoices: true }); sound.attach(); sound.music.play('home'); await settle();
   const c = env.contexts[0]; const speech = () => c.sources.filter((source) => source.buffer?.duration > 0.5 && !Object.values(SAMPLE_BANK).some((entry) => entry.frames === source.buffer.length));
   assert.equal(env.fetched.filter((url) => SELECTED_AUDIO.voices.some((entry) => entry.url === url)).length, 12);
   sound.play('correct'); const first = speech().at(-1); assert.ok(first);
@@ -176,7 +224,7 @@ test('a stalled spoken request expires; its late completion cannot clear or play
     if (mode === 'fail') return new Response('missing', { status: 404 });
     return new Promise((resolve) => { release[entry.event] = () => resolve(new Response(new Uint8Array(Math.round(entry.seconds * 48000)))); });
   });
-  const sound = createSound({ voice: true }); sound.attach(); await settle(); mode = 'hold';
+  const sound = createSound({ voice: true, allowPreviewVoices: true }); sound.attach(); await settle(); mode = 'hold';
   const c = env.contexts[0];
   sound.play('correct'); await settle(); assert.ok(release.correct);
   now += 501; t.mock.timers.tick(501);
@@ -199,7 +247,7 @@ test('context replacement invalidates a hung spoken request and nonverbal feedba
     return nativeFetch(url, options);
   };
   env.setFetchHook((url) => SELECTED_AUDIO.voices.some((entry) => entry.url === url) && mode === 'fail' ? new Response('missing', { status: 404 }) : null);
-  const sound = createSound({ voice: true }); sound.attach(); await settle(); mode = 'hold';
+  const sound = createSound({ voice: true, allowPreviewVoices: true }); sound.attach(); await settle(); mode = 'hold';
   const old = env.contexts[0]; sound.play('correct'); await settle();
   assert.equal(old.sources.length, 1, 'short correct effect never waits for speech');
   env.dispatch('maydan-audio-lifecycle', { state: 'media-reset' }); await settle();

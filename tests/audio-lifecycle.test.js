@@ -839,3 +839,52 @@ test('an authoritative native session restore releases transient interruption wi
   assert.equal(sound.play('wrong'), true);
   sound.dispose();
 });
+
+test('recording suppression is leased, kills pending effects and cannot override mute', async t => {
+  const env = audioEnvironment(t), sound = await warm(createSound());
+  sound.setSuppressed(true, 'a'); sound.setSuppressed(true, 'b');
+  assert.equal(sound.play('correct'), false);
+  sound.setSuppressed(false, 'a'); assert.equal(sound.play('correct'), false);
+  sound.setSuppressed(false, 'b'); assert.equal(sound.play('correct'), true);
+  sound.enable(false); sound.setSuppressed(true, 'a'); sound.setSuppressed(false, 'a');
+  assert.equal(sound.play('correct'), false); assert.equal(sound.enabled, false);
+  assert.equal(env.instances.length, 1); sound.dispose();
+});
+test('unapproved spoken responses are disabled in the normal application bus', async t => {
+  audioEnvironment(t); const sound = await warm(createSound({ voice: true }));
+  assert.equal(sound.voice.enabled, false); sound.voice.enable(true);
+  assert.equal(sound.voice.enabled, false); assert.equal(sound.play('correct'), true);
+  sound.dispose();
+});
+test('creator mode suppresses music without changing saved switches or effects', async t => {
+  audioEnvironment(t); const sound = await warm(createSound());
+  sound.music.play('home'); await settle(); assert.equal(sound.music.current, 'home');
+  sound.music.setCreatorMode(true); await settle(); assert.equal(sound.music.current, null);
+  assert.equal(sound.music.enabled, true); assert.equal(sound.play('pop'), true);
+  sound.music.setCreatorMode(false); await settle(); assert.equal(sound.music.current, 'home'); sound.dispose();
+});
+test('scene priority prevents home music from covering Mafia and releases cleanly', async t => {
+  audioEnvironment(t); const sound = await warm(createSound());
+  sound.music.scene('menu', 'home', 'idle', 0); await settle();
+  sound.music.scene('mafia', 'mafia', 'night', 20); await settle(); assert.equal(sound.music.current, null);
+  sound.music.play('home'); await settle(); assert.equal(sound.music.current, null);
+  sound.music.releaseScene('mafia'); await settle(); assert.equal(sound.music.current, 'home'); sound.dispose();
+});
+
+test('composite effects obey the source budget and retain immediate strokes beside important cues', async t => {
+  const env = audioEnvironment(t), sound = await warm(createSound({ music: false }));
+  sound.play('correct', { priority: 4 }); sound.play('wrong', { priority: 4 });
+  assert.equal(sound.play('mafiaNight', { priority: 1 }), true);
+  const context = env.instances[0];
+  const alive = () => context.sources.filter(source => !source.disconnected && !source.stops.length);
+  assert.equal(alive().length, 3);
+  assert.equal(context.sources.length, 3, 'lower-priority later strokes are never started');
+  assert.equal(alive().at(-1).starts[0], context.currentTime, 'keep the first immediate stroke');
+  assert.equal(sound.play('reveal', { priority: 0 }), false, 'no important source is replaced');
+  assert.equal(alive().length, 3);
+  sound.stop(); sound.play('mafiaNight', { priority: 2 });
+  assert.equal(alive().length, 3, 'a complete three-stroke pattern fits in an empty bus');
+  sound.play('fanfare', { priority: 4 });
+  assert.equal(alive().length, 3, 'an important cue replaces one source without overlap');
+  sound.dispose();
+});

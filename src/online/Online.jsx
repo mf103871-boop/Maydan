@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react';
 import QRCode from 'qrcode';
+import { createOnlineMatchAudio } from '../shared/fx/match-audio.js';
 import config from '../../online.config.json';
 import { Screen, TopBar, Button, Card, ConfirmModal, Modal, Podium, Scoreboard } from '../shared/ui/components.jsx';
 import { Avatar, AvatarPicker, GameArtwork, ClayStage } from '../shared/brand/art.jsx';
@@ -301,7 +302,6 @@ function minutesLabel(n) {
   return `${arabic(n)} ${n <= 10 ? 'دقائق' : 'دقيقة'}`;
 }
 export function Match({ state, disabled, isHost, act, clockOffset, spectating = false }) {
-  const platform = usePlatform();
   const [now, setNow] = useState(Date.now());
   const [choice, setChoice] = useState(undefined);
   const winnerRef = useRef(null);
@@ -320,12 +320,11 @@ export function Match({ state, disabled, isHost, act, clockOffset, spectating = 
     vignette(state.phase === 'vote' && seconds > 0 && seconds <= 3);
     return () => vignette(false);
   }, [state.phase, seconds]);
-  // النتيجة: قصاصات عند صف الفائز الأول، وصوت «صح» إن كان اختياري هو الفائز (مرئي/صوتي فقط).
+  // النتيجة: قصاصات عند صف الفائز الأول؛ متحكم الغرفة يملك صوت النتيجة المحايد.
   useEffect(() => {
     if (state.phase !== 'result') return;
     const r = winnerRef.current?.getBoundingClientRect();
     if (r) burstConfetti({ x: r.left + r.width / 2, y: r.top + r.height / 2, count: 36 });
-    if (state.myVote?.targetId != null && state.winners.includes(state.myVote.targetId)) platform?.sound?.play('correct');
   }, [state.phase, state.round, state._designPreview]);
   if (state.phase === 'over') return <section data-design-screen="online.meenfina.over" className="stack">
     {state.reason === 'players_left' && <p className="online-notice">انتهت اللعبة لأن عدد اللاعبين أصبح أقل من ٣. هذه نقاط الجولات المكتملة.</p>}
@@ -466,11 +465,23 @@ function ConnectedRoom({ code, session, stored, onLeft, onGameChange, onPromoted
     socialInterruption.setContext({ local: false, online: true, turnDeadline: state?.deadlineAt ? state.deadlineAt - (clientRef.current?.clockOffset || 0) : null });
     return () => socialInterruption.setContext({ online: false, turnDeadline: null });
   }, [state?.deadlineAt]);
+  const roomAudio = useRef(null);
+  const musicOwner = useRef(Symbol('online-game-scene'));
   useEffect(() => {
-    if(state?.game==='mafia')return;
-    if (phase === 'result') { sound.play('pop'); haptics.vibrate('success'); }
-    else if (phase === 'over') { sound.play('fanfare'); haptics.vibrate('win'); confetti?.fire(); }   // احتفال النهاية (مرئي/صوتي فقط)
-  }, [phase,state?.game]);
+    const audio = createOnlineMatchAudio(sound, code);
+    roomAudio.current = audio;
+    return () => { audio.dispose(); if (roomAudio.current === audio) roomAudio.current = null; };
+  }, [sound, code]);
+  useEffect(() => {
+    const event = roomAudio.current?.update(state, { connected: status === 'connected' && !ownershipMismatch, hidden: document.hidden });
+    if (event === 'ui.confirm') haptics.vibrate('success');
+    else if (event === 'game.complete') { haptics.vibrate('win'); confetti?.fire(); }
+  }, [state, status, ownershipMismatch, sound, code, haptics, confetti]);
+  useEffect(() => {
+    if (!state?.game || state._designPreview || state.game === 'mafia' || ownershipMismatch) { sound.music.releaseScene(musicOwner.current); return; }
+    sound.music.scene(musicOwner.current, state.game, phase, 10);
+  }, [sound, state?.game, state?._designPreview, phase, ownershipMismatch]);
+  useEffect(() => { const lease = musicOwner.current; return () => sound.music.releaseScene(lease); }, [sound]);
   async function act(type, fields) {
     if (busyRef.current || ownershipMismatch || observerSession) return false;
     busyRef.current = true; setBusy(true); setError('');

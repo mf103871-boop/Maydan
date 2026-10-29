@@ -1,6 +1,6 @@
 // Shared by build, dev and release: turns the esbuild bundle plus the template
 // into the one self-contained HTML document the platform ships as.
-import { build as esbuildBuild } from 'esbuild';
+import { build as esbuildBuild, transform } from 'esbuild';
 import { readFile, writeFile, mkdir, cp, rm, readdir, stat } from 'node:fs/promises';
 import { gzipSync } from 'node:zlib';
 import { createHash } from 'node:crypto';
@@ -45,6 +45,26 @@ export async function mediaVersions(root = ROOT) {
 // index.html: the game document stops carrying ~730 KB of base64, and a release that
 // does not touch the art lets browsers keep the files they already have.
 export const BRAND_ASSET_DIR = 'assets/brand';
+
+// CSS is injected by React as text, so the JS minifier cannot remove its source
+// comments or whitespace. Parse it as CSS first without rewriting declarations,
+// identifiers, vendor prefixes or browser features. Development keeps exact text.
+export function minifiedCssTextPlugin() {
+  return {
+    name: 'minified-css-text',
+    setup(build) {
+      build.onLoad({ filter: /\.css$/, namespace: 'file' }, async ({ path: file }) => {
+        const source = await readFile(file, 'utf8');
+        const result = await transform(source, { sourcefile: file, loader: 'css',
+          minifyWhitespace: true, minifySyntax: false, minifyIdentifiers: false,
+          charset: 'utf8', legalComments: 'none' });
+        return { contents: result.code, loader: 'text', resolveDir: path.dirname(file),
+          watchFiles: [file], warnings: result.warnings };
+      });
+    },
+  };
+}
+
 export function esbuildOptions({ minify = true, version = '0.0.0', media = {}, assets = 'inline' } = {}) {
   const art = assets === 'files' ? 'file' : 'dataurl';
   return {
@@ -59,6 +79,7 @@ export function esbuildOptions({ minify = true, version = '0.0.0', media = {}, a
     // New files are JSX; the migrated trivia game is plain React.createElement
     // in .js and parses fine under the jsx loader too.
     loader: { '.js': 'jsx', '.css': 'text', '.json': 'json', '.webp': art, '.png': art, '.woff2': art },
+    ...(minify ? { plugins: [minifiedCssTextPlugin()] } : {}),
     ...(assets === 'files' ? { assetNames: `${BRAND_ASSET_DIR}/[name]-[hash]` } : {}),
     define: {
       'process.env.NODE_ENV': JSON.stringify(minify ? 'production' : 'development'),

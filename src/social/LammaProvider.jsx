@@ -6,7 +6,7 @@ import { usePlatform } from '../platform/context.js';
 import { getRoute, navigate } from '../platform/router.js';
 import { useSocial } from './SocialProvider.jsx';
 import { LammaClient, emptyLamma, lammaId } from './lamma-client.js';
-import { CallMedia, emptyMedia, activeAudioOwners } from './media.js';
+import { CallMedia, emptyMedia, bindSocialAudio } from './media.js';
 import { socialInterruption } from './interruption.js';
 import { createCallAuthorization } from './call-authorization.js';
 import { LAMMA_POLL_MS, lammaPollDue, refreshesLamma, rechecksCall } from './sync-policy.js';
@@ -28,6 +28,7 @@ const callEndNotice = reason => reason === 'ownership-lost' ? 'انتقلت ال
 export function LammaProvider({ children }) {
   const account = useAccount(), social = useSocial(), { sound } = usePlatform();
   const owner = account.ready && account.signedIn ? account.user?.id || null : null;
+  useEffect(() => { sound.resetIdentity?.(owner || 'guest'); }, [owner, sound]);
   const ownerRef = useRef(owner); ownerRef.current = owner;
   const accountRef = useRef(account); accountRef.current = account;
   const socialRef = useRef(social); socialRef.current = social;
@@ -119,14 +120,7 @@ export function LammaProvider({ children }) {
     window.addEventListener('maydan-social-event', event); window.addEventListener('online', refresh); document.addEventListener('visibilitychange', refresh);
     return () => { clearTimeout(timer); clearInterval(interval); window.removeEventListener('maydan-social-event', event); window.removeEventListener('online', refresh); document.removeEventListener('visibilitychange', refresh); };
   }, [client, owner]);
-  useEffect(() => {
-    const owners = new Set(activeAudioOwners());
-    sound.setDucking(owners.size > 0, 'lamma');
-    const changed = event => { const { owner: key, active } = event.detail || {}; if (!key) return;
-      if (active) owners.add(key); else owners.delete(key); sound.setDucking(owners.size > 0, 'lamma'); };
-    window.addEventListener('maydan-social-audio', changed);
-    return () => { window.removeEventListener('maydan-social-audio', changed); sound.setDucking(false, 'lamma'); };
-  }, [sound]);
+  useEffect(() => bindSocialAudio(sound), [sound]);
   useEffect(() => {
     const sync = () => {
     const { privateTurn, communicationLocked } = socialInterruption.getSnapshot();
@@ -145,7 +139,7 @@ export function LammaProvider({ children }) {
     if (before && safe.preferences.messages) {
       const group = safe.groups.find(g => g.unreadCount > (before[g.id] || 0) && client.activeGroup !== g.id &&
         !safe.preferences.mutedConversations.some(m => m.scope === 'group' && m.conversationId === g.id));
-      if (group) setNotification({ id: lammaId(), userId: owner, scope: 'group', groupId: group.id, conversationId: group.id,
+      if (group) setNotification({ id: lammaId(), messageId: group.lastMessage?.id, userId: owner, scope: 'group', groupId: group.id, conversationId: group.id,
         title: socialInterruption.getSnapshot().local || socialInterruption.getSnapshot().communicationLocked || !safe.preferences.previews ? 'رسالة جديدة في ميدان' : `رسالة جديدة في ${group.name}` });
     }
     previous.current = Object.fromEntries(safe.groups.map(g => [g.id, g.unreadCount]));

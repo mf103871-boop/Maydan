@@ -11,7 +11,7 @@ export const MAFIA_CUES = Object.freeze({
 
 export const MAFIA_PHASE_CUES = Object.freeze({
   night: 'mafiaNight', dawn: 'mafiaDawn', nomination: 'mafiaSelect',
-  verdict: 'mafiaVerdict', over: 'mafiaFinal',
+  over: 'mafiaFinal',
 });
 
 export function renderMafiaCue(context, name, meta = {}) {
@@ -50,10 +50,47 @@ export function createMafiaPhaseAudio(sound) {
       stop();
       const cue = MAFIA_PHASE_CUES[state?.phase];
       if (first || unavailable || !cue) return;
+      // A server cancellation is not a completed match. Keep older compatible
+      // projections without a reason working, but never celebrate an abort.
+      if (state?.phase === 'over' && state.reason && !['faction', 'day_limit', 'time_limit'].includes(state.reason)) return;
       const requestGeneration = generation;
       sound?.play?.(cue, { source: 'mafia-phase', guard: () => !disposed && !suspended && generation === requestGeneration });
     },
     suspend() { if (disposed) return; suspended = true; generation += 1; stop(); },
     dispose() { if (disposed) return; disposed = true; generation += 1; stop(); },
+  };
+}
+
+// Only public events from the authorized projection can request these cues.
+// The server's public sequence is monotonic; stale/reordered history cannot
+// replay after a reconnect, and private reports are never inspected.
+export function createMafiaPublicAudio(sound, { now = Date.now } = {}) {
+  let match = null, phaseId = null, latest = 0, initialized = false, generation = 0, disposed = false;
+  return {
+    update(state, { hidden = false, preview = false } = {}) {
+      if (disposed) return;
+      const matchKey = state?.matchId ? `${state.code || ''}:${state.matchId}` : null;
+      if (match !== matchKey) { match = matchKey; initialized = false; latest = 0; generation++; }
+      if (phaseId !== state?.phaseId || hidden || preview) { phaseId = state?.phaseId; generation++; }
+      const first = !initialized; initialized = true;
+      const epoch = generation;
+      const localNow = now();
+      for (const event of state?.log || []) {
+        if (!Number.isSafeInteger(event.id) || event.id <= latest) continue;
+        latest = event.id;
+        if (first || !matchKey || hidden || preview || state?.waiting) continue;
+        const type = event.type === 'eliminated' && event.reason === 'night' ? 'mafia.assassination.public'
+          : event.type === 'verdict_closed' ? 'mafia.judgment.public' : null;
+        // Project server age onto the phone clock. A skewed phone must neither
+        // drop a fresh event nor make historical events sound freshly received.
+        // Without an event timestamp freshness is unknown, so consume silently.
+        if (!type || !Number.isFinite(event.at)) continue;
+        const at = Number.isFinite(state.serverNow) ? localNow - (state.serverNow - event.at) : event.at;
+        sound?.emit?.(type, { id: `${matchKey}:${event.id}`, publicEvent: true, at,
+          guard: () => !disposed && epoch === generation });
+      }
+    },
+    suspend() { generation++; initialized = false; },
+    dispose() { disposed = true; generation++; },
   };
 }

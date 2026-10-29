@@ -5,7 +5,7 @@ import { readFile, mkdir, writeFile } from 'node:fs/promises';
 import { build } from 'esbuild';
 import { chromium, webkit } from 'playwright';
 
-const built = await build({ stdin: { contents: `import{createSound}from'./src/shared/fx/sound.js';window.sound=createSound({voice:true});window.sound.attach();document.querySelector('button').onclick=()=>window.sound.music.play('home');`, resolveDir: process.cwd() }, bundle: true, write: false, format: 'iife', logLevel: 'silent' });
+const built = await build({ stdin: { contents: `import{createSound}from'./src/shared/fx/sound.js';window.sound=createSound({voice:true,allowPreviewVoices:true});window.sound.attach();document.querySelector('button').onclick=()=>window.sound.music.play('home');`, resolveDir: process.cwd() }, bundle: true, write: false, format: 'iife', logLevel: 'silent' });
 const measure = `
 window.proof={contexts:[],media:[],decoded:[],errors:[]};
 const AC=window.AudioContext||window.webkitAudioContext;

@@ -381,11 +381,12 @@ test('useTimerCues: «ممنوع» (60 ث، الافتراضيات) يسمع خ�
   assert.equal(sounds.length, 5);
 });
 
-test('useTimerCues: القنبلة تتسارع تحت 8 ثوانٍ', () => {
-  const { h, sounds } = mountCued({ seconds: 10 }, { last: Infinity, fastBelow: 8 });
+test('useTimerCues: hidden bomb keeps one fixed pulse and reveals no remaining time through haptics', () => {
+  const { h, sounds, haptics } = mountCued({ seconds: 10 }, { last: Infinity, fastBelow: -1, hapticBelow: -1 });
   h.current.start(); h.flush();
-  h.advance(2);
-  assert.deepEqual(sounds, ['tick', 'tick', 'tickFast']);
+  h.advance(9);
+  assert.deepEqual(sounds, Array(10).fill('tick'));
+  assert.deepEqual(haptics, []);
 });
 
 test('useTimerCues: الاستئناف يعدّ 3-2-1 ثم «انطلق» بلا tick على الثانية المستأنفة، والتالية تُسمع', () => {
@@ -432,7 +433,7 @@ test('مصدر واحد لإشارات المؤقت: الحلقة بصرية، �
   assert.match(ring, /export function ResumeCountdown/);
   assert.match(src('src/shared/ui/index.js'), /useTimerCues/);
   for (const [name, rel, options] of [
-    ['beep', 'src/games/beep/Game.jsx', /useTimerCues\(timer, api, \{ last: Infinity, fastBelow: 2 \}\)[\s\S]*useTimerCues\(timer, api, \{ last: Infinity, fastBelow: 8 \}\)/],
+    ['beep', 'src/games/beep/Game.jsx', /useTimerCues\(timer, api, \{ last: Infinity, fastBelow: 2 \}\)[\s\S]*useTimerCues\(timer, api, \{ last: Infinity, fastBelow: -1, hapticBelow: -1 \}\)/],
     ['mamnoo', 'src/games/mamnoo/Game.jsx', /useTimerCues\(timer, api\)/],
     ['jabeen', 'src/games/jabeen/Game.jsx', /useTimerCues\(timer, api\)/],
   ]) {

@@ -327,7 +327,11 @@ export function Game({ api, players, onExit, savedSession = null, gameOptions = 
     return () => document.removeEventListener('visibilitychange', hide);
   }, []);
   useEffect(() => {
-    if (state.phase === 'over') { api.sound.play('fanfare'); api.haptics.vibrate('win'); api.confetti.fire(); api.matchOver?.({ completed: state.history.length >= state.rounds }); }
+    if (state.phase === 'over') {
+      const completed = state.history.length >= state.rounds;
+      if (completed) { api.haptics.vibrate('win'); api.confetti.fire(); }
+      api.matchOver?.({ completed });
+    }
     else if (state.phase === 'reveal') { api.sound.play(state.revealed ? 'reveal' : 'drumroll'); }
   }, [state.phase, state.revealIndex, state.revealed]);
   // تكّة لكل ثانية من الخمس الأخيرة؛ الاستئناف أو «جاهزون» على الثانية نفسها لا يعيدها.
