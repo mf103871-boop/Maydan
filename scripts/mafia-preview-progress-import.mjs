@@ -68,6 +68,31 @@ export function renderMafiaImportSQL(sql, args = []) {
   return out;
 }
 
+export function parseMafiaWranglerResponse(stdout, { fileMode = false } = {}) {
+  check(typeof stdout === 'string', 'Missing Wrangler response.');
+  // Wrangler's noninteractive file importer prints spinner status with logRaw,
+  // even under --json. Accept only that installed formatter's known preamble,
+  // followed by ONE complete terminal JSON response. Never hunt for a success
+  // fragment after an error, arbitrary output or a second JSON document.
+  const output = stdout.replace(/\u001b\[[0-9;]*m/g, '').trim();
+  let json = output, preamble = false;
+  if (!output.startsWith('[')) {
+    check(fileMode, 'Unexpected Wrangler response preamble.');
+    const lines = output.split(/\r?\n/), at = lines.findIndex(line => line.trimStart().startsWith('['));
+    check(at > 0, 'Missing terminal Wrangler response.');
+    const prefix = lines.slice(0, at).map(line => line.trim()).filter(Boolean);
+    const status = /^(?:├ Checking if file needs uploading|├ 🌀 Uploading [A-Za-z0-9._/-]+|│ 🌀 Uploading complete\.|│)$/u;
+    check(prefix.length > 0 && prefix[0] === '├ Checking if file needs uploading' && prefix.every(line => status.test(line)), 'Unexpected Wrangler response preamble.');
+    json = lines.slice(at).join('\n'); preamble = true;
+  }
+  const response = JSON.parse(json);
+  check(Array.isArray(response) && response.length > 0 && response.every(item => item && item.success === true
+    && Array.isArray(item.results) && !Object.hasOwn(item, 'error') && (!item.errors || Array.isArray(item.errors) && item.errors.length === 0)), 'Preview D1 did not confirm success.');
+  if (preamble) check(response.every(item => typeof item.finalBookmark === 'string' && item.finalBookmark.length > 0
+    && item.meta && typeof item.meta === 'object' && item.results.some(row => Number.isSafeInteger(row?.['Total queries executed']) && row['Total queries executed'] > 0)), 'Incomplete Wrangler file import acknowledgement.');
+  return response;
+}
+
 export function createMafiaPreviewImportDB({ configHash, configPath = CONFIG, executeFile = execute, readConfig = () => readFile(CONFIG, 'utf8') } = {}) {
   // Public API is deliberately locked even when called by another local script.
   check(configPath === CONFIG && /^[a-f0-9]{64}$/.test(configHash || ''), 'Pinned preview configuration required.');
@@ -90,7 +115,7 @@ export function createMafiaPreviewImportDB({ configHash, configPath = CONFIG, ex
       let response;
       try {
         const { stdout } = await executeFile(process.execPath, args, { cwd: ROOT, windowsHide: true, maxBuffer: 8 * 1024 * 1024, timeout: 60_000 });
-        response = JSON.parse(stdout.trim());
+        response = parseMafiaWranglerResponse(stdout, { fileMode: batch });
       } catch { throw new Error('Preview D1 operation failed; outcome may be unknown. Run a dry-run before another apply.'); }
       check(Array.isArray(response) && response.length > 0 && response.every(item => item.success === true), 'Preview D1 did not confirm success.');
       return response;

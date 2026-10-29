@@ -201,6 +201,7 @@ export const DESIGN_CONDITIONAL_NODE_REASONS = Object.freeze({
     "header":"The training exit confirmation owns the common dialog heading and close area only during an explicit exit request."
   },
   "online.mafia.lobby": {"event":"Waiting-room event cards appear only when a public event is supplied by the server; a fresh lobby has no dawn or elimination from a prior match."},
+  "store": {"earned-cosmetics":"Displayed only for an authenticated owner with a server-issued permanent cosmetic grant; the isolated default store fixture has no earned license. Ownership labels and access to equipping earned items must remain visible."},
   "online.mafia.tools": {},
   "online.mafia.spectator": {},
   "online.mafia.history": {"loading":"Displayed only while the authenticated history request is pending for this account.","error":"Displayed when the history request fails; old account data is never retained as a fallback.","empty":"Displayed only after the server returns a successful empty result for this account."},

@@ -10,11 +10,12 @@ import { DESIGN_SCENES, createDesignFixture } from '../src/design/screen-catalog
 import { DESIGN_RENDERED_NODE_IDS, DESIGN_CONDITIONAL_NODE_REASONS } from '../src/design/coverage-map.js';
 
 test('coverage inventory preserves every node and exact conditional explanation after deduplication', () => {
-  // Captured from the reviewed Phase2 inventory before sharing repeated copy.
+  // Phase2 inventory, extended in Mafia C by the authenticated earned-cosmetics
+  // conditional node. All earlier node meanings remain unchanged.
   // A deliberate coverage/content change must update this semantic baseline;
   // whitespace, constant names and sharing structure do not affect it.
   const semantics = JSON.stringify({ DESIGN_CONDITIONAL_NODE_REASONS, DESIGN_RENDERED_NODE_IDS });
-  assert.equal(createHash('sha256').update(semantics).digest('hex'), '809c8697930b72d647918038dffdaf5167f96746126c79b6959314b06d52aff8');
+  assert.equal(createHash('sha256').update(semantics).digest('hex'), '3e583d0d2a41cac0ee0615f29ddf436464efdd6a1ff081d1b8bd58324914c9e9');
 });
 
 test('semantic scene registry has stable unique identities and the eight actual games', () => {
