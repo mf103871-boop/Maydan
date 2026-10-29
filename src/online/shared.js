@@ -87,6 +87,8 @@ export function resolveServerUrl(value, pageOrigin = '') {
 }
 export const ERRORS = {
   MAFIA_DISABLED: 'مافيا ميدان غير متاحة لبدء مباريات جديدة حاليًا.',
+  MAFIA_DRAINING: 'نجهّز تحديثًا للمجالس. المباريات القائمة تتابع حتى نهايتها؛ جرّب بدء مجلس جديد لاحقًا.',
+  MAFIA_RULESET_UNSUPPORTED: 'تعذّر متابعة هذه النسخة من قواعد المجلس. أعد الاتصال بعد اكتمال التحديث.',
   MAFIA_ACTIVE_ELSEWHERE: 'لديك مقعد مافيا في غرفة أخرى. عُد إليه أو غادره أولًا.',
   MAFIA_OBSERVER_ACTIVE: 'أنت تتابع مجلسًا الآن. اخرج من المشاهدة قبل حجز مقعد.',
   OBSERVER_FULL: 'اكتمل عدد المشاهدين في هذا المجلس. جرّب مجلسًا آخر.',

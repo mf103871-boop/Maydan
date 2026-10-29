@@ -3,6 +3,7 @@ import { credentials, json, readJson, sha256 } from './protocol.mjs';
 import { fail } from './room-model.mjs';
 import { all, first, run, stmt } from './lamma/common.mjs';
 import { mafiaEnabled, requireMafiaEnabled } from './mafia-access.mjs';
+import { requireMafiaNewMatches } from './mafia-ruleset-policy.mjs';
 import { MAFIA_PROTOCOL } from '../src/online/shared.js';
 import { listMafiaDirectory, DIRECTORY_KEY } from './mafia-directory.mjs';
 
@@ -40,6 +41,7 @@ export async function routeMafia(request,env,url,charge) {
       if(held.seat_id!==body.id)fail('MAFIA_ACTIVE_ELSEWHERE',409);
       return roomFetch(env,held.room_code,'join',{...body,accountUserId:user.id});
     }
+    requireMafiaNewMatches(env);
     const {rooms}=await listMafiaDirectory(env,user.id,{mode:body.mode,voice:body.voiceMode,status:'waiting'},Date.now(),{joinable:true});
     for(const candidate of rooms.filter(room=>!room.full).slice(0,8)) {
       const response=await roomFetch(env,candidate.code,'join',{...body,accountUserId:user.id,matchmaking:true});

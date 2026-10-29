@@ -17,6 +17,7 @@ import { iosAppPolicy } from './app-policy.mjs';
 import { ERSOMHA_PROTOCOL, BADEEHA_PROTOCOL, MAFIA_PROTOCOL, ONLINE_GAMES } from '../src/online/shared.js';
 import { routeMafia } from './mafia-router.mjs';
 import { requireMafiaEnabled, cleanupMafia } from './mafia-access.mjs';
+import { requireMafiaNewMatches } from './mafia-ruleset-policy.mjs';
 import { routeDrawingReports } from './ersomha-reports.mjs';
 import { routeDesign, isPublicDesignAssetPath } from './design/router.mjs';
 import { routePlus } from './plus/router.mjs';
@@ -155,7 +156,7 @@ export async function routeRequest(request, env, context) {
         await credentials(input); // Validate before allocating a room.
         if (input.game === 'ersomha' && input.capabilities?.ersomha !== ERSOMHA_PROTOCOL) fail('CONFIG', 409);
         if (input.game === 'badeeha' && input.capabilities?.badeeha !== BADEEHA_PROTOCOL) fail('UPDATE_REQUIRED', 409);
-        if (input.game === 'mafia') { requireMafiaEnabled(env); if(input.capabilities?.mafia!==MAFIA_PROTOCOL)fail('UPDATE_REQUIRED',409); }
+        if (input.game === 'mafia') { requireMafiaEnabled(env); requireMafiaNewMatches(env); if(input.capabilities?.mafia!==MAFIA_PROTOCOL)fail('UPDATE_REQUIRED',409); }
         // Resolve identity and account eligibility independently of paid Plus.
         // Never trust the account identity or legacy gate supplied by a client.
         const gate = await roomGate(request, env, input);

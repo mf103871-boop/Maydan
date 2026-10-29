@@ -12,6 +12,7 @@ import { requireSession } from './accounts/session.mjs';
 import { liveAccountSql } from './moderation/access.mjs';
 import { ERSOMHA_PROTOCOL, BADEEHA_PROTOCOL, MAFIA_PROTOCOL, ROOM_REACTIONS, REACTION_BURST, REACTION_REFILL_MS, reactionsAllowed } from '../src/online/shared.js';
 import { requireMafiaEnabled, claimMafiaSeat, renewMafiaSeats, cleanupMafiaSeats, updateMafiaDirectory, mafiaPlaying, activateMafiaMedia } from './mafia-access.mjs';
+import { requireMafiaNewMatches, assertSupportedMafiaRuleset } from './mafia-ruleset-policy.mjs';
 import { prepareMafiaVoice, committedMafiaVoice, mafiaVoiceView, mafiaVoiceRequest } from './mafia-voice.mjs';
 import { technicalAbort, snapshot as mafiaSnapshot, voiceAudience } from './mafia-model.mjs';
 import { persistMafiaResult, prepareMafiaResult } from './mafia-results.mjs';
@@ -107,6 +108,8 @@ export class Room {
     else await this.ctx.storage.deleteAlarm();
   }
   async commit(candidate, { prepared = false } = {}) {
+    assertSupportedMafiaRuleset(this.room);
+    assertSupportedMafiaRuleset(candidate);
     if(candidate.game==='mafia'&&candidate.settings.visibility!=='public'&&Object.keys(candidate.observers||{}).length){for(const observer of Object.values(candidate.observers))await releaseObserver(this.env,candidate,observer);candidate.observers={};}
     const oldLease = this.room?.ersomhaLease;
     if (candidate.game === 'ersomha' && !prepared) await this.prepareErsomha(candidate);
@@ -367,6 +370,7 @@ export class Room {
     }
     if(endpoint==='mafia-observe-promote'){
       if(input.capabilities?.mafia!==MAFIA_PROTOCOL)fail('UPDATE_REQUIRED',409);requireMafiaEnabled(this.env);
+      requireMafiaNewMatches(this.env);
       if(!observerCanPromote(this.room,this.observerStream,existing,now))fail('OBSERVER_WAIT',409);
       if(input.expectedSettingsRevision!==(this.room.settingsRevision||0))fail('CONFLICT',409);
       const seat=await credentials(input.seat||{});if(seat.id===existing.id)fail('INVALID');
@@ -391,6 +395,7 @@ export class Room {
     ws.serializeAttachment({...a,id:observer.id,scope:'observer',accountUserId:auth.user.id,accountSessionId:auth.session.id,accountExpiresAt:Math.min(auth.session.expires_at,auth.session.revoked_at??Number.MAX_SAFE_INTEGER),authDeadline:null});this.sendObserverSnapshots();await this.schedule();
   }
   stateFor(id) {
+    assertSupportedMafiaRuleset(this.room);
     const state = snapshot(this.room, id, Date.now());
     state.appearance = this.room.appearance || null;
     state.members = state.members.map(m => {
@@ -505,6 +510,9 @@ export class Room {
   }
   async advance({ force = false } = {}) {
     if (!this.room) return;
+    // Fail before tick, observer projection or the account-failure abort path.
+    // Unsupported saved matches remain untouched for a compatible server.
+    assertSupportedMafiaRuleset(this.room);
     if(this.room.game==='mafia')await this.advanceObservers();
     const now = Date.now();
     if(this.room.game==='mafia'&&this.mafiaCleanupRetryAt>now)return;
@@ -598,7 +606,7 @@ export class Room {
         if (request.method === 'POST' && endpoint === 'create') {
           const input = await credentials(await readJson(request, 4096, createLimit));
           if (input.game === 'badeeha' && input.capabilities?.badeeha !== BADEEHA_PROTOCOL) fail('UPDATE_REQUIRED', 409);
-          if(input.game==='mafia') {requireMafiaEnabled(this.env);if(input.capabilities?.mafia!==MAFIA_PROTOCOL)fail('UPDATE_REQUIRED',409);if(!input.accountUserId)fail('AUTH_REQUIRED',401);}
+          if(input.game==='mafia') {requireMafiaEnabled(this.env);requireMafiaNewMatches(this.env);if(input.capabilities?.mafia!==MAFIA_PROTOCOL)fail('UPDATE_REQUIRED',409);if(!input.accountUserId)fail('AUTH_REQUIRED',401);}
           if (input.game === 'ersomha') {
             if (input.capabilities?.ersomha !== ERSOMHA_PROTOCOL) fail('CONFIG', 409);
             if (typeof input.accountUserId !== 'string' || !input.accountUserId) fail('AUTH_REQUIRED', 401);
@@ -717,7 +725,7 @@ export class Room {
             if(!input.accountUserId)fail('AUTH_REQUIRED',401);
             const previous=this.room.members.find(m=>!m.left&&m.id===input.id);
             if(previous&&previous.accountUserId!==input.accountUserId)fail('AUTH',401);
-            if(!previous&&this.room.phase==='lobby')requireMafiaEnabled(this.env);
+            if(!previous&&this.room.phase==='lobby'){requireMafiaEnabled(this.env);requireMafiaNewMatches(this.env);}
             if(input.matchmaking&&(this.room.phase!=='lobby'||this.room.settings.visibility!=='public'))fail('STARTED',409);
             if(!previous&&(this.room.protocol||1)>=2&&this.room.phase!=='lobby')fail('STARTED',409);
             if(input.expectedSettingsRevision!=null&&input.expectedSettingsRevision!==(this.room.settingsRevision||0))fail('CONFLICT',409);
@@ -871,7 +879,10 @@ export class Room {
           const hostAccount = candidate.members.find(m => m.id === candidate.hostId && !m.left)?.accountUserId;
           if (hostAccount && !await this.env.DB.prepare(`SELECT 1 AS ok WHERE ${liveAccountSql('?')}`).bind(hostAccount, hostAccount).first()) fail('AUTH', 401);
         }
-        if(candidate.game==='mafia'&&command.type==='start') {requireMafiaEnabled(this.env);await recheckMafiaHost(this.env,candidate,now);}
+        if(candidate.game==='mafia'&&['start','restart'].includes(command.type)) {
+          requireMafiaEnabled(this.env);requireMafiaNewMatches(this.env);
+          if(command.type==='start')await recheckMafiaHost(this.env,candidate,now);
+        }
         action(candidate, a.id, command, now, deck);
         if (candidate.game === 'ersomha' && command.type === 'start') attemptedStart = candidate;
         if (candidate.game === 'ersomha') await this.prepareErsomha(candidate);

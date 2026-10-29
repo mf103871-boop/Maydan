@@ -81,7 +81,7 @@ export function Achievements({ profile, owner }) {
 }
 export function ProfileStats({ profile }) {
   const stats = profile.stats || {};
-  return <section data-design-id="stats" className="profile-section profile-stats" aria-label="إحصاءات اللعب"><h2>الرحلة بالأرقام</h2>{[['localSessions', 'جلسات مستضافة', 'home'], ['onlineMatches', 'مباريات أونلاين', 'globe'], ['onlineWins', 'انتصارات أونلاين', 'trophy'], ['distinctGames', 'ألعاب مختلفة', 'compass']].map(([key, label, icon]) => <div data-design-id="stat" className="profile-stat-row" key={key}><span className="profile-stat-icon"><Icon name={icon} /></span><span className="profile-stat-copy">{label}</span><strong>{count(stats[key])}</strong></div>)}<p className="profile-stat-note">تُحتسب الجلسات والمباريات المكتملة منذ إطلاق الملفات الشخصية. الانتصارات لفبركة أونلاين.</p></section>;
+  return <section data-design-id="stats" className="profile-section profile-stats" aria-label="إحصاءات اللعب"><h2>الرحلة بالأرقام</h2>{[['localSessions', 'جلسات مستضافة', 'home'], ['onlineMatches', 'مباريات أونلاين', 'globe'], ['onlineWins', 'انتصارات أونلاين', 'trophy'], ['distinctGames', 'ألعاب مختلفة', 'compass']].map(([key, label, icon]) => <div data-design-id="stat" className="profile-stat-row" key={key}><span className="profile-stat-icon"><Icon name={icon} /></span><span className="profile-stat-copy">{label}</span><strong>{count(stats[key])}</strong></div>)}<p className="profile-stat-note">تُحتسب الجلسات والمباريات المكتملة منذ إطلاق الملفات الشخصية. تشمل الانتصارات الفوز منفردًا أو مع فريقك حسب قواعد اللعبة.</p></section>;
 }
 export function CropDialog({ crop, profiles, revision, onClose, onDone }) {
   const [zoom, setZoom] = useState(1);

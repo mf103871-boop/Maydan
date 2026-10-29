@@ -1,6 +1,6 @@
 // Shared by build, dev and release: turns the esbuild bundle plus the template
 // into the one self-contained HTML document the platform ships as.
-import { build as esbuildBuild } from 'esbuild';
+import { build as esbuildBuild, transform } from 'esbuild';
 import { readFile, writeFile, mkdir, cp, rm, readdir, stat } from 'node:fs/promises';
 import { gzipSync } from 'node:zlib';
 import { createHash } from 'node:crypto';
@@ -59,6 +59,17 @@ export function esbuildOptions({ minify = true, version = '0.0.0', media = {}, a
     // New files are JSX; the migrated trivia game is plain React.createElement
     // in .js and parses fine under the jsx loader too.
     loader: { '.js': 'jsx', '.css': 'text', '.json': 'json', '.webp': art, '.png': art, '.woff2': art },
+    // CSS is imported as a string for scoped <style> tags. The JS minifier
+    // cannot compact those strings, so remove CSS whitespace before embedding
+    // it. Keep selectors, declarations and runtime injection behavior intact.
+    ...(minify ? { plugins: [{ name: 'compact-css-text', setup(builder) {
+      builder.onLoad({ filter: /\.css$/ }, async ({ path: file }) => ({
+        contents: (await transform(await readFile(file, 'utf8'), {
+          loader: 'css', minifyWhitespace: true, legalComments: 'none',
+        })).code,
+        loader: 'text',
+      }));
+    } }] } : {}),
     ...(assets === 'files' ? { assetNames: `${BRAND_ASSET_DIR}/[name]-[hash]` } : {}),
     define: {
       'process.env.NODE_ENV': JSON.stringify(minify ? 'production' : 'development'),

@@ -227,7 +227,7 @@ export function subscribePublicRooms(server,{getAccountAuthorization,onInvalidat
     if(closed||globalThis.document?.hidden)return;
     const url=new URL('/api/rooms/public/stream',server);url.protocol=url.protocol==='https:'?'wss:':'ws:';
     let current;try{current=new WebSocketImpl(url.toString());socket=current;}catch{return;}
-    current.onopen=()=>{if(closed||socket!==current)return;const auth=getAccountAuthorization?.();if(!auth){current.close();return;}current.send(JSON.stringify({type:'auth',accountAuthorization:auth}));ping=setInterval(()=>{if(!closed&&socket===current&&current.readyState===1)current.send(JSON.stringify({type:'ping'}));},25000);};
+    current.onopen=()=>{if(closed||socket!==current)return;const auth=getAccountAuthorization?.();if(!auth){current.close();return;}current.send(JSON.stringify({type:'auth',accountAuthorization:auth}));ping=setInterval(()=>{if(!closed&&socket===current&&current.readyState===1)current.send('ping');},25000);};
     current.onmessage=event=>{if(closed||socket!==current)return;let message;try{message=JSON.parse(event.data);}catch{return;}if(message.type==='directory-ready'){attempt=0;lastRevision=message.revision;return;}if(message.type==='directory-invalidated'&&message.revision!==lastRevision){lastRevision=message.revision;clearTimeout(debounce);debounce=setTimeout(()=>{if(!closed&&!globalThis.document?.hidden)onInvalidate?.();},180);}};
     current.onerror=()=>{};
     current.onclose=()=>{if(closed||socket!==current)return;clearInterval(ping);socket=null;retry=setTimeout(open,Math.min(15000,1000*2**Math.min(attempt++,4)));};

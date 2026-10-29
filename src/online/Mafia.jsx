@@ -43,6 +43,27 @@ export function MafiaSettings({ value = MAFIA_DEFAULT_SETTINGS, onChange = noop,
   </section>;
 }
 
+function MafiaRoleDetails({ role, resources }) {
+  const guide = role.guide;
+  const remaining = role.id === 'guard' ? resources?.shield : resources?.charges;
+  return <div className="mafia-role-details" dir="rtl">
+    <dl>
+      <div><dt>متى تعمل؟</dt><dd>{guide.timing}</dd></div>
+      <div><dt>الرصيد الأساسي</dt><dd>{role.charges == null ? (role.ability ? 'دون حد عددي؛ التوقيت والقيود أدناه تحدد الاستخدام.' : 'دون قدرة خاصة.') : `${ar(role.charges)} ${role.id === 'guard' ? 'درع في المباراة.' : 'استعمال في المباراة.'}`}</dd></div>
+      {Number.isFinite(remaining) && role.charges != null && <div className="mafia-role-balance"><dt>المتبقي لك الآن</dt><dd>{ar(remaining)} {role.id === 'guard' ? 'درع' : 'استعمال'}</dd></div>}
+      {role.id === 'doctor' && Number.isFinite(resources?.selfProtection) && <div className="mafia-role-balance"><dt>حماية نفسك المتبقية</dt><dd>{ar(resources.selfProtection)}</dd></div>}
+      <div><dt>الأهداف</dt><dd>{guide.targets.description}</dd></div>
+      <div><dt>ما الذي تثبته؟</dt><dd>{guide.evidence.description}</dd></div>
+      <div><dt>من يرى الأثر؟</dt><dd>{guide.visibility.description}</dd></div>
+      <div><dt>التغيير والإلغاء</dt><dd>{guide.selection.description}</dd></div>
+      <div><dt>متى يُستهلك؟</dt><dd>{guide.consumption.description}</dd></div>
+    </dl>
+    <div><h5>القيود وحدود المعلومة</h5><ul>{guide.limitations.map(text => <li key={text}>{text}</li>)}</ul></div>
+    <div><h5>التداخل مع القدرات الأخرى</h5><ul>{guide.interactions.map(text => <li key={text}>{text}</li>)}</ul></div>
+    <p className="mafia-role-example"><strong>مثال:</strong> {guide.example}</p>
+  </div>;
+}
+
 export function MafiaRules({ possibleRoles, defaultOpen = false, onTutorial, onGuide = noop }) {
   const [open, setOpen] = useState(defaultOpen);
   const [lesson, setLesson] = useState(0);
@@ -52,7 +73,7 @@ export function MafiaRules({ possibleRoles, defaultOpen = false, onTutorial, onG
     ['اسمع الدفاع ثم احكم', 'الترشيح يحدد مشتبهًا واحدًا. له ٢٠ ثانية للدفاع، ثم يصوّت الأحياء سرًا. يلزم أكثر من نصفهم للإقصاء.'],
     ['كل ليلة تغيّر المجلس', 'اختيارات الليل قابلة للتعديل حتى يغلق الخادم المرحلة. بعد الإقصاء تابع الأحداث، دون إرسال تلميحات للأحياء.'],
   ];
-  return <>{!defaultOpen && <Button data-design-id="rules" variant="ghost" full onClick={() => {setOpen(true);onGuide('encyclopedia-open');}}>{possibleRoles ? 'أدوار هذا المجلس ودليل اللعب' : 'دليل المجلس والأدوار الاثنا عشر'}</Button>}{open && <Modal className="mafia-noir mafia-guide-dialog" data-design-screen="online.mafia.guide" title="دليل مافيا ميدان" onClose={() => {setOpen(false);onGuide('encyclopedia-close');}}><style>{css}</style><div className="mafia-guide stack">{onTutorial && <Button data-design-id="tutorial-start" onClick={()=>{setOpen(false);onTutorial();}}>تعلّم مع شخصيات التدريب</Button>}<span className="mafia-kicker">تدريب توضيحي · شخصيات افتراضية</span><h3>{lessons[lesson][0]}</h3><p>{lessons[lesson][1]}</p><div className="row-between"><Button data-design-id="back" disabled={!lesson} onClick={() => setLesson(lesson - 1)}>السابق</Button><span>{ar(lesson + 1)} / ٤</span><Button data-design-id="continue" disabled={lesson === lessons.length - 1} onClick={() => setLesson(lesson + 1)}>التالي</Button></div><p className="mafia-muted">هذه موسوعة القدرات؛ وجود دور هنا لا يعني أنه موزّع في المباراة الحالية.</p><div className="mafia-role-catalog">{Object.values(MAFIA_ROLES).filter(role => !possibleRoles || possibleRoles.includes(role.id)).map(role => <article key={role.id} className={`mafia-role-tile faction-${role.faction}`}><MafiaRoleArt roleId={role.id}/><div><h4>{role.name}</h4><small>{factionLabel(role.faction)}</small><p>{role.description} </p></div></article>)}</div></div></Modal>}</>;
+  return <>{!defaultOpen && <Button data-design-id="rules" variant="ghost" full onClick={() => {setOpen(true);onGuide('encyclopedia-open');}}>{possibleRoles ? 'الأدوار الممكنة ودليل اللعب' : 'دليل المجلس والأدوار الاثنا عشر'}</Button>}{open && <Modal className="mafia-noir mafia-guide-dialog" data-design-screen="online.mafia.guide" title="دليل مافيا ميدان" onClose={() => {setOpen(false);onGuide('encyclopedia-close');}}><style>{css}</style><div className="mafia-guide stack">{onTutorial && <Button data-design-id="tutorial-start" onClick={()=>{setOpen(false);onTutorial();}}>تعلّم مع شخصيات التدريب</Button>}<span className="mafia-kicker">تدريب توضيحي · شخصيات افتراضية</span><h3>{lessons[lesson][0]}</h3><p>{lessons[lesson][1]}</p><div className="row-between"><Button data-design-id="back" disabled={!lesson} onClick={() => setLesson(lesson - 1)}>السابق</Button><span>{ar(lesson + 1)} / ٤</span><Button data-design-id="continue" disabled={lesson === lessons.length - 1} onClick={() => setLesson(lesson + 1)}>التالي</Button></div><p className="mafia-muted">هذه موسوعة القدرات؛ وجود دور هنا لا يعني أنه موزّع في المباراة الحالية. الانتماء المكتوب هنا هو انتماء الدور عند التوزيع؛ التجنيد قد يغيّره.</p><div className="mafia-role-catalog">{Object.values(MAFIA_ROLES).filter(role => !possibleRoles || possibleRoles.includes(role.id)).map(role => <article key={role.id} data-role-id={role.id} className={`mafia-role-tile faction-${role.faction}`}><MafiaRoleArt roleId={role.id}/><div><h4>{role.name}</h4><small>انتماء البداية: {factionLabel(role.faction)}</small><p>{role.description}</p></div><details className="mafia-role-disclosure"><summary>تفاصيل قدرة {role.name}</summary><MafiaRoleDetails role={role}/></details></article>)}</div></div></Modal>}</>;
 }
 
 export function MafiaDirectory({ onTutorial, rooms = [], enabled, loading, error, mode = 'all', voiceMode = 'all', status = 'all', onMode = noop, onVoiceMode = noop, onStatus = noop, onRefresh = noop, onQuickJoin = noop, onJoin = noop, onObserve = noop, onCreate, nextCursor, hasPrevious, onNext = noop, onPrevious = noop, disabled }) {
@@ -84,7 +105,7 @@ function MafiaLobbySettings({ state, disabled, act }) {
   const value = draft || normalizeMafiaSettings(state.settings);
   const close = () => { setEditing(false); setDraft(null); };
   return <div className="mafia-lobby-settings"><Button data-design-id="room-settings" full aria-expanded={editing} disabled={disabled} onClick={() => {if(editing)close();else{setEditingRevision(state.settingsRevision);setEditing(true);}}}>{editing ? 'إغلاق إعدادات المجلس' : 'تعديل إعدادات المجلس'}</Button>
-    {editing && <><MafiaSettingsFields settings={value} onChange={setDraft} disabled={disabled} present={state.members.filter(m => !m.left).length}/><p className="mafia-muted">تغيير الطور أو ظهور الغرفة يعيد الآخرين إلى «يستعد» حتى يؤكدوا من جديد.</p><Button data-design-id="save" full variant="primary" disabled={disabled} onClick={async () => { if (await act('settings', { settings: value, expectedSettingsRevision: editingRevision })) close(); }}>حفظ إعدادات المجلس</Button></>}</div>;
+    {editing && <><MafiaSettingsFields settings={value} onChange={setDraft} disabled={disabled} present={state.members.filter(m => !m.left).length}/><p className="mafia-muted">حفظ أي تغيير في الإعدادات يعيد الآخرين إلى «يستعد» حتى يؤكدوا من جديد.</p><Button data-design-id="save" full variant="primary" disabled={disabled} onClick={async () => { if (await act('settings', { settings: value, expectedSettingsRevision: editingRevision })) close(); }}>حفظ إعدادات المجلس</Button></>}</div>;
 }
 
 export function MafiaLobbyInfo({ state, isHost = false, disabled = false, act = noop }) {
@@ -137,7 +158,7 @@ function SecretCard({ you, hidden, previewReveal, onGuide = noop }) {
   const role = MAFIA_ROLES[you?.roleId];
   if (!role || hidden) return hidden ? <div data-design-id="privacy" data-design-required="true" className="mafia-secret-cover">بطاقتك محجوبة لحماية دورك</div> : null;
   return <section data-design-id="role-card" className="mafia-secret"><div className="mafia-secret-top"><span><span className="mafia-secret-seal" aria-hidden="true">◆</span> هويتك سرّك</span><Button data-design-id="role-toggle" data-sound="mafiaRole" variant="ghost" aria-expanded={revealed} aria-haspopup="dialog" onClick={() => {setRevealed(true);onGuide('role-open');}}>اكشف بطاقتي <span aria-hidden="true">←</span></Button></div>
-    {revealed && <Modal className="mafia-noir mafia-role-dialog" data-design-screen="online.mafia.role-card" title="بطاقتك الخاصة" closeLabel="إخفاء البطاقة" onClose={() => {setRevealed(false);onGuide('role-close');}} footer={<Button data-design-id="role-hide" full onClick={()=>{setRevealed(false);onGuide('role-close');}}>إخفاء البطاقة</Button>}><style>{css}</style><article data-design-id="role-content" className={`mafia-secret-content faction-${you.faction}`}><div className="mafia-role-portrait"><MafiaRoleArt roleId={role.id}/><span>سرّي · لك وحدك</span></div><div className="mafia-role-description"><span className="mafia-kicker">انتماؤك الآن: {factionLabel(you.faction)}</span><h2>{role.name}</h2><p>{role.description}</p><small>الآخرون لا يرون بطاقتك. أغلقها قبل إظهار الشاشة لأي شخص.</small></div></article></Modal>}
+    {revealed && <Modal className="mafia-noir mafia-role-dialog" data-design-screen="online.mafia.role-card" title="بطاقتك الخاصة" closeLabel="إخفاء البطاقة" onClose={() => {setRevealed(false);onGuide('role-close');}} footer={<Button data-design-id="role-hide" full onClick={()=>{setRevealed(false);onGuide('role-close');}}>إخفاء البطاقة</Button>}><style>{css}</style><article data-design-id="role-content" className={`mafia-secret-content faction-${you.faction}`}><div className="mafia-role-portrait"><MafiaRoleArt roleId={role.id}/><span>سرّي · لك وحدك</span></div><div className="mafia-role-description"><span className="mafia-kicker">انتماؤك الآن: {factionLabel(you.faction)}</span><h2>{role.name}</h2><p>{role.description}</p><small>الآخرون لا يرون بطاقتك. أغلقها قبل إظهار الشاشة لأي شخص.</small><details className="mafia-role-disclosure"><summary>تفاصيل قدرتك ورصيدك</summary><MafiaRoleDetails role={role} resources={you.resources}/></details></div></article></Modal>}
   </section>;
 }
 
