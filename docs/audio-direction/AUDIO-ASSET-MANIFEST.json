@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "releaseStatus": "local-engineering-preview-not-production-approved",
-  "generatedAt": "2026-10-28T19:07:56.833041+00:00",
+  "releaseStatus": "private-listening-preview-not-production-approved",
+  "generatedAt": "2026-10-30T04:19:47.359335+00:00",
   "licenseUrl": "https://pixabay.com/service/license-summary/",
   "listeningPerformed": false,
   "physicalIphoneTested": false,
@@ -12,14 +12,54 @@
       "author": "Denis-Pavlov-Music",
       "sourceUrl": "https://pixabay.com/music/bossa-nova-feel-good-vibe-jazz-bossa-nova-music-221143/",
       "contentIdRegistered": true,
-      "status": "pending-official-download-and-listening",
-      "downloadedAt": null,
-      "path": null,
-      "sha256": null,
-      "bytes": null,
-      "licenseVerifiedForFile": false,
+      "status": "downloaded-and-technically-checked-awaiting-listening",
+      "downloadedAt": "2026-10-30T03:42:08.518Z",
+      "path": "work/maydan-audio-intake-20261030/originals/denis-pavlov-music-feel-good-vibe-jazz-bossa-nova-music-221143.mp3",
+      "sha256": "ebc0735fad7edc55608bc123a6596ae8d7b444f374a123b7553a65e2e54e43f1",
+      "bytes": 18584137,
+      "licenseVerifiedForFile": true,
       "listeningApproved": false,
-      "processing": []
+      "processing": [
+        {
+          "purpose": "private-listening-preview-only",
+          "path": "outputs/maydan-audio-intake-20261030/preview/audio/menus.m4a",
+          "sha256": "2bc649aef4f588ae595c2b52becd79df6ce027cad482f482de9620b844477940",
+          "bytes": 14278800,
+          "codec": "aac",
+          "sampleRate": 44100,
+          "channels": 2,
+          "gainDb": -1.7,
+          "attenuationOnly": true,
+          "sourceHash": "ebc0735fad7edc55608bc123a6596ae8d7b444f374a123b7553a65e2e54e43f1",
+          "encodedDirectlyFromOriginal": true,
+          "listeningApproved": false,
+          "runtimeActivated": false
+        }
+      ],
+      "originalArtistCredit": null,
+      "contentIdMarkerObserved": true,
+      "licenseEvidence": {
+        "meaning": "Verified source licensing notice and association with downloaded file; not a warranty of third-party rights.",
+        "officialSourceReview": "docs/audio-direction/PIXABAY-SOURCE-REVIEW-20261030.json",
+        "officialSourceReviewSha256": "dcca327d7e6984f5af47bbe66be8e3b89c90bffe2aef1580f763c37cc2e23e38",
+        "sourceLicenseUrl": "https://pixabay.com/service/license-summary/",
+        "certificateRequired": true,
+        "certificate": {
+          "sha256": "0913d2fb0b59250c0a31f9d54ad5ef00bad765d76923923d8281508f983ac5c9",
+          "bytes": 1146,
+          "issueDate": "2026-10-30",
+          "matchesSelectedFile": true,
+          "personalLicenseeDataOmitted": true
+        }
+      },
+      "technicalQa": {
+        "fullDecodePassed": true,
+        "seconds": 580.754286,
+        "sampleRate": 44100,
+        "channels": 2,
+        "originalsPreserved": true,
+        "loopApproved": false
+      }
     },
     {
       "id": "badeeha",
@@ -27,14 +67,54 @@
       "author": "Music_For_Videos",
       "sourceUrl": "https://pixabay.com/music/build-up-scenes-thinking-time-148496/",
       "contentIdRegistered": true,
-      "status": "pending-official-download-and-listening",
-      "downloadedAt": null,
-      "path": null,
-      "sha256": null,
-      "bytes": null,
-      "licenseVerifiedForFile": false,
+      "status": "downloaded-and-technically-checked-awaiting-listening",
+      "downloadedAt": "2026-10-30T03:45:10.121Z",
+      "path": "work/maydan-audio-intake-20261030/originals/music_for_videos-thinking-time-148496.mp3",
+      "sha256": "9e08dd1dbf12afd7dcde93f1533779d8798c0d64a5f91c740fb463a2a1adb4c7",
+      "bytes": 1723663,
+      "licenseVerifiedForFile": true,
       "listeningApproved": false,
-      "processing": []
+      "processing": [
+        {
+          "purpose": "private-listening-preview-only",
+          "path": "outputs/maydan-audio-intake-20261030/preview/audio/badeeha.m4a",
+          "sha256": "27a44c5dbab114ead3fe8dff9cd5c3c60572ccaf6ee883968fb18b57a002fac9",
+          "bytes": 1354864,
+          "codec": "aac",
+          "sampleRate": 44100,
+          "channels": 2,
+          "gainDb": -6.9,
+          "attenuationOnly": true,
+          "sourceHash": "9e08dd1dbf12afd7dcde93f1533779d8798c0d64a5f91c740fb463a2a1adb4c7",
+          "encodedDirectlyFromOriginal": true,
+          "listeningApproved": false,
+          "runtimeActivated": false
+        }
+      ],
+      "originalArtistCredit": null,
+      "contentIdMarkerObserved": true,
+      "licenseEvidence": {
+        "meaning": "Verified source licensing notice and association with downloaded file; not a warranty of third-party rights.",
+        "officialSourceReview": "docs/audio-direction/PIXABAY-SOURCE-REVIEW-20261030.json",
+        "officialSourceReviewSha256": "dcca327d7e6984f5af47bbe66be8e3b89c90bffe2aef1580f763c37cc2e23e38",
+        "sourceLicenseUrl": "https://pixabay.com/service/license-summary/",
+        "certificateRequired": true,
+        "certificate": {
+          "sha256": "e3be7307623cc96698fcd3bba30e9e5e4c0763a6dbc61b109eab603cc5cce0a3",
+          "bytes": 1103,
+          "issueDate": "2026-10-30",
+          "matchesSelectedFile": true,
+          "personalLicenseeDataOmitted": true
+        }
+      },
+      "technicalQa": {
+        "fullDecodePassed": true,
+        "seconds": 53.86449,
+        "sampleRate": 44100,
+        "channels": 2,
+        "originalsPreserved": true,
+        "loopApproved": false
+      }
     },
     {
       "id": "ersomha",
@@ -42,14 +122,48 @@
       "author": "MMAudio",
       "sourceUrl": "https://pixabay.com/music/happy-childrens-tunes-start-somewhere-good-512524/",
       "contentIdRegistered": null,
-      "status": "pending-official-download-and-listening",
-      "downloadedAt": null,
-      "path": null,
-      "sha256": null,
-      "bytes": null,
-      "licenseVerifiedForFile": false,
+      "status": "downloaded-and-technically-checked-awaiting-listening",
+      "downloadedAt": "2026-10-30T03:47:44.274Z",
+      "path": "work/maydan-audio-intake-20261030/originals/mmaudio-start-somewhere-good-512524.mp3",
+      "sha256": "6889645d350cd80d3492130746d2856bf92bbaaaaafdb63d100f79d3fea31dc6",
+      "bytes": 3546624,
+      "licenseVerifiedForFile": true,
       "listeningApproved": false,
-      "processing": []
+      "processing": [
+        {
+          "purpose": "private-listening-preview-only",
+          "path": "outputs/maydan-audio-intake-20261030/preview/audio/ersomha.m4a",
+          "sha256": "d30e35512c70daed6c3be36c96581a76d7afaa560610510992fd3cdce1f0dc59",
+          "bytes": 2757967,
+          "codec": "aac",
+          "sampleRate": 48000,
+          "channels": 2,
+          "gainDb": -5.5,
+          "attenuationOnly": true,
+          "sourceHash": "6889645d350cd80d3492130746d2856bf92bbaaaaafdb63d100f79d3fea31dc6",
+          "encodedDirectlyFromOriginal": true,
+          "listeningApproved": false,
+          "runtimeActivated": false
+        }
+      ],
+      "originalArtistCredit": null,
+      "contentIdMarkerObserved": false,
+      "licenseEvidence": {
+        "meaning": "Verified source licensing notice and association with downloaded file; not a warranty of third-party rights.",
+        "officialSourceReview": "docs/audio-direction/PIXABAY-SOURCE-REVIEW-20261030.json",
+        "officialSourceReviewSha256": "dcca327d7e6984f5af47bbe66be8e3b89c90bffe2aef1580f763c37cc2e23e38",
+        "sourceLicenseUrl": "https://pixabay.com/service/license-summary/",
+        "certificateRequired": false,
+        "certificate": null
+      },
+      "technicalQa": {
+        "fullDecodePassed": true,
+        "seconds": 110.832,
+        "sampleRate": 48000,
+        "channels": 2,
+        "originalsPreserved": true,
+        "loopApproved": false
+      }
     },
     {
       "id": "fabraka",
@@ -57,29 +171,103 @@
       "author": "Musictown",
       "sourceUrl": "https://pixabay.com/music/beautiful-plays-inquisitive-curiosity-113755/",
       "contentIdRegistered": true,
-      "status": "pending-official-download-and-listening",
-      "downloadedAt": null,
-      "path": null,
-      "sha256": null,
-      "bytes": null,
-      "licenseVerifiedForFile": false,
+      "status": "downloaded-and-technically-checked-awaiting-listening",
+      "downloadedAt": "2026-10-30T03:51:00.154Z",
+      "path": "work/maydan-audio-intake-20261030/originals/musictown-inquisitive-curiosity-113755.mp3",
+      "sha256": "8160dcad4f96f1d2738a5b877ec7168d269a09b4e63ac0d99e354fb8c185e997",
+      "bytes": 5873998,
+      "licenseVerifiedForFile": true,
       "listeningApproved": false,
-      "processing": []
+      "processing": [
+        {
+          "purpose": "private-listening-preview-only",
+          "path": "outputs/maydan-audio-intake-20261030/preview/audio/fabraka.m4a",
+          "sha256": "4137fdd02477dda5bd2e14b05456a91f82979cb1710b993f8a66dc2f8d5515c8",
+          "bytes": 4563249,
+          "codec": "aac",
+          "sampleRate": 44100,
+          "channels": 2,
+          "gainDb": -8.9,
+          "attenuationOnly": true,
+          "sourceHash": "8160dcad4f96f1d2738a5b877ec7168d269a09b4e63ac0d99e354fb8c185e997",
+          "encodedDirectlyFromOriginal": true,
+          "listeningApproved": false,
+          "runtimeActivated": false
+        }
+      ],
+      "originalArtistCredit": null,
+      "contentIdMarkerObserved": true,
+      "licenseEvidence": {
+        "meaning": "Verified source licensing notice and association with downloaded file; not a warranty of third-party rights.",
+        "officialSourceReview": "docs/audio-direction/PIXABAY-SOURCE-REVIEW-20261030.json",
+        "officialSourceReviewSha256": "dcca327d7e6984f5af47bbe66be8e3b89c90bffe2aef1580f763c37cc2e23e38",
+        "sourceLicenseUrl": "https://pixabay.com/service/license-summary/",
+        "certificateRequired": true,
+        "certificate": {
+          "sha256": "3fb523c44b75260bd8f9017983e65fcbd0bd72dea8aed995a8da8bf62ab0df30",
+          "bytes": 1112,
+          "issueDate": "2026-10-30",
+          "matchesSelectedFile": true,
+          "personalLicenseeDataOmitted": true
+        }
+      },
+      "technicalQa": {
+        "fullDecodePassed": true,
+        "seconds": 183.562449,
+        "sampleRate": 44100,
+        "channels": 2,
+        "originalsPreserved": true,
+        "loopApproved": false
+      }
     },
     {
       "id": "meenfina",
-      "title": "Gentle Rain with Morning Coffee",
-      "author": null,
+      "title": "Gentle rain with morning coffee",
+      "author": "17132017",
       "sourceUrl": "https://pixabay.com/music/bossa-nova-gentle-rain-with-morning-coffee-168693/",
       "contentIdRegistered": null,
-      "status": "pending-official-download-and-listening",
-      "downloadedAt": null,
-      "path": null,
-      "sha256": null,
-      "bytes": null,
-      "licenseVerifiedForFile": false,
+      "status": "downloaded-and-technically-checked-awaiting-listening",
+      "downloadedAt": "2026-10-30T03:53:03.869Z",
+      "path": "work/maydan-audio-intake-20261030/originals/17132017-gentle-rain-with-morning-coffee-168693.mp3",
+      "sha256": "507fafd3ce97b9ebb5f7dd212aed5909cd4882f1a1797216d661b5f42d7618f8",
+      "bytes": 3521724,
+      "licenseVerifiedForFile": true,
       "listeningApproved": false,
-      "processing": []
+      "processing": [
+        {
+          "purpose": "private-listening-preview-only",
+          "path": "outputs/maydan-audio-intake-20261030/preview/audio/meenfina.m4a",
+          "sha256": "c51d4c4777a0fc24c1fdd2da89e6b69abf106fd7f66f4e9711acb3df05f3f90e",
+          "bytes": 2703613,
+          "codec": "aac",
+          "sampleRate": 44100,
+          "channels": 2,
+          "gainDb": -6.9,
+          "attenuationOnly": true,
+          "sourceHash": "507fafd3ce97b9ebb5f7dd212aed5909cd4882f1a1797216d661b5f42d7618f8",
+          "encodedDirectlyFromOriginal": true,
+          "listeningApproved": false,
+          "runtimeActivated": false
+        }
+      ],
+      "originalArtistCredit": null,
+      "contentIdMarkerObserved": false,
+      "licenseEvidence": {
+        "meaning": "Verified source licensing notice and association with downloaded file; not a warranty of third-party rights.",
+        "officialSourceReview": "docs/audio-direction/PIXABAY-SOURCE-REVIEW-20261030.json",
+        "officialSourceReviewSha256": "dcca327d7e6984f5af47bbe66be8e3b89c90bffe2aef1580f763c37cc2e23e38",
+        "sourceLicenseUrl": "https://pixabay.com/service/license-summary/",
+        "certificateRequired": false,
+        "certificate": null
+      },
+      "technicalQa": {
+        "fullDecodePassed": true,
+        "seconds": 110.053878,
+        "sampleRate": 44100,
+        "channels": 2,
+        "originalsPreserved": true,
+        "loopApproved": false
+      }
     },
     {
       "id": "jabeen",
@@ -87,44 +275,152 @@
       "author": "STAROSTIN",
       "sourceUrl": "https://pixabay.com/music/comedy-comedy-cartoon-funny-background-music-492540/",
       "contentIdRegistered": true,
-      "status": "pending-official-download-and-listening",
-      "downloadedAt": null,
-      "path": null,
-      "sha256": null,
-      "bytes": null,
-      "licenseVerifiedForFile": false,
+      "status": "downloaded-and-technically-checked-awaiting-listening",
+      "downloadedAt": "2026-10-30T03:54:10.320Z",
+      "path": "work/maydan-audio-intake-20261030/originals/starostin-comedy-cartoon-funny-background-music-492540.mp3",
+      "sha256": "f2175b4cee640108c795190087acdadf35a63e49123c0e0932fe5dc4ef027ade",
+      "bytes": 4737149,
+      "licenseVerifiedForFile": true,
       "listeningApproved": false,
-      "processing": []
+      "processing": [
+        {
+          "purpose": "private-listening-preview-only",
+          "path": "outputs/maydan-audio-intake-20261030/preview/audio/jabeen.m4a",
+          "sha256": "a29f798ed5a00aebf1f932bd7205fac330531f40f894c9693e89fa6d03bdbf3f",
+          "bytes": 3709608,
+          "codec": "aac",
+          "sampleRate": 44100,
+          "channels": 2,
+          "gainDb": -9.6,
+          "attenuationOnly": true,
+          "sourceHash": "f2175b4cee640108c795190087acdadf35a63e49123c0e0932fe5dc4ef027ade",
+          "encodedDirectlyFromOriginal": true,
+          "listeningApproved": false,
+          "runtimeActivated": false
+        }
+      ],
+      "originalArtistCredit": null,
+      "contentIdMarkerObserved": true,
+      "licenseEvidence": {
+        "meaning": "Verified source licensing notice and association with downloaded file; not a warranty of third-party rights.",
+        "officialSourceReview": "docs/audio-direction/PIXABAY-SOURCE-REVIEW-20261030.json",
+        "officialSourceReviewSha256": "dcca327d7e6984f5af47bbe66be8e3b89c90bffe2aef1580f763c37cc2e23e38",
+        "sourceLicenseUrl": "https://pixabay.com/service/license-summary/",
+        "certificateRequired": true,
+        "certificate": {
+          "sha256": "9f358bf3a3ac705cb55c17891cbd85770e905e7c71b4b01d409d129844e57a2c",
+          "bytes": 1135,
+          "issueDate": "2026-10-30",
+          "matchesSelectedFile": true,
+          "personalLicenseeDataOmitted": true
+        }
+      },
+      "technicalQa": {
+        "fullDecodePassed": true,
+        "seconds": 148.035918,
+        "sampleRate": 44100,
+        "channels": 2,
+        "originalsPreserved": true,
+        "loopApproved": false
+      }
     },
     {
       "id": "mamnoo",
-      "title": "Redwood Claves 92 BPM",
+      "title": "REDWOOD CLAVES, 92 bpm, 8 bars, light percussion",
       "author": "Music_LDQ",
       "sourceUrl": "https://pixabay.com/sound-effects/musical-redwood-claves-92-bpm-8-bars-light-percussion-507450/",
       "contentIdRegistered": null,
-      "status": "pending-official-download-and-listening",
-      "downloadedAt": null,
-      "path": null,
-      "sha256": null,
-      "bytes": null,
-      "licenseVerifiedForFile": false,
+      "status": "downloaded-and-technically-checked-awaiting-listening",
+      "downloadedAt": "2026-10-30T03:55:04.999Z",
+      "path": "work/maydan-audio-intake-20261030/originals/music_ldq-redwood-claves-92-bpm-8-bars-light-percussion-507450.mp3",
+      "sha256": "fe28d29e232f888e4d173633159a072520697bf7b17c082ae28db37b52122b2f",
+      "bytes": 668734,
+      "licenseVerifiedForFile": true,
       "listeningApproved": false,
-      "processing": []
+      "processing": [
+        {
+          "purpose": "private-listening-preview-only",
+          "path": "outputs/maydan-audio-intake-20261030/preview/audio/mamnoo.m4a",
+          "sha256": "860c5e971f9af39da68116e47ef99e1e6311d921c341e7aee2d0b2ac77dffed9",
+          "bytes": 500835,
+          "codec": "aac",
+          "sampleRate": 44100,
+          "channels": 2,
+          "gainDb": 0.0,
+          "attenuationOnly": true,
+          "sourceHash": "fe28d29e232f888e4d173633159a072520697bf7b17c082ae28db37b52122b2f",
+          "encodedDirectlyFromOriginal": true,
+          "listeningApproved": false,
+          "runtimeActivated": false
+        }
+      ],
+      "originalArtistCredit": null,
+      "contentIdMarkerObserved": false,
+      "licenseEvidence": {
+        "meaning": "Verified source licensing notice and association with downloaded file; not a warranty of third-party rights.",
+        "officialSourceReview": "docs/audio-direction/PIXABAY-SOURCE-REVIEW-20261030.json",
+        "officialSourceReviewSha256": "dcca327d7e6984f5af47bbe66be8e3b89c90bffe2aef1580f763c37cc2e23e38",
+        "sourceLicenseUrl": "https://pixabay.com/service/license-summary/",
+        "certificateRequired": false,
+        "certificate": null
+      },
+      "technicalQa": {
+        "fullDecodePassed": true,
+        "seconds": 20.897959,
+        "sampleRate": 44100,
+        "channels": 2,
+        "originalsPreserved": true,
+        "loopApproved": false
+      }
     },
     {
       "id": "beep",
-      "title": "Stomp Drum Percussion Power Up",
+      "title": "Stomp Drum Percussion - Power Up",
       "author": "BombinSound",
       "sourceUrl": "https://pixabay.com/music/world-stomp-drum-percussion-power-up-577424/",
       "contentIdRegistered": null,
-      "status": "pending-official-download-and-listening",
-      "downloadedAt": null,
-      "path": null,
-      "sha256": null,
-      "bytes": null,
-      "licenseVerifiedForFile": false,
+      "status": "downloaded-and-technically-checked-awaiting-listening",
+      "downloadedAt": "2026-10-30T03:55:31.914Z",
+      "path": "work/maydan-audio-intake-20261030/originals/bombinsound-stomp-drum-percussion-power-up-577424.mp3",
+      "sha256": "02c5819fe58ed3fefba732eff537a2027ea6a82a1a184191655e63aed377c49a",
+      "bytes": 3087046,
+      "licenseVerifiedForFile": true,
       "listeningApproved": false,
-      "processing": []
+      "processing": [
+        {
+          "purpose": "private-listening-preview-only",
+          "path": "outputs/maydan-audio-intake-20261030/preview/audio/beep.m4a",
+          "sha256": "58511dc74209d1897c6d7bd09f23e1a3581a6273134575f5ef5e602d2def8c56",
+          "bytes": 2473173,
+          "codec": "aac",
+          "sampleRate": 44100,
+          "channels": 2,
+          "gainDb": -8.5,
+          "attenuationOnly": true,
+          "sourceHash": "02c5819fe58ed3fefba732eff537a2027ea6a82a1a184191655e63aed377c49a",
+          "encodedDirectlyFromOriginal": true,
+          "listeningApproved": false,
+          "runtimeActivated": false
+        }
+      ],
+      "originalArtistCredit": null,
+      "contentIdMarkerObserved": false,
+      "licenseEvidence": {
+        "meaning": "Verified source licensing notice and association with downloaded file; not a warranty of third-party rights.",
+        "officialSourceReview": "docs/audio-direction/PIXABAY-SOURCE-REVIEW-20261030.json",
+        "officialSourceReviewSha256": "dcca327d7e6984f5af47bbe66be8e3b89c90bffe2aef1580f763c37cc2e23e38",
+        "sourceLicenseUrl": "https://pixabay.com/service/license-summary/",
+        "certificateRequired": false,
+        "certificate": null
+      },
+      "technicalQa": {
+        "fullDecodePassed": true,
+        "seconds": 96.470204,
+        "sampleRate": 44100,
+        "channels": 2,
+        "originalsPreserved": true,
+        "loopApproved": false
+      }
     },
     {
       "id": "mafia",
@@ -132,14 +428,48 @@
       "author": "Universfield",
       "sourceUrl": "https://pixabay.com/music/mystery-noir-crime-piano-190649/",
       "contentIdRegistered": null,
-      "status": "pending-official-download-and-listening",
-      "downloadedAt": null,
-      "path": null,
-      "sha256": null,
-      "bytes": null,
-      "licenseVerifiedForFile": false,
+      "status": "downloaded-and-technically-checked-awaiting-listening",
+      "downloadedAt": "2026-10-30T03:56:06.995Z",
+      "path": "work/maydan-audio-intake-20261030/originals/universfield-noir-crime-piano-190649.mp3",
+      "sha256": "ff1bbe8116dc0e6eaea67ba9e312ad2e108794b5500814d7c529dfe679106514",
+      "bytes": 1903386,
+      "licenseVerifiedForFile": true,
       "listeningApproved": false,
-      "processing": []
+      "processing": [
+        {
+          "purpose": "private-listening-preview-only",
+          "path": "outputs/maydan-audio-intake-20261030/preview/audio/mafia.m4a",
+          "sha256": "2dd8e23f7e8951f8dc8b6cffe4516f11ee82f71b5821dac9bea4b0d3c780579d",
+          "bytes": 1451438,
+          "codec": "aac",
+          "sampleRate": 44100,
+          "channels": 2,
+          "gainDb": 0.0,
+          "attenuationOnly": true,
+          "sourceHash": "ff1bbe8116dc0e6eaea67ba9e312ad2e108794b5500814d7c529dfe679106514",
+          "encodedDirectlyFromOriginal": true,
+          "listeningApproved": false,
+          "runtimeActivated": false
+        }
+      ],
+      "originalArtistCredit": null,
+      "contentIdMarkerObserved": false,
+      "licenseEvidence": {
+        "meaning": "Verified source licensing notice and association with downloaded file; not a warranty of third-party rights.",
+        "officialSourceReview": "docs/audio-direction/PIXABAY-SOURCE-REVIEW-20261030.json",
+        "officialSourceReviewSha256": "dcca327d7e6984f5af47bbe66be8e3b89c90bffe2aef1580f763c37cc2e23e38",
+        "sourceLicenseUrl": "https://pixabay.com/service/license-summary/",
+        "certificateRequired": false,
+        "certificate": null
+      },
+      "technicalQa": {
+        "fullDecodePassed": true,
+        "seconds": 59.480816,
+        "sampleRate": 44100,
+        "channels": 2,
+        "originalsPreserved": true,
+        "loopApproved": false
+      }
     },
     {
       "id": "mafia-transition",
@@ -147,14 +477,48 @@
       "author": "Luis_Humanoide",
       "sourceUrl": "https://pixabay.com/music/crime-scene-cinematic-noir-mystery-320323/",
       "contentIdRegistered": null,
-      "status": "pending-official-download-and-listening",
-      "downloadedAt": null,
-      "path": null,
-      "sha256": null,
-      "bytes": null,
-      "licenseVerifiedForFile": false,
+      "status": "downloaded-and-technically-checked-awaiting-listening",
+      "downloadedAt": "2026-10-30T03:56:34.717Z",
+      "path": "work/maydan-audio-intake-20261030/originals/luis_humanoide-cinematic-noir-mystery-320323.mp3",
+      "sha256": "2845c8b31f283b524cb98a7e3d0109254a6ab77b5103e75774d58cf4d23d9740",
+      "bytes": 3346181,
+      "licenseVerifiedForFile": true,
       "listeningApproved": false,
-      "processing": []
+      "processing": [
+        {
+          "purpose": "private-listening-preview-only",
+          "path": "outputs/maydan-audio-intake-20261030/preview/audio/mafia-transition.m4a",
+          "sha256": "519378bda82d0ac1736d31c2bc6fa0474c8296575cddbfd6c86be95b16dda16b",
+          "bytes": 2534189,
+          "codec": "aac",
+          "sampleRate": 44100,
+          "channels": 2,
+          "gainDb": -3.4,
+          "attenuationOnly": true,
+          "sourceHash": "2845c8b31f283b524cb98a7e3d0109254a6ab77b5103e75774d58cf4d23d9740",
+          "encodedDirectlyFromOriginal": true,
+          "listeningApproved": false,
+          "runtimeActivated": false
+        }
+      ],
+      "originalArtistCredit": null,
+      "contentIdMarkerObserved": false,
+      "licenseEvidence": {
+        "meaning": "Verified source licensing notice and association with downloaded file; not a warranty of third-party rights.",
+        "officialSourceReview": "docs/audio-direction/PIXABAY-SOURCE-REVIEW-20261030.json",
+        "officialSourceReviewSha256": "dcca327d7e6984f5af47bbe66be8e3b89c90bffe2aef1580f763c37cc2e23e38",
+        "sourceLicenseUrl": "https://pixabay.com/service/license-summary/",
+        "certificateRequired": false,
+        "certificate": null
+      },
+      "technicalQa": {
+        "fullDecodePassed": true,
+        "seconds": 104.568163,
+        "sampleRate": 44100,
+        "channels": 2,
+        "originalsPreserved": true,
+        "loopApproved": false
+      }
     },
     {
       "id": "mafia-ambience",
@@ -162,14 +526,48 @@
       "author": "Alex_Jauk",
       "sourceUrl": "https://pixabay.com/sound-effects/nature-rainy-ambience-1-237624/",
       "contentIdRegistered": null,
-      "status": "pending-official-download-and-listening",
-      "downloadedAt": null,
-      "path": null,
-      "sha256": null,
-      "bytes": null,
-      "licenseVerifiedForFile": false,
+      "status": "downloaded-and-technically-checked-awaiting-listening",
+      "downloadedAt": "2026-10-30T03:57:04.198Z",
+      "path": "work/maydan-audio-intake-20261030/originals/alex_jauk-rainy-ambience-1-237624.mp3",
+      "sha256": "23b5bbf3e6159c398c37c3e1a76c04dca1ee14e6c3f7b2e7abee60f761aaf6e0",
+      "bytes": 1168613,
+      "licenseVerifiedForFile": true,
       "listeningApproved": false,
-      "processing": []
+      "processing": [
+        {
+          "purpose": "private-listening-preview-only",
+          "path": "outputs/maydan-audio-intake-20261030/preview/audio/mafia-ambience.m4a",
+          "sha256": "08f48959182774018794c8262c101468a5b3e9889d042a5da395333e4816dcfc",
+          "bytes": 645413,
+          "codec": "aac",
+          "sampleRate": 44100,
+          "channels": 1,
+          "gainDb": -6.0,
+          "attenuationOnly": true,
+          "sourceHash": "23b5bbf3e6159c398c37c3e1a76c04dca1ee14e6c3f7b2e7abee60f761aaf6e0",
+          "encodedDirectlyFromOriginal": true,
+          "listeningApproved": false,
+          "runtimeActivated": false
+        }
+      ],
+      "originalArtistCredit": null,
+      "contentIdMarkerObserved": false,
+      "licenseEvidence": {
+        "meaning": "Verified source licensing notice and association with downloaded file; not a warranty of third-party rights.",
+        "officialSourceReview": "docs/audio-direction/PIXABAY-SOURCE-REVIEW-20261030.json",
+        "officialSourceReviewSha256": "dcca327d7e6984f5af47bbe66be8e3b89c90bffe2aef1580f763c37cc2e23e38",
+        "sourceLicenseUrl": "https://pixabay.com/service/license-summary/",
+        "certificateRequired": false,
+        "certificate": null
+      },
+      "technicalQa": {
+        "fullDecodePassed": true,
+        "seconds": 36.519184,
+        "sampleRate": 44100,
+        "channels": 1,
+        "originalsPreserved": true,
+        "loopApproved": false
+      }
     },
     {
       "id": "click",
@@ -177,14 +575,48 @@
       "author": "Universfield",
       "sourceUrl": "https://pixabay.com/sound-effects/film-special-effects-soft-ui-click-147352/",
       "contentIdRegistered": null,
-      "status": "pending-official-download-and-listening",
-      "downloadedAt": null,
-      "path": null,
-      "sha256": null,
-      "bytes": null,
-      "licenseVerifiedForFile": false,
+      "status": "downloaded-and-technically-checked-awaiting-listening",
+      "downloadedAt": "2026-10-30T03:58:36.268Z",
+      "path": "work/maydan-audio-intake-20261030/originals/universfield-soft-ui-click-147352.mp3",
+      "sha256": "b4c15c383ed6efb57ff160b1ebe2d64ef56f768c8156fa91ec43a091488274e6",
+      "bytes": 33436,
+      "licenseVerifiedForFile": true,
       "listeningApproved": false,
-      "processing": []
+      "processing": [
+        {
+          "purpose": "private-listening-preview-only",
+          "path": "outputs/maydan-audio-intake-20261030/preview/audio/click.m4a",
+          "sha256": "096374ab1f66a1e825643f7bc6a96c0ee748ca63cdbf82078c3badd11d30639c",
+          "bytes": 12700,
+          "codec": "aac",
+          "sampleRate": 44100,
+          "channels": 2,
+          "gainDb": -2.4,
+          "attenuationOnly": true,
+          "sourceHash": "b4c15c383ed6efb57ff160b1ebe2d64ef56f768c8156fa91ec43a091488274e6",
+          "encodedDirectlyFromOriginal": true,
+          "listeningApproved": false,
+          "runtimeActivated": false
+        }
+      ],
+      "originalArtistCredit": null,
+      "contentIdMarkerObserved": false,
+      "licenseEvidence": {
+        "meaning": "Verified source licensing notice and association with downloaded file; not a warranty of third-party rights.",
+        "officialSourceReview": "docs/audio-direction/PIXABAY-SOURCE-REVIEW-20261030.json",
+        "officialSourceReviewSha256": "dcca327d7e6984f5af47bbe66be8e3b89c90bffe2aef1580f763c37cc2e23e38",
+        "sourceLicenseUrl": "https://pixabay.com/service/license-summary/",
+        "certificateRequired": false,
+        "certificate": null
+      },
+      "technicalQa": {
+        "fullDecodePassed": true,
+        "seconds": 1.044898,
+        "sampleRate": 44100,
+        "channels": 2,
+        "originalsPreserved": true,
+        "loopApproved": false
+      }
     },
     {
       "id": "select",
@@ -192,14 +624,48 @@
       "author": "Universfield",
       "sourceUrl": "https://pixabay.com/sound-effects/film-special-effects-interface-click-124476/",
       "contentIdRegistered": null,
-      "status": "pending-official-download-and-listening",
-      "downloadedAt": null,
-      "path": null,
-      "sha256": null,
-      "bytes": null,
-      "licenseVerifiedForFile": false,
+      "status": "downloaded-and-technically-checked-awaiting-listening",
+      "downloadedAt": "2026-10-30T03:59:07.081Z",
+      "path": "work/maydan-audio-intake-20261030/originals/universfield-interface-click-124476.mp3",
+      "sha256": "c674ec41f1f2975d712a4fde3b0c4c06a2a79ef7448ce50c1cda4a803e904942",
+      "bytes": 56842,
+      "licenseVerifiedForFile": true,
       "listeningApproved": false,
-      "processing": []
+      "processing": [
+        {
+          "purpose": "private-listening-preview-only",
+          "path": "outputs/maydan-audio-intake-20261030/preview/audio/select.m4a",
+          "sha256": "716f15c1c19ee0a3f237d0193f2f7b29143c19667bafbb1003339c3cb012cd56",
+          "bytes": 20860,
+          "codec": "aac",
+          "sampleRate": 44100,
+          "channels": 2,
+          "gainDb": -6.1,
+          "attenuationOnly": true,
+          "sourceHash": "c674ec41f1f2975d712a4fde3b0c4c06a2a79ef7448ce50c1cda4a803e904942",
+          "encodedDirectlyFromOriginal": true,
+          "listeningApproved": false,
+          "runtimeActivated": false
+        }
+      ],
+      "originalArtistCredit": null,
+      "contentIdMarkerObserved": false,
+      "licenseEvidence": {
+        "meaning": "Verified source licensing notice and association with downloaded file; not a warranty of third-party rights.",
+        "officialSourceReview": "docs/audio-direction/PIXABAY-SOURCE-REVIEW-20261030.json",
+        "officialSourceReviewSha256": "dcca327d7e6984f5af47bbe66be8e3b89c90bffe2aef1580f763c37cc2e23e38",
+        "sourceLicenseUrl": "https://pixabay.com/service/license-summary/",
+        "certificateRequired": false,
+        "certificate": null
+      },
+      "technicalQa": {
+        "fullDecodePassed": true,
+        "seconds": 1.776327,
+        "sampleRate": 44100,
+        "channels": 2,
+        "originalsPreserved": true,
+        "loopApproved": false
+      }
     },
     {
       "id": "correct",
@@ -207,14 +673,48 @@
       "author": "DRAGON-STUDIO",
       "sourceUrl": "https://pixabay.com/sound-effects/technology-correct-472358/",
       "contentIdRegistered": null,
-      "status": "pending-official-download-and-listening",
-      "downloadedAt": null,
-      "path": null,
-      "sha256": null,
-      "bytes": null,
-      "licenseVerifiedForFile": false,
+      "status": "downloaded-and-technically-checked-awaiting-listening",
+      "downloadedAt": "2026-10-30T04:00:32.729Z",
+      "path": "work/maydan-audio-intake-20261030/originals/dragon-studio-correct-472358.mp3",
+      "sha256": "a106868fd8a145542ed741b1a784a9324c3b6bcbadbef1cb5680f6ac0dad0097",
+      "bytes": 42240,
+      "licenseVerifiedForFile": true,
       "listeningApproved": false,
-      "processing": []
+      "processing": [
+        {
+          "purpose": "private-listening-preview-only",
+          "path": "outputs/maydan-audio-intake-20261030/preview/audio/correct.m4a",
+          "sha256": "dc193bc06e9b08c0bb7b6b6d875212c0f4af8cb5a499ca140309fc62c268ef29",
+          "bytes": 33014,
+          "codec": "aac",
+          "sampleRate": 48000,
+          "channels": 2,
+          "gainDb": -6.5,
+          "attenuationOnly": true,
+          "sourceHash": "a106868fd8a145542ed741b1a784a9324c3b6bcbadbef1cb5680f6ac0dad0097",
+          "encodedDirectlyFromOriginal": true,
+          "listeningApproved": false,
+          "runtimeActivated": false
+        }
+      ],
+      "originalArtistCredit": null,
+      "contentIdMarkerObserved": false,
+      "licenseEvidence": {
+        "meaning": "Verified source licensing notice and association with downloaded file; not a warranty of third-party rights.",
+        "officialSourceReview": "docs/audio-direction/PIXABAY-SOURCE-REVIEW-20261030.json",
+        "officialSourceReviewSha256": "dcca327d7e6984f5af47bbe66be8e3b89c90bffe2aef1580f763c37cc2e23e38",
+        "sourceLicenseUrl": "https://pixabay.com/service/license-summary/",
+        "certificateRequired": false,
+        "certificate": null
+      },
+      "technicalQa": {
+        "fullDecodePassed": true,
+        "seconds": 1.32,
+        "sampleRate": 48000,
+        "channels": 2,
+        "originalsPreserved": true,
+        "loopApproved": false
+      }
     },
     {
       "id": "wrong",
@@ -222,29 +722,97 @@
       "author": "Universfield",
       "sourceUrl": "https://pixabay.com/sound-effects/film-special-effects-wrong-answer-126515/",
       "contentIdRegistered": null,
-      "status": "pending-official-download-and-listening",
-      "downloadedAt": null,
-      "path": null,
-      "sha256": null,
-      "bytes": null,
-      "licenseVerifiedForFile": false,
+      "status": "downloaded-and-technically-checked-awaiting-listening",
+      "downloadedAt": "2026-10-30T04:01:33.279Z",
+      "path": "work/maydan-audio-intake-20261030/originals/universfield-wrong-answer-126515.mp3",
+      "sha256": "16098fa3e3c9b98a9b53397f935edbcc8bb6970d991a0fbad6305811585d7796",
+      "bytes": 45975,
+      "licenseVerifiedForFile": true,
       "listeningApproved": false,
-      "processing": []
+      "processing": [
+        {
+          "purpose": "private-listening-preview-only",
+          "path": "outputs/maydan-audio-intake-20261030/preview/audio/wrong.m4a",
+          "sha256": "a22656776f7f5c19b848774192dbc2ec2882080fbf402b459142d59b62179710",
+          "bytes": 36679,
+          "codec": "aac",
+          "sampleRate": 44100,
+          "channels": 2,
+          "gainDb": -7.3,
+          "attenuationOnly": true,
+          "sourceHash": "16098fa3e3c9b98a9b53397f935edbcc8bb6970d991a0fbad6305811585d7796",
+          "encodedDirectlyFromOriginal": true,
+          "listeningApproved": false,
+          "runtimeActivated": false
+        }
+      ],
+      "originalArtistCredit": null,
+      "contentIdMarkerObserved": false,
+      "licenseEvidence": {
+        "meaning": "Verified source licensing notice and association with downloaded file; not a warranty of third-party rights.",
+        "officialSourceReview": "docs/audio-direction/PIXABAY-SOURCE-REVIEW-20261030.json",
+        "officialSourceReviewSha256": "dcca327d7e6984f5af47bbe66be8e3b89c90bffe2aef1580f763c37cc2e23e38",
+        "sourceLicenseUrl": "https://pixabay.com/service/license-summary/",
+        "certificateRequired": false,
+        "certificate": null
+      },
+      "technicalQa": {
+        "fullDecodePassed": true,
+        "seconds": 1.436735,
+        "sampleRate": 44100,
+        "channels": 2,
+        "originalsPreserved": true,
+        "loopApproved": false
+      }
     },
     {
       "id": "win",
       "title": "Success Fanfare Trumpets",
-      "author": "FunWithSound / freesound_community",
+      "author": "freesound_community",
       "sourceUrl": "https://pixabay.com/sound-effects/film-special-effects-success-fanfare-trumpets-6185/",
       "contentIdRegistered": null,
-      "status": "pending-official-download-and-listening",
-      "downloadedAt": null,
-      "path": null,
-      "sha256": null,
-      "bytes": null,
-      "licenseVerifiedForFile": false,
+      "status": "downloaded-and-technically-checked-awaiting-listening",
+      "downloadedAt": "2026-10-30T04:02:08.753Z",
+      "path": "work/maydan-audio-intake-20261030/originals/freesound_community-success-fanfare-trumpets-6185.mp3",
+      "sha256": "3d0a1356ae918d9650b5be3c3085562e7f42f99c1331a4a428f2d2d9ebcc83d1",
+      "bytes": 78240,
+      "licenseVerifiedForFile": true,
       "listeningApproved": false,
-      "processing": []
+      "processing": [
+        {
+          "purpose": "private-listening-preview-only",
+          "path": "outputs/maydan-audio-intake-20261030/preview/audio/win.m4a",
+          "sha256": "5364a3f695da051f17124b06588b323d2a0d009e43e666e1958ed81544f58704",
+          "bytes": 89387,
+          "codec": "aac",
+          "sampleRate": 24000,
+          "channels": 2,
+          "gainDb": 0.0,
+          "attenuationOnly": true,
+          "sourceHash": "3d0a1356ae918d9650b5be3c3085562e7f42f99c1331a4a428f2d2d9ebcc83d1",
+          "encodedDirectlyFromOriginal": true,
+          "listeningApproved": false,
+          "runtimeActivated": false
+        }
+      ],
+      "originalArtistCredit": "FunWithSound (Freesound)",
+      "contentIdMarkerObserved": false,
+      "licenseEvidence": {
+        "meaning": "Verified source licensing notice and association with downloaded file; not a warranty of third-party rights.",
+        "officialSourceReview": "docs/audio-direction/PIXABAY-SOURCE-REVIEW-20261030.json",
+        "officialSourceReviewSha256": "dcca327d7e6984f5af47bbe66be8e3b89c90bffe2aef1580f763c37cc2e23e38",
+        "sourceLicenseUrl": "https://pixabay.com/service/license-summary/",
+        "certificateRequired": false,
+        "certificate": null
+      },
+      "technicalQa": {
+        "fullDecodePassed": true,
+        "seconds": 3.912,
+        "sampleRate": 24000,
+        "channels": 2,
+        "originalsPreserved": true,
+        "loopApproved": false
+      }
     },
     {
       "id": "lose",
@@ -252,29 +820,97 @@
       "author": "Universfield",
       "sourceUrl": "https://pixabay.com/sound-effects/musical-failure-trumpet-242645/",
       "contentIdRegistered": null,
-      "status": "pending-official-download-and-listening",
-      "downloadedAt": null,
-      "path": null,
-      "sha256": null,
-      "bytes": null,
-      "licenseVerifiedForFile": false,
+      "status": "downloaded-and-technically-checked-awaiting-listening",
+      "downloadedAt": "2026-10-30T04:02:55.124Z",
+      "path": "work/maydan-audio-intake-20261030/originals/universfield-failure-trumpet-242645.mp3",
+      "sha256": "cf1a4ade11284e62f75596299776722044e9332a091041aaa6304b39bdaf76f0",
+      "bytes": 73728,
+      "licenseVerifiedForFile": true,
       "listeningApproved": false,
-      "processing": []
+      "processing": [
+        {
+          "purpose": "private-listening-preview-only",
+          "path": "outputs/maydan-audio-intake-20261030/preview/audio/lose.m4a",
+          "sha256": "64eb97d97168ac226c899ea7ea87dc86c731ff3f34bdb37b31fbc00118fcbf50",
+          "bytes": 61986,
+          "codec": "aac",
+          "sampleRate": 48000,
+          "channels": 2,
+          "gainDb": 0.0,
+          "attenuationOnly": true,
+          "sourceHash": "cf1a4ade11284e62f75596299776722044e9332a091041aaa6304b39bdaf76f0",
+          "encodedDirectlyFromOriginal": true,
+          "listeningApproved": false,
+          "runtimeActivated": false
+        }
+      ],
+      "originalArtistCredit": null,
+      "contentIdMarkerObserved": false,
+      "licenseEvidence": {
+        "meaning": "Verified source licensing notice and association with downloaded file; not a warranty of third-party rights.",
+        "officialSourceReview": "docs/audio-direction/PIXABAY-SOURCE-REVIEW-20261030.json",
+        "officialSourceReviewSha256": "dcca327d7e6984f5af47bbe66be8e3b89c90bffe2aef1580f763c37cc2e23e38",
+        "sourceLicenseUrl": "https://pixabay.com/service/license-summary/",
+        "certificateRequired": false,
+        "certificate": null
+      },
+      "technicalQa": {
+        "fullDecodePassed": true,
+        "seconds": 2.304,
+        "sampleRate": 48000,
+        "channels": 2,
+        "originalsPreserved": true,
+        "loopApproved": false
+      }
     },
     {
       "id": "card",
       "title": "flipCard",
-      "author": "Splashdust / freesound_community",
+      "author": "freesound_community",
       "sourceUrl": "https://pixabay.com/sound-effects/film-special-effects-flipcard-91468/",
       "contentIdRegistered": null,
-      "status": "pending-official-download-and-listening",
-      "downloadedAt": null,
-      "path": null,
-      "sha256": null,
-      "bytes": null,
-      "licenseVerifiedForFile": false,
+      "status": "downloaded-and-technically-checked-awaiting-listening",
+      "downloadedAt": "2026-10-30T04:04:15.761Z",
+      "path": "work/maydan-audio-intake-20261030/originals/freesound_community-flipcard-91468.mp3",
+      "sha256": "1c04e41918b392a643c22d6c02ef34eeab0341c70d46b7d517078725b79d8ee4",
+      "bytes": 30929,
+      "licenseVerifiedForFile": true,
       "listeningApproved": false,
-      "processing": []
+      "processing": [
+        {
+          "purpose": "private-listening-preview-only",
+          "path": "outputs/maydan-audio-intake-20261030/preview/audio/card.m4a",
+          "sha256": "abd985c503fb7ffd1d750897ec18ee11bebf5b8d070b9e939b6de16f8b1f68d4",
+          "bytes": 19297,
+          "codec": "aac",
+          "sampleRate": 44100,
+          "channels": 1,
+          "gainDb": 0.0,
+          "attenuationOnly": true,
+          "sourceHash": "1c04e41918b392a643c22d6c02ef34eeab0341c70d46b7d517078725b79d8ee4",
+          "encodedDirectlyFromOriginal": true,
+          "listeningApproved": false,
+          "runtimeActivated": false
+        }
+      ],
+      "originalArtistCredit": "Splashdust (Freesound)",
+      "contentIdMarkerObserved": false,
+      "licenseEvidence": {
+        "meaning": "Verified source licensing notice and association with downloaded file; not a warranty of third-party rights.",
+        "officialSourceReview": "docs/audio-direction/PIXABAY-SOURCE-REVIEW-20261030.json",
+        "officialSourceReviewSha256": "dcca327d7e6984f5af47bbe66be8e3b89c90bffe2aef1580f763c37cc2e23e38",
+        "sourceLicenseUrl": "https://pixabay.com/service/license-summary/",
+        "certificateRequired": false,
+        "certificate": null
+      },
+      "technicalQa": {
+        "fullDecodePassed": true,
+        "seconds": 0.966531,
+        "sampleRate": 44100,
+        "channels": 1,
+        "originalsPreserved": true,
+        "loopApproved": false
+      }
     },
     {
       "id": "pass",
@@ -282,14 +918,48 @@
       "author": "DRAGON-STUDIO",
       "sourceUrl": "https://pixabay.com/sound-effects/film-special-effects-simple-whoosh-382724/",
       "contentIdRegistered": null,
-      "status": "pending-official-download-and-listening",
-      "downloadedAt": null,
-      "path": null,
-      "sha256": null,
-      "bytes": null,
-      "licenseVerifiedForFile": false,
+      "status": "downloaded-and-technically-checked-awaiting-listening",
+      "downloadedAt": "2026-10-30T04:06:43.806Z",
+      "path": "work/maydan-audio-intake-20261030/originals/dragon-studio-simple-whoosh-382724.mp3",
+      "sha256": "c2efd9d902a59bf9ec5019035d7deadd17762136896b6e3cb6dd99ea50997a30",
+      "bytes": 18390,
+      "licenseVerifiedForFile": true,
       "listeningApproved": false,
-      "processing": []
+      "processing": [
+        {
+          "purpose": "private-listening-preview-only",
+          "path": "outputs/maydan-audio-intake-20261030/preview/audio/pass.m4a",
+          "sha256": "d1f05fdce24f101ada0f88014ad4d1e4d5d3d64561a3a024929e6e19ed713c64",
+          "bytes": 15621,
+          "codec": "aac",
+          "sampleRate": 44100,
+          "channels": 2,
+          "gainDb": -4.3,
+          "attenuationOnly": true,
+          "sourceHash": "c2efd9d902a59bf9ec5019035d7deadd17762136896b6e3cb6dd99ea50997a30",
+          "encodedDirectlyFromOriginal": true,
+          "listeningApproved": false,
+          "runtimeActivated": false
+        }
+      ],
+      "originalArtistCredit": null,
+      "contentIdMarkerObserved": false,
+      "licenseEvidence": {
+        "meaning": "Verified source licensing notice and association with downloaded file; not a warranty of third-party rights.",
+        "officialSourceReview": "docs/audio-direction/PIXABAY-SOURCE-REVIEW-20261030.json",
+        "officialSourceReviewSha256": "dcca327d7e6984f5af47bbe66be8e3b89c90bffe2aef1580f763c37cc2e23e38",
+        "sourceLicenseUrl": "https://pixabay.com/service/license-summary/",
+        "certificateRequired": false,
+        "certificate": null
+      },
+      "technicalQa": {
+        "fullDecodePassed": true,
+        "seconds": 0.574694,
+        "sampleRate": 44100,
+        "channels": 2,
+        "originalsPreserved": true,
+        "loopApproved": false
+      }
     },
     {
       "id": "clock",
@@ -297,14 +967,48 @@
       "author": "Universfield",
       "sourceUrl": "https://pixabay.com/sound-effects/film-special-effects-clock-ticking-149907/",
       "contentIdRegistered": null,
-      "status": "pending-official-download-and-listening",
-      "downloadedAt": null,
-      "path": null,
-      "sha256": null,
-      "bytes": null,
-      "licenseVerifiedForFile": false,
+      "status": "downloaded-and-technically-checked-awaiting-listening",
+      "downloadedAt": "2026-10-30T04:07:17.673Z",
+      "path": "work/maydan-audio-intake-20261030/originals/universfield-clock-ticking-149907.mp3",
+      "sha256": "1a12cd0d2867eee9da9e8e09eff25b145434240b1709ade3d19ddd2a5cc5f60a",
+      "bytes": 232385,
+      "licenseVerifiedForFile": true,
       "listeningApproved": false,
-      "processing": []
+      "processing": [
+        {
+          "purpose": "private-listening-preview-only",
+          "path": "outputs/maydan-audio-intake-20261030/preview/audio/clock.m4a",
+          "sha256": "732683a7588f10e90a45deed3da23cd71c27d8e524ea7eb8fc7e1c878e687b32",
+          "bytes": 66761,
+          "codec": "aac",
+          "sampleRate": 44100,
+          "channels": 2,
+          "gainDb": -6.1,
+          "attenuationOnly": true,
+          "sourceHash": "1a12cd0d2867eee9da9e8e09eff25b145434240b1709ade3d19ddd2a5cc5f60a",
+          "encodedDirectlyFromOriginal": true,
+          "listeningApproved": false,
+          "runtimeActivated": false
+        }
+      ],
+      "originalArtistCredit": null,
+      "contentIdMarkerObserved": false,
+      "licenseEvidence": {
+        "meaning": "Verified source licensing notice and association with downloaded file; not a warranty of third-party rights.",
+        "officialSourceReview": "docs/audio-direction/PIXABAY-SOURCE-REVIEW-20261030.json",
+        "officialSourceReviewSha256": "dcca327d7e6984f5af47bbe66be8e3b89c90bffe2aef1580f763c37cc2e23e38",
+        "sourceLicenseUrl": "https://pixabay.com/service/license-summary/",
+        "certificateRequired": false,
+        "certificate": null
+      },
+      "technicalQa": {
+        "fullDecodePassed": true,
+        "seconds": 7.262041,
+        "sampleRate": 44100,
+        "channels": 2,
+        "originalsPreserved": true,
+        "loopApproved": false
+      }
     },
     {
       "id": "mafia-clock",
@@ -312,29 +1016,97 @@
       "author": "Universfield",
       "sourceUrl": "https://pixabay.com/sound-effects/film-special-effects-old-clock-ticking-352288/",
       "contentIdRegistered": null,
-      "status": "pending-official-download-and-listening",
-      "downloadedAt": null,
-      "path": null,
-      "sha256": null,
-      "bytes": null,
-      "licenseVerifiedForFile": false,
+      "status": "downloaded-and-technically-checked-awaiting-listening",
+      "downloadedAt": "2026-10-30T04:07:48.347Z",
+      "path": "work/maydan-audio-intake-20261030/originals/universfield-old-clock-ticking-352288.mp3",
+      "sha256": "448dcd18210abf5d7685a58fa6ff0b987e54ea6884d9e3ad7a9187bbfa357f93",
+      "bytes": 440064,
+      "licenseVerifiedForFile": true,
       "listeningApproved": false,
-      "processing": []
+      "processing": [
+        {
+          "purpose": "private-listening-preview-only",
+          "path": "outputs/maydan-audio-intake-20261030/preview/audio/mafia-clock.m4a",
+          "sha256": "7a0f3fdb8bb86fbec12c91f7fa4cb24f993329b8b2906794a4e439dcc7acb872",
+          "bytes": 345174,
+          "codec": "aac",
+          "sampleRate": 48000,
+          "channels": 2,
+          "gainDb": -3.3,
+          "attenuationOnly": true,
+          "sourceHash": "448dcd18210abf5d7685a58fa6ff0b987e54ea6884d9e3ad7a9187bbfa357f93",
+          "encodedDirectlyFromOriginal": true,
+          "listeningApproved": false,
+          "runtimeActivated": false
+        }
+      ],
+      "originalArtistCredit": null,
+      "contentIdMarkerObserved": false,
+      "licenseEvidence": {
+        "meaning": "Verified source licensing notice and association with downloaded file; not a warranty of third-party rights.",
+        "officialSourceReview": "docs/audio-direction/PIXABAY-SOURCE-REVIEW-20261030.json",
+        "officialSourceReviewSha256": "dcca327d7e6984f5af47bbe66be8e3b89c90bffe2aef1580f763c37cc2e23e38",
+        "sourceLicenseUrl": "https://pixabay.com/service/license-summary/",
+        "certificateRequired": false,
+        "certificate": null
+      },
+      "technicalQa": {
+        "fullDecodePassed": true,
+        "seconds": 13.752,
+        "sampleRate": 48000,
+        "channels": 2,
+        "originalsPreserved": true,
+        "loopApproved": false
+      }
     },
     {
       "id": "pencil",
       "title": "drawing with a pen",
-      "author": "jaeger2801 / freesound_community",
+      "author": "freesound_community",
       "sourceUrl": "https://pixabay.com/sound-effects/film-special-effects-drawing-with-a-pen-36947/",
       "contentIdRegistered": null,
-      "status": "pending-official-download-and-listening",
-      "downloadedAt": null,
-      "path": null,
-      "sha256": null,
-      "bytes": null,
-      "licenseVerifiedForFile": false,
+      "status": "downloaded-and-technically-checked-awaiting-listening",
+      "downloadedAt": "2026-10-30T04:08:45.006Z",
+      "path": "work/maydan-audio-intake-20261030/originals/freesound_community-drawing-with-a-pen-36947.mp3",
+      "sha256": "83360a10aba7ce6f7fc440beb10ba5acb20e691ff96339e3b8c87f7dc631dfa5",
+      "bytes": 93600,
+      "licenseVerifiedForFile": true,
       "listeningApproved": false,
-      "processing": []
+      "processing": [
+        {
+          "purpose": "private-listening-preview-only",
+          "path": "outputs/maydan-audio-intake-20261030/preview/audio/pencil.m4a",
+          "sha256": "0f0537747a85d5824ef1841f360f27fd39b8b08d0b3ffed72be0cf78538ce66a",
+          "bytes": 57331,
+          "codec": "aac",
+          "sampleRate": 24000,
+          "channels": 2,
+          "gainDb": 0.0,
+          "attenuationOnly": true,
+          "sourceHash": "83360a10aba7ce6f7fc440beb10ba5acb20e691ff96339e3b8c87f7dc631dfa5",
+          "encodedDirectlyFromOriginal": true,
+          "listeningApproved": false,
+          "runtimeActivated": false
+        }
+      ],
+      "originalArtistCredit": "jaeger2801 (Freesound)",
+      "contentIdMarkerObserved": false,
+      "licenseEvidence": {
+        "meaning": "Verified source licensing notice and association with downloaded file; not a warranty of third-party rights.",
+        "officialSourceReview": "docs/audio-direction/PIXABAY-SOURCE-REVIEW-20261030.json",
+        "officialSourceReviewSha256": "dcca327d7e6984f5af47bbe66be8e3b89c90bffe2aef1580f763c37cc2e23e38",
+        "sourceLicenseUrl": "https://pixabay.com/service/license-summary/",
+        "certificateRequired": false,
+        "certificate": null
+      },
+      "technicalQa": {
+        "fullDecodePassed": true,
+        "seconds": 4.68,
+        "sampleRate": 24000,
+        "channels": 2,
+        "originalsPreserved": true,
+        "loopApproved": false
+      }
     },
     {
       "id": "mafia-judgment",
@@ -342,29 +1114,97 @@
       "author": "IntrepidMedia",
       "sourceUrl": "https://pixabay.com/sound-effects/film-special-effects-gavel-of-justice-124029/",
       "contentIdRegistered": null,
-      "status": "pending-official-download-and-listening",
-      "downloadedAt": null,
-      "path": null,
-      "sha256": null,
-      "bytes": null,
-      "licenseVerifiedForFile": false,
+      "status": "downloaded-and-technically-checked-awaiting-listening",
+      "downloadedAt": "2026-10-30T04:09:10.886Z",
+      "path": "work/maydan-audio-intake-20261030/originals/intrepidmedia-gavel-of-justice-124029.mp3",
+      "sha256": "374290d42f24e153ca22aa72e48618e5a1a9ccc118060ff04b7a74a1b7495fc5",
+      "bytes": 97802,
+      "licenseVerifiedForFile": true,
       "listeningApproved": false,
-      "processing": []
+      "processing": [
+        {
+          "purpose": "private-listening-preview-only",
+          "path": "outputs/maydan-audio-intake-20261030/preview/audio/mafia-judgment.m4a",
+          "sha256": "9f85153bc88117289ae79b4cbac44df31a0ac8d894edf8887c7a1da97b7a70fa",
+          "bytes": 74807,
+          "codec": "aac",
+          "sampleRate": 44100,
+          "channels": 2,
+          "gainDb": -6.3,
+          "attenuationOnly": true,
+          "sourceHash": "374290d42f24e153ca22aa72e48618e5a1a9ccc118060ff04b7a74a1b7495fc5",
+          "encodedDirectlyFromOriginal": true,
+          "listeningApproved": false,
+          "runtimeActivated": false
+        }
+      ],
+      "originalArtistCredit": null,
+      "contentIdMarkerObserved": false,
+      "licenseEvidence": {
+        "meaning": "Verified source licensing notice and association with downloaded file; not a warranty of third-party rights.",
+        "officialSourceReview": "docs/audio-direction/PIXABAY-SOURCE-REVIEW-20261030.json",
+        "officialSourceReviewSha256": "dcca327d7e6984f5af47bbe66be8e3b89c90bffe2aef1580f763c37cc2e23e38",
+        "sourceLicenseUrl": "https://pixabay.com/service/license-summary/",
+        "certificateRequired": false,
+        "certificate": null
+      },
+      "technicalQa": {
+        "fullDecodePassed": true,
+        "seconds": 3.056327,
+        "sampleRate": 44100,
+        "channels": 2,
+        "originalsPreserved": true,
+        "loopApproved": false
+      }
     },
     {
       "id": "mafia-assassination",
       "title": "Single Pistol Gunshot 3.3",
-      "author": "morganpurkis / freesound_community",
+      "author": "freesound_community",
       "sourceUrl": "https://pixabay.com/sound-effects/film-special-effects-single-pistol-gunshot-33-37187/",
       "contentIdRegistered": null,
-      "status": "pending-official-download-and-listening",
-      "downloadedAt": null,
-      "path": null,
-      "sha256": null,
-      "bytes": null,
-      "licenseVerifiedForFile": false,
+      "status": "downloaded-and-technically-checked-awaiting-listening",
+      "downloadedAt": "2026-10-30T04:09:59.697Z",
+      "path": "work/maydan-audio-intake-20261030/originals/freesound_community-single-pistol-gunshot-33-37187.mp3",
+      "sha256": "b1e432f8ddb3284ed080ce6cbe548f18722cfe4bb8d3c8376d4ee91a28561f49",
+      "bytes": 49920,
+      "licenseVerifiedForFile": true,
       "listeningApproved": false,
-      "processing": []
+      "processing": [
+        {
+          "purpose": "private-listening-preview-only",
+          "path": "outputs/maydan-audio-intake-20261030/preview/audio/mafia-assassination.m4a",
+          "sha256": "e4949d879003b08d80314fd5f7db8c3854f10f1b8a3733ffacfe1a64fce5416c",
+          "bytes": 34073,
+          "codec": "aac",
+          "sampleRate": 24000,
+          "channels": 2,
+          "gainDb": -10.6,
+          "attenuationOnly": true,
+          "sourceHash": "b1e432f8ddb3284ed080ce6cbe548f18722cfe4bb8d3c8376d4ee91a28561f49",
+          "encodedDirectlyFromOriginal": true,
+          "listeningApproved": false,
+          "runtimeActivated": false
+        }
+      ],
+      "originalArtistCredit": "morganpurkis (Freesound)",
+      "contentIdMarkerObserved": false,
+      "licenseEvidence": {
+        "meaning": "Verified source licensing notice and association with downloaded file; not a warranty of third-party rights.",
+        "officialSourceReview": "docs/audio-direction/PIXABAY-SOURCE-REVIEW-20261030.json",
+        "officialSourceReviewSha256": "dcca327d7e6984f5af47bbe66be8e3b89c90bffe2aef1580f763c37cc2e23e38",
+        "sourceLicenseUrl": "https://pixabay.com/service/license-summary/",
+        "certificateRequired": false,
+        "certificate": null
+      },
+      "technicalQa": {
+        "fullDecodePassed": true,
+        "seconds": 2.496,
+        "sampleRate": 24000,
+        "channels": 2,
+        "originalsPreserved": true,
+        "loopApproved": false
+      }
     }
   ],
   "existingAssets": [
@@ -512,5 +1352,15 @@
       "licenseEvidence": "implementation/assets/audio/maydan-v3/provenance.json",
       "newListeningPerformed": false
     }
-  ]
+  ],
+  "pathBase": "workspace-root; original media and private certificates are outside the source repository",
+  "activationApproved": false,
+  "rightsClearanceGuaranteed": false,
+  "fileLicensingEvidenceReview": {
+    "verified": true,
+    "sources": 24,
+    "expectedCertificates": 4,
+    "matchingCertificates": 4,
+    "independentTechnicalReport": "outputs/maydan-audio-intake-20261030/qa-per-asset/summary.json"
+  }
 }
