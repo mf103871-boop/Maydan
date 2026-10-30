@@ -21,13 +21,19 @@ test('background image status preserves fraction order and passes taps while its
         const page = await browser.newPage({ viewport: { width: 390, height: 844 }, locale: 'ar', reducedMotion: 'reduce' });
         await page.goto(`http://127.0.0.1:${server.address().port}/#/`);
         const fraction = page.locator('.startup-background bdi'); await fraction.waitFor();
-        const order = await fraction.evaluate(node => {
-          const range = document.createRange();
-          range.selectNodeContents(node.firstChild); const completed = range.getBoundingClientRect();
-          range.selectNodeContents(node.lastChild); const total = range.getBoundingClientRect();
-          return { completed: completed.x, total: total.x, direction: getComputedStyle(node).direction };
-        });
-        assert.equal(order.direction, 'ltr'); assert.ok(order.completed < order.total, 'completed / total must retain its visual order inside the RTL sentence');
+        for (const width of [320, 390]) {
+          await page.setViewportSize({ width, height: 844 });
+          await fraction.evaluate(node => { node.parentElement.style.fontSize = '20px'; });
+          const order = await fraction.evaluate(node => {
+            const range = document.createRange();
+            range.selectNodeContents(node.firstChild); const completed = range.getBoundingClientRect();
+            range.selectNodeContents(node.lastChild); const total = range.getBoundingClientRect();
+            return { completed: completed.x, total: total.x, completedY: completed.y, totalY: total.y, direction: getComputedStyle(node).direction };
+          });
+          assert.equal(order.direction, 'ltr'); assert.ok(order.completed < order.total, `completed / total must retain its visual order inside the RTL sentence: ${JSON.stringify(order)}`);
+          assert.equal(order.completedY, order.totalY, 'the fraction remains together when the Arabic status wraps');
+        }
+        await fraction.evaluate(node => { node.parentElement.style.fontSize = ''; });
         await page.getByRole('button', { name: 'ابدأ اللعب', exact: true }).click({ timeout: 2500 });
         assert.equal(await page.evaluate(() => window.underlyingClicks), 1);
         const close = page.getByRole('button', { name: 'إخفاء حالة الصور', exact: true });

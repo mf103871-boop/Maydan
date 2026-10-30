@@ -46,7 +46,7 @@ for (const [name, browserType] of [['Chromium', chromium], ['WebKit', webkit]]) 
   });
   await new Promise(resolve => server.listen(0, '127.0.0.1', resolve));
   t.after(() => new Promise(resolve => server.close(resolve)));
-  const browser = await browserType.launch({ headless: true, ...(name === 'Chromium' ? { executablePath: 'C:/Program Files/Google/Chrome/Application/chrome.exe', args: ['--autoplay-policy=no-user-gesture-required'] } : {}) });
+  const browser = await browserType.launch({ headless: true, ...(name === 'Chromium' ? { executablePath: process.env.CHROMIUM_PATH || (process.platform === 'win32' ? 'C:/Program Files/Google/Chrome/Application/chrome.exe' : undefined), args: ['--autoplay-policy=no-user-gesture-required'] } : {}) });
   t.after(() => browser.close());
   const page = await browser.newPage();
   await page.goto(`http://127.0.0.1:${server.address().port}`);

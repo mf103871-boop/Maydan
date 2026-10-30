@@ -187,7 +187,7 @@ export function Splash({ onDone, visible = true, reducedMotion = false }) {
   if (!visible) {
     if (['ready', 'skipped'].includes(phase) || statusHidden) return null;
     return <aside ref={statusRef} className="startup-background" aria-label="حالة تحميل الصور">
-      <span role="status">{phase === 'error' ? `باقي ${number(incomplete)} صورة` : phase === 'unsaved' ? 'الصور نُزّلت لكن المتصفح لم يحفظها؛ ستُجلب عند الحاجة.' : backgroundPaused ? 'تجهيز الصور متوقف مؤقتًا لإعطاء الأولوية للعب والصوت' : <>نجهّز الصور بالخلفية · <bdi dir="ltr">{number(images.ok)} / {number(images.total)}</bdi></>}</span>
+      <span role="status">{phase === 'error' ? `باقي ${number(incomplete)} صورة` : phase === 'unsaved' ? 'الصور نُزّلت لكن المتصفح لم يحفظها؛ ستُجلب عند الحاجة.' : backgroundPaused ? 'تجهيز الصور متوقف مؤقتًا لإعطاء الأولوية للعب والصوت' : <>نجهّز الصور بالخلفية · <bdi dir="ltr" style={{whiteSpace:'nowrap'}}>{number(images.ok)} / {number(images.total)}</bdi></>}</span>
       {phase === 'error' && <button type="button" onClick={() => setAttempt((value) => value + 1)}>إعادة المحاولة</button>}
       <button type="button" className="startup-background-close" aria-label="إخفاء حالة الصور" onClick={() => setStatusHidden(true)}>×</button>
     </aside>;
