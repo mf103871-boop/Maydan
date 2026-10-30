@@ -256,7 +256,7 @@ export function SocialHost() {
     window.addEventListener('maydan-social-locked', locked); return () => window.removeEventListener('maydan-social-locked', locked); }, [notify]);
   useEffect(() => { if (!host) return undefined; host.className = 'lamma-host'; document.body.appendChild(host); return () => host.remove(); }, [host]);
   useVisualViewport(host, { heightProperty: '--lamma-height', topProperty: '--lamma-top' });
-  useVisualViewport(pageHost, { heightProperty: '--lamma-page-height', topProperty: '--lamma-page-top' });
+  useVisualViewport(pageHost, { heightProperty: '--lamma-page-height', topProperty: '--lamma-page-top', relativeToTarget: true });
   useLayoutEffect(() => {
     const locate = () => setGameLauncherHost(document.querySelector('[data-social-game-launcher]'));
     locate();

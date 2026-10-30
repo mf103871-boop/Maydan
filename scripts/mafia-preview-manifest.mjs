@@ -50,9 +50,31 @@ function bytes(value, label) {
 export function assertMafiaPreviewConfig(config) {
   const target = MAFIA_PREVIEW_TARGET;
   keys(config, ['$schema', 'name', 'main', 'compatibility_date', 'workers_dev', 'assets', 'vars', 'durable_objects',
-    'migrations', 'd1_databases', 'r2_buckets', 'triggers', 'observability'], 'Preview');
+    'migrations', 'd1_databases', 'r2_buckets', 'triggers', 'observability', 'placement'], 'Preview');
   check(config.name === target.worker && config.main === 'server/full-worker.mjs' && config.workers_dev === true,
     'Exact preview Worker and entrypoint required.');
+  if (config.placement !== undefined) {
+    keys(config.placement, ['mode'], 'Placement');
+    check(config.placement.mode === 'smart', 'Only the reviewed Smart Placement experiment is allowed.');
+  }
+  if (config.observability !== undefined) {
+    const obs = config.observability;
+    keys(obs, ['enabled', 'head_sampling_rate', 'redact_query_string', 'logs', 'traces'], 'Observability');
+    check(obs.enabled === true && (obs.head_sampling_rate === undefined || obs.head_sampling_rate === 1), 'Keep the reviewed observability baseline.');
+    if (obs.redact_query_string !== undefined) check(obs.redact_query_string === true, 'Diagnostic query strings must remain redacted.');
+    if (obs.logs !== undefined) {
+      keys(obs.logs, ['enabled', 'head_sampling_rate', 'persist', 'invocation_logs'], 'Logs');
+      check(obs.logs.enabled === true && obs.logs.invocation_logs === false, 'Keep invocation logging disabled in this private preview.');
+      if (obs.logs.head_sampling_rate !== undefined) check(obs.logs.head_sampling_rate === 1, 'Unexpected log sampling change.');
+      if (obs.logs.persist !== undefined) check(obs.logs.persist === true, 'Unexpected log retention change.');
+    }
+    if (obs.traces !== undefined) {
+      keys(obs.traces, ['enabled', 'persist', 'head_sampling_rate'], 'Traces');
+      check(obs.redact_query_string === true && obs.traces.enabled === true && obs.traces.head_sampling_rate === 0.05,
+        'Only redacted five-percent diagnostic traces are reviewed.');
+      if (obs.traces.persist !== undefined) check(obs.traces.persist === true, 'Unexpected trace retention change.');
+    }
+  }
   const forbidExternal = value => {
     if (!value || typeof value !== 'object') return;
     check(!Object.hasOwn(value, 'script_name'), 'External script_name bindings are forbidden.');
@@ -83,9 +105,11 @@ export function assertMafiaPreviewConfig(config) {
   keys(config.assets, ['directory', 'binding', 'not_found_handling', 'run_worker_first'], 'Assets');
   check(config.assets.binding === 'ASSETS' && config.assets.directory === 'dist', 'Exact local preview assets required.');
   keys(config.vars, ['APP_ORIGIN', 'EXTRA_ORIGINS', 'APPLE_BUNDLE_ID', 'MAFIA_ENABLED', 'MAFIA_ACCEPT_NEW_MATCHES',
-    'MAFIA_PROGRESS_ENABLED', 'MAFIA_METRICS_ENABLED', 'MAFIA_RANKED_ENABLED', 'MAFIA_COMMUNITY_ENABLED', 'MAFIA_EXPERIMENTAL_ROLES_ENABLED', 'MAFIA_MAX_ACTIVE_ROOMS', 'MAFIA_MAX_VOICE_PARTICIPANTS', 'IOS_UPDATE_POLICY_ENABLED', 'GOOGLE_CLIENT_ID'], 'Variables');
+    'MAFIA_PROGRESS_ENABLED', 'MAFIA_METRICS_ENABLED', 'MAFIA_RANKED_ENABLED', 'MAFIA_COMMUNITY_ENABLED', 'MAFIA_EXPERIMENTAL_ROLES_ENABLED', 'MAFIA_MAX_ACTIVE_ROOMS', 'MAFIA_MAX_VOICE_PARTICIPANTS', 'IOS_UPDATE_POLICY_ENABLED', 'GOOGLE_CLIENT_ID', 'CONNECTION_METRICS_ENABLED', 'CONNECTION_METRICS_SAMPLE_RATE'], 'Variables');
   check(config.vars.APP_ORIGIN === target.origin && config.vars.EXTRA_ORIGINS === 'maydan://app', 'Exact preview origins required.');
   check(config.vars.IOS_UPDATE_POLICY_ENABLED === '0', 'Preview update policy must remain disabled.');
+  if (config.vars.CONNECTION_METRICS_ENABLED !== undefined) check(['0', '1'].includes(config.vars.CONNECTION_METRICS_ENABLED), 'Invalid connection metrics gate.');
+  if (config.vars.CONNECTION_METRICS_SAMPLE_RATE !== undefined) check(config.vars.CONNECTION_METRICS_SAMPLE_RATE === '0.1', 'Only the reviewed ten-percent diagnostic sampling is allowed.');
   check(['0', '1'].includes(config.vars.MAFIA_ENABLED), 'Explicit MAFIA_ENABLED gate required.');
   check(['0', '1'].includes(config.vars.MAFIA_ACCEPT_NEW_MATCHES), 'Explicit MAFIA_ACCEPT_NEW_MATCHES gate required.');
   check(['0', '1'].includes(config.vars.MAFIA_PROGRESS_ENABLED ?? '0'), 'Invalid Mafia progression gate.');

@@ -121,7 +121,7 @@
 .podium-rest .score-row { animation-delay: calc(1.2s + var(--n, 0) * 60ms); }
 
 /* screens */
-.screen { width: min(100%, 720px); margin: 0 auto; padding: calc(10px + var(--safe-top)) max(14px, var(--safe-right)) calc(28px + var(--safe-bottom) + var(--screen-bottom-reserve, 0px)) max(14px, var(--safe-left)); min-height: 100dvh; animation: screen-in var(--dur) var(--ease-out) both; }
+.screen { width: min(100%, 720px); margin: 0 auto; padding: calc(10px + var(--safe-top)) max(14px, var(--safe-right)) calc(28px + var(--safe-bottom) + var(--screen-bottom-reserve, 0px)) max(14px, var(--safe-left)); min-height: var(--app-viewport-height, 100dvh); animation: screen-in var(--dur) var(--ease-out) both; }
 .screen[data-dir="back"] { animation-name: screen-in-back; }
 @keyframes screen-in { from { opacity: 0; transform: translateX(calc(var(--flow, -1) * 14px)); } }
 @keyframes screen-in-back { from { opacity: 0; transform: translateX(calc(var(--flow, -1) * -12px)); } }

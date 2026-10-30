@@ -18,8 +18,10 @@ export function save(server, name, value) {
   try { localStorage.setItem(k, JSON.stringify(value)); return true; } catch { return false; }
 }
 export function clearSession(server, code) {
-  memory.delete(key(server, code));
-  try { localStorage.removeItem(key(server, code)); } catch { /* private browsing */ }
+  for (const name of [code, `roomOwner:${code}`]) {
+    memory.delete(key(server, name));
+    try { localStorage.removeItem(key(server, name)); } catch { /* private browsing */ }
+  }
   if (readSaved(server, 'lastRoom') === code) save(server, 'lastRoom', null);
 }
 // معرّف جهاز ثابت لاحتساب الغرفة المجانية لغير المسجّلين على الخادم؛ ليس سرًّا ولا هوية.

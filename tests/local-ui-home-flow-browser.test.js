@@ -27,6 +27,46 @@ const savedBadeeha = {
 };
 assert.ok(badeehaLogic.isValidSession(CATS, savedBadeeha));
 
+async function waitForProfileGeometry(page, timeout = 5000) {
+  await page.waitForFunction(() => {
+    const profile = document.querySelector('.home-profile');
+    if (!profile) return false;
+    // Visibility does not wait for the header's scale(.98) entrance frame.
+    // Even a reduced-motion animation needs a rendering tick to settle.
+    for (let node = profile; node; node = node.parentElement) {
+      if (node.getAnimations().some(animation =>
+        !['finished', 'idle'].includes(animation.playState) &&
+        animation.effect?.getTiming().iterations !== Infinity)) return false;
+    }
+    return parseFloat(getComputedStyle(profile).width) >= 72 && profile.offsetWidth >= 72 && profile.getBoundingClientRect().width >= 72;
+  }, undefined, { timeout });
+}
+
+test('Chromium/WebKit: profile geometry waits for real ancestor animation and still rejects undersized layout', { timeout: 30000 }, async () => {
+  const css = (await Promise.all(['src/shared/theme/tokens.css', 'src/shared/ui/ui.css', 'src/platform/platform.css', 'src/platform/screens/home-rebuild.css'].map(file => readFile(file, 'utf8')))).join('\n');
+  for (const engine of [chromium, webkit]) {
+    const browser = await engine.launch({ headless: true });
+    try {
+      const page = await browser.newPage({ viewport: { width: 390, height: 844 }, reducedMotion: 'reduce' });
+      await page.setContent(`<style>${css}</style><section class="screen home-screen"><header class="home-head"><button class="home-profile" aria-label="بروفايلي">🙂</button></header></section><script>
+        const header = document.querySelector('.home-head'); getComputedStyle(header).transform;
+        const entrance = header.getAnimations().find(animation => animation.animationName === 'ui-lift-in');
+        entrance.pause(); entrance.currentTime = 0; window.finishEntrance = () => entrance.finish();
+      </script>`);
+      assert.equal(await page.locator('.home-profile').evaluate(node => node.offsetWidth), 72);
+      assert.ok((await page.locator('.home-profile').boundingBox()).width < 72, 'the existing entrance scales its 72px layout before settling');
+      let settled = false;
+      const waiting = waitForProfileGeometry(page).then(() => { settled = true; });
+      await page.waitForTimeout(40);
+      assert.equal(settled, false, 'a visible but still transformed profile is not ready');
+      await page.evaluate(() => window.finishEntrance()); await waiting;
+      assert.ok((await page.locator('.home-profile').boundingBox()).width >= 72);
+      await page.locator('.home-profile').evaluate(node => { node.style.width = '71px'; node.style.flexBasis = '71px'; });
+      await assert.rejects(waitForProfileGeometry(page, 150), /Timeout/, 'waiting must not hide a persistent layout defect');
+    } finally { await browser.close(); }
+  }
+});
+
 test('Chromium/WebKit: compact Home, every mode, family setup/resume, reload and roster access', { timeout: 90000 }, async () => {
   const entry = `import React,{useState}from'react';import{createRoot}from'react-dom/client';
     import{PlatformContext}from'./src/platform/context.js';import{AccountContext,NULL_ACCOUNT}from'./src/shared/account/context.js';import{ProfileContext}from'./src/profiles/ProfileProvider.jsx';
@@ -78,6 +118,7 @@ test('Chromium/WebKit: compact Home, every mode, family setup/resume, reload and
           assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1), `${name}:${width} overflow`);
           const row = await page.locator('.home-game-row').first().boundingBox(), list = await page.locator('.home-game-list').boundingBox();
           assert.ok(Math.abs(row.width - list.width) < 2 && row.height < 150, `${name}:${width} horizontal row`);
+          await waitForProfileGeometry(page);
           assert.ok((await page.getByRole('button', { name: 'بروفايلي', exact: true }).boundingBox()).width >= 72);
           await page.screenshot({ path: path.join(proof, `${name}-home-${width}.png`), fullPage: true });
         }

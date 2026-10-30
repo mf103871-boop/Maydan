@@ -23,7 +23,7 @@ body:has(.mafia-online-shell){background:#0c1019}
 .mafia-create-heading{border-inline-start:3px solid var(--m-gold,#c7aa77);padding-inline-start:14px}
 .mafia-create-heading h2{margin:0 0 5px;color:var(--m-ink,#e9e5dc)}
 .mafia-room-shell .online-players li{background:#121b29;color:var(--m-ink,#e9e5dc);border:1px solid var(--m-border,#76829430);box-shadow:0 3px 0 #080c13}
-.mafia-room-shell .online-connection{color:#b4c5d6}.mafia-room-shell .online-connection.connected{color:#9ed7c2}
+.mafia-room-shell .online-connection{color:#b4c5d6;background:#253140}.mafia-room-shell .online-connection.connected{color:#9ed7c2;background:#173a31}
 .mafia-room-shell .online-invite{background:linear-gradient(135deg,#202839,#101722);border-color:#c7aa7744;color:var(--m-ink,#e9e5dc)}
 .mafia-room-shell .online-room-code{color:#e4c991;text-shadow:0 2px 3px #000}
 .mafia-room-shell .online-invite img{background:white;border-radius:12px;padding:5px}
@@ -31,8 +31,8 @@ body:has(.mafia-online-shell){background:#0c1019}
 @media(max-width:380px){.mafia-entry .online-intro{padding:14px;gap:10px}.mafia-entry .online-intro>.clay-stage{width:70px;min-width:60px}.mafia-entry .online-tabs>.btn{font-size:12px}.mafia-online-shell{border-radius:16px}}
 @media(prefers-reduced-motion:reduce){.mafia-entry .clay-idle,.mafia-entry .online-intro-copy{animation:none!important;transform:none!important}}
 /* Mafia alone owns its compact full-height room, without shrinking other games. */
-.mafia-online-shell:has(.mafia-compact-game:not(.is-finished)){width:100%;max-width:1100px;height:100dvh;min-height:0;padding:calc(4px + env(safe-area-inset-top,0px)) max(6px,env(safe-area-inset-right,0px)) calc(4px + env(safe-area-inset-bottom,0px)) max(6px,env(safe-area-inset-left,0px));gap:4px;border-radius:0;overflow:hidden}
-.mafia-room-shell:has(.mafia-compact-game:not(.is-finished)){height:calc(var(--mafia-visible-height,100dvh) - env(safe-area-inset-top,0px) - env(safe-area-inset-bottom,0px) - 8px - var(--startup-background-space,0px));min-height:210px;display:flex;flex-direction:column;gap:4px;overflow:hidden}
+.mafia-online-shell:has(.mafia-compact-game:not(.is-finished)){width:100%;max-width:1100px;height:var(--app-viewport-height,100dvh);min-height:0;padding:calc(4px + env(safe-area-inset-top,0px)) max(6px,env(safe-area-inset-right,0px)) calc(4px + env(safe-area-inset-bottom,0px)) max(6px,env(safe-area-inset-left,0px));gap:4px;border-radius:0;overflow:hidden}
+.mafia-room-shell:has(.mafia-compact-game:not(.is-finished)){height:calc(min(var(--mafia-visible-height,100dvh),var(--app-viewport-height,calc(100dvh - var(--startup-background-space,0px)))) - env(safe-area-inset-top,0px) - env(safe-area-inset-bottom,0px) - 8px);min-height:210px;display:flex;flex-direction:column;gap:4px;overflow:hidden}
 .mafia-room-shell .mafia-room-tools{min-height:44px;flex-shrink:0}.mafia-room-shell>.mafia-compact-game{flex:1;min-height:0}
 .mafia-room-shell .mafia-room-tools .btn{min-width:44px;min-height:44px;font-size:12px;padding:5px 9px}
 .mafia-room-shell .online-room-tools .online-connection{font-size:11px}.mafia-entry>.card{padding:10px!important}

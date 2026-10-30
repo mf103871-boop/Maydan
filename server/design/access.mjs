@@ -11,11 +11,14 @@ export function requireEditor(env, actor) {
 // A moderator or a group's owner/admin is deliberately not a Studio editor.
 export function writeGuard(env, actor, now) {
   requireEditor(env, actor);
+  // The request can wait for storage/D1 past a session deadline. Keep the
+  // request timestamp for audit data, but authorize against the write clock.
+  const clock = "MAX(?,CAST(ROUND((julianday('now')-2440587.5)*86400000) AS INTEGER))";
   return { sql: `? IN (SELECT value FROM json_each(?))
     AND EXISTS(SELECT 1 FROM users WHERE id=?)
     AND NOT EXISTS(SELECT 1 FROM account_deletions WHERE user_id=?)
     AND NOT EXISTS(SELECT 1 FROM moderation_suspensions WHERE user_id=?)
-    AND EXISTS(SELECT 1 FROM sessions WHERE id=? AND user_id=? AND expires_at>?
-      AND (revoked_at IS NULL OR revoked_at>?))`,
+    AND EXISTS(SELECT 1 FROM sessions WHERE id=? AND user_id=? AND expires_at>${clock}
+      AND (revoked_at IS NULL OR revoked_at>${clock}))`,
   args: [actor.userId, JSON.stringify(editorIds(env)), actor.userId, actor.userId, actor.userId, actor.sessionId, actor.userId, now, now] };
 }

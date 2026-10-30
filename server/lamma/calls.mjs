@@ -8,13 +8,37 @@ import { liveKitConfigured,connection,providerRequest } from './provider.mjs';
 import { afterCommit } from './after-commit.mjs';
 import { assertSocialAllowed, noMafiaMediaLeaseSql } from '../mafia-access.mjs';
 const noConflict=(c,u)=>`NOT EXISTS(SELECT 1 FROM social_call_participants p WHERE p.call_id=${c} AND p.state='active' AND NOT (${unblocked('p.user_id',u)}))`;
+function callView(c,participants,id){return {id:c.id,scope:c.scope,conversationId:c.conversation_id,initiatorId:c.initiator_id,status:c.status,createdAt:c.created_at,expiresAt:c.ring_until,participants:participants.map(p=>({userId:p.user_id,name:publicName(p.name),state:p.state,joinedAt:p.joined_at,leftAt:p.left_at,...(p.user_id===id?{deviceId:p.device_id}:{})}))};}
 export async function notifyCall(env,callId,reason){const users=await all(env,'SELECT user_id FROM social_call_participants WHERE call_id=?',callId);
   // Each recipient still passes the current membership/block check, but twelve
   // members no longer add twelve serial database round trips before ringing.
   const allowed=await Promise.all(users.map(async row=>{try{await getCall(env,row.user_id,callId);return row.user_id;}catch{return null;}}));
   await notifyUsers(env,allowed.filter(Boolean),{type:'call',callId,reason});}
-export async function getCall(env,id,callId){const c=await first(env,'SELECT * FROM social_calls WHERE id=?',userId(callId));if(!c)fail('NOT_FOUND',404);await requireScope(env,id,c.scope,c.conversation_id);if(!await first(env,`SELECT 1 WHERE ${noConflict(ident(callId),ident(id))} AND ${unblocked(ident(id),ident(c.initiator_id))}`))fail('CALL_UNAVAILABLE',409);const participants=await all(env,`SELECT p.user_id,p.state,p.device_id,p.joined_at,p.left_at,u.name FROM social_call_participants p JOIN users u ON u.id=p.user_id WHERE p.call_id=? AND ${unblocked('p.user_id',ident(id))}`,callId);return {id:c.id,scope:c.scope,conversationId:c.conversation_id,initiatorId:c.initiator_id,status:c.status,createdAt:c.created_at,expiresAt:c.ring_until,participants:participants.map(p=>({userId:p.user_id,name:publicName(p.name),state:p.state,joinedAt:p.joined_at,leftAt:p.left_at,...(p.user_id===id?{deviceId:p.device_id}:{})}))};}
-export async function listCalls(env,id,context){await sweepCalls(env,Date.now(),context);const rows=await all(env,"SELECT DISTINCT c.id FROM social_calls c LEFT JOIN social_call_participants p ON p.call_id=c.id WHERE c.status IN ('ringing','active') AND (p.user_id=? OR (c.scope='group' AND EXISTS(SELECT 1 FROM social_group_members gm WHERE gm.group_id=c.conversation_id AND gm.user_id=? AND gm.left_at IS NULL))) ORDER BY c.created_at DESC LIMIT 30",id,id);const calls=[];for(const r of rows){try{calls.push(await getCall(env,id,r.id));}catch(e){if(e.status!==404&&e.status!==409)throw e;}}return {calls};}
+export async function getCall(env,id,callId){const c=await first(env,'SELECT * FROM social_calls WHERE id=?',userId(callId));if(!c)fail('NOT_FOUND',404);await requireScope(env,id,c.scope,c.conversation_id);if(!await first(env,`SELECT 1 WHERE ${noConflict(ident(callId),ident(id))} AND ${unblocked(ident(id),ident(c.initiator_id))}`))fail('CALL_UNAVAILABLE',409);const participants=await all(env,`SELECT p.user_id,p.state,p.device_id,p.joined_at,p.left_at,u.name FROM social_call_participants p JOIN users u ON u.id=p.user_id WHERE p.call_id=? AND ${unblocked('p.user_id',ident(id))}`,callId);return callView(c,participants,id);}
+export async function listCalls(env,id,context){
+  await sweepCalls(env,Date.now(),context);
+  const actor=ident(id);
+  // Bound the call set before joining its participants. All membership, account,
+  // friendship and block predicates share the same fresh SQL snapshot; the old
+  // thirty-call loop performed four serial lookups for every visible call.
+  const rows=await all(env,`WITH visible_calls AS (
+    SELECT listed_call.* FROM social_calls listed_call WHERE listed_call.status IN ('ringing','active')
+    AND (listed_call.scope='group' OR EXISTS(SELECT 1 FROM social_call_participants own WHERE own.call_id=listed_call.id AND own.user_id=${actor}))
+    AND ((listed_call.scope='group' AND ${scopeAllowed('group','listed_call.conversation_id',actor)}) OR (listed_call.scope='direct' AND ${scopeAllowed('direct','listed_call.conversation_id',actor)}))
+    AND ${noConflict('listed_call.id',actor)} AND ${unblocked(actor,'listed_call.initiator_id')}
+    ORDER BY listed_call.created_at DESC,listed_call.id LIMIT 30
+  ) SELECT c.*,p.user_id AS participant_user_id,p.state AS participant_state,p.device_id AS participant_device_id,
+    p.joined_at AS participant_joined_at,p.left_at AS participant_left_at,u.id AS participant_account_id,u.name AS participant_name
+    FROM visible_calls c LEFT JOIN social_call_participants p ON p.call_id=c.id AND ${unblocked('p.user_id',actor)}
+    LEFT JOIN users u ON u.id=p.user_id ORDER BY c.created_at DESC,c.id,p.user_id`);
+  const calls=new Map();
+  for(const row of rows){
+    if(!calls.has(row.id))calls.set(row.id,{row,participants:[]});
+    if(row.participant_user_id&&row.participant_account_id)calls.get(row.id).participants.push({user_id:row.participant_user_id,name:row.participant_name,
+      state:row.participant_state,device_id:row.participant_device_id,joined_at:row.participant_joined_at,left_at:row.participant_left_at});
+  }
+  return {calls:[...calls.values()].map(c=>callView(c.row,c.participants,id))};
+}
 export async function startCall(env,id,body,context){
   await assertSocialAllowed(env,id);
   if(!liveKitConfigured(env))fail('CALLS_UNAVAILABLE',503);const scope=scopeOf(body.scope),conversationId=userId(body.conversationId),clientId=clientIdOf(body.clientId),deviceId=userId(body.deviceId);await requireScope(env,id,scope,conversationId);await sweepCalls(env,Date.now(),context);

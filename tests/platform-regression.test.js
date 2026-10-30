@@ -54,6 +54,41 @@ const { parseHash, navigate, back, getRoute, getDirection, setExitGuard, registe
 const flush = async (times = 4) => { for (let i = 0; i < times; i += 1) await new Promise((r) => setTimeout(r, 1)); };
 const start = (hash = '#/') => { env.reset(hash); resetRouterForTests(); };
 
+test('specialist lesson and hub keep distinct Back history without normalized duplicate entries', async () => {
+  start('#/online/mafia');
+  navigate('/tutorial/mafia?labs=1'); await flush();
+  navigate('/tutorial/mafia?lab=doctor'); await flush();
+  assert.equal(router.getPreviousPath(), '/tutorial/mafia?labs=1');
+  back(); await flush();
+  assert.equal(getRoute().params.labs, '1');
+  assert.equal(router.getPreviousPath(), '/online/mafia');
+  back(); await flush();
+  assert.equal(getRoute().path, '/online/mafia');
+});
+
+test('specialist lesson Back is guarded and restores the exact lesson before confirmation', async () => {
+  start('#/tutorial/mafia?labs=1');
+  navigate('/tutorial/mafia?lab=tracker'); await flush();
+  const targets = []; setExitGuard(target => { targets.push(target); return true; });
+  back(); await flush();
+  assert.deepEqual(targets, ['/tutorial/mafia?labs=1']);
+  assert.equal(getRoute().params.lab, 'tracker');
+  assert.equal(location.hash, '#/tutorial/mafia?lab=tracker');
+  setExitGuard(null); navigate(targets[0], { replace: true }); await flush();
+  assert.equal(getRoute().params.labs, '1');
+});
+
+test('specialist lesson modal Back closes its layer while retaining private lesson context', async () => {
+  start('#/tutorial/mafia?lab=doctor');
+  let closed = 0;
+  const dispose = registerBackLayer(() => { closed++; });
+  location.hash = '#/tutorial/mafia?labs=1'; await flush();
+  assert.equal(closed, 1);
+  assert.equal(location.hash, '#/tutorial/mafia?lab=doctor');
+  assert.equal(getRoute().params.lab, 'doctor');
+  dispose();
+});
+
 test('selected family mode survives Back through roster/instructions, reload and repeated navigation', async () => {
   start();
   navigate('/game/badeeha?mode=local'); await flush();

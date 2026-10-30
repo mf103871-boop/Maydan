@@ -18,7 +18,7 @@ import { callNative, isNativeShell, onNativeEvent } from './native.js';
 import { catalogDiagnostics } from './catalog-diagnostics.js';
 import { clearPaddleCustomer, loadPaddle, openCheckout, previewPrices, setPaddleCustomer } from './paddle.js';
 import { usePlatform } from '../../platform/context.js';
-import { navigate, useRoute } from '../../platform/router.js';
+import { getRoute, navigate, useRoute } from '../../platform/router.js';
 import { rememberProfileReturn, consumeProfileReturn } from './return-path.js';
 import { beginAuthAttempt, currentAuthAttempt, clearAuthAttempt } from './attempt.js';
 import { clearDeletedTutorialAccount } from '../../games/mafia/tutorial/progress.js';
@@ -78,6 +78,8 @@ export function AccountProvider({ children }) {
 
   const sessionRef = useRef(session);
   const authEpochRef = useRef(0);
+  const mountedRef = useRef(true);
+  const busyOwnerRef = useRef(null);
   const meRef = useRef(me);
   meRef.current = me;
   const fetchedRef = useRef(cached.fetchedAt);
@@ -123,6 +125,10 @@ export function AccountProvider({ children }) {
 
   const clearLocalAuth = useCallback(() => {
     authEpochRef.current++;
+    busyOwnerRef.current = null;
+    setBusy(false); setActivationPending(false); setError(null);
+    authWaiterRef.current?.(null, 'PURCHASE_CANCELLED');
+    clearAuthAttempt();
     clearPaddleCustomer();
     setPaddleIdentity(null);
     accountStore.clearAuth();
@@ -144,6 +150,29 @@ export function AccountProvider({ children }) {
     } };
   }, [applySession]);
 
+  // An async operation belongs to an identity generation, not whichever token
+  // happens to be current when its native sheet/network response returns.
+  const captureAuth = useCallback(() => ({ epoch: authEpochRef.current, server: resolveAccountServer(), userId: meRef.current?.user?.id || null }), []);
+  const ownsAuth = useCallback(owner => !!owner && mountedRef.current && owner.epoch === authEpochRef.current && owner.server === resolveAccountServer() && (!owner.userId || owner.userId === meRef.current?.user?.id), []);
+  const requireAuthOwner = useCallback(owner => { if (!ownsAuth(owner)) throw new ClientError('PURCHASE_CANCELLED'); }, [ownsAuth]);
+  const ownedOptions = useCallback(owner => { requireAuthOwner(owner); return { ...options(), server: owner.server }; }, [options, requireAuthOwner]);
+  const startBusy = useCallback(value => { const owner = Symbol(value); busyOwnerRef.current = owner; setBusy(value); return owner; }, []);
+  const finishBusy = useCallback(owner => { if (mountedRef.current && busyOwnerRef.current === owner) { busyOwnerRef.current = null; setBusy(false); } }, []);
+  useEffect(() => {
+    const lifetime = { mounted: mountedRef, epoch: authEpochRef, busy: busyOwnerRef, waiter: authWaiterRef };
+    lifetime.mounted.current = true;
+    return () => { lifetime.mounted.current = false; lifetime.epoch.current++; lifetime.busy.current = null; lifetime.waiter.current?.(null, 'PURCHASE_CANCELLED'); };
+  }, []);
+
+  const deliverOwnedTransaction = useCallback((jws, owner, active = () => true) => {
+    const requireCurrent = () => { requireAuthOwner(owner); if (!active()) throw new ClientError('PURCHASE_CANCELLED'); };
+    return deliverAppleTransaction(jws, {
+      submit: value => { requireCurrent(); const sent = ownedOptions(owner); return postAppleTransaction(value, sent); },
+      apply: next => { requireCurrent(); applyMe(next, owner.epoch); },
+      acknowledge: value => { requireCurrent(); return callNative('finishTransaction', { jws: value }, { timeout: 5_000 }); },
+    }).then(next => { requireCurrent(); return next; });
+  }, [requireAuthOwner, ownedOptions, applyMe]);
+
   const handleError = useCallback((err) => {
     const code = codeOf(err);
     if (isAuthError(code)) clearLocalAuth();
@@ -163,9 +192,11 @@ export function AccountProvider({ children }) {
 
   // Reuse session rotation, guarding late authentication failures across accounts.
   const requestAuthenticated = useCallback(async (path, settings = {}) => {
+    const owner = captureAuth();
     const epoch = authEpochRef.current;
     const sent = sessionRef.current;
-    try { return await request(path, { ...settings, ...options() }); }
+    const send = async () => { const result = await request(path, { ...settings, ...ownedOptions(owner) }); if (!ownsAuth(owner)) throw new ClientError('STALE_ACCOUNT'); return result; };
+    try { return await send(); }
     catch (error) {
       // A native call can renew its credential while WebKit is suspended. An
       // auth rejection performs no mutation, so retry it once with that canonical
@@ -176,7 +207,7 @@ export function AccountProvider({ children }) {
           const stored = await callNative('socialStoredSession', {}, { timeout: 5000 });
           if (epoch === authEpochRef.current && sessionRef.current && stored?.userId === meRef.current?.user?.id && stored.token) {
             if (sessionRef.current === sent && stored.token !== sent) applySession(stored.token);
-            if (sessionRef.current !== sent) { retrying = true; return await request(path, { ...settings, ...options() }); }
+            if (sessionRef.current !== sent) { retrying = true; return await send(); }
           }
         } catch (retryError) {
           if (retrying && !isAuthError(codeOf(retryError))) throw retryError;
@@ -185,20 +216,22 @@ export function AccountProvider({ children }) {
       if (epoch === authEpochRef.current && isAuthError(codeOf(error))) handleError(error);
       throw error;
     }
-  }, [options, handleError, native, applySession]);
+  }, [captureAuth, ownedOptions, ownsAuth, handleError, native, applySession]);
 
   // ── التحديث ─────────────────────────────────────────────────────────────
   const flushPending = useCallback(async () => {
     const stored = accountStore.readTrials();
     if (!stored.pending.length || !sessionRef.current || accountOffline()) return;
+    const owner = captureAuth();
     try {
-      const result = await mergeTrialsRequest(stored.pending, options());
+      const result = await mergeTrialsRequest(stored.pending, ownedOptions(owner));
+      if (!ownsAuth(owner)) return;
       setLocalTrials(accountStore.clearPending(stored.pending));
       applyTrials(result && result.trials);
     } catch (err) {
-      if (isAuthError(codeOf(err))) clearLocalAuth();
+      if (ownsAuth(owner) && isAuthError(codeOf(err))) clearLocalAuth();
     }
-  }, [options, applyTrials, clearLocalAuth]);
+  }, [captureAuth, ownedOptions, ownsAuth, applyTrials, clearLocalAuth]);
 
   const refresh = useCallback(async () => {
     if (!sessionRef.current || accountOffline()) return null;
@@ -220,41 +253,46 @@ export function AccountProvider({ children }) {
   }, [requestAuthenticated, applyMe, flushPending, clearLocalAuth]);
 
   // بعد أي دخول ناجح: خزّن الجلسة، ادمج علامات هذا الجهاز، ثم رحّب باللاعب.
-  const afterSignIn = useCallback(async (result) => {
+  const afterSignIn = useCallback(async (result, owner = captureAuth()) => {
+    requireAuthOwner(owner);
     if (!result || !result.session || !result.session.token) throw new ClientError('PROVIDER');
     authEpochRef.current++;
+    busyOwnerRef.current = null;
+    setBusy(false); setActivationPending(false); setError(null);
     clearPaddleCustomer();
     setPaddleIdentity(null);
     meRef.current = null;
     setMe(null);
     applySession(result.session.token);
     if (result.me) applyMe(result.me);
+    Object.assign(owner, captureAuth());
     setReady(true);
     const stored = accountStore.readTrials();
     const games = [...new Set([...Object.keys(stored.marks), ...stored.pending])].filter((g) => TRIAL_GAMES.includes(g));
     if (games.length) {
       try {
-        const merged = await mergeTrialsRequest(games, options());
+        const merged = await mergeTrialsRequest(games, ownedOptions(owner));
+        if (!ownsAuth(owner)) return null;
         setLocalTrials(accountStore.clearPending(games));
         applyTrials(merged && merged.trials);
       } catch (err) { /* تبقى محليًا وتُدمج لاحقًا */ }
     }
+    if (!ownsAuth(owner)) return null;
     const name = (result.me && result.me.user && result.me.user.name) || '';
     toast(name ? `أهلًا ${name}` : 'أهلًا بك');
     return result.me || null;
-  }, [applySession, applyMe, applyTrials, options, toast]);
+  }, [captureAuth, requireAuthOwner, ownedOptions, ownsAuth, applySession, applyMe, applyTrials, toast]);
 
-  const consumeCode = useCallback(async (code, client) => {
-    const epoch = authEpochRef.current;
+  const consumeCode = useCallback(async (code, client, owner = captureAuth()) => {
     // The attempt secret this browser generated before leaving; the server accepts the
     // code only together with it. It is cleared whether or not the exchange succeeds.
     const attempt = currentAuthAttempt();
     let result;
     try { result = await exchangeCode(code, client, undefined, attempt); }
-    finally { clearAuthAttempt(); }
-    if (epoch !== authEpochRef.current) throw new ClientError('PURCHASE_CANCELLED');
-    return afterSignIn(result);
-  }, [afterSignIn]);
+    finally { if (currentAuthAttempt() === attempt) clearAuthAttempt(); }
+    requireAuthOwner(owner);
+    return afterSignIn(result, owner);
+  }, [captureAuth, requireAuthOwner, afterSignIn]);
 
   // ── المنتجات والأسعار (كسول: عند فتح الجدار أو بطاقة الإعدادات) ─────────
   const applyNativeCatalog = useCallback((status, next, code = null, diagnostics = null) => {
@@ -411,18 +449,21 @@ export function AccountProvider({ children }) {
 
   // الغلاف يبثّ authReturn بالرمز، أو بخطأ (إلغاء المستخدم مثلًا) فيُرفض الانتظار فورًا.
   const waitForAuthReturn = useCallback((timeout = 5 * 60_000) => new Promise((resolve, reject) => {
-    const timer = setTimeout(() => { authWaiterRef.current = null; reject(new ClientError('NETWORK')); }, timeout);
-    authWaiterRef.current = (code, error) => {
+    authWaiterRef.current?.(null, 'PURCHASE_CANCELLED');
+    const timer = setTimeout(() => { if (authWaiterRef.current === waiter) authWaiterRef.current = null; reject(new ClientError('NETWORK')); }, timeout);
+    const waiter = (code, error) => {
       clearTimeout(timer);
-      authWaiterRef.current = null;
+      if (authWaiterRef.current === waiter) authWaiterRef.current = null;
       if (error) reject(new ClientError(error)); else resolve(code);
     };
+    authWaiterRef.current = waiter;
   }), []);
 
   const signIn = useCallback(async (provider = 'apple') => {
+    const owner = captureAuth();
     setError(null);
     if (accountOffline()) { setError('OFFLINE'); return null; }
-    setBusy('signin');
+    const activity = startBusy('signin');
     try {
       if (!native) {
         // الويب: الخادم يتولّى المزوّد ثم يعيدنا إلى #/auth?code=. قبل المغادرة
@@ -431,6 +472,7 @@ export function AccountProvider({ children }) {
         if (!url) throw new ClientError('OFFLINE');
         try {
           const config = await loadSignInProviders({ retry: true });
+          requireAuthOwner(owner);
           if (!config) throw new ClientError(providerConfigRef.current.error || 'NETWORK');
           if (signInProviders(config, 'web')?.[provider] === false) throw new ClientError('PROVIDER');
         }
@@ -439,46 +481,58 @@ export function AccountProvider({ children }) {
           throw err; // لا نغادر الصفحة إن فشل فحص الخادم، حتى بعد تحميل إعدادات سابقة.
         }
         if (typeof location !== 'undefined') {
+          requireAuthOwner(owner);
           try { rememberProfileReturn(sessionStorage, location.hash); } catch { /* Storage may be unavailable. */ }
           location.assign(url);
         }
         return null;
       }
       const nativeConfig = await loadSignInProviders({ retry: true });
+      requireAuthOwner(owner);
       if (!nativeConfig) throw new ClientError(providerConfigRef.current.error || 'NETWORK');
       if (signInProviders(nativeConfig, 'ios')?.[provider] === false) throw new ClientError('PROVIDER');
       if (provider === 'apple') {
         const payload = await callNative('signInApple', {}, { timeout: NATIVE_SHEET_TIMEOUT });
-        const result = await appleNative(payload || {}, { onSession: applySession });
-        return await afterSignIn(result);
+        requireAuthOwner(owner);
+        // A login response creates a new principal, unlike same-account session
+        // rotation. Adopt its token and identity together in afterSignIn only.
+        const result = await appleNative(payload || {});
+        requireAuthOwner(owner);
+        return await afterSignIn(result, owner);
       }
       const url = authStartUrl(provider, { client: 'ios', returnUrl: 'maydan://auth', attempt: beginAuthAttempt() });
       if (!url) throw new ClientError('OFFLINE');
       const waiting = waitForAuthReturn();
-      await callNative('openAuth', { url });
-      const code = await waiting;
-      return await consumeCode(code, 'ios');
+      // Attach a rejection handler before openAuth: an opening failure or an
+      // account switch can cancel this waiter before it is awaited below.
+      waiting.catch(() => {});
+      const waiter = authWaiterRef.current;
+      try {
+        await callNative('openAuth', { url }); requireAuthOwner(owner);
+        const code = await waiting; requireAuthOwner(owner);
+        return await consumeCode(code, 'ios', owner);
+      } finally { if (authWaiterRef.current === waiter) waiter(null, 'PURCHASE_CANCELLED'); }
     } catch (err) {
+      if (!ownsAuth(owner)) return null;
       const code = handleError(err);
       if (code !== 'PURCHASE_CANCELLED') toast(accountErrorText(code));
       return null;
     } finally {
-      setBusy(false);
+      finishBusy(activity);
     }
-  }, [native, loadSignInProviders, applySession, afterSignIn, consumeCode, waitForAuthReturn, handleError, toast]);
+  }, [captureAuth, ownsAuth, requireAuthOwner, startBusy, finishBusy, native, loadSignInProviders, afterSignIn, consumeCode, waitForAuthReturn, handleError, toast]);
 
   const signOut = useCallback(async () => {
-    setBusy('signout');
     const requestOptions = options();
     const nativeLogout = clearLocalAuth(); // Hide private state immediately; unregister native devices before revoking its session.
+    const owner = captureAuth(), activity = startBusy('signout');
     try { await nativeLogout; if (requestOptions.token && !accountOffline()) await signout(requestOptions); }
     catch (err) { /* الخروج محلي في كل الأحوال */ }
     finally {
-      setBusy(false);
-      setError(null);
-      toast('سجّلت الخروج');
+      if (ownsAuth(owner)) { setError(null); toast('سجّلت الخروج'); }
+      finishBusy(activity);
     }
-  }, [options, clearLocalAuth, toast]);
+  }, [options, clearLocalAuth, captureAuth, ownsAuth, startBusy, finishBusy, toast]);
 
   const purchase = useCallback(async (plan = 'monthly') => {
     if (purchaseInFlightRef.current) return null;
@@ -496,28 +550,31 @@ export function AccountProvider({ children }) {
       }
     }
     purchaseInFlightRef.current = true;
+    let owner = captureAuth(), activity = null;
     try {
       // داخل التطبيق: الاشتراك يُربط بحساب ليعمل على كل الأجهزة، فالدخول بحساب Apple
       // (ورقة واحدة) يسبق ورقة المتجر حين لا جلسة.
       if (native && !sessionRef.current) {
         const signed = await signIn('apple');
         if (!signed || !sessionRef.current) return null;
+        owner = captureAuth();
       }
-      setBusy('purchase');
-      const epoch = authEpochRef.current;
+      requireAuthOwner(owner);
+      activity = startBusy('purchase');
+      const epoch = owner.epoch;
       if (!sessionRef.current) throw new ClientError('AUTH_REQUIRED');
       // An old sandbox entitlement may still be cached after a live cutover.
       // Require a fresh server answer before checking duplicates or opening a
       // payment sheet; a network failure leaves the cached history untouched.
-      const current = await getMe(options());
-      if (epoch !== authEpochRef.current) throw new ClientError('PURCHASE_CANCELLED');
+      const current = await getMe(ownedOptions(owner));
+      requireAuthOwner(owner);
       applyMe(current, epoch);
       if (isPremium(current) && current.premium.source !== 'promo') throw new ClientError('ALREADY_SUBSCRIBED');
       if (native) {
         // Do not open a payment sheet until this server can verify its result.
         // Existing transactions still restore/replay independently of this gate.
-        const config = await getBillingConfig(options());
-        if (epoch !== authEpochRef.current) throw new ClientError('PURCHASE_CANCELLED');
+        const config = await getBillingConfig(ownedOptions(owner));
+        requireAuthOwner(owner);
         setBilling(config || null);
         if (config?.apple?.purchasesConfigured !== true) throw new ClientError('APPLE_PURCHASES_UNAVAILABLE');
         // appAccountToken = معرّف المستخدم: الخادم يرفض ربط المعاملة بحساب آخر.
@@ -527,64 +584,65 @@ export function AccountProvider({ children }) {
         const product = catalog.products?.[plan];
         if (catalog.status !== 'ready' || product?.id !== PRODUCTS[plan] || !product?.price?.trim()) throw new ClientError('APPLE_PRODUCTS_UNAVAILABLE');
         const result = await callNative('purchase', { productId: PRODUCTS[plan], plan, userId }, { timeout: NATIVE_SHEET_TIMEOUT });
+        requireAuthOwner(owner);
         const jws = (result && (result.jws || result.transaction)) || null;
         if (!jws) throw new ClientError('PURCHASE_PENDING');
-        const next = await deliverAppleTransaction(jws, {
-          submit: (value) => postAppleTransaction(value, options()), apply: applyMe,
-          acknowledge: (value) => callNative('finishTransaction', { jws: value }, { timeout: 5_000 }),
-        });
+        const next = await deliverOwnedTransaction(jws, owner);
+        requireAuthOwner(owner);
         if (!isPremium(next)) throw new ClientError('ACTIVATION_PENDING');
         toast('فُعِّل ميدان بلس');
         closePaywall();
         return next;
       }
       if (!sessionRef.current) throw new ClientError('AUTH_REQUIRED');
-      const config = await getBillingConfig(options());
-      if (epoch !== authEpochRef.current) throw new ClientError('PURCHASE_CANCELLED');
+      const config = await getBillingConfig(ownedOptions(owner));
+      requireAuthOwner(owner);
       setBilling(config || null);
       if (config?.paddle?.checkoutEnabled === false) throw new ClientError('CHECKOUT_DISABLED');
-      const checkout = await createPaddleCheckout(plan, options());
-      if (epoch !== authEpochRef.current) throw new ClientError('PURCHASE_CANCELLED');
+      const checkout = await createPaddleCheckout(plan, ownedOptions(owner));
+      requireAuthOwner(owner);
       await openCheckout({ transactionId: checkout.transactionId, clientToken: checkout.clientToken, environment: checkout.environment, checkoutEnabled: config?.paddle?.checkoutEnabled });
-      if (epoch !== authEpochRef.current) throw new ClientError('PURCHASE_CANCELLED');
+      requireAuthOwner(owner);
       setActivationPending(true);
-      const next = await waitForEntitlement(refresh);
+      const next = await waitForEntitlement(async () => { requireAuthOwner(owner); const next = await refresh(); requireAuthOwner(owner); return next; });
+      requireAuthOwner(owner);
       setActivationPending(false);
       toast(checkout.environment === 'sandbox' ? 'فُعّل اشتراك الاختبار — لم يُخصم مبلغ حقيقي' : 'فُعِّل ميدان بلس');
       closePaywall();
       return next;
     } catch (err) {
+      if (!ownsAuth(owner)) return null;
       const code = handleError(err);
       if (native && code === 'APPLE_PRODUCTS_UNAVAILABLE') applyNativeCatalog('unavailable', null, code);
       if (code !== 'PURCHASE_CANCELLED') toast(accountErrorText(code));
       return null;
     } finally {
       purchaseInFlightRef.current = false;
-      setBusy(false);
+      finishBusy(activity);
     }
-  }, [native, options, applyMe, refresh, handleError, closePaywall, toast, signIn, activationPending, applyNativeCatalog]);
+  }, [captureAuth, requireAuthOwner, ownsAuth, ownedOptions, startBusy, finishBusy, deliverOwnedTransaction, native, applyMe, refresh, handleError, closePaywall, toast, signIn, activationPending, applyNativeCatalog]);
 
   const restore = useCallback(async () => {
     setError(null);
     setRestoreDiagnostics(null);
     if (!native) { setError('NOT_ELIGIBLE'); return null; }
     if (!sessionRef.current) { setError('AUTH_REQUIRED'); toast(accountErrorText('AUTH_REQUIRED')); return null; }
-    setBusy('restore');
+    const owner = captureAuth(), activity = startBusy('restore');
     let stage = 'native-bridge';
     try {
       const jwsList = listOf(await callNative('restore', {}, { timeout: NATIVE_SHEET_TIMEOUT }), 'transactions').filter((value) => typeof value === 'string' && value);
+      requireAuthOwner(owner);
       stage = 'native-entitlements';
       if (!jwsList.length) throw new ClientError('RESTORE_EMPTY');
       stage = 'server-verify';
       let next = null;
-      for (const jws of jwsList) next = await deliverAppleTransaction(jws, {
-        submit: (value) => postAppleTransaction(value, options()), apply: applyMe,
-        acknowledge: (value) => callNative('finishTransaction', { jws: value }, { timeout: 5_000 }),
-      });
-      if (next) applyMe(next);
+      for (const jws of jwsList) next = await deliverOwnedTransaction(jws, owner);
+      requireAuthOwner(owner);
+      if (next) applyMe(next, owner.epoch);
       toast(isPremium(next) ? 'استُعيد اشتراكك' : accountErrorText('RESTORE_EMPTY'));
       return next;
     } catch (err) {
+      if (!ownsAuth(owner)) return null;
       const nativeDetails = err?.nativeDiagnostics;
       const outcome = nativeDetails?.outcome || err?.nativeFailure || (codeOf(err) === 'RESTORE_EMPTY' ? 'empty' : 'native-error');
       setRestoreDiagnostics(catalogDiagnostics({ ...nativeDetails, stage: nativeDetails?.stage || stage, outcome }));
@@ -592,11 +650,12 @@ export function AccountProvider({ children }) {
       toast(accountErrorText(code));
       return null;
     } finally {
-      setBusy(false);
+      finishBusy(activity);
     }
-  }, [native, options, applyMe, handleError, toast]);
+  }, [captureAuth, requireAuthOwner, ownsAuth, startBusy, finishBusy, deliverOwnedTransaction, native, applyMe, handleError, toast]);
 
   const manageSubscription = useCallback(async () => {
+    const owner = captureAuth();
     setError(null);
     try {
       if (meRef.current?.premium?.source === 'apple') {
@@ -605,24 +664,27 @@ export function AccountProvider({ children }) {
         return;
       }
       if (native) throw new ClientError('MANAGE_ON_WEB');
-      const result = await getPaddlePortal(options());
+      const result = await getPaddlePortal(ownedOptions(owner));
+      requireAuthOwner(owner);
       if (result && result.url && typeof location !== 'undefined') location.assign(result.url);
     } catch (err) {
+      if (!ownsAuth(owner)) return;
       const code = handleError(err);
       toast(accountErrorText(code));
     }
-  }, [native, options, handleError, toast]);
+  }, [captureAuth, requireAuthOwner, ownsAuth, ownedOptions, native, handleError, toast]);
 
   // رمز الهدية: الخادم يتحقق بعد تسجيل الدخول، ولا نحفظ الرمز محليًا.
   const redeem = useCallback(async (code) => {
     if (!sessionRef.current) return 'AUTH_REQUIRED';
     if (accountOffline()) return 'OFFLINE';
-    const epoch = authEpochRef.current;
+    const owner = captureAuth();
     try {
-      const next = await redeemRequest(code, options());
-      if (epoch !== authEpochRef.current) return 'PURCHASE_CANCELLED';
-      if (next) applyMe(next, epoch);
+      const next = await redeemRequest(code, ownedOptions(owner));
+      if (!ownsAuth(owner)) return 'PURCHASE_CANCELLED';
+      if (next) applyMe(next, owner.epoch);
     } catch (err) {
+      if (!ownsAuth(owner)) return 'PURCHASE_CANCELLED';
       const failure = codeOf(err);
       if (isAuthError(failure)) clearLocalAuth();
       return failure === 'NOT_FOUND' ? 'REDEEM_INVALID' : failure;
@@ -630,9 +692,12 @@ export function AccountProvider({ children }) {
     closePaywall();
     toast(`فُعِّل ${PLUS_NAME}`);
     return true;
-  }, [options, applyMe, clearLocalAuth, closePaywall, toast]);
+  }, [captureAuth, ownsAuth, ownedOptions, applyMe, clearLocalAuth, closePaywall, toast]);
 
-  const deleteAccount = useCallback(async () => {
+  const deleteAccount = useCallback(async (expectedUserId) => {
+    // The confirmation may have rendered before a storage/native account swap.
+    // Never reinterpret that old confirmation as consent to delete the new user.
+    if (expectedUserId != null && expectedUserId !== meRef.current?.user?.id) return false;
     const epoch = authEpochRef.current;
     const deletedOwner = { userId: meRef.current?.user?.id, server: resolveAccountServer() };
     let clearedOwner = false;
@@ -688,6 +753,10 @@ export function AccountProvider({ children }) {
       const token = accountStore.readSession();
       if (token === sessionRef.current) return;
       authEpochRef.current++;
+      busyOwnerRef.current = null;
+      setBusy(false); setActivationPending(false); setError(null);
+      authWaiterRef.current?.(null, 'PURCHASE_CANCELLED');
+      clearAuthAttempt();
       clearPaddleCustomer();
       setPaddleIdentity(null);
       sessionRef.current = token;
@@ -768,35 +837,35 @@ export function AccountProvider({ children }) {
     if (authWaiterRef.current) { authWaiterRef.current(code); return; }
     if (consumedRef.current.has(code)) return;
     consumedRef.current.add(code);
-    consumeCode(code, 'ios').catch((err) => { const c = handleError(err); toast(accountErrorText(c)); });
-  }), [consumeCode, handleError, toast]);
+    const owner = captureAuth();
+    consumeCode(code, 'ios', owner).catch((err) => { if (!ownsAuth(owner)) return; const c = handleError(err); if (c !== 'PURCHASE_CANCELLED') toast(accountErrorText(c)); });
+  }), [captureAuth, ownsAuth, consumeCode, handleError, toast]);
 
   // معاملة من المتجر خارج الشراء المباشر (تجديد، شراء معلّق اكتمل): الخادم يتحقق ويحدّث الاستحقاق.
   useEffect(() => onNativeEvent('transaction', (payload) => {
     const jws = payload && typeof payload === 'object' ? payload.jws : null;
     if (typeof jws !== 'string' || !jws || !sessionRef.current || accountOffline()) return;
-    deliverAppleTransaction(jws, {
-      submit: (value) => postAppleTransaction(value, options()), apply: applyMe,
-      acknowledge: (value) => callNative('finishTransaction', { jws: value }, { timeout: 5_000 }),
-    })
-      .catch((err) => { if (isAuthError(codeOf(err))) clearLocalAuth(); });
-  }), [options, applyMe, clearLocalAuth]);
+    const owner = captureAuth();
+    deliverOwnedTransaction(jws, owner)
+      .catch((err) => { if (ownsAuth(owner) && isAuthError(codeOf(err))) clearLocalAuth(); });
+  }), [captureAuth, ownsAuth, deliverOwnedTransaction, clearLocalAuth]);
 
   // Replay after sign-in/start and on returning online; StoreKit holds transactions until acknowledgment.
   useEffect(() => {
     if (!native || !session) return undefined;
-    let running = false;
+    const owner = captureAuth();
+    let running = false, active = true;
     const replay = async () => {
-      if (running || accountOffline()) return;
+      if (!active || !ownsAuth(owner) || running || accountOffline()) return;
       running = true;
       try {
         const transactions = listOf(await callNative('pendingTransactions'), 'transactions');
+        if (!active || !ownsAuth(owner)) return;
         for (const jws of transactions) {
+          if (!active || !ownsAuth(owner)) return;
           if (typeof jws !== 'string') continue;
-          try { await deliverAppleTransaction(jws, {
-            submit: (value) => postAppleTransaction(value, options()), apply: applyMe,
-            acknowledge: (value) => callNative('finishTransaction', { jws: value }, { timeout: 5_000 }),
-          }); } catch { /* A transaction for another account must not block the remaining purchases. */ }
+          try { await deliverOwnedTransaction(jws, owner, () => active); }
+          catch { /* A transaction for another account must not block the remaining purchases. */ }
         }
       } catch { /* Retry on next launch/online/foreground. */ }
       finally { running = false; }
@@ -805,28 +874,31 @@ export function AccountProvider({ children }) {
     const visible = () => { if (document.visibilityState === 'visible') replay(); };
     window.addEventListener('online', replay);
     document.addEventListener('visibilitychange', visible);
-    return () => { window.removeEventListener('online', replay); document.removeEventListener('visibilitychange', visible); };
-  }, [native, session, options, applyMe]);
+    return () => { active = false; window.removeEventListener('online', replay); document.removeEventListener('visibilitychange', visible); };
+  }, [native, session, captureAuth, ownsAuth, deliverOwnedTransaction]);
 
   // عودة الويب: #/auth?code=… رمز لمرة واحدة عمره 60 ثانية.
   const authCode = route && route.name === 'auth' ? (route.params && route.params.code) || '' : '';
   useEffect(() => {
     if (!authCode || consumedRef.current.has(authCode)) return;
     consumedRef.current.add(authCode);
+    const owner = captureAuth(), activity = startBusy('signin');
     let alive = true;
     (async () => {
-      setBusy('signin');
-      try { await consumeCode(authCode, native ? 'ios' : 'web'); }
-      catch (err) { const code = handleError(err); toast(accountErrorText(code)); }
+      try { await consumeCode(authCode, native ? 'ios' : 'web', owner); }
+      catch (err) { if (alive && ownsAuth(owner)) { const code = handleError(err); if (code !== 'PURCHASE_CANCELLED') toast(accountErrorText(code)); } }
       finally {
-        if (alive) setBusy(false);
-        let target = '/';
-        try { target = consumeProfileReturn(sessionStorage); } catch { /* Keep the default route. */ }
-        navigate(target, { replace: true });
+        finishBusy(activity);
+        const current = getRoute();
+        if (alive && ownsAuth(owner) && current.name === 'auth' && current.params.code === authCode) {
+          let target = '/';
+          try { target = consumeProfileReturn(sessionStorage); } catch { /* Keep the default route. */ }
+          navigate(target, { replace: true });
+        }
       }
     })();
     return () => { alive = false; };
-  }, [authCode, native, consumeCode, handleError, toast]);
+  }, [authCode, native, captureAuth, ownsAuth, startBusy, finishBusy, consumeCode, handleError, toast]);
 
   // ── القيمة ──────────────────────────────────────────────────────────────
   const premium = isPremium(me);

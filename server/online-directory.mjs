@@ -73,9 +73,9 @@ export async function updateOnlineDirectory(env, room, now = Date.now()) {
     return;
   }
   const capacity = roomCapacity(room), status = room.phase === 'lobby' ? 'waiting' : 'playing';
-  // Existing engines admit a waiting seat for the following match. Their own
-  // joinRoom remains the final authority; the directory reserves no seats.
-  const joinable = members.length < capacity;
+  // Ersomha protects each participant's word history by admitting new seats
+  // only in the lobby. Other engines can admit a seat for the next match.
+  const joinable = members.length < capacity && (status === 'waiting' || room.game !== 'ersomha');
   await env.DB.prepare(`INSERT INTO online_public_rooms
     (room_code,room_key,game,room_name,host_user_id,member_user_ids,players,capacity,minimum,status,joinable,created_at,updated_at,expires_at)
     VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?) ON CONFLICT(room_code) DO UPDATE SET

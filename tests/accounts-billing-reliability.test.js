@@ -170,10 +170,11 @@ test('native transaction finish follows server save; failed save never acknowled
   let finished = false;
   await assert.rejects(deliverAppleTransaction('signed', { submit: async () => { throw new Error('offline'); }, apply: () => {}, acknowledge: async () => { finished = true; } }), /offline/);
   assert.equal(finished, false);
-  // A transaction bound to another account is finished so StoreKit stops replaying it.
+  // Token mismatch can be rejected before any account receives the purchase.
+  // The rightful account must retain StoreKit's automatic unfinished replay.
   let terminal = 0;
   await assert.rejects(deliverAppleTransaction('signed', { submit: async () => { throw Object.assign(new Error('ALREADY_LINKED'), { code: 'ALREADY_LINKED' }); }, apply: () => {}, acknowledge: async () => { terminal += 1; } }), /ALREADY_LINKED/);
-  assert.equal(terminal, 1);
+  assert.equal(terminal, 0);
   const swift = readFileSync('ios/Maydan/StoreManager.swift', 'utf8');
   assert.equal([...swift.matchAll(/await transaction\.finish\(\)/g)].length, 1);
   assert.match(swift, /func finishTransaction\(jws: String\)[\s\S]*await transaction\.finish\(\)/);

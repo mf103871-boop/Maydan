@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { SocialHub, allowsRealtimeContent } from '../server/social/realtime.mjs';
+import { createLocalD1 } from '../server/local-d1.mjs';
 
 const NOW = Date.now();
 function environment(locked = ['player']) {
@@ -9,14 +10,20 @@ function environment(locked = ['player']) {
     return locked.includes(args[0]) ? { user_id: args[0], room_key: 'game', expires_at: NOW + 60_000 } : null;
   } }; } }; } } };
 }
-async function harness() {
-  const messages = [], outgoing = [], sockets = [], data = { userId: 'player', tickets: {}, typingAt: 0, typingCount: 0 };
+async function harness(t) {
+  // Execute the final joined session/content ACL against the real schema, not
+  // a .first-only stub that can neither batch nor prove recipient permissions.
+  const DB = createLocalD1(); t.after(() => DB.close());
+  for (const id of ['player','peer']) await DB.prepare('INSERT INTO users(id,created_at,updated_at)VALUES(?,?,?)').bind(id,NOW,NOW).run();
+  await DB.prepare('INSERT INTO sessions(id,user_id,secret_hash,created_at,last_seen,expires_at)VALUES(?,?,?,?,?,?)').bind('session','player','fixture-hash',NOW,NOW,NOW+60000).run();
+  await DB.prepare('INSERT INTO mafia_match_leases(user_id,room_key,match_id,expires_at,updated_at)VALUES(?,?,?,?,?)').bind('player','game','match',NOW+60000,NOW).run();
+  const messages = [], outgoing = [], sockets = [], data = { userId: 'player', tickets: {}, typingAt: 0, typingCount: 0,onlineBroadcast:true,presenceWrittenAt:NOW,lastActiveAt:NOW };
   const ctx = {
     storage: { async get() { return structuredClone(data); }, async put() {}, async setAlarm() {}, async deleteAlarm() {} },
     getWebSockets: () => sockets, blockConcurrencyWhile: task => task(), waitUntil: task => outgoing.push(task),
   };
-  const hub = new SocialHub(ctx, environment()); await hub.ready;
-  hub.now = () => NOW; hub.sweep = async () => {}; hub.authenticate = async () => NOW + 60_000;
+  const hub = new SocialHub(ctx, {DB,MAFIA_ENABLED:'1'}); await hub.ready;
+  hub.now = () => NOW;
   hub.schedule = async () => {}; hub.presence = async () => {};
   const ws = { readyState: 1, attachment: { sessionId: 'session', validUntil: NOW + 60_000, seenAt: NOW, windowAt: NOW, count: 0 },
     serializeAttachment(value) { this.attachment = value; }, deserializeAttachment() { return this.attachment; },
@@ -26,8 +33,8 @@ async function harness() {
   return { hub, ws, messages, outgoing, notify };
 }
 
-test('Mafia live lease suppresses messages, group content, calls and typing even on pre-existing SocialHub sockets', async () => {
-  const h = await harness();
+test('Mafia live lease suppresses messages, group content, calls and typing even on pre-existing SocialHub sockets', async t => {
+  const h = await harness(t);
   for (const event of [
     { type: 'message', messageSeq: 10, conversationId: 'peer', text: 'private' },
     { type: 'group', reason: 'message', messageSeq: 10, groupId: 'friends', text: 'private' },
@@ -41,8 +48,8 @@ test('Mafia live lease suppresses messages, group content, calls and typing even
   assert.deepEqual(h.outgoing, []);
 });
 
-test('Mafia locks preserve deletion invalidation and immediate sign-out of the existing socket', async () => {
-  const h = await harness();
+test('Mafia locks preserve deletion invalidation and immediate sign-out of the existing socket', async t => {
+  const h = await harness(t);
   const deletion = { type: 'group', reason: 'deleted', groupId: 'friends' };
   assert.equal((await h.notify(deletion)).status, 200);
   assert.deepEqual(h.messages, [deletion]);

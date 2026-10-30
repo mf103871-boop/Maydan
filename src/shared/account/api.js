@@ -89,7 +89,7 @@ export const getBillingConfig = (options) => request('/api/billing/config', opti
 export const getMe = (options) => request('/api/me', options);
 export const exchangeCode = (code, client, options, attempt = '') => request('/api/auth/exchange', { ...options, method: 'POST', body: { code, client, ...(attempt ? { attempt } : {}) } });
 export const appleNative = (payload, options) => request('/api/auth/apple/native', { ...options, method: 'POST', body: { ...payload, client: 'ios' } });
-export const signout = (options) => request('/api/auth/signout', { ...options, method: 'POST', raw: true });
+export const signout = (options) => request('/api/auth/signout', { ...options, method: 'POST', body: { revokeReplacements: true }, raw: true });
 export const postTrial = (game, options) => request(`/api/trials/${encodeURIComponent(game)}`, { ...options, method: 'POST' });
 export const mergeTrialsRequest = (games, options) => request('/api/trials/merge', { ...options, method: 'POST', body: { games } });
 export const postAppleTransaction = (jws, options) => request('/api/apple/transactions', { ...options, method: 'POST', body: { jws } });

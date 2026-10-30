@@ -70,7 +70,7 @@
 .fact svg { width: 16px; height: 16px; color: var(--game-accent); }
 
 /* ── إطار اللعبة ── */
-.game-frame { --game-accent: var(--accent); min-height: 100dvh; display: flex; flex-direction: column; }
+.game-frame { --game-accent: var(--accent); min-height: var(--app-viewport-height, 100dvh); display: flex; flex-direction: column; }
 /* شريط اللعبة: بلا backdrop-filter؛ حافة بلون اللعبة؛ لا transform دائم (ui-bar-in ينتهي عند none) */
 .game-bar { position: sticky; top: 0; z-index: 210; display: flex; align-items: center; gap: 10px; min-height: calc(52px + var(--safe-top)); padding: var(--safe-top) max(10px, var(--safe-right)) 0 max(10px, var(--safe-left));
   backdrop-filter: none; -webkit-backdrop-filter: none;
@@ -87,7 +87,7 @@
 .game-body > .screen { min-height: 0; padding-top: 12px; flex: 1; }
 /* رأس «بَديهة» اللاصق يلتصق تحت شريط المنصة لا فوقه */
 .game-frame .m-root .m-header { top: calc(52px + var(--safe-top)); }
-.game-frame .m-root { padding-top: 10px; min-height: calc(100dvh - 52px - var(--safe-top)); }
+.game-frame .m-root { padding-top: 10px; min-height: calc(var(--app-viewport-height, 100dvh) - 52px - var(--safe-top)); }
 
 /* A brief edge glow never hides a running game or intercepts its controls. */
 .game-curtain { position: fixed; inset: 0; z-index: 315; pointer-events: none;
@@ -174,9 +174,9 @@
 .startup-download-note { margin: 0; font-size: 13px; line-height: 1.8; color: #67546F; }
 .startup-download-actions { display: grid; gap: 8px; width: 100%; }
 .startup-download-actions small { color: #67546F; font-size: 11px; line-height: 1.7; }
-.startup-background { position: fixed; z-index: 80; inset-inline: 12px; bottom: calc(8px + max(var(--safe-bottom), var(--menu-nav-space, 0px))); margin-inline: auto; width: fit-content; max-width: calc(100% - 24px); display: flex; align-items: center; gap: 8px; padding: 4px 10px; border: 1px solid #D8CEB8; border-radius: 16px; background: #FFF7E7F5; color: #513273; box-shadow: 0 3px 14px #35254718; font-size: 12px; }
+.startup-background { pointer-events: none; position: fixed; z-index: 80; inset-inline: 12px; bottom: calc(8px + max(var(--safe-bottom), var(--menu-nav-space, 0px))); margin-inline: auto; width: fit-content; max-width: calc(100% - 24px); display: flex; align-items: center; gap: 8px; padding: 4px 10px; border: 1px solid #D8CEB8; border-radius: 16px; background: #FFF7E7F5; color: #513273; box-shadow: 0 3px 14px #35254718; font-size: 12px; }
 .startup-background > [role="status"] { min-width: 0; }
-.startup-background button { border: 0; background: transparent; color: #087D89; font: inherit; font-weight: 800; cursor: pointer; min-width: 44px; min-height: 44px; }
+.startup-background button { pointer-events: auto; border: 0; background: transparent; color: #087D89; font: inherit; font-weight: 800; cursor: pointer; min-width: 44px; min-height: 44px; }
 .startup-background .startup-background-close { flex-shrink: 0; min-width: 44px; font-size: 24px; }
 /* الحيز المقاس يترك آخر إجراء قابلًا للتمرير فوق الحالة، بما في ذلك الأزرار اللاصقة. */
 .call-game-viewport { padding-bottom: var(--startup-background-space, 0px); }

@@ -92,7 +92,7 @@ export async function cacheStartupImages(urls, {
           // Entries this loader stored carry their exact content-length; trusting it
           // avoids reading sixty megabytes of image bodies off disk on every launch.
           if (imageResponse(hit) && Number(hit.headers?.get('content-length')) > 0) return;
-          if (imageResponse(hit) && (await hit.blob()).size > 0) return;
+          if (imageResponse(hit) && (await hit.arrayBuffer()).byteLength > 0) return;
         } catch {
           // Discard an unreadable cached body and repair it from the network.
         }
@@ -107,15 +107,18 @@ export async function cacheStartupImages(urls, {
       response?.body?.cancel().catch(() => {});
       throw new Error('Image unavailable');
     }
-    const body = await response.blob();
+    // Give CacheStorage complete bytes, not a Blob backed by this document.
+    // WebKit can start an internal blob: load when serializing a Blob response;
+    // replacing the document can invalidate that load before the cache commits.
+    const body = await response.arrayBuffer();
     checkSignal(requestSignal);
-    if (!body.size) throw new Error('Empty image');
+    if (!body.byteLength) throw new Error('Empty image');
     if (cache) {
       // The body is already decoded by fetch; save exactly those bytes without
       // retaining an HTTP compression header from the network response.
       const headers = new Headers(response.headers);
       headers.delete('content-encoding');
-      headers.set('content-length', String(body.size));
+      headers.set('content-length', String(body.byteLength));
       try { await cache.put(url, new Response(body, { status: 200, headers })); }
       catch { persistent = false; }
       checkSignal(requestSignal);

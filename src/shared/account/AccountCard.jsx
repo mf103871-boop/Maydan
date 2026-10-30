@@ -11,6 +11,7 @@ import { SignInSheet } from './SignInSheet.jsx';
 import { RedeemSheet, REDEEM_PROMPT } from './RedeemSheet.jsx';
 import { REDEEM_ON_IOS, SUPPORT_EMAIL } from './config.js';
 import { navigate } from '../../platform/router.js';
+import { resolveAccountServer } from './api.js';
 
 const SOURCE_TEXT = { apple: 'عبر App Store', paddle: 'عبر الويب', promo: 'برمز هدية' };
 
@@ -34,6 +35,14 @@ export function subscriptionLine(me, premium, promo = null, now = Date.now()) {
 }
 
 export function AccountCard() {
+  const account = useAccount();
+  // A deletion confirmation belongs to the account that opened it. Remount
+  // before paint when its owner changes, rather than rebinding it to user B.
+  const owner = account.user?.id || (account.signedIn ? 'pending' : 'guest');
+  return <AccountCardOwner key={`${resolveAccountServer()}:${owner}`} />;
+}
+
+function AccountCardOwner() {
   const account = useAccount();
   const { signedIn, refresh } = account;
   useEffect(() => { if (signedIn) refresh(); }, [signedIn, refresh]);
@@ -89,7 +98,7 @@ export function AccountCard() {
         <ConfirmModal title="حذف الحساب؟" danger
           message="سيُحذف حسابك وسجل اشتراكك من خوادمنا نهائيًا ولا يمكن التراجع. إن كان اشتراكك عبر App Store فألغِه من إعدادات جهازك أيضًا."
           confirmLabel="نعم، احذف الحساب" cancelLabel="إلغاء"
-          onConfirm={async () => { setConfirmDelete(false); await account.deleteAccount(); }}
+          onConfirm={async () => { setConfirmDelete(false); await account.deleteAccount(user?.id); }}
           onCancel={() => setConfirmDelete(false)} />
       )}
     </Card>

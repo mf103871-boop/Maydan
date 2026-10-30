@@ -211,21 +211,31 @@ test('ordinary private commands authorize actor and peers from one live read wit
   assert.deepEqual(h.app.rooms.get(g.code).instance.room.killVotes,previous,'revoked actor never mutates the command state');
 });
 test('metadata sync retries failed directory writes, resynchronizes on cold start and refreshes lobby expiry',async t=>{
-  const h=await setup(t),g=await h.group(),prepare=h.app.env.DB.prepare.bind(h.app.env.DB);let failed=false;
+  const h=await setup(t),g=await h.group(),prepare=h.app.env.DB.prepare.bind(h.app.env.DB);let failed=false,attempts=0;
   const oldReady=(await first(h.app.env,'SELECT ready FROM mafia_public_rooms')).ready;
   t.mock.method(h.app.env.DB,'prepare',sql=>{
+    if(sql.includes('INSERT INTO mafia_public_rooms'))attempts++;
     if(!failed&&sql.includes('INSERT INTO mafia_public_rooms'))return {bind:()=>({run:async()=>{failed=true;throw new Error('injected directory outage');}})};
     return prepare(sql);
   });
-  await assert.rejects(g.clients[1].command('ready',{ready:false}),e=>e.code==='INTERNAL');
+  assert.equal((await g.clients[1].command('ready',{ready:false})).ok,true,'an advisory outage cannot reject a durable readiness change');
   assert.equal((await first(h.app.env,'SELECT ready FROM mafia_public_rooms')).ready,oldReady);
   let instance=h.app.rooms.get(g.code).instance;
+  assert.equal(instance.room.members.find(m=>m.id===g.people[1].id).ready,false);
+  const attemptsAfterFailure=attempts;
+  await instance.serial(()=>instance.commit(structuredClone(instance.room)));
+  assert.equal(attempts,attemptsAfterFailure,'unchanged failed metadata is backed off rather than hammered');
+  assert.equal((await first(h.app.env,'SELECT ready FROM mafia_public_rooms')).ready,oldReady);
+  let clock=Date.now();t.mock.method(Date,'now',()=>clock);clock+=30_001;
   await instance.serial(()=>instance.commit(structuredClone(instance.room)));
   assert.equal((await first(h.app.env,'SELECT ready FROM mafia_public_rooms')).ready,oldReady-1,'failed sync is not cached as successful');
   await run(h.app.env,'DELETE FROM mafia_public_rooms');await h.app.rehydrate(g.code);instance=h.app.rooms.get(g.code).instance;
   await instance.serial(()=>instance.commit(structuredClone(instance.room)));
   const before=await first(h.app.env,'SELECT ready,expires_at FROM mafia_public_rooms');assert.equal(before.ready,oldReady-1,'cold object restores advisory metadata');
-  const later=Date.now()+31_000;t.mock.method(Date,'now',()=>later);
+  // Keep the fixture's controlling sockets alive during the next clock jump,
+  // as their ordinary heartbeat would, so this remains a directory-expiry test.
+  for(const ws of instance.sockets())ws.serializeAttachment({...instance.attachment(ws),seenAt:clock});
+  clock+=31_000;
   await instance.serial(()=>instance.commit(structuredClone(instance.room)));
   assert.ok((await first(h.app.env,'SELECT expires_at FROM mafia_public_rooms')).expires_at>before.expires_at,'unchanged public lobby does not expire');
 });

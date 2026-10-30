@@ -2,6 +2,8 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import vm from 'node:vm';
 import { readFile } from 'node:fs/promises';
+import { build } from 'esbuild';
+import { mediaVersions, encodeMediaVersions, ROOT } from '../scripts/lib.mjs';
 import { preloadMedia, cacheForOffline, isLoaded, resetMediaState } from '../src/shared/media/preload.js';
 
 async function worker({ entries = {}, fetcher = async () => new Response('asset'), failDocument = false, documentStatus = 200, fabrakaImages = [], audioCues = [] } = {}) {
@@ -50,6 +52,29 @@ async function worker({ entries = {}, fetcher = async () => new Response('asset'
   }
   return { dispatch, caches, deleted, skipped: () => skipped, navigated: () => navigated, makeCache };
 }
+
+test('p3-built startup URLs reuse all 510 exact offline cache keys after network loss', async () => {
+  const versions = await mediaVersions(ROOT);
+  const compiled = await build({ stdin: { contents: "export { startupImageUrls } from './src/shared/media/startup-images.js';", resolveDir: ROOT },
+    bundle: true, write: false, format: 'iife', globalName: 'Images', platform: 'browser',
+    define: { __MAYDAN_MEDIA_VERSIONS__: JSON.stringify(encodeMediaVersions(versions)) } });
+  const scope = {}; vm.runInNewContext(compiled.outputFiles[0].text, scope);
+  const urls = Array.from(scope.Images.startupImageUrls);
+  assert.equal(urls.length, 510);
+  let attemptedNetwork = 0;
+  const w = await worker({ fetcher: async () => { attemptedNetwork++; throw new Error('offline'); } });
+  const cache = await w.caches.open('maydan-media-v1');
+  // Real built URLs, synthetic cached response bodies: this tests offline key
+  // compatibility, not image decoding or a physical device's storage quota.
+  for (const url of urls) {
+    assert.equal(new URL(url, 'https://maydan.example/').searchParams.get('v'), versions[url.split('?')[0].slice('media/'.length)]);
+    const request = new Request(new URL(url, 'https://maydan.example/'));
+    await cache.put(request, new Response(`cached:${url}`, { headers: { 'content-type': 'image/webp' } }));
+    const response = await w.dispatch('fetch', { request });
+    assert.equal(await response.text(), `cached:${url}`);
+  }
+  assert.equal(attemptedNetwork, 0, 'unchanged versioned URLs must hit the existing cache while offline');
+});
 
 test('failed shell download cannot activate an incomplete offline release', async () => {
   const w = await worker({ failDocument: true });
