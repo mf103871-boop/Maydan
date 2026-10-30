@@ -160,7 +160,7 @@ test('history pagination is stable across equal timestamps and concurrent new ma
   await h.env.DB.prepare('INSERT INTO mafia_results VALUES(?,?,?,?,?,?,?,?,?)').bind(a.id,'new-after-page','citizen','town','town',0,0,0,Date.now()+1).run();
   const second=await h.api(a,'/api/mafia/history?cursor='+encodeURIComponent(first.body.nextCursor));assert.equal(second.body.matches.length,5);assert.equal(second.body.nextCursor,null);
   assert.equal(new Set([...first.body.matches,...second.body.matches].map(match=>match.matchKey)).size,55);
-  assert.equal(second.body.stats[0].matches,56,'existing stats remain an aggregate, independent of page cursor');
+  assert.equal(second.body.stats[0].matches,55,'aggregate covers the frozen time window, independent of page position');
   assert.equal((await h.api(b,'/api/mafia/history?cursor='+encodeURIComponent(first.body.nextCursor))).status,400);
   assert.equal((await h.api(a,'/api/mafia/history?limit=2')).body.matches.length,2);
   for(const query of ['limit=51','limit=0','cursor=garbage'])assert.equal((await h.api(a,'/api/mafia/history?'+query)).status,400);

@@ -123,7 +123,7 @@ export async function readMafiaHistory(env,id,searchParams,now=Date.now()) {
     FROM mafia_results WHERE user_id=? AND finished_at>? AND finished_at<=?${cursor?' AND (finished_at<? OR (finished_at=? AND match_key<?))':''}
     ORDER BY finished_at DESC,match_key DESC LIMIT ?`,id,now-30*DAY,at,...(cursor?[cursor.finishedAt,cursor.finishedAt,cursor.matchKey]:[]),limit+1);
   const matches=rows.slice(0,limit),last=matches.at(-1);
-  const stats=await all(env,'SELECT role_id AS roleId,faction,COUNT(*) AS matches,SUM(won) AS wins,SUM(draw) AS draws FROM mafia_results WHERE user_id=? GROUP BY role_id,faction',id);
+  const stats=await all(env,'SELECT role_id AS roleId,faction,COUNT(*) AS matches,SUM(won) AS wins,SUM(draw) AS draws FROM mafia_results WHERE user_id=? AND finished_at>? AND finished_at<=? GROUP BY role_id,faction',id,now-30*DAY,at);
   // Preserve the existing history contract (observers cannot read it), while
   // invalidating snapshots assembled before a new observation/deletion/suspension.
   const permission=await first(env,`SELECT ${liveAccountSql('?')} AS live,
