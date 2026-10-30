@@ -13,6 +13,7 @@ import { LIVEKIT_VERSION, LIVEKIT_MODULE } from '../src/social/media-version.js'
 import { privateAudioBuild, verifyMaterialized } from './audio/private-preview.mjs';
 import { CANDIDATE_EFFECTS } from '../src/shared/fx/audio-candidate-catalog.js';
 import { audioCatalogPackagingPlugin } from './audio/catalog-packaging.mjs';
+import { designRuntimePackagingPlugin } from './design-runtime-packaging.mjs';
 
 export const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 export const DIST = path.join(ROOT, 'dist');
@@ -100,7 +101,7 @@ export function esbuildOptions({ minify = true, version = '0.0.0', media = {}, a
     // New files are JSX; the migrated trivia game is plain React.createElement
     // in .js and parses fine under the jsx loader too.
     loader: { '.js': 'jsx', '.css': 'text', '.json': 'json', '.webp': art, '.png': art, '.woff2': art },
-    ...(minify ? { plugins: [minifiedCssTextPlugin(), audioCatalogPackagingPlugin()] } : {}),
+    ...(minify ? { plugins: [minifiedCssTextPlugin(), audioCatalogPackagingPlugin(), designRuntimePackagingPlugin()] } : {}),
     ...(assets === 'files' ? { assetNames: `${BRAND_ASSET_DIR}/[name]-[hash]` } : {}),
     define: {
       'process.env.NODE_ENV': JSON.stringify(minify ? 'production' : 'development'),
@@ -108,6 +109,8 @@ export function esbuildOptions({ minify = true, version = '0.0.0', media = {}, a
       __MAYDAN_MEDIA_VERSIONS__: JSON.stringify(encodeMediaVersions(media)),
       __MAYDAN_ROOMS_URL__: JSON.stringify(process.env.MAYDAN_ROOMS_URL || ''),
       __MAYDAN_AUDIO_PREVIEW__: JSON.stringify(privateAudioBuild()),
+      // Local review tools are excluded from normal web/native builds.
+      __MAYDAN_UI_PREVIEW__: JSON.stringify(process.env.MAYDAN_UI_PREVIEW === '1'),
     },
     legalComments: 'none',
     charset: 'utf8',

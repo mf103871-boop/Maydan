@@ -27,6 +27,11 @@ const common = [
   node('results', 'النتائج'), node('rules', 'طريقة اللعب'), node('artwork', 'الرسم التوضيحي', 'image'),
 ];
 const platformNodes = [
+  node('online-mode', 'اختيار اللعب أونلاين', 'button', { required: true, editableText: false, editableIcon: false }),
+  node('local-mode', 'اختيار اللعب مع العائلة', 'button', { required: true, editableText: false, editableIcon: false }),
+  node('skip-instructions', 'تخطي التعليمات إلى إعداد اللعبة', 'button', { required: true, editableText: false, editableIcon: false }),
+  node('manage-roster', 'دفتر اللاعبين في الإعدادات', 'button', { required: true, editableText: false, editableIcon: false }),
+  node('mafia-progress-refresh', 'تحديث تقدم مافيا', 'button', { editableText: false, editableIcon: false }),
   node('brand', 'شعار ميدان'), node('profile', 'حسابي', 'button'), node('presence', 'الأصدقاء المتصلون', 'button'),
   node('games', 'شبكة الألعاب', 'list', { repeat: true }), node('game-card', 'قالب بطاقة اللعبة', 'button', { repeat: true }),
   ...[['badeeha','بديهة'],['mafia','مافيا ميدان'],['ersomha','ارسمها'],['beep','بيب'],['mamnoo','ممنوع'],['jabeen','على جبينك'],['fabraka','فبركة'],['meenfina','مين فينا']].map(([id,label]) => node(`game-card.${id}`, `بطاقة ${label}`, 'button', { editableText:false, editableIcon:false })),
@@ -67,6 +72,17 @@ const gameNodes = [
   node('round-scores', 'نقاط الجولة', 'list', { repeat: true }), node('laugh-award', 'جائزة الضحك'),
 ];
 const onlineNodes = [
+  node('toolbar', 'إجراءات دليل الغرف', 'container', { required: true }),
+  node('directory-options', 'خيارات دليل الغرف والمساعدة', 'button', { required: true, editableText: false }),
+  node('directory-filter', 'تصفية الغرف', 'button', { editableText: false }),
+  node('directory-help', 'المساعدة والمزيد', 'button', { editableText: false }),
+  node('directory-options-close', 'إغلاق خيارات الغرف', 'button', { required: true, editableText: false }),
+  node('profile-footer', 'البروفايل أسفل دليل الغرف'),
+  node('room', 'قالب صف الغرفة', 'container', { repeat: true, editableText: false }),
+  node('room-visibility', 'ظهور الغرفة', 'input', { editableText: false }),
+  node('invite-toggle', 'فتح دعوة الغرفة', 'button', { editableText: false }),
+  node('appearance-toggle', 'فتح مظهر الغرفة', 'button', { editableText: false }),
+  node('rules-toggle', 'فتح تعليمات الغرفة', 'button', { editableText: false }),
   node('entry', 'نموذج الغرفة'), node('entry-mode', 'إنشاء أو انضمام'), node('game-picker', 'اختيار لعبة الغرفة'),
   node('name-input', 'اسم اللاعب', 'input'), node('room-code', 'رمز الغرفة', 'input'), node('avatar-picker', 'اختيار الشخصية'),
   node('settings', 'إعدادات الغرفة'), node('invite', 'الدعوة'), node('invite-code', 'رمز الدعوة'), node('invite-qr', 'رمز QR', 'image'),
@@ -155,6 +171,17 @@ const extraNodes = [
 
 
 const mafiaNodes = [
+  node('action-open', 'فتح القرار الحالي وتأكيده', 'button', { required: true, editableText: false, editableIcon: false }),
+  node('timeline-toggle', 'إظهار سجل المجلس بعد النهاية', 'button', { required: true, editableText: false, editableIcon: false }),
+  node('event-overlay', 'تأثير حدث عام مصرح', 'container', { editableText: false, editableIcon: false }),
+  node('load-older', 'رسائل أقدم في قناة المجلس', 'button', { editableText: false, editableIcon: false }),
+  node('new-messages', 'العودة إلى رسائل المجلس الجديدة', 'button', { editableText: false, editableIcon: false }),
+  node('history-review', 'مراجعة مجلس مكتمل', 'button', { repeat: true, editableText: false, editableIcon: false }),
+  node('history-reference', 'مرجع المجلس للبطولة أو الاعتراض', 'input', { repeat: true, editableText: false, editableIcon: false }),
+  node('history-previous', 'نتائج المجالس الأحدث', 'button', { editableText: false, editableIcon: false }),
+  node('history-next', 'نتائج المجالس الأقدم', 'button', { editableText: false, editableIcon: false }),
+  node('specialist-training', 'تمارين تخصص مافيا', 'button', { editableText: false, editableIcon: false }),
+  node('report-category', 'فئة البلاغ', 'input', { required: true, editableText: false, editableIcon: false }),
   node('tutorial-start','تدريب مع الشخصيات','button',{editableText:false,editableIcon:false}),
   ...[['mafia-tools','أدوات المجلس'],['player-safety','إجراءات اللاعب'],['observer-join','الانتقال من المشاهدة'],['room-observe','مشاهدة المجلس'],['directory-next','المجالس التالية'],['directory-previous','المجالس السابقة']].map(([id,label])=>node(id,label,'button',{editableText:false,editableIcon:false,required:['mafia-tools','player-safety'].includes(id),repeat:id==='player-safety'||id==='room-observe'})),
   node('observer-delay','تنبيه المشاهدة المؤجلة','text',{required:true,editableText:false}),
@@ -175,6 +202,7 @@ const phaseLabels = { home:'البداية',setup:'الإعداد',board:'لوح
 const screen = (id, label, group, nodes, states = {}) => Object.freeze({ id, label: label.split(' · ').map(part => phaseLabels[part] || part).join(' · '), group, nodes: Object.freeze(dedupe([...common, ...nodes])), ...states });
 const definitions = [];
 for (const [id, label] of [['home', 'الألعاب'], ['game-details', 'تفاصيل اللعبة'], ['players', 'دفتر اللاعبين'], ['settings', 'الإعدادات'], ['store', 'المتجر'], ['about', 'عن ميدان'], ['audio-credits', 'مصادر الصوت'], ['legal', 'الشروط والخصوصية'], ['play-setup', 'إعداد اللاعبين والفرق']]) definitions.push(screen(id, label, 'المنصة', id === 'play-setup' ? [...platformNodes, ...gameNodes] : platformNodes));
+definitions.push(screen('home.game-mode', 'اختيار نمط اللعبة', 'المنصة', platformNodes));
 for (const phase of ['home', 'setup', 'board', 'question', 'result', 'history']) definitions.push(screen(`badeeha.${phase}`, `بديهة · ${phase}`, 'بديهة', gameNodes, { game: 'badeeha', phase }));
 for (const [mode, phases] of [['three', ['intro', 'prompt', 'judge', 'over']], ['bomb', ['intro', 'prompt', 'boom', 'over']]]) for (const phase of phases) definitions.push(screen(`beep.${mode}.${phase}`, `بيب · ${mode} · ${phase}`, 'بيب', gameNodes, { game: 'beep', phase, mode }));
 for (const [game, label, phases] of [['mamnoo', 'ممنوع', ['intro', 'play', 'roundEnd', 'over']], ['jabeen', 'على جبينك', ['intro', 'play', 'review', 'over']]]) for (const phase of phases) definitions.push(screen(`${game}.${phase}`, `${label} · ${phase}`, label, gameNodes, { game, phase }));
@@ -183,6 +211,7 @@ for (const phase of ['intro', 'question', 'host', 'write', 'discussion', 'vote',
 definitions.push(screen('online.entry', 'إنشاء الغرف والانضمام', 'الغرف', [...platformNodes, ...gameNodes, ...onlineNodes]));
 definitions.push(screen('online.lobby', 'انتظار الغرفة', 'الغرف', [...gameNodes, ...onlineNodes]));
 definitions.push(screen('online.chrome', 'شريط الغرفة والاتصال', 'الغرف', onlineNodes));
+for (const [game, label] of [['badeeha', 'بديهة'], ['ersomha', 'ارسمها'], ['fabraka', 'فبركة'], ['meenfina', 'مين فينا']]) definitions.push(screen(`online.${game}.directory`, `غرف ${label}`, 'الغرف', [...platformNodes, ...onlineNodes, ...mafiaNodes], { game, phase: 'directory', mode: 'online' }));
 for (const [game, phases] of [['meenfina', ['vote', 'result', 'over']], ['fabraka', ['host', 'write', 'discussion', 'vote', 'reveal', 'result', 'over']]]) for (const phase of phases) definitions.push(screen(`online.${game}.${phase}`, `${game === 'fabraka' ? 'فبركة' : 'مين فينا'} أونلاين · ${phase}`, 'الغرف', [...gameNodes, ...onlineNodes], { game, phase, mode: 'online' }));
 for (const phase of ['setup', 'board', 'question', 'reveal', 'over']) definitions.push(screen(`online.badeeha.${phase}`, `بَديهة أونلاين · ${phase}`, 'الغرف', [...gameNodes, ...onlineNodes], { game: 'badeeha', phase, mode: 'online' }));
 definitions.push(screen('online.mafia.tools','مافيا ميدان · أدوات المجلس','مافيا ميدان',mafiaNodes,{game:'mafia',phase:'discussion',mode:'online'}));
@@ -238,6 +267,9 @@ export const DESIGN_SCREENS = Object.freeze(definitions.map(definition => {
     // the rail must not hide its nested list or every repeated seat button.
     if (definition.id.startsWith('online.mafia.') && id === 'invite') Object.assign(patch,{kind:'button',repeat:false});
     if (definition.id.startsWith('online.mafia.') && id === 'players') patch.required = true;
+    if (definition.id.startsWith('online.mafia.') && id === 'mafia-tools') patch.required = true;
+    if (definition.id === 'home' && ['presence','tools','rooms','roster'].includes(id)
+      || definition.id === 'game-details' && ['online','local'].includes(id)) patch.retired = true;
     if (definition.id === 'system.dialog' && id === 'report') Object.assign(patch,{repeat:true,editableText:false});
     if (id === 'search') Object.assign(patch,{kind:'container',editableText:false});
     if (id === 'team-count' && definition.id === 'play-setup.teams') Object.assign(patch,{kind:'container',repeat:false,editableText:false});

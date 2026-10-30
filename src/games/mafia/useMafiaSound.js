@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import { createMafiaPhaseAudio, createMafiaPublicAudio } from './audio.js';
+import { createMafiaPhaseAudio, createMafiaPublicAudio, createMafiaCountdownAudio } from './audio.js';
 
 // Shared-bus ownership keeps PlatformApp's home track silent in Mafia without
 // changing saved music preferences; nested entry/match/preview owners are safe.
@@ -17,7 +17,7 @@ export function useMafiaAmbience(sound, active = true) {
   }, [sound, active]);
 }
 
-export function useMafiaSound(state, { hidden = false, preview = false, sound } = {}) {
+export function useMafiaSound(state, { hidden = false, preview = false, sound, remaining = null, ownerId = '' } = {}) {
   useMafiaAmbience(sound, !preview);
   const controller = useRef(null);
   const sceneOwner = useRef(Symbol('mafia-phase-audio'));
@@ -32,11 +32,11 @@ export function useMafiaSound(state, { hidden = false, preview = false, sound } 
     return () => sound?.music?.releaseScene?.(owner);
   }, [sound]);
   useEffect(() => {
-    const phases = createMafiaPhaseAudio(sound), events = createMafiaPublicAudio(sound);
+    const phases = createMafiaPhaseAudio(sound), events = createMafiaPublicAudio(sound), clock = createMafiaCountdownAudio(sound);
     const audio = {
-      update(value, options) { phases.update(value, options); events.update(value, options); },
-      suspend() { phases.suspend(); events.suspend(); },
-      dispose() { phases.dispose(); events.dispose(); },
+      update(value, options) { phases.update(value, options); events.update(value, options); clock.update(value, options); },
+      suspend() { phases.suspend(); events.suspend(); clock.suspend(); },
+      dispose() { phases.dispose(); events.dispose(); clock.dispose(); },
     };
     controller.current = audio;
     const hide = () => audio.suspend();
@@ -56,5 +56,5 @@ export function useMafiaSound(state, { hidden = false, preview = false, sound } 
     };
   }, [sound]);
   // Runs after controller installation, including when the sound bus changes.
-  useEffect(() => { controller.current?.update(state, { hidden, preview }); }, [state, hidden, preview, sound]);
+  useEffect(() => { controller.current?.update(state, { hidden, preview, remaining, ownerId }); }, [state, hidden, preview, remaining, ownerId, sound]);
 }

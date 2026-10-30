@@ -164,7 +164,7 @@ test('بلا حساب (NULL_ACCOUNT) لا يظهر أي قفل في المُنت
 test('Home advertises free games consistently, including exhausted legacy trials', () => {
   for (const account of [fakeAccount(),fakeAccount({trials:{beep:true,mamnoo:true}}),fakeAccount({premium:true})]) {
     const html=ui.home(account);
-    assert.equal(count(html,'مجانية بالكامل'), TRIAL_GAMES.length+1);
+    assert.equal(count(html,'data-design-id="game-card.'), TRIAL_GAMES.length+1);
     assert.doesNotMatch(html,/١٠ فئات مجانية|مباراة مجانية|card-badge[^>]*>بلس/);
   }
 });
@@ -173,7 +173,7 @@ test('game details start previously locked games without a paywall', () => {
   for (const account of [fakeAccount({trials:{beep:true}}),fakeAccount({premium:true})]) {
     const {tree,markup}=ui.detailsTree('beep',account);
     assert.match(markup,/اللعب واستضافة الغرف والانضمام مجانًا/);
-    findByText(tree,'العب').props.onClick();
+    findByText(tree,'تخطي التعليمات').props.onClick();
     assert.deepEqual(account.calls,[]);
   }
   assert.match(ui.detailsTree('badeeha',fakeAccount()).markup,/كل الفئات مجانية/);
@@ -182,7 +182,8 @@ test('game details start previously locked games without a paywall', () => {
 test('ارسمها تعرض استضافة الغرف والانضمام المجاني ولا تعرض جهازًا واحدًا أو حزم بديهة', () => {
   const { markup } = ui.detailsTree('ersomha', fakeAccount({ trials: { ersomha: true } }));
   assert.match(markup, /الانضمام مجانًا/);
-  assert.match(markup, /العب أونلاين/);
+  assert.match(markup, /أونلاين/);
+  assert.match(markup, /تخطي التعليمات/);
   assert.doesNotMatch(markup, /العب على جهاز واحد|١٠ فئات مجانية/);
-  assert.doesNotMatch(markup, /disabled/);
+  assert.doesNotMatch(stripStyle(markup), /disabled/);
 });

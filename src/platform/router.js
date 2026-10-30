@@ -1,6 +1,7 @@
 // موجّه بسيط على الـ hash: #/ ، #/game/:id ، #/play/:id ، #/players ، #/settings ، #/about ، #/terms ، #/privacy
 // مع زر رجوع (popstate) وحارس خروج أثناء اللعب.
 import { useEffect, useState } from 'react';
+import { getGameModeSupport } from '../shared/game-mode-support.mjs';
 
 const ROUTES = [
   ['home', /^\/?$/],
@@ -43,7 +44,13 @@ export function parseHash(hash) {
 
 const listeners = new Set();
 let current = typeof location !== 'undefined' ? parseHash(location.hash) : parseHash('');
-const routeLocation = route => route.name==='room' && route.params.watch==='1' ? `${route.path}?watch=1` : route.path;
+const routeLocation = route => {
+  if (route.name === 'room' && route.params.watch === '1') return `${route.path}?watch=1`;
+  const mode = route.params.mode;
+  if (['game', 'play', 'online'].includes(route.name) && ['local', 'online'].includes(mode)
+    && getGameModeSupport(route.params.id)?.[mode]) return `${route.path}?mode=${mode}`;
+  return route.path;
+};
 let stack = [routeLocation(current)];
 let direction = 'forward';
 let exitGuard = null;
@@ -80,7 +87,7 @@ function emit() { listeners.forEach((fn) => fn(current)); }
 export function navigate(path, { replace = false } = {}) {
   if (typeof location === 'undefined') return;
   const target = path.startsWith('/') ? path : `/${path}`;
-  if (target === current.path && location.hash === `#${target}`) return;
+  if (target === routeLocation(current) && location.hash === `#${target}`) return;
   if (replace && guardRestore === target && typeof history !== 'undefined') {
     // الخروج بعد أن اعترض الحارس زر الرجوع: لا نستبدل مُدخل الاستعادة بنفس
     // العنوان (فيصير مُدخلان متطابقان ويُبتلع ضغط الرجوع التالي) بل نرجع

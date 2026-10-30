@@ -52,6 +52,8 @@ jobs:
           PY
       - name: Install dependencies
         run: npm ci --no-audit --no-fund
+      - name: Install browsers required by the Node component suites
+        run: npx playwright install chromium webkit
       - name: Test the game
         run: |
           npm test

@@ -54,6 +54,23 @@ const { parseHash, navigate, back, getRoute, getDirection, setExitGuard, registe
 const flush = async (times = 4) => { for (let i = 0; i < times; i += 1) await new Promise((r) => setTimeout(r, 1)); };
 const start = (hash = '#/') => { env.reset(hash); resetRouterForTests(); };
 
+test('selected family mode survives Back through roster/instructions, reload and repeated navigation', async () => {
+  start();
+  navigate('/game/badeeha?mode=local'); await flush();
+  navigate('/players'); await flush();
+  back(); await flush();
+  assert.equal(location.hash, '#/game/badeeha?mode=local');
+  assert.equal(getRoute().params.mode, 'local');
+  navigate('/play/badeeha?mode=local'); await flush();
+  const length = history.length;
+  navigate('/play/badeeha?mode=local'); await flush();
+  assert.equal(history.length, length);
+  assert.equal(router.getPreviousPath(), '/game/badeeha?mode=local');
+  resetRouterForTests();
+  assert.equal(getRoute().params.mode, 'local');
+  assert.equal(getRoute().params.id, 'badeeha');
+});
+
 // ── parseHash ───────────────────────────────────────────────────────────────
 test('parseHash يغطي كل مسار مدعوم', () => {
   const cases = [

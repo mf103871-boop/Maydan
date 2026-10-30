@@ -214,6 +214,9 @@
 
 /* One social surface: a normal menu page, or the protected in-game drawer. */
 html[data-menu-nav-visible] .lamma-launcher { display: none; }
+/* The directory has its own measured profile footer; avoid covering that
+   full-width action with a second floating launcher. Home still exposes Friends. */
+html:has(.online-directory-view) .lamma-launcher { display: none; }
 .online-room-actions { display: flex; flex: 0 0 auto; align-items: center; gap: 7px; }
 .online-social-slot { display: flex; width: 44px; height: 44px; }
 .online-social-slot .lamma-launcher,

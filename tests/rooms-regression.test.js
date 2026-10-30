@@ -40,7 +40,8 @@ await build({ stdin: { loader: 'jsx', resolveDir: root, contents: `
   const platform = { toast() {}, sound: { play() {} }, haptics: { vibrate() {} } };
   const wrap = (Component, props) => renderToStaticMarkup(
     React.createElement(PlatformContext.Provider, { value: platform }, React.createElement(Component, props)));
-  export const entry = (props) => wrap(Online, props);
+  // These regressions inspect creation validation, after opening the form.
+  export const entry = (props) => wrap(Online, {initialView:'create',...props});
   export const accountEntry = (props, account) => renderToStaticMarkup(React.createElement(AccountContext.Provider, {value:{...NULL_ACCOUNT,...account}}, React.createElement(PlatformContext.Provider, {value:platform}, React.createElement(Online,props))));
   export const lobby = (props) => wrap(Lobby, props);
   // A real but temporarily small topic keeps the insufficient-pool regression
@@ -327,7 +328,7 @@ test('5+6 · the waiting room prints Arabic-Indic digits and no zero-second disc
   assert.match(talking, /\u0660 \/ \u0668/); // ٠ / ٨ players
   assert.match(talking, /\u0665 \u062c\u0648\u0644\u0627\u062a/);
   // The room code itself stays Latin (it is typed and read out); nothing else may be.
-  assert.doesNotMatch(talking.replace(/<[^>]*>/g, ' ').replaceAll('123456', ''), /[0-9]/);
+  assert.doesNotMatch(talking.replace(/<style[^>]*>[\s\S]*?<\/style>/g,'').replace(/<[^>]*>/g, ' ').replaceAll('123456', ''), /[0-9]/);
 });
 
 test('5 · generated numbers use Arabic-Indic digits everywhere', () => {

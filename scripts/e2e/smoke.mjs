@@ -114,15 +114,18 @@ try {
     // This guest/local journey verifies the online games' real details and
     // entry affordances. Authenticated drawing is covered by e2e:ersomha; never
     // count these checks as a multiplayer/audio acceptance test.
-    await go('game/ersomha');
-    check(`${name}: ersomha online entry exists`, await page.getByRole('button', { name: 'العب أونلاين · لشخصين أو أكثر', exact: true }).isVisible());
-    check(`${name}: ersomha does not offer a local-only match`, await page.getByRole('button', { name: 'العب على جهاز واحد', exact: true }).count() === 0);
-    await overflow('ersomha details');
-
-    await go('game/mafia');
-    check(`${name}: mafia public/private entry exists`, await page.getByRole('button', { name: 'ادخل المجلس · غرف عامة وخاصة', exact: true }).isVisible());
-    check(`${name}: mafia does not offer a local-only match`, await page.getByRole('button', { name: 'العب على جهاز واحد', exact: true }).count() === 0);
-    await overflow('mafia details');
+    for (const game of ['ersomha','mafia']) {
+      await go('');
+      await tap(page.locator(`[data-design-id="game-card.${game}"]`), `${game} mode sheet`);
+      const modes = page.getByRole('dialog'); await modes.waitFor();
+      check(`${name}: ${game} online entry exists`, await modes.locator('[data-design-id="online-mode"]').isEnabled());
+      check(`${name}: ${game} does not offer a local-only match`, await modes.locator('[data-design-id="local-mode"]').isDisabled());
+      await tap(modes.locator('[data-design-id="online-mode"]'), `${game} online`);
+      await page.waitForURL(url => url.hash === `#/online/${game}?mode=online`);
+      await page.locator(`[data-design-screen="online.${game}.directory"]`).first().waitFor();
+      check(`${name}: ${game} opens its real directory`, await page.locator(`[data-design-screen="online.${game}.directory"]`).first().isVisible());
+      await overflow(`${game} directory`);
+    }
 
     await go('settings');
     const slider = page.locator('#sound-volume');
@@ -152,14 +155,18 @@ try {
 
     for (const game of games) {
       try {
-        await go(`game/${game}`);
+        await go('');
+        await tap(page.locator(`[data-design-id="game-card.${game}"]`), `${game} mode sheet`);
+        await tap(page.getByRole('dialog').locator('[data-design-id="local-mode"]'), `${game} family mode`);
+        await page.waitForURL(url => url.hash === `#/game/${game}?mode=local`);
         await page.locator('.details-hero').waitFor();
         await overflow(`${game} details`);
-        const button = page.getByRole('button', { name: ['fabraka', 'meenfina', 'badeeha'].includes(game) ? 'العب على جهاز واحد' : 'العب', exact: true });
-        await tap(button, `${game} play`);
-        await page.waitForURL((url) => url.hash === `#/play/${game}`);
+        const button = page.getByRole('button', { name: 'تخطي التعليمات', exact: true });
+        check(`${name}: ${game} has one shared instruction action`, await button.count() === 1 && await page.locator('[data-design-id="online"],[data-design-id="local"]').count() === 0);
+        await tap(button, `${game} skip instructions`);
+        await page.waitForURL((url) => url.hash === `#/play/${game}?mode=local`);
         await page.locator('.game-loading').waitFor({ state: 'detached' });
-        if (game === 'badeeha') await page.locator('.m-hero-cta').click();
+        if (game === 'badeeha') await page.locator('[data-design-screen="badeeha.setup"]').waitFor();
         else await page.getByRole('button', { name: /^ابدأ اللعب/ }).waitFor();
         check(`${name}: ${game} setup opens`, await page.locator('.game-frame').isVisible());
         await overflow(`${game} setup`);

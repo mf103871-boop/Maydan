@@ -108,14 +108,14 @@ test('one browser player plays a whole public Mafia match through the real UI', 
     return !document.querySelector('.splash') && document.querySelector('[data-design-screen]');
   }, null, { timeout: 30_000 });
 
-  // A genuinely new account sees the real skippable intro before its first directory visit.
-  await page.waitForFunction(()=>document.querySelector('[data-design-id="tutorial-exit"]')||document.querySelector('[data-room-code]'));
-  if(await page.locator('[data-design-id="tutorial-exit"]').count()){await page.locator('[data-design-id="tutorial-exit"]').click();await page.locator('[data-design-id="tutorial-save-exit"]').click();}
+  // A new account sees rooms first; the optional tutorial remains in help.
+  await page.waitForFunction(()=>document.querySelector('[data-room-code]'));
+  assert.equal(await page.locator('[data-design-id="tutorial-exit"]').count(),0);
 
   // The public directory lists the waiting room; its card seats the player.
   const card = page.locator(`[data-room-code="${code}"]`);
   await card.waitFor({ timeout: 20_000 });
-  await card.getByRole('button', { name: 'انضم' }).click();
+  await card.locator('[data-design-id="room-join"]').click();
   await page.getByRole('button', { name: 'أنا جاهز' }).waitFor({ timeout: 15_000 });
   await page.getByRole('button', { name: 'أنا جاهز' }).click();
   await until(() => room().members.every((m) => m.connected && m.ready), 'everyone ready');
@@ -127,7 +127,7 @@ test('one browser player plays a whole public Mafia match through the real UI', 
   // The app chose its own seat when it joined from the directory; find it by account.
   const seatId = room().members.find((m) => !m.left && m.accountUserId === player.accountId).id;
   const mine = () => room().roleStates[seatId];
-  await page.getByRole('button', { name: /اكشف بطاقتي/ }).click();
+  await page.locator('[data-design-id="role-toggle"]').click();
   await page.getByRole('dialog').getByText(MAFIA_ROLES[mine().roleId].name, { exact: true }).waitFor();
   await page.getByRole('dialog').getByRole('button', { name: 'إخفاء البطاقة' }).first().click();
   await endPhase();
@@ -156,6 +156,7 @@ test('one browser player plays a whole public Mafia match through the real UI', 
     const me = mine();
     const botOf = (id) => bots[people.findIndex((p) => p.id === id)];
     if (r.phase === 'night') {
+      const trigger=page.locator('[data-design-id="action-open"]');if(await trigger.count()&&await trigger.getAttribute('aria-expanded')!=='true')await trigger.click();
       const target = alive.find((id) => r.roleStates[id].faction !== 'mafia' && id !== seatId) || alive.find((id) => r.roleStates[id].faction !== 'mafia');
       for (const id of alive.filter((id) => id !== seatId && r.roleStates[id].faction === 'mafia')) await botOf(id).command('mafia_vote', { targetId: target });
       if (me.alive) {
@@ -168,7 +169,7 @@ test('one browser player plays a whole public Mafia match through the real UI', 
           if (mine().roleId === 'analyst') await page.locator('[data-design-id="player-seat"].is-target').nth(1).click();
           await page.locator('[data-design-id="ability-submit"]').click();
           await until(() => Boolean(room().nightActions[seatId]), 'the browser night ability reached the server');
-        } else await page.getByText('لا إجراء متاح لك الآن').waitFor();
+        } else {assert.equal(await page.locator('[data-design-id="action-open"]').count(),0);assert.equal(await page.locator('[data-design-id="player-seat"].is-target').count(),0);}
       }
     }
     if (r.phase === 'nomination') {
@@ -186,6 +187,7 @@ test('one browser player plays a whole public Mafia match through the real UI', 
     if (r.phase === 'verdict') {
       for (const id of alive.filter((id) => id !== seatId)) await botOf(id).command('verdict', { approve: true });
       if (me.alive) {
+        const trigger=page.locator('[data-design-id="action-open"]');if(await trigger.getAttribute('aria-expanded')!=='true')await trigger.click();
         await page.locator('[data-design-id="verdict-yes"]').click();
         await page.getByRole('button', { name: 'اعتمد اختياري' }).click();
         await until(() => Object.hasOwn(room().verdictVotes, seatId), 'the browser verdict reached the server');
@@ -251,7 +253,7 @@ test('real host lobby controls remain hit-testable with the startup notice in bo
     assert.equal(await page.locator('[data-design-id="player-seat"]').count(), 12);
     const lastCard = await page.locator('[data-design-id="player-seat"]').last().evaluate(card => {
       const rail = card.closest('.mafia-player-rail'), grid = card.closest('.mafia-seats');
-      rail.scrollTop = rail.scrollHeight; grid.scrollTop = grid.scrollHeight;
+      card.scrollIntoView({block:'nearest',inline:'nearest'});
       const rect = card.getBoundingClientRect(), hit = document.elementFromPoint(rect.x + rect.width/2, rect.y + rect.height/2);
       const result = { hit: hit === card || card.contains(hit), top: rect.top, bottom: rect.bottom };
       rail.scrollTop = 0; grid.scrollTop = 0; return result;

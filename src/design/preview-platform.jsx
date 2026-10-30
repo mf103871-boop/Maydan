@@ -8,7 +8,7 @@ import { LammaContext } from '../social/LammaProvider.jsx';
 import { SocialUIContext } from '../social/SocialUIProvider.jsx';
 import { ProfileContext } from '../profiles/ProfileProvider.jsx';
 import { ToastProvider, Screen, TopBar, Button, Card, Modal, Sheet, ConfirmModal } from '../shared/ui/components.jsx';
-import { Home } from '../platform/screens/Home.jsx';
+import { Home, GameModeSheet } from '../platform/screens/Home.jsx';
 import { Settings } from '../platform/screens/Settings.jsx';
 import { Store } from '../platform/screens/Store.jsx';
 import { GameDetails } from '../platform/screens/GameDetails.jsx';
@@ -104,6 +104,7 @@ export function PlatformDesignScene({ sceneId, previewState = 'normal' }) {
   const close = () => setModalOpen(false);
   let content = null;
   if (sceneId === 'home') content = <Home />;
+  else if (sceneId === 'home.game-mode') content = <><Home /><GameModeSheet game={getGame('badeeha')} onClose={close} onSelect={noop} /></>;
   else if (sceneId === 'settings') content = <Settings />;
   else if (sceneId === 'store') content = <Store />;
   else if (sceneId === 'game-details') content = <GameDetails id="ersomha" />;

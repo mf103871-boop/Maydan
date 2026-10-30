@@ -166,6 +166,10 @@ export const releaseAccountDeletion = (env, userId, attemptId) => run(env, 'DELE
 export async function deleteUser(env, userId) {
   const statements = ['sessions', 'auth_codes', 'trials', 'online_room_trial_claims', 'subscriptions', 'paddle_customers', 'paddle_customers_scoped', 'paddle_checkouts', 'account_deletions', 'identities', 'plus_cosmetics', 'plus_setup_presets', 'mafia_tutorial_status']
     .map((table) => statement(env, `DELETE FROM ${table} WHERE user_id = ?`, [userId]));
+  // This additive directory is off until its migration is applied. Remove the
+  // derived membership locator explicitly, including on D1 without FK cascades.
+  if(String(env.ONLINE_PUBLIC_DIRECTORY_ENABLED)==='1')statements.push(statement(env,
+    'DELETE FROM online_public_rooms WHERE host_user_id=? OR EXISTS(SELECT 1 FROM json_each(online_public_rooms.member_user_ids) member WHERE member.value=?)', [userId,userId]));
   statements.push(...await ersomhaDeleteStatements(env, userId), ...drawingReportDeleteStatements(env, userId));
   statements.push(...mafiaDeleteStatements(env,userId));
   statements.push(...moderationDeleteStatements(env, userId));

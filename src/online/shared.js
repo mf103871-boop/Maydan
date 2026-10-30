@@ -86,6 +86,8 @@ export function resolveServerUrl(value, pageOrigin = '') {
   return validateServerUrl(value === 'same-origin' ? pageOrigin : value);
 }
 export const ERRORS = {
+  DIRECTORY_DISABLED: 'دليل الغرف العامة غير متاح حاليًا. أنشئ غرفة خاصة أو ادخل برمز.',
+  ROOM_BLOCKED: 'تعذّر الانضمام إلى هذه الغرفة بسبب إعدادات الحظر.',
   MAFIA_DISABLED: 'مافيا ميدان غير متاحة لبدء مباريات جديدة حاليًا.',
   MAFIA_DRAINING: 'نجهّز تحديثًا للمجالس. المباريات القائمة تتابع حتى نهايتها؛ جرّب بدء مجلس جديد لاحقًا.',
   MAFIA_RULESET_UNSUPPORTED: 'تعذّر متابعة هذه النسخة من قواعد المجلس. أعد الاتصال بعد اكتمال التحديث.',

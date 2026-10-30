@@ -1,0 +1,155 @@
+{
+  "status": "ready-for-local-review",
+  "summary": "اكتمل التنفيذ المحلي: 2005 اختبارات ناجحة، صفر إخفاق، وفحص Chromium وWebKit والغرف الفعلية المعزولة. المعاينة على الكمبيوتر فقط؛ لا نشر ولا اختبار آيفون فعلي.",
+  "checkedAt": "2026-10-30T14:47:38.860Z",
+  "baseCommit": "6f1cf5cd2b26b69810e139185c625999eff51f40",
+  "branch": "codex/local-ui-rebuild-20261030",
+  "preview": "http://127.0.0.1:4178/__preview__/",
+  "computerOnly": true,
+  "fullSuite": {
+    "tests": 2006,
+    "pass": 2005,
+    "fail": 0,
+    "skipped": 1
+  },
+  "lint": {
+    "errors": 0,
+    "existingWarnings": 20
+  },
+  "normalBuild": {
+    "normalBuild": "passed",
+    "verificationMethod": "Final normal document rendered with full hashed asset manifest; no deployment",
+    "uiReviewCodeExcluded": true,
+    "htmlBytes": 3404667,
+    "gzipBytes": 894050,
+    "budgetBytes": 3407872,
+    "sha256": "9a42e7a690c8fd3a265036948245e54efeb1369253267b2e8db9c50d95416d7e",
+    "checkedAt": "2026-10-30T14:39:29.313Z"
+  },
+  "browserIntegration": [
+    {
+      "engine": "chromium",
+      "status": "passed",
+      "dimensions": [
+        [
+          360,
+          640
+        ],
+        [
+          390,
+          844
+        ],
+        [
+          430,
+          932
+        ],
+        [
+          844,
+          390
+        ],
+        [
+          768,
+          1024
+        ],
+        [
+          1180,
+          800
+        ]
+      ],
+      "realDirectories": 5,
+      "independentRoomClients": 2,
+      "liveGame": "fabraka",
+      "liveJoinedPlayers": 4,
+      "readySynchronized": true,
+      "syntheticMafiaScenes": 5,
+      "longList": 32,
+      "uncaughtErrors": 0,
+      "externalRequests": 0
+    },
+    {
+      "engine": "webkit",
+      "status": "passed",
+      "dimensions": [
+        [
+          360,
+          640
+        ],
+        [
+          390,
+          844
+        ],
+        [
+          430,
+          932
+        ],
+        [
+          844,
+          390
+        ],
+        [
+          768,
+          1024
+        ],
+        [
+          1180,
+          800
+        ]
+      ],
+      "realDirectories": 5,
+      "independentRoomClients": 2,
+      "liveGame": "meenfina",
+      "liveJoinedPlayers": 5,
+      "readySynchronized": true,
+      "syntheticMafiaScenes": 5,
+      "longList": 32,
+      "uncaughtErrors": 0,
+      "externalRequests": 0
+    }
+  ],
+  "visual": [
+    {
+      "engine": "chromium",
+      "sceneAtlasLoaded": true,
+      "sceneWidth": 92,
+      "sceneHeight": 51.828125,
+      "uncaughtErrors": 0
+    },
+    {
+      "engine": "webkit",
+      "sceneAtlasLoaded": true,
+      "sceneWidth": 92,
+      "sceneHeight": 51.828125,
+      "uncaughtErrors": 0
+    }
+  ],
+  "studio": {
+    "scenes": 200,
+    "unannotatedControls": 0,
+    "droppedLegacyIds": 0,
+    "weakenedRequiredFlags": 0
+  },
+  "tutorial": {
+    "chromium": 5,
+    "webkit": 5,
+    "actualRulesScenario": 14
+  },
+  "physicalIPhone": false,
+  "realProviderCalls": false,
+  "remoteOperations": {
+    "gitPush": false,
+    "merge": false,
+    "cloudflareDeploy": false,
+    "sitesDeploy": false,
+    "testflightUpload": false,
+    "remoteMigration": false,
+    "publicTunnel": false
+  },
+  "limitations": [
+    "ارسمها الحالية أونلاين فقط: خيار العائلة معطّل بوضوح؛ بناء محرك رسم محلي خارج هذا الطلب.",
+    "مقاسات الهاتف وفحص الكيبورد في المتصفح لا يثبتان سلوك الآيفون الأصلي.",
+    "لم يُجر اتصال LiveKit فعلي أو استخدام ميكروفون جهاز في هذه المعاينة.",
+    "اختبار مطابقة حزمة الصوت الخاصة متجاوز لعدم تحديد مجلدها الخارجي؛ لم تُستبدل حزمة TestFlight.",
+    "أداة عرض الحالات والمستخدمون مصطنعون بوضوح؛ دليل الغرف والانضمام والجاهزية اختُبرت بخادم محلي حقيقي وجلسات مستقلة.",
+    "خادم المراجعة يعطل عامل الخدمة المحلي كي لا يستبدل لوحة المراجعة بصفحة اللعبة المخزنة؛ عامل الخدمة المنشور لم يتغير."
+  ]
+}

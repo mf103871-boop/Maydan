@@ -43,14 +43,15 @@ var hBeta = React.createElement;
 
 
 
-function MaydanBeta({ api } = {}) {
+function MaydanBeta({ api, entry = 'home' } = {}) {
   const designPreview = api?.designPreview || null;
   const isDesignPreview = !!designPreview;
+  const landingScreen = entry === 'setup' && !isDesignPreview ? 'setup' : 'home';
   const saveKey = useCallback((key, value) => isDesignPreview ? Promise.resolve() : saveBadeehaKey(key, value), [isDesignPreview]);
   const betaRemoveKey = useCallback((key) => isDesignPreview ? undefined : removeBadeehaKey(key), [isDesignPreview]);
   const logic = MaydanLogicBeta,
     [hydrated, setHydrated] = useState(!!designPreview),
-    [screen, setScreenState] = useState(designPreview?.screen || "home"),
+    [screen, setScreenState] = useState(designPreview?.screen || landingScreen),
     // اتجاه الانتقال: «back» يبدّل إطارات دخول الشاشة (على .m-screen لا .m-root)
     [navDir, setNavDir] = useState("forward"),
     // حالات بصرية قصيرة العمر (تُصفَّر بمؤقّت يمرّ من wait)
@@ -488,14 +489,14 @@ function MaydanBeta({ api } = {}) {
                 ? (revealed ? toast("احسم نتيجة السؤال أولًا") : cancelQuestion(), !0)
                 : screen === "board"
                   ? (setConfirmEnd(!0), !0)
-                  : screen !== "home"
-                    ? (setScreen("home", "back"), !0)
+                  : screen !== landingScreen
+                    ? (setScreen(landingScreen, "back"), !0)
                     : !1),
       () => {
         delete window.maydanBack;
       }
     ),
-    [screen, revealed, reportQuestion, pendingClear, showScore, showRules, questionBaseTeams],
+    [screen, revealed, reportQuestion, pendingClear, showScore, showRules, questionBaseTeams, landingScreen],
   );
   function setTeamCount(count) {
     (setTeams((existing) =>
@@ -1037,8 +1038,21 @@ ${record.answered} من ${record.total} سؤالًا`,
   }
   // الإجابة «معروضة» فقط حين كُشفت ولم يخفها المضيف؛ الوسائط والتلميحات تتبع الحالة نفسها.
   const answerShown = revealed && !answerHidden;
-  function HomeScreen() {
+  function SavedMatchCard() {
+    if (!savedActive) return null;
     const savedProgress = savedActive ? Object.keys(savedActive.used || {}).length : 0;
+    return hBeta(
+      "div", { className: "m-saved-card" },
+      hBeta("div", null,
+        hBeta("b", null, "مباراة محفوظة"),
+        hBeta("small", null, `${savedProgress} من ${savedActive.roundSize} سؤالًا`),
+        hBeta("span", { className: "m-saved-progress", "aria-hidden": "true" },
+          hBeta("i", { style: { width: `${Math.min(100, (savedProgress / savedActive.roundSize) * 100)}%` } }))),
+      hBeta("button", { "data-design-id": "resume", "data-design-required": "true", type: "button", className: "m-primary", onClick: resumeGame }, "متابعة"),
+      hBeta("button", { "data-design-id": "discard-save", type: "button", className: "m-link", onClick: discardSavedGame }, "حذفها"),
+    );
+  }
+  function HomeScreen() {
     return hBeta(
       "section",
       { className: "m-home" },
@@ -1073,36 +1087,7 @@ ${record.answered} من ${record.total} سؤالًا`,
         hBeta("span", null, hBeta("b", { dir: "ltr" }, TOTAL_Q), " سؤال"),
         hBeta("span", null, HAS_MEDIA ? "الوسائط تُحفظ في الجهاز" : "تعمل دون إنترنت"),
       ),
-      savedActive &&
-        hBeta(
-          "div",
-          { className: "m-saved-card" },
-          hBeta(
-            "div",
-            null,
-            hBeta("b", null, "مباراة محفوظة"),
-            hBeta("small", null, `${savedProgress} من ${savedActive.roundSize} سؤالًا`),
-            hBeta(
-              "span",
-              { className: "m-saved-progress", "aria-hidden": "true" },
-              hBeta("i", {
-                style: {
-                  width: `${Math.min(100, (savedProgress / savedActive.roundSize) * 100)}%`,
-                },
-              }),
-            ),
-          ),
-          hBeta(
-            "button",
-            { "data-design-id": "resume", "data-design-required": "true", type: "button", className: "m-primary", onClick: resumeGame },
-            "متابعة",
-          ),
-          hBeta(
-            "button",
-            { "data-design-id": "discard-save", type: "button", className: "m-link", onClick: discardSavedGame },
-            "حذفها",
-          ),
-        ),
+      SavedMatchCard(),
       retiredActive && hBeta("p", { className: "m-muted m-center", role: "status" }, RETIRED_GAME_NOTICE),
       hBeta(
         "div",
@@ -1168,7 +1153,13 @@ ${record.answered} من ${record.total} سؤالًا`,
     return hBeta(
       "section",
       { className: "m-screen" },
-      Header({ title: "جهّزوا الميدان", back: () => setScreen("home", "back") }),
+      Header({ title: "جهّزوا الميدان", back: () => landingScreen === "setup" && api?.navigate
+        ? api.navigate("/game/badeeha?mode=local") : setScreen("home", "back") }),
+      landingScreen === "setup" && SavedMatchCard(),
+      landingScreen === "setup" && retiredActive && hBeta("p", { className: "m-muted m-center", role: "status" }, RETIRED_GAME_NOTICE),
+      landingScreen === "setup" && hBeta("div", { className: "m-two" },
+        hBeta("button", { "data-design-id": "history", type: "button", className: "m-secondary m-small", onClick: () => setScreen("history") }, "النتائج السابقة"),
+        hBeta("button", { "data-design-id": "rules", type: "button", className: "m-secondary m-small", onClick: () => setShowRules(!0) }, "طريقة اللعب")),
       !isDesignPreview && hBeta(SetupPresets, { game: "badeeha", settings: { mode, roundSize, timerLength, categories: selectedCategories }, onApply: (settings) => { setMode(settings.mode); setRoundSize(settings.roundSize); setTimerLength(settings.timer); setSelectedCategories(settings.categories); setSetupError(""); } }),
       hBeta(
         "div",
@@ -1885,7 +1876,7 @@ ${record.answered} من ${record.total} سؤالًا`,
     return hBeta(
       "section",
       { className: "m-screen" },
-      Header({ title: "النتائج والتقارير", back: () => setScreen("home", "back") }),
+      Header({ title: "النتائج والتقارير", back: () => setScreen(landingScreen, "back") }),
       hBeta(
         "div",
         { className: "m-panel" },

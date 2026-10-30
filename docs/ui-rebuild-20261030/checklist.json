@@ -1,0 +1,423 @@
+{
+  "baseCommit": "6f1cf5cd2b26b69810e139185c625999eff51f40",
+  "localBranch": "codex/local-ui-rebuild-20261030",
+  "requestSHA256": "595a75394cc92e0ce56cdc66bc82347c344aefc8f3bdd02ca4031b1570b6391c",
+  "remoteMutationsAuthorized": false,
+  "sections": [
+    {
+      "id": 1,
+      "title": "المصدر وحدود التنفيذ",
+      "acceptance": [
+        "مصدر6f محفوظ وفرع محلي مستقل",
+        "لا رفع أو دمج أو نشر أو ترحيل بعيد",
+        "أوامر محلية مراجعة",
+        "قائمة تغطية لكل طلب"
+      ],
+      "verification": [
+        "git status",
+        "local preview isolation tests"
+      ],
+      "status": "implemented-and-locally-verified",
+      "evidence": [
+        "verification.json",
+        "integration-proof.json",
+        "visual-proof.json",
+        "build-proof.json"
+      ]
+    },
+    {
+      "id": 2,
+      "title": "الهوية والتصميم المشترك",
+      "acceptance": [
+        "RTL وهاتف أولًا",
+        "كريمي وبنفسجي وتركواز وذهبي",
+        "كثافة محتوى وتباين ولمس مناسب"
+      ],
+      "verification": [
+        "viewport screenshots",
+        "touch geometry"
+      ],
+      "status": "implemented-and-locally-verified",
+      "evidence": [
+        "verification.json",
+        "integration-proof.json",
+        "visual-proof.json",
+        "build-proof.json"
+      ]
+    },
+    {
+      "id": 3,
+      "title": "تنظيف الرئيسية",
+      "acceptance": [
+        "إزالة بانر الأصدقاء",
+        "إزالة بطاقتي دفتر اللاعبين والغرف",
+        "دفتر اللاعبين متاح بالإعداد",
+        "بقاء الأصدقاء والغرف والسياسات"
+      ],
+      "verification": [
+        "home flow browser tests"
+      ],
+      "status": "implemented-and-locally-verified",
+      "evidence": [
+        "verification.json",
+        "integration-proof.json",
+        "visual-proof.json",
+        "build-proof.json"
+      ]
+    },
+    {
+      "id": 4,
+      "title": "قائمة الألعاب",
+      "acceptance": [
+        "ثمانية صفوف أفقية كاملة العرض",
+        "الترتيب والرسوم محفوظان",
+        "كامل البطاقة قابل للنقر",
+        "منع القص واحترام تقليل الحركة"
+      ],
+      "verification": [
+        "home mode browser tests",
+        "360/390/430/landscape geometry"
+      ],
+      "status": "implemented-and-locally-verified",
+      "evidence": [
+        "verification.json",
+        "integration-proof.json",
+        "visual-proof.json",
+        "build-proof.json"
+      ]
+    },
+    {
+      "id": 5,
+      "title": "الهيدر والبروفايل",
+      "acceptance": [
+        "صورة حقيقية مولدة جديدة",
+        "شعار ونص عربي حقيقيان فوقها",
+        "ملف WebP محسّن",
+        "بروفايل72px ورابطه الأصلي"
+      ],
+      "verification": [
+        "generated image metadata",
+        "home screenshot"
+      ],
+      "status": "implemented-and-locally-verified",
+      "evidence": [
+        "verification.json",
+        "integration-proof.json",
+        "visual-proof.json",
+        "build-proof.json"
+      ]
+    },
+    {
+      "id": 6,
+      "title": "اختيار النمط",
+      "acceptance": [
+        "محدد مشترك للدعم الفعلي",
+        "لوحة اختيار لكل لعبة",
+        "غير المدعوم معطل بصراحة",
+        "حفظ سياق النمط في الرجوع وإعادة التحميل"
+      ],
+      "verification": [
+        "game mode contract tests",
+        "router history tests"
+      ],
+      "status": "verified-with-source-correction",
+      "evidence": [
+        "verification.json",
+        "integration-proof.json",
+        "visual-proof.json",
+        "build-proof.json"
+      ]
+    },
+    {
+      "id": 7,
+      "title": "التعليمات والعائلي",
+      "acceptance": [
+        "زر تخطي واحد",
+        "لا تكرار للنمط",
+        "الحفاظ على الفرق والإعداد والجلسة",
+        "التدريب لا يكتمل بالتخطي"
+      ],
+      "verification": [
+        "local setup persistence tests",
+        "Mafia tutorial entry tests"
+      ],
+      "status": "implemented-and-locally-verified",
+      "evidence": [
+        "verification.json",
+        "integration-proof.json",
+        "visual-proof.json",
+        "build-proof.json"
+      ]
+    },
+    {
+      "id": 8,
+      "title": "الغلاف الموحد للأونلاين",
+      "acceptance": [
+        "نفس الدليل للألعاب الخمس",
+        "الإنشاء والرمز والفراغ والخطأ والانتظار",
+        "وحدات فرق بديهة",
+        "الألعاب تحتفظ بمحركاتها وأدواتها"
+      ],
+      "verification": [
+        "five-game browser navigation",
+        "online regression tests"
+      ],
+      "status": "implemented-and-locally-verified",
+      "evidence": [
+        "verification.json",
+        "integration-proof.json",
+        "visual-proof.json",
+        "build-proof.json"
+      ]
+    },
+    {
+      "id": 9,
+      "title": "دليل كثيف",
+      "acceptance": [
+        "شريط أدوات قصير",
+        "صفوف مضغوطة مع حالة وسعة حقيقية",
+        "فلاتر ومساعدة في لوحة",
+        "لا بانر تدريب أو هيرو كبير"
+      ],
+      "verification": [
+        "directory visual tests",
+        "accessible toolbar tests"
+      ],
+      "status": "implemented-and-locally-verified",
+      "evidence": [
+        "verification.json",
+        "integration-proof.json",
+        "visual-proof.json",
+        "build-proof.json"
+      ]
+    },
+    {
+      "id": 10,
+      "title": "الدليل والخادم",
+      "acceptance": [
+        "غرف عامة باختيار صريح",
+        "الخاصة تبقى خارج الدليل",
+        "عزل الألعاب",
+        "السعة وصلاحيات الدخول من الخادم",
+        "تحديث عدد وحالة وانتهاء",
+        "توافق الغرف القديمة"
+      ],
+      "verification": [
+        "real local HTTP/WS directory integration tests"
+      ],
+      "status": "implemented-and-locally-verified",
+      "evidence": [
+        "verification.json",
+        "integration-proof.json",
+        "visual-proof.json",
+        "build-proof.json"
+      ]
+    },
+    {
+      "id": 11,
+      "title": "بروفايل دليل الغرف",
+      "acceptance": [
+        "صورة واسم فعليان",
+        "لا رتب أو عملات مخترعة",
+        "الفوتر لا يغطي آخر غرفة",
+        "لا تراكم مع شريط التطبيق"
+      ],
+      "verification": [
+        "directory scroll/footer geometry",
+        "menu visibility tests"
+      ],
+      "status": "implemented-and-locally-verified",
+      "evidence": [
+        "verification.json",
+        "integration-proof.json",
+        "visual-proof.json",
+        "build-proof.json"
+      ]
+    },
+    {
+      "id": 12,
+      "title": "مافيا مباراة وتدريب",
+      "acceptance": [
+        "هيدر قصير ومرحلة ووقت",
+        "مساحة أكبر للدردشة والأحداث",
+        "حقل إرسال ظاهر",
+        "12 مقعدًا متاحًا",
+        "لا إخفاء معلومات لازمة بالقص"
+      ],
+      "verification": [
+        "Mafia browser layout tests",
+        "12-seat display fixture"
+      ],
+      "status": "implemented-and-locally-verified",
+      "evidence": [
+        "verification.json",
+        "integration-proof.json",
+        "visual-proof.json",
+        "build-proof.json"
+      ]
+    },
+    {
+      "id": 13,
+      "title": "الأدوات والأفعال",
+      "acceptance": [
+        "أيقونات مسماة للوصول",
+        "مؤشر الإجراء المطلوب",
+        "تأكيد هدف وقدرة وتصويت",
+        "بقاء الحظر والإبلاغ والخروج والدعوات"
+      ],
+      "verification": [
+        "Mafia action and safety tests"
+      ],
+      "status": "implemented-and-locally-verified",
+      "evidence": [
+        "verification.json",
+        "integration-proof.json",
+        "visual-proof.json",
+        "build-proof.json"
+      ]
+    },
+    {
+      "id": 14,
+      "title": "السجل والدردشة",
+      "acceptance": [
+        "إزالة القطع الصامت للأحداث",
+        "تحميل/عرض الأقدم",
+        "إظهار حدود احتفاظ الخادم",
+        "حفظ موضع القراءة ومؤشر الجديد",
+        "قنوات وصلاحيات وسرية محفوظة"
+      ],
+      "verification": [
+        "timeline controller tests",
+        "chat scroll tests",
+        "privacy regression tests"
+      ],
+      "status": "implemented-and-locally-verified",
+      "evidence": [
+        "verification.json",
+        "integration-proof.json",
+        "visual-proof.json",
+        "build-proof.json"
+      ]
+    },
+    {
+      "id": 15,
+      "title": "المؤثرات والصوت",
+      "acceptance": [
+        "ليل ونهار ودفاع وتصويت وإقصاء وكشف ونهاية",
+        "مؤثر قصير غير حاجب",
+        "ملخص بالسجل",
+        "مصدر مصرح فقط",
+        "هوية حدث تمنع التكرار",
+        "احترام الكتم وتقليل الحركة والخلفية"
+      ],
+      "verification": [
+        "event controller tests",
+        "sound lifecycle tests",
+        "explicit local effect display"
+      ],
+      "status": "implemented-and-locally-verified",
+      "evidence": [
+        "verification.json",
+        "integration-proof.json",
+        "visual-proof.json",
+        "build-proof.json"
+      ]
+    },
+    {
+      "id": 16,
+      "title": "الوقت والتدريب",
+      "acceptance": [
+        "وقت الخادم للحي",
+        "لا تغيير للقواعد من الأنيميشن",
+        "مدرب سياقي قابل للطي",
+        "تقدم التدريب وتوقفه محفوظان",
+        "لا ميكروفون أو اتصال حقيقي بالتدريب"
+      ],
+      "verification": [
+        "clock/audio/controller tests",
+        "tutorial model tests"
+      ],
+      "status": "implemented-and-locally-verified",
+      "evidence": [
+        "verification.json",
+        "integration-proof.json",
+        "visual-proof.json",
+        "build-proof.json"
+      ]
+    },
+    {
+      "id": 17,
+      "title": "الهاتف والكيبورد",
+      "acceptance": [
+        "360×640 و390×844 وكبير",
+        "أفقي وتابلت وكمبيوتر",
+        "حقل الكتابة واللاعبون قابلون للوصول",
+        "لا تداخل أو تمرير أفقي",
+        "safe area وvisual viewport"
+      ],
+      "verification": [
+        "responsive geometry tests",
+        "keyboard viewport emulation"
+      ],
+      "status": "browser-verified-physical-pending",
+      "evidence": [
+        "verification.json",
+        "integration-proof.json",
+        "visual-proof.json",
+        "build-proof.json"
+      ]
+    },
+    {
+      "id": 18,
+      "title": "التحقق المحلي",
+      "acceptance": [
+        "تحليل وبناء واختبارات مناسبة",
+        "جلسات محلية متعددة حقيقية",
+        "خصوصية وأدوار وإعادة اتصال",
+        "فصل المحاكاة عن الاتصال",
+        "لا ادعاء اختبار آيفون فعلي"
+      ],
+      "verification": [
+        "validation report",
+        "network request audit"
+      ],
+      "status": "implemented-and-locally-verified",
+      "evidence": [
+        "verification.json",
+        "integration-proof.json",
+        "visual-proof.json",
+        "build-proof.json"
+      ]
+    },
+    {
+      "id": 19,
+      "title": "المعاينة والتوقف",
+      "acceptance": [
+        "عنوان محلي مفتوح بالمتصفح",
+        "لوحة واجهات حقيقية وحالات عرض منفصلة",
+        "صور ونتائج ومصفوفة دعم",
+        "توثيق الناقص",
+        "لا نشر بعد التسليم"
+      ],
+      "verification": [
+        "local dashboard",
+        "delivery evidence"
+      ],
+      "status": "ready-for-review",
+      "evidence": [
+        "verification.json",
+        "integration-proof.json",
+        "visual-proof.json",
+        "build-proof.json"
+      ]
+    }
+  ],
+  "sourceConflict": [
+    {
+      "game": "ersomha",
+      "specAssumption": "online and local",
+      "verifiedSource": "onlineOnly:true and Component only renders Online",
+      "implementation": "family option disabled; no fake redirect; new local drawing engine excluded"
+    }
+  ]
+}

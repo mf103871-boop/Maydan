@@ -10,12 +10,13 @@ import { DESIGN_SCENES, createDesignFixture } from '../src/design/screen-catalog
 import { DESIGN_RENDERED_NODE_IDS, DESIGN_CONDITIONAL_NODE_REASONS } from '../src/design/coverage-map.js';
 
 test('coverage inventory preserves every node and exact conditional explanation after deduplication', () => {
-  // Phase2 inventory, extended in Mafia C by the authenticated earned-cosmetics
-  // conditional node. All earlier node meanings remain unchanged.
+  // Local UI rebuild: old shortcut/mode IDs remain compatibility records,
+  // real sheets/directories and private dialogs own their current controls.
+  // Action/privacy protection remains in the registry and separate tests.
   // A deliberate coverage/content change must update this semantic baseline;
   // whitespace, constant names and sharing structure do not affect it.
   const semantics = JSON.stringify({ DESIGN_CONDITIONAL_NODE_REASONS, DESIGN_RENDERED_NODE_IDS });
-  assert.equal(createHash('sha256').update(semantics).digest('hex'), '3e583d0d2a41cac0ee0615f29ddf436464efdd6a1ff081d1b8bd58324914c9e9');
+  assert.equal(createHash('sha256').update(semantics).digest('hex'), '94a9bab66f6d3b959607abd615e1e8a7d73896223a3b00eae5d36474c65fdfd9');
 });
 
 test('semantic scene registry has stable unique identities and the eight actual games', () => {
@@ -29,6 +30,26 @@ test('semantic scene registry has stable unique identities and the eight actual 
     for (const node of screen.nodes) assert.equal(getNodeDefinition(screen.id, node.id), node);
   }
   assert.deepEqual([...new Set(DESIGN_SCENES.map(scene => scene.game).filter(Boolean))].sort(), ['badeeha','beep','ersomha','fabraka','jabeen','mafia','mamnoo','meenfina']);
+});
+
+test('local UI rebuild preserves retired saved-design IDs while protecting real mode and safety actions', () => {
+  for (const [screen, ids] of [['home', ['presence','tools','rooms','roster']], ['game-details', ['online','local']]]) {
+    for (const id of ids) {
+      const node = getNodeDefinition(screen, id);
+      assert.equal(node?.retired, true, `${screen}:${id} remains a compatibility record`);
+      assert.match(node.coverageReason, /Retired|retained for saved-design compatibility/);
+      assert.ok(!DESIGN_RENDERED_NODE_IDS[screen].includes(id), 'metadata must not claim a hidden placeholder is rendered');
+    }
+  }
+  for (const [screen, ids] of [['home.game-mode', ['online-mode','local-mode','close','content']], ['game-details', ['skip-instructions']], ['settings', ['manage-roster']], ['online.mafia.nomination', ['action-open','mafia-tools']]]) {
+    for (const id of ids) assert.equal(getNodeDefinition(screen, id)?.required, true, `${screen}:${id}`);
+  }
+  for (const game of ['badeeha','ersomha','fabraka','meenfina']) {
+    const screen = getScreenDefinition(`online.${game}.directory`);
+    assert.equal(screen.game, game);
+    assert.equal(getNodeDefinition(screen.id, 'toolbar').required, true);
+    assert.ok(getNodeDefinition(screen.id, 'room-join'));
+  }
 });
 
 test('content and action containers cannot hide mandatory descendant controls', () => {
@@ -87,7 +108,7 @@ test('production game entrypoints explicitly declare semantic screen identities'
   }
   assert.match(readFileSync('src/online/Ersomha.jsx','utf8'), /data-design-screen=\{`ersomha\.\$\{state\.phase\}/);
   assert.match(readFileSync('src/online/Fabraka.jsx','utf8'), /data-design-screen=\{`online\.fabraka\.\$\{state\.phase\}/);
-  assert.match(readFileSync('src/online/Online.jsx','utf8'), /data-design-screen="online\.lobby"/);
+  assert.match(readFileSync('src/online/OnlineDirectoryView.jsx','utf8'), /data-design-screen="online\.lobby"/);
 });
 
 test('preview import graph never imports the server answer bank or creates live room/media clients', () => {

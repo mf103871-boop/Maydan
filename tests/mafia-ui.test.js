@@ -97,7 +97,7 @@ test('private reports explain conversion, failed recruitment and consumed defens
 test('noir public room cards expose only the received directory and preserve verified enablement',()=>{
   const props={enabled:true,mode:'classic',rooms:[{code:'123456',hostName:'ليان',mode:'classic',capacity:8,players:5,ready:2}],onCreate:()=>{}};
   const html=render('directory',props);assert.match(html,/الغرف العامة/);assert.match(html,/data-room-code="123456"/);assert.match(html,/مجلس ليان/);assert.match(html,/data-design-id="create-public-room"/);
-  for(const loading of [true,false]){const blocked=render('directory',{...props,disabled:true,loading});assert.match(blocked,/<select(?=[^>]*data-design-id="directory-mode")(?=[^>]*disabled)/);assert.match(blocked,/<button(?=[^>]*data-design-id="refresh")(?=[^>]*disabled)/);}
+  for(const loading of [true,false]){const blocked=render('directory',{...props,disabled:true,loading});assert.doesNotMatch(blocked,/data-design-id="directory-mode"/,'filters stay in the compact options panel until opened');assert.match(blocked,/<button(?=[^>]*data-design-id="create-public-room")(?=[^>]*disabled)/);assert.match(blocked,/<button(?=[^>]*data-design-id="refresh")(?=[^>]*disabled)/);}
 });
 test('integrated Mafia controls retain audio recovery and identify the exact owned replacement',()=>{
   const props=fixture('online.mafia.discussion');props.state.mafiaVoice={callId:'owned-call'};props.voice={status:'connected',requested:true,muted:true,canPublish:true,audioBlocked:true,onResume:()=>{},onLeave:()=>{}};

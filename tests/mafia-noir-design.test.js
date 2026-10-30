@@ -23,12 +23,35 @@ test('Studio cannot hide Mafia disconnect, audio recovery, private-card close or
     ['online.mafia.role-card', 'role-hide'], ['online.mafia.role-card', 'close'], ['online.mafia.role-card', 'role-content'],
     ['online.mafia.discussion', 'voice'], ['online.mafia.discussion', 'voice-leave'], ['online.mafia.discussion', 'voice-resume'],
     ['online.mafia.discussion', 'player-rail'], ['online.mafia.discussion', 'players'], ['online.mafia.discussion', 'player-seat'],
+    ['online.mafia.nomination', 'action-open'], ['online.mafia.verdict', 'action-open'], ['online.mafia.discussion', 'mafia-tools'],
+    ['online.mafia.clues', 'close'], ['online.mafia.clues', 'content'], ['online.mafia.notes', 'close'], ['online.mafia.notes', 'content'],
+    ['online.mafia.over', 'timeline-toggle'], ['online.mafia.closed', 'timeline-toggle'],
   ];
   for (const [screen, id] of controls) {
     assert.equal(getNodeDefinition(screen, id)?.required, true, `${screen}:${id}`);
     assert.equal(allowed(screen, id, { visible: false }), false, `${screen}:${id}:hidden`);
     assert.equal(allowed(screen, id, { style: { opacity: .5 } }), false, `${screen}:${id}:opacity`);
     assert.equal(allowed(screen, id, { style: { borderRadius: 12 } }), true, `${screen}:${id}:style`);
+  }
+});
+
+test('Studio keeps saved legacy patches valid without allowing new entry or action paths to be hidden', () => {
+  for (const [screen, id] of [['home', 'rooms'], ['home', 'roster'], ['game-details', 'online'], ['game-details', 'local']]) {
+    assert.equal(allowed(screen, id, { visible: false, style: { borderRadius: 12 } }), true, `${screen}:${id}: legacy document compatibility`);
+  }
+  for (const [screen, id] of [['home.game-mode', 'online-mode'], ['home.game-mode', 'local-mode'], ['game-details', 'skip-instructions'], ['settings', 'manage-roster'], ['online.ersomha.directory', 'toolbar']]) {
+    assert.equal(allowed(screen, id, { visible: false }), false, `${screen}:${id}:hidden`);
+    assert.equal(allowed(screen, id, { style: { opacity: .5 } }), false, `${screen}:${id}:opacity`);
+    assert.equal(allowed(screen, id, { style: { borderRadius: 12 } }), true, `${screen}:${id}:styling`);
+  }
+});
+
+test('finished history has real conditional IDs without exposing an ended composer or action dock', () => {
+  for (const screen of ['online.mafia.over','online.mafia.closed']) {
+    assert.equal(getNodeDefinition(screen, 'timeline-toggle').required, true);
+    for (const id of ['chat','messages','event','chat-channel','load-older','new-messages'])
+      assert.ok(getNodeDefinition(screen, id)?.coverageReason.length > 35, `${screen}:${id}`);
+    for (const id of ['composer','message-input','send','ability','action-open']) assert.equal(getNodeDefinition(screen, id), null, `${screen}:${id}`);
   }
 });
 

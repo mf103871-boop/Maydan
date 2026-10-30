@@ -1,12 +1,9 @@
-// تبويب الألعاب: الألعاب أولًا، مع حضور الأصدقاء وأدوات اللّمّة.
+// تبويب الألعاب: قائمة الألعاب واختيار النمط، مع بقاء الحساب والسياسات متاحة.
 import React, { useRef, useState, useEffect } from 'react';
-import { Screen, ripple } from '../../shared/ui/components.jsx';
+import { Screen, Sheet, ripple } from '../../shared/ui/components.jsx';
 import { IconUsers, IconClock, IconBack } from '../../shared/ui/icons.jsx';
 import { usePlatform } from '../context.js';
 import { useAccount } from '../../shared/account/context.js';
-import { useSocial } from '../../social/SocialProvider.jsx';
-import { useLamma } from '../../social/LammaProvider.jsx';
-import { PersonAvatar } from '../../social/SocialScreen.jsx';
 import { LammaIcon } from '../../social/LammaMedia.jsx';
 import { useProfiles } from '../../profiles/ProfileProvider.jsx';
 import { ProfileAvatar } from '../../profiles/ProfileAvatar.jsx';
@@ -14,8 +11,10 @@ import { PUBLIC_SITE_ORIGIN, LEGAL_ROUTES } from '../../shared/account/config.js
 import { navigate, getDirection } from '../router.js';
 import { GAMES } from '../registry.js';
 import { reportSimulatorHomeReady } from '../native-launch-ready.js';
-import { Avatar, BrandMark, Wordmark, GameArtwork, ClayStage } from '../../shared/brand/art.jsx';
-import { prefersReducedMotion, wait } from '../../shared/fx/index.js';
+import { BrandMark, Wordmark } from '../../shared/brand/art.jsx';
+import { getGameModeSupport } from '../../shared/game-mode-support.mjs';
+import { gameModePath } from '../game-mode-navigation.js';
+import homeStyles from './home-rebuild.css';
 
 // جمع «لعبة» بحسب العدد: لعبة واحدة، لعبتان، 3–10 ألعاب، 11+ لعبة
 export function gamesLabel(n) {
@@ -37,121 +36,80 @@ export function HomeGroups({ account, groups = [], calls = [], onOpen }) {
   return <div data-design-id="groups" className="lamma-home-groups" aria-label="لمّاتك الأخيرة">{recent.map(group => <button type="button" key={group.id} data-design-id="group-card" className={'lamma-home-group' + (active.has(group.id) ? ' has-live-call' : '')} onClick={() => onOpen(group.id)} aria-label={'افتح لمّة ' + group.name + (active.has(group.id) ? '، مكالمة جارية' : '')}><ProfileAvatar user={{ avatarPreset: group.avatarPreset, theme: 'teal' }} size={32} /><span><strong>{group.name}</strong><small>{active.has(group.id) ? <><LammaIcon name="phone" size={12} />مكالمة جارية</> : group.unreadCount > 0 ? `${group.unreadCount} رسالة جديدة` : 'افتح السوالف'}</small></span></button>)}</div>;
 }
 
-function GameCard({ game, index, launching, badge, onOpen }) {
-  const ref = useRef(null);
-  const frame = useRef(0);
-  const pointer = useRef(null);
-  // ميل ثلاثي الأبعاد خفيف بحسب موضع الإصبع، مخنوق بإطار الرسم: البطاقة تدور والرسم
-  // يتحرك عكس الإصبع عبر --tx/--ty (بارالاكس ثنائي الأبعاد في كل المتصفحات).
-  const tilt = (e) => {
-    const el = ref.current;
-    if (!el || prefersReducedMotion()) return;
-    pointer.current = { x: e.clientX, y: e.clientY };
-    if (frame.current) return;
-    frame.current = requestAnimationFrame(() => {
-      frame.current = 0;
-      const node = ref.current;
-      const p = pointer.current;
-      if (!node || !p) return;
-      const r = node.getBoundingClientRect();
-      const x = ((p.x - r.left) / r.width - 0.5) * 2;
-      const y = ((p.y - r.top) / r.height - 0.5) * 2;
-      node.style.transform = `perspective(700px) rotateX(${(-y * 5).toFixed(2)}deg) rotateY(${(x * 5).toFixed(2)}deg) translateY(2px)`;
-      node.style.setProperty('--tx', x.toFixed(3));
-      node.style.setProperty('--ty', y.toFixed(3));
-    });
-  };
-  const untilt = () => {
-    cancelAnimationFrame(frame.current); frame.current = 0; pointer.current = null;
-    const el = ref.current;
-    if (!el) return;
-    el.style.transform = ''; el.style.removeProperty('--tx'); el.style.removeProperty('--ty');
-  };
-  useEffect(() => () => cancelAnimationFrame(frame.current), []);
+function GameCard({ game, index, onOpen }) {
   const Icon = game.icon;
+  const support = getGameModeSupport(game.id);
   return (
-    <button ref={ref} type="button" data-design-id={`game-card.${game.id}`} className={`game-card ${game.soon ? 'is-soon' : ''} ${launching ? 'is-launch' : ''}`} style={{ '--game-accent': game.accent, '--delay': `${index * 55}ms` }}
-      onPointerDown={(e) => { tilt(e); ripple(e); }} onPointerMove={tilt} onPointerUp={untilt} onPointerLeave={untilt} onPointerCancel={untilt}
-      onClick={() => onOpen(game)} aria-label={`${game.name}: ${game.tagline}`} disabled={!!game.soon}>
-      {badge && <span className="badge badge-accent card-badge">{badge}</span>}
+    <button type="button" data-design-id={`game-card.${game.id}`} className={`game-card home-game-row ${game.soon ? 'is-soon' : ''}`} style={{ '--game-accent': game.accent, '--delay': `${index * 25}ms` }}
+      onPointerDown={ripple} onClick={() => onOpen(game)} aria-label={`${game.name}: ${game.tagline}`} aria-haspopup="dialog" disabled={!!game.soon}>
       <span className="icon clay-stage clay-static" aria-hidden="true"><span className="clay-lift">{Icon ? <Icon /> : '🎮'}</span></span>
-      <span className="name">{game.name}</span>
-      <span className="tagline">{game.tagline}</span>
-      <span className="meta">
+      <span className="home-game-copy"><span className="name">{game.name}</span><span className="tagline">{game.tagline}</span><span className="meta">
         <span><IconUsers /> <bdi>{game.players.min}–{game.players.max}</bdi></span>
         <span><IconClock /> <bdi>{game.duration}</bdi></span>
-      </span>
+        <span>{support?.online && support.local ? 'أونلاين · مع العائلة' : support?.online ? 'أونلاين' : 'مع العائلة'}</span>
+      </span></span>
+      <IconBack className="home-game-arrow" aria-hidden="true" />
     </button>
   );
 }
 
+export function GameModeSheet({ game, onClose, onSelect }) {
+  if (!game) return null;
+  const support = getGameModeSupport(game.id);
+  return <Sheet open title={game.name} onClose={onClose} data-design-screen="home.game-mode">
+    <div className="game-mode-options" aria-label="اختر نمط اللعب">
+      <button type="button" className="game-mode-choice" data-design-id="online-mode" disabled={!support?.online} onClick={() => onSelect('online')}>
+        <span className="game-mode-symbol" aria-hidden="true">↗</span><span><strong>أونلاين</strong><small>{support?.online ? support.unit === 'teams' ? 'جوال لكل فريق' : 'كل لاعب من جواله' : 'غير متاح لهذه اللعبة حاليًا'}</small></span><IconBack aria-hidden="true" />
+      </button>
+      <button type="button" className="game-mode-choice" data-design-id="local-mode" disabled={!support?.local} onClick={() => onSelect('local')}>
+        <span className="game-mode-symbol" aria-hidden="true"><IconUsers /></span><span><strong>مع العائلة</strong><small>{support?.local ? 'على جوال واحد' : 'متاحة أونلاين فقط'}</small></span><IconBack aria-hidden="true" />
+      </button>
+    </div>
+  </Sheet>;
+}
+
 export function Home() {
-  const { roster, sound, haptics, version } = usePlatform();
+  const { sound, haptics, version } = usePlatform();
   const account = useAccount();
-  const social = useSocial() || { friends: [], incoming: [], unreadCount: 0 };
-  const lamma = useLamma();
   const profiles = useProfiles();
+  const [selectedGame, setSelectedGame] = useState(null);
+  const opening = useRef(false);
   useEffect(() => reportSimulatorHomeReady({ accountReady: account.ready, gameCount: GAMES.length }), [account.ready]);
-  // فتح لعبة: البطاقة تنطلق (is-launch) ثم الملاحة بعد 140ms (صفر تحت تقليل الحركة)؛ النقر المزدوج محروس بمرجع.
-  const launching = useRef(false);
-  const launchTimer = useRef(0);
-  useEffect(() => () => clearTimeout(launchTimer.current), []);
-  const [launchId, setLaunchId] = useState(null);
   const open = (game) => {
-    if (launching.current) return;
-    launching.current = true;
-    setLaunchId(game.id);
+    opening.current = false;
     sound.play('pop'); haptics.vibrate('selection');
-    launchTimer.current = setTimeout(() => { navigate(game.id === 'mafia' ? '/online/mafia' : `/game/${game.id}`); launching.current = false; }, wait(140));
+    setSelectedGame(game);
   };
-  const cards = GAMES;
-  const onlineFriends = social.friends.filter(friend => friend.online);
-  const presenceFriends = [...social.friends].sort((a, b) => Number(!!b.online) - Number(!!a.online)).slice(0, 3);
-  const activeGroups = new Set((lamma?.calls || []).filter(call => call.scope === 'group' && call.status === 'active').map(call => call.conversationId)).size;
+  const select = (mode) => {
+    const target = gameModePath(selectedGame?.id, mode);
+    if (!target || opening.current) return;
+    opening.current = true;
+    sound.play('whoosh'); haptics.vibrate('selection');
+    setSelectedGame(null);
+    navigate(target);
+  };
   return (
     <Screen data-design-screen="home" dir={getDirection()} className="stack home-screen" aria-label="الألعاب">
+      <style>{homeStyles}</style>
       <header data-design-id="header" className="home-head">
+        <img className="home-header-art" src="art/home/home-header-v1.webp" width="1536" height="512" alt="" aria-hidden="true" decoding="async" />
         <div data-design-id="brand" className="brand">
           <BrandMark />
           <div><Wordmark /><div className="brand-sub">ألعاب جمعتنا</div></div>
         </div>
-        <button type="button" data-design-id="profile" className="home-profile" aria-label="بروفايلي" title="بروفايلي" onClick={() => navigate('/profile')}><ProfileAvatar user={profiles?.mine || account.user} /></button>
+        <button type="button" data-design-id="profile" className="home-profile" aria-label="بروفايلي" title="بروفايلي" onClick={() => navigate('/profile')}><ProfileAvatar user={profiles?.mine || account.user} size={64} /></button>
       </header>
 
-      <button type="button" data-design-id="presence" className="home-presence" onClick={() => navigate('/friends')} onPointerDown={ripple} aria-label="افتح الأصدقاء والمحادثات">
-        <span className="home-presence-faces" aria-hidden="true">{presenceFriends.length ? presenceFriends.map(friend => <PersonAvatar key={friend.id} user={friend} presence />) : <span className="home-presence-symbol"><IconUsers /></span>}</span>
-        <span className="home-presence-copy"><strong>{onlineFriends.length ? `${onlineFriends.length} من أصحابك متصل الآن` : 'اللّمة تبدأ بأصحابك'}</strong><small>{!account.signedIn ? 'سجّل دخولك وابدأ السوالف' : activeGroups ? `${activeGroups} من شِلَلك في مكالمة الآن` : 'سوالف، صوت، ودعوة للعب'}</small></span>
-        <IconBack className="home-presence-arrow" />
-      </button>
-
       <section data-design-id="games" className="home-games" aria-labelledby="home-games-title">
-        <div className="home-section-heading"><div><h1 data-design-id="title" id="home-games-title">اختار لعبتك</h1><p>كل جمعة لها ميدان</p></div><span className="badge">{gamesLabel(GAMES.length)}</span></div>
-        <div className="games-grid">{cards.map((g, i) => <GameCard key={g.id} game={g} index={i} launching={launchId === g.id} badge={plusBadge(account, g)} onOpen={open} />)}</div>
-      </section>
-
-      <section data-design-id="tools" className="home-tools" aria-label="الغرف واللاعبون">
-      <button type="button" data-design-id="rooms" className="card online-home-card" onClick={() => navigate('/online')} onPointerDown={ripple}>
-        <ClayStage className="clay-static"><GameArtwork game="meenfina" /></ClayStage>
-        <span><strong>اللّمّة من كل جوال</strong><small>ارسمها وفبركة من شخصين · مين فينا من ثلاثة · برمز أو بدعوة</small></span>
-        <IconBack className="home-tool-arrow" />
-      </button>
-      <button type="button" data-design-id="roster" className="card roster-card" onClick={() => navigate('/players')} aria-label="دفتر اللاعبين" onPointerDown={ripple}>
-        <span className="grow" style={{ textAlign: 'start' }}>
-          <span className="card-title" style={{ display: 'block' }}>دفتر اللاعبين</span>
-          <span key={roster.length} className="card-muted">{roster.length ? `${roster.length} لاعبين جاهزون لكل الألعاب` : 'أضف أسماء أصدقائك مرة واحدة'}</span>
-        </span>
-        <span className="roster-faces" aria-hidden="true">
-          {roster.length
-            ? roster.slice(0, 4).map((p) => <ClayStage key={p.id} className="clay-static no-contact"><Avatar player={p} /></ClayStage>)
-            : [0, 1, 2, 3].map((index) => <ClayStage key={index} className="clay-static no-contact"><Avatar index={index} /></ClayStage>)}
-        </span>
-      </button>
+        <div className="home-section-heading"><h1 data-design-id="title" id="home-games-title">اختار لعبتك</h1><span className="badge">{gamesLabel(GAMES.length)}</span></div>
+        <div className="games-grid home-game-list">{GAMES.map((g, i) => <GameCard key={g.id} game={g} index={i} onOpen={open} />)}</div>
       </section>
       <p data-design-id="footer" className="home-footer">ألعاب الجهاز الواحد تعمل دون إنترنت · الغرف تحتاج اتصالًا <span>الإصدار {version}</span></p>
       <nav className="muted center legal-links" aria-label="الأسعار والسياسات" style={{ fontSize: 13 }}>
         {account.platform !== 'ios' && <><a data-design-id="pricing-link" href="pricing/">التسعير</a> · </>}
         <a data-design-id="refunds-link" href={account.platform === 'ios' ? `${PUBLIC_SITE_ORIGIN}/refunds/` : 'refunds/'}>سياسة الاسترداد</a> · <a data-design-id="terms-link" href={LEGAL_ROUTES.terms}>شروط الاستخدام</a> · <a data-design-id="privacy-link" href={LEGAL_ROUTES.privacy}>سياسة الخصوصية</a>
       </nav>
+      <GameModeSheet game={selectedGame} onClose={() => setSelectedGame(null)} onSelect={select} />
     </Screen>
   );
 }

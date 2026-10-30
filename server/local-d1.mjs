@@ -31,11 +31,12 @@ class LocalStatement {
     return { success: true, results, meta: { changes: 0, duration: 0, rows_read: results.length, rows_written: 0 } };
   }
   async raw() { return this.statement().all(...(this.args || [])).map((row) => Object.values(row)); }
-  async run() {
+  runSync() {
     const result = this.statement().run(...(this.args || []));
     const changes = Number(result.changes || 0);
     return { success: true, results: [], meta: { changes, duration: 0, last_row_id: Number(result.lastInsertRowid || 0), rows_read: 0, rows_written: changes } };
   }
+  async run() { return this.runSync(); }
 }
 
 export class LocalD1 {
@@ -46,7 +47,11 @@ export class LocalD1 {
     this.database.exec('BEGIN');
     try {
       const results = [];
-      for (const statement of statements) results.push(await statement.run());
+      // DatabaseSync has one transaction per connection. Yielding here lets
+      // another batch BEGIN (or an unrelated read/write enter this transaction).
+      // Keep the entire transaction on this synchronous turn; the public API
+      // still returns a Promise just like D1.
+      for (const statement of statements) results.push(statement.runSync());
       this.database.exec('COMMIT');
       return results;
     } catch (error) { this.database.exec('ROLLBACK'); throw error; }
