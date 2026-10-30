@@ -11,6 +11,8 @@
     "ios:prepare": "node scripts/ios/prepare.mjs",
     "test": "node --test --test-concurrency=2 \"tests/**/*.test.js\"",
     "lint": "eslint .",
+    "mafia:calibrate": "node scripts/mafia-rating-calibrate.mjs",
+    "mafia:acceptance": "node scripts/mafia-acceptance-report.mjs",
     "e2e:smoke": "node scripts/e2e/smoke.mjs",
     "e2e:startup-images": "node scripts/e2e/startup-images.mjs",
     "e2e:sw": "node --test tests/e2e/sw-navigation.mjs",

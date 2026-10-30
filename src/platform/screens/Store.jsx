@@ -8,6 +8,7 @@ import { ProfileAvatar } from '../../profiles/ProfileAvatar.jsx';
 import { PLUS_CATALOG_VERSION, availableCollections, availableItems, getCosmetic } from '../../plus/catalog.js';
 import { usePlusResource, plusError } from '../../plus/usePlusAccount.js';
 import { SubscriptionTransition } from '../../plus/SubscriptionTransition.jsx';
+import { getMafiaAchievement } from '../../profiles/mafia-catalog.js';
 import css from '../../plus/plus.css';
 
 const SLOTS = { frame: 'frameId', avatar: 'avatarId', cover: 'coverId', nameColor: 'nameColorId', roomTheme: 'roomThemeId' };
@@ -43,6 +44,8 @@ function StoreAccount() {
   const selected = { ...EMPTY_SELECTION, ...data?.preferred };
   const effective = { ...EMPTY_SELECTION, ...data?.effective };
   const plus = data?.plusActive ?? account.premium;
+  const grants = (data?.grants || []).filter(grant => getCosmetic(grant.itemId));
+  const ownedItems = new Set(grants.map(grant => grant.itemId));
   const currentProfile = profiles?.mine || account.user || { name: 'لاعب ميدان', avatarPreset: 'spark' };
   const preview = collections.find(collection => collection.id === previewId);
   const previewItems = preview ? items.filter(item => item.collectionId === preview.id) : [];
@@ -65,7 +68,7 @@ function StoreAccount() {
   };
   const equip = item => {
     if (!owner) { navigate('/settings'); return; }
-    if (!plus) { account.openPaywall({ reason: 'cosmetics' }); return; }
+    if (!plus && !ownedItems.has(item.id)) { account.openPaywall({ reason: 'cosmetics' }); return; }
     save({ [SLOTS[item.kind]]: item.id }, item.id);
   };
   const equipCollection = collection => {
@@ -86,7 +89,11 @@ function StoreAccount() {
     {catalogOffline && <p role="status" className="plus-expired-note">نعرض الكتالوج المحفوظ حاليًا. يلزم الاتصال لحفظ اختيارك.</p>}
     {owner && loading && <p role="status">جارٍ تحميل اختياراتك…</p>}
     {resource.error && <div role="alert" className="online-notice error"><p>{plusError(resource.error)}</p><Button data-design-id="plus-retry" onClick={reload}>إعادة التحميل</Button></div>}
-    {owner && data && !plus && Object.values(selected).some(Boolean) && <p className="plus-expired-note">اختيارات بلس محفوظة لك. مظهرك المجاني هو الظاهر حتى يعود الاستحقاق.</p>}
+    {owner && data && !plus && Object.values(selected).some(Boolean) && <p className="plus-expired-note">اختيارات الاشتراك محفوظة حتى يعود الاستحقاق. العناصر المكتسبة من إنجازات مافيا تبقى متاحة لك.</p>}
+    {owner && grants.length > 0 && <section className="card stack" data-design-id="earned-cosmetics"><h2 className="card-title">لمسات اكتسبتها باللعب</h2><p>تراخيص دائمة من إنجازات مافيا، متاحة دون اشتراك بلس.</p>{grants.map(grant => {
+      const item = getCosmetic(grant.itemId);
+      return <div className="plus-preview-category" key={item.id}><span>{item.label}<small> · إنجاز مافيا: {getMafiaAchievement(grant.achievementId)?.label || 'إنجاز مكتسب'}</small></span><Button disabled={!!busy || loading || !!resource.error} onClick={() => equip(item)}>{effective[SLOTS[item.kind]] === item.id ? 'مستخدم الآن' : 'استخدام المكتسب'}</Button></div>;
+    })}</section>}
     <div data-design-id="collections" className="plus-collection-grid">{collections.map(collection => {
       const groupItems = items.filter(item => item.collectionId === collection.id);
       const cover = groupItems.find(item => item.kind === 'cover');
@@ -99,7 +106,7 @@ function StoreAccount() {
         </div>
       </article>;
     })}</div>
-    <section className="card stack"><h2 className="card-title">مكتبة تتجدد كل شهر</h2><p>إطار وغلاف وستة ملصقات جديدة شهريًا. كل المجموعات المتاحة ضمن اشتراكك؛ دون عملات أو صناديق عشوائية.</p><p className="plus-preview-note">استخدام عناصر بلس أثناء الاستحقاق فقط. نحفظ اختياراتك عند انتهائه، وتبقى رسائلك ومبارياتك كما هي.</p>{!plus && <Button data-design-id="plus-details" variant="primary" onClick={() => account.openPaywall({ reason: 'cosmetics' })}>مزايا وأسعار ميدان بلس</Button>}</section>
+    <section className="card stack"><h2 className="card-title">مكتبة تتجدد كل شهر</h2><p>إطار وغلاف وستة ملصقات جديدة شهريًا. كل المجموعات المتاحة ضمن اشتراكك؛ دون عملات أو صناديق عشوائية.</p><p className="plus-preview-note">عناصر الاشتراك متاحة أثناء الاستحقاق، والعناصر المكتسبة من إنجازات مافيا تبقى لك. نحفظ اختياراتك عند انتهاء الاشتراك.</p>{!plus && <Button data-design-id="plus-details" variant="primary" onClick={() => account.openPaywall({ reason: 'cosmetics' })}>مزايا وأسعار ميدان بلس</Button>}</section>
     {owner && data && <section className="card stack" aria-label="خيارات مظهري"><h2 className="card-title">مظهري</h2><label className="plus-store-check"><input type="checkbox" checked={selected.badge === true} disabled={!!busy || (!plus && !selected.badge)} onChange={event => save({ badge: event.target.checked }, 'badge')} />إظهار شارة بلس بجانب اسمي</label><Button variant="ghost" disabled={!!busy} onClick={() => save(EMPTY_SELECTION, 'clear')}>العودة لمظهري المجاني</Button><p className="plus-preview-note">صورك وأغلفتك وثيماتك المجانية تبقى محفوظة ويمكن تعديلها من البروفايل.</p></section>}
     {notice && <p role={savedError ? 'alert' : 'status'} className={'online-notice' + (savedError ? ' error' : '')}>{notice}</p>}
     {preview && <Modal title={preview.label} onClose={() => setPreviewId(null)} className="plus-preview-dialog"><div className="plus-preview" style={{ '--collection-bg': preview.palette?.bg, '--collection-accent': preview.palette?.accent, '--collection-text': preview.palette?.text }}>
@@ -108,7 +115,7 @@ function StoreAccount() {
       <div className="plus-preview-cover"><img src={preview.coverUrl || previewItems.find(item => item.kind === 'cover')?.assetUrl} alt="معاينة غلاف البروفايل" /></div>
       <div className="plus-preview-identity"><ProfileAvatar user={{ ...currentProfile, cosmetics: previewSelection }} size={76} /><div><strong style={{ color: previewNameColor?.color }}>{currentProfile.name || 'لاعب ميدان'}</strong><div><span className="plus-badge">✦ بلس</span></div></div></div>
       {previewItems.some(item => item.kind === 'roomTheme') && <div className="plus-room-preview"><strong>مجلس {preview.label}</strong><p>المضيف يختار الستايل، وكل الموجودين يستمتعون به.</p><div className="plus-room-preview-players"><span>أنت · جاهز</span><span>صديقك · جاهز</span></div></div>}
-      {previewItems.filter(item => SLOTS[item.kind]).map(item => <div className="plus-preview-category" key={item.id}><span>{LABELS[item.kind]}</span><Button size="sm" disabled={!!busy || (!!owner && (loading || !!resource.error))} onClick={() => equip(item)}>{effective[SLOTS[item.kind]] === item.id ? 'مستخدم الآن' : plus ? 'استخدام' : 'مع بلس'}</Button></div>)}
+      {previewItems.filter(item => SLOTS[item.kind]).map(item => <div className="plus-preview-category" key={item.id}><span>{LABELS[item.kind]}{ownedItems.has(item.id) && <small> · مكتسب من إنجاز مافيا</small>}</span><Button size="sm" disabled={!!busy || (!!owner && (loading || !!resource.error))} onClick={() => equip(item)}>{effective[SLOTS[item.kind]] === item.id ? 'مستخدم الآن' : plus || ownedItems.has(item.id) ? 'استخدام' : 'مع بلس'}</Button></div>)}
       <div className="plus-collection-stickers" aria-label="ملصقات المجموعة">{previewItems.filter(item => item.kind === 'sticker').map(item => <div className="plus-sticker-sample" key={item.id}><img src={item.assetUrl} alt={item.label} /><small>{item.label}</small></div>)}</div>
       <Button variant="primary" full disabled={!!busy || (!!owner && (loading || !!resource.error))} onClick={() => equipCollection(preview)}>{plus ? 'استخدم الطقم كاملًا' : 'اكتشف ميدان بلس'}</Button>
     </div></Modal>}

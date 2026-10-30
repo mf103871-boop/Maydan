@@ -2,7 +2,9 @@ import assert from 'node:assert/strict';
 import http from 'node:http';
 import path from 'node:path';
 import {readFile,writeFile,mkdir} from 'node:fs/promises';
-import {build} from 'esbuild';
+import {build as esbuildBuild} from 'esbuild';
+import {audioCatalogPackagingPlugin} from '../../scripts/audio/catalog-packaging.mjs';
+const build = options => esbuildBuild({...options,plugins:[audioCatalogPackagingPlugin(),...(options.plugins||[])]});
 import {chromium,webkit} from 'playwright';
 const output=path.resolve('.cache/audio-candidate-lab');await mkdir(output,{recursive:true});
 const source=`

@@ -1,13 +1,17 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
+import { flushSync } from 'react-dom';
 import { Button, Modal } from '../shared/ui/components.jsx';
 import { ProfileAvatar } from '../profiles/ProfileAvatar.jsx';
 import { Avatar } from '../shared/brand/art.jsx';
 import { MafiaIcon, MafiaRoleArt, MafiaSceneArt, MafiaCardBack } from '../games/mafia/icon.jsx';
-import { MAFIA_DEFAULT_SETTINGS, MAFIA_ROLES, MAFIA_PHASES, MAFIA_FACTIONS } from './mafia-shared.js';
+import { MAFIA_DEFAULT_SETTINGS, MAFIA_ALL_ROLES as MAFIA_ROLES, MAFIA_PHASES, MAFIA_FACTIONS } from './mafia-shared.js';
 import { arabicNumber, errorText } from './shared.js';
 import css from './mafia.css';
 import { MAFIA_NOIR_ASSETS } from '../games/mafia/noir-assets.js';
 import { useMafiaSound } from '../games/mafia/useMafiaSound.js';
+import { MafiaRewardSummary } from './MafiaRewardSummary.jsx';
+import { navigate } from '../platform/router.js';
+import { MAFIA_REPORT_CATEGORIES } from './mafia-report-shared.js';
 
 const ar = arabicNumber;
 const label = value => typeof value === 'string' ? value : value?.name || value?.label || '';
@@ -17,30 +21,70 @@ const noop = () => {};
 const isActive = state => !['lobby', 'over', 'closed', 'waiting'].includes(state.phase) && !state.waiting;
 const nameOf = (members, id) => members.find(player => player.id === id)?.name || 'لاعب';
 
+// pagehide can precede document.hidden. Cover private DOM before a browser/native
+// snapshot, and restore only the surface on pageshow, never a revealed card.
+export function useMafiaPrivacy(enabled = true) {
+  const [hidden, setHidden] = useState(() => enabled && typeof document !== 'undefined' && document.hidden);
+  useEffect(() => {
+    if (!enabled) return undefined;
+    const cover = () => flushSync(() => setHidden(true));
+    const visibility = () => { if (document.hidden) cover(); else flushSync(() => setHidden(false)); };
+    document.addEventListener('visibilitychange', visibility);
+    window.addEventListener('pagehide', cover); window.addEventListener('pageshow', visibility);
+    return () => {
+      document.removeEventListener('visibilitychange', visibility);
+      window.removeEventListener('pagehide', cover); window.removeEventListener('pageshow', visibility);
+    };
+  }, [enabled]);
+  return enabled && hidden;
+}
+
 export function normalizeMafiaSettings(value = {}) {
   const mode = value.mode === 'shadow' ? 'shadow' : 'classic';
   const min = mode === 'shadow' ? 9 : 6, max = mode === 'shadow' ? 12 : 8;
-  return { mode, capacity: Math.max(min, Math.min(max, Number(value.capacity) || (mode === 'shadow' ? 10 : 8))), visibility: value.visibility === 'private' ? 'private' : 'public', roomName: typeof value.roomName === 'string' ? value.roomName : '', community: 'ar', voiceMode: value.voiceMode === 'off' ? 'off' : 'optional' };
+  return { mode, capacity: Math.max(min, Math.min(max, Number(value.capacity) || (mode === 'shadow' ? 10 : 8))), visibility: value.visibility === 'private' ? 'private' : 'public', roomName: typeof value.roomName === 'string' ? value.roomName : '', community: 'ar', voiceMode: value.voiceMode === 'off' ? 'off' : 'optional', ...(value.experimentalRole==='tracker'?{experimentalRole:'tracker',visibility:'private'}:{}) };
 }
 
 // Shared by room creation and the host's lobby editor. `present` counts the
 // seats already taken: the server refuses a capacity below it.
-function MafiaSettingsFields({ settings, onChange, disabled, present = 0 }) {
+function MafiaSettingsFields({ settings, onChange, disabled, present = 0, experimentalRolesEnabled = false }) {
   return <>
     <label className="mafia-name-field">اسم المجلس<input data-design-id="room-name" maxLength={30} value={settings.roomName} disabled={disabled} autoComplete="off" placeholder="مجلس الشلّة" onChange={event => onChange({ ...settings, roomName: event.target.value })}/></label>
     <div data-design-id="mode-choice" className="mafia-mode-picker" role="group" aria-label="طور المباراة">{[['classic','المجلس الأساسي','٦–٨ لاعبين · فريقان'],['shadow','رابطة الظل','٩–١٢ لاعبًا · ثلاثة أطراف']].map(([mode,title,detail]) => <button data-design-id="mode-option" type="button" key={mode} disabled={disabled || present > (mode === 'shadow' ? 12 : 8)} aria-pressed={settings.mode === mode} onClick={() => onChange(normalizeMafiaSettings({ ...settings, mode, capacity: mode === 'shadow' ? Math.max(10, present) : 8 }))}><strong>{title}</strong><small>{detail}</small></button>)}</div>
-    <div className="mafia-settings-row"><label>سعة المجلس<select data-design-id="capacity" value={settings.capacity} disabled={disabled} onChange={event => onChange({ ...settings, capacity: Number(event.target.value) })}>{(settings.mode === 'shadow' ? [9,10,11,12] : [6,7,8]).map(n => <option key={n} value={n} disabled={n < present}>{ar(n)} لاعبين</option>)}</select></label>
-      <label>ظهور الغرفة<select data-design-id="visibility" disabled={disabled} value={settings.visibility} onChange={event => onChange({ ...settings, visibility: event.target.value })}><option value="private">خاصة · برمز أو دعوة</option><option value="public">عامة · يستقبل المجلس لاعبين</option></select></label></div>
+    <div className="mafia-settings-row"><label>سعة المجلس<select data-design-id="capacity" value={settings.capacity} disabled={disabled} onChange={event => onChange({ ...settings, capacity: Number(event.target.value) })}>{(settings.mode === 'shadow' ? [9,10,11,12] : [6,7,8]).map(n => <option key={n} value={n} disabled={n < present || settings.experimentalRole==='tracker'&&n<8}>{ar(n)} لاعبين</option>)}</select></label>
+      <label>ظهور الغرفة<select data-design-id="visibility" disabled={disabled || settings.experimentalRole==='tracker'} value={settings.visibility} onChange={event => onChange({ ...settings, visibility: event.target.value })}><option value="private">خاصة · برمز أو دعوة</option><option value="public">عامة · يستقبل المجلس لاعبين</option></select></label></div>
+    {(experimentalRolesEnabled || settings.experimentalRole==='tracker') && <label><input type="checkbox" checked={settings.experimentalRole==='tracker'} disabled={disabled || !experimentalRolesEnabled} onChange={event=>{const next={...settings,visibility:'private',capacity:settings.mode==='shadow'?Math.max(9,settings.capacity):8};if(event.target.checked)next.experimentalRole='tracker';else delete next.experimentalRole;onChange(next);}}/>المتعقّب التجريبي · مجلس خاص من ٨ لاعبين فأكثر، بلا XP أو تصنيف</label>}
     <label>التواصل<select data-design-id="voice-mode" disabled={disabled} value={settings.voiceMode} onChange={event => onChange({ ...settings, voiceMode: event.target.value })}><option value="optional">صوت ونص · الميكروفون اختياري</option><option value="off">نص فقط · دون اتصال صوتي</option></select></label>
   </>;
 }
 
-export function MafiaSettings({ value = MAFIA_DEFAULT_SETTINGS, onChange = noop, disabled = false }) {
+export function MafiaSettings({ value = MAFIA_DEFAULT_SETTINGS, onChange = noop, disabled = false, experimentalRolesEnabled = false }) {
   const settings = normalizeMafiaSettings(value);
   return <section data-design-screen="online.mafia.setup" className="mafia-noir mafia-settings stack" aria-label="إعداد مافيا ميدان"><style>{css}</style>
-    <MafiaSettingsFields settings={settings} onChange={onChange} disabled={disabled}/>
+    <MafiaSettingsFields settings={settings} onChange={onChange} disabled={disabled} experimentalRolesEnabled={experimentalRolesEnabled}/>
     <p className="mafia-muted">حساب لكل لاعب. استضافة الغرف والانضمام واللعب مجانية بالكامل. لا تُباع قوة أو أفضلية في الأدوار.</p><MafiaRules />
   </section>;
+}
+
+function MafiaRoleDetails({ role, resources }) {
+  const guide = role.guide;
+  const remaining = role.id === 'guard' ? resources?.shield : resources?.charges;
+  return <div className="mafia-role-details" dir="rtl">
+    <dl>
+      <div><dt>متى تعمل؟</dt><dd>{guide.timing}</dd></div>
+      <div><dt>الرصيد الأساسي</dt><dd>{role.charges == null ? (role.ability ? 'دون حد عددي؛ التوقيت والقيود أدناه تحدد الاستخدام.' : 'دون قدرة خاصة.') : `${ar(role.charges)} ${role.id === 'guard' ? 'درع في المباراة.' : 'استعمال في المباراة.'}`}</dd></div>
+      {Number.isFinite(remaining) && role.charges != null && <div className="mafia-role-balance"><dt>المتبقي لك الآن</dt><dd>{ar(remaining)} {role.id === 'guard' ? 'درع' : 'استعمال'}</dd></div>}
+      {role.id === 'doctor' && Number.isFinite(resources?.selfProtection) && <div className="mafia-role-balance"><dt>حماية نفسك المتبقية</dt><dd>{ar(resources.selfProtection)}</dd></div>}
+      <div><dt>الأهداف</dt><dd>{guide.targets.description}</dd></div>
+      <div><dt>ما الذي تثبته؟</dt><dd>{guide.evidence.description}</dd></div>
+      <div><dt>من يرى الأثر؟</dt><dd>{guide.visibility.description}</dd></div>
+      <div><dt>التغيير والإلغاء</dt><dd>{guide.selection.description}</dd></div>
+      <div><dt>متى يُستهلك؟</dt><dd>{guide.consumption.description}</dd></div>
+    </dl>
+    <div><h5>القيود وحدود المعلومة</h5><ul>{guide.limitations.map(text => <li key={text}>{text}</li>)}</ul></div>
+    <div><h5>التداخل مع القدرات الأخرى</h5><ul>{guide.interactions.map(text => <li key={text}>{text}</li>)}</ul></div>
+    <p className="mafia-role-example"><strong>مثال:</strong> {guide.example}</p>
+  </div>;
 }
 
 export function MafiaRules({ possibleRoles, defaultOpen = false, onTutorial, onGuide = noop }) {
@@ -52,7 +96,7 @@ export function MafiaRules({ possibleRoles, defaultOpen = false, onTutorial, onG
     ['اسمع الدفاع ثم احكم', 'الترشيح يحدد مشتبهًا واحدًا. له ٢٠ ثانية للدفاع، ثم يصوّت الأحياء سرًا. يلزم أكثر من نصفهم للإقصاء.'],
     ['كل ليلة تغيّر المجلس', 'اختيارات الليل قابلة للتعديل حتى يغلق الخادم المرحلة. بعد الإقصاء تابع الأحداث، دون إرسال تلميحات للأحياء.'],
   ];
-  return <>{!defaultOpen && <Button data-design-id="rules" variant="ghost" full onClick={() => {setOpen(true);onGuide('encyclopedia-open');}}>{possibleRoles ? 'أدوار هذا المجلس ودليل اللعب' : 'دليل المجلس والأدوار الاثنا عشر'}</Button>}{open && <Modal className="mafia-noir mafia-guide-dialog" data-design-screen="online.mafia.guide" title="دليل مافيا ميدان" onClose={() => {setOpen(false);onGuide('encyclopedia-close');}}><style>{css}</style><div className="mafia-guide stack">{onTutorial && <Button data-design-id="tutorial-start" onClick={()=>{setOpen(false);onTutorial();}}>تعلّم مع شخصيات التدريب</Button>}<span className="mafia-kicker">تدريب توضيحي · شخصيات افتراضية</span><h3>{lessons[lesson][0]}</h3><p>{lessons[lesson][1]}</p><div className="row-between"><Button data-design-id="back" disabled={!lesson} onClick={() => setLesson(lesson - 1)}>السابق</Button><span>{ar(lesson + 1)} / ٤</span><Button data-design-id="continue" disabled={lesson === lessons.length - 1} onClick={() => setLesson(lesson + 1)}>التالي</Button></div><p className="mafia-muted">هذه موسوعة القدرات؛ وجود دور هنا لا يعني أنه موزّع في المباراة الحالية.</p><div className="mafia-role-catalog">{Object.values(MAFIA_ROLES).filter(role => !possibleRoles || possibleRoles.includes(role.id)).map(role => <article key={role.id} className={`mafia-role-tile faction-${role.faction}`}><MafiaRoleArt roleId={role.id}/><div><h4>{role.name}</h4><small>{factionLabel(role.faction)}</small><p>{role.description} </p></div></article>)}</div></div></Modal>}</>;
+  return <>{!defaultOpen && <Button data-design-id="rules" variant="ghost" full onClick={() => {setOpen(true);onGuide('encyclopedia-open');}}>{possibleRoles ? 'الأدوار الممكنة ودليل اللعب' : 'دليل المجلس والأدوار الاثنا عشر'}</Button>}{open && <Modal className="mafia-noir mafia-guide-dialog" data-design-screen="online.mafia.guide" title="دليل مافيا ميدان" onClose={() => {setOpen(false);onGuide('encyclopedia-close');}}><style>{css}</style><div className="mafia-guide stack">{onTutorial && <><Button data-design-id="tutorial-start" onClick={()=>{setOpen(false);onTutorial();}}>تعلّم مع شخصيات التدريب</Button><Button aria-label="تمارين تخصص مافيا" onClick={()=>{setOpen(false);navigate('/tutorial/mafia?labs=1');}}>تمارين التخصص القصيرة</Button></>}<span className="mafia-kicker">تدريب توضيحي · شخصيات افتراضية</span><h3>{lessons[lesson][0]}</h3><p>{lessons[lesson][1]}</p><div className="row-between"><Button data-design-id="back" disabled={!lesson} onClick={() => setLesson(lesson - 1)}>السابق</Button><span>{ar(lesson + 1)} / ٤</span><Button data-design-id="continue" disabled={lesson === lessons.length - 1} onClick={() => setLesson(lesson + 1)}>التالي</Button></div><p className="mafia-muted">هذه موسوعة القدرات؛ وجود دور هنا لا يعني أنه موزّع في المباراة الحالية. الانتماء المكتوب هنا هو انتماء الدور عند التوزيع؛ التجنيد قد يغيّره.</p><div className="mafia-role-catalog">{Object.values(MAFIA_ROLES).filter(role => possibleRoles ? possibleRoles.includes(role.id) : role.id!=='tracker').map(role => <article key={role.id} data-role-id={role.id} className={`mafia-role-tile faction-${role.faction}`}><MafiaRoleArt roleId={role.id}/><div><h4>{role.name}</h4><small>انتماء البداية: {factionLabel(role.faction)}</small><p>{role.description}</p></div><details className="mafia-role-disclosure"><summary>تفاصيل قدرة {role.name}</summary><MafiaRoleDetails role={role}/></details></article>)}</div></div></Modal>}</>;
 }
 
 export function MafiaDirectory({ onTutorial, rooms = [], enabled, loading, error, mode = 'all', voiceMode = 'all', status = 'all', onMode = noop, onVoiceMode = noop, onStatus = noop, onRefresh = noop, onQuickJoin = noop, onJoin = noop, onObserve = noop, onCreate, nextCursor, hasPrevious, onNext = noop, onPrevious = noop, disabled }) {
@@ -84,11 +128,11 @@ function MafiaLobbySettings({ state, disabled, act }) {
   const value = draft || normalizeMafiaSettings(state.settings);
   const close = () => { setEditing(false); setDraft(null); };
   return <div className="mafia-lobby-settings"><Button data-design-id="room-settings" full aria-expanded={editing} disabled={disabled} onClick={() => {if(editing)close();else{setEditingRevision(state.settingsRevision);setEditing(true);}}}>{editing ? 'إغلاق إعدادات المجلس' : 'تعديل إعدادات المجلس'}</Button>
-    {editing && <><MafiaSettingsFields settings={value} onChange={setDraft} disabled={disabled} present={state.members.filter(m => !m.left).length}/><p className="mafia-muted">تغيير الطور أو ظهور الغرفة يعيد الآخرين إلى «يستعد» حتى يؤكدوا من جديد.</p><Button data-design-id="save" full variant="primary" disabled={disabled} onClick={async () => { if (await act('settings', { settings: value, expectedSettingsRevision: editingRevision })) close(); }}>حفظ إعدادات المجلس</Button></>}</div>;
+    {editing && <><MafiaSettingsFields settings={value} onChange={setDraft} disabled={disabled} present={state.members.filter(m => !m.left).length}/><p className="mafia-muted">حفظ أي تغيير في الإعدادات يعيد الآخرين إلى «يستعد» حتى يؤكدوا من جديد.</p><Button data-design-id="save" full variant="primary" disabled={disabled} onClick={async () => { if (await act('settings', { settings: value, expectedSettingsRevision: editingRevision })) close(); }}>حفظ إعدادات المجلس</Button></>}</div>;
 }
 
 export function MafiaLobbyInfo({ state, isHost = false, disabled = false, act = noop }) {
-  return <section data-design-screen="online.mafia.lobby" className="mafia-noir mafia-lobby-info stack"><style>{css}</style><div className="mafia-lobby-art" style={{'--mafia-environment':`url("${MAFIA_NOIR_ASSETS.environment}")`}}><MafiaIcon/><div><span className="mafia-kicker">كل وجه يخفي حكاية</span><h2>{state.settings?.mode === 'shadow' ? 'رابطة الظل' : 'المجلس الأساسي'}</h2><p>{ar(state.settings?.capacity || 8)} مقاعد · {state.settings?.visibility === 'public' ? 'غرفة عامة' : 'غرفة خاصة'}</p></div></div><div className="mafia-lobby-brief"><p>جهّز السماعات إن أمكن. استمع واكتب دون تشغيل الميكروفون، واكشف بطاقتك سرًا عند البداية.</p>{state.composition && <p className="mafia-composition"><span>{ar(state.composition.mafia)} مافيا</span><span>{ar(state.composition.town)} أهل الميدان</span>{state.composition.shadow>0 && <span>{ar(state.composition.shadow)} قائد للرابطة</span>}</p>}<p className="mafia-muted">التوزيع يثبت بحسب عدد الجاهزين. الأدوار الفعلية لا يراها المضيف، والقادم بعد البداية ينتظر المباراة التالية.</p></div>{isHost && <MafiaLobbySettings state={state} disabled={disabled} act={act}/>}<MafiaRules possibleRoles={state.possibleRoles}/></section>;
+  return <section data-design-screen="online.mafia.lobby" className="mafia-noir mafia-lobby-info stack"><style>{css}</style><div className="mafia-lobby-art" style={{'--mafia-environment':`url("${MAFIA_NOIR_ASSETS.environment}")`}}><MafiaIcon/><div><span className="mafia-kicker">كل وجه يخفي حكاية</span><h2>{state.settings?.mode === 'shadow' ? 'رابطة الظل' : 'المجلس الأساسي'}</h2><p>{ar(state.settings?.capacity || 8)} مقاعد · {state.settings?.visibility === 'public' ? 'غرفة عامة' : 'غرفة خاصة'}</p></div></div><div className="mafia-lobby-brief">{state.rulesetVersion===2&&<p role="status">مجلس المتعقّب التجريبي · ٨ لاعبين فأكثر · بلا XP أو إتقان أو تصنيف. التوازن لم يُعتمد بعد.</p>}<p>جهّز السماعات إن أمكن. استمع واكتب دون تشغيل الميكروفون، واكشف بطاقتك سرًا عند البداية.</p>{state.composition && <p className="mafia-composition"><span>{ar(state.composition.mafia)} مافيا</span><span>{ar(state.composition.town)} أهل الميدان</span>{state.composition.shadow>0 && <span>{ar(state.composition.shadow)} قائد للرابطة</span>}</p>}<p className="mafia-muted">التوزيع يثبت بحسب عدد الجاهزين. الأدوار الفعلية لا يراها المضيف، والقادم بعد البداية ينتظر المباراة التالية.</p></div>{isHost && <MafiaLobbySettings state={state} disabled={disabled} act={act}/>}<MafiaRules possibleRoles={state.possibleRoles}/></section>;
 }
 
 // Seat identity is stable; role art never chooses another player's public card.
@@ -112,7 +156,7 @@ export function MafiaPlayerCards({ state, me, voice = {}, selected = [], targets
 export function MafiaLobby({ state, me, isHost = false, disabled = false, act = noop, voice = {}, invite, appearance, onSafety, tutorial }) {
   const [panel,setPanel] = useState(null), [managed,setManaged] = useState(null), [confirm,setConfirm] = useState(null);
   const players = state.members.filter(player => !player.left && !player.spectator);
-  const minimum = state.settings?.mode === 'shadow' ? 9 : 6;
+  const minimum = state.settings?.mode === 'shadow' ? 9 : state.rulesetVersion===2 ? 8 : 6;
   const canStart = players.length >= minimum && players.every(player => player.connected && player.ready);
   return <section data-design-screen="online.mafia.lobby" className="mafia-noir mafia-shell mafia-compact-game mafia-lobby-screen" dir="rtl"><style>{css}</style>
     <header data-design-id="header" className="mafia-heading"><div><span className="mafia-kicker">غرفة الانتظار · {ar(players.length)} / {ar(state.settings.capacity)}</span><h1>{state.settings.roomName || 'مجلس مافيا'}</h1></div><span className="mafia-voice-badge">{state.settings.voiceMode === 'off' ? 'نص فقط' : 'صوت ونص'}</span>{!tutorial && <><Button data-design-id="invite" aria-label="دعوة لاعبين" onClick={() => setPanel('invite')}>دعوة</Button><Button data-design-id="room-settings" aria-label="إعدادات المجلس" onClick={() => setPanel('settings')}>⋯</Button></>}</header>
@@ -137,7 +181,7 @@ function SecretCard({ you, hidden, previewReveal, onGuide = noop }) {
   const role = MAFIA_ROLES[you?.roleId];
   if (!role || hidden) return hidden ? <div data-design-id="privacy" data-design-required="true" className="mafia-secret-cover">بطاقتك محجوبة لحماية دورك</div> : null;
   return <section data-design-id="role-card" className="mafia-secret"><div className="mafia-secret-top"><span><span className="mafia-secret-seal" aria-hidden="true">◆</span> هويتك سرّك</span><Button data-design-id="role-toggle" data-sound="mafiaRole" variant="ghost" aria-expanded={revealed} aria-haspopup="dialog" onClick={() => {setRevealed(true);onGuide('role-open');}}>اكشف بطاقتي <span aria-hidden="true">←</span></Button></div>
-    {revealed && <Modal className="mafia-noir mafia-role-dialog" data-design-screen="online.mafia.role-card" title="بطاقتك الخاصة" closeLabel="إخفاء البطاقة" onClose={() => {setRevealed(false);onGuide('role-close');}} footer={<Button data-design-id="role-hide" full onClick={()=>{setRevealed(false);onGuide('role-close');}}>إخفاء البطاقة</Button>}><style>{css}</style><article data-design-id="role-content" className={`mafia-secret-content faction-${you.faction}`}><div className="mafia-role-portrait"><MafiaRoleArt roleId={role.id}/><span>سرّي · لك وحدك</span></div><div className="mafia-role-description"><span className="mafia-kicker">انتماؤك الآن: {factionLabel(you.faction)}</span><h2>{role.name}</h2><p>{role.description}</p><small>الآخرون لا يرون بطاقتك. أغلقها قبل إظهار الشاشة لأي شخص.</small></div></article></Modal>}
+    {revealed && <Modal className="mafia-noir mafia-role-dialog" data-design-screen="online.mafia.role-card" title="بطاقتك الخاصة" closeLabel="إخفاء البطاقة" onClose={() => {setRevealed(false);onGuide('role-close');}} footer={<Button data-design-id="role-hide" full onClick={()=>{setRevealed(false);onGuide('role-close');}}>إخفاء البطاقة</Button>}><style>{css}</style><article data-design-id="role-content" className={`mafia-secret-content faction-${you.faction}`}><div className="mafia-role-portrait"><MafiaRoleArt roleId={role.id}/><span>سرّي · لك وحدك</span></div><div className="mafia-role-description"><span className="mafia-kicker">انتماؤك الآن: {factionLabel(you.faction)}</span><h2>{role.name}</h2><p>{role.description}</p><small>الآخرون لا يرون بطاقتك. أغلقها قبل إظهار الشاشة لأي شخص.</small><details className="mafia-role-disclosure"><summary>تفاصيل قدرتك ورصيدك</summary><MafiaRoleDetails role={role} resources={you.resources}/></details></div></article></Modal>}
   </section>;
 }
 
@@ -159,13 +203,16 @@ function eventText(event, members) {
   const texts = { eliminated: event.reason === 'verdict' ? `أقصى المجلس ${person}` : event.reason === 'forfeit' ? `${person} انسحب من المجلس` : event.reason === 'night' ? `${person} خرج من المجلس بهجوم ليلي` : `${person} غادر المجلس`, dawn: event.peaceful ? 'أشرقت الشمس دون إقصاء ليلي' : 'أشرقت شمس جديدة على المجلس', match_started:'بدأ المجلس وتوزعت الأدوار سرًا', night_started:'بدأ الليل؛ اتبع قناتك وتعليمات دورك', match_ended:'انتهت المباراة', host_changed:`انتقلت إدارة الغرفة إلى ${person}`, nomination_closed:event.nomineeId ? `المرشح للدفاع: ${nameOf(members,event.nomineeId)}` : 'تعادل الترشيح؛ لا مرشح لهذه الليلة', verdict_closed:event.passed ? 'وافق المجلس على الإقصاء' : 'رفض المجلس الإقصاء', no_elimination: 'مرّت الليلة دون إقصاء', extended: `${person} استخدم قدرة المنادي وأضاف ٢٠ ثانية للنقاش`, nomination_tie: 'تعادل الترشيح، يواصل الجميع إلى الليل', faction_revealed: `${person}: ${factionLabel(event.faction)}`, disconnected: `${person} انقطع اتصاله`, reconnected: `${person} عاد للمجلس`, withdrawal: `${person} انسحب` };
   if(event.type==='roles') return 'توزعت الأدوار الأولية كما تظهر في البطاقات.';
   if(event.type==='night_action') return `${person} استخدم قدرة ${MAFIA_ROLES[event.roleId]?.name || 'دوره'} تجاه ${(event.targetIds || [event.targetId]).filter(Boolean).map(id=>nameOf(members,id)).join(' و') || 'هدفه'}.`;
+  if(event.type==='tracking_report') return `${person} تتبّع ${nameOf(members,event.targetId)}: ${(event.destinationIds||[]).length?(event.destinationIds||[]).map(id=>nameOf(members,id)).join('، '):'لم تُرصد وجهة غير معطّلة'}.`;
   if(event.type==='attack_vote') return `${person} اختار ${nameOf(members,event.targetId)} لهجوم المافيا.`;
   if(event.type==='nomination_vote') return event.targetId ? `${person} رشّح ${nameOf(members,event.targetId)}.` : `${person} امتنع عن الترشيح.`;
   if(event.type==='verdict_votes') return `حكم المجلس على ${nameOf(members,event.nomineeId)}: ${ar(Object.values(event.votes || {}).filter(Boolean).length)} أصوات موافقة.`;
   if(event.type==='converted') return `انضم ${person} إلى رابطة الظل بتجنيد ${nameOf(members,event.recruiterId)}.`;
-  if(event.type==='shield_used') return `${person} نجا بحمايته الذاتية.`;
+  if(event.type==='shield_used') return `${person} صدّ الهجوم بدرع الحارس.`;
   return texts[event.type] || texts[event.kind] || 'تحديث في المجلس';
 }
+
+export { eventText as mafiaEventText };
 
 // Each living ally's current attack choice, as the server shows it to the Mafia only.
 function teamBallotText(you, members) {
@@ -178,6 +225,7 @@ function reportText(report,members) {
   if(report.type==='converted') return 'انضممت إلى رابطة الظل. تغير فريقك وشرط فوزك، وبقي دورك وقدراتك المتاحة.';
   if(report.type==='recruitment') return report.success ? `انضم ${nameOf(members,report.targetId)} إلى رابطة الظل.` : 'لم تنجح محاولة التجنيد. لا يُكشف سبب الفشل.';
   if(report.type==='shield_used') return 'أنقذتك حمايتك الذاتية من هجوم هذه الليلة. استُهلكت الحماية الوحيدة.';
+  if(report.type==='tracking') return `${nameOf(members,report.targetId)}: ${(report.destinationIds||[]).length?'الوجهات المقبولة غير المعطّلة: '+report.destinationIds.map(id=>nameOf(members,id)).join('، '):'لم تُرصد وجهة مقبولة غير معطّلة'}. لا يحدد التقرير القدرة أو الفريق أو نجاحها.`;
   if(report.type==='no_result') return 'لم تحصل على نتيجة لهذا الفحص. لا يُكشف سبب تعذّر النتيجة.';
   if(report.faction) return `${nameOf(members,report.targetId)}: ${factionLabel(report.faction)} وقت الفحص.`;
   if(report.same!==undefined) return `${(report.targetIds||[]).map(id=>nameOf(members,id)).join(' و')}: الانتماء الظاهر ${report.same?'متطابق':'مختلف'}.`;
@@ -265,7 +313,7 @@ function ActionPanel({ state, you, me, members, disabled, act, selection }) {
   const nominationAction = actions.find(action => action.type === 'nominate');
   const nomination = state.phase === 'nomination' && !you.nominationSubmitted && !!nominationAction;
   const verdict = state.phase === 'verdict' && !you.verdictSubmitted && actions.some(action => action.type === 'verdict');
-  const actionLabel = state.phase === 'night' ? 'اختيارك الليلي' : phaseLabel(state.phase);
+  const actionLabel = state.phase === 'night' ? (you.roleId==='tracker'?'تتبّع الوجهة الليلي':'اختيارك الليلي') : phaseLabel(state.phase);
   const hasHerald = actions.some(action => action.type === 'herald');
   if (!['night','nomination','verdict'].includes(state.phase) && !hasHerald) return null;
   const submit = async () => { await act(nomination ? 'nominate' : 'night_action', nomination ? { targetId: selected[0] || null } : you.roleId === 'analyst' ? { targetIds: selected } : { targetId: selected[0] }); };
@@ -278,8 +326,8 @@ function ActionPanel({ state, you, me, members, disabled, act, selection }) {
   </section>;
 }
 
-export function MafiaMatchView({ state, me, isHost, disabled = false, act = noop, clockOffset = 0, accountId = '', voice = {}, onSafety, clock, tutorial }) {
-  const [hidden, setHidden] = useState(() => typeof document !== 'undefined' && document.hidden);
+export function MafiaMatchView({ state, me, isHost, disabled = false, act = noop, clockOffset = 0, accountId = '', voice = {}, onSafety, clock, tutorial, rewardServer }) {
+  const hidden = useMafiaPrivacy();
   const notesKey = `${accountId}:${state.matchId}`;
   const [noteDraft, setNoteDraft] = useState({key:notesKey,text:''});
   const notes = noteDraft.key === notesKey ? noteDraft.text : '';
@@ -296,11 +344,13 @@ export function MafiaMatchView({ state, me, isHost, disabled = false, act = noop
   const you = state.scope === 'observer' || state.waiting || (state.you?.id && state.you.id !== me?.id) ? null : state.you;
   const members = state.members || [];
   useEffect(() => { setNoteDraft({key:`${accountId}:${state.matchId}`,text:''}); setTab(state._designPreview && state.previewTab || 'council'); setSafety(null); }, [accountId, state.matchId, state._designPreview, state.previewTab]);
-  useEffect(() => { const cover = () => setHidden(document.hidden); document.addEventListener('visibilitychange', cover); return () => document.removeEventListener('visibilitychange', cover); }, []);
   const finished = ['over','closed'].includes(state.phase);
   const resultTitle = state.reason === 'voice_unavailable' ? 'انتهت المباراة بسبب الاتصال' : state.outcome?.faction === 'draw' || state.outcome === 'draw' ? 'المجلس انتهى بالتعادل' : state.phase === 'closed' && !state.outcome ? 'انتهت صلاحية الغرفة' : `النتيجة: ${factionLabel(typeof state.outcome === 'string' ? state.outcome : state.outcome?.faction || state.outcome?.winner)}`;
   const observer = state.scope === 'observer';
   const [toolsOpen,setToolsOpen] = useState(Boolean(state._designPreview&&state.previewTools));
+  useLayoutEffect(() => {
+    if (hidden) { setTab('council'); setSafety(null); setToolsOpen(false); }
+  }, [hidden]);
   const actions = !observer && me?.alive && you?.roleId ? you.actions || [] : [];
   const attack = actions.find(action=>action.type==='mafia_vote');
   const action = actions.find(item=>item.type === (state.phase==='nomination' ? 'nominate' : attack && nightTool==='attack' ? 'mafia_vote' : 'night_action'));
@@ -322,6 +372,7 @@ export function MafiaMatchView({ state, me, isHost, disabled = false, act = noop
         {!observer && tab === 'notes' && <section data-design-id="notebook" className="mafia-notebook"><h3>دفتر الشكوك</h3><p>ملاحظاتك تبقى في هذه الجلسة، ولا تُرسل إلى المجلس. تُمسح عند تبديل الحساب أو بدء مباراة جديدة.</p><label htmlFor="mafia-notes">ملاحظاتي<textarea data-design-id="notes-input" id="mafia-notes" maxLength={2000} value={notes} onChange={e => setNotes(e.target.value)} placeholder="مين غيّر روايته؟ أي معلومة تحتاج سؤالًا؟"/></label></section>}
       </div></main> : <section data-design-id="results" className="mafia-results"><MafiaSceneArt sceneId="ending" className="mafia-result-art"/><h2>{resultTitle}</h2><p>{state.reason === 'voice_unavailable' ? 'تعذّر تأمين قنوات الصوت. لا نفتح قناة قد تكشف الأسرار.' : 'تُكشف الأدوار والأحداث المهمة هنا؛ المحادثات السرية تبقى خاصة.'}</p><div data-design-id="recap" className="mafia-recap">{(Array.isArray(state.replay) ? state.replay : state.replay?.players || state.replay?.roles || []).map((item,i) => <article key={item.id || i}><MafiaRoleArt roleId={item.roleId}/><b>{nameOf(members,item.playerId || item.id)}</b><span>{MAFIA_ROLES[item.roleId]?.name || 'دور'}</span><small>{factionLabel(item.faction)}{item.initialFaction && item.initialFaction!==item.faction ? ` · بدأ مع ${factionLabel(item.initialFaction)}` : ''}</small></article>)}</div>{state.replay?.events && <ol>{state.replay.events.map((event,i) => <li key={event.id || i}>{eventText(event,members)}</li>)}</ol>}{!tutorial && isHost && state.phase === 'over' && <Button data-design-id="restart" disabled={disabled} full onClick={() => act('restart')}>إلى الانتظار · مجلس جديد</Button>}{voice.onReturnToCall && voice.previousCall && <Button data-design-id="return-call" onClick={voice.onReturnToCall}>العودة لمكالمة الشلّة</Button>}</section>}
     {toolsOpen && <Modal className="mafia-noir mafia-tools-panel" data-design-screen="online.mafia.tools" title="أدوات المجلس" onClose={()=>setToolsOpen(false)}><style>{css}</style><MafiaRules possibleRoles={state.possibleRoles} onGuide={tutorial?.onGuide}/><p>{tutorial ? 'هذه شخصيات تدريب محلية، وليست حسابات لاعبين.' : 'الإبلاغ والحظر لا يكشفان أدوار اللاعبين.'}</p><div className="stack">{(tutorial ? [] : members).filter(player=>player.id!==me?.id&&!player.spectator).map(player=><Button key={player.id} data-design-id="player-safety" onClick={()=>{setToolsOpen(false);setSafety(player);}}>إجراءات {player.name}</Button>)}</div></Modal>}
+    {finished&&!observer&&!tutorial&&!state._designPreview&&state.rewardReceipt&&<MafiaRewardSummary key={`${accountId}:${state.matchId}`} server={rewardServer} accountId={accountId} receipt={state.rewardReceipt} clockOffset={clockOffset}/>}
     {finished && <MafiaRules possibleRoles={state.possibleRoles} onGuide={tutorial?.onGuide}/>}
     {!finished && <footer data-design-id="player-rail" className="mafia-player-rail"><div className="mafia-rail-heading"><span>المجلس · {ar(members.filter(p=>p.alive).length)} أحياء</span><span>{targets.length ? 'حدّد هدفك ثم أكّد' : 'بطاقات اللاعبين'}</span></div>{seats}</footer>}
     {safety && <MafiaSafety player={safety} onClose={() => setSafety(null)} onSafety={onSafety}/>}
@@ -331,20 +382,19 @@ export function MafiaMatchView({ state, me, isHost, disabled = false, act = noop
 
 // The connected game owns real audio; the tutorial imports only the presentation.
 export function MafiaMatch(props) {
-  const [hidden,setHidden] = useState(()=>typeof document!=='undefined'&&document.hidden);
-  useEffect(()=>{const update=()=>setHidden(document.hidden);document.addEventListener('visibilitychange',update);return()=>document.removeEventListener('visibilitychange',update);},[]);
+  const hidden = useMafiaPrivacy();
   useMafiaSound(props.state,{hidden,preview:Boolean(props.state._designPreview),sound:props.sound});
   return <MafiaMatchView {...props}/>;
 }
 
 export function MafiaSafety({ player, onClose = noop, onSafety = noop }) {
-  const [reason,setReason] = useState(''); const [error,setError] = useState(''); const [busy,setBusy] = useState(false);
-  async function send(kind) { setBusy(true); setError(''); try { await onSafety({kind,player,reason}); onClose(); } catch { setError(kind === 'block' ? 'تعذّر الحظر والخروج، حاول مجددًا.' : 'تعذّر إرسال البلاغ، حاول مجددًا.'); } finally { setBusy(false); } }
-  return <Modal className="mafia-noir mafia-safety" data-design-screen="online.mafia.safety" title={`إجراءات ${player.name}`} onClose={onClose}><style>{css}</style><div className="stack"><p>الإبلاغ لا يكشف دورًا ولا يطرد لاعبًا من المباراة. الحظر أثناء المشاركة ينهي مقعدك.</p><label>تفاصيل البلاغ<textarea data-design-id="report-details" maxLength={1000} value={reason} onChange={e=>setReason(e.target.value)}/></label><Button data-design-id="submit" disabled={busy || !reason.trim()} onClick={() => send('report')}>إرسال بلاغ</Button><Button data-design-id="block-exit" variant="secondary" disabled={busy} onClick={() => send('block')}>حظر وخروج من المجلس</Button>{error&&<p role="alert">{error}</p>}</div></Modal>;
+  const [reason,setReason] = useState(''); const [category,setCategory] = useState('other'); const [error,setError] = useState(''); const [busy,setBusy] = useState(false);
+  async function send(kind) { setBusy(true); setError(''); try { await onSafety({kind,player,reason,...(kind==='report'?{category}:{})}); onClose(); } catch { setError(kind === 'block' ? 'تعذّر الحظر والخروج، حاول مجددًا.' : 'تعذّر إرسال البلاغ، حاول مجددًا.'); } finally { setBusy(false); } }
+  return <Modal className="mafia-noir mafia-safety" data-design-screen="online.mafia.safety" title={`إجراءات ${player.name}`} onClose={onClose}><style>{css}</style><div className="stack"><p>الإبلاغ لا يكشف دورًا ولا يطرد لاعبًا من المباراة. الحظر أثناء المشاركة ينهي مقعدك.</p><label>فئة البلاغ<select aria-label="فئة البلاغ" value={category} disabled={busy} onChange={event=>setCategory(event.target.value)}>{MAFIA_REPORT_CATEGORIES.map(item=><option key={item.id} value={item.id}>{item.label}</option>)}</select></label><label>تفاصيل البلاغ<textarea data-design-id="report-details" maxLength={1000} value={reason} onChange={e=>setReason(e.target.value)}/></label><Button data-design-id="submit" disabled={busy || !reason.trim()} onClick={() => send('report')}>إرسال بلاغ</Button><Button data-design-id="block-exit" variant="secondary" disabled={busy} onClick={() => send('block')}>حظر وخروج من المجلس</Button>{error&&<p role="alert">{error}</p>}</div></Modal>;
 }
 
 export function MafiaPrivacy() { return <section data-design-screen="online.mafia.privacy" className="mafia-noir mafia-shell mafia-waiting"><style>{css}</style><div data-design-id="privacy" data-design-required="true"><MafiaIcon/><h2>المجلس محجوب لحماية الأسرار</h2><p>تعود شاشتك عند فتح ميدان.</p></div></section>; }
 
-export function MafiaHistory({ data, loading, error, onClose = noop, onRefresh = noop }) {
-  return <Modal className="mafia-noir mafia-history-dialog" data-design-screen="online.mafia.history" title="سجل مجالسك" onClose={onClose}><style>{css}</style><div className="mafia-history stack"><p>نتائج أدوارك وفرقك في آخر {ar(data?.retentionDays || 30)} يومًا، دون نشر المحادثات.</p><Button data-design-id="refresh" disabled={loading} onClick={onRefresh}>{loading?'نحمّل السجل…':'تحديث السجل'}</Button>{error&&<p data-design-id="error" role="alert">{errorText(error)}</p>}{loading&&<p data-design-id="loading" role="status">نحمّل نتائجك…</p>}{data&&<><div data-design-id="stats" className="mafia-history-stats">{data.stats.map((row,i)=><article key={i}><MafiaRoleArt roleId={row.roleId}/><strong>{MAFIA_ROLES[row.roleId]?.name || 'دور'}</strong><small>{factionLabel(row.faction)}</small><span>{ar(row.matches)} مباراة · {ar(row.wins)} فوز · {ar(row.draws)} تعادل</span></article>)}</div><ol data-design-id="history">{data.matches.map(match=><li key={match.matchKey}><b>{MAFIA_ROLES[match.roleId]?.name || 'دور'} · {factionLabel(match.faction)}</b><span>{match.forfeited?'انسحاب':match.draw?'تعادل':match.won?'فوز الفريق':'خسارة الفريق'}</span><time dateTime={new Date(match.finishedAt).toISOString()}>{new Date(match.finishedAt).toLocaleDateString('ar-JO')}</time></li>)}</ol>{!data.matches.length&&<p data-design-id="empty">أول مجلس لك سيظهر هنا بعد اكتماله.</p>}</>}</div></Modal>;
+export function MafiaHistory({ data, loading, error, onClose = noop, onRefresh = noop, onReview = noop, hasPrevious = false, onPrevious = noop, onNext = noop }) {
+  return <Modal className="mafia-noir mafia-history-dialog" data-design-screen="online.mafia.history" title="سجل مجالسك" onClose={onClose}><style>{css}</style><div className="mafia-history stack"><p>نتائج أدوارك وفرقك في آخر {ar(data?.retentionDays || 30)} يومًا، دون نشر المحادثات.</p><Button data-design-id="refresh" disabled={loading} onClick={onRefresh}>{loading?'نحمّل السجل…':'تحديث السجل'}</Button>{error&&<p data-design-id="error" role="alert">{errorText(error)}</p>}{loading&&<p data-design-id="loading" role="status">نحمّل نتائجك…</p>}{data&&<><div data-design-id="stats" className="mafia-history-stats">{data.stats.map((row,i)=><article key={i}><MafiaRoleArt roleId={row.roleId}/><strong>{MAFIA_ROLES[row.roleId]?.name || 'دور'}</strong><small>{factionLabel(row.faction)}</small><span>{ar(row.matches)} مباراة · {ar(row.wins)} فوز · {ar(row.draws)} تعادل</span></article>)}</div><ol data-design-id="history">{data.matches.map(match=><li key={match.matchKey}><b>{MAFIA_ROLES[match.roleId]?.name || 'دور'} · {factionLabel(match.faction)}</b><span>{match.forfeited?'انسحاب':match.draw?'تعادل':match.won?'فوز الفريق':'خسارة الفريق'}</span><time dateTime={new Date(match.finishedAt).toISOString()}>{new Date(match.finishedAt).toLocaleDateString('ar-JO')}</time><Button variant="secondary" onClick={()=>onReview(match.matchKey)}>مراجعة المباراة</Button><details><summary>مرجع المباراة للبطولة أو الاعتراض</summary><input aria-label="مرجع المباراة" dir="ltr" readOnly value={match.matchKey} onFocus={event=>event.target.select()} style={{maxWidth:"100%",minWidth:0}}/></details></li>)}</ol>{!data.matches.length&&<p data-design-id="empty">أول مجلس لك سيظهر هنا بعد اكتماله.</p>}<div className="mafia-settings-row"><Button variant="secondary" disabled={loading||!hasPrevious} onClick={onPrevious}>نتائج أحدث</Button><Button variant="secondary" disabled={loading||!data?.nextCursor} onClick={onNext}>نتائج أقدم</Button></div></>}</div></Modal>;
 }

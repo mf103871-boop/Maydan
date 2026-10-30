@@ -1,7 +1,7 @@
 // Authoritative Mafia rules. Only snapshot(), voiceAudience() and matchResults()
 // are projections; never send this room object or audit trail to a live client.
 import { ROOM_TTL, HOST_GRACE, AVATARS, arabicNumber } from '../../online/shared.js';
-import { MAFIA_PROTOCOL, MAFIA_RULESET_VERSION, MAFIA_ROLES, MAFIA_SUPPORT_ROLES, MAFIA_TIMERS, MAFIA_RECONNECT_MS, MAFIA_MAX_DAYS, MAFIA_MAX_MATCH_MS, mafiaComposition, mafiaMinimumPlayers, normalizeMafiaSettings } from '../../online/mafia-shared.js';
+import { MAFIA_PROTOCOL, MAFIA_RULESET_VERSION, MAFIA_EXPERIMENTAL_RULESET_VERSION, MAFIA_ALL_ROLES as MAFIA_ROLES, MAFIA_SUPPORT_ROLES, MAFIA_TIMERS, MAFIA_RECONNECT_MS, MAFIA_MAX_DAYS, MAFIA_MAX_MATCH_MS, mafiaComposition, mafiaMinimumPlayers, normalizeMafiaSettings } from '../../online/mafia-shared.js';
 import { active, member, newMember, admitMember, extendForMatch, colorOf, fail, hasInvisible, profile, sameName } from '../../shared/room-primitives.mjs';
 import { objectionableText } from '../../shared/moderation-filter.mjs';
 
@@ -77,7 +77,7 @@ export function createRoom(code, input, now) {
   if (objectionableText(settings.roomName)) fail('CONTENT_REJECTED',422);
   return {
     game: 'mafia', protocol: MAFIA_PROTOCOL, code, revision: 0, publicRevision: 0, publicSequence: 0, settingsRevision: 0,
-    rulesetVersion: MAFIA_RULESET_VERSION, createdAt: now, expiresAt: now + ROOM_TTL,
+    rulesetVersion: settings.experimentalRole==='tracker'?MAFIA_EXPERIMENTAL_RULESET_VERSION:MAFIA_RULESET_VERSION, createdAt: now, expiresAt: now + ROOM_TTL,
     hostId: input.id, hostMissingSince: now, phase: 'lobby', phaseId: 0, matchId: 0,
     round: 0, settings, deadlineAt: null, startedAt: null, reason: null,
     members: [newMember(input, now, { host: true })], banned: [], participants: [],
@@ -142,6 +142,7 @@ function start(room, now, randomWord) {
   if (room.phase !== 'lobby') fail('PHASE', 409);
   const members = active(room);
   if (members.length < mafiaMinimumPlayers(room.settings.mode) || members.length > room.settings.capacity) fail('PLAYERS', 409);
+  if(room.rulesetVersion===2&&members.length<8)fail('PLAYERS',409);
   if (!members.every(m => m.connected && m.ready)) fail('NOT_READY', 409);
   const composition = mafiaComposition(members.length);
   const roles = ['investigator', 'doctor', 'mafia'];
@@ -149,6 +150,7 @@ function start(room, now, randomWord) {
   if (composition.mafia === 3) roles.push('masker', 'blocker');
   if (composition.shadow) roles.push('leader');
   roles.push(...shuffle(MAFIA_SUPPORT_ROLES, randomWord).slice(0, composition.support));
+  if(room.rulesetVersion===2){const supportIndex=roles.findIndex(role=>MAFIA_SUPPORT_ROLES.includes(role));if(supportIndex<0)fail('PLAYERS',409);roles[supportIndex]='tracker';}
   while (roles.length < members.length) roles.push('citizen');
   const assigned = shuffle(roles, randomWord);
   extendForMatch(room, now);
@@ -303,8 +305,19 @@ function settleNight(room, now) {
     if (s.roleId === 'investigator') report(room, a.id, 'investigation', now, { targetId: a.targetId, faction: apparentFaction(a.targetId) });
     if (s.roleId === 'analyst') report(room, a.id, 'comparison', now, { targetIds: a.targetIds, same: apparentFaction(a.targetIds[0]) === apparentFaction(a.targetIds[1]) });
     if (s.roleId === 'observer') report(room, a.id, 'activity', now, { targetId: a.targetId, acted: acted.has(a.targetId) });
+    if (s.roleId === 'tracker' && room.rulesetVersion === 2) {
+      // Visits describe accepted outgoing selections, never their ability type,
+      // success, alignment, incoming visitors or the aggregate Mafia attack.
+      // An actor's ability and own attack ballot are merged in public seat order.
+      const observed = effective.find(choice => choice.id === a.targetId);
+      const destinations = new Set(observed ? observed.targetIds || [observed.targetId] : []);
+      if(ballots.includes(a.targetId)&&!blocked.has(a.targetId)&&room.killVotes[a.targetId])destinations.add(room.killVotes[a.targetId]);
+      const destinationIds=room.participants.filter(id=>destinations.has(id));
+      report(room,a.id,'tracking',now,{targetId:a.targetId,destinationIds});
+      audit(room,'tracking_report',now,{playerId:a.id,targetId:a.targetId,destinationIds});
+    }
   }
-  for (const a of actions.filter(a => blocked.has(a.id) && ['investigator', 'analyst', 'observer'].includes(state(room, a.id).roleId))) if (state(room, a.id).alive) report(room, a.id, 'no_result', now);
+  for (const a of actions.filter(a => blocked.has(a.id) && ['investigator', 'analyst', 'observer', ...(room.rulesetVersion===2?['tracker']:[])].includes(state(room, a.id).roleId))) if (state(room, a.id).alive) report(room, a.id, 'no_result', now);
   room.nightActions = {}; room.killVotes = {};
   publicEvent(room, 'dawn', now, { peaceful: !attacked });
   if (!maybeFinish(room, now)) phase(room, 'dawn', now);
@@ -493,6 +506,8 @@ export function action(room, actorId, command, now, options = {}) {
       host(); if (room.phase !== 'lobby') fail('PHASE', 409);
       const settings = normalizeMafiaSettings(command.settings);
       if (!settings || settings.capacity < active(room).length) fail('INVALID');
+      // A room keeps its saved semantics through lobby edits and rematches.
+      if((settings.experimentalRole==='tracker')!==(room.rulesetVersion===2))fail('MAFIA_RULESET_FIXED',409);
       settings.roomName ||= Array.from(`مجلس ${actor.name}`).slice(0,30).join('');
       if(objectionableText(settings.roomName))fail('CONTENT_REJECTED',422);
       if(command.expectedSettingsRevision!=null&&command.expectedSettingsRevision!==(room.settingsRevision||0))fail('CONFLICT',409);
@@ -626,6 +641,8 @@ export function snapshot(room, viewerId, now) {
     composition: mafiaComposition(room.participants.length || room.settings.capacity),
     possibleRoles: Object.keys(MAFIA_ROLES).filter(id => {
       const count = mafiaComposition(room.participants.length || room.settings.capacity);
+      if(id==='tracker')return room.rulesetVersion===2;
+      if(room.rulesetVersion===2&&count.support===1&&MAFIA_SUPPORT_ROLES.includes(id))return false;
       return (id !== 'leader' || count.shadow > 0) && (!MAFIA_SUPPORT_ROLES.includes(id) || count.support > 0) && (!['masker', 'blocker'].includes(id) || count.mafia > 1);
     }),
     nomineeId: waiting ? null : room.nomineeId, you: privateView,

@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "kind": "mafia-acceptance-evidence",
+  "candidate": {
+    "sourceCommit": null,
+    "workerVersion": null,
+    "indexSHA256": null,
+    "workerSHA256": null,
+    "protocol": 2,
+    "rulesets": [1, 2],
+    "ratingModel": "preview-elo-1"
+  },
+  "artifacts": [],
+  "automation": null,
+  "devices": [],
+  "cases": [
+    {"id":"join-reconnect","status":"not-run","devices":[],"artifactIds":[],"observedAt":null,"unauthorizedAudienceCount":null,"duplicateAuthoritativeRewardCount":null},
+    {"id":"account-replacement","status":"not-run","devices":[],"artifactIds":[],"observedAt":null,"unauthorizedAudienceCount":null,"duplicateAuthoritativeRewardCount":null},
+    {"id":"layout-input","status":"not-run","devices":[],"artifactIds":[],"observedAt":null,"unauthorizedAudienceCount":null,"duplicateAuthoritativeRewardCount":null},
+    {"id":"background-lock-privacy","status":"not-run","devices":[],"artifactIds":[],"observedAt":null,"unauthorizedAudienceCount":null,"duplicateAuthoritativeRewardCount":null},
+    {"id":"network-handover","status":"not-run","devices":[],"artifactIds":[],"observedAt":null,"unauthorizedAudienceCount":null,"duplicateAuthoritativeRewardCount":null},
+    {"id":"permission-listen-only","status":"not-run","devices":[],"artifactIds":[],"observedAt":null,"unauthorizedAudienceCount":null,"duplicateAuthoritativeRewardCount":null},
+    {"id":"system-audio-interruption","status":"not-run","devices":[],"artifactIds":[],"observedAt":null,"unauthorizedAudienceCount":null,"duplicateAuthoritativeRewardCount":null},
+    {"id":"faction-audience-transition","status":"not-run","devices":[],"artifactIds":[],"observedAt":null,"unauthorizedAudienceCount":null,"duplicateAuthoritativeRewardCount":null},
+    {"id":"conversion-elimination","status":"not-run","devices":[],"artifactIds":[],"observedAt":null,"unauthorizedAudienceCount":null,"duplicateAuthoritativeRewardCount":null},
+    {"id":"stale-grant-denial","status":"not-run","devices":[],"artifactIds":[],"observedAt":null,"unauthorizedAudienceCount":null,"duplicateAuthoritativeRewardCount":null},
+    {"id":"observer-delay","status":"not-run","devices":[],"artifactIds":[],"observedAt":null,"unauthorizedAudienceCount":null,"duplicateAuthoritativeRewardCount":null},
+    {"id":"rewards-duplicates","status":"not-run","devices":[],"artifactIds":[],"observedAt":null,"unauthorizedAudienceCount":null,"duplicateAuthoritativeRewardCount":null},
+    {"id":"reports-permissions","status":"not-run","devices":[],"artifactIds":[],"observedAt":null,"unauthorizedAudienceCount":null,"duplicateAuthoritativeRewardCount":null},
+    {"id":"tracker-interactions","status":"not-run","devices":[],"artifactIds":[],"observedAt":null,"unauthorizedAudienceCount":null,"duplicateAuthoritativeRewardCount":null}
+  ],
+  "humanSamples": [],
+  "balanceReview": null,
+  "providerQuota": null,
+  "performance": null,
+  "ratingReview": null
+}

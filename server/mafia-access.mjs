@@ -50,7 +50,7 @@ export async function claimMafiaSeat(env,room,id,now=Date.now()) {
   const media=await mafiaMediaLease(env,seat.accountUserId,now);
   if(media&&media.room_key!==room.mafiaKey)fail('MAFIA_ACTIVE_ELSEWHERE',409);
   await assertMafiaMembers(env,room,seat);
-  await run(env,`INSERT INTO mafia_seats(user_id,room_key,room_code,seat_id,expires_at,updated_at) SELECT ?,?,?,?,?,? WHERE NOT EXISTS(SELECT 1 FROM mafia_observer_memberships WHERE user_id=? AND expires_at>?) ON CONFLICT(user_id) DO UPDATE SET room_key=excluded.room_key,room_code=excluded.room_code,seat_id=excluded.seat_id,expires_at=excluded.expires_at,updated_at=excluded.updated_at WHERE mafia_seats.expires_at<=? OR (mafia_seats.room_key=excluded.room_key AND mafia_seats.seat_id=excluded.seat_id)`,seat.accountUserId,room.mafiaKey,room.code,id,now+MAFIA_LEASE_MS,now,seat.accountUserId,now,now);
+  await run(env,`INSERT INTO mafia_seats(user_id,room_key,room_code,seat_id,expires_at,updated_at) SELECT ?,?,?,?,?,? WHERE NOT EXISTS(SELECT 1 FROM mafia_observer_memberships WHERE user_id=? AND expires_at>?) AND NOT EXISTS(SELECT 1 FROM mafia_match_leases WHERE user_id=? AND room_key!=? AND expires_at>?) AND NOT EXISTS(SELECT 1 FROM mafia_media_leases WHERE user_id=? AND room_key!=? AND expires_at>?) ON CONFLICT(user_id) DO UPDATE SET room_key=excluded.room_key,room_code=excluded.room_code,seat_id=excluded.seat_id,expires_at=excluded.expires_at,updated_at=excluded.updated_at WHERE mafia_seats.expires_at<=? OR (mafia_seats.room_key=excluded.room_key AND mafia_seats.seat_id=excluded.seat_id)`,seat.accountUserId,room.mafiaKey,room.code,id,now+MAFIA_LEASE_MS,now,seat.accountUserId,now,seat.accountUserId,room.mafiaKey,now,seat.accountUserId,room.mafiaKey,now,now);
   if(!await first(env,'SELECT 1 FROM mafia_seats WHERE user_id=? AND room_key=? AND seat_id=? AND expires_at>?',seat.accountUserId,room.mafiaKey,id,now)) fail('MAFIA_ACTIVE_ELSEWHERE',409);
 }
 export async function renewMafiaSeats(env,room,now=Date.now()) {
@@ -83,7 +83,11 @@ export async function activateMafiaMatchPrivacy(env,room,now=Date.now()) {
   room.mafiaPrivacyMatchId=room.matchId;room.mafiaPrivacyRenewAt=now+30_000;
 }
 export async function releaseMafiaMatchPrivacy(env,room) {
-  const ids=mafiaPlaying(room)?room.members.filter(m=>!m.left&&room.participants.includes(m.id)).map(m=>m.accountUserId):[];
+  // A ranked assignment already owns its lease before the lobby is journaled.
+  // Preserve it across that journal/start boundary and a recoverable failed
+  // start; otherwise a second device could start social audio in the gap.
+  const rankedLobby=room.ranked&&room.phase==='lobby'&&!room.technicalAbort;
+  const ids=mafiaPlaying(room)||rankedLobby?room.members.filter(m=>!m.left&&(rankedLobby||room.participants.includes(m.id))).map(m=>m.accountUserId):[];
   await run(env,`DELETE FROM mafia_match_leases WHERE room_key=?${ids.length?` AND user_id NOT IN (${placeholders(ids)})`:''}`,room.mafiaKey,...ids);
   if(!ids.length){room.mafiaPrivacyRenewAt=0;room.mafiaPrivacyMatchId=null;}
 }

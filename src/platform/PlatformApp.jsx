@@ -28,6 +28,7 @@ import { Terms, Privacy } from './screens/Legal.jsx';
 import { Online } from '../online/Online.jsx';
 import { MafiaEntry } from '../games/mafia/tutorial/MafiaEntry.jsx';
 import { MafiaTutorial } from '../games/mafia/tutorial/MafiaTutorial.jsx';
+import { MafiaLabs } from '../games/mafia/tutorial/labs/MafiaLabs.jsx';
 import onlineCss from '../online/online.css';
 import { AccountProvider } from '../shared/account/AccountProvider.jsx';
 import { PaywallHost } from '../shared/account/PaywallHost.jsx';
@@ -63,7 +64,7 @@ function ScreenHost({ route }) {
   // عودة الدخول (#/auth?code=) تعرض الرئيسية بينما يبدّل AccountProvider الرمز بجلسة.
   if (route.name === 'home' || route.name === 'auth') screen = <Home key="home" />;
   else if (route.name === 'game') screen = <GameDetails key={`game-${route.params.id}`} id={route.params.id} />;
-  else if (route.name === 'mafia-tutorial') screen = <MafiaTutorial key="mafia-tutorial" />;
+  else if (route.name === 'mafia-tutorial') screen = route.params.lab||route.params.labs ? <MafiaLabs key={`mafia-labs-${route.params.lab||'hub'}`} courseId={route.params.lab}/> : <MafiaTutorial key="mafia-tutorial" />;
   else if (route.name === 'play' && route.params.id === 'mafia') screen = <MafiaEntry key="mafia-entry" />;
   else if (route.name === 'play') screen = getGame(route.params.id)?.onlineOnly ? <Online key={`online-${route.params.id}`} game={route.params.id} /> : <Play key={`play-${route.params.id}`} id={route.params.id} />;
   else if (route.name === 'players') screen = <Players key="players" />;

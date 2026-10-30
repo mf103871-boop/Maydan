@@ -245,11 +245,20 @@ test('ترحيلات D1 جمل مستقلة بسطر واحد يقبلها exec'
       'ALTER TABLE social_groups ADD COLUMN creator_id TEXT REFERENCES users(id) ON DELETE SET NULL;',
       'ALTER TABLE social_groups ADD COLUMN creation_client_id TEXT;',
       'ALTER TABLE social_groups ADD COLUMN creation_hash TEXT;',
-      'CREATE UNIQUE INDEX IF NOT EXISTS social_groups_creation ON social_groups(creator_id,creation_client_id) WHERE creation_client_id IS NOT NULL;'].includes(statement) ||
+      'CREATE UNIQUE INDEX IF NOT EXISTS social_groups_creation ON social_groups(creator_id,creation_client_id) WHERE creation_client_id IS NOT NULL;',
+      // 0022: reviewed additive fields on the existing Mafia report queue.
+      'ALTER TABLE mafia_reports ADD COLUMN request_hash TEXT;',
+      "ALTER TABLE mafia_reports ADD COLUMN category TEXT NOT NULL DEFAULT 'other' CHECK(category IN ('harassment','cheating','disruption','inappropriate','other'));",
+      'ALTER TABLE mafia_reports ADD COLUMN match_id INTEGER;',
+      'ALTER TABLE mafia_reports ADD COLUMN review_started_at INTEGER;',
+      'ALTER TABLE mafia_reports ADD COLUMN reviewer_id TEXT;'].includes(statement) ||
     /^CREATE UNIQUE INDEX IF NOT EXISTS social_(group_invites_pending|calls_open|call_one_active) /.test(statement) ||
     (/^INSERT OR IGNORE INTO (social_profiles|player_profiles)\(/.test(statement) &&
       !/\b(UPDATE|DELETE|REPLACE|DROP|ALTER)\b/i.test(statement)) ||
-    ["INSERT OR IGNORE INTO design_draft(id) VALUES('main');", "INSERT OR IGNORE INTO design_publication(id) VALUES('main');"].includes(statement) ||
+    ["INSERT OR IGNORE INTO design_draft(id) VALUES('main');", "INSERT OR IGNORE INTO design_publication(id) VALUES('main');",
+      // 0023 seeds only the reviewed isolated preview season. This is not
+      // permission for arbitrary account/rating writes or season replacement.
+      "INSERT OR IGNORE INTO mafia_ranked_seasons(id,starts_at,ends_at,ruleset_version,rating_model,reward_policy,status) VALUES('preview-2026-01',1793318400000,1798156800000,1,'preview-elo-1',1,'open');"].includes(statement) ||
     /^INSERT OR IGNORE INTO moderation_image_reviews\(id,user_id,kind,version,data_base64,width,height,byte_length,created_at\) SELECT 'legacy-' \|\| i\.user_id \|\| '-' \|\| i\.kind,i\.user_id,i\.kind,i\.version,i\.data_base64,i\.width,i\.height,i\.byte_length,i\.updated_at FROM player_images i JOIN users u ON u\.id=i\.user_id WHERE NOT EXISTS\(SELECT 1 FROM account_deletions d WHERE d\.user_id=i\.user_id\) AND NOT EXISTS\(SELECT 1 FROM moderation_image_approvals a WHERE a\.user_id=i\.user_id AND a\.kind=i\.kind AND a\.version=i\.version\);$/.test(statement);
   for (const unsafe of [
     'INSERT OR IGNORE INTO users(id) VALUES(1);',
@@ -259,7 +268,12 @@ test('ترحيلات D1 جمل مستقلة بسطر واحد يقبلها exec'
     'ALTER TABLE social_groups ADD COLUMN creator_id TEXT REFERENCES users(id) ON DELETE CASCADE;',
     'ALTER TABLE social_groups ADD COLUMN creation_hash TEXT NOT NULL;',
     'CREATE UNIQUE INDEX IF NOT EXISTS social_groups_creation ON social_groups(name);',
+    'ALTER TABLE mafia_reports ADD COLUMN unreviewed TEXT;',
+    'ALTER TABLE mafia_reports ADD COLUMN reviewer_id TEXT NOT NULL;',
+    "ALTER TABLE mafia_reports ADD COLUMN category TEXT NOT NULL DEFAULT 'other';",
     "INSERT OR IGNORE INTO design_draft(id,document_json) VALUES('main','unreviewed');",
+    "INSERT OR REPLACE INTO mafia_ranked_seasons(id,starts_at,ends_at,ruleset_version,rating_model,reward_policy,status) VALUES('preview-2026-01',1793318400000,1798156800000,1,'preview-elo-1',1,'open');",
+    "INSERT OR IGNORE INTO mafia_ranked_seasons(id,starts_at,ends_at,ruleset_version,rating_model,reward_policy,status) VALUES('production',1793318400000,1798156800000,1,'preview-elo-1',1,'open');",
   ]) assert.equal(allowed(unsafe), false, `جملة غير آمنة: ${unsafe}`);
   assert.ok(statements.length >= 10, 'الترحيل الأول ينشئ جداول الحسابات كلها');
   for (const statement of statements) {

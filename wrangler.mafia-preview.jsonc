@@ -21,6 +21,12 @@
     "EXTRA_ORIGINS": "maydan://app",
     "APPLE_BUNDLE_ID": "Maydan",
     "MAFIA_ENABLED": "1",
+    "MAFIA_ACCEPT_NEW_MATCHES": "1",
+    "MAFIA_PROGRESS_ENABLED": "1",
+    "MAFIA_METRICS_ENABLED": "1",
+    "MAFIA_RANKED_ENABLED": "1",
+    "MAFIA_COMMUNITY_ENABLED": "1",
+    "MAFIA_EXPERIMENTAL_ROLES_ENABLED": "1",
     "MAFIA_MAX_ACTIVE_ROOMS": "1",
     "MAFIA_MAX_VOICE_PARTICIPANTS": "80",
     "IOS_UPDATE_POLICY_ENABLED": "0",
@@ -78,6 +84,7 @@
     ]
   },
   "observability": {
-    "enabled": true
+    "enabled": true,
+    "logs": { "enabled": true, "invocation_logs": false }
   }
 }

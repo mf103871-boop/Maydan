@@ -1,4 +1,6 @@
 import { GAME_PROTOCOLS, ROOM_CAPABILITIES, validateServerUrl } from './shared.js';
+import { supportsMafiaRuleset } from './mafia-shared.js';
+import { createMafiaClientMetrics } from './mafia-metrics.mjs';
 export class ClientError extends Error {
   constructor(code) { super(code); this.code = code; }
 }
@@ -53,11 +55,18 @@ export async function post(server, path, data, options = fetch) {
   finally { clearTimeout(timeout); }
 }
 export class RoomClient {
-  constructor({ server, code, session, getAccountAuthorization = () => null, onState = () => {}, onStatus = () => {}, onError = () => {}, WebSocketImpl = WebSocket }) {
+  constructor({ server, code, session, getAccountAuthorization = () => null, onState = () => {}, onStatus = () => {}, onError = () => {}, onMetrics, WebSocketImpl = WebSocket }) {
     Object.assign(this, { server, code, session, getAccountAuthorization, onState, onStatus, onError, WebSocketImpl });
     this.pending = new Map(); this.drawingListeners = new Set(); this.reactionListeners = new Set(); this.stopped = true; this.attempt = 0; this.counter = 0; this.state = null;
+    // Optional local experiment callback only. No upload, storage or identifiers.
+    this.metrics = createMafiaClientMetrics({enabled:typeof onMetrics==='function',sink:onMetrics});
+    this.metricsEpisode=null;this.metricsHasReady=false;
   }
-  start() { if (!this.stopped) { this.wake(); return; } this.stopped = false; this.attempt = 0; this.connect(); }
+  start() { if (!this.stopped) { this.wake(); return; } this.stopped = false; this.attempt = 0; this.beginMetricsEpisode(); this.connect(); }
+  beginMetricsEpisode() { if(!this.metricsEpisode)this.metricsEpisode={kind:this.metricsHasReady?'recovery':'initial',at:Date.now()}; }
+  settleCommandMetric(pending,outcome) {
+    if(pending.metricsAt!==undefined){const at=pending.metricsAt;delete pending.metricsAt;this.metrics.commandSettled(outcome,Math.max(0,Date.now()-at));this.metrics.flush();}
+  }
   status(value) { this.connectionStatus = value; this.onStatus(value); }
   clearConnectionTimers() {
     clearTimeout(this.retryTimer); clearTimeout(this.openTimer); clearInterval(this.heartbeat); clearTimeout(this.wakeTimer);
@@ -65,6 +74,7 @@ export class RoomClient {
   }
   reconnectNow() {
     if (this.stopped) return;
+    this.beginMetricsEpisode();
     this.clearConnectionTimers();
     // Detach before closing: a suspended mobile socket may never deliver close,
     // or may deliver it after the replacement has already authenticated.
@@ -75,6 +85,7 @@ export class RoomClient {
   }
   reconnectLater() {
     if (this.stopped) return;
+    this.beginMetricsEpisode();
     this.status('reconnecting');
     this.retryTimer = setTimeout(() => this.connect(), Math.min(800 * 2 ** Math.min(this.attempt++, 8), 10_000) + Math.random() * 200);
   }
@@ -112,6 +123,7 @@ export class RoomClient {
       if (ws !== this.ws || this.stopped) return;
       this.lastReceived = Date.now();
       clearTimeout(this.wakeTimer); this.wakeTimer = null;
+      if(this.state?.game==='mafia')this.metrics.flush();
       if (event.data === 'pong') return;
       let message;
       try { message = JSON.parse(event.data); } catch { return; }
@@ -130,9 +142,14 @@ export class RoomClient {
         // still valid: stop as 'outdated' and keep the stored credentials, so the
         // newer version reconnects to the same room and seat after a reload.
         if (!protocol || (message.state.game === 'mafia' ? ![1, protocol].includes(message.state.protocol) : message.state.protocol !== protocol)) { this.onError('ROOM_OUTDATED'); this.stop('outdated'); return; }
+        if(message.state.game==='mafia'&&!supportsMafiaRuleset(ROOM_CAPABILITIES,message.state.rulesetVersion===undefined?1:message.state.rulesetVersion)){this.onError('ROOM_OUTDATED');this.stop('outdated');return;}
         if (this.state && message.state.revision < this.state.revision) return;
         clearTimeout(this.openTimer); this.attempt = 0;
         this.state = message.state; this.clockOffset = message.state.serverNow - Date.now();
+        if(this.state.game==='mafia'&&this.metricsEpisode){
+          this.metrics.connectionReady(this.metricsEpisode.kind,Math.max(0,Date.now()-this.metricsEpisode.at));
+          this.metricsEpisode=null;this.metricsHasReady=true;this.metrics.flush();
+        }
         this.status('connected'); this.onState(this.state);
       } else if (message.type === 'drawing') {
         if (this.state?.game !== 'ersomha' || message.matchId !== this.state.matchId || message.round !== this.state.round) return;
@@ -142,7 +159,7 @@ export class RoomClient {
         for (const listener of this.reactionListeners) listener(message);
       } else if (message.type === 'ack') {
         const pending = this.pending.get(message.requestId);
-        if (pending) { clearTimeout(pending.timer); this.pending.delete(message.requestId); message.ok ? pending.resolve(message) : pending.reject(new ClientError(message.error)); }
+        if (pending) { clearTimeout(pending.timer); this.pending.delete(message.requestId); this.settleCommandMetric(pending,message.ok?'ok':'rejected'); message.ok ? pending.resolve(message) : pending.reject(new ClientError(message.error)); }
       } else if (message.type === 'error') {
         this.onError(message.error);
         if (['AUTH', 'NOT_FOUND', 'EXPIRED', 'REMOVED'].includes(message.error)) this.stop('ended');
@@ -192,14 +209,15 @@ export class RoomClient {
     const { matchId = this.state.matchId, round = this.state.round, phaseId = this.state.phaseId, ...payload } = fields;
     const requestId = `${Date.now()}-${++this.counter}`;
     return new Promise((resolve, reject) => {
-      const timer = setTimeout(() => { this.pending.delete(requestId); reject(new ClientError('TIMEOUT')); }, 10_000);
-      this.pending.set(requestId, { resolve, reject, timer });
+      const pending={resolve,reject,...(this.state.game==='mafia'?{metricsAt:Date.now()}: {})};
+      const timer = setTimeout(() => { if(!this.pending.delete(requestId))return;this.settleCommandMetric(pending,'timeout');reject(new ClientError('TIMEOUT')); }, 10_000);
+      pending.timer=timer;this.pending.set(requestId,pending);
       try { this.ws.send(JSON.stringify({ type, ...payload, requestId, matchId, round, ...(this.state.game === 'mafia' ? { phaseId } : {}) })); }
-      catch { clearTimeout(timer); this.pending.delete(requestId); reject(new ClientError('DISCONNECTED')); }
+      catch { clearTimeout(timer); this.pending.delete(requestId); this.settleCommandMetric(pending,'transport');reject(new ClientError('DISCONNECTED')); }
     });
   }
   rejectPending(code) {
-    for (const p of this.pending.values()) { clearTimeout(p.timer); p.reject(new ClientError(code)); }
+    for (const p of this.pending.values()) { clearTimeout(p.timer);this.settleCommandMetric(p,'transport');p.reject(new ClientError(code)); }
     this.pending.clear();
   }
   stop(status = 'disconnected') {
@@ -207,6 +225,7 @@ export class RoomClient {
     // A command still in flight when the server turns out newer must report the
     // same reason; DISCONNECTED would replace the update notice with a wrong one.
     this.rejectPending(status === 'outdated' ? 'ROOM_OUTDATED' : 'DISCONNECTED'); this.ws?.close(); this.status(status);
+    this.metricsEpisode=null;this.metrics.flush();
   }
 }
 
@@ -227,7 +246,7 @@ export function subscribePublicRooms(server,{getAccountAuthorization,onInvalidat
     if(closed||globalThis.document?.hidden)return;
     const url=new URL('/api/rooms/public/stream',server);url.protocol=url.protocol==='https:'?'wss:':'ws:';
     let current;try{current=new WebSocketImpl(url.toString());socket=current;}catch{return;}
-    current.onopen=()=>{if(closed||socket!==current)return;const auth=getAccountAuthorization?.();if(!auth){current.close();return;}current.send(JSON.stringify({type:'auth',accountAuthorization:auth}));ping=setInterval(()=>{if(!closed&&socket===current&&current.readyState===1)current.send(JSON.stringify({type:'ping'}));},25000);};
+    current.onopen=()=>{if(closed||socket!==current)return;const auth=getAccountAuthorization?.();if(!auth){current.close();return;}current.send(JSON.stringify({type:'auth',accountAuthorization:auth}));ping=setInterval(()=>{if(!closed&&socket===current&&current.readyState===1)current.send('ping');},25000);};
     current.onmessage=event=>{if(closed||socket!==current)return;let message;try{message=JSON.parse(event.data);}catch{return;}if(message.type==='directory-ready'){attempt=0;lastRevision=message.revision;return;}if(message.type==='directory-invalidated'&&message.revision!==lastRevision){lastRevision=message.revision;clearTimeout(debounce);debounce=setTimeout(()=>{if(!closed&&!globalThis.document?.hidden)onInvalidate?.();},180);}};
     current.onerror=()=>{};
     current.onclose=()=>{if(closed||socket!==current)return;clearInterval(ping);socket=null;retry=setTimeout(open,Math.min(15000,1000*2**Math.min(attempt++,4)));};
@@ -236,7 +255,10 @@ export function subscribePublicRooms(server,{getAccountAuthorization,onInvalidat
   globalThis.document?.addEventListener('visibilitychange',wake);globalThis.window?.addEventListener('online',wake);open();
   return()=>{closed=true;clear();const old=socket;socket=null;old?.close();globalThis.document?.removeEventListener('visibilitychange',wake);globalThis.window?.removeEventListener('online',wake);};
 }
-export const getMafiaHistory = (server,options = {}) => getRoomResource(server,'/api/mafia/history',options);
+export const getMafiaHistory = (server,{cursor='',...options} = {}) => {
+  if(typeof cursor!=='string'||cursor.length>2048)throw new ClientError('INVALID');
+  return getRoomResource(server,'/api/mafia/history'+(cursor?'?cursor='+encodeURIComponent(cursor):''),options);
+};
 async function getRoomResource(server, path, { headers = {}, signal } = {}) {
   if (!validateServerUrl(server)) throw new ClientError('CONFIG');
   const controller = new AbortController();

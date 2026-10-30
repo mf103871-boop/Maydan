@@ -1,0 +1,93 @@
+{
+  "schemaVersion": 1,
+  "kind": "experimental-mafia-ruleset",
+  "updatedAt": "2026-10-30",
+  "timezone": "Asia/Amman",
+  "defaultRulesetVersion": 1,
+  "experimentalRulesetVersion": 2,
+  "status": "implemented-unvalidated-preview",
+  "role": "tracker",
+  "label": "المتعقّب التجريبي",
+  "initialFaction": "town",
+  "charges": 2,
+  "admission": {
+    "setting": "experimentalRole=tracker",
+    "gate": "MAFIA_EXPERIMENTAL_ROLES_ENABLED=1",
+    "clientCapability": "mafiaRulesets includes numeric 2; older protocol2 clients remain v1-only",
+    "visibility": "private",
+    "minimumPlayers": 8,
+    "maximumPlayers": 12,
+    "ranked": false,
+    "midRoomRulesetChange": false
+  },
+  "composition": "Replace the first drawn town support role with one tracker. V1 composition, default catalog, shuffle order and random calls stay unchanged. Other support positions remain randomly drawn.",
+  "selection": {
+    "phase": "night",
+    "targets": "One other living participant",
+    "editable": true,
+    "cancellable": true,
+    "chargeConsumption": "At night close, including blocked or failed uses"
+  },
+  "resolution": {
+    "observation": "Unique destinations of the tracked actor's accepted unblocked active ability and their own non-null Mafia attack ballot, in public seat order.",
+    "attackTie": "An actor's accepted non-null ballot is a selection even when the team's aggregate ballot ties or the attack is protected.",
+    "absentBlockedOrPassive": "No observed destinations; these causes are indistinguishable.",
+    "multipleTargets": "Both analyst comparison targets and combined ability/attack destinations are merged without type labels or an ability-first order.",
+    "selfTargets": "An allowed doctor or masker self-target can appear as a destination.",
+    "deadDestinations": "An eliminated reporter target is a valid destination.",
+    "trackedActorDeath": "Accepted selections remain observable when the tracked actor dies at the same resolution.",
+    "trackerDeath": "No private tracking report is delivered when the tracker is dead after the resolution.",
+    "trackerBlocked": "Generic no_result report if still alive; the committed charge is consumed.",
+    "conversion": "The tracker retains role and remaining charges, and wins with the new faction. Tracking cannot identify conversion success.",
+    "masking": "Masking changes apparent faction checks, never destinations."
+  },
+  "informationBoundary": {
+    "ownerOnly": true,
+    "revealsAbilityType": false,
+    "revealsFaction": false,
+    "revealsSuccess": false,
+    "revealsIncomingVisitors": false,
+    "revealsAggregateAttack": false,
+    "auditEvent": "tracking_report",
+    "archive": "Delayed authorized participant review, numeric seats only; no chat/audio/account identity.",
+    "publicObservers": "Unavailable because experimental rooms are private."
+  },
+  "interactions": {
+    "citizen": "No outgoing night ability; empty destinations.",
+    "investigator": "Investigation target is a destination regardless of apparent-faction result.",
+    "doctor": "Protection selection is a destination even if no attack reaches it; self-protection follows normal constraints.",
+    "guard": "Passive shield creates no outgoing destination.",
+    "observer": "Observation target is a destination; tracking and activity evidence stay distinct.",
+    "reporter": "The eliminated target selected for a reveal is a destination.",
+    "herald": "Daytime extension creates no outgoing night destination.",
+    "analyst": "Both selected comparison targets appear, deduplicated and ordered by seat.",
+    "mafia": "Their individual accepted non-null attack ballot appears, without reporting aggregate attack success.",
+    "masker": "Accepted masking target and own accepted attack ballot are merged without type labels.",
+    "blocker": "Accepted blocking target and own accepted attack ballot are merged; blocking the tracker prevents its report.",
+    "leader": "An accepted recruitment target is a destination even when recruitment fails; target identity does not reveal the failure reason."
+  },
+  "progression": {
+    "xp": false,
+    "mastery": false,
+    "rankedRating": false,
+    "genericProfileWins": false,
+    "ownHistory": true
+  },
+  "localLab": {
+    "route": "#/tutorial/mafia?lab=tracker",
+    "rulesetVersion": 2,
+    "steps": ["trace outgoing protection destination", "trace an actor with no outgoing choice", "start a separate teaching room and resolve blocked tracking"],
+    "persistence": "Owner/course/version scoped decision journal; no room state, role assignment or secret chat persisted.",
+    "network": false,
+    "microphone": false,
+    "rewards": false
+  },
+  "acceptance": {
+    "newTestsRun": false,
+    "newTestsWritten": false,
+    "physicalDeviceValidation": false,
+    "humanBalanceValidation": false,
+    "productionReady": false,
+    "reason": "Implementation completed under the user's explicit request to skip tests. Build/deployment evidence is recorded separately by the release operator."
+  }
+}

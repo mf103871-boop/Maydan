@@ -1,5 +1,5 @@
 // Covers describe categories, never questions. Relative paths also work under /Maydan/.
-const versions = typeof __MAYDAN_MEDIA_VERSIONS__ !== 'undefined' ? __MAYDAN_MEDIA_VERSIONS__ : {};
+import { MEDIA_VERSIONS as versions } from '../../shared/media/versions.js';
 // Versions are per file (`folder/file`). Any cover present means covers shipped.
 export const BADEEHA_COVER_VERSION = Object.keys(versions).some((key) => key.startsWith('badeeha-covers/')) ? 'per-file' : '';
 

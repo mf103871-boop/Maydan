@@ -5,8 +5,8 @@ const terminalDenials = new Set(['AUTH','AUTH_REQUIRED','AUTH_EXPIRED','ACCOUNT_
 export const mafiaCommunicationLocked = state => state?.game === 'mafia' && state.phase !== 'lobby' && !closed.has(state.phase) && !!state.you?.roleId && state.members?.some(member => member.id === state.you.id && member.alive);
 export const emptyMafiaVoice = () => ({ requested: false, status: 'off', mediaEpoch: -1, muted: true, canPublish: false, participants: [], error: '', previousCall: null });
 export class MafiaVoiceSession {
-  constructor({ request, deviceId, media, native = false, beforeJoin = async () => null, setCall = () => {}, onChange = () => {} }) {
-    Object.assign(this, { request, deviceId, media, native, beforeJoin, setCall, onChange });
+  constructor({ request, captureRequest = () => request, deviceId, media, native = false, beforeJoin = async () => null, setCall = () => {}, onChange = () => {} }) {
+    Object.assign(this, { request, captureRequest, deviceId, media, native, beforeJoin, setCall, onChange });
     this.state = emptyMafiaVoice(); this.generation = 0; this.epoch = -1; this.room = null; this.call = null; this.userMuted = true;
   }
   update(patch) { this.state = { ...this.state, ...patch }; this.onChange(this.state); }
@@ -159,15 +159,19 @@ export class MafiaVoiceSession {
   }
   stop({ notify = true } = {}) {
     if (this.stopping) return this.stopping;
-    const code = this.room?.code, callId = this.call?.id, epoch = this.epoch, voiceSessionId = this.voiceSessionId;
+    const code = this.room?.code, callId = this.call?.id, epoch = this.epoch, voiceSessionId = this.voiceSessionId, request = this.captureRequest();
     this.generation++; this.call = null; this.epoch = -1; this.userMuted = true;
+    const generation = this.generation;
     this.pending = null; this.again = false;
     this.update({ ...emptyMafiaVoice(), previousCall: this.state.previousCall });
     this.setCall(null);
     const task = (async () => {
       if (callId) await this.media.disconnect({ callId, localOnly: true, endReason: 'game-voice-left', expectedMediaEpoch: epoch, expectedVoiceSessionId: voiceSessionId });
-      if (notify && code && callId) {
-        try { await this.request(code, { deviceId: await this.deviceId(), operation: 'leave', callId, voiceSessionId }); } catch { /* A new join retires this session; late leave cannot revoke its replacement. */ }
+      if (notify && code && callId && generation === this.generation) {
+        try {
+          const deviceId = await this.deviceId();
+          if (generation === this.generation) await request(code, { deviceId, operation: 'leave', callId, voiceSessionId });
+        } catch { /* A new join retires this session; late leave cannot revoke its replacement. */ }
       }
     })();
     this.stopping = task;
