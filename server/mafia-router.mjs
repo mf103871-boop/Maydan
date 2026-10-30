@@ -1,12 +1,14 @@
 import { requireSession } from './accounts/session.mjs';
-import { credentials, json, readJson, sha256 } from './protocol.mjs';
+import { credentials, json, readJson } from './protocol.mjs';
 import { fail } from './room-model.mjs';
-import { all, first, run, stmt } from './lamma/common.mjs';
+import { first } from './lamma/common.mjs';
 import { mafiaEnabled, requireMafiaEnabled } from './mafia-access.mjs';
 import { requireMafiaNewMatches } from './mafia-ruleset-policy.mjs';
 import { MAFIA_PROTOCOL } from '../src/online/shared.js';
 import { listMafiaDirectory, DIRECTORY_KEY } from './mafia-directory.mjs';
 import { mafiaPublicCatalog,readMafiaProgress,patchMafiaPreferences,readMafiaReward,readMafiaHistory } from './mafia-profile.mjs';
+import { saveMafiaReportCase,ownMafiaReportCases,ownMafiaReportCase } from './mafia-report-cases.mjs';
+import { readMafiaReview } from './mafia-review.mjs';
 
 const roomFetch=(env,code,endpoint,body)=>env.ROOMS.get(env.ROOMS.idFromName(code)).fetch(new Request(`https://internal/${code}/${endpoint}`,{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify(body)}));
 export async function routeMafia(request,env,url,charge) {
@@ -21,11 +23,20 @@ export async function routeMafia(request,env,url,charge) {
   const block=/^\/api\/rooms\/(\d{6})\/mafia-block$/.exec(path);
   const profile=/^\/api\/profiles\/([A-Za-z0-9_-]{1,80})\/mafia$/.exec(path);
   const reward=/^\/api\/me\/mafia\/rewards\/([^/]+)$/.exec(path);
-  if(!voice&&!report&&!block&&!observe&&!profile&&!reward&&!['/api/rooms/public','/api/matchmaking/join','/api/mafia/history','/api/mafia/capabilities','/api/mafia/catalog','/api/me/mafia/progress','/api/me/mafia/preferences'].includes(path))return null;
+  const ownReport=/^\/api\/me\/mafia\/reports\/([a-f0-9]{64})$/.exec(path);
+  const review=/^\/api\/mafia\/history\/([^/]+)$/.exec(path);
+  if(!voice&&!report&&!block&&!observe&&!profile&&!reward&&!ownReport&&!review&&!['/api/rooms/public','/api/matchmaking/join','/api/mafia/history','/api/mafia/capabilities','/api/mafia/catalog','/api/me/mafia/progress','/api/me/mafia/preferences','/api/me/mafia/reports'].includes(path))return null;
   if(path==='/api/mafia/capabilities'&&method==='GET')return json({enabled:mafiaEnabled(env),capabilities:{mafia:MAFIA_PROTOCOL}});
   if(path==='/api/mafia/catalog'&&method==='GET'){if(charge)await charge('profileRead');return json(mafiaPublicCatalog(env));}
   const {user,session}=await requireSession(env,request,{rotate:false});
   if(charge)await charge(method==='GET'||voice?'socialRead':'socialWrite','RATE_LIMIT',user.id);
+  const actor={userId:user.id,sessionId:session.id};
+  if(review&&method==='GET'){
+    let key;try{key=decodeURIComponent(review[1]);}catch{fail('INVALID',400);}
+    return json(await readMafiaReview(env,user.id,key));
+  }
+  if(path==='/api/me/mafia/reports'&&method==='GET')return json(await ownMafiaReportCases(env,actor,{before:url.searchParams.has('before')?Number(url.searchParams.get('before')):Number.MAX_SAFE_INTEGER,limit:url.searchParams.has('limit')?Number(url.searchParams.get('limit')):20}));
+  if(ownReport&&method==='GET')return json(await ownMafiaReportCase(env,actor,ownReport[1]));
   if(path==='/api/me/mafia/progress'&&method==='GET')return json(await readMafiaProgress(env,user.id));
   if(profile&&method==='GET')return json(await readMafiaProgress(env,user.id,profile[1]));
   if(path==='/api/me/mafia/preferences'&&method==='PATCH')return json(await patchMafiaPreferences(env,user.id,await readJson(request,4096)));
@@ -66,20 +77,7 @@ export async function routeMafia(request,env,url,charge) {
   if(voice&&method==='POST') return roomFetch(env,voice[1],'mafia-voice',{...await readJson(request),accountUserId:user.id,accountSessionId:session.id});
   if(block&&method==='POST'){const body=await readJson(request);return roomFetch(env,block[1],body.scope==='observer'?'mafia-observe-block':'mafia-block',{...body,accountUserId:user.id,accountSessionId:session.id});}
   if(report&&method==='POST') {
-    const body=await readJson(request);
-    if(typeof body.reason!=='string'||!body.reason.trim()||body.reason.length>1000||typeof body.clientId!=='string'||!/^[a-zA-Z0-9_-]{1,80}$/.test(body.clientId))fail('INVALID');
-    const response=await roomFetch(env,report[1],'mafia-evidence',{accountUserId:user.id,accountSessionId:session.id,...(body.scope==='observer'?{scope:'observer',id:body.id,token:body.token}:{}),targetId:body.targetId,messageId:body.messageId,matchId:body.matchId});
-    if(!response.ok)return response;
-    const evidence=await response.json();
-    const id=await sha256(`mafia-report:${user.id}:${body.clientId}`);
-    const previous=await first(env,'SELECT reported_id,room_code,reason FROM mafia_reports WHERE id=?',id);
-    if(previous&&(previous.reported_id!==evidence.reportedUserId||previous.room_code!==report[1]||previous.reason!==body.reason.trim()))fail('CONFLICT',409);
-    const now=Date.now(),messageText=`مافيا ميدان — غرفة ${report[1]}\n${(evidence.messages||[]).filter(m=>m.playerId===body.targetId).map(m=>m.text).join('\n').slice(0,6000)}`;
-    await env.DB.batch([
-      stmt(env,'INSERT OR IGNORE INTO mafia_reports(id,reporter_id,reported_id,room_code,match_key,reason,evidence,created_at) VALUES(?,?,?,?,?,?,?,?)',id,user.id,evidence.reportedUserId,report[1],evidence.matchKey,body.reason.trim(),JSON.stringify(evidence),now),
-      stmt(env,'INSERT OR IGNORE INTO social_reports(id,reporter_id,reported_id,message_seq,message_text,reason,created_at) VALUES(?,?,?,NULL,?,?,?)',id,user.id,evidence.reportedUserId,messageText,body.reason.trim(),now),
-    ]);
-    return json({ok:true,reportId:id});
+    return json(await saveMafiaReportCase(env,actor,report[1],await readJson(request)));
   }
   if(path==='/api/mafia/history'&&method==='GET') {
     if(await first(env,'SELECT 1 FROM mafia_observer_memberships WHERE user_id=? AND expires_at>?',user.id,Date.now()))fail('MAFIA_OBSERVER_ACTIVE',409);

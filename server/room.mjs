@@ -18,6 +18,7 @@ import { technicalAbort, snapshot as mafiaSnapshot, voiceAudience } from './mafi
 import { persistMafiaResult, prepareMafiaResult } from './mafia-results.mjs';
 import { persistMafiaProgress, mafiaProgressEnabled } from './mafia-progression.mjs';
 import { supportsMafiaProtocol } from '../src/online/mafia-shared.js';
+import { createMafiaMetrics } from '../src/online/mafia-metrics.mjs';
 import { MafiaDirectoryFeed } from './mafia-directory-feed.mjs';
 import { advanceObserverStream,observerNextAlarm,observerView,observerCanPromote,claimObserver,releaseObserver,promoteObserverClaim,observerAuthorizations,OBSERVER_CAP,OBSERVER_LEASE,assertObserverAdmission,loadObserverStream,saveObserverStream,observerEvidenceAccount,observerEvidenceAccounts,dropObserverEvidenceAccounts } from './mafia-observers.mjs';
 import { blockUser } from './social/db.mjs';
@@ -47,6 +48,8 @@ export class Room {
     this.inboundBySocket = new WeakMap(); this.inboundCount = 0;
     this.mafiaLastSnapshots = new WeakMap();
     this.mafiaResultOutbox=[];
+    this.metrics=createMafiaMetrics({enabled:String(env.MAFIA_METRICS_ENABLED)==='1',side:'server',
+      sink:record=>console.info('[mafia-metrics]',JSON.stringify(record))});
     this.directoryFeed=new MafiaDirectoryFeed(ctx,env);this.observerStream=null;
     // These are successful D1 synchronization fingerprints, never authority.
     // A cold/rehydrated object starts empty and safely resynchronizes them.
@@ -113,6 +116,7 @@ export class Room {
     assertSupportedMafiaRuleset(this.room);
     assertSupportedMafiaRuleset(candidate);
     if(candidate.game==='mafia'&&candidate.settings.visibility!=='public'&&Object.keys(candidate.observers||{}).length){for(const observer of Object.values(candidate.observers))await releaseObserver(this.env,candidate,observer);candidate.observers={};}
+    const previous=this.room;
     const oldLease = this.room?.ersomhaLease;
     if (candidate.game === 'ersomha' && !prepared) await this.prepareErsomha(candidate);
     if (candidate.game === 'mafia' && !prepared) await this.prepareMafia(candidate);
@@ -152,6 +156,14 @@ export class Room {
     if (candidate.game === 'ersomha') { this.drawing = nextDrawing; this.drawingHead = nextDrawingHead; this.drawingArchives = nextArchives; }
     this.profileOutbox = outbox;
     this.mafiaResultOutbox=mafiaOutbox;
+    if(candidate.game==='mafia') {
+      if(!previous||previous.matchId!==candidate.matchId||previous.phaseId!==candidate.phaseId) {
+        const committedAt=Date.now();
+        const lag=previous?.matchId===candidate.matchId&&Number.isFinite(previous.deadlineAt)&&previous.deadlineAt<=committedAt?Math.max(0,committedAt-previous.deadlineAt):undefined;
+        this.metrics.phaseCommitted(candidate.phase,lag);
+      }
+      this.metrics.flush();
+    }
     this.broadcast();
     if(candidate.game==='mafia')for(const ws of this.sockets()){const a=this.attachment(ws);if(a.scope==='observer'&&!candidate.observers?.[a.id])this.close(ws,4401,'AUTH');}
     if(candidate.game==='mafia') {
@@ -197,6 +209,7 @@ export class Room {
     }
   }
   async flushMafiaResults() {
+    this.metrics.flush();
     if(!this.env.DB)return;
     while(this.mafiaResultOutbox.length) {
       const event=this.mafiaResultOutbox[0];
@@ -209,6 +222,9 @@ export class Room {
       // Removing the recovered event also clears its diagnostic. Never retain
       // raw SQL/provider errors or any role, account, chat or target in it.
       this.mafiaResultOutbox=rest;
+      // A result sample is eligible only after BOTH consumers and the durable
+      // acknowledgement. The collector independently enforces END + 30s.
+      this.metrics.resultDrained(event.finishedAt,event.notBefore);this.metrics.flush();
     }
   }
   async recordMafiaResultFailure(event,error) {
@@ -695,14 +711,18 @@ export class Room {
             const input=await credentials(body),observer=this.observer(input.id);if(!observer||observer.tokenHash!==input.tokenHash||observer.accountUserId!==body.accountUserId)fail('AUTH',401);
             if(!(await observerAuthorizations(this.env,this.room,[{...observer,accountSessionId:body.accountSessionId}])).length)fail('AUTH',401);
             const view=observerView(this.room,this.observerStream,observer);if(body.matchId!==view.matchId)fail('NOT_FOUND',404);const reportedUserId=await this.observerReportedAccount(body.targetId);
-            return json({matchKey:`${this.room.mafiaKey}:${view.matchId}`,reportedUserId,phase:view.phase,publicHistory:view.log,messages:view.chats.public.filter(m=>!body.messageId||m.id===body.messageId)});
+            const messages=view.chats.public.map(m=>({...m,channel:'public'})).filter(m=>!body.messageId||m.id===body.messageId);
+            return json({matchKey:`${this.room.mafiaKey}:${view.matchId}`,reportedUserId,phase:view.phase,capturedAt:Date.now(),
+              perspective:{scope:'observer',delayMs:30000,channels:[...new Set(messages.map(m=>m.channel))].sort()},publicHistory:view.log,messages});
           }
           if(!seat||body.matchId!==this.room.matchId)fail('NOT_FOUND',404);
           const target=this.room.members.find(m=>m.id===body.targetId);if(!target?.accountUserId)fail('NOT_FOUND',404);
           // Capture only evidence the reporter was authorized to see. No role
           // map, other faction chat, or voice recording enters the report.
           const view=mafiaSnapshot(this.room,seat.id,Date.now());
-          return json({matchKey:`${this.room.mafiaKey}:${this.room.matchId}`,reportedUserId:target.accountUserId,phase:this.room.phase,publicHistory:view.log||[],messages:Object.values(view.chats||{}).flat().filter(m=>!body.messageId||m.id===body.messageId)});
+          const messages=Object.entries(view.chats||{}).flatMap(([channel,rows])=>rows.map(m=>({...m,channel}))).filter(m=>!body.messageId||m.id===body.messageId);
+          return json({matchKey:`${this.room.mafiaKey}:${this.room.matchId}`,reportedUserId:target.accountUserId,phase:this.room.phase,capturedAt:Date.now(),
+            perspective:{scope:'player',delayMs:0,channels:[...new Set(messages.map(m=>m.channel))].sort()},publicHistory:view.log||[],messages});
         }
         if(request.method==='POST'&&endpoint==='mafia-block-account') {
           if(this.room.game!=='mafia')fail('NOT_FOUND',404);
@@ -814,14 +834,17 @@ export class Room {
       this.close(ws, 4429, 'RATE_LIMIT'); return Promise.resolve();
     }
     this.inboundBySocket.set(ws, queued + 1); this.inboundCount++;
+    const queuedAt=Date.now();
     return this.serial(async () => {
-      let requestId, attemptedStart;
+      const servingAt=Date.now();
+      let requestId, attemptedStart,metricCommand=false,metricOutcome='rejected';
       try {
         if (ws.readyState !== 1) return;
         if(await this.directoryFeed.active())return await this.directoryFeed.message(ws,message);
         await this.advance();
         if (ws.readyState !== 1) return;
         if (!this.room) fail('NOT_FOUND', 404);
+        if(this.room.game==='mafia'&&message!=='ping')this.metrics.queueWait(Math.max(0,servingAt-queuedAt));
         const a = this.attachment(ws);
         const now = Date.now();
         a.seenAt = now;
@@ -830,6 +853,7 @@ export class Room {
         try { command = JSON.parse(message); } catch { /* malformed messages still use the ordinary flood budget */ }
         const validCommand = command && !Array.isArray(command) && typeof command === 'object';
         requestId = validCommand && typeof command.requestId === 'string' && command.requestId.length <= 80 ? command.requestId : undefined;
+        metricCommand=this.room.game==='mafia'&&Boolean(a.id&&requestId);
         if (this.room.game === 'ersomha' && validCommand && command.type === 'drawing_batch' && a.id) {
           a.drawTokens = Math.min(30, (a.drawTokens ?? 30) + Math.max(0, now - (a.drawAt ?? now)) * 15 / 1000); a.drawAt = now;
           if (a.drawTokens < 1) {
@@ -892,12 +916,13 @@ export class Room {
             if(a.revoked||!this.mafiaSessionValid(mafiaSessionProof,a.accountSessionId,a.accountUserId))fail('AUTH',401);
           } else if(!await this.env.DB.prepare(`SELECT 1 FROM sessions WHERE id=? AND user_id=? AND expires_at>? AND (revoked_at IS NULL OR revoked_at>?) AND ${liveAccountSql('sessions.user_id')}`).bind(a.accountSessionId||'',a.accountUserId||'',now,now).first())fail('AUTH',401);
         }
-        if (command.type === 'react') { await this.reaction(ws, a, command, now); this.send(ws, { type: 'ack', requestId, ok: true }); return; }
+        if (command.type === 'react') { await this.reaction(ws, a, command, now); metricOutcome='ok';this.send(ws, { type: 'ack', requestId, ok: true }); return; }
         if (command.type === 'appearance') {
           if (command.themeId != null) await this.cosmeticActor(a.id, command);
           const themed = structuredClone(this.room);
           await selectRoomAppearance(this.env, themed, a.id, command.themeId);
           await this.commit(themed);
+          metricOutcome='ok';
           this.send(ws, { type: 'ack', requestId, ok: true }); return;
         }
         if (this.room.game === 'ersomha' && ['drawing_batch', 'drawing_undo', 'drawing_redo', 'drawing_clear', 'drawing_sync'].includes(command.type)) {
@@ -922,6 +947,7 @@ export class Room {
           candidate.trialStarted = true;
         }
         await this.commit(candidate, { prepared: ['ersomha','mafia'].includes(candidate.game) });
+        metricOutcome='ok';
         this.send(ws, { type: 'ack', requestId, ok: true });
       } catch (error) {
         if (attemptedStart?.ersomhaLease && this.room?.phase === 'lobby') {
@@ -938,6 +964,10 @@ export class Room {
           try {await this.reconcileMafiaSessions();}catch {await this.ctx.storage.setAlarm(Date.now()+STATS_RETRY);}
         }
         if (['NOT_FOUND', 'EXPIRED'].includes(code) || (code === 'AUTH' && (!seated||this.room?.game==='mafia'))) this.close(ws, 4401, code);
+      } finally {
+        // Counts RPC attempts, never commands/targets/outcomes from the game.
+        if(metricCommand)this.metrics.commandSettled(metricOutcome,Math.max(0,Date.now()-servingAt));
+        if(this.room?.game==='mafia')this.metrics.flush();
       }
     }).finally(() => {
       this.inboundBySocket.set(ws, Math.max(0, (this.inboundBySocket.get(ws) || 1) - 1));

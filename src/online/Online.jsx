@@ -22,6 +22,8 @@ import { normalizeErsomhaOptions, enoughErsomhaCategories } from '../games/ersom
 import { BadeehaSettings, BadeehaRules, BadeehaLobbyInfo, BadeehaMatch, normalizeBadeehaOptions, buildBadeehaRoom, badeehaReady } from './Badeeha.jsx';
 import { CATS } from '../data/categories/index.js';
 import { MafiaHistory, MafiaSettings, MafiaDirectory, MafiaLobbyInfo, MafiaLobby, MafiaSafety, MafiaMatch, normalizeMafiaSettings } from './Mafia.jsx';
+import { MafiaReportInbox } from './MafiaReportInbox.jsx';
+import { MafiaReviewDialog } from './MafiaReviewDialog.jsx';
 import { MafiaIcon } from '../games/mafia/icon.jsx';
 import { useMafiaRoomVoice } from '../social/useMafiaRoomVoice.js';
 import { getPublicRooms, getMafiaHistory, subscribePublicRooms } from './client.js';
@@ -53,8 +55,18 @@ export function Entry({ initialCode = '', initialGame = 'meenfina', initialObser
   const [mafiaSettings, setMafiaSettings] = useState(() => normalizeMafiaSettings({visibility:'public',...(readSaved(SERVER, 'mafiaSettings') || {})}));
   const [directoryState, setDirectory] = useState({ rooms: [], enabled: null, loading: false, error: '' });
   const [historyOpen,setHistoryOpen] = useState(false);
+  const [reviewKey,setReviewKey] = useState(null);
+  const [reportsOpen,setReportsOpen] = useState(false);
   const [history,setHistory] = useState({data:null,loading:false,error:''});
   const [historyRefresh,setHistoryRefresh] = useState(0);
+  const [historyPages,setHistoryPages] = useState(['']);
+  const historyCursor=historyPages.at(-1),historyOwner=account.ready&&account.signedIn?account.user?.id:null;
+  const historyAuthorization=account.authHeaders?.()?.Authorization||account.authHeaders?.()?.authorization||'';
+  const historyIdentity=useRef({owner:null,authorization:null,epoch:0});
+  if(historyIdentity.current.owner!==historyOwner||historyIdentity.current.authorization!==historyAuthorization)
+    historyIdentity.current={owner:historyOwner,authorization:historyAuthorization,epoch:historyIdentity.current.epoch+1};
+  const historyEpoch=historyIdentity.current.epoch,historyScope=JSON.stringify([historyOwner,historyEpoch,historyCursor]);
+  const shownHistory=history.scope===historyScope?history:{data:null,loading:true,error:''};
   const [directoryMode, setDirectoryMode] = useState('all');
   const [directoryVoice,setDirectoryVoice] = useState('all'), [directoryStatus,setDirectoryStatus] = useState('all');
   const [directoryPages,setDirectoryPages] = useState(['']);
@@ -92,11 +104,12 @@ export function Entry({ initialCode = '', initialGame = 'meenfina', initialObser
     return subscribePublicRooms(SERVER,{getAccountAuthorization:()=>(entryAccountRef.current.authHeaders()?.Authorization||entryAccountRef.current.authHeaders()?.authorization),onInvalidate:()=>{if(requestCurrent(owner,generation)){setDirectoryPages(['']);setDirectoryRefresh(value=>value+1);}}});
   },[game,mode,account.user?.id]);
   useEffect(() => {
-    if(!historyOpen || game!=='mafia' || !account.user?.id) {setHistory({data:null,loading:false,error:''});return undefined;}
-    const historyOwner=account.user.id;let cancelled=false;const controller=new AbortController();setHistory({data:null,loading:true,error:''});
-    getMafiaHistory(SERVER,{headers:entryAccountRef.current.authHeaders(),signal:controller.signal}).then(data=>{if(!cancelled)setHistory({data,owner:historyOwner,loading:false,error:''});}).catch(error=>{if(!cancelled)setHistory({data:null,loading:false,error:error.code||'NETWORK'});});
+    if(!historyOpen || game!=='mafia' || !historyOwner) {setHistory({data:null,loading:false,error:''});return undefined;}
+    let cancelled=false;const controller=new AbortController();setHistory({data:null,loading:true,error:'',scope:historyScope});
+    const current=()=>!cancelled&&historyIdentity.current.epoch===historyEpoch;
+    getMafiaHistory(SERVER,{headers:entryAccountRef.current.authHeaders(),signal:controller.signal,cursor:historyCursor}).then(data=>{if(current())setHistory({data,scope:historyScope,loading:false,error:''});}).catch(error=>{if(current())setHistory({data:null,scope:historyScope,loading:false,error:error.code||'NETWORK'});});
     return()=>{cancelled=true;controller.abort();};
-  },[historyOpen,historyRefresh,game,account.user?.id]);
+  },[historyOpen,historyRefresh,game,historyOwner,historyEpoch,historyScope,historyCursor]);
   const [name, setName] = useState(() => fallback?.name || readSaved(SERVER, 'profile')?.name || Array.from(account.user?.name?.normalize('NFKC').trim().replace(/\s+/g, ' ') || '').slice(0, 20).join(''));
   const [avatar, setAvatar] = useState(() => fallback?.avatar ?? readSaved(SERVER, 'profile')?.avatar ?? 0);
   const [code, setCode] = useState(initialCode);
@@ -107,7 +120,7 @@ export function Entry({ initialCode = '', initialGame = 'meenfina', initialObser
   const previousOwner=useRef(account.user?.id);
   useEffect(()=>{
     if(previousOwner.current===account.user?.id)return;
-    previousOwner.current=account.user?.id;credentialsRef.current=null;setDirectoryPages(['']);setBusy(false);setError('');setHistoryOpen(false);
+    previousOwner.current=account.user?.id;credentialsRef.current=null;setDirectoryPages(['']);setBusy(false);setError('');setHistoryOpen(false);setHistoryPages(['']);setReportsOpen(false);setReviewKey(null);
     setName(Array.from(account.user?.name?.normalize('NFKC').trim().replace(/\s+/g,' ')||'').slice(0,20).join(''));setAvatar(0);
   },[account.user?.id,account.user?.name]);
   const openCreate=(visibility)=>{
@@ -226,8 +239,11 @@ export function Entry({ initialCode = '', initialGame = 'meenfina', initialObser
         <Button data-design-id="start" data-design-required="true" type="submit" variant="primary" size="lg" full disabled={!SERVER || busy || !topicsReady || mafiaCreationBlocked} loading={busy || mafiaChecking}>{mode === 'create' ? 'أنشئ الغرفة' : 'ادخل الغرفة'}</Button>
       </form>}
     </Card>
-    {game === 'mafia' && account.user?.id && <Button data-design-id="my-history" onClick={() => setHistoryOpen(true)}>سجل مجالسي ونتائجي</Button>}
-    {historyOpen && game === 'mafia' && account.user?.id && <MafiaHistory {...history} data={history.owner === account.user.id ? history.data : null} onClose={() => setHistoryOpen(false)} onRefresh={() => setHistoryRefresh(n=>n+1)}/>}
+    {game === 'mafia' && historyOwner && <Button data-design-id="my-history" onClick={() => setHistoryOpen(true)}>سجل مجالسي ونتائجي</Button>}
+    {game==='mafia'&&account.ready&&account.signedIn&&account.user?.id&&<Button onClick={()=>setReportsOpen(true)}>بلاغاتي في مافيا</Button>}
+    {reviewKey && game === 'mafia' && account.ready && account.signedIn && account.user?.id && <MafiaReviewDialog matchKey={reviewKey} onClose={()=>{setReviewKey(null);setHistoryOpen(true);}}/>}
+    {reportsOpen&&game==='mafia'&&account.ready&&account.signedIn&&account.user?.id&&<MafiaReportInbox key={account.user.id} onClose={()=>setReportsOpen(false)}/>}
+    {historyOpen && game === 'mafia' && historyOwner && <MafiaHistory {...shownHistory} hasPrevious={historyPages.length>1} onPrevious={()=>setHistoryPages(pages=>pages.slice(0,-1))} onNext={()=>{if(shownHistory.data?.nextCursor)setHistoryPages(pages=>[...pages,shownHistory.data.nextCursor]);}} onClose={() => setHistoryOpen(false)} onReview={key=>{setHistoryOpen(false);setReviewKey(key);}} onRefresh={() => {setHistoryPages(['']);setHistoryRefresh(n=>n+1);}}/>}
     <p className="online-footnote">تحتاج الغرف اتصالًا بالإنترنت على كل هاتف. تنتهي الغرفة بعد ساعتين.</p>
   </section>;
 }
@@ -507,9 +523,11 @@ function ConnectedRoom({ code, session, stored, onLeft, onGameChange, onPromoted
     if (reportRef.current?.key !== key) reportRef.current = { key, clientId: crypto.randomUUID() };
     return account.requestAuthenticated('/api/games/ersomha/reports', { method: 'POST', body: { roomCode: code, matchId: state.matchId, round: state.round, reason, clientId: reportRef.current.clientId } });
   }
-  async function mafiaSafety({kind,player,reason}) {
+  async function mafiaSafety({kind,player,reason,category='other',clientId}) {
     const endpoint = kind === 'block' ? 'mafia-block' : 'mafia-report';
-    await post(SERVER, `/api/rooms/${code}/${endpoint}`, { ...(observerSession?session:{}), targetId: player.id, matchId: state.matchId, ...(kind === 'report' ? { clientId:crypto.randomUUID(),reason } : {}) }, { headers: account.authHeaders() });
+    const reportKey=JSON.stringify(['mafia-report',account.user?.id,code,state.matchId,player.id,reason,category]);
+    if(kind==='report'&&reportRef.current?.key!==reportKey)reportRef.current={key:reportKey,clientId:clientId||crypto.randomUUID()};
+    await post(SERVER, `/api/rooms/${code}/${endpoint}`, { ...(observerSession?session:{}), targetId: player.id, matchId: state.matchId, ...(kind === 'report' ? { clientId:clientId||reportRef.current.clientId,reason,category } : {}) }, { headers: account.authHeaders() });
     if (kind === 'block') { clientRef.current.stop(); clearCurrent(); setExitGuard(null); onLeft(); navigate('/online/mafia',{replace:true}); } else toast('وصل بلاغك إلى فريق الإشراف.');
   }
   const me = state?.members.find((m) => m.id === session.id);

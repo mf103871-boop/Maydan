@@ -101,8 +101,20 @@ export function preloadLinks(assets = []) {
 }
 
 export async function renderHtml(js, { version, assets = [] }) {
-  const template = await readFile(path.join(ROOT, 'src/index.template.html'), 'utf8');
-  const tokens = await readFile(path.join(ROOT, 'src/shared/theme/tokens.css'), 'utf8');
+  let template = await readFile(path.join(ROOT, 'src/index.template.html'), 'utf8');
+  // The small boot guard also sits outside esbuild's imported bundle. Compact
+  // its whitespace while leaving the separate bundle placeholder untouched.
+  const boot = template.match(/<script>([\s\S]*?)<\/script>/);
+  if (boot && !boot[1].includes('<!--BUNDLE_JS-->')) {
+    const compact = (await transform(boot[1], { loader: 'js', minifyWhitespace: true,
+      target: ['es2019', 'safari14'], charset: 'utf8', legalComments: 'none' })).code;
+    template = template.replace(boot[0], () => `<script>${escapeInlineScript(compact)}</script>`);
+  }
+  // Critical tokens bypass the CSS import loader, so compact their whitespace
+  // with the same policy before embedding them in the document head.
+  const tokens = (await transform(await readFile(path.join(ROOT, 'src/shared/theme/tokens.css'), 'utf8'), {
+    loader: 'css', minifyWhitespace: true, legalComments: 'none',
+  })).code;
   return template
     .replace('<!--PRELOAD-->', () => preloadLinks(assets))
     .replace('<!--TOKENS_CSS-->', () => tokens)

@@ -22,6 +22,7 @@ import { navigate, useRoute } from '../../platform/router.js';
 import { rememberProfileReturn, consumeProfileReturn } from './return-path.js';
 import { beginAuthAttempt, currentAuthAttempt, clearAuthAttempt } from './attempt.js';
 import { clearDeletedTutorialAccount } from '../../games/mafia/tutorial/progress.js';
+import { clearDeletedMafiaLabs } from '../../games/mafia/tutorial/labs/progress.js';
 
 const EMPTY = Object.freeze({});
 // بديل ثابت حين لا يوفّر المزوّد تنبيهات: دالة جديدة في كل رسم كانت تعيد بناء كل
@@ -641,6 +642,7 @@ export function AccountProvider({ children }) {
       if (!sessionRef.current) throw new ClientError('AUTH_REQUIRED');
       await deleteAccountRequest({ ...options(), server: deletedOwner.server });
       clearDeletedTutorialAccount(deletedOwner);
+      clearDeletedMafiaLabs(deletedOwner);
       if (epoch === authEpochRef.current) {
         clearLocalAuth();
         clearedOwner = true;
