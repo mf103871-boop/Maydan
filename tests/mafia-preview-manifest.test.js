@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { readFile, readdir, mkdtemp, mkdir, writeFile, rm } from 'node:fs/promises';
+import { readFile, readdir, mkdtemp, mkdir, realpath, symlink, writeFile, rm } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -139,4 +139,51 @@ test('filesystem adapter reads local files only and refuses noncanonical SQL; CL
   assert.throws(() => createMafiaPreviewManifest({ ...fixture(), configSource: '{"secret":"do-not-print",' }), error => {
     assert.doesNotMatch(error.message, /do-not-print/); return /valid JSON required/.test(error.message);
   });
+});
+
+test('filesystem adapter accepts a canonical project beneath an aliased ancestor', async t => {
+  const base = await mkdtemp(path.join(tmpdir(), 'mafia-preview-ancestor-'));
+  t.after(() => rm(base, { recursive: true, force: true }));
+  const parent = path.join(base, 'physical-parent'), alias = path.join(base, 'aliased-parent');
+  const directory = path.join(parent, 'project'), input = fixture();
+  await mkdir(path.join(directory, 'server/migrations'), { recursive: true });
+  await writeFile(path.join(directory, 'wrangler.mafia-preview.jsonc'), input.configSource);
+  for (const file of input.migrations) await writeFile(path.join(directory, 'server/migrations', file.name), file.source);
+  await symlink(parent, alias, process.platform === 'win32' ? 'junction' : 'dir');
+  const aliasedRoot = path.join(alias, 'project');
+  assert.notEqual(await realpath(aliasedRoot), path.resolve(aliasedRoot), 'fixture must contain a real ancestor alias');
+  assert.deepEqual(createMafiaPreviewManifest(await readMafiaPreviewInputs(aliasedRoot)), createMafiaPreviewManifest(input));
+});
+
+test('canonicalizing the project root still rejects linked server or migration directories', async t => {
+  for (const linked of ['server', 'migrations']) await t.test(linked, async st => {
+    const base = await mkdtemp(path.join(tmpdir(), 'mafia-preview-directory-link-'));
+    st.after(() => rm(base, { recursive: true, force: true }));
+    const directory = path.join(base, 'project'), outside = path.join(base, 'outside');
+    await mkdir(directory);
+    await mkdir(path.join(outside, 'migrations'), { recursive: true });
+    await writeFile(path.join(directory, 'wrangler.mafia-preview.jsonc'), fixture().configSource);
+    await writeFile(path.join(outside, 'migrations/0001_outside.sql'), 'SELECT 1;');
+    if (linked === 'server') await symlink(outside, path.join(directory, 'server'), process.platform === 'win32' ? 'junction' : 'dir');
+    else {
+      await mkdir(path.join(directory, 'server'));
+      await symlink(path.join(outside, 'migrations'), path.join(directory, 'server/migrations'), process.platform === 'win32' ? 'junction' : 'dir');
+    }
+    await assert.rejects(readMafiaPreviewInputs(directory), /Migration directory symlinks are forbidden/);
+  });
+});
+
+test('SQL migration entries must be regular files even under a canonical project root', async t => {
+  const base = await mkdtemp(path.join(tmpdir(), 'mafia-preview-sql-link-'));
+  t.after(() => rm(base, { recursive: true, force: true }));
+  const directory = path.join(base, 'project'), outside = path.join(base, 'outside');
+  await mkdir(path.join(directory, 'server/migrations'), { recursive: true });
+  await mkdir(outside);
+  await writeFile(path.join(directory, 'wrangler.mafia-preview.jsonc'), fixture().configSource);
+  await writeFile(path.join(outside, 'source.sql'), 'SELECT 1;');
+  // Windows directory junctions require no elevated symlink privilege. POSIX
+  // additionally exercises a linked SQL file, including on the macOS CI runner.
+  await symlink(process.platform === 'win32' ? outside : path.join(outside, 'source.sql'),
+    path.join(directory, 'server/migrations/0001_link.sql'), process.platform === 'win32' ? 'junction' : 'file');
+  await assert.rejects(readMafiaPreviewInputs(directory), /SQL migrations must be regular files/);
 });

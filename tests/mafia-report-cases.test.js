@@ -178,7 +178,7 @@ test('review write rechecks deletion, suspension, sessions and privileges after 
         if(mutation==='actor-revoke')await DB.prepare('UPDATE sessions SET revoked_at=? WHERE id=?').bind(Date.now()-1,actors.moderator.sessionId).run();
         if(mutation==='role-revoke')env.MODERATOR_USER_IDS='';
       });
-      await assert.rejects(performAction(env,actors.moderator,{action:'review_mafia_report',targetId:saved.reportId,clientId:'race-review',reason:'نبدأ مراجعة البلاغ'}),e=>['CONFLICT','FORBIDDEN'].includes(e.code));check();
+      await assert.rejects(performAction(env,actors.moderator,{action:'review_mafia_report',targetId:saved.reportId,clientId:'race-review',reason:'نبدأ مراجعة البلاغ'}),e=>['CONFLICT','FORBIDDEN'].includes(e.code),mutation);check();
       assert.equal((await DB.prepare('SELECT COUNT(*) n FROM moderation_actions').first()).n,0);
     }finally{DB.close();}
   }
@@ -187,6 +187,56 @@ test('review write rechecks deletion, suspension, sessions and privileges after 
     await performAction(env,actors.moderator,{action:'resolve_report',targetId:saved.reportId,clientId:'close-first',reason:'اكتملت المراجعة'});
     await assert.rejects(performAction(env,actors.moderator,{action:'review_mafia_report',targetId:saved.reportId,clientId:'reopen-closed',reason:'محاولة بدء مراجعة لاحقة'}),e=>e.code==='CONFLICT');
     assert.equal((await ownMafiaReportCase(env,actors.reporter,saved.reportId)).status,'reviewed');
+  }finally{DB.close();}
+});
+
+test('review authorization follows the write-time clock after a delayed source read',async t=>{
+  const {env,DB,actors}=await fixture();const started=Date.now();let clock=started;
+  t.mock.method(Date,'now',()=>clock);
+  try{
+    const saved=await saveMafiaReportCase(env,actors.reporter,'123456',input());
+    const check=afterRead(DB,sql=>sql==='SELECT id FROM mafia_reports WHERE id=?',async()=>{
+      clock=started+10_000;
+      await DB.prepare('UPDATE sessions SET revoked_at=? WHERE id=?').bind(started+5_000,actors.moderator.sessionId).run();
+    });
+    await assert.rejects(performAction(env,actors.moderator,{action:'review_mafia_report',targetId:saved.reportId,clientId:'delayed-revoke',reason:'مراجعة بعد تغير الجلسة'},started),e=>e.code==='CONFLICT');check();
+    assert.equal((await DB.prepare('SELECT COUNT(*) n FROM moderation_actions').first()).n,0);
+    assert.equal((await DB.prepare('SELECT review_started_at FROM mafia_reports WHERE id=?').bind(saved.reportId).first()).review_started_at,null);
+  }finally{t.mock.restoreAll();DB.close();}
+});
+
+test('the database clock rejects an expired moderator session even when request time is stale',async t=>{
+  const {env,DB,actors}=await fixture();const current=Date.now();
+  try{
+    const saved=await saveMafiaReportCase(env,actors.reporter,'123456',input());
+    await DB.prepare('UPDATE sessions SET expires_at=? WHERE id=?').bind(current-10_000,actors.moderator.sessionId).run();
+    t.mock.method(Date,'now',()=>current-60_000);
+    await assert.rejects(performAction(env,actors.moderator,{action:'review_mafia_report',targetId:saved.reportId,clientId:'stale-clock',reason:'مراجعة بجلسة منتهية'},current-60_000),e=>e.code==='CONFLICT');
+    assert.equal((await DB.prepare('SELECT COUNT(*) n FROM moderation_actions').first()).n,0);
+  }finally{t.mock.restoreAll();DB.close();}
+});
+
+test('database millisecond precision rejects exact expiry and revocation deadlines',async t=>{
+  for(const column of ['expires_at','revoked_at']){
+    const {env,DB,actors}=await fixture();const started=Date.parse('2026-10-30T12:00:00.000Z'),deadline=started+4;
+    t.mock.method(Date,'now',()=>started);
+    try{
+      const saved=await saveMafiaReportCase(env,actors.reporter,'123456',input());
+      await DB.prepare(`UPDATE sessions SET ${column}=? WHERE id=?`).bind(deadline,actors.moderator.sessionId).run();
+      DB.database.function('julianday',value=>{assert.equal(value,'now');return 2440587.5+deadline/86400000;});
+      await assert.rejects(performAction(env,actors.moderator,{action:'review_mafia_report',targetId:saved.reportId,clientId:'exact-deadline',reason:'مراجعة عند انتهاء صلاحية الجلسة'},started),e=>e.code==='CONFLICT',column);
+      assert.equal((await DB.prepare('SELECT COUNT(*) n FROM moderation_actions').first()).n,0);
+      assert.equal((await DB.prepare('SELECT review_started_at FROM mafia_reports WHERE id=?').bind(saved.reportId).first()).review_started_at,null);
+    }finally{t.mock.restoreAll();DB.close();}
+  }
+});
+
+test('future session revocation keeps its existing grace period',async()=>{
+  const {env,DB,actors}=await fixture();try{
+    const saved=await saveMafiaReportCase(env,actors.reporter,'123456',input());
+    await DB.prepare('UPDATE sessions SET revoked_at=? WHERE id=?').bind(Date.now()+60_000,actors.moderator.sessionId).run();
+    const result=await performAction(env,actors.moderator,{action:'review_mafia_report',targetId:saved.reportId,clientId:'future-revoke',reason:'مراجعة ضمن مهلة الجلسة'});
+    assert.equal(result.ok,true);assert.equal((await DB.prepare('SELECT COUNT(*) n FROM moderation_actions').first()).n,1);
   }finally{DB.close();}
 });
 

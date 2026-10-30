@@ -117,14 +117,18 @@ export async function performAction(env,actor,body,now=Date.now()) {
   }
   const id=crypto.randomUUID();const newAction='EXISTS(SELECT 1 FROM moderation_actions WHERE id=?)';
   const snapshotArgs=action==='clear_profile_text'?[subject]:[];
+  // Lookups can await revocation/expiry; authorization uses commit time while
+  // the audit timestamp keeps the original request time.
+  const authorizationNow=Math.max(now,Date.now());
+  const authorizationClock="MAX(?,CAST(ROUND((julianday('now')-2440587.5)*86400000) AS INTEGER))";
   const sqlGuard=`${guard} AND ${accountExists('?')}
-    AND EXISTS(SELECT 1 FROM sessions s WHERE s.id=? AND s.user_id=? AND s.expires_at>? AND (s.revoked_at IS NULL OR s.revoked_at>?))
+    AND EXISTS(SELECT 1 FROM sessions s WHERE s.id=? AND s.user_id=? AND s.expires_at>${authorizationClock} AND (s.revoked_at IS NULL OR s.revoked_at>${authorizationClock}))
     AND NOT EXISTS(SELECT 1 FROM moderation_suspensions WHERE user_id=?)
     ${reportId?'AND EXISTS(SELECT 1 FROM social_reports WHERE id=? AND reported_id=?)':''}`;
   const statements=[stmt(env,`INSERT OR IGNORE INTO moderation_actions(id,actor_id,client_id,request_hash,action,target_id,subject_user_id,reason,report_id,snapshot_json,created_at)
     SELECT ?,?,?,?,?,?,?,?,?,${snapshot},? WHERE ${sqlGuard}`,
     id,actor.userId,input.clientId,hash,action,targetId,subject,reason,(action==='review_mafia_report'?targetId:reportId)||null,...snapshotArgs,now,
-    ...args,subject,subject,actor.sessionId,actor.userId,now,now,actor.userId,...(reportId?[reportId,subject]:[]))];
+    ...args,subject,subject,actor.sessionId,actor.userId,authorizationNow,authorizationNow,actor.userId,...(reportId?[reportId,subject]:[]))];
   const run=(sql,...values)=>statements.push(stmt(env,sql,...values,id));
   if(action==='review_mafia_report')run(`UPDATE mafia_reports SET review_started_at=COALESCE(review_started_at,?),reviewer_id=? WHERE id=? AND ${newAction}`,now,actor.userId,targetId);
   if(action==='remove_message'){

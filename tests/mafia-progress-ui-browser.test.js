@@ -46,9 +46,24 @@ test('Chromium and WebKit: RTL phone/landscape panel, revision conflicts, privac
           await page.setViewportSize({width,height});
           assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),`${name} ${width}: horizontal overflow`);
           const controls=await page.locator('button,select').evaluateAll(elements=>elements.map(element=>{const r=element.getBoundingClientRect();return {width:r.width,height:r.height,left:r.left,right:r.right};}));
-          assert.ok(controls.every(control=>control.height>=43&&control.left>=0&&control.right<=width+1),JSON.stringify({name,width,controls}));
+          assert.ok(controls.every(control=>control.height>=44&&control.left>=0&&control.right<=width+1),JSON.stringify({name,width,controls}));
+          for(const select of await page.locator('.mafia-profile select').all()){
+            const style=await select.evaluate(element=>{const value=getComputedStyle(element);return {appearance:value.appearance,fontSize:parseFloat(value.fontSize),boxSizing:value.boxSizing,direction:value.direction};});
+            assert.equal(style.appearance,'none',`${name}: native menu metrics must not shrink the 44px touch surface`);
+            assert.ok(style.fontSize>=16,`${name}: form text must remain legible without iPhone focus zoom`);
+            assert.equal(style.boxSizing,'border-box');assert.equal(style.direction,'rtl');
+            await select.scrollIntoViewIfNeeded();
+            assert.equal(await select.evaluate(element=>{const r=element.getBoundingClientRect();return document.elementFromPoint(r.left+r.width/2,r.bottom-3)===element;}),true,`${name}: the bottom of the actual control must remain a hit target`);
+          }
           await page.screenshot({path:path.join(proof,`${name}-${width}.png`),fullPage:true});
         }
+        await page.setViewportSize({width:320,height:568});
+        await page.addStyleTag({content:'.mafia-profile select{font-size:32px}'});
+        const enlarged=await page.locator('.mafia-profile select').evaluateAll(elements=>elements.map(element=>{const css=getComputedStyle(element),r=element.getBoundingClientRect();return {height:r.height,line:parseFloat(css.lineHeight),padding:parseFloat(css.paddingTop)+parseFloat(css.paddingBottom),border:parseFloat(css.borderTopWidth)+parseFloat(css.borderBottomWidth)};}));
+        assert.ok(enlarged.every(control=>control.height>=control.line+control.padding+control.border),`${name}: enlarged form text must fit without clipping`);
+        assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),`${name}: enlarged select text must not overflow 320px`);
+        await page.getByLabel('ظهور لوحة مافيا').focus();await page.keyboard.press('Tab');assert.equal(await page.getByLabel('الدور الممثل').evaluate(element=>document.activeElement===element),true);
+        await page.addStyleTag({content:'.mafia-profile select{font-size:16px}'});
         await page.getByLabel('ظهور لوحة مافيا').selectOption('public');await page.getByLabel('الدور الممثل').selectOption('investigator');
         assert.equal(await page.locator('option[value="doctor"]').evaluate(option=>option.disabled),true);
         await page.getByRole('button',{name:'حفظ إعدادات مافيا'}).click();

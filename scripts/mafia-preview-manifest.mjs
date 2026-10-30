@@ -167,12 +167,15 @@ export function createMafiaPreviewManifest({ configSource, migrations, ledger = 
 }
 
 export async function readMafiaPreviewInputs(root = ROOT) {
-  const directory = path.join(root, MIGRATIONS);
+  // A valid project can be reached through an ancestor alias, such as macOS
+  // /var -> /private/var. Resolve the root first; links below it remain forbidden.
+  const canonicalRoot = await realpath(root);
+  const directory = path.join(canonicalRoot, MIGRATIONS);
   check(await realpath(directory) === path.resolve(directory), 'Migration directory symlinks are forbidden.');
   const entries = (await readdir(directory, { withFileTypes: true })).filter(entry => /\.sql$/i.test(entry.name));
   check(entries.every(entry => entry.isFile() && SQL_NAME.test(entry.name)), 'SQL migrations must be regular files with canonical names.');
   const [configSource, migrations] = await Promise.all([
-    readFile(path.join(root, CONFIG)),
+    readFile(path.join(canonicalRoot, CONFIG)),
     Promise.all(entries.map(async entry => ({ name: entry.name, source: await readFile(path.join(directory, entry.name)) }))),
   ]);
   return { configSource, migrations };

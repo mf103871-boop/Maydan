@@ -1,1 +1,19 @@
 .mafia-profile{margin:20px 0;padding:22px;border:1px solid var(--stroke,#ded6cf);border-radius:22px;background:var(--surface,#fff);color:var(--text,#352d39);overflow-wrap:anywhere}.mafia-profile header{display:flex;justify-content:space-between;gap:12px;align-items:center}.mafia-profile h2{font-size:21px;margin:0}.mafia-profile p{font-size:13px;line-height:1.8;color:var(--muted,#726c79);margin:8px 0}.mafia-profile button,.mafia-profile select{min-height:44px;border:1px solid var(--stroke,#ded6cf);border-radius:11px;padding:8px 12px;background:var(--surface,#fff);color:inherit;font:inherit}.mafia-profile button{cursor:pointer;font-weight:700}.mafia-profile button:disabled{opacity:.55;cursor:default}.mafia-profile select{width:100%;max-width:100%}.mafia-profile button:focus-visible,.mafia-profile select:focus-visible{outline:3px solid var(--profile-accent,#087d89);outline-offset:3px}.mafia-profile-level{display:flex;align-items:baseline;gap:12px;margin-top:18px}.mafia-profile-level strong{font-size:27px;color:var(--profile-deep,#145b65)}.mafia-profile-xp{height:9px;background:var(--profile-soft,#dcefe8);border-radius:8px;overflow:hidden;margin:9px 0}.mafia-profile-xp span{height:100%;display:block;background:var(--profile-accent,#087d89);border-radius:inherit}.mafia-profile-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:16px 0}.mafia-profile-role{padding:13px;border:1px solid var(--stroke,#ded6cf);border-radius:14px;min-width:0}.mafia-profile-role h3{font-size:15px;margin:0 0 6px}.mafia-profile-role small{display:block;color:var(--muted,#726c79);line-height:1.7}.mafia-profile-role p{margin:4px 0}.mafia-profile-stage{font-size:12px;font-weight:800;color:var(--profile-deep,#145b65)}.mafia-profile-legacy{border-inline-start:3px solid #b39d78;padding-inline-start:10px}.mafia-profile-preferences{border-top:1px solid var(--stroke,#ded6cf);padding-top:16px;margin-top:16px}.mafia-profile-fields{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:10px 0}.mafia-profile-fields label{font-size:13px;font-weight:700;display:grid;gap:6px}.mafia-profile-error{color:#a52839!important}.mafia-profile-note{padding:10px;background:var(--profile-soft,#dcefe8);border-radius:10px}.mafia-profile-achievements{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}.mafia-profile-achievements span{font-size:12px;padding:7px 10px;border:1px solid var(--stroke,#ded6cf);border-radius:12px}.mafia-profile-actions{display:flex;gap:8px;flex-wrap:wrap}@media(max-width:650px){.mafia-profile{padding:16px}.mafia-profile-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.mafia-profile-fields{grid-template-columns:1fr}.mafia-profile header{align-items:flex-start}}@media(max-width:350px){.mafia-profile-grid{grid-template-columns:1fr}}@media(prefers-reduced-motion:reduce){.mafia-profile *{scroll-behavior:auto}}
+.mafia-profile select{
+  /* Native macOS menu metrics can ignore min-height. Keep the native select
+     semantics, but size its actual touch box without the platform menu skin. */
+  -webkit-appearance:none;
+  appearance:none;
+  box-sizing:border-box;
+  min-width:0;
+  min-height:44px;
+  height:auto;
+  font-size:16px;
+  line-height:1.5;
+  padding-block:9px;
+  padding-inline:12px 36px;
+  background-image:linear-gradient(45deg,transparent 50%,currentColor 50%),linear-gradient(135deg,currentColor 50%,transparent 50%);
+  background-position:left 14px center,left 19px center;
+  background-size:5px 5px;
+  background-repeat:no-repeat;
+}
