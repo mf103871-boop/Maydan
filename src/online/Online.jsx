@@ -24,6 +24,8 @@ import { CATS } from '../data/categories/index.js';
 import { MafiaHistory, MafiaSettings, MafiaDirectory, MafiaLobbyInfo, MafiaLobby, MafiaSafety, MafiaMatch, normalizeMafiaSettings } from './Mafia.jsx';
 import { MafiaReportInbox } from './MafiaReportInbox.jsx';
 import { MafiaReviewDialog } from './MafiaReviewDialog.jsx';
+import { MafiaRanked } from './MafiaRanked.jsx';
+import { MafiaCommunity } from './MafiaCommunity.jsx';
 import { MafiaIcon } from '../games/mafia/icon.jsx';
 import { useMafiaRoomVoice } from '../social/useMafiaRoomVoice.js';
 import { getPublicRooms, getMafiaHistory, subscribePublicRooms } from './client.js';
@@ -57,6 +59,7 @@ export function Entry({ initialCode = '', initialGame = 'meenfina', initialObser
   const [historyOpen,setHistoryOpen] = useState(false);
   const [reviewKey,setReviewKey] = useState(null);
   const [reportsOpen,setReportsOpen] = useState(false);
+  const [rankedOpen,setRankedOpen] = useState(false), [communityOpen,setCommunityOpen] = useState(false);
   const [history,setHistory] = useState({data:null,loading:false,error:''});
   const [historyRefresh,setHistoryRefresh] = useState(0);
   const [historyPages,setHistoryPages] = useState(['']);
@@ -90,7 +93,7 @@ export function Entry({ initialCode = '', initialGame = 'meenfina', initialObser
       if(cancelled||inFlight||document.hidden)return;
       inFlight=true;
       setDirectory(old=>({...old,rooms:old.owner===owner&&old.key===directoryKey?old.rooms:[],owner,key:directoryKey,loading:true,error:''}));
-      try{const result=await getPublicRooms(SERVER,{mode:directoryMode,voice:directoryVoice,status:directoryStatus,cursor:directoryCursor},{headers:entryAccountRef.current.authHeaders(),signal:controller.signal});if(!cancelled)setDirectory({rooms:result.rooms||[],nextCursor:result.nextCursor||null,enabled:result.enabled===true,loading:false,error:'',owner,key:directoryKey});}
+      try{const result=await getPublicRooms(SERVER,{mode:directoryMode,voice:directoryVoice,status:directoryStatus,cursor:directoryCursor},{headers:entryAccountRef.current.authHeaders(),signal:controller.signal});if(!cancelled)setDirectory({rooms:result.rooms||[],nextCursor:result.nextCursor||null,enabled:result.enabled===true,capabilities:result.capabilities||{},loading:false,error:'',owner,key:directoryKey});}
       catch(error){if(!cancelled)setDirectory({rooms:[],enabled:null,loading:false,error:error.code||'NETWORK',owner,key:directoryKey});}
       finally{inFlight=false;if(!cancelled&&mode==='public')timer=setTimeout(load,15000);}
     };
@@ -120,7 +123,7 @@ export function Entry({ initialCode = '', initialGame = 'meenfina', initialObser
   const previousOwner=useRef(account.user?.id);
   useEffect(()=>{
     if(previousOwner.current===account.user?.id)return;
-    previousOwner.current=account.user?.id;credentialsRef.current=null;setDirectoryPages(['']);setBusy(false);setError('');setHistoryOpen(false);setHistoryPages(['']);setReportsOpen(false);setReviewKey(null);
+    previousOwner.current=account.user?.id;credentialsRef.current=null;setDirectoryPages(['']);setBusy(false);setError('');setHistoryOpen(false);setHistoryPages(['']);setReportsOpen(false);setReviewKey(null);setRankedOpen(false);setCommunityOpen(false);
     setName(Array.from(account.user?.name?.normalize('NFKC').trim().replace(/\s+/g,' ')||'').slice(0,20).join(''));setAvatar(0);
   },[account.user?.id,account.user?.name]);
   const openCreate=(visibility)=>{
@@ -220,7 +223,7 @@ export function Entry({ initialCode = '', initialGame = 'meenfina', initialObser
           : game === 'fabraka' ? <FabrakaSettings value={fabrakaSettings} disabled={busy} onChange={(next) => { setFabrakaSettings(next); save(SERVER, 'fabrakaSettings', next); }} />
           : game === 'ersomha' ? <ErsomhaSettings value={ersomhaSettings} disabled={busy} onChange={(next) => { setErsomhaSettings(next); save(SERVER, 'ersomhaSettings', next); }} />
           : game === 'badeeha' ? <BadeehaSettings value={badeehaSettings} disabled={busy} onChange={(next) => { setBadeehaSettings(next); save(SERVER, 'badeehaSettings', next); }} />
-          : game === 'mafia' ? <MafiaSettings value={mafiaSettings} disabled={busy} onChange={next => { setMafiaSettings(next); save(SERVER,'mafiaSettings',next); }}/>
+          : game === 'mafia' ? <MafiaSettings value={mafiaSettings} disabled={busy} experimentalRolesEnabled={directory.capabilities?.experimentalRoles===true} onChange={next => { setMafiaSettings(next); save(SERVER,'mafiaSettings',next); }}/>
           : <label className="online-field">عدد الجولات<select data-design-id="round-count" value={rounds} onChange={(e) => setRounds(Number(e.target.value))}>{ROUND_OPTIONS.map((n) => <option key={n} value={n}>{arabic(n)} جولات</option>)}</select></label>}
         {mode === 'create' && <SetupPresets game={game} disabled={busy} settings={game === 'fabraka' ? fabrakaSettings : game === 'ersomha' ? ersomhaSettings : game === 'badeeha' ? badeehaSettings : game === 'mafia' ? mafiaSettings : {rounds}} onApply={next => {
           credentialsRef.current = null;
@@ -241,6 +244,9 @@ export function Entry({ initialCode = '', initialGame = 'meenfina', initialObser
     </Card>
     {game === 'mafia' && historyOwner && <Button data-design-id="my-history" onClick={() => setHistoryOpen(true)}>سجل مجالسي ونتائجي</Button>}
     {game==='mafia'&&account.ready&&account.signedIn&&account.user?.id&&<Button onClick={()=>setReportsOpen(true)}>بلاغاتي في مافيا</Button>}
+    {game==='mafia'&&account.ready&&account.signedIn&&account.user?.id&&<div className="stack">{directory.capabilities?.ranked===true&&<Button onClick={()=>setRankedOpen(true)}>المنافسة الموسمية التجريبية</Button>}{directory.capabilities?.mafiaCommunity===true&&<Button onClick={()=>setCommunityOpen(true)}>الموسم والأندية والبطولات</Button>}</div>}
+    {rankedOpen&&game==='mafia'&&account.ready&&account.signedIn&&account.user?.id&&<MafiaRanked key={account.user.id} onClose={()=>setRankedOpen(false)} onJoined={onJoined}/>}
+    {communityOpen&&game==='mafia'&&account.ready&&account.signedIn&&account.user?.id&&<MafiaCommunity key={account.user.id} onClose={()=>setCommunityOpen(false)}/>}
     {reviewKey && game === 'mafia' && account.ready && account.signedIn && account.user?.id && <MafiaReviewDialog matchKey={reviewKey} onClose={()=>{setReviewKey(null);setHistoryOpen(true);}}/>}
     {reportsOpen&&game==='mafia'&&account.ready&&account.signedIn&&account.user?.id&&<MafiaReportInbox key={account.user.id} onClose={()=>setReportsOpen(false)}/>}
     {historyOpen && game === 'mafia' && historyOwner && <MafiaHistory {...shownHistory} hasPrevious={historyPages.length>1} onPrevious={()=>setHistoryPages(pages=>pages.slice(0,-1))} onNext={()=>{if(shownHistory.data?.nextCursor)setHistoryPages(pages=>[...pages,shownHistory.data.nextCursor]);}} onClose={() => setHistoryOpen(false)} onReview={key=>{setHistoryOpen(false);setReviewKey(key);}} onRefresh={() => {setHistoryPages(['']);setHistoryRefresh(n=>n+1);}}/>}

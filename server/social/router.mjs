@@ -38,6 +38,7 @@ export async function routeSocial(request, env, url = new URL(request.url), char
     let response = await dispatch(request, env, url, auth.user.id, Date.now(),auth.rotated?.id||auth.session.id,context);
     if (response.ok && ['/api/social/me', '/api/social/state', '/api/social/search', '/api/social/friends', '/api/social/requests', '/api/social/blocks', '/api/social/conversations'].includes(url.pathname)) {
       const body = await response.json();
+      body.mafiaCommunicationLocked=mafiaLocked;
       if(mafiaLocked) for(const conversation of body.conversations||[])if(conversation.lastMessage)conversation.lastMessage={seq:conversation.lastMessage.seq,kind:'text',text:'رسالة جديدة',createdAt:conversation.lastMessage.createdAt};
       const users = [body.user, body.request?.user, ...(body.users || []), ...(body.blocked || []), ...(body.friends || []),
         ...(body.incoming || []).map(item => item.user), ...(body.outgoing || []).map(item => item.user),

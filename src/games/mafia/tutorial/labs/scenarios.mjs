@@ -2,6 +2,8 @@
 // or a role-assignment command accepted from a learner.
 export const LAB_HUMAN='lab-0',LAB_VERSION=1,LAB_RULESET=1;
 export const MAFIA_LABS=Object.freeze({
+  tracker:{title:'المتعقّب التجريبي: الوجهة لا الهوية',description:'وجهة اختيار، غياب حركة، وتعطيل التقرير. قواعد تجريبية ٢، دون XP.',rulesetVersion:2,
+    words:[1,4,3,2,1,7,6,5,0,3,2,1],roles:['tracker','doctor','mafia','blocker','investigator','citizen','citizen','citizen']},
   doctor:{title:'الطبيب: اختيار الحماية',description:'حماية النفس مرة، وتغيير الهدف بين الليالي.',
     words:[1,1,1,1,1,2,4,2,4,2,2,0],roles:['doctor','investigator','blocker','citizen','citizen','citizen','guard','mafia']},
   masker:{title:'المموّه: أثر ليلة واحدة',description:'جرّب التمويه واقرأ أثره التعليمي ثم زواله.',
@@ -13,4 +15,5 @@ export const MAFIA_LABS=Object.freeze({
   abstention:{title:'الامتناع: صوت لم يُمنح',description:'التعادل في الترشيح، والأغلبية عند الحكم.',
     words:[1,2,1,1,1,2,3,2,0,2,1,0],roles:['citizen','guard','doctor','citizen','investigator','citizen','blocker','mafia']},
 });
+export const labRuleset=id=>MAFIA_LABS[id]?.rulesetVersion||LAB_RULESET;
 export const labActors=id=>MAFIA_LABS[id]?.roles.map((roleId,index)=>({id:`lab-${index}`,name:index?['','ليان','سامر','نور','عمر','هالة','سليم','مازن','رنا'][index]:'أنت',roleId,avatar:index%4}));

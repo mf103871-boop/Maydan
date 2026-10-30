@@ -9,7 +9,7 @@ export const GAME_PROTOCOLS = Object.freeze({ meenfina: PROTOCOL, fabraka: FABRA
 // بَديهة أونلاين: جوال لكل فريق (من فريقين إلى أربعة)، والمؤقت كما في اللعبة على جهاز واحد.
 export const BADEEHA_MAX_TEAMS = 4;
 export const BADEEHA_TIMERS = Object.freeze([30, 60, 90]);
-export const ROOM_CAPABILITIES = Object.freeze({ ersomha: ERSOMHA_PROTOCOL, badeeha: BADEEHA_PROTOCOL, mafia: MAFIA_PROTOCOL });
+export const ROOM_CAPABILITIES = Object.freeze({ ersomha: ERSOMHA_PROTOCOL, badeeha: BADEEHA_PROTOCOL, mafia: MAFIA_PROTOCOL, mafiaRulesets:Object.freeze([1,2]) });
 // تفاعلات سريعة داخل الغرفة: طقم رموز ثابت بلا نص حر، يُبث للحاضرين ولا يُحفظ.
 // رسالة `reaction` جديدة لا تكسر عميلًا أقدم (يتجاهل الأنواع التي لا يعرفها)، فلا يُرفع البروتوكول.
 export const ROOM_REACTIONS = Object.freeze(['😂', '👏', '😮', '🔥', '😅', '❤️']);
@@ -39,7 +39,7 @@ export const ONLINE_GAMES = {
 };
 // A personal truth round needs its owner and at least two writers. The other
 // Fabraka modes keep a real choice for two players by adding house decoys.
-export const minimumOnlinePlayers = (game, settings) => game === 'mafia' ? (settings?.mode === 'shadow' ? 9 : 6) : game === 'ersomha' || game === 'badeeha' || (game === 'fabraka' && settings?.mode !== 'friends') ? 2 : 3;
+export const minimumOnlinePlayers = (game, settings) => game === 'mafia' ? (settings?.mode === 'shadow' ? 9 : settings?.experimentalRole==='tracker' ? 8 : 6) : game === 'ersomha' || game === 'badeeha' || (game === 'fabraka' && settings?.mode !== 'friends') ? 2 : 3;
 export const MIN_PLAYERS = 3;
 export const MAX_PLAYERS = 12;
 export const ROUND_OPTIONS = [5, 8, 12];
@@ -89,6 +89,11 @@ export const ERRORS = {
   MAFIA_DISABLED: 'مافيا ميدان غير متاحة لبدء مباريات جديدة حاليًا.',
   MAFIA_DRAINING: 'نجهّز تحديثًا للمجالس. المباريات القائمة تتابع حتى نهايتها؛ جرّب بدء مجلس جديد لاحقًا.',
   MAFIA_RULESET_UNSUPPORTED: 'تعذّر متابعة هذه النسخة من قواعد المجلس. أعد الاتصال بعد اكتمال التحديث.',
+  MAFIA_RULESET_FIXED: 'قواعد هذا المجلس ثابتة. أنشئ مجلسًا جديدًا لتجربة قواعد أخرى.',
+  MAFIA_EXPERIMENT_DISABLED: 'المتعقّب متاح ضمن معاينة المجالس الخاصة فقط.',
+  MAFIA_RANKED_FIXED: 'المنافسة تثبت الأدوار والأوقات والمقاعد؛ لا يغيرها مضيف.',
+  MAFIA_RANKED_PRIVATE: 'هذا المقعد محجوز للاعبه في طابور المنافسة.',
+  MAFIA_RANKED_CALL_ACTIVE: 'أنهِ مكالمتك الاجتماعية قبل دخول طابور المنافسة.',
   MAFIA_ACTIVE_ELSEWHERE: 'لديك مقعد مافيا في غرفة أخرى. عُد إليه أو غادره أولًا.',
   MAFIA_OBSERVER_ACTIVE: 'أنت تتابع مجلسًا الآن. اخرج من المشاهدة قبل حجز مقعد.',
   OBSERVER_FULL: 'اكتمل عدد المشاهدين في هذا المجلس. جرّب مجلسًا آخر.',
@@ -104,7 +109,7 @@ export const ERRORS = {
   MAFIA_VOICE_TRANSITION: 'يجري تأمين قناة الصوت للمرحلة الجديدة.',
   MAFIA_VOICE_DEVICE: 'صوت المباراة مفتوح على جهازك الآخر. أغلقه هناك أولًا.',
   MAFIA_VOICE_SESSION: 'انتهت جلسة الاتصال السابقة. اضغط الانضمام للصوت مجددًا.',
-  MAFIA_SOCIAL_LOCKED: 'التواصل متاح من داخل مباراة مافيا حتى نهايتها.',
+  MAFIA_SOCIAL_LOCKED: 'ارجع إلى مجلسك أو غادر طابور المنافسة لاستعادة التواصل الاجتماعي.',
   ABILITY_UNAVAILABLE: 'هذه القدرة غير متاحة لك في هذه المرحلة.',
   ALREADY_VOTED: 'سُجّل صوتك في هذه المرحلة، ولا يتغير بعد التأكيد.',
   CALL_UNAVAILABLE: 'صوت المباراة غير متاح الآن.',

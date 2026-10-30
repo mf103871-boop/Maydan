@@ -2,6 +2,8 @@ import { matchResults } from './mafia-model.mjs';
 import { stmt } from './lamma/common.mjs';
 import { liveAccountSql } from './moderation/access.mjs';
 import { mafiaProgressDeleteStatements } from './mafia-progression.mjs';
+import { mafiaRankedDeleteStatements } from './mafia-ranked.mjs';
+import { mafiaCommunityDeleteStatements } from './mafia-community.mjs';
 
 // Old envelopes have no participantCount. Their archived reveal is the only
 // evidence that a filtered result list still covers every original seat.
@@ -28,10 +30,13 @@ export function prepareMafiaResult(room,now=Date.now()) {
   // A game summary contains the public end-of-match reveal, never private chat.
   // Include the policy marker so a legacy importer cannot reserve a zero-XP
   // receipt while an eligible live event is still waiting in the durable outbox.
-  const summary=JSON.stringify({...metadata,mode:room.settings.mode,outcome:room.outcome,history:room.history,reveal:{players:results,events:room.audit}});
+  const summary=JSON.stringify({...metadata,mode:room.settings.mode,startedAt:room.startedAt??marker?.startedAt,
+    settings:{capacity:room.settings.capacity,voiceMode:room.settings.voiceMode,visibility:room.settings.visibility},
+    outcome:room.outcome,history:room.history,reveal:{players:results,events:room.audit}});
   return {...metadata,key,eventId:marker?.eventId||null,roomCode:room.code,rulesetVersion:room.rulesetVersion||1,
     startedAt:marker?.startedAt??room.startedAt??null,finishedAt:now,...((room.protocol||1)>=2||metadata.rewardPolicyVersion===1?{notBefore:now+30000}:{}),
     mode:room.settings.mode,visibility:room.settings.visibility,capacity:room.settings.capacity,participantCount:room.participants.length,
+    ...(room.ranked?{ranked:{key:room.ranked.key,seasonId:room.ranked.seasonId,ratingModel:room.ranked.ratingModel}}:{}),
     summary,draw:room.outcome?.faction==='draw',results:results.map(r=>({...r,
       // Pre-marker matches retain archive compatibility only. A known mapping
       // never falls back to a later account attached to the same seat.
@@ -58,6 +63,8 @@ export function mafiaDeleteStatements(env,id) {
     stmt(env,'DELETE FROM mafia_history WHERE match_key IN (SELECT match_key FROM mafia_results WHERE user_id=?)',id),
     ...['mafia_results','mafia_seats','mafia_media_leases','mafia_match_leases','mafia_observer_memberships'].map(table=>stmt(env,`DELETE FROM ${table} WHERE user_id=?`,id)),
     stmt(env,'DELETE FROM mafia_reports WHERE reporter_id=? OR reported_id=?',id,id),
+    ...mafiaCommunityDeleteStatements(env,id),
     ...mafiaProgressDeleteStatements(env,id),
+    ...mafiaRankedDeleteStatements(env,id),
   ];
 }

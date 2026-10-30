@@ -2,7 +2,7 @@ import { fail } from './room-model.mjs';
 
 // This registry is deliberately explicit. Bumping the shared constant alone must
 // never make this server interpret a saved match using a different ruleset.
-export const MAFIA_SUPPORTED_RULESET_VERSIONS = Object.freeze([1]);
+export const MAFIA_SUPPORTED_RULESET_VERSIONS = Object.freeze([1,2]);
 const LEGACY_RULESET_VERSION = 1;
 export const MAFIA_DRAIN_EVIDENCE_MAX_AGE_MS = 60_000;
 

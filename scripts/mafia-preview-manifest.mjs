@@ -83,13 +83,15 @@ export function assertMafiaPreviewConfig(config) {
   keys(config.assets, ['directory', 'binding', 'not_found_handling', 'run_worker_first'], 'Assets');
   check(config.assets.binding === 'ASSETS' && config.assets.directory === 'dist', 'Exact local preview assets required.');
   keys(config.vars, ['APP_ORIGIN', 'EXTRA_ORIGINS', 'APPLE_BUNDLE_ID', 'MAFIA_ENABLED', 'MAFIA_ACCEPT_NEW_MATCHES',
-    'MAFIA_PROGRESS_ENABLED', 'MAFIA_METRICS_ENABLED', 'MAFIA_MAX_ACTIVE_ROOMS', 'MAFIA_MAX_VOICE_PARTICIPANTS', 'IOS_UPDATE_POLICY_ENABLED', 'GOOGLE_CLIENT_ID'], 'Variables');
+    'MAFIA_PROGRESS_ENABLED', 'MAFIA_METRICS_ENABLED', 'MAFIA_RANKED_ENABLED', 'MAFIA_COMMUNITY_ENABLED', 'MAFIA_EXPERIMENTAL_ROLES_ENABLED', 'MAFIA_MAX_ACTIVE_ROOMS', 'MAFIA_MAX_VOICE_PARTICIPANTS', 'IOS_UPDATE_POLICY_ENABLED', 'GOOGLE_CLIENT_ID'], 'Variables');
   check(config.vars.APP_ORIGIN === target.origin && config.vars.EXTRA_ORIGINS === 'maydan://app', 'Exact preview origins required.');
   check(config.vars.IOS_UPDATE_POLICY_ENABLED === '0', 'Preview update policy must remain disabled.');
   check(['0', '1'].includes(config.vars.MAFIA_ENABLED), 'Explicit MAFIA_ENABLED gate required.');
   check(['0', '1'].includes(config.vars.MAFIA_ACCEPT_NEW_MATCHES), 'Explicit MAFIA_ACCEPT_NEW_MATCHES gate required.');
   check(['0', '1'].includes(config.vars.MAFIA_PROGRESS_ENABLED ?? '0'), 'Invalid Mafia progression gate.');
   check(['0', '1'].includes(config.vars.MAFIA_METRICS_ENABLED ?? '0'), 'Invalid Mafia metrics gate.');
+  for (const name of ['MAFIA_RANKED_ENABLED', 'MAFIA_COMMUNITY_ENABLED', 'MAFIA_EXPERIMENTAL_ROLES_ENABLED'])
+    check(['0', '1'].includes(config.vars[name] ?? '0'), `Invalid preview experiment gate: ${name}.`);
   check(config.vars.MAFIA_MAX_ACTIVE_ROOMS === '1' && config.vars.MAFIA_MAX_VOICE_PARTICIPANTS === '80',
     'Preview capacity must remain exactly 1 active room / 80 voice participants.');
   return config;
@@ -136,8 +138,8 @@ const reviewFields = receipt => ({ target: receipt.target, config: receipt.confi
 export function createMafiaPreviewManifest({ configSource, migrations, ledger = null, reviewedManifest = null } = {}) {
   const configBytes = bytes(configSource, 'Preview configuration');
   const config = assertMafiaPreviewConfig(parseJSON(configBytes.toString('utf8'), 'Preview configuration'));
-  check(MAFIA_RULESET_VERSION === 1 && MAFIA_PROTOCOL === 2 && canonical(MAFIA_SUPPORTED_RULESET_VERSIONS) === '[1]',
-    'Review the receipt policy before changing ruleset v1 / protocol 2.');
+  check(MAFIA_RULESET_VERSION === 1 && MAFIA_PROTOCOL === 2 && canonical(MAFIA_SUPPORTED_RULESET_VERSIONS) === '[1,2]',
+    'Reviewed preview requires default ruleset 1, opt-in experimental ruleset 2, and protocol 2.');
   const files = migrationManifest(migrations), supplied = ledgerReceipt(ledger, files);
   const receipt = {
     schemaVersion: 1, kind: 'mafia-preview-manifest', scope: 'local-read-only-preview-receipt',
@@ -145,7 +147,8 @@ export function createMafiaPreviewManifest({ configSource, migrations, ledger = 
     migrations: { directory: MIGRATIONS, files }, migrationSetSHA256: mafiaPreviewSHA256(canonical(files)),
     rules: { rulesetVersion: MAFIA_RULESET_VERSION, protocol: MAFIA_PROTOCOL, supportedRulesetVersions: [...MAFIA_SUPPORTED_RULESET_VERSIONS] },
     capacity: { maxActiveRooms: Number(config.vars.MAFIA_MAX_ACTIVE_ROOMS), maxVoiceParticipants: Number(config.vars.MAFIA_MAX_VOICE_PARTICIPANTS) },
-    gates: { mafiaEnabled: config.vars.MAFIA_ENABLED === '1', acceptNewMatches: config.vars.MAFIA_ACCEPT_NEW_MATCHES === '1', progressEnabled: config.vars.MAFIA_PROGRESS_ENABLED === '1', metricsEnabled: config.vars.MAFIA_METRICS_ENABLED === '1' },
+    gates: { mafiaEnabled: config.vars.MAFIA_ENABLED === '1', acceptNewMatches: config.vars.MAFIA_ACCEPT_NEW_MATCHES === '1', progressEnabled: config.vars.MAFIA_PROGRESS_ENABLED === '1', metricsEnabled: config.vars.MAFIA_METRICS_ENABLED === '1',
+      rankedPreviewEnabled: config.vars.MAFIA_RANKED_ENABLED === '1', communityPreviewEnabled: config.vars.MAFIA_COMMUNITY_ENABLED === '1', experimentalRolesEnabled: config.vars.MAFIA_EXPERIMENTAL_ROLES_ENABLED === '1' },
     migrationLedger: supplied.ledger, pendingMigrations: supplied.pending,
     reviewedManifest: reviewedManifest == null ? 'not-supplied' : 'matched',
     ready: false, liveVerified: false,

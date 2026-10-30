@@ -45,6 +45,21 @@ export async function mediaVersions(root = ROOT) {
 // index.html: the game document stops carrying ~730 KB of base64, and a release that
 // does not touch the art lets browsers keep the files they already have.
 export const BRAND_ASSET_DIR = 'assets/brand';
+// Adjacent sorted paths share most of their prefix. Keep every per-file hash,
+// but store that prefix length rather than repeating complete media paths in
+// the single HTML document. Noncanonical future keys fall back to the map.
+export function encodeMediaVersions(media = {}) {
+  const entries = Object.entries(media).sort(([a], [b]) => a < b ? -1 : a > b ? 1 : 0);
+  if (!entries.length || entries.some(([key, hash]) => /[|:]/.test(key) || !/^[a-f0-9]{6}$/.test(hash))) return media;
+  let previous = '';
+  return 'p1|' + entries.map(([key, hash]) => {
+    let prefix = 0;
+    while (prefix < previous.length && prefix < key.length && previous[prefix] === key[prefix]) prefix++;
+    const row = `${prefix.toString(36)}:${key.slice(prefix)}:${hash}`;
+    previous = key;
+    return row;
+  }).join('|');
+}
 export function esbuildOptions({ minify = true, version = '0.0.0', media = {}, assets = 'inline' } = {}) {
   const art = assets === 'files' ? 'file' : 'dataurl';
   return {
@@ -74,7 +89,7 @@ export function esbuildOptions({ minify = true, version = '0.0.0', media = {}, a
     define: {
       'process.env.NODE_ENV': JSON.stringify(minify ? 'production' : 'development'),
       __MAYDAN_VERSION__: JSON.stringify(version),
-      __MAYDAN_MEDIA_VERSIONS__: JSON.stringify(media),
+      __MAYDAN_MEDIA_VERSIONS__: JSON.stringify(encodeMediaVersions(media)),
       __MAYDAN_ROOMS_URL__: JSON.stringify(process.env.MAYDAN_ROOMS_URL || ''),
     },
     legalComments: 'none',

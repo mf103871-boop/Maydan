@@ -1,6 +1,9 @@
 // Public rules only. Role assignments and all night choices live on the server.
 export const MAFIA_PROTOCOL = 2;
 export const supportsMafiaProtocol = (capability, protocol = 1) => [1,2].includes(protocol) && [1,2].includes(capability) && capability >= protocol;
+// Legacy clients know v1 only. V2 requires an explicit understanding of its
+// experimental role metadata, independently of the unchanged wire protocol.
+export const supportsMafiaRuleset = (capabilities, version = 1) => version === 1 || version === 2 && Array.isArray(capabilities?.mafiaRulesets) && capabilities.mafiaRulesets.includes(2);
 export const MAFIA_RULESET_VERSION = 1;
 export const MAFIA_DEFAULT_SETTINGS = Object.freeze({ mode: 'classic', capacity: 8, visibility: 'public', roomName: '', community: 'ar', voiceMode: 'optional' });
 export const MAFIA_TIMERS = Object.freeze({ role: 10, opening: 45, night: 35, dawn: 8, discussion: 90, shadowDiscussion: 120, nomination: 20, defense: 20, verdict: 15 });
@@ -104,6 +107,18 @@ export const MAFIA_ROLES = Object.freeze({
 });
 export const MAFIA_ROLE_LIST = Object.freeze(Object.values(MAFIA_ROLES));
 export const MAFIA_SUPPORT_ROLES = Object.freeze(['guard', 'observer', 'reporter', 'herald', 'analyst']);
+// Opt-in v2 never changes the twelve-role v1 catalog or its random draw.
+// Keeping this separate also excludes experimental games from permanent mastery.
+export const MAFIA_EXPERIMENTAL_RULESET_VERSION = 2;
+export const MAFIA_EXPERIMENTAL_ROLES = freezeGuide({ tracker: {
+  id:'tracker',name:'المتعقّب',faction:'town',description:'تجريبي: مرتان تتبع وجهات اختيارات لاعب ليلًا، دون معرفة نوع قدرته أو فريقه.',ability:'track',charges:2,
+  guide:guide('تتبّع مرتان؛ تقرأ التقرير الخاص بعد حسم الليل.',livingOther,
+    ['outgoing_destinations','وجهات الاختيارات المقبولة غير المعطّلة للهدف، دون نوع القدرة أو نتيجة استعمالها.'],privateReport,
+    ['تجريبي غير معاير؛ في مجلس خاص معلن فقط، دون XP أو إتقان أو تصنيف.','غياب وجهات لا يميّز الامتناع عن التعطيل. ولا تكشف الزيارة فريقًا.'],
+    ['التمويه لا يغيّر الوجهات. التعطيل يمنع التقرير ويستهلك الشحنة.','المحلل قد يزور هدفين؛ المافيا قد تختار قدرة وهجومًا. تظهر الوجهات مدمجة بلا ترتيب أو نوع.','التجنيد لا يغيّر القدرة أو الشحنات. الاختيار المقبول يبقى محسوبًا حتى إن مات صاحبه عند الحسم.'],
+    'تتبّعت الطبيب نحو ليان؛ هذا يثبت وجهة اختياره فقط، ولا يثبت نوعه أو نجاحه.'),
+} });
+export const MAFIA_ALL_ROLES = Object.freeze({...MAFIA_ROLES,...MAFIA_EXPERIMENTAL_ROLES});
 export function mafiaComposition(count) {
   if (!Number.isInteger(count) || count < 6 || count > 12) return null;
   const mafia = count === 6 ? 1 : count >= 11 ? 3 : 2;
@@ -122,6 +137,8 @@ export function normalizeMafiaSettings(input = {}) {
   const roomName = (input.roomName ?? '').normalize('NFKC').trim().replace(/\s+/g,' ');
   if (Array.from(roomName).length > 30 || /[\p{Cc}\p{Cf}]/u.test(roomName) || community !== 'ar' || !['optional','off'].includes(voiceMode)) return null;
   if (!['classic', 'shadow'].includes(mode) || !['private', 'public'].includes(visibility) || !Number.isInteger(capacity) || capacity < (mode === 'shadow' ? 9 : 6) || capacity > (mode === 'shadow' ? 12 : 8)) return null;
-  return { mode, capacity, visibility, roomName, community, voiceMode };
+  if(input.experimentalRole!=null&&input.experimentalRole!=='tracker')return null;
+  if(input.experimentalRole==='tracker'&&(visibility!=='private'||capacity<8))return null;
+  return { mode, capacity, visibility, roomName, community, voiceMode, ...(input.experimentalRole==='tracker'?{experimentalRole:'tracker'}:{}) };
 }
 export function mafiaMinimumPlayers(mode) { return mode === 'shadow' ? 9 : 6; }

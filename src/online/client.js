@@ -1,4 +1,5 @@
 import { GAME_PROTOCOLS, ROOM_CAPABILITIES, validateServerUrl } from './shared.js';
+import { supportsMafiaRuleset } from './mafia-shared.js';
 import { createMafiaClientMetrics } from './mafia-metrics.mjs';
 export class ClientError extends Error {
   constructor(code) { super(code); this.code = code; }
@@ -141,6 +142,7 @@ export class RoomClient {
         // still valid: stop as 'outdated' and keep the stored credentials, so the
         // newer version reconnects to the same room and seat after a reload.
         if (!protocol || (message.state.game === 'mafia' ? ![1, protocol].includes(message.state.protocol) : message.state.protocol !== protocol)) { this.onError('ROOM_OUTDATED'); this.stop('outdated'); return; }
+        if(message.state.game==='mafia'&&!supportsMafiaRuleset(ROOM_CAPABILITIES,message.state.rulesetVersion===undefined?1:message.state.rulesetVersion)){this.onError('ROOM_OUTDATED');this.stop('outdated');return;}
         if (this.state && message.state.revision < this.state.revision) return;
         clearTimeout(this.openTimer); this.attempt = 0;
         this.state = message.state; this.clockOffset = message.state.serverNow - Date.now();

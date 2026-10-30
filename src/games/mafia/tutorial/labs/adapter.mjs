@@ -1,7 +1,7 @@
 import * as rules from '../../rules.mjs';
 import {MAFIA_RULESET_VERSION} from '../../../../online/mafia-shared.js';
 import {fail} from '../../../../shared/room-primitives.mjs';
-import {LAB_HUMAN as HUMAN,LAB_VERSION,LAB_RULESET,MAFIA_LABS,labActors} from './scenarios.mjs';
+import {LAB_HUMAN as HUMAN,LAB_VERSION,LAB_RULESET,MAFIA_LABS,labActors,labRuleset} from './scenarios.mjs';
 
 // Shared semantic labels keep journals and commands identical without repeated literals.
 const VERDICT="verdict",NIGHT_ACTION="night_action",NOMINATE="nominate",RECRUIT="recruit",AFTER_CONVERSION="after-conversion",TOWN_LABEL="أهل الميدان",INTRO="intro",NIGHT="night",ABSTAIN="abstain",MAFIA_LABEL="المافيا",CONTINUE="continue",INVESTIGATE_RESULT="investigate-result",MAFIA="mafia",PROTECT="protect",NOMINATE_RESULT="nominate-result",PROTECT_RESULT="protect-result",SHIELD="shield",RECRUIT_RESULT="recruit-result",INVESTIGATE="investigate",BLOCK_RESULT="block-result",MAFIA_VOTE="mafia_vote",NOMINATION="nomination",SELF_RESULT="self-result",MASK_RESULT="mask-result",UNMASKED="unmasked",RESTORED="restored";
@@ -11,26 +11,30 @@ const exact=(value,keys)=>plain(value)&&Object.keys(value).length===keys.length&
 const changed=()=>fail('LAB_RULESET_CHANGED',409);
 const STEPS={doctor:[INTRO,'self',SELF_RESULT,PROTECT,PROTECT_RESULT,'repeat','done'],masker:[INTRO,'mask',MASK_RESULT,UNMASKED,'done'],
   blocker:[INTRO,'block',BLOCK_RESULT,SHIELD,'done'],conversion:[INTRO,INVESTIGATE,INVESTIGATE_RESULT,RECRUIT,RECRUIT_RESULT,AFTER_CONVERSION,'done'],
+  tracker:[INTRO,'trace','trace-result','trace-quiet','trace-quiet-result','trace-blocked','done'],
   abstention:[INTRO,NOMINATE,NOMINATE_RESULT,VERDICT,'done']};
 
 // No transport, account, storage, wall clock, result writer or microphone.
 export function createMafiaLab({courseId,progress=null}={}) {
   const spec=Object.hasOwn(MAFIA_LABS,courseId)?MAFIA_LABS[courseId]:null;
   if(!spec||MAFIA_RULESET_VERSION!==LAB_RULESET)fail('LAB_UNSUPPORTED',409);
+  const rulesetVersion=labRuleset(courseId);
   const actors=labActors(courseId),listeners=new Set();let room,now,step,journal,feedback,checkpoint=0,checkpointRevision=0,disposed=false,restoreStatus='new';
-  const [doctor,investigator,mafia,guard,leader,civilian]=['doctor','investigator',MAFIA,'guard','leader','citizen'].map(role=>actors.find(actor=>actor.roleId===role)?.id);
+  const [doctor,investigator,mafia,guard,leader,civilian,blocker]=['doctor','investigator',MAFIA,'guard','leader','citizen','blocker'].map(role=>actors.find(actor=>actor.roleId===role)?.id);
   const targets={self:HUMAN,protect:investigator,repeat:civilian,mask:mafia,block:doctor,shield:guard,investigate:mafia,[AFTER_CONVERSION]:civilian};
+  if(courseId==='tracker')Object.assign(targets,{trace:doctor,'trace-quiet':investigator,'trace-blocked':doctor});
   // [round, attack target, protection target, optional NPC ability actor/target].
   const nights={self:[1,HUMAN],protect:[2,investigator],repeat:[3,civilian],mask:[1,civilian,civilian,investigator,mafia],
     unmasked:[2,investigator,investigator,investigator,mafia],block:[1,civilian,civilian],shield:[1,guard,civilian],
     investigate:[1,civilian,civilian],recruit:[2,HUMAN,HUMAN,leader,HUMAN],[AFTER_CONVERSION]:[3,civilian,civilian]};
+  if(courseId==='tracker')Object.assign(nights,{trace:[1,civilian,civilian],'trace-quiet':[2,investigator,investigator],'trace-blocked':[1,civilian,civilian,blocker,HUMAN]});
   const isChoice=()=>Object.hasOwn(targets,step)||[RECRUIT,NOMINATE,VERDICT].includes(step);
   const action=(id,type,fields={})=>rules.action(room,id,{type,matchId:room.matchId,phaseId:room.phaseId,...fields},now);
   const settle=()=>{if(!Number.isFinite(room.deadlineAt))changed();now=room.deadlineAt;rules.tick(room,now);};
   const until=(phase,round=1)=>{for(let guard=0;(room.phase!==phase||room.round!==round)&&guard<80;guard++)settle();if(room.phase!==phase||room.round!==round)changed();};
   function bootRoom(second=false) {
     now=BASE+(second?600_000:0);const input=actor=>({id:actor.id,name:actor.name,avatar:actor.avatar,tokenHash:`local-${actor.id}`});
-    room=rules.createRoom('LOCAL_SPECIALTY',{...input(actors[0]),settings:{mode:actors.length===9?'shadow':'classic',capacity:actors.length,visibility:'private',voiceMode:'off',roomName:spec.title}},now);
+    room=rules.createRoom('LOCAL_SPECIALTY',{...input(actors[0]),settings:{mode:actors.length===9?'shadow':'classic',capacity:actors.length,visibility:'private',voiceMode:'off',roomName:Array.from(spec.title).slice(0,30).join(''),...(rulesetVersion===2?{experimentalRole:'tracker'}:{})}},now);
     for(const actor of actors.slice(1))rules.joinRoom(room,input(actor),now);
     for(const actor of actors){rules.connected(room,actor.id,true,now);action(actor.id,'ready',{ready:true});}
     let index=0;rules.action(room,HUMAN,{type:'start',matchId:room.matchId,phaseId:room.phaseId},now,{randomWord:()=>{if(index>=spec.words.length)changed();return spec.words[index++];}});
@@ -43,6 +47,7 @@ export function createMafiaLab({courseId,progress=null}={}) {
   function enter(next) {
     step=next;feedback=null;checkpoint=journal.length;
     if(step===SHIELD){bootRoom(true);checkpointRevision++;}
+    if(step==='trace-blocked'){bootRoom(true);checkpointRevision++;}
     const plan=nights[step];if(plan){until(NIGHT,plan[0]);botNight(plan[1],plan[2]);if(plan[3])action(plan[3],NIGHT_ACTION,{targetId:plan[4]});if(step===UNMASKED)settle();}
     if(step===NOMINATE){
       until(NOMINATION);const bots=actors.slice(1);for(let i=0;i<bots.length;i++)action(bots[i].id,NOMINATE,{targetId:i<3?mafia:i<6?investigator:null});
@@ -75,10 +80,15 @@ export function createMafiaLab({courseId,progress=null}={}) {
       recruit:'اترك التحقيق هذه الليلة بزر «أمتنع». لن نرسل فعلًا نيابة عنك؛ يحسم المحرك التجنيد الحقيقي.',
       [RECRUIT_RESULT]:'افتح بطاقتك: أصبحت مع الظل، وبقي اختصاص المحقق وشحنته. صرت تفوز مع فريقك الجديد.',
       [AFTER_CONVERSION]:`جرّب التحقيق الآن على ${name(civilian)}. تبدل الفريق لا يمنح شحنة جديدة ولا يمحو القدرة الباقية.`,
+      trace:`الطبيب التدريبي اختار ${name(civilian)} للحماية. تتبّع الطبيب؛ التقرير سيذكر الوجهة وحدها، دون اسم قدرته أو فريقه.`,
+      'trace-result':`وردت وجهة الاختيار ${name(civilian)}. أنت تعرفها من إعداد الدرس؛ في مباراة حقيقية لا يثبت ذلك أن الهدف طبيب أو أن فعله نجح.`,
+      'trace-quiet':`المحقق التدريبي لا يختار قدرة هذه الليلة، مع وجود حماية واردة إليه. تتبّعه ولاحظ أن التتبع يرصد اختياراته الصادرة فقط.`,
+      'trace-quiet-result':'لم تُرصد وجهة. النتيجة نفسها قد تعني الامتناع أو التعطيل؛ ليست دليلًا على فريق الهدف. استُهلكت الشحنتان؛ نفتح مجلسًا تدريبيًا جديدًا لشرح التعطيل.',
+      'trace-blocked':'تجربة مستقلة برصيد جديد: المعطّل يستهدفك. اختر تتبّع الطبيب؛ سيحسم المحرك الحجب ويستهلك الشحنة المثبتة.',
       nominate:'أصوات التدريب متعادلة بين هدفين. اختر «أمتنع» دون تسمية لاعب؛ لاحظ حسم التعادل.',
       [NOMINATE_RESULT]:'بقي الترشيح متعادلًا فلم يوجد مرشح للدفاع. الآن نجرب الامتناع عن الحكم في يوم جديد.',
       verdict:'أربعة من ثمانية يؤيدون الإقصاء. اختر «أمتنع»: نترك تصويتك غائبًا حتى الإغلاق، ولا نرسله كرفض.',
-      done:courseId==='blocker'?'بقي الحارس حيًا واستهلك درعه؛ التعطيل لا يلغي الدرع السلبي. أنهيت التمرين المحلي.':'أنهيت التمرين المحلي. نتيجة التعلم لا تدخل مبارياتك أو مكافآتك.',
+      done:courseId==='blocker'?'بقي الحارس حيًا واستهلك درعه؛ التعطيل لا يلغي الدرع السلبي. أنهيت التمرين المحلي.':courseId==='tracker'?'حُجب تقريرك واستهلكت شحنة واحدة من المجلس الجديد. المتعقّب دور تجريبي؛ لا تكشف الوجهة نوع القدرة أو الانتماء. أنهيت التمرين المحلي.':'أنهيت التمرين المحلي. نتيجة التعلم لا تدخل مبارياتك أو مكافآتك.',
     };
     const choice=isChoice();
     return {stepId:step,title:step===INTRO?spec.title:'جرّب وتحقق',text:texts[step],target:choice?'actions':'coach',mode:choice?'action':'guide',
@@ -114,6 +124,9 @@ export function createMafiaLab({courseId,progress=null}={}) {
         mistake('WRONG_DECISION','حُسم ما اخترته فعلًا.'+result+' ارجع لنقطة القرار واتبع تعليمات الشخصيات المحلية.');return true;
       }
       if(step==='mask'&&room.privateEvents[investigator]?.at(-1)?.faction!=='town')changed();
+      if(step==='trace'&&!room.privateEvents[HUMAN]?.at(-1)?.destinationIds?.includes(civilian))changed();
+      if(step==='trace-quiet'&&room.privateEvents[HUMAN]?.at(-1)?.destinationIds?.length!==0)changed();
+      if(step==='trace-blocked'&&(room.privateEvents[HUMAN]?.at(-1)?.type!=='no_result'||room.roleStates[HUMAN].resources.charges!==1))changed();
       if(step===SHIELD&&(!room.roleStates[guard].alive||room.roleStates[guard].resources.shield!==0))changed();
       if(step===RECRUIT&&(room.roleStates[HUMAN].faction!=='shadow'||room.roleStates[HUMAN].resources.charges!==1))changed();
       if(step===VERDICT&&(room.history.filter(event=>event.type==='verdict_closed').at(-1)?.passed!==false||Object.hasOwn(room.verdictVotes,HUMAN)))changed();
@@ -125,13 +138,13 @@ export function createMafiaLab({courseId,progress=null}={}) {
     }
   }
   const notify=()=>{for(const listener of listeners)listener();};
-  const exported=()=>({schemaVersion:1,courseId,courseVersion:LAB_VERSION,rulesetVersion:LAB_RULESET,decisions:clone(journal)});
+  const exported=()=>({schemaVersion:1,courseId,courseVersion:LAB_VERSION,rulesetVersion,decisions:clone(journal)});
   function replay(value){boot();for(const record of value.decisions)if(!apply(record))return false;return true;}
   boot();
   if(progress!==null){
     if(!exact(progress,['schemaVersion','courseId','courseVersion','rulesetVersion','decisions'])||progress.schemaVersion!==1||progress.courseId!==courseId
       ||!Array.isArray(progress.decisions)||progress.decisions.length>64||JSON.stringify(progress).length>16384)restoreStatus='invalid';
-    else if(progress.courseVersion!==LAB_VERSION||progress.rulesetVersion!==LAB_RULESET)restoreStatus='incompatible';
+    else if(progress.courseVersion!==LAB_VERSION||progress.rulesetVersion!==rulesetVersion)restoreStatus='incompatible';
     else try{if(!replay(progress))throw Error();restoreStatus=RESTORED;}catch{boot();restoreStatus='invalid';}
   }
   return Object.freeze({

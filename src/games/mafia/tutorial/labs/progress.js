@@ -3,7 +3,7 @@ import {useAccount} from '../../../../shared/account/context.js';
 import {resolveAccountServer} from '../../../../shared/account/api.js';
 import {tutorialOwner} from '../progress.js';
 import {createMafiaLab,validateMafiaLabProgress} from './adapter.mjs';
-import {LAB_VERSION,LAB_RULESET,MAFIA_LABS} from './scenarios.mjs';
+import {LAB_VERSION,MAFIA_LABS,labRuleset} from './scenarios.mjs';
 
 const PREFIX='maydan:mafia-labs:',memory=new Map();
 const storage=()=>{try{return globalThis.localStorage;}catch{return null;}};
@@ -15,7 +15,7 @@ export function readLabRecord(store,owner,courseId) {
     let raw;try{raw=store?.getItem(labStorageKey(owner,courseId));}catch{/* memory only */}raw||=memory.get(labStorageKey(owner,courseId));
     if(!raw)return empty;if(raw.length>20_000)return {...empty,invalid:true};const {owner:storedOwner,...value}=JSON.parse(raw);
     if(storedOwner!==owner||value.courseId!==courseId)return {...empty,invalid:true};
-    if(value.courseVersion!==LAB_VERSION||value.rulesetVersion!==LAB_RULESET)return {...empty,outdated:true};
+    if(value.courseVersion!==LAB_VERSION||value.rulesetVersion!==labRuleset(courseId))return {...empty,outdated:true};
     const lab=createMafiaLab({courseId,progress:value}),{status,restoreStatus}=lab.getState(),progress=lab.exportProgress();lab.dispose();
     if(restoreStatus!=='restored')return {...empty,invalid:true};
     return {...empty,status:status==='completed'?'completed':'in-progress',progress};

@@ -5,6 +5,7 @@
 //
 // ويجوز أن يكون المرجع عنوانًا كاملًا (https://…) إن كانت الوسائط مستضافة خارجًا،
 // أو مسارًا يبدأ بـ media/ إن أراد السؤال ملفًا من حزمة أخرى.
+import { MEDIA_VERSIONS } from './versions.js';
 export const MEDIA_ROOT = 'media';
 
 const ABSOLUTE = /^(https?:)?\/\//i;
@@ -17,7 +18,6 @@ export function isExternal(ref) {
 // نسخ ملفات الوسائط يحقنها البناء (بصمة محتوى كل ملف بمفتاح «المجلد/الملف»)؛ تُلحق
 // بالعنوان كـ ?v= فلا يعلق لاعبٌ على نسخة قديمة من ملف صُحِّح بالاسم نفسه. غيابها
 // (اختبارات، تطوير) يعني بلا لاحقة.
-const MEDIA_VERSIONS = typeof __MAYDAN_MEDIA_VERSIONS__ !== 'undefined' ? __MAYDAN_MEDIA_VERSIONS__ : {};
 
 export function mediaVersionOf(url) {
   return url.startsWith(`${MEDIA_ROOT}/`) ? MEDIA_VERSIONS[url.slice(MEDIA_ROOT.length + 1)] || '' : '';

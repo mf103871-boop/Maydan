@@ -1,11 +1,11 @@
 import { first } from './lamma/common.mjs';
 import { fail } from './room-model.mjs';
 import { liveAccountSql } from './moderation/access.mjs';
-import { MAFIA_ROLES } from '../src/online/mafia-shared.js';
+import { MAFIA_ALL_ROLES as MAFIA_ROLES } from '../src/online/mafia-shared.js';
 
 const DAY=86400000,MAX_SUMMARY=524288,MAX_EVENTS=500;
 const factions=new Set(['town','mafia','shadow']);
-const eventTypes=new Set(['roles','night_action','attack_vote','shield_used','converted','verdict_votes','eliminated','nomination_vote','extended']);
+const eventTypes=new Set(['roles','night_action','attack_vote','shield_used','converted','verdict_votes','eliminated','nomination_vote','extended','tracking_report']);
 const integer=(value,max=Number.MAX_SAFE_INTEGER)=>Number.isSafeInteger(value)&&value>=0&&value<=max;
 const keyValid=value=>typeof value==='string'&&/^[A-Za-z0-9:_-]{1,180}$/.test(value);
 const record=value=>value&&typeof value==='object'&&!Array.isArray(value);
@@ -13,7 +13,7 @@ const record=value=>value&&typeof value==='object'&&!Array.isArray(value);
 // This is a new projection, never a raw archive response. Seat numbers are local
 // to the match; account/room/seat IDs, names, messages and media never leave here.
 export function projectMafiaReview(row) {
-  if(!row||!integer(row.finishedAt)||row.finishedAt<=0||row.rulesetVersion!==1||typeof row.summary!=='string'||row.summary.length>MAX_SUMMARY||new TextEncoder().encode(row.summary).length>MAX_SUMMARY)return null;
+  if(!row||!integer(row.finishedAt)||row.finishedAt<=0||![1,2].includes(row.rulesetVersion)||typeof row.summary!=='string'||row.summary.length>MAX_SUMMARY||new TextEncoder().encode(row.summary).length>MAX_SUMMARY)return null;
   let summary;try{summary=JSON.parse(row.summary);}catch{return null;}
   const rawPlayers=summary?.reveal?.players,rawEvents=summary?.reveal?.events;
   if(!record(summary)||!Array.isArray(rawPlayers)||rawPlayers.length<1||rawPlayers.length>12||!Array.isArray(rawEvents)||rawEvents.length>5000
@@ -21,18 +21,20 @@ export function projectMafiaReview(row) {
   const seats=new Map(),players=[];
   for(const [index,player] of rawPlayers.entries()) {
     if(!record(player)||typeof player.playerId!=='string'||!player.playerId||player.playerId.length>100||seats.has(player.playerId)
-      ||!Object.hasOwn(MAFIA_ROLES,player.roleId)||!factions.has(player.initialFaction)||!factions.has(player.faction))return null;
+      ||!Object.hasOwn(MAFIA_ROLES,player.roleId)||(row.rulesetVersion===1&&player.roleId==='tracker')||!factions.has(player.initialFaction)||!factions.has(player.faction))return null;
     const seat=index+1;seats.set(player.playerId,seat);
     players.push({seat,roleId:player.roleId,initialFaction:player.initialFaction,faction:player.faction,won:player.won===true,forfeited:player.forfeited===true});
   }
   const allowed=rawEvents.filter(event=>record(event)&&eventTypes.has(event.type)&&integer(event.at)&&event.at<=row.finishedAt);
   const startedAt=allowed.reduce((at,event)=>Math.min(at,event.at),row.finishedAt),events=[];
   for(const event of allowed) {
+    if(event.type==='tracking_report'&&row.rulesetVersion!==2)continue;
     if(['attack_vote','nomination_vote'].includes(event.type)&&event.targetId!=null&&!seats.has(event.targetId))continue;
     const projected={type:event.type,round:integer(event.round,10000)?event.round:0,elapsedSeconds:Math.min(43200,Math.floor((event.at-startedAt)/1000))};
     if(seats.has(event.playerId))projected.actorSeat=seats.get(event.playerId);
     if(seats.has(event.targetId))projected.targetSeat=seats.get(event.targetId);
     if(Array.isArray(event.targetIds))projected.targetSeats=[...new Set(event.targetIds.map(id=>seats.get(id)).filter(Boolean))].slice(0,12);
+    if(event.type==='tracking_report'&&Array.isArray(event.destinationIds))projected.destinationSeats=[...new Set(event.destinationIds.map(id=>seats.get(id)).filter(Boolean))].slice(0,12);
     if(seats.has(event.recruiterId))projected.recruiterSeat=seats.get(event.recruiterId);
     if(seats.has(event.nomineeId))projected.nomineeSeat=seats.get(event.nomineeId);
     if(Object.hasOwn(MAFIA_ROLES,event.roleId))projected.roleId=event.roleId;
@@ -41,7 +43,7 @@ export function projectMafiaReview(row) {
       Object.hasOwn(event.votes,id)&&typeof event.votes[id]==='boolean'?[{seat,approve:event.votes[id]}]:[]);
     events.push(projected);
   }
-  return {available:true,rulesetVersion:1,finishedAt:row.finishedAt,outcome:summary.outcome.faction,players,
+  return {available:true,rulesetVersion:row.rulesetVersion,finishedAt:row.finishedAt,outcome:summary.outcome.faction,players,
     events:events.slice(-MAX_EVENTS),earlierEventsOmitted:Math.max(0,events.length-MAX_EVENTS),retentionDays:30};
 }
 

@@ -16,7 +16,7 @@ export const socialError = error => SOCIAL_ERRORS[error?.code] || SOCIAL_ERRORS.
 export const emptyConversation = () => ({ id: null, messages: [], loading: false, loadingOlder: false, hasMore: false,
   nextBefore: null, error: '', typing: false, readSeq: 0, peerReadSeq: 0 });
 export const emptySocialState = () => ({ profile: null, friends: [], incoming: [], outgoing: [], blocked: [], conversationList: [],
-  conversations: {}, loading: false, error: '', offline: false, connected: false });
+  conversations: {}, loading: false, error: '', offline: false, connected: false, mafiaCommunicationLocked: false });
 const initial = emptySocialState;
 
 export function mergeMessages(current, incoming, peerReadSeq = 0) {
@@ -116,11 +116,11 @@ export class SocialClient {
           const conversation = list.find(c => c.user.id === friend.id);
           return { ...friend, lastMessage: conversation?.lastMessage || null, unreadCount: conversation?.unreadCount || 0 };
         }), incoming: state.incoming || [], outgoing: state.outgoing || [], blocked: state.blocked || [],
-        conversationList: list, loading: false, error: '', offline: false });
+        conversationList: list, loading: false, error: '', offline: false, mafiaCommunicationLocked: state.mafiaCommunicationLocked===true });
         const allowed = new Set(this.state.friends.map(f => f.id));
         const loaded = Object.fromEntries(Object.entries(this.state.conversations).filter(([id]) => allowed.has(id)));
-        this.update({ conversations: loaded });
-        if (this.activeFriend && allowed.has(this.activeFriend)) await this.openConversation(this.activeFriend, { quiet: true });
+        this.update({ conversations: state.mafiaCommunicationLocked?{}:loaded });
+        if (!state.mafiaCommunicationLocked && this.activeFriend && allowed.has(this.activeFriend)) await this.openConversation(this.activeFriend, { quiet: true });
       } catch (error) {
         if (epoch === this.epoch) this.update({ loading: false, error: error.message, offline: error.code === 'NETWORK' });
         throw error;

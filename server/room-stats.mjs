@@ -21,10 +21,11 @@ export function prepareRoomStats(previous, candidate, now = Date.now(), { mafiaP
     candidate.statsMatch = {
       eventId: `online:${crypto.randomUUID()}`, startedAt: now,
       accounts: Object.fromEntries(candidate.participants.map((id) => [id, candidate.members.find((m) => m.id === id)?.accountUserId || null])),
-      ...(candidate.game==='mafia'&&(candidate.protocol||1)>=2&&mafiaProgressEnabled===true?{rewardPolicyVersion:1}:{}),
+      ...(candidate.game==='mafia'&&(candidate.rulesetVersion||1)===1&&(candidate.protocol||1)>=2&&mafiaProgressEnabled===true?{rewardPolicyVersion:1}:{}),
     };
   }
   if(candidate.game==='mafia') {
+    if((candidate.rulesetVersion||1)!==1)return [];
     if(candidate.phase!=='over'||previous?.phase==='over'||!candidate.statsMatch||candidate.technicalAbort)return [];
     const event=mafiaResult===undefined?prepareMafiaResult(candidate,now):mafiaResult;
     if(!event)return [];

@@ -9,10 +9,14 @@ import { listMafiaDirectory, DIRECTORY_KEY } from './mafia-directory.mjs';
 import { mafiaPublicCatalog,readMafiaProgress,patchMafiaPreferences,readMafiaReward,readMafiaHistory } from './mafia-profile.mjs';
 import { saveMafiaReportCase,ownMafiaReportCases,ownMafiaReportCase } from './mafia-report-cases.mjs';
 import { readMafiaReview } from './mafia-review.mjs';
+import { routeMafiaRanked,mafiaRankedEnabled,mafiaPreviewOnly } from './mafia-ranked.mjs';
+import { routeMafiaCommunity } from './mafia-community.mjs';
 
 const roomFetch=(env,code,endpoint,body)=>env.ROOMS.get(env.ROOMS.idFromName(code)).fetch(new Request(`https://internal/${code}/${endpoint}`,{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify(body)}));
 export async function routeMafia(request,env,url,charge) {
+  const community=await routeMafiaCommunity(request,env,url,charge);if(community)return community;
   const path=url.pathname,method=request.method;
+  const capabilities={mafia:MAFIA_PROTOCOL,ranked:mafiaRankedEnabled(env),mafiaCommunity:mafiaPreviewOnly(env)&&String(env.MAFIA_COMMUNITY_ENABLED)==='1',experimentalRoles:mafiaPreviewOnly(env)&&String(env.MAFIA_EXPERIMENTAL_ROLES_ENABLED)==='1'};
   if(path==='/api/rooms/public/stream'&&method==='GET'&&request.headers.get('upgrade')?.toLowerCase()==='websocket'){
     if(charge)await charge('socket');
     return env.ROOMS.get(env.ROOMS.idFromName(DIRECTORY_KEY)).fetch(new Request('https://internal/mafia-directory-socket',{headers:request.headers}));
@@ -25,12 +29,13 @@ export async function routeMafia(request,env,url,charge) {
   const reward=/^\/api\/me\/mafia\/rewards\/([^/]+)$/.exec(path);
   const ownReport=/^\/api\/me\/mafia\/reports\/([a-f0-9]{64})$/.exec(path);
   const review=/^\/api\/mafia\/history\/([^/]+)$/.exec(path);
-  if(!voice&&!report&&!block&&!observe&&!profile&&!reward&&!ownReport&&!review&&!['/api/rooms/public','/api/matchmaking/join','/api/mafia/history','/api/mafia/capabilities','/api/mafia/catalog','/api/me/mafia/progress','/api/me/mafia/preferences','/api/me/mafia/reports'].includes(path))return null;
-  if(path==='/api/mafia/capabilities'&&method==='GET')return json({enabled:mafiaEnabled(env),capabilities:{mafia:MAFIA_PROTOCOL}});
+  if(!path.startsWith('/api/mafia/ranked')&&!voice&&!report&&!block&&!observe&&!profile&&!reward&&!ownReport&&!review&&!['/api/rooms/public','/api/matchmaking/join','/api/mafia/history','/api/mafia/capabilities','/api/mafia/catalog','/api/me/mafia/progress','/api/me/mafia/preferences','/api/me/mafia/reports'].includes(path))return null;
+  if(path==='/api/mafia/capabilities'&&method==='GET')return json({enabled:mafiaEnabled(env),capabilities});
   if(path==='/api/mafia/catalog'&&method==='GET'){if(charge)await charge('profileRead');return json(mafiaPublicCatalog(env));}
   const {user,session}=await requireSession(env,request,{rotate:false});
   if(charge)await charge(method==='GET'||voice?'socialRead':'socialWrite','RATE_LIMIT',user.id);
   const actor={userId:user.id,sessionId:session.id};
+  if(path.startsWith('/api/mafia/ranked'))return await routeMafiaRanked(request,env,url,actor);
   if(review&&method==='GET'){
     let key;try{key=decodeURIComponent(review[1]);}catch{fail('INVALID',400);}
     return json(await readMafiaReview(env,user.id,key));
@@ -49,7 +54,7 @@ export async function routeMafia(request,env,url,charge) {
     if(await first(env,'SELECT 1 FROM mafia_observer_memberships WHERE user_id=? AND expires_at>?',user.id,Date.now()))fail('MAFIA_OBSERVER_ACTIVE',409);
     if(url.searchParams.get('game')&&url.searchParams.get('game')!=='mafia')fail('GAME');
     const page=mafiaEnabled(env)&&env.DB?await listMafiaDirectory(env,user.id,Object.fromEntries(url.searchParams)):{rooms:[],nextCursor:null,serverNow:Date.now()};
-    return json({enabled:mafiaEnabled(env),...page,capabilities:{mafia:MAFIA_PROTOCOL}});
+    return json({enabled:mafiaEnabled(env),...page,capabilities});
   }
   if(path==='/api/matchmaking/join'&&method==='POST') {
     requireMafiaEnabled(env); const body=await readJson(request);await credentials(body);

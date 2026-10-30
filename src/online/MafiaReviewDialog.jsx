@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Modal, Button } from '../shared/ui/components.jsx';
 import { useAccount } from '../shared/account/context.js';
-import { MAFIA_ROLES } from './mafia-shared.js';
+import { MAFIA_ALL_ROLES as MAFIA_ROLES } from './mafia-shared.js';
 import { mafiaEventText } from './Mafia.jsx';
 import { arabicNumber as ar } from './shared.js';
 import css from './mafia.css';
@@ -28,7 +28,7 @@ export function MafiaReviewDialog({matchKey,onClose}) {
   if(!owner)return null;
   const shown=state.scope===scope?state:{data:null,error:false,loading:true},review=shown.data?.available?shown.data:null;
   const members=review?.players.map(player=>({id:player.seat,name:seat(player.seat)}))||[];
-  const eventText=event=>mafiaEventText({...event,playerId:event.actorSeat,targetId:event.targetSeat,targetIds:event.targetSeats,
+  const eventText=event=>mafiaEventText({...event,playerId:event.actorSeat,targetId:event.targetSeat,targetIds:event.targetSeats,destinationIds:event.destinationSeats,
     recruiterId:event.recruiterSeat,nomineeId:event.nomineeSeat,votes:Object.fromEntries((event.votes||[]).map(vote=>[vote.seat,vote.approve]))},members);
   return <Modal className="mafia-noir mafia-history-dialog" title="مراجعة المباراة" onClose={onClose}><style>{css}</style><div className="mafia-history stack" dir="rtl">
     <p>راجع أدوار المقاعد وأحداث المباراة المكتملة. تتاح المراجعة للمشاركين خلال {ar(30)} يومًا.</p>

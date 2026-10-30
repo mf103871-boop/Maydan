@@ -1,5 +1,7 @@
 # Mafia Maydan preview acceptance
 
+Follow-up 2026-10-30: the owner subsequently requested completion of the remaining implementation without tests. E/F/G are documented in `EFG-PREVIEW.md` and have a separate current-candidate receipt. The D evidence below remains historical; D2/D3 are still unperformed acceptance work, and no previous test result covers the new E/F/G source.
+
 Updated 2026-10-30 (Asia/Amman). This is the operating and acceptance record for batch D, building on the isolated A/B/C preview. D1 measurement, D4 local specialty labs/review, and D5 reporting have implementation and automated evidence. D2 physical-device acceptance and D3 human playtesting remain open. This document does not mark the whole plan complete or authorize production activation.
 
 Keep the final candidate commit, artifact hashes, active Worker version, migration evidence, test output and native build identity in the external release receipt. Do not insert the candidate's own commit hash into this file and create a self-referencing freeze. Existing receipts for earlier revisions remain historical evidence.
