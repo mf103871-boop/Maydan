@@ -3,7 +3,9 @@ import { MafiaTutorialPreview } from '../games/mafia/tutorial/MafiaTutorial.jsx'
 // are synthetic; no second implementation of a game or its controls lives here.
 import React, { useMemo } from 'react';
 import { createDesignFixture } from './screen-catalog.js';
-import { Home } from '../platform/screens/Home.jsx';
+import { Home, GameModeSheet } from '../platform/screens/Home.jsx';
+import { getGame } from '../platform/registry.js';
+import { OnlineDirectoryView, OnlineRoomRow } from '../online/OnlineDirectoryView.jsx';
 import { GameDetails } from '../platform/screens/GameDetails.jsx';
 import { Players } from '../platform/screens/Players.jsx';
 import { Settings } from '../platform/screens/Settings.jsx';
@@ -75,7 +77,14 @@ export function DesignScene({ sceneId = 'home', previewState, platform, account,
   const setup = { 'setup.beep': BeepSetup, 'setup.mamnoo': MamnooSetup, 'setup.jabeen': JabeenSetup, 'setup.meenfina': MeenfinaSetup, 'setup.fabraka': FabrakaSetup }[sceneId];
   if (setup) { const Options = setup; const settings = <Options api={api} storage={api.storage} />; return sceneId === 'setup.mamnoo' ? <TeamsSetup min={2} max={4} api={api} onStart={noop}>{settings}</TeamsSetup> : <PlayersSetup roster={fixture.players} setRoster={noop} min={2} max={8} api={api} onStart={noop}>{settings}</PlayersSetup>; }
   const roomProps = { state, me: fixture.me, isHost: true, disabled: false, act: resolved, clockOffset: 0 };
-  if (sceneId === 'online.entry') return <section data-design-screen="online.entry" className="stack online-screen"><Entry initialGame="ersomha" onJoined={noop} /></section>;
+  if (/^online\.(badeeha|ersomha|fabraka|meenfina)\.directory$/.test(sceneId)) {
+    const game = fixture.scene.game, unit = game === 'badeeha' ? 'فريقان' : 'لاعبون';
+    return <OnlineDirectoryView game={game} enabled rooms={[{ code: '123456', roomName: 'مجلس المعاينة', players: 2, capacity: game === 'badeeha' ? 4 : 8, status: 'waiting' }]}
+      renderRoom={room => <OnlineRoomRow room={room} statusLabel="تنتظر اللاعبين" subtitle={unit} canJoin onJoin={noop} />}
+      onCreate={noop} onCode={noop} onRefresh={noop} nextCursor="demo-next" hasPrevious onPrevious={noop} onNext={noop}
+      filters={<p>تصفية الغرف التجريبية</p>} help={<p>تعليمات المعاينة فقط؛ لا طلبات للخادم.</p>} />;
+  }
+  if (sceneId === 'online.entry') return <section data-design-screen="online.entry" className="stack online-screen"><Entry initialGame="ersomha" initialView="create" onJoined={noop} /></section>;
   if (sceneId === 'online.lobby') return <Lobby {...roomProps} />;
   if (sceneId === 'online.chrome') return <RoomChrome state={state} code="123456" status="connected" error={null} onExit={noop} onKick={noop} onReconnect={noop}><Lobby {...roomProps} /></RoomChrome>;
   if (sceneId.startsWith('online.meenfina.')) return <Match {...roomProps} />;
@@ -109,6 +118,7 @@ export function DesignScene({ sceneId = 'home', previewState, platform, account,
   if (sceneId === 'social.voice') return <VoiceRecorder disabled unavailableReason="معاينة التصميم؛ التسجيل الفعلي معطّل هنا." onSend={resolved} onError={noop} />;
   if (sceneId === 'social.call') return <CallControls call={{ id: 'demo-call', scope: 'group', status: 'active', name: 'شلّة الخميس', startedAt: Date.now() }} currentUserId={fixture.players[0].id} media={{ connected: true, userId: fixture.players[0].id, muted: false, participants: fixture.players.map((p, i) => ({ ...p, identity: p.id, speaking: i === 1, local: i === 0, muted: i === 2 })) }} onMute={resolved} onEnd={noop} onOpen={noop} />;
   if (sceneId === 'home') return <Home />;
+  if (sceneId === 'home.game-mode') return <><Home /><GameModeSheet game={getGame('badeeha')} onClose={noop} onSelect={noop} /></>;
   if (sceneId === 'game-details') return <GameDetails id="ersomha" />;
   if (sceneId === 'players') return <Players />;
   if (sceneId === 'settings') return <Settings />;

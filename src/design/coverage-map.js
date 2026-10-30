@@ -9,19 +9,28 @@ const reasonComposer = "Shown only when the viewer may speak in the selected cha
 const reasonMessageInput = "Available inside the composer only when this viewer may write in the authoritative phase.";
 const reasonSend = "Enabled only for a non-empty permitted message while the authenticated room is connected.";
 const reasonHerald = "Displayed only for a living Herald with an unused charge during the discussion phase.";
-const reasonReports = "Private evidence is mounted only when the player selects the evidence tab.";
-const reasonNotebook = "Session-local notes are mounted only when the player selects the notebook tab.";
-const reasonNotesInput = "The notebook text field is mounted only inside the explicitly selected private notebook tab.";
+const reasonReports = "Private evidence is mounted only in its owner-only evidence dialog after the player explicitly opens it.";
+const reasonNotebook = "Session-local notes are mounted only in the explicitly opened private notebook dialog, without replacing the public timeline.";
+const reasonNotesInput = "The notebook text field is mounted only inside the explicitly opened owner-only notebook dialog.";
 const reasonVoiceResume = "Displayed only when the owned active Mafia call reports blocked audio, allowing the player to resume playback with a gesture.";
 const reasonCancelAbility = "Displayed after a valid night choice is stored, allowing its owner to cancel before the deadline.";
 const reasonReturnCall = "Displayed only when a previous social call can be explicitly resumed after the match ends.";
 const reasonAbilitySubmit = "Night action confirmation appears for an available power; Mafia helpers first choose the ability tab.";
-const reasonAbility = "Authoritative ability controls are mounted in the council tab for a living assigned player.";
+const reasonAbility = "Authoritative ability controls are mounted only in the open decision panel for a living assigned player with a current permitted action.";
 const reasonChat = "Permitted phase messages are mounted only while the council tab is selected by the viewer.";
 const reasonMessages = "The list of messages belongs to the currently visible permitted channel in the council tab.";
 const reasonNarrative = "The public phase illustration and explanation appear when the player switches from private notes or evidence to the council tab.";
 const reasonEvent = "Public event cards appear in the council timeline only when the player selects that tab and the server has supplied public events.";
 const reasonGroups = "Stable exported HomeGroups component; the current Home does not mount this optional group strip.";
+const reasonRetiredHome = "Retired Home shortcut retained for saved-design compatibility; friends use the navigation tab and player management now lives in Settings. No placeholder element is mounted.";
+const reasonMovedMode = "Retired instruction-page mode action retained for saved-design compatibility; the actual mode choices now live in the home.game-mode bottom sheet before instructions.";
+const reasonDirectoryOptions = "This real control is mounted only after the player opens the directory options panel; the default directory fixture keeps that panel closed.";
+const directoryConditional = Object.freeze({
+  'directory-filter': reasonDirectoryOptions, 'directory-help': reasonDirectoryOptions, 'directory-options-close': reasonDirectoryOptions,
+  loading: 'The real directory shows a loading status only while its authenticated room-list request is pending.',
+  empty: 'The enabled directory renders this real empty state only when no suitable rooms are returned.',
+  notice: 'The real directory displays this status only when its caller supplies a notice about room availability.',
+});
 const reasonResume = "A resumable stored match adds these actions; the isolated default fixture starts without a saved session.";
 const reasonAssistance = "Question type, media load state and reveal stage determine these real puzzle controls; the baseline fixture is a text question.";
 const reasonResume2 = "SetupOptions shows resume only when memory storage contains a valid resumable match.";
@@ -47,15 +56,15 @@ const reasonRules = "Stable MaydanModal/Profile modal content exposes these real
 // Each template ID names a semantic component; it never identifies an array index or a user.
 export const DESIGN_RENDERED_NODE_IDS = Object.freeze({
   "mafia.tutorial": Object.freeze(["tutorial-disclosure","tutorial-coach","tutorial-exit","tutorial-help-toggle","tutorial-continue"]),
-  "online.mafia.tools": Object.freeze(["close","content","header","player-safety","rules"]),
+  "online.mafia.tools": Object.freeze(["close","content","header","player-safety","rules","tab.notes"]),
   "online.mafia.spectator": Object.freeze(["chat","event","header","mafia-tools","messages","narrative","observer-delay","phase-title","player-rail","player-seat","players","timer"]),
   "online.mafia.role-card": Object.freeze(["actions","close","content","header","role-content","role-hide"]),
-  "online.mafia.history": Object.freeze(["close","content","header","history","refresh","stats"]),
+  "online.mafia.history": Object.freeze(["close","content","header","history","history-review","history-reference","history-previous","history-next","refresh","stats"]),
   "online.mafia.privacy": Object.freeze(["privacy"]),
-  "online.mafia.guide": Object.freeze(["tutorial-start","back","close","content","continue","header"]),
-  "online.mafia.safety": Object.freeze(["block-exit","close","content","header","report-details","submit"]),
+  "online.mafia.guide": Object.freeze(["tutorial-start","specialist-training","back","close","content","continue","header"]),
+  "online.mafia.safety": Object.freeze(["block-exit","close","content","header","report-category","report-details","submit"]),
   "online.mafia.setup": Object.freeze(["capacity","mode-choice","mode-option","room-name","rules","visibility","voice-mode"]),
-  "online.mafia.directory": Object.freeze(["rules","actions","create-public-room","directory-mode","directory-next","directory-previous","directory-status","directory-voice","header","quick-join","refresh","room-join","room-observe","rooms"]),
+  "online.mafia.directory": Object.freeze(["rules","create-public-room","directory-options","directory-mode","directory-next","directory-previous","directory-status","directory-voice","profile","profile-footer","quick-join","refresh","room","room-join","room-observe","rooms","toolbar"]),
   "online.mafia.lobby": Object.freeze(["chat","close","composer","content","event","header","invite","message-input","messages","player-rail","player-seat","players","ready","room-settings","room-theme","rules","send","start","voice","voice-join"]),
   "online.mafia.role": Object.freeze(["audio-output","chat","event","header","mafia-tools","messages","mute","narrative","phase-title","player-rail","player-seat","players","role-card","role-toggle","tab.clues","tab.council","tab.notes","tabs","timer","voice","voice-leave"]),
   "online.mafia.opening": Object.freeze(["audio-output","chat","composer","event","header","mafia-tools","message-input","messages","mute","narrative","phase-title","player-rail","player-seat","players","role-card","role-toggle","send","tab.clues","tab.council","tab.notes","tabs","timer","voice","voice-leave"]),
@@ -65,8 +74,8 @@ export const DESIGN_RENDERED_NODE_IDS = Object.freeze({
   "online.mafia.nomination": Object.freeze(["ability","ability-submit","abstain","audio-output","chat","composer","event","header","mafia-tools","message-input","messages","mute","narrative","phase-title","player-rail","player-seat","players","role-card","role-toggle","send","tab.clues","tab.council","tab.notes","tabs","timer","voice","voice-leave"]),
   "online.mafia.defense": Object.freeze(["audio-output","chat","defense","event","header","mafia-tools","messages","mute","narrative","phase-title","player-rail","player-seat","players","role-card","role-toggle","tab.clues","tab.council","tab.notes","tabs","timer","voice","voice-leave"]),
   "online.mafia.verdict": Object.freeze(["ability","audio-output","chat","composer","event","header","mafia-tools","message-input","messages","mute","narrative","phase-title","player-rail","player-seat","players","role-card","role-toggle","send","tab.clues","tab.council","tab.notes","tabs","timer","verdict-no","verdict-yes","voice","voice-leave"]),
-  "online.mafia.over": Object.freeze(["header","phase-title","recap","restart","results","rules"]),
-  "online.mafia.closed": Object.freeze(["header","phase-title","recap","results","rules"]),
+  "online.mafia.over": Object.freeze(["header","mafia-tools","phase-title","recap","restart","results","rules"]),
+  "online.mafia.closed": Object.freeze(["header","mafia-tools","phase-title","recap","results","rules"]),
   "online.mafia.waiting": Object.freeze(["notice","rules"]),
   "online.mafia.night.citizen": Object.freeze(["ability","audio-output","chat","event","header","mafia-tools","messages","mute","narrative","phase-title","player-rail","player-seat","players","role-card","role-toggle","tab.clues","tab.council","tab.notes","tabs","timer","voice","voice-leave"]),
   "online.mafia.night.investigator": Object.freeze(["ability","ability-submit","audio-output","chat","event","header","mafia-tools","messages","mute","narrative","phase-title","player-rail","player-seat","players","role-card","role-toggle","tab.clues","tab.council","tab.notes","tabs","timer","voice","voice-leave"]),
@@ -80,12 +89,13 @@ export const DESIGN_RENDERED_NODE_IDS = Object.freeze({
   "online.mafia.night.masker": Object.freeze(["ability","abstain","audio-output","chat","composer","event","header","mafia-tools","mafia-vote","message-input","messages","mute","narrative","night-ability-tab","night-attack-tab","phase-title","player-rail","player-seat","players","role-card","role-toggle","send","tab.clues","tab.council","tab.notes","tabs","timer","voice","voice-leave"]),
   "online.mafia.night.blocker": Object.freeze(["ability","abstain","audio-output","chat","composer","event","header","mafia-tools","mafia-vote","message-input","messages","mute","narrative","night-ability-tab","night-attack-tab","phase-title","player-rail","player-seat","players","role-card","role-toggle","send","tab.clues","tab.council","tab.notes","tabs","timer","voice","voice-leave"]),
   "online.mafia.night.leader": Object.freeze(["ability","ability-submit","audio-output","chat","composer","event","header","mafia-tools","message-input","messages","mute","narrative","phase-title","player-rail","player-seat","players","role-card","role-toggle","send","tab.clues","tab.council","tab.notes","tabs","timer","voice","voice-leave"]),
-  "online.mafia.clues": Object.freeze(["audio-output","header","mafia-tools","mute","phase-title","player-rail","player-seat","players","reports","role-card","role-toggle","tab.clues","tab.council","tab.notes","tabs","timer","voice","voice-leave"]),
-  "online.mafia.notes": Object.freeze(["audio-output","header","mafia-tools","mute","notebook","notes-input","phase-title","player-rail","player-seat","players","role-card","role-toggle","tab.clues","tab.council","tab.notes","tabs","timer","voice","voice-leave"]),
-  "home": Object.freeze(["brand","footer","game-card.badeeha","game-card.mafia","game-card.beep","game-card.ersomha","game-card.fabraka","game-card.jabeen","game-card.mamnoo","game-card.meenfina","games","header","presence","privacy-link","profile","refunds-link","rooms","roster","terms-link","title","tools"]),
-  "game-details": Object.freeze(["actions","back","facts","game-description","game-icon","game-name","hero","online","steps","title","topbar"]),
+  "online.mafia.clues": Object.freeze(["actions","close","content","header","reports","tab.council"]),
+  "online.mafia.notes": Object.freeze(["actions","close","content","header","notebook","notes-input","tab.council"]),
+  "home": Object.freeze(["brand","footer","game-card.badeeha","game-card.mafia","game-card.beep","game-card.ersomha","game-card.fabraka","game-card.jabeen","game-card.mamnoo","game-card.meenfina","games","header","privacy-link","profile","refunds-link","terms-link","title"]),
+  "home.game-mode": Object.freeze(["close","content","header","local-mode","online-mode","sheet-drag-handle"]),
+  "game-details": Object.freeze(["actions","back","facts","game-description","game-icon","game-name","hero","skip-instructions","steps","title","topbar"]),
   "players": Object.freeze(["add-player","avatar-choice","avatar-picker","back","name-input","player-remove","player-row","players","title","topbar"]),
-  "settings": Object.freeze(["about","clear-data","music-volume","plus-store","pricing-link","privacy-link","refunds-link","setting","setting-toggle","settings-account","settings-audio","settings-experience","settings-local","settings-privacy","settings-support","share-reports","sound-test","sound-volume","terms-link","title","topbar"]),
+  "settings": Object.freeze(["about","clear-data","manage-roster","music-volume","plus-store","pricing-link","privacy-link","refunds-link","setting","setting-toggle","settings-account","settings-audio","settings-experience","settings-local","settings-privacy","settings-support","share-reports","sound-test","sound-volume","terms-link","title","topbar"]),
   "account.card": Object.freeze(["account-delete","account-signin","account-signout","profile","purchase","restore","title"]),
   "store": Object.freeze(["artwork","collection","collection-preview","collection-use","collections","plus-details","plus-retry","store-empty","title","topbar"]),
   "about": Object.freeze(["back","license-link","pricing-link","privacy-link","refunds-link","show-all","source-link","terms-link","title","topbar"]),
@@ -130,8 +140,9 @@ export const DESIGN_RENDERED_NODE_IDS = Object.freeze({
   "fabraka.local.reveal": Object.freeze(["header","pause","question","reveal","reveal-card"]),
   "fabraka.local.roundEnd": Object.freeze(["continue","header","pause","round-scores"]),
   "fabraka.local.over": Object.freeze(["exit","options","podium","restart"]),
-  "online.entry": Object.freeze(["avatar-choice","avatar-picker","categories-reset","category-choice","cycles","difficulty","entry","entry-create","entry-join","entry-mode","game-choice.badeeha","game-choice.ersomha","game-choice.fabraka","game-choice.mafia","game-choice.meenfina","game-picker","hero","name-input","room-code","setup-presets-toggle","start"]),
-  "online.lobby": Object.freeze(["allow-replay","categories-reset","category-choice","cycles","difficulty","header","invite","invite-code","invite-copy","invite-qr","invite-share","member","member-remove","players","ready","room-settings","room-theme","save","start"]),
+  "online.entry": Object.freeze(["avatar-choice","avatar-picker","categories-reset","category-choice","cycles","difficulty","entry","entry-create","entry-join","entry-mode","entry-public","name-input","room-code","room-name","room-visibility","setup-presets-toggle","start"]),
+  ...Object.fromEntries(['badeeha','ersomha','fabraka','meenfina'].map(game => [`online.${game}.directory`, Object.freeze(['toolbar','create-public-room','entry-join','refresh','directory-options','rooms','room','room-join','directory-previous','directory-next','profile-footer','profile'])])),
+  "online.lobby": Object.freeze(["allow-replay","appearance-toggle","categories-reset","category-choice","cycles","difficulty","header","invite","invite-code","invite-copy","invite-qr","invite-share","invite-toggle","member","member-remove","players","ready","room-settings","room-theme","rules-toggle","save","start"]),
   "online.chrome": Object.freeze(["connection","exit","room-actions","title","topbar"]),
   "online.meenfina.vote": Object.freeze(["abstain","option","options-list","question","scoreboard","submit","timer","vote-panel"]),
   "online.meenfina.result": Object.freeze(["continue","players","question","scoreboard"]),
@@ -186,7 +197,7 @@ export const DESIGN_RENDERED_NODE_IDS = Object.freeze({
 });
 
 // These controls are state-dependent and intentionally absent from the default fixture.
-export const DESIGN_CONDITIONAL_NODE_REASONS = Object.freeze({
+const conditionalNodeReasons = {
   "mafia.tutorial": {
     "tutorial-retry":"The actual rule-engine decision consequence exposes this whole-checkpoint retry only after an incorrect action or a missed deadline.",
     "tutorial-answer":"The two local learning checks expose their explicit choices only after the full two-night scenario has reached its real ending.",
@@ -214,8 +225,8 @@ export const DESIGN_CONDITIONAL_NODE_REASONS = Object.freeze({
   "online.mafia.nomination": {"cancel-ability":reasonCancelAbility,"privacy":reasonPrivacy,"voice-join":reasonVoiceJoin,"observer-notice":reasonObserverNotice,"chat-channel":reasonChatChannel,"composer":reasonComposer,"message-input":reasonMessageInput,"send":reasonSend,"herald":reasonHerald,"reports":reasonReports,"notebook":reasonNotebook,"notes-input":reasonNotesInput,"voice-resume":reasonVoiceResume},
   "online.mafia.defense": {"cancel-ability":reasonCancelAbility,"privacy":reasonPrivacy,"voice-join":reasonVoiceJoin,"observer-notice":reasonObserverNotice,"chat-channel":reasonChatChannel,"composer":reasonComposer,"message-input":reasonMessageInput,"send":reasonSend,"herald":reasonHerald,"reports":reasonReports,"notebook":reasonNotebook,"notes-input":reasonNotesInput,"voice-resume":reasonVoiceResume},
   "online.mafia.verdict": {"cancel-ability":reasonCancelAbility,"privacy":reasonPrivacy,"voice-join":reasonVoiceJoin,"observer-notice":reasonObserverNotice,"chat-channel":reasonChatChannel,"composer":reasonComposer,"message-input":reasonMessageInput,"send":reasonSend,"herald":reasonHerald,"reports":reasonReports,"notebook":reasonNotebook,"notes-input":reasonNotesInput,"voice-resume":reasonVoiceResume},
-  "online.mafia.over": {"return-call":reasonReturnCall},
-  "online.mafia.closed": {"return-call":reasonReturnCall},
+  "online.mafia.over": {"return-call":reasonReturnCall,"timeline-toggle":"The completed match exposes its real retained, read-only timeline behind this disclosure; no ended-match composer is mounted."},
+  "online.mafia.closed": {"return-call":reasonReturnCall,"timeline-toggle":"The technically closed match preserves its real read-only timeline behind this disclosure without reopening chat or secret actions."},
   "online.mafia.night.citizen": {"ability-submit":reasonAbilitySubmit,"cancel-ability":reasonCancelAbility,"privacy":reasonPrivacy,"voice-join":reasonVoiceJoin,"observer-notice":reasonObserverNotice,"chat-channel":reasonChatChannel,"composer":reasonComposer,"message-input":reasonMessageInput,"send":reasonSend,"herald":reasonHerald,"reports":reasonReports,"notebook":reasonNotebook,"notes-input":reasonNotesInput,"voice-resume":reasonVoiceResume},
   "online.mafia.night.investigator": {"cancel-ability":reasonCancelAbility,"privacy":reasonPrivacy,"voice-join":reasonVoiceJoin,"observer-notice":reasonObserverNotice,"chat-channel":reasonChatChannel,"composer":reasonComposer,"message-input":reasonMessageInput,"send":reasonSend,"herald":reasonHerald,"reports":reasonReports,"notebook":reasonNotebook,"notes-input":reasonNotesInput,"voice-resume":reasonVoiceResume},
   "online.mafia.night.doctor": {"cancel-ability":reasonCancelAbility,"privacy":reasonPrivacy,"voice-join":reasonVoiceJoin,"observer-notice":reasonObserverNotice,"chat-channel":reasonChatChannel,"composer":reasonComposer,"message-input":reasonMessageInput,"send":reasonSend,"herald":reasonHerald,"reports":reasonReports,"notebook":reasonNotebook,"notes-input":reasonNotesInput,"voice-resume":reasonVoiceResume},
@@ -231,20 +242,25 @@ export const DESIGN_CONDITIONAL_NODE_REASONS = Object.freeze({
   "online.mafia.clues": {"cancel-ability":reasonCancelAbility,"privacy":reasonPrivacy,"voice-join":reasonVoiceJoin,"observer-notice":reasonObserverNotice,"chat-channel":reasonChatChannel,"composer":reasonComposer,"message-input":reasonMessageInput,"send":reasonSend,"herald":reasonHerald,"notebook":reasonNotebook,"notes-input":reasonNotesInput,"ability":reasonAbility,"chat":reasonChat,"messages":reasonMessages,"voice-resume":reasonVoiceResume,"narrative":reasonNarrative,"event":reasonEvent},
   "online.mafia.notes": {"cancel-ability":reasonCancelAbility,"privacy":reasonPrivacy,"voice-join":reasonVoiceJoin,"observer-notice":reasonObserverNotice,"chat-channel":reasonChatChannel,"composer":reasonComposer,"message-input":reasonMessageInput,"send":reasonSend,"herald":reasonHerald,"reports":reasonReports,"ability":reasonAbility,"chat":reasonChat,"messages":reasonMessages,"voice-resume":reasonVoiceResume,"narrative":reasonNarrative,"event":reasonEvent},
   "home": {
+    "presence": reasonRetiredHome, "tools": reasonRetiredHome, "rooms": reasonRetiredHome, "roster": reasonRetiredHome,
     "pricing-link": "Web accounts show the pricing link; the iPhone fixture intentionally omits web checkout.",
     "groups": reasonGroups,
     "group-card": reasonGroups
   },
   "game-details": {
-    "local": "Local play is available for the six local games; the baseline fixture shows the online-only drawing game.",
+    "local": reasonMovedMode, "online": reasonMovedMode,
     "home": "MissingGame renders the home action only for an unknown game link."
   },
   "settings": {},
+  ...Object.fromEntries(['badeeha','ersomha','fabraka','meenfina'].map(game => [`online.${game}.directory`, directoryConditional])),
   "badeeha.home": {
     "resume": reasonResume,
     "discard-save": reasonResume
   },
   "badeeha.setup": {
+    "resume": reasonResume, "discard-save": reasonResume,
+    "history": "The platform local entry opens the real team/category setup directly and exposes previous results here; standalone and explicit design-preview entries retain their original Home actions.",
+    "rules": "The platform local setup preserves this real rules action after the shared instruction page; explicit standalone/design-preview fixtures retain the legacy Home entry.",
     "download-pack": "Media-bearing selected categories add the download action; the baseline fixture selects a text category."
   },
   "badeeha.board": {
@@ -289,6 +305,8 @@ export const DESIGN_CONDITIONAL_NODE_REASONS = Object.freeze({
     "tilt-retry": "Auto-tilt mode shows the recovery button if the motion permission or sensor becomes unavailable."
   },
   "online.entry": {
+    "room-name": "The real room-name field is mounted only after public visibility is chosen; the default isolated create form starts with private visibility.",
+    ...Object.fromEntries(['game-picker','game-choice.badeeha','game-choice.ersomha','game-choice.fabraka','game-choice.mafia','game-choice.meenfina','hero'].map(id => [id, 'Retired cross-game entry selector retained for saved-design compatibility; the selected game is now fixed by its route and the shared mode sheet, without placeholder controls.'])),
     "my-history":"Displayed only for a signed-in account while Mafia is the selected game; its data is account scoped.","entry-public":"Available only after selecting Mafia; opens the existing-room directory without creating a paid room.",
     "round-count": "Meenfina room creation uses this round selector; the default creation fixture shows Ersomha settings.",
     "home": reasonHome,
@@ -402,6 +420,7 @@ export const DESIGN_CONDITIONAL_NODE_REASONS = Object.freeze({
     "resume-audio": reasonCallOpen
   },
   "profile": {
+    "mafia-progress-refresh": "The real Mafia progress panel renders this refresh action for a signed-in profile; guest profiles do not mount the account-scoped progress panel.",
     "add-friend": reasonAddFriend,
     "friend-accept": reasonAddFriend,
     "friend-cancel": reasonAddFriend
@@ -427,4 +446,34 @@ export const DESIGN_CONDITIONAL_NODE_REASONS = Object.freeze({
     "field": reasonRules,
     "share-link": reasonRules
   }
-});
+};
+const liveCouncil = /^online\.mafia\.(?:role|opening|night(?:\..+)?|dawn|discussion|nomination|defense|verdict|spectator)$/;
+const legacyPrivateCouncilIds = ['audio-output','mafia-tools','mute','phase-title','player-rail','player-seat','players','role-card','role-toggle','tab.clues','tab.notes','tabs','timer','voice','voice-leave'];
+export const DESIGN_CONDITIONAL_NODE_REASONS = Object.freeze(Object.fromEntries(Object.entries(conditionalNodeReasons).map(([screen, reasons]) => {
+  const next = { ...reasons };
+  if (liveCouncil.test(screen)) {
+    next.ability = reasonAbility;
+    next.narrative = 'The legacy standalone phase narrative is retained for saved-design compatibility; the dense live layout now renders authorized event cards inside the public timeline instead.';
+    next['action-open'] = 'The real decision trigger appears only for a living assigned player with authoritative actions in this phase; opening it never submits the decision.';
+    next['event-overlay'] = 'A noninteractive visual effect is mounted only for a fresh authorized public event, never for the initial snapshot or a private role event.';
+    next['load-older'] = 'The current permitted channel shows this real pagination action only when its local visible window omits older authorized messages.';
+    next['new-messages'] = 'The current permitted channel exposes this real return action only when new authorized messages arrive while the player reads earlier messages.';
+    next.tabs = 'Retired inline tab bar retained for saved-design compatibility; evidence and notes now open real private dialogs while the council remains visible.';
+    next['tab.notes'] = 'The existing notes action moved inside the explicitly opened online.mafia.tools dialog; no hidden placeholder is mounted in the public council.';
+    next['tab.council'] = 'The existing return-to-council action is now inside the owner-only evidence or notes dialog; the public timeline no longer needs an inline return tab.';
+  }
+  if (screen === 'online.mafia.directory') {
+    Object.assign(next, directoryConditional);
+    for (const id of ['actions','header']) next[id] = 'Retired oversized directory heading/action wrapper retained for saved-design compatibility; the real compact toolbar now owns room creation, refresh and entry actions.';
+  }
+  if (['online.mafia.over','online.mafia.closed'].includes(screen)) {
+    for (const id of ['chat','messages','event']) next[id] = 'The retained authorized timeline appears only after its finished-match disclosure is opened; this history is read-only and never mounts a composer.';
+    next['chat-channel'] = 'An eliminated participant may select an already authorized retained channel inside the opened finished-match history; sending remains disabled.';
+    next['load-older'] = 'Older retained authorized rows can be paged inside the opened finished-match history when they exceed its visible window; no chat is sent.';
+    next['new-messages'] = 'The retained timeline offers this return control when its previously scrolled view has unread authorized rows, including the final public event.';
+  }
+  if (['online.mafia.clues','online.mafia.notes'].includes(screen)) {
+    for (const id of legacyPrivateCouncilIds) next[id] = 'Legacy public-council control retained for saved-design compatibility; it remains in its owning public phase underneath the private dialog, not duplicated inside it.';
+  }
+  return [screen, Object.freeze(next)];
+})));

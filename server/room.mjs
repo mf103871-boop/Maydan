@@ -23,6 +23,7 @@ import { canonicalMafiaRatingValue } from './mafia-rating-policy.mjs';
 import { supportsMafiaProtocol,supportsMafiaRuleset } from '../src/online/mafia-shared.js';
 import { createMafiaMetrics } from '../src/online/mafia-metrics.mjs';
 import { MafiaDirectoryFeed } from './mafia-directory-feed.mjs';
+import { normalizeRoomDirectory, assertOnlineDirectoryAdmission, needsOnlineDirectory, updateOnlineDirectory, ONLINE_DIRECTORY_REFRESH_MS } from './online-directory.mjs';
 import { advanceObserverStream,observerNextAlarm,observerView,observerCanPromote,claimObserver,releaseObserver,promoteObserverClaim,observerAuthorizations,OBSERVER_CAP,OBSERVER_LEASE,assertObserverAdmission,loadObserverStream,saveObserverStream,observerEvidenceAccount,observerEvidenceAccounts,dropObserverEvidenceAccounts } from './mafia-observers.mjs';
 import { blockUser } from './social/db.mjs';
 import { getErsomhaPool } from './ersomha-content.mjs';
@@ -102,7 +103,7 @@ export class Room {
       const a = this.attachment(ws);
       return a.id ? this.lastSeen(ws, a) + SOCKET_IDLE : a.authDeadline;
     }).filter(Number.isFinite);
-    return Math.max(now + 1, Math.min(room.game==='mafia'&&room.phase==='closed'?room.closedDeleteAt||now+90000:nextAlarm(room, now), ...deadlines, ...(room.game==='mafia'?[...(room.phase==='closed'?[]:[room.mafiaRenewAt||now+30_000,this.mafiaAuthDeadline(room)]),observerNextAlarm(this.observerStream),room.observerRenewAt||now+30_000]:[]), ...(this.outboxPending() ? [this.outboxAlarm(now)] : [])));
+    return Math.max(now + 1, Math.min(room.game==='mafia'&&room.phase==='closed'?room.closedDeleteAt||now+90000:nextAlarm(room, now), ...deadlines, ...(needsOnlineDirectory(this.env,room)?[this.onlineDirectoryRefreshAt||now+ONLINE_DIRECTORY_REFRESH_MS]:[]), ...(room.game==='mafia'?[...(room.phase==='closed'?[]:[room.mafiaRenewAt||now+30_000,this.mafiaAuthDeadline(room)]),observerNextAlarm(this.observerStream),room.observerRenewAt||now+30_000]:[]), ...(this.outboxPending() ? [this.outboxAlarm(now)] : [])));
   }
   async schedule({ skipIdenticalMafiaAlarm = false } = {}) {
     if (this.room) {
@@ -159,6 +160,7 @@ export class Room {
     if (candidate.game === 'ersomha') { this.drawing = nextDrawing; this.drawingHead = nextDrawingHead; this.drawingArchives = nextArchives; }
     this.profileOutbox = outbox;
     this.mafiaResultOutbox=mafiaOutbox;
+    await this.settleOnlineMetadata(candidate);
     if(candidate.game==='mafia') {
       if(!previous||previous.matchId!==candidate.matchId||previous.phaseId!==candidate.phaseId) {
         const committedAt=Date.now();
@@ -186,6 +188,22 @@ export class Room {
       this.ctx.waitUntil?.(task);
       task.catch(() => {});
     }
+  }
+  async settleOnlineMetadata(room) {
+    if(!needsOnlineDirectory(this.env,room))return;
+    const now=Date.now();
+    const signature=JSON.stringify([room.code,room.createdAt,room.roomTrialClaim,room.directory,room.hostId,room.expiresAt,
+      ['lobby','over','closed'].includes(room.phase)?room.phase:'playing',
+      room.members.filter(m=>!m.left).map(m=>[m.id,m.accountUserId])]);
+    if(this.onlineDirectorySignature===signature&&now<(this.onlineDirectoryRefreshAt||0))return;
+    try {
+      await updateOnlineDirectory(this.env,room,now);
+      this.onlineDirectorySignature=signature;
+    } catch {
+      // Discovery can fail closed without undoing an already persisted game.
+      this.onlineDirectorySignature=null;
+    }
+    this.onlineDirectoryRefreshAt=now+ONLINE_DIRECTORY_REFRESH_MS;
   }
   async settleMafiaMetadata(room) {
     await rankedRoomCommitted(this.env,room);
@@ -598,6 +616,7 @@ export class Room {
         await deleteErsomhaDrawing(this.ctx.storage, this.drawingHead, this.drawingArchives);
       }
       if(candidate.game==='mafia') {await prepareMafiaVoice(this.ctx,this.env,this.room,candidate);await committedMafiaVoice(this.ctx,this.env,candidate);if(candidate.mafiaMedia?.failed){this.mafiaCleanupRetryAt=Date.now()+STATS_RETRY;await this.ctx.storage.setAlarm(this.mafiaCleanupRetryAt);return;}await cleanupMafiaSeats(this.env,candidate);for(const observer of Object.values(candidate.observers||{}))await releaseObserver(this.env,candidate,observer);await updateMafiaDirectory(this.env,candidate);}
+      await this.settleOnlineMetadata(candidate);
       if (this.profileOutbox.length||this.mafiaResultOutbox.length) await this.deleteKey('room');
       else await this.ctx.storage.deleteAll();
       this.room = null;
@@ -623,6 +642,7 @@ export class Room {
         await this.commit(stopped);
       }
     } else {
+      await this.settleOnlineMetadata(this.room);
       this.fastAdvanceRoom = this.room;
       this.fastAdvanceUntil = this.alarmAt(this.room, now);
     }
@@ -726,10 +746,12 @@ export class Room {
             const owner = this.room.members.find((m) => m.id === input.id && !m.left);
             if (!owner || owner.tokenHash !== input.tokenHash) return json({ error: 'COLLISION' }, 409);
             if ((this.room.game || 'meenfina') !== (input.game || 'meenfina')) fail('GAME');
-            if (['ersomha','mafia'].includes(this.room.game) && owner.accountUserId !== input.accountUserId) fail('AUTH', 401);
+            if ((['ersomha','mafia'].includes(this.room.game)||this.room.directory?.visibility==='public') && owner.accountUserId !== input.accountUserId) fail('AUTH', 401);
             return json({ code: this.room.code, id: input.id, game: this.room.game || 'meenfina' });
           }
           const created = createRoom(code, input, Date.now());
+          const directory=normalizeRoomDirectory(input,this.env);
+          if(directory)created.directory=directory;
           created.roomTrialGate = input.roomTrialGate || null;
           created.roomTrialClaim = crypto.randomUUID();
           created.trialOwnerId = input.id;
@@ -832,6 +854,7 @@ export class Room {
         }
         if (request.method === 'POST' && endpoint === 'join') {
           const input = await credentials(await readJson(request));
+          await assertOnlineDirectoryAdmission(this.env,this.room,input);
           if (this.room.game === 'badeeha' && input.capabilities?.badeeha !== BADEEHA_PROTOCOL) fail('UPDATE_REQUIRED', 409);
           if(this.room.game==='mafia') {
             if(this.room.ranked&&!this.room.members.some(m=>!m.left&&m.id===input.id&&m.accountUserId===input.accountUserId))fail('MAFIA_RANKED_PRIVATE',403);
@@ -943,11 +966,11 @@ export class Room {
           if (now > a.authDeadline) fail('AUTH', 401);
           const id = await this.authenticate(command);
           let accountIdentity={};
-          if (['ersomha','mafia'].includes(this.room.game)) {
+          if (['ersomha','mafia'].includes(this.room.game)||this.room.directory?.visibility==='public') {
             // Room tokens identify a seat, not an account. Ask only Ersomha
             // clients for a live bearer before revealing account-scoped words.
             // Older games keep their original single-message seat handshake.
-            if (command.accountAuthorization === undefined) { this.send(ws, { type: 'account-auth', game: this.room.game }); return; }
+            if (command.accountAuthorization === undefined) { this.send(ws, { type: 'account-auth', game: this.room.game, ...(this.room.directory?.visibility==='public'?{publicDirectory:true}:{}) }); return; }
             if (typeof command.accountAuthorization !== 'string' || command.accountAuthorization.length > 512) fail('AUTH', 401);
             const request = new Request(`https://room.internal/api/rooms/${this.room.code}/socket`, { headers: { authorization: command.accountAuthorization } });
             let auth;
@@ -955,7 +978,7 @@ export class Room {
             catch (error) { if (error instanceof RoomError && error.status < 500) fail('AUTH', 401); throw error; }
             const seat = member(this.room, id);
             if (auth.user.id !== seat.accountUserId || !await this.env.DB.prepare(`SELECT 1 AS ok WHERE ${liveAccountSql('?')}`).bind(auth.user.id, auth.user.id).first()) fail('AUTH', 401);
-            if(this.room.game==='mafia')accountIdentity={accountSessionId:auth.session.id,accountUserId:auth.user.id,accountExpiresAt:Math.min(auth.session.expires_at,auth.session.revoked_at??Number.MAX_SAFE_INTEGER)};
+            if(this.room.game==='mafia'||this.room.directory?.visibility==='public')accountIdentity={accountSessionId:auth.session.id,accountUserId:auth.user.id,accountExpiresAt:Math.min(auth.session.expires_at,auth.session.revoked_at??Number.MAX_SAFE_INTEGER)};
           }
           // Only one controlling connection per seat; old close cannot disconnect the replacement.
           for (const other of this.sockets()) if (other !== ws && this.attachment(other).id === id) {
@@ -973,6 +996,9 @@ export class Room {
         // failed login: answering with INVALID keeps the player's session alive.
         if (!a.id) fail('AUTH', 401);
         if (!requestId) fail('INVALID');
+        if(this.room.directory?.visibility==='public'&&this.room.game!=='mafia') {
+          if(!await this.env.DB.prepare(`SELECT 1 FROM sessions WHERE id=? AND user_id=? AND expires_at>? AND (revoked_at IS NULL OR revoked_at>?) AND ${liveAccountSql('sessions.user_id')}`).bind(a.accountSessionId||'',a.accountUserId||'',now,now).first())fail('AUTH',401);
+        }
         let mafiaSessionProof=null;
         if(this.room.game==='mafia') {
           if(this.room.ranked&&['ready','settings','start','restart','kick','appearance','react'].includes(command.type))fail('MAFIA_RANKED_FIXED',403);

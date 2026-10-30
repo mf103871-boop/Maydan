@@ -24,4 +24,5 @@ export const action = (room, id, command, now, deck) => model(room).action(room,
 export const tick = (room, now) => model(room).tick(room, now);
 export const nextAlarm = (room, now) => model(room).nextAlarm(room, now);
 export const snapshot = (room, id, now) => ({ ...model(room).snapshot(room, id, now), game: room.game || 'meenfina',
+  ...(room.directory ? { directory: { visibility: room.directory.visibility, ...(room.directory.name ? { name: room.directory.name } : {}) } } : {}),
   trialStarted: Boolean(room.trialStarted), ...(room.trialOwnerId ? { trialOwnerId: room.trialOwnerId } : {}) });

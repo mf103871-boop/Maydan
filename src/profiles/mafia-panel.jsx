@@ -29,7 +29,7 @@ function Preferences({data,busy,onSave}) {
 export function MafiaProgressView({state,owner=false,onRetry=()=>{},onSave=()=>{}}) {
   const {data,loading,saving,error}=state;
   return <section className="mafia-profile" dir="rtl" aria-label="تقدم مافيا"><style>{css}</style>
-    <header><h2>{owner?'رحلتك في مافيا':'رحلة اللاعب في مافيا'}</h2><button type="button" onClick={onRetry} disabled={loading||saving} aria-label="تحديث تقدم مافيا">تحديث</button></header>
+    <header><h2>{owner?'رحلتك في مافيا':'رحلة اللاعب في مافيا'}</h2><button data-design-id="mafia-progress-refresh" type="button" onClick={onRetry} disabled={loading||saving} aria-label="تحديث تقدم مافيا">تحديث</button></header>
     {loading?<p role="status">جارٍ تحميل تقدم مافيا…</p>:<>
       {error&&<p className="mafia-profile-error" role="alert">{messages[error]||'تعذّر تحميل تقدم مافيا. حاول مرة أخرى.'}</p>}
       {data?.available===false?<p>{data.preferencesLocked?messages.MAFIA_SOCIAL_LOCKED:'تقدم مافيا غير متاح للعرض حاليًا.'}</p>:data?.available===true?<>

@@ -110,7 +110,7 @@ export class RoomClient {
       if (ws !== this.ws || this.stopped) return;
       // A prior authenticated state tells us this seat needs an account. Read
       // its current bearer again, saving one round trip during reconnection.
-      const accountAuthorization = ['ersomha','mafia'].includes(this.state?.game) ? this.accountAuthorization() : undefined;
+      const accountAuthorization = ['ersomha','mafia'].includes(this.state?.game)||this.state?.directory?.visibility==='public' ? this.accountAuthorization() : undefined;
       if (this.stopped) return;
       try { ws.send(JSON.stringify({ type: 'auth', ...this.session, capabilities: ROOM_CAPABILITIES, ...(accountAuthorization ? { accountAuthorization } : {}) })); }
       catch { this.reconnectNow(); return; }
@@ -127,7 +127,7 @@ export class RoomClient {
       if (event.data === 'pong') return;
       let message;
       try { message = JSON.parse(event.data); } catch { return; }
-      if (message.type === 'account-auth' && ['ersomha','mafia'].includes(message.game)) {
+      if (message.type === 'account-auth' && (['ersomha','mafia'].includes(message.game)||(message.publicDirectory===true&&['badeeha','fabraka','meenfina'].includes(message.game)))) {
         // Read the account at challenge time, including on reconnect. Never
         // persist the bearer with the seat or place it in the WebSocket URL.
         const authorization = this.accountAuthorization();
@@ -235,6 +235,12 @@ export function getPublicRooms(server, filters = 'all', options = {}) {
   const query = new URLSearchParams({game:'mafia',mode:['classic','shadow'].includes(value.mode)?value.mode:'all',voice:['optional','off'].includes(value.voice)?value.voice:'all',status:['waiting','playing','finished'].includes(value.status)?value.status:'all'});
   if(value.cursor) query.set('cursor',value.cursor);
   return getRoomResource(server,`/api/rooms/public?${query}`,options);
+}
+export function getOnlinePublicRooms(server, filters = {}, options = {}) {
+  if (!['badeeha','ersomha','fabraka','meenfina'].includes(filters.game)) return Promise.reject(new ClientError('GAME'));
+  const query = new URLSearchParams({ game:filters.game, status:['waiting','playing'].includes(filters.status)?filters.status:'all' });
+  if(filters.cursor)query.set('cursor',filters.cursor);
+  return getRoomResource(server,`/api/online/rooms/public?${query}`,options);
 }
 // Invalidations carry no room data. HTTP remains authoritative; visible-tab polling
 // survives proxy/socket failures. Teardown fences every late callback.

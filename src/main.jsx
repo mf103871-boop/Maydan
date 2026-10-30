@@ -32,10 +32,17 @@ function armRuntimeErrorHandlers() {
 }
 
 try {
-  createRoot(rootElement, {
+  const appRoot = createRoot(rootElement, {
     onUncaughtError: (error) => showFatal(error),
     onCaughtError: (error) => log('[ميدان]', error),
-  }).render(<PlatformApp />);
+  });
+  // Keep the build flag on the import branch itself: an intermediate runtime
+  // variable prevents esbuild from removing the local tool module completely.
+  if (typeof __MAYDAN_UI_PREVIEW__ !== 'undefined' && __MAYDAN_UI_PREVIEW__
+    && ['127.0.0.1', 'localhost', '[::1]'].includes(location.hostname)
+    && location.pathname === '/__preview__/scene') {
+    import('./preview/LocalUIScenes.jsx').then(({ LocalUIScenes }) => appRoot.render(<LocalUIScenes />)).catch(showFatal);
+  } else appRoot.render(<PlatformApp />);
   armRuntimeErrorHandlers();
 } catch (error) {
   showFatal(error);

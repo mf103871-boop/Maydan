@@ -18,6 +18,7 @@ const DIST = path.join(ROOT, 'dist');
 const OUT = path.resolve(process.argv[2] || path.join(os.tmpdir(), 'maydan-e2e', 'startup-images'));
 const hash = (bytes) => createHash('sha256').update(bytes).digest('hex');
 const results = [], errors = [], requests = [], contexts = [];
+const pageRequests = new WeakMap();
 let browser, server, currentPage, base, gateRelease;
 let scenario = 'prepare', gateEnabled = true, failedPath = null;
 const gate = new Promise((resolve) => { gateRelease = resolve; });
@@ -38,6 +39,28 @@ const requestCounts = () => {
   return counts;
 };
 const countDelta = (before) => Object.entries(requestCounts()).map(([key, n]) => ({ key, count: n - (before[key] || 0) })).filter((x) => x.count > 0);
+async function electiveRequestsSince(page, offset, electiveKeys) {
+  // Direct local entry now mounts the real category picker. Its DOM images are
+  // required UI, unlike fetches from the paused question-download queue. Permit
+  // only actual picker cover sources requested as DOM images; a fetch for the
+  // same URL, or any question image, still counts as forbidden elective traffic.
+  // Observe the browser initiator too: a service worker's forwarded request can
+  // have Sec-Fetch-Dest: empty even when its original requester was an <img>.
+  const coverKeys = new Set(await page.locator('[data-design-screen="badeeha.setup"] .m-category-cover img').evaluateAll(images => images.map(image => {
+    const url = new URL(image.src, location.href); return url.pathname + url.search;
+  })));
+  const initiators = pageRequests.get(page);
+  const isPickerCover = request => request.key.startsWith('/media/badeeha-covers/') && coverKeys.has(request.key);
+  const actualDOMImages = new Set(initiators.filter(request => request.type === 'image' && isPickerCover(request)).map(request => request.key));
+  const traffic = requests.slice(offset.server).filter(request => request.image && electiveKeys.has(request.key));
+  const required = request => isPickerCover(request) && actualDOMImages.has(request.key);
+  return {
+    requests: traffic.filter(request => !required(request)),
+    unexpectedInitiators: initiators.slice(offset.browser).filter(request => electiveKeys.has(request.key) && !(request.type === 'image' && isPickerCover(request))),
+    requiredPickerCovers: traffic.filter(required).length,
+  };
+}
+const requestOffset = page => ({ server: requests.length, browser: pageRequests.get(page).length });
 async function screenshot(page, name) {
   await page.screenshot({ path: path.join(OUT, `${name}.png`), fullPage: true, animations: 'disabled' });
 }
@@ -63,6 +86,11 @@ async function newContext() {
 }
 async function newPage(context) {
   const page = await context.newPage();
+  const initiated = []; pageRequests.set(page, initiated);
+  page.on('request', request => {
+    const url = new URL(request.url());
+    if (url.origin === base && imagePath(url.href)) initiated.push({ key: url.pathname + url.search, type: request.resourceType() });
+  });
   currentPage = page;
   page.setDefaultTimeout(30000);
   page.on('pageerror', (error) => errors.push({ scenario, message: error.message }));
@@ -151,7 +179,7 @@ try {
       // data: URLs inside the document until they became hashed files); the held
       // responses model slow question images.
       const isImage = imagePath(parsed.href) && !parsed.pathname.startsWith('/assets/brand/');
-      requests.push({ scenario, key, image: isImage });
+      requests.push({ scenario, key, image: isImage, destination: req.headers['sec-fetch-dest'] || '' });
       if (isImage && gateEnabled && !allowedFirst.has(key)) await gate;
       if (res.destroyed) return;
       if (isImage && parsed.pathname === failedPath) { res.writeHead(503, { 'Content-Type': 'text/plain', 'Cache-Control': 'no-store' }); res.end('Injected image outage'); return; }
@@ -194,9 +222,9 @@ try {
 
   scenario = 'play-pauses-elective-downloads';
   await page.goto(`${base}/#/play/badeeha`, { waitUntil: 'domcontentloaded' });
-  await ready(page, '.m-home');
+  await ready(page, '[data-design-screen="badeeha.setup"]');
   await page.waitForFunction(() => document.querySelector('.startup-background')?.innerText.includes('متوقف مؤقتًا'));
-  const beforePlayDrain = requestCounts();
+  const beforePlayDrain = requestOffset(page);
   gateEnabled = false; gateRelease();
   // Three image bodies already in flight may finish, but the play route must not
   // advance the elective queue afterwards. Verify their actual bytes, not a delay
@@ -206,10 +234,10 @@ try {
     return (await Promise.all(urls.map(url => cache.match(new URL(url, location.href).href)))).every(Boolean);
   }, expected.slice(0, 15).map(entry => entry.url), { timeout: 30000, polling: 100 });
   await page.waitForTimeout(1000);
-  const duringPlay = countDelta(beforePlayDrain).filter(entry => electiveKeys.has(entry.key));
+  const duringPlay = await electiveRequestsSince(page, beforePlayDrain, electiveKeys);
   const drained = await inspectCache(page, expected.slice(0, 15));
-  check('play pauses new elective image traffic while preserving already in-flight bodies', duringPlay.length === 0 && drained.every(entry => entry.ok), { requests: duringPlay, completedBodies: drained.length, failures: drained.filter(entry => !entry.ok) });
-  check('paused download is explicit and never blocks the mounted game', await page.locator('.m-home').isVisible() && (await layout(page)).background.includes('متوقف مؤقتًا'));
+  check('play pauses new elective image traffic while preserving already in-flight bodies', duringPlay.requests.length === 0 && duringPlay.unexpectedInitiators.length === 0 && drained.every(entry => entry.ok), { ...duringPlay, completedBodies: drained.length, failures: drained.filter(entry => !entry.ok) });
+  check('paused download is explicit and never blocks the mounted game', await page.locator('[data-design-screen="badeeha.setup"]').isVisible() && (await layout(page)).background.includes('متوقف مؤقتًا'));
   await screenshot(page, 'play-download-paused');
 
   scenario = 'menu-resumes-downloads';
@@ -232,7 +260,7 @@ try {
   const beforeOffline = requestCounts();
   await context.setOffline(true);
   await page.reload({ waitUntil: 'domcontentloaded' }); await ready(page);
-  await page.goto(`${base}/#/play/badeeha`, { waitUntil: 'domcontentloaded' }); await ready(page, '.m-home');
+  await page.goto(`${base}/#/play/badeeha`, { waitUntil: 'domcontentloaded' }); await ready(page, '[data-design-screen="badeeha.setup"]');
   const decoded = await page.evaluate(async (urls) => {
     const rows = [], queue = [...urls];
     async function run() { while (queue.length) { const url = queue.shift(), image = new Image(); image.src = url;
@@ -250,12 +278,13 @@ try {
   failedPath = new URL(target.url, base).pathname;
   const failureContext = await newContext(), failurePage = await newPage(failureContext);
   const failureLaunchAt = Date.now();
-  const beforeDirectPlay = requestCounts();
+  const beforeDirectPlay = requestOffset(failurePage);
   await failurePage.goto(`${base}/#/play/badeeha`, { waitUntil: 'domcontentloaded' });
   await failurePage.waitForFunction(() => { const p = document.querySelector('progress[aria-label="تحميل صور اللعبة"]'); return p && p.max === 510 && p.value === 0; });
-  await ready(failurePage, '.m-home');
+  await ready(failurePage, '[data-design-screen="badeeha.setup"]');
   const failureEntryMs = Date.now() - failureLaunchAt;
-  check('direct game entry takes less than five seconds without starting elective image traffic', failureEntryMs < 5000 && await failurePage.locator('.m-home').isVisible() && countDelta(beforeDirectPlay).filter(entry => electiveKeys.has(entry.key)).length === 0, { failureEntryMs, requests: countDelta(beforeDirectPlay).filter(entry => electiveKeys.has(entry.key)) });
+  const directTraffic = await electiveRequestsSince(failurePage, beforeDirectPlay, electiveKeys);
+  check('direct game entry takes less than five seconds without starting elective image traffic', failureEntryMs < 5000 && await failurePage.locator('[data-design-screen="badeeha.setup"]').isVisible() && directTraffic.requests.length === 0 && directTraffic.unexpectedInitiators.length === 0, { failureEntryMs, ...directTraffic });
   check('the pending direct-entry download is reported as paused, not complete', (await layout(failurePage)).background.includes('متوقف مؤقتًا'));
   // The injected failure is exercised only after returning to an allowed menu.
   await failurePage.goto(`${base}/#/`, { waitUntil: 'domcontentloaded' }); await ready(failurePage);

@@ -1,0 +1,21 @@
+{
+  "checkedAt": "2026-10-30T14:44:52.025Z",
+  "source": "Actual shared scene component in loopback-only review wrapper",
+  "results": [
+    {
+      "engine": "chromium",
+      "sceneAtlasLoaded": true,
+      "sceneWidth": 92,
+      "sceneHeight": 51.828125,
+      "uncaughtErrors": 0
+    },
+    {
+      "engine": "webkit",
+      "sceneAtlasLoaded": true,
+      "sceneWidth": 92,
+      "sceneHeight": 51.828125,
+      "uncaughtErrors": 0
+    }
+  ],
+  "physicalIPhone": false
+}

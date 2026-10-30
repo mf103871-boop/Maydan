@@ -1,0 +1,122 @@
+{
+  "checkedAt": "2026-10-30T14:39:00.816Z",
+  "source": "full product shell + loopback HTTP/WebSocket server",
+  "network": [
+    {
+      "game": "mafia",
+      "status": 200,
+      "roomCount": 1,
+      "privateExcluded": true
+    },
+    {
+      "game": "badeeha",
+      "status": 200,
+      "roomCount": 1,
+      "privateExcluded": true
+    },
+    {
+      "game": "ersomha",
+      "status": 200,
+      "roomCount": 1,
+      "privateExcluded": true
+    },
+    {
+      "game": "fabraka",
+      "status": 200,
+      "roomCount": 1,
+      "privateExcluded": true
+    },
+    {
+      "game": "meenfina",
+      "status": 200,
+      "roomCount": 1,
+      "privateExcluded": true
+    }
+  ],
+  "browser": [
+    {
+      "engine": "chromium",
+      "status": "passed",
+      "dimensions": [
+        [
+          360,
+          640
+        ],
+        [
+          390,
+          844
+        ],
+        [
+          430,
+          932
+        ],
+        [
+          844,
+          390
+        ],
+        [
+          768,
+          1024
+        ],
+        [
+          1180,
+          800
+        ]
+      ],
+      "realDirectories": 5,
+      "independentRoomClients": 2,
+      "liveGame": "fabraka",
+      "liveJoinedPlayers": 4,
+      "readySynchronized": true,
+      "syntheticMafiaScenes": 5,
+      "longList": 32,
+      "uncaughtErrors": 0,
+      "externalRequests": 0
+    },
+    {
+      "engine": "webkit",
+      "status": "passed",
+      "dimensions": [
+        [
+          360,
+          640
+        ],
+        [
+          390,
+          844
+        ],
+        [
+          430,
+          932
+        ],
+        [
+          844,
+          390
+        ],
+        [
+          768,
+          1024
+        ],
+        [
+          1180,
+          800
+        ]
+      ],
+      "realDirectories": 5,
+      "independentRoomClients": 2,
+      "liveGame": "meenfina",
+      "liveJoinedPlayers": 5,
+      "readySynchronized": true,
+      "syntheticMafiaScenes": 5,
+      "longList": 32,
+      "uncaughtErrors": 0,
+      "externalRequests": 0
+    }
+  ],
+  "physicalIPhone": false,
+  "providerCalls": false,
+  "limitations": [
+    "Viewport sizes are browser evidence, not a physical keyboard or native iPhone test.",
+    "Mafia scenes and long directory are explicit synthetic visual fixtures. Real directory reads are recorded separately."
+  ]
+}

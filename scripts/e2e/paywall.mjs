@@ -72,11 +72,11 @@ const tap = async (t) => { const ok = await page.evaluate((x) => { const el = [.
 const lockedCounts = async () => {
   // الخروج من شاشة اللعب يمر بحارس الخروج (استعادة ثم رجوع خطوة)، فمدته متغيرة: ننتظر
   // شاشة التفاصيل وزرها فعلًا بدل مهلة ثابتة.
-  await go('#/game/badeeha', 0);
-  await page.waitForFunction(() => location.hash === '#/game/badeeha'
-    && [...document.querySelectorAll('button')].some((b) => !b.disabled && b.offsetParent !== null && b.textContent.trim() === 'العب على جهاز واحد'));
-  await tap('العب على جهاز واحد'); await page.waitForSelector('.m-home');
-  await page.evaluate(() => document.querySelector('.m-hero-cta').click()); await page.waitForSelector('.m-category-pick'); await page.waitForTimeout(500);
+  await go('#/game/badeeha?mode=local', 0);
+  await page.getByRole('button', { name: 'تخطي التعليمات', exact: true }).waitFor();
+  await page.getByRole('button', { name: 'تخطي التعليمات', exact: true }).click();
+  await page.locator('[data-design-screen="badeeha.setup"]').waitFor();
+  await page.waitForSelector('.m-category-pick'); await page.waitForTimeout(500);
   return page.evaluate(() => ({ locked: document.querySelectorAll('.m-category-pick.is-locked').length, total: document.querySelectorAll('.m-category-pick').length }));
 };
 const hex = (n) => [...crypto.getRandomValues(new Uint8Array(n))].map((b) => b.toString(16).padStart(2, '0')).join('');
@@ -154,29 +154,31 @@ await writeAccount('session', token2); await clearAccount('me', 'trials');
 await reload(); await go('#/game/beep'); await page.waitForTimeout(500);
 const note2 = await page.evaluate(() => (document.querySelector('.details-plus-note') || {}).textContent || '');
 check('free user: all gameplay free note', /مجانية|مجانًا/.test(note2), note2);
-await tap('العب'); await page.waitForTimeout(600);
-check('first play goes to setup (no paywall)', await page.evaluate(() => !document.querySelector('.paywall') && !!document.querySelector('[aria-label^="إعداد"]')));
+await page.getByRole('button', { name: 'تخطي التعليمات', exact: true }).click();
+await page.locator('.game-frame [aria-label^="إعداد"]').waitFor();
+check('first play goes to setup (no paywall)', await page.evaluate(() => !document.querySelector('.paywall') && !!document.querySelector('.game-frame [aria-label^="إعداد"]')));
 // الواجهة القديمة لا تستهلك تجربة جديدة، و markTrial لم يعد يرسلها.
 const tr = await apiCall('/api/trials/beep', {}, token2); check('legacy trial endpoint does not charge play', tr.status === 200 && !tr.body?.trials?.beep, JSON.stringify(tr.body?.trials));
 await reload(); await go('#/game/beep'); await page.waitForTimeout(500);
 const note3 = await page.evaluate(() => (document.querySelector('.details-plus-note') || {}).textContent || '');
 check('after legacy trial request: still free', /مجانية|مجانًا/.test(note3), note3);
-await tap('العب'); await page.waitForTimeout(700); await shot('05-trial-paywall');
+await page.getByRole('button', { name: 'تخطي التعليمات', exact: true }).click();
+await page.locator('.game-frame [aria-label^="إعداد"]').waitFor(); await shot('05-trial-paywall');
 const pw2 = await page.evaluate(() => { const s = document.querySelector('.paywall'); return { open: !!s, reason: s && s.dataset.reason }; });
 check('repeat play has no paywall', !pw2.open, JSON.stringify(pw2));
 // الرئيسية: شارات.
 // الحوار يبقى مسجّلًا كطبقة رجوع طوال حركة الإغلاق، فتغيير العنوان يدويًا خلالها يُعامَل
 // كرجوع يغلق الحوار؛ ننتظر خروجه قبل الانتقال كما يفعل اللاعب.
 await go('#/'); await page.waitForTimeout(500); await shot('06-home-badges');
-const badges = await page.evaluate(() => [...document.querySelectorAll('.card-badge')].map((b) => b.textContent.trim()));
-check('home badges present', badges.length >= 5, JSON.stringify(badges));
+const rows = await page.locator('[data-design-id^="game-card."]').evaluateAll((cards) => cards.map(card => ({ id: card.dataset.designId, label: card.textContent.trim(), disabled: card.disabled })));
+check('all eight game rows remain available without subscription locks', rows.length === 8 && rows.every(row => !row.disabled && row.label.length > 0) && new Set(rows.map(row => row.id)).size === 8, JSON.stringify(rows));
 
 // Old clients may retain spent-trial flags locally; every local setup remains accessible.
 await writeAccount('trials', { beep:true, mamnoo:true, jabeen:true, fabraka:true, meenfina:true, ersomha:true, mafia:true });
 await reload();
 for (const game of ['beep','mamnoo','jabeen','fabraka','meenfina']) {
-  await go(`#/game/${game}`);
-  await page.locator('[data-design-id="local"]').click();
+  await go(`#/game/${game}?mode=local`);
+  await page.getByRole('button', { name: 'تخطي التعليمات', exact: true }).click();
   await page.locator('.game-frame [aria-label^="إعداد"]').waitFor();
   check(`spent legacy trial: ${game} setup opens freely`, !(await page.locator('.paywall').count()));
 }

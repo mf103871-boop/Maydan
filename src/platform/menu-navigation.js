@@ -14,7 +14,8 @@ export function menuSection(route, previous = 'games') {
 }
 
 export function menuRouteVisible(route, socialUI) {
-  if (['play', 'room', 'mafia-tutorial'].includes(route.name)) return false;
+  // The room directory owns a compact profile footer; do not stack menu chrome.
+  if (['play', 'room', 'online', 'mafia-tutorial'].includes(route.name)) return false;
   if (route.name === 'friend-group' || (route.name === 'friends' && route.params?.id)) return false;
   if (socialUI?.presentation === 'page' && socialUI.view?.type !== 'list') return false;
   return true;

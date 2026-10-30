@@ -34,16 +34,20 @@ export function createMafiaPhaseAudio(sound) {
   let generation = 0;
   let disposed = false;
   let suspended = false;
+  let viewerScope = null;
   const stop = () => sound?.stopCues?.(Object.keys(MAFIA_CUES));
   return {
-    update(state, { hidden = false, preview = false } = {}) {
+    update(state, { hidden = false, preview = false, ownerId = '' } = {}) {
       if (disposed) return;
+      const nextScope = JSON.stringify([ownerId,state?.code||'']);
+      if(nextScope!==viewerScope){viewerScope=nextScope;initialized=false;currentKey=null;generation++;stop();}
       const key = state?.matchId && state?.phaseId ? `${state.matchId}:${state.phaseId}` : null;
       const unavailable = hidden || preview || !!state?.waiting || !key;
+      const resuming = suspended;
       if (unavailable && !suspended) { generation += 1; stop(); }
       suspended = unavailable;
       if (initialized && key === currentKey) return;
-      const first = !initialized;
+      const first = !initialized || resuming;
       initialized = true;
       currentKey = key;
       generation += 1;
@@ -65,10 +69,12 @@ export function createMafiaPhaseAudio(sound) {
 // The server's public sequence is monotonic; stale/reordered history cannot
 // replay after a reconnect, and private reports are never inspected.
 export function createMafiaPublicAudio(sound, { now = Date.now } = {}) {
-  let match = null, phaseId = null, latest = 0, initialized = false, generation = 0, disposed = false;
+  let match = null, phaseId = null, latest = 0, initialized = false, generation = 0, disposed = false, viewerScope = null;
   return {
-    update(state, { hidden = false, preview = false } = {}) {
+    update(state, { hidden = false, preview = false, ownerId = '' } = {}) {
       if (disposed) return;
+      const nextScope=JSON.stringify([ownerId,state?.code||'']);
+      if(nextScope!==viewerScope){viewerScope=nextScope;initialized=false;latest=0;generation++;}
       const matchKey = state?.matchId ? `${state.code || ''}:${state.matchId}` : null;
       if (match !== matchKey) { match = matchKey; initialized = false; latest = 0; generation++; }
       if (phaseId !== state?.phaseId || hidden || preview) { phaseId = state?.phaseId; generation++; }
@@ -92,5 +98,29 @@ export function createMafiaPublicAudio(sound, { now = Date.now } = {}) {
     },
     suspend() { generation++; initialized = false; },
     dispose() { disposed = true; generation++; },
+  };
+}
+
+// The supplied value comes from the same server-aligned clock shown by the UI.
+// Sparse updates play one quiet tick, never a backlog of missed seconds.
+export function createMafiaCountdownAudio(sound) {
+  let key=null,last=null,initialized=false,generation=0,suspended=false,disposed=false;
+  return {
+    update(state,{remaining=null,hidden=false,preview=false,ownerId=''}={}) {
+      if(disposed)return;
+      const next=state?.matchId&&state?.phaseId?JSON.stringify([ownerId,state.code||'',state.matchId,state.phaseId]):null;
+      if(next!==key){key=next;last=null;initialized=false;generation++;}
+      const unavailable=hidden||preview||state?.waiting||!next;
+      const baseline=!initialized||unavailable||suspended;
+      if(unavailable||suspended)generation++;
+      initialized=true;suspended=Boolean(unavailable);
+      if(remaining===last)return;
+      last=remaining;generation++;
+      if(baseline||!Number.isInteger(remaining)||remaining<1||remaining>5)return;
+      const epoch=generation;
+      sound?.play?.('tick',{source:'mafia-clock',gain:.55,guard:()=>!disposed&&!suspended&&generation===epoch});
+    },
+    suspend(){suspended=true;generation++;},
+    dispose(){disposed=true;generation++;},
   };
 }

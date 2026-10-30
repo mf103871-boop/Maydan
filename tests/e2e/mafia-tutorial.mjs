@@ -50,8 +50,14 @@ test('full guest tutorial: real actions, wrong consequence/retry, private resume
   const shot=async name=>page.screenshot({path:path.join(output,name+'.png'),fullPage:false});
   const hit=async ids=>page.evaluate(ids=>ids.map(id=>{const elements=[...document.querySelectorAll(`[data-design-id="${id}"]`)];const el=elements.find(e=>e.getBoundingClientRect().width&&e.getBoundingClientRect().height);if(!el)return{id,missing:true};el.scrollIntoView({block:'nearest',inline:'nearest'});const r=el.getBoundingClientRect(),x=r.left+r.width/2,y=r.top+r.height/2,top=document.elementFromPoint(x,y);return{id,width:r.width,height:r.height,x,y,reachable:x>=0&&x<innerWidth&&y>=0&&y<innerHeight&&Boolean(top&&(el===top||el.contains(top)))};}),ids);
   try{
-    await page.goto(origin+'/#/online/mafia');await expectStep('welcome');
+    await page.goto(origin+'/#/online/mafia');
+    await page.getByRole('button',{name:'خيارات الغرف والمساعدة',exact:true}).waitFor();
+    assert.equal(new URL(page.url()).hash,'#/online/mafia');assert.equal(await page.locator('[data-lesson-step]').count(),0,'rooms open before any optional training');
+    await page.getByRole('button',{name:'خيارات الغرف والمساعدة',exact:true}).click();
+    await page.getByRole('button',{name:'المساعدة والمزيد',exact:true}).click();
+    await button('rules').click();await button('tutorial-start').click();await expectStep('welcome');
     assert.equal(new URL(page.url()).hash,'#/tutorial/mafia');
+    assert.ok(await page.locator('.mafia-tutorial-coach h2').evaluate(el=>parseFloat(getComputedStyle(el).fontSize)<=14),'contextual coach keeps its compact type after the shared match stylesheet mounts');
     await continueLesson('lobby-chat');
     for(const [width,height] of [[390,844],[320,568],[430,932],[844,390]]){
       await page.setViewportSize({width,height});await page.waitForTimeout(120);
@@ -73,7 +79,7 @@ test('full guest tutorial: real actions, wrong consequence/retry, private resume
     await page.locator('[data-design-id="player-seat"]').filter({hasText:'ليان'}).click();await button('ability-submit').click();
     await button('tutorial-retry').waitFor();await shot('wrong-investigation');await button('tutorial-retry').click();await expectStep('night-1-pick');
     await page.locator('[data-design-id="player-seat"]').filter({hasText:'سليم'}).click();await button('ability-submit').click();await expectStep('night-1-result');
-    await button('tab.clues').click();await continueLesson('discussion-1');await continueLesson('nomination-1');
+    await button('tab.clues').click();await button('tab.council').click();await continueLesson('discussion-1');await continueLesson('nomination-1');
     await page.locator('[data-design-id="player-seat"]').filter({hasText:'سليم'}).click();await button('ability-submit').click();await page.getByRole('button',{name:'اعتمد اختياري',exact:true}).click();await expectStep('defense-1');
     await continueLesson('verdict-1');await button('verdict-no').click();await page.getByRole('button',{name:'اعتمد اختياري',exact:true}).click();await button('tutorial-retry').waitFor();await shot('wrong-majority');await button('tutorial-retry').click();await expectStep('verdict-1');
     await button('verdict-yes').click();await page.getByRole('button',{name:'اعتمد اختياري',exact:true}).click();await expectStep('verdict-1-result');
@@ -81,7 +87,7 @@ test('full guest tutorial: real actions, wrong consequence/retry, private resume
     await page.goto(origin+'/#/tutorial/mafia');await button('tutorial-resume').click();await expectStep('verdict-1-result');
     await continueLesson('night-2-intro');await continueLesson('night-2-pick');await shot('independent-investigation');
     await page.locator('[data-design-id="player-seat"]').filter({hasText:'مازن'}).click();await button('ability-submit').click();await expectStep('night-2-result');
-    await button('tab.clues').click();await continueLesson('discussion-2');await continueLesson('nomination-2');
+    await button('tab.clues').click();await button('tab.council').click();await continueLesson('discussion-2');await continueLesson('nomination-2');
     await page.locator('[data-design-id="player-seat"]').filter({hasText:'مازن'}).click();await button('ability-submit').click();await page.getByRole('button',{name:'اعتمد اختياري',exact:true}).click();await expectStep('defense-2');await continueLesson('verdict-2');
     await button('verdict-yes').click();await page.getByRole('button',{name:'اعتمد اختياري',exact:true}).click();await expectStep('ending');await shot('ending');
     await continueLesson('quiz-majority');await page.getByRole('button',{name:'أربعة',exact:true}).click();await expectStep('quiz-information');await page.getByRole('button',{name:'لا؛ التمويه قد يضلله والانتماء قد يتغير',exact:true}).click();await expectStep('shadow');
@@ -92,22 +98,21 @@ test('full guest tutorial: real actions, wrong consequence/retry, private resume
   }catch(error){await shot('failure');await writeFile(path.join(output,'failure.json'),JSON.stringify({error:error.message,step:await step().catch(()=>null),errors,writes,sockets,text:await page.locator('body').innerText()},null,2));throw error;}finally{await context.close();}
 });
 
-test('late signed-in completed status unblocks directory without interrupting it with a repeated tutorial',{timeout:45000},async()=>{
+test('signed-in directory opens without a tutorial-status gate or an automatic lesson',{timeout:45000},async()=>{
   const user=await createUser(app.env,{name:'متدرّب',email:`${crypto.randomUUID()}@example.test`});const session=await issueSession(app.env,user.id);
   const context=await browser.newContext({viewport:{width:390,height:844}});
   await context.addInitScript(([key,token])=>localStorage.setItem(key,JSON.stringify(token)),[environmentStorageKey('maydan:account:',app.url)+'session',session.token]);
   let read=false;
   await context.route(app.url+'/api/me/tutorials/mafia',async route=>{assert.equal(route.request().method(),'GET');read=true;await new Promise(resolve=>setTimeout(resolve,2300));await route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({tutorialId:'mafia',scenarioVersion:MAFIA_TUTORIAL_SCENARIO_VERSION,rulesetVersion:MAFIA_TUTORIAL_RULESET_VERSION,status:'completed',updatedAt:Date.now(),outdated:false})});});
   const page=await context.newPage(),diagnostics={requests:[],errors:[]};page.on('request',request=>{if(request.url().startsWith(app.url))diagnostics.requests.push({path:new URL(request.url()).pathname,method:request.method()});});page.on('pageerror',error=>diagnostics.errors.push(error.message));await page.goto(origin+'/#/online/mafia');
-  const started=Date.now();while(!read&&Date.now()-started<15000)await page.waitForTimeout(100);
-  if(!read){await page.screenshot({path:path.join(output,'late-status-failure.png')});await writeFile(path.join(output,'late-status-failure.json'),JSON.stringify({...diagnostics,text:await page.locator('body').innerText()},null,2));}
-  assert.equal(read,true);await page.waitForTimeout(3200);assert.equal(new URL(page.url()).hash,'#/online/mafia');assert.equal(await page.locator('[data-lesson-step]').count(),0);
+  await page.getByRole('button',{name:'خيارات الغرف والمساعدة',exact:true}).waitFor();
+  assert.equal(read,false,'room entry has no dependency on tutorial status');await page.waitForTimeout(3200);assert.equal(new URL(page.url()).hash,'#/online/mafia');assert.equal(await page.locator('[data-lesson-step]').count(),0);
   await page.waitForTimeout(1000);assert.equal(new URL(page.url()).hash,'#/online/mafia');await context.close();
 });
 
 test('guest lesson continues offline and browser back asks to save instead of discarding decisions',{timeout:45000},async()=>{
   const context=await browser.newContext({viewport:{width:390,height:844}}),page=await context.newPage();
-  await page.goto(origin+'/#/online/mafia');await page.locator('[data-lesson-step="welcome"]').waitFor();await context.setOffline(true);
+  await page.goto(origin+'/#/tutorial/mafia');await page.locator('[data-lesson-step="welcome"]').waitFor();await context.setOffline(true);
   await page.locator('[data-design-id="tutorial-continue"]').click();await page.locator('[data-design-id="message-input"]').fill('تدريب دون إنترنت');await page.locator('[data-design-id="send"]').click();await page.locator('[data-lesson-step="lobby-voice"]').waitFor();
   await page.evaluate(()=>{location.hash='/';});await page.locator('[data-design-id="tutorial-save-exit"]').waitFor();await page.locator('[data-design-id="tutorial-stay"]').click();assert.equal(new URL(page.url()).hash,'#/tutorial/mafia');
   await page.locator('[data-design-id="tutorial-exit"]').click();await page.locator('[data-design-id="tutorial-save-exit"]').click();await page.waitForURL('**/#/online/mafia');

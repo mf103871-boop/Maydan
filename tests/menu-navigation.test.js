@@ -7,9 +7,9 @@ test('menu navigation has four ordered destinations with compatible hashes', () 
   assert.deepEqual(MENU_ITEMS.map(item => item.label), ['الألعاب', 'الأصدقاء', 'المتجر', 'الإعدادات']);
 });
 test('game and room flows hide navigation, menu entry and details retain it', () => {
-  for (const name of ['play', 'room', 'friend-group']) assert.equal(menuRouteVisible({ name }), false, name);
+  for (const name of ['play', 'room', 'online', 'friend-group']) assert.equal(menuRouteVisible({ name }), false, name);
   assert.equal(menuRouteVisible({ name: 'friends', params: { id: 'alice' } }), false);
-  for (const name of ['home', 'game', 'online', 'players', 'store', 'settings']) assert.equal(menuRouteVisible({ name }), true, name);
+  for (const name of ['home', 'game', 'players', 'store', 'settings']) assert.equal(menuRouteVisible({ name }), true, name);
   assert.equal(menuRouteVisible({ name: 'friends' }, { presentation: 'page', view: { type: 'list' } }), true);
   assert.equal(menuRouteVisible({ name: 'friends' }, { presentation: 'page', view: { type: 'profile' } }), false);
 });

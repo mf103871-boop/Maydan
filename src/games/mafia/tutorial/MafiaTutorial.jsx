@@ -9,10 +9,12 @@ import { TUTORIAL_HUMAN_ID } from './scenario.mjs';
 import { useTutorialProgress } from './useTutorialProgress.js';
 import css from './tutorial.css';
 import shellCss from '../../../online/online-mafia.css';
+import { usePlatform } from '../../../platform/context.js';
 
 const goRooms = () => navigate('/online/mafia',{replace:true});
 export function TutorialSession({ owner, progress, update, mark, isCurrentOwner=()=>true, designPreview=false,
   factory=createMafiaTutorial,humanId=TUTORIAL_HUMAN_ID,title='أول ليلة في الميدان',disclosure='تدريب محلي · ٧ شخصيات تدريب · بلا لاعبين حقيقيين',finishTarget='/online/mafia',finishLabel='ادخل الغرف',privateCover=false }) {
+  const platform = usePlatform();
   const [engine] = useState(()=>factory({progress}));
   const [view,setView] = useState(()=>engine.getState());
   const [voiceJoined,setVoiceJoined] = useState(false), [muted,setMuted] = useState(true);
@@ -52,7 +54,7 @@ export function TutorialSession({ owner, progress, update, mark, isCurrentOwner=
   return <section ref={frame} data-design-screen="mafia.tutorial" className="mafia-noir mafia-room-shell mafia-tutorial-screen" dir="rtl" aria-label={covered?'التدريب محجوب':`${title} — تدريب محلي`}>
     <style>{shellCss}{css}</style>
     {covered?<MafiaPrivacy/>:<>
-    <header className="mafia-tutorial-top"><div><strong>{title}</strong><small data-design-id="tutorial-disclosure" data-design-required="true">{disclosure}</small></div><Button data-design-id="tutorial-exit" data-design-required="true" onClick={()=>setExitTarget(finishTarget)}>لاحقًا</Button></header>
+    <header className="mafia-tutorial-top"><span className="mafia-training-badge">تدريب</span><div><strong>{title}</strong><small data-design-id="tutorial-disclosure" data-design-required="true">{disclosure}</small></div><Button data-design-id="tutorial-exit" data-design-required="true" onClick={()=>setExitTarget(finishTarget)}>لاحقًا</Button></header>
     <aside data-design-id="tutorial-coach" data-design-required="true" className={`mafia-tutorial-coach ${minimized?'is-minimized':''}`} aria-live="polite" data-lesson-step={coach.stepId}>
       <div className="mafia-tutorial-coach-title"><h2>{coach.title || 'تعلّم من قرارك'}</h2><Button data-design-id="tutorial-help-toggle" aria-expanded={!minimized} aria-label={minimized?'إظهار الشرح':'تصغير الشرح'} onClick={()=>setMinimized(value=>!value)}>{minimized?'الشرح':'−'}</Button></div>
       {!minimized&&<><p>{coach.text}</p>{view.feedback && <div className="mafia-tutorial-feedback" role="status"><b>{view.feedback.title}</b><p>{view.feedback.text}</p></div>}
@@ -66,7 +68,7 @@ export function TutorialSession({ owner, progress, update, mark, isCurrentOwner=
     </aside>
     {saveFailed&&<p className="mafia-tutorial-storage-warning" role="status">تعذّر الحفظ على هذا الجهاز. يمكنك متابعة الدرس؛ قد لا يعود تقدمك بعد إغلاقه.</p>}
     <div className="mafia-tutorial-stage" data-training-target={coach.target} key={`${owner}:${view.checkpointRevision}`}>
-      {state.phase==='lobby'?<MafiaLobby state={state} me={me} isHost act={act} voice={voice} tutorial={{onGuide:guide}}/>:<MafiaMatchView state={state} me={me} isHost act={act} disabled={view.status==='completed'} accountId={owner} voice={voice} clock={view.clock} tutorial={{onGuide:guide}}/>}
+      {state.phase==='lobby'?<MafiaLobby state={state} me={me} isHost act={act} voice={voice} accountId={owner} tutorial={{onGuide:guide}}/>:<MafiaMatchView state={state} me={me} isHost act={act} disabled={view.status==='completed'} accountId={owner} voice={voice} sound={designPreview?undefined:platform?.sound} clock={view.clock} tutorial={{onGuide:guide}}/>}
     </div>
     {exitTarget&&<Modal className="mafia-noir" data-design-screen="mafia.tutorial" title="تكمل التدريب لاحقًا؟" onClose={()=>setExitTarget(null)} footer={<><Button data-design-id="tutorial-save-exit" full onClick={()=>finishExit(exitTarget,true)}>احفظ واخرج</Button><Button data-design-id="tutorial-stay" full variant="ghost" onClick={()=>setExitTarget(null)}>أكمل التدريب</Button></>}><p>تبقى نقطة قرارك على هذا الجهاز، وتقدر تستكملها من دليل مافيا. لا تُحسب نتيجة هذا الدرس ضمن لعبك.</p></Modal>}
     </>}

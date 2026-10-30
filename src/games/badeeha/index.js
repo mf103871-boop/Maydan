@@ -14,7 +14,9 @@ migrateLegacyKeys();
 // الصوت والاهتزاز و«حركة أقل» في المنصة لا تصل إلى بَديهة، ولم تستطع اللعبة
 // إخبار المنصة متى تكون مباراة جارية.
 function Game(props) {
-  return React.createElement(MaydanBeta, props);
+  // The platform has already shown the shared instructions and chosen local
+  // mode. Enter the existing team/category setup without a second hero gate.
+  return React.createElement(MaydanBeta, { ...props, entry: 'setup' });
 }
 
 export default {

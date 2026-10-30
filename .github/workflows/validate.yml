@@ -34,6 +34,8 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci --no-audit --no-fund
+      - name: Install browsers required by the Node component suites
+        run: npx playwright install --with-deps chromium webkit
       # Advisory only here: a transient advisory in a dev dependency must not block a
       # release candidate. The weekly `audit.yml` run fails loudly on the same command.
       - run: npm audit --audit-level=moderate
@@ -58,7 +60,7 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci --no-audit --no-fund
-      - run: npx playwright install --with-deps chromium
+      - run: npx playwright install --with-deps chromium webkit
       - run: npm run build:cloudflare
       - name: Service worker navigation (Chromium)
         run: npm run e2e:sw

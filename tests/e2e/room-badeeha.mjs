@@ -50,6 +50,7 @@ const shot = (page, name) => process.env.E2E_SHOTS ? page.screenshot({ path: `${
 test('two phones play Badeeha: turns, aids, reveal, judge, steal, undo and end', { timeout: 120_000 }, async () => {
   const host = await phone('#/online/badeeha');
   const { page: h } = host;
+  await h.locator('[data-design-id="create-public-room"]').click();
   assert.equal(await h.locator('.badeeha-picker').evaluate(element => getComputedStyle(element).maxHeight), '300px', 'all categories stay inside a bounded scrolling picker');
   assert.equal(await h.locator('.badeeha-picker button').first().evaluate(element => getComputedStyle(element).minHeight), '44px', 'category controls keep a full touch target');
   await h.locator('[data-design-id="name-input"]').fill('المضيف');
@@ -60,8 +61,10 @@ test('two phones play Badeeha: turns, aids, reveal, judge, steal, undo and end',
   await h.getByRole('button', { name: 'ست فئات عشوائية' }).click();
   assert.equal(await h.locator('.badeeha-picker button[aria-pressed="true"]').count(), 6);
   await create.click();
+  await h.locator('[data-design-id="invite-toggle"]').click();
   const code = (await h.locator('[data-design-id="invite-code"]').textContent({ timeout: 15_000 })).trim();
   assert.match(code, /^\d{6}$/);
+  await h.locator('[data-design-id="rules-toggle"]').click();
   await h.getByText('٢٠ سؤالًا، و٣٠ ثانية لكل سؤال.').waitFor();
 
   const guest = await phone(`#/room/${code}`);
@@ -132,22 +135,24 @@ test('two phones play Badeeha: turns, aids, reveal, judge, steal, undo and end',
   await host.context.close(); await guest.context.close();
 });
 
-test('a saved Plus selection cannot host locked packs after the player returns as a guest', { timeout: 45_000 }, async () => {
+test('a guest can host a saved formerly-Plus selection without losing its categories or seeing a gameplay paywall', { timeout: 45_000 }, async () => {
   const host = await phone('#/online/badeeha', (context) => context.addInitScript(([server, categories]) => {
     localStorage.setItem(`maydan:online:${server}:badeehaSettings`, JSON.stringify({ mode: 'standard', roundSize: 20, timer: 60, categories }));
   }, [app.url, ['general', 'geo', 'capitals', 'science', 'animals', 'flags']]));
   const { page } = host;
+  await page.locator('[data-design-id="create-public-room"]').click();
   let creates = 0;
   page.on('request', (request) => { if (request.method() === 'POST' && request.url() === `${app.url}/api/rooms`) creates++; });
   await page.locator('[data-design-id="name-input"]').fill('ضيف');
-  assert.equal(await page.locator('.badeeha-picker button.is-locked[aria-pressed="true"]').count(), 1);
+  assert.equal(await page.locator('.badeeha-picker button[aria-pressed="true"]').count(), 6, 'the previously saved six categories stay selected');
+  assert.equal(await page.locator('.badeeha-picker button.is-locked').count(), 0, 'every gameplay pack is free, including flags');
   await page.getByRole('button', { name: 'أنشئ الغرفة' }).click();
-  await page.locator('.paywall').waitFor();
-  assert.equal(creates, 0, 'current pack access is checked before creating the room');
-  await page.keyboard.press('Escape');
-  await page.locator('.paywall').waitFor({ state: 'hidden' });
-  await page.locator('.badeeha-picker button.is-locked[aria-pressed="true"]').click();
-  assert.equal(await page.locator('.badeeha-picker button.is-locked[aria-pressed="true"]').count(), 0, 'a now-locked saved choice can still be removed');
+  await page.locator('[data-design-screen="online.lobby"]').waitFor();
+  assert.equal(creates, 1, 'the guest creates exactly one real room');
+  assert.equal(await page.locator('.paywall').count(), 0, 'cosmetic Plus must not block gameplay');
+  const code=(await page.locator('[data-design-id="invite-code"]').textContent()).trim();
+  assert.deepEqual(app.rooms.get(code).instance.room.settings.categories,['general','geo','capitals','science','animals','flags']);
+  assert.equal(await app.env.DB.prepare('SELECT COUNT(*) AS n FROM trials').first('n'),0);
   assert.deepEqual(host.errors, []);
   await host.context.close();
 });

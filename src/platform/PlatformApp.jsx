@@ -63,7 +63,7 @@ function ScreenHost({ route }) {
   let screen = null;
   // عودة الدخول (#/auth?code=) تعرض الرئيسية بينما يبدّل AccountProvider الرمز بجلسة.
   if (route.name === 'home' || route.name === 'auth') screen = <Home key="home" />;
-  else if (route.name === 'game') screen = <GameDetails key={`game-${route.params.id}`} id={route.params.id} />;
+  else if (route.name === 'game') screen = <GameDetails key={`game-${route.params.id}`} id={route.params.id} mode={route.params.mode} />;
   else if (route.name === 'mafia-tutorial') screen = route.params.lab||route.params.labs ? <MafiaLabs key={`mafia-labs-${route.params.lab||'hub'}`} courseId={route.params.lab}/> : <MafiaTutorial key="mafia-tutorial" />;
   else if (route.name === 'play' && route.params.id === 'mafia') screen = <MafiaEntry key="mafia-entry" />;
   else if (route.name === 'play') screen = getGame(route.params.id)?.onlineOnly ? <Online key={`online-${route.params.id}`} game={route.params.id} /> : <Play key={`play-${route.params.id}`} id={route.params.id} />;
@@ -82,7 +82,7 @@ function ScreenHost({ route }) {
   return screen;
 }
 
-function Providers({ children }) {
+export function PlatformProviders({ children }) {
   const toast = useToast();
   const [settings, setSettingsState] = useState(() => migrateSettings(platformStorage.get('settings', {})));
   const [roster, setRosterState] = useState(() => platformStorage.get('roster', []) || []);
@@ -207,9 +207,9 @@ function Shell() {
 export function PlatformApp() {
   return (
     <ToastProvider>
-      <Providers>
+      <PlatformProviders>
         <DesignRuntime><Shell /></DesignRuntime>
-      </Providers>
+      </PlatformProviders>
     </ToastProvider>
   );
 }

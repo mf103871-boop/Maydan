@@ -6,7 +6,7 @@ import { useLamma } from '../../social/LammaProvider.jsx';
 // الإعدادات: الصوت، الموسيقى، الاهتزاز، تقليل الحركة، مسح البيانات، الإصدار، وبلاغات أسئلة بَديهة.
 import React, { useState } from 'react';
 import { Screen, TopBar, Button, Card, ConfirmModal } from '../../shared/ui/components.jsx';
-import { IconVolume, IconMusic, IconVibrate, IconMotion, IconTrash, IconFlag, IconShare, IconInfo } from '../../shared/ui/icons.jsx';
+import { IconVolume, IconMusic, IconVibrate, IconMotion, IconTrash, IconFlag, IconShare, IconInfo, IconUsers } from '../../shared/ui/icons.jsx';
 import { clearAllPlatformData, createStorage } from '../../shared/lib/storage.js';
 import { AccountCard } from '../../shared/account/AccountCard.jsx';
 import { LEGAL_ROUTES, PUBLIC_SITE_ORIGIN } from '../../shared/account/config.js';
@@ -72,6 +72,7 @@ export function Settings() {
         </div>
       </SettingsGroup>
       <SettingsGroup id="settings-experience" title="تجربة اللعب">
+        <Button data-design-id="manage-roster" variant="secondary" icon={<IconUsers />} onClick={() => navigate('/players')}>دفتر اللاعبين · اللعب مع العائلة</Button>
         <Toggle index={0} icon={<IconVibrate />} title="الاهتزاز" sub="عند الإجابات والمؤقت (حيث يتوفر)" checked={settings.hapticsOn} onChange={(v) => { setSettings({ hapticsOn: v }); if (v) haptics.vibrate('light'); }} />
         <Toggle index={1} icon={<IconMotion />} title="تقليل الحركة" sub="يعطّل الجسيمات والانتقالات مع بقاء الوظائف" checked={settings.reducedMotion} onChange={(v) => setSettings({ reducedMotion: v })} />
       </SettingsGroup>

@@ -3,8 +3,10 @@ import React from 'react';
 import { Screen, TopBar, IconButton, Button, Card } from '../../shared/ui/components.jsx';
 import { IconBack, IconUsers, IconClock, IconPlay } from '../../shared/ui/icons.jsx';
 import { usePlatform } from '../context.js';
-import { navigate, back, getDirection } from '../router.js';
+import { navigate, back, getDirection, getRoute } from '../router.js';
 import { getGame } from '../registry.js';
+import { resolveGameMode, gameInstructionsNextPath } from '../game-mode-navigation.js';
+import homeStyles from './home-rebuild.css';
 
 // معرّف غير معروف في الرابط: الملاحة أثناء التصيير تضيع لأن مستمعي الموجّه لم
 // يشتركوا بعد، فتبقى الصفحة بيضاء إلى الأبد. نعرض رسالة وزر عودة بدلًا منها.
@@ -21,22 +23,25 @@ export function MissingGame({ id }) {
   );
 }
 
-export function GameDetails({ id }) {
+export function GameDetails({ id, mode: requestedMode }) {
   const game = getGame(id);
   const { sound, haptics } = usePlatform();
   if (!game) return <MissingGame id={id} />;
   const Icon = game.icon;
-  const onlineOnly = game.onlineOnly === true;
+  const mode = resolveGameMode(id, requestedMode ?? getRoute().params.mode);
   const modeLabel = game.id === 'ersomha' ? 'تعاون لشخصين · منافسة من ثلاثة' : game.players.mode === 'teams' ? 'فرق' : game.players.mode === 'both' ? 'فردي أو فرق' : 'فردي';
-  const online = ['meenfina', 'fabraka', 'ersomha', 'badeeha', 'mafia'].includes(game.id);
   const factDelay = (i) => ({ '--delay': `${250 + i * 50}ms` });
   const note = game.id === 'badeeha' ? 'كل الفئات مجانية — العبوا قد ما بدكم' : 'اللعب واستضافة الغرف والانضمام مجانًا';
-  const play = () => {
-    sound.play('whoosh'); haptics.vibrate('medium'); navigate(`/play/${game.id}`);
+  const skip = () => {
+    const target = gameInstructionsNextPath(game.id, requestedMode ?? getRoute().params.mode);
+    if (!target) return;
+    sound.play('whoosh'); haptics.vibrate('medium'); navigate(target);
   };
   return (
-    <Screen data-design-screen="game-details" dir={getDirection()} className="stack" style={{ '--game-accent': game.accent }} aria-label={game.name}>
+    <Screen data-design-screen="game-details" dir={getDirection()} className="stack game-instructions-screen" style={{ '--game-accent': game.accent }} aria-label={game.name}>
+      <style>{homeStyles}</style>
       <TopBar data-design-id="topbar" title={game.name} eyebrow="لعبة" start={<IconButton data-design-id="back" label="رجوع" onClick={back}><IconBack /></IconButton>} />
+      <p className="selected-game-mode" role={mode ? undefined : 'status'}>{mode === 'online' ? 'أونلاين' : mode === 'local' ? 'مع العائلة · على جوال واحد' : 'هذا النمط غير متاح لهذه اللعبة حاليًا'}</p>
       <div data-design-id="hero" className="details-hero">
         {/* الحامل: الرسم يهبط ثم يطفو (clay-idle)؛ الحركة على .clay-lift لا على الرسم */}
         <div data-design-id="game-icon" className="icon clay-stage clay-idle" aria-hidden="true"><span className="clay-lift">{Icon ? <Icon /> : '🎮'}</span></div>
@@ -54,9 +59,7 @@ export function GameDetails({ id }) {
         <ol data-design-id="steps" className="steps">{game.howToPlay.map((s, i) => <li key={i} className="step" style={{ '--delay': `${120 + i * 90}ms` }}>{s}</li>)}</ol>
       </div>
       <div data-design-id="actions" className="setup-sticky stack">
-        {/* الزر الرئيسي «مسلّح» (is-armed): تنفّس ×3 ووهج ×2 من brand.css */}
-        {online && <Button data-design-id="online" variant="accent" size="lg" full className="is-armed" onClick={() => navigate(`/online/${game.id}`)}>{['fabraka', 'ersomha'].includes(game.id) ? 'العب أونلاين · لشخصين أو أكثر' : game.id === 'mafia' ? 'ادخل المجلس · غرف عامة وخاصة' : game.id === 'badeeha' ? 'العب أونلاين · جوال لكل فريق' : 'العب من كل جوال · غرف جماعية'}</Button>}
-        {!onlineOnly && <Button data-design-id="local" variant={online ? 'secondary' : 'accent'} size="lg" full className={online ? '' : 'is-armed'} icon={<IconPlay />} onClick={play}>{online ? 'العب على جهاز واحد' : 'العب'}</Button>}
+        <Button data-design-id="skip-instructions" variant="accent" size="lg" full icon={<IconPlay />} disabled={!mode} onClick={skip}>تخطي التعليمات</Button>
       </div>
     </Screen>
   );

@@ -3,7 +3,7 @@
 import { build } from 'esbuild';
 import { createServer } from 'node:http';
 import assert from 'node:assert/strict';
-import { chromium } from 'playwright';
+import { chromium, webkit } from 'playwright';
 
 const source=`import React from'react';import{createRoot}from'react-dom/client';import{Entry}from'./src/online/Online.jsx';import{AccountContext,NULL_ACCOUNT}from'./src/shared/account/context.js';
 window.directoryRequests=[];window.createRequests=[];window.fetch=(url,options={})=>{if(url.includes('/rooms/public'))return new Promise((resolve,reject)=>window.directoryRequests.push({resolve:body=>resolve(new Response(JSON.stringify(body),{headers:{'content-type':'application/json'}})),reject:()=>reject(new Error('fixture-offline'))}));if(url.endsWith('/api/rooms')){window.createRequests.push(JSON.parse(options.body));return Promise.resolve(new Response(JSON.stringify({code:'123456'}),{headers:{'content-type':'application/json'}}));}return Promise.reject(new Error('unexpected-fixture-request'));};
@@ -12,11 +12,12 @@ const built=await build({stdin:{contents:source,resolveDir:process.cwd(),loader:
 const html='<!doctype html><html lang="ar" dir="rtl"><meta charset="utf-8"><body><div id="root"></div><script src="/bundle.js"></script></body></html>';
 const server=createServer((req,res)=>{res.setHeader('content-type',req.url==='/bundle.js'?'text/javascript':'text/html');res.end(req.url==='/bundle.js'?built.outputFiles[0].contents:html);});
 await new Promise(resolve=>server.listen(0,'127.0.0.1',resolve));
-const browser=await chromium.launch({headless:true,...(process.env.CHROMIUM_PATH?{executablePath:process.env.CHROMIUM_PATH}:{})});
+const engine=process.env.MAFIA_E2E_ENGINE==='webkit'?webkit:chromium;
+const browser=await engine.launch({headless:true,...(engine===chromium&&process.env.CHROMIUM_PATH?{executablePath:process.env.CHROMIUM_PATH}:{})});
 try{
   const page=await browser.newPage({viewport:{width:390,height:844}}),errors=[];page.on('pageerror',error=>errors.push(error.message));
-  await page.goto(`http://127.0.0.1:${server.address().port}/`);const start=page.locator('form [data-design-id="start"]');
-  await page.getByRole('button',{name:'إنشاء غرفة',exact:true}).click();
+  await page.routeWebSocket(/mafia-fixture\.invalid/,socket=>socket.close({code:1011,reason:'isolated synthetic directory'}));await page.goto(`http://127.0.0.1:${server.address().port}/`);const start=page.locator('form [data-design-id="start"]');
+  await page.waitForFunction(()=>window.directoryRequests.length===1);assert.equal(await page.locator('[data-design-id="create-public-room"]').isDisabled(),true,'unknown availability blocks the first create tap');await page.evaluate(()=>window.directoryRequests[0].resolve({enabled:true,rooms:[]}));await page.waitForFunction(()=>!document.querySelector('[data-design-id="create-public-room"]').disabled);await page.locator('[data-design-id="create-public-room"]').click();
   await page.waitForFunction(()=>window.directoryRequests.length>=2);
   await page.getByText('نتحقق من توفر مجالس مافيا…',{exact:true}).waitFor();assert.equal(await start.isDisabled(),true);
   await page.locator('form').evaluate(form=>form.requestSubmit());assert.equal(await page.evaluate(()=>window.createRequests.length),0);assert.equal(await page.getByText('مافيا ميدان غير متاحة لبدء مباريات جديدة حاليًا.',{exact:true}).count(),0);

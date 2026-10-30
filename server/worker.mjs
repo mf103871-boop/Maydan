@@ -22,6 +22,7 @@ import { routeDrawingReports } from './ersomha-reports.mjs';
 import { routeDesign, isPublicDesignAssetPath } from './design/router.mjs';
 import { routePlus } from './plus/router.mjs';
 import { routeTutorials } from './tutorials/router.mjs';
+import { routeOnlineDirectory, cleanupOnlineDirectory } from './online-directory.mjs';
 export { LammaJobs } from './lamma/jobs.mjs';
 export { SocialHub } from './social/realtime.mjs';
 export { Room };
@@ -134,6 +135,7 @@ export async function routeRequest(request, env, context) {
     // الحسابات أولًا: مساراتها تحت /api/ ولا تتقاطع مع تعبير الغرف.
     response = await routePlus(request, env, url, charge)
       || await routeTutorials(request, env, url, charge)
+      || await routeOnlineDirectory(request, env, url, charge)
       || await routeMafia(request, env, url, charge)
       || await routeDesign(request, env, url, charge)
       || await routeDrawingReports(request, env, url, charge)
@@ -210,6 +212,7 @@ export async function routeRequest(request, env, context) {
 }
 // Cron Trigger (wrangler triggers.crons): تنظيف الجلسات ورموز الدخول وسجل webhooks.
 export async function scheduled(event, env) {
+  await cleanupOnlineDirectory(env);
   await cleanupMafia(env,Date.now(),reportRetentionMs(env));
   await cleanupLamma(env,Date.now(),messageRetentionMs(env),reportRetentionMs(env));
   await drainJobs(env);
