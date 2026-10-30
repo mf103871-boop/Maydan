@@ -92,6 +92,7 @@ jobs:
       - name: Test and prepare the current game
         run: |
           npm ci --no-audit --no-fund
+          npx playwright install chromium webkit
           npm test
           python3 scripts/ios/verify_audio_policy.py
           python3 scripts/ios/verify_storage_migration.py
