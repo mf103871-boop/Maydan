@@ -2,11 +2,12 @@ import React, { createContext, useContext, useEffect, useRef, useState, useCallb
 import { useAccount } from '../shared/account/context.js';
 import { resolveAccountServer } from '../shared/account/api.js';
 import { SocialClient, emptySocialState } from './client.js';
+import { socialInterruption } from './interruption.js';
 
 export const SocialContext = createContext(null);
 export const useSocial = () => useContext(SocialContext);
 const METHODS = ['refresh','searchUsers','sendRequest','acceptRequest','rejectRequest','cancelRequest','openConversation','loadOlder',
-  'sendMessage','retryMessage','editMessage','deleteMessage','markRead','setTyping','removeFriend','blockUser','unblockUser','reportUser','registerConversation','receiveOwnMessage'];
+  'sendMessage','sendSticker','retryMessage','editMessage','deleteMessage','markRead','setTyping','removeFriend','blockUser','unblockUser','reportUser','registerConversation','receiveOwnMessage'];
 export function SocialProvider({ children }) {
   const account = useAccount(); const accountRef = useRef(account); accountRef.current = account;
   const clientRef = useRef(null);
@@ -23,6 +24,12 @@ export function SocialProvider({ children }) {
   // Never paint one account's private data while the identity-change effect runs.
   const safeState = client.userId === userId ? state : emptySocialState();
   useEffect(() => { client.start(userId); return () => client.stop(); }, [client, userId]);
+  // A queue/match may belong to this account on another device. Reflect the
+  // server's existing lease in the global privacy cover, without a room ID.
+  useEffect(() => {
+    if (!userId || !safeState.mafiaCommunicationLocked) return undefined;
+    return socialInterruption.lockCommunication(`mafia-account-lease:${userId}`);
+  }, [userId, safeState.mafiaCommunicationLocked]);
   useEffect(() => {
     const update = () => client.visibilityChanged();
     document.addEventListener('visibilitychange', update); window.addEventListener('online', update);

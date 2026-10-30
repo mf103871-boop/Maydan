@@ -32,6 +32,25 @@ test('Ersomha launched from a group starts with easy drawable concepts',async()=
   assert.equal(calls[0][2].settings.cycles,1);
 });
 
+test('a Mafia group launch preserves the chosen three-team room and capability without charging a trial',async()=>{
+  const {launcher,calls}=fixture();
+  const settings={mode:'shadow',capacity:12,visibility:'private',voiceMode:'off',roomName:'مجلس الشلّة',community:'ar'};
+  await launcher.launch('mafia',async()=>{}, {settings});
+  assert.equal(calls[0][2].game,'mafia');assert.deepEqual(calls[0][2].settings,settings);
+  assert.equal(calls[0][2].capabilities.mafia,2);
+  assert.equal(calls[0][3].headers.Authorization,'Bearer fixture');
+});
+
+test('a Badeeha group launch sends the round dealt on the host phone and refuses one without it', async () => {
+  const { launcher, calls } = fixture();
+  await assert.rejects(launcher.launch('badeeha', async () => {}), { code: 'INVALID' });
+  assert.equal(calls.length, 0, 'no room without a dealt round');
+  const settings = { mode: 'standard', roundSize: 30, timer: 60, categories: ['a', 'b', 'c', 'd', 'e', 'f'], deck: { a: [{ qid: 'a:1', p: 200 }] } };
+  await launcher.launch('badeeha', async () => {}, { settings });
+  assert.equal(calls[0][2].game, 'badeeha'); assert.deepEqual(calls[0][2].settings, settings);
+  assert.equal(calls[0][2].capabilities.badeeha, 1);
+});
+
 test('invitation failure and repeated taps reuse the same room and credentials', async () => {
   const wait = deferred(); const { launcher, calls } = fixture(); let attempts = 0;
   const first = launcher.launch('fabraka', async () => { ++attempts; await wait.promise; });
@@ -58,10 +77,11 @@ test('account change during room creation cannot persist or invite the previous 
   await assert.rejects(task, { code: 'STALE' }); assert.equal(sent, false); assert.equal(memory.has('234567'), false);
 });
 
-test('locked access and malformed rooms cannot send invitations', async () => {
-  const locked = fixture({ account: { user: { id: 'alice' }, gameAccess: () => 'locked' } });
-  await assert.rejects(locked.launcher.launch('fabraka', async () => { throw new Error('must not invite'); }), { code: 'PLUS_REQUIRED' });
-  assert.equal(locked.calls.length, 0);
+test('legacy locked access no longer blocks free hosting, while malformed rooms cannot invite', async () => {
+  const free = fixture({ account: { user: { id: 'alice' }, gameAccess: () => 'locked', authHeaders:()=>({Authorization:'Bearer fixture'}) } });
+  let invited=false;
+  await free.launcher.launch('fabraka', async () => { invited=true; });
+  assert.equal(free.calls.length,1);assert.equal(invited,true);
   const broken = fixture({ createRoom: async () => ({ code: 'bad' }) });
   await assert.rejects(broken.launcher.launch('fabraka', async () => { throw new Error('must not invite'); }), { code: 'NETWORK' });
 });

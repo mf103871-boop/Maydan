@@ -5,6 +5,7 @@ import { Screen, TopBar, Segment } from '../../shared/ui/components.jsx';
 import { PlayersSetup } from '../../shared/setup/PlayersSetup.jsx';
 import { TeamsSetup } from '../../shared/setup/TeamsSetup.jsx';
 import { createStorage } from '../../shared/lib/storage.js';
+import { environmentStorageKey } from '../../shared/lib/environment.js';
 import { createWakeLock } from '../../shared/lib/wakeLock.js';
 import { flashScreen, stampScreen, vignette, prefersReducedMotion, wait } from '../../shared/fx/index.js';
 import { usePlatform } from '../context.js';
@@ -16,6 +17,7 @@ import { getGame } from '../registry.js';
 import { GameFrame } from '../GameFrame.jsx';
 import { MissingGame } from './GameDetails.jsx';
 import { GameLoading, useVisualReadiness } from './Splash.jsx';
+import { createLocalMatchAudio } from '../../shared/fx/match-audio.js';
 
 // طبقات التأثير المشتركة تُمرَّر للألعاب عبر api.fx (اختصار؛ الاستيراد المباشر من shared/fx هو العقد).
 const FX = { flash: flashScreen, stamp: stampScreen, vignette, reduced: prefersReducedMotion, wait };
@@ -28,7 +30,7 @@ export function Play({ id }) {
   const profilesRef = useRef(profiles); profilesRef.current = profiles;
   const recorderRef = useRef(null);
   if (!recorderRef.current) recorderRef.current = new LocalSessionRecorder({
-    storage: createStorage('profile-sessions'),
+    storage: createStorage(environmentStorageKey('maydan:profile-sessions:')),
     beginSession: (gameId) => profilesRef.current.beginSession(gameId),
     completeSession: (sessionId) => profilesRef.current.completeSession(sessionId),
   });
@@ -50,11 +52,15 @@ export function Play({ id }) {
   useEffect(() => { socialInterruption.setContext({ local: inGame, online: false, turnDeadline: null });
     return () => socialInterruption.setContext({ local: false }); }, [inGame]);
   const [session, setSession] = useState(0);
+  const matchAudio = useMemo(() => createLocalMatchAudio(platform.sound, id, `${owner || 'guest'}:${session}`), [platform.sound, id, owner, session]);
+  useEffect(() => { matchAudio.activate(); return () => matchAudio.dispose(); }, [matchAudio]);
+  const musicOwner = useRef(Symbol('local-game-audio'));
   // مقطع اللعبة يبدأ مع المباراة (وعند إعادتها)، وشاشة الإعداد تبقى على مقطع «البيت».
   useEffect(() => {
     if (!game) return;
-    platform.sound.music.play(stage === 'play' && inGame ? game.music || 'calm' : 'home');
-  }, [platform.sound, game, stage, inGame, session]);
+    platform.sound.music.scene(musicOwner.current, stage === 'play' && inGame ? id : 'home', stage, 10);
+  }, [platform.sound, game, id, stage, inGame, session]);
+  useEffect(() => { const lease = musicOwner.current; return () => platform.sound.music.releaseScene(lease); }, [platform.sound]);
   const [savedSession, setSavedSession] = useState(null);
   const [gameOptions, setGameOptions] = useState(null);
   const [setupValid, setSetupValid] = useState(true);
@@ -78,11 +84,11 @@ export function Play({ id }) {
   const api = useMemo(() => ({
     // الحساب والاستحقاقات: اللعبة تقرأ api.account، وتعلن انتهاء مباراة كاملة بـ api.matchOver().
     account,
-    matchStart: () => recorder.start(id),
+    matchStart: () => { matchAudio.begin(); return recorder.start(id); },
     matchSnapshot: () => recorder.marker(),
-    matchResume: (marker) => recorder.resume(marker, id),
-    // نهاية المباراة: خاتمة موسيقية قصيرة تحلّ محل مقطع اللعبة ثم يعود مقطع «البيت» لشاشة النتائج.
-    matchOver: ({ completed = false } = {}) => { account.markTrial(id); recorder.complete(completed); platform.sound.music.sting('finale', { after: 'home' }); },
+    matchResume: (marker) => { matchAudio.begin(); return recorder.resume(marker, id); },
+    // احتفال واحد للمباراة المكتملة؛ الانسحاب أو الإلغاء لا يشغّل صوت الفوز.
+    matchOver: ({ completed = false } = {}) => { account.markTrial(id); recorder.complete(completed); matchAudio.complete(completed); platform.sound.music.play('home'); },
     sound: platform.sound,
     haptics: platform.haptics,
     confetti: platform.confetti,
@@ -108,12 +114,9 @@ export function Play({ id }) {
     requestExit: () => { setInGame(false); navigate('/', { replace: true }); },
     restart: () => { recorder.start(id); setSavedSession(null); setSession((s) => s + 1); raiseCurtain(); },
     backToSetup: () => { setInGame(false); setSavedSession(null); setStage('setup'); setSetupValid(true); raiseCurtain(); },
-  }), [platform, storage, raiseCurtain, account, id]);
+  }), [platform, storage, raiseCurtain, account, id, recorder, matchAudio]);
 
   const start = useCallback((list) => {
-    // حراسة دفاعية: لعبة استُهلكت مباراتها المجانية لا تبدأ من الإعداد إلا بـ«ميدان بلس»
-    // (بَديهة setup:'self' لا تمرّ من هنا أصلًا، وقفلها في الحزم لا في المباراة).
-    if (account.gameAccess(id) === 'locked') { account.openPaywall({ reason: 'trial', game: id }); return; }
     recorder.start(id);
     setSavedSession(null);
     if (mode === 'teams') setTeams(list); else setPlayers(list);
@@ -122,7 +125,7 @@ export function Play({ id }) {
     setSession((s) => s + 1);
     platform.sound.play('whoosh');
     raiseCurtain();
-  }, [mode, platform.sound, raiseCurtain, account, id]);
+  }, [mode, platform.sound, raiseCurtain, id, recorder]);
 
   if (!game) return <MissingGame id={id} />;
   const Component = game.Component;

@@ -74,3 +74,6 @@ export function reviewAudioPath(value) {
 export function reviewDrawingPath(value) {
   return typeof value === 'string' && /^\/api\/moderation\/reports\/[a-zA-Z0-9_-]+\/drawing$/.test(value) ? value : null;
 }
+export function reviewMafiaPath(value) {
+  return typeof value==='string'&&/^\/api\/moderation\/reports\/[a-f0-9]{64}\/mafia$/.test(value)?value:null;
+}

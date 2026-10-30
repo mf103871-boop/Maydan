@@ -2,11 +2,12 @@ import { cp, mkdir, readdir, readFile, rm, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { createHash } from 'node:crypto';
 import sharp from 'sharp';
-import { DEFAULT_API_ORIGIN, migrateHtml, nativeConfig, normalizeApiOrigin } from './native.mjs';
+import { migrateHtml, nativeConfig } from './native.mjs';
+import { resolveNativeBuildOrigin } from './release-environment.mjs';
 
 // الغلاف يتصل بخادم الغرف والحسابات المنشور (يُبدَّل بـ MAYDAN_ROOMS_URL)؛ يُضبط قبل
 // استيراد أدوات البناء لأن esbuild يقرأ المتغير عند إعداد الخيارات.
-const apiOrigin = normalizeApiOrigin(process.env.MAYDAN_ROOMS_URL || DEFAULT_API_ORIGIN);
+const apiOrigin = resolveNativeBuildOrigin(process.env);
 process.env.MAYDAN_ROOMS_URL = apiOrigin;
 const { buildOnce, ROOT, DIST } = await import('../lib.mjs');
 

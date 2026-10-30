@@ -7,11 +7,13 @@ import { useModeration } from './useModeration.js';
 import { ReviewImage } from './ReviewImage.jsx';
 import { ReviewAudio } from './ReviewAudio.jsx';
 import { ReviewDrawing } from './ReviewDrawing.jsx';
+import { ReviewMafia } from './ReviewMafia.jsx';
+import { mafiaReportCategoryLabel,MAFIA_REPORT_STATUS_LABELS } from '../online/mafia-report-shared.js';
 import css from './moderation.css';
 import { profileAssetUrl } from '../profiles/identity.js';
 import { resolveAccountServer } from '../shared/account/api.js';
 
-export const ACTION_LABELS = { resolve_report: 'إغلاق البلاغ', remove_message: 'إزالة الرسالة', clear_profile_text: 'إزالة نص الملف',
+export const ACTION_LABELS = { resolve_report: 'إغلاق البلاغ', review_mafia_report: 'بدء مراجعة بلاغ مافيا', remove_message: 'إزالة الرسالة', clear_profile_text: 'إزالة نص الملف',
   remove_image: 'إزالة الصورة المنشورة', suspend_user: 'تعليق الحساب', restore_user: 'إعادة تفعيل الحساب', approve_image: 'اعتماد الصورة', reject_image: 'رفض الصورة' };
 const kindName = kind => kind === 'cover' ? 'الغلاف' : 'الصورة الشخصية';
 const date = value => value ? new Date(value).toLocaleString('ar', { dateStyle: 'medium', timeStyle: 'short' }) : '—';
@@ -45,12 +47,14 @@ export function ReportCard({ report, disabled = false, onDecision }) {
     <header className="moderation-card-head"><div><h2><bdi>{name}</bdi></h2><span className="muted"><bdi>{user.code || ''}</bdi> · {date(report.createdAt)}</span></div><span className={'moderation-status' + (report.resolvedAt ? ' is-closed' : '')}>{report.resolvedAt ? 'مغلق' : 'بانتظار المراجعة'}</span></header>
     <div className="moderation-evidence"><h3>سبب البلاغ</h3><p dir="auto">{report.reason}</p>{report.messageSeq && <><h3>نسخة الرسالة وقت البلاغ{report.scope === 'group' ? ' · محادثة اللّمة' : ''}</h3>{report.messageText ? <blockquote dir="auto">{report.messageText}</blockquote> : !report.audioUrl && <p>لا يتوفر نص.</p>}{report.audioUrl && <ReviewAudio path={report.audioUrl} />}</>}
       {report.drawingUrl && <><h3>الرسمة المبلّغ عنها</h3><ReviewDrawing path={report.drawingUrl} /></>}
+      {report.mafia&&<><h3>بلاغ مافيا · {mafiaReportCategoryLabel(report.mafia.category)}</h3><p>المجلس <bdi>{report.mafia.roomCode}</bdi> · المباراة {report.mafia.matchId??'قديمة'} · {MAFIA_REPORT_STATUS_LABELS[report.mafia.status]}</p><ReviewMafia path={report.mafiaEvidenceUrl}/></>}
       {user.bio && <><h3>النبذة الحالية</h3><p dir="auto">{user.bio}</p></>}
     </div>
     {(user.avatarUrl || user.coverUrl) && <div className="moderation-public-images">{[['avatar', user.avatarUrl], ['cover', user.coverUrl]].map(([kind, value]) => { const url = profileAssetUrl(value, resolveAccountServer()); return url && <figure key={kind}><img src={url} alt={kindName(kind) + ' المنشورة'} loading="lazy" /><figcaption>{kindName(kind)} المنشورة</figcaption></figure>; })}</div>}
     {user.suspended && <p className="online-notice">الحساب معلّق حاليًا.</p>}
     {report.resolvedAt && <p className="moderation-note">أُغلق في {date(report.resolvedAt)}{report.resolution ? ` · ${report.resolution}` : ''}</p>}
     <div className="moderation-actions">
+      {report.mafia?.status==='queued'&&!report.resolvedAt&&<Button disabled={disabled} onClick={()=>choose('review_mafia_report',{targetId:report.id},'بدء مراجعة هذا البلاغ فقط. لا يفرض هذا الإجراء عقوبة على الحساب.')}>بدء مراجعة بلاغ مافيا</Button>}
       {!report.resolvedAt && <Button variant="primary" disabled={disabled} onClick={() => choose('resolve_report', { targetId: report.id }, 'إغلاق البلاغ بعد مراجعته. لا يحذف هذا الإجراء محتوى الحساب.')}>إغلاق البلاغ</Button>}
       {report.messageSeq && <Button variant="secondary" disabled={disabled} onClick={() => choose('remove_message', { targetId: String(report.messageSeq) }, 'إزالة الرسالة ومرفقاتها من المحادثة لجميع المشاركين. تبقى أدلة البلاغ متاحة لفريق المراجعة.')}>إزالة الرسالة</Button>}
       {user.id && <>

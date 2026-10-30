@@ -1,0 +1,7 @@
+# Cosmetic fingerprints are byte-based on both Windows and the iOS build host.
+public/assets/plus/**/*.svg text eol=lf
+
+# The private audio manifest authenticates catalog bytes across build hosts.
+src/shared/fx/audio-candidate-catalog.js text eol=lf
+assets/audio-preview/*.json text eol=lf
+assets/audio-preview/*.enc -text

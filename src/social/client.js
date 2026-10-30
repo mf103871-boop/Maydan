@@ -1,4 +1,5 @@
 // Account-scoped social state. No private message history is written to browser storage.
+import { getCosmetic } from '../plus/catalog.js';
 export const SOCIAL_ERRORS = {
   AUTH_REQUIRED: 'سجّل الدخول للتواصل مع أصدقائك.', AUTH_EXPIRED: 'انتهت جلستك، سجّل الدخول من جديد.',
   NOT_FRIENDS: 'تحتاجان إلى قبول طلب الصداقة أولًا.', BLOCKED: 'التواصل مع هذا الحساب غير متاح.',
@@ -9,12 +10,13 @@ export const SOCIAL_ERRORS = {
   CONTENT_REJECTED: 'يحتوي النص على محتوى غير مسموح. عدّله قبل الإرسال.',
   ACCOUNT_SUSPENDED: 'حسابك معلّق. راجع الحالة ووسيلة التواصل من الإعدادات.',
   SOCIAL_UNAVAILABLE: 'التحديث المباشر غير متاح مؤقتًا.', STALE: 'تغيّر الحساب أثناء الطلب.',
+  PLUS_REQUIRED: 'إرسال هذا الملصق يحتاج ميدان بلس. الرسائل العادية مجانية.',
 };
 export const socialError = error => SOCIAL_ERRORS[error?.code] || SOCIAL_ERRORS.NETWORK;
 export const emptyConversation = () => ({ id: null, messages: [], loading: false, loadingOlder: false, hasMore: false,
   nextBefore: null, error: '', typing: false, readSeq: 0, peerReadSeq: 0 });
 export const emptySocialState = () => ({ profile: null, friends: [], incoming: [], outgoing: [], blocked: [], conversationList: [],
-  conversations: {}, loading: false, error: '', offline: false, connected: false });
+  conversations: {}, loading: false, error: '', offline: false, connected: false, mafiaCommunicationLocked: false });
 const initial = emptySocialState;
 
 export function mergeMessages(current, incoming, peerReadSeq = 0) {
@@ -114,11 +116,11 @@ export class SocialClient {
           const conversation = list.find(c => c.user.id === friend.id);
           return { ...friend, lastMessage: conversation?.lastMessage || null, unreadCount: conversation?.unreadCount || 0 };
         }), incoming: state.incoming || [], outgoing: state.outgoing || [], blocked: state.blocked || [],
-        conversationList: list, loading: false, error: '', offline: false });
+        conversationList: list, loading: false, error: '', offline: false, mafiaCommunicationLocked: state.mafiaCommunicationLocked===true });
         const allowed = new Set(this.state.friends.map(f => f.id));
         const loaded = Object.fromEntries(Object.entries(this.state.conversations).filter(([id]) => allowed.has(id)));
-        this.update({ conversations: loaded });
-        if (this.activeFriend && allowed.has(this.activeFriend)) await this.openConversation(this.activeFriend, { quiet: true });
+        this.update({ conversations: state.mafiaCommunicationLocked?{}:loaded });
+        if (!state.mafiaCommunicationLocked && this.activeFriend && allowed.has(this.activeFriend)) await this.openConversation(this.activeFriend, { quiet: true });
       } catch (error) {
         if (epoch === this.epoch) this.update({ loading: false, error: error.message, offline: error.code === 'NETWORK' });
         throw error;
@@ -255,7 +257,7 @@ export class SocialClient {
     const task = (async () => {
       try {
         const { message } = await this.call(`/conversations/${encodeURIComponent(pending.conversationId)}/messages`,
-          { method: 'POST', body: { text: pending.text, clientId: pending.clientId } });
+          { method: 'POST', body: pending.kind === 'sticker' ? { kind: 'sticker', stickerId: pending.stickerId, clientId: pending.clientId } : { text: pending.text, clientId: pending.clientId } });
         if (!this.currentConversation(epoch, friendId, pending.conversationId)) return;
         const current = this.state.conversations[friendId];
         if (current) this.conversation(friendId, { messages: mergeMessages(current.messages, [message], current.peerReadSeq) });
@@ -274,6 +276,17 @@ export class SocialClient {
     if (!pending) return Promise.resolve();
     this.conversation(friendId, { messages: current.messages.map(m => m === pending ? { ...m, status: 'pending' } : m) });
     return this.deliver(friendId, pending);
+  }
+  async sendSticker(friendId, stickerId) {
+    const sticker = getCosmetic(stickerId, { kind: 'sticker' });
+    if (!sticker) throw Object.assign(new Error(SOCIAL_ERRORS.INVALID), { code: 'INVALID' });
+    const id = this.findConversation(friendId); if (!id) throw new Error(SOCIAL_ERRORS.NOT_FRIENDS);
+    const message = { clientId: crypto.randomUUID(), conversationId: id, senderId: this.userId,
+      kind: 'sticker', stickerId, stickerVersion: sticker.version, text: `ملصق: ${sticker.label}`,
+      createdAt: this.now(), editedAt: null, deletedAt: null, status: 'pending' };
+    const current = this.state.conversations[friendId] || emptyConversation();
+    this.conversation(friendId, { id, messages: [...current.messages, message] });
+    this.setTyping(friendId, false); return this.deliver(friendId, message);
   }
   async changeMessage(friendId, seq, method, body) {
     const epoch = this.epoch; const id = this.findConversation(friendId);

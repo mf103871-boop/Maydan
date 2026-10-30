@@ -1,6 +1,6 @@
 // Shared by build, dev and release: turns the esbuild bundle plus the template
 // into the one self-contained HTML document the platform ships as.
-import { build as esbuildBuild } from 'esbuild';
+import { build as esbuildBuild, transform } from 'esbuild';
 import { readFile, writeFile, mkdir, cp, rm, readdir, stat } from 'node:fs/promises';
 import { gzipSync } from 'node:zlib';
 import { createHash } from 'node:crypto';
@@ -10,6 +10,9 @@ import { checkMedia, copyMedia, fmtMB } from './media.mjs';
 import { fabrakaMediaManifest } from './fabraka-media.mjs';
 import { SAMPLE_BANK } from '../src/shared/fx/sample-bank.js';
 import { LIVEKIT_VERSION, LIVEKIT_MODULE } from '../src/social/media-version.js';
+import { privateAudioBuild, verifyMaterialized } from './audio/private-preview.mjs';
+import { CANDIDATE_EFFECTS } from '../src/shared/fx/audio-candidate-catalog.js';
+import { audioCatalogPackagingPlugin } from './audio/catalog-packaging.mjs';
 
 export const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 export const DIST = path.join(ROOT, 'dist');
@@ -45,6 +48,44 @@ export async function mediaVersions(root = ROOT) {
 // index.html: the game document stops carrying ~730 KB of base64, and a release that
 // does not touch the art lets browsers keep the files they already have.
 export const BRAND_ASSET_DIR = 'assets/brand';
+
+// CSS is injected by React as text, so the JS minifier cannot remove its source
+// comments or whitespace. Parse it as CSS first without rewriting declarations,
+// identifiers, vendor prefixes or browser features. Development keeps exact text.
+export function minifiedCssTextPlugin() {
+  return {
+    name: 'minified-css-text',
+    setup(build) {
+      build.onLoad({ filter: /\.css$/, namespace: 'file' }, async ({ path: file }) => {
+        const source = await readFile(file, 'utf8');
+        const result = await transform(source, { sourcefile: file, loader: 'css',
+          minifyWhitespace: true, minifySyntax: false, minifyIdentifiers: false,
+          charset: 'utf8', legalComments: 'none' });
+        return { contents: result.code, loader: 'text', resolveDir: path.dirname(file),
+          watchFiles: [file], warnings: result.warnings };
+      });
+    },
+  };
+}
+
+// Adjacent sorted paths share most of their prefix. Keep every per-file hash,
+// but store that prefix length rather than repeating complete media paths in
+// the single HTML document. Noncanonical future keys fall back to the map.
+export function encodeMediaVersions(media = {}) {
+  const entries = Object.entries(media).sort(([a], [b]) => a < b ? -1 : a > b ? 1 : 0);
+  if (!entries.length || entries.some(([key, hash]) => /[|:]/.test(key) || !/^[a-f0-9]{6}$/.test(hash))) return media;
+  let previous = '';
+  const alphabet = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_-';
+  return 'p2|' + entries.map(([key, hash]) => {
+    let prefix = 0;
+    while (prefix < previous.length && prefix < key.length && previous[prefix] === key[prefix]) prefix++;
+    const value = parseInt(hash, 16);
+    const compactHash = [18, 12, 6, 0].map(shift => alphabet[(value >>> shift) & 63]).join('');
+    const row = `${prefix.toString(36)}:${key.slice(prefix)}:${compactHash}`;
+    previous = key;
+    return row;
+  }).join('|');
+}
 export function esbuildOptions({ minify = true, version = '0.0.0', media = {}, assets = 'inline' } = {}) {
   const art = assets === 'files' ? 'file' : 'dataurl';
   return {
@@ -59,12 +100,14 @@ export function esbuildOptions({ minify = true, version = '0.0.0', media = {}, a
     // New files are JSX; the migrated trivia game is plain React.createElement
     // in .js and parses fine under the jsx loader too.
     loader: { '.js': 'jsx', '.css': 'text', '.json': 'json', '.webp': art, '.png': art, '.woff2': art },
+    ...(minify ? { plugins: [minifiedCssTextPlugin(), audioCatalogPackagingPlugin()] } : {}),
     ...(assets === 'files' ? { assetNames: `${BRAND_ASSET_DIR}/[name]-[hash]` } : {}),
     define: {
       'process.env.NODE_ENV': JSON.stringify(minify ? 'production' : 'development'),
       __MAYDAN_VERSION__: JSON.stringify(version),
-      __MAYDAN_MEDIA_VERSIONS__: JSON.stringify(media),
+      __MAYDAN_MEDIA_VERSIONS__: JSON.stringify(encodeMediaVersions(media)),
       __MAYDAN_ROOMS_URL__: JSON.stringify(process.env.MAYDAN_ROOMS_URL || ''),
+      __MAYDAN_AUDIO_PREVIEW__: JSON.stringify(privateAudioBuild()),
     },
     legalComments: 'none',
     charset: 'utf8',
@@ -90,8 +133,20 @@ export function preloadLinks(assets = []) {
 }
 
 export async function renderHtml(js, { version, assets = [] }) {
-  const template = await readFile(path.join(ROOT, 'src/index.template.html'), 'utf8');
-  const tokens = await readFile(path.join(ROOT, 'src/shared/theme/tokens.css'), 'utf8');
+  let template = await readFile(path.join(ROOT, 'src/index.template.html'), 'utf8');
+  // The small boot guard also sits outside esbuild's imported bundle. Compact
+  // its whitespace while leaving the separate bundle placeholder untouched.
+  const boot = template.match(/<script>([\s\S]*?)<\/script>/);
+  if (boot && !boot[1].includes('<!--BUNDLE_JS-->')) {
+    const compact = (await transform(boot[1], { loader: 'js', minifyWhitespace: true,
+      target: ['es2019', 'safari14'], charset: 'utf8', legalComments: 'none' })).code;
+    template = template.replace(boot[0], () => `<script>${escapeInlineScript(compact)}</script>`);
+  }
+  // Critical tokens bypass the CSS import loader, so compact their whitespace
+  // with the same policy before embedding them in the document head.
+  const tokens = (await transform(await readFile(path.join(ROOT, 'src/shared/theme/tokens.css'), 'utf8'), {
+    loader: 'css', minifyWhitespace: true, legalComments: 'none',
+  })).code;
   return template
     .replace('<!--PRELOAD-->', () => preloadLinks(assets))
     .replace('<!--TOKENS_CSS-->', () => tokens)
@@ -113,13 +168,17 @@ export function renderServiceWorker(src, { id = 'dev', fabrakaImages = [], audio
     .replace('/*__AUDIO_CUES__*/[]', JSON.stringify(audioCues))
     .replace('/*__BRAND_ASSETS__*/[]', JSON.stringify(brandAssets));
 }
-export const audioCueAssets = () => Object.values(SAMPLE_BANK).map((entry) => `./${entry.url}`);
+export const audioCueAssets = () => [...new Set([
+  ...Object.values(SAMPLE_BANK).map((entry) => `./${entry.url}`),
+  ...(privateAudioBuild() ? Object.values(CANDIDATE_EFFECTS).map((entry) => `./${entry.url}`) : []),
+])];
 
 async function copyPublic({ id = 'dev', fabrakaImages = [], brandAssets = [] } = {}) {
   const pub = path.join(ROOT, 'public');
   try { await stat(pub); } catch { return; }
   for (const entry of await readdir(pub)) {
-    await cp(path.join(pub, entry), path.join(DIST, entry), { recursive: true });
+    await cp(path.join(pub, entry), path.join(DIST, entry), { recursive: true,
+      filter: (source) => privateAudioBuild() || !path.relative(pub, source).split(path.sep).join('/').match(/^audio\/candidates(?:\/|$)/) });
   }
   const sw = path.join(DIST, 'sw.js');
   try {
@@ -129,6 +188,7 @@ async function copyPublic({ id = 'dev', fabrakaImages = [], brandAssets = [] } =
 }
 
 export async function buildOnce({ minify = true, includeStudio = true } = {}) {
+  if (privateAudioBuild()) await verifyMaterialized(ROOT);
   const pkg = await readPkg();
   const versions = await mediaVersions(ROOT);
   const fabrakaImages = await fabrakaMediaManifest(ROOT, versions);

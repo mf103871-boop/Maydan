@@ -1,5 +1,6 @@
 // غلاف المنصة: المزوّدون (صوت/اهتزاز/تخزين/دفتر اللاعبين/إعدادات)، الموجّه، وانتقالات الشاشات.
 import React, { useEffect, useMemo, useState, useCallback, useRef } from 'react';
+import { PlusStyles } from '../plus/PlusStyles.jsx';
 import { PlatformContext, usePlatform } from './context.js';
 import { useRoute, navigate, getDirection, getRoute, installNativeBackBridge } from './router.js';
 import { getGame } from './registry.js';
@@ -25,6 +26,9 @@ import { BottomNavigation, MenuScrollRestoration } from './BottomNavigation.jsx'
 import { About } from './screens/About.jsx';
 import { Terms, Privacy } from './screens/Legal.jsx';
 import { Online } from '../online/Online.jsx';
+import { MafiaEntry } from '../games/mafia/tutorial/MafiaEntry.jsx';
+import { MafiaTutorial } from '../games/mafia/tutorial/MafiaTutorial.jsx';
+import { MafiaLabs } from '../games/mafia/tutorial/labs/MafiaLabs.jsx';
 import onlineCss from '../online/online.css';
 import { AccountProvider } from '../shared/account/AccountProvider.jsx';
 import { PaywallHost } from '../shared/account/PaywallHost.jsx';
@@ -41,7 +45,7 @@ import { DesignRuntime } from '../design/DesignRuntime.jsx';
 
 export const VERSION = typeof __MAYDAN_VERSION__ !== 'undefined' ? __MAYDAN_VERSION__ : '1.0.0';
 const platformStorage = createStorage('platform');
-const DEFAULT_SETTINGS = { soundOn: true, soundVolume: 0.75, voiceOn: true, musicOn: true, musicVolume: 0.35, musicLevel: 2, hapticsOn: true, reducedMotion: false, splashSeen: false };
+const DEFAULT_SETTINGS = { soundOn: true, soundVolume: 0.75, voiceOn: false, creatorMode: false, musicOn: true, musicVolume: 0.35, musicLevel: 2, hapticsOn: true, reducedMotion: false, splashSeen: false };
 // الموسيقى 3.1 أهدأ وأخفض: من حفظ مستوى الموسيقى قبلها يُنقل مرة واحدة إلى الافتراضي الجديد.
 function migrateSettings(saved) {
   const next = { ...DEFAULT_SETTINGS, ...(saved || {}) };
@@ -60,6 +64,8 @@ function ScreenHost({ route }) {
   // عودة الدخول (#/auth?code=) تعرض الرئيسية بينما يبدّل AccountProvider الرمز بجلسة.
   if (route.name === 'home' || route.name === 'auth') screen = <Home key="home" />;
   else if (route.name === 'game') screen = <GameDetails key={`game-${route.params.id}`} id={route.params.id} />;
+  else if (route.name === 'mafia-tutorial') screen = route.params.lab||route.params.labs ? <MafiaLabs key={`mafia-labs-${route.params.lab||'hub'}`} courseId={route.params.lab}/> : <MafiaTutorial key="mafia-tutorial" />;
+  else if (route.name === 'play' && route.params.id === 'mafia') screen = <MafiaEntry key="mafia-entry" />;
   else if (route.name === 'play') screen = getGame(route.params.id)?.onlineOnly ? <Online key={`online-${route.params.id}`} game={route.params.id} /> : <Play key={`play-${route.params.id}`} id={route.params.id} />;
   else if (route.name === 'players') screen = <Players key="players" />;
   else if (route.name === 'friends' || route.name === 'friend-group') screen = <div key="friends" data-social-page-slot />;
@@ -70,8 +76,9 @@ function ScreenHost({ route }) {
   else if (route.name === 'about') screen = <About key="about" />;
   else if (route.name === 'terms') screen = <Terms key="terms" />;
   else if (route.name === 'privacy') screen = <Privacy key="privacy" />;
+  else if (route.name === 'online' && route.params.id === 'mafia') screen = <MafiaEntry key="mafia-entry" />;
   else if (route.name === 'online') screen = <Online key={`online-${route.params.id || 'meenfina'}`} game={route.params.id || 'meenfina'} />;
-  else if (route.name === 'room') screen = <Online key={`room-${route.params.id}`} code={route.params.id} />;
+  else if (route.name === 'room') screen = <Online key={`room-${route.params.id}-${route.params.watch==='1'?'observer':'player'}`} code={route.params.id} observer={route.params.watch==='1'} />;
   return screen;
 }
 
@@ -79,7 +86,7 @@ function Providers({ children }) {
   const toast = useToast();
   const [settings, setSettingsState] = useState(() => migrateSettings(platformStorage.get('settings', {})));
   const [roster, setRosterState] = useState(() => platformStorage.get('roster', []) || []);
-  const sound = useMemo(() => createSound({ enabled: settings.soundOn, volume: settings.soundVolume, voice: settings.voiceOn, music: settings.musicOn, musicVolume: settings.musicVolume }), []); // eslint-disable-line react-hooks/exhaustive-deps
+  const sound = useMemo(() => createSound({ enabled: settings.soundOn, volume: settings.soundVolume, voice: settings.voiceOn, music: settings.musicOn, musicVolume: settings.musicVolume, creatorMode: settings.creatorMode }), []); // eslint-disable-line react-hooks/exhaustive-deps
   const haptics = useMemo(() => createHaptics({ enabled: settings.hapticsOn }), []); // eslint-disable-line react-hooks/exhaustive-deps
 
   const setSettings = useCallback((patch) => {
@@ -88,6 +95,7 @@ function Providers({ children }) {
     if ('soundVolume' in patch) sound.setVolume(patch.soundVolume);
     if ('voiceOn' in patch) sound.voice.enable(patch.voiceOn);
     if ('musicOn' in patch) sound.music.enable(patch.musicOn);
+    if ('creatorMode' in patch) sound.music.setCreatorMode(patch.creatorMode);
     if ('musicVolume' in patch) sound.music.setVolume(patch.musicVolume);
     if ('hapticsOn' in patch) haptics.enable(patch.hapticsOn);
     setSettingsState((prev) => {
@@ -106,6 +114,7 @@ function Providers({ children }) {
   useEffect(() => { sound.setVolume(settings.soundVolume); }, [sound, settings.soundVolume]);
   useEffect(() => { sound.voice.enable(settings.voiceOn); }, [sound, settings.voiceOn]);
   useEffect(() => { sound.music.enable(settings.musicOn); }, [sound, settings.musicOn]);
+  useEffect(() => { sound.music.setCreatorMode(settings.creatorMode); }, [sound, settings.creatorMode]);
   useEffect(() => { sound.music.setVolume(settings.musicVolume); }, [sound, settings.musicVolume]);
   useEffect(() => { haptics.enable(settings.hapticsOn); }, [haptics, settings.hapticsOn]);
   useEffect(() => { document.documentElement.dataset.reducedMotion = settings.reducedMotion ? 'true' : 'false'; }, [settings.reducedMotion]);
@@ -116,9 +125,9 @@ function Providers({ children }) {
 }
 
 // عنوان المستند يتبع الشاشة (قارئات الشاشة والتبويبات والسجل)، والألعاب تحمل اسمها.
-const SCREEN_TITLES = { players: 'اللاعبون', friends: 'الأصدقاء', 'friend-group': 'الشِّلّة', store: 'المتجر', profile: 'الملف', settings: 'الإعدادات', about: 'عن ميدان', terms: 'شروط الاستخدام', privacy: 'سياسة الخصوصية', online: 'اللّمّة', room: 'الغرفة' };
+const SCREEN_TITLES = { 'mafia-tutorial': 'تدريب مافيا', players: 'اللاعبون', friends: 'الأصدقاء', 'friend-group': 'الشِّلّة', store: 'المتجر', profile: 'الملف', settings: 'الإعدادات', about: 'عن ميدان', terms: 'شروط الاستخدام', privacy: 'سياسة الخصوصية', online: 'اللّمّة', room: 'الغرفة' };
 const BASE_TITLE = 'ميدان: ألعاب جمعتنا';
-const IN_GAME_ROUTES = new Set(['play', 'online', 'room']);
+const IN_GAME_ROUTES = new Set(['play', 'online', 'room', 'mafia-tutorial']);
 export const UPDATE_READY_MESSAGE = 'تحديث ميدان جاهز — يعمل عند الفتح التالي.';
 
 function Shell() {
@@ -160,12 +169,15 @@ function Shell() {
   useEffect(() => () => { sound.stop({ spare: 350 }); confetti.clear(); }, [route.path, sound, confetti]);
   // الموسيقى تتبع الشاشة: القوائم واللّمّة على مقطع «البيت»، وشاشة اللعب تختار مقطعها بنفسها
   // (الإعداد على «البيت»، ثم مقطع اللعبة عند البدء؛ انظر Play.jsx).
-  useEffect(() => { if (route.name !== 'play') sound.music.play('home'); }, [route.name, sound]);
+  const shellMusic = useRef(Symbol('menu-music'));
+  useEffect(() => { sound.music.scene(shellMusic.current, 'home', route.name, 0); }, [route.name, sound]);
+  useEffect(() => { const lease = shellMusic.current; return () => sound.music.releaseScene(lease); }, [sound]);
   // «مسح كل البيانات» من الشاشة الحمراء يبقي الحساب كما تفعل الإعدادات.
   const resetKeepingAccount = () => { clearAllPlatformData({ keep: [ACCOUNT_PREFIX] }); location.reload(); };
   return (
     <>
       <BrandFonts />
+      <PlusStyles />
       <style>{uiCss}</style>
       <style>{setupCss}</style>
       <style>{platformCss}</style>

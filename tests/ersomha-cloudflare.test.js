@@ -8,6 +8,7 @@ import { Miniflare, convertV4MiniflareOptions } from 'miniflare';
 import { WebSocket } from 'ws';
 import { RoomClient, newCredentials } from '../src/online/client.js';
 import { ROOM_CAPABILITIES } from '../src/online/shared.js';
+import { EMPTY_COSMETICS } from '../src/plus/catalog.js';
 import { migrationSql } from '../server/local-d1.mjs';
 
 const ORIGIN = 'http://localhost:3000';
@@ -94,8 +95,8 @@ test('Ersomha seat recovery requires its live account and rejects logout, accoun
     await attempt(null, 'AUTH_REQUIRED');
     await attempt(`Bearer ${other.token}`, 'AUTH');
     const states = await attempt(`Bearer ${owner.token}`);
-    assert.deepEqual(states.at(-1).members.find(m => m.id === session.id).profile, { avatarPreset: 'fox', theme: 'ocean', avatarUrl: null, revision: 7 });
-    assert.deepEqual(states.at(-1).members.find(m => m.id === visitor.id).profile, { avatarPreset: 'owl', theme: 'violet', avatarUrl: null, revision: 4 });
+    assert.deepEqual(states.at(-1).members.find(m => m.id === session.id).profile, { avatarPreset: 'fox', theme: 'ocean', avatarUrl: null, revision: 7, cosmetics: EMPTY_COSMETICS });
+    assert.deepEqual(states.at(-1).members.find(m => m.id === visitor.id).profile, { avatarPreset: 'owl', theme: 'violet', avatarUrl: null, revision: 4, cosmetics: EMPTY_COSMETICS });
     assert.equal(JSON.stringify(states).includes('attacker.test'), false, 'client profile fields are never trusted');
     assert.equal(JSON.stringify(states).includes(other.userId), false, 'public snapshot has no account-id field');
     assert.equal((await run.api('/api/auth/signout', {}, owner.token)).status, 204);

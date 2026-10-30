@@ -100,6 +100,21 @@
 .social-composer textarea { flex: 1; min-width: 0; max-height: 144px; min-height: 48px; padding: 12px 15px; resize: none; background: #fffefa; border: 1px solid var(--stroke); border-radius: 16px; outline-color: var(--accent); font-size: 16px; line-height: 1.5; }
 .social-send { flex: 0 0 48px; width: 48px; height: 48px; border-radius: 16px; background: var(--accent); color: #fff; display: grid; place-items: center; box-shadow: inset 0 1px 0 #ffffff30, 0 3px 0 #07636b; }.social-send > svg { transform: scaleX(-1); }.social-send:disabled { opacity: .38; box-shadow: none; }.social-send:active:not(:disabled) { transform: translateY(2px); box-shadow: none; }
 .social-composer-note { color: var(--muted); font-size: 11px; margin-bottom: 8px; }.social-character-count { display: block; color: var(--muted); text-align: end; font-size: 10px; margin-top: 6px; }
+.social-sticker-message { margin: 0; display: grid; justify-items: center; gap: 4px; max-width: 100%; }
+.social-sticker-message img { width: min(144px,100%); height: auto; object-fit: contain; }
+.social-sticker-message figcaption { font-size: 12px; font-weight: 700; }
+.social-sticker-picker { margin-bottom: 7px; min-width: 0; }
+.social-sticker-toggle { display: inline-flex; align-items: center; gap: 7px; min-height: 44px; padding: 5px 12px; background: #f0e6f7; color: #55356e; border: 1px solid #c6abd7; border-radius: 14px; font: inherit; font-weight: 700; }
+.social-sticker-toggle small { border-radius: 8px; padding: 2px 5px; background: #6c4587; color: #fff; }
+.social-sticker-panel { margin-top: 6px; padding: 7px; border: 1px solid #c6abd7; border-radius: 16px; background: #fffbf6; min-width: 0; }
+.social-sticker-heading { display: flex; align-items: center; justify-content: space-between; gap: 5px; font-size: 12px; }
+.social-sticker-heading button { min-width: 44px; min-height: 44px; border: 0; border-radius: 12px; background: #efe6f4; color: #543263; font-size: 24px; }
+.social-sticker-grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(75px,1fr)); gap: 5px; max-height: min(190px,24dvh); overflow-y: auto; overscroll-behavior: contain; }
+.social-sticker-grid button { display: grid; justify-items: center; align-content: center; gap: 2px; padding: 5px; min-width: 0; min-height: 80px; border: 1px solid #e5d9ca; border-radius: 12px; background: #fff; color: #352547; font: inherit; font-size: 11px; }
+.social-sticker-grid img { max-width: 100%; height: 64px; object-fit: contain; }
+.social-sticker-grid span { overflow-wrap: anywhere; }
+.social-sticker-picker button:focus-visible { outline: 3px solid #137c85; outline-offset: 2px; }
+.social-sticker-picker button:disabled { opacity: .55; }
 .social-unavailable { display: flex; align-items: center; width: 100%; }
 .social-list-heading { font-size: 12px; display: flex; gap: 6px; color: var(--muted); padding: 12px 10px 7px; }.social-list-heading span { color: var(--accent); }
 .social-request-row { padding: 12px 9px; border-bottom: 1px solid #e6d4be65; }.social-request-identity { display: flex; align-items: center; gap: 9px; }.social-request-identity > div { min-width: 0; flex: 1; display: grid; gap: 3px; }.social-request-identity strong { font-size: 14px; }.social-request-identity small { font-size: 10px; color: var(--muted); }.social-request-actions { display: flex; gap: 8px; margin-top: 11px; padding-inline-start: 54px; }.social-request-actions .btn { font-size: 11px; min-height: 44px; padding-inline: 12px; border-radius: 11px; }

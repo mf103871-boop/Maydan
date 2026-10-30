@@ -1,3 +1,4 @@
+import { SetupPresets } from '../../plus/SetupPresets.jsx';
 import { Avatar, GameArtwork } from '../../shared/brand/art.jsx';
 import React, { useCallback, useEffect, useReducer, useRef, useState } from 'react';
 import { socialInterruption } from '../../social/interruption.js';
@@ -35,6 +36,7 @@ export function SetupOptions({ storage, api }) {
   useEffect(() => { api.setSetupValid?.(valid); return () => api.setSetupValid?.(true); }, [api, valid]);
   useEffect(() => { api.setGameOptions?.(opts); }, [api, opts]);
   return <div data-design-screen="setup.fabraka" data-design-id="options" className="fabraka fab-setup stack">
+    {!api.designPreview && <SetupPresets game="fabraka" settings={opts} onApply={update} />}
     <style>{css}</style>
     {retiredSession && <p className="fab-note" role="status">تجدّدت أسئلة فبركة وصورها. ابدأوا جلسة جديدة؛ الجلسة القديمة غير قابلة للاستئناف، ونتائجكم السابقة محفوظة.</p>}
     {resume && <Card className="fab-resume stack">
@@ -325,7 +327,11 @@ export function Game({ api, players, onExit, savedSession = null, gameOptions = 
     return () => document.removeEventListener('visibilitychange', hide);
   }, []);
   useEffect(() => {
-    if (state.phase === 'over') { api.sound.play('fanfare'); api.haptics.vibrate('win'); api.confetti.fire(); api.matchOver?.({ completed: state.history.length >= state.rounds }); }
+    if (state.phase === 'over') {
+      const completed = state.history.length >= state.rounds;
+      if (completed) { api.haptics.vibrate('win'); api.confetti.fire(); }
+      api.matchOver?.({ completed });
+    }
     else if (state.phase === 'reveal') { api.sound.play(state.revealed ? 'reveal' : 'drumroll'); }
   }, [state.phase, state.revealIndex, state.revealed]);
   // تكّة لكل ثانية من الخمس الأخيرة؛ الاستئناف أو «جاهزون» على الثانية نفسها لا يعيدها.

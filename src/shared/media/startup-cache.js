@@ -56,7 +56,7 @@ function checkSignal(signal) {
  * persistent === true and failed === 0. Version/query strings stay in cache keys.
  */
 export async function cacheStartupImages(urls, {
-  onProgress, signal, concurrency = 6, timeoutMs = DEFAULT_TIMEOUT,
+  onProgress, signal, concurrency = 6, timeoutMs = DEFAULT_TIMEOUT, waitUntilReady,
 } = {}) {
   const unique = [...new Set(urls)];
   const total = unique.length;
@@ -124,6 +124,13 @@ export async function cacheStartupImages(urls, {
 
   await Promise.all(Array.from({ length: workers }, async () => {
     while (index < total && !signal?.aborted) {
+      // A game/call can retain the queue for minutes. This wait belongs outside
+      // the per-image deadline and leaves completed/in-flight bodies untouched.
+      if (waitUntilReady) {
+        try { await waitUntilReady(signal); }
+        catch (error) { if (signal?.aborted) break; throw error; }
+      }
+      if (index >= total || signal?.aborted) break;
       const url = unique[index++];
       try {
         await withinDeadline((requestSignal) => load(url, requestSignal), { signal, timeoutMs: deadline });

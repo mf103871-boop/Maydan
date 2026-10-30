@@ -44,12 +44,12 @@ try {
         await fs.writeFile(`${output}/${name}-failure.json`, JSON.stringify(diagnostics, null, 2));
         throw error;
       });
-      assert.equal(await page.locator('button.game-card').count(), 7);
+      assert.equal(await page.locator('button.game-card').count(), 8);
       assert.equal(await page.evaluate(() => window.__readinessMessages.length), 0, 'Home DOM alone is not account initialization');
       await page.evaluate(() => window.__releaseAccount());
       await page.waitForFunction(() => window.__readinessMessages.length === 1);
       const receipt = await page.evaluate(() => window.__readinessMessages[0]);
-      assert.deepEqual(receipt, { type: 'simulatorGameReady', token, route: 'home', gameCardCount: 7, initialized: true });
+      assert.deepEqual(receipt, { type: 'simulatorGameReady', token, route: 'home', gameCardCount: 8, initialized: true });
       assert.deepEqual(errors, []);
       await page.screenshot({ path: `${output}/${name}-home.png` });
       result.engines.push({ name, initializedHome: true, waitedForNativeAccount: true, receipt, errors });

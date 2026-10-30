@@ -1,3 +1,4 @@
+import { SetupPresets } from '../../plus/SetupPresets.jsx';
 import { Avatar, GameArtwork } from '../../shared/brand/art.jsx';
 // واجهة «قبل ما يطق!» — تعتمد على logic.js للحالة وعلى المكونات المشتركة للمؤقت والنتائج.
 // الحركة: أختام ووميض من shared/fx (طبقات ثابتة في body)، والرسوم على حوامل clay-stage (brand.css).
@@ -25,6 +26,7 @@ export function SetupOptions({ storage, api }) {
   const update = (patch) => { const next = normalizeOptions({ ...opts, ...patch }); setOpts(next); storage.set(OPTIONS_KEY, next); };
   return (
     <div data-design-screen="setup.beep" data-design-id="options" className="stack">
+    {!api.designPreview && <SetupPresets game="beep" settings={opts} onApply={update} />}
     {resume && <Card className="stack resume-card">
       <span className="card-title">لعبتكم بانتظاركم</span>
       <p className="card-muted">{resume.state.mode === 'three' ? `الجولة ${resume.state.round} من ${resume.state.rounds}` : `💣 القنبلة · ${resume.state.players.length - resume.state.eliminated.length} لاعبين باقين`} · {resume.players.map((p) => p.name).join('، ')}</p>
@@ -117,8 +119,8 @@ function BombRound({ state, dispatch, api, source, random, timeLeftRef, resumeLe
   // قنبلة مستأنفة تكمل من الوقت المحفوظ لا من فتيل جديد.
   useEffect(() => { if (state.phase === 'prompt') { timer.reset(resumeLeft.current ?? state.bombSeconds); resumeLeft.current = null; timer.start(); } }, [state.phase, state.round]); // eslint-disable-line react-hooks/exhaustive-deps
   useEffect(() => { setHot(timer.running && timer.left <= 8); }, [timer.left, timer.running]);
-  // الفتيل يُسمع كل ثانية ويتسارع تحت 8 ثوانٍ؛ عدّ الاستئناف 3-2-1 من المصدر نفسه.
-  useTimerCues(timer, api, { last: Infinity, fastBelow: 8 });
+  // A constant pulse cannot reveal the hidden fuse through speed or haptics.
+  useTimerCues(timer, api, { last: Infinity, fastBelow: -1, hapticBelow: -1 });
   useEffect(() => { timeLeftRef.current = timer.left; }, [timer.left, timeLeftRef]);
 
   if (state.phase === 'intro') {
@@ -210,9 +212,8 @@ export function Game({ api, players, onExit, savedSession = null, designPreviewS
   useEffect(() => {
     if (state.phase !== 'over') return;
     api.storage.set(SEEN_KEY, trimSeen(source.seen(), 1500));
-    api.sound.play('fanfare');
-    api.haptics.vibrate('win');
-    api.confetti.fire();
+    // The platform owns the single completed-match sound.
+    if (state.completed === true) { api.haptics.vibrate('win'); api.confetti.fire(); }
     api.matchOver?.({ completed: state.completed === true });
   }, [state.phase]); // eslint-disable-line react-hooks/exhaustive-deps
 

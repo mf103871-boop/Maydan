@@ -7,15 +7,17 @@ import beep from '../src/games/beep/meta.js';
 import mamnoo from '../src/games/mamnoo/meta.js';
 import jabeen from '../src/games/jabeen/meta.js';
 import fabraka from '../src/games/fabraka/meta.js';
+import mafia from '../src/games/mafia/meta.js';
+import ersomha from '../src/games/ersomha/meta.js';
 import meenfina from '../src/games/meenfina/meta.js';
 
 // meta.js لكل لعبة خالٍ من React ليُختبر في Node؛ index.js يضيف الأيقونة والمكوّن.
-const METAS = [badeeha, beep, mamnoo, jabeen, fabraka, meenfina];
+const METAS = [badeeha, beep, mamnoo, jabeen, fabraka, meenfina, ersomha, mafia];
 
-test('ست ألعاب بمعرّفات فريدة', () => {
-  assert.equal(METAS.length, 6);
-  assert.equal(new Set(METAS.map((g) => g.id)).size, 6);
-  assert.deepEqual(METAS.map((g) => g.id), ['badeeha', 'beep', 'mamnoo', 'jabeen', 'fabraka', 'meenfina']);
+test('ثماني ألعاب بمعرّفات فريدة', () => {
+  assert.equal(METAS.length, 8);
+  assert.equal(new Set(METAS.map((g) => g.id)).size, 8);
+  assert.deepEqual(METAS.map((g) => g.id), ['badeeha', 'beep', 'mamnoo', 'jabeen', 'fabraka', 'meenfina', 'ersomha', 'mafia']);
 });
 
 test('كل manifest يحتوي الحقول المطلوبة بأنواعها', () => {

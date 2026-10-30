@@ -256,11 +256,13 @@ function useQuestionMedia(ref, soundOn, volume, sound, onInterrupt) {
   useEffect(() => {
     if (!element) return undefined;
     let ducking = false;
-    const duck = () => { ducking = true; sound?.setDucking?.(true); };
-    const release = () => { if (!ducking) return; ducking = false; sound?.setDucking?.(false); };
+    const owner = Symbol('question-media');
+    const duck = () => { ducking = true; sound?.setSuppressed?.(true, owner); sound?.music?.setSuppressed?.(true, owner); sound?.setDucking?.(true, owner); };
+    const release = () => { if (!ducking) return; ducking = false; sound?.setDucking?.(false, owner); sound?.setSuppressed?.(false, owner); sound?.music?.setSuppressed?.(false, owner); };
     const releasing = ["pause", "ended", "error", "abort", "emptied"];
     element.addEventListener("play", duck);
     for (const type of releasing) element.addEventListener(type, release);
+    if (!element.paused && !element.ended) duck();
     return () => {
       element.pause();
       element.removeEventListener("play", duck);

@@ -57,6 +57,7 @@ try {
       'ios/Maydan/Assets.xcassets/AppIcon.appiconset/icon-[0-9][0-9].png',
       'ios/Maydan/Assets.xcassets/AppIcon.appiconset/icon-[0-9][0-9][0-9].png',
       'media/demo/*', 'src/data/categories/demo[a-f].json',
+      'public/audio/candidates/*',
       '.wrangler/*', '.dev.vars', '.dev.vars.*', '.env', '.env.*',
     ];
     execFileSync('zip', ['-qr', zip, '.', '-x', ...excludes], { cwd: ROOT });

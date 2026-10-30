@@ -3,6 +3,7 @@ import { json, readJson, errorResponse } from '../protocol.mjs';
 import { requireSession, withRotation } from '../accounts/session.mjs';
 import { chargeUser, friendIds } from '../social/db.mjs';
 import { notifyUsers } from '../social/realtime.mjs';
+import { assertSocialAllowed } from '../mafia-access.mjs';
 import * as db from './db.mjs';
 import { patchOf, revisionOf, userId } from './model.mjs';
 import { base64ToBytes, imageFromDataUrl, IMAGE_LIMITS } from './images.mjs';
@@ -38,6 +39,9 @@ export async function routeProfiles(request,env,url=new URL(request.url),charge)
 }
 async function dispatch(request,env,url,id) {
   const path=url.pathname.slice('/api/profiles'.length); const method=request.method; const now=Date.now();
+  // Staged uploads remain private. Changing public identity or removing a
+  // published image cannot become a second communication channel during Mafia.
+  if((path==='/me'&&method==='PATCH')||(/^\/me\/images\/(avatar|cover)$/.test(path)&&method==='DELETE')) await assertSocialAllowed(env,id);
   // The achievement batch (a write) runs for the viewer's own profile and for writes.
   // Plain reads of other profiles must not write, or any visitor could bump a
   // player's revision and turn their concurrent save into a 409.

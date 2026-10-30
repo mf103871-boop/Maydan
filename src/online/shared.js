@@ -3,11 +3,13 @@ export const PROTOCOL = 1;
 export const FABRAKA_PROTOCOL = 3;
 export const ERSOMHA_PROTOCOL = 1;
 export const BADEEHA_PROTOCOL = 1;
-export const GAME_PROTOCOLS = Object.freeze({ meenfina: PROTOCOL, fabraka: FABRAKA_PROTOCOL, ersomha: ERSOMHA_PROTOCOL, badeeha: BADEEHA_PROTOCOL });
+export { MAFIA_PROTOCOL } from './mafia-shared.js';
+import { MAFIA_PROTOCOL } from './mafia-shared.js';
+export const GAME_PROTOCOLS = Object.freeze({ meenfina: PROTOCOL, fabraka: FABRAKA_PROTOCOL, ersomha: ERSOMHA_PROTOCOL, badeeha: BADEEHA_PROTOCOL, mafia: MAFIA_PROTOCOL });
 // بَديهة أونلاين: جوال لكل فريق (من فريقين إلى أربعة)، والمؤقت كما في اللعبة على جهاز واحد.
 export const BADEEHA_MAX_TEAMS = 4;
 export const BADEEHA_TIMERS = Object.freeze([30, 60, 90]);
-export const ROOM_CAPABILITIES = Object.freeze({ ersomha: ERSOMHA_PROTOCOL, badeeha: BADEEHA_PROTOCOL });
+export const ROOM_CAPABILITIES = Object.freeze({ ersomha: ERSOMHA_PROTOCOL, badeeha: BADEEHA_PROTOCOL, mafia: MAFIA_PROTOCOL, mafiaRulesets:Object.freeze([1,2]) });
 // تفاعلات سريعة داخل الغرفة: طقم رموز ثابت بلا نص حر، يُبث للحاضرين ولا يُحفظ.
 // رسالة `reaction` جديدة لا تكسر عميلًا أقدم (يتجاهل الأنواع التي لا يعرفها)، فلا يُرفع البروتوكول.
 export const ROOM_REACTIONS = Object.freeze(['😂', '👏', '😮', '🔥', '😅', '❤️']);
@@ -15,6 +17,7 @@ export const REACTION_BURST = 4;
 export const REACTION_REFILL_MS = 1500;
 // رسّام «ارسمها» صامت أثناء الاختيار والرسم (كتم الميكروفون شرط لبدء دوره)؛ رمز مثل 🔥 يصير تلميحًا.
 export function reactionsAllowed(state, seatId) {
+  if (state?.game === 'mafia') return ['lobby','over'].includes(state.phase);
   if (!state || state.game !== 'ersomha' || !['select', 'draw'].includes(state.phase)) return true;
   return seatId !== (state.draw?.drawerId ?? state.drawerId);
 }
@@ -32,10 +35,11 @@ export const ONLINE_GAMES = {
   fabraka: { name: 'فبركة', min: 2, max: 8 },
   ersomha: { name: 'ارسمها', min: 2, max: 8 },
   badeeha: { name: 'بَديهة', min: 2, max: 4 },
+  mafia: { name: 'مافيا ميدان', min: 6, max: 12 },
 };
 // A personal truth round needs its owner and at least two writers. The other
 // Fabraka modes keep a real choice for two players by adding house decoys.
-export const minimumOnlinePlayers = (game, settings) => game === 'ersomha' || game === 'badeeha' || (game === 'fabraka' && settings?.mode !== 'friends') ? 2 : 3;
+export const minimumOnlinePlayers = (game, settings) => game === 'mafia' ? (settings?.mode === 'shadow' ? 9 : settings?.experimentalRole==='tracker' ? 8 : 6) : game === 'ersomha' || game === 'badeeha' || (game === 'fabraka' && settings?.mode !== 'friends') ? 2 : 3;
 export const MIN_PLAYERS = 3;
 export const MAX_PLAYERS = 12;
 export const ROUND_OPTIONS = [5, 8, 12];
@@ -82,6 +86,43 @@ export function resolveServerUrl(value, pageOrigin = '') {
   return validateServerUrl(value === 'same-origin' ? pageOrigin : value);
 }
 export const ERRORS = {
+  MAFIA_DISABLED: 'مافيا ميدان غير متاحة لبدء مباريات جديدة حاليًا.',
+  MAFIA_DRAINING: 'نجهّز تحديثًا للمجالس. المباريات القائمة تتابع حتى نهايتها؛ جرّب بدء مجلس جديد لاحقًا.',
+  MAFIA_RULESET_UNSUPPORTED: 'تعذّر متابعة هذه النسخة من قواعد المجلس. أعد الاتصال بعد اكتمال التحديث.',
+  MAFIA_RULESET_FIXED: 'قواعد هذا المجلس ثابتة. أنشئ مجلسًا جديدًا لتجربة قواعد أخرى.',
+  MAFIA_EXPERIMENT_DISABLED: 'المتعقّب متاح ضمن معاينة المجالس الخاصة فقط.',
+  MAFIA_RANKED_FIXED: 'المنافسة تثبت الأدوار والأوقات والمقاعد؛ لا يغيرها مضيف.',
+  MAFIA_RANKED_PRIVATE: 'هذا المقعد محجوز للاعبه في طابور المنافسة.',
+  MAFIA_RANKED_CALL_ACTIVE: 'أنهِ مكالمتك الاجتماعية قبل دخول طابور المنافسة.',
+  MAFIA_ACTIVE_ELSEWHERE: 'لديك مقعد مافيا في غرفة أخرى. عُد إليه أو غادره أولًا.',
+  MAFIA_OBSERVER_ACTIVE: 'أنت تتابع مجلسًا الآن. اخرج من المشاهدة قبل حجز مقعد.',
+  OBSERVER_FULL: 'اكتمل عدد المشاهدين في هذا المجلس. جرّب مجلسًا آخر.',
+  OBSERVER_PRIVATE: 'المشاهدة متاحة للمجالس العامة فقط.',
+  OBSERVER_WAIT: 'يمكنك أخذ مقعد بعد ظهور النتيجة المتأخرة وعودة المجلس إلى الانتظار.',
+  OBSERVER_READ_ONLY: 'المشاهدة للأحداث العامة فقط، دون إرسال رسائل أو صوت.',
+  INVALID_CURSOR: 'تغيّرت قائمة المجالس. حدّث القائمة للمتابعة.',
+  MAFIA_NO_ROOMS: 'لا توجد غرفة مناسبة الآن. جرّب مرة أخرى أو أنشئ غرفة.',
+  MAFIA_BLOCKED: 'لا يمكن جمع حسابات بينها حظر في هذه الغرفة.',
+  MAFIA_UNAVAILABLE: 'تعذّر تجهيز غرفة مافيا. حاول مجددًا بعد قليل.',
+  MAFIA_VOICE_UNAVAILABLE: 'تعذّر تأمين قنوات الصوت. لم نفتح قناة سرية.',
+  MAFIA_VOICE_CAPACITY: 'غرف مافيا الصوتية مشغولة حاليًا. انتظر انتهاء مباراة ثم جرّب.',
+  MAFIA_VOICE_TRANSITION: 'يجري تأمين قناة الصوت للمرحلة الجديدة.',
+  MAFIA_VOICE_DEVICE: 'صوت المباراة مفتوح على جهازك الآخر. أغلقه هناك أولًا.',
+  MAFIA_VOICE_SESSION: 'انتهت جلسة الاتصال السابقة. اضغط الانضمام للصوت مجددًا.',
+  MAFIA_SOCIAL_LOCKED: 'ارجع إلى مجلسك أو غادر طابور المنافسة لاستعادة التواصل الاجتماعي.',
+  ABILITY_UNAVAILABLE: 'هذه القدرة غير متاحة لك في هذه المرحلة.',
+  ALREADY_VOTED: 'سُجّل صوتك في هذه المرحلة، ولا يتغير بعد التأكيد.',
+  CALL_UNAVAILABLE: 'صوت المباراة غير متاح الآن.',
+  CHANNEL: 'الكتابة في هذه القناة غير متاحة لك في هذه المرحلة.',
+  CLOSED: 'انتهت هذه الغرفة.',
+  ELIMINATED: 'خرجت من المجلس، فلا يمكنك تنفيذ هذا الإجراء. تابع حتى النهاية.',
+  PLAYERS: 'عدد اللاعبين لا يناسب هذا الطور. راجع سعة الغرفة وعدد الحاضرين.',
+  REQUEST_CONFLICT: 'وصل هذا الطلب سابقًا بمحتوى مختلف. حدّث الشاشة وحاول مجددًا.',
+  CONFLICT: 'تعارض هذا الطلب مع طلب سابق. حدّث الشاشة وحاول مجددًا.',
+  TEXT: 'اكتب رسالة قصيرة (حتى ٥٠٠ حرف) دون رموز مخفية.',
+  WAITING: 'تدخل المباراة التالية؛ لا يمكنك المشاركة في المباراة الجارية.',
+  WITHDRAWN: 'انتهت مهلة عودتك، فاحتُسب انسحابك من هذه المباراة.',
+  PRIVATE: 'هذا الإجراء غير متاح لك الآن.',
   INVALID: 'تحقق من البيانات وحاول مرة ثانية.',
   NAME: 'اكتب اسمًا من حرف إلى ٢٠ حرفًا.',
   NAME_TAKEN: 'هذا الاسم مستخدم في الغرفة. اختر اسمًا آخر.',
@@ -98,7 +139,7 @@ export const ERRORS = {
   FULL_ERSOMHA: 'غرفة ارسمها ممتلئة؛ الحد الأعلى ٨ لاعبين.',
   GAME: 'هذه اللعبة غير متاحة للغرف. اختر لعبة من قائمة غرف ميدان.',
   UPDATE_REQUIRED: 'هذه الغرفة تحتاج إصدارًا أحدث من ميدان. حدّث التطبيق ثم افتح الدعوة مجددًا.',
-  AUTH_REQUIRED: 'سجّل الدخول للعب ارسمها وحفظ الكلمات التي شاهدتها عبر أجهزتك.',
+  AUTH_REQUIRED: 'سجّل الدخول للانضمام إلى هذه اللعبة وحفظ تقدمك عبر أجهزتك.',
   ERSOMHA_BUSY: 'لديك مباراة ارسمها جارية في غرفة أخرى. عُد إليها أو غادرها قبل البدء هنا.',
   ERSOMHA_EXHAUSTED: 'لا توجد كلمات جديدة كافية لهذه المجموعة. وسّع الفئات أو اختر إعادة الكلمات القديمة بوضوح.',
   ERSOMHA_CONTENT_EXHAUSTED: 'لا توجد كلمات جديدة كافية لهذه المجموعة. وسّع الفئات أو اختر إعادة الكلمات القديمة بوضوح.',
@@ -145,7 +186,7 @@ export const ERRORS = {
   BANNED: 'أزال المضيف مقعدك من هذه الغرفة، ولا يمكن العودة إليها.',
   EXPIRING: 'لم يبقَ من عمر الغرفة ما يكفي لمباراة كاملة. أنشئ غرفة جديدة.',
   ORIGIN: 'رابط اللعبة غير مفعّل للاتصال بالغرف.',
-  PLUS_REQUIRED: 'إنشاء الغرف بعد الغرفة المجانية يحتاج إلى ميدان بلس.',
+  PLUS_REQUIRED: 'هذا التخصيص من ميدان بلس. اللعب وإنشاء الغرف مجانيان.',
   CONFIG: 'حدّث صفحة اللعبة للحصول على أحدث نسخة من الغرف.',
   ROOM_OUTDATED: 'وصلت نسخة أحدث من الغرف أثناء اللعب. مقعدك محفوظ: حدّث لتكمل في الغرفة نفسها.',
   ROOM_OUTDATED_APP: 'وصلت نسخة أحدث من الغرف. حدّث تطبيق ميدان من App Store ثم افتح الغرفة من جديد؛ مقعدك محفوظ.',

@@ -20,7 +20,7 @@ function page(rows,limit,key) {
 }
 export async function reportsOf(env,{before,limit},status='open') {
   if(!['open','resolved'].includes(status)) fail('INVALID',400);
-  const rows=await all(env,`SELECT r.*,r.rowid AS seq,d.resolved_at,d.reason AS resolution,u.name,p.bio,p.revision,s.code,gr.group_id,ra.attachment_id,dr.turn AS drawing_turn,
+  const rows=await all(env,`SELECT r.*,r.rowid AS seq,d.resolved_at,d.reason AS resolution,u.name,p.bio,p.revision,s.code,gr.group_id,ra.attachment_id,dr.turn AS drawing_turn,m.id AS mafia_id,m.category AS mafia_category,m.room_code AS mafia_room,m.match_id AS mafia_match,m.review_started_at AS mafia_review_started,
     EXISTS(SELECT 1 FROM moderation_suspensions ms WHERE ms.user_id=r.reported_id) AS suspended,
     CASE WHEN ${approvedImageSql('p','avatar')} THEN p.avatar_version END AS avatar_version,
     CASE WHEN ${approvedImageSql('p','cover')} THEN p.cover_version END AS cover_version
@@ -29,13 +29,15 @@ export async function reportsOf(env,{before,limit},status='open') {
     LEFT JOIN social_profiles s ON s.user_id=r.reported_id
     LEFT JOIN social_group_reports gr ON gr.id=r.id LEFT JOIN social_report_attachments ra ON ra.report_id=r.id
     LEFT JOIN ersomha_drawing_reports dr ON dr.report_id=r.id
+    LEFT JOIN mafia_reports m ON m.id=r.id
     WHERE r.rowid<? AND d.report_id IS ${status==='open'?'':'NOT '}NULL ORDER BY r.rowid DESC LIMIT ?`,before,limit+1);
   return page(rows.map(r=>({id:r.id,seq:r.seq,reporterId:r.reporter_id,reportedUser:{id:r.reported_id,name:publicName(r.name),
     code:r.code,bio:r.bio||'',revision:r.revision||0,suspended:!!r.suspended,avatarVersion:r.avatar_version,coverVersion:r.cover_version,
     avatarUrl:imageUrl(r.reported_id,'avatar',r.avatar_version),coverUrl:imageUrl(r.reported_id,'cover',r.cover_version)},
-    messageSeq:r.message_seq,messageText:r.message_text,reason:r.reason,createdAt:r.created_at,resolvedAt:r.resolved_at,resolution:r.resolution,
+    messageSeq:r.message_seq,messageText:r.message_text,...(r.sticker_id?{stickerId:r.sticker_id,stickerVersion:r.sticker_version}:{}),reason:r.reason,createdAt:r.created_at,resolvedAt:r.resolved_at,resolution:r.resolution,
     ...(r.group_id?{scope:'group',groupId:r.group_id}:{}),...(r.attachment_id?{audioUrl:`/api/moderation/reports/${r.id}/audio`}:{}),
-    ...(r.drawing_turn?{scope:'drawing',drawingTurn:r.drawing_turn,drawingUrl:`/api/moderation/reports/${r.id}/drawing`}:{}),})),limit,'reports');
+    ...(r.drawing_turn?{scope:'drawing',drawingTurn:r.drawing_turn,drawingUrl:`/api/moderation/reports/${r.id}/drawing`}:{}),
+    ...(r.mafia_id?{scope:'mafia',mafia:{category:r.mafia_category,roomCode:r.mafia_room,matchId:r.mafia_match,status:r.resolved_at?'reviewed':r.mafia_review_started?'reviewing':'queued'},mafiaEvidenceUrl:`/api/moderation/reports/${r.id}/mafia`}:{}),})),limit,'reports');
 }
 export async function imagesOf(env,{before,limit}) {
   const rows=await all(env,`SELECT r.seq,r.id,r.user_id,r.kind,r.version,r.created_at,u.name,s.code
@@ -53,7 +55,7 @@ export async function auditOf(env,{before,limit}) {
 export const reviewImage=(env,id,version)=>first(env,`SELECT r.data_base64,r.byte_length FROM moderation_image_reviews r
   WHERE r.id=? AND r.version=? AND ${accountExists('r.user_id')}`,id,version);
 
-const ACTIONS=new Set(['resolve_report','remove_message','clear_profile_text','remove_image','suspend_user','restore_user','approve_image','reject_image']);
+const ACTIONS=new Set(['resolve_report','review_mafia_report','remove_message','clear_profile_text','remove_image','suspend_user','restore_user','approve_image','reject_image']);
 export function actionOf(body) {
   if(!body || typeof body!=='object' || Array.isArray(body)) fail('INVALID',400);
   const allowed=new Set(['clientId','action','targetId','reason','reportId','field','kind','version','revision']);
@@ -81,9 +83,15 @@ export async function performAction(env,actor,body,now=Date.now()) {
   const prior=await first(env,'SELECT id,request_hash FROM moderation_actions WHERE actor_id=? AND client_id=?',actor.userId,input.clientId);
   if(prior){if(prior.request_hash!==hash)fail('CONFLICT',409);return {ok:true,actionId:prior.id};}
   const {action,targetId,reason,reportId}=input;let subject=targetId;let guard;let args=[];let snapshot='NULL';let related=[];let image;let groupMessage=false;
-  if(action==='resolve_report') {
+  if(action==='review_mafia_report'&&reportId&&reportId!==targetId)fail('INVALID',400);
+  if(action==='resolve_report'||action==='review_mafia_report') {
     const report=await first(env,'SELECT reported_id FROM social_reports WHERE id=?',targetId);if(!report)fail('NOT_FOUND',404);
     subject=report.reported_id;guard='EXISTS(SELECT 1 FROM social_reports WHERE id=?)';args=[targetId];
+    if(action==='review_mafia_report'){
+      if(!await first(env,'SELECT id FROM mafia_reports WHERE id=?',targetId))fail('NOT_FOUND',404);
+      guard+=` AND EXISTS(SELECT 1 FROM mafia_reports m WHERE m.id=? AND m.review_started_at IS NULL AND NOT EXISTS(SELECT 1 FROM moderation_report_decisions d WHERE d.report_id=m.id)) AND ${accountExists('?')}`;
+      args.push(targetId,actor.userId,actor.userId);
+    }
   } else if(action==='remove_message') {
     const groupReport=reportId?await first(env,'SELECT group_id,message_seq FROM social_group_reports WHERE id=?',reportId):null;
     groupMessage=!!groupReport;
@@ -115,9 +123,10 @@ export async function performAction(env,actor,body,now=Date.now()) {
     ${reportId?'AND EXISTS(SELECT 1 FROM social_reports WHERE id=? AND reported_id=?)':''}`;
   const statements=[stmt(env,`INSERT OR IGNORE INTO moderation_actions(id,actor_id,client_id,request_hash,action,target_id,subject_user_id,reason,report_id,snapshot_json,created_at)
     SELECT ?,?,?,?,?,?,?,?,?,${snapshot},? WHERE ${sqlGuard}`,
-    id,actor.userId,input.clientId,hash,action,targetId,subject,reason,reportId||null,...snapshotArgs,now,
+    id,actor.userId,input.clientId,hash,action,targetId,subject,reason,(action==='review_mafia_report'?targetId:reportId)||null,...snapshotArgs,now,
     ...args,subject,subject,actor.sessionId,actor.userId,now,now,actor.userId,...(reportId?[reportId,subject]:[]))];
   const run=(sql,...values)=>statements.push(stmt(env,sql,...values,id));
+  if(action==='review_mafia_report')run(`UPDATE mafia_reports SET review_started_at=COALESCE(review_started_at,?),reviewer_id=? WHERE id=? AND ${newAction}`,now,actor.userId,targetId);
   if(action==='remove_message'){
     const table=groupMessage?'social_group_messages':'social_messages';
     run(`UPDATE ${table} SET deleted_at=?,edited_at=? WHERE seq=? AND ${newAction}`,now,now,Number(targetId));
@@ -146,18 +155,19 @@ export async function performAction(env,actor,body,now=Date.now()) {
     run(`UPDATE player_profiles SET ${image.kind}_version=? WHERE user_id=? AND ${newAction}`,input.version,subject);
     run(`DELETE FROM moderation_image_reviews WHERE id=? AND version=? AND ${newAction}`,targetId,input.version);
   }
-  if(action!=='resolve_report')run(`UPDATE player_profiles SET revision=revision+1,updated_at=? WHERE user_id=? AND ${newAction}`,now,subject);
-  const resolvedReport=action==='resolve_report'?targetId:reportId;
+  if(!['resolve_report','review_mafia_report'].includes(action))run(`UPDATE player_profiles SET revision=revision+1,updated_at=? WHERE user_id=? AND ${newAction}`,now,subject);
+  const resolvedReport=action==='review_mafia_report'?null:action==='resolve_report'?targetId:reportId;
   if(resolvedReport)run(`INSERT INTO moderation_report_decisions(report_id,action_id,actor_id,reason,resolved_at)
     SELECT ?,?,?,?,? WHERE ${newAction} ON CONFLICT(report_id) DO UPDATE SET action_id=excluded.action_id,actor_id=excluded.actor_id,reason=excluded.reason,resolved_at=excluded.resolved_at`,resolvedReport,id,actor.userId,reason,now);
   if(action==='approve_image')statements.push(...profileAchievementStatements(env,subject,now));
+  if(!isModerator(env,actor.userId))fail('FORBIDDEN',403);
   await env.DB.batch(statements);
   const saved=await first(env,'SELECT id,request_hash FROM moderation_actions WHERE actor_id=? AND client_id=?',actor.userId,input.clientId);
   if(!saved || saved.request_hash!==hash)fail('CONFLICT',409);
   return {ok:true,actionId:saved.id,subjectUserId:subject,relatedUsers:related,action};
 }
 export function moderationDeleteStatements(env,userId) {
-  return [stmt(env,'DELETE FROM moderation_report_decisions WHERE report_id IN (SELECT id FROM social_reports WHERE reporter_id=? OR reported_id=?)',userId,userId),
+  return [stmt(env,'UPDATE mafia_reports SET reviewer_id=NULL WHERE reviewer_id=?',userId),stmt(env,'DELETE FROM moderation_report_decisions WHERE report_id IN (SELECT id FROM social_reports WHERE reporter_id=? OR reported_id=?)',userId,userId),
     stmt(env,'DELETE FROM moderation_actions WHERE actor_id=? OR subject_user_id=? OR report_id IN (SELECT id FROM social_reports WHERE reporter_id=? OR reported_id=?)',userId,userId,userId,userId),
     stmt(env,'DELETE FROM moderation_suspensions WHERE user_id=? OR actor_id=?',userId,userId)];
 }

@@ -43,14 +43,15 @@ test('customer migration adds isolated storage without modifying any legacy row'
   assert.equal((await DB.prepare('SELECT COUNT(*) AS n FROM paddle_customers_scoped').first()).n, 0);
 });
 
-test('live me and room gates ignore sandbox/unclassified Paddle while preserving Apple and gifts', async (t) => {
+test('live Plus ignores sandbox/unclassified Paddle while gameplay remains free', async (t) => {
   const env = envOf(); t.after(() => env.DB.close());
   const user = await db.createUser(env), session = await issueSession(env, user.id);
   await db.upsertSubscription(env, row(user.id, 'sandbox'));
   await db.addTrial(env, user.id, 'beep');
   const me = await (await request(env, '/api/me', { token: session.token })).json();
   assert.equal(me.premium.active, false);
-  await assert.rejects(roomGate(new Request('https://maydan.test/api/rooms', { headers: { authorization: `Bearer ${session.token}` } }), env, { game: 'beep' }), /PLUS_REQUIRED/);
+  const gate=await roomGate(new Request('https://maydan.test/api/rooms', { headers: { authorization: `Bearer ${session.token}` } }), env, { game: 'beep' });
+  assert.equal(gate.userId,user.id);assert.equal(gate.gameplay,'free');
   assert.equal((await db.subscriptionsOf(env, user.id))[0].environment, 'sandbox', 'historical subscription remains untouched');
   assert.equal(premiumOf([row(user.id, null)], now, env).active, false);
   for (const [source, environment] of [['apple', 'Production'], ['promo', 'promo']]) {

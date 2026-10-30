@@ -25,15 +25,8 @@ export function gamesLabel(n) {
   return `${n} لعبة`;
 }
 
-// شارة «ميدان بلس» على البطاقة: بَديهة تعلن حزمها المجانية، وبقية الألعاب مباراتها المجانية.
-// المشترك لا يرى شارة، والبطاقات تبقى مفعّلة في كل الحالات (القفل يظهر داخل اللعبة لا هنا).
-export function plusBadge(account, game) {
-  if (account.premium) return '';
-  if (game.id === 'badeeha') return '١٠ فئات مجانية';
-  const access = account.gameAccess(game.id);
-  if (access === 'premium') return '';
-  return access === 'locked' ? 'بلس' : 'مباراة مجانية';
-}
+// Gameplay does not advertise or depend on Plus membership.
+export function plusBadge() { return 'مجانية بالكامل'; }
 
 export function HomeGroups({ account, groups = [], calls = [], onOpen }) {
   // LammaProvider supplies an identity-checked snapshot; guests never render cached groups.
@@ -109,7 +102,7 @@ export function Home() {
     launching.current = true;
     setLaunchId(game.id);
     sound.play('pop'); haptics.vibrate('selection');
-    launchTimer.current = setTimeout(() => { navigate(`/game/${game.id}`); launching.current = false; }, wait(140));
+    launchTimer.current = setTimeout(() => { navigate(game.id === 'mafia' ? '/online/mafia' : `/game/${game.id}`); launching.current = false; }, wait(140));
   };
   const cards = GAMES;
   const onlineFriends = social.friends.filter(friend => friend.online);

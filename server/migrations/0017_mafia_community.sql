@@ -1,0 +1,13 @@
+CREATE TABLE IF NOT EXISTS mafia_match_leases (user_id TEXT PRIMARY KEY,room_key TEXT NOT NULL,match_id TEXT NOT NULL,expires_at INTEGER NOT NULL,updated_at INTEGER NOT NULL);
+CREATE INDEX IF NOT EXISTS mafia_match_leases_room ON mafia_match_leases(room_key);
+CREATE TABLE IF NOT EXISTS mafia_observer_memberships (user_id TEXT PRIMARY KEY,room_key TEXT NOT NULL,room_code TEXT NOT NULL,observer_id TEXT NOT NULL,joined_at INTEGER NOT NULL,expires_at INTEGER NOT NULL);
+CREATE INDEX IF NOT EXISTS mafia_observer_memberships_room ON mafia_observer_memberships(room_key,expires_at);
+ALTER TABLE mafia_public_rooms ADD COLUMN status TEXT NOT NULL DEFAULT 'waiting';
+ALTER TABLE mafia_public_rooms ADD COLUMN room_name TEXT NOT NULL DEFAULT '';
+ALTER TABLE mafia_public_rooms ADD COLUMN community TEXT NOT NULL DEFAULT 'ar';
+ALTER TABLE mafia_public_rooms ADD COLUMN voice_mode TEXT NOT NULL DEFAULT 'optional';
+ALTER TABLE mafia_public_rooms ADD COLUMN spectators INTEGER NOT NULL DEFAULT 0;
+ALTER TABLE mafia_public_rooms ADD COLUMN settings_revision INTEGER NOT NULL DEFAULT 0;
+ALTER TABLE mafia_public_rooms ADD COLUMN protocol INTEGER NOT NULL DEFAULT 1;
+ALTER TABLE mafia_public_rooms ADD COLUMN created_at INTEGER NOT NULL DEFAULT 0;
+CREATE INDEX IF NOT EXISTS mafia_public_rooms_discovery ON mafia_public_rooms(community,status,mode,voice_mode,created_at,room_code);

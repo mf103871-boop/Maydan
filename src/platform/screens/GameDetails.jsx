@@ -3,7 +3,6 @@ import React from 'react';
 import { Screen, TopBar, IconButton, Button, Card } from '../../shared/ui/components.jsx';
 import { IconBack, IconUsers, IconClock, IconPlay } from '../../shared/ui/icons.jsx';
 import { usePlatform } from '../context.js';
-import { useAccount } from '../../shared/account/context.js';
 import { navigate, back, getDirection } from '../router.js';
 import { getGame } from '../registry.js';
 
@@ -25,21 +24,14 @@ export function MissingGame({ id }) {
 export function GameDetails({ id }) {
   const game = getGame(id);
   const { sound, haptics } = usePlatform();
-  const account = useAccount();
   if (!game) return <MissingGame id={id} />;
   const Icon = game.icon;
   const onlineOnly = game.onlineOnly === true;
   const modeLabel = game.id === 'ersomha' ? 'تعاون لشخصين · منافسة من ثلاثة' : game.players.mode === 'teams' ? 'فرق' : game.players.mode === 'both' ? 'فردي أو فرق' : 'فردي';
-  const online = ['meenfina', 'fabraka', 'ersomha', 'badeeha'].includes(game.id);
+  const online = ['meenfina', 'fabraka', 'ersomha', 'badeeha', 'mafia'].includes(game.id);
   const factDelay = (i) => ({ '--delay': `${250 + i * 50}ms` });
-  // القفل: بَديهة تُلعب دائمًا (القفل في حزمها) وبقية الألعاب مباراة واحدة مجانية ثم «ميدان بلس».
-  const packs = game.id === 'badeeha';
-  const locked = !packs && account.gameAccess(game.id) === 'locked';
-  const note = account.premium ? '' : packs ? '١٠ فئات مجانية، والباقي ضمن ميدان بلس'
-    : onlineOnly ? locked ? 'استضافة الغرف ضمن ميدان بلس؛ الانضمام مجاني' : 'استضافة مباراة مجانية، والانضمام للغرف مجاني'
-    : locked ? 'لعبت مباراتك المجانية — اشترك للمتابعة' : 'مباراة واحدة مجانية، ثم ميدان بلس';
+  const note = game.id === 'badeeha' ? 'كل الفئات مجانية — العبوا قد ما بدكم' : 'اللعب واستضافة الغرف والانضمام مجانًا';
   const play = () => {
-    if (locked) { sound.play('click'); account.openPaywall({ reason: 'trial', game: game.id }); return; }
     sound.play('whoosh'); haptics.vibrate('medium'); navigate(`/play/${game.id}`);
   };
   return (
@@ -63,7 +55,7 @@ export function GameDetails({ id }) {
       </div>
       <div data-design-id="actions" className="setup-sticky stack">
         {/* الزر الرئيسي «مسلّح» (is-armed): تنفّس ×3 ووهج ×2 من brand.css */}
-        {online && <Button data-design-id="online" variant="accent" size="lg" full className="is-armed" onClick={() => navigate(`/online/${game.id}`)}>{['fabraka', 'ersomha'].includes(game.id) ? 'العب أونلاين · لشخصين أو أكثر' : game.id === 'badeeha' ? 'العب أونلاين · جوال لكل فريق' : 'العب من كل جوال · غرف جماعية'}</Button>}
+        {online && <Button data-design-id="online" variant="accent" size="lg" full className="is-armed" onClick={() => navigate(`/online/${game.id}`)}>{['fabraka', 'ersomha'].includes(game.id) ? 'العب أونلاين · لشخصين أو أكثر' : game.id === 'mafia' ? 'ادخل المجلس · غرف عامة وخاصة' : game.id === 'badeeha' ? 'العب أونلاين · جوال لكل فريق' : 'العب من كل جوال · غرف جماعية'}</Button>}
         {!onlineOnly && <Button data-design-id="local" variant={online ? 'secondary' : 'accent'} size="lg" full className={online ? '' : 'is-armed'} icon={<IconPlay />} onClick={play}>{online ? 'العب على جهاز واحد' : 'العب'}</Button>}
       </div>
     </Screen>

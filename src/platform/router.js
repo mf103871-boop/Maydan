@@ -4,9 +4,10 @@ import { useEffect, useState } from 'react';
 
 const ROUTES = [
   ['home', /^\/?$/],
+  ['mafia-tutorial', /^\/tutorial\/mafia$/],
   ['game', /^\/game\/([a-z0-9-]+)$/],
   ['play', /^\/play\/([a-z0-9-]+)$/],
-  ['online', /^\/online(?:\/(meenfina|fabraka|ersomha|badeeha))?$/],
+  ['online', /^\/online(?:\/(meenfina|fabraka|ersomha|badeeha|mafia))?$/],
   ['room', /^\/room\/(\d{6})$/],
   ['players', /^\/players$/],
   ['friend-group', /^\/friends\/group\/([a-zA-Z0-9_-]+)$/],
@@ -42,7 +43,8 @@ export function parseHash(hash) {
 
 const listeners = new Set();
 let current = typeof location !== 'undefined' ? parseHash(location.hash) : parseHash('');
-let stack = [current.path];
+const routeLocation = route => route.name==='room' && route.params.watch==='1' ? `${route.path}?watch=1` : route.path;
+let stack = [routeLocation(current)];
 let direction = 'forward';
 let exitGuard = null;
 let restoring = null;
@@ -108,7 +110,7 @@ export function back() {
   if (consumeBackLayer()) return;
   if (typeof history === 'undefined') return;
   if (stack.length > 1) history.back();
-  else if (['play', 'room'].includes(current.name) && exitGuard) exitGuard('/');
+  else if (['play', 'room', 'mafia-tutorial'].includes(current.name) && exitGuard) exitGuard('/');
   else navigate('/', { replace: true });
 }
 
@@ -150,7 +152,7 @@ function onHashChange() {
     restoring = null;
     // WebKit can deliver another Back before the restoration hash event.
     // Only swallow the restoration itself, never that newer Back request.
-    if (next.path === expected) { current = next; return; }
+    if (routeLocation(next) === expected) { current = next; return; }
   }
   const previous = current;
   const requested = plannedNavigation === next.path;
@@ -160,38 +162,38 @@ function onHashChange() {
   if (next.path === previous.path && JSON.stringify(next.params) === JSON.stringify(previous.params)) {
     // A browser Back may cancel a just-requested hash before its first event.
     // Keep the app's history in sync instead of retaining that cancelled entry.
-    if (stack[stack.length - 1] !== next.path) {
-      const index = stack.lastIndexOf(next.path);
-      stack = index >= 0 ? stack.slice(0, index + 1) : [...stack, next.path];
+    if (stack[stack.length - 1] !== routeLocation(next)) {
+      const index = stack.lastIndexOf(routeLocation(next));
+      stack = index >= 0 ? stack.slice(0, index + 1) : [...stack, routeLocation(next)];
     }
     return;
   }
   if (!requested && topBackLayer()) {
-    restoring = previous.path;
+    restoring = routeLocation(previous);
     guardRestore = null;
-    location.hash = previous.path;
-    if (stack[stack.length - 1] !== previous.path) stack.push(previous.path);
+    location.hash = routeLocation(previous);
+    if (stack[stack.length - 1] !== routeLocation(previous)) stack.push(routeLocation(previous));
     consumeBackLayer();
     return;
   }
-  const leavingPlay = (previous.name === 'play' && next.path !== previous.path) || (previous.name === 'room' && next.path !== previous.path);
+  const leavingPlay = (['play', 'mafia-tutorial'].includes(previous.name) && next.path !== previous.path) || (previous.name === 'room' && routeLocation(next) !== routeLocation(previous));
   if (leavingPlay && exitGuard) {
     // أعد المسار كما كان، ثم اسأل الحارس؛ الحارس ينادي navigate بنفسه عند التأكيد.
     // الاستعادة تدفع مُدخلًا جديدًا فوق مُدخل الوجهة، فالمكدس يبقى مطابقًا
     // لسجل المتصفح ويصحّ الرجوع خطوة عند تأكيد الخروج.
-    restoring = previous.path;
-    guardRestore = next.path;
-    location.hash = previous.path;
-    if (stack[stack.length - 1] !== previous.path) stack.push(previous.path);
-    exitGuard(next.path);
+    restoring = routeLocation(previous);
+    guardRestore = routeLocation(next);
+    location.hash = routeLocation(previous);
+    if (stack[stack.length - 1] !== routeLocation(previous)) stack.push(routeLocation(previous));
+    exitGuard(routeLocation(next));
     return;
   }
   guardRestore = null;
-  if (stack.length > 1 && stack[stack.length - 2] === next.path) {
+  if (stack.length > 1 && stack[stack.length - 2] === routeLocation(next)) {
     stack.pop();
     direction = 'back';
-  } else if (stack[stack.length - 1] !== next.path) {
-    stack.push(next.path);
+  } else if (stack[stack.length - 1] !== routeLocation(next)) {
+    stack.push(routeLocation(next));
     direction = 'forward';
   }
   current = next;
@@ -214,7 +216,7 @@ export function useRoute() {
 // للاختبارات: إعادة الموجّه إلى حالة معروفة بعد تغيير location الوهمي.
 export function resetRouterForTests() {
   current = parseHash(typeof location !== 'undefined' ? location.hash : '');
-  stack = [current.path];
+  stack = [routeLocation(current)];
   direction = 'forward';
   exitGuard = null;
   restoring = null;

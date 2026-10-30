@@ -1,13 +1,30 @@
 import statements from '../src/data/games/meenfina/statements.json' with { type: 'json' };
 import { createRoom, joinRoom, connected, leaveRoom, action, tick, snapshot, nextAlarm, member, roomCapacity, RoomError, fail } from './game-model.mjs';
 import { buildFabrakaDeck } from './fabraka-content.mjs';
-import { credentials, readJson, json, errorResponse, shuffled, createLimit } from './protocol.mjs';
+import { credentials, readJson, json, errorResponse, shuffled, createLimit, sha256 } from './protocol.mjs';
 import { bindSeatAccount, prepareRoomStats } from './room-stats.mjs';
 import { recordOnlineResult, profileSummaries } from './profiles/db.mjs';
-import { consumeRoomTrial } from './accounts/router.mjs';
+import { recheckMafiaHost, mafiaHostEligible } from './accounts/router.mjs';
+import { getCosmetic } from '../src/plus/catalog.js';
+import { plusActiveFor } from './plus/access.mjs';
+import { prepareRoomAppearance, selectRoomAppearance } from './plus/room-appearance.mjs';
 import { requireSession } from './accounts/session.mjs';
 import { liveAccountSql } from './moderation/access.mjs';
-import { ERSOMHA_PROTOCOL, BADEEHA_PROTOCOL, ROOM_REACTIONS, REACTION_BURST, REACTION_REFILL_MS, reactionsAllowed } from '../src/online/shared.js';
+import { ERSOMHA_PROTOCOL, BADEEHA_PROTOCOL, MAFIA_PROTOCOL, ROOM_REACTIONS, REACTION_BURST, REACTION_REFILL_MS, reactionsAllowed } from '../src/online/shared.js';
+import { requireMafiaEnabled, claimMafiaSeat, renewMafiaSeats, cleanupMafiaSeats, updateMafiaDirectory, mafiaPlaying, activateMafiaMedia } from './mafia-access.mjs';
+import { requireMafiaNewMatches, assertSupportedMafiaRuleset } from './mafia-ruleset-policy.mjs';
+import { prepareMafiaVoice, committedMafiaVoice, mafiaVoiceView, mafiaVoiceRequest } from './mafia-voice.mjs';
+import { technicalAbort, snapshot as mafiaSnapshot, voiceAudience } from './mafia-model.mjs';
+import { persistMafiaResult, prepareMafiaResult } from './mafia-results.mjs';
+import { persistMafiaProgress, mafiaProgressEnabled } from './mafia-progression.mjs';
+import { rankedCoordinator,mafiaRankedEnabled,mafiaPreviewOnly,settleRankedMatch,rankedRoomCommitted } from './mafia-ranked.mjs';
+import { resolveMafiaSeasonRatingPolicy } from './mafia-rating-policy-store.mjs';
+import { canonicalMafiaRatingValue } from './mafia-rating-policy.mjs';
+import { supportsMafiaProtocol,supportsMafiaRuleset } from '../src/online/mafia-shared.js';
+import { createMafiaMetrics } from '../src/online/mafia-metrics.mjs';
+import { MafiaDirectoryFeed } from './mafia-directory-feed.mjs';
+import { advanceObserverStream,observerNextAlarm,observerView,observerCanPromote,claimObserver,releaseObserver,promoteObserverClaim,observerAuthorizations,OBSERVER_CAP,OBSERVER_LEASE,assertObserverAdmission,loadObserverStream,saveObserverStream,observerEvidenceAccount,observerEvidenceAccounts,dropObserverEvidenceAccounts } from './mafia-observers.mjs';
+import { blockUser } from './social/db.mjs';
 import { getErsomhaPool } from './ersomha-content.mjs';
 import { setErsomhaChoices, ERSOMHA_PLAYING, ERSOMHA_SELECT_MS } from './ersomha-model.mjs';
 import { acquireErsomhaLease, assertErsomhaLease, renewErsomhaLease, releaseErsomhaLease, releaseErsomhaAccounts, ersomhaSeen, exposeErsomhaCards, buildErsomhaTurnPlan } from './ersomha-history.mjs';
@@ -16,6 +33,7 @@ import { ersomhaBoardId, emptyErsomhaDrawing, loadErsomhaDrawing, checkpointErso
 const SOCKET_IDLE = 45_000;
 const STATS_RETRY = 30_000;
 const STATS_MAX_ATTEMPTS = 48; // a day of half-minute retries
+const MAFIA_RESULT_FAILURE_CODES=new Set(['MAFIA_PROGRESS_DISABLED','MAFIA_PROGRESS_UNAVAILABLE','MAFIA_PROGRESS_PENDING','MAFIA_PROGRESS_INVALID']);
 const MAX_QUEUED_SOCKET_MESSAGES = 64;
 const MAX_QUEUED_ROOM_MESSAGES = 256;
 // Statements the room has already shown wait at the back of the queue, so a second
@@ -31,9 +49,19 @@ export class Room {
   constructor(ctx, env) {
     this.ctx = ctx; this.env = env; this.room = null; this.profileOutbox = []; this.queue = Promise.resolve();
     this.inboundBySocket = new WeakMap(); this.inboundCount = 0;
+    this.mafiaLastSnapshots = new WeakMap();
+    this.mafiaResultOutbox=[];
+    this.metrics=createMafiaMetrics({enabled:String(env.MAFIA_METRICS_ENABLED)==='1',side:'server',
+      sink:record=>console.info('[mafia-metrics]',JSON.stringify(record))});
+    this.directoryFeed=new MafiaDirectoryFeed(ctx,env);this.observerStream=null;
+    // These are successful D1 synchronization fingerprints, never authority.
+    // A cold/rehydrated object starts empty and safely resynchronizes them.
+    this.mafiaMetadata={};
     this.ready = ctx.blockConcurrencyWhile(async () => {
       this.room = await ctx.storage.get('room') || null;
       this.profileOutbox = await ctx.storage.get('profileOutbox') || [];
+      this.mafiaResultOutbox=await ctx.storage.get('mafiaResultOutbox')||[];
+      const observerData=await loadObserverStream(ctx.storage);this.observerStream=observerData.stream;this.observerChunks=observerData.chunks;
       if (this.room?.game === 'ersomha') {
         const drawing = await loadErsomhaDrawing(ctx.storage, this.room);
         this.drawing = drawing.board; this.drawingHead = drawing.head;
@@ -59,44 +87,92 @@ export class Room {
     return Math.max(attachment.seenAt || 0, pong?.getTime() || 0);
   }
   // Without a database binding the outbox can never drain; do not wake every 30 s for it.
-  outboxPending() { return Boolean(this.env.DB) && this.profileOutbox.length > 0; }
+  outboxPending() { return Boolean(this.env.DB) && (this.profileOutbox.length > 0||this.mafiaResultOutbox.length>0); }
+  outboxAlarm(now=Date.now()){return Math.min(...[this.profileOutbox[0],this.mafiaResultOutbox[0]].filter(Boolean).map(event=>event.notBefore>now?event.notBefore:now+STATS_RETRY));}
+  mafiaVoiceAlive(room,id,now=Date.now()) {
+    const account=room.members.find(m=>m.id===id)?.accountUserId;
+    return room.game==='mafia'&&Boolean(room.mafiaMedia?.devices?.[account])&&room.mafiaMedia?.authSessions?.[account]?.expiresAt>now&&now-(room.mafiaMedia?.presence?.[account]||0)<SOCKET_IDLE;
+  }
+  mafiaAuthDeadline(room) {
+    return Math.min(...Object.values(room.mafiaMedia?.authSessions||{}).map(s=>s.expiresAt),...this.sockets().map(ws=>this.attachment(ws).accountExpiresAt).filter(Number.isFinite));
+  }
   alarmAt(room, now) {
+    if(room.game==='mafia'&&this.mafiaCleanupRetryAt>now)return this.mafiaCleanupRetryAt;
     const deadlines = this.sockets().map((ws) => {
       const a = this.attachment(ws);
       return a.id ? this.lastSeen(ws, a) + SOCKET_IDLE : a.authDeadline;
     }).filter(Number.isFinite);
-    return Math.max(now + 1, Math.min(nextAlarm(room, now), ...deadlines, ...(this.outboxPending() ? [now + STATS_RETRY] : [])));
+    return Math.max(now + 1, Math.min(room.game==='mafia'&&room.phase==='closed'?room.closedDeleteAt||now+90000:nextAlarm(room, now), ...deadlines, ...(room.game==='mafia'?[...(room.phase==='closed'?[]:[room.mafiaRenewAt||now+30_000,this.mafiaAuthDeadline(room)]),observerNextAlarm(this.observerStream),room.observerRenewAt||now+30_000]:[]), ...(this.outboxPending() ? [this.outboxAlarm(now)] : [])));
   }
-  async schedule() {
-    if (this.room) await this.ctx.storage.setAlarm(this.alarmAt(this.room, Date.now()));
-    else if (this.outboxPending()) await this.ctx.storage.setAlarm(Date.now() + STATS_RETRY);
+  async schedule({ skipIdenticalMafiaAlarm = false } = {}) {
+    if (this.room) {
+      const at=this.alarmAt(this.room,Date.now());
+      // An unchanged voice heartbeat can share the exact installed deadline.
+      // Read storage afresh: never cache or postpone auth, phase or presence.
+      if(skipIdenticalMafiaAlarm&&this.room.game==='mafia'&&typeof this.ctx.storage.getAlarm==='function'&&await this.ctx.storage.getAlarm()===at)return;
+      await this.ctx.storage.setAlarm(at);
+    }
+    else if (this.outboxPending()) await this.ctx.storage.setAlarm(this.outboxAlarm());
     else await this.ctx.storage.deleteAlarm();
   }
   async commit(candidate, { prepared = false } = {}) {
+    assertSupportedMafiaRuleset(this.room);
+    assertSupportedMafiaRuleset(candidate);
+    if(candidate.game==='mafia'&&candidate.settings.visibility!=='public'&&Object.keys(candidate.observers||{}).length){for(const observer of Object.values(candidate.observers))await releaseObserver(this.env,candidate,observer);candidate.observers={};}
+    const previous=this.room;
     const oldLease = this.room?.ersomhaLease;
     if (candidate.game === 'ersomha' && !prepared) await this.prepareErsomha(candidate);
+    if (candidate.game === 'mafia' && !prepared) await this.prepareMafia(candidate);
     if (candidate.game === 'ersomha' && candidate.phase === 'select' && (this.room?.phase !== 'select' || this.room.round !== candidate.round || this.room.matchId !== candidate.matchId)) {
       candidate.deadlineAt = Date.now() + ERSOMHA_SELECT_MS;
     }
+    await prepareRoomAppearance(this.env, this.room, candidate);
     candidate.revision++;
-    const outbox = [...this.profileOutbox, ...prepareRoomStats(this.room, candidate)];
+    const completedAt=Date.now();
+    const mafiaResult=candidate.game==='mafia'&&candidate.phase==='over'&&this.room?.phase!=='over'?prepareMafiaResult(candidate,completedAt):null;
+    if(mafiaResult?.rewardPolicyVersion===1&&candidate.statsMatch) {
+      // A small owner-only locator survives outbox acknowledgement/reconnect.
+      // The receipt endpoint remains the sole source of awarded amounts.
+      candidate.statsMatch.rewardReceipt={matchKey:mafiaResult.key,notBefore:mafiaResult.notBefore};
+    }
+    const outbox = [...this.profileOutbox, ...prepareRoomStats(this.room,candidate,completedAt,{mafiaProgressEnabled:mafiaProgressEnabled(this.env),mafiaResult})];
+    const mafiaOutbox=[...this.mafiaResultOutbox,...(mafiaResult?[mafiaResult]:[])];
     const resetDrawing = candidate.game === 'ersomha' && (!this.drawing || this.drawing.boardId !== ersomhaBoardId(candidate));
     const nextDrawing = resetDrawing ? emptyErsomhaDrawing(candidate) : this.drawing;
     let nextDrawingHead = this.drawingHead, nextArchives = this.drawingArchives || [];
+    const observerStream=candidate.game==='mafia'?advanceObserverStream(this.observerStream,candidate):null;
+    let observerChunks=this.observerChunks||0;
     // KV writes and alarms are committed in a single storage transaction.
     await this.ctx.storage.transaction(async (tx) => {
       await tx.put('room', candidate);
+      if(observerStream&&observerStream!==this.observerStream)observerChunks=await saveObserverStream(tx,observerStream,observerChunks);
       if (resetDrawing) {
         if (this.room?.draw && this.drawing?.boardId === ersomhaBoardId(this.room)) nextArchives = await archiveErsomhaDrawing(tx, this.room, this.drawing, nextArchives);
         nextDrawingHead = await checkpointErsomhaDrawing(tx, nextDrawing, this.drawingHead);
       }
       if (outbox.length) await tx.put('profileOutbox', outbox);
-      await tx.setAlarm(Math.min(this.alarmAt(candidate, Date.now()), ...(outbox.length ? [Date.now() + STATS_RETRY] : [])));
+      if(mafiaOutbox.length)await tx.put('mafiaResultOutbox',mafiaOutbox);
+      await tx.setAlarm(Math.min(this.alarmAt(candidate, Date.now()),observerNextAlarm(observerStream), ...(outbox.length ? [Date.now() + STATS_RETRY] : [])));
     });
     this.room = candidate;
+    if(observerStream){this.observerStream=observerStream;this.observerChunks=observerChunks;}
     if (candidate.game === 'ersomha') { this.drawing = nextDrawing; this.drawingHead = nextDrawingHead; this.drawingArchives = nextArchives; }
     this.profileOutbox = outbox;
+    this.mafiaResultOutbox=mafiaOutbox;
+    if(candidate.game==='mafia') {
+      if(!previous||previous.matchId!==candidate.matchId||previous.phaseId!==candidate.phaseId) {
+        const committedAt=Date.now();
+        const lag=previous?.matchId===candidate.matchId&&Number.isFinite(previous.deadlineAt)&&previous.deadlineAt<=committedAt?Math.max(0,committedAt-previous.deadlineAt):undefined;
+        this.metrics.phaseCommitted(candidate.phase,lag);
+      }
+      this.metrics.flush();
+    }
     this.broadcast();
+    if(candidate.game==='mafia')for(const ws of this.sockets()){const a=this.attachment(ws);if(a.scope==='observer'&&!candidate.observers?.[a.id])this.close(ws,4401,'AUTH');}
+    if(candidate.game==='mafia') {
+      await this.settleMafiaMetadata(candidate);
+      if(this.mafiaResultOutbox.length)await this.flushMafiaResults();
+    }
     if (candidate.game === 'ersomha' && !ERSOMHA_PLAYING.includes(candidate.phase) && candidate.ersomhaLease) {
       // The final state is durable first. A failed lease release merely holds
       // the account until its short expiry; it never exposes another word.
@@ -110,6 +186,131 @@ export class Room {
       this.ctx.waitUntil?.(task);
       task.catch(() => {});
     }
+  }
+  async settleMafiaMetadata(room) {
+    await rankedRoomCommitted(this.env,room);
+    const members=room.members.filter(m=>!m.left);
+    const accounts=members.map(m=>m.accountUserId).sort();
+    const media=room.mafiaMedia;
+    const mediaKey=JSON.stringify([room.mafiaKey,room.matchId,room.phase,media?.callId,media?.epoch,media?.signature,media?.failed,media?.quarantineUntil,room.technicalAbort,room.reason,room.trialStarted,room.roomTrialClaim,members.filter(m=>room.participants.includes(m.id)).map(m=>m.accountUserId).sort()]);
+    if(this.mafiaMetadata.media!==mediaKey) {
+      await committedMafiaVoice(this.ctx,this.env,room);
+      this.mafiaMetadata.media=mediaKey;
+    }
+    const seatKey=JSON.stringify([room.mafiaKey,room.phase==='closed',accounts,Object.values(room.observers||{}).filter(o=>o.promotion&&o.expiresAt>Date.now()).map(o=>[o.accountUserId,o.promotion.id]).sort()]);
+    if(this.mafiaMetadata.seats!==seatKey) {
+      await cleanupMafiaSeats(this.env,room);
+      this.mafiaMetadata.seats=seatKey;
+    }
+    const listed=room.phase!=='closed'&&room.settings.visibility==='public'&&members.length>0;
+    const directoryKey=JSON.stringify([room.mafiaKey,listed?{phase:room.phase,settings:room.settings,settingsRevision:room.settingsRevision,hostId:room.hostId,observers:Object.keys(room.observers||{}),expiresAt:room.expiresAt,members:members.map(m=>[m.id,m.name,!!m.ready])}:null]);
+    if(this.mafiaMetadata.directory!==directoryKey||(listed&&Date.now()>=this.mafiaMetadata.directoryRefreshAt)) {
+      // Directory is advisory; admission always checks the committed room.
+      // Its90s expiry is renewed even when the public lobby does not change.
+      await updateMafiaDirectory(this.env,room);
+      this.mafiaMetadata.directory=directoryKey;
+      this.mafiaMetadata.directoryRefreshAt=Date.now()+30_000;
+    }
+  }
+  async flushMafiaResults() {
+    this.metrics.flush();
+    if(!this.env.DB)return;
+    while(this.mafiaResultOutbox.length) {
+      const event=this.mafiaResultOutbox[0];
+      if(event.notBefore>Date.now()){await this.schedule();return;}
+      // Archive and progression both deduplicate independently. A crash after
+      // either D1 batch retries both; INSERT OR IGNORE is not a consumed event.
+      try {await persistMafiaResult(this.env,event);await persistMafiaProgress(this.env,event);await settleRankedMatch(this.env,event);}catch(error){await this.recordMafiaResultFailure(event,error);return;}
+      const rest=this.mafiaResultOutbox.slice(1);
+      try {await this.ctx.storage.put('mafiaResultOutbox',rest);}catch(error){await this.recordMafiaResultFailure(event,error);fail('MAFIA_RESULT_RETRY',503);}
+      // Removing the recovered event also clears its diagnostic. Never retain
+      // raw SQL/provider errors or any role, account, chat or target in it.
+      this.mafiaResultOutbox=rest;
+      // A result sample is eligible only after BOTH consumers and the durable
+      // acknowledgement. The collector independently enforces END + 30s.
+      this.metrics.resultDrained(event.finishedAt,event.notBefore);this.metrics.flush();
+    }
+  }
+  async recordMafiaResultFailure(event,error) {
+    const previous=event.lastFailure?.attempts;
+    const lastFailure={code:MAFIA_RESULT_FAILURE_CODES.has(error?.code)?error.code:'MAFIA_RESULT_RETRY',
+      attempts:Math.min(255,(Number.isSafeInteger(previous)&&previous>=0?previous:0)+1),at:Date.now()};
+    const pending=this.mafiaResultOutbox.map(item=>item===event?{...item,lastFailure}:item);
+    try {
+      await this.ctx.storage.put('mafiaResultOutbox',pending);this.mafiaResultOutbox=pending;
+      await this.ctx.storage.setAlarm(Date.now()+STATS_RETRY);
+    } catch {fail('MAFIA_RESULT_RETRY',503);}
+  }
+  mafiaSessionScope(candidate) {
+    const sockets=this.sockets().map(ws=>this.attachment(ws)).filter(a=>a.id&&a.accountSessionId&&a.scope!=='observer');
+    const bindings=[...sockets.map(a=>[a.accountSessionId,a.accountUserId]),...Object.entries(candidate.mafiaMedia?.authSessions||{}).map(([userId,a])=>[a.id,userId])];
+    const ids=[...new Set(bindings.map(b=>b[0]))].sort();
+    const audience=candidate.members.filter(m=>!m.left).map(m=>[m.id,voiceAudience(candidate,m.id)]);
+    return {ids,bindings,key:JSON.stringify([candidate.matchId,candidate.phaseId,ids,audience]),revoked:sockets.some(a=>a.revoked)};
+  }
+  async readMafiaSessions(candidate,now=Date.now()) {
+    const scope=this.mafiaSessionScope(candidate),ids=scope.ids;
+    const sessions=ids.length?(await this.env.DB.prepare(`SELECT id,user_id,expires_at,revoked_at FROM sessions WHERE id IN (${ids.map(()=>'?').join(',')}) AND expires_at>? AND (revoked_at IS NULL OR revoked_at>?) AND ${liveAccountSql('sessions.user_id')}`).bind(...ids,now,now).all()).results||[]:[];
+    return {scope:scope.key,sessions};
+  }
+  mafiaSessionValid(proof,id,userId,now=Date.now()) {
+    return proof.sessions.find(s=>s.id===id&&s.user_id===userId&&s.expires_at>now&&(s.revoked_at==null||s.revoked_at>now));
+  }
+  async validateMafiaSessions(candidate,now=Date.now(),proof=null) {
+    // A proof is a local value in one serialized command, never an authorization
+    // cache. Changed membership/session sets or phase boundaries require a new read.
+    const scope=this.mafiaSessionScope(candidate);
+    if(!proof||proof.scope!==scope.key||scope.revoked||!scope.bindings.every(([id,userId])=>this.mafiaSessionValid(proof,id,userId,now)))proof=await this.readMafiaSessions(candidate,now);
+    const sockets=this.sockets().map(ws=>({ws,...this.attachment(ws)})).filter(a=>a.id&&a.accountSessionId&&a.scope!=='observer');
+    const media=candidate.mafiaMedia;
+    const valid=(id,userId)=>this.mafiaSessionValid(proof,id,userId,Date.now());
+    const affected=new Set();
+    for(const a of sockets) {
+      const session=valid(a.accountSessionId,a.accountUserId);
+      if(!session||a.revoked) {
+        // Keep identity until durable media reconciliation, including when the
+        // provider fails. The close callback must never turn AUTH into grace.
+        a.ws.serializeAttachment({...this.attachment(a.ws),revoked:true});this.close(a.ws,4401,'AUTH');affected.add(a.accountUserId);
+      } else {
+        const accountExpiresAt=Math.min(session.expires_at,session.revoked_at??Number.MAX_SAFE_INTEGER);
+        if(a.accountExpiresAt!==accountExpiresAt)a.ws.serializeAttachment({...this.attachment(a.ws),accountExpiresAt});
+      }
+    }
+    for(const userId of new Set([...Object.keys(media?.sessions||{}),...Object.keys(media?.devices||{}),...(media?.issued||[]).map(i=>i.identity)])) {
+      const binding=media.authSessions?.[userId],session=binding&&valid(binding.id,userId);
+      if(session) {binding.expiresAt=Math.min(session.expires_at,session.revoked_at??Number.MAX_SAFE_INTEGER);continue;}
+      affected.add(userId);
+      const nonce=media.sessions?.[userId];media.retiredSessions||={};media.retiredSessions[userId]=[...new Set([...(media.retiredSessions[userId]||[]),...(nonce?[nonce]:[])])];
+      delete media.sessions?.[userId];delete media.authSessions?.[userId];delete media.devices?.[userId];delete media.presence?.[userId];
+      // Keep issued grants until prepareMafiaVoice has durably journaled and
+      // strictly revoked them. Even an otherwise unchanged audience needs it.
+      media.signature=null;
+    }
+    for(const userId of affected) {
+      const seat=candidate.members.find(m=>m.accountUserId===userId&&!m.left);
+      const otherSocket=sockets.some(a=>a.accountUserId===userId&&!a.revoked&&a.ws.readyState===1&&valid(a.accountSessionId,userId));
+      const otherMedia=media?.authSessions?.[userId]&&valid(media.authSessions[userId].id,userId);
+      if(seat&&!otherSocket&&!otherMedia)connected(candidate,seat.id,false,now);
+    }
+  }
+  async reconcileMafiaSessions() {
+    if(this.room?.game!=='mafia')return;
+    const candidate=structuredClone(this.room);
+    await this.validateMafiaSessions(candidate);
+    if(JSON.stringify(candidate)!==JSON.stringify(this.room)||await this.ctx.storage.get('mafia:voice-transition')) {
+      await prepareMafiaVoice(this.ctx,this.env,this.room,candidate);
+      await this.commit(candidate,{prepared:true});
+    }
+    if(candidate.mafiaMedia?.failed)fail('MAFIA_VOICE_UNAVAILABLE',503);
+  }
+  async prepareMafia(candidate,sessionProof=null) {
+    if(sessionProof&&(Date.now()>=(candidate.mafiaRenewAt||0)||candidate.mafiaMedia?.signature===null||await this.ctx.storage.get('mafia:voice-transition')))sessionProof=null;
+    await this.validateMafiaSessions(candidate,Date.now(),sessionProof);
+    if((!candidate.mafiaRenewAt||Date.now()>=candidate.mafiaRenewAt)&&!(candidate.mafiaMedia?.failed&&!mafiaPlaying(candidate))) {
+      await renewMafiaSeats(this.env,candidate);
+      if(mafiaPlaying(candidate)&&candidate.mafiaMedia)await activateMafiaMedia(this.env,candidate);
+    }
+    await prepareMafiaVoice(this.ctx,this.env,this.room,candidate);
   }
   async prepareErsomha(candidate) {
     if (!ERSOMHA_PLAYING.includes(candidate.phase)) return;
@@ -154,9 +355,110 @@ export class Room {
       const startedAt = Date.now(); candidate.deadlineAt += startedAt - candidate.draw.startedAt; candidate.draw.startedAt = startedAt;
     }
   }
+  observer(id){return this.room?.observers?.[id]||null;}
+  excludeEvidenceSeats(candidate,accountIds){
+    const removed=new Set(accountIds),currentSeats=new Set(candidate.members.map(m=>m.id)),excluded=new Set((candidate.mafiaEvidenceExcludedSeats||[]).filter(id=>currentSeats.has(id)));
+    for(const seat of candidate.members)if(removed.has(seat.accountUserId))excluded.add(seat.id);
+    candidate.mafiaEvidenceExcludedSeats=[...excluded];
+  }
+  async eraseObserverEvidence(accountIds){
+    const candidate=structuredClone(this.room);this.excludeEvidenceSeats(candidate,accountIds);
+    const stream=dropObserverEvidenceAccounts(this.observerStream,accountIds);let chunks=this.observerChunks;
+    await this.ctx.storage.transaction(async tx=>{await tx.put('room',candidate);if(stream!==this.observerStream)chunks=await saveObserverStream(tx,stream,chunks);});
+    this.room=candidate;this.observerStream=stream;this.observerChunks=chunks;
+  }
+  async observerReportedAccount(targetId,now=Date.now()){
+    const accountId=observerEvidenceAccount(this.observerStream,targetId,now);if(!accountId)fail('NOT_FOUND',404);
+    const present=await this.env.DB.prepare('SELECT 1 FROM users u WHERE u.id=? AND NOT EXISTS(SELECT 1 FROM account_deletions d WHERE d.user_id=u.id)').bind(accountId).first();
+    if(!present){await this.eraseObserverEvidence([accountId]);fail('NOT_FOUND',404);}return accountId;
+  }
+  sendObserverSnapshots(){
+    for(const ws of this.sockets()){const a=this.attachment(ws);if(a.scope!=='observer'||!a.id)continue;const observer=this.observer(a.id);if(!observer){this.close(ws,4401,'AUTH');continue;}const state=observerView(this.room,this.observerStream,observer),{serverNow,...semantic}=state,encoded=JSON.stringify(semantic);if(this.mafiaLastSnapshots.get(ws)===encoded)continue;this.mafiaLastSnapshots.set(ws,encoded);this.send(ws,{type:'state',state});}
+  }
+  async advanceObservers(){
+    const now=Date.now(),due=observerNextAlarm(this.observerStream)<=now,renew=now>=(this.room.observerRenewAt||0);
+    if(!due&&!renew)return;
+    const candidate=structuredClone(this.room),observers=Object.values(candidate.observers||{}),valid=new Set((await observerAuthorizations(this.env,candidate,observers,now)).map(o=>o.observer_id));let membershipChanged=false;
+    for(const observer of observers){const pending=observer.promotion&&!valid.has(observer.id)&&await this.env.DB.prepare(`SELECT 1 FROM mafia_seats m JOIN sessions s ON s.user_id=m.user_id WHERE m.user_id=? AND m.room_key=? AND m.seat_id=? AND m.expires_at>? AND s.id=? AND s.expires_at>? AND (s.revoked_at IS NULL OR s.revoked_at>?) AND ${liveAccountSql('s.user_id')}`).bind(observer.accountUserId,candidate.mafiaKey,observer.promotion.id,now,observer.accountSessionId,now,now).first();let allowed=(valid.has(observer.id)||Boolean(pending))&&observer.expiresAt>now;
+      if(allowed){try{await assertObserverAdmission(this.env,candidate,observer.accountUserId,now);}catch{allowed=false;}}
+      if(!allowed){await releaseObserver(this.env,candidate,observer);delete candidate.observers[observer.id];membershipChanged=true;for(const ws of this.sockets())if(this.attachment(ws).scope==='observer'&&this.attachment(ws).id===observer.id)this.close(ws,4401,'AUTH');continue;}
+      if(!pending&&renew&&this.sockets().some(ws=>{const a=this.attachment(ws);return a.scope==='observer'&&a.id===observer.id;})){await claimObserver(this.env,candidate,observer,now);observer.expiresAt=now+OBSERVER_LEASE;}
+    }
+    let priorStream=this.observerStream;
+    if(renew){candidate.observerRenewAt=now+30000;const accounts=observerEvidenceAccounts(priorStream),present=new Set();for(let i=0;i<accounts.length;i+=90){const batch=accounts.slice(i,i+90),rows=await this.env.DB.prepare(`SELECT id FROM users u WHERE id IN (${batch.map(()=>'?')}) AND NOT EXISTS(SELECT 1 FROM account_deletions d WHERE d.user_id=u.id)`).bind(...batch).all();for(const row of rows.results||[])present.add(row.id);}const removed=accounts.filter(id=>!present.has(id));if(removed.length){this.excludeEvidenceSeats(candidate,removed);priorStream=dropObserverEvidenceAccounts(priorStream,removed);}}
+    const stream=advanceObserverStream(priorStream,null,now);let chunks=this.observerChunks;
+    await this.ctx.storage.transaction(async tx=>{await tx.put('room',candidate);if(stream!==this.observerStream)chunks=await saveObserverStream(tx,stream,chunks);await tx.setAlarm(Math.min(this.alarmAt(candidate,now),observerNextAlarm(stream)));});
+    this.room=candidate;this.observerStream=stream;this.observerChunks=chunks;this.sendObserverSnapshots();
+    if(membershipChanged)await this.settleMafiaMetadata(candidate);
+  }
+  async observerHttp(endpoint,body){
+    if(this.room.game!=='mafia'||(this.room.protocol||1)<2)fail('UPDATE_REQUIRED',409);
+    const input=await credentials(body),now=Date.now();if(!input.accountUserId||!input.accountSessionId)fail('AUTH',401);
+    const live=await this.env.DB.prepare(`SELECT 1 FROM sessions WHERE id=? AND user_id=? AND expires_at>? AND (revoked_at IS NULL OR revoked_at>?) AND ${liveAccountSql('sessions.user_id')}`).bind(input.accountSessionId,input.accountUserId,now,now).first();if(!live)fail('AUTH',401);
+    const existing=this.observer(input.id);
+    if(existing&&(existing.tokenHash!==input.tokenHash||existing.accountUserId!==input.accountUserId))fail('AUTH',401);
+    if(endpoint==='mafia-observe-join'){
+      requireMafiaEnabled(this.env);if(input.capabilities?.mafia!==MAFIA_PROTOCOL)fail('UPDATE_REQUIRED',409);if(this.room.phase==='closed')fail('NOT_FOUND',404);
+      if(this.room.members.some(m=>m.id===input.id||!m.left&&m.accountUserId===input.accountUserId))fail('MAFIA_ACTIVE_ELSEWHERE',409);
+      if(!existing&&Object.keys(this.room.observers||{}).length>=OBSERVER_CAP)fail('OBSERVER_FULL',409);
+      const observer={...(existing||{id:input.id,tokenHash:input.tokenHash,accountUserId:input.accountUserId,joinedAt:now,matchAtJoin:this.room.matchId||0}),accountSessionId:input.accountSessionId,expiresAt:now+OBSERVER_LEASE};
+      await claimObserver(this.env,this.room,observer,now);const candidate=structuredClone(this.room);candidate.observers||={};candidate.observers[observer.id]=observer;await this.commit(candidate);return json({code:this.room.code,id:observer.id,game:'mafia',scope:'observer'});
+    }
+    if(endpoint==='mafia-observe-promote'&&!existing){const seat=await credentials(input.seat||{}),saved=this.room.members.find(m=>!m.left&&m.id===seat.id&&m.tokenHash===seat.tokenHash&&m.accountUserId===input.accountUserId);if(saved)return json({code:this.room.code,id:saved.id,game:'mafia',scope:'player'});}
+    if(!existing)fail('AUTH',401);
+    if(endpoint==='mafia-observe-leave'||endpoint==='mafia-observe-block'){
+      const targetAccount=endpoint==='mafia-observe-block'?await this.observerReportedAccount(body.targetId,now):null;
+      if(targetAccount)await blockUser(this.env,existing.accountUserId,targetAccount,now);
+      await releaseObserver(this.env,this.room,existing);const candidate=structuredClone(this.room);delete candidate.observers[existing.id];await this.commit(candidate);for(const ws of this.sockets()){const a=this.attachment(ws);if(a.scope==='observer'&&a.id===existing.id)this.close(ws,1000,'LEFT');}return json({ok:true,left:true});
+    }
+    if(endpoint==='mafia-observe-promote'){
+      if(input.capabilities?.mafia!==MAFIA_PROTOCOL)fail('UPDATE_REQUIRED',409);requireMafiaEnabled(this.env);
+      requireMafiaNewMatches(this.env);
+      if(!observerCanPromote(this.room,this.observerStream,existing,now))fail('OBSERVER_WAIT',409);
+      if(input.expectedSettingsRevision!==(this.room.settingsRevision||0))fail('CONFLICT',409);
+      const seat=await credentials(input.seat||{});if(seat.id===existing.id)fail('INVALID');
+      if(existing.promotion&&(existing.promotion.id!==seat.id||existing.promotion.tokenHash!==seat.tokenHash))fail('CONFLICT',409);
+      if(!existing.promotion){const pending=structuredClone(this.room);pending.observers[existing.id].promotion={id:seat.id,tokenHash:seat.tokenHash};await this.ctx.storage.put('room',pending);this.room=pending;}
+      const account=await this.env.DB.prepare('SELECT name FROM users WHERE id=?').bind(existing.accountUserId).first();
+      const candidate=structuredClone(this.room);joinRoom(candidate,{...seat,name:seat.name||Array.from(account?.name||'ضيف ميدان').slice(0,20).join(''),avatar:seat.avatar??0,accountUserId:existing.accountUserId},now);member(candidate,seat.id).accountUserId=existing.accountUserId;
+      await promoteObserverClaim(this.env,this.room,existing,seat,now);delete candidate.observers[existing.id];await this.hydrateErsomhaProfile(candidate,seat.id);await this.commit(candidate);for(const ws of this.sockets()){const a=this.attachment(ws);if(a.scope==='observer'&&a.id===existing.id)this.close(ws,1000,'PROMOTED');}return json({code:this.room.code,id:seat.id,game:'mafia',scope:'player'});
+    }
+    fail('NOT_FOUND',404);
+  }
+  async authenticateObserverSocket(ws,command,a,now){
+    if(command.capabilities?.mafia!==MAFIA_PROTOCOL||(this.room.protocol||1)<2)fail('UPDATE_REQUIRED',409);if(now>a.authDeadline)fail('AUTH',401);
+    const input=await credentials(command),observer=this.observer(input.id);if(!observer||observer.tokenHash!==input.tokenHash||observer.expiresAt<=now)fail('AUTH',401);
+    // A fresh RoomClient obtains its live bearer only after this challenge.
+    // Keep the socket unauthenticated and its original deadline until verified.
+    if(command.accountAuthorization===undefined){this.send(ws,{type:'account-auth',game:'mafia'});return;}
+    if(typeof command.accountAuthorization!=='string'||command.accountAuthorization.length>512)fail('AUTH',401);
+    const auth=await requireSession(this.env,new Request('https://internal/mafia-observer-auth',{headers:{authorization:command.accountAuthorization}}),{rotate:false});if(auth.user.id!==observer.accountUserId)fail('AUTH',401);
+    await claimObserver(this.env,this.room,observer,now);const candidate=structuredClone(this.room);candidate.observers[observer.id]={...observer,accountSessionId:auth.session.id,expiresAt:now+OBSERVER_LEASE};await this.ctx.storage.put('room',candidate);this.room=candidate;
+    for(const old of this.sockets()){const b=this.attachment(old);if(old!==ws&&b.scope==='observer'&&b.id===observer.id){old.serializeAttachment({superseded:true});this.close(old,4409,'REPLACED');}}
+    ws.serializeAttachment({...a,id:observer.id,scope:'observer',accountUserId:auth.user.id,accountSessionId:auth.session.id,accountExpiresAt:Math.min(auth.session.expires_at,auth.session.revoked_at??Number.MAX_SAFE_INTEGER),authDeadline:null});this.sendObserverSnapshots();await this.schedule();
+  }
   stateFor(id) {
+    assertSupportedMafiaRuleset(this.room);
     const state = snapshot(this.room, id, Date.now());
+    state.appearance = this.room.appearance || null;
+    state.members = state.members.map(m => {
+      const profile = this.room.members.find(seat => seat.id === m.id)?.profile;
+      return profile ? { ...m, profile } : m;
+    });
     if (this.room.game === 'ersomha' && this.drawing?.boardId === ersomhaBoardId(this.room)) state.drawing = ersomhaDrawingMeta(this.drawing);
+    if (this.room.game === 'mafia') {
+      if(this.room.ranked){
+        state.ranked={experimental:true,calibrated:false,seasonId:this.room.ranked.seasonId,rulesetVersion:1};
+        state.appearance=null;
+        state.members=state.members.map(({profile:_profile,...player})=>({...player,avatar:0}));
+      }
+      state.mafiaVoice=mafiaVoiceView(this.room,id);
+      const marker=this.room.statsMatch,account=this.room.members.find(seat=>seat.id===id)?.accountUserId;
+      if(['over','closed'].includes(state.phase)&&!state.waiting&&this.room.participants.includes(id)
+        &&account&&marker?.accounts?.[id]===account&&marker?.rewardPolicyVersion===1&&marker.rewardReceipt) {
+        state.rewardReceipt={matchKey:marker.rewardReceipt.matchKey,notBefore:marker.rewardReceipt.notBefore};
+      }
+    }
     return state;
   }
   async drawingCommand(ws, id, command) {
@@ -179,16 +481,22 @@ export class Room {
   // Quick reactions are ephemeral: a fixed emoji set broadcast to the seated sockets,
   // never written to storage or to the room snapshot. Their own small bucket keeps a
   // tapping thumb from spending the seat's general command budget.
-  reaction(ws, a, command, now) {
-    if (!ROOM_REACTIONS.includes(command.emoji)) fail('INVALID');
+  async reaction(ws, a, command, now) {
+    const cosmetic = command.reactionId ? getCosmetic(command.reactionId, { kind: 'sticker', now }) : null;
+    if (command.reactionId ? !cosmetic : !ROOM_REACTIONS.includes(command.emoji)) fail('INVALID');
     member(this.room, a.id);
     if (!reactionsAllowed(this.room, a.id)) fail('PRIVATE', 409);
     a.reactTokens = Math.min(REACTION_BURST, (a.reactTokens ?? REACTION_BURST) + Math.max(0, now - (a.reactAt ?? now)) / REACTION_REFILL_MS);
     a.reactAt = now;
     if (a.reactTokens < 1) { ws.serializeAttachment(a); fail('RATE_LIMIT', 429); }
     a.reactTokens -= 1; ws.serializeAttachment(a);
+    if (cosmetic) {
+      const userId = await this.cosmeticActor(a.id, command);
+      if (!await plusActiveFor(this.env, userId, now)) fail('PLUS_REQUIRED', 403);
+    }
     this.reactionCounter = (this.reactionCounter || 0) + 1;
-    const event = { type: 'reaction', id: `${now.toString(36)}-${this.reactionCounter}`, seatId: a.id, emoji: command.emoji, at: now };
+    const event = { type: 'reaction', id: `${now.toString(36)}-${this.reactionCounter}`, seatId: a.id, emoji: cosmetic?.emoji || command.emoji, at: now,
+      ...(cosmetic ? { reactionId: cosmetic.id, version: cosmetic.version } : {}) };
     for (const socket of this.sockets()) {
       const seat = this.attachment(socket).id;
       if (seat && this.room.members.some((m) => m.id === seat && !m.left)) this.send(socket, event);
@@ -200,6 +508,7 @@ export class Room {
       await this.ready;
       while (this.env.DB && this.profileOutbox.length) {
         const event = this.profileOutbox[0];
+        if(event.notBefore>Date.now())break;
         // D1 waits happen outside the game-command queue. A slow or unavailable
         // database must not delay a room action or the next match.
         try { await recordOnlineResult(this.env, event); }
@@ -238,16 +547,30 @@ export class Room {
   broadcast() {
     if (!this.room) return;
     for (const ws of this.sockets()) {
-      const { id } = this.attachment(ws);
+      const { id,scope } = this.attachment(ws);
       if (!id) continue;
+      if(scope==='observer')continue;
       const m = this.room.members.find((p) => p.id === id && !p.left);
       if (!m) { this.send(ws, { type: 'error', error: 'REMOVED' }); this.close(ws, 4401, 'REMOVED'); continue; }
-      this.send(ws, { type: 'state', state: this.stateFor(id) });
+      const state=this.stateFor(id);
+      if(this.room.game==='mafia') {
+        // Identical snapshots are not emitted to uninvolved viewers for secret
+        // commands; even their message timing must not reveal team activity.
+        const comparison=JSON.stringify({...state,serverNow:0});
+        if(this.mafiaLastSnapshots.get(ws)===comparison)continue;
+        this.mafiaLastSnapshots.set(ws,comparison);
+      }
+      this.send(ws, { type: 'state', state });
     }
   }
   async advance({ force = false } = {}) {
     if (!this.room) return;
+    // Fail before tick, observer projection or the account-failure abort path.
+    // Unsupported saved matches remain untouched for a compatible server.
+    assertSupportedMafiaRuleset(this.room);
+    if(this.room.game==='mafia')await this.advanceObservers();
     const now = Date.now();
+    if(this.room.game==='mafia'&&this.mafiaCleanupRetryAt>now)return;
     // Between durable room changes only time can advance the game. Avoid
     // cloning/stringifying the full private turn plan for every ink batch.
     // Rehydration, a changed room object, and alarms always re-evaluate it.
@@ -260,26 +583,38 @@ export class Room {
       if (a.id && Date.now() - this.lastSeen(ws, a) >= SOCKET_IDLE) {
         ws.serializeAttachment({ timedOut: true });
         this.close(ws, 4000, 'DISCONNECTED');
-        if (candidate.members.some((m) => m.id === a.id && !m.left)) connected(candidate, a.id, false, Date.now());
+        if (candidate.members.some((m) => m.id === a.id && !m.left)&&!this.mafiaVoiceAlive(candidate,a.id)) connected(candidate, a.id, false, Date.now());
       }
     }
+    if(candidate.game==='mafia')for(const m of candidate.members.filter(m=>!m.left&&m.connected))if(!this.sockets().some(ws=>this.attachment(ws).id===m.id)&&!this.mafiaVoiceAlive(candidate,m.id))connected(candidate,m.id,false,Date.now());
     tick(candidate, Date.now());
     if (candidate.phase === 'closed') {
+      if(candidate.game==='mafia'&&!candidate.closedDeleteAt){candidate.closedDeleteAt=Date.now()+90000;await this.commit(candidate);return;}
+      if(candidate.game==='mafia'&&Date.now()<candidate.closedDeleteAt){await this.schedule();return;}
       const reason = candidate.reason === 'expired' ? 'EXPIRED' : 'NOT_FOUND';
       for (const ws of this.sockets()) { this.send(ws, { type: 'error', error: reason }); this.close(ws, 4404, reason); }
       if (candidate.game === 'ersomha') {
         try { await releaseErsomhaLease(this.env, candidate.ersomhaLease); } catch { /* short lease expiry remains safe */ }
         await deleteErsomhaDrawing(this.ctx.storage, this.drawingHead, this.drawingArchives);
       }
-      if (this.profileOutbox.length) await this.deleteKey('room');
+      if(candidate.game==='mafia') {await prepareMafiaVoice(this.ctx,this.env,this.room,candidate);await committedMafiaVoice(this.ctx,this.env,candidate);if(candidate.mafiaMedia?.failed){this.mafiaCleanupRetryAt=Date.now()+STATS_RETRY;await this.ctx.storage.setAlarm(this.mafiaCleanupRetryAt);return;}await cleanupMafiaSeats(this.env,candidate);for(const observer of Object.values(candidate.observers||{}))await releaseObserver(this.env,candidate,observer);await updateMafiaDirectory(this.env,candidate);}
+      if (this.profileOutbox.length||this.mafiaResultOutbox.length) await this.deleteKey('room');
       else await this.ctx.storage.deleteAll();
       this.room = null;
       this.drawing = null; this.drawingHead = null; this.drawingArchives = [];
       await this.schedule();
+      await this.flushMafiaResults();
     } else if (JSON.stringify(candidate) !== JSON.stringify(this.room)
-      || candidate.game === 'ersomha' && candidate.ersomhaLease && ERSOMHA_PLAYING.includes(candidate.phase) && Date.now() >= candidate.ersomhaLease.renewAt) {
+      || candidate.game === 'ersomha' && candidate.ersomhaLease && ERSOMHA_PLAYING.includes(candidate.phase) && Date.now() >= candidate.ersomhaLease.renewAt
+      || candidate.game === 'mafia' && (Date.now()>=(candidate.mafiaRenewAt||0)||Date.now()>=this.mafiaAuthDeadline(candidate))) {
       try { await this.commit(candidate); }
       catch (error) {
+        if(candidate.game==='mafia') {
+          if(!mafiaPlaying(this.room))throw error;
+          const stopped=structuredClone(this.room);technicalAbort(stopped,Date.now(),'account_unavailable');
+          await prepareMafiaVoice(this.ctx,this.env,this.room,stopped);
+          await this.commit(stopped,{prepared:true});return;
+        }
         if (candidate.game !== 'ersomha' || !(error instanceof RoomError) || !['AUTH', 'ERSOMHA_ACTIVE_ELSEWHERE'].includes(error.code)) throw error;
         // Every entry point advances first, including HTTP leave and socket
         // close. End a revoked match here so cleanup never depends on its alarm.
@@ -300,20 +635,87 @@ export class Room {
     return found.id;
   }
   async hydrateErsomhaProfile(room, seatId) {
-    if (room.game !== 'ersomha') return;
-    const seat = member(room, seatId), profiles = await profileSummaries(this.env, [seat.accountUserId]);
-    const profile = profiles.get(seat.accountUserId);
-    seat.profile = profile ? { avatarPreset: profile.avatarPreset, theme: profile.theme, avatarUrl: profile.avatarUrl, revision: profile.revision } : null;
+    const seat = member(room, seatId);
+    if (!seat.accountUserId || !this.env.DB) return;
+    try {
+      const profiles = await profileSummaries(this.env, [seat.accountUserId]), profile = profiles.get(seat.accountUserId);
+      seat.profile = profile ? { avatarPreset: profile.avatarPreset, theme: profile.theme, avatarUrl: profile.avatarUrl, revision: profile.revision, cosmetics: profile.cosmetics } : null;
+    } catch { seat.profile = null; }
+  }
+  async cosmeticActor(seatId, command) {
+    const seat = member(this.room, seatId);
+    if (!seat.accountUserId || typeof command.accountAuthorization !== 'string' || command.accountAuthorization.length > 512) fail('AUTH_REQUIRED', 401);
+    const request = new Request('https://room.internal/api/cosmetics', { headers: { authorization: command.accountAuthorization } });
+    const auth = await requireSession(this.env, request, { rotate: false });
+    if (auth.user.id !== seat.accountUserId) fail('AUTH', 401);
+    return auth.user.id;
+  }
+  async createRankedMatch(input) {
+    if(!mafiaRankedEnabled(this.env))fail('MAFIA_DISABLED',503);
+    requireMafiaEnabled(this.env);requireMafiaNewMatches(this.env);
+    if(typeof input.key!=='string'||!/^[a-f0-9-]{36}$/.test(input.key)||!/^\d{6}$/.test(input.code)||!Array.isArray(input.seats)||input.seats.length!==8)fail('INVALID');
+    if(this.room&&(this.room.ranked?.key!==input.key||this.room.code!==input.code))fail('COLLISION',409);
+    if(this.room&&this.room.phase!=='lobby')return json({ok:true,code:this.room.code});
+    const now=Date.now();
+    const held=(await this.env.DB.prepare(`SELECT q.user_id,q.match_seat_id AS seat_id,q.token_hash,q.session_id FROM mafia_ranked_queue q JOIN mafia_match_leases l ON l.user_id=q.user_id JOIN sessions s ON s.id=q.session_id AND s.user_id=q.user_id WHERE q.match_key=? AND q.status='assigned' AND l.room_key=? AND l.expires_at>? AND s.expires_at>? AND (s.revoked_at IS NULL OR s.revoked_at>?) AND ${liveAccountSql('q.user_id')}`).bind(input.key,input.key,now,now,now).all()).results||[];
+    if(held.length!==8||new Set(held.map(s=>s.seat_id)).size!==8||!input.seats.every(s=>held.some(h=>h.user_id===s.user_id&&h.seat_id===s.seat_id&&h.token_hash===s.token_hash&&h.session_id===s.session_id)))fail('AUTH',401);
+    let candidate=this.room?structuredClone(this.room):null;
+    if(!candidate){
+      const season=await this.env.DB.prepare("SELECT z.* FROM mafia_ranked_seasons z JOIN mafia_ranked_matches m ON m.season_id=z.id WHERE m.match_key=? AND m.room_code=? AND m.status IN ('creating','playing')").bind(input.key,input.code).first();
+      if(!season||season.id!==input.seasonId)fail('MAFIA_RANKED_RESULT',503);
+      const ratingPolicy=await resolveMafiaSeasonRatingPolicy(this.env,season);
+      const ratingPolicySHA256=await sha256(canonicalMafiaRatingValue(ratingPolicy));
+      const settings={mode:'classic',capacity:8,visibility:'private',roomName:'المنافسة التجريبية',community:'ar',voiceMode:'off'};
+      for(let i=0;i<input.seats.length;i++){
+        const row=input.seats[i],seat={id:row.seat_id,tokenHash:row.token_hash,name:`المقعد ${i+1}`,avatar:0,game:'mafia',settings,capabilities:{mafia:2},accountUserId:row.user_id};
+        if(i===0){candidate=createRoom(input.code,seat,now);candidate.mafiaKey=input.key;candidate.ranked={key:input.key,seasonId:input.seasonId,ratingModel:ratingPolicy.model,ratingPolicySHA256,rewardPolicyVersion:1};candidate.roomTrialGate=null;candidate.roomTrialClaim=crypto.randomUUID();candidate.trialOwnerId=seat.id;candidate.trialStarted=false;}
+        else joinRoom(candidate,seat,now);
+        bindSeatAccount(candidate,seat.id,row.user_id);member(candidate,seat.id).canHost=true;
+      }
+      for(const seat of candidate.members)await claimMafiaSeat(this.env,candidate,seat.id,now);
+      await this.commit(candidate);
+    }
+    candidate=structuredClone(this.room);
+    for(const seat of candidate.members){seat.connected=true;seat.ready=true;}
+    action(candidate,candidate.hostId,{type:'start',matchId:candidate.matchId,phaseId:candidate.phaseId},Date.now());
+    // Queue HTTP availability is not a WebSocket heartbeat. Seats receive the
+    // ordinary reconnect grace until their actual authenticated sockets arrive.
+    for(const seat of candidate.members){seat.connected=false;seat.disconnectedAt=Date.now();}
+    candidate.trialStarted=true;
+    await this.commit(candidate);
+    return json({ok:true,code:candidate.code},201);
   }
   fetch(request) {
     return this.serial(async () => {
       try {
-        await this.advance();
         const url = new URL(request.url);
         const endpoint = url.pathname.split('/').at(-1);
+        if(endpoint==='mafia-ranked-coordinator'&&request.method==='POST')return await rankedCoordinator(this.env,await readJson(request,8192));
+        if(endpoint==='mafia-directory-invalidate'&&request.method==='POST')return await this.directoryFeed.invalidate();
+        if(endpoint==='mafia-directory-socket'&&request.headers.get('upgrade')?.toLowerCase()==='websocket'){await this.directoryFeed.activate();const pair=new WebSocketPair();await this.directoryFeed.accept(pair[1]);return new Response(null,{status:101,webSocket:pair[0]});}
+        await this.advance();
+        if(endpoint==='mafia-ranked-abort-lobby'&&request.method==='POST'){
+          const body=await readJson(request);
+          if(this.mafiaResultOutbox.some(event=>event.ranked?.key===body.key))return json({safe:false});
+          if(this.room?.ranked?.key!==body.key)return json({safe:true});
+          if(this.room.phase!=='lobby')return json({safe:!!this.room.technicalAbort});
+          const candidate=structuredClone(this.room);candidate.phase='closed';candidate.phaseId++;candidate.deadlineAt=null;candidate.technicalAbort=true;candidate.reason='ranked_queue_cancelled';candidate.closedDeleteAt=Date.now()+90000;
+          for(const seat of candidate.members){seat.left=true;seat.connected=false;}
+          await this.commit(candidate);return json({safe:true});
+        }
+        if(endpoint==='mafia-ranked-status'&&request.method==='POST'){
+          const body=await readJson(request);
+          if(this.mafiaResultOutbox.some(event=>event.ranked?.key===body.key))return json({status:'pending'});
+          if(this.room?.ranked?.key!==body.key)return json({status:'missing'});
+          return json({status:this.room.technicalAbort?'aborted':this.room.phase==='lobby'?'lobby':'playing'});
+        }
+        if(endpoint==='mafia-ranked-create'&&request.method==='POST')return await this.createRankedMatch(await readJson(request,8192));
         if (request.method === 'POST' && endpoint === 'create') {
           const input = await credentials(await readJson(request, 4096, createLimit));
           if (input.game === 'badeeha' && input.capabilities?.badeeha !== BADEEHA_PROTOCOL) fail('UPDATE_REQUIRED', 409);
+          if(input.game==='mafia') {requireMafiaEnabled(this.env);requireMafiaNewMatches(this.env);if(input.capabilities?.mafia!==MAFIA_PROTOCOL)fail('UPDATE_REQUIRED',409);if(!input.accountUserId)fail('AUTH_REQUIRED',401);}
+          if(input.game==='mafia'&&input.settings?.experimentalRole&&(!mafiaPreviewOnly(this.env)||String(this.env.MAFIA_EXPERIMENTAL_ROLES_ENABLED)!=='1'))fail('MAFIA_EXPERIMENT_DISABLED',409);
+          if(input.game==='mafia'&&input.settings?.experimentalRole&&!supportsMafiaRuleset(input.capabilities,2))fail('UPDATE_REQUIRED',409);
           if (input.game === 'ersomha') {
             if (input.capabilities?.ersomha !== ERSOMHA_PROTOCOL) fail('CONFIG', 409);
             if (typeof input.accountUserId !== 'string' || !input.accountUserId) fail('AUTH_REQUIRED', 401);
@@ -324,7 +726,7 @@ export class Room {
             const owner = this.room.members.find((m) => m.id === input.id && !m.left);
             if (!owner || owner.tokenHash !== input.tokenHash) return json({ error: 'COLLISION' }, 409);
             if ((this.room.game || 'meenfina') !== (input.game || 'meenfina')) fail('GAME');
-            if (this.room.game === 'ersomha' && owner.accountUserId !== input.accountUserId) fail('AUTH', 401);
+            if (['ersomha','mafia'].includes(this.room.game) && owner.accountUserId !== input.accountUserId) fail('AUTH', 401);
             return json({ code: this.room.code, id: input.id, game: this.room.game || 'meenfina' });
           }
           const created = createRoom(code, input, Date.now());
@@ -333,6 +735,8 @@ export class Room {
           created.trialOwnerId = input.id;
           created.trialStarted = false;
           bindSeatAccount(created, input.id, input.accountUserId);
+          // The creator passed the room gate, so it can start; joiners are checked as they arrive.
+          if(created.game==='mafia') {created.mafiaKey=crypto.randomUUID();await claimMafiaSeat(this.env,created,input.id);created.members[0].canHost=true;}
           await this.hydrateErsomhaProfile(created, input.id);
           // Reject empty topic selections while the creator can still edit them,
           // rather than trapping an assembled group in an unstartable lobby.
@@ -341,6 +745,65 @@ export class Room {
           return json({ code, id: input.id, game: this.room.game }, 201);
         }
         if (!this.room) fail('NOT_FOUND', 404);
+        if(endpoint.startsWith('mafia-observe-')&&request.method==='POST')return await this.observerHttp(endpoint,await readJson(request));
+        if(request.method==='POST'&&endpoint==='mafia-session-revoked') {
+          if(this.room.game!=='mafia')fail('NOT_FOUND',404);
+          // Internal wake-up only: current D1 authorization decides what is
+          // revoked, so an old notification cannot remove a successor session.
+          this.room.observerRenewAt=0;await this.advanceObservers();await this.reconcileMafiaSessions();await this.schedule();return json({ok:true});
+        }
+        if(request.method==='POST'&&endpoint==='mafia-account-removed') {
+          if(this.room.game!=='mafia')fail('NOT_FOUND',404);
+          const body=await readJson(request);await this.eraseObserverEvidence([body.accountUserId]);const observer=Object.values(this.room.observers||{}).find(o=>o.accountUserId===body.accountUserId);if(observer){await releaseObserver(this.env,this.room,observer);const candidate=structuredClone(this.room);delete candidate.observers[observer.id];await this.commit(candidate);this.sendObserverSnapshots();}
+          const seat=this.room.members.find(m=>!m.left&&m.accountUserId===body.accountUserId);
+          if(!seat){if(this.room.mafiaMedia?.failed)fail('MAFIA_VOICE_UNAVAILABLE',503);return json({ok:true});}
+          const candidate=structuredClone(this.room);leaveRoom(candidate,seat.id,Date.now());
+          await prepareMafiaVoice(this.ctx,this.env,this.room,candidate);await this.commit(candidate,{prepared:true});
+          if(candidate.mafiaMedia?.failed)fail('MAFIA_VOICE_UNAVAILABLE',503);
+          return json({ok:true});
+        }
+        if(request.method==='POST'&&endpoint==='mafia-voice') {
+          if(this.room.game!=='mafia')fail('NOT_FOUND',404);
+          const body=await readJson(request),response=await mafiaVoiceRequest(this.ctx,this.env,this.room,body.accountUserId,body);
+          this.fastAdvanceRoom=null;await this.schedule({skipIdenticalMafiaAlarm:body.operation==='sync'&&response.unchanged===true});return json(response);
+        }
+        if(request.method==='POST'&&endpoint==='mafia-evidence') {
+          if(this.room.game!=='mafia')fail('NOT_FOUND',404);
+          const body=await readJson(request),seat=this.room.members.find(m=>m.accountUserId===body.accountUserId);
+          if(body.scope==='observer'){
+            const input=await credentials(body),observer=this.observer(input.id);if(!observer||observer.tokenHash!==input.tokenHash||observer.accountUserId!==body.accountUserId)fail('AUTH',401);
+            if(!(await observerAuthorizations(this.env,this.room,[{...observer,accountSessionId:body.accountSessionId}])).length)fail('AUTH',401);
+            const view=observerView(this.room,this.observerStream,observer);if(body.matchId!==view.matchId)fail('NOT_FOUND',404);const reportedUserId=await this.observerReportedAccount(body.targetId);
+            const messages=view.chats.public.map(m=>({...m,channel:'public'})).filter(m=>!body.messageId||m.id===body.messageId);
+            return json({matchKey:`${this.room.mafiaKey}:${view.matchId}`,reportedUserId,phase:view.phase,capturedAt:Date.now(),
+              perspective:{scope:'observer',delayMs:30000,channels:[...new Set(messages.map(m=>m.channel))].sort()},publicHistory:view.log,messages});
+          }
+          if(!seat||body.matchId!==this.room.matchId)fail('NOT_FOUND',404);
+          const target=this.room.members.find(m=>m.id===body.targetId);if(!target?.accountUserId)fail('NOT_FOUND',404);
+          // Capture only evidence the reporter was authorized to see. No role
+          // map, other faction chat, or voice recording enters the report.
+          const view=mafiaSnapshot(this.room,seat.id,Date.now());
+          const messages=Object.entries(view.chats||{}).flatMap(([channel,rows])=>rows.map(m=>({...m,channel}))).filter(m=>!body.messageId||m.id===body.messageId);
+          return json({matchKey:`${this.room.mafiaKey}:${this.room.matchId}`,reportedUserId:target.accountUserId,phase:this.room.phase,capturedAt:Date.now(),
+            perspective:{scope:'player',delayMs:0,channels:[...new Set(messages.map(m=>m.channel))].sort()},publicHistory:view.log||[],messages});
+        }
+        if(request.method==='POST'&&endpoint==='mafia-block-account') {
+          if(this.room.game!=='mafia')fail('NOT_FOUND',404);
+          const body=await readJson(request),seat=this.room.members.find(m=>!m.left&&m.accountUserId===body.accountUserId),target=this.room.members.find(m=>!m.left&&m.accountUserId===body.targetAccountUserId);
+          const observer=Object.values(this.room.observers||{}).find(o=>o.accountUserId===body.accountUserId);if(observer&&(target||Object.values(this.room.observers||{}).some(o=>o.accountUserId===body.targetAccountUserId))){await releaseObserver(this.env,this.room,observer);const candidate=structuredClone(this.room);delete candidate.observers[observer.id];await this.commit(candidate);this.sendObserverSnapshots();return json({ok:true,left:true});}
+          const targetObserver=Object.values(this.room.observers||{}).find(o=>o.accountUserId===body.targetAccountUserId);if(seat&&targetObserver){await releaseObserver(this.env,this.room,targetObserver);const candidate=structuredClone(this.room);delete candidate.observers[targetObserver.id];await this.commit(candidate);this.sendObserverSnapshots();return json({ok:true,left:false});}
+          if(!seat||!target||seat.id===target.id)return json({ok:true,left:false});
+          const candidate=structuredClone(this.room);leaveRoom(candidate,seat.id,Date.now());await this.commit(candidate);
+          return json({ok:true,left:true});
+        }
+        if(request.method==='POST'&&endpoint==='mafia-block') {
+          if(this.room.game!=='mafia')fail('NOT_FOUND',404);
+          const body=await readJson(request),seat=this.room.members.find(m=>!m.left&&m.accountUserId===body.accountUserId),target=this.room.members.find(m=>m.id===body.targetId);
+          if(!seat||!target?.accountUserId||seat.id===target.id)fail('NOT_FOUND',404);
+          await blockUser(this.env,seat.accountUserId,target.accountUserId,Date.now());
+          const candidate=structuredClone(this.room);leaveRoom(candidate,seat.id,Date.now());await this.commit(candidate);
+          return json({ok:true,left:true});
+        }
         if (request.method === 'POST' && endpoint === 'drawing-evidence') {
           if (this.room.game !== 'ersomha') fail('NOT_FOUND', 404);
           const input = await readJson(request), matchId = input.matchId, round = input.round;
@@ -370,6 +833,18 @@ export class Room {
         if (request.method === 'POST' && endpoint === 'join') {
           const input = await credentials(await readJson(request));
           if (this.room.game === 'badeeha' && input.capabilities?.badeeha !== BADEEHA_PROTOCOL) fail('UPDATE_REQUIRED', 409);
+          if(this.room.game==='mafia') {
+            if(this.room.ranked&&!this.room.members.some(m=>!m.left&&m.id===input.id&&m.accountUserId===input.accountUserId))fail('MAFIA_RANKED_PRIVATE',403);
+            if(!supportsMafiaRuleset(input.capabilities,this.room.rulesetVersion||1))fail('UPDATE_REQUIRED',409);
+            if(!supportsMafiaProtocol(input.capabilities?.mafia,this.room.protocol||1))fail('UPDATE_REQUIRED',409);
+            if(!input.accountUserId)fail('AUTH_REQUIRED',401);
+            const previous=this.room.members.find(m=>!m.left&&m.id===input.id);
+            if(previous&&previous.accountUserId!==input.accountUserId)fail('AUTH',401);
+            if(!previous&&this.room.phase==='lobby'){requireMafiaEnabled(this.env);requireMafiaNewMatches(this.env);}
+            if(input.matchmaking&&(this.room.phase!=='lobby'||this.room.settings.visibility!=='public'))fail('STARTED',409);
+            if(!previous&&(this.room.protocol||1)>=2&&this.room.phase!=='lobby')fail('STARTED',409);
+            if(input.expectedSettingsRevision!=null&&input.expectedSettingsRevision!==(this.room.settingsRevision||0))fail('CONFLICT',409);
+          }
           if (this.room.game === 'ersomha') {
             if (input.capabilities?.ersomha !== ERSOMHA_PROTOCOL) fail('CONFIG', 409);
             if (typeof input.accountUserId !== 'string' || !input.accountUserId) fail('AUTH_REQUIRED', 401);
@@ -379,12 +854,14 @@ export class Room {
           const candidate = structuredClone(this.room);
           joinRoom(candidate, input, Date.now());
           bindSeatAccount(candidate, input.id, input.accountUserId);
+          if(candidate.game==='mafia') {await claimMafiaSeat(this.env,candidate,input.id);member(candidate,input.id).canHost=await mafiaHostEligible(this.env,input.accountUserId,candidate);}
           await this.hydrateErsomhaProfile(candidate, input.id);
           await this.commit(candidate);
           return json({ code: this.room.code, id: input.id, game: this.room.game || 'meenfina' });
         }
         if (request.method === 'POST' && endpoint === 'leave') {
           const id = await this.authenticate(await readJson(request));
+          if(this.room.game==='mafia'){const auth=await requireSession(this.env,request,{rotate:false});if(member(this.room,id).accountUserId!==auth.user.id)fail('AUTH',401);}
           const candidate = structuredClone(this.room);
           leaveRoom(candidate, id, Date.now());
           await this.commit(candidate);
@@ -392,7 +869,7 @@ export class Room {
           return json({ ok: true });
         }
         if (request.method === 'GET' && endpoint === 'socket' && request.headers.get('upgrade')?.toLowerCase() === 'websocket') {
-          if (this.sockets().length >= 32) fail('RATE_LIMIT', 429);
+          if (this.sockets().length >= (this.room.game==='mafia'?48:32)) fail('RATE_LIMIT', 429);
           const pair = new WebSocketPair();
           await this.acceptSocket(pair[1]);
           return new Response(null, { status: 101, webSocket: pair[0] });
@@ -403,6 +880,7 @@ export class Room {
   }
   // The dev adapter uses the identical authentication/message handlers.
   async acceptSocket(ws) {
+    if(await this.directoryFeed.active())return this.directoryFeed.accept(ws);
     this.ctx.acceptWebSocket(ws);
     ws.serializeAttachment({ authDeadline: Date.now() + 10_000 });
     await this.schedule();
@@ -421,13 +899,17 @@ export class Room {
       this.close(ws, 4429, 'RATE_LIMIT'); return Promise.resolve();
     }
     this.inboundBySocket.set(ws, queued + 1); this.inboundCount++;
+    const queuedAt=Date.now();
     return this.serial(async () => {
-      let requestId, attemptedStart;
+      const servingAt=Date.now();
+      let requestId, attemptedStart,metricCommand=false,metricOutcome='rejected';
       try {
         if (ws.readyState !== 1) return;
+        if(await this.directoryFeed.active())return await this.directoryFeed.message(ws,message);
         await this.advance();
         if (ws.readyState !== 1) return;
         if (!this.room) fail('NOT_FOUND', 404);
+        if(this.room.game==='mafia'&&message!=='ping')this.metrics.queueWait(Math.max(0,servingAt-queuedAt));
         const a = this.attachment(ws);
         const now = Date.now();
         a.seenAt = now;
@@ -436,6 +918,7 @@ export class Room {
         try { command = JSON.parse(message); } catch { /* malformed messages still use the ordinary flood budget */ }
         const validCommand = command && !Array.isArray(command) && typeof command === 'object';
         requestId = validCommand && typeof command.requestId === 'string' && command.requestId.length <= 80 ? command.requestId : undefined;
+        metricCommand=this.room.game==='mafia'&&Boolean(a.id&&requestId);
         if (this.room.game === 'ersomha' && validCommand && command.type === 'drawing_batch' && a.id) {
           a.drawTokens = Math.min(30, (a.drawTokens ?? 30) + Math.max(0, now - (a.drawAt ?? now)) * 15 / 1000); a.drawAt = now;
           if (a.drawTokens < 1) {
@@ -443,23 +926,28 @@ export class Room {
             if (a.drawViolations > 30) this.close(ws, 4429, 'RATE_LIMIT'); fail('RATE_LIMIT', 429);
           }
           a.drawTokens--; a.drawViolations = Math.max(0, (a.drawViolations || 0) - 1);
-        } else if (!(a.id && requestId && validCommand && command.type === 'react' && ROOM_REACTIONS.includes(command.emoji))) {
+        } else if (!(a.id && requestId && validCommand && command.type === 'react' && (command.reactionId ? getCosmetic(command.reactionId, { kind: 'sticker', now }) : ROOM_REACTIONS.includes(command.emoji)))) {
           if (!a.windowAt || now - a.windowAt > 10_000) { a.windowAt = now; a.count = 0; }
           a.count = (a.count || 0) + 1;
           if (a.count > 35) { ws.serializeAttachment(a); this.close(ws, 4429, 'RATE_LIMIT'); fail('RATE_LIMIT', 429); }
         }
         ws.serializeAttachment(a);
         if (!validCommand) fail('INVALID');
+        if(this.room.game==='mafia'&&command.type==='auth'&&!a.id&&command.scope==='observer')return await this.authenticateObserverSocket(ws,command,a,now);
+        if(a.scope==='observer'){if(!requestId)fail('INVALID');fail('OBSERVER_READ_ONLY',403);}
         if (command.type === 'auth' && !a.id) {
           if (this.room.game === 'badeeha' && command.capabilities?.badeeha !== BADEEHA_PROTOCOL) fail('UPDATE_REQUIRED', 409);
           if (this.room.game === 'ersomha' && command.capabilities?.ersomha !== ERSOMHA_PROTOCOL) fail('CONFIG', 409);
+          if (this.room.game === 'mafia' && !supportsMafiaProtocol(command.capabilities?.mafia,this.room.protocol||1)) fail('UPDATE_REQUIRED', 409);
+          if(this.room.game==='mafia'&&!supportsMafiaRuleset(command.capabilities,this.room.rulesetVersion||1))fail('UPDATE_REQUIRED',409);
           if (now > a.authDeadline) fail('AUTH', 401);
           const id = await this.authenticate(command);
-          if (this.room.game === 'ersomha') {
+          let accountIdentity={};
+          if (['ersomha','mafia'].includes(this.room.game)) {
             // Room tokens identify a seat, not an account. Ask only Ersomha
             // clients for a live bearer before revealing account-scoped words.
             // Older games keep their original single-message seat handshake.
-            if (command.accountAuthorization === undefined) { this.send(ws, { type: 'account-auth', game: 'ersomha' }); return; }
+            if (command.accountAuthorization === undefined) { this.send(ws, { type: 'account-auth', game: this.room.game }); return; }
             if (typeof command.accountAuthorization !== 'string' || command.accountAuthorization.length > 512) fail('AUTH', 401);
             const request = new Request(`https://room.internal/api/rooms/${this.room.code}/socket`, { headers: { authorization: command.accountAuthorization } });
             let auth;
@@ -467,13 +955,16 @@ export class Room {
             catch (error) { if (error instanceof RoomError && error.status < 500) fail('AUTH', 401); throw error; }
             const seat = member(this.room, id);
             if (auth.user.id !== seat.accountUserId || !await this.env.DB.prepare(`SELECT 1 AS ok WHERE ${liveAccountSql('?')}`).bind(auth.user.id, auth.user.id).first()) fail('AUTH', 401);
+            if(this.room.game==='mafia')accountIdentity={accountSessionId:auth.session.id,accountUserId:auth.user.id,accountExpiresAt:Math.min(auth.session.expires_at,auth.session.revoked_at??Number.MAX_SAFE_INTEGER)};
           }
           // Only one controlling connection per seat; old close cannot disconnect the replacement.
           for (const other of this.sockets()) if (other !== ws && this.attachment(other).id === id) {
             other.serializeAttachment({ replaced: true }); this.close(other, 4409, 'REPLACED');
           }
-          ws.serializeAttachment({ id, seenAt: now, windowAt: now, count: 1 });
+          ws.serializeAttachment({ id, seenAt: now, windowAt: now, count: 1,...accountIdentity });
           const candidate = structuredClone(this.room);
+          // Retire persisted billing-derived host flags after verified account auth.
+          if(candidate.game==='mafia')member(candidate,id).canHost=true;
           connected(candidate, id, true, now);
           await this.commit(candidate);
           return;
@@ -482,23 +973,48 @@ export class Room {
         // failed login: answering with INVALID keeps the player's session alive.
         if (!a.id) fail('AUTH', 401);
         if (!requestId) fail('INVALID');
-        if (command.type === 'react') { this.reaction(ws, a, command, now); this.send(ws, { type: 'ack', requestId, ok: true }); return; }
+        let mafiaSessionProof=null;
+        if(this.room.game==='mafia') {
+          if(this.room.ranked&&['ready','settings','start','restart','kick','appearance','react'].includes(command.type))fail('MAFIA_RANKED_FIXED',403);
+          if(['ready','night_action','mafia_vote','nominate','verdict','herald','chat'].includes(command.type)) {
+            // A pure model action can share one fresh D1 result with preparation,
+            // which rechecks its scope and falls back at authorization boundaries.
+            mafiaSessionProof=await this.readMafiaSessions(this.room);
+            if(a.revoked||!this.mafiaSessionValid(mafiaSessionProof,a.accountSessionId,a.accountUserId))fail('AUTH',401);
+          } else if(!await this.env.DB.prepare(`SELECT 1 FROM sessions WHERE id=? AND user_id=? AND expires_at>? AND (revoked_at IS NULL OR revoked_at>?) AND ${liveAccountSql('sessions.user_id')}`).bind(a.accountSessionId||'',a.accountUserId||'',now,now).first())fail('AUTH',401);
+        }
+        if (command.type === 'react') { await this.reaction(ws, a, command, now); metricOutcome='ok';this.send(ws, { type: 'ack', requestId, ok: true }); return; }
+        if (command.type === 'appearance') {
+          if (command.themeId != null) await this.cosmeticActor(a.id, command);
+          const themed = structuredClone(this.room);
+          await selectRoomAppearance(this.env, themed, a.id, command.themeId);
+          await this.commit(themed);
+          metricOutcome='ok';
+          this.send(ws, { type: 'ack', requestId, ok: true }); return;
+        }
         if (this.room.game === 'ersomha' && ['drawing_batch', 'drawing_undo', 'drawing_redo', 'drawing_clear', 'drawing_sync'].includes(command.type)) {
           await this.drawingCommand(ws, a.id, command); return;
         }
         const candidate = structuredClone(this.room);
-        const deck = command.type === 'start' && !['ersomha', 'badeeha'].includes(candidate.game) ? (candidate.game === 'fabraka' ? buildFabrakaDeck(candidate) : meenfinaDeck(candidate)) : [];
+        const deck = command.type === 'start' && !['ersomha', 'badeeha','mafia'].includes(candidate.game) ? (candidate.game === 'fabraka' ? buildFabrakaDeck(candidate) : meenfinaDeck(candidate)) : [];
+        if (command.type === 'start' && this.env.DB) {
+          const hostAccount = candidate.members.find(m => m.id === candidate.hostId && !m.left)?.accountUserId;
+          if (hostAccount && !await this.env.DB.prepare(`SELECT 1 AS ok WHERE ${liveAccountSql('?')}`).bind(hostAccount, hostAccount).first()) fail('AUTH', 401);
+        }
+        if(candidate.game==='mafia'&&['start','restart'].includes(command.type)) {
+          requireMafiaEnabled(this.env);requireMafiaNewMatches(this.env);
+          if(command.type==='start')await recheckMafiaHost(this.env,candidate,now);
+        }
         action(candidate, a.id, command, now, deck);
         if (candidate.game === 'ersomha' && command.type === 'start') attemptedStart = candidate;
         if (candidate.game === 'ersomha') await this.prepareErsomha(candidate);
-        if (command.type === 'start' && !candidate.trialStarted) {
-          // Validate the engine action first. Failed readiness/settings never
-          // spend the allowance; a failed DO write can retry this private claim.
-          await consumeRoomTrial(this.env, candidate.roomTrialGate, candidate.roomTrialClaim, now,
-            candidate.members.some((member) => member.id === candidate.trialOwnerId && !member.left));
+        if (candidate.game === 'mafia') await this.prepareMafia(candidate,mafiaSessionProof);
+        if (command.type === 'start' && !candidate.trialStarted && !(candidate.game==='mafia'&&candidate.phase==='over')) {
+          // Legacy snapshots retain the started marker; no free allowance is spent.
           candidate.trialStarted = true;
         }
-        await this.commit(candidate, { prepared: candidate.game === 'ersomha' });
+        await this.commit(candidate, { prepared: ['ersomha','mafia'].includes(candidate.game) });
+        metricOutcome='ok';
         this.send(ws, { type: 'ack', requestId, ok: true });
       } catch (error) {
         if (attemptedStart?.ersomhaLease && this.room?.phase === 'lobby') {
@@ -510,7 +1026,15 @@ export class Room {
         // an error about another player (a kick target) must not sign the host out.
         const seat = this.attachment(ws).id;
         const seated = Boolean(seat) && Boolean(this.room?.members.some((m) => m.id === seat && !m.left));
-        if (['NOT_FOUND', 'EXPIRED'].includes(code) || (code === 'AUTH' && !seated)) this.close(ws, 4401, code);
+        if(code==='AUTH'&&seated&&this.room?.game==='mafia') {
+          ws.serializeAttachment({...this.attachment(ws),revoked:true});
+          try {await this.reconcileMafiaSessions();}catch {await this.ctx.storage.setAlarm(Date.now()+STATS_RETRY);}
+        }
+        if (['NOT_FOUND', 'EXPIRED'].includes(code) || (code === 'AUTH' && (!seated||this.room?.game==='mafia'))) this.close(ws, 4401, code);
+      } finally {
+        // Counts RPC attempts, never commands/targets/outcomes from the game.
+        if(metricCommand)this.metrics.commandSettled(metricOutcome,Math.max(0,Date.now()-servingAt));
+        if(this.room?.game==='mafia')this.metrics.flush();
       }
     }).finally(() => {
       this.inboundBySocket.set(ws, Math.max(0, (this.inboundBySocket.get(ws) || 1) - 1));
@@ -520,10 +1044,12 @@ export class Room {
   webSocketClose(ws) {
     return this.serial(async () => {
       this.close(ws, 1000, 'closed');
+      if(await this.directoryFeed.active())return;
       await this.advance({ force: true });
       const { id } = this.attachment(ws);
       if (!id || !this.room || !this.room.members.some((m) => m.id === id && !m.left)) return;
       if (this.sockets().some((other) => other !== ws && this.attachment(other).id === id && other.readyState === 1)) return;
+      if(this.mafiaVoiceAlive(this.room,id))return;
       const candidate = structuredClone(this.room);
       connected(candidate, id, false, Date.now());
       await this.commit(candidate);
@@ -533,6 +1059,7 @@ export class Room {
   alarm() {
     let attemptedMatch;
     return this.serial(async () => {
+      if(await this.directoryFeed.active())return this.directoryFeed.alarm();
       attemptedMatch = this.room && `${this.room.ersomhaKey}:${this.room.matchId}`;
       await this.advance({ force: true });
       for (const ws of this.sockets()) {
@@ -540,7 +1067,9 @@ export class Room {
         if (!a.id && a.authDeadline <= Date.now()) this.close(ws, 4401, 'AUTH');
       }
       await this.schedule();
+      await this.flushMafiaResults();
     }).then(() => this.flushStats(), async error => {
+      if(this.room?.game==='mafia'){this.mafiaCleanupRetryAt=Date.now()+STATS_RETRY;await this.ctx.storage.setAlarm(this.mafiaCleanupRetryAt);return;}
       if (this.room?.game !== 'ersomha') throw error;
       if (error instanceof RoomError && ['AUTH', 'ERSOMHA_ACTIVE_ELSEWHERE'].includes(error.code)) {
         await this.serial(async () => {

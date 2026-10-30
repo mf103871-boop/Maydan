@@ -9,6 +9,8 @@ import { notifyUsers,forgetSocialUser } from '../social/realtime.mjs';
 import { reportAudioResponse,collectDeletedAudio } from '../lamma/media.mjs';
 import { revokeInvalidCalls } from '../lamma/calls.mjs';
 import { drawingReportEvidence } from '../ersomha-reports.mjs';
+import { recheckMafiaAuthorization } from '../mafia-access.mjs';
+import { mafiaReportReviewEvidence } from '../mafia-report-cases.mjs';
 
 export async function routeModeration(request,env,url=new URL(request.url),charge) {
   if(!url.pathname.startsWith('/api/moderation/'))return null;
@@ -27,15 +29,20 @@ export async function routeModeration(request,env,url=new URL(request.url),charg
     else if(path==='/actions' && request.method==='POST') {
       await chargeUser(env,auth.user.id,'write');
       const result=await db.performAction(env,{userId:auth.user.id,sessionId:auth.rotated?.id||auth.session.id},await readJson(request,8192));
+      if(result.action==='suspend_user')await recheckMafiaAuthorization(env,result.subjectUserId);
       try {
         if(result.action==='suspend_user')await forgetSocialUser(env,result.subjectUserId);
         if(result.action==='suspend_user')await revokeInvalidCalls(env,null,null,{userIds:[result.subjectUserId]});
         if(result.action==='remove_message')await collectDeletedAudio(env);
-        const peers=result.subjectUserId?await friendIds(env,result.subjectUserId):[];
-        await notifyUsers(env,[auth.user.id,result.subjectUserId,...peers,...(result.relatedUsers||[])].filter(Boolean),{type:'refresh',reason:'moderation'});
+        if(result.action!=='review_mafia_report'){
+          const peers=result.subjectUserId?await friendIds(env,result.subjectUserId):[];
+          await notifyUsers(env,[auth.user.id,result.subjectUserId,...peers,...(result.relatedUsers||[])].filter(Boolean),{type:'refresh',reason:'moderation'});
+        }
       } catch {/* Moderation is committed; reconnect/refresh also enforces it. */}
       response=json({ok:true,actionId:result.actionId});
     } else {
+      const mafia=/^\/reports\/([a-f0-9]{64})\/mafia$/.exec(path);
+      if(mafia&&request.method==='GET')return withRotation(json(await mafiaReportReviewEvidence(env,{userId:auth.user.id,sessionId:auth.rotated?.id||auth.session.id},mafia[1])),auth.rotated);
       const drawing=/^\/reports\/([A-Za-z0-9_-]{1,100})\/drawing$/.exec(path);
       if(drawing&&request.method==='GET')return withRotation(await drawingReportEvidence(env,drawing[1]),auth.rotated);
       const audio=/^\/reports\/([A-Za-z0-9_-]{1,100})\/audio$/.exec(path);

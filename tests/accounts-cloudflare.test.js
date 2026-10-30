@@ -177,6 +177,7 @@ function client(session = null) {
     set token(value) { state_.token = value; },
     get: (endpoint, options) => call('GET', endpoint, options),
     post: (endpoint, body, options) => call('POST', endpoint, { body, ...options }),
+    patch: (endpoint, body, options) => call('PATCH', endpoint, { body, ...options }),
     del: (endpoint, options) => call('DELETE', endpoint, options),
   };
 }
@@ -371,22 +372,22 @@ test('تدوير الجلسة بترويسة x-maydan-session، والخروج �
   assert.equal((await client('mdn1.00000000deadbeef.AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA').get('/api/me')).data.error, 'AUTH_EXPIRED');
 });
 
-test('التجارب: إضافة ودمج، ولعبة خارج القائمة تُرفض', { timeout: 30_000 }, async () => {
+test('legacy trial writes preserve historical records without consuming new trials', { timeout: 30_000 }, async () => {
   const { api, userId } = await signInDev('trials-user');
   const first = await api.post('/api/trials/beep', {});
   assert.equal(first.status, 200);
-  assert.deepEqual(first.data.trials, { beep: true });
+  assert.deepEqual(first.data.trials, {});
   assert.equal((await api.post('/api/trials/beep', {})).status, 200); // إعادة الإدخال لا تُخطئ
   const merged = await api.post('/api/trials/merge', { games: ['mamnoo', 'jabeen', 'badeeha', 'beep'] });
-  assert.deepEqual(merged.data.trials, { beep: true, mamnoo: true, jabeen: true });
+  assert.deepEqual(merged.data.trials, {});
   assert.equal((await api.post('/api/trials/nope', {})).status, 404);
   const rows = await d1.prepare('SELECT count(*) AS n FROM trials WHERE user_id = ?').bind(userId).first();
-  assert.equal(rows.n, 3);
+  assert.equal(rows.n, 0);
   const me = await api.get('/api/me');
-  assert.deepEqual(me.data.trials, { beep: true, mamnoo: true, jabeen: true });
+  assert.deepEqual(me.data.trials, {});
 });
 
-test('waiting rooms preserve the free trial; played trials still gate creation and subscribers remain open', { timeout: 30_000 }, async () => {
+test('free rooms ignore spent trials and expiry while preserving authenticated seat identity', { timeout: 30_000 }, async () => {
   const anonymous = client();
   const anon = await anonymous.post('/api/rooms', { ...credentials(), name: 'ضيف', avatar: 0, rounds: 5, game: 'meenfina' });
   assert.equal(anon.status, 201, JSON.stringify(anon.data));
@@ -398,12 +399,10 @@ test('waiting rooms preserve the free trial; played trials still gate creation a
 
   const second = await api.post('/api/rooms', { ...credentials(), name: 'مضيف', avatar: 1, rounds: 5, game: 'meenfina' });
   assert.equal(second.status, 201);
-  // An actual room start is covered by the room-trial transport regressions.
-  // The existing trial endpoint simulates a separately completed local game.
-  await api.post('/api/trials/meenfina', {});
+  // Historical trial records remain present but no longer restrict gameplay.
+  await d1.prepare('INSERT INTO trials(user_id,game,created_at) VALUES(?,?,?)').bind(userId,'meenfina',Date.now()).run();
   const played = await api.post('/api/rooms', { ...credentials(), name: 'مضيف', avatar: 1, rounds: 5, game: 'meenfina' });
-  assert.equal(played.status, 402);
-  assert.equal(played.data.error, 'PLUS_REQUIRED');
+  assert.equal(played.status, 201, JSON.stringify(played.data));
   // لعبة أخرى ما زالت مجانية مرة واحدة.
   const other = await api.post('/api/rooms', { ...credentials(), name: 'مضيف', avatar: 1, rounds: 5, game: 'fabraka' });
   assert.equal(other.status, 201, JSON.stringify(other.data));
@@ -424,18 +423,16 @@ test('waiting rooms preserve the free trial; played trials still gate creation a
   // الانضمام مجاني حتى لحساب آخر استهلك تجربة اللعبة ولا يملك اشتراكًا.
   const joining = await signInDev('rooms-joining-user', 'ضيف مسجّل');
   assert.equal((await joining.api.post('/api/trials/meenfina', {})).status, 200);
-  assert.deepEqual((await joining.api.get('/api/me')).data.trials, { meenfina: true });
+  assert.deepEqual((await joining.api.get('/api/me')).data.trials, {});
   const joiningCreate = await joining.api.post('/api/rooms', { ...credentials(), name: 'ضيف مسجّل', avatar: 2, rounds: 5, game: 'meenfina' });
-  assert.equal(joiningCreate.status, 402);
-  assert.equal(joiningCreate.data.error, 'PLUS_REQUIRED');
+  assert.equal(joiningCreate.status, 201, JSON.stringify(joiningCreate.data));
   const joined = await joining.api.post(`/api/rooms/${premiumRoom.data.code}/join`, { ...credentials(), name: 'ضيف مسجّل', avatar: 2 });
   assert.equal(joined.status, 200, JSON.stringify(joined.data));
 
-  // سحب الاشتراك يعيد القفل، والمجهول لا يتأثر بشيء من هذا.
+  // Ending Plus does not restrict gameplay for either members or guests.
   await d1.prepare('UPDATE subscriptions SET until = 0, status = ? WHERE user_id = ?').bind('canceled', userId).run();
   const refused = await api.post('/api/rooms', { ...credentials(), name: 'مضيف', avatar: 1, rounds: 5, game: 'meenfina' });
-  assert.equal(refused.status, 402);
-  assert.deepEqual(refused.data, { error: 'PLUS_REQUIRED' }); // العميل يقرأ الكود من الجسم
+  assert.equal(refused.status, 201, JSON.stringify(refused.data));
   assert.equal((await anonymous.post('/api/rooms', { ...credentials(), name: 'ضيف', avatar: 0, rounds: 5, game: 'meenfina' })).status, 201);
 
   // رمز جلسة تالف لا يمنع إنشاء غرفة: صاحبه يُعامل ضيفًا.
@@ -632,7 +629,7 @@ test('رمز الهدية: يفعّل بلس للمسجّل ويفتح الغر�
   // المشترك بالرمز ينشئ غرفًا بلا حدود حتى بعد استهلاك التجربة.
   const marked = await api.post('/api/trials/fabraka', {});
   assert.equal(marked.status, 200, JSON.stringify(marked.data));
-  assert.equal(marked.data.trials.fabraka, true, 'التجربة مستهلكة فعلًا قبل فحص التجاوز');
+  assert.equal(marked.data.trials.fabraka, undefined, 'free games never consume a new trial');
   const room = await api.post('/api/rooms', { ...credentials(), game: 'fabraka', name: 'هدية', avatar: 0, rounds: 6 });
   assert.equal(room.status, 201, JSON.stringify(room.data));
   // جسم غير نصي يُرفض، والرمز نفسه يفعّل حسابًا ثانيًا (المفتاح يضم معرّف المستخدم).
@@ -669,4 +666,40 @@ test('حذف الحساب يُبطل رمز آبل ويمسح كل صفوفه', 
     assert.equal(rows.n, 0, `${table} لم يُنظَّف`);
   }
   assert.equal((await api.get('/api/me')).data.error, 'AUTH_EXPIRED');
+});
+
+
+test('workerd serves the Plus catalog and enforces paid cosmetics, revision CAS and private presets', async () => {
+  const owner=await signInDev('plus-workerd-owner'),outsider=await signInDev('plus-workerd-outsider');
+  const catalog=await client().get('/api/cosmetics/catalog');assert.equal(catalog.status,200);assert.ok(catalog.data.items.find(item=>item.id==='sahra.frame'));
+  assert.equal((await owner.api.patch('/api/me/cosmetics',{revision:0,selection:{frameId:'sahra.frame'}})).status,402);
+  await d1.prepare('INSERT INTO subscriptions(source,external_id,user_id,product,status,until,will_renew,environment,occurred_at,updated_at) VALUES(?,?,?,?,?,?,?,?,?,?)').bind('promo','workerd-plus',owner.userId,'plus.monthly','active',Date.now()+86400000,0,'promo',Date.now(),Date.now()).run();
+  const saved=await owner.api.patch('/api/me/cosmetics',{revision:0,selection:{frameId:'sahra.frame',badge:true}});assert.equal(saved.status,200,JSON.stringify(saved.data));assert.equal(saved.data.effective.frameId,'sahra.frame');
+  assert.equal((await owner.api.patch('/api/me/cosmetics',{revision:0,selection:{badge:false}})).status,409);
+  assert.equal((await outsider.api.get('/api/me/cosmetics')).data.preferred.frameId,null);
+  const created=await owner.api.post('/api/me/setup-presets',{name:'جلسة الرسم',game:'ersomha',settings:{difficulty:'easy',cycles:1}});assert.equal(created.status,201,JSON.stringify(created.data));
+  const preset=created.data.preset,endpoint=`/api/me/setup-presets/${preset.id}`;
+  assert.equal((await outsider.api.post(endpoint+'/apply',{})).status,404);
+  const applied=await owner.api.post(endpoint+'/apply',{});assert.equal(applied.status,200);assert.equal(applied.data.settings.difficulty,'easy');assert.equal('allowReplay' in applied.data.settings,false);
+  await d1.prepare('UPDATE subscriptions SET status=? WHERE external_id=?').bind('revoked','workerd-plus').run();
+  assert.equal((await owner.api.get('/api/me/cosmetics')).data.effective.frameId,null);
+  assert.equal((await owner.api.post(endpoint+'/apply',{})).status,402);
+  assert.equal((await owner.api.del(endpoint,{body:{revision:preset.revision}})).status,200);
+});
+
+test('workerd D1 blocks public appearance changes for a live Mafia lease without blocking profile reads',async()=>{
+  const owner=await signInDev('mafia-appearance-workerd');
+  const profile=await owner.api.get('/api/profiles/me');assert.equal(profile.status,200);
+  await d1.prepare('INSERT INTO mafia_media_leases(user_id,room_key,call_id,expires_at,updated_at) VALUES(?,?,?,?,?)')
+    .bind(owner.userId,'owned-privacy-match','owned-privacy-call',Number.MAX_SAFE_INTEGER,Date.now()).run();
+  for(const response of [
+    await owner.api.patch('/api/me/cosmetics',{revision:0,selection:{frameId:null,badge:false}}),
+    await owner.api.patch('/api/profiles/me',{revision:profile.data.profile.revision,theme:'violet'}),
+    await owner.api.del('/api/profiles/me/images/avatar',{body:{revision:profile.data.profile.revision}}),
+  ]){assert.equal(response.status,409,JSON.stringify(response.data));assert.equal(response.data.error,'MAFIA_SOCIAL_LOCKED');}
+  assert.equal((await owner.api.get('/api/profiles/me')).data.profile.theme,profile.data.profile.theme);
+  assert.equal((await owner.api.get('/api/me/cosmetics')).data.revision,0);
+  await d1.prepare('DELETE FROM mafia_media_leases WHERE user_id=?').bind(owner.userId).run();
+  assert.equal((await owner.api.patch('/api/me/cosmetics',{revision:0,selection:{badge:false}})).status,200);
+  assert.equal((await owner.api.patch('/api/profiles/me',{theme:'violet'})).status,200);
 });

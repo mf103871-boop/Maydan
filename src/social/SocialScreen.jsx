@@ -8,6 +8,7 @@ import { useSocial } from './SocialProvider.jsx';
 import socialCss from './social.css';
 import { ProfileAvatar } from '../profiles/ProfileAvatar.jsx';
 import { useSubmitKey } from '../shared/ui/useSubmitKey.js';
+import { StickerMessage, StickerPicker } from './PlusStickers.jsx';
 
 const MAX_TEXT = 2000;
 const EMPTY_CONVERSATION = { messages: [], loading: false };
@@ -109,10 +110,11 @@ export function MessageBubble({ message, mine, sender, read = false, onEdit, onD
   const pending = message.status === 'pending';
   const failed = message.status === 'failed';
   const deleted = Boolean(message.deletedAt);
+  const richContent = content || (message.kind === 'sticker' ? <StickerMessage message={message} /> : null);
   const [menu, setMenu] = useState(false);
   const sentLabel = failed ? 'لم تُرسل' : pending ? 'جارٍ الإرسال' : read || message.read ? 'قُرئت' : 'أُرسلت';
   return <article data-message-key={messageKey(message)} className={'social-message ' + (mine ? 'is-mine' : 'is-theirs') + (failed ? ' is-failed' : '')} aria-label={mine ? 'رسالتك' : sender ? 'رسالة من ' + displayName(sender) : 'رسالة صديقك'}>
-    <div data-design-id="message" className={'social-bubble' + (deleted ? ' is-deleted' : '')}>{sender && <div className="social-message-sender"><ProfileAvatar user={sender} size={24} /><strong><bdi>{mine ? 'أنت' : displayName(sender)}</bdi></strong></div>}{!deleted && content ? content : <p dir="auto">{deleted ? 'حُذفت هذه الرسالة' : message.text}</p>}<div className="social-message-meta">{message.editedAt && !deleted && <span>معدّلة</span>}<time dateTime={timestamp(message.createdAt) ? new Date(timestamp(message.createdAt)).toISOString() : undefined}>{timeLabel(message.createdAt)}</time>{mine && <span className={'social-delivery' + (read || message.read ? ' is-read' : '')} aria-label={sentLabel} title={sentLabel}><Icon name={pending ? 'clock' : read || message.read ? 'double' : 'check'} size={15} /><span>{sentLabel}</span></span>}</div></div>
+    <div data-design-id="message" className={'social-bubble' + (deleted ? ' is-deleted' : '')}>{sender && <div className="social-message-sender"><ProfileAvatar user={sender} size={24} /><strong><bdi>{mine ? 'أنت' : displayName(sender)}</bdi></strong></div>}{!deleted && richContent ? richContent : <p dir="auto">{deleted ? 'حُذفت هذه الرسالة' : message.text}</p>}<div className="social-message-meta">{message.editedAt && !deleted && <span>معدّلة</span>}<time dateTime={timestamp(message.createdAt) ? new Date(timestamp(message.createdAt)).toISOString() : undefined}>{timeLabel(message.createdAt)}</time>{mine && <span className={'social-delivery' + (read || message.read ? ' is-read' : '')} aria-label={sentLabel} title={sentLabel}><Icon name={pending ? 'clock' : read || message.read ? 'double' : 'check'} size={15} /><span>{sentLabel}</span></span>}</div></div>
     {!deleted && !pending && !failed && <div className="social-message-actions"><IconAction label={mine ? 'خيارات رسالتك' : 'خيارات الرسالة'} icon="more" aria-expanded={menu} onClick={() => setMenu(v => !v)} />{menu && <div className="social-message-menu">{mine ? <>{(!message.kind || message.kind === 'text') && <button data-design-id="message-edit" type="button" onClick={() => { setMenu(false); onEdit?.(); }}>تعديل</button>}<button data-design-id="message-delete" type="button" className="is-danger" onClick={() => { setMenu(false); onDelete?.(); }}>حذف</button></> : <button data-design-id="report" type="button" onClick={() => { setMenu(false); onReport?.(); }}>إبلاغ عن الرسالة</button>}</div>}</div>}
     {mine && failed && <button type="button" className="social-retry" data-design-id="message-retry" onClick={onRetry}>إعادة الإرسال</button>}
   </article>;
@@ -259,6 +261,7 @@ export function Conversation({ friend, conversation = EMPTY_CONVERSATION, accoun
       {newBelow && <button type="button" data-design-id="new-messages" className="social-jump" onClick={() => goBottom(true)}><Icon name="down" size={16} />رسائل جديدة</button>}
     </div>
     <form data-design-id="composer" className="social-composer" onSubmit={send}>{composerExtras}
+      {social.sendSticker && <StickerPicker key={account.user?.id + ':' + friend.id} account={account} disabled={social.offline || sending} onSend={id => social.sendSticker(friend.id, id)} onError={message => notify(message, true)} />}
       {social.offline && <p className="social-composer-note" role="status">أنت غير متصل. ستتمكن من الإرسال عند عودة الاتصال.</p>}
       <div className="social-composer-row"><textarea data-design-id="message-input" ref={composer} rows={1} maxLength={MAX_TEXT} value={text} aria-label="اكتب رسالة" placeholder="اكتب رسالة…" enterKeyHint="send" onChange={event => changeText(event.target.value)} onBlur={stopped} {...submitKeys} /><button type="submit" data-design-id="send" className="social-send" aria-label="إرسال الرسالة" disabled={!text.trim() || sending || social.offline}><Icon name="send" /></button></div>
       {text.length > MAX_TEXT - 200 && <small className="social-character-count" role="status">{text.length.toLocaleString('ar')} / {MAX_TEXT.toLocaleString('ar')}</small>}

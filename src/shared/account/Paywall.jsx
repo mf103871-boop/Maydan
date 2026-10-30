@@ -10,30 +10,13 @@ import { PLUS_NAME, LEGAL_ROUTES, SUPPORT_EMAIL, PUBLIC_SITE_ORIGIN } from './co
 import { SignInButtons, SIGN_IN_NOTE } from './SignInSheet.jsx';
 import { RedeemForm, REDEEM_PROMPT } from './RedeemSheet.jsx';
 import { REDEEM_ON_IOS } from './config.js';
-import beepMeta from '../../games/beep/meta.js';
-import mamnooMeta from '../../games/mamnoo/meta.js';
-import jabeenMeta from '../../games/jabeen/meta.js';
-import fabrakaMeta from '../../games/fabraka/meta.js';
-import meenfinaMeta from '../../games/meenfina/meta.js';
-
-const GAME_NAMES = {
-  [beepMeta.id]: beepMeta.name,
-  [mamnooMeta.id]: mamnooMeta.name,
-  [jabeenMeta.id]: jabeenMeta.name,
-  [fabrakaMeta.id]: fabrakaMeta.name,
-  [meenfinaMeta.id]: meenfinaMeta.name,
-};
-
-export const PAYWALL_BULLETS = ['كل فئات بَديهة', 'مباريات بلا حدود', 'غرف جماعية بلا حدود', 'اشتراك واحد على كل أجهزتك'];
+export const PAYWALL_BULLETS = ['إطارات وصور وبطاقات بروفايل مميزة', 'ثيمات مجلسك لكل الموجودين', 'ملصقات وتفاعلات أصلية', 'مجموعة جديدة كل شهر', 'عشر جلسات جاهزة على أجهزتك'];
 export const PAYWALL_LEGAL = 'يتجدد الاشتراك تلقائيًا ما لم يُلغَ قبل نهاية الفترة بـ٢٤ ساعة';
 export const PRICE_UNKNOWN = 'يُعرض السعر عند الشراء';
 
-export function paywallReason(reason, game) {
-  if (reason === 'pack') return 'هذه الفئة ضمن ميدان بلس';
-  if (reason === 'trial') return `لعبت مباراتك المجانية في ${GAME_NAMES[game] || 'هذه اللعبة'}. اشترك لتلعب بلا حدود.`;
-  if (reason === 'room') return 'بعد الغرفة المجانية يحتاج إنشاء الغرف إلى ميدان بلس. الدخول برمز مجاني دائمًا.';
-  if (reason === 'resume') return 'هذه المباراة المحفوظة تحتوي فئات ضمن ميدان بلس.';
-  return '';
+export function paywallReason(reason) {
+  if (reason === 'presets') return 'احفظ إعدادات جلساتك وارجع لها بسرعة مع بلس. كل خيارات اللعب اليدوية مجانية.';
+  return 'كل الألعاب والحزم والغرف مجانية. بلس يضيف لمستك الخاصة، دون أفضلية في اللعب.';
 }
 
 const PLANS = [
@@ -85,7 +68,7 @@ export function Paywall({ open = true, reason = 'settings', game = null, pack = 
     <Sheet open={open} onClose={onClose} title={null}>
       <section data-design-screen="account.paywall" className="paywall" aria-label={`اشتراك ${PLUS_NAME}`} data-reason={reason} data-pack={pack || undefined}>
         <ClayStage className="paywall-hero clay-idle" aria-hidden="true"><TrophyArtwork /></ClayStage>
-        <h2 className="paywall-title">افتح كل ميدان مع {PLUS_NAME}</h2>
+        <h2 className="paywall-title">خلّي لك بصمة مع {PLUS_NAME}</h2>
         {account.platform !== 'ios' && account.billing?.paddle?.environment === 'sandbox' && (
           <p className="online-notice" role="status">الدفع في وضع الاختبار؛ لا تُخصم مبالغ حقيقية. الاشتراك الناتج تجريبي.</p>
         )}
@@ -94,6 +77,7 @@ export function Paywall({ open = true, reason = 'settings', game = null, pack = 
           <RedeemForm onDone={onClose} onCancel={cancelRedeem} />
         ) : (
           <>
+        <p className="paywall-reason">المزايا متاحة أثناء الاستحقاق فقط؛ نحفظ اختياراتك إذا انتهى الاشتراك.</p>
         <ul className="paywall-bullets">
           {PAYWALL_BULLETS.map((text, i) => <li key={text} style={{ '--n': i }}>{text}</li>)}
         </ul>

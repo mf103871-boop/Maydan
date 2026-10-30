@@ -1,4 +1,5 @@
 import { fail } from './room-model.mjs';
+import { prepareMafiaResult } from './mafia-results.mjs';
 
 // Only the public Worker may set accountUserId, after checking account auth.
 // Room tokens identify seats; they are never treated as account credentials.
@@ -15,12 +16,23 @@ export function bindSeatAccount(room, seatId, accountUserId) {
 
 // The account mapping is frozen at the start. Restored pre-feature matches have
 // no marker and must never become an invented historical result.
-export function prepareRoomStats(previous, candidate, now = Date.now()) {
-  if (previous?.phase === 'lobby' && candidate.phase !== 'lobby' && candidate.matchId !== previous.matchId && candidate.round === 1) {
+export function prepareRoomStats(previous, candidate, now = Date.now(), { mafiaProgressEnabled = false, mafiaResult } = {}) {
+  if (previous?.phase === 'lobby' && candidate.phase !== 'lobby' && candidate.matchId !== previous.matchId && (candidate.round === 1 || candidate.game==='mafia')) {
     candidate.statsMatch = {
       eventId: `online:${crypto.randomUUID()}`, startedAt: now,
       accounts: Object.fromEntries(candidate.participants.map((id) => [id, candidate.members.find((m) => m.id === id)?.accountUserId || null])),
+      ...(candidate.game==='mafia'&&(candidate.rulesetVersion||1)===1&&(candidate.protocol||1)>=2&&mafiaProgressEnabled===true?{rewardPolicyVersion:1}:{}),
     };
+  }
+  if(candidate.game==='mafia') {
+    if((candidate.rulesetVersion||1)!==1)return [];
+    if(candidate.phase!=='over'||previous?.phase==='over'||!candidate.statsMatch||candidate.technicalAbort)return [];
+    const event=mafiaResult===undefined?prepareMafiaResult(candidate,now):mafiaResult;
+    if(!event)return [];
+    return event.results.flatMap(result=>{
+      if(!result.userId)return [];
+      return [{userId:result.userId,eventId:event.eventId,game:'mafia',won:!!result.won,draw:event.draw,finishedAt:event.finishedAt,...(event.notBefore?{notBefore:event.notBefore}:{})}];
+    });
   }
   // Badeeha's last question ends from its reveal (the host's verdict), the others from a result.
   const finalPhase = candidate.game === 'badeeha' ? 'reveal' : 'result';

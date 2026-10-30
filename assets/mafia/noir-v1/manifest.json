@@ -1,0 +1,41 @@
+{
+  "schema": 1,
+  "generator": "built-in image_gen",
+  "generatedDate": "2026-10-27",
+  "prompts": "docs/mafia/NOIR-ART-PROMPTS.json",
+  "derivative": "WebP format optimization only; no painted content changed",
+  "assets": {
+    "spy": {
+      "sourceSHA256": "3027b7ca377db3736febdc920257cc29b191d21437250b39ff7a9d3f59674361",
+      "outputSHA256": "dd9bf5e13ad1d3cacc7701a5ad3fc37fed5f717111fd343eacc3e01e0f543197",
+      "bytes": 92736,
+      "width": 768,
+      "height": 768,
+      "alpha": true
+    },
+    "roles": {
+      "sourceSHA256": "ab55a94378581b197193ccc1bebf9af292e0d6f6844ab8e4b2df182083c89396",
+      "outputSHA256": "1ce8b39b78c4b2c94a2815d7ddffabffd7da30226fbb89473727a65b6cf70d86",
+      "bytes": 321632,
+      "width": 1254,
+      "height": 1254,
+      "alpha": false
+    },
+    "scenes": {
+      "sourceSHA256": "2a3aff5c32d0c509eb6d1a621b48e4318af28eb489c1fa4853403322c532d4d5",
+      "outputSHA256": "54789f06d21074ef262e424d40aeac7af6a11caeb6decf9f795e55f21a1be099",
+      "bytes": 298052,
+      "width": 1024,
+      "height": 1536,
+      "alpha": false
+    },
+    "environment": {
+      "sourceSHA256": "208839d55ab5cfb17c050f225a2769a73f9a7f1ecba0f14b1e47547263f74cea",
+      "outputSHA256": "5fecaec74fc6f6af6e6eb46a4863651426bd1b40c6e2277fbef3d750aa27325f",
+      "bytes": 72256,
+      "width": 1200,
+      "height": 800,
+      "alpha": false
+    }
+  }
+}

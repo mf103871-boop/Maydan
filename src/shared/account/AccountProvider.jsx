@@ -1,16 +1,17 @@
+import { isMafiaPreview } from '../lib/environment.js';
 // مزوّد الحساب: مصدر واحد لحالة الاشتراك والتجارب والجدار في الواجهة كلها.
 // الخادم هو مصدر الحقيقة؛ ما هنا نسخة مخزّنة تُحدَّث عند الإقلاع وعند العودة
 // للتطبيق وبعد كل دخول أو شراء. بلا خادم مضبوط تعمل الطبقة «دون اتصال»:
 // لا اشتراك ولا دخول، والتجارب تُسجَّل محليًا فقط.
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { AccountContext } from './context.js';
-import { PLUS_NAME, PRODUCTS, TRIAL_GAMES } from './config.js';
+import { PLUS_NAME, PRODUCTS, TRIAL_GAMES, signInProviders } from './config.js';
 import { isPremium, lockedPack as lockedPackOf, trialAvailable as trialAvailableOf, gameAccess as gameAccessOf, mergeTrials, shouldRefresh } from './entitlements.js';
 import { accountErrorText } from './errors.js';
 import { accountStore, ACCOUNT_PREFIX, KEYS } from './store.js';
 import {
   ClientError, accountOffline, authStartUrl, appleNative, createPaddleCheckout, deleteAccountRequest,
-  exchangeCode, getBillingConfig, getPaddlePortal, mergeTrialsRequest, postAppleTransaction, postTrial, redeemRequest, signout, request,
+  exchangeCode, getBillingConfig, getMe, getPaddlePortal, mergeTrialsRequest, postAppleTransaction, postTrial, redeemRequest, signout, request, resolveAccountServer,
 } from './api.js';
 import { deliverAppleTransaction, waitForEntitlement } from './purchases.js';
 import { callNative, isNativeShell, onNativeEvent } from './native.js';
@@ -20,6 +21,8 @@ import { usePlatform } from '../../platform/context.js';
 import { navigate, useRoute } from '../../platform/router.js';
 import { rememberProfileReturn, consumeProfileReturn } from './return-path.js';
 import { beginAuthAttempt, currentAuthAttempt, clearAuthAttempt } from './attempt.js';
+import { clearDeletedTutorialAccount } from '../../games/mafia/tutorial/progress.js';
+import { clearDeletedMafiaLabs } from '../../games/mafia/tutorial/labs/progress.js';
 
 const EMPTY = Object.freeze({});
 // بديل ثابت حين لا يوفّر المزوّد تنبيهات: دالة جديدة في كل رسم كانت تعيد بناء كل
@@ -64,6 +67,9 @@ export function AccountProvider({ children }) {
   const [storeProbeDiagnostics, setStoreProbeDiagnostics] = useState(null);
   const [restoreDiagnostics, setRestoreDiagnostics] = useState(null);
   const [billing, setBilling] = useState(null);
+  const [signInProvidersStatus, setSignInProvidersStatus] = useState('idle');
+  const [signInProvidersError, setSignInProvidersError] = useState(null);
+  const providerConfigRef = useRef({ pending: null, config: null, fetchedAt: 0, error: null });
   const [paddleIdentity, setPaddleIdentity] = useState(null);
   const [busy, setBusy] = useState(false);
   const [activationPending, setActivationPending] = useState(false);
@@ -266,6 +272,33 @@ export function AccountProvider({ children }) {
     }
   }, []);
 
+  // Public provider capabilities are independent of StoreKit. A sign-in sheet
+  // must not infer web/native OAuth availability from the product catalog.
+  const loadSignInProviders = useCallback(async ({ retry = false } = {}) => {
+    const current = providerConfigRef.current;
+    if (current.pending) return current.pending;
+    if (!retry && current.config && Date.now() - current.fetchedAt < 60_000) return current.config;
+    const previousFailure = current.error;
+    if (previousFailure) setError((previous) => previous === previousFailure ? null : previous);
+    setSignInProvidersStatus('loading'); setSignInProvidersError(null);
+    const pending = (async () => {
+      try {
+        const config = await getBillingConfig();
+        if (!config || typeof config !== 'object' || Array.isArray(config)) throw new ClientError('NETWORK');
+        current.config = config; current.fetchedAt = Date.now(); current.error = null;
+        setBilling(config); setSignInProvidersStatus('ready');
+        return config;
+      } catch (error) {
+        current.error = codeOf(error); current.fetchedAt = 0;
+        setSignInProvidersError(current.error); setSignInProvidersStatus('error');
+        return null;
+      }
+    })();
+    current.pending = pending;
+    try { return await pending; }
+    finally { if (current.pending === pending) current.pending = null; }
+  }, []);
+
   const loadProducts = useCallback(async ({ retry = false } = {}) => {
     if (native) {
       if (productsRequestRef.current) return productsRequestRef.current;
@@ -373,19 +406,8 @@ export function AccountProvider({ children }) {
   }, [loadProducts, refresh]);
   const closePaywall = useCallback(() => setPaywall((prev) => ({ ...prev, open: false })), []);
 
-  const markTrial = useCallback((game) => {
-    if (!TRIAL_GAMES.includes(game)) return;
-    setLocalTrials(accountStore.addMark(game));
-    // مرآة الغلاف (UserDefaults): تصمد أمام مسح بيانات WebKit.
-    if (native) callNative('markTrial', { game }, { timeout: 5_000 }).catch(() => {});
-    if (!sessionRef.current || accountOffline()) return;
-    postTrial(game, options())
-      .then((result) => applyTrials(result && result.trials))
-      .catch((err) => {
-        if (isAuthError(codeOf(err))) clearLocalAuth();
-        setLocalTrials(accountStore.addPending(game));
-      });
-  }, [native, options, applyTrials, clearLocalAuth]);
+  // Keep the old game integration callable without consuming any new trials.
+  const markTrial = useCallback(() => {}, []);
 
   // الغلاف يبثّ authReturn بالرمز، أو بخطأ (إلغاء المستخدم مثلًا) فيُرفض الانتظار فورًا.
   const waitForAuthReturn = useCallback((timeout = 5 * 60_000) => new Promise((resolve, reject) => {
@@ -408,9 +430,9 @@ export function AccountProvider({ children }) {
         const url = authStartUrl(provider, { client: 'web', attempt: beginAuthAttempt() });
         if (!url) throw new ClientError('OFFLINE');
         try {
-          const config = await getBillingConfig(options());
-          setBilling(config || null);
-          if (config?.providers?.[provider] === false) throw new ClientError('PROVIDER');
+          const config = await loadSignInProviders({ retry: true });
+          if (!config) throw new ClientError(providerConfigRef.current.error || 'NETWORK');
+          if (signInProviders(config, 'web')?.[provider] === false) throw new ClientError('PROVIDER');
         }
         catch (err) {
           if (isDisabled(codeOf(err))) { setOffline(true); throw new ClientError('OFFLINE'); }
@@ -422,6 +444,9 @@ export function AccountProvider({ children }) {
         }
         return null;
       }
+      const nativeConfig = await loadSignInProviders({ retry: true });
+      if (!nativeConfig) throw new ClientError(providerConfigRef.current.error || 'NETWORK');
+      if (signInProviders(nativeConfig, 'ios')?.[provider] === false) throw new ClientError('PROVIDER');
       if (provider === 'apple') {
         const payload = await callNative('signInApple', {}, { timeout: NATIVE_SHEET_TIMEOUT });
         const result = await appleNative(payload || {}, { onSession: applySession });
@@ -440,7 +465,7 @@ export function AccountProvider({ children }) {
     } finally {
       setBusy(false);
     }
-  }, [native, options, applySession, afterSignIn, consumeCode, waitForAuthReturn, handleError, toast]);
+  }, [native, loadSignInProviders, applySession, afterSignIn, consumeCode, waitForAuthReturn, handleError, toast]);
 
   const signOut = useCallback(async () => {
     setBusy('signout');
@@ -608,20 +633,30 @@ export function AccountProvider({ children }) {
   }, [options, applyMe, clearLocalAuth, closePaywall, toast]);
 
   const deleteAccount = useCallback(async () => {
+    const epoch = authEpochRef.current;
+    const deletedOwner = { userId: meRef.current?.user?.id, server: resolveAccountServer() };
+    let clearedOwner = false;
     setBusy('delete');
     try {
       if (accountOffline()) throw new ClientError('OFFLINE');
       if (!sessionRef.current) throw new ClientError('AUTH_REQUIRED');
-      await deleteAccountRequest(options());
-      clearLocalAuth();
-      toast('حُذف حسابك');
+      await deleteAccountRequest({ ...options(), server: deletedOwner.server });
+      clearDeletedTutorialAccount(deletedOwner);
+      clearDeletedMafiaLabs(deletedOwner);
+      if (epoch === authEpochRef.current) {
+        clearLocalAuth();
+        clearedOwner = true;
+        toast('حُذف حسابك');
+      }
       return true;
     } catch (err) {
+      if (epoch !== authEpochRef.current) return false;
+      clearedOwner = isAuthError(codeOf(err));
       const code = handleError(err);
       toast(accountErrorText(code));
       return false;
     } finally {
-      setBusy(false);
+      if (epoch === authEpochRef.current || clearedOwner) setBusy(false);
     }
   }, [options, clearLocalAuth, handleError, toast]);
 
@@ -802,18 +837,19 @@ export function AccountProvider({ children }) {
     ready, user, me, premium, promo, trials, platform, products, productsStatus, productsError, productsDiagnostics,
     storeProbeStatus, storeProbeDiagnostics, restoreDiagnostics,
     offline, signedIn: !!session, busy, error, paywall, billing, activationPending,
+    loadSignInProviders, signInProvidersStatus, signInProvidersError,
     redeem,
     signIn, signOut, refresh, requestAuthenticated, ensureNativeSocialSession,
     markTrial,
     trialAvailable: (game) => trialAvailableOf(me, localTrials.marks, game, premium),
     lockedPack: (id) => lockedPackOf(id, premium),
-    gameAccess: (game) => (premium ? 'premium' : gameAccessOf(me, localTrials.marks, game)),
+    gameAccess: (game) => gameAccessOf(me, localTrials.marks, game),
     openPaywall, closePaywall, restore, deleteAccount,
     purchase, manageSubscription, loadProducts, retryProducts, probeStore,
     clearError: () => setError(null),
     authHeaders: () => (sessionRef.current ? { Authorization: `Bearer ${sessionRef.current}` } : {}),
-  }), [ready, user, me, premium, promo, trials, platform, products, productsStatus, productsError, productsDiagnostics, storeProbeStatus, storeProbeDiagnostics, restoreDiagnostics, offline, session, busy, error, paywall, billing, activationPending,
+  }), [ready, user, me, premium, promo, trials, platform, products, productsStatus, productsError, productsDiagnostics, storeProbeStatus, storeProbeDiagnostics, restoreDiagnostics, offline, session, busy, error, paywall, billing, activationPending, loadSignInProviders, signInProvidersStatus, signInProvidersError,
     signIn, signOut, refresh, requestAuthenticated, ensureNativeSocialSession, markTrial, localTrials, openPaywall, closePaywall, restore, deleteAccount, purchase, manageSubscription, loadProducts, retryProducts, probeStore, redeem]);
 
-  return <AccountContext.Provider value={value}>{children}</AccountContext.Provider>;
+  return <AccountContext.Provider value={value}>{isMafiaPreview() && !['room','play'].includes(route.name) && <aside data-design-fixed="isolated-test-environment" role="status" style={{margin:'8px 12px',padding:'10px 14px',border:'1px solid #8c6daa',borderRadius:14,background:'#eee2f7',color:'#402451',fontSize:13,lineHeight:1.7,textAlign:'center'}}><strong>بيئة اختبار مافيا</strong><br/>حسابات وتجارب منفصلة عن ميدان الأساسية. استخدم حساب التجربة.</aside>}{children}</AccountContext.Provider>;
 }

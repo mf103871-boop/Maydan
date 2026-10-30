@@ -1,3 +1,4 @@
+import { SetupPresets } from '../../plus/SetupPresets.jsx';
 import { Avatar, GameArtwork } from '../../shared/brand/art.jsx';
 import React, { useEffect, useMemo, useReducer, useRef, useState } from 'react';
 import { Screen, Button, Podium, Segment, Card, Scoreboard } from '../../shared/ui/components.jsx';
@@ -20,6 +21,7 @@ export function SetupOptions({ storage, api }) {
   const update = (patch) => { const next = normalizeOptions({ ...opts, ...patch }); setOpts(next); storage.set(OPTIONS_KEY, next); };
   return (
     <div data-design-screen="setup.mamnoo" data-design-id="options" className="stack">
+    {!api.designPreview && <SetupPresets game="mamnoo" settings={opts} onApply={update} />}
     {resume && <Card className="stack resume-card">
       <span className="card-title">لعبتكم بانتظاركم</span>
       <p className="card-muted">الجولة {resume.state.round} من {resume.state.rounds} · {resume.teams.map((t) => t.name).join(' و')}</p>
@@ -136,7 +138,8 @@ export function Game({ api, teams, onExit, savedSession = null, designPreviewSta
   useEffect(() => {
     if (state.phase !== 'over') return;
     api.storage.set(SEEN_KEY, trimSeen(source.seen(), 1500));
-    api.sound.play('fanfare'); api.haptics.vibrate('win'); api.confetti.fire();
+    // The platform owns the single completed-match sound.
+    if (state.completed === true) { api.haptics.vibrate('win'); api.confetti.fire(); }
     api.matchOver?.({ completed: state.completed === true });
   }, [state.phase]); // eslint-disable-line react-hooks/exhaustive-deps
   return (

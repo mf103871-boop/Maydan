@@ -12,6 +12,18 @@ struct NativeConfig {
 
     static let shared = NativeConfig.load()
 
+    /// Production preserves every existing key. Other bundled API origins have
+    /// separate credentials and trial marks even in the same TestFlight bundle.
+    func scopedStorageKey(_ key: String) -> String {
+        if apiOrigin == "https://maydan-game.mf103871.workers.dev" { return key }
+        let scope = Data(apiOrigin.utf8).base64EncodedString()
+            .replacingOccurrences(of: "+", with: "-")
+            .replacingOccurrences(of: "/", with: "_")
+            .replacingOccurrences(of: "=", with: "")
+        return key + ".environment." + (scope.isEmpty ? "unconfigured" : scope)
+    }
+
+
     private struct File: Decodable {
         var apiOrigin: String?
         var products: [String: String]?

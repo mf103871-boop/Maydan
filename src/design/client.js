@@ -1,5 +1,6 @@
+import { environmentStorageKey } from '../shared/lib/environment.js';
 import { validateDesignDocument, createDefaultDesign } from './schema.js';
-const CACHE='maydan:design:published:v1';
+const CACHE=environmentStorageKey('maydan:design:published:v1');
 export function readPublishedDesign(storage=globalThis.localStorage) {
   try{const raw=JSON.parse(storage.getItem(CACHE));if(raw?.channel!=='published')return null;const result=normalizeDesignConfig(raw);return result?.channel==='published'?result:null;}catch{return null;}
 }

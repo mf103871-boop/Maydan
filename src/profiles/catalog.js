@@ -28,7 +28,7 @@ export const ACHIEVEMENTS = [
   { id: 'all-games', label: 'جولة في الميدان', description: 'أكمل جلسة في ست ألعاب مختلفة من ميدان.', icon: 'compass', metric: 'distinctGames', target: 6, titleId: 'adventurer' },
   { id: 'online-start', label: 'وصلنا ببعض', description: 'أكمل أول مباراة أونلاين بحسابك.', icon: 'globe', metric: 'onlineMatches', target: 1, titleId: 'challenger' },
   { id: 'online-ten', label: 'على الموعد', description: 'أكمل عشر مباريات أونلاين.', icon: 'globe', metric: 'onlineMatches', target: 10, titleId: 'regular' },
-  { id: 'first-win', label: 'طعم الفوز', description: 'حقق أول فوز منفرد في منافسات ميدان أونلاين.', icon: 'trophy', metric: 'onlineWins', target: 1, titleId: 'winner' },
+  { id: 'first-win', label: 'طعم الفوز', description: 'حقق أول فوز، منفردًا أو مع فريقك، في منافسات ميدان أونلاين.', icon: 'trophy', metric: 'onlineWins', target: 1, titleId: 'winner' },
   { id: 'five-wins', label: 'خمس انتصارات', description: 'حقق خمسة انتصارات في منافسات ميدان أونلاين.', icon: 'trophy', metric: 'onlineWins', target: 5, titleId: 'champion' },
   { id: 'twenty-five-wins', label: 'اسم في الميدان', description: 'حقق خمسة وعشرين انتصارًا في منافسات ميدان أونلاين.', icon: 'crown', metric: 'onlineWins', target: 25, titleId: 'legend' },
 ];

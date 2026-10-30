@@ -4,6 +4,7 @@ import { initialState as mamnooInitial } from '../games/mamnoo/logic.js';
 import { initialState as jabeenInitial } from '../games/jabeen/logic.js';
 import { initialState as meenInitial } from '../games/meenfina/logic.js';
 import { initialState as fabInitial, TRUTH_ID, roundBreakdown } from '../games/fabraka/logic.js';
+import { MAFIA_ROLES, MAFIA_TIMERS } from '../online/mafia-shared.js';
 import { CATS } from '../data/categories/index.js';
 
 export const DESIGN_SCENES = Object.freeze(DESIGN_SCREENS.map(screen => Object.freeze({
@@ -63,6 +64,33 @@ export function createDesignFixture(id, { now = DESIGN_FIXTURE_TIME } = {}) {
     const game = scene.game || (scene.id === 'online.lobby' ? 'ersomha' : 'meenfina');
     const options = [{ id: TRUTH_ID, text: 'ثلاثة', truth: true, mine: false, owners: [], earners: [], voters: [players[0].id], funnyVoters: [], fooled: 0 }, { id: 'design-choice-1', text: 'قلبان', truth: false, mine: false, owners: [players[1].id], earners: [players[1].id], voters: [players[2].id], funnyVoters: [], fooled: 1 }, { id: 'design-choice-2', text: 'خمسة', truth: false, mine: false, owners: [players[2].id], earners: [players[2].id], voters: [], funnyVoters: [], fooled: 0 }];
     const state = { _designPreview: true, game, phase: scene.phase || 'lobby', code: '123456', matchId: 1, hostId: players[0].id, members, participants: players.map(p => p.id), round: 1, rounds: 4, settings: { mode: 'classic', cycles: 1, difficulty: 'medium', categories: [], drawSeconds: 60, writeSeconds: 45, discussionSeconds: 20, funnyVote: true, finalDouble: false }, deadlineAt: now + 45_000, reason: null, question: game === 'meenfina' ? { text: 'مين فينا يخطط للرحلة قبل الجميع؟' } : question, myVote: { submitted: false }, submittedCount: 1, winners: [players[1].id], counts: Object.fromEntries(players.map(p => [p.id, p.id === players[1].id ? 3 : 0])), history: [], options, writingCount: 1, writerCount: 4, mySubmission: { submitted: false }, helpAvailable: true, myHelp: '', truthHostId: scene.phase === 'host' ? players[0].id : null, reveal: { final: false, shown: true, options }, breakdown: Object.fromEntries(players.map(p => [p.id, { truth: 1, fooled: 0, laughs: 0, points: 1000 }])), scores: Object.fromEntries(players.map(p => [p.id, p.id === players[0].id ? 250 : 100])) };
+
+    if (game === 'mafia') {
+      state.settings = { mode:'shadow',capacity:10,visibility:'public',roomName:'مجلس الأصدقاء',community:'ar',voiceMode:'optional' };state.settingsRevision=1; state.phaseId = 4; state.serverNow=now; state.deadlineAt = MAFIA_TIMERS[scene.phase] ? now + (scene.phase==='discussion' ? MAFIA_TIMERS.shadowDiscussion : MAFIA_TIMERS[scene.phase])*1000 : null;
+      state.members = Array.from({length:10},(_,i)=>({...members[i%4],id:`design-player-${i+1}`,name:['ليان','عمر','سارة','أحمد','نور','زين','لينا','وسام','هند','سامي'][i],seat:i+1,alive:i!==8,score:undefined}));
+      fixture.me=state.members[0];state.participants=state.members.map(p=>p.id);state.possibleRoles=Object.keys(MAFIA_ROLES);state.composition={town:7,mafia:2,shadow:1};
+      const role=MAFIA_ROLES[scene.role] || MAFIA_ROLES.investigator;
+      state.you={id:fixture.me.id,roleId:role.id,faction:role.faction,alive:true,allies:role.faction==='mafia'?['design-player-2']:[],resources:{charges:role.charges,selfProtection:role.id==='doctor'?1:0,shield:role.id==='guard'?1:0},reports:[{id:1,type:'investigation',round:1,targetId:'design-player-2',faction:'town'}],actions:[],nightAction:null,killTarget:null,nominationSubmitted:false,verdictSubmitted:false};
+      state.you.voice={canListen:['opening','discussion','nomination','defense','verdict','over'].includes(state.phase)||(state.phase==='night'&&role.faction!=='town'),canSpeak:state.phase==='discussion'};
+      const targets=state.members.filter(p=>p.id!==fixture.me.id&&p.alive).map(p=>p.id);
+      if(state.phase==='night') {
+        if(!['citizen','guard','herald','mafia'].includes(role.id)) state.you.actions.push({type:'night_action',targets:role.id==='reporter'?['design-player-9']:targets,count:role.id==='analyst'?2:1,remaining:role.charges});
+        if(role.faction==='mafia') state.you.actions.push({type:'mafia_vote',targets:targets.filter(id=>id!=='design-player-2')});
+      }
+      if(state.phase==='nomination') state.you.actions.push({type:'nominate',targets:state.members.filter(p=>p.alive).map(p=>p.id)});
+      if(state.phase==='verdict') state.you.actions.push({type:'verdict',targets:[]});
+      state.nomineeId='design-player-2';state.chats={public:[{id:1,playerId:'design-player-2',text:'خلينا نراجع رواية الليلة الماضية.',at:now}],team:[],observers:[]};
+      state.log=[{id:1,type:'match_started',at:now,round:1},{id:2,type:'dawn',peaceful:true,at:now,round:1}];
+      state.previewScene=scene.id;state.previewReveal=scene.phase==='role';state.previewTab=['clues','notes'].includes(scene.role)?scene.role:'council';
+      // The private modal owns its semantic root; the surrounding council keeps
+      // its public phase identity, just as it does during a real card reveal.
+      if(scene.id==='online.mafia.role-card')state.previewScene='online.mafia.role';
+      if(scene.id==='online.mafia.tools'){state.previewScene='online.mafia.discussion';state.previewTools=true;}
+      if(scene.id==='online.mafia.spectator'){state.scope='observer';state.delayed=true;state.delayMs=30000;state.you=null;state.settings.voiceMode='off';state.observer={id:'demo-watcher',delayMs:30000,viewTime:now-30000,canPromote:false};fixture.me=null;}
+      if(scene.phase==='lobby'){state.log=[];state.chats.public=[{id:1,playerId:'design-player-2',text:'يا هلا، جاهزين نبدأ؟',at:now}];state.you={id:fixture.me.id,roleId:null};}
+      if(scene.phase==='waiting'){state.waiting=true;delete state.you;state.chats={};state.log=[];state.deadlineAt=null;}
+      if(['over','closed'].includes(scene.phase)){state.deadlineAt=null;state.outcome={faction:scene.phase==='closed'?'draw':'town'};state.replay={players:state.members.map((p,i)=>({playerId:p.id,roleId:i===0?'investigator':i===1?'mafia':'citizen',faction:i===1?'mafia':'town'})),events:state.log};}
+    }
     if (game === 'badeeha') {
       const clueCategory = CATS.find(category => category.qs.some(q => q.type === 'hints' && q.p === 600));
       const clue = clueCategory.qs.find(q => q.type === 'hints' && q.p === 600);
@@ -83,7 +111,7 @@ export function createDesignFixture(id, { now = DESIGN_FIXTURE_TIME } = {}) {
       state.myWord = scene.role === 'drawer' ? 'قطار' : undefined; state.revealedWord = state.phase === 'result' ? 'قطار' : undefined;
       state.category = 'transport'; state.publicWord = { category: 'transport', wordLengths: [4], letters: [] }; state.guessedIds = [players[2].id]; state.recentGuesses = [{ id: 'demo-guess', playerId: players[2].id, correct: true }];
       state.cooperative = { solvedTurns: 3, remainingMs: 43000 }; fixture.me = scene.role === 'guesser' ? members[1] : members[0];
-    } else fixture.me = members[0];
+    } else if(game !== 'mafia') fixture.me = members[0];
     fixture.state = state;
   }
   if (fixture.state) fixture.state._designPreview = true;

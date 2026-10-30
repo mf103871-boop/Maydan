@@ -79,8 +79,9 @@ async function fresh(t, responses, { signedIn = true, purchaseError = null, conf
   const context = await browser.newContext(); t.after(() => context.close());
   await context.addInitScript(({ cached, signedIn, responses, purchaseError, holdStatus, probeResponses, restoreResponse, finishError }) => {
     if (signedIn) {
-      localStorage.setItem('maydan:account:session', JSON.stringify('unit-session'));
-      localStorage.setItem('maydan:account:me', JSON.stringify({ data: cached, fetchedAt: Date.now() }));
+      const accountPrefix=`maydan:environment:${encodeURIComponent(location.origin)}:account:`;
+      localStorage.setItem(`${accountPrefix}session`, JSON.stringify('unit-session'));
+      localStorage.setItem(`${accountPrefix}me`, JSON.stringify({ data: cached, fetchedAt: Date.now() }));
     }
     window.nativeCalls = [];
     window.catalogResponses = responses;

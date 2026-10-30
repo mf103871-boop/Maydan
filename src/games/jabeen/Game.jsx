@@ -1,3 +1,4 @@
+import { SetupPresets } from '../../plus/SetupPresets.jsx';
 import { Avatar, GameArtwork } from '../../shared/brand/art.jsx';
 import React, { useEffect, useMemo, useReducer, useRef, useState } from 'react';
 import { Screen, Button, Podium, Segment, Card } from '../../shared/ui/components.jsx';
@@ -21,6 +22,7 @@ export function SetupOptions({ storage, api }) {
   const update = (patch) => { const next = normalizeOptions({ ...opts, ...patch }, categories); setOpts(next); storage.set(OPTIONS_KEY, next); };
   return (
     <div data-design-screen="setup.jabeen" data-design-id="options" className="stack">
+    {!api.designPreview && <SetupPresets game="jabeen" settings={opts} onApply={update} />}
     {resume && <Card className="stack resume-card">
       <style>{css}</style>
       <span className="card-title">لعبتكم بانتظاركم</span>
@@ -113,7 +115,7 @@ export function Game({ api, players, onExit, savedSession = null, designPreviewS
 
   const answer = (ok) => {
     if (!landscape || !timer.running) return;
-    api.sound.play(ok ? 'correct' : 'wrong');
+    api.sound.emit?.(ok ? 'game.correct' : 'game.pass');
     api.haptics.vibrate(ok ? 'success' : 'light');
     setFlash(ok ? 'is-good' : 'is-skip');
     clearTimeout(flashTimer.current);
@@ -152,7 +154,8 @@ export function Game({ api, players, onExit, savedSession = null, designPreviewS
   useEffect(() => {
     if (state.phase !== 'over') return;
     api.storage.set(SEEN_KEY, trimSeen(source.seen(), 1200));
-    api.sound.play('fanfare'); api.haptics.vibrate('win'); api.confetti.fire();
+    // The platform owns the single completed-match sound.
+    if (state.completed === true) { api.haptics.vibrate('win'); api.confetti.fire(); }
     api.matchOver?.({ completed: state.completed === true });
   }, [state.phase]); // eslint-disable-line react-hooks/exhaustive-deps
 

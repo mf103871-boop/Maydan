@@ -1,4 +1,5 @@
-const KEY = 'maydan:auth:profile-return';
+import { environmentStorageKey } from '../lib/environment.js';
+const KEY = environmentStorageKey('maydan:auth:profile-return');
 const valid = value => typeof value === 'string' && /^\/profile(?:\/[A-Za-z0-9_-]{1,80})?$/.test(value);
 export function rememberProfileReturn(storage, hash, now = Date.now()) {
   try {

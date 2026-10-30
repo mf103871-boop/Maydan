@@ -70,6 +70,21 @@ test('recovered Ersomha sends only the latest account bearer in its first frame 
   assert.equal(client.connectionStatus, 'ended'); assert.equal(sockets[2].sent.length, 0);
 });
 
+test('Mafia challenges authenticate with the current account and phase-bound commands retain the rendered fence', async t => {
+  let authorization='Bearer first';
+  const {client,sockets}=fixture(t,{getAccountAuthorization:()=>authorization}),socket=sockets[0];socket.open();
+  socket.receive({type:'account-auth',game:'mafia'});
+  assert.equal(socket.sent.at(-1).accountAuthorization,'Bearer first');
+  socket.receive({type:'state',state:{game:'mafia',protocol:1,matchId:3,phaseId:8,round:2,revision:1,serverNow:Date.now()}});
+  const sent=client.command('nominate',{targetId:'other',matchId:3,phaseId:7}),frame=socket.sent.at(-1);
+  assert.equal(frame.phaseId,7,'a changed phase must reject rather than silently retarget a vote');
+  assert.equal(frame.matchId,3);socket.receive({type:'ack',requestId:frame.requestId,ok:false,error:'STALE'});
+  await assert.rejects(sent,{code:'STALE'});
+  authorization='Bearer refreshed';socket.readyState=3;client.wake();sockets[1].open();
+  assert.equal(sockets[1].sent[0].accountAuthorization,'Bearer refreshed');
+  assert.equal(sockets[1].url.includes('Bearer'),false);assert.equal(client.session.accountAuthorization,undefined);
+});
+
 test('send congestion and unacknowledged commands are bounded and recover without replaying uncertain actions', async t => {
   const { client, sockets } = fixture(t); sockets[0].open(); sockets[0].state();
   const commands = Array.from({ length: 32 }, () => client.command('vote', { targetId: 'other' }).catch(e => e.code));

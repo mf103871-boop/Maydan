@@ -31,5 +31,8 @@ src/data/categories/demo[a-f].json
 !.env.example
 .dev.vars.*
 
+# Licensed candidates are materialized privately in a preview runner only.
+public/audio/candidates/
+
 # Reviewed, redacted verification logs belong with the release review.
 !docs/reviews/**/evidence/*.log

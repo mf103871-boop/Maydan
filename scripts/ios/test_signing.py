@@ -37,6 +37,13 @@ class SigningChecks(unittest.TestCase):
         self.env.update(ASC_KEY_ID='ABCDE12345', ASC_ISSUER_ID=self.profile['UUID'], ASC_PRIVATE_KEY_BASE64='placeholder')
         validate_inputs(self.env, self.identity)
 
+    def test_release_environment_is_an_explicit_allowlisted_choice(self):
+        for value in ('production', 'mafia-preview'):
+            validate_inputs({**self.env, 'IOS_RELEASE_ENVIRONMENT': value}, self.identity)
+        for value in ('', 'staging', 'production\nMAYDAN_ROOMS_URL=https://other.test'):
+            with self.subTest(value=value), self.assertRaisesRegex(ValueError, 'IOS_RELEASE_ENVIRONMENT'):
+                validate_inputs({**self.env, 'IOS_RELEASE_ENVIRONMENT': value}, self.identity)
+
     def test_push_capability_is_required_for_incoming_calls(self):
         for value in (None, 'development'):
             profile = copy.deepcopy(self.profile)

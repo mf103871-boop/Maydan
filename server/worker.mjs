@@ -14,9 +14,14 @@ import { drainJobs } from './lamma/jobs.mjs';
 import { liveKitWebhook } from './lamma/webhook.mjs';
 import { messageRetentionMs,reportRetentionMs } from './accounts/cleanup.mjs';
 import { iosAppPolicy } from './app-policy.mjs';
-import { ERSOMHA_PROTOCOL, BADEEHA_PROTOCOL, ONLINE_GAMES } from '../src/online/shared.js';
+import { ERSOMHA_PROTOCOL, BADEEHA_PROTOCOL, MAFIA_PROTOCOL, ONLINE_GAMES } from '../src/online/shared.js';
+import { routeMafia } from './mafia-router.mjs';
+import { requireMafiaEnabled, cleanupMafia } from './mafia-access.mjs';
+import { requireMafiaNewMatches } from './mafia-ruleset-policy.mjs';
 import { routeDrawingReports } from './ersomha-reports.mjs';
 import { routeDesign, isPublicDesignAssetPath } from './design/router.mjs';
+import { routePlus } from './plus/router.mjs';
+import { routeTutorials } from './tutorials/router.mjs';
 export { LammaJobs } from './lamma/jobs.mjs';
 export { SocialHub } from './social/realtime.mjs';
 export { Room };
@@ -127,7 +132,10 @@ export async function routeRequest(request, env, context) {
   }
   try {
     // الحسابات أولًا: مساراتها تحت /api/ ولا تتقاطع مع تعبير الغرف.
-    response = await routeDesign(request, env, url, charge)
+    response = await routePlus(request, env, url, charge)
+      || await routeTutorials(request, env, url, charge)
+      || await routeMafia(request, env, url, charge)
+      || await routeDesign(request, env, url, charge)
       || await routeDrawingReports(request, env, url, charge)
       || await routeSocialLive(request, env, url, charge)
       || await routeModeration(request, env, url, charge)
@@ -148,12 +156,14 @@ export async function routeRequest(request, env, context) {
         await credentials(input); // Validate before allocating a room.
         if (input.game === 'ersomha' && input.capabilities?.ersomha !== ERSOMHA_PROTOCOL) fail('CONFIG', 409);
         if (input.game === 'badeeha' && input.capabilities?.badeeha !== BADEEHA_PROTOCOL) fail('UPDATE_REQUIRED', 409);
-        // Check eligibility now, but consume the trial only at the room's first
-        // successful match start. Never trust a gate supplied by the browser.
+        if (input.game === 'mafia') { requireMafiaEnabled(env); requireMafiaNewMatches(env); if(input.capabilities?.mafia!==MAFIA_PROTOCOL)fail('UPDATE_REQUIRED',409); }
+        // Resolve identity and account eligibility independently of paid Plus.
+        // Never trust the account identity or legacy gate supplied by a client.
         const gate = await roomGate(request, env, input);
         // Ignore any account ID supplied by the client. The seat's account
         // association comes only from the authenticated bearer session.
-        input.accountUserId = gate?.userId || (input.game === 'badeeha' ? await roomAccountId(request, env) : null);
+        input.accountUserId = gate?.userId || null;
+        if(input.accountUserId&&env.DB&&await env.DB.prepare('SELECT 1 FROM mafia_observer_memberships WHERE user_id=? AND expires_at>?').bind(input.accountUserId,Date.now()).first())fail('MAFIA_OBSERVER_ACTIVE',409);
         input.roomTrialGate = gate;
         // Attempt 0 stays derived from the token so a retried creation is idempotent
         // without a global directory; later attempts are random so a collision run
@@ -176,6 +186,7 @@ export async function routeRequest(request, env, context) {
           const input = await readJson(request);
           await credentials(input);
           input.accountUserId = await roomAccountId(request, env);
+          if(input.accountUserId&&env.DB&&await env.DB.prepare('SELECT 1 FROM mafia_observer_memberships WHERE user_id=? AND expires_at>?').bind(input.accountUserId,Date.now()).first())fail('MAFIA_OBSERVER_ACTIVE',409);
           response = await room.fetch(new Request(`https://internal/${match[1]}/join`, {
             method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(input),
           }));
@@ -199,6 +210,7 @@ export async function routeRequest(request, env, context) {
 }
 // Cron Trigger (wrangler triggers.crons): تنظيف الجلسات ورموز الدخول وسجل webhooks.
 export async function scheduled(event, env) {
+  await cleanupMafia(env,Date.now(),reportRetentionMs(env));
   await cleanupLamma(env,Date.now(),messageRetentionMs(env),reportRetentionMs(env));
   await drainJobs(env);
   if(event?.cron==='* * * * *')return;

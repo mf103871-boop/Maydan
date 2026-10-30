@@ -1,0 +1,177 @@
+{
+  "schemaVersion": 1,
+  "bundleId": "pixabay-candidates-20261030-v1",
+  "catalogSHA256": "405e2e631bafe99e7076a13fc868eb296565fce877a7c1c96998e444f64d31d0",
+  "files": [
+    {
+      "url": "audio/candidates/audition-badeeha-27a44c5dbab1.m4a",
+      "sha256": "27a44c5dbab114ead3fe8dff9cd5c3c60572ccaf6ee883968fb18b57a002fac9",
+      "bytes": 1354864
+    },
+    {
+      "url": "audio/candidates/audition-beep-58511dc74209.m4a",
+      "sha256": "58511dc74209d1897c6d7bd09f23e1a3581a6273134575f5ef5e602d2def8c56",
+      "bytes": 2473173
+    },
+    {
+      "url": "audio/candidates/audition-card-abd985c503fb.m4a",
+      "sha256": "abd985c503fb7ffd1d750897ec18ee11bebf5b8d070b9e939b6de16f8b1f68d4",
+      "bytes": 19297
+    },
+    {
+      "url": "audio/candidates/audition-click-096374ab1f66.m4a",
+      "sha256": "096374ab1f66a1e825643f7bc6a96c0ee748ca63cdbf82078c3badd11d30639c",
+      "bytes": 12700
+    },
+    {
+      "url": "audio/candidates/audition-clock-732683a7588f.m4a",
+      "sha256": "732683a7588f10e90a45deed3da23cd71c27d8e524ea7eb8fc7e1c878e687b32",
+      "bytes": 66761
+    },
+    {
+      "url": "audio/candidates/audition-correct-dc193bc06e9b.m4a",
+      "sha256": "dc193bc06e9b08c0bb7b6b6d875212c0f4af8cb5a499ca140309fc62c268ef29",
+      "bytes": 33014
+    },
+    {
+      "url": "audio/candidates/audition-ersomha-d30e35512c70.m4a",
+      "sha256": "d30e35512c70daed6c3be36c96581a76d7afaa560610510992fd3cdce1f0dc59",
+      "bytes": 2757967
+    },
+    {
+      "url": "audio/candidates/audition-fabraka-4137fdd02477.m4a",
+      "sha256": "4137fdd02477dda5bd2e14b05456a91f82979cb1710b993f8a66dc2f8d5515c8",
+      "bytes": 4563249
+    },
+    {
+      "url": "audio/candidates/audition-jabeen-a29f798ed5a0.m4a",
+      "sha256": "a29f798ed5a00aebf1f932bd7205fac330531f40f894c9693e89fa6d03bdbf3f",
+      "bytes": 3709608
+    },
+    {
+      "url": "audio/candidates/audition-lose-64eb97d97168.m4a",
+      "sha256": "64eb97d97168ac226c899ea7ea87dc86c731ff3f34bdb37b31fbc00118fcbf50",
+      "bytes": 61986
+    },
+    {
+      "url": "audio/candidates/audition-mafia-2dd8e23f7e89.m4a",
+      "sha256": "2dd8e23f7e8951f8dc8b6cffe4516f11ee82f71b5821dac9bea4b0d3c780579d",
+      "bytes": 1451438
+    },
+    {
+      "url": "audio/candidates/audition-mafia-ambience-08f489591827.m4a",
+      "sha256": "08f48959182774018794c8262c101468a5b3e9889d042a5da395333e4816dcfc",
+      "bytes": 645413
+    },
+    {
+      "url": "audio/candidates/audition-mafia-assassination-e4949d879003.m4a",
+      "sha256": "e4949d879003b08d80314fd5f7db8c3854f10f1b8a3733ffacfe1a64fce5416c",
+      "bytes": 34073
+    },
+    {
+      "url": "audio/candidates/audition-mafia-clock-7a0f3fdb8bb8.m4a",
+      "sha256": "7a0f3fdb8bb86fbec12c91f7fa4cb24f993329b8b2906794a4e439dcc7acb872",
+      "bytes": 345174
+    },
+    {
+      "url": "audio/candidates/audition-mafia-judgment-9f85153bc881.m4a",
+      "sha256": "9f85153bc88117289ae79b4cbac44df31a0ac8d894edf8887c7a1da97b7a70fa",
+      "bytes": 74807
+    },
+    {
+      "url": "audio/candidates/audition-mafia-transition-519378bda82d.m4a",
+      "sha256": "519378bda82d0ac1736d31c2bc6fa0474c8296575cddbfd6c86be95b16dda16b",
+      "bytes": 2534189
+    },
+    {
+      "url": "audio/candidates/audition-mamnoo-860c5e971f9a.m4a",
+      "sha256": "860c5e971f9af39da68116e47ef99e1e6311d921c341e7aee2d0b2ac77dffed9",
+      "bytes": 500835
+    },
+    {
+      "url": "audio/candidates/audition-meenfina-c51d4c4777a0.m4a",
+      "sha256": "c51d4c4777a0fc24c1fdd2da89e6b69abf106fd7f66f4e9711acb3df05f3f90e",
+      "bytes": 2703613
+    },
+    {
+      "url": "audio/candidates/audition-menus-2bc649aef4f5.m4a",
+      "sha256": "2bc649aef4f588ae595c2b52becd79df6ce027cad482f482de9620b844477940",
+      "bytes": 14278800
+    },
+    {
+      "url": "audio/candidates/audition-pass-d1f05fdce24f.m4a",
+      "sha256": "d1f05fdce24f101ada0f88014ad4d1e4d5d3d64561a3a024929e6e19ed713c64",
+      "bytes": 15621
+    },
+    {
+      "url": "audio/candidates/audition-pencil-0f0537747a85.m4a",
+      "sha256": "0f0537747a85d5824ef1841f360f27fd39b8b08d0b3ffed72be0cf78538ce66a",
+      "bytes": 57331
+    },
+    {
+      "url": "audio/candidates/audition-select-716f15c1c19e.m4a",
+      "sha256": "716f15c1c19ee0a3f237d0193f2f7b29143c19667bafbb1003339c3cb012cd56",
+      "bytes": 20860
+    },
+    {
+      "url": "audio/candidates/audition-win-5364a3f695da.m4a",
+      "sha256": "5364a3f695da051f17124b06588b323d2a0d009e43e666e1958ed81544f58704",
+      "bytes": 89387
+    },
+    {
+      "url": "audio/candidates/audition-wrong-a22656776f7f.m4a",
+      "sha256": "a22656776f7f5c19b848774192dbc2ec2882080fbf402b459142d59b62179710",
+      "bytes": 36679
+    },
+    {
+      "url": "audio/candidates/fx-click-d6e90e4ea90b.m4a",
+      "sha256": "d6e90e4ea90b665214c775688a250c3a5605e496f848718c9e898f04fbcd634d",
+      "bytes": 5519
+    },
+    {
+      "url": "audio/candidates/fx-correct-dce2ee0e01b1.m4a",
+      "sha256": "dce2ee0e01b15225497c8c5a09f4389c1733cac4e72473df7fd0d36cea22576e",
+      "bytes": 33154
+    },
+    {
+      "url": "audio/candidates/fx-mafia-assassination-ad0db2e8c8d8.m4a",
+      "sha256": "ad0db2e8c8d8b65c38ebdc1503944528cce7512c0ea4504f7791ee7fb5cecb0d",
+      "bytes": 43305
+    },
+    {
+      "url": "audio/candidates/fx-mafia-judgment-31c559e2f286.m4a",
+      "sha256": "31c559e2f286f09e866394b66583f423f437b2b679d3102af2c92a1006a1aff9",
+      "bytes": 51559
+    },
+    {
+      "url": "audio/candidates/fx-pass-e2d1d4406df3.m4a",
+      "sha256": "e2d1d4406df36555343f8c1a8c3a10b695d1491a7474c31887e9b070313af3bc",
+      "bytes": 12402
+    },
+    {
+      "url": "audio/candidates/fx-pop-35bcb89a79b0.m4a",
+      "sha256": "35bcb89a79b0c1e3cd643e8389efb7b75a7382640ba532cc6394d404533759d0",
+      "bytes": 6492
+    },
+    {
+      "url": "audio/candidates/fx-tick-c88e2bb79a05.m4a",
+      "sha256": "c88e2bb79a05312c2d80f16272d4580bdcddce05756fa22f1d5a0c720743ff9d",
+      "bytes": 3670
+    },
+    {
+      "url": "audio/candidates/fx-tick-fast-c88e2bb79a05.m4a",
+      "sha256": "c88e2bb79a05312c2d80f16272d4580bdcddce05756fa22f1d5a0c720743ff9d",
+      "bytes": 3670
+    },
+    {
+      "url": "audio/candidates/fx-win-ea0c69428ba1.m4a",
+      "sha256": "ea0c69428ba1adc44c45d832afae2ec058b858c29dbf28680517a0b47b170695",
+      "bytes": 93672
+    },
+    {
+      "url": "audio/candidates/fx-wrong-a74bd814c059.m4a",
+      "sha256": "a74bd814c05979f3b36ea563a025aebad1ad897e2b598636f355caf6e86a2dac",
+      "bytes": 31327
+    }
+  ]
+}

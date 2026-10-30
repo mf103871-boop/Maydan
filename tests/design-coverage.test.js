@@ -2,13 +2,23 @@ import { test, before, after } from 'node:test';
 import assert from 'node:assert/strict';
 import { mkdtempSync, mkdirSync, rmSync, readFileSync, readdirSync } from 'node:fs';
 import path from 'node:path';
+import { createHash } from 'node:crypto';
 import { pathToFileURL } from 'node:url';
 import { build } from 'esbuild';
 import { DESIGN_SCREENS, DESIGN_REGISTRY_VERSION, getScreenDefinition, getNodeDefinition } from '../src/design/registry.js';
 import { DESIGN_SCENES, createDesignFixture } from '../src/design/screen-catalog.js';
-import { DESIGN_RENDERED_NODE_IDS } from '../src/design/coverage-map.js';
+import { DESIGN_RENDERED_NODE_IDS, DESIGN_CONDITIONAL_NODE_REASONS } from '../src/design/coverage-map.js';
 
-test('semantic scene registry has stable unique identities and the seven actual games', () => {
+test('coverage inventory preserves every node and exact conditional explanation after deduplication', () => {
+  // Phase2 inventory, extended in Mafia C by the authenticated earned-cosmetics
+  // conditional node. All earlier node meanings remain unchanged.
+  // A deliberate coverage/content change must update this semantic baseline;
+  // whitespace, constant names and sharing structure do not affect it.
+  const semantics = JSON.stringify({ DESIGN_CONDITIONAL_NODE_REASONS, DESIGN_RENDERED_NODE_IDS });
+  assert.equal(createHash('sha256').update(semantics).digest('hex'), '3e583d0d2a41cac0ee0615f29ddf436464efdd6a1ff081d1b8bd58324914c9e9');
+});
+
+test('semantic scene registry has stable unique identities and the eight actual games', () => {
   assert.equal(DESIGN_REGISTRY_VERSION, 1);
   assert.equal(new Set(DESIGN_SCREENS.map(screen => screen.id)).size, DESIGN_SCREENS.length);
   assert.ok(DESIGN_SCREENS.length >= 80);
@@ -18,7 +28,7 @@ test('semantic scene registry has stable unique identities and the seven actual 
     assert.equal(new Set(screen.nodes.map(node => node.id)).size, screen.nodes.length);
     for (const node of screen.nodes) assert.equal(getNodeDefinition(screen.id, node.id), node);
   }
-  assert.deepEqual([...new Set(DESIGN_SCENES.map(scene => scene.game).filter(Boolean))].sort(), ['badeeha','beep','ersomha','fabraka','jabeen','mamnoo','meenfina']);
+  assert.deepEqual([...new Set(DESIGN_SCENES.map(scene => scene.game).filter(Boolean))].sort(), ['badeeha','beep','ersomha','fabraka','jabeen','mafia','mamnoo','meenfina']);
 });
 
 test('content and action containers cannot hide mandatory descendant controls', () => {

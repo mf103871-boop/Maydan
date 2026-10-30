@@ -3,6 +3,14 @@ name: iOS signed build and optional TestFlight upload
 on:
   workflow_dispatch:
     inputs:
+      environment:
+        description: 'production for the public game; mafia-preview for the isolated Mafia TestFlight'
+        required: true
+        type: choice
+        default: production
+        options:
+          - production
+          - mafia-preview
       version:
         description: 'App version checked in App Store Connect (for example 1.5)'
         required: true
@@ -13,6 +21,11 @@ on:
         type: string
       upload_to_testflight:
         description: 'Upload the signed build to the existing App Store Connect app'
+        required: true
+        type: boolean
+        default: false
+      private_audio_preview:
+        description: 'Include the isolated licensed audio candidates; encrypted input and IPA artifacts only'
         required: true
         type: boolean
         default: false
@@ -29,9 +42,11 @@ jobs:
     runs-on: macos-15
     timeout-minutes: 45
     env:
+      IOS_RELEASE_ENVIRONMENT: ${{ inputs.environment || 'production' }}
       IOS_VERSION: ${{ inputs.version }}
       IOS_BUILD: ${{ inputs.build }}
       IOS_UPLOAD: ${{ inputs.upload_to_testflight }}
+      MAYDAN_PRIVATE_AUDIO_PREVIEW: ${{ inputs.private_audio_preview && '1' || '0' }}
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
         with:
@@ -49,6 +64,13 @@ jobs:
         with:
           node-version: 22
           cache: npm
+      - name: Select the approved API environment
+        run: node scripts/ios/release-environment.mjs --github-env
+      - name: Materialize authenticated private audio candidates
+        if: ${{ inputs.private_audio_preview }}
+        env:
+          MAYDAN_AUDIO_PREVIEW_KEY_BASE64: ${{ secrets.MAYDAN_AUDIO_PREVIEW_KEY }}
+        run: node scripts/audio/private-preview.mjs unpack
       - name: Select a stable Xcode 26 or newer
         run: |
           python3 - <<'PY'
@@ -73,8 +95,10 @@ jobs:
           npm test
           python3 scripts/ios/verify_audio_policy.py
           python3 scripts/ios/verify_storage_migration.py
+          python3 scripts/ios/verify_environment_storage.py
           python3 -m unittest discover -s scripts/ios -p 'test_*.py'
           npm run ios:prepare
+          node scripts/ios/release-environment.mjs --verify-native ios/Maydan/www/native-config.json
       - name: Build and launch the Release app on iPhone Simulator
         run: |
           xcodebuild -project ios/Maydan.xcodeproj -scheme Maydan \
@@ -140,6 +164,7 @@ jobs:
             "MAYDAN_PROVISIONING_PROFILE_SPECIFIER=$IOS_PROFILE_UUID" archive
           codesign --verify --deep --strict ios/build/Maydan.xcarchive/Products/Applications/Maydan.app
           python3 scripts/ios/signing.py archive ios/build/Maydan.xcarchive/Products/Applications/Maydan.app/Info.plist
+          node scripts/ios/release-environment.mjs --verify-native ios/build/Maydan.xcarchive/Products/Applications/Maydan.app/www/native-config.json
           python3 scripts/ios/verify_runtime_dependencies.py ios/build/Maydan.xcarchive/Products/Applications/Maydan.app
       - name: Export the signed IPA without uploading
         run: |
@@ -149,10 +174,25 @@ jobs:
           for ipa in ios/build/export/*.ipa; do
             python3 scripts/ios/verify_runtime_dependencies.py "$ipa"
           done
-      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+      - name: Preserve the ordinary signed IPA
+        if: ${{ !inputs.private_audio_preview }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
         with:
           name: Maydan-iOS-${{ inputs.version }}-${{ inputs.build }}
           path: ios/build/export/*.ipa
+          if-no-files-found: error
+          retention-days: 7
+      - name: Seal the private preview IPA artifact
+        if: ${{ inputs.private_audio_preview }}
+        env:
+          MAYDAN_AUDIO_PREVIEW_KEY_BASE64: ${{ secrets.MAYDAN_AUDIO_PREVIEW_KEY }}
+        run: node scripts/audio/private-preview.mjs seal-ipa
+      - name: Preserve only the encrypted private preview IPA
+        if: ${{ inputs.private_audio_preview }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: Maydan-iOS-${{ inputs.version }}-${{ inputs.build }}-encrypted
+          path: ios/build/private-artifact/
           if-no-files-found: error
           retention-days: 7
       - name: Upload to App Store Connect for TestFlight

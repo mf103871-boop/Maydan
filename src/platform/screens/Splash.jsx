@@ -7,6 +7,10 @@ import { startupImageUrls } from '../../shared/media/startup-images.js';
 import { pruneStaleMedia } from '../../shared/media/prune.js';
 import { isNativeShell } from '../../shared/account/native.js';
 import { createStorage } from '../../shared/lib/storage.js';
+import { createBackgroundDownloadGate, shouldPauseStartupImages } from '../../shared/media/background-gate.js';
+import { useRoute } from '../router.js';
+import { useLamma } from '../../social/LammaProvider.jsx';
+import { activeAudioOwners } from '../../social/media.js';
 
 // When the browser cannot keep the images (private mode, full quota), the whole
 // preload would be repeated on every launch. Remember that for a week and skip it.
@@ -52,6 +56,29 @@ export function GameLoading({ game, progress }) {
 
 export function Splash({ onDone, visible = true, reducedMotion = false }) {
   const { ready } = useVisualReadiness({ includeWorld: true });
+  const route = useRoute(), lamma = useLamma();
+  const [downloadGate] = useState(createBackgroundDownloadGate);
+  const [backgroundPaused, setBackgroundPaused] = useState(false);
+  const pageHidden = useRef(false);
+  const call = !!lamma?.activeCall, connecting = !!(lamma?.callConnecting || lamma?.media?.connecting), mafiaVoice = !!lamma?.mafiaVoice?.requested;
+  useLayoutEffect(() => {
+    const update = () => {
+      const paused = shouldPauseStartupImages({ route: route.name, call, connecting, mafiaVoice,
+        audio: activeAudioOwners().length > 0, hidden: document.hidden || pageHidden.current });
+      downloadGate.setPaused(paused); setBackgroundPaused(paused);
+    };
+    const hide = () => { pageHidden.current = true; update(); };
+    const show = () => { pageHidden.current = false; update(); };
+    update();
+    document.addEventListener('visibilitychange', update);
+    window.addEventListener('pagehide', hide); window.addEventListener('pageshow', show);
+    window.addEventListener('maydan-social-audio', update);
+    return () => {
+      document.removeEventListener('visibilitychange', update);
+      window.removeEventListener('pagehide', hide); window.removeEventListener('pageshow', show);
+      window.removeEventListener('maydan-social-audio', update);
+    };
+  }, [downloadGate, route.name, call, connecting, mafiaVoice]);
   const [attempt, setAttempt] = useState(0);
   const [images, setImages] = useState({ done: 0, total: startupImageUrls.length, ok: 0, failed: 0 });
   const [phase, setPhase] = useState('loading');
@@ -65,9 +92,14 @@ export function Splash({ onDone, visible = true, reducedMotion = false }) {
     const root = document.documentElement, property = '--startup-background-space';
     const previous = root.style.getPropertyValue(property), previousVisible = root.hasAttribute('data-startup-background-visible');
     const previousVisibility = node.style.visibility, previousPointerEvents = node.style.pointerEvents;
-    let frame;
-    const measure = () => {
-      const typing = document.activeElement?.matches?.('textarea,[contenteditable="true"],input:not([type="range"]):not([type="checkbox"]):not([type="radio"])');
+    let frame, gestureTimer, typingForm = null, pointerForm = null;
+    const measure = (focused = document.activeElement) => {
+      const editable = focused?.matches?.('textarea,[contenteditable="true"],input:not([type="range"]):not([type="checkbox"]):not([type="radio"])');
+      // Keep the notice suppressed through input → submit-button focus. Changing
+      // reserved height between pointerdown and pointerup moves the send target.
+      if (editable) typingForm = focused.closest('form');
+      else if (!typingForm?.contains(focused)) typingForm = null;
+      const typing = editable || Boolean(typingForm || pointerForm);
       const modal = [...document.querySelectorAll('[role="dialog"][aria-modal="true"]')].some(dialog => dialog.getClientRects().length && getComputedStyle(dialog).visibility !== 'hidden');
       const shown = !typing && !modal && node.getClientRects().length > 0;
       node.style.visibility = shown ? previousVisibility : 'hidden';
@@ -75,18 +107,29 @@ export function Splash({ onDone, visible = true, reducedMotion = false }) {
       root.style.setProperty(property, shown ? `${Math.ceil(node.getBoundingClientRect().height) + 8}px` : '0px');
       root.toggleAttribute('data-startup-background-visible', Boolean(shown));
     };
-    const schedule = () => { cancelAnimationFrame(frame); frame = requestAnimationFrame(measure); };
-    const focusChanged = () => { measure(); schedule(); };
+    const schedule = () => { cancelAnimationFrame(frame); frame = requestAnimationFrame(() => measure()); };
+    const focusChanged = event => { measure(event.type === 'focusout' ? event.relatedTarget : document.activeElement); schedule(); };
+    const releasePointer = () => { pointerForm = null; measure(); schedule(); };
+    const pointerStarted = event => {
+      // Safari may blur an input without focusing the tapped button. Preserve
+      // the form geometry until that pointer's click/submission has completed.
+      if (typingForm?.contains(event.target)) { clearTimeout(gestureTimer); pointerForm = typingForm; }
+    };
+    const pointerEnded = () => { if (pointerForm) { clearTimeout(gestureTimer); gestureTimer = setTimeout(releasePointer, 250); } };
+    const clicked = () => { if (pointerForm) { clearTimeout(gestureTimer); gestureTimer = setTimeout(releasePointer, 0); } };
+    const pointerCancelled = () => { clearTimeout(gestureTimer); releasePointer(); };
     measure();
     const resize = new ResizeObserver(schedule); resize.observe(node);
     // Keep suppression and measured space atomic: focus and dialog portals may
     // change without resizing this fixed element.
     const mutations = new MutationObserver(schedule); mutations.observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ['hidden', 'aria-modal', 'class'] });
     document.addEventListener('focusin', focusChanged); document.addEventListener('focusout', focusChanged);
+    document.addEventListener('pointerdown', pointerStarted, true); document.addEventListener('pointerup', pointerEnded, true); document.addEventListener('pointercancel', pointerCancelled, true); document.addEventListener('click', clicked, true);
     window.addEventListener('resize', schedule); window.visualViewport?.addEventListener('resize', schedule);
     return () => {
-      cancelAnimationFrame(frame); resize.disconnect(); mutations.disconnect();
-      document.removeEventListener('focusin', focusChanged); document.removeEventListener('focusout', focusChanged); window.removeEventListener('resize', schedule); window.visualViewport?.removeEventListener('resize', schedule);
+      cancelAnimationFrame(frame); clearTimeout(gestureTimer); resize.disconnect(); mutations.disconnect();
+      document.removeEventListener('focusin', focusChanged); document.removeEventListener('focusout', focusChanged);
+      document.removeEventListener('pointerdown', pointerStarted, true); document.removeEventListener('pointerup', pointerEnded, true); document.removeEventListener('pointercancel', pointerCancelled, true); document.removeEventListener('click', clicked, true); window.removeEventListener('resize', schedule); window.visualViewport?.removeEventListener('resize', schedule);
       if (previous) root.style.setProperty(property, previous); else root.style.removeProperty(property);
       root.toggleAttribute('data-startup-background-visible', previousVisible);
       node.style.visibility = previousVisibility; node.style.pointerEvents = previousPointerEvents;
@@ -97,7 +140,7 @@ export function Splash({ onDone, visible = true, reducedMotion = false }) {
     let active = true;
     const abort = new AbortController();
     // Inside the iOS shell every image is already bundled and served locally:
-    // preloading would only duplicate sixty megabytes into WebKit's cache.
+    // preloading would only duplicate the bundled images into WebKit's cache.
     if (isNativeShell() || (attempt === 0 && storageKnownUnavailable())) {
       setImages({ done: 0, total: 0, ok: 0, failed: 0 });
       setPhase(isNativeShell() ? 'ready' : 'skipped');
@@ -108,6 +151,7 @@ export function Splash({ onDone, visible = true, reducedMotion = false }) {
     cacheStartupImages(startupImageUrls, {
       signal: abort.signal,
       concurrency: 3, // Leave connections available for the active game's media.
+      waitUntilReady: downloadGate.wait,
       onProgress: (next) => { if (active) setImages(next); },
     }).then((result) => {
       if (!active || result.aborted) return;
@@ -118,7 +162,7 @@ export function Splash({ onDone, visible = true, reducedMotion = false }) {
       if (!result.failed && result.persistent !== false) void pruneStaleMedia();
     }).catch(() => { if (active) setPhase('error'); });
     return () => { active = false; abort.abort(); };
-  }, [attempt]);
+  }, [attempt, downloadGate]);
 
   // Cap only the image wait. Fast/cached loads enter immediately; large first
   // downloads keep running after the splash goes away, in this mounted owner.
@@ -143,7 +187,7 @@ export function Splash({ onDone, visible = true, reducedMotion = false }) {
   if (!visible) {
     if (['ready', 'skipped'].includes(phase) || statusHidden) return null;
     return <aside ref={statusRef} className="startup-background" aria-label="حالة تحميل الصور">
-      <span role="status">{phase === 'error' ? `باقي ${number(incomplete)} صورة` : phase === 'unsaved' ? 'الصور نُزّلت لكن المتصفح لم يحفظها؛ ستُجلب عند الحاجة.' : `نجهّز الصور بالخلفية · ${number(images.ok)} / ${number(images.total)}`}</span>
+      <span role="status">{phase === 'error' ? `باقي ${number(incomplete)} صورة` : phase === 'unsaved' ? 'الصور نُزّلت لكن المتصفح لم يحفظها؛ ستُجلب عند الحاجة.' : backgroundPaused ? 'تجهيز الصور متوقف مؤقتًا لإعطاء الأولوية للعب والصوت' : `نجهّز الصور بالخلفية · ${number(images.ok)} / ${number(images.total)}`}</span>
       {phase === 'error' && <button type="button" onClick={() => setAttempt((value) => value + 1)}>إعادة المحاولة</button>}
       <button type="button" className="startup-background-close" aria-label="إخفاء حالة الصور" onClick={() => setStatusHidden(true)}>×</button>
     </aside>;
@@ -170,12 +214,12 @@ export function Splash({ onDone, visible = true, reducedMotion = false }) {
             ? `تعذّر تجهيز ${number(incomplete)} صورة. تحقّق من الاتصال وأعد المحاولة؛ الصور المكتملة محفوظة إذا كانت مساحة الجهاز تسمح.`
             : phase === 'unsaved'
               ? 'المتصفح لا يسمح بحفظ الصور على هذا الجهاز (تصفّح خاص أو مساحة ممتلئة)، فستُجلب من الإنترنت عند الحاجة.'
-              : 'ستفتح اللعبة خلال لحظات، وتكتمل الصور في الخلفية. الصور المحفوظة لا نحمّلها مجددًا.'}
+              : 'ستفتح اللعبة خلال لحظات، وتكتمل الصور خارج اللعب والمكالمات. الصور المحفوظة لا نحمّلها مجددًا.'}
         </p>
         <div className="startup-download-actions">
           {phase === 'error' && <Button variant="primary" full onClick={() => setAttempt((value) => value + 1)}>إعادة المحاولة</Button>}
           <Button variant="ghost" full disabled={!ready} onClick={enterWithAvailableImages}>الدخول بالصور المتاحة</Button>
-          <small>التحميل يستمر أثناء اللعب دون انتظار.</small>
+          <small>ادخل الآن؛ يستأنف التحميل عند العودة للقوائم.</small>
         </div>
       </div>
     </div>

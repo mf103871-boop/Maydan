@@ -29,7 +29,7 @@ test('FREE_PACKS هي أول عشر حزم بترتيب bank-status وكلها �
 });
 
 // ── ٢) منطق القفل النقي كما تستعمله الواجهة ───────────────────────────────
-test('lockedPack: المجاني مفتوح للجميع والباقي للمشترك فقط', () => {
+test('all Badeeha packs are free regardless of subscription', () => {
   for (const id of FREE_PACKS) {
     assert.equal(lockedPack(id, false), false);
     assert.equal(lockedPack(id, true), false);
@@ -37,22 +37,22 @@ test('lockedPack: المجاني مفتوح للجميع والباقي للمش
   const paid = CATS.map((c) => c.id).filter((id) => !FREE_PACKS.includes(id));
   assert.equal(paid.length, CATS.length - FREE_PACKS.length);
   for (const id of paid) {
-    assert.equal(lockedPack(id, false), true, id);
+    assert.equal(lockedPack(id, false), false, id);
     assert.equal(lockedPack(id, true), false, id);
   }
 });
 
-test('gameAccess: مباراة واحدة مجانية لكل لعبة ثم القفل، والمشترك بلا قفل', () => {
+test('spent trials and paid membership never change free gameplay access', () => {
   const premiumMe = { premium: { until: Date.now() + 86_400_000 }, trials: { beep: true } };
   for (const game of TRIAL_GAMES) {
-    assert.equal(gameAccess(null, {}, game), 'trial', game);
-    assert.equal(gameAccess(null, { [game]: true }, game), 'locked', game);
-    assert.equal(gameAccess({ trials: { [game]: true } }, {}, game), 'locked', game);
-    assert.equal(gameAccess(premiumMe, { [game]: true }, game), 'premium', game);
+    assert.equal(gameAccess(null, {}, game), 'free', game);
+    assert.equal(gameAccess(null, { [game]: true }, game), 'free', game);
+    assert.equal(gameAccess({ trials: { [game]: true } }, {}, game), 'free', game);
+    assert.equal(gameAccess(premiumMe, { [game]: true }, game), 'free', game);
   }
   // بَديهة ليست ضمن التجارب: لا تُقفل أبدًا مهما كانت العلامات المحلية.
   assert.ok(!TRIAL_GAMES.includes('badeeha'));
-  assert.equal(gameAccess(null, { badeeha: true }, 'badeeha'), 'trial');
+  assert.equal(gameAccess(null, { badeeha: true }, 'badeeha'), 'free');
   assert.equal(trialAvailable(null, { badeeha: true }, 'badeeha', false), true);
   assert.equal(isPremium(premiumMe), true);
   assert.equal(isPremium(null), false);
@@ -60,7 +60,7 @@ test('gameAccess: مباراة واحدة مجانية لكل لعبة ثم ال
 
 test('NULL_ACCOUNT لا يقفل شيئًا: بلا مزوّد تبقى اللعبة كما كانت', () => {
   assert.equal(NULL_ACCOUNT.lockedPack('worldcup'), false);
-  assert.equal(NULL_ACCOUNT.gameAccess('beep'), 'premium');
+  assert.equal(NULL_ACCOUNT.gameAccess('beep'), 'free');
   assert.equal(NULL_ACCOUNT.premium, false);
   assert.deepEqual(NULL_ACCOUNT.authHeaders(), {});
 });
@@ -143,24 +143,15 @@ function findByText(node, text) {
 }
 
 // ── ٣) مُنتقي «بَديهة»: كل حزمة غير مجانية تحمل is-locked، والمشترك لا يرى قفلًا ──
-test('مُنتقي بَديهة: 68 حزمة مقفولة للمجاني، وصفر للمشترك', () => {
-  const free = fakeAccount();
-  const html = setupMarkup(free);
-  assert.match(html, /m-category-pick/);
-  assert.equal(count(html, 'is-locked'), CATS.length - FREE_PACKS.length);
-  assert.equal(count(html, 'is-locked'), 68);
-  assert.equal(count(html, 'm-lock'), CATS.length - FREE_PACKS.length);
-  assert.match(html, /aria-disabled="true"/);
-  assert.match(html, /🔒 بلس/);
-  assert.match(html, /m-favorite/, 'زر المفضلة يبقى كما هو');
-  assert.match(html, /مجاني<\/button>/, 'مرشّح «مجاني» موجود بين الرقائق');
-
-  const plus = fakeAccount({ premium: true });
-  const premiumHtml = setupMarkup(plus);
-  assert.equal(count(premiumHtml, 'is-locked'), 0);
-  assert.equal(count(premiumHtml, 'm-lock'), 0);
-  assert.doesNotMatch(premiumHtml, /aria-disabled="true"/);
-  assert.equal(count(premiumHtml, 'm-category-pick'), count(html, 'm-category-pick'));
+test('Badeeha renders all 78 packs unlocked for free, expired and subscribed players', () => {
+  for (const account of [fakeAccount(), fakeAccount({trials:{beep:true}}), fakeAccount({premium:true})]) {
+    const html=setupMarkup(account);
+    assert.equal((html.match(/class="m-category-pick(?: |")/g) || []).length, CATS.length);
+    assert.equal(count(html, 'is-locked'), 0);
+    assert.equal(count(html, 'm-lock'), 0);
+    assert.doesNotMatch(html, /aria-disabled="true"|🔒 بلس/);
+    assert.match(html, /m-favorite/);
+  }
 });
 
 test('بلا حساب (NULL_ACCOUNT) لا يظهر أي قفل في المُنتقي', () => {
@@ -170,52 +161,27 @@ test('بلا حساب (NULL_ACCOUNT) لا يظهر أي قفل في المُنت
 });
 
 // ── ٤) شارات الرئيسية ─────────────────────────────────────────────────────
-test('الرئيسية: شارة لكل حالة، ولا شارة للمشترك، والبطاقات تبقى مفعّلة', () => {
-  const fresh = ui.home(fakeAccount());
-  assert.match(fresh, /١٠ فئات مجانية/);
-  assert.equal(count(fresh, 'مباراة مجانية'), TRIAL_GAMES.length);
-  assert.doesNotMatch(fresh, /card-badge[^>]*>بلس/);
-
-  const used = ui.home(fakeAccount({ trials: { beep: true, mamnoo: true } }));
-  assert.equal(count(used, '>بلس<'), 2);
-  assert.equal(count(used, 'مباراة مجانية'), TRIAL_GAMES.length - 2);
-  assert.equal(count(used, 'disabled'), 0, 'القفل لا يعطّل البطاقات');
-
-  const plus = ui.home(fakeAccount({ premium: true }));
-  assert.doesNotMatch(plus, /card-badge/);
-  assert.doesNotMatch(plus, /١٠ فئات مجانية/);
+test('Home advertises free games consistently, including exhausted legacy trials', () => {
+  for (const account of [fakeAccount(),fakeAccount({trials:{beep:true,mamnoo:true}}),fakeAccount({premium:true})]) {
+    const html=ui.home(account);
+    assert.equal(count(html,'مجانية بالكامل'), TRIAL_GAMES.length+1);
+    assert.doesNotMatch(html,/١٠ فئات مجانية|مباراة مجانية|card-badge[^>]*>بلس/);
+  }
 });
 
-// ── ٥) تفاصيل اللعبة: زر العب يفتح الجدار حين تُستهلك المباراة المجانية ────
-test('تفاصيل اللعبة: زر العب يفتح جدار «ميدان بلس» بعد المباراة المجانية', () => {
-  const locked = fakeAccount({ trials: { beep: true } });
-  const { tree, markup } = ui.detailsTree('beep', locked);
-  assert.match(markup, /لعبت مباراتك المجانية — اشترك للمتابعة/);
-  const play = findByText(tree, 'العب');
-  assert.ok(play && typeof play.props.onClick === 'function', 'زر العب موجود وله onClick');
-  play.props.onClick();
-  assert.deepEqual(locked.calls, [{ type: 'paywall', reason: 'trial', game: 'beep' }]);
-});
-
-test('تفاصيل اللعبة: المباراة المجانية الأولى تمر بلا جدار، والملاحظات تختفي للمشترك', () => {
-  const fresh = fakeAccount();
-  const { tree, markup } = ui.detailsTree('beep', fresh);
-  assert.match(markup, /مباراة واحدة مجانية، ثم ميدان بلس/);
-  findByText(tree, 'العب').props.onClick();
-  assert.deepEqual(fresh.calls, [], 'لا جدار قبل استهلاك المباراة المجانية');
-
-  const badeeha = ui.detailsTree('badeeha', fakeAccount());
-  assert.match(badeeha.markup, /١٠ فئات مجانية، والباقي ضمن ميدان بلس/);
-
-  const plus = ui.detailsTree('beep', fakeAccount({ premium: true }));
-  assert.doesNotMatch(plus.markup, /details-plus-note/);
-  const plusBadeeha = ui.detailsTree('badeeha', fakeAccount({ premium: true }));
-  assert.doesNotMatch(plusBadeeha.markup, /details-plus-note/);
+test('game details start previously locked games without a paywall', () => {
+  for (const account of [fakeAccount({trials:{beep:true}}),fakeAccount({premium:true})]) {
+    const {tree,markup}=ui.detailsTree('beep',account);
+    assert.match(markup,/اللعب واستضافة الغرف والانضمام مجانًا/);
+    findByText(tree,'العب').props.onClick();
+    assert.deepEqual(account.calls,[]);
+  }
+  assert.match(ui.detailsTree('badeeha',fakeAccount()).markup,/كل الفئات مجانية/);
 });
 
 test('ارسمها تعرض استضافة الغرف والانضمام المجاني ولا تعرض جهازًا واحدًا أو حزم بديهة', () => {
   const { markup } = ui.detailsTree('ersomha', fakeAccount({ trials: { ersomha: true } }));
-  assert.match(markup, /الانضمام مجاني/);
+  assert.match(markup, /الانضمام مجانًا/);
   assert.match(markup, /العب أونلاين/);
   assert.doesNotMatch(markup, /العب على جهاز واحد|١٠ فئات مجانية/);
   assert.doesNotMatch(markup, /disabled/);

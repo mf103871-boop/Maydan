@@ -1,3 +1,4 @@
+import { MafiaTutorialPreview } from '../games/mafia/tutorial/MafiaTutorial.jsx';
 // Preview imports the actual production screens. Only data and external effects
 // are synthetic; no second implementation of a game or its controls lives here.
 import React, { useMemo } from 'react';
@@ -19,6 +20,7 @@ import { Game as Fabraka, SetupOptions as FabrakaSetup } from '../games/fabraka/
 import { Entry, Lobby, Match, RoomChrome } from '../online/Online.jsx';
 import { FabrakaMatch } from '../online/Fabraka.jsx';
 import { BadeehaMatch, BadeehaSettings } from '../online/Badeeha.jsx';
+import { MafiaHistory,MafiaPrivacy,MafiaSafety,MafiaRules,MafiaSettings,MafiaDirectory,MafiaMatch } from '../online/Mafia.jsx';
 import { ErsomhaMatch } from '../online/Ersomha.jsx';
 import { ProfileView, ProfileEditor, CropDialog, SafetyDialog } from '../profiles/ProfileScreen.jsx';
 import { SocialHost, GameInviteDialog, GroupEditor, Preferences } from '../social/SocialHost.jsx';
@@ -66,6 +68,7 @@ export function DesignScene({ sceneId = 'home', previewState, platform, account,
   const client = useMemo(createDesignDrawingClient, [sceneId]);
   const state = previewState || fixture.state;
   const common = { api, players: fixture.players, teams: fixture.teams, designPreviewState: state, onExit: noop };
+  if (sceneId === 'mafia.tutorial') return <MafiaTutorialPreview/>;
   if (fixture.scene.game === 'badeeha' && fixture.scene.mode !== 'online') return <Badeeha key={sceneId} api={api} />;
   const local = { beep: Beep, mamnoo: Mamnoo, jabeen: Jabeen, meenfina: Meenfina, fabraka: Fabraka };
   if (fixture.scene.renderer === 'local-game' && local[fixture.scene.game]) { const Game = local[fixture.scene.game]; return <Game key={sceneId} {...common} />; }
@@ -79,6 +82,14 @@ export function DesignScene({ sceneId = 'home', previewState, platform, account,
   if (sceneId.startsWith('online.fabraka.')) return <FabrakaMatch {...roomProps} />;
   if (sceneId === 'online.badeeha.setup') return <BadeehaSettings value={state.settings} onChange={noop} disabled={false} />;
   if (sceneId.startsWith('online.badeeha.')) return <BadeehaMatch {...roomProps} />;
+  if(sceneId === 'online.mafia.privacy') return <MafiaPrivacy/>;
+  if(sceneId === 'online.mafia.history') return <MafiaHistory data={{retentionDays:30,matches:[{matchKey:'demo',roleId:'investigator',faction:'town',won:1,draw:0,finishedAt:1800000000000}],stats:[{roleId:'investigator',faction:'town',matches:3,wins:2,draws:1}]}}/>;
+  if(sceneId === 'online.mafia.guide') return <MafiaRules defaultOpen onTutorial={noop}/>;
+  if(sceneId === 'online.mafia.safety') return <MafiaSafety player={fixture.players[1]} onClose={noop} onSafety={resolved}/>;
+  if(sceneId === 'online.mafia.setup') return <MafiaSettings value={state.settings} onChange={noop}/>;
+  if(sceneId === 'online.mafia.directory') return <MafiaDirectory enabled rooms={[{code:'123456',protocol:2,roomName:'سهرة الأصدقاء',hostName:'ليان',mode:'classic',capacity:8,players:6,ready:4,voiceMode:'optional',status:'waiting'},{code:'654321',protocol:2,roomName:'مجلس النص',mode:'classic',capacity:8,players:8,ready:8,status:'playing',voiceMode:'off',full:true}]} nextCursor="demo-next" hasPrevious mode="all" onCreate={noop}/>;
+  if(sceneId === 'online.mafia.lobby') return <Lobby {...roomProps} voice={{status:'idle',onJoin:resolved}}/>;
+  if(fixture.scene.game === 'mafia') return <MafiaMatch {...roomProps} accountId="design-preview" voice={{status:'connected',muted:true,canPublish:state.phase==='discussion',participants:[],audioOutputs:[{deviceId:'default',label:'السماعة'},{deviceId:'speaker',label:'مكبر الصوت'}],outputId:'default',onMute:noop,onLeave:noop,onSpeaker:noop}}/>;
   if (fixture.scene.game === 'ersomha') return <ErsomhaMatch {...roomProps} client={client} status="connected" drawerReady={sceneId !== 'ersomha.private-wait'} onReport={resolved} />;
   const profile = fixture.profile;
   const fakeProfiles = profiles || { mine: profile, profiles: {}, ready: true, errors: {}, loadProfile: resolved, saveProfile: resolved };
