@@ -10,6 +10,8 @@ import { checkMedia, copyMedia, fmtMB } from './media.mjs';
 import { fabrakaMediaManifest } from './fabraka-media.mjs';
 import { SAMPLE_BANK } from '../src/shared/fx/sample-bank.js';
 import { LIVEKIT_VERSION, LIVEKIT_MODULE } from '../src/social/media-version.js';
+import { privateAudioBuild, verifyMaterialized } from './audio/private-preview.mjs';
+import { CANDIDATE_EFFECTS } from '../src/shared/fx/audio-candidate-catalog.js';
 
 export const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 export const DIST = path.join(ROOT, 'dist');
@@ -86,6 +88,7 @@ export function esbuildOptions({ minify = true, version = '0.0.0', media = {}, a
       __MAYDAN_VERSION__: JSON.stringify(version),
       __MAYDAN_MEDIA_VERSIONS__: JSON.stringify(media),
       __MAYDAN_ROOMS_URL__: JSON.stringify(process.env.MAYDAN_ROOMS_URL || ''),
+      __MAYDAN_AUDIO_PREVIEW__: JSON.stringify(privateAudioBuild()),
     },
     legalComments: 'none',
     charset: 'utf8',
@@ -134,13 +137,17 @@ export function renderServiceWorker(src, { id = 'dev', fabrakaImages = [], audio
     .replace('/*__AUDIO_CUES__*/[]', JSON.stringify(audioCues))
     .replace('/*__BRAND_ASSETS__*/[]', JSON.stringify(brandAssets));
 }
-export const audioCueAssets = () => Object.values(SAMPLE_BANK).map((entry) => `./${entry.url}`);
+export const audioCueAssets = () => [...new Set([
+  ...Object.values(SAMPLE_BANK).map((entry) => `./${entry.url}`),
+  ...(privateAudioBuild() ? Object.values(CANDIDATE_EFFECTS).map((entry) => `./${entry.url}`) : []),
+])];
 
 async function copyPublic({ id = 'dev', fabrakaImages = [], brandAssets = [] } = {}) {
   const pub = path.join(ROOT, 'public');
   try { await stat(pub); } catch { return; }
   for (const entry of await readdir(pub)) {
-    await cp(path.join(pub, entry), path.join(DIST, entry), { recursive: true });
+    await cp(path.join(pub, entry), path.join(DIST, entry), { recursive: true,
+      filter: (source) => privateAudioBuild() || !path.relative(pub, source).split(path.sep).join('/').match(/^audio\/candidates(?:\/|$)/) });
   }
   const sw = path.join(DIST, 'sw.js');
   try {
@@ -150,6 +157,7 @@ async function copyPublic({ id = 'dev', fabrakaImages = [], brandAssets = [] } =
 }
 
 export async function buildOnce({ minify = true, includeStudio = true } = {}) {
+  if (privateAudioBuild()) await verifyMaterialized(ROOT);
   const pkg = await readPkg();
   const versions = await mediaVersions(ROOT);
   const fabrakaImages = await fabrakaMediaManifest(ROOT, versions);

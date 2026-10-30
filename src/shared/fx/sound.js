@@ -2,8 +2,11 @@ import { createAudioEvents } from './audio-events.js';
 import { resolveAudioScene, createSceneLeases } from './audio-scenes.js';
 import { SAMPLE_BANK as BASE_SAMPLE_BANK, SAMPLE_RATE } from './sample-bank.js';
 import { reviewedEffectBank } from './reviewed-effects.js';
+import { CANDIDATE_EFFECTS } from './audio-candidate-catalog.js';
+import { privateCandidateEffects } from './audio-candidate-policy.js';
 const extraEffects = reviewedEffectBank();
-const SAMPLE_BANK = { ...BASE_SAMPLE_BANK, ...extraEffects };
+const privateEffects = privateCandidateEffects(CANDIDATE_EFFECTS);
+const SAMPLE_BANK = { ...BASE_SAMPLE_BANK, ...extraEffects, ...privateEffects };
 import { MUSIC_BANK } from './music-bank.js';
 import { SELECTED_AUDIO } from './selected-audio.js';
 import { createStreamingMusic } from './streaming-music.js';
@@ -19,6 +22,7 @@ export const CUE_SAMPLES = {
   buzzer: 'buzzer', whoosh: 'whoosh', fanfare: 'win', explosion: 'explosion', drumroll: 'drumroll',
   countdown: 'countdown', countdownGo: 'start', reveal: 'reveal', pass: 'pass', timeout: 'timeout',
   ...Object.fromEntries(Object.keys(extraEffects).map(name => [name, name])),
+  ...Object.fromEntries(Object.keys(privateEffects).map(name => [name, name])),
   ...Object.fromEntries(Object.entries(MAFIA_CUES).map(([name, cue]) => [name, cue.sample])),
 };
 export const RECIPES = Object.fromEntries(Object.entries(CUE_SAMPLES).map(([name, id]) => [name, (c, meta) => c.sample(id, meta)]));
@@ -112,6 +116,7 @@ export function createSound({ enabled = true, volume = 0.75, music = true, music
   let bankDecode = null;
   let unlockWaiters = [];
   const encoded = new Map();
+  const cueEntries = new Map();
   const fetches = new Map();
   const buffers = new Map();
   const decodes = new Map();
@@ -137,14 +142,19 @@ export function createSound({ enabled = true, volume = 0.75, music = true, music
   const musicFetches = new Map();
   const musicBuffers = new Map();
   const musicDecodes = new Map();
-  const streamedMusic = createStreamingMusic(SELECTED_AUDIO.music, { onFailure: () => syncMusic() });
+  const unavailableTracks = new Set();
+  const streamedMusic = createStreamingMusic(SELECTED_AUDIO.music, { onFailure: () => {
+    const failed = scenePlan()?.track;
+    if (failed?.candidateForPrivateTest) unavailableTracks.add(failed.url);
+    syncMusic();
+  } });
   const pageUnavailable = () => pageHidden || nativeHidden || (typeof document !== 'undefined' && document.hidden);
   const hidden = () => pageUnavailable() || interrupted || gestureRequired;
   const canPlay = () => on && level > 0 && effectSuppressors.size === 0 && !hidden();
   const canPlayMusic = () => on && musicOn && !broadcastMode && musicLevel > 0 && musicSuppressors.size === 0 && !hidden();
   const eventAudio = createAudioEvents(play, { available: canPlay });
   const sceneLeases = createSceneLeases(scene => { activeScene = scene; syncMusic(); });
-  const scenePlan = () => activeScene ? resolveAudioScene(activeScene.game, activeScene.phase, { creatorMode: broadcastMode }) : null;
+  const scenePlan = () => activeScene ? resolveAudioScene(activeScene.game, activeScene.phase, { creatorMode: broadcastMode, unavailableTracks }) : null;
   const wantedTrack = () => { const scene = scenePlan(); return scene ? (scene.track?.id || scene.fallback) : musicWanted; };
   // Per cue when named, the whole bank otherwise.
   const ready = (name = null) => (name ? buffers.has(CUE_SAMPLES[name]) : CUE_IDS.every((id) => buffers.has(id)));
@@ -211,11 +221,17 @@ export function createSound({ enabled = true, volume = 0.75, music = true, music
     if (encoded.has(id)) return Promise.resolve(true);
     if (fetches.has(id)) return fetches.get(id);
     if (typeof fetch !== 'function') return Promise.resolve(false);
-    const task = Promise.resolve().then(() => fetch(SAMPLE_BANK[id].url)).then(async (response) => {
-      if (!response || !response.ok) throw new Error('cue unavailable');
-      encoded.set(id, await response.arrayBuffer());
-      return true;
-    }).catch(() => false);
+    const task = Promise.resolve().then(async () => {
+      const entries = [SAMPLE_BANK[id], ...(privateEffects[id] && BASE_SAMPLE_BANK[id] ? [BASE_SAMPLE_BANK[id]] : [])];
+      for (const entry of entries) {
+        try {
+          const response = await fetch(entry.url);
+          if (!response?.ok) continue;
+          encoded.set(id, await response.arrayBuffer()); cueEntries.set(id, entry); return true;
+        } catch { /* missing candidate falls back to the existing cue */ }
+      }
+      return false;
+    });
     fetches.set(id, task);
     void task.finally(() => { if (fetches.get(id) === task) fetches.delete(id); });
     return task;
@@ -247,7 +263,17 @@ export function createSound({ enabled = true, volume = 0.75, music = true, music
       if (c !== context) return false;
       buffers.set(id, buffer);
       return true;
-    }).catch(() => false);
+    }).catch(async () => {
+      const fallback = privateEffects[id] && BASE_SAMPLE_BANK[id];
+      if (!fallback || cueEntries.get(id) === fallback || c !== context) return false;
+      try {
+        const response = await fetch(fallback.url);
+        if (!response?.ok) return false;
+        const data = await response.arrayBuffer(), buffer = await decode(c, data.slice(0));
+        if (c !== context) return false;
+        encoded.set(id, data); cueEntries.set(id, fallback); buffers.set(id, buffer); return true;
+      } catch { return false; }
+    });
     decodes.set(id, task);
     void task.finally(() => { if (decodes.get(id) === task) decodes.delete(id); });
     return task;
@@ -839,7 +865,7 @@ export function createSound({ enabled = true, volume = 0.75, music = true, music
       if (!voice) return false;
       // Rejected low-priority effects neither duck the music nor spend cooldowns.
       lastPlayed.set(name, Date.now());
-      if (DUCKS[name]) duckFor(DUCKS[name], SAMPLE_BANK[CUE_SAMPLES[name]].frames / SAMPLE_RATE);
+      if (DUCKS[name]) duckFor(DUCKS[name], voice.source?.buffer?.duration || SAMPLE_BANK[CUE_SAMPLES[name]].frames / SAMPLE_RATE);
       if (name === 'correct' || name === 'wrong') speakResponse(name, c, now, ordinal);
       if (source === 'tap') tap.voice = voice;
       return true;

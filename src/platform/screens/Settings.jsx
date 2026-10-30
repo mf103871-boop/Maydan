@@ -1,5 +1,8 @@
 import { SubscriptionTransition } from '../../plus/SubscriptionTransition.jsx';
 import { SELECTED_AUDIO } from '../../shared/fx/selected-audio.js';
+import { AudioCandidateLab, candidateCallBusy } from '../../shared/fx/AudioCandidateLab.jsx';
+import { isPrivateAudioCandidateBuild } from '../../shared/fx/audio-candidate-policy.js';
+import { useLamma } from '../../social/LammaProvider.jsx';
 // الإعدادات: الصوت، الموسيقى، الاهتزاز، تقليل الحركة، مسح البيانات، الإصدار، وبلاغات أسئلة بَديهة.
 import React, { useState } from 'react';
 import { Screen, TopBar, Button, Card, ConfirmModal } from '../../shared/ui/components.jsx';
@@ -32,6 +35,8 @@ function SettingsGroup({ id, title, children }) {
 export function Settings() {
   const { settings, setSettings, sound, haptics, toast, version } = usePlatform();
   const native = isNativeShell();
+  const lamma = useLamma();
+  const [audioCandidates, setAudioCandidates] = useState(false);
   const [confirmClear, setConfirmClear] = useState(false);
   const reports = createStorage('badeeha').get('question-reports-v1', []) || [];
   const share = async () => {
@@ -46,6 +51,7 @@ export function Settings() {
       <SettingsGroup id="settings-account" title="حسابك وميدان بلس"><SubscriptionTransition /><AccountCard /><Button data-design-id="plus-store" onClick={() => navigate('/store')}>تخصيص مظهري ومتجر بلس</Button></SettingsGroup>
       <SettingsGroup id="settings-audio" title="الصوت والموسيقى">
         <Toggle index={0} icon={<IconVolume />} title="الصوت" sub="المؤثرات ومقاطع الأسئلة والموسيقى معًا" checked={settings.soundOn} onChange={(v) => { setSettings({ soundOn: v }); if (v) sound.play('pop'); }} />
+        {isPrivateAudioCandidateBuild() && <Button data-sound="none" size="sm" disabled={candidateCallBusy(lamma)} onClick={() => setAudioCandidates(true)}>معاينة أصوات التحديث</Button>}
         <div className="setting setting-volume">
           <label htmlFor="sound-volume"><b>مستوى الصوت</b><output htmlFor="sound-volume">{Math.round(sound.volume * 100)}٪</output></label>
           <input data-design-id="sound-volume" id="sound-volume" type="range" min="0" max="100" step="5" value={Math.round(sound.volume * 100)} disabled={!settings.soundOn}
@@ -94,6 +100,7 @@ export function Settings() {
       </Card>
       </SettingsGroup>
       <p className="muted center" style={{ fontSize: 13 }}>ميدان: ألعاب جمعتنا · الإصدار {version}</p>
+      {audioCandidates && isPrivateAudioCandidateBuild() && <AudioCandidateLab onClose={() => setAudioCandidates(false)} />}
       {confirmClear && (
         <ConfirmModal title="مسح كل البيانات؟" danger message="لا يمكن التراجع. ستُحذف أسماء اللاعبين والنتائج والمباريات المحفوظة ومفاتيح العودة للغرف من هذا الجهاز. يبقى حسابك واشتراكك." confirmLabel="نعم، امسح" cancelLabel="إلغاء"
           onConfirm={() => { clearAllPlatformData({ keep: [ACCOUNT_PREFIX] }); setConfirmClear(false); toast('تم مسح البيانات'); setTimeout(() => location.reload(), 500); }} onCancel={() => setConfirmClear(false)} />

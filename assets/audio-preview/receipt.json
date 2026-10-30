@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "algorithm": "AES-256-GCM",
+  "nonceBase64": "2cyUlsqlouD5QXOW",
+  "aad": {
+    "schemaVersion": 1,
+    "appId": "6808385717",
+    "environment": "mafia-preview",
+    "kind": "assets",
+    "bundleId": "pixabay-candidates-20261030-v1",
+    "catalogSHA256": "405e2e631bafe99e7076a13fc868eb296565fce877a7c1c96998e444f64d31d0"
+  },
+  "cipherSHA256": "ef0cd108d8c5a8d2654fd905696a373d833069e94ef86909b4d822cb3a3b1310",
+  "cipherBytes": 38037460
+}
