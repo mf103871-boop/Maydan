@@ -10,7 +10,7 @@ Keep the final candidate commit, artifact hashes, active Worker version, migrati
 |---|---|---|
 | Current D source | Local rules/SQLite/transport/privacy tests and actual Chromium/WebKit component tests cover the new features. Final integrated suite/build results belong in the frozen D receipt. | Implemented behavior on the tested local source and browser fixtures. |
 | Hosted C | Source `b53f318b0988192d438688498ad6de14e5d9c78d`; isolated Worker version `fe88f8b0-72a1-45a7-8f80-a627f226486f`. External receipts: `release-c.json` and `hosted-profile-c.json`. | A hosted synthetic text match, profile/privacy/reward behavior and earned-item equipment without Plus. |
-| Hosted D | Pending a separate deployment and matched hosted receipt. Update this row only after reconciliation of the actual active version and artifacts. | Local D checks do not establish that D is already served at the preview URL. |
+| Hosted D | Use the separate frozen `release-d.json` and `hosted-validation-d.json` receipts for the actual active version, artifact correspondence and hosted acceptance. This source document defines the acceptance contract and does not attest to a live deployment. | Local D checks alone do not establish what is served at the preview URL. |
 | Physical iPhone browser | No completed D2 acceptance recorded for these batches. | Responsive browser emulation/WebKit on a PC is not a physical iPhone. |
 | Updated native app | No new TestFlight upload for batches A–D in this work; no matched updated-native physical acceptance recorded. | Historical signed builds/TestFlight receipts apply only to their recorded source. A web/backend deployment does not update resources bundled in an installed app. |
 | Human play/balance | No completed D3 human sample recorded. | NPCs, local teaching casts and synthetic WebSocket clients do not establish understanding, fun or balance. |
@@ -31,7 +31,7 @@ Before testing a new candidate:
 3. Produce and review `node scripts/mafia-preview-manifest.mjs`. Its default output is a local, unverified receipt: it performs no live read, migration or deployment. Supplied ledger/manifest files must match the exact preview target; an empty pending list is not acceptance.
 4. Reconcile the live preview version and migration ledger with the receipt. Review all migration bytes; D5 adds `0022_mafia_report_cases.sql` after the B/C migrations. Apply required preview schema before the D Worker, because existing moderation/deletion paths also reference the new columns. Use the preview configuration explicitly for every operator command and retain the existing preservation checks. The generic production deployment/migration scripts are not the preview procedure.
 5. Build/check the exact full-worker artifact, then let the authorized preview operator deploy the reviewed bytes. On an ambiguous response, read the actual active version/ledger before retrying. Do not compensate by manually writing room state, rewards or XP.
-6. Verify served artifact/version correspondence, run a bounded hosted smoke, reconcile/clean up only its fixtures, and seal the external receipt. Update the Hosted D row above. A new source edit invalidates a previous artifact freeze.
+6. Verify served artifact/version correspondence, run a bounded hosted smoke, reconcile/clean up only its fixtures, and seal the external receipt. Attach the D release and hosted acceptance receipts; preserve earlier receipts as historical evidence. A new source edit invalidates a previous artifact freeze.
 
 Useful local commands from the repository root:
 
