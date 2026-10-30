@@ -199,7 +199,11 @@ test('one browser player plays a whole public Mafia match through the real UI', 
   assert.equal(room().phase, 'over');
   for (const phase of ['night', 'dawn', 'discussion', 'nomination']) assert.ok(phasesSeen.has(phase), `the match passed through ${phase}`);
   await page.locator('[data-design-id="results"]').waitFor({ timeout: 15_000 });
-  assert.equal(await page.locator('[data-design-id="recap"] article').count(), 6, 'the recap reveals all six roles');
+  const recapPlayers = page.locator('[data-design-id="recap"] .mafia-recap-player');
+  assert.equal(await recapPlayers.count(), 6, 'the compact recap reveals all six players');
+  const revealedRoles = await recapPlayers.locator('.mafia-result-player-copy>span').allTextContents();
+  const actualRoles = Object.values(room().roleStates).map(role => MAFIA_ROLES[role.roleId].name);
+  assert.deepEqual(revealedRoles.sort(), actualRoles.sort(), 'the recap reveals the authoritative roles after the match');
   if (process.env.E2E_SHOTS) await page.screenshot({ path: `${process.env.E2E_SHOTS}/mafia-over.png`, fullPage: true });
   await bots[0].command('restart');
   await page.locator('[data-design-screen="online.mafia.lobby"]').waitFor({ timeout: 15_000 });
