@@ -46,6 +46,12 @@ const listeners = new Set();
 let current = typeof location !== 'undefined' ? parseHash(location.hash) : parseHash('');
 const routeLocation = route => {
   if (route.name === 'room' && route.params.watch === '1') return `${route.path}?watch=1`;
+  // A specialty lesson and its hub share a pathname, but they are distinct
+  // training sessions. Restore that context through Back, dialogs and guards.
+  if (route.name === 'mafia-tutorial') {
+    if (/^[a-z][a-z0-9-]{0,63}$/.test(route.params.lab || '')) return `${route.path}?lab=${encodeURIComponent(route.params.lab)}`;
+    if (route.params.labs === '1') return `${route.path}?labs=1`;
+  }
   const mode = route.params.mode;
   if (['game', 'play', 'online'].includes(route.name) && ['local', 'online'].includes(mode)
     && getGameModeSupport(route.params.id)?.[mode]) return `${route.path}?mode=${mode}`;
@@ -183,7 +189,7 @@ function onHashChange() {
     consumeBackLayer();
     return;
   }
-  const leavingPlay = (['play', 'mafia-tutorial'].includes(previous.name) && next.path !== previous.path) || (previous.name === 'room' && routeLocation(next) !== routeLocation(previous));
+  const leavingPlay = (['play', 'mafia-tutorial'].includes(previous.name) && routeLocation(next) !== routeLocation(previous)) || (previous.name === 'room' && routeLocation(next) !== routeLocation(previous));
   if (leavingPlay && exitGuard) {
     // أعد المسار كما كان، ثم اسأل الحارس؛ الحارس ينادي navigate بنفسه عند التأكيد.
     // الاستعادة تدفع مُدخلًا جديدًا فوق مُدخل الوجهة، فالمكدس يبقى مطابقًا

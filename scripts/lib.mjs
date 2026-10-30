@@ -75,14 +75,18 @@ export function minifiedCssTextPlugin() {
 export function encodeMediaVersions(media = {}) {
   const entries = Object.entries(media).sort(([a], [b]) => a < b ? -1 : a > b ? 1 : 0);
   if (!entries.length || entries.some(([key, hash]) => /[|:]/.test(key) || !/^[a-f0-9]{6}$/.test(hash))) return media;
+  // p3 abbreviates only complete .webp tails. Prefix lengths still refer to
+  // the original path. Literal ~ names retain the lossless p2 representation.
+  const compactPaths = !entries.some(([key]) => key.includes('~'));
   let previous = '';
   const alphabet = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_-';
-  return 'p2|' + entries.map(([key, hash]) => {
+  return (compactPaths ? 'p3|' : 'p2|') + entries.map(([key, hash]) => {
     let prefix = 0;
     while (prefix < previous.length && prefix < key.length && previous[prefix] === key[prefix]) prefix++;
     const value = parseInt(hash, 16);
     const compactHash = [18, 12, 6, 0].map(shift => alphabet[(value >>> shift) & 63]).join('');
-    const row = `${prefix.toString(36)}:${key.slice(prefix)}:${compactHash}`;
+    const suffix = compactPaths ? key.slice(prefix).replace(/\.webp$/, '~') : key.slice(prefix);
+    const row = `${prefix.toString(36)}:${suffix}:${compactHash}`;
     previous = key;
     return row;
   }).join('|');

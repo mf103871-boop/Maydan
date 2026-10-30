@@ -60,6 +60,9 @@ export class Room {
     this.mafiaMetadata={};
     this.ready = ctx.blockConcurrencyWhile(async () => {
       this.room = await ctx.storage.get('room') || null;
+      // A hibernated object may have withheld a committed publication during
+      // an account-store outage. Reconcile its current state on the first wake.
+      this.accountPublicationPending = Boolean(this.room && this.room.game !== 'mafia' && (this.room.game === 'ersomha' || this.room.directory?.visibility === 'public' || this.sockets().some(ws => this.attachment(ws).accountSessionId)));
       this.profileOutbox = await ctx.storage.get('profileOutbox') || [];
       this.mafiaResultOutbox=await ctx.storage.get('mafiaResultOutbox')||[];
       const observerData=await loadObserverStream(ctx.storage);this.observerStream=observerData.stream;this.observerChunks=observerData.chunks;
@@ -101,9 +104,10 @@ export class Room {
     if(room.game==='mafia'&&this.mafiaCleanupRetryAt>now)return this.mafiaCleanupRetryAt;
     const deadlines = this.sockets().map((ws) => {
       const a = this.attachment(ws);
-      return a.id ? this.lastSeen(ws, a) + SOCKET_IDLE : a.authDeadline;
+      if (room.game !== 'mafia' && a.revoked) return null;
+      return a.id ? Math.min(this.lastSeen(ws, a) + SOCKET_IDLE, room.game !== 'mafia' ? a.accountExpiresAt ?? Infinity : Infinity) : a.authDeadline;
     }).filter(Number.isFinite);
-    return Math.max(now + 1, Math.min(room.game==='mafia'&&room.phase==='closed'?room.closedDeleteAt||now+90000:nextAlarm(room, now), ...deadlines, ...(needsOnlineDirectory(this.env,room)?[this.onlineDirectoryRefreshAt||now+ONLINE_DIRECTORY_REFRESH_MS]:[]), ...(room.game==='mafia'?[...(room.phase==='closed'?[]:[room.mafiaRenewAt||now+30_000,this.mafiaAuthDeadline(room)]),observerNextAlarm(this.observerStream),room.observerRenewAt||now+30_000]:[]), ...(this.outboxPending() ? [this.outboxAlarm(now)] : [])));
+    return Math.max(now + 1, Math.min(room.game==='mafia'&&room.phase==='closed'?room.closedDeleteAt||now+90000:nextAlarm(room, now), ...deadlines, this.accountPublicationRetryAt || Infinity, ...(needsOnlineDirectory(this.env,room)?[this.onlineDirectoryRefreshAt||now+ONLINE_DIRECTORY_REFRESH_MS]:[]), ...(room.game==='mafia'?[...(room.phase==='closed'?[]:[room.mafiaRenewAt||now+30_000,this.mafiaAuthDeadline(room)]),observerNextAlarm(this.observerStream),room.observerRenewAt||now+30_000]:[]), ...(this.outboxPending() ? [this.outboxAlarm(now)] : [])));
   }
   async schedule({ skipIdenticalMafiaAlarm = false } = {}) {
     if (this.room) {
@@ -121,6 +125,7 @@ export class Room {
     assertSupportedMafiaRuleset(candidate);
     if(candidate.game==='mafia'&&candidate.settings.visibility!=='public'&&Object.keys(candidate.observers||{}).length){for(const observer of Object.values(candidate.observers))await releaseObserver(this.env,candidate,observer);candidate.observers={};}
     const previous=this.room;
+    for (const id of await this.validateAccountSessions(candidate)) connected(candidate, id, false, Date.now());
     const oldLease = this.room?.ersomhaLease;
     if (candidate.game === 'ersomha' && !prepared) await this.prepareErsomha(candidate);
     if (candidate.game === 'mafia' && !prepared) await this.prepareMafia(candidate);
@@ -169,7 +174,7 @@ export class Room {
       }
       this.metrics.flush();
     }
-    this.broadcast();
+    await this.broadcast();
     if(candidate.game==='mafia')for(const ws of this.sockets()){const a=this.attachment(ws);if(a.scope==='observer'&&!candidate.observers?.[a.id])this.close(ws,4401,'AUTH');}
     if(candidate.game==='mafia') {
       await this.settleMafiaMetadata(candidate);
@@ -225,9 +230,20 @@ export class Room {
     if(this.mafiaMetadata.directory!==directoryKey||(listed&&Date.now()>=this.mafiaMetadata.directoryRefreshAt)) {
       // Directory is advisory; admission always checks the committed room.
       // Its90s expiry is renewed even when the public lobby does not change.
-      await updateMafiaDirectory(this.env,room);
-      this.mafiaMetadata.directory=directoryKey;
-      this.mafiaMetadata.directoryRefreshAt=Date.now()+30_000;
+      const retry=this.mafiaMetadata.directoryRetry;
+      if(retry?.key===directoryKey&&Date.now()<retry.at)return;
+      try {
+        await updateMafiaDirectory(this.env,room);
+        this.mafiaMetadata.directory=directoryKey;
+        this.mafiaMetadata.directoryRefreshAt=Date.now()+30_000;
+        this.mafiaMetadata.directoryRetry=null;
+      } catch {
+        // A discovery failure after persistence must not reject an accepted
+        // command or be mistaken for failed account/voice authorization.
+        // The regular room renewal retries it; do not hammer the same failed
+        // directory state on every chat message, or mark it as synchronized.
+        this.mafiaMetadata.directoryRetry={key:directoryKey,at:Date.now()+STATS_RETRY};
+      }
     }
   }
   async flushMafiaResults() {
@@ -265,6 +281,65 @@ export class Room {
     const ids=[...new Set(bindings.map(b=>b[0]))].sort();
     const audience=candidate.members.filter(m=>!m.left).map(m=>[m.id,voiceAudience(candidate,m.id)]);
     return {ids,bindings,key:JSON.stringify([candidate.matchId,candidate.phaseId,ids,audience]),revoked:sockets.some(a=>a.revoked)};
+  }
+  async validateAccountSessions(room, now = Date.now(), { reschedule = true } = {}) {
+    if (room.game === 'mafia') return [];
+    const requiresAccount = room.game === 'ersomha' || room.directory?.visibility === 'public';
+    const sockets = this.sockets().map(ws => ({ ws, ...this.attachment(ws) })).filter(a => a.id && (requiresAccount || a.accountSessionId || a.accountUserId));
+    if (!sockets.length) return [];
+    const ids = [...new Set(sockets.map(a => a.accountSessionId).filter(Boolean))];
+    // A seat token cannot preserve read access after its account session ends.
+    // Validate recipients as well as senders, before publishing a new state or
+    // ephemeral drawing/reaction. Database failure withholds that publication.
+    const sessions = ids.length ? (await this.env.DB.prepare(`SELECT id,user_id,expires_at,revoked_at FROM sessions WHERE id IN (${ids.map(() => '?').join(',')}) AND expires_at>? AND (revoked_at IS NULL OR revoked_at>?) AND ${liveAccountSql('sessions.user_id')}`).bind(...ids, now, now).all()).results || [] : [];
+    const allowed = a => !a.revoked && sessions.find(s => s.id === a.accountSessionId && s.user_id === a.accountUserId && s.expires_at > Date.now() && (s.revoked_at == null || s.revoked_at > Date.now()));
+    const disconnected = new Set();
+    let deadlineChanged = false;
+    for (const a of sockets) {
+      const session = allowed(a);
+      if (!session) {
+        a.ws.serializeAttachment({ ...this.attachment(a.ws), revoked: true });
+        this.close(a.ws, 4401, 'AUTH'); disconnected.add(a.id);
+      } else {
+        const accountExpiresAt = Math.min(session.expires_at, session.revoked_at ?? Number.MAX_SAFE_INTEGER);
+        if (a.accountExpiresAt !== accountExpiresAt) {
+          a.ws.serializeAttachment({ ...this.attachment(a.ws), accountExpiresAt });
+          deadlineChanged = true;
+        }
+      }
+    }
+    if (deadlineChanged) {
+      // Ephemeral messages have no room commit to install a newly learned
+      // rotation/revocation cutoff. Re-arm only when that lifetime changes,
+      // never once per stroke or viewer, and invalidate the warm ping cache.
+      this.fastAdvanceRoom = null;
+      this.fastAdvanceUntil = Math.min(this.fastAdvanceUntil ?? Infinity, ...sockets.map(a => this.attachment(a.ws).accountExpiresAt).filter(Number.isFinite));
+      if (reschedule) await this.schedule();
+      else this.accountAlarmPending = true;
+    }
+    return [...disconnected].filter(id => room.members.some(m => m.id === id && !m.left) && !sockets.some(a => a.id === id && allowed(a)));
+  }
+  async authorizeAccountPublication() {
+    try {
+      // No awaited storage/provider work follows this read before the caller
+      // emits its protected data. Admission-time authorization is insufficient
+      // when a session can be revoked during an earlier durable write.
+      await this.validateAccountSessions(this.room, Date.now(), { reschedule: false });
+      return true;
+    } catch {
+      // The state/ink may already be durable. Withhold publication and retry;
+      // never throw this read failure into rollback/technical-abort handling.
+      this.accountPublicationPending = true;
+      this.accountPublicationRetryAt = Date.now() + 5_000;
+      this.fastAdvanceRoom = null;
+      try { await this.schedule(); } catch { /* reconnect/next wake reconciles */ }
+      return false;
+    }
+  }
+  async settleAccountPublicationAlarm() {
+    if (!this.accountAlarmPending) return;
+    this.accountAlarmPending = false;
+    try { await this.schedule(); } catch { this.accountAlarmPending = true; }
   }
   async readMafiaSessions(candidate,now=Date.now()) {
     const scope=this.mafiaSessionScope(candidate),ids=scope.ids;
@@ -483,18 +558,22 @@ export class Room {
     member(this.room, id);
     if (!this.drawing || this.drawing.boardId !== ersomhaBoardId(this.room)) fail('ERSOMHA_CANVAS_UNAVAILABLE', 503);
     const change = prepareErsomhaDrawing(this.room, this.drawing, id, command);
-    if (change.sync) for (const message of ersomhaSyncMessages(this.room, this.drawing)) this.send(ws, message);
+    if (change.sync) {
+      if (await this.authorizeAccountPublication()) for (const message of ersomhaSyncMessages(this.room, this.drawing)) this.send(ws, message);
+    }
     else if (change.event) {
       // The small journal write is committed before any receiver or sender sees
-      // this sequence. No full game snapshot, D1 query or stats write is needed.
+      // this sequence. Recipients are freshly authorized after that write;
+      // no full game snapshot or stats write is needed for an ink batch.
       const head = await persistErsomhaDrawing(this.ctx.storage, change.board, change.event, this.drawingHead);
       this.drawing = change.board; this.drawingHead = head;
-      for (const socket of this.sockets()) {
-        const seat = this.attachment(socket).id;
+      if (await this.authorizeAccountPublication()) for (const socket of this.sockets()) {
+        const recipient = this.attachment(socket), seat = recipient.revoked ? null : recipient.id;
         if (seat && this.room.members.some(m => m.id === seat && !m.left)) this.send(socket, change.event);
       }
     }
     this.send(ws, { type: 'ack', requestId: command.requestId, ok: true, drawing: ersomhaDrawingMeta(this.drawing) });
+    await this.settleAccountPublicationAlarm();
   }
   // Quick reactions are ephemeral: a fixed emoji set broadcast to the seated sockets,
   // never written to storage or to the room snapshot. Their own small bucket keeps a
@@ -515,10 +594,11 @@ export class Room {
     this.reactionCounter = (this.reactionCounter || 0) + 1;
     const event = { type: 'reaction', id: `${now.toString(36)}-${this.reactionCounter}`, seatId: a.id, emoji: cosmetic?.emoji || command.emoji, at: now,
       ...(cosmetic ? { reactionId: cosmetic.id, version: cosmetic.version } : {}) };
-    for (const socket of this.sockets()) {
-      const seat = this.attachment(socket).id;
+    if (await this.authorizeAccountPublication()) for (const socket of this.sockets()) {
+      const recipient = this.attachment(socket), seat = recipient.revoked ? null : recipient.id;
       if (seat && this.room.members.some((m) => m.id === seat && !m.left)) this.send(socket, event);
     }
+    await this.settleAccountPublicationAlarm();
   }
   flushStats() {
     if (this.flushingStats) return this.flushingStats;
@@ -562,11 +642,13 @@ export class Room {
     task.then(release, release);
     return task;
   }
-  broadcast() {
+  async broadcast() {
     if (!this.room) return;
+    if (!await this.authorizeAccountPublication()) return;
     for (const ws of this.sockets()) {
-      const { id,scope } = this.attachment(ws);
+      const { id,scope,revoked } = this.attachment(ws);
       if (!id) continue;
+      if (revoked) continue;
       if(scope==='observer')continue;
       const m = this.room.members.find((p) => p.id === id && !p.left);
       if (!m) { this.send(ws, { type: 'error', error: 'REMOVED' }); this.close(ws, 4401, 'REMOVED'); continue; }
@@ -580,6 +662,9 @@ export class Room {
       }
       this.send(ws, { type: 'state', state });
     }
+    this.accountPublicationPending = false;
+    this.accountPublicationRetryAt = null;
+    await this.settleAccountPublicationAlarm();
   }
   async advance({ force = false } = {}) {
     if (!this.room) return;
@@ -594,6 +679,7 @@ export class Room {
     // Rehydration, a changed room object, and alarms always re-evaluate it.
     if (!force && this.fastAdvanceRoom === this.room && now < this.fastAdvanceUntil) return;
     const candidate = structuredClone(this.room);
+    for (const id of await this.validateAccountSessions(candidate)) connected(candidate, id, false, Date.now());
     // A phone can vanish without a TCP close. Hibernation auto-pongs provide
     // liveness without waking the object on every heartbeat.
     for (const ws of this.sockets()) {
@@ -643,6 +729,7 @@ export class Room {
       }
     } else {
       await this.settleOnlineMetadata(this.room);
+      if (this.accountPublicationPending) await this.broadcast();
       this.fastAdvanceRoom = this.room;
       this.fastAdvanceUntil = this.alarmAt(this.room, now);
     }
@@ -929,6 +1016,13 @@ export class Room {
       try {
         if (ws.readyState !== 1) return;
         if(await this.directoryFeed.active())return await this.directoryFeed.message(ws,message);
+        // Correlate a bounded request before storage/account advancement can
+        // fail. Otherwise a failed preflight emits an uncorrelated error and
+        // the honest caller waits ten seconds for a command timeout.
+        let command;
+        try { command = JSON.parse(message); } catch { /* malformed messages still use the ordinary flood budget */ }
+        const validCommand = command && !Array.isArray(command) && typeof command === 'object';
+        requestId = validCommand && typeof command.requestId === 'string' && command.requestId.length <= 80 ? command.requestId : undefined;
         await this.advance();
         if (ws.readyState !== 1) return;
         if (!this.room) fail('NOT_FOUND', 404);
@@ -937,10 +1031,6 @@ export class Room {
         const now = Date.now();
         a.seenAt = now;
         if (message === 'ping' && a.id) { ws.serializeAttachment(a); this.send(ws, 'pong'); return; }
-        let command;
-        try { command = JSON.parse(message); } catch { /* malformed messages still use the ordinary flood budget */ }
-        const validCommand = command && !Array.isArray(command) && typeof command === 'object';
-        requestId = validCommand && typeof command.requestId === 'string' && command.requestId.length <= 80 ? command.requestId : undefined;
         metricCommand=this.room.game==='mafia'&&Boolean(a.id&&requestId);
         if (this.room.game === 'ersomha' && validCommand && command.type === 'drawing_batch' && a.id) {
           a.drawTokens = Math.min(30, (a.drawTokens ?? 30) + Math.max(0, now - (a.drawAt ?? now)) * 15 / 1000); a.drawAt = now;
@@ -978,7 +1068,7 @@ export class Room {
             catch (error) { if (error instanceof RoomError && error.status < 500) fail('AUTH', 401); throw error; }
             const seat = member(this.room, id);
             if (auth.user.id !== seat.accountUserId || !await this.env.DB.prepare(`SELECT 1 AS ok WHERE ${liveAccountSql('?')}`).bind(auth.user.id, auth.user.id).first()) fail('AUTH', 401);
-            if(this.room.game==='mafia'||this.room.directory?.visibility==='public')accountIdentity={accountSessionId:auth.session.id,accountUserId:auth.user.id,accountExpiresAt:Math.min(auth.session.expires_at,auth.session.revoked_at??Number.MAX_SAFE_INTEGER)};
+            accountIdentity={accountSessionId:auth.session.id,accountUserId:auth.user.id,accountExpiresAt:Math.min(auth.session.expires_at,auth.session.revoked_at??Number.MAX_SAFE_INTEGER)};
           }
           // Only one controlling connection per seat; old close cannot disconnect the replacement.
           for (const other of this.sockets()) if (other !== ws && this.attachment(other).id === id) {
@@ -996,8 +1086,12 @@ export class Room {
         // failed login: answering with INVALID keeps the player's session alive.
         if (!a.id) fail('AUTH', 401);
         if (!requestId) fail('INVALID');
-        if(this.room.directory?.visibility==='public'&&this.room.game!=='mafia') {
-          if(!await this.env.DB.prepare(`SELECT 1 FROM sessions WHERE id=? AND user_id=? AND expires_at>? AND (revoked_at IS NULL OR revoked_at>?) AND ${liveAccountSql('sessions.user_id')}`).bind(a.accountSessionId||'',a.accountUserId||'',now,now).first())fail('AUTH',401);
+        if(this.room.game!=='mafia'&&(a.accountSessionId||this.room.game==='ersomha'||this.room.directory?.visibility==='public')) {
+          // Validate the actor before accepting a mutation. Recipients share
+          // one separate batch read at the actual post-storage publication.
+          if(!await this.env.DB.prepare(`SELECT 1 FROM sessions WHERE id=? AND user_id=? AND expires_at>? AND (revoked_at IS NULL OR revoked_at>?) AND ${liveAccountSql('sessions.user_id')}`).bind(a.accountSessionId||'',a.accountUserId||'',now,now).first()) {
+            ws.serializeAttachment({ ...a, revoked: true }); this.close(ws, 4401, 'AUTH'); fail('AUTH',401);
+          }
         }
         let mafiaSessionProof=null;
         if(this.room.game==='mafia') {
@@ -1096,6 +1190,12 @@ export class Room {
       await this.flushMafiaResults();
     }).then(() => this.flushStats(), async error => {
       if(this.room?.game==='mafia'){this.mafiaCleanupRetryAt=Date.now()+STATS_RETRY;await this.ctx.storage.setAlarm(this.mafiaCleanupRetryAt);return;}
+      if (this.room && this.accountPublicationPending && (!(error instanceof RoomError) || error.status >= 500)) {
+        // Its early authorization read can also fail while the same outage
+        // continues. Keep the durable publication retry alive across alarms.
+        this.accountPublicationRetryAt = Date.now() + 5_000;
+        await this.ctx.storage.setAlarm(this.accountPublicationRetryAt); return;
+      }
       if (this.room?.game !== 'ersomha') throw error;
       if (error instanceof RoomError && ['AUTH', 'ERSOMHA_ACTIVE_ELSEWHERE'].includes(error.code)) {
         await this.serial(async () => {

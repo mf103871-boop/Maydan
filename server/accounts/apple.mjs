@@ -152,6 +152,7 @@ export async function readSubscriptionStatus(env, status, originalTransactionId,
 export async function bindTransaction(env, user, jws, now = Date.now()) {
   // توقيع الجهاز (jwsRepresentation من StoreKit) يُتحقق منه قبل أن نسأل آبل عنه.
   const hint = await verifySigned(env, jws, now);
+  if (hint.appAccountToken && String(hint.appAccountToken).toLowerCase() !== String(user.id).toLowerCase()) failure('ALREADY_LINKED');
   const originalTransactionId = hint.originalTransactionId || hint.transactionId;
   if (!originalTransactionId) failure('INVALID');
   const status = await fetchSubscription(env, String(originalTransactionId), now, hint.environment);
@@ -159,7 +160,11 @@ export async function bindTransaction(env, user, jws, now = Date.now()) {
   if (row.appAccountToken && row.appAccountToken !== String(user.id).toLowerCase()) failure('ALREADY_LINKED');
   const existing = await db.subscriptionByExternal(env, 'apple', row.external_id);
   if (existing && existing.user_id !== user.id) failure('ALREADY_LINKED');
-  await db.upsertSubscription(env, { ...row, user_id: user.id });
+  const saved = await db.upsertSubscription(env, { ...row, user_id: user.id }, { requireLiveOwner: true });
+  // The SQL owner condition also arbitrates two simultaneous first claims.
+  // Report the canonical result rather than acknowledging a losing claim.
+  if (!saved) failure('AUTH_EXPIRED');
+  if (saved.user_id !== user.id) failure('ALREADY_LINKED');
   return row;
 }
 
@@ -184,7 +189,9 @@ export async function handleNotification(env, signedPayload, now = Date.now()) {
   const status = await fetchSubscription(env, String(originalTransactionId), now, info.environment || data.environment);
   const row = await readSubscriptionStatus(env, status, String(originalTransactionId), now);
   if (row.appAccountToken && row.appAccountToken !== userId) failure('ALREADY_LINKED');
-  await db.upsertSubscription(env, { ...row, user_id: userId });
+  const saved = await db.upsertSubscription(env, { ...row, user_id: userId }, { requireLiveOwner: true });
+  if (!saved) return json({ ok: true, ignored: 'unknown-transaction' }, 202);
+  if (saved.user_id !== userId) failure('ALREADY_LINKED');
   await db.markWebhookEvent(env, eventId, now);
   return json({ ok: true });
 }

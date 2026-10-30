@@ -10,7 +10,7 @@ import { pushConfigured,preferences,setPreferences,registerDevice,deleteDevice }
 import { roomInvitation,respondRoomInvitation } from './room-invitations.mjs';
 const body=req=>req.body?readJson(req,16384):Promise.resolve({});
 export async function routeLamma(request,env,path,id,sessionId,context){const method=request.method;
-  if(path==='/capabilities'&&method==='GET')return json({groups:true,stickers:true,voiceMessages:!!env.SOCIAL_AUDIO,binaryVoiceUpload:!!env.SOCIAL_AUDIO,liveCalls:liveKitConfigured(env),pushNotifications:pushConfigured(env),maxGroupMembers:12,maxVoiceDurationMs:120000,maxVoiceBytes:MAX_AUDIO_BYTES});
+  if(path==='/capabilities'&&method==='GET')return json({groups:true,groupMessageSummary:true,stickers:true,voiceMessages:!!env.SOCIAL_AUDIO,binaryVoiceUpload:!!env.SOCIAL_AUDIO,liveCalls:liveKitConfigured(env),pushNotifications:pushConfigured(env),maxGroupMembers:12,maxVoiceDurationMs:120000,maxVoiceBytes:MAX_AUDIO_BYTES});
   if(path==='/preferences'){if(method==='GET')return json(await preferences(env,id));if(method==='PUT')return json(await setPreferences(env,id,await body(request)));}
   if(path==='/devices'&&method==='PUT')return json(await registerDevice(env,id,sessionId,await body(request)));
   let m=/^\/devices\/([A-Za-z0-9_-]+)$/.exec(path);if(m&&method==='DELETE'){await deleteDevice(env,id,m[1],sessionId);return json({ok:true});}

@@ -129,12 +129,25 @@ function checkNonce(payload, state) {
 
 // Apple documents email_verified as a Boolean or the strings "true"/"false".
 const unverifiedEmail = (value) => value === false || value === 'false';
-async function readForm(request, max = MAX_BODY) {
+async function readTextBounded(request, max, tooLargeStatus = 400) {
   const declared = Number(request.headers.get('content-length'));
-  if (Number.isFinite(declared) && declared > max) failure('INVALID');
-  const text = await request.text();
-  if (text.length > max) failure('INVALID');
-  return new URLSearchParams(text);
+  if (Number.isFinite(declared) && declared > max) throw new RoomError('INVALID', tooLargeStatus);
+  const reader = request.body?.getReader();
+  if (!reader) return '';
+  const chunks = []; let length = 0;
+  for (;;) {
+    const { value, done } = await reader.read();
+    if (done) break;
+    length += value.byteLength;
+    if (length > max) { await reader.cancel().catch(() => {}); throw new RoomError('INVALID', tooLargeStatus); }
+    chunks.push(value);
+  }
+  const bytes = new Uint8Array(length); let at = 0;
+  for (const chunk of chunks) { bytes.set(chunk, at); at += chunk.byteLength; }
+  return new TextDecoder().decode(bytes);
+}
+async function readForm(request, max = MAX_BODY) {
+  return new URLSearchParams(await readTextBounded(request, max));
 }
 async function callbackApple(request, env, url, now) {
   const form = await readForm(request);
@@ -203,9 +216,23 @@ async function appleNative(request, env, now) {
 }
 
 async function signout(request, env, now) {
+  // Older clients retire only the presented bearer; a successor may already own
+  // an independent native media binding. New clients explicitly log out the
+  // whole current-device rotation chain. An empty transport body remains legacy.
+  const raw = await readTextBounded(request, 1024, 413);
+  let revokeReplacements = false;
+  if (raw) {
+    if (!request.headers.get('content-type')?.toLowerCase().startsWith('application/json')) throw new RoomError('INVALID', 415);
+    let body;
+    try { body = JSON.parse(raw); } catch { failure('INVALID'); }
+    if (!body || typeof body !== 'object' || Array.isArray(body)
+      || Object.hasOwn(body, 'revokeReplacements') && typeof body.revokeReplacements !== 'boolean') failure('INVALID');
+    revokeReplacements = body.revokeReplacements === true;
+  }
   const found = await readSession(env, request, { now, rotate: false });
   if (found) {
-    await db.revokeSession(env, found.session.id, now);
+    if (revokeReplacements) await db.revokeSessionChain(env, found.session.id, now);
+    else await db.revokeSession(env, found.session.id, now);
     await recheckMafiaAuthorization(env,found.user.id);
     // Tell the live hub at once, so its sockets need not poll the session table.
     await notifyUsers(env, [found.user.id], { type: 'session_revoked', sessionId: found.session.id });
@@ -288,10 +315,7 @@ async function paddlePortal(request, env, now) {
 }
 async function paddleWebhook(request, env, now) {
   await assertPaddleWebhookIp(request, env);
-  const declared = Number(request.headers.get('content-length'));
-  if (Number.isFinite(declared) && declared > 262_144) failure('INVALID');
-  const raw = await request.text();
-  if (raw.length > 262_144) failure('INVALID');
+  const raw = await readTextBounded(request, 262_144);
   await paddle.verifySignature(env, request.headers.get('paddle-signature'), raw, now);
   let event;
   try { event = JSON.parse(raw); } catch { return failure('INVALID'); }
@@ -322,8 +346,9 @@ async function applyPaddleEvent(env, event, eventId, now) {
   if (revocation) {
     const existing = await db.subscriptionByExternal(env, 'paddle', revocation.subscriptionId);
     if (existing && inBillingEnvironment(env, existing)) {
-      await db.upsertSubscription(env, { source: 'paddle', external_id: existing.external_id, user_id: existing.user_id, product: existing.product,
-        status: 'revoked', until: 0, will_renew: false, environment: existing.environment, occurred_at: Math.max(Number(existing.occurred_at) || 0, revocation.occurredAt) });
+      const saved = await db.upsertSubscription(env, { source: 'paddle', external_id: existing.external_id, user_id: existing.user_id, product: existing.product,
+        status: 'revoked', until: 0, will_renew: false, environment: existing.environment, occurred_at: Math.max(Number(existing.occurred_at) || 0, revocation.occurredAt) }, { requireExistingOwner: true });
+      if (!saved) return json({ ok: true, ignored: 'unknown-user' }, 202);
       try { await paddle.cancelSubscription(env, existing.external_id, { verifyFirst: true }); } catch { /* the next subscription event settles it */ }
     }
     await db.markWebhookEvent(env, eventId, now);
@@ -344,7 +369,8 @@ async function applyPaddleEvent(env, event, eventId, now) {
   if (!userId || !(await db.userById(env, userId))) return json({ ok: true, ignored: 'unknown-user' });
   if (existing && existing.user_id !== userId) failure('ALREADY_LINKED');
   if (row.customerId) await db.setPaddleCustomer(env, userId, row.customerId, now);
-  await db.upsertSubscription(env, { ...row, user_id: userId });
+  const saved = await db.upsertSubscription(env, { ...row, user_id: userId }, { requireExistingOwner: true });
+  if (!saved) return json({ ok: true, ignored: 'unknown-user' }, 202);
   // لا نؤكد المعالجة قبل نجاح كل الكتابات: يسمح ذلك بإعادة المحاولة بعد أي عطل.
   await db.markWebhookEvent(env, eventId, now);
   return json({ ok: true });

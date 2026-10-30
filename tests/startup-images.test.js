@@ -9,7 +9,7 @@ import { CATS } from '../src/data/categories/index.js';
 import pictures from '../src/data/games/fabraka/pictures.json' with { type: 'json' };
 import { categoryCoverSource } from '../src/games/badeeha/covers.js';
 import { collectStartupImages, startupImageUrls } from '../src/shared/media/startup-images.js';
-import { mediaVersions } from '../scripts/lib.mjs';
+import { mediaVersions, encodeMediaVersions } from '../scripts/lib.mjs';
 
 const root = fileURLToPath(new URL('..', import.meta.url));
 
@@ -90,7 +90,7 @@ test('bundled startup URLs use the same versioned paths as the game renderers un
       export { categoryCoverSource } from './src/games/badeeha/covers.js';
       export { questionMedia, resolveMedia } from './src/shared/media/resolve.js';`, resolveDir: root },
     bundle: true, write: false, format: 'iife', globalName: 'Images', platform: 'browser',
-    define: { __MAYDAN_MEDIA_VERSIONS__: JSON.stringify(versions) },
+    define: { __MAYDAN_MEDIA_VERSIONS__: JSON.stringify(encodeMediaVersions(versions)) },
   });
   const context = {};
   vm.runInNewContext(result.outputFiles[0].text, context);

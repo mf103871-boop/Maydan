@@ -23,6 +23,7 @@ import { routeDesign, isPublicDesignAssetPath } from './design/router.mjs';
 import { routePlus } from './plus/router.mjs';
 import { routeTutorials } from './tutorials/router.mjs';
 import { routeOnlineDirectory, cleanupOnlineDirectory } from './online-directory.mjs';
+import { withRequestMetrics } from './performance.mjs';
 export { LammaJobs } from './lamma/jobs.mjs';
 export { SocialHub } from './social/realtime.mjs';
 export { Room };
@@ -93,6 +94,9 @@ async function roomAccountId(request, env) {
   catch (error) { if (error.status === 401) return null; throw error; }
 }
 export async function routeRequest(request, env, context) {
+  return withRequestMetrics(request, env, measured => routeMeasuredRequest(request, measured, context));
+}
+async function routeMeasuredRequest(request, env, context) {
   const url = new URL(request.url);
   if (url.pathname === '/api/app-policy/ios') return iosAppPolicy(request, env);
   if(url.pathname==='/api/social/livekit/webhook'){try{return await liveKitWebhook(request,env);}catch(error){return errorResponse(error);}}

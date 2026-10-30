@@ -374,6 +374,27 @@ function ActionPanel({ state, you, me, members, disabled, act, selection }) {
   </section>;
 }
 
+function ResultDisclosure({ className, summary, children }) {
+  const [open,setOpen] = useState(false);
+  return <details className={className} onToggle={event=>setOpen(event.currentTarget.open)}><summary>{summary}</summary>{open&&children}</details>;
+}
+
+function MafiaResults({ state, members, title, isHost, disabled, act, tutorial, voice }) {
+  const players = Array.isArray(state.replay) ? state.replay : state.replay?.players || state.replay?.roles || [];
+  const events = state.replay?.events || [];
+  return <section data-design-id="results" className="mafia-results">
+    <div className="mafia-result-summary"><MafiaSceneArt sceneId="ending" className="mafia-result-art"/><div className="mafia-result-copy"><h2>{title}</h2><p>{state.reason==='voice_unavailable'?'تعذّر تأمين قنوات الصوت. لا نفتح قناة قد تكشف الأسرار.':players.length?'انكشفت الأدوار؛ المحادثات السرية تظل خاصة.':'انتهى المجلس دون أدوار معلنة.'}</p>{players.length>0&&<small>{ar(players.length)} لاعبًا · اليوم {ar(state.round||1)}</small>}</div>
+      <div className="mafia-result-actions">{!tutorial&&isHost&&state.phase==='over'&&<Button data-design-id="restart" variant="primary" disabled={disabled} full onClick={()=>act('restart')}>إلى الانتظار · مجلس جديد</Button>}{!tutorial&&!isHost&&state.phase==='over'&&<p role="status">بانتظار صاحب المجلس لبدء مجلس جديد.</p>}{voice.onReturnToCall&&voice.previousCall&&<Button data-design-id="return-call" onClick={voice.onReturnToCall}>العودة لمكالمة الشلّة</Button>}</div>
+    </div>
+    {players.length>0&&<div className="mafia-result-section-heading"><h3>تشكيلة المجلس</h3><small>افتح البطاقة للتفاصيل</small></div>}
+    <div data-design-id="recap" className="mafia-recap">{players.map((item,i)=>{
+      const role = MAFIA_ROLES[item.roleId], player = members.find(member=>member.id===(item.playerId||item.id)), converted = item.initialFaction&&item.initialFaction!==item.faction;
+      return <ResultDisclosure key={`${item.playerId||item.id||i}:${item.roleId}`} className="mafia-recap-player" summary={<><span className="mafia-result-seat" aria-hidden="true">{ar(player?.seat||i+1)}</span><span className="mafia-result-player-copy"><b><bdi>{player?.name||'لاعب'}</bdi></b><span>{role?.name||'دور'}</span><small>{factionLabel(item.faction)}{converted?' · تغيّر انتماؤه':''}</small></span></>}><div className="mafia-result-player-detail"><MafiaRoleArt roleId={item.roleId} className="mafia-result-player-art"/>{role?.description&&<p>{role.description}</p>}{converted&&<small>بدأ مع {factionLabel(item.initialFaction)}، وانتهى مع {factionLabel(item.faction)}.</small>}</div></ResultDisclosure>;
+    })}</div>
+    {events.length>0&&<ResultDisclosure className="mafia-result-replay" summary={<>أحداث المباراة <small>{ar(events.length)} حدثًا</small></>}><ol>{events.map((event,i)=><li key={event.id||i}>{eventText(event,members)}</li>)}</ol></ResultDisclosure>}
+  </section>;
+}
+
 export function MafiaMatchView({ state, me, isHost, disabled = false, act = noop, clockOffset = 0, accountId = '', voice = {}, onSafety, clock, tutorial, rewardServer, sound, connection = 'connected' }) {
   const hidden = useMafiaPrivacy();
   const ownerId = accountId || me?.id || '';
@@ -420,7 +441,7 @@ export function MafiaMatchView({ state, me, isHost, disabled = false, act = noop
     </header>
     {!observer&&state.settings?.voiceMode!=='off'&&isActive(state)&&<MafiaVoice voice={voice} state={state}/>}
     <main className={`mafia-activity ${finished?'is-results':''}`}>
-      {finished&&<section data-design-id="results" className="mafia-results"><MafiaSceneArt sceneId="ending" className="mafia-result-art"/><h2>{resultTitle}</h2><p>{state.reason === 'voice_unavailable' ? 'تعذّر تأمين قنوات الصوت. لا نفتح قناة قد تكشف الأسرار.' : 'تُكشف الأدوار والأحداث المهمة هنا؛ المحادثات السرية تبقى خاصة.'}</p><div data-design-id="recap" className="mafia-recap">{(Array.isArray(state.replay) ? state.replay : state.replay?.players || state.replay?.roles || []).map((item,i) => <article key={item.id || i}><MafiaRoleArt roleId={item.roleId}/><b>{nameOf(members,item.playerId || item.id)}</b><span>{MAFIA_ROLES[item.roleId]?.name || 'دور'}</span><small>{factionLabel(item.faction)}{item.initialFaction && item.initialFaction!==item.faction ? ` · بدأ مع ${factionLabel(item.initialFaction)}` : ''}</small></article>)}</div>{state.replay?.events && <ol>{state.replay.events.map((event,i) => <li key={event.id || i}>{eventText(event,members)}</li>)}</ol>}{!tutorial && isHost && state.phase === 'over' && <Button data-design-id="restart" disabled={disabled} full onClick={() => act('restart')}>إلى الانتظار · مجلس جديد</Button>}{voice.onReturnToCall && voice.previousCall && <Button data-design-id="return-call" onClick={voice.onReturnToCall}>العودة لمكالمة الشلّة</Button>}</section>}
+      {finished&&<MafiaResults key={notesKey} state={state} members={members} title={resultTitle} isHost={isHost} disabled={disabled} act={act} tutorial={tutorial} voice={voice}/>}
       {!finished&&observer&&<p data-design-id="observer-delay" data-design-required="true" className="mafia-observer-delay" role="status">مشاهدة متأخرة ٣٠ ثانية · دون صوت أو إرسال للاعبين</p>}
       {!finished&&state.phase==='defense'&&<p data-design-id="defense" className="mafia-notice">الدفاع لـ <b>{nameOf(members,state.nomineeId)}</b> · يستمع المجلس</p>}
       {!finished&&!observer&&you?.roleId&&!me?.alive&&<p className="mafia-observer-delay" role="status">أنت الآن تتابع المجلس · لا رسائل للأحياء</p>}

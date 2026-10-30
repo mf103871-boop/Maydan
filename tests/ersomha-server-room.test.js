@@ -7,6 +7,7 @@ import { bindSeatAccount } from '../server/room-stats.mjs';
 import { getErsomhaPool } from '../server/ersomha-content.mjs';
 import { ersomhaAccountHash } from '../server/ersomha-history.mjs';
 import { sha256 } from '../server/protocol.mjs';
+import { issueSession } from '../server/accounts/session.mjs';
 
 class Storage {
   constructor() { this.data = new Map(); this.writes = []; this.failRoomOnce = false; this.failHeadOnce = false; }
@@ -23,7 +24,7 @@ class Storage {
   async transaction(fn) { const data = structuredClone(this.data), alarm = this.alarm; try { return await fn(this); } catch (e) { this.data = data; this.alarm = alarm; throw e; } }
 }
 class Socket {
-  constructor(id, storage) { this.readyState = 1; this.a = { id, seenAt: Date.now(), windowAt: Date.now(), count: 1 }; this.messages = []; this.storage = storage; }
+  constructor(id, storage, identity) { this.readyState = 1; this.a = { id, seenAt: Date.now(), windowAt: Date.now(), count: 1, ...identity }; this.messages = []; this.storage = storage; }
   serializeAttachment(value) { this.a = structuredClone(value); }
   deserializeAttachment() { return structuredClone(this.a); }
   send(raw) {
@@ -34,14 +35,15 @@ class Socket {
   close(code, reason) { this.readyState = 3; this.closed = { code, reason }; }
 }
 async function fixture({ count = 3, trial = false, settings = {} } = {}) {
-  const DB = createLocalD1(), now = Date.now(), storage = new Storage(), profiles = [];
-  const observed = { reads: 0, failHistory: false };
+  const DB = createLocalD1(), now = Date.now(), storage = new Storage(), profiles = [], sessions = [];
+  const observed = { reads: 0, statements: [], failHistory: false };
   const env = { DB: {
-    prepare(sql) { observed.reads++; if (observed.failHistory && /ersomha_seen/.test(sql)) throw new Error('history DB unavailable'); return DB.prepare(sql); },
+    prepare(sql) { observed.reads++; observed.statements.push(sql); if (observed.failHistory && /ersomha_seen/.test(sql)) throw new Error('history DB unavailable'); return DB.prepare(sql); },
     batch: statements => DB.batch(statements),
   } };
   for (let n = 0; n < count; n++) {
     await DB.prepare('INSERT INTO users(id,name,created_at,updated_at) VALUES(?,?,?,?)').bind(`account-${n}`, `لاعب ${n}`, now, now).run();
+    sessions.push(await issueSession({ DB }, `account-${n}`));
     profiles.push({ id: `seat-${n}`, tokenHash: `token-${n}`, name: `لاعب ${n}`, avatar: n % 4, game: 'ersomha', settings });
   }
   const state = createRoom('123456', profiles[0], now);
@@ -50,7 +52,9 @@ async function fixture({ count = 3, trial = false, settings = {} } = {}) {
   state.roomTrialGate = trial ? { userId: 'account-0', device: null, game: 'ersomha', premium: false } : null;
   state.roomTrialClaim = crypto.randomUUID(); state.trialOwnerId = 'seat-0'; state.trialStarted = false;
   await storage.put('room', state);
-  const sockets = profiles.map(p => new Socket(p.id, storage));
+  // These fixtures start after the real handshake. Carry its live account
+  // binding as well as the seat identity; authorization is never stubbed out.
+  const sockets = profiles.map((p, n) => new Socket(p.id, storage, { accountUserId: `account-${n}`, accountSessionId: sessions[n].id, accountExpiresAt: sessions[n].expiresAt }));
   const ctx = { storage, blockConcurrencyWhile: fn => fn(), getWebSockets: () => sockets.filter(s => s.readyState === 1) };
   let room = new Room(ctx, env); await room.ready; let request = 0;
   async function command(n, type, fields = {}) {
@@ -169,13 +173,23 @@ test('a departed participant releases only that account after the leave is durab
     assert.equal((await f.DB.prepare('SELECT COUNT(*) AS n FROM ersomha_leases WHERE expires_at>?').bind(Date.now()).first()).n, 3);
   } finally { f.close(); }
 });
-test('80 ms drawing cadence uses durable deltas with no full-state broadcast, D1 call or room rewrite', async () => {
+test('80 ms drawing cadence uses two fixed authorization reads and no bank/history/stats work, full-state broadcast or room rewrite', async () => {
   const f = await fixture(); const realNow = Date.now; let now = realNow();
   try {
     await begin(f); now = realNow(); Date.now = () => now;
+    assert.equal((await f.command(0, 'drawing_sync')).ok, true); // Warm the unchanged-room path.
     f.sockets.forEach(s => { s.messages = []; }); f.storage.writes = []; const reads = f.observed.reads, revision = f.room.room.revision;
+    const sqlAt = f.observed.statements.length;
     for (let n = 0; n < 80; n++) { now += 80; assert.equal((await f.command(0, 'drawing_batch', stroke(n))).ok, true); }
-    assert.equal(f.observed.reads, reads); assert.equal(f.room.room.revision, revision);
+    const statements = f.observed.statements.slice(sqlAt);
+    const actor = statements.filter(sql => /^SELECT 1 FROM sessions WHERE id=\?/.test(sql));
+    const recipients = statements.filter(sql => /^SELECT id,user_id,expires_at,revoked_at FROM sessions WHERE id IN/.test(sql));
+    assert.equal(actor.length, 80, 'one live sender read per batch');
+    assert.equal(recipients.length, 80, 'one shared recipient read per batch, never per viewer');
+    assert.equal(f.observed.reads - reads, 160);
+    assert.equal(statements.length, actor.length + recipients.length, 'no bank/history/stats or other SQL enters the steady drawing path');
+    assert.equal(statements.some(sql => /^(?:INSERT|UPDATE|DELETE|REPLACE)\b/i.test(sql)), false);
+    assert.equal(f.room.room.revision, revision);
     assert.equal(f.storage.writes.includes('room'), false);
     for (const socket of f.sockets) {
       assert.equal(socket.messages.filter(m => m.type === 'drawing' && m.kind === 'append').length, 80);

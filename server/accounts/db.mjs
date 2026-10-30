@@ -54,15 +54,60 @@ export const identitiesOf = (env, userId) => all(env, 'SELECT provider, subject,
 
 // ── الجلسات ─────────────────────────────────────────────────────────────────
 export const sessionById = (env, id) => first(env, 'SELECT * FROM sessions WHERE id = ?', id);
+// One primary D1 snapshot, private to the caller: never put this principal in a
+// cross-request cache or expose its joined moderation columns as session data.
+export async function sessionPrincipalById(env, id) {
+  const row = await first(env, `SELECT s.*,u.id AS principal_id,u.name AS principal_name,
+    u.email AS principal_email,u.created_at AS principal_created_at,
+    ms.user_id AS principal_suspended,ms.reason AS principal_reason,ms.created_at AS principal_since
+    FROM sessions s JOIN users u ON u.id=s.user_id
+    LEFT JOIN moderation_suspensions ms ON ms.user_id=u.id WHERE s.id=?`, id);
+  if (!row) return null;
+  const { principal_id,principal_name,principal_email,principal_created_at,
+    principal_suspended,principal_reason,principal_since,...session } = row;
+  return { session,user:{id:principal_id,name:principal_name,email:principal_email,created_at:principal_created_at},
+    suspension:principal_suspended ? {reason:principal_reason,since:principal_since} : null };
+}
 export async function insertSession(env, row) {
   await run(env, 'INSERT INTO sessions (id, user_id, secret_hash, client, created_at, last_seen, expires_at) VALUES (?, ?, ?, ?, ?, ?, ?)',
     row.id, row.user_id, row.secret_hash, row.client || null, row.created_at, row.last_seen, row.expires_at);
   return row;
 }
-export const touchSession = (env, id, now) => run(env, 'UPDATE sessions SET last_seen = ? WHERE id = ?', now, id);
+// Insert the replacement and retire its exact predecessor in one D1 batch.
+// A sign-out or competing rotation that won first must not be overwritten.
+export async function rotateSession(env, previous, next, now, revokedAt) {
+  const clock = "MAX(?,CAST(ROUND((julianday('now')-2440587.5)*86400000) AS INTEGER))";
+  const guard = `s.id=? AND s.user_id=? AND s.secret_hash=? AND s.expires_at>${clock} AND s.revoked_at IS NULL AND s.replaced_by IS NULL
+    AND EXISTS(SELECT 1 FROM users WHERE id=?) AND NOT EXISTS(SELECT 1 FROM account_deletions WHERE user_id=?)`;
+  const args = [previous.id, previous.user_id, previous.secret_hash, now, previous.user_id, previous.user_id];
+  const result = await env.DB.batch([
+    statement(env, `INSERT INTO sessions (id,user_id,secret_hash,client,created_at,last_seen,expires_at)
+      SELECT ?,?,?,?,?,?,? WHERE EXISTS(SELECT 1 FROM sessions s WHERE ${guard})`,
+    [next.id,next.user_id,next.secret_hash,next.client,next.created_at,next.last_seen,next.expires_at,...args]),
+    // The inserted random ID/hash is the authorization receipt inside this
+    // atomic batch. Do not re-evaluate a deadline between its two statements.
+    statement(env, `UPDATE sessions AS s SET revoked_at=?,replaced_by=? WHERE s.id=? AND s.user_id=? AND s.secret_hash=? AND s.revoked_at IS NULL AND s.replaced_by IS NULL
+      AND EXISTS(SELECT 1 FROM sessions n WHERE n.id=? AND n.user_id=? AND n.secret_hash=?)`,
+    [revokedAt,next.id,previous.id,previous.user_id,previous.secret_hash,next.id,next.user_id,next.secret_hash]),
+  ]);
+  return changed(result[0]) && changed(result[1]);
+}
+export const touchSession = (env, id, now) => run(env, `UPDATE sessions SET last_seen=?
+  WHERE id=? AND expires_at>? AND revoked_at IS NULL AND replaced_by IS NULL`, now, id, now);
 export const retireSession = (env, id, revokedAt, replacedBy) =>
   run(env, 'UPDATE sessions SET revoked_at = ?, replaced_by = ? WHERE id = ?', revokedAt, replacedBy || null, id);
-export const revokeSession = (env, id, now) => run(env, 'UPDATE sessions SET revoked_at = ? WHERE id = ?', now, id);
+// Exact revocation stays compatible with callers retiring an already-adopted bearer.
+export const revokeSession = (env, id, now) => run(env, `UPDATE sessions
+  SET revoked_at=CASE WHEN revoked_at IS NULL OR revoked_at>? THEN ? ELSE revoked_at END
+  WHERE id=?`, now, now, id);
+// Explicit current-device logout may also revoke this bearer's rotation successors.
+export const revokeSessionChain = (env, id, now) => run(env, `WITH RECURSIVE session_chain(id,user_id) AS (
+  SELECT id,user_id FROM sessions WHERE id=?
+  UNION
+  SELECT next.id,next.user_id FROM session_chain chain JOIN sessions previous ON previous.id=chain.id
+    JOIN sessions next ON next.id=previous.replaced_by AND next.user_id=chain.user_id
+) UPDATE sessions SET revoked_at=CASE WHEN revoked_at IS NULL OR revoked_at>? THEN ? ELSE revoked_at END
+  WHERE id IN (SELECT id FROM session_chain)`, id, now, now);
 export const revokeAllSessions = (env, userId, now) => run(env, 'UPDATE sessions SET revoked_at = ? WHERE user_id = ? AND revoked_at IS NULL', now, userId);
 
 // ── رموز الدخول لمرة واحدة ──────────────────────────────────────────────────
@@ -100,22 +145,29 @@ export const subscriptionsOf = (env, userId) =>
 export const subscriptionByExternal = (env, source, externalId) =>
   first(env, 'SELECT * FROM subscriptions WHERE source = ? AND external_id = ?', source, externalId);
 // التحديث رتيب: إشعار قديم يصل متأخرًا لا يُرجع الحالة إلى الوراء (occurred_at).
-export async function upsertSubscription(env, row) {
+export async function upsertSubscription(env, row, { requireLiveOwner = false, requireExistingOwner = false } = {}) {
   const now = Date.now();
   const environment = row.source === 'paddle' ? row.environment || paddleEnvironmentOf(env) : row.environment || null;
   if (row.source === 'paddle') {
     const existing = await subscriptionByExternal(env, row.source, row.external_id);
     if (existing?.environment && existing.environment !== environment) failure('NOT_ELIGIBLE');
   }
+  const needsOwner = requireLiveOwner || requireExistingOwner;
+  const insertion = needsOwner
+    ? `SELECT ?, ?, ?, ?, ?, ?, ?, ?, ?, ? WHERE EXISTS(SELECT 1 FROM users WHERE id=?)${requireLiveOwner ? ' AND NOT EXISTS(SELECT 1 FROM account_deletions WHERE user_id=?)' : ''}`
+    : 'VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)';
   await run(env, `INSERT INTO subscriptions (source, external_id, user_id, product, status, until, will_renew, environment, occurred_at, updated_at)
-    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+    ${insertion}
     ON CONFLICT (source, external_id) DO UPDATE SET
       user_id = excluded.user_id, product = excluded.product, status = excluded.status, until = excluded.until,
       will_renew = excluded.will_renew, environment = excluded.environment, occurred_at = excluded.occurred_at, updated_at = excluded.updated_at
     WHERE excluded.occurred_at >= subscriptions.occurred_at AND excluded.user_id = subscriptions.user_id
       AND (subscriptions.source != 'paddle' OR subscriptions.environment IS NULL OR subscriptions.environment = excluded.environment)`.replace(/\s+/g, ' '),
   row.source, row.external_id, row.user_id, row.product || null, row.status || null,
-  Number(row.until) || 0, row.will_renew ? 1 : 0, environment, Number(row.occurred_at) || now, now);
+  Number(row.until) || 0, row.will_renew ? 1 : 0, environment, Number(row.occurred_at) || now, now,
+  ...(needsOwner ? [row.user_id] : []), ...(requireLiveOwner ? [row.user_id] : []));
+  if (needsOwner) return first(env, `SELECT s.* FROM subscriptions s JOIN users u ON u.id=s.user_id
+    WHERE s.source=? AND s.external_id=?${requireLiveOwner ? ' AND NOT EXISTS(SELECT 1 FROM account_deletions WHERE user_id=s.user_id)' : ''}`, row.source, row.external_id);
   return subscriptionByExternal(env, row.source, row.external_id);
 }
 

@@ -5,6 +5,7 @@ import { all,first,run,stmt,ident,scopeOf,scopeAllowed,requireScope,unblocked,cl
 import { job,wakeJobs } from './notifications.mjs';
 import { getCosmetic } from '../../src/plus/catalog.js';
 import { plusActiveFor } from '../plus/access.mjs';
+import { timed } from '../performance.mjs';
 export const MAX_AUDIO_BYTES=3*1024*1024;
 export const MAX_AUDIO_MS=120000;
 export const attachmentView=r=>({id:r.id,mimeType:r.mime_type,durationMs:r.duration_ms,byteLength:r.byte_length,url:`/api/social/attachments/${r.id}/content`});
@@ -53,7 +54,7 @@ export async function uploadAttachment(env,id,body,inputBytes){
   const sameHash=row.content_hash===hash||(!row.content_hash.startsWith('bin1:')&&row.content_hash===await sha256(body.dataBase64??base64Bytes(bytes)));
   if(row.deleted_at||!sameHash||row.scope!==scope||row.conversation_id!==conversationId||row.duration_ms!==body.durationMs||row.mime_type!==mime)fail('CONFLICT',409);
   if(!row.ready_at){
-    await env.SOCIAL_AUDIO.put(key,bytes,{httpMetadata:{contentType:mime},customMetadata:{attachmentId}});
+    await timed(env,'r2_put',()=>env.SOCIAL_AUDIO.put(key,bytes,{httpMetadata:{contentType:mime},customMetadata:{attachmentId}}));
     await run(env,`UPDATE social_attachments SET ready_at=? WHERE id=? AND deleted_at IS NULL AND ${scopeAllowed(scope,ident(conversationId),ident(id))}`,Date.now(),attachmentId);
     const ready=await first(env,'SELECT ready_at,deleted_at FROM social_attachments WHERE id=?',attachmentId);
     if(!ready?.ready_at||ready.deleted_at){await env.DB.batch([job(env,`audio-${attachmentId}`,'r2_delete',{key})]);await wakeJobs(env);fail('NOT_FOUND',404);}
@@ -118,7 +119,7 @@ async function authorizedAttachment(env,id,attachmentId){
 export async function audioResponse(env,id,attachmentId,request){
   if(!env.SOCIAL_AUDIO)fail('AUDIO_UNAVAILABLE',503);const a=await authorizedAttachment(env,id,userId(attachmentId));
   let range=null;const raw=request.headers.get('range');if(raw){const m=/^bytes=(\d+)-(\d*)$/.exec(raw);if(!m)fail('INVALID',416);const start=Number(m[1]),end=m[2]?Math.min(Number(m[2]),a.byte_length-1):a.byte_length-1;if(start>end||start>=a.byte_length)fail('INVALID',416);range={offset:start,length:end-start+1};}
-  const object=await env.SOCIAL_AUDIO.get(a.object_key,range?{range}:undefined);if(!object)fail('NOT_FOUND',404);
+  const object=await timed(env,'r2_get',()=>env.SOCIAL_AUDIO.get(a.object_key,range?{range}:undefined));if(!object)fail('NOT_FOUND',404);
   // R2 can await network IO while a block/removal/delete commits in D1.
   await authorizedAttachment(env,id,a.id);
   return new Response(object.body,{status:range?206:200,headers:{'content-type':a.mime_type,'content-length':String(range?range.length:a.byte_length),'cache-control':'private, no-store','x-content-type-options':'nosniff','accept-ranges':'bytes',...(range?{'content-range':`bytes ${range.offset}-${range.offset+range.length-1}/${a.byte_length}`}:{})}});

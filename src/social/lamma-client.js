@@ -18,6 +18,7 @@ export const emptyLamma = () => ({ groups: [], groupInvites: [], groupConversati
   error: '', offline: false, preferences: { ...DEFAULT_PREFERENCES }, capabilities: { voiceMessages: false, liveCalls: false, pushNotifications: false } });
 const enc = encodeURIComponent;
 const inaccessible = e => ['NOT_FOUND', 'FORBIDDEN', 'BLOCKED'].includes(e?.code);
+const stale = (message = 'تغيّرت صلاحية المحادثة.') => Object.assign(new Error(message), { code: 'STALE' });
 const normalizedMembers = members => {
   const seen = new Set();
   return (Array.isArray(members) ? members : []).flatMap(member => {
@@ -47,11 +48,11 @@ export class LammaClient {
     this.getSnapshot = () => this.state;
   }
   update(patch) { this.state = { ...this.state, ...patch }; for (const fn of [...this.listeners]) fn(); }
-  assert(epoch) { if (epoch !== this.epoch || !this.userId) throw Object.assign(new Error('تغيّر الحساب.'), { code: 'STALE' }); }
+  assert(epoch) { if (epoch !== this.epoch || !this.userId) throw stale('تغيّر الحساب.'); }
   assertVisibility(epoch, authorizationEpoch, id, version) {
     this.assert(epoch);
     if (authorizationEpoch !== this.authorizationEpoch || (id !== undefined && version !== this.groupVersions.get(id)))
-      throw Object.assign(new Error('تغيّرت صلاحية المحادثة. أعد تحميلها.'), { code: 'STALE' });
+      throw stale('تغيّرت صلاحية المحادثة. أعد تحميلها.');
   }
   async call(path, options) {
     const epoch = this.epoch; this.assert(epoch);
@@ -71,11 +72,11 @@ export class LammaClient {
   assertCallMembers(epoch, authorizationEpoch, generation, id) {
     this.assertVisibility(epoch, authorizationEpoch);
     if (generation !== this.callMembersGeneration || this.callContext?.scope !== 'group' || this.callContext.conversationId !== id)
-      throw Object.assign(new Error('تغيّرت المكالمة.'), { code: 'STALE' });
+      throw stale('تغيّرت المكالمة.');
     if (this.revokedCallGroups.has(id)) throw Object.assign(new Error(ERRORS.FORBIDDEN), { code: 'FORBIDDEN' });
   }
   invalidateAudio() { this.authorizationEpoch++; this.invalidateCallMembers(); for (const url of this.urls.values()) this.revokeURL(url); this.urls.clear(); }
-  stop() { this.epoch++; this.userId = null; this.activeGroup = null; this.callContext = null; this.refreshing = null; this.reads.clear(); this.groupVersions.clear(); this.pendingText.clear(); this.sendingText.clear(); this.pendingInvites.clear(); this.pendingVoice = new WeakMap(); this.pendingGroupCreates.clear(); this.pendingCalls.clear(); this.revokedCallGroups.clear(); this.invalidateAudio(); this.update(emptyLamma()); }
+  stop() { this.epoch++; this.userId = null; this.activeGroup = null; this.callContext = null; this.refreshing = null; this.messageRefresh = null; this.reads.clear(); this.groupVersions.clear(); this.pendingText.clear(); this.sendingText.clear(); this.pendingInvites.clear(); this.pendingVoice = new WeakMap(); this.pendingGroupCreates.clear(); this.pendingCalls.clear(); this.revokedCallGroups.clear(); this.invalidateAudio(); this.update(emptyLamma()); }
   async refresh({ quiet = false } = {}) {
     if (!this.userId) return;
     if (this.refreshing) return this.refreshing;
@@ -87,7 +88,7 @@ export class LammaClient {
           this.call('/groups'), this.call('/preferences'), this.call('/capabilities'), this.call('/calls'),
         ]);
         this.assertVisibility(epoch, authorizationEpoch);
-        if (groupsRevision !== this.groupsRevision) throw Object.assign(new Error('تحدّثت قائمة الشلل.'), { code: 'STALE' });
+        if (groupsRevision !== this.groupsRevision) throw stale('تحدّثت قائمة الشلل.');
         const allowed = new Set((groups.groups || []).map(g => g.id));
         // Removing the visible snapshot must also fence detail/history reads
         // already in flight, including quiet reads with no conversation entry.
@@ -111,7 +112,31 @@ export class LammaClient {
       } finally { if (epoch === this.epoch) this.refreshing = null; }
     })(); this.refreshing = task; return task;
   }
-  group(id, patch) { this.update({ groupConversations: { ...this.state.groupConversations, [id]: { messages: [], ...this.state.groupConversations[id], ...patch } } }); }
+  refreshGroupMessage(id) {
+    if (id !== this.activeGroup || this.state.capabilities.groupMessageSummary !== true) return this.refresh({ quiet: true });
+    const epoch = this.epoch, authorizationEpoch = this.authorizationEpoch;
+    let pending = this.messageRefresh;
+    if (pending?.id === id && pending.authorizationEpoch === authorizationEpoch) { pending.again = true; return pending.task; }
+    pending = { id, authorizationEpoch, again: false }; this.messageRefresh = pending;
+    pending.task = (async () => {
+      do {
+        pending.again = false; this.assertVisibility(epoch, authorizationEpoch);
+        if (this.activeGroup !== id) return;
+        try { await this.loadGroup(id, { quiet: true }); }
+        catch (error) {
+          this.assertVisibility(epoch, authorizationEpoch);
+          if (inaccessible(error)) {
+            this.groupsRevision++; this.invalidateAudio();
+            this.update({ groups: this.state.groups.filter(group => group.id !== id),
+              groupConversations: Object.fromEntries(Object.entries(this.state.groupConversations).filter(([key]) => key !== id)) });
+          }
+          if (error.code !== 'STALE' || !pending.again) throw error;
+        }
+      } while (pending.again);
+    })().finally(() => { if (this.messageRefresh === pending) this.messageRefresh = null; });
+    return pending.task;
+  }
+  group(id, patch, summary) { this.update({ ...(summary ? { groups: this.state.groups.map(group => group.id === id ? { ...group, ...summary } : group).sort((a, b) => (b.updatedAt || 0) - (a.updatedAt || 0) || a.id.localeCompare(b.id)) } : {}), groupConversations: { ...this.state.groupConversations, [id]: { messages: [], ...this.state.groupConversations[id], ...patch } } }); }
   publishGroupMessage(id, message) {
     // A history snapshot started before this acknowledgement must not erase it.
     this.groupVersions.set(id, (this.groupVersions.get(id) || 0) + 1);
@@ -165,7 +190,8 @@ export class LammaClient {
       const outbox = (this.state.groupConversations[id]?.messages || []).filter(message => !Number.isSafeInteger(message.seq) && message.senderId === this.userId);
       const messages = mergeMessages(outbox, authorized);
       for (const message of messages) if (Number.isSafeInteger(message.seq)) this.pendingText.delete(message.clientId);
-      this.group(id, { ...detail, ...history, hasMore: page.hasMore, nextBefore: page.nextBefore, messages, loading: false, loadingOlder: false, error: '' });
+      this.group(id, { ...detail, ...history, hasMore: page.hasMore, nextBefore: page.nextBefore, messages, loading: false, loadingOlder: false, error: '' },
+        this.state.capabilities.groupMessageSummary === true ? { ...detail.group, lastMessage: authorized.at(-1) || null } : null);
       if (this.callContext?.scope === 'group' && this.callContext.conversationId === id && callMembersGeneration === this.callMembersGeneration && !this.revokedCallGroups.has(id))
         this.update({ callMembers: { ...this.state.callMembers, [id]: normalizedMembers(detail.members) } });
       return this.state.groupConversations[id];
@@ -188,9 +214,33 @@ export class LammaClient {
     } catch (e) { if (epoch === this.epoch && version === this.groupVersions.get(id) && authorizationEpoch === this.authorizationEpoch) this.group(id, { loadingOlder: false, error: e.message }); throw e; }
   }
   async groupAction(id, suffix, method = 'POST', body = {}) {
-    const epoch = this.epoch;
+    const epoch = this.epoch, authorizationEpoch = this.authorizationEpoch;
     const result = await this.call(`/groups/${enc(id)}${suffix}`, { method, body }); this.assert(epoch);
-    this.invalidateAudio(); await this.refresh({ quiet: true }); this.assert(epoch); return result;
+    const current = authorizationEpoch === this.authorizationEpoch;
+    this.groupsRevision++; this.invalidateAudio();
+    const invite = /^\/invites\/([^/]+)\/(accept|reject)$/.exec(suffix);
+    const patch = { loading: false, error: '' };
+    if (invite) patch.groupInvites = this.state.groupInvites.filter(value => enc(value.id) !== invite[1]);
+    if (suffix === '/leave') {
+      this.groupVersions.set(id, (this.groupVersions.get(id) || 0) + 1);
+      this.revokedCallGroups.add(id);
+      if (this.activeGroup === id) this.activeGroup = null;
+      for (const [clientId, message] of this.pendingText) if (message.groupId === id) this.pendingText.delete(clientId);
+      patch.groups = this.state.groups.filter(value => value.id !== id);
+      patch.groupConversations = Object.fromEntries(Object.entries(this.state.groupConversations).filter(([key]) => key !== id));
+    } else if (current && result.group?.id === id) {
+      const before = this.state.groups.find(value => value.id === id);
+      patch.groups = [{ ...before, ...result.group }, ...this.state.groups.filter(value => value.id !== id)];
+    }
+    this.update(patch);
+    // The POST is acknowledged. Drain its obsolete list read, then reconcile
+    // separately: a failed GET must never turn this into a failed mutation.
+    try { await this.refreshAfterGroupMutation(epoch); } catch { this.assert(epoch); }
+    this.assert(epoch); return result;
+  }
+  async refreshAfterGroupMutation(epoch) {
+    await Promise.resolve(this.refreshing).catch(() => {});
+    this.assert(epoch); return this.refresh({ quiet: true });
   }
   async createGroup({ name, memberIds = [] }) {
     const epoch = this.epoch;
@@ -210,7 +260,7 @@ export class LammaClient {
       if (this.pendingGroupCreates.get(key) === attempt) this.pendingGroupCreates.delete(key);
       // Drain a pre-creation list read before starting its replacement. Its
       // revision fence above prevents it from erasing this acknowledged group.
-      Promise.resolve(this.refreshing).catch(() => {}).then(() => { this.assert(epoch); return this.refresh({ quiet: true }); }).catch(() => {});
+      this.refreshAfterGroupMutation(epoch).catch(() => {});
       return { ...group, failedInvites };
     })();
     attempt.sending = task;
@@ -254,10 +304,10 @@ export class LammaClient {
       try {
         const result = await this.call(`/groups/${enc(id)}/messages`, { method: 'POST', body: sticker ? { kind, stickerId, clientId } : { kind, text, clientId } });
         this.assertVisibility(epoch, authorizationEpoch);
-        if (!this.state.groupConversations[id]) throw Object.assign(new Error('تغيّرت صلاحية المحادثة.'), { code: 'STALE' });
+        if (!this.state.groupConversations[id]) throw stale();
         this.pendingText.delete(clientId);
         this.publishGroupMessage(id, result.message);
-        this.refresh({ quiet: true }).catch(() => {}); return result.message;
+        this.refreshGroupMessage(id).catch(() => {}); return result.message;
       } catch (error) {
         if (epoch === this.epoch && this.state.groupConversations[id]) {
           if (inaccessible(error)) {
@@ -318,9 +368,9 @@ export class LammaClient {
       const result = await this.call(path, { method: 'POST', body: { kind: 'voice', attachmentId: attempt.attachment.id, clientId } });
       this.assertVisibility(epoch, authorizationEpoch);
       if (targetType === 'group') {
-        if (!this.state.groupConversations[targetId]) throw Object.assign(new Error('تغيّرت صلاحية المحادثة.'), { code: 'STALE' });
+        if (!this.state.groupConversations[targetId]) throw stale();
         this.publishGroupMessage(targetId, result.message);
-        this.refresh({ quiet: true }).catch(() => {});
+        this.refreshGroupMessage(targetId).catch(() => {});
       } else Promise.resolve().then(() => { this.assertVisibility(epoch, authorizationEpoch); return this.onDirectChange(result.message, targetId); }).catch(() => {});
       // Sending finishes at the server acknowledgement, never after extra history downloads.
       return result.message;
@@ -334,7 +384,7 @@ export class LammaClient {
     // Authorize every playback; cached Blob URLs must not bypass a later block/removal.
     const blob = await this.call(`/attachments/${enc(id)}/content`, { responseType: 'blob', timeout: 60_000 });
     this.assert(epoch);
-    if (authorizationEpoch !== this.authorizationEpoch) throw Object.assign(new Error('تغيّرت صلاحية الوصول للصوت؛ أعد المحاولة.'), { code: 'STALE' });
+    if (authorizationEpoch !== this.authorizationEpoch) throw stale('تغيّرت صلاحية الوصول للصوت؛ أعد المحاولة.');
     if (this.urls.has(id)) this.revokeURL(this.urls.get(id));
     const url = this.makeURL(blob); this.urls.set(id, url); return url;
   }

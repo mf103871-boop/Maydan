@@ -128,6 +128,7 @@ export function LammaProvider({ children }) {
       const { type, reason } = e.detail || {};
       if ((type === 'refresh' && !['read', 'presence'].includes(reason)) || (type === 'group' && ['membership', 'removed', 'closed', 'deleted'].includes(reason)) ||
         (type === 'message' && reason === 'deleted')) client.invalidateAudio();
+      if (type === 'group' && ['message', 'read'].includes(reason)) { client.refreshGroupMessage(e.detail.groupId).catch(() => {}); return; }
       if (!refreshesLamma(e.detail)) return;
       clearTimeout(timer); timer = setTimeout(refresh, 200);
     };

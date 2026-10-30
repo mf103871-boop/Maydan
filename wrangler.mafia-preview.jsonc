@@ -30,6 +30,8 @@
     "MAFIA_MAX_ACTIVE_ROOMS": "1",
     "MAFIA_MAX_VOICE_PARTICIPANTS": "80",
     "IOS_UPDATE_POLICY_ENABLED": "0",
+    "CONNECTION_METRICS_ENABLED": "1",
+    "CONNECTION_METRICS_SAMPLE_RATE": "0.1",
     "GOOGLE_CLIENT_ID": "436944195283-8vg5ni6dnnesk8neurdt30grlmhca923.apps.googleusercontent.com"
   },
   "durable_objects": {
@@ -83,8 +85,11 @@
       "* * * * *"
     ]
   },
+  "placement": { "mode": "smart" },
   "observability": {
     "enabled": true,
-    "logs": { "enabled": true, "invocation_logs": false }
+    "redact_query_string": true,
+    "logs": { "enabled": true, "invocation_logs": false },
+    "traces": { "enabled": true, "head_sampling_rate": 0.05 }
   }
 }

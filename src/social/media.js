@@ -150,8 +150,11 @@ export const emptyMedia = () => ({ connected: false, connecting: false, muted: f
   mediaEpoch: -1, voiceSessionId: null, nativeMediaGeneration: -1, canPublish: true, quiet: false, authorizationRequired: false });
 export class CallMedia {
   constructor(onChange = () => {}, { loadSDK } = {}) {
-    this.onChange = onChange; this.state = emptyMedia(); this.generation = 0; this.elements = new Set(); this.owner = `live-call-${globalThis.crypto.randomUUID()}`;
+    this.onChange = onChange; this.state = emptyMedia(); this.generation = 0; this.elements = new Set(); this.pendingTracks = new Set(); this.owner = `live-call-${globalThis.crypto.randomUUID()}`;
     this.accountId = null;
+    // Native call generations survive UI teardown; a delayed session snapshot
+    // must not revive a call that the player or CallKit has already ended.
+    this.nativeGeneration = -1; this.closedNativeCall = null;
     this.loadSDK = loadSDK; this.desiredMuted = false; this.playbackHeld = false; this.audioInterrupted = false;
     this.unsubscribe = onNativeEvent('socialCall', event => this.applyNativeSnapshot(event));
     this.foreground = () => { if ((typeof document !== 'undefined' && document.hidden) || this.playbackHeld || this.audioInterrupted) return; this.resumeAudio({ automatic: true }).catch(() => {}); };
@@ -160,7 +163,7 @@ export class CallMedia {
       if (detail.state === 'background') return;
       if (detail.state === 'interruption-began') { this.audioInterrupted = true; for (const element of this.elements) element.pause(); return; }
       if (detail.state === 'interruption-ended' || detail.state === 'media-reset' || (detail.state === 'session-restored' && detail.shouldResume === true)) this.audioInterrupted = false;
-      if (detail.shouldResume === false) { this.playbackHeld = true; for (const element of this.elements) element.pause(); if (this.state.connected && !this.state.ended) this.update({ error: 'اضغط تشغيل الصوت لسماع المكالمة.' }); return; }
+      if (detail.shouldResume === false) { this.playbackHeld = true; for (const element of this.elements) element.pause(); if ((this.state.connected || this.state.connecting) && !this.state.ended) this.update({ error: 'اضغط تشغيل الصوت لسماع المكالمة.' }); return; }
       if (['foreground', 'media-reset', 'session-restored', 'interruption-ended'].includes(detail.state)) this.foreground();
     };
     if (typeof window !== 'undefined') { window.addEventListener('pageshow', this.foreground); window.addEventListener('maydan-audio-lifecycle', this.lifecycle); }
@@ -174,6 +177,19 @@ export class CallMedia {
       if (event.scope === 'mafia' && event.callId === this.state.callId && Number.isSafeInteger(event.mediaGeneration) && event.mediaGeneration < this.state.nativeMediaGeneration) return;
       if (event.scope === 'mafia' && this.pausedMafia?.callId === event.callId && event.state === 'connected' &&
         event.mediaEpoch <= this.pausedMafia.epoch && !(event.mediaGeneration > this.pausedMafia.generation)) return;
+      const nativeGeneration = Number.isSafeInteger(event.mediaGeneration) && event.mediaGeneration >= 0 ? event.mediaGeneration : -1;
+      if (this.closedNativeCall?.id === event.callId && this.closedNativeCall.generation < 0 && !['ended', 'failed'].includes(event.state)) {
+        const joining = this.nativeJoin;
+        if (joining?.epoch === this.generation && joining.id === event.callId && nativeGeneration >= (joining.snapshot?.mediaGeneration ?? -1)) joining.snapshot = event;
+        return;
+      }
+      if (nativeGeneration >= 0) {
+        if (nativeGeneration < this.nativeGeneration) return;
+        if (this.closedNativeCall?.id === event.callId && nativeGeneration <= this.closedNativeCall.generation &&
+          !['ended', 'failed'].includes(event.state)) return;
+        this.nativeGeneration = nativeGeneration;
+        if (['ended', 'failed'].includes(event.state)) this.closedNativeCall = { id: event.callId, generation: nativeGeneration };
+      }
       this.nativeCall = event;
       if (event.state === 'ended' || event.state === 'failed') { release(this.owner); audioActivity(this.owner, false); }
       else { try { claim(this.owner); } catch { /* native already arbitrated microphone */ } audioActivity(this.owner, true); }
@@ -182,7 +198,7 @@ export class CallMedia {
         mediaEpoch: Number.isSafeInteger(event.mediaEpoch) ? event.mediaEpoch : -1, canPublish: event.canPublish !== false, quiet: !!event.quiet,
         voiceSessionId: event.voiceSessionId || null, nativeMediaGeneration: Number.isSafeInteger(event.mediaGeneration) ? event.mediaGeneration : -1,
         userId: event.userId, conversationId: event.conversationId, ended: ['ended', 'failed'].includes(event.state), ending: event.state === 'ending',
-        localOnly: !!event.localOnly, endReason: event.endReason || null, error: event.error || (this.playbackHeld ? 'اضغط تشغيل الصوت لسماع المكالمة.' : ''),
+        localOnly: !!event.localOnly, endReason: event.endReason || null, error: event.error || (this.playbackHeld && !event.quiet ? 'اضغط تشغيل الصوت لسماع المكالمة.' : ''),
         audioOutputs: [{ deviceId: 'default', label: 'السماعة' }, { deviceId: 'speaker', label: 'مكبر الصوت' }], outputId: event.speaker ? 'speaker' : 'default' });
   }
   setAccount(userId) {
@@ -208,19 +224,35 @@ export class CallMedia {
   }
   async connect({ call, connection, mediaEpoch = -1, canPublish = true, quiet = false }, { muted = false } = {}) {
     if (!this.accountId) throw mediaError('سجّل الدخول أولًا.', 'AUTH_REQUIRED');
+    const keepPlaybackHold = this.playbackHeld && this.state.userId === this.accountId && this.state.callId === call.id && !this.state.ended;
     claim(this.owner); const epoch = ++this.generation;
-    this.playbackHeld = false;
+    this.playbackHeld = !!keepPlaybackHold;
     this.desiredMuted = muted || !canPublish || quiet || socialInterruption.getSnapshot().privateTurn;
     muted = this.desiredMuted;
     this.update({ ...emptyMedia(), userId: this.accountId, callId: call.id, scope: call.scope, conversationId: call.conversationId,
-      connecting: true, muted, mediaEpoch, canPublish, quiet, voiceSessionId: call.voiceSessionId || null });
+      connecting: true, muted, mediaEpoch, canPublish, quiet, voiceSessionId: call.voiceSessionId || null,
+      error: this.playbackHeld && !quiet ? 'اضغط تشغيل الصوت لسماع المكالمة.' : '' });
     audioActivity(this.owner, true);
     try {
       if (isNativeShell()) {
-        await callNative('socialCallConnect', { userId: this.accountId, callId: call.id, scope: call.scope, conversationId: call.conversationId,
-          url: connection?.url, token: connection?.token, callerName: call.name || 'ميدان', muted, mediaEpoch, canPublish, quiet, voiceSessionId: call.voiceSessionId });
-        if (epoch !== this.generation) await callNative('socialCallEnd', { callId: call.id, localOnly: true, endReason: 'cancelled',
-          ...(call.scope === 'mafia' ? { expectedMediaEpoch: mediaEpoch, expectedVoiceSessionId: call.voiceSessionId } : {}) }, { timeout: 5000 }).catch(() => {});
+        const joining = { epoch, id: call.id, recover: this.closedNativeCall?.id === call.id && this.closedNativeCall.generation < 0 };
+        this.nativeJoin = joining;
+        try {
+          const snapshot = await callNative('socialCallConnect', { userId: this.accountId, callId: call.id, scope: call.scope, conversationId: call.conversationId,
+            url: connection?.url, token: connection?.token, callerName: call.name || 'ميدان', muted, mediaEpoch, canPublish, quiet, voiceSessionId: call.voiceSessionId });
+          if (epoch !== this.generation) {
+            // Mafia cleanup is scoped to its old epoch/session. Social rejoin
+            // has no such native fence, so preserve its newer same-call intent.
+            if (call.scope === 'mafia' || this.state.callId !== call.id || this.state.ended || this.state.ending) await callNative('socialCallEnd', { callId: call.id, localOnly: true, endReason: 'cancelled',
+              ...(call.scope === 'mafia' ? { expectedMediaEpoch: mediaEpoch, expectedVoiceSessionId: call.voiceSessionId } : {}) }, { timeout: 5000 }).catch(() => {});
+          } else if (joining.recover && snapshot?.callId === call.id && snapshot.userId === this.accountId) {
+            // Only the current explicit RPC can reopen a call left before its
+            // first generation was known. Retain any newer queued native event.
+            if (this.closedNativeCall?.id === call.id && this.closedNativeCall.generation < 0) this.closedNativeCall = null;
+            if (!this.state.connected || this.state.nativeMediaGeneration !== snapshot.mediaGeneration) this.applyNativeSnapshot(snapshot);
+            if (joining.snapshot) this.applyNativeSnapshot(joining.snapshot);
+          }
+        } finally { if (this.nativeJoin === joining) this.nativeJoin = null; }
         return;
       }
       if (quiet) { this.update({ connecting: false, connected: false, muted: true, participants: [] }); return; }
@@ -237,28 +269,39 @@ export class CallMedia {
         this.update({ participants, muted: !room.localParticipant.isMicrophoneEnabled });
       };
       for (const event of [RoomEvent.ParticipantConnected, RoomEvent.ParticipantDisconnected, RoomEvent.ActiveSpeakersChanged, RoomEvent.TrackMuted, RoomEvent.TrackUnmuted, RoomEvent.LocalTrackPublished, RoomEvent.LocalTrackUnpublished]) room.on(event, sync);
-      room.on(RoomEvent.TrackSubscribed, track => {
+      const attach = (track, play = true) => {
         if (track.kind !== Track.Kind.Audio || epoch !== this.generation) return;
+        // SDK attach() starts playback too. Defer the attachment itself while
+        // the OS/user requires silence, including a newly subscribed speaker.
+        if (this.playbackHeld || this.audioInterrupted) { this.pendingTracks.add(track); sync(); return; }
         const element = track.attach(); element.dataset.lammaAudio = 'call'; document.body.append(element); this.elements.add(element);
-        element.play().catch(() => { if (epoch === this.generation && this.room === room && this.elements.has(element)) this.update({ error: 'اضغط تشغيل الصوت لسماع المكالمة.' }); }); sync();
-      });
-      room.on(RoomEvent.TrackUnsubscribed, track => { for (const element of track.detach()) { this.elements.delete(element); element.remove(); } });
+        const failed = () => { if (epoch === this.generation && this.room === room && this.elements.has(element)) this.update({ error: 'اضغط تشغيل الصوت لسماع المكالمة.' }); };
+        if (play) { try { Promise.resolve(element.play()).catch(failed); } catch { failed(); } }
+        sync();
+      };
+      this.attachRemoteTrack = track => attach(track, false);
+      room.on(RoomEvent.TrackSubscribed, track => attach(track));
+      room.on(RoomEvent.TrackUnsubscribed, track => { this.pendingTracks.delete(track); for (const element of track.detach()) { this.elements.delete(element); element.remove(); } });
       room.on(RoomEvent.Reconnecting, () => { if (epoch === this.generation) this.update({ connecting: true, error: 'نعيد الاتصال بالمكالمة…' }); });
-      room.on(RoomEvent.Reconnected, () => { if (epoch === this.generation) this.update({ connecting: false, connected: true, error: '' }); });
+      room.on(RoomEvent.Reconnected, () => {
+        if (epoch !== this.generation) return;
+        this.update({ connecting: false, connected: true, ...(this.playbackHeld ? { error: 'اضغط تشغيل الصوت لسماع المكالمة.' } : {}) });
+        this.foreground();
+      });
       room.on(RoomEvent.Disconnected, () => {
         if (epoch !== this.generation) return;
+        this.generation++; this.room = null; this.desiredMuted = true;
         this.clearElements(); release(this.owner); audioActivity(this.owner, false);
+        room.localParticipant.setMicrophoneEnabled(false).catch(() => {});
         if (this.state.scope === 'mafia') {
           // The server revokes the old RTC room before broadcasting the next
           // phase. This is not a user hang-up. Fence its late SDK events and
           // require a fresh grant; never reconnect with a cached credential.
-          this.generation++; this.room = null; this.desiredMuted = true;
-          room.localParticipant.setMicrophoneEnabled(false).catch(() => {});
           this.update({ connected: false, connecting: true, ended: false, muted: true, canPublish: false,
             participants: [], quiet: false, authorizationRequired: true, error: '' });
           return;
         }
-        this.update({ connected: false, connecting: false, ended: true });
+        this.update({ connected: false, connecting: false, ended: true, muted: true, participants: [] });
       });
       await room.connect(connection.url, connection.token, { autoSubscribe: true });
       if (epoch !== this.generation) { await room.disconnect(); return; }
@@ -274,7 +317,7 @@ export class CallMedia {
         await room.localParticipant.setMicrophoneEnabled(false);
         if (epoch !== this.generation) { await room.disconnect(); return; }
       }
-      this.update({ connected: true, connecting: false, error: '' }); sync();
+      this.update({ connected: true, connecting: false, error: this.playbackHeld ? 'اضغط تشغيل الصوت لسماع المكالمة.' : '' }); sync();
       if (typeof HTMLMediaElement !== 'undefined' && 'setSinkId' in HTMLMediaElement.prototype) {
         const devices = await navigator.mediaDevices.enumerateDevices();
         if (epoch === this.generation) this.update({ audioOutputs: devices.filter(d => d.kind === 'audiooutput').map(d => ({ deviceId: d.deviceId, label: d.label || 'سماعة' })) });
@@ -284,7 +327,20 @@ export class CallMedia {
       throw e;
     }
   }
-  clearElements() { for (const element of this.elements) element.remove(); this.elements.clear(); }
+  clearElements() {
+    // Removing an HTML audio node does not stop it. Silence and release the old
+    // stream before asynchronous SDK shutdown, account change or audience pause.
+    for (const element of this.elements) {
+      try { element.pause?.(); } catch { /* continue retiring the other elements */ }
+      try { element.srcObject = null; } catch { /* older media elements */ }
+      element.remove();
+    }
+    this.elements.clear(); this.pendingTracks.clear(); this.attachRemoteTrack = null;
+  }
+  attachPendingTracks() {
+    const tracks = [...this.pendingTracks]; this.pendingTracks.clear();
+    for (const track of tracks) this.attachRemoteTrack?.(track);
+  }
   async pauseGame() {
     if (this.state.scope !== 'mafia') return;
     this.pausedMafia = { callId: this.state.callId, epoch: this.state.mediaEpoch, generation: this.state.nativeMediaGeneration };
@@ -292,7 +348,7 @@ export class CallMedia {
     this.room = null; this.desiredMuted = true; this.clearElements();
     this.update({ connected: false, connecting: false, quiet: true, muted: true, canPublish: false, participants: [], authorizationRequired: false });
     if (isNativeShell()) await callNative('socialCallPauseGame', { callId, expectedMediaEpoch: this.state.mediaEpoch }, { timeout: 5000 });
-    else await room?.disconnect();
+    else if (room) { room.localParticipant.setMicrophoneEnabled(false).catch(() => {}); await room.disconnect(); }
     if (epoch !== this.generation) return;
   }
   async transitionGame(result, options) {
@@ -331,6 +387,7 @@ export class CallMedia {
       // WebKit requires play/startAudio inside the actual tap, even when an
       // automatic foreground attempt is still waiting for an earlier promise.
       if (!automatic && room && !(typeof document !== 'undefined' && document.hidden)) {
+        this.attachPendingTracks();
         try { Promise.resolve(room.startAudio()).catch(() => {}); } catch { /* shared attempt reports failure */ }
         for (const element of this.elements) { try { Promise.resolve(element.play()).catch(() => {}); } catch { /* shared attempt reports failure */ } }
       }
@@ -349,6 +406,7 @@ export class CallMedia {
             if (isNativeShell()) await callNative('socialCallResumeAudio', { callId, userInitiated: task.userInitiated }, { timeout: 5000 });
             else if (room) {
               if (!mayPlay()) return;
+              this.attachPendingTracks();
               // Start every media promise before the first await: delaying
               // element.play() until SDK readiness loses Safari's tap gesture.
               const started = room.startAudio();
@@ -375,6 +433,10 @@ export class CallMedia {
     }
     const epoch = ++this.generation;
     this.desiredMuted = true;
+    if (isNativeShell() && this.state.callId) {
+      this.nativeGeneration = Math.max(this.nativeGeneration, this.state.nativeMediaGeneration);
+      this.closedNativeCall = { id: this.state.callId, generation: this.state.nativeMediaGeneration };
+    }
     const room = this.room; this.room = null;
     this.clearElements(); release(this.owner); audioActivity(this.owner, false);
     this.update(localOnly && endReason ? { connected: false, connecting: false, ending: true, muted: true, localOnly, endReason } : emptyMedia());

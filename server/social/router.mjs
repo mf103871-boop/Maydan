@@ -11,6 +11,7 @@ import { wakeJobs } from '../lamma/notifications.mjs';
 import { revokeInvalidCalls } from '../lamma/calls.mjs';
 import { afterCommit } from '../lamma/after-commit.mjs';
 import { mafiaMediaLease, leaveMafiaOnBlock } from '../mafia-access.mjs';
+import { timed } from '../performance.mjs';
 
 export const isSocialPath = (path) => path === '/api/social' || path.startsWith('/api/social/');
 async function notify(env, ids, event = { type: 'refresh' }) {
@@ -25,8 +26,8 @@ export async function deleteSocialUser(env, id) {
 export async function routeSocial(request, env, url = new URL(request.url), charge, context) {
   if (!isSocialPath(url.pathname)) return null;
   if (!env.DB) fail('NOT_FOUND', 404);
-  if (charge) await charge(request.method === 'GET' ? 'socialReadIP' : 'socialWriteIP');
-  const auth = await requireSession(env, request);
+  if (charge) await timed(env, 'quota', () => charge(request.method === 'GET' ? 'socialReadIP' : 'socialWriteIP'));
+  const auth = await timed(env, 'auth', () => requireSession(env, request));
   try {
     const mafiaLocked=!!await mafiaMediaLease(env,auth.user.id);
     if(mafiaLocked) {
@@ -34,8 +35,8 @@ export async function routeSocial(request, env, url = new URL(request.url), char
       const contentRead=/\/(?:messages|attachments|calls)(?:\/|$)/.test(url.pathname)||/^\/api\/social\/groups(?:\/[^/]+)?$/.test(url.pathname);
       if((request.method!=='GET'&&!safety)||contentRead)fail('MAFIA_SOCIAL_LOCKED',409);
     }
-    if (charge && request.method === 'GET') await charge('socialRead', 'RATE_LIMIT', auth.user.id);
-    let response = await dispatch(request, env, url, auth.user.id, Date.now(),auth.rotated?.id||auth.session.id,context);
+    if (charge && request.method === 'GET') await timed(env, 'quota', () => charge('socialRead', 'RATE_LIMIT', auth.user.id));
+    let response = await timed(env, 'dispatch', () => dispatch(request, env, url, auth.user.id, Date.now(),auth.rotated?.id||auth.session.id,context));
     if (response.ok && ['/api/social/me', '/api/social/state', '/api/social/search', '/api/social/friends', '/api/social/requests', '/api/social/blocks', '/api/social/conversations'].includes(url.pathname)) {
       const body = await response.json();
       body.mafiaCommunicationLocked=mafiaLocked;
@@ -52,7 +53,7 @@ export async function routeSocial(request, env, url = new URL(request.url), char
     const messagePayload = /^\/api\/social\/(?:state|conversations(?:\/[^/]+\/messages)?|messages\/\d+)$/.test(url.pathname);
     if(response.ok && messagePayload && response.headers.get('content-type')?.startsWith('application/json')) {
       const body=await response.json();
-      await enrichMessages(env,[body.message,...(Array.isArray(body.messages)?body.messages:[]),...(Array.isArray(body.conversations)?body.conversations:[]).map(c=>c.lastMessage)]);
+      await timed(env, 'enrich', () => enrichMessages(env,[body.message,...(Array.isArray(body.messages)?body.messages:[]),...(Array.isArray(body.conversations)?body.conversations:[]).map(c=>c.lastMessage)]));
       response=json(body);
     }
     return withRotation(response, auth.rotated);
@@ -63,8 +64,8 @@ export async function routeSocial(request, env, url = new URL(request.url), char
 async function dispatch(request, env, url, id, now,sessionId,context) {
   const method = request.method;
   const path = url.pathname.slice('/api/social'.length);
-  const profile = await db.ensureProfile(env, id, now);
-  if (method !== 'GET') await db.chargeUser(env, id, 'write', now);
+  const profile = await timed(env, 'profile', () => db.ensureProfile(env, id, now));
+  if (method !== 'GET') await timed(env, 'quota', () => db.chargeUser(env, id, 'write', now));
   const lamma=await routeLamma(request,env,path,id,sessionId,context);if(lamma)return lamma;
   if (path === '/me' && method === 'GET') return json({ user: publicProfile(profile) });
   // One read for the whole social screen. The client used to issue five requests

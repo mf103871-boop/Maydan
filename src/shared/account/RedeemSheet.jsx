@@ -1,17 +1,26 @@
 // رمز الهدية: نموذج يُستعمل داخل الجدار (بدل الخطط) وداخل ورقة من بطاقة الحساب.
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Sheet, Button } from '../ui/components.jsx';
 import { useAccount } from './context.js';
 import { PLUS_NAME } from './config.js';
 import { accountErrorText } from './errors.js';
+import { resolveAccountServer } from './api.js';
 
 export const REDEEM_PROMPT = 'لديك رمز هدية؟';
 
-export function RedeemForm({ onDone, onCancel }) {
+export function RedeemForm(props) {
+  const account = useAccount();
+  const owner = account.user?.id || (account.signedIn ? 'pending' : 'guest');
+  return <RedeemFormOwner key={`${resolveAccountServer()}:${owner}`} {...props} />;
+}
+
+function RedeemFormOwner({ onDone, onCancel }) {
   const account = useAccount();
   const [code, setCode] = useState('');
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState('');
+  const alive = useRef(true);
+  useEffect(() => { alive.current = true; return () => { alive.current = false; }; }, []);
   const submit = async (event) => {
     if (event) event.preventDefault();
     const value = code.trim();
@@ -19,6 +28,7 @@ export function RedeemForm({ onDone, onCancel }) {
     setBusy(true);
     setError('');
     const result = await account.redeem(value);
+    if (!alive.current) return;
     setBusy(false);
     if (result === true) { setCode(''); if (onDone) onDone(); }
     else setError(accountErrorText(typeof result === 'string' ? result : 'REDEEM_INVALID'));

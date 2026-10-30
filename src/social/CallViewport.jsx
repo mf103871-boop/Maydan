@@ -1,4 +1,5 @@
-import React, { useLayoutEffect } from 'react';
+import React, { useLayoutEffect, useRef } from 'react';
+import { useVisualViewport } from '../shared/ui/useVisualViewport.js';
 import callViewportCss from './call-viewport.css';
 
 const owners = new Set();
@@ -26,5 +27,7 @@ export function useCallDockLayout(active) {
 }
 
 export function CallViewport({ children }) {
-  return <><style>{callViewportCss}</style><div className="call-game-viewport" data-testid="call-game-viewport">{children}</div></>;
+  const ref = useRef(null);
+  useVisualViewport(ref, { heightProperty: '--app-viewport-height', topProperty: '--app-viewport-top', relativeToTarget: true });
+  return <><style>{callViewportCss}</style><div ref={ref} className="call-game-viewport" data-testid="call-game-viewport">{children}</div></>;
 }

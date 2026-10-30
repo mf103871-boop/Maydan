@@ -100,7 +100,7 @@ export class MafiaVoiceSession {
         const nativeConnected = this.media.state.connected && this.media.state.callId === this.call.id &&
           this.media.state.voiceSessionId === this.voiceSessionId && this.media.state.mediaEpoch === response.mediaEpoch;
         this.update({ status: response.quiet ? 'silent' : this.native && !nativeConnected ? 'connecting' : 'connected', mediaEpoch: this.epoch, muted: this.media.state.muted,
-          canPublish: !!response.canPublish, error: '' });
+          canPublish: !!response.canPublish, error: this.media.state.error || '' });
       } while (this.again && current());
     })();
     this.pending = task;
@@ -151,7 +151,7 @@ export class MafiaVoiceSession {
     this.update({ participants, mediaEpoch: this.epoch, muted: !!media.muted,
       ...(typeof media.canPublish === 'boolean' ? { canPublish: media.canPublish } : {}),
       status: media.quiet ? 'silent' : media.connecting ? 'connecting' : media.connected ? 'connected' : media.ended ? 'off' : this.state.status,
-      ...(media.error ? { error: media.error } : {}) });
+      ...(media.connected || media.error ? { error: media.error || '' } : {}) });
   }
   async mute(muted) {
     if (!muted && !this.state.canPublish) throw new Error('الميكروفون مغلق في هذه المرحلة.');

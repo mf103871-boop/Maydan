@@ -56,6 +56,12 @@ test('preview locks reject production resources, alternate origins, binding alia
     config => { config.env = { production: { name: 'maydan-game' } }; },
     config => { config.routes = ['production.example/*']; },
     config => { config.assets.directory = '../production/dist'; },
+    config => { config.placement = { mode: 'smart', host: 'production.example:443' }; },
+    config => { config.placement = { mode: 'off' }; },
+    config => { config.observability.redact_query_string = false; },
+    config => { config.observability.traces.head_sampling_rate = 1; },
+    config => { config.observability.logs.invocation_logs = true; },
+    config => { config.vars.CONNECTION_METRICS_SAMPLE_RATE = '1'; },
   ];
   for (const mutate of mutations) { const input = fixture(); configMutation(input, mutate); assert.throws(() => createMafiaPreviewManifest(input)); }
 });

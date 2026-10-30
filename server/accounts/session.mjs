@@ -29,41 +29,68 @@ export function bearer(request) {
   return match ? parseToken(match[1]) : null;
 }
 
-export async function issueSession(env, userId, client = 'web', now = Date.now()) {
+async function sessionCandidate(userId, client, now) {
   const id = randomHex(8);
   const secret = randomToken(32);
-  await db.insertSession(env, {
+  const row = {
     id, user_id: userId, secret_hash: await sha256(secret), client,
     created_at: now, last_seen: now, expires_at: now + SESSION_TTL,
-  });
-  return { token: `mdn1.${id}.${secret}`, expiresAt: now + SESSION_TTL, id };
+  };
+  return { row, session: { token: `mdn1.${id}.${secret}`, expiresAt: now + SESSION_TTL, id } };
+}
+export async function issueSession(env, userId, client = 'web', now = Date.now()) {
+  const next = await sessionCandidate(userId, client, now);
+  await db.insertSession(env, next.row);
+  return next.session;
 }
 
 // تُعيد null للطلب المجهول، وترمي AUTH_EXPIRED لرمز موجود لكنه انتهى/أُبطل.
-export async function readSession(env, request, { now = Date.now(), rotate = true } = {}) {
+export async function readSession(env, request, options = {}) {
+  const { now = Date.now(), rotate = true } = options;
+  const clock = () => options.now === undefined ? Date.now() : now;
   const parsed = bearer(request);
   if (!parsed) return null;
-  const row = await db.sessionById(env, parsed.id);
-  if (!row) failure('AUTH_EXPIRED');
-  if (!safeEqual(row.secret_hash, await sha256(parsed.secret))) failure('AUTH_EXPIRED');
-  if (now >= row.expires_at) failure('AUTH_EXPIRED');
-  if (row.revoked_at !== null && row.revoked_at !== undefined && now >= row.revoked_at) failure('AUTH_EXPIRED');
-  const user = await db.userById(env, row.user_id);
-  if (!user) failure('AUTH_EXPIRED');
-  const suspension = await suspensionOf(env,user.id);
+  // Hash first: no cryptographic await may outlive the fresh authorization read.
+  const secretHash = await sha256(parsed.secret);
   // A suspended member still owns their account and subscription. OAuth can
   // issue a fresh restricted session, but cannot restore social/game access.
   const managementPaths = new Set(['/api/me','/api/account','/api/auth/signout','/api/apple/transactions','/api/paddle/portal']);
-  if (suspension && !managementPaths.has(new URL(request.url).pathname)) failure('ACCOUNT_SUSPENDED');
+  const path = new URL(request.url).pathname;
+  const checkAccess = principal => {
+    if (principal.suspension && !managementPaths.has(path)) failure('ACCOUNT_SUSPENDED');
+    return principal;
+  };
+  const validate = (principal, hash, checkedAt, allowRestricted = false) => {
+    const row = principal?.session;
+    if (!row || !safeEqual(row.secret_hash, hash) || checkedAt >= row.expires_at
+      || row.revoked_at != null && checkedAt >= row.revoked_at) failure('AUTH_EXPIRED');
+    return allowRestricted ? principal : checkAccess(principal);
+  };
+  const {session:row,user} = validate(await db.sessionPrincipalById(env, parsed.id), secretHash, clock());
   // الرمز في فترة السماح بعد تدويره: يعمل، لكنه لا يولّد تدويرًا ثانيًا.
-  if (row.replaced_by) return { session: row, user, rotated: null };
+  if (row.replaced_by || row.revoked_at !== null && row.revoked_at !== undefined) return { session: row, user, rotated: null };
   if (rotate && now - row.last_seen > ROTATE_AFTER) {
-    const next = await issueSession(env, user.id, row.client || 'web', now);
-    await db.retireSession(env, row.id, now + ROTATE_GRACE, next.id);
-    rotations.set(request, next);
-    return { session: row, user, rotated: next };
+    const next = await sessionCandidate(user.id, row.client || 'web', now);
+    if (await db.rotateSession(env, row, next.row, now, now + ROTATE_GRACE)) {
+      const current = validate(await db.sessionPrincipalById(env, next.row.id), next.row.secret_hash, clock(), true);
+      // A newly suspended owner still needs the valid restricted replacement
+      // on this403 to manage their account after the old token's grace expires.
+      rotations.set(request, next.session);
+      checkAccess(current);
+      return { session: row, user:current.user, rotated: next.session };
+    }
+    // Another rotation may legitimately leave this token in its grace period.
+    // A revocation/deletion must fail, and the unused candidate stays unissued.
+    const principal = await db.sessionPrincipalById(env, row.id);
+    const current = validate(principal, secretHash, Math.max(now, Date.now()));
+    if (!current.session.replaced_by && current.session.revoked_at == null) failure('AUTH_EXPIRED');
+    return { session:current.session, user:current.user, rotated:null };
   }
-  if (now - row.last_seen > 60_000) await db.touchSession(env, row.id, now);
+  if (now - row.last_seen > 60_000) {
+    await db.touchSession(env, row.id, now);
+    const current = validate(await db.sessionPrincipalById(env, row.id), secretHash, clock());
+    return {session:current.session,user:current.user,rotated:null};
+  }
   return { session: row, user, rotated: null };
 }
 

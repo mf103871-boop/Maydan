@@ -2,11 +2,12 @@ import { json, errorResponse, readJson, sha256 } from '../protocol.mjs';
 import { fail } from '../room-model.mjs';
 import { randomToken } from '../accounts/jwt.mjs';
 import { requireSession, withRotation } from '../accounts/session.mjs';
-import { first } from '../accounts/db.mjs';
+import { first, all } from '../accounts/db.mjs';
 import { areFriends, friendIds, touchPresence, messageForUser } from './db.mjs';
 import { userId as validUserId, ONLINE_WINDOW } from './model.mjs';
-import { ident, member, scopeAllowed, unblocked, live } from '../lamma/common.mjs';
-import { assertSocialAllowed, mafiaMediaLease } from '../mafia-access.mjs';
+import { ident, member, scopeAllowed, unblocked, live, friends } from '../lamma/common.mjs';
+import { assertSocialAllowed, mafiaMediaLease, noMafiaMediaLeaseSql } from '../mafia-access.mjs';
+import { timed } from '../performance.mjs';
 
 export const LIVE_TICKET_TTL = 60_000;
 export const LIVE_HEARTBEAT_MS = 20_000;
@@ -30,6 +31,40 @@ const hub = (env, userId) => env.SOCIAL_HUB.get(env.SOCIAL_HUB.idFromName(userId
 const internal = (path, body) => new Request(`https://social.internal/${path}`, {
   method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(body),
 });
+
+// Bind content ACLs and recipient sessions into the same final D1 snapshot.
+// Earlier sender/receiver checks cannot authorize a delivery after another await.
+function deliveryPermission(userId, event, now, legacy = false) {
+  const user = ident(userId), checks = [], args = [];
+  if (event.type === 'typing' || event.reason === 'presence') checks.push(friends(user, ident(event.userId)));
+  if (event.reason === 'deleted') return {sql:checks.join(' AND ') || '1',args};
+  const communication = ['message','call','typing'].includes(event.type)
+    || event.type === 'group' && ['message','edited'].includes(event.reason);
+  const appearance = event.type === 'refresh' && event.reason === 'profile';
+  if (!legacy) {
+    if (communication || appearance) checks.push(noMafiaMediaLeaseSql(user, now));
+    if ((appearance || event.type === 'typing') && event.userId) checks.push(noMafiaMediaLeaseSql(ident(event.userId), now));
+  }
+  if (event.type === 'message') {
+    if (!Number.isSafeInteger(event.messageSeq) || event.messageSeq < 1) return {sql:'0',args};
+    checks.push(`EXISTS(SELECT 1 FROM social_messages m JOIN social_conversations c ON c.id=m.conversation_id
+      WHERE m.seq=? AND c.id=? AND m.deleted_at IS NULL AND ${scopeAllowed('direct','m.conversation_id',user)})`);
+    args.push(event.messageSeq,event.conversationId);
+  } else if (event.type === 'group' && ['message','edited'].includes(event.reason)) {
+    if (!Number.isSafeInteger(event.messageSeq) || event.messageSeq < 1) return {sql:'0',args};
+    checks.push(`EXISTS(SELECT 1 FROM social_group_messages m JOIN social_group_members gm ON gm.group_id=m.group_id AND gm.user_id=?
+      WHERE m.seq=? AND m.group_id=? AND m.deleted_at IS NULL AND m.seq>gm.visible_after_seq AND gm.left_at IS NULL
+      AND ${member('m.group_id',user)} AND ${unblocked('m.sender_id',user)} AND ${live('m.sender_id')})`);
+    args.push(userId,event.messageSeq,event.groupId);
+  } else if (event.type === 'call') {
+    checks.push(`EXISTS(SELECT 1 FROM social_calls sc WHERE sc.id=?
+      AND ((sc.scope='group' AND ${member('sc.conversation_id',user)}) OR (sc.scope='direct' AND ${scopeAllowed('direct','sc.conversation_id',user)}))
+      AND ${unblocked('sc.initiator_id',user)}
+      AND NOT EXISTS(SELECT 1 FROM social_call_participants cp WHERE cp.call_id=sc.id AND cp.state='active' AND NOT (${unblocked('cp.user_id',user)})))`);
+    args.push(event.callId);
+  }
+  return {sql:checks.join(' AND ') || '1',args};
+}
 
 // Authorize content metadata at the receiving hub, after its socket auth/queue
 // wait. A permission check in the sender's earlier HTTP request is not enough
@@ -75,12 +110,12 @@ export async function allowsRealtimeContent(env, userId, event) {
 // can turn a saved message into an apparent failed write at the client.
 export async function notifyUsers(env, userIds, event) {
   if (!env.SOCIAL_HUB) return;
-  try {
+  return timed(env, 'fanout', async () => { try {
     const ids = [...new Set(userIds)].filter((id) => typeof id === 'string' && /^[A-Za-z0-9_-]{1,80}$/.test(id));
     await Promise.allSettled(ids.map(async (userId) => {
       await hub(env, userId).fetch(internal('notify', { userId, event }));
     }));
-  } catch { /* callers already saved their database transaction */ }
+  } catch { /* callers already saved their database transaction */ } });
 }
 
 // Account deletion has already committed. A temporary delivery failure must not
@@ -127,6 +162,7 @@ export class SocialHub {
     this.env = env;
     this.queue = Promise.resolve();
     this.inboundBySocket = new WeakMap(); this.inboundCount = 0;
+    this.ownerEpoch = 0;
     this.ready = ctx.blockConcurrencyWhile(async () => {
       this.state = await ctx.storage.get('social') || emptyState();
     });
@@ -154,6 +190,7 @@ export class SocialHub {
     return !row || !!row.suspended || (allowReserved && !!row.deleting);
   }
   async forget(userId = this.state.userId) {
+    this.ownerEpoch++;
     this.cleanupUserId = userId;
     for (const ws of this.ctx.getWebSockets()) {
       this.close(ws, 4401, 'AUTH_EXPIRED');
@@ -176,11 +213,48 @@ export class SocialHub {
       JOIN users u ON u.id=s.user_id WHERE s.id=? AND s.user_id=?
       AND NOT EXISTS (SELECT 1 FROM account_deletions d WHERE d.user_id=s.user_id)
       AND NOT EXISTS (SELECT 1 FROM moderation_suspensions ms WHERE ms.user_id=s.user_id)`, sessionId, userId);
-    if (!row || row.expires_at <= now || (row.revoked_at != null && row.revoked_at <= now)) {
+    const checkedAt = Math.max(now,this.now());
+    if (!row || row.expires_at <= checkedAt || (row.revoked_at != null && row.revoked_at <= checkedAt)) {
       for (const ws of this.sockets()) if (this.attachment(ws).sessionId === sessionId) this.close(ws);
       fail('AUTH_EXPIRED', 401);
     }
     return Math.min(row.expires_at, row.revoked_at ?? Infinity);
+  }
+  async authorizationSnapshot(event = null, candidates = this.sockets()) {
+    const userId = this.state.userId, epoch = this.ownerEpoch;
+    const sockets = candidates.slice(0,MAX_SOCKETS).map(ws => ({ws,sessionId:this.attachment(ws).sessionId}));
+    for (const ws of candidates.slice(MAX_SOCKETS)) this.close(ws,4429,'RATE_LIMIT');
+    const ids = [...new Set(sockets.map(item=>item.sessionId).filter(id=>typeof id==='string'))];
+    if (!userId || this.cleanupUserId || !ids.length) return {userId,epoch,sockets,rows:[]};
+    const query = async legacy => {
+      const permission = event ? deliveryPermission(userId,event,this.now(),legacy) : {sql:'1',args:[]};
+      return all(this.env, `SELECT s.id,s.expires_at,s.revoked_at,CASE WHEN ${permission.sql} THEN 1 ELSE 0 END AS content_allowed
+        FROM sessions s JOIN users u ON u.id=s.user_id WHERE s.user_id=? AND s.id IN (${ids.map(()=>'?').join(',')})
+        AND NOT EXISTS(SELECT 1 FROM account_deletions d WHERE d.user_id=s.user_id)
+        AND NOT EXISTS(SELECT 1 FROM moderation_suspensions ms WHERE ms.user_id=s.user_id)`, ...permission.args,userId,...ids);
+    };
+    let rows;
+    try { rows = await query(false); }
+    catch(error) {
+      // Preserve pre-Mafia deployments without ignoring unrelated schema faults.
+      if (String(this.env.MAFIA_ENABLED)!=='1' && /no such table.*mafia_(media|match)_leases/i.test(error.message)) rows=await query(true);
+      else throw error;
+    }
+    return {userId,epoch,sockets,rows};
+  }
+  applyAuthorization(snapshot) {
+    if (snapshot.epoch!==this.ownerEpoch || snapshot.userId!==this.state.userId || this.cleanupUserId) return [];
+    const rows = new Map(snapshot.rows.map(row=>[row.id,row])), allowed = [], now = this.now();
+    for (const {ws,sessionId} of snapshot.sockets) {
+      const current = this.attachment(ws);
+      if (ws.readyState!==1 || current.closed || current.sessionId!==sessionId) continue;
+      if (current.seenAt+ONLINE_WINDOW<=now) { this.close(ws,4408,'HEARTBEAT_TIMEOUT'); continue; }
+      const row = rows.get(sessionId), validUntil = row ? Math.min(row.expires_at,row.revoked_at ?? Infinity) : 0;
+      if (validUntil<=now) { this.close(ws); continue; }
+      ws.serializeAttachment({...current,validUntil});
+      if (row.content_allowed) allowed.push(ws);
+    }
+    return allowed;
   }
   async schedule() {
     if (this.cleanupUserId) {
@@ -218,19 +292,19 @@ export class SocialHub {
   async sweep(now, checkAuth = false) {
     this.pruneTickets(now);
     let changed = false;
+    const auth = [];
     for (const ws of this.sockets()) {
       const a = this.attachment(ws);
       if (a.seenAt + ONLINE_WINDOW <= now) {
         this.close(ws, 4408, 'HEARTBEAT_TIMEOUT'); changed = true;
       } else if (a.validUntil <= now || checkAuth) {
-        try {
-          a.validUntil = await this.authenticate(a.sessionId, now);
-          ws.serializeAttachment(a);
-        } catch (error) {
-          this.close(ws, error.status === 401 ? 4401 : 1011, error.status === 401 ? 'AUTH_EXPIRED' : 'SOCIAL_UNAVAILABLE');
-          changed = true;
-        }
+        auth.push(ws);
       }
+    }
+    if (auth.length) {
+      try { this.applyAuthorization(await this.authorizationSnapshot(null,auth)); }
+      catch { for (const ws of auth) if (ws.readyState===1 && !this.attachment(ws).closed) this.close(ws,1011,'SOCIAL_UNAVAILABLE'); }
+      changed ||= auth.some(ws=>this.attachment(ws).closed);
     }
     await this.save();
     if (changed) await this.presence();
@@ -254,6 +328,7 @@ export class SocialHub {
           const userId = validUserId(input.userId);
           if (this.state.userId && this.state.userId !== userId) fail('AUTH_EXPIRED', 401);
           await this.authenticate(input.sessionId, now, userId);
+          if (this.state.userId!==userId) this.ownerEpoch++;
           this.state.userId = userId;
           if (Object.keys(this.state.tickets).length >= MAX_TICKETS) fail('RATE_LIMIT', 429);
           const ticket = randomToken(32);
@@ -294,6 +369,9 @@ export class SocialHub {
           // Sign-out pushes the revocation here instead of every socket polling D1.
           if (event.type === 'session_revoked') {
             for (const ws of this.sockets()) if (this.attachment(ws).sessionId === event.sessionId) this.close(ws, 4401, 'AUTH_EXPIRED');
+            // Sign-out through a retiring token revokes its replacement chain.
+            // Those sockets carry newer IDs, so revalidate before leaving them live.
+            await this.sweep(this.now(), true);
             await this.presence();
             await this.schedule();
             return json({ ok: true });
@@ -306,11 +384,11 @@ export class SocialHub {
           // the event: outbound delivery re-checks every socket. These are D1 reads;
           // the writes that used to follow each heartbeat are the ones now leased.
           await this.sweep(now, true);
-          if (!(await allowsRealtimeContent(this.env, userId, event))) return json({ ok: true });
-          // A block or unfriend that raced the sender's check wins at delivery.
-          if ((event.type === 'typing' || event.reason === 'presence') && !(await areFriends(this.env, userId, event.userId))) return json({ ok: true });
-          let changed = false;
-          for (const ws of this.sockets()) if (!this.send(ws, event)) { this.close(ws, 1011, 'SEND_FAILED'); changed = true; }
+          // No storage/network await between this fresh joined authorization and
+          // sending. This also rechecks revocation during sweep's durable save.
+          const allowed = this.applyAuthorization(await this.authorizationSnapshot(event));
+          let changed = this.presenceDirty;
+          for (const ws of allowed) if (!this.send(ws, event)) { this.close(ws, 1011, 'SEND_FAILED'); changed = true; }
           if (changed) await this.presence();
           await this.schedule();
           return json({ ok: true });

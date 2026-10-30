@@ -175,8 +175,10 @@ function EntryView({ initialCode = '', initialGame = 'meenfina', initialObserver
         ...(mode === 'create' ? { game, deviceId: deviceId(), ...(game!=='mafia'?{directory:{visibility:roomVisibility,...(roomVisibility==='public'?{name:roomName}:{})}}:{}), ...(game === 'fabraka' ? { settings: fabrakaSettings } : game === 'ersomha' ? { settings: ersomhaSettings } : game === 'badeeha' ? { settings: badeehaRoom } : game === 'mafia' ? { settings: mafiaSettings } : {}) } : {}) }, { headers: account.authHeaders() });
       if (!requestCurrent(submitOwner,generation)) return;
       const stored = save(SERVER, result.code, session);
+      // Ownership belongs to these newly confirmed credentials. A guest seat
+      // must not inherit a stale signed-in owner from an earlier room/code.
+      save(SERVER, `roomOwner:${result.code}`, account.user?.id || null);
       if (account.user?.id) {
-        save(SERVER, `roomOwner:${result.code}`, account.user.id);
         save(SERVER, socialJoinFallbackKey(account.user.id, result.code), null);
       }
       save(SERVER, 'persistence', stored);
@@ -473,7 +475,8 @@ function ConnectedRoom({ code, session, stored, onLeft, onGameChange, onPromoted
   const observerSession = session.scope === 'observer';
   const clearCurrent = useCallback(() => {if(observerSession){save(SERVER,`observer:${code}`,null);save(SERVER,`observerOwner:${code}`,null);if(readSaved(SERVER,'lastObserverRoom')===code)save(SERVER,'lastObserverRoom',null);}else clearSession(SERVER,code);}, [code, observerSession]);
   const ownerRef = useRef(readSaved(SERVER, `${observerSession?'observerOwner':'roomOwner'}:${code}`) || account.user?.id || null);
-  const ownershipMismatch = (observerSession || ['ersomha','mafia'].includes(state?.game)) && (!ownerRef.current || ownerRef.current !== account.user?.id);
+  const accountBoundRoom = Boolean(ownerRef.current) || observerSession || ['ersomha','mafia'].includes(state?.game) || state?.directory?.visibility === 'public';
+  const ownershipMismatch = accountBoundRoom && (!ownerRef.current || ownerRef.current !== account.user?.id);
   useMafiaAmbience(sound,state?.game==='mafia'&&!ownershipMismatch);
   useLayoutEffect(()=>{if(state?.game)onGameChange?.(state.game);},[state?.game,onGameChange]);
   useLayoutEffect(() => {

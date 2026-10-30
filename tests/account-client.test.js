@@ -183,6 +183,21 @@ test('api: الطلب مجهول ولا يُخزَّن، ويقرأ تدوير �
   assert.equal(raw.status, 204);
 });
 
+test('api: explicit app logout revokes rotated successors with a bounded body while generic HTTP logout stays exact-session', async () => {
+  const seen = [];
+  const fetchImpl = async (url, init) => { seen.push({ url, init }); return fakeResponse(204, undefined); };
+  const response = await api.signout({ server: SERVER, token: 'captured-A', fetchImpl });
+  assert.equal(response.status, 204);
+  assert.equal(seen[0].url, `${SERVER}/api/auth/signout`);
+  assert.equal(seen[0].init.method, 'POST');
+  assert.equal(seen[0].init.headers.authorization, 'Bearer captured-A');
+  assert.equal(seen[0].init.headers['content-type'], 'application/json');
+  assert.deepEqual(JSON.parse(seen[0].init.body), { revokeReplacements: true });
+  assert.ok(Buffer.byteLength(seen[0].init.body) <= 1024);
+  await api.request('/api/auth/signout', { server: SERVER, method: 'POST', fetchImpl });
+  assert.equal(seen[1].init.body, undefined, 'body-less callers retain their legacy exact-session contract');
+});
+
 test('api: المهلة تُجهض الطلب وتعيد NETWORK، ورابط بدء الدخول يحمل return', async () => {
   await assert.rejects(api.request('/api/me', {
     server: SERVER, timeout: 5,
