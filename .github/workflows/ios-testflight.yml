@@ -47,6 +47,7 @@ jobs:
       IOS_BUILD: ${{ inputs.build }}
       IOS_UPLOAD: ${{ inputs.upload_to_testflight }}
       MAYDAN_PRIVATE_AUDIO_PREVIEW: ${{ inputs.private_audio_preview && '1' || '0' }}
+      MAYDAN_CANDIDATE_ASSET_ROOT: ${{ inputs.private_audio_preview && format('{0}/public', github.workspace) || '' }}
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
         with:
