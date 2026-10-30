@@ -3,6 +3,7 @@ import { stmt } from './lamma/common.mjs';
 import { liveAccountSql } from './moderation/access.mjs';
 import { mafiaProgressDeleteStatements } from './mafia-progression.mjs';
 import { mafiaRankedDeleteStatements } from './mafia-ranked.mjs';
+import { mafiaRatingPolicyDeleteStatements } from './mafia-rating-policy-store.mjs';
 import { mafiaCommunityDeleteStatements } from './mafia-community.mjs';
 
 // Old envelopes have no participantCount. Their archived reveal is the only
@@ -36,7 +37,7 @@ export function prepareMafiaResult(room,now=Date.now()) {
   return {...metadata,key,eventId:marker?.eventId||null,roomCode:room.code,rulesetVersion:room.rulesetVersion||1,
     startedAt:marker?.startedAt??room.startedAt??null,finishedAt:now,...((room.protocol||1)>=2||metadata.rewardPolicyVersion===1?{notBefore:now+30000}:{}),
     mode:room.settings.mode,visibility:room.settings.visibility,capacity:room.settings.capacity,participantCount:room.participants.length,
-    ...(room.ranked?{ranked:{key:room.ranked.key,seasonId:room.ranked.seasonId,ratingModel:room.ranked.ratingModel}}:{}),
+    ...(room.ranked?{ranked:{key:room.ranked.key,seasonId:room.ranked.seasonId,ratingModel:room.ranked.ratingModel,...(room.ranked.ratingPolicySHA256?{ratingPolicySHA256:room.ranked.ratingPolicySHA256}:{})}}:{}),
     summary,draw:room.outcome?.faction==='draw',results:results.map(r=>({...r,
       // Pre-marker matches retain archive compatibility only. A known mapping
       // never falls back to a later account attached to the same seat.
@@ -66,5 +67,6 @@ export function mafiaDeleteStatements(env,id) {
     ...mafiaCommunityDeleteStatements(env,id),
     ...mafiaProgressDeleteStatements(env,id),
     ...mafiaRankedDeleteStatements(env,id),
+    ...mafiaRatingPolicyDeleteStatements(env,id),
   ];
 }

@@ -2,6 +2,8 @@
 
 Updated 2026-10-30 (Asia/Amman). The owner explicitly requested implementation of all remaining phases without tests. E/F/G therefore proceed as experimental preview implementation. The earlier D2 physical-device and D3 human-balance acceptance has not been completed, waived into a passing result, or inferred from compilation. Production activation remains outside this work.
 
+Follow-up on the same date: the owner requested completion of the remaining engineering and handoff to the existing Maydan chat for integration and tests. That handoff adds actual skill-aware matchmaking, reproducible faction-prior calibration and immutable future-season policy binding, and an external acceptance evidence evaluator. Its current source is a local handoff candidate until the receiving chat integrates, tests and records a separate release receipt. The prior hosted receipt still identifies the prior deployed source; it does not prove these follow-up files are deployed or tested.
+
 The actual candidate commit, compiled artifact hashes, migration ledger and hosted Worker version belong in the external `Maydan-Mafia-All-Phases-Preview-Receipt.json`. Earlier 1715-test evidence belongs to source `d014becd248d683e8c626947215e0cfe64c5e249`; it does not cover these new changes. No new automated tests, browser gameplay sessions, physical-device sessions or human balance sessions are run for E/F/G. Compilation and deployment artifact correspondence are separate operational evidence.
 
 ## E: competitive preview
@@ -13,6 +15,8 @@ The actual candidate commit, compiled artifact hashes, migration ledger and host
 - The existing delayed durable result outbox settles rating receipts once. Technical aborts do not manufacture a ranking result. A completed result stays pending until its settlement succeeds. Season closure drains matches, freezes a permanent snapshot and grants one cosmetic license through existing achievements and entitlements.
 
 See `RANKED-PREVIEW.md` for the exact queue, rating, season and recovery policies. This cannot prevent communication outside Maydan or establish competitive fairness without actual acceptance work.
+
+The follow-up queue policy is described in `MATCHMAKING-POLICY.md`. `RATING-CALIBRATION.md` defines the evidence-derived future model; the active experimental season retains its original model. `ACCEPTANCE-EVIDENCE.md` defines the operator evidence contract. Missing human observations, physical hardware and actual voice quota remain missing evidence, not values that code can synthesize.
 
 ## F: free cosmetics, clubs and limited tournaments
 

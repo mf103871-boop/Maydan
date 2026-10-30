@@ -4,8 +4,11 @@ import { liveAccountSql,isModerator } from './moderation/access.mjs';
 import { json,readJson,credentials,sha256 } from './protocol.mjs';
 import { requireMafiaEnabled } from './mafia-access.mjs';
 import { requireMafiaNewMatches,mafiaAcceptsNewMatches } from './mafia-ruleset-policy.mjs';
-import { rankedMatchDeltas,rankedBand } from './mafia-ranked-rating.mjs';
+import { rankedBand } from './mafia-ranked-rating.mjs';
+import { ratingDeltasForPolicy,canonicalMafiaRatingValue } from './mafia-rating-policy.mjs';
+import { resolveMafiaSeasonRatingPolicy } from './mafia-rating-policy-store.mjs';
 import { notifyUsers } from './social/realtime.mjs';
+import { MAFIA_MATCHMAKING_POLICY,rankedMatchingStatus,selectRankedGroup } from './mafia-matchmaking.mjs';
 
 const QUEUE_MS=120000,COORDINATOR='mafia-ranked-preview-v1';
 export const mafiaPreviewOnly=env=>String(env.APP_ORIGIN||'')==='https://maydan-mafia-preview.mf103871.workers.dev';
@@ -14,6 +17,12 @@ const marks=values=>values.map(()=>'?').join(',');
 const nowSessionSql=`EXISTS(SELECT 1 FROM sessions s WHERE s.id=? AND s.user_id=? AND s.expires_at>? AND (s.revoked_at IS NULL OR s.revoked_at>?) AND ${liveAccountSql('s.user_id')})`;
 const actorArgs=(actor,now)=>[actor.sessionId,actor.userId,now,now];
 const queueKey=season=>`ranked:queue:${season}`;
+const queueAvailableSql=(alias,now)=>`NOT EXISTS(SELECT 1 FROM mafia_seats ms WHERE ms.user_id=${alias}.user_id AND ms.expires_at>${now})
+  AND NOT EXISTS(SELECT 1 FROM mafia_observer_memberships mo WHERE mo.user_id=${alias}.user_id AND mo.expires_at>${now})
+  AND NOT EXISTS(SELECT 1 FROM mafia_media_leases mm WHERE mm.user_id=${alias}.user_id AND mm.expires_at>${now})
+  AND NOT EXISTS(SELECT 1 FROM social_call_participants cp WHERE cp.user_id=${alias}.user_id AND cp.state='active')
+  AND (SELECT COUNT(*) FROM mafia_progress_events pe WHERE pe.user_id=${alias}.user_id AND pe.status='processed' AND pe.source='live' AND pe.reward_policy_version=1 AND pe.visibility='public' AND pe.participation_granted=1 AND pe.forfeited=0)>=10
+  AND (EXISTS(SELECT 1 FROM mafia_tutorial_status ts WHERE ts.user_id=${alias}.user_id AND ts.status='completed' AND ts.ruleset_version=1) OR EXISTS(SELECT 1 FROM mafia_ranked_understanding ku WHERE ku.user_id=${alias}.user_id AND ku.policy_version=1))`;
 const roomPost=(env,code,endpoint,body)=>env.ROOMS.get(env.ROOMS.idFromName(code)).fetch(new Request(`https://internal/${endpoint}`,{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify(body)}));
 const guard=(env,id,sql,...args)=>stmt(env,`INSERT INTO mafia_ranked_atomic_guard(id,value) VALUES(?,CASE WHEN (${sql}) THEN 1 ELSE 0 END)`,id,...args);
 async function requireActor(env,actor,now=Date.now()){if(!await first(env,`SELECT 1 WHERE ${nowSessionSql}`,...actorArgs(actor,now)))fail('AUTH',401);}
@@ -35,10 +44,12 @@ async function sweep(env,now){
 async function ownState(env,actor,now=Date.now()){
   const season=await openSeason(env,now),held=await first(env,"SELECT season_id,seat_id,match_seat_id,queue_revision,joined_at,expires_at,match_key,room_code,status FROM mafia_ranked_queue WHERE user_id=? AND (status='assigned' OR expires_at>?)",actor.userId,now);
   const current=season||await first(env,'SELECT * FROM mafia_ranked_seasons ORDER BY starts_at DESC LIMIT 1');
+  const effectivePolicy=current?await resolveMafiaSeasonRatingPolicy(env,current):null;
   const rating=current&&await first(env,'SELECT rating,games,wins,forfeits,cooldown_until AS cooldownUntil FROM mafia_ranked_ratings WHERE user_id=? AND season_id=?',actor.userId,current.id);
   const r=rating||{rating:1000,games:0,wins:0,forfeits:0,cooldownUntil:0};
-  const state={available:true,experimental:true,calibrated:false,canManageSeasons:isModerator(env,actor.userId),season:current?{id:current.id,status:current.status,endsAt:current.ends_at,rulesetVersion:1,ratingModel:current.rating_model,rewardPolicyVersion:1}:null,
+  const state={available:true,experimental:true,calibrated:false,canManageSeasons:isModerator(env,actor.userId),season:current?{id:current.id,status:current.status,endsAt:current.ends_at,rulesetVersion:1,ratingModel:effectivePolicy.model,rewardPolicyVersion:1}:null,
     eligibility:await eligibility(env,actor.userId,season,now),rating:{...r,provisional:r.games<10,placementRemaining:Math.max(0,10-r.games),band:rankedBand(r.rating,r.games)},
+    matchmaking:rankedMatchingStatus(held?.joined_at,now),
     queue:held?{status:held.status,revision:held.queue_revision,seatId:held.status==='assigned'?held.match_seat_id:held.seat_id,clientSeatId:held.seat_id,joinedAt:held.joined_at,expiresAt:held.expires_at,code:held.room_code||null}:null,
     waiting:season?(await first(env,"SELECT COUNT(*) AS n FROM mafia_ranked_queue WHERE season_id=? AND status='queued' AND expires_at>?",season.id,now)).n:0};
   await requireActor(env,actor,Date.now());return state;
@@ -94,24 +105,41 @@ async function dispatch(env,now){
     // an admission limit, not a measured provider or production capacity claim.
     if(await first(env,"SELECT 1 FROM mafia_ranked_matches WHERE status='playing' LIMIT 1"))return;
     const season=await openSeason(env,now);if(!season)return;
-    const candidates=await all(env,`SELECT q.* FROM mafia_ranked_queue q JOIN sessions s ON s.id=q.session_id AND s.user_id=q.user_id JOIN mafia_match_leases l ON l.user_id=q.user_id WHERE q.status='queued' AND q.season_id=? AND q.expires_at>? AND s.expires_at>? AND (s.revoked_at IS NULL OR s.revoked_at>?) AND ${liveAccountSql('q.user_id')} AND l.room_key=? AND l.match_id='queue' AND l.expires_at>? ORDER BY q.joined_at,q.user_id LIMIT 32`,season.id,now,now,now,queueKey(season.id),now);
-    // Respect bilateral blocks without revealing why a particular queue has
-    // not filled. Do not group parties, friends, cosmetics or subscriptions.
-    const selected=[];
-    for(const item of candidates){
-      if(selected.length&&await first(env,`SELECT 1 FROM social_blocks WHERE (blocker_id=? AND blocked_id IN (${marks(selected)})) OR (blocked_id=? AND blocker_id IN (${marks(selected)}))`,item.user_id,...selected.map(r=>r.user_id),item.user_id,...selected.map(r=>r.user_id)))continue;
-      selected.push(item);if(selected.length===8)break;
-    }
-    if(selected.length!==8)return;
+    const candidates=await all(env,`SELECT q.*,COALESCE(r.rating,1000) AS rating,COALESCE(r.games,0) AS rating_games FROM mafia_ranked_queue q JOIN sessions s ON s.id=q.session_id AND s.user_id=q.user_id JOIN mafia_match_leases l ON l.user_id=q.user_id LEFT JOIN mafia_ranked_ratings r ON r.user_id=q.user_id AND r.season_id=q.season_id WHERE q.status='queued' AND q.season_id=? AND q.expires_at>? AND s.expires_at>? AND (s.revoked_at IS NULL OR s.revoked_at>?) AND ${liveAccountSql('q.user_id')} AND l.room_key=? AND l.match_id='queue' AND l.expires_at>? AND COALESCE(r.cooldown_until,0)<=? AND ${queueAvailableSql('q',now)} ORDER BY q.joined_at,q.user_id LIMIT ${MAFIA_MATCHMAKING_POLICY.candidateLimit}`,season.id,now,now,now,queueKey(season.id),now,now);
+    const candidateIds=JSON.stringify(candidates.map(row=>row.user_id));
+    const blocks=await all(env,'SELECT blocker_id,blocked_id FROM social_blocks WHERE blocker_id IN (SELECT value FROM json_each(?)) AND blocked_id IN (SELECT value FROM json_each(?))',candidateIds,candidateIds);
+    const matched=selectRankedGroup(candidates,blocks,now);if(!matched)return;
+    const selected=matched.members,at=Date.now();
+    const selectedEvidence=JSON.stringify(selected.map(row=>({userId:row.user_id,seatId:row.seat_id,tokenHash:row.token_hash,revision:row.queue_revision,sessionId:row.session_id,rating:row.rating,games:row.rating_games})));
+    // Ratings, blocks, eligibility and every activity/session owner are checked
+    // again inside the same transaction that transfers the queue reservations.
+    // JSON parameters keep the bounded64candidate query below D1 bind limits.
+    const assignmentValid=`SELECT (SELECT COUNT(*) FROM mafia_ranked_queue q
+      JOIN json_each(?) expected ON q.user_id=json_extract(expected.value,'$.userId')
+      JOIN sessions s ON s.id=q.session_id AND s.user_id=q.user_id
+      JOIN mafia_match_leases l ON l.user_id=q.user_id
+      LEFT JOIN mafia_ranked_ratings r ON r.user_id=q.user_id AND r.season_id=q.season_id
+      WHERE q.status='queued' AND q.season_id=? AND q.expires_at>${at}
+        AND q.seat_id=json_extract(expected.value,'$.seatId') AND q.token_hash=json_extract(expected.value,'$.tokenHash')
+        AND q.queue_revision=json_extract(expected.value,'$.revision') AND q.session_id=json_extract(expected.value,'$.sessionId')
+        AND s.expires_at>${at} AND (s.revoked_at IS NULL OR s.revoked_at>${at}) AND ${liveAccountSql('q.user_id')}
+        AND l.room_key=? AND l.match_id='queue' AND l.expires_at>${at}
+        AND COALESCE(r.rating,1000)=json_extract(expected.value,'$.rating') AND COALESCE(r.games,0)=json_extract(expected.value,'$.games') AND COALESCE(r.cooldown_until,0)<=${at}
+        AND ${queueAvailableSql('q',at)})=8
+      AND EXISTS(SELECT 1 FROM mafia_ranked_seasons z WHERE z.id=? AND z.status='open' AND z.starts_at<=${at} AND z.ends_at>${at})
+      AND NOT EXISTS(SELECT 1 FROM mafia_ranked_matches rm WHERE rm.status IN ('creating','playing'))
+      AND NOT EXISTS(SELECT 1 FROM social_blocks b WHERE b.blocker_id IN (SELECT json_extract(value,'$.userId') FROM json_each(?)) AND b.blocked_id IN (SELECT json_extract(value,'$.userId') FROM json_each(?)))`;
     const matchKey=crypto.randomUUID(),words=new Uint32Array(1);crypto.getRandomValues(words);const code=String(100000+words[0]%900000),stamp=crypto.randomUUID();
     await env.DB.batch([
-      stmt(env,"INSERT INTO mafia_ranked_matches(match_key,season_id,room_code,created_at,status) VALUES(?,?,?,?,'creating')",matchKey,season.id,code,now),
-      ...selected.map(row=>stmt(env,"UPDATE mafia_ranked_queue SET status='assigned',match_key=?,room_code=?,expires_at=?,match_seat_id=? WHERE user_id=? AND seat_id=? AND status='queued' AND expires_at>?",matchKey,code,now+QUEUE_MS,crypto.randomUUID().replaceAll('-',''),row.user_id,row.seat_id,now)),
-      ...selected.map(row=>stmt(env,"UPDATE mafia_match_leases SET room_key=?,match_id='1',expires_at=?,updated_at=? WHERE user_id=? AND room_key=? AND match_id='queue' AND expires_at>?",matchKey,now+180000,now,row.user_id,queueKey(season.id),now)),
-      guard(env,stamp,"SELECT COUNT(*)=8 FROM mafia_ranked_queue q JOIN mafia_match_leases l ON l.user_id=q.user_id WHERE q.match_key=? AND q.status='assigned' AND l.room_key=? AND l.expires_at>?",matchKey,matchKey,now),
+      guard(env,`${stamp}:admission`,assignmentValid,selectedEvidence,season.id,queueKey(season.id),season.id,selectedEvidence,selectedEvidence),
+      stmt(env,"INSERT INTO mafia_ranked_matches(match_key,season_id,room_code,created_at,status) VALUES(?,?,?,?,'creating')",matchKey,season.id,code,at),
+      ...selected.map(row=>stmt(env,"UPDATE mafia_ranked_queue SET status='assigned',match_key=?,room_code=?,expires_at=?,match_seat_id=? WHERE user_id=? AND seat_id=? AND queue_revision=? AND status='queued' AND expires_at>?",matchKey,code,at+QUEUE_MS,crypto.randomUUID().replaceAll('-',''),row.user_id,row.seat_id,row.queue_revision,at)),
+      ...selected.map(row=>stmt(env,"UPDATE mafia_match_leases SET room_key=?,match_id='1',expires_at=?,updated_at=? WHERE user_id=? AND room_key=? AND match_id='queue' AND expires_at>?",matchKey,at+180000,at,row.user_id,queueKey(season.id),at)),
+      guard(env,stamp,"SELECT COUNT(*)=8 FROM mafia_ranked_queue q JOIN mafia_match_leases l ON l.user_id=q.user_id WHERE q.match_key=? AND q.status='assigned' AND l.room_key=? AND l.expires_at>?",matchKey,matchKey,at),
       stmt(env,'DELETE FROM mafia_ranked_atomic_guard WHERE id=?',stamp),
+      stmt(env,'DELETE FROM mafia_ranked_atomic_guard WHERE id=?',`${stamp}:admission`),
     ]);
-    pending={match_key:matchKey,season_id:season.id,room_code:code,created_at:now};
+    pending={match_key:matchKey,season_id:season.id,room_code:code,created_at:at};
   }
   const rows=await all(env,'SELECT user_id,match_seat_id AS seat_id,token_hash,session_id FROM mafia_ranked_queue WHERE match_key=? ORDER BY match_seat_id',pending.match_key);
   if(pending.created_at+180000<=now){
@@ -190,7 +218,11 @@ export async function settleRankedMatch(env,event){
   const season=await first(env,'SELECT * FROM mafia_ranked_seasons WHERE id=?',seasonId);if(!season||season.status==='closed')fail('MAFIA_RANKED_CLOSED',503);
   const ids=event.results.map(r=>r.userId),ratings=await all(env,`SELECT * FROM mafia_ranked_ratings WHERE season_id=? AND user_id IN (${marks(ids)})`,seasonId,...ids),lookup=new Map(ratings.map(r=>[r.user_id,r]));
   const live=await all(env,`SELECT id FROM users WHERE id IN (${marks(ids)}) AND ${liveAccountSql('users.id')}`,...ids),eligible=new Set(live.map(r=>r.id));
-  const deltas=rankedMatchDeltas(event.results,lookup);
+  const policy=await resolveMafiaSeasonRatingPolicy(env,season);
+  const policySHA256=await sha256(canonicalMafiaRatingValue(policy));
+  if(event.ranked.ratingModel!==policy.model||(event.ranked.ratingPolicySHA256&&event.ranked.ratingPolicySHA256!==policySHA256)
+    ||(policy.model!=='preview-elo-1'&&!event.ranked.ratingPolicySHA256))fail('MAFIA_RANKED_CONFLICT',503);
+  const deltas=ratingDeltasForPolicy(event.results,lookup,policy,{draw:event.draw});
   const token=crypto.randomUUID(),stamp=crypto.randomUUID(),now=Date.now(),statements=[stmt(env,"UPDATE mafia_ranked_matches SET status='completed',settled_at=?,event_digest=?,settle_token=? WHERE match_key=? AND event_digest IS NULL AND status IN ('creating','playing') AND EXISTS(SELECT 1 FROM mafia_ranked_seasons WHERE id=? AND status IN ('open','closing'))",now,digest,token,key,seasonId)];
   const owns='EXISTS(SELECT 1 FROM mafia_ranked_matches WHERE match_key=? AND event_digest=? AND settle_token=?)';
   for(const result of event.results){

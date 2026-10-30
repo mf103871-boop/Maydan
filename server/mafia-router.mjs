@@ -11,9 +11,11 @@ import { saveMafiaReportCase,ownMafiaReportCases,ownMafiaReportCase } from './ma
 import { readMafiaReview } from './mafia-review.mjs';
 import { routeMafiaRanked,mafiaRankedEnabled,mafiaPreviewOnly } from './mafia-ranked.mjs';
 import { routeMafiaCommunity } from './mafia-community.mjs';
+import { routeMafiaRatingPolicy } from './mafia-rating-policy-store.mjs';
 
 const roomFetch=(env,code,endpoint,body)=>env.ROOMS.get(env.ROOMS.idFromName(code)).fetch(new Request(`https://internal/${code}/${endpoint}`,{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify(body)}));
 export async function routeMafia(request,env,url,charge) {
+  const ratingPolicy=await routeMafiaRatingPolicy(request,env,url,charge);if(ratingPolicy)return ratingPolicy;
   const community=await routeMafiaCommunity(request,env,url,charge);if(community)return community;
   const path=url.pathname,method=request.method;
   const capabilities={mafia:MAFIA_PROTOCOL,ranked:mafiaRankedEnabled(env),mafiaCommunity:mafiaPreviewOnly(env)&&String(env.MAFIA_COMMUNITY_ENABLED)==='1',experimentalRoles:mafiaPreviewOnly(env)&&String(env.MAFIA_EXPERIMENTAL_ROLES_ENABLED)==='1'};

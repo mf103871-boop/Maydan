@@ -1,7 +1,7 @@
 import statements from '../src/data/games/meenfina/statements.json' with { type: 'json' };
 import { createRoom, joinRoom, connected, leaveRoom, action, tick, snapshot, nextAlarm, member, roomCapacity, RoomError, fail } from './game-model.mjs';
 import { buildFabrakaDeck } from './fabraka-content.mjs';
-import { credentials, readJson, json, errorResponse, shuffled, createLimit } from './protocol.mjs';
+import { credentials, readJson, json, errorResponse, shuffled, createLimit, sha256 } from './protocol.mjs';
 import { bindSeatAccount, prepareRoomStats } from './room-stats.mjs';
 import { recordOnlineResult, profileSummaries } from './profiles/db.mjs';
 import { recheckMafiaHost, mafiaHostEligible } from './accounts/router.mjs';
@@ -18,6 +18,8 @@ import { technicalAbort, snapshot as mafiaSnapshot, voiceAudience } from './mafi
 import { persistMafiaResult, prepareMafiaResult } from './mafia-results.mjs';
 import { persistMafiaProgress, mafiaProgressEnabled } from './mafia-progression.mjs';
 import { rankedCoordinator,mafiaRankedEnabled,mafiaPreviewOnly,settleRankedMatch,rankedRoomCommitted } from './mafia-ranked.mjs';
+import { resolveMafiaSeasonRatingPolicy } from './mafia-rating-policy-store.mjs';
+import { canonicalMafiaRatingValue } from './mafia-rating-policy.mjs';
 import { supportsMafiaProtocol,supportsMafiaRuleset } from '../src/online/mafia-shared.js';
 import { createMafiaMetrics } from '../src/online/mafia-metrics.mjs';
 import { MafiaDirectoryFeed } from './mafia-directory-feed.mjs';
@@ -659,10 +661,14 @@ export class Room {
     if(held.length!==8||new Set(held.map(s=>s.seat_id)).size!==8||!input.seats.every(s=>held.some(h=>h.user_id===s.user_id&&h.seat_id===s.seat_id&&h.token_hash===s.token_hash&&h.session_id===s.session_id)))fail('AUTH',401);
     let candidate=this.room?structuredClone(this.room):null;
     if(!candidate){
+      const season=await this.env.DB.prepare("SELECT z.* FROM mafia_ranked_seasons z JOIN mafia_ranked_matches m ON m.season_id=z.id WHERE m.match_key=? AND m.room_code=? AND m.status IN ('creating','playing')").bind(input.key,input.code).first();
+      if(!season||season.id!==input.seasonId)fail('MAFIA_RANKED_RESULT',503);
+      const ratingPolicy=await resolveMafiaSeasonRatingPolicy(this.env,season);
+      const ratingPolicySHA256=await sha256(canonicalMafiaRatingValue(ratingPolicy));
       const settings={mode:'classic',capacity:8,visibility:'private',roomName:'المنافسة التجريبية',community:'ar',voiceMode:'off'};
       for(let i=0;i<input.seats.length;i++){
         const row=input.seats[i],seat={id:row.seat_id,tokenHash:row.token_hash,name:`المقعد ${i+1}`,avatar:0,game:'mafia',settings,capabilities:{mafia:2},accountUserId:row.user_id};
-        if(i===0){candidate=createRoom(input.code,seat,now);candidate.mafiaKey=input.key;candidate.ranked={key:input.key,seasonId:input.seasonId,ratingModel:'preview-elo-1',rewardPolicyVersion:1};candidate.roomTrialGate=null;candidate.roomTrialClaim=crypto.randomUUID();candidate.trialOwnerId=seat.id;candidate.trialStarted=false;}
+        if(i===0){candidate=createRoom(input.code,seat,now);candidate.mafiaKey=input.key;candidate.ranked={key:input.key,seasonId:input.seasonId,ratingModel:ratingPolicy.model,ratingPolicySHA256,rewardPolicyVersion:1};candidate.roomTrialGate=null;candidate.roomTrialClaim=crypto.randomUUID();candidate.trialOwnerId=seat.id;candidate.trialStarted=false;}
         else joinRoom(candidate,seat,now);
         bindSeatAccount(candidate,seat.id,row.user_id);member(candidate,seat.id).canHost=true;
       }

@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Mafia rating calibration dataset",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "kind", "evidenceKind", "provenance", "matches"],
+  "properties": {
+    "schemaVersion": {"const": 1},
+    "kind": {"const": "mafia-rating-dataset"},
+    "evidenceKind": {"enum": ["real-human", "synthetic", "unknown"]},
+    "provenance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["sourceCommit", "workerVersion", "migrationSetSHA256", "querySHA256", "exportedAt"],
+      "properties": {
+        "sourceCommit": {"type": "string", "pattern": "^[a-f0-9]{40}$"},
+        "workerVersion": {"type": "string", "pattern": "^[a-f0-9-]{36}$"},
+        "migrationSetSHA256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "querySHA256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "exportedAt": {"type": "string", "format": "date-time"}
+      }
+    },
+    "matches": {
+      "type": "array", "maxItems": 1000,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["sampleRef", "at", "outcome", "townMeanBefore", "mafiaMeanBefore", "forfeits", "netRatingDelta", "seats", "allHuman"],
+        "properties": {
+          "sampleRef": {"type": "string", "pattern": "^[a-f0-9]{16,64}$"},
+          "at": {"type": "integer", "minimum": 1},
+          "outcome": {"enum": ["town", "mafia", "draw", "technical_abort"]},
+          "townMeanBefore": {"type": "number", "minimum": 0, "maximum": 3000},
+          "mafiaMeanBefore": {"type": "number", "minimum": 0, "maximum": 3000},
+          "forfeits": {"type": "integer", "minimum": 0, "maximum": 8},
+          "netRatingDelta": {"type": "integer", "minimum": -256, "maximum": 256},
+          "seats": {"type": "integer", "minimum": 0, "maximum": 8},
+          "allHuman": {"type": "boolean"}
+        }
+      }
+    }
+  }
+}
