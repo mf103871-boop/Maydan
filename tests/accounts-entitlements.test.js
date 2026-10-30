@@ -245,7 +245,13 @@ test('ترحيلات D1 جمل مستقلة بسطر واحد يقبلها exec'
       'ALTER TABLE social_groups ADD COLUMN creator_id TEXT REFERENCES users(id) ON DELETE SET NULL;',
       'ALTER TABLE social_groups ADD COLUMN creation_client_id TEXT;',
       'ALTER TABLE social_groups ADD COLUMN creation_hash TEXT;',
-      'CREATE UNIQUE INDEX IF NOT EXISTS social_groups_creation ON social_groups(creator_id,creation_client_id) WHERE creation_client_id IS NOT NULL;'].includes(statement) ||
+      'CREATE UNIQUE INDEX IF NOT EXISTS social_groups_creation ON social_groups(creator_id,creation_client_id) WHERE creation_client_id IS NOT NULL;',
+      // 0022: reviewed additive fields on the existing Mafia report queue.
+      'ALTER TABLE mafia_reports ADD COLUMN request_hash TEXT;',
+      "ALTER TABLE mafia_reports ADD COLUMN category TEXT NOT NULL DEFAULT 'other' CHECK(category IN ('harassment','cheating','disruption','inappropriate','other'));",
+      'ALTER TABLE mafia_reports ADD COLUMN match_id INTEGER;',
+      'ALTER TABLE mafia_reports ADD COLUMN review_started_at INTEGER;',
+      'ALTER TABLE mafia_reports ADD COLUMN reviewer_id TEXT;'].includes(statement) ||
     /^CREATE UNIQUE INDEX IF NOT EXISTS social_(group_invites_pending|calls_open|call_one_active) /.test(statement) ||
     (/^INSERT OR IGNORE INTO (social_profiles|player_profiles)\(/.test(statement) &&
       !/\b(UPDATE|DELETE|REPLACE|DROP|ALTER)\b/i.test(statement)) ||
@@ -259,6 +265,9 @@ test('ترحيلات D1 جمل مستقلة بسطر واحد يقبلها exec'
     'ALTER TABLE social_groups ADD COLUMN creator_id TEXT REFERENCES users(id) ON DELETE CASCADE;',
     'ALTER TABLE social_groups ADD COLUMN creation_hash TEXT NOT NULL;',
     'CREATE UNIQUE INDEX IF NOT EXISTS social_groups_creation ON social_groups(name);',
+    'ALTER TABLE mafia_reports ADD COLUMN unreviewed TEXT;',
+    'ALTER TABLE mafia_reports ADD COLUMN reviewer_id TEXT NOT NULL;',
+    "ALTER TABLE mafia_reports ADD COLUMN category TEXT NOT NULL DEFAULT 'other';",
     "INSERT OR IGNORE INTO design_draft(id,document_json) VALUES('main','unreviewed');",
   ]) assert.equal(allowed(unsafe), false, `جملة غير آمنة: ${unsafe}`);
   assert.ok(statements.length >= 10, 'الترحيل الأول ينشئ جداول الحسابات كلها');
