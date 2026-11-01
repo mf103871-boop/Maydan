@@ -397,7 +397,7 @@ test('الجدار يعرض السبب والخطتين والشروط وروا�
   const html = mod.renderPaywall({ reason: 'trial', game: 'beep' });
   assert.match(html, /خلّي لك بصمة مع ميدان بلس/);
   assert.match(html, /كل الألعاب والحزم والغرف مجانية/);
-  for (const bullet of ['إطارات وصور وبطاقات بروفايل مميزة', 'ثيمات مجلسك لكل الموجودين', 'ملصقات وتفاعلات أصلية', 'مجموعة جديدة كل شهر', 'عشر جلسات جاهزة على أجهزتك']) assert.match(html, new RegExp(bullet));
+  for (const bullet of ['إطارات وصور وبطاقات بروفايل مميزة', 'ثيمات مجلسك لكل الموجودين', 'ملصقات وتفاعلات أصلية', 'مجموعات جديدة تُضاف تباعًا', 'عشر جلسات جاهزة على أجهزتك']) assert.match(html, new RegExp(bullet));
   assert.match(html, /data-plan="monthly"/);
   assert.doesNotMatch(html, /data-plan="yearly"/, 'لا خطة سنوية قبل توفر سعرها');
   assert.doesNotMatch(html, /الأوفر/, 'لا ادعاء توفير بلا مقارنة أسعار المتجر');

@@ -10,7 +10,7 @@ import { PLUS_NAME, LEGAL_ROUTES, SUPPORT_EMAIL, PUBLIC_SITE_ORIGIN } from './co
 import { SignInButtons, SIGN_IN_NOTE } from './SignInSheet.jsx';
 import { RedeemForm, REDEEM_PROMPT } from './RedeemSheet.jsx';
 import { REDEEM_ON_IOS } from './config.js';
-export const PAYWALL_BULLETS = ['إطارات وصور وبطاقات بروفايل مميزة', 'ثيمات مجلسك لكل الموجودين', 'ملصقات وتفاعلات أصلية', 'مجموعة جديدة كل شهر', 'عشر جلسات جاهزة على أجهزتك'];
+export const PAYWALL_BULLETS = ['إطارات وصور وبطاقات بروفايل مميزة', 'ثيمات مجلسك لكل الموجودين', 'ملصقات وتفاعلات أصلية', 'مجموعات جديدة تُضاف تباعًا', 'عشر جلسات جاهزة على أجهزتك'];
 export const PAYWALL_LEGAL = 'يتجدد الاشتراك تلقائيًا ما لم يُلغَ قبل نهاية الفترة بـ٢٤ ساعة';
 export const PRICE_UNKNOWN = 'يُعرض السعر عند الشراء';
 

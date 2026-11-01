@@ -3,7 +3,7 @@
 // Data-type names follow ios/PRIVACY-DISCLOSURES.md and PrivacyInfo.xcprivacy.
 const ORIGIN = 'https://maydan-game.mf103871.workers.dev';
 const SUPPORT_EMAIL = 'mf103871@gmail.com';
-const UPDATED = '2026-10-31';
+const UPDATED = '2026-11-01';
 const DATA_TYPES = [
   ['Name', 'الاسم', 'اسم الحساب واسم العرض وأسماء اللاعبين.'],
   ['EmailAddress', 'البريد الإلكتروني', 'البريد الذي يشاركه مزوّد تسجيل الدخول، بما فيه بريد Apple الوسيط.'],
