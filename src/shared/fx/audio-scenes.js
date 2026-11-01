@@ -23,7 +23,8 @@ export function resolveAudioScene(game, phase, { creatorMode = false, tracks = R
   const scene = AUDIO_SCENES[game] || AUDIO_SCENES.home;
   const silent = creatorMode || (game === 'beep' && ['play', 'bomb', 'three'].includes(phase)) ||
     (game === 'mafia' && ['opening', 'discussion', 'defense'].includes(phase));
-  const privateTrack = isPrivateAudioCandidateBuild() ? CANDIDATE_SCENES[game] || CANDIDATE_SCENES.home : null;
+  // The compile-time guard lets public builds drop the private candidate catalog.
+  const privateTrack = typeof __MAYDAN_AUDIO_PREVIEW__ !== 'undefined' && __MAYDAN_AUDIO_PREVIEW__ === true && isPrivateAudioCandidateBuild() ? CANDIDATE_SCENES[game] || CANDIDATE_SCENES.home : null;
   const privateCandidate = validPrivateAudioCandidate(privateTrack) && !unavailableTracks.has(privateTrack.url);
   const track = tracks[scene.candidate];
   const reviewed = track?.listeningApproved === true && track?.licenseVerified === true &&

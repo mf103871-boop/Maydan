@@ -101,7 +101,8 @@ export function Settings() {
       </Card>
       </SettingsGroup>
       <p className="muted center" style={{ fontSize: 13 }}>ميدان: ألعاب جمعتنا · الإصدار {version}</p>
-      {audioCandidates && isPrivateAudioCandidateBuild() && <AudioCandidateLab onClose={() => setAudioCandidates(false)} />}
+      {/* The compile-time guard lets public builds drop the lab and its private catalog. */}
+      {typeof __MAYDAN_AUDIO_PREVIEW__ !== 'undefined' && __MAYDAN_AUDIO_PREVIEW__ === true && audioCandidates && isPrivateAudioCandidateBuild() && <AudioCandidateLab onClose={() => setAudioCandidates(false)} />}
       {confirmClear && (
         <ConfirmModal title="مسح كل البيانات؟" danger message="لا يمكن التراجع. ستُحذف أسماء اللاعبين والنتائج والمباريات المحفوظة ومفاتيح العودة للغرف من هذا الجهاز. يبقى حسابك واشتراكك." confirmLabel="نعم، امسح" cancelLabel="إلغاء"
           onConfirm={() => { clearAllPlatformData({ keep: [ACCOUNT_PREFIX] }); setConfirmClear(false); toast('تم مسح البيانات'); setTimeout(() => location.reload(), 500); }} onCancel={() => setConfirmClear(false)} />

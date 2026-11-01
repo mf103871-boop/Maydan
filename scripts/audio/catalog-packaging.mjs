@@ -25,16 +25,18 @@ export function packedAudioCatalogSource() {
   };
   const encoded = encode(CANDIDATE_FILES);
   const refs = (map) => JSON.stringify(Object.fromEntries(Object.entries(map).map(([key, value]) => [key, value.id])));
+  // Pure annotations let a public build, where every reader is compiled out,
+  // drop the whole catalog. A private preview build keeps every field.
   return `const keys=${JSON.stringify(keys)},schemas=${JSON.stringify(schemas)},strings=${JSON.stringify(strings)};
 const decode=v=>!Array.isArray(v)?v:v[0]===2?strings[v[1]]:v[0]===1?v.slice(1).map(decode):Object.fromEntries(schemas[v[1]].map((key,i)=>[keys[key],decode(v[i+2])]));
 const freeze=v=>{if(v&&typeof v==='object'&&!Object.isFrozen(v)){for(const c of Object.values(v))freeze(c);Object.freeze(v);}return v;};
 export const CANDIDATE_BUNDLE_ID=${JSON.stringify(CANDIDATE_BUNDLE_ID)};
-export const CANDIDATE_FILES=freeze(decode(${JSON.stringify(encoded)}));
-const byId=Object.fromEntries(CANDIDATE_FILES.map(v=>[v.id,v]));
+export const CANDIDATE_FILES=/* @__PURE__ */freeze(/* @__PURE__ */decode(${JSON.stringify(encoded)}));
+const byId=/* @__PURE__ */(()=>Object.fromEntries(CANDIDATE_FILES.map(v=>[v.id,v])))();
 const resolve=refs=>freeze(Object.fromEntries(Object.entries(refs).map(([key,id])=>[key,byId[id]])));
-export const CANDIDATE_AUDITIONS=resolve(${refs(CANDIDATE_AUDITIONS)});
-export const CANDIDATE_EFFECTS=resolve(${refs(CANDIDATE_EFFECTS)});
-export const CANDIDATE_SCENES=resolve(${refs(CANDIDATE_SCENES)});`;
+export const CANDIDATE_AUDITIONS=/* @__PURE__ */resolve(${refs(CANDIDATE_AUDITIONS)});
+export const CANDIDATE_EFFECTS=/* @__PURE__ */resolve(${refs(CANDIDATE_EFFECTS)});
+export const CANDIDATE_SCENES=/* @__PURE__ */resolve(${refs(CANDIDATE_SCENES)});`;
 }
 
 export function audioCatalogPackagingPlugin() {
