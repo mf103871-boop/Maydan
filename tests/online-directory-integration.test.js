@@ -44,6 +44,26 @@ test('public creation and admission cannot forge an account; legacy private room
   const client=connect(t,app,priv.body.code,privSeat);await until(()=>client.state?.phase==='lobby','legacy guest did not connect');assert.equal(client.state.directory,undefined);
 });
 
+test('public room names pass the shared content filter and reject invisible characters before any listing',async t=>{
+  const{app,users}=await setup(t);
+  const named=(game,name)=>({...creation(game,seat('مضيف')),directory:{visibility:'public',name}});
+  // Every signed-in player reads these names, so they follow the same filter as
+  // player names, chat and Mafia room names, including spaced-letter evasion.
+  for(const name of ['kill yourself','غرفة f.u.c.k']){
+    const rejected=await create(app,named('meenfina',name),users[0]);
+    assert.equal(rejected.status,422,name);assert.equal(rejected.body.error,'CONTENT_REJECTED',name);
+  }
+  // Invisible format characters (zero-width, direction marks and isolates) could
+  // hide text or spoof another room's name in the shared list.
+  for(const name of ['غرفة​الشلّة','غرفة‏الشلّة','⁦غرفة الشلّة']){
+    const rejected=await create(app,named('fabraka',name),users[0]);
+    assert.equal(rejected.status,400,JSON.stringify(name));assert.equal(rejected.body.error,'ROOM_NAME',JSON.stringify(name));
+  }
+  for(const game of ['meenfina','fabraka'])assert.equal((await list(app,game,users[1])).body.rooms.length,0);
+  const accepted=await create(app,named('meenfina','سهرة الجمعة'),users[0]);assert.equal(accepted.status,201,JSON.stringify(accepted.body));
+  assert.deepEqual((await list(app,'meenfina',users[1])).body.rooms.map(room=>room.roomName),['سهرة الجمعة']);
+});
+
 test('default-off directory works against an old database without migration26 and never opens private rooms',async t=>{
   const{app,users}=await setup(t,false);await app.env.DB.exec('DROP TABLE online_public_rooms');
   const page=await list(app,'meenfina',users[0]);assert.equal(page.status,200);assert.equal(page.body.enabled,false);assert.deepEqual(page.body.rooms,[]);
