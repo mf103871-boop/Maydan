@@ -12,6 +12,26 @@ const stableBindings = worker => worker.settings.bindings.filter(binding => !MAF
 const variable = (worker, name) => worker.settings.bindings.find(binding => binding.name === name)?.text;
 const digest = (value, name) => assert.match(value || '', SHA256, `A frozen ${name} SHA-256 is required.`);
 
+const MIGRATION_NAME = /^\d{4}_[a-z0-9_]+\.sql$/;
+// The reviewed set is the frozen source's whole ordered server/migrations list
+// with each file's SHA-256 (production-release-review.mjs reads it). The live
+// ledger may lag behind that source, but never contain an unknown migration or
+// skip an older reviewed one. Every reviewed migration it lacks is pending.
+export function reviewedMigrationPlan(ledger, reviewed) {
+  assert.ok(Array.isArray(ledger), 'Read the live migration ledger.');
+  assert.equal(new Set(ledger).size, ledger.length, 'Duplicate migration ledger entries.');
+  assert.ok(Array.isArray(reviewed) && reviewed.length > 0, 'Pin the reviewed migration set of the source commit.');
+  const names = reviewed.map(migration => migration?.name);
+  for (const migration of reviewed) { assert.match(migration?.name || '', MIGRATION_NAME, 'Invalid reviewed migration name.'); digest(migration.sha256, `reviewed migration ${migration.name}`); }
+  assert.equal(new Set(names).size, names.length, 'Duplicate reviewed migrations.');
+  assert.deepEqual([...names].sort(), names, 'Reviewed migrations must be listed in order.');
+  for (const name of ledger) assert.ok(names.includes(name), `The live ledger has an unreviewed migration: ${name}.`);
+  const pending = reviewed.filter(migration => !ledger.includes(migration.name));
+  const newestApplied = [...ledger].sort().at(-1);
+  if (pending.length && newestApplied) assert.ok(pending[0].name > newestApplied, `An older reviewed migration is missing from the live ledger: ${pending[0].name}.`);
+  return { names, pending };
+}
+
 export function assertMafiaReleasePreservation(before, after, evidence, now = Date.now()) {
   assert.equal(before?.schemaVersion, 1); assert.equal(after?.schemaVersion, 1);
   const captured = Date.parse(before.capturedAt);
@@ -59,12 +79,13 @@ export function assertMafiaReleasePreservation(before, after, evidence, now = Da
   assert.equal(evidence.databaseBackup?.databaseId, before.database.id);
   const backupAt = Date.parse(evidence.databaseBackup?.completedAt);
   assert.ok(Number.isFinite(backupAt) && backupAt <= now && now - backupAt <= 30 * 60_000, 'Fresh encrypted backup required.');
+  // The new code reads tables from every migration since the live ledger (0014
+  // Mafia through 0026 directory today), so all of them, and nothing else, must
+  // be applied once, in order, with the reviewed bytes.
   const ledger = before.database.migrations;
-  assert.equal(new Set(ledger).size, ledger.length, 'Duplicate migration ledger entries.');
-  const pending = ledger.includes('0014_mafia.sql') ? [] : ['0014_mafia.sql'];
-  assert.deepEqual(after.database.migrations, [...ledger, ...pending], 'Only the reviewed additive Mafia migration may be added once.');
-  digest(evidence.mafiaMigrationSHA256, 'reviewed Mafia migration');
-  assert.equal(after.database.mafiaMigrationSHA256, evidence.mafiaMigrationSHA256, 'Migration bytes changed.');
+  const plan = reviewedMigrationPlan(ledger, evidence.reviewedMigrations), pending = plan.pending.map(migration => migration.name);
+  assert.deepEqual(after.database.migrations, [...ledger, ...pending], 'Every pending reviewed migration, and nothing else, must be added once and in order.');
+  for (const migration of plan.pending) assert.equal(after.database.migrationSHA256?.[migration.name], migration.sha256, `Migration bytes changed: ${migration.name}.`);
   assert.equal(evidence.liveProviderAcceptance?.passed, true, 'A live isolated provider test is required.');
   assert.equal(evidence.liveProviderAcceptance?.revokeBeforeCommit, true);
   digest(evidence.liveProviderAcceptance?.reportSHA256, 'provider report');

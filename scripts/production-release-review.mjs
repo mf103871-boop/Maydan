@@ -5,6 +5,8 @@ import path from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { execFile } from 'node:child_process';
 import { promisify } from 'node:util';
+import { createHash } from 'node:crypto';
+import { readdir, readFile } from 'node:fs/promises';
 import { assertMafiaReleasePreservation } from './mafia-release-guard.mjs';
 import { preservedMafiaUploadMetadata } from './mafia-preserved-bundle.mjs';
 import { assertLease, loadPrivate } from './lamma-release.mjs';
@@ -21,6 +23,7 @@ export function reviewProductionPair(envelope, provenance, now = Date.now()) {
   assert.match(provenance.backendTreeSha256 || '', /^[a-f0-9]{64}$/);
   assert.equal(envelope.evidence.sourceCommit, provenance.sourceCommit, 'Reviewed source changed.');
   assert.equal(envelope.evidence.backendTreeSha256, provenance.backendTreeSha256, 'Backend dependencies changed.');
+  assert.deepEqual(envelope.evidence.reviewedMigrations, provenance.migrations, 'Reviewed migrations differ from the frozen source files.');
   const { draft, snapshots, currentSnapshots } = envelope;
   assert.equal(draft?.kind, 'mafia-paired-preservation-draft');
   assert.equal(draft.sourceCommit, provenance.sourceCommit);
@@ -52,8 +55,15 @@ async function main() {
   const execute = promisify(execFile);
   const status = (await execute('git', ['status', '--porcelain', '--untracked-files=all'], { cwd: ROOT, windowsHide: true })).stdout.trim();
   assert.equal(status, '', 'Commit and freeze all reviewed source before production review.');
-  const provenance = { ...await getBackendProvenance(ROOT, { requireClean: true }), clean: true };
+  const provenance = { ...await getBackendProvenance(ROOT, { requireClean: true }), clean: true, migrations: await sourceMigrations() };
   console.log(JSON.stringify(reviewProductionPair(envelope, provenance)));
+}
+
+// Every migration file in the frozen checkout, in apply order, with its bytes' SHA-256.
+export async function sourceMigrations(root = ROOT) {
+  const directory = path.join(root, 'server/migrations');
+  const names = (await readdir(directory)).filter(name => name.endsWith('.sql')).sort();
+  return Promise.all(names.map(async name => ({ name, sha256: createHash('sha256').update(await readFile(path.join(directory, name))).digest('hex') })));
 }
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) main().catch(() => {
   console.error('Production review rejected. Reconcile the sealed evidence, clean source and live leases; no deployment was attempted.'); process.exitCode = 1;

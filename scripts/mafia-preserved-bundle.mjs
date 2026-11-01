@@ -8,6 +8,7 @@ import path from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { build } from 'esbuild';
 import { assetsConfig, leaseOf } from './lamma-release.mjs';
+import { reviewedMigrationPlan } from './mafia-release-guard.mjs';
 
 const ROOT = fileURLToPath(new URL('../', import.meta.url));
 const WORKERS = ['maydan-game', 'maydan-rooms'];
@@ -103,12 +104,13 @@ export function preservedMafiaUploadMetadata(name, snapshot) {
   return { metadata, lease: leaseOf(snapshot), schedules: structuredClone(snapshot.schedules), featureFlagMutation: false, resourceProvisioning: false };
 }
 
-export function pairedPreservationDraft({ snapshots, bundles, sourceCommit, bankProof, supportProof, migrationLedger, migrationSHA256 }) {
-  assert.match(sourceCommit, /^[a-f0-9]{40}$/); assert.match(migrationSHA256, /^[a-f0-9]{64}$/);
+export function pairedPreservationDraft({ snapshots, bundles, sourceCommit, bankProof, supportProof, migrationLedger, reviewedMigrations }) {
+  assert.match(sourceCommit, /^[a-f0-9]{40}$/);
   assert.equal(bankProof.exactLiveMatch, true, 'Prove local private bytes match both live workers before planning.');
   assert.equal(supportProof.exactLiveMatch, true, 'The restored support response must match live GET/HEAD.');
-  assert.equal(new Set(migrationLedger).size, migrationLedger.length);
   assert.ok(migrationLedger.includes('0013_social_group_creation.sql'), 'Reconcile the actual pre-Mafia migration ledger.');
+  // The new workers need every reviewed migration the live ledger lacks, not 0014 alone.
+  const migrationPlan = reviewedMigrationPlan(migrationLedger, reviewedMigrations);
   const workers = {};
   for (const name of WORKERS) {
     const compiled = bundles[name]; assert.equal(preservedHash(compiled.bytes), compiled.sha256);
@@ -117,6 +119,6 @@ export function pairedPreservationDraft({ snapshots, bundles, sourceCommit, bank
     workers[name] = { beforeVersion: current.versionId, beforeLease: leaseOf(current), reviewedModuleSHA256: compiled.sha256, byteLength: compiled.byteLength, sourceInputsSHA256: compiled.sourceInputsSHA256, upload: preservedMafiaUploadMetadata(name, current) };
   }
   return { schemaVersion: 1, kind: 'mafia-paired-preservation-draft', sourceCommit, workers, bankProof, supportProof,
-    migration: { name: '0014_mafia.sql', sha256: migrationSHA256, pending: !migrationLedger.includes('0014_mafia.sql') }, migrationLedger,
+    pendingMigrations: migrationPlan.pending.map(migration => ({ name: migration.name, sha256: migration.sha256 })), migrationLedger,
     readyToApply: false, remoteWrites: false, blockers: ['Freeze and review the integrated candidate bytes and source.', 'Pass the isolated live provider and authenticated API acceptance against these same bytes.', 'Take a fresh encrypted D1 backup and recheck both live leases.', 'Implement and independently review a single-dispatch paired operator; this preparer cannot apply.', 'Keep public feature activation separate pending physical iPhone and human acceptance.'] };
 }

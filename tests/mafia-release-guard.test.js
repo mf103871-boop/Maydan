@@ -1,8 +1,12 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { assertMafiaReleasePreservation } from '../scripts/mafia-release-guard.mjs';
+import { assertMafiaReleasePreservation, reviewedMigrationPlan } from '../scripts/mafia-release-guard.mjs';
+import { sourceMigrations } from '../scripts/production-release-review.mjs';
 
 const NOW = Date.parse('2026-10-26T12:00:00Z'), hash = digit => digit.repeat(64);
+const LEDGER = ['0008_lamma.sql', '0009_online_room_trials.sql', '0010_ersomha.sql', '0011_ersomha_reports.sql', '0012_design_studio.sql', '0013_moderation.sql'];
+const PENDING = ['0014_mafia.sql', '0015_plus.sql', '0026_online_public_directory.sql'];
+const reviewed = (names = [...LEDGER, ...PENDING]) => names.map((name, n) => ({ name, sha256: hash('abcdef0123456789'[n % 16]) }));
 function fixture() {
   const worker = name => ({ versionId: `${name}-before`, settings: { compatibility_date: '2026-09-01',
     bindings: [{ name: 'DB', type: 'd1', id: 'private-live-db' }, { name: 'LIVEKIT_API_SECRET', type: 'secret_text' },
@@ -12,16 +16,18 @@ function fixture() {
   const before = { schemaVersion: 1, capturedAt: new Date(NOW - 1000).toISOString(), workers: { 'maydan-game': worker('maydan-game'), 'maydan-rooms': worker('maydan-rooms') },
     privateBank: { semanticSHA256: hash('1'), count: 1560, version: 3 }, publicSupport: { sha256: hash('2'), getStatus: 200, headStatus: 200, headers: { 'content-type': 'text/html' } },
     publicAssets: { manifestSHA256: hash('3'), count: 117 }, updatePolicyChecks: Object.fromEntries(['JOR', 'SAU', 'ARE', 'USA'].map(country => [country, { enabled: true, minimumVersion: '1.8', minimumBuild: 22 }])),
-    database: { id: 'private-live-db', migrations: ['0008_lamma.sql', '0009_online_room_trials.sql', '0010_ersomha.sql', '0011_ersomha_reports.sql', '0012_design_studio.sql', '0013_moderation.sql'] } };
+    database: { id: 'private-live-db', migrations: [...LEDGER] } };
   const after = structuredClone(before);
   for (const [name, item] of Object.entries(after.workers)) {
     item.versionId = `${name}-after`; item.uploadMode = 'inherit-strict-keep-assets'; item.moduleSHA256 = hash('4');
     item.settings.bindings.push(...Object.entries({ MAFIA_ENABLED: '0', MAFIA_MAX_ACTIVE_ROOMS: '1', MAFIA_MAX_VOICE_PARTICIPANTS: '12' }).map(([name, text]) => ({ name, type: 'plain_text', text })));
   }
-  after.database.migrations.push('0014_mafia.sql'); after.database.mafiaMigrationSHA256 = hash('5');
+  const reviewedMigrations = reviewed();
+  after.database.migrations.push(...PENDING);
+  after.database.migrationSHA256 = Object.fromEntries(reviewedMigrations.filter(m => PENDING.includes(m.name)).map(m => [m.name, m.sha256]));
   const evidence = { sourceCommit: 'a'.repeat(40), scope: 'mafia-production-backend-only', baselineVersions: Object.fromEntries(Object.entries(before.workers).map(([name, item]) => [name, item.versionId])),
     reviewedModuleSHA256: { 'maydan-game': hash('4'), 'maydan-rooms': hash('4') }, testedModuleSHA256: { 'maydan-game': hash('4'), 'maydan-rooms': hash('4') },
-    databaseBackup: { sha256: hash('6'), databaseId: before.database.id, completedAt: new Date(NOW - 1000).toISOString() }, mafiaMigrationSHA256: hash('5'),
+    databaseBackup: { sha256: hash('6'), databaseId: before.database.id, completedAt: new Date(NOW - 1000).toISOString() }, reviewedMigrations,
     liveProviderAcceptance: { passed: true, revokeBeforeCommit: true, reportSHA256: hash('7') }, providerCapacity: { confirmedLimit: 100, socialReserve: 20 } };
   return { before, after, evidence };
 }
@@ -42,9 +48,36 @@ test('Mafia release guard refuses generic deploy, binding drift, private-bank ro
     f => { f.after.updatePolicyChecks.JOR.enabled = false; },
     f => { f.after.workers['maydan-rooms'].durableObjectHistory = 'v2-replaced'; },
     f => { f.after.workers['maydan-game'].schedules = []; },
-    f => { f.after.database.migrations.push('0015_unreviewed.sql'); },
+    f => { f.after.database.migrations.push('0027_unreviewed.sql'); },
   ];
   for (const mutate of mutations) { const f = fixture(); mutate(f); assert.throws(() => run(f)); }
+});
+
+test('every reviewed migration the live ledger lacks must be applied once, in order, with its reviewed bytes', () => {
+  assert.deepEqual(run(fixture()).pendingMigrations, PENDING);
+  const mutations = [
+    [f => { f.after.database.migrations.pop(); }, /added once and in order/],
+    [f => { f.after.database.migrations = [...LEDGER, '0015_plus.sql', '0014_mafia.sql', '0026_online_public_directory.sql']; }, /in order/],
+    [f => { f.after.database.migrations.push('0014_mafia.sql'); }, /added once/],
+    [f => { f.after.database.migrationSHA256['0015_plus.sql'] = hash('f'); }, /bytes changed: 0015_plus\.sql/],
+    [f => { f.evidence.reviewedMigrations = reviewed([...LEDGER, '0014_mafia.sql']); }, /added once and in order/],
+    [f => { f.before.database.migrations.push('0099_hotfix.sql'); }, /unreviewed migration: 0099_hotfix\.sql/],
+    [f => { delete f.evidence.reviewedMigrations; }, /reviewed migration set/],
+  ];
+  for (const [mutate, message] of mutations) { const f = fixture(); mutate(f); assert.throws(() => run(f), message); }
+  // A live ledger that skipped an older reviewed migration has drifted.
+  assert.throws(() => reviewedMigrationPlan(['0001_a.sql', '0003_c.sql'], reviewed(['0001_a.sql', '0002_b.sql', '0003_c.sql'])), /older reviewed migration is missing from the live ledger: 0002_b\.sql/);
+  assert.throws(() => reviewedMigrationPlan([], reviewed(['0002_b.sql', '0001_a.sql'])), /in order/);
+});
+
+test('the reviewed set is read from the checkout: every migration file in order with its SHA-256', async () => {
+  const migrations = await sourceMigrations();
+  assert.ok(migrations.length >= 26);
+  assert.deepEqual(migrations.map(m => m.name), [...migrations.map(m => m.name)].sort());
+  for (const name of ['0014_mafia.sql', '0025_mafia_rating_policy.sql', '0026_online_public_directory.sql']) assert.ok(migrations.some(m => m.name === name), name);
+  assert.ok(migrations.every(m => /^[a-f0-9]{64}$/.test(m.sha256)));
+  const ledger = migrations.slice(0, 13).map(m => m.name);
+  assert.deepEqual(reviewedMigrationPlan(ledger, migrations).pending.map(m => m.name), migrations.slice(13).map(m => m.name));
 });
 
 test('Mafia release guard rejects stale/mismatched evidence, missing provider proof and excess reserved capacity', () => {
