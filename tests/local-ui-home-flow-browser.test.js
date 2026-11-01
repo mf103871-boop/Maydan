@@ -110,14 +110,22 @@ test('Chromium/WebKit: compact Home, every mode, family setup/resume, reload and
         }, { saved, settings, savedBadeeha, badeehaKey: BADEEHA_KEYS.active });
         await page.goto(origin);
         await page.getByRole('heading', { name: 'اختار لعبتك' }).waitFor();
+        // Measure the layout a player sees: on macOS the wider fallback Arabic
+        // font is in place until the web fonts finish loading.
+        await page.evaluate(() => document.fonts.ready.then(() => true));
         assert.equal(await page.locator('.home-game-row').count(), 8);
         assert.equal(await page.locator('.home-presence,.home-tools').count(), 0);
         assert.equal(await page.locator('[data-design-id="privacy-link"]').count(), 1);
         for (const [width, height] of [[360, 640], [390, 844], [430, 932], [844, 390], [1024, 768]]) {
           await page.setViewportSize({ width, height });
           assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1), `${name}:${width} overflow`);
+          // The rows reflow after the resize; check the settled geometry, not a frame mid-reflow.
+          const settled = await page.waitForFunction(() => {
+            const row = document.querySelector('.home-game-row')?.getBoundingClientRect(), list = document.querySelector('.home-game-list')?.getBoundingClientRect();
+            return Boolean(row && list && Math.abs(row.width - list.width) < 2 && row.height < 150);
+          }, null, { timeout: 5000 }).then(() => true, () => false);
           const row = await page.locator('.home-game-row').first().boundingBox(), list = await page.locator('.home-game-list').boundingBox();
-          assert.ok(Math.abs(row.width - list.width) < 2 && row.height < 150, `${name}:${width} horizontal row`);
+          assert.ok(settled && Math.abs(row.width - list.width) < 2 && row.height < 150, `${name}:${width} horizontal row ${JSON.stringify({ row, list })}`);
           await waitForProfileGeometry(page);
           assert.ok((await page.getByRole('button', { name: 'بروفايلي', exact: true }).boundingBox()).width >= 72);
           await page.screenshot({ path: path.join(proof, `${name}-home-${width}.png`), fullPage: true });
