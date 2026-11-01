@@ -119,7 +119,9 @@ function EntryView({ initialCode = '', initialGame = 'meenfina', initialObserver
   },[game,mode,account.user?.id]);
   // When a member's list read reports the list switched off, open the room form
   // instead of a list that cannot fill, and hide the tab that leads to it.
-  const directoryOff = game !== 'mafia' && directory.enabled === false && !directory.loading && !directory.error;
+  // A reload keeps the last answer for the same member and filters, so the
+  // hidden tab does not flash back while the list is read again.
+  const directoryOff = game !== 'mafia' && directory.enabled === false && !directory.error;
   useEffect(() => {
     if (directoryOff && mode === 'public' && !viewPicked.current) setMode('create');
   }, [directoryOff, mode]);
