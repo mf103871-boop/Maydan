@@ -116,8 +116,9 @@ export function assertMafiaPreviewConfig(config) {
   check(['0', '1'].includes(config.vars.MAFIA_METRICS_ENABLED ?? '0'), 'Invalid Mafia metrics gate.');
   for (const name of ['MAFIA_RANKED_ENABLED', 'MAFIA_COMMUNITY_ENABLED', 'MAFIA_EXPERIMENTAL_ROLES_ENABLED'])
     check(['0', '1'].includes(config.vars[name] ?? '0'), `Invalid preview experiment gate: ${name}.`);
-  check(config.vars.MAFIA_MAX_ACTIVE_ROOMS === '1' && config.vars.MAFIA_MAX_VOICE_PARTICIPANTS === '80',
-    'Preview capacity must remain exactly 1 active room / 80 voice participants.');
+  // Six twelve-seat matches use 72 of the 80 reviewed voice participants.
+  check(config.vars.MAFIA_MAX_ACTIVE_ROOMS === '6' && config.vars.MAFIA_MAX_VOICE_PARTICIPANTS === '80',
+    'Preview capacity must remain exactly 6 active rooms / 80 voice participants.');
   return config;
 }
 

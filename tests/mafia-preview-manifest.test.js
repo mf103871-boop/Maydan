@@ -24,7 +24,7 @@ test('local preview receipt hashes exact bytes and remains unverified without a 
   assert.equal(receipt.config.sha256, mafiaPreviewSHA256(input.configSource));
   assert.deepEqual(receipt.migrations.files.map(file => file.name), ['0001_first.sql', '0002_second.sql']);
   assert.equal(receipt.migrations.files[0].sha256, mafiaPreviewSHA256(input.migrations[1].source));
-  assert.deepEqual(receipt.capacity, { maxActiveRooms: 1, maxVoiceParticipants: 80 });
+  assert.deepEqual(receipt.capacity, { maxActiveRooms: 6, maxVoiceParticipants: 80 });
   assert.deepEqual(receipt.rules, { rulesetVersion: 1, protocol: 2, supportedRulesetVersions: [1, 2] });
   assert.deepEqual(receipt.gates, { mafiaEnabled: true, acceptNewMatches: true, progressEnabled: true, metricsEnabled: true,
     rankedPreviewEnabled: true, communityPreviewEnabled: true, experimentalRolesEnabled: true });
