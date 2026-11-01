@@ -127,9 +127,6 @@ export async function listOnlineDirectory(env, userId, { game, status = 'all', c
 
 export async function routeOnlineDirectory(request, env, url, charge) {
   if (url.pathname !== '/api/online/rooms/public' || request.method !== 'GET') return null;
-  // A switched-off list holds nothing private. Answer before authentication, so
-  // a signed-out player learns it is off instead of being asked to sign in for it.
-  if (!onlineDirectoryEnabled(env) || !env.DB) return json(await listOnlineDirectory(env, null, Object.fromEntries(url.searchParams)));
   const { user } = await requireSession(env, request, { rotate: false });
   if (charge) await charge('socialRead', 'RATE_LIMIT', user.id);
   return json(await listOnlineDirectory(env, user.id, Object.fromEntries(url.searchParams)));

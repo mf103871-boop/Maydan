@@ -98,17 +98,7 @@ function EntryView({ initialCode = '', initialGame = 'meenfina', initialObserver
   useEffect(() => {
     if (!ONLINE_GAMES[game] || !SERVER) return undefined;
     const owner=account.user?.id;
-    if(!owner){
-      setDirectory({rooms:[],enabled:null,loading:false,error:'',owner,key:directoryKey});
-      if(game==='mafia')return undefined;
-      // The server tells signed-out players when the list is switched off; an
-      // enabled list still needs an account (401), so nothing else changes.
-      let cancelled=false;const controller=new AbortController();
-      getOnlinePublicRooms(SERVER,{game,status:directoryStatus,cursor:directoryCursor},{signal:controller.signal})
-        .then(result=>{if(!cancelled&&result.enabled===false)setDirectory({rooms:[],enabled:false,loading:false,error:'',owner,key:directoryKey});})
-        .catch(()=>{});
-      return()=>{cancelled=true;controller.abort();};
-    }
+    if(!owner){setDirectory({rooms:[],enabled:null,loading:false,error:'',owner,key:directoryKey});return undefined;}
     let cancelled=false,inFlight=false,timer;const controller=new AbortController();
     const load=async()=>{
       if(cancelled||inFlight||document.hidden)return;
@@ -127,8 +117,8 @@ function EntryView({ initialCode = '', initialGame = 'meenfina', initialObserver
     const owner=account.user.id,generation=entryLifetime.current.generation;
     return subscribePublicRooms(SERVER,{getAccountAuthorization:()=>(entryAccountRef.current.authHeaders()?.Authorization||entryAccountRef.current.authHeaders()?.authorization),onInvalidate:()=>{if(requestCurrent(owner,generation)){setDirectoryPages(['']);setDirectoryRefresh(value=>value+1);}}});
   },[game,mode,account.user?.id]);
-  // When the server reports the list switched off, open the room form instead
-  // of a list that cannot fill. A player who opens the list still sees why.
+  // When a member's list read reports the list switched off, open the room form
+  // instead of a list that cannot fill, and hide the tab that leads to it.
   const directoryOff = game !== 'mafia' && directory.enabled === false && !directory.loading && !directory.error;
   useEffect(() => {
     if (directoryOff && mode === 'public' && !viewPicked.current) setMode('create');
@@ -246,7 +236,7 @@ function EntryView({ initialCode = '', initialGame = 'meenfina', initialObserver
       {mode === 'public' ? <>{game==='mafia'?<MafiaDirectory onTutorial={onTutorial} {...directory} mode={directoryMode} voiceMode={directoryVoice} status={directoryStatus} onMode={value=>changeFilter(setDirectoryMode,value)} onVoiceMode={value=>changeFilter(setDirectoryVoice,value)} onStatus={value=>changeFilter(setDirectoryStatus,value)} hasPrevious={directoryPages.length>1} onNext={()=>directory.nextCursor&&setDirectoryPages(pages=>[...pages,directory.nextCursor])} onPrevious={()=>setDirectoryPages(pages=>pages.slice(0,-1))} onRefresh={() => setDirectoryRefresh(n => n+1)} onQuickJoin={() => joinPublicRoom()} onJoin={joinPublicRoom} onObserve={roomCode=>joinPublicRoom(roomCode,true)} onCreate={()=>openCreate('public')} onCode={()=>{setMode('join');setError('');credentialsRef.current=null;}} helpActions={helpActions} disabled={busy||!account.user?.id}/>:<OnlineDirectoryView game={game} {...directory} disabled={busy}
         onCreate={()=>openCreate()} onCode={()=>{setMode('join');setError('');credentialsRef.current=null;}}
         onRefresh={()=>setDirectoryRefresh(n=>n+1)} hasPrevious={directoryPages.length>1} onPrevious={()=>setDirectoryPages(pages=>pages.slice(0,-1))} onNext={()=>directory.nextCursor&&setDirectoryPages(pages=>[...pages,directory.nextCursor])}
-        notice={!account.user?.id&&directory.enabled!==false?'سجّل الدخول لرؤية الغرف العامة. تبقى الغرفة الخاصة متاحة عبر الرمز.':null}
+        notice={!account.user?.id?'سجّل الدخول لرؤية الغرف العامة. تبقى الغرفة الخاصة متاحة عبر الرمز.':null}
         filters={<label className="online-field">حالة الغرفة<select aria-label="حالة الغرفة" value={directoryStatus} onChange={event=>changeFilter(setDirectoryStatus,event.target.value)}><option value="all">كل الحالات</option><option value="waiting">بانتظار اللاعبين</option><option value="playing">يلعبون الآن</option></select></label>}
         help={<div className="stack"><p>أنشئ غرفة خاصة للرمز والدعوة، أو اختر إظهارها للعامة عند إنشائها. الجميع يدخل مجانًا.</p><p>المقاعد تتحدث تلقائيًا. الانضمام إلى مباراة جارية يخضع لقواعد كل لعبة.</p>{game==='fabraka'?<FabrakaRules/>:game==='ersomha'?<ErsomhaRules/>:game==='badeeha'?<BadeehaRules/>:<p>كل لاعب يصوّت بجواله. نحتاج ثلاثة لاعبين جاهزين لبدء مين فينا.</p>}</div>}
         renderRoom={room=><OnlineRoomRow room={room} title={room.roomName} subtitle={room.unit==='teams'?'فرق · جوال لكل فريق':room.status==='playing'&&room.joinable?'الانضمام للمباراة التالية':'لاعبون'} statusLabel={room.full?'مكتملة':room.status==='playing'?'يلعبون الآن':'بانتظار اللاعبين'} canJoin={room.joinable===true&&!room.full} disabled={busy||!account.user?.id} onJoin={joinPublicRoom}/>}/>}<ErrorNotice code={error}/></> : <form data-design-id="entry" className="stack" onSubmit={submit}>

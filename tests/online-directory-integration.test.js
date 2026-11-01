@@ -67,9 +67,6 @@ test('public room names pass the shared content filter and reject invisible char
 test('default-off directory works against an old database without migration26 and never opens private rooms',async t=>{
   const{app,users}=await setup(t,false);await app.env.DB.exec('DROP TABLE online_public_rooms');
   const page=await list(app,'meenfina',users[0]);assert.equal(page.status,200);assert.equal(page.body.enabled,false);assert.deepEqual(page.body.rooms,[]);
-  // Signed-out players learn the list is off instead of being asked to sign in.
-  const anonymous=await list(app,'badeeha');assert.equal(anonymous.status,200);assert.equal(anonymous.body.enabled,false);assert.deepEqual(anonymous.body.rooms,[]);
-  assert.equal((await list(app,'mafia')).body.error,'GAME');
   assert.equal((await create(app,creation('meenfina',seat('خاص'),null))).status,201);
   assert.equal((await create(app,creation('meenfina',seat('عام')),users[0])).body.error,'DIRECTORY_DISABLED');
   await cleanupOnlineDirectory(app.env);
