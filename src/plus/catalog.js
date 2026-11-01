@@ -5,8 +5,8 @@ export const PLUS_COLLECTIONS = Object.freeze([
   { id: 'sahra', label: 'سهرة ميدان', description: 'دفء السهرة، فيروز ولمعة ذهبية هادئة.', availableFrom: 0, palette: { bg: '#173b45', accent: '#f0bc61', text: '#fff5dd' } },
   { id: 'artist', label: 'رسّام الشلّة', description: 'ألوان جريئة وروح رسّام يحب المفاجآت.', availableFrom: 0, palette: { bg: '#493568', accent: '#65e3d6', text: '#fff7eb' } },
   { id: 'noir', label: 'ليلة مافيا', description: 'غموض الليل والنحاس؛ مظهر لا يكشف دورك.', availableFrom: 0, palette: { bg: '#141f30', accent: '#d9a36d', text: '#f9ebd6' } },
-  { id: 'olive', label: 'ظل الزيتون', description: 'مجموعة شهرية بألوان الزيتون ودفء الحجر.', availableFrom: Date.UTC(2026, 10, 28), palette: { bg: '#294c40', accent: '#dfc581', text: '#fff8e8' }, monthly: true },
-  { id: 'starlight', label: 'سهرانين', description: 'مجموعة شهرية من ضوء النجوم والليالي البنفسجية.', availableFrom: Date.UTC(2026, 11, 28), palette: { bg: '#302653', accent: '#beadff', text: '#fff5e8' }, monthly: true },
+  { id: 'olive', label: 'ظل الزيتون', description: 'مجموعة بألوان الزيتون ودفء الحجر.', availableFrom: Date.UTC(2026, 10, 28), palette: { bg: '#294c40', accent: '#dfc581', text: '#fff8e8' }, monthly: true },
+  { id: 'starlight', label: 'سهرانين', description: 'مجموعة من ضوء النجوم والليالي البنفسجية.', availableFrom: Date.UTC(2026, 11, 28), palette: { bg: '#302653', accent: '#beadff', text: '#fff5e8' }, monthly: true },
 ].map(c => Object.freeze({ ...c, coverUrl: `/assets/plus/v1/${c.id}.webp` })));
 
 const words = {

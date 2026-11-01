@@ -24,11 +24,14 @@ function fixture() {
     w.versionId += '-new'; w.uploadMode = 'inherit-strict-keep-assets'; w.moduleSHA256 = sha('4');
     w.settings.bindings.push(...Object.entries({ MAFIA_ENABLED: '0', MAFIA_MAX_ACTIVE_ROOMS: '1', MAFIA_MAX_VOICE_PARTICIPANTS: '12' }).map(([name, text]) => ({ name, type: 'plain_text', text })));
   }
-  after.database.migrations.push('0014_mafia.sql'); after.database.mafiaMigrationSHA256 = sha('5');
-  const provenance = { clean: true, sourceCommit: 'a'.repeat(40), backendTreeSha256: sha('8') };
-  const evidence = { ...provenance, scope: 'mafia-production-backend-only', baselineVersions: Object.fromEntries(names.map(n => [n, snapshots[n].versionId])),
+  const migrations = [['0013_social_group_creation.sql', '9'], ['0014_mafia.sql', '5'], ['0026_online_public_directory.sql', 'b']].map(([name, c]) => ({ name, sha256: sha(c) }));
+  after.database.migrations.push('0014_mafia.sql', '0026_online_public_directory.sql');
+  after.database.migrationSHA256 = { '0014_mafia.sql': sha('5'), '0026_online_public_directory.sql': sha('b') };
+  const provenance = { clean: true, sourceCommit: 'a'.repeat(40), backendTreeSha256: sha('8'), migrations };
+  const { migrations: reviewedMigrations, ...pinned } = provenance;
+  const evidence = { ...pinned, reviewedMigrations: structuredClone(reviewedMigrations), scope: 'mafia-production-backend-only', baselineVersions: Object.fromEntries(names.map(n => [n, snapshots[n].versionId])),
     reviewedModuleSHA256: Object.fromEntries(names.map(n => [n, sha('4')])), testedModuleSHA256: Object.fromEntries(names.map(n => [n, sha('4')])),
-    databaseBackup: { sha256: sha('6'), databaseId: before.database.id, completedAt: new Date(NOW).toISOString() }, mafiaMigrationSHA256: sha('5'),
+    databaseBackup: { sha256: sha('6'), databaseId: before.database.id, completedAt: new Date(NOW).toISOString() },
     liveProviderAcceptance: { passed: true, revokeBeforeCommit: true, reportSHA256: sha('7') }, providerCapacity: { confirmedLimit: 100, socialReserve: 20 } };
   const draft = { kind: 'mafia-paired-preservation-draft', sourceCommit: provenance.sourceCommit, readyToApply: false, remoteWrites: false,
     workers: Object.fromEntries(names.map(n => [n, { beforeVersion: snapshots[n].versionId, reviewedModuleSHA256: sha('4'), upload: preservedMafiaUploadMetadata(n, snapshots[n]) }])) };
@@ -50,4 +53,6 @@ for (const [name, mutate] of [
   ['Studio binding loss', f => { f.envelope.after.workers['maydan-game'].settings.bindings = f.envelope.after.workers['maydan-game'].settings.bindings.filter(x => x.name !== 'DESIGN_EDITOR_USER_IDS'); }],
   ['update policy change', f => { f.envelope.after.updatePolicyChecks.JOR.enabled = false; }],
   ['public activation without devices', f => { f.envelope.after.workers['maydan-game'].settings.bindings.find(x => x.name === 'MAFIA_ENABLED').text = '1'; }],
+  ['reviewed migrations that differ from the frozen source', f => { f.provenance.migrations[2].sha256 = sha('c'); }],
+  ['a pending migration left unapplied', f => { f.envelope.after.database.migrations.pop(); }],
 ]) test(`paired review refuses ${name}`, () => { const f = fixture(); mutate(f); assert.throws(() => reviewProductionPair(f.envelope, f.provenance, NOW)); });

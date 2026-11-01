@@ -114,6 +114,9 @@ test('an ephemeral sender cannot overwrite a newly learned session cutoff or pos
   await clients[0].command('react', { emoji: '👏' }); // Warm the unchanged-room fast path.
   const cutoff = Date.now() + 10_000;
   await app.env.DB.prepare('UPDATE sessions SET revoked_at=? WHERE id=?').bind(cutoff, users[0].session.id).run();
+  // Reactions may reuse a D1 confirmation for ACCOUNT_RECHECK_MS. Once it lapses,
+  // the next reaction must learn and keep the new cutoff.
+  item.instance.accountChecks.clear();
   await clients[0].command('react', { emoji: '👏' });
   const socket = item.instance.sockets().find(ws => item.instance.attachment(ws).id === seats[0].id);
   assert.equal(item.instance.attachment(socket).accountExpiresAt, cutoff, 'reaction serialized an older account expiry over fresh authorization');
@@ -206,7 +209,7 @@ test('post-durable account outage withholds fanout, keeps accepted state and rec
   assert.equal(item.instance.accountPublicationPending, false);
 });
 
-test('drawing recipient revocation during its journal write is fenced with two fixed warm-path account reads', async t => {
+test('once the two-second window lapses, drawing recipient revocation during its journal write is fenced with two account reads', async t => {
   const { app, users, clients, code, seats } = await fixture(t, { game: 'ersomha', visibility: 'private' });
   await clients[1].command('ready', { ready: true }); await clients[0].command('start');
   await until(() => clients.every(client => client.state.phase === 'select'), 'drawing selection did not begin');
@@ -237,6 +240,10 @@ test('drawing recipient revocation during its journal write is fenced with two f
     }
     return put(key, value);
   };
+  // Ink may reuse a D1 confirmation for ACCOUNT_RECHECK_MS (tests/ersomha-server-room
+  // covers revocation inside that window). Here it has lapsed, so this batch reads
+  // the sender before its journal write and every recipient after it.
+  item.instance.accountChecks.clear();
   const accepted = await drawer.command('drawing_batch', { epoch: drawer.state.drawing.epoch, strokeId: 'audit-stroke', tool: 'pen', color: '#118d96', width: 6, points: [[0.2, 0.3]], end: true });
   // The transport observer captured this command's ACK before asynchronous
   // socket-close presence reconciliation, independently of browser scheduling.

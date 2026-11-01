@@ -103,8 +103,12 @@ test('paired metadata inherits live resources, update/Studio flags and secrets, 
 test('reviewable paired draft requires matching live proofs and exact bytes, remains unable to apply', () => {
   const names = ['maydan-game', 'maydan-rooms'], bytes = Buffer.from('synthetic-server-fixture'), digest = 'a'.repeat(64);
   const input = { sourceCommit: 'a'.repeat(40), snapshots: Object.fromEntries(names.map(name => [name, snapshot(name)])), bundles: Object.fromEntries(names.map(name => [name, { bytes, sha256: preservedHash(bytes), byteLength: bytes.length, sourceInputsSHA256: digest, privateBank: { semanticSHA256: digest } }])),
-    bankProof: { exactLiveMatch: true, semanticSHA256: digest, versions: Object.fromEntries(names.map(name => [name, `${name}-v1`])) }, supportProof: { exactLiveMatch: true }, migrationLedger: ['0013_social_group_creation.sql'], migrationSHA256: digest };
-  const result = pairedPreservationDraft(input); assert.equal(result.readyToApply, false); assert.equal(result.remoteWrites, false); assert.equal(result.migration.pending, true);
+    bankProof: { exactLiveMatch: true, semanticSHA256: digest, versions: Object.fromEntries(names.map(name => [name, `${name}-v1`])) }, supportProof: { exactLiveMatch: true }, migrationLedger: ['0013_social_group_creation.sql'],
+    reviewedMigrations: ['0013_social_group_creation.sql', '0014_mafia.sql', '0026_online_public_directory.sql'].map(name => ({ name, sha256: digest })) };
+  const result = pairedPreservationDraft(input); assert.equal(result.readyToApply, false); assert.equal(result.remoteWrites, false);
+  // The draft names every reviewed migration the live ledger lacks, not 0014 alone.
+  assert.deepEqual(result.pendingMigrations.map(migration => migration.name), ['0014_mafia.sql', '0026_online_public_directory.sql']);
+  assert.throws(() => pairedPreservationDraft({ ...input, migrationLedger: ['0013_social_group_creation.sql', '0099_hotfix.sql'] }), /unreviewed migration/);
   assert.ok(result.blockers.length >= 4);
   assert.throws(() => pairedPreservationDraft({ ...input, bankProof: { ...input.bankProof, exactLiveMatch: false } }), /live workers/);
   const changed = structuredClone(input); changed.bundles['maydan-rooms'].bytes = Buffer.from('drift');

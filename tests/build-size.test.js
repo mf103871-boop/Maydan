@@ -9,8 +9,8 @@ import { esbuildOptions, renderHtml, mediaVersions, ROOT } from '../scripts/lib.
 
 const MB = 1024 * 1024;
 const BUDGET = {
-  document: 3.25 * MB,  // dist/index.html خام (6.2 MB قبل إخراج الأصوات، 3.7 MB قبل إخراج الرسوم والخطوط)
-  gzip: 0.9 * MB,       // ما ينزل فعليًا على الهاتف
+  document: 3.0 * MB,   // dist/index.html خام (6.2 MB قبل إخراج الأصوات، 3.7 MB قبل إخراج الرسوم والخطوط، 3.25 MB قبل إخراج حقول التحقق التحريرية من بنك بَديهة وكتالوج الأصوات الخاص)
+  gzip: 0.85 * MB,      // ما ينزل فعليًا على الهاتف
   input: 560 * 1024,    // أكبر ملف مصدر واحد داخل الحزمة (react-dom نحو 523 KB)
 };
 

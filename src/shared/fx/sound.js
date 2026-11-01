@@ -5,7 +5,8 @@ import { reviewedEffectBank } from './reviewed-effects.js';
 import { CANDIDATE_EFFECTS } from './audio-candidate-catalog.js';
 import { privateCandidateEffects } from './audio-candidate-policy.js';
 const extraEffects = reviewedEffectBank();
-const privateEffects = privateCandidateEffects(CANDIDATE_EFFECTS);
+// The compile-time guard lets public builds drop the private candidate catalog.
+const privateEffects = typeof __MAYDAN_AUDIO_PREVIEW__ !== 'undefined' && __MAYDAN_AUDIO_PREVIEW__ === true ? privateCandidateEffects(CANDIDATE_EFFECTS) : {};
 const SAMPLE_BANK = { ...BASE_SAMPLE_BANK, ...extraEffects, ...privateEffects };
 import { MUSIC_BANK } from './music-bank.js';
 import { SELECTED_AUDIO } from './selected-audio.js';

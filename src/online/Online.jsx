@@ -55,6 +55,8 @@ function EntryView({ initialCode = '', initialGame = 'meenfina', initialObserver
   const platform = usePlatform();
   const fallback = initialCode && account.user?.id ? readSaved(SERVER, socialJoinFallbackKey(account.user.id, initialCode)) : null;
   const [mode, setMode] = useState(initialCode ? 'join' : ['public','create','join'].includes(initialView)?initialView:'public');
+  // The public list is only a default. A player who picks a view keeps it.
+  const viewPicked = useRef(Boolean(initialCode) || initialView !== 'public');
   const game = ONLINE_GAMES[initialGame] ? initialGame : 'meenfina';
   useMafiaAmbience(platform?.sound,game==='mafia');
   useEffect(()=>{onGameChange?.(game);},[game,onGameChange]);
@@ -115,6 +117,14 @@ function EntryView({ initialCode = '', initialGame = 'meenfina', initialObserver
     const owner=account.user.id,generation=entryLifetime.current.generation;
     return subscribePublicRooms(SERVER,{getAccountAuthorization:()=>(entryAccountRef.current.authHeaders()?.Authorization||entryAccountRef.current.authHeaders()?.authorization),onInvalidate:()=>{if(requestCurrent(owner,generation)){setDirectoryPages(['']);setDirectoryRefresh(value=>value+1);}}});
   },[game,mode,account.user?.id]);
+  // When a member's list read reports the list switched off, open the room form
+  // instead of a list that cannot fill, and hide the tab that leads to it.
+  // A reload keeps the last answer for the same member and filters, so the
+  // hidden tab does not flash back while the list is read again.
+  const directoryOff = game !== 'mafia' && directory.enabled === false && !directory.error;
+  useEffect(() => {
+    if (directoryOff && mode === 'public' && !viewPicked.current) setMode('create');
+  }, [directoryOff, mode]);
   useEffect(() => {
     if(!historyOpen || game!=='mafia' || !historyOwner) {setHistory({data:null,loading:false,error:''});return undefined;}
     let cancelled=false;const controller=new AbortController();setHistory({data:null,loading:true,error:'',scope:historyScope});
@@ -221,9 +231,9 @@ function EntryView({ initialCode = '', initialGame = 'meenfina', initialObserver
     {lastRoom && !initialCode && readSaved(SERVER, lastRoom) && <Button full onClick={() => onJoined(lastRoom, readSaved(SERVER, lastRoom), readSaved(SERVER, 'persistence') !== false)}>العودة إلى غرفتي <bdi>{lastRoom}</bdi></Button>}
     <Card>
       {mode!=='public'&&<div data-design-id="entry-mode" className="online-tabs" role="group" aria-label="طريقة الدخول">
-        <Button data-design-id="entry-public" disabled={busy} variant="ghost" onClick={() => { setMode('public'); setError(''); }}>الغرف العامة</Button>
-        <Button data-design-id="entry-create" disabled={busy} variant={mode === 'create' ? 'primary' : 'ghost'} aria-pressed={mode === 'create'} onClick={() => openCreate()}>إنشاء غرفة</Button>
-        <Button data-design-id="entry-join" disabled={busy} variant={mode === 'join' ? 'primary' : 'ghost'} aria-pressed={mode === 'join'} onClick={() => { setMode('join'); setError(''); credentialsRef.current = null; }}>دخول برمز</Button>
+        {!directoryOff&&<Button data-design-id="entry-public" disabled={busy} variant="ghost" onClick={() => { viewPicked.current = true; setMode('public'); setError(''); }}>الغرف العامة</Button>}
+        <Button data-design-id="entry-create" disabled={busy} variant={mode === 'create' ? 'primary' : 'ghost'} aria-pressed={mode === 'create'} onClick={() => { viewPicked.current = true; openCreate(); }}>إنشاء غرفة</Button>
+        <Button data-design-id="entry-join" disabled={busy} variant={mode === 'join' ? 'primary' : 'ghost'} aria-pressed={mode === 'join'} onClick={() => { viewPicked.current = true; setMode('join'); setError(''); credentialsRef.current = null; }}>دخول برمز</Button>
       </div>}
       {mode === 'public' ? <>{game==='mafia'?<MafiaDirectory onTutorial={onTutorial} {...directory} mode={directoryMode} voiceMode={directoryVoice} status={directoryStatus} onMode={value=>changeFilter(setDirectoryMode,value)} onVoiceMode={value=>changeFilter(setDirectoryVoice,value)} onStatus={value=>changeFilter(setDirectoryStatus,value)} hasPrevious={directoryPages.length>1} onNext={()=>directory.nextCursor&&setDirectoryPages(pages=>[...pages,directory.nextCursor])} onPrevious={()=>setDirectoryPages(pages=>pages.slice(0,-1))} onRefresh={() => setDirectoryRefresh(n => n+1)} onQuickJoin={() => joinPublicRoom()} onJoin={joinPublicRoom} onObserve={roomCode=>joinPublicRoom(roomCode,true)} onCreate={()=>openCreate('public')} onCode={()=>{setMode('join');setError('');credentialsRef.current=null;}} helpActions={helpActions} disabled={busy||!account.user?.id}/>:<OnlineDirectoryView game={game} {...directory} disabled={busy}
         onCreate={()=>openCreate()} onCode={()=>{setMode('join');setError('');credentialsRef.current=null;}}

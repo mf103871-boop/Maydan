@@ -2,6 +2,7 @@ import { fail, roomCapacity } from './game-model.mjs';
 import { minimumOnlinePlayers } from '../src/online/shared.js';
 import { getGameModeSupport } from '../src/shared/game-mode-support.mjs';
 import { liveAccountSql } from './moderation/access.mjs';
+import { objectionableText } from './moderation/filter.mjs';
 import { requireSession } from './accounts/session.mjs';
 import { json } from './protocol.mjs';
 
@@ -24,9 +25,12 @@ export function normalizeRoomDirectory(input, env) {
   if (!onlineDirectoryEnabled(env) || !env.DB) fail('DIRECTORY_DISABLED', 409);
   if (!input.accountUserId) fail('AUTH_REQUIRED', 401);
   const raw = input.directory.name;
-  if (typeof raw !== 'string') fail('NAME');
+  if (typeof raw !== 'string') fail('ROOM_NAME');
   const name = raw.normalize('NFKC').trim().replace(/\s+/g, ' ');
-  if (Array.from(name).length < 2 || Array.from(name).length > 40 || /[\x00-\x1f\x7f\u202a-\u202e\u2066-\u2069<>]/u.test(name)) fail('NAME');
+  // Every signed-in player can read this name, so it follows the Mafia room
+  // name rules: no control or invisible format characters, and the shared filter.
+  if (Array.from(name).length < 2 || Array.from(name).length > 40 || /[\p{Cc}\p{Cf}<>]/u.test(name)) fail('ROOM_NAME');
+  if (objectionableText(name)) fail('CONTENT_REJECTED', 422);
   return { visibility, name };
 }
 
