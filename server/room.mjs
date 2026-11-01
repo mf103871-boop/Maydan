@@ -37,6 +37,11 @@ const STATS_MAX_ATTEMPTS = 48; // a day of half-minute retries
 const MAFIA_RESULT_FAILURE_CODES=new Set(['MAFIA_PROGRESS_DISABLED','MAFIA_PROGRESS_UNAVAILABLE','MAFIA_PROGRESS_PENDING','MAFIA_PROGRESS_INVALID']);
 const MAX_QUEUED_SOCKET_MESSAGES = 64;
 const MAX_QUEUED_ROOM_MESSAGES = 256;
+// Ink batches arrive every 80 ms and reactions in bursts. A session that D1
+// confirmed live this recently is trusted for those messages only, so a revoked
+// or suspended account loses drawing and reactions within two seconds.
+export const ACCOUNT_RECHECK_MS = 2_000;
+const LIGHT_COMMANDS = new Set(['drawing_batch', 'drawing_undo', 'drawing_redo', 'drawing_clear', 'drawing_sync', 'react']);
 // Statements the room has already shown wait at the back of the queue, so a second
 // match in the same room does not repeat the first.
 export function meenfinaDeck(room) {
@@ -50,6 +55,9 @@ export class Room {
   constructor(ctx, env) {
     this.ctx = ctx; this.env = env; this.room = null; this.profileOutbox = []; this.queue = Promise.resolve();
     this.inboundBySocket = new WeakMap(); this.inboundCount = 0;
+    // Session id + account -> time until which a D1 confirmation is reused for
+    // light messages. Memory only: a cold object starts by reading D1 again.
+    this.accountChecks = new Map();
     this.mafiaLastSnapshots = new WeakMap();
     this.mafiaResultOutbox=[];
     this.metrics=createMafiaMetrics({enabled:String(env.MAFIA_METRICS_ENABLED)==='1',side:'server',
@@ -282,11 +290,24 @@ export class Room {
     const audience=candidate.members.filter(m=>!m.left).map(m=>[m.id,voiceAudience(candidate,m.id)]);
     return {ids,bindings,key:JSON.stringify([candidate.matchId,candidate.phaseId,ids,audience]),revoked:sockets.some(a=>a.revoked)};
   }
-  async validateAccountSessions(room, now = Date.now(), { reschedule = true } = {}) {
+  accountCheckKey(a) { return `${a.accountSessionId || ''}\n${a.accountUserId || ''}`; }
+  recentAccountCheck(a, now = Date.now()) {
+    if (a.revoked || !a.accountSessionId || !a.accountUserId) return false;
+    const until = this.accountChecks.get(this.accountCheckKey(a));
+    return until !== undefined && now < until;
+  }
+  noteAccountCheck(a, session, now = Date.now()) {
+    for (const [key, until] of this.accountChecks) if (until <= now) this.accountChecks.delete(key);
+    this.accountChecks.set(this.accountCheckKey(a), Math.min(now + ACCOUNT_RECHECK_MS, session.expires_at, session.revoked_at ?? Infinity));
+  }
+  async validateAccountSessions(room, now = Date.now(), { reschedule = true, recent = false } = {}) {
     if (room.game === 'mafia') return [];
     const requiresAccount = room.game === 'ersomha' || room.directory?.visibility === 'public';
     const sockets = this.sockets().map(ws => ({ ws, ...this.attachment(ws) })).filter(a => a.id && (requiresAccount || a.accountSessionId || a.accountUserId));
     if (!sockets.length) return [];
+    // Light messages may reuse a D1 answer younger than ACCOUNT_RECHECK_MS for
+    // every recipient. One unconfirmed socket sends the whole set back to D1.
+    if (recent && sockets.every(a => this.recentAccountCheck(a, now))) return [];
     const ids = [...new Set(sockets.map(a => a.accountSessionId).filter(Boolean))];
     // A seat token cannot preserve read access after its account session ends.
     // Validate recipients as well as senders, before publishing a new state or
@@ -298,9 +319,11 @@ export class Room {
     for (const a of sockets) {
       const session = allowed(a);
       if (!session) {
+        this.accountChecks.delete(this.accountCheckKey(a));
         a.ws.serializeAttachment({ ...this.attachment(a.ws), revoked: true });
         this.close(a.ws, 4401, 'AUTH'); disconnected.add(a.id);
       } else {
+        this.noteAccountCheck(a, session, now);
         const accountExpiresAt = Math.min(session.expires_at, session.revoked_at ?? Number.MAX_SAFE_INTEGER);
         if (a.accountExpiresAt !== accountExpiresAt) {
           a.ws.serializeAttachment({ ...this.attachment(a.ws), accountExpiresAt });
@@ -319,12 +342,13 @@ export class Room {
     }
     return [...disconnected].filter(id => room.members.some(m => m.id === id && !m.left) && !sockets.some(a => a.id === id && allowed(a)));
   }
-  async authorizeAccountPublication() {
+  async authorizeAccountPublication({ recent = false } = {}) {
     try {
       // No awaited storage/provider work follows this read before the caller
       // emits its protected data. Admission-time authorization is insufficient
-      // when a session can be revoked during an earlier durable write.
-      await this.validateAccountSessions(this.room, Date.now(), { reschedule: false });
+      // when a session can be revoked during an earlier durable write. Only ink
+      // and reactions (recent) may reuse a confirmation from the last two seconds.
+      await this.validateAccountSessions(this.room, Date.now(), { reschedule: false, recent });
       return true;
     } catch {
       // The state/ink may already be durable. Withhold publication and retry;
@@ -559,15 +583,16 @@ export class Room {
     if (!this.drawing || this.drawing.boardId !== ersomhaBoardId(this.room)) fail('ERSOMHA_CANVAS_UNAVAILABLE', 503);
     const change = prepareErsomhaDrawing(this.room, this.drawing, id, command);
     if (change.sync) {
-      if (await this.authorizeAccountPublication()) for (const message of ersomhaSyncMessages(this.room, this.drawing)) this.send(ws, message);
+      if (await this.authorizeAccountPublication({ recent: true })) for (const message of ersomhaSyncMessages(this.room, this.drawing)) this.send(ws, message);
     }
     else if (change.event) {
       // The small journal write is committed before any receiver or sender sees
-      // this sequence. Recipients are freshly authorized after that write;
-      // no full game snapshot or stats write is needed for an ink batch.
+      // this sequence. Recipients are authorized after that write (a D1 answer
+      // under ACCOUNT_RECHECK_MS old may be reused for ink); no full game
+      // snapshot or stats write is needed for an ink batch.
       const head = await persistErsomhaDrawing(this.ctx.storage, change.board, change.event, this.drawingHead);
       this.drawing = change.board; this.drawingHead = head;
-      if (await this.authorizeAccountPublication()) for (const socket of this.sockets()) {
+      if (await this.authorizeAccountPublication({ recent: true })) for (const socket of this.sockets()) {
         const recipient = this.attachment(socket), seat = recipient.revoked ? null : recipient.id;
         if (seat && this.room.members.some(m => m.id === seat && !m.left)) this.send(socket, change.event);
       }
@@ -594,7 +619,7 @@ export class Room {
     this.reactionCounter = (this.reactionCounter || 0) + 1;
     const event = { type: 'reaction', id: `${now.toString(36)}-${this.reactionCounter}`, seatId: a.id, emoji: cosmetic?.emoji || command.emoji, at: now,
       ...(cosmetic ? { reactionId: cosmetic.id, version: cosmetic.version } : {}) };
-    if (await this.authorizeAccountPublication()) for (const socket of this.sockets()) {
+    if (await this.authorizeAccountPublication({ recent: true })) for (const socket of this.sockets()) {
       const recipient = this.attachment(socket), seat = recipient.revoked ? null : recipient.id;
       if (seat && this.room.members.some((m) => m.id === seat && !m.left)) this.send(socket, event);
     }
@@ -1089,8 +1114,14 @@ export class Room {
         if(this.room.game!=='mafia'&&(a.accountSessionId||this.room.game==='ersomha'||this.room.directory?.visibility==='public')) {
           // Validate the actor before accepting a mutation. Recipients share
           // one separate batch read at the actual post-storage publication.
-          if(!await this.env.DB.prepare(`SELECT 1 FROM sessions WHERE id=? AND user_id=? AND expires_at>? AND (revoked_at IS NULL OR revoked_at>?) AND ${liveAccountSql('sessions.user_id')}`).bind(a.accountSessionId||'',a.accountUserId||'',now,now).first()) {
-            ws.serializeAttachment({ ...a, revoked: true }); this.close(ws, 4401, 'AUTH'); fail('AUTH',401);
+          // Ink and reactions may reuse a D1 answer under two seconds old.
+          if(!(LIGHT_COMMANDS.has(command?.type)&&this.recentAccountCheck(a,now))) {
+            const live=await this.env.DB.prepare(`SELECT expires_at,revoked_at FROM sessions WHERE id=? AND user_id=? AND expires_at>? AND (revoked_at IS NULL OR revoked_at>?) AND ${liveAccountSql('sessions.user_id')}`).bind(a.accountSessionId||'',a.accountUserId||'',now,now).first();
+            if(!live) {
+              this.accountChecks.delete(this.accountCheckKey(a));
+              ws.serializeAttachment({ ...a, revoked: true }); this.close(ws, 4401, 'AUTH'); fail('AUTH',401);
+            }
+            if(a.accountSessionId&&a.accountUserId)this.noteAccountCheck(a,live,now);
           }
         }
         let mafiaSessionProof=null;

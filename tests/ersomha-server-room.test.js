@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { Room } from '../server/room.mjs';
+import { Room, ACCOUNT_RECHECK_MS } from '../server/room.mjs';
 import { createLocalD1 } from '../server/local-d1.mjs';
 import { createRoom, joinRoom, connected, action } from '../server/game-model.mjs';
 import { bindSeatAccount } from '../server/room-stats.mjs';
@@ -173,20 +173,23 @@ test('a departed participant releases only that account after the leave is durab
     assert.equal((await f.DB.prepare('SELECT COUNT(*) AS n FROM ersomha_leases WHERE expires_at>?').bind(Date.now()).first()).n, 3);
   } finally { f.close(); }
 });
-test('80 ms drawing cadence uses two fixed authorization reads and no bank/history/stats work, full-state broadcast or room rewrite', async () => {
+test('80 ms drawing cadence re-reads authorization once per two seconds and does no bank/history/stats work, full-state broadcast or room rewrite', async () => {
   const f = await fixture(); const realNow = Date.now; let now = realNow();
   try {
     await begin(f); now = realNow(); Date.now = () => now;
     assert.equal((await f.command(0, 'drawing_sync')).ok, true); // Warm the unchanged-room path.
+    // Let every earlier confirmation lapse, so the window starts at the first batch.
+    now += ACCOUNT_RECHECK_MS;
     f.sockets.forEach(s => { s.messages = []; }); f.storage.writes = []; const reads = f.observed.reads, revision = f.room.room.revision;
     const sqlAt = f.observed.statements.length;
     for (let n = 0; n < 80; n++) { now += 80; assert.equal((await f.command(0, 'drawing_batch', stroke(n))).ok, true); }
     const statements = f.observed.statements.slice(sqlAt);
-    const actor = statements.filter(sql => /^SELECT 1 FROM sessions WHERE id=\?/.test(sql));
+    const actor = statements.filter(sql => /^SELECT expires_at,revoked_at FROM sessions WHERE id=\?/.test(sql));
     const recipients = statements.filter(sql => /^SELECT id,user_id,expires_at,revoked_at FROM sessions WHERE id IN/.test(sql));
-    assert.equal(actor.length, 80, 'one live sender read per batch');
-    assert.equal(recipients.length, 80, 'one shared recipient read per batch, never per viewer');
-    assert.equal(f.observed.reads - reads, 160);
+    // 80 batches span 6.4 s: D1 is read at batches 1, 26, 51 and 76 instead of 80 times.
+    assert.equal(actor.length, 4, 'the sender is re-read once per two seconds of drawing');
+    assert.equal(recipients.length, 4, 'one shared recipient read per two seconds, never per viewer');
+    assert.equal(f.observed.reads - reads, 8);
     assert.equal(statements.length, actor.length + recipients.length, 'no bank/history/stats or other SQL enters the steady drawing path');
     assert.equal(statements.some(sql => /^(?:INSERT|UPDATE|DELETE|REPLACE)\b/i.test(sql)), false);
     assert.equal(f.room.room.revision, revision);
@@ -197,6 +200,43 @@ test('80 ms drawing cadence uses two fixed authorization reads and no bank/histo
       assert.ok(socket.messages.filter(m => m.type === 'drawing').every(m => JSON.stringify(m).length < 4096));
     }
     assert.equal(f.sockets[0].readyState, 1, 'drawing has an independent quota rather than the legacy 35-command window');
+  } finally { Date.now = realNow; f.close(); }
+});
+
+test('a revoked account loses ink within two seconds, while a guess still reads D1 first', async () => {
+  const f = await fixture({ count: 4 }); const realNow = Date.now; let now = realNow();
+  try {
+    await begin(f); now = realNow(); Date.now = () => now;
+    assert.equal((await f.command(0, 'drawing_batch', stroke(0))).ok, true);
+    const drawer = f.sockets[0], viewer = f.sockets[1], guesser = f.sockets[2];
+    // Sessions end behind the room's back (sign-out elsewhere, suspension, deletion).
+    const revokedAt = now;
+    await f.DB.prepare('UPDATE sessions SET revoked_at=? WHERE id IN (?,?)').bind(revokedAt, viewer.a.accountSessionId, guesser.a.accountSessionId).run();
+    // A guess changes room state, so it never reuses the window.
+    const guess = await f.command(2, 'guess', { text: 'تخمين' });
+    assert.equal(guess?.ok, false); assert.equal(guess.error, 'AUTH');
+    assert.deepEqual(guesser.closed, { code: 4401, reason: 'AUTH' });
+    viewer.messages = [];
+    let closedAt = null;
+    for (let n = 1; n <= 40 && closedAt === null; n++) {
+      now += 80;
+      assert.equal((await f.command(0, 'drawing_batch', stroke(n))).ok, true);
+      if (viewer.readyState !== 1) closedAt = now;
+    }
+    assert.ok(closedAt !== null && closedAt - revokedAt <= ACCOUNT_RECHECK_MS, `ink stopped ${closedAt - revokedAt} ms after revocation`);
+    assert.deepEqual(viewer.closed, { code: 4401, reason: 'AUTH' });
+    const inkAfterRevocation = viewer.messages.filter(m => m.type === 'drawing').length;
+    assert.ok(inkAfterRevocation < ACCOUNT_RECHECK_MS / 80, `${inkAfterRevocation} batches reached the revoked viewer`);
+    // The drawer's own session ending stops its drawing within the same window.
+    await f.DB.prepare('UPDATE sessions SET revoked_at=? WHERE id=?').bind(now, drawer.a.accountSessionId).run();
+    const drawerRevokedAt = now; let refusedAt = null;
+    for (let n = 41; n <= 80 && refusedAt === null; n++) {
+      now += 80;
+      const ack = await f.command(0, 'drawing_batch', stroke(n));
+      if (!ack?.ok) refusedAt = now;
+    }
+    assert.ok(refusedAt !== null && refusedAt - drawerRevokedAt <= ACCOUNT_RECHECK_MS + 80, `drawing refused ${refusedAt - drawerRevokedAt} ms after revocation`);
+    assert.deepEqual(drawer.closed, { code: 4401, reason: 'AUTH' });
   } finally { Date.now = realNow; f.close(); }
 });
 test('failed delta persistence sends no echo, and reconstructed rooms synchronize undo/redo/clear exactly', async () => {
