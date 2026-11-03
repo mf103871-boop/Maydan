@@ -14,8 +14,10 @@ import{PreviewProviders}from'./src/design/preview-platform.jsx';import{createDes
 import{PlatformContext,usePlatform}from'./src/platform/context.js';import{BadeehaMatch}from'./src/online/Badeeha.jsx';import{FabrakaMatch}from'./src/online/Fabraka.jsx';import{ErsomhaMatch}from'./src/online/Ersomha.jsx';
 import{createAudioEvents}from'./src/shared/fx/audio-events.js';import{createRoomAudioAdapter,bindRoomAudioCommands}from'./src/shared/fx/room-audio.js';import{RoomClient}from'./src/online/client.js';import{GAME_PROTOCOLS}from'./src/online/shared.js';
 import{MafiaLobby}from'./src/online/Mafia.jsx';
+import{createSemanticAudioClock}from'./tests/helpers/semantic-audio-clock.js';
 const root=createRoot(document.getElementById('root'));let client,audio,fixture,current,kind,serial=0;window.sounds=[];window.direct=[];window.rejections=[];
-const bus=createAudioEvents((cue,options)=>{if(options.guard())window.sounds.push(cue);return true;});
+const audioClock=createSemanticAudioClock();window.advanceRoomAudio=audioClock.advance;
+const bus=createAudioEvents((cue,options)=>{if(options.guard())window.sounds.push(cue);return true;},{now:audioClock.now});
 const sound={emit:(...args)=>bus.emit(...args),play:name=>window.direct.push(name),music:{setSuppressed(){},setDucking(){},scene(){},releaseScene(){}},setSuppressed(){},setDucking(){}};
 class Socket{static latest;constructor(){this.readyState=1;this.sent=[];Socket.latest=this;}send(data){this.sent.push(JSON.parse(data));}close(){this.readyState=3;}receive(data){this.onmessage({data:JSON.stringify(data)});}}
 const context={ownerId:'browser-owner',seatId:'design-player-1',code:'123456'};
@@ -23,7 +25,7 @@ function View(){const platform=usePlatform();const Component=kind==='badeeha'?Ba
 function paint(){root.render(<PreviewProviders sceneId={'online.'+kind+'.reveal'}><View/></PreviewProviders>);}
 function snapshot(extra={}){const state={...current,...extra,_designPreview:false,serverNow:Date.now(),protocol:GAME_PROTOCOLS[kind],code:'123456'};Socket.latest.receive({type:'state',state});}
 window.roomAudioCase=(game,phase='reveal')=>{audio?.dispose();client?.stop();kind=game;fixture=createDesignFixture(game==='ersomha'?'ersomha.draw.drawer':'online.'+game+'.'+phase,{now:Date.now()});current={...fixture.state,revision:1,code:'123456',_designPreview:false};window.sounds=[];window.direct=[];window.rejections=[];bus.reset('fixture-'+ ++serial);
- audio=createRoomAudioAdapter(sound);client=new RoomClient({server:location.origin,code:'123456',session:{id:context.seatId,token:'isolated-fixture'},WebSocketImpl:Socket,onStatus:status=>audio.connection(status,context),onState:state=>{audio.update(state,{...context,receivedAt:Date.now()});current=state;paint();}});bindRoomAudioCommands(client,audio);client.start();Socket.latest.onopen();snapshot();};
+ audio=createRoomAudioAdapter(sound,audioClock);client=new RoomClient({server:location.origin,code:'123456',session:{id:context.seatId,token:'isolated-fixture'},WebSocketImpl:Socket,onStatus:status=>audio.connection(status,context),onState:state=>{audio.update(state,{...context,receivedAt:audioClock.now()});current=state;paint();}});bindRoomAudioCommands(client,audio);client.start();Socket.latest.onopen();snapshot();};
 window.pushRoomAudio=(extra)=>snapshot({...extra,revision:extra.revision??current.revision+1});
 window.lastCommand=()=>Socket.latest.sent.filter(value=>value.type!=='auth').at(-1);
 window.ackRoomAudio=(ok=true)=>{const command=window.lastCommand();Socket.latest.receive({type:'ack',requestId:command.requestId,ok,...(!ok?{error:'STALE'}:{})});};
@@ -45,7 +47,7 @@ for(const [name,engine] of [['chromium',chromium],['webkit',webkit]])test(`${nam
   const browser=await engine.launch({headless:true});t.after(()=>browser.close());const page=await browser.newPage({viewport:{width:390,height:844}}),origin=`http://127.0.0.1:${server.address().port}`;
   page.on('pageerror',error=>errors.push(error.message));page.on('request',request=>requests.push(new URL(request.url()).pathname));
   await page.route('**/*',route=>new URL(route.request().url()).origin===origin||route.request().url().startsWith('data:')?route.continue():route.abort());
-  await page.goto(origin);await page.locator('[data-case=badeeha]').waitFor();await page.waitForTimeout(150);
+  await page.goto(origin);await page.locator('[data-case=badeeha]').waitFor();await page.evaluate(()=>window.advanceRoomAudio(150));
   assert.deepEqual(await page.evaluate(()=>({semantic:window.sounds,direct:window.direct})),{semantic:[],direct:[]},'initial historical reveal never plays');
   await page.evaluate(()=>window.roomAudioCase('badeeha','question'));await page.locator('[data-case=badeeha] [data-design-id=reveal]').waitFor();
   assert.equal(await page.locator('[data-design-id=reveal]').getAttribute('data-sound'),'none');
@@ -54,14 +56,17 @@ for(const [name,engine] of [['chromium',chromium],['webkit',webkit]])test(`${nam
   await page.locator('[data-design-id=reveal]').click();await page.evaluate(()=>{window.pushRoomAudio({phase:'reveal',deadlineAt:null});window.ackRoomAudio(true);});
   await page.locator('[data-design-id=answer]').waitFor();assert.deepEqual(await page.evaluate(()=>window.sounds),['reveal'],'public projection alone owns reveal');
   assert.deepEqual(await page.evaluate(()=>window.direct),[]);
-  await page.evaluate(()=>{window.disconnectRoomAudio();window.pushRoomAudio({revision:20});});await page.waitForTimeout(50);
+  await page.evaluate(()=>{window.disconnectRoomAudio();window.pushRoomAudio({revision:20});window.advanceRoomAudio(150);});
   assert.equal((await page.evaluate(()=>window.sounds)).filter(cue=>cue==='reveal').length,1,'reconnected retained reveal remains history');
-  await page.evaluate(()=>window.roomAudioCase('fabraka','reveal'));await page.locator('[data-case=fabraka]').waitFor();await page.waitForTimeout(100);assert.deepEqual(await page.evaluate(()=>window.sounds),[]);assert.deepEqual(await page.evaluate(()=>window.direct),[],'no mount drumroll');
-  await page.evaluate(()=>window.pushRoomAudio({reveal:{shown:true,options:[{id:'public-option',text:'خيار معلن'}]}}));await page.waitForTimeout(50);assert.deepEqual(await page.evaluate(()=>window.sounds),['reveal']);
-  await page.evaluate(()=>{window.hideRoomAudio();window.pushRoomAudio({phase:'discussion'});});await page.waitForTimeout(50);assert.deepEqual(await page.evaluate(()=>window.sounds),['reveal'],'background restore baselines new phase');
+  await page.evaluate(()=>window.roomAudioCase('fabraka','reveal'));await page.locator('[data-case=fabraka]').waitFor();await page.evaluate(()=>window.advanceRoomAudio(150));assert.deepEqual(await page.evaluate(()=>window.sounds),[]);assert.deepEqual(await page.evaluate(()=>window.direct),[],'no mount drumroll');
+  await page.evaluate(()=>{window.pushRoomAudio({reveal:{shown:true,options:[{id:'public-option',text:'خيار معلن'}]}});window.advanceRoomAudio(50);});assert.deepEqual(await page.evaluate(()=>window.sounds),['reveal']);
+  await page.evaluate(()=>{window.hideRoomAudio();window.pushRoomAudio({phase:'discussion'});window.advanceRoomAudio(150);});assert.deepEqual(await page.evaluate(()=>window.sounds),['reveal'],'background restore baselines new phase');
   await page.evaluate(()=>window.roomAudioCase('ersomha'));await page.locator('[data-case=ersomha] canvas').waitFor();
-  await page.evaluate(()=>window.pushRoomAudio({guessedIds:['design-player-3','design-player-2','design-player-4']}));await page.waitForTimeout(150);assert.deepEqual(await page.evaluate(()=>window.sounds),['correct'],'multiple public guesses coalesce');
-  await page.evaluate(()=>window.pushRoomAudio({publicWord:{letters:[{index:0,char:'ق'}],wordLengths:[4]}}));await page.waitForTimeout(30);assert.deepEqual(await page.evaluate(()=>window.sounds),['correct','pop']);
+  await page.evaluate(()=>{window.pushRoomAudio({guessedIds:['design-player-3','design-player-2']});window.advanceRoomAudio(50);window.pushRoomAudio({guessedIds:['design-player-3','design-player-2','design-player-4']});window.advanceRoomAudio(99);});
+  assert.deepEqual(await page.evaluate(()=>window.sounds),[],'the replaced batch stays silent until its full 100ms window');
+  await page.evaluate(()=>window.advanceRoomAudio(1));assert.deepEqual(await page.evaluate(()=>window.sounds),['correct'],'multiple public snapshots coalesce exactly once at 100ms');
+  await page.evaluate(()=>window.advanceRoomAudio(100));assert.deepEqual(await page.evaluate(()=>window.sounds),['correct'],'cancelled earlier batch never replays');
+  await page.evaluate(()=>{window.pushRoomAudio({publicWord:{letters:[{index:0,char:'ق'}],wordLengths:[4]}});window.advanceRoomAudio(30);});assert.deepEqual(await page.evaluate(()=>window.sounds),['correct','pop']);
   await page.evaluate(()=>window.showMafiaReady(false));await page.locator('[data-case=mafia] [data-design-id=ready]').waitFor();
   assert.equal(await page.locator('[data-case=mafia] [data-design-id=ready]').getAttribute('data-sound'),null,'local shared tutorial action keeps its existing tap');
   await page.evaluate(()=>window.showMafiaReady(true));await page.waitForFunction(()=>document.querySelector('[data-case=mafia] [data-design-id=ready]')?.getAttribute('data-sound')==='none');

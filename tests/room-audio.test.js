@@ -2,6 +2,8 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {createRoomAudioAdapter,bindRoomAudioCommands,emitRoomReceipt} from '../src/shared/fx/room-audio.js';
 import {RoomClient} from '../src/online/client.js';
+import {createAudioEvents} from '../src/shared/fx/audio-events.js';
+import {createSemanticAudioClock} from './helpers/semantic-audio-clock.js';
 
 function fixture(){
   let time=1000, available=true;const calls=[],timers=new Map();let seq=0;
@@ -107,6 +109,55 @@ test('public draw guesses coalesce, public hints work and no private word/choice
   f.flush();assert.deepEqual(f.calls.map(call=>call.type),['draw.correct']);
   f.update(draw(4,{guessedIds:['b','c'],publicWord:{letters:[{}]}}));
   assert.equal(f.calls.at(-1).type,'game.hint');
+});
+function semanticFixture() {
+  const clock=createSemanticAudioClock(),plays=[],context={ownerId:'owner',seatId:'a',code:'123456'};
+  const bus=createAudioEvents((cue,options)=>{plays.push({cue,...options});return true;},{now:clock.now});
+  const audio=createRoomAudioAdapter(bus,clock);
+  audio.connection('connected',context);
+  const draw=(revision,extra={})=>state(revision,{game:'ersomha',phase:'draw',guessedIds:[],...extra});
+  const update=(revision,extra={},options={})=>audio.update(draw(revision,extra),{...context,receivedAt:clock.now(),...options});
+  update(1);
+  return {clock,plays,audio,bus,context,update,correct:()=>plays.filter(play=>play.cue==='correct')};
+}
+test('real semantic bus coalesces two draw snapshots at 100ms, with no early or duplicate playback',()=>{
+  const f=semanticFixture();
+  f.update(2,{guessedIds:['b']});f.clock.advance(50);
+  f.update(3,{guessedIds:['b','c']});assert.equal(f.clock.pending(),1);
+  f.clock.advance(99);assert.deepEqual(f.plays,[]);
+  f.clock.advance(1);assert.equal(f.correct().length,1);assert.equal(f.correct()[0].guard(),true);
+  f.clock.advance(100);assert.equal(f.correct().length,1);assert.equal(f.clock.pending(),0);
+});
+test('real semantic bus rejects an expired coalescing callback and a snapshot already delayed at receipt',()=>{
+  for(const delay of [1000,1001]) {
+    const f=semanticFixture();f.update(2,{guessedIds:['b']});
+    f.clock.elapse(delay);f.clock.flushLate();
+    assert.equal(f.correct().length,delay===1000?1:0,'the unchanged 1000ms TTL boundary is enforced');
+  }
+  const f=semanticFixture();f.update(2,{guessedIds:['b']},{receivedAt:f.clock.now()-401});
+  f.clock.advance(100);assert.deepEqual(f.plays,[]);assert.equal(f.clock.pending(),0);
+});
+test('real semantic bus invalidates queued and decoded draw cues on privacy, identity and phase changes',()=>{
+  const changes={
+    owner:f=>f.update(3,{guessedIds:['b']},{ownerId:'other'}),
+    room:f=>f.update(3,{guessedIds:['b'],code:'654321'},{code:'654321'}),
+    phase:f=>f.update(3,{phase:'reveal',guessedIds:['b']}),
+    hidden:f=>f.update(3,{guessedIds:['b']},{hidden:true}),
+    preview:f=>f.update(3,{guessedIds:['b']},{preview:true}),
+    suspend:f=>f.audio.suspend(),
+    dispose:f=>f.audio.dispose(),
+    disconnect:f=>f.audio.connection('reconnecting',f.context),
+  };
+  for(const [name,change] of Object.entries(changes)) {
+    const queued=semanticFixture();queued.update(2,{guessedIds:['b']});change(queued);queued.clock.advance(100);
+    assert.equal(queued.correct().length,0,name+' cancels the pending batch');
+    const decoded=semanticFixture();decoded.update(2,{guessedIds:['b']});decoded.clock.advance(100);
+    const guard=decoded.correct()[0].guard;assert.equal(guard(),true);change(decoded);
+    assert.equal(guard(),false,name+' fences a deferred sample decode');
+  }
+  const expired=semanticFixture();expired.update(2,{guessedIds:['b']});expired.clock.advance(100);
+  const guard=expired.correct()[0].guard;expired.clock.elapse(900);assert.equal(guard(),true);
+  expired.clock.elapse(1);assert.equal(guard(),false,'decode expiry uses original snapshot time');
 });
 test('a coincident lower-priority hint cannot replace pending correct feedback',()=>{
   const f=fixture(),draw=(revision,extra={})=>state(revision,{game:'ersomha',phase:'draw',guessedIds:[],...extra});
