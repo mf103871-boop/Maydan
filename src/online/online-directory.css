@@ -14,3 +14,18 @@
 @media(max-width:360px){.online-directory-toolbar>.btn{font-size:.76rem;padding-inline:7px}.online-directory-row{padding:8px;gap:5px}.online-directory-row-copy>b{font-size:.87rem}.online-directory-profile{padding:7px 9px}}
 @media(orientation:landscape) and (max-height:500px){.online-directory-profile{position:static;padding-block:5px}.online-directory-profile>button{min-height:44px}.online-directory-row{min-height:66px}.online-lobby-controls{position:static}}
 @media(prefers-reduced-motion:reduce){.online-directory-view *{scroll-behavior:auto!important}}
+
+/* B07: actual membership and readiness remain the source of each badge. */
+.online-lobby-frame .online-lobby-players{gap:6px}
+.online-lobby-frame .online-lobby-players>li{border:1px solid var(--stroke,#e2d4c3);border-radius:14px;background:var(--surface,#fffdf7);box-shadow:inset 0 1px #fff;gap:8px}
+.online-lobby-frame .online-lobby-players>li.is-self{background:linear-gradient(115deg,#f2e6fa,#fffaf2);border-color:#b998cc}
+.online-lobby-frame .online-lobby-players>li.is-offline{border-style:dashed}
+.online-lobby-frame .online-lobby-players .grow>b{display:block;font-size:15px;line-height:1.5;overflow-wrap:anywhere}
+.online-lobby-frame .online-lobby-players .grow>small{display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-top:3px;font-size:12px;line-height:1.5}
+.online-lobby-frame .online-lobby-players .online-member-state{display:inline-block;padding:2px 8px;border-radius:7px;color:#65477b;background:#eee4f5;font-weight:750}
+.online-lobby-frame .online-lobby-players .is-ready .online-member-state{color:#145d48;background:#dff0e5}
+.online-lobby-frame .online-lobby-players .is-offline .online-member-state{color:#913f3f;background:#fae7e1}
+.online-lobby-frame .online-lobby-players :is(.clay-avatar,.player-avatar){width:40px;height:40px;flex:none}
+.online-lobby-frame .online-member-count{padding:4px 9px;border:1px solid #d4bfdf;border-radius:9px;color:#593473;background:#f2e8f8;font-size:14px;font-weight:800;font-variant-numeric:tabular-nums;white-space:nowrap}
+.online-lobby-frame .online-lobby-controls{border-top:1px solid var(--stroke,#dfd0bd);gap:8px}
+.online-lobby-frame .online-lobby-controls>.btn:disabled{box-shadow:none}

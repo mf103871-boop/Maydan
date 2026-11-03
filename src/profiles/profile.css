@@ -83,3 +83,15 @@
 @media (max-width: 360px) { .profile-screen { padding-inline: 8px; }.profile-name-row h2 { font-size: 22px; }.profile-identity { padding-inline: 13px; }.profile-stat-copy { font-size: 10px; }.profile-contact-actions { max-width: calc(100% - 93px); }.profile-contact-actions .btn { font-size: 10px; }.profile-avatar { width: 86px; min-width: 86px; height: 86px; }.profile-page-heading h1 { font-size: 21px; }.profile-code-row { gap: 5px; }.profile-code { font-size: 10px; } }
 
 .profile-review-summary{display:grid;gap:12px;margin-top:16px}.profile-image-review{padding:14px 16px;margin-top:12px;border:1px solid #ccac7180;background:#fff8e8;border-radius:16px;color:#553a1d;font-size:12px;line-height:1.8}.profile-image-review p{margin:0 0 5px;overflow-wrap:anywhere}.profile-image-review.is-rejected,.profile-image-review.is-removed{background:#fff0ed;border-color:#d8796380;color:#843827}.profile-review-toggle{font:inherit;font-weight:700;padding:8px 0;border:0;background:transparent;color:inherit;text-decoration:underline;cursor:pointer;min-height:40px}.profile-image-review .review-image{display:grid;place-items:center;margin-top:8px;border-radius:12px;overflow:hidden;background:#eadfcf}.profile-image-review .review-image img{max-height:260px;max-width:100%;object-fit:contain}.profile-image-review .review-retry{font:inherit;padding:8px;border:1px solid currentColor;border-radius:8px;background:transparent;color:inherit;cursor:pointer}
+
+/* Blueprint P06: readable identity details, including the compact phone layout.
+   Skin colours and ownership stay controlled by profile-skin.css. */
+.profile-screen :is(.profile-code,.profile-share-button,.profile-owner-edit,.profile-featured-badge,.profile-stat-copy,.profile-section-heading p,.profile-achievement p,.profile-achievement-state,.profile-earned-title,.profile-showcase-label,.profile-request-status) { font-size:13px; line-height:1.65; }
+.profile-screen :is(.profile-contact-actions .btn,.profile-image-actions .btn,.profile-edit-footer .btn,.profile-theme-choice,.profile-badge-choice) { font-size:14px; min-height:44px; }
+.profile-screen .profile-contact-actions { flex-wrap:wrap; }
+.profile-screen .profile-achievement h3 { font-size:15px; line-height:1.5; }
+.profile-screen .profile-code-row { flex-wrap:wrap; row-gap:8px; }
+.profile-screen :is(.profile-crop-hint,.profile-stat-note,.profile-image-review) { font-size:13px; line-height:1.75; }
+.profile-screen .profile-review-toggle { min-height:44px; }
+@media(max-width:360px) { .profile-screen .profile-page-head { flex-wrap:wrap; row-gap:10px; }.profile-screen .profile-page-heading { flex:1; }.profile-screen .profile-share-button { padding-inline:10px; }.profile-screen .profile-achievement-grid { gap:8px; } }
+.profile-screen .profile-progress-text { font-size:13px; line-height:1.5; }

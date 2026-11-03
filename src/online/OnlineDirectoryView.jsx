@@ -30,7 +30,7 @@ export function OnlineRoomRow({room,title,subtitle,statusLabel,voiceLabel,canJoi
   const action=canJoin?onJoin:canObserve?onObserve:null;
   const Content=action?'button':'div';
   return <article data-design-id="room" className="online-directory-row" data-room-code={room.code} data-room-status={room.status||'waiting'}>
-    <Content className="online-directory-row-content" type={action?'button':undefined} data-design-id={action?(canJoin?'room-join':'room-observe'):undefined} aria-label={action?`${canJoin?'الانضمام إلى':'مشاهدة'} ${title||room.roomName}`:undefined} disabled={action?disabled:undefined} onClick={action?()=>action(room.code):undefined}>
+    <Content className="online-directory-row-content" type={action?'button':undefined} data-sound={action?'none':undefined} data-design-id={action?(canJoin?'room-join':'room-observe'):undefined} aria-label={action?`${canJoin?'الانضمام إلى':'مشاهدة'} ${title||room.roomName}`:undefined} disabled={action?disabled:undefined} onClick={action?()=>action(room.code):undefined}>
     <div className="online-directory-row-copy"><b>{title||room.roomName}</b><div className="online-directory-row-meta"><span>{statusLabel}</span>{voiceLabel&&<span>{voiceLabel}</span>}{subtitle&&<span>{subtitle}</span>}</div></div>
     <div className="online-directory-row-side"><bdi className={room.full?'is-full':''}>{arabicNumber(room.players)} / {arabicNumber(room.capacity)}</bdi>
       {action?<span className="online-directory-row-label">{canJoin?'انضم':'شاهد'}</span>:<small>{room.full?'مكتملة':'غير متاحة'}</small>}
@@ -62,7 +62,7 @@ export function OnlineDirectoryView({game,title='الغرف العامة',rooms=
     <div data-design-id="toolbar" className="online-directory-toolbar" aria-label={title}>
       {onCreate&&<Button size="sm" aria-label="إنشاء غرفة جديدة" data-design-id="create-public-room" disabled={disabled||createDisabled} onClick={onCreate}>+ إنشاء</Button>}
       {onCode&&<Button size="sm" data-design-id="entry-join" disabled={disabled} onClick={onCode}>دخول برمز</Button>}
-      {onQuickJoin&&<Button size="sm" aria-label="انضمام سريع إلى غرفة متاحة" data-design-id="quick-join" variant="primary" disabled={disabled||enabled!==true||loading} onClick={onQuickJoin}>سريع</Button>}
+      {onQuickJoin&&<Button size="sm" aria-label="انضمام سريع إلى غرفة متاحة" data-design-id="quick-join" data-sound="none" variant="primary" disabled={disabled||enabled!==true||loading} onClick={onQuickJoin}>سريع</Button>}
       <Button size="sm" data-design-id="refresh" variant="ghost" aria-label="تحديث الغرف" disabled={disabled||loading} onClick={onRefresh}>↻</Button>
       {(filters||help)&&<Button data-design-id="directory-options" size="sm" variant="ghost" aria-label="خيارات الغرف والمساعدة" aria-expanded={Boolean(panel)} onClick={()=>setPanel(value=>value?'':'options')}>⋯</Button>}
     </div>

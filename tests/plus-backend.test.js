@@ -32,7 +32,8 @@ test('catalog stays public while cosmetics are account-private and server Plus g
   const initial=await h.api(a,'/api/me/cosmetics');assert.equal(initial.body.eligible,false);assert.equal(initial.body.revision,0);
   assert.equal((await h.api(a,'/api/me/cosmetics',{selection:{frameId:'sahra.frame'},revision:0},'PATCH')).status,402);
   await h.grant(a);
-  const saved=await h.api(a,'/api/me/cosmetics',{selection:{frameId:'sahra.frame',avatarId:'artist.avatar',badge:true},revision:0},'PATCH');
+  assert.equal((await h.api(a,'/api/me/cosmetics',{selection:{avatarId:'artist.avatar'},revision:0},'PATCH')).status,402,'active Plus does not include retired avatar customization');
+  const saved=await h.api(a,'/api/me/cosmetics',{selection:{frameId:'sahra.frame',profileSkinId:'sahra.profileSkin',badge:true},revision:0},'PATCH');
   assert.equal(saved.status,200,JSON.stringify(saved));assert.equal(saved.body.effective.frameId,'sahra.frame');assert.equal(saved.body.revision,1);
   assert.equal((await h.api(b,'/api/me/cosmetics')).body.preferred.frameId,null);
   assert.equal((await h.api(a,'/api/me/cosmetics',{selection:{frameId:'sahra.avatar'},revision:1},'PATCH')).status,400);
@@ -41,7 +42,9 @@ test('catalog stays public while cosmetics are account-private and server Plus g
 });
 test('expiry preserves preference, public fallback and old revisions cannot overwrite it',async t=>{
   const h=await setup(t),a=await h.person();await h.grant(a);await ensurePlayerProfile(h.env,a.id);
-  assert.equal((await h.api(a,'/api/me/cosmetics',{selection:{coverId:'noir.cover',nameColorId:'noir.nameColor',badge:true},revision:0},'PATCH')).status,200);
+  await h.env.DB.prepare('INSERT INTO plus_cosmetics(user_id,selection_json,revision,updated_at) VALUES(?,?,0,?)').bind(a.id,JSON.stringify({coverId:'noir.cover',nameColorId:'noir.nameColor'}),Date.now()).run();
+  assert.equal((await h.api(a,'/api/me/cosmetics')).body.effective.coverId,null,'old subscription-only preferences are retained but no longer activated');
+  assert.equal((await h.api(a,'/api/me/cosmetics',{selection:{profileSkinId:'sahra.profileSkin',badge:true},revision:0},'PATCH')).status,200);
   const saves=await Promise.all(['artist.frame','sahra.frame'].map(frameId=>h.api(a,'/api/me/cosmetics',{selection:{frameId},revision:1},'PATCH')));
   assert.deepEqual(saves.map(r=>r.status).sort(),[200,409]);
   const before=await h.api(a,'/api/me/cosmetics');
@@ -51,7 +54,7 @@ test('expiry preserves preference, public fallback and old revisions cannot over
   assert.equal((await profileSummaries(h.env,[a.id])).get(a.id).cosmetics.badge,false);
   const clear=await h.api(a,'/api/me/cosmetics',{selection:{frameId:null,coverId:null,badge:false},revision:before.body.revision},'PATCH');assert.equal(clear.status,200);
   assert.equal((await h.api(a,'/api/me/cosmetics',{selection:{badge:true},revision:clear.body.revision},'PATCH')).status,402);
-  await h.grant(a);assert.equal((await effectiveCosmetics(h.env,a.id)).nameColorId,'noir.nameColor');
+  await h.grant(a);assert.equal((await effectiveCosmetics(h.env,a.id)).nameColorId,null);assert.equal((await effectiveCosmetics(h.env,a.id)).profileSkinId,'sahra.profileSkin');
 });
 test('billing environment, refunds and live-account guard also protect cosmetic SQL writes',async t=>{
   const h=await setup(t,{PADDLE_ENV:'production'}),a=await h.person();
@@ -69,20 +72,21 @@ test('presets whitelist all eight games and reject words, roles, decks and repla
   assert.throws(()=>normalizePresetSettings('mafia',{mode:'classic',capacity:12}),{code:'INVALID'});
   assert.throws(()=>normalizePresetSettings('badeeha',{categories:['unknown']}),{code:'INVALID'});
 });
-test('preset limit is atomic; apply requires Plus; list/delete survive expiry',async t=>{
+test('retired presets reject all new membership writes while private historical rows remain readable and deletable',async t=>{
   const h=await setup(t),a=await h.person(),b=await h.person();await h.grant(a);
   const results=await Promise.all(Array.from({length:12},(_,n)=>h.api(a,'/api/me/setup-presets',{name:`جلسة ${n}`,game:'ersomha',settings:{difficulty:'easy',cycles:1}})));
-  assert.equal(results.filter(r=>r.status===201).length,10,JSON.stringify(results));assert.equal(results.filter(r=>r.body.error==='PRESET_LIMIT').length,2);
+  assert.ok(results.every(r=>r.status===403&&r.body.error==='FEATURE_DISABLED'));assert.equal((await h.api(a,'/api/me/setup-presets')).body.presets.length,0);
+  for(let n=0;n<10;n++)await h.env.DB.prepare('INSERT INTO plus_setup_presets(id,user_id,name,game,schema_version,settings_json,revision,created_at,updated_at) VALUES(?,?,?,?,?,?,1,?,?)').bind('legacy-'+n,a.id,'جلسة '+n,'ersomha',1,JSON.stringify({difficulty:'easy',cycles:1}),Date.now(),Date.now()).run();
   const list=await h.api(a,'/api/me/setup-presets');assert.equal(list.body.presets.length,10);
   const p=list.body.presets[0],path=`/api/me/setup-presets/${p.id}`;
   assert.equal((await h.api(b,path+'/apply',{})).status,404);
-  const applied=await h.api(a,path+'/apply',{});assert.equal(applied.status,200);assert.equal(applied.body.game,'ersomha');assert.equal('allowReplay' in applied.body.settings,false);
-  const update=await h.api(a,path,{revision:p.revision,name:'الاسم الجديد'},'PATCH');assert.equal(update.status,200);
-  assert.equal((await h.api(a,path,{revision:p.revision},'DELETE')).status,409);
+  const applied=await h.api(a,path+'/apply',{});assert.equal(applied.status,403);assert.equal(applied.body.error,'FEATURE_DISABLED');
+  const update=await h.api(a,path,{revision:p.revision,name:'الاسم الجديد'},'PATCH');assert.equal(update.status,403);
+  assert.equal((await h.api(a,path,{revision:p.revision-1},'DELETE')).status,409);
   await h.grant(a,{status:'revoked'});
-  assert.equal((await h.api(a,path+'/apply',{})).status,402);
+  assert.equal((await h.api(a,path+'/apply',{})).status,403);
   assert.equal((await h.api(a,'/api/me/setup-presets')).body.presets.length,10);
-  assert.equal((await h.api(a,path,{revision:update.body.preset.revision},'DELETE')).status,200);
+  assert.equal((await h.api(a,path,{revision:p.revision},'DELETE')).status,200);
 });
 test('gameplay is free for spent trials without fabricating Plus or losing room account identity',async t=>{
   const h=await setup(t),a=await h.person();
@@ -103,7 +107,7 @@ test('legacy trial endpoints are no-op and new Plus records are removed by accou
   assert.equal((await h.api(a,'/api/trials/merge',{games:['mafia','ersomha']})).status,200);
   assert.equal((await h.env.DB.prepare('SELECT COUNT(*) AS n FROM trials WHERE user_id=?').bind(a.id).first()).n,0);
   await h.api(a,'/api/me/cosmetics',{selection:{badge:true},revision:0},'PATCH');
-  await h.api(a,'/api/me/setup-presets',{name:'سهرتي',game:'mafia',settings:{mode:'classic',capacity:6}});
+  await h.env.DB.prepare('INSERT INTO plus_setup_presets(id,user_id,name,game,schema_version,settings_json,revision,created_at,updated_at) VALUES(?,?,?,?,?,?,1,?,?)').bind('historical-delete',a.id,'سهرتي','mafia',1,JSON.stringify({mode:'classic',capacity:6}),Date.now(),Date.now()).run();
   await deleteUser(h.env,a.id);
   for(const table of ['plus_cosmetics','plus_setup_presets'])assert.equal((await h.env.DB.prepare(`SELECT COUNT(*) AS n FROM ${table} WHERE user_id=?`).bind(a.id).first()).n,0);
 });

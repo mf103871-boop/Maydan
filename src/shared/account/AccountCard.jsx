@@ -12,6 +12,7 @@ import { RedeemSheet, REDEEM_PROMPT } from './RedeemSheet.jsx';
 import { REDEEM_ON_IOS, SUPPORT_EMAIL } from './config.js';
 import { navigate } from '../../platform/router.js';
 import { resolveAccountServer } from './api.js';
+import { useAcceptedFeedback } from '../fx/accepted-feedback.js';
 
 const SOURCE_TEXT = { apple: 'عبر App Store', paddle: 'عبر الويب', promo: 'برمز هدية' };
 
@@ -44,6 +45,14 @@ export function AccountCard() {
 
 function AccountCardOwner() {
   const account = useAccount();
+  const accepted = useAcceptedFeedback(`${resolveAccountServer()}:${account.user?.id || 'guest'}`);
+  const restore = async () => {
+    const feedback = accepted.begin();
+    try {
+      const result = await account.restore();
+      if (account.user?.id && result?.user?.id === account.user.id && isPremium(result)) feedback.confirm();
+    } catch (error) { feedback.error(error); }
+  };
   const { signedIn, refresh } = account;
   useEffect(() => { if (signedIn) refresh(); }, [signedIn, refresh]);
   const [signIn, setSignIn] = useState(false);
@@ -85,7 +94,7 @@ function AccountCardOwner() {
             <Button variant="secondary" data-design-id="subscription" data-design-required="true" onClick={() => account.manageSubscription()}>إدارة الاشتراك</Button>
           )}
           {ios && (
-            <Button variant="secondary" icon={<IconRotate />} loading={account.busy === 'restore'} data-design-id="restore" data-design-required="true" onClick={() => account.restore()}>استعادة المشتريات</Button>
+            <Button data-sound="none" variant="secondary" icon={<IconRotate />} loading={account.busy === 'restore'} data-design-id="restore" data-design-required="true" onClick={restore}>استعادة المشتريات</Button>
           )}
           <Button variant="ghost" icon={<IconBack />} loading={account.busy === 'signout'} data-design-id="account-signout" data-design-required="true" onClick={() => account.signOut()}>تسجيل الخروج</Button>
           <Button variant="danger" icon={<IconTrash />} data-design-id="account-delete" data-design-required="true" onClick={() => setConfirmDelete(true)}>حذف الحساب</Button>

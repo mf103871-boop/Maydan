@@ -65,7 +65,7 @@ export const DESIGN_RENDERED_NODE_IDS = Object.freeze({
   "online.mafia.safety": Object.freeze(["block-exit","close","content","header","report-category","report-details","submit"]),
   "online.mafia.setup": Object.freeze(["capacity","mode-choice","mode-option","room-name","rules","visibility","voice-mode"]),
   "online.mafia.directory": Object.freeze(["rules","create-public-room","directory-options","directory-mode","directory-next","directory-previous","directory-status","directory-voice","profile","profile-footer","quick-join","refresh","room","room-join","room-observe","rooms","toolbar"]),
-  "online.mafia.lobby": Object.freeze(["chat","close","composer","content","event","header","invite","message-input","messages","player-rail","player-seat","players","ready","room-settings","room-theme","rules","send","start","voice","voice-join"]),
+  "online.mafia.lobby": Object.freeze(["chat","close","composer","content","event","header","invite","message-input","messages","player-rail","player-seat","players","ready","room-settings","rules","send","start","voice","voice-join"]),
   "online.mafia.role": Object.freeze(["audio-output","chat","event","header","mafia-tools","messages","mute","narrative","phase-title","player-rail","player-seat","players","role-card","role-toggle","tab.clues","tab.council","tab.notes","tabs","timer","voice","voice-leave"]),
   "online.mafia.opening": Object.freeze(["audio-output","chat","composer","event","header","mafia-tools","message-input","messages","mute","narrative","phase-title","player-rail","player-seat","players","role-card","role-toggle","send","tab.clues","tab.council","tab.notes","tabs","timer","voice","voice-leave"]),
   "online.mafia.night": Object.freeze(["ability","ability-submit","audio-output","chat","event","header","mafia-tools","messages","mute","narrative","phase-title","player-rail","player-seat","players","role-card","role-toggle","tab.clues","tab.council","tab.notes","tabs","timer","voice","voice-leave"]),
@@ -97,7 +97,8 @@ export const DESIGN_RENDERED_NODE_IDS = Object.freeze({
   "players": Object.freeze(["add-player","avatar-choice","avatar-picker","back","name-input","player-remove","player-row","players","title","topbar"]),
   "settings": Object.freeze(["about","clear-data","manage-roster","music-volume","plus-store","pricing-link","privacy-link","refunds-link","setting","setting-toggle","settings-account","settings-audio","settings-experience","settings-local","settings-privacy","settings-support","share-reports","sound-test","sound-volume","terms-link","title","topbar"]),
   "account.card": Object.freeze(["account-delete","account-signin","account-signout","profile","purchase","restore","title"]),
-  "store": Object.freeze(["artwork","collection","collection-preview","collection-use","collections","plus-details","plus-retry","store-empty","title","topbar"]),
+  "store": Object.freeze(["artwork","collections","item-preview","item-use","plus-details","plus-retry","store-membership","store-navigation","store-product","store-reset","store-tab-collections","store-tab-library","title","topbar"]),
+  "store.preview": Object.freeze(["header","close","content","product-preview","item-use","collection-use","store-detail-actions"]),
   "about": Object.freeze(["back","license-link","pricing-link","privacy-link","refunds-link","show-all","source-link","terms-link","title","topbar"]),
   "audio-credits": Object.freeze(["content","license-link","source-link"]),
   "legal": Object.freeze(["back","support-link","title","topbar"]),
@@ -127,7 +128,7 @@ export const DESIGN_RENDERED_NODE_IDS = Object.freeze({
   "meenfina.local.intro": Object.freeze(["intro","scoreboard","start"]),
   "meenfina.local.countdown": Object.freeze(["question"]),
   "meenfina.local.pick": Object.freeze(["option","options-list","question","skip","submit"]),
-  "meenfina.local.vote": Object.freeze(["option","options-list","question"]),
+  "meenfina.local.vote": Object.freeze(["option","options-list","question","submit"]),
   "meenfina.local.result": Object.freeze(["continue","question","results"]),
   "meenfina.local.over": Object.freeze(["exit","options","podium","restart"]),
   "fabraka.local.intro": Object.freeze(["header","intro","pause","scoreboard","start"]),
@@ -140,9 +141,9 @@ export const DESIGN_RENDERED_NODE_IDS = Object.freeze({
   "fabraka.local.reveal": Object.freeze(["header","pause","question","reveal","reveal-card"]),
   "fabraka.local.roundEnd": Object.freeze(["continue","header","pause","round-scores"]),
   "fabraka.local.over": Object.freeze(["exit","options","podium","restart"]),
-  "online.entry": Object.freeze(["avatar-choice","avatar-picker","categories-reset","category-choice","cycles","difficulty","entry","entry-create","entry-join","entry-mode","entry-public","name-input","room-code","room-name","room-visibility","setup-presets-toggle","start"]),
+  "online.entry": Object.freeze(["avatar-choice","avatar-picker","categories-reset","category-choice","cycles","difficulty","entry","entry-create","entry-join","entry-mode","entry-public","name-input","room-code","room-name","room-visibility","start"]),
   ...Object.fromEntries(['badeeha','ersomha','fabraka','meenfina'].map(game => [`online.${game}.directory`, Object.freeze(['toolbar','create-public-room','entry-join','refresh','directory-options','rooms','room','room-join','directory-previous','directory-next','profile-footer','profile'])])),
-  "online.lobby": Object.freeze(["allow-replay","appearance-toggle","categories-reset","category-choice","cycles","difficulty","header","invite","invite-code","invite-copy","invite-qr","invite-share","invite-toggle","member","member-remove","players","ready","room-settings","room-theme","rules-toggle","save","start"]),
+  "online.lobby": Object.freeze(["allow-replay","categories-reset","category-choice","cycles","difficulty","header","invite","invite-code","invite-copy","invite-qr","invite-share","invite-toggle","member","member-remove","players","ready","room-settings","rules-toggle","save","start"]),
   "online.chrome": Object.freeze(["connection","exit","room-actions","title","topbar"]),
   "online.meenfina.vote": Object.freeze(["abstain","option","options-list","question","scoreboard","submit","timer","vote-panel"]),
   "online.meenfina.result": Object.freeze(["continue","players","question","scoreboard"]),
@@ -176,7 +177,7 @@ export const DESIGN_RENDERED_NODE_IDS = Object.freeze({
   "social.search": Object.freeze(["add-friend","close","content","header","profile","search-input"]),
   "social.action": Object.freeze(["actions","cancel","close","confirm","content","header","message-input"]),
   "social.call": Object.freeze(["call-collapse","call-drag","close","content","end-call","friend-chat","header","mute","participants","speaker"]),
-  "profile": Object.freeze(["account-signin","achievement","achievements","back","badges","bio","code","contact","cover","edit","friend-chat","header","identity","menu","name","plus-store","retry","share","stat","stats","title"]),
+  "profile": Object.freeze(["account-signin","achievement","achievements","back","badges","bio","code","contact","cover","edit","friend-chat","header","identity","menu","name","plus-store","profile-library","profile-store","retry","share","stat","stats","title"]),
   "profile.editor": Object.freeze(["actions","avatar-choice","avatar-upload","badge-choice","bio-input","cancel","close","content","cover-upload","edit-section","field","header","name-input","save","theme-choice","title-select"]),
   "profile.crop": Object.freeze(["actions","cancel","close","content","crop","header","save","zoom","zoom-input"]),
   "profile.safety": Object.freeze(["actions","cancel","close","content","field","header","report-details","report-reason","submit"]),
@@ -212,7 +213,49 @@ const conditionalNodeReasons = {
     "header":"The training exit confirmation owns the common dialog heading and close area only during an explicit exit request."
   },
   "online.mafia.lobby": {"event":"Waiting-room event cards appear only when a public event is supplied by the server; a fresh lobby has no dawn or elimination from a prior match."},
-  "store": {"earned-cosmetics":"Displayed only for an authenticated owner with a server-issued permanent cosmetic grant; the isolated default store fixture has no earned license. Ownership labels and access to equipping earned items must remain visible."},
+  "store": {
+      "collection": "Retired collection story selector: membership now exposes only profile appearance and photo frames. This saved-design identity has no mounted control and cannot create a grant.",
+      "store-tab-presets": "Retired saved-session tab: membership now exposes only profile appearance and photo frames. This saved-design identity has no mounted control and cannot create a grant.",
+      "store-presets-open": "Retired saved-session discovery: membership now exposes only profile appearance and photo frames. This saved-design identity has no mounted control and cannot create a grant.",
+      "store-presets-retry": "Retired saved-session retry: membership now exposes only profile appearance and photo frames. This saved-design identity has no mounted control and cannot create a grant.",
+      "store-preset": "Retired saved-session rows: membership now exposes only profile appearance and photo frames. This saved-design identity has no mounted control and cannot create a grant.",
+      "store-preset-open": "Retired saved-session apply: membership now exposes only profile appearance and photo frames. This saved-design identity has no mounted control and cannot create a grant.",
+      "store-preset-delete": "Retired saved-session delete: membership now exposes only profile appearance and photo frames. This saved-design identity has no mounted control and cannot create a grant.",
+      "store-game-setup": "Retired saved-session game shortcuts: membership now exposes only profile appearance and photo frames. This saved-design identity has no mounted control and cannot create a grant.",
+      "store-monthly": "Retired monthly reward: membership now exposes only profile appearance and photo frames. This saved-design identity has no mounted control and cannot create a grant.",
+      "store-monthly-preview": "Retired monthly reward preview: membership now exposes only profile appearance and photo frames. This saved-design identity has no mounted control and cannot create a grant.",
+      "permanent-quote": "Retired separate purchase quote: membership now exposes only profile appearance and photo frames. This saved-design identity has no mounted control and cannot create a grant.",
+      "test-checkout-confirm": "Retired test checkout: membership now exposes only profile appearance and photo frames. This saved-design identity has no mounted control and cannot create a grant.",
+      "store-quote-panel": "Retired checkout detail panel: membership now exposes only profile appearance and photo frames. This saved-design identity has no mounted control and cannot create a grant.",
+      "store-quote-price": "Retired test price: membership now exposes only profile appearance and photo frames. This saved-design identity has no mounted control and cannot create a grant.",
+      "store-test-disclosure": "Retired test purchase disclosure: membership now exposes only profile appearance and photo frames. This saved-design identity has no mounted control and cannot create a grant.",
+      "store-inventory-refresh": "Retired checkout reconciliation: membership now exposes only profile appearance and photo frames. This saved-design identity has no mounted control and cannot create a grant.",
+      "store-entrance-play": "Retired room entrance preview: membership now exposes only profile appearance and photo frames. This saved-design identity has no mounted control and cannot create a grant.",
+      "store-preview-surface": "Retired room/chat preview switcher: membership now exposes only profile appearance and photo frames. This saved-design identity has no mounted control and cannot create a grant.",
+      "store-search": "Retired catalog search: membership now exposes only profile appearance and photo frames. This saved-design identity has no mounted control and cannot create a grant.",
+      "store-search-clear": "Retired catalog search clear: membership now exposes only profile appearance and photo frames. This saved-design identity has no mounted control and cannot create a grant.",
+      "store-category": "Retired catalog category filter: membership now exposes only profile appearance and photo frames. This saved-design identity has no mounted control and cannot create a grant.",
+      "store-library-filter": "Retired legacy catalog filter: membership now exposes only profile appearance and photo frames. This saved-design identity has no mounted control and cannot create a grant.",
+      "store-badge": "Retired separate membership badge toggle: membership now exposes only profile appearance and photo frames. This saved-design identity has no mounted control and cannot create a grant.",
+      "store-transition-toggle": "Retired old membership transition details: membership now exposes only profile appearance and photo frames. This saved-design identity has no mounted control and cannot create a grant.",
+      "plus-transition-open": "Retired old transition link: membership now exposes only profile appearance and photo frames. This saved-design identity has no mounted control and cannot create a grant.",
+      "store-signin": "Retired old library sign-in shortcut: membership now exposes only profile appearance and photo frames. This saved-design identity has no mounted control and cannot create a grant.",
+      "store-empty-open": "Retired old story navigation: membership now exposes only profile appearance and photo frames. This saved-design identity has no mounted control and cannot create a grant.",
+      "earned-cosmetics": "Owned legacy licenses appear read-only in the actual library tab; membership narrowing never erases prior permanent ownership.",
+      "store-legacy-toggle": "The actual legacy-license disclosure is mounted only when the current owner has licenses outside the new profile/frame library.",
+      "collection-preview": "The empty library offers this existing return action to the profile/frame collection; the populated default collection does not duplicate it.",
+      "collection-use": "Retired collection apply on the main store: the actual profile/frame pair action belongs only to the real store.preview modal."
+  },
+  "store.preview": {
+      "permanent-quote": "Retired separate purchase quote: membership now exposes only profile appearance and photo frames. This saved-design identity has no mounted control and cannot create a grant.",
+      "test-checkout-confirm": "Retired test checkout: membership now exposes only profile appearance and photo frames. This saved-design identity has no mounted control and cannot create a grant.",
+      "store-quote-panel": "Retired checkout detail panel: membership now exposes only profile appearance and photo frames. This saved-design identity has no mounted control and cannot create a grant.",
+      "store-quote-price": "Retired test price: membership now exposes only profile appearance and photo frames. This saved-design identity has no mounted control and cannot create a grant.",
+      "store-test-disclosure": "Retired test purchase disclosure: membership now exposes only profile appearance and photo frames. This saved-design identity has no mounted control and cannot create a grant.",
+      "store-inventory-refresh": "Retired checkout reconciliation: membership now exposes only profile appearance and photo frames. This saved-design identity has no mounted control and cannot create a grant.",
+      "store-entrance-play": "Retired room entrance preview: membership now exposes only profile appearance and photo frames. This saved-design identity has no mounted control and cannot create a grant.",
+      "store-preview-surface": "Retired room/chat preview switcher: membership now exposes only profile appearance and photo frames. This saved-design identity has no mounted control and cannot create a grant."
+  },
   "online.mafia.tools": {},
   "online.mafia.spectator": {},
   "online.mafia.history": {"loading":"Displayed only while the authenticated history request is pending for this account.","error":"Displayed when the history request fails; old account data is never retained as a fallback.","empty":"Displayed only after the server returns a successful empty result for this account."},
@@ -251,7 +294,7 @@ const conditionalNodeReasons = {
     "local": reasonMovedMode, "online": reasonMovedMode,
     "home": "MissingGame renders the home action only for an unknown game link."
   },
-  "settings": {},
+  "settings": {"plus-transition-open":"The active subscriber's existing transition notice links to the Store; ordinary guest and unsubscribed settings fixtures do not mount that notice."},
   ...Object.fromEntries(['badeeha','ersomha','fabraka','meenfina'].map(game => [`online.${game}.directory`, directoryConditional])),
   "badeeha.home": {
     "resume": reasonResume,
@@ -447,6 +490,10 @@ const conditionalNodeReasons = {
     "share-link": reasonRules
   }
 };
+// Explicit compatibility records for features removed by the profile/frame-only request.
+conditionalNodeReasons['online.entry'] = { ...conditionalNodeReasons['online.entry'], 'setup-presets-toggle':'Retired saved-session setup disclosure retained for saved-design compatibility: game entry no longer mounts saved-session controls after membership was limited to profile appearance and photo frames. Existing saved records remain untouched.' };
+conditionalNodeReasons.profile = { ...conditionalNodeReasons.profile, 'profile-presets':'Retired saved-session discovery: the profile now links only to its appearance and photo-frame library; old session records are preserved without this action.' };
+for (const screen of ['online.lobby','online.mafia.lobby']) conditionalNodeReasons[screen] = { ...conditionalNodeReasons[screen], 'room-theme':'Retired room-theme picker: membership no longer changes room appearance; the normal room and historical data remain intact.', 'appearance-toggle':'Retired room-appearance disclosure: the original game interface no longer offers paid room styling or a seated council.' };
 const liveCouncil = /^online\.mafia\.(?:role|opening|night(?:\..+)?|dawn|discussion|nomination|defense|verdict|spectator)$/;
 const legacyPrivateCouncilIds = ['audio-output','mafia-tools','mute','phase-title','player-rail','player-seat','players','role-card','role-toggle','tab.clues','tab.notes','tabs','timer','voice','voice-leave'];
 export const DESIGN_CONDITIONAL_NODE_REASONS = Object.freeze(Object.fromEntries(Object.entries(conditionalNodeReasons).map(([screen, reasons]) => {

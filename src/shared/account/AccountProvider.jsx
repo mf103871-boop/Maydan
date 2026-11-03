@@ -28,6 +28,7 @@ const EMPTY = Object.freeze({});
 // بديل ثابت حين لا يوفّر المزوّد تنبيهات: دالة جديدة في كل رسم كانت تعيد بناء كل
 // استدعاء وأثر يعتمد على toast في كل رسم.
 const NO_TOAST = () => {};
+let acceptedAuthSound = 0;
 // أوراق النظام (Apple، المتجر) قد تنتظر المستخدم طويلًا: مهلة أطول من مهلة الجسر الافتراضية.
 const NATIVE_SHEET_TIMEOUT = 10 * 60_000;
 const codeOf = (error) => (error && error.code) || 'NETWORK';
@@ -44,6 +45,7 @@ function listOf(result, key) {
 
 export function AccountProvider({ children }) {
   const platformValue = usePlatform();
+  const sound = platformValue?.sound;
   const toast = (platformValue && platformValue.toast) || NO_TOAST;
   const route = useRoute();
 
@@ -279,9 +281,10 @@ export function AccountProvider({ children }) {
     }
     if (!ownsAuth(owner)) return null;
     const name = (result.me && result.me.user && result.me.user.name) || '';
+    sound?.emit?.('auth.signed-in', { id: `auth:${++acceptedAuthSound}`, guard: () => ownsAuth(owner) });
     toast(name ? `أهلًا ${name}` : 'أهلًا بك');
     return result.me || null;
-  }, [captureAuth, requireAuthOwner, ownedOptions, ownsAuth, applySession, applyMe, applyTrials, toast]);
+  }, [captureAuth, requireAuthOwner, ownedOptions, ownsAuth, applySession, applyMe, applyTrials, toast, sound]);
 
   const consumeCode = useCallback(async (code, client, owner = captureAuth()) => {
     // The attempt secret this browser generated before leaving; the server accepts the
@@ -529,10 +532,13 @@ export function AccountProvider({ children }) {
     try { await nativeLogout; if (requestOptions.token && !accountOffline()) await signout(requestOptions); }
     catch (err) { /* الخروج محلي في كل الأحوال */ }
     finally {
-      if (ownsAuth(owner)) { setError(null); toast('سجّلت الخروج'); }
+      if (ownsAuth(owner)) {
+        sound?.emit?.('auth.signed-out', { id: `auth:${++acceptedAuthSound}`, guard: () => ownsAuth(owner) && !sessionRef.current });
+        setError(null); toast('سجّلت الخروج');
+      }
       finishBusy(activity);
     }
-  }, [options, clearLocalAuth, captureAuth, ownsAuth, startBusy, finishBusy, toast]);
+  }, [options, clearLocalAuth, captureAuth, ownsAuth, startBusy, finishBusy, toast, sound]);
 
   const purchase = useCallback(async (plan = 'monthly') => {
     if (purchaseInFlightRef.current) return null;

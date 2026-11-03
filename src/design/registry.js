@@ -135,6 +135,9 @@ const socialNodes = [
   node('block', 'الحظر', 'button', { required: true }), node('report', 'الإبلاغ', 'button', { required: true }),
 ];
 const profileNodes = [
+  node('profile-library','اكتشاف المقتنيات والجلسات','container',{required:true,editableText:false,editableIcon:false}),
+  node('profile-presets','فتح جلساتي الجاهزة','button',{editableText:false,editableIcon:false}),
+  node('profile-store','فتح متجر المقتنيات','button',{editableText:false,editableIcon:false}),
   node('avatar-choice','قالب الشخصية','button',{repeat:true}),node('theme-choice','قالب لون الملف','button',{repeat:true}),node('badge-choice','قالب الشارة','button',{repeat:true}),
   node('avatar-upload','رفع الصورة الشخصية','button'),node('avatar-remove','حذف الصورة الشخصية','button'),node('cover-upload','رفع الغلاف','button'),node('cover-remove','حذف الغلاف','button'),
   node('field','قالب حقل الملف','container',{repeat:true,editableText:false}),
@@ -147,6 +150,26 @@ const profileNodes = [
   node('zoom', 'تكبير الصورة', 'input'), node('save', 'حفظ التغييرات', 'button', { required: true }),
   node('cancel', 'إلغاء', 'button', { required: true }), node('block', 'الحظر', 'button', { required: true }),
   node('report', 'الإبلاغ', 'button', { required: true }),
+];
+
+// Price, license and membership meaning belongs to the account/server. Studio
+// may style these surfaces, but cannot rewrite a grant, conceal consent or turn
+// a local test into an apparent real purchase.
+const storeNodes = [
+  node('store-legacy-toggle','عرض تراخيص سابقة محفوظة','button',{required:true,editableText:false,editableIcon:false}),
+  node('plus-transition-open','اكتشاف مزايا بلس الحالية','button',{editableText:false,editableIcon:false}),
+  ...[['store-tab-collections','مجموعات المتجر'],['store-tab-library','مقتنياتي الدائمة'],['store-tab-presets','جلساتي الجاهزة']].map(([id,label])=>node(id,label,'button',{required:true,editableText:false,editableIcon:false})),
+  ...[['store-membership','استحقاق مكتبة بلس'],['store-navigation','تنقل المتجر'],['store-monthly','القطعة الشهرية المؤهلة'],['store-detail-actions','الاستخدام والاقتناء'],['store-quote-panel','تفاصيل عرض الاقتناء'],['product-preview','معاينة الهوية الفعلية']].map(([id,label])=>node(id,label,'container',{required:true,editableText:false,editableIcon:false})),
+  node('store-product','قالب قطعة المتجر','container',{repeat:true,required:true,editableText:false,editableIcon:false}),
+  node('store-preset','قالب جلسة محفوظة','container',{repeat:true,editableText:false,editableIcon:false}),
+  node('store-search','بحث المتجر','input',{editableText:false,editableIcon:false}),
+  node('store-badge','إظهار شارة العضوية','input',{required:true,editableText:false,editableIcon:false}),
+  ...[['store-category','فئة قطع المتجر'],['store-library-filter','نطاق مقتنياتي'],['store-preview-surface','موضع المعاينة'],['store-preset-open','فتح إعدادات الجلسة'],['store-preset-delete','حذف جلسة محفوظة'],['store-game-setup','فتح إعدادات اللعبة']].map(([id,label])=>node(id,label,'button',{repeat:true,editableText:false,editableIcon:false,required:id==='store-preview-surface'})),
+  ...[['item-preview','معاينة القطعة قبل استخدامها'],['item-use','استخدام القطعة المخولة']].map(([id,label])=>node(id,label,'button',{repeat:true,required:true,editableText:false,editableIcon:false})),
+  ...[['permanent-quote','قراءة عرض الاقتناء الدائم'],['test-checkout-confirm','تأكيد اقتناء محلي تجريبي'],['store-reset','استعادة المظهر المجاني'],['store-inventory-refresh','التحقق من نتيجة الاقتناء']].map(([id,label])=>node(id,label,'button',{required:true,editableText:false,editableIcon:false})),
+  ...[['store-transition-toggle','تفاصيل انتقال بلس'],['store-search-clear','مسح بحث المتجر'],['store-signin','الدخول لمقتنياتي'],['store-empty-open','عرض مجموعات المتجر'],['store-monthly-preview','معاينة قطعة الشهر'],['store-presets-open','اكتشاف جلساتي الجاهزة'],['store-presets-retry','إعادة تحميل الجلسات'],['store-entrance-play','تشغيل معاينة ترحيب الدخول']].map(([id,label])=>node(id,label,'button',{editableText:false,editableIcon:false})),
+  node('store-quote-price','قيمة اختبار من عرض الخادم','text',{required:true,editableText:false,editableIcon:false}),
+  node('store-test-disclosure','إفصاح الاقتناء المحلي غير المالي','text',{required:true,editableText:false,editableIcon:false}),
 ];
 
 // Native control templates and fixed semantic sections. Repeated controls preserve
@@ -202,6 +225,7 @@ const phaseLabels = { home:'البداية',setup:'الإعداد',board:'لوح
 const screen = (id, label, group, nodes, states = {}) => Object.freeze({ id, label: label.split(' · ').map(part => phaseLabels[part] || part).join(' · '), group, nodes: Object.freeze(dedupe([...common, ...nodes])), ...states });
 const definitions = [];
 for (const [id, label] of [['home', 'الألعاب'], ['game-details', 'تفاصيل اللعبة'], ['players', 'دفتر اللاعبين'], ['settings', 'الإعدادات'], ['store', 'المتجر'], ['about', 'عن ميدان'], ['audio-credits', 'مصادر الصوت'], ['legal', 'الشروط والخصوصية'], ['play-setup', 'إعداد اللاعبين والفرق']]) definitions.push(screen(id, label, 'المنصة', id === 'play-setup' ? [...platformNodes, ...gameNodes] : platformNodes));
+definitions.push(screen('store.preview','معاينة قطعة أو طقم','المتجر',[...platformNodes,...storeNodes]));
 definitions.push(screen('home.game-mode', 'اختيار نمط اللعبة', 'المنصة', platformNodes));
 for (const phase of ['home', 'setup', 'board', 'question', 'result', 'history']) definitions.push(screen(`badeeha.${phase}`, `بديهة · ${phase}`, 'بديهة', gameNodes, { game: 'badeeha', phase }));
 for (const [mode, phases] of [['three', ['intro', 'prompt', 'judge', 'over']], ['bomb', ['intro', 'prompt', 'boom', 'over']]]) for (const phase of phases) definitions.push(screen(`beep.${mode}.${phase}`, `بيب · ${mode} · ${phase}`, 'بيب', gameNodes, { game: 'beep', phase, mode }));
@@ -247,7 +271,7 @@ for (const [id,label] of [['beep','بيب'],['mamnoo','ممنوع'],['jabeen','�
 // Only expose elements that the real components render. The coverage map is
 // verified against all preview fixtures; exceptional state-dependent elements
 // carry a precise reason instead of pretending every screen has every control.
-const allNodes = new Map(dedupe([...common,...platformNodes,...gameNodes,...onlineNodes,...drawNodes,...socialNodes,...profileNodes,...accountNodes,...extraNodes,...mafiaNodes]).map(value => [value.id,value]));
+const allNodes = new Map(dedupe([...common,...platformNodes,...gameNodes,...onlineNodes,...drawNodes,...socialNodes,...profileNodes,...accountNodes,...extraNodes,...mafiaNodes,...storeNodes]).map(value => [value.id,value]));
 const dynamicLabels = new Set(['presence','roster','game-name','game-description','start','continue','submit','skip','correct','wrong','reveal','answer-toggle','ready','history','hint','assistance','setup','options']);
 const statefulTitles = new Set(['game-details','shell.game-frame','online.chrome','profile',...definitions.filter(value => value.id.startsWith('ersomha.')).map(value => value.id)]);
 export const DESIGN_SCREENS = Object.freeze(definitions.map(definition => {
@@ -273,6 +297,10 @@ export const DESIGN_SCREENS = Object.freeze(definitions.map(definition => {
     if (definition.id === 'system.dialog' && id === 'report') Object.assign(patch,{repeat:true,editableText:false});
     if (id === 'search') Object.assign(patch,{kind:'container',editableText:false});
     if (id === 'team-count' && definition.id === 'play-setup.teams') Object.assign(patch,{kind:'container',repeat:false,editableText:false});
+    if (['store','store.preview','profile','online.entry','online.lobby','online.mafia.lobby'].includes(definition.id) && conditional[id]?.startsWith('Retired ')) patch.retired = true;
+    if (definition.id === 'store' && ['earned-cosmetics','plus-details'].includes(id)) Object.assign(patch,{required:true,editableText:false,editableIcon:false});
+    if (definition.id === 'store' && id === 'collection') Object.assign(patch,{kind:'button',repeat:true,editableText:false,editableIcon:false});
+    if (definition.id === 'store.preview' && id === 'collection-use') Object.assign(patch,{required:true,repeat:false,editableText:false,editableIcon:false});
     return Object.freeze({...value,...patch,...(conditional[id] ? {coverageReason:conditional[id]} : {})});
   });
   return Object.freeze({...definition,nodes:Object.freeze(nodes)});

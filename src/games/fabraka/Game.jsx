@@ -1,5 +1,6 @@
-import { SetupPresets } from '../../plus/SetupPresets.jsx';
 import { Avatar, GameArtwork } from '../../shared/brand/art.jsx';
+import { useGameMusicScene } from '../../shared/fx/useGameMusicScene.js';
+import { useCandidateDeadlineWarning } from '../../shared/fx/useDeadlineAudio.js';
 import React, { useCallback, useEffect, useReducer, useRef, useState } from 'react';
 import { socialInterruption } from '../../social/interruption.js';
 import { Screen, Button, Podium, Segment, Card, Scoreboard, Modal, CountUp } from '../../shared/ui/components.jsx';
@@ -36,7 +37,6 @@ export function SetupOptions({ storage, api }) {
   useEffect(() => { api.setSetupValid?.(valid); return () => api.setSetupValid?.(true); }, [api, valid]);
   useEffect(() => { api.setGameOptions?.(opts); }, [api, opts]);
   return <div data-design-screen="setup.fabraka" data-design-id="options" className="fabraka fab-setup stack">
-    {!api.designPreview && <SetupPresets game="fabraka" settings={opts} onApply={update} />}
     <style>{css}</style>
     {retiredSession && <p className="fab-note" role="status">تجدّدت أسئلة فبركة وصورها. ابدأوا جلسة جديدة؛ الجلسة القديمة غير قابلة للاستئناف، ونتائجكم السابقة محفوظة.</p>}
     {resume && <Card className="fab-resume stack">
@@ -180,7 +180,7 @@ function VotePanel({ state, act }) {
     <h2 className="fab-heading">أين الحقيقة يا {actor.name}؟</h2>
     {list(choice, setChoice, 'اختيار الحقيقة')}
     <button data-design-id="skip" type="button" className={`fab-abstain ${choice === null ? 'selected' : ''}`} aria-pressed={choice === null} onClick={() => setChoice(null)}>أمتنع عن تصويت الحقيقة</button>
-    {state.settings.funnyVote && <details className="fab-details"><summary>😂 أي إجابة أضحكتك؟ (اختياري)</summary><p className="fab-hint">ترشيح مستقل بلا نقاط. لا يحتسب إن كانت الإجابة هي الحقيقة أو من المساعدة.</p>{list(funny, setFunny, 'اختيار الإجابة المضحكة')}<Button data-design-id="skip" variant="ghost" full onClick={() => setFunny(null)}>بدون ترشيح مضحك</Button></details>}
+    {state.settings.funnyVote && <details className="fab-details"><summary>😂 أي إجابة أضحكتك؟ (اختياري)</summary><p className="fab-hint">ترشيح مستقل بلا نقاط. لا يحتسب إن كانت الإجابة هي الحقيقة أو من المساعدة.</p><label className="field fab-funny-choice"><span>ترشيح الضحكة</span><select data-design-id="option" className="input" aria-label="اختيار الإجابة المضحكة" value={funny ?? ''} onChange={(e) => setFunny(e.target.value || null)}><option value="">بدون ترشيح مضحك</option>{state.options.map((option) => <option key={option.id} value={option.id} disabled={!canVoteFor(state, actor.id, option.id)}>{option.text}{option.owners.includes(actor.id) ? ' · إجابتك' : ''}</option>)}</select></label><Button data-design-id="skip" variant="ghost" full onClick={() => setFunny(null)}>بدون ترشيح مضحك</Button></details>}
     <Button data-design-id="submit" data-design-required="true" variant="accent" full size="lg" disabled={choice === undefined} onClick={() => act('VOTE', { optionId: choice, funnyId: funny })}>ثبّت اختياراتي وأخفِ الشاشة</Button>
   </div>;
 }
@@ -269,7 +269,10 @@ export function Game({ api, players, onExit, savedSession = null, gameOptions = 
     return { ...initialState(players, settings, { deck, seed }), profileSession: api.matchSnapshot?.() || null };
   });
   const [saveOk, setSaveOk] = useState(api.storage.persistent !== false);
+  useGameMusicScene(api.sound, 'fabraka', state.phase, state.paused);
   const key = turnKey(state), actor = currentActor(state);
+  useCandidateDeadlineWarning(api.sound, JSON.stringify(['fabraka', state.sessionId, key]), state.remaining,
+    !api.designPreview && !state.paused && ((state.phase === 'write' && state.ready && state.settings.writeSeconds > 0) || state.phase === 'discussion'));
   const act = (type, extra = {}) => {
     if (['SUBMIT_LIE', 'SUBMIT_TRUTH'].includes(type)) api.sound.play('pop');
     else if (['BEGIN', 'READY', 'START_WRITING', 'NEXT_ROUND'].includes(type)) api.sound.play('whoosh');
@@ -326,14 +329,20 @@ export function Game({ api, players, onExit, savedSession = null, gameOptions = 
     document.addEventListener('visibilitychange', hide);
     return () => document.removeEventListener('visibilitychange', hide);
   }, []);
+  // A mounted/restored reveal is history. Only a new stage in this mounted
+  // session may sound; retain its key across pause/rerender/StrictMode replay.
+  const revealAudio = useRef(state.phase === 'reveal' ? `${state.sessionId}:${state.round}:${state.revealIndex}:${state.revealed}` : null);
   useEffect(() => {
     if (state.phase === 'over') {
       const completed = state.history.length >= state.rounds;
       if (completed) { api.haptics.vibrate('win'); api.confetti.fire(); }
       api.matchOver?.({ completed });
     }
-    else if (state.phase === 'reveal') { api.sound.play(state.revealed ? 'reveal' : 'drumroll'); }
-  }, [state.phase, state.revealIndex, state.revealed]);
+    else if (state.phase === 'reveal') {
+      const key = `${state.sessionId}:${state.round}:${state.revealIndex}:${state.revealed}`;
+      if (revealAudio.current !== key) { revealAudio.current = key; api.sound.play(state.revealed ? 'reveal' : 'drumroll'); }
+    }
+  }, [state.phase, state.revealIndex, state.revealed, state.sessionId, state.round]);
   // تكّة لكل ثانية من الخمس الأخيرة؛ الاستئناف أو «جاهزون» على الثانية نفسها لا يعيدها.
   useEffect(() => {
     const s = latestState.current;

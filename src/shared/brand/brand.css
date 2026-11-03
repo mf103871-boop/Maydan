@@ -228,3 +228,31 @@ button.card:active { transform: translateY(var(--ledge)); transition-duration: .
 /* يبقى الضغط واضحًا بلا إزاحة عند اختيار تقليل الحركة. */
 @media (prefers-reduced-motion: reduce) { .btn:active:not(:disabled), button.card:active { transform: none; } }
 html[data-reduced-motion="true"] .btn:active:not(:disabled), html[data-reduced-motion="true"] button.card:active { transform: none; }
+
+/* Shared clarity system. Profile skins remain scoped to their own surface. */
+.btn { text-wrap: pretty; max-width: 100%; }
+.btn-sm { font-size: 15px; min-height: 44px; }
+.btn-icon { min-width: 44px; flex-shrink: 0; }
+.topbar .btn-icon { box-shadow: inset 0 1px #fff, 0 2px 0 var(--clay-ledge-soft); }
+.card, .setting, .step { overflow-wrap: anywhere; }
+.setting .text { min-width: 0; }
+[data-design-screen="about"] a,[data-design-screen="audio-credits"] a,[data-design-screen="legal"] a { display:inline-flex; align-items:center; min-height:44px; min-width:44px; max-width:100%; overflow-wrap:anywhere; padding-block:6px; text-underline-offset:3px; }
+.m-filter-row button { min-width:44px; }
+.setting .text small, .card-muted { line-height: 1.65; }
+.modal-head h2, .sheet h2 { line-height: 1.45; }
+.btn:focus-visible, .game-card:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible { outline: 3px solid #713793; outline-offset: 3px; }
+html[data-large-text="true"] .btn { font-size:22px; }
+html[data-large-text="true"] .btn-lg { font-size:26px; }
+html[data-large-text="true"] .btn-sm { font-size:18px; }
+html[data-large-text="true"] :is(.setting .text b,.card-title,.social-person-title,.lamma-person-title) { font-size:max(18px,1.125em); }
+html[data-large-text="true"] :is(.card-muted,.setting .text small,.social-person-sub,.lamma-game-invite p,.game-card .meta,.home-game-row .meta) { font-size: 15px; line-height: 1.7; }
+html[data-large-text="true"] :is(.social-message-text,.lamma-message-text,.social-composer textarea) { font-size: 18px; line-height: 1.65; }
+html[data-large-text="true"] :is(.setting,.card,.social-person-row) { height: auto; }
+html[data-high-contrast="true"] { --muted:#493653; --stroke:#9a809e; --stroke-strong:#745d7d; }
+html[data-high-contrast="true"] :is(.card-muted,.setting small,.home-game-row .tagline,.home-game-row .meta,.social-person-sub) { color:#493653; }
+html[data-high-contrast="true"] :is(.card,.setting,.btn,.home-game-row,.social-person-row) { border-color:#80668b; }
+/* This option controls decorative work, not timers, speaking or required cues. */
+html[data-visual-quality="calm"] :is(.clay-idle,.clay-lift,.clay-idle::after,.profile-identity-glow,.profile-identity-spark) { animation:none!important; filter:none!important; }
+html[data-visual-quality="calm"] :is(.card,.btn,.home-game-row,.setting) { box-shadow:inset 0 1px #fff,0 2px 0 var(--clay-ledge-soft); }
+html[data-app-hidden="true"] *, html[data-app-hidden="true"] *::before, html[data-app-hidden="true"] *::after { animation-play-state:paused!important; }
+@media(orientation:landscape) and (max-height:500px) { .topbar { min-height:48px; margin-bottom:6px; }.modal { max-height:calc(100dvh - 16px); padding:12px; }.modal-layer { padding:8px; } }

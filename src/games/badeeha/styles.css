@@ -99,7 +99,7 @@
   .m-search input { flex:1; }
   .m-filter-row { display:flex; gap:7px; overflow-x:auto; padding:2px 1px 7px; scrollbar-width:none; }
   .m-filter-row::-webkit-scrollbar { display:none; }
-  .m-filter-row button { white-space:nowrap; flex:1; min-width:max-content; }
+  .m-filter-row button { white-space:nowrap; flex:1 0 auto; min-width:44px; }
   .m-category-actions { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px; margin:9px 0; }
   .m-category-picker { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; }
   .m-category-pick { min-width:0; position:relative; border:1px solid var(--line); border-radius:17px; background:rgba(255,249,237,.86); overflow:hidden; }
@@ -628,3 +628,14 @@
   .m-root .m-audio-btn { position: relative; }
   .m-root .m-audio-btn.is-playing::after { content: ""; position: absolute; inset: -5px; border-radius: 50%; border: 3px solid var(--gold); opacity: 0; pointer-events: none; animation: ui-ring-out 1.1s ease-out infinite; }
   :root[data-reduced-motion="true"] .m-root .m-tier::before, :root[data-reduced-motion="true"] .m-root .m-turn-banner::after { animation: none; }
+
+  /* B01/B02: selected categories use the common violet state; high tiers keep readable numerals. */
+  .m-root .m-category-pick.selected { border-color:#8B59AC; background:linear-gradient(145deg,#F7ECFC,#EEDDF8); box-shadow:inset 0 1px #fff,0 3px 0 #C7ACD9; }
+  .m-root .m-tier-800 { color:#fff; background:linear-gradient(145deg,#8752B1,#68408D); }
+  .m-root .m-tier-1000 { color:#fff; background:linear-gradient(145deg,#087D89,#08656F); }
+  .m-root .m-tier:not(.done) small { opacity:1; }
+  .m-root .m-tier.done { color:#6D5E74!important; background:#EEE6DB!important; }
+  .m-root .m-tier.done::after { color:#5C6B61; }
+  .m-root .m-result-statistics>div { padding:12px 14px; gap:12px; border-radius:15px; }
+  .m-root .m-result-statistics b { line-height:1.6; }
+  .m-root .m-result-statistics small { font-size:13px; line-height:1.7; }

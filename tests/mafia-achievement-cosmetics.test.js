@@ -34,12 +34,12 @@ test('earned cosmetic equips without Plus and survives expiry/refund while paid 
   assert.equal((await h.api({ selection: { avatarId: 'artist.avatar' }, revision: 1 })).status, 402);
   assert.equal((await h.api({ selection: { badge: true }, revision: 1 })).status, 402);
   await h.subscription('active');
-  saved = await h.api({ selection: { avatarId: 'artist.avatar', badge: true }, revision: 1 }); assert.equal(saved.status, 200);
+  saved = await h.api({ selection: { profileSkinId: 'sahra.profileSkin', badge: true }, revision: 1 }); assert.equal(saved.status, 200);
   await h.subscription('expired', Date.now() - GRACE_MS - 1000);
   for (const status of ['expired', 'refunded', 'revoked']) {
     if (status !== 'expired') await h.subscription(status);
     const own = await effectiveCosmetics(h.env, h.user.id), many = (await effectiveCosmeticsMany(h.env, [h.user.id])).get(h.user.id);
-    assert.equal(own.frameId, 'noir.frame'); assert.equal(own.avatarId, null); assert.equal(own.badge, false); assert.deepEqual(many, own);
+    assert.equal(own.frameId, 'noir.frame'); assert.equal(own.profileSkinId, null); assert.equal(own.avatarId, null); assert.equal(own.badge, false); assert.deepEqual(many, own);
   }
 });
 
@@ -102,7 +102,7 @@ test('account deletion inside grant lookup cannot return cached grants, preferen
 test('the final cosmetic read rechecks a revoked license, changed selection and revoked Plus from current SQL state', async t => {
   for(const mutation of ['license','selection','plus']){
     const h=await setup(t);await h.subscription('active');
-    assert.equal((await h.api({selection:{frameId:'noir.frame',avatarId:'artist.avatar'},revision:0})).status,200);
+    assert.equal((await h.api({selection:{frameId:'noir.frame',profileSkinId:'sahra.profileSkin'},revision:0})).status,200);
     const changed=afterFirstGrantRead(t,h.env,async()=>{
       if(mutation==='license'){
         await h.subscription('revoked');await h.env.DB.prepare('UPDATE mafia_cosmetic_grants SET revoked_at=? WHERE user_id=?').bind(Date.now(),h.user.id).run();
@@ -111,6 +111,6 @@ test('the final cosmetic read rechecks a revoked license, changed selection and 
     });
     const result=await cosmeticsFor(h.env,h.user.id);assert.equal(changed(),true);
     if(mutation==='selection'){assert.equal(result.preferred.frameId,null);assert.equal(result.revision,2);}
-    else {assert.equal(result.plusActive,false);assert.equal(result.effective.avatarId,null);assert.equal(result.effective.frameId,mutation==='license'?null:'noir.frame');}
+    else {assert.equal(result.plusActive,false);assert.equal(result.effective.profileSkinId,null);assert.equal(result.effective.frameId,mutation==='license'?null:'noir.frame');}
   }
 });

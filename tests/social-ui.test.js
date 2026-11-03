@@ -1,4 +1,5 @@
 import { test, after } from 'node:test';
+import React from 'react';
 import assert from 'node:assert/strict';
 import { mkdtempSync, mkdirSync, rmSync } from 'node:fs';
 import path from 'node:path';
@@ -91,4 +92,26 @@ test('day boundaries use local calendar dates; invalid presence is not invented'
   assert.equal(render.presenceLabel({ lastActiveAt: 'invalid' }, now), 'غير متصل');
   assert.equal(render.messageKey({ clientId: 'retry-token' }), 'local-retry-token');
   assert.equal(render.messageKey(message), 'message-23');
+});
+
+
+test('unified chat header retains one title, navigation and direct tools in page and drawer presentations', () => {
+  const tools = React.createElement(React.Fragment, null,
+    React.createElement('button', { type: 'button', 'aria-label': 'يلا نلعب' }),
+    React.createElement('button', { type: 'button', 'aria-label': 'مكالمة صوتية', disabled: true }));
+  const props = { friend, conversation: { messages: [] }, account, social: {}, notify() {}, onBack() {}, onMenu() {}, compactHeader: true, headerActions: tools };
+  for (const drawer of [false, true]) {
+    const html = render.conversation({ ...props, onClose: drawer ? () => {} : undefined });
+    assert.equal((html.match(/<header/g) || []).length, 1);
+    assert.equal((html.match(/<header[\s\S]*?<\/header>/)?.[0].match(/<h2>/g) || []).length, 1);
+    assert.match(html, /class="social-chat-head is-unified"/);
+    assert.match(html, /aria-label="العودة للأصدقاء"/);
+    assert.match(html, /aria-label="عرض بروفايل أحمد"/);
+    assert.match(html, /aria-label="خيارات المحادثة"[^>]+aria-haspopup="dialog"/);
+    assert.match(html, /aria-label="أدوات المحادثة"/);
+    assert.match(html, /aria-label="يلا نلعب"/);
+    assert.match(html, /aria-label="مكالمة صوتية" disabled=""/);
+    assert.equal(html.includes('aria-label="إغلاق اللّمة والعودة للعبة"'), drawer);
+    assert.match(html, /aria-label="اكتب رسالة"/);
+  }
 });

@@ -1,0 +1,1249 @@
+{
+  "schemaVersion": 1,
+  "bundleId": "maydan-warmth-20261103-private-v1",
+  "sourceManifestSHA256": "26a1737edc78602489fc7a746c1ee199d65066614312b621648da24f1f207c56",
+  "previewOnly": true,
+  "userListeningApproved": true,
+  "deviceTested": false,
+  "productionApproved": false,
+  "approvalEvidenceSHA256": "7307bfdbc1e62bef97e3af1208a4878c9b90150065ae1db5823d2d5f40bfc82c",
+  "runtimePackSHA256": "7286f0eee8f45affac5701c502766ddbe9b64ea2669f42675a138768f9ec1940",
+  "runtimePack": {
+    "schemaVersion": 1,
+    "bundleId": "maydan-warmth-20261103-private-v1",
+    "sourceManifestSHA256": "26a1737edc78602489fc7a746c1ee199d65066614312b621648da24f1f207c56",
+    "localPreviewOnly": true,
+    "testFlightPreviewOnly": true,
+    "approval": {
+      "listeningApproved": false,
+      "deviceTested": false,
+      "productionApproved": false,
+      "loopApproved": false
+    },
+    "assets": {
+      "music-bossa": {
+        "id": "music-bossa",
+        "kind": "music",
+        "title": "Jazz Bossa Nova",
+        "titleAr": "Jazz Bossa Nova",
+        "source": {
+          "title": "Jazz Bossa Nova",
+          "author": "Music_For_Videos",
+          "pageUrl": "https://pixabay.com/music/bossa-nova-jazz-bossa-nova-163669/"
+        },
+        "localPreviewOnly": true,
+        "approval": {
+          "listeningApproved": false,
+          "deviceTested": false,
+          "productionApproved": false,
+          "loopApproved": false
+        },
+        "loop": false,
+        "file": {
+          "url": "audio/music-bossa-8173a990b555.m4a",
+          "sha256": "8173a990b5557975449a9ad87c4a142c54ab70f3c800c8c7d894e8c0132bcbd5",
+          "bytes": 1928980,
+          "sampleRate": 44100,
+          "channels": 2,
+          "frames": 3479552,
+          "durationSeconds": 78.901405896,
+          "logicalFrames": 3479040,
+          "codec": "aac-lc",
+          "container": "m4a",
+          "fullDecodePassed": true
+        }
+      },
+      "music-warmth-a": {
+        "id": "music-warmth-a",
+        "kind": "music",
+        "title": "Feel-Good Vibe Jazz Bossa Nova Music",
+        "titleAr": "جلسة الغيتار",
+        "source": {
+          "title": "Feel-Good Vibe Jazz Bossa Nova Music",
+          "author": "Denis-Pavlov-Music",
+          "pageUrl": "https://pixabay.com/music/bossa-nova-feel-good-vibe-jazz-bossa-nova-music-221143/"
+        },
+        "localPreviewOnly": true,
+        "approval": {
+          "listeningApproved": false,
+          "deviceTested": false,
+          "productionApproved": false,
+          "loopApproved": false
+        },
+        "loop": false,
+        "file": {
+          "url": "audio/music-warmth-a-232632257bf8.m4a",
+          "sha256": "232632257bf8f56aa03cfd333b1cdd91dabd088d9b1ad671640845dd459fa522",
+          "bytes": 18320450,
+          "sampleRate": 44100,
+          "channels": 2,
+          "frames": 25611264,
+          "durationSeconds": 580.7542857142857,
+          "fullDecodePassed": true,
+          "codec": "aac-lc",
+          "container": "m4a"
+        }
+      },
+      "music-warmth-b": {
+        "id": "music-warmth-b",
+        "kind": "music",
+        "title": "Instrumental Jazz Bossa Nova Brazilian Guitar Vibes",
+        "titleAr": "نسمة برازيلية",
+        "source": {
+          "title": "Instrumental Jazz Bossa Nova Brazilian Guitar Vibes",
+          "author": "Denis-Pavlov-Music",
+          "pageUrl": "https://pixabay.com/music/bossa-nova-instrumental-jazz-bossa-nova-brazilian-guitar-vibes-485111/"
+        },
+        "localPreviewOnly": true,
+        "approval": {
+          "listeningApproved": false,
+          "deviceTested": false,
+          "productionApproved": false,
+          "loopApproved": false
+        },
+        "loop": false,
+        "file": {
+          "url": "audio/music-warmth-b-79c349033de7.m4a",
+          "sha256": "79c349033de755dc6e0e1c1183f68062aa7e2c5205209961cb39c0e2d463984c",
+          "bytes": 19574795,
+          "sampleRate": 44100,
+          "channels": 2,
+          "frames": 26236928,
+          "durationSeconds": 594.9416780045351,
+          "fullDecodePassed": true,
+          "codec": "aac-lc",
+          "container": "m4a"
+        }
+      },
+      "music-warmth-c": {
+        "id": "music-warmth-c",
+        "kind": "music",
+        "title": "Bossa Nova Jazz Piano Summer Cafe Podcast Music",
+        "titleAr": "مقهى البيانو",
+        "source": {
+          "title": "Bossa Nova Jazz Piano Summer Cafe Podcast Music",
+          "author": "Denis-Pavlov-Music",
+          "pageUrl": "https://pixabay.com/music/bossa-nova-bossa-nova-jazz-piano-summer-cafe-podcast-music-398166/"
+        },
+        "localPreviewOnly": true,
+        "approval": {
+          "listeningApproved": false,
+          "deviceTested": false,
+          "productionApproved": false,
+          "loopApproved": false
+        },
+        "loop": false,
+        "file": {
+          "url": "audio/music-warmth-c-24527023a031.m4a",
+          "sha256": "24527023a031e26304392a78df8a37e1ad04110f28f29193986b1b6cb5f8a080",
+          "bytes": 16443367,
+          "sampleRate": 44100,
+          "channels": 2,
+          "frames": 22648832,
+          "durationSeconds": 513.5789569160997,
+          "fullDecodePassed": true,
+          "codec": "aac-lc",
+          "container": "m4a"
+        }
+      },
+      "sfx-clock": {
+        "id": "sfx-clock",
+        "kind": "effect",
+        "title": "Clock Ticking",
+        "titleAr": "دقتا ساعة · اقتراب الوقت المعلن",
+        "source": {
+          "title": "Clock Ticking",
+          "author": "Universfield",
+          "pageUrl": "https://pixabay.com/sound-effects/film-special-effects-clock-ticking-149907/"
+        },
+        "localPreviewOnly": true,
+        "approval": {
+          "listeningApproved": false,
+          "deviceTested": false,
+          "productionApproved": false,
+          "loopApproved": false
+        },
+        "loop": false,
+        "file": {
+          "url": "audio/sfx-clock-b5db81df4ebf.m4a",
+          "sha256": "b5db81df4ebf82e764dc0ff4be9e19815955d7b81c819be5f62bf1123f9594a7",
+          "bytes": 8446,
+          "sampleRate": 44100,
+          "channels": 2,
+          "frames": 33792,
+          "durationSeconds": 0.7662585034013606,
+          "fullDecodePassed": true,
+          "codec": "aac-lc",
+          "container": "m4a"
+        }
+      },
+      "sfx-close": {
+        "id": "sfx-close",
+        "kind": "effect",
+        "title": "UI Modal Close Soft Tap",
+        "titleAr": "Modal Close Soft Tap",
+        "source": {
+          "title": "UI Modal Close Soft Tap",
+          "author": "SoundShelfStudio",
+          "pageUrl": "https://pixabay.com/sound-effects/film-special-effects-ui-modal-close-soft-tap-523151/"
+        },
+        "localPreviewOnly": true,
+        "approval": {
+          "listeningApproved": false,
+          "deviceTested": false,
+          "productionApproved": false,
+          "loopApproved": false
+        },
+        "loop": false,
+        "file": {
+          "url": "audio/sfx-close-2278ae1d92cd.m4a",
+          "sha256": "2278ae1d92cd477e4cbf9131bb9a068aa02a61f3f50454abe5100a0a7af3a044",
+          "bytes": 10865,
+          "sampleRate": 48000,
+          "channels": 2,
+          "frames": 22528,
+          "durationSeconds": 0.469333333,
+          "logicalFrames": 22080,
+          "codec": "aac-lc",
+          "container": "m4a",
+          "fullDecodePassed": true
+        }
+      },
+      "sfx-confirm": {
+        "id": "sfx-confirm",
+        "kind": "effect",
+        "title": "UI Chime Confirm",
+        "titleAr": "Chime Confirm",
+        "source": {
+          "title": "UI Chime Confirm",
+          "author": "SoundShelfStudio",
+          "pageUrl": "https://pixabay.com/sound-effects/technology-ui-chime-confirm-567486/"
+        },
+        "localPreviewOnly": true,
+        "approval": {
+          "listeningApproved": false,
+          "deviceTested": false,
+          "productionApproved": false,
+          "loopApproved": false
+        },
+        "loop": false,
+        "file": {
+          "url": "audio/sfx-confirm-a5f285ea2ef2.m4a",
+          "sha256": "a5f285ea2ef2f365a405573a48512a4702128b4ea2ab05918309925b27e21b98",
+          "bytes": 33504,
+          "sampleRate": 48000,
+          "channels": 2,
+          "frames": 67584,
+          "durationSeconds": 1.408,
+          "logicalFrames": 66720,
+          "codec": "aac-lc",
+          "container": "m4a",
+          "fullDecodePassed": true
+        }
+      },
+      "sfx-error": {
+        "id": "sfx-error",
+        "kind": "effect",
+        "title": "UI Error Pop",
+        "titleAr": "Error Pop",
+        "source": {
+          "title": "UI Error Pop",
+          "author": "SoundShelfStudio",
+          "pageUrl": "https://pixabay.com/sound-effects/film-special-effects-ui-error-pop-515668/"
+        },
+        "localPreviewOnly": true,
+        "approval": {
+          "listeningApproved": false,
+          "deviceTested": false,
+          "productionApproved": false,
+          "loopApproved": false
+        },
+        "loop": false,
+        "file": {
+          "url": "audio/sfx-error-f2ec435d5c8d.m4a",
+          "sha256": "f2ec435d5c8d440c01fa81fbadf635a258dceca22cbb176c098066bff7bebd78",
+          "bytes": 11036,
+          "sampleRate": 48000,
+          "channels": 2,
+          "frames": 19456,
+          "durationSeconds": 0.405333333,
+          "logicalFrames": 18720,
+          "codec": "aac-lc",
+          "container": "m4a",
+          "fullDecodePassed": true
+        }
+      },
+      "sfx-glass": {
+        "id": "sfx-glass",
+        "kind": "effect",
+        "title": "UI Soft Glass Ping",
+        "titleAr": "Glass Ping",
+        "source": {
+          "title": "UI Soft Glass Ping",
+          "author": "SoundShelfStudio",
+          "pageUrl": "https://pixabay.com/sound-effects/film-special-effects-ui-soft-glass-ping-526562/"
+        },
+        "localPreviewOnly": true,
+        "approval": {
+          "listeningApproved": false,
+          "deviceTested": false,
+          "productionApproved": false,
+          "loopApproved": false
+        },
+        "loop": false,
+        "file": {
+          "url": "audio/sfx-glass-f7d7bfbb6f83.m4a",
+          "sha256": "f7d7bfbb6f83e2f1d21f06a327a65030a1d47f9981d0028258cb26cea2eb0ab7",
+          "bytes": 10443,
+          "sampleRate": 48000,
+          "channels": 2,
+          "frames": 20480,
+          "durationSeconds": 0.426666667,
+          "logicalFrames": 20160,
+          "codec": "aac-lc",
+          "container": "m4a",
+          "fullDecodePassed": true
+        }
+      },
+      "sfx-mission": {
+        "id": "sfx-mission",
+        "kind": "effect",
+        "title": "Mission Complete Chime",
+        "titleAr": "Mission Complete Chime",
+        "source": {
+          "title": "Mission Complete Chime",
+          "author": "SoundShelfStudio",
+          "pageUrl": "https://pixabay.com/sound-effects/film-special-effects-mission-complete-chime-534595/"
+        },
+        "localPreviewOnly": true,
+        "approval": {
+          "listeningApproved": false,
+          "deviceTested": false,
+          "productionApproved": false,
+          "loopApproved": false
+        },
+        "loop": false,
+        "file": {
+          "url": "audio/sfx-mission-3ae53ca5e295.m4a",
+          "sha256": "3ae53ca5e2952c4cd388aff4f1b9b9e4ecaf0bcbc9559cf79a918c0a3f954023",
+          "bytes": 17377,
+          "sampleRate": 48000,
+          "channels": 1,
+          "frames": 45056,
+          "durationSeconds": 0.938666667,
+          "logicalFrames": 44640,
+          "codec": "aac-lc",
+          "container": "m4a",
+          "fullDecodePassed": true
+        }
+      },
+      "sfx-notification": {
+        "id": "sfx-notification",
+        "kind": "effect",
+        "title": "UI Notification Pop Minimal",
+        "titleAr": "Notification Pop Minimal",
+        "source": {
+          "title": "UI Notification Pop Minimal",
+          "author": "SoundShelfStudio",
+          "pageUrl": "https://pixabay.com/sound-effects/film-special-effects-ui-notification-pop-minimal-523149/"
+        },
+        "localPreviewOnly": true,
+        "approval": {
+          "listeningApproved": false,
+          "deviceTested": false,
+          "productionApproved": false,
+          "loopApproved": false
+        },
+        "loop": false,
+        "file": {
+          "url": "audio/sfx-notification-dec66659c145.m4a",
+          "sha256": "dec66659c1455d359f0ddb5233dfa18fa9abc79c0ad7603a6a71445eff6e0323",
+          "bytes": 17611,
+          "sampleRate": 48000,
+          "channels": 2,
+          "frames": 34816,
+          "durationSeconds": 0.725333333,
+          "logicalFrames": 34560,
+          "codec": "aac-lc",
+          "container": "m4a",
+          "fullDecodePassed": true
+        }
+      },
+      "sfx-success": {
+        "id": "sfx-success",
+        "kind": "effect",
+        "title": "UI Success Chime",
+        "titleAr": "Success Chime",
+        "source": {
+          "title": "UI Success Chime",
+          "author": "SoundShelfStudio",
+          "pageUrl": "https://pixabay.com/sound-effects/technology-ui-success-chime-513565/"
+        },
+        "localPreviewOnly": true,
+        "approval": {
+          "listeningApproved": false,
+          "deviceTested": false,
+          "productionApproved": false,
+          "loopApproved": false
+        },
+        "loop": false,
+        "file": {
+          "url": "audio/sfx-success-ef9415ba62d0.m4a",
+          "sha256": "ef9415ba62d0324d169da69066d77f9f4c22c6608b23850a29f6a87d36888aae",
+          "bytes": 13977,
+          "sampleRate": 48000,
+          "channels": 2,
+          "frames": 32768,
+          "durationSeconds": 0.682666667,
+          "logicalFrames": 32160,
+          "codec": "aac-lc",
+          "container": "m4a",
+          "fullDecodePassed": true
+        }
+      },
+      "sfx-swipe": {
+        "id": "sfx-swipe",
+        "kind": "effect",
+        "title": "UI Swipe Navigation Soft",
+        "titleAr": "Swipe Navigation Soft",
+        "source": {
+          "title": "UI Swipe Navigation Soft",
+          "author": "SoundShelfStudio",
+          "pageUrl": "https://pixabay.com/sound-effects/film-special-effects-ui-swipe-navigation-soft-523625/"
+        },
+        "localPreviewOnly": true,
+        "approval": {
+          "listeningApproved": false,
+          "deviceTested": false,
+          "productionApproved": false,
+          "loopApproved": false
+        },
+        "loop": false,
+        "file": {
+          "url": "audio/sfx-swipe-a1b59af3f706.m4a",
+          "sha256": "a1b59af3f7065953f50bccb03d828a8a2fc515b4866412483d35b05903b14ff5",
+          "bytes": 12056,
+          "sampleRate": 48000,
+          "channels": 2,
+          "frames": 22528,
+          "durationSeconds": 0.469333333,
+          "logicalFrames": 21600,
+          "codec": "aac-lc",
+          "container": "m4a",
+          "fullDecodePassed": true
+        }
+      },
+      "sfx-tap": {
+        "id": "sfx-tap",
+        "kind": "effect",
+        "title": "UI Tap Soft Short",
+        "titleAr": "نقرة Tap Soft Short",
+        "source": {
+          "title": "UI Tap Soft Short",
+          "author": "SoundShelfStudio",
+          "pageUrl": "https://pixabay.com/sound-effects/film-special-effects-ui-tap-soft-short-514599/"
+        },
+        "localPreviewOnly": true,
+        "approval": {
+          "listeningApproved": false,
+          "deviceTested": false,
+          "productionApproved": false,
+          "loopApproved": false
+        },
+        "loop": false,
+        "file": {
+          "url": "audio/sfx-tap-dd34023a3498.m4a",
+          "sha256": "dd34023a3498dcca7e4118003cf8381d41f8b16ecf48d2d16a263b61bd19658f",
+          "bytes": 4586,
+          "sampleRate": 48000,
+          "channels": 2,
+          "frames": 11264,
+          "durationSeconds": 0.234666667,
+          "logicalFrames": 11040,
+          "codec": "aac-lc",
+          "container": "m4a",
+          "fullDecodePassed": true
+        }
+      }
+    },
+    "cueMap": {
+      "click": {
+        "decision": "candidate",
+        "assetId": "sfx-tap",
+        "rate": 1
+      },
+      "pop": {
+        "decision": "candidate",
+        "assetId": "sfx-notification",
+        "rate": 1
+      },
+      "correct": {
+        "decision": "candidate",
+        "assetId": "sfx-success",
+        "rate": 1
+      },
+      "wrong": {
+        "decision": "candidate",
+        "assetId": "sfx-error",
+        "rate": 1
+      },
+      "whoosh": {
+        "decision": "candidate",
+        "assetId": "sfx-swipe",
+        "rate": 1
+      },
+      "reveal": {
+        "decision": "candidate",
+        "assetId": "sfx-glass",
+        "rate": 1
+      },
+      "win": {
+        "decision": "candidate",
+        "assetId": "sfx-mission",
+        "rate": 1
+      },
+      "pass": {
+        "decision": "candidate",
+        "assetId": "sfx-close",
+        "rate": 1
+      },
+      "start": {
+        "decision": "candidate",
+        "assetId": "sfx-confirm",
+        "rate": 1
+      },
+      "buzzer": {
+        "decision": "candidate",
+        "assetId": "sfx-error",
+        "rate": 1,
+        "reason": "Quiet error feedback remains for rejected/network actions; no harsh buzzer recording."
+      },
+      "timeout": {
+        "decision": "candidate",
+        "assetId": "sfx-close",
+        "rate": 1,
+        "reason": "Actual final timeout must remain audible for spoken/off-screen games; no repeated countdown."
+      },
+      "explosion": {
+        "decision": "candidate",
+        "assetId": "sfx-notification",
+        "rate": 1,
+        "reason": "Neutral acknowledgement of an already public game end, never a hidden-time hint or celebration."
+      },
+      "tick": {
+        "decision": "silence",
+        "assetId": null,
+        "reason": "Continuous ticking intentionally removed; visual countdown remains."
+      },
+      "tickFast": {
+        "decision": "silence",
+        "assetId": null,
+        "reason": "No accelerating hidden-time cue; visual timing remains."
+      },
+      "countdown": {
+        "decision": "silence",
+        "assetId": null,
+        "reason": "No mandatory repeated countdown; explicit local UI still shows time."
+      },
+      "drumroll": {
+        "decision": "silence",
+        "assetId": null,
+        "reason": "Thinking/speech space and no suspense loop under conversation."
+      },
+      "timerWarning": {
+        "decision": "candidate",
+        "assetId": "sfx-clock",
+        "rate": 1,
+        "reason": "One short mechanical-clock warning for a public deadline; never the hidden bomb."
+      }
+    },
+    "mafiaCueMap": {
+      "mafiaSelect": {
+        "decision": "candidate",
+        "assetId": "sfx-tap",
+        "rate": 1
+      },
+      "mafiaRole": {
+        "decision": "candidate",
+        "assetId": "sfx-glass",
+        "rate": 1
+      },
+      "mafiaNight": {
+        "decision": "candidate",
+        "assetId": "sfx-swipe",
+        "rate": 1
+      },
+      "mafiaDawn": {
+        "decision": "candidate",
+        "assetId": "sfx-notification",
+        "rate": 1
+      },
+      "mafiaVerdict": {
+        "decision": "candidate",
+        "assetId": "sfx-close",
+        "rate": 1
+      },
+      "mafiaFinal": {
+        "decision": "candidate",
+        "assetId": "sfx-mission",
+        "rate": 1
+      }
+    },
+    "mafiaPublicSpecialCueMap": {
+      "mafiaAssassination": {
+        "decision": "silence",
+        "assetId": null,
+        "reason": "No unapproved realistic gunshot or role-linked effect."
+      },
+      "mafiaJudgment": {
+        "decision": "silence",
+        "assetId": null,
+        "reason": "No unapproved gavel, derived pitch or special-role cue."
+      }
+    },
+    "musicSuites": {
+      "warmth-long": {
+        "title": "دفء وخفّة · رحلة طويلة",
+        "introTrackId": "music-bossa",
+        "trackIds": [
+          "music-bossa",
+          "music-warmth-a",
+          "music-warmth-b",
+          "music-warmth-c"
+        ],
+        "transitionSeconds": 1.2,
+        "repeat": true
+      }
+    },
+    "musicDirections": {
+      "bossaAlternative": {
+        "home": "warmth-long",
+        "lobby": "warmth-long",
+        "creativeSetup": "warmth-long",
+        "mafiaLobby": null,
+        "mafiaNight": null
+      }
+    }
+  },
+  "files": [
+    {
+      "id": "music-bossa",
+      "url": "audio/music-bossa-8173a990b555.m4a",
+      "sha256": "8173a990b5557975449a9ad87c4a142c54ab70f3c800c8c7d894e8c0132bcbd5",
+      "bytes": 1928980
+    },
+    {
+      "id": "music-warmth-a",
+      "url": "audio/music-warmth-a-232632257bf8.m4a",
+      "sha256": "232632257bf8f56aa03cfd333b1cdd91dabd088d9b1ad671640845dd459fa522",
+      "bytes": 18320450
+    },
+    {
+      "id": "music-warmth-b",
+      "url": "audio/music-warmth-b-79c349033de7.m4a",
+      "sha256": "79c349033de755dc6e0e1c1183f68062aa7e2c5205209961cb39c0e2d463984c",
+      "bytes": 19574795
+    },
+    {
+      "id": "music-warmth-c",
+      "url": "audio/music-warmth-c-24527023a031.m4a",
+      "sha256": "24527023a031e26304392a78df8a37e1ad04110f28f29193986b1b6cb5f8a080",
+      "bytes": 16443367
+    },
+    {
+      "id": "sfx-clock",
+      "url": "audio/sfx-clock-b5db81df4ebf.m4a",
+      "sha256": "b5db81df4ebf82e764dc0ff4be9e19815955d7b81c819be5f62bf1123f9594a7",
+      "bytes": 8446
+    },
+    {
+      "id": "sfx-close",
+      "url": "audio/sfx-close-2278ae1d92cd.m4a",
+      "sha256": "2278ae1d92cd477e4cbf9131bb9a068aa02a61f3f50454abe5100a0a7af3a044",
+      "bytes": 10865
+    },
+    {
+      "id": "sfx-confirm",
+      "url": "audio/sfx-confirm-a5f285ea2ef2.m4a",
+      "sha256": "a5f285ea2ef2f365a405573a48512a4702128b4ea2ab05918309925b27e21b98",
+      "bytes": 33504
+    },
+    {
+      "id": "sfx-error",
+      "url": "audio/sfx-error-f2ec435d5c8d.m4a",
+      "sha256": "f2ec435d5c8d440c01fa81fbadf635a258dceca22cbb176c098066bff7bebd78",
+      "bytes": 11036
+    },
+    {
+      "id": "sfx-glass",
+      "url": "audio/sfx-glass-f7d7bfbb6f83.m4a",
+      "sha256": "f7d7bfbb6f83e2f1d21f06a327a65030a1d47f9981d0028258cb26cea2eb0ab7",
+      "bytes": 10443
+    },
+    {
+      "id": "sfx-mission",
+      "url": "audio/sfx-mission-3ae53ca5e295.m4a",
+      "sha256": "3ae53ca5e2952c4cd388aff4f1b9b9e4ecaf0bcbc9559cf79a918c0a3f954023",
+      "bytes": 17377
+    },
+    {
+      "id": "sfx-notification",
+      "url": "audio/sfx-notification-dec66659c145.m4a",
+      "sha256": "dec66659c1455d359f0ddb5233dfa18fa9abc79c0ad7603a6a71445eff6e0323",
+      "bytes": 17611
+    },
+    {
+      "id": "sfx-success",
+      "url": "audio/sfx-success-ef9415ba62d0.m4a",
+      "sha256": "ef9415ba62d0324d169da69066d77f9f4c22c6608b23850a29f6a87d36888aae",
+      "bytes": 13977
+    },
+    {
+      "id": "sfx-swipe",
+      "url": "audio/sfx-swipe-a1b59af3f706.m4a",
+      "sha256": "a1b59af3f7065953f50bccb03d828a8a2fc515b4866412483d35b05903b14ff5",
+      "bytes": 12056
+    },
+    {
+      "id": "sfx-tap",
+      "url": "audio/sfx-tap-dd34023a3498.m4a",
+      "sha256": "dd34023a3498dcca7e4118003cf8381d41f8b16ecf48d2d16a263b61bd19658f",
+      "bytes": 4586
+    }
+  ],
+  "bytes": 56407493,
+  "sources": [
+    {
+      "id": "music-bossa",
+      "source": {
+        "site": "Pixabay",
+        "id": "163669",
+        "title": "Jazz Bossa Nova",
+        "author": "Music_For_Videos",
+        "pageUrl": "https://pixabay.com/music/bossa-nova-jazz-bossa-nova-163669/",
+        "sha256": "840cc61feadc6f76f26567977ed53b8d512d3436277e4c68fd79c714304ff3c2",
+        "url": "originals/music-bossa-840cc61feadc.mp3",
+        "bytes": 2524473
+      },
+      "evidence": {
+        "sourcePage": {
+          "url": "https://pixabay.com/music/bossa-nova-jazz-bossa-nova-163669/",
+          "reviewedOn": "2026-11-02",
+          "access": "official-web-page-read",
+          "authorAndTitleObserved": true,
+          "contentLicenseDeclarationObserved": true
+        },
+        "licenseSummary": {
+          "url": "https://pixabay.com/service/license-summary/",
+          "reviewedOn": "2026-11-02",
+          "status": "official-terms-summary-read-not-legal-certification"
+        },
+        "certificate": {
+          "status": "missing",
+          "acquired": false,
+          "contentIdObserved": true,
+          "contentIdAbsenceGuaranteed": false,
+          "faqUrl": "https://pixabay.com/service/faq/"
+        },
+        "sourceDownload": {
+          "status": "provided-existing-file-hash-matched-handoff",
+          "redownloaded": false
+        }
+      }
+    },
+    {
+      "id": "music-warmth-a",
+      "source": {
+        "site": "Pixabay",
+        "id": "221143",
+        "title": "Feel-Good Vibe Jazz Bossa Nova Music",
+        "author": "Denis-Pavlov-Music",
+        "pageUrl": "https://pixabay.com/music/bossa-nova-feel-good-vibe-jazz-bossa-nova-music-221143/",
+        "sha256": "ebc0735fad7edc55608bc123a6596ae8d7b444f374a123b7553a65e2e54e43f1",
+        "url": "originals/music-warmth-a-ebc0735fad7e.mp3",
+        "bytes": 18584137
+      },
+      "evidence": {
+        "acquisition": {
+          "method": "Official Pixabay web page Free download button in CUA",
+          "date": "2026-11-03",
+          "authenticated": false
+        },
+        "sourceEvidence": {
+          "instrumentalDescription": "gentle acoustic guitar and smooth rhythms",
+          "mainPageAIBadgeObserved": false,
+          "realInstrumentRecordingVerified": false,
+          "perceptuallyListened": false
+        },
+        "license": {
+          "name": "Pixabay Content License",
+          "summaryURL": "https://pixabay.com/service/license-summary/",
+          "termsURL": "https://pixabay.com/service/terms/",
+          "commercialAdaptationSubjectToTerms": true,
+          "prohibitsStandaloneRedistribution": true,
+          "contentIdRegistered": true,
+          "certificateURL": "https://pixabay.com/music/221143/license/",
+          "certificateObtained": false,
+          "certificateStatus": "221143 official certificate link redirected to login; other certificates not attempted",
+          "evidence": "Official source page states free use under Pixabay Content License and Content ID registration"
+        }
+      }
+    },
+    {
+      "id": "music-warmth-b",
+      "source": {
+        "site": "Pixabay",
+        "id": "485111",
+        "title": "Instrumental Jazz Bossa Nova Brazilian Guitar Vibes",
+        "author": "Denis-Pavlov-Music",
+        "pageUrl": "https://pixabay.com/music/bossa-nova-instrumental-jazz-bossa-nova-brazilian-guitar-vibes-485111/",
+        "sha256": "683860b40a2fcfb35d9547d621338b445c7220ceac11e55e0e76ccba05ecbf5a",
+        "url": "originals/music-warmth-b-683860b40a2f.mp3",
+        "bytes": 19038040
+      },
+      "evidence": {
+        "acquisition": {
+          "method": "Official Pixabay web page Free download button in CUA",
+          "date": "2026-11-03",
+          "authenticated": false
+        },
+        "sourceEvidence": {
+          "instrumentalDescription": "acoustic guitar, piano and light percussion",
+          "mainPageAIBadgeObserved": false,
+          "realInstrumentRecordingVerified": false,
+          "perceptuallyListened": false
+        },
+        "license": {
+          "name": "Pixabay Content License",
+          "summaryURL": "https://pixabay.com/service/license-summary/",
+          "termsURL": "https://pixabay.com/service/terms/",
+          "commercialAdaptationSubjectToTerms": true,
+          "prohibitsStandaloneRedistribution": true,
+          "contentIdRegistered": true,
+          "certificateURL": "https://pixabay.com/music/485111/license/",
+          "certificateObtained": false,
+          "certificateStatus": "221143 official certificate link redirected to login; other certificates not attempted",
+          "evidence": "Official source page states free use under Pixabay Content License and Content ID registration"
+        }
+      }
+    },
+    {
+      "id": "music-warmth-c",
+      "source": {
+        "site": "Pixabay",
+        "id": "398166",
+        "title": "Bossa Nova Jazz Piano Summer Cafe Podcast Music",
+        "author": "Denis-Pavlov-Music",
+        "pageUrl": "https://pixabay.com/music/bossa-nova-bossa-nova-jazz-piano-summer-cafe-podcast-music-398166/",
+        "sha256": "b51500b63855a361ede623e7cf230e082796fec31b4f095682b81f9858ede728",
+        "url": "originals/music-warmth-c-b51500b63855.mp3",
+        "bytes": 16434155
+      },
+      "evidence": {
+        "acquisition": {
+          "method": "Official Pixabay web page Free download button in CUA",
+          "date": "2026-11-03",
+          "authenticated": false
+        },
+        "sourceEvidence": {
+          "instrumentalDescription": "Bossa Nova, cafe jazz, smooth jazz, instrumental piano tags",
+          "mainPageAIBadgeObserved": false,
+          "realInstrumentRecordingVerified": false,
+          "perceptuallyListened": false
+        },
+        "license": {
+          "name": "Pixabay Content License",
+          "summaryURL": "https://pixabay.com/service/license-summary/",
+          "termsURL": "https://pixabay.com/service/terms/",
+          "commercialAdaptationSubjectToTerms": true,
+          "prohibitsStandaloneRedistribution": true,
+          "contentIdRegistered": true,
+          "certificateURL": "https://pixabay.com/music/398166/license/",
+          "certificateObtained": false,
+          "certificateStatus": "221143 official certificate link redirected to login; other certificates not attempted",
+          "evidence": "Official source page states free use under Pixabay Content License and Content ID registration"
+        }
+      }
+    },
+    {
+      "id": "sfx-clock",
+      "source": {
+        "site": "Pixabay",
+        "id": "149907",
+        "title": "Clock Ticking",
+        "author": "Universfield",
+        "pageUrl": "https://pixabay.com/sound-effects/film-special-effects-clock-ticking-149907/",
+        "sha256": "1a12cd0d2867eee9da9e8e09eff25b145434240b1709ade3d19ddd2a5cc5f60a",
+        "url": "originals/sfx-clock-1a12cd0d2867.mp3",
+        "bytes": 232385
+      },
+      "evidence": {
+        "sourcePage": {
+          "url": "https://pixabay.com/sound-effects/film-special-effects-clock-ticking-149907/",
+          "readOn": "2026-11-03",
+          "titleAuthorLicenseObserved": true
+        },
+        "sourceDownload": {
+          "existingOriginalHash": "1a12cd0d2867eee9da9e8e09eff25b145434240b1709ade3d19ddd2a5cc5f60a",
+          "method": "Previously downloaded official file, verified hash"
+        },
+        "license": {
+          "name": "Pixabay Content License",
+          "summaryURL": "https://pixabay.com/service/license-summary/",
+          "reviewedOn": "2026-11-03",
+          "certificateObtained": false
+        },
+        "transientAnalysis": {
+          "peaksSeconds": [
+            0.02,
+            0.47
+          ],
+          "pitchAndSpeedChanged": false,
+          "perceptualListeningPerformed": false
+        }
+      }
+    },
+    {
+      "id": "sfx-close",
+      "source": {
+        "site": "Pixabay",
+        "id": "523151",
+        "title": "UI Modal Close Soft Tap",
+        "author": "SoundShelfStudio",
+        "pageUrl": "https://pixabay.com/sound-effects/film-special-effects-ui-modal-close-soft-tap-523151/",
+        "sha256": "64354c4bd44be6db46d3bf91ee4d3f70adf87a1233c0e5a0fe3e33d06222a111",
+        "url": "originals/sfx-close-64354c4bd44b.mp3",
+        "bytes": 44303
+      },
+      "evidence": {
+        "sourcePage": {
+          "url": "https://pixabay.com/sound-effects/film-special-effects-ui-modal-close-soft-tap-523151/",
+          "reviewedOn": "2026-11-02",
+          "access": "official-web-page-read",
+          "authorAndTitleObserved": true,
+          "contentLicenseDeclarationObserved": true
+        },
+        "licenseSummary": {
+          "url": "https://pixabay.com/service/license-summary/",
+          "reviewedOn": "2026-11-02",
+          "status": "official-terms-summary-read-not-legal-certification"
+        },
+        "certificate": {
+          "status": "not-observed-not-required-for-local-comparison",
+          "acquired": false,
+          "contentIdObserved": false,
+          "contentIdAbsenceGuaranteed": false,
+          "faqUrl": "https://pixabay.com/service/faq/"
+        },
+        "sourceDownload": {
+          "status": "provided-existing-file-hash-matched-handoff",
+          "redownloaded": false
+        }
+      }
+    },
+    {
+      "id": "sfx-confirm",
+      "source": {
+        "site": "Pixabay",
+        "id": "567486",
+        "title": "UI Chime Confirm",
+        "author": "SoundShelfStudio",
+        "pageUrl": "https://pixabay.com/sound-effects/technology-ui-chime-confirm-567486/",
+        "sha256": "02b9c57239080d49cca8fd10240515f046c866edf70f9b3a73a497c3aa648591",
+        "url": "originals/sfx-confirm-02b9c5723908.mp3",
+        "bytes": 68352
+      },
+      "evidence": {
+        "sourcePage": {
+          "url": "https://pixabay.com/sound-effects/technology-ui-chime-confirm-567486/",
+          "reviewedOn": "2026-11-02",
+          "access": "official-web-page-read",
+          "authorAndTitleObserved": true,
+          "contentLicenseDeclarationObserved": true
+        },
+        "licenseSummary": {
+          "url": "https://pixabay.com/service/license-summary/",
+          "reviewedOn": "2026-11-02",
+          "status": "official-terms-summary-read-not-legal-certification"
+        },
+        "certificate": {
+          "status": "not-observed-not-required-for-local-comparison",
+          "acquired": false,
+          "contentIdObserved": false,
+          "contentIdAbsenceGuaranteed": false,
+          "faqUrl": "https://pixabay.com/service/faq/"
+        },
+        "sourceDownload": {
+          "status": "provided-existing-file-hash-matched-handoff",
+          "redownloaded": false
+        }
+      }
+    },
+    {
+      "id": "sfx-error",
+      "source": {
+        "site": "Pixabay",
+        "id": "515668",
+        "title": "UI Error Pop",
+        "author": "SoundShelfStudio",
+        "pageUrl": "https://pixabay.com/sound-effects/film-special-effects-ui-error-pop-515668/",
+        "sha256": "6b0d9cadff6014fd320c409ede2504ae14ac0bda2dce442eeeff74154653dbc4",
+        "url": "originals/sfx-error-6b0d9cadff60.mp3",
+        "bytes": 39288
+      },
+      "evidence": {
+        "sourcePage": {
+          "url": "https://pixabay.com/sound-effects/film-special-effects-ui-error-pop-515668/",
+          "reviewedOn": "2026-11-02",
+          "access": "official-web-page-read",
+          "authorAndTitleObserved": true,
+          "contentLicenseDeclarationObserved": true
+        },
+        "licenseSummary": {
+          "url": "https://pixabay.com/service/license-summary/",
+          "reviewedOn": "2026-11-02",
+          "status": "official-terms-summary-read-not-legal-certification"
+        },
+        "certificate": {
+          "status": "not-observed-not-required-for-local-comparison",
+          "acquired": false,
+          "contentIdObserved": false,
+          "contentIdAbsenceGuaranteed": false,
+          "faqUrl": "https://pixabay.com/service/faq/"
+        },
+        "sourceDownload": {
+          "status": "provided-existing-file-hash-matched-handoff",
+          "redownloaded": false
+        }
+      }
+    },
+    {
+      "id": "sfx-glass",
+      "source": {
+        "site": "Pixabay",
+        "id": "526562",
+        "title": "UI Soft Glass Ping",
+        "author": "SoundShelfStudio",
+        "pageUrl": "https://pixabay.com/sound-effects/film-special-effects-ui-soft-glass-ping-526562/",
+        "sha256": "4863d325b435675298ae0c4aa6e84d6537c836aab8af6ee5ded6d6d4b569dc0c",
+        "url": "originals/sfx-glass-4863d325b435.mp3",
+        "bytes": 49319
+      },
+      "evidence": {
+        "sourcePage": {
+          "url": "https://pixabay.com/sound-effects/film-special-effects-ui-soft-glass-ping-526562/",
+          "reviewedOn": "2026-11-02",
+          "access": "official-web-page-read",
+          "authorAndTitleObserved": true,
+          "contentLicenseDeclarationObserved": true
+        },
+        "licenseSummary": {
+          "url": "https://pixabay.com/service/license-summary/",
+          "reviewedOn": "2026-11-02",
+          "status": "official-terms-summary-read-not-legal-certification"
+        },
+        "certificate": {
+          "status": "not-observed-not-required-for-local-comparison",
+          "acquired": false,
+          "contentIdObserved": false,
+          "contentIdAbsenceGuaranteed": false,
+          "faqUrl": "https://pixabay.com/service/faq/"
+        },
+        "sourceDownload": {
+          "status": "provided-existing-file-hash-matched-handoff",
+          "redownloaded": false
+        }
+      }
+    },
+    {
+      "id": "sfx-mission",
+      "source": {
+        "site": "Pixabay",
+        "id": "534595",
+        "title": "Mission Complete Chime",
+        "author": "SoundShelfStudio",
+        "pageUrl": "https://pixabay.com/sound-effects/film-special-effects-mission-complete-chime-534595/",
+        "sha256": "bc178d6383f98f0ff31f043b49f703d4af3e2d983744cd711a501af3e3fe0dd8",
+        "url": "originals/sfx-mission-bc178d6383f9.mp3",
+        "bytes": 58514
+      },
+      "evidence": {
+        "sourcePage": {
+          "url": "https://pixabay.com/sound-effects/film-special-effects-mission-complete-chime-534595/",
+          "reviewedOn": "2026-11-02",
+          "access": "official-web-page-read",
+          "authorAndTitleObserved": true,
+          "contentLicenseDeclarationObserved": true
+        },
+        "licenseSummary": {
+          "url": "https://pixabay.com/service/license-summary/",
+          "reviewedOn": "2026-11-02",
+          "status": "official-terms-summary-read-not-legal-certification"
+        },
+        "certificate": {
+          "status": "not-observed-not-required-for-local-comparison",
+          "acquired": false,
+          "contentIdObserved": false,
+          "contentIdAbsenceGuaranteed": false,
+          "faqUrl": "https://pixabay.com/service/faq/"
+        },
+        "sourceDownload": {
+          "status": "provided-existing-file-hash-matched-handoff",
+          "redownloaded": false
+        }
+      }
+    },
+    {
+      "id": "sfx-notification",
+      "source": {
+        "site": "Pixabay",
+        "id": "523149",
+        "title": "UI Notification Pop Minimal",
+        "author": "SoundShelfStudio",
+        "pageUrl": "https://pixabay.com/sound-effects/film-special-effects-ui-notification-pop-minimal-523149/",
+        "sha256": "975b265562607f1e301e036ed97984dce215778b3a9e8f815dd35577f15df631",
+        "url": "originals/sfx-notification-975b26556260.mp3",
+        "bytes": 44303
+      },
+      "evidence": {
+        "sourcePage": {
+          "url": "https://pixabay.com/sound-effects/film-special-effects-ui-notification-pop-minimal-523149/",
+          "reviewedOn": "2026-11-02",
+          "access": "official-web-page-read",
+          "authorAndTitleObserved": true,
+          "contentLicenseDeclarationObserved": true
+        },
+        "licenseSummary": {
+          "url": "https://pixabay.com/service/license-summary/",
+          "reviewedOn": "2026-11-02",
+          "status": "official-terms-summary-read-not-legal-certification"
+        },
+        "certificate": {
+          "status": "not-observed-not-required-for-local-comparison",
+          "acquired": false,
+          "contentIdObserved": false,
+          "contentIdAbsenceGuaranteed": false,
+          "faqUrl": "https://pixabay.com/service/faq/"
+        },
+        "sourceDownload": {
+          "status": "provided-existing-file-hash-matched-handoff",
+          "redownloaded": false
+        }
+      }
+    },
+    {
+      "id": "sfx-success",
+      "source": {
+        "site": "Pixabay",
+        "id": "513565",
+        "title": "UI Success Chime",
+        "author": "SoundShelfStudio",
+        "pageUrl": "https://pixabay.com/sound-effects/technology-ui-success-chime-513565/",
+        "sha256": "f8065731be76b83a80e930a6820ad5acd1c667cd0f95f21a4c293c92584a41a2",
+        "url": "originals/sfx-success-f8065731be76.mp3",
+        "bytes": 44303
+      },
+      "evidence": {
+        "sourcePage": {
+          "url": "https://pixabay.com/sound-effects/technology-ui-success-chime-513565/",
+          "reviewedOn": "2026-11-02",
+          "access": "official-web-page-read",
+          "authorAndTitleObserved": true,
+          "contentLicenseDeclarationObserved": true
+        },
+        "licenseSummary": {
+          "url": "https://pixabay.com/service/license-summary/",
+          "reviewedOn": "2026-11-02",
+          "status": "official-terms-summary-read-not-legal-certification"
+        },
+        "certificate": {
+          "status": "not-observed-not-required-for-local-comparison",
+          "acquired": false,
+          "contentIdObserved": false,
+          "contentIdAbsenceGuaranteed": false,
+          "faqUrl": "https://pixabay.com/service/faq/"
+        },
+        "sourceDownload": {
+          "status": "provided-existing-file-hash-matched-handoff",
+          "redownloaded": false
+        }
+      }
+    },
+    {
+      "id": "sfx-swipe",
+      "source": {
+        "site": "Pixabay",
+        "id": "523625",
+        "title": "UI Swipe Navigation Soft",
+        "author": "SoundShelfStudio",
+        "pageUrl": "https://pixabay.com/sound-effects/film-special-effects-ui-swipe-navigation-soft-523625/",
+        "sha256": "ef9386a71a7d467ecc7e0056e424f50f8c6684d81ed764b4efc83dfbdfc79d2e",
+        "url": "originals/sfx-swipe-ef9386a71a7d.mp3",
+        "bytes": 44303
+      },
+      "evidence": {
+        "sourcePage": {
+          "url": "https://pixabay.com/sound-effects/film-special-effects-ui-swipe-navigation-soft-523625/",
+          "reviewedOn": "2026-11-02",
+          "access": "official-web-page-read",
+          "authorAndTitleObserved": true,
+          "contentLicenseDeclarationObserved": true
+        },
+        "licenseSummary": {
+          "url": "https://pixabay.com/service/license-summary/",
+          "reviewedOn": "2026-11-02",
+          "status": "official-terms-summary-read-not-legal-certification"
+        },
+        "certificate": {
+          "status": "not-observed-not-required-for-local-comparison",
+          "acquired": false,
+          "contentIdObserved": false,
+          "contentIdAbsenceGuaranteed": false,
+          "faqUrl": "https://pixabay.com/service/faq/"
+        },
+        "sourceDownload": {
+          "status": "provided-existing-file-hash-matched-handoff",
+          "redownloaded": false
+        }
+      }
+    },
+    {
+      "id": "sfx-tap",
+      "source": {
+        "site": "Pixabay",
+        "id": "514599",
+        "title": "UI Tap Soft Short",
+        "author": "SoundShelfStudio",
+        "pageUrl": "https://pixabay.com/sound-effects/film-special-effects-ui-tap-soft-short-514599/",
+        "sha256": "95591ddb2d32e34fc124a5200b7275781b6052b3cf3c0c0297eae57a10f670a1",
+        "url": "originals/sfx-tap-95591ddb2d32.mp3",
+        "bytes": 39288
+      },
+      "evidence": {
+        "sourcePage": {
+          "url": "https://pixabay.com/sound-effects/film-special-effects-ui-tap-soft-short-514599/",
+          "reviewedOn": "2026-11-02",
+          "access": "official-web-page-read",
+          "authorAndTitleObserved": true,
+          "contentLicenseDeclarationObserved": true
+        },
+        "licenseSummary": {
+          "url": "https://pixabay.com/service/license-summary/",
+          "reviewedOn": "2026-11-02",
+          "status": "official-terms-summary-read-not-legal-certification"
+        },
+        "certificate": {
+          "status": "not-observed-not-required-for-local-comparison",
+          "acquired": false,
+          "contentIdObserved": false,
+          "contentIdAbsenceGuaranteed": false,
+          "faqUrl": "https://pixabay.com/service/faq/"
+        },
+        "sourceDownload": {
+          "status": "provided-existing-file-hash-matched-handoff",
+          "redownloaded": false
+        }
+      }
+    }
+  ]
+}

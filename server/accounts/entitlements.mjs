@@ -42,7 +42,7 @@ export function meResponse({ user, subscriptions = [], trials = {}, now = Date.n
     user: { id: user.id, name: user.name || null, email: user.email || null },
     premium,
     gameplay: { access: 'free', allPacks: true, hosting: 'free' },
-    plus: { cosmetics: premiumActive(premium,now), presets: premiumActive(premium,now), stickers: premiumActive(premium,now) },
+    plus: { cosmetics: premiumActive(premium,now), presets: false, stickers: false },
     trials,
     serverTime: now,
   };

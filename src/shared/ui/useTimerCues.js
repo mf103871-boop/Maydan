@@ -7,9 +7,12 @@
 //   fastBelow   من هذه الثانية فما دون يُستعمل tickFast بدل tick
 //   hapticBelow من هذه الثانية فما دون يهتز الجهاز مع كل ثانية
 import { useEffect, useRef } from 'react';
+import { useCandidateDeadlineWarning } from '../fx/useDeadlineAudio.js';
 
-export function useTimerCues(timer, api, { last = 5, fastBelow = 2, hapticBelow = 3 } = {}) {
+export function useTimerCues(timer, api, { last = 5, fastBelow = 2, hapticBelow = 3, warningKey = null } = {}) {
   const { left, running, paused, resuming } = timer;
+  // Opt-in: a hidden bomb deadline must never gain this public warning.
+  useCandidateDeadlineWarning(api?.sound, warningKey, left, !!warningKey && running && !paused && resuming == null && !api?.designPreview);
   const cued = useRef(null); // آخر ثانية صدرت لها إشارة
   const rest = useRef(null); // الثانية التي توقف عندها المؤقت مؤقتًا (null بعد النهاية أو التصفير)
   useEffect(() => {

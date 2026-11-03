@@ -33,6 +33,7 @@ src/data/categories/demo[a-f].json
 
 # Licensed candidates are materialized privately in a preview runner only.
 public/audio/candidates/
+public/audio-warmth-preview/
 
 # Reviewed, redacted verification logs belong with the release review.
 !docs/reviews/**/evidence/*.log

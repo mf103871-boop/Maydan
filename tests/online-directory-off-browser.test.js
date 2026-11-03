@@ -52,6 +52,8 @@ for (const [name, engine] of [['chromium', chromium], ['webkit', webkit]]) test(
     external.push(url.href); return route.abort();
   });
   await page.goto(origin);
+  // Loading the bundle can finish before React first renders App and exposes this fixture API.
+  await page.waitForFunction(() => typeof window.show === 'function');
   for (const game of ['badeeha', 'fabraka', 'meenfina', 'ersomha']) {
     await page.evaluate(() => { window.tabSeen = false; });
     await page.evaluate(next => window.show(next, true), game);

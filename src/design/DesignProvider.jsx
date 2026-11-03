@@ -2,7 +2,7 @@ import React, { useEffect, useMemo, useState } from 'react';
 import { DesignContext } from './context.js';
 import { createDefaultDesign, designProfile, tokenStyle, validateDesignDocument } from './schema.js';
 
-export function DesignProvider({ children, document: requested, profile: forcedProfile, editing=false, onSelect, assetUrls={} }) {
+export function DesignProvider({ children, document: requested, profile: forcedProfile, editing=false, preview=false, onSelect, assetUrls={} }) {
   const [profile,setProfile]=useState(()=>typeof window==='undefined'?'portrait':designProfile(innerWidth,innerHeight));
   useEffect(()=>{const resize=()=>setProfile(designProfile(innerWidth,innerHeight));window.addEventListener('resize',resize);return()=>window.removeEventListener('resize',resize);},[]);
   const document=useMemo(()=>{const result=validateDesignDocument(requested || createDefaultDesign());return result.ok?result.document:createDefaultDesign();},[requested]);
@@ -12,6 +12,6 @@ export function DesignProvider({ children, document: requested, profile: forcedP
     for(const[key,value]of Object.entries(styles))root.style.setProperty(key,value);
     return()=>{for(const[key,value]of Object.entries(previous))value?root.style.setProperty(key,value):root.style.removeProperty(key);};
   },[document.tokens]);
-  const value=useMemo(()=>({document,profile:forcedProfile||profile,editing,onSelect,assetUrls}),[document,forcedProfile,profile,editing,onSelect,assetUrls]);
+  const value=useMemo(()=>({document,profile:forcedProfile||profile,editing,preview:preview===true,onSelect,assetUrls}),[document,forcedProfile,profile,editing,preview,onSelect,assetUrls]);
   return <DesignContext.Provider value={value}>{children}</DesignContext.Provider>;
 }

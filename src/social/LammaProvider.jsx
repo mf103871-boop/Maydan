@@ -12,6 +12,7 @@ import { createCallAuthorization } from './call-authorization.js';
 import { LAMMA_POLL_MS, lammaPollDue, refreshesLamma, rechecksCall } from './sync-policy.js';
 import { joinSocialGameRoom } from './game-launch.js';
 import { MafiaVoiceSession, emptyMafiaVoice } from './mafia-voice-session.js';
+import { emitCallFeedback } from './call-feedback.js';
 
 const Context = createContext(null);
 export const LammaContext = Context;
@@ -27,6 +28,7 @@ const callEndNotice = reason => reason === 'ownership-lost' ? 'انتقلت ال
 
 export function LammaProvider({ children }) {
   const account = useAccount(), social = useSocial(), { sound } = usePlatform();
+  const claimLiveAudio=social?.claimLiveAudio;
   const owner = account.ready && account.signedIn ? account.user?.id || null : null;
   useEffect(() => { sound.resetIdentity?.(owner || 'guest'); }, [owner, sound]);
   const ownerRef = useRef(owner); ownerRef.current = owner;
@@ -38,6 +40,7 @@ export function LammaProvider({ children }) {
   const ownedCall = activeCall?._ownerId === owner ? activeCall : null;
   const ownedCallId = ownedCall?.id;
   const activeRef = useRef(ownedCall); activeRef.current = ownedCall;
+  const heardConnection = useRef(null);
   const [notification, setNotification] = useState(null);
   const [notificationPermission, setNotificationPermission] = useState('unknown');
   const [mafiaVoice, setMafiaVoice] = useState(emptyMafiaVoice);
@@ -98,7 +101,7 @@ export function LammaProvider({ children }) {
     const connectionEpoch = connectGeneration;
     connectGeneration.current++; client.start(owner); engine.setAccount(owner);
     mafiaSession.clear();
-    setActiveCall(null); setConnectingCall(null); setNotification(null); previous.current = null; connecting.current = false;
+    setActiveCall(null); setConnectingCall(null); setNotification(null); previous.current = null; heardConnection.current = null; connecting.current = false;
     if (owner && isNativeShell()) {
       deviceRef.current = null;
       deviceReady.current = accountRef.current.ensureNativeSocialSession().then(result => {
@@ -155,18 +158,27 @@ export function LammaProvider({ children }) {
     if (before && safe.preferences.messages) {
       const group = safe.groups.find(g => g.unreadCount > (before[g.id] || 0) && client.activeGroup !== g.id &&
         !safe.preferences.mutedConversations.some(m => m.scope === 'group' && m.conversationId === g.id));
-      if (group) setNotification({ id: lammaId(), messageId: group.lastMessage?.id, userId: owner, scope: 'group', groupId: group.id, conversationId: group.id,
+      if (group) setNotification({ id: lammaId(), messageId: group.lastMessage?.seq, userId: owner, scope: 'group', groupId: group.id, conversationId: group.id,
+        audioReceipt:typeof group.lastMessage?.senderId==='string'&&group.lastMessage.senderId!==owner?claimLiveAudio?.('group',group.id,group.lastMessage?.seq):null,
         title: socialInterruption.getSnapshot().local || socialInterruption.getSnapshot().communicationLocked || !safe.preferences.previews ? 'رسالة جديدة في ميدان' : `رسالة جديدة في ${group.name}` });
     }
     previous.current = Object.fromEntries(safe.groups.map(g => [g.id, g.unreadCount]));
-  }, [safe.groups, safe.loading, safe.preferences, owner, client]);
+  }, [safe.groups, safe.loading, safe.preferences, owner, client, claimLiveAudio]);
   useEffect(() => {
     const active = activeRef.current;
+    if (active && ownedMedia.connected && ownedMedia.callId === active.id) heardConnection.current = { owner, id: active.id };
     if (active && ((ownedMedia.callId === active.id && ownedMedia.ended) || safe.calls.some(c => c.id === active.id && ended(c)))) {
+      const established = heardConnection.current?.owner === owner && heardConnection.current?.id === active.id;
+      heardConnection.current = null;
       const localOnly = ownedMedia.callId === active.id && ownedMedia.localOnly;
       const title = callEndNotice(ownedMedia.endReason);
       if (title) setNotification({ id: lammaId(), userId: owner, scope: active.scope, conversationId: active.conversationId, title });
       activeRef.current = null; client.setCallContext(null); setActiveCall(null);
+      if (established && active.scope !== 'mafia') {
+        const attempt = connectGeneration.current;
+        emitCallFeedback(sound, 'call.ended', { isNative: isNativeShell, privacy: socialInterruption.getSnapshot,
+          current: () => ownerRef.current === owner && attempt === connectGeneration.current && !activeRef.current });
+      }
       engine.disconnect({ callId: active.id, localOnly, endReason: ownedMedia.endReason }).catch(() => {});
       if (active.scope === 'mafia') mafiaSession.stop().catch(() => {});
       else if (!localOnly && client.userId) client.callAction(active.id, 'leave', deviceRef.current).catch(() => {});
@@ -179,7 +191,7 @@ export function LammaProvider({ children }) {
         activeRef.current = restored; client.setCallContext(restored); setActiveCall(restored);
       }
     }
-  }, [ownedMedia.ended, ownedMedia.connected, ownedMedia.callId, ownedMedia.localOnly, ownedMedia.endReason, safe.calls, owner, client, engine, mafiaSession]);
+  }, [ownedMedia.ended, ownedMedia.connected, ownedMedia.callId, ownedMedia.localOnly, ownedMedia.endReason, safe.calls, owner, client, engine, mafiaSession, sound]);
   // The list intentionally omits ended and unauthorized calls. Ask for the exact
   // active call to distinguish a real revocation from a stale list response.
   useEffect(() => {
@@ -223,6 +235,13 @@ export function LammaProvider({ children }) {
     !ended(call) && call.expiresAt > Date.now() && call.participants?.some(p => p.userId === owner && ['invited', 'ringing'].includes(p.state)) &&
     !safe.preferences.mutedConversations.some(m => m.scope === 'direct' && m.conversationId === call.conversationId)) || null : null;
 
+  function callFeedback(type, current) {
+    // Native CallKit owns call sounds; secret Mafia switches and automatic
+    // privacy muting must never be announced by the social call layer.
+    return emitCallFeedback(sound, type, { isNative: isNativeShell,
+      current: () => ownerRef.current === owner && current(), privacy: socialInterruption.getSnapshot });
+  }
+
   async function connect(action, { isCurrent = () => true, muted } = {}) {
     const identity = callIdentity(owner); assertIdentity(identity);
     if (!isCurrent()) throw staleCall();
@@ -245,11 +264,14 @@ export function LammaProvider({ children }) {
       await engine.connect(result, { muted: muted ?? socialInterruption.getSnapshot().privateTurn }); assertIdentity(identity);
       if (!isCurrent()) throw staleCall();
       if (attempt !== connectGeneration.current) throw new Error('تم إلغاء المكالمة.');
+      callFeedback('call.connected', () => currentIdentity(identity) && isCurrent() && attempt === connectGeneration.current && activeRef.current?.id === call.id && engine.state.connected && engine.state.callId === call.id);
       client.refresh({ quiet: true }).catch(() => {}); return result.call;
     } catch (e) {
       // A newer account, authorization or call intent owns its own cleanup.
       // Releasing an old result here could also release a reused current call.
       if (currentIdentity(identity) && attempt === connectGeneration.current && isCurrent()) {
+        if (!['STALE_ACCOUNT', 'STALE', 'PURCHASE_CANCELLED'].includes(e?.code) && e?.name !== 'AbortError')
+          callFeedback('call.failed', () => currentIdentity(identity) && isCurrent() && attempt === connectGeneration.current);
         if (result?.call?.id) await client.callAction(result.call.id, 'leave', deviceRef.current).catch(() => {});
         if (currentIdentity(identity) && attempt === connectGeneration.current && isCurrent()) { client.setCallContext(null); setActiveCall(null); activeRef.current = null; }
       }
@@ -278,6 +300,7 @@ export function LammaProvider({ children }) {
     if (!currentIdentity(identity) || attempt !== connectGeneration.current) return;
     if (call) {
       await client.callAction(call.id, 'leave', deviceRef.current);
+      callFeedback('call.ended', () => currentIdentity(identity) && attempt === connectGeneration.current);
       if (currentIdentity(identity) && attempt === connectGeneration.current) await client.refresh({ quiet: true });
     }
   }
@@ -327,8 +350,19 @@ export function LammaProvider({ children }) {
     clearNotification: () => setNotification(null), refreshGroups: options => client.refresh(options), requestNotifications, acceptGameInvite,
     startCall: target => connect(deviceId => client.startCall({ ...target, deviceId })),
     acceptCall: id => connect(deviceId => client.acceptCall(id, deviceId)),
-    declineCall: async id => { await client.callAction(id, 'reject', await deviceReady.current); await client.refresh({ quiet: true }); },
-    endCall, setCallMuted: muted => engine.mute(muted), setAudioOutput: id => engine.output(id), resumeCallAudio: () => engine.resumeAudio(),
+    declineCall: async id => {
+      const identity = callIdentity(owner); assertIdentity(identity);
+      const deviceId = await deviceReady.current; assertIdentity(identity);
+      await client.callAction(id, 'reject', deviceId);
+      callFeedback('call.ended', () => currentIdentity(identity));
+      if (currentIdentity(identity)) await client.refresh({ quiet: true });
+    },
+    endCall, setCallMuted: async muted => {
+      const identity = callIdentity(owner); assertIdentity(identity);
+      const callId = activeRef.current?.id, before = engine.state.muted;
+      await engine.mute(muted);
+      if (before !== muted) callFeedback('call.muted', () => currentIdentity(identity) && activeRef.current?.id === callId && engine.state.muted === muted);
+    }, setAudioOutput: id => engine.output(id), resumeCallAudio: () => engine.resumeAudio(),
     mafiaVoice, configureMafiaRoom: state => mafiaSession.configure(state),
     joinMafiaVoice, leaveMafiaVoice, muteMafiaVoice: muted => mafiaSession.mute(muted), returnFromMafiaVoice,
   }}>{children}</Context.Provider>;

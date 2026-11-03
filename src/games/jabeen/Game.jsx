@@ -1,4 +1,3 @@
-import { SetupPresets } from '../../plus/SetupPresets.jsx';
 import { Avatar, GameArtwork } from '../../shared/brand/art.jsx';
 import React, { useEffect, useMemo, useReducer, useRef, useState } from 'react';
 import { Screen, Button, Podium, Segment, Card } from '../../shared/ui/components.jsx';
@@ -11,6 +10,7 @@ import css from './jabeen.css';
 import { initialState, reduce, currentEntrant, standings, createItemSource, normalizeOptions, restoreSession, sessionSnapshot, SECONDS } from './logic.js';
 import { loadSession } from '../../shared/lib/session.js';
 import { useSessionSave } from '../../shared/ui/useSessionSave.js';
+import { useGameMusicScene } from '../../shared/fx/useGameMusicScene.js';
 import { useTilt } from './useTilt.js';
 
 const OPTIONS_KEY = 'options';
@@ -22,7 +22,6 @@ export function SetupOptions({ storage, api }) {
   const update = (patch) => { const next = normalizeOptions({ ...opts, ...patch }, categories); setOpts(next); storage.set(OPTIONS_KEY, next); };
   return (
     <div data-design-screen="setup.jabeen" data-design-id="options" className="stack">
-    {!api.designPreview && <SetupPresets game="jabeen" settings={opts} onApply={update} />}
     {resume && <Card className="stack resume-card">
       <style>{css}</style>
       <span className="card-title">لعبتكم بانتظاركم</span>
@@ -89,6 +88,7 @@ export function Game({ api, players, onExit, savedSession = null, designPreviewS
     return itemSource;
   }, [category, random, api.storage, saved]);
   const [state, dispatch] = useReducer(reduce, undefined, () => (designPreviewState || (saved ? saved.state : initialState(players, category, options))));
+  useGameMusicScene(api.sound, 'jabeen', state.phase);
   const profileSession = useRef(saved ? saved.profileSession || null : api.matchSnapshot?.() || null);
   const timeLeftRef = useRef(saved?.timeLeft ?? null);
   const resumeLeft = useRef(saved?.timeLeft ?? null);
@@ -97,12 +97,12 @@ export function Game({ api, players, onExit, savedSession = null, designPreviewS
     snapshot: (current) => sessionSnapshot({ players: current.entrants, settings: options, seed: seed.current, cursor: source.cursor, cycle: source.cycle,
       timeLeft: current.phase === 'play' ? timeLeftRef.current : null, profileSession: profileSession.current, state: current }),
   });
-  const [landscape, setLandscape] = useState(true);
+  const [landscape, setLandscape] = useState(() => typeof window === 'undefined' || window.innerWidth >= window.innerHeight || window.innerWidth >= 700);
   const [flash, setFlash] = useState('');
   const flashTimer = useRef(null);
   const timer = useTimer({ frozen: !!api.designPreview, seconds: state.seconds, onEnd: () => { api.sound.play('buzzer'); api.haptics.vibrate('warning'); dispatch({ type: 'TIME_UP' }); } });
   // آخر خمس ثوانٍ تُسمع (tick ثم tickFast) وتهتز، وعدّ 3-2-1 عند العودة من الإخفاء أو من وضع الجوال عموديًا.
-  useTimerCues(timer, api);
+  useTimerCues(timer, api, { warningKey: JSON.stringify(['jabeen', state.turn]) });
 
   // الفئة الواحدة لا تكفي عشرة لاعبين؛ عند نفادها نعيد خلطها بدل إنهاء المباراة.
   const exhausted = source.remaining === 0;
@@ -172,7 +172,8 @@ export function Game({ api, players, onExit, savedSession = null, designPreviewS
           <p className="muted">ضع الجوال على جبينك والشاشة نحو الآخرين. هم يصفون وأنت تخمّن.</p>
           {tilt.needsPermission && <p className="jabeen-perm">قد يطلب جهازك إذن استخدام مستشعر الحركة عند البدء. إن رفضت، يمكنك اللعب باللمس.</p>}
           {exhausted && <p className="jabeen-perm">انتهت كلمات «{state.categoryName}» — سنعيد خلطها من جديد ليكمل كل لاعب دوره.</p>}
-          <Button data-design-id="start" data-design-required="true" variant="accent" size="lg" full className="is-armed" onClick={async () => { await tilt.request(); tilt.recalibrate(); api.sound.play('whoosh'); const draw = drawForTurn(); dispatch({ type: 'BEGIN', item: draw.item, recycled: draw.recycled }); }}>ابدأ الجولة</Button>
+          {!landscape && <p className="jabeen-perm" role="status">أدر الجوال أفقيًا قبل البدء. إذا فضّلت الاتجاه الحالي، اضغط «متابعة بهذا الاتجاه» ثم ابدأ؛ الوقت لم يبدأ بعد.</p>}
+          <Button data-design-id="start" data-design-required="true" variant="accent" size="lg" full className="is-armed" onClick={async () => { if (!landscape) { setLandscape(true); return; } if (state.control === 'auto') await tilt.request(); tilt.recalibrate(); api.sound.play('whoosh'); const draw = drawForTurn(); dispatch({ type: 'BEGIN', item: draw.item, recycled: draw.recycled }); }}>{landscape ? 'ابدأ الجولة' : 'متابعة بهذا الاتجاه'}</Button>
         </div>
       )}
       {state.phase === 'play' && (

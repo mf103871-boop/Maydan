@@ -55,10 +55,10 @@ export default { useState, useRef, useCallback, useMemo, useEffect };
 `);
 
 await build({
-  stdin: { contents: "export { useTimer } from './src/shared/ui/useTimer.js';\nexport { useTimerCues } from './src/shared/ui/useTimerCues.js';\nexport { __mount, __render } from 'react';\n", resolveDir: root, loader: 'js' },
+  stdin: { contents: "export { useTimer } from './src/shared/ui/useTimer.js';\nexport { useTimerCues } from './src/shared/ui/useTimerCues.js';\nexport { useDeadlineAudio } from './src/shared/fx/useDeadlineAudio.js';\nexport { __mount, __render } from 'react';\n", resolveDir: root, loader: 'js' },
   outfile: path.join(temp, 'timer.mjs'), bundle: true, platform: 'node', format: 'esm', alias: { react: miniReact }, logLevel: 'silent',
 });
-const { useTimer, useTimerCues, __mount, __render } = await import(pathToFileURL(path.join(temp, 'timer.mjs')));
+const { useTimer, useTimerCues, useDeadlineAudio, __mount, __render } = await import(pathToFileURL(path.join(temp, 'timer.mjs')));
 
 // ── ساعة وهمية + document وهمي ──
 const realNow = Date.now;
@@ -426,6 +426,20 @@ test('useTimerCues: طلب جديد بعد «خلصت!» يسمع ثانيته �
   assert.deepEqual(sounds.slice(3), ['tick', 'tick']);
 });
 
+test('deadline hook tolerates a non-browser renderer and keeps its absent page silent', () => {
+  const previousDocument = globalThis.document, previousWindow = globalThis.window, emitted = [];
+  try {
+    delete globalThis.document; delete globalThis.window;
+    const sound = { emit: (...args) => emitted.push(args) };
+    __mount(({ remaining }) => useDeadlineAudio(sound, 'public:q1', remaining, true), { remaining: 8 });
+    __render({ remaining: 5 }); __render({ remaining: 0 });
+    assert.deepEqual(emitted, [], 'a renderer with no page cannot issue deadline sounds');
+  } finally {
+    if (previousDocument !== undefined) globalThis.document = previousDocument;
+    if (previousWindow !== undefined) globalThis.window = previousWindow;
+  }
+});
+
 test('مصدر واحد لإشارات المؤقت: الحلقة بصرية، والألعاب تستعمل useTimerCues بلا tick مباشر', () => {
   const src = (rel) => readFileSync(path.resolve(rel), 'utf8').replaceAll('\r\n', '\n');
   const ring = src('src/shared/ui/Timer.jsx');
@@ -433,9 +447,9 @@ test('مصدر واحد لإشارات المؤقت: الحلقة بصرية، �
   assert.match(ring, /export function ResumeCountdown/);
   assert.match(src('src/shared/ui/index.js'), /useTimerCues/);
   for (const [name, rel, options] of [
-    ['beep', 'src/games/beep/Game.jsx', /useTimerCues\(timer, api, \{ last: Infinity, fastBelow: 2 \}\)[\s\S]*useTimerCues\(timer, api, \{ last: Infinity, fastBelow: -1, hapticBelow: -1 \}\)/],
-    ['mamnoo', 'src/games/mamnoo/Game.jsx', /useTimerCues\(timer, api\)/],
-    ['jabeen', 'src/games/jabeen/Game.jsx', /useTimerCues\(timer, api\)/],
+    ['beep', 'src/games/beep/Game.jsx', /useTimerCues\(timer, api, \{ last: Infinity, fastBelow: 2, warningKey: JSON\.stringify\(\['beep', state\.round, state\.turn, state\.prompt\?\.id\]\) \}\)[\s\S]*useTimerCues\(timer, api, \{ last: Infinity, fastBelow: -1, hapticBelow: -1 \}\)/],
+    ['mamnoo', 'src/games/mamnoo/Game.jsx', /useTimerCues\(timer, api, \{ warningKey: JSON\.stringify\(\['mamnoo', state\.round, state\.turn\]\) \}\)/],
+    ['jabeen', 'src/games/jabeen/Game.jsx', /useTimerCues\(timer, api, \{ warningKey: JSON\.stringify\(\['jabeen', state\.turn\]\) \}\)/],
   ]) {
     const game = src(rel);
     assert.match(game, options, `${name}: يستعمل useTimerCues`);

@@ -1,4 +1,3 @@
-import { SetupPresets } from '../../plus/SetupPresets.jsx';
 import { Avatar, GameArtwork } from '../../shared/brand/art.jsx';
 import React, { useEffect, useMemo, useReducer, useRef, useState } from 'react';
 import { socialInterruption } from '../../social/interruption.js';
@@ -12,6 +11,7 @@ import { stampScreen, wait } from '../../shared/fx/index.js';
 import { initialState, reduce, currentVoter, standings, createStatementSource, normalizeOptions, tallyVotes, statementsLabel, restoreSession, sessionSnapshot, ROUNDS } from './logic.js';
 import { loadSession } from '../../shared/lib/session.js';
 import { useSessionSave } from '../../shared/ui/useSessionSave.js';
+import { useGameMusicScene } from '../../shared/fx/useGameMusicScene.js';
 
 const OPTIONS_KEY = 'options';
 const SEEN_KEY = 'seen';
@@ -22,7 +22,6 @@ export function SetupOptions({ storage, api }) {
   const update = (patch) => { const next = normalizeOptions({ ...opts, ...patch }); setOpts(next); storage.set(OPTIONS_KEY, next); };
   return (
     <div data-design-screen="setup.meenfina" data-design-id="options" className="stack">
-    {!api.designPreview && <SetupPresets game="meenfina" settings={opts} onApply={update} />}
     {resume && <Card className="stack resume-card">
       <span className="card-title">لعبتكم بانتظاركم</span>
       <p className="card-muted">العبارة {resume.state.round} من {resume.state.rounds} · {resume.players.map((p) => p.name).join('، ')}</p>
@@ -82,6 +81,7 @@ export function Game({ api, players, onExit, savedSession = null, designPreviewS
     return statementSource;
   }, [random, api.storage, saved]);
   const [state, dispatch] = useReducer(reduce, undefined, () => (designPreviewState || (saved ? saved.state : initialState(players, options))));
+  useGameMusicScene(api.sound, 'meenfina', state.phase);
   const profileSession = useRef(saved ? saved.profileSession || null : api.matchSnapshot?.() || null);
   useSessionSave({
     api, state, active: state.phase !== 'over', phaseKey: `${state.phase}:${state.round}:${state.voter}`,
@@ -89,10 +89,12 @@ export function Game({ api, players, onExit, savedSession = null, designPreviewS
   });
   const [picked, setPicked] = useState([]);
   const [leaving, setLeaving] = useState(false);   // العبارة تطير جانبًا قبل «لا أحد» (حارس ضد الضغط المزدوج)
-  const [cast, setCast] = useState(null);           // البلاطة المضغوطة في التصويت السري تنبض ثم يُرسل الصوت
+  const [cast, setCast] = useState(null); // اختيار خاص قابل للتغيير حتى التأكيد.
+  const voteLock = useRef(false);
 
   useEffect(() => { api.setInGame(state.phase !== 'over'); }, [state.phase, api]);
   useEffect(() => { setPicked([]); }, [state.round, state.phase === 'pick']);
+  useEffect(() => { setCast(null); voteLock.current = false; }, [state.round, state.voter, state.phase]);
   useEffect(() => {
     if (state.phase !== 'over') return;
     api.storage.set(SEEN_KEY, trimSeen(source.seen(), 1200));
@@ -111,9 +113,15 @@ export function Game({ api, players, onExit, savedSession = null, designPreviewS
     setTimeout(() => { setLeaving(false); if (phaseRef.current === 'pick') dispatch({ type: 'SKIP_STATEMENT' }); }, wait(300));
   };
   const castVote = (id) => {
-    if (cast) return;
-    setCast(id); api.sound.play('pop'); api.haptics.vibrate('selection');
-    setTimeout(() => { setCast(null); dispatch({ type: 'VOTE', targetId: id }); }, wait(160));
+    if (voteLock.current || phaseRef.current !== 'vote') return;
+    setCast(id); api.haptics.vibrate('selection');
+  };
+  const confirmVote = () => {
+    if (cast === null || voteLock.current || phaseRef.current !== 'vote') return;
+    voteLock.current = true;
+    const targetId = cast; setCast(null);
+    api.sound.emit?.('ui.confirm'); api.haptics.vibrate('selection');
+    dispatch({ type: 'VOTE', targetId });
   };
 
   if (state.phase === 'over') {
@@ -172,7 +180,7 @@ export function Game({ api, players, onExit, savedSession = null, designPreviewS
       )}
 
       {state.phase === 'vote' && (
-        <PassPhoneScreen player={currentVoter(state)} api={api} designPreviewShown={!!designPreviewState} hint="صوّت سرًا. لن يرى أحد اختيارك حتى الكشف." ready="أنا أصوّت">
+        <PassPhoneScreen key={`${state.round}:${state.voter}`} player={currentVoter(state)} api={api} designPreviewShown={!!designPreviewState} hint="صوّت سرًا. لن يرى أحد اختيارك حتى الكشف." ready="أنا أصوّت">
           <div className="stack">
             <div data-design-id="question" className="meen-statement">{state.statement.text}</div>
             <p className="center muted">من تختار يا {currentVoter(state).name}؟</p>
@@ -183,6 +191,8 @@ export function Game({ api, players, onExit, savedSession = null, designPreviewS
                 </button>
               ))}
             </div>
+            <p className="meen-vote-hint">اختيارك لم يُرسل بعد. يمكنك تغييره ثم تأكيده.</p>
+            <Button data-design-id="submit" data-design-required="true" variant="accent" size="lg" full disabled={cast === null} onClick={confirmVote}>تأكيد التصويت وإخفاء الشاشة</Button>
           </div>
         </PassPhoneScreen>
       )}

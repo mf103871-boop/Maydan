@@ -40,11 +40,11 @@ export function GameDetails({ id, mode: requestedMode }) {
   return (
     <Screen data-design-screen="game-details" dir={getDirection()} className="stack game-instructions-screen" style={{ '--game-accent': game.accent }} aria-label={game.name}>
       <style>{homeStyles}</style>
-      <TopBar data-design-id="topbar" title={game.name} eyebrow="لعبة" start={<IconButton data-design-id="back" label="رجوع" onClick={back}><IconBack /></IconButton>} />
-      <p className="selected-game-mode" role={mode ? undefined : 'status'}>{mode === 'online' ? 'أونلاين' : mode === 'local' ? 'مع العائلة · على جوال واحد' : 'هذا النمط غير متاح لهذه اللعبة حاليًا'}</p>
+      <TopBar data-design-id="topbar" title={game.name} eyebrow="قبل البداية" start={<IconButton data-design-id="back" label="رجوع" onClick={back}><IconBack /></IconButton>} />
+      <p className={`selected-game-mode${mode ? ` is-${mode}` : ''}`} role={mode ? undefined : 'status'}>{mode === 'online' ? 'أونلاين' : mode === 'local' ? 'مع العائلة · على جوال واحد' : 'هذا النمط غير متاح لهذه اللعبة حاليًا'}</p>
       <div data-design-id="hero" className="details-hero">
-        {/* الحامل: الرسم يهبط ثم يطفو (clay-idle)؛ الحركة على .clay-lift لا على الرسم */}
-        <div data-design-id="game-icon" className="icon clay-stage clay-idle" aria-hidden="true"><span className="clay-lift">{Icon ? <Icon /> : '🎮'}</span></div>
+        {/* رسم ثابت أثناء قراءة التعليمات، دون حركة مستمرة بجانب النص. */}
+        <div data-design-id="game-icon" className="icon clay-stage clay-static" aria-hidden="true"><span className="clay-lift">{Icon ? <Icon /> : '🎮'}</span></div>
         <h1 data-design-id="game-name">{game.name}</h1>
         <p data-design-id="game-description"><b style={{ color: 'var(--text)' }}>{game.tagline}</b><br />{game.description}</p>
         <div data-design-id="facts" className="facts">
@@ -54,12 +54,12 @@ export function GameDetails({ id, mode: requestedMode }) {
         </div>
         {note && <p className="card-muted details-plus-note">{note}</p>}
       </div>
-      <div>
-        <div className="section-title" style={{ marginBottom: 10 }}>كيف تلعب؟</div>
+      <section className="game-instructions-steps" aria-labelledby="game-steps-title">
+        <h2 className="section-title" id="game-steps-title">كيف تلعب؟</h2>
         <ol data-design-id="steps" className="steps">{game.howToPlay.map((s, i) => <li key={i} className="step" style={{ '--delay': `${120 + i * 90}ms` }}>{s}</li>)}</ol>
-      </div>
+      </section>
       <div data-design-id="actions" className="setup-sticky stack">
-        <Button data-design-id="skip-instructions" variant="accent" size="lg" full icon={<IconPlay />} disabled={!mode} onClick={skip}>تخطي التعليمات</Button>
+        <Button data-design-id="skip-instructions" variant="accent" size="lg" full icon={<IconPlay />} disabled={!mode} onClick={skip}>{mode === 'online' ? 'إلى غرف اللعبة' : 'إلى إعداد اللعبة'}</Button>
       </div>
     </Screen>
   );

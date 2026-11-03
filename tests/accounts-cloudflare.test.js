@@ -669,7 +669,7 @@ test('حذف الحساب يُبطل رمز آبل ويمسح كل صفوفه', 
 });
 
 
-test('workerd serves the Plus catalog and enforces paid cosmetics, revision CAS and private presets', async () => {
+test('workerd serves profile-only Plus, revision CAS and private read/delete access to historical presets', async () => {
   const owner=await signInDev('plus-workerd-owner'),outsider=await signInDev('plus-workerd-outsider');
   const catalog=await client().get('/api/cosmetics/catalog');assert.equal(catalog.status,200);assert.ok(catalog.data.items.find(item=>item.id==='sahra.frame'));
   assert.equal((await owner.api.patch('/api/me/cosmetics',{revision:0,selection:{frameId:'sahra.frame'}})).status,402);
@@ -677,13 +677,15 @@ test('workerd serves the Plus catalog and enforces paid cosmetics, revision CAS 
   const saved=await owner.api.patch('/api/me/cosmetics',{revision:0,selection:{frameId:'sahra.frame',badge:true}});assert.equal(saved.status,200,JSON.stringify(saved.data));assert.equal(saved.data.effective.frameId,'sahra.frame');
   assert.equal((await owner.api.patch('/api/me/cosmetics',{revision:0,selection:{badge:false}})).status,409);
   assert.equal((await outsider.api.get('/api/me/cosmetics')).data.preferred.frameId,null);
-  const created=await owner.api.post('/api/me/setup-presets',{name:'جلسة الرسم',game:'ersomha',settings:{difficulty:'easy',cycles:1}});assert.equal(created.status,201,JSON.stringify(created.data));
-  const preset=created.data.preset,endpoint=`/api/me/setup-presets/${preset.id}`;
+  const created=await owner.api.post('/api/me/setup-presets',{name:'جلسة الرسم',game:'ersomha',settings:{difficulty:'easy',cycles:1}});assert.equal(created.status,403);assert.equal(created.data.error,'FEATURE_DISABLED');
+  const preset={id:crypto.randomUUID(),revision:1};await d1.prepare('INSERT INTO plus_setup_presets(id,user_id,name,game,schema_version,settings_json,revision,created_at,updated_at) VALUES(?,?,?,?,?,?,1,?,?)').bind(preset.id,owner.userId,'جلسة الرسم','ersomha',1,JSON.stringify({difficulty:'easy',cycles:1}),Date.now(),Date.now()).run();
+  const endpoint=`/api/me/setup-presets/${preset.id}`;
   assert.equal((await outsider.api.post(endpoint+'/apply',{})).status,404);
-  const applied=await owner.api.post(endpoint+'/apply',{});assert.equal(applied.status,200);assert.equal(applied.data.settings.difficulty,'easy');assert.equal('allowReplay' in applied.data.settings,false);
+  const applied=await owner.api.post(endpoint+'/apply',{});assert.equal(applied.status,403);assert.equal(applied.data.error,'FEATURE_DISABLED');
+  const historical=await owner.api.get('/api/me/setup-presets');assert.equal(historical.data.readOnly,true);assert.equal(historical.data.presets[0].settings.difficulty,'easy');
   await d1.prepare('UPDATE subscriptions SET status=? WHERE external_id=?').bind('revoked','workerd-plus').run();
   assert.equal((await owner.api.get('/api/me/cosmetics')).data.effective.frameId,null);
-  assert.equal((await owner.api.post(endpoint+'/apply',{})).status,402);
+  assert.equal((await owner.api.post(endpoint+'/apply',{})).status,403);
   assert.equal((await owner.api.del(endpoint,{body:{revision:preset.revision}})).status,200);
 });
 

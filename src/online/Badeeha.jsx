@@ -6,6 +6,7 @@ import { Button, Card, ConfirmModal, Podium, Scoreboard } from '../shared/ui/com
 import { usePlatform } from '../platform/context.js';
 import { useAccount } from '../shared/account/context.js';
 import { vignette } from '../shared/fx/index.js';
+import { useDeadlineAudio } from '../shared/fx/useDeadlineAudio.js';
 import { CATS } from '../data/categories/index.js';
 import MaydanLogicBeta, { pointsAfterHints } from '../games/badeeha/logic.js';
 import { QuestionVisual } from '../games/badeeha/QuestionVisual.js';
@@ -149,17 +150,15 @@ export function BadeehaMatch({ state, me, isHost, disabled, act, clockOffset, sp
     return () => clearInterval(timer);
   }, [state.phase, state.deadlineAt, state._designPreview]);
   const seconds = state.phase === 'question' && state.deadlineAt ? Math.max(0, Math.ceil((state.deadlineAt - (now + clockOffset)) / 1000)) : null;
+  useDeadlineAudio(platform?.sound, state.phase === 'question' ? JSON.stringify([state.code, state.matchId, state.round, state.current?.qid, me?.id]) : null,
+    seconds, !state._designPreview && !disabled && !spectating && state.phase === 'question');
   useEffect(() => {
     if (state._designPreview) return undefined;
     vignette(seconds !== null && seconds > 0 && seconds <= 5);
     return () => vignette(false);
   }, [seconds, state._designPreview]);
-  const verdictKey = state.verdict ? `${state.verdict.qid}:${state.verdict.teamId}` : '';
-  useEffect(() => {
-    if (state._designPreview || !state.verdict) return;
-    platform?.sound?.play(state.verdict.teamId ? (state.verdict.steal ? 'steal' : 'correct') : 'wrong');
-  }, [verdictKey, state._designPreview]); // eslint-disable-line react-hooks/exhaustive-deps
-  useEffect(() => { if (!state._designPreview && state.phase === 'reveal') platform?.sound?.play('reveal'); }, [state.phase, state.current?.qid, state._designPreview]); // eslint-disable-line react-hooks/exhaustive-deps
+  // ConnectedRoom owns live authorized reveal/verdict transitions. Mounting a
+  // retained question/result here must not sound its historical outcome.
 
   const teams = state.teams.map((team, index) => {
     const seat = state.members.find((m) => m.id === team.id);
@@ -205,7 +204,7 @@ export function BadeehaMatch({ state, me, isHost, disabled, act, clockOffset, sp
               <div className="m-question-buttons">{(state.settings.deck[categoryId] || []).map((cell, index) => {
                 const done = state.used.includes(cell.qid);
                 return <button key={cell.qid} data-design-id="tier" type="button" className={`m-tier m-tier-${cell.p} ${done ? 'done' : ''}`} style={{ '--n': index }}
-                  disabled={done || disabled || spectating || !(isHost || myTurn)} onClick={() => act('open', { categoryId, index })}
+                  data-sound="none" disabled={done || disabled || spectating || !(isHost || myTurn)} onClick={() => act('open', { categoryId, index })}
                   aria-label={`${category?.name || ''}، سؤال ${cell.p} نقطة${done ? '، مستخدم' : ''}`}>
                   <b dir="ltr">{cell.p}</b><small>{done ? 'تم' : MAYDAN_TIER_LABELS[cell.p]}</small></button>;
               })}</div>
@@ -213,7 +212,7 @@ export function BadeehaMatch({ state, me, isHost, disabled, act, clockOffset, sp
           })}
         </div>
         {isHost && <div className="row-between">
-          <Button data-design-id="undo" size="sm" variant="ghost" disabled={disabled || !state.canUndo} onClick={() => act('undo')}>↶ تراجع عن آخر حكم</Button>
+          <Button data-design-id="undo" data-sound="none" size="sm" variant="ghost" disabled={disabled || !state.canUndo} onClick={() => act('undo')}>↶ تراجع عن آخر حكم</Button>
           <Button data-design-id="finish" size="sm" variant="ghost" disabled={disabled} onClick={() => setConfirmEnd(true)}>إنهاء المباراة</Button>
         </div>}
       </>}
@@ -233,14 +232,14 @@ export function BadeehaMatch({ state, me, isHost, disabled, act, clockOffset, sp
         {state.phase === 'question' && seconds === 0 && <p className="online-footnote" role="status">انتهى الوقت.</p>}
         {state.phase === 'reveal' && question && <p data-design-id="answer" className="badeeha-answer" role="status">الإجابة: {answerText(question)}</p>}
         {state.phase === 'reveal' && question?.alt?.length > 0 && <p className="online-footnote">تُقبل أيضًا: {question.alt.join('، ')}</p>}
-        {state.phase === 'question' && myTurn && <div data-design-id="tools" className="badeeha-tools" role="group" aria-label="وسائل فريقك">{TOOLS.map((tool) => <button data-design-id="tool" key={tool.id} type="button" disabled={disabled || !mine.tools[tool.id] || seconds === 0}
+        {state.phase === 'question' && myTurn && <div data-design-id="tools" className="badeeha-tools" role="group" aria-label="وسائل فريقك">{TOOLS.map((tool) => <button data-design-id="tool" data-sound="none" key={tool.id} type="button" disabled={disabled || !mine.tools[tool.id] || seconds === 0}
           onClick={() => act('tool', { tool: tool.id })} title={tool.hint}>{tool.icon} {tool.label}<small>{mine.tools[tool.id] ? tool.hint : 'استُعملت'}</small></button>)}</div>}
-        {state.phase === 'question' && (isHost ? <Button data-design-id="reveal" full variant="primary" size="lg" disabled={disabled} onClick={() => act('reveal')}>اكشف الإجابة</Button>
+        {state.phase === 'question' && (isHost ? <Button data-design-id="reveal" data-sound="none" full variant="primary" size="lg" disabled={disabled} onClick={() => act('reveal')}>اكشف الإجابة</Button>
           : <p className="online-footnote">{myTurn ? 'جاوبوا بصوتكم، والمضيف يكشف الإجابة.' : 'المضيف يكشف الإجابة ويحكم.'}</p>)}
         {state.phase === 'reveal' && (isHost ? <div data-design-id="judge" className="badeeha-judge" role="group" aria-label="من جاوب صح؟">
-          {teams.filter((team) => !team.left).map((team) => <Button data-design-id="judge-team" key={team.id} full variant={team.id === state.turnId ? 'primary' : 'secondary'} disabled={disabled} onClick={() => act('judge', { teamId: team.id })}>
+          {teams.filter((team) => !team.left).map((team) => <Button data-design-id="judge-team" data-sound="none" key={team.id} full variant={team.id === state.turnId ? 'primary' : 'secondary'} disabled={disabled} onClick={() => act('judge', { teamId: team.id })}>
             {team.id === state.turnId ? '✓' : '⚡ سرقة:'} {team.name} +{number(team.id === state.turnId && state.effect.double ? pointsNow * 2 : pointsNow)}</Button>)}
-          <Button data-design-id="judge-nobody" full variant="ghost" disabled={disabled} onClick={() => act('judge', { teamId: null })}>ولا أحد</Button>
+          <Button data-design-id="judge-nobody" data-sound="none" full variant="ghost" disabled={disabled} onClick={() => act('judge', { teamId: null })}>ولا أحد</Button>
         </div> : <p className="online-footnote">المضيف يحكم الآن.</p>)}
       </Card>}
     </div></div>

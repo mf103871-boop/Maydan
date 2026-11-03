@@ -6,8 +6,9 @@ import { pictures, questions, categories } from '../games/fabraka/content.js';
 import { normalizeOptions, questionPool, ROUNDS, validateLie, awards, bestLies } from '../games/fabraka/logic.js';
 import css from '../games/fabraka/fabraka.css';
 import { arabicNumber, minimumOnlinePlayers } from './shared.js';
-import { usePlatform } from '../platform/context.js';
 import { vignette } from '../shared/fx/index.js';
+import { usePlatform } from '../platform/context.js';
+import { useCandidateDeadlineWarning } from '../shared/fx/useDeadlineAudio.js';
 
 const number = arabicNumber;
 // Mirrors the single-device setup check in src/games/fabraka/Game.jsx: only the
@@ -117,11 +118,11 @@ function Draft({ state, me, disabled, expired, act, truth }) {
       <label className="online-field">حتى ٣ صيغ، افصل بينها بـ ؛<input data-design-id="answer-aliases" autoComplete="off" maxLength={180} value={draft.aliases} disabled={disabled || expired} onChange={(e) => setDraft({ ...draft, aliases: e.target.value })} placeholder="معكرونة؛ مكرونة" /></label>
     </details>}
     {error && <p role="alert" className="online-notice error">{error}</p>}
-    <Button data-design-id="submit" full variant="primary" size="lg" type="submit" disabled={disabled || expired}>{truth ? 'ثبّت الحقيقة وابدأ الكتابة' : 'ثبّت إجابتي'}</Button>
+    <Button data-design-id="submit" data-sound="none" full variant="primary" size="lg" type="submit" disabled={disabled || expired}>{truth ? 'ثبّت الحقيقة وابدأ الكتابة' : 'ثبّت إجابتي'}</Button>
     {truth ? <Button data-design-id="skip" full variant="ghost" disabled={disabled || expired || !state.canSkipPrompt} onClick={() => act('skip_prompt')}>سؤال آخر</Button> : <>
       {state.myHelp && <p className="online-notice" role="status">استخدمت المساعدة؛ إجابتك لا تكسب نقاط خداع أو ضحك في هذه الجولة، ويمكنك كسب نقاط الحقيقة.</p>}
-      <Button data-design-id="assistance" full variant="secondary" disabled={disabled || expired || !state.helpAvailable} onClick={() => act('help')}>{state.helpAvailable ? 'أحتاج فكرة · مساعدة واحدة في اللعبة' : 'استُخدمت مساعدتي'}</Button>
-      <Button data-design-id="skip" full variant="ghost" disabled={disabled || expired} onClick={() => act('lie', { skip: true })}>أمرّر بدون إجابة</Button>
+      <Button data-design-id="assistance" data-sound="none" full variant="secondary" disabled={disabled || expired || !state.helpAvailable} onClick={() => act('help')}>{state.helpAvailable ? 'أحتاج فكرة · مساعدة واحدة في اللعبة' : 'استُخدمت مساعدتي'}</Button>
+      <Button data-design-id="skip" data-sound="none" full variant="ghost" disabled={disabled || expired} onClick={() => act('lie', { skip: true })}>أمرّر بدون إجابة</Button>
       <p className="online-footnote">اضغط «ثبّت إجابتي» قبل انتهاء الوقت. لن نكشف أثناء الكتابة هل طابقت الحقيقة أو إجابة أخرى.</p>
     </>}
   </form>;
@@ -137,9 +138,9 @@ function Vote({ state, disabled, expired, act }) {
     {choices(choice, setChoice, 'اختيار الحقيقة')}
     <Button data-design-id="abstain" aria-pressed={choice === null} variant={choice === null ? 'secondary' : 'ghost'} disabled={disabled || expired} onClick={() => setChoice(null)}>أمتنع عن تصويت الحقيقة</Button>
     {state.settings.funnyVote && <details className="online-fab-details"><summary>أي إجابة أضحكتك؟ (اختياري)</summary><p className="online-footnote">جائزة مستقلة بلا نقاط؛ لا تُحسب إن كانت الإجابة هي الحقيقة.</p>
-      {choices(funny, setFunny, 'اختيار الإجابة المضحكة')}<Button data-design-id="funny-clear" variant="ghost" disabled={disabled || expired} onClick={() => setFunny(null)}>بدون ترشيح مضحك</Button>
+      <label className="online-field fab-funny-choice">ترشيح الضحكة<select data-design-id="option" aria-label="اختيار الإجابة المضحكة" value={funny ?? ''} disabled={disabled || expired} onChange={(e) => setFunny(e.target.value || null)}><option value="">بدون ترشيح مضحك</option>{state.options.map((option) => <option key={option.id} value={option.id} disabled={option.mine}>{option.text}{option.mine ? ' · إجابتك' : ''}</option>)}</select></label><Button data-design-id="funny-clear" variant="ghost" disabled={disabled || expired} onClick={() => setFunny(null)}>بدون ترشيح مضحك</Button>
     </details>}
-    <Button data-design-id="submit" full size="lg" variant="primary" disabled={disabled || expired || choice === undefined} onClick={() => act('vote', { optionId: choice, funnyId: funny })}>ثبّت تصويتي</Button>
+    <Button data-design-id="submit" data-sound="none" full size="lg" variant="primary" disabled={disabled || expired || choice === undefined} onClick={() => act('vote', { optionId: choice, funnyId: funny })}>ثبّت تصويتي</Button>
   </div>;
 }
 function AnswerCard({ option, members, multiplier, index = 0 }) {
@@ -171,7 +172,6 @@ function Final({ state, sorted, isHost, disabled, act }) {
   </>;
 }
 export function FabrakaMatch({ state, me, isHost, disabled, act, clockOffset, spectating = false }) {
-  const platform = usePlatform();
   const [now, setNow] = useState(Date.now()), [confirmFinish, setConfirmFinish] = useState(false), [confirmSkip, setConfirmSkip] = useState(false);
   useEffect(() => {
     if (!state.deadlineAt || state._designPreview) return;
@@ -179,12 +179,12 @@ export function FabrakaMatch({ state, me, isHost, disabled, act, clockOffset, sp
     return () => clearInterval(timer);
   }, [state.deadlineAt, state._designPreview]);
   const seconds = state.deadlineAt ? Math.max(0, Math.ceil((state.deadlineAt - (now + clockOffset)) / 1000)) : null;
+  const platform = usePlatform();
+  useCandidateDeadlineWarning(platform?.sound, JSON.stringify(['fabraka', state.code, state.matchId, state.round, state.phase, me?.id]), seconds,
+    !state._designPreview && !disabled && !spectating && ['write', 'vote'].includes(state.phase));
   const expired = seconds === 0;
-  // الكشف: قرع طبول عند كل مجموعة جديدة، وصوت الكشف عند ظهور الحقيقة (صوت فقط، لا منطق).
-  const revealShown = state.phase === 'reveal' && Boolean(state.reveal?.shown);
-  const revealGroup = state.phase === 'reveal' ? (state.reveal?.options || []).map((o) => o.id).join(',') : '';
-  useEffect(() => { if (state.phase === 'reveal' && !state.reveal?.shown) platform?.sound?.play('drumroll'); }, [state.phase, revealGroup]);
-  useEffect(() => { if (revealShown) platform?.sound?.play(state.reveal.options.some((o) => o.truth) ? 'reveal' : 'pop'); }, [revealShown]);
+  // Public reveal transitions belong to the persistent room audio projection,
+  // not this mount or the truth/owner fields of an option.
   // آخر ثلاث ثوانٍ: تظليل أحمر نابض (يُطفأ عند الخروج).
   useEffect(() => {
     if (state._designPreview) return undefined;
@@ -213,11 +213,11 @@ export function FabrakaMatch({ state, me, isHost, disabled, act, clockOffset, sp
           : state.mySubmission.submitted ? <div className="online-voted" role="status"><strong>وصلت إجابتك ✓</strong><p>{state.mySubmission.skipped ? 'مرّرت بدون إجابة.' : `إجابتك: ${state.mySubmission.text}`}</p><p>بانتظار الباقي…</p></div>
           : <Draft key={`${roundKey}:write`} state={state} me={me} disabled={disabled} expired={expired} act={act} />}
         <p className="online-footnote" role="status">ثبّت {number(state.writingCount)} من {number(state.writerCount)} إجاباتهم.</p>
-        {isHost && !state.deadlineAt && <Button data-design-id="continue" full variant="secondary" disabled={disabled} onClick={() => setConfirmFinish(true)}>إنهاء الكتابة وخلط الإجابات</Button>}
+        {isHost && !state.deadlineAt && <Button data-design-id="continue" data-sound="none" full variant="secondary" disabled={disabled} onClick={() => setConfirmFinish(true)}>إنهاء الكتابة وخلط الإجابات</Button>}
       </Card>}
       {state.phase === 'discussion' && <Card className="stack"><h2>ناقشوا الإجابات</h2><p>أي إجابة تبدو حقيقية؟ الكتّاب مخفيون حتى الكشف.</p>
         {state.options.map((o) => <div key={o.id} data-design-id="option" className="fab-opt"><span className="grow">{o.text}</span>{o.mine && <small>إجابتك</small>}</div>)}
-        {isHost && <Button data-design-id="continue" full variant="primary" disabled={disabled || expired} onClick={() => act('start_vote')}>ابدأ التصويت</Button>}
+        {isHost && <Button data-design-id="continue" data-sound="none" full variant="primary" disabled={disabled || expired} onClick={() => act('start_vote')}>ابدأ التصويت</Button>}
         <p className="online-footnote">يبدأ التصويت تلقائيًا عند انتهاء النقاش.</p>
       </Card>}
       {state.phase === 'vote' && <Card className="stack">{truthOwner ? <div role="status" className="online-waiting"><h2>أصحابك يصوّتون</h2><p>صاحب الحقيقة لا يصوّت في جولته.</p></div> : spectating ? <div role="status" className="online-waiting"><h2>اللاعبون يصوّتون</h2><p>من يصدّقون؟ تابع الكشف معهم.</p></div> : <Vote key={`${roundKey}:vote`} state={state} disabled={disabled} expired={expired} act={act} />}
@@ -225,7 +225,7 @@ export function FabrakaMatch({ state, me, isHost, disabled, act, clockOffset, sp
       </Card>}
       {state.phase === 'reveal' && <Card className="stack"><h2>{state.reveal.final ? 'الحقيقة… أم أقوى فبركة؟' : 'من كتبها؟ ومن صدّقها؟'}</h2>
         {state.reveal.options.map((o, i) => <AnswerCard key={o.id} index={i} option={o} members={players} multiplier={multiplier} />)}
-        {isHost ? <Button data-design-id="reveal" full variant="primary" disabled={disabled} onClick={() => act(state.reveal.shown ? 'next_reveal' : 'reveal')}>{state.reveal.shown ? 'المجموعة التالية' : state.reveal.final ? 'اكشف الحقيقة!' : 'اكشف هذه الإجابات'}</Button> : <p className="online-footnote">المضيف يكشف الإجابات للجميع.</p>}
+        {isHost ? <Button data-design-id="reveal" data-sound="none" full variant="primary" disabled={disabled} onClick={() => act(state.reveal.shown ? 'next_reveal' : 'reveal')}>{state.reveal.shown ? 'المجموعة التالية' : state.reveal.final ? 'اكشف الحقيقة!' : 'اكشف هذه الإجابات'}</Button> : <p className="online-footnote">المضيف يكشف الإجابات للجميع.</p>}
       </Card>}
       {state.phase === 'result' && <>
         <Card className="stack">{state.roundReason ? <p className="online-notice">{state.roundReason === 'owner_left' ? 'غادر صاحب الحقيقة قبل تثبيت إجابته.' : state.roundReason === 'skipped' ? 'تجاوز المضيف هذه الجولة.' : 'انتهى وقت كتابة الحقيقة.'} انتقلوا للجولة التالية؛ لا نقاط في هذه الجولة.</p> : <>
@@ -234,7 +234,7 @@ export function FabrakaMatch({ state, me, isHost, disabled, act, clockOffset, sp
           {state.options.map((o, i) => <AnswerCard key={o.id} index={i} option={o} members={players} multiplier={multiplier} />)}
         </>}
         <h2>حصيلة الجولة</h2>{players.map((p, i) => { const row = state.breakdown[p.id] || {}; return <div key={p.id} data-design-id="round-scores" className="online-fab-total" style={{ '--i': i }}><Avatar index={p.avatar} /><div className="grow"><b>{p.name}</b><small>{row.host ? 'صاحب الحقيقة' : row.byWriting ? 'عرف الحقيقة أثناء الكتابة' : `${row.truth ? 'اكتشف الحقيقة · ' : ''}${number(row.fooled || 0)} خدعات`}</small></div><strong>+{number(row.points || 0)}</strong></div>; })}
-        {isHost ? <Button data-design-id="continue" full size="lg" variant="primary" disabled={disabled} onClick={() => act('next')}>{state.round === state.rounds ? 'عرض النتيجة النهائية' : 'الجولة التالية'}</Button> : <p className="online-footnote">بانتظار المضيف للمتابعة.</p>}
+        {isHost ? <Button data-design-id="continue" data-sound="none" full size="lg" variant="primary" disabled={disabled} onClick={() => act('next')}>{state.round === state.rounds ? 'عرض النتيجة النهائية' : 'الجولة التالية'}</Button> : <p className="online-footnote">بانتظار المضيف للمتابعة.</p>}
         </Card>
       </>}
       {expired && <p className="online-footnote" role="status">انتهى الوقت، جاري تحديث الجولة…</p>}

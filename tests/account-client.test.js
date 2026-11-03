@@ -397,7 +397,8 @@ test('الجدار يعرض السبب والخطتين والشروط وروا�
   const html = mod.renderPaywall({ reason: 'trial', game: 'beep' });
   assert.match(html, /خلّي لك بصمة مع ميدان بلس/);
   assert.match(html, /كل الألعاب والحزم والغرف مجانية/);
-  for (const bullet of ['إطارات وصور وبطاقات بروفايل مميزة', 'ثيمات مجلسك لكل الموجودين', 'ملصقات وتفاعلات أصلية', 'مجموعات جديدة تُضاف تباعًا', 'عشر جلسات جاهزة على أجهزتك']) assert.match(html, new RegExp(bullet));
+  for (const bullet of ['شكل متكامل لبروفايلك مع بقاء صورتك الشخصية', 'إطارات مميزة لصورتك، تختارها وتستخدمها بشكل مستقل']) assert.match(html, new RegExp(bullet));
+  assert.doesNotMatch(html, /ثيمات مجلس|ملصقات وتفاعلات|جلسات جاهزة|مجموعات جديدة تُضاف/);
   assert.match(html, /data-plan="monthly"/);
   assert.doesNotMatch(html, /data-plan="yearly"/, 'لا خطة سنوية قبل توفر سعرها');
   assert.doesNotMatch(html, /الأوفر/, 'لا ادعاء توفير بلا مقارنة أسعار المتجر');
@@ -412,7 +413,7 @@ test('الجدار يعرض السبب والخطتين والشروط وروا�
   assert.doesNotMatch(html, /استعادة المشتريات/, 'الاستعادة لأجهزة iOS فقط');
 });
 
-test('legacy paywall reasons explain free play, while presets describe paid convenience', () => {
+test('legacy paywall entry reasons describe only current profile/frame subscription', () => {
   for (const reason of ['pack','room','resume','settings']) assert.match(mod.renderPaywall({reason}),/كل الألعاب والحزم والغرف مجانية/);
-  assert.match(mod.renderPaywall({reason:'presets'}),/كل خيارات اللعب اليدوية مجانية/);
+  assert.match(mod.renderPaywall({reason:'presets'}),/شكل متكامل لبروفايلك/); assert.doesNotMatch(mod.renderPaywall({reason:'presets'}),/جلسات جاهزة|ثيمات مجلس|ملصقات وتفاعلات/);
 });

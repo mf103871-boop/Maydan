@@ -1,4 +1,3 @@
-import { SetupPresets } from '../../plus/SetupPresets.jsx';
 import { Avatar, GameArtwork } from '../../shared/brand/art.jsx';
 import React, { useEffect, useMemo, useReducer, useRef, useState } from 'react';
 import { Screen, Button, Podium, Segment, Card, Scoreboard } from '../../shared/ui/components.jsx';
@@ -11,6 +10,7 @@ import css from './mamnoo.css';
 import { initialState, reduce, currentTeam, opponentLabel, standings, createCardSource, normalizeOptions, restoreSession, sessionSnapshot, SECONDS, ROUNDS, MAX_SKIPS } from './logic.js';
 import { loadSession } from '../../shared/lib/session.js';
 import { useSessionSave } from '../../shared/ui/useSessionSave.js';
+import { useGameMusicScene } from '../../shared/fx/useGameMusicScene.js';
 
 const OPTIONS_KEY = 'options';
 const SEEN_KEY = 'seen';
@@ -21,7 +21,6 @@ export function SetupOptions({ storage, api }) {
   const update = (patch) => { const next = normalizeOptions({ ...opts, ...patch }); setOpts(next); storage.set(OPTIONS_KEY, next); };
   return (
     <div data-design-screen="setup.mamnoo" data-design-id="options" className="stack">
-    {!api.designPreview && <SetupPresets game="mamnoo" settings={opts} onApply={update} />}
     {resume && <Card className="stack resume-card">
       <span className="card-title">لعبتكم بانتظاركم</span>
       <p className="card-muted">الجولة {resume.state.round} من {resume.state.rounds} · {resume.teams.map((t) => t.name).join(' و')}</p>
@@ -50,7 +49,7 @@ function Round({ state, dispatch, api, source, timeLeftRef, resumeLeft }) {
   useEffect(() => { if (state.phase === 'play') { timer.reset(resumeLeft.current ?? state.seconds); resumeLeft.current = null; timer.start(); } else if (timer.running) timer.pause(); }, [state.phase, state.round, state.turn]); // eslint-disable-line react-hooks/exhaustive-deps
   useEffect(() => { timeLeftRef.current = timer.left; }, [timer.left, timeLeftRef]);
   // آخر خمس ثوانٍ: tick ثم tickFast في الأخيرتَين، واهتزاز في آخر ثلاث؛ 3-2-1 عند الاستئناف.
-  useTimerCues(timer, api);
+  useTimerCues(timer, api, { warningKey: JSON.stringify(['mamnoo', state.round, state.turn]) });
   // الإرسال فوري؛ صنف الوميض يقع على البطاقة (لا على .stack الحاوي للمؤقت)، والختم/الوميض طبقات ثابتة في body.
   const act = (type, sound, haptic, cls) => {
     api.sound.play(sound); api.haptics.vibrate(haptic);
@@ -126,6 +125,7 @@ export function Game({ api, teams, onExit, savedSession = null, designPreviewSta
     return cardsSource;
   }, [random, api.storage, saved]);
   const [state, dispatch] = useReducer(reduce, undefined, () => (designPreviewState || (saved ? saved.state : initialState(teams, options))));
+  useGameMusicScene(api.sound, 'mamnoo', state.phase);
   const profileSession = useRef(saved ? saved.profileSession || null : api.matchSnapshot?.() || null);
   const timeLeftRef = useRef(saved?.timeLeft ?? null);
   const resumeLeft = useRef(saved?.timeLeft ?? null);

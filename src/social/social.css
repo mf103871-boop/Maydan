@@ -143,6 +143,48 @@
 }
 @media (prefers-reduced-motion: reduce) { .social-typing > span { animation: none; } }
 
-.social-profile-link { font: inherit; color: inherit; text-align: start; min-height: 44px; }
+.social-profile-link { font: inherit; color: inherit; text-align: start; min-height: 44px; min-width:44px; }
 .social-open-chat { color: var(--accent); flex-shrink: 0; }
 .social-avatar > .player-avatar { width: 100% !important; height: 100% !important; }
+
+/* P03/P04: readable conversation surfaces share the menu palette. No colour
+   or decoration changes membership, presence, message delivery or voice state. */
+.social-chat-head { border-bottom-color:#ded0df; background:#fffaf3; }
+.social-chat-person h2 { color:#44264f; line-height:1.5; }
+.social-chat-person p { font-size:12px; line-height:1.6; color:#715e78; }
+.social-person-row { border:1px solid #e8dccc; background:#fffcf6; border-radius:15px; margin-bottom:8px; box-shadow:0 2px 0 #e8dccb55; }
+.social-person-row.is-selected { border-color:#c9afd9; background:#f0e5f6; }
+.social-person-row:hover { background:#faf3fc; }
+.social-person-title strong { font-size:15px; }
+.social-person-title time { font-size:11px; }
+.social-person-sub { font-size:13px; color:#76617d; }
+.social-tabs > button.is-active { color:#4f2f60; background:#e9d9f2; box-shadow:inset 0 1px 0 #fff8; }
+.social-bubble { background:#eee3f6; border-color:#ddcce7; color:#3e284a; border-radius:17px 6px 17px 17px; box-shadow:0 2px 0 #d8c7e333; }
+.is-theirs .social-bubble { background:#fffdf7; border-color:#e6d7c3; box-shadow:0 2px 0 #e8dccb55; }
+.social-bubble > p { font-size:15px; line-height:1.85; }
+.social-day>span { color:#715b7a; background:#eee5ed; border-color:#e3d7e5; font-size:12px; padding:4px 12px; }
+.social-message-meta { font-size:11px; color:#746376; line-height:1.5; }
+.social-delivery>span { font-size:11px; }
+.social-message-sender>strong { font-size:13px; }
+.social-message-actions>.social-icon-button { color:#755f7e; }
+.social-message-menu { border-color:#d8c5e1; box-shadow:0 6px 20px #43274820; }
+.social-message-menu>button { min-height:44px; font-size:13px; }
+.social-composer { background:#fffbf5; border-color:#ddcedf; }
+.social-composer textarea { border-color:#d6c5df; background:#fffdf8; box-shadow:inset 0 1px 2px #4b295006; }
+.social-composer textarea:focus-visible { outline:2px solid #13858c; outline-offset:2px; }
+.social-composer-note,.social-character-count { font-size:12px; color:#77617b; line-height:1.6; }
+.social-send { background:linear-gradient(150deg,#12939a,#07747c); border:1px solid #096c73; box-shadow:inset 0 1px 0 #ffffff40,0 3px 0 #075b61; }
+.social-search-results .social-search-result { padding:12px; border:1px solid #e2d5c6; border-radius:14px; background:#fffcf7; margin-bottom:8px; }
+.social-search-result small,.social-request-identity small { font-size:12px; line-height:1.6; }
+.social-request-row { padding:13px; border:1px solid #e2d5c6; border-radius:15px; margin-bottom:9px; background:#fffcf7; }
+.social-request-actions { padding-inline-start:0; }
+.social-search-hint { color:#735e7b; font-size:13px; }
+.social-dialog .social-menu-options button { min-height:44px; border-color:#d9c7e3; background:#fcf7ff; }
+.social-dialog .social-menu-options .is-danger { background:#fff1ec; border-color:#eac7bd; }
+.social-chat .social-load-older { min-height:44px; font-size:13px; }
+@media(max-width:760px) { .social-chat-head { padding:10px; }.social-message-scroll { padding:14px 11px; gap:10px; }.social-message-meta,.social-delivery>span { font-size:11px; }.social-bubble>p { font-size:15px; }.social-person-sub { font-size:13px; }.social-person-title strong { font-size:15px; } }
+@media(max-width:359px) { .social-message { max-width:96%; }.social-bubble { padding-inline:10px; }.social-message-actions>.social-icon-button { width:44px; flex-basis:44px; }.social-composer-row { gap:7px; }.social-composer textarea { padding-inline:10px; } }
+html[data-large-text="true"] .social-bubble>p { font-size:18px; }
+html[data-large-text="true"] .social-person-sub,html[data-large-text="true"] .social-chat-person p { font-size:15px; }
+html[data-high-contrast="true"] .social-bubble,html[data-high-contrast="true"] .social-person-row { border-color:#6b4e7a; }
+html[data-high-contrast="true"] .social-message-meta,html[data-high-contrast="true"] .social-person-sub { color:#4e315d; }

@@ -57,7 +57,9 @@ try {
       'ios/Maydan/Assets.xcassets/AppIcon.appiconset/icon-[0-9][0-9].png',
       'ios/Maydan/Assets.xcassets/AppIcon.appiconset/icon-[0-9][0-9][0-9].png',
       'media/demo/*', 'src/data/categories/demo[a-f].json',
-      'public/audio/candidates/*',
+      // Licensed preview media is materialized only for an isolated app build;
+      // source archives may carry its authenticated ciphertext, never raw audio.
+      'public/audio/candidates/*', 'public/audio-warmth-preview/*',
       '.wrangler/*', '.dev.vars', '.dev.vars.*', '.env', '.env.*',
     ];
     execFileSync('zip', ['-qr', zip, '.', '-x', ...excludes], { cwd: ROOT });

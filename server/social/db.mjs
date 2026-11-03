@@ -2,7 +2,7 @@ import { randomHex } from '../accounts/jwt.mjs';
 import { fail } from '../room-model.mjs';
 import { sha256 } from '../protocol.mjs';
 import { pairOf, publicProfile, messageView } from './model.mjs';
-import { plusAccessSql, plusActiveFor } from '../plus/access.mjs';
+import { cosmeticAccessSql, canUseCosmetic } from '../plus/access.mjs';
 import { ensurePlayerProfile, profileAchievementStatements } from '../profiles/db.mjs';
 import { objectionableText } from '../moderation/filter.mjs';
 import { attachmentGuard } from '../lamma/media.mjs';
@@ -244,7 +244,7 @@ export async function sendMessage(env, userId, conversationId, text, clientId, n
   await chargeUser(env, userId, 'message_day', now);
   const insert=stmt(env, `INSERT OR IGNORE INTO social_messages(conversation_id,sender_id,client_id,text,original_hash,created_at,kind,attachment_id,room_invite_id,sticker_id,sticker_version)
     SELECT c.id,?,?,?,?,?,?,?,?,?,? FROM social_conversations c WHERE c.id=? AND (c.user_low=? OR c.user_high=?)
-    AND ${allowedConversation('c')} ${kind==='sticker'?`AND ${plusAccessSql(env,ident(userId))}`:''} ${content.attachmentId?`AND ${attachmentGuard('direct',conversationId,userId,content.attachmentId)}`:''} AND (SELECT COUNT(*) FROM social_messages WHERE sender_id=? AND created_at>?)<60`,
+    AND ${allowedConversation('c')} ${kind==='sticker'?`AND ${cosmeticAccessSql(env,ident(userId),content.stickerId,now)}`:''} ${content.attachmentId?`AND ${attachmentGuard('direct',conversationId,userId,content.attachmentId)}`:''} AND (SELECT COUNT(*) FROM social_messages WHERE sender_id=? AND created_at>?)<60`,
   userId, clientId, text, hash, now,kind,content.attachmentId||null,content.roomInvitationId||null,content.stickerId||null,content.stickerVersion||null, conversationId, userId, userId, userId, now - 60_000);
   const statements=[insert,pushJob(env,`direct-${userId}-${clientId}`,otherId,{category:'messages',actorId:userId,scope:'direct',conversationId,clientId},`EXISTS(SELECT 1 FROM social_messages WHERE sender_id=${ident(userId)} AND client_id=${ident(clientId)} AND conversation_id=${ident(conversationId)})`)];
   if(content.attachmentId)statements.push(stmt(env,'UPDATE social_attachments SET message_seq=(SELECT seq FROM social_messages WHERE sender_id=? AND client_id=? AND attachment_id=?) WHERE id=? AND message_seq IS NULL',userId,clientId,content.attachmentId,content.attachmentId));
@@ -253,7 +253,7 @@ export async function sendMessage(env, userId, conversationId, text, clientId, n
     WHERE m.sender_id=? AND m.client_id=? AND (c.user_low=? OR c.user_high=?) AND ${allowedConversation('c')}`, userId, clientId, userId, userId);
   if (!row) {
     await requireConversation(env, userId, conversationId);
-    if(kind==='sticker'&&!await plusActiveFor(env,userId))fail('PLUS_REQUIRED',403);
+    if(kind==='sticker'&&!await canUseCosmetic(env,userId,content.stickerId,now))fail('PLUS_REQUIRED',403);
     fail('RATE_LIMIT', 429);
   }
   if (row.conversation_id !== conversationId || row.original_hash !== hash) fail('CONFLICT', 409);

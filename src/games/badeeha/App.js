@@ -1,4 +1,6 @@
 import { Avatar, GameArtwork } from '../../shared/brand/art.jsx';
+import { useGameMusicScene } from '../../shared/fx/useGameMusicScene.js';
+import { useCandidateDeadlineWarning } from '../../shared/fx/useDeadlineAudio.js';
 import { Podium } from '../../shared/ui/components.jsx';
 // طبقات التأثير المشتركة (ختم/وميض/تظليل) تعيش في document.body لا في شجرة الشاشة،
 // و wait() تصفّر كل مهلة بصرية تحت «تقليل الحركة».
@@ -21,7 +23,6 @@ import { BADEEHA_KEYS as MAYDAN_BETA_KEYS } from "./keys.js";
 import { readBadeehaState, RETIRED_GAME_NOTICE } from "./persistence.js";
 import { questionAssistance } from "./assistance.js";
 import { CategoryCover } from "./Cover.jsx";
-import { SetupPresets } from "../../plus/SetupPresets.jsx";
 import { questionMedia, deckMedia } from "../../shared/media/resolve.js";
 import {
   preloadMedia,
@@ -133,6 +134,9 @@ function MaydanBeta({ api, entry = 'home' } = {}) {
     hapticsOn = platformSettings ? platformSettings.hapticsOn !== !1 : !0,
     reducedMotion = platformSettings ? !!platformSettings.reducedMotion : !1,
     packLocked = () => false;
+  useGameMusicScene(api?.sound, 'badeeha', screen, screen === 'question' && paused);
+  useCandidateDeadlineWarning(api?.sound, current ? JSON.stringify(['badeeha', current.categoryId, current.index, currentQuestion?.qid]) : null, timeLeft,
+    !isDesignPreview && effectiveSoundOn && screen === 'question' && !!current && !revealed && !paused);
   pausedRef.current = paused;
   function setScreen(next, dir) {
     (setNavDir(dir || "forward"), setScreenState(next));
@@ -787,7 +791,7 @@ function MaydanBeta({ api, entry = 'home' } = {}) {
       setScreen("result"),
       // القصاصات على canvas المنصة بدل 28 عنصر DOM؛ قرار «تقليل الحركة» من إعدادات المنصة
       window.setTimeout(() => {
-        (playSfx("win"), reducedMotion || (api && api.confetti ? api.confetti : confettiFx).fire());
+        reducedMotion || (api && api.confetti ? api.confetti : confettiFx).fire();
       }, 360),
       haptic("win"));
   }
@@ -1160,7 +1164,6 @@ ${record.answered} من ${record.total} سؤالًا`,
       landingScreen === "setup" && hBeta("div", { className: "m-two" },
         hBeta("button", { "data-design-id": "history", type: "button", className: "m-secondary m-small", onClick: () => setScreen("history") }, "النتائج السابقة"),
         hBeta("button", { "data-design-id": "rules", type: "button", className: "m-secondary m-small", onClick: () => setShowRules(!0) }, "طريقة اللعب")),
-      !isDesignPreview && hBeta(SetupPresets, { game: "badeeha", settings: { mode, roundSize, timerLength, categories: selectedCategories }, onApply: (settings) => { setMode(settings.mode); setRoundSize(settings.roundSize); setTimerLength(settings.timer); setSelectedCategories(settings.categories); setSetupError(""); } }),
       hBeta(
         "div",
         { className: "m-panel m-setup-panel", "data-step": "١" },

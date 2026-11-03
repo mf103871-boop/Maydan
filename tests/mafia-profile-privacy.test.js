@@ -61,6 +61,8 @@ test('active Mafia blocks public cosmetic/profile edits including clear and imag
 for(const existing of [false,true])test(`D1 lease acquisition between cosmetics check and ${existing?'update':'insert'} prevents the public mutation`,async t=>{
   const h=await setup(t),a=await h.person(true);
   if(existing)assert.equal((await h.api(a,'/api/me/cosmetics',{selection:{frameId:'sahra.frame'},revision:0},'PATCH')).status,200);
+  const beforeSelection=(await h.api(a,'/api/me/cosmetics')).body;
+  const beforeCosmeticsRow=await h.env.DB.prepare('SELECT * FROM plus_cosmetics WHERE user_id=?').bind(a.id).first();
   const before=await h.row(a);h.notifications.length=0;
   const batch=h.env.DB.batch.bind(h.env.DB);let intercepted=false;
   t.mock.method(h.env.DB,'batch',async statements=>{
@@ -70,7 +72,11 @@ for(const existing of [false,true])test(`D1 lease acquisition between cosmetics 
   assertLocked(await h.api(a,'/api/me/cosmetics',{selection:{frameId:'artist.frame'},revision:existing?1:0},'PATCH'));
   assert.equal(intercepted,true);assert.deepEqual(await h.row(a),before);assert.deepEqual(h.notifications,[]);
   const selection=(await h.api(a,'/api/me/cosmetics')).body;
-  assert.equal(selection.revision,existing?1:0);assert.equal(selection.preferred.frameId,existing?'sahra.frame':null);
+  assert.equal(selection.revision,beforeSelection.revision);
+  assert.deepEqual(selection.preferred,beforeSelection.preferred);
+  assert.deepEqual(selection.effective,beforeSelection.effective);
+  assert.notEqual(selection.preferred.frameId,'artist.frame');assert.notEqual(selection.effective.frameId,'artist.frame');
+  assert.deepEqual(await h.env.DB.prepare('SELECT * FROM plus_cosmetics WHERE user_id=?').bind(a.id).first(),beforeCosmeticsRow);
 });
 
 for(const image of [false,true])test(`D1 start/write race also fences ${image?'public image deletion':'legacy identity changes'} and dependent writes`,async t=>{

@@ -1,5 +1,5 @@
-// قفل المحتوى في الواجهة: الحزم المجانية في «بَديهة»، وشارات الرئيسية، وجدار «ميدان بلس»
-// في تفاصيل اللعبة. تُبنى الشاشات بـ esbuild وتُصيَّر بـ react-dom/server كما في بقية اختبارات الواجهة.
+// مجانية اللعب: حزم «بَديهة» وبطاقات الرئيسية والانتقال من التعليمات دون استهلاك تجربة أو طلب بلس.
+// تُبنى الشاشات بـ esbuild وتُصيَّر بـ react-dom/server كما في بقية اختبارات الواجهة.
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync, mkdtempSync, mkdirSync, rmSync } from 'node:fs';
@@ -133,13 +133,31 @@ const stripStyle = (html) => html.replace(/<style>[\s\S]*?<\/style>/g, '');
 const setupMarkup = (account) => { forceSetup = true; try { return stripStyle(ui.badeeha(account)); } finally { forceSetup = false; } };
 const count = (html, needle) => html.split(needle).length - 1;
 
-// شجرة عناصر React: بحث عن أول عنصر يحمل نصًا معيّنًا بين أبنائه.
-function findByText(node, text) {
+// هوية الإجراء مستقرة حتى عندما تتغير تسميته بين الإعداد المحلي والغرف الأونلاين.
+function findByDesignId(node, id) {
   if (!node || typeof node !== 'object') return null;
-  if (Array.isArray(node)) { for (const child of node) { const hit = findByText(child, text); if (hit) return hit; } return null; }
+  if (Array.isArray(node)) { for (const child of node) { const hit = findByDesignId(child, id); if (hit) return hit; } return null; }
   const children = node.props && node.props.children;
-  if (children === text) return node;
-  return findByText(children, text);
+  if (node.props?.['data-design-id'] === id) return node;
+  return findByDesignId(children, id);
+}
+
+function assertFreeStart(tree, account, target, label) {
+  const button = findByDesignId(tree, 'skip-instructions');
+  assert.ok(button, 'يوجد إجراء رئيسي للانتقال من التعليمات');
+  assert.equal(button.props.disabled, false, 'الانتقال متاح دون بلس');
+  assert.equal(button.props.children, label);
+  const previous = Object.getOwnPropertyDescriptor(globalThis, 'location');
+  const location = { hash: '#/' };
+  Object.defineProperty(globalThis, 'location', { value: location, configurable: true });
+  try {
+    button.props.onClick();
+    assert.equal(location.hash, target, 'الإجراء ينتقل فعلًا إلى إعداد اللعبة أو غرفها');
+    assert.deepEqual(account.calls, [], 'لا جدار دفع ولا استهلاك تجربة قديمة');
+  } finally {
+    if (previous) Object.defineProperty(globalThis, 'location', previous);
+    else delete globalThis.location;
+  }
 }
 
 // ── ٣) مُنتقي «بَديهة»: كل حزمة غير مجانية تحمل is-locked، والمشترك لا يرى قفلًا ──
@@ -163,8 +181,10 @@ test('بلا حساب (NULL_ACCOUNT) لا يظهر أي قفل في المُنت
 // ── ٤) شارات الرئيسية ─────────────────────────────────────────────────────
 test('Home advertises free games consistently, including exhausted legacy trials', () => {
   for (const account of [fakeAccount(),fakeAccount({trials:{beep:true,mamnoo:true}}),fakeAccount({premium:true})]) {
-    const html=ui.home(account);
-    assert.equal(count(html,'data-design-id="game-card.'), TRIAL_GAMES.length+1);
+    const html=stripStyle(ui.home(account));
+    const cards=[...html.matchAll(/<button\b[^>]*\bdata-design-id="game-card\.([a-z0-9-]+)"[^>]*>/g)];
+    assert.deepEqual(cards.map(match=>match[1]).sort(), ['badeeha',...TRIAL_GAMES].sort());
+    for (const [tag,id] of cards) assert.doesNotMatch(tag,/\bdisabled(?:\s|=|>)/,`${id} متاحة`);
     assert.doesNotMatch(html,/١٠ فئات مجانية|مباراة مجانية|card-badge[^>]*>بلس/);
   }
 });
@@ -173,17 +193,18 @@ test('game details start previously locked games without a paywall', () => {
   for (const account of [fakeAccount({trials:{beep:true}}),fakeAccount({premium:true})]) {
     const {tree,markup}=ui.detailsTree('beep',account);
     assert.match(markup,/اللعب واستضافة الغرف والانضمام مجانًا/);
-    findByText(tree,'تخطي التعليمات').props.onClick();
-    assert.deepEqual(account.calls,[]);
+    assertFreeStart(tree, account, '/play/beep?mode=local', 'إلى إعداد اللعبة');
   }
   assert.match(ui.detailsTree('badeeha',fakeAccount()).markup,/كل الفئات مجانية/);
 });
 
 test('ارسمها تعرض استضافة الغرف والانضمام المجاني ولا تعرض جهازًا واحدًا أو حزم بديهة', () => {
-  const { markup } = ui.detailsTree('ersomha', fakeAccount({ trials: { ersomha: true } }));
+  const account = fakeAccount({ trials: { ersomha: true } });
+  const { tree, markup } = ui.detailsTree('ersomha', account);
   assert.match(markup, /الانضمام مجانًا/);
   assert.match(markup, /أونلاين/);
-  assert.match(markup, /تخطي التعليمات/);
+  assert.match(markup, /إلى غرف اللعبة/);
+  assertFreeStart(tree, account, '/online/ersomha?mode=online', 'إلى غرف اللعبة');
   assert.doesNotMatch(markup, /العب على جهاز واحد|١٠ فئات مجانية/);
   assert.doesNotMatch(stripStyle(markup), /disabled/);
 });

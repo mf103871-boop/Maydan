@@ -210,13 +210,16 @@ export class RoomClient {
     // arrived before React rendered it. Protocol scripts default to current state.
     const { matchId = this.state.matchId, round = this.state.round, phaseId = this.state.phaseId, ...payload } = fields;
     const requestId = `${Date.now()}-${++this.counter}`;
-    return new Promise((resolve, reject) => {
+    const result = new Promise((resolve, reject) => {
       const pending={resolve,reject,...(this.state.game==='mafia'?{metricsAt:Date.now()}: {})};
       const timer = setTimeout(() => { if(!this.pending.delete(requestId))return;this.settleCommandMetric(pending,'timeout');reject(new ClientError('TIMEOUT')); }, 10_000);
       pending.timer=timer;this.pending.set(requestId,pending);
       try { this.ws.send(JSON.stringify({ type, ...payload, requestId, matchId, round, ...(this.state.game === 'mafia' ? { phaseId } : {}) })); }
       catch { clearTimeout(timer); this.pending.delete(requestId); this.settleCommandMetric(pending,'transport');reject(new ClientError('DISCONNECTED')); }
     });
+    // Local-only metadata: no new protocol fields or change to Promise semantics.
+    Object.defineProperty(result,'requestId',{value:requestId,enumerable:false,writable:false,configurable:false});
+    return result;
   }
   rejectPending(code) {
     for (const p of this.pending.values()) { clearTimeout(p.timer);this.settleCommandMetric(p,'transport');p.reject(new ClientError(code)); }

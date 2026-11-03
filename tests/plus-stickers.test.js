@@ -8,6 +8,8 @@ import { routeSocial } from '../server/social/router.mjs';
 import { errorResponse } from '../server/protocol.mjs';
 import { SocialClient } from '../src/social/client.js';
 import { LammaClient } from '../src/social/lamma-client.js';
+import { getCosmetic } from '../src/plus/catalog.js';
+import { seedLegacyCosmeticLicense } from './helpers-legacy-cosmetics.js';
 
 async function fixture(t) {
   const env = { DB: createLocalD1() }; t.after(() => env.DB.close());
@@ -35,20 +37,24 @@ async function fixture(t) {
 }
 const stickerBody = () => ({ kind: 'sticker', stickerId: 'sahra.sticker.1', clientId: crypto.randomUUID() });
 
-test('stickers require Plus for new sends but retain historical display, fallback text, and retry identity after expiry', async t => {
+test('membership alone cannot send stickers; historical licensed sends retain display and retry identity after revocation', async t => {
   const h = await fixture(t), a = await h.user(), b = await h.user(), c = await h.friends(a, b);
   const path = `/conversations/${c}/messages`, body = stickerBody();
   assert.equal((await h.api(a, path, 'POST', body)).status, 403);
   assert.equal((await h.api(a, path, 'POST', { text: 'مجاني', clientId: crypto.randomUUID() })).status, 200);
   await h.plus(a);
+  assert.equal((await h.api(a,path,'POST',body)).status,403,'current Plus does not include stickers');
+  const orderId=await seedLegacyCosmeticLicense(h.env,a.id,[body.stickerId]);
   assert.equal((await h.api(a, path, 'POST', { ...body, assetUrl: 'https://attacker.invalid/x' })).status, 400);
   assert.equal((await h.api(a, path, 'POST', { ...body, stickerId: 'not-in-catalog' })).status, 400);
   const sent = await h.api(a, path, 'POST', body); assert.equal(sent.status, 200, JSON.stringify(sent.body));
   const message = sent.body.message;
-  assert.equal(message.stickerId, body.stickerId); assert.equal(message.stickerVersion, 1);
+  assert.equal(message.stickerId, body.stickerId); assert.equal(message.stickerVersion, getCosmetic(body.stickerId).version);
   assert.match(message.text, /ملصق: كفو/); assert.match(message.sticker.assetUrl, /^\/assets\/plus\//);
   assert.equal((await h.api(a, path, 'POST', { ...body, stickerId: 'artist.sticker.1' })).status, 409);
   await h.sql("UPDATE subscriptions SET status='expired',until=1 WHERE user_id=?", a.id).run();
+  assert.equal((await h.api(a,path,'POST',stickerBody())).status,200,'a historical license remains usable without membership');
+  await h.sql("UPDATE plus_commerce_orders SET status='refunded' WHERE id=?",orderId).run();
   await h.sql('DELETE FROM social_jobs WHERE id LIKE ?', `%${body.clientId}%`).run();
   const retried = await h.api(a, path, 'POST', body); assert.equal(retried.status, 200); assert.equal(retried.body.message.seq, message.seq);
   assert.equal((await h.sql('SELECT COUNT(*) AS n FROM social_jobs WHERE id LIKE ?', `%${body.clientId}%`).first()).n, 0);
@@ -58,7 +64,7 @@ test('stickers require Plus for new sends but retain historical display, fallbac
   assert.equal((await h.api(a, `/messages/${message.seq}`, 'PATCH', { text: 'غير مسموح' })).status, 400);
   const report = await h.api(b, '/reports', 'POST', { userId: a.id, messageSeq: message.seq, reason: 'فحص دليل الملصق' });
   assert.equal(report.status, 200); const evidence = await h.sql('SELECT * FROM social_reports WHERE message_seq=?', message.seq).first();
-  assert.equal(evidence.sticker_id, body.stickerId); assert.equal(evidence.sticker_version, 1);
+  assert.equal(evidence.sticker_id, body.stickerId); assert.equal(evidence.sticker_version, message.stickerVersion);
   await h.api(a, `/messages/${message.seq}`, 'DELETE');
   const deleted = await h.api(b, `/messages/${message.seq}`); assert.equal(deleted.body.message.stickerId, null); assert.equal(deleted.body.message.sticker, undefined);
   assert.equal((await h.api(a, path, 'POST', body)).status, 200);
@@ -67,6 +73,7 @@ test('stickers require Plus for new sends but retain historical display, fallbac
 
 test('group stickers preserve join history, blocks, reports, removal and account deletion', async t => {
   const h = await fixture(t), a = await h.user(), b = await h.user(); await h.friends(a, b); await h.plus(a);
+  const orderId=await seedLegacyCosmeticLicense(h.env,a.id,['sahra.sticker.1']);
   const made = await h.api(a, '/groups', 'POST', { name: 'لمة اختبار' }), g = made.body.group.id, path = `/groups/${g}/messages`;
   const old = await h.api(a, path, 'POST', stickerBody()); assert.equal(old.status, 200, JSON.stringify(old.body));
   const invited = await h.api(a, `/groups/${g}/invites`, 'POST', { userId: b.id });
@@ -74,6 +81,7 @@ test('group stickers preserve join history, blocks, reports, removal and account
   assert.deepEqual((await h.api(b, path)).body.messages, []);
   const body = stickerBody(), sent = await h.api(a, path, 'POST', body); assert.equal(sent.status, 200);
   await h.sql("UPDATE subscriptions SET status='revoked' WHERE user_id=?", a.id).run();
+  await h.sql("UPDATE plus_commerce_orders SET status='revoked' WHERE id=?",orderId).run();
   await h.sql('DELETE FROM social_jobs WHERE id LIKE ?', `%${body.clientId}%`).run();
   assert.equal((await h.api(a, path, 'POST', body)).body.message.seq, sent.body.message.seq);
   assert.equal((await h.sql('SELECT COUNT(*) AS n FROM social_jobs WHERE id LIKE ?', `%${body.clientId}%`).first()).n, 0);
@@ -87,12 +95,13 @@ test('group stickers preserve join history, blocks, reports, removal and account
   assert.equal((await h.sql('SELECT COUNT(*) AS n FROM social_group_messages WHERE sticker_id IS NOT NULL').first()).n, 0);
 });
 
-test('revocation committed after preflight cannot insert a new sticker or queue its notification', async t => {
+test('permanent-license revocation committed after preflight cannot insert a new sticker or queue its notification', async t => {
   const h = await fixture(t), a = await h.user(), b = await h.user(), c = await h.friends(a, b); await h.plus(a);
+  const orderId=await seedLegacyCosmeticLicense(h.env,a.id,['sahra.sticker.1']);
   const batch = h.env.DB.batch.bind(h.env.DB); let revoked = false;
   h.env.DB.batch = async statements => {
     if (!revoked && statements.some(statement => statement.sql.includes('INSERT OR IGNORE INTO social_messages'))) {
-      revoked = true; await h.sql("UPDATE subscriptions SET status='revoked' WHERE user_id=?", a.id).run();
+      revoked = true; await h.sql("UPDATE plus_commerce_orders SET status='revoked' WHERE id=?",orderId).run();
     }
     return batch(statements);
   };

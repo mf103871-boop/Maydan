@@ -10,6 +10,8 @@ test('provenance hashes physical dependencies and explicitly recognizes only the
   assert.deepEqual(physicalStudioInputs(["src/data/bank.json with { type: 'json' }"]),['src/data/bank.json']);
   assert.throws(()=>physicalStudioInputs(["src/data/bank.js with { type: 'json' }"]),/non-JSON/);
   assert.throws(()=>physicalStudioInputs(["src/data/bank.json with { type: 'unknown' }"]),/Unknown import/);
+  assert.deepEqual(physicalStudioInputs(['src/profiles/profile-skin.css?sheet']),['src/profiles/profile-skin.css']);
+  for(const input of ['src/profiles/profile-skin.css?other','src/main.js?sheet','src/profiles/profile-skin.css?sheet?other'])assert.throws(()=>physicalStudioInputs([input]),/Unknown build input query/);
 });
 test('actual five-entry Studio build graph resolves to existing hashed source files',async()=>{
   const inputs=await studioSourceInputs({requireClean:false});assert.match(inputs['src/design/DesignRuntime.jsx'],/^[a-f0-9]{64}$/);assert.match(inputs['src/data/games/fabraka/personal.json'],/^[a-f0-9]{64}$/);assert.equal(Object.keys(inputs).some(input=>input.includes(' with {') || input.startsWith('<')),false);

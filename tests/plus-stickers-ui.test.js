@@ -27,8 +27,11 @@ test('unknown versions fall back to readable text and tombstones never render st
   assert.match(current, /sticker-1.svg/); assert.doesNotMatch(current, /message-edit/);
 });
 
-test('sticker composer has an explicit named control and is unavailable offline', () => {
-  const html = render.picker({ account: { user: { id: 'one' }, premium: false }, disabled: true });
-  assert.match(html, /ملصقات ميدان/); assert.match(html, /aria-expanded="false"/); assert.match(html, /disabled/);
-  assert.doesNotMatch(html, /<img/);
+test('retired paid picker is absent for free, subscribed and offline callers without a send or paywall', () => {
+  let calls=0;
+  for (const premium of [false,true]) for (const disabled of [false,true]) {
+    const html=render.picker({account:{user:{id:'one'},premium,openPaywall:()=>calls++},disabled,onSend:()=>calls++});
+    assert.equal(html,'');
+  }
+  assert.equal(calls,0);
 });

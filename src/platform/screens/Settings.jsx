@@ -2,6 +2,7 @@ import { SubscriptionTransition } from '../../plus/SubscriptionTransition.jsx';
 import { SELECTED_AUDIO } from '../../shared/fx/selected-audio.js';
 import { AudioCandidateLab, candidateCallBusy } from '../../shared/fx/AudioCandidateLab.jsx';
 import { isPrivateAudioCandidateBuild } from '../../shared/fx/audio-candidate-policy.js';
+import { isWarmthPreviewBuild } from '../../shared/fx/warmth-preview-policy.js';
 import { useLamma } from '../../social/LammaProvider.jsx';
 // الإعدادات: الصوت، الموسيقى، الاهتزاز، تقليل الحركة، مسح البيانات، الإصدار، وبلاغات أسئلة بَديهة.
 import React, { useState } from 'react';
@@ -16,6 +17,7 @@ import { shareText } from '../../shared/fx/haptics.js';
 import { usePlatform } from '../context.js';
 import { navigate, getDirection } from '../router.js';
 import { ModerationSettingsLink } from '../../moderation/ModerationScreen.jsx';
+import settingsStyles from './settings-rebuild.css';
 
 // index: تدرّج دخول الصفوف (45ms لكل صف) عبر --delay
 function Toggle({ icon, title, sub, checked, onChange, index = 0 }) {
@@ -28,8 +30,8 @@ function Toggle({ icon, title, sub, checked, onChange, index = 0 }) {
   );
 }
 
-function SettingsGroup({ id, title, children }) {
-  return <section data-design-id={id} data-design-required={id === 'settings-account' || id === 'settings-privacy' ? 'true' : undefined} className="settings-group" aria-labelledby={id}><h2 id={id}>{title}</h2><div className="stack">{children}</div></section>;
+function SettingsGroup({ id, title, icon, description, children }) {
+  return <section data-design-id={id} data-design-required={id === 'settings-account' || id === 'settings-privacy' ? 'true' : undefined} className="settings-group" aria-labelledby={id}><header className="settings-group-heading"><span aria-hidden="true">{icon}</span><div><h2 id={id} tabIndex={-1}>{title}</h2>{description && <p>{description}</p>}</div></header><div className="stack">{children}</div></section>;
 }
 
 export function Settings() {
@@ -39,6 +41,11 @@ export function Settings() {
   const [audioCandidates, setAudioCandidates] = useState(false);
   const [confirmClear, setConfirmClear] = useState(false);
   const reports = createStorage('badeeha').get('question-reports-v1', []) || [];
+  const jumpTo = id => {
+    const heading = document.getElementById(id);
+    heading?.scrollIntoView({ block: 'start', behavior: settings.reducedMotion || window.matchMedia?.('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+    heading?.focus({ preventScroll: true });
+  };
   const share = async () => {
     const text = reports.slice(0, 100).map((r, i) => [`${i + 1}. [${r.category} — ${r.points}] ${r.reason}`, `السؤال: ${r.question}`, `الإجابة: ${r.answer}`, `المعرّف: ${r.qid}`].join('\n')).join('\n\n');
     const result = await shareText('بلاغات أسئلة بَديهة', text);
@@ -47,11 +54,13 @@ export function Settings() {
   };
   return (
     <Screen data-design-screen="settings" dir={getDirection()} className="stack settings-screen" aria-label="الإعدادات">
+      <style>{settingsStyles}</style>
       <TopBar data-design-id="topbar" title="الإعدادات" eyebrow="ميدان على راحتك" />
-      <SettingsGroup id="settings-account" title="حسابك وميدان بلس"><SubscriptionTransition /><AccountCard /><Button data-design-id="plus-store" onClick={() => navigate('/store')}>تخصيص مظهري ومتجر بلس</Button></SettingsGroup>
-      <SettingsGroup id="settings-audio" title="الصوت والموسيقى">
+      <nav className="settings-index" aria-label="الانتقال إلى مجموعة إعدادات">{[['settings-audio', 'الصوت', <IconVolume />], ['settings-experience', 'العرض واللعب', <IconMotion />], ['settings-account', 'الحساب', <IconUsers />], ['settings-privacy', 'الخصوصية', <IconInfo />]].map(([id, label, icon]) => <button key={id} type="button" onClick={() => jumpTo(id)}>{icon}<span>{label}</span></button>)}</nav>
+      <SettingsGroup id="settings-account" title="حسابك وميدان بلس" icon={<IconUsers />} description="ملفك واشتراكك ومظهرك في مكان واحد."><SubscriptionTransition /><AccountCard /><Button data-design-id="plus-store" onClick={() => navigate('/store')}>تخصيص مظهري ومتجر بلس</Button></SettingsGroup>
+      <SettingsGroup id="settings-audio" title="الصوت والموسيقى" icon={<IconVolume />} description="اضبط المستوى المناسب لك؛ تُحفظ خياراتك تلقائيًا.">
         <Toggle index={0} icon={<IconVolume />} title="الصوت" sub="المؤثرات ومقاطع الأسئلة والموسيقى معًا" checked={settings.soundOn} onChange={(v) => { setSettings({ soundOn: v }); if (v) sound.play('pop'); }} />
-        {isPrivateAudioCandidateBuild() && <Button data-sound="none" size="sm" disabled={candidateCallBusy(lamma)} onClick={() => setAudioCandidates(true)}>معاينة أصوات التحديث</Button>}
+        {isPrivateAudioCandidateBuild() && !isWarmthPreviewBuild() && <Button data-sound="none" size="sm" disabled={candidateCallBusy(lamma)} onClick={() => setAudioCandidates(true)}>معاينة أصوات التحديث</Button>}
         <div className="setting setting-volume">
           <label htmlFor="sound-volume"><b>مستوى الصوت</b><output htmlFor="sound-volume">{Math.round(sound.volume * 100)}٪</output></label>
           <input data-design-id="sound-volume" id="sound-volume" type="range" min="0" max="100" step="5" value={Math.round(sound.volume * 100)} disabled={!settings.soundOn}
@@ -71,12 +80,16 @@ export function Settings() {
             onPointerUp={() => sound.play('pop')} onKeyUp={(event) => { if (event.key.startsWith('Arrow') || event.key === 'Home' || event.key === 'End') sound.play('pop'); }} />
         </div>
       </SettingsGroup>
-      <SettingsGroup id="settings-experience" title="تجربة اللعب">
+      <SettingsGroup id="settings-experience" title="العرض وتجربة اللعب" icon={<IconMotion />} description="وضوح وراحة تناسبان طريقة لعبك.">
         <Button data-design-id="manage-roster" variant="secondary" icon={<IconUsers />} onClick={() => navigate('/players')}>دفتر اللاعبين · اللعب مع العائلة</Button>
         <Toggle index={0} icon={<IconVibrate />} title="الاهتزاز" sub="عند الإجابات والمؤقت (حيث يتوفر)" checked={settings.hapticsOn} onChange={(v) => { setSettings({ hapticsOn: v }); if (v) haptics.vibrate('light'); }} />
         <Toggle index={1} icon={<IconMotion />} title="تقليل الحركة" sub="يعطّل الجسيمات والانتقالات مع بقاء الوظائف" checked={settings.reducedMotion} onChange={(v) => setSettings({ reducedMotion: v })} />
+        <Toggle index={2} icon={<IconMotion />} title="نص أوضح" sub="يكبّر نصوص القوائم والبطاقات والمحادثات" checked={!!settings.largeText} onChange={(v) => setSettings({ largeText: v })} />
+        <Toggle index={3} icon={<IconMotion />} title="تباين أعلى" sub="يقوّي حدود العناصر والنصوص الثانوية" checked={!!settings.highContrast} onChange={(v) => setSettings({ highContrast: v })} />
+        <Toggle index={4} icon={<IconMotion />} title="زينة أخف" sub="يوقف حركة الزينة المستمرة ويخفف الظلال؛ تبقى مؤشرات اللعب" checked={settings.visualQuality === 'calm'} onChange={(v) => setSettings({ visualQuality: v ? 'calm' : 'auto' })} />
+        <p className="card-muted">تُحفظ هذه الخيارات تلقائيًا على هذا الجهاز.</p>
       </SettingsGroup>
-      <SettingsGroup id="settings-privacy" title="الخصوصية والأمان">
+      <SettingsGroup id="settings-privacy" title="الخصوصية والأمان" icon={<IconInfo />}>
         <Card className="settings-legal-card legal-links">
           <a data-design-id="privacy-link" href={LEGAL_ROUTES.privacy}>سياسة الخصوصية</a>
           <a data-design-id="terms-link" href={LEGAL_ROUTES.terms}>شروط الاستخدام</a>
@@ -85,7 +98,7 @@ export function Settings() {
         </Card>
         <ModerationSettingsLink />
       </SettingsGroup>
-      <SettingsGroup id="settings-support" title="المساعدة وعن ميدان">
+      <SettingsGroup id="settings-support" title="المساعدة وعن ميدان" icon={<IconFlag />}>
       <Card className="stack">
         <div className="row"><IconFlag style={{ color: 'var(--accent)' }} /><span className="card-title">الإبلاغ عن سؤال</span></div>
         <p className="card-muted">تُحفظ البلاغات التي ترسلها من داخل بَديهة على هذا الجهاز. عدد البلاغات الحالية: <b style={{ color: 'var(--text)' }}>{reports.length}</b>.</p>
@@ -93,7 +106,7 @@ export function Settings() {
       </Card>
       <Button data-design-id="about" variant="secondary" icon={<IconInfo />} onClick={() => navigate('/about')}>عن ميدان</Button>
       </SettingsGroup>
-      <SettingsGroup id="settings-local" title="بيانات هذا الجهاز">
+      <SettingsGroup id="settings-local" title="بيانات هذا الجهاز" icon={<IconTrash />} description="مسح بيانات الجهاز منفصل عن حذف حسابك.">
       <Card className="stack">
         <span className="card-title">مسح البيانات</span>
         <p className="card-muted">يحذف دفتر اللاعبين، والإعدادات، وسجلات الألعاب، ومفاتيح العودة للغرف من هذا الجهاز. يبقى حسابك واشتراكك.</p>
@@ -102,7 +115,7 @@ export function Settings() {
       </SettingsGroup>
       <p className="muted center" style={{ fontSize: 13 }}>ميدان: ألعاب جمعتنا · الإصدار {version}</p>
       {/* The compile-time guard lets public builds drop the lab and its private catalog. */}
-      {typeof __MAYDAN_AUDIO_PREVIEW__ !== 'undefined' && __MAYDAN_AUDIO_PREVIEW__ === true && audioCandidates && isPrivateAudioCandidateBuild() && <AudioCandidateLab onClose={() => setAudioCandidates(false)} />}
+      {typeof __MAYDAN_AUDIO_PREVIEW__ !== 'undefined' && __MAYDAN_AUDIO_PREVIEW__ === true && audioCandidates && isPrivateAudioCandidateBuild() && !isWarmthPreviewBuild() && <AudioCandidateLab onClose={() => setAudioCandidates(false)} />}
       {confirmClear && (
         <ConfirmModal title="مسح كل البيانات؟" danger message="لا يمكن التراجع. ستُحذف أسماء اللاعبين والنتائج والمباريات المحفوظة ومفاتيح العودة للغرف من هذا الجهاز. يبقى حسابك واشتراكك." confirmLabel="نعم، امسح" cancelLabel="إلغاء"
           onConfirm={() => { clearAllPlatformData({ keep: [ACCOUNT_PREFIX] }); setConfirmClear(false); toast('تم مسح البيانات'); setTimeout(() => location.reload(), 500); }} onCancel={() => setConfirmClear(false)} />

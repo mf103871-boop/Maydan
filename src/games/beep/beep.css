@@ -39,12 +39,8 @@
 .beep-lives .is-lost { opacity: .7; }
 @keyframes heart-break { 0%, 100% { transform: none; } 50% { transform: scale(1.4) rotate(20deg); } }
 
-/* ── القنبلة: قرص حامل (brand.css يملك لونه وحلقته الحمراء الثابتة)؛ يدقّ، وعند الاحمرار يهتز الرسم وتومض شرارة ذهبية على رأس الفتيل.
-   الشرارة بإحداثيات فيزيائية (right) لأن الرسم لا يُقلب مع RTL. حلقتا هذه الشاشة: الدقّ + الاهتزاز. ── */
+/* القنبلة تنبض بإيقاع ثابت طوال الفتيل المخفي، دون علامة مرتبطة بالوقت المتبقي. */
 .beep-bomb { --contact-inset: 24%; --contact-y: 14px; --contact-h: 12px; animation: beep-tick 1s ease-in-out infinite; }
-.beep-bomb.is-hot { animation-duration: .5s; }
-.beep-bomb.is-hot > .clay-lift { animation: ui-wobble .5s ease-in-out infinite; }
-.beep-bomb.is-hot::before { content: ""; position: absolute; z-index: 2; top: 9%; right: 13%; width: 28px; height: 28px; border-radius: 50%; pointer-events: none; background: radial-gradient(circle, #fff 0 25%, #FFC94D 60%, #FFC94D00); box-shadow: 0 0 14px 4px #FFC94D88; animation: clay-spark .45s linear infinite; }
 .beep-bomb > .clay-lift { position: relative; z-index: 1; }
 @keyframes beep-tick { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
 
@@ -66,3 +62,19 @@
 .beep-judge .btn { min-height: 92px; font-size: 22px; flex-direction: column; gap: 4px; }
 .beep-judge .btn span { font-size: 34px; }
 .beep-actions { display: grid; gap: 10px; }
+
+/* Timed requests are readable on their first frame; animation belongs to preparation.
+   Bomb appearance is constant throughout the hidden fuse. */
+.screen.beep > .beep-prompt.is-live { animation: none !important; transform: none; opacity: 1; }
+.screen.beep > .timer { animation: none !important; }
+.beep:has(.beep-bomb) { gap: 10px; }
+.beep:has(.beep-bomb) .beep-bomb { width: 96px; height: 96px; justify-self: center; }
+.beep:has(.beep-bomb) .beep-prompt { min-height: 120px; padding: 16px; }
+.beep:has(.beep-bomb) > [data-design-id=continue] { position: sticky; bottom: calc(10px + env(safe-area-inset-bottom, 0px)); z-index: 3; }
+@media (orientation: landscape) and (max-height: 520px) {
+  .beep:has(.beep-bomb) { grid-template-columns: minmax(110px,.45fr) minmax(0,1fr); align-items: center; }
+  .beep:has(.beep-bomb) .beep-turn, .beep:has(.beep-bomb) .beep-players { grid-column: 1 / -1; }
+  .beep:has(.beep-bomb) .beep-bomb { grid-column: 1; grid-row: 2; }
+  .beep:has(.beep-bomb) .beep-prompt { grid-column: 2; grid-row: 2; }
+  .beep:has(.beep-bomb) > [data-design-id=continue] { grid-column: 1 / -1; }
+}

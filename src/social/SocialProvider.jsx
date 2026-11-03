@@ -7,7 +7,7 @@ import { socialInterruption } from './interruption.js';
 export const SocialContext = createContext(null);
 export const useSocial = () => useContext(SocialContext);
 const METHODS = ['refresh','searchUsers','sendRequest','acceptRequest','rejectRequest','cancelRequest','openConversation','loadOlder',
-  'sendMessage','sendSticker','retryMessage','editMessage','deleteMessage','markRead','setTyping','removeFriend','blockUser','unblockUser','reportUser','registerConversation','receiveOwnMessage'];
+  'sendMessage','sendSticker','retryMessage','editMessage','deleteMessage','markRead','setTyping','removeFriend','blockUser','unblockUser','reportUser','registerConversation','receiveOwnMessage','claimLiveAudio'];
 export function SocialProvider({ children }) {
   const account = useAccount(); const accountRef = useRef(account); accountRef.current = account;
   const clientRef = useRef(null);
@@ -42,7 +42,8 @@ export function SocialProvider({ children }) {
     const before = previous.current;
     if (before?.userId === userId) {
       const fresh = safeState.friends.find(f => f.unreadCount > (before.counts[f.id] || 0) && client.activeFriend !== f.id);
-      if (fresh) setNotification({ id: Date.now(), userId, type: 'message', friend: fresh });
+      if (fresh) setNotification({ id: Date.now(), userId, type: 'message', friend: fresh,
+        messageId:fresh.lastMessage?.seq,audioReceipt:typeof fresh.lastMessage?.senderId==='string'&&fresh.lastMessage.senderId!==userId?client.claimLiveAudio('direct',fresh.conversationId,fresh.lastMessage?.seq):null });
       else if (safeState.incoming.length > before.requests) setNotification({ id: Date.now(), userId, type: 'request' });
     }
     previous.current = { userId, counts: Object.fromEntries(safeState.friends.map(f => [f.id, f.unreadCount])), requests: safeState.incoming.length };

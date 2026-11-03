@@ -10,12 +10,14 @@ import { PLUS_NAME, LEGAL_ROUTES, SUPPORT_EMAIL, PUBLIC_SITE_ORIGIN } from './co
 import { SignInButtons, SIGN_IN_NOTE } from './SignInSheet.jsx';
 import { RedeemForm, REDEEM_PROMPT } from './RedeemSheet.jsx';
 import { REDEEM_ON_IOS } from './config.js';
-export const PAYWALL_BULLETS = ['إطارات وصور وبطاقات بروفايل مميزة', 'ثيمات مجلسك لكل الموجودين', 'ملصقات وتفاعلات أصلية', 'مجموعات جديدة تُضاف تباعًا', 'عشر جلسات جاهزة على أجهزتك'];
+import { isPremium } from './entitlements.js';
+import { resolveAccountServer } from './api.js';
+import { useAcceptedFeedback } from '../fx/accepted-feedback.js';
+export const PAYWALL_BULLETS = ['شكل متكامل لبروفايلك مع بقاء صورتك الشخصية', 'إطارات مميزة لصورتك، تختارها وتستخدمها بشكل مستقل'];
 export const PAYWALL_LEGAL = 'يتجدد الاشتراك تلقائيًا ما لم يُلغَ قبل نهاية الفترة بـ٢٤ ساعة';
 export const PRICE_UNKNOWN = 'يُعرض السعر عند الشراء';
 
 export function paywallReason(reason) {
-  if (reason === 'presets') return 'احفظ إعدادات جلساتك وارجع لها بسرعة مع بلس. كل خيارات اللعب اليدوية مجانية.';
   return 'كل الألعاب والحزم والغرف مجانية. بلس يضيف لمستك الخاصة، دون أفضلية في اللعب.';
 }
 
@@ -26,6 +28,14 @@ const PLANS = [
 
 export function Paywall({ open = true, reason = 'settings', game = null, pack = null, onClose }) {
   const account = useAccount();
+  const accepted = useAcceptedFeedback(`${resolveAccountServer()}:${account.user?.id || 'guest'}:${open}`);
+  const purchaseFeedback = async (action, ...args) => {
+    const feedback = accepted.begin();
+    try {
+      const result = await action?.(...args);
+      if (account.user?.id && result?.user?.id === account.user.id && isPremium(result)) feedback.confirm();
+    } catch (error) { feedback.error(error); }
+  };
   const [plan, setPlan] = useState('monthly');
   const [redeeming, setRedeeming] = useState(false);
   const redeemTrigger = useRef(null);
@@ -118,12 +128,12 @@ export function Paywall({ open = true, reason = 'settings', game = null, pack = 
         ) : (
           <>
             {account.platform === 'ios' && !account.signedIn && <p className="paywall-note">{SIGN_IN_NOTE}</p>}
-            <Button variant="primary" size="lg" full disabled={!!account.activationPending || !selectedPlan || productsLoading} loading={busy === 'purchase' || busy === 'signin'} data-design-id="purchase" onClick={() => account.purchase && account.purchase(selectedPlan)}>اشترك</Button>
+            <Button data-sound="none" variant="primary" size="lg" full disabled={!!account.activationPending || !selectedPlan || productsLoading} loading={busy === 'purchase' || busy === 'signin'} data-design-id="purchase" onClick={() => purchaseFeedback(account.purchase, selectedPlan)}>اشترك</Button>
             {account.activationPending && <Button variant="secondary" full onClick={() => account.refresh()}>تحديث حالة الاشتراك</Button>}
           </>
         )}
         {account.platform === 'ios' && (
-          <Button variant="ghost" full loading={busy === 'restore'} data-design-id="restore" data-design-required="true" onClick={() => account.restore && account.restore()}>استعادة المشتريات</Button>
+          <Button data-sound="none" variant="ghost" full loading={busy === 'restore'} data-design-id="restore" data-design-required="true" onClick={() => purchaseFeedback(account.restore)}>استعادة المشتريات</Button>
         )}
         {native && account.restoreDiagnostics && <details className="paywall-support">
           <summary>تفاصيل الاستعادة للدعم</summary>

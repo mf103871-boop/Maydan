@@ -106,7 +106,7 @@
 .podium-trophy { line-height: 1; }
 .podium-title { font-size: clamp(26px, 7vw, 38px); font-weight: 900; text-align: center; color: #FFF3D0; text-wrap: balance; }
 .podium-stage { display: flex; align-items: flex-end; justify-content: center; gap: 10px; width: 100%; max-width: 420px; min-height: 190px; }
-.podium-col { flex: 1; display: grid; justify-items: center; gap: 8px; animation: ui-rise-pop .6s var(--ease-spring) both; animation-delay: var(--delay, 0ms); }
+.podium-col { flex: 1; display: grid; justify-items: center; gap: 8px; }
 @keyframes ui-rise { from { transform: translateY(40px); opacity: 0; } }
 .podium-col .avatar { width: 46px; height: 46px; display: block; }
 .podium-col .name { font-weight: 800; font-size: 14px; text-align: center; max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
@@ -114,11 +114,13 @@
 /* تسلسل المنصة: الأعمدة 3→2→1، الرسم يهبط بعد الكتلة، الفائز يقفز ثم يطفو؛ الكأس يطفو بعد هبوط الأعمدة (حلقتان فقط) */
 .podium-col .avatar-wrap > .clay-lift { animation: clay-drop .55s var(--ease-spring) both; animation-delay: calc(var(--delay, 0ms) + 200ms); }
 .podium-col .avatar-wrap::after { animation: clay-shadow-land .55s both; animation-delay: calc(var(--delay, 0ms) + 200ms); }
-.podium-col[data-rank="1"] .avatar-wrap > .clay-lift { animation: clay-drop .55s var(--ease-spring) both, clay-jump .6s var(--ease-out) 1.35s, clay-float 3.4s ease-in-out 2.2s infinite; animation-delay: calc(var(--delay, 0ms) + 200ms), 1.35s, 2.2s; }
-.podium-trophy.clay-idle > .clay-lift { animation: clay-drop .8s var(--ease-spring) both, clay-float 4s ease-in-out 1.8s infinite; }
-.podium-trophy.clay-idle::after { animation: clay-shadow-land .8s both, clay-shadow-breathe 4s ease-in-out 1.8s infinite; }
+.podium-col[data-rank="1"] .avatar-wrap > .clay-lift { animation: clay-drop .55s var(--ease-spring) both, clay-jump .6s var(--ease-out) 1.35s, clay-float 3.4s ease-in-out 2.2s 2; animation-delay: calc(var(--delay, 0ms) + 200ms), 1.35s, 2.2s; }
+.podium-trophy.clay-idle > .clay-lift { animation: clay-drop .8s var(--ease-spring) both, clay-float 4s ease-in-out 1.8s 2; }
+.podium-trophy.clay-idle::after { animation: clay-shadow-land .8s both, clay-shadow-breathe 4s ease-in-out 1.8s 2; }
 .podium-rest { width: 100%; }
-.podium-rest .score-row { animation-delay: calc(1.2s + var(--n, 0) * 60ms); }
+/* Rankings stay readable immediately; only the artwork celebrates. */
+.podium-rest .score-row { animation: none; }
+.podium-col .block { animation: none; }
 
 /* screens */
 .screen { width: min(100%, 720px); margin: 0 auto; padding: calc(10px + var(--safe-top)) max(14px, var(--safe-right)) calc(28px + var(--safe-bottom) + var(--screen-bottom-reserve, 0px)) max(14px, var(--safe-left)); min-height: var(--app-viewport-height, 100dvh); animation: screen-in var(--dur) var(--ease-out) both; }
@@ -126,7 +128,7 @@
 @keyframes screen-in { from { opacity: 0; transform: translateX(calc(var(--flow, -1) * 14px)); } }
 @keyframes screen-in-back { from { opacity: 0; transform: translateX(calc(var(--flow, -1) * -12px)); } }
 /* Short stagger; backwards fill releases transformed containing blocks. */
-.screen > * { animation: ui-lift-in .26s var(--ease-out) backwards; animation-delay: calc(var(--n, 0) * 24ms); }
+.screen > * { animation: none; } /* Content appears immediately; timed/private stages opt in explicitly. */
 .screen > :nth-child(2) { --n: 1 } .screen > :nth-child(3) { --n: 2 } .screen > :nth-child(4) { --n: 3 } .screen > :nth-child(5) { --n: 4 } .screen > :nth-child(6) { --n: 5 } .screen > :nth-child(7) { --n: 6 } .screen > :nth-child(8) { --n: 7 }
 .screen > .game-stage, .screen > [class*="jabeen-stage"], .screen > .beep-boom, .screen > .meen-count, .screen > .pass-screen, .screen > .m-root { animation: none; }   /* الأغلفة الثابتة لا تدخل بالتدرّج */
 .screen > :has(.timer-resume) { animation: none; }   /* غلاف يحوي طبقة الاستئناف الثابتة لا يُحوَّل أبدًا */

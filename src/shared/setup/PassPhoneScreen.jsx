@@ -1,6 +1,6 @@
 import { Avatar } from '../brand/art.jsx';
 // «سلّم الجوال لـ …» — يخفي المحتوى الخاص باللاعب حتى يلمس الشاشة.
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useLayoutEffect, useRef } from 'react';
 import { socialInterruption } from '../../social/interruption.js';
 import { Button } from '../ui/components.jsx';
 import { useReaction } from '../ui/useReaction.js';
@@ -8,22 +8,31 @@ import { wait } from '../fx/screen.js';
 
 export function PassPhoneScreen({ player, hint = 'لا يرى الشاشة غيرك. عندما تكون جاهزًا اضغط الزر.', ready = 'أنا جاهز', children, api, designPreviewShown = false }) {
   const previewRevealed = !!api?.designPreview && designPreviewShown;
-  const [shown, setShown] = useState(previewRevealed);
+  const playerId = player?.id;
+  const [revealState, setRevealState] = useState({ playerId, shown: previewRevealed });
+  const shown = revealState.playerId === playerId && revealState.shown;
   const [reaction, react] = useReaction();
   const revealTimer = useRef(null);
-  const playerId = player?.id;
-  useEffect(() => { setShown(previewRevealed); return () => clearTimeout(revealTimer.current); }, [playerId, previewRevealed]);
+  const owner = useRef(playerId); owner.current = playerId;
+  // Identity gates the render itself: no frame of the next player's secret.
+  useLayoutEffect(() => { setRevealState({ playerId, shown: previewRevealed }); return () => clearTimeout(revealTimer.current); }, [playerId, previewRevealed]);
   useEffect(() => !api?.designPreview && playerId && shown ? socialInterruption.private(Symbol('pass-phone')) : undefined, [playerId, shown, api?.designPreview]);
   useEffect(() => socialInterruption.subscribe(() => {
-    if (socialInterruption.getSnapshot().open) { clearTimeout(revealTimer.current); setShown(false); }
+    if (socialInterruption.getSnapshot().open) { clearTimeout(revealTimer.current); setRevealState({ playerId: owner.current, shown: false }); }
   }), []);
+  useEffect(() => {
+    const conceal = () => { if (document.hidden) { clearTimeout(revealTimer.current); setRevealState({ playerId: owner.current, shown: false }); } };
+    document.addEventListener('visibilitychange', conceal);
+    return () => document.removeEventListener('visibilitychange', conceal);
+  }, []);
   if (!player) return children;
   // غلاف الكشف يدخل بحركة رفع خفيفة (لا يعتمد الكشف نفسه على الحركة).
   if (shown) return <div className="pass-revealed">{children}</div>;
   const reveal = () => {
     api && api.sound.play('whoosh'); api && api.haptics.vibrate('light');
     react('clay-squash');
-    revealTimer.current = setTimeout(() => { if (!socialInterruption.getSnapshot().paused) setShown(true); }, wait(180));
+    clearTimeout(revealTimer.current);
+    revealTimer.current = setTimeout(() => { if (owner.current === playerId && !document.hidden && !socialInterruption.getSnapshot().paused) setRevealState({ playerId, shown: true }); }, wait(180));
   };
   return (
     <div data-design-screen="setup.pass-phone" data-design-id="privacy" data-design-required="true" className="pass-screen" style={{ '--pass-color': player.color }}>

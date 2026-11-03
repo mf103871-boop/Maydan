@@ -6,7 +6,7 @@ import { bindSeatAccount, prepareRoomStats } from './room-stats.mjs';
 import { recordOnlineResult, profileSummaries } from './profiles/db.mjs';
 import { recheckMafiaHost, mafiaHostEligible } from './accounts/router.mjs';
 import { getCosmetic } from '../src/plus/catalog.js';
-import { plusActiveFor } from './plus/access.mjs';
+import { canUseCosmetic } from './plus/access.mjs';
 import { prepareRoomAppearance, selectRoomAppearance } from './plus/room-appearance.mjs';
 import { requireSession } from './accounts/session.mjs';
 import { liveAccountSql } from './moderation/access.mjs';
@@ -614,7 +614,7 @@ export class Room {
     a.reactTokens -= 1; ws.serializeAttachment(a);
     if (cosmetic) {
       const userId = await this.cosmeticActor(a.id, command);
-      if (!await plusActiveFor(this.env, userId, now)) fail('PLUS_REQUIRED', 403);
+      if (!await canUseCosmetic(this.env, userId, cosmetic.id, now)) fail('PLUS_REQUIRED', 403);
     }
     this.reactionCounter = (this.reactionCounter || 0) + 1;
     const event = { type: 'reaction', id: `${now.toString(36)}-${this.reactionCounter}`, seatId: a.id, emoji: cosmetic?.emoji || command.emoji, at: now,
@@ -1136,6 +1136,7 @@ export class Room {
         }
         if (command.type === 'react') { await this.reaction(ws, a, command, now); metricOutcome='ok';this.send(ws, { type: 'ack', requestId, ok: true }); return; }
         if (command.type === 'appearance') {
+          if (Object.hasOwn(command, 'councilSkinId')) fail('INVALID', 400);
           if (command.themeId != null) await this.cosmeticActor(a.id, command);
           const themed = structuredClone(this.room);
           await selectRoomAppearance(this.env, themed, a.id, command.themeId);

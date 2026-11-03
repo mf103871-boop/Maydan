@@ -21,7 +21,7 @@ export const REVIEWED_SCENE_TRACKS = Object.freeze({});
 
 export function resolveAudioScene(game, phase, { creatorMode = false, tracks = REVIEWED_SCENE_TRACKS, unavailableTracks = new Set() } = {}) {
   const scene = AUDIO_SCENES[game] || AUDIO_SCENES.home;
-  const silent = creatorMode || (game === 'beep' && ['play', 'bomb', 'three'].includes(phase)) ||
+  const silent = creatorMode || (game === 'beep' && ['play', 'prompt', 'bomb', 'three'].includes(phase)) ||
     (game === 'mafia' && ['opening', 'discussion', 'defense'].includes(phase));
   // The compile-time guard lets public builds drop the private candidate catalog.
   const privateTrack = typeof __MAYDAN_AUDIO_PREVIEW__ !== 'undefined' && __MAYDAN_AUDIO_PREVIEW__ === true && isPrivateAudioCandidateBuild() ? CANDIDATE_SCENES[game] || CANDIDATE_SCENES.home : null;

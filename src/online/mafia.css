@@ -254,3 +254,37 @@ html[data-startup-background-visible] .mafia-noir.mafia-shell.has-player-rail:no
 .mafia-directory-dense{height:100%;min-height:0;padding:0!important}.mafia-directory-dense .mafia-directory-filters{grid-template-columns:repeat(3,minmax(0,1fr))}.mafia-private-panel .mafia-reports,.mafia-private-panel .mafia-notebook{height:auto;max-height:none}
 @media(orientation:landscape) and (max-height:550px){.mafia-noir.mafia-density:not(.is-finished){display:grid;grid-template-columns:minmax(0,1fr) 218px;grid-template-rows:auto auto minmax(0,1fr);grid-template-areas:"heading players" "voice players" "activity players";gap:4px}.mafia-noir.mafia-density .mafia-activity{min-height:0}.mafia-noir.mafia-density>.mafia-player-rail{max-height:100%;min-height:0;overflow:auto}.mafia-noir.mafia-density .mafia-seats{display:flex;overflow-x:auto;overflow-y:visible;padding-bottom:2px}.mafia-noir.mafia-density .mafia-seat{flex:0 0 50px;height:50px;min-height:50px}.mafia-noir.mafia-density .mafia-seat-portrait{height:22px}.mafia-noir.mafia-density .mafia-seat .avatar,.mafia-noir.mafia-density .mafia-seat .clay-avatar{height:22px!important;width:22px!important}.mafia-noir.mafia-density .mafia-seat small{display:none}.mafia-density .mafia-rail-heading{display:none}.mafia-noir.mafia-density .mafia-action-dock .mafia-ability{max-height:95px}.mafia-event-overlay{max-height:100px;top:4%}}
 @media(prefers-reduced-motion:reduce){.mafia-event-overlay{animation:none}.mafia-density .mafia-clock{animation:none!important}.mafia-density .mafia-chat-messages{scroll-behavior:auto}}
+
+/* Compact, readable Arabic game copy; metadata never replaces action labels. */
+.mafia-noir.mafia-density .mafia-message p, .mafia-noir.mafia-density .mafia-long-message { font-size: 14px; line-height: 1.75; }
+.mafia-noir.mafia-density .mafia-event-card p, .mafia-noir.mafia-density .mafia-ability p { font-size: 13px; line-height: 1.7; }
+.mafia-noir.mafia-density .mafia-message b, .mafia-noir.mafia-density .mafia-event-card small { font-size: 12px; }
+.mafia-noir.mafia-density .mafia-clock small, .mafia-noir.mafia-density .mafia-voice b, .mafia-noir.mafia-density .mafia-panel-heading h3 { font-size: 12px; }
+.mafia-noir.mafia-density .mafia-action-trigger, .mafia-noir.mafia-density .mafia-ability .btn { font-size: 13px; }
+.mafia-noir.mafia-density .mafia-decision-status, .mafia-noir.mafia-density .mafia-chat-locked { font-size: 12px; line-height: 1.6; }
+.mafia-noir.mafia-density .mafia-seat { min-height: 70px; height: auto; }
+.mafia-noir.mafia-density .mafia-seat b { font-size: 11px; line-height: 1.4; }
+.mafia-noir.mafia-density .mafia-seat small { font-size: 10px; line-height: 1.4; }
+.mafia-noir.mafia-density .mafia-action-dock .mafia-ability { scroll-padding-block: 8px; }
+@media (orientation: landscape) and (max-height: 550px) {
+  .mafia-noir.mafia-density .mafia-seat { min-height: 50px; height: 50px; }
+  .mafia-noir.mafia-density .mafia-message p, .mafia-noir.mafia-density .mafia-long-message { font-size: 13px; }
+}
+
+/* M03–M06: private descriptions and review text stay readable inside scrollable dialogs. */
+.mafia-noir .mafia-role-description small{font-size:12px;line-height:1.8;color:#bdc8d6}
+.mafia-noir .mafia-role-tile{padding:12px;gap:10px;border-color:#8b809161}
+.mafia-noir .mafia-role-tile h4{font-size:17px;line-height:1.5;overflow-wrap:anywhere}
+.mafia-noir .mafia-role-tile p{font-size:13px;line-height:1.8}
+.mafia-noir .mafia-role-tile small{font-size:12px;line-height:1.6}
+.mafia-noir .mafia-role-disclosure>summary{min-height:44px;font-size:13px}
+.mafia-noir .mafia-role-details,.mafia-noir .mafia-role-details .mafia-role-example{font-size:13px;line-height:1.85}
+.mafia-noir .mafia-role-details :is(dt,h5){font-size:13px}
+.mafia-noir .mafia-reports>p,.mafia-noir .mafia-notebook p{font-size:13px;line-height:1.8}
+.mafia-noir .mafia-reports article{padding:12px 13px;border-inline-start-width:3px}
+.mafia-noir .mafia-reports article b{font-size:12px}
+.mafia-noir .mafia-reports article p{font-size:14px;line-height:1.8}
+.mafia-noir .mafia-result-player-copy>small{font-size:12px;line-height:1.5}
+.mafia-noir .mafia-result-player-detail p,.mafia-noir .mafia-result-replay>ol{font-size:13px;line-height:1.85}
+.mafia-noir .mafia-result-replay>summary{font-size:14px;line-height:1.7}
+@media(max-width:359px){.mafia-noir .mafia-role-catalog{grid-template-columns:1fr}.mafia-noir .mafia-role-tile>.mafia-role-art{width:min(100%,180px);justify-self:center}}

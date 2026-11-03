@@ -23,7 +23,7 @@ export const AUDIO_CREDITS = {
     },
     {
       "provider": "dustyroom",
-      "name": "Dustyroom â€” Free Casual Game Sounds",
+      "name": "Dustyroom — Free Casual Game Sounds",
       "url": "https://dustyroom.com/free-casual-game-sounds/",
       "license": "CC0 1.0",
       "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",

@@ -47,3 +47,5 @@
 .meen-intro > :nth-child(3) { animation-delay: 220ms; }
 .meen-intro > :nth-child(4) { animation-delay: 300ms; }
 .meen-intro > :nth-child(n + 5) { animation-delay: 360ms; }
+
+.meen-vote-hint { text-align: center; color: var(--muted); font-size: 14px; line-height: 1.7; margin: 0; }

@@ -85,6 +85,6 @@ test('only minified application bundles compact CSS strings; development remains
   assert.equal(typeof production, 'string');
   assert.ok(Buffer.byteLength(production) < Buffer.byteLength(development));
   assert.match(production, /أهلًا ميدان/);
-  assert.equal(esbuildOptions({ minify: false }).plugins, undefined);
-  assert.equal(esbuildOptions({ minify: true }).plugins[0].name, 'minified-css-text');
+  assert.deepEqual(esbuildOptions({ minify: false }).plugins.map(plugin=>plugin.name), ['maydan-presentation-css']);
+  assert.ok(esbuildOptions({ minify: true }).plugins.some(plugin=>plugin.name==='minified-css-text'));
 });

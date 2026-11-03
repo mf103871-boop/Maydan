@@ -5,7 +5,8 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { gzipSync } from 'node:zlib';
 import { build } from 'esbuild';
-import { esbuildOptions, renderHtml, mediaVersions, ROOT } from '../scripts/lib.mjs';
+import { esbuildOptions, renderHtml, mediaVersions, ROOT, DIST } from '../scripts/lib.mjs';
+import path from 'node:path';
 
 const MB = 1024 * 1024;
 const BUDGET = {
@@ -17,7 +18,8 @@ const BUDGET = {
 test('the shipped document and its largest inputs stay inside the size budget', { timeout: 120_000 }, async () => {
   const result = await build({ ...esbuildOptions({ minify: true, version: '0.0.0-test', media: await mediaVersions(ROOT), assets: 'files' }), metafile: true });
   const js = result.outputFiles.find((f) => f.path.endsWith('.js')).text;
-  const html = await renderHtml(js, { version: '0.0.0-test' });
+  const assets = result.outputFiles.filter(file=>!file.path.endsWith('.js')).map(file=>'./'+path.relative(DIST,file.path).replaceAll('\\','/')).sort();
+  const html = await renderHtml(js, { version: '0.0.0-test', assets });
   // الرسوم والخطوط ملفات مبصومة بجانب المستند لا base64 داخله.
   assert.ok(!/data:(image\/webp|image\/png|font\/woff2)/.test(html), 'brand art and fonts must ship as files, not data: URLs inside the document');
   assert.ok(result.outputFiles.some((f) => /assets\/brand\/world-[A-Z0-9]+\.webp$/.test(f.path.replaceAll('\\', '/'))), 'the splash art is emitted as a hashed file');

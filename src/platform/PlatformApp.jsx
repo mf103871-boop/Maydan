@@ -7,6 +7,9 @@ import { getGame } from './registry.js';
 import { createStorage, clearAllPlatformData } from '../shared/lib/storage.js';
 import { ACCOUNT_PREFIX } from '../shared/account/store.js';
 import { createSound } from '../shared/fx/sound.js';
+import { integratedPreviewAudio, integratedPreviewDefaults, registerIntegratedPreviewSound } from '../shared/fx/integrated-preview-audio.js';
+import { bindNetworkAudio } from '../shared/fx/network-audio.js';
+import { activeAudioOwners } from '../social/media.js';
 import { createHaptics } from '../shared/fx/haptics.js';
 import { confetti } from '../shared/fx/confetti.js';
 import { ToastProvider, useToast, ErrorBoundary } from '../shared/ui/components.jsx';
@@ -48,8 +51,9 @@ const platformStorage = createStorage('platform');
 const DEFAULT_SETTINGS = { soundOn: true, soundVolume: 0.75, voiceOn: false, creatorMode: false, musicOn: true, musicVolume: 0.35, musicLevel: 2, hapticsOn: true, reducedMotion: false, splashSeen: false };
 // الموسيقى 3.1 أهدأ وأخفض: من حفظ مستوى الموسيقى قبلها يُنقل مرة واحدة إلى الافتراضي الجديد.
 function migrateSettings(saved) {
-  const next = { ...DEFAULT_SETTINGS, ...(saved || {}) };
-  if ((saved?.musicLevel || 1) < 2) { next.musicVolume = DEFAULT_SETTINGS.musicVolume; next.musicLevel = 2; }
+  const defaults = { ...DEFAULT_SETTINGS, ...integratedPreviewDefaults() };
+  const next = { ...defaults, ...(saved || {}) };
+  if ((saved?.musicLevel || 1) < 2) { next.musicVolume = defaults.musicVolume; next.musicLevel = 2; }
   return next;
 }
 
@@ -86,7 +90,7 @@ export function PlatformProviders({ children }) {
   const toast = useToast();
   const [settings, setSettingsState] = useState(() => migrateSettings(platformStorage.get('settings', {})));
   const [roster, setRosterState] = useState(() => platformStorage.get('roster', []) || []);
-  const sound = useMemo(() => createSound({ enabled: settings.soundOn, volume: settings.soundVolume, voice: settings.voiceOn, music: settings.musicOn, musicVolume: settings.musicVolume, creatorMode: settings.creatorMode }), []); // eslint-disable-line react-hooks/exhaustive-deps
+  const sound = useMemo(() => createSound({ enabled: settings.soundOn, volume: settings.soundVolume, voice: settings.voiceOn, music: settings.musicOn, musicVolume: settings.musicVolume, creatorMode: settings.creatorMode, localAudition: integratedPreviewAudio() }), []); // eslint-disable-line react-hooks/exhaustive-deps
   const haptics = useMemo(() => createHaptics({ enabled: settings.hapticsOn }), []); // eslint-disable-line react-hooks/exhaustive-deps
 
   const setSettings = useCallback((patch) => {
@@ -110,6 +114,8 @@ export function PlatformProviders({ children }) {
   }, []);
 
   useEffect(() => { sound.attach(); return () => sound.dispose(); }, [sound]);
+  useEffect(() => registerIntegratedPreviewSound(sound), [sound]);
+  useEffect(() => bindNetworkAudio(sound, { available: () => !['play', 'room', 'mafia-tutorial'].includes(getRoute().name) && activeAudioOwners().length === 0 }), [sound]);
   useEffect(() => { sound.enable(settings.soundOn); }, [sound, settings.soundOn]);
   useEffect(() => { sound.setVolume(settings.soundVolume); }, [sound, settings.soundVolume]);
   useEffect(() => { sound.voice.enable(settings.voiceOn); }, [sound, settings.voiceOn]);
@@ -118,6 +124,17 @@ export function PlatformProviders({ children }) {
   useEffect(() => { sound.music.setVolume(settings.musicVolume); }, [sound, settings.musicVolume]);
   useEffect(() => { haptics.enable(settings.hapticsOn); }, [haptics, settings.hapticsOn]);
   useEffect(() => { document.documentElement.dataset.reducedMotion = settings.reducedMotion ? 'true' : 'false'; }, [settings.reducedMotion]);
+  useEffect(() => {
+    const update = () => { document.documentElement.dataset.appHidden = document.hidden ? 'true' : 'false'; };
+    update(); document.addEventListener('visibilitychange', update);
+    return () => document.removeEventListener('visibilitychange', update);
+  }, []);
+  useEffect(() => {
+    const root = document.documentElement;
+    root.dataset.largeText = settings.largeText ? 'true' : 'false';
+    root.dataset.highContrast = settings.highContrast ? 'true' : 'false';
+    root.dataset.visualQuality = settings.visualQuality === 'calm' ? 'calm' : 'auto';
+  }, [settings.largeText, settings.highContrast, settings.visualQuality]);
 
   const value = useMemo(() => ({ sound, haptics, confetti, toast, settings, setSettings, roster, setRoster, navigate, storage: platformStorage, version: VERSION }), [sound, haptics, toast, settings, setSettings, roster, setRoster]);
   // الحساب داخل مزوّد المنصة: يحتاج التنبيهات (toast) والإعدادات، وتحتاجه كل الشاشات.

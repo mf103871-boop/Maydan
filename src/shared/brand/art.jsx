@@ -7,17 +7,13 @@ import world from './assets/world.webp';
 import mark from './assets/mark.webp';
 import arabicFont from './assets/arabic.woff2';
 import latinFont from './assets/latin.woff2';
+import { AVATAR_OPTIONS, resolveAvatarIndex } from './avatar-identity.js';
+export { AVATAR_OPTIONS } from './avatar-identity.js';
 
 // The build ships the art and fonts as content-hashed files the service worker
 // installs before activation, so they stay available offline.
 // Sprite windows preserve the original artwork and share one decoded image.
 const GAMES = { badeeha: [0, 0], beep: [1, 0], mamnoo: [2, 0], jabeen: [0, 1], fabraka: [1, 1], meenfina: [2, 1] };
-export const AVATAR_OPTIONS = [
-  { emoji: '😎', label: 'الشخصية بالكنزة الفيروزية', index: 0 },
-  { emoji: '🦋', label: 'الشخصية بالحجاب البنفسجي', index: 1 },
-  { emoji: '🌟', label: 'الشخصية بالنظارة البنفسجية', index: 2 },
-  { emoji: '🚀', label: 'الشخصية بالقبعة الذهبية', index: 3 },
-];
 
 export function BrandFonts() {
   return <style>{`
@@ -33,11 +29,7 @@ export function GameArtwork({ game, className = '', style = {} }) {
 }
 
 export function Avatar({ player, emoji, index, className = '', style = {} }) {
-  const value = emoji || player?.emoji || '';
-  const selected = AVATAR_OPTIONS.find((option) => option.emoji === value);
-  // Older saved players keep their stored identity; their portrait is stable.
-  const fallback = Array.from(value || player?.id || '0').reduce((sum, char) => sum + char.codePointAt(0), 0) % 4;
-  const position = index ?? selected?.index ?? fallback;
+  const position = resolveAvatarIndex({player,emoji,index});
   return <span className={`clay-avatar ${className}`} data-index={position} aria-hidden="true" style={{ backgroundImage: `url(${avatarSheet})`, backgroundPosition: `${position % 2 * 100}% ${Math.floor(position / 2) * 100}%`, ...style }} />;
 }
 

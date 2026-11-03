@@ -1,4 +1,3 @@
-import { SetupPresets } from '../../plus/SetupPresets.jsx';
 import { Avatar, GameArtwork } from '../../shared/brand/art.jsx';
 // واجهة «قبل ما يطق!» — تعتمد على logic.js للحالة وعلى المكونات المشتركة للمؤقت والنتائج.
 // الحركة: أختام ووميض من shared/fx (طبقات ثابتة في body)، والرسوم على حوامل clay-stage (brand.css).
@@ -13,6 +12,7 @@ import css from './beep.css';
 import { initialState, reduce, currentPlayer, standings, createPromptSource, normalizeOptions, nextBombSeconds, bombPromptArgs, restoreSession, sessionSnapshot, SECONDS, ROUNDS, LIVES } from './logic.js';
 import { loadSession } from '../../shared/lib/session.js';
 import { useSessionSave } from '../../shared/ui/useSessionSave.js';
+import { useGameMusicScene } from '../../shared/fx/useGameMusicScene.js';
 
 const OPTIONS_KEY = 'options';
 const SEEN_KEY = 'seen';
@@ -26,7 +26,6 @@ export function SetupOptions({ storage, api }) {
   const update = (patch) => { const next = normalizeOptions({ ...opts, ...patch }); setOpts(next); storage.set(OPTIONS_KEY, next); };
   return (
     <div data-design-screen="setup.beep" data-design-id="options" className="stack">
-    {!api.designPreview && <SetupPresets game="beep" settings={opts} onApply={update} />}
     {resume && <Card className="stack resume-card">
       <span className="card-title">لعبتكم بانتظاركم</span>
       <p className="card-muted">{resume.state.mode === 'three' ? `الجولة ${resume.state.round} من ${resume.state.rounds}` : `💣 القنبلة · ${resume.state.players.length - resume.state.eliminated.length} لاعبين باقين`} · {resume.players.map((p) => p.name).join('، ')}</p>
@@ -62,7 +61,7 @@ function ThreeRound({ state, dispatch, api, source, timeLeftRef, resumeLeft }) {
   useEffect(() => { if (state.phase === 'prompt') { timer.reset(resumeLeft.current ?? state.seconds); resumeLeft.current = null; timer.start(); } }, [state.phase, state.prompt && state.prompt.id]); // eslint-disable-line react-hooks/exhaustive-deps
   useEffect(() => { timeLeftRef.current = timer.left; }, [timer.left, timeLeftRef]);
   // صوت لكل ثانية من الثانية الأولى (tickFast في الأخيرتَين) من مصدر واحد؛ الحلقة بصرية فقط.
-  useTimerCues(timer, api, { last: Infinity, fastBelow: 2 });
+  useTimerCues(timer, api, { last: Infinity, fastBelow: 2, warningKey: JSON.stringify(['beep', state.round, state.turn, state.prompt?.id]) });
 
   if (state.phase === 'intro') {
     return (
@@ -81,7 +80,7 @@ function ThreeRound({ state, dispatch, api, source, timeLeftRef, resumeLeft }) {
       <>
         <div data-design-id="turn" className="beep-turn" key={state.turn} style={{ '--p-color': player.color }}><span className="avatar clay-stage"><span className="clay-lift"><Avatar player={player} /></span></span><div><b>{player.name}</b><small>قل ثلاثة بصوت عالٍ</small></div></div>
         <Timer data-design-id="timer" timer={timer} accent="#FF4D4D" />
-        <div data-design-id="prompt" className="beep-prompt" key={state.prompt.id}>{state.prompt.text}<small>{state.prompt.category}</small></div>
+        <div data-design-id="prompt" className="beep-prompt is-live" key={state.prompt.id}>{state.prompt.text}<small>{state.prompt.category}</small></div>
         <Button data-design-id="continue" data-design-required="true" variant="accent" size="lg" full onClick={() => { timer.pause(); api.sound.play('pop'); dispatch({ type: 'FINISH' }); }}>خلصت! ✋</Button>
       </>
     );
@@ -105,7 +104,6 @@ function ThreeRound({ state, dispatch, api, source, timeLeftRef, resumeLeft }) {
 
 function BombRound({ state, dispatch, api, source, random, timeLeftRef, resumeLeft }) {
   const player = currentPlayer(state);
-  const [hot, setHot] = useState(false);
   const explode = () => {
     api.sound.play('explosion'); api.haptics.vibrate('explosion');
     flashScreen('white', 500);
@@ -118,7 +116,6 @@ function BombRound({ state, dispatch, api, source, random, timeLeftRef, resumeLe
   // كل قنبلة جديدة لها مدة عشوائية جديدة: نصفّر المؤقت عليها ثم نشغّله (القنبلة تستمر عبر التمرير لأن الطور يبقى prompt).
   // قنبلة مستأنفة تكمل من الوقت المحفوظ لا من فتيل جديد.
   useEffect(() => { if (state.phase === 'prompt') { timer.reset(resumeLeft.current ?? state.bombSeconds); resumeLeft.current = null; timer.start(); } }, [state.phase, state.round]); // eslint-disable-line react-hooks/exhaustive-deps
-  useEffect(() => { setHot(timer.running && timer.left <= 8); }, [timer.left, timer.running]);
   // A constant pulse cannot reveal the hidden fuse through speed or haptics.
   useTimerCues(timer, api, { last: Infinity, fastBelow: -1, hapticBelow: -1 });
   useEffect(() => { timeLeftRef.current = timer.left; }, [timer.left, timeLeftRef]);
@@ -138,9 +135,9 @@ function BombRound({ state, dispatch, api, source, random, timeLeftRef, resumeLe
     return (
       <>
         <div data-design-id="turn" className="beep-turn" key={state.turn} style={{ '--p-color': player.color }}><span className="avatar clay-stage"><span className="clay-lift"><Avatar player={player} /></span></span><div><b>{player.name}</b><small>أجب ثم مرّر بسرعة</small></div></div>
-        <div data-design-id="bomb" className={`beep-bomb clay-stage ${hot ? 'is-hot' : ''}`} aria-hidden="true"><span className="clay-lift"><GameArtwork game="beep" /></span></div>
+        <div data-design-id="bomb" className="beep-bomb clay-stage" aria-hidden="true"><span className="clay-lift"><GameArtwork game="beep" /></span></div>
         <ResumeCountdown resuming={timer.resuming} />
-        <div data-design-id="prompt" className="beep-prompt" key={state.prompt.id}>{state.prompt.text}<small>{state.prompt.category}</small></div>
+        <div data-design-id="prompt" className="beep-prompt is-live" key={state.prompt.id}>{state.prompt.text}<small>{state.prompt.category}</small></div>
         <Button data-design-id="continue" data-design-required="true" variant="accent" size="lg" full onClick={() => { api.sound.play('pass'); api.haptics.vibrate('light'); dispatch({ type: 'PASS', prompt: source.next(...bombPromptArgs(state.history.length)) }); }}>أجبت — مرّر الجوال ⬅</Button>
         <PlayersStrip state={state} />
       </>
@@ -198,6 +195,7 @@ export function Game({ api, players, onExit, savedSession = null, designPreviewS
     return promptSource;
   }, [random, api.storage, saved]);
   const [state, dispatch] = useReducer(reduce, undefined, () => (designPreviewState || (saved ? saved.state : initialState(players, options, { random }))));
+  useGameMusicScene(api.sound, 'beep', state.phase);
   const [session, setSession] = useState(0);
   const profileSession = useRef(saved ? saved.profileSession || null : api.matchSnapshot?.() || null);
   const timeLeftRef = useRef(saved?.timeLeft ?? null);

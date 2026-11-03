@@ -50,6 +50,11 @@ const boundedDelta=(value,min,max)=>max<min?0:Math.max(min,Math.min(max,value));
 export function DesignElement({ as, elementProps }) {
   const runtime=useContext(DesignContext), ancestor=useContext(DesignScreenContext);
   const ownScreen=elementProps['data-design-screen'];
+  // Only the component's effective, public skin marker starts this scope. New
+  // screen/dialog roots reset it; a visitor's profile never recolors its shell.
+  const presentationPalette=ownScreen
+    ? ownScreen==='profile' && elementProps['data-profile-skin']==='sahra'
+    : ancestor?.presentationPalette===true;
   const managedPosition=!!(ownScreen && String(elementProps.className||'').split(/\s+/).includes('call-dock'));
   const screenId=ownScreen || ancestor?.screenId;
   const nodeId=elementProps['data-design-id'];
@@ -124,10 +129,13 @@ export function DesignElement({ as, elementProps }) {
     window.visualViewport?.addEventListener('resize',schedule);window.addEventListener('resize',schedule);
     return()=>{observer?.disconnect();cancelAnimationFrame(frame);cancelAnimationFrame(initialFrame);window.visualViewport?.removeEventListener('resize',schedule);window.removeEventListener('resize',schedule);};
   },[layout,parentRef,required,interactive,definition?.aspectRatio,definition?.kind,definition?.canvasViewport,runtime.profile,repeated,nodeId]);
-  const context=useMemo(()=>ownScreen?{screenId:ownScreen,ref,managedPosition}:ancestor,[ownScreen,ancestor,managedPosition]);
+  const context=useMemo(()=>ownScreen?{screenId:ownScreen,ref,managedPosition,presentationPalette}:ancestor,[ownScreen,ancestor,managedPosition,presentationPalette]);
   const props={...elementProps,ref:setElement};
   if(repeated)props['data-design-layout-mode']='offset';
-  const editableStyle=Array.isArray(definition?.editableStyle)?Object.fromEntries(Object.entries(node?.style||{}).filter(([key])=>definition.editableStyle.includes(key))):node?.style;
+  const allowedStyle=Array.isArray(definition?.editableStyle)?Object.fromEntries(Object.entries(node?.style||{}).filter(([key])=>definition.editableStyle.includes(key))):node?.style;
+  const editableStyle=presentationPalette && !runtime.editing && !runtime.preview
+    ? Object.fromEntries(Object.entries(allowedStyle||{}).filter(([key])=>!['color','backgroundColor','borderColor','boxShadow'].includes(key)))
+    : allowedStyle;
   if(node || hasPositioned) props.style={...elementProps.style,...nodeStyle(editableStyle),...geometry,...(hasPositioned?{position:elementProps.style?.position||'relative',minHeight:elementProps.style?.minHeight?`max(${typeof elementProps.style.minHeight==='number'?`${elementProps.style.minHeight}px`:elementProps.style.minHeight}, ${scopeHeight}px)`:scopeHeight||undefined}:{})};
   if(node && interactive)props.style={...props.style,minHeight:props.style?.minHeight?`max(44px, ${typeof props.style.minHeight==='number'?`${props.style.minHeight}px`:props.style.minHeight})`:44,minWidth:props.style?.minWidth?`max(44px, ${typeof props.style.minWidth==='number'?`${props.style.minWidth}px`:props.style.minWidth})`:44,...(as==='a'?{display:'inline-flex',alignItems:'center'}:{})};
   if(node?.visible===false && !required) {props.hidden=true;props.style={...props.style,display:'none'};}

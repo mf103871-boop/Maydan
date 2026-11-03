@@ -120,7 +120,7 @@ export function DesignRuntime({children}) {
     void hydratePublished();
     try{await account.requestAuthenticated('/api/design/preview',{method:'DELETE'});}catch{/* Public design remains available offline. */}
   }
-  return <DesignProvider document={safeDisplay.document} assetUrls={safeDisplay.assetUrls||{}}>
+  return <DesignProvider document={safeDisplay.document} preview={safeDisplay.channel==='preview'} assetUrls={safeDisplay.assetUrls||{}}>
     {children}
     {safeDisplay.channel==='preview' && <aside style={{position:'fixed',insetInlineStart:8,top:'max(6px, env(safe-area-inset-top))',zIndex:390,background:'#352547',color:'white',borderRadius:12,padding:'4px 10px',fontSize:12}} aria-label="معاينة تصميم خاصة">معاينة خاصة <button type="button" onClick={exitPreview} disabled={!!pending && pending.channel!=='preview'} style={{color:'white',fontSize:12,minHeight:44,padding:'0 8px'}}>{pending && pending.channel!=='preview'?'العودة عند انتهاء اللعب أو المكالمة':'العودة للتصميم المنشور'}</button></aside>}
   </DesignProvider>;

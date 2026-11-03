@@ -76,6 +76,7 @@ export function GameFrame({ game, inGame, exitMessage, beforeExit, children, onE
       <div data-design-id="header" className="game-bar">
         <IconButton data-design-id="home" data-design-required="true" label="العودة إلى المنصة" onClick={() => requestExit('/')}><IconHome /></IconButton>
         <span data-design-id="title" className="title">{game.name}</span>
+        {game.id === 'jabeen' && <span className="online-social-slot" data-social-game-launcher />}
         <IconButton data-design-id="sound" label={platform.settings.soundOn ? 'كتم الصوت' : 'تشغيل الصوت'} aria-pressed={!platform.settings.soundOn} onClick={() => platform.setSettings({ soundOn: !platform.settings.soundOn })}>
           {/* الأيقونة مفتاحها حالة الصوت: تنبثق عند التبديل */}
           <span key={String(platform.settings.soundOn)} className="icon-swap">{platform.settings.soundOn ? <IconVolume /> : <IconVolumeOff />}</span>

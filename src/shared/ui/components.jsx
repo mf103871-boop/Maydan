@@ -1,4 +1,6 @@
 import { Avatar, TrophyArtwork, ClayStage } from '../brand/art.jsx';
+import { ProfileAvatar } from '../../profiles/ProfileAvatar.jsx';
+import { PlayerName } from '../../profiles/PlayerIdentity.jsx';
 // المكونات المشتركة: زر، بطاقة، شارة، نافذة، ورقة سفلية، تنبيه، حلقة تقدم، لوحة نتائج، منصة تتويج، شاشة.
 import React, { useEffect, useLayoutEffect, useRef, useState, useCallback, createContext, useContext } from 'react';
 import { createPortal } from 'react-dom';
@@ -154,10 +156,10 @@ export function Modal({ title, onClose, children, footer = null, closeLabel = '�
   return <><span ref={anchor} hidden aria-hidden="true" />{host ? createPortal(provided, host) : provided}</>;
 }
 
-export function ConfirmModal({ title, message, confirmLabel = 'نعم', cancelLabel = 'لا', danger = false, onConfirm, onCancel }) {
+export function ConfirmModal({ title, message, confirmLabel = 'نعم', cancelLabel = 'لا', danger = false, onConfirm, onCancel, confirmSound }) {
   return (
     <Modal title={title} onClose={onCancel} className={danger ? 'is-danger' : ''} footer={<>
-      <Button data-design-id="confirm" data-design-required="true" variant={danger ? 'danger' : 'primary'} size="lg" full onClick={onConfirm}>{confirmLabel}</Button>
+      <Button data-design-id="confirm" data-sound={confirmSound} data-design-required="true" variant={danger ? 'danger' : 'primary'} size="lg" full onClick={onConfirm}>{confirmLabel}</Button>
       <ModalCloseButton data-design-id="cancel" data-design-required="true" variant="ghost" full onClick={onCancel}>{cancelLabel}</ModalCloseButton>
     </>}>
       <p className="muted" style={{ lineHeight: 1.7 }}>{message}</p>
@@ -293,8 +295,8 @@ export function Scoreboard({ entries, unit = '', ...rest }) {
         const bumped = (bumps.current.get(e.id) || 0) > now - 600;
         return (
           <div key={e.id} className={`score-row ${e.score === max && max > 0 ? 'is-leader' : ''}`} style={{ '--row-color': e.color, '--n': i }}>
-            <ClayStage className="clay-static no-contact"><Avatar player={e} className="avatar" /></ClayStage>
-            <span className="name">{e.name}</span>
+            <ClayStage className="clay-static no-contact">{e.profile ? <ProfileAvatar user={e.profile} size={36} /> : <Avatar player={e} className="avatar" />}</ClayStage>
+            <span className="name"><PlayerName user={e.profile} name={e.name} card={!!e.profile} badge={!!e.profile} compact /></span>
             {e.delta ? <span className="delta" key={`${e.score}-${e.delta}`}>+{e.delta}</span> : null}
             <span className={`score ${bumped ? 'is-bumped' : ''}`} key={e.score}><CountUp value={e.score} from={from} duration={600} />{unit}</span>
           </div>
@@ -339,7 +341,7 @@ export function Podium({ entries, title, unit = '', ...domProps }) {
   const heights = { 0: 92, 1: 66, 2: 48 };
   const winners = sorted.filter((e) => ranking(e) === ranking(sorted[0]));
   const heading = title || (winners.length > 1 ? 'تعادل جميل!' : `فاز ${sorted[0].name}`);
-  // التسلسل: الأعمدة تصعد 3→2→1 (الفائز آخرًا)، ثم دفعة قصاصات صغيرة عند عمود الفائز (~1.1s).
+  // الأسماء والنتائج تظهر فورًا؛ الاحتفال على الرسوم فقط دون إخفاء المعلومة.
   const winnerRef = useRef(null);
   useEffect(() => {
     const t = setTimeout(() => {
@@ -357,9 +359,9 @@ export function Podium({ entries, title, unit = '', ...domProps }) {
           const rank = sorted.indexOf(e);
           return (
             <div key={e.id} ref={rank === 0 ? winnerRef : null} data-rank={sorted.findIndex((entry) => ranking(entry) === ranking(e)) + 1} className="podium-col" style={{ '--col-color': e.color, '--delay': `${(2 - rank) * 260 + 300}ms`, '--h': `${heights[rank]}px` }}>
-              <ClayStage className="avatar-wrap"><Avatar player={e} className="avatar" /></ClayStage>
-              <span className="name">{e.name}</span>
-              <div className="block"><span className="rank" aria-label="الترتيب">{sorted.findIndex((entry) => ranking(entry) === ranking(e)) + 1}</span><span><CountUp value={e.score} delay={(2 - rank) * 260 + 600} />{unit}</span></div>
+              <ClayStage className="avatar-wrap">{e.profile ? <ProfileAvatar user={e.profile} size={64} /> : <Avatar player={e} className="avatar" />}</ClayStage>
+              <span className="name"><PlayerName user={e.profile} name={e.name} card={!!e.profile} badge={!!e.profile} compact /></span>
+              <div className="block"><span className="rank" aria-label="الترتيب">{sorted.findIndex((entry) => ranking(entry) === ranking(e)) + 1}</span><span className="count-up">{e.score}{unit}</span></div>
             </div>
           );
         })}

@@ -38,3 +38,9 @@
 .mamnoo-tally span:nth-child(2) { --k: 1; } .mamnoo-tally span:nth-child(3) { --k: 2; }
 
 .mamnoo-judge { position: relative; border-radius: 22px; }
+
+/* Correct and skip are the frequent actions; the penalty has an equal target. */
+.mamnoo-buttons { grid-template-columns: repeat(3, minmax(0,1fr)); align-items: stretch; }
+.mamnoo-buttons .btn, .mamnoo-buttons .mamnoo-buzz { min-width: 0; min-height: 68px !important; font-size: clamp(14px, 3.9vw, 19px) !important; padding: 10px 5px; }
+.mamnoo-buttons .mamnoo-buzz { grid-column: auto; background: linear-gradient(#fff0eb,#f7d7cf) !important; color: #8e2f36 !important; border-color: #d59a93 !important; box-shadow: inset 0 1px #fff, 0 3px 0 #d4aca5 !important; }
+@media (min-width: 620px) { .mamnoo-buttons .btn { min-height: 76px !important; } }

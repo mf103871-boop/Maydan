@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "algorithm": "AES-256-GCM",
+  "nonceBase64": "g1EUXStvhShkCu7e",
+  "aad": {
+    "schemaVersion": 1,
+    "appId": "6808385717",
+    "environment": "mafia-preview",
+    "kind": "warmth-audio",
+    "bundleId": "maydan-warmth-20261103-private-v1",
+    "sourceManifestSHA256": "26a1737edc78602489fc7a746c1ee199d65066614312b621648da24f1f207c56",
+    "runtimePackSHA256": "7286f0eee8f45affac5701c502766ddbe9b64ea2669f42675a138768f9ec1940"
+  },
+  "cipherSHA256": "31e296b184f869da9b81b2162d01fbd06b266b62a0e780feb09d6238b9a3fb68",
+  "cipherBytes": 56352609
+}

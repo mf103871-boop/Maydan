@@ -7,6 +7,7 @@ import { useAccount } from '../../shared/account/context.js';
 import { LammaIcon } from '../../social/LammaMedia.jsx';
 import { useProfiles } from '../../profiles/ProfileProvider.jsx';
 import { ProfileAvatar } from '../../profiles/ProfileAvatar.jsx';
+import { MembershipBadge } from '../../profiles/PlayerIdentity.jsx';
 import { PUBLIC_SITE_ORIGIN, LEGAL_ROUTES } from '../../shared/account/config.js';
 import { navigate, getDirection } from '../router.js';
 import { GAMES } from '../registry.js';
@@ -46,7 +47,7 @@ function GameCard({ game, index, onOpen }) {
       <span className="home-game-copy"><span className="name">{game.name}</span><span className="tagline">{game.tagline}</span><span className="meta">
         <span><IconUsers /> <bdi>{game.players.min}–{game.players.max}</bdi></span>
         <span><IconClock /> <bdi>{game.duration}</bdi></span>
-        <span>{support?.online && support.local ? 'أونلاين · مع العائلة' : support?.online ? 'أونلاين' : 'مع العائلة'}</span>
+        <span className="home-game-capability">{support?.online && support.local ? 'أونلاين · مع العائلة' : support?.online ? 'أونلاين' : 'مع العائلة'}</span>
       </span></span>
       <IconBack className="home-game-arrow" aria-hidden="true" />
     </button>
@@ -57,14 +58,16 @@ export function GameModeSheet({ game, onClose, onSelect }) {
   if (!game) return null;
   const support = getGameModeSupport(game.id);
   return <Sheet open title={game.name} onClose={onClose} data-design-screen="home.game-mode">
+    <p className="game-mode-intro">كيف تحبّوا تلعبوا؟</p>
     <div className="game-mode-options" aria-label="اختر نمط اللعب">
-      <button type="button" className="game-mode-choice" data-design-id="online-mode" disabled={!support?.online} onClick={() => onSelect('online')}>
-        <span className="game-mode-symbol" aria-hidden="true">↗</span><span><strong>أونلاين</strong><small>{support?.online ? support.unit === 'teams' ? 'جوال لكل فريق' : 'كل لاعب من جواله' : 'غير متاح لهذه اللعبة حاليًا'}</small></span><IconBack aria-hidden="true" />
+      <button type="button" className="game-mode-choice is-online" data-design-id="online-mode" disabled={!support?.online} onClick={() => onSelect('online')}>
+        <span className="game-mode-symbol" aria-hidden="true"><LammaIcon name="game" /></span><span><strong>أونلاين</strong><small>{support?.online ? support.unit === 'teams' ? 'جوال لكل فريق · يحتاج الإنترنت' : 'كل لاعب من جواله · يحتاج الإنترنت' : 'غير متاح لهذه اللعبة حاليًا'}</small></span><IconBack aria-hidden="true" />
       </button>
-      <button type="button" className="game-mode-choice" data-design-id="local-mode" disabled={!support?.local} onClick={() => onSelect('local')}>
+      <button type="button" className="game-mode-choice is-local" data-design-id="local-mode" disabled={!support?.local} onClick={() => onSelect('local')}>
         <span className="game-mode-symbol" aria-hidden="true"><IconUsers /></span><span><strong>مع العائلة</strong><small>{support?.local ? 'على جوال واحد' : 'متاحة أونلاين فقط'}</small></span><IconBack aria-hidden="true" />
       </button>
     </div>
+    <p className="game-mode-note">اللعب مجاني؛ بلس لتخصيص البروفايل وإطار الصورة.</p>
   </Sheet>;
 }
 
@@ -97,7 +100,7 @@ export function Home() {
           <BrandMark />
           <div><Wordmark /><div className="brand-sub">ألعاب جمعتنا</div></div>
         </div>
-        <button type="button" data-design-id="profile" className="home-profile" aria-label="بروفايلي" title="بروفايلي" onClick={() => navigate('/profile')}><ProfileAvatar user={profiles?.mine || account.user} size={64} /></button>
+        <button type="button" data-design-id="profile" className="home-profile" aria-label="بروفايلي" title="بروفايلي" onClick={() => navigate('/profile')}><ProfileAvatar user={profiles?.mine || account.user} size={64} /><span className="home-profile-membership"><MembershipBadge user={profiles?.mine || account.user} compact /></span></button>
       </header>
 
       <section data-design-id="games" className="home-games" aria-labelledby="home-games-title">
