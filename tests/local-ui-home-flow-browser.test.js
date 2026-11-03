@@ -31,8 +31,8 @@ async function waitForProfileGeometry(page, timeout = 5000) {
   await page.waitForFunction(() => {
     const profile = document.querySelector('.home-profile');
     if (!profile) return false;
-    // Visibility does not wait for the header's scale(.98) entrance frame.
-    // Even a reduced-motion animation needs a rendering tick to settle.
+    // A currently static header can still be inside a finite route animation.
+    // Even reduced-motion animation needs a rendering tick to settle.
     for (let node = profile; node; node = node.parentElement) {
       if (node.getAnimations().some(animation =>
         !['finished', 'idle'].includes(animation.playState) &&
@@ -42,19 +42,46 @@ async function waitForProfileGeometry(page, timeout = 5000) {
   }, undefined, { timeout });
 }
 
-test('Chromium/WebKit: profile geometry waits for real ancestor animation and still rejects undersized layout', { timeout: 30000 }, async () => {
+async function waitForHomeRowsGeometry(page, timeout = 5000) {
+  const handle = await page.waitForFunction(() => {
+    const listNode = document.querySelector('.home-game-list');
+    const rowNodes = [...document.querySelectorAll('.home-game-row')];
+    if (!listNode || !rowNodes.length) return false;
+    // Read one layout snapshot. Separate protocol boundingBox calls can straddle
+    // viewport/font reflow and report a row from a different layout than its list.
+    for (let node = listNode; node; node = node.parentElement) {
+      if (node.getAnimations().some(animation =>
+        !['finished', 'idle'].includes(animation.playState) &&
+        animation.effect?.getTiming().iterations !== Infinity)) return false;
+    }
+    const rect = node => {
+      const box = node.getBoundingClientRect();
+      return { x: box.x, y: box.y, width: box.width, height: box.height };
+    };
+    const list = rect(listNode), rows = rowNodes.map(rect);
+    if (!rows.every(row => Math.abs(row.width - list.width) < 2 && row.height >= 44 && row.height < 150 && Math.abs(row.x - list.x) < 2)) return false;
+    return { list, rows };
+  }, undefined, { timeout });
+  try { return await handle.jsonValue(); } finally { await handle.dispose(); }
+}
+
+test('Chromium/WebKit: geometry accepts a static header, waits for finite animation and rejects undersized profile or rows', { timeout: 30000 }, async () => {
   const css = (await Promise.all(['src/shared/theme/tokens.css', 'src/shared/ui/ui.css', 'src/platform/platform.css', 'src/platform/screens/home-rebuild.css'].map(file => readFile(file, 'utf8')))).join('\n');
   for (const engine of [chromium, webkit]) {
     const browser = await engine.launch({ headless: true });
     try {
       const page = await browser.newPage({ viewport: { width: 390, height: 844 }, reducedMotion: 'reduce' });
-      await page.setContent(`<style>${css}</style><section class="screen home-screen"><header class="home-head"><button class="home-profile" aria-label="بروفايلي">🙂</button></header></section><script>
-        const header = document.querySelector('.home-head'); getComputedStyle(header).transform;
-        const entrance = header.getAnimations().find(animation => animation.animationName === 'ui-lift-in');
+      await page.setContent(`<style>${css}</style><section class="screen home-screen"><header class="home-head"><button class="home-profile" aria-label="بروفايلي">🙂</button></header></section>`);
+      await waitForProfileGeometry(page);
+      assert.equal(await page.locator('.home-head').evaluate(node => getComputedStyle(node).animationName), 'none', 'the shipped header is immediately readable');
+      // An explicit paused animation tests the guard deterministically, without
+      // requiring production to keep a decorative entrance or racing 0.01ms.
+      await page.locator('.home-head').evaluate(header => {
+        const entrance = header.animate([{ transform: 'translateY(14px) scale(.98)' }, { transform: 'none' }], { duration: 1000, fill: 'both' });
         entrance.pause(); entrance.currentTime = 0; window.finishEntrance = () => entrance.finish();
-      </script>`);
+      });
       assert.equal(await page.locator('.home-profile').evaluate(node => node.offsetWidth), 72);
-      assert.ok((await page.locator('.home-profile').boundingBox()).width < 72, 'the existing entrance scales its 72px layout before settling');
+      assert.ok((await page.locator('.home-profile').boundingBox()).width < 72, 'the controlled ancestor scales its 72px layout before settling');
       let settled = false;
       const waiting = waitForProfileGeometry(page).then(() => { settled = true; });
       await page.waitForTimeout(40);
@@ -63,6 +90,12 @@ test('Chromium/WebKit: profile geometry waits for real ancestor animation and st
       assert.ok((await page.locator('.home-profile').boundingBox()).width >= 72);
       await page.locator('.home-profile').evaluate(node => { node.style.width = '71px'; node.style.flexBasis = '71px'; });
       await assert.rejects(waitForProfileGeometry(page, 150), /Timeout/, 'waiting must not hide a persistent layout defect');
+      await page.locator('.home-screen').evaluate(node => node.insertAdjacentHTML('beforeend', '<div class="games-grid home-game-list"><button class="game-card home-game-row">لعبة تجريبية</button><button class="game-card home-game-row">لعبة أخرى</button></div>'));
+      await waitForHomeRowsGeometry(page);
+      await page.locator('.home-game-row').first().evaluate(node => { node.style.width = '71px'; });
+      await assert.rejects(waitForHomeRowsGeometry(page, 150), /Timeout/, 'atomic measurement must still reject a persistent narrow row');
+      await page.locator('.home-game-row').first().evaluate(node => { node.style.width = ''; });
+      await waitForHomeRowsGeometry(page);
     } finally { await browser.close(); }
   }
 });
@@ -119,13 +152,10 @@ test('Chromium/WebKit: compact Home, every mode, family setup/resume, reload and
         for (const [width, height] of [[360, 640], [390, 844], [430, 932], [844, 390], [1024, 768]]) {
           await page.setViewportSize({ width, height });
           assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1), `${name}:${width} overflow`);
-          // The rows reflow after the resize; check the settled geometry, not a frame mid-reflow.
-          const settled = await page.waitForFunction(() => {
-            const row = document.querySelector('.home-game-row')?.getBoundingClientRect(), list = document.querySelector('.home-game-list')?.getBoundingClientRect();
-            return Boolean(row && list && Math.abs(row.width - list.width) < 2 && row.height < 150);
-          }, null, { timeout: 5000 }).then(() => true, () => false);
-          const row = await page.locator('.home-game-row').first().boundingBox(), list = await page.locator('.home-game-list').boundingBox();
-          assert.ok(settled && Math.abs(row.width - list.width) < 2 && row.height < 150, `${name}:${width} horizontal row ${JSON.stringify({ row, list })}`);
+          // Check every row and its list in the same settled DOM snapshot.
+          const geometry = await waitForHomeRowsGeometry(page);
+          assert.equal(geometry.rows.length, 8);
+          assert.ok(geometry.rows.every(row => Math.abs(row.width - geometry.list.width) < 2 && row.height >= 44 && row.height < 150 && Math.abs(row.x - geometry.list.x) < 2), `${name}:${width} horizontal rows ${JSON.stringify(geometry)}`);
           await waitForProfileGeometry(page);
           assert.ok((await page.getByRole('button', { name: 'بروفايلي', exact: true }).boundingBox()).width >= 72);
           await page.screenshot({ path: path.join(proof, `${name}-home-${width}.png`), fullPage: true });
