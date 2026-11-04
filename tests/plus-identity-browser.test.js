@@ -24,7 +24,7 @@ for (const [name, engine] of [['chromium', chromium], ['webkit', webkit]]) test(
   const broken = new Set();
   const server = createServer(async (req, res) => {
     const url = new URL(req.url, 'http://local');
-    if (broken.has(url.pathname)) { res.writeHead(404); res.end(); return; }
+    if (broken.has(url.pathname)) { res.writeHead(404, { 'cache-control': 'no-store' }); res.end(); return; }
     if (url.pathname === '/bundle.js') { res.setHeader('content-type', 'text/javascript'); res.end(built.outputFiles[0].contents); return; }
     if (url.pathname.startsWith('/assets/plus/')) {
       const target = path.resolve(root, 'public', '.' + url.pathname);
@@ -42,11 +42,19 @@ for (const [name, engine] of [['chromium', chromium], ['webkit', webkit]]) test(
   const origin = `http://127.0.0.1:${server.address().port}`;
   const browser = await engine.launch({ headless: true });
   const observations = { engine: name, checks: [], physicalDevice: false, actualCatalogArtwork: true, uploadedPortraitFixture: true };
+  const errors = [], outside = [], requests = [];
+  let activePage, stage = 'successful-artwork';
+  const remember = value => { requests.push(value); if (requests.length > 80) requests.shift(); };
+  const attach = async (page, context) => {
+    page.on('pageerror', error => errors.push(error.message.slice(0, 500)));
+    page.on('request', request => remember({ context, event: 'request', path: new URL(request.url()).pathname.slice(0, 180) }));
+    page.on('response', response => remember({ context, event: 'response', path: new URL(response.url()).pathname.slice(0, 180), status: response.status() }));
+    await page.route('**/*', route => { if (new URL(route.request().url()).origin !== origin) { outside.push('external-request'); return route.abort(); } return route.continue(); });
+  };
   try {
     const page = await browser.newPage({ viewport: { width: 390, height: 844 }, reducedMotion: 'no-preference' });
-    const errors = [], outside = [];
-    page.on('pageerror', error => errors.push(error.message));
-    await page.route('**/*', route => { if (new URL(route.request().url()).origin !== origin) { outside.push('external-request'); return route.abort(); } return route.continue(); });
+    activePage = page;
+    await attach(page, 'successful-artwork');
     await page.goto(origin);
     await page.locator('[data-case="100"] .player-avatar-frame img').waitFor();
     await page.waitForFunction(() => [...document.querySelectorAll('.cases img')].every(image => image.complete && image.naturalWidth > 0));
@@ -58,12 +66,14 @@ for (const [name, engine] of [['chromium', chromium], ['webkit', webkit]]) test(
       assert.equal(value.slot, size); assert.equal(value.detail, detail); assert.ok(value.frame > size); assert.ok(value.portrait < size); assert.equal(value.overflow, 'visible'); assert.equal(value.crop, 'hidden'); assert.equal(value.pointer, 'none'); assert.match(value.url, /\/api\/profiles\/member\/images\/avatar\//); assert.equal(value.status, 'rgb(0, 140, 90)');
     }
     observations.checks.push('24/40/100 LOD, outer art separate from inner crop, uploaded avatar preserved, status indicator untouched.');
+    stage = 'membership-and-name';
     await page.screenshot({ path: path.join(output, name + '-actual-artwork.png') });
     assert.equal(await page.locator('.player-membership-badge').count(), 0);
     await page.evaluate(() => localStorage.setItem('premium', 'true')); assert.equal(await page.locator('.player-membership-badge').count(), 0);
     await page.evaluate(() => window.identityTest.user({ cosmetics: { badge: true } })); await page.locator('#name .player-membership-badge').waitFor();
     assert.match(await page.locator('#name .player-name-card>img').getAttribute('src'), /noir-name-card/);
     observations.checks.push('Effective membership badge is independent of gold frame/localStorage; name card stays independent of cover.');
+    stage = 'motion-and-reduced-motion';
     await page.waitForFunction(() => document.querySelector('[data-case="40"] .plus-avatar-shell').dataset.identityMotion === 'running');
     assert.equal(await page.locator('[data-case="40"] .player-avatar-frame-light').evaluate(element => getComputedStyle(element).animationPlayState), 'running');
     await page.emulateMedia({ reducedMotion: 'reduce' });
@@ -78,25 +88,70 @@ for (const [name, engine] of [['chromium', chromium], ['webkit', webkit]]) test(
     await page.evaluate(() => scrollTo(0, 0));
     await page.waitForFunction(() => document.querySelector('.offscreen .plus-avatar-shell').dataset.identityMotion === 'paused');
     observations.checks.push('Actual reduced-motion CSS/system setting and IntersectionObserver pause decorative motion offscreen.');
+    stage = 'successful-character';
     await page.evaluate(() => window.identityTest.user({ cosmetics: { avatarId: 'artist.avatar' } }));
-    await page.waitForFunction(() => document.querySelector('[data-case="40"] .player-avatar-portrait img').src.includes('artist-avatar'));
+    await page.waitForFunction(() => {
+      const images = [...document.querySelectorAll('.cases .player-avatar-portrait>img')];
+      return images.length === 3 && images.every(image => image.src.includes('artist-avatar') && image.complete && image.naturalWidth > 0);
+    });
     assert.equal(await page.locator('[data-case="40"] .player-avatar-portrait img').evaluate(element => getComputedStyle(element).objectFit), 'contain');
-    for (const file of ['artist-avatar.webp', 'artist-frame-small.svg', 'artist-frame-medium.webp', 'artist-frame.webp']) broken.add('/assets/plus/v2/' + file);
-    broken.add('/assets/plus/v1/artist.webp');
-    await page.evaluate(() => window.identityTest.user({ cosmetics: { avatarId: null, frameId: 'artist.frame' } }));
-    await page.waitForFunction(() => document.querySelectorAll('.cases .player-avatar-frame.is-fallback').length === 3);
-    await page.evaluate(() => window.identityTest.user({ cosmetics: { avatarId: 'artist.avatar' } }));
-    await page.waitForFunction(() => [...document.querySelectorAll('.cases .player-avatar-portrait>img')].every(image => image.src.includes('/api/profiles/member/')));
-    observations.checks.push('Explicit character equip uses contain; failed new/legacy character art returns to uploaded image; missing frames render a CSS fallback.');
-    for (const [width, height] of [[320, 844], [390, 844], [844, 390]]) {
-      await page.setViewportSize({ width, height });
-      assert.equal(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), true, `overflow at${width}`);
+    observations.checks.push('Explicit character equip decodes all three actual catalog portraits and uses contain.');
+
+    // Start the unavailable-art scenario without any previously successful
+    // decoded/in-flight artist image. Toggling a server to404 does not evict a
+    // resource already held by the first browser context.
+    const failedPaths = ['artist-avatar.webp', 'artist-frame-small.svg', 'artist-frame-medium.webp', 'artist-frame.webp'].map(file => '/assets/plus/v2/' + file).concat('/assets/plus/v1/artist.webp');
+    for (const pathname of failedPaths) broken.add(pathname);
+    stage = 'fresh-failure-context';
+    const failureContext = await browser.newContext({ viewport: { width: 390, height: 844 }, reducedMotion: 'no-preference' });
+    const failurePage = await failureContext.newPage();
+    activePage = failurePage;
+    await attach(failurePage, 'unavailable-artwork');
+    await failurePage.goto(origin);
+    await failurePage.locator('[data-case="100"] .player-avatar-frame img').waitFor();
+    await failurePage.waitForFunction(() => [...document.querySelectorAll('.cases img')].every(image => image.complete && image.naturalWidth > 0));
+    stage = 'actual-404-responses';
+    const failedResponses = failedPaths.map(pathname => failurePage.waitForResponse(response => new URL(response.url()).pathname === pathname && response.status() === 404, { timeout: 30000 }));
+    await Promise.all([
+      ...failedResponses,
+      failurePage.evaluate(() => window.identityTest.user({ cosmetics: { avatarId: 'artist.avatar', frameId: 'artist.frame' } })),
+    ]);
+    stage = 'uploaded-portrait-and-css-frame-fallback';
+    await failurePage.waitForFunction(() => {
+      const images = [...document.querySelectorAll('.cases .player-avatar-portrait>img')];
+      const frames = [...document.querySelectorAll('.cases .player-avatar-frame')];
+      return images.length === 3 && images.every(image => image.src.includes('/api/profiles/member/') && image.complete && image.naturalWidth > 0)
+        && frames.length === 3 && frames.every(frame => frame.classList.contains('is-fallback') && !frame.querySelector('img'));
+    });
+    observations.failedArtworkResponses = failedPaths.map(path => ({ path, status: 404 }));
+    observations.checks.push('Fresh context received all five404s; new/legacy portraits return to three complete uploaded images and all three frames render CSS fallback without broken img elements.');
+    for (const [context, checkedPage] of [['successful-artwork', page], ['unavailable-artwork', failurePage]]) {
+      activePage = checkedPage;
+      for (const [width, height] of [[320, 844], [390, 844], [844, 390]]) {
+        stage = `${context}-geometry-${width}`;
+        await checkedPage.setViewportSize({ width, height });
+        assert.equal(await checkedPage.evaluate(() => document.documentElement.scrollWidth <= innerWidth), true, `${context} overflow at${width}`);
+      }
     }
+    stage = 'final-evidence';
+    activePage = page;
     await page.setViewportSize({ width: 390, height: 844 });
     await page.screenshot({ path: path.join(output, name + '-identity.png') });
     assert.deepEqual(errors, []); assert.deepEqual(outside, []);
     observations.passed = true;
     await import('node:fs/promises').then(fs => fs.writeFile(path.join(output, name + '.json'), JSON.stringify(observations, null, 2)));
+  } catch (error) {
+    let timer;
+    const dom = await Promise.race([
+      activePage?.evaluate(() => [...document.querySelectorAll('.cases [data-case]')].slice(0, 3).map(element => ({
+        size: element.dataset.case,
+        frame: element.querySelector('.player-avatar-frame')?.className,
+        images: [...element.querySelectorAll('img')].slice(0, 5).map(image => ({ path: new URL(image.src).pathname.slice(0, 180), complete: image.complete, naturalWidth: image.naturalWidth })),
+      }))).catch(() => null),
+      new Promise(resolve => { timer = setTimeout(() => resolve('diagnostic-timeout'), 1000); }),
+    ]).finally(() => clearTimeout(timer));
+    console.error('PLUS_IDENTITY_FAILURE ' + JSON.stringify({ engine: name, stage, requests, dom, errors: errors.slice(0, 8), outside: outside.length }));
+    throw error;
   } finally {
     await browser.close(); server.closeAllConnections(); await new Promise(resolve => server.close(resolve));
   }
