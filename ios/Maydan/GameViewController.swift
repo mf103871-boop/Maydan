@@ -117,6 +117,7 @@ final class GameViewController: UIViewController, WKNavigationDelegate, WKUIDele
         return value
     }()
     private var simulatorLaunchRecorded = false
+    private var simulatorLaunchObserved = false
 #endif
     private lazy var appUpdate = AppUpdateCoordinator(host: self, canPresent: { [weak self] in
         guard let self, self.presentedViewController == nil else { return false }
@@ -591,6 +592,11 @@ final class GameViewController: UIViewController, WKNavigationDelegate, WKUIDele
 
 #if targetEnvironment(simulator)
     private func recordSimulatorLaunchReady(_ payload: [String: Any], pageURL: URL) {
+        if !simulatorLaunchObserved {
+            simulatorLaunchObserved = true
+            let diagnostic = "Maydan launch readiness: candidate pid=\(ProcessInfo.processInfo.processIdentifier) uptime=\(ProcessInfo.processInfo.systemUptime) tokenMatches=\(payload["token"] as? String == simulatorLaunchToken) migrationReady=\(!isCollectingMigration && !isCommittingMigration && migration?.isDone == true) entryMatches=\(pageURL.path == AppSchemeHandler.entryURL.path)\n"
+            FileHandle.standardError.write(Data(diagnostic.utf8))
+        }
         // Eight registered games, including Mafia. A catalog change deliberately
         // updates this exact gate together with the Python and actual-Home tests.
         guard !simulatorLaunchRecorded, let token = simulatorLaunchToken,
@@ -609,6 +615,12 @@ final class GameViewController: UIViewController, WKNavigationDelegate, WKUIDele
             try JSONSerialization.data(withJSONObject: receipt, options: [.sortedKeys])
                 .write(to: directory.appendingPathComponent("ready.json"), options: .atomic)
             simulatorLaunchRecorded = true
+            // Acknowledge only after the receipt for this exact process has
+            // been written. The simulator-only web probe can then retire.
+            let acknowledgement = Self.json(["token": token])
+            webView.evaluateJavaScript("window.__maydanSimulatorLaunchReady = (\(acknowledgement)).token;", completionHandler: nil)
+            let diagnostic = "Maydan launch readiness: accepted pid=\(ProcessInfo.processInfo.processIdentifier) uptime=\(ProcessInfo.processInfo.systemUptime)\n"
+            FileHandle.standardError.write(Data(diagnostic.utf8))
         } catch { print("Maydan launch readiness: receipt-write-failed") }
     }
 

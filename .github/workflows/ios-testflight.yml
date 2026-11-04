@@ -45,7 +45,7 @@ concurrency:
 jobs:
   signed-build:
     runs-on: macos-15-intel
-    timeout-minutes: 45
+    timeout-minutes: 60
     env:
       IOS_RELEASE_ENVIRONMENT: ${{ inputs.environment || 'production' }}
       IOS_VERSION: ${{ inputs.version }}
