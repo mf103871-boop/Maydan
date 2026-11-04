@@ -44,7 +44,7 @@ concurrency:
 
 jobs:
   signed-build:
-    runs-on: macos-15-intel
+    runs-on: macos-15
     timeout-minutes: 60
     env:
       IOS_RELEASE_ENVIRONMENT: ${{ inputs.environment || 'production' }}
@@ -117,7 +117,7 @@ jobs:
           xcodebuild -project ios/Maydan.xcodeproj -scheme Maydan \
             -configuration Release -sdk iphonesimulator \
             -destination 'generic/platform=iOS Simulator' \
-            -derivedDataPath ios/build/simulator CODE_SIGNING_ALLOWED=NO \
+            -derivedDataPath ios/build/simulator CODE_SIGNING_ALLOWED=NO ARCHS=arm64 \
             "MARKETING_VERSION=$IOS_VERSION" "CURRENT_PROJECT_VERSION=$IOS_BUILD" build
           python3 scripts/ios/verify_runtime_dependencies.py ios/build/simulator/Build/Products/Release-iphonesimulator/Maydan.app
           python3 scripts/ios/smoke_release.py \

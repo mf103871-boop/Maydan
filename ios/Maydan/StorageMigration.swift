@@ -89,7 +89,12 @@ final class StorageMigration: NSObject, WKScriptMessageHandler, WKNavigationDele
     static func trace(_ phase: String) {
         // Direct stderr writes remain visible when simctl redirects output and
         // the process is terminated before buffered stdout would be flushed.
-        FileHandle.standardError.write(Data("Maydan migration: \(phase)\n".utf8))
+        var message = "Maydan migration: \(phase)"
+#if targetEnvironment(simulator)
+        // Timing only: never expose storage keys, values, accounts or URLs.
+        message += " timestamp=\(Date().timeIntervalSince1970) uptime=\(ProcessInfo.processInfo.systemUptime)"
+#endif
+        FileHandle.standardError.write(Data("\(message)\n".utf8))
     }
 
     func markDone() {

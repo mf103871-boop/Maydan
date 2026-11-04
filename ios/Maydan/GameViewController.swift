@@ -450,8 +450,9 @@ final class GameViewController: UIViewController, WKNavigationDelegate, WKUIDele
         progress.accessibilityLabel = label.text
         view.addSubview(progress)
         NSLayoutConstraint.activate([
-            progress.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            progress.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
             progress.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            progress.widthAnchor.constraint(equalTo: view.safeAreaLayoutGuide.widthAnchor, constant: -48),
             progress.leadingAnchor.constraint(greaterThanOrEqualTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 24),
             progress.trailingAnchor.constraint(lessThanOrEqualTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -24)
         ])
