@@ -110,57 +110,118 @@ test('active failures visit other candidate chapters once; exhausted audio requi
   music.play(context, output, 'home'); await settle(); assert.equal(music.getStatus().state, 'playing'); assert.equal(env.media.length, 5); assert.equal(music.getStatus().degraded, false); music.dispose();
 });
 
-test('resume waits silently for metadata and verified seek; privacy pause/reset preserve the requested position', async t => {
+test('silent play demand obtains deferred metadata, seeks the same chapter, then opens its gain', async t => {
   const env = environment(t), context = new env.Context(), output = context.createGain(), music = createStreamingSuite(suite());
   music.play(context, output, 'home'); await settle(); env.current().currentTime = 37; music.reset();
-  const Base = env.Audio;
-  window.Audio = class extends Base { constructor() { super(); this.readyState = 0; } };
-  music.play(context, output, 'home'); const pending = env.media.at(-1), metadata = pending.onloadedmetadata;
-  assert.equal(pending.plays, 0); assert.equal(music.position, 37); assert.equal(music.getStatus().state, 'paused');
-  music.pause(); assert.equal(music.position, 37); pending.readyState = 1; metadata(); await settle(); assert.equal(pending.plays, 0);
-  music.reset(); music.play(context, output, 'home'); const next = env.media.at(-1); assert.equal(next.plays, 0); next.readyState = 1; next.onloadedmetadata(); await settle();
-  assert.equal(next.currentTime, 37); assert.equal(next.plays, 1); assert.equal(music.getStatus().position, 37); music.dispose();
+  window.Audio = class extends env.Audio {
+    constructor() { super(); this.readyState = 0; }
+    play() {
+      const pending = super.play();
+      if (!this.readyState) queueMicrotask(() => { this.readyState = 4; this.onloadedmetadata?.(); });
+      return pending;
+    }
+  };
+  music.play(context, output, 'home'); const restored = env.media.at(-1), level = context.gains.at(-1).gain;
+  assert.equal(restored.plays, 1, 'a silent demand starts resource selection');
+  assert.equal(level.value, 0); assert.equal(music.current, null); assert.equal(music.skipNext(), false);
+  assert.equal(music.position, 37); assert.equal(music.getStatus().state, 'paused');
+  await settle(); assert.equal(restored.currentTime, 37); assert.equal(level.value, 1);
+  assert.equal(music.getStatus().trackId, 'music-intro'); assert.equal(env.sounding().length, 1); music.dispose();
 });
 
-test('a resume setter throwing before and after metadata never plays the old chapter from zero', async t => {
+test('a refused seek stays silent at the saved checkpoint, without declaring the recording unavailable', async t => {
+  t.mock.timers.enable({ apis: ['setTimeout'] }); let failures = 0;
+  const env = environment(t), context = new env.Context(), output = context.createGain();
+  const music = createStreamingSuite(suite(), { onFailure: () => failures++ });
+  music.play(context, output, 'home'); await settle(); env.current().currentTime = 37; music.reset();
+  window.Audio = class extends env.Audio { constructor() { super(); this.readyState = 1; Object.defineProperty(this, 'currentTime', { get: () => 0, set: () => { throw Error('seek refused'); } }); } };
+  music.play(context, output, 'home'); const rejected = env.media.at(-1), level = context.gains.at(-1).gain;
+  rejected.readyState = 4; rejected.oncanplay(); t.mock.timers.tick(5000); await settle();
+  assert.equal(level.value, 0); assert.equal(rejected.paused, true); assert.equal(music.position, 37);
+  assert.equal(music.getStatus().trackId, 'music-intro'); assert.equal(music.getStatus().state, 'failed');
+  assert.deepEqual(music.getStatus().resumeFailedTrackIds, ['music-intro']); assert.deepEqual(music.getStatus().unavailableTrackIds, []);
+  assert.equal(failures, 0, 'the shared bus must not blacklist the suite'); assert.equal(music.decoderCount, 0);
+  window.Audio = env.Audio; assert.equal(music.retry(), true); music.play(context, output, 'home'); await settle();
+  assert.equal(env.current().currentTime, 37); assert.equal(music.getStatus().trackId, 'music-intro'); music.dispose();
+});
+
+test('a deferred seek is verified by media progress even when the setter initially reports zero and seeking is false', async t => {
   const env = environment(t), context = new env.Context(), output = context.createGain(), music = createStreamingSuite(suite());
   music.play(context, output, 'home'); await settle(); env.current().currentTime = 37; music.reset();
-  const Base = env.Audio;
-  window.Audio = class extends Base { constructor() { super(); this.readyState = 1; Object.defineProperty(this, 'currentTime', { get: () => 0, set: () => { throw Error('seek refused'); } }); } };
-  music.play(context, output, 'home'); const rejected = env.media.at(-1); assert.equal(rejected.plays, 0); assert.equal(music.position, 37);
-  rejected.onloadedmetadata(); await settle(); assert.equal(rejected.plays, 0); assert.equal(rejected.paused, true); assert.notEqual(music.getStatus().trackId, 'music-intro');
-  assert.deepEqual(music.getStatus().resumeFailedTrackIds, ['music-intro']); assert.equal(music.getStatus().state, 'playing'); assert.equal(music.decoderCount, 1); music.dispose();
+  window.Audio = class extends env.Audio { constructor() { super(); this.readyState = 4; this.seeking = false; this.actual = 0; Object.defineProperty(this, 'currentTime', {get: () => this.actual, set: at => { this.requested = at; }}); } };
+  music.play(context, output, 'home'); await settle(); const restored = env.media.at(-1), level = context.gains.at(-1).gain;
+  assert.equal(restored.requested, 37); assert.equal(restored.currentTime, 0); assert.equal(level.value, 0); assert.equal(music.position, 37);
+  restored.onended(); assert.equal(music.getStatus().trackId, 'music-intro', 'an event from a priming decoder cannot consume its chapter');
+  restored.actual = 37; restored.ontimeupdate(); await settle();
+  assert.equal(level.value, 1); assert.equal(music.getStatus().state, 'playing'); assert.equal(music.decoderCount, 1); music.dispose();
 });
 
-test('an ignored synchronous seek skips the failed chapter instead of leaving a detached active slot', async t => {
-  const env = environment(t), context = new env.Context(), output = context.createGain(), music = createStreamingSuite(suite());
-  music.play(context, output, 'home'); await settle(); env.current().currentTime = 37; music.reset();
-  const Base = env.Audio;
-  window.Audio = class extends Base { constructor() { super(); this.readyState = 1; Object.defineProperty(this, 'currentTime', { get: () => 0, set() {} }); } };
-  music.play(context, output, 'home'); await settle();
-  assert.equal(env.media[1].plays, 0); assert.equal(env.media[1].src, undefined); assert.equal(music.getStatus().state, 'playing'); assert.notEqual(music.getStatus().trackId, 'music-intro'); assert.equal(music.decoderCount, 1); music.dispose();
-});
-
-test('metadata/seek timeout is bounded, cancelled in private pause, and cannot restart audio after disposal', async t => {
+test('resume timeout is bounded and cancelled during privacy pause; disposal rejects late metadata', async t => {
   t.mock.timers.enable({ apis: ['setTimeout'] });
   const env = environment(t), context = new env.Context(), output = context.createGain(), music = createStreamingSuite(suite());
   music.play(context, output, 'home'); await settle(); env.current().currentTime = 37; music.reset();
-  const Base = env.Audio;
-  window.Audio = class extends Base { constructor() { super(); this.readyState = 0; } };
+  window.Audio = class extends env.Audio { constructor() { super(); this.readyState = 0; } };
   music.play(context, output, 'home'); const pending = env.media.at(-1), oldMetadata = pending.onloadedmetadata;
-  t.mock.timers.tick(4999); assert.equal(pending.plays, 0); music.pause(); t.mock.timers.tick(5001); assert.equal(music.getStatus().trackId, 'music-intro');
-  music.play(context, output, 'home'); t.mock.timers.tick(5000); await settle(); assert.equal(pending.plays, 0); assert.notEqual(music.getStatus().trackId, 'music-intro'); assert.equal(music.getStatus().state, 'playing');
+  t.mock.timers.tick(4999); assert.equal(context.gains.at(-1).gain.value, 0); music.pause(); t.mock.timers.tick(5001);
+  assert.equal(pending.paused, true); assert.equal(music.position, 37); assert.equal(music.getStatus().state, 'paused');
+  music.play(context, output, 'home'); t.mock.timers.tick(5000); await settle();
+  assert.equal(pending.paused, true); assert.equal(music.getStatus().state, 'failed'); assert.equal(music.getStatus().trackId, 'music-intro');
+  assert.equal(music.position, 37); assert.equal(env.sounding().length, 0); assert.equal(music.decoderCount, 0);
   music.dispose(); oldMetadata(); await settle(); assert.equal(env.sounding().length, 0); assert.equal(music.decoderCount, 0);
 });
 
-test('seeked completion verifies position before any gain or playback and cannot restart a private pause', async t => {
+test('late priming promises or seek callbacks cannot open gain after privacy pause, graph reset or account disposal', async t => {
+  for (const action of ['pause', 'reset', 'dispose']) {
+    const env = environment(t), context = new env.Context(), output = context.createGain(), music = createStreamingSuite(suite());
+    music.play(context, output, 'home'); await settle(); env.current().currentTime = 37; music.reset();
+    let complete;
+    window.Audio = class extends env.Audio {
+      constructor() { super(); this.readyState = 0; }
+      play() { return new Promise(resolve => { complete = () => { this.paused = false; resolve(); }; }); }
+    };
+    music.play(context, output, 'home'); const stale = env.media.at(-1), oldSeek = stale.onseeked, gain = context.gains.at(-1).gain;
+    music[action](); stale.readyState = 4; oldSeek(); complete(); await settle();
+    assert.equal(stale.paused, true); assert.equal(gain.value, 0); assert.equal(music.current, null);
+    if (action !== 'dispose') assert.equal(music.position, 37);
+    music.dispose(); window.Audio = env.Audio;
+  }
+});
+
+test('gesture refusal cancels the priming timeout and the next authorised gesture resumes the same element', async t => {
+  t.mock.timers.enable({ apis: ['setTimeout'] });
+  for (const name of ['NotAllowedError', 'AbortError']) {
+    const env = environment(t), context = new env.Context(), output = context.createGain(), music = createStreamingSuite(suite());
+    music.play(context, output, 'home'); await settle(); env.current().currentTime = 37; music.reset();
+    window.Audio = class extends env.Audio {
+      constructor() { super(); this.readyState = 0; this.attempts = 0; }
+      play() { if (++this.attempts === 1) return Promise.reject(Object.assign(new Error('blocked'), { name })); return super.play(); }
+    };
+    music.play(context, output, 'home'); await settle(); const pending = env.media.at(-1), gain = context.gains.at(-1).gain;
+    assert.equal(music.getStatus().state, 'gesture-required'); pending.readyState = 4; pending.oncanplay();
+    t.mock.timers.tick(20000); assert.equal(pending.attempts, 1); assert.equal(gain.value, 0); assert.equal(music.position, 37);
+    assert.equal(music.getStatus().state, 'gesture-required'); assert.deepEqual(music.getStatus().resumeFailedTrackIds, []);
+    music.play(context, output, 'home'); await settle(); assert.equal(env.current(), pending); assert.equal(pending.currentTime, 37);
+    assert.equal(music.getStatus().trackId, 'music-intro'); assert.equal(gain.value, 1); music.dispose(); window.Audio = env.Audio;
+  }
+});
+
+test('metadata alone does not open gain and current data arriving during privacy pause must wait for resume', async t => {
   const env = environment(t), context = new env.Context(), output = context.createGain(), music = createStreamingSuite(suite());
   music.play(context, output, 'home'); await settle(); env.current().currentTime = 37; music.reset();
-  const Base = env.Audio;
-  window.Audio = class extends Base { constructor() { super(); this.readyState = 1; this.seeking = true; } };
-  music.play(context, output, 'home'); const pending = env.media.at(-1); assert.equal(pending.plays, 0); assert.equal(context.gains.at(-1).gain.value, 0);
-  music.pause(); pending.seeking = false; pending.onseeked(); await settle(); assert.equal(pending.plays, 0);
-  music.play(context, output, 'home'); await settle(); assert.equal(pending.plays, 1); assert.equal(pending.currentTime, 37); music.dispose();
+  window.Audio = class extends env.Audio { constructor() { super(); this.readyState = 1; } };
+  music.play(context, output, 'home'); await settle(); const pending = env.media.at(-1), gain = context.gains.at(-1).gain;
+  assert.equal(pending.currentTime, 37); assert.equal(gain.value, 0); assert.equal(music.current, null);
+  music.pause(); pending.readyState = 4; pending.oncanplay(); await settle(); assert.equal(pending.paused, true); assert.equal(gain.value, 0);
+  music.play(context, output, 'home'); await settle(); assert.equal(env.current(), pending); assert.equal(gain.value, 1); music.dispose();
+});
+
+test('a real decoder error during resume retains the recording-failure fallback', async t => {
+  const env = environment(t), context = new env.Context(), output = context.createGain(), music = createStreamingSuite(suite());
+  music.play(context, output, 'home'); await settle(); env.current().currentTime = 37; music.reset();
+  window.Audio = class extends env.Audio { constructor() { super(); this.readyState = 0; } };
+  music.play(context, output, 'home'); const corrupt = env.media.at(-1); corrupt.onerror(); await settle();
+  assert.deepEqual(music.getStatus().unavailableTrackIds, ['music-intro']); assert.deepEqual(music.getStatus().resumeFailedTrackIds, []);
+  assert.notEqual(music.getStatus().trackId, 'music-intro'); assert.equal(corrupt.paused, true); assert.equal(music.decoderCount, 1); music.dispose();
 });
 
 test('late completion of a prior play attempt cannot pause the newer authorised resume on the same element', async t => {

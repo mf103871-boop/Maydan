@@ -707,7 +707,39 @@ final class GameViewController: UIViewController, WKNavigationDelegate, WKUIDele
 
     private static let simulatorAudioScript = #"""
     (() => {
-      const proof = {fixture:'streaming-recovery',contexts:[],media:[],decoded:[],errors:[],lastCommand:null};
+      const proof = {fixture:'streaming-recovery',contexts:[],media:[],decoded:[],errors:[],lastCommand:null,mediaEvents:[],mediaEventsDropped:0};
+      const mediaEventPolicy = {limit:128,timeupdateMinIntervalMs:1000};
+      let mediaEventSequence = 0;
+      const finite = value => Number.isFinite(value) ? value : null;
+      const localMediaURL = value => typeof value === 'string' && /^maydan:\/\/app\/(?:audio\/(?:selected|candidates)\/[a-z0-9-]+|audio-warmth-preview\/audio\/[a-z][a-z0-9-]{0,79}-[a-f0-9]{12})\.m4a$/.test(value) ? value : null;
+      const recordMediaEvent = (record,event) => {
+        const at = Date.now();
+        if (event === 'timeupdate') {
+          if (at - record.lastTimeupdate < mediaEventPolicy.timeupdateMinIntervalMs) return;
+          record.lastTimeupdate = at;
+        }
+        const {media,context} = record, source = media.currentSrc || media.src;
+        // Preserve the last known local file when cleanup empties src. Never
+        // retain a caller URL, query string or free-form media error message.
+        if (source) record.url = localMediaURL(source);
+        proof.mediaEvents.push({sequence:++mediaEventSequence,event,generatedAt:at,
+          mediaIndex:record.index,contextIndex:proof.contexts.indexOf(context),
+          contextState:context.state,contextTime:finite(context.currentTime),
+          command:proof.lastCommand?.command || null,url:record.url,
+          time:finite(media.currentTime),duration:finite(media.duration),
+          readyState:media.readyState,networkState:media.networkState,
+          paused:media.paused,seeking:media.seeking,ended:media.ended,
+          error:Number.isInteger(media.error?.code) ? media.error.code : null});
+        if (proof.mediaEvents.length > mediaEventPolicy.limit) { proof.mediaEvents.shift(); proof.mediaEventsDropped++; }
+      };
+      const observeMedia = (media,context) => {
+        const record = {media,context,index:proof.media.length,url:null,lastTimeupdate:-Infinity};
+        proof.media.push(record);
+        for (const event of ['loadstart','loadedmetadata','loadeddata','canplay','seeking','seeked','timeupdate','waiting','stalled','suspend','error','emptied','play','playing','pause','ended','abort']) {
+          media.addEventListener(event,() => recordMediaEvent(record,event),{passive:true});
+        }
+        recordMediaEvent(record,'source-attached');
+      };
       const NativeAC = window.AudioContext || window.webkitAudioContext;
       proof.webAudioSupported = typeof NativeAC === 'function';
       // This simulator is owned by the release gate and has no player account.
@@ -717,7 +749,7 @@ final class GameViewController: UIViewController, WKNavigationDelegate, WKUIDele
           constructor(options) { super(options); proof.contexts.push(this); }
           createMediaElementSource(media) {
             const node = super.createMediaElementSource(media);
-            proof.media.push({media,context:this});
+            observeMedia(media,this);
             return node;
           }
           createDynamicsCompressor() {
@@ -759,6 +791,7 @@ final class GameViewController: UIViewController, WKNavigationDelegate, WKUIDele
           lastCommand:proof.lastCommand,contextCount:proof.contexts.length,contextState:context?.state || null,
           contextTime:context?.currentTime || 0,rms:Math.sqrt(samples.reduce((sum,n)=>sum+n*n,0)/samples.length),
           decodedCount:proof.decoded.length,decodedMaxSeconds:Math.max(0,...proof.decoded),errors:proof.errors.slice(),
+          mediaEvents:proof.mediaEvents.slice(),mediaEventsDropped:proof.mediaEventsDropped,mediaEventPolicy:{...mediaEventPolicy},
           media:proof.media.map(({media,context:owner})=>({url:media.currentSrc || media.src,duration:Number.isFinite(media.duration)?media.duration:null,
             time:media.currentTime,paused:media.paused,readyState:media.readyState,error:media.error?.code || null,
             contextIndex:proof.contexts.indexOf(owner),contextState:owner.state}))};

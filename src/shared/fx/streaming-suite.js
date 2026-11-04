@@ -32,7 +32,7 @@ export function createStreamingSuite(suite, { onFailure = () => {}, random = Mat
     return Object.freeze({ mode: 'suite', suiteId: suite.id, title: suite.title, trackId: track.id, trackTitle: track.title || track.id,
       chapter: index + 1, chapterCount: suite.suiteTracks.length, position: at, chapterSeconds: track.seconds,
       uniqueSeconds: suite.seconds, elapsedSeconds: elapsed + (completed ? 0 : at), cycle, repeat: suite.repeat === true,
-      state: failed ? 'failed' : completed ? 'ended' : active?.blocked ? 'gesture-required' : running && active && !active.audio.paused ? 'playing' : 'paused',
+      state: failed ? 'failed' : completed ? 'ended' : active?.blocked ? 'gesture-required' : running && active && !active.seekPending && !active.audio.paused ? 'playing' : 'paused',
       decoderCount: slots.size, transition: 'fade-out-then-in', transitioning: !!skipTimer, introOnce: !!suite.introTrackId,
       unavailableTrackIds: Object.freeze([...unavailable].map(i => suite.suiteTracks[i].id)), resumeFailedTrackIds: Object.freeze([...resumeFailures].map(i => suite.suiteTracks[i].id)), degraded: unavailable.size > 0 });
   }
@@ -40,23 +40,23 @@ export function createStreamingSuite(suite, { onFailure = () => {}, random = Mat
   function remove(slot) {
     if (!slot || !slots.delete(slot)) return;
     slot.attempt++; clearTimeout(slot.seekTimer);
-    slot.audio.onplaying = null; slot.audio.ontimeupdate = null; slot.audio.onended = null; slot.audio.onerror = null; slot.audio.onloadedmetadata = null; slot.audio.onseeked = null;
+    slot.audio.onplaying = null; slot.audio.ontimeupdate = null; slot.audio.onended = null; slot.audio.onerror = null; slot.audio.onloadedmetadata = null; slot.audio.onseeked = null; slot.audio.oncanplay = null;
     try { slot.audio.pause(); slot.audio.removeAttribute('src'); slot.audio.load(); } catch { /* already detached */ }
     try { slot.node.disconnect(); slot.gain.disconnect(); } catch { /* retired graph */ }
     if (active === slot) active = null;
     if (prepared === slot) prepared = null;
   }
   const live = slot => slots.has(slot) && slot.epoch === epoch;
-  function failAll() {
+  function failAll(recordingFailure = true) {
     position = positionOf();
     failed = true; running = false; epoch++; clearTimeout(skipTimer); skipTimer = null;
     for (const item of [...slots]) remove(item);
-    notify(); onFailure();
+    notify(); if (recordingFailure) onFailure();
   }
   function fail(slot, { resume = false } = {}) {
     if (!live(slot)) return;
+    if (resume) { resumeFailures.add(slot.index); failAll(false); return; }
     unavailable.add(slot.index);
-    if (resume) resumeFailures.add(slot.index);
     bag = bag.filter(i => !unavailable.has(i));
     if (nextCycleBag) nextCycleBag = nextCycleBag.filter(i => !unavailable.has(i));
     // A failed speculative load cannot cut a healthy chapter already playing.
@@ -75,24 +75,23 @@ export function createStreamingSuite(suite, { onFailure = () => {}, random = Mat
   }
   function seek(slot, at) {
     slot.seekPending = true; slot.resumeAt = at;
-    const verified = () => {
-      if (!live(slot) || !slot.seekPending) return;
-      if (!Number.isFinite(slot.audio.currentTime) || Math.abs(slot.audio.currentTime - at) > .25) { fail(slot, { resume: true }); return; }
-      slot.seekPending = false; clearTimeout(slot.seekTimer); slot.seekTimer = null; slot.audio.onseeked = null;
-      if (running && active === slot) playSlot(slot, .35);
-    };
-    const apply = afterMetadata => {
-      if (!live(slot) || !slot.seekPending) return;
-      try {
-        slot.audio.currentTime = at;
-        if (slot.audio.seeking) slot.audio.onseeked = verified; else verified();
-      } catch {
-        if (afterMetadata) { fail(slot, { resume: true }); return; }
-        slot.audio.onloadedmetadata = () => { slot.audio.onloadedmetadata = null; apply(true); };
+    const audio = slot.audio;
+    let requestedState = -1;
+    const check = () => {
+      if (!live(slot) || !slot.seekPending || slot.blocked || !running || active !== slot) return;
+      const ready = audio.readyState ?? 4;
+      if (ready < 1 || audio.seeking) return;
+      const atCheckpoint = () => Number.isFinite(audio.currentTime) && Math.abs(audio.currentTime - at) <= .25;
+      if (requestedState < 0 || (ready > requestedState && !atCheckpoint())) {
+        requestedState = ready;
+        try { audio.currentTime = at; } catch { requestedState = -1; return; }
       }
+      if (ready < 2 || audio.seeking || !atCheckpoint()) return;
+      slot.seekPending = false; clearTimeout(slot.seekTimer); slot.seekTimer = null;
+      slot.checkSeek = audio.onloadedmetadata = audio.onseeked = audio.oncanplay = null;
+      playSlot(slot, .35);
     };
-    if (Number.isFinite(slot.audio.readyState) && slot.audio.readyState < 1) slot.audio.onloadedmetadata = () => { slot.audio.onloadedmetadata = null; apply(true); };
-    else apply(false);
+    slot.checkSeek = audio.onloadedmetadata = audio.onseeked = audio.oncanplay = check;
   }
   function makeSlot(nextIndex) {
     const recording = suite.suiteTracks[nextIndex]; let audio, node, gain;
@@ -108,7 +107,9 @@ export function createStreamingSuite(suite, { onFailure = () => {}, random = Mat
     slots.add(slot);
     audio.onerror = () => fail(slot);
     audio.ontimeupdate = () => {
-      if (!live(slot) || active !== slot || !running || audio.paused || slot.seekPending) return;
+      if (!live(slot) || active !== slot || !running) return;
+      if (slot.seekPending) { slot.checkSeek(); return; }
+      if (audio.paused) return;
       position = Math.max(0, Number(audio.currentTime) || 0);
       const remaining = seconds() - position;
       // Prepare only one subsequent decoder and only near the boundary. Do not
@@ -136,14 +137,20 @@ export function createStreamingSuite(suite, { onFailure = () => {}, random = Mat
       notify();
     };
     audio.onended = () => {
-      if (!live(slot) || slot !== active || !running) return;
+      if (!live(slot) || slot !== active || !running || slot.seekPending) return;
       advance();
     };
     return slot;
   }
   function playSlot(slot, fadeSeconds = suite.transitionSeconds) {
     if (!live(slot) || !running || slot !== active) return;
-    if (slot.seekPending) { armSeekTimeout(slot); return; }
+    if (slot.seekPending) {
+      slot.blocked = false; armSeekTimeout(slot); slot.checkSeek();
+      if (!slot.seekPending || slot.primed) return;
+      // WebKit can defer fetching metadata until play(). The new node stays
+      // at zero gain until this exact chapter has data at the saved position.
+      slot.primed = true;
+    }
     const attempt = ++slot.attempt;
     let beganAlready = false;
     const valid = () => live(slot) && running && active === slot && attempt === slot.attempt;
@@ -154,6 +161,7 @@ export function createStreamingSuite(suite, { onFailure = () => {}, random = Mat
         if (!live(slot) || !running || active !== slot) { try { slot.audio.pause(); } catch { /* retired */ } }
         return;
       }
+      if (slot.seekPending) { slot.checkSeek(); return; }
       if (beganAlready) return;
       beganAlready = true;
       slot.audio.onplaying = null; slot.blocked = false; slot.fading = false;
@@ -167,7 +175,7 @@ export function createStreamingSuite(suite, { onFailure = () => {}, random = Mat
     const rejected = error => {
       if (!valid()) return;
       if (error?.name === 'NotAllowedError' || error?.name === 'AbortError') {
-        slot.blocked = true;
+        slot.blocked = true; slot.primed = false; clearTimeout(slot.seekTimer); slot.seekTimer = null;
         try { slot.audio.pause(); } catch { /* detached */ }
         notify();
       } else fail(slot);
@@ -211,14 +219,12 @@ export function createStreamingSuite(suite, { onFailure = () => {}, random = Mat
       if (!active) {
         try {
           const slot = makeSlot(index); active = slot;
-          // Assign active before seeking: a synchronous rejected/ignored seek
-          // must follow the active-failure path, never speculative preload.
           if (position > 0) seek(slot, position);
           playSlot(slot, position > 0 ? .35 : suite.transitionSeconds);
         }
         catch { failed = true; running = false; for (const slot of [...slots]) remove(slot); notify(); onFailure(); return false; }
-      } else if (active.audio.paused) {
-        if (position >= seconds() - .01) advance(); else playSlot(active, .35);
+      } else if (active.seekPending || active.audio.paused) {
+        if (!active.seekPending && position >= seconds() - .01) advance(); else playSlot(active, .35);
       }
       notify(); return !failed;
     },
@@ -226,7 +232,7 @@ export function createStreamingSuite(suite, { onFailure = () => {}, random = Mat
       running = false;
       clearTimeout(skipTimer); skipTimer = null;
       if (active) {
-        position = positionOf(); active.attempt++;
+        position = positionOf(); active.attempt++; active.primed = false;
         clearTimeout(active.seekTimer); active.seekTimer = null;
         active.audio.onplaying = null;
         try { active.audio.pause(); active.gain.gain.cancelScheduledValues(graph.currentTime); active.gain.gain.value = 0; } catch { /* already retired */ }
@@ -245,18 +251,19 @@ export function createStreamingSuite(suite, { onFailure = () => {}, random = Mat
     getStatus: status,
     retry() {
       if (!failed) return false;
-      this.reset(); failed = false; completed = false; unavailable.clear(); resumeFailures.clear();
-      bag = shuffle(recurring().filter(i => i !== index)); nextCycleBag = null; notify(); return true;
+      this.reset(); failed = false; completed = false;
+      if (!resumeFailures.has(index)) { unavailable.clear(); bag = shuffle(recurring().filter(i => i !== index)); nextCycleBag = null; }
+      resumeFailures.clear(); notify(); return true;
     },
     skipNext() {
-      if (!running || failed || completed || !active || active.audio.paused || skipTimer) return false;
+      if (!running || failed || completed || !active || active.seekPending || active.audio.paused || skipTimer) return false;
       const slot = active, generation = epoch;
       try { slot.gain.gain.cancelScheduledValues(graph.currentTime); slot.gain.gain.setValueAtTime(slot.gain.gain.value, graph.currentTime); slot.gain.gain.linearRampToValueAtTime(0, graph.currentTime + suite.transitionSeconds); } catch { slot.gain.gain.value = 0; }
       skipTimer = setTimeout(() => { skipTimer = null; if (running && live(slot) && active === slot && generation === epoch) advance({ skipped: true }); }, suite.transitionSeconds * 1000);
       skipTimer.unref?.(); notify(); return true;
     },
     subscribeStatus(fn) { if (typeof fn !== 'function') return () => {}; listeners.add(fn); try { fn(status()); } catch { /* local observer */ } return () => listeners.delete(fn); },
-    get current() { return active && running && !active.audio.paused ? scene : null; },
+    get current() { return active && running && !active.seekPending && !active.audio.paused ? scene : null; },
     get position() { return positionOf(); },
     get decoderCount() { return slots.size; },
   };
