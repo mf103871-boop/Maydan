@@ -2,7 +2,8 @@ import statements from '../src/data/games/meenfina/statements.json' with { type:
 import { createRoom, joinRoom, connected, leaveRoom, action, tick, snapshot, nextAlarm, member, roomCapacity, RoomError, fail } from './game-model.mjs';
 import { buildFabrakaDeck } from './fabraka-content.mjs';
 import { credentials, readJson, json, errorResponse, shuffled, createLimit, sha256 } from './protocol.mjs';
-import { bindSeatAccount, prepareRoomStats } from './room-stats.mjs';
+import { bindSeatAccount, noteProgressionAction, prepareRoomStats } from './room-stats.mjs';
+import { accountProgressionEnabled } from './account-progression.mjs';
 import { recordOnlineResult, profileSummaries } from './profiles/db.mjs';
 import { recheckMafiaHost, mafiaHostEligible } from './accounts/router.mjs';
 import { getCosmetic } from '../src/plus/catalog.js';
@@ -33,6 +34,7 @@ import { ersomhaBoardId, emptyErsomhaDrawing, loadErsomhaDrawing, checkpointErso
   prepareErsomhaDrawing, ersomhaSyncMessages, ersomhaDrawingMeta, ersomhaVisibleCanvas, archiveErsomhaDrawing, deleteErsomhaDrawing } from './ersomha-drawing.mjs';
 const SOCKET_IDLE = 45_000;
 const STATS_RETRY = 30_000;
+const statsDue = event => Math.max(event.notBefore || 0, event.retryAt || 0);
 const STATS_MAX_ATTEMPTS = 48; // a day of half-minute retries
 const MAFIA_RESULT_FAILURE_CODES=new Set(['MAFIA_PROGRESS_DISABLED','MAFIA_PROGRESS_UNAVAILABLE','MAFIA_PROGRESS_PENDING','MAFIA_PROGRESS_INVALID']);
 const MAX_QUEUED_SOCKET_MESSAGES = 64;
@@ -100,7 +102,12 @@ export class Room {
   }
   // Without a database binding the outbox can never drain; do not wake every 30 s for it.
   outboxPending() { return Boolean(this.env.DB) && (this.profileOutbox.length > 0||this.mafiaResultOutbox.length>0); }
-  outboxAlarm(now=Date.now()){return Math.min(...[this.profileOutbox[0],this.mafiaResultOutbox[0]].filter(Boolean).map(event=>event.notBefore>now?event.notBefore:now+STATS_RETRY));}
+  outboxAlarm(now = Date.now()) {
+    const nextAttempt = event => statsDue(event) > now ? statsDue(event) : now + STATS_RETRY;
+    let earliest = this.mafiaResultOutbox.length ? nextAttempt(this.mafiaResultOutbox[0]) : Infinity;
+    for (const event of this.profileOutbox) earliest = Math.min(earliest, nextAttempt(event));
+    return earliest;
+  }
   mafiaVoiceAlive(room,id,now=Date.now()) {
     const account=room.members.find(m=>m.id===id)?.accountUserId;
     return room.game==='mafia'&&Boolean(room.mafiaMedia?.devices?.[account])&&room.mafiaMedia?.authSessions?.[account]?.expiresAt>now&&now-(room.mafiaMedia?.presence?.[account]||0)<SOCKET_IDLE;
@@ -149,7 +156,16 @@ export class Room {
       // The receipt endpoint remains the sole source of awarded amounts.
       candidate.statsMatch.rewardReceipt={matchKey:mafiaResult.key,notBefore:mafiaResult.notBefore};
     }
-    const outbox = [...this.profileOutbox, ...prepareRoomStats(this.room,candidate,completedAt,{mafiaProgressEnabled:mafiaProgressEnabled(this.env),mafiaResult})];
+    const stats = prepareRoomStats(this.room,candidate,completedAt,{
+      mafiaProgressEnabled:mafiaProgressEnabled(this.env),accountProgressionEnabled:accountProgressionEnabled(this.env),mafiaResult,
+    });
+    const grants = stats.filter(event => event.progressionPlan);
+    if (grants.length) {
+      candidate.statsMatch.progressionReceipt = {
+        users: grants.map(event => event.userId), notBefore: grants[0].notBefore ?? grants[0].finishedAt,
+      };
+    }
+    const outbox = [...this.profileOutbox, ...stats];
     const mafiaOutbox=[...this.mafiaResultOutbox,...(mafiaResult?[mafiaResult]:[])];
     const resetDrawing = candidate.game === 'ersomha' && (!this.drawing || this.drawing.boardId !== ersomhaBoardId(candidate));
     const nextDrawing = resetDrawing ? emptyErsomhaDrawing(candidate) : this.drawing;
@@ -562,6 +578,12 @@ export class Room {
       const profile = this.room.members.find(seat => seat.id === m.id)?.profile;
       return profile ? { ...m, profile } : m;
     });
+    const marker = this.room.statsMatch;
+    const owner = this.room.members.find(seat => seat.id === id && !seat.left)?.accountUserId;
+    if (['over', 'closed'].includes(state.phase) && !state.waiting && owner && marker?.accounts?.[id] === owner
+      && marker.progressionReceipt?.users.includes(owner)) {
+      state.progressionReceipt = { eventId: marker.eventId, notBefore: marker.progressionReceipt.notBefore };
+    }
     if (this.room.game === 'ersomha' && this.drawing?.boardId === ersomhaBoardId(this.room)) state.drawing = ersomhaDrawingMeta(this.drawing);
     if (this.room.game === 'mafia') {
       if(this.room.ranked){
@@ -589,8 +611,16 @@ export class Room {
       // The small journal write is committed before any receiver or sender sees
       // this sequence. Recipients are authorized after that write (a D1 answer
       // under ACCOUNT_RECHECK_MS old may be reused for ink); no full game
-      // snapshot or stats write is needed for an ink batch.
-      const head = await persistErsomhaDrawing(this.ctx.storage, change.board, change.event, this.drawingHead);
+      // snapshot or stats write is needed after a seat's first committed ink.
+      let roomWithFirstInk = null;
+      const marker = this.room.statsMatch;
+      if (marker?.progressionPlan && marker.accounts?.[id] && !marker.progressionActors?.includes(id)
+        && change.event.kind === 'append' && change.event.op.tool === 'pen' && change.event.op.points.length) {
+        const candidate = { ...this.room };
+        if (noteProgressionAction(candidate, id, command)) roomWithFirstInk = candidate;
+      }
+      const head = await persistErsomhaDrawing(this.ctx.storage, change.board, change.event, this.drawingHead, roomWithFirstInk);
+      if (roomWithFirstInk) this.room = roomWithFirstInk;
       this.drawing = change.board; this.drawingHead = head;
       if (await this.authorizeAccountPublication({ recent: true })) for (const socket of this.sockets()) {
         const recipient = this.attachment(socket), seat = recipient.revoked ? null : recipient.id;
@@ -630,17 +660,27 @@ export class Room {
     const task = (async () => {
       await this.ready;
       while (this.env.DB && this.profileOutbox.length) {
-        const event = this.profileOutbox[0];
-        if(event.notBefore>Date.now())break;
+        const now = Date.now();
+        const event = this.profileOutbox.find(item => statsDue(item) <= now);
+        if (!event) break;
         // D1 waits happen outside the game-command queue. A slow or unavailable
         // database must not delay a room action or the next match.
         try { await recordOnlineResult(this.env, event); }
         catch (error) {
-          // A malformed event (the database says INVALID) or one that keeps failing
-          // must not block every later result behind it: drop it after a bounded
-          // number of attempts. Transient failures keep the head of the queue.
           const permanent = error instanceof RoomError && error.status === 400;
           const attempts = (event.attempts || 0) + 1;
+          // Keep promised progression through outages and lost D1 acknowledgements.
+          // A delayed retry leaves other results in this room free to settle.
+          if (!permanent && event.progressionPlan) {
+            const retryAt = Date.now() + Math.min(STATS_RETRY * 2 ** Math.min(attempts - 1, 5), 15 * 60_000);
+            await this.serial(async () => {
+              const pending = this.profileOutbox.map(item => item === event ? { ...item, attempts, retryAt } : item);
+              await this.ctx.storage.put('profileOutbox', pending);
+              this.profileOutbox = pending;
+            });
+            continue;
+          }
+          // Keep the existing bounded retry policy for legacy statistics.
           if (!permanent && attempts < STATS_MAX_ATTEMPTS) {
             await this.serial(async () => {
               this.profileOutbox = this.profileOutbox.map((item) => (item === event ? { ...item, attempts } : item));
@@ -1158,6 +1198,7 @@ export class Room {
           if(command.type==='start')await recheckMafiaHost(this.env,candidate,now);
         }
         action(candidate, a.id, command, now, deck);
+        noteProgressionAction(candidate, a.id, command);
         if (candidate.game === 'ersomha' && command.type === 'start') attemptedStart = candidate;
         if (candidate.game === 'ersomha') await this.prepareErsomha(candidate);
         if (candidate.game === 'mafia') await this.prepareMafia(candidate,mafiaSessionProof);

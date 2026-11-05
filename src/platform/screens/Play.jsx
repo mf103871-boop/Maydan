@@ -12,6 +12,7 @@ import { usePlatform } from '../context.js';
 import { useAccount } from '../../shared/account/context.js';
 import { useProfiles } from '../../profiles/ProfileProvider.jsx';
 import { LocalSessionRecorder } from '../../profiles/record-session.js';
+import { MatchProgression } from '../../profiles/progression/MatchProgression.jsx';
 import { navigate, getDirection } from '../router.js';
 import { getGame } from '../registry.js';
 import { GameFrame } from '../GameFrame.jsx';
@@ -27,12 +28,18 @@ export function Play({ id }) {
   const platform = usePlatform();
   const account = useAccount();
   const profiles = useProfiles();
+  const [progressionReceipt, setProgressionReceipt] = useState(null);
   const profilesRef = useRef(profiles); profilesRef.current = profiles;
   const recorderRef = useRef(null);
   if (!recorderRef.current) recorderRef.current = new LocalSessionRecorder({
     storage: createStorage(environmentStorageKey('maydan:profile-sessions:')),
     beginSession: (gameId) => profilesRef.current.beginSession(gameId),
     completeSession: (sessionId) => profilesRef.current.completeSession(sessionId),
+    onRecorded: (marker, result) => {
+      if (result.progressionEventId) setProgressionReceipt({
+        key: marker.key, ownerId: marker.ownerUserId, eventId: result.progressionEventId,
+      });
+    },
   });
   const recorder = recorderRef.current;
   const owner = account.signedIn ? account.user?.id || null : null;
@@ -150,7 +157,9 @@ export function Play({ id }) {
           )}
         </Screen>
       ) : (
-        <Component key={session} api={api} players={players} teams={teams} mode={mode} savedSession={savedSession} gameOptions={gameOptions} onExit={api.requestExit} />
+        <><Component key={session} api={api} players={players} teams={teams} mode={mode} savedSession={savedSession} gameOptions={gameOptions} onExit={api.requestExit} />
+          {progressionReceipt && progressionReceipt.ownerId === owner && progressionReceipt.key === recorder.marker()?.key &&
+            <MatchProgression key={progressionReceipt.eventId} {...progressionReceipt} />}</>
       )}
       </div>
       {interruption.paused && <div className="stack center" role="status" style={{ position: 'fixed', inset: 0, zIndex: 70, background: 'var(--bg, #fff8eb)', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', justifyContent: 'center', padding: 24 }}>

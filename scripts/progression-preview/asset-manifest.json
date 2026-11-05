@@ -1,0 +1,617 @@
+{
+  "schemaVersion": 1,
+  "reference": {
+    "file": "maydan-progression-concept-v2.png",
+    "width": 1536,
+    "height": 1024,
+    "sha256": "c30e99bc8258e963a57416c817d42cb986ba255a804a79344ebd3045f4100af4"
+  },
+  "assets": [
+    {
+      "id": "frame-1",
+      "type": "wearable-frame",
+      "source": "maydan-progression-concept-v2.png",
+      "sourceRect": [
+        154,
+        212,
+        190,
+        182
+      ],
+      "width": 190,
+      "height": 182,
+      "path": "public/assets/progression/v1/frame-1.webp",
+      "alpha": true,
+      "sha256": "7741864b0509fb5a37daad35167d3e6bd2d4142cb94aa7ac24f130c096bdebed",
+      "notes": "Reference rim pixels. Avatar opening removed. Hidden ear or medallion overlap reconstructed with reflected rim and a warm metallic backing."
+    },
+    {
+      "id": "frame-1-portrait",
+      "type": "fixture-composite",
+      "source": "maydan-progression-concept-v2.png",
+      "sourceRect": [
+        154,
+        212,
+        190,
+        182
+      ],
+      "width": 190,
+      "height": 182,
+      "path": "scripts/progression-preview/art/frame-1-portrait.webp",
+      "alpha": true,
+      "sha256": "6d34a9a7b152d763f86e333f0a6b1c4138295c73913ce42e964636da51df2e5b",
+      "notes": "Exact illustrated portrait and rim, clipped from v2. Fixture only."
+    },
+    {
+      "id": "frame-10",
+      "type": "wearable-frame",
+      "source": "maydan-progression-concept-v2.png",
+      "sourceRect": [
+        376,
+        214,
+        198,
+        180
+      ],
+      "width": 198,
+      "height": 180,
+      "path": "public/assets/progression/v1/frame-10.webp",
+      "alpha": true,
+      "sha256": "4ada4deb2c187bb725fdbc862301edffcf7a7745a06f5b435698bc5cda9f3bbf",
+      "notes": "Reference rim pixels. Avatar opening removed. Hidden ear or medallion overlap reconstructed with reflected rim and a warm metallic backing."
+    },
+    {
+      "id": "frame-10-portrait",
+      "type": "fixture-composite",
+      "source": "maydan-progression-concept-v2.png",
+      "sourceRect": [
+        376,
+        214,
+        198,
+        180
+      ],
+      "width": 198,
+      "height": 180,
+      "path": "scripts/progression-preview/art/frame-10-portrait.webp",
+      "alpha": true,
+      "sha256": "573416356f31bbdc981fe5fcedc8bc53bc0eb2e6e8602d86adbdb5af5e1b689b",
+      "notes": "Exact illustrated portrait and rim, clipped from v2. Fixture only."
+    },
+    {
+      "id": "frame-20",
+      "type": "wearable-frame",
+      "source": "maydan-progression-concept-v2.png",
+      "sourceRect": [
+        610,
+        210,
+        213,
+        187
+      ],
+      "width": 213,
+      "height": 187,
+      "path": "public/assets/progression/v1/frame-20.webp",
+      "alpha": true,
+      "sha256": "328a333aac826923ecfc252ba4cfc1b5edb8f389d15d790678877458f46d2721",
+      "notes": "Reference rim pixels. Avatar opening removed. Hidden ear or medallion overlap reconstructed with reflected rim and a warm metallic backing."
+    },
+    {
+      "id": "frame-20-portrait",
+      "type": "fixture-composite",
+      "source": "maydan-progression-concept-v2.png",
+      "sourceRect": [
+        610,
+        210,
+        213,
+        187
+      ],
+      "width": 213,
+      "height": 187,
+      "path": "scripts/progression-preview/art/frame-20-portrait.webp",
+      "alpha": true,
+      "sha256": "830a281f0cbc2bff333d544c67c8fe3826e398c4f8dba34b98ef5efbce202a41",
+      "notes": "Exact illustrated portrait and rim, clipped from v2. Fixture only."
+    },
+    {
+      "id": "frame-30",
+      "type": "wearable-frame",
+      "source": "maydan-progression-concept-v2.png",
+      "sourceRect": [
+        129,
+        444,
+        227,
+        203
+      ],
+      "width": 227,
+      "height": 203,
+      "path": "public/assets/progression/v1/frame-30.webp",
+      "alpha": true,
+      "sha256": "ae00132403cb6beb665e5b4f45a1f657a7022fd762bc545a98cb5ec8453d2afe",
+      "notes": "Reference rim pixels. Avatar opening removed. Hidden ear or medallion overlap reconstructed with reflected rim and a warm metallic backing."
+    },
+    {
+      "id": "frame-30-portrait",
+      "type": "fixture-composite",
+      "source": "maydan-progression-concept-v2.png",
+      "sourceRect": [
+        129,
+        444,
+        227,
+        203
+      ],
+      "width": 227,
+      "height": 203,
+      "path": "scripts/progression-preview/art/frame-30-portrait.webp",
+      "alpha": true,
+      "sha256": "bbf05441377ce75aeb0a0a6da02a7a60a97369b37cc8bc1d5f08fb4e92bd15b6",
+      "notes": "Exact illustrated portrait and rim, clipped from v2. Fixture only."
+    },
+    {
+      "id": "frame-40",
+      "type": "wearable-frame",
+      "source": "maydan-progression-concept-v2.png",
+      "sourceRect": [
+        371,
+        450,
+        206,
+        200
+      ],
+      "width": 206,
+      "height": 200,
+      "path": "public/assets/progression/v1/frame-40.webp",
+      "alpha": true,
+      "sha256": "36053107aae9af2095d34def1ef520eaf0d1b11b7d2c263f5212dc8da0fa7159",
+      "notes": "Reference rim pixels. Avatar opening removed. Hidden ear or medallion overlap reconstructed with reflected rim and a warm metallic backing."
+    },
+    {
+      "id": "frame-40-portrait",
+      "type": "fixture-composite",
+      "source": "maydan-progression-concept-v2.png",
+      "sourceRect": [
+        371,
+        450,
+        206,
+        200
+      ],
+      "width": 206,
+      "height": 200,
+      "path": "scripts/progression-preview/art/frame-40-portrait.webp",
+      "alpha": true,
+      "sha256": "0836a41e0b550b06450a6c0292ed509117438095652951f88be311d9caf8a0d4",
+      "notes": "Exact illustrated portrait and rim, clipped from v2. Fixture only."
+    },
+    {
+      "id": "frame-50",
+      "type": "wearable-frame",
+      "source": "maydan-progression-concept-v2.png",
+      "sourceRect": [
+        597,
+        441,
+        244,
+        216
+      ],
+      "width": 244,
+      "height": 216,
+      "path": "public/assets/progression/v1/frame-50.webp",
+      "alpha": true,
+      "sha256": "88544781db9309e21a50aa5f1bd43195cb734d301e84f3504367952eb33f444f",
+      "notes": "Reference rim pixels. Avatar opening removed. Hidden ear or medallion overlap reconstructed with reflected rim and a warm metallic backing."
+    },
+    {
+      "id": "frame-50-portrait",
+      "type": "fixture-composite",
+      "source": "maydan-progression-concept-v2.png",
+      "sourceRect": [
+        597,
+        441,
+        244,
+        216
+      ],
+      "width": 244,
+      "height": 216,
+      "path": "scripts/progression-preview/art/frame-50-portrait.webp",
+      "alpha": true,
+      "sha256": "dfb101672cb4fae2f424ba3da818802f10f68ab67fbd81ef030fb1fe28d8f32c",
+      "notes": "Exact illustrated portrait and rim, clipped from v2. Fixture only."
+    },
+    {
+      "id": "frame-equipped",
+      "type": "wearable-frame",
+      "source": "maydan-progression-concept-v2.png",
+      "sourceRect": [
+        925,
+        113,
+        285,
+        282
+      ],
+      "width": 285,
+      "height": 282,
+      "path": "scripts/progression-preview/art/frame-equipped.webp",
+      "alpha": true,
+      "sha256": "261a74d2bcb767993e43844d7fee2146b4e79d36d2269654bfb94942d0545867",
+      "notes": "Reference rim pixels. Avatar opening removed. Hidden ear or medallion overlap reconstructed with reflected rim and a warm metallic backing."
+    },
+    {
+      "id": "profile-medallion",
+      "type": "level-medallion",
+      "source": "maydan-progression-concept-v2.png",
+      "sourceRect": [
+        948,
+        297,
+        99,
+        93
+      ],
+      "width": 99,
+      "height": 93,
+      "path": "public/assets/progression/v1/profile-medallion.webp",
+      "alpha": true,
+      "sha256": "f3f7c8531645c46545c7b6b5ba0a9ac94e481f2efe5a7382e18e7bac00c3f1c2",
+      "notes": "Original brass perimeter, illustration numeral replaced by a blank surface for live text."
+    },
+    {
+      "id": "profile-hero",
+      "type": "fixture-composite",
+      "source": "maydan-progression-concept-v2.png",
+      "sourceRect": [
+        925,
+        113,
+        285,
+        282
+      ],
+      "width": 285,
+      "height": 282,
+      "path": "scripts/progression-preview/art/profile-hero.webp",
+      "alpha": true,
+      "sha256": "fb7989ae1dc23fe7525c690c7eb0ef2bc26fb0bc111719e4f2bdfd2e52245307",
+      "notes": "Exact v2 profile portrait and ring with the numeral removed for live text."
+    },
+    {
+      "id": "fennec",
+      "type": "fixture-portrait",
+      "source": "maydan-progression-concept-v2.png",
+      "sourceRect": [
+        976,
+        141,
+        199,
+        227
+      ],
+      "width": 199,
+      "height": 227,
+      "path": "scripts/progression-preview/art/fennec.webp",
+      "alpha": true,
+      "sha256": "d9e3d8db65eaedb12aab2df66af02c219b8934bf94da0bd5bd097e02a86b0d88",
+      "notes": "V2 fennec silhouette isolated from the approved portrait. Kept outside distributed resources."
+    },
+    {
+      "id": "ornament-frame",
+      "type": "wearable-frame",
+      "source": "maydan-progression-concept-v2.png",
+      "sourceRect": [
+        73,
+        691,
+        328,
+        242
+      ],
+      "width": 328,
+      "height": 242,
+      "path": "public/assets/progression/v1/ornament-frame.webp",
+      "alpha": true,
+      "sha256": "20aafa1ca4beb84d82a5fcd83eeb9b0c6d491ec802710dd604e181d791eaf970",
+      "notes": "Visible original empty frame; the interior paper was removed to expose the player photo."
+    },
+    {
+      "id": "frame-60",
+      "type": "wearable-frame",
+      "source": "maydan-progression-concept-v2.png",
+      "sourceRect": [
+        942,
+        691,
+        155,
+        119
+      ],
+      "width": 155,
+      "height": 119,
+      "path": "public/assets/progression/v1/frame-60.webp",
+      "alpha": true,
+      "sha256": "924120a18821e36bdc6b5f0a74a7144b340fe3af6b3cc0527a312829ccd5edc3",
+      "notes": "Visible original empty frame; the interior paper was removed to expose the player photo."
+    },
+    {
+      "id": "ornament-lantern",
+      "type": "illustration",
+      "source": "maydan-progression-concept-v2.png",
+      "sourceRect": [
+        414,
+        700,
+        187,
+        231
+      ],
+      "width": 187,
+      "height": 231,
+      "path": "public/assets/progression/v1/ornament-lantern.webp",
+      "alpha": true,
+      "sha256": "a933a673a63b04c20497ff21fcdf526bdf6d32a4b20b09c790951e8e5c75e365",
+      "notes": "Original pixels clipped from v2."
+    },
+    {
+      "id": "ornament-gem",
+      "type": "illustration",
+      "source": "maydan-progression-concept-v2.png",
+      "sourceRect": [
+        604,
+        716,
+        234,
+        217
+      ],
+      "width": 234,
+      "height": 217,
+      "path": "public/assets/progression/v1/ornament-gem.webp",
+      "alpha": true,
+      "sha256": "9552adfd442048be2ee5a96e36a73f95b6e6a2720ddbbb4335bedfa070d9b75f",
+      "notes": "Original pixels clipped from v2."
+    },
+    {
+      "id": "achievement-explorer",
+      "type": "achievement",
+      "source": "maydan-progression-concept-v2.png",
+      "sourceRect": [
+        1283,
+        508,
+        138,
+        111
+      ],
+      "width": 138,
+      "height": 111,
+      "path": "public/assets/progression/v1/achievement-explorer.webp",
+      "alpha": true,
+      "sha256": "47719a46fef6999b3ad8780420511f4e9825992ec50162bd6755458d088586c3",
+      "notes": "Exact metallic emblem and illustration from the approved board."
+    },
+    {
+      "id": "achievement-host",
+      "type": "achievement",
+      "source": "maydan-progression-concept-v2.png",
+      "sourceRect": [
+        1124,
+        507,
+        140,
+        112
+      ],
+      "width": 140,
+      "height": 112,
+      "path": "public/assets/progression/v1/achievement-host.webp",
+      "alpha": true,
+      "sha256": "5c60edb47edf0e81e67536b1bc099c61c5e83417e970bcb48a9d35e1b0f0a2a5",
+      "notes": "Exact metallic emblem and illustration from the approved board."
+    },
+    {
+      "id": "achievement-team",
+      "type": "achievement",
+      "source": "maydan-progression-concept-v2.png",
+      "sourceRect": [
+        962,
+        509,
+        144,
+        111
+      ],
+      "width": 144,
+      "height": 111,
+      "path": "public/assets/progression/v1/achievement-team.webp",
+      "alpha": true,
+      "sha256": "1f59392c663612128068a60c1933cf0524e53de82477c614e1b34ee7d1941119",
+      "notes": "Exact metallic emblem and illustration from the approved board."
+    },
+    {
+      "id": "mastery-badeeha",
+      "type": "game-emblem",
+      "source": "maydan-progression-concept-v2.png",
+      "sourceRect": [
+        1203,
+        867,
+        94,
+        94
+      ],
+      "width": 94,
+      "height": 94,
+      "path": "public/assets/progression/v1/mastery-badeeha.webp",
+      "alpha": true,
+      "sha256": "448d42cb605f8db495008979a176dbdb0e50e3fd812422cbb542478c51eeb50b",
+      "notes": "Exact source icon and colored medallion."
+    },
+    {
+      "id": "mastery-mafia",
+      "type": "game-emblem",
+      "source": "maydan-progression-concept-v2.png",
+      "sourceRect": [
+        948,
+        867,
+        94,
+        94
+      ],
+      "width": 94,
+      "height": 94,
+      "path": "public/assets/progression/v1/mastery-mafia.webp",
+      "alpha": true,
+      "sha256": "4076d5ede80783b9cfde5d6c6ca2b481390bf3fdc3fd0732b602818616bf9fe7",
+      "notes": "Exact source icon and colored medallion."
+    },
+    {
+      "id": "profile-header",
+      "type": "background",
+      "source": "maydan-progression-concept-v2.png",
+      "sourceRect": [
+        916,
+        20,
+        555,
+        95
+      ],
+      "width": 555,
+      "height": 95,
+      "path": "public/assets/progression/v1/profile-header.webp",
+      "alpha": false,
+      "sha256": "35eb2cf39936b4c5a7008080bd31a7dac670c450c50cb99b0ebf57b1e67adb83",
+      "notes": "Original lanterns and geometric side panels with feathered joins and a teal center for the live title."
+    },
+    {
+      "id": "board-left",
+      "type": "fixture-ambient",
+      "source": "maydan-progression-concept-v2.png",
+      "sourceRect": [
+        0,
+        0,
+        115,
+        1024
+      ],
+      "width": 115,
+      "height": 1024,
+      "path": "scripts/progression-preview/art/board-left.webp",
+      "alpha": false,
+      "sha256": "38ea435bd98c48120482c0a8e296981d3fddedb69f72882841ac9b7b45847835",
+      "notes": "Peripheral scenery only. No elements or copy from the functional part of the board."
+    },
+    {
+      "id": "board-right",
+      "type": "fixture-ambient",
+      "source": "maydan-progression-concept-v2.png",
+      "sourceRect": [
+        1477,
+        0,
+        59,
+        1024
+      ],
+      "width": 59,
+      "height": 1024,
+      "path": "scripts/progression-preview/art/board-right.webp",
+      "alpha": false,
+      "sha256": "4d32ff81981063ec8192128997c0964ca69c62443fc36b4adb8ec02d9cd22cd7",
+      "notes": "Peripheral scenery only. No elements or copy from the functional part of the board."
+    },
+    {
+      "id": "maydan-round-ar",
+      "type": "local-font",
+      "source": "existing Maydan Round",
+      "width": null,
+      "height": null,
+      "path": "src/shared/brand/assets/arabic.woff2",
+      "alpha": false,
+      "sha256": "643bd83b53ec8f25db2428e338673ddc85c345b976c449ccdad4d2b394f719e7",
+      "notes": "Existing Arabic webfont, loaded locally. Arabic labels remain live."
+    },
+    {
+      "id": "frame-1-small",
+      "type": "wearable-frame-small",
+      "source": "maydan-progression-concept-v2.png",
+      "sourceRect": [
+        154,
+        212,
+        190,
+        182
+      ],
+      "width": 96,
+      "height": 92,
+      "path": "public/assets/progression/v1/frame-1-small.webp",
+      "alpha": true,
+      "sha256": "482e983b78250895027d488d36d342e3ff59d999e945fa683b1eca2c8a3ec164",
+      "notes": "96px rendition of the isolated transparent frame for small avatar surfaces."
+    },
+    {
+      "id": "frame-10-small",
+      "type": "wearable-frame-small",
+      "source": "maydan-progression-concept-v2.png",
+      "sourceRect": [
+        376,
+        214,
+        198,
+        180
+      ],
+      "width": 96,
+      "height": 87,
+      "path": "public/assets/progression/v1/frame-10-small.webp",
+      "alpha": true,
+      "sha256": "69a00cd470262f9e9fef9a6548be533019bde6bd460feeedb515c6f3d1e5788c",
+      "notes": "96px rendition of the isolated transparent frame for small avatar surfaces."
+    },
+    {
+      "id": "frame-20-small",
+      "type": "wearable-frame-small",
+      "source": "maydan-progression-concept-v2.png",
+      "sourceRect": [
+        610,
+        210,
+        213,
+        187
+      ],
+      "width": 96,
+      "height": 84,
+      "path": "public/assets/progression/v1/frame-20-small.webp",
+      "alpha": true,
+      "sha256": "2c893a50342e15a65e61459c6503602fe6ab51f39da9ee133d63d8ba4bf02ae4",
+      "notes": "96px rendition of the isolated transparent frame for small avatar surfaces."
+    },
+    {
+      "id": "frame-30-small",
+      "type": "wearable-frame-small",
+      "source": "maydan-progression-concept-v2.png",
+      "sourceRect": [
+        129,
+        444,
+        227,
+        203
+      ],
+      "width": 96,
+      "height": 86,
+      "path": "public/assets/progression/v1/frame-30-small.webp",
+      "alpha": true,
+      "sha256": "bbec64b32528400c5ab1dbc83cda1dbf66e2b2b8bf8e694e9625508e8dfb9a1f",
+      "notes": "96px rendition of the isolated transparent frame for small avatar surfaces."
+    },
+    {
+      "id": "frame-40-small",
+      "type": "wearable-frame-small",
+      "source": "maydan-progression-concept-v2.png",
+      "sourceRect": [
+        371,
+        450,
+        206,
+        200
+      ],
+      "width": 96,
+      "height": 93,
+      "path": "public/assets/progression/v1/frame-40-small.webp",
+      "alpha": true,
+      "sha256": "3a668cc5b4fb25f971f5c4f15fdef3e262be6f5d7b637668c91fe45562789b34",
+      "notes": "96px rendition of the isolated transparent frame for small avatar surfaces."
+    },
+    {
+      "id": "frame-50-small",
+      "type": "wearable-frame-small",
+      "source": "maydan-progression-concept-v2.png",
+      "sourceRect": [
+        597,
+        441,
+        244,
+        216
+      ],
+      "width": 96,
+      "height": 85,
+      "path": "public/assets/progression/v1/frame-50-small.webp",
+      "alpha": true,
+      "sha256": "d50cc872561c3efe1dc3fc7885d50f16eb579edd9063b6f304cedadf0007a185",
+      "notes": "96px rendition of the isolated transparent frame for small avatar surfaces."
+    },
+    {
+      "id": "frame-60-small",
+      "type": "wearable-frame-small",
+      "source": "maydan-progression-concept-v2.png",
+      "sourceRect": [
+        942,
+        691,
+        155,
+        119
+      ],
+      "width": 96,
+      "height": 74,
+      "path": "public/assets/progression/v1/frame-60-small.webp",
+      "alpha": true,
+      "sha256": "2634434e1399e3ee5fb968eb48ca927d78c61cf14bb0028eb6146de1335805fa",
+      "notes": "96px rendition of the isolated transparent frame for small avatar surfaces."
+    }
+  ]
+}

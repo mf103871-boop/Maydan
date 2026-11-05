@@ -1,5 +1,6 @@
 import { fail } from './room-model.mjs';
 import { prepareMafiaResult } from './mafia-results.mjs';
+import { onlineRewardPlan } from './account-progression.mjs';
 
 // Only the public Worker may set accountUserId, after checking account auth.
 // Room tokens identify seats; they are never treated as account credentials.
@@ -14,11 +15,28 @@ export function bindSeatAccount(room, seatId, accountUserId) {
   seat.accountUserId = userId;
 }
 
+const PROGRESSION_ACTIONS = Object.freeze({
+  meenfina: ['vote'], fabraka: ['truth', 'lie', 'vote'], ersomha: ['guess', 'drawing_batch'],
+});
+
+// Only call for an accepted player command. Persist a boolean, never the
+// contents of an answer, vote, or stroke. Badeeha is team/voice-adjudicated
+// and standard Mafia uses its own eligibility (including legal elimination).
+export function noteProgressionAction(room, seatId, command) {
+  const marker = room.statsMatch;
+  if (!marker?.progressionPlan || !marker.accounts?.[seatId] || marker.progressionActors?.includes(seatId)
+    || !PROGRESSION_ACTIONS[room.game]?.includes(command.type) || command.skip === true) return false;
+  room.statsMatch = { ...marker, progressionActors: [...(marker.progressionActors || []), seatId] };
+  return true;
+}
+
 // The account mapping is frozen at the start. Restored pre-feature matches have
 // no marker and must never become an invented historical result.
-export function prepareRoomStats(previous, candidate, now = Date.now(), { mafiaProgressEnabled = false, mafiaResult } = {}) {
+export function prepareRoomStats(previous, candidate, now = Date.now(), { mafiaProgressEnabled = false, accountProgressionEnabled = false, mafiaResult } = {}) {
   if (previous?.phase === 'lobby' && candidate.phase !== 'lobby' && candidate.matchId !== previous.matchId && (candidate.round === 1 || candidate.game==='mafia')) {
+    const progressionPlan = accountProgressionEnabled ? onlineRewardPlan(candidate) : null;
     candidate.statsMatch = {
+      ...(progressionPlan ? { progressionPlan } : {}),
       eventId: `online:${crypto.randomUUID()}`, startedAt: now,
       accounts: Object.fromEntries(candidate.participants.map((id) => [id, candidate.members.find((m) => m.id === id)?.accountUserId || null])),
       ...(candidate.game==='mafia'&&(candidate.rulesetVersion||1)===1&&(candidate.protocol||1)>=2&&mafiaProgressEnabled===true?{rewardPolicyVersion:1}:{}),
@@ -31,7 +49,8 @@ export function prepareRoomStats(previous, candidate, now = Date.now(), { mafiaP
     if(!event)return [];
     return event.results.flatMap(result=>{
       if(!result.userId)return [];
-      return [{userId:result.userId,eventId:event.eventId,game:'mafia',won:!!result.won,draw:event.draw,finishedAt:event.finishedAt,...(event.notBefore?{notBefore:event.notBefore}:{})}];
+      return [{userId:result.userId,eventId:event.eventId,game:'mafia',won:!!result.won,draw:event.draw,finishedAt:event.finishedAt,...(event.notBefore?{notBefore:event.notBefore}:{}),
+        ...(!result.forfeited && event.notBefore && candidate.statsMatch.progressionPlan ? { progressionPlan: candidate.statsMatch.progressionPlan } : {})}];
     });
   }
   // Badeeha's last question ends from its reveal (the host's verdict), the others from a result.
@@ -51,7 +70,10 @@ export function prepareRoomStats(previous, candidate, now = Date.now(), { mafiaP
     awarded.add(userId);
     const competitive = candidate.game === 'fabraka' || candidate.game === 'badeeha' || candidate.game === 'ersomha' && candidate.settings.mode === 'competitive';
     const leader = competitive && leaders.includes(id);
+    const plan = !PROGRESSION_ACTIONS[candidate.game] || candidate.statsMatch.progressionActors?.includes(id)
+      ? candidate.statsMatch.progressionPlan : null;
     return [{ userId, eventId: candidate.statsMatch.eventId, game: candidate.game || 'meenfina',
-      won: leader && leaders.length === 1, draw: leader && leaders.length > 1, finishedAt: now }];
+      won: leader && leaders.length === 1, draw: leader && leaders.length > 1, finishedAt: now,
+      ...(plan ? { progressionPlan: plan } : {}) }];
   });
 }

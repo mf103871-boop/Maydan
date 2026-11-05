@@ -10,7 +10,7 @@ import { LocalSessionRecorder } from './record-session.js';
 
 export const ProfileContext = createContext(null);
 export const useProfiles = () => useContext(ProfileContext);
-const METHODS = ['loadProfile', 'saveProfile', 'uploadImage', 'removeImage', 'beginSession', 'completeSession'];
+const METHODS = ['loadProfile', 'saveProfile', 'loadProgressionReceipt', 'uploadImage', 'removeImage', 'beginSession', 'completeSession'];
 export function ProfileProvider({ children }) {
   const account = useAccount(); const social = useSocial();
   const route = useRoute();

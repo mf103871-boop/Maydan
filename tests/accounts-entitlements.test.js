@@ -251,7 +251,9 @@ test('ترحيلات D1 جمل مستقلة بسطر واحد يقبلها exec'
       "ALTER TABLE mafia_reports ADD COLUMN category TEXT NOT NULL DEFAULT 'other' CHECK(category IN ('harassment','cheating','disruption','inappropriate','other'));",
       'ALTER TABLE mafia_reports ADD COLUMN match_id INTEGER;',
       'ALTER TABLE mafia_reports ADD COLUMN review_started_at INTEGER;',
-      'ALTER TABLE mafia_reports ADD COLUMN reviewer_id TEXT;'].includes(statement) ||
+      'ALTER TABLE mafia_reports ADD COLUMN reviewer_id TEXT;',
+      // 0028: old sessions retain NULL and cannot receive retroactive XP.
+      'ALTER TABLE player_sessions ADD COLUMN progression_reward_version INTEGER;'].includes(statement) ||
     /^CREATE UNIQUE INDEX IF NOT EXISTS social_(group_invites_pending|calls_open|call_one_active) /.test(statement) ||
     (/^INSERT OR IGNORE INTO (social_profiles|player_profiles)\(/.test(statement) &&
       !/\b(UPDATE|DELETE|REPLACE|DROP|ALTER)\b/i.test(statement)) ||
@@ -270,6 +272,7 @@ test('ترحيلات D1 جمل مستقلة بسطر واحد يقبلها exec'
     'CREATE UNIQUE INDEX IF NOT EXISTS social_groups_creation ON social_groups(name);',
     'ALTER TABLE mafia_reports ADD COLUMN unreviewed TEXT;',
     'ALTER TABLE mafia_reports ADD COLUMN reviewer_id TEXT NOT NULL;',
+    'ALTER TABLE player_sessions ADD COLUMN progression_reward_version INTEGER NOT NULL DEFAULT 1;',
     "ALTER TABLE mafia_reports ADD COLUMN category TEXT NOT NULL DEFAULT 'other';",
     "INSERT OR IGNORE INTO design_draft(id,document_json) VALUES('main','unreviewed');",
     "INSERT OR REPLACE INTO mafia_ranked_seasons(id,starts_at,ends_at,ruleset_version,rating_model,reward_policy,status) VALUES('preview-2026-01',1793318400000,1798156800000,1,'preview-elo-1',1,'open');",

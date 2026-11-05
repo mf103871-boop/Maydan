@@ -1,10 +1,12 @@
 // Original, curated Maydan artwork. IDs are public cosmetics, never gameplay rights.
 import assetManifest from '../../assets/plus/v1/manifest.json' with { type: 'json' };
 import craftedManifest from '../../assets/plus/v2/manifest.json' with { type: 'json' };
+import { getProgressionFrame } from '../profiles/progression-catalog.js';
 export const PLUS_CATALOG_VERSION = 3;
 // Subscription scope is presentation-only. Keep archived IDs below readable so
 // existing preferences, permanent grants and old messages are never destroyed.
 export function subscriptionIncludesKind(kind) { return kind === 'profileSkin' || kind === 'frame'; }
+export const subscriptionIncludesItem = item => item?.entitlement !== 'progression' && subscriptionIncludesKind(item?.kind);
 const PROFILE_BACKGROUND = '/assets/plus/v2/profile-sahra-background.webp';
 export const PLUS_COLLECTIONS = Object.freeze([
   { id: 'sahra', label: 'سهرة ميدان', description: 'دفء السهرة، فيروز ولمعة ذهبية هادئة.', availableFrom: 0, palette: { bg: '#173b45', accent: '#f0bc61', text: '#fff5dd' } },
@@ -81,7 +83,7 @@ export const MONTHLY_COSMETIC_DROPS = Object.freeze([
 ].map(Object.freeze));
 const byId = new Map(PLUS_ITEMS.map(item => [item.id, item]));
 export function getCosmetic(id, { kind, now = Date.now() } = {}) {
-  const item = byId.get(id);
+  const item = byId.get(id) || getProgressionFrame(id);
   return item && (!kind || item.kind === kind) && item.availableFrom <= now ? item : null;
 }
 export function availableCollections(now = Date.now()) { return PLUS_COLLECTIONS.filter(c => c.availableFrom <= now); }

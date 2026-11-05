@@ -4,7 +4,8 @@ import {MAFIA_ROLES} from '../online/mafia-shared.js';
 import {MafiaProgressClient,mafiaProgressScope} from './mafia-client.js';
 import {MAFIA_ACHIEVEMENT_LIST} from './mafia-catalog.js';
 import {getCosmetic} from '../plus/catalog.js';
-import css from './mafia-panel.css';
+import css from './mafia-panel.css?sheet';
+import { PresentationStyles } from '../shared/ui/PresentationStyles.jsx';
 
 const number=value=>Number.isFinite(value)?Math.max(0,value).toLocaleString('ar'):'—';
 const roleName=id=>MAFIA_ROLES[id]?.name||'دور غير متاح';
@@ -28,7 +29,7 @@ function Preferences({data,busy,onSave}) {
 }
 export function MafiaProgressView({state,owner=false,onRetry=()=>{},onSave=()=>{}}) {
   const {data,loading,saving,error}=state;
-  return <section className="mafia-profile" dir="rtl" aria-label="تقدم مافيا"><style>{css}</style>
+  return <section className="mafia-profile" dir="rtl" aria-label="تقدم مافيا"><PresentationStyles sheet={css} />
     <header><div><span className="mafia-profile-kicker">ملف المجلس</span><h2>{owner?'رحلتك في مافيا':'رحلة اللاعب في مافيا'}</h2></div><button data-design-id="mafia-progress-refresh" type="button" onClick={onRetry} disabled={loading||saving} aria-label="تحديث تقدم مافيا">تحديث</button></header>
     {loading?<p role="status">جارٍ تحميل تقدم مافيا…</p>:<>
       {error&&<p className="mafia-profile-error" role="alert">{messages[error]||'تعذّر تحميل تقدم مافيا. حاول مرة أخرى.'}</p>}

@@ -25,6 +25,7 @@ import { normalizeErsomhaOptions, enoughErsomhaCategories } from '../games/ersom
 import { BadeehaSettings, BadeehaRules, BadeehaLobbyInfo, BadeehaMatch, normalizeBadeehaOptions, buildBadeehaRoom, badeehaReady } from './Badeeha.jsx';
 import { CATS } from '../data/categories/index.js';
 import { MafiaHistory, MafiaSettings, MafiaDirectory, MafiaLobbyInfo, MafiaLobby, MafiaSafety, MafiaMatch, normalizeMafiaSettings } from './Mafia.jsx';
+import { MatchProgression } from '../profiles/progression/MatchProgression.jsx';
 import { MafiaReportInbox } from './MafiaReportInbox.jsx';
 import { MafiaReviewDialog } from './MafiaReviewDialog.jsx';
 import { MafiaRanked } from './MafiaRanked.jsx';
@@ -630,6 +631,9 @@ function ConnectedRoom({ code, session, stored, onLeft, onGameChange, onPromoted
         : <Match state={state} disabled={disabled} isHost={isHost} act={act} clockOffset={clientRef.current?.clockOffset || 0} spectating={spectating} />}</>)}
     {watchers.length > 0 && !outdated && status !== 'ended' && <Card className="stack online-watchers"><p className="online-footnote">يتفرجون الآن ويلعبون من المباراة القادمة: {watchers.map((m) => m.name).join('، ')}</p>
       {isHost && state.game !== 'mafia' && watchers.filter((m) => m.id !== me?.id).map((m) => <Button key={m.id} size="sm" variant="ghost" disabled={disabled} onClick={() => act('kick', { targetId: m.id })}>إزالة {m.name}</Button>)}</Card>}
+    {!spectating && !observerSession && !outdated && status !== 'ended' && state?.phase === 'over' && state.progressionReceipt && account.user?.id &&
+      <MatchProgression key={account.user.id + ':' + state.progressionReceipt.eventId} ownerId={account.user.id}
+        eventId={state.progressionReceipt.eventId} notBefore={state.progressionReceipt.notBefore} clockOffset={clientRef.current?.clockOffset || 0} />}
     {!observerSession && !outdated && status !== 'ended' && (state?.game !== 'mafia' || ['lobby','over'].includes(state.phase)) && <RoomReactions client={clientRef.current} state={state} me={me} status={status} />}
     {safetyPlayer && <MafiaSafety player={safetyPlayer} onClose={()=>setSafetyPlayer(null)} onSafety={mafiaSafety}/>}
     {exitTarget && <ConfirmModal placement={state?.game==='mafia'?undefined:'bottom'} title={observerSession?'إنهاء المشاهدة؟':'تطلع من الغرفة؟'} message={observerSession?'تعود إلى دليل مجالس مافيا.':'مغادرتك تنهي مقعدك الحالي. إذا كنت المضيف تنتقل الإدارة للاعب متصل.'} confirmLabel="الخروج" confirmSound="none" cancelLabel="خلّيني ألعب" onConfirm={leave} onCancel={() => setExitTarget(null)} />}

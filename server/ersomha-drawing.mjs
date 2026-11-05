@@ -58,7 +58,7 @@ export async function checkpointErsomhaDrawing(storage, board, previousHead) {
   await erase(storage, [...(previousHead?.log || []), ...(previousHead?.parts || []).filter(k => !parts.includes(k))]);
   return head;
 }
-export async function persistErsomhaDrawing(storage, board, event, previousHead) {
+export async function persistErsomhaDrawing(storage, board, event, previousHead, roomWithFirstInk = null) {
   let head;
   await storage.transaction(async tx => {
     if (!previousHead || previousHead.boardId !== board.boardId || (previousHead.log || []).length >= MAX_LOG || event.kind === 'clear') {
@@ -69,6 +69,7 @@ export async function persistErsomhaDrawing(storage, board, event, previousHead)
       head = { ...previousHead, ...metaOf(board), log: [...previousHead.log, key] };
       await tx.put(HEAD, head);
     }
+    if (roomWithFirstInk) await tx.put('room', roomWithFirstInk);
   });
   return head;
 }

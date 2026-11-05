@@ -6,7 +6,7 @@ import { assertSocialAllowed, noMafiaMediaLeaseSql } from '../mafia-access.mjs';
 import { notifyUsers } from '../social/realtime.mjs';
 import { friendIds } from '../social/db.mjs';
 import { ensurePlayerRow } from '../profiles/db.mjs';
-import { PLUS_CATALOG_VERSION, availableCollections, availableItems, COSMETIC_OFFERS, getCosmeticOffer, getCosmetic, subscriptionIncludesKind } from '../../src/plus/catalog.js';
+import { PLUS_CATALOG_VERSION, availableCollections, availableItems, COSMETIC_OFFERS, getCosmeticOffer, getCosmetic, subscriptionIncludesItem } from '../../src/plus/catalog.js';
 import { EMPTY_COSMETICS, statement, cosmeticsFor, normalizeSelection, plusActiveFor, plusAccessSql, cosmeticAccessSql } from './access.mjs';
 import { PRESET_LIMIT, presetView } from './presets.mjs';
 import { quoteOwnedOffer } from './commerce.mjs';
@@ -35,7 +35,7 @@ async function dispatch(request,env,url,id,now) {
   const method=request.method,path=url.pathname;
   if(path==='/api/me/cosmetics/inventory'&&method==='GET') {
     const state=await cosmeticsFor(env,id,now,{includeMonthly:true});
-    return json({...state,catalogVersion:PLUS_CATALOG_VERSION,ownedItemIds:[...new Set(state.grants.map(grant=>grant.itemId))],subscriptionItemIds:state.plusActive?availableItems(now).filter(item=>subscriptionIncludesKind(item.kind)).map(item=>item.id):[]});
+    return json({...state,catalogVersion:PLUS_CATALOG_VERSION,ownedItemIds:[...new Set(state.grants.map(grant=>grant.itemId))],subscriptionItemIds:state.plusActive?availableItems(now).filter(subscriptionIncludesItem).map(item=>item.id):[]});
   }
   if(['/api/me/cosmetics/quote','/api/me/cosmetics/checkout'].includes(path)&&method==='POST') {
     await assertSocialAllowed(env,id);
@@ -55,7 +55,11 @@ async function dispatch(request,env,url,id,now) {
       const previous=await cosmeticsFor(env,id,now);
       const requested=Object.entries(patch).filter(([key,value])=>key==='badge'?value===true:value!==null);
       const owned=new Set(previous.grants.map(grant=>grant.itemId));
-      if(requested.some(([key,value])=>key==='badge'?!previous.plusActive:!(previous.plusActive&&subscriptionIncludesKind(getCosmetic(value,{now})?.kind)||!getCosmetic(value,{now})?.membershipOnly&&owned.has(value))))fail('PLUS_REQUIRED',402);
+      for (const [key,value] of requested) {
+        const item = getCosmetic(value,{now});
+        if (item?.entitlement === 'progression' && !owned.has(value)) fail('COSMETIC_LOCKED',403);
+        if (key==='badge' ? !previous.plusActive : !(previous.plusActive && subscriptionIncludesItem(item) || !item?.membershipOnly && owned.has(value))) fail('PLUS_REQUIRED',402);
+      }
       if(previous.revision!==revision)fail('CONFLICT',409);
       // A player can equip from the store before opening their profile once.
       await ensurePlayerRow(env,id,now);

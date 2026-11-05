@@ -1,10 +1,11 @@
 import { premiumActive, premiumOf } from '../accounts/entitlements.mjs';
 import { liveAccountSql } from '../moderation/access.mjs';
-import { getCosmetic, subscriptionIncludesKind } from '../../src/plus/catalog.js';
+import { getCosmetic, subscriptionIncludesItem } from '../../src/plus/catalog.js';
 import { fail } from '../room-model.mjs';
 import { GRACE_MS } from '../../src/shared/account/config.js';
 import { mafiaCosmeticGrantSql } from '../mafia-achievements.mjs';
 import { getMafiaAchievement } from '../../src/profiles/mafia-catalog.js';
+import { accountProgressionEnabled, progressionCosmeticSql, progressionGrantUnionSql } from '../account-progression.mjs';
 import { permanentCosmeticSql, permanentGrantUnionSql, permanentGrantView, monthlyWindowsProjectionSql, monthlyWindowViews } from './inventory.mjs';
 
 export const EMPTY_COSMETICS = Object.freeze({ frameId: null, avatarId: null, coverId: null, nameColorId: null, roomThemeId: null, entranceId: null, profileSkinId: null, councilSkinId: null, badge: false });
@@ -19,7 +20,8 @@ export function plusAccessSql(env,userAlias,now=Date.now()) {
 }
 export function cosmeticAccessSql(env,userAlias,itemId,now=Date.now()) {
   const item=getCosmetic(itemId,{now});
-  return item ? `(${subscriptionIncludesKind(item.kind)?plusAccessSql(env,userAlias,now):'0'}${item.membershipOnly?'':` OR ${mafiaCosmeticGrantSql(userAlias,itemId,now)} OR ${permanentCosmeticSql(userAlias,itemId)}`})` : '0';
+  if (item?.entitlement === 'progression') return accountProgressionEnabled(env) ? progressionCosmeticSql(userAlias,item.id) : '0';
+  return item ? `(${subscriptionIncludesItem(item)?plusAccessSql(env,userAlias,now):'0'}${item.membershipOnly?'':` OR ${mafiaCosmeticGrantSql(userAlias,itemId,now)} OR ${permanentCosmeticSql(userAlias,itemId)}`})` : '0';
 }
 export const statement = (env,sql,...args) => env.DB.prepare(sql).bind(...args);
 const all = async(env,sql,...args)=>(await statement(env,sql,...args).all()).results||[];
@@ -52,7 +54,7 @@ export function effectiveSelection(preferred,eligible,now=Date.now(),grants=[]) 
   const owned=new Set(grants.map(grant=>grant.itemId));
   for(const [key,kind] of Object.entries(fields)) {
     const item=getCosmetic(preferred?.[key],{kind,now});
-    if(item&&(eligible&&subscriptionIncludesKind(kind)||!item.membershipOnly&&owned.has(item.id)))result[key]=item.id;
+    if(item&&(eligible&&subscriptionIncludesItem(item)||!item.membershipOnly&&owned.has(item.id)))result[key]=item.id;
   }
   result.badge=eligible&&preferred?.badge===true;
   return result;
@@ -63,7 +65,7 @@ async function cosmeticSnapshots(env,ids,now,includeMonthly=false) {
     (SELECT json_group_array(json_object('itemId',g.item_id,'achievementId',g.achievement_id,'grantedAt',g.granted_at,'source',g.source,'sourceId',g.source_id,'orderId',g.order_id))
       FROM (SELECT mg.item_id,mg.achievement_id,mg.granted_at,mg.source,mg.achievement_id AS source_id,NULL AS order_id FROM mafia_cosmetic_grants mg
         WHERE mg.user_id=u.id AND mg.source='mafia_achievement' AND mg.revoked_at IS NULL
-        UNION ALL ${permanentGrantUnionSql('u.id')}) g) AS grants_json
+        UNION ALL ${permanentGrantUnionSql('u.id')}${accountProgressionEnabled(env) ? ` UNION ALL ${progressionGrantUnionSql('u.id')}` : ''}) g) AS grants_json
     FROM users u LEFT JOIN plus_cosmetics c ON c.user_id=u.id
     WHERE u.id IN (${selected.map(()=>'?').join(',')}) AND ${live('u.id')}`,...selected);
   // Independent source lookups used to retain a license after deletion during
@@ -79,6 +81,7 @@ function cosmeticView(row,now) {
   try{grants=JSON.parse(row?.grants_json||'[]');}catch{/* safe defaults */}
   grants=grants.flatMap(grant=>{
     if(grant.source==='mafia_achievement')return getMafiaAchievement(grant.achievementId)?.cosmeticItemId===grant.itemId&&getCosmetic(grant.itemId,{now})?[{...grant,ownership:'permanent'}]:[];
+    if (grant.source === 'progression') return getCosmetic(grant.itemId,{now})?.entitlement === 'progression' ? [{...grant,ownership:'permanent'}] : [];
     const permanent=permanentGrantView(grant,now);return permanent?[permanent]:[];
   });
   const eligible=Boolean(row?.plus_active);

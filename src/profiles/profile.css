@@ -153,3 +153,9 @@
 .profile-screen .profile-showcase:has(.profile-featured-badge) .profile-showcase-label { flex-basis:100%; }
 .profile-screen .profile-featured-badge { flex-direction:column; background:none; border-color:transparent; text-align:center; gap:4px; padding:1px 5px; }
 .profile-screen .profile-featured-badge svg { width:35px; height:35px; border-radius:13px; padding:5px; background:#ffedbb; border:1px solid #e8bd66; }
+.pc-portrait-hole > .player-avatar { width:100%!important; height:100%!important; min-width:0!important; }
+.pc-portrait-hole .player-avatar-portrait { border-radius:50%; }
+.pc-profile-masthead > .profile-cover { position:absolute; inset:0; height:100%; margin:0; border-radius:0; }
+.pc-profile-masthead > .profile-cover .profile-cover-spark { display:none; }
+.pc-wardrobe-preview > .pc-portrait { max-inline-size:12rem; margin-inline:auto; }
+.pc-track-existing { display:grid; place-items:center; aspect-ratio:1; border-radius:50%; background:#f3dbbd; }

@@ -13,6 +13,7 @@ import { activeAudioOwners } from '../social/media.js';
 import { createHaptics } from '../shared/fx/haptics.js';
 import { confetti } from '../shared/fx/confetti.js';
 import { ToastProvider, useToast, ErrorBoundary } from '../shared/ui/components.jsx';
+import { PresentationStyles } from '../shared/ui/PresentationStyles.jsx';
 import uiCss from '../shared/ui/ui.css';
 import setupCss from '../shared/setup/setup.css';
 import platformCss from './platform.css';
@@ -35,7 +36,7 @@ import { MafiaLabs } from '../games/mafia/tutorial/labs/MafiaLabs.jsx';
 import onlineCss from '../online/online.css';
 import { AccountProvider } from '../shared/account/AccountProvider.jsx';
 import { PaywallHost } from '../shared/account/PaywallHost.jsx';
-import accountCss from '../shared/account/account.css';
+import accountCss from '../shared/account/account.css?sheet';
 import { SocialProvider } from '../social/SocialProvider.jsx';
 import { LammaProvider } from '../social/LammaProvider.jsx';
 import { SocialUIProvider } from '../social/SocialUIProvider.jsx';
@@ -216,7 +217,7 @@ function Shell() {
       {booted && <ErrorBoundary title="تعذّر فتح اللّمة" message="أعد فتح ميدان لتتصل بأصحابك." onHome={() => navigate('/')}><SocialHost /></ErrorBoundary>}
       <style>{brandCss}</style>
       <style>{onlineCss}</style>
-      <style>{accountCss}</style>
+      <PresentationStyles sheet={accountCss} />
     </>
   );
 }
