@@ -23,12 +23,26 @@ test('an equipped frame keeps the uploaded portrait inside its own crop and the 
 });
 
 test('chat, seat and profile sizes select three distinct frame detail assets', () => {
-  for (const [size, detail, filename] of [[24, 'small', 'frame-small.svg'], [40, 'medium', 'frame-medium.webp'], [100, 'large', 'frame.webp']]) {
+  for (const [size, detail, side] of [[24, 'small', 72], [40, 'medium', 176], [100, 'large', 480]]) {
     const html = view.avatar({ user, size });
     assert.equal(view.frameDetail(size), detail);
     assert.ok(html.includes(`data-frame-detail="${detail}"`));
-    assert.ok(html.includes(filename));
+    assert.ok(html.includes(`/assets/plus/v3/sahra-frame-${side}.webp`));
     assert.ok(html.includes(`min-width:${size}px`));
+    assert.equal(html.includes('player-avatar-frame-light'), detail !== 'small');
+    assert.equal(html.includes('player-avatar-live-halo'), detail === 'large');
+    assert.equal(html.includes('player-avatar-live-sparks'), detail === 'large');
+  }
+});
+
+test('living decoration is selected by a Plus frame ID and leaves earned progression art static', () => {
+  const signature = view.avatar({ user: { ...user, cosmetics: { frameId: 'plus.signature.frame' } }, size: 100 });
+  assert.match(signature, /data-frame-theme="signature"/);
+  assert.match(signature, /player-avatar-live-sparks"><i><\/i><i><\/i><i><\/i><i><\/i>/);
+  for (const frameId of ['progression.frame.20', null]) {
+    const html = view.avatar({ user: { ...user, cosmetics: { frameId } }, size: 100 });
+    if (frameId) assert.match(html, /\/assets\/progression\/v1\/frame-20\.webp/);
+    assert.doesNotMatch(html, /data-frame-theme|player-avatar-frame-light|player-avatar-live-halo|player-avatar-live-sparks/);
   }
 });
 

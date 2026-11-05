@@ -1,5 +1,5 @@
-import { ProfileAvatar as SharedProfileAvatar } from './ProfileAvatar.jsx';
-import { getCosmetic } from '../plus/catalog.js';
+import { ProfileAvatar as SharedProfileAvatar, canPreviewLivingFrames } from './ProfileAvatar.jsx';
+import { getCosmetic, PLUS_ITEMS } from '../plus/catalog.js';
 import plusCss from '../plus/plus.css?sheet';
 import identityCss from './identity.css?sheet';
 import skinCss from './profile-skin.css?sheet';
@@ -225,6 +225,8 @@ export function ProfileView({ account, profiles, social, profileId, onNavigate =
   const [detailsTab, setDetailsTab] = useState('achievements');
   const [visitorPreviewId, setVisitorPreviewId] = useState(null);
   const visitorPreview = owner && visitorPreviewId === profile.id;
+  const [framePreview, setFramePreview] = useState(null);
+  const canTryFrames = owner && profile.id === account.user?.id && !visitorPreview && canPreviewLivingFrames();
   const [editing, setEditing] = useState(false); const [signIn, setSignIn] = useState(false); const [menu, setMenu] = useState(false); const [action, setAction] = useState('');
   const [busy, setBusy] = useState(false); const [notice, setNotice] = useState(null); const [loadError, setLoadError] = useState(''); const [shareLink, setShareLink] = useState('');
   const notify = (text, error = false) => setNotice({ text, error });
@@ -264,6 +266,7 @@ export function ProfileView({ account, profiles, social, profileId, onNavigate =
         <div className="profile-content">{codeRow}{identityActions}</div>
       </> :       <article className="profile-card"><Cover profile={profile} /><div data-design-id="identity" className="profile-identity"><div className="profile-identity-top"><ProfileAvatar profile={profile} /></div><div data-design-id="name" className="profile-name-row"><h2><PlayerName user={profile} card /></h2>{selectedTitle && <span className="profile-earned-title"><Icon name="crown" size={15} />{selectedTitle}</span>}</div>{codeRow}{profile.bio ? <p data-design-id="bio" className="profile-bio" dir="auto">{profile.bio}</p> : owner ? <p className="profile-bio is-empty">أضف نبذة صغيرة… وخَلّ أصحابك يتعرّفون عليك.</p> : null}{identityActions}<div data-design-id="badges" className="profile-showcase"><span className="profile-showcase-label">شارات بارزة</span>{featured.length ? featured.map(badge => <span key={badge.id} className="profile-featured-badge" title={badge.description}><Icon name={badge.icon} />{badge.label}</span>) : <span className="profile-showcase-empty">{owner ? 'اختر شاراتك المكتسبة من تعديل الملف.' : 'لم يختر شارات بارزة بعد.'}</span>}</div></div></article>}
       <div className="profile-content">
+        {canTryFrames && <Button variant="secondary" full onClick={() => setFramePreview('plus.signature.frame')}>جرّب الإطارات الحيّة</Button>}
         <nav className="profile-details-nav" aria-label="تفاصيل الملف">
           <button type="button" data-design-id="profile-tab-achievements" aria-pressed={detailsTab === 'achievements'} onClick={() => setDetailsTab('achievements')}>الإنجازات</button>
           <button type="button" data-design-id="profile-tab-stats" aria-pressed={detailsTab === 'stats'} onClick={() => setDetailsTab('stats')}>الإحصاءات</button>
@@ -280,6 +283,13 @@ export function ProfileView({ account, profiles, social, profileId, onNavigate =
       {owner && !visitorPreview && <ProfileIdentityLibrary profile={profile} onNavigate={onNavigate} />}
       {owner && !visitorPreview && profile.imageReviews && <div className="profile-review-summary"><ImageReviewStatus review={profile.imageReviews.avatar} kind="avatar" /><ImageReviewStatus review={profile.imageReviews.cover} kind="cover" /></div>}
     </>}
+    {canTryFrames && framePreview && <Modal title="جرّب الإطارات الحيّة" className="profile-dialog" onClose={() => setFramePreview(null)}>
+      <div className="center" style={{ paddingBlock: '30px' }}><SharedProfileAvatar user={profile} size={156} previewFrameId={framePreview} /></div>
+      <label className="profile-field">الإطار<select value={framePreview} onChange={event => setFramePreview(event.target.value)}>
+        {PLUS_ITEMS.filter(item => item.motionKind === 'living-frame').map(item => <option key={item.id} value={item.id}>{item.label}{item.availableFrom > Date.now() ? ' · قريبًا' : ''}</option>)}
+      </select></label>
+      <p className="profile-dialog-intro">معاينة على صورتك في TestFlight. اختيار الإطار هنا ما بغيّر إطار حسابك.</p>
+    </Modal>}
     <SignInSheet open={signIn} onClose={() => setSignIn(false)} note="سجّل الدخول لملفك الشخصي وأصدقائك وإنجازاتك في ميدان." />
     {account.signedIn && owner && editing && profile && <ProfileEditor profile={profile} profiles={profiles} onClose={() => setEditing(false)} onSaved={() => { setEditing(false); notify('حُفظ ملفك الشخصي.'); }} />}
     {account.signedIn && menu && profile && <Modal title={'خيارات ' + nameOf(profile)} className="profile-dialog" onClose={() => setMenu(false)}><div className="profile-menu"><button type="button" className="is-danger" onClick={() => { setMenu(false); setAction('block'); }}><Icon name="shield" />حظر الحساب</button><button type="button" onClick={() => { setMenu(false); setAction('report'); }}>الإبلاغ عن الحساب</button></div></Modal>}

@@ -1,6 +1,7 @@
 // Original, curated Maydan artwork. IDs are public cosmetics, never gameplay rights.
 import assetManifest from '../../assets/plus/v1/manifest.json' with { type: 'json' };
 import craftedManifest from '../../assets/plus/v2/manifest.json' with { type: 'json' };
+import liveFrameManifest from '../../assets/plus/v3/frames.json' with { type: 'json' };
 import { getProgressionFrame } from '../profiles/progression-catalog.js';
 export const PLUS_CATALOG_VERSION = 3;
 // Subscription scope is presentation-only. Keep archived IDs below readable so
@@ -8,6 +9,18 @@ export const PLUS_CATALOG_VERSION = 3;
 export function subscriptionIncludesKind(kind) { return kind === 'profileSkin' || kind === 'frame'; }
 export const subscriptionIncludesItem = item => item?.entitlement !== 'progression' && subscriptionIncludesKind(item?.kind);
 const PROFILE_BACKGROUND = '/assets/plus/v2/profile-sahra-background.webp';
+const legacyFrameThemes = new Set(['signature', 'sahra', 'artist', 'noir']);
+function liveFrameArt(theme) {
+  const { small, medium, large, sha256, innerScale } = liveFrameManifest.frames[theme];
+  const legacy = `/assets/plus/v2/${theme}-frame`;
+  return {
+    assetUrl: large, posterUrl: large, assetHash: sha256, artReady: true, innerScale,
+    frameAssets: { small, medium, large }, motionKind: 'living-frame', frameTheme: theme,
+    ...(legacyFrameThemes.has(theme) ? { fallbackFrameAssets: {
+      small: `${legacy}-small.svg`, medium: `${legacy}-medium.webp`, large: `${legacy}.webp`,
+    } } : {}),
+  };
+}
 export const PLUS_COLLECTIONS = Object.freeze([
   { id: 'sahra', label: 'سهرة ميدان', description: 'دفء السهرة، فيروز ولمعة ذهبية هادئة.', availableFrom: 0, palette: { bg: '#173b45', accent: '#f0bc61', text: '#fff5dd' } },
   { id: 'artist', label: 'رسّام الشلّة', description: 'ألوان جريئة وروح رسّام يحب المفاجآت.', availableFrom: 0, palette: { bg: '#493568', accent: '#65e3d6', text: '#fff7eb' } },
@@ -37,7 +50,7 @@ export const PLUS_ITEMS = Object.freeze(PLUS_COLLECTIONS.flatMap(c => {
       assetUrl: artFor(kind), assetHash: craftedManifest.assets?.[artFor(kind)]?.sha256 || assetManifest.artwork[c.id]?.sha256,
       artReady:crafted ? !!craftedManifest.assets?.[artFor(kind)]?.sha256 : true,
       posterUrl: artFor(kind),
-      ...(crafted && kind==='frame' ? { frameAssets:{ small:`/assets/plus/v2/${c.id}-frame-small.svg`,medium:`/assets/plus/v2/${c.id}-frame-medium.webp`,large:`/assets/plus/v2/${c.id}-frame.webp` },motionKind:'light-sweep' } : {}),
+      ...(kind==='frame' ? liveFrameArt(c.id) : {}),
       ...(crafted && kind==='nameColor' ? { nameCardAsset:`/assets/plus/v2/${c.id}-name-card.webp`,nameCardTextColor:c.id==='noir'?'#F8EAD7':'#30203F' } : {}),
       ...(crafted && kind==='roomTheme' ? { layerAssets:{background:`/assets/plus/v2/${c.id}-room.webp`,table:`/assets/plus/v2/${c.id}-table.webp`},layout:'social-waiting' } : {}),
       ...(crafted && kind==='entrance' ? { motionKind:'welcome',durationMs:1200,sensitivePhases:'defer' } : {}),
@@ -47,11 +60,9 @@ export const PLUS_ITEMS = Object.freeze(PLUS_COLLECTIONS.flatMap(c => {
     ...words[c.id].map((label, index) => Object.freeze({ ...base, version:1,id: `${c.id}.sticker.${index + 1}`, kind: 'sticker', label, assetUrl: `/assets/plus/v1/${c.id}-sticker-${index + 1}.svg`, assetHash: assetManifest.stickers[`${c.id}.sticker.${index + 1}`]?.sha256, fallback: emojis[index], emoji: emojis[index] })),
   ];
 }).concat([
-  Object.freeze({ id:'plus.signature.frame',kind:'frame',collectionId:'sahra',label:'إطار عضوية ميدان بلس',description:'إطار ذهبي هادئ بلمعة بطيئة في البروفايل وتفاصيل ثابتة في الصور الصغيرة. علامة بلس مستقلة عن الإطار.',
+  Object.freeze({ id:'plus.signature.frame',kind:'frame',collectionId:'sahra',label:'المهيب · إطار عضوية ميدان بلس',description:'ذهب منحوت وتفاصيل فيروزية، مع انعكاس ضوء وهالة حيّة في البروفايل. علامة بلس مستقلة عن الإطار.',
     availableFrom:0,version:PLUS_CATALOG_VERSION,minClientVersion:'1.9',entitlement:'plus',ownership:'subscription',membershipOnly:true,
-    assetUrl:'/assets/plus/v2/signature-frame.webp',posterUrl:'/assets/plus/v2/signature-frame.webp',
-    frameAssets:{small:'/assets/plus/v2/signature-frame-small.svg',medium:'/assets/plus/v2/signature-frame-medium.webp',large:'/assets/plus/v2/signature-frame.webp'},
-    assetHash:craftedManifest.assets?.['/assets/plus/v2/signature-frame.webp']?.sha256,artReady:!!craftedManifest.assets?.['/assets/plus/v2/signature-frame.webp']?.sha256,motionKind:'calm',color:'#30203F',accent:'#FFBF36',fallback:'default' }),
+    ...liveFrameArt('signature'),color:'#30203F',accent:'#FFBF36',fallback:'default' }),
   ...['profileSkin','councilSkin'].map(kind=>Object.freeze({
     id:`sahra.${kind}`,kind,collectionId:'sahra',label:kind==='profileSkin'?'بروفايل سهرة ميدان الكامل':'مجلس سهرة ميدان الكامل',
     description:kind==='profileSkin'?'ألوان وخامات وبطاقات متناسقة لكل ملفك. صورتك الشخصية تبقى كما اخترتها.':'طاولة ومقاعد وبيئة وإضاءة متناسقة يشاهدها ضيوفك جميعًا.',

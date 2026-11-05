@@ -3,12 +3,13 @@ import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { createHash } from 'node:crypto';
 import sharp from 'sharp';
-import { PLUS_COLLECTIONS, PLUS_ITEMS, COSMETIC_OFFERS, availableCollections, availableSubscriptionItems, subscriptionIncludesKind } from '../src/plus/catalog.js';
+import { PLUS_COLLECTIONS, PLUS_ITEMS, COSMETIC_OFFERS, availableCollections, availableSubscriptionItems, subscriptionIncludesKind, getCosmetic } from '../src/plus/catalog.js';
 import craftedManifest from '../assets/plus/v2/manifest.json' with { type:'json' };
+import liveFrameManifest from '../assets/plus/v3/frames.json' with { type:'json' };
 
 test('all cosmetic assets are bundled, fingerprinted and contain no external sticker content', () => {
   for (const item of PLUS_ITEMS) {
-    assert.match(item.assetUrl, /^\/assets\/plus\/v[12]\/[a-z0-9-]+\.(?:webp|svg)$/);
+    assert.match(item.assetUrl, /^\/assets\/plus\/v[123]\/[a-z0-9-]+\.(?:webp|svg)$/);
     const bytes = readFileSync(new URL('../public' + item.assetUrl, import.meta.url));
     assert.equal(createHash('sha256').update(bytes).digest('hex'), item.assetHash, item.id);
     if (item.kind === 'sticker') {
@@ -76,4 +77,53 @@ test('v2 cosmetics have independent prepared art, bounded download size and tran
     assert.ok(craftedManifest.assets[items.find(item=>item.kind==='roomTheme').layerAssets.table],id+':separate table');
     assert.equal(items.find(item=>item.kind==='avatar').motionKind,undefined,'static portrait has no fabricated animated claim');
   }
+});
+
+test('all 18 living-frame assets keep transparent apertures and fit the packaged image budget', async () => {
+  const themes = ['signature', 'sahra', 'artist', 'noir', 'olive', 'starlight'];
+  const variants = { small: [72, 8000], medium: [176, 18000], large: [480, 64000] };
+  const frameUrls = new Set();
+  const hashes = new Set();
+  let totalBytes = 0;
+  assert.equal(liveFrameManifest.schemaVersion, 1);
+  assert.deepEqual(Object.keys(liveFrameManifest.frames).sort(), [...themes].sort());
+  for (const theme of themes) {
+    const id = theme === 'signature' ? 'plus.signature.frame' : theme + '.frame';
+    const frame = getCosmetic(id, { kind: 'frame', now: Date.UTC(2027, 0, 1) });
+    const source = liveFrameManifest.frames[theme];
+    assert.equal(frame.frameTheme, theme);
+    assert.equal(frame.motionKind, 'living-frame');
+    assert.equal(frame.entitlement, 'plus');
+    assert.equal(frame.artReady, true);
+    assert.ok(source.innerScale >= 0.8 && source.innerScale < 1, id);
+    for (const [variant, [side, budget]] of Object.entries(variants)) {
+      const url = frame.frameAssets[variant];
+      assert.equal(url, source[variant]);
+      assert.equal(url, `/assets/plus/v3/${theme}-frame-${side}.webp`);
+      const bytes = readFileSync(new URL('../public' + url, import.meta.url));
+      assert.ok(bytes.length < budget, url);
+      totalBytes += bytes.length;
+      frameUrls.add(url);
+      const hash = createHash('sha256').update(bytes).digest('hex');
+      hashes.add(hash);
+      if (variant === 'large') assert.equal(hash, source.sha256);
+      const image = sharp(bytes);
+      const metadata = await image.metadata();
+      assert.equal(metadata.hasAlpha, true, url);
+      assert.equal(metadata.format, 'webp', url);
+      const { data, info } = await image.raw().toBuffer({ resolveWithObject: true });
+      assert.equal(info.width, side, url);
+      assert.equal(info.height, side, url);
+      const alpha = (x, y) => data[(y * side + x) * info.channels + 3];
+      const center = side / 2;
+      const margin = Math.floor(side * 0.16);
+      const transparentPixels = [[0, 0], [0, side - 1], [side - 1, 0], [side - 1, side - 1],
+        [center, center], [center - margin, center], [center + margin, center], [center, center - margin], [center, center + margin]];
+      assert.ok(transparentPixels.every(([x, y]) => alpha(x, y) === 0), url);
+      assert.ok(data.some((channel, i) => i % info.channels === 3 && channel === 255), url + ': opaque decoration');
+    }
+  }
+  assert.equal(frameUrls.size, 18);
+  assert.equal(hashes.size, 18);
+  assert.ok(totalBytes < 500000, `living-frame asset bytes: ${totalBytes}`);
 });

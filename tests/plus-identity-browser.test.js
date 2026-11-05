@@ -8,6 +8,8 @@ import { readFile, mkdir } from 'node:fs/promises';
 import path from 'node:path';
 import { build } from 'esbuild';
 import { chromium, webkit } from 'playwright';
+import sharp from 'sharp';
+import { getCosmetic } from '../src/plus/catalog.js';
 
 const root = process.cwd();
 const output = path.join(root, '.cache/plus-identity-browser');
@@ -61,9 +63,10 @@ for (const [name, engine] of [['chromium', chromium], ['webkit', webkit]]) test(
     for (const [size, detail] of [[24, 'small'], [40, 'medium'], [100, 'large']]) {
       const value = await page.locator(`[data-case="${size}"] .plus-avatar-shell`).evaluate(element => {
         const portrait = element.querySelector('.player-avatar-portrait'), frame = element.querySelector('.player-avatar-frame');
-        return { slot: element.getBoundingClientRect().width, portrait: portrait.getBoundingClientRect().width, frame: frame.getBoundingClientRect().width, overflow: getComputedStyle(element).overflow, crop: getComputedStyle(portrait).overflow, pointer: getComputedStyle(frame).pointerEvents, detail: element.dataset.frameDetail, url: portrait.querySelector('img').src, status: getComputedStyle(element.parentElement.querySelector('.fixture-status')).backgroundColor };
+        return { slot: element.getBoundingClientRect().width, portrait: portrait.getBoundingClientRect().width, frame: frame.getBoundingClientRect().width, overflow: getComputedStyle(element).overflow, crop: getComputedStyle(portrait).overflow, pointer: getComputedStyle(frame).pointerEvents, detail: element.dataset.frameDetail, url: portrait.querySelector('img').src, ring: new URL(frame.querySelector('img').src).pathname, status: getComputedStyle(element.parentElement.querySelector('.fixture-status')).backgroundColor };
       });
       assert.equal(value.slot, size); assert.equal(value.detail, detail); assert.ok(value.frame > size); assert.ok(value.portrait < size); assert.equal(value.overflow, 'visible'); assert.equal(value.crop, 'hidden'); assert.equal(value.pointer, 'none'); assert.match(value.url, /\/api\/profiles\/member\/images\/avatar\//); assert.equal(value.status, 'rgb(0, 140, 90)');
+      assert.equal(value.ring, getCosmetic('sahra.frame').frameAssets[detail]);
     }
     observations.checks.push('24/40/100 LOD, outer art separate from inner crop, uploaded avatar preserved, status indicator untouched.');
     stage = 'membership-and-name';
@@ -74,20 +77,51 @@ for (const [name, engine] of [['chromium', chromium], ['webkit', webkit]]) test(
     assert.match(await page.locator('#name .player-name-card>img').getAttribute('src'), /noir-name-card/);
     observations.checks.push('Effective membership badge is independent of gold frame/localStorage; name card stays independent of cover.');
     stage = 'motion-and-reduced-motion';
+    const reflection = page.locator('[data-case="40"] .player-avatar-frame-light');
+    const reflectionAnimation = property => reflection.evaluate((element, key) => getComputedStyle(element, '::before')[key], property);
     await page.waitForFunction(() => document.querySelector('[data-case="40"] .plus-avatar-shell').dataset.identityMotion === 'running');
-    assert.equal(await page.locator('[data-case="40"] .player-avatar-frame-light').evaluate(element => getComputedStyle(element).animationPlayState), 'running');
+    assert.equal(await reflectionAnimation('animationPlayState'), 'running');
+    assert.equal(await page.locator('[data-case="24"] .player-avatar-frame-light').count(), 0);
+    assert.equal(await page.locator('[data-case="40"] .player-avatar-live-halo').count(), 0);
+    assert.equal(await page.locator('[data-case="100"] .player-avatar-live-sparks>i').count(), 2);
     await page.emulateMedia({ reducedMotion: 'reduce' });
-    assert.equal(await page.locator('[data-case="40"] .player-avatar-frame-light').evaluate(element => getComputedStyle(element).animationName), 'none');
+    assert.equal(await reflectionAnimation('animationName'), 'none');
     await page.emulateMedia({ reducedMotion: 'no-preference' });
     await page.evaluate(() => document.documentElement.dataset.reducedMotion = 'true');
-    assert.equal(await page.locator('[data-case="40"] .player-avatar-frame-light').evaluate(element => getComputedStyle(element).animationName), 'none');
+    assert.equal(await reflectionAnimation('animationName'), 'none');
     await page.evaluate(() => delete document.documentElement.dataset.reducedMotion);
+    await page.evaluate(() => document.documentElement.dataset.visualQuality = 'calm');
+    assert.equal(await reflectionAnimation('animationName'), 'none');
+    await page.evaluate(() => delete document.documentElement.dataset.visualQuality);
+    await page.evaluate(() => {
+      Object.defineProperty(document, 'hidden', { configurable: true, value: true });
+      document.dispatchEvent(new Event('visibilitychange'));
+    });
+    await page.waitForFunction(() => document.querySelector('[data-case="40"] .plus-avatar-shell').dataset.identityMotion === 'paused');
+    await page.evaluate(() => { delete document.hidden; document.dispatchEvent(new Event('visibilitychange')); });
+    await page.evaluate(() => document.querySelector('[data-case="40"]').classList.add('call-dock-person', 'is-speaking'));
+    assert.equal(await reflection.evaluate(node => getComputedStyle(node).display), 'none');
+    await page.evaluate(() => document.querySelector('[data-case="40"]').classList.remove('call-dock-person', 'is-speaking'));
     assert.equal(await page.locator('.offscreen .plus-avatar-shell').getAttribute('data-identity-motion'), 'paused');
     await page.locator('.offscreen').scrollIntoViewIfNeeded();
     await page.waitForFunction(() => document.querySelector('.offscreen .plus-avatar-shell').dataset.identityMotion === 'running');
     await page.evaluate(() => scrollTo(0, 0));
     await page.waitForFunction(() => document.querySelector('.offscreen .plus-avatar-shell').dataset.identityMotion === 'paused');
-    observations.checks.push('Actual reduced-motion CSS/system setting and IntersectionObserver pause decorative motion offscreen.');
+    observations.checks.push('Tiny avatars stay static; OS/app/lighter-decoration settings, hidden document, speaking status and offscreen pause are honored.');
+    stage = 'reflection-is-clipped-to-the-ring';
+    const profileAvatar = page.locator('[data-case="100"] .plus-avatar-shell');
+    const forcedGlint = await page.addStyleTag({ content: '.player-avatar-frame-light::before { opacity:1!important;transform:none!important;animation:none!important;background:#ff00ff!important } .player-avatar-live-halo,.player-avatar-live-sparks { display:none!important }' });
+    const maskStyle = await profileAvatar.locator('.player-avatar-frame-light').evaluate(node => ({
+      mask: getComputedStyle(node).maskImage, display: getComputedStyle(node).display,
+      opacity: getComputedStyle(node, '::before').opacity, background: getComputedStyle(node, '::before').backgroundColor,
+      box: node.getBoundingClientRect().toJSON(),
+    }));
+    const { data, info } = await sharp(await profileAvatar.screenshot({ path: path.join(output, name + '-opaque-glint.png') })).removeAlpha().raw().toBuffer({ resolveWithObject: true });
+    const pixel = (x, y) => [...data.subarray((y * info.width + x) * 3, (y * info.width + x) * 3 + 3)];
+    assert.deepEqual(pixel(50, 50), [255, 246, 229], 'the opaque stress reflection cannot color the photo');
+    assert.ok(data.some((channel, index) => index % 3 === 0 && channel > 240 && data[index + 1] < 15 && data[index + 2] > 240), 'the reflection paints on visible frame artwork: ' + JSON.stringify(maskStyle));
+    await forcedGlint.evaluate(style => style.remove());
+    observations.checks.push('An opaque stress reflection paints frame artwork and leaves the portrait center unchanged.');
     stage = 'successful-character';
     await page.evaluate(() => window.identityTest.user({ cosmetics: { avatarId: 'artist.avatar' } }));
     await page.waitForFunction(() => {
@@ -100,7 +134,22 @@ for (const [name, engine] of [['chromium', chromium], ['webkit', webkit]]) test(
     // Start the unavailable-art scenario without any previously successful
     // decoded/in-flight artist image. Toggling a server to404 does not evict a
     // resource already held by the first browser context.
-    const failedPaths = ['artist-avatar.webp', 'artist-frame-small.svg', 'artist-frame-medium.webp', 'artist-frame.webp'].map(file => '/assets/plus/v2/' + file).concat('/assets/plus/v1/artist.webp');
+    const artistFrame = getCosmetic('artist.frame');
+    for (const pathname of Object.values(artistFrame.frameAssets)) broken.add(pathname);
+    stage = 'v2-frame-fallback';
+    const legacyContext = await browser.newContext({ viewport: { width: 390, height: 844 }, reducedMotion: 'no-preference' });
+    const legacyPage = await legacyContext.newPage();
+    activePage = legacyPage;
+    await attach(legacyPage, 'legacy-frame-fallback');
+    await legacyPage.goto(origin);
+    await legacyPage.locator('[data-case="100"] .player-avatar-frame img').waitFor();
+    await legacyPage.evaluate(() => window.identityTest.user({ cosmetics: { frameId: 'artist.frame' } }));
+    await legacyPage.waitForFunction(expected => [...document.querySelectorAll('.cases .player-avatar-frame img')].every(image =>
+      Object.values(expected).includes(new URL(image.src).pathname) && image.complete && image.naturalWidth > 0), artistFrame.fallbackFrameAssets);
+    await legacyContext.close();
+    observations.checks.push('Unavailable v3 artwork uses the corresponding existing v2 size.');
+    const failedPaths = [...Object.values(artistFrame.frameAssets), ...Object.values(artistFrame.fallbackFrameAssets),
+      '/assets/plus/v2/artist-avatar.webp', '/assets/plus/v1/artist.webp'];
     for (const pathname of failedPaths) broken.add(pathname);
     stage = 'fresh-failure-context';
     const failureContext = await browser.newContext({ viewport: { width: 390, height: 844 }, reducedMotion: 'no-preference' });
@@ -124,7 +173,7 @@ for (const [name, engine] of [['chromium', chromium], ['webkit', webkit]]) test(
         && frames.length === 3 && frames.every(frame => frame.classList.contains('is-fallback') && !frame.querySelector('img'));
     });
     observations.failedArtworkResponses = failedPaths.map(path => ({ path, status: 404 }));
-    observations.checks.push('Fresh context received all five404s; new/legacy portraits return to three complete uploaded images and all three frames render CSS fallback without broken img elements.');
+    observations.checks.push('Fresh context received every intended 404; portraits return to the uploaded image and all three frames render CSS fallback without broken img elements.');
     for (const [context, checkedPage] of [['successful-artwork', page], ['unavailable-artwork', failurePage]]) {
       activePage = checkedPage;
       for (const [width, height] of [[320, 844], [390, 844], [844, 390]]) {

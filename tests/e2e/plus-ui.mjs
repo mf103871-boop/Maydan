@@ -30,7 +30,7 @@ const html='<!doctype html><html lang="ar" dir="rtl"><meta charset="utf-8"><meta
 const publicRoot=path.resolve('public');
 const server=createServer(async(req,res)=>{
   if(req.url==='/bundle.js'){res.setHeader('content-type','text/javascript');res.end(built.outputFiles[0].contents);return;}
-  if(/^\/assets\/plus\/v[12]\//.test(req.url||'')){const target=path.resolve(publicRoot,'.'+req.url);if(target.startsWith(publicRoot+path.sep)){try{res.setHeader('content-type',req.url.endsWith('.svg')?'image/svg+xml':'image/webp');res.end(await readFile(target));return;}catch{res.writeHead(404);res.end();return;}}}
+  if(/^\/assets\/plus\/v[123]\//.test(req.url||'')){const target=path.resolve(publicRoot,'.'+req.url);if(target.startsWith(publicRoot+path.sep)){try{res.setHeader('content-type',req.url.endsWith('.svg')?'image/svg+xml':'image/webp');res.end(await readFile(target));return;}catch{res.writeHead(404);res.end();return;}}}
   res.setHeader('content-type','text/html');res.end(html);
 });
 await new Promise(resolve=>server.listen(0,'127.0.0.1',resolve));

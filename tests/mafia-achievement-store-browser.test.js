@@ -41,7 +41,7 @@ test('Chromium and WebKit: real authenticated Store equips an earned item withou
     const publicRoot = path.resolve('public');
     server = createServer(async (req, res) => {
       if (req.url === '/bundle.js') { res.setHeader('content-type', 'text/javascript'); res.end(built.outputFiles[0].contents); return; }
-      if (/^\/assets\/plus\/v[12]\//.test(req.url || '')) {
+      if (/^\/assets\/plus\/v[123]\//.test(req.url || '')) {
         const filename = path.resolve(publicRoot, '.' + req.url);
         if (filename.startsWith(publicRoot + path.sep)) { try { res.setHeader('content-type', req.url.endsWith('.svg') ? 'image/svg+xml' : 'image/webp'); res.end(await readFile(filename)); return; } catch { res.writeHead(404); res.end(); return; } }
       }
