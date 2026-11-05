@@ -188,3 +188,8 @@ html[data-large-text="true"] .social-bubble>p { font-size:18px; }
 html[data-large-text="true"] .social-person-sub,html[data-large-text="true"] .social-chat-person p { font-size:15px; }
 html[data-high-contrast="true"] .social-bubble,html[data-high-contrast="true"] .social-person-row { border-color:#6b4e7a; }
 html[data-high-contrast="true"] .social-message-meta,html[data-high-contrast="true"] .social-person-sub { color:#4e315d; }
+.social-friend-search .social-search-results h3 { margin:8px 2px; color:#3d2447; font-size:16px; }
+.social-friend-search .social-search-result { background:#fff8ee; padding:7px; }
+.social-friend-search .social-search-result .btn { min-height:44px; border-radius:10px; box-shadow:none; }
+.social-chat .social-bubble { background:#ecdfed; }
+.social-chat .is-theirs .social-bubble { background:#fffaf1; }

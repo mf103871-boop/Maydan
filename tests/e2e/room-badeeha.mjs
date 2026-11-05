@@ -64,6 +64,9 @@ test('two phones play Badeeha: turns, aids, reveal, judge, steal, undo and end',
   await h.locator('[data-design-id="invite-toggle"]').click();
   const code = (await h.locator('[data-design-id="invite-code"]').textContent({ timeout: 15_000 })).trim();
   assert.match(code, /^\d{6}$/);
+  const invite = h.getByRole('dialog', { name: 'دعوة اللاعبين' });
+  await invite.getByRole('button', { name: 'إغلاق' }).click();
+  await invite.waitFor({ state: 'hidden' });
   await h.locator('[data-design-id="rules-toggle"]').click();
   await h.getByText('٢٠ سؤالًا، و٣٠ ثانية لكل سؤال.').waitFor();
 
@@ -150,6 +153,7 @@ test('a guest can host a saved formerly-Plus selection without losing its catego
   await page.locator('[data-design-screen="online.lobby"]').waitFor();
   assert.equal(creates, 1, 'the guest creates exactly one real room');
   assert.equal(await page.locator('.paywall').count(), 0, 'cosmetic Plus must not block gameplay');
+  await page.locator('[data-design-id="invite-toggle"]').click();
   const code=(await page.locator('[data-design-id="invite-code"]').textContent()).trim();
   assert.deepEqual(app.rooms.get(code).instance.room.settings.categories,['general','geo','capitals','science','animals','flags']);
   assert.equal(await app.env.DB.prepare('SELECT COUNT(*) AS n FROM trials').first('n'),0);

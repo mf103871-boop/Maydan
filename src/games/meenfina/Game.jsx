@@ -12,6 +12,7 @@ import { initialState, reduce, currentVoter, standings, createStatementSource, n
 import { loadSession } from '../../shared/lib/session.js';
 import { useSessionSave } from '../../shared/ui/useSessionSave.js';
 import { useGameMusicScene } from '../../shared/fx/useGameMusicScene.js';
+import { IconCheck, IconInfo } from '../../shared/ui/icons.jsx';
 
 const OPTIONS_KEY = 'options';
 const SEEN_KEY = 'seen';
@@ -21,7 +22,8 @@ export function SetupOptions({ storage, api }) {
   const [resume] = useState(() => loadSession(storage, restoreSession));
   const update = (patch) => { const next = normalizeOptions({ ...opts, ...patch }); setOpts(next); storage.set(OPTIONS_KEY, next); };
   return (
-    <div data-design-screen="setup.meenfina" data-design-id="options" className="stack">
+    <div data-design-screen="setup.meenfina" data-design-id="options" className="stack meen-setup">
+    <style>{css}</style>
     {resume && <Card className="stack resume-card">
       <span className="card-title">لعبتكم بانتظاركم</span>
       <p className="card-muted">العبارة {resume.state.round} من {resume.state.rounds} · {resume.players.map((p) => p.name).join('، ')}</p>
@@ -29,19 +31,20 @@ export function SetupOptions({ storage, api }) {
       <p className="card-muted">بدء لعبة جديدة يستبدل هذا التقدم.</p>
     </Card>}
     <Card className="stack">
-      <span className="card-title">الوضع والجولات</span>
-      <Segment data-design-id="setting-mode" accent label="الوضع" value={opts.mode} onChange={(v) => update({ mode: v })} options={[{ value: 'point', label: '👉 أشّر!' }, { value: 'secret', label: '🤫 تصويت سري' }]} />
+      <div className="field"><span>وضع اللعب</span>
+        <Segment data-design-id="setting-mode" accent label="وضع اللعب" value={opts.mode} onChange={(v) => update({ mode: v })} options={[{ value: 'point', label: '👉 أشّر!' }, { value: 'secret', label: '🤫 تصويت سري' }]} />
+      </div>
       <div className="field"><span>عدد العبارات</span>
         <Segment data-design-id="setting-rounds" accent label="الجولات" value={opts.rounds} onChange={(v) => update({ rounds: v })} options={ROUNDS.map((r) => ({ value: r, label: statementsLabel(r) }))} />
       </div>
-      <p className="card-muted">{opts.mode === 'point' ? 'الجميع يشيرون في اللحظة نفسها بعد عدّ 3-2-1.' : 'يمرّ الجوال على كل لاعب ليصوّت سرًا، ثم تُكشف النتائج.'}</p>
+      <p className="meen-info-note"><IconInfo /> {opts.mode === 'point' ? 'أشّر: الجميع يشيرون في اللحظة نفسها.' : 'سري: نمرّر الجوال ثم نكشف النتائج.'}</p>
     </Card>
     </div>
   );
 }
 
 // طبقة العدّ تغطي الشاشة، فالعبارة تُرسم داخلها — وإلا أُشير قبل أن تُقرأ.
-function Countdown({ api, statement, onDone }) {
+function Countdown({ api, statement, round, rounds, onDone }) {
   const [n, setN] = useState(3);
   // العدّ يتوقف والصفحة مخفية ويعود من الرقم نفسه؛ وإلا أُشير قبل أن يرى أحد.
   const [hidden, setHidden] = useState(() => typeof document !== 'undefined' && document.hidden);
@@ -61,10 +64,13 @@ function Countdown({ api, statement, onDone }) {
   }, [n, hidden]); // eslint-disable-line react-hooks/exhaustive-deps
   return (
     <div className="meen-count">
+      <h2 className="meen-phase-heading">مين فينا</h2>
+      <p className="meen-round-pill">العبارة {round} من {rounds}</p>
       <div data-design-id="question" className="meen-statement">{statement}</div>
-      <div className="meen-count-num" role="status" aria-live="assertive">
-        {n > 0 ? <div className="num" key={n}>{n}</div> : <div className="go">أشّر الآن!</div>}
+      <div className="meen-count-num" role="status" aria-live="assertive" aria-label={n > 0 ? String(n) : 'أشّر الآن!'}>
+        {n > 0 ? <div className="meen-count-beads" dir="ltr" aria-hidden="true">{[3, 2, 1].map(number => <span key={number} className={n === number ? 'current' : ''}>{number}</span>)}</div> : <div className="go">أشّر الآن!</div>}
       </div>
+      <p className="meen-info-note"><IconInfo /> نقرأ أولًا، ثم نشير معًا.</p>
     </div>
   );
 }
@@ -130,6 +136,7 @@ export function Game({ api, players, onExit, savedSession = null, designPreviewS
       <Screen data-design-screen={`meenfina.local.${state.phase}`} className="meenfina" aria-label="مين فينا">
         <style>{css}</style>
         <div className="stack">
+          <h2 className="meen-phase-heading">النتائج والألقاب</h2>
           <Podium data-design-id="podium" entries={table} />
           <div className="meen-titles">
             {table.map((p, i) => (
@@ -149,28 +156,28 @@ export function Game({ api, players, onExit, savedSession = null, designPreviewS
       <style>{css}</style>
       {state.phase === 'intro' && (
         <div data-design-id="intro" className="meen-intro">
-          <div className="big clay-stage clay-idle" aria-hidden="true"><span className="clay-lift"><GameArtwork game="meenfina" /></span></div>
-          <p className="muted">العبارة {state.round} من {state.rounds}</p>
-          <h2 style={{ fontSize: 26, fontWeight: 900 }}>{state.mode === 'point' ? 'جهّزوا أصابعكم' : 'تصويت سري'}</h2>
-          <p className="muted">{state.mode === 'point' ? 'ستظهر العبارة ثم عدّ 3-2-1، وأشيروا جميعًا في اللحظة نفسها.' : 'سيمرّ الجوال على كل لاعب ليصوّت سرًا.'}</p>
+          <h2 className="meen-phase-heading">مين فينا</h2>
+          <p className="meen-round-pill">العبارة {state.round} من {state.rounds}</p>
+          <div className="meen-intro-guide"><GameArtwork game="meenfina" /><strong>{state.mode === 'point' ? 'جهّزوا أصابعكم' : 'تصويت سري'}</strong><p>{state.mode === 'point' ? 'اقرأوا العبارة، ثم أشيروا جميعًا عند انتهاء العد.' : 'سيمرّ الجوال على كل لاعب ليصوّت سرًا.'}</p></div>
           <Button data-design-id="start" data-design-required="true" variant="accent" size="lg" full onClick={() => { api.sound.play('whoosh'); dispatch({ type: 'BEGIN', statement: source.next() }); }}>اعرض العبارة</Button>
           <Scoreboard data-design-id="scoreboard" entries={state.players.map((p) => ({ ...p, score: state.scores[p.id] }))} />
         </div>
       )}
 
       {state.phase === 'countdown' && (
-        <Countdown api={api} statement={state.statement.text} onDone={() => dispatch({ type: 'COUNTDOWN_DONE' })} />
+        <Countdown api={api} statement={state.statement.text} round={state.round} rounds={state.rounds} onDone={() => dispatch({ type: 'COUNTDOWN_DONE' })} />
       )}
 
       {state.phase === 'pick' && (
         <div className="stack">
+          <p className="meen-info-note"><IconInfo /> يمكن اختيار أكثر من لاعب عند التعادل.</p>
           <div data-design-id="question" className={`meen-statement ${leaving ? 'is-leaving' : ''}`}>{state.statement.text}</div>
           <p className="center muted">اضغطوا من حصل على أكثر إشارات (يمكن اختيار أكثر من واحد عند التعادل).</p>
           <div data-design-id="options-list" className="meen-grid">
             {state.players.map((p, i) => (
               <button key={p.id} type="button" data-design-id="option" className={`meen-pick ${picked.includes(p.id) ? 'selected' : ''}`} style={{ '--pick-color': p.color, '--i': i }} aria-pressed={picked.includes(p.id)} onClick={() => toggle(p.id)}>
-                {picked.includes(p.id) && <span className="count" key={picked.indexOf(p.id)} aria-hidden="true">{picked.indexOf(p.id) + 1}</span>}
                 <span className="clay-stage clay-static" aria-hidden="true"><span className="clay-lift"><Avatar player={p} /></span></span>{p.name}
+                <span className="meen-pick-mark" aria-hidden="true">{picked.includes(p.id) && <IconCheck />}</span>
               </button>
             ))}
           </div>
@@ -188,6 +195,7 @@ export function Game({ api, players, onExit, savedSession = null, designPreviewS
               {state.players.map((p, i) => (
                 <button key={p.id} type="button" data-design-id="option" className={`meen-pick ${cast === p.id ? 'selected' : ''}`} style={{ '--pick-color': p.color, '--i': i }} aria-pressed={cast === p.id} onClick={() => castVote(p.id)}>
                   <span className="clay-stage clay-static" aria-hidden="true"><span className="clay-lift"><Avatar player={p} /></span></span>{p.name}
+                  <span className="meen-pick-mark" aria-hidden="true">{cast === p.id && <IconCheck />}</span>
                 </button>
               ))}
             </div>
@@ -206,7 +214,7 @@ export function Game({ api, players, onExit, savedSession = null, designPreviewS
             {state.mode === 'secret' && (
               <div data-design-id="results" className="meen-bars">
                 {state.players.map((p, i) => (
-                  <div key={p.id} className="meen-bar">
+                  <div key={p.id} className={`meen-bar ${state.winners.includes(p.id) ? 'is-winner' : ''}`}>
                     <span className="who"><Avatar player={p} /> {p.name}</span>
                     <span className="track"><span className="fill" style={{ '--w-frac': max ? (counts[p.id] || 0) / max : 0, '--bar-color': p.color, '--delay': `${i * 70}ms` }} /></span>
                     <b>{counts[p.id] || 0}</b>
@@ -214,15 +222,9 @@ export function Game({ api, players, onExit, savedSession = null, designPreviewS
                 ))}
               </div>
             )}
-            <div data-design-id="results" className="meen-winner">
-              {winners.length > 0 ? (
-                <>
-                  <div className="faces" aria-hidden="true">{winners.map((w, i) => <span key={w.id} className="clay-stage" style={{ '--i': i }}><span className="clay-lift"><Avatar player={w} /></span></span>)}</div>
-                  <h2>{winners.map((w) => w.name).join(' و')}</h2>
-                  <p className="muted point">{winners.length > 1 ? 'تعادل! نقطة لكل واحد.' : 'نقطة واحدة'}</p>
-                </>
-              ) : <p className="muted">لم تنطبق على أحد هذه المرة.</p>}
-            </div>
+            <p data-design-id="results" className="meen-result-ribbon">{winners.length ? `${winners.map(w => w.name).join(' و')} · ${winners.length > 1 ? 'نقطة لكل واحد' : 'نقطة واحدة'}` : 'لم تنطبق على أحد هذه المرة.'}</p>
+            <h3 className="meen-result-title">إجمالي النقاط</h3>
+            <div className="meen-score-chips">{state.players.map(player => <span key={player.id} className={state.winners.includes(player.id) ? 'is-winner' : ''}><b>{player.name}</b>{state.scores[player.id]}</span>)}</div>
             <Button data-design-id="continue" data-design-required="true" variant="accent" size="lg" full onClick={() => { api.sound.play('whoosh'); dispatch({ type: 'NEXT' }); }}>{state.round >= state.rounds ? 'الألقاب والنتائج' : 'العبارة التالية'}</Button>
           </div>
         );

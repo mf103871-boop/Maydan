@@ -92,7 +92,7 @@ export function TutorialSession({ owner, progress, update, mark, isCurrentOwner=
     <div className="mafia-tutorial-stage" data-training-target={coach.target} key={`${owner}:${view.checkpointRevision}`}>
       {state.phase==='lobby'?<MafiaLobby state={state} me={me} isHost act={act} voice={voice} accountId={owner} tutorial={{onGuide:guide}}/>:<MafiaMatchView state={state} me={me} isHost act={act} disabled={view.status==='completed'} accountId={owner} voice={voice} sound={designPreview?undefined:platform?.sound} clock={view.clock} tutorial={{onGuide:guide}}/>}
     </div>
-    {exitTarget&&<Modal className="mafia-noir" data-design-screen="mafia.tutorial" title="تكمل التدريب لاحقًا؟" onClose={()=>setExitTarget(null)} footer={<><Button data-design-id="tutorial-save-exit" full onClick={()=>finishExit(exitTarget,true)}>احفظ واخرج</Button><Button data-design-id="tutorial-stay" full variant="ghost" onClick={()=>setExitTarget(null)}>أكمل التدريب</Button></>}><p>تبقى نقطة قرارك على هذا الجهاز، وتقدر تستكملها من دليل مافيا. لا تُحسب نتيجة هذا الدرس ضمن لعبك.</p></Modal>}
+    {exitTarget&&<Modal className="mafia-noir mafia-paper-dialog mafia-tutorial-exit" placement="bottom" data-design-screen="mafia.tutorial" title="تكمل التدريب لاحقًا؟" onClose={()=>setExitTarget(null)} footer={<><Button data-design-id="tutorial-save-exit" full onClick={()=>finishExit(exitTarget,true)}>احفظ واخرج</Button><Button data-design-id="tutorial-stay" full variant="ghost" onClick={()=>setExitTarget(null)}>أكمل التدريب</Button></>}><p>تبقى نقطة قرارك على هذا الجهاز، وتقدر تستكملها من دليل مافيا. لا تُحسب نتيجة هذا الدرس ضمن لعبك.</p></Modal>}
     </>}
   </section>;
 }

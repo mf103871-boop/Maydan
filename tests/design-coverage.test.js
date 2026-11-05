@@ -17,7 +17,7 @@ test('coverage inventory preserves every node and exact conditional explanation 
   // whitespace, constant names and sharing structure do not affect it.
   const semantics = JSON.stringify({ DESIGN_CONDITIONAL_NODE_REASONS, DESIGN_RENDERED_NODE_IDS });
   // Secret voting now exposes an explicit submit action before passing the phone.
-  assert.equal(createHash('sha256').update(semantics).digest('hex'), '6e6401a136acc17bdef9ae0d180067eb4da79a7523be527874dd6c502c60026e');
+  assert.equal(createHash('sha256').update(semantics).digest('hex'), '2b9dee072717631ef07260e878bf28fb98a55fe0b153d8fa0bc43d28313b4235');
 });
 
 test('semantic scene registry has stable unique identities and the eight actual games', () => {

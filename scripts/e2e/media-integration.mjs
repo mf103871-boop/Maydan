@@ -74,7 +74,7 @@ try {
   await page.evaluate(async () => { await navigator.serviceWorker.ready; });
   await page.waitForFunction(() => !!navigator.serviceWorker.controller);
   check('real service worker controls the local test app', true);
-  await page.evaluate(() => { location.hash = '#/settings'; });
+  await page.evaluate(() => { location.hash = '#/settings?section=audio'; });
   await page.locator('#sound-volume').fill('35');
   await page.evaluate(() => { location.hash = '#/play/badeeha'; });
   await page.locator('.m-hero-cta').click();

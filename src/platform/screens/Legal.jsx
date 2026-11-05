@@ -5,10 +5,11 @@ import { Screen, TopBar, IconButton, Card } from '../../shared/ui/components.jsx
 import { IconBack } from '../../shared/ui/icons.jsx';
 import { back, getDirection } from '../router.js';
 import { PLUS_NAME, SUPPORT_EMAIL, LEGAL_UPDATED, PUBLIC_SITE_ORIGIN } from '../../shared/account/config.js';
+import styles from './help-rebuild.css';
 
 const Section = ({ title, children }) => (
   <Card className="stack legal-section">
-    <span className="card-title">{title}</span>
+    <h2 className="card-title">{title}</h2>
     {children}
   </Card>
 );
@@ -22,6 +23,7 @@ function Contact() {
 export function Terms() {
   return (
     <Screen data-design-screen="legal" dir={getDirection()} className="stack legal" aria-label="شروط الاستخدام">
+      <style>{styles}</style>
       <TopBar data-design-id="topbar" title="شروط الاستخدام" eyebrow="ميدان" start={<IconButton data-design-id="back" label="رجوع" onClick={back}><IconBack /></IconButton>} />
       <p className="muted" style={{ fontSize: 13 }}>آخر تحديث: {LEGAL_UPDATED}</p>
       <Section title="الخدمة">
@@ -57,6 +59,7 @@ export function Terms() {
 export function Privacy() {
   return (
     <Screen data-design-screen="legal" dir={getDirection()} className="stack legal" aria-label="سياسة الخصوصية">
+      <style>{styles}</style>
       <TopBar data-design-id="topbar" title="سياسة الخصوصية" eyebrow="ميدان" start={<IconButton data-design-id="back" label="رجوع" onClick={back}><IconBack /></IconButton>} />
       <p className="muted" style={{ fontSize: 13 }}>آخر تحديث: {LEGAL_UPDATED}</p>
       <Section title="ما نجمعه">

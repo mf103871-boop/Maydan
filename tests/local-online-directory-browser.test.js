@@ -46,7 +46,17 @@ for(const[name,engine]of[['chromium',chromium],['webkit',webkit]])test(`real loc
   await page.evaluate(()=>window.goDirectory('fabraka'));await page.locator(`[data-room-code="${seeded.fabraka.code}"]`).waitFor();await page.getByRole('button',{name:`الانضمام إلى مجلس fabraka`}).click();await page.getByTestId('joined-code').waitFor();await page.locator('[data-design-id="ready"]').click();await until(()=>app.rooms.get(seeded.fabraka.code).instance.room.members.find(member=>member.accountUserId===actors[2].user.id)?.ready,'real ready command missing');
   class HostSocket extends WebSocket{constructor(url){super(url,{origin});}}const host=new RoomClient({server:app.url,code:seeded.fabraka.code,session:seeded.fabraka.owner,getAccountAuthorization:()=>`Bearer ${actors[0].token}`,WebSocketImpl:HostSocket});t.after(()=>host.stop());host.start();await until(()=>host.connectionStatus==='connected','host handshake');await host.command('start');await until(()=>app.rooms.get(seeded.fabraka.code).instance.room.phase!=='lobby','real start did not advance');assert.equal((await api('/api/online/rooms/public?game=fabraka')).body.rooms[0].status,'playing');
   await page.evaluate(()=>window.goDirectory('mafia'));await page.locator('[data-design-id="quick-join"]').waitFor();
-  for(const[width,height]of[[320,640],[360,640],[390,844],[844,390]]){await page.setViewportSize({width,height});await page.evaluate(()=>new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve))));const toolbar=await page.locator('.online-directory-toolbar').evaluate(element=>[...element.querySelectorAll('button')].map(button=>({top:button.getBoundingClientRect().top,width:button.getBoundingClientRect().width,height:button.getBoundingClientRect().height})));assert.equal(toolbar.length,5);assert.ok(toolbar.every(button=>Math.abs(button.top-toolbar[0].top)<1),'all five Mafia actions stay on one toolbar row');assert.ok(toolbar.every(button=>button.width>=43.9&&button.height>=43.9),'compact labels preserve44px hit targets');}
+  for(const[width,height]of[[320,640],[360,640],[390,844],[844,390]]){
+    await page.setViewportSize({width,height});
+    await page.evaluate(()=>new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve))));
+    const bounds=await page.locator('.mafia-directory-actions button,.mafia-directory-list-label button').evaluateAll(buttons=>buttons.map(button=>{
+      const {left,right,width,height}=button.getBoundingClientRect();
+      return {id:button.dataset.designId,left,right,width,height,layoutWidth:button.offsetWidth,layoutHeight:button.offsetHeight};
+    }));
+    assert.equal(bounds.length,5);
+    assert.ok(bounds.every(button=>button.left>=0&&button.right<=width+1),'actions stay inside the viewport');
+    assert.ok(bounds.every(button=>button.width>=43.9&&button.height>=43.9),`${name}:${width}×${height} compact labels preserve 44px hit targets: ${JSON.stringify(bounds)}`);
+  }
   await page.setViewportSize({width:390,height:844});await page.screenshot({path:path.join(output,name+'-mafia-toolbar.png'),fullPage:true});
   assert.deepEqual(errors,[]);assert.deepEqual(external,[]);
 });

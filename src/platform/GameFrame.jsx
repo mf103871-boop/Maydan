@@ -96,7 +96,7 @@ export function GameFrame({ game, inGame, exitMessage, beforeExit, children, onE
         </ErrorBoundary>
       </div>
       {confirming && (
-        <ConfirmModal title="الخروج من اللعبة؟" danger message={exitMessage || 'سيضيع تقدّم الجولة الحالية.'} confirmLabel="خروج" cancelLabel="متابعة اللعب"
+        <ConfirmModal title="الخروج من اللعبة؟" placement="bottom" danger message={exitMessage || 'سيضيع تقدّم الجولة الحالية.'} confirmLabel="خروج" cancelLabel="متابعة اللعب"
           onConfirm={() => { setConfirming(null); leave(confirming); }} onCancel={() => setConfirming(null)} />
       )}
     </div>

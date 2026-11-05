@@ -66,16 +66,17 @@ function AccountCardOwner() {
   const redeemButton = canRedeem ? <Button variant="ghost" onClick={() => setRedeem(true)}>{REDEEM_PROMPT}</Button> : null;
 
   return (
-    <Card data-design-screen="account.card" className="stack account-card" aria-label="الحساب">
+    <Card data-design-screen="account.card" className={`stack account-card${user ? '' : ' is-guest'}`} aria-label="الحساب">
       <div className="row"><IconUsers style={{ color: 'var(--accent)' }} /><span className="card-title">الحساب</span></div>
       {!user ? (
         <>
-          <p className="card-muted">الحساب: غير مسجّل</p>
+          <h3 className="account-guest-title">احفظ ملفك وأصدقاءك</h3>
           {account.promo && <p className="account-plan is-plus">{subscriptionLine(account.me, account.premium, account.promo)} · على هذا الجهاز</p>}
-          <p className="card-muted">سجّل الدخول ليعمل اشتراك {PLUS_NAME} على كل أجهزتك.</p>
+          <p className="card-muted">سجّل الدخول لتحفظ بروفايلك وأصدقاءك وإنجازاتك على أجهزتك.</p>
           {account.offline
             ? <p className="online-notice" role="status">{accountErrorText('OFFLINE')}</p>
             : <Button variant="primary" data-design-id="account-signin" data-design-required="true" onClick={() => setSignIn(true)}>تسجيل الدخول</Button>}
+          <Button data-design-id="continue" variant="ghost" onClick={() => navigate('/')}>متابعة كضيف</Button>
           {redeemButton}
         </>
       ) : (
@@ -84,7 +85,7 @@ function AccountCardOwner() {
             <b>{user.name || 'لاعب ميدان'}</b>
             {user.email && <small className="muted">{user.email}</small>}
           </div>
-          {suspension ? <div className="online-notice error" role="status"><b>حسابك معلّق</b><p>الملف والتواصل والغرف غير متاحة أثناء التعليق. يمكنك إدارة اشتراكك واستعادة المشتريات أو حذف الحساب.</p>{suspension.reason && <p dir="auto">السبب: {suspension.reason}</p>}<a href={`mailto:${SUPPORT_EMAIL}`}>التواصل مع الدعم بخصوص التعليق</a></div> : <Button variant="secondary" icon={<IconUsers />} data-design-id="profile" onClick={() => navigate('/profile')}>بروفايلي وإنجازاتي</Button>}
+          {suspension ? <div className="online-notice error account-suspension" role="status"><b>حسابك معلّق</b><p>الملف والتواصل والغرف غير متاحة أثناء التعليق. يمكنك إدارة اشتراكك واستعادة المشتريات أو حذف الحساب.</p>{suspension.reason && <p dir="auto">السبب: {suspension.reason}</p>}<a href={`mailto:${SUPPORT_EMAIL}`}>التواصل مع الدعم بخصوص التعليق</a></div> : <Button variant="secondary" icon={<IconUsers />} data-design-id="profile" onClick={() => navigate('/profile')}>بروفايلي وإنجازاتي</Button>}
           <p className={`account-plan ${account.premium ? 'is-plus' : ''}`}>{subscriptionLine(account.me, account.premium, account.promo)}</p>
           {!account.premium && !suspension && (
             <Button variant="primary" icon={<IconStar />} data-design-id="purchase" onClick={() => account.openPaywall({ reason: 'settings' })}>اشترك في {PLUS_NAME}</Button>

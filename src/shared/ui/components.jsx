@@ -132,7 +132,7 @@ export function ModalCloseButton({ onClick, ...props }) {
   return <Button {...props} onClick={(e) => { if (requestClose) requestClose(); else if (onClick) onClick(e); }} />;
 }
 
-export function Modal({ title, onClose, children, footer = null, closeLabel = 'إغلاق', className = '', ...designProps }) {
+export function Modal({ title, onClose, children, footer = null, closeLabel = 'إغلاق', className = '', placement = 'center', ...designProps }) {
   const ref = useRef(null);
   const [host, anchor, syncVars] = useDialogHost();
   // الإغلاق يمرّ بحالة is-closing (خروج قصير) ثم يستدعي onClose؛ صفر مهلة تحت تقليل الحركة.
@@ -140,8 +140,9 @@ export function Modal({ title, onClose, children, footer = null, closeLabel = '�
   // عند الفتح فقط: كل تصيير يمرّر onClose جديدة، فلو اعتمد التأثير عليها لسُحب
   // التركيز من الحقل بعد كل حرف يُكتب.
   useDialogInteraction(ref,host,syncVars,requestClose);
+  const docked = placement === 'bottom';
   const tree = (
-    <div className={`modal-layer ${closing ? 'is-closing' : ''}`} role="presentation" onClick={requestClose}>
+    <div className={`modal-layer ${closing ? 'is-closing' : ''} ${docked ? 'is-docked' : ''}`} role="presentation" onClick={requestClose}>
       <section ref={ref} data-design-screen="system.dialog" className={`modal ${className}`} role="dialog" aria-modal="true" aria-label={title} tabIndex={-1} onClick={(e) => e.stopPropagation()} {...designProps}>
         <div data-design-id="header" className="modal-head">
           <h2>{title}</h2>
@@ -156,12 +157,12 @@ export function Modal({ title, onClose, children, footer = null, closeLabel = '�
   return <><span ref={anchor} hidden aria-hidden="true" />{host ? createPortal(provided, host) : provided}</>;
 }
 
-export function ConfirmModal({ title, message, confirmLabel = 'نعم', cancelLabel = 'لا', danger = false, onConfirm, onCancel, confirmSound }) {
+export function ConfirmModal({ title, message, confirmLabel = 'نعم', cancelLabel = 'لا', danger = false, onConfirm, onCancel, confirmSound, placement = 'center', className = '' }) {
+  const docked = placement === 'bottom';
+  const confirm = <Button data-design-id="confirm" data-sound={confirmSound} data-design-required="true" variant={docked ? 'ghost' : danger ? 'danger' : 'primary'} size="lg" full onClick={onConfirm}>{confirmLabel}</Button>;
+  const cancel = <ModalCloseButton data-design-id="cancel" data-design-required="true" variant={docked ? 'primary' : 'ghost'} full onClick={onCancel}>{cancelLabel}</ModalCloseButton>;
   return (
-    <Modal title={title} onClose={onCancel} className={danger ? 'is-danger' : ''} footer={<>
-      <Button data-design-id="confirm" data-sound={confirmSound} data-design-required="true" variant={danger ? 'danger' : 'primary'} size="lg" full onClick={onConfirm}>{confirmLabel}</Button>
-      <ModalCloseButton data-design-id="cancel" data-design-required="true" variant="ghost" full onClick={onCancel}>{cancelLabel}</ModalCloseButton>
-    </>}>
+    <Modal title={title} onClose={onCancel} placement={placement} className={[className, danger && !docked ? 'is-danger' : ''].filter(Boolean).join(' ')} footer={docked ? <>{cancel}{confirm}</> : <>{confirm}{cancel}</>}>
       <p className="muted" style={{ lineHeight: 1.7 }}>{message}</p>
     </Modal>
   );

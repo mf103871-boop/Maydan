@@ -49,3 +49,44 @@
 .meen-intro > :nth-child(n + 5) { animation-delay: 360ms; }
 
 .meen-vote-hint { text-align: center; color: var(--muted); font-size: 14px; line-height: 1.7; margin: 0; }
+
+.game-frame:has(.meenfina,.meen-setup) > .game-bar { background: linear-gradient(105deg,#392446,#462b56); }
+.game-frame:has(.meenfina,.meen-setup) > .game-bar .title { color: #fff8ec; }
+.meen-setup .card:not(.resume-card) { border-color: #e4d6c4; background: transparent; box-shadow: none; }
+.meenfina .meen-statement { padding: 17px 12px; border-radius: 18px; border-color: #e5d2bb; background: #f8ebd9; color: #32194b; box-shadow: none; animation-duration: .18s; }
+.meen-phase-heading { font-size: clamp(26px, 8vw, 37px); font-weight: 900; color: #39194e; text-align: center; }
+.meen-round-pill { margin-inline: auto; width: fit-content; padding: 4px 15px; border-radius: 999px; background: #ebd6f4; color: #3d2051; font-weight: 800; }
+.meen-intro { padding: 8px 0; }
+.meen-intro-guide { display: grid; width: 100%; justify-items: center; gap: 8px; padding: 14px 11px; border-radius: 16px; background: #f8ebd9; color: #502f60; }
+.meen-intro-guide .clay-art { width: 70px; height: 70px; }
+.meen-intro-guide strong { font-size: 22px; color: #36194f; }
+.meen-intro-guide p { font-size: 14px; }
+.meen-intro .scoreboard { width: 100%; }
+.meen-count { grid-template-rows: none; align-content: center; background: #fbf3e7; }
+.meen-count-beads { display: flex; gap: 12px; align-items: center; justify-content: center; }
+.meen-count-beads span { display: grid; place-items: center; width: clamp(42px,13vw,64px); aspect-ratio: 1; border-radius: 50%; background: #e9d7f2; color: #56366b; font-size: clamp(21px,6vw,34px); font-weight: 900; }
+.meen-count-beads .current { background: #723897; color: #fff; }
+.meen-count .go { color: #381b4f; font-size: 39px; }
+.meen-info-note { display: flex; align-items: center; justify-content: center; gap: 6px; text-align: center; padding: 8px 9px; border-radius: 12px; color: #43285b; background: #e4efe6; font-size: 14px; }
+.meen-info-note svg { width: 17px; height: 17px; flex: none; }
+.meenfina .meen-grid { grid-template-columns: repeat(3,minmax(0,1fr)); }
+.meenfina .meen-pick { min-width: 0; gap: 4px; padding: 8px 4px; border-radius: 14px; background: #fff9ef; box-shadow: none; animation: none; overflow-wrap: anywhere; }
+.meenfina .meen-pick .clay-avatar { width: clamp(40px,13vw,68px); height: clamp(40px,13vw,68px); }
+.meenfina .meen-pick.selected { background: #ecd2f4; border-color: #8b47b4; box-shadow: inset 0 0 0 1px #8b47b4; }
+.meen-pick-mark { display: grid; place-items: center; width: 18px; height: 18px; border: 1.5px solid #5c4371; border-radius: 5px; color: #fff; }
+.meen-pick-mark svg { width: 13px; height: 13px; }
+.meen-pick.selected .meen-pick-mark { border-color: #723897; background: #723897; }
+.meenfina .meen-bars { gap: 0; overflow: hidden; border-radius: 13px; border: 1px solid #e4d4c1; }
+.meenfina .meen-bar { padding: 6px 9px; background: #fcf5e9; }
+.meenfina .meen-bar + .meen-bar { border-top: 1px solid #eadfcd; }
+.meenfina .meen-bar.is-winner { background: #fff0c6; }
+.meenfina .meen-bar .who { width: clamp(85px,31%,124px); }
+.meenfina .meen-bar .track { height: 12px; border: 0; background: #e6dfe0; box-shadow: none; }
+.meenfina .meen-bar .fill { background: #8d49b0; }
+.meen-result-ribbon { padding: 7px 11px; border-radius: 12px; background: #f5e5b9; color: #563b22; text-align: center; font-weight: 800; }
+.meen-result-title { color: #4a2a5e; font-size: 15px; font-weight: 850; }
+.meen-score-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.meen-score-chips span { display: inline-flex; align-items: center; gap: 8px; padding: 6px 10px; border-radius: 12px; background: #eee7ea; color: #493157; overflow-wrap: anywhere; }
+.meen-score-chips .is-winner { background: #f9e2a0; color: #503315; }
+.meenfina .meen-titles div { animation: none; box-shadow: none; }
+@media (max-width: 345px) { .meenfina .meen-grid { grid-template-columns: repeat(2,minmax(0,1fr)); } }

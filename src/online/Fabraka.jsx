@@ -130,7 +130,7 @@ function Draft({ state, me, disabled, expired, act, truth }) {
 function Vote({ state, disabled, expired, act }) {
   const [choice, setChoice] = useState(undefined), [funny, setFunny] = useState(null);
   const choices = (value, setValue, label) => <div className="stack" role="group" aria-label={label}>
-    {state.options.map((o) => <button key={o.id} type="button" data-design-id="option" className={`fab-opt ${value === o.id ? 'selected' : ''}`} aria-pressed={value === o.id} disabled={disabled || expired || o.mine} onClick={() => setValue(o.id)}><span className="grow">{o.text}</span>{o.mine && <small>إجابتك</small>}</button>)}
+    {state.options.map((o) => <button key={o.id} type="button" data-design-id="option" className={`fab-opt ${value === o.id ? 'selected' : ''}`} aria-pressed={value === o.id} disabled={disabled || expired || o.mine} onClick={() => setValue(o.id)}><span className="grow">{o.text}</span><span className="fab-choice-dot" aria-hidden="true"/>{o.mine && <small>إجابتك</small>}</button>)}
   </div>;
   if (state.myVote.submitted) return <div className="online-voted" role="status"><strong>وصل تصويتك ✓</strong><p>اختيارك: {state.options.find((o) => o.id === state.myVote.optionId)?.text || 'امتناع'}. بانتظار الباقي…</p></div>;
   return <div className="stack">
@@ -149,7 +149,7 @@ function AnswerCard({ option, members, multiplier, index = 0 }) {
   return <article style={{ '--i': index }} className={`fab-reveal-card ${revealed ? option.truth ? 'is-truth' : 'is-lie' : ''}`}>
     <h3>{option.text}</h3>
     {revealed && <div className="stack fab-reveal-detail">
-      <strong>{option.truth ? 'هذه هي الحقيقة!' : option.owners.length ? `كتبها: ${names(option.owners)}` : 'إجابة أضافتها اللعبة'}</strong>
+      <strong className="fab-reveal-label">{option.truth ? 'هذه هي الحقيقة!' : option.owners.length ? `كتبها: ${names(option.owners)}` : 'إجابة أضافتها اللعبة'}</strong>
       <p>{option.voters.length ? `اختارها: ${names(option.voters)}` : 'لم يصوّت لها أحد.'}</p>
       {!option.truth && option.earners.length > 0 && <p>خدعت {number(option.fooled)} · +{number(option.fooled * 500 * multiplier)} لكل كاتب مؤهل</p>}
       {!option.truth && option.owners.some((id) => !option.earners.includes(id)) && <p className="online-footnote">إجابات المساعدة لا تكسب نقاط خداع أو ضحك.</p>}
@@ -200,7 +200,7 @@ export function FabrakaMatch({ state, me, isHost, disabled, act, clockOffset, sp
   const roundKey = `${state.code}:${state.matchId}:${state.round}`;
   return <div data-design-screen={`online.fabraka.${state.phase}`} className="fabraka stack online-fabraka"><style>{css}</style>
     {state.phase === 'over' ? <Final state={state} sorted={sorted} isHost={isHost} disabled={disabled} act={act} /> : <>
-      <div className="row-between"><b>الجولة {number(state.round)} من {number(state.rounds)}</b>{seconds !== null && <span data-design-id="timer" className={`online-timer ${seconds <= 5 ? 'urgent' : ''}`} role="timer" aria-label={`متبقي ${seconds} ثانية`}><b key={seconds <= 5 ? seconds : 'n'}><bdi>{number(seconds)}</bdi></b> ث</span>}</div>
+      <header className="fab-bar"><div><b>الجولة {number(state.round)} من {number(state.rounds)}</b><small>{FABRAKA_MODES[state.settings.mode]} · أونلاين</small></div>{seconds !== null && <span data-design-id="timer" className={`online-timer ${seconds <= 5 ? 'urgent' : ''}`} role="timer" aria-label={`متبقي ${seconds} ثانية`}><b key={seconds <= 5 ? seconds : 'n'}><bdi>{number(seconds)}</bdi></b> ث</span>}</header>
       {multiplier === 2 && <p className="online-notice online-double"><span className="fire" aria-hidden="true">🔥</span>الجولة الأخيرة · نقاط الحقيقة والخداع مضاعفة!</p>}
       <Card><Question value={state.question} answer={state.phase === 'result' && !state.roundReason} /></Card>
       {state.phase === 'host' && <Card className="stack">

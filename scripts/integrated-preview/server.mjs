@@ -58,6 +58,7 @@ export async function startIntegratedPreview({port=4186,apiPort=8796,assetRoot=D
     const pathname=decodeURIComponent(url.pathname);
     if(pathname.includes('\\')||pathname.includes('\0')){json(res,{error:'INVALID_PATH'},400);return true;}
     if(pathname==='/audio-preview/manifest.json'){send(req,res,manifestBytes,'application/json');return true;}
+    if(pathname==='/manifest.webmanifest'){send(req,res,await readFile(path.join(publicRoot,'manifest.webmanifest')),'application/manifest+json');return true;}
     if(pathname==='/__integrated__/fixtures/'){send(req,res,Buffer.from(fixtureHtml.replace('<head>','<head><base href="/">')),'text/html;charset=utf-8');return true;}
     if(pathname==='/__integrated__/progress/'){send(req,res,await readFile(path.join(ROOT,'scripts/integrated-preview/progress.html')),'text/html;charset=utf-8');return true;}
     if(['/pricing/','/refunds/'].includes(pathname)){send(req,res,await readFile(path.join(publicRoot,pathname.slice(1),'index.html')),'text/html;charset=utf-8');return true;}
@@ -73,7 +74,7 @@ export async function startIntegratedPreview({port=4186,apiPort=8796,assetRoot=D
       send(req,res,Buffer.from(pathname==='/'?html:html.replace('<head>','<head><base href="/">')),'text/html;charset=utf-8');return true;
     }
     if(outputs.has(pathname)){send(req,res,outputs.get(pathname),TYPES[path.extname(pathname)]||'application/octet-stream');return true;}
-    if(/^\/(assets|media|audio|art)\/[a-zA-Z0-9/_.-]+$/.test(pathname)){
+    if(/^\/(assets|media|audio|art|icons)\/[a-zA-Z0-9/_.-]+$/.test(pathname)){
       for(const base of [publicRoot,...(pathname.startsWith('/media/')?[mediaRoot]:[])]){
         const relative=base===mediaRoot?pathname.slice('/media/'.length):'.'+pathname;
         try{const file=await realpath(path.join(base,relative));if(!confined(base,file))continue;const info=await stat(file);if(!info.isFile())continue;send(req,res,await readFile(file),TYPES[path.extname(file)]||'application/octet-stream');return true;}catch(error){if(error.code!=='ENOENT')throw error;}

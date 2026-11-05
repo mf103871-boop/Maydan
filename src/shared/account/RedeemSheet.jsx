@@ -51,7 +51,7 @@ function RedeemFormOwner({ onDone, onCancel }) {
 export function RedeemSheet({ open, onClose }) {
   if (!open) return null;
   return (
-    <Sheet open={open} onClose={onClose} title="رمز الهدية">
+    <Sheet data-design-screen="account.redeem" open={open} onClose={onClose} title="رمز الهدية">
       <RedeemForm onDone={onClose} />
     </Sheet>
   );

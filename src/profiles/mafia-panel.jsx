@@ -17,7 +17,7 @@ function Preferences({data,busy,onSave}) {
   const [visibility,setVisibility]=useState(data.preferences?.visibility||'private');
   const [role,setRole]=useState(data.preferences?.representativeRoleId||'');
   return <form className="mafia-profile-preferences" onSubmit={event=>{event.preventDefault();if(!busy)onSave({revision:data.revision,visibility,representativeRoleId:role||null});}}>
-    <h3>ظهور لوحة مافيا</h3><p>هذا الإعداد يخص لوحة تقدم مافيا. تبقى إحصاءات ميدان العامة ضمن ملفك العام.</p><p>الدور الممثل اختيار ثابت لبروفايلك. لا يكشف دورك أو فريقك في أي مباراة جارية.</p>
+    <h3>خصوصية التقدم</h3><p>هذا الإعداد يخص لوحة تقدم مافيا. تبقى إحصاءات ميدان العامة ضمن ملفك العام.</p><p>الدور الممثل اختيار ثابت لبروفايلك. لا يكشف دورك أو فريقك في أي مباراة جارية.</p>
     <div className="mafia-profile-fields"><label>ظهور لوحة مافيا<select aria-label="ظهور لوحة مافيا" value={visibility} disabled={busy||data.preferencesLocked} onChange={event=>setVisibility(event.target.value)}>
       <option value="private">أنا فقط</option><option value="friends">أصدقائي</option><option value="public">الجميع</option></select></label>
       <label>الدور الممثل<select aria-label="الدور الممثل" value={role} disabled={busy||data.preferencesLocked} onChange={event=>setRole(event.target.value)}><option value="">دون دور ممثل</option>
@@ -29,18 +29,18 @@ function Preferences({data,busy,onSave}) {
 export function MafiaProgressView({state,owner=false,onRetry=()=>{},onSave=()=>{}}) {
   const {data,loading,saving,error}=state;
   return <section className="mafia-profile" dir="rtl" aria-label="تقدم مافيا"><style>{css}</style>
-    <header><h2>{owner?'رحلتك في مافيا':'رحلة اللاعب في مافيا'}</h2><button data-design-id="mafia-progress-refresh" type="button" onClick={onRetry} disabled={loading||saving} aria-label="تحديث تقدم مافيا">تحديث</button></header>
+    <header><div><span className="mafia-profile-kicker">ملف المجلس</span><h2>{owner?'رحلتك في مافيا':'رحلة اللاعب في مافيا'}</h2></div><button data-design-id="mafia-progress-refresh" type="button" onClick={onRetry} disabled={loading||saving} aria-label="تحديث تقدم مافيا">تحديث</button></header>
     {loading?<p role="status">جارٍ تحميل تقدم مافيا…</p>:<>
       {error&&<p className="mafia-profile-error" role="alert">{messages[error]||'تعذّر تحميل تقدم مافيا. حاول مرة أخرى.'}</p>}
       {data?.available===false?<p>{data.preferencesLocked?messages.MAFIA_SOCIAL_LOCKED:'تقدم مافيا غير متاح للعرض حاليًا.'}</p>:data?.available===true?<>
-        <div className="mafia-profile-level"><strong>المستوى {number(data.progress.level)}</strong><span>{number(data.progress.totalXp)} XP</span></div>
+        <section className="mafia-profile-overview" aria-label="المستوى الحالي"><span className="mafia-profile-emblem" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none"><path d="M24 4 40 11v10c0 11-5 17-16 23C13 38 8 32 8 21V11L24 4Z" stroke="currentColor" strokeWidth="3"/><path d="m24 12 2.6 7.4H34l-6 4.6 2.3 7.3-6.3-4.6-6.3 4.6 2.3-7.3-6-4.6h7.4L24 12Z" fill="currentColor"/></svg></span><div className="mafia-profile-overview-copy"><div className="mafia-profile-level"><strong>المستوى {number(data.progress.level)}</strong><span>{number(data.progress.totalXp)} XP</span></div>
         <div className="mafia-profile-xp" role="progressbar" aria-label="خبرة المستوى في مافيا" aria-valuemin={0} aria-valuemax={data.progress.xpPerLevel} aria-valuenow={Math.min(data.progress.xpInLevel,data.progress.xpPerLevel)}><span style={{width:`${Math.max(0,Math.min(100,data.progress.xpInLevel/Math.max(1,data.progress.xpPerLevel)*100))}%`}}/></div>
-        <p>{number(data.progress.xpInLevel)} من {number(data.progress.xpPerLevel)} XP للمستوى التالي · {number(data.progress.rewardedMatches)} مشاركة منحت تقدمًا</p>
+        <p>{number(data.progress.xpInLevel)} من {number(data.progress.xpPerLevel)} XP للمستوى التالي · {number(data.progress.rewardedMatches)} مشاركة منحت تقدمًا</p></div></section>
         {!data.progress.rewardedMatches&&<p className="mafia-profile-note">تبدأ الرحلة من أول مباراة مؤهلة مكتملة. اللعب والتدريب متاحان دون شراء قوة.</p>}
         {data.preferences?.representativeRoleId&&<p>الدور الممثل: <strong>{roleName(data.preferences.representativeRoleId)}</strong> · اختيار بروفايل ثابت</p>}
         {!!data.progress.legacyMatches&&<p className="mafia-profile-legacy">سجل سابق: {number(data.progress.legacyMatches)} مشاركة مستوردة دون XP أو إتقان.</p>}
         <div className="mafia-profile-grid">{data.roles.map(item=><article key={item.roleId} className="mafia-profile-role"><h3>{roleName(item.roleId)}</h3><span className="mafia-profile-stage">{item.mastery?`مرحلة الإتقان ${number(item.mastery)} من ٥`:'لم يبدأ الإتقان'}</span>
-          <p>عينة مؤهلة: {number(item.qualifiedMatches)} مباراة</p><small>{number(item.wins)} فوز · {number(item.draws)} تعادل</small>
+          <span className="mafia-profile-stars" aria-hidden="true">{Array.from({length:5},(_,i)=><span key={i} className={item.mastery>i?'earned':undefined}>★</span>)}</span><p>عينة مؤهلة: {number(item.qualifiedMatches)} مباراة</p><small>{number(item.wins)} فوز · {number(item.draws)} تعادل</small>
           {item.qualifiedMatches>0&&item.qualifiedMatches<5&&<small>العينة صغيرة؛ الأرقام تصف مشاركتك الحالية.</small>}
           {!!item.legacyMatches&&<small className="mafia-profile-legacy">سجل سابق منفصل: {number(item.legacyMatches)}</small>}</article>)}</div>
         <p>الإتقان من المباريات التي منحت تقدمًا. الخاص يمنح ٥٠ XP لأول ثلاث منح معتمدة في يوم النهاية بتوقيت UTC؛ بعد ذلك لا XP ولا إتقان. المنسحب لا يحصل على تقدم.</p>
@@ -48,7 +48,7 @@ export function MafiaProgressView({state,owner=false,onRetry=()=>{},onSave=()=>{
           const earned=data.achievements?.some(item=>item.id===rule.id);
           return <span key={rule.id} title={rule.description} aria-label={rule.label+(earned?'، مكتمل':'، لم يُفتح بعد')}>{earned?'✓ ':''}{rule.label}{!earned&&' · لم يُفتح بعد'}</span>;
         })}</div>
-        {owner&&data.grants?.length>0&&<p>مكافآتك الدائمة: {data.grants.map(item=>getCosmetic(item.itemId)?.label).filter(Boolean).join('، ')} · المصدر: إنجاز مافيا. تجدها في «إطاراتي ومظهر بلس» دون اشتراط بلس.</p>}
+        {owner&&data.grants?.length>0&&<p className="mafia-profile-rewards"><strong>مكافآتك الدائمة</strong> ·  {data.grants.map(item=>getCosmetic(item.itemId)?.label).filter(Boolean).join('، ')} · المصدر: إنجاز مافيا. تجدها في «إطاراتي ومظهر بلس» دون اشتراط بلس.</p>}
         {owner&&<Preferences key={data.revision} data={data} busy={saving} onSave={onSave}/>}
       </>:!error&&<p>لا توجد بيانات تقدم معروضة.</p>}
     </>}

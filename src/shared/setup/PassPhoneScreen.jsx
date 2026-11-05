@@ -6,6 +6,16 @@ import { Button } from '../ui/components.jsx';
 import { useReaction } from '../ui/useReaction.js';
 import { wait } from '../fx/screen.js';
 
+export function PassPhoneLock() {
+  return <span className="pass-lock" aria-hidden="true">
+    <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M15 22v-7a9 9 0 0 1 18 0v7" />
+      <rect x="10" y="21" width="28" height="22" rx="5" />
+      <path d="M24 30v5" /><circle cx="24" cy="29.5" r="1.5" />
+    </svg>
+  </span>;
+}
+
 export function PassPhoneScreen({ player, hint = 'لا يرى الشاشة غيرك. عندما تكون جاهزًا اضغط الزر.', ready = 'أنا جاهز', children, api, designPreviewShown = false }) {
   const previewRevealed = !!api?.designPreview && designPreviewShown;
   const playerId = player?.id;
@@ -36,11 +46,13 @@ export function PassPhoneScreen({ player, hint = 'لا يرى الشاشة غي�
   };
   return (
     <div data-design-screen="setup.pass-phone" data-design-id="privacy" data-design-required="true" className="pass-screen" style={{ '--pass-color': player.color }}>
-      <div className={`pass-avatar clay-stage clay-idle ${reaction}`} aria-hidden="true"><span className="clay-lift"><Avatar player={player} /></span></div>
-      <div data-design-id="title" className="pass-title">سلّم الجوال إلى</div>
-      <div data-design-id="player-name" className="pass-name">{player.name}</div>
-      <p data-design-id="privacy-hint" data-design-required="true" className="pass-hint">{hint}</p>
-      <Button variant="accent" size="lg" data-design-id="continue" data-design-required="true" onClick={reveal}>{ready} — {player.name}</Button>
+      <div className="pass-panel">
+        <PassPhoneLock />
+        <h2 data-design-id="title" className="pass-title">سلّم الجوال إلى <span data-design-id="player-name" className="pass-name">{player.name}</span></h2>
+        <p data-design-id="privacy-hint" data-design-required="true" className="pass-hint">{hint}</p>
+        <div className={`pass-avatar clay-stage clay-static ${reaction}`} aria-hidden="true"><span className="clay-lift"><Avatar player={player} /></span></div>
+        <Button variant="accent" size="lg" full data-design-id="continue" data-design-required="true" onClick={reveal}>{ready} — {player.name}</Button>
+      </div>
     </div>
   );
 }

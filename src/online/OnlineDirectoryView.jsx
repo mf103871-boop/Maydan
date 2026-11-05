@@ -19,7 +19,7 @@ function footerReservation(root) {
 export function OnlineDirectoryProfile() {
   const account=useAccount(),profiles=useProfiles();
   const user=account.user&&(profiles?.mine?.id===account.user.id?profiles.mine:account.user);
-  return <footer data-design-id="profile-footer" className="online-directory-profile"><button data-design-id="profile" type="button" onClick={()=>navigate(user?'/profile':'/settings')} aria-label={user?'فتح بروفايلي':'تسجيل الدخول'}>
+  return <footer data-design-id="profile-footer" className="online-directory-profile"><button data-design-id="profile" type="button" onClick={()=>navigate(user?'/profile':'/settings?section=account')} aria-label={user?'فتح بروفايلي':'تسجيل الدخول'}>
     <ProfileAvatar user={user||{}} size={48}/><span><b>{user?.name||'ضيف ميدان'}</b><small>{user?'بروفايلي':'سجّل الدخول للغرف العامة'}</small></span><span className="online-directory-profile-arrow" aria-hidden="true">‹</span>
   </button></footer>;
 }
@@ -32,14 +32,14 @@ export function OnlineRoomRow({room,title,subtitle,statusLabel,voiceLabel,canJoi
   return <article data-design-id="room" className="online-directory-row" data-room-code={room.code} data-room-status={room.status||'waiting'}>
     <Content className="online-directory-row-content" type={action?'button':undefined} data-sound={action?'none':undefined} data-design-id={action?(canJoin?'room-join':'room-observe'):undefined} aria-label={action?`${canJoin?'الانضمام إلى':'مشاهدة'} ${title||room.roomName}`:undefined} disabled={action?disabled:undefined} onClick={action?()=>action(room.code):undefined}>
     <div className="online-directory-row-copy"><b>{title||room.roomName}</b><div className="online-directory-row-meta"><span>{statusLabel}</span>{voiceLabel&&<span>{voiceLabel}</span>}{subtitle&&<span>{subtitle}</span>}</div></div>
-    <div className="online-directory-row-side"><bdi className={room.full?'is-full':''}>{arabicNumber(room.players)} / {arabicNumber(room.capacity)}</bdi>
+    <div className="online-directory-row-side"><bdi className={room.full?'is-full':''}>{arabicNumber(room.players)} من {arabicNumber(room.capacity)}</bdi>
       {action?<span className="online-directory-row-label">{canJoin?'انضم':'شاهد'}</span>:<small>{room.full?'مكتملة':'غير متاحة'}</small>}
     </div>
     </Content>
   </article>;
 }
 
-export function OnlineDirectoryView({game,title='الغرف العامة',rooms=[],renderRoom,loading=false,error='',notice,emptyText='لا غرف متاحة الآن. أنشئ غرفتك أو ادخل برمز.',onCreate,onCode,onRefresh,onQuickJoin,disabled=false,createDisabled=false,enabled,filters,help,footer,hasPrevious=false,nextCursor,onPrevious,onNext,children}) {
+export function OnlineDirectoryView({game,title='الغرف العامة',heading,toolbar,rooms=[],renderRoom,loading=false,error='',notice,emptyText='لا غرف متاحة الآن. أنشئ غرفتك أو ادخل برمز.',onCreate,onCode,onRefresh,onQuickJoin,disabled=false,createDisabled=false,enabled,filters,help,footer,hasPrevious=false,nextCursor,onPrevious,onNext,children}) {
   const [panel,setPanel]=useState('');
   const viewRef=useRef(null),footerRef=useRef(null);
   useEffect(()=>panel?registerBackLayer(()=>setPanel('')):undefined,[panel]);
@@ -59,20 +59,21 @@ export function OnlineDirectoryView({game,title='الغرف العامة',rooms=
   },[]);
   return <section ref={viewRef} className={`online-directory-view online-directory-${game||'all'}`} data-design-screen={`online.${game||'all'}.directory`}>
     <style>{css}</style>
-    <div data-design-id="toolbar" className="online-directory-toolbar" aria-label={title}>
-      {onCreate&&<Button size="sm" aria-label="إنشاء غرفة جديدة" data-design-id="create-public-room" disabled={disabled||createDisabled} onClick={onCreate}>+ إنشاء</Button>}
+    {heading}
+    {toolbar??<div data-design-id="toolbar" className="online-directory-toolbar" aria-label={title}>
+      {onCreate&&<Button size="sm" aria-label="إنشاء غرفة جديدة" data-design-id="create-public-room" disabled={disabled||createDisabled} onClick={onCreate} variant={heading?'primary':undefined}>+ إنشاء غرفة</Button>}
       {onCode&&<Button size="sm" data-design-id="entry-join" disabled={disabled} onClick={onCode}>دخول برمز</Button>}
       {onQuickJoin&&<Button size="sm" aria-label="انضمام سريع إلى غرفة متاحة" data-design-id="quick-join" data-sound="none" variant="primary" disabled={disabled||enabled!==true||loading} onClick={onQuickJoin}>سريع</Button>}
       <Button size="sm" data-design-id="refresh" variant="ghost" aria-label="تحديث الغرف" disabled={disabled||loading} onClick={onRefresh}>↻</Button>
       {(filters||help)&&<Button data-design-id="directory-options" size="sm" variant="ghost" aria-label="خيارات الغرف والمساعدة" aria-expanded={Boolean(panel)} onClick={()=>setPanel(value=>value?'':'options')}>⋯</Button>}
-    </div>
+    </div>}
     {panel&&<div className="online-directory-options"><div className="online-directory-option-tabs">{filters&&<Button data-design-id="directory-filter" size="sm" onClick={()=>setPanel('filters')}>تصفية الغرف</Button>}{help&&<Button data-design-id="directory-help" size="sm" onClick={()=>setPanel('help')}>المساعدة والمزيد</Button>}<Button data-design-id="directory-options-close" size="sm" aria-label="إغلاق خيارات الغرف" variant="ghost" onClick={()=>setPanel('')}>×</Button></div>{panel==='help'?help:filters}</div>}
     {notice&&<div data-design-id="notice" className="online-directory-notice" role="status">{notice}</div>}
-    {error&&<p className="online-directory-notice error" role="alert">{errorText(error)}</p>}
+    {error&&<p className={`online-directory-notice error${heading?' online-directory-retry':''}`} role="alert">{errorText(error)}</p>}
     {enabled===false&&!error&&<p className="online-directory-notice" role="status">دليل الغرف غير متاح حاليًا. يمكنك استخدام الرمز للغرف القائمة.</p>}
     <div data-design-id="rooms" className="online-directory-list" aria-label={title} aria-busy={loading}>
-      {loading&&rooms.length===0&&<p data-design-id="loading" className="online-directory-empty" role="status">نحمّل الغرف المتاحة…</p>}
-      {!loading&&enabled===true&&!rooms.length&&!error&&<p data-design-id="empty" className="online-directory-empty">{emptyText}</p>}
+      {loading&&rooms.length===0&&<div data-design-id="loading" className="online-directory-empty" role="status">نحمّل الغرف المتاحة…{heading&&<div className="online-directory-placeholders" aria-hidden="true"><span/><span/><span/></div>}</div>}
+      {!loading&&enabled===true&&!rooms.length&&!error&&<div data-design-id="empty" className="online-directory-empty">{emptyText}</div>}
       {rooms.map(room=><React.Fragment key={room.code}>{renderRoom(room)}</React.Fragment>)}
     </div>
     {(hasPrevious||nextCursor)&&<nav className="online-directory-pages" aria-label="صفحات الغرف"><Button size="sm" data-design-id="directory-previous" disabled={disabled||loading||!hasPrevious} onClick={onPrevious}>السابق</Button><Button size="sm" data-design-id="directory-next" disabled={disabled||loading||!nextCursor} onClick={onNext}>التالي</Button></nav>}

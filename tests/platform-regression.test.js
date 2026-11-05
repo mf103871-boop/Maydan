@@ -416,10 +416,10 @@ test('حدود الخطأ موجودة حول الشاشات وحول اللعب
 });
 
 test('الافتتاحية تملأ الشاشة وتنتظر جاهزية الأصول قبل تركيب اللعبة', () => {
-  assert.match(read('src/platform/platform.css'), /\.splash \.splash-world \{[^}]*height: 100%/);
+  assert.match(read('src/platform/platform.css'), /\.splash \{[^}]*position: fixed;[^}]*inset: 0/);
   const splash = read('src/platform/screens/Splash.jsx');
   assert.match(splash, /reducedMotion = false/);
-  assert.match(splash, /useVisualReadiness\(\{ includeWorld: true \}\)/);
+  assert.match(splash, /prepareVisuals\(\{ images: \[gameIcons, avatars\]/);
   assert.doesNotMatch(splash, /role="button"|setTimeout\(finish|duration = 2200/);
   const app = read('src/platform/PlatformApp.jsx');
   assert.match(app, /reducedMotion=\{settings\.reducedMotion\}/);

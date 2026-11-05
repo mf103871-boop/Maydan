@@ -7,3 +7,31 @@
 .store-world-art{position:relative;display:flex;width:100%;height:140px;align-items:center;justify-content:center;isolation:isolate;overflow:hidden;border-radius:18px;background:#193b42}.store-world-art>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-1;opacity:.78}.store-world-art>span:not(.player-avatar){position:absolute;bottom:8px;padding:4px 10px;border-radius:8px;background:#18343ded;color:#fff0cc;font-size:11px;font-weight:800;z-index:1;border:1px solid #caa765}.store-world-art.kind-profileSkin>.plus-avatar-shell{margin-bottom:13px}
 
 .store-profile-only .store-nav{grid-template-columns:repeat(2,minmax(0,1fr))}.store-profile-only .store-product h2{font-size:14px;line-height:1.65}.store-profile-only summary{min-height:44px;cursor:pointer;font-weight:700}.store-profile-only .store-membership-options h2{font-size:17px}
+.store-v2.store-profile-only { gap:11px; }
+.store-profile-only .store-nav { padding:3px; border-radius:13px; background:#fff8ef; }
+.store-profile-only .store-nav button { border-radius:9px; }
+.store-profile-only .store-nav button[aria-selected=true] { background:#ebdaed; color:#4c2858; box-shadow:none; }
+.store-profile-only .store-membership { border-radius:13px; padding:9px 12px; }
+.store-current-look { display:flex; align-items:center; gap:10px; min-width:0; padding:9px 11px; border:1px solid #e6d7c8; border-radius:13px; background:#fff7ea; }
+.store-current-look > div { flex:1; min-width:0; }
+.store-current-look h2 { font-size:16px; }
+.store-current-look p { font-size:13px; color:#624d66; overflow-wrap:anywhere; }
+.store-profile-only .store-product-grid { grid-template-columns:minmax(0,1fr); gap:9px; }
+.store-profile-only .store-product { display:grid; grid-template-columns:minmax(84px,24%) minmax(0,1fr); box-shadow:none; border-radius:13px; }
+.store-profile-only .store-product-art { height:100%; min-height:112px; padding:7px; }
+.store-profile-only .store-product-art .store-world-art { height:104px; border-radius:10px; }
+.store-profile-only .store-product-info { padding:8px 10px; gap:4px; }
+.store-profile-only .store-product-buttons { grid-template-columns:repeat(2,minmax(0,1fr)); }
+.store-profile-only .store-product-buttons .btn { padding-inline:5px; min-height:44px; }
+.store-profile-only .store-product h2 { font-size:16px; }
+.store-profile-only .store-product-note { font-size:12px; }
+.store-profile-only .store-nav button[aria-selected=true] { background:#0c8186; color:#fff; }
+.store-membership-perks { margin:0; padding:0; list-style:none; display:grid; gap:7px; }
+.store-membership-perks li { border-radius:12px; background:#fff6e9; border:1px solid #e6d7c9; padding:10px 13px; }
+.store-membership-perks small { display:block; margin-top:2px; font-size:13px; color:#69536b; }
+.store-preview-comparison { display:grid; grid-template-columns:minmax(0,1fr) auto minmax(0,1fr); gap:10px; align-items:center; padding:10px; background:#f6ede4; border:1px solid #e9daca; border-radius:13px; }
+.store-preview-comparison > div { display:grid; gap:5px; justify-items:center; }
+.store-preview-comparison > span { font-size:24px; font-weight:800; color:#54345e; }
+.store-preview-palette { display:grid; gap:7px; }
+.store-preview-palette > div { display:flex; gap:9px; }
+.store-preview-palette span { display:block; width:34px; height:34px; border-radius:8px; border:1px solid #3d304236; }

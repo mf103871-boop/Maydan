@@ -64,7 +64,7 @@ test('Chromium and WebKit: real authenticated Store equips an earned item withou
           await route.continue();
         });
         await page.goto(origin);
-        await page.getByRole('tab', { name: 'مقتنياتي', exact: true }).click();
+        await page.getByRole('button', { name: 'مقتنياتي', exact: true }).click();
         const inventory = page.locator('[data-design-id="store-product"][data-item-id="noir.frame"]'); await inventory.waitFor();
         assert.match(await inventory.innerText(), /إطار ليلة مافيا/);
         assert.match(await inventory.innerText(), /ملك دائم/);

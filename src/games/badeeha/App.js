@@ -11,7 +11,8 @@ import { flashScreen, stampScreen, vignette, wait, burstConfetti, confetti as co
 import React from "../../design/react.js";
 import { socialInterruption } from '../../social/interruption.js';
 import { CATS } from "../../data/categories/index.js";
-import MAYDAN_BETA_CSS from "./styles.css";
+import MAYDAN_BETA_CSS from "./styles.css?sheet";
+import { PresentationStyles } from "../../shared/ui/PresentationStyles.jsx";
 import MaydanLogicBeta, {
   filterCategories,
   pointsAfterHints,
@@ -1156,7 +1157,7 @@ ${record.answered} من ${record.total} سؤالًا`,
     ];
     return hBeta(
       "section",
-      { className: "m-screen" },
+      { className: "m-screen m-setup-flow" },
       Header({ title: "جهّزوا الميدان", back: () => landingScreen === "setup" && api?.navigate
         ? api.navigate("/game/badeeha?mode=local") : setScreen("home", "back") }),
       landingScreen === "setup" && SavedMatchCard(),
@@ -1164,9 +1165,19 @@ ${record.answered} من ${record.total} سؤالًا`,
       landingScreen === "setup" && hBeta("div", { className: "m-two" },
         hBeta("button", { "data-design-id": "history", type: "button", className: "m-secondary m-small", onClick: () => setScreen("history") }, "النتائج السابقة"),
         hBeta("button", { "data-design-id": "rules", type: "button", className: "m-secondary m-small", onClick: () => setShowRules(!0) }, "طريقة اللعب")),
+      hBeta("nav", { className: "m-setup-guide", "aria-label": "أقسام تجهيز بديهة" },
+        [["teams", "١ · الفرق والإعدادات"], ["categories", `٢ · الحزم (${selectedCategories.length}/6)`]].map(([id, label]) =>
+          hBeta("button", { key: id, type: "button", className: "m-secondary", "data-design-id": "setup-jump",
+            onClick: event => {
+              const target = event.currentTarget.closest(".m-setup-flow")?.querySelector(`[data-setup-section="${id}"]`);
+              target?.focus({ preventScroll: true });
+              target?.scrollIntoView({ block: "start" });
+            },
+          }, label),
+        )),
       hBeta(
         "div",
-        { className: "m-panel m-setup-panel", "data-step": "١" },
+        { className: "m-panel m-setup-panel", "data-setup-section": "teams", tabIndex: -1 },
         hBeta("h2", { className: "m-section-title" }, "الفرق"),
         hBeta(
           "div",
@@ -1210,7 +1221,7 @@ ${record.answered} من ${record.total} سؤالًا`,
       ),
       hBeta(
         "div",
-        { className: "m-panel m-setup-panel", "data-step": "٢" },
+        { className: "m-panel m-setup-panel" },
         hBeta("h2", { className: "m-section-title" }, "نمط الصعوبة"),
         hBeta(
           "div",
@@ -1276,7 +1287,7 @@ ${record.answered} من ${record.total} سؤالًا`,
       ),
       hBeta(
         "div",
-        { className: "m-panel m-setup-panel", "data-step": "٣" },
+        { className: "m-panel m-setup-panel", "data-setup-section": "categories", tabIndex: -1 },
         hBeta(
           "div",
           { className: "m-row-between" },
@@ -1637,38 +1648,38 @@ ${record.answered} من ${record.total} سؤالًا`,
         SoundButton(),
       ),
       hBeta(
-        "div",
-        { "data-design-id": "turn", className: "m-turn-banner", style: { "--team-color": TEAM_STYLE[turn].solid } },
-        hBeta("span", { "aria-hidden": "true" }),
-        hBeta("strong", null, `السؤال لـ ${teams[turn].name}`),
-        effect.two && hBeta("b", null, "جوابان مفعّلان"),
-      ),
-      hBeta(
-        "div",
-        {
-          className: `m-timer ${danger ? "danger" : ""} ${paused ? "paused" : ""} ${timerFx} ${!revealed && timeLeft <= 0 ? "is-out" : ""}`,
-          style: { "--timer-fill": `${fraction * 360}deg` },
-        },
+        "div", { className: "m-question-status" },
+        hBeta("div",
+          { "data-design-id": "turn", className: "m-turn-banner", style: { "--team-color": TEAM_STYLE[turn].solid } },
+          hBeta("span", { "aria-hidden": "true" }),
+          hBeta("strong", null, `السؤال لـ ${teams[turn].name}`),
+          effect.two && hBeta("b", null, "جوابان مفعّلان"),
+        ),
         hBeta(
           "div",
           {
-            "data-design-id": "timer", className: "m-timer-inner",
-            role: "timer",
-            "aria-live": [10, 5, 0].includes(timeLeft) ? "assertive" : "off",
-            "aria-label": `${timeLeft} ثانية متبقية`,
+            className: `m-timer ${danger ? "danger" : ""} ${paused ? "paused" : ""} ${timerFx} ${!revealed && timeLeft <= 0 ? "is-out" : ""}`,
+            style: { "--timer-fill": `${fraction * 360}deg` },
           },
-          // الرقم يُعاد تركيبه كل ثانية في العشر الأخيرة فقط (نبضة)، والمفتاح ثابت قبلها
-          hBeta("b", { dir: "ltr" }, hBeta("span", { key: danger ? timeLeft : "n" }, timeLeft)),
-          paused && hBeta("small", null, "متوقف"),
+          hBeta(
+            "div",
+            {
+              "data-design-id": "timer", className: "m-timer-inner",
+              role: "timer",
+              "aria-live": [10, 5, 0].includes(timeLeft) ? "assertive" : "off",
+              "aria-label": `${timeLeft} ثانية متبقية`,
+            },
+            // الرقم يُعاد تركيبه كل ثانية في العشر الأخيرة فقط (نبضة)، والمفتاح ثابت قبلها
+            hBeta("b", { dir: "ltr" }, hBeta("span", { key: danger ? timeLeft : "n" }, timeLeft)),
+            paused && hBeta("small", null, "متوقف"),
+          ),
         ),
-      ),
-      !revealed &&
-        timeLeft > 0 &&
-        hBeta(
+        !revealed && timeLeft > 0 && hBeta(
           "button",
           { "data-design-id": "pause", type: "button", className: "m-secondary m-pause", onClick: togglePause },
           paused ? "▶ متابعة الوقت" : "⏸ إيقاف مؤقت",
         ),
+      ),
       !revealed &&
         timeLeft <= 0 &&
         hBeta("p", { className: "m-timeout", role: "alert" }, "انتهى الوقت ⏰"),
@@ -2117,7 +2128,7 @@ ${record.answered} من ${record.total} سؤالًا`,
     hBeta(
       "div",
       { dir: "rtl", className: `m-root m-screen-${screen}`, "data-dir": navDir, "data-design-screen": `badeeha.${screen}` },
-      hBeta("style", null, MAYDAN_BETA_CSS),
+      hBeta(PresentationStyles, { sheet: MAYDAN_BETA_CSS }),
       // مفتاح الشاشة يعيد تركيب القسم فتعمل حركة الدخول عند كل انتقال (كلها عناصر section)
       hBeta(React.Fragment, { key: screen }, roundLoading ? hBeta(
         "section", { className: "m-round-loading", "aria-busy": "true", "aria-label": "تجهيز الجولة" },

@@ -390,3 +390,59 @@ html[data-high-contrast="true"] .lamma-person-copy small,html[data-high-contrast
 .lamma-panel .social-chat-head.is-unified .social-chat-person p { margin-top:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
 .social-chat-header-actions { display:flex; align-items:center; gap:4px; flex:0 0 auto; }
 @media(max-width:359px) { .lamma-panel .social-chat-head.is-unified { flex-wrap:wrap; padding-block:6px; gap:4px; }.lamma-panel .social-chat-head.is-unified .social-chat-person { min-width:72px; }.lamma-panel .social-chat-head.is-unified .social-chat-header-actions { order:5; flex-basis:100%; justify-content:flex-end; border-top:1px solid #ebdfec; padding-top:3px; } }
+/* P03–P04 · cream lists, separate lilac tabs, and a compact recording control. */
+.lamma-panel { background:#fcf4e7; }
+.lamma-panel .lamma-panel-head { padding:6px 14px; border-color:#ebdecc; background:#fcf1e2; }
+.lamma-panel .lamma-panel-title h2 { margin:0; color:#351d40; font-size:24px; }
+.lamma-panel .lamma-header-actions .lamma-icon-button { border:0; box-shadow:none; background:#f6e8dc; color:#46304b; }
+.lamma-panel .lamma-tabs { gap:5px; margin:9px 13px 8px; padding:0; border:0; background:none; }
+.lamma-panel .lamma-tabs button { background:#f5eadf; color:#402c47; border-radius:13px; box-shadow:none; }
+.lamma-panel .lamma-tabs button.is-active { background:#ead7ec; color:#392144; }
+.lamma-panel .lamma-list-heading { padding-block:2px; }
+.lamma-panel .lamma-friend-row,.lamma-panel .lamma-request { min-height:56px; padding:5px 8px; border:1px solid #e9ddce; border-radius:13px; background:#fff8ee; box-shadow:none; }
+.lamma-panel .lamma-friend-row .lamma-icon-button { box-shadow:none; background:#f2e6e8; color:#4d2f58; }
+.lamma-panel .lamma-friend-row .lamma-favorite:not(.is-favorite) { background:transparent; }
+.lamma-list-actions { display:grid; grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr); gap:9px; margin:10px 13px 2px; }
+.lamma-list-actions .btn { min-height:45px; padding-inline:7px; border-radius:13px; box-shadow:none; font-size:16px; }
+.lamma-list-actions .btn-secondary { background:#ead8ed; }
+.lamma-panel .lamma-footer .lamma-me-profile { display:flex; gap:6px; text-decoration:none; align-items:center; padding-inline:4px; min-height:44px; }
+.lamma-group-editor .lamma-dialog-intro { background:#f5e4db; border-color:#e9d7ca; }
+.lamma-group-editor .lamma-pick-person { min-height:48px; padding:5px 8px; margin-bottom:3px; background:#fff8ef; border-color:#e8dacb; }
+.lamma-selected-members { display:grid; gap:6px; margin:8px 0; font-size:14px; }
+.lamma-selected-members > div { display:flex; flex-wrap:wrap; gap:7px; }
+.lamma-group-limit { display:flex; gap:9px; align-items:center; padding:8px 10px; border-radius:10px; background:#ede0ed; color:#4d3252; font-size:13px; }
+.lamma-dialog .modal-footer > .btn-primary { background:#087e86; }
+[data-design-screen="social.conversation-options"] .lamma-menu { gap:6px; }
+[data-design-screen="social.conversation-options"] .lamma-menu button { border:1px solid #e3d5c6; background:#fcf2e5; color:#402b47; border-radius:11px; box-shadow:none; }
+[data-design-screen="social.conversation-options"] .lamma-menu button.is-danger { border-color:#ebc1b9; background:#fce7e1; color:#9f323d; }
+.lamma-panel .social-composer:has(.lamma-recorder.is-compact) { display:grid; grid-template-columns:minmax(0,1fr) 44px; gap:7px; }
+.lamma-panel .social-composer:has(.lamma-recorder.is-compact) .social-composer-row { grid-row:1; grid-column:1; }
+.lamma-panel .social-composer:has(.lamma-recorder.is-compact) .social-composer-note,.lamma-panel .social-composer:has(.lamma-recorder.is-compact) .social-character-count { grid-column:1 / -1; }
+.lamma-panel .lamma-recorder.is-compact { grid-row:1; grid-column:2; align-self:end; padding:0; }
+.lamma-panel .lamma-recorder.is-compact .lamma-voice-start { width:44px; min-width:44px; min-height:44px; padding:0; justify-content:center; border-radius:50%; background:#ebdcee; color:#45264c; box-shadow:none; }
+.lamma-panel .lamma-recorder.is-compact .lamma-voice-start :is(span,small) { display:none; }
+.lamma-panel .social-composer-row .social-send { order:-1; width:44px; height:44px; flex-basis:44px; border-radius:13px; box-shadow:none; }
+.lamma-panel .social-composer-row textarea { min-height:44px; border-radius:24px; }
+.lamma-panel .social-chat-head.is-unified { background:#fcf3e6; }
+.lamma-panel .social-chat-head.is-unified .lamma-icon-button { background:#eddfef; box-shadow:none; }
+.lamma-panel .lamma-game-invite { background:#fcf1d5; border-color:#e7d7b5; box-shadow:0 2px 3px #76542813; }
+.lamma-panel .lamma-recorder.is-recording { display:grid; gap:8px; padding:10px; border-color:#e0d3c4; border-radius:16px; background:#fff8ef; }
+.lamma-recording-status { display:flex; align-items:center; gap:6px; color:#4b2a4d; }
+.lamma-recording-bars { min-width:25px; flex:1; height:26px; background:repeating-linear-gradient(90deg,#16878f 0 2px,transparent 2px 5px); clip-path:polygon(0 41%,8% 34%,14% 52%,22% 12%,30% 28%,40% 35%,46% 7%,51% 39%,60% 25%,70% 44%,78% 22%,86% 42%,95% 34%,100% 47%,100% 65%,94% 75%,86% 57%,78% 78%,70% 59%,60% 78%,51% 65%,46% 92%,40% 68%,30% 73%,22% 90%,14% 63%,8% 69%,0 60%); opacity:.76; }
+.lamma-recording-actions { display:grid; grid-template-columns:1fr 1fr; gap:8px; }
+.lamma-recording-actions button { display:flex; align-items:center; justify-content:center; gap:5px; min-height:44px; border:0; border-radius:11px; background:#ebdfed; color:#41254b; cursor:pointer; font:inherit; font-weight:750; }
+.lamma-recording-actions button:first-child { background:#087d83; color:white; }
+.lamma-preference-status { display:flex; align-items:center; gap:8px; padding:8px 11px; border:1px solid #ead9b2; border-radius:11px; background:#fff1d7; color:#624c35; font-size:13px; }
+.lamma-preferences .lamma-toggle { min-height:49px; padding:7px 0; margin:0; cursor:pointer; }
+.lamma-preferences .lamma-toggle small { color:#68556d; margin-top:1px; }
+.lamma-preferences .lamma-toggle input { appearance:none; width:42px; height:25px; border:1px solid #ad9bac; border-radius:999px; background:#e2d6e4; margin:0; position:relative; cursor:pointer; }
+.lamma-preferences .lamma-toggle input::after { content:''; position:absolute; inset-block-start:3px; inset-inline-end:3px; width:17px; height:17px; border-radius:50%; background:#fff; box-shadow:0 1px 3px #4a3d5350; }
+.lamma-preferences .lamma-toggle input:checked { background:#087d85; border-color:#087d85; }
+.lamma-preferences .lamma-toggle input:checked::after { inset-inline-end:20px; }
+.lamma-preferences .lamma-toggle input:focus-visible { outline:2px solid #087d85; outline-offset:3px; }
+.lamma-group-details .lamma-dialog-intro { padding:10px; border-radius:13px; background:linear-gradient(130deg,#f6d8d0,#fff1e8); }
+.lamma-group-members { padding:9px; border:1px solid #ecdfcf; border-radius:13px; }
+.lamma-group-members h3 { margin:0 0 6px; font-size:15px; }
+.lamma-group-members ul { display:grid; grid-template-columns:repeat(auto-fit,minmax(63px,1fr)); padding:0; margin:0; gap:7px; list-style:none; }
+.lamma-group-members li { min-width:0; display:grid; justify-items:center; text-align:center; gap:4px; font-size:13px; overflow-wrap:anywhere; }
+.lamma-group-actions { display:grid; grid-template-columns:1fr 1fr; gap:8px; }

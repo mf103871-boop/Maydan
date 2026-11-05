@@ -325,7 +325,7 @@ test('5+6 · the waiting room prints Arabic-Indic digits and no zero-second disc
   assert.match(talking, /\u0664\u0665 \u062b\u0627\u0646\u064a\u0629 \u0644\u0644\u0643\u062a\u0627\u0628\u0629/);
   assert.match(talking, /\u0662\u0660 \u062b\u0627\u0646\u064a\u0629 \u0644\u0644\u0646\u0642\u0627\u0634/);
   // Generated counts next to the hand-written Arabic ones, in the same digits.
-  assert.match(talking, /\u0660 \/ \u0668/); // ٠ / ٨ players
+  assert.match(talking, /\u0660 \u0645\u0646 \u0668/); // ٠ من ٨ لاعبين
   assert.match(talking, /\u0665 \u062c\u0648\u0644\u0627\u062a/);
   // The room code itself stays Latin (it is typed and read out); nothing else may be.
   assert.doesNotMatch(talking.replace(/<style[^>]*>[\s\S]*?<\/style>/g,'').replace(/<[^>]*>/g, ' ').replaceAll('123456', ''), /[0-9]/);

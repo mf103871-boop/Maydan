@@ -6,6 +6,8 @@ import { socialInterruption } from '../../social/interruption.js';
 import { Screen, Button, Podium, Segment, Card, Scoreboard, Modal, CountUp } from '../../shared/ui/components.jsx';
 import { flashScreen, stampScreen, vignette, burstConfetti, wait } from '../../shared/fx/index.js';
 import { useReaction } from '../../shared/ui/useReaction.js';
+import { PassPhoneLock } from '../../shared/setup/PassPhoneScreen.jsx';
+import { IconCheck, IconInfo } from '../../shared/ui/icons.jsx';
 import { mulberry32, randomSeed } from '../../shared/lib/rng.js';
 import { questions, pictures, personal, categories, categoryCount, normalizeContentOptions } from './content.js';
 import { Illustration } from './Illustration.jsx';
@@ -67,16 +69,18 @@ export function SetupOptions({ storage, api }) {
         <p className={valid ? 'fab-hint' : 'setup-error'} role={valid ? undefined : 'alert'}>{valid ? `${pool.length} سؤالًا متاحًا؛ الأولوية لما لم تلعبوه.` : `المتاح ${pool.length} أسئلة فقط. أضف موضوعًا أو اختر «كل الأسئلة» أو قلّل الجولات.`}</p>
       </>}
     </Card>
-    <Card className="stack">
-      <h2 className="card-title">إيقاع الجلسة</h2>
-      <span>وقت الكتابة لكل لاعب</span>
-      <Segment data-design-id="setting-write-time" label="وقت الكتابة" value={opts.writeSeconds} onChange={(writeSeconds) => update({ writeSeconds })} options={[{ value: 0, label: 'براحتنا' }, { value: 45, label: '45 ثانية' }, { value: 30, label: 'سريع · 30' }]} />
-      <span>النقاش قبل التصويت</span>
-      <Segment data-design-id="setting-discussion-time" label="وقت النقاش" value={opts.discussionSeconds} onChange={(discussionSeconds) => update({ discussionSeconds })} options={[{ value: 0, label: 'بدون' }, { value: 15, label: '15 ثانية' }, { value: 20, label: '20 ثانية' }]} />
-      <label className="fab-toggle"><input data-design-id="setting-funny" type="checkbox" checked={opts.funnyVote} onChange={(e) => update({ funnyVote: e.target.checked })} /><span>😂 جائزة أكثر كذبة مضحكة<small>تصويت إضافي اختياري، بدون تغيير النقاط.</small></span></label>
-      {opts.mode !== 'friends' && <label className="fab-toggle"><input data-design-id="setting-double" type="checkbox" checked={opts.finalDouble} onChange={(e) => update({ finalDouble: e.target.checked })} /><span>🔥 مضاعفة الجولة الأخيرة<small>نقاط الحقيقة والخداع ×2.</small></span></label>}
-      <p className="fab-hint">مساعدة واحدة لكل لاعب طوال اللعبة. يتوقف الوقت عند إخفاء الشاشة أو إيقاف اللعب.</p>
-    </Card>
+    <details className="fab-details fab-pacing">
+      <summary>الإيقاع والتخصيص</summary>
+      <Card className="stack">
+        <span>وقت الكتابة لكل لاعب</span>
+        <Segment data-design-id="setting-write-time" label="وقت الكتابة" value={opts.writeSeconds} onChange={(writeSeconds) => update({ writeSeconds })} options={[{ value: 0, label: 'براحتنا' }, { value: 45, label: '45 ثانية' }, { value: 30, label: 'سريع · 30' }]} />
+        <span>النقاش قبل التصويت</span>
+        <Segment data-design-id="setting-discussion-time" label="وقت النقاش" value={opts.discussionSeconds} onChange={(discussionSeconds) => update({ discussionSeconds })} options={[{ value: 0, label: 'بدون' }, { value: 15, label: '15 ثانية' }, { value: 20, label: '20 ثانية' }]} />
+        <label className="fab-toggle"><input data-design-id="setting-funny" type="checkbox" checked={opts.funnyVote} onChange={(e) => update({ funnyVote: e.target.checked })} /><span>😂 جائزة أكثر كذبة مضحكة<small>تصويت إضافي اختياري، بدون تغيير النقاط.</small></span></label>
+        {opts.mode !== 'friends' && <label className="fab-toggle"><input data-design-id="setting-double" type="checkbox" checked={opts.finalDouble} onChange={(e) => update({ finalDouble: e.target.checked })} /><span>🔥 مضاعفة الجولة الأخيرة<small>نقاط الحقيقة والخداع ×2.</small></span></label>}
+        <p className="fab-hint">مساعدة واحدة لكل لاعب طوال اللعبة. يتوقف الوقت عند إخفاء الشاشة أو إيقاف اللعب.</p>
+      </Card>
+    </details>
     <Button data-design-id="rules" variant="secondary" full onClick={() => setTutorial(true)}>جرّبوا جولة تعليمية قصيرة</Button>
     {lastResult && <Button data-design-id="history" variant="ghost" full onClick={() => setShowResult(true)}>نتائج آخر جلسة</Button>}
     {tutorial && <Tutorial onClose={() => setTutorial(false)} />}
@@ -114,8 +118,8 @@ function Rules() {
 function QuestionText({ question, filled }) {
   const [before, after] = question.text.split('___');
   return <div data-design-id="question" className="fab-question">
-    {question.kind === 'picture' && <Illustration question={question} />}
     <p className={filled ? 'fab-q is-filled' : 'fab-q'}>{before}<span className="blank">{filled || '؟؟؟'}</span>{after}</p>
+    {question.kind === 'picture' && <Illustration question={question} />}
   </div>;
 }
 
@@ -129,10 +133,11 @@ function PrivacyGate({ state, act, children }) {
   const [reaction, react] = useReaction();
   if (state.ready) return children;
   return <div data-design-id="privacy" data-design-required="true" className="fab-gate stack center" data-testid="privacy-gate">
+    <PassPhoneLock />
+    <h2>سلّم الجوال إلى {actor.name}</h2>
+    <p className="fab-gate-hint"><IconInfo /> {state.phase === 'host' ? 'اكتب الحقيقة عن نفسك بعيدًا عن العيون.' : state.phase === 'write' ? 'إجابتك سرية. تأكد أن الشاشة لك وحدك.' : 'اختر الحقيقة ثم سلّم الجوال دون كشف اختيارك.'}</p>
     <span className={`fab-avatar clay-stage clay-idle ${reaction}`} style={{ '--player-color': actor.color }} aria-hidden="true"><span className="clay-lift"><Avatar player={actor} /></span></span>
-    <p className="muted">مرّر الجوال إلى</p><h2>{actor.name}</h2>
-    <p className="muted">{state.phase === 'host' ? 'اكتب الحقيقة عن نفسك بعيدًا عن العيون.' : state.phase === 'write' ? 'إجابتك سرية. تأكد أن الشاشة لك وحدك.' : 'اختر الحقيقة ثم سلّم الجوال دون كشف اختيارك.'}</p>
-    <Button data-design-id="continue" data-design-required="true" variant="accent" size="lg" full onClick={() => { react('clay-squash'); act('READY'); }}>أنا {actor.name}، جاهز</Button>
+    <Button data-design-id="continue" data-design-required="true" variant="accent" size="lg" full onClick={() => { react('clay-squash'); act('READY'); }}><IconCheck /> أنا {actor.name}، جاهز</Button>
     <p className="fab-hint">{state.phase === 'write' ? `الكاتب ${state.writer + 1} من ${state.order.length}` : state.phase === 'vote' ? `المصوّت ${state.voter + 1} من ${state.order.length}` : 'صاحب الجولة لا يشارك في التصويت'}</p>
   </div>;
 }
@@ -150,6 +155,7 @@ function DraftPanel({ state, act }) {
   };
   const skip = (type) => { setError(''); react('is-skipping', 300); act(type); };
   return <form data-design-id="draft" className={`stack fab-panel ${nudge}`} onSubmit={submit}>
+    <p className={`fab-mode-pill ${host ? 'is-private' : ''}`}>{host ? 'وضع أصحابنا · خاص' : MODE_LABELS[state.settings.mode]}</p>
     <QuestionText question={state.question} />
     {!host && Boolean(state.settings.writeSeconds) && <ClockPill remaining={state.remaining} urgent={state.remaining <= 10} label="وقت الكتابة المتبقي" />}
     <label className="field"><span>{host ? `إجابتك الحقيقية يا ${actor.name}` : `فبركتك يا ${actor.name}`}</span>
@@ -172,12 +178,12 @@ function VotePanel({ state, act }) {
   const actor = currentActor(state);
   const list = (value, onChange, label) => <div className="stack" role="group" aria-label={label}>
     {state.options.map((option) => <button data-design-id="option" key={option.id} type="button" className={`fab-opt ${value === option.id ? 'selected' : ''}`} disabled={!canVoteFor(state, actor.id, option.id)} aria-pressed={value === option.id} onClick={() => onChange(option.id)}>
-      <span className="grow">{option.text}</span>{option.owners.includes(actor.id) && <span className="tag">إجابتك</span>}
+      <span className="fab-choice-dot" aria-hidden="true" /><span className="grow">{option.text}</span>{option.owners.includes(actor.id) && <span className="tag">إجابتك</span>}
     </button>)}
   </div>;
   return <div className="stack">
     <QuestionText question={state.question} />
-    <h2 className="fab-heading">أين الحقيقة يا {actor.name}؟</h2>
+    <h2 className="fab-question-label">أين الحقيقة يا {actor.name}؟</h2>
     {list(choice, setChoice, 'اختيار الحقيقة')}
     <button data-design-id="skip" type="button" className={`fab-abstain ${choice === null ? 'selected' : ''}`} aria-pressed={choice === null} onClick={() => setChoice(null)}>أمتنع عن تصويت الحقيقة</button>
     {state.settings.funnyVote && <details className="fab-details"><summary>😂 أي إجابة أضحكتك؟ (اختياري)</summary><p className="fab-hint">ترشيح مستقل بلا نقاط. لا يحتسب إن كانت الإجابة هي الحقيقة أو من المساعدة.</p><label className="field fab-funny-choice"><span>ترشيح الضحكة</span><select data-design-id="option" className="input" aria-label="اختيار الإجابة المضحكة" value={funny ?? ''} onChange={(e) => setFunny(e.target.value || null)}><option value="">بدون ترشيح مضحك</option>{state.options.map((option) => <option key={option.id} value={option.id} disabled={!canVoteFor(state, actor.id, option.id)}>{option.text}{option.owners.includes(actor.id) ? ' · إجابتك' : ''}</option>)}</select></label><Button data-design-id="skip" variant="ghost" full onClick={() => setFunny(null)}>بدون ترشيح مضحك</Button></details>}
@@ -204,9 +210,9 @@ function Reveal({ state, act, frozen = false }) {
       const voters = votersFor(state, id), fooled = votersFor(state, id, { scoringOnly: true });
       const laughers = state.players.filter((p) => state.funnyVotes[p.id] === id);
       return <article key={id} ref={truth ? truthRef : null} style={{ '--i': i }} data-design-id="reveal-card" className={`fab-reveal-card ${state.revealed ? truth ? 'is-truth' : 'is-lie' : ''}`}>
+        {state.revealed && <strong className="fab-reveal-label">{truth ? 'هذه هي الحقيقة' : option.owners.length ? `كذبة ${names(state, option.owners)}` : 'إجابة أضافتها اللعبة'}</strong>}
         <h3>{option.text}</h3>
         {state.revealed && <div className="stack fab-reveal-detail">
-          <strong>{truth ? '✅ هذه هي الحقيقة!' : option.owners.length ? `🎭 كتبها: ${names(state, option.owners)}` : '🎲 إجابة أضافتها اللعبة'}</strong>
           <p>{voters.length ? `اختارها: ${voters.map((p) => p.name).join('، ')}` : 'لم يصوّت لها أحد.'}</p>
           {!truth && option.earners.length > 0 && <p>خدعت {fooled.length} · +{fooled.length * 500 * multiplier(state)} لكل كاتب مؤهل</p>}
           {!truth && option.owners.some((owner) => !option.earners.includes(owner)) && <p className="fab-hint">بعض الكاتبين استخدموا المساعدة؛ لا تُحسب لهم نقاط خداع أو ضحكات.</p>}
@@ -225,7 +231,7 @@ export function Results({ state }) {
   return <div className="fabraka stack">
     <Podium data-design-id="podium" entries={standings(state)} />
     {honors.length > 0 && <div className="fab-awards">{honors.map((award) => <Card key={award.stat}><span className="fab-award-icon" aria-hidden="true">{award.emoji}</span><h3>{award.title}</h3><p>{award.players.map((p) => p.name).join('، ')}</p><small>{award.value} {award.stat === 'fooled' ? 'خدعات ناجحة' : award.stat === 'truths' ? 'حقائق مكتشفة' : 'أصوات ضحك'}</small></Card>)}</div>}
-    <div className="fab-table-wrap"><table className="fab-stats"><caption>حصيلة الجلسة</caption><thead><tr><th scope="col">اللاعب</th><th scope="col">حقيقة</th><th scope="col">خداع</th>{state.settings.funnyVote && <th scope="col">ضحك</th>}<th scope="col">النقاط</th></tr></thead><tbody>{standings(state).map((p) => <tr key={p.id}><th scope="row"><Avatar player={p} /> {p.name}</th><td>{p.truths}</td><td>{p.fooled}</td>{state.settings.funnyVote && <td>{p.laughs}</td>}<td><b>{p.score}</b></td></tr>)}</tbody></table></div>
+    <div className="fab-table-wrap"><table className="fab-stats"><caption>حصيلة الحقيقة والخداع</caption><thead><tr><th scope="col">اللاعب</th><th scope="col">حقيقة</th><th scope="col">خداع</th>{state.settings.funnyVote && <th scope="col">ضحك</th>}<th scope="col">النقاط</th></tr></thead><tbody>{standings(state).map((p) => <tr key={p.id}><th scope="row"><Avatar player={p} /> {p.name}</th><td>{p.truths}</td><td>{p.fooled}</td>{state.settings.funnyVote && <td>{p.laughs}</td>}<td><b>{p.score}</b></td></tr>)}</tbody></table></div>
     {highlights.length > 0 && <div className="stack fab-highlights"><h2 className="fab-heading">فبركات تستحق التذكّر</h2>{highlights.map((h, i) => <Card key={`${h.round}-${i}`} className="stack"><small className="muted">الجولة {h.round} · {names(state, h.owners)}</small><QuestionText question={{ text: h.question }} filled={h.answer} /><blockquote>«{h.text}»</blockquote><p className="fab-hint">🎭 خدعت {h.fooled}{state.settings.funnyVote && ` · 😂 أضحكت ${h.laughs}`}</p></Card>)}</div>}
   </div>;
 }
@@ -351,7 +357,7 @@ export function Game({ api, players, onExit, savedSession = null, gameOptions = 
 
   return <Screen data-design-screen={`fabraka.local.${state.phase}`} className="fabraka stack" aria-label="فبركة">
     <style>{css}</style><Clock state={state} act={act} frozen={!!api.designPreview} />
-    {state.phase !== 'over' && <header data-design-id="header" className="fab-bar"><div><b>الجولة {state.round} / {state.rounds}</b><small key={multiplier(state)} className={multiplier(state) === 2 ? 'fab-fire' : ''}>{PHASE_LABELS[state.phase]}{multiplier(state) === 2 && ' · 🔥 نقاط مضاعفة'}</small></div><Button data-design-id="pause" variant="ghost" size="sm" onClick={() => act('PAUSE')}>إيقاف مؤقت</Button></header>}
+    {state.phase !== 'over' && <header data-design-id="header" className="fab-bar"><div><b>الجولة {state.round} من {state.rounds}</b><small key={multiplier(state)} className={multiplier(state) === 2 ? 'fab-fire' : ''}>{PHASE_LABELS[state.phase]}{multiplier(state) === 2 && ' · نقاط مضاعفة'}</small></div><Button data-design-id="pause" variant="ghost" size="sm" onClick={() => act('PAUSE')}>إيقاف مؤقت</Button></header>}
     {!saveOk && <p className="fab-save-error" role="alert">تعذر حفظ التقدم على الجهاز. أبقِ الصفحة مفتوحة لإكمال الجلسة.</p>}
     {state.paused ? <div data-design-id="privacy" data-design-required="true" className="stack center fab-pause"><span className="fab-big clay-stage clay-idle" aria-hidden="true"><span className="clay-lift">⏸️</span></span><h2>خذوا راحتكم</h2><p className="muted">الوقت متوقف والإجابات مخفية.</p><p className="fab-hint">{saveOk ? 'تقدمكم محفوظ على هذا الجهاز.' : 'الحفظ غير متاح حاليًا؛ تابعوا من هذه الصفحة.'}</p><Button data-design-id="resume" data-design-required="true" variant="accent" size="lg" full onClick={() => act('RESUME')}>متابعة اللعب</Button><details className="fab-details"><summary>تذكير بالقواعد</summary><Rules /></details></div> : <>
       {state.phase === 'intro' && <div data-design-id="intro" className="fab-intro stack center"><span className="fab-big clay-stage clay-idle" aria-hidden="true"><span className="clay-lift"><GameArtwork game={state.settings.mode === 'friends' ? 'meenfina' : 'fabraka'} /></span></span><h2>{state.settings.mode === 'friends' ? `دور ${state.players[(state.round - 1) % state.players.length].name}` : multiplier(state) === 2 ? 'الجولة الأخيرة… كل نقطة باثنتين!' : 'جهّزوا كذبة مقنعة'}</h2><p className="muted">{state.settings.mode === 'friends' ? 'يكتب صاحب الجولة الحقيقة عن نفسه أولًا؛ البقية يحاولون تقليده وخداع بعضهم.' : 'شاهدوا السؤال معًا، ثم اكتبوا سرًا، ناقشوا، وصوّتوا.'}</p><Button data-design-id="start" data-design-required="true" variant="accent" size="lg" full onClick={() => act('BEGIN')}>ابدأ الجولة</Button><Scoreboard data-design-id="scoreboard" entries={standings(state)} />{state.round === 1 && <details className="fab-details"><summary>كيف نحسب النقاط؟</summary><Rules /></details>}</div>}

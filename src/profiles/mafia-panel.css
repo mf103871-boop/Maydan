@@ -17,3 +17,34 @@
   background-size:5px 5px;
   background-repeat:no-repeat;
 }
+
+/* Keep the Mafia panel scoped when a profile skin is active. */
+.mafia-profile { background: #2d1738; border-color: #a976a8; color: #fff5ff; }
+.mafia-profile > :is(header,p) { color: #f4daee; }
+.mafia-profile-kicker { display: block; margin-bottom: 3px; font-size: 12px; color: #e3b7e2; }
+.mafia-profile header button { background: #58385b; border-color: #9e72a0; color: #fff6ff; }
+.mafia-profile .mafia-profile-error { color: #ffd5d1!important; }
+.mafia-profile-overview,.mafia-profile-role,.mafia-profile-preferences,.mafia-profile-rewards {
+  background: #fff3e3;
+  border: 1px solid #d6adc9;
+  border-radius: 15px;
+  color: #3f2844;
+}
+.mafia-profile-overview { display: flex; align-items: center; gap: 12px; margin-top: 14px; padding: 12px; }
+.mafia-profile-overview-copy { flex: 1; min-width: 0; }
+.mafia-profile-emblem { display: grid; place-items: center; flex: 0 0 48px; height: 58px; border-radius: 8px; color: #f1cea1; background: #5a305e; border: 1px solid #a775a0; }
+.mafia-profile-emblem svg { width: 33px; height: 33px; }
+.mafia-profile-level { margin-top: 0; flex-wrap: wrap; gap: 3px 9px; }
+.mafia-profile-level strong { color: #552757; }
+.mafia-profile-xp { background: #e2d3e1; }
+.mafia-profile-xp span { background: linear-gradient(90deg,#146c74,#37aaa4); }
+.mafia-profile :is(.mafia-profile-overview,.mafia-profile-role,.mafia-profile-preferences) :is(p,small) { color: #5e4661; }
+.mafia-profile-stage { color: #6e3377; }
+.mafia-profile-stars { display: flex; gap: 3px; color: #9c809e; font-size: 14px; }
+.mafia-profile-stars .earned { color: #9c5d24; }
+.mafia-profile .mafia-profile-note { background: #4b3054; color: #f7e6f6; }
+.mafia-profile .mafia-profile-rewards { color: #432749; padding: 11px; }
+.mafia-profile-preferences { padding: 13px; }
+.mafia-profile-preferences :is(select,button) { color: #382139; border-color: #bb96b7; background-color: #fffaf2; }
+.mafia-profile-preferences button { background: #713879; color: #fff8ff; }
+.mafia-profile-achievements span { border-color: #896387; background: #45284d; }

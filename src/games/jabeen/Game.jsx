@@ -12,6 +12,7 @@ import { loadSession } from '../../shared/lib/session.js';
 import { useSessionSave } from '../../shared/ui/useSessionSave.js';
 import { useGameMusicScene } from '../../shared/fx/useGameMusicScene.js';
 import { useTilt } from './useTilt.js';
+import { IconCheck, IconClock, IconPlay, IconRotate, IconSkip } from '../../shared/ui/icons.jsx';
 
 const OPTIONS_KEY = 'options';
 const SEEN_KEY = 'seen';
@@ -21,7 +22,7 @@ export function SetupOptions({ storage, api }) {
   const [resume] = useState(() => loadSession(storage, (raw) => restoreSession(raw, categories)));
   const update = (patch) => { const next = normalizeOptions({ ...opts, ...patch }, categories); setOpts(next); storage.set(OPTIONS_KEY, next); };
   return (
-    <div data-design-screen="setup.jabeen" data-design-id="options" className="stack">
+    <div data-design-screen="setup.jabeen" data-design-id="options" className="stack jabeen-setup">
     {resume && <Card className="stack resume-card">
       <style>{css}</style>
       <span className="card-title">لعبتكم بانتظاركم</span>
@@ -31,20 +32,33 @@ export function SetupOptions({ storage, api }) {
     </Card>}
     <Card className="stack">
       <style>{css}</style>
-      <span className="card-title">الفئة والمدة</span>
+      <div className="field"><span>طريقة التحكم</span>
+        <Segment accent label="طريقة التحكم" value={opts.control} onChange={control => update({ control })} options={[{ value: 'auto', label: 'الإمالة واللمس' }, { value: 'touch', label: 'اللمس' }]} />
+      </div>
+      <span className="card-title">الفئة</span>
       <div className="jabeen-cats">
         {categories.map((c) => (
           <button data-design-id="category-card" key={c.id} type="button" className={`jabeen-cat ${opts.categoryId === c.id ? 'selected' : ''}`} aria-pressed={opts.categoryId === c.id} onClick={() => update({ categoryId: c.id })}>
-            <span aria-hidden="true">{c.icon}</span>{c.name}<small>{c.items.length} كلمة</small>
+            <span aria-hidden="true">{c.icon}</span>{c.name}{opts.categoryId === c.id && <IconCheck />}
           </button>
         ))}
       </div>
       <div className="field"><span>مدة الجولة</span>
-        <Segment data-design-id="setting-duration" accent label="المدة" value={opts.seconds} onChange={(v) => update({ seconds: v })} options={SECONDS.map((s) => ({ value: s, label: `${s} ث` }))} />
+        <Segment data-design-id="setting-duration" accent label="المدة" value={opts.seconds} onChange={(v) => update({ seconds: v })} options={SECONDS.map((s) => ({ value: s, label: `${s} ثانية` }))} />
       </div>
     </Card>
     </div>
   );
+}
+
+function PhoneGuide({ rotation = false }) {
+  return <svg className="jabeen-phone-guide" viewBox="0 0 180 112" aria-hidden="true" fill="none" strokeLinecap="round" strokeLinejoin="round">
+    {rotation ? <g stroke="#087f87" strokeWidth="4"><path d="M30 57c3-16 12-29 27-35m-13-4 14 4-6 13M150 58c-3 16-12 29-27 35m13 4-14-4 6-13" /></g>
+      : <g stroke="#8d6b9a" strokeWidth="4" fill="#d9bfdc"><circle cx="33" cy="61" r="12" /><circle cx="147" cy="61" r="12" /><path d="M15 97c0-11 7-18 18-18s18 7 18 18m78 0c0-11 7-18 18-18s18 7 18 18M67 99c1-12 8-20 23-20s22 8 23 20m-40-28L59 56l7-19m41 34 14-15-7-19" /><circle cx="90" cy="62" r="14" /></g>}
+    <rect x={rotation ? 56 : 68} y={rotation ? 35 : 22} width={rotation ? 68 : 44} height={rotation ? 42 : 21} rx="6" fill="#e9d5ec" stroke="#4f2c63" strokeWidth="4" />
+    <path d={rotation ? 'M66 51v10m48-10v10' : 'M77 32h26'} stroke="#94709f" strokeWidth="3" />
+    <path d={rotation ? 'm29 72 8 2m-6 8 8-4m105-51 8-3m-8 10 9 1' : 'M90 5v7m-20-1 5 6m35-6-5 6'} stroke="#d9912d" strokeWidth="4" />
+  </svg>;
 }
 
 function Stage({ state, timer, tilt, onAnswer, onEnd, flash, blocked }) {
@@ -58,17 +72,17 @@ function Stage({ state, timer, tilt, onAnswer, onEnd, flash, blocked }) {
     <div data-design-id="content" className={`jabeen-stage ${flash}`} role="group" aria-label="جولة على جبينك" inert={blocked} aria-hidden={blocked || undefined}>
       <div data-design-id="header" className="jabeen-stage-top">
         {/* في ثواني الخطر يُعاد تركيب الرقم كل ثانية (key) فيُلكم ثم ينبض */}
-        <span data-design-id="timer" className={`num ${danger ? 'is-danger' : ''}`} dir="ltr" key={danger ? `t${timer.left}` : 'n'}>{timer.left}</span>
-        <span className="muted count" key={`c${okCount}`}>✅ {okCount}</span>
-        <Button size="sm" variant="ghost" data-design-id="continue" data-design-required="true" onClick={onEnd}>إنهاء</Button>
+        <span data-design-id="timer" className={`num ${danger ? 'is-danger' : ''}`} role="timer" aria-label={`${timer.left} ثانية متبقية`}><IconClock /><bdi>{timer.left}</bdi><small>ث</small></span>
+        <span className="jabeen-active-player"><Avatar player={currentEntrant(state)} /><b>{currentEntrant(state).name}</b><span className="count" key={`c${okCount}`}>✓ {okCount}</span></span>
+        <Button size="sm" variant="ghost" className="jabeen-finish" data-design-id="continue" data-design-required="true" onClick={onEnd}>إنهاء</Button>
       </div>
       <div data-design-id="word" className="jabeen-word"><span key={state.item ? state.item.id : 'none'}>{state.item ? state.item.text : '…'}</span></div>
       <div data-design-id="controls" className="jabeen-controls">
         {tiltLive && <p className="jabeen-hint">{tilt.calibrated ? 'أَمِل للأسفل = صح · للأعلى = تخطي — أو استخدم الزرين.' : 'ثبّت الجوال على جبينك لحظة… تُعاير الحركة.'}</p>}
         {tiltLost && <Button data-design-id="tilt-retry" size="sm" variant="ghost" onClick={() => { tilt.retry(); }}>إعادة تفعيل الميلان</Button>}
         <div className="jabeen-touch">
-          <button type="button" data-design-id="correct" className="ok" onClick={() => onAnswer(true)}><span aria-hidden="true">✅</span>صح</button>
-          <button type="button" data-design-id="skip" className="skip" onClick={() => onAnswer(false)}><span aria-hidden="true">⏭</span>تخطي</button>
+          <button type="button" data-design-id="correct" className="ok" onClick={() => onAnswer(true)}><IconCheck /> صح</button>
+          <button type="button" data-design-id="skip" className="skip" onClick={() => onAnswer(false)}><IconSkip /> تخطي</button>
         </div>
       </div>
     </div>
@@ -166,27 +180,26 @@ export function Game({ api, players, onExit, savedSession = null, designPreviewS
       <style>{css}</style>
       {state.phase === 'intro' && (
         <div data-design-id="intro" className="jabeen-intro">
-          <div className="big clay-stage" aria-hidden="true"><span className="clay-lift"><Avatar player={entrant} /></span></div>
-          <h2>دور {entrant.name}</h2>
-          <p className="muted">فئة «{state.categoryName}» · {state.seconds} ثانية</p>
-          <p className="muted">ضع الجوال على جبينك والشاشة نحو الآخرين. هم يصفون وأنت تخمّن.</p>
+          <h2 className="jabeen-player-ribbon"><Avatar player={entrant} /> دور {entrant.name}</h2>
+          <p className="jabeen-category-pill">فئة «{state.categoryName}» · {state.seconds} ثانية</p>
+          <div className="jabeen-instruction"><PhoneGuide /><strong>ضع الجوال على جبينك والشاشة نحو الآخرين</strong><p>هم يصفون وأنت تخمّن. يمكنك استخدام الحركة أو أزرار اللمس.</p></div>
           {tilt.needsPermission && <p className="jabeen-perm">قد يطلب جهازك إذن استخدام مستشعر الحركة عند البدء. إن رفضت، يمكنك اللعب باللمس.</p>}
           {exhausted && <p className="jabeen-perm">انتهت كلمات «{state.categoryName}» — سنعيد خلطها من جديد ليكمل كل لاعب دوره.</p>}
-          {!landscape && <p className="jabeen-perm" role="status">أدر الجوال أفقيًا قبل البدء. إذا فضّلت الاتجاه الحالي، اضغط «متابعة بهذا الاتجاه» ثم ابدأ؛ الوقت لم يبدأ بعد.</p>}
-          <Button data-design-id="start" data-design-required="true" variant="accent" size="lg" full className="is-armed" onClick={async () => { if (!landscape) { setLandscape(true); return; } if (state.control === 'auto') await tilt.request(); tilt.recalibrate(); api.sound.play('whoosh'); const draw = drawForTurn(); dispatch({ type: 'BEGIN', item: draw.item, recycled: draw.recycled }); }}>{landscape ? 'ابدأ الجولة' : 'متابعة بهذا الاتجاه'}</Button>
+          {!landscape && <p className="jabeen-perm" role="status">أدر الجوال أفقيًا قبل البدء، أو تابع بهذا الاتجاه. الوقت لم يبدأ بعد.</p>}
+          <Button data-design-id="start" data-design-required="true" variant="accent" size="lg" full onClick={async () => { if (!landscape) { setLandscape(true); return; } if (state.control === 'auto') await tilt.request(); tilt.recalibrate(); api.sound.play('whoosh'); const draw = drawForTurn(); dispatch({ type: 'BEGIN', item: draw.item, recycled: draw.recycled }); }}><IconPlay /> {landscape ? 'ابدأ الجولة' : 'متابعة بهذا الاتجاه'}</Button>
         </div>
       )}
       {state.phase === 'play' && (
         <>
-          {!landscape && <div data-design-id="rotate" data-design-required="true" className="jabeen-rotate" style={{ animation: 'none' }}><div><div className="big" aria-hidden="true">📱</div><p style={{ marginTop: 14, fontWeight: 800 }}>أدر الجوال أفقيًا</p><p className="muted">أسهل في القراءة من بعيد.</p><Button data-design-id="continue" data-design-required="true" variant="ghost" onClick={() => setLandscape(true)}>تخطي هذا التنبيه</Button></div></div>}
+          {!landscape && <div data-design-id="rotate" data-design-required="true" className="jabeen-rotate"><div className="jabeen-rotate-panel"><PhoneGuide rotation /><h2>أدر الجوال أفقيًا</h2><p className="muted">الوقت متوقف. يمكنك أيضًا متابعة اللعب بأزرار اللمس.</p><Button data-design-id="continue" data-design-required="true" variant="accent" full onClick={() => setLandscape(true)}><IconRotate /> متابعة بهذا الاتجاه</Button></div></div>}
           <Stage state={state} timer={timer} tilt={tilt} flash={flash} blocked={!landscape} onAnswer={answer} onEnd={() => { timer.pause(); dispatch({ type: 'TIME_UP' }); }} />
           <ResumeCountdown resuming={timer.resuming} />
         </>
       )}
       {state.phase === 'review' && (
         <div className="stack">
-          <h2 className="center" style={{ fontSize: 26, fontWeight: 900 }}>نتيجة {entrant.name}</h2>
-          <p className="center muted">{state.results.filter((r) => r.ok).length} من {state.results.length} — المس أي كلمة لتصحيحها.</p>
+          <h2 className="jabeen-player-ribbon"><Avatar player={entrant} /> نتيجة {entrant.name}</h2>
+          <p className="jabeen-category-pill">{state.results.filter((r) => r.ok).length} من {state.results.length} — المس أي كلمة لتصحيحها.</p>
           <div data-design-id="results" className="jabeen-review">
             {state.results.map((r, i) => (
               <button data-design-id="option" key={`${r.itemId}-${i}`} type="button" className={r.ok ? 'ok' : ''} aria-pressed={r.ok} onClick={() => dispatch({ type: 'TOGGLE_RESULT', index: i })}>

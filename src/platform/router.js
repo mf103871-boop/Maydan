@@ -45,7 +45,9 @@ export function parseHash(hash) {
 const listeners = new Set();
 let current = typeof location !== 'undefined' ? parseHash(location.hash) : parseHash('');
 const routeLocation = route => {
-  if (route.name === 'store' && ['collections','library','presets'].includes(route.params.tab)) return `${route.path}?tab=${route.params.tab}`;
+  if (route.name === 'store' && ['collections','library','membership','presets'].includes(route.params.tab)) return `${route.path}?tab=${route.params.tab}`;
+  if (route.name === 'settings' && ['audio','display','account','help'].includes(route.params.section)) return `${route.path}?section=${route.params.section}`;
+  if (route.name === 'about' && route.params.view === 'credits') return `${route.path}?view=credits`;
   if (route.name === 'room' && route.params.watch === '1') return `${route.path}?watch=1`;
   // A specialty lesson and its hub share a pathname, but they are distinct
   // training sessions. Restore that context through Back, dialogs and guards.

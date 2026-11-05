@@ -85,6 +85,19 @@ export function validateServerUrl(value) {
 export function resolveServerUrl(value, pageOrigin = '') {
   return validateServerUrl(value === 'same-origin' ? pageOrigin : value);
 }
+export function roomInviteUrl(code, pageUrl, serverUrl) {
+  if (!validCode(code)) return '';
+  try {
+    const page = new URL(pageUrl);
+    // Native pages use an internal WKWebView URL. The recipient needs the
+    // public web entry of the server hosting this room, even in a beta build.
+    const url = ['http:', 'https:'].includes(page.protocol)
+      ? page : new URL(validateServerUrl(serverUrl));
+    url.search = '';
+    url.hash = `/room/${code}`;
+    return url.href;
+  } catch { return ''; }
+}
 export const ERRORS = {
   DIRECTORY_DISABLED: 'دليل الغرف العامة غير متاح حاليًا. أنشئ غرفة خاصة أو ادخل برمز.',
   ROOM_BLOCKED: 'تعذّر الانضمام إلى هذه الغرفة بسبب إعدادات الحظر.',

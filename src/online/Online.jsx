@@ -8,12 +8,13 @@ import { Avatar, AvatarPicker, GameArtwork, ClayStage } from '../shared/brand/ar
 import { burstConfetti, vignette } from '../shared/fx/index.js';
 import { navigate, setExitGuard } from '../platform/router.js';
 import { usePlatform } from '../platform/context.js';
+import { MenuGameIcon } from '../platform/MenuGameIcon.jsx';
 import { useCandidateDeadlineWarning } from '../shared/fx/useDeadlineAudio.js';
 import { useAccount } from '../shared/account/context.js';
 import { socialInterruption } from '../social/interruption.js';
 import { useLamma } from '../social/LammaProvider.jsx';
 import { socialJoinFallbackKey } from '../social/game-launch.js';
-import { AVATARS, ROUND_OPTIONS, ONLINE_GAMES, ROOM_CAPABILITIES, ROOM_REACTIONS, reactionsAllowed, minimumOnlinePlayers, EXPIRY_WARNING, normalizeCode, validCode, resolveServerUrl, errorText, arabicNumber } from './shared.js';
+import { AVATARS, ROUND_OPTIONS, ONLINE_GAMES, ROOM_CAPABILITIES, ROOM_REACTIONS, reactionsAllowed, minimumOnlinePlayers, EXPIRY_WARNING, normalizeCode, validCode, resolveServerUrl, roomInviteUrl, errorText, arabicNumber } from './shared.js';
 import { RoomClient, newCredentials, post, readSaved, save, clearSession, deviceId } from './client.js';
 import { reloadWithLatestVersion } from './update.js';
 import { isNativeShell } from '../shared/account/native.js';
@@ -45,7 +46,6 @@ import { getOnlinePublicRooms } from './client.js';
 
 const SERVER = resolveServerUrl(typeof __MAYDAN_ROOMS_URL__ !== 'undefined' && __MAYDAN_ROOMS_URL__ || config.serverUrl, typeof location === 'undefined' ? '' : location.origin);
 const arabic = arabicNumber;
-const inviteUrl = (code) => { const url = new URL(location.href); url.search = ''; url.hash = `/room/${code}`; return url.toString(); };
 function ErrorNotice({ code }) { return code ? <p className="online-notice error" role="alert">{errorText(code)}</p> : null; }
 
 export function Entry(props) {
@@ -230,7 +230,9 @@ function EntryView({ initialCode = '', initialGame = 'meenfina', initialObserver
     {directory.capabilities?.ranked===true&&<Button size="sm" onClick={()=>setRankedOpen(true)}>المنافسة الموسمية التجريبية</Button>}
     {directory.capabilities?.mafiaCommunity===true&&<Button size="sm" onClick={()=>setCommunityOpen(true)}>الموسم والأندية والبطولات</Button>}
   </div>:null;
-  return <section className={`online-entry stack ${mode==='public'?'is-directory':'is-form'} ${game==='mafia'?'mafia-noir mafia-entry':''}`}>
+  const gameInfo = ONLINE_GAMES[game];
+  const directoryUnit = game === 'badeeha' ? 'فرق' : 'لاعبين';
+  return <section className={`online-entry stack ${mode==='public'?'is-directory':'is-form'} ${game==='mafia'?'mafia-noir mafia-entry':'online-entry-standard'}`}>
     <style>{directoryCss}</style>
     {game==='mafia'&&<style>{mafiaShellCss}</style>}
     {!SERVER && <p className="online-notice" role="status">الغرف غير متاحة بعد. تقدر تلعب ألعاب ميدان على جهاز واحد من الرئيسية.</p>}
@@ -242,14 +244,16 @@ function EntryView({ initialCode = '', initialGame = 'meenfina', initialObserver
         <Button data-design-id="entry-join" disabled={busy} variant={mode === 'join' ? 'primary' : 'ghost'} aria-pressed={mode === 'join'} onClick={() => { viewPicked.current = true; setMode('join'); setError(''); credentialsRef.current = null; }}>دخول برمز</Button>
       </div>}
       {mode === 'public' ? <>{game==='mafia'?<MafiaDirectory onTutorial={onTutorial} {...directory} mode={directoryMode} voiceMode={directoryVoice} status={directoryStatus} onMode={value=>changeFilter(setDirectoryMode,value)} onVoiceMode={value=>changeFilter(setDirectoryVoice,value)} onStatus={value=>changeFilter(setDirectoryStatus,value)} hasPrevious={directoryPages.length>1} onNext={()=>directory.nextCursor&&setDirectoryPages(pages=>[...pages,directory.nextCursor])} onPrevious={()=>setDirectoryPages(pages=>pages.slice(0,-1))} onRefresh={() => setDirectoryRefresh(n => n+1)} onQuickJoin={() => joinPublicRoom()} onJoin={joinPublicRoom} onObserve={roomCode=>joinPublicRoom(roomCode,true)} onCreate={()=>openCreate('public')} onCode={()=>{setMode('join');setError('');credentialsRef.current=null;}} helpActions={helpActions} disabled={busy||!account.user?.id}/>:<OnlineDirectoryView game={game} {...directory} disabled={busy}
+        heading={<header className="online-directory-heading"><MenuGameIcon id={game}/><div><small>{gameInfo.name}</small><h2>الغرف العامة</h2></div><span>{arabic(gameInfo.min)} إلى {arabic(gameInfo.max)} {directoryUnit}</span></header>}
         onCreate={()=>openCreate()} onCode={()=>{setMode('join');setError('');credentialsRef.current=null;}}
         onRefresh={()=>setDirectoryRefresh(n=>n+1)} hasPrevious={directoryPages.length>1} onPrevious={()=>setDirectoryPages(pages=>pages.slice(0,-1))} onNext={()=>directory.nextCursor&&setDirectoryPages(pages=>[...pages,directory.nextCursor])}
         notice={!account.user?.id?'سجّل الدخول لرؤية الغرف العامة. تبقى الغرفة الخاصة متاحة عبر الرمز.':null}
         filters={<label className="online-field">حالة الغرفة<select aria-label="حالة الغرفة" value={directoryStatus} onChange={event=>changeFilter(setDirectoryStatus,event.target.value)}><option value="all">كل الحالات</option><option value="waiting">بانتظار اللاعبين</option><option value="playing">يلعبون الآن</option></select></label>}
         help={<div className="stack"><p>أنشئ غرفة خاصة للرمز والدعوة، أو اختر إظهارها للعامة عند إنشائها. الجميع يدخل مجانًا.</p><p>المقاعد تتحدث تلقائيًا. الانضمام إلى مباراة جارية يخضع لقواعد كل لعبة.</p>{game==='fabraka'?<FabrakaRules/>:game==='ersomha'?<ErsomhaRules/>:game==='badeeha'?<BadeehaRules/>:<p>كل لاعب يصوّت بجواله. نحتاج ثلاثة لاعبين جاهزين لبدء مين فينا.</p>}</div>}
         renderRoom={room=><OnlineRoomRow room={room} title={room.roomName} subtitle={room.unit==='teams'?'فرق · جوال لكل فريق':room.status==='playing'&&room.joinable?'الانضمام للمباراة التالية':'لاعبون'} statusLabel={room.full?'مكتملة':room.status==='playing'?'يلعبون الآن':'بانتظار اللاعبين'} canJoin={room.joinable===true&&!room.full} disabled={busy||!account.user?.id} onJoin={joinPublicRoom}/>}/>}<ErrorNotice code={error}/></> : <form data-design-id="entry" className="stack" onSubmit={submit}>
-        {mode==='create'&&game!=='mafia'&&<div className="online-public-create"><h2>إنشاء غرفة {ONLINE_GAMES[game].name}</h2><label className="online-field">ظهور الغرفة<select data-design-id="room-visibility" aria-label="ظهور الغرفة" value={roomVisibility} disabled={busy} onChange={event=>{setRoomVisibility(event.target.value);credentialsRef.current=null;}}><option value="private">خاصة · رمز ودعوة فقط</option><option value="public" disabled={!account.user?.id||directory.enabled!==true}>عامة · تظهر في دليل {ONLINE_GAMES[game].name}</option></select></label>{roomVisibility==='public'?<label className="online-field">اسم الغرفة<input data-design-id="room-name" aria-label="اسم الغرفة" maxLength={40} required minLength={2} value={roomName} onChange={event=>{setRoomName(event.target.value);credentialsRef.current=null;}}/></label>:<small>لن تظهر غرفتك في الدليل. شارك الرمز أو رابط الدعوة مع من تريد.</small>}</div>}
-        {mafiaCreation&&<div className="mafia-create-heading"><h2>أنشئ مجلسك</h2><p>{mafiaSettings.visibility==='public'?'غرفتك تظهر في القائمة، ويستطيع أي لاعب مسجّل الانضمام ما دامت فيها مقاعد.':'غرفتك لا تظهر في القائمة. شارك الرمز أو الدعوة مع من تريد.'}</p></div>}
+        {mode==='join'&&game!=='mafia'&&<header className="online-directory-heading online-form-heading"><MenuGameIcon id={game}/><div><small>{gameInfo.name}</small><h2>الدخول برمز</h2></div></header>}
+        {mode==='create'&&game!=='mafia'&&<div className="online-public-create"><header className="online-directory-heading online-form-heading"><MenuGameIcon id={game}/><h2>إنشاء غرفة {gameInfo.name}</h2></header><label className="online-field">ظهور الغرفة<select data-design-id="room-visibility" aria-label="ظهور الغرفة" value={roomVisibility} disabled={busy} onChange={event=>{setRoomVisibility(event.target.value);credentialsRef.current=null;}}><option value="private">خاصة · رمز ودعوة فقط</option><option value="public" disabled={!account.user?.id||directory.enabled!==true}>عامة · تظهر في دليل {gameInfo.name}</option></select></label>{roomVisibility==='public'?<label className="online-field">اسم الغرفة<input data-design-id="room-name" aria-label="اسم الغرفة" maxLength={40} required minLength={2} value={roomName} onChange={event=>{setRoomName(event.target.value);credentialsRef.current=null;}}/></label>:<small>الغرفة الخاصة تظهر لمن ترسل له الرمز أو الدعوة.</small>}</div>}
+        {mafiaCreation&&<div className="mafia-create-heading"><h2>إنشاء مجلس</h2><p>{mafiaSettings.visibility==='public'?'غرفتك تظهر في القائمة، ويستطيع أي لاعب مسجّل الانضمام ما دامت فيها مقاعد.':'غرفتك لا تظهر في القائمة. شارك الرمز أو الدعوة مع من تريد.'}</p></div>}
         <label className="online-field">اسمك في الغرفة<input data-design-id="name-input" autoComplete="nickname" maxLength={20} value={name} onChange={(e) => setName(e.target.value)} placeholder="اكتب اسمك" required /></label>
         {game!=='mafia' && <details data-design-id="avatar-picker"><summary>تغيير الشخصية</summary><AvatarPicker value={AVATARS[avatar]} onChange={(emoji) => setAvatar(AVATARS.indexOf(emoji))} /></details>}
         {mode === 'join' ? <label className="online-field">رمز الغرفة<input data-design-id="room-code" className="online-code-input" dir="ltr" inputMode="numeric" autoComplete="off" maxLength={8} value={code} onChange={(e) => { setCode(normalizeCode(e.target.value)); credentialsRef.current = null; }} placeholder="123456" required /></label>
@@ -260,11 +264,11 @@ function EntryView({ initialCode = '', initialGame = 'meenfina', initialObserver
           : <label className="online-field">عدد الجولات<select data-design-id="round-count" value={rounds} onChange={(e) => setRounds(Number(e.target.value))}>{ROUND_OPTIONS.map((n) => <option key={n} value={n}>{arabic(n)} جولات</option>)}</select></label>}
         {mode === 'create' && game === 'fabraka' && <FabrakaRules />}
         {mode === 'create' && game === 'badeeha' && <BadeehaRules />}
-        {mode === 'create' && game === 'ersomha' && <><ErsomhaRules />{!account.user?.id && <p className="online-notice" role="status">ارسمها تحتاج حسابًا ليُحفظ تاريخ الأفكار عبر أجهزتك. <Button size="sm" onClick={() => navigate('/settings')}>تسجيل الدخول</Button></p>}</>}
-        {mode === 'create' && game === 'mafia' && !account.user?.id && <p className="online-notice">مافيا تحتاج حسابًا لكل لاعب. <Button onClick={() => navigate('/settings')}>تسجيل الدخول</Button></p>}
+        {mode === 'create' && game === 'ersomha' && <><ErsomhaRules />{!account.user?.id && <p className="online-notice" role="status">ارسمها تحتاج حسابًا ليُحفظ تاريخ الأفكار عبر أجهزتك. <Button size="sm" onClick={() => navigate('/settings?section=account')}>تسجيل الدخول</Button></p>}</>}
+        {mode === 'create' && game === 'mafia' && !account.user?.id && <p className="online-notice">مافيا تحتاج حسابًا لكل لاعب. <Button onClick={() => navigate('/settings?section=account')}>تسجيل الدخول</Button></p>}
         {mafiaCreation && <div data-design-fixed="mafia-availability" aria-live="polite">{mafiaChecking ? <p className="online-notice" role="status">نتحقق من توفر مجالس مافيا…</p> : directory.error ? <><p className="online-notice error" role="alert">تعذّر التحقق من توفر المجالس. أعد المحاولة قبل إنشاء الغرفة.</p><Button onClick={() => {setError('');setDirectoryRefresh(n=>n+1);}}>إعادة التحقق</Button></> : directory.enabled === false ? <><p className="online-notice" role="status">إنشاء مجالس مافيا متوقف حاليًا.</p><Button onClick={() => {setError('');setDirectoryRefresh(n=>n+1);}}>إعادة التحقق</Button></> : null}</div>}
         <ErrorNotice code={error} />
-        <Button data-design-id="start" data-sound="none" data-design-required="true" type="submit" variant="primary" size="lg" full disabled={!SERVER || busy || !topicsReady || mafiaCreationBlocked} loading={busy || mafiaChecking}>{mode === 'create' ? 'أنشئ الغرفة' : 'ادخل الغرفة'}</Button>
+        <Button data-design-id="start" data-sound="none" data-design-required="true" type="submit" variant="primary" size="lg" full disabled={!SERVER || busy || !topicsReady || mafiaCreationBlocked} loading={busy || mafiaChecking}>{mode === 'create' ? mafiaCreation?'إنشاء المجلس':'أنشئ الغرفة' : 'ادخل الغرفة'}</Button>
       </form>}
     </Card>
     {rankedOpen&&game==='mafia'&&account.ready&&account.signedIn&&account.user?.id&&<MafiaRanked key={account.user.id} onClose={()=>setRankedOpen(false)} onJoined={onJoined}/>}
@@ -275,16 +279,17 @@ function EntryView({ initialCode = '', initialGame = 'meenfina', initialObserver
     {mode!=='public'&&<p className="online-footnote">تحتاج الغرف اتصالًا بالإنترنت على كل هاتف. تنتهي الغرفة بعد ساعتين.</p>}
   </section>;
 }
-export function Invite({ code }) {
+export function Invite({ code, showUrl = false }) {
   const { toast } = usePlatform();
-  const [qr, setQr] = useState('');
+  const [qr, setQr] = useState(null);
   const [showLink, setShowLink] = useState(false);
-  const [qrReady, setQrReady] = useState(false);   // الصورة ظاهرة دائمًا؛ الصنف يضيف انبثاقًا بعد التحميل فقط
-  const url = inviteUrl(code);
+  const [qrReady, setQrReady] = useState('');
+  const url = roomInviteUrl(code, typeof location === 'undefined' ? '' : location.href, SERVER);
   useEffect(() => {
+    if (!url) return undefined;
     let cancelled = false;
     QRCode.toDataURL(url, { width: 200, margin: 3, errorCorrectionLevel: 'M', color: { dark: '#35224A', light: '#FFFFFF' } })
-      .then((src) => { if (!cancelled) setQr(src); }).catch(() => {});
+      .then((src) => { if (!cancelled) setQr({ url, src }); }).catch(() => {});
     return () => { cancelled = true; };
   }, [url]);
   async function copy() {
@@ -292,9 +297,9 @@ export function Invite({ code }) {
     catch { setShowLink(true); }
   }
   return <Card data-design-id="invite" className="online-invite">
-    <div><span className="online-label">رمز الغرفة</span><strong data-design-id="invite-code" className="online-room-code" dir="ltr">{code}</strong><p>أرسل الرابط أو خلي أصحابك يمسحوا الرمز.</p><Button data-design-id="invite-share" onClick={() => window.dispatchEvent(new CustomEvent('maydan-invite-friends', { detail: { roomCode: code } }))}>ادعُ أصدقاء ميدان</Button><Button data-design-id="invite-copy" onClick={copy}>نسخ رابط الدعوة</Button></div>
-    {qr && <img data-design-id="invite-qr" width="136" height="136" src={qr} className={qrReady ? 'is-ready' : ''} onLoad={() => setQrReady(true)} alt={`رمز QR للدخول إلى الغرفة ${code}`} />}
-    {showLink && <label className="online-field online-invite-link">رابط الدعوة<input readOnly value={url} dir="ltr" onFocus={(e) => e.target.select()} /></label>}
+    <div><span className="online-label">رمز الغرفة</span><strong data-design-id="invite-code" className="online-room-code" dir="ltr">{code}</strong><p>{url?'أرسل الرابط أو خلي أصحابك يمسحوا الرمز.':'أرسل رمز الغرفة لأصحابك.'}</p><Button data-design-id="invite-share" onClick={() => window.dispatchEvent(new CustomEvent('maydan-invite-friends', { detail: { roomCode: code } }))}>ادعُ أصدقاء ميدان</Button>{url&&<Button data-design-id="invite-copy" onClick={copy}>نسخ رابط الدعوة</Button>}</div>
+    {url && qr?.url===url && <img data-design-id="invite-qr" width="136" height="136" src={qr.src} className={qrReady===url ? 'is-ready' : ''} onLoad={() => setQrReady(url)} alt={`رمز QR للدخول إلى الغرفة ${code}`} />}
+    {url && (showLink || showUrl) && <label className="online-field online-invite-link">رابط الدعوة<input data-design-id="share-link" readOnly value={url} dir="ltr" onFocus={(e) => e.target.select()} /></label>}
   </Card>;
 }
 // Exported for the rooms regression tests, which render the waiting room from a snapshot.
@@ -305,6 +310,7 @@ export function Lobby({ state, me, isHost, disabled, act, voice, onSafety }) {
   const canStart = players.length >= minimum && players.every((m) => m.connected && m.ready);
   // إزالة لاعب متصل قرار يستحق تأكيدًا؛ المقعد المنقطع يُزال مباشرة. الإزالة تمنع العودة إلى هذه الغرفة.
   const [kickTarget, setKickTarget] = useState(null);
+  const [inviteOpen, setInviteOpen] = useState(false);
   // Starting and transferring the game remain free for every eligible host.
   const [handover, setHandover] = useState(false);
   const successors = state.game === 'mafia' && isHost ? players.filter((m) => m.id !== me?.id && m.connected) : [];
@@ -313,9 +319,13 @@ export function Lobby({ state, me, isHost, disabled, act, voice, onSafety }) {
     <Button data-design-id="ready" data-sound="none" full disabled={disabled} variant={me?.ready ? 'secondary' : 'primary'} onClick={() => act('ready', { ready: !me?.ready })}>{me?.ready ? 'جاهز ✓ · إلغاء' : 'أنا جاهز'}</Button>
     {isHost ? <Button full variant="primary" className={canStart ? 'is-armed' : ''} disabled={disabled || !canStart} data-design-id="start" data-sound="none" data-design-required="true" onClick={() => act('start')}>ابدأ اللعب</Button> : <p className="online-footnote">بانتظار بدء المضيف</p>}
   </>}>
-    <details><summary data-design-id="invite-toggle">الرمز ودعوة اللاعبين · <bdi>{state.code}</bdi></summary><Invite code={state.code} /></details>
-    <Card className="stack">
-      <div data-design-id="header" className="row-between"><h2>{state.directory?.name||'غرفة الانتظار'}</h2><span className="online-member-count">{arabic(players.length)} / {arabic(state.game === 'mafia' ? state.settings.capacity : ONLINE_GAMES[state.game || 'meenfina'].max)}</span></div>
+    <Card className="online-lobby-heading stack">
+      <div data-design-id="header" className="row-between"><h2>{state.directory?.name||'غرفة الانتظار'}</h2><bdi className="online-member-count">{arabic(players.length)} من {arabic(ONLINE_GAMES[state.game || 'meenfina'].max)}</bdi></div>
+      <div className="online-lobby-heading-code"><span>رمز الغرفة <bdi>{state.code}</bdi></span><Button data-design-id="invite-toggle" size="sm" onClick={() => setInviteOpen(true)}>دعوة اللاعبين</Button></div>
+    </Card>
+    {inviteOpen && <Modal title="دعوة اللاعبين" placement="bottom" className="online-invite-sheet" onClose={() => setInviteOpen(false)}><Invite code={state.code} showUrl/></Modal>}
+    <Card className="stack online-lobby-members">
+      <div className={`online-lobby-ready-note${canStart?' is-ready':''}`} role="status"><strong>{canStart?'الجميع جاهز':'جاهزية اللاعبين'}</strong><bdi>{arabic(players.filter(player => player.connected && player.ready).length)} من {arabic(players.length)}</bdi></div>
       <ul data-design-id="players" className="online-players online-lobby-players">{players.map((p, i) => <li data-design-id="member" className={`${p.id === me?.id ? 'is-self ' : ''}${!p.connected ? 'is-offline' : p.ready ? 'is-ready' : 'is-preparing'}`} key={p.id} style={{ '--i': i }}>
         <span className="online-seat" style={{ background: p.color }} aria-hidden="true" />{p.profile ? <ProfileAvatar user={p.profile} /> : <Avatar index={p.avatar} />}<div className="grow"><b><PlayerName user={p.profile} name={p.name + (p.id === me?.id ? ' (أنت)' : '')} card compact /></b><small>{p.id === state.hostId ? 'المضيف · ' : ''}<span className="online-member-state">{!p.connected ? 'انقطع الاتصال' : p.ready ? 'جاهز' : 'يستعد'}</span></small></div>
         <span className={`online-presence ${p.connected && p.ready ? 'ready' : ''}`} aria-hidden="true" />
@@ -375,13 +385,14 @@ export function Match({ state, disabled, isHost, act, clockOffset, spectating = 
     <Card className="stack">{sorted.map((p) => <div className="row-between" key={p.id}><b>{p.name}</b><span>{p.title}</span></div>)}</Card>
     {isHost ? <Button data-design-id="restart" full size="lg" variant="primary" disabled={disabled} onClick={() => act('restart')}>العودة للانتظار ولعب مرة ثانية</Button> : <p className="online-footnote">بانتظار المضيف لبدء لعبة جديدة.</p>}
   </section>;
-  return <section data-design-screen={`online.meenfina.${state.phase}`} className="stack">
-    <div className="row-between"><b>الجولة {arabic(state.round)} من {arabic(state.rounds)}</b>{state.phase === 'vote' && <span data-design-id="timer" className={`online-timer ${seconds <= 5 ? 'urgent' : ''}`} aria-label={`متبقي ${seconds} ثانية`}><b key={seconds <= 5 ? seconds : 'n'}><bdi>{arabic(seconds)}</bdi></b> ث</span>}</div>
+  const highestCount = Math.max(1, ...Object.values(state.counts || {}));
+  return <section data-design-screen={`online.meenfina.${state.phase}`} className="stack online-meenfina">
+    <div className="row-between online-meenfina-header"><b>الجولة {arabic(state.round)} من {arabic(state.rounds)}</b>{state.phase === 'vote' && <span data-design-id="timer" className={`online-timer ${seconds <= 5 ? 'urgent' : ''}`} aria-label={`متبقي ${seconds} ثانية`}><b key={seconds <= 5 ? seconds : 'n'}><bdi>{arabic(seconds)}</bdi></b> ث</span>}</div>
     <Card data-design-id="question" className="online-question" key={state.round}><ClayStage aria-hidden="true"><GameArtwork game="meenfina" /></ClayStage><h1>{state.question?.text}</h1></Card>
     {state.phase === 'vote' ? <Card data-design-id="vote-panel" className="stack">
       {spectating ? <div className="online-voted" role="status"><strong>تتفرج على هذه الجولة</strong><p>اللاعبون يصوّتون الآن، وتشارك معهم من المباراة القادمة.</p></div> : state.myVote.submitted ? <div className="online-voted" role="status"><strong>وصل تصويتك ✓</strong><p>اختيارك: {state.myVote.targetId === null ? 'لا أحد' : players.find((p) => p.id === state.myVote.targetId)?.name}. بانتظار الباقي…</p></div> : <>
         <p className="online-footnote">اختَر الشخص الأقرب للعبارة. تقدر تختار نفسك. بعد التأكيد لا يمكن تغيير التصويت.</p>
-        <div data-design-id="options-list" className="online-vote-grid" role="group" aria-label="اختر لاعبًا">{players.map((p, i) => <button data-design-id="option" className={`online-vote-choice ${choice === p.id ? 'selected' : ''}`} type="button" key={p.id} style={{ '--i': i }} disabled={disabled || seconds === 0} aria-pressed={choice === p.id} onClick={() => setChoice(p.id)}><ClayStage className="clay-static" aria-hidden="true"><Avatar index={p.avatar} /></ClayStage><b>{p.name}</b>{p.left && <small>غادر الجولة</small>}</button>)}</div>
+        <div data-design-id="options-list" className="online-vote-grid" role="group" aria-label="اختر لاعبًا">{players.map((p, i) => <button data-design-id="option" className={`online-vote-choice ${choice === p.id ? 'selected' : ''}`} type="button" key={p.id} style={{ '--i': i }} disabled={disabled || seconds === 0} aria-pressed={choice === p.id} onClick={() => setChoice(p.id)}><ClayStage className="clay-static" aria-hidden="true"><Avatar index={p.avatar} /></ClayStage><b>{p.name}</b>{p.left && <small>غادر الجولة</small>}<span className="online-meen-choice-mark" aria-hidden="true">{choice===p.id?'✓':''}</span></button>)}</div>
         <Button data-design-id="abstain" aria-pressed={choice === null} variant={choice === null ? 'secondary' : 'ghost'} disabled={disabled || seconds === 0} onClick={() => setChoice(null)}>لا أحد</Button>
         <Button data-design-id="submit" data-sound="none" full variant="primary" size="lg" disabled={disabled || choice === undefined || seconds === 0} onClick={() => act('vote', { targetId: choice })}>تأكيد التصويت</Button>
       </>}
@@ -389,7 +400,11 @@ export function Match({ state, disabled, isHost, act, clockOffset, spectating = 
     </Card> : <Card className="stack">
       <h2>{state.winners.length ? state.winners.map((id) => players.find((p) => p.id === id)?.name).join(' و') : 'ولا أحد هالمرة!'}</h2>
       <p>{state.winners.length > 1 ? 'تعادل! نقطة لكل واحد منهم.' : state.winners.length ? 'أكثر واحد أخذ أصوات… ونقطة جديدة!' : 'لم يحصل أحد على أصوات.'}</p>
-      <ul data-design-id="players" className="online-players">{players.map((p, i) => <li key={p.id} ref={state.winners[0] === p.id ? winnerRef : null} className={state.winners.includes(p.id) ? 'is-winner' : ''} style={{ '--i': i }}><Avatar index={p.avatar} /><b className="grow">{p.name}</b><span>{arabic(state.counts[p.id] || 0)} أصوات</span>{state.winners.includes(p.id) && <b className="online-point">+١</b>}</li>)}</ul>
+      <ul data-design-id="players" className="online-players">{players.map((p, i) => {
+        const votes = state.counts[p.id] || 0;
+        const won = state.winners.includes(p.id);
+        return <li key={p.id} ref={state.winners[0] === p.id ? winnerRef : null} className={won ? 'is-winner' : ''} style={{ '--i': i }}><Avatar index={p.avatar} /><div className="grow online-meen-tally"><b>{p.name}</b><span aria-hidden="true"><i style={{width:`${100 * votes / highestCount}%`}}/></span></div><span>{arabic(votes)} أصوات</span>{won && <b className="online-point">+١</b>}</li>;
+      })}</ul>
       {isHost ? <Button data-design-id="continue" full variant="primary" size="lg" disabled={disabled} onClick={() => act('next')}>{state.round === state.rounds ? 'عرض النتيجة النهائية' : 'الجولة التالية'}</Button> : <p className="online-footnote">بانتظار المضيف للمتابعة.</p>}
     </Card>}
     <Card className="stack"><h2>النقاط</h2><Scoreboard data-design-id="scoreboard" entries={sorted} /></Card>
@@ -411,7 +426,7 @@ export function RoomChrome({ state, code, status, error, expiring = false, msLef
     {state?.hostMissingSince && <p className="online-notice is-host-missing">انقطع اتصال المضيف. تنتقل الإدارة للاعب متصل بعد ٢٠ ثانية إذا لم يعد.</p>}
     {expiring && <p className="online-notice" role="status">تنتهي الغرفة بعد {minutesLabel(Math.max(1, Math.ceil(msLeft / 60_000)))}. أكملوا الجولة الحالية أو أنشئوا غرفة جديدة بعدها.</p>}
     {dropped.length > 0 && <Card data-design-id="dropped" className="stack online-dropped"><p className="online-footnote">مقاعد منقطعة: لا تنتظرها الجولة بعد ١٥ ثانية، وتقدر تزيلها من المباراة.</p>{dropped.map((m) => <Button data-design-id="member-remove" key={m.id} size="sm" variant="ghost" disabled={disabled} onClick={() => onKick?.(m.id)}>إزالة {m.name}</Button>)}</Card>}
-    {['replaced', 'reconnecting', 'disconnected'].includes(status) && <Button data-design-id="reconnect" data-design-required="true" onClick={onReconnect}>إعادة الاتصال</Button>}
+    {['replaced', 'reconnecting', 'disconnected'].includes(status) && (compactMafia ? <Button data-design-id="reconnect" data-design-required="true" onClick={onReconnect}>إعادة الاتصال</Button> : <div className="online-recovery-panel"><div><strong>{status==='replaced'?'الغرفة مفتوحة في مكان آخر':'انقطع الاتصال بالغرفة'}</strong><p>{status==='replaced'?'يمكنك متابعة اللعب من هذا التبويب.':'حاول العودة إلى جلستك ومقعدك الحالي.'}</p></div><Button data-design-id="reconnect" data-design-required="true" onClick={onReconnect}>إعادة الاتصال</Button></div>)}
     {children}
   </div>;
 }
@@ -617,7 +632,7 @@ function ConnectedRoom({ code, session, stored, onLeft, onGameChange, onPromoted
       {isHost && state.game !== 'mafia' && watchers.filter((m) => m.id !== me?.id).map((m) => <Button key={m.id} size="sm" variant="ghost" disabled={disabled} onClick={() => act('kick', { targetId: m.id })}>إزالة {m.name}</Button>)}</Card>}
     {!observerSession && !outdated && status !== 'ended' && (state?.game !== 'mafia' || ['lobby','over'].includes(state.phase)) && <RoomReactions client={clientRef.current} state={state} me={me} status={status} />}
     {safetyPlayer && <MafiaSafety player={safetyPlayer} onClose={()=>setSafetyPlayer(null)} onSafety={mafiaSafety}/>}
-    {exitTarget && <ConfirmModal title={observerSession?'إنهاء المشاهدة؟':'تطلع من الغرفة؟'} message={observerSession?'تعود إلى دليل مجالس مافيا.':'مغادرتك تنهي مقعدك الحالي. إذا كنت المضيف تنتقل الإدارة للاعب متصل.'} confirmLabel="الخروج" confirmSound="none" cancelLabel="خلّيني ألعب" onConfirm={leave} onCancel={() => setExitTarget(null)} />}
+    {exitTarget && <ConfirmModal placement={state?.game==='mafia'?undefined:'bottom'} title={observerSession?'إنهاء المشاهدة؟':'تطلع من الغرفة؟'} message={observerSession?'تعود إلى دليل مجالس مافيا.':'مغادرتك تنهي مقعدك الحالي. إذا كنت المضيف تنتقل الإدارة للاعب متصل.'} confirmLabel="الخروج" confirmSound="none" cancelLabel="خلّيني ألعب" onConfirm={leave} onCancel={() => setExitTarget(null)} />}
   </RoomChrome>;
 }
 export function Online({ code = '', game = 'meenfina', observer = false, initialView = 'public', onTutorial }) {

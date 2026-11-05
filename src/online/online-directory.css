@@ -15,6 +15,57 @@
 @media(orientation:landscape) and (max-height:500px){.online-directory-profile{position:static;padding-block:5px}.online-directory-profile>button{min-height:44px}.online-directory-row{min-height:66px}.online-lobby-controls{position:static}}
 @media(prefers-reduced-motion:reduce){.online-directory-view *{scroll-behavior:auto!important}}
 
+/* Shared game directory and waiting room. Mafia supplies its own presentation. */
+.online-directory-heading {
+  display:flex; flex:none; align-items:center; gap:10px; min-width:0;
+  padding:10px 12px; border:1px solid #e1ccea; border-radius:17px;
+  background:linear-gradient(125deg,#f7edfb,#fff9ef); color:#382248;
+}
+.online-directory-heading .menu-game-art { display:grid; place-items:center; width:48px; height:48px; flex:none; border-radius:13px; background:#fff7eb; }
+.online-directory-heading h2 { margin:1px 0 0; font-size:1.12rem; }
+.online-directory-heading small { color:#684779; font-size:.78rem; font-weight:750; }
+.online-directory-heading > span { margin-inline-start:auto; border-radius:20px; padding:4px 8px; background:#eee0f6; color:#5c3d70; font-size:.72rem; font-weight:750; text-align:center; }
+.online-entry-standard .online-directory-toolbar { border:0; padding:1px 0 3px; }
+.online-entry-standard .online-directory-toolbar .btn-primary { background:#087a83; }
+.online-entry-standard .online-directory-toolbar > .btn:first-child { margin-inline-end:0; flex:1; }
+.online-entry-standard .online-directory-row { background:#fffdf5; border-color:#e4d5c6; box-shadow:0 2px 0 #e9dccb; }
+.online-entry-standard .online-directory-row-meta > span:first-child { padding:1px 7px; border-radius:20px; background:#dff2e9; color:#145d48; }
+.online-entry-standard [data-room-status=playing] .online-directory-row-meta > span:first-child { background:#eee1f6; color:#5e3a79; }
+.online-entry-standard .online-directory-row:has(.is-full) .online-directory-row-meta > span:first-child { background:#f9e7de; color:#8c443d; }
+.online-entry-standard .online-directory-empty { display:grid; justify-items:center; gap:10px; padding:16px; text-align:center; border:1px dashed #d2bfdf; border-radius:15px; background:#fffaf3; }
+.online-directory-placeholders { display:grid; width:100%; gap:7px; }
+.online-directory-placeholders span { height:40px; border-radius:11px; background:#eee5ee; }
+.online-directory-retry { display:flex; align-items:center; justify-content:space-between; gap:8px; padding:3px 7px; border-radius:12px; background:#fae9e4; }
+.online-entry-standard.is-form .online-tabs { display:grid; gap:4px; background:#f3e8f4; padding:4px; }
+.online-entry-standard.is-form .online-tabs > .btn { border-radius:11px; }
+.online-entry-standard.is-form .online-tabs > .btn[aria-pressed=true] { background:#0b7881; }
+.online-entry-standard .online-public-create { border-color:#dfcdeb; background:#fbf3fd; padding:12px; }
+.online-entry-standard .online-public-create .online-form-heading { padding:0 0 4px; border:0; background:none; }
+.online-entry-standard .online-code-input { min-height:54px; background:#f6effb; border-color:#d2b9e4; font-size:1.15rem; font-weight:800; letter-spacing:.18em; text-align:center; }
+.online-lobby-heading { gap:7px; border-color:#d9c4e8; background:linear-gradient(115deg,#f5eafa,#fffaf2); }
+.online-lobby-heading-code { display:flex; align-items:center; justify-content:space-between; gap:8px; font-size:.86rem; }
+.online-lobby-heading-code > span { display:flex; align-items:center; flex-wrap:wrap; gap:6px; }
+.online-lobby-heading-code bdi { padding:3px 8px; border-radius:8px; background:#e9dbf3; color:#533565; font-weight:850; letter-spacing:.09em; }
+.online-lobby-ready-note { display:flex; align-items:center; justify-content:space-between; gap:8px; border-radius:11px; padding:7px 10px; background:#f0e5f6; color:#5e3f72; font-size:.82rem; }
+.online-lobby-ready-note.is-ready { background:#dcefe4; color:#1b6048; }
+.online-recovery-panel { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; padding:12px; border:1px solid #e1b46f; border-radius:14px; background:#fff1d7; color:#633c17; }
+.online-recovery-panel p { margin:3px 0 0; font-size:.82rem; }
+.online-invite-sheet .online-invite { border:0; box-shadow:none; padding:0; }
+.online-invite-sheet .online-invite-link { grid-column:1 / -1; }
+.online-meenfina-header { padding:7px 10px; border:1px solid #dac3e7; border-radius:14px; background:#f0e3f7; color:#56356e; }
+.online-meenfina .online-question { background:#f1e5f8; border-color:#d7bce8; padding:12px; }
+.online-meenfina .online-question .clay-art { width:49px; height:49px; }
+.online-meenfina .online-vote-choice { position:relative; border-color:#deccdf; background:#fffaf3; }
+.online-meenfina .online-vote-choice.selected { background:#e4f3ef; border-color:#68aaa7; }
+.online-meen-choice-mark { display:grid; place-items:center; position:absolute; inset-block-start:6px; inset-inline-start:7px; width:17px; height:17px; border:1px solid #806d87; border-radius:50%; font-size:.7rem; }
+.online-meenfina .selected .online-meen-choice-mark { background:#087980; color:#fff; border-color:#087980; }
+.online-meen-tally { display:grid; gap:5px; min-width:0; }
+.online-meen-tally b { overflow-wrap:anywhere; }
+.online-meen-tally > span { height:6px; border-radius:8px; overflow:hidden; background:#e8dced; }
+.online-meen-tally i { height:100%; display:block; border-radius:inherit; background:#9573aa; }
+.online-meenfina .is-winner .online-meen-tally i { background:#2c8a7e; }
+@media(max-width:360px){.online-directory-heading { padding-inline:8px; gap:7px; }.online-directory-heading > span { max-width:5rem; }}
+
 /* B07: actual membership and readiness remain the source of each badge. */
 .online-lobby-frame .online-lobby-players{gap:6px}
 .online-lobby-frame .online-lobby-players>li{border:1px solid var(--stroke,#e2d4c3);border-radius:14px;background:var(--surface,#fffdf7);box-shadow:inset 0 1px #fff;gap:8px}

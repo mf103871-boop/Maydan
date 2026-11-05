@@ -1,18 +1,17 @@
 // تبويب الألعاب: قائمة الألعاب واختيار النمط، مع بقاء الحساب والسياسات متاحة.
 import React, { useRef, useState, useEffect } from 'react';
 import { Screen, Sheet, ripple } from '../../shared/ui/components.jsx';
-import { IconUsers, IconClock, IconBack } from '../../shared/ui/icons.jsx';
+import { IconUsers, IconBack } from '../../shared/ui/icons.jsx';
 import { usePlatform } from '../context.js';
 import { useAccount } from '../../shared/account/context.js';
 import { LammaIcon } from '../../social/LammaMedia.jsx';
-import { useProfiles } from '../../profiles/ProfileProvider.jsx';
+import { useSocialUI } from '../../social/SocialUIProvider.jsx';
 import { ProfileAvatar } from '../../profiles/ProfileAvatar.jsx';
-import { MembershipBadge } from '../../profiles/PlayerIdentity.jsx';
 import { PUBLIC_SITE_ORIGIN, LEGAL_ROUTES } from '../../shared/account/config.js';
 import { navigate, getDirection } from '../router.js';
 import { GAMES } from '../registry.js';
 import { reportSimulatorHomeReady } from '../native-launch-ready.js';
-import { BrandMark, Wordmark } from '../../shared/brand/art.jsx';
+import { MenuGameIcon } from '../MenuGameIcon.jsx';
 import { getGameModeSupport } from '../../shared/game-mode-support.mjs';
 import { gameModePath } from '../game-mode-navigation.js';
 import homeStyles from './home-rebuild.css';
@@ -38,17 +37,12 @@ export function HomeGroups({ account, groups = [], calls = [], onOpen }) {
 }
 
 function GameCard({ game, index, onOpen }) {
-  const Icon = game.icon;
   const support = getGameModeSupport(game.id);
   return (
     <button type="button" data-design-id={`game-card.${game.id}`} className={`game-card home-game-row ${game.soon ? 'is-soon' : ''}`} style={{ '--game-accent': game.accent, '--delay': `${index * 25}ms` }}
       onPointerDown={ripple} onClick={() => onOpen(game)} aria-label={`${game.name}: ${game.tagline}`} aria-haspopup="dialog" disabled={!!game.soon}>
-      <span className="icon clay-stage clay-static" aria-hidden="true"><span className="clay-lift">{Icon ? <Icon /> : '🎮'}</span></span>
-      <span className="home-game-copy"><span className="name">{game.name}</span><span className="tagline">{game.tagline}</span><span className="meta">
-        <span><IconUsers /> <bdi>{game.players.min}–{game.players.max}</bdi></span>
-        <span><IconClock /> <bdi>{game.duration}</bdi></span>
-        <span className="home-game-capability">{support?.online && support.local ? 'أونلاين · مع العائلة' : support?.online ? 'أونلاين' : 'مع العائلة'}</span>
-      </span></span>
+      <MenuGameIcon id={game.id} />
+      <span className="home-game-copy"><span className="name">{game.name}</span><span className="home-game-capability">{support?.online && support.local ? 'أونلاين ومع العائلة' : support?.online ? 'أونلاين' : 'مع العائلة'}</span></span>
       <IconBack className="home-game-arrow" aria-hidden="true" />
     </button>
   );
@@ -58,24 +52,33 @@ export function GameModeSheet({ game, onClose, onSelect }) {
   if (!game) return null;
   const support = getGameModeSupport(game.id);
   return <Sheet open title={game.name} onClose={onClose} data-design-screen="home.game-mode">
-    <p className="game-mode-intro">كيف تحبّوا تلعبوا؟</p>
+    <MenuGameIcon id={game.id} className="game-mode-art" />
+    <p className="game-mode-intro">كيف تودون اللعب؟</p>
     <div className="game-mode-options" aria-label="اختر نمط اللعب">
       <button type="button" className="game-mode-choice is-online" data-design-id="online-mode" disabled={!support?.online} onClick={() => onSelect('online')}>
-        <span className="game-mode-symbol" aria-hidden="true"><LammaIcon name="game" /></span><span><strong>أونلاين</strong><small>{support?.online ? support.unit === 'teams' ? 'جوال لكل فريق · يحتاج الإنترنت' : 'كل لاعب من جواله · يحتاج الإنترنت' : 'غير متاح لهذه اللعبة حاليًا'}</small></span><IconBack aria-hidden="true" />
+        <svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20m-10-10c-6 4-6 16 0 20 6-4 6-16 0-20Z"/></svg><strong>أونلاين</strong>
       </button>
       <button type="button" className="game-mode-choice is-local" data-design-id="local-mode" disabled={!support?.local} onClick={() => onSelect('local')}>
-        <span className="game-mode-symbol" aria-hidden="true"><IconUsers /></span><span><strong>مع العائلة</strong><small>{support?.local ? 'على جوال واحد' : 'متاحة أونلاين فقط'}</small></span><IconBack aria-hidden="true" />
+        <IconUsers /><strong>مع العائلة</strong>
       </button>
     </div>
-    <p className="game-mode-note">اللعب مجاني؛ بلس لتخصيص البروفايل وإطار الصورة.</p>
+    <ul className="game-mode-explain">
+      {support?.online && <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true"><rect x="7" y="2" width="10" height="20" rx="2.5"/><path d="M10 5h4m-3 14h2"/></svg>{support.unit === 'teams' ? 'لكل فريق جهاز' : 'لكل لاعب جهاز'}</li>}
+      {support?.local && <li><IconUsers />جهاز واحد للمجموعة</li>}
+      {(!support?.online || !support?.local) && <li>{support?.online ? 'هذه اللعبة متاحة أونلاين فقط.' : 'هذه اللعبة متاحة مع العائلة فقط.'}</li>}
+    </ul>
   </Sheet>;
 }
 
 export function Home() {
   const { sound, haptics, version } = usePlatform();
   const account = useAccount();
-  const profiles = useProfiles();
+  const socialUI = useSocialUI();
   const [selectedGame, setSelectedGame] = useState(null);
+  const [searching, setSearching] = useState(false);
+  const [query, setQuery] = useState('');
+  const normalize = value => value.replace(/[\u064B-\u065F\u0670]/g, '').replace(/[أإآ]/g, 'ا').trim();
+  const games = GAMES.filter(game => normalize(game.name).includes(normalize(query)));
   const opening = useRef(false);
   useEffect(() => reportSimulatorHomeReady({ accountReady: account.ready, gameCount: GAMES.length }), [account.ready]);
   const open = (game) => {
@@ -95,17 +98,16 @@ export function Home() {
     <Screen data-design-screen="home" dir={getDirection()} className="stack home-screen" aria-label="الألعاب">
       <style>{homeStyles}</style>
       <header data-design-id="header" className="home-head">
-        <img className="home-header-art" src="art/home/home-header-v1.webp" width="1536" height="512" alt="" aria-hidden="true" decoding="async" />
-        <div data-design-id="brand" className="brand">
-          <BrandMark />
-          <div><Wordmark /><div className="brand-sub">ألعاب جمعتنا</div></div>
-        </div>
-        <button type="button" data-design-id="profile" className="home-profile" aria-label="بروفايلي" title="بروفايلي" onClick={() => navigate('/profile')}><ProfileAvatar user={profiles?.mine || account.user} size={64} /><span className="home-profile-membership"><MembershipBadge user={profiles?.mine || account.user} compact /></span></button>
+        <button type="button" data-design-id="requests-open" className="home-head-action" aria-label="طلبات الأصدقاء والدعوات" onClick={() => socialUI ? socialUI.show({ type: 'list', tab: 'requests' }) : navigate('/friends')}><LammaIcon name="bell" /></button>
+        <button type="button" data-design-id="profile" className="home-profile" aria-label="بروفايلي" title="بروفايلي" onClick={() => navigate('/profile')}><span data-design-id="brand">ميدان <bdi lang="en">MAYDAN</bdi></span></button>
+        <button type="button" data-design-id="home-search-open" className="home-head-action" aria-label={searching ? 'إغلاق بحث الألعاب' : 'البحث عن لعبة'} aria-expanded={searching} aria-controls={searching ? 'home-game-search' : undefined} onClick={() => { setSearching(!searching); if (searching) setQuery(''); }}><LammaIcon name={searching ? 'close' : 'search'} /></button>
       </header>
 
+      {searching && <div className="home-search"><label htmlFor="home-game-search" className="sr-only">اسم اللعبة</label><input data-design-id="search-input" id="home-game-search" value={query} placeholder="اسم اللعبة" onChange={event => setQuery(event.target.value)} /><LammaIcon name="search" /></div>}
       <section data-design-id="games" className="home-games" aria-labelledby="home-games-title">
-        <div className="home-section-heading"><h1 data-design-id="title" id="home-games-title">اختار لعبتك</h1><span className="badge">{gamesLabel(GAMES.length)}</span></div>
-        <div className="games-grid home-game-list">{GAMES.map((g, i) => <GameCard key={g.id} game={g} index={i} onOpen={open} />)}</div>
+        <h1 data-design-id="title" id="home-games-title" className="sr-only">اختار لعبتك</h1>
+        <div className="games-grid home-game-list">{games.map((g, i) => <GameCard key={g.id} game={g} index={i} onOpen={open} />)}</div>
+        {!games.length && <p className="home-no-games" role="status">لا توجد لعبة بهذا الاسم.</p>}
       </section>
       <p data-design-id="footer" className="home-footer">ألعاب الجهاز الواحد تعمل دون إنترنت · الغرف تحتاج اتصالًا <span>الإصدار {version}</span></p>
       <nav className="muted center legal-links" aria-label="الأسعار والسياسات" style={{ fontSize: 13 }}>

@@ -129,7 +129,7 @@ await build({
 });
 const ui = await import(pathToFileURL(path.join(temp, 'render.mjs')));
 // ورقة أنماط اللعبة تُصيَّر داخل الشجرة؛ نحذفها كي لا تُحسب أسماء الأصناف مرتين.
-const stripStyle = (html) => html.replace(/<style>[\s\S]*?<\/style>/g, '');
+const stripStyle = (html) => html.replace(/<style\b[^>]*>[\s\S]*?<\/style>/g, '');
 const setupMarkup = (account) => { forceSetup = true; try { return stripStyle(ui.badeeha(account)); } finally { forceSetup = false; } };
 const count = (html, needle) => html.split(needle).length - 1;
 

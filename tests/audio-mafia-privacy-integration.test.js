@@ -20,7 +20,7 @@ const modules = {
   '../shared/account/context.js': 'export const useAccount=()=>globalThis.__mafiaAudioFixture.account;',
   '../shared/account/api.js': 'export const resolveAccountServer=()=>"https://isolated.invalid";',
   '../shared/account/SignInSheet.jsx': 'export const SignInSheet=()=>null;',
-  '../shared/ui/components.jsx': "import React from 'react';export const Button=({children,...p})=>React.createElement('button',p,children);export const Modal=({children,title,onClose})=>React.createElement('section',{'data-testid':'social-modal'},title,children,React.createElement('button',{onClick:onClose},'إغلاق'));",
+  '../shared/ui/components.jsx': "import React from 'react';export const Button=({children,...p})=>React.createElement('button',p,children);export const Modal=({children,title,onClose})=>React.createElement('section',{'data-testid':'social-modal'},title,children,React.createElement('button',{onClick:onClose},'إغلاق'));export const Sheet=Modal;",
   '../shared/ui/useVisualViewport.js': 'export const useVisualViewport=()=>{};',
   '../shared/ui/dialog-interaction.js': 'export const activateDialog=()=>()=>{};',
   '../platform/context.js': 'export const usePlatform=()=>({sound:globalThis.__mafiaAudioFixture.sound});',

@@ -14,7 +14,8 @@ import { TOOLS, TEAM_STYLE, MAYDAN_TIER_LABELS, TYPE_PROMPT, answerText } from '
 import { questionAssistance } from '../games/badeeha/assistance.js';
 import { rememberBadeehaQuestions } from '../games/badeeha/persistence.js';
 import { mulberry32 } from '../shared/lib/rng.js';
-import BADEEHA_CSS from '../games/badeeha/styles.css';
+import BADEEHA_CSS from '../games/badeeha/styles.css?sheet';
+import { PresentationStyles } from '../shared/ui/PresentationStyles.jsx';
 import { BADEEHA_TIMERS, arabicNumber as number } from './shared.js';
 
 const { MODES, ROUND_SIZES, questionId } = MaydanLogicBeta;
@@ -186,7 +187,7 @@ export function BadeehaMatch({ state, me, isHost, disabled, act, clockOffset, sp
   </section>;
 
   return <section data-design-screen={`online.badeeha.${state.phase}`} className="stack online-badeeha">
-    <div className="m-root m-embedded" dir="rtl"><style>{BADEEHA_CSS}{EMBED_CSS}</style><div className="stack">
+    <div className="m-root m-embedded" dir="rtl"><PresentationStyles sheet={BADEEHA_CSS}/><style>{EMBED_CSS}</style><div className="stack">
       <div className="row-between">
         <span data-design-id="turn" className="badeeha-turn" style={{ '--team': turn?.color }}><i aria-hidden="true" />{turn ? (myTurn ? 'دور فريقك' : `الدور: ${turn.name}`) : '—'}</span>
         <span data-design-id="round" className="online-footnote">{mode.icon} {mode.label} · السؤال {number(Math.min(state.round, state.rounds))} من {number(state.rounds)}</span>

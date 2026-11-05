@@ -60,3 +60,10 @@
 .call-inline-summary small { margin-top: 3px; color: #bad3c4; font-size: 11px; }
 .call-inline-controls .call-dock-button { border-color: transparent; border-radius: 12px; background: transparent; box-shadow: none; -webkit-backdrop-filter: none; backdrop-filter: none; }
 @media (prefers-reduced-motion: reduce) { .call-dock-avatar > .player-avatar { transition: none; } }
+.call-controls-dialog .call-controls-members { grid-template-columns:repeat(auto-fit,minmax(90px,1fr)); }
+.call-controls-dialog .call-controls-member { flex-direction:column; justify-content:flex-start; gap:6px; min-height:100px; padding:9px 5px; border:1px solid #e9ddd1; border-radius:14px; background:#f4ebe4; text-align:center; }
+.call-controls-dialog .call-controls-member.is-speaking { border-color:#0c7f85; box-shadow:inset 0 0 0 1px #0c7f85; background:#e5f0ec; }
+.call-controls-dialog .call-controls-member > span:nth-child(2) { flex:none; }
+.call-controls-dialog .call-controls-member > svg { width:16px; height:16px; }
+.call-controls-dialog .call-controls-actions { grid-template-columns:repeat(2,minmax(0,1fr)); }
+.call-controls-dialog .call-controls-actions .is-danger { grid-column:1 / -1; background:linear-gradient(145deg,#c84c50,#af373e); color:white; border-color:#a53740; }

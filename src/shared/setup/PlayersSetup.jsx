@@ -2,7 +2,7 @@ import { Avatar, AvatarPicker, ClayStage } from '../brand/art.jsx';
 // اختيار اللاعبين من دفتر اللاعبين (أو إضافة لاعب سريع)، بترتيب الاختيار.
 import React, { useState } from 'react';
 import { Button, Card, Modal } from '../ui/components.jsx';
-import { IconPlus } from '../ui/icons.jsx';
+import { IconCheck, IconClose, IconPlus, IconUsers } from '../ui/icons.jsx';
 import { addPlayer, ROSTER_LIMIT } from './roster.js';
 import { useSubmitKey } from '../ui/useSubmitKey.js';
 
@@ -31,24 +31,25 @@ export function PlayersSetup({ roster, setRoster, min = 2, max = 10, accent, onS
   const canStart = players.length >= min && !startDisabled;
 
   return (
-    <div data-design-screen="play-setup" data-design-id="players-setup" className="stack">
-      <Card>
-        <div className="row-between" style={{ marginBottom: 10 }}>
-          <span className="card-title">اللاعبون</span>
-          <span className="badge">{players.length}/{max}</span>
+    <div data-design-screen="play-setup" data-design-id="players-setup" className="stack players-setup">
+      <Card className="players-setup-card">
+        <div className="row-between players-setup-heading">
+          <span className="card-title"><IconUsers /> اللاعبون</span>
+          <span className="badge" aria-label={`${players.length} من ${max} لاعبين`}>{players.length}/{max}</span>
         </div>
-        <div data-design-id="players" className="chips">
+        <div data-design-id="players" className="chips players-setup-list">
           {roster.map((p) => {
             const order = selected.indexOf(p.id);
             return (
               <button key={p.id} type="button" data-design-id="player-choice" className={`chip ${order >= 0 ? 'selected' : ''}`} style={{ '--chip-color': p.color }} aria-pressed={order >= 0} onClick={() => toggle(p.id)}>
-                {order >= 0 && <span className="order" aria-hidden="true">{order + 1}</span>}
-                <ClayStage className="clay-static no-contact"><Avatar player={p} className="avatar" /></ClayStage>{p.name}
+                <ClayStage className="clay-static no-contact"><Avatar player={p} className="avatar" /></ClayStage>
+                <span className="players-setup-name">{p.name}</span>
+                <span className="players-setup-selection" aria-hidden="true">{order >= 0 ? <><b>{order + 1}</b><IconClose /></> : <IconCheck />}</span>
               </button>
             );
           })}
           {roster.length < ROSTER_LIMIT && (
-            <button type="button" data-design-id="add-player" className="chip chip-add" onClick={() => setAdding(true)}><IconPlus /> لاعب جديد</button>
+            <button type="button" data-design-id="add-player" className="chip chip-add" onClick={() => setAdding(true)}><IconPlus /> إضافة لاعب</button>
           )}
         </div>
         {roster.length === 0 && <p className="card-muted" style={{ marginTop: 10 }}>أضف لاعبين إلى الدفتر مرة واحدة، ويُعاد استخدامهم في كل الألعاب.</p>}

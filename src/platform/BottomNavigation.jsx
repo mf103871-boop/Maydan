@@ -11,7 +11,7 @@ import css from './bottom-navigation.css';
 const paths = {
   games: 'M7 7h10a4 4 0 0 1 4 3.4l1 6.1a2.5 2.5 0 0 1-4.2 2.2L15 16H9l-2.8 2.7A2.5 2.5 0 0 1 2 16.5l1-6.1A4 4 0 0 1 7 7ZM7 10v5M4.5 12.5h5M16 11h.01M19 14h.01M9 7V5h6',
   friends: 'M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M16 3a4 4 0 0 1 0 8M22 21v-2a4 4 0 0 0-3-3.87M13 7a4 4 0 1 1-8 0 4 4 0 0 1 8 0Z',
-  store: 'm3 9 2-6h14l2 6M3 9v2a3 3 0 0 0 6 0 3 3 0 0 0 6 0 3 3 0 0 0 6 0V9ZM5 14v7h14v-7M9 21v-5h6v5M9 3v6M15 3v6',
+  store: 'M5 8h14l2 12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1L5 8Zm3 0V6a4 4 0 0 1 8 0v2',
   settings: 'm9.5 3-.6 2.3-2 .9L4.8 5.6 2.3 10l1.7 1.6v1L2.3 14l2.5 4.4 2.1-.6 2 .9.6 2.3h5l.6-2.3 2-.9 2.1.6 2.5-4.4-1.7-1.5v-1l1.7-1.5-2.5-4.4-2.1.6-2-.9-.6-2.3h-5ZM16 12a4 4 0 1 1-8 0 4 4 0 0 1 8 0Z',
 };
 const editable = element => element?.matches?.('textarea,input:not([type="range"]):not([type="checkbox"]):not([type="radio"]):not([type="button"]),[contenteditable="true"]');
@@ -76,7 +76,7 @@ export function BottomNavigation({ route }) {
     if (event.button !== 0 || event.metaKey || event.ctrlKey || event.altKey || event.shiftKey) return;
     event.preventDefault();
     sound.play('click'); haptics.vibrate('selection');
-    if (route.path === item.path) {
+    if (route.path === item.path && !(item.id === 'settings' && route.params.section)) {
       if (item.id === 'friends') ui?.resetSection?.();
       window.dispatchEvent(new CustomEvent('maydan-menu-reselect', { detail: { section: item.id } }));
       window.scrollTo({ top: 0, behavior: 'instant' });
@@ -90,18 +90,19 @@ export function MenuScrollRestoration({ route }) {
   const account = useAccount();
   const owner = account.ready && account.signedIn ? account.user?.id || 'guest' : 'guest';
   const positions = useRef(new Map());
-  const current = useRef(route.path);
+  const scrollPath = route.name === 'settings' && route.params.section ? `${route.path}?section=${route.params.section}` : route.path;
+  const current = useRef(scrollPath);
   const lastOwner = useRef(owner);
   useLayoutEffect(() => {
     if (lastOwner.current !== owner) {
       for (const key of positions.current.keys()) if (key.startsWith('/friends') || key.startsWith('/profile')) positions.current.delete(key);
       lastOwner.current = owner;
     }
-    current.current = route.path;
-    const restore = () => window.scrollTo({ top: positions.current.get(route.path) || 0, behavior: 'instant' });
+    current.current = scrollPath;
+    const restore = () => window.scrollTo({ top: positions.current.get(scrollPath) || 0, behavior: 'instant' });
     restore(); const frame = requestAnimationFrame(restore);
     return () => cancelAnimationFrame(frame);
-  }, [route.path, owner]);
+  }, [scrollPath, owner]);
   useEffect(() => {
     const save = () => positions.current.set(current.current, window.scrollY);
     const reset = () => positions.current.set(current.current, 0);
