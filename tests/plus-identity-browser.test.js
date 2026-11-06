@@ -42,7 +42,11 @@ for (const [name, engine] of [['chromium', chromium], ['webkit', webkit]]) test(
   });
   await new Promise(resolve => server.listen(0, '127.0.0.1', resolve));
   const origin = `http://127.0.0.1:${server.address().port}`;
-  const browser = await engine.launch({ headless: true });
+  // A browser that cannot start must fail this test, not keep the file alive on
+  // the listening server (the finally below only runs once a browser exists).
+  const browser = await engine.launch({ headless: true }).catch(async error => {
+    server.closeAllConnections(); await new Promise(resolve => server.close(resolve)); throw error;
+  });
   const observations = { engine: name, checks: [], physicalDevice: false, actualCatalogArtwork: true, uploadedPortraitFixture: true };
   const errors = [], outside = [], requests = [];
   let activePage, stage = 'successful-artwork';

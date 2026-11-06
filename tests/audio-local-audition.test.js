@@ -39,6 +39,16 @@ async function compiled(flag = true, origin = ORIGIN, privateFlag = false) {
   return { ...sandbox.module.exports, sandbox, source: await bundle.get(key) };
 }
 const settle = async () => { for (let i = 0; i < 12; i++) await new Promise(resolve => setImmediate(resolve)); };
+// A sample is verified with crypto.subtle.digest before it is decoded. The digest
+// runs on the libuv thread pool, so on a loaded runner it can outlast a fixed
+// number of event-loop turns. Wait for the observable step instead (bounded).
+const until = async (ready, label, ms = 5000) => {
+  const deadline = performance.now() + ms;
+  while (!ready()) {
+    if (performance.now() > deadline) assert.fail(`timed out waiting for ${label}`);
+    await new Promise(resolve => setTimeout(resolve, 1));
+  }
+};
 function environment(module, data, { missing = false, corrupt = false, deferred = false, stream = true } = {}) {
   const fetched = [], contexts = [], media = [], listeners = new Map(), decodes = [];
   const param = () => ({ value: 0, setValueAtTime(v) { this.value = v; }, setTargetAtTime(v) { this.value = v; }, cancelScheduledValues() {}, linearRampToValueAtTime(v) { this.value = v; } });
@@ -141,7 +151,7 @@ test('delayed decode is canceled by caller guards, identity reset and independen
     let current = true;
     const sound = module.createSound({ localAudition: data.options });
     sound.emit('game.correct', { id: 'accepted-before-decode', guard: () => current });
-    await settle(); assert.equal(env.decodes.length, 1);
+    await until(() => env.decodes.length > 0, `${interrupt}: the verified sample reaching decode`); await settle(); assert.equal(env.decodes.length, 1);
     if (interrupt === 'guard') current = false;
     if (interrupt === 'identity') sound.resetIdentity('account-B');
     if (interrupt === 'recording') { sound.setSuppressed(true, 'recorder-A'); sound.setSuppressed(true, 'recorder-B'); sound.resetIdentity('account-B'); sound.setSuppressed(false, 'recorder-A'); }
