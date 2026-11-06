@@ -3,7 +3,9 @@ name: Validate release candidate
 on:
   pull_request:
   push:
-    branches: [main]
+    # Isolated TestFlight branches are built and uploaded without a pull request, so
+    # they get the same release validation on every push (1.9 (54) shipped red unseen).
+    branches: [main, 'codex/isolated-*']
   workflow_dispatch:
 
 permissions:
