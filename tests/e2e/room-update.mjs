@@ -83,7 +83,7 @@ test('an updated room server keeps the seat and the reloaded page rejoins the sa
   }, { server: app.url, code, host });
   await page.goto(`${webOrigin}/#/room/${code}`);
   const enter = () => page.waitForFunction(() => {
-    const button = [...document.querySelectorAll('.splash button')].find((b) => !b.disabled && b.textContent.includes('الدخول بالصور المتاحة'));
+    const button = [...document.querySelectorAll('.splash button')].find((b) => !b.disabled && b.textContent.includes('الدخول بالمحتوى المتاح'));
     if (button) button.click();
     return !document.querySelector('.splash') && document.querySelector('[data-design-screen]');
   }, null, { timeout: 20_000 });

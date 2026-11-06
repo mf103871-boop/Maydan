@@ -103,7 +103,7 @@ test('one browser player plays a whole public Mafia match through the real UI', 
   await page.routeWebSocket(/livekit\.cloud/, (ws) => ws.close({ code: 1011, reason: 'provider unreachable in this test' }));
   await page.goto(`${webOrigin}/#/online/mafia`);
   await page.waitForFunction(() => {
-    const button = [...document.querySelectorAll('.splash button')].find((b) => !b.disabled && b.textContent.includes('الدخول بالصور المتاحة'));
+    const button = [...document.querySelectorAll('.splash button')].find((b) => !b.disabled && b.textContent.includes('الدخول بالمحتوى المتاح'));
     if (button) button.click();
     return !document.querySelector('.splash') && document.querySelector('[data-design-screen]');
   }, null, { timeout: 30_000 });
@@ -256,17 +256,19 @@ test('real host lobby controls remain hit-testable with the startup notice in bo
     assert.equal(values.controls.find(control => control.id === 'start').disabled, false, 'the real ready host can start');
     assert.equal(await page.locator('[data-design-id="player-seat"]').count(), 12);
     const lastCard = await page.locator('[data-design-id="player-seat"]').last().evaluate(card => {
-      const rail = card.closest('.mafia-player-rail'), grid = card.closest('.mafia-seats');
+      // The waiting seats scroll inside their own strip above the chat (.mafia-lobby-players).
+      const strip = card.closest('.mafia-lobby-players'), grid = card.closest('.mafia-seats');
       card.scrollIntoView({block:'nearest',inline:'nearest'});
       const rect = card.getBoundingClientRect(), hit = document.elementFromPoint(rect.x + rect.width/2, rect.y + rect.height/2);
-      const result = { hit: hit === card || card.contains(hit), top: rect.top, bottom: rect.bottom };
-      rail.scrollTop = 0; grid.scrollTop = 0; return result;
+      const result = { hit: hit === card || card.contains(hit), top: rect.top, bottom: rect.bottom, strip: !!strip };
+      if (strip) strip.scrollTop = 0; if (grid) grid.scrollTop = 0; return result;
     });
+    assert.ok(lastCard.strip, `${notice} ${width}: waiting seats left their scrolling strip`);
     assert.ok(lastCard.hit && lastCard.top >= 0 && lastCard.bottom <= height + 1, `${notice} ${width}: twelfth player is unreachable ${JSON.stringify(lastCard)}`);
   }
   try {
     await page.goto(`${webOrigin}/#/room/${code}`);
-    await page.waitForFunction(() => { const button = [...document.querySelectorAll('.splash button')].find(node => !node.disabled && node.textContent.includes('الدخول بالصور المتاحة')); button?.click(); return !document.querySelector('.splash') && document.querySelector('[data-design-screen="online.mafia.lobby"]'); }, null, { timeout: 30000 });
+    await page.waitForFunction(() => { const button = [...document.querySelectorAll('.splash button')].find(node => !node.disabled && node.textContent.includes('الدخول بالمحتوى المتاح')); button?.click(); return !document.querySelector('.splash') && document.querySelector('[data-design-screen="online.mafia.lobby"]'); }, null, { timeout: 30000 });
     await until(() => bots.every(client => client.state?.members.every(member => member.connected && member.ready)), 'layout host and bots ready');
     await page.waitForFunction(() => document.documentElement.hasAttribute('data-startup-background-visible'));
     for (const [width, height] of [[320,568],[390,844],[430,932],[844,390]]) { await page.setViewportSize({ width, height }); await page.evaluate(() => document.activeElement?.blur()); await controls('notice-visible', width, height); }

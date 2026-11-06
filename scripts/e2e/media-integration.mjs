@@ -64,7 +64,7 @@ try {
     Image.prototype.decode = function () { return gate.then(() => original.call(this)); };
   });
   await page.goto(`${BASE}/#/auth?code=local-media-fixture`, { waitUntil: 'domcontentloaded' });
-  await page.locator('.splash .loading-status').waitFor();
+  await page.locator('.splash .startup-download').waitFor();
   check('startup waits for actual decode and does not mount a hidden game', await page.locator('.home-screen, .game-frame').count() === 0);
   await shot('startup-loading-slow-decode');
   releaseImages(); // Startup now warms every active image before entering the app.
@@ -77,7 +77,7 @@ try {
   await page.evaluate(() => { location.hash = '#/settings?section=audio'; });
   await page.locator('#sound-volume').fill('35');
   await page.evaluate(() => { location.hash = '#/play/badeeha'; });
-  await page.locator('.m-hero-cta').click();
+  await page.locator('[data-design-screen="badeeha.setup"]').waitFor(); // 1.9 (54) opens the setup directly
   check('isolated mock Plus unlocks paid media packs', await page.locator('.m-category-pick.is-locked').count() === 0);
   const ids = ['general', 'silhouette', 'sound', 'blur', 'zoom', 'reveal'];
   const packs = await Promise.all(ids.map(async (id) => JSON.parse(await fs.readFile(path.join(ROOT, 'src/data/categories', `${id}.json`), 'utf8'))));
@@ -145,7 +145,7 @@ try {
   await page.reload({ waitUntil: 'domcontentloaded' });
   // The deliberate cache eviction above left other packs missing. Offline
   // startup must offer entry with the available images rather than claim 100%.
-  await page.getByRole('button', { name: 'الدخول بالصور المتاحة', exact: true }).click();
+  await page.getByRole('button', { name: 'الدخول بالمحتوى المتاح', exact: true }).click();
   await page.locator('.splash').waitFor({ state: 'detached' });
   await page.getByRole('button', { name: 'متابعة', exact: true }).click();
   await page.waitForFunction(() => document.querySelector('.m-audio audio')?.readyState >= 2);

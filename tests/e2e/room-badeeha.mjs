@@ -38,7 +38,7 @@ async function phone(hash, initialize) {
   const errors = []; page.on('pageerror', (error) => errors.push(error.message));
   await page.goto(`${webOrigin}/${hash}`);
   await page.waitForFunction(() => {
-    const button = [...document.querySelectorAll('.splash button')].find((b) => !b.disabled && b.textContent.includes('الدخول بالصور المتاحة'));
+    const button = [...document.querySelectorAll('.splash button')].find((b) => !b.disabled && b.textContent.includes('الدخول بالمحتوى المتاح'));
     if (button) button.click();
     return !document.querySelector('.splash') && document.querySelector('[data-design-screen]');
   }, null, { timeout: 20_000 });

@@ -73,8 +73,8 @@ const lockedCounts = async () => {
   // الخروج من شاشة اللعب يمر بحارس الخروج (استعادة ثم رجوع خطوة)، فمدته متغيرة: ننتظر
   // شاشة التفاصيل وزرها فعلًا بدل مهلة ثابتة.
   await go('#/game/badeeha?mode=local', 0);
-  await page.getByRole('button', { name: 'تخطي التعليمات', exact: true }).waitFor();
-  await page.getByRole('button', { name: 'تخطي التعليمات', exact: true }).click();
+  await page.getByRole('button', { name: 'إلى إعداد اللعبة', exact: true }).waitFor();
+  await page.getByRole('button', { name: 'إلى إعداد اللعبة', exact: true }).click();
   await page.locator('[data-design-screen="badeeha.setup"]').waitFor();
   await page.waitForSelector('.m-category-pick'); await page.waitForTimeout(500);
   return page.evaluate(() => ({ locked: document.querySelectorAll('.m-category-pick.is-locked').length, total: document.querySelectorAll('.m-category-pick').length }));
@@ -85,13 +85,13 @@ const apiCall = (p, body, token) => page.evaluate(async ({ API, p, body, token }
   const r = await fetch(`${API}${p}`, { method: 'POST', headers: { 'content-type': 'application/json', ...(token ? { authorization: `Bearer ${token}` } : {}) }, body: JSON.stringify(body) });
   return { status: r.status, body: await r.json().catch(() => null) };
 }, { API, p, body, token });
-// شاشة البداية لا تُغلق بالنقر عليها: تنتظر الصور حتى ثلاث ثوانٍ أو زر «الدخول بالصور المتاحة».
+// شاشة البداية لا تُغلق بالنقر عليها: تنتظر الصور حتى ثلاث ثوانٍ أو زر «الدخول بالمحتوى المتاح».
 // النقر على `.splash` نفسها كان ينجح مصادفةً حين تجهز الصور قبل أول خطوة، ويفشل حين تتأخر.
 // الشاشات لا تُركَّب قبل انتهاء البداية، فالانتظار على أول شاشة لا على غياب `.splash`
 // (قد لا تكون رُسمت بعد لحظة حدث load).
 const enter = () => page.waitForFunction(() => {
   const splash = document.querySelector('.splash');
-  const button = splash && [...splash.querySelectorAll('button')].find((b) => !b.disabled && b.textContent.includes('الدخول بالصور المتاحة'));
+  const button = splash && [...splash.querySelectorAll('button')].find((b) => !b.disabled && b.textContent.includes('الدخول بالمحتوى المتاح'));
   if (button) button.click();
   return !splash && !!document.querySelector('[data-design-screen]');
 }, null, { timeout: 15_000, polling: 200 });
@@ -102,7 +102,7 @@ await enter(); await page.waitForTimeout(300);
 
 // ١) كل الفئات مجانية؛ عرض بلس من المتجر يخص التخصيص فقط.
 let c = await lockedCounts(); check('anon all 78 packs free', c.locked === 0 && c.total === 78, JSON.stringify(c));
-await go('#/store'); await page.getByRole('button', { name: 'مزايا وأسعار ميدان بلس', exact: true }).click(); await page.waitForTimeout(600); await shot('01-anon-paywall');
+await go('#/store?tab=membership'); await page.getByRole('button', { name: 'عرض خيارات الاشتراك', exact: true }).click(); await page.waitForTimeout(600); await shot('01-anon-paywall');
 const pw = await page.evaluate(() => { const s = document.querySelector('.paywall'); return { open: !!s, reason: s && s.dataset.reason, text: s ? s.textContent : '' }; });
 check('optional cosmetics paywall opens from store', pw.open && pw.reason === 'cosmetics', pw.reason);
 check('paywall online (no offline notice)', !/دون اتصال/.test(pw.text));
@@ -119,7 +119,7 @@ await page.evaluate(() => [...document.querySelectorAll('.paywall .account-redee
 check('back returns to plans and focuses the redeem trigger', await page.evaluate(() => !document.querySelector('.paywall form') && !!document.querySelector('.paywall-plans') && document.activeElement && document.activeElement.classList.contains('paywall-redeem')));
 await page.evaluate(() => document.querySelector('.paywall-redeem').click()); await page.waitForTimeout(200);
 await page.keyboard.press('Escape'); await page.waitForTimeout(600);
-await go('#/store'); await page.getByRole('button', { name: 'مزايا وأسعار ميدان بلس', exact: true }).click(); await page.waitForTimeout(600);
+await go('#/store?tab=membership'); await page.getByRole('button', { name: 'عرض خيارات الاشتراك', exact: true }).click(); await page.waitForTimeout(600);
 check('reopened paywall starts on plans', await page.evaluate(() => !!document.querySelector('.paywall .paywall-plans') && !document.querySelector('.paywall form')));
 await page.evaluate(() => document.querySelector('.paywall-redeem').click()); await page.waitForTimeout(300);
 await page.keyboard.press('Escape'); await page.waitForTimeout(300);
@@ -134,7 +134,7 @@ check('dev sign-in 200', signin.status === 200 && !!signin.body?.session?.token,
 const token = signin.body?.session?.token;
 await writeAccount('session', token);
 await reload();
-await go('#/settings'); await page.waitForTimeout(800); await shot('02-settings-signed-in');
+await go('#/settings?section=account'); await page.waitForTimeout(800); await shot('02-settings-signed-in');
 const settingsName = await page.locator('.account-identity b').innerText();
 check('settings shows user name', settingsName === 'مختبر');
 c = await lockedCounts(); check('signed-in free has no locked packs', c.locked === 0, JSON.stringify(c));
@@ -143,27 +143,27 @@ const grant = await apiCall('/api/dev/grant', { until: Date.now() + 30 * 86400e3
 check('dev grant 200 premium', grant.status === 200 && grant.body?.premium?.active === true, JSON.stringify(grant.body?.premium));
 await reload();
 c = await lockedCounts(); check('premium locked 0', c.locked === 0, JSON.stringify(c)); await shot('03-premium-picker');
-await go('#/settings'); await page.waitForTimeout(600); await shot('04-settings-premium');
+await go('#/settings?section=account'); await page.waitForTimeout(600); await shot('04-settings-premium');
 const st2 = await page.locator('.account-plan.is-plus').innerText(); check('settings shows plus active', /بلس فعّال/.test(st2));
-await go('#/game/beep'); const note1 = await page.evaluate(() => (document.querySelector('.details-plus-note') || {}).textContent || '');
+await go('#/game/beep'); const note1 = await page.evaluate(() => (document.querySelector('.instruction-facts .card-muted') || {}).textContent || '');
 check('premium: same free gameplay note', /مجانية|مجانًا/.test(note1), note1);
 
 // ٤) مستخدم ثانٍ بلا اشتراك: اللعب مجاني حتى بعد استدعاء واجهة التجربة القديمة.
 const s2 = await apiCall('/api/auth/dev', { subject: 'e2e-trial', name: 'تجريبي', client: 'web' }); const token2 = s2.body?.session?.token;
 await writeAccount('session', token2); await clearAccount('me', 'trials');
 await reload(); await go('#/game/beep'); await page.waitForTimeout(500);
-const note2 = await page.evaluate(() => (document.querySelector('.details-plus-note') || {}).textContent || '');
+const note2 = await page.evaluate(() => (document.querySelector('.instruction-facts .card-muted') || {}).textContent || '');
 check('free user: all gameplay free note', /مجانية|مجانًا/.test(note2), note2);
-await page.getByRole('button', { name: 'تخطي التعليمات', exact: true }).click();
-await page.locator('.game-frame [aria-label^="إعداد"]').waitFor();
-check('first play goes to setup (no paywall)', await page.evaluate(() => !document.querySelector('.paywall') && !!document.querySelector('.game-frame [aria-label^="إعداد"]')));
+await page.getByRole('button', { name: 'إلى إعداد اللعبة', exact: true }).click();
+await page.locator('.game-frame section.screen[aria-label^="إعداد"]').waitFor();
+check('first play goes to setup (no paywall)', await page.evaluate(() => !document.querySelector('.paywall') && !!document.querySelector('.game-frame section.screen[aria-label^="إعداد"]')));
 // الواجهة القديمة لا تستهلك تجربة جديدة، و markTrial لم يعد يرسلها.
 const tr = await apiCall('/api/trials/beep', {}, token2); check('legacy trial endpoint does not charge play', tr.status === 200 && !tr.body?.trials?.beep, JSON.stringify(tr.body?.trials));
 await reload(); await go('#/game/beep'); await page.waitForTimeout(500);
-const note3 = await page.evaluate(() => (document.querySelector('.details-plus-note') || {}).textContent || '');
+const note3 = await page.evaluate(() => (document.querySelector('.instruction-facts .card-muted') || {}).textContent || '');
 check('after legacy trial request: still free', /مجانية|مجانًا/.test(note3), note3);
-await page.getByRole('button', { name: 'تخطي التعليمات', exact: true }).click();
-await page.locator('.game-frame [aria-label^="إعداد"]').waitFor(); await shot('05-trial-paywall');
+await page.getByRole('button', { name: 'إلى إعداد اللعبة', exact: true }).click();
+await page.locator('.game-frame section.screen[aria-label^="إعداد"]').waitFor(); await shot('05-trial-paywall');
 const pw2 = await page.evaluate(() => { const s = document.querySelector('.paywall'); return { open: !!s, reason: s && s.dataset.reason }; });
 check('repeat play has no paywall', !pw2.open, JSON.stringify(pw2));
 // الرئيسية: شارات.
@@ -178,8 +178,8 @@ await writeAccount('trials', { beep:true, mamnoo:true, jabeen:true, fabraka:true
 await reload();
 for (const game of ['beep','mamnoo','jabeen','fabraka','meenfina']) {
   await go(`#/game/${game}?mode=local`);
-  await page.getByRole('button', { name: 'تخطي التعليمات', exact: true }).click();
-  await page.locator('.game-frame [aria-label^="إعداد"]').waitFor();
+  await page.getByRole('button', { name: 'إلى إعداد اللعبة', exact: true }).click();
+  await page.locator('.game-frame section.screen[aria-label^="إعداد"]').waitFor();
   check(`spent legacy trial: ${game} setup opens freely`, !(await page.locator('.paywall').count()));
 }
 await go('#/');
@@ -191,7 +191,7 @@ const room201 = await apiCall('/api/rooms', { ...creds(), game: 'fabraka', name:
 const roomAnon = await apiCall('/api/rooms', { ...creds(), game: 'fabraka', name: 'مجهول' }); check('anon room create allowed', roomAnon.status === 201, String(roomAnon.status));
 
 // ٦) خروج من الإعدادات.
-await go('#/settings');
+await go('#/settings?section=account');
 const signoutButton = page.locator('[data-design-id="account-signout"]');
 check('sign-out button present', await signoutButton.isVisible());
 await Promise.all([page.waitForResponse(response => response.url().endsWith('/api/auth/signout') && response.request().method() === 'POST'), signoutButton.click()]);
@@ -214,7 +214,7 @@ check('legacy raw code erased after sign-in', await readAccount('promo') === nul
 await clearAccount('promo', 'me');
 const s4 = await apiCall('/api/auth/dev', { subject: 'e2e-secret', name: 'سرّي', client: 'web' }); const token4 = s4.body?.session?.token;
 await writeAccount('session', token4);
-await reload(); await go('#/settings'); await page.waitForTimeout(500);
+await reload(); await go('#/settings?section=account'); await page.waitForTimeout(500);
 await tap('لديك رمز هدية؟'); await page.waitForTimeout(300);
 await page.fill('input[aria-label="رمز الهدية"]', 'wrong-secret');
 await Promise.all([page.waitForResponse(response => response.url().endsWith('/api/redeem') && response.request().method() === 'POST'), page.locator('.account-redeem').getByRole('button', { name: 'تفعيل', exact: true }).click()]);
