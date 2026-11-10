@@ -217,7 +217,7 @@ jobs:
             python3 scripts/ios/verify_rewarded_bundle.py "$ipa"
           done
       - name: Preserve the ordinary signed IPA
-        if: ${{ !inputs.private_audio_preview }}
+        if: ${{ !inputs.private_audio_preview && !inputs.upload_to_testflight }}
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
         with:
           name: Maydan-iOS-${{ inputs.version }}-${{ inputs.build }}
