@@ -44,6 +44,8 @@ import { useVisualViewport } from '../shared/ui/useVisualViewport.js';
 import { OnlineDirectoryView, OnlineRoomRow, OnlineLobbyFrame } from './OnlineDirectoryView.jsx';
 import directoryCss from './online-directory.css';
 import { getOnlinePublicRooms } from './client.js';
+import { RewardedEntry, RewardedOffer } from '../shared/account/RewardedOffer.jsx';
+import { REWARDED_PREVIEW, ROOM_REWARDED_OFFER, rewardEvent } from '../shared/account/rewarded.js';
 
 const SERVER = resolveServerUrl(typeof __MAYDAN_ROOMS_URL__ !== 'undefined' && __MAYDAN_ROOMS_URL__ || config.serverUrl, typeof location === 'undefined' ? '' : location.origin);
 const arabic = arabicNumber;
@@ -54,7 +56,7 @@ export function Entry(props) {
   // Private drafts, open dialogs and pending callbacks belong to one identity.
   return <EntryView key={account.user?.id||'guest'} {...props}/>;
 }
-function EntryView({ initialCode = '', initialGame = 'meenfina', initialObserver = false, initialView = 'public', onJoined, onGameChange, onTutorial }) {
+function EntryView({ initialCode = '', initialGame = 'meenfina', initialObserver = false, initialView = 'public', rewarded = false, onJoined, onGameChange, onTutorial }) {
   const account = useAccount();
   const platform = usePlatform();
   const fallback = initialCode && account.user?.id ? readSaved(SERVER, socialJoinFallbackKey(account.user.id, initialCode)) : null;
@@ -164,7 +166,7 @@ function EntryView({ initialCode = '', initialGame = 'meenfina', initialObserver
     event.preventDefault(); if (busy) return;
     setError('');
     if (!name.trim()) { setError('NAME'); return; }
-    if (mode === 'create' && ['ersomha','mafia'].includes(game) && !account.user?.id) { setError('AUTH_REQUIRED'); return; }
+    if (mode === 'create' && (rewarded || ['ersomha','mafia'].includes(game)) && !account.user?.id) { setError('AUTH_REQUIRED'); return; }
     // A pending/failed availability read is not evidence that the feature is off.
     if (mafiaCreationBlocked) return;
     const normalized = normalizeCode(code);
@@ -179,13 +181,14 @@ function EntryView({ initialCode = '', initialGame = 'meenfina', initialObserver
     const generation=entryLifetime.current.generation;
     setBusy(true);
     try {
-      const pendingKey = mode === 'create' ? (game!=='mafia'&&roomVisibility==='public'?`pendingCreate:public:${game}:${submitOwner}`:game === 'meenfina' ? 'pendingCreate' : game === 'mafia' ? `pendingCreate:mafia:${submitOwner}` : `pendingCreate:${game}`) : `pendingJoin:${normalized}`;
+      const pendingKey = rewarded ? `pendingCreate:rewarded:${submitOwner}` : mode === 'create' ? (game!=='mafia'&&roomVisibility==='public'?`pendingCreate:public:${game}:${submitOwner}`:game === 'meenfina' ? 'pendingCreate' : game === 'mafia' ? `pendingCreate:mafia:${submitOwner}` : `pendingCreate:${game}`) : `pendingJoin:${normalized}`;
       let session = mode === 'join' ? readSaved(SERVER, normalized) : null;
       session ||= credentialsRef.current || readSaved(SERVER, pendingKey) || newCredentials();
       credentialsRef.current = session;
       save(SERVER, pendingKey, session); // Persist before HTTP so a retry can reclaim the same seat.
       const result = await post(SERVER, mode === 'create' ? '/api/rooms' : `/api/rooms/${normalized}/join`, { ...session, name: name.trim(), avatar, rounds, capabilities: ROOM_CAPABILITIES,
         // معرّف الجهاز يحتسب الغرفة المجانية لغير المسجّل على الخادم؛ الدخول برمز لا يحتاجه.
+        ...(rewarded ? { rewardedOffer: ROOM_REWARDED_OFFER } : {}),
         ...(mode === 'create' ? { game, deviceId: deviceId(), ...(game!=='mafia'?{directory:{visibility:roomVisibility,...(roomVisibility==='public'?{name:roomName}:{})}}:{}), ...(game === 'fabraka' ? { settings: fabrakaSettings } : game === 'ersomha' ? { settings: ersomhaSettings } : game === 'badeeha' ? { settings: badeehaRoom } : game === 'mafia' ? { settings: mafiaSettings } : {}) } : {}) }, { headers: account.authHeaders() });
       if (!requestCurrent(submitOwner,generation)) return;
       const stored = save(SERVER, result.code, session);
@@ -237,9 +240,10 @@ function EntryView({ initialCode = '', initialGame = 'meenfina', initialObserver
     <style>{directoryCss}</style>
     {game==='mafia'&&<style>{mafiaShellCss}</style>}
     {!SERVER && <p className="online-notice" role="status">الغرف غير متاحة بعد. تقدر تلعب ألعاب ميدان على جهاز واحد من الرئيسية.</p>}
-    {lastRoom && !initialCode && readSaved(SERVER, lastRoom) && <Button full onClick={() => onJoined(lastRoom, readSaved(SERVER, lastRoom), readSaved(SERVER, 'persistence') !== false)}>العودة إلى غرفتي <bdi>{lastRoom}</bdi></Button>}
+    {lastRoom && !rewarded && !initialCode && readSaved(SERVER, lastRoom) && <Button full onClick={() => onJoined(lastRoom, readSaved(SERVER, lastRoom), readSaved(SERVER, 'persistence') !== false)}>العودة إلى غرفتي <bdi>{lastRoom}</bdi></Button>}
     <Card>
-      {mode!=='public'&&<div data-design-id="entry-mode" className="online-tabs" role="group" aria-label="طريقة الدخول">
+      {rewarded && <p className="online-notice">تحدّي اللمّة التجريبي · غرفة خاصة. الأهلية تُراجع عند بدء المباراة.</p>}
+      {!rewarded&&mode!=='public'&&<div data-design-id="entry-mode" className="online-tabs" role="group" aria-label="طريقة الدخول">
         {!directoryOff&&<Button data-design-id="entry-public" disabled={busy} variant="ghost" onClick={() => { viewPicked.current = true; setMode('public'); setError(''); }}>الغرف العامة</Button>}
         <Button data-design-id="entry-create" disabled={busy} variant={mode === 'create' ? 'primary' : 'ghost'} aria-pressed={mode === 'create'} onClick={() => { viewPicked.current = true; openCreate(); }}>إنشاء غرفة</Button>
         <Button data-design-id="entry-join" disabled={busy} variant={mode === 'join' ? 'primary' : 'ghost'} aria-pressed={mode === 'join'} onClick={() => { viewPicked.current = true; setMode('join'); setError(''); credentialsRef.current = null; }}>دخول برمز</Button>
@@ -253,7 +257,7 @@ function EntryView({ initialCode = '', initialGame = 'meenfina', initialObserver
         help={<div className="stack"><p>أنشئ غرفة خاصة للرمز والدعوة، أو اختر إظهارها للعامة عند إنشائها. الجميع يدخل مجانًا.</p><p>المقاعد تتحدث تلقائيًا. الانضمام إلى مباراة جارية يخضع لقواعد كل لعبة.</p>{game==='fabraka'?<FabrakaRules/>:game==='ersomha'?<ErsomhaRules/>:game==='badeeha'?<BadeehaRules/>:<p>كل لاعب يصوّت بجواله. نحتاج ثلاثة لاعبين جاهزين لبدء مين فينا.</p>}</div>}
         renderRoom={room=><OnlineRoomRow room={room} title={room.roomName} subtitle={room.unit==='teams'?'فرق · جوال لكل فريق':room.status==='playing'&&room.joinable?'الانضمام للمباراة التالية':'لاعبون'} statusLabel={room.full?'مكتملة':room.status==='playing'?'يلعبون الآن':'بانتظار اللاعبين'} canJoin={room.joinable===true&&!room.full} disabled={busy||!account.user?.id} onJoin={joinPublicRoom}/>}/>}<ErrorNotice code={error}/></> : <form data-design-id="entry" className="stack" onSubmit={submit}>
         {mode==='join'&&game!=='mafia'&&<header className="online-directory-heading online-form-heading"><MenuGameIcon id={game}/><div><small>{gameInfo.name}</small><h2>الدخول برمز</h2></div></header>}
-        {mode==='create'&&game!=='mafia'&&<div className="online-public-create"><header className="online-directory-heading online-form-heading"><MenuGameIcon id={game}/><h2>إنشاء غرفة {gameInfo.name}</h2></header><label className="online-field">ظهور الغرفة<select data-design-id="room-visibility" aria-label="ظهور الغرفة" value={roomVisibility} disabled={busy} onChange={event=>{setRoomVisibility(event.target.value);credentialsRef.current=null;}}><option value="private">خاصة · رمز ودعوة فقط</option><option value="public" disabled={!account.user?.id||directory.enabled!==true}>عامة · تظهر في دليل {gameInfo.name}</option></select></label>{roomVisibility==='public'?<label className="online-field">اسم الغرفة<input data-design-id="room-name" aria-label="اسم الغرفة" maxLength={40} required minLength={2} value={roomName} onChange={event=>{setRoomName(event.target.value);credentialsRef.current=null;}}/></label>:<small>الغرفة الخاصة تظهر لمن ترسل له الرمز أو الدعوة.</small>}</div>}
+        {mode==='create'&&game!=='mafia'&&<div className="online-public-create"><header className="online-directory-heading online-form-heading"><MenuGameIcon id={game}/><h2>إنشاء غرفة {gameInfo.name}</h2></header>{!rewarded&&<label className="online-field">ظهور الغرفة<select data-design-id="room-visibility" aria-label="ظهور الغرفة" value={roomVisibility} disabled={busy} onChange={event=>{setRoomVisibility(event.target.value);credentialsRef.current=null;}}><option value="private">خاصة · رمز ودعوة فقط</option><option value="public" disabled={!account.user?.id||directory.enabled!==true}>عامة · تظهر في دليل {gameInfo.name}</option></select></label>}{roomVisibility==='public'?<label className="online-field">اسم الغرفة<input data-design-id="room-name" aria-label="اسم الغرفة" maxLength={40} required minLength={2} value={roomName} onChange={event=>{setRoomName(event.target.value);credentialsRef.current=null;}}/></label>:<small>الغرفة الخاصة تظهر لمن ترسل له الرمز أو الدعوة.</small>}</div>}
         {mafiaCreation&&<div className="mafia-create-heading"><h2>إنشاء مجلس</h2><p>{mafiaSettings.visibility==='public'?'غرفتك تظهر في القائمة، ويستطيع أي لاعب مسجّل الانضمام ما دامت فيها مقاعد.':'غرفتك لا تظهر في القائمة. شارك الرمز أو الدعوة مع من تريد.'}</p></div>}
         <label className="online-field">اسمك في الغرفة<input data-design-id="name-input" autoComplete="nickname" maxLength={20} value={name} onChange={(e) => setName(e.target.value)} placeholder="اكتب اسمك" required /></label>
         {game!=='mafia' && <details data-design-id="avatar-picker"><summary>تغيير الشخصية</summary><AvatarPicker value={AVATARS[avatar]} onChange={(emoji) => setAvatar(AVATARS.indexOf(emoji))} /></details>}
@@ -483,6 +487,7 @@ function ConnectedRoom({ code, session, stored, onLeft, onGameChange, onPromoted
   const [error, setError] = useState(stored ? '' : 'STORAGE');
   const [busy, setBusy] = useState(false);
   const [exitTarget, setExitTarget] = useState(null);
+  const [rewardBusy, setRewardBusy] = useState(false);
   const [safetyPlayer,setSafetyPlayer] = useState(null);
   const [updating, setUpdating] = useState(false);
   const clientRef = useRef(null);
@@ -520,6 +525,23 @@ function ConnectedRoom({ code, session, stored, onLeft, onGameChange, onPromoted
   }, [code, session, sound]);
   useEffect(() => { if (status === 'connected') setError((old) => old === 'STORAGE' ? old : ''); }, [status]);
   const phase = state?.phase;
+  const rewardedRoom = REWARDED_PREVIEW && state?.rewardedOffer === ROOM_REWARDED_OFFER;
+  const onRewardedAccess = useCallback(access => {
+    if (access === 'ticket' || access === 'plus' || access === 'trial') {
+      setError(current => current === 'REWARDED_REQUIRED' ? '' : current);
+    }
+  }, []);
+  const rewardedSeen = useRef(false);
+  const measuredMatch = useRef({ start: null, finish: null });
+  useEffect(() => {
+    if (rewardedRoom) rewardedSeen.current = true;
+    if (!REWARDED_PREVIEW || !rewardedSeen.current || ownershipMismatch || status !== 'connected' || state?.hostId !== session.id || !state.matchId || phase === 'lobby') return;
+    const event = phase === 'over' ? 'finish' : phase === 'vote' ? 'start' : null;
+    if (event && measuredMatch.current[event] !== state.matchId) {
+      measuredMatch.current[event] = state.matchId;
+      rewardEvent(ROOM_REWARDED_OFFER, event);
+    }
+  }, [rewardedRoom, ownershipMismatch, status, state?.hostId, state?.matchId, phase, session.id]);
   const mafiaVoice = useMafiaRoomVoice(ownershipMismatch ? null : state);
   useLayoutEffect(() => {
     if (ownershipMismatch || state?.game !== 'ersomha' || state.drawerId !== session.id || !['select', 'draw'].includes(phase)) return;
@@ -547,9 +569,11 @@ function ConnectedRoom({ code, session, stored, onLeft, onGameChange, onPromoted
   }, [sound, state?.game, state?._designPreview, phase, ownershipMismatch]);
   useEffect(() => { const lease = musicOwner.current; return () => sound.music.releaseScene(lease); }, [sound]);
   async function act(type, fields) {
-    if (busyRef.current || ownershipMismatch || observerSession) return false;
+    if (busyRef.current || ownershipMismatch || observerSession || (rewardedRoom && type === 'start' && rewardBusy)) return false;
     busyRef.current = true; setBusy(true); setError('');
-    try { await clientRef.current.command(type, { ...fields, matchId: state.matchId, round: state.round, ...(state.game === 'mafia' ? { phaseId: state.phaseId } : {}) }); return true; }
+    try { await clientRef.current.command(type, { ...fields, matchId: state.matchId, round: state.round,
+      ...(rewardedRoom && type === 'start' ? { accountAuthorization: account.authHeaders().Authorization } : {}),
+      ...(state.game === 'mafia' ? { phaseId: state.phaseId } : {}) }); return true; }
     catch (e) { if (e.code === 'PLUS_REQUIRED' && type === 'appearance') account.openPaywall({ reason: 'cosmetics' }); else setError(e.code === 'PLUS_REQUIRED' ? 'UPDATE_REQUIRED' : e.code); return false; }
     finally { busyRef.current = false; setBusy(false); }
   }
@@ -623,7 +647,14 @@ function ConnectedRoom({ code, session, stored, onLeft, onGameChange, onPromoted
     onReconnect={() => { clientRef.current.stop(); clientRef.current.start(); }}>
     {observerSession && state?.observer?.canPromote && <Button data-design-id="observer-join" disabled={disabled} onClick={promoteObserver}>احجز مقعدًا في المباراة التالية</Button>}
     {outdated || (status === 'ended' ? <Button full onClick={() => { clearCurrent(); setExitGuard(null); onLeft(); navigate('/online', { replace: true }); }}>العودة إلى الغرف</Button>
-      : state && <>{spectating && <p className="online-notice" role="status">انضممت بعد بداية المباراة: تتفرج الآن، وتلعب معهم من المباراة القادمة.</p>}{state.phase === 'lobby' && !observerSession ? <Lobby state={state} me={me} isHost={isHost} disabled={disabled} act={act} voice={mafiaVoice} onSafety={player=>setSafetyPlayer(player)} /> : state.game === 'fabraka'
+      : state && <>{spectating && <p className="online-notice" role="status">انضممت بعد بداية المباراة: تتفرج الآن، وتلعب معهم من المباراة القادمة.</p>}{state.phase === 'lobby' && !observerSession ? <>
+        <Lobby state={state} me={me} isHost={isHost} disabled={disabled || rewardBusy} act={act} voice={mafiaVoice} onSafety={player=>setSafetyPlayer(player)} />
+        {typeof __MAYDAN_REWARDED_PREVIEW__ !== 'undefined' && __MAYDAN_REWARDED_PREVIEW__ && rewardedRoom && isHost && status === 'connected' && !exitTarget &&
+          <RewardedOffer offer={ROOM_REWARDED_OFFER} surface="room-lobby" onBusy={setRewardBusy} onAccess={onRewardedAccess}
+            canPresent={() => !busyRef.current && clientRef.current?.connectionStatus === 'connected' &&
+              clientRef.current?.state?.phase === 'lobby' && clientRef.current?.state?.hostId === session.id}
+            onFree={() => setExitTarget('/online/meenfina')} />}
+      </> : state.game === 'fabraka'
         ? <FabrakaMatch state={state} me={me} disabled={disabled} isHost={isHost} act={act} clockOffset={clientRef.current?.clockOffset || 0} spectating={spectating} />
         : state.game === 'ersomha' ? <ErsomhaMatch state={state} me={me} disabled={disabled} isHost={isHost} act={act} client={clientRef.current} status={status} clockOffset={clientRef.current?.clockOffset || 0} drawerReady={!lamma?.activeCall || (lamma.activeCall._ownerId === account.user?.id && lamma.media?.userId === account.user?.id && lamma.media?.muted === true)} onReport={['draw', 'result'].includes(state.phase) ? reportDrawing : undefined} />
         : state.game === 'badeeha' ? <BadeehaMatch state={state} me={me} disabled={disabled} isHost={isHost} act={act} clockOffset={clientRef.current?.clockOffset || 0} spectating={spectating} />
@@ -639,7 +670,7 @@ function ConnectedRoom({ code, session, stored, onLeft, onGameChange, onPromoted
     {exitTarget && <ConfirmModal placement={state?.game==='mafia'?undefined:'bottom'} title={observerSession?'إنهاء المشاهدة؟':'تطلع من الغرفة؟'} message={observerSession?'تعود إلى دليل مجالس مافيا.':'مغادرتك تنهي مقعدك الحالي. إذا كنت المضيف تنتقل الإدارة للاعب متصل.'} confirmLabel="الخروج" confirmSound="none" cancelLabel="خلّيني ألعب" onConfirm={leave} onCancel={() => setExitTarget(null)} />}
   </RoomChrome>;
 }
-export function Online({ code = '', game = 'meenfina', observer = false, initialView = 'public', onTutorial }) {
+export function Online({ code = '', game = 'meenfina', observer = false, initialView = 'public', rewarded = false, onTutorial }) {
   const [activeGame,setActiveGame]=useState(observer?'mafia':game);
   const [session, setSession] = useState(() => code ? readSaved(SERVER, observer?`observer:${code}`:code) : null);
   const [stored, setStored] = useState(() => readSaved(SERVER, 'persistence') !== false);
@@ -649,6 +680,12 @@ export function Online({ code = '', game = 'meenfina', observer = false, initial
     else { setStored(isStored); setSession(nextSession); }
   }
   return <Screen data-design-screen={session && code ? undefined : 'online.entry'} className={`stack online-screen ${activeGame==='mafia'?'mafia-noir mafia-online-shell':''}`} aria-label={activeGame==='mafia'?'مافيا ميدان':'غرف ميدان'}>
-    {session && code ? <ConnectedRoom code={code} session={session} stored={stored} onLeft={() => setSession(null)} onGameChange={setActiveGame} onPromoted={joined} /> : <><TopBar data-design-id="topbar" title={ONLINE_GAMES[activeGame]?.name||'غرف ميدان'} end={<Button data-design-id="home" size="sm" onClick={() => navigate('/')}>الرئيسية</Button>} /><Entry onTutorial={onTutorial} initialCode={code} initialGame={observer?'mafia':game} initialObserver={observer} initialView={initialView} onJoined={joined} onGameChange={setActiveGame} /></>}
+    {session && code ? <ConnectedRoom code={code} session={session} stored={stored} onLeft={() => setSession(null)} onGameChange={setActiveGame} onPromoted={joined} /> : <>
+      <TopBar data-design-id="topbar" title={ONLINE_GAMES[activeGame]?.name||'غرف ميدان'} end={<Button data-design-id="home" size="sm" onClick={() => navigate('/')}>الرئيسية</Button>} />
+      <Entry onTutorial={onTutorial} initialCode={code} initialGame={observer?'mafia':game} initialObserver={observer} initialView={initialView} rewarded={REWARDED_PREVIEW && rewarded} onJoined={joined} onGameChange={setActiveGame} />
+      {typeof __MAYDAN_REWARDED_PREVIEW__ !== 'undefined' && __MAYDAN_REWARDED_PREVIEW__ && !code && game === 'meenfina' && (rewarded ?
+        <Button onClick={() => navigate('/online/meenfina', { replace: true })}>ارجع للمحتوى المجاني</Button> :
+        <RewardedEntry offer={ROOM_REWARDED_OFFER} onReady={() => navigate('/online/meenfina?rewarded=1')} onFree={() => navigate('/')} />)}
+    </>}
   </Screen>;
 }

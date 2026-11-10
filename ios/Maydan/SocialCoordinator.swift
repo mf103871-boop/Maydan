@@ -45,6 +45,9 @@ final class SocialCoordinator: NSObject {
     var onAudioActivityChange: (() -> Void)?
     var onAudioLifecycle: (([String: Any]) -> Void)?
     var isBusyForAppUpdate: Bool { call != nil || pendingCallId != nil || voice.isBusy }
+#if MAYDAN_REWARDED_PREVIEW || MAYDAN_REWARDED_ADS
+    var isBusyForRewardedUI: Bool { isBusyForAppUpdate || privateTurn || gameCommunicationLocked }
+#endif
 
     private struct NativeCall {
         let id: UUID

@@ -252,6 +252,10 @@ test('ترحيلات D1 جمل مستقلة بسطر واحد يقبلها exec'
       'ALTER TABLE mafia_reports ADD COLUMN match_id INTEGER;',
       'ALTER TABLE mafia_reports ADD COLUMN review_started_at INTEGER;',
       'ALTER TABLE mafia_reports ADD COLUMN reviewer_id TEXT;',
+      // 0029: only the new preview ledger's constrained concurrency indexes.
+      "CREATE UNIQUE INDEX IF NOT EXISTS rewarded_claims_trial ON rewarded_match_claims(environment,user_id,offer) WHERE source='trial' AND state IN ('reserved','committed');",
+      "CREATE UNIQUE INDEX IF NOT EXISTS rewarded_claims_ticket ON rewarded_match_claims(ticket_id) WHERE ticket_id IS NOT NULL AND state IN ('reserved','committed');",
+      "CREATE UNIQUE INDEX IF NOT EXISTS rewarded_claims_reserved ON rewarded_match_claims(environment,user_id,offer) WHERE state='reserved' AND source IN ('trial','ticket');",
       // 0028: old sessions retain NULL and cannot receive retroactive XP.
       'ALTER TABLE player_sessions ADD COLUMN progression_reward_version INTEGER;'].includes(statement) ||
     /^CREATE UNIQUE INDEX IF NOT EXISTS social_(group_invites_pending|calls_open|call_one_active) /.test(statement) ||

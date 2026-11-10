@@ -1,0 +1,8 @@
+-- Preview entitlement ledger. A verified attempt is the one-use ticket.
+CREATE TABLE IF NOT EXISTS rewarded_attempts (id TEXT PRIMARY KEY, environment TEXT NOT NULL, user_id TEXT NOT NULL REFERENCES users(id) ON DELETE CASCADE, offer TEXT NOT NULL, custom_hash TEXT NOT NULL UNIQUE, ad_unit TEXT NOT NULL, reward_item TEXT NOT NULL, state TEXT NOT NULL CHECK(state IN ('pending','cancelled','verified')), created_at INTEGER NOT NULL, expires_at INTEGER NOT NULL, verified_at INTEGER, transaction_id TEXT UNIQUE);
+CREATE INDEX IF NOT EXISTS rewarded_attempts_account ON rewarded_attempts(environment,user_id,offer,state,expires_at);
+CREATE TABLE IF NOT EXISTS rewarded_match_claims (match_id TEXT PRIMARY KEY, environment TEXT NOT NULL, user_id TEXT NOT NULL REFERENCES users(id) ON DELETE CASCADE, offer TEXT NOT NULL, source TEXT CHECK(source IN ('plus','trial','ticket')), ticket_id TEXT, state TEXT NOT NULL CHECK(state IN ('reserved','committed','released')), updated_at INTEGER NOT NULL);
+CREATE INDEX IF NOT EXISTS rewarded_claims_account ON rewarded_match_claims(environment,user_id,offer,state);
+CREATE UNIQUE INDEX IF NOT EXISTS rewarded_claims_trial ON rewarded_match_claims(environment,user_id,offer) WHERE source='trial' AND state IN ('reserved','committed');
+CREATE UNIQUE INDEX IF NOT EXISTS rewarded_claims_ticket ON rewarded_match_claims(ticket_id) WHERE ticket_id IS NOT NULL AND state IN ('reserved','committed');
+CREATE UNIQUE INDEX IF NOT EXISTS rewarded_claims_reserved ON rewarded_match_claims(environment,user_id,offer) WHERE state='reserved' AND source IN ('trial','ticket');

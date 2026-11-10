@@ -34,6 +34,24 @@ on:
         required: true
         type: boolean
         default: false
+      rewarded_mode:
+        description: 'Rewarded ads mode. Owned TestFlight requires verified AdMob Test apps and the isolated API.'
+        type: choice
+        default: 'off'
+        options:
+          - 'off'
+          - testflight
+          - testflight-owned
+          - live
+      admob_app_id:
+        description: 'Owned iOS AdMob App ID for live, optional with testflight'
+        type: string
+      admob_rewarded_unit_id:
+        description: 'Owned Rewarded Unit ID for live or owned TestFlight builds'
+        type: string
+      admob_test_version:
+        description: 'Marketing version confirmed with Test mode ON in AdMob Test apps, for owned TestFlight only'
+        type: string
 
 permissions:
   contents: read
@@ -54,6 +72,10 @@ jobs:
       MAYDAN_PRIVATE_AUDIO_PREVIEW: ${{ inputs.private_audio_preview && '1' || '0' }}
       MAYDAN_WARMTH_PREVIEW: ${{ inputs.warmth_audio_preview && '1' || '0' }}
       MAYDAN_CANDIDATE_ASSET_ROOT: ${{ inputs.private_audio_preview && !inputs.warmth_audio_preview && format('{0}/public', github.workspace) || '' }}
+      IOS_REWARDED_MODE: ${{ inputs.rewarded_mode || 'off' }}
+      IOS_ADMOB_APP_ID: ${{ inputs.admob_app_id }}
+      IOS_ADMOB_REWARDED_UNIT_ID: ${{ inputs.admob_rewarded_unit_id }}
+      IOS_ADMOB_TEST_VERSION: ${{ inputs.admob_test_version }}
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
         with:
@@ -72,7 +94,9 @@ jobs:
           node-version: 22
           cache: npm
       - name: Select the approved API environment
-        run: node scripts/ios/release-environment.mjs --github-env
+        run: |
+          node scripts/ios/release-environment.mjs --github-env
+          node --input-type=module -e "import { resolveRewardedBuild } from './scripts/ios/rewarded-config.mjs'; console.log('Rewarded configuration: ' + (resolveRewardedBuild(process.env)?.mode || 'off'));"
       - name: Materialize authenticated private audio candidates
         if: ${{ inputs.private_audio_preview && !inputs.warmth_audio_preview }}
         env:
@@ -88,14 +112,15 @@ jobs:
           python3 - <<'PY'
           import glob, os, re
           candidates = []
+          minimum = (26, 2) if os.environ.get('IOS_REWARDED_MODE') != 'off' else (26, 0)
           for app in glob.glob('/Applications/Xcode_*.app'):
               match = re.fullmatch(r'Xcode_(\d+(?:\.\d+)*)\.app', os.path.basename(app))
               if match:
                   version = tuple(map(int, match[1].split('.')))
-                  if version[0] >= 26:
+                  if (version + (0,))[:2] >= minimum:
                       candidates.append((version, app))
           if not candidates:
-              raise SystemExit('A stable Xcode 26 or newer is required.')
+              raise SystemExit(f'A stable Xcode {minimum[0]}.{minimum[1]} or newer is required.')
           selected = max(candidates)[1] + '/Contents/Developer'
           with open(os.environ['GITHUB_ENV'], 'a') as out:
               out.write('DEVELOPER_DIR=' + selected + '\n')
@@ -111,15 +136,17 @@ jobs:
           python3 scripts/ios/verify_environment_storage.py
           python3 -m unittest discover -s scripts/ios -p 'test_*.py'
           npm run ios:prepare
-          node scripts/ios/release-environment.mjs --verify-native ios/Maydan/www/native-config.json
+      - name: Verify the prepared native API
+        run: node scripts/ios/release-environment.mjs --verify-native "$IOS_PROJECT_DIR/Maydan/www/native-config.json"
       - name: Build and launch the Release app on iPhone Simulator
         run: |
-          xcodebuild -project ios/Maydan.xcodeproj -scheme Maydan \
+          xcodebuild -project "$IOS_PROJECT_DIR/Maydan.xcodeproj" -scheme Maydan \
             -configuration Release -sdk iphonesimulator \
             -destination 'generic/platform=iOS Simulator' \
             -derivedDataPath ios/build/simulator CODE_SIGNING_ALLOWED=NO ARCHS=arm64 \
             "MARKETING_VERSION=$IOS_VERSION" "CURRENT_PROJECT_VERSION=$IOS_BUILD" build
           python3 scripts/ios/verify_runtime_dependencies.py ios/build/simulator/Build/Products/Release-iphonesimulator/Maydan.app
+          python3 scripts/ios/verify_rewarded_bundle.py ios/build/simulator/Build/Products/Release-iphonesimulator/Maydan.app
           python3 scripts/ios/smoke_release.py \
             --app ios/build/simulator/Build/Products/Release-iphonesimulator/Maydan.app \
             --output-dir ios/build/release-smoke
@@ -168,7 +195,7 @@ jobs:
           xcodebuild -version
           # Only the app target maps this custom profile setting. Swift Package
           # resource bundles must retain their own bundle IDs and no profile.
-          xcodebuild -project ios/Maydan.xcodeproj -scheme Maydan \
+          xcodebuild -project "$IOS_PROJECT_DIR/Maydan.xcodeproj" -scheme Maydan \
             -configuration Release -sdk iphoneos -destination 'generic/platform=iOS' \
             -archivePath ios/build/Maydan.xcarchive \
             "MARKETING_VERSION=$IOS_VERSION" "CURRENT_PROJECT_VERSION=$IOS_BUILD" \
@@ -179,6 +206,7 @@ jobs:
           python3 scripts/ios/signing.py archive ios/build/Maydan.xcarchive/Products/Applications/Maydan.app/Info.plist
           node scripts/ios/release-environment.mjs --verify-native ios/build/Maydan.xcarchive/Products/Applications/Maydan.app/www/native-config.json
           python3 scripts/ios/verify_runtime_dependencies.py ios/build/Maydan.xcarchive/Products/Applications/Maydan.app
+          python3 scripts/ios/verify_rewarded_bundle.py ios/build/Maydan.xcarchive/Products/Applications/Maydan.app
       - name: Export the signed IPA without uploading
         run: |
           xcodebuild -exportArchive -archivePath ios/build/Maydan.xcarchive \
@@ -186,6 +214,7 @@ jobs:
             -exportPath ios/build/export
           for ipa in ios/build/export/*.ipa; do
             python3 scripts/ios/verify_runtime_dependencies.py "$ipa"
+            python3 scripts/ios/verify_rewarded_bundle.py "$ipa"
           done
       - name: Preserve the ordinary signed IPA
         if: ${{ !inputs.private_audio_preview }}

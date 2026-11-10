@@ -71,7 +71,11 @@ function ScreenHost({ route }) {
   else if (route.name === 'game') screen = <GameDetails key={`game-${route.params.id}`} id={route.params.id} mode={route.params.mode} />;
   else if (route.name === 'mafia-tutorial') screen = route.params.lab||route.params.labs ? <MafiaLabs key={`mafia-labs-${route.params.lab||'hub'}`} courseId={route.params.lab}/> : <MafiaTutorial key="mafia-tutorial" />;
   else if (route.name === 'play' && route.params.id === 'mafia') screen = <MafiaEntry key="mafia-entry" />;
-  else if (route.name === 'play') screen = getGame(route.params.id)?.onlineOnly ? <Online key={`online-${route.params.id}`} game={route.params.id} /> : <Play key={`play-${route.params.id}`} id={route.params.id} />;
+  else if (route.name === 'play') {
+    const rewarded = typeof __MAYDAN_REWARDED_PREVIEW__ !== 'undefined' && __MAYDAN_REWARDED_PREVIEW__ && route.params.id === 'badeeha' && route.params.rewarded === '1';
+    screen = getGame(route.params.id)?.onlineOnly ? <Online key={`online-${route.params.id}`} game={route.params.id} /> :
+      <Play key={`play-${route.params.id}${rewarded ? '-rewarded' : ''}`} id={route.params.id} rewarded={rewarded} />;
+  }
   else if (route.name === 'players') screen = <Players key="players" />;
   else if (route.name === 'friends' || route.name === 'friend-group') screen = <div key="friends" data-social-page-slot />;
   else if (route.name === 'profile') screen = <ProfileScreen key={`profile-${route.params.id || 'me'}`} profileId={route.params.id || null} />;
@@ -82,7 +86,11 @@ function ScreenHost({ route }) {
   else if (route.name === 'terms') screen = <Terms key="terms" />;
   else if (route.name === 'privacy') screen = <Privacy key="privacy" />;
   else if (route.name === 'online' && route.params.id === 'mafia') screen = <MafiaEntry key="mafia-entry" />;
-  else if (route.name === 'online') screen = <Online key={`online-${route.params.id || 'meenfina'}`} game={route.params.id || 'meenfina'} />;
+  else if (route.name === 'online') {
+    const game = route.params.id || 'meenfina';
+    const rewarded = typeof __MAYDAN_REWARDED_PREVIEW__ !== 'undefined' && __MAYDAN_REWARDED_PREVIEW__ && game === 'meenfina' && route.params.rewarded === '1';
+    screen = <Online key={`online-${game}${rewarded ? '-rewarded' : ''}`} game={game} rewarded={rewarded} initialView={rewarded ? 'create' : 'public'} />;
+  }
   else if (route.name === 'room') screen = <Online key={`room-${route.params.id}-${route.params.watch==='1'?'observer':'player'}`} code={route.params.id} observer={route.params.watch==='1'} />;
   return screen;
 }

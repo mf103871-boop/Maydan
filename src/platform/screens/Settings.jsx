@@ -13,6 +13,7 @@ import { AccountCard } from '../../shared/account/AccountCard.jsx';
 import { useAccount } from '../../shared/account/context.js';
 import { LEGAL_ROUTES, PUBLIC_SITE_ORIGIN, SUPPORT_EMAIL } from '../../shared/account/config.js';
 import { isNativeShell } from '../../shared/account/native.js';
+import { RewardedPrivacySettings } from '../../shared/account/RewardedOffer.jsx';
 import { ACCOUNT_PREFIX } from '../../shared/account/store.js';
 import { shareText } from '../../shared/fx/haptics.js';
 import { usePlatform } from '../context.js';
@@ -112,6 +113,7 @@ export function Settings() {
         <p className="settings-autosave">تُحفظ هذه الخيارات تلقائيًا على هذا الجهاز.</p>
       </SettingsGroup>}
       {section?.key === 'account' && <SettingsGroup id="settings-privacy" title="الخصوصية والأمان" icon={<IconInfo />}>
+        {typeof __MAYDAN_REWARDED_PREVIEW__ !== 'undefined' && __MAYDAN_REWARDED_PREVIEW__ && native && <RewardedPrivacySettings />}
         <Card className="settings-legal-card legal-links">
           <a data-design-id="privacy-link" href={LEGAL_ROUTES.privacy}>سياسة الخصوصية</a>
           <a data-design-id="terms-link" href={LEGAL_ROUTES.terms}>شروط الاستخدام</a>

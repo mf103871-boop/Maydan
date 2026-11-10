@@ -77,6 +77,54 @@ test('capacity and admission gates are explicit, pinned and reflected without tr
   assert.equal(receipt.gates.acceptNewMatches, false); assert.equal(receipt.rules.rulesetVersion, 1); assert.equal(receipt.ready, false);
 });
 
+test('Rewarded preview requires a single scoped tester, redacted callbacks and an exact ad mode', () => {
+  const input = fixture();
+  const config = JSON.parse(input.configSource);
+  const tester = 'ab'.repeat(32);
+  Object.assign(config.vars, { REWARDED_ENV: 'ios-preview', REWARDED_PREVIEW_ENABLED: '1', REWARDED_ADS_ENABLED: '1',
+    REWARDED_SSV_KEYS: 'test', REWARDED_PREVIEW_USER_SHA256: tester });
+  assertMafiaPreviewConfig(config);
+  const receipt = createMafiaPreviewManifest({ ...input, configSource: JSON.stringify(config) });
+  assert.ok(!JSON.stringify(receipt).includes(tester));
+  for (const edit of [
+    candidate => { candidate.vars.REWARDED_ENV = 'production'; },
+    candidate => { delete candidate.vars.REWARDED_PREVIEW_USER_SHA256; },
+    candidate => { delete candidate.observability.redact_query_string; },
+    candidate => { candidate.vars.REWARDED_SSV_SETUP_TOKEN_SHA256 = 'cd'.repeat(32); },
+    candidate => { candidate.vars.REWARDED_IOS_AD_UNIT = 'ca-app-pub-3940256099942544/1712485313'; },
+  ]) {
+    const candidate = structuredClone(config);
+    edit(candidate);
+    assert.throws(() => assertMafiaPreviewConfig(candidate));
+  }
+});
+
+test('Rewarded Google dashboard URL setup is restricted to the QA unit with issuance off and a fresh deadline', () => {
+  const input = fixture();
+  const config = JSON.parse(input.configSource);
+  const token = 'cd'.repeat(32);
+  Object.assign(config.vars, { REWARDED_ENV: 'ios-preview', REWARDED_PREVIEW_ENABLED: '1', REWARDED_ADS_ENABLED: '0',
+    REWARDED_SSV_KEYS: 'production', REWARDED_PREVIEW_USER_SHA256: 'ab'.repeat(32),
+    REWARDED_IOS_AD_UNIT: 'ca-app-pub-6382290742060099/3289860273', REWARDED_SSV_SETUP_TOKEN_SHA256: token,
+    REWARDED_SSV_SETUP_EXPIRES_AT: String(Date.now() + 60_000) });
+  assertMafiaPreviewConfig(config);
+  const receipt = createMafiaPreviewManifest({ ...input, configSource: JSON.stringify(config) });
+  assert.ok(!JSON.stringify(receipt).includes(token));
+  for (const edit of [
+    candidate => { candidate.vars.REWARDED_ADS_ENABLED = '1'; },
+    candidate => { candidate.vars.REWARDED_SSV_KEYS = 'test'; },
+    candidate => { candidate.vars.REWARDED_IOS_AD_UNIT = 'ca-app-pub-6382290742060099/3373620751'; },
+    candidate => { candidate.vars.REWARDED_SSV_SETUP_TOKEN_SHA256 = token.toUpperCase(); },
+    candidate => { candidate.vars.REWARDED_SSV_QA_TOKEN_SHA256 = token; },
+    candidate => { delete candidate.vars.REWARDED_SSV_SETUP_EXPIRES_AT; },
+    candidate => { candidate.vars.REWARDED_SSV_SETUP_EXPIRES_AT = String(Date.now() - 1); },
+  ]) {
+    const candidate = structuredClone(config);
+    edit(candidate);
+    assert.throws(() => assertMafiaPreviewConfig(candidate));
+  }
+});
+
 test('supplied ledger is target-bound, known, unique, contiguous and ordered; matching names never prove applied SQL bytes', () => {
   const input = fixture(), baseline = createMafiaPreviewManifest(input);
   input.ledger = ledgerFor(baseline, 1, false);

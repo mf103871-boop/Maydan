@@ -22,6 +22,7 @@ import MaydanLogicBeta, {
 } from "./logic.js";
 import { BADEEHA_KEYS as MAYDAN_BETA_KEYS } from "./keys.js";
 import { readBadeehaState, RETIRED_GAME_NOTICE } from "./persistence.js";
+import { BADEEHA_REWARDED_PACKS, LOCAL_REWARDED_OFFER, REWARDED_PREVIEW, rewardedStorageKey, rewardEvent } from "../../shared/account/rewarded.js";
 import { questionAssistance } from "./assistance.js";
 import { CategoryCover } from "./Cover.jsx";
 import { questionMedia, deckMedia } from "../../shared/media/resolve.js";
@@ -39,7 +40,7 @@ import { MaydanModal } from "./Modal.js";
 import { ScorePoints, OfflineMediaRowBeta } from "./parts.js";
 import { QuestionVisual } from "./QuestionVisual.js";
 
-const { useState, useEffect, useRef, useMemo, useCallback } = React;
+const { useState, useEffect, useLayoutEffect, useRef, useMemo, useCallback } = React;
 
 var hBeta = React.createElement;
 
@@ -49,8 +50,16 @@ function MaydanBeta({ api, entry = 'home' } = {}) {
   const designPreview = api?.designPreview || null;
   const isDesignPreview = !!designPreview;
   const landingScreen = entry === 'setup' && !isDesignPreview ? 'setup' : 'home';
-  const saveKey = useCallback((key, value) => isDesignPreview ? Promise.resolve() : saveBadeehaKey(key, value), [isDesignPreview]);
-  const betaRemoveKey = useCallback((key) => isDesignPreview ? undefined : removeBadeehaKey(key), [isDesignPreview]);
+  const rewarded = REWARDED_PREVIEW ? api?.rewarded : null;
+  const scope = rewarded?.owner;
+  const storageKey = useCallback((key) => scope ? rewardedStorageKey(scope, key) : key, [scope]);
+  const saveKey = useCallback((key, value) => isDesignPreview ? Promise.resolve() : saveBadeehaKey(storageKey(key), value), [isDesignPreview, storageKey]);
+  const betaRemoveKey = useCallback((key) => isDesignPreview ? undefined : removeBadeehaKey(storageKey(key)), [isDesignPreview, storageKey]);
+  const rewardMatch = useRef(null);
+  const rewardRequest = useRef(false);
+  const mounted = useRef(true);
+  useLayoutEffect(() => { mounted.current = true; return () => { mounted.current = false; }; }, []);
+  const [rewardBusy, setRewardBusy] = useState(false);
   const logic = MaydanLogicBeta,
     [hydrated, setHydrated] = useState(!!designPreview),
     [screen, setScreenState] = useState(designPreview?.screen || landingScreen),
@@ -65,7 +74,7 @@ function MaydanBeta({ api, entry = 'home' } = {}) {
     [undoFx, setUndoFx] = useState(!1),
     [noticeLeaving, setNoticeLeaving] = useState(!1),
     [teams, setTeams] = useState(designPreview?.teams || [betaTeam(0), betaTeam(1)]),
-    [selectedCategories, setSelectedCategories] = useState(designPreview?.selectedCategories || []),
+    [selectedCategories, setSelectedCategories] = useState(designPreview?.selectedCategories || (scope ? [...BADEEHA_REWARDED_PACKS] : [])),
     [timerLength, setTimerLength] = useState(60),
     [mode, setMode] = useState("expert"),
     [roundSize, setRoundSize] = useState(30),
@@ -265,7 +274,7 @@ function MaydanBeta({ api, entry = 'home' } = {}) {
     let cancelled = !1;
     return (
       (async () => {
-        const restored = readBadeehaState(CATS);
+        const restored = readBadeehaState(CATS, scope ? { getItem: key => localStorage.getItem(storageKey(key)) } : undefined);
         const { history: loadedHistory, results: loadedResults, active: loadedActive,
           settings: loadedSettings, reports: loadedReports } = restored;
         cancelled ||
@@ -294,7 +303,7 @@ function MaydanBeta({ api, entry = 'home' } = {}) {
         cancelled = !0;
       }
     );
-  }, [isDesignPreview, betaRemoveKey, logic.MODES, logic.ROUND_SIZES]),
+  }, [isDesignPreview, betaRemoveKey, logic.MODES, logic.ROUND_SIZES, scope, storageKey]),
     useEffect(() => {
       hydrated &&
         saveKey(MAYDAN_BETA_KEYS.settings, { soundOn, timerLength, mode, roundSize, favorites });
@@ -336,6 +345,7 @@ function MaydanBeta({ api, entry = 'home' } = {}) {
         // بدون هذا كان خصم التلميحات يضيع عند استئناف المباراة فيُمنح السؤال كاملًا.
         hintsUsed,
         lastAction,
+        ...(scope && rewardMatch.current ? { rewardedMatchId: rewardMatch.current, rewardedConfirmed: true } : {}),
       };
       return (
         (activeSnapshotRef.current = session),
@@ -369,6 +379,7 @@ function MaydanBeta({ api, entry = 'home' } = {}) {
       hintsUsed,
       lastAction,
       saveKey,
+      scope,
     ]),
     useEffect(() => {
       // شاشة اللعب تفترض inGame=true لألعاب setup:'self'، فكان تأكيد الخروج يظهر
@@ -517,6 +528,7 @@ function MaydanBeta({ api, entry = 'home' } = {}) {
       setSetupError(""));
   }
   function toggleCategory(categoryId) {
+    if (scope) return;
     (setSetupError(""),
       setSelectedCategories((existing) =>
         existing.includes(categoryId)
@@ -536,12 +548,13 @@ function MaydanBeta({ api, entry = 'home' } = {}) {
       playSfx("click"));
   }
   // Legacy saved free-filter now includes the entire free bank.
-  const visibleCategories = filterCategories(CATS, {
+  const visibleCategories = filterCategories(scope ? CATS.filter(category => BADEEHA_REWARDED_PACKS.includes(category.id)) : CATS, {
     filter: categoryFilter === "free" ? "all" : categoryFilter,
     search: categorySearch,
     favorites,
   });
   function randomCategories() {
+    if (scope) return;
     // الاختيار العشوائي لا يسحب حزمة مقفولة أبدًا: نستبعدها من البركة قبل الخلط.
     const pool = visibleCategories.filter((category) => !packLocked(category.id));
     if (pool.length < 6) {
@@ -555,7 +568,64 @@ function MaydanBeta({ api, entry = 'home' } = {}) {
       pulseFx("shuffle", setShuffled, !0, 600, !1),
       playSfx("tool"));
   }
+  async function confirmRewarded(draft) {
+    if (rewardRequest.current) return;
+    rewardRequest.current = true;
+    setRewardBusy(true);
+    setSetupError("");
+    const key = storageKey(MAYDAN_BETA_KEYS.active);
+    const begin = async () => {
+      // Record a recovery point before asking the server to commit. An
+      // uncertain response keeps the same ID; a definite refusal can retry.
+      const previous = readBadeehaState(CATS, { getItem: name => localStorage.getItem(storageKey(name)) }).active;
+      const checkpoint = previous?.rewardedMatchId ? previous : draft;
+      if (!previous?.rewardedMatchId) localStorage.setItem(key, JSON.stringify(checkpoint));
+      if (!checkpoint.rewardedConfirmed) {
+        if (mounted.current) setSavedActive(checkpoint);
+        try {
+          await rewarded.start(checkpoint.rewardedMatchId);
+        } catch (error) {
+          // A definitive denial never started this match. Keep the recovery
+          // point only when the server result might have been committed.
+          if (error.code === "REWARDED_REQUIRED") {
+            const recorded = JSON.parse(localStorage.getItem(key) || "null");
+            if (recorded?.rewardedMatchId === checkpoint.rewardedMatchId && !recorded.rewardedConfirmed) {
+              localStorage.removeItem(key);
+              if (mounted.current) setSavedActive(null);
+            }
+          }
+          throw error;
+        }
+        checkpoint.rewardedConfirmed = true;
+        localStorage.setItem(key, JSON.stringify(checkpoint));
+        rewardEvent(LOCAL_REWARDED_OFFER, 'start');
+      }
+      if (!mounted.current) return;
+      rewardMatch.current = checkpoint.rewardedMatchId;
+      let keepProfileSession = false;
+      if (!checkpoint.profileSession && !Object.keys(checkpoint.used || {}).length && checkpoint.screen === "board") {
+        api?.matchStart?.();
+        keepProfileSession = true;
+        checkpoint.profileSession = api?.matchSnapshot?.() || null;
+        await saveKey(MAYDAN_BETA_KEYS.active, checkpoint);
+      }
+      setSavedActive(checkpoint);
+      if (mounted.current) openSavedMatch(checkpoint, keepProfileSession);
+    };
+    try {
+      if (navigator.locks) await navigator.locks.request(key, begin);
+      else await begin();
+    } catch (error) {
+      if (mounted.current) setSetupError(error.code === "REWARDED_REQUIRED"
+        ? "تحتاج تذكرة جديدة لمباراة أخرى. ارجع إلى شاشة التحدّي."
+        : "لم نتأكد من بدء المباراة. حاول متابعة المباراة المحفوظة عند عودة الاتصال.");
+    } finally {
+      rewardRequest.current = false;
+      if (mounted.current) setRewardBusy(false);
+    }
+  }
   function beginGame() {
+    if (scope && rewardRequest.current) return;
     const validation = logic.validateTeamNames(teams.map((team) => team.name));
     if (!validation.ok) {
       setSetupError(validation.message);
@@ -573,6 +643,14 @@ function MaydanBeta({ api, entry = 'home' } = {}) {
       return;
     }
     const freshTeams = teams.map((team, index) => betaTeam(index, validation.names[index]));
+    if (scope) {
+      const draft = { version: 2, contentVersion: BANK_CONTENT_VERSION, updatedAt: Date.now(),
+        screen: "board", teams: freshTeams, selectedCategories: [...selectedCategories],
+        timerLength, mode, roundSize, deck: logic.deckToIds(nextDeck), timeLeft: timerLength,
+        rewardedMatchId: crypto.randomUUID(), rewardedConfirmed: false };
+      void confirmRewarded(draft);
+      return;
+    }
     api?.matchStart?.();
     (setTeams(freshTeams),
       setDeck(nextDeck),
@@ -605,8 +683,16 @@ function MaydanBeta({ api, entry = 'home' } = {}) {
         toast("تعذر استعادة المباراة القديمة"));
       return;
     }
+    if (scope) {
+      if (!savedActive.rewardedMatchId) return;
+      void confirmRewarded(savedActive);
+      return;
+    }
+    openSavedMatch(savedActive);
+  }
+  function openSavedMatch(savedActive, keepProfileSession = false) {
     const restoredDeck = logic.idsToDeck(CATS, savedActive.deck);
-    api?.matchResume?.(savedActive.profileSession || null);
+    if (!keepProfileSession) api?.matchResume?.(savedActive.profileSession || null);
     (setTeams(betaCloneTeams(savedActive.teams)),
       setSelectedCategories([...savedActive.selectedCategories]),
       setTimerLength(savedActive.timerLength),
@@ -636,6 +722,7 @@ function MaydanBeta({ api, entry = 'home' } = {}) {
       playSfx("start"));
   }
   function discardSavedGame() {
+    if (scope && (rewardRequest.current || (savedActive?.rewardedMatchId && !savedActive.rewardedConfirmed))) return;
     (betaRemoveKey(MAYDAN_BETA_KEYS.active),
       setSavedActive(null),
       toast("تم حذف المباراة المحفوظة"));
@@ -1053,8 +1140,8 @@ ${record.answered} من ${record.total} سؤالًا`,
         hBeta("small", null, `${savedProgress} من ${savedActive.roundSize} سؤالًا`),
         hBeta("span", { className: "m-saved-progress", "aria-hidden": "true" },
           hBeta("i", { style: { width: `${Math.min(100, (savedProgress / savedActive.roundSize) * 100)}%` } }))),
-      hBeta("button", { "data-design-id": "resume", "data-design-required": "true", type: "button", className: "m-primary", onClick: resumeGame }, "متابعة"),
-      hBeta("button", { "data-design-id": "discard-save", type: "button", className: "m-link", onClick: discardSavedGame }, "حذفها"),
+      hBeta("button", { "data-design-id": "resume", "data-design-required": "true", type: "button", className: "m-primary", disabled: rewardBusy, onClick: resumeGame }, "متابعة"),
+      (!scope || savedActive.rewardedConfirmed) && hBeta("button", { "data-design-id": "discard-save", type: "button", className: "m-link", disabled: rewardBusy, onClick: discardSavedGame }, "حذفها"),
     );
   }
   function HomeScreen() {
@@ -1159,7 +1246,8 @@ ${record.answered} من ${record.total} سؤالًا`,
       "section",
       { className: "m-screen m-setup-flow" },
       Header({ title: "جهّزوا الميدان", back: () => landingScreen === "setup" && api?.navigate
-        ? api.navigate("/game/badeeha?mode=local") : setScreen("home", "back") }),
+        ? api.navigate("/game/badeeha?mode=local", scope ? { replace: true } : undefined) : setScreen("home", "back") }),
+      scope && hBeta("p", { className: "m-kicker" }, "تحدّي اللمّة التجريبي · الحزم الست مختارة"),
       landingScreen === "setup" && SavedMatchCard(),
       landingScreen === "setup" && retiredActive && hBeta("p", { className: "m-muted m-center", role: "status" }, RETIRED_GAME_NOTICE),
       landingScreen === "setup" && hBeta("div", { className: "m-two" },
@@ -1330,7 +1418,7 @@ ${record.answered} من ${record.total} سؤالًا`,
             ),
           ),
         ),
-        hBeta(
+        !scope && hBeta(
           "div",
           { className: "m-category-actions" },
           hBeta(
@@ -1370,7 +1458,7 @@ ${record.answered} من ${record.total} سؤالًا`,
                   onClick: () => toggleCategory(category.id),
                   "aria-pressed": selected,
                   // الزر يبقى قابلًا للنقر (النقر يفتح الجدار) لكنه يُعلن معطّلًا لقارئ الشاشة.
-                  "aria-disabled": locked ? "true" : undefined,
+                  "aria-disabled": locked || scope ? "true" : undefined,
                   "aria-label": locked
                     ? `فئة ${category.name} ضمن ميدان بلس`
                     : `${selected ? "إلغاء" : "اختيار"} فئة ${category.name}`,
@@ -1418,7 +1506,7 @@ ${record.answered} من ${record.total} سؤالًا`,
           type: "button",
           className: `m-primary m-large m-sticky-action ${selectedCategories.length === 6 ? "is-armed" : ""}`,
           onClick: beginGame,
-          disabled: selectedCategories.length !== 6,
+          disabled: selectedCategories.length !== 6 || rewardBusy,
         },
         `ابدأ ${roundSize} سؤالًا · ${activeMode.label}`,
       ),
@@ -1847,9 +1935,11 @@ ${record.answered} من ${record.total} سؤالًا`,
         { "data-design-id": "actions", className: "m-result-actions" },
         hBeta(
           "button",
-          { "data-design-id": "start", "data-design-required": "true", type: "button", className: "m-primary m-large", onClick: beginGame },
+          { "data-design-id": "start", "data-design-required": "true", type: "button", className: "m-primary m-large", disabled: rewardBusy, onClick: beginGame },
           "إعادة بنفس الإعدادات",
         ),
+        scope && setupError && hBeta("p", { className: "m-error", role: "alert" }, setupError),
+        scope && hBeta("button", { type: "button", className: "m-secondary", disabled: rewardBusy, onClick: () => api.navigate("/game/badeeha?mode=local", { replace: true }) }, "العودة إلى تحدّي اللمّة"),
         hBeta(
           "button",
           { "data-design-id": "share-result", type: "button", className: "m-secondary", onClick: shareResult },

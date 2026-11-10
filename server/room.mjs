@@ -4,6 +4,7 @@ import { buildFabrakaDeck } from './fabraka-content.mjs';
 import { credentials, readJson, json, errorResponse, shuffled, createLimit, sha256 } from './protocol.mjs';
 import { bindSeatAccount, noteProgressionAction, prepareRoomStats } from './room-stats.mjs';
 import { accountProgressionEnabled } from './account-progression.mjs';
+import { assertRewardedAccount, rewardedEnvironment, rewardedOffer, reserveRewardedMatch, commitRewardedMatch, releaseRewardedMatch } from './rewarded/ledger.mjs';
 import { recordOnlineResult, profileSummaries } from './profiles/db.mjs';
 import { recheckMafiaHost, mafiaHostEligible } from './accounts/router.mjs';
 import { getCosmetic } from '../src/plus/catalog.js';
@@ -34,6 +35,8 @@ import { ersomhaBoardId, emptyErsomhaDrawing, loadErsomhaDrawing, checkpointErso
   prepareErsomhaDrawing, ersomhaSyncMessages, ersomhaDrawingMeta, ersomhaVisibleCanvas, archiveErsomhaDrawing, deleteErsomhaDrawing } from './ersomha-drawing.mjs';
 const SOCKET_IDLE = 45_000;
 const STATS_RETRY = 30_000;
+const REWARDED_START_INTENT = 'rewarded:start-intent';
+const REWARDED_RETRY = 5_000;
 const statsDue = event => Math.max(event.notBefore || 0, event.retryAt || 0);
 const STATS_MAX_ATTEMPTS = 48; // a day of half-minute retries
 const MAFIA_RESULT_FAILURE_CODES=new Set(['MAFIA_PROGRESS_DISABLED','MAFIA_PROGRESS_UNAVAILABLE','MAFIA_PROGRESS_PENDING','MAFIA_PROGRESS_INVALID']);
@@ -70,6 +73,7 @@ export class Room {
     this.mafiaMetadata={};
     this.ready = ctx.blockConcurrencyWhile(async () => {
       this.room = await ctx.storage.get('room') || null;
+      this.rewardedStartIntent = this.room?.rewardedOffer ? await ctx.storage.get(REWARDED_START_INTENT) : null;
       // A hibernated object may have withheld a committed publication during
       // an account-store outage. Reconcile its current state on the first wake.
       this.accountPublicationPending = Boolean(this.room && this.room.game !== 'mafia' && (this.room.game === 'ersomha' || this.room.directory?.visibility === 'public' || this.sockets().some(ws => this.attachment(ws).accountSessionId)));
@@ -117,12 +121,14 @@ export class Room {
   }
   alarmAt(room, now) {
     if(room.game==='mafia'&&this.mafiaCleanupRetryAt>now)return this.mafiaCleanupRetryAt;
+    const rewardedRetry = this.rewardedStartIntent ? this.rewardedStartRetryAt || now + REWARDED_RETRY : Infinity;
+    if (this.rewardedStartIntent && (room.phase === 'closed' || room.expiresAt <= now)) return Math.max(now + 1, rewardedRetry);
     const deadlines = this.sockets().map((ws) => {
       const a = this.attachment(ws);
       if (room.game !== 'mafia' && a.revoked) return null;
       return a.id ? Math.min(this.lastSeen(ws, a) + SOCKET_IDLE, room.game !== 'mafia' ? a.accountExpiresAt ?? Infinity : Infinity) : a.authDeadline;
     }).filter(Number.isFinite);
-    return Math.max(now + 1, Math.min(room.game==='mafia'&&room.phase==='closed'?room.closedDeleteAt||now+90000:nextAlarm(room, now), ...deadlines, this.accountPublicationRetryAt || Infinity, ...(needsOnlineDirectory(this.env,room)?[this.onlineDirectoryRefreshAt||now+ONLINE_DIRECTORY_REFRESH_MS]:[]), ...(room.game==='mafia'?[...(room.phase==='closed'?[]:[room.mafiaRenewAt||now+30_000,this.mafiaAuthDeadline(room)]),observerNextAlarm(this.observerStream),room.observerRenewAt||now+30_000]:[]), ...(this.outboxPending() ? [this.outboxAlarm(now)] : [])));
+    return Math.max(now + 1, Math.min(room.game==='mafia'&&room.phase==='closed'?room.closedDeleteAt||now+90000:nextAlarm(room, now), ...deadlines, rewardedRetry, this.accountPublicationRetryAt || Infinity, ...(needsOnlineDirectory(this.env,room)?[this.onlineDirectoryRefreshAt||now+ONLINE_DIRECTORY_REFRESH_MS]:[]), ...(room.game==='mafia'?[...(room.phase==='closed'?[]:[room.mafiaRenewAt||now+30_000,this.mafiaAuthDeadline(room)]),observerNextAlarm(this.observerStream),room.observerRenewAt||now+30_000]:[]), ...(this.outboxPending() ? [this.outboxAlarm(now)] : [])));
   }
   async schedule({ skipIdenticalMafiaAlarm = false } = {}) {
     if (this.room) {
@@ -573,6 +579,7 @@ export class Room {
   stateFor(id) {
     assertSupportedMafiaRuleset(this.room);
     const state = snapshot(this.room, id, Date.now());
+    if (this.room.rewardedOffer && this.room.hostId === id) state.rewardedOffer = this.room.rewardedOffer;
     state.appearance = this.room.appearance || null;
     state.members = state.members.map(m => {
       const profile = this.room.members.find(seat => seat.id === m.id)?.profile;
@@ -643,7 +650,7 @@ export class Room {
     if (a.reactTokens < 1) { ws.serializeAttachment(a); fail('RATE_LIMIT', 429); }
     a.reactTokens -= 1; ws.serializeAttachment(a);
     if (cosmetic) {
-      const userId = await this.cosmeticActor(a.id, command);
+      const userId = await this.accountActor(a.id, command);
       if (!await canUseCosmetic(this.env, userId, cosmetic.id, now)) fail('PLUS_REQUIRED', 403);
     }
     this.reactionCounter = (this.reactionCounter || 0) + 1;
@@ -731,6 +738,67 @@ export class Room {
     this.accountPublicationRetryAt = null;
     await this.settleAccountPublicationAlarm();
   }
+  async reconcileRewardedStart(now = Date.now()) {
+    const claim = this.rewardedStartIntent;
+    this.rewardedStartRetryAt = now + REWARDED_RETRY;
+    // A storage failure may mean that the write actually succeeded. Never
+    // release a reservation or process another mutation using an old lobby.
+    let durable;
+    try { durable = await this.ctx.storage.get('room'); }
+    catch {
+      await this.ctx.storage.setAlarm(this.rewardedStartRetryAt);
+      fail('REWARDED_UNAVAILABLE', 503);
+    }
+    const started = durable?.rewardedMatchId === claim.matchId;
+    const unpublished = started && (!this.rewardedStartVerified || this.room?.revision !== durable.revision);
+    this.rewardedStartVerified = true;
+    if (unpublished) {
+      // A cold object may have loaded the new revision after the previous
+      // instance persisted the start but before it could tell its sockets.
+      this.room = durable;
+      this.fastAdvanceRoom = null;
+      await this.broadcast();
+    }
+    try {
+      if (started) await commitRewardedMatch(this.env, claim);
+      else await releaseRewardedMatch(this.env, claim);
+      await this.deleteKey(REWARDED_START_INTENT);
+      this.rewardedStartIntent = null;
+      this.rewardedStartRetryAt = null;
+    } catch {
+      // Keep the intent and its alarm for idempotent cross-store recovery.
+    }
+    await this.schedule();
+    return started;
+  }
+  async startRewardedMatch(candidate, seatId, command) {
+    if (this.rewardedStartIntent) fail('REWARDED_BUSY', 409);
+    if (!rewardedEnvironment(this.env)) fail('REWARDED_UNAVAILABLE', 503);
+    const userId = await this.accountActor(seatId, command);
+    const claim = { offer: candidate.rewardedOffer, userId, matchId: crypto.randomUUID() };
+    this.rewardedStartIntent = claim;
+    this.rewardedStartVerified = false;
+    this.rewardedStartRetryAt = Date.now() + REWARDED_RETRY;
+    let startError;
+    try {
+      // Persist the match identity and schedule recovery before touching D1.
+      await this.ctx.storage.transaction(async (tx) => {
+        await tx.put(REWARDED_START_INTENT, claim);
+        await tx.setAlarm(this.alarmAt(this.room, Date.now()));
+      });
+      await reserveRewardedMatch(this.env, claim);
+      await this.accountActor(seatId, command);
+      candidate.rewardedMatchId = claim.matchId;
+      candidate.deadlineAt = Date.now() + candidate.voteSeconds * 1000;
+      await this.commit(candidate);
+      this.rewardedStartVerified = true;
+    } catch (error) {
+      startError = error;
+    }
+    if (await this.reconcileRewardedStart().catch(() => fail('REWARDED_UNAVAILABLE', 503))) return;
+    if (startError instanceof RoomError) throw startError;
+    fail('REWARDED_UNAVAILABLE', 503);
+  }
   async advance({ force = false } = {}) {
     if (!this.room) return;
     // Fail before tick, observer projection or the account-failure abort path.
@@ -738,6 +806,10 @@ export class Room {
     assertSupportedMafiaRuleset(this.room);
     if(this.room.game==='mafia')await this.advanceObservers();
     const now = Date.now();
+    if (this.rewardedStartIntent) {
+      if (now >= (this.rewardedStartRetryAt || 0)) await this.reconcileRewardedStart(now);
+      if (this.rewardedStartIntent && !this.rewardedStartVerified) fail('REWARDED_UNAVAILABLE', 503);
+    }
     if(this.room.game==='mafia'&&this.mafiaCleanupRetryAt>now)return;
     // Between durable room changes only time can advance the game. Avoid
     // cloning/stringifying the full private turn plan for every ink batch.
@@ -762,6 +834,7 @@ export class Room {
       if(candidate.game==='mafia'&&Date.now()<candidate.closedDeleteAt){await this.schedule();return;}
       const reason = candidate.reason === 'expired' ? 'EXPIRED' : 'NOT_FOUND';
       for (const ws of this.sockets()) { this.send(ws, { type: 'error', error: reason }); this.close(ws, 4404, reason); }
+      if (this.rewardedStartIntent) return; // Recovery still needs the durable start marker.
       if (candidate.game === 'ersomha') {
         try { await releaseErsomhaLease(this.env, candidate.ersomhaLease); } catch { /* short lease expiry remains safe */ }
         await deleteErsomhaDrawing(this.ctx.storage, this.drawingHead, this.drawingArchives);
@@ -814,10 +887,10 @@ export class Room {
       seat.profile = profile ? { avatarPreset: profile.avatarPreset, theme: profile.theme, avatarUrl: profile.avatarUrl, revision: profile.revision, cosmetics: profile.cosmetics } : null;
     } catch { seat.profile = null; }
   }
-  async cosmeticActor(seatId, command) {
+  async accountActor(seatId, command) {
     const seat = member(this.room, seatId);
     if (!seat.accountUserId || typeof command.accountAuthorization !== 'string' || command.accountAuthorization.length > 512) fail('AUTH_REQUIRED', 401);
-    const request = new Request('https://room.internal/api/cosmetics', { headers: { authorization: command.accountAuthorization } });
+    const request = new Request('https://room.internal/api/account', { headers: { authorization: command.accountAuthorization } });
     const auth = await requireSession(this.env, request, { rotate: false });
     if (auth.user.id !== seat.accountUserId) fail('AUTH', 401);
     return auth.user.id;
@@ -884,6 +957,13 @@ export class Room {
         if(endpoint==='mafia-ranked-create'&&request.method==='POST')return await this.createRankedMatch(await readJson(request,8192));
         if (request.method === 'POST' && endpoint === 'create') {
           const input = await credentials(await readJson(request, 4096, createLimit));
+          const offer = input.rewardedOffer == null ? null : rewardedOffer(input.rewardedOffer);
+          if (input.rewardedOffer != null) {
+            if (!rewardedEnvironment(this.env) || offer?.mode !== 'online' || offer.game !== input.game
+              || input.directory?.visibility === 'public') fail('REWARDED_UNAVAILABLE', 403);
+            if (!input.accountUserId) fail('AUTH_REQUIRED', 401);
+            await assertRewardedAccount(this.env, input.accountUserId);
+          }
           if (input.game === 'badeeha' && input.capabilities?.badeeha !== BADEEHA_PROTOCOL) fail('UPDATE_REQUIRED', 409);
           if(input.game==='mafia') {requireMafiaEnabled(this.env);requireMafiaNewMatches(this.env);if(input.capabilities?.mafia!==MAFIA_PROTOCOL)fail('UPDATE_REQUIRED',409);if(!input.accountUserId)fail('AUTH_REQUIRED',401);}
           if(input.game==='mafia'&&input.settings?.experimentalRole&&(!mafiaPreviewOnly(this.env)||String(this.env.MAFIA_EXPERIMENTAL_ROLES_ENABLED)!=='1'))fail('MAFIA_EXPERIMENT_DISABLED',409);
@@ -898,12 +978,14 @@ export class Room {
             const owner = this.room.members.find((m) => m.id === input.id && !m.left);
             if (!owner || owner.tokenHash !== input.tokenHash) return json({ error: 'COLLISION' }, 409);
             if ((this.room.game || 'meenfina') !== (input.game || 'meenfina')) fail('GAME');
-            if ((['ersomha','mafia'].includes(this.room.game)||this.room.directory?.visibility==='public') && owner.accountUserId !== input.accountUserId) fail('AUTH', 401);
+            if ((this.room.rewardedOffer || ['ersomha','mafia'].includes(this.room.game)||this.room.directory?.visibility==='public') && owner.accountUserId !== input.accountUserId) fail('AUTH', 401);
+            if ((this.room.rewardedOffer || null) !== (offer?.id || null)) fail('REWARDED_UNAVAILABLE', 409);
             return json({ code: this.room.code, id: input.id, game: this.room.game || 'meenfina' });
           }
           const created = createRoom(code, input, Date.now());
           const directory=normalizeRoomDirectory(input,this.env);
           if(directory)created.directory=directory;
+          if (offer) created.rewardedOffer = offer.id;
           created.roomTrialGate = input.roomTrialGate || null;
           created.roomTrialClaim = crypto.randomUUID();
           created.trialOwnerId = input.id;
@@ -1007,6 +1089,10 @@ export class Room {
         if (request.method === 'POST' && endpoint === 'join') {
           const input = await credentials(await readJson(request));
           await assertOnlineDirectoryAdmission(this.env,this.room,input);
+          if (this.room.rewardedOffer) {
+            const previous = this.room.members.find(m => !m.left && m.id === input.id);
+            if (previous?.accountUserId && previous.accountUserId !== input.accountUserId) fail('AUTH', 401);
+          }
           if (this.room.game === 'badeeha' && input.capabilities?.badeeha !== BADEEHA_PROTOCOL) fail('UPDATE_REQUIRED', 409);
           if(this.room.game==='mafia') {
             if(this.room.ranked&&!this.room.members.some(m=>!m.left&&m.id===input.id&&m.accountUserId===input.accountUserId))fail('MAFIA_RANKED_PRIVATE',403);
@@ -1177,7 +1263,7 @@ export class Room {
         if (command.type === 'react') { await this.reaction(ws, a, command, now); metricOutcome='ok';this.send(ws, { type: 'ack', requestId, ok: true }); return; }
         if (command.type === 'appearance') {
           if (Object.hasOwn(command, 'councilSkinId')) fail('INVALID', 400);
-          if (command.themeId != null) await this.cosmeticActor(a.id, command);
+          if (command.themeId != null) await this.accountActor(a.id, command);
           const themed = structuredClone(this.room);
           await selectRoomAppearance(this.env, themed, a.id, command.themeId);
           await this.commit(themed);
@@ -1206,7 +1292,8 @@ export class Room {
           // Legacy snapshots retain the started marker; no free allowance is spent.
           candidate.trialStarted = true;
         }
-        await this.commit(candidate, { prepared: ['ersomha','mafia'].includes(candidate.game) });
+        if (candidate.rewardedOffer && command.type === 'start') await this.startRewardedMatch(candidate, a.id, command);
+        else await this.commit(candidate, { prepared: ['ersomha','mafia'].includes(candidate.game) });
         metricOutcome='ok';
         this.send(ws, { type: 'ack', requestId, ok: true });
       } catch (error) {

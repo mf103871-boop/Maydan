@@ -7,6 +7,8 @@ import { navigate, back, getDirection, getRoute } from '../router.js';
 import { getGame } from '../registry.js';
 import { resolveGameMode, gameInstructionsNextPath } from '../game-mode-navigation.js';
 import homeStyles from './home-rebuild.css';
+import { RewardedEntry } from '../../shared/account/RewardedOffer.jsx';
+import { LOCAL_REWARDED_OFFER } from '../../shared/account/rewarded.js';
 
 // معرّف غير معروف في الرابط: الملاحة أثناء التصيير تضيع لأن مستمعي الموجّه لم
 // يشتركوا بعد، فتبقى الصفحة بيضاء إلى الأبد. نعرض رسالة وزر عودة بدلًا منها.
@@ -48,6 +50,8 @@ export function GameDetails({ id, mode: requestedMode }) {
       <div data-design-id="actions" className="setup-sticky stack">
         <Button data-design-id="skip-instructions" variant="accent" size="lg" full icon={<IconMotion />} disabled={!mode} onClick={skip}>{mode === 'online' ? 'إلى غرف اللعبة' : 'إلى إعداد اللعبة'}</Button>
       </div>
+      {typeof __MAYDAN_REWARDED_PREVIEW__ !== 'undefined' && __MAYDAN_REWARDED_PREVIEW__ && id === 'badeeha' && mode === 'local' &&
+        <RewardedEntry offer={LOCAL_REWARDED_OFFER} onReady={() => navigate('/play/badeeha?mode=local&rewarded=1')} onFree={skip} />}
       <details data-design-id="hero" className="instruction-facts">
         <summary data-design-id="game-name">عن {game.name}</summary>
         <p data-design-id="game-description">{game.description}</p>

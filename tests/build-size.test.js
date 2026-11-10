@@ -18,6 +18,8 @@ const BUDGET = {
 test('the shipped document and its largest inputs stay inside the size budget', { timeout: 120_000 }, async () => {
   const result = await build({ ...esbuildOptions({ minify: true, version: '0.0.0-test', media: await mediaVersions(ROOT), assets: 'files' }), metafile: true });
   const js = result.outputFiles.find((f) => f.path.endsWith('.js')).text;
+  assert.doesNotMatch(js, /maydanRewardedLab|__rewarded_lab__|rewardedShow|شاهد إعلان والعب مباراة كاملة/,
+    'the regular document excludes the local simulator, ad bridge and opt-in UI');
   const assets = result.outputFiles.filter(file=>!file.path.endsWith('.js')).map(file=>'./'+path.relative(DIST,file.path).replaceAll('\\','/')).sort();
   const html = await renderHtml(js, { version: '0.0.0-test', assets });
   // الرسوم والخطوط ملفات مبصومة بجانب المستند لا base64 داخله.
@@ -40,4 +42,18 @@ test('the shipped document and its largest inputs stay inside the size budget', 
     assert.ok(!seen.has(plain), `${plain} is bundled twice (${seen.get(plain)} and ${file}); import it the same way everywhere`);
     seen.set(plain, file);
   }
+});
+
+test('a signed Rewarded build ships the native ad bridge without loopback simulation', { timeout: 120_000 }, async () => {
+  const options = esbuildOptions({ minify: true, version: '1.9', media: await mediaVersions(ROOT), assets: 'files',
+    roomsUrl: 'https://maydan-mafia-preview.mf103871.workers.dev', rewardedPreview: true });
+  const result = await build(options);
+  const js = result.outputFiles.find(file => file.path.endsWith('.js')).text;
+  assert.match(js, /rewardedShow/);
+  assert.doesNotMatch(js, /maydanRewardedLab|maydanRewardedMetric|__rewarded_lab__/);
+  const assets = result.outputFiles.filter(file => !file.path.endsWith('.js'))
+    .map(file => './' + path.relative(DIST, file.path).replaceAll('\\', '/')).sort();
+  const html = await renderHtml(js, { version: '1.9', assets });
+  assert.ok(Buffer.byteLength(html) <= BUDGET.document);
+  assert.ok(gzipSync(Buffer.from(html)).length <= BUDGET.gzip);
 });

@@ -21,6 +21,7 @@ import { requireMafiaNewMatches } from './mafia-ruleset-policy.mjs';
 import { routeDrawingReports } from './ersomha-reports.mjs';
 import { routeDesign, isPublicDesignAssetPath } from './design/router.mjs';
 import { routePlus } from './plus/router.mjs';
+import { rewardedWebhook, routeRewarded } from './rewarded/router.mjs';
 import { routeTutorials } from './tutorials/router.mjs';
 import { routeOnlineDirectory, cleanupOnlineDirectory } from './online-directory.mjs';
 import { withRequestMetrics } from './performance.mjs';
@@ -99,6 +100,7 @@ export async function routeRequest(request, env, context) {
 async function routeMeasuredRequest(request, env, context) {
   const url = new URL(request.url);
   if (url.pathname === '/api/app-policy/ios') return iosAppPolicy(request, env);
+  const rewardedCallback = url.pathname === '/api/rewarded/ssv';
   if(url.pathname==='/api/social/livekit/webhook'){try{return await liveKitWebhook(request,env);}catch(error){return errorResponse(error);}}
   // HEAD keeps `curl -I` and uptime monitors working; it must not fall through
   // to the origin check and answer 403/404.
@@ -110,7 +112,7 @@ async function routeMeasuredRequest(request, env, context) {
   // إعادة توجيه المزوّدات وwebhooks تصل بلا Origin: فحص الأصل لا ينطبق عليها،
   // وحمايتها هي توقيع المزوّد نفسه (state موقّع، HMAC، أو JWS من آبل).
   const publicImage = ['GET', 'HEAD'].includes(request.method) && (isPublicProfileImagePath(url.pathname) || isPublicDesignAssetPath(url.pathname));
-  if (!origin && !isPublicAccountPath(url.pathname) && !publicImage) return json({ error: 'ORIGIN' }, 403);
+  if (!origin && !isPublicAccountPath(url.pathname) && !publicImage && !rewardedCallback) return json({ error: 'ORIGIN' }, 403);
   const headers = origin ? { 'access-control-allow-origin': origin, vary: 'Origin',
     'access-control-allow-methods': 'GET, POST, PUT, PATCH, DELETE, OPTIONS',
     'access-control-allow-headers': 'Content-Type, Authorization, Range, X-Design-Name',
@@ -135,9 +137,11 @@ async function routeMeasuredRequest(request, env, context) {
     const limited = await target.fetch(new Request('https://internal/limit', { method: 'POST', body: JSON.stringify({ kind }) }));
     if (!limited.ok) fail(code, 429);
   }
+  if (rewardedCallback) return rewardedWebhook(request, env, url, charge);
   try {
     // الحسابات أولًا: مساراتها تحت /api/ ولا تتقاطع مع تعبير الغرف.
-    response = await routePlus(request, env, url, charge)
+    response = await routeRewarded(request, env, url)
+      || await routePlus(request, env, url, charge)
       || await routeTutorials(request, env, url, charge)
       || await routeOnlineDirectory(request, env, url, charge)
       || await routeMafia(request, env, url, charge)

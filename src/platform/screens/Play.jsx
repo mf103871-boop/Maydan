@@ -1,7 +1,7 @@
 // شاشة اللعب: إعداد اللاعبين/الفرق (للألعاب التي لا تدير إعدادها بنفسها) ثم مكوّن اللعبة داخل الإطار.
 import React, { useMemo, useState, useCallback, useEffect, useRef, useSyncExternalStore } from 'react';
 import { socialInterruption } from '../../social/interruption.js';
-import { Screen, TopBar, Segment } from '../../shared/ui/components.jsx';
+import { Button, Screen, TopBar, Segment } from '../../shared/ui/components.jsx';
 import { PlayersSetup } from '../../shared/setup/PlayersSetup.jsx';
 import { TeamsSetup } from '../../shared/setup/TeamsSetup.jsx';
 import { createStorage } from '../../shared/lib/storage.js';
@@ -19,14 +19,18 @@ import { GameFrame } from '../GameFrame.jsx';
 import { MissingGame } from './GameDetails.jsx';
 import { GameLoading, useVisualReadiness } from './Splash.jsx';
 import { createLocalMatchAudio } from '../../shared/fx/match-audio.js';
+import { LOCAL_REWARDED_OFFER, REWARDED_PREVIEW, rewardedStart, rewardEvent } from '../../shared/account/rewarded.js';
 
 // طبقات التأثير المشتركة تُمرَّر للألعاب عبر api.fx (اختصار؛ الاستيراد المباشر من shared/fx هو العقد).
 const FX = { flash: flashScreen, stamp: stampScreen, vignette, reduced: prefersReducedMotion, wait };
 
-export function Play({ id }) {
+export function Play({ id, rewarded = false }) {
   const game = getGame(id);
   const platform = usePlatform();
   const account = useAccount();
+  const demo = REWARDED_PREVIEW && rewarded && id === 'badeeha';
+  const accountRef = useRef(account);
+  accountRef.current = account;
   const profiles = useProfiles();
   const [progressionReceipt, setProgressionReceipt] = useState(null);
   const profilesRef = useRef(profiles); profilesRef.current = profiles;
@@ -91,11 +95,18 @@ export function Play({ id }) {
   const api = useMemo(() => ({
     // الحساب والاستحقاقات: اللعبة تقرأ api.account، وتعلن انتهاء مباراة كاملة بـ api.matchOver().
     account,
+    ...(demo && owner ? { rewarded: {
+      owner,
+      start: (matchId) => {
+        if (accountRef.current.user?.id !== owner) throw new Error('Account changed');
+        return rewardedStart(accountRef.current, matchId);
+      },
+    } } : {}),
     matchStart: () => { matchAudio.begin(); return recorder.start(id); },
     matchSnapshot: () => recorder.marker(),
     matchResume: (marker) => { matchAudio.begin(); return recorder.resume(marker, id); },
     // احتفال واحد للمباراة المكتملة؛ الانسحاب أو الإلغاء لا يشغّل صوت الفوز.
-    matchOver: ({ completed = false } = {}) => { account.markTrial(id); recorder.complete(completed); matchAudio.complete(completed); platform.sound.music.play('home'); },
+    matchOver: ({ completed = false } = {}) => { if (demo && completed) rewardEvent(LOCAL_REWARDED_OFFER, 'finish'); account.markTrial(id); recorder.complete(completed); matchAudio.complete(completed); platform.sound.music.play('home'); },
     sound: platform.sound,
     haptics: platform.haptics,
     confetti: platform.confetti,
@@ -121,7 +132,7 @@ export function Play({ id }) {
     requestExit: () => { setInGame(false); navigate('/', { replace: true }); },
     restart: () => { recorder.start(id); setSavedSession(null); setSession((s) => s + 1); raiseCurtain(); },
     backToSetup: () => { setInGame(false); setSavedSession(null); setStage('setup'); setSetupValid(true); raiseCurtain(); },
-  }), [platform, storage, raiseCurtain, account, id, recorder, matchAudio]);
+  }), [platform, storage, raiseCurtain, account, id, recorder, matchAudio, demo, owner]);
 
   const start = useCallback((list) => {
     recorder.start(id);
@@ -135,6 +146,12 @@ export function Play({ id }) {
   }, [mode, platform.sound, raiseCurtain, id, recorder]);
 
   if (!game) return <MissingGame id={id} />;
+  if (demo && !owner) return <Screen className="stack" aria-label="تحدّي اللمّة التجريبي">
+    <TopBar title="تحدّي بديهة التجريبي" />
+    <p role="status">{account.ready ? 'سجّل الدخول لبدء التجربة أو استئنافها.' : 'جارٍ التحقق من الحساب…'}</p>
+    <Button onClick={() => navigate('/game/badeeha?mode=local', { replace: true })}>العودة إلى بديهة</Button>
+    <Button onClick={() => navigate('/play/badeeha?mode=local', { replace: true })}>العب بديهة المجانية</Button>
+  </Screen>;
   const Component = game.Component;
 
   return (
@@ -157,7 +174,7 @@ export function Play({ id }) {
           )}
         </Screen>
       ) : (
-        <><Component key={session} api={api} players={players} teams={teams} mode={mode} savedSession={savedSession} gameOptions={gameOptions} onExit={api.requestExit} />
+        <><Component key={demo ? `${owner}:${session}` : session} api={api} players={players} teams={teams} mode={mode} savedSession={savedSession} gameOptions={gameOptions} onExit={api.requestExit} />
           {progressionReceipt && progressionReceipt.ownerId === owner && progressionReceipt.key === recorder.marker()?.key &&
             <MatchProgression key={progressionReceipt.eventId} {...progressionReceipt} />}</>
       )}

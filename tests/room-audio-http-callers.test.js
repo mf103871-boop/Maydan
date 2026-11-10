@@ -22,7 +22,7 @@ function fixture(){
   let settle,owner='owner',current=true;
   const transport=()=>new Promise(resolve=>{settle=resolve;});
   const context={
-    busy:false,setError(){},name:'ضيف الاختبار',mode:'join',game:'meenfina',account,mafiaCreationBlocked:false,
+    busy:false,setError(){},name:'ضيف الاختبار',mode:'join',game:'meenfina',account,mafiaCreationBlocked:false,rewarded:false,
     normalizeCode,code:'123456',validCode,ROOM_CAPABILITIES,initialObserver:false,entryLifetime:{current:{generation:1}},
     setBusy(){},SERVER:'http://localhost:3000',readSaved:()=>({id:'seat',token:'synthetic-only'}),
     credentialsRef:{current:null},newCredentials(){throw new Error('unexpected credentials');},deviceId:()=> 'synthetic-device',roomVisibility:'private',

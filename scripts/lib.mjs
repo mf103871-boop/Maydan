@@ -95,13 +95,13 @@ export function encodeMediaVersions(media = {}) {
     return row;
   }).join('|');
 }
-export function esbuildOptions({ minify = true, version = '0.0.0', media = {}, assets = 'inline' } = {}) {
+export function esbuildOptions({ minify = true, version = '0.0.0', media = {}, assets = 'inline', outdir = DIST, rewardedPreview = false, rewardedSimulation = false, roomsUrl = process.env.MAYDAN_ROOMS_URL || '' } = {}) {
   const art = assets === 'files' ? 'file' : 'dataurl';
   const warmth = warmthAudioBuild();
   const warmthPack = warmth ? validateWarmthManifest(JSON.parse(readFileSync(path.join(ROOT, WARMTH_DIRECTORY, 'manifest.json'), 'utf8'))).runtimePack : null;
   return {
     entryPoints: [path.join(ROOT, 'src/main.jsx')],
-    outfile: path.join(DIST, 'bundle.js'),
+    outfile: path.join(outdir, 'bundle.js'),
     bundle: true,
     minify,
     format: 'iife',
@@ -117,7 +117,9 @@ export function esbuildOptions({ minify = true, version = '0.0.0', media = {}, a
       'process.env.NODE_ENV': JSON.stringify(minify ? 'production' : 'development'),
       __MAYDAN_VERSION__: JSON.stringify(version),
       __MAYDAN_MEDIA_VERSIONS__: JSON.stringify(encodeMediaVersions(media)),
-      __MAYDAN_ROOMS_URL__: JSON.stringify(process.env.MAYDAN_ROOMS_URL || ''),
+      __MAYDAN_ROOMS_URL__: JSON.stringify(roomsUrl),
+      __MAYDAN_REWARDED_PREVIEW__: JSON.stringify(rewardedPreview === true),
+      __MAYDAN_REWARDED_SIMULATION__: JSON.stringify(rewardedPreview === true && rewardedSimulation === true),
       __MAYDAN_AUDIO_PREVIEW__: JSON.stringify(privateAudioBuild()),
       __MAYDAN_WARMTH_PREVIEW__: JSON.stringify(warmth),
       __MAYDAN_WARMTH_PACK__: JSON.stringify(warmthPack),
@@ -194,11 +196,11 @@ export const audioCueAssets = () => warmthAudioBuild()
   ...(privateAudioBuild() ? Object.values(CANDIDATE_EFFECTS).map((entry) => `./${entry.url}`) : []),
 ])];
 
-async function copyPublic({ id = 'dev', fabrakaImages = [], brandAssets = [] } = {}) {
+async function copyPublic({ id = 'dev', fabrakaImages = [], brandAssets = [], outdir = DIST } = {}) {
   const pub = path.join(ROOT, 'public');
   try { await stat(pub); } catch { return; }
   for (const entry of await readdir(pub)) {
-    await cp(path.join(pub, entry), path.join(DIST, entry), { recursive: true,
+    await cp(path.join(pub, entry), path.join(outdir, entry), { recursive: true,
       filter: (source) => {
         const relative = path.relative(pub, source).split(path.sep).join('/');
         if (/^audio-warmth-preview(?:\/|$)/.test(relative)) return warmthAudioBuild();
@@ -206,14 +208,14 @@ async function copyPublic({ id = 'dev', fabrakaImages = [], brandAssets = [] } =
         return true;
       } });
   }
-  const sw = path.join(DIST, 'sw.js');
+  const sw = path.join(outdir, 'sw.js');
   try {
     const src = await readFile(sw, 'utf8');
     await writeFile(sw, renderServiceWorker(src, { id, fabrakaImages, audioCues: audioCueAssets(), brandAssets }), 'utf8');
   } catch { /* لا عامل خدمي في public */ }
 }
 
-export async function buildOnce({ minify = true, includeStudio = true, version: releaseVersion } = {}) {
+export async function buildOnce({ minify = true, includeStudio = true, version: releaseVersion, outdir = DIST, rewardedPreview = false, rewardedSimulation = false, roomsUrl } = {}) {
   if (warmthAudioBuild()) await verifyWarmthMaterialized(ROOT);
   else if (privateAudioBuild()) await verifyMaterialized(ROOT);
   const pkg = await readPkg();
@@ -223,40 +225,42 @@ export async function buildOnce({ minify = true, includeStudio = true, version: 
   const fabrakaImages = await fabrakaMediaManifest(ROOT, versions);
   let result;
   try {
-    result = await esbuildBuild(esbuildOptions({ minify, version, media: versions, assets: 'files' }));
+    result = await esbuildBuild(esbuildOptions({ minify, version, media: versions, assets: 'files', outdir, rewardedPreview, rewardedSimulation, roomsUrl }));
   } catch (error) {
     const messages = (error.errors || []).map((e) => `${e.location ? `${e.location.file}:${e.location.line}:${e.location.column} ` : ''}${e.text}`);
     throw new Error(messages.length ? messages.join('\n') : error.message);
   }
   const js = result.outputFiles.find((f) => f.path.endsWith('.js')).text;
   const art = result.outputFiles.filter((f) => !f.path.endsWith('.js'));
-  const brandAssets = art.map((f) => `./${path.relative(DIST, f.path).split(path.sep).join('/')}`).sort();
+  const brandAssets = art.map((f) => `./${path.relative(outdir, f.path).split(path.sep).join('/')}`).sort();
   if (!brandAssets.every((url) => url.startsWith(`./${BRAND_ASSET_DIR}/`))) throw new Error(`Unexpected bundle output: ${brandAssets.join(', ')}`);
   const html = await renderHtml(js, { version, assets: brandAssets });
-  await rm(DIST, { recursive: true, force: true });
-  await mkdir(DIST, { recursive: true });
+  // An explicit destination is owned by its caller. Leave its other files
+  // alone. The standard build retains its clean dist replacement.
+  if (outdir === DIST) await rm(DIST, { recursive: true, force: true });
+  await mkdir(outdir, { recursive: true });
   for (const file of art) {
     await mkdir(path.dirname(file.path), { recursive: true });
     await writeFile(file.path, file.contents);
   }
-  await copyPublic({ id: buildId(version, html), fabrakaImages, brandAssets });
+  await copyPublic({ id: buildId(version, html), fabrakaImages, brandAssets, outdir });
   if (pkg.dependencies['livekit-client'] !== LIVEKIT_VERSION) throw new Error('Update the versioned LiveKit module filename with its pinned dependency.');
   await esbuildBuild({ stdin: { contents: "export { Room, RoomEvent, Track } from 'livekit-client';", resolveDir: ROOT, sourcefile: 'lamma-web-audio.js' },
-    outfile: path.join(DIST, LIVEKIT_MODULE), bundle: true, format: 'esm', target: ['es2020', 'safari14'], minify: true,
+    outfile: path.join(outdir, LIVEKIT_MODULE), bundle: true, format: 'esm', target: ['es2020', 'safari14'], minify: true,
     define: { 'process.env.NODE_ENV': '"production"' }, legalComments: 'eof', logLevel: 'silent' });
   // الوسائط تُفحص قبل النسخ: سؤال يشير إلى ملف غير موجود يوقف البناء.
   const media = await checkMedia(ROOT);
   if (media.errors.length) {
     throw new Error(`وسائط ناقصة (${media.errors.length}):\n  ${media.errors.slice(0, 12).join('\n  ')}`);
   }
-  const copied = await copyMedia(ROOT, DIST);
-  const out = path.join(DIST, 'index.html');
+  const copied = await copyMedia(ROOT, outdir);
+  const out = path.join(outdir, 'index.html');
   await writeFile(out, html, 'utf8');
   if (includeStudio) {
     const { buildStudio } = await import('./studio-build.mjs');
     const { buildDesignPreview } = await import('./design-preview-build.mjs');
-    await buildStudio({ outdir: path.join(DIST, 'studio'), minify });
-    await buildDesignPreview({ outdir: DIST, minify, version, media: versions });
+    await buildStudio({ outdir: path.join(outdir, 'studio'), minify });
+    await buildDesignPreview({ outdir, minify, version, media: versions });
   }
   const bytes = Buffer.byteLength(html, 'utf8');
   const gzip = gzipSync(Buffer.from(html, 'utf8')).length;
