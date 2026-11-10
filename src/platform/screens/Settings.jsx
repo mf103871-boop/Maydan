@@ -2,7 +2,6 @@ import { SubscriptionTransition } from '../../plus/SubscriptionTransition.jsx';
 import { SELECTED_AUDIO } from '../../shared/fx/selected-audio.js';
 import { AudioCandidateLab, candidateCallBusy } from '../../shared/fx/AudioCandidateLab.jsx';
 import { isPrivateAudioCandidateBuild } from '../../shared/fx/audio-candidate-policy.js';
-import { isWarmthPreviewBuild } from '../../shared/fx/warmth-preview-policy.js';
 import { useLamma } from '../../social/LammaProvider.jsx';
 // الإعدادات: الصوت، الموسيقى، الاهتزاز، تقليل الحركة، مسح البيانات، الإصدار، وبلاغات أسئلة بَديهة.
 import React, { useState } from 'react';
@@ -78,7 +77,8 @@ export function Settings() {
       {section?.key === 'account' && <SettingsGroup id="settings-account" title="حسابك وميدان بلس" icon={<IconUsers />}><SubscriptionTransition /><AccountCard /><Button data-design-id="plus-store" onClick={() => navigate('/store')}>تخصيص مظهري ومتجر بلس</Button></SettingsGroup>}
       {section?.key === 'audio' && <SettingsGroup id="settings-audio" title="الصوت والموسيقى" icon={<IconVolume />}>
         <Toggle index={0} icon={<IconVolume />} title="الصوت" sub="المؤثرات ومقاطع الأسئلة والموسيقى معًا" checked={settings.soundOn} onChange={(v) => { setSettings({ soundOn: v }); if (v) sound.play('pop'); }} />
-        {isPrivateAudioCandidateBuild() && !isWarmthPreviewBuild() && <Button data-sound="none" size="sm" disabled={candidateCallBusy(lamma)} onClick={() => setAudioCandidates(true)}>معاينة أصوات التحديث</Button>}
+        {typeof __MAYDAN_AUDIO_PREVIEW__ !== 'undefined' && __MAYDAN_AUDIO_PREVIEW__ === true &&
+          (typeof __MAYDAN_WARMTH_PREVIEW__ === 'undefined' || __MAYDAN_WARMTH_PREVIEW__ !== true) && isPrivateAudioCandidateBuild() && <Button data-sound="none" size="sm" disabled={candidateCallBusy(lamma)} onClick={() => setAudioCandidates(true)}>معاينة أصوات التحديث</Button>}
         <div className="setting setting-volume">
           <label htmlFor="sound-volume"><b>مستوى الصوت</b><output htmlFor="sound-volume">{Math.round(sound.volume * 100)}٪</output></label>
           <input data-design-id="sound-volume" id="sound-volume" type="range" min="0" max="100" step="5" value={Math.round(sound.volume * 100)} disabled={!settings.soundOn}
@@ -144,7 +144,8 @@ export function Settings() {
       {section && <Button data-design-id="settings-index-return" className="settings-return" variant="accent" full onClick={returnToSettings}>العودة إلى الإعدادات</Button>}
       <p className="muted center" style={{ fontSize: 13 }}>ميدان: ألعاب جمعتنا · الإصدار {version}</p>
       {/* The compile-time guard lets public builds drop the lab and its private catalog. */}
-      {typeof __MAYDAN_AUDIO_PREVIEW__ !== 'undefined' && __MAYDAN_AUDIO_PREVIEW__ === true && audioCandidates && isPrivateAudioCandidateBuild() && !isWarmthPreviewBuild() && <AudioCandidateLab onClose={() => setAudioCandidates(false)} />}
+      {typeof __MAYDAN_AUDIO_PREVIEW__ !== 'undefined' && __MAYDAN_AUDIO_PREVIEW__ === true &&
+          (typeof __MAYDAN_WARMTH_PREVIEW__ === 'undefined' || __MAYDAN_WARMTH_PREVIEW__ !== true) && audioCandidates && isPrivateAudioCandidateBuild() && <AudioCandidateLab onClose={() => setAudioCandidates(false)} />}
       {confirmClear && (
         <ConfirmModal title="مسح بيانات هذا الجهاز؟" className="settings-clear-confirmation" danger message="لا يمكن التراجع. ستُحذف أسماء اللاعبين والنتائج والمباريات المحفوظة ومفاتيح العودة للغرف من هذا الجهاز. يبقى حسابك واشتراكك." confirmLabel="نعم، امسح" cancelLabel="إلغاء"
           onConfirm={() => { clearAllPlatformData({ keep: [ACCOUNT_PREFIX] }); setConfirmClear(false); toast('تم مسح البيانات'); setTimeout(() => location.reload(), 500); }} onCancel={() => setConfirmClear(false)} />
