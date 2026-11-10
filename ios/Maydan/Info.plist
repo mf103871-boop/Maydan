@@ -40,7 +40,7 @@
     <key>NSCameraUsageDescription</key>
     <string>لالتقاط صورة تختارها لصورتك الشخصية أو غلاف بروفايلك في ميدان.</string>
     <key>NSMicrophoneUsageDescription</key>
-    <string>للتحدث مع أصدقائك في المكالمات وتسجيل الرسائل الصوتية التي تختار إرسالها.</string>
+    <string>للتحدث في المكالمات وغرف اللعب الصوتية عند تشغيل الميكروفون، وتسجيل الرسائل الصوتية التي تختار إرسالها.</string>
     <key>MaydanPushEnvironment</key>
     <string>$(MAYDAN_PUSH_ENVIRONMENT)</string>
     <key>UIBackgroundModes</key>
