@@ -225,11 +225,13 @@ class LaunchSmoke:
         launch_env.pop(variable, None)
         if launch_token:
             launch_env[variable] = launch_token
+        # The simulator bridge can take longer than the app observation window
+        # to hand back a PID after installation. The app checks still run below.
         result = self.simctl(
             "launch",
             f"--stdout={self.output / (name + '-app.stdout.log')}",
             f"--stderr={self.output / (name + '-app.stderr.log')}",
-            self.device, self.bundle, timeout=45, label=f"{name}-launch", env=launch_env,
+            self.device, self.bundle, timeout=120, label=f"{name}-launch", env=launch_env,
         )
         match = re.search(rf"^{re.escape(self.bundle)}:\s*(\d+)\s*$", result.stdout, re.MULTILINE)
         if not match:

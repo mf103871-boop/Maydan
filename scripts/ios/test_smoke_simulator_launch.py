@@ -55,7 +55,7 @@ class LaunchSmokeTests(unittest.TestCase):
                 self.assertEqual(args[0], 'launch')
                 self.assertNotIn('--terminate-running-process', args)
                 self.assertEqual(args[-2:], ('fresh-simulator', 'Maydan'))
-                self.assertEqual(kwargs['timeout'], 45)
+                self.assertEqual(kwargs['timeout'], 120)
                 self.assertEqual(smoke.report['launches'][0]['requiredSeconds'], 45)
                 self.assertTrue(smoke.report['launches'][0]['passed'])
                 self.assertEqual(smoke.report['launches'][0]['readyRequired'], kind is LaunchSmoke)
@@ -104,8 +104,8 @@ class LaunchSmokeTests(unittest.TestCase):
         smoke = LaunchSmoke(self.root / 'Maydan.app', self.root / 'evidence')
         smoke.device, smoke.bundle = 'fresh-simulator', 'Maydan'
         smoke.data_container = self.root
-        with patch('smoke_simulator_launch.subprocess.run', side_effect=subprocess.TimeoutExpired('simctl', 45)) as run:
-            with self.assertRaisesRegex(SmokeFailure, 'Timed out after 45s'):
+        with patch('smoke_simulator_launch.subprocess.run', side_effect=subprocess.TimeoutExpired('simctl', 120)) as run:
+            with self.assertRaisesRegex(SmokeFailure, 'Timed out after 120s'):
                 smoke.launch('cold', 45)
         run.assert_called_once()
         self.assertEqual(smoke.report['launches'], [])
