@@ -26,8 +26,12 @@ function assertDocumentBudget(html) {
 test('the shipped document and its largest inputs stay inside the size budget', { timeout: 120_000 }, async () => {
   const result = await build({ ...esbuildOptions({ minify: true, version: '0.0.0-test', media: await mediaVersions(ROOT), assets: 'files' }), metafile: true });
   const js = result.outputFiles.find((f) => f.path.endsWith('.js')).text;
-  assert.doesNotMatch(js, /maydanRewardedLab|__rewarded_lab__|rewardedShow|شاهد إعلان والعب مباراة كاملة/,
-    'the regular document excludes the local simulator, ad bridge and opt-in UI');
+  assert.doesNotMatch(js, /maydanRewardedLab|maydanRewardedMetric|__rewarded_lab__/,
+    'the ordinary document must never ship loopback simulation or its grant endpoint');
+  // The real optional policy now uses ordinary setup/lobby entry points. Its
+  // dormant UI/bridge is shared; runtime default-off and genuine account access
+  // are tested by gameplay-access-local and account-gating. The native SDK is
+  // still absent unless its separately verified signed-build mode is selected.
   const assets = result.outputFiles.filter(file=>!file.path.endsWith('.js')).map(file=>'./'+path.relative(DIST,file.path).replaceAll('\\','/')).sort();
   const html = await renderHtml(js, { version: '0.0.0-test', assets });
   // الرسوم والخطوط ملفات مبصومة بجانب المستند لا base64 داخله.

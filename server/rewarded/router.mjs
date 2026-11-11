@@ -5,6 +5,9 @@ import { verifyAdMobCallback, verifyAdMobPreviewSetup } from './admob-ssv.mjs';
 import { cancelRewardedAttempt, issueRewardedAttempt, REWARDED_ITEM, rewardedStatus, rewardedTransport, verifyRewardedAttempt } from './attempts.mjs';
 import { assertRewardedAccount, rewardedEnvironment, rewardedMatchId, rewardedOffers, startRewardedLocalMatch } from './ledger.mjs';
 import { hostedRewardedSettings, matchesRewardedUnit, rewardedOrigin, REWARDED_PREVIEW_QA_UNIT, validRewardedPreviewSetupExpiry } from './settings.mjs';
+import { gameplayAccessDescriptor, gameplayTicketsEnabled } from './settings.mjs';
+import { rewardedLedgerEnvironment } from './settings.mjs';
+import { gameplayOfferById } from '../../src/shared/account/gameplay-policy.mjs';
 
 const ROOT = '/api/rewarded/';
 const verifyDashboard = url => Promise.any(['test', 'production'].map(keys => verifyAdMobCallback(url, keys)))
@@ -12,7 +15,7 @@ const verifyDashboard = url => Promise.any(['test', 'production'].map(keys => ve
 
 export async function routeRewarded(request, env, url = new URL(request.url)) {
   if (!url.pathname.startsWith(ROOT)) return null;
-  const environment = rewardedEnvironment(env);
+  const environment = gameplayTicketsEnabled(env) ? rewardedLedgerEnvironment(env) : rewardedEnvironment(env);
   if (!environment || url.origin !== rewardedOrigin(env, environment)) return json({ error: 'REWARDED_UNAVAILABLE' }, 404);
   const path = url.pathname.slice(ROOT.length);
   const method = request.method;
@@ -21,7 +24,8 @@ export async function routeRewarded(request, env, url = new URL(request.url)) {
       const { user } = await requireSession(env, request);
       await assertRewardedAccount(env, user.id);
     }
-    return json({ offers: rewardedOffers, mode: rewardedTransport(env, environment) });
+    return json({ offers: rewardedOffers.filter(offer => gameplayOfferById(offer.id) ? gameplayTicketsEnabled(env) : Boolean(rewardedEnvironment(env))),
+      gameplay: gameplayAccessDescriptor(env), mode: rewardedTransport(env, environment) });
   }
   const cancellation = method === 'POST' && /^attempt\/([a-f\d-]+)\/cancel$/.exec(path);
   if (!(method === 'GET' && path === 'status') && !(method === 'POST' && ['attempt','local-start'].includes(path)) && !cancellation) {
@@ -48,7 +52,7 @@ export async function routeRewarded(request, env, url = new URL(request.url)) {
 export async function rewardedWebhook(request, env, url = new URL(request.url), charge = null) {
   // No browser session or Origin here. Only a Google-signed callback can earn a
   // ticket and a disabled new-ad switch must not discard an in-flight reward.
-  const environment = rewardedEnvironment(env);
+  const environment = rewardedLedgerEnvironment(env);
   const settings = hostedRewardedSettings(env, environment);
   if (request.method !== 'GET' || url.origin !== rewardedOrigin(env, environment) || settings?.keys !== 'production') {
     return json({ error: 'REWARDED_UNAVAILABLE' }, 404);

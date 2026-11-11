@@ -1,5 +1,7 @@
 import { MAFIA_PREVIEW_API_ORIGIN, PRODUCTION_API_ORIGIN } from '../../src/shared/lib/environment.js';
 import { sha256 } from '../protocol.mjs';
+import { TICKET_POLICY, ticketPolicyEnabled } from '../../src/shared/account/gameplay-policy.mjs';
+import { FREE_PACKS } from '../../src/shared/account/config.js';
 
 export const SAMPLE_IOS_REWARDED_UNIT = 'ca-app-pub-3940256099942544/1712485313';
 export const REWARDED_PREVIEW_QA_UNIT = 'ca-app-pub-6382290742060099/3289860273';
@@ -43,6 +45,18 @@ export function rewardedEnvironment(env) {
   }
   if (environment === 'ios-preview' && !TESTER_SHA256.test(env.REWARDED_PREVIEW_USER_SHA256 || '')) return null;
   return env.REWARDED_PREVIEW_ENABLED === '1' ? environment : null;
+}
+
+export function gameplayTicketsEnabled(env) {
+  // Access policy is durable product configuration. Turning off new ads or a
+  // broken SDK/SSV setting must not turn protected matches into free matches.
+  return ticketPolicyEnabled(env.GAMEPLAY_ACCESS_POLICY);
+}
+
+export function gameplayAccessDescriptor(env) {
+  return gameplayTicketsEnabled(env)
+    ? { access: 'trial-ticket', policy: TICKET_POLICY, allPacks: false, hosting: 'trial-ticket', freePacks: FREE_PACKS }
+    : { access: 'free', allPacks: true, hosting: 'free' };
 }
 
 export function hostedRewardedSettings(env, environment) {

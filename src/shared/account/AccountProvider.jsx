@@ -5,7 +5,7 @@ import { isMafiaPreview } from '../lib/environment.js';
 // لا اشتراك ولا دخول، والتجارب تُسجَّل محليًا فقط.
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { AccountContext } from './context.js';
-import { PLUS_NAME, PRODUCTS, TRIAL_GAMES, signInProviders } from './config.js';
+import { PLUS_NAME, PRODUCTS, GAMEPLAY_TRIAL_GAMES as TRIAL_GAMES, signInProviders } from './config.js';
 import { isPremium, lockedPack as lockedPackOf, trialAvailable as trialAvailableOf, gameAccess as gameAccessOf, mergeTrials, shouldRefresh } from './entitlements.js';
 import { accountErrorText } from './errors.js';
 import { accountStore, ACCOUNT_PREFIX, KEYS } from './store.js';
@@ -23,6 +23,8 @@ import { rememberProfileReturn, consumeProfileReturn } from './return-path.js';
 import { beginAuthAttempt, currentAuthAttempt, clearAuthAttempt } from './attempt.js';
 import { clearDeletedTutorialAccount } from '../../games/mafia/tutorial/progress.js';
 import { clearDeletedMafiaLabs } from '../../games/mafia/tutorial/labs/progress.js';
+import { resolveGameplayPolicy } from './gameplay-policy.mjs';
+import { isAndroidRewardedShell } from './android-rewarded.js';
 
 const EMPTY = Object.freeze({});
 // بديل ثابت حين لا يوفّر المزوّد تنبيهات: دالة جديدة في كل رسم كانت تعيد بناء كل
@@ -50,7 +52,8 @@ export function AccountProvider({ children }) {
   const route = useRoute();
 
   const native = useMemo(() => isNativeShell(), []);
-  const platform = native ? 'ios' : 'web';
+  const android = useMemo(() => isAndroidRewardedShell(), []);
+  const platform = android ? 'android' : native ? 'ios' : 'web';
   const [offline, setOffline] = useState(() => accountOffline());
 
   const [session, setSession] = useState(() => accountStore.readSession());
@@ -69,6 +72,8 @@ export function AccountProvider({ children }) {
   const [storeProbeDiagnostics, setStoreProbeDiagnostics] = useState(null);
   const [restoreDiagnostics, setRestoreDiagnostics] = useState(null);
   const [billing, setBilling] = useState(null);
+  const gameplayPolicy = resolveGameplayPolicy({ billing, me,
+    build: typeof __MAYDAN_GAMEPLAY_POLICY__ !== 'undefined' ? __MAYDAN_GAMEPLAY_POLICY__ : null });
   const [signInProvidersStatus, setSignInProvidersStatus] = useState('idle');
   const [signInProvidersError, setSignInProvidersError] = useState(null);
   const providerConfigRef = useRef({ pending: null, config: null, fetchedAt: 0, error: null });
@@ -447,8 +452,12 @@ export function AccountProvider({ children }) {
   }, [loadProducts, refresh]);
   const closePaywall = useCallback(() => setPaywall((prev) => ({ ...prev, open: false })), []);
 
-  // Keep the old game integration callable without consuming any new trials.
-  const markTrial = useCallback(() => {}, []);
+  const markTrial = useCallback((game) => {
+    if (!gameplayPolicy || !TRIAL_GAMES.includes(game)) return;
+    accountStore.addMark(game);
+    setLocalTrials(accountStore.addPending(game));
+    if (sessionRef.current) void flushPending();
+  }, [gameplayPolicy, flushPending]);
 
   // الغلاف يبثّ authReturn بالرمز، أو بخطأ (إلغاء المستخدم مثلًا) فيُرفض الانتظار فورًا.
   const waitForAuthReturn = useCallback((timeout = 5 * 60_000) => new Promise((resolve, reject) => {
@@ -541,6 +550,7 @@ export function AccountProvider({ children }) {
   }, [options, clearLocalAuth, captureAuth, ownsAuth, startBusy, finishBusy, toast, sound]);
 
   const purchase = useCallback(async (plan = 'monthly') => {
+    if (android) { setError('NOT_ELIGIBLE'); toast('الشراء عبر Google Play غير متاح في هذه النسخة التجريبية.'); return null; }
     if (purchaseInFlightRef.current) return null;
     setError(null);
     if (activationPending) { setError('ACTIVATION_PENDING'); return null; }
@@ -626,7 +636,7 @@ export function AccountProvider({ children }) {
       purchaseInFlightRef.current = false;
       finishBusy(activity);
     }
-  }, [captureAuth, requireAuthOwner, ownsAuth, ownedOptions, startBusy, finishBusy, deliverOwnedTransaction, native, applyMe, refresh, handleError, closePaywall, toast, signIn, activationPending, applyNativeCatalog]);
+  }, [captureAuth, requireAuthOwner, ownsAuth, ownedOptions, startBusy, finishBusy, deliverOwnedTransaction, native, android, applyMe, refresh, handleError, closePaywall, toast, signIn, activationPending, applyNativeCatalog]);
 
   const restore = useCallback(async () => {
     setError(null);
@@ -661,6 +671,7 @@ export function AccountProvider({ children }) {
   }, [captureAuth, requireAuthOwner, ownsAuth, startBusy, finishBusy, deliverOwnedTransaction, native, applyMe, handleError, toast]);
 
   const manageSubscription = useCallback(async () => {
+    if (android) { setError('NOT_ELIGIBLE'); toast('إدارة Google Play غير متاحة في هذه النسخة التجريبية.'); return; }
     const owner = captureAuth();
     setError(null);
     try {
@@ -678,7 +689,7 @@ export function AccountProvider({ children }) {
       const code = handleError(err);
       toast(accountErrorText(code));
     }
-  }, [captureAuth, requireAuthOwner, ownsAuth, ownedOptions, native, handleError, toast]);
+  }, [captureAuth, requireAuthOwner, ownsAuth, ownedOptions, native, android, handleError, toast]);
 
   // رمز الهدية: الخادم يتحقق بعد تسجيل الدخول، ولا نحفظ الرمز محليًا.
   const redeem = useCallback(async (code) => {
@@ -735,7 +746,7 @@ export function AccountProvider({ children }) {
   // Retain uses fresh server identity, never the offline /api/me cache. It is
   // independent of the paywall so existing live subscribers can be identified.
   useEffect(() => {
-    if (native || !session || paddleIdentity?.environment !== 'production' || !paddleIdentity.customerId) return undefined;
+    if (native || android || !session || paddleIdentity?.environment !== 'production' || !paddleIdentity.customerId) return undefined;
     let alive = true;
     const epoch = authEpochRef.current;
     (async () => {
@@ -747,7 +758,7 @@ export function AccountProvider({ children }) {
       } catch { /* Retain is optional; checkout reports configuration failures. */ }
     })();
     return () => { alive = false; };
-  }, [native, session, paddleIdentity, options]);
+  }, [native, android, session, paddleIdentity, options]);
 
   useEffect(() => () => clearPaddleCustomer(), []);
 
@@ -912,21 +923,21 @@ export function AccountProvider({ children }) {
   const user = (me && me.user) || null;
 
   const value = useMemo(() => ({
-    ready, user, me, premium, promo, trials, platform, products, productsStatus, productsError, productsDiagnostics,
+    ready, user, me, premium, promo, trials, platform, gameplayPolicy, products, productsStatus, productsError, productsDiagnostics,
     storeProbeStatus, storeProbeDiagnostics, restoreDiagnostics,
     offline, signedIn: !!session, busy, error, paywall, billing, activationPending,
     loadSignInProviders, signInProvidersStatus, signInProvidersError,
     redeem,
     signIn, signOut, refresh, requestAuthenticated, ensureNativeSocialSession,
     markTrial,
-    trialAvailable: (game) => trialAvailableOf(me, localTrials.marks, game, premium),
-    lockedPack: (id) => lockedPackOf(id, premium),
-    gameAccess: (game) => gameAccessOf(me, localTrials.marks, game),
+    trialAvailable: (game) => trialAvailableOf(me, localTrials.marks, game, premium, gameplayPolicy),
+    lockedPack: (id) => lockedPackOf(id, premium, gameplayPolicy),
+    gameAccess: (game) => gameAccessOf(me, localTrials.marks, game, gameplayPolicy),
     openPaywall, closePaywall, restore, deleteAccount,
     purchase, manageSubscription, loadProducts, retryProducts, probeStore,
     clearError: () => setError(null),
     authHeaders: () => (sessionRef.current ? { Authorization: `Bearer ${sessionRef.current}` } : {}),
-  }), [ready, user, me, premium, promo, trials, platform, products, productsStatus, productsError, productsDiagnostics, storeProbeStatus, storeProbeDiagnostics, restoreDiagnostics, offline, session, busy, error, paywall, billing, activationPending, loadSignInProviders, signInProvidersStatus, signInProvidersError,
+  }), [ready, user, me, premium, promo, trials, platform, gameplayPolicy, products, productsStatus, productsError, productsDiagnostics, storeProbeStatus, storeProbeDiagnostics, restoreDiagnostics, offline, session, busy, error, paywall, billing, activationPending, loadSignInProviders, signInProvidersStatus, signInProvidersError,
     signIn, signOut, refresh, requestAuthenticated, ensureNativeSocialSession, markTrial, localTrials, openPaywall, closePaywall, restore, deleteAccount, purchase, manageSubscription, loadProducts, retryProducts, probeStore, redeem]);
 
   return <AccountContext.Provider value={value}>{isMafiaPreview() && !['room','play'].includes(route.name) && <aside data-design-fixed="isolated-test-environment" role="status" style={{margin:'8px 12px',padding:'10px 14px',border:'1px solid #8c6daa',borderRadius:14,background:'#eee2f7',color:'#402451',fontSize:13,lineHeight:1.7,textAlign:'center'}}><strong>بيئة اختبار مافيا</strong><br/>حسابات وتجارب منفصلة عن ميدان الأساسية. استخدم حساب التجربة.</aside>}{children}</AccountContext.Provider>;

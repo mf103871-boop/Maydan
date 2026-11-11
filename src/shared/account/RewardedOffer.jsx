@@ -7,6 +7,11 @@ import { request, resolveAccountServer } from './api.js';
 import { SignInSheet } from './SignInSheet.jsx';
 import { hasRewardedDraft, LOCAL_REWARDED_OFFER, presentRewarded, rewardedConfig, rewardedStatus, rewardedSurfaceSafe, rewardEvent } from './rewarded.js';
 import { configuredBuildOrigin, MAFIA_PREVIEW_API_ORIGIN, PRODUCTION_API_ORIGIN } from '../lib/environment.js';
+import { gameplayOfferById } from './gameplay-policy.mjs';
+import { callAndroidRewarded, isAndroidRewardedShell } from './android-rewarded.js';
+
+const rewardNative = (type, payload, options) => isAndroidRewardedShell()
+  ? callAndroidRewarded(type, payload, options) : callNative(type, payload, options);
 
 const ACCESS = {
   plus: 'بلس مفعّل. المباراة جاهزة.',
@@ -34,7 +39,7 @@ export function RewardedPrivacySettings() {
   useEffect(() => {
     let active = true;
     const update = status => { if (active) setRequired(status?.privacyOptionsRequired === true); };
-    void callNative('rewardedStatus').then(update).catch(() => {});
+    void rewardNative('rewardedStatus').then(update).catch(() => {});
     const stop = onNativeEvent('rewardedStatusChanged', update);
     return () => { active = false; stop(); };
   }, []);
@@ -42,7 +47,7 @@ export function RewardedPrivacySettings() {
   async function open() {
     setNote('');
     try {
-      const result = await callNative('rewardedPrivacyOptions');
+      const result = await rewardNative('rewardedPrivacyOptions');
       if (result?.state === 'shown') return;
     } catch { /* The user can retry after the competing native surface closes. */ }
     setNote('تعذّر فتح خيارات خصوصية الإعلانات الآن. حاول مرة أخرى.');
@@ -74,8 +79,10 @@ export function RewardedOffer({ offer, surface = 'selection', onReady, onFree, o
 }
 
 function Offer({ account, offer, surface, onReady, onFree, onBusy, onAccess, canPresent }) {
-  const local = offer === LOCAL_REWARDED_OFFER;
-  const native = isNativeShell();
+  const gameplay = gameplayOfferById(offer);
+  const local = gameplay ? gameplay.mode === 'local' : offer === LOCAL_REWARDED_OFFER;
+  const android = isAndroidRewardedShell();
+  const native = isNativeShell() || android;
   const lamma = useLamma();
   const owner = account.signedIn ? account.user?.id : null;
   const [status, setStatus] = useState(null);
@@ -86,6 +93,7 @@ function Offer({ account, offer, surface, onReady, onFree, onBusy, onAccess, can
   const marker = useRef(null);
   const lifetime = useRef(false);
   const action = useRef(false);
+  const abort = useRef(null);
   const current = useRef(null);
   current.current = { owner, account, canPresent, unsafe: Boolean(lamma?.activeCall || lamma?.incomingCall || lamma?.callConnecting) };
 
@@ -101,7 +109,7 @@ function Offer({ account, offer, surface, onReady, onFree, onBusy, onAccess, can
   }, [offer, owner, onAccess]);
   useLayoutEffect(() => {
     lifetime.current = true;
-    return () => { lifetime.current = false; onBusy?.(false); };
+    return () => { lifetime.current = false; abort.current?.abort(); onBusy?.(false); };
   }, [onBusy]);
   useEffect(() => {
     rewardEvent(offer, 'offer');
@@ -109,7 +117,7 @@ function Offer({ account, offer, surface, onReady, onFree, onBusy, onAccess, can
   }, [offer, owner, refresh]);
   useEffect(() => {
     if (!native) return undefined;
-    const read = () => callNative('rewardedStatus').then(value => {
+    const read = () => rewardNative('rewardedStatus').then(value => {
       if (lifetime.current) setNativeStatus(value);
     }).catch(() => {});
     read();
@@ -141,6 +149,7 @@ function Offer({ account, offer, surface, onReady, onFree, onBusy, onAccess, can
       !current.current.unsafe && (current.current.canPresent?.() ?? true) && rewardedSurfaceSafe(surface);
     if (!safe()) { setNote('blocked'); return; }
     action.current = true;
+    abort.current = new AbortController();
     setBusy(true); onBusy?.(true); setNote('');
     rewardEvent(offer, 'accept');
     let element;
@@ -160,7 +169,7 @@ function Offer({ account, offer, surface, onReady, onFree, onBusy, onAccess, can
         element.dataset.maydanRewardedActive = '';
         element.dataset.attempt = attempt.customData;
         element.dataset.surface = surface;
-        result = await presentRewarded(attempt);
+        result = await presentRewarded(attempt, { isCurrent: stillHere, signal: abort.current.signal });
       }
       const definitelyUnshown = result.presented === false && unshownStates.has(result.state);
       if (token && server && (definitelyUnshown || (stillHere() && result.state === 'skipped'))) {
@@ -183,29 +192,30 @@ function Offer({ account, offer, surface, onReady, onFree, onBusy, onAccess, can
         delete element.dataset.surface;
       }
       action.current = false;
+      abort.current = null;
       if (lifetime.current) { setBusy(false); onBusy?.(false); }
     }
   }
   async function refreshManually() {
-    try { setNote(''); await refresh(); }
+    try { setNote(''); if (native) setNativeStatus(await rewardNative('rewardedStatus')); await refresh(); }
     catch { if (lifetime.current) setNote('error'); }
   }
-  const saved = local && hasRewardedDraft(owner);
+  const saved = !gameplay && local && hasRewardedDraft(owner);
   const mayWatch = status?.group === 'B' && status.adsAvailable && status.access === 'required' &&
     status.attempt !== 'pending' && (!native || nativeStatus?.available !== false);
   const unavailable = status?.access === 'required' && status.group === 'B' && (!status.adsAvailable || nativeStatus?.available === false);
-  return <Card className="stack" style={{ padding: 16 }} role="region" aria-label="تحدّي اللمّة التجريبي">
-    <header><small>{configuredBuildOrigin() === PRODUCTION_API_ORIGIN ? 'تحدّي اللمّة' : 'معاينة اختبار · تحدّي اللمّة'}</small><h2 className="card-title">{local ? 'بديهة · ست حزم مختارة' : 'مين فينا · غرفة تجريبية خاصة'}</h2></header>
-    <p className="card-muted">{local ? 'مباراة بديهة كاملة على جهاز واحد.' : 'المضيف فقط يحتاج أهلية البدء. الضيوف يدخلون بالدعوة مجانًا.'}</p>
+  return <Card className="stack" style={{ padding: 16 }} role="region" aria-label={gameplay ? `بدء مباراة ${gameplay.label}` : 'تحدّي اللمّة التجريبي'}>
+    <header><small>{gameplay ? 'مباراة كاملة · إعلان اختياري أو بلس' : configuredBuildOrigin() === PRODUCTION_API_ORIGIN ? 'تحدّي اللمّة' : 'معاينة اختبار · تحدّي اللمّة'}</small><h2 className="card-title">{gameplay ? gameplay.label : local ? 'بديهة · ست حزم مختارة' : 'مين فينا · غرفة تجريبية خاصة'}</h2></header>
+    <p className="card-muted">{local ? `مباراة ${gameplay?.label || 'بديهة'} كاملة على جهاز واحد.` : 'المضيف فقط يحتاج أهلية البدء. الضيوف يدخلون بالدعوة مجانًا.'}</p>
     <p role="status" aria-live="polite">{busy ? 'جارٍ تجهيز الإعلان…' : feedback[note] || (unavailable ? feedback.noAds : status ? ACCESS[status.access] : owner ? 'جارٍ التحقق من الأهلية…' : 'سجّل الدخول لحفظ التجربة أو التذكرة على حسابك.')}</p>
     {!owner && <Button size="lg" onClick={() => setSignIn(true)}>تسجيل الدخول للتجربة</Button>}
-    {owner && onReady && (!local || saved || readyAccess.has(status?.access)) && <Button size="lg" variant="accent" disabled={busy} onClick={onReady}>{saved ? 'استأنف مباراة بديهة التجريبية' : local ? 'إلى إعداد المباراة التجريبية' : 'إلى إعداد الغرفة التجريبية'}</Button>}
+    {owner && onReady && (gameplay || !local || saved || readyAccess.has(status?.access)) && <Button size="lg" variant="accent" disabled={busy} onClick={onReady}>{gameplay ? 'تحقّق وابدأ المباراة' : saved ? 'استأنف مباراة بديهة التجريبية' : local ? 'إلى إعداد المباراة التجريبية' : 'إلى إعداد الغرفة التجريبية'}</Button>}
     <div ref={marker}>{mayWatch && <Button size="lg" full variant="accent" disabled={busy} onClick={watch}>شاهد إعلان والعب مباراة كاملة</Button>}</div>
     {owner && !readyAccess.has(status?.access) && <Button size="lg" variant="ghost" disabled={busy} onClick={refreshManually}>تحقّق من تذكرتي</Button>}
     {!account.premium && <Button size="lg" disabled={busy} onClick={() => account.openPaywall({ reason: 'cosmetics' })}>العب فورًا مع بلس</Button>}
-    {nativeStatus?.privacyOptionsRequired && <Button size="lg" disabled={busy} onClick={() => { void callNative('rewardedPrivacyOptions').catch(() => setNote('privacy-required')); }}>خيارات خصوصية الإعلانات</Button>}
-    {native && <Button size="lg" variant="ghost" disabled={busy} onClick={() => { void callNative('rewardedReport').then(result => { if (result?.state !== 'shown') setNote('unavailable'); }).catch(() => setNote('unavailable')); }}>الإبلاغ عن آخر إعلان</Button>}
+    {nativeStatus?.privacyOptionsRequired && <Button size="lg" disabled={busy} onClick={() => { void rewardNative('rewardedPrivacyOptions').catch(() => setNote('privacy-required')); }}>خيارات خصوصية الإعلانات</Button>}
+    {native && !android && <Button size="lg" variant="ghost" disabled={busy} onClick={() => { void callNative('rewardedReport').then(result => { if (result?.state !== 'shown') setNote('unavailable'); }).catch(() => setNote('unavailable')); }}>الإبلاغ عن آخر إعلان</Button>}
     <Button size="lg" variant="ghost" disabled={busy} onClick={onFree}>ارجع للمحتوى المجاني</Button>
-    <SignInSheet open={signIn} onClose={() => setSignIn(false)} note="الحساب مطلوب للتجربة وتذكرة الإعلان. اللعب العادي متاح مجانًا." />
+    <SignInSheet open={signIn} onClose={() => setSignIn(false)} note={gameplay ? 'الحساب يحفظ أهلية المباراة والتذاكر. الانضمام إلى غرف الآخرين والحزم الأساسية في بديهة مجانيان.' : 'الحساب مطلوب للتجربة وتذكرة الإعلان. اللعب العادي متاح مجانًا.'} />
   </Card>;
 }

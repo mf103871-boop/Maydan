@@ -51,6 +51,8 @@ try {
     const excludes = [
       'node_modules/*', 'dist/*', 'release/*', '.cache/*', '.git/*', '*.log', '.DS_Store',
       'ios/Maydan/www/*', 'ios/build/*', '*xcuserdata/*', '*.ipa', '*.xcarchive/*', '*.p12', '*.p8', '*.mobileprovision',
+      'android/.gradle/*', 'android/build/*', 'android/app/build/*', 'android/local.properties',
+      '*.aab', '*.apk', '*.jks', '*.keystore',
       // الأيقونات الصغيرة مُولَّدة من icon-1024.png، وهي وحدها المتعقَّبة؛ الأنماط
       // بثلاث خانات فأقل تستثني المُولَّد وتُبقي 1024 (أربع خانات).
       'ios/Maydan/Assets.xcassets/AppIcon.appiconset/icon-[0-9].png',

@@ -103,7 +103,8 @@ final class RewardedAdCoordinator: NSObject, FullScreenContentDelegate, MFMailCo
     static func surface(_ url: URL) -> String? {
         guard let route = routePath(url) else { return nil }
         switch route {
-        case "/game/badeeha", "/online/meenfina": return "selection"
+        case "/game/badeeha", "/online/badeeha", "/online/meenfina", "/online/fabraka", "/online/ersomha", "/online/mafia": return "selection"
+        case "/play/badeeha", "/play/beep", "/play/mamnoo", "/play/jabeen", "/play/fabraka", "/play/meenfina": return "local-start"
         default:
             return route.range(of: #"^/room/[0-9]{6}$"#, options: .regularExpression) != nil ? "room-lobby" : nil
         }

@@ -16,6 +16,8 @@ import { MAFIA_REPORT_CATEGORIES } from './mafia-report-shared.js';
 import { OnlineDirectoryView, OnlineRoomRow } from './OnlineDirectoryView.jsx';
 import { mafiaTimelineScope, mergeMafiaTimeline, readMafiaTimeline, pageMafiaTimeline } from '../games/mafia/timeline.js';
 import { createMafiaEventEffects } from '../games/mafia/event-effects.js';
+import { useAccount } from '../shared/account/context.js';
+import { ticketPolicyEnabled } from '../shared/account/gameplay-policy.mjs';
 
 const ar = arabicNumber;
 const label = value => typeof value === 'string' ? value : value?.name || value?.label || '';
@@ -94,10 +96,11 @@ function MafiaSettingsFields({ settings, onChange, disabled, present = 0, experi
 }
 
 export function MafiaSettings({ value = MAFIA_DEFAULT_SETTINGS, onChange = noop, disabled = false, experimentalRolesEnabled = false }) {
+  const account = useAccount();
   const settings = normalizeMafiaSettings(value);
   return <section data-design-screen="online.mafia.setup" className="mafia-noir mafia-settings stack" aria-label="إعداد مافيا ميدان"><style>{css}</style>
     <MafiaSettingsFields settings={settings} onChange={onChange} disabled={disabled} experimentalRolesEnabled={experimentalRolesEnabled}/>
-    <p className="mafia-muted">حساب لكل لاعب. استضافة الغرف والانضمام واللعب مجانية بالكامل. لا تُباع قوة أو أفضلية في الأدوار.</p><MafiaRules />
+    <p className="mafia-muted">حساب لكل لاعب. {ticketPolicyEnabled(account.gameplayPolicy) ? 'الانضمام مجاني دائمًا. للمضيف مباراة أولى مجانية، ثم تذكرة مباراة بإعلان اختياري أو بلس.' : 'استضافة الغرف والانضمام واللعب مجانية بالكامل.'} لا تُباع قوة أو أفضلية في الأدوار.</p><MafiaRules />
   </section>;
 }
 
@@ -200,7 +203,7 @@ export function MafiaPlayerCards({ state, me, voice = {}, selected = [], targets
   })}{Array.from({length: emptyCount}, (_,index) => <div key={'empty-'+index} className="mafia-seat mafia-seat-empty"><MafiaCardBack className="mafia-seat-seal"/><span>مقعد فارغ</span></div>)}</div>;
 }
 
-export function MafiaLobby({ state, me, isHost = false, disabled = false, act = noop, voice = {}, invite, onSafety, tutorial, accountId = '' }) {
+export function MafiaLobby({ state, me, isHost = false, disabled = false, startDisabled = false, act = noop, voice = {}, invite, onSafety, tutorial, accountId = '' }) {
   const [panel,setPanel] = useState(null), [managed,setManaged] = useState(null), [confirm,setConfirm] = useState(null);
   const players = state.members.filter(player => !player.left && !player.spectator);
   const minimum = state.settings?.mode === 'shadow' ? 9 : state.rulesetVersion===2 ? 8 : 6;
@@ -211,7 +214,7 @@ export function MafiaLobby({ state, me, isHost = false, disabled = false, act = 
     <main className="mafia-activity"><MafiaChat state={state} you={state.you} me={me} accountId={accountId} members={players} disabled={disabled} act={act}/></main>
     {state.settings.voiceMode !== 'off' && <MafiaVoice state={state} voice={voice}/>}
     {!tutorial&&state.settings.voiceMode !== 'off'&&voice.requested&&<p className="mafia-lobby-voice-note">للمحادثات الجانبية، غادر صوت الغرفة أولًا.</p>}
-    <footer data-design-id="player-rail" className="mafia-player-rail"><p className="mafia-rail-note" role="status">{canStart ? 'المجلس جاهز للبداية' : ar(minimum)+' لاعبين متصلين وجاهزين للبدء'}</p><div className="mafia-lobby-ready"><Button data-design-id="ready" data-sound={act.audioAccepted?'none':undefined} disabled={disabled} variant={me?.ready ? 'secondary' : 'primary'} onClick={() => act('ready', { ready: !me?.ready })}>{me?.ready ? 'جاهز ✓' : 'أنا جاهز'}</Button>{isHost ? <Button data-design-id="start" data-sound={act.audioAccepted?'none':undefined} data-design-required="true" disabled={disabled || !canStart} variant="primary" onClick={() => act('start')}>ابدأ اللعب</Button> : <span>المضيف يبدأ بعد الجاهزية</span>}</div></footer>
+    <footer data-design-id="player-rail" className="mafia-player-rail"><p className="mafia-rail-note" role="status">{canStart ? 'المجلس جاهز للبداية' : ar(minimum)+' لاعبين متصلين وجاهزين للبدء'}</p><div className="mafia-lobby-ready"><Button data-design-id="ready" data-sound={act.audioAccepted?'none':undefined} disabled={disabled} variant={me?.ready ? 'secondary' : 'primary'} onClick={() => act('ready', { ready: !me?.ready })}>{me?.ready ? 'جاهز ✓' : 'أنا جاهز'}</Button>{isHost ? <Button data-design-id="start" data-sound={act.audioAccepted?'none':undefined} data-design-required="true" disabled={disabled || startDisabled || !canStart} variant="primary" onClick={() => act('start')}>ابدأ اللعب</Button> : <span>المضيف يبدأ بعد الجاهزية</span>}</div></footer>
     {panel && <Modal className="mafia-noir mafia-lobby-panel mafia-paper-dialog" placement="bottom" data-design-screen="online.mafia.lobby" title={panel === 'invite' ? 'ادعُ للمجلس' : 'إعدادات المجلس'} onClose={() => setPanel(null)}><style>{css}</style>{panel === 'invite' ? invite : <MafiaLobbyInfo state={state} isHost={isHost} disabled={disabled} act={act}/>}</Modal>}
     {managed && <Modal className="mafia-noir" data-design-screen="online.mafia.lobby" title={managed.name} onClose={() => setManaged(null)}><style>{css}</style><div className="stack"><p>{managed.id === state.hostId ? 'مضيف المجلس' : 'لاعب في المجلس'}</p>{isHost && managed.id !== me?.id && <><Button data-design-id="member-host" disabled={disabled || !managed.connected} onClick={() => setConfirm({type:'host',targetId:managed.id,name:managed.name})}>تسليم الاستضافة</Button><Button data-design-id="member-remove" disabled={disabled} onClick={() => setConfirm({type:'kick',targetId:managed.id,name:managed.name})}>إزالة من الانتظار</Button></>}{managed.id !== me?.id && onSafety && <Button data-design-id="player-safety" onClick={() => {setPanel(null);onSafety(managed);setManaged(null);}}>الإبلاغ والحظر</Button>}</div></Modal>}
     {confirm && <MafiaConfirmModal title={confirm.type === 'kick' ? `إزالة ${confirm.name}؟` : `تسليم الاستضافة إلى ${confirm.name}؟`} message={confirm.type === 'kick' ? 'يخرج من هذا المجلس ولا يستطيع العودة إليه.' : 'يصبح اللاعب مسؤولًا عن الإعدادات وبدء المباراة.'} confirmLabel="تأكيد" onCancel={() => setConfirm(null)} onConfirm={async () => {if(await act(confirm.type,{targetId:confirm.targetId}) !== false){setConfirm(null);setManaged(null);}}}/>}

@@ -111,7 +111,7 @@ export function Home() {
       </section>
       <p data-design-id="footer" className="home-footer">ألعاب الجهاز الواحد تعمل دون إنترنت · الغرف تحتاج اتصالًا <span>الإصدار {version}</span></p>
       <nav className="muted center legal-links" aria-label="الأسعار والسياسات" style={{ fontSize: 13 }}>
-        {account.platform !== 'ios' && <><a data-design-id="pricing-link" href="pricing/">التسعير</a> · </>}
+        {account.platform === 'web' && <><a data-design-id="pricing-link" href="pricing/">التسعير</a> · </>}
         <a data-design-id="refunds-link" href={account.platform === 'ios' ? `${PUBLIC_SITE_ORIGIN}/refunds/` : 'refunds/'}>سياسة الاسترداد</a> · <a data-design-id="terms-link" href={LEGAL_ROUTES.terms}>شروط الاستخدام</a> · <a data-design-id="privacy-link" href={LEGAL_ROUTES.privacy}>سياسة الخصوصية</a>
       </nav>
       <GameModeSheet game={selectedGame} onClose={() => setSelectedGame(null)} onSelect={select} />

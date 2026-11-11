@@ -2,19 +2,23 @@ import { subscriptionsOf } from '../accounts/db.mjs';
 import { premiumActive, premiumOf } from '../accounts/entitlements.mjs';
 import { liveAccountSql } from '../moderation/access.mjs';
 import { fail } from '../room-model.mjs';
-import { rewardedEnvironment, rewardedLedgerEnvironment, rewardedPreviewUserHash } from './settings.mjs';
+import { gameplayTicketsEnabled, rewardedEnvironment, rewardedLedgerEnvironment, rewardedPreviewUserHash } from './settings.mjs';
+import { GAMEPLAY_OFFERS, gameplayOfferById } from '../../src/shared/account/gameplay-policy.mjs';
 
 export { rewardedEnvironment } from './settings.mjs';
 
 export const rewardedOffers = Object.freeze([
   Object.freeze({ id: 'badeeha-demo', game: 'badeeha', mode: 'local', label: 'بديهة · فئة المعاينة' }),
   Object.freeze({ id: 'meenfina-demo', game: 'meenfina', mode: 'online', label: 'مين فينا · غرفة المعاينة' }),
+  ...GAMEPLAY_OFFERS,
 ]);
 export const rewardedOffer = id => rewardedOffers.find(offer => offer.id === id) || null;
 export const rewardedMatchId = value => typeof value === 'string' && /^[a-f\d]{8}(?:-[a-f\d]{4}){3}-[a-f\d]{12}$/.test(value);
 export function requireRewardedOffer(env, offer) {
-  const environment = rewardedEnvironment(env);
+  const gameplay = gameplayOfferById(offer);
+  const environment = gameplay ? rewardedLedgerEnvironment(env) : rewardedEnvironment(env);
   if (!environment || !rewardedOffer(offer)) fail('REWARDED_UNAVAILABLE', 404);
+  if (gameplayOfferById(offer) && !gameplayTicketsEnabled(env)) fail('REWARDED_UNAVAILABLE', 404);
   return environment;
 }
 
@@ -25,7 +29,7 @@ function accountCondition(alias, environment) {
 }
 
 export async function assertRewardedAccount(env, userId) {
-  const environment = rewardedEnvironment(env);
+  const environment = rewardedLedgerEnvironment(env);
   if (!environment) fail('REWARDED_UNAVAILABLE', 404);
   if (environment === 'ios-preview' && await rewardedPreviewUserHash(userId) !== env.REWARDED_PREVIEW_USER_SHA256) {
     fail('REWARDED_ACCOUNT', 403);
@@ -55,12 +59,30 @@ const reservedExists = `EXISTS(SELECT 1 FROM rewarded_match_claims c
   AND c.source IN ('trial','ticket') AND c.state='reserved')`;
 const query = `WITH q(environment,user_id,offer) AS (VALUES(?,?,?))`;
 
+function trialOffers(offer) {
+  const current = gameplayOfferById(offer);
+  if (!current) return [offer];
+  return GAMEPLAY_OFFERS.filter(item => item.game === current.game).map(item => item.id);
+}
+
+function usedGameTrial(offer) {
+  const current = gameplayOfferById(offer);
+  if (!current) return trialExists;
+  // One trial belongs to a game, across its local and online modes. Existing
+  // trials remain authoritative when an account used them on an older client.
+  const offers = trialOffers(offer).map(id => `'${id}'`).join(',');
+  return `(EXISTS(SELECT 1 FROM rewarded_match_claims c
+    WHERE c.environment=q.environment AND c.user_id=q.user_id AND c.offer IN (${offers})
+    AND c.source='trial' AND c.state IN ('reserved','committed'))
+    OR EXISTS(SELECT 1 FROM trials t WHERE t.user_id=q.user_id AND t.game='${current.game}'))`;
+}
+
 export async function rewardedAccess(env, userId, offer, now = Date.now()) {
   const environment = requireRewardedOffer(env, offer);
   if (await rewardedPlus(env, userId, now)) return 'plus';
   const row = await env.DB.prepare(`${query} SELECT CASE
     WHEN ${reservedExists} THEN 'busy'
-    WHEN NOT ${trialExists} THEN 'trial'
+    WHEN NOT ${usedGameTrial(offer)} THEN 'trial'
     WHEN (${availableTicketSql()}) IS NOT NULL THEN 'ticket'
     ELSE 'required' END AS access FROM q`).bind(environment, userId, offer).first();
   return row.access;
@@ -89,15 +111,16 @@ async function claimRewardedMatch(env, claim, state, now) {
   if (prior) fail('REWARDED_BUSY', 409);
 
   const plus = await rewardedPlus(env, userId, now);
+  const game = gameplayOfferById(offer)?.game;
   await env.DB.prepare(`${query}, candidate AS (
     SELECT q.*, CASE WHEN ?=1 THEN 'plus'
-      WHEN ${reservedExists} THEN NULL WHEN NOT ${trialExists} THEN 'trial'
+      WHEN ${reservedExists} THEN NULL WHEN NOT ${usedGameTrial(offer)} THEN 'trial'
       ELSE 'ticket' END AS source, (${availableTicketSql()}) AS ticket_id FROM q
     WHERE ${accountCondition('q.user_id', environment)}
-  ) INSERT OR IGNORE INTO rewarded_match_claims (match_id,environment,user_id,offer,source,ticket_id,state,updated_at)
-    SELECT ?,environment,user_id,offer,source,CASE WHEN source='ticket' THEN ticket_id END,?,?
+  ) INSERT OR IGNORE INTO rewarded_match_claims (match_id,environment,user_id,offer,source,ticket_id,state,updated_at${game ? ',game_key' : ''})
+    SELECT ?,environment,user_id,offer,source,CASE WHEN source='ticket' THEN ticket_id END,?,?${game ? ',?' : ''}
     FROM candidate WHERE source IS NOT NULL AND (source<>'ticket' OR ticket_id IS NOT NULL)`)
-    .bind(environment, userId, offer, Number(plus), matchId, state, now).run();
+    .bind(environment, userId, offer, Number(plus), matchId, state, now, ...(game ? [game] : [])).run();
   const found = await rewardedMatchClaim(env, claim);
   if (found && found.state !== 'released') return found;
   if (found || (await rewardedAccess(env, userId, offer, now)) === 'busy') fail('REWARDED_BUSY', 409);

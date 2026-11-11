@@ -17,7 +17,8 @@ export const PAYWALL_BULLETS = ['شكل متكامل لبروفايلك مع ب�
 export const PAYWALL_LEGAL = 'يتجدد الاشتراك تلقائيًا ما لم يُلغَ قبل نهاية الفترة بـ٢٤ ساعة';
 export const PRICE_UNKNOWN = 'يُعرض السعر عند الشراء';
 
-export function paywallReason(reason) {
+export function paywallReason(reason, game, gameplayPolicy) {
+  if (gameplayPolicy) return 'بلس يتيح بدء المباريات دون تذاكر إعلانات، مع أشكال البروفايل والإطارات. تبقى أول مباراة لكل لعبة والحزم الأساسية والانضمام إلى الغرف مجانية؛ لا أفضلية في اللعب.';
   return 'كل الألعاب والحزم والغرف مجانية. بلس يضيف لمستك الخاصة، دون أفضلية في اللعب.';
 }
 
@@ -55,12 +56,13 @@ export function Paywall({ open = true, reason = 'settings', game = null, pack = 
   }, [account.platform, account.products, account.productsStatus]);
   if (!open) return null;
 
-  const reasonText = paywallReason(reason, game);
+  const reasonText = paywallReason(reason, game, account.gameplayPolicy);
   const products = account.products || null;
   const native = account.platform === 'ios';
   const productsLoading = native && (account.productsStatus === 'idle' || account.productsStatus === 'loading');
   const productsUnavailable = native && account.productsStatus === 'unavailable';
   const plans = PLANS.filter((item) => {
+    if (account.platform === 'android') return false;
     if (native) return (account.productsStatus === 'ready' || productsLoading) && !!products?.[item.key]?.price?.trim();
     // Do not advertise an annual plan until its price is actually available.
     if (item.key === 'yearly' && !products?.yearly?.price) return false;
@@ -72,7 +74,7 @@ export function Paywall({ open = true, reason = 'settings', game = null, pack = 
   const needsSignIn = account.platform !== 'ios' && !account.signedIn;
   const busy = account.busy;
   // قواعد App Store تمنع فتح المحتوى بمفاتيح داخل التطبيق: الرابط للويب فقط.
-  const canRedeem = account.platform !== 'ios' || REDEEM_ON_IOS;
+  const canRedeem = account.platform !== 'android' && (account.platform !== 'ios' || REDEEM_ON_IOS);
 
   return (
     <Sheet open={open} onClose={onClose} title={null}>
@@ -83,6 +85,7 @@ export function Paywall({ open = true, reason = 'settings', game = null, pack = 
           <p className="online-notice" role="status">الدفع في وضع الاختبار؛ لا تُخصم مبالغ حقيقية. الاشتراك الناتج تجريبي.</p>
         )}
         {reasonText && <p className="paywall-reason">{reasonText}</p>}
+        {account.platform === 'android' && <p role="status">شراء بلس عبر Google Play غير متاح في هذه النسخة التجريبية.</p>}
         {redeeming ? (
           <RedeemForm onDone={onClose} onCancel={cancelRedeem} />
         ) : (

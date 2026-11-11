@@ -9,6 +9,7 @@ import { resolveGameMode, gameInstructionsNextPath } from '../game-mode-navigati
 import homeStyles from './home-rebuild.css';
 import { RewardedEntry } from '../../shared/account/RewardedOffer.jsx';
 import { LOCAL_REWARDED_OFFER } from '../../shared/account/rewarded.js';
+import { useAccount } from '../../shared/account/context.js';
 
 // معرّف غير معروف في الرابط: الملاحة أثناء التصيير تضيع لأن مستمعي الموجّه لم
 // يشتركوا بعد، فتبقى الصفحة بيضاء إلى الأبد. نعرض رسالة وزر عودة بدلًا منها.
@@ -28,11 +29,14 @@ export function MissingGame({ id }) {
 export function GameDetails({ id, mode: requestedMode }) {
   const game = getGame(id);
   const { sound, haptics } = usePlatform();
+  const account = useAccount();
   if (!game) return <MissingGame id={id} />;
   const mode = resolveGameMode(id, requestedMode ?? getRoute().params.mode);
   const modeLabel = game.id === 'ersomha' ? 'أونلاين · تعاون لشخصين · منافسة من ثلاثة' : game.players.mode === 'teams' ? 'فرق' : game.players.mode === 'both' ? 'فردي أو فرق' : 'فردي';
   const factDelay = (i) => ({ '--delay': `${250 + i * 50}ms` });
-  const note = game.id === 'badeeha' ? 'كل الفئات مجانية — العبوا قد ما بدكم' : 'اللعب واستضافة الغرف والانضمام مجانًا';
+  const note = account.gameplayPolicy
+    ? game.id === 'badeeha' ? 'عشر حزم أساسية مجانية دائمًا. للحزم الأخرى: مباراة أولى مجانية، ثم تذكرة إعلان اختياري أو بلس.' : 'المباراة الأولى مجانية. بعدها يبدأ المضيف بتذكرة إعلان اختياري أو بلس؛ الانضمام إلى الغرف مجاني.'
+    : game.id === 'badeeha' ? 'كل الفئات مجانية — العبوا قد ما بدكم' : 'اللعب واستضافة الغرف والانضمام مجانًا';
   const skip = () => {
     const target = gameInstructionsNextPath(game.id, requestedMode ?? getRoute().params.mode);
     if (!target) return;

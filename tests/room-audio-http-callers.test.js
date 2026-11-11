@@ -5,6 +5,7 @@ import {post} from '../src/online/client.js';
 import {normalizeCode,validCode,ROOM_CAPABILITIES} from '../src/online/shared.js';
 import {createAudioEvents} from '../src/shared/fx/audio-events.js';
 import {emitRoomReceipt} from '../src/shared/fx/room-audio.js';
+import {ticketPolicyEnabled,gameplayOffer,badeehaFreeSelection,TICKET_POLICY} from '../src/shared/account/gameplay-policy.mjs';
 
 // Run actual async HTTP callers, without React/UI or a hosted account. Real post
 // response handling and real semantic bus are retained; only transport/storage
@@ -15,15 +16,16 @@ function actualFunction(name,next,context){
   assert.ok(start>=0&&end>start,`actual ${name} caller found`);
   return new Function(...Object.keys(context),`${source.slice(start,end)}\nreturn ${name};`)(...Object.values(context));
 }
-function fixture(){
+function fixture(gameplayPolicy=null){
   const played=[],requests=[],joined=[],writes=[],notices=[],navigations=[];
   const bus=createAudioEvents(cue=>{played.push(cue);return true;});
-  const account={user:{id:'owner'},authHeaders:()=>({Authorization:'Bearer synthetic-only'})};
+  const account={gameplayPolicy,user:{id:'owner'},authHeaders:()=>({Authorization:'Bearer synthetic-only'})};
   let settle,owner='owner',current=true;
   const transport=()=>new Promise(resolve=>{settle=resolve;});
   const context={
     busy:false,setError(){},name:'ضيف الاختبار',mode:'join',game:'meenfina',account,mafiaCreationBlocked:false,rewarded:false,
     normalizeCode,code:'123456',validCode,ROOM_CAPABILITIES,initialObserver:false,entryLifetime:{current:{generation:1}},
+    ticketPolicyEnabled,gameplayOffer,badeehaFreeSelection,
     setBusy(){},SERVER:'http://localhost:3000',readSaved:()=>({id:'seat',token:'synthetic-only'}),
     credentialsRef:{current:null},newCredentials(){throw new Error('unexpected credentials');},deviceId:()=> 'synthetic-device',roomVisibility:'private',
     directoryMode:'basic',directoryVoice:'off',setDirectoryRefresh(){},
@@ -43,9 +45,9 @@ function fixture(){
     dispose(){current=false;},
   };
 }
-test('actual Entry HTTP join sounds only after accepted response; reject, late account and disposed entry stay silent',async()=>{
-  for(const flow of ['create','join'])for(const mode of ['accepted','rejected','owner-changed','disposed']){
-    const f=fixture();f.context.mode=flow;const submit=actualFunction('submit','joinPublicRoom',f.context);
+test('actual Entry HTTP join sounds only after accepted response with policy off/on; reject, late account and disposed entry stay silent',async()=>{
+  for(const policy of [null,TICKET_POLICY])for(const flow of ['create','join'])for(const mode of ['accepted','rejected','owner-changed','disposed']){
+    const f=fixture(policy);f.context.mode=flow;const submit=actualFunction('submit','joinPublicRoom',f.context);
     const pending=submit({preventDefault(){}});assert.equal(f.requests.length,1);assert.equal(f.requests[0].path,flow==='create'?'/api/rooms':'/api/rooms/123456/join');assert.deepEqual(f.played,[]);
     if(mode==='owner-changed')f.switchOwner();if(mode==='disposed')f.dispose();f.finish(mode!=='rejected');await pending;
     assert.deepEqual(f.played,mode==='accepted'?['pop']:[],mode);

@@ -8,6 +8,14 @@ release/
 # Native build outputs and signing material stay outside source control.
 ios/Maydan/www/
 ios/build/
+android/.gradle/
+android/build/
+android/app/build/
+android/local.properties
+*.aab
+*.apk
+*.jks
+*.keystore
 **/xcuserdata/
 *.ipa
 *.xcarchive/

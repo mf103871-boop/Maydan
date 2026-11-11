@@ -5,6 +5,9 @@ import { credentials, readJson, json, errorResponse, shuffled, createLimit, sha2
 import { bindSeatAccount, noteProgressionAction, prepareRoomStats } from './room-stats.mjs';
 import { accountProgressionEnabled } from './account-progression.mjs';
 import { assertRewardedAccount, rewardedEnvironment, rewardedOffer, reserveRewardedMatch, commitRewardedMatch, releaseRewardedMatch } from './rewarded/ledger.mjs';
+import { gameplayTicketsEnabled, rewardedLedgerEnvironment } from './rewarded/settings.mjs';
+import { TICKET_POLICY, gameplayOffer, gameplayOfferById } from '../src/shared/account/gameplay-policy.mjs';
+import { freeBadeehaRoom } from './rewarded/badeeha-free.mjs';
 import { recordOnlineResult, profileSummaries } from './profiles/db.mjs';
 import { recheckMafiaHost, mafiaHostEligible } from './accounts/router.mjs';
 import { getCosmetic } from '../src/plus/catalog.js';
@@ -37,6 +40,11 @@ const SOCKET_IDLE = 45_000;
 const STATS_RETRY = 30_000;
 const REWARDED_START_INTENT = 'rewarded:start-intent';
 const REWARDED_RETRY = 5_000;
+const policyRoomOffer = (env, room) => gameplayTicketsEnabled(env) &&
+  !(room.game === 'badeeha' && freeBadeehaRoom(room.settings))
+  ? gameplayOffer(room.game || 'meenfina', 'online') : null;
+const effectiveRoomOffer = (env, room) => policyRoomOffer(env, room) ||
+  (!room.gameplayPolicy && !gameplayOfferById(room.rewardedOffer) ? rewardedOffer(room.rewardedOffer) : null);
 const statsDue = event => Math.max(event.notBefore || 0, event.retryAt || 0);
 const STATS_MAX_ATTEMPTS = 48; // a day of half-minute retries
 const MAFIA_RESULT_FAILURE_CODES=new Set(['MAFIA_PROGRESS_DISABLED','MAFIA_PROGRESS_UNAVAILABLE','MAFIA_PROGRESS_PENDING','MAFIA_PROGRESS_INVALID']);
@@ -579,7 +587,8 @@ export class Room {
   stateFor(id) {
     assertSupportedMafiaRuleset(this.room);
     const state = snapshot(this.room, id, Date.now());
-    if (this.room.rewardedOffer && this.room.hostId === id) state.rewardedOffer = this.room.rewardedOffer;
+    const offer = this.room.phase === 'lobby' ? effectiveRoomOffer(this.env, this.room) : rewardedOffer(this.room.rewardedOffer);
+    if (offer && this.room.hostId === id) state.rewardedOffer = offer.id;
     state.appearance = this.room.appearance || null;
     state.members = state.members.map(m => {
       const profile = this.room.members.find(seat => seat.id === m.id)?.profile;
@@ -771,9 +780,9 @@ export class Room {
     await this.schedule();
     return started;
   }
-  async startRewardedMatch(candidate, seatId, command) {
+  async startRewardedMatch(candidate, seatId, command, prepare) {
     if (this.rewardedStartIntent) fail('REWARDED_BUSY', 409);
-    if (!rewardedEnvironment(this.env)) fail('REWARDED_UNAVAILABLE', 503);
+    if (!(gameplayOfferById(candidate.rewardedOffer) ? rewardedLedgerEnvironment(this.env) : rewardedEnvironment(this.env))) fail('REWARDED_UNAVAILABLE', 503);
     const userId = await this.accountActor(seatId, command);
     const claim = { offer: candidate.rewardedOffer, userId, matchId: crypto.randomUUID() };
     this.rewardedStartIntent = claim;
@@ -788,9 +797,9 @@ export class Room {
       });
       await reserveRewardedMatch(this.env, claim);
       await this.accountActor(seatId, command);
+      await prepare();
       candidate.rewardedMatchId = claim.matchId;
-      candidate.deadlineAt = Date.now() + candidate.voteSeconds * 1000;
-      await this.commit(candidate);
+      await this.commit(candidate, { prepared: ['ersomha', 'mafia'].includes(candidate.game) });
       this.rewardedStartVerified = true;
     } catch (error) {
       startError = error;
@@ -957,10 +966,18 @@ export class Room {
         if(endpoint==='mafia-ranked-create'&&request.method==='POST')return await this.createRankedMatch(await readJson(request,8192));
         if (request.method === 'POST' && endpoint === 'create') {
           const input = await credentials(await readJson(request, 4096, createLimit));
-          const offer = input.rewardedOffer == null ? null : rewardedOffer(input.rewardedOffer);
+          const policyOffer = policyRoomOffer(this.env, input);
+          if (gameplayTicketsEnabled(this.env) && input.rewardedOffer != null && input.rewardedOffer !== policyOffer?.id) fail('REWARDED_UNAVAILABLE', 403);
+          const offer = gameplayTicketsEnabled(this.env) ? policyOffer :
+            input.rewardedOffer == null ? null : rewardedOffer(input.rewardedOffer);
           if (input.rewardedOffer != null) {
-            if (!rewardedEnvironment(this.env) || offer?.mode !== 'online' || offer.game !== input.game
-              || input.directory?.visibility === 'public') fail('REWARDED_UNAVAILABLE', 403);
+            if (!(gameplayOfferById(offer?.id) ? rewardedLedgerEnvironment(this.env) : rewardedEnvironment(this.env)) || offer?.mode !== 'online' || offer.game !== (input.game || 'meenfina')
+              || (gameplayOfferById(offer.id) && !gameplayTicketsEnabled(this.env))
+              || (!gameplayOfferById(offer.id) && input.directory?.visibility === 'public')) fail('REWARDED_UNAVAILABLE', 403);
+            if (!input.accountUserId) fail('AUTH_REQUIRED', 401);
+            await assertRewardedAccount(this.env, input.accountUserId);
+          }
+          if (policyOffer) {
             if (!input.accountUserId) fail('AUTH_REQUIRED', 401);
             await assertRewardedAccount(this.env, input.accountUserId);
           }
@@ -979,13 +996,14 @@ export class Room {
             if (!owner || owner.tokenHash !== input.tokenHash) return json({ error: 'COLLISION' }, 409);
             if ((this.room.game || 'meenfina') !== (input.game || 'meenfina')) fail('GAME');
             if ((this.room.rewardedOffer || ['ersomha','mafia'].includes(this.room.game)||this.room.directory?.visibility==='public') && owner.accountUserId !== input.accountUserId) fail('AUTH', 401);
-            if ((this.room.rewardedOffer || null) !== (offer?.id || null)) fail('REWARDED_UNAVAILABLE', 409);
+            if ((effectiveRoomOffer(this.env, this.room)?.id || null) !== (offer?.id || null)) fail('REWARDED_UNAVAILABLE', 409);
             return json({ code: this.room.code, id: input.id, game: this.room.game || 'meenfina' });
           }
           const created = createRoom(code, input, Date.now());
           const directory=normalizeRoomDirectory(input,this.env);
           if(directory)created.directory=directory;
           if (offer) created.rewardedOffer = offer.id;
+          if (gameplayTicketsEnabled(this.env)) created.gameplayPolicy = TICKET_POLICY;
           created.roomTrialGate = input.roomTrialGate || null;
           created.roomTrialClaim = crypto.randomUUID();
           created.trialOwnerId = input.id;
@@ -1285,15 +1303,26 @@ export class Room {
         }
         action(candidate, a.id, command, now, deck);
         noteProgressionAction(candidate, a.id, command);
+        if (command.type === 'start') {
+          const offer = effectiveRoomOffer(this.env, candidate);
+          if (gameplayTicketsEnabled(this.env)) candidate.gameplayPolicy = TICKET_POLICY;
+          if (offer) candidate.rewardedOffer = offer.id;
+          else if (candidate.gameplayPolicy) delete candidate.rewardedOffer;
+        }
         if (candidate.game === 'ersomha' && command.type === 'start') attemptedStart = candidate;
-        if (candidate.game === 'ersomha') await this.prepareErsomha(candidate);
-        if (candidate.game === 'mafia') await this.prepareMafia(candidate,mafiaSessionProof);
+        const prepare = async () => {
+          if (candidate.game === 'ersomha') await this.prepareErsomha(candidate);
+          if (candidate.game === 'mafia') await this.prepareMafia(candidate,mafiaSessionProof);
+        };
         if (command.type === 'start' && !candidate.trialStarted && !(candidate.game==='mafia'&&candidate.phase==='over')) {
           // Legacy snapshots retain the started marker; no free allowance is spent.
           candidate.trialStarted = true;
         }
-        if (candidate.rewardedOffer && command.type === 'start') await this.startRewardedMatch(candidate, a.id, command);
-        else await this.commit(candidate, { prepared: ['ersomha','mafia'].includes(candidate.game) });
+        if (candidate.rewardedOffer && command.type === 'start') await this.startRewardedMatch(candidate, a.id, command, prepare);
+        else {
+          await prepare();
+          await this.commit(candidate, { prepared: ['ersomha','mafia'].includes(candidate.game) });
+        }
         metricOutcome='ok';
         this.send(ws, { type: 'ack', requestId, ok: true });
       } catch (error) {

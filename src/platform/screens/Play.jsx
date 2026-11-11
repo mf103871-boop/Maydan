@@ -20,6 +20,9 @@ import { MissingGame } from './GameDetails.jsx';
 import { GameLoading, useVisualReadiness } from './Splash.jsx';
 import { createLocalMatchAudio } from '../../shared/fx/match-audio.js';
 import { LOCAL_REWARDED_OFFER, REWARDED_PREVIEW, rewardedStart, rewardEvent } from '../../shared/account/rewarded.js';
+import { LocalGameplayAccess } from '../../shared/account/local-gameplay-access.mjs';
+import { gameplayOffer } from '../../shared/account/gameplay-policy.mjs';
+import { RewardedOffer } from '../../shared/account/RewardedOffer.jsx';
 
 // طبقات التأثير المشتركة تُمرَّر للألعاب عبر api.fx (اختصار؛ الاستيراد المباشر من shared/fx هو العقد).
 const FX = { flash: flashScreen, stamp: stampScreen, vignette, reduced: prefersReducedMotion, wait };
@@ -31,6 +34,42 @@ export function Play({ id, rewarded = false }) {
   const demo = REWARDED_PREVIEW && rewarded && id === 'badeeha';
   const accountRef = useRef(account);
   accountRef.current = account;
+  const accessStore = useMemo(() => createStorage(environmentStorageKey(`maydan:gameplay:${id}:`)), [id]);
+  const access = useMemo(() => new LocalGameplayAccess({ game: id, storage: accessStore,
+    getAccount: () => accountRef.current, start: rewardedStart }), [id, accessStore]);
+  const [accessPrompt, setAccessPrompt] = useState(null);
+  const [accessBusy, setAccessBusy] = useState(false);
+  const promptRef = useRef(null);
+  const authorizingRef = useRef(false);
+  const cancelAccess = useCallback(() => {
+    promptRef.current?.resolve(false); promptRef.current = null; setAccessPrompt(null);
+  }, []);
+  const authorizeMatch = useCallback(async (options = {}) => {
+    if (promptRef.current || authorizingRef.current) return false;
+    authorizingRef.current = true;
+    const owner = accountRef.current.signedIn ? accountRef.current.user?.id : 'guest';
+    try {
+      setAccessBusy(true);
+      const result = await access.authorize(options);
+      setAccessBusy(false);
+      if ((accountRef.current.signedIn ? accountRef.current.user?.id : 'guest') !== owner) return false;
+      if (result.ready) return true;
+      return await new Promise(resolve => {
+        promptRef.current = { resolve, options };
+        setAccessPrompt(result);
+      });
+    } finally { authorizingRef.current = false; }
+  }, [access]);
+  const retryAccess = useCallback(async () => {
+    const prompt = promptRef.current;
+    if (!prompt || accessBusy) return;
+    setAccessBusy(true);
+    const result = await access.authorize(prompt.options);
+    setAccessBusy(false);
+    if (promptRef.current !== prompt) return;
+    if (!result.ready) { setAccessPrompt(result); return; }
+    promptRef.current = null; setAccessPrompt(null); prompt.resolve(true);
+  }, [access, accessBusy]);
   const profiles = useProfiles();
   const [progressionReceipt, setProgressionReceipt] = useState(null);
   const profilesRef = useRef(profiles); profilesRef.current = profiles;
@@ -60,9 +99,20 @@ export function Play({ id, rewarded = false }) {
   const [mode, setMode] = useState(game && game.players.mode === 'both' ? 'individual' : (game && game.players.mode) || 'individual');
   const [inGame, setInGame] = useState(game ? game.setup === 'self' : false);
   const interruption = useSyncExternalStore(socialInterruption.subscribe, socialInterruption.getSnapshot, socialInterruption.getSnapshot);
-  useEffect(() => { socialInterruption.setContext({ local: inGame, online: false, turnDeadline: null });
-    return () => socialInterruption.setContext({ local: false }); }, [inGame]);
+  useEffect(() => { socialInterruption.setContext({ local: inGame && !accessPrompt, online: false, turnDeadline: null });
+    return () => socialInterruption.setContext({ local: false }); }, [inGame, accessPrompt]);
+  useEffect(() => () => { access.clear(); promptRef.current?.resolve(false); promptRef.current = null; }, [access, owner]);
+  useEffect(() => { setAccessPrompt(null); }, [owner]);
   const [session, setSession] = useState(0);
+  const matchOwner = useRef(owner);
+  useEffect(() => {
+    if (matchOwner.current === owner) return;
+    matchOwner.current = owner;
+    if (!accountRef.current.gameplayPolicy) return;
+    cancelAccess(); access.clear();
+    setInGame(false); setSavedSession(null); setGameOptions(null);
+    setStage(game?.setup === 'self' ? 'play' : 'setup'); setSession(value => value + 1);
+  }, [owner, access, cancelAccess, game]);
   const matchAudio = useMemo(() => createLocalMatchAudio(platform.sound, id, `${owner || 'guest'}:${session}`), [platform.sound, id, owner, session]);
   useEffect(() => { matchAudio.activate(); return () => matchAudio.dispose(); }, [matchAudio]);
   const musicOwner = useRef(Symbol('local-game-audio'));
@@ -102,11 +152,15 @@ export function Play({ id, rewarded = false }) {
         return rewardedStart(accountRef.current, matchId);
       },
     } } : {}),
-    matchStart: () => { matchAudio.begin(); return recorder.start(id); },
-    matchSnapshot: () => recorder.marker(),
-    matchResume: (marker) => { matchAudio.begin(); return recorder.resume(marker, id); },
+    authorizeMatch,
+    matchStart: () => { access.activate(); matchAudio.begin(); return recorder.start(id); },
+    matchSnapshot: () => {
+      const marker = recorder.marker(), gameplayAccess = access.snapshot();
+      return gameplayAccess ? { ...marker, gameplayAccess } : marker;
+    },
+    matchResume: (marker) => { access.activate(); matchAudio.begin(); return recorder.resume(marker, id); },
     // احتفال واحد للمباراة المكتملة؛ الانسحاب أو الإلغاء لا يشغّل صوت الفوز.
-    matchOver: ({ completed = false } = {}) => { if (demo && completed) rewardEvent(LOCAL_REWARDED_OFFER, 'finish'); account.markTrial(id); recorder.complete(completed); matchAudio.complete(completed); platform.sound.music.play('home'); },
+    matchOver: ({ completed = false } = {}) => { if (demo && completed) rewardEvent(LOCAL_REWARDED_OFFER, 'finish'); if (completed) access.complete(); recorder.complete(completed); matchAudio.complete(completed); platform.sound.music.play('home'); },
     sound: platform.sound,
     haptics: platform.haptics,
     confetti: platform.confetti,
@@ -121,7 +175,9 @@ export function Play({ id, rewarded = false }) {
     setGameOptions,
     setExitMessage,
     setBeforeExit: (handler) => setBeforeExit(() => handler),
-    resumeGame: (saved) => {
+    resumeGame: async (saved) => {
+      if (!await authorizeMatch({ resume: saved })) return;
+      access.activate();
       recorder.resume(saved.profileSession, id);
       // ممنوع تُلعب بفرق: اللقطة تحمل teams بدل players، والنمط يعود إلى «فرق».
       if (Array.isArray(saved.teams)) { setTeams(saved.teams); setMode('teams'); } else setPlayers(saved.players);
@@ -130,11 +186,17 @@ export function Play({ id, rewarded = false }) {
       raiseCurtain();
     },
     requestExit: () => { setInGame(false); navigate('/', { replace: true }); },
-    restart: () => { recorder.start(id); setSavedSession(null); setSession((s) => s + 1); raiseCurtain(); },
+    restart: () => {
+      access.complete();
+      if (accountRef.current.gameplayPolicy) { setInGame(false); setSavedSession(null); setStage('setup'); setSetupValid(true); raiseCurtain(); return; }
+      recorder.start(id); setSavedSession(null); setSession((s) => s + 1); raiseCurtain();
+    },
     backToSetup: () => { setInGame(false); setSavedSession(null); setStage('setup'); setSetupValid(true); raiseCurtain(); },
-  }), [platform, storage, raiseCurtain, account, id, recorder, matchAudio, demo, owner]);
+  }), [platform, storage, raiseCurtain, account, id, recorder, matchAudio, demo, owner, access, authorizeMatch]);
 
-  const start = useCallback((list) => {
+  const start = useCallback(async (list) => {
+    if (!await authorizeMatch()) return;
+    access.activate();
     recorder.start(id);
     setSavedSession(null);
     if (mode === 'teams') setTeams(list); else setPlayers(list);
@@ -143,7 +205,7 @@ export function Play({ id, rewarded = false }) {
     setSession((s) => s + 1);
     platform.sound.play('whoosh');
     raiseCurtain();
-  }, [mode, platform.sound, raiseCurtain, id, recorder]);
+  }, [mode, platform.sound, raiseCurtain, id, recorder, access, authorizeMatch]);
 
   if (!game) return <MissingGame id={id} />;
   if (demo && !owner) return <Screen className="stack" aria-label="تحدّي اللمّة التجريبي">
@@ -156,7 +218,7 @@ export function Play({ id, rewarded = false }) {
 
   return (
     <GameFrame game={game} inGame={ready && inGame} exitMessage={exitMessage || game.exitMessage} beforeExit={beforeExit}>
-      <div inert={interruption.paused || undefined} aria-hidden={interruption.paused || undefined} style={interruption.paused ? { visibility: 'hidden', pointerEvents: 'none' } : undefined}>
+      <div inert={interruption.paused || Boolean(accessPrompt) || accessBusy || undefined} aria-hidden={interruption.paused || Boolean(accessPrompt) || undefined} style={interruption.paused || accessPrompt ? { visibility: 'hidden', pointerEvents: 'none' } : undefined}>
       {!ready ? <GameLoading game={game} progress={progress} /> : stage === 'setup' ? (
         <Screen dir={getDirection()} className="stack" style={{ '--game-accent': game.accent }} aria-label={`إعداد ${game.name}`}>
           <TopBar title="من يلعب؟" eyebrow={game.name} />
@@ -174,11 +236,18 @@ export function Play({ id, rewarded = false }) {
           )}
         </Screen>
       ) : (
-        <><Component key={demo ? `${owner}:${session}` : session} api={api} players={players} teams={teams} mode={mode} savedSession={savedSession} gameOptions={gameOptions} onExit={api.requestExit} />
+        <><Component key={demo || account.gameplayPolicy ? `${owner}:${session}` : session} api={api} players={players} teams={teams} mode={mode} savedSession={savedSession} gameOptions={gameOptions} onExit={api.requestExit} />
           {progressionReceipt && progressionReceipt.ownerId === owner && progressionReceipt.key === recorder.marker()?.key &&
             <MatchProgression key={progressionReceipt.eventId} {...progressionReceipt} />}</>
       )}
       </div>
+      {accessPrompt && <section className="stack" aria-label="أهلية بدء المباراة" style={{ position: 'fixed', inset: 0, zIndex: 75, overflowY: 'auto', padding: 'max(16px, env(safe-area-inset-top)) 16px max(24px, env(safe-area-inset-bottom))', background: 'var(--bg, #fff8eb)' }}>
+        <RewardedOffer offer={gameplayOffer(id, 'local')?.id} surface="local-start" onReady={retryAccess} onFree={cancelAccess} canPresent={() => !accessBusy} />
+        {accessPrompt.reason === 'pending' && <p role="status">قد يكون بدء المباراة تأكد بالفعل. أعد التحقق من البداية نفسها؛ لن نطلب تذكرة ثانية.</p>}
+        {accessPrompt.reason === 'storage' && <p role="alert">تعذّر حفظ نقطة استعادة آمنة. أتح التخزين المحلي قبل بدء المباراة.</p>}
+        {accessPrompt.reason === 'account' && <p role="alert">هذه المباراة المحفوظة مرتبطة بحساب آخر. ارجع إلى الإعداد أو ادخل بحسابها.</p>}
+      </section>}
+      {accessBusy && <p role="status" style={{ position: 'fixed', insetInline: 16, bottom: 24, zIndex: 80 }}>جارٍ التحقق من بدء المباراة…</p>}
       {interruption.paused && <div className="stack center" role="status" style={{ position: 'fixed', inset: 0, zIndex: 70, background: 'var(--bg, #fff8eb)', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', justifyContent: 'center', padding: 24 }}>
         <h2>اللعبة بانتظاركم</h2><p>الوقت متوقف والمحتوى مخفي. سلّم الهاتف للاعب قبل المتابعة.</p>
         <button className="btn accent" style={{ width: 'min(100%, 320px)', minHeight: 48 }} disabled={interruption.open} onClick={() => socialInterruption.resume()}>متابعة اللعب</button>

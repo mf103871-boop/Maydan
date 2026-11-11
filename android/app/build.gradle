@@ -1,0 +1,78 @@
+plugins {
+    id 'com.android.application' version '8.12.0'
+}
+
+def localDebugKey = providers.environmentVariable('MAYDAN_ANDROID_DEBUG_KEYSTORE').orNull
+
+android {
+    namespace 'com.maydan.partygames'
+    compileSdk 36
+    buildToolsVersion '36.0.0'
+
+    defaultConfig {
+        // Google Play record 4973357662415065361. Debug proof is not a release.
+        applicationId 'com.maydan.partygames'
+        minSdk 24
+        targetSdk 36
+        versionCode 1
+        versionName '1.9'
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    signingConfigs {
+        debug {
+            if (localDebugKey != null) storeFile file(localDebugKey)
+        }
+    }
+
+    buildTypes {
+        debug {
+            if (localDebugKey == null) signingConfig null
+        }
+    }
+
+    flavorDimensions += 'capability'
+    productFlavors {
+        offline {
+            dimension 'capability'
+            isDefault = true
+        }
+        rewardedDemo {
+            dimension 'capability'
+            applicationIdSuffix '.rewardeddemo'
+        }
+    }
+
+    sourceSets.main {
+        assets.srcDir layout.buildDirectory.dir('generated/maydan/assets')
+        res.srcDir layout.buildDirectory.dir('generated/maydan/res')
+    }
+}
+
+dependencies {
+    implementation 'androidx.webkit:webkit:1.14.0'
+    rewardedDemoImplementation 'com.google.android.gms:play-services-ads:25.5.0'
+    rewardedDemoImplementation 'com.google.android.ump:user-messaging-platform:4.0.0'
+    testImplementation 'junit:junit:4.13.2'
+}
+
+androidComponents {
+    beforeVariants(selector().withFlavor('capability', 'rewardedDemo')) { variant ->
+        variant.enable = variant.buildType == 'debug'
+    }
+}
+
+def repoRoot = rootProject.projectDir.parentFile
+def assetPreparation = tasks.register('prepareMaydanWeb', Exec) {
+    workingDir repoRoot
+    commandLine providers.environmentVariable('MAYDAN_NODE').getOrElse('node'),
+        'scripts/android/prepare-offline.mjs',
+        layout.buildDirectory.dir('generated/maydan').get().asFile.absolutePath
+}
+tasks.named('preBuild') {
+    dependsOn assetPreparation
+}

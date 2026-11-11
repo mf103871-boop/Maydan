@@ -4,14 +4,15 @@ import { socialInterruption } from '../../social/interruption.js';
 import { activeAudioOwners } from '../../social/media.js';
 import { environmentStorageKey } from '../lib/environment.js';
 import { BADEEHA_KEYS } from '../../games/badeeha/keys.js';
+import { isAndroidRewardedShell, callAndroidRewarded } from './android-rewarded.js';
 
 export const REWARDED_PREVIEW = typeof __MAYDAN_REWARDED_PREVIEW__ !== 'undefined' && __MAYDAN_REWARDED_PREVIEW__ === true;
 export const BADEEHA_REWARDED_PACKS = Object.freeze(['general','geo','capitals','science','animals','history']);
 export const LOCAL_REWARDED_OFFER = 'badeeha-demo';
 export const ROOM_REWARDED_OFFER = 'meenfina-demo';
 export const rewardedStatus = (account, offer) => account.requestAuthenticated('/api/rewarded/status?offer=' + encodeURIComponent(offer));
-export const rewardedStart = (account, matchId) => account.requestAuthenticated('/api/rewarded/local-start', {
-  method: 'POST', body: { offer: LOCAL_REWARDED_OFFER, matchId },
+export const rewardedStart = (account, matchId, offer = LOCAL_REWARDED_OFFER) => account.requestAuthenticated('/api/rewarded/local-start', {
+  method: 'POST', body: { offer, matchId },
 });
 export const rewardedConfig = () => request('/api/rewarded/config');
 export const rewardedStorageKey = (owner, key = BADEEHA_KEYS.active) =>
@@ -33,12 +34,16 @@ export function rewardedSurfaceSafe(surface) {
   return !document.hidden && navigator.onLine !== false && !editing && !dialog && !activeAudioOwners().length &&
     !state.open && !state.privateTurn && !state.paused && !state.communicationLocked && !state.turnDeadline &&
     (surface === 'room-lobby' ? /^#\/room\/\d{6}$/.test(route) && state.online :
-      (route === '#/game/badeeha' || route === '#/online/meenfina') && !state.local && !state.online);
+      surface === 'local-start' ? /^#\/play\/(badeeha|beep|mamnoo|jabeen|fabraka|meenfina)$/.test(route) && !state.local && !state.online :
+      /^#\/(game\/badeeha|online\/(badeeha|meenfina|fabraka|ersomha|mafia))$/.test(route) && !state.local && !state.online);
 }
 
 // Mock display exists only in the Node preview entry. The shipped client has
 // no simulator endpoint or permission to claim a reward from a native callback.
-export async function presentRewarded(attempt) {
+export async function presentRewarded(attempt, options = {}) {
+  if (attempt.mode === 'android-native' && isAndroidRewardedShell()) {
+    return callAndroidRewarded('rewardedShow', { customData: attempt.customData, adUnit: attempt.adUnit, expiresAt: attempt.expiresAt }, options);
+  }
   if (attempt.mode === 'native' && location.protocol === 'maydan:' && isNativeShell()) {
     return callNative('rewardedShow', { customData: attempt.customData, adUnit: attempt.adUnit, expiresAt: attempt.expiresAt }, { timeout: 180000 });
   }

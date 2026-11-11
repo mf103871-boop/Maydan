@@ -3,7 +3,8 @@ import { sha256 } from '../protocol.mjs';
 import { liveAccountSql } from '../moderation/access.mjs';
 import { fail } from '../room-model.mjs';
 import { assertRewardedAccount, availableTicketSql, requireRewardedOffer, rewardedAccess } from './ledger.mjs';
-import { hostedRewardedSettings, matchesRewardedUnit, SAMPLE_IOS_REWARDED_UNIT } from './settings.mjs';
+import { hostedRewardedSettings, matchesRewardedUnit, SAMPLE_IOS_REWARDED_UNIT, rewardedEnvironment } from './settings.mjs';
+import { gameplayOfferById } from '../../src/shared/account/gameplay-policy.mjs';
 
 export { SAMPLE_IOS_REWARDED_UNIT } from './settings.mjs';
 export const REWARDED_ITEM = 'match ticket';
@@ -21,7 +22,7 @@ export const rewardedTransport = (env, environment) =>
   environment === 'local' && env.REWARDED_LOCAL_NATIVE !== '1' ? 'simulation' : 'native';
 
 export function rewardedAdsAvailable(env, environment, group, client) {
-  if (env.REWARDED_ADS_ENABLED !== '1' || group !== 'B') return false;
+  if (env.REWARDED_ADS_ENABLED !== '1' || group !== 'B' || rewardedEnvironment(env) !== environment) return false;
   if (rewardedTransport(env, environment) === 'simulation') return true;
   return client === 'ios' && (environment === 'local' || hostedRewardedSettings(env, environment) !== null);
 }
@@ -31,7 +32,7 @@ export async function rewardedStatus(env, userId, offer, client, now = Date.now(
   await assertRewardedAccount(env, userId);
   // The single owner of the hosted beta can always test an ad without
   // changing the account-derived production or loopback A/B assignment.
-  const group = environment === 'ios-preview' ? 'B' : await rewardedGroup(userId);
+  const group = environment === 'ios-preview' || gameplayOfferById(offer) ? 'B' : await rewardedGroup(userId);
   const access = await rewardedAccess(env, userId, offer, now);
   const pending = await env.DB.prepare(`SELECT expires_at FROM rewarded_attempts
     WHERE environment=? AND user_id=? AND state='pending' AND expires_at>? LIMIT 1`).bind(environment, userId, now).first();

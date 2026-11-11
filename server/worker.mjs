@@ -22,6 +22,9 @@ import { routeDrawingReports } from './ersomha-reports.mjs';
 import { routeDesign, isPublicDesignAssetPath } from './design/router.mjs';
 import { routePlus } from './plus/router.mjs';
 import { rewardedWebhook, routeRewarded } from './rewarded/router.mjs';
+import { gameplayTicketsEnabled } from './rewarded/settings.mjs';
+import { gameplayOffer } from '../src/shared/account/gameplay-policy.mjs';
+import { freeBadeehaRoom } from './rewarded/badeeha-free.mjs';
 import { routeTutorials } from './tutorials/router.mjs';
 import { routeOnlineDirectory, cleanupOnlineDirectory } from './online-directory.mjs';
 import { withRequestMetrics } from './performance.mjs';
@@ -172,7 +175,16 @@ async function routeMeasuredRequest(request, env, context) {
         const gate = await roomGate(request, env, input);
         // Ignore any account ID supplied by the client. The seat's account
         // association comes only from the authenticated bearer session.
-        input.accountUserId = gate?.userId || null;
+        const policyOffer = gameplayTicketsEnabled(env) &&
+          !(input.game === 'badeeha' && freeBadeehaRoom(input.settings))
+          ? gameplayOffer(input.game || 'meenfina', 'online') : null;
+        if (gameplayTicketsEnabled(env)) {
+          if (input.rewardedOffer != null && input.rewardedOffer !== policyOffer?.id) fail('REWARDED_UNAVAILABLE', 403);
+          input.rewardedOffer = policyOffer?.id || null;
+        }
+        input.accountUserId = gate?.userId || (policyOffer
+          ? (await readSession(env, request, { rotate: false }))?.user.id : null);
+        if (policyOffer && !input.accountUserId) fail('AUTH_REQUIRED', 401);
         if(input.accountUserId&&env.DB&&await env.DB.prepare('SELECT 1 FROM mafia_observer_memberships WHERE user_id=? AND expires_at>?').bind(input.accountUserId,Date.now()).first())fail('MAFIA_OBSERVER_ACTIVE',409);
         input.roomTrialGate = gate;
         // Attempt 0 stays derived from the token so a retried creation is idempotent

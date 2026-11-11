@@ -1,7 +1,11 @@
 // إعدادات بلس للتخصيص ومعرّفات منتجاته. الأسعار الحقيقية تُقرأ من المتجر وقت العرض.
-// Legacy identifiers retained for older clients and trial history; all gameplay is free.
+// Keep legacy identifiers and trial history stable. Gameplay access is selected
+// separately by the explicit first-trial/ticket policy and defaults to free.
 export const FREE_PACKS = ['general', 'geo', 'capitals', 'science', 'animals', 'history', 'food', 'fruitsveg', 'sports', 'football'];
 export const TRIAL_GAMES = ['beep', 'mamnoo', 'jabeen', 'fabraka', 'meenfina', 'ersomha', 'mafia'];
+// Keep legacy identifiers stable; the opt-in policy also tracks Badeeha's
+// first non-basic match without charging its ten always-free packs.
+export const GAMEPLAY_TRIAL_GAMES = [...TRIAL_GAMES, 'badeeha'];
 export const PRODUCTS = { monthly: 'plus.monthly', yearly: 'plus.yearly' };
 export const PLUS_NAME = 'ميدان بلس';
 // سماح بعد انتهاء الاشتراك: يغطي تأخر الإشعارات وفترة السماح في المتاجر.
@@ -13,7 +17,7 @@ export const AUTH_CODE_TTL_S = 60;
 
 // الصفحات القانونية: بريد الدعم (فارغ = الإحالة إلى صفحة الدعم في المتجر) وتاريخ آخر تحديث.
 export const SUPPORT_EMAIL = 'mf103871@gmail.com';
-export const LEGAL_UPDATED = '2026-11-06';
+export const LEGAL_UPDATED = '2026-11-11';
 export const LEGAL_ROUTES = { terms: '#/terms', privacy: '#/privacy' };
 // وجهة عرض ثابتة وموثوقة، لا تغيّر خادم API ولا تسمح للمعاينة باستعمال جلسة الموقع.
 export const PUBLIC_SITE_ORIGIN = 'https://maydan-game.mf103871.workers.dev';

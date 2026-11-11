@@ -22,7 +22,12 @@ test('support covers purchases, deletion, call recovery, notification controls a
   assert.match(html, /<main aria-labelledby="support-title">/);
   for (const value of ['استعادة المشتريات', 'حذف الحساب', 'لا يلغي اشتراك Apple تلقائيًا', 'TestFlight', 'Bluetooth', 'الميكروفون', 'الإشعارات', 'لا نسجّل محتوى المكالمات', 'mailto:mf103871@gmail.com', '/api/legal/privacy/', '/#/terms']) assert.ok(html.includes(value), value);
   assert.doesNotMatch(html, /<script\b|<iframe\b|<img\b|\bsrc=|@import|url\(/i);
-  for (const [, href] of html.matchAll(/href="([^"]+)"/g)) assert.ok(href.startsWith('https://maydan-game.mf103871.workers.dev/') || href === 'mailto:mf103871@gmail.com');
+  const deletionLink = `mailto:mf103871@gmail.com?subject=${encodeURIComponent('طلب حذف حساب ميدان وبياناته')}`;
+  assert.ok(html.includes(`href="${deletionLink}"`));
+  assert.match(html, /دون إعادة تثبيت التطبيق/);
+  assert.match(html, /نتحقق من ملكيتك قبل تنفيذ الحذف/);
+  assert.match(html, /عدم توفر إعلان لا يمنح تذكرة/);
+  for (const [, href] of html.matchAll(/href="([^"]+)"/g)) assert.ok(href.startsWith('https://maydan-game.mf103871.workers.dev/') || href === 'mailto:mf103871@gmail.com' || href === deletionLink);
   assert.match(response.headers.get('content-security-policy'), /default-src 'none'/);
   assert.match(response.headers.get('content-security-policy'), /frame-ancestors 'none'/);
   assert.equal(response.headers.get('x-frame-options'), 'DENY');

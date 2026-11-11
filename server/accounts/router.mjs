@@ -1,6 +1,6 @@
 // موجّه مسارات الحسابات: يُستدعى من routeRequest قبل مسارات الغرف.
 // يُعيد Response إن كان المسار له، أو null ليكمل الموجّه الأصلي طريقه.
-import { TRIAL_GAMES, PRODUCTS, PROMO_DURATION_MS } from '../../src/shared/account/config.js';
+import { GAMEPLAY_TRIAL_GAMES as TRIAL_GAMES, PRODUCTS, PROMO_DURATION_MS } from '../../src/shared/account/config.js';
 import { removeMafiaAccount, recheckMafiaAuthorization } from '../mafia-access.mjs';
 import { codeHash, isValidCode } from '../../src/shared/account/redeem.js';
 import { json, readJson, sha256 } from '../protocol.mjs';
@@ -20,6 +20,7 @@ import { randomHex } from './jwt.mjs';
 import { friendIds } from '../social/db.mjs';
 import { forgetSocialUser, notifyUsers } from '../social/realtime.mjs';
 import { liveAccountSql } from '../moderation/access.mjs';
+import { gameplayAccessDescriptor, gameplayTicketsEnabled } from '../rewarded/settings.mjs';
 
 // مسارات لا تحمل Origin أصلًا: إعادة توجيه المزوّد وwebhooks الخوادم.
 export const PUBLIC_PATHS = new Set([
@@ -86,6 +87,7 @@ function billingConfig(env) {
     paddle: paddle.publicConfig(env),
     apple: { purchasesConfigured: apple.purchasesConfigured(env) },
     products: PRODUCTS,
+    gameplay: gameplayAccessDescriptor(env),
     // المزوّد الوهمي لا يُعلَن في الإعداد العام؛ اختبارات التطوير تعرف مساره.
     providers: { apple: apple.configured(env), google: google.configured(env) },
     providerPlatforms: {
@@ -271,13 +273,18 @@ async function meRoute(request, env, now) {
 async function addTrial(request, env, game, now) {
   if (!TRIAL_GAMES.includes(game)) failure('NOT_FOUND');
   const { user, rotated } = await requireSession(env, request, { now });
-  // Legacy clients may still call this endpoint; gameplay no longer consumes trials.
+  if (gameplayTicketsEnabled(env)) await db.addTrial(env, user.id, game, now);
   return withRotation(json({ trials: await db.trialsOf(env, user.id) }), rotated);
 }
 // الدمج اتحاد: علامة محلية من زمن المجهول لا تُمحى بالدخول ولا تُستعاد تجربة مستهلكة.
 async function mergeTrials(request, env, now) {
   const { user, rotated } = await requireSession(env, request, { now });
-  await readJson(request); // Drain/validate the legacy request without changing historical trials.
+  const body = await readJson(request);
+  if (gameplayTicketsEnabled(env) && Array.isArray(body.games)) {
+    for (const game of [...new Set(body.games)].filter(value => TRIAL_GAMES.includes(value))) {
+      await db.addTrial(env, user.id, game, now);
+    }
+  }
   return withRotation(json({ trials: await db.trialsOf(env, user.id) }), rotated);
 }
 

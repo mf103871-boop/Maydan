@@ -46,6 +46,7 @@ import directoryCss from './online-directory.css';
 import { getOnlinePublicRooms } from './client.js';
 import { RewardedEntry, RewardedOffer } from '../shared/account/RewardedOffer.jsx';
 import { REWARDED_PREVIEW, ROOM_REWARDED_OFFER, rewardEvent } from '../shared/account/rewarded.js';
+import { ticketPolicyEnabled, gameplayOffer, gameplayOfferById, badeehaFreeSelection } from '../shared/account/gameplay-policy.mjs';
 
 const SERVER = resolveServerUrl(typeof __MAYDAN_ROOMS_URL__ !== 'undefined' && __MAYDAN_ROOMS_URL__ || config.serverUrl, typeof location === 'undefined' ? '' : location.origin);
 const arabic = arabicNumber;
@@ -166,7 +167,9 @@ function EntryView({ initialCode = '', initialGame = 'meenfina', initialObserver
     event.preventDefault(); if (busy) return;
     setError('');
     if (!name.trim()) { setError('NAME'); return; }
-    if (mode === 'create' && (rewarded || ['ersomha','mafia'].includes(game)) && !account.user?.id) { setError('AUTH_REQUIRED'); return; }
+    const policyHost = ticketPolicyEnabled(account.gameplayPolicy) && gameplayOffer(game, 'online') &&
+      !(game === 'badeeha' && badeehaFreeSelection(badeehaSettings.categories));
+    if (mode === 'create' && (rewarded || policyHost || ['ersomha','mafia'].includes(game)) && !account.user?.id) { setError('AUTH_REQUIRED'); return; }
     // A pending/failed availability read is not evidence that the feature is off.
     if (mafiaCreationBlocked) return;
     const normalized = normalizeCode(code);
@@ -308,7 +311,7 @@ export function Invite({ code, showUrl = false }) {
   </Card>;
 }
 // Exported for the rooms regression tests, which render the waiting room from a snapshot.
-export function Lobby({ state, me, isHost, disabled, act, voice, onSafety }) {
+export function Lobby({ state, me, isHost, disabled, startDisabled = false, act, voice, onSafety }) {
   const account = useAccount();
   const players = state.members.filter((m) => !m.left);
   const minimum = minimumOnlinePlayers(state.game, state.settings);
@@ -316,13 +319,12 @@ export function Lobby({ state, me, isHost, disabled, act, voice, onSafety }) {
   // إزالة لاعب متصل قرار يستحق تأكيدًا؛ المقعد المنقطع يُزال مباشرة. الإزالة تمنع العودة إلى هذه الغرفة.
   const [kickTarget, setKickTarget] = useState(null);
   const [inviteOpen, setInviteOpen] = useState(false);
-  // Starting and transferring the game remain free for every eligible host.
   const [handover, setHandover] = useState(false);
   const successors = state.game === 'mafia' && isHost ? players.filter((m) => m.id !== me?.id && m.connected) : [];
-  if(state.game==='mafia') return <MafiaLobby state={state} me={me} accountId={account.user?.id} isHost={isHost} disabled={disabled} act={act} voice={voice} onSafety={onSafety} invite={<Invite code={state.code}/>}/>;
+  if(state.game==='mafia') return <MafiaLobby state={state} me={me} accountId={account.user?.id} isHost={isHost} disabled={disabled} startDisabled={startDisabled} act={act} voice={voice} onSafety={onSafety} invite={<Invite code={state.code}/>}/>;
   return <OnlineLobbyFrame game={state.game||'meenfina'} footer={<>
     <Button data-design-id="ready" data-sound="none" full disabled={disabled} variant={me?.ready ? 'secondary' : 'primary'} onClick={() => act('ready', { ready: !me?.ready })}>{me?.ready ? 'جاهز ✓ · إلغاء' : 'أنا جاهز'}</Button>
-    {isHost ? <Button full variant="primary" className={canStart ? 'is-armed' : ''} disabled={disabled || !canStart} data-design-id="start" data-sound="none" data-design-required="true" onClick={() => act('start')}>ابدأ اللعب</Button> : <p className="online-footnote">بانتظار بدء المضيف</p>}
+    {isHost ? <Button full variant="primary" className={canStart ? 'is-armed' : ''} disabled={disabled || startDisabled || !canStart} data-design-id="start" data-sound="none" data-design-required="true" onClick={() => act('start')}>ابدأ اللعب</Button> : <p className="online-footnote">بانتظار بدء المضيف</p>}
   </>}>
     <Card className="online-lobby-heading stack">
       <div data-design-id="header" className="row-between"><h2>{state.directory?.name||'غرفة الانتظار'}</h2><bdi className="online-member-count">{arabic(players.length)} من {arabic(ONLINE_GAMES[state.game || 'meenfina'].max)}</bdi></div>
@@ -347,7 +349,7 @@ export function Lobby({ state, me, isHost, disabled, act, voice, onSafety }) {
       : state.game === 'mafia' ? <MafiaLobbyInfo state={state} isHost={isHost} disabled={disabled} act={act}/>
       : <p className="online-footnote">{arabic(state.rounds)} جولات · ٣٠ ثانية لكل تصويت · الأعلى أصواتًا يكسب نقطة، والتعادل يحتسب للجميع.</p>}</details>
     {kickTarget && <ConfirmModal title={`تزيل ${kickTarget.name}؟`} message="يخرج من الغرفة ولا يستطيع العودة إليها بهذا الرمز." confirmLabel="إزالة" cancelLabel="إبقاؤه" onConfirm={() => { const target = kickTarget; setKickTarget(null); act('kick', { targetId: target.id }); }} onCancel={() => setKickTarget(null)} />}
-    {handover && <Modal title="تسليم استضافة المجلس" onClose={() => setHandover(false)}><div className="stack"><p className="muted">المضيف الجديد يبدأ المباراة ويعدّل الإعدادات ويزيل المقاعد بدلًا منك، واستضافة اللعب مجانية للجميع. لا تعود الاستضافة إليك إلا إذا سلّمها لك.</p>{successors.map((m) => <Button data-design-id="member-host" key={m.id} full disabled={disabled} onClick={() => { setHandover(false); act('host', { targetId: m.id }); }}>{m.name}</Button>)}</div></Modal>}
+    {handover && <Modal title="تسليم استضافة المجلس" onClose={() => setHandover(false)}><div className="stack"><p className="muted">المضيف الجديد يبدأ المباراة ويعدّل الإعدادات ويزيل المقاعد بدلًا منك. تُراجع أهليته عند بدء المباراة. لا تعود الاستضافة إليك إلا إذا سلّمها لك.</p>{successors.map((m) => <Button data-design-id="member-host" key={m.id} full disabled={disabled} onClick={() => { setHandover(false); act('host', { targetId: m.id }); }}>{m.name}</Button>)}</div></Modal>}
   </OnlineLobbyFrame>;
 }
 // «دقيقة واحدة»، «دقيقتان»، «٣–١٠ دقائق»، ثم «١١ دقيقة».
@@ -488,6 +490,8 @@ function ConnectedRoom({ code, session, stored, onLeft, onGameChange, onPromoted
   const [busy, setBusy] = useState(false);
   const [exitTarget, setExitTarget] = useState(null);
   const [rewardBusy, setRewardBusy] = useState(false);
+  const [rewardAccess, setRewardAccess] = useState(null);
+  const [rewardRefresh, setRewardRefresh] = useState(0);
   const [safetyPlayer,setSafetyPlayer] = useState(null);
   const [updating, setUpdating] = useState(false);
   const clientRef = useRef(null);
@@ -525,23 +529,28 @@ function ConnectedRoom({ code, session, stored, onLeft, onGameChange, onPromoted
   }, [code, session, sound]);
   useEffect(() => { if (status === 'connected') setError((old) => old === 'STORAGE' ? old : ''); }, [status]);
   const phase = state?.phase;
-  const rewardedRoom = REWARDED_PREVIEW && state?.rewardedOffer === ROOM_REWARDED_OFFER;
+  const gameplayRoom = gameplayOfferById(state?.rewardedOffer)?.mode === 'online';
+  const rewardedRoom = gameplayRoom || (REWARDED_PREVIEW && state?.rewardedOffer === ROOM_REWARDED_OFFER);
+  const rewardScope = JSON.stringify([state?.rewardedOffer, state?.hostId, state?.matchId, account.user?.id]);
+  const rewardReady = rewardAccess?.scope === rewardScope && ['trial', 'ticket', 'plus'].includes(rewardAccess.access);
+  useEffect(() => { setRewardBusy(false); }, [rewardScope]);
   const onRewardedAccess = useCallback(access => {
+    setRewardAccess({ scope: rewardScope, access });
     if (access === 'ticket' || access === 'plus' || access === 'trial') {
       setError(current => current === 'REWARDED_REQUIRED' ? '' : current);
     }
-  }, []);
+  }, [rewardScope]);
   const rewardedSeen = useRef(false);
   const measuredMatch = useRef({ start: null, finish: null });
   useEffect(() => {
     if (rewardedRoom) rewardedSeen.current = true;
-    if (!REWARDED_PREVIEW || !rewardedSeen.current || ownershipMismatch || status !== 'connected' || state?.hostId !== session.id || !state.matchId || phase === 'lobby') return;
-    const event = phase === 'over' ? 'finish' : phase === 'vote' ? 'start' : null;
+    if (!rewardedSeen.current || ownershipMismatch || status !== 'connected' || state?.hostId !== session.id || !state.matchId || ['lobby', 'closed'].includes(phase)) return;
+    const event = phase === 'over' ? 'finish' : 'start';
     if (event && measuredMatch.current[event] !== state.matchId) {
       measuredMatch.current[event] = state.matchId;
-      rewardEvent(ROOM_REWARDED_OFFER, event);
+      rewardEvent(state.rewardedOffer, event);
     }
-  }, [rewardedRoom, ownershipMismatch, status, state?.hostId, state?.matchId, phase, session.id]);
+  }, [rewardedRoom, ownershipMismatch, status, state?.hostId, state?.matchId, state?.rewardedOffer, phase, session.id]);
   const mafiaVoice = useMafiaRoomVoice(ownershipMismatch ? null : state);
   useLayoutEffect(() => {
     if (ownershipMismatch || state?.game !== 'ersomha' || state.drawerId !== session.id || !['select', 'draw'].includes(phase)) return;
@@ -570,11 +579,19 @@ function ConnectedRoom({ code, session, stored, onLeft, onGameChange, onPromoted
   useEffect(() => { const lease = musicOwner.current; return () => sound.music.releaseScene(lease); }, [sound]);
   async function act(type, fields) {
     if (busyRef.current || ownershipMismatch || observerSession || (rewardedRoom && type === 'start' && rewardBusy)) return false;
+    if (gameplayRoom && type === 'start' && !rewardReady) { setError('REWARDED_REQUIRED'); return false; }
     busyRef.current = true; setBusy(true); setError('');
     try { await clientRef.current.command(type, { ...fields, matchId: state.matchId, round: state.round,
       ...(rewardedRoom && type === 'start' ? { accountAuthorization: account.authHeaders().Authorization } : {}),
       ...(state.game === 'mafia' ? { phaseId: state.phaseId } : {}) }); return true; }
-    catch (e) { if (e.code === 'PLUS_REQUIRED' && type === 'appearance') account.openPaywall({ reason: 'cosmetics' }); else setError(e.code === 'PLUS_REQUIRED' ? 'UPDATE_REQUIRED' : e.code); return false; }
+    catch (e) {
+      if (rewardedRoom && type === 'start' && ['REWARDED_REQUIRED', 'REWARDED_BUSY'].includes(e.code)) {
+        setRewardAccess(null); setRewardRefresh(value => value + 1);
+      }
+      if (e.code === 'PLUS_REQUIRED' && type === 'appearance') account.openPaywall({ reason: 'cosmetics' });
+      else setError(e.code === 'PLUS_REQUIRED' ? 'UPDATE_REQUIRED' : e.code);
+      return false;
+    }
     finally { busyRef.current = false; setBusy(false); }
   }
   // Shared Mafia views also run in the local tutorial. Only this network
@@ -648,12 +665,12 @@ function ConnectedRoom({ code, session, stored, onLeft, onGameChange, onPromoted
     {observerSession && state?.observer?.canPromote && <Button data-design-id="observer-join" disabled={disabled} onClick={promoteObserver}>احجز مقعدًا في المباراة التالية</Button>}
     {outdated || (status === 'ended' ? <Button full onClick={() => { clearCurrent(); setExitGuard(null); onLeft(); navigate('/online', { replace: true }); }}>العودة إلى الغرف</Button>
       : state && <>{spectating && <p className="online-notice" role="status">انضممت بعد بداية المباراة: تتفرج الآن، وتلعب معهم من المباراة القادمة.</p>}{state.phase === 'lobby' && !observerSession ? <>
-        <Lobby state={state} me={me} isHost={isHost} disabled={disabled || rewardBusy} act={act} voice={mafiaVoice} onSafety={player=>setSafetyPlayer(player)} />
-        {typeof __MAYDAN_REWARDED_PREVIEW__ !== 'undefined' && __MAYDAN_REWARDED_PREVIEW__ && rewardedRoom && isHost && status === 'connected' && !exitTarget &&
-          <RewardedOffer offer={ROOM_REWARDED_OFFER} surface="room-lobby" onBusy={setRewardBusy} onAccess={onRewardedAccess}
+        <Lobby state={state} me={me} isHost={isHost} disabled={disabled || rewardBusy} startDisabled={gameplayRoom && !rewardReady} act={act} voice={mafiaVoice} onSafety={player=>setSafetyPlayer(player)} />
+        {rewardedRoom && isHost && status === 'connected' && !exitTarget &&
+          <RewardedOffer key={`${rewardScope}:${rewardRefresh}`} offer={state.rewardedOffer} surface="room-lobby" onBusy={setRewardBusy} onAccess={onRewardedAccess}
             canPresent={() => !busyRef.current && clientRef.current?.connectionStatus === 'connected' &&
               clientRef.current?.state?.phase === 'lobby' && clientRef.current?.state?.hostId === session.id}
-            onFree={() => setExitTarget('/online/meenfina')} />}
+            onFree={() => setExitTarget(`/online/${state.game || 'meenfina'}`)} />}
       </> : state.game === 'fabraka'
         ? <FabrakaMatch state={state} me={me} disabled={disabled} isHost={isHost} act={act} clockOffset={clientRef.current?.clockOffset || 0} spectating={spectating} />
         : state.game === 'ersomha' ? <ErsomhaMatch state={state} me={me} disabled={disabled} isHost={isHost} act={act} client={clientRef.current} status={status} clockOffset={clientRef.current?.clockOffset || 0} drawerReady={!lamma?.activeCall || (lamma.activeCall._ownerId === account.user?.id && lamma.media?.userId === account.user?.id && lamma.media?.muted === true)} onReport={['draw', 'result'].includes(state.phase) ? reportDrawing : undefined} />
@@ -671,6 +688,8 @@ function ConnectedRoom({ code, session, stored, onLeft, onGameChange, onPromoted
   </RoomChrome>;
 }
 export function Online({ code = '', game = 'meenfina', observer = false, initialView = 'public', rewarded = false, onTutorial }) {
+  const account = useAccount();
+  const gameplayPolicy = ticketPolicyEnabled(account.gameplayPolicy);
   const [activeGame,setActiveGame]=useState(observer?'mafia':game);
   const [session, setSession] = useState(() => code ? readSaved(SERVER, observer?`observer:${code}`:code) : null);
   const [stored, setStored] = useState(() => readSaved(SERVER, 'persistence') !== false);
@@ -682,8 +701,8 @@ export function Online({ code = '', game = 'meenfina', observer = false, initial
   return <Screen data-design-screen={session && code ? undefined : 'online.entry'} className={`stack online-screen ${activeGame==='mafia'?'mafia-noir mafia-online-shell':''}`} aria-label={activeGame==='mafia'?'مافيا ميدان':'غرف ميدان'}>
     {session && code ? <ConnectedRoom code={code} session={session} stored={stored} onLeft={() => setSession(null)} onGameChange={setActiveGame} onPromoted={joined} /> : <>
       <TopBar data-design-id="topbar" title={ONLINE_GAMES[activeGame]?.name||'غرف ميدان'} end={<Button data-design-id="home" size="sm" onClick={() => navigate('/')}>الرئيسية</Button>} />
-      <Entry onTutorial={onTutorial} initialCode={code} initialGame={observer?'mafia':game} initialObserver={observer} initialView={initialView} rewarded={REWARDED_PREVIEW && rewarded} onJoined={joined} onGameChange={setActiveGame} />
-      {typeof __MAYDAN_REWARDED_PREVIEW__ !== 'undefined' && __MAYDAN_REWARDED_PREVIEW__ && !code && game === 'meenfina' && (rewarded ?
+      <Entry onTutorial={onTutorial} initialCode={code} initialGame={observer?'mafia':game} initialObserver={observer} initialView={initialView} rewarded={REWARDED_PREVIEW && rewarded && !gameplayPolicy} onJoined={joined} onGameChange={setActiveGame} />
+      {typeof __MAYDAN_REWARDED_PREVIEW__ !== 'undefined' && __MAYDAN_REWARDED_PREVIEW__ && !gameplayPolicy && !code && game === 'meenfina' && (rewarded ?
         <Button onClick={() => navigate('/online/meenfina', { replace: true })}>ارجع للمحتوى المجاني</Button> :
         <RewardedEntry offer={ROOM_REWARDED_OFFER} onReady={() => navigate('/online/meenfina?rewarded=1')} onFree={() => navigate('/')} />)}
     </>}

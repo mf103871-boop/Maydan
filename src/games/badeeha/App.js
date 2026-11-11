@@ -624,7 +624,7 @@ function MaydanBeta({ api, entry = 'home' } = {}) {
       if (mounted.current) setRewardBusy(false);
     }
   }
-  function beginGame() {
+  async function beginGame() {
     if (scope && rewardRequest.current) return;
     const validation = logic.validateTeamNames(teams.map((team) => team.name));
     if (!validation.ok) {
@@ -651,6 +651,12 @@ function MaydanBeta({ api, entry = 'home' } = {}) {
       void confirmRewarded(draft);
       return;
     }
+    if (api?.authorizeMatch) {
+      setRewardBusy(true);
+      const allowed = await api.authorizeMatch({ categories: selectedCategories });
+      if (mounted.current) setRewardBusy(false);
+      if (!allowed || !mounted.current) return;
+    }
     api?.matchStart?.();
     (setTeams(freshTeams),
       setDeck(nextDeck),
@@ -676,7 +682,7 @@ function MaydanBeta({ api, entry = 'home' } = {}) {
       setScreen("board"),
       haptic("medium"));
   }
-  function resumeGame() {
+  async function resumeGame() {
     if (!logic.isValidSession(CATS, savedActive)) {
       (betaRemoveKey(MAYDAN_BETA_KEYS.active),
         setSavedActive(null),
@@ -687,6 +693,12 @@ function MaydanBeta({ api, entry = 'home' } = {}) {
       if (!savedActive.rewardedMatchId) return;
       void confirmRewarded(savedActive);
       return;
+    }
+    if (api?.authorizeMatch) {
+      setRewardBusy(true);
+      const allowed = await api.authorizeMatch({ categories: savedActive.selectedCategories, resume: savedActive });
+      if (mounted.current) setRewardBusy(false);
+      if (!allowed || !mounted.current) return;
     }
     openSavedMatch(savedActive);
   }
